@@ -1,4 +1,4 @@
-import { buildSimulation, defaultInputs, normalizeInputs } from './utils/retirementSimulator.js';
+import { buildSimulation, defaultInputs, normalizeInputs, simulateRetirement } from './utils/retirementSimulator.js';
 import { formatAge, formatCompactMoney, formatEok, formatInputNumber, formatPercent, statusMeta } from './utils/formatters.js';
 import { buildShareText, buildShareUrl, decodeInputsFromHash } from './utils/shareState.js';
 
@@ -150,7 +150,15 @@ function renderGrowth(simulation, data) {
 function renderSummary(simulation) {
   const { inputs: data, targetResult, earliestRetirementAge, status, retirementFinancialAsset, safeWithdrawalRate, finalFinancialAsset } = simulation;
   const survives = !targetResult.depletionAge || targetResult.depletionAge > data.simulationUntilAge;
+  const requiredMonthlyInvestment = findRequiredMonthlyInvestment(data);
+  const requiredMonthlyValue = requiredMonthlyInvestment === null ? '월 2,000만 원 이상' : formatCompactMoney(requiredMonthlyInvestment);
+  const requiredMonthlyDetail = requiredMonthlyInvestment === null
+    ? '현재 조건에서는 목표 달성이 매우 어렵습니다'
+    : requiredMonthlyInvestment <= data.monthlyInvestment
+      ? `현재 월 ${formatCompactMoney(data.monthlyInvestment)}이면 목표에 도달합니다`
+      : `현재보다 월 ${formatCompactMoney(requiredMonthlyInvestment - data.monthlyInvestment)} 더 필요`;
   const cards = [
+    ['목표까지 필요한 월 투자액', requiredMonthlyValue, requiredMonthlyDetail, requiredMonthlyInvestment === null ? 'risk' : requiredMonthlyInvestment <= data.monthlyInvestment ? 'stable' : 'caution', requiredMonthlyInvestment === null ? '위험' : requiredMonthlyInvestment <= data.monthlyInvestment ? '충분' : '추가 필요'],
     ['목표 퇴사 판정', survives ? `${data.simulationUntilAge}세까지 고갈 없음` : `${targetResult.depletionAge}세 고갈 예상`, `${data.targetRetirementAge}세 퇴사 기준`, status, statusMeta[status].label],
     ['가장 빠른 퇴사 가능 나이', formatAge(earliestRetirementAge), `${data.simulationUntilAge}세까지 버티는 가장 이른 나이`, earliestRetirementAge ? 'stable' : 'risk', earliestRetirementAge ? '안정' : '위험'],
     ['퇴사 첫해 인출률', formatPercent(safeWithdrawalRate), '첫해 인출액 ÷ 퇴사 시점 금융자산', safeWithdrawalRate >= 8 ? 'caution' : 'neutral', safeWithdrawalRate >= 8 ? '주의' : '정보'],
@@ -160,6 +168,29 @@ function renderSummary(simulation) {
   document.querySelector('#summaryGrid').innerHTML = cards.map(([label, value, detail, tone, badge]) => `
     <article class="summary-card tone-${tone}"><div class="card-top"><span class="card-icon">원</span><span class="badge badge-${tone}">${badge}</span></div><p>${label}</p><strong>${value}</strong><small>${detail}</small></article>
   `).join('');
+}
+
+function findRequiredMonthlyInvestment(data) {
+  const maxMonthlyInvestment = 20000000;
+  const step = 10000;
+
+  if (isStableWithMonthlyInvestment(data, 0)) return 0;
+  if (!isStableWithMonthlyInvestment(data, maxMonthlyInvestment)) return null;
+
+  let low = 0;
+  let high = maxMonthlyInvestment;
+  while (high - low > step) {
+    const mid = Math.floor((low + high) / 2);
+    if (isStableWithMonthlyInvestment(data, mid)) high = mid;
+    else low = mid;
+  }
+
+  return Math.ceil(high / step) * step;
+}
+
+function isStableWithMonthlyInvestment(data, monthlyInvestment) {
+  const result = simulateRetirement({ ...data, monthlyInvestment }, data.targetRetirementAge);
+  return !result.depletionAge || result.depletionAge > data.simulationUntilAge;
 }
 
 function renderInsight(simulation) {

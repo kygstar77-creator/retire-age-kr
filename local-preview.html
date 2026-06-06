@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="퇴사나이는 내 자산으로 몇 살에 퇴사할 수 있는지 계산하는 한국형 조기은퇴·반퇴 시뮬레이터입니다." />
+    <meta name="description" content="퇴사나이는 한국 직장인을 위한 조기은퇴·반퇴 시뮬레이터입니다. 금융자산, 생활비, 국민연금, 부업 소득을 입력해 퇴사 가능 나이와 자산 고갈 시점을 확인하세요." />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="퇴사나이" />
     <meta property="og:title" content="퇴사나이 - 내 자산으로 몇 살에 퇴사할 수 있을까?" />
@@ -33,6 +33,14 @@
     </script>
     <title>퇴사나이</title>
     <link rel="stylesheet" href="/src/styles.css" />
+    <style>
+      .metric-strip { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+      .summary-grid { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
+      @media (max-width: 680px) {
+        .hero h1 { font-size: 24px; word-break: keep-all; }
+        .summary-grid, .metric-strip { grid-template-columns: 1fr; }
+      }
+    </style>
   </head>
   <body>
     <main class="app-shell">
@@ -40,9 +48,7 @@
         <div>
           <p class="brand">퇴사나이</p>
           <h1>내 자산으로 몇 살에 퇴사할 수 있을까?</h1>
-          <p>
-            금융자산, 생활비, 국민연금, 반퇴 소득을 넣고 퇴사 가능 나이와 자산 고갈 시점을 바로 확인하세요.
-          </p>
+          <p>금융자산, 생활비, 국민연금, 반퇴 소득을 넣고 퇴사 가능 나이와 자산 고갈 시점을 바로 확인하세요.</p>
         </div>
         <div class="hero-metric">
           <span>목표 퇴사</span>
@@ -59,10 +65,7 @@
             </div>
             <div class="input-actions">
               <button class="icon-button mobile-toggle" id="mobileInputToggle" type="button">입력 수정</button>
-              <button class="icon-button reset-button" id="resetButton" type="button" title="초기화">
-                <span>↺</span>
-                <span>초기화</span>
-              </button>
+              <button class="icon-button reset-button" id="resetButton" type="button" title="초기화"><span>↻</span><span>초기화</span></button>
             </div>
           </div>
           <div class="mobile-stepper" id="mobileStepper"></div>
@@ -76,65 +79,27 @@
           <section class="summary-grid" id="summaryGrid"></section>
           <section class="panel insight" id="insightReport"></section>
           <section class="panel">
-            <div class="section-heading">
-              <div>
-                <p class="eyebrow">비교</p>
-                <h2>1년 더 근무 효과</h2>
-              </div>
-            </div>
+            <div class="section-heading"><div><p class="eyebrow">비교</p><h2>1년 더 근무 효과</h2></div></div>
             <div class="scenario-grid" id="scenarioGrid"></div>
           </section>
           <section class="panel table-panel">
-            <div class="section-heading">
-              <div>
-                <p class="eyebrow">추이</p>
-                <h2>연도별 자산 흐름</h2>
-              </div>
-            </div>
+            <div class="section-heading"><div><p class="eyebrow">추이</p><h2>연도별 자산 흐름</h2></div></div>
             <div class="table-scroll" id="yearlyTable"></div>
           </section>
           <section class="disclaimer">
             <strong>참고용 시뮬레이션</strong>
-            <p>
-              퇴사나이는 입력값과 가정에 따른 계산 결과를 제공하며, 투자 권유나 재무 자문이 아닙니다.
-              실제 의사결정 전에는 세금, 건강보험, 주거비, 가족 상황, 시장 변동성을 함께 검토하세요.
-            </p>
+            <p>퇴사나이는 입력값과 가정에 따른 계산 결과를 제공하며, 투자 권유나 재무 자문이 아닙니다. 실제 의사결정 전에는 세금, 건강보험, 주거비, 가족 상황, 시장 변동성을 함께 검토하세요.</p>
           </section>
           <section class="disclaimer security-note">
             <strong>개인정보 보호</strong>
-            <p>
-              입력한 자산 정보는 서버로 전송하지 않고 이 브라우저에만 저장됩니다. 공용 PC에서는 사용 후 초기화를 눌러주세요.
-            </p>
+            <p>입력한 자산 정보는 서버로 전송되지 않고 내 브라우저에만 저장됩니다. 공용 PC에서는 사용 후 초기화를 눌러주세요.</p>
           </section>
           <section class="legal-panel" id="legal">
-            <div class="section-heading">
-              <div>
-                <p class="eyebrow">운영 안내</p>
-                <h2>개인정보·이용약관·면책 고지</h2>
-              </div>
-            </div>
+            <div class="section-heading"><div><p class="eyebrow">운영 안내</p><h2>개인정보·이용약관·면책 고지</h2></div></div>
             <div class="legal-grid">
-              <article>
-                <h3>개인정보처리방침 요약</h3>
-                <p>
-                  퇴사나이는 서버, 로그인, 데이터베이스를 사용하지 않습니다. 사용자가 입력한 자산 정보는
-                  브라우저 localStorage에만 저장되며, 운영자에게 전송되지 않습니다.
-                </p>
-              </article>
-              <article>
-                <h3>이용약관 요약</h3>
-                <p>
-                  본 서비스는 사용자가 입력한 가정에 따라 계산 결과를 제공하는 참고용 도구입니다.
-                  사용자는 본인의 판단과 책임으로 결과를 활용해야 합니다.
-                </p>
-              </article>
-              <article>
-                <h3>재무 자문 아님</h3>
-                <p>
-                  퇴사나이는 투자 권유, 금융상품 추천, 세무·법률·재무 자문을 제공하지 않습니다.
-                  실제 퇴사나 투자 결정 전에는 전문가 상담과 공식 자료 확인이 필요합니다.
-                </p>
-              </article>
+              <article><h3>개인정보처리방침 요약</h3><p>퇴사나이는 서버, 로그인, 데이터베이스를 사용하지 않습니다. 사용자가 입력한 자산 정보는 브라우저 localStorage에만 저장되며 운영자에게 전송되지 않습니다.</p></article>
+              <article><h3>이용약관 요약</h3><p>본 서비스는 사용자가 입력한 가정에 따라 계산 결과를 제공하는 참고용 도구입니다. 사용자는 본인의 판단과 책임으로 결과를 활용해야 합니다.</p></article>
+              <article><h3>재무 자문 아님</h3><p>퇴사나이는 투자 권유, 금융상품 추천, 세무·법률·재무 자문을 제공하지 않습니다. 실제 퇴사와 투자 결정 전에는 전문가 상담과 공식 자료 확인이 필요합니다.</p></article>
             </div>
           </section>
         </div>
@@ -144,7 +109,6 @@
       <button type="button" id="bottomEditButton">입력으로 이동</button>
       <button type="button" id="bottomShareButton">링크 복사</button>
     </nav>
-
     <script type="module" src="/src/preview.js"></script>
   </body>
 </html>

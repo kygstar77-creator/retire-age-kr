@@ -31,8 +31,11 @@ jobs:
       - name: Build static site
         run: npm run build
 
+      - name: Install Netlify CLI
+        run: npm install --global netlify-cli@latest
+
       - name: Deploy built files to Netlify
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        run: npx netlify-cli deploy --prod --dir=outputs/deploy --site="$NETLIFY_SITE_ID" --auth="$NETLIFY_AUTH_TOKEN"
+        run: netlify deploy --prod --dir=outputs/deploy --site="$NETLIFY_SITE_ID" --auth="$NETLIFY_AUTH_TOKEN" --message="GitHub Actions $GITHUB_SHA"

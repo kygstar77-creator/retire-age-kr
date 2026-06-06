@@ -6,6 +6,10 @@ const root = process.cwd();
 const outputs = join(root, 'outputs');
 const deploy = join(outputs, 'deploy');
 const adsensePublisherId = '3225798545626010';
+const adsenseClientId = `ca-pub-${adsensePublisherId}`;
+
+const adsenseHeadScript = `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}"
+     crossorigin="anonymous"></script>`;
 
 const productPolishStyle = `<style>
   .hero {
@@ -161,7 +165,7 @@ const operationsSnippet = `<script>
   var config = {
     gaMeasurementId: '',
     cloudflareAnalyticsToken: '',
-    adsenseClientId: 'ca-pub-3225798545626010',
+    adsenseClientId: '${adsenseClientId}',
     adsenseSlotId: '',
     adsenseAutoAds: true,
     adsEnabled: true
@@ -236,15 +240,6 @@ const operationsSnippet = `<script>
     }
   }
 
-  function initAds() {
-    if (!config.adsEnabled || !config.adsenseClientId) return;
-    loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + encodeURIComponent(config.adsenseClientId), {
-      crossorigin: 'anonymous'
-    }, function () {
-      insertAdSlot();
-    });
-  }
-
   function insertAdSlot() {
     if (!config.adsEnabled || !config.adsenseClientId || !config.adsenseSlotId || state.adInserted) return;
     var anchor = document.getElementById('growthPanel') || document.querySelector('.results');
@@ -289,7 +284,6 @@ const operationsSnippet = `<script>
 
   initAnalytics();
   initCloudflareAnalytics();
-  initAds();
 })();
 </script>`;
 
@@ -297,7 +291,7 @@ await import('./build-standalone.mjs');
 await mkdir(deploy, { recursive: true });
 let indexHtml = await readFile(join(outputs, 'toesanai-standalone.html'), 'utf8');
 indexHtml = indexHtml.replaceAll('og-image.png?v=4', 'og-image.png?v=5');
-indexHtml = indexHtml.replace('</head>', `${productPolishStyle}\n</head>`);
+indexHtml = indexHtml.replace('</head>', `${adsenseHeadScript}\n${productPolishStyle}\n</head>`);
 indexHtml = indexHtml.replace('</body>', `${operationsSnippet}\n</body>`);
 await writeFile(join(deploy, 'index.html'), indexHtml, 'utf8');
 

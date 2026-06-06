@@ -13,6 +13,34 @@ const inputFirstUx = `
 /* Keep the Codex input-first UX on every viewport in the deployed build. */
 .input-panel.input-open + .results { display: none; }
 body:has(.input-panel.input-open) .mobile-bottom-bar { display: none; }
+
+/* Polished button and compact metric label alignment. */
+.icon-button,
+.mobile-step-actions button,
+.mobile-bottom-bar button,
+.growth-actions button,
+.growth-actions a {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.mobile-toggle {
+  min-width: 86px;
+  padding: 0 12px;
+}
+
+.strip-card > span {
+  min-width: 44px;
+  width: auto;
+  padding: 0 8px;
+  text-align: center;
+  word-break: keep-all;
+  white-space: nowrap;
+  font-size: 12px;
+}
 `;
 
 const bundledSimulator = simulator.replaceAll('export ', '');

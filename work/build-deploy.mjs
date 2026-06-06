@@ -13,7 +13,7 @@ const productPolishStyle = `<style>
       linear-gradient(135deg, #ffffff 0%, #f4f8f7 100%);
   }
 
-  .hero-copy::after {
+  .hero > div:first-child::after {
     content: "서버 저장 없음 · 카톡 공유 최적화 · 3분 계산";
     display: inline-flex;
     width: fit-content;
@@ -21,10 +21,11 @@ const productPolishStyle = `<style>
     padding: 9px 12px;
     border: 1px solid rgba(18, 96, 68, 0.16);
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.74);
+    background: rgba(255, 255, 255, 0.78);
     color: #126044;
     font-size: 0.9rem;
-    font-weight: 800;
+    font-weight: 850;
+    line-height: 1.35;
   }
 
   .input-panel,
@@ -32,7 +33,8 @@ const productPolishStyle = `<style>
   .summary-card,
   .scenario-card,
   .report-card,
-  .table-card {
+  .table-card,
+  .legal-footer {
     box-shadow: 0 18px 50px rgba(23, 33, 44, 0.06);
   }
 
@@ -58,10 +60,89 @@ const productPolishStyle = `<style>
   }
 
   @media (max-width: 680px) {
-    .hero-copy::after {
+    body {
+      background: #eef4f3;
+    }
+
+    .app-shell {
+      padding-top: 10px;
+    }
+
+    .hero {
+      margin: 0 12px 12px;
+      padding: 22px 18px;
+      border-radius: 22px;
+    }
+
+    .hero h1 {
+      max-width: 14em;
+      font-size: 28px;
+      line-height: 1.18;
+    }
+
+    .hero p {
+      margin-top: 12px;
+      font-size: 15px;
+      line-height: 1.62;
+    }
+
+    .hero > div:first-child::after {
       margin-top: 14px;
       white-space: normal;
+      font-size: 13px;
       line-height: 1.45;
+    }
+
+    .hero-metric {
+      margin-top: 18px;
+      width: 100%;
+      min-height: 82px;
+    }
+
+    .layout {
+      gap: 12px;
+    }
+
+    .input-panel,
+    .decision-panel,
+    .growth-panel,
+    .panel,
+    .summary-card,
+    .scenario-card {
+      border-radius: 22px;
+    }
+
+    .section-heading {
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .section-heading h2,
+    .decision-main h2,
+    .insight-title strong {
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+
+    .decision-main h2 {
+      font-size: 26px;
+      line-height: 1.24;
+    }
+
+    .decision-score {
+      min-height: 112px;
+    }
+
+    .growth-actions {
+      grid-template-columns: 1fr;
+    }
+
+    .growth-actions button,
+    .mobile-step-actions button,
+    .mobile-bottom-bar button {
+      min-height: 54px;
+      border-radius: 18px;
+      font-size: 16px;
     }
 
     .decision-card,
@@ -78,6 +159,7 @@ const operationsSnippet = `<script>
 (function () {
   var config = {
     gaMeasurementId: '',
+    cloudflareAnalyticsToken: '',
     adsenseClientId: '',
     adsenseSlotId: '',
     adsenseAutoAds: false,
@@ -112,6 +194,13 @@ const operationsSnippet = `<script>
     window.gtag('js', new Date());
     window.gtag('config', config.gaMeasurementId, { send_page_view: true });
     loadScript('https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(config.gaMeasurementId));
+  }
+
+  function initCloudflareAnalytics() {
+    if (!config.cloudflareAnalyticsToken) return;
+    loadScript('https://static.cloudflareinsights.com/beacon.min.js', {
+      'data-cf-beacon': JSON.stringify({ token: config.cloudflareAnalyticsToken })
+    });
   }
 
   function trackEvent(name, params) {
@@ -183,11 +272,11 @@ const operationsSnippet = `<script>
   document.addEventListener('click', function (event) {
     var target = event.target.closest('button, a');
     if (!target) return;
-    if (target.id === 'shareLinkButton' || target.dataset.copy === 'link') trackEvent('share_link_copy', getResultMeta());
-    if (target.id === 'shareSummaryButton' || target.dataset.copy === 'summary') trackEvent('share_summary_copy', getResultMeta());
+    if (target.dataset.copy === 'link' || target.id === 'bottomShareButton') trackEvent('share_link_copy', getResultMeta());
+    if (target.dataset.copy === 'summary') trackEvent('share_summary_copy', getResultMeta());
     if (target.id === 'resetButton') trackEvent('inputs_reset');
-    if (target.id === 'toggleInputs' || target.id === 'mobileEdit') trackEvent('input_panel_open');
-    if (target.id === 'mobileShare') trackEvent('mobile_share_tap', getResultMeta());
+    if (target.id === 'mobileInputToggle' || target.id === 'bottomEditButton') trackEvent('input_panel_open');
+    if (target.closest('.legal-footer')) trackEvent('legal_link_click', { link_text: target.textContent.trim().slice(0, 30) });
   }, { passive: true });
 
   var observer = new MutationObserver(maybeTrackResult);
@@ -198,6 +287,7 @@ const operationsSnippet = `<script>
   });
 
   initAnalytics();
+  initCloudflareAnalytics();
   initAds();
 })();
 </script>`;

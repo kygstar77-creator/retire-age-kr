@@ -3,8 +3,8 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node work/test-simulator.mjs",
-    "build": "node work/build-deploy.mjs && node work/fix-ads-txt.mjs",
-    "build:deploy": "node work/build-deploy.mjs && node work/fix-ads-txt.mjs",
+    "build": "node work/build-deploy.mjs && node work/fix-ads-txt.mjs && node work/fix-ga.mjs",
+    "build:deploy": "node work/build-deploy.mjs && node work/fix-ads-txt.mjs && node work/fix-ga.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

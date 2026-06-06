@@ -6,10 +6,209 @@ const root = process.cwd();
 const outputs = join(root, 'outputs');
 const deploy = join(outputs, 'deploy');
 
+const productPolishStyle = `<style>
+  .hero {
+    background:
+      radial-gradient(circle at 86% 24%, rgba(18, 96, 68, 0.12), transparent 30%),
+      linear-gradient(135deg, #ffffff 0%, #f4f8f7 100%);
+  }
+
+  .hero-copy::after {
+    content: "서버 저장 없음 · 카톡 공유 최적화 · 3분 계산";
+    display: inline-flex;
+    width: fit-content;
+    margin-top: 18px;
+    padding: 9px 12px;
+    border: 1px solid rgba(18, 96, 68, 0.16);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.74);
+    color: #126044;
+    font-size: 0.9rem;
+    font-weight: 800;
+  }
+
+  .input-panel,
+  .decision-card,
+  .summary-card,
+  .scenario-card,
+  .report-card,
+  .table-card {
+    box-shadow: 0 18px 50px rgba(23, 33, 44, 0.06);
+  }
+
+  .ops-ad-panel {
+    display: none;
+    margin: 0 0 20px;
+    padding: 14px;
+    border: 1px solid #dfe8e5;
+    border-radius: 22px;
+    background: #ffffff;
+  }
+
+  .ops-ad-panel.is-active {
+    display: block;
+  }
+
+  .ops-ad-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #8a98a4;
+    font-size: 0.78rem;
+    font-weight: 800;
+  }
+
+  @media (max-width: 680px) {
+    .hero-copy::after {
+      margin-top: 14px;
+      white-space: normal;
+      line-height: 1.45;
+    }
+
+    .decision-card,
+    .summary-card,
+    .scenario-card,
+    .report-card,
+    .table-card {
+      box-shadow: 0 10px 28px rgba(23, 33, 44, 0.05);
+    }
+  }
+</style>`;
+
+const operationsSnippet = `<script>
+(function () {
+  var config = {
+    gaMeasurementId: '',
+    adsenseClientId: '',
+    adsenseSlotId: '',
+    adsenseAutoAds: false,
+    adsEnabled: false
+  };
+
+  window.toesanaiOps = window.toesanaiOps || {};
+  window.toesanaiOps.config = config;
+
+  var state = {
+    inputStarted: false,
+    resultTracked: false,
+    adInserted: false
+  };
+
+  function loadScript(src, attrs, onload) {
+    if (!src || document.querySelector('script[src="' + src + '"]')) return;
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = src;
+    Object.keys(attrs || {}).forEach(function (key) {
+      script.setAttribute(key, attrs[key]);
+    });
+    if (onload) script.onload = onload;
+    document.head.appendChild(script);
+  }
+
+  function initAnalytics() {
+    if (!config.gaMeasurementId) return;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', config.gaMeasurementId, { send_page_view: true });
+    loadScript('https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(config.gaMeasurementId));
+  }
+
+  function trackEvent(name, params) {
+    if (!window.gtag) return;
+    window.gtag('event', name, Object.assign({ app_name: 'toesanai' }, params || {}));
+  }
+
+  function getFieldName(target) {
+    return target && target.closest ? target.closest('[data-field]')?.dataset.field : undefined;
+  }
+
+  function getResultMeta() {
+    var decision = document.getElementById('decisionDashboard');
+    var text = decision ? decision.textContent : '';
+    var status = text.indexOf('위험') >= 0 ? 'risk' : text.indexOf('주의') >= 0 ? 'caution' : text.indexOf('안정') >= 0 ? 'stable' : 'unknown';
+    var targetInput = document.querySelector('[data-field="targetRetirementAge"]');
+    var endInput = document.querySelector('[data-field="simulationUntilAge"]');
+    return {
+      status: status,
+      target_age_bucket: targetInput ? Math.round(Number(targetInput.value || 0) / 5) * 5 : undefined,
+      end_age_bucket: endInput ? Math.round(Number(endInput.value || 0) / 5) * 5 : undefined
+    };
+  }
+
+  function maybeTrackResult() {
+    var decision = document.getElementById('decisionDashboard');
+    if (!decision || state.resultTracked) return;
+    if (decision.textContent && decision.textContent.trim().length > 20) {
+      state.resultTracked = true;
+      trackEvent('result_view', getResultMeta());
+      insertAdSlot();
+    }
+  }
+
+  function initAds() {
+    if (!config.adsEnabled || !config.adsenseClientId) return;
+    loadScript('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=' + encodeURIComponent(config.adsenseClientId), {
+      crossorigin: 'anonymous'
+    }, function () {
+      insertAdSlot();
+    });
+  }
+
+  function insertAdSlot() {
+    if (!config.adsEnabled || !config.adsenseClientId || !config.adsenseSlotId || state.adInserted) return;
+    var anchor = document.getElementById('growthPanel') || document.querySelector('.results');
+    if (!anchor || !anchor.parentNode) return;
+    state.adInserted = true;
+    var panel = document.createElement('section');
+    panel.className = 'ops-ad-panel is-active';
+    panel.setAttribute('aria-label', '광고');
+    panel.innerHTML = '<span class="ops-ad-label">광고</span><ins class="adsbygoogle" style="display:block" data-ad-client="' + config.adsenseClientId + '" data-ad-slot="' + config.adsenseSlotId + '" data-ad-format="auto" data-full-width-responsive="true"></ins>';
+    anchor.parentNode.insertBefore(panel, anchor.nextSibling);
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (error) {}
+  }
+
+  document.addEventListener('input', function (event) {
+    var field = getFieldName(event.target);
+    if (!field) return;
+    if (!state.inputStarted) {
+      state.inputStarted = true;
+      trackEvent('input_started');
+    }
+    trackEvent('input_change', { field_name: field });
+  }, { passive: true });
+
+  document.addEventListener('click', function (event) {
+    var target = event.target.closest('button, a');
+    if (!target) return;
+    if (target.id === 'shareLinkButton' || target.dataset.copy === 'link') trackEvent('share_link_copy', getResultMeta());
+    if (target.id === 'shareSummaryButton' || target.dataset.copy === 'summary') trackEvent('share_summary_copy', getResultMeta());
+    if (target.id === 'resetButton') trackEvent('inputs_reset');
+    if (target.id === 'toggleInputs' || target.id === 'mobileEdit') trackEvent('input_panel_open');
+    if (target.id === 'mobileShare') trackEvent('mobile_share_tap', getResultMeta());
+  }, { passive: true });
+
+  var observer = new MutationObserver(maybeTrackResult);
+  document.addEventListener('DOMContentLoaded', function () {
+    var decision = document.getElementById('decisionDashboard');
+    if (decision) observer.observe(decision, { childList: true, subtree: true, characterData: true });
+    maybeTrackResult();
+  });
+
+  initAnalytics();
+  initAds();
+})();
+</script>`;
+
 await import('./build-standalone.mjs');
 await mkdir(deploy, { recursive: true });
-const indexHtml = await readFile(join(outputs, 'toesanai-standalone.html'), 'utf8');
-await writeFile(join(deploy, 'index.html'), indexHtml.replaceAll('og-image.png?v=4', 'og-image.png?v=5'), 'utf8');
+let indexHtml = await readFile(join(outputs, 'toesanai-standalone.html'), 'utf8');
+indexHtml = indexHtml.replaceAll('og-image.png?v=4', 'og-image.png?v=5');
+indexHtml = indexHtml.replace('</head>', `${productPolishStyle}\n</head>`);
+indexHtml = indexHtml.replace('</body>', `${operationsSnippet}\n</body>`);
+await writeFile(join(deploy, 'index.html'), indexHtml, 'utf8');
 
 const readme = `# 퇴사나이 배포본
 
@@ -47,9 +246,9 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 const headers = `/*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
-  Referrer-Policy: no-referrer
+  Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://pagead2.googlesyndication.com https://cloudflareinsights.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'
 `;
 
 const ogImage = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">

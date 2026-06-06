@@ -1,4 +1,4 @@
-import { copyFile, mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import sharp from 'sharp';
 
@@ -8,7 +8,8 @@ const deploy = join(outputs, 'deploy');
 
 await import('./build-standalone.mjs');
 await mkdir(deploy, { recursive: true });
-await copyFile(join(outputs, 'toesanai-standalone.html'), join(deploy, 'index.html'));
+const indexHtml = await readFile(join(outputs, 'toesanai-standalone.html'), 'utf8');
+await writeFile(join(deploy, 'index.html'), indexHtml.replaceAll('og-image.png?v=4', 'og-image.png?v=5'), 'utf8');
 
 const readme = `# 퇴사나이 배포본
 

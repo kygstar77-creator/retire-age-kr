@@ -1,6 +1,6 @@
 export const statusMeta = {
   stable: { label: '안정', summary: '퇴사 가능성이 높습니다' },
-  caution: { label: '주의', summary: '완충자금 점검이 필요합니다' },
+  caution: { label: '주의', summary: '몇 가지 조건 확인이 필요합니다' },
   risk: { label: '위험', summary: '목표 퇴사 나이에는 위험합니다' },
   neutral: { label: '정보', summary: '참고 지표입니다' }
 };
@@ -10,7 +10,7 @@ export function formatWon(value) {
     style: 'currency',
     currency: 'KRW',
     maximumFractionDigits: 0
-  }).format(Math.round(value || 0));
+  }).format(Math.round(Number(value || 0)));
 }
 
 export function formatCompactMoney(value) {
@@ -50,4 +50,12 @@ export function formatPercent(value) {
     maximumFractionDigits: 1,
     minimumFractionDigits: 1
   })}%`;
+}
+
+export function formatInputNumber(value) {
+  const raw = String(value ?? '').replace(/[^\d-]/g, '');
+  if (!raw || raw === '-') return raw;
+  const sign = raw.startsWith('-') ? '-' : '';
+  const digits = raw.replace('-', '');
+  return `${sign}${Number(digits).toLocaleString('ko-KR')}`;
 }

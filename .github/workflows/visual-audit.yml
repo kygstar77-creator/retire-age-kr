@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install visual audit tools
+        run: npm install --no-save playwright http-server
+
       - name: Build static site
         run: npm run build
 
@@ -34,31 +37,8 @@ jobs:
       - name: Capture screenshots
         run: |
           npx http-server outputs/deploy -p 4173 > /tmp/retire-age-preview.log 2>&1 &
-          sleep 2
-          cat > /tmp/capture.mjs <<'EOF'
-          import { chromium } from 'playwright';
-          import { mkdir, writeFile } from 'node:fs/promises';
-
-          const url = 'http://127.0.0.1:4173/';
-          await mkdir('audit-output', { recursive: true });
-          const browser = await chromium.launch();
-          const page = await browser.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1 });
-          await page.goto(url, { waitUntil: 'networkidle' });
-          await page.screenshot({ path: 'audit-output/mobile-initial.png', fullPage: true });
-          await page.click('#nextInputStep');
-          await page.click('#nextInputStep');
-          await page.click('#nextInputStep');
-          await page.click('#nextInputStep');
-          await page.click('#nextInputStep');
-          await page.screenshot({ path: 'audit-output/mobile-results.png', fullPage: true });
-          const desktop = await browser.newPage({ viewport: { width: 1440, height: 1000 }, deviceScaleFactor: 1 });
-          await desktop.goto(url, { waitUntil: 'networkidle' });
-          await desktop.screenshot({ path: 'audit-output/desktop-initial.png', fullPage: true });
-          const text = await desktop.locator('body').innerText();
-          await writeFile('audit-output/body-text.txt', text, 'utf8');
-          await browser.close();
-          EOF
-          node /tmp/capture.mjs
+          sleep 3
+          node work/audit-capture.mjs
 
       - name: Upload audit artifact
         uses: actions/upload-artifact@v4

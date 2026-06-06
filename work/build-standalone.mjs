@@ -9,6 +9,12 @@ const shareState = await readFile(join(root, 'src/utils/shareState.js'), 'utf8')
 const preview = await readFile(join(root, 'src/preview.js'), 'utf8');
 const html = await readFile(join(root, 'local-preview.html'), 'utf8');
 
+const inputFirstUx = `
+/* Keep the Codex input-first UX on every viewport in the deployed build. */
+.input-panel.input-open + .results { display: none; }
+body:has(.input-panel.input-open) .mobile-bottom-bar { display: none; }
+`;
+
 const bundledSimulator = simulator.replaceAll('export ', '');
 const bundledFormatters = formatters.replaceAll('export ', '');
 const bundledShareState = shareState.replaceAll('export ', '');
@@ -18,7 +24,7 @@ const bundledPreview = preview
   .join('\n');
 
 const standalone = html
-  .replace('<link rel="stylesheet" href="/src/styles.css" />', `<style>\n${css}\n</style>`)
+  .replace('<link rel="stylesheet" href="/src/styles.css" />', `<style>\n${css}\n${inputFirstUx}\n</style>`)
   .replace('<script type="module" src="/src/preview.js"></script>', `<script type="module">\n${bundledSimulator}\n${bundledFormatters}\n${bundledShareState}\n${bundledPreview}\n</script>`);
 
 await mkdir(join(root, 'outputs'), { recursive: true });

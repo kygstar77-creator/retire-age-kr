@@ -13,7 +13,9 @@ const bundledSimulator = simulator.replaceAll('export ', '');
 const bundledFormatters = formatters.replaceAll('export ', '');
 const bundledShareState = shareState.replaceAll('export ', '');
 const bundledPreview = preview
-  .replace(/^import .+;\r?\n/gm, '');
+  .split('\n')
+  .filter((line) => !line.trim().startsWith('import '))
+  .join('\n');
 
 const standalone = html
   .replace('<link rel="stylesheet" href="/src/styles.css" />', `<style>\n${css}\n</style>`)

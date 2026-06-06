@@ -30,12 +30,13 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
     const year = data.startYear + (age - data.currentAge);
     const isRetired = age >= retirementAge;
     const yearsFromStart = age - data.currentAge;
-    const inflatedLivingCost = yearly(data.monthlyLivingCost) * Math.pow(1 + inflation, yearsFromStart);
-    const partTimeIncome = isRetired ? yearly(data.partTimeIncomeAfterRetirement) * Math.pow(1 + inflation, yearsFromStart) : 0;
+    const inflationFactor = Math.pow(1 + inflation, yearsFromStart);
+    const livingCost = isRetired ? yearly(data.monthlyLivingCost) * inflationFactor : 0;
+    const partTimeIncome = isRetired ? yearly(data.partTimeIncomeAfterRetirement) * inflationFactor : 0;
     const pensionIncome = isRetired && age >= data.expectedPensionAge
-      ? yearly(data.expectedMonthlyPension) * Math.pow(1 + inflation, yearsFromStart)
+      ? yearly(data.expectedMonthlyPension) * inflationFactor
       : 0;
-    const withdrawal = isRetired ? Math.max(0, inflatedLivingCost - partTimeIncome - pensionIncome) : 0;
+    const withdrawal = isRetired ? Math.max(0, livingCost - partTimeIncome - pensionIncome) : 0;
     const investmentAdded = isRetired ? 0 : yearly(data.monthlyInvestment);
 
     financialAsset = financialAsset * (1 + annualReturn) + investmentAdded - withdrawal;
@@ -52,7 +53,7 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
       realEstateValue: data.realEstateValue,
       debt: data.debt,
       netWorth: financialAsset + data.realEstateValue - data.debt,
-      livingCost: isRetired ? inflatedLivingCost : 0,
+      livingCost,
       partTimeIncome,
       pensionIncome,
       withdrawal,
@@ -113,12 +114,12 @@ export function buildSimulation(inputs) {
   const targetResult = simulateRetirement(data, data.targetRetirementAge);
   const earliestRetirementAge = findEarliestRetirementAge(data);
   const scenarios = compareWorkMoreScenarios(data);
-  const depletionStatus = getRiskStatus(targetResult, data);
-  const firstScenario = scenarios[0];
-  const secondScenario = scenarios[1];
-  const gainedYears = estimateGainedYears(firstScenario, secondScenario, data.simulationUntilAge);
-  const extraAssetFromOneMoreYear = (secondScenario?.finalFinancialAsset ?? 0) - (firstScenario?.finalFinancialAsset ?? 0);
+  const status = getRiskStatus(targetResult, data);
+  const gainedYears = estimateGainedYears(scenarios[0], scenarios[1], data.simulationUntilAge);
+  const extraAssetFromOneMoreYear = (scenarios[1]?.finalFinancialAsset ?? 0) - (scenarios[0]?.finalFinancialAsset ?? 0);
   const retirementRow = targetResult.rows.find((row) => row.age === data.targetRetirementAge);
+  const pensionStartRow = targetResult.rows.find((row) => row.age === data.expectedPensionAge);
+  const finalRow = targetResult.rows.at(-1);
   const firstRetirementExpense = retirementRow?.withdrawal ?? 0;
   const retirementFinancialAsset = retirementRow?.financialAsset ?? data.financialAsset;
   const safeWithdrawalRate = retirementFinancialAsset > 0
@@ -126,9 +127,7 @@ export function buildSimulation(inputs) {
     : 0;
   const requiredFireAssetByFourPercent = firstRetirementExpense / 0.04;
   const fireGap = requiredFireAssetByFourPercent - retirementFinancialAsset;
-  const fourPercentReferenceGap = fireGap;
   const bridgeYears = Math.max(0, data.expectedPensionAge - data.targetRetirementAge);
-  const targetYears = Math.max(1, data.simulationUntilAge - data.targetRetirementAge);
   const runwayYears = targetResult.depletionAge
     ? Math.max(0, targetResult.depletionAge - data.targetRetirementAge)
     : Math.max(0, data.simulationUntilAge - data.targetRetirementAge);
@@ -137,14 +136,6 @@ export function buildSimulation(inputs) {
     targetRetirementAge: data.targetRetirementAge,
     simulationUntilAge: data.simulationUntilAge
   });
-  const marginStatus = getReferenceStatus({
-    targetResult,
-    safeWithdrawalRate,
-    simulationUntilAge: data.simulationUntilAge
-  });
-  const marginScore = survivalScore;
-  const status = depletionStatus;
-  const healthScore = survivalScore;
 
   return {
     inputs: data,
@@ -157,27 +148,30 @@ export function buildSimulation(inputs) {
     fireAssetWithoutRealEstate: data.financialAsset - data.debt,
     netWorth: data.financialAsset + data.realEstateValue - data.debt,
     firstRetirementExpense,
+    firstYearLivingCost: retirementRow?.livingCost ?? 0,
+    firstYearPartTimeIncome: retirementRow?.partTimeIncome ?? 0,
+    firstYearPensionIncome: retirementRow?.pensionIncome ?? 0,
+    pensionStartWithdrawal: pensionStartRow?.withdrawal ?? null,
     retirementFinancialAsset,
+    finalFinancialAsset: finalRow?.financialAsset ?? targetResult.finalFinancialAsset,
     safeWithdrawalRate,
     requiredFireAssetByFourPercent,
     fireGap,
-    fourPercentReferenceGap,
-    monthlySavingsGapUntilRetirement: 0,
+    fourPercentReferenceGap: fireGap,
     bridgeYears,
-    targetYears,
     runwayYears,
-    depletionStatus,
+    depletionStatus: status,
     survivalScore,
-    marginStatus,
-    marginScore,
-    healthScore
+    marginStatus: getReferenceStatus({ targetResult, safeWithdrawalRate, simulationUntilAge: data.simulationUntilAge }),
+    marginScore: survivalScore,
+    healthScore: survivalScore
   };
 }
 
 export function normalizeInputs(inputs) {
   const merged = { ...defaultInputs, ...inputs };
   return Object.fromEntries(
-    Object.entries(merged).map(([key, value]) => [key, Number(value)])
+    Object.entries(merged).map(([key, value]) => [key, Number(String(value ?? '').replace(/[^\d.-]/g, '')) || 0])
   );
 }
 
@@ -189,7 +183,6 @@ function estimateGainedYears(current, next, simulationUntilAge) {
 
 function calculateSurvivalScore({ depletionAge, targetRetirementAge, simulationUntilAge }) {
   if (!depletionAge || depletionAge > simulationUntilAge) return 100;
-
   const targetYears = Math.max(1, simulationUntilAge - targetRetirementAge);
   const coveredYears = Math.max(0, depletionAge - targetRetirementAge);
   return Math.max(5, Math.min(95, Math.round((coveredYears / targetYears) * 100)));

@@ -57,8 +57,8 @@ const ogImage = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="63
   <text x="120" y="370" fill="#17212c" font-family="Arial, sans-serif" font-size="66" font-weight="800">퇴사할 수 있을까?</text>
   <text x="120" y="462" fill="#53616c" font-family="Arial, sans-serif" font-size="32">한국형 조기은퇴·반퇴 시뮬레이터</text>
   <rect x="818" y="136" width="210" height="210" rx="18" fill="#dff3e9"/>
-  <text x="854" y="266" fill="#126044" font-family="Arial, sans-serif" font-size="92" font-weight="800">39</text>
-  <text x="940" y="266" fill="#126044" font-family="Arial, sans-serif" font-size="42" font-weight="700">세</text>
+  <text x="923" y="248" text-anchor="middle" fill="#126044" font-family="Arial, sans-serif" font-size="102" font-weight="800">39</text>
+  <text x="923" y="307" text-anchor="middle" fill="#126044" font-family="Arial, sans-serif" font-size="36" font-weight="700">세</text>
 </svg>`;
 
 await writeFile(join(deploy, 'README.md'), readme, 'utf8');

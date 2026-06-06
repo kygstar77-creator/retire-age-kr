@@ -5,6 +5,7 @@ import sharp from 'sharp';
 const root = process.cwd();
 const outputs = join(root, 'outputs');
 const deploy = join(outputs, 'deploy');
+const adsensePublisherId = '3225798545626010';
 
 const productPolishStyle = `<style>
   .hero {
@@ -160,10 +161,10 @@ const operationsSnippet = `<script>
   var config = {
     gaMeasurementId: '',
     cloudflareAnalyticsToken: '',
-    adsenseClientId: '',
+    adsenseClientId: 'ca-pub-3225798545626010',
     adsenseSlotId: '',
-    adsenseAutoAds: false,
-    adsEnabled: false
+    adsenseAutoAds: true,
+    adsEnabled: true
   };
 
   window.toesanaiOps = window.toesanaiOps || {};
@@ -309,6 +310,7 @@ const readme = `# 퇴사나이 배포본
 - index.html
 - robots.txt
 - sitemap.xml
+- ads.txt
 - og-image.png
 - og-image.svg
 
@@ -319,6 +321,9 @@ const robots = `User-agent: *
 Allow: /
 
 Sitemap: https://retire-age-kr.pages.dev/sitemap.xml
+`;
+
+const adsTxt = `google.com, pub-${adsensePublisherId}, DIRECT, f08c47fec0942fa
 `;
 
 const today = new Date().toISOString().slice(0, 10);
@@ -355,6 +360,7 @@ const ogImage = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="63
 
 await writeFile(join(deploy, 'README.md'), readme, 'utf8');
 await writeFile(join(deploy, 'robots.txt'), robots, 'utf8');
+await writeFile(join(deploy, 'ads.txt'), adsTxt, 'utf8');
 await writeFile(join(deploy, 'sitemap.xml'), sitemap, 'utf8');
 await writeFile(join(deploy, '_headers'), headers, 'utf8');
 await writeFile(join(deploy, 'og-image.svg'), ogImage, 'utf8');

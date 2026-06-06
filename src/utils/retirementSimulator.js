@@ -38,9 +38,10 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
       : 0;
     const withdrawal = isRetired ? Math.max(0, livingCost - partTimeIncome - pensionIncome) : 0;
     const investmentAdded = isRetired ? 0 : yearly(data.monthlyInvestment);
-    const investmentReturn = financialAsset > 0 ? financialAsset * annualReturn : 0;
+    const assetAfterCashFlow = financialAsset + investmentAdded - withdrawal;
+    const investmentReturn = assetAfterCashFlow > 0 ? assetAfterCashFlow * annualReturn : 0;
 
-    financialAsset = financialAsset + investmentReturn + investmentAdded - withdrawal;
+    financialAsset = assetAfterCashFlow + investmentReturn;
 
     if (financialAsset <= 0 && depletionAge === null) {
       depletionAge = age;

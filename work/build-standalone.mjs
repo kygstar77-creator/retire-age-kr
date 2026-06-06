@@ -51,7 +51,54 @@ body:has(.input-panel.input-open) .mobile-bottom-bar { display: none; }
   font-size: 12px;
   font-weight: 850;
 }
+
+.legal-footer {
+  max-width: 1180px;
+  margin: 28px auto 96px;
+  padding: 0 20px;
+  color: #6f7e89;
+  font-size: 14px;
+  text-align: center;
+}
+
+.legal-footer nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.legal-footer a {
+  color: #32414d;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.legal-footer a:hover {
+  color: #126044;
+}
+
+@media (max-width: 680px) {
+  .legal-footer {
+    margin: 24px auto 108px;
+    padding: 0 16px;
+    font-size: 13px;
+  }
+}
 `;
+
+const legalFooter = `
+<footer class="legal-footer" aria-label="서비스 운영 정보">
+  <nav>
+    <a href="/privacy">개인정보처리방침</a>
+    <span>·</span>
+    <a href="/terms">이용약관</a>
+    <span>·</span>
+    <a href="/contact">문의</a>
+  </nav>
+  <p>퇴사나이는 입력값과 가정에 따른 참고용 시뮬레이션이며, 투자 권유나 재무 자문이 아닙니다.</p>
+</footer>`;
 
 const bundledSimulator = simulator.replaceAll('export ', '');
 const bundledFormatters = formatters.replaceAll('export ', '');
@@ -72,6 +119,7 @@ const bundledPreview = patchedPreview
 
 const standalone = html
   .replace('<link rel="stylesheet" href="/src/styles.css" />', `<style>\n${css}\n${inputFirstUx}\n</style>`)
+  .replace('</main>', `</main>\n${legalFooter}`)
   .replace('<script type="module" src="/src/preview.js"></script>', `<script type="module">\n${bundledSimulator}\n${bundledFormatters}\n${bundledShareState}\n${bundledPreview}\n</script>`);
 
 await mkdir(join(root, 'outputs'), { recursive: true });

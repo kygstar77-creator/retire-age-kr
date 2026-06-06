@@ -10,9 +10,11 @@ const preview = await readFile(join(root, 'src/preview.js'), 'utf8');
 const html = await readFile(join(root, 'local-preview.html'), 'utf8');
 
 const inputFirstUx = `
-/* Keep the Codex input-first UX on every viewport in the deployed build. */
-.input-panel.input-open + .results { display: none; }
-body:has(.input-panel.input-open) .mobile-bottom-bar { display: none; }
+/* Keep the input-first UX only on mobile. Desktop should show inputs and results together. */
+@media (max-width: 680px) {
+  .input-panel.input-open + .results { display: none; }
+  body:has(.input-panel.input-open) .mobile-bottom-bar { display: none; }
+}
 
 /* Polished button and compact metric label alignment. */
 .icon-button,

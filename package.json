@@ -2,6 +2,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node work/test-simulator.mjs",
     "build": "node work/build-deploy.mjs",
     "build:deploy": "node work/build-deploy.mjs",
     "preview": "vite preview"

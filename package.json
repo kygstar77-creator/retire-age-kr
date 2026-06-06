@@ -2,7 +2,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node work/build-deploy.mjs",
     "build:deploy": "node work/build-deploy.mjs",
     "preview": "vite preview"
   },

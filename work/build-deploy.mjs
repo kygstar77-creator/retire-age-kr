@@ -1,6 +1,5 @@
-import { copyFile, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { copyFile, mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import { pathToFileURL } from 'node:url';
 
 const root = process.cwd();
 const outputs = join(root, 'outputs');
@@ -17,10 +16,9 @@ const readme = `# 퇴사나이 배포본
 ## 파일
 
 - index.html
-
-## 배포 방법
-
-Netlify, Vercel, Cloudflare Pages, GitHub Pages 같은 정적 호스팅 서비스에 이 폴더의 내용을 업로드하면 됩니다.
+- robots.txt
+- sitemap.xml
+- og-image.svg
 
 이 버전은 서버, 로그인, DB 없이 브라우저 안에서 계산하고 localStorage에 입력값을 저장합니다.
 `;
@@ -68,11 +66,3 @@ await writeFile(join(deploy, 'robots.txt'), robots, 'utf8');
 await writeFile(join(deploy, 'sitemap.xml'), sitemap, 'utf8');
 await writeFile(join(deploy, '_headers'), headers, 'utf8');
 await writeFile(join(deploy, 'og-image.svg'), ogImage, 'utf8');
-try {
-  const sharpPath = 'C:/Users/강영준/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/.pnpm/sharp@0.34.5/node_modules/sharp/lib/index.js';
-  const sharpModule = await import(pathToFileURL(sharpPath).href);
-  const sharp = sharpModule.default;
-  await sharp(Buffer.from(ogImage)).png().toFile(join(deploy, 'og-image.png'));
-} catch {
-  // Netlify builds can use the SVG directly when the local PNG renderer is unavailable.
-}

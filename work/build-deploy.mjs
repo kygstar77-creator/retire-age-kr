@@ -1,5 +1,6 @@
 import { copyFile, mkdir, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import sharp from 'sharp';
 
 const root = process.cwd();
 const outputs = join(root, 'outputs');
@@ -18,6 +19,7 @@ const readme = `# 퇴사나이 배포본
 - index.html
 - robots.txt
 - sitemap.xml
+- og-image.png
 - og-image.svg
 
 이 버전은 서버, 로그인, DB 없이 브라우저 안에서 계산하고 localStorage에 입력값을 저장합니다.
@@ -26,14 +28,14 @@ const readme = `# 퇴사나이 배포본
 const robots = `User-agent: *
 Allow: /
 
-Sitemap: https://retire-age-kr.netlify.app/sitemap.xml
+Sitemap: https://retire-age-kr.pages.dev/sitemap.xml
 `;
 
 const today = new Date().toISOString().slice(0, 10);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://retire-age-kr.netlify.app/</loc>
+    <loc>https://retire-age-kr.pages.dev/</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -66,3 +68,4 @@ await writeFile(join(deploy, 'robots.txt'), robots, 'utf8');
 await writeFile(join(deploy, 'sitemap.xml'), sitemap, 'utf8');
 await writeFile(join(deploy, '_headers'), headers, 'utf8');
 await writeFile(join(deploy, 'og-image.svg'), ogImage, 'utf8');
+await sharp(Buffer.from(ogImage)).png().toFile(join(deploy, 'og-image.png'));

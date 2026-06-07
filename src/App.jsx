@@ -3,6 +3,7 @@ import InputForm from './components/InputForm.jsx';
 import DecisionDashboard from './components/DecisionDashboard.jsx';
 import GrowthPanel from './components/GrowthPanel.jsx';
 import InsightReport from './components/InsightReport.jsx';
+import DividendCalculator from './components/DividendCalculator.jsx';
 import ScenarioComparison from './components/ScenarioComparison.jsx';
 import SummaryCards from './components/SummaryCards.jsx';
 import YearlyTable from './components/YearlyTable.jsx';
@@ -189,6 +190,7 @@ function AnalysisTab({ simulation }) {
           <article><strong>추후</strong><span>환율 자동 업데이트</span></article>
         </div>
       </section>
+      <DividendCalculator />
       <AdjustmentSummary simulation={simulation} />
       <InsightReport simulation={simulation} />
       <ScenarioComparison simulation={simulation} />

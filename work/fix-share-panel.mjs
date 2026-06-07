@@ -9,4 +9,89 @@ html = html
   .replaceAll('계산 링크 복사', '짧은 링크 복사')
   .replaceAll('결과 요약 복사', '요약 문구 복사');
 
+const mobileTopFixStyle = `<style id="mobile-top-fix">
+@media (max-width: 680px) {
+  .app-shell {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .site-nav,
+  .site-nav div {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .site-nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .site-nav strong {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  .site-nav div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .site-nav button,
+  .site-footer button {
+    width: 100%;
+    min-width: 0;
+    padding: 0 8px;
+    white-space: nowrap;
+  }
+
+  .main-tabs {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 4px;
+    padding: 6px;
+    overflow: visible;
+    border-radius: 12px;
+  }
+
+  .main-tabs button {
+    min-width: 0;
+    min-height: 42px;
+    padding: 0 4px;
+    font-size: 12px;
+    line-height: 1.15;
+    white-space: normal;
+    word-break: keep-all;
+  }
+}
+
+@media (max-width: 390px) {
+  .app-shell {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .main-tabs {
+    gap: 3px;
+    padding: 5px;
+  }
+
+  .main-tabs button {
+    min-height: 40px;
+    padding: 0 2px;
+    font-size: 11px;
+  }
+}
+</style>`;
+
+if (!html.includes('id="mobile-top-fix"')) {
+  html = html.replace('</head>', `${mobileTopFixStyle}\n</head>`);
+}
+
 await writeFile(indexPath, html, 'utf8');

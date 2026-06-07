@@ -6,10 +6,37 @@ const deploy = join(process.cwd(), 'outputs', 'deploy');
 const indexPath = join(deploy, 'index.html');
 let html = await readFile(indexPath, 'utf8');
 
+const siteUrl = 'https://retire-age-kr.pages.dev/';
+const ogImageUrl = 'https://retire-age-kr.pages.dev/og-image.png';
+const ogTitle = '퇴사나이 - 한국형 FIRE 계산기';
+const ogDescription = '현재 자산, 생활비, 국민연금, 배당·세금까지 반영해 퇴사 가능 나이를 계산해보세요.';
+
 html = html
   .replaceAll('서버 저장 없음 · 카톡 공유 최적화 · 3분 계산', '개인정보 저장 없음 · 무료 계산 · 바로 결과 확인')
-  .replaceAll('og-image.png?v=4', 'og-image.png?v=6')
-  .replaceAll('og-image.png?v=5', 'og-image.png?v=6');
+  .replaceAll('og-image.png?v=4', 'og-image.png')
+  .replaceAll('og-image.png?v=5', 'og-image.png')
+  .replaceAll('og-image.png?v=6', 'og-image.png');
+
+const metaBlock = `
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="퇴사나이" />
+<meta property="og:title" content="${ogTitle}" />
+<meta property="og:description" content="${ogDescription}" />
+<meta property="og:url" content="${siteUrl}" />
+<meta property="og:image" content="${ogImageUrl}" />
+<meta property="og:image:secure_url" content="${ogImageUrl}" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="${ogTitle}" />
+<meta name="twitter:description" content="${ogDescription}" />
+<meta name="twitter:image" content="${ogImageUrl}" />`;
+
+html = html.replace(/\s*<meta property="og:[^"]+" content="[^"]*" \/>/g, '');
+html = html.replace(/\s*<meta name="twitter:[^"]+" content="[^"]*" \/>/g, '');
+html = html.replace(/<title>.*?<\/title>/, `<title>${ogTitle}</title>\n${metaBlock}`);
+html = html.replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${siteUrl}" />`);
 
 await writeFile(indexPath, html, 'utf8');
 

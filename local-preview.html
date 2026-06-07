@@ -42,8 +42,9 @@
         .decision-panel { order: 1; }
         .summary-grid { order: 2; grid-template-columns: 1fr; }
         .insight { order: 3; }
-        .growth-panel { order: 4; }
-        .table-panel { order: 6; }
+        .dividend-calculator { order: 4; }
+        .growth-panel { order: 5; }
+        .table-panel { order: 7; }
         .metric-strip { grid-template-columns: 1fr; }
         .input-panel.input-open + .results { display: none; }
         body:has(.input-panel.input-open) .mobile-bottom-bar { display: none; }
@@ -55,6 +56,109 @@
         .strip-stable > span::before { content: "통과"; font-size: 12px; }
         .strip-caution > span { font-size: 0; }
         .strip-caution > span::before { content: "주의"; font-size: 12px; }
+      }
+      .tax-heading { align-items: start; }
+      .tax-open-button,
+      .tax-copy-button,
+      .tax-apply-button {
+        min-height: 42px;
+        border: 1px solid #17212c;
+        border-radius: 12px;
+        background: #17212c;
+        color: #ffffff;
+        cursor: pointer;
+        padding: 0 14px;
+        font-weight: 900;
+        white-space: nowrap;
+      }
+      .tax-copy-button,
+      .tax-apply-button { width: 100%; }
+      .tax-copy-button {
+        background: #ffffff;
+        color: #17212c;
+        border-color: #d6e0e5;
+      }
+      .tax-apply-button {
+        background: #25624f;
+        border-color: #25624f;
+      }
+      .compact-results {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 12px;
+      }
+      .dividend-calculator.open .compact-results { margin-bottom: 16px; }
+      .tax-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+        gap: 16px;
+        margin-top: 16px;
+      }
+      .tax-inputs,
+      .tax-results {
+        display: grid;
+        gap: 12px;
+      }
+      .tax-results { align-content: start; }
+      .tax-result-card {
+        border: 1px solid #e2e8ec;
+        border-radius: 16px;
+        background: #f8fafb;
+        padding: 16px;
+      }
+      .tax-result-card span,
+      .tax-result-card strong,
+      .tax-result-card small { display: block; }
+      .tax-result-card span {
+        color: #6a7782;
+        font-size: 13px;
+        font-weight: 850;
+      }
+      .tax-result-card strong {
+        margin-top: 6px;
+        color: #17212c;
+        font-size: 24px;
+        line-height: 1.2;
+      }
+      .tax-result-card small {
+        margin-top: 5px;
+        color: #5c6b76;
+        font-weight: 750;
+      }
+      .tax-intro {
+        margin: 0;
+        color: #56636f;
+        line-height: 1.65;
+      }
+      .tax-notice {
+        margin-top: 16px;
+        border: 1px solid #e4e9ed;
+        border-radius: 14px;
+        background: #fbfcfd;
+        padding: 14px;
+      }
+      .tax-notice strong {
+        display: block;
+        color: #17212c;
+        margin-bottom: 5px;
+      }
+      .tax-notice p {
+        margin: 0;
+        color: #5c6b76;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+      @media (max-width: 1180px) {
+        .tax-grid { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 760px) {
+        .compact-results { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 680px) {
+        .tax-heading { display: grid; }
+        .tax-open-button { width: 100%; }
+        .tax-result-card strong { font-size: 21px; }
       }
     </style>
   </head>
@@ -86,10 +190,11 @@
           <section class="growth-panel" id="growthPanel"></section>
           <section class="summary-grid" id="summaryGrid"></section>
           <section class="panel insight" id="insightReport"></section>
+          <section class="panel dividend-calculator" id="dividendCalculator"></section>
           <section class="panel"><div class="section-heading"><div><p class="eyebrow">비교</p><h2>1년 더 근무 효과</h2></div></div><div class="scenario-grid" id="scenarioGrid"></div></section>
           <section class="panel table-panel"><div class="section-heading"><div><p class="eyebrow">추이</p><h2>연도별 자산 흐름</h2></div></div><div class="table-scroll" id="yearlyTable"></div></section>
           <section class="disclaimer"><strong>참고용 시뮬레이션</strong><p>퇴사나이는 입력값과 가정에 따른 계산 결과를 제공하며, 투자 권유나 재무 자문이 아닙니다. 실제 의사결정 전에는 세금, 건강보험, 주거비, 가족 상황, 시장 변동성을 함께 검토하세요.</p></section>
-          <section class="disclaimer security-note"><strong>개인정보 보호</strong><p>입력한 자산 정보는 서버로 전송되지 않고 내 브라우저에만 저장됩니다. 공용 PC에서는 사용 후 초기화를 눌러주세요.</p></section>
+          <section class="disclaimer security-note"><strong>개인정보 보호</strong><p>입력한 자산 정보는 서버로 전송되지 않고 내 브라우저 localStorage에만 저장됩니다. 공유 링크에는 계산 복원에 필요한 숫자값이 포함될 수 있습니다. 광고 또는 방문 통계 도구가 적용되는 경우 쿠키나 유사 기술이 사용될 수 있습니다.</p></section>
           <section class="guide-panel" id="guide">
             <div class="section-heading"><div><p class="eyebrow">계산 기준</p><h2>퇴사나이는 이렇게 판단합니다</h2></div></div>
             <div class="guide-grid">
@@ -106,7 +211,7 @@
               <details><summary>내 입력값이 서버에 저장되나요?</summary><p>아니요. 입력값은 내 브라우저에만 저장됩니다. 공유 링크를 만들면 입력값이 링크 안에 담기지만, 별도 서버나 데이터베이스에는 저장하지 않습니다.</p></details>
             </div>
           </section>
-          <section class="legal-panel" id="legal"><div class="section-heading"><div><p class="eyebrow">운영 안내</p><h2>개인정보·이용약관·면책 고지</h2></div></div><div class="legal-grid"><article><h3>개인정보처리방침 요약</h3><p>퇴사나이는 서버, 로그인, 데이터베이스를 사용하지 않습니다. 사용자가 입력한 자산 정보는 브라우저 localStorage에만 저장되며 운영자에게 전송되지 않습니다.</p></article><article><h3>이용약관 요약</h3><p>본 서비스는 사용자가 입력한 가정에 따라 계산 결과를 제공하는 참고용 도구입니다. 사용자는 본인의 판단과 책임으로 결과를 활용해야 합니다.</p></article><article><h3>재무 자문 아님</h3><p>퇴사나이는 투자 권유, 금융상품 추천, 세무·법률·재무 자문을 제공하지 않습니다. 실제 퇴사와 투자 결정 전에는 전문가 상담과 공식 자료 확인이 필요합니다.</p></article></div></section>
+          <section class="legal-panel" id="legal"><div class="section-heading"><div><p class="eyebrow">운영 안내</p><h2>개인정보·이용약관·면책 고지</h2></div></div><div class="legal-grid"><article><h3>개인정보처리방침 요약</h3><p>퇴사나이는 서버, 로그인, 데이터베이스를 사용하지 않습니다. 사용자가 입력한 자산 정보는 브라우저 localStorage에만 저장되며 운영자에게 전송되지 않습니다. 공유 링크에는 계산 복원을 위한 숫자값이 담길 수 있습니다.</p></article><article><h3>광고·분석 안내</h3><p>Google AdSense, Google Analytics, Cloudflare Analytics 같은 도구가 적용되는 경우 광고 제공과 방문 통계 확인을 위해 쿠키 또는 유사 기술이 사용될 수 있습니다. 맞춤 광고 설정은 Google 광고 설정에서 관리할 수 있습니다.</p></article><article><h3>재무 자문 아님</h3><p>퇴사나이는 투자 권유, 금융상품 추천, 세무·법률·재무 자문을 제공하지 않습니다. 실제 퇴사와 투자 결정 전에는 전문가 상담과 공식 자료 확인이 필요합니다.</p></article></div></section>
         </div>
       </div>
     </main>

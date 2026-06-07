@@ -5,20 +5,20 @@ import { buildShareText, buildShareUrl, decodeInputsFromHash } from './utils/sha
 const storageKey = 'toesanai-inputs-v2';
 const hasSharedScenario = Boolean(decodeInputsFromHash(window.location.hash));
 const fields = [
-  { section: '기본', name: 'currentAge', label: '지금 내 나이', help: '만 나이에 가깝게 입력하면 됩니다.', suffix: '세' },
-  { section: '기본', name: 'targetRetirementAge', label: '퇴사하고 싶은 나이', help: '이 나이에 회사를 그만둔다고 가정합니다.', suffix: '세' },
-  { section: '기본', name: 'startYear', label: '계산 시작 연도', help: '올해 기준이면 그대로 두면 됩니다.', suffix: '년' },
-  { section: '자산', name: 'financialAsset', label: '생활비로 쓸 수 있는 금융자산', help: '예금, 주식, ETF처럼 퇴사 후 생활비로 인출할 수 있는 돈입니다.', suffix: '원', money: true },
-  { section: '자산', name: 'realEstateValue', label: '보유 부동산 가치', help: '순자산에는 넣지만 생활비 인출 재원으로는 보지 않습니다.', suffix: '원', money: true },
-  { section: '자산', name: 'debt', label: '총 대출 잔액', help: '주택담보대출, 신용대출 등 갚아야 할 원금 총액입니다.', suffix: '원', money: true },
-  { section: '현금흐름', name: 'monthlyInvestment', label: '퇴사 전 월 추가투자액', help: '월급에서 생활비를 쓰고 남아 매달 투자할 수 있는 금액입니다.', suffix: '원', money: true },
-  { section: '현금흐름', name: 'monthlyLivingCost', label: '퇴사 후 월 생활비', help: '현재 돈 가치로 입력하세요. 앱이 물가상승률을 반영해 매년 늘립니다.', suffix: '원', money: true },
-  { section: '현금흐름', name: 'partTimeIncomeAfterRetirement', label: '퇴사 후 월 추가소득', help: '부업, 프리랜서, 임대소득 등 퇴사 후에도 예상되는 월 소득입니다.', suffix: '원', money: true },
-  { section: '연금', name: 'expectedPensionAge', label: '국민연금 시작 나이', help: '예상 수령 시작 나이를 넣으세요.', suffix: '세' },
-  { section: '연금', name: 'expectedMonthlyPension', label: '국민연금 월 예상액', help: '현재 돈 가치로 입력하세요. 계산 때 물가상승률을 반영합니다.', suffix: '원', money: true },
+  { section: '기본', name: 'currentAge', label: '현재 나이', help: '정확한 만 나이가 아니어도 괜찮습니다. 평소 쓰는 나이로 넣어보세요.', suffix: '세' },
+  { section: '기본', name: 'targetRetirementAge', label: '퇴사하고 싶은 나이', help: '이 나이에 월급이 끊긴다고 보고 계산합니다.', suffix: '세' },
+  { section: '기본', name: 'startYear', label: '계산 기준 연도', help: '올해 기준으로 계산하려면 그대로 두면 됩니다.', suffix: '년' },
+  { section: '자산', name: 'financialAsset', label: '퇴사 후 생활비로 쓸 돈', help: '예금, 주식, ETF처럼 필요할 때 꺼내 쓸 수 있는 돈입니다.', suffix: '원', money: true },
+  { section: '자산', name: 'realEstateValue', label: '집·부동산 현재 가치', help: '순자산에는 넣지만, 팔기 전에는 생활비로 바로 쓰기 어렵습니다.', suffix: '원', money: true },
+  { section: '자산', name: 'debt', label: '갚아야 할 대출금', help: '주택담보대출, 신용대출 등 남아 있는 원금을 모두 더해 입력하세요.', suffix: '원', money: true },
+  { section: '현금흐름', name: 'monthlyInvestment', label: '퇴사 전 매달 모으는 돈', help: '생활비를 쓰고 남아 저축·투자할 수 있는 월 금액입니다.', suffix: '원', money: true },
+  { section: '현금흐름', name: 'monthlyLivingCost', label: '퇴사 후 매달 쓸 생활비', help: '오늘 돈 가치로 입력하세요. 이후 생활비 증가는 물가상승률로 계산합니다.', suffix: '원', money: true },
+  { section: '현금흐름', name: 'partTimeIncomeAfterRetirement', label: '퇴사 후 매달 벌 돈', help: '부업, 프리랜서, 임대소득처럼 퇴사 후에도 들어올 월 소득입니다.', suffix: '원', money: true },
+  { section: '연금', name: 'expectedPensionAge', label: '국민연금 받기 시작하는 나이', help: '예상 수령 시작 나이를 넣으세요.', suffix: '세' },
+  { section: '연금', name: 'expectedMonthlyPension', label: '국민연금 월 예상액', help: '오늘 돈 가치로 입력하면, 계산 때 물가상승률만큼 함께 늘려 반영합니다.', suffix: '원', money: true },
   { section: '가정', name: 'annualReturnRate', label: '연평균 투자수익률', help: '금융자산이 매년 평균 몇 % 불어난다고 볼지입니다.', suffix: '%' },
-  { section: '가정', name: 'inflationRate', label: '연평균 물가상승률', help: '생활비와 연금·부업 소득이 매년 몇 %씩 늘어난다고 봅니다.', suffix: '%' },
-  { section: '가정', name: 'simulationUntilAge', label: '계산 종료 나이', help: '이 나이까지 금융자산이 버티는지 확인합니다.', suffix: '세' }
+  { section: '가정', name: 'inflationRate', label: '연평균 물가상승률', help: '생활비, 국민연금, 퇴사 후 소득이 매년 몇 %씩 오른다고 볼지입니다.', suffix: '%' },
+  { section: '가정', name: 'simulationUntilAge', label: '몇 살까지 돈이 남아야 하나요?', help: '기대수명처럼 확인하고 싶은 나이를 넣으세요. 이 나이까지 마이너스가 아니면 통과로 봅니다.', suffix: '세' }
 ];
 
 let inputs = loadInputs();
@@ -119,30 +119,30 @@ function renderResults() {
 function renderDecision(simulation) {
   const { inputs: data, status, survivalScore, safeWithdrawalRate, requiredFireAssetByFourPercent, fireGap, bridgeYears, retirementFinancialAsset, firstRetirementExpense, finalFinancialAsset, targetResult } = simulation;
   const survives = !targetResult.depletionAge || targetResult.depletionAge > data.simulationUntilAge;
-  const title = survives ? `${data.targetRetirementAge}세 퇴사 가능성이 높습니다` : `${data.targetRetirementAge}세 퇴사 시 ${targetResult.depletionAge}세에 고갈될 수 있습니다`;
-  const gapText = fireGap <= 0 ? `${formatEok(Math.abs(fireGap))} 여유` : `${formatEok(fireGap)} 부족`;
+  const title = survives ? `${data.targetRetirementAge}세에 퇴사해도 ${data.simulationUntilAge}세까지 돈이 남습니다` : `${data.targetRetirementAge}세에 퇴사하면 ${targetResult.depletionAge}세쯤 돈이 바닥날 수 있어요`;
+  const gapText = fireGap <= 0 ? `${formatEok(Math.abs(fireGap))} 더 많음` : `${formatEok(fireGap)} 모자람`;
   document.querySelector('#decisionDashboard').innerHTML = `
     <div class="decision-main">
       <span class="badge badge-${status}">${statusMeta[status].label}</span>
       <h2>${title}</h2>
-      <p>목표 퇴사 시점 금융자산은 ${formatEok(retirementFinancialAsset)}이고, 첫해 예상 인출액은 ${formatEok(firstRetirementExpense)}입니다. 이 앱은 연 생활비 25배 기준과 함께, 사용자가 정한 ${data.simulationUntilAge}세까지 실제 고갈 여부를 우선 봅니다.</p>
+      <p>퇴사 시점에 생활비로 쓸 수 있는 돈은 ${formatEok(retirementFinancialAsset)}이고, 퇴사 첫해 실제로 꺼내 써야 하는 돈은 ${formatEok(firstRetirementExpense)}입니다. 퇴사나이는 먼저 ${data.simulationUntilAge}세까지 돈이 바닥나지 않는지를 보고, 25배 기준은 보수적인 참고값으로 함께 보여줍니다.</p>
       <div class="score-meter" aria-label="자산수명 점수"><span style="width: ${Math.min(100, Math.max(0, survivalScore))}%"></span></div>
     </div>
     <div class="decision-score"><small>자산수명 점수</small><strong>${survivalScore}</strong><span>/ 100</span></div>
     <div class="metric-strip">
-      <article class="strip-card strip-${status}"><span>결과</span><div><small>계산 종료 나이 기준</small><strong>${survives ? '고갈 없음' : `${targetResult.depletionAge}세 고갈`}</strong></div></article>
-      <article class="strip-card"><span>안전</span><div><small>연 생활비 25배 기준</small><strong>${formatEok(requiredFireAssetByFourPercent)}</strong></div></article>
-      <article class="strip-card"><span>차이</span><div><small>안전 기준 대비 차이</small><strong>${gapText}</strong></div></article>
-      <article class="strip-card"><span>연금 전</span><div><small>국민연금 전까지의 기간</small><strong>${bridgeYears}년</strong></div></article>
-      <article class="strip-card"><span>잔액</span><div><small>계산 종료 나이의 금융자산</small><strong>${formatEok(finalFinancialAsset)}</strong></div></article>
+      <article class="strip-card strip-${status}"><span>판정</span><div><small>${data.simulationUntilAge}세까지 확인</small><strong>${survives ? '돈 남음' : `${targetResult.depletionAge}세 바닥`}</strong></div></article>
+      <article class="strip-card"><span>참고</span><div><small>생활비 25년치 기준</small><strong>${formatEok(requiredFireAssetByFourPercent)}</strong></div></article>
+      <article class="strip-card"><span>차이</span><div><small>25년치 기준과 비교</small><strong>${gapText}</strong></div></article>
+      <article class="strip-card"><span>연금</span><div><small>연금 받기 전 기간</small><strong>${bridgeYears}년</strong></div></article>
+      <article class="strip-card"><span>잔액</span><div><small>${data.simulationUntilAge}세에 남는 돈</small><strong>${formatEok(finalFinancialAsset)}</strong></div></article>
     </div>
   `;
 }
 
 function renderGrowth(simulation, data) {
   document.querySelector('#growthPanel').innerHTML = `
-    <div><p class="eyebrow">공유</p><h2>내 결과를 친구에게 보내 비교하기</h2><p>같은 조건으로 바로 열리는 링크를 복사합니다. 결과가 현실적인지 친구에게 물어보거나, 커뮤니티에 올려 피드백을 받아보세요.</p></div>
-    <div class="growth-actions"><button type="button" data-copy="link">내 결과 공유하기</button><button type="button" data-copy="summary">결과 요약까지 복사</button></div>
+    <div><p class="eyebrow">공유</p><h2>카톡·커뮤니티에 바로 공유하기</h2><p>입력값이 담긴 링크라 상대방도 같은 조건으로 바로 볼 수 있습니다. 자산 정보는 서버에 저장되지 않고, 링크를 받은 사람의 화면에서만 다시 계산됩니다.</p></div>
+    <div class="growth-actions"><button type="button" data-copy="link">링크 복사</button><button type="button" data-copy="summary">요약 복사</button></div>
   `;
   document.querySelectorAll('[data-copy]').forEach((button) => button.addEventListener('click', async () => {
     const shareUrl = buildShareUrl(data);
@@ -165,12 +165,12 @@ function renderSummary(simulation) {
       ? `현재 월 ${formatCompactMoney(data.monthlyInvestment)}이면 목표에 도달합니다`
       : `현재보다 월 ${formatCompactMoney(requiredMonthlyInvestment - data.monthlyInvestment)} 더 필요`;
   const cards = [
-    ['목표까지 필요한 월 투자액', requiredMonthlyValue, requiredMonthlyDetail, requiredMonthlyInvestment === null ? 'risk' : requiredMonthlyInvestment <= data.monthlyInvestment ? 'stable' : 'caution', requiredMonthlyInvestment === null ? '위험' : requiredMonthlyInvestment <= data.monthlyInvestment ? '충분' : '추가 필요'],
-    ['목표 퇴사 판정', survives ? `${data.simulationUntilAge}세까지 고갈 없음` : `${targetResult.depletionAge}세 고갈 예상`, `${data.targetRetirementAge}세 퇴사 기준`, status, statusMeta[status].label],
+    ['퇴사 전 매달 모아야 할 돈', requiredMonthlyValue, requiredMonthlyDetail, requiredMonthlyInvestment === null ? 'risk' : requiredMonthlyInvestment <= data.monthlyInvestment ? 'stable' : 'caution', requiredMonthlyInvestment === null ? '위험' : requiredMonthlyInvestment <= data.monthlyInvestment ? '충분' : '추가 필요'],
+    ['목표 퇴사 판정', survives ? `${data.simulationUntilAge}세까지 돈 남음` : `${targetResult.depletionAge}세쯤 바닥 예상`, `${data.targetRetirementAge}세 퇴사 기준`, status, statusMeta[status].label],
     ['가장 빠른 퇴사 가능 나이', formatAge(earliestRetirementAge), `${data.simulationUntilAge}세까지 버티는 가장 이른 나이`, earliestRetirementAge ? 'stable' : 'risk', earliestRetirementAge ? '안정' : '위험'],
-    ['퇴사 첫해 인출률', formatPercent(safeWithdrawalRate), '첫해 인출액 ÷ 퇴사 시점 금융자산', safeWithdrawalRate >= 8 ? 'caution' : 'neutral', safeWithdrawalRate >= 8 ? '주의' : '정보'],
+    ['퇴사 첫해 꺼내 쓰는 비율', formatPercent(safeWithdrawalRate), '첫해에 쓸 돈 ÷ 퇴사 시점 금융자산', safeWithdrawalRate >= 8 ? 'caution' : 'neutral', safeWithdrawalRate >= 8 ? '주의' : '정보'],
     [`${data.simulationUntilAge}세 잔여 금융자산`, formatEok(finalFinancialAsset), '사용자가 입력한 종료 나이 기준', finalFinancialAsset > 0 ? 'stable' : 'risk', finalFinancialAsset > 0 ? '안정' : '위험'],
-    ['퇴사 시점 금융자산', formatEok(retirementFinancialAsset), '부동산을 제외하고 실제 인출 가능한 자산', 'neutral', '정보']
+    ['퇴사 시점 생활비 재원', formatEok(retirementFinancialAsset), '부동산을 제외하고 실제 꺼내 쓸 수 있는 돈', 'neutral', '정보']
   ];
   document.querySelector('#summaryGrid').innerHTML = cards.map(([label, value, detail, tone, badge]) => `
     <article class="summary-card tone-${tone}"><div class="card-top"><span class="card-icon">원</span><span class="badge badge-${tone}">${badge}</span></div><p>${label}</p><strong>${value}</strong><small>${detail}</small></article>
@@ -203,14 +203,14 @@ function isStableWithMonthlyInvestment(data, monthlyInvestment) {
 function renderInsight(simulation) {
   const { inputs: data, targetResult, earliestRetirementAge, status, gainedYears, extraAssetFromOneMoreYear, safeWithdrawalRate, fireGap, bridgeYears, firstYearLivingCost, firstRetirementExpense, firstYearPartTimeIncome, firstYearPensionIncome, pensionStartWithdrawal, retirementFinancialAsset, finalFinancialAsset } = simulation;
   const survives = !targetResult.depletionAge || targetResult.depletionAge > data.simulationUntilAge;
-  const pensionText = pensionStartWithdrawal === null ? '입력한 종료 나이가 국민연금 시작 전이라, 연금 효과는 이번 계산에 들어가지 않습니다.' : `국민연금 시작 이후 예상 연간 인출액은 ${formatEok(pensionStartWithdrawal)}입니다. 연금과 부업 소득도 물가상승률을 반영해 계산했습니다.`;
-  const fourPercentText = fireGap > 0 ? `연 생활비 25배 기준으로 보면 ${formatEok(fireGap)} 정도 부족합니다. 다만 퇴사나이의 핵심 판정은 이 기준만이 아니라 ${data.simulationUntilAge}세까지 고갈 여부입니다.` : `연 생활비 25배 기준으로도 ${formatEok(Math.abs(fireGap))} 정도 여유가 있습니다.`;
+  const pensionText = pensionStartWithdrawal === null ? '입력한 종료 나이가 국민연금 시작 전이라, 국민연금은 이번 결과에 영향을 주지 않습니다.' : `국민연금을 받기 시작한 뒤에는 연간 인출해야 하는 돈이 ${formatEok(pensionStartWithdrawal)} 수준으로 줄어듭니다. 국민연금과 퇴사 후 소득도 물가상승률만큼 같이 오른다고 보고 계산했습니다.`;
+  const fourPercentText = fireGap > 0 ? `생활비 25년치 기준으로는 ${formatEok(fireGap)} 정도 모자랍니다. 이 기준은 돈을 오래 남기기 위한 보수적인 참고선이고, 실제 판정은 ${data.simulationUntilAge}세까지 돈이 바닥나는지로 봅니다.` : `생활비 25년치 기준으로도 ${formatEok(Math.abs(fireGap))} 정도 더 많습니다.`;
   const workMoreText = gainedYears > 0 ? `1년 더 근무하면 자산수명이 약 ${gainedYears}년 늘어납니다.` : `1년 더 근무해도 고갈 나이는 같지만, ${data.simulationUntilAge}세 잔여 금융자산은 약 ${formatEok(extraAssetFromOneMoreYear)} 늘어납니다.`;
   const messages = [
-    survives ? `${data.targetRetirementAge}세 퇴사는 입력한 ${data.simulationUntilAge}세 기준에서 가능성이 높습니다. 남는 돈을 크게 남기는 계산이 아니라, 고갈되지 않는지를 먼저 보는 방식입니다.` : `${data.targetRetirementAge}세 퇴사는 ${targetResult.depletionAge}세에 금융자산이 고갈될 수 있어 조정이 필요합니다.`,
-    `퇴사 첫해 생활비는 ${formatEok(firstYearLivingCost)}, 부업 소득은 ${formatEok(firstYearPartTimeIncome)}, 국민연금 반영액은 ${formatEok(firstYearPensionIncome)}입니다. 실제 인출해야 하는 돈은 ${formatEok(firstRetirementExpense)}입니다.`,
-    `퇴사 시점 실제 FIRE 가능 자산은 부동산을 뺀 금융자산 기준 ${formatEok(retirementFinancialAsset)}입니다.`,
-    bridgeYears > 0 ? `연금 전 공백기는 ${bridgeYears}년입니다. 여기서 말하는 공백기는 퇴사 후 국민연금을 받기 전까지 금융자산과 부업 소득으로 생활비를 버티는 기간입니다.` : '퇴사 시점이 국민연금 수령 이후라 연금 전 공백기는 거의 없습니다.',
+    survives ? `${data.targetRetirementAge}세 퇴사는 입력한 ${data.simulationUntilAge}세 기준에서 가능합니다. 이 결과는 “돈을 많이 남기는지”보다 “돈이 마이너스가 되지 않는지”를 먼저 봅니다.` : `${data.targetRetirementAge}세 퇴사는 ${targetResult.depletionAge}세쯤 금융자산이 바닥날 수 있어 조정이 필요합니다.`,
+    `퇴사 첫해 생활비는 ${formatEok(firstYearLivingCost)}이고, 퇴사 후 소득과 국민연금을 뺀 뒤 실제로 꺼내 써야 하는 돈은 ${formatEok(firstRetirementExpense)}입니다.`,
+    `퇴사 시점에 생활비로 쓸 수 있는 돈은 부동산을 뺀 금융자산 기준 ${formatEok(retirementFinancialAsset)}입니다.`,
+    bridgeYears > 0 ? `국민연금 받기 전까지 ${bridgeYears}년을 금융자산과 퇴사 후 소득으로 버텨야 합니다. 이 기간이 길수록 초반 현금흐름이 중요합니다.` : '퇴사 시점이 국민연금 수령 이후라 초반에 연금 없이 버티는 기간은 거의 없습니다.',
     pensionText,
     fourPercentText,
     workMoreText,

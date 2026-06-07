@@ -22,8 +22,9 @@ export function decodeInputsFromHash(hash) {
   }
 }
 
-export function buildShareUrl() {
-  return publicUrl;
+export function buildShareUrl(inputs) {
+  if (!inputs) return publicUrl;
+  return buildScenarioShareUrl(inputs);
 }
 
 export function buildScenarioShareUrl(inputs) {
@@ -46,6 +47,6 @@ export function buildShareText(simulation) {
     `가장 빠른 퇴사 가능 나이: ${earliestRetirementAge ? `${earliestRetirementAge}세` : '없음'}`,
     `퇴사 첫해 인출률: ${safeWithdrawalRate.toLocaleString('ko-KR', { maximumFractionDigits: 1 })}%`,
     '',
-    '내 자산으로 몇 살에 퇴사할 수 있을지 계산해보기'
+    '내 조건으로 몇 살에 퇴사 가능한지 바로 열어보기'
   ].join('\n');
 }

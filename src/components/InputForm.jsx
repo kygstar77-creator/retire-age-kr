@@ -1,5 +1,6 @@
 import { ChevronDown, RotateCcw } from 'lucide-react';
 import { useState } from 'react';
+import { Button, Input } from 'antd';
 import { formatCompactMoney } from '../utils/formatters.js';
 
 const fields = [
@@ -38,14 +39,16 @@ export default function InputForm({ values, onChange, onReset }) {
           <h2>나의 퇴사 조건</h2>
         </div>
         <div className="input-actions">
-          <button className="icon-button mobile-toggle" type="button" onClick={() => setOpen((current) => !current)}>
-            <ChevronDown size={18} />
-            <span>{open ? '입력 닫기' : '입력 수정'}</span>
-          </button>
-          <button className="icon-button reset-button" type="button" onClick={onReset} title="초기화">
-            <RotateCcw size={18} />
-            <span>초기화</span>
-          </button>
+          <Button
+            className="mobile-toggle"
+            icon={<ChevronDown size={18} />}
+            onClick={() => setOpen((current) => !current)}
+          >
+            {open ? '입력 닫기' : '입력 수정'}
+          </Button>
+          <Button icon={<RotateCcw size={18} />} onClick={onReset} title="초기화">
+            초기화
+          </Button>
         </div>
       </div>
 
@@ -65,15 +68,14 @@ export default function InputForm({ values, onChange, onReset }) {
               <label className="field" key={field.name}>
                 <span>{field.label}</span>
                 <b>{field.help}</b>
-                <div className="input-wrap">
-                  <input
-                    type={field.money ? 'text' : 'number'}
-                    inputMode={field.money ? 'numeric' : undefined}
-                    value={field.money ? formatInputNumber(values[field.name]) : values[field.name]}
-                    onChange={(event) => handleInput(field, event.target.value)}
-                  />
-                  <small>{field.suffix}</small>
-                </div>
+                <Input
+                  size="large"
+                  type={field.money ? 'text' : 'number'}
+                  inputMode={field.money ? 'numeric' : undefined}
+                  addonAfter={field.suffix}
+                  value={field.money ? formatInputNumber(values[field.name]) : values[field.name]}
+                  onChange={(event) => handleInput(field, event.target.value)}
+                />
                 {field.money && <em>{formatCompactMoney(values[field.name])}</em>}
               </label>
             ))}
@@ -82,11 +84,11 @@ export default function InputForm({ values, onChange, onReset }) {
       </div>
 
       <div className="mobile-step-actions">
-        <button type="button" disabled={step === 0} onClick={() => setStep((current) => Math.max(0, current - 1))}>
+        <Button disabled={step === 0} onClick={() => setStep((current) => Math.max(0, current - 1))}>
           이전
-        </button>
-        <button
-          type="button"
+        </Button>
+        <Button
+          type="primary"
           onClick={() => {
             if (step < groupedFields.length - 1) {
               setStep((current) => current + 1);
@@ -97,7 +99,7 @@ export default function InputForm({ values, onChange, onReset }) {
           }}
         >
           {step < groupedFields.length - 1 ? '다음' : '결과 보기'}
-        </button>
+        </Button>
       </div>
     </section>
   );

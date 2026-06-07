@@ -1,4 +1,6 @@
+import { Card, Tag } from 'antd';
 import { formatAge, formatEok, statusMeta } from '../utils/formatters.js';
+import { statusTagColor } from '../theme.js';
 
 export default function ScenarioComparison({ simulation }) {
   const { inputs, scenarios } = simulation;
@@ -14,12 +16,12 @@ export default function ScenarioComparison({ simulation }) {
 
       <div className="scenario-grid">
         {scenarios.map((scenario) => (
-          <article className="scenario-card" key={scenario.extraYears}>
+          <Card key={scenario.extraYears} className="scenario-card" variant="outlined">
             <div className="scenario-header">
               <strong>{scenario.retirementAge}세 퇴사</strong>
-              <span className={`badge badge-${scenario.status}`}>
+              <Tag color={statusTagColor[scenario.status]}>
                 {statusMeta[scenario.status].label}
-              </span>
+              </Tag>
             </div>
             <dl>
               <div>
@@ -35,7 +37,7 @@ export default function ScenarioComparison({ simulation }) {
                 <dd>{formatEok(scenario.finalFinancialAsset)}</dd>
               </div>
             </dl>
-          </article>
+          </Card>
         ))}
       </div>
     </section>

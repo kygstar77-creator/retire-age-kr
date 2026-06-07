@@ -1,5 +1,7 @@
 import { ShieldCheck, TrendingUp, Wallet, Waves } from 'lucide-react';
+import { Progress, Tag } from 'antd';
 import { formatEok, formatPercent, statusMeta } from '../utils/formatters.js';
+import { statusTagColor } from '../theme.js';
 
 export default function DecisionDashboard({ simulation }) {
   const {
@@ -26,15 +28,18 @@ export default function DecisionDashboard({ simulation }) {
   return (
     <section className={`decision-panel decision-${status}`}>
       <div className="decision-main">
-        <span className={`badge badge-${status}`}>{meta.label}</span>
+        <Tag color={statusTagColor[status]} style={{ marginInlineEnd: 0 }}>{meta.label}</Tag>
         <h2>{title}</h2>
         <p>
           퇴사 시점 금융자산은 {formatEok(retirementFinancialAsset)}이고 첫해 예상 인출률은 {formatPercent(safeWithdrawalRate)}입니다.
           판정은 입력한 종료 나이까지 금융자산이 마이너스가 되는지로 계산합니다.
         </p>
-        <div className="score-meter" aria-label="자산수명 점수">
-          <span style={{ width: `${progress}%` }} />
-        </div>
+        <Progress
+          percent={progress}
+          showInfo={false}
+          strokeColor={{ '0%': '#e05d44', '50%': '#d4a62c', '100%': '#1d8a64' }}
+          aria-label="자산수명 점수"
+        />
       </div>
 
       <div className="decision-score">

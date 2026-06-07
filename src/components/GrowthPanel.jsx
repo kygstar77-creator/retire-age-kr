@@ -1,5 +1,6 @@
 import { Copy, ExternalLink, Share2 } from 'lucide-react';
 import { useState } from 'react';
+import { Button, Space } from 'antd';
 import { buildShareText, buildShareUrl } from '../utils/shareState.js';
 
 export default function GrowthPanel({ inputs, simulation }) {
@@ -25,20 +26,17 @@ export default function GrowthPanel({ inputs, simulation }) {
           앱 설치나 회원가입은 필요 없습니다.
         </p>
       </div>
-      <div className="growth-actions">
-        <button type="button" onClick={() => copy('link')}>
-          <Share2 size={18} />
+      <Space wrap className="growth-actions-antd">
+        <Button type="primary" icon={<Share2 size={18} />} onClick={() => copy('link')}>
           {copied === 'link' ? '링크 복사됨' : '계산 링크 복사'}
-        </button>
-        <button type="button" onClick={() => copy('summary')}>
-          <Copy size={18} />
+        </Button>
+        <Button icon={<Copy size={18} />} onClick={() => copy('summary')}>
           {copied === 'summary' ? '요약 복사됨' : '결과 요약 복사'}
-        </button>
-        <a href="#legal">
-          <ExternalLink size={18} />
+        </Button>
+        <Button icon={<ExternalLink size={18} />} href="#legal">
           안내 보기
-        </a>
-      </div>
+        </Button>
+      </Space>
     </section>
   );
 }

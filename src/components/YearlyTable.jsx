@@ -1,6 +1,18 @@
+import { Table } from 'antd';
 import { formatEok } from '../utils/formatters.js';
 
+const columns = [
+  { title: '연도', dataIndex: 'year', key: 'year', align: 'left' },
+  { title: '나이', dataIndex: 'age', key: 'age', align: 'right', render: (age) => `${age}세` },
+  { title: '상태', dataIndex: 'status', key: 'status', align: 'left' },
+  { title: '금융자산', dataIndex: 'financialAsset', key: 'financialAsset', align: 'right', render: (v) => formatEok(v) },
+  { title: '인출액', dataIndex: 'withdrawal', key: 'withdrawal', align: 'right', render: (v) => formatEok(v) },
+  { title: '순자산', dataIndex: 'netWorth', key: 'netWorth', align: 'right', render: (v) => formatEok(v) }
+];
+
 export default function YearlyTable({ rows }) {
+  const dataSource = rows.map((row) => ({ ...row, key: `${row.year}-${row.age}` }));
+
   return (
     <section className="panel table-panel">
       <div className="section-heading">
@@ -10,32 +22,14 @@ export default function YearlyTable({ rows }) {
         </div>
       </div>
 
-      <div className="table-scroll">
-        <table>
-          <thead>
-            <tr>
-              <th>연도</th>
-              <th>나이</th>
-              <th>상태</th>
-              <th>금융자산</th>
-              <th>인출액</th>
-              <th>순자산</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row) => (
-              <tr className={row.financialAsset <= 0 ? 'depleted-row' : ''} key={`${row.year}-${row.age}`}>
-                <td>{row.year}</td>
-                <td>{row.age}세</td>
-                <td>{row.status}</td>
-                <td>{formatEok(row.financialAsset)}</td>
-                <td>{formatEok(row.withdrawal)}</td>
-                <td>{formatEok(row.netWorth)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <Table
+        columns={columns}
+        dataSource={dataSource}
+        size="middle"
+        pagination={false}
+        scroll={{ x: 'max-content' }}
+        rowClassName={(row) => (row.financialAsset <= 0 ? 'depleted-row' : '')}
+      />
     </section>
   );
 }

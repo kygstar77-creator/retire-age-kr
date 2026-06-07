@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { Button } from 'antd';
 import InputForm from './components/InputForm.jsx';
 import DecisionDashboard from './components/DecisionDashboard.jsx';
 import GrowthPanel from './components/GrowthPanel.jsx';
@@ -116,9 +117,9 @@ export default function App() {
       </div>
       <nav className="mobile-bottom-bar">
         <a href="#input-area">입력으로 이동</a>
-        <button type="button" onClick={() => navigator.clipboard.writeText(buildShareUrl(normalizedInputs))}>
+        <Button type="primary" onClick={() => navigator.clipboard.writeText(buildShareUrl(normalizedInputs))}>
           링크 복사
-        </button>
+        </Button>
       </nav>
     </main>
   );

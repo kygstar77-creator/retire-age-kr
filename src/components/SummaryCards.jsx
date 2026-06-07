@@ -1,5 +1,7 @@
 import { AlertTriangle, CheckCircle2, Clock3, WalletCards } from 'lucide-react';
+import { Card, Tag } from 'antd';
 import { formatAge, formatEok, statusMeta } from '../utils/formatters.js';
+import { statusTagColor } from '../theme.js';
 
 export default function SummaryCards({ simulation }) {
   const { inputs, targetResult, earliestRetirementAge, status, retirementFinancialAsset, safeWithdrawalRate } = simulation;
@@ -41,15 +43,15 @@ export default function SummaryCards({ simulation }) {
   return (
     <section className="summary-grid">
       {cards.map((card) => (
-        <article className={`summary-card tone-${card.tone}`} key={card.label}>
+        <Card key={card.label} className={`summary-card tone-${card.tone}`} variant="outlined">
           <div className="card-top">
             <span className="card-icon">{card.icon}</span>
-            <span className={`badge badge-${card.tone}`}>{statusMeta[card.tone]?.label ?? '정보'}</span>
+            <Tag color={statusTagColor[card.tone]}>{statusMeta[card.tone]?.label ?? '정보'}</Tag>
           </div>
           <p>{card.label}</p>
           <strong>{card.value}</strong>
           <small>{card.detail}</small>
-        </article>
+        </Card>
       ))}
     </section>
   );

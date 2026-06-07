@@ -1,5 +1,7 @@
 import { FileText } from 'lucide-react';
+import { Tag } from 'antd';
 import { formatAge, formatEok, formatPercent, statusMeta } from '../utils/formatters.js';
+import { statusTagColor } from '../theme.js';
 
 export default function InsightReport({ simulation }) {
   const {
@@ -49,7 +51,7 @@ export default function InsightReport({ simulation }) {
           <p className="eyebrow">AI 리포트</p>
           <h2>퇴사나이 해석</h2>
         </div>
-        <span className={`badge badge-${status}`}>{statusMeta[status].label}</span>
+        <Tag color={statusTagColor[status]}>{statusMeta[status].label}</Tag>
       </div>
       <div className="insight-title">
         <FileText size={22} />

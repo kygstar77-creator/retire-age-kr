@@ -581,37 +581,13 @@ dd {
   text-align: right;
 }
 
+/* 연도별 표는 antd Table 로 대체됨 (전역 table 규칙 제거). */
 .table-scroll {
   overflow-x: auto;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 760px;
-}
-
-th,
-td {
-  border-bottom: 1px solid #e6ece8;
-  padding: 12px 10px;
-  text-align: right;
-  white-space: nowrap;
-}
-
-th:first-child,
-td:first-child,
-th:nth-child(3),
-td:nth-child(3) {
-  text-align: left;
-}
-
-th {
-  color: #5c6b76;
-  font-size: 13px;
-}
-
-.depleted-row {
+/* antd Table 의 고갈 행 강조 */
+.table-panel .depleted-row > td {
   background: #fff3f1;
   color: #9c2b1f;
 }
@@ -1178,4 +1154,38 @@ th {
     background: #17212c;
     color: #ffffff;
   }
+}
+
+/* ───────────────────────────────────────────────────────────
+   Ant Design 연동 보정
+   기존 커스텀 CSS와 antd 컴포넌트가 겹치는 부분만 정리합니다.
+   (테마 색·형태는 src/theme.js 의 토큰에서 관리)
+   ─────────────────────────────────────────────────────────── */
+
+/* SummaryCards / ScenarioComparison 는 antd Card 로 전환됨.
+   Card 루트의 중복 패딩을 제거하고 본문 패딩만 사용. */
+.summary-card.ant-card,
+.scenario-card.ant-card {
+  padding: 0;
+  box-shadow: 0 10px 24px rgba(29, 39, 51, 0.05);
+}
+
+.summary-card.ant-card > .ant-card-body {
+  padding: 18px;
+}
+
+.scenario-card.ant-card > .ant-card-body {
+  padding: 16px;
+}
+
+/* GrowthPanel 공유 버튼 묶음 (antd Space) 우측 정렬 */
+.growth-actions-antd {
+  justify-content: flex-end;
+}
+
+/* 입력 폼: antd Input 의 addonAfter(단위) 폭을 기존 디자인에 맞춤 */
+.field .ant-input-group-addon {
+  min-width: 46px;
+  color: #6a7782;
+  background: #fafbfc;
 }

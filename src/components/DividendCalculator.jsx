@@ -2,6 +2,8 @@ import { useMemo, useState } from 'react';
 import { calculateInvestmentTaxes, defaultTaxInputs } from '../utils/taxCalculator.js';
 import { formatCompactMoney } from '../utils/formatters.js';
 
+const storageKey = 'toesanai-inputs-v1';
+
 const fields = [
   ['annualDividendIncome', '연간 배당금', '세전 기준', '원', true],
   ['dividendWithholdingRate', '배당 기본 세율', '기본값 15.4%', '%', false],
@@ -19,6 +21,7 @@ export default function DividendCalculator() {
   const [values, setValues] = useState(defaultTaxInputs);
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [applied, setApplied] = useState(false);
   const result = useMemo(() => calculateInvestmentTaxes(values), [values]);
 
   const update = (name, value, money) => {
@@ -33,6 +36,21 @@ export default function DividendCalculator() {
     await navigator.clipboard.writeText(text);
     setCopied(true);
     window.setTimeout(() => setCopied(false), 1600);
+  };
+
+  const applyMonthlyDividendToFire = () => {
+    const monthlyDividend = Math.round(result.dividendTax.monthlyAfterTaxDividend);
+    const saved = safeReadSavedInputs();
+    const nextInputs = {
+      ...saved,
+      partTimeIncomeAfterRetirement: monthlyDividend
+    };
+
+    localStorage.setItem(storageKey, JSON.stringify(nextInputs));
+    setApplied(true);
+    window.setTimeout(() => {
+      window.location.href = `${window.location.origin}${window.location.pathname}`;
+    }, 450);
   };
 
   return (
@@ -87,6 +105,9 @@ export default function DividendCalculator() {
               <button className="tax-copy-button" type="button" onClick={copyMonthlyDividend}>
                 {copied ? '월 세후 배당금 복사됨' : '월 세후 배당금 복사'}
               </button>
+              <button className="tax-apply-button" type="button" onClick={applyMonthlyDividendToFire}>
+                {applied ? 'FIRE 계산에 반영 중' : '세후 배당금을 추가소득으로 반영'}
+              </button>
             </div>
           </div>
 
@@ -108,6 +129,14 @@ function ResultCard({ title, main, sub }) {
       <small>{sub}</small>
     </article>
   );
+}
+
+function safeReadSavedInputs() {
+  try {
+    return JSON.parse(localStorage.getItem(storageKey) || '{}');
+  } catch {
+    return {};
+  }
 }
 
 function formatInputNumber(value) {

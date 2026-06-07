@@ -3,6 +3,7 @@ import { formatAge, formatCompactMoney, formatEok, formatInputNumber, formatPerc
 import { buildShareText, buildShareUrl, decodeInputsFromHash } from './utils/shareState.js';
 
 const storageKey = 'toesanai-inputs-v2';
+const hasSharedScenario = Boolean(decodeInputsFromHash(window.location.hash));
 const fields = [
   { section: '기본', name: 'currentAge', label: '지금 내 나이', help: '만 나이에 가깝게 입력하면 됩니다.', suffix: '세' },
   { section: '기본', name: 'targetRetirementAge', label: '퇴사하고 싶은 나이', help: '이 나이에 회사를 그만둔다고 가정합니다.', suffix: '세' },
@@ -22,6 +23,11 @@ const fields = [
 
 let inputs = loadInputs();
 let inputStep = 0;
+
+function trackAppEvent(name, params = {}) {
+  if (!window.gtag) return;
+  window.gtag('event', name, { app_name: 'toesanai', ...params });
+}
 
 function loadInputs() {
   try {
@@ -135,11 +141,12 @@ function renderDecision(simulation) {
 
 function renderGrowth(simulation, data) {
   document.querySelector('#growthPanel').innerHTML = `
-    <div><p class="eyebrow">공유</p><h2>링크 하나로 바로 계산하게 만들기</h2><p>카톡, 커뮤니티, 블로그에서 누르면 앱 설치 없이 모바일 화면에서 바로 열립니다. 입력값도 링크에 담아 비교 시나리오로 공유할 수 있습니다.</p></div>
-    <div class="growth-actions"><button type="button" data-copy="link">계산 링크 복사</button><button type="button" data-copy="summary">결과 요약 복사</button></div>
+    <div><p class="eyebrow">공유</p><h2>내 결과를 친구에게 보내 비교하기</h2><p>같은 조건으로 바로 열리는 링크를 복사합니다. 결과가 현실적인지 친구에게 물어보거나, 커뮤니티에 올려 피드백을 받아보세요.</p></div>
+    <div class="growth-actions"><button type="button" data-copy="link">내 결과 공유하기</button><button type="button" data-copy="summary">결과 요약까지 복사</button></div>
   `;
   document.querySelectorAll('[data-copy]').forEach((button) => button.addEventListener('click', async () => {
-    const text = button.dataset.copy === 'link' ? buildShareUrl(data) : `${buildShareText(simulation)}\n\n${buildShareUrl(data)}`;
+    const shareUrl = buildShareUrl(data);
+    const text = button.dataset.copy === 'link' ? shareUrl : `${buildShareText(simulation)}\n\n${shareUrl}`;
     await navigator.clipboard.writeText(text);
     const original = button.textContent;
     button.textContent = '복사 완료';
@@ -241,7 +248,7 @@ document.querySelector('#bottomEditButton').addEventListener('click', () => {
 document.querySelector('#bottomShareButton').addEventListener('click', async () => {
   await navigator.clipboard.writeText(buildShareUrl(normalizeInputs(inputs)));
   document.querySelector('#bottomShareButton').textContent = '복사 완료';
-  window.setTimeout(() => { document.querySelector('#bottomShareButton').textContent = '링크 복사'; }, 1600);
+  window.setTimeout(() => { document.querySelector('#bottomShareButton').textContent = '내 결과 공유'; }, 1600);
 });
 document.querySelector('#resetButton').addEventListener('click', () => {
   inputs = { ...defaultInputs };
@@ -254,3 +261,6 @@ renderInputs();
 renderResults();
 document.querySelector('.input-panel').classList.add('input-open');
 document.querySelector('#mobileInputToggle').textContent = '입력 닫기';
+if (hasSharedScenario) {
+  window.setTimeout(() => trackAppEvent('scenario_loaded'), 0);
+}

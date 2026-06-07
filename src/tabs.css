@@ -242,7 +242,8 @@
 }
 
 .tax-open-button,
-.tax-copy-button {
+.tax-copy-button,
+.tax-apply-button {
   min-height: 42px;
   border: 1px solid #17212c;
   border-radius: 12px;
@@ -254,11 +255,20 @@
   white-space: nowrap;
 }
 
-.tax-copy-button {
+.tax-copy-button,
+.tax-apply-button {
   width: 100%;
+}
+
+.tax-copy-button {
   background: #ffffff;
   color: #17212c;
   border-color: #d6e0e5;
+}
+
+.tax-apply-button {
+  background: #25624f;
+  border-color: #25624f;
 }
 
 .compact-results {

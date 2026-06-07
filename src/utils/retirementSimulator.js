@@ -12,11 +12,23 @@ export const defaultInputs = {
   expectedPensionAge: 65,
   expectedMonthlyPension: 1000000,
   partTimeIncomeAfterRetirement: 0,
-  simulationUntilAge: 90
+  simulationUntilAge: 90,
+  healthInsuranceEnabled: 0,
+  monthlyHealthInsurance: 0,
+  overseasInsurancePauseEnabled: 0,
+  overseasStayEnabled: 0,
+  overseasMonthsPerYear: 0,
+  overseasContinuousDays: 0,
+  overseasMonthlyCostLocal: 0,
+  overseasExchangeRate: 40,
+  overseasAnnualExtraCost: 0,
+  overseasApplyYears: 10
 };
 
 const toRate = (value) => Number(value || 0) / 100;
 const yearly = (monthly) => Number(monthly || 0) * 12;
+const enabled = (value) => Number(value || 0) === 1;
+const clamp = (value, min, max) => Math.max(min, Math.min(max, Number(value || 0)));
 
 export function simulateRetirement(inputs, retirementAge = Number(inputs.targetRetirementAge)) {
   const data = normalizeInputs(inputs);
@@ -30,8 +42,13 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
     const year = data.startYear + (age - data.currentAge);
     const isRetired = age >= retirementAge;
     const yearsFromStart = age - data.currentAge;
+    const yearsFromRetirement = Math.max(0, age - retirementAge);
     const inflationFactor = Math.pow(1 + inflation, yearsFromStart);
-    const livingCost = isRetired ? yearly(data.monthlyLivingCost) * inflationFactor : 0;
+    const baseLivingCost = isRetired ? yearly(data.monthlyLivingCost) * inflationFactor : 0;
+    const overseasAdjustment = isRetired ? calculateOverseasAdjustment(data, inflationFactor, yearsFromRetirement) : null;
+    const adjustedLivingCost = overseasAdjustment ? overseasAdjustment.adjustedLivingCost : baseLivingCost;
+    const healthInsuranceExpense = isRetired ? calculateHealthInsuranceExpense(data, inflationFactor) : 0;
+    const livingCost = adjustedLivingCost + healthInsuranceExpense;
     const partTimeIncome = isRetired ? yearly(data.partTimeIncomeAfterRetirement) * inflationFactor : 0;
     const pensionIncome = isRetired && age >= data.expectedPensionAge
       ? yearly(data.expectedMonthlyPension) * inflationFactor
@@ -56,6 +73,10 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
       debt: data.debt,
       netWorth: financialAsset + data.realEstateValue - data.debt,
       livingCost,
+      baseLivingCost,
+      healthInsuranceExpense,
+      overseasLivingCost: overseasAdjustment?.overseasLivingCost ?? 0,
+      overseasSavings: overseasAdjustment?.annualSavings ?? 0,
       partTimeIncome,
       pensionIncome,
       withdrawal,
@@ -114,6 +135,7 @@ export function getRiskStatus(result, inputs) {
 export function buildSimulation(inputs) {
   const data = normalizeInputs(inputs);
   const targetResult = simulateRetirement(data, data.targetRetirementAge);
+  const baselineForAdjustments = buildBaselineForAdjustments(data);
   const earliestRetirementAge = findEarliestRetirementAge(data);
   const scenarios = compareWorkMoreScenarios(data);
   const status = getRiskStatus(targetResult, data);
@@ -142,6 +164,7 @@ export function buildSimulation(inputs) {
   return {
     inputs: data,
     targetResult,
+    baselineForAdjustments,
     earliestRetirementAge,
     scenarios,
     status,
@@ -151,6 +174,9 @@ export function buildSimulation(inputs) {
     netWorth: data.financialAsset + data.realEstateValue - data.debt,
     firstRetirementExpense,
     firstYearLivingCost: retirementRow?.livingCost ?? 0,
+    firstYearBaseLivingCost: retirementRow?.baseLivingCost ?? 0,
+    firstYearHealthInsurance: retirementRow?.healthInsuranceExpense ?? 0,
+    firstYearOverseasSavings: retirementRow?.overseasSavings ?? 0,
     firstYearPartTimeIncome: retirementRow?.partTimeIncome ?? 0,
     firstYearPensionIncome: retirementRow?.pensionIncome ?? 0,
     pensionStartWithdrawal: pensionStartRow?.withdrawal ?? null,
@@ -175,6 +201,51 @@ export function normalizeInputs(inputs) {
   return Object.fromEntries(
     Object.entries(merged).map(([key, value]) => [key, Number(String(value ?? '').replace(/[^\d.-]/g, '')) || 0])
   );
+}
+
+function calculateHealthInsuranceExpense(data, inflationFactor) {
+  if (!enabled(data.healthInsuranceEnabled)) return 0;
+  const overseasMonths = getInsurancePausedMonths(data);
+  const chargedMonths = 12 - overseasMonths;
+  return data.monthlyHealthInsurance * chargedMonths * inflationFactor;
+}
+
+function getInsurancePausedMonths(data) {
+  if (!enabled(data.overseasInsurancePauseEnabled)) return 0;
+  if (!enabled(data.overseasStayEnabled)) return 0;
+  if (data.overseasContinuousDays < 90) return 0;
+  return clamp(data.overseasMonthsPerYear, 0, 12);
+}
+
+function calculateOverseasAdjustment(data, inflationFactor, yearsFromRetirement) {
+  if (!enabled(data.overseasStayEnabled)) return null;
+  if (yearsFromRetirement >= Math.max(0, data.overseasApplyYears)) return null;
+
+  const overseasMonths = clamp(data.overseasMonthsPerYear, 0, 12);
+  if (overseasMonths <= 0) return null;
+
+  const domesticMonths = 12 - overseasMonths;
+  const domesticMonthlyCost = data.monthlyLivingCost * inflationFactor;
+  const overseasMonthlyCost = data.overseasMonthlyCostLocal * data.overseasExchangeRate * inflationFactor;
+  const annualExtraCost = data.overseasAnnualExtraCost * inflationFactor;
+  const adjustedLivingCost = (domesticMonthlyCost * domesticMonths) + (overseasMonthlyCost * overseasMonths) + annualExtraCost;
+  const baseLivingCost = yearly(data.monthlyLivingCost) * inflationFactor;
+
+  return {
+    adjustedLivingCost,
+    overseasLivingCost: overseasMonthlyCost * overseasMonths,
+    annualSavings: baseLivingCost - adjustedLivingCost
+  };
+}
+
+function buildBaselineForAdjustments(data) {
+  const baselineInputs = {
+    ...data,
+    healthInsuranceEnabled: 0,
+    overseasInsurancePauseEnabled: 0,
+    overseasStayEnabled: 0
+  };
+  return simulateRetirement(baselineInputs, data.targetRetirementAge);
 }
 
 function estimateGainedYears(current, next, simulationUntilAge) {

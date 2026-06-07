@@ -237,6 +237,39 @@
   font-weight: 800;
 }
 
+.tax-heading {
+  align-items: start;
+}
+
+.tax-open-button,
+.tax-copy-button {
+  min-height: 42px;
+  border: 1px solid #17212c;
+  border-radius: 12px;
+  background: #17212c;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0 14px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.tax-copy-button {
+  width: 100%;
+  background: #ffffff;
+  color: #17212c;
+  border-color: #d6e0e5;
+}
+
+.compact-results {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 12px;
+}
+
+.dividend-calculator.open .compact-results {
+  margin-bottom: 16px;
+}
+
 .tax-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
@@ -387,6 +420,12 @@
   }
 }
 
+@media (max-width: 760px) {
+  .compact-results {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 680px) {
   .tab-nav {
     position: sticky;
@@ -430,6 +469,14 @@
 
   .advanced-toggle {
     margin-bottom: 12px;
+  }
+
+  .tax-heading {
+    display: grid;
+  }
+
+  .tax-open-button {
+    width: 100%;
   }
 
   .tax-result-card strong {

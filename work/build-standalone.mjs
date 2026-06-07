@@ -27,7 +27,8 @@ const inputFirstUx = `
 }
 .mobile-toggle { min-width: 86px; padding: 0 12px; }
 .strip-card > span { min-width: 44px; width: auto; padding: 0 8px; text-align: center; word-break: keep-all; white-space: nowrap; font-size: 12px; }
-.card-icon { min-width: 50px; width: auto; padding: 0 8px; white-space: nowrap; text-align: center; font-size: 12px; font-weight: 850; }
+.summary-card .card-top { justify-content: flex-end; }
+.summary-card .card-icon { display: none; }
 `;
 
 const bundledSimulator = simulator.replaceAll('export ', '');
@@ -43,4 +44,4 @@ const standalone = html
   .replace('<script type="module" src="/src/preview.js"></script>', `<script type="module">\n${bundledSimulator}\n${bundledFormatters}\n${bundledShareState}\n${bundledPreview}\n</script>`);
 
 await mkdir(join(root, 'outputs'), { recursive: true });
-await writeFile(join(root, 'outputs', 'toesanai-standalone.html'), standalone, 'utf8');
+await writeFile(join(root, 'outputs/toesanai-standalone.html'), standalone, 'utf8');

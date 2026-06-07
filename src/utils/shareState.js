@@ -42,6 +42,11 @@ export function decodeInputsFromHash(input) {
     const value = String(input || '');
     if (value.startsWith('?')) return decodeInputsFromSearch(value);
 
+    if (!value && typeof window !== 'undefined' && window.location?.search) {
+      const queryDecoded = decodeInputsFromSearch(window.location.search);
+      if (queryDecoded) return queryDecoded;
+    }
+
     const cleanHash = value.replace(/^#/, '');
     if (!cleanHash.startsWith(encodedPrefix)) return null;
     const encoded = cleanHash.slice(encodedPrefix.length);

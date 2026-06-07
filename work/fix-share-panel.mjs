@@ -11,6 +11,10 @@ html = html
   .replaceAll('결과 요약 복사', '요약 문구 복사');
 
 const mobileTopFixStyle = `<style id="mobile-top-fix">
+.tax-open-button {
+  display: none !important;
+}
+
 @media (max-width: 680px) {
   .app-shell {
     width: 100%;
@@ -144,7 +148,6 @@ const mobileTopFixStyle = `<style id="mobile-top-fix">
     overflow-wrap: anywhere;
   }
 
-  .tax-open-button,
   .tax-copy-button,
   .tax-apply-button,
   .share-actions button,

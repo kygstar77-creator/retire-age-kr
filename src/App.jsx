@@ -49,6 +49,8 @@ function buildShareSummary(inputs, simulation) {
     `퇴사 시 예상 금융자산: ${formatWon(simulation.retirementFinancialAsset)}`,
     `예상 자산 유지 나이: ${depletionText}`,
     `기대 연수익률: ${inputs.annualReturnRate}%`,
+    `퇴사 첫해 건보료 반영액: ${formatWon(simulation.firstYearHealthInsurance)}`,
+    `퇴사 첫해 해외체류 절감액: ${formatWon(simulation.firstYearOverseasSavings)}`,
     '',
     '계산해보기:',
     buildShareUrl(inputs),
@@ -108,30 +110,55 @@ function PolicySections() {
   );
 }
 
+function AdjustmentSummary({ simulation }) {
+  const inputs = simulation.inputs;
+  const baselineDepletion = simulation.baselineForAdjustments?.depletionAge;
+  const adjustedDepletion = simulation.targetResult.depletionAge;
+  const baselineText = baselineDepletion ? `${baselineDepletion}세` : `${inputs.simulationUntilAge}세 이상`;
+  const adjustedText = adjustedDepletion ? `${adjustedDepletion}세` : `${inputs.simulationUntilAge}세 이상`;
+  const healthOn = inputs.healthInsuranceEnabled === 1;
+  const overseasOn = inputs.overseasStayEnabled === 1;
+
+  return (
+    <section className="panel adjustment-summary">
+      <div className="section-heading compact-heading">
+        <div>
+          <p className="eyebrow">고급 설정 반영</p>
+          <h2>건보료·해외체류 효과</h2>
+        </div>
+      </div>
+      <div className="adjustment-grid">
+        <article>
+          <span>퇴사 첫해 건보료</span>
+          <strong>{healthOn ? formatWon(simulation.firstYearHealthInsurance) : '미반영'}</strong>
+          <small>사용자 입력 기준</small>
+        </article>
+        <article>
+          <span>퇴사 첫해 해외체류 절감</span>
+          <strong>{overseasOn ? formatWon(simulation.firstYearOverseasSavings) : '미반영'}</strong>
+          <small>환율·부대비 포함</small>
+        </article>
+        <article>
+          <span>기본 대비 자산 유지</span>
+          <strong>{baselineText} → {adjustedText}</strong>
+          <small>고급 설정 전후 비교</small>
+        </article>
+      </div>
+      <p>
+        건강보험료와 해외 체류는 실제 공단 기준, 체류일수, 환율, 비자, 보험료에 따라 달라질 수 있습니다.
+        이 영역은 의사결정 전 대략적인 민감도를 보는 참고용입니다.
+      </p>
+    </section>
+  );
+}
+
 function CalculatorTab({ inputs, normalizedInputs, simulation, onChange, onReset, onMoveToAnalysis }) {
   return (
     <div className="tab-layout calculator-layout">
       <InputForm values={inputs} onChange={onChange} onReset={onReset} />
       <div className="results">
         <DecisionDashboard simulation={simulation} />
-        <section className="panel advanced-preview">
-          <div className="section-heading compact-heading">
-            <div>
-              <p className="eyebrow">다음 확장 예정</p>
-              <h2>고급 설정은 접힘형으로 추가</h2>
-            </div>
-          </div>
-          <div className="advanced-chip-grid" aria-label="추가 예정 고급 설정">
-            <span>국민연금</span>
-            <span>반퇴 소득</span>
-            <span>건강보험료</span>
-            <span>해외 체류</span>
-            <span>환율</span>
-          </div>
-          <p>
-            기본 계산을 방해하지 않도록 고급 설정은 접힘 영역으로 분리합니다. 관련 금액은 참고용 추정값으로만 제공합니다.
-          </p>
-        </section>
+        <AdjustmentSummary simulation={simulation} />
         <GrowthPanel inputs={normalizedInputs} simulation={simulation} />
         <SummaryCards simulation={simulation} />
         <button className="wide-secondary-button" type="button" onClick={onMoveToAnalysis}>
@@ -153,15 +180,16 @@ function AnalysisTab({ simulation }) {
           </div>
         </div>
         <p>
-          여기서는 현재 제공 중인 인사이트, 근무 연장 시나리오, 연도별 상세표를 한곳에서 확인합니다.
-          다음 단계에서 건강보험료, 해외 체류, 환율 민감도를 같은 영역에 추가합니다.
+          현재는 근무 연장 시나리오와 연도별 상세표를 제공합니다. 고급 설정을 켜면 건강보험료,
+          해외 체류, 환율 가정이 자산수명에 함께 반영됩니다.
         </p>
         <div className="analysis-roadmap">
-          <article><strong>1차</strong><span>현재 결과 재배치</span></article>
-          <article><strong>2차</strong><span>고급 비용 수동 입력</span></article>
-          <article><strong>3차</strong><span>환율 자동 업데이트</span></article>
+          <article><strong>기본</strong><span>수익률·생활비·퇴사나이</span></article>
+          <article><strong>고급</strong><span>건보료·해외체류 수동 입력</span></article>
+          <article><strong>추후</strong><span>환율 자동 업데이트</span></article>
         </div>
       </section>
+      <AdjustmentSummary simulation={simulation} />
       <InsightReport simulation={simulation} />
       <ScenarioComparison simulation={simulation} />
       <YearlyTable rows={simulation.targetResult.rows} />

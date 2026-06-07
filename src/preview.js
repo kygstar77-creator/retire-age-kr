@@ -343,9 +343,9 @@ function normalizeTaxInputs(values) {
 
 function calculateDividendTax(data) {
   const grossDividend = Math.max(0, data.annualDividendIncome);
-  const withholdingTax = grossDividend * toRate(data.dividendWithholdingRate);
+  const withholdingTax = grossDividend * taxRate(data.dividendWithholdingRate);
   const amountAboveThreshold = Math.max(0, grossDividend - data.financialIncomeThreshold);
-  const additionalTaxEstimate = amountAboveThreshold * toRate(data.additionalDividendTaxRate);
+  const additionalTaxEstimate = amountAboveThreshold * taxRate(data.additionalDividendTaxRate);
   const totalTax = withholdingTax + additionalTaxEstimate;
   const afterTaxDividend = Math.max(0, grossDividend - totalTax);
   return {
@@ -363,7 +363,7 @@ function calculateDividendTax(data) {
 function calculateForeignStockGainTax(data) {
   const gain = Math.max(0, data.foreignStockGain);
   const taxableGain = Math.max(0, gain - data.foreignStockBasicDeduction);
-  const tax = taxableGain * toRate(data.foreignStockTaxRate);
+  const tax = taxableGain * taxRate(data.foreignStockTaxRate);
   return {
     gain,
     basicDeduction: data.foreignStockBasicDeduction,
@@ -376,10 +376,10 @@ function calculateForeignStockGainTax(data) {
 
 function calculateRequiredDividendAsset(data) {
   const targetAnnualAfterTaxDividend = Math.max(0, data.targetMonthlyDividendAfterTax) * 12;
-  const yieldRate = toRate(data.expectedDividendYield);
-  const taxRate = toRate(data.dividendWithholdingRate + data.additionalDividendTaxRate);
-  const reinvestmentRate = toRate(data.dividendReinvestmentRate);
-  const spendableRate = Math.max(0, 1 - taxRate - reinvestmentRate);
+  const yieldRate = taxRate(data.expectedDividendYield);
+  const totalTaxRate = taxRate(data.dividendWithholdingRate + data.additionalDividendTaxRate);
+  const reinvestmentRate = taxRate(data.dividendReinvestmentRate);
+  const spendableRate = Math.max(0, 1 - totalTaxRate - reinvestmentRate);
   const netYieldRate = yieldRate * spendableRate;
   return {
     targetAnnualAfterTaxDividend,
@@ -390,7 +390,7 @@ function calculateRequiredDividendAsset(data) {
   };
 }
 
-function toRate(value) {
+function taxRate(value) {
   return Number(value || 0) / 100;
 }
 

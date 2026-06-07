@@ -59,9 +59,94 @@
   margin-top: 20px;
 }
 
+.advanced-toggle {
+  display: grid;
+  width: 100%;
+  gap: 2px;
+  margin: 0 0 16px;
+  border: 1px solid #dce4e9;
+  border-radius: 14px;
+  background: #f8fafb;
+  color: #17212c;
+  cursor: pointer;
+  padding: 13px 14px;
+  text-align: left;
+}
+
+.advanced-toggle span {
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.advanced-toggle small {
+  color: #6a7782;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.advanced-toggle.active {
+  border-color: #25624f;
+  background: #eef7f2;
+}
+
+.toggle-field {
+  border: 1px solid #e3e9ed;
+  border-radius: 14px;
+  background: #fbfcfd;
+  padding: 12px;
+}
+
+.toggle-button {
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #dce4e9;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #40505d;
+  cursor: pointer;
+  padding: 0 13px;
+}
+
+.toggle-button strong {
+  color: #7b8794;
+  font-size: 16px;
+  font-weight: 950;
+}
+
+.toggle-button small {
+  color: #7b8794;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.toggle-button.on {
+  border-color: #25624f;
+  background: #17212c;
+  color: #ffffff;
+}
+
+.toggle-button.on strong,
+.toggle-button.on small {
+  color: #ffffff;
+}
+
+.input-policy-note {
+  margin: 16px 0 0;
+  border-radius: 12px;
+  background: #f6f8fb;
+  color: #5c6b76;
+  padding: 12px;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
 .advanced-preview p,
 .analysis-intro p,
-.share-panel p {
+.share-panel p,
+.adjustment-summary p {
   margin: 0;
   color: #56636f;
   line-height: 1.65;
@@ -73,7 +158,8 @@
 
 .advanced-chip-grid,
 .analysis-roadmap,
-.privacy-checklist {
+.privacy-checklist,
+.adjustment-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -91,6 +177,39 @@
   padding: 0 12px;
   font-size: 13px;
   font-weight: 850;
+}
+
+.adjustment-grid article {
+  flex: 1 1 160px;
+  border: 1px solid #e2e8ec;
+  border-radius: 14px;
+  background: #f8fafb;
+  padding: 14px;
+}
+
+.adjustment-grid span,
+.adjustment-grid strong,
+.adjustment-grid small {
+  display: block;
+}
+
+.adjustment-grid span {
+  color: #6a7782;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.adjustment-grid strong {
+  margin-top: 4px;
+  color: #17212c;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.adjustment-grid small {
+  margin-top: 3px;
+  color: #6a7782;
+  font-weight: 700;
 }
 
 .analysis-roadmap article {
@@ -235,6 +354,10 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+  }
+
+  .advanced-toggle {
+    margin-bottom: 12px;
   }
 
   .share-actions {

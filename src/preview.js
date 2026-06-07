@@ -429,8 +429,6 @@ document.querySelector('#resetButton').addEventListener('click', () => {
 
 renderInputs();
 renderResults();
-document.querySelector('.input-panel').classList.add('input-open');
-document.querySelector('#mobileInputToggle').textContent = '입력 닫기';
 if (hasSharedScenario) {
   window.setTimeout(() => trackAppEvent('scenario_loaded'), 0);
 }

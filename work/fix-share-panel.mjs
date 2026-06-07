@@ -110,14 +110,36 @@ const mobileTopFixStyle = `<style id="mobile-top-fix">
   .section-heading h2 {
     font-size: 25px;
     line-height: 1.28;
+    letter-spacing: -0.02em;
     word-break: keep-all;
     overflow-wrap: anywhere;
   }
 
+  .eyebrow,
+  .tax-result-card span,
+  .mini-row span,
+  .field span,
+  .tool-card span,
+  .badge,
+  .hero-metric span,
+  th {
+    font-size: 14px;
+    line-height: 1.35;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
   .feature-intro,
-  .hub-intro {
+  .hub-intro,
+  .tax-notice p,
+  .tool-card p,
+  .trust-grid p,
+  .decision-main p,
+  .share-card pre {
     font-size: 15px;
     line-height: 1.68;
+    font-weight: 650;
+    letter-spacing: -0.015em;
     word-break: keep-all;
     overflow-wrap: anywhere;
   }
@@ -133,6 +155,9 @@ const mobileTopFixStyle = `<style id="mobile-top-fix">
     min-height: 50px;
     padding: 0 14px;
     border-radius: 16px;
+    font-size: 16px;
+    font-weight: 850;
+    letter-spacing: -0.015em;
     white-space: nowrap;
     word-break: keep-all;
     line-height: 1.15;
@@ -158,15 +183,48 @@ const mobileTopFixStyle = `<style id="mobile-top-fix">
     border-radius: 18px;
   }
 
-  .tax-result-card {
+  .tax-result-card,
+  .mini-row {
     padding: 18px;
   }
 
   .tax-result-card strong,
+  .mini-row strong,
+  .summary-card strong,
+  .strip-card strong {
+    font-size: 30px;
+    line-height: 1.16;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    word-break: keep-all;
+  }
+
+  .tax-result-card small,
+  .summary-card small,
+  .strip-card small,
+  .field b,
+  dd,
+  dt {
+    font-size: 14px;
+    line-height: 1.42;
+    font-weight: 750;
+    letter-spacing: -0.015em;
+  }
+
   .mini-row strong {
     font-size: 28px;
-    line-height: 1.18;
-    word-break: keep-all;
+  }
+
+  .tax-result-card strong:only-child,
+  .mini-row strong:only-child {
+    margin-top: 4px;
+  }
+
+  .decision-score strong,
+  .hero-metric strong {
+    font-size: 34px;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
   }
 }
 
@@ -201,6 +259,16 @@ const mobileTopFixStyle = `<style id="mobile-top-fix">
 
   .section-heading h2 {
     font-size: 24px;
+  }
+
+  .tax-result-card strong,
+  .summary-card strong,
+  .strip-card strong {
+    font-size: 28px;
+  }
+
+  .mini-row strong {
+    font-size: 26px;
   }
 }
 </style>`;

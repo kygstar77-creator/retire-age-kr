@@ -15,6 +15,7 @@ const mobileTopFixStyle = `<style id="mobile-top-fix">
   .app-shell {
     width: 100%;
     max-width: 100%;
+    padding-top: 18px;
     padding-left: 12px;
     padding-right: 12px;
   }
@@ -70,10 +71,108 @@ const mobileTopFixStyle = `<style id="mobile-top-fix">
     white-space: normal;
     word-break: keep-all;
   }
+
+  .hub-panel,
+  .stay-scenario,
+  .health-estimator,
+  .dividend-calculator,
+  .share-community,
+  .guide-panel,
+  .legal-panel,
+  .disclaimer,
+  .growth-panel,
+  .input-panel,
+  .decision-panel,
+  .panel {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 22px;
+  }
+
+  .hub-panel,
+  .stay-scenario,
+  .health-estimator,
+  .dividend-calculator,
+  .share-community,
+  .guide-panel,
+  .legal-panel,
+  .panel {
+    padding: 20px;
+  }
+
+  .section-heading {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 12px;
+  }
+
+  .section-heading h2 {
+    font-size: 25px;
+    line-height: 1.28;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .feature-intro,
+  .hub-intro {
+    font-size: 15px;
+    line-height: 1.68;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .tax-open-button,
+  .tax-copy-button,
+  .tax-apply-button,
+  .share-actions button,
+  .growth-actions button,
+  .growth-actions a,
+  .section-heading > button {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 14px;
+    border-radius: 16px;
+    white-space: nowrap;
+    word-break: keep-all;
+    line-height: 1.15;
+  }
+
+  .compact-results,
+  .share-actions,
+  .tax-grid,
+  .feature-grid,
+  .mini-grid,
+  .tool-grid,
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tax-result-card,
+  .tool-card,
+  .trust-grid article,
+  .mini-row,
+  .share-card,
+  .summary-card,
+  .scenario-card {
+    border-radius: 18px;
+  }
+
+  .tax-result-card {
+    padding: 18px;
+  }
+
+  .tax-result-card strong,
+  .mini-row strong {
+    font-size: 28px;
+    line-height: 1.18;
+    word-break: keep-all;
+  }
 }
 
 @media (max-width: 390px) {
   .app-shell {
+    padding-top: 16px;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -87,6 +186,21 @@ const mobileTopFixStyle = `<style id="mobile-top-fix">
     min-height: 40px;
     padding: 0 2px;
     font-size: 11px;
+  }
+
+  .hub-panel,
+  .stay-scenario,
+  .health-estimator,
+  .dividend-calculator,
+  .share-community,
+  .guide-panel,
+  .legal-panel,
+  .panel {
+    padding: 18px;
+  }
+
+  .section-heading h2 {
+    font-size: 24px;
   }
 }
 </style>`;

@@ -3,8 +3,8 @@
   "scripts": {
     "dev": "vite",
     "prebuild": "node work/test-simulator.mjs",
-    "build": "node work/build-deploy.mjs && node work/fix-ads-txt.mjs && node work/fix-ga.mjs && node work/fix-branding-og.mjs",
-    "build:deploy": "node work/build-deploy.mjs && node work/fix-ads-txt.mjs && node work/fix-ga.mjs && node work/fix-branding-og.mjs",
+    "build": "node work/build-deploy.mjs && node work/fix-ads-txt.mjs && node work/fix-ga.mjs && node work/fix-branding-og.mjs && node work/fix-share-panel.mjs",
+    "build:deploy": "node work/build-deploy.mjs && node work/fix-ads-txt.mjs && node work/fix-ga.mjs && node work/fix-branding-og.mjs && node work/fix-share-panel.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

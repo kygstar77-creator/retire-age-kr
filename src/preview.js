@@ -3,7 +3,31 @@ import { formatAge, formatCompactMoney, formatEok, formatInputNumber, formatPerc
 import { buildShareText, buildShareUrl, decodeInputsFromHash } from './utils/shareState.js';
 
 const storageKey = 'toesanai-inputs-v2';
-const hasSharedScenario = Boolean(decodeInputsFromHash(window.location.hash));
+const hasSharedScenario = Boolean(decodeInputsFromHash(window.location.search || window.location.hash));
+const defaultTaxInputs = {
+  annualDividendIncome: 12000000,
+  dividendWithholdingRate: 15.4,
+  financialIncomeThreshold: 20000000,
+  additionalDividendTaxRate: 0,
+  foreignStockGain: 10000000,
+  foreignStockBasicDeduction: 2500000,
+  foreignStockTaxRate: 22,
+  targetMonthlyDividendAfterTax: 2000000,
+  expectedDividendYield: 7,
+  dividendReinvestmentRate: 0
+};
+const taxFields = [
+  ['annualDividendIncome', '연간 배당금', '세전 기준', '원', true],
+  ['dividendWithholdingRate', '배당 기본 세율', '기본값 15.4%', '%', false],
+  ['financialIncomeThreshold', '금융소득 확인 기준', '기본값 2,000만 원', '원', true],
+  ['additionalDividendTaxRate', '초과분 추가 추정세율', '민감도 확인용', '%', false],
+  ['foreignStockGain', '해외주식 연간 양도차익', '차익 기준', '원', true],
+  ['foreignStockBasicDeduction', '해외주식 기본공제', '기본값 250만 원', '원', true],
+  ['foreignStockTaxRate', '해외주식 양도세율', '기본값 22%', '%', false],
+  ['targetMonthlyDividendAfterTax', '목표 월 세후 배당금', '월 현금흐름 목표', '원', true],
+  ['expectedDividendYield', '예상 배당률', '연 배당률', '%', false],
+  ['dividendReinvestmentRate', '배당 재투자 비율', '재투자할 비율', '%', false]
+];
 const fields = [
   { section: '기본', name: 'currentAge', label: '현재 나이', help: '정확한 만 나이가 아니어도 괜찮습니다. 평소 쓰는 나이로 넣어보세요.', suffix: '세' },
   { section: '기본', name: 'targetRetirementAge', label: '퇴사하고 싶은 나이', help: '이 나이에 월급이 끊긴다고 보고 계산합니다.', suffix: '세' },
@@ -22,6 +46,8 @@ const fields = [
 ];
 
 let inputs = loadInputs();
+let taxInputs = { ...defaultTaxInputs };
+let dividendOpen = false;
 let inputStep = 0;
 
 function trackAppEvent(name, params = {}) {
@@ -31,7 +57,7 @@ function trackAppEvent(name, params = {}) {
 
 function loadInputs() {
   try {
-    const shared = decodeInputsFromHash(window.location.hash);
+    const shared = decodeInputsFromHash(window.location.search || window.location.hash);
     const saved = localStorage.getItem(storageKey);
     return shared ? { ...defaultInputs, ...shared } : saved ? { ...defaultInputs, ...JSON.parse(saved) } : { ...defaultInputs };
   } catch {
@@ -112,6 +138,7 @@ function renderResults() {
   renderGrowth(simulation, data);
   renderSummary(simulation);
   renderInsight(simulation);
+  renderDividendCalculator();
   renderScenarios(simulation);
   renderTable(simulation.targetResult.rows);
 }
@@ -222,6 +249,149 @@ function renderInsight(simulation) {
     <div class="insight-title"><span>분석</span><strong>${survives ? '고갈 기준으로는 퇴사 가능성이 높습니다' : statusMeta[status].summary}</strong></div>
     <ul>${messages.map((message) => `<li>${message}</li>`).join('')}</ul>
   `;
+}
+
+function renderDividendCalculator() {
+  const target = document.querySelector('#dividendCalculator');
+  if (!target) return;
+  const result = calculateInvestmentTaxes(taxInputs);
+  target.classList.toggle('open', dividendOpen);
+  target.innerHTML = `
+    <div class="section-heading tax-heading">
+      <div><p class="eyebrow">Dividend</p><h2>배당금·해외주식 세금 계산기</h2></div>
+      <button class="tax-open-button" type="button" id="toggleDividendCalculator">${dividendOpen ? '접기' : '계산기 열기'}</button>
+    </div>
+    <div class="tax-results compact-results">
+      ${renderTaxCard('월 세후 배당금', formatCompactMoney(result.dividendTax.monthlyAfterTaxDividend), '배당 기본 세율 반영')}
+      ${renderTaxCard('해외주식 양도세', formatCompactMoney(result.foreignStockTax.tax), '기본공제 차감 후')}
+      ${renderTaxCard('필요 배당 원금', formatCompactMoney(result.requiredAsset.requiredAsset), `순수령 배당률 ${formatPercent(result.requiredAsset.netYieldRate)}`)}
+    </div>
+    ${dividendOpen ? `
+      <p class="tax-intro">배당금, 해외주식 양도차익, 목표 월 배당금을 입력해 세후 현금흐름과 필요 원금을 대략 확인합니다.</p>
+      <div class="tax-grid">
+        <div class="tax-inputs">
+          ${taxFields.map(([name, label, help, suffix, money]) => `
+            <label class="field">
+              <span>${label}</span>
+              <b>${help}</b>
+              <div class="input-wrap">
+                <input type="${money ? 'text' : 'number'}" inputmode="${money ? 'numeric' : 'decimal'}" value="${money ? formatInputNumber(taxInputs[name]) : taxInputs[name]}" data-tax-field="${name}" data-tax-money="${money ? 'true' : 'false'}" />
+                <small>${suffix}</small>
+              </div>
+              ${money ? `<em>${formatCompactMoney(taxInputs[name])}</em>` : ''}
+            </label>
+          `).join('')}
+        </div>
+        <div class="tax-results">
+          ${renderTaxCard('연 세후 배당금', formatCompactMoney(result.dividendTax.afterTaxDividend), `월 ${formatCompactMoney(result.dividendTax.monthlyAfterTaxDividend)}`)}
+          ${renderTaxCard('배당 세금 추정', formatCompactMoney(result.dividendTax.totalTax), `실효 ${formatPercent(result.dividendTax.effectiveTaxRate)}`)}
+          ${renderTaxCard('해외주식 양도세 추정', formatCompactMoney(result.foreignStockTax.tax), `세후차익 ${formatCompactMoney(result.foreignStockTax.afterTaxGain)}`)}
+          ${renderTaxCard('필요 배당 원금', formatCompactMoney(result.requiredAsset.requiredAsset), `순수령 배당률 ${formatPercent(result.requiredAsset.netYieldRate)}`)}
+          <button class="tax-copy-button" type="button" id="copyMonthlyDividend">월 세후 배당금 복사</button>
+          <button class="tax-apply-button" type="button" id="applyMonthlyDividend">세후 배당금을 추가소득으로 반영</button>
+        </div>
+      </div>
+      <div class="tax-notice"><strong>참고용 계산</strong><p>세율, 공제, 종합과세, 계좌 종류, 환율, 손익통산에 따라 실제 금액은 달라질 수 있습니다.</p></div>
+    ` : ''}
+  `;
+
+  document.querySelector('#toggleDividendCalculator')?.addEventListener('click', () => {
+    dividendOpen = !dividendOpen;
+    renderDividendCalculator();
+  });
+  document.querySelectorAll('[data-tax-field]').forEach((input) => {
+    input.addEventListener('input', (event) => {
+      const isMoney = event.target.dataset.taxMoney === 'true';
+      const nextValue = isMoney ? event.target.value.replace(/[^\d-]/g, '') : event.target.value;
+      taxInputs[event.target.dataset.taxField] = nextValue;
+      renderDividendCalculator();
+    });
+  });
+  document.querySelector('#copyMonthlyDividend')?.addEventListener('click', async () => {
+    await navigator.clipboard.writeText(Math.round(result.dividendTax.monthlyAfterTaxDividend).toString());
+    document.querySelector('#copyMonthlyDividend').textContent = '월 세후 배당금 복사됨';
+  });
+  document.querySelector('#applyMonthlyDividend')?.addEventListener('click', () => {
+    inputs = {
+      ...inputs,
+      partTimeIncomeAfterRetirement: Math.round(result.dividendTax.monthlyAfterTaxDividend)
+    };
+    saveInputs();
+    renderInputs();
+    renderResults();
+    document.querySelector('#applyMonthlyDividend')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+}
+
+function renderTaxCard(title, main, sub) {
+  return `<article class="tax-result-card"><span>${title}</span><strong>${main}</strong><small>${sub}</small></article>`;
+}
+
+function calculateInvestmentTaxes(values = {}) {
+  const data = normalizeTaxInputs({ ...defaultTaxInputs, ...values });
+  const dividendTax = calculateDividendTax(data);
+  const foreignStockTax = calculateForeignStockGainTax(data);
+  const requiredAsset = calculateRequiredDividendAsset(data);
+  return { inputs: data, dividendTax, foreignStockTax, requiredAsset };
+}
+
+function normalizeTaxInputs(values) {
+  return Object.fromEntries(
+    Object.entries(values).map(([key, value]) => [key, Number(String(value ?? '').replace(/[^\d.-]/g, '')) || 0])
+  );
+}
+
+function calculateDividendTax(data) {
+  const grossDividend = Math.max(0, data.annualDividendIncome);
+  const withholdingTax = grossDividend * toRate(data.dividendWithholdingRate);
+  const amountAboveThreshold = Math.max(0, grossDividend - data.financialIncomeThreshold);
+  const additionalTaxEstimate = amountAboveThreshold * toRate(data.additionalDividendTaxRate);
+  const totalTax = withholdingTax + additionalTaxEstimate;
+  const afterTaxDividend = Math.max(0, grossDividend - totalTax);
+  return {
+    grossDividend,
+    withholdingTax,
+    amountAboveThreshold,
+    additionalTaxEstimate,
+    totalTax,
+    afterTaxDividend,
+    monthlyAfterTaxDividend: afterTaxDividend / 12,
+    effectiveTaxRate: grossDividend > 0 ? (totalTax / grossDividend) * 100 : 0
+  };
+}
+
+function calculateForeignStockGainTax(data) {
+  const gain = Math.max(0, data.foreignStockGain);
+  const taxableGain = Math.max(0, gain - data.foreignStockBasicDeduction);
+  const tax = taxableGain * toRate(data.foreignStockTaxRate);
+  return {
+    gain,
+    basicDeduction: data.foreignStockBasicDeduction,
+    taxableGain,
+    tax,
+    afterTaxGain: Math.max(0, gain - tax),
+    effectiveTaxRate: gain > 0 ? (tax / gain) * 100 : 0
+  };
+}
+
+function calculateRequiredDividendAsset(data) {
+  const targetAnnualAfterTaxDividend = Math.max(0, data.targetMonthlyDividendAfterTax) * 12;
+  const yieldRate = toRate(data.expectedDividendYield);
+  const taxRate = toRate(data.dividendWithholdingRate + data.additionalDividendTaxRate);
+  const reinvestmentRate = toRate(data.dividendReinvestmentRate);
+  const spendableRate = Math.max(0, 1 - taxRate - reinvestmentRate);
+  const netYieldRate = yieldRate * spendableRate;
+  return {
+    targetAnnualAfterTaxDividend,
+    expectedDividendYield: data.expectedDividendYield,
+    spendableRate: spendableRate * 100,
+    netYieldRate: netYieldRate * 100,
+    requiredAsset: netYieldRate > 0 ? targetAnnualAfterTaxDividend / netYieldRate : 0
+  };
+}
+
+function toRate(value) {
+  return Number(value || 0) / 100;
 }
 
 function renderScenarios(simulation) {

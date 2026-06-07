@@ -1,6 +1,33 @@
 const encodedPrefix = 's=';
 const publicUrl = 'https://retire-age-kr.pages.dev/';
 
+const compactKeyMap = {
+  age: 'currentAge',
+  fire: 'targetRetirementAge',
+  year: 'startYear',
+  fa: 'financialAsset',
+  re: 'realEstateValue',
+  debt: 'debt',
+  save: 'monthlyInvestment',
+  cost: 'monthlyLivingCost',
+  r: 'annualReturnRate',
+  inf: 'inflationRate',
+  pAge: 'expectedPensionAge',
+  pen: 'expectedMonthlyPension',
+  side: 'partTimeIncomeAfterRetirement',
+  until: 'simulationUntilAge',
+  hi: 'healthInsuranceEnabled',
+  hiCost: 'monthlyHealthInsurance',
+  hiPause: 'overseasInsurancePauseEnabled',
+  os: 'overseasStayEnabled',
+  osMo: 'overseasMonthsPerYear',
+  osDays: 'overseasContinuousDays',
+  osCost: 'overseasMonthlyCostLocal',
+  fx: 'overseasExchangeRate',
+  osExtra: 'overseasAnnualExtraCost',
+  osYears: 'overseasApplyYears'
+};
+
 export function encodeInputsToHash(inputs) {
   try {
     const json = JSON.stringify(inputs);
@@ -10,9 +37,12 @@ export function encodeInputsToHash(inputs) {
   }
 }
 
-export function decodeInputsFromHash(hash) {
+export function decodeInputsFromHash(input) {
   try {
-    const cleanHash = hash.replace(/^#/, '');
+    const value = String(input || '');
+    if (value.startsWith('?')) return decodeInputsFromSearch(value);
+
+    const cleanHash = value.replace(/^#/, '');
     if (!cleanHash.startsWith(encodedPrefix)) return null;
     const encoded = cleanHash.slice(encodedPrefix.length);
     const json = decodeURIComponent(escape(atob(decodeURIComponent(encoded))));
@@ -29,7 +59,15 @@ export function buildShareUrl(inputs) {
 
 export function buildScenarioShareUrl(inputs) {
   const url = new URL(publicUrl);
-  url.hash = encodeInputsToHash(inputs);
+  const params = new URLSearchParams();
+
+  Object.entries(compactKeyMap).forEach(([shortKey, inputKey]) => {
+    const value = inputs[inputKey];
+    if (value === undefined || value === null || value === '') return;
+    params.set(shortKey, String(value));
+  });
+
+  url.search = params.toString();
   return url.toString();
 }
 
@@ -49,4 +87,16 @@ export function buildShareText(simulation) {
     '',
     '내 조건으로 몇 살에 퇴사 가능한지 바로 열어보기'
   ].join('\n');
+}
+
+function decodeInputsFromSearch(search) {
+  const params = new URLSearchParams(search);
+  const decoded = {};
+
+  Object.entries(compactKeyMap).forEach(([shortKey, inputKey]) => {
+    if (!params.has(shortKey)) return;
+    decoded[inputKey] = params.get(shortKey);
+  });
+
+  return Object.keys(decoded).length ? decoded : null;
 }

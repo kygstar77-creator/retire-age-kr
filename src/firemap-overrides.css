@@ -128,8 +128,9 @@
 }
 
 .fm-result h2 {
-  font-size: 34px !important;
-  line-height: 1.12 !important;
+  font-size: 31px !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.075em !important;
 }
 
 .fm-result div {
@@ -212,6 +213,10 @@
 @media (max-width: 420px) {
   .fm-value-box {
     font-size: 27px !important;
+  }
+
+  .fm-result h2 {
+    font-size: 30px !important;
   }
 
   .fm-city-row {

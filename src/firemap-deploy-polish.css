@@ -1,0 +1,48 @@
+.fm-return-rail {
+  mask-image: none !important;
+  margin-right: -20px;
+  padding-right: 28px !important;
+}
+
+.fm-return-rail button {
+  min-width: max-content !important;
+  max-width: none !important;
+  padding-left: 18px !important;
+  padding-right: 18px !important;
+}
+
+.fm-graph svg,
+.fm-touch-chart {
+  background: linear-gradient(180deg, #fff7ed 0%, #ffffff 100%) !important;
+  border: 1px solid #fed7aa;
+  box-sizing: border-box;
+}
+
+.fm-graph line {
+  stroke: rgba(154, 52, 18, 0.18) !important;
+  stroke-width: 1.5;
+}
+
+.fm-graph polyline {
+  fill: none !important;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 5;
+}
+
+.fm-graph polyline.current {
+  stroke: #94a3b8 !important;
+}
+
+.fm-graph polyline.improved {
+  stroke: #ea580c !important;
+}
+
+.fm-graph .axis {
+  fill: #8b95a1 !important;
+  font-size: 12px !important;
+}
+
+.fm-chart-hitbox {
+  fill: transparent !important;
+}

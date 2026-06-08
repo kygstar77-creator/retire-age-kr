@@ -60,6 +60,10 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
 
   await clickVisible(page, '조건 바꿔보기');
   await expect(page.getByText('조건 바꿔보기')).toBeVisible();
+  await expect(page.getByText('투자 성향별로 다시 계산해보기')).toBeVisible();
+  await expect(page.getByText('현재 적용 수익률은 연 8%예요.')).toBeVisible();
+  await clickVisible(page, '나스닥100형 · 연 10%');
+  await expect(page.getByText('현재 적용 수익률은 연 10%예요.')).toBeVisible();
   await expect(page.getByText('내 미래 자산 차트')).toBeVisible();
   await expect(page.getByText(/현재 계획/).first()).toBeVisible();
   await expect(page.getByText(/생활비 절감안/).first()).toBeVisible();

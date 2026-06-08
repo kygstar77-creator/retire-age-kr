@@ -5,13 +5,19 @@ import { buildScenario, deltaText, fireStatus, runwayText } from '../../firemap-
 
 function ResultHero({ simulation }) {
   return (
-    <section className="fm-card fm-result">
+    <section className="fm-card fm-result fm-result-v3">
       <p>내 FIRE 현재 위치</p>
       <h2>{simulation.inputs.targetRetirementAge}세에 퇴사하면<br /><b>{runwayText(simulation)}</b>까지 버틸 수 있어요.</h2>
-      <span>{simulation.earliestRetirementAge ? `현재 가정으로는 ${simulation.earliestRetirementAge}세 퇴사가 더 안전해 보여요.` : '현재 가정에서는 더 늦은 퇴사가 필요해 보여요.'}</span>
-      <span className="fm-assumption-inline">{returnAssumptions.label}</span>
-      <span className="fm-assumption-inline">국민연금 {simulation.inputs.expectedPensionAge}세부터 월 {formatWon(simulation.inputs.expectedMonthlyPension)} 반영</span>
-      <div><small>FIRE 진단</small><strong>{fireStatus(simulation.survivalScore)}</strong><small>{simulation.survivalScore}/100</small></div>
+      <div className="fm-result-summary">
+        <span><small>은퇴 나이</small><strong>{simulation.inputs.targetRetirementAge}세</strong></span>
+        <span><small>경제적 자유 시점</small><strong>{runwayText(simulation)}</strong></span>
+      </div>
+      <p className="fm-result-copy">{simulation.earliestRetirementAge ? `현재 가정으로는 ${simulation.earliestRetirementAge}세 퇴사가 더 안전해 보여요.` : '현재 가정에서는 더 늦은 퇴사가 필요해 보여요.'}</p>
+      <div className="fm-result-assumptions">
+        <span>{returnAssumptions.label}</span>
+        <span>국민연금 {simulation.inputs.expectedPensionAge}세부터 월 {formatWon(simulation.inputs.expectedMonthlyPension)} 반영</span>
+      </div>
+      <div className="fm-score-box"><small>FIRE 진단</small><strong>{fireStatus(simulation.survivalScore)}</strong><small>{simulation.survivalScore}/100</small></div>
     </section>
   );
 }
@@ -45,19 +51,15 @@ function ImprovementCards({ inputs, simulation }) {
 export default function Result({ inputs, simulation, onMove, onEditFinalQuestion }) {
   return (
     <main className="fm-screen fm-scroll">
-      <Header tag="결과" />
+      <Header tag="결과" onBack={onEditFinalQuestion} />
       <ResultHero simulation={simulation} />
-      <div className="fm-result-actions">
-        <button type="button" className="fm-secondary" onClick={onEditFinalQuestion}>이전</button>
-        <button type="button" className="fm-primary" onClick={() => onMove('experiment')}>조건 바꿔보기</button>
-      </div>
+      <button type="button" className="fm-primary fm-result-main-action" onClick={() => onMove('experiment')}>조건 바꿔보기</button>
       <div className="fm-ad">광고</div>
       <ImprovementCards inputs={inputs} simulation={simulation} />
-      <div className="fm-menu">
-        <button type="button" onClick={() => onMove('experiment')}>숫자 실험</button>
+      <div className="fm-menu fm-result-menu">
+        <button type="button" onClick={() => onMove('curation')}>도시 시나리오<span>도시별 생활비</span></button>
+        <button type="button" onClick={() => onMove('share')}>공유하기<span>이미지·링크</span></button>
         <button type="button" className="fm-advanced-link" onClick={() => onMove('advanced')}>고급 실험</button>
-        <button type="button" onClick={() => onMove('curation')}>도시 시나리오</button>
-        <button type="button" onClick={() => onMove('share')}>공유하기</button>
       </div>
     </main>
   );

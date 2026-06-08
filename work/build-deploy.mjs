@@ -51,19 +51,19 @@ const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://retire-age-kr.pages.dev/privacy/</loc>
+    <loc>https://retire-age-kr.pages.dev/privacy.html</loc>
     <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://retire-age-kr.pages.dev/terms/</loc>
+    <loc>https://retire-age-kr.pages.dev/disclaimer.html</loc>
     <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://retire-age-kr.pages.dev/contact/</loc>
+    <loc>https://retire-age-kr.pages.dev/contact.html</loc>
     <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

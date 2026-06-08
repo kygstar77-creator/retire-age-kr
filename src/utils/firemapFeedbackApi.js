@@ -4,11 +4,6 @@ const TABLE = 'firemap_feedback';
 
 export const feedbackReady = Boolean(SUPABASE_URL && SUPABASE_KEY);
 
-const mockItems = [
-  { id: 'mock-1', nickname: '익명', message: '질문 5로 다시 돌아갈 수 있으면 좋겠어요.', created_at: new Date(Date.now() - 1000 * 60 * 24).toISOString() },
-  { id: 'mock-2', nickname: '익명', message: '국민연금 조건을 바꿔서 비교하고 싶어요.', created_at: new Date(Date.now() - 1000 * 60 * 58).toISOString() }
-];
-
 function baseHeaders(extra = {}) {
   return {
     apikey: SUPABASE_KEY,
@@ -28,21 +23,19 @@ async function callFeedback(path, options = {}) {
 }
 
 export async function loadFeedback() {
-  if (!feedbackReady) return mockItems;
+  if (!feedbackReady) return [];
   try {
     const rows = await callFeedback(`${TABLE}?select=id,nickname,message,created_at&status=eq.visible&order=created_at.desc&limit=20`, { method: 'GET' });
-    return Array.isArray(rows) ? rows : mockItems;
+    return Array.isArray(rows) ? rows : [];
   } catch {
-    return mockItems;
+    return [];
   }
 }
 
 export async function sendFeedback(message) {
   const clean = String(message || '').trim().slice(0, 240);
   if (!clean) return null;
-  if (!feedbackReady) {
-    return { id: `local-${Date.now()}`, nickname: '익명', message: clean, created_at: new Date().toISOString() };
-  }
+  if (!feedbackReady) throw new Error('feedback storage is not configured');
   const rows = await callFeedback(TABLE, {
     method: 'POST',
     headers: { prefer: 'return=representation' },

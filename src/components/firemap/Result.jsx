@@ -1,7 +1,7 @@
 import Header from './Header.jsx';
 import { returnAssumptions } from '../../firemap-v2/data.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
-import { buildScenario, deltaText, fireStatus, runwayText } from '../../firemap-v2/scenarios.js';
+import { buildScenario, fireStatus, runwayText, scenarioEndAge } from '../../firemap-v2/scenarios.js';
 
 function ResultHero({ simulation }) {
   const targetAge = `${simulation.inputs.targetRetirementAge}세`;
@@ -24,26 +24,32 @@ function ResultHero({ simulation }) {
   );
 }
 
+function compareText(base, next) {
+  const diff = scenarioEndAge(next) - scenarioEndAge(base);
+  if (diff > 0) return `현재보다 ${diff}년 개선`;
+  if (diff === 0) return '현재와 비슷함';
+  return `${Math.abs(diff)}년 악화`;
+}
+
 function ImprovementCards({ inputs, simulation }) {
   const baseCost = Number(inputs.monthlyLivingCost || 0);
   const lowerCostValue = Math.max(1000000, baseCost >= 2500000 ? baseCost - 1000000 : Math.round(baseCost * 0.8 / 100000) * 100000);
-  const lowerCost = buildScenario(inputs, { monthlyLivingCost: lowerCostValue });
-  const earnAfterRetire = buildScenario(inputs, { partTimeIncomeAfterRetirement: inputs.partTimeIncomeAfterRetirement + 1000000 });
-  const workMore = buildScenario(inputs, { targetRetirementAge: inputs.targetRetirementAge + 1 });
-  const saveMore = buildScenario(inputs, { monthlyInvestment: inputs.monthlyInvestment + 1000000 });
-  const cards = [
-    ['생활비', `월 생활비를 ${formatWon(lowerCostValue)}으로 낮추면`, lowerCost],
-    ['퇴사 후 현금흐름', '퇴사 후 월 100만 원 벌면', earnAfterRetire],
-    ['근무연장', '1년 더 근무하면', workMore],
-    ['퇴사 전 저축', '퇴사 전 월 100만 원 더 모으면', saveMore]
+  const scenarios = [
+    ['생활비', `생활비 ${formatWon(lowerCostValue)}`, buildScenario(inputs, { monthlyLivingCost: lowerCostValue })],
+    ['현금흐름', '퇴사 후 월 100만', buildScenario(inputs, { partTimeIncomeAfterRetirement: inputs.partTimeIncomeAfterRetirement + 1000000 })],
+    ['퇴사시점', '1년 더 근무', buildScenario(inputs, { targetRetirementAge: inputs.targetRetirementAge + 1 })],
+    ['저축액', '월 100만 더 저축', buildScenario(inputs, { monthlyInvestment: inputs.monthlyInvestment + 1000000 })]
   ];
   return (
     <section>
       <h2 className="fm-section-title">FIRE를 앞당기는 방법</h2>
-      <div className="fm-card-grid">
-        {cards.map(([tag, title, scenario]) => (
-          <article className="fm-card fm-mini" key={title}>
-            <em>{tag}</em><h3>{title}</h3><strong>{runwayText(scenario)}</strong><p>{deltaText(simulation, scenario)}</p>
+      <div className="fm-improve-grid">
+        {scenarios.map(([tag, title, scenario]) => (
+          <article className="fm-improve-card" key={title}>
+            <em>{tag}</em>
+            <strong>{runwayText(scenario)}</strong>
+            <h3>{title}</h3>
+            <p>{compareText(simulation, scenario)}</p>
           </article>
         ))}
       </div>
@@ -60,9 +66,7 @@ export default function Result({ inputs, simulation, onMove, onEditFinalQuestion
         <button type="button" className="fm-primary" onClick={() => onMove('experiment')}>조건 바꿔보기</button>
         <button type="button" className="fm-secondary" onClick={() => onMove('share')}>공유하기</button>
       </div>
-      <div className="fm-menu fm-result-menu">
-        <button type="button" onClick={() => onMove('curation')}>도시 시나리오<span>도시별 생활비</span></button>
-      </div>
+      <button type="button" className="fm-city-cta" onClick={() => onMove('curation')}>도시 생활비 비교</button>
       <div className="fm-ad">광고</div>
       <ImprovementCards inputs={inputs} simulation={simulation} />
     </main>

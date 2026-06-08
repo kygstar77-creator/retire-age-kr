@@ -8,6 +8,13 @@ export const returnAssumptions = {
   label: '현재 계산 기준 · 연 수익률 8% · 물가 3%'
 };
 
+export const investmentScenarios = [
+  { key: 'conservative', label: '보수형', annualReturnRate: 4, copy: '예금·현금성 자산에 가까운 낮은 변동성 가정' },
+  { key: 'sp500', label: 'S&P500형', annualReturnRate: 8, copy: '미국 대형주 지수 장기투자에 가까운 기본 가정' },
+  { key: 'nasdaq100', label: '나스닥100형', annualReturnRate: 10, copy: '성장주·기술주 비중이 높은 공격형 가정' },
+  { key: 'dividendDow', label: '배당다우존스형', annualReturnRate: 7, copy: '배당과 현금흐름을 함께 보는 중간 가정' }
+];
+
 export const questions = [
   { key: 'currentAge', type: 'age', label: '현재 나이', title: '지금 몇 살인가요?', helper: '현재 나이를 기준으로 퇴사까지 남은 시간을 계산해요.', step: 1 },
   { key: 'targetRetirementAge', type: 'age', label: '퇴사 희망 나이', title: '몇 살에 퇴사하고 싶나요?', helper: '1살 차이도 결과에 크게 영향을 줘요.', step: 1 },

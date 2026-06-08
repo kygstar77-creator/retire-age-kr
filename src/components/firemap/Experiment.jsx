@@ -1,13 +1,10 @@
 import { useMemo, useState } from 'react';
 import Header from './Header.jsx';
 import PensionControls from './PensionControls.jsx';
+import RangeControl from './RangeControl.jsx';
 import { investmentScenarios } from '../../firemap-v2/data.js';
-import { cleanNumber, formatEok, formatWon } from '../../firemap-v2/formatters.js';
+import { formatEok, formatWon } from '../../firemap-v2/formatters.js';
 import { buildChartRows, buildScenario, runwayText, scenarioEndAge } from '../../firemap-v2/scenarios.js';
-
-function Adjust({ label, value, minus, plus }) {
-  return <div className="fm-adjust"><span>{label}</span><strong>{value}</strong><button type="button" onClick={minus}>-</button><button type="button" onClick={plus}>+</button></div>;
-}
 
 function nearestByX(chart, x) {
   return chart.reduce((nearest, row) => Math.abs(row.x - x) < Math.abs(nearest.x - x) ? row : nearest, chart[0]);
@@ -22,7 +19,6 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
   const gapText = endAgeGap > 0 ? `S&P500형보다 ${endAgeGap}년 길게` : endAgeGap < 0 ? `S&P500형보다 ${Math.abs(endAgeGap)}년 짧게` : 'S&P500형과 비슷하게';
   const { chart, max } = buildChartRows(simulation, lowerCost, inputs);
   const points = (key) => chart.map((row) => `${row.x},${Math.max(32, key === 'improved' ? row.improvedY : row.currentY)}`).join(' ');
-  const adjust = (key, amount) => onChange(key, Math.max(0, cleanNumber(inputs[key]) + amount));
   const last = chart.at(-1);
   const selectedPoint = chart.find((row) => row.age === selectedAge) || null;
   const activeScenario = investmentScenarios.find((scenario) => scenario.annualReturnRate === inputs.annualReturnRate);
@@ -38,13 +34,13 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
     <main className="fm-screen fm-scroll">
       <Header tag="실험" onBack={onBack} />
       <section className="fm-card fm-text-card">
-        <p className="fm-kicker">조건 바꿔보기</p><h2>숫자를 바꾸면 결과가 바로 달라져요</h2>
+        <p className="fm-kicker">조건 바꿔보기</p><h2>손가락으로 밀어서 바로 바꿔보세요</h2>
         <p>퇴사 나이, 생활비, 월 저축액, 수익률을 한 화면에서 조정해요.</p>
-        <Adjust label="퇴사 나이" value={`${inputs.targetRetirementAge}세`} minus={() => adjust('targetRetirementAge', -1)} plus={() => adjust('targetRetirementAge', 1)} />
-        <Adjust label="생활비" value={formatWon(inputs.monthlyLivingCost)} minus={() => adjust('monthlyLivingCost', -100000)} plus={() => adjust('monthlyLivingCost', 100000)} />
-        <Adjust label="월 저축액" value={formatWon(inputs.monthlyInvestment)} minus={() => adjust('monthlyInvestment', -100000)} plus={() => adjust('monthlyInvestment', 100000)} />
-        <Adjust label="연 수익률" value={`${inputs.annualReturnRate}%`} minus={() => adjust('annualReturnRate', -1)} plus={() => adjust('annualReturnRate', 1)} />
-        <Adjust label="절감안 생활비" value={formatWon(improvedCost)} minus={() => setImprovedCost((value) => Math.max(1000000, value - 100000))} plus={() => setImprovedCost((value) => value + 100000)} />
+        <RangeControl label="퇴사 나이" value={inputs.targetRetirementAge} inputKey="targetRetirementAge" type="age" step={1} onChange={(next) => onChange('targetRetirementAge', next)} />
+        <RangeControl label="생활비" value={inputs.monthlyLivingCost} inputKey="monthlyLivingCost" type="money" step={100000} onChange={(next) => onChange('monthlyLivingCost', next)} />
+        <RangeControl label="월 저축액" value={inputs.monthlyInvestment} inputKey="monthlyInvestment" type="money" step={100000} onChange={(next) => onChange('monthlyInvestment', next)} />
+        <RangeControl label="연 수익률" value={inputs.annualReturnRate} inputKey="annualReturnRate" type="percent" step={1} onChange={(next) => onChange('annualReturnRate', next)} />
+        <RangeControl label="절감안 생활비" value={improvedCost} inputKey="improvedCost" type="money" step={100000} onChange={setImprovedCost} />
       </section>
       <PensionControls inputs={inputs} onChange={onChange} />
       <section className="fm-card fm-text-card">

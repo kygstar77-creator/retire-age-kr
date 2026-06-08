@@ -133,6 +133,12 @@
   letter-spacing: -0.075em !important;
 }
 
+.fm-result > span {
+  font-size: 17px !important;
+  line-height: 1.45 !important;
+  letter-spacing: -0.045em !important;
+}
+
 .fm-result div {
   display: block !important;
   border-radius: 24px !important;
@@ -145,7 +151,9 @@
 .fm-result div strong {
   display: block !important;
   color: #ffffff !important;
-  font-size: 28px !important;
+  font-size: 25px !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.055em !important;
 }
 
 .fm-graph h2 {
@@ -217,6 +225,14 @@
 
   .fm-result h2 {
     font-size: 30px !important;
+  }
+
+  .fm-result > span {
+    font-size: 16px !important;
+  }
+
+  .fm-result div strong {
+    font-size: 24px !important;
   }
 
   .fm-city-row {

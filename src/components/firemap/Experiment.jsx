@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import Header from './Header.jsx';
+import PensionControls from './PensionControls.jsx';
 import { investmentScenarios } from '../../firemap-v2/data.js';
 import { cleanNumber, formatEok, formatWon } from '../../firemap-v2/formatters.js';
 import { buildChartRows, buildScenario, runwayText, scenarioEndAge } from '../../firemap-v2/scenarios.js';
@@ -45,6 +46,7 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         <Adjust label="연 수익률" value={`${inputs.annualReturnRate}%`} minus={() => adjust('annualReturnRate', -1)} plus={() => adjust('annualReturnRate', 1)} />
         <Adjust label="절감안 생활비" value={formatWon(improvedCost)} minus={() => setImprovedCost((value) => Math.max(1200000, value - 100000))} plus={() => setImprovedCost((value) => value + 100000)} />
       </section>
+      <PensionControls inputs={inputs} onChange={onChange} />
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">투자 수익률 가정</p><h2>투자 성향별로 다시 계산해보기</h2>
         <p>현재 적용 수익률은 연 {inputs.annualReturnRate}%예요. {activeScenario ? activeScenario.copy : '직접 입력한 수익률 가정으로 계산 중이에요.'}</p>

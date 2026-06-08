@@ -6,6 +6,7 @@ import Experiment from './firemap/Experiment.jsx';
 import Advanced from './firemap/Advanced.jsx';
 import Curation from './firemap/Curation.jsx';
 import Share from './firemap/Share.jsx';
+import FloatingFeedback from './firemap/FloatingFeedback.jsx';
 import { buildSimulation, defaultInputs } from '../utils/retirementSimulator.js';
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
 import { cleanNumber } from '../firemap-v2/formatters.js';
@@ -56,12 +57,14 @@ export default function FireMapMVP() {
   const next = () => step >= questions.length - 1 ? setScreen('result') : setStep((current) => current + 1);
   const prevQuestion = () => step === 0 ? setScreen('home') : setStep((current) => current - 1);
   const backToResult = () => setScreen('result');
+  const goFinalQuestion = () => { setStep(Math.max(0, questions.length - 1)); setScreen('question'); };
+  const wrap = (node) => <>{node}<FloatingFeedback /></>;
 
-  if (screen === 'home') return <Home onStart={() => setScreen('question')} />;
-  if (screen === 'question') return <Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />;
-  if (screen === 'experiment') return <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backToResult} />;
-  if (screen === 'advanced') return <Advanced inputs={inputs} onChange={onChange} simulation={simulation} onBack={backToResult} />;
-  if (screen === 'curation') return <Curation inputs={inputs} simulation={simulation} onBack={backToResult} />;
-  if (screen === 'share') return <Share inputs={inputs} simulation={simulation} onBack={backToResult} />;
-  return <Result inputs={inputs} simulation={simulation} onMove={setScreen} />;
+  if (screen === 'home') return wrap(<Home onStart={() => setScreen('question')} />);
+  if (screen === 'question') return wrap(<Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />);
+  if (screen === 'experiment') return wrap(<Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backToResult} />);
+  if (screen === 'advanced') return wrap(<Advanced inputs={inputs} onChange={onChange} simulation={simulation} onBack={backToResult} />);
+  if (screen === 'curation') return wrap(<Curation inputs={inputs} simulation={simulation} onBack={backToResult} />);
+  if (screen === 'share') return wrap(<Share inputs={inputs} simulation={simulation} onBack={backToResult} />);
+  return wrap(<Result inputs={inputs} simulation={simulation} onMove={setScreen} onEditFinalQuestion={goFinalQuestion} />);
 }

@@ -81,9 +81,13 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
 
   await clickVisible(page, '도시 시나리오');
   await expect(page.getByText('사는 곳을 바꾸면 FIRE가 얼마나 가까워질까?')).toBeVisible();
+  await expect(page.getByText('도시별 예상 생활비를 내 조건에 바로 대입해')).toBeVisible();
   await expect(page.getByText('전주')).toBeVisible();
   await expect(page.getByText('치앙마이')).toBeVisible();
   await expect(page.getByText(/예상 월/).first()).toBeVisible();
+  await expect(page.getByText(/이 생활비로 계산하면/).first()).toBeVisible();
+  await expect(page.getByText(/까지 버틸 수 있어요/).first()).toBeVisible();
+  await expect(page.getByText('생활비를 낮추는 건 수익률을 올리는 것만큼 강력해요')).toBeVisible();
   await expect(page.getByRole('button', { name: '초기화' })).toBeHidden();
   await screenshot(page, '06-curation');
 

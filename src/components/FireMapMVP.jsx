@@ -12,6 +12,7 @@ import { cleanNumber } from '../firemap-v2/formatters.js';
 import '../firemap.css';
 import '../firemap-overrides.css';
 import '../firemap-polish.css';
+import '../firemap-result-density.css';
 
 const SCREENS = ['home', 'question', 'result', 'experiment', 'advanced', 'curation', 'share'];
 

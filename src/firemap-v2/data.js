@@ -2,6 +2,12 @@ export const STORAGE_KEY = 'firemap-inputs-v2';
 export const CONTACT_EMAIL = 'retireage.kr@gmail.com';
 export const BASE_URL = 'https://retire-age-kr.pages.dev/';
 
+export const returnAssumptions = {
+  annualReturnRate: 8,
+  inflationRate: 3,
+  label: '현재 계산 기준 · 연 수익률 8% · 물가 3%'
+};
+
 export const questions = [
   { key: 'currentAge', type: 'age', label: '현재 나이', title: '지금 몇 살인가요?', helper: '현재 나이를 기준으로 퇴사까지 남은 시간을 계산해요.', step: 1 },
   { key: 'targetRetirementAge', type: 'age', label: '퇴사 희망 나이', title: '몇 살에 퇴사하고 싶나요?', helper: '1살 차이도 결과에 크게 영향을 줘요.', step: 1 },

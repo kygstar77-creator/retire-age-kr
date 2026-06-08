@@ -14,6 +14,7 @@ export default function FloatingFeedback() {
   const [message, setMessage] = useState('');
   const [items, setItems] = useState([]);
   const [sending, setSending] = useState(false);
+  const [error, setError] = useState('');
   const visibleItems = useMemo(() => items.slice(0, 20), [items]);
 
   useEffect(() => {
@@ -27,10 +28,16 @@ export default function FloatingFeedback() {
     const text = message.trim().slice(0, 240);
     if (!text || sending) return;
     setSending(true);
-    const created = await sendFeedback(text);
-    if (created) setItems((current) => [created, ...current]);
-    setMessage('');
-    setSending(false);
+    setError('');
+    try {
+      const created = await sendFeedback(text);
+      if (created) setItems((current) => [created, ...current]);
+      setMessage('');
+    } catch {
+      setError('의견 저장 연결이 아직 완료되지 않았어요. 잠시 후 다시 시도해주세요.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -47,15 +54,18 @@ export default function FloatingFeedback() {
               </div>
               <button type="button" aria-label="닫기" onClick={() => setOpen(false)}>×</button>
             </div>
-            <p className="fm-feedback-safe">익명 의견만 저장돼요. 개인정보, 자산, 계좌, 연락처는 입력하지 마세요. {feedbackReady ? 'Supabase에 연결됐어요.' : '연결 전에는 예시 의견으로 표시돼요.'}</p>
+            <p className="fm-feedback-safe">익명 의견만 저장돼요. 개인정보, 자산, 계좌, 연락처는 입력하지 마세요. {feedbackReady ? '의견 저장이 연결됐어요.' : '의견 저장 연결 설정이 필요해요.'}</p>
             <div className="fm-feedback-list" aria-label="익명 의견 목록">
-              {visibleItems.map((item) => (
+              {visibleItems.length === 0 ? (
+                <div className="fm-feedback-empty">아직 등록된 사용자 의견이 없어요.</div>
+              ) : visibleItems.map((item) => (
                 <article key={item.id}>
                   <div><strong>{item.nickname || '익명'}</strong><small>{relativeTime(item.created_at)}</small></div>
                   <p>{item.message}</p>
                 </article>
               ))}
             </div>
+            {error && <p className="fm-feedback-error">{error}</p>}
             <form className="fm-feedback-form" onSubmit={submit}>
               <textarea value={message} onChange={(event) => setMessage(event.target.value)} maxLength={240} placeholder="예: 결과 카드가 너무 길어요 / 국민연금 조건을 바꾸고 싶어요" />
               <button type="submit" disabled={sending}>{sending ? '등록 중' : '등록'}</button>

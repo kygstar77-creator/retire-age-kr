@@ -1,0 +1,31 @@
+name: FireMap Preview URL QA
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+\-jobs:
+  preview-url-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install
+      - run: npx playwright install webkit --with-deps
+      - name: Test deployed preview URL
+        env:
+          PLAYWRIGHT_BASE_URL: https://firemap-v2-preview.retire-age-kr.pages.dev
+        run: npm run qa:mobile
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: firemap-preview-url-screenshots
+          path: |
+            test-results/firemap-screenshots
+            playwright-report
+          if-no-files-found: ignore
+          retention-days: 14

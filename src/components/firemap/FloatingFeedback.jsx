@@ -35,7 +35,7 @@ export default function FloatingFeedback() {
 
   return (
     <>
-      <button type="button" className="fm-feedback-fab" aria-label="의견 남기기" onClick={() => setOpen(true)}>의견 남기기</button>
+      <button type="button" className="fm-feedback-fab" aria-label="의견 남기기" onClick={() => setOpen(true)} title="의견 남기기">말풍선</button>
       {open && (
         <div className="fm-feedback-layer" role="presentation">
           <button type="button" className="fm-feedback-dim" aria-label="의견창 닫기" onClick={() => setOpen(false)} />

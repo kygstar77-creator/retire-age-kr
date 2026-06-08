@@ -3,14 +3,14 @@ import { cleanNumber, formatValue, formatWon } from '../../firemap-v2/formatters
 const ranges = {
   currentAge: [20, 70],
   targetRetirementAge: [30, 80],
-  financialAsset: [0, 1000000000],
-  monthlyInvestment: [0, 5000000],
-  monthlyLivingCost: [1000000, 8000000],
-  annualReturnRate: [0, 15],
+  financialAsset: [0, 5000000000],
+  monthlyInvestment: [0, 20000000],
+  monthlyLivingCost: [500000, 20000000],
+  annualReturnRate: [0, 30],
   expectedPensionAge: [55, 75],
-  expectedMonthlyPension: [0, 3000000],
-  improvedCost: [1000000, 8000000],
-  partTimeIncomeAfterRetirement: [0, 5000000]
+  expectedMonthlyPension: [0, 5000000],
+  improvedCost: [500000, 20000000],
+  partTimeIncomeAfterRetirement: [0, 10000000]
 };
 
 function display(key, value, type = 'money') {

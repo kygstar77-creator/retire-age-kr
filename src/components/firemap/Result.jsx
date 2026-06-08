@@ -51,6 +51,7 @@ export default function Result({ inputs, simulation, onMove }) {
       <div className="fm-menu">
         <button type="button" onClick={() => onMove('experiment')}>조건 바꿔보기</button>
         <button type="button" onClick={() => onMove('curation')}>도시 시나리오</button>
+        <button type="button" onClick={() => onMove('community')}>후기 보기</button>
         <button type="button" onClick={() => onMove('share')}>공유하기</button>
       </div>
     </main>

@@ -22,10 +22,12 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await page.goto('/#home');
   await expect(page.getByText('파이어맵').first()).toBeVisible();
   await expect(page.getByText('내 돈은 몇 살까지 버틸까?')).toBeVisible();
+  await expect(page.getByText('투자·세무·법률 자문 아님')).toBeVisible();
   await expect(page.getByRole('button', { name: '초기화' })).toBeHidden();
   await screenshot(page, '01-home');
 
   await clickVisible(page, '시작하기');
+  await expect(page).toHaveURL(/#question$/);
   await expect(page.getByText('질문 1/5')).toBeVisible();
   await expect(page.getByText('지금 몇 살인가요?')).toBeVisible();
   await expect(page.getByRole('button', { name: '초기화' })).toBeHidden();
@@ -33,6 +35,9 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
 
   await clickVisible(page, '다음');
   await expect(page.getByText('질문 2/5')).toBeVisible();
+  await clickVisible(page, '이전');
+  await expect(page.getByText('질문 1/5')).toBeVisible();
+  await clickVisible(page, '다음');
   await clickVisible(page, '다음');
   await expect(page.getByText('질문 3/5')).toBeVisible();
   await expect(page.getByText('지금 금융자산은 얼마인가요?')).toBeVisible();
@@ -50,6 +55,7 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await expect(page.getByText('질문 5/5')).toBeVisible();
   await clickVisible(page, '결과 보기');
 
+  await expect(page).toHaveURL(/#result$/);
   await expect(page.getByText('내 FIRE 현재 위치')).toBeVisible();
   await expect(page.getByText('현재 계산 기준 · 연 수익률 8% · 물가 3%')).toBeVisible();
   await expect(page.getByText('FIRE를 앞당기는 방법')).toBeVisible();
@@ -59,6 +65,7 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await screenshot(page, '04-result');
 
   await clickVisible(page, '조건 바꿔보기');
+  await expect(page).toHaveURL(/#experiment$/);
   await expect(page.getByText('조건 바꿔보기')).toBeVisible();
   await expect(page.getByText('투자 성향별로 다시 계산해보기')).toBeVisible();
   await expect(page.getByText('현재 적용 수익률은 연 8%예요.')).toBeVisible();
@@ -67,19 +74,26 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await expect(page.getByText('내 미래 자산 차트')).toBeVisible();
   await expect(page.getByText(/현재 계획/).first()).toBeVisible();
   await expect(page.getByText(/생활비 절감안/).first()).toBeVisible();
-  await page.getByRole('button', { name: /세 자산 보기/ }).first().click();
-  await expect(page.getByText(/세 현재 계획/).first()).toBeVisible();
-  await expect(page.getByText(/세 절감안/).first()).toBeVisible();
-  await expect(page.getByText('그래프의 점을 누르면 해당 나이의 자산을 볼 수 있어요.')).toBeVisible();
-  await expect(page.getByText('회색은 현재 입력값 그대로의 계획이에요.')).toBeVisible();
+
+  const chart = page.locator('.fm-touch-chart').first();
+  const box = await chart.boundingBox();
+  expect(box).not.toBeNull();
+  await page.mouse.move(box.x + box.width * 0.3, box.y + box.height * 0.5);
+  await page.mouse.down();
+  await page.mouse.move(box.x + box.width * 0.72, box.y + box.height * 0.5, { steps: 5 });
+  await page.mouse.up();
+  await expect(page.getByText(/세 예상 자산/).first()).toBeVisible();
+  await expect(page.getByText('점 맞히기 방식이 아니라 차트 아무 곳이나 누르면 가장 가까운 나이를 보여줘요.')).toBeVisible();
   await expect(page.getByText(/현재 절감안 기준 생활비는/)).toBeVisible();
   await expect(page.getByRole('button', { name: '초기화' })).toBeHidden();
   await screenshot(page, '05-experiment-graph');
 
-  await clickVisible(page, '결과로');
+  await page.goBack();
+  await expect(page).toHaveURL(/#result$/);
   await expect(page.getByText('내 FIRE 현재 위치')).toBeVisible();
 
   await clickVisible(page, '도시 시나리오');
+  await expect(page).toHaveURL(/#curation$/);
   await expect(page.getByText('사는 곳을 바꾸면 FIRE가 얼마나 가까워질까?')).toBeVisible();
   await expect(page.getByText('도시별 예상 생활비를 내 조건에 바로 대입해')).toBeVisible();
   await expect(page.getByText('전주')).toBeVisible();
@@ -92,7 +106,9 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await screenshot(page, '06-curation');
 
   await clickVisible(page, '결과로');
+  await expect(page).toHaveURL(/#result$/);
   await clickVisible(page, '공유하기');
+  await expect(page).toHaveURL(/#share$/);
   await expect(page.getByText('내 FIRE 결과 공유하기')).toBeVisible();
   await expect(page.getByRole('button', { name: '결과 이미지 공유하기' })).toBeVisible();
   await expect(page.getByText('입력값은 서버로 전송하지 않고 이 브라우저에 저장됩니다.')).toBeVisible();

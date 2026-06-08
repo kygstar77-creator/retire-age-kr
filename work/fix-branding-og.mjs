@@ -7,13 +7,12 @@ const indexPath = join(deploy, 'index.html');
 let html = await readFile(indexPath, 'utf8');
 
 const siteUrl = 'https://retire-age-kr.pages.dev/';
-const ogImageUrl = 'https://retire-age-kr.pages.dev/og-image.png?v=firemap-home-v4-20260609';
+const ogVersion = 'firemap-home-v5-20260609';
+const ogImageUrl = `https://retire-age-kr.pages.dev/og-image.png?v=${ogVersion}`;
 const ogTitle = '파이어맵 - 내 돈은 몇 살까지 버틸 수 있을까?';
 const ogDescription = '자산, 생활비, 수익률, 국민연금으로 나의 FIRE 시점을 계산해보세요.';
 
-html = html
-  .replaceAll('서버 저장 없음 · 카톡 공유 최적화 · 3분 계산', '개인정보 저장 없음 · 무료 계산 · 바로 결과 확인')
-  .replaceAll(/og-image\.png\?v=[^\"']+/g, 'og-image.png?v=firemap-home-v4-20260609');
+html = html.replaceAll(/og-image\.png\?v=[^"']+/g, `og-image.png?v=${ogVersion}`);
 
 const metaBlock = `
 <meta property="og:type" content="website" />
@@ -38,20 +37,31 @@ html = html.replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canoni
 
 await writeFile(indexPath, html, 'utf8');
 
+const flame = `
+  <path d="M105 153c-31-18-33-57-8-86 7 22 21 28 31 42 10-31 32-48 59-70-2 33 17 45 31 69 23 39 3 87-37 105 14-18 13-42-2-58-8-9-16-17-18-31-11 18-31 29-37 51-5 17 2 32 13 44-13-3-25-8-32-16z" fill="#ff5a00"/>
+  <path d="M142 218c-26-26-13-62 17-91 2 20 18 31 26 47 9 18 2 41-16 53-16 10-29 7-27-9z" fill="#fed7aa"/>
+`;
+
 const ogImage = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
-    <radialGradient id="sun" cx="82%" cy="16%" r="38%"><stop offset="0" stop-color="#fed7aa"/><stop offset="1" stop-color="#fffdf9" stop-opacity="0"/></radialGradient>
+    <radialGradient id="warm" cx="82%" cy="18%" r="45%">
+      <stop offset="0" stop-color="#fed7aa"/>
+      <stop offset="0.42" stop-color="#fff7ed"/>
+      <stop offset="1" stop-color="#fffdf9" stop-opacity="0"/>
+    </radialGradient>
   </defs>
   <rect width="1200" height="630" fill="#fffdf9"/>
   <rect x="34" y="30" width="1132" height="570" rx="54" fill="#ffffff" stroke="#fed7aa" stroke-width="4"/>
-  <rect x="34" y="30" width="1132" height="570" rx="54" fill="url(#sun)"/>
-  <circle cx="158" cy="128" r="54" fill="#fff1e7"/>
-  <text x="128" y="150" font-family="Arial, sans-serif" font-size="62" font-weight="900">🔥</text>
-  <text x="240" y="150" fill="#111827" font-family="Arial, sans-serif" font-size="58" font-weight="900">파이어맵</text>
-  <text x="106" y="318" fill="#ea580c" font-family="Arial, sans-serif" font-size="42" font-weight="900">퇴사나이 계산기</text>
-  <text x="106" y="418" fill="#111827" font-family="Arial, sans-serif" font-size="84" font-weight="900">내 돈은 몇 살까지</text>
-  <text x="106" y="512" fill="#111827" font-family="Arial, sans-serif" font-size="84" font-weight="900">버틸 수 있을까?</text>
-  <text x="106" y="570" fill="#6b7280" font-family="Arial, sans-serif" font-size="30" font-weight="800">자산 · 생활비 · 수익률 · 국민연금으로 계산</text>
+  <rect x="34" y="30" width="1132" height="570" rx="54" fill="url(#warm)"/>
+  <circle cx="146" cy="126" r="54" fill="#fff1e7"/>
+  <g transform="translate(80 62) scale(.55)">${flame}</g>
+  <text x="232" y="150" fill="#111827" font-family="Arial, sans-serif" font-size="58" font-weight="900">파이어맵</text>
+  <text x="106" y="300" fill="#ea580c" font-family="Arial, sans-serif" font-size="42" font-weight="900">퇴사나이 계산기</text>
+  <text x="106" y="402" fill="#111827" font-family="Arial, sans-serif" font-size="82" font-weight="900">내 돈은 몇 살까지</text>
+  <text x="106" y="496" fill="#111827" font-family="Arial, sans-serif" font-size="82" font-weight="900">버틸 수 있을까?</text>
+  <rect x="106" y="532" width="284" height="58" rx="22" fill="#ff5a00"/>
+  <text x="153" y="571" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="900">1분 만에 계산하기</text>
+  <text x="430" y="570" fill="#6b7280" font-family="Arial, sans-serif" font-size="28" font-weight="800">자산 · 생활비 · 수익률 · 국민연금</text>
 </svg>`;
 
 await writeFile(join(deploy, 'og-image.svg'), ogImage, 'utf8');

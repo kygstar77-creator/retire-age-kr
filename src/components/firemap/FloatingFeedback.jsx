@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { feedbackReady, loadFeedback, sendFeedback } from '../../utils/firemapFeedbackApi.js';
+import { loadFeedback, sendFeedback } from '../../utils/firemapFeedbackApi.js';
 
 function relativeTime(value) {
   const diff = Math.max(1, Math.round((Date.now() - new Date(value).getTime()) / 60000));
@@ -34,7 +34,7 @@ export default function FloatingFeedback() {
       if (created) setItems((current) => [created, ...current]);
       setMessage('');
     } catch {
-      setError('의견 저장 연결이 아직 완료되지 않았어요. 잠시 후 다시 시도해주세요.');
+      setError('저장에 실패했어요. 잠시 후 다시 시도해주세요.');
     } finally {
       setSending(false);
     }
@@ -54,10 +54,10 @@ export default function FloatingFeedback() {
               </div>
               <button type="button" aria-label="닫기" onClick={() => setOpen(false)}>×</button>
             </div>
-            <p className="fm-feedback-safe">익명 의견만 저장돼요. 개인정보, 자산, 계좌, 연락처는 입력하지 마세요. {feedbackReady ? '의견 저장이 연결됐어요.' : '의견 저장 연결 설정이 필요해요.'}</p>
+            <p className="fm-feedback-safe">익명 의견만 저장돼요. 개인정보나 구체적인 금융정보는 남기지 마세요.</p>
             <div className="fm-feedback-list" aria-label="익명 의견 목록">
               {visibleItems.length === 0 ? (
-                <div className="fm-feedback-empty">아직 등록된 사용자 의견이 없어요.</div>
+                <div className="fm-feedback-empty">아직 등록된 의견이 없어요.</div>
               ) : visibleItems.map((item) => (
                 <article key={item.id}>
                   <div><strong>{item.nickname || '익명'}</strong><small>{relativeTime(item.created_at)}</small></div>
@@ -67,7 +67,7 @@ export default function FloatingFeedback() {
             </div>
             {error && <p className="fm-feedback-error">{error}</p>}
             <form className="fm-feedback-form" onSubmit={submit}>
-              <textarea value={message} onChange={(event) => setMessage(event.target.value)} maxLength={240} placeholder="예: 결과 카드가 너무 길어요 / 국민연금 조건을 바꾸고 싶어요" />
+              <textarea value={message} onChange={(event) => setMessage(event.target.value)} maxLength={240} aria-label="의견 입력" />
               <button type="submit" disabled={sending}>{sending ? '등록 중' : '등록'}</button>
             </form>
           </section>

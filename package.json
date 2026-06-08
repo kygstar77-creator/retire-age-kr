@@ -5,7 +5,9 @@
     "prebuild": "node work/test-simulator.mjs",
     "build": "node work/build-deploy.mjs && node work/fix-ads-txt.mjs && node work/fix-ga.mjs && node work/fix-branding-og.mjs && node work/fix-share-panel.mjs",
     "build:deploy": "node work/build-deploy.mjs && node work/fix-ads-txt.mjs && node work/fix-ga.mjs && node work/fix-branding-og.mjs && node work/fix-share-panel.mjs",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "qa:mobile": "playwright test --config=playwright.config.mjs",
+    "qa:install": "playwright install chromium"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
@@ -15,5 +17,7 @@
     "lucide-react": "latest",
     "sharp": "latest"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@playwright/test": "latest"
+  }
 }

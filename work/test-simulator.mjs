@@ -2,16 +2,28 @@ import { simulateRetirement } from '../src/utils/retirementSimulator.js';
 
 const toEok = (value) => value / 100000000;
 
+function fail(message) {
+  console.error(message);
+  process.exit(1);
+}
+
 function check(label, actual, expected, tolerance = 0.05) {
   const actualEok = toEok(actual);
   if (Math.abs(actualEok - expected) > tolerance) {
-    console.error(`${label}: expected ${expected} eok, got ${actualEok.toFixed(2)} eok`);
-    process.exit(1);
+    fail(`${label}: expected ${expected} eok, got ${actualEok.toFixed(2)} eok`);
   }
+}
+
+function assert(condition, message) {
+  if (!condition) fail(message);
 }
 
 function getRow(result, age) {
   return result.rows.find((row) => row.age === age);
+}
+
+function comparableEndAge(result, untilAge) {
+  return result.depletionAge ?? untilAge + 1;
 }
 
 const scenarioA = {
@@ -55,4 +67,35 @@ const resultB = simulateRetirement(scenarioB);
 check('scenarioB age80 financialAsset', getRow(resultB, 80).financialAsset, -45.84);
 check('scenarioB age90 financialAsset', getRow(resultB, 90).financialAsset, -67.91);
 
-console.log('Simulation regression tests passed.');
+const base = { ...scenarioB };
+const workLonger = simulateRetirement(base, base.targetRetirementAge + 1);
+assert(
+  comparableEndAge(workLonger, base.simulationUntilAge) >= comparableEndAge(resultB, base.simulationUntilAge),
+  'Invariant failed: working longer should not shorten asset runway.'
+);
+
+const lowerLivingCost = simulateRetirement({ ...base, monthlyLivingCost: base.monthlyLivingCost - 1000000 });
+assert(
+  comparableEndAge(lowerLivingCost, base.simulationUntilAge) >= comparableEndAge(resultB, base.simulationUntilAge),
+  'Invariant failed: lower living cost should not shorten asset runway.'
+);
+
+const higherLivingCost = simulateRetirement({ ...base, monthlyLivingCost: base.monthlyLivingCost + 1000000 });
+assert(
+  comparableEndAge(higherLivingCost, base.simulationUntilAge) <= comparableEndAge(resultB, base.simulationUntilAge),
+  'Invariant failed: higher living cost should not extend asset runway.'
+);
+
+const higherReturn = simulateRetirement({ ...base, annualReturnRate: base.annualReturnRate + 2 });
+assert(
+  higherReturn.finalFinancialAsset >= resultB.finalFinancialAsset,
+  'Invariant failed: higher return should not reduce final financial asset.'
+);
+
+const morePartTimeIncome = simulateRetirement({ ...base, partTimeIncomeAfterRetirement: 1000000 });
+assert(
+  comparableEndAge(morePartTimeIncome, base.simulationUntilAge) >= comparableEndAge(resultB, base.simulationUntilAge),
+  'Invariant failed: retirement side income should not shorten asset runway.'
+);
+
+console.log('Simulation regression and invariant tests passed.');

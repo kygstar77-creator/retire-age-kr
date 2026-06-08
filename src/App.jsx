@@ -9,9 +9,9 @@ export default function App() {
         if (button.textContent === '초기화') button.hidden = true;
       });
       document.querySelectorAll('.fm-text-card h2, .fm-graph h2').forEach((title) => {
-        title.style.fontSize = '26px';
-        title.style.lineHeight = '1.2';
-        title.style.letterSpacing = '-0.06em';
+        title.style.setProperty('font-size', '26px', 'important');
+        title.style.setProperty('line-height', '1.2', 'important');
+        title.style.setProperty('letter-spacing', '-0.06em', 'important');
       });
       const result = document.querySelector('.fm-result');
       if (!result || result.querySelector('.fm-assumption-inline')) return;

@@ -6,6 +6,10 @@ import { buildScenario, fireStatus, runwayText, scenarioEndAge } from '../../fir
 function ResultHero({ simulation }) {
   const targetAge = `${simulation.inputs.targetRetirementAge}세`;
   const runway = runwayText(simulation);
+  const safeCopy = simulation.earliestRetirementAge
+    ? `현재 가정으로는 ${simulation.earliestRetirementAge}세 퇴사가 더 안전해 보여요.`
+    : '현재 가정에서는 더 늦은 퇴사가 필요해 보여요.';
+
   return (
     <section className="fm-card fm-result fm-result-v3">
       <p>내 FIRE 현재 위치</p>
@@ -14,12 +18,25 @@ function ResultHero({ simulation }) {
         <span>은퇴 나이 <b>{targetAge}</b></span>
         <span>경제적 자유 시점 <b>{runway}</b></span>
       </div>
-      <p className="fm-result-copy">{simulation.earliestRetirementAge ? `현재 가정으로는 ${simulation.earliestRetirementAge}세 퇴사가 더 안전해 보여요.` : '현재 가정에서는 더 늦은 퇴사가 필요해 보여요.'}</p>
+      <p className="fm-result-copy">{safeCopy}</p>
       <div className="fm-result-assumptions">
         <span>{returnAssumptions.label}</span>
         <span>국민연금 {simulation.inputs.expectedPensionAge}세부터 월 {formatWon(simulation.inputs.expectedMonthlyPension)} 반영</span>
       </div>
-      <div className="fm-score-box"><small>FIRE 진단</small><strong>{fireStatus(simulation.survivalScore)}</strong><small>{simulation.survivalScore}/100</small></div>
+      <div className="fm-score-box">
+        <div>
+          <small>FIRE 진단</small>
+          <b className="fm-score-status">{fireStatus(simulation.survivalScore)}</b>
+        </div>
+        <div>
+          <small>점수</small>
+          <b className="fm-score-number">{simulation.survivalScore}/100</b>
+        </div>
+        <div className="fm-score-meter" aria-label={`FIRE 점수 ${simulation.survivalScore}점`}>
+          <i style={{ width: `${Math.max(8, simulation.survivalScore)}%` }} />
+        </div>
+        <p>높을수록 퇴사 후 자산 여유가 커요.</p>
+      </div>
     </section>
   );
 }
@@ -40,6 +57,7 @@ function ImprovementCards({ inputs, simulation }) {
     ['퇴사시점', '1년 더 근무', buildScenario(inputs, { targetRetirementAge: inputs.targetRetirementAge + 1 })],
     ['저축액', '월 100만 더 저축', buildScenario(inputs, { monthlyInvestment: inputs.monthlyInvestment + 1000000 })]
   ];
+
   return (
     <section>
       <h2 className="fm-section-title">FIRE를 앞당기는 방법</h2>
@@ -61,14 +79,14 @@ export default function Result({ inputs, simulation, onMove, onEditFinalQuestion
   return (
     <main className="fm-screen fm-scroll">
       <Header tag="결과" onBack={onEditFinalQuestion} />
-      <ResultHero simulation={simulation} />
       <div className="fm-result-top-actions">
         <button type="button" className="fm-primary" onClick={() => onMove('experiment')}>조건 바꿔보기</button>
         <button type="button" className="fm-secondary" onClick={() => onMove('share')}>공유하기</button>
       </div>
       <button type="button" className="fm-city-cta" onClick={() => onMove('curation')}>도시 생활비 비교</button>
-      <div className="fm-ad">광고</div>
+      <ResultHero simulation={simulation} />
       <ImprovementCards inputs={inputs} simulation={simulation} />
+      <div className="fm-ad">광고</div>
     </main>
   );
 }

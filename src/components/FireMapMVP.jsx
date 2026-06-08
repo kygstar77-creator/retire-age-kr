@@ -200,24 +200,25 @@ function Adjust({ label, value, minus, plus }) {
   return <div className="fm-adjust"><span>{label}</span><strong>{value}</strong><button type="button" onClick={minus}>-</button><button type="button" onClick={plus}>+</button></div>;
 }
 
-function Curation({ inputs, onReset, onBack }) {
+function Curation({ inputs, simulation, onReset, onBack }) {
   return (
     <main className="fm-screen fm-scroll">
       <Header tag="큐레이션" onReset={onReset} onBack={onBack} hideReset />
-      <section className="fm-card fm-text-card"><p className="fm-kicker">도시 시나리오</p><h2>사는 곳을 바꾸면 FIRE가 얼마나 가까워질까?</h2><p>생활비를 낮추는 국내·해외 후보지를 내 월 생활비와 비교합니다.</p></section>
-      <ScenarioList title="국내 저비용 도시" currentCost={inputs.monthlyLivingCost} scenarios={domesticCities} />
-      <ScenarioList title="해외 저비용 생활" currentCost={inputs.monthlyLivingCost} scenarios={overseasCities} />
-      <Info tag="현실감 진단" title="내 생활비는 상위 몇 %일까?" text="가구원수별 소비지출 자료가 확인된 경우, 내 FIRE 생활비가 어느 정도 수준인지 비교합니다." note="자료 기준일과 출처를 함께 안내해요." />
+      <section className="fm-card fm-text-card"><p className="fm-kicker">도시 시나리오</p><h2>사는 곳을 바꾸면 FIRE가 얼마나 가까워질까?</h2><p>도시별 예상 생활비를 내 조건에 바로 대입해, 자산 수명이 얼마나 달라지는지 보여줍니다.</p></section>
+      <ScenarioList title="국내 저비용 도시" inputs={inputs} baseSimulation={simulation} scenarios={domesticCities} />
+      <ScenarioList title="해외 저비용 생활" inputs={inputs} baseSimulation={simulation} scenarios={overseasCities} />
+      <Info tag="현실감 진단" title="생활비를 낮추는 건 수익률을 올리는 것만큼 강력해요" text="같은 자산이라도 매달 나가는 돈이 줄면 필요한 은퇴자금이 작아지고, 자산이 버티는 시간이 길어집니다." note="다음 단계에서는 환율, 비자, 건보료, 체류 개월을 함께 반영할 예정이에요." />
     </main>
   );
 }
 
-function ScenarioList({ title, currentCost, scenarios }) {
+function ScenarioList({ title, inputs, baseSimulation, scenarios }) {
   return (
     <section className="fm-card fm-city-list"><h2>{title}</h2>
       {scenarios.map(([name, cost, copy]) => {
-        const saving = Math.max(0, currentCost - cost);
-        return <article className="fm-city-row" key={name}><div><strong>{name}</strong><p>{copy}</p></div><span>예상 월 {formatWon(cost)}<br /><b>{saving ? `현재 대비 ${formatWon(saving)} 절감` : '현재와 비슷함'}</b></span></article>;
+        const saving = Math.max(0, inputs.monthlyLivingCost - cost);
+        const citySimulation = buildScenario(inputs, { monthlyLivingCost: cost });
+        return <article className="fm-city-row" key={name}><div><strong>{name}</strong><p>{copy}</p><p>이 생활비로 계산하면 <b>{runwayText(citySimulation)}</b>까지 버틸 수 있어요. {deltaText(baseSimulation, citySimulation)}.</p></div><span>예상 월 {formatWon(cost)}<br /><b>{saving ? `현재 대비 ${formatWon(saving)} 절감` : '현재와 비슷함'}</b></span></article>;
       })}
       <small>도시별 금액은 1인 생활비 참고 시나리오이며 실제 주거비, 의료비, 환율, 비자 조건에 따라 달라질 수 있어요.</small>
     </section>
@@ -276,7 +277,7 @@ export default function FireMapMVP() {
   if (screen === 'home') return <Home onStart={() => setScreen('question')} onReset={reset} />;
   if (screen === 'question') return <Question step={step} inputs={inputs} onChange={onChange} onPrev={() => step === 0 ? setScreen('home') : setStep((current) => current - 1)} onNext={next} onReset={reset} />;
   if (screen === 'experiment') return <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onReset={reset} onBack={backToResult} />;
-  if (screen === 'curation') return <Curation inputs={inputs} onReset={reset} onBack={backToResult} />;
+  if (screen === 'curation') return <Curation inputs={inputs} simulation={simulation} onReset={reset} onBack={backToResult} />;
   if (screen === 'share') return <Share inputs={inputs} simulation={simulation} onReset={reset} onBack={backToResult} />;
   return <Result inputs={inputs} simulation={simulation} onReset={reset} onMove={setScreen} />;
 }

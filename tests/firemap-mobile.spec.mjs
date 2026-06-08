@@ -133,7 +133,7 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await expect(page).toHaveURL(/#advanced$/);
   await expect(page.getByText('복잡한 가정은 따로 비교해요')).toBeVisible();
   await expect(page.getByText('퇴사 후 고정비 반영')).toBeVisible();
-  await expect(page.getByText('생활비를 낮추는 시나리오')).toBeVisible();
+  await expect(page.getByRole('heading', { name: '생활비를 낮추는 시나리오' })).toBeVisible();
   await expect(page.getByText('퇴사 후 월수입 실험')).toBeVisible();
   await expect(page.getByText('지역가입 건보료 월 23만 원 반영')).toBeVisible();
   await expect(page.getByText('치앙마이 3개월 살기')).toBeVisible();

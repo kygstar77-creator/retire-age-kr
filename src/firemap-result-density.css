@@ -1,0 +1,90 @@
+.fm-scroll {
+  display: flex;
+  flex-direction: column;
+}
+
+.fm-scroll > .fm-topbar {
+  order: 0;
+}
+
+.fm-scroll > .fm-result {
+  order: 1;
+}
+
+.fm-scroll > .fm-menu {
+  order: 2;
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.fm-scroll > section:not(.fm-result) {
+  order: 3;
+}
+
+.fm-scroll > .fm-ad {
+  order: 4;
+}
+
+.fm-card-grid .fm-mini:nth-child(n+3) {
+  display: none !important;
+}
+
+.fm-section-title {
+  margin-top: 4px !important;
+  font-size: 20px !important;
+  letter-spacing: -0.055em !important;
+}
+
+.fm-menu button {
+  text-align: center;
+}
+
+.fm-menu button:nth-child(1)::after,
+.fm-menu button:nth-child(2)::after,
+.fm-menu button:nth-child(3)::after,
+.fm-menu button:nth-child(4)::after {
+  display: block;
+  margin-top: 2px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.fm-menu button:nth-child(1)::after {
+  content: '숫자 바꾸기';
+}
+
+.fm-menu button:nth-child(2)::after {
+  content: '건보료·해외체류';
+  color: #8b95a1;
+}
+
+.fm-menu button:nth-child(3)::after {
+  content: '도시별 생활비';
+  color: #8b95a1;
+}
+
+.fm-menu button:nth-child(4)::after {
+  content: '이미지·링크';
+  color: #8b95a1;
+}
+
+.fm-menu button:first-child::after {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 420px) {
+  .fm-result {
+    padding: 24px 22px !important;
+  }
+
+  .fm-menu {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fm-menu button {
+    min-height: 58px !important;
+    line-height: 1.15;
+  }
+}

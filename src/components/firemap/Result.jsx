@@ -4,13 +4,15 @@ import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, deltaText, fireStatus, runwayText } from '../../firemap-v2/scenarios.js';
 
 function ResultHero({ simulation }) {
+  const targetAge = `${simulation.inputs.targetRetirementAge}세`;
+  const runway = runwayText(simulation);
   return (
     <section className="fm-card fm-result fm-result-v3">
       <p>내 FIRE 현재 위치</p>
-      <h2>{simulation.inputs.targetRetirementAge}세에 퇴사하면<br /><b>{runwayText(simulation)}</b>까지 버틸 수 있어요.</h2>
-      <div className="fm-result-summary">
-        <span><small>은퇴 나이</small><strong>{simulation.inputs.targetRetirementAge}세</strong></span>
-        <span><small>경제적 자유 시점</small><strong>{runwayText(simulation)}</strong></span>
+      <h2>{targetAge}에 퇴사하면<br /><b>{runway}</b>까지 버틸 수 있어요.</h2>
+      <div className="fm-result-chips">
+        <span>은퇴 나이 <b>{targetAge}</b></span>
+        <span>경제적 자유 시점 <b>{runway}</b></span>
       </div>
       <p className="fm-result-copy">{simulation.earliestRetirementAge ? `현재 가정으로는 ${simulation.earliestRetirementAge}세 퇴사가 더 안전해 보여요.` : '현재 가정에서는 더 늦은 퇴사가 필요해 보여요.'}</p>
       <div className="fm-result-assumptions">
@@ -23,7 +25,8 @@ function ResultHero({ simulation }) {
 }
 
 function ImprovementCards({ inputs, simulation }) {
-  const lowerCostValue = Math.max(1200000, inputs.monthlyLivingCost - 1500000);
+  const baseCost = Number(inputs.monthlyLivingCost || 0);
+  const lowerCostValue = Math.max(1000000, baseCost >= 2500000 ? baseCost - 1000000 : Math.round(baseCost * 0.8 / 100000) * 100000);
   const lowerCost = buildScenario(inputs, { monthlyLivingCost: lowerCostValue });
   const earnAfterRetire = buildScenario(inputs, { partTimeIncomeAfterRetirement: inputs.partTimeIncomeAfterRetirement + 1000000 });
   const workMore = buildScenario(inputs, { targetRetirementAge: inputs.targetRetirementAge + 1 });
@@ -57,13 +60,11 @@ export default function Result({ inputs, simulation, onMove, onEditFinalQuestion
         <button type="button" className="fm-primary" onClick={() => onMove('experiment')}>조건 바꿔보기</button>
         <button type="button" className="fm-secondary" onClick={() => onMove('share')}>공유하기</button>
       </div>
-      <div className="fm-ad">광고</div>
-      <ImprovementCards inputs={inputs} simulation={simulation} />
       <div className="fm-menu fm-result-menu">
         <button type="button" onClick={() => onMove('curation')}>도시 시나리오<span>도시별 생활비</span></button>
-        <button type="button" onClick={() => onMove('share')}>공유하기<span>이미지·링크</span></button>
-        <button type="button" className="fm-advanced-link" onClick={() => onMove('advanced')}>고급 실험</button>
       </div>
+      <div className="fm-ad">광고</div>
+      <ImprovementCards inputs={inputs} simulation={simulation} />
     </main>
   );
 }

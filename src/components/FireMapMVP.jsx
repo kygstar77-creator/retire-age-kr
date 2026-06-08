@@ -14,6 +14,7 @@ import '../firemap-overrides.css';
 import '../firemap-polish.css';
 import '../firemap-result-density.css';
 import '../firemap-deploy-polish.css';
+import '../firemap-release-fixes.css';
 
 const SCREENS = ['home', 'question', 'result', 'experiment', 'advanced', 'curation', 'share'];
 

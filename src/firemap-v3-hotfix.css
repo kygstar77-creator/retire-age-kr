@@ -3,6 +3,184 @@
   max-width: 100%;
 }
 
+.fm-screen {
+  background: #fffdf9;
+}
+
+.fm-screen button,
+.fm-screen a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fm-home-v3 {
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+}
+
+.fm-home-hero-card,
+.fm-home-mini-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06);
+}
+
+.fm-home-hero-card {
+  margin-top: 14px;
+  padding: 26px 22px 22px;
+}
+
+.fm-home-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  color: #111827;
+  font-size: 22px;
+  font-weight: 950;
+}
+
+.fm-home-brand span {
+  display: inline-grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 999px;
+  background: #fff1e7;
+  font-size: 19px;
+}
+
+.fm-home-hero-card p {
+  margin: 0 0 14px;
+  color: #9a3412;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.fm-home-hero-card h1 {
+  margin: 0;
+  color: #111827;
+  font-size: clamp(38px, 11vw, 48px);
+  line-height: 1.16;
+  letter-spacing: 0;
+  word-break: keep-all;
+}
+
+.fm-home-hero-card > span {
+  display: block;
+  margin-top: 18px;
+  color: #4b5563;
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.55;
+  word-break: keep-all;
+}
+
+.fm-home-hero-card button,
+.fm-primary,
+.fm-bottom-nav button:last-child {
+  display: inline-flex;
+  min-height: 56px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 18px;
+  background: #ff5a00;
+  color: #fff;
+  padding: 0 18px;
+  font: inherit;
+  font-size: 17px;
+  font-weight: 950;
+  text-decoration: none;
+  box-shadow: 0 14px 28px rgba(255, 90, 0, 0.18);
+}
+
+.fm-home-hero-card button {
+  width: 100%;
+  margin-top: 22px;
+}
+
+.fm-home-mini-card {
+  margin-top: 14px;
+  padding: 18px;
+}
+
+.fm-home-mini-card strong {
+  display: block;
+  color: #111827;
+  font-size: 18px;
+  font-weight: 950;
+}
+
+.fm-home-mini-card p {
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.5;
+}
+
+.fm-policy-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.fm-policy-links a {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  border: 1px solid #fed7aa;
+  border-radius: 999px;
+  background: #fff7ed;
+  color: #9a3412;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.fm-direct-value {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fed7aa;
+  border-radius: 999px;
+  background: #fff7ed;
+  color: #9a3412;
+  padding: 0 13px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.fm-secondary,
+.fm-bottom-nav button:first-child {
+  display: inline-flex;
+  min-height: 56px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fed7aa;
+  border-radius: 18px;
+  background: #fff;
+  color: #9a3412;
+  padding: 0 18px;
+  font: inherit;
+  font-size: 17px;
+  font-weight: 950;
+  text-decoration: none;
+}
+
+.fm-result-top-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 14px 0 10px;
+}
+
 .fm-range-control {
   margin: 18px 0;
 }
@@ -71,10 +249,75 @@
 }
 
 .fm-city-cta {
+  display: inline-flex;
   width: 100%;
   min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 16px;
+  border: 1px solid #fed7aa;
+  background: #fff7ed;
+  color: #9a3412;
   padding: 14px 16px;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 950;
   border-radius: 18px;
+  box-shadow: none;
+}
+
+.fm-section-title {
+  margin: 20px 4px 12px;
+  color: #111827;
+  font-size: 23px;
+  line-height: 1.25;
+  font-weight: 950;
+}
+
+.fm-improve-card {
+  min-width: 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+.fm-improve-card em {
+  display: inline-flex;
+  margin-bottom: 10px;
+  border: 1px solid #fed7aa;
+  border-radius: 999px;
+  background: #fff7ed;
+  color: #9a3412;
+  padding: 5px 9px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.fm-improve-card strong {
+  display: block;
+  color: #ea580c;
+  font-size: 26px;
+  font-weight: 950;
+  line-height: 1.1;
+}
+
+.fm-improve-card h3 {
+  margin: 8px 0 0;
+  color: #111827;
+  font-size: 15px;
+  line-height: 1.35;
+  font-weight: 950;
+}
+
+.fm-improve-card p {
+  margin: 7px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.35;
 }
 
 @media (max-width: 380px) {

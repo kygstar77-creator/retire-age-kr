@@ -8,6 +8,11 @@ export default function App() {
       document.querySelectorAll('.fm-actions button').forEach((button) => {
         if (button.textContent === '초기화') button.hidden = true;
       });
+      document.querySelectorAll('.fm-text-card h2, .fm-graph h2').forEach((title) => {
+        title.style.fontSize = '30px';
+        title.style.lineHeight = '1.15';
+        title.style.letterSpacing = '-0.07em';
+      });
       const result = document.querySelector('.fm-result');
       if (!result || result.querySelector('.fm-assumption-inline')) return;
       const badge = document.createElement('span');

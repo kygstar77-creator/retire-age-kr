@@ -3,7 +3,7 @@ import { buildSimulation, defaultInputs } from '../utils/retirementSimulator.js'
 import { buildShareUrl } from '../utils/shareState.js';
 import { BASE_URL, CONTACT_EMAIL, STORAGE_KEY, domesticCities, investmentScenarios, overseasCities, questions } from '../firemap-v2/data.js';
 import { cleanNumber, formatEok, formatValue, formatWon } from '../firemap-v2/formatters.js';
-import { buildChartRows, buildScenario, deltaText, fireStatus, runwayText } from '../firemap-v2/scenarios.js';
+import { buildChartRows, buildScenario, deltaText, fireStatus, runwayText, scenarioEndAge } from '../firemap-v2/scenarios.js';
 import '../firemap.css';
 import '../firemap-overrides.css';
 
@@ -152,6 +152,9 @@ function Result({ inputs, simulation, onReset, onMove }) {
 function Experiment({ inputs, onChange, simulation, onReset, onBack }) {
   const reducedMonthlyLivingCost = Math.max(1200000, inputs.monthlyLivingCost - 1500000);
   const lowerCost = buildScenario(inputs, { monthlyLivingCost: reducedMonthlyLivingCost });
+  const sp500Baseline = buildScenario(inputs, { annualReturnRate: 8 });
+  const endAgeGap = scenarioEndAge(simulation) - scenarioEndAge(sp500Baseline);
+  const gapText = endAgeGap > 0 ? `S&P500형보다 ${endAgeGap}년 길게` : endAgeGap < 0 ? `S&P500형보다 ${Math.abs(endAgeGap)}년 짧게` : 'S&P500형과 비슷하게';
   const { chart, max } = buildChartRows(simulation, lowerCost, inputs);
   const points = (key) => chart.map((row) => `${row.x},${Math.max(32, key === 'improved' ? row.improvedY : row.currentY)}`).join(' ');
   const adjust = (key, amount) => onChange(key, Math.max(0, cleanNumber(inputs[key]) + amount));
@@ -169,6 +172,7 @@ function Experiment({ inputs, onChange, simulation, onReset, onBack }) {
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">투자 수익률 가정</p><h2>투자 성향별로 다시 계산해보기</h2>
         <p>현재 적용 수익률은 연 {inputs.annualReturnRate}%예요. {activeScenario ? activeScenario.copy : '직접 입력한 수익률 가정으로 계산 중이에요.'}</p>
+        <div className="fm-chart-summary"><span>선택한 가정 <b>{runwayText(simulation)}</b></span><span>기본 S&P500형 대비 <b>{gapText}</b></span></div>
         <div className="fm-chips">
           {investmentScenarios.map((scenario) => <button type="button" key={scenario.key} onClick={() => onChange('annualReturnRate', scenario.annualReturnRate)}>{scenario.label} · 연 {scenario.annualReturnRate}%</button>)}
         </div>

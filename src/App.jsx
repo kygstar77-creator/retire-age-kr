@@ -1,30 +1,5 @@
-import { useEffect } from 'react';
 import FireMapMVP from './components/FireMapMVP.jsx';
 
 export default function App() {
-  useEffect(() => {
-    const text = '현재 계산 기준 · 연 수익률 8% · 물가 3%';
-    const applyPolish = () => {
-      document.querySelectorAll('.fm-actions button').forEach((button) => {
-        if (button.textContent === '초기화') button.hidden = true;
-      });
-      document.querySelectorAll('.fm-text-card h2, .fm-graph h2').forEach((title) => {
-        title.style.setProperty('font-size', '26px', 'important');
-        title.style.setProperty('line-height', '1.2', 'important');
-        title.style.setProperty('letter-spacing', '-0.06em', 'important');
-      });
-      const result = document.querySelector('.fm-result');
-      if (!result || result.querySelector('.fm-assumption-inline')) return;
-      const badge = document.createElement('span');
-      badge.className = 'fm-assumption-inline';
-      badge.textContent = text;
-      result.appendChild(badge);
-    };
-    applyPolish();
-    const observer = new MutationObserver(applyPolish);
-    observer.observe(document.body, { childList: true, subtree: true });
-    return () => observer.disconnect();
-  }, []);
-
   return <FireMapMVP />;
 }

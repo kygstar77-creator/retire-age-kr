@@ -22,11 +22,13 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await page.goto('/#home');
   await expect(page.getByText('파이어맵').first()).toBeVisible();
   await expect(page.getByText('내 돈은 몇 살까지 버틸까?')).toBeVisible();
+  await expect(page.getByRole('button', { name: '초기화' })).toBeHidden();
   await screenshot(page, '01-home');
 
   await clickVisible(page, '시작하기');
   await expect(page.getByText('질문 1/5')).toBeVisible();
   await expect(page.getByText('지금 몇 살인가요?')).toBeVisible();
+  await expect(page.getByRole('button', { name: '초기화' })).toBeHidden();
   await screenshot(page, '02-question-age');
 
   await clickVisible(page, '다음');
@@ -53,6 +55,7 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await expect(page.getByText('FIRE를 앞당기는 방법')).toBeVisible();
   await expect(page.getByText('FIRE 진단')).toBeVisible();
   await expect(page.getByText('광고')).toBeVisible();
+  await expect(page.getByRole('button', { name: '초기화' })).toBeHidden();
   await screenshot(page, '04-result');
 
   await clickVisible(page, '조건 바꿔보기');
@@ -61,6 +64,7 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await expect(page.getByText(/현재 계획/).first()).toBeVisible();
   await expect(page.getByText(/생활비 절감안/).first()).toBeVisible();
   await expect(page.getByText('회색은 현재 계획')).toBeVisible();
+  await expect(page.getByRole('button', { name: '초기화' })).toBeHidden();
   await screenshot(page, '05-experiment-graph');
 
   await clickVisible(page, '결과로');
@@ -71,6 +75,7 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await expect(page.getByText('전주')).toBeVisible();
   await expect(page.getByText('치앙마이')).toBeVisible();
   await expect(page.getByText(/예상 월/).first()).toBeVisible();
+  await expect(page.getByRole('button', { name: '초기화' })).toBeHidden();
   await screenshot(page, '06-curation');
 
   await clickVisible(page, '결과로');
@@ -79,6 +84,7 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await expect(page.getByRole('button', { name: '결과 이미지 공유하기' })).toBeVisible();
   await expect(page.getByText('입력값은 서버로 전송하지 않고 이 브라우저에 저장됩니다.')).toBeVisible();
   await expect(page.getByText('retireage.kr@gmail.com')).toBeVisible();
+  await expect(page.getByRole('button', { name: '초기화' })).toBeHidden();
   await screenshot(page, '07-share');
 
   expect(consoleErrors).toEqual([]);

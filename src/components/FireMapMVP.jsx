@@ -150,7 +150,8 @@ function Result({ inputs, simulation, onReset, onMove }) {
 }
 
 function Experiment({ inputs, onChange, simulation, onReset, onBack }) {
-  const lowerCost = buildScenario(inputs, { monthlyLivingCost: Math.max(1200000, inputs.monthlyLivingCost - 1500000) });
+  const reducedMonthlyLivingCost = Math.max(1200000, inputs.monthlyLivingCost - 1500000);
+  const lowerCost = buildScenario(inputs, { monthlyLivingCost: reducedMonthlyLivingCost });
   const { chart, max } = buildChartRows(simulation, lowerCost, inputs);
   const points = (key) => chart.map((row) => `${row.x},${Math.max(32, key === 'improved' ? row.improvedY : row.currentY)}`).join(' ');
   const adjust = (key, amount) => onChange(key, Math.max(0, cleanNumber(inputs[key]) + amount));
@@ -173,7 +174,7 @@ function Experiment({ inputs, onChange, simulation, onReset, onBack }) {
           <polyline points={points('current')} className="current" /><polyline points={points('improved')} className="improved" />
           {chart.map((row) => <circle key={row.age} cx={row.x} cy={Math.max(32, row.improvedY)} r="4" className="dot" />)}
         </svg>
-        <p className="fm-chart-note">회색은 현재 계획, 주황색은 생활비를 낮춘 시나리오예요. 선을 따라가면 자산이 언제 줄어드는지 볼 수 있어요.</p>
+        <p className="fm-chart-note">회색은 현재 입력값 그대로의 계획이에요. 주황색은 현재 생활비에서 월 150만 원을 줄인 가정이라, 위에서 생활비를 바꾸면 함께 다시 계산돼요. 현재 절감안 기준 생활비는 {formatWon(reducedMonthlyLivingCost)}입니다.</p>
       </section>
     </main>
   );

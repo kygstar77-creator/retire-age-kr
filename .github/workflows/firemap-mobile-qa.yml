@@ -1,9 +1,6 @@
 name: FireMap Mobile QA
 
 on:
-  push:
-    branches:
-      - firemap-v2-preview
   pull_request:
     branches:
       - main
@@ -12,31 +9,18 @@ on:
 jobs:
   mobile-qa:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
-
-      - name: Build app
-        run: npm run build
-
-      - name: Run mobile QA
-        run: npm run qa:mobile
-
-      - name: Upload screenshots
+      - run: npm install
+      - run: npx playwright install webkit --with-deps
+      - run: npm run build
+      - run: npm run qa:mobile
+      - uses: actions/upload-artifact@v4
         if: always()
-        uses: actions/upload-artifact@v4
         with:
           name: firemap-mobile-screenshots
           path: |

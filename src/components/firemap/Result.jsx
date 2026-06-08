@@ -10,6 +10,7 @@ function ResultHero({ simulation }) {
       <h2>{simulation.inputs.targetRetirementAge}세에 퇴사하면<br /><b>{runwayText(simulation)}</b>까지 버틸 수 있어요.</h2>
       <span>{simulation.earliestRetirementAge ? `현재 가정으로는 ${simulation.earliestRetirementAge}세 퇴사가 더 안전해 보여요.` : '현재 가정에서는 더 늦은 퇴사가 필요해 보여요.'}</span>
       <span className="fm-assumption-inline">{returnAssumptions.label}</span>
+      <span className="fm-assumption-inline">국민연금 {simulation.inputs.expectedPensionAge}세부터 월 {formatWon(simulation.inputs.expectedMonthlyPension)} 반영</span>
       <div><small>FIRE 진단</small><strong>{fireStatus(simulation.survivalScore)}</strong><small>{simulation.survivalScore}/100</small></div>
     </section>
   );
@@ -41,16 +42,20 @@ function ImprovementCards({ inputs, simulation }) {
   );
 }
 
-export default function Result({ inputs, simulation, onMove }) {
+export default function Result({ inputs, simulation, onMove, onEditFinalQuestion }) {
   return (
     <main className="fm-screen fm-scroll">
       <Header tag="결과" />
       <ResultHero simulation={simulation} />
+      <div className="fm-result-actions">
+        <button type="button" className="fm-secondary" onClick={onEditFinalQuestion}>이전</button>
+        <button type="button" className="fm-primary" onClick={() => onMove('experiment')}>조건 바꿔보기</button>
+      </div>
       <div className="fm-ad">광고</div>
       <ImprovementCards inputs={inputs} simulation={simulation} />
       <div className="fm-menu">
-        <button type="button" onClick={() => onMove('experiment')}>조건 바꿔보기</button>
-        <button type="button" onClick={() => onMove('advanced')}>고급 실험</button>
+        <button type="button" onClick={() => onMove('experiment')}>숫자 실험</button>
+        <button type="button" className="fm-advanced-link" onClick={() => onMove('advanced')}>고급 실험</button>
         <button type="button" onClick={() => onMove('curation')}>도시 시나리오</button>
         <button type="button" onClick={() => onMove('share')}>공유하기</button>
       </div>

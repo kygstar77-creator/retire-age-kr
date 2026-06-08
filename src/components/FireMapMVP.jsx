@@ -150,6 +150,7 @@ function Result({ inputs, simulation, onReset, onMove }) {
 }
 
 function Experiment({ inputs, onChange, simulation, onReset, onBack }) {
+  const [selectedAge, setSelectedAge] = useState(null);
   const reducedMonthlyLivingCost = Math.max(1200000, inputs.monthlyLivingCost - 1500000);
   const lowerCost = buildScenario(inputs, { monthlyLivingCost: reducedMonthlyLivingCost });
   const sp500Baseline = buildScenario(inputs, { annualReturnRate: 8 });
@@ -159,6 +160,7 @@ function Experiment({ inputs, onChange, simulation, onReset, onBack }) {
   const points = (key) => chart.map((row) => `${row.x},${Math.max(32, key === 'improved' ? row.improvedY : row.currentY)}`).join(' ');
   const adjust = (key, amount) => onChange(key, Math.max(0, cleanNumber(inputs[key]) + amount));
   const last = chart.at(-1);
+  const selectedPoint = chart.find((row) => row.age === selectedAge) || last;
   const activeScenario = investmentScenarios.find((scenario) => scenario.annualReturnRate === inputs.annualReturnRate);
   return (
     <main className="fm-screen fm-scroll">
@@ -185,9 +187,10 @@ function Experiment({ inputs, onChange, simulation, onReset, onBack }) {
           <line x1="34" y1="152" x2="324" y2="152" /><line x1="34" y1="44" x2="34" y2="152" />
           <text x="34" y="34" className="axis">{formatEok(max)}</text><text x="34" y="174" className="axis">{chart[0]?.age}세</text><text x="292" y="174" className="axis">{last?.age}세</text>
           <polyline points={points('current')} className="current" /><polyline points={points('improved')} className="improved" />
-          {chart.map((row) => <circle key={row.age} cx={row.x} cy={Math.max(32, row.improvedY)} r="4" className="dot" />)}
+          {chart.map((row) => <circle key={row.age} cx={row.x} cy={Math.max(32, row.improvedY)} r={selectedPoint?.age === row.age ? '6' : '4'} className="dot" role="button" tabIndex="0" aria-label={`${row.age}세 자산 보기`} onClick={() => setSelectedAge(row.age)} onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') setSelectedAge(row.age); }} />)}
         </svg>
-        <p className="fm-chart-note">회색은 현재 입력값 그대로의 계획이에요. 주황색은 현재 생활비에서 월 150만 원을 줄인 가정이라, 위에서 생활비를 바꾸면 함께 다시 계산돼요. 현재 절감안 기준 생활비는 {formatWon(reducedMonthlyLivingCost)}입니다.</p>
+        {selectedPoint && <div className="fm-chart-summary"><span>{selectedPoint.age}세 현재 계획 <b>{formatEok(selectedPoint.current)}</b></span><span>{selectedPoint.age}세 절감안 <b>{formatEok(selectedPoint.improved)}</b></span></div>}
+        <p className="fm-chart-note">그래프의 점을 누르면 해당 나이의 자산을 볼 수 있어요. 회색은 현재 입력값 그대로의 계획이에요. 주황색은 현재 생활비에서 월 150만 원을 줄인 가정이라, 위에서 생활비를 바꾸면 함께 다시 계산돼요. 현재 절감안 기준 생활비는 {formatWon(reducedMonthlyLivingCost)}입니다.</p>
       </section>
     </main>
   );

@@ -14,8 +14,8 @@ function nearestByX(chart, x) {
 
 export default function Experiment({ inputs, onChange, simulation, onBack }) {
   const [selectedAge, setSelectedAge] = useState(null);
-  const reducedMonthlyLivingCost = Math.max(1200000, inputs.monthlyLivingCost - 1500000);
-  const lowerCost = useMemo(() => buildScenario(inputs, { monthlyLivingCost: reducedMonthlyLivingCost }), [inputs, reducedMonthlyLivingCost]);
+  const [improvedCost, setImprovedCost] = useState(Math.max(1200000, inputs.monthlyLivingCost - 1500000));
+  const lowerCost = useMemo(() => buildScenario(inputs, { monthlyLivingCost: improvedCost }), [inputs, improvedCost]);
   const sp500Baseline = useMemo(() => buildScenario(inputs, { annualReturnRate: 8 }), [inputs]);
   const endAgeGap = scenarioEndAge(simulation) - scenarioEndAge(sp500Baseline);
   const gapText = endAgeGap > 0 ? `S&P500형보다 ${endAgeGap}년 길게` : endAgeGap < 0 ? `S&P500형보다 ${Math.abs(endAgeGap)}년 짧게` : 'S&P500형과 비슷하게';
@@ -42,6 +42,8 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         <Adjust label="퇴사 나이" value={`${inputs.targetRetirementAge}세`} minus={() => adjust('targetRetirementAge', -1)} plus={() => adjust('targetRetirementAge', 1)} />
         <Adjust label="생활비" value={formatWon(inputs.monthlyLivingCost)} minus={() => adjust('monthlyLivingCost', -100000)} plus={() => adjust('monthlyLivingCost', 100000)} />
         <Adjust label="월 저축액" value={formatWon(inputs.monthlyInvestment)} minus={() => adjust('monthlyInvestment', -100000)} plus={() => adjust('monthlyInvestment', 100000)} />
+        <Adjust label="연 수익률" value={`${inputs.annualReturnRate}%`} minus={() => adjust('annualReturnRate', -1)} plus={() => adjust('annualReturnRate', 1)} />
+        <Adjust label="절감안 생활비" value={formatWon(improvedCost)} minus={() => setImprovedCost((value) => Math.max(1200000, value - 100000))} plus={() => setImprovedCost((value) => value + 100000)} />
       </section>
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">투자 수익률 가정</p><h2>투자 성향별로 다시 계산해보기</h2>
@@ -50,20 +52,20 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         <div className="fm-chips fm-return-rail" aria-label="투자 수익률 가정 선택">
           {investmentScenarios.map((scenario) => <button type="button" key={scenario.key} className={scenario.annualReturnRate === inputs.annualReturnRate ? 'is-active' : ''} onClick={() => onChange('annualReturnRate', scenario.annualReturnRate)}>{scenario.label} · 연 {scenario.annualReturnRate}%</button>)}
         </div>
-        <small>수익률은 보장값이 아니라 장기 가정이에요. 실제 결과는 시장 상황과 보유 상품에 따라 달라질 수 있어요.</small>
+        <small>수익률은 보장값이 아니라 장기 가정이에요. 직접 조절하거나 프리셋을 눌러 비교할 수 있어요.</small>
       </section>
       <section className="fm-card fm-graph">
         <p className="fm-kicker">내 미래 자산 차트</p><h2>손가락으로 차트를 눌러 나이별 자산을 보세요</h2>
         <div className="fm-chart-summary"><span>현재 계획 <b>{runwayText(simulation)}</b></span><span>생활비 절감안 <b>{runwayText(lowerCost)}</b></span></div>
         <svg className="fm-touch-chart" viewBox="0 0 360 210" role="img" aria-label="나이별 자산 그래프" onPointerDown={selectFromPointer} onPointerMove={(event) => { if (event.buttons === 1 || event.pointerType === 'touch') selectFromPointer(event); }}>
           <line x1="34" y1="152" x2="324" y2="152" /><line x1="34" y1="44" x2="34" y2="152" />
-          <text x="34" y="34" className="axis">{formatEok(max)}</text><text x="34" y="174" className="axis">{chart[0]?.age}세</text><text x="292" y="174" className="axis">{last?.age}세</text>
+          <text x="34" y="34" className="axis">Y축 {formatEok(max)}</text><text x="34" y="174" className="axis">X축 {chart[0]?.age}세</text><text x="292" y="174" className="axis">{last?.age}세</text>
           <polyline points={points('current')} className="current" /><polyline points={points('improved')} className="improved" />
           {selectedPoint && <><line className="fm-crosshair" x1={selectedPoint.x} y1="38" x2={selectedPoint.x} y2="158" /><circle cx={selectedPoint.x} cy={Math.max(32, selectedPoint.currentY)} r="5" className="dot current-dot" /><circle cx={selectedPoint.x} cy={Math.max(32, selectedPoint.improvedY)} r="6" className="dot" /></>}
           <rect className="fm-chart-hitbox" x="28" y="32" width="304" height="130" rx="16" />
         </svg>
         {selectedPoint && <div className="fm-selected-point"><strong>{selectedPoint.age}세 예상 자산</strong><div><span>현재 계획 <b>{formatEok(selectedPoint.current)}</b></span><span>절감안 <b>{formatEok(selectedPoint.improved)}</b></span></div></div>}
-        <p className="fm-chart-note">점 맞히기 방식이 아니라 차트 아무 곳이나 누르면 가장 가까운 나이를 보여줘요. 회색은 현재 계획, 주황색은 월 생활비를 줄인 가정입니다. 현재 절감안 기준 생활비는 {formatWon(reducedMonthlyLivingCost)}입니다.</p>
+        <p className="fm-chart-note">차트는 1살 단위 데이터를 사용해요. 회색은 현재 계획, 주황색은 절감안 생활비 {formatWon(improvedCost)} 기준입니다.</p>
       </section>
     </main>
   );

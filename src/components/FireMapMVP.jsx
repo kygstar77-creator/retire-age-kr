@@ -17,6 +17,7 @@ import '../firemap-result-density.css';
 import '../firemap-deploy-polish.css';
 import '../firemap-release-fixes.css';
 import '../firemap-v3-feedback.css';
+import '../firemap-v3-hotfix.css';
 
 const SCREENS = ['home', 'question', 'result', 'experiment', 'advanced', 'curation', 'share'];
 

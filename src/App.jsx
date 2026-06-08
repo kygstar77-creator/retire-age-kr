@@ -4,7 +4,10 @@ import FireMapMVP from './components/FireMapMVP.jsx';
 export default function App() {
   useEffect(() => {
     const text = '현재 계산 기준 · 연 수익률 8% · 물가 3%';
-    const applyBadge = () => {
+    const applyPolish = () => {
+      document.querySelectorAll('.fm-actions button').forEach((button) => {
+        if (button.textContent === '초기화') button.hidden = true;
+      });
       const result = document.querySelector('.fm-result');
       if (!result || result.querySelector('.fm-assumption-inline')) return;
       const badge = document.createElement('span');
@@ -12,8 +15,8 @@ export default function App() {
       badge.textContent = text;
       result.appendChild(badge);
     };
-    applyBadge();
-    const observer = new MutationObserver(applyBadge);
+    applyPolish();
+    const observer = new MutationObserver(applyPolish);
     observer.observe(document.body, { childList: true, subtree: true });
     return () => observer.disconnect();
   }, []);

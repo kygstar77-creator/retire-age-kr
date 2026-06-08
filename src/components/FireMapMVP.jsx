@@ -52,12 +52,23 @@ function formatWon(value) {
   return `${Math.round(amount).toLocaleString('ko-KR')}원`;
 }
 
+function formatInputWon(value) {
+  const amount = Math.max(0, cleanNumber(value));
+  const eok = Math.floor(amount / 100000000);
+  const man = Math.round((amount % 100000000) / 10000);
+  if (eok > 0 && man > 0) return `${eok}억 ${man.toLocaleString('ko-KR')}만`;
+  if (eok > 0) return `${eok}억`;
+  if (man > 0) return `${man.toLocaleString('ko-KR')}만`;
+  return '0원';
+}
+
 function formatEok(value) {
   return `${(Math.max(0, cleanNumber(value)) / 100000000).toFixed(1)}억`;
 }
 
-function formatValue(value, type) {
-  return type === 'age' ? `${cleanNumber(value)}세` : formatWon(value);
+function formatValue(value, type, key) {
+  if (type === 'age') return `${cleanNumber(value)}세`;
+  return key === 'financialAsset' ? formatInputWon(value) : formatWon(value);
 }
 
 function runwayText(simulation) {
@@ -137,7 +148,7 @@ function Question({ step, inputs, onChange, onPrev, onNext, onReset }) {
         <p>{question.helper}</p>
         <div className="fm-stepper fm-stepper-display">
           <button type="button" onClick={() => changeBy(-question.step)}>-</button>
-          <button type="button" className="fm-value-box" onClick={directEdit}>{formatValue(value, question.type)}</button>
+          <button type="button" className="fm-value-box" onClick={directEdit}>{formatValue(value, question.type, question.key)}</button>
           <button type="button" onClick={() => changeBy(question.step)}>+</button>
         </div>
         {isAge ? <small>나이는 빠른 선택 버튼 없이 1세 단위로만 조절해요.</small> : (

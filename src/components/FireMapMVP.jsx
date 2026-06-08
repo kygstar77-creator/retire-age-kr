@@ -3,6 +3,7 @@ import Home from './firemap/Home.jsx';
 import Question from './firemap/Question.jsx';
 import Result from './firemap/Result.jsx';
 import Experiment from './firemap/Experiment.jsx';
+import Advanced from './firemap/Advanced.jsx';
 import Curation from './firemap/Curation.jsx';
 import Share from './firemap/Share.jsx';
 import { buildSimulation, defaultInputs } from '../utils/retirementSimulator.js';
@@ -12,7 +13,7 @@ import '../firemap.css';
 import '../firemap-overrides.css';
 import '../firemap-polish.css';
 
-const SCREENS = ['home', 'question', 'result', 'experiment', 'curation', 'share'];
+const SCREENS = ['home', 'question', 'result', 'experiment', 'advanced', 'curation', 'share'];
 
 function loadInputs() {
   try {
@@ -56,6 +57,7 @@ export default function FireMapMVP() {
   if (screen === 'home') return <Home onStart={() => setScreen('question')} />;
   if (screen === 'question') return <Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />;
   if (screen === 'experiment') return <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backToResult} />;
+  if (screen === 'advanced') return <Advanced inputs={inputs} onChange={onChange} simulation={simulation} onBack={backToResult} />;
   if (screen === 'curation') return <Curation inputs={inputs} simulation={simulation} onBack={backToResult} />;
   if (screen === 'share') return <Share inputs={inputs} simulation={simulation} onBack={backToResult} />;
   return <Result inputs={inputs} simulation={simulation} onMove={setScreen} />;

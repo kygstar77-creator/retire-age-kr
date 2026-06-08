@@ -91,7 +91,7 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await expect(page.getByRole('button', { name: '초기화' })).toBeHidden();
   await expectNoHorizontalOverflow(page);
   await expectTapTarget(page.getByRole('button', { name: '조건 바꿔보기' }).first(), 'experiment button');
-  await expectTapTarget(page.getByRole('button', { name: '고급 실험' }).first(), 'advanced button');
+  await expect(page.getByRole('button', { name: '고급 실험' })).toBeHidden();
   await screenshot(page, '04-result');
 
   await clickVisible(page, '조건 바꿔보기');
@@ -129,22 +129,6 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await expect(page).toHaveURL(/#result$/);
   await expect(page.getByText('내 FIRE 현재 위치')).toBeVisible();
 
-  await clickVisible(page, '고급 실험');
-  await expect(page).toHaveURL(/#advanced$/);
-  await expect(page.getByText('복잡한 가정은 따로 비교해요')).toBeVisible();
-  await expect(page.getByText('퇴사 후 고정비 반영')).toBeVisible();
-  await expect(page.getByRole('heading', { name: '생활비를 낮추는 시나리오' })).toBeVisible();
-  await expect(page.getByText('퇴사 후 월수입 실험')).toBeVisible();
-  await expect(page.getByText('지역가입 건보료 월 23만 원 반영')).toBeVisible();
-  await expect(page.getByText('치앙마이 3개월 살기')).toBeVisible();
-  await clickVisible(page, '건보료 반영');
-  await clickVisible(page, '해외체류 반영');
-  await clickVisible(page, '현금흐름 반영');
-  await expectNoHorizontalOverflow(page);
-  await screenshot(page, '06-advanced');
-
-  await clickVisible(page, '결과로');
-  await expect(page).toHaveURL(/#result$/);
   await clickVisible(page, '도시 시나리오');
   await expect(page).toHaveURL(/#curation$/);
   await expect(page.getByText('사는 곳을 바꾸면 FIRE가 얼마나 가까워질까?')).toBeVisible();
@@ -157,7 +141,7 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await expect(page.getByText('생활비를 낮추는 건 수익률을 올리는 것만큼 강력해요')).toBeVisible();
   await expect(page.getByRole('button', { name: '초기화' })).toBeHidden();
   await expectNoHorizontalOverflow(page);
-  await screenshot(page, '07-curation');
+  await screenshot(page, '06-curation');
 
   await clickVisible(page, '결과로');
   await expect(page).toHaveURL(/#result$/);
@@ -171,7 +155,7 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await expectNoHorizontalOverflow(page);
   await expectTapTarget(page.getByRole('button', { name: '결과 이미지 공유하기' }).first(), 'share image button');
   await expectTapTarget(page.getByRole('button', { name: '결과 문구 복사' }).first(), 'copy summary button');
-  await screenshot(page, '08-share');
+  await screenshot(page, '07-share');
 
   expect(consoleErrors).toEqual([]);
 });

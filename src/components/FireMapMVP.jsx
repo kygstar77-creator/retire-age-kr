@@ -1,36 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import { buildSimulation, defaultInputs } from '../utils/retirementSimulator.js';
 import { buildShareUrl } from '../utils/shareState.js';
+import { BASE_URL, CONTACT_EMAIL, STORAGE_KEY, domesticCities, overseasCities, questions } from '../firemap-v2/data.js';
+import { cleanNumber, formatEok, formatValue, formatWon } from '../firemap-v2/formatters.js';
+import { buildChartRows, buildScenario, deltaText, fireStatus, runwayText } from '../firemap-v2/scenarios.js';
 import '../firemap.css';
 import '../firemap-overrides.css';
-
-const STORAGE_KEY = 'firemap-inputs-v2';
-const CONTACT_EMAIL = 'retireage.kr@gmail.com';
-const BASE_URL = 'https://retire-age-kr.pages.dev/';
-
-const questions = [
-  { key: 'currentAge', type: 'age', label: '현재 나이', title: '지금 몇 살인가요?', helper: '현재 나이를 기준으로 퇴사까지 남은 시간을 계산해요.', step: 1 },
-  { key: 'targetRetirementAge', type: 'age', label: '퇴사 희망 나이', title: '몇 살에 퇴사하고 싶나요?', helper: '1살 차이도 결과에 크게 영향을 줘요.', step: 1 },
-  { key: 'financialAsset', type: 'money', label: '금융자산', title: '지금 금융자산은 얼마인가요?', helper: '주식, 예금, 현금처럼 퇴사 후 생활비에 쓸 수 있는 돈 기준이에요.', step: 1000000, presets: [100000000, 300000000, 500000000, 1000000000], unit: '100만 원 단위' },
-  { key: 'monthlyInvestment', type: 'money', label: '월 저축액', title: '퇴사 전 매달 얼마를 모을까요?', helper: '앞으로 매달 투자하거나 저축할 금액을 입력해주세요.', step: 100000, presets: [500000, 1000000, 2000000, 3000000], unit: '10만 원 단위' },
-  { key: 'monthlyLivingCost', type: 'money', label: '퇴사 후 월 생활비', title: '퇴사 후 한 달 생활비는?', helper: '주거비, 식비, 보험료, 취미, 여행비를 포함한 월 생활비예요.', step: 100000, presets: [2500000, 3500000, 5000000, 7000000], unit: '10만 원 단위' }
-];
-
-const domesticCities = [
-  ['전주', 3500000, '주거비와 생활비를 낮추면서 도시 인프라를 유지하는 국내형 시나리오'],
-  ['원주', 3300000, '수도권 접근성과 낮은 주거비를 함께 보는 반퇴형 시나리오'],
-  ['강릉', 3700000, '해안 생활 선호자를 위한 생활비 절감·삶의 만족도 균형 시나리오']
-];
-
-const overseasCities = [
-  ['치앙마이', 2600000, '연 3개월 체류 기준. 생활비 절감과 건보료 조정 가능성을 함께 확인'],
-  ['다낭', 2800000, '따뜻한 기후와 낮은 체류비를 반영한 단기 해외살이 시나리오'],
-  ['쿠알라룸푸르', 3200000, '도시 인프라와 영어 생활권을 고려한 해외 FIRE 후보지']
-];
-
-function cleanNumber(value) {
-  return Number(String(value ?? '').replace(/[^\d.-]/g, '')) || 0;
-}
 
 function loadInputs() {
   try {
@@ -42,54 +17,7 @@ function loadInputs() {
   return defaultInputs;
 }
 
-function formatWon(value) {
-  const amount = cleanNumber(value);
-  if (Math.abs(amount) >= 100000000) {
-    const eok = amount / 100000000;
-    return `${Number.isInteger(eok) ? eok.toFixed(0) : eok.toFixed(1)}억`;
-  }
-  if (Math.abs(amount) >= 10000) return `${Math.round(amount / 10000).toLocaleString('ko-KR')}만`;
-  return `${Math.round(amount).toLocaleString('ko-KR')}원`;
-}
-
-function formatInputWon(value) {
-  const amount = Math.max(0, cleanNumber(value));
-  const eok = Math.floor(amount / 100000000);
-  const man = Math.round((amount % 100000000) / 10000);
-  if (eok > 0 && man > 0) return `${eok}억 ${man.toLocaleString('ko-KR')}만`;
-  if (eok > 0) return `${eok}억`;
-  if (man > 0) return `${man.toLocaleString('ko-KR')}만`;
-  return '0원';
-}
-
-function formatEok(value) {
-  return `${(Math.max(0, cleanNumber(value)) / 100000000).toFixed(1)}억`;
-}
-
-function formatValue(value, type, key) {
-  if (type === 'age') return `${cleanNumber(value)}세`;
-  return key === 'financialAsset' ? formatInputWon(value) : formatWon(value);
-}
-
-function runwayText(simulation) {
-  return simulation.targetResult.depletionAge ? `${simulation.targetResult.depletionAge}세` : `${simulation.inputs.simulationUntilAge}세 이상`;
-}
-
-function scenarioEndAge(simulation) {
-  return simulation.targetResult.depletionAge || simulation.inputs.simulationUntilAge;
-}
-
-function buildScenario(inputs, patch) {
-  return buildSimulation({ ...inputs, ...patch });
-}
-
-function deltaText(base, next) {
-  const diff = Math.max(0, scenarioEndAge(next) - scenarioEndAge(base));
-  if (!base.targetResult.depletionAge && !next.targetResult.depletionAge) return '이미 장기 유지';
-  return diff > 0 ? `${diff}년 개선` : '변화 작음';
-}
-
-function Header({ tag, onReset, onBack }) {
+function Header({ tag, onReset, onBack, hideReset = false }) {
   const resetSafely = () => {
     if (window.confirm('입력값을 초기화하고 처음으로 돌아갈까요?')) onReset();
   };
@@ -99,7 +27,7 @@ function Header({ tag, onReset, onBack }) {
       <div className="fm-actions">
         <span>{tag}</span>
         {onBack && <button type="button" onClick={onBack}>결과로</button>}
-        <button type="button" onClick={resetSafely}>초기화</button>
+        {!hideReset && <button type="button" onClick={resetSafely}>초기화</button>}
       </div>
     </header>
   );
@@ -111,7 +39,7 @@ function Home({ onStart, onReset }) {
       <Header tag="2분 계산" onReset={onReset} />
       <section className="fm-hero">
         <p>퇴사나이 계산기</p>
-        <h1>내 돈으로 몇 살까지 버틸 수 있을까?</h1>
+        <h1>내 돈은 몇 살까지 버틸까?</h1>
         <span>퇴사나이와 FIRE를 앞당기는 방법을 2분 만에 계산해보세요.</span>
         <button type="button" onClick={onStart}>시작하기</button>
       </section>
@@ -174,7 +102,7 @@ function ResultHero({ simulation }) {
       <p>내 FIRE 현재 위치</p>
       <h2>{simulation.inputs.targetRetirementAge}세에 퇴사하면<br /><b>{runwayText(simulation)}</b>까지 버틸 수 있어요.</h2>
       <span>{simulation.earliestRetirementAge ? `현재 가정으로는 ${simulation.earliestRetirementAge}세 퇴사가 더 안전해 보여요.` : '현재 가정에서는 더 늦은 퇴사가 필요해 보여요.'}</span>
-      <div><small>자산수명 점수</small><strong>{simulation.survivalScore}</strong><small>/100</small></div>
+      <div><small>FIRE 진단</small><strong>{fireStatus(simulation.survivalScore)}</strong><small>{simulation.survivalScore}/100</small></div>
     </section>
   );
 }
@@ -223,20 +151,13 @@ function Result({ inputs, simulation, onReset, onMove }) {
 
 function Experiment({ inputs, onChange, simulation, onReset, onBack }) {
   const lowerCost = buildScenario(inputs, { monthlyLivingCost: Math.max(1200000, inputs.monthlyLivingCost - 1500000) });
-  const rows = simulation.targetResult.rows.filter((row, index) => index === 0 || row.age % 5 === 0 || row.age === inputs.targetRetirementAge || row.age === inputs.simulationUntilAge).slice(0, 12);
-  const improvedRows = lowerCost.targetResult.rows;
-  const max = Math.max(...rows.map((row) => Math.max(row.financialAsset, improvedRows.find((item) => item.age === row.age)?.financialAsset || 0)), 1);
-  const chart = rows.map((row, index) => {
-    const matched = improvedRows.find((item) => item.age === row.age) || row;
-    const x = 34 + (index / Math.max(1, rows.length - 1)) * 286;
-    return { age: row.age, x, current: row.financialAsset, improved: matched.financialAsset, currentY: 152 - (Math.max(0, row.financialAsset) / max) * 108, improvedY: 152 - (Math.max(0, matched.financialAsset) / max) * 108 };
-  });
+  const { chart, max } = buildChartRows(simulation, lowerCost, inputs);
   const points = (key) => chart.map((row) => `${row.x},${Math.max(32, key === 'improved' ? row.improvedY : row.currentY)}`).join(' ');
   const adjust = (key, amount) => onChange(key, Math.max(0, cleanNumber(inputs[key]) + amount));
   const last = chart.at(-1);
   return (
     <main className="fm-screen fm-scroll">
-      <Header tag="실험" onReset={onReset} onBack={onBack} />
+      <Header tag="실험" onReset={onReset} onBack={onBack} hideReset />
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">조건 바꿔보기</p><h2>숫자를 바꾸면 결과가 바로 달라져요</h2>
         <Adjust label="퇴사 나이" value={`${inputs.targetRetirementAge}세`} minus={() => adjust('targetRetirementAge', -1)} plus={() => adjust('targetRetirementAge', 1)} />
@@ -244,15 +165,15 @@ function Experiment({ inputs, onChange, simulation, onReset, onBack }) {
         <Adjust label="월 저축액" value={formatWon(inputs.monthlyInvestment)} minus={() => adjust('monthlyInvestment', -100000)} plus={() => adjust('monthlyInvestment', 100000)} />
       </section>
       <section className="fm-card fm-graph">
-        <p className="fm-kicker">연도별 자산 그래프</p><h2>현재 계획과 생활비 절감안 비교</h2>
+        <p className="fm-kicker">내 미래 자산 차트</p><h2>현재 계획과 생활비 절감안 비교</h2>
+        <div className="fm-chart-summary"><span>현재 계획 <b>{runwayText(simulation)}</b></span><span>생활비 절감안 <b>{runwayText(lowerCost)}</b></span></div>
         <svg viewBox="0 0 360 210" role="img" aria-label="나이별 자산 그래프">
           <line x1="34" y1="152" x2="324" y2="152" /><line x1="34" y1="44" x2="34" y2="152" />
           <text x="34" y="34" className="axis">{formatEok(max)}</text><text x="34" y="174" className="axis">{chart[0]?.age}세</text><text x="292" y="174" className="axis">{last?.age}세</text>
           <polyline points={points('current')} className="current" /><polyline points={points('improved')} className="improved" />
           {chart.map((row) => <circle key={row.age} cx={row.x} cy={Math.max(32, row.improvedY)} r="4" className="dot" />)}
         </svg>
-        <div className="fm-chart-summary"><span>현재 마지막 자산 <b>{formatEok(last?.current)}</b></span><span>개선안 마지막 자산 <b>{formatEok(last?.improved)}</b></span></div>
-        <p className="fm-chart-note">점은 5년 단위 시점입니다. 다음 단계에서 점을 눌러 해당 나이의 자산을 보는 기능을 추가할 수 있어요.</p>
+        <p className="fm-chart-note">회색은 현재 계획, 주황색은 생활비를 낮춘 시나리오예요. 선을 따라가면 자산이 언제 줄어드는지 볼 수 있어요.</p>
       </section>
     </main>
   );
@@ -265,7 +186,7 @@ function Adjust({ label, value, minus, plus }) {
 function Curation({ inputs, onReset, onBack }) {
   return (
     <main className="fm-screen fm-scroll">
-      <Header tag="큐레이션" onReset={onReset} onBack={onBack} />
+      <Header tag="큐레이션" onReset={onReset} onBack={onBack} hideReset />
       <section className="fm-card fm-text-card"><p className="fm-kicker">도시 시나리오</p><h2>사는 곳을 바꾸면 FIRE가 얼마나 가까워질까?</h2><p>생활비를 낮추는 국내·해외 후보지를 내 월 생활비와 비교합니다.</p></section>
       <ScenarioList title="국내 저비용 도시" currentCost={inputs.monthlyLivingCost} scenarios={domesticCities} />
       <ScenarioList title="해외 저비용 생활" currentCost={inputs.monthlyLivingCost} scenarios={overseasCities} />
@@ -279,9 +200,9 @@ function ScenarioList({ title, currentCost, scenarios }) {
     <section className="fm-card fm-city-list"><h2>{title}</h2>
       {scenarios.map(([name, cost, copy]) => {
         const saving = Math.max(0, currentCost - cost);
-        return <article className="fm-city-row" key={name}><div><strong>{name}</strong><p>{copy}</p></div><span>월 {formatWon(cost)}<br /><b>{saving ? `${formatWon(saving)} 절감` : '비슷함'}</b></span></article>;
+        return <article className="fm-city-row" key={name}><div><strong>{name}</strong><p>{copy}</p></div><span>예상 월 {formatWon(cost)}<br /><b>{saving ? `현재 대비 ${formatWon(saving)} 절감` : '현재와 비슷함'}</b></span></article>;
       })}
-      <small>도시별 값은 참고용이며 실제 주거비, 의료비, 환율, 비자 조건에 따라 달라질 수 있어요.</small>
+      <small>도시별 금액은 1인 생활비 참고 시나리오이며 실제 주거비, 의료비, 환율, 비자 조건에 따라 달라질 수 있어요.</small>
     </section>
   );
 }
@@ -318,8 +239,8 @@ function Share({ inputs, simulation, onReset, onBack }) {
   };
   return (
     <main className="fm-screen fm-scroll">
-      <Header tag="공유" onReset={onReset} onBack={onBack} />
-      <section className="fm-card fm-text-card"><p className="fm-kicker">공유</p><h2>결과카드 이미지 또는 링크 공유</h2><div className="fm-share-preview"><strong>{inputs.targetRetirementAge}세 퇴사 → {runwayText(simulation)}까지</strong><p>퇴사 후 월 100만 원 벌기, 1년 더 근무하기, 생활비 줄이기 효과도 비교해봤어요.</p></div><button className="fm-primary" type="button" onClick={shareImage}>이미지 카드 만들기/공유</button><button className="fm-secondary" type="button" onClick={() => copy(shareText, '결과 문구 복사됨')}>결과 문구 복사</button><button className="fm-secondary" type="button" onClick={() => copy(BASE_URL, '앱 기본 링크 복사됨')}>앱 기본 링크 복사</button><button className="fm-secondary" type="button" onClick={() => copy(shareUrl, '내 조건 링크 복사됨')}>내 조건 링크 복사</button>{message && <div className="fm-toast">{message}</div>}</section>
+      <Header tag="공유" onReset={onReset} onBack={onBack} hideReset />
+      <section className="fm-card fm-text-card"><p className="fm-kicker">공유</p><h2>내 FIRE 결과 공유하기</h2><p>이미지로 저장하거나 링크로 공유할 수 있어요.</p><div className="fm-share-preview"><strong>{inputs.targetRetirementAge}세 퇴사 → {runwayText(simulation)}까지</strong><p>퇴사 후 월 100만 원 벌기, 1년 더 근무하기, 생활비 줄이기 효과도 비교해봤어요.</p></div><button className="fm-primary" type="button" onClick={shareImage}>결과 이미지 공유하기</button><button className="fm-secondary" type="button" onClick={() => copy(shareText, '결과 문구 복사됨')}>결과 문구 복사</button><button className="fm-secondary" type="button" onClick={() => copy(BASE_URL, '앱 기본 링크 복사됨')}>앱 기본 링크 복사</button><button className="fm-secondary" type="button" onClick={() => copy(shareUrl, '내 조건 링크 복사됨')}>내 조건 링크 복사</button>{message && <div className="fm-toast">{message}</div>}</section>
       <section className="fm-card fm-info"><em>운영 안내</em><h2>개인정보·면책·문의</h2><p>입력값은 서버로 전송하지 않고 이 브라우저에 저장됩니다. 본 서비스는 투자·세무·법률 자문이 아닌 참고용 계산입니다.</p><small>피드백·협업 문의: <b>{CONTACT_EMAIL}</b></small></section>
     </main>
   );

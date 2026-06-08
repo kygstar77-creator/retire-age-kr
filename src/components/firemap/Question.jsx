@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import Header from './Header.jsx';
 import PensionControls from './PensionControls.jsx';
+import RangeControl from './RangeControl.jsx';
 import { questions } from '../../firemap-v2/data.js';
-import { cleanNumber, formatValue, formatWon } from '../../firemap-v2/formatters.js';
+import { cleanNumber } from '../../firemap-v2/formatters.js';
 
 export default function Question({ step, inputs, onChange, onPrev, onNext }) {
   const [editing, setEditing] = useState(false);
@@ -12,7 +13,6 @@ export default function Question({ step, inputs, onChange, onPrev, onNext }) {
   const isAge = question.type === 'age';
   const isFinalQuestion = step === questions.length - 1;
   const progress = `${((step + 1) / questions.length) * 100}%`;
-  const changeBy = (amount) => onChange(question.key, Math.max(0, value + amount));
   const openDirectEdit = () => {
     setDraft(String(value));
     setEditing(true);
@@ -30,19 +30,16 @@ export default function Question({ step, inputs, onChange, onPrev, onNext }) {
         <em>{question.label}</em>
         <h2>{question.title}</h2>
         <p>{question.helper}</p>
-        <div className="fm-stepper fm-stepper-display">
-          <button type="button" onClick={() => changeBy(-question.step)}>-</button>
-          <button type="button" className="fm-value-box" onClick={openDirectEdit}>{formatValue(value, question.type, question.key)}</button>
-          <button type="button" onClick={() => changeBy(question.step)}>+</button>
-        </div>
-        {isAge ? <small>나이는 빠른 선택 버튼 없이 1세 단위로만 조절해요. 가운데 값을 누르면 직접 입력할 수 있어요.</small> : (
-          <>
-            <small>{question.unit}로 조절돼요. 가운데 금액을 누르면 직접 입력할 수 있어요.</small>
-            <div className="fm-chips fm-preset-rail">
-              {question.presets.map((preset) => <button type="button" key={preset} onClick={() => onChange(question.key, preset)}>{formatWon(preset)}</button>)}
-            </div>
-          </>
-        )}
+        <button type="button" className="fm-direct-value" onClick={openDirectEdit}>직접 입력</button>
+        <RangeControl
+          label={question.label}
+          value={value}
+          inputKey={question.key}
+          type={question.type}
+          step={question.step}
+          onChange={(nextValue) => onChange(question.key, nextValue)}
+        />
+        <small>{isAge ? '손가락으로 움직여 1세 단위로 조절해요.' : `${question.unit}로 조절돼요.`}</small>
       </section>
       {isFinalQuestion && <PensionControls inputs={inputs} onChange={onChange} />}
       {editing && (

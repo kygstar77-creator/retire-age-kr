@@ -25,14 +25,14 @@ export function fireStatus(score) {
 }
 
 export function buildChartRows(simulation, improvedSimulation, inputs) {
-  const rows = simulation.targetResult.rows
-    .filter((row, index) => index === 0 || row.age % 5 === 0 || row.age === inputs.targetRetirementAge || row.age === inputs.simulationUntilAge)
-    .slice(0, 12);
+  const rows = simulation.targetResult.rows;
   const improvedRows = improvedSimulation.targetResult.rows;
   const max = Math.max(...rows.map((row) => Math.max(row.financialAsset, improvedRows.find((item) => item.age === row.age)?.financialAsset || 0)), 1);
-  const chart = rows.map((row, index) => {
+  const minAge = rows[0]?.age ?? inputs.currentAge;
+  const maxAge = rows.at(-1)?.age ?? inputs.simulationUntilAge;
+  const chart = rows.map((row) => {
     const matched = improvedRows.find((item) => item.age === row.age) || row;
-    const x = 34 + (index / Math.max(1, rows.length - 1)) * 286;
+    const x = 34 + ((row.age - minAge) / Math.max(1, maxAge - minAge)) * 286;
     return {
       age: row.age,
       x,
@@ -42,5 +42,5 @@ export function buildChartRows(simulation, improvedSimulation, inputs) {
       improvedY: 152 - (Math.max(0, matched.financialAsset) / max) * 108
     };
   });
-  return { rows, chart, max };
+  return { rows, chart, max, minAge, maxAge };
 }

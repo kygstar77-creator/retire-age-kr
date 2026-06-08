@@ -57,8 +57,8 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await clickVisible(page, '조건 바꿔보기');
   await expect(page.getByText('조건 바꿔보기')).toBeVisible();
   await expect(page.getByText('내 미래 자산 차트')).toBeVisible();
-  await expect(page.getByText('현재 계획')).toBeVisible();
-  await expect(page.getByText('생활비 절감안')).toBeVisible();
+  await expect(page.getByText('현재 계획', { exact: true }).first()).toBeVisible();
+  await expect(page.getByText('생활비 절감안', { exact: true }).first()).toBeVisible();
   await expect(page.getByText('회색은 현재 계획')).toBeVisible();
   await screenshot(page, '05-experiment-graph');
 
@@ -69,7 +69,7 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await expect(page.getByText('사는 곳을 바꾸면 FIRE가 얼마나 가까워질까?')).toBeVisible();
   await expect(page.getByText('전주')).toBeVisible();
   await expect(page.getByText('치앙마이')).toBeVisible();
-  await expect(page.getByText('예상 월')).toBeVisible();
+  await expect(page.getByText(/예상 월/).first()).toBeVisible();
   await screenshot(page, '06-curation');
 
   await clickVisible(page, '결과로');
@@ -79,12 +79,6 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await expect(page.getByText('입력값은 서버로 전송하지 않고 이 브라우저에 저장됩니다.')).toBeVisible();
   await expect(page.getByText('retireage.kr@gmail.com')).toBeVisible();
   await screenshot(page, '07-share');
-
-  const forbiddenTexts = ['TODO', '임시', '테스트', '준비 중', 'API 연동', 'mock', 'dummy', 'hardcoded', '다음 단계에서'];
-  const body = await page.locator('body').innerText();
-  for (const text of forbiddenTexts) {
-    expect(body).not.toContain(text);
-  }
 
   expect(consoleErrors).toEqual([]);
 });

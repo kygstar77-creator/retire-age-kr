@@ -6,11 +6,11 @@ import { buildScenario, deltaText, fireStatus, runwayText } from '../../firemap-
 function ResultHero({ simulation }) {
   return (
     <section className="fm-card fm-result">
-      <p>내 파이어 현재 위치</p>
+      <p>내 FIRE 현재 위치</p>
       <h2>{simulation.inputs.targetRetirementAge}세에 퇴사하면<br /><b>{runwayText(simulation)}</b>까지 버틸 수 있어요.</h2>
       <span>{simulation.earliestRetirementAge ? `현재 가정으로는 ${simulation.earliestRetirementAge}세 퇴사가 더 안전해 보여요.` : '현재 가정에서는 더 늦은 퇴사가 필요해 보여요.'}</span>
       <span className="fm-assumption-inline">{returnAssumptions.label}</span>
-      <div><small>파이어 진단</small><strong>{fireStatus(simulation.survivalScore)}</strong><small>{simulation.survivalScore}/100</small></div>
+      <div><small>FIRE 진단</small><strong>{fireStatus(simulation.survivalScore)}</strong><small>{simulation.survivalScore}/100</small></div>
     </section>
   );
 }
@@ -29,7 +29,7 @@ function ImprovementCards({ inputs, simulation }) {
   ];
   return (
     <section>
-      <h2 className="fm-section-title">파이어를 앞당기는 방법</h2>
+      <h2 className="fm-section-title">FIRE를 앞당기는 방법</h2>
       <div className="fm-card-grid">
         {cards.map(([tag, title, scenario]) => (
           <article className="fm-card fm-mini" key={title}>

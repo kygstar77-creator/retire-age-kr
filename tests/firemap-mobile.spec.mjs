@@ -49,6 +49,7 @@ test('FireMap mobile core flow and PMO QA smoke test', async ({ page }) => {
   await clickVisible(page, '결과 보기');
 
   await expect(page.getByText('내 FIRE 현재 위치')).toBeVisible();
+  await expect(page.getByText('현재 계산 기준 · 연 수익률 8% · 물가 3%')).toBeVisible();
   await expect(page.getByText('FIRE를 앞당기는 방법')).toBeVisible();
   await expect(page.getByText('FIRE 진단')).toBeVisible();
   await expect(page.getByText('광고')).toBeVisible();

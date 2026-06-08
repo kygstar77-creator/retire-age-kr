@@ -8,5 +8,3 @@ import Curation from './firemap/Curation.jsx';
 import Share from './firemap/Share.jsx';
 import FloatingFeedback from './firemap/FloatingFeedback.jsx';
 import { buildSimulation, defaultInputs } from '../utils/retirementSimulator.js';
-import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
-import { cleanNumber } from

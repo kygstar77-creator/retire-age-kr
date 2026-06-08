@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { buildSimulation, defaultInputs } from '../utils/retirementSimulator.js';
 import { buildShareUrl } from '../utils/shareState.js';
-import { BASE_URL, CONTACT_EMAIL, STORAGE_KEY, domesticCities, overseasCities, questions } from '../firemap-v2/data.js';
+import { BASE_URL, CONTACT_EMAIL, STORAGE_KEY, domesticCities, investmentScenarios, overseasCities, questions } from '../firemap-v2/data.js';
 import { cleanNumber, formatEok, formatValue, formatWon } from '../firemap-v2/formatters.js';
 import { buildChartRows, buildScenario, deltaText, fireStatus, runwayText } from '../firemap-v2/scenarios.js';
 import '../firemap.css';
@@ -156,6 +156,7 @@ function Experiment({ inputs, onChange, simulation, onReset, onBack }) {
   const points = (key) => chart.map((row) => `${row.x},${Math.max(32, key === 'improved' ? row.improvedY : row.currentY)}`).join(' ');
   const adjust = (key, amount) => onChange(key, Math.max(0, cleanNumber(inputs[key]) + amount));
   const last = chart.at(-1);
+  const activeScenario = investmentScenarios.find((scenario) => scenario.annualReturnRate === inputs.annualReturnRate);
   return (
     <main className="fm-screen fm-scroll">
       <Header tag="실험" onReset={onReset} onBack={onBack} hideReset />
@@ -164,6 +165,14 @@ function Experiment({ inputs, onChange, simulation, onReset, onBack }) {
         <Adjust label="퇴사 나이" value={`${inputs.targetRetirementAge}세`} minus={() => adjust('targetRetirementAge', -1)} plus={() => adjust('targetRetirementAge', 1)} />
         <Adjust label="생활비" value={formatWon(inputs.monthlyLivingCost)} minus={() => adjust('monthlyLivingCost', -100000)} plus={() => adjust('monthlyLivingCost', 100000)} />
         <Adjust label="월 저축액" value={formatWon(inputs.monthlyInvestment)} minus={() => adjust('monthlyInvestment', -100000)} plus={() => adjust('monthlyInvestment', 100000)} />
+      </section>
+      <section className="fm-card fm-text-card">
+        <p className="fm-kicker">투자 수익률 가정</p><h2>투자 성향별로 다시 계산해보기</h2>
+        <p>현재 적용 수익률은 연 {inputs.annualReturnRate}%예요. {activeScenario ? activeScenario.copy : '직접 입력한 수익률 가정으로 계산 중이에요.'}</p>
+        <div className="fm-chips">
+          {investmentScenarios.map((scenario) => <button type="button" key={scenario.key} onClick={() => onChange('annualReturnRate', scenario.annualReturnRate)}>{scenario.label} · 연 {scenario.annualReturnRate}%</button>)}
+        </div>
+        <small>수익률은 보장값이 아니라 장기 가정이에요. 실제 투자 결과는 시장 상황과 보유 상품에 따라 달라질 수 있어요.</small>
       </section>
       <section className="fm-card fm-graph">
         <p className="fm-kicker">내 미래 자산 차트</p><h2>현재 계획과 생활비 절감안 비교</h2>

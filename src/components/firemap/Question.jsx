@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Header from './Header.jsx';
+import PensionControls from './PensionControls.jsx';
 import { questions } from '../../firemap-v2/data.js';
 import { cleanNumber, formatValue, formatWon } from '../../firemap-v2/formatters.js';
 
@@ -9,6 +10,7 @@ export default function Question({ step, inputs, onChange, onPrev, onNext }) {
   const question = questions[step];
   const value = cleanNumber(inputs[question.key]);
   const isAge = question.type === 'age';
+  const isFinalQuestion = step === questions.length - 1;
   const progress = `${((step + 1) / questions.length) * 100}%`;
   const changeBy = (amount) => onChange(question.key, Math.max(0, value + amount));
   const openDirectEdit = () => {
@@ -42,6 +44,7 @@ export default function Question({ step, inputs, onChange, onPrev, onNext }) {
           </>
         )}
       </section>
+      {isFinalQuestion && <PensionControls inputs={inputs} onChange={onChange} />}
       {editing && (
         <div className="fm-input-overlay" role="dialog" aria-modal="true" aria-label={`${question.label} 직접 입력`}>
           <div className="fm-input-sheet">

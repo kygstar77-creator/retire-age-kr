@@ -72,6 +72,9 @@ test('FireMap V3 mobile product flow', async ({ page }) => {
   await expect(page.getByText('질문 4/5')).toBeVisible();
   await clickVisible(page, '다음');
   await expect(page.getByText('질문 5/5')).toBeVisible();
+  await expect(page.getByText('국민연금 조건도 같이 바꿔보세요')).toBeVisible();
+  await expect(page.getByText('연금 시작 나이')).toBeVisible();
+  await expect(page.getByText('예상 월 연금')).toBeVisible();
   await expectBottomCtaUsable(page, '결과 보기');
   await clickVisible(page, '결과 보기');
 
@@ -89,6 +92,7 @@ test('FireMap V3 mobile product flow', async ({ page }) => {
   await clickVisible(page, '이전');
   await expect(page).toHaveURL(/#question$/);
   await expect(page.getByText('질문 5/5')).toBeVisible();
+  await expect(page.getByText('국민연금 조건도 같이 바꿔보세요')).toBeVisible();
   await clickVisible(page, '결과 보기');
   await expect(page).toHaveURL(/#result$/);
 

@@ -53,7 +53,10 @@ export default function Result({ inputs, simulation, onMove, onEditFinalQuestion
     <main className="fm-screen fm-scroll">
       <Header tag="결과" onBack={onEditFinalQuestion} />
       <ResultHero simulation={simulation} />
-      <button type="button" className="fm-primary fm-result-main-action" onClick={() => onMove('experiment')}>조건 바꿔보기</button>
+      <div className="fm-result-top-actions">
+        <button type="button" className="fm-primary" onClick={() => onMove('experiment')}>조건 바꿔보기</button>
+        <button type="button" className="fm-secondary" onClick={() => onMove('share')}>공유하기</button>
+      </div>
       <div className="fm-ad">광고</div>
       <ImprovementCards inputs={inputs} simulation={simulation} />
       <div className="fm-menu fm-result-menu">

@@ -80,12 +80,14 @@ test('FireMap V3 mobile product flow', async ({ page }) => {
 
   await expect(page).toHaveURL(/#result$/);
   await expect(page.getByText('내 FIRE 현재 위치')).toBeVisible();
+  await expect(page.getByText('경제적 자유 시점')).toBeVisible();
   await expect(page.getByText('FIRE를 앞당기는 방법')).toBeVisible();
   await expect(page.getByText('FIRE 진단')).toBeVisible();
   await expect(page.getByText('광고')).toBeVisible();
   await expectNoHorizontalOverflow(page);
   await expectTapTarget(page.getByRole('button', { name: '이전' }).first(), 'result previous button');
   await expectTapTarget(page.getByRole('button', { name: '조건 바꿔보기' }).first(), 'experiment button');
+  await expect(page.getByRole('button', { name: '숫자 실험' })).toBeHidden();
   await expect(page.getByRole('button', { name: '고급 실험' })).toBeHidden();
   await screenshot(page, '04-result');
 

@@ -64,3 +64,12 @@
 .fm-dot { width: 8px; height: 8px; border-radius: 2px; display: inline-block; margin-right: 5px; }
 .fm-dot-current { background: #9aa3bf; }
 .fm-dot-improved { background: #2f6fde; }
+
+/* v3 input: quick-add chips + edit hint */
+.fm-range-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.fm-range-chips button {
+  font-size: 12px; padding: 6px 10px; border-radius: 99px;
+  border: 0.5px solid rgba(0,0,0,0.16); background: #fff; cursor: pointer;
+}
+.fm-range-chips .fm-chip-reset { color: #8b9098; }
+.fm-range-edit-hint { display: block; font-size: 10px; color: #9aa3bf; font-weight: 400; }

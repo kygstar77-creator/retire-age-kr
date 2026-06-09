@@ -23,10 +23,13 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
       <Header tag="비교" onBack={onBack} />
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">조건 바꿔보기</p><h2>손가락으로 밀어서 바로 바꿔보세요</h2>
-        <p>퇴사 나이, 생활비, 월 저축액, 수익률을 한 화면에서 조정해요.</p>
+        <p>현재 자산·나이부터 퇴사 나이·생활비·저축·부업·수익률까지 한 화면에서 자유롭게 바꿔보세요.</p>
+        <RangeControl label="현재 나이" value={inputs.currentAge} inputKey="currentAge" type="age" step={1} onChange={(next) => onChange('currentAge', next)} />
         <RangeControl label="퇴사 나이" value={inputs.targetRetirementAge} inputKey="targetRetirementAge" type="age" step={1} onChange={(next) => onChange('targetRetirementAge', next)} />
-        <RangeControl label="생활비" value={inputs.monthlyLivingCost} inputKey="monthlyLivingCost" type="money" step={100000} onChange={(next) => onChange('monthlyLivingCost', next)} />
+        <RangeControl label="현재 금융자산" value={inputs.financialAsset} inputKey="financialAsset" type="money" step={1000000} onChange={(next) => onChange('financialAsset', next)} />
         <RangeControl label="월 저축액" value={inputs.monthlyInvestment} inputKey="monthlyInvestment" type="money" step={100000} onChange={(next) => onChange('monthlyInvestment', next)} />
+        <RangeControl label="퇴사 후 월 생활비" value={inputs.monthlyLivingCost} inputKey="monthlyLivingCost" type="money" step={100000} onChange={(next) => onChange('monthlyLivingCost', next)} />
+        <RangeControl label="퇴사 후 부업 소득" value={inputs.partTimeIncomeAfterRetirement} inputKey="partTimeIncomeAfterRetirement" type="money" step={100000} onChange={(next) => onChange('partTimeIncomeAfterRetirement', next)} />
         <RangeControl label="연 수익률" value={inputs.annualReturnRate} inputKey="annualReturnRate" type="percent" step={1} onChange={(next) => onChange('annualReturnRate', next)} />
         <RangeControl label="절감안 생활비" value={improvedCost} inputKey="improvedCost" type="money" step={100000} onChange={setImprovedCost} />
       </section>

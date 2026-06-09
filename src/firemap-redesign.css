@@ -1,0 +1,1001 @@
+/* =============================================================
+   FireMap UI Renewal — minimal "Toss-like" orange system
+   - Single source of truth, loaded LAST (see main.jsx).
+   - Keeps all markup/logic; only restyles.
+   - One accent (orange), neutral grays, generous white,
+     soft shadows, consistent radii. No green/blue/traffic-light.
+   ============================================================= */
+
+/* Pretendard for clean Korean typography (Inter has no KR glyphs) */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css');
+
+:root {
+  /* — surfaces & lines — */
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-soft: #f2f4f6;   /* neutral fill (chips, inputs) */
+  --line: #ebedf0;           /* hairline */
+  --line-strong: #e3e6ea;    /* card border */
+
+  /* — text — */
+  --ink: #18191d;            /* near-black */
+  --ink-2: #4b515c;          /* secondary */
+  --muted: #8a909b;          /* captions */
+
+  /* — single accent (FIRE) — */
+  --primary: #ff5a00;
+  --primary-strong: #e64f00; /* pressed */
+  --primary-weak: #fff1ea;   /* the ONE warm tint */
+  --primary-ink: #c2410c;    /* accent text, used sparingly */
+
+  /* — status (muted, minimal use) — */
+  --success: #11a36b;
+  --success-weak: #e7f6ef;
+  --warning: #c77700;
+  --warning-weak: #fdf3e3;
+  --danger: #e5484d;
+  --danger-weak: #fdecec;
+
+  /* — elevation — */
+  --shadow-sm: 0 1px 2px rgba(17, 19, 25, .04), 0 1px 3px rgba(17, 19, 25, .05);
+  --shadow-md: 0 6px 20px rgba(17, 19, 25, .06);
+  --shadow-pop: 0 18px 50px rgba(17, 19, 25, .16);
+
+  /* — radius — */
+  --r-sm: 12px;
+  --r-md: 16px;
+  --r-lg: 20px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+
+  /* override legacy fm tokens so any untouched rule inherits the new palette */
+  --fm-bg: var(--bg);
+  --fm-card: var(--surface);
+  --fm-ink: var(--ink);
+  --fm-muted: var(--muted);
+  --fm-line: var(--line-strong);
+  --fm-orange: var(--primary);
+  --fm-soft: var(--surface-soft);
+  --fm-brown: var(--ink);
+  --fm-shadow: var(--shadow-md);
+
+  color-scheme: light;
+}
+
+/* ---------- Typography ---------- */
+:root,
+body,
+button,
+input,
+textarea,
+select,
+.fm-logo,
+.fm-home-brand {
+  font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', system-ui, sans-serif !important;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg) !important;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* slightly looser tracking than the original ultra-tight -0.07em */
+h1, h2, h3 { letter-spacing: -0.02em !important; }
+
+/* ---------- App shell / screen ---------- */
+.fm-screen,
+.app-shell {
+  background: var(--bg) !important;
+}
+
+@media (min-width: 900px) {
+  .fm-screen {
+    border-left: 1px solid var(--line) !important;
+    border-right: 1px solid var(--line) !important;
+    background: var(--surface) !important;
+  }
+}
+
+/* ---------- Topbar / logo ---------- */
+.fm-topbar {
+  border-bottom: 1px solid var(--line) !important;
+  background: rgba(246, 247, 249, .82) !important;
+  backdrop-filter: blur(14px);
+}
+.fm-logo {
+  color: var(--ink) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+}
+.fm-logo span {
+  background: var(--primary-weak) !important;
+  color: var(--primary) !important;
+}
+
+/* ---------- Buttons ---------- */
+.fm-primary,
+.fm-home-hero-card button,
+.fm-bottom-nav button:last-child,
+.fm-menu button:first-child,
+.fm-input-actions button:last-child,
+.fm-feedback-form button {
+  border: 0 !important;
+  background: var(--primary) !important;
+  color: #fff !important;
+  border-radius: var(--r-md) !important;
+  box-shadow: 0 8px 20px rgba(255, 90, 0, .18) !important;
+  font-weight: 800 !important;
+  transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+}
+.fm-primary:hover,
+.fm-home-hero-card button:hover { background: var(--primary-strong) !important; }
+.fm-primary:active,
+.fm-home-hero-card button:active,
+.fm-bottom-nav button:last-child:active,
+.fm-menu button:first-child:active {
+  transform: translateY(1px) scale(.995);
+  box-shadow: 0 4px 12px rgba(255, 90, 0, .16) !important;
+}
+
+.fm-secondary,
+.fm-bottom-nav button:first-child,
+.fm-menu button,
+.fm-input-actions button,
+.fm-city-cta {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+  border-radius: var(--r-md) !important;
+  box-shadow: none !important;
+  font-weight: 800 !important;
+}
+.fm-secondary:active,
+.fm-bottom-nav button:first-child:active { transform: translateY(1px); }
+
+.fm-bottom-nav {
+  border: 1px solid var(--line) !important;
+  background: rgba(255, 255, 255, .9) !important;
+  box-shadow: var(--shadow-md) !important;
+  border-radius: var(--r-xl) !important;
+}
+.fm-bottom-nav button { border-color: var(--line-strong) !important; }
+
+/* legacy desktop buttons -> neutral/orange */
+.icon-button,
+.growth-actions button,
+.growth-actions a,
+.mobile-step-actions button,
+.mobile-bottom-bar a,
+.mobile-bottom-bar button {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+  border-radius: var(--r-sm) !important;
+}
+.growth-actions button:first-child,
+.mobile-step-actions button:last-child,
+.mobile-bottom-bar button {
+  border-color: var(--primary) !important;
+  background: var(--primary) !important;
+  color: #fff !important;
+}
+
+/* ---------- Cards / surfaces ---------- */
+.fm-card,
+.fm-home-hero-card,
+.fm-home-mini-card,
+.fm-improve-card,
+.panel,
+.summary-card,
+.scenario-card,
+.growth-panel,
+.decision-panel,
+.fm-share-preview,
+.fm-touch-chart {
+  border: 1px solid var(--line-strong) !important;
+  border-radius: var(--r-xl) !important;
+  background: var(--surface) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.fm-improve-card,
+.scenario-card,
+.summary-card { border-radius: var(--r-lg) !important; }
+.fm-touch-chart { background: var(--surface) !important; }
+
+/* ---------- Home ---------- */
+.fm-home-brand { color: var(--ink) !important; font-weight: 800 !important; }
+.fm-home-brand span { background: var(--primary-weak) !important; }
+.fm-home-hero-card p,
+.fm-kicker,
+.fm-hero p,
+.eyebrow,
+.fm-input-sheet em { color: var(--primary) !important; }
+.fm-home-hero-card h1,
+.fm-hero h1 { color: var(--ink) !important; }
+.fm-home-hero-card > span,
+.fm-hero span { color: var(--ink-2) !important; }
+.fm-home-mini-card strong { color: var(--ink) !important; }
+.fm-home-mini-card p { color: var(--muted) !important; }
+
+.fm-policy-links a {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface-soft) !important;
+  color: var(--ink-2) !important;
+}
+
+/* ---------- Section titles ---------- */
+.fm-section-title,
+.section-heading h2,
+.insight-title,
+.growth-panel h2 { color: var(--ink) !important; }
+
+/* ---------- Question / stepper ---------- */
+.fm-question h2 { color: var(--ink) !important; }
+.fm-question p { color: var(--muted) !important; }
+
+.fm-stepper {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface) !important;
+  border-radius: var(--r-lg) !important;
+}
+.fm-stepper button {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+  border-radius: var(--r-sm) !important;
+}
+.fm-stepper button:active { background: var(--surface-soft) !important; }
+.fm-stepper input,
+.fm-stepper .fm-value-box {
+  border: 0 !important;
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+}
+
+.fm-progress { background: var(--surface-soft) !important; }
+.fm-progress i { background: var(--primary) !important; }
+
+.fm-question > strong { color: var(--ink) !important; }
+.fm-question > small {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface-soft) !important;
+  color: var(--ink-2) !important;
+  border-radius: var(--r-sm) !important;
+}
+
+/* chips & preset rails -> neutral pills */
+.fm-chips button,
+.fm-preset-rail button,
+.fm-actions span,
+.fm-actions button,
+.fm-question em,
+.fm-mini em,
+.fm-info em,
+.fm-improve-card em {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface-soft) !important;
+  color: var(--ink-2) !important;
+  border-radius: var(--r-pill) !important;
+  font-style: normal !important;
+}
+.fm-chips button:active { background: var(--line) !important; }
+
+/* ---------- Range control ---------- */
+.fm-range-head span { color: var(--muted) !important; }
+.fm-range-head strong { color: var(--ink) !important; }
+.fm-range-value {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface-soft) !important;
+  color: var(--ink) !important;
+  border-radius: var(--r-sm) !important;
+}
+.fm-range-control input[type='range'] { accent-color: var(--primary) !important; }
+.fm-range-scale { color: var(--muted) !important; }
+
+/* ---------- Inputs (sheet + desktop) ---------- */
+.fm-input-overlay { background: rgba(17, 24, 39, .42) !important; }
+.fm-input-sheet {
+  border: 1px solid var(--line-strong) !important;
+  border-radius: var(--r-xl) !important;
+  background: var(--surface) !important;
+  box-shadow: var(--shadow-pop) !important;
+}
+.fm-input-sheet h2 { color: var(--ink) !important; }
+.fm-input-sheet p { color: var(--muted) !important; }
+.fm-input-sheet input,
+.input-wrap {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface-soft) !important;
+  color: var(--ink) !important;
+  border-radius: var(--r-md) !important;
+}
+.fm-input-sheet input:focus,
+.input-wrap:focus-within {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(255, 90, 0, .14) !important;
+}
+.input-wrap input { background: transparent !important; color: var(--ink) !important; }
+.field span { color: var(--ink-2) !important; }
+.field b { color: var(--muted) !important; }
+.field em { color: var(--primary-ink) !important; }       /* was green */
+.input-section h3 { color: var(--muted) !important; }
+
+/* ---------- Result hero (the one bold moment) ---------- */
+.fm-result-v3 {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface) !important;   /* flat — no gradient */
+  color: var(--ink) !important;
+  border-radius: var(--r-xl) !important;
+}
+.fm-result-v3::before { display: none !important; content: none !important; }
+.fm-result-v3 > p:first-child { color: var(--muted) !important; }
+.fm-result-v3 h2 { color: var(--ink) !important; }
+.fm-result-v3 h2 b { color: var(--primary) !important; }   /* the hero number */
+.fm-result-copy { color: var(--ink-2) !important; }
+
+.fm-result-summary span,
+.fm-result-assumptions span {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface) !important;
+  border-radius: var(--r-md) !important;
+}
+.fm-result-summary small { color: var(--muted) !important; }
+.fm-result-summary strong { color: var(--ink) !important; }
+.fm-result-assumptions span { color: var(--ink-2) !important; }
+.fm-result-menu button span { color: var(--muted) !important; }
+
+/* ---------- Score box / meters ---------- */
+.fm-score-box {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+  border-radius: var(--r-lg) !important;
+}
+.fm-score-box small,
+.fm-score-box p { color: var(--muted) !important; }
+.fm-score-box strong,
+.fm-score-status { color: var(--ink) !important; }
+.fm-score-number { color: var(--primary) !important; }
+.fm-score-meter,
+.fm-result-v3 .fm-score-meter,
+.score-meter { background: var(--surface-soft) !important; }
+.fm-score-meter i,
+.fm-result-v3 .fm-score-meter i {
+  background: var(--primary) !important;   /* flat orange, no multi-stop */
+}
+.score-meter span { background: var(--primary) !important; }  /* was red/yellow/green */
+
+/* ---------- Chart ---------- */
+.fm-graph line { stroke: var(--line-strong) !important; }
+.fm-graph .current { stroke: #c3c8d0 !important; }          /* was blue -> quiet gray */
+.fm-graph .improved { stroke: var(--primary) !important; }
+.fm-graph .axis { fill: var(--muted) !important; }
+.fm-crosshair { stroke: var(--ink) !important; }
+.fm-chart-summary span {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface-soft) !important;
+  color: var(--muted) !important;
+  border-radius: var(--r-md) !important;
+}
+.fm-chart-summary b { color: var(--ink) !important; }
+.fm-chart-note {
+  background: var(--primary-weak) !important;
+  color: var(--primary-ink) !important;
+  border-radius: var(--r-sm) !important;
+}
+.fm-selected-point {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--ink) !important;
+  color: #fff !important;
+  border-radius: var(--r-lg) !important;
+}
+.fm-selected-point.fm-selected-point span { background: rgba(255, 255, 255, .12) !important; }
+
+/* ---------- Adjust / mini ---------- */
+.fm-adjust {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface) !important;
+  border-radius: var(--r-md) !important;
+}
+.fm-adjust span { color: var(--ink-2) !important; }
+.fm-adjust strong { color: var(--ink) !important; }
+.fm-adjust button {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+}
+.fm-mini strong { color: var(--ink) !important; }
+.fm-mini p { color: var(--muted) !important; }
+
+/* ---------- Improve card ---------- */
+.fm-improve-card strong { color: var(--primary) !important; }
+.fm-improve-card h3 { color: var(--ink) !important; }
+.fm-improve-card p { color: var(--muted) !important; }
+
+/* ---------- Text / info cards ---------- */
+.fm-text-card b,
+.fm-text-card h2,
+.fm-info h2 { color: var(--ink) !important; }
+.fm-text-card p,
+.fm-info p { color: var(--ink-2) !important; }
+.fm-info small { color: var(--muted) !important; }
+.fm-info b { color: var(--ink) !important; }
+
+/* ---------- Toast / share ---------- */
+.fm-toast {
+  background: var(--surface-soft) !important;
+  color: var(--ink) !important;
+  border-radius: var(--r-sm) !important;
+}
+.fm-share-preview { border-style: solid !important; }
+.fm-share-preview strong { color: var(--ink) !important; }
+.fm-share-preview p { color: var(--muted) !important; }
+
+/* =============================================================
+   Legacy green / desktop theme -> neutralize to orange+gray
+   ============================================================= */
+.brand,
+.hero-metric strong,
+.card-icon,
+.guide-grid span,
+.strip-card > span,
+.summary-card strong,
+.decision-main p { color: var(--ink) !important; }
+
+.brand { color: var(--primary) !important; }
+.hero-metric strong { color: var(--primary) !important; }
+
+.card-icon,
+.guide-grid span,
+.strip-card > span {
+  background: var(--primary-weak) !important;
+  color: var(--primary) !important;
+}
+.strip-card {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface) !important;
+  border-radius: var(--r-md) !important;
+}
+.strip-card strong { color: var(--ink) !important; }
+.strip-card small { color: var(--muted) !important; }
+
+.decision-score {
+  background: var(--ink) !important;
+  border-radius: var(--r-lg) !important;
+}
+.decision-score strong { color: #fff !important; }
+.decision-score small,
+.decision-score span { color: #cfd3da !important; }
+
+.mobile-stepper { background: var(--surface-soft) !important; border-radius: var(--r-md) !important; }
+.mobile-stepper div { color: var(--primary) !important; }
+.mobile-stepper small { color: var(--muted) !important; }
+
+.eyebrow, .hero-metric span { color: var(--muted) !important; }
+
+/* tables */
+th { color: var(--muted) !important; }
+th, td { border-bottom: 1px solid var(--line) !important; }
+.depleted-row { background: var(--danger-weak) !important; color: var(--danger) !important; }
+
+/* disclaimers / legal / guide / faq panels */
+.disclaimer,
+.legal-panel,
+.legal-grid article,
+.guide-panel,
+.guide-grid article,
+.faq-list details {
+  border: 1px solid var(--line-strong) !important;
+  background: var(--surface) !important;
+  border-radius: var(--r-md) !important;
+  color: var(--ink-2) !important;
+}
+.security-note { background: var(--surface-soft) !important; }
+
+/* =============================================================
+   Status colors — unified & muted (kept meaningful, not loud)
+   ============================================================= */
+.badge-stable { background: var(--success-weak) !important; color: var(--success) !important; }
+.badge-caution { background: var(--warning-weak) !important; color: var(--warning) !important; }
+.badge-risk { background: var(--danger-weak) !important; color: var(--danger) !important; }
+.badge-neutral { background: var(--surface-soft) !important; color: var(--ink-2) !important; }
+
+.inline-stable { color: var(--success) !important; }
+.inline-caution { color: var(--warning) !important; }
+.inline-risk { color: var(--danger) !important; }
+
+.strip-risk > span { background: var(--danger-weak) !important; color: var(--danger) !important; }
+.strip-caution > span { background: var(--warning-weak) !important; color: var(--warning) !important; }
+
+.tone-stable { border-color: var(--success) !important; }
+.tone-caution { border-color: var(--warning) !important; }
+.tone-risk { border-color: var(--danger) !important; }
+
+/* =============================================================
+   Feedback widget — already on-brand; just align tokens
+   ============================================================= */
+.fm-feedback-fab { background: var(--primary) !important; box-shadow: 0 12px 28px rgba(255, 90, 0, .26) !important; }
+.fm-feedback-sheet { border: 1px solid var(--line-strong) !important; box-shadow: var(--shadow-pop) !important; }
+.fm-feedback-head h2 { color: var(--ink) !important; }
+.fm-feedback-head button { border: 1px solid var(--line-strong) !important; background: var(--surface) !important; }
+.fm-feedback-safe { background: var(--primary-weak) !important; color: var(--primary-ink) !important; }
+.fm-feedback-list article { border: 1px solid var(--line) !important; background: var(--surface-soft) !important; }
+.fm-feedback-empty { border: 1px dashed var(--line-strong) !important; background: var(--surface-soft) !important; color: var(--muted) !important; }
+.fm-feedback-error { background: var(--danger-weak) !important; color: var(--danger) !important; }
+.fm-feedback-form textarea { border: 1px solid var(--line-strong) !important; border-radius: var(--r-md) !important; }
+.fm-feedback-form textarea:focus { border-color: var(--primary) !important; box-shadow: 0 0 0 3px rgba(255, 90, 0, .14) !important; }
+
+/* =============================================================
+   Dividend calculator (tax-*) — was unstyled (dead tabs.css).
+   Give it the same minimal system so it isn't raw HTML.
+   ============================================================= */
+.tax-intro, .tax-notice, .tax-result-card, .tax-results, .tax-inputs {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-md);
+  background: var(--surface);
+  padding: 16px;
+}
+.tax-heading { color: var(--ink); font-weight: 800; }
+.tax-grid, .tax-inputs { display: grid; gap: 12px; }
+.tax-open-button, .tax-apply-button, .tax-copy-button {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 0 16px; border-radius: var(--r-md);
+  font-weight: 800; cursor: pointer; border: 1px solid var(--line-strong);
+  background: var(--surface); color: var(--ink);
+}
+.tax-apply-button { border-color: var(--primary); background: var(--primary); color: #fff; }
+.tax-notice { background: var(--surface-soft); color: var(--ink-2); font-size: 13px; }
+.tax-result-card strong { color: var(--primary); }
+
+/* =============================================================
+   Accessibility — visible focus, reduced motion
+   ============================================================= */
+:where(button, a, input, textarea, select):focus-visible {
+  outline: 2px solid var(--primary) !important;
+  outline-offset: 2px !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* =============================================================
+   ITERATION 2 — feedback fixes
+   - kill remaining gradients
+   - smaller, lighter type (logory / Toss scale)
+   - rebuild the FIRE result card (spacing, dividers, sectioning)
+   Weights: 400 body · 500 sub · 600 emphasis · 700 titles
+   ============================================================= */
+
+/* ---- flatten leftover gradients ---- */
+.fm-touch-chart { background: var(--surface) !important; }
+.fm-score-meter i,
+.fm-result-v3 .fm-score-meter i,
+.score-meter span { background: var(--primary) !important; }
+.fm-graph polyline { filter: none !important; }   /* drop the soft shadow too */
+
+/* ---- global typography rescale ---- */
+body { font-weight: 400 !important; letter-spacing: -0.01em; }
+
+.fm-logo { font-size: 18px !important; font-weight: 700 !important; }
+
+/* home */
+.fm-home-brand { font-size: 18px !important; font-weight: 700 !important; }
+.fm-home-hero-card p, .fm-hero p, .fm-kicker {
+  font-size: 13px !important; font-weight: 600 !important;
+  letter-spacing: 0 !important; text-transform: none !important;
+}
+.fm-home-hero-card h1, .fm-hero h1 {
+  font-size: clamp(26px, 7.2vw, 30px) !important;
+  font-weight: 700 !important; line-height: 1.34 !important;
+  letter-spacing: -0.02em !important;
+}
+.fm-home-hero-card > span, .fm-hero span {
+  font-size: 14px !important; font-weight: 450 !important; line-height: 1.6 !important;
+}
+.fm-home-mini-card strong { font-size: 15px !important; font-weight: 600 !important; }
+.fm-home-mini-card p { font-size: 13px !important; font-weight: 400 !important; }
+.fm-policy-links a { font-size: 12px !important; font-weight: 500 !important; }
+
+/* buttons */
+.fm-primary, .fm-secondary, .fm-home-hero-card button,
+.fm-bottom-nav button, .fm-menu button, .fm-input-actions button,
+.fm-city-cta, .icon-button {
+  font-size: 15px !important; font-weight: 600 !important;
+}
+/* lighter button glow (more Toss, less neon) */
+.fm-primary, .fm-home-hero-card button,
+.fm-bottom-nav button:last-child, .fm-menu button:first-child,
+.fm-input-actions button:last-child {
+  box-shadow: 0 4px 14px rgba(255, 90, 0, .14) !important;
+}
+
+/* question */
+.fm-question h2 { font-size: 20px !important; font-weight: 700 !important; letter-spacing: -0.02em !important; }
+.fm-question p { font-size: 14px !important; font-weight: 400 !important; }
+.fm-question > strong { font-size: 20px !important; font-weight: 700 !important; }
+.fm-question > small { font-weight: 500 !important; font-size: 13px !important; }
+.fm-stepper input, .fm-stepper .fm-value-box { font-size: 18px !important; font-weight: 600 !important; }
+.fm-stepper button { font-size: 18px !important; font-weight: 500 !important; }
+.fm-chips button, .fm-preset-rail button, .fm-actions span, .fm-actions button,
+.fm-question em, .fm-mini em, .fm-info em, .fm-improve-card em {
+  font-size: 13px !important; font-weight: 600 !important;
+}
+
+/* range */
+.fm-range-head strong { font-size: 18px !important; font-weight: 700 !important; }
+.fm-range-head span { font-size: 13px !important; font-weight: 500 !important; }
+.fm-range-value { font-size: 18px !important; font-weight: 600 !important; }
+.fm-range-scale { font-size: 12px !important; font-weight: 400 !important; }
+
+/* section titles */
+.fm-section-title, .section-heading h2, .growth-panel h2, .insight-title {
+  font-size: 18px !important; font-weight: 700 !important; letter-spacing: -0.01em !important;
+}
+
+/* improve cards */
+.fm-improve-card strong { font-size: 20px !important; font-weight: 700 !important; }
+.fm-improve-card h3 { font-size: 14px !important; font-weight: 600 !important; }
+.fm-improve-card p { font-size: 12.5px !important; font-weight: 400 !important; }
+
+/* input sheet */
+.fm-input-sheet em { font-size: 13px !important; font-weight: 600 !important; }
+.fm-input-sheet h2 { font-size: 20px !important; font-weight: 700 !important; }
+.fm-input-sheet p { font-size: 13px !important; font-weight: 400 !important; }
+.fm-input-sheet input { font-size: 20px !important; font-weight: 600 !important; }
+
+/* misc text */
+.fm-adjust strong { font-size: 16px !important; font-weight: 700 !important; }
+.fm-adjust span { font-weight: 500 !important; }
+.fm-text-card b, .fm-text-card h2, .fm-info h2 { font-size: 18px !important; font-weight: 700 !important; }
+.fm-text-card p, .fm-info p { font-weight: 400 !important; }
+.fm-chart-summary b { font-size: 15px !important; font-weight: 700 !important; }
+.fm-selected-point b { font-weight: 700 !important; }
+.badge { font-weight: 600 !important; }
+.summary-card strong { font-size: 22px !important; font-weight: 700 !important; }
+.decision-score strong { font-size: 32px !important; font-weight: 700 !important; }
+
+/* =============================================================
+   FIRE result card — rebuilt
+   ============================================================= */
+.fm-result-v3 { padding: 24px 22px !important; }
+
+/* eyebrow */
+.fm-result-v3 > p:first-child {
+  margin: 0 !important;
+  color: var(--muted) !important;
+  font-size: 13px !important; font-weight: 600 !important; letter-spacing: 0 !important;
+}
+
+/* headline — left aligned, calmer scale */
+.fm-result-v3 h2 {
+  margin: 12px 0 2px !important;
+  text-align: left !important;
+  color: var(--ink) !important;
+  font-size: 23px !important; font-weight: 700 !important;
+  line-height: 1.4 !important; letter-spacing: -0.02em !important;
+}
+.fm-result-v3 h2 b {
+  color: var(--primary) !important;
+  font-size: 25px !important; font-weight: 800 !important; letter-spacing: -0.02em !important;
+}
+
+/* spec list (은퇴 나이 / 경제적 자유 시점) — clean divider lines, NO box */
+.fm-result-chips {
+  display: flex !important; flex-direction: column !important; gap: 0 !important;
+  margin: 18px 0 4px !important;
+  border: 0 !important; border-top: 1px solid var(--line) !important;
+  border-radius: 0 !important; background: transparent !important; padding: 0 !important;
+}
+.fm-result-chips span {
+  display: flex !important; align-items: center !important; justify-content: space-between !important;
+  padding: 13px 0 !important;
+  border: 0 !important; border-bottom: 1px solid var(--line) !important;
+  border-radius: 0 !important; background: transparent !important;
+  color: var(--muted) !important; font-size: 14px !important; font-weight: 450 !important;
+}
+.fm-result-chips span b {
+  color: var(--ink) !important; font-size: 15px !important; font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* note line */
+.fm-result-copy {
+  margin: 14px 0 !important; text-align: left !important;
+  color: var(--ink-2) !important; font-size: 14px !important; font-weight: 450 !important;
+  line-height: 1.55 !important;
+}
+
+/* assumptions — plain quiet text, NO gray box */
+.fm-result-assumptions {
+  display: grid !important; gap: 7px !important; margin: 14px 0 !important;
+  border: 0 !important; border-radius: 0 !important; background: transparent !important; padding: 0 !important;
+}
+.fm-result-assumptions span {
+  border: 0 !important; background: transparent !important; border-radius: 0 !important;
+  padding: 0 !important;
+  color: var(--muted) !important; font-size: 13px !important; font-weight: 450 !important;
+  line-height: 1.5 !important;
+}
+
+/* score — a divided section INSIDE the card (no nested box) */
+.fm-result-v3 .fm-score-box {
+  display: grid !important;
+  grid-template-columns: 1fr auto !important;
+  align-items: center !important;
+  gap: 4px 16px !important;
+  margin: 18px 0 0 !important;
+  padding: 18px 0 0 !important;
+  border: 0 !important; border-top: 1px solid var(--line) !important;
+  border-radius: 0 !important; background: transparent !important;
+}
+.fm-result-v3 .fm-score-box > div {
+  display: block !important; min-width: 0;
+  border: 0 !important; border-radius: 0 !important; background: transparent !important; padding: 0 !important;
+}
+.fm-result-v3 .fm-score-box > div:nth-of-type(2) { text-align: right !important; }
+.fm-score-box small { font-size: 12.5px !important; font-weight: 500 !important; color: var(--muted) !important; }
+.fm-score-box .fm-score-status {
+  display: block !important; margin: 5px 0 0 !important;
+  font-size: 18px !important; font-weight: 700 !important; color: var(--ink) !important; letter-spacing: -0.01em !important;
+}
+.fm-score-box .fm-score-number {
+  display: block !important; margin: 5px 0 0 !important;
+  font-size: 18px !important; font-weight: 700 !important; color: var(--primary) !important;
+}
+.fm-result-v3 .fm-score-meter {
+  grid-column: 1 / -1 !important;
+  box-sizing: border-box !important; width: 100% !important;
+  height: 8px !important; min-height: 8px !important;
+  margin: 12px 0 0 !important; padding: 0 !important; border: 0 !important;
+  background: var(--surface-soft) !important; border-radius: 999px !important; overflow: hidden !important;
+}
+.fm-result-v3 .fm-score-box > p {
+  grid-column: 1 / -1 !important; margin: 10px 0 0 !important;
+  color: var(--muted) !important; font-size: 13px !important; font-weight: 400 !important;
+}
+
+/* =============================================================
+   ITERATION 3 — header & result clipping fixes
+   ============================================================= */
+/* topbar: align to content width so right-side actions never clip */
+.fm-topbar {
+  box-sizing: border-box !important;
+  margin: -18px 0 16px !important;
+  padding: 14px 0 12px !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+  gap: 10px !important;
+}
+.fm-actions { flex: 0 0 auto; min-width: 0; }
+
+/* result card: never clip inner content (meter / corners) */
+.fm-result-v3 { overflow: visible !important; }
+
+/* =============================================================
+   ITERATION 4 — match Figma result card + header full-bleed + city cards
+   Figma tokens: ink #212121 · sub #6c737f · divider #eaeaeb
+                 meter track #f3f0f0 · accent #ff5a00 · card border #e5e7eb
+   ============================================================= */
+
+/* ---- header: full-bleed again (no side gap), no card look ---- */
+.fm-topbar {
+  box-sizing: border-box !important;
+  width: auto !important; max-width: none !important;
+  margin: -18px -14px 16px !important;
+  padding: 14px 14px 12px !important;
+  border-radius: 0 !important; box-shadow: none !important;
+  overflow: visible !important; gap: 10px !important;
+}
+@media (max-width: 420px) {
+  .fm-topbar { margin: -18px -12px 16px !important; padding: 14px 12px 12px !important; }
+}
+
+/* ---- result card (Figma 26:974) ---- */
+.fm-result-v3 {
+  background: #fff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 24px !important;
+  box-shadow: 0 8px 16px rgba(32, 41, 57, .08) !important;
+  padding: 24px !important;
+  overflow: visible !important;
+}
+.fm-result-v3::before { display: none !important; content: none !important; }
+
+/* eyebrow */
+.fm-result-v3 > p:first-child {
+  margin: 0 !important; color: #6c737f !important;
+  font-size: 14px !important; font-weight: 400 !important; line-height: 20px !important;
+  letter-spacing: -0.14px !important;
+}
+/* headline (all dark, per Figma) + section divider */
+.fm-result-v3 h2 {
+  margin: 8px 0 16px !important; padding-bottom: 16px !important;
+  border-bottom: 1px solid #eaeaeb !important;
+  text-align: left !important; color: #212121 !important;
+  font-size: 23px !important; font-weight: 700 !important; line-height: 26px !important;
+  letter-spacing: -0.23px !important;
+}
+.fm-result-v3 h2 b { color: #212121 !important; font-size: 23px !important; font-weight: 700 !important; }
+
+/* spec rows */
+.fm-result-chips {
+  display: flex !important; flex-direction: column !important; gap: 8px !important;
+  margin: 0 0 16px !important; padding: 0 0 16px !important;
+  border: 0 !important; border-bottom: 1px solid #eaeaeb !important;
+  border-radius: 0 !important; background: transparent !important;
+}
+.fm-result-chips span {
+  display: flex !important; align-items: center !important; justify-content: space-between !important;
+  padding: 0 !important; border: 0 !important; background: transparent !important;
+  color: #6c737f !important; font-size: 14px !important; font-weight: 500 !important;
+  line-height: 20px !important; letter-spacing: -0.14px !important;
+}
+.fm-result-chips span b { color: #212121 !important; font-size: 14px !important; font-weight: 600 !important; }
+
+/* copy + assumptions (one block, one bottom divider) */
+.fm-result-copy {
+  margin: 0 0 8px !important; text-align: left !important; color: #212121 !important;
+  font-size: 14px !important; font-weight: 500 !important; line-height: 20px !important;
+  letter-spacing: -0.14px !important;
+}
+.fm-result-assumptions {
+  display: grid !important; gap: 0 !important;
+  margin: 0 0 16px !important; padding: 0 0 16px !important;
+  border: 0 !important; border-bottom: 1px solid #eaeaeb !important;
+  border-radius: 0 !important; background: transparent !important;
+}
+.fm-result-assumptions span {
+  border: 0 !important; background: transparent !important; padding: 0 !important; border-radius: 0 !important;
+  color: #6c737f !important; font-size: 14px !important; font-weight: 400 !important;
+  line-height: 20px !important; letter-spacing: -0.14px !important;
+}
+
+/* score section (no border, two columns: labels row / values row) */
+.fm-result-v3 .fm-score-box {
+  display: grid !important; grid-template-columns: 1fr auto !important;
+  align-items: start !important; gap: 0 16px !important;
+  margin: 0 !important; padding: 0 !important;
+  border: 0 !important; border-radius: 0 !important; background: transparent !important;
+}
+.fm-result-v3 .fm-score-box > div {
+  display: flex !important; flex-direction: column !important; gap: 8px !important;
+  border: 0 !important; background: transparent !important; padding: 0 !important; border-radius: 0 !important;
+  min-width: 0;
+}
+.fm-result-v3 .fm-score-box > div:nth-of-type(2) { align-items: flex-end !important; text-align: right !important; }
+.fm-score-box small { margin: 0 !important; color: #6c737f !important; font-size: 14px !important; font-weight: 400 !important; line-height: 20px !important; }
+.fm-score-box .fm-score-status { display: block !important; margin: 0 !important; color: #212121 !important; font-size: 20px !important; font-weight: 600 !important; line-height: 1 !important; letter-spacing: -0.2px !important; }
+.fm-score-box .fm-score-number { display: block !important; margin: 0 !important; color: #6c737f !important; font-size: 20px !important; font-weight: 600 !important; line-height: 1 !important; letter-spacing: -0.2px !important; }
+.fm-score-box .fm-score-number em { color: #ff5a00 !important; font-style: normal !important; }
+
+/* meter */
+.fm-result-v3 .fm-score-meter {
+  grid-column: 1 / -1 !important; box-sizing: border-box !important; width: 100% !important;
+  height: 10px !important; min-height: 10px !important; margin: 16px 0 0 !important;
+  padding: 0 !important; border: 0 !important;
+  background: #f3f0f0 !important; border-radius: 999px !important; overflow: hidden !important;
+}
+.fm-result-v3 .fm-score-meter i { height: 100% !important; border-radius: inherit !important; background: #ff5a00 !important; }
+.fm-result-v3 .fm-score-box > p {
+  grid-column: 1 / -1 !important; margin: 16px 0 0 !important; color: #6c737f !important;
+  font-size: 14px !important; font-weight: 500 !important; line-height: 20px !important; letter-spacing: -0.14px !important;
+}
+
+/* ---- city cards (curation) — clean, Figma-like ---- */
+.fm-city-row {
+  border: 1px solid #e5e7eb !important; border-radius: 20px !important; background: #fff !important;
+  box-shadow: 0 4px 14px rgba(32, 41, 57, .05) !important; padding: 18px !important;
+}
+.fm-city-row strong { color: #212121 !important; font-size: 18px !important; font-weight: 700 !important; letter-spacing: -0.02em !important; }
+.fm-city-row p { color: #6c737f !important; font-size: 13px !important; font-weight: 400 !important; line-height: 1.55 !important; }
+.fm-city-row b { color: #ff5a00 !important; font-weight: 600 !important; }
+.fm-city-row > span {
+  background: #f3f0f0 !important; color: #6c737f !important; border: 0 !important;
+  border-radius: 14px !important; padding: 12px 14px !important;
+  font-size: 13px !important; font-weight: 500 !important;
+}
+.fm-city-row > span b { color: #ff5a00 !important; font-weight: 600 !important; }
+.fm-city-list h2 { color: #212121 !important; font-size: 18px !important; font-weight: 700 !important; letter-spacing: -0.01em !important; }
+.fm-city-list > small { color: #6c737f !important; }
+
+/* =============================================================
+   ITERATION 5 — back button (small + arrow), feedback FAB
+   ============================================================= */
+/* header back button: smaller text/size + left arrow */
+.fm-actions button,
+.fm-back-btn {
+  display: inline-flex !important; align-items: center !important; gap: 3px !important;
+  min-height: 32px !important;
+  padding: 0 12px 0 9px !important;
+  border: 1px solid var(--line-strong) !important;
+  border-radius: 999px !important;
+  background: var(--surface) !important; color: var(--ink-2) !important;
+  font-size: 13px !important; font-weight: 500 !important;
+}
+.fm-back-arrow { font-size: 15px !important; line-height: 1 !important; font-weight: 600 !important; }
+
+/* feedback FAB: dark (distinct from orange CTAs) + lifted above bottom nav */
+.fm-feedback-fab {
+  background: #18191d !important;
+  box-shadow: 0 12px 28px rgba(17, 19, 25, .28) !important;
+  bottom: max(116px, calc(env(safe-area-inset-bottom) + 116px)) !important;
+}
+@media (min-width: 780px) {
+  .fm-feedback-fab { bottom: max(96px, calc(env(safe-area-inset-bottom) + 96px)) !important; }
+}
+
+/* =============================================================
+   ITERATION 6 — kill rounded divider boxes, visible track,
+   custom range slider (orange fill + light-gray track)
+   ============================================================= */
+
+/* (1) beat ".fm-result div{border-radius:24px!important}" with higher specificity
+       so divider lines are straight, not curved */
+.fm-result-v3 .fm-result-chips,
+.fm-result-v3 .fm-result-assumptions,
+.fm-result-v3 .fm-score-box,
+.fm-result-v3 .fm-score-box > div {
+  border-radius: 0 !important;
+  border-left: 0 !important; border-right: 0 !important;
+}
+.fm-result-v3 .fm-result-chips,
+.fm-result-v3 .fm-score-box,
+.fm-result-v3 .fm-score-box > div { border-top: 0 !important; }
+
+/* (2) result score meter — clearly visible light-gray track */
+.fm-result-v3 .fm-score-meter { background: #ededed !important; }
+.fm-result-v3 .fm-score-meter i { background: #ff5a00 !important; }
+
+/* (3) range slider — custom track: orange fill + light-gray rest, no black */
+.fm-range-control input[type="range"] {
+  -webkit-appearance: none !important; appearance: none !important;
+  width: 100% !important; height: 24px !important; margin: 12px 0 !important;
+  background: transparent !important; cursor: pointer; accent-color: auto !important;
+}
+.fm-range-control input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px; border-radius: 999px;
+  background: linear-gradient(to right, #ff5a00 var(--value, 0%), #ededed var(--value, 0%));
+}
+.fm-range-control input[type="range"]::-moz-range-track {
+  height: 6px; border-radius: 999px; background: #ededed;
+}
+.fm-range-control input[type="range"]::-moz-range-progress {
+  height: 6px; border-radius: 999px; background: #ff5a00;
+}
+.fm-range-control input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 22px; height: 22px; margin-top: -8px;
+  border-radius: 999px; background: #ff5a00; border: 3px solid #fff;
+  box-shadow: 0 1px 4px rgba(17, 19, 25, .25);
+}
+.fm-range-control input[type="range"]::-moz-range-thumb {
+  width: 22px; height: 22px;
+  border-radius: 999px; background: #ff5a00; border: 3px solid #fff;
+  box-shadow: 0 1px 4px rgba(17, 19, 25, .25);
+}
+
+/* =============================================================
+   ITERATION 7 — fix score meter (was hit by .fm-score-box>div
+   reset: transparent bg + square corners). Re-assert with higher
+   specificity so it has a visible light-gray rounded track.
+   ============================================================= */
+.fm-result-v3 .fm-score-box > .fm-score-meter {
+  display: block !important;
+  box-sizing: border-box !important;
+  width: 100% !important; grid-column: 1 / -1 !important;
+  height: 10px !important; min-height: 10px !important;
+  margin: 16px 0 0 !important; padding: 0 !important; border: 0 !important;
+  background: #ededed !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+}
+.fm-result-v3 .fm-score-box > .fm-score-meter > i {
+  display: block !important;
+  height: 100% !important; min-height: 10px !important;
+  background: #ff5a00 !important;
+  border-radius: 999px !important;
+}

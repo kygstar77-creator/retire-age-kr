@@ -32,7 +32,7 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
 
   return (
     <main className="fm-screen fm-scroll">
-      <Header tag="실험" onBack={onBack} />
+      <Header tag="실험" />
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">조건 바꿔보기</p><h2>손가락으로 밀어서 바로 바꿔보세요</h2>
         <p>퇴사 나이, 생활비, 월 저축액, 수익률을 한 화면에서 조정해요.</p>
@@ -65,6 +65,10 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         {selectedPoint && <p className="fm-chart-note">{selectedPoint.age}세 예상 자산 · 현재 {formatEok(selectedPoint.current)} · 절감안 {formatEok(selectedPoint.improved)}</p>}
         <p className="fm-chart-note">회색은 현재 계획, 주황색은 절감안 생활비 {formatWon(improvedCost)} 기준입니다.</p>
       </section>
+      <nav className="fm-bottom-nav">
+        <button type="button" onClick={onBack}>취소</button>
+        <button type="button" onClick={onBack}>결과 보기</button>
+      </nav>
     </main>
   );
 }

@@ -138,7 +138,7 @@ export default function Share({ inputs, simulation, onBack }) {
 
   return (
     <main className="fm-screen fm-scroll">
-      <Header tag="공유" onBack={onBack} />
+      <Header onBack={onBack} />
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">공유</p>
         <h2>결과만 간단하게 공유해요</h2>

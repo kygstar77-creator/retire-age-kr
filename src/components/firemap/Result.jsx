@@ -30,7 +30,7 @@ function ResultHero({ simulation }) {
         </div>
         <div>
           <small>점수</small>
-          <b className="fm-score-number">{simulation.survivalScore}/100</b>
+          <b className="fm-score-number"><em>{simulation.survivalScore}</em>/100</b>
         </div>
         <div className="fm-score-meter" aria-label={`FIRE 점수 ${simulation.survivalScore}점`}>
           <i style={{ width: `${Math.max(8, simulation.survivalScore)}%` }} />
@@ -78,7 +78,7 @@ function ImprovementCards({ inputs, simulation }) {
 export default function Result({ inputs, simulation, onMove, onEditFinalQuestion }) {
   return (
     <main className="fm-screen fm-scroll">
-      <Header tag="결과" onBack={onEditFinalQuestion} />
+      <Header />
       <div className="fm-result-top-actions">
         <button type="button" className="fm-primary" onClick={() => onMove('experiment')}>조건 바꿔보기</button>
         <button type="button" className="fm-secondary" onClick={() => onMove('share')}>공유하기</button>

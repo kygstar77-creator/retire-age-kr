@@ -83,7 +83,7 @@ export default function FireMapMVP() {
   if (screen === 'question') return wrap(<Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />);
   if (screen === 'experiment') return wrap(<Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} />);
   if (screen === 'advanced') return wrap(<Advanced inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('advanced')} />);
-  if (screen === 'city') return wrap(<City inputs={inputs} simulation={simulation} onBack={backOf('city')} />);
+  if (screen === 'city') return wrap(<City inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('city')} />);
   if (screen === 'share') return wrap(<Share inputs={inputs} simulation={simulation} onBack={backOf('share')} />);
   if (screen === 'community') return wrap(<Community onBack={backOf('community')} />);
   return wrap(<Result inputs={inputs} simulation={simulation} onMove={setScreen} onEditFinalQuestion={goFinalQuestion} />);

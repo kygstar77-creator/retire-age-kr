@@ -112,3 +112,6 @@
 .fm-bench-row b { font-size: 13px; }
 .fm-bench-row span { color: var(--fm-accent); font-weight: 600; }
 .fm-bench-row em { font-style: normal; color: var(--fm-faint); }
+
+/* v3 #4: city info line */
+.fm-city-info { font-size: 11px; color: var(--fm-faint); margin: 2px 0 4px; }

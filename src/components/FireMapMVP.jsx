@@ -12,6 +12,7 @@ import Consent from './firemap/Consent.jsx';
 import { buildSimulation, defaultInputs } from '../utils/retirementSimulator.js';
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
 import { cleanNumber } from '../firemap-v2/formatters.js';
+import { decodeInputsFromHash } from '../utils/shareState.js';
 import { screens, resolveScreen } from '../firemap-v2/screens.js';
 import '../firemap-v3-tokens.css';
 import '../firemap.css';
@@ -24,7 +25,17 @@ import '../firemap-v3-feedback.css';
 import '../firemap-v3-hotfix.css';
 import '../firemap-v3-ia.css';
 
+function getSharedInputs() {
+  try {
+    const shared = decodeInputsFromHash(window.location.hash) || decodeInputsFromHash(window.location.search);
+    if (shared && Object.keys(shared).length) return shared;
+  } catch { /* ignore */ }
+  return null;
+}
+
 function loadInputs() {
+  const shared = getSharedInputs();
+  if (shared) return { ...defaultInputs, ...shared };
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) return { ...defaultInputs, ...JSON.parse(saved) };
@@ -35,6 +46,7 @@ function loadInputs() {
 }
 
 function readScreenFromHash() {
+  if (getSharedInputs() && !['#result','#experiment','#advanced','#city','#share','#community','#question'].includes(window.location.hash)) return 'result';
   return resolveScreen(window.location.hash);
 }
 

@@ -47,8 +47,9 @@ export default function FireMapMVP() {
   useEffect(() => {
     const syncFromHash = () => setScreenState(readScreenFromHash());
     window.addEventListener('hashchange', syncFromHash);
+    window.addEventListener('popstate', syncFromHash);
     if (!window.location.hash) window.history.replaceState(null, '', '#home');
-    return () => window.removeEventListener('hashchange', syncFromHash);
+    return () => { window.removeEventListener('hashchange', syncFromHash); window.removeEventListener('popstate', syncFromHash); };
   }, []);
 
   const setScreen = (nextScreen) => {

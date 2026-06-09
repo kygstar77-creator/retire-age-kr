@@ -73,3 +73,8 @@
 }
 .fm-range-chips .fm-chip-reset { color: #8b9098; }
 .fm-range-edit-hint { display: block; font-size: 10px; color: #9aa3bf; font-weight: 400; }
+
+/* v3 nav: clickable logo (home), back button */
+.fm-topbar .fm-logo { background: none; border: none; font: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; padding: 0; color: inherit; }
+.fm-topbar .fm-logo-mark { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 6px; background: #1e2859; color: #fff; font-size: 12px; font-weight: 700; }
+.fm-back-btn { cursor: pointer; }

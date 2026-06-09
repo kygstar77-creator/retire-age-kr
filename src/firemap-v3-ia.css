@@ -40,3 +40,19 @@
 .fm-community-item:last-child { border-bottom: none; padding-bottom: 0; }
 .fm-community-item p { margin: 0 0 4px; font-size: 14px; }
 .fm-community-item small { color: #8b9098; }
+
+/* v3 Result: FIRE rank hero */
+.fm-rank-hero {
+  background: #1e2859; border-radius: 18px; padding: 18px;
+  margin: 0 0 12px; color: #fff;
+}
+.fm-rank-label { font-size: 12px; color: #b6c0ee; margin: 0 0 8px; }
+.fm-rank-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.fm-rank-pct { font-size: 32px; font-weight: 700; line-height: 1; }
+.fm-rank-badge {
+  background: #fff; color: #1e2859; font-size: 13px; font-weight: 700;
+  padding: 4px 11px; border-radius: 99px;
+}
+.fm-rank-line { font-size: 13px; color: #fff; margin: 0 0 4px; }
+.fm-rank-line b { font-weight: 700; }
+.fm-rank-trend { font-size: 12px; color: #86e0a0; margin: 0; }

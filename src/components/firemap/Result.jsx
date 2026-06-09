@@ -3,6 +3,22 @@ import { returnAssumptions } from '../../firemap-v2/data.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, fireStatus, runwayText, scenarioEndAge } from '../../firemap-v2/scenarios.js';
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
+import { estimateRank } from '../../firemap-v2/rank.js';
+
+function RankHero({ simulation }) {
+  const rank = estimateRank(simulation);
+  return (
+    <section className="fm-rank-hero">
+      <p className="fm-rank-label">내 FIRE 자생력 · {rank.ageBandLabel} 또래 기준</p>
+      <div className="fm-rank-top">
+        <span className="fm-rank-pct">상위 {rank.percentile}%</span>
+        <span className="fm-rank-badge">{rank.grade}등급</span>
+      </div>
+      <p className="fm-rank-line">전체 사용자 {rank.total.toLocaleString()}명 중 <b>{rank.position.toLocaleString()}등</b></p>
+      <p className="fm-rank-trend">{rank.trendText}</p>
+    </section>
+  );
+}
 
 function ResultHero({ simulation }) {
   const targetAge = `${simulation.inputs.targetRetirementAge}세`;
@@ -10,7 +26,6 @@ function ResultHero({ simulation }) {
   const safeCopy = simulation.earliestRetirementAge
     ? `현재 가정으로는 ${simulation.earliestRetirementAge}세 퇴사가 더 안전해 보여요.`
     : '현재 가정에서는 더 늦은 퇴사가 필요해 보여요.';
-
   return (
     <section className="fm-card fm-result fm-result-v3">
       <p>내 FIRE 현재 위치</p>
@@ -25,17 +40,9 @@ function ResultHero({ simulation }) {
         <span>국민연금 {simulation.inputs.expectedPensionAge}세부터 월 {formatWon(simulation.inputs.expectedMonthlyPension)} 반영</span>
       </div>
       <div className="fm-score-box">
-        <div>
-          <small>FIRE 진단</small>
-          <b className="fm-score-status">{fireStatus(simulation.survivalScore)}</b>
-        </div>
-        <div>
-          <small>점수</small>
-          <b className="fm-score-number"><em>{simulation.survivalScore}</em>/100</b>
-        </div>
-        <div className="fm-score-meter" aria-label={`FIRE 점수 ${simulation.survivalScore}점`}>
-          <i style={{ width: `${Math.max(8, simulation.survivalScore)}%` }} />
-        </div>
+        <div><small>FIRE 진단</small><b className="fm-score-status">{fireStatus(simulation.survivalScore)}</b></div>
+        <div><small>점수</small><b className="fm-score-number"><em>{simulation.survivalScore}</em>/100</b></div>
+        <div className="fm-score-meter" aria-label={`FIRE 점수 ${simulation.survivalScore}점`}><i style={{ width: `${Math.max(8, simulation.survivalScore)}%` }} /></div>
         <p>높을수록 퇴사 후 자산 여유가 커요.</p>
       </div>
     </section>
@@ -59,21 +66,14 @@ function TopLevers({ inputs, simulation }) {
     ['저축액', '월 100만 더 저축', buildScenario(inputs, { monthlyInvestment: inputs.monthlyInvestment + 1000000 })]
   ];
   const baseAge = scenarioEndAge(simulation);
-  const topTwo = candidates
-    .map((item) => [...item, scenarioEndAge(item[2]) - baseAge])
-    .sort((a, b) => b[3] - a[3])
-    .slice(0, 2);
-
+  const topTwo = candidates.map((item) => [...item, scenarioEndAge(item[2]) - baseAge]).sort((a, b) => b[3] - a[3]).slice(0, 2);
   return (
     <section>
       <h2 className="fm-section-title">지금 가장 효과 큰 두 가지</h2>
       <div className="fm-improve-grid fm-improve-grid-two">
         {topTwo.map(([tag, title, scenario]) => (
           <article className="fm-improve-card" key={title}>
-            <em>{tag}</em>
-            <strong>{runwayText(scenario)}</strong>
-            <h3>{title}</h3>
-            <p>{compareText(simulation, scenario)}</p>
+            <em>{tag}</em><strong>{runwayText(scenario)}</strong><h3>{title}</h3><p>{compareText(simulation, scenario)}</p>
           </article>
         ))}
       </div>
@@ -105,6 +105,7 @@ export default function Result({ inputs, simulation, onMove, onEditFinalQuestion
   return (
     <main className="fm-screen fm-scroll">
       <Header />
+      <RankHero simulation={simulation} />
       <ResultHero simulation={simulation} />
       <TopLevers inputs={inputs} simulation={simulation} />
       <NextActions onMove={onMove} />

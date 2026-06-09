@@ -1,21 +1,48 @@
+import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { returnAssumptions } from '../../firemap-v2/data.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, fireStatus, runwayText, scenarioEndAge } from '../../firemap-v2/scenarios.js';
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
-import { estimateRank } from '../../firemap-v2/rank.js';
+import { statsRank } from '../../firemap-v2/rank.js';
+import { submitScore, fetchUserRank } from '../../utils/firemapScoresApi.js';
 
 function RankHero({ simulation }) {
-  const rank = estimateRank(simulation);
+  const base = statsRank(simulation);
+  const [live, setLive] = useState(null);
+  const score = simulation.survivalScore;
+
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      try {
+        const key = `fm_score_sent_${score}`;
+        if (!sessionStorage.getItem(key)) {
+          await submitScore({
+            fireScore: score,
+            ageBand: base.ageBand,
+            survivalAge: (simulation.targetResult && simulation.targetResult.depletionAge) || simulation.inputs.simulationUntilAge
+          });
+          sessionStorage.setItem(key, '1');
+        }
+      } catch { /* ignore */ }
+      const r = await fetchUserRank(score);
+      if (alive) setLive(r);
+    })();
+    return () => { alive = false; };
+  }, [score]);
+
   return (
     <section className="fm-rank-hero">
-      <p className="fm-rank-label">내 FIRE 자생력 · {rank.ageBandLabel} 또래 기준</p>
+      <p className="fm-rank-label">내 FIRE 자생력 · {base.ageBandLabel} 또래 기준</p>
       <div className="fm-rank-top">
-        <span className="fm-rank-pct">상위 {rank.percentile}%</span>
-        <span className="fm-rank-badge">{rank.grade}등급</span>
+        <span className="fm-rank-pct">상위 {base.percentile}%</span>
+        <span className="fm-rank-badge">{base.grade}등급</span>
       </div>
-      <p className="fm-rank-line">전체 사용자 {rank.total.toLocaleString()}명 중 <b>{rank.position.toLocaleString()}등</b></p>
-      <p className="fm-rank-trend">{rank.trendText}</p>
+      {live
+        ? <p className="fm-rank-line">함께 계산한 {live.total.toLocaleString()}명 중 <b>{live.position.toLocaleString()}등</b></p>
+        : <p className="fm-rank-line">함께 계산한 사용자 중 등수 집계 중…</p>}
+      <p className="fm-rank-trend">{base.source}</p>
     </section>
   );
 }

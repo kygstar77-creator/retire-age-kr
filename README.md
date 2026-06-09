@@ -17,13 +17,13 @@ npm run dev
 npm run build
 ```
 
-Netlify 자동 배포용 정적 파일을 만들 때는 아래 명령을 사용합니다.
+Cloudflare Pages 배포용 정적 파일을 만들 때는 아래 명령을 사용합니다.
 
 ```bash
 npm run build:deploy
 ```
 
-Netlify에는 `netlify.toml`이 들어 있어 GitHub 저장소를 연결하면 자동으로 `outputs/deploy` 폴더가 배포됩니다.
+`wrangler.json`에 Cloudflare Pages 설정이 있어, GitHub 저장소를 연결하면 `.github/workflows/pages.yml`이 `outputs/deploy` 폴더를 자동 배포합니다.
 
 ## 주요 기능
 

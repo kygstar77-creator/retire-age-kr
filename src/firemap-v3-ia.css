@@ -86,3 +86,22 @@
 .fm-consent-sheet p { font-size: 13px; color: var(--fm-muted); line-height: 1.6; margin: 8px 0 0; }
 .fm-consent-privacy { color: var(--fm-faint) !important; }
 .fm-consent-sheet button { margin-top: 14px; width: 100%; border: none; border-radius: var(--fm-radius-md); padding: 13px; background: var(--fm-accent); color: #fff; font-size: 15px; font-weight: 600; cursor: pointer; }
+
+/* v3 #3: 피부양자 판정 calculator */
+.fm-dc-fields { display: flex; flex-direction: column; gap: 10px; margin: 10px 0; }
+.fm-dc-field { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 13px; }
+.fm-dc-input { display: inline-flex; align-items: center; gap: 6px; }
+.fm-dc-input button { width: 30px; height: 30px; border: 0.5px solid var(--fm-border-strong); border-radius: var(--fm-radius-sm); background: var(--fm-surface); font-size: 16px; cursor: pointer; }
+.fm-dc-input input { width: 76px; text-align: right; border: 0.5px solid var(--fm-border-strong); border-radius: var(--fm-radius-sm); padding: 6px 8px; font: inherit; }
+.fm-dc-input em { font-style: normal; color: var(--fm-faint); font-size: 12px; }
+.fm-dc-toggles { display: flex; gap: 8px; }
+.fm-dc-toggles button { flex: 1; padding: 9px; border: 0.5px solid var(--fm-border-strong); border-radius: var(--fm-radius-sm); background: var(--fm-surface); font-size: 12px; cursor: pointer; }
+.fm-dc-toggles button.on { background: var(--fm-navy); color: #fff; border-color: var(--fm-navy); }
+.fm-dc-result { margin-top: 12px; padding: 12px; border-radius: var(--fm-radius-md); }
+.fm-dc-result.ok { background: rgba(29,158,117,0.1); }
+.fm-dc-result.no { background: rgba(226,75,74,0.1); }
+.fm-dc-result strong { font-size: 15px; }
+.fm-dc-result small { display: block; color: var(--fm-muted); margin: 2px 0 8px; }
+.fm-dc-result ul { margin: 0; padding-left: 16px; }
+.fm-dc-result li { font-size: 12px; color: var(--fm-muted); line-height: 1.6; }
+.fm-dc-apply { margin-top: 10px; width: 100%; border: none; border-radius: var(--fm-radius-md); padding: 12px; background: var(--fm-accent); color: #fff; font-weight: 600; cursor: pointer; }

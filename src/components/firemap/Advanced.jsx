@@ -1,4 +1,5 @@
 import Header from './Header.jsx';
+import DependentCheck from './DependentCheck.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, runwayText, scenarioEndAge } from '../../firemap-v2/scenarios.js';
 
@@ -36,6 +37,7 @@ export default function Advanced({ inputs, onChange, simulation, onBack }) {
         <h2>복잡한 가정은 따로 비교해요</h2>
         <p>건보료, 해외 체류, 퇴사 후 현금흐름처럼 해석이 필요한 조건은 기본 실험과 분리했습니다. 모든 값은 참고 시나리오입니다.</p>
       </section>
+      <DependentCheck onApply={applyPatch} />
       <section className="fm-card fm-text-card fm-advanced-section">
         <p className="fm-kicker">고정비</p>
         <h2>퇴사 후 고정비 반영</h2>

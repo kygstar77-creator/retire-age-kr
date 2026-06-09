@@ -20,7 +20,7 @@ function ScenarioList({ title, inputs, baseSimulation, scenarios }) {
   );
 }
 
-export default function Curation({ inputs, simulation, onBack }) {
+export default function City({ inputs, simulation, onBack }) {
   return (
     <main className="fm-screen fm-scroll">
       <Header onBack={onBack} />

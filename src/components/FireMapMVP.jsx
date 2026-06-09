@@ -3,17 +3,21 @@ import Home from './firemap/Home.jsx';
 import Question from './firemap/Question.jsx';
 import Result from './firemap/Result.jsx';
 import Experiment from './firemap/Experiment.jsx';
-import Advanced from './firemap/Advanced.jsx';
 import City from './firemap/City.jsx';
 import Share from './firemap/Share.jsx';
 import Community from './firemap/Community.jsx';
+import Tools from './firemap/Tools.jsx';
+import BottomTabs from './firemap/BottomTabs.jsx';
+import Header from './firemap/Header.jsx';
+import DependentCheck from './firemap/DependentCheck.jsx';
+import { ForeignStockTaxCard, DividendCard, PensionEarlyClaimCard } from './firemap/TaxPensionModules.jsx';
 import FloatingFeedback from './firemap/FloatingFeedback.jsx';
 import Consent from './firemap/Consent.jsx';
 import { buildSimulation, defaultInputs } from '../utils/retirementSimulator.js';
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
 import { cleanNumber } from '../firemap-v2/formatters.js';
-import { decodeInputsFromHash } from '../utils/shareState.js';
 import { screens, resolveScreen } from '../firemap-v2/screens.js';
+import { decodeInputsFromHash } from '../utils/shareState.js';
 import '../firemap-v3-tokens.css';
 import '../firemap.css';
 import '../firemap-overrides.css';
@@ -39,14 +43,12 @@ function loadInputs() {
   try {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) return { ...defaultInputs, ...JSON.parse(saved) };
-  } catch {
-    return defaultInputs;
-  }
+  } catch { return defaultInputs; }
   return defaultInputs;
 }
 
 function readScreenFromHash() {
-  if (getSharedInputs() && !['#result','#experiment','#advanced','#city','#share','#community','#question'].includes(window.location.hash)) return 'result';
+  if (getSharedInputs() && !Object.values(screens).some((s) => s.hash === window.location.hash)) return 'result';
   return resolveScreen(window.location.hash);
 }
 
@@ -59,32 +61,55 @@ export default function FireMapMVP() {
   useEffect(() => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); } catch { /* ignore */ } }, [inputs]);
 
   useEffect(() => {
-    const syncFromHash = () => setScreenState(readScreenFromHash());
-    window.addEventListener('hashchange', syncFromHash);
-    window.addEventListener('popstate', syncFromHash);
+    const sync = () => setScreenState(readScreenFromHash());
+    window.addEventListener('hashchange', sync);
+    window.addEventListener('popstate', sync);
     if (!window.location.hash) window.history.replaceState(null, '', '#home');
-    return () => { window.removeEventListener('hashchange', syncFromHash); window.removeEventListener('popstate', syncFromHash); };
+    return () => { window.removeEventListener('hashchange', sync); window.removeEventListener('popstate', sync); };
   }, []);
 
-  const setScreen = (nextScreen) => {
-    const id = resolveScreen(nextScreen);
+  const setScreen = (next) => {
+    const id = resolveScreen(next);
     setScreenState(id);
     const hash = screens[id].hash;
     if (window.location.hash !== hash) window.history.pushState(null, '', hash);
   };
-  const onChange = (key, value) => setInputs((current) => ({ ...current, [key]: cleanNumber(value) }));
-  const next = () => step >= questions.length - 1 ? setScreen('result') : setStep((current) => current + 1);
-  const prevQuestion = () => step === 0 ? setScreen('home') : setStep((current) => current - 1);
+  const onChange = (key, value) => setInputs((c) => ({ ...c, [key]: cleanNumber(value) }));
+  const applyPatch = (patch) => Object.entries(patch).forEach(([k, v]) => onChange(k, v));
+  const next = () => step >= questions.length - 1 ? setScreen('result') : setStep((c) => c + 1);
+  const prevQuestion = () => step === 0 ? setScreen('home') : setStep((c) => c - 1);
   const goFinalQuestion = () => { setStep(Math.max(0, questions.length - 1)); setScreen('question'); };
-  const backOf = (id) => () => setScreen(screens[id]?.back || 'result');
-  const wrap = (node) => <>{node}<FloatingFeedback /><Consent /></>;
+  const backOf = (id) => () => setScreen(screens[id]?.back || 'tools');
 
-  if (screen === 'home') return wrap(<Home onStart={() => setScreen('question')} />);
-  if (screen === 'question') return wrap(<Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />);
-  if (screen === 'experiment') return wrap(<Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} />);
-  if (screen === 'advanced') return wrap(<Advanced inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('advanced')} />);
-  if (screen === 'city') return wrap(<City inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('city')} />);
-  if (screen === 'share') return wrap(<Share inputs={inputs} simulation={simulation} onBack={backOf('share')} />);
-  if (screen === 'community') return wrap(<Community onBack={backOf('community')} />);
-  return wrap(<Result inputs={inputs} simulation={simulation} onMove={setScreen} onEditFinalQuestion={goFinalQuestion} />);
+  const tool = (id, node) => (
+    <main className="fm-screen fm-scroll">
+      <Header tag={screens[id].title} onBack={backOf(id)} />
+      {node}
+    </main>
+  );
+
+  const wrap = (node) => (
+    <>
+      {node}
+      {screens[screen]?.tab && <BottomTabs current={screen} onMove={setScreen} />}
+      <FloatingFeedback />
+      <Consent />
+    </>
+  );
+
+  let view;
+  if (screen === 'home') view = <Home onStart={() => setScreen('question')} />;
+  else if (screen === 'question') view = <Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />;
+  else if (screen === 'tools') view = <Tools onMove={setScreen} />;
+  else if (screen === 'experiment') view = <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} />;
+  else if (screen === 'city') view = <City inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('city')} />;
+  else if (screen === 'share') view = <Share inputs={inputs} simulation={simulation} onBack={backOf('share')} />;
+  else if (screen === 'community') view = <Community onBack={backOf('community')} />;
+  else if (screen === 'dependent') view = tool('dependent', <DependentCheck onApply={applyPatch} />);
+  else if (screen === 'foreignTax') view = tool('foreignTax', <ForeignStockTaxCard />);
+  else if (screen === 'dividend') view = tool('dividend', <DividendCard />);
+  else if (screen === 'pension') view = tool('pension', <PensionEarlyClaimCard inputs={inputs} onApply={applyPatch} />);
+  else view = <Result inputs={inputs} simulation={simulation} onMove={setScreen} onEditFinalQuestion={goFinalQuestion} />;
+
+  return wrap(view);
 }

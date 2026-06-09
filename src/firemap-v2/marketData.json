@@ -1,0 +1,6 @@
+{
+  "asOf": "2026-06",
+  "source": "seed — work/refresh-data.mjs(공개 API)로 주기 갱신",
+  "fxToKrw": { "USD": 1380, "THB": 40, "VND": 0.055, "MYR": 310 },
+  "indexCagr": { "deposit": 3, "balanced": 5, "sp500": 8, "nasdaq100": 10, "schd": 7 }
+}

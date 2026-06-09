@@ -1,0 +1,28 @@
+name: Refresh market data
+on:
+  schedule:
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Refresh data
+        run: node work/refresh-data.mjs
+      - name: Commit if changed
+        run: |
+          if ! git diff --quiet -- src/firemap-v2/marketData.json; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add src/firemap-v2/marketData.json
+            git commit -m "chore: weekly market data refresh"
+            git push
+          else
+            echo "no change"
+          fi

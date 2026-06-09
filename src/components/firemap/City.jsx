@@ -4,6 +4,7 @@ import { domesticCities, overseasCities } from '../../firemap-v2/data.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, deltaText, runwayText } from '../../firemap-v2/scenarios.js';
 import { sourceLine } from '../../firemap-v2/dataSources.js';
+import { getFx } from '../../firemap-v2/market.js';
 
 function ScenarioList({ title, inputs, baseSimulation, scenarios }) {
   return (
@@ -44,7 +45,7 @@ function Stepper({ label, unit, value, set, step, min = 0, max = Infinity }) {
 function OverseasStayModule({ inputs, simulation, onChange }) {
   const [months, setMonths] = useState(3);
   const [localCost, setLocalCost] = useState(65000);
-  const [fx, setFx] = useState(40);
+  const [fx, setFx] = useState(() => getFx('THB'));
   const [pause, setPause] = useState(true);
   const patch = {
     overseasStayEnabled: 1,

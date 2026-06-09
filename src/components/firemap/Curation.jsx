@@ -23,7 +23,7 @@ function ScenarioList({ title, inputs, baseSimulation, scenarios }) {
 export default function Curation({ inputs, simulation, onBack }) {
   return (
     <main className="fm-screen fm-scroll">
-      <Header tag="큐레이션" onBack={onBack} />
+      <Header onBack={onBack} />
       <section className="fm-card fm-text-card"><p className="fm-kicker">도시 시나리오</p><h2>사는 곳을 바꾸면 FIRE가 얼마나 가까워질까?</h2><p>도시별 예상 생활비를 내 조건에 바로 대입해, 자산 수명이 얼마나 달라지는지 보여줍니다.</p></section>
       <ScenarioList title="국내 저비용 도시" inputs={inputs} baseSimulation={simulation} scenarios={domesticCities} />
       <ScenarioList title="해외 저비용 생활" inputs={inputs} baseSimulation={simulation} scenarios={overseasCities} />

@@ -55,7 +55,11 @@ function calculateDividendTax(data) {
 function calculateForeignStockGainTax(data) {
   const gain = Math.max(0, data.foreignStockGain);
   const taxableGain = Math.max(0, gain - data.foreignStockBasicDeduction);
-  const tax = taxableGain * toRate(data.foreignStockTaxRate);
+  // 과표 3억 이하 22%(지방세 포함), 3억 초과분 27.5%
+  const threeEok = 300000000;
+  const lowerBase = Math.min(taxableGain, threeEok);
+  const upperBase = Math.max(0, taxableGain - threeEok);
+  const tax = lowerBase * 0.22 + upperBase * 0.275;
   const afterTaxGain = Math.max(0, gain - tax);
 
   return {

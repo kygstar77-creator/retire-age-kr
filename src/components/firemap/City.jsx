@@ -2,6 +2,7 @@ import Header from './Header.jsx';
 import { domesticCities, overseasCities } from '../../firemap-v2/data.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, deltaText, runwayText } from '../../firemap-v2/scenarios.js';
+import { sourceLine } from '../../firemap-v2/dataSources.js';
 
 function Info({ tag, title, text, note }) {
   return <section className="fm-card fm-info"><em>{tag}</em><h2>{title}</h2><p>{text}</p><small>{note}</small></section>;
@@ -15,7 +16,7 @@ function ScenarioList({ title, inputs, baseSimulation, scenarios }) {
         const citySimulation = buildScenario(inputs, { monthlyLivingCost: cost });
         return <article className="fm-city-row" key={name}><div><strong>{name}</strong><p>{copy}</p><p>이 생활비로 계산하면 <b>{runwayText(citySimulation)}</b>까지 버틸 수 있어요. {deltaText(baseSimulation, citySimulation)}.</p></div><span>예상 월 {formatWon(cost)}<br /><b>{saving ? `현재 대비 ${formatWon(saving)} 절감` : '현재와 비슷함'}</b></span></article>;
       })}
-      <small>도시별 금액은 1인 생활비 참고 시나리오이며 실제 주거비, 의료비, 환율, 비자 조건에 따라 달라질 수 있어요.</small>
+      <small>도시별 금액은 1인 생활비 참고 시나리오이며 실제 주거비, 의료비, 환율, 비자 조건에 따라 달라질 수 있어요. {sourceLine('cityCost')}</small>
     </section>
   );
 }

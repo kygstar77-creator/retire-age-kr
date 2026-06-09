@@ -78,3 +78,11 @@
 .fm-topbar .fm-logo { background: none; border: none; font: inherit; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; padding: 0; color: inherit; }
 .fm-topbar .fm-logo-mark { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 6px; background: var(--fm-navy); color: var(--fm-surface); font-size: 12px; font-weight: 700; }
 .fm-back-btn { cursor: pointer; }
+
+/* v3 compliance: first-run consent */
+.fm-consent-layer { position: fixed; inset: 0; z-index: 200; display: flex; align-items: flex-end; justify-content: center; background: rgba(0,0,0,0.4); }
+.fm-consent-sheet { background: var(--fm-surface); width: 100%; max-width: 420px; border-radius: var(--fm-radius-xl) var(--fm-radius-xl) 0 0; padding: 20px 18px calc(20px + env(safe-area-inset-bottom)); }
+.fm-consent-sheet strong { font-size: 16px; }
+.fm-consent-sheet p { font-size: 13px; color: var(--fm-muted); line-height: 1.6; margin: 8px 0 0; }
+.fm-consent-privacy { color: var(--fm-faint) !important; }
+.fm-consent-sheet button { margin-top: 14px; width: 100%; border: none; border-radius: var(--fm-radius-md); padding: 13px; background: var(--fm-accent); color: #fff; font-size: 15px; font-weight: 600; cursor: pointer; }

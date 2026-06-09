@@ -4,6 +4,7 @@ import PensionControls from './PensionControls.jsx';
 import RangeControl from './RangeControl.jsx';
 import AssetCompareChart from './AssetCompareChart.jsx';
 import { investmentScenarios } from '../../firemap-v2/data.js';
+import { sourceLine } from '../../firemap-v2/dataSources.js';
 import { buildChartRows, buildScenario, runwayText, scenarioEndAge } from '../../firemap-v2/scenarios.js';
 
 export default function Experiment({ inputs, onChange, simulation, onBack }) {
@@ -41,7 +42,7 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         <div className="fm-chips fm-return-rail" aria-label="투자 수익률 가정 선택">
           {investmentScenarios.map((scenario) => <button type="button" key={scenario.key} className={scenario.annualReturnRate === inputs.annualReturnRate ? 'is-active' : ''} onClick={() => onChange('annualReturnRate', scenario.annualReturnRate)}>{scenario.label} · 연 {scenario.annualReturnRate}%</button>)}
         </div>
-        <small>과거 수익률은 보장값이 아닌 장기 통계 가정이에요. 특정 종목 추천이 아닙니다.</small>
+        <small>과거 수익률은 보장값이 아닌 장기 통계 가정이에요. 특정 종목 추천이 아닙니다. {sourceLine('returnPresets')}</small>
       </section>
       <section className="fm-card fm-graph">
         <p className="fm-kicker">내 미래 자산 차트</p><h2>나이별 자산 흐름을 비교해보세요</h2>

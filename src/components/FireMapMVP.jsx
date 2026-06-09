@@ -8,6 +8,7 @@ import City from './firemap/City.jsx';
 import Share from './firemap/Share.jsx';
 import Community from './firemap/Community.jsx';
 import FloatingFeedback from './firemap/FloatingFeedback.jsx';
+import Consent from './firemap/Consent.jsx';
 import { buildSimulation, defaultInputs } from '../utils/retirementSimulator.js';
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
 import { cleanNumber } from '../firemap-v2/formatters.js';
@@ -64,7 +65,7 @@ export default function FireMapMVP() {
   const prevQuestion = () => step === 0 ? setScreen('home') : setStep((current) => current - 1);
   const goFinalQuestion = () => { setStep(Math.max(0, questions.length - 1)); setScreen('question'); };
   const backOf = (id) => () => setScreen(screens[id]?.back || 'result');
-  const wrap = (node) => <>{node}<FloatingFeedback /></>;
+  const wrap = (node) => <>{node}<FloatingFeedback /><Consent /></>;
 
   if (screen === 'home') return wrap(<Home onStart={() => setScreen('question')} />);
   if (screen === 'question') return wrap(<Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />);

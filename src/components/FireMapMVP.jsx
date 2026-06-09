@@ -12,6 +12,7 @@ import { buildSimulation, defaultInputs } from '../utils/retirementSimulator.js'
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
 import { cleanNumber } from '../firemap-v2/formatters.js';
 import { screens, resolveScreen } from '../firemap-v2/screens.js';
+import '../firemap-v3-tokens.css';
 import '../firemap.css';
 import '../firemap-overrides.css';
 import '../firemap-polish.css';

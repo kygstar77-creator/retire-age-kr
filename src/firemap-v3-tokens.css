@@ -1,0 +1,27 @@
+/* FireMap v3 design tokens — single source for v3 design language.
+   값은 기존 v3 화면에서 쓰던 색을 그대로 토큰화(시각 변화 없음). */
+:root {
+  --fm-navy: #1e2859;
+  --fm-navy-soft: #b6c0ee;
+  --fm-accent: #2f6fde;
+  --fm-success: #86e0a0;
+  --fm-text: #1a1c22;
+  --fm-muted: #6b6f76;
+  --fm-faint: #9aa3bf;
+  --fm-faint-2: #8b9098;
+  --fm-surface: #ffffff;
+  --fm-border: rgba(0,0,0,0.14);
+  --fm-border-strong: rgba(0,0,0,0.16);
+  --fm-border-soft: rgba(0,0,0,0.08);
+
+  --fm-radius-sm: 10px;
+  --fm-radius-md: 12px;
+  --fm-radius-lg: 16px;
+  --fm-radius-xl: 18px;
+  --fm-pill: 99px;
+
+  --fm-gap-1: 6px;
+  --fm-gap-2: 8px;
+  --fm-gap-3: 12px;
+  --fm-pad-card: 16px;
+}

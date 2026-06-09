@@ -105,3 +105,10 @@
 .fm-dc-result ul { margin: 0; padding-left: 16px; }
 .fm-dc-result li { font-size: 12px; color: var(--fm-muted); line-height: 1.6; }
 .fm-dc-apply { margin-top: 10px; width: 100%; border: none; border-radius: var(--fm-radius-md); padding: 12px; background: var(--fm-accent); color: #fff; font-weight: 600; cursor: pointer; }
+
+/* v3 #17: return benchmark */
+.fm-bench { display: flex; flex-direction: column; gap: 8px; margin: 10px 0; }
+.fm-bench-row { display: grid; grid-template-columns: auto auto 1fr; gap: 8px; align-items: baseline; font-size: 12px; }
+.fm-bench-row b { font-size: 13px; }
+.fm-bench-row span { color: var(--fm-accent); font-weight: 600; }
+.fm-bench-row em { font-style: normal; color: var(--fm-faint); }

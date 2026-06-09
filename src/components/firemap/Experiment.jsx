@@ -44,6 +44,18 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         </div>
         <small>과거 수익률은 보장값이 아닌 장기 통계 가정이에요. 특정 종목 추천이 아닙니다. {sourceLine('returnPresets')}</small>
       </section>
+      <section className="fm-card fm-text-card">
+        <p className="fm-kicker">수익률 벤치마크</p><h2>예적금 대비 어디에 두느냐의 차이</h2>
+        <p>아래는 자산을 어디에 두느냐의 장기 수익률 가정이에요. 가정을 높일수록 위 차트에서 자산수명·FIRE 시점이 당겨져요. 특정 상품 추천이 아니라 일반 지수 가정입니다.</p>
+        <div className="fm-bench">
+          {investmentScenarios.map((sc) => (
+            <div className="fm-bench-row" key={sc.key}>
+              <b>{sc.label}</b><span>연 {sc.annualReturnRate}%</span><em>{sc.copy}</em>
+            </div>
+          ))}
+        </div>
+        <small>예적금형(보수)부터 지수형(공격)까지 폭을 비교해 보세요. {sourceLine('returnPresets')}</small>
+      </section>
       <section className="fm-card fm-graph">
         <p className="fm-kicker">내 미래 자산 차트</p><h2>나이별 자산 흐름을 비교해보세요</h2>
         <div className="fm-chart-legend">

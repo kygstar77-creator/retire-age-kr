@@ -56,3 +56,11 @@
 .fm-rank-line { font-size: 13px; color: #fff; margin: 0 0 4px; }
 .fm-rank-line b { font-weight: 700; }
 .fm-rank-trend { font-size: 12px; color: #86e0a0; margin: 0; }
+
+/* v3 Compare chart */
+.fm-compare-chart { position: relative; height: 200px; width: 100%; }
+.fm-chart-legend { display: flex; gap: 14px; margin: 0 2px 8px; }
+.fm-chart-legend span { font-size: 11px; color: #6b6f76; display: inline-flex; align-items: center; }
+.fm-dot { width: 8px; height: 8px; border-radius: 2px; display: inline-block; margin-right: 5px; }
+.fm-dot-current { background: #9aa3bf; }
+.fm-dot-improved { background: #2f6fde; }

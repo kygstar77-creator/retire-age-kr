@@ -11,11 +11,12 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
-    "vite": "latest",
+    "chart.js": "^4.5.1",
+    "lucide-react": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "lucide-react": "latest",
-    "sharp": "latest"
+    "sharp": "latest",
+    "vite": "latest"
   },
   "devDependencies": {
     "@playwright/test": "latest"

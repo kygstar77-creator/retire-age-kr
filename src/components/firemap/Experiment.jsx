@@ -2,37 +2,25 @@ import { useMemo, useState } from 'react';
 import Header from './Header.jsx';
 import PensionControls from './PensionControls.jsx';
 import RangeControl from './RangeControl.jsx';
+import AssetCompareChart from './AssetCompareChart.jsx';
 import { investmentScenarios } from '../../firemap-v2/data.js';
-import { formatEok, formatWon } from '../../firemap-v2/formatters.js';
 import { buildChartRows, buildScenario, runwayText, scenarioEndAge } from '../../firemap-v2/scenarios.js';
 
-function nearestByX(chart, x) {
-  return chart.reduce((nearest, row) => Math.abs(row.x - x) < Math.abs(nearest.x - x) ? row : nearest, chart[0]);
-}
-
 export default function Experiment({ inputs, onChange, simulation, onBack }) {
-  const [selectedAge, setSelectedAge] = useState(null);
   const [improvedCost, setImprovedCost] = useState(Math.max(1500000, Math.min(3000000, inputs.monthlyLivingCost - 1000000)));
   const lowerCost = useMemo(() => buildScenario(inputs, { monthlyLivingCost: improvedCost }), [inputs, improvedCost]);
   const sp500Baseline = useMemo(() => buildScenario(inputs, { annualReturnRate: 8 }), [inputs]);
   const endAgeGap = scenarioEndAge(simulation) - scenarioEndAge(sp500Baseline);
   const gapText = endAgeGap > 0 ? `S&P500형보다 ${endAgeGap}년 길게` : endAgeGap < 0 ? `S&P500형보다 ${Math.abs(endAgeGap)}년 짧게` : 'S&P500형과 비슷하게';
-  const { chart, max } = buildChartRows(simulation, lowerCost, inputs);
-  const points = (key) => chart.map((row) => `${row.x},${Math.max(32, key === 'improved' ? row.improvedY : row.currentY)}`).join(' ');
-  const last = chart.at(-1);
-  const selectedPoint = chart.find((row) => row.age === selectedAge) || null;
+  const { chart } = buildChartRows(simulation, lowerCost, inputs);
+  const ages = useMemo(() => chart.map((row) => row.age), [chart]);
+  const currentSeries = useMemo(() => chart.map((row) => Math.max(0, row.current)), [chart]);
+  const improvedSeries = useMemo(() => chart.map((row) => Math.max(0, row.improved)), [chart]);
   const activeScenario = investmentScenarios.find((scenario) => scenario.annualReturnRate === inputs.annualReturnRate);
-  const selectFromPointer = (event) => {
-    if (!chart.length) return;
-    const svg = event.currentTarget;
-    const rect = svg.getBoundingClientRect();
-    const x = ((event.clientX - rect.left) / rect.width) * 360;
-    setSelectedAge(nearestByX(chart, x).age);
-  };
 
   return (
     <main className="fm-screen fm-scroll">
-      <Header tag="실험" />
+      <Header tag="비교" onBack={onBack} />
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">조건 바꿔보기</p><h2>손가락으로 밀어서 바로 바꿔보세요</h2>
         <p>퇴사 나이, 생활비, 월 저축액, 수익률을 한 화면에서 조정해요.</p>
@@ -50,20 +38,16 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         <div className="fm-chips fm-return-rail" aria-label="투자 수익률 가정 선택">
           {investmentScenarios.map((scenario) => <button type="button" key={scenario.key} className={scenario.annualReturnRate === inputs.annualReturnRate ? 'is-active' : ''} onClick={() => onChange('annualReturnRate', scenario.annualReturnRate)}>{scenario.label} · 연 {scenario.annualReturnRate}%</button>)}
         </div>
-        <small>수익률은 보장값이 아니라 장기 가정이에요.</small>
+        <small>과거 수익률은 보장값이 아닌 장기 통계 가정이에요. 특정 종목 추천이 아닙니다.</small>
       </section>
       <section className="fm-card fm-graph">
         <p className="fm-kicker">내 미래 자산 차트</p><h2>나이별 자산 흐름을 비교해보세요</h2>
-        <div className="fm-chart-summary"><span>현재 계획 <b>{runwayText(simulation)}</b></span><span>절감안 <b>{runwayText(lowerCost)}</b></span></div>
-        <svg className="fm-touch-chart" viewBox="0 0 360 210" role="img" aria-label="나이별 자산 그래프" onPointerDown={selectFromPointer} onPointerMove={(event) => { if (event.buttons === 1 || event.pointerType === 'touch') selectFromPointer(event); }}>
-          <line x1="34" y1="152" x2="324" y2="152" /><line x1="34" y1="44" x2="34" y2="152" />
-          <text x="34" y="34" className="axis">{formatEok(max)}</text><text x="34" y="174" className="axis">{chart[0]?.age}세</text><text x="292" y="174" className="axis">{last?.age}세</text>
-          <polyline points={points('current')} className="current" /><polyline points={points('improved')} className="improved" />
-          {selectedPoint && <><line className="fm-crosshair" x1={selectedPoint.x} y1="38" x2={selectedPoint.x} y2="158" /><circle cx={selectedPoint.x} cy={Math.max(32, selectedPoint.currentY)} r="5" className="dot current-dot" /><circle cx={selectedPoint.x} cy={Math.max(32, selectedPoint.improvedY)} r="6" className="dot" /></>}
-          <rect className="fm-chart-hitbox" x="28" y="32" width="304" height="130" rx="16" />
-        </svg>
-        {selectedPoint && <p className="fm-chart-note">{selectedPoint.age}세 예상 자산 · 현재 {formatEok(selectedPoint.current)} · 절감안 {formatEok(selectedPoint.improved)}</p>}
-        <p className="fm-chart-note">회색은 현재 계획, 주황색은 절감안 생활비 {formatWon(improvedCost)} 기준입니다.</p>
+        <div className="fm-chart-legend">
+          <span><i className="fm-dot fm-dot-current" />현재 계획 · {runwayText(simulation)}</span>
+          <span><i className="fm-dot fm-dot-improved" />절감안 · {runwayText(lowerCost)}</span>
+        </div>
+        <AssetCompareChart ages={ages} current={currentSeries} improved={improvedSeries} />
+        <p className="fm-chart-note">차트를 누르면 그 나이의 세후 자산이 표시돼요. 회색 점선은 현재 계획, 파란 영역은 절감안 기준입니다.</p>
       </section>
       <nav className="fm-bottom-nav">
         <button type="button" onClick={onBack}>취소</button>

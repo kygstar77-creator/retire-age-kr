@@ -4,6 +4,7 @@ import { BASE_URL, CONTACT_EMAIL } from '../../firemap-v2/data.js';
 import { runwayText } from '../../firemap-v2/scenarios.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { buildScenarioShareUrl, buildShareText } from '../../utils/shareState.js';
+import { survivalPhrase } from '../../firemap-v2/scenarios.js';
 
 function roundRect(ctx, x, y, width, height, radius) {
   ctx.beginPath();
@@ -65,7 +66,8 @@ async function makeShareImage(inputs, simulation) {
 export default function Share({ inputs, simulation, onBack }) {
   const [message, setMessage] = useState('');
   const rank = statsRank(simulation);
-  const resultLine = `또래 상위 ${rank.percentile}% · ${rank.grade}등급 · ${inputs.targetRetirementAge}세 퇴사 → ${runwayText(simulation)}까지`;
+  const phrase = survivalPhrase(simulation);
+  const resultLine = `또래 상위 ${rank.percentile}% · ${rank.grade}등급 · ${phrase.short}`;
 
   const flash = (text) => { setMessage(text); setTimeout(() => setMessage(''), 2000); };
   const copyFallback = async (text, label) => {
@@ -116,7 +118,7 @@ export default function Share({ inputs, simulation, onBack }) {
             <span className="fm-rank-pct">또래 상위 {rank.percentile}%</span>
             <span className="fm-rank-badge">{rank.grade}등급</span>
           </div>
-          <p className="fm-rank-line">{inputs.targetRetirementAge}세 퇴사 → <b>{runwayText(simulation)}</b>까지</p>
+          <p className="fm-rank-line">{phrase.short}</p>
         </section>
         <div className="fm-share-actions">
           <button className="fm-share-btn fm-share-primary" type="button" onClick={shareImage}>

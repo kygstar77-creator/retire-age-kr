@@ -62,7 +62,7 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
 
     financialAsset = assetAfterCashFlow + investmentReturn;
 
-    if (financialAsset <= 0 && depletionAge === null) {
+    if (isRetired && financialAsset <= 0 && depletionAge === null) {
       depletionAge = age;
     }
 

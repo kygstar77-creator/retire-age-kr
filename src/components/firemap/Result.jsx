@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { returnAssumptions } from '../../firemap-v2/data.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
-import { buildScenario, fireStatus, runwayText, scenarioEndAge } from '../../firemap-v2/scenarios.js';
+import { buildScenario, fireStatus, runwayText, scenarioEndAge, survivalPhrase } from '../../firemap-v2/scenarios.js';
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { submitScore, fetchUserRank } from '../../utils/firemapScoresApi.js';
@@ -51,7 +51,7 @@ function RankHero({ simulation }) {
 
 function ResultHero({ simulation }) {
   const targetAge = `${simulation.inputs.targetRetirementAge}세`;
-  const runway = runwayText(simulation);
+  const phrase = survivalPhrase(simulation);
   const earliest = simulation.earliestRetirementAge;
   const target = simulation.inputs.targetRetirementAge;
   const safeCopy = !earliest
@@ -64,10 +64,12 @@ function ResultHero({ simulation }) {
   return (
     <section className="fm-card fm-result fm-result-v3">
       <p>내 FIRE 현재 위치</p>
-      <h2>{targetAge}에 퇴사하면<br /><b>{runway}</b>까지 버틸 수 있어요.</h2>
+      {phrase.ok
+        ? <h2>{targetAge}에 퇴사하면<br /><b>{phrase.runway}</b>까지 버틸 수 있어요.</h2>
+        : <h2>지금 자산으론<br /><b>{targetAge}</b> 퇴사가 일러요.</h2>}
       <div className="fm-result-chips">
         <span>은퇴 나이 <b>{targetAge}</b></span>
-        <span>경제적 자유 시점 <b>{runway}</b></span>
+        <span>경제적 자유 시점 <b>{phrase.runway}</b></span>
       </div>
       <p className="fm-result-copy">{safeCopy}</p>
       <div className="fm-result-assumptions">

@@ -44,3 +44,16 @@ export function buildChartRows(simulation, improvedSimulation, inputs) {
   });
   return { rows, chart, max, minAge, maxAge };
 }
+
+export function survivalPhrase(simulation) {
+  const t = simulation.inputs.targetRetirementAge;
+  const until = simulation.inputs.simulationUntilAge;
+  const dep = simulation.targetResult.depletionAge;
+  if (!dep || dep > until) {
+    return { ok: true, runway: `${until}세 이상`, headlineTop: `${t}세에 퇴사해도`, headlineBottom: `${until}세까지 끄떡없어요`, short: `${t}세 퇴사 → ${until}세 이상 버팀` };
+  }
+  if (dep > t) {
+    return { ok: true, runway: `${dep}세`, headlineTop: `${t}세에 퇴사하면`, headlineBottom: `${dep}세까지 버틸 수 있어요`, short: `${t}세 퇴사 → ${dep}세까지 버팀` };
+  }
+  return { ok: false, runway: '자산 부족', headlineTop: `지금 자산으론`, headlineBottom: `${t}세 퇴사가 일러요`, short: `${t}세 퇴사엔 자산이 더 필요해요` };
+}

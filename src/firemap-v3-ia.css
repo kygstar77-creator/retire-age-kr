@@ -169,3 +169,11 @@
 
 /* v3 공유: 미리보기 등수 히어로 카드 여백 */
 .fm-share-hero { margin: 4px 0 0; }
+
+/* v3 fix: 등수 히어로가 카드 안(공유)에 들어가도 글자 항상 밝게(레거시 p색 덮어쓰기 방지) */
+.fm-rank-hero .fm-rank-label { color: var(--fm-navy-soft) !important; }
+.fm-rank-hero .fm-rank-pct { color: #fff !important; }
+.fm-rank-hero .fm-rank-line { color: #fff !important; }
+.fm-rank-hero .fm-rank-line b { color: #fff !important; }
+.fm-rank-hero .fm-rank-trend { color: var(--fm-success) !important; }
+.fm-rank-hero .fm-rank-badge { color: var(--fm-navy) !important; }

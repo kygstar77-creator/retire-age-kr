@@ -52,9 +52,15 @@ function RankHero({ simulation }) {
 function ResultHero({ simulation }) {
   const targetAge = `${simulation.inputs.targetRetirementAge}세`;
   const runway = runwayText(simulation);
-  const safeCopy = simulation.earliestRetirementAge
-    ? `현재 가정으로는 ${simulation.earliestRetirementAge}세 퇴사가 더 안전해 보여요.`
-    : '현재 가정에서는 더 늦은 퇴사가 필요해 보여요.';
+  const earliest = simulation.earliestRetirementAge;
+  const target = simulation.inputs.targetRetirementAge;
+  const safeCopy = !earliest
+    ? '지금 가정으로는 더 모으거나 생활비를 줄여야 자산이 오래 버텨요.'
+    : earliest < target
+      ? `지금 자산이면 더 일찍, ${earliest}세 퇴사도 가능해 보여요.`
+      : earliest > target
+        ? `${earliest}세까지 일하면 자산이 훨씬 안전해져요.`
+        : '지금 목표 나이가 적절해 보여요.';
   return (
     <section className="fm-card fm-result fm-result-v3">
       <p>내 FIRE 현재 위치</p>

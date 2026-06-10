@@ -116,7 +116,7 @@ export default function Share({ inputs, simulation, onBack }) {
             <span className="fm-rank-pct">또래 상위 {rank.percentile}%</span>
             <span className="fm-rank-badge">{rank.grade}등급</span>
           </div>
-          <p className="fm-rank-line">{inputs.targetRetirementAge}세 퇴사 시 <b>{runwayText(simulation)}</b>까지 버텨요</p>
+          <p className="fm-rank-line">{inputs.targetRetirementAge}세 퇴사 → <b>{runwayText(simulation)}</b>까지</p>
         </section>
         <div className="fm-share-actions">
           <button className="fm-share-btn fm-share-primary" type="button" onClick={shareImage}>

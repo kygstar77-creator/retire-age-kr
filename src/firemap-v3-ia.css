@@ -157,3 +157,12 @@
 .fm-feedback-fab::after { content: none !important; }
 .fm-feedback-fab { width: 46px !important; min-width: 46px !important; padding: 0 !important; }
 .fm-topbar .fm-back-btn { margin-right: -6px; }
+
+/* v3 공유: 버튼별 한 줄 부제(스캔성) */
+.fm-share-actions { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.fm-share-btn { text-align: left; display: flex; flex-direction: column; gap: 2px; padding: 13px 16px; border: 0.5px solid var(--fm-border); border-radius: var(--fm-radius-md); background: var(--fm-surface); cursor: pointer; }
+.fm-share-btn b { font-size: 14px; font-weight: 600; }
+.fm-share-btn span { font-size: 11px; color: var(--fm-faint); }
+.fm-share-btn.fm-share-primary { background: var(--fm-accent); border-color: var(--fm-accent); }
+.fm-share-btn.fm-share-primary b { color: #fff; }
+.fm-share-btn.fm-share-primary span { color: rgba(255,255,255,0.85); }

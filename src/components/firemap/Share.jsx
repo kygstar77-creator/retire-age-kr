@@ -112,11 +112,18 @@ export default function Share({ inputs, simulation, onBack }) {
         <h2>내 FIRE 등급 자랑하기</h2>
         <div className="fm-share-preview">
           <strong>{resultLine}</strong>
-          <p>등급 카드 이미지는 개인 금액 없이 등수·등급만 담아요. 조건 링크는 계산값을 담아 받은 사람 화면에 그대로 채워줘요.</p>
         </div>
-        <button className="fm-primary" type="button" onClick={shareImage}>등급 카드 이미지 공유</button>
-        <button className="fm-secondary" type="button" onClick={shareCondition}>내 조건 그대로 공유 (계산값 포함)</button>
-        <button className="fm-secondary" type="button" onClick={shareApp}>앱 링크만 공유</button>
+        <div className="fm-share-actions">
+          <button className="fm-share-btn fm-share-primary" type="button" onClick={shareImage}>
+            <b>등급 카드 이미지</b><span>또래 상위 %·등급만 — 금액은 안 담겨요</span>
+          </button>
+          <button className="fm-share-btn" type="button" onClick={shareCondition}>
+            <b>내 조건 그대로 공유</b><span>계산값 링크 — 받은 사람 화면에 자동 입력</span>
+          </button>
+          <button className="fm-share-btn" type="button" onClick={shareApp}>
+            <b>앱 링크만 공유</b><span>첫 화면 링크</span>
+          </button>
+        </div>
         {message && <div className="fm-toast">{message}</div>}
       </section>
       <section className="fm-card fm-info">

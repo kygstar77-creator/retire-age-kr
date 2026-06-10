@@ -156,7 +156,7 @@
 /* v3 polish: FAB 아이콘만(라벨 제거, 원형 유지) + 이전 버튼 우측 여백 축소 */
 .fm-feedback-fab::after { content: none !important; }
 .fm-feedback-fab { width: 46px !important; min-width: 46px !important; padding: 0 !important; }
-.fm-topbar .fm-back-btn { margin-right: -6px; }
+.fm-topbar .fm-back-btn { margin-right: -2px; display: inline-flex; align-items: center; justify-content: center; gap: 2px; padding-left: 12px; padding-right: 12px; text-align: center; }
 
 /* v3 공유: 버튼별 한 줄 부제(스캔성) */
 .fm-share-actions { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
@@ -166,3 +166,6 @@
 .fm-share-btn.fm-share-primary { background: var(--fm-accent); border-color: var(--fm-accent); }
 .fm-share-btn.fm-share-primary b { color: #fff; }
 .fm-share-btn.fm-share-primary span { color: rgba(255,255,255,0.85); }
+
+/* v3 공유: 미리보기 등수 히어로 카드 여백 */
+.fm-share-hero { margin: 4px 0 0; }

@@ -110,9 +110,14 @@ export default function Share({ inputs, simulation, onBack }) {
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">공유</p>
         <h2>내 FIRE 등급 자랑하기</h2>
-        <div className="fm-share-preview">
-          <strong>{resultLine}</strong>
-        </div>
+        <section className="fm-rank-hero fm-share-hero">
+          <p className="fm-rank-label">내 FIRE 자생력 · {rank.ageBandLabel} 또래 기준</p>
+          <div className="fm-rank-top">
+            <span className="fm-rank-pct">또래 상위 {rank.percentile}%</span>
+            <span className="fm-rank-badge">{rank.grade}등급</span>
+          </div>
+          <p className="fm-rank-line">{inputs.targetRetirementAge}세 퇴사 시 <b>{runwayText(simulation)}</b>까지 버텨요</p>
+        </section>
         <div className="fm-share-actions">
           <button className="fm-share-btn fm-share-primary" type="button" onClick={shareImage}>
             <b>등급 카드 이미지</b><span>또래 상위 %·등급만 — 금액은 안 담겨요</span>

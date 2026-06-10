@@ -10,6 +10,8 @@ import { buildChartRows, buildScenario, runwayText, scenarioEndAge } from '../..
 export default function Experiment({ inputs, onChange, simulation, onBack }) {
   const [improvedCost, setImprovedCost] = useState(Math.max(1500000, Math.min(3000000, inputs.monthlyLivingCost - 1000000)));
   const lowerCost = useMemo(() => buildScenario(inputs, { monthlyLivingCost: improvedCost }), [inputs, improvedCost]);
+  const yearsToRetire = Math.max(1, inputs.targetRetirementAge - inputs.currentAge);
+  const savingYearsValue = inputs.savingYears > 0 ? Math.min(inputs.savingYears, yearsToRetire) : yearsToRetire;
   const sp500Baseline = useMemo(() => buildScenario(inputs, { annualReturnRate: 8 }), [inputs]);
   const endAgeGap = scenarioEndAge(simulation) - scenarioEndAge(sp500Baseline);
   const gapText = endAgeGap > 0 ? `S&P500형보다 ${endAgeGap}년 길게` : endAgeGap < 0 ? `S&P500형보다 ${Math.abs(endAgeGap)}년 짧게` : 'S&P500형과 비슷하게';
@@ -38,7 +40,8 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         <RangeControl label="퇴사 나이" value={inputs.targetRetirementAge} inputKey="targetRetirementAge" type="age" step={1} onChange={(next) => onChange('targetRetirementAge', next)} />
         <RangeControl label="현재 금융자산" value={inputs.financialAsset} inputKey="financialAsset" type="money" step={10000000} onChange={(next) => onChange('financialAsset', next)} />
         <RangeControl label="월 저축액" value={inputs.monthlyInvestment} inputKey="monthlyInvestment" type="money" step={100000} onChange={(next) => onChange('monthlyInvestment', next)} />
-        <RangeControl label="앞으로 저축하는 기간" value={inputs.savingYears} inputKey="savingYears" type="years" step={1} onChange={(next) => onChange('savingYears', next)} />
+        <RangeControl label="앞으로 저축하는 기간" value={savingYearsValue} inputKey="savingYears" type="years" step={1} maxOverride={yearsToRetire} onChange={(next) => onChange('savingYears', next >= yearsToRetire ? 0 : next)} />
+        <p className="fm-range-note">기본은 퇴사까지({yearsToRetire}년) 매달 저축이에요. 줄이면 그만큼만 저축하고, 이후엔 모은 돈을 굴리기만 해요(코스트 파이어).</p>
         <RangeControl label="연봉 상승률(저축도 매년 증가)" value={inputs.salaryGrowthRate} inputKey="salaryGrowthRate" type="percent" step={1} onChange={(next) => onChange('salaryGrowthRate', next)} />
         <RangeControl label="퇴사 후 월 생활비" value={inputs.monthlyLivingCost} inputKey="monthlyLivingCost" type="money" step={100000} onChange={(next) => onChange('monthlyLivingCost', next)} />
         <RangeControl label="퇴사 후 부업 소득" value={inputs.partTimeIncomeAfterRetirement} inputKey="partTimeIncomeAfterRetirement" type="money" step={100000} onChange={(next) => onChange('partTimeIncomeAfterRetirement', next)} />

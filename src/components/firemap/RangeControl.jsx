@@ -36,7 +36,7 @@ function niceStep(span) {
 }
 
 function display(key, value, type = 'money') {
-  if (key === 'savingYears') return value > 0 ? `${value}년` : '퇴사할 때까지';
+  if (key === 'savingYears') return `${value}년`;
   if (key === 'annualReturnRate' || key === 'salaryGrowthRate' || key === 'inflationRate') return `${value}%`;
   if (key === 'expectedPensionAge' || key === 'targetRetirementAge' || key === 'currentAge') return `${value}세`;
   if (key === 'improvedCost') return formatWon(value);
@@ -48,11 +48,11 @@ function chipLabel(amount) {
   return `+${amount / 10000}만`;
 }
 
-export default function RangeControl({ label, value, onChange, step = 1, type = 'money', inputKey }) {
+export default function RangeControl({ label, value, onChange, step = 1, type = 'money', inputKey, maxOverride }) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState('');
   const numeric = cleanNumber(value);
-  const [min, max] = ranges[inputKey] || [0, Math.max(numeric * 2, step * 10)];
+  const [min, max] = maxOverride != null ? [0, Math.max(1, maxOverride)] : (ranges[inputKey] || [0, Math.max(numeric * 2, step * 10)]);
   const isMoney = type === 'money';
   const upperClamp = isMoney ? Infinity : max; // 돈은 직접 입력 시 상한 제거
   const stored = Math.max(min, Math.min(upperClamp, numeric)); // 표시용 실제 값(돈은 상한 없음)

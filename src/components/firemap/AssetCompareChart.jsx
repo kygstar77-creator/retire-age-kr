@@ -36,7 +36,7 @@ export default function AssetCompareChart({ ages, current, improved, currentLabe
         },
         scales: {
           x: { ticks: { color: axis, font: { size: 10 }, maxTicksLimit: 6, callback(v) { return `${this.getLabelForValue(v)}세`; } }, grid: { color: grid } },
-          y: { ticks: { color: axis, font: { size: 10 }, callback: (v) => `${(v / 1e8).toFixed(0)}억` }, grid: { color: grid } }
+          y: { min: 0, beginAtZero: true, ticks: { color: axis, font: { size: 10 }, callback: (v) => `${(v / 1e8).toFixed(0)}억` }, grid: { color: grid } }
         }
       }
     });

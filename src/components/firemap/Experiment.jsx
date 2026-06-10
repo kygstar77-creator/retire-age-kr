@@ -22,6 +22,15 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
   return (
     <main className="fm-screen fm-scroll">
       <Header tag="비교" onBack={onBack} />
+      <section className="fm-card fm-graph">
+        <p className="fm-kicker">내 미래 자산 차트</p><h2>나이별 자산 흐름을 비교해보세요</h2>
+        <div className="fm-chart-legend">
+          <span><i className="fm-dot fm-dot-current" />현재 계획 · {runwayText(simulation)}</span>
+          <span><i className="fm-dot fm-dot-improved" />절감안 · {runwayText(lowerCost)}</span>
+        </div>
+        <AssetCompareChart ages={ages} current={currentSeries} improved={improvedSeries} />
+        <p className="fm-chart-note">차트를 누르면 그 나이의 세후 자산이 표시돼요. 회색 점선은 현재 계획, 파란 영역은 절감안 기준입니다.</p>
+      </section>
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">조건 바꿔보기</p><h2>손가락으로 밀어서 바로 바꿔보세요</h2>
         <p>현재 자산·나이부터 퇴사 나이·생활비·저축·부업·수익률까지 한 화면에서 자유롭게 바꿔보세요.</p>
@@ -55,15 +64,6 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
           ))}
         </div>
         <small>예적금형(보수)부터 지수형(공격)까지 폭을 비교해 보세요. {sourceLine('returnPresets')}</small>
-      </section>
-      <section className="fm-card fm-graph">
-        <p className="fm-kicker">내 미래 자산 차트</p><h2>나이별 자산 흐름을 비교해보세요</h2>
-        <div className="fm-chart-legend">
-          <span><i className="fm-dot fm-dot-current" />현재 계획 · {runwayText(simulation)}</span>
-          <span><i className="fm-dot fm-dot-improved" />절감안 · {runwayText(lowerCost)}</span>
-        </div>
-        <AssetCompareChart ages={ages} current={currentSeries} improved={improvedSeries} />
-        <p className="fm-chart-note">차트를 누르면 그 나이의 세후 자산이 표시돼요. 회색 점선은 현재 계획, 파란 영역은 절감안 기준입니다.</p>
       </section>
       <nav className="fm-bottom-nav">
         <button type="button" onClick={onBack}>취소</button>

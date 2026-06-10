@@ -28,7 +28,7 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
           <span><i className="fm-dot fm-dot-current" />현재 계획 · {runwayText(simulation)}</span>
           <span><i className="fm-dot fm-dot-improved" />절감안 · {runwayText(lowerCost)}</span>
         </div>
-        <AssetCompareChart ages={ages} current={currentSeries} improved={improvedSeries} />
+        <AssetCompareChart ages={ages} current={currentSeries} improved={improvedSeries} depletionAge={simulation.targetResult.depletionAge} improvedDepletionAge={lowerCost.targetResult.depletionAge} />
         <p className="fm-chart-note">차트를 누르면 그 나이의 세후 자산이 표시돼요. 회색 점선은 현재 계획, 파란 영역은 절감안 기준입니다.</p>
       </section>
       <section className="fm-card fm-text-card">
@@ -36,8 +36,9 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         <p>현재 자산·나이부터 퇴사 나이·생활비·저축·부업·수익률까지 한 화면에서 자유롭게 바꿔보세요.</p>
         <RangeControl label="현재 나이" value={inputs.currentAge} inputKey="currentAge" type="age" step={1} onChange={(next) => onChange('currentAge', next)} />
         <RangeControl label="퇴사 나이" value={inputs.targetRetirementAge} inputKey="targetRetirementAge" type="age" step={1} onChange={(next) => onChange('targetRetirementAge', next)} />
-        <RangeControl label="현재 금융자산" value={inputs.financialAsset} inputKey="financialAsset" type="money" step={1000000} onChange={(next) => onChange('financialAsset', next)} />
+        <RangeControl label="현재 금융자산" value={inputs.financialAsset} inputKey="financialAsset" type="money" step={10000000} onChange={(next) => onChange('financialAsset', next)} />
         <RangeControl label="월 저축액" value={inputs.monthlyInvestment} inputKey="monthlyInvestment" type="money" step={100000} onChange={(next) => onChange('monthlyInvestment', next)} />
+        <RangeControl label="연봉 상승률(저축도 매년 증가)" value={inputs.salaryGrowthRate} inputKey="salaryGrowthRate" type="percent" step={1} onChange={(next) => onChange('salaryGrowthRate', next)} />
         <RangeControl label="퇴사 후 월 생활비" value={inputs.monthlyLivingCost} inputKey="monthlyLivingCost" type="money" step={100000} onChange={(next) => onChange('monthlyLivingCost', next)} />
         <RangeControl label="퇴사 후 부업 소득" value={inputs.partTimeIncomeAfterRetirement} inputKey="partTimeIncomeAfterRetirement" type="money" step={100000} onChange={(next) => onChange('partTimeIncomeAfterRetirement', next)} />
         <RangeControl label="연 수익률" value={inputs.annualReturnRate} inputKey="annualReturnRate" type="percent" step={1} onChange={(next) => onChange('annualReturnRate', next)} />

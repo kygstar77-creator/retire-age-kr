@@ -6,6 +6,7 @@ export const defaultInputs = {
   realEstateValue: 0,
   debt: 0,
   monthlyInvestment: 0,
+  salaryGrowthRate: 0,
   monthlyLivingCost: 3000000,
   annualReturnRate: 5,
   inflationRate: 3,
@@ -54,7 +55,8 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
       ? yearly(data.expectedMonthlyPension) * inflationFactor
       : 0;
     const withdrawal = isRetired ? Math.max(0, livingCost - partTimeIncome - pensionIncome) : 0;
-    const investmentAdded = isRetired ? 0 : yearly(data.monthlyInvestment);
+    const salaryGrowth = toRate(data.salaryGrowthRate);
+    const investmentAdded = isRetired ? 0 : yearly(data.monthlyInvestment) * Math.pow(1 + salaryGrowth, yearsFromStart);
     const assetAfterCashFlow = financialAsset + investmentAdded - withdrawal;
     const investmentReturn = assetAfterCashFlow > 0 ? assetAfterCashFlow * annualReturn : 0;
 

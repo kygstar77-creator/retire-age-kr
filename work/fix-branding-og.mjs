@@ -7,10 +7,10 @@ const indexPath = join(deploy, 'index.html');
 let html = await readFile(indexPath, 'utf8');
 
 const siteUrl = 'https://retire-age-kr.pages.dev/';
-const ogVersion = 'firemap-home-v5-20260609';
+const ogVersion = 'firemap-rank-v6-20260610';
 const ogImageUrl = `https://retire-age-kr.pages.dev/og-image.png?v=${ogVersion}`;
-const ogTitle = '파이어맵 - 내 돈은 몇 살까지 버틸 수 있을까?';
-const ogDescription = '자산, 생활비, 수익률, 국민연금으로 나의 FIRE 시점을 계산해보세요.';
+const ogTitle = '또래 중 내 FIRE 등수는? | 파이어맵 퇴사나이 계산기';
+const ogDescription = '내 진짜 사표 쓰는 날짜와 또래 중 내 등수를 1분 만에 확인하세요.';
 
 html = html.replaceAll(/og-image\.png\?v=[^"']+/g, `og-image.png?v=${ogVersion}`);
 
@@ -56,12 +56,12 @@ const ogImage = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="63
   <circle cx="146" cy="126" r="54" fill="#fff1e7"/>
   <g transform="translate(80 62) scale(.55)">${flame}</g>
   <text x="232" y="150" fill="#111827" font-family="Arial, sans-serif" font-size="58" font-weight="900">파이어맵</text>
-  <text x="106" y="300" fill="#ea580c" font-family="Arial, sans-serif" font-size="42" font-weight="900">퇴사나이 계산기</text>
-  <text x="106" y="402" fill="#111827" font-family="Arial, sans-serif" font-size="82" font-weight="900">내 돈은 몇 살까지</text>
-  <text x="106" y="496" fill="#111827" font-family="Arial, sans-serif" font-size="82" font-weight="900">버틸 수 있을까?</text>
-  <rect x="106" y="532" width="284" height="58" rx="22" fill="#ff5a00"/>
-  <text x="153" y="571" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="900">1분 만에 계산하기</text>
-  <text x="430" y="570" fill="#6b7280" font-family="Arial, sans-serif" font-size="28" font-weight="800">자산 · 생활비 · 수익률 · 국민연금</text>
+  <text x="106" y="300" fill="#ea580c" font-family="Arial, sans-serif" font-size="40" font-weight="900">퇴사나이 · FIRE 등수 계산기</text>
+  <text x="106" y="402" fill="#111827" font-family="Arial, sans-serif" font-size="82" font-weight="900">또래 중 내 FIRE</text>
+  <text x="106" y="496" fill="#ff5a00" font-family="Arial, sans-serif" font-size="82" font-weight="900">등수는 몇 등?</text>
+  <rect x="106" y="532" width="332" height="58" rx="22" fill="#ff5a00"/>
+  <text x="150" y="571" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="900">무료로 내 등수 확인</text>
+  <text x="476" y="570" fill="#6b7280" font-family="Arial, sans-serif" font-size="26" font-weight="800">자산·생활비로 1분 · 또래 상위 %</text>
 </svg>`;
 
 await writeFile(join(deploy, 'og-image.svg'), ogImage, 'utf8');

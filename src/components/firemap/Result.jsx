@@ -103,10 +103,10 @@ function TopLevers({ inputs, simulation }) {
   const baseCost = Number(inputs.monthlyLivingCost || 0);
   const lowerCostValue = Math.max(1000000, baseCost >= 2500000 ? baseCost - 1000000 : Math.round(baseCost * 0.8 / 100000) * 100000);
   const candidates = [
-    ['생활비', `생활비 ${formatWon(lowerCostValue)}`, buildScenario(inputs, { monthlyLivingCost: lowerCostValue })],
-    ['현금흐름', '퇴사 후 월 100만', buildScenario(inputs, { partTimeIncomeAfterRetirement: inputs.partTimeIncomeAfterRetirement + 1000000 })],
-    ['퇴사시점', '1년 더 근무', buildScenario(inputs, { targetRetirementAge: inputs.targetRetirementAge + 1 })],
-    ['저축액', '월 100만 더 저축', buildScenario(inputs, { monthlyInvestment: inputs.monthlyInvestment + 1000000 })]
+    ['생활비', `생활비 ${formatWon(lowerCostValue)}원으로 줄이면`, buildScenario(inputs, { monthlyLivingCost: lowerCostValue })],
+    ['현금흐름', '퇴사 후 월 100만 더 벌면', buildScenario(inputs, { partTimeIncomeAfterRetirement: inputs.partTimeIncomeAfterRetirement + 1000000 })],
+    ['퇴사시점', '1년 더 일하면', buildScenario(inputs, { targetRetirementAge: inputs.targetRetirementAge + 1 })],
+    ['저축액', '월 100만 더 저축하면', buildScenario(inputs, { monthlyInvestment: inputs.monthlyInvestment + 1000000 })]
   ];
   const baseAge = scenarioEndAge(simulation);
   const topTwo = candidates.map((item) => [...item, scenarioEndAge(item[2]) - baseAge]).sort((a, b) => b[3] - a[3]).slice(0, 2);
@@ -117,7 +117,7 @@ function TopLevers({ inputs, simulation }) {
       <div className="fm-improve-grid fm-improve-grid-two">
         {topTwo.map(([tag, title, scenario, diff]) => (
           <article className="fm-improve-card" key={title}>
-            <em>{tag}</em><strong>{leverGain(diff)}</strong><h3>{title}</h3><p>{runwayText(scenario)}까지 버텨요</p>
+            <em>{tag}</em><h3>{title}</h3><strong>{leverGain(diff)}</strong><p>{runwayText(scenario)}까지 버텨요</p>
           </article>
         ))}
       </div>

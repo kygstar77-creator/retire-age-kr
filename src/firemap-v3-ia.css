@@ -179,3 +179,5 @@
 .fm-rank-hero .fm-rank-badge { color: var(--fm-navy) !important; }
 
 .fm-section-sub { font-size: 13px; color: #6b7280; margin: 2px 0 10px; font-weight: 600; }
+
+.fm-improve-card h3 { margin: 0 0 6px !important; }

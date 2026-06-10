@@ -15,49 +15,73 @@ function roundRect(ctx, x, y, width, height, radius) {
   ctx.closePath();
 }
 
+function drawFlame(ctx, x, y, scale, color, alpha = 1) {
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  ctx.translate(x, y);
+  ctx.scale(scale, scale);
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.moveTo(44, 4);
+  ctx.bezierCurveTo(88, 42, 86, 92, 44, 104);
+  ctx.bezierCurveTo(7, 94, 2, 51, 28, 24);
+  ctx.bezierCurveTo(26, 47, 47, 50, 44, 4);
+  ctx.closePath();
+  ctx.fill();
+  ctx.restore();
+}
+
 async function makeShareImage(inputs, simulation) {
   const canvas = document.createElement('canvas');
   canvas.width = 1200; canvas.height = 1200;
   const ctx = canvas.getContext('2d');
   const rank = statsRank(simulation);
   const phrase = survivalPhrase(simulation);
+  const NAVY = '#1e2859', ORANGE = '#ff5a00', GRAY = '#8b9098', INK = '#1a1c22';
+  const FONT = 'system-ui, -apple-system, "Apple SD Gothic Neo", sans-serif';
 
-  ctx.fillStyle = '#1e2859'; ctx.fillRect(0, 0, 1200, 1200);
-  ctx.fillStyle = '#ffffff'; roundRect(ctx, 64, 64, 1072, 1072, 56); ctx.fill();
+  ctx.fillStyle = NAVY; ctx.fillRect(0, 0, 1200, 1200);
+  ctx.fillStyle = '#ffffff'; roundRect(ctx, 64, 64, 1072, 1072, 60); ctx.fill();
 
-  ctx.fillStyle = '#6b6f76';
-  ctx.font = '700 38px system-ui, -apple-system, sans-serif';
-  ctx.fillText('내 FIRE 자생력 · 파이어맵', 120, 190);
+  // 장식용 불꽃 워터마크 (우하단, 은은하게)
+  drawFlame(ctx, 720, 560, 4.6, ORANGE, 0.05);
 
-  // 등수 히어로
-  ctx.fillStyle = '#1e2859';
-  ctx.font = '900 150px system-ui, -apple-system, sans-serif';
-  ctx.fillText(`또래 상위 ${rank.percentile}%`, 120, 360);
+  // 브랜드
+  drawFlame(ctx, 132, 116, 0.62, ORANGE, 1);
+  ctx.fillStyle = NAVY; ctx.font = `800 46px ${FONT}`;
+  ctx.fillText('파이어맵', 202, 168);
 
-  ctx.fillStyle = '#2f6fde';
-  roundRect(ctx, 120, 410, 250, 92, 46); ctx.fill();
-  ctx.fillStyle = '#ffffff';
-  ctx.font = '800 50px system-ui, -apple-system, sans-serif';
-  ctx.fillText(`${rank.grade}등급`, 158, 472);
+  // 라벨
+  ctx.fillStyle = GRAY; ctx.font = `600 34px ${FONT}`;
+  ctx.fillText(`내 FIRE 자생력 · ${rank.ageBandLabel} 또래 기준`, 132, 288);
 
-  ctx.fillStyle = '#111827';
-  ctx.font = '800 66px system-ui, -apple-system, sans-serif';
-  ctx.fillText(phrase.short, 120, 640);
+  // 히어로 백분위
+  ctx.fillStyle = NAVY; ctx.font = `900 122px ${FONT}`;
+  ctx.fillText(`또래 상위 ${rank.percentile}%`, 132, 422);
 
-  ctx.fillStyle = '#6b6f76';
-  ctx.font = '600 36px system-ui, -apple-system, sans-serif';
-  ctx.fillText(`${rank.ageBandLabel} 또래 기준 · 자산수명 점수 ${simulation.survivalScore}/100`, 120, 716);
+  // 등급 배지 (오렌지)
+  ctx.fillStyle = ORANGE; roundRect(ctx, 132, 470, 228, 86, 43); ctx.fill();
+  ctx.fillStyle = '#ffffff'; ctx.font = `800 46px ${FONT}`;
+  ctx.fillText(`${rank.grade}등급`, 170, 528);
 
-  // 후킹 CTA
-  ctx.fillStyle = '#ff5a00';
-  roundRect(ctx, 120, 980, 520, 88, 44); ctx.fill();
-  ctx.fillStyle = '#ffffff';
-  ctx.font = '800 38px system-ui, -apple-system, sans-serif';
-  ctx.fillText('나도 내 사표 날짜 계산하기', 168, 1037);
+  // 구분선
+  ctx.strokeStyle = '#eef0f4'; ctx.lineWidth = 2;
+  ctx.beginPath(); ctx.moveTo(132, 642); ctx.lineTo(1068, 642); ctx.stroke();
 
-  ctx.fillStyle = '#9aa3bf';
-  ctx.font = '700 30px system-ui, -apple-system, sans-serif';
-  ctx.fillText('retire-age-kr.pages.dev', 120, 1110);
+  // 결과 문구
+  ctx.fillStyle = INK; ctx.font = `800 52px ${FONT}`;
+  ctx.fillText(phrase.short, 132, 728);
+  ctx.fillStyle = GRAY; ctx.font = `600 32px ${FONT}`;
+  ctx.fillText(`자산수명 점수 ${simulation.survivalScore}/100`, 132, 788);
+
+  // CTA
+  ctx.fillStyle = ORANGE; roundRect(ctx, 132, 952, 580, 100, 50); ctx.fill();
+  ctx.fillStyle = '#ffffff'; ctx.font = `800 42px ${FONT}`;
+  ctx.fillText('나도 내 사표 날짜 계산하기', 178, 1014);
+
+  // URL
+  ctx.fillStyle = GRAY; ctx.font = `700 30px ${FONT}`;
+  ctx.fillText('retire-age-kr.pages.dev', 132, 1100);
 
   return new Promise((resolve) => canvas.toBlob(resolve, 'image/png', 0.95));
 }

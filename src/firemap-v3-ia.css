@@ -143,3 +143,6 @@
 
 /* v3 fix: 레거시 v2 CSS의 flex `order` 해킹 무력화 → v3 화면은 DOM 순서대로(등수 히어로가 결과 최상단) */
 .fm-screen > * { order: 0 !important; }
+
+/* v3 fix: FAB 이모지 ::before 제거(레거시) → SVG 아이콘 하나만 */
+.fm-feedback-fab::before { content: none !important; }

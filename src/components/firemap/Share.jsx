@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Header from './Header.jsx';
 import { BASE_URL, CONTACT_EMAIL } from '../../firemap-v2/data.js';
-import { runwayText } from '../../firemap-v2/scenarios.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { buildScenarioShareUrl, buildShareText } from '../../utils/shareState.js';
 import { survivalPhrase } from '../../firemap-v2/scenarios.js';
@@ -20,8 +19,8 @@ async function makeShareImage(inputs, simulation) {
   const canvas = document.createElement('canvas');
   canvas.width = 1200; canvas.height = 1200;
   const ctx = canvas.getContext('2d');
-  const runway = runwayText(simulation);
   const rank = statsRank(simulation);
+  const phrase = survivalPhrase(simulation);
 
   ctx.fillStyle = '#1e2859'; ctx.fillRect(0, 0, 1200, 1200);
   ctx.fillStyle = '#ffffff'; roundRect(ctx, 64, 64, 1072, 1072, 56); ctx.fill();
@@ -43,7 +42,7 @@ async function makeShareImage(inputs, simulation) {
 
   ctx.fillStyle = '#111827';
   ctx.font = '800 66px system-ui, -apple-system, sans-serif';
-  ctx.fillText(`${inputs.targetRetirementAge}세 퇴사 → ${runway}까지`, 120, 640);
+  ctx.fillText(phrase.short, 120, 640);
 
   ctx.fillStyle = '#6b6f76';
   ctx.font = '600 36px system-ui, -apple-system, sans-serif';

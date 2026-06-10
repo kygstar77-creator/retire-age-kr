@@ -5,7 +5,6 @@ export default function Home({ onStart }) {
     <main className="fm-screen fm-home-v3">
       <Header tag="1분 계산" />
       <section className="fm-home-hero-card">
-        <div className="fm-home-brand"><span aria-hidden="true">🔥</span><b>파이어맵</b></div>
         <p>퇴사나이 계산기</p>
         <h1>내 돈은 몇 살까지<br />버틸 수 있을까?</h1>
         <span>자산, 생활비, 수익률, 국민연금으로 나의 FIRE 시점을 계산해보세요.</span>

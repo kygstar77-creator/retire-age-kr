@@ -133,3 +133,10 @@
 
 /* 홈 화면도 탭바 여백 확보 */
 .fm-home-v3 { padding-bottom: 96px; }
+
+/* v3 polish: logo svg / tab icons / tool arrow */
+.fm-topbar .fm-logo-mark { width: 20px; height: 20px; background: none; border-radius: 0; }
+.fm-tabbar .fm-tab { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+.fm-tabbar .fm-tab svg { opacity: 0.9; }
+.fm-tool-card { position: relative; padding-right: 34px; }
+.fm-tool-card::after { content: '›'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--fm-faint); font-size: 22px; }

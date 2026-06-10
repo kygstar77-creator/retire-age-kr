@@ -38,6 +38,7 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         <RangeControl label="퇴사 나이" value={inputs.targetRetirementAge} inputKey="targetRetirementAge" type="age" step={1} onChange={(next) => onChange('targetRetirementAge', next)} />
         <RangeControl label="현재 금융자산" value={inputs.financialAsset} inputKey="financialAsset" type="money" step={10000000} onChange={(next) => onChange('financialAsset', next)} />
         <RangeControl label="월 저축액" value={inputs.monthlyInvestment} inputKey="monthlyInvestment" type="money" step={100000} onChange={(next) => onChange('monthlyInvestment', next)} />
+        <RangeControl label="앞으로 저축하는 기간" value={inputs.savingYears} inputKey="savingYears" type="years" step={1} onChange={(next) => onChange('savingYears', next)} />
         <RangeControl label="연봉 상승률(저축도 매년 증가)" value={inputs.salaryGrowthRate} inputKey="salaryGrowthRate" type="percent" step={1} onChange={(next) => onChange('salaryGrowthRate', next)} />
         <RangeControl label="퇴사 후 월 생활비" value={inputs.monthlyLivingCost} inputKey="monthlyLivingCost" type="money" step={100000} onChange={(next) => onChange('monthlyLivingCost', next)} />
         <RangeControl label="퇴사 후 부업 소득" value={inputs.partTimeIncomeAfterRetirement} inputKey="partTimeIncomeAfterRetirement" type="money" step={100000} onChange={(next) => onChange('partTimeIncomeAfterRetirement', next)} />

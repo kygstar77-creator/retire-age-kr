@@ -13,7 +13,8 @@ const ranges = {
   expectedPensionAge: [55, 75],
   expectedMonthlyPension: [0, 5000000],
   improvedCost: [500000, 20000000],
-  partTimeIncomeAfterRetirement: [0, 10000000]
+  partTimeIncomeAfterRetirement: [0, 10000000],
+  savingYears: [0, 50]
 };
 
 // 돈 필드별 빠른 가산 칩 (타이핑 최소화, 상한 없음)
@@ -35,6 +36,7 @@ function niceStep(span) {
 }
 
 function display(key, value, type = 'money') {
+  if (key === 'savingYears') return value > 0 ? `${value}년` : '퇴사할 때까지';
   if (key === 'annualReturnRate' || key === 'salaryGrowthRate' || key === 'inflationRate') return `${value}%`;
   if (key === 'expectedPensionAge' || key === 'targetRetirementAge' || key === 'currentAge') return `${value}세`;
   if (key === 'improvedCost') return formatWon(value);

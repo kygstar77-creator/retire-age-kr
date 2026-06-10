@@ -141,4 +141,13 @@ assert(
   assert(after < before, `Invariant failed: 연금 개시 후 인출이 줄지 않음 (before ${Math.round(before)} after ${Math.round(after)}).`);
 }
 
+// (5) 적립 기간: 0(기본)=퇴사까지와 동일, 기간을 줄이면 최종자산이 늘지 않는다
+{
+  const full = simulateRetirement({ ...scenarioB, savingYears: 0 });
+  const untilRetire = simulateRetirement({ ...scenarioB, savingYears: scenarioB.targetRetirementAge - scenarioB.currentAge });
+  assert(Math.abs(full.finalFinancialAsset - untilRetire.finalFinancialAsset) < 1, 'Invariant failed: savingYears 0이 퇴사까지 저축과 다름.');
+  const shorter = simulateRetirement({ ...scenarioB, savingYears: 3 });
+  assert(shorter.finalFinancialAsset <= full.finalFinancialAsset + 1, 'Invariant failed: 적립 기간을 줄였는데 최종자산이 늘어남.');
+}
+
 console.log('Simulation regression and invariant tests passed.');

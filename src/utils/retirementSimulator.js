@@ -7,6 +7,7 @@ export const defaultInputs = {
   debt: 0,
   monthlyInvestment: 0,
   salaryGrowthRate: 0,
+  savingYears: 0,
   monthlyLivingCost: 3000000,
   annualReturnRate: 5,
   inflationRate: 3,
@@ -35,6 +36,7 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
   const data = normalizeInputs(inputs);
   const annualReturn = toRate(data.annualReturnRate);
   const inflation = toRate(data.inflationRate);
+  const savingYears = data.savingYears > 0 ? data.savingYears : Infinity; // 0 = 퇴사할 때까지 저축
   let financialAsset = data.financialAsset;
   let depletionAge = null;
   const rows = [];
@@ -56,7 +58,8 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
       : 0;
     const withdrawal = isRetired ? Math.max(0, livingCost - partTimeIncome - pensionIncome) : 0;
     const salaryGrowth = toRate(data.salaryGrowthRate);
-    const investmentAdded = isRetired ? 0 : yearly(data.monthlyInvestment) * Math.pow(1 + salaryGrowth, yearsFromStart);
+    const stillSaving = !isRetired && yearsFromStart < savingYears;
+    const investmentAdded = stillSaving ? yearly(data.monthlyInvestment) * Math.pow(1 + salaryGrowth, yearsFromStart) : 0;
     const assetAfterCashFlow = financialAsset + investmentAdded - withdrawal;
     const investmentReturn = assetAfterCashFlow > 0 ? assetAfterCashFlow * annualReturn : 0;
 

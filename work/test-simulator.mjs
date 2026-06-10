@@ -98,4 +98,47 @@ assert(
   'Invariant failed: retirement side income should not shorten asset runway.'
 );
 
+// --- 추가 불변식 (물가·연금·음수복리) ---
+
+// (1) 생활비 = 기준 × (1+물가)^경과연수  — 인플레 인덱싱 정확성
+{
+  const r = simulateRetirement(scenarioB); // 물가 3%, 퇴사 39
+  const c50 = getRow(r, 50).baseLivingCost;
+  const c70 = getRow(r, 70).baseLivingCost;
+  const ratio = c70 / c50;
+  const expected = Math.pow(1 + scenarioB.inflationRate / 100, 20);
+  assert(Math.abs(ratio - expected) < 0.01, `Invariant failed: 생활비 인플레 인덱싱 어긋남 (ratio ${ratio.toFixed(3)} vs ${expected.toFixed(3)})`);
+}
+
+// (2) 물가를 올리면 자산수명이 절대 늘어나지 않는다
+{
+  const base = simulateRetirement(scenarioB);
+  const higherInf = simulateRetirement({ ...scenarioB, inflationRate: scenarioB.inflationRate + 2 });
+  assert(
+    comparableEndAge(higherInf, scenarioB.simulationUntilAge) <= comparableEndAge(base, scenarioB.simulationUntilAge),
+    'Invariant failed: 물가가 오르면 자산수명이 늘어나면 안 됨.'
+  );
+}
+
+// (3) 고갈 이후 자산은 수익률로 음수 복리되지 않는다 (연 감소폭 ≈ 인출액)
+{
+  const r = simulateRetirement(scenarioB);
+  if (r.depletionAge && r.depletionAge < scenarioB.simulationUntilAge) {
+    const age = r.depletionAge + 2; // 고갈 이후 확실한 연도
+    const cur = getRow(r, age), prev = getRow(r, age - 1);
+    if (cur && prev && prev.financialAsset < 0) {
+      const delta = cur.financialAsset - prev.financialAsset; // 음수
+      assert(Math.abs(delta + cur.withdrawal) < 1, 'Invariant failed: 고갈 후 자산이 수익률로 음수 복리됨(감소폭≠인출액).');
+    }
+  }
+}
+
+// (4) 국민연금 개시 후 인출액이 줄어든다 (연금>0)
+{
+  const r = simulateRetirement(scenarioB); // 연금 65세 월100만
+  const before = getRow(r, scenarioB.expectedPensionAge - 1).withdrawal;
+  const after = getRow(r, scenarioB.expectedPensionAge).withdrawal;
+  assert(after < before, `Invariant failed: 연금 개시 후 인출이 줄지 않음 (before ${Math.round(before)} after ${Math.round(after)}).`);
+}
+
 console.log('Simulation regression and invariant tests passed.');

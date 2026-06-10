@@ -50,6 +50,7 @@ export default function RangeControl({ label, value, onChange, step = 1, type = 
   const percent = max > min ? ((sliderValue - min) / (max - min)) * 100 : 0;
   const overMax = isMoney && numeric > max;
   const chips = chipSets[inputKey] || [];
+  const sliderStep = isMoney ? niceStep(max - min) : step;
 
   const openDirectEdit = () => { setDraft(String(Math.round(stored))); setEditing(true); };
   const confirmDirectEdit = () => {
@@ -73,7 +74,7 @@ export default function RangeControl({ label, value, onChange, step = 1, type = 
           type="range"
           min={min}
           max={max}
-          step={step}
+          step={sliderStep}
           value={sliderValue}
           onChange={(event) => onChange(cleanNumber(event.target.value))}
           style={{ '--value': `${percent}%` }}

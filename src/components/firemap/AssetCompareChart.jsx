@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
 
-export default function AssetCompareChart({ ages, current, improved, depletionAge, improvedDepletionAge, currentLabel = '현재 계획', improvedLabel = '절감안' }) {
+export default function AssetCompareChart({ ages, current, improved, depletionAge, improvedDepletionAge, retirementAge, currentLabel = '현재 계획', improvedLabel = '절감안' }) {
   const canvasRef = useRef(null);
   const chartRef = useRef(null);
 
@@ -18,8 +18,8 @@ export default function AssetCompareChart({ ages, current, improved, depletionAg
       afterDatasetsDraw(chart) {
         const xs = chart.scales.x;
         const area = chart.chartArea;
-        const marks = [[depletionAge, '#9aa3bf', currentLabel], [improvedDepletionAge, '#2f6fde', improvedLabel]];
-        marks.forEach(([age, color, label]) => {
+        const marks = [[retirementAge, '#ff5a00', `퇴사 ${retirementAge}세`], [depletionAge, '#9aa3bf', `현재 고갈 ${depletionAge}세`], [improvedDepletionAge, '#2f6fde', `절감안 고갈 ${improvedDepletionAge}세`]];
+        marks.forEach(([age, color, text], i) => {
           if (!age) return;
           const idx = ages.indexOf(age);
           if (idx < 0) return;
@@ -29,7 +29,7 @@ export default function AssetCompareChart({ ages, current, improved, depletionAg
           c.setLineDash([4, 4]); c.strokeStyle = color; c.lineWidth = 1.5;
           c.beginPath(); c.moveTo(x, area.top); c.lineTo(x, area.bottom); c.stroke();
           c.setLineDash([]); c.fillStyle = color; c.font = '700 10px sans-serif'; c.textAlign = 'center';
-          c.fillText(`${label} 고갈 ${age}세`, x, area.top - 2);
+          c.fillText(text, x, area.top - 2 - (i === 0 ? 0 : 11));
           c.restore();
         });
       }
@@ -61,7 +61,7 @@ export default function AssetCompareChart({ ages, current, improved, depletionAg
       plugins: [depletionLines]
     });
     return () => { if (chartRef.current) chartRef.current.destroy(); };
-  }, [ages, current, improved, depletionAge, improvedDepletionAge, currentLabel, improvedLabel]);
+  }, [ages, current, improved, depletionAge, improvedDepletionAge, retirementAge, currentLabel, improvedLabel]);
 
   return <div className="fm-compare-chart"><canvas ref={canvasRef} /></div>;
 }

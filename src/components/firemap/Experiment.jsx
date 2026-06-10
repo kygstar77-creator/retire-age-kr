@@ -28,7 +28,7 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
           <span><i className="fm-dot fm-dot-current" />현재 계획 · {runwayText(simulation)}</span>
           <span><i className="fm-dot fm-dot-improved" />절감안 · {runwayText(lowerCost)}</span>
         </div>
-        <AssetCompareChart ages={ages} current={currentSeries} improved={improvedSeries} depletionAge={simulation.targetResult.depletionAge} improvedDepletionAge={lowerCost.targetResult.depletionAge} />
+        <AssetCompareChart ages={ages} current={currentSeries} improved={improvedSeries} depletionAge={simulation.targetResult.depletionAge} improvedDepletionAge={lowerCost.targetResult.depletionAge} retirementAge={inputs.targetRetirementAge} />
         <p className="fm-chart-note">차트를 누르면 그 나이의 세후 자산이 표시돼요. 회색 점선은 현재 계획, 파란 영역은 절감안 기준입니다.</p>
       </section>
       <section className="fm-card fm-text-card">
@@ -42,6 +42,7 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         <RangeControl label="퇴사 후 월 생활비" value={inputs.monthlyLivingCost} inputKey="monthlyLivingCost" type="money" step={100000} onChange={(next) => onChange('monthlyLivingCost', next)} />
         <RangeControl label="퇴사 후 부업 소득" value={inputs.partTimeIncomeAfterRetirement} inputKey="partTimeIncomeAfterRetirement" type="money" step={100000} onChange={(next) => onChange('partTimeIncomeAfterRetirement', next)} />
         <RangeControl label="연 수익률" value={inputs.annualReturnRate} inputKey="annualReturnRate" type="percent" step={1} onChange={(next) => onChange('annualReturnRate', next)} />
+        <RangeControl label="물가 상승률(생활비 매년 증가)" value={inputs.inflationRate} inputKey="inflationRate" type="percent" step={1} onChange={(next) => onChange('inflationRate', next)} />
         <RangeControl label="절감안 생활비" value={improvedCost} inputKey="improvedCost" type="money" step={100000} onChange={setImprovedCost} />
       </section>
       <PensionControls inputs={inputs} onChange={onChange} />

@@ -9,6 +9,7 @@ const ranges = {
   monthlyLivingCost: [500000, 20000000],
   annualReturnRate: [0, 30],
   salaryGrowthRate: [0, 15],
+  inflationRate: [0, 10],
   expectedPensionAge: [55, 75],
   expectedMonthlyPension: [0, 5000000],
   improvedCost: [500000, 20000000],
@@ -26,7 +27,7 @@ const chipSets = {
 };
 
 function display(key, value, type = 'money') {
-  if (key === 'annualReturnRate' || key === 'salaryGrowthRate') return `${value}%`;
+  if (key === 'annualReturnRate' || key === 'salaryGrowthRate' || key === 'inflationRate') return `${value}%`;
   if (key === 'expectedPensionAge' || key === 'targetRetirementAge' || key === 'currentAge') return `${value}세`;
   if (key === 'improvedCost') return formatWon(value);
   return formatValue(value, type, key);

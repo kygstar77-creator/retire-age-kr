@@ -26,6 +26,14 @@ const chipSets = {
   partTimeIncomeAfterRetirement: [100000, 500000, 1000000]
 };
 
+function niceStep(span) {
+  const raw = span / 200;
+  if (!(raw > 0)) return 1;
+  const mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  for (const m of [1, 2, 5]) { if (m * mag >= raw) return m * mag; }
+  return 10 * mag;
+}
+
 function display(key, value, type = 'money') {
   if (key === 'annualReturnRate' || key === 'salaryGrowthRate' || key === 'inflationRate') return `${value}%`;
   if (key === 'expectedPensionAge' || key === 'targetRetirementAge' || key === 'currentAge') return `${value}세`;

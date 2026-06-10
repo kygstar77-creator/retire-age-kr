@@ -69,10 +69,15 @@ async function makeShareImage(inputs, simulation) {
   ctx.fillStyle = SOFT; ctx.font = `600 36px ${FONT}`;
   ctx.fillText(`내 FIRE 자생력 · ${rank.ageBandLabel} 또래 기준`, PAD, 308);
 
-  // 히어로 백분위 + 등급 배지
-  ctx.fillStyle = WHITE; ctx.font = `800 142px ${FONT}`;
-  ctx.fillText(`상위 ${rank.percentile}%`, PAD, 470);
-  pill(PAD, 512, 92, `${rank.grade}등급`, `800 46px ${FONT}`, WHITE, NAVY);
+  // 히어로 백분위 + 등급 배지 (RankHero처럼 한 줄, 세로 중앙)
+  const heroText = `상위 ${rank.percentile}%`;
+  ctx.fillStyle = WHITE; ctx.font = `800 130px ${FONT}`;
+  ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+  ctx.fillText(heroText, PAD, 462);
+  const heroW = ctx.measureText(heroText).width;
+  const badgeH = 80;
+  const badgeCenter = 462 - 130 * 0.35;
+  pill(PAD + heroW + 40, badgeCenter - badgeH / 2, badgeH, `${rank.grade}등급`, `800 42px ${FONT}`, WHITE, NAVY);
 
   // 결과 문구 + 점수
   ctx.fillStyle = WHITE; ctx.font = `800 54px ${FONT}`;

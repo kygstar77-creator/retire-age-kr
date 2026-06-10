@@ -140,3 +140,6 @@
 .fm-tabbar .fm-tab svg { opacity: 0.9; }
 .fm-tool-card { position: relative; padding-right: 34px; }
 .fm-tool-card::after { content: '›'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: var(--fm-faint); font-size: 22px; }
+
+/* v3 fix: 레거시 v2 CSS의 flex `order` 해킹 무력화 → v3 화면은 DOM 순서대로(등수 히어로가 결과 최상단) */
+.fm-screen > * { order: 0 !important; }

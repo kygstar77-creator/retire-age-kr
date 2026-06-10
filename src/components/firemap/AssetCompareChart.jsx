@@ -28,8 +28,12 @@ export default function AssetCompareChart({ ages, current, improved, depletionAg
           c.save();
           c.setLineDash([4, 4]); c.strokeStyle = color; c.lineWidth = 1.5;
           c.beginPath(); c.moveTo(x, area.top); c.lineTo(x, area.bottom); c.stroke();
-          c.setLineDash([]); c.fillStyle = color; c.font = '700 10px sans-serif'; c.textAlign = 'center';
-          c.fillText(text, x, area.top - 2 - (i === 0 ? 0 : 11));
+          c.setLineDash([]);
+          if (i === 0) { // 퇴사 마커만 텍스트(고갈 나이는 범례에 표시)
+            c.fillStyle = color; c.font = '700 10px sans-serif';
+            c.textAlign = x > (area.left + area.right) / 2 ? 'right' : 'left';
+            c.fillText(text, x + (c.textAlign === 'right' ? -3 : 3), area.top + 9);
+          }
           c.restore();
         });
       }
@@ -47,7 +51,7 @@ export default function AssetCompareChart({ ages, current, improved, depletionAg
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        layout: { padding: { top: 14 } },
+        layout: { padding: { top: 18 } },
         interaction: { mode: 'index', intersect: false },
         plugins: {
           legend: { display: false },

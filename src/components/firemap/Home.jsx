@@ -1,9 +1,27 @@
 import Header from './Header.jsx';
+import { getLatestRank, getRankChange } from '../../firemap-v2/rankHistory.js';
 
 export default function Home({ onStart }) {
   return (
     <main className="fm-screen fm-home-v3">
       <Header tag="1분 계산" />
+      {(() => {
+        const latest = getLatestRank();
+        if (!latest) return null;
+        const change = getRankChange();
+        const goResult = () => { window.location.hash = '#result'; };
+        return (
+          <button type="button" className="fm-recent-rank" onClick={goResult}>
+            <span className="fm-recent-label">내 최근 등수</span>
+            <span className="fm-recent-main">또래 상위 {latest.percentile}% · {latest.grade}등급</span>
+            <span className="fm-recent-sub">
+              {change && change.deltaPercentile !== 0
+                ? `지난번보다 ${Math.abs(change.deltaPercentile)}%p ${change.deltaPercentile > 0 ? '상승 ▲' : '하락 ▼'} · 다시 확인하기 ›`
+                : '다시 확인하기 ›'}
+            </span>
+          </button>
+        );
+      })()}
       <section className="fm-home-hero-card">
         <p>퇴사나이 계산기</p>
         <h1>내 돈은 몇 살까지<br />버틸 수 있을까?</h1>

@@ -6,6 +6,7 @@ import { buildScenario, fireStatus, runwayText, scenarioEndAge } from '../../fir
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { submitScore, fetchUserRank } from '../../utils/firemapScoresApi.js';
+import { saveRankSnapshot } from '../../firemap-v2/rankHistory.js';
 
 function RankHero({ simulation }) {
   const base = statsRank(simulation);
@@ -14,6 +15,7 @@ function RankHero({ simulation }) {
 
   useEffect(() => {
     let alive = true;
+    saveRankSnapshot({ percentile: base.percentile, grade: base.grade, score });
     (async () => {
       try {
         const key = `fm_score_sent_${score}`;

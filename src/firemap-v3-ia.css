@@ -146,3 +146,9 @@
 
 /* v3 fix: FAB 이모지 ::before 제거(레거시) → SVG 아이콘 하나만 */
 .fm-feedback-fab::before { content: none !important; }
+
+/* v3 B: 홈 최근 등수 카드 (재방문) */
+.fm-recent-rank { display: flex; flex-direction: column; gap: 3px; width: 100%; text-align: left; margin: 0 0 14px; padding: 16px 18px; border: none; border-radius: var(--fm-radius-lg); background: var(--fm-navy); color: #fff; cursor: pointer; }
+.fm-recent-label { font-size: 12px; color: var(--fm-navy-soft); }
+.fm-recent-main { font-size: 20px; font-weight: 700; }
+.fm-recent-sub { font-size: 12px; color: var(--fm-success); }

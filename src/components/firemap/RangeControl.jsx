@@ -4,7 +4,7 @@ import { cleanNumber, formatValue, formatWon } from '../../firemap-v2/formatters
 const ranges = {
   currentAge: [20, 70],
   targetRetirementAge: [30, 80],
-  financialAsset: [0, 5000000000],
+  financialAsset: [0, 2000000000],
   monthlyInvestment: [0, 20000000],
   monthlyLivingCost: [500000, 20000000],
   annualReturnRate: [0, 30],

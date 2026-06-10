@@ -37,51 +37,57 @@ async function makeShareImage(inputs, simulation) {
   const ctx = canvas.getContext('2d');
   const rank = statsRank(simulation);
   const phrase = survivalPhrase(simulation);
-  const NAVY = '#1e2859', ORANGE = '#ff5a00', GRAY = '#8b9098', INK = '#1a1c22';
+  const NAVY = '#1e2859', SOFT = '#b6c0ee', WHITE = '#ffffff', GREEN = '#86e0a0', ORANGE = '#ff5a00';
   const FONT = 'system-ui, -apple-system, "Apple SD Gothic Neo", sans-serif';
+  const PAD = 120;
 
+  const pill = (x, y, h, text, font, bg, fg) => {
+    ctx.font = font;
+    const m = ctx.measureText(text);
+    const w = m.width + h * 0.8;
+    ctx.fillStyle = bg; roundRect(ctx, x, y, w, h, h / 2); ctx.fill();
+    ctx.fillStyle = fg;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'alphabetic';
+    const asc = m.actualBoundingBoxAscent || h * 0.34;
+    const desc = m.actualBoundingBoxDescent || h * 0.08;
+    ctx.fillText(text, x + w / 2, y + h / 2 + (asc - desc) / 2);
+    ctx.textAlign = 'left';
+    return w;
+  };
+
+  // 네이비 배경 (결과 RankHero와 동일 톤)
   ctx.fillStyle = NAVY; ctx.fillRect(0, 0, 1200, 1200);
-  ctx.fillStyle = '#ffffff'; roundRect(ctx, 64, 64, 1072, 1072, 60); ctx.fill();
-
-  // 장식용 불꽃 워터마크 (우하단, 은은하게)
-  drawFlame(ctx, 720, 560, 4.6, ORANGE, 0.05);
+  drawFlame(ctx, 880, 720, 4.4, ORANGE, 0.08);
 
   // 브랜드
-  drawFlame(ctx, 132, 116, 0.62, ORANGE, 1);
-  ctx.fillStyle = NAVY; ctx.font = `800 46px ${FONT}`;
-  ctx.fillText('파이어맵', 202, 168);
+  drawFlame(ctx, PAD, 108, 0.6, ORANGE, 1);
+  ctx.fillStyle = WHITE; ctx.font = `800 46px ${FONT}`;
+  ctx.fillText('파이어맵', PAD + 76, 158);
 
   // 라벨
-  ctx.fillStyle = GRAY; ctx.font = `600 34px ${FONT}`;
-  ctx.fillText(`내 FIRE 자생력 · ${rank.ageBandLabel} 또래 기준`, 132, 288);
+  ctx.fillStyle = SOFT; ctx.font = `600 36px ${FONT}`;
+  ctx.fillText(`내 FIRE 자생력 · ${rank.ageBandLabel} 또래 기준`, PAD, 308);
 
-  // 히어로 백분위
-  ctx.fillStyle = NAVY; ctx.font = `900 122px ${FONT}`;
-  ctx.fillText(`또래 상위 ${rank.percentile}%`, 132, 422);
+  // 히어로 백분위 + 등급 배지
+  ctx.fillStyle = WHITE; ctx.font = `800 142px ${FONT}`;
+  ctx.fillText(`상위 ${rank.percentile}%`, PAD, 470);
+  pill(PAD, 512, 92, `${rank.grade}등급`, `800 46px ${FONT}`, WHITE, NAVY);
 
-  // 등급 배지 (오렌지)
-  ctx.fillStyle = ORANGE; roundRect(ctx, 132, 470, 228, 86, 43); ctx.fill();
-  ctx.fillStyle = '#ffffff'; ctx.font = `800 46px ${FONT}`;
-  ctx.fillText(`${rank.grade}등급`, 170, 528);
+  // 결과 문구 + 점수
+  ctx.fillStyle = WHITE; ctx.font = `800 54px ${FONT}`;
+  ctx.fillText(phrase.short, PAD, 730);
+  ctx.fillStyle = SOFT; ctx.font = `600 34px ${FONT}`;
+  ctx.fillText(`자산수명 점수 ${simulation.survivalScore}/100`, PAD, 794);
+  ctx.fillStyle = GREEN; ctx.font = `600 30px ${FONT}`;
+  ctx.fillText('전국 또래와 비교한 내 FIRE 등수', PAD, 856);
 
-  // 구분선
-  ctx.strokeStyle = '#eef0f4'; ctx.lineWidth = 2;
-  ctx.beginPath(); ctx.moveTo(132, 642); ctx.lineTo(1068, 642); ctx.stroke();
-
-  // 결과 문구
-  ctx.fillStyle = INK; ctx.font = `800 52px ${FONT}`;
-  ctx.fillText(phrase.short, 132, 728);
-  ctx.fillStyle = GRAY; ctx.font = `600 32px ${FONT}`;
-  ctx.fillText(`자산수명 점수 ${simulation.survivalScore}/100`, 132, 788);
-
-  // CTA
-  ctx.fillStyle = ORANGE; roundRect(ctx, 132, 952, 580, 100, 50); ctx.fill();
-  ctx.fillStyle = '#ffffff'; ctx.font = `800 42px ${FONT}`;
-  ctx.fillText('나도 내 사표 날짜 계산하기', 178, 1014);
+  // CTA (긍정 문구 · 중앙정렬)
+  pill(PAD, 952, 100, '나도 내 FIRE 등수 확인하기', `800 42px ${FONT}`, WHITE, NAVY);
 
   // URL
-  ctx.fillStyle = GRAY; ctx.font = `700 30px ${FONT}`;
-  ctx.fillText('retire-age-kr.pages.dev', 132, 1100);
+  ctx.fillStyle = SOFT; ctx.font = `700 30px ${FONT}`;
+  ctx.fillText('retire-age-kr.pages.dev', PAD, 1108);
 
   return new Promise((resolve) => canvas.toBlob(resolve, 'image/png', 0.95));
 }

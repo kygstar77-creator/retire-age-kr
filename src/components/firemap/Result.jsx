@@ -93,6 +93,12 @@ function compareText(base, next) {
   return `${Math.abs(diff)}년 악화`;
 }
 
+function leverGain(diff) {
+  if (diff > 0) return `+${diff}년`;
+  if (diff === 0) return '비슷';
+  return `−${Math.abs(diff)}년`;
+}
+
 function TopLevers({ inputs, simulation }) {
   const baseCost = Number(inputs.monthlyLivingCost || 0);
   const lowerCostValue = Math.max(1000000, baseCost >= 2500000 ? baseCost - 1000000 : Math.round(baseCost * 0.8 / 100000) * 100000);
@@ -107,10 +113,11 @@ function TopLevers({ inputs, simulation }) {
   return (
     <section>
       <h2 className="fm-section-title">지금 가장 효과 큰 두 가지</h2>
+      <p className="fm-section-sub">이렇게 바꾸면 자산이 더 오래 버텨요</p>
       <div className="fm-improve-grid fm-improve-grid-two">
-        {topTwo.map(([tag, title, scenario]) => (
+        {topTwo.map(([tag, title, scenario, diff]) => (
           <article className="fm-improve-card" key={title}>
-            <em>{tag}</em><strong>{runwayText(scenario)}</strong><h3>{title}</h3><p>{compareText(simulation, scenario)}</p>
+            <em>{tag}</em><strong>{leverGain(diff)}</strong><h3>{title}</h3><p>{runwayText(scenario)}까지 버텨요</p>
           </article>
         ))}
       </div>

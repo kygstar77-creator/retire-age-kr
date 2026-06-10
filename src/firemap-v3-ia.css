@@ -177,3 +177,5 @@
 .fm-rank-hero .fm-rank-line b { color: #fff !important; }
 .fm-rank-hero .fm-rank-trend { color: var(--fm-success) !important; }
 .fm-rank-hero .fm-rank-badge { color: var(--fm-navy) !important; }
+
+.fm-section-sub { font-size: 13px; color: #6b7280; margin: 2px 0 10px; font-weight: 600; }

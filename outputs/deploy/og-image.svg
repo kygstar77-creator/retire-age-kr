@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="warm" cx="82%" cy="18%" r="45%">
+      <stop offset="0" stop-color="#fed7aa"/>
+      <stop offset="0.42" stop-color="#fff7ed"/>
+      <stop offset="1" stop-color="#fffdf9" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#fffdf9"/>
+  <rect x="34" y="30" width="1132" height="570" rx="54" fill="#ffffff" stroke="#fed7aa" stroke-width="4"/>
+  <rect x="34" y="30" width="1132" height="570" rx="54" fill="url(#warm)"/>
+  <circle cx="146" cy="126" r="54" fill="#fff1e7"/>
+  <g transform="translate(80 62) scale(.55)">
+  <path d="M105 153c-31-18-33-57-8-86 7 22 21 28 31 42 10-31 32-48 59-70-2 33 17 45 31 69 23 39 3 87-37 105 14-18 13-42-2-58-8-9-16-17-18-31-11 18-31 29-37 51-5 17 2 32 13 44-13-3-25-8-32-16z" fill="#ff5a00"/>
+  <path d="M142 218c-26-26-13-62 17-91 2 20 18 31 26 47 9 18 2 41-16 53-16 10-29 7-27-9z" fill="#fed7aa"/>
+</g>
+  <text x="232" y="150" fill="#111827" font-family="Arial, sans-serif" font-size="58" font-weight="900">파이어맵</text>
+  <text x="106" y="300" fill="#ea580c" font-family="Arial, sans-serif" font-size="40" font-weight="900">퇴사나이 · FIRE 등수 계산기</text>
+  <text x="106" y="402" fill="#111827" font-family="Arial, sans-serif" font-size="82" font-weight="900">또래 중 내 FIRE</text>
+  <text x="106" y="496" fill="#ff5a00" font-family="Arial, sans-serif" font-size="82" font-weight="900">등수는 몇 등?</text>
+  <rect x="106" y="532" width="332" height="58" rx="22" fill="#ff5a00"/>
+  <text x="150" y="571" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="900">무료로 내 등수 확인</text>
+  <text x="476" y="570" fill="#6b7280" font-family="Arial, sans-serif" font-size="26" font-weight="800">자산·생활비로 1분 · 또래 상위 %</text>
+</svg>

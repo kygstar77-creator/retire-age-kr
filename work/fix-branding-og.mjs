@@ -9,7 +9,8 @@ let html = await readFile(indexPath, 'utf8');
 const siteUrl = 'https://retire-age-kr.pages.dev/';
 const ogVersion = 'firemap-rank-v6-20260610';
 const ogImageUrl = `https://retire-age-kr.pages.dev/og-image.png?v=${ogVersion}`;
-const ogTitle = '또래 중 내 FIRE 등수는? | 파이어맵 퇴사나이 계산기';
+const seoTitle = '파이어맵 | FIRE·조기은퇴 계산기 · 퇴사 가능 나이';
+const ogTitle = '또래 중 내 FIRE 등수는? — 파이어맵';
 const ogDescription = '내 진짜 사표 쓰는 날짜와 또래 중 내 등수를 1분 만에 확인하세요.';
 
 html = html.replaceAll(/og-image\.png\?v=[^"']+/g, `og-image.png?v=${ogVersion}`);
@@ -32,7 +33,7 @@ const metaBlock = `
 
 html = html.replace(/\s*<meta property="og:[^"]+" content="[^"]*" \/>/g, '');
 html = html.replace(/\s*<meta name="twitter:[^"]+" content="[^"]*" \/>/g, '');
-html = html.replace(/<title>.*?<\/title>/, `<title>${ogTitle}</title>\n${metaBlock}`);
+html = html.replace(/<title>.*?<\/title>/, `<title>${seoTitle}</title>\n${metaBlock}`);
 html = html.replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${siteUrl}" />`);
 
 await writeFile(indexPath, html, 'utf8');

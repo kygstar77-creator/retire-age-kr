@@ -36,40 +36,30 @@ const today = new Date().toISOString().slice(0, 10);
 const robots = `User-agent: *
 Allow: /
 
+User-agent: Yeti
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
 Sitemap: https://retire-age-kr.pages.dev/sitemap.xml
 `;
 
 const adsTxt = `google.com, pub-${adsensePublisherId}, DIRECT, f08c47fec0942fa
 `;
 
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://retire-age-kr.pages.dev/</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://retire-age-kr.pages.dev/privacy.html</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://retire-age-kr.pages.dev/disclaimer.html</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://retire-age-kr.pages.dev/contact.html</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-</urlset>
-`;
+const { readdir } = await import('node:fs/promises');
+const guideFiles = (await readdir(join(root, 'public', 'guide'))).filter((f) => f.endsWith('.html'));
+const site = 'https://retire-age-kr.pages.dev';
+const urlEntries = [
+  { loc: `${site}/`, freq: 'weekly', pri: '1.0' },
+  { loc: `${site}/guide/`, freq: 'weekly', pri: '0.8' },
+  ...guideFiles.filter((f) => f !== 'index.html').sort().map((f) => ({ loc: `${site}/guide/${f}`, freq: 'weekly', pri: '0.7' })),
+  { loc: `${site}/privacy.html`, freq: 'monthly', pri: '0.4' },
+  { loc: `${site}/disclaimer.html`, freq: 'monthly', pri: '0.4' },
+  { loc: `${site}/contact.html`, freq: 'monthly', pri: '0.4' }
+];
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlEntries.map((u) => `  <url><loc>${u.loc}</loc><lastmod>${today}</lastmod><changefreq>${u.freq}</changefreq><priority>${u.pri}</priority></url>`).join('\n')}\n</urlset>\n`;
 
 const headers = `/*
   X-Frame-Options: DENY

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="파이어맵은 FIRE·조기은퇴의 모든 것을 돕는 길라잡이예요. 내 자산·저축으로 몇 살에 퇴사 가능한지, 또래 중 내 등수까지 1분 계산. 국민연금·건강보험료·세금 반영." />
+    <meta name="keywords" content="FIRE 계산기, 조기은퇴 계산기, 파이어 계산기, 퇴사 가능 나이 계산기, 은퇴 자산 계산, 노후자금 계산기, 4% 룰" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://retire-age-kr.pages.dev/" />
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebApplication","name":"파이어맵","alternateName":"FIRE·조기은퇴 계산기","url":"https://retire-age-kr.pages.dev/","applicationCategory":"FinanceApplication","operatingSystem":"Web","inLanguage":"ko-KR","offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"description":"FIRE·조기은퇴 계산기. 내 자산·저축으로 퇴사 가능 나이와 또래 중 내 등수를 계산하는 파이어맵."}
+    </script>
+    <title>파이어맵 | FIRE·조기은퇴 계산기 · 퇴사 가능 나이</title>
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="파이어맵" />
+<meta property="og:title" content="또래 중 내 FIRE 등수는? — 파이어맵" />
+<meta property="og:description" content="내 진짜 사표 쓰는 날짜와 또래 중 내 등수를 1분 만에 확인하세요." />
+<meta property="og:url" content="https://retire-age-kr.pages.dev/" />
+<meta property="og:image" content="https://retire-age-kr.pages.dev/og-image.png?v=firemap-rank-v6-20260610" />
+<meta property="og:image:secure_url" content="https://retire-age-kr.pages.dev/og-image.png?v=firemap-rank-v6-20260610" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="또래 중 내 FIRE 등수는? — 파이어맵" />
+<meta name="twitter:description" content="내 진짜 사표 쓰는 날짜와 또래 중 내 등수를 1분 만에 확인하세요." />
+<meta name="twitter:image" content="https://retire-age-kr.pages.dev/og-image.png?v=firemap-rank-v6-20260610" />
+    <script type="module" crossorigin src="/assets/index-2D_tNn3d.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-dYv6IvdA.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3225798545626010"
+     crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SYD7WCD35C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-SYD7WCD35C');
+</script>
+<style id="mobile-top-fix">
+@media (max-width: 680px) {
+  .app-shell {
+    width: 100%;
+    max-width: 100%;
+    padding-top: 18px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .site-nav,
+  .site-nav div {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .site-nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .site-nav strong {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+  }
+
+  .site-nav div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .site-nav button,
+  .site-footer button {
+    width: 100%;
+    min-width: 0;
+    padding: 0 8px;
+    white-space: nowrap;
+  }
+
+  .main-tabs {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 4px;
+    padding: 6px;
+    overflow: visible;
+    border-radius: 12px;
+  }
+
+  .main-tabs button {
+    min-width: 0;
+    min-height: 42px;
+    padding: 0 4px;
+    font-size: 12px;
+    line-height: 1.15;
+    white-space: normal;
+    word-break: keep-all;
+  }
+
+  .hub-panel,
+  .stay-scenario,
+  .health-estimator,
+  .dividend-calculator,
+  .share-community,
+  .guide-panel,
+  .legal-panel,
+  .disclaimer,
+  .growth-panel,
+  .input-panel,
+  .decision-panel,
+  .panel {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 22px;
+  }
+
+  .hub-panel,
+  .stay-scenario,
+  .health-estimator,
+  .dividend-calculator,
+  .share-community,
+  .guide-panel,
+  .legal-panel,
+  .panel {
+    padding: 20px;
+  }
+
+  .section-heading {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 12px;
+  }
+
+  .section-heading h2 {
+    font-size: 25px;
+    line-height: 1.28;
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .eyebrow,
+  .tax-result-card span,
+  .mini-row span,
+  .field span,
+  .tool-card span,
+  .badge,
+  .hero-metric span,
+  th {
+    font-size: 14px;
+    line-height: 1.35;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  .feature-intro,
+  .hub-intro,
+  .tax-notice p,
+  .tool-card p,
+  .trust-grid p,
+  .decision-main p,
+  .share-card pre {
+    font-size: 15px;
+    line-height: 1.68;
+    font-weight: 650;
+    letter-spacing: -0.015em;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .tax-open-button,
+  .tax-copy-button,
+  .tax-apply-button,
+  .share-actions button,
+  .growth-actions button,
+  .growth-actions a,
+  .section-heading > button {
+    width: 100%;
+    min-height: 50px;
+    padding: 0 14px;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: 850;
+    letter-spacing: -0.015em;
+    white-space: nowrap;
+    word-break: keep-all;
+    line-height: 1.15;
+  }
+
+  .compact-results,
+  .share-actions,
+  .tax-grid,
+  .feature-grid,
+  .mini-grid,
+  .tool-grid,
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tax-result-card,
+  .tool-card,
+  .trust-grid article,
+  .mini-row,
+  .share-card,
+  .summary-card,
+  .scenario-card {
+    border-radius: 18px;
+  }
+
+  .tax-result-card,
+  .mini-row {
+    padding: 18px;
+  }
+
+  .tax-result-card strong,
+  .mini-row strong,
+  .summary-card strong,
+  .strip-card strong {
+    font-size: 30px;
+    line-height: 1.16;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    word-break: keep-all;
+  }
+
+  .tax-result-card small,
+  .summary-card small,
+  .strip-card small,
+  .field b,
+  dd,
+  dt {
+    font-size: 14px;
+    line-height: 1.42;
+    font-weight: 750;
+    letter-spacing: -0.015em;
+  }
+
+  .mini-row strong {
+    font-size: 28px;
+  }
+
+  .tax-result-card strong:only-child,
+  .mini-row strong:only-child {
+    margin-top: 4px;
+  }
+
+  .decision-score strong,
+  .hero-metric strong {
+    font-size: 34px;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+}
+
+@media (max-width: 390px) {
+  .app-shell {
+    padding-top: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .main-tabs {
+    gap: 3px;
+    padding: 5px;
+  }
+
+  .main-tabs button {
+    min-height: 40px;
+    padding: 0 2px;
+    font-size: 11px;
+  }
+
+  .hub-panel,
+  .stay-scenario,
+  .health-estimator,
+  .dividend-calculator,
+  .share-community,
+  .guide-panel,
+  .legal-panel,
+  .panel {
+    padding: 18px;
+  }
+
+  .section-heading h2 {
+    font-size: 24px;
+  }
+
+  .tax-result-card strong,
+  .summary-card strong,
+  .strip-card strong {
+    font-size: 28px;
+  }
+
+  .mini-row strong {
+    font-size: 26px;
+  }
+}
+</style>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

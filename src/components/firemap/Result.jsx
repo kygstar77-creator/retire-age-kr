@@ -5,12 +5,15 @@ import { buildScenario, fireStatus, runwayText, scenarioEndAge, survivalPhrase }
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { submitScore, fetchUserRank } from '../../utils/firemapScoresApi.js';
-import { saveRankSnapshot } from '../../firemap-v2/rankHistory.js';
+import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js';
+import { buildScenarioShareUrl } from '../../utils/shareState.js';
 
 function RankHero({ simulation }) {
   const base = statsRank(simulation);
   const [live, setLive] = useState(null);
+  const [prevSnap] = useState(() => getLatestRank());
   const score = simulation.survivalScore;
+  const delta = prevSnap ? prevSnap.percentile - base.percentile : 0;
 
   useEffect(() => {
     let alive = true;
@@ -39,10 +42,14 @@ function RankHero({ simulation }) {
       <div className="fm-rank-top">
         <span className="fm-rank-pct">상위 {base.percentile}%</span>
         <span className="fm-rank-badge">{base.grade}등급</span>
+        {delta !== 0 && <span className={`fm-rank-delta ${delta > 0 ? 'up' : 'down'}`}>{delta > 0 ? `▲ ${delta}%p` : `▼ ${Math.abs(delta)}%p`}</span>}
       </div>
       {live
         ? <p className="fm-rank-line">함께 계산한 {live.total.toLocaleString()}명 중 <b>{live.position.toLocaleString()}등</b></p>
         : <p className="fm-rank-line">함께 계산한 사용자 중 등수 집계 중…</p>}
+      {live && (live.position > 1
+        ? <p className="fm-rank-climb">1등까지 <b>{(live.position - 1).toLocaleString()}명</b> · 조건을 바꾸면 등수가 올라가요</p>
+        : <p className="fm-rank-climb">지금 전체 1등이에요! 이 자리를 지켜보세요</p>)}
       <p className="fm-rank-trend">{base.source}</p>
       <p className="fm-rank-note">등급은 내 자산수명 점수 기준 · 상위 %는 통계청 또래 순자산 기준</p>
     </section>
@@ -146,10 +153,31 @@ function NextActions({ onMove }) {
 }
 
 export default function Result({ inputs, simulation, onMove, onEditFinalQuestion }) {
+  const shareRank = async () => {
+    const rk = statsRank(simulation);
+    const ph = survivalPhrase(simulation);
+    const u = new URL(buildScenarioShareUrl(inputs));
+    u.pathname = '/s';
+    u.searchParams.set('p', String(rk.percentile));
+    u.searchParams.set('g', rk.grade);
+    u.searchParams.set('rw', ph.short);
+    const url = u.toString();
+    const text = `또래 상위 ${rk.percentile}% · ${rk.grade}등급 — 내 FIRE 등수, 너도 확인해봐`;
+    if (navigator.share) {
+      try { await navigator.share({ title: '파이어맵 — 내 FIRE 등수', text, url }); return; }
+      catch (e) { if (e && e.name === 'AbortError') return; }
+    }
+    try { await navigator.clipboard.writeText(url); window.alert('내 등수 링크를 복사했어요. 단톡방에 붙여넣어 보세요!'); }
+    catch { onMove('share'); }
+  };
   return (
     <main className="fm-screen fm-scroll">
       <Header />
       <RankHero simulation={simulation} />
+      <div className="fm-rank-cta">
+        <button type="button" className="fm-rank-cta-share" onClick={shareRank}>내 등급 자랑하기</button>
+        <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>등수 올리기</button>
+      </div>
       <ResultHero simulation={simulation} />
       <TopLevers inputs={inputs} simulation={simulation} />
       <NextActions onMove={onMove} />

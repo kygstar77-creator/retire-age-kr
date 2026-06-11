@@ -189,3 +189,14 @@
 /* 모바일: 입력 오버레이/피드백 시트가 하단 탭바(z150)에 가리지 않도록 위로 */
 .fm-feedback-layer { z-index: 170 !important; }
 .fm-input-overlay { z-index: 170 !important; }
+
+/* 등수 게임화 + 자랑하기 CTA */
+.fm-rank-hero .fm-rank-delta { display: inline-block; font-size: 12px; font-weight: 800; padding: 2px 9px; border-radius: 99px; }
+.fm-rank-hero .fm-rank-delta.up { background: rgba(134,224,160,.22); color: var(--fm-success) !important; }
+.fm-rank-hero .fm-rank-delta.down { background: rgba(255,140,140,.20); color: #ffb4b4 !important; }
+.fm-rank-hero .fm-rank-climb { font-size: 13px; color: #fff !important; margin: 8px 0 0; font-weight: 600; }
+.fm-rank-hero .fm-rank-climb b { color: var(--fm-success) !important; }
+.fm-rank-cta { display: flex; gap: 10px; margin: 0 0 14px; }
+.fm-rank-cta button { flex: 1; min-height: 52px; border-radius: 16px; font-size: 15px; font-weight: 800; cursor: pointer; }
+.fm-rank-cta-share { border: 0; background: #ff5a00; color: #fff; }
+.fm-rank-cta-up { border: 1px solid #e5e7eb; background: #fff; color: var(--fm-navy); }

@@ -217,6 +217,45 @@ function OverseasHope({ inputs, simulation, onMove }) {
   );
 }
 
+function Roadmap({ simulation }) {
+  const rows = simulation.targetResult.rows || [];
+  if (rows.length < 2) return null;
+  const cur = rows[0];
+  const items = [{ age: cur.age, label: '지금 시작', sub: formatWon(cur.financialAsset), hi: false }];
+  [100000000, 300000000, 500000000, 1000000000, 2000000000].forEach((t) => {
+    if (t > cur.financialAsset) {
+      const hit = rows.find((r) => r.financialAsset >= t);
+      if (hit && hit.age > cur.age) items.push({ age: hit.age, label: `자산 ${formatWon(t)} 돌파`, sub: null, hi: false });
+    }
+  });
+  const req = simulation.requiredFireAssetByFourPercent;
+  if (req && req > cur.financialAsset) {
+    const hit = rows.find((r) => r.financialAsset >= req);
+    if (hit) items.push({ age: hit.age, label: 'FIRE 목표 자산 달성', sub: `4%룰 ${formatWon(req)}`, hi: true });
+  }
+  if (simulation.earliestRetirementAge) items.push({ age: simulation.earliestRetirementAge, label: '가장 이른 은퇴 가능', sub: null, hi: true });
+  items.push({ age: simulation.inputs.targetRetirementAge, label: '목표 퇴사', sub: null, hi: true });
+  const seen = new Set();
+  const list = items
+    .filter((m) => { const k = m.age + m.label; if (seen.has(k)) return false; seen.add(k); return true; })
+    .sort((a, b) => a.age - b.age);
+  return (
+    <section className="fm-card fm-road">
+      <p className="fm-kicker">파이어 로드맵</p>
+      <h2>지금부터 은퇴까지, 단계로 보기</h2>
+      <ol className="fm-road-list">
+        {list.map((m, i) => (
+          <li key={i} className={`fm-road-step${m.hi ? ' hi' : ''}`}>
+            <span className="fm-road-age">{m.age}세</span>
+            <span className="fm-road-body"><b>{m.label}</b>{m.sub && <em>{m.sub}</em>}</span>
+          </li>
+        ))}
+      </ol>
+      <p className="fm-road-note">현재 입력 기준 예상 경로예요. 조건을 바꾸면 단계가 당겨져요.</p>
+    </section>
+  );
+}
+
 function YearlyGrowth({ simulation }) {
   const rows = simulation.targetResult.rows || [];
   if (rows.length < 2) return null;
@@ -287,6 +326,7 @@ export default function Result({ inputs, simulation, onMove, onEditFinalQuestion
       <ResultHero simulation={simulation} />
       <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />
       <YearlyGrowth simulation={simulation} />
+      <Roadmap simulation={simulation} />
       <TopLevers inputs={inputs} simulation={simulation} />
       <NextActions onMove={onMove} />
       <div className="fm-ad">광고</div>

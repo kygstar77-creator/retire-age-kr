@@ -22,15 +22,19 @@ function RankHero({ simulation }) {
       try {
         const key = `fm_score_sent_${score}`;
         if (!sessionStorage.getItem(key)) {
+          let nick = '';
+          try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
           await submitScore({
             fireScore: score,
             ageBand: base.ageBand,
-            survivalAge: (simulation.targetResult && simulation.targetResult.depletionAge) || simulation.inputs.simulationUntilAge
+            survivalAge: (simulation.targetResult && simulation.targetResult.depletionAge) || simulation.inputs.simulationUntilAge,
+            nickname: nick,
+            earliestAge: simulation.earliestRetirementAge
           });
           sessionStorage.setItem(key, '1');
         }
       } catch { /* ignore */ }
-      const r = await fetchUserRank(score);
+      const r = await fetchUserRank(simulation.earliestRetirementAge);
       if (alive) setLive(r);
     })();
     return () => { alive = false; };

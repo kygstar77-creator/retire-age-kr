@@ -381,3 +381,9 @@
 .fm-mc-risk { display: flex; gap: 8px; margin: 4px 0 10px; }
 .fm-mc-risk button { flex: 1; min-height: 36px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; color: #6b7280; font-size: 13px; font-weight: 800; cursor: pointer; }
 .fm-mc-risk button.on { background: #1e2859; color: #fff; border-color: #1e2859; }
+
+/* dotted 세계지도 핀 */
+.fm-wm-pin circle { fill: #ff6b2c; stroke: #fff; stroke-width: 0.6; }
+.fm-wm-pin.on circle { fill: #ffd166; }
+.fm-wm-halo { fill: rgba(255,209,102,0.25); stroke: none; }
+.fm-wm-lbl { font-size: 8px; font-weight: 800; fill: #fff; }

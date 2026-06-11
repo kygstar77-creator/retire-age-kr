@@ -19,8 +19,23 @@ const LAND = [
   'M226 108 L230 110 L229 117 L225 115 Z',
   'M283 96 L300 95 L302 99 L285 100 Z'
 ];
+function ringContains(lon, lat, ring) {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1];
+    if (((yi > lat) !== (yj > lat)) && (lon < ((xj - xi) * (lat - yi)) / (yj - yi) + xi)) inside = !inside;
+  }
+  return inside;
+}
+const featPolys = (f) => (f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates);
+function bboxOf(f) {
+  let a = 180, b = 90, c = -180, d = -90;
+  featPolys(f).forEach((poly) => poly[0].forEach(([x, y]) => { if (x < a) a = x; if (y < b) b = y; if (x > c) c = x; if (y > d) d = y; }));
+  return [a, b, c, d];
+}
+
 function WorldMap({ cities, active, onPick }) {
-  const [land, setLand] = useState(null);
+  const [dots, setDots] = useState(null);
   const W = 360, H = 180;
   const proj = (lon, lat) => [((lon + 180) / 360) * W, ((90 - lat) / 180) * H];
   useEffect(() => {
@@ -31,33 +46,38 @@ function WorldMap({ cities, active, onPick }) {
           fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then((r) => r.json()),
           import('https://esm.sh/topojson-client@3')
         ]);
-        const geo = topojson.feature(topo, topo.objects.countries);
-        const paths = geo.features.map((f) => {
-          const polys = f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates;
-          let d = '';
-          polys.forEach((poly) => poly.forEach((ring) => {
-            ring.forEach((pt, i) => { const [x, y] = proj(pt[0], pt[1]); d += (i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1); });
-            d += 'Z';
-          }));
-          return d;
-        });
-        if (alive) setLand(paths);
-      } catch { /* CDN 실패 시 폴백 유지 */ }
+        const feats = topojson.feature(topo, topo.objects.countries).features.map((f) => ({ f, bbox: bboxOf(f) }));
+        const ds = [];
+        for (let lat = 78; lat >= -56; lat -= 2.4) {
+          for (let lon = -180; lon < 180; lon += 2.4) {
+            for (const { f, bbox } of feats) {
+              if (lon >= bbox[0] && lon <= bbox[2] && lat >= bbox[1] && lat <= bbox[3]) {
+                let hit = false;
+                for (const poly of featPolys(f)) { if (ringContains(lon, lat, poly[0])) { hit = true; break; } }
+                if (hit) { const [x, y] = proj(lon, lat); ds.push(x.toFixed(1) + ',' + y.toFixed(1)); break; }
+              }
+            }
+          }
+        }
+        if (alive) setDots(ds);
+      } catch { /* 폴백: 윤곽 */ }
     })();
     return () => { alive = false; };
   }, []);
-  const drawn = land || LAND;
   return (
     <div className="fm-wm">
       <svg viewBox="0 0 360 180" preserveAspectRatio="xMidYMid meet" role="img" aria-label="전세계 파이어 도시 지도">
-        <rect x="0" y="0" width="360" height="180" rx="10" fill="#dbeafe" />
-        {drawn.map((d, i) => <path key={i} d={d} fill="#eef6ee" stroke="#cbd5e1" strokeWidth="0.3" />)}
+        <rect x="0" y="0" width="360" height="180" rx="12" fill="#0f1830" />
+        {dots
+          ? dots.map((xy, i) => { const [x, y] = xy.split(','); return <circle key={i} cx={x} cy={y} r="0.85" fill="#3b4a6b" />; })
+          : LAND.map((d, i) => <path key={i} d={d} fill="#26324f" stroke="#3b4a6b" strokeWidth="0.3" />)}
         {cities.map((c, i) => {
           if (c.lat == null || c.lon == null) return null;
           const [x, y] = proj(c.lon, c.lat);
           return (
             <g key={c.city} className={`fm-wm-pin${active === i ? ' on' : ''}`} onClick={() => onPick(i)} style={{ cursor: 'pointer' }}>
-              <circle cx={x} cy={y} r={active === i ? 5 : 3} />
+              {active === i && <circle cx={x} cy={y} r="6" className="fm-wm-halo" />}
+              <circle cx={x} cy={y} r={active === i ? 3.2 : 2.4} />
               {active === i && <text x={x} y={y - 6} textAnchor="middle" className="fm-wm-lbl">{c.city}</text>}
             </g>
           );

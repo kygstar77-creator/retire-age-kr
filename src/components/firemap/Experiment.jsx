@@ -16,7 +16,7 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
   const sp500Baseline = useMemo(() => buildScenario(inputs, { annualReturnRate: 8 }), [inputs]);
   const impacts = useMemo(() => investmentScenarios.map((sc) => {
     const s = buildScenario(inputs, { annualReturnRate: sc.annualReturnRate });
-    return { ...sc, runway: runwayText(s), success: monteCarloSuccess({ ...inputs, annualReturnRate: sc.annualReturnRate }, { paths: 200 }) };
+    return { ...sc, runway: runwayText(s), success: monteCarloSuccess({ ...inputs, annualReturnRate: sc.annualReturnRate }) };
   }), [inputs]);
   const endAgeGap = scenarioEndAge(simulation) - scenarioEndAge(sp500Baseline);
   const gapText = endAgeGap > 0 ? `S&P500형보다 ${endAgeGap}년 길게` : endAgeGap < 0 ? `S&P500형보다 ${Math.abs(endAgeGap)}년 짧게` : 'S&P500형과 비슷하게';
@@ -77,7 +77,7 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
             </div>
           ))}
         </div>
-        <small>성공확률은 수익률을 변동성과 함께 200회 무작위 시뮬한 값이에요. 특정 상품 추천이 아닌 일반 지수 가정입니다. {sourceLine('returnPresets')}</small>
+        <small>성공확률은 수익률을 변동성과 함께 500회 시뮬한 값이에요(결과 화면 성공확률과 같은 기준). 특정 상품 추천이 아닌 일반 지수 가정입니다. {sourceLine('returnPresets')}</small>
       </section>
       <nav className="fm-bottom-nav">
         <button type="button" onClick={onBack}>취소</button>

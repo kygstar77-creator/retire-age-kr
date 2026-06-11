@@ -100,14 +100,14 @@ function ResultHero({ simulation }) {
 }
 
 const RISK_LEVELS = [
-  { k: 'safe', label: '안전', ret: 3.5, vol: 0.06 },
-  { k: 'balanced', label: '균형', ret: 5.5, vol: 0.12 },
-  { k: 'aggressive', label: '공격', ret: 8, vol: 0.18 }
+  { k: 'safe', label: '안전', ret: 3 },
+  { k: 'balanced', label: '균형', ret: 5 },
+  { k: 'aggressive', label: '공격', ret: 8 }
 ];
 function SuccessProbability({ simulation }) {
   const [risk, setRisk] = useState('balanced');
   const cfg = RISK_LEVELS.find((r) => r.k === risk) || RISK_LEVELS[1];
-  const pct = useMemo(() => monteCarloSuccess({ ...simulation.inputs, annualReturnRate: cfg.ret }, { volatility: cfg.vol }), [simulation, cfg.ret, cfg.vol]);
+  const pct = useMemo(() => monteCarloSuccess({ ...simulation.inputs, annualReturnRate: cfg.ret }), [simulation, cfg.ret]);
   const level = pct >= 80 ? 'ok' : pct >= 50 ? 'mid' : 'low';
   const msg = pct >= 80 ? '시장이 출렁여도 안정적이에요' : pct >= 50 ? '변동성에 다소 취약해요' : '시장이 나쁘면 부족할 수 있어요';
   return (
@@ -119,7 +119,7 @@ function SuccessProbability({ simulation }) {
           <button type="button" key={r.k} className={risk === r.k ? 'on' : ''} onClick={() => setRisk(r.k)}>{r.label}</button>
         ))}
       </div>
-      <p className="fm-mc-note">배분별 가정: 안전(연 3.5%·저변동) · 균형(5.5%) · 공격(8%·고변동). 공격적일수록 기대수익이 높아 성공확률은 오르지만 손실 위험도 커져요 — 확률만 보고 무리한 투자는 금물이에요.</p>
+      <p className="fm-mc-note">배분별 가정: 안전(연 3%) · 균형(5%) · 공격(8%). 수익률이 높을수록 변동성(위험)도 커집니다. 조건비교의 '수익률 벤치마크'와 같은 기준이에요 — 확률만 보고 무리한 투자는 금물이에요.</p>
     </section>
   );
 }

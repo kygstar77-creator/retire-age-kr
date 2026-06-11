@@ -277,6 +277,12 @@ function getReferenceStatus({ targetResult, safeWithdrawalRate, simulationUntilA
 }
 
 
+// 수익률 가정이 높을수록 변동성도 큼(자산군 위험-수익 관계). 모든 성공확률 계산이 공유.
+export function volForReturn(ratePct) {
+  const r = Number(ratePct) || 0;
+  return Math.max(0.03, Math.min(0.24, 0.03 + (r - 2) * 0.022));
+}
+
 function makeRng(seed) {
   let a = seed >>> 0;
   return () => {
@@ -296,12 +302,13 @@ function gaussian(rng) {
 
 // 수익률을 평균±변동성으로 추출해 여러 경로를 돌려 목표 나이까지 버틸 확률(%)을 계산.
 // 시드 고정 → 같은 조건은 항상 같은 결과(클릭마다 흔들리지 않음).
-export function monteCarloSuccess(inputs, { paths = 500, volatility = 0.14 } = {}) {
+export function monteCarloSuccess(inputs, { paths = 500, volatility } = {}) {
   const data = normalizeInputs(inputs);
   const mean = toRate(data.annualReturnRate);
+  const vol = volatility != null ? volatility : volForReturn(data.annualReturnRate);
   const until = data.simulationUntilAge;
   const seed = (Math.abs(Math.round(
-    data.annualReturnRate * 1000 + volatility * 100000 + data.financialAsset / 1e5 +
+    data.annualReturnRate * 1000 + vol * 100000 + data.financialAsset / 1e5 +
     data.monthlyLivingCost / 1e4 + data.monthlyInvestment / 1e4 + data.targetRetirementAge * 97 +
     data.currentAge * 131 + data.simulationUntilAge * 7 + data.expectedMonthlyPension / 1e4 +
     data.expectedPensionAge * 3 + data.partTimeIncomeAfterRetirement / 1e4
@@ -309,7 +316,7 @@ export function monteCarloSuccess(inputs, { paths = 500, volatility = 0.14 } = {
   const rng = makeRng(seed);
   let success = 0;
   for (let p = 0; p < paths; p += 1) {
-    const r = simulateRetirement(data, data.targetRetirementAge, { returnFn: () => mean + volatility * gaussian(rng) });
+    const r = simulateRetirement(data, data.targetRetirementAge, { returnFn: () => mean + vol * gaussian(rng) });
     if (!r.depletionAge || r.depletionAge > until) success += 1;
   }
   return Math.round((success / paths) * 100);

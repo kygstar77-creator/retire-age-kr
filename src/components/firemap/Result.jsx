@@ -7,6 +7,7 @@ import { statsRank, gradeFromScore } from '../../firemap-v2/rank.js';
 import { submitScore, fetchUserRank } from '../../utils/firemapScoresApi.js';
 import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js';
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
+import { FIRE_CITIES } from '../../firemap-v2/cities.js';
 
 function RankHero({ simulation }) {
   const base = statsRank(simulation);
@@ -188,6 +189,34 @@ function YearlyAssetChart({ simulation }) {
   );
 }
 
+function OverseasHope({ inputs, simulation, onMove }) {
+  const baseEnd = scenarioEndAge(simulation);
+  const cands = FIRE_CITIES
+    .filter((c) => c.krw < inputs.monthlyLivingCost)
+    .map((c) => { const sc = buildScenario(inputs, { monthlyLivingCost: c.krw }); return { ...c, sc, gain: scenarioEndAge(sc) - baseEnd }; })
+    .filter((c) => c.gain > 0)
+    .sort((a, b) => b.gain - a.gain)
+    .slice(0, 3);
+  if (cands.length === 0) return null;
+  return (
+    <section className="fm-card fm-hope">
+      <p className="fm-kicker">희망편</p>
+      <h2>해외에 살면 더 오래 버틸 수 있어요</h2>
+      <p className="fm-hope-lead">지금 생활비({formatWon(inputs.monthlyLivingCost)})로는 <b>{runwayText(simulation)}</b>까지지만, 물가가 낮은 곳이라면:</p>
+      <ul className="fm-hope-list">
+        {cands.map((c) => (
+          <li key={c.city}>
+            <span className="fm-hope-city">{c.flag} {c.city}</span>
+            <span className="fm-hope-end">{runwayText(c.sc)}까지</span>
+            <span className="fm-hope-gain">+{c.gain}년</span>
+          </li>
+        ))}
+      </ul>
+      <button type="button" className="fm-hope-cta" onClick={() => onMove('cities')}>전 세계 파이어 도시 탐색 →</button>
+    </section>
+  );
+}
+
 function YearlyGrowth({ simulation }) {
   const rows = simulation.targetResult.rows || [];
   if (rows.length < 2) return null;
@@ -256,6 +285,7 @@ export default function Result({ inputs, simulation, onMove, onEditFinalQuestion
         <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>등수 올리기</button>
       </div>
       <ResultHero simulation={simulation} />
+      <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />
       <YearlyGrowth simulation={simulation} />
       <TopLevers inputs={inputs} simulation={simulation} />
       <NextActions onMove={onMove} />

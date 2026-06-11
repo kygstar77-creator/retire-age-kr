@@ -288,3 +288,14 @@
 .fm-dl-need small { display: block; color: #6b7280; font-size: 12px; font-weight: 700; }
 .fm-dl-need b { display: block; margin-top: 4px; color: #1e2859; font-size: 15px; font-weight: 900; letter-spacing: -.04em; }
 .fm-dl-note { margin: 14px 2px 0; color: #8b95a1; font-size: 12px; line-height: 1.5; }
+
+/* 결과 희망편: 해외 살면 더 오래 */
+.fm-hope { border: 1px solid #bfdbfe !important; background: linear-gradient(180deg, #fff 0%, #eff6ff 100%) !important; }
+.fm-hope-lead { color: #374151; font-size: 14px; font-weight: 650; line-height: 1.5; margin: 4px 0 12px; }
+.fm-hope-lead b { color: #1e40af; }
+.fm-hope-list { list-style: none; margin: 0 0 14px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.fm-hope-list li { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid #e5e7eb; border-radius: 14px; background: #fff; }
+.fm-hope-city { font-size: 15px; font-weight: 800; color: #111827; }
+.fm-hope-end { font-size: 13px; font-weight: 700; color: #374151; }
+.fm-hope-gain { font-size: 14px; font-weight: 900; color: #2563eb; background: #dbeafe; padding: 3px 9px; border-radius: 999px; }
+.fm-hope-cta { width: 100%; min-height: 50px; border: 0; border-radius: 16px; background: #2563eb; color: #fff; font-size: 15px; font-weight: 800; cursor: pointer; }

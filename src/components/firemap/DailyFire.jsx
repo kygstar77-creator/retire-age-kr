@@ -34,12 +34,31 @@ const CHALLENGES = [
   { t: '내일 점심 미리 준비', s: 8000 }
 ];
 
+const QUOTES = [
+  '오늘 아낀 만원이 10년 뒤엔 자유의 하루가 된다.',
+  '부는 많이 버는 것이 아니라 덜 쓰고 남기는 데서 시작된다.',
+  '미래의 나에게 매달 월급을 먼저 보내자.',
+  '소비를 줄이면 필요한 노후 자금도 함께 줄어든다.',
+  '돈이 나 대신 일하게 만드는 것, 그게 파이어다.',
+  '쓰지 않은 돈이 가장 확실한 수익률이다.',
+  '자유는 잔고가 아니라 습관에서 나온다.',
+  '남의 소비를 따라가면 남의 속도로 늙는다.',
+  '복리는 시간을 먹고 자란다. 일찍 시작한 사람이 이긴다.',
+  '작은 절약이 모여 퇴사 날짜를 앞당긴다.',
+  '필요한 것과 갖고 싶은 것을 구분하는 순간 부자가 된다.',
+  '버는 속도보다 모으는 속도가 자유를 결정한다.',
+  '오늘의 한 끼 집밥이 내일의 하루치 자유다.',
+  '조급해 말되 멈추지도 말자. 방향이 맞으면 도착한다.',
+  '가장 비싼 지출은 남에게 보여주려는 지출이다.'
+];
+
 const today = () => new Date().toISOString().slice(0, 10);
 const yesterday = () => new Date(Date.now() - 86400000).toISOString().slice(0, 10);
 const load = () => { try { return JSON.parse(localStorage.getItem('fm_challenge') || 'null'); } catch { return null; } };
 
 export default function DailyFire() {
   const ch = CHALLENGES[Math.floor(Date.now() / 86400000) % CHALLENGES.length];
+  const quote = QUOTES[Math.floor(Date.now() / 86400000) % QUOTES.length];
   const [st, setSt] = useState(load);
   const doneToday = st && st.lastDate === today();
   const streak = st ? st.count : 0;
@@ -53,6 +72,7 @@ export default function DailyFire() {
   };
   return (
     <section className="fm-daily">
+      <p className="fm-daily-wisdom">“{quote}”</p>
       <p className="fm-daily-kicker">오늘의 챌린지 🔥 {streak}일 연속</p>
       <p className="fm-daily-quote">{ch.t}{ch.s > 0 ? ` (예상 절약 ≈ ${formatWon(ch.s)})` : ''}</p>
       <button type="button" className={`fm-daily-btn full${doneToday ? ' done' : ''}`} onClick={complete} disabled={doneToday}>

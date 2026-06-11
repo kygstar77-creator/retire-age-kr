@@ -5,7 +5,7 @@ import RangeControl from './RangeControl.jsx';
 import AssetCompareChart from './AssetCompareChart.jsx';
 import { investmentScenarios } from '../../firemap-v2/data.js';
 import { sourceLine } from '../../firemap-v2/dataSources.js';
-import { buildChartRows, buildScenario, runwayText, scenarioEndAge } from '../../firemap-v2/scenarios.js';
+import { buildChartRows, buildScenario, runwayText } from '../../firemap-v2/scenarios.js';
 import { monteCarloSuccess } from '../../utils/retirementSimulator.js';
 
 export default function Experiment({ inputs, onChange, simulation, onBack }) {
@@ -13,13 +13,10 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
   const lowerCost = useMemo(() => buildScenario(inputs, { monthlyLivingCost: improvedCost }), [inputs, improvedCost]);
   const yearsToRetire = Math.max(1, inputs.targetRetirementAge - inputs.currentAge);
   const savingYearsValue = inputs.savingYears > 0 ? Math.min(inputs.savingYears, yearsToRetire) : yearsToRetire;
-  const sp500Baseline = useMemo(() => buildScenario(inputs, { annualReturnRate: 8 }), [inputs]);
   const impacts = useMemo(() => investmentScenarios.map((sc) => {
     const s = buildScenario(inputs, { annualReturnRate: sc.annualReturnRate });
     return { ...sc, runway: runwayText(s), success: monteCarloSuccess({ ...inputs, annualReturnRate: sc.annualReturnRate }) };
   }), [inputs]);
-  const endAgeGap = scenarioEndAge(simulation) - scenarioEndAge(sp500Baseline);
-  const gapText = endAgeGap > 0 ? `S&P500형보다 ${endAgeGap}년 길게` : endAgeGap < 0 ? `S&P500형보다 ${Math.abs(endAgeGap)}년 짧게` : 'S&P500형과 비슷하게';
   const { chart } = buildChartRows(simulation, lowerCost, inputs);
   const ages = useMemo(() => chart.map((row) => row.age), [chart]);
   const currentSeries = useMemo(() => chart.map((row) => Math.max(0, row.current)), [chart]);
@@ -56,20 +53,14 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
       </section>
       <PensionControls inputs={inputs} onChange={onChange} />
       <section className="fm-card fm-text-card">
-        <p className="fm-kicker">수익률 가정</p><h2>투자 성향별로 다시 계산해보기</h2>
-        <p>현재 적용 수익률은 연 {inputs.annualReturnRate}%예요. {activeScenario ? activeScenario.copy : '직접 입력한 수익률 가정으로 계산 중이에요.'}</p>
-        <div className="fm-chart-summary"><span>선택한 가정 <b>{runwayText(simulation)}</b></span><span>S&P500형 대비 <b>{gapText}</b></span></div>
+        <p className="fm-kicker">수익률 가정</p><h2>어디에 두느냐에 따라 이렇게 달라져요</h2>
+        <p>현재 적용 수익률은 연 {inputs.annualReturnRate}%예요. {activeScenario ? activeScenario.copy : '직접 입력한 수익률 가정으로 계산 중이에요.'} 아래에서 가정을 바꾸면 자산수명·성공확률이 함께 바뀝니다.</p>
         <div className="fm-chips fm-return-rail" aria-label="투자 수익률 가정 선택">
           {investmentScenarios.map((scenario) => <button type="button" key={scenario.key} className={scenario.annualReturnRate === inputs.annualReturnRate ? 'is-active' : ''} onClick={() => onChange('annualReturnRate', scenario.annualReturnRate)}>{scenario.label} · 연 {scenario.annualReturnRate}%</button>)}
         </div>
-        <small>과거 수익률은 보장값이 아닌 장기 통계 가정이에요. 특정 종목 추천이 아닙니다. {sourceLine('returnPresets')}</small>
-      </section>
-      <section className="fm-card fm-text-card">
-        <p className="fm-kicker">수익률 벤치마크</p><h2>예적금 대비 어디에 두느냐의 차이</h2>
-        <p>같은 자산이라도 어디에 두느냐(수익률 가정)에 따라 내 자산수명과 성공확률이 이렇게 달라져요. 가정이 높을수록 기대수익도, 변동성(위험)도 커집니다.</p>
         <div className="fm-bench">
           {impacts.map((sc) => (
-            <div className="fm-bench-row2" key={sc.key}>
+            <div className={`fm-bench-row2${sc.annualReturnRate === inputs.annualReturnRate ? ' is-active' : ''}`} key={sc.key}>
               <div className="fm-bench-head"><b>{sc.label}</b><span>연 {sc.annualReturnRate}%</span></div>
               <div className="fm-bench-metrics"><span>자산수명 <b>{sc.runway}</b></span><span>성공확률 <b>{sc.success}%</b></span></div>
               <div className="fm-bench-bar"><i style={{ width: `${sc.success}%` }} /></div>
@@ -77,7 +68,7 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
             </div>
           ))}
         </div>
-        <small>성공확률은 수익률을 변동성과 함께 500회 시뮬한 값이에요(결과 화면 성공확률과 같은 기준). 특정 상품 추천이 아닌 일반 지수 가정입니다. {sourceLine('returnPresets')}</small>
+        <small>예적금부터 공격적 투자까지, 같은 자산도 어디에 두느냐로 자산수명·성공확률이 달라져요. 가정이 높을수록 변동성(위험)도 커집니다. 성공확률은 변동성과 함께 500회 시뮬한 값(결과 화면과 같은 기준)이며 특정 상품 추천이 아니에요. {sourceLine('returnPresets')}</small>
       </section>
       <nav className="fm-bottom-nav">
         <button type="button" onClick={onBack}>취소</button>

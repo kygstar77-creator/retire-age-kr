@@ -119,7 +119,7 @@ function SuccessProbability({ simulation }) {
           <button type="button" key={r.k} className={risk === r.k ? 'on' : ''} onClick={() => setRisk(r.k)}>{r.label}</button>
         ))}
       </div>
-      <p className="fm-mc-note">배분별 가정: 안전(연 3%) · 균형(5%) · 공격(8%). 수익률이 높을수록 변동성(위험)도 커집니다. 조건비교의 '수익률 벤치마크'와 같은 기준이에요 — 확률만 보고 무리한 투자는 금물이에요.</p>
+      <p className="fm-mc-note">배분별 가정: 안전(연 3%) · 균형(5%) · 공격(8%). 수익률이 높을수록 변동성(위험)도 커집니다. 조건비교의 '수익률 가정'과 같은 기준이에요 — 확률만 보고 무리한 투자는 금물이에요.</p>
     </section>
   );
 }
@@ -278,9 +278,12 @@ function OverseasHope({ inputs, simulation, onMove }) {
   );
 }
 
-function Roadmap({ simulation }) {
+function AssetJourney({ simulation }) {
   const rows = simulation.targetResult.rows || [];
   if (rows.length < 2) return null;
+  const start = rows[0].financialAsset;
+  const y1 = rows[1] ? rows[1].financialAsset - start : 0;
+  const y5 = rows[5] ? rows[5].financialAsset - start : null;
   const cur = rows[0];
   const items = [{ age: cur.age, label: '지금 시작', sub: formatWon(cur.financialAsset), hi: false }];
   [100000000, 300000000, 500000000, 1000000000, 2000000000].forEach((t) => {
@@ -301,9 +304,15 @@ function Roadmap({ simulation }) {
     .filter((m) => { const k = m.age + m.label; if (seen.has(k)) return false; seen.add(k); return true; })
     .sort((a, b) => a.age - b.age);
   return (
-    <section className="fm-card fm-road">
-      <p className="fm-kicker">파이어 로드맵</p>
-      <h2>지금부터 은퇴까지, 단계로 보기</h2>
+    <section className="fm-card fm-growth">
+      <p className="fm-kicker">내 자산 흐름</p>
+      <h2>시간이 지나면 자산은 이렇게 움직여요</h2>
+      <YearlyAssetChart simulation={simulation} />
+      <div className="fm-growth-grid">
+        <div><small>1년 뒤</small><b>+{formatWon(Math.max(0, y1))}</b></div>
+        {y5 != null && <div><small>5년 뒤</small><b>+{formatWon(Math.max(0, y5))}</b></div>}
+        <div><small>은퇴 시점</small><b>{formatWon(simulation.retirementFinancialAsset)}</b></div>
+      </div>
       <ol className="fm-road-list">
         {list.map((m, i) => (
           <li key={i} className={`fm-road-step${m.hi ? ' hi' : ''}`}>
@@ -312,28 +321,7 @@ function Roadmap({ simulation }) {
           </li>
         ))}
       </ol>
-      <p className="fm-road-note">현재 입력 기준 예상 경로예요. 조건을 바꾸면 단계가 당겨져요.</p>
-    </section>
-  );
-}
-
-function YearlyGrowth({ simulation }) {
-  const rows = simulation.targetResult.rows || [];
-  if (rows.length < 2) return null;
-  const start = rows[0].financialAsset;
-  const y1 = rows[1] ? rows[1].financialAsset - start : 0;
-  const y5 = rows[5] ? rows[5].financialAsset - start : null;
-  return (
-    <section className="fm-card fm-growth">
-      <p className="fm-kicker">내 자산 성장</p>
-      <h2>시간이 지나면 자산은 이렇게 늘어요</h2>
-      <YearlyAssetChart simulation={simulation} />
-      <div className="fm-growth-grid">
-        <div><small>1년 뒤</small><b>+{formatWon(Math.max(0, y1))}</b></div>
-        {y5 != null && <div><small>5년 뒤</small><b>+{formatWon(Math.max(0, y5))}</b></div>}
-        <div><small>은퇴 시점</small><b>{formatWon(simulation.retirementFinancialAsset)}</b></div>
-      </div>
-      <p className="fm-growth-note">연 수익률 {simulation.inputs.annualReturnRate}% · 저축 반영 · 조건을 바꾸면 더 빨라져요</p>
+      <p className="fm-growth-note">연 수익률 {simulation.inputs.annualReturnRate}% · 저축 반영 · 조건을 바꾸면 단계가 당겨져요</p>
     </section>
   );
 }
@@ -387,8 +375,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
       <ResultHero simulation={simulation} />
       <SuccessProbability simulation={simulation} />
       <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />
-      <YearlyGrowth simulation={simulation} />
-      <Roadmap simulation={simulation} />
+      <AssetJourney simulation={simulation} />
       <TopLevers inputs={inputs} simulation={simulation} onChange={onChange} />
       <NextActions onMove={onMove} />
       <div className="fm-ad">광고</div>

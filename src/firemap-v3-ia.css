@@ -343,3 +343,6 @@
 .fm-road-step.hi .fm-road-body b { color: #9a3412; }
 .fm-road-body em { font-style: normal; font-size: 12px; color: #6b7280; font-weight: 700; }
 .fm-road-note { margin: 8px 0 0; color: #8b95a1; font-size: 12px; }
+
+/* 레버 적용 버튼 */
+.fm-improve-card .fm-lever-apply { width: 100%; margin-top: 10px; min-height: 38px; border: 0; border-radius: 12px; background: #1e2859; color: #fff; font-size: 13px; font-weight: 800; cursor: pointer; }

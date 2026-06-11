@@ -114,7 +114,7 @@ export default function FireMapMVP() {
   else if (screen === 'foreignTax') view = tool('foreignTax', <ForeignStockTaxCard />);
   else if (screen === 'dividend') view = <DividendLifeCalc inputs={inputs} onChange={onChange} onMove={setScreen} onBack={backOf('dividend')} />;
   else if (screen === 'pension') view = tool('pension', <PensionEarlyClaimCard inputs={inputs} onApply={applyPatch} />);
-  else view = <Result inputs={inputs} simulation={simulation} onMove={setScreen} onEditFinalQuestion={goFinalQuestion} />;
+  else view = <Result inputs={inputs} simulation={simulation} onMove={setScreen} onChange={onChange} onEditFinalQuestion={goFinalQuestion} />;
 
   return wrap(view);
 }

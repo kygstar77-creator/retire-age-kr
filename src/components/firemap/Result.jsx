@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
-import { returnAssumptions } from '../../firemap-v2/data.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, fireStatus, runwayText, scenarioEndAge, survivalPhrase } from '../../firemap-v2/scenarios.js';
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
@@ -73,7 +72,7 @@ function ResultHero({ simulation }) {
       </div>
       <p className="fm-result-copy">{safeCopy}</p>
       <div className="fm-result-assumptions">
-        <span>{returnAssumptions.label}</span>
+        <span>현재 계산 기준 · 연 수익률 {simulation.inputs.annualReturnRate}% · 물가 {simulation.inputs.inflationRate}%</span>
         <span>국민연금 {simulation.inputs.expectedPensionAge}세부터 월 {formatWon(simulation.inputs.expectedMonthlyPension)} 반영</span>
       </div>
       <div className="fm-score-box">

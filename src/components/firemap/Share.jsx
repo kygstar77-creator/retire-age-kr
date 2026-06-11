@@ -122,8 +122,16 @@ export default function Share({ inputs, simulation, onBack }) {
     }
   };
 
+  const buildPreviewUrl = () => {
+    const u = new URL(buildScenarioShareUrl(inputs));
+    u.pathname = '/s';
+    u.searchParams.set('p', String(rank.percentile));
+    u.searchParams.set('g', rank.grade);
+    u.searchParams.set('rw', phrase.short);
+    return u.toString();
+  };
   const shareCondition = async () => {
-    const url = buildScenarioShareUrl(inputs);
+    const url = buildPreviewUrl();
     const text = `${resultLine}\n내 조건 그대로 열어보기`;
     if (navigator.share) {
       try { await navigator.share({ title: '파이어맵 — 내 조건', text, url }); flash('조건 링크 공유창을 열었어요'); return; }

@@ -8,6 +8,19 @@ function headers(extra = {}) {
   return { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'content-type': 'application/json', ...extra };
 }
 
+function deviceId() {
+  try {
+    let id = localStorage.getItem('fm_cid');
+    if (!id) {
+      id = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+      localStorage.setItem('fm_cid', id);
+    }
+    return id;
+  } catch {
+    return null;
+  }
+}
+
 function countFromRange(res) {
   const cr = res.headers.get('content-range') || '';
   const total = cr.split('/')[1];
@@ -27,14 +40,18 @@ export async function submitScore({ fireScore, ageBand, survivalAge, nickname, e
     nickname: nick || null,
     earliest_age: (earliestAge != null && Number.isFinite(Number(earliestAge))) ? Math.round(Number(earliestAge)) : null
   };
-  const post = (body) => fetch(`${SUPABASE_URL}/rest/v1/${TABLE}`, {
+  const cid = deviceId();
+  const fullCid = { ...full, client_id: cid };
+  const send = (body, merge) => fetch(`${SUPABASE_URL}/rest/v1/${TABLE}${merge ? '?on_conflict=client_id' : ''}`, {
     method: 'POST',
-    headers: headers({ prefer: 'return=minimal' }),
+    headers: headers({ prefer: merge ? 'return=minimal,resolution=merge-duplicates' : 'return=minimal' }),
     body: JSON.stringify(body)
   });
   try {
-    let res = await post(full);
-    if (!res.ok) res = await post(base); // 신규 컬럼이 없으면 기본 컬럼만으로 재시도
+    // 1순위: 기기ID 업서트(같은 기기는 1행 갱신 → 중복 방지)
+    let res = cid ? await send(fullCid, true) : { ok: false };
+    if (!res.ok) res = await send(full, false);  // 2순위: client_id 정책/유니크 없으면 닉네임+은퇴나이 insert
+    if (!res.ok) res = await send(base, false);  // 3순위: 신규 컬럼 자체가 없으면 기본만 insert
     return res.ok;
   } catch {
     return false;

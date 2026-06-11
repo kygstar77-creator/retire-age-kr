@@ -90,3 +90,22 @@ export async function fetchTopScores(limit = 10) {
     return [];
   }
 }
+
+export async function fetchAggregates() {
+  try {
+    const opts = { method: 'GET', headers: headers({ prefer: 'count=exact', range: '0-1999' }) };
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=earliest_age,age_band,fire_score`, opts);
+    if (!res.ok) return null;
+    const total = countFromRange(res);
+    const rows = await res.json();
+    const ea = rows.map((r) => r.earliest_age).filter((v) => v != null && v > 0);
+    const sc = rows.map((r) => r.fire_score).filter((v) => v != null);
+    const avg = (arr) => (arr.length ? Math.round(arr.reduce((a, b) => a + b, 0) / arr.length) : null);
+    const bandCount = {};
+    rows.forEach((r) => { if (r.age_band) bandCount[r.age_band] = (bandCount[r.age_band] || 0) + 1; });
+    const topBand = Object.entries(bandCount).sort((a, b) => b[1] - a[1])[0];
+    return { total, avgEarliest: avg(ea), avgScore: avg(sc), topBand: topBand ? Number(topBand[0]) : null };
+  } catch {
+    return null;
+  }
+}

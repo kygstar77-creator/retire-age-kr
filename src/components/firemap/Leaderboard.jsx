@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { statsRank } from '../../firemap-v2/rank.js';
-import { fetchTopScores, fetchUserRank, submitScore } from '../../utils/firemapScoresApi.js';
+import { fetchTopScores, fetchUserRank, submitScore, fetchAggregates } from '../../utils/firemapScoresApi.js';
 
 const medal = (i) => (i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : String(i + 1));
 const readNick = () => { try { return localStorage.getItem('fm_nickname') || ''; } catch { return ''; } };
@@ -15,11 +15,13 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
   const [nick, setNick] = useState(readNick);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
+  const [agg, setAgg] = useState(null);
 
   const load = async () => {
-    const [t, r] = await Promise.all([fetchTopScores(10), fetchUserRank(earliest)]);
+    const [t, r, a] = await Promise.all([fetchTopScores(10), fetchUserRank(earliest), fetchAggregates()]);
     setTop(t);
     setMe(r);
+    setAgg(a);
   };
 
   useEffect(() => { load(); }, [score]);
@@ -55,6 +57,19 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
           ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 더 일찍 은퇴 가능하면 순위가 올라가요</p>
           : <p className="fm-rank-climb">지금 전체 1등이에요! 가장 빨리 은퇴 가능한 사람</p>)}
       </section>
+
+      {agg && agg.total > 0 && (
+        <section className="fm-card fm-stats">
+          <h2 className="fm-section-title">파이어맵 현황</h2>
+          <p className="fm-section-sub">지금까지 함께 계산한 모두의 익명 집계예요</p>
+          <div className="fm-stats-grid">
+            <div><small>함께 계산</small><b>{agg.total.toLocaleString()}명</b></div>
+            {agg.avgEarliest != null && <div><small>평균 은퇴 가능</small><b>{agg.avgEarliest}세</b></div>}
+            {agg.avgScore != null && <div><small>평균 자산수명</small><b>{agg.avgScore}점</b></div>}
+            {agg.topBand != null && <div><small>가장 많은 연령대</small><b>{agg.topBand}대</b></div>}
+          </div>
+        </section>
+      )}
 
       <section className="fm-card fm-nick">
         <label htmlFor="fm-nick-input">내 닉네임 (랭킹에 표시)</label>

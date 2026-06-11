@@ -134,25 +134,52 @@ function TopLevers({ inputs, simulation }) {
 
 function YearlyAssetChart({ simulation }) {
   const rows = simulation.targetResult.rows || [];
+  const [sel, setSel] = useState(null);
   if (rows.length < 2) return null;
-  const pts = rows.map((r) => ({ age: r.age, v: Math.max(0, r.financialAsset) }));
+  const pts = rows.map((r) => ({ age: r.age, v: Math.max(0, r.financialAsset), status: r.status }));
+  const n = pts.length;
   const maxV = Math.max(...pts.map((p) => p.v), 1);
-  const a0 = pts[0].age, a1 = pts[pts.length - 1].age;
-  const W = 320, H = 116, P = 8;
+  const a0 = pts[0].age, a1 = pts[n - 1].age;
+  const W = 320, H = 120, P = 8;
   const X = (a) => P + ((a - a0) / Math.max(1, a1 - a0)) * (W - 2 * P);
   const Y = (v) => H - P - (v / maxV) * (H - 2 * P);
   const line = pts.map((p, i) => `${i ? 'L' : 'M'}${X(p.age).toFixed(1)} ${Y(p.v).toFixed(1)}`).join(' ');
   const area = `${line} L${X(a1).toFixed(1)} ${H - P} L${X(a0).toFixed(1)} ${H - P} Z`;
   const ret = simulation.inputs.targetRetirementAge;
   const retX = X(Math.min(a1, Math.max(a0, ret)));
+  const retIdx = Math.max(0, pts.findIndex((p) => p.age >= ret));
+  const cur = sel != null ? pts[Math.min(sel, n - 1)] : (pts[retIdx] || pts[n - 1]);
+  const pick = (e) => {
+    const box = e.currentTarget.getBoundingClientRect();
+    const clientX = e.touches && e.touches[0] ? e.touches[0].clientX : e.clientX;
+    const idx = Math.max(0, Math.min(n - 1, Math.round(((clientX - box.left) / box.width) * (n - 1))));
+    setSel(idx);
+  };
   return (
     <div className="fm-yac">
-      <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" role="img" aria-label="나이별 내 자산 그래프">
-        <path d={area} className="fm-yac-area" />
-        <path d={line} className="fm-yac-line" fill="none" />
-        <line x1={retX} y1={P} x2={retX} y2={H - P} className="fm-yac-ret" />
-      </svg>
+      <div className="fm-yac-read">
+        <b>{cur.age}세</b>
+        <span className={cur.status === '퇴사 후' ? 'after' : 'before'}>{cur.status}</span>
+        <strong>{formatWon(cur.v)}</strong>
+      </div>
+      <div
+        className="fm-yac-canvas"
+        style={{ touchAction: 'none' }}
+        onPointerDown={pick}
+        onPointerMove={(e) => { if (e.buttons) pick(e); }}
+        onTouchStart={pick}
+        onTouchMove={pick}
+      >
+        <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" role="img" aria-label="나이별 내 자산 그래프 (눌러서 확인)">
+          <path d={area} className="fm-yac-area" />
+          <path d={line} className="fm-yac-line" fill="none" />
+          <line x1={retX} y1={P} x2={retX} y2={H - P} className="fm-yac-ret" />
+          <line x1={X(cur.age)} y1={P} x2={X(cur.age)} y2={H - P} className="fm-yac-cross" />
+          <circle cx={X(cur.age)} cy={Y(cur.v)} r="3.5" className="fm-yac-dot" />
+        </svg>
+      </div>
       <div className="fm-yac-x"><span>{a0}세</span><span>퇴사 {ret}세</span><span>{a1}세</span></div>
+      <p className="fm-yac-hint">그래프를 눌러 나이별 자산을 확인하세요</p>
     </div>
   );
 }

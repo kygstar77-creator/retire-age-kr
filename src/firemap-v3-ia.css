@@ -223,3 +223,16 @@
 .fm-yac-line { stroke: #ff5a00; stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
 .fm-yac-ret { stroke: #9ca3af; stroke-width: 1.5; stroke-dasharray: 4 4; }
 .fm-yac-x { display: flex; justify-content: space-between; margin-top: 4px; color: #6b7280; font-size: 11px; font-weight: 600; }
+
+/* 자산 그래프 인터랙션 */
+.fm-yac-canvas { position: relative; cursor: crosshair; }
+.fm-yac-canvas svg { width: 100%; height: 120px; display: block; }
+.fm-yac-read { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+.fm-yac-read b { font-size: 15px; font-weight: 800; color: #111827; }
+.fm-yac-read span { font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 99px; }
+.fm-yac-read span.before { background: #eef2ff; color: #3743a8; }
+.fm-yac-read span.after { background: #fff7ed; color: #9a3412; }
+.fm-yac-read strong { margin-left: auto; font-size: 16px; font-weight: 800; color: #ff5a00; }
+.fm-yac-cross { stroke: #111827; stroke-width: 1.5; stroke-dasharray: 3 3; }
+.fm-yac-dot { fill: #ff5a00; stroke: #fff; stroke-width: 1.5; }
+.fm-yac-hint { margin: 4px 0 0; color: #9ca3af; font-size: 11px; font-weight: 600; text-align: center; }

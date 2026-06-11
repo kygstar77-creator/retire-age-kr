@@ -17,15 +17,17 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const [agg, setAgg] = useState(null);
+  const [scope, setScope] = useState('all');
+  const bandArg = scope === 'band' ? base.ageBand : undefined;
 
   const load = async () => {
-    const [t, r, a] = await Promise.all([fetchTopScores(10), fetchUserRank(earliest), fetchAggregates()]);
+    const [t, r, a] = await Promise.all([fetchTopScores(10, bandArg), fetchUserRank(earliest, bandArg), fetchAggregates()]);
     setTop(t);
     setMe(r);
     setAgg(a);
   };
 
-  useEffect(() => { load(); }, [score]);
+  useEffect(() => { load(); }, [score, scope]);
 
   const saveNick = async () => {
     const v = nick.trim().slice(0, 16);
@@ -48,7 +50,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
     <main className="fm-screen fm-scroll">
       <Header tag="랭킹" onBack={onBack} />
       <section className="fm-rank-hero">
-        <p className="fm-rank-label">내 순위 · 가장 빨리 은퇴 가능한 순</p>
+        <p className="fm-rank-label">내 순위 · {scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} · 가장 빨리 은퇴 순</p>
         <div className="fm-rank-top">
           <span className="fm-rank-pct">{me ? `${me.position.toLocaleString()}위` : '집계 중…'}</span>
           <span className="fm-rank-badge">{base.grade}등급</span>
@@ -58,6 +60,11 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
           ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 더 일찍 은퇴 가능하면 순위가 올라가요</p>
           : <p className="fm-rank-climb">지금 전체 1등이에요! 가장 빨리 은퇴 가능한 사람</p>)}
       </section>
+
+      <div className="fm-scope-toggle">
+        <button type="button" className={scope === 'all' ? 'on' : ''} onClick={() => setScope('all')}>전체</button>
+        <button type="button" className={scope === 'band' ? 'on' : ''} onClick={() => setScope('band')}>{base.ageBandLabel} 또래</button>
+      </div>
 
       {agg && agg.total > 0 && (
         <section className="fm-card fm-stats">
@@ -85,7 +92,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
 
       <section className="fm-card">
         <h2 className="fm-section-title">전체 상위 랭킹</h2>
-        <p className="fm-section-sub">가장 빨리 은퇴 가능한 순 · 계산하는 사람이 늘수록 갱신돼요</p>
+        <p className="fm-section-sub">{scope === 'band' ? `${base.ageBandLabel} 또래 중 ` : ''}가장 빨리 은퇴 가능한 순 · 계산하는 사람이 늘수록 갱신돼요</p>
         <ol className="fm-lb-list">
           {top === null && <li className="fm-lb-empty">불러오는 중…</li>}
           {top && top.length === 0 && <li className="fm-lb-empty">아직 데이터가 적어요. 첫 랭커가 되어보세요!</li>}

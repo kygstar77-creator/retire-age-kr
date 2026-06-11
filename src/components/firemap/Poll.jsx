@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { votePoll, fetchPollResults } from '../../utils/firemapScoresApi.js';
+import { BASE_URL } from '../../firemap-v2/data.js';
 
 const POLL = {
   key: 'fire_type_2026',
@@ -20,6 +21,16 @@ export default function Poll() {
     await load();
   };
   const total = res ? res.total : 0;
+  const sharePoll = async () => {
+    const n = res ? (res.counts[mine] || 0) : 0;
+    const pct = total > 0 ? Math.round((n / total) * 100) : 0;
+    const text = `나는 '${mine}'! 파이어족의 ${pct}%가 같은 유형이래요. 너의 파이어 유형은?`;
+    if (navigator.share) {
+      try { await navigator.share({ title: '파이어맵 — 내 파이어 유형', text, url: BASE_URL }); return; }
+      catch (e) { if (e && e.name === 'AbortError') return; }
+    }
+    try { await navigator.clipboard.writeText(`${text} ${BASE_URL}`); } catch { /* ignore */ }
+  };
   const reveal = !!mine;
   return (
     <section className="fm-card fm-poll">
@@ -40,6 +51,7 @@ export default function Poll() {
         })}
       </div>
       {reveal && total > 0 && <p className="fm-poll-total">{total.toLocaleString()}명 참여 중</p>}
+      {reveal && <button type="button" className="fm-poll-share" onClick={sharePoll}>나는 “{mine}”! 친구에게 공유하기</button>}
     </section>
   );
 }

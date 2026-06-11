@@ -59,17 +59,18 @@ export async function submitScore({ fireScore, ageBand, survivalAge, nickname, e
 }
 
 // 함께 계산한 사용자 중 내 등수/백분위
-export async function fetchUserRank(earliestAge) {
+export async function fetchUserRank(earliestAge, ageBand) {
   try {
     const opts = { method: 'GET', headers: headers({ prefer: 'count=exact', range: '0-0' }) };
-    const totalRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id`, opts);
+    const band = ageBand ? `&age_band=eq.${ageBand}` : '';
+    const totalRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id${band}`, opts);
     const total = countFromRange(totalRes);
     if (!total) return null;
     const hasAge = earliestAge != null && Number.isFinite(Number(earliestAge));
     // 더 이른 은퇴 가능 나이 = 더 높은 순위. 값 없으면(은퇴 불가) 값 있는 사람 모두가 상위.
     const higherQuery = hasAge
-      ? `${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=lt.${Math.round(Number(earliestAge))}`
-      : `${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=not.is.null`;
+      ? `${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=lt.${Math.round(Number(earliestAge))}${band}`
+      : `${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=not.is.null${band}`;
     const higherRes = await fetch(higherQuery, opts);
     const higher = countFromRange(higherRes);
     const position = higher + 1;
@@ -80,9 +81,10 @@ export async function fetchUserRank(earliestAge) {
   }
 }
 
-export async function fetchTopScores(limit = 10) {
+export async function fetchTopScores(limit = 10, ageBand) {
   try {
-    const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=nickname,fire_score,age_band,earliest_age&order=earliest_age.asc.nullslast,fire_score.desc&limit=${limit}`;
+    const band = ageBand ? `&age_band=eq.${ageBand}` : '';
+    const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=nickname,fire_score,age_band,earliest_age${band}&order=earliest_age.asc.nullslast,fire_score.desc&limit=${limit}`;
     const res = await fetch(url, { method: 'GET', headers: headers() });
     if (!res.ok) return [];
     return await res.json();

@@ -130,6 +130,7 @@ export default function CityExplorer({ inputs, simulation, onChange, onMove, onB
           );
         })}
       </div>
+      <button type="button" className="fm-city-cta" onClick={() => onMove && onMove('city')}>국내 도시 비교 · 해외 체류 조건 직접 조절 →</button>
       <p className="fm-ce-note">도시별 금액은 1인 월 생활비 대략 추정치예요. 실제 주거·의료·환율·비자 조건에 따라 달라질 수 있어요. {sourceLine('cityCost')}</p>
     </main>
   );

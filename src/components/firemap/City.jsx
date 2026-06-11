@@ -88,7 +88,7 @@ export default function City({ inputs, simulation, onBack, onChange }) {
   return (
     <main className="fm-screen fm-scroll">
       <Header onBack={onBack} />
-      <section className="fm-card fm-text-card"><p className="fm-kicker">도시 시나리오</p><h2>사는 곳을 바꾸면 FIRE가 얼마나 가까워질까?</h2><p>도시별 예상 생활비를 내 조건에 바로 대입해, 자산 수명이 얼마나 달라지는지 보여줍니다.</p></section>
+      <section className="fm-card fm-text-card"><p className="fm-kicker">도시 비교 · 해외 체류</p><h2>도시·체류 조건을 바꾸면 자산이 얼마나 더 버틸까?</h2><p>국내 저비용 도시부터 해외 체류(연 체류 개월·환율·건보료 정지)까지, 내 조건에 바로 대입해 자산수명 변화를 비교해요. 세계 지도로 고르려면 「해외 파이어 도시」를 쓰세요.</p></section>
       <ScenarioList title="국내 저비용 도시" inputs={inputs} baseSimulation={simulation} scenarios={domesticCities} />
       <ScenarioList title="해외 저비용 생활" inputs={inputs} baseSimulation={simulation} scenarios={overseasCities} />
       {onChange && <OverseasStayModule inputs={inputs} simulation={simulation} onChange={onChange} />}

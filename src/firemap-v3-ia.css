@@ -314,3 +314,12 @@
 .fm-poll-label { position: relative; z-index: 1; font-size: 15px; font-weight: 700; color: #111827; }
 .fm-poll-pct { position: relative; z-index: 1; margin-left: auto; font-size: 14px; font-weight: 900; color: #ff5a00; }
 .fm-poll-total { margin: 10px 0 0; color: #6b7280; font-size: 13px; font-weight: 700; text-align: center; }
+
+/* 오늘의 파이어 (명언 + 스트릭) */
+.fm-daily { border: 1px solid #fed7aa; border-radius: 20px; background: linear-gradient(180deg, #fff 0%, #fff7ed 100%); padding: 16px 18px; margin: 12px 0; }
+.fm-daily-kicker { margin: 0 0 6px; color: #ea580c; font-size: 12px; font-weight: 900; }
+.fm-daily-quote { margin: 0 0 14px; color: #1a1c22; font-size: 16px; font-weight: 800; line-height: 1.5; letter-spacing: -.02em; }
+.fm-daily-streak { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.fm-daily-count { font-size: 14px; font-weight: 900; color: #9a3412; }
+.fm-daily-btn { margin-left: auto; border: 0; border-radius: 12px; background: #ff5a00; color: #fff; font-size: 13px; font-weight: 800; padding: 10px 14px; cursor: pointer; }
+.fm-daily-btn.done { background: #d1fae5; color: #065f46; }

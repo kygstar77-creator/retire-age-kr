@@ -44,6 +44,7 @@ function RankHero({ simulation }) {
         ? <p className="fm-rank-line">함께 계산한 {live.total.toLocaleString()}명 중 <b>{live.position.toLocaleString()}등</b></p>
         : <p className="fm-rank-line">함께 계산한 사용자 중 등수 집계 중…</p>}
       <p className="fm-rank-trend">{base.source}</p>
+      <p className="fm-rank-note">등급은 내 자산수명 점수 기준 · 상위 %는 통계청 또래 순자산 기준</p>
     </section>
   );
 }

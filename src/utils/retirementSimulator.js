@@ -58,10 +58,11 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
       : 0;
     const withdrawal = isRetired ? Math.max(0, livingCost - partTimeIncome - pensionIncome) : 0;
     const salaryGrowth = toRate(data.salaryGrowthRate);
-    const stillSaving = !isRetired && yearsFromStart < savingYears;
+    const stillSaving = !isRetired && yearsFromStart >= 1 && yearsFromStart <= savingYears;
     const investmentAdded = stillSaving ? yearly(data.monthlyInvestment) * Math.pow(1 + salaryGrowth, yearsFromStart) : 0;
     const assetAfterCashFlow = financialAsset + investmentAdded - withdrawal;
-    const investmentReturn = assetAfterCashFlow > 0 ? assetAfterCashFlow * annualReturn : 0;
+    // 첫해(yearsFromStart 0)는 수익률·저축 미적용 — 시작 자산을 그대로 표시(직관성)
+    const investmentReturn = (yearsFromStart >= 1 && assetAfterCashFlow > 0) ? assetAfterCashFlow * annualReturn : 0;
 
     financialAsset = assetAfterCashFlow + investmentReturn;
 

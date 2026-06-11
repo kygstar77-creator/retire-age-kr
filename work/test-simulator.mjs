@@ -61,11 +61,11 @@ const scenarioB = {
 };
 
 const resultA = simulateRetirement(scenarioA);
-check('scenarioA age80 financialAsset', getRow(resultA, 80).financialAsset, -23.07);
+check('scenarioA age80 financialAsset', getRow(resultA, 80).financialAsset, -24.44);
 
 const resultB = simulateRetirement(scenarioB);
-check('scenarioB age80 financialAsset', getRow(resultB, 80).financialAsset, -45.84);
-check('scenarioB age90 financialAsset', getRow(resultB, 90).financialAsset, -67.91);
+check('scenarioB age80 financialAsset', getRow(resultB, 80).financialAsset, -46.51);
+check('scenarioB age90 financialAsset', getRow(resultB, 90).financialAsset, -68.59);
 
 const base = { ...scenarioB };
 const workLonger = simulateRetirement(base, base.targetRetirementAge + 1);
@@ -148,6 +148,13 @@ assert(
   assert(Math.abs(full.finalFinancialAsset - untilRetire.finalFinancialAsset) < 1, 'Invariant failed: savingYears 0이 퇴사까지 저축과 다름.');
   const shorter = simulateRetirement({ ...scenarioB, savingYears: 3 });
   assert(shorter.finalFinancialAsset <= full.finalFinancialAsset + 1, 'Invariant failed: 적립 기간을 줄였는데 최종자산이 늘어남.');
+}
+
+// (6) 첫해(시작 시점) 자산은 시작 자산 그대로 — 수익률·저축 미적용
+{
+  const r = simulateRetirement(scenarioB);
+  assert(Math.abs(r.rows[0].financialAsset - scenarioB.financialAsset) < 1, 'Invariant failed: 첫해 자산이 시작 자산과 다름(첫해 성장/저축이 적용됨).');
+  assert(r.rows[0].investmentAdded === 0, 'Invariant failed: 첫해에 저축이 적용됨.');
 }
 
 console.log('Simulation regression and invariant tests passed.');

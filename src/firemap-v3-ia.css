@@ -376,3 +376,8 @@
 .fm-bench-bar { height: 6px; border-radius: 999px; background: #f1f5f9; overflow: hidden; }
 .fm-bench-bar i { display: block; height: 100%; background: #ff5a00; }
 .fm-bench-row2 em { display: block; margin-top: 6px; font-style: normal; font-size: 12px; color: #8b95a1; font-weight: 600; }
+
+/* 성공확률 위험(변동성) 선택 */
+.fm-mc-risk { display: flex; gap: 8px; margin: 4px 0 10px; }
+.fm-mc-risk button { flex: 1; min-height: 36px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; color: #6b7280; font-size: 13px; font-weight: 800; cursor: pointer; }
+.fm-mc-risk button.on { background: #1e2859; color: #fff; border-color: #1e2859; }

@@ -99,15 +99,27 @@ function ResultHero({ simulation }) {
   );
 }
 
+const RISK_LEVELS = [
+  { k: 'safe', label: '안전', vol: 0.08, desc: '예금·채권 비중 높음' },
+  { k: 'balanced', label: '균형', vol: 0.14, desc: '주식·채권 혼합' },
+  { k: 'aggressive', label: '공격', vol: 0.2, desc: '주식 비중 높음' }
+];
 function SuccessProbability({ simulation }) {
-  const pct = useMemo(() => monteCarloSuccess(simulation.inputs), [simulation]);
+  const [risk, setRisk] = useState('balanced');
+  const vol = (RISK_LEVELS.find((r) => r.k === risk) || RISK_LEVELS[1]).vol;
+  const pct = useMemo(() => monteCarloSuccess(simulation.inputs, { volatility: vol }), [simulation, vol]);
   const level = pct >= 80 ? 'ok' : pct >= 50 ? 'mid' : 'low';
   const msg = pct >= 80 ? '시장이 출렁여도 안정적이에요' : pct >= 50 ? '변동성에 다소 취약해요' : '시장이 나쁘면 부족할 수 있어요';
   return (
     <section className={`fm-card fm-mc fm-mc-${level}`}>
       <p className="fm-kicker">성공 확률 · 변동성 반영</p>
       <div className="fm-mc-row"><b>{pct}%</b><span>{msg}</span></div>
-      <p className="fm-mc-note">수익률을 고정이 아니라 매년 평균±변동성으로 500번 무작위 시뮬해, {simulation.inputs.simulationUntilAge}세까지 자산이 버틸 확률을 계산했어요.</p>
+      <div className="fm-mc-risk">
+        {RISK_LEVELS.map((r) => (
+          <button type="button" key={r.k} className={risk === r.k ? 'on' : ''} onClick={() => setRisk(r.k)}>{r.label}</button>
+        ))}
+      </div>
+      <p className="fm-mc-note">내 자산 배분(변동성)을 골라보세요. 같은 수익률이라도 변동성이 크면 성공확률이 흔들려요. 500번 무작위 시뮬로 {simulation.inputs.simulationUntilAge}세까지 버틸 확률을 계산했어요.</p>
     </section>
   );
 }

@@ -147,7 +147,8 @@ function solveMin(test, hi, round) {
 
 function TopLevers({ inputs, simulation, onChange }) {
   const until = simulation.inputs.simulationUntilAge;
-  const ok = (patch) => !simulateRetirement({ ...inputs, ...patch }).depletionAge;
+  const ni = simulation.inputs;
+  const ok = (patch) => !simulateRetirement({ ...ni, ...patch }).depletionAge;
   const apply = (patch) => {
     if (onChange) Object.entries(patch).forEach(([k, v]) => onChange(k, v));
     try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch { /* ignore */ }
@@ -165,23 +166,23 @@ function TopLevers({ inputs, simulation, onChange }) {
     );
   }
 
-  const lc = Number(inputs.monthlyLivingCost) || 0;
+  const lc = ni.monthlyLivingCost || 0;
   const items = [
-    { tag: '저축', solve: solveMin((d) => ok({ monthlyInvestment: inputs.monthlyInvestment + d }), 30000000, 100000),
-      label: (d) => `월 ${formatWon(d)} 더 저축`, patch: (d) => ({ monthlyInvestment: inputs.monthlyInvestment + d }) },
+    { tag: '저축', solve: solveMin((d) => ok({ monthlyInvestment: ni.monthlyInvestment + d }), 30000000, 100000),
+      label: (d) => `월 ${formatWon(d)} 더 저축`, patch: (d) => ({ monthlyInvestment: ni.monthlyInvestment + d }) },
     { tag: '생활비', solve: solveMin((d) => ok({ monthlyLivingCost: Math.max(800000, lc - d) }), Math.max(0, lc - 800000), 100000),
       label: (d) => `생활비 월 ${formatWon(d)} 줄이기`, patch: (d) => ({ monthlyLivingCost: Math.max(800000, lc - d) }) },
-    { tag: '근무', solve: solveMin((d) => ok({ targetRetirementAge: inputs.targetRetirementAge + d }), 15, 1),
-      label: (d) => `${d}년 더 일하기 (${inputs.targetRetirementAge + d}세)`, patch: (d) => ({ targetRetirementAge: inputs.targetRetirementAge + d }) },
-    { tag: '부업', solve: solveMin((d) => ok({ partTimeIncomeAfterRetirement: inputs.partTimeIncomeAfterRetirement + d }), 10000000, 100000),
-      label: (d) => `퇴사 후 월 ${formatWon(d)} 벌기`, patch: (d) => ({ partTimeIncomeAfterRetirement: inputs.partTimeIncomeAfterRetirement + d }) },
-    { tag: '수익률', solve: solveMin((d) => ok({ annualReturnRate: inputs.annualReturnRate + d }), 15, 0.5),
-      label: (d) => `수익률 +${d}%p (연 ${(inputs.annualReturnRate + d).toFixed(1)}%)`, patch: (d) => ({ annualReturnRate: inputs.annualReturnRate + d }) }
+    { tag: '근무', solve: solveMin((d) => ok({ targetRetirementAge: ni.targetRetirementAge + d }), 15, 1),
+      label: (d) => `${d}년 더 일하기 (${ni.targetRetirementAge + d}세)`, patch: (d) => ({ targetRetirementAge: ni.targetRetirementAge + d }) },
+    { tag: '부업', solve: solveMin((d) => ok({ partTimeIncomeAfterRetirement: ni.partTimeIncomeAfterRetirement + d }), 10000000, 100000),
+      label: (d) => `퇴사 후 월 ${formatWon(d)} 벌기`, patch: (d) => ({ partTimeIncomeAfterRetirement: ni.partTimeIncomeAfterRetirement + d }) },
+    { tag: '수익률', solve: solveMin((d) => ok({ annualReturnRate: ni.annualReturnRate + d }), 15, 0.5),
+      label: (d) => `수익률 +${d}%p (연 ${(ni.annualReturnRate + d).toFixed(1)}%)`, patch: (d) => ({ annualReturnRate: ni.annualReturnRate + d }) }
   ];
   return (
     <section className="fm-card fm-goal">
       <p className="fm-kicker">목표 달성 플랜</p>
-      <h2>{inputs.targetRetirementAge}세 퇴사를 성공시키려면?</h2>
+      <h2>{ni.targetRetirementAge}세 퇴사를 성공시키려면?</h2>
       <p className="fm-goal-sub">{until}세까지 자산이 버티게 하는 방법이에요. <b>아래 중 하나만</b> 해도 목표 달성!</p>
       <ul className="fm-goal-list">
         {items.map((it) => (

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './Header.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, runwayText, deltaText } from '../../firemap-v2/scenarios.js';
@@ -20,18 +20,45 @@ const LAND = [
   'M283 96 L300 95 L302 99 L285 100 Z'
 ];
 function WorldMap({ cities, active, onPick }) {
+  const [land, setLand] = useState(null);
+  const W = 360, H = 180;
+  const proj = (lon, lat) => [((lon + 180) / 360) * W, ((90 - lat) / 180) * H];
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      try {
+        const [topo, topojson] = await Promise.all([
+          fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then((r) => r.json()),
+          import('https://esm.sh/topojson-client@3')
+        ]);
+        const geo = topojson.feature(topo, topo.objects.countries);
+        const paths = geo.features.map((f) => {
+          const polys = f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates;
+          let d = '';
+          polys.forEach((poly) => poly.forEach((ring) => {
+            ring.forEach((pt, i) => { const [x, y] = proj(pt[0], pt[1]); d += (i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1); });
+            d += 'Z';
+          }));
+          return d;
+        });
+        if (alive) setLand(paths);
+      } catch { /* CDN 실패 시 폴백 유지 */ }
+    })();
+    return () => { alive = false; };
+  }, []);
+  const drawn = land || LAND;
   return (
     <div className="fm-wm">
       <svg viewBox="0 0 360 180" preserveAspectRatio="xMidYMid meet" role="img" aria-label="전세계 파이어 도시 지도">
-        <rect x="0" y="0" width="360" height="180" rx="10" fill="#eef4fb" />
-        {LAND.map((d, i) => <path key={i} d={d} fill="#cfe0f0" stroke="#b9d0e6" strokeWidth="0.5" />)}
+        <rect x="0" y="0" width="360" height="180" rx="10" fill="#dbeafe" />
+        {drawn.map((d, i) => <path key={i} d={d} fill="#eef6ee" stroke="#cbd5e1" strokeWidth="0.3" />)}
         {cities.map((c, i) => {
           if (c.lat == null || c.lon == null) return null;
-          const x = c.lon + 180, y = 90 - c.lat;
+          const [x, y] = proj(c.lon, c.lat);
           return (
             <g key={c.city} className={`fm-wm-pin${active === i ? ' on' : ''}`} onClick={() => onPick(i)} style={{ cursor: 'pointer' }}>
-              <circle cx={x} cy={y} r={active === i ? 6 : 4} />
-              {active === i && <text x={x} y={y - 8} textAnchor="middle" className="fm-wm-lbl">{c.city}</text>}
+              <circle cx={x} cy={y} r={active === i ? 5 : 3} />
+              {active === i && <text x={x} y={y - 6} textAnchor="middle" className="fm-wm-lbl">{c.city}</text>}
             </g>
           );
         })}

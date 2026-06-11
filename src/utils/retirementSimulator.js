@@ -277,21 +277,39 @@ function getReferenceStatus({ targetResult, safeWithdrawalRate, simulationUntilA
 }
 
 
-function gaussian() {
+function makeRng(seed) {
+  let a = seed >>> 0;
+  return () => {
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+function gaussian(rng) {
   let u = 0, v = 0;
-  while (u === 0) u = Math.random();
-  while (v === 0) v = Math.random();
+  while (u === 0) u = rng();
+  while (v === 0) v = rng();
   return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
 }
 
-// 수익률을 평균±변동성으로 무작위 추출해 여러 경로를 돌려, 목표 나이까지 버틸 확률(%)을 계산.
+// 수익률을 평균±변동성으로 추출해 여러 경로를 돌려 목표 나이까지 버틸 확률(%)을 계산.
+// 시드 고정 → 같은 조건은 항상 같은 결과(클릭마다 흔들리지 않음).
 export function monteCarloSuccess(inputs, { paths = 500, volatility = 0.14 } = {}) {
   const data = normalizeInputs(inputs);
   const mean = toRate(data.annualReturnRate);
   const until = data.simulationUntilAge;
+  const seed = (Math.abs(Math.round(
+    data.annualReturnRate * 1000 + volatility * 100000 + data.financialAsset / 1e5 +
+    data.monthlyLivingCost / 1e4 + data.monthlyInvestment / 1e4 + data.targetRetirementAge * 97 +
+    data.currentAge * 131 + data.simulationUntilAge * 7 + data.expectedMonthlyPension / 1e4 +
+    data.expectedPensionAge * 3 + data.partTimeIncomeAfterRetirement / 1e4
+  )) % 2147483629) + 1;
+  const rng = makeRng(seed);
   let success = 0;
   for (let p = 0; p < paths; p += 1) {
-    const r = simulateRetirement(data, data.targetRetirementAge, { returnFn: () => mean + volatility * gaussian() });
+    const r = simulateRetirement(data, data.targetRetirementAge, { returnFn: () => mean + volatility * gaussian(rng) });
     if (!r.depletionAge || r.depletionAge > until) success += 1;
   }
   return Math.round((success / paths) * 100);

@@ -18,10 +18,11 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
 
   const load = async () => {
     const [t, r] = await Promise.all([fetchTopScores(10), fetchUserRank(earliest)]);
-    setTop(t); setMe(r);
+    setTop(t);
+    setMe(r);
   };
 
-  useEffect(() => { let alive = true; (async () => { await load(); })(); return () => { alive = false; }; }, [score]);
+  useEffect(() => { load(); }, [score]);
 
   const saveNick = async () => {
     const v = nick.trim().slice(0, 16);
@@ -50,10 +51,37 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
           <span className="fm-rank-badge">{base.grade}등급</span>
         </div>
         {me && <p className="fm-rank-line">전체 {me.total.toLocaleString()}명 중 · {earliest ? `${earliest}세 은퇴 가능` : '아직 은퇴 어려움'} · {score}점</p>}
-        {me && me.position > 1
+        {me && (me.position > 1
           ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 더 일찍 은퇴 가능하면 순위가 올라가요</p>
-          : me && <p className="fm-rank-climb">지금 전체 1등이에요! 가장 빨리 은퇴 가능한 사람</p>}
+          : <p className="fm-rank-climb">지금 전체 1등이에요! 가장 빨리 은퇴 가능한 사람</p>)}
       </section>
 
       <section className="fm-card fm-nick">
-        <label htmlFor="fm-nick-input">내 닉네임 (랭킹에
+        <label htmlFor="fm-nick-input">내 닉네임 (랭킹에 표시)</label>
+        <div className="fm-nick-row">
+          <input id="fm-nick-input" maxLength={16} value={nick} placeholder="예: 파이어왕" onChange={(e) => setNick(e.target.value)} />
+          <button type="button" onClick={saveNick} disabled={saving || !nick.trim()}>{saving ? '등록 중' : saved ? '등록됨' : '랭킹 등록'}</button>
+        </div>
+        <small>익명도 괜찮아요. 닉네임을 넣으면 아래 랭킹에 내 이름으로 올라가요.</small>
+      </section>
+
+      <section className="fm-card">
+        <h2 className="fm-section-title">전체 상위 랭킹</h2>
+        <p className="fm-section-sub">가장 빨리 은퇴 가능한 순 · 계산하는 사람이 늘수록 갱신돼요</p>
+        <ol className="fm-lb-list">
+          {top === null && <li className="fm-lb-empty">불러오는 중…</li>}
+          {top && top.length === 0 && <li className="fm-lb-empty">아직 데이터가 적어요. 첫 랭커가 되어보세요!</li>}
+          {top && top.map((row, i) => (
+            <li key={i} className={`fm-lb-row${i < 3 ? ' top3' : ''}`}>
+              <span className="fm-lb-rank">{medal(i)}</span>
+              <span className="fm-lb-who">{row.nickname ? row.nickname : '익명'}{row.age_band ? ` · ${row.age_band}대` : ''}</span>
+              <span className="fm-lb-score">{row.earliest_age ? `${row.earliest_age}세 은퇴` : `${row.fire_score}점`}</span>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <button type="button" className="fm-city-cta" onClick={() => onMove('experiment')}>조건 바꿔 순위 올리기</button>
+    </main>
+  );
+}

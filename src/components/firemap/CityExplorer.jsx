@@ -6,20 +6,25 @@ import { sourceLine } from '../../firemap-v2/dataSources.js';
 import { FIRE_CITIES as CITIES } from '../../firemap-v2/cities.js';
 
 
-const CONTINENTS = [
-  '15,30 40,22 85,20 120,30 125,42 100,65 80,72 60,60 50,40',
-  '100,82 120,85 145,95 140,115 125,130 110,145 108,120',
-  '170,54 180,47 195,52 210,45 220,30 205,20 185,30 170,40',
-  '163,76 190,55 213,58 230,78 220,100 200,125 192,110 170,85',
-  '220,50 240,35 270,22 320,22 330,45 300,70 275,82 250,65 225,60',
-  '293,102 310,102 333,118 325,129 300,125 293,112'
+const LAND = [
+  'M18 30 L60 18 L95 16 L120 24 L126 40 L112 50 L100 56 L99 66 L86 64 L75 72 L68 64 L57 52 L55 42 L40 32 Z',
+  'M100 84 L118 86 L145 96 L142 112 L128 130 L113 148 L110 130 L108 105 Z',
+  'M165 76 L178 60 L200 58 L215 60 L222 78 L218 95 L210 120 L200 124 L190 112 L188 95 L170 84 Z',
+  'M172 50 L168 44 L180 40 L190 34 L205 26 L215 36 L205 46 L195 50 L182 52 Z',
+  'M215 36 L235 26 L270 20 L305 24 L320 40 L312 52 L300 60 L290 70 L278 78 L262 74 L258 88 L250 74 L240 70 L230 66 L222 58 L215 50 Z',
+  'M295 100 L315 100 L333 110 L328 128 L305 126 L295 112 Z',
+  'M138 16 L150 18 L148 30 L135 28 Z',
+  'M313 52 L318 54 L316 60 L312 58 Z',
+  'M173 41 L177 41 L176 46 L172 45 Z',
+  'M226 108 L230 110 L229 117 L225 115 Z',
+  'M283 96 L300 95 L302 99 L285 100 Z'
 ];
 function WorldMap({ cities, active, onPick }) {
   return (
     <div className="fm-wm">
       <svg viewBox="0 0 360 180" preserveAspectRatio="xMidYMid meet" role="img" aria-label="전세계 파이어 도시 지도">
         <rect x="0" y="0" width="360" height="180" rx="10" fill="#eef4fb" />
-        {CONTINENTS.map((pts, i) => <polygon key={i} points={pts} fill="#d7e3f0" />)}
+        {LAND.map((d, i) => <path key={i} d={d} fill="#cfe0f0" stroke="#b9d0e6" strokeWidth="0.5" />)}
         {cities.map((c, i) => {
           if (c.lat == null || c.lon == null) return null;
           const x = c.lon + 180, y = 90 - c.lat;

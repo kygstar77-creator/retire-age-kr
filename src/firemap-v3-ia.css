@@ -185,3 +185,7 @@
 .fm-range-note { font-size: 12.5px; color: #6b7280; margin: -4px 0 14px; line-height: 1.45; }
 
 .fm-rank-hero .fm-rank-note { font-size: 11px; color: var(--fm-navy-soft) !important; margin: 6px 0 0; line-height: 1.4; }
+
+/* 모바일: 입력 오버레이/피드백 시트가 하단 탭바(z150)에 가리지 않도록 위로 */
+.fm-feedback-layer { z-index: 170 !important; }
+.fm-input-overlay { z-index: 170 !important; }

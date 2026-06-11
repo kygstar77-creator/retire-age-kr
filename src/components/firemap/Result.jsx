@@ -3,7 +3,7 @@ import Header from './Header.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, fireStatus, runwayText, scenarioEndAge, survivalPhrase } from '../../firemap-v2/scenarios.js';
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
-import { statsRank } from '../../firemap-v2/rank.js';
+import { statsRank, gradeFromScore } from '../../firemap-v2/rank.js';
 import { submitScore, fetchUserRank } from '../../utils/firemapScoresApi.js';
 import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js';
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
@@ -124,10 +124,30 @@ function TopLevers({ inputs, simulation }) {
       <div className="fm-improve-grid fm-improve-grid-two">
         {topTwo.map(([tag, title, scenario, diff]) => (
           <article className="fm-improve-card" key={title}>
-            <em>{tag}</em><h3>{title}</h3><strong>{leverGain(diff)}</strong><p>{runwayText(scenario)}까지 버텨요</p>
+            <em>{tag}</em><h3>{title}</h3><strong>{leverGain(diff)}</strong><p>{runwayText(scenario)}까지 · {gradeFromScore(scenario.survivalScore)}등급</p>
           </article>
         ))}
       </div>
+    </section>
+  );
+}
+
+function YearlyGrowth({ simulation }) {
+  const rows = simulation.targetResult.rows || [];
+  if (rows.length < 2) return null;
+  const start = rows[0].financialAsset;
+  const y1 = rows[1] ? rows[1].financialAsset - start : 0;
+  const y5 = rows[5] ? rows[5].financialAsset - start : null;
+  return (
+    <section className="fm-card fm-growth">
+      <p className="fm-kicker">내 자산 성장</p>
+      <h2>시간이 지나면 자산은 이렇게 늘어요</h2>
+      <div className="fm-growth-grid">
+        <div><small>1년 뒤</small><b>+{formatWon(Math.max(0, y1))}</b></div>
+        {y5 != null && <div><small>5년 뒤</small><b>+{formatWon(Math.max(0, y5))}</b></div>}
+        <div><small>은퇴 시점</small><b>{formatWon(simulation.retirementFinancialAsset)}</b></div>
+      </div>
+      <p className="fm-growth-note">연 수익률 {simulation.inputs.annualReturnRate}% · 저축 반영 · 조건을 바꾸면 더 빨라져요</p>
     </section>
   );
 }
@@ -179,6 +199,7 @@ export default function Result({ inputs, simulation, onMove, onEditFinalQuestion
         <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>등수 올리기</button>
       </div>
       <ResultHero simulation={simulation} />
+      <YearlyGrowth simulation={simulation} />
       <TopLevers inputs={inputs} simulation={simulation} />
       <NextActions onMove={onMove} />
       <div className="fm-ad">광고</div>

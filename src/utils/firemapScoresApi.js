@@ -51,3 +51,14 @@ export async function fetchUserRank(fireScore) {
     return null;
   }
 }
+
+export async function fetchTopScores(limit = 10) {
+  try {
+    const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=fire_score,age_band,survival_age&order=fire_score.desc,survival_age.desc&limit=${limit}`;
+    const res = await fetch(url, { method: 'GET', headers: headers() });
+    if (!res.ok) return [];
+    return await res.json();
+  } catch {
+    return [];
+  }
+}

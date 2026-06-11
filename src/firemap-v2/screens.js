@@ -13,7 +13,8 @@ export const screens = {
   pension:    { hash: '#pension',    title: '국민연금 조기수령',   type: 'tool', back: 'tools' },
   city:       { hash: '#city',       title: '도시·해외체류',       type: 'tool', back: 'tools' },
   community:  { hash: '#community',  title: '커뮤니티',           type: 'tool', back: 'tools' },
-  ranking:    { hash: '#ranking',    title: 'FIRE 랭킹',          type: 'tool', back: 'result' }
+  ranking:    { hash: '#ranking',    title: 'FIRE 랭킹',          type: 'tool', back: 'result' },
+  cities:     { hash: '#cities',     title: '해외 도시 탐색',      type: 'tool', back: 'tools' }
 };
 
 // 결과 화면 다음 행동 (MVP 메인)
@@ -32,6 +33,7 @@ export const TOOLS = [
   { id: 'foreignTax', tag: '세금',   title: '해외주식 양도세',    desc: '분할 매도 절세 계산' },
   { id: 'dividend',   tag: '배당',   title: '배당 건보료·종합과세', desc: '1,000·2,000만원 경계선' },
   { id: 'pension',    tag: '연금',   title: '국민연금 조기수령',  desc: '당겨 받기 득실' },
+  { id: 'cities',     tag: '해외',   title: '해외 도시 탐색',     desc: '파이어하면 어디서 살까 · 도시별 자산수명' },
   { id: 'city',       tag: '도시',   title: '도시·해외체류',      desc: '생활비로 자산수명 비교' },
   { id: 'community',  tag: '커뮤니티', title: '다른 사람들',       desc: '익명 한마디·후기' }
 ];

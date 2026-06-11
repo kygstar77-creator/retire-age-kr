@@ -1,0 +1,84 @@
+import { useState } from 'react';
+import Header from './Header.jsx';
+import { formatWon } from '../../firemap-v2/formatters.js';
+import { buildScenario, runwayText, deltaText } from '../../firemap-v2/scenarios.js';
+import { sourceLine } from '../../firemap-v2/dataSources.js';
+
+const CITIES = [
+  { city: '치앙마이', country: '태국', flag: '🇹🇭', krw: 2200000, c1: '#f97316', c2: '#fb923c',
+    vibe: '카페와 코워킹, 사원과 산이 공존하는 디지털 노마드의 성지.',
+    food: ['카오소이', '망고 찰밥', '길거리 팟타이'], play: ['올드시티 사원', '주말 야시장', '도이수텝 일출'],
+    visa: '관광·교육·은퇴(O-A) 비자 옵션 · 민간 의료보험 권장 · 건기 11~2월 쾌적' },
+  { city: '다낭', country: '베트남', flag: '🇻🇳', krw: 2300000, c1: '#0ea5e9', c2: '#38bdf8',
+    vibe: '긴 해변과 따뜻한 날씨, 낮은 물가로 시작하기 좋은 해외살이.',
+    food: ['반쎄오', '미꽝', '연유 커피'], play: ['미케 비치', '바나힐', '호이안 야경'],
+    visa: '관광·거주 옵션 · 사보험 필요 · 우기 9~12월 유의' },
+  { city: '우붓(발리)', country: '인도네시아', flag: '🇮🇩', krw: 2300000, c1: '#10b981', c2: '#34d399',
+    vibe: '논밭과 요가, 자연 속 힐링형 파이어 라이프.',
+    food: ['나시고렝', '바비굴링', '코코넛'], play: ['라이스테라스', '요가 리트릿', '폭포 트레킹'],
+    visa: '관광·B211 등 장기 옵션 · 사보험 필요 · 우기 11~3월' },
+  { city: '쿠알라룸푸르', country: '말레이시아', flag: '🇲🇾', krw: 2900000, c1: '#8b5cf6', c2: '#a78bfa',
+    vibe: '대도시 인프라 + 영어 생활권, 의료 수준도 든든한 균형형.',
+    food: ['나시르막', '바쿠테', '두리안'], play: ['페트로나스 트윈타워', '바투 동굴', '루프탑 바'],
+    visa: 'MM2H 등 장기 옵션 · 의료 양호 · 연중 고온다습' },
+  { city: '트빌리시', country: '조지아', flag: '🇬🇪', krw: 2000000, c1: '#ef4444', c2: '#f87171',
+    vibe: '초저비용 + 관대한 체류 조건, 와인과 온천의 숨은 코스트파이어 성지.',
+    food: ['하차푸리', '힌칼리', '조지아 와인'], play: ['올드타운', '와이너리 투어', '카즈베기 설산'],
+    visa: '다수 국적 1년 무비자 체류(확인 필요) · 물가 매우 저렴' },
+  { city: '리스본', country: '포르투갈', flag: '🇵🇹', krw: 3800000, c1: '#0d9488', c2: '#2dd4bf',
+    vibe: '온화한 유럽, 해산물과 골목, 느린 오후의 낭만형 파이어.',
+    food: ['바칼라우', '파스텔 드 나타', '해산물 플레이트'], play: ['트램 28', '신트라 성', '대서양 일몰'],
+    visa: '유럽 장기 비자 옵션(요건 까다로움) · 물가 서유럽 중 낮은 편' },
+  { city: '후쿠오카', country: '일본', flag: '🇯🇵', krw: 3300000, c1: '#3b82f6', c2: '#60a5fa',
+    vibe: '한국과 가깝고 음식·치안 최고, 도시와 자연이 한 시간 거리.',
+    food: ['돈코츠 라멘', '모츠나베', '명란'], play: ['포장마차 거리', '온천 당일치기', '벚꽃 시즌'],
+    visa: '관광·장기 비자 옵션 · 의료·치안 우수 · 가까운 거리' },
+  { city: '제주', country: '한국', flag: '🇰🇷', krw: 2500000, c1: '#22c55e', c2: '#4ade80',
+    vibe: '비자도 언어도 필요 없는 국내 한 달 살기. 바다와 오름.',
+    food: ['고기국수', '갈치조림', '흑돼지'], play: ['올레길', '한라산', '카페 투어'],
+    visa: '국내 · 비자 불필요 · 렌터카 권장' }
+];
+
+export default function CityExplorer({ inputs, simulation, onChange, onMove, onBack }) {
+  const [open, setOpen] = useState(null);
+  const apply = (krw) => {
+    if (onChange) onChange('monthlyLivingCost', krw);
+    if (onMove) onMove('result');
+  };
+  return (
+    <main className="fm-screen fm-scroll">
+      <Header tag="해외 도시" onBack={onBack} />
+      <section className="fm-card fm-text-card">
+        <p className="fm-kicker">파이어하면 어디서 살까</p>
+        <h2>전 세계 파이어 도시 탐색</h2>
+        <p>도시를 골라 "이 생활비로 살면 내 자산이 몇 살까지 버티는지" 바로 계산해 보세요. 파이어 후의 하루를 미리 그려보는 거예요.</p>
+      </section>
+      <div className="fm-ce-grid">
+        {CITIES.map((c, i) => {
+          const sc = buildScenario(inputs, { monthlyLivingCost: c.krw });
+          const isOpen = open === i;
+          return (
+            <article className="fm-ce-card" key={c.city}>
+              <button type="button" className="fm-ce-head" style={{ background: `linear-gradient(135deg, ${c.c1}, ${c.c2})` }} onClick={() => setOpen(isOpen ? null : i)}>
+                <span className="fm-ce-flag">{c.flag}</span>
+                <span className="fm-ce-name"><b>{c.city}</b><em>{c.country}</em></span>
+                <span className="fm-ce-cost">월 {formatWon(c.krw)}</span>
+              </button>
+              <div className="fm-ce-body">
+                <p className="fm-ce-vibe">{c.vibe}</p>
+                <div className="fm-ce-tags">
+                  {c.food.map((f) => <span key={f} className="fm-ce-tag food">🍽 {f}</span>)}
+                  {c.play.map((p) => <span key={p} className="fm-ce-tag play">📍 {p}</span>)}
+                </div>
+                <p className="fm-ce-run">이 생활비면 <b>{runwayText(sc)}</b>까지 버텨요 · {deltaText(simulation, sc)}</p>
+                {isOpen && <p className="fm-ce-visa">{c.visa}</p>}
+                <button type="button" className="fm-ce-cta" onClick={() => apply(c.krw)}>이 도시로 내 결과 보기</button>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+      <p className="fm-ce-note">도시별 금액은 1인 월 생활비 대략 추정치예요. 실제 주거·의료·환율·비자 조건에 따라 달라질 수 있어요. {sourceLine('cityCost')}</p>
+    </main>
+  );
+}

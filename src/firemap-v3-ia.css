@@ -244,3 +244,24 @@
 .fm-nick-row button { padding: 0 16px; border: 0; border-radius: 14px; background: #ff5a00; color: #fff; font-weight: 800; font-size: 14px; cursor: pointer; white-space: nowrap; }
 .fm-nick-row button:disabled { opacity: .5; cursor: default; }
 .fm-nick small { display: block; margin-top: 8px; color: #8b95a1; font-size: 12px; }
+
+/* 해외 도시 탐색기 */
+.fm-ce-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 4px; }
+.fm-ce-card { border: 1px solid #e5e7eb; border-radius: 22px; background: #fff; overflow: hidden; box-shadow: 0 10px 24px rgba(15,23,42,.06); }
+.fm-ce-head { display: flex; align-items: center; gap: 12px; width: 100%; border: 0; padding: 16px 18px; color: #fff; cursor: pointer; text-align: left; }
+.fm-ce-flag { font-size: 34px; line-height: 1; }
+.fm-ce-name { display: flex; flex-direction: column; line-height: 1.2; }
+.fm-ce-name b { font-size: 19px; font-weight: 900; }
+.fm-ce-name em { font-style: normal; font-size: 12px; opacity: .9; font-weight: 700; }
+.fm-ce-cost { margin-left: auto; font-size: 14px; font-weight: 900; background: rgba(255,255,255,.22); padding: 6px 10px; border-radius: 999px; white-space: nowrap; }
+.fm-ce-body { padding: 14px 18px 16px; }
+.fm-ce-vibe { margin: 0 0 10px; color: #374151; font-size: 14px; font-weight: 650; line-height: 1.5; }
+.fm-ce-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+.fm-ce-tag { font-size: 12px; font-weight: 700; padding: 4px 9px; border-radius: 999px; }
+.fm-ce-tag.food { background: #fff7ed; color: #9a3412; }
+.fm-ce-tag.play { background: #eff6ff; color: #1e40af; }
+.fm-ce-run { margin: 8px 0 12px; color: #111827; font-size: 13.5px; font-weight: 750; }
+.fm-ce-run b { color: #ff5a00; }
+.fm-ce-visa { margin: 0 0 12px; color: #6b7280; font-size: 12.5px; line-height: 1.5; background: #f8fafc; border-radius: 12px; padding: 10px 12px; }
+.fm-ce-cta { width: 100%; min-height: 48px; border: 0; border-radius: 14px; background: #1e2859; color: #fff; font-size: 15px; font-weight: 800; cursor: pointer; }
+.fm-ce-note { margin: 14px 2px 0; color: #8b95a1; font-size: 12px; line-height: 1.5; }

@@ -13,6 +13,7 @@ import DependentCheck from './firemap/DependentCheck.jsx';
 import { ForeignStockTaxCard, DividendCard, PensionEarlyClaimCard } from './firemap/TaxPensionModules.jsx';
 import FloatingFeedback from './firemap/FloatingFeedback.jsx';
 import Leaderboard from './firemap/Leaderboard.jsx';
+import CityExplorer from './firemap/CityExplorer.jsx';
 import Consent from './firemap/Consent.jsx';
 import { buildSimulation, defaultInputs } from '../utils/retirementSimulator.js';
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
@@ -107,6 +108,7 @@ export default function FireMapMVP() {
   else if (screen === 'share') view = <Share inputs={inputs} simulation={simulation} onBack={backOf('share')} />;
   else if (screen === 'community') view = <Community onBack={backOf('community')} />;
   else if (screen === 'ranking') view = <Leaderboard simulation={simulation} onBack={backOf('ranking')} onMove={setScreen} />;
+  else if (screen === 'cities') view = <CityExplorer inputs={inputs} simulation={simulation} onChange={onChange} onMove={setScreen} onBack={backOf('cities')} />;
   else if (screen === 'dependent') view = tool('dependent', <DependentCheck onApply={applyPatch} />);
   else if (screen === 'foreignTax') view = tool('foreignTax', <ForeignStockTaxCard />);
   else if (screen === 'dividend') view = tool('dividend', <DividendCard />);

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Header from './Header.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, fireStatus, runwayText, scenarioEndAge, survivalPhrase } from '../../firemap-v2/scenarios.js';
-import { monteCarloSuccess } from '../../utils/retirementSimulator.js';
+import { monteCarloSuccess, simulateRetirement } from '../../utils/retirementSimulator.js';
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
 import { statsRank, gradeFromScore } from '../../firemap-v2/rank.js';
 import { submitScore, fetchUserRank } from '../../utils/firemapScoresApi.js';
@@ -137,39 +137,62 @@ function leverGain(diff) {
   return `−${Math.abs(diff)}년`;
 }
 
+function solveMin(test, hi, round) {
+  if (test(0)) return 0;
+  if (!test(hi)) return null;
+  let lo = 0, h = hi;
+  for (let i = 0; i < 22; i += 1) { const m = (lo + h) / 2; if (test(m)) h = m; else lo = m; }
+  return Math.ceil(h / round) * round;
+}
+
 function TopLevers({ inputs, simulation, onChange }) {
-  const baseCost = Number(inputs.monthlyLivingCost || 0);
-  const lowerCostValue = Math.max(1000000, baseCost >= 2500000 ? baseCost - 1000000 : Math.round(baseCost * 0.8 / 100000) * 100000);
-  const baseGrade = gradeFromScore(simulation.survivalScore);
-  const baseAge = scenarioEndAge(simulation);
-  const defs = [
-    { tag: '생활비', title: `생활비 ${formatWon(lowerCostValue)}원으로`, patch: { monthlyLivingCost: lowerCostValue } },
-    { tag: '저축액', title: '월 100만 더 저축', patch: { monthlyInvestment: inputs.monthlyInvestment + 1000000 } },
-    { tag: '현금흐름', title: '퇴사 후 월 100만 부업', patch: { partTimeIncomeAfterRetirement: inputs.partTimeIncomeAfterRetirement + 1000000 } },
-    { tag: '퇴사시점', title: '1년 더 일하기', patch: { targetRetirementAge: inputs.targetRetirementAge + 1 } },
-    { tag: '수익률', title: '연 수익률 +1%p', patch: { annualReturnRate: inputs.annualReturnRate + 1 } }
-  ];
-  const rows = defs
-    .map((d) => { const sc = buildScenario(inputs, d.patch); return { ...d, gain: scenarioEndAge(sc) - baseAge, grade: gradeFromScore(sc.survivalScore) }; })
-    .sort((a, b) => b.gain - a.gain)
-    .slice(0, 4);
+  const until = simulation.inputs.simulationUntilAge;
+  const ok = (patch) => !simulateRetirement({ ...inputs, ...patch }).depletionAge;
   const apply = (patch) => {
     if (onChange) Object.entries(patch).forEach(([k, v]) => onChange(k, v));
     try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch { /* ignore */ }
   };
+  const baseOk = ok({});
+
+  if (baseOk) {
+    return (
+      <section className="fm-card fm-goal fm-goal-done">
+        <p className="fm-kicker">목표 달성</p>
+        <h2>이미 {until}세까지 버티는 계획이에요 🎉</h2>
+        <p className="fm-goal-sub">{simulation.earliestRetirementAge ? `가장 빠르면 ${simulation.earliestRetirementAge}세에도 은퇴할 수 있어요. 더 당겨볼까요?` : '여유가 있어요. 조건을 더 공격적으로 바꿔보세요.'}</p>
+        <button type="button" className="fm-ce-cta" onClick={() => onChange && (window.location.hash = '#experiment')}>조건 바꿔 더 당겨보기</button>
+      </section>
+    );
+  }
+
+  const lc = Number(inputs.monthlyLivingCost) || 0;
+  const items = [
+    { tag: '저축', solve: solveMin((d) => ok({ monthlyInvestment: inputs.monthlyInvestment + d }), 30000000, 100000),
+      label: (d) => `월 ${formatWon(d)} 더 저축`, patch: (d) => ({ monthlyInvestment: inputs.monthlyInvestment + d }) },
+    { tag: '생활비', solve: solveMin((d) => ok({ monthlyLivingCost: Math.max(800000, lc - d) }), Math.max(0, lc - 800000), 100000),
+      label: (d) => `생활비 월 ${formatWon(d)} 줄이기`, patch: (d) => ({ monthlyLivingCost: Math.max(800000, lc - d) }) },
+    { tag: '근무', solve: solveMin((d) => ok({ targetRetirementAge: inputs.targetRetirementAge + d }), 15, 1),
+      label: (d) => `${d}년 더 일하기 (${inputs.targetRetirementAge + d}세)`, patch: (d) => ({ targetRetirementAge: inputs.targetRetirementAge + d }) },
+    { tag: '부업', solve: solveMin((d) => ok({ partTimeIncomeAfterRetirement: inputs.partTimeIncomeAfterRetirement + d }), 10000000, 100000),
+      label: (d) => `퇴사 후 월 ${formatWon(d)} 벌기`, patch: (d) => ({ partTimeIncomeAfterRetirement: inputs.partTimeIncomeAfterRetirement + d }) },
+    { tag: '수익률', solve: solveMin((d) => ok({ annualReturnRate: inputs.annualReturnRate + d }), 15, 0.5),
+      label: (d) => `수익률 +${d}%p (연 ${(inputs.annualReturnRate + d).toFixed(1)}%)`, patch: (d) => ({ annualReturnRate: inputs.annualReturnRate + d }) }
+  ];
   return (
-    <section>
-      <h2 className="fm-section-title">순위·자산수명 올리는 법</h2>
-      <p className="fm-section-sub">탭하면 내 결과에 바로 적용돼요</p>
-      <div className="fm-improve-grid fm-improve-grid-two">
-        {rows.map((d) => (
-          <article className="fm-improve-card" key={d.tag}>
-            <em>{d.tag}</em><h3>{d.title}</h3><strong>{leverGain(d.gain)}</strong>
-            <p>{baseGrade === d.grade ? `${d.grade}등급 유지` : `${baseGrade} → ${d.grade}등급`}</p>
-            <button type="button" className="fm-lever-apply" onClick={() => apply(d.patch)}>이대로 적용</button>
-          </article>
+    <section className="fm-card fm-goal">
+      <p className="fm-kicker">목표 달성 플랜</p>
+      <h2>{inputs.targetRetirementAge}세 퇴사를 성공시키려면?</h2>
+      <p className="fm-goal-sub">{until}세까지 자산이 버티게 하는 방법이에요. <b>아래 중 하나만</b> 해도 목표 달성!</p>
+      <ul className="fm-goal-list">
+        {items.map((it) => (
+          <li key={it.tag} className={`fm-goal-item${it.solve === null ? ' off' : ''}`}>
+            <span className="fm-goal-tag">{it.tag}</span>
+            <span className="fm-goal-need">{it.solve === null ? '이 방법만으론 어려워요' : it.label(it.solve)}</span>
+            {it.solve !== null && <button type="button" className="fm-goal-apply" onClick={() => apply(it.patch(it.solve))}>적용</button>}
+          </li>
         ))}
-      </div>
+      </ul>
+      <p className="fm-goal-note">각 값은 목표 달성에 필요한 최소치예요. 수익률은 높이면 위험도 커지니 참고만 하세요.</p>
     </section>
   );
 }

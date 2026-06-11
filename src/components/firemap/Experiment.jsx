@@ -6,6 +6,7 @@ import AssetCompareChart from './AssetCompareChart.jsx';
 import { investmentScenarios } from '../../firemap-v2/data.js';
 import { sourceLine } from '../../firemap-v2/dataSources.js';
 import { buildChartRows, buildScenario, runwayText, scenarioEndAge } from '../../firemap-v2/scenarios.js';
+import { monteCarloSuccess } from '../../utils/retirementSimulator.js';
 
 export default function Experiment({ inputs, onChange, simulation, onBack }) {
   const [improvedCost, setImprovedCost] = useState(Math.max(1500000, Math.min(3000000, inputs.monthlyLivingCost - 1000000)));
@@ -13,6 +14,10 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
   const yearsToRetire = Math.max(1, inputs.targetRetirementAge - inputs.currentAge);
   const savingYearsValue = inputs.savingYears > 0 ? Math.min(inputs.savingYears, yearsToRetire) : yearsToRetire;
   const sp500Baseline = useMemo(() => buildScenario(inputs, { annualReturnRate: 8 }), [inputs]);
+  const impacts = useMemo(() => investmentScenarios.map((sc) => {
+    const s = buildScenario(inputs, { annualReturnRate: sc.annualReturnRate });
+    return { ...sc, runway: runwayText(s), success: monteCarloSuccess({ ...inputs, annualReturnRate: sc.annualReturnRate }, { paths: 200 }) };
+  }), [inputs]);
   const endAgeGap = scenarioEndAge(simulation) - scenarioEndAge(sp500Baseline);
   const gapText = endAgeGap > 0 ? `S&P500형보다 ${endAgeGap}년 길게` : endAgeGap < 0 ? `S&P500형보다 ${Math.abs(endAgeGap)}년 짧게` : 'S&P500형과 비슷하게';
   const { chart } = buildChartRows(simulation, lowerCost, inputs);
@@ -61,15 +66,18 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
       </section>
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">수익률 벤치마크</p><h2>예적금 대비 어디에 두느냐의 차이</h2>
-        <p>아래는 자산을 어디에 두느냐의 장기 수익률 가정이에요. 가정을 높일수록 위 차트에서 자산수명·FIRE 시점이 당겨져요. 특정 상품 추천이 아니라 일반 지수 가정입니다.</p>
+        <p>같은 자산이라도 어디에 두느냐(수익률 가정)에 따라 내 자산수명과 성공확률이 이렇게 달라져요. 가정이 높을수록 기대수익도, 변동성(위험)도 커집니다.</p>
         <div className="fm-bench">
-          {investmentScenarios.map((sc) => (
-            <div className="fm-bench-row" key={sc.key}>
-              <b>{sc.label}</b><span>연 {sc.annualReturnRate}%</span><em>{sc.copy}</em>
+          {impacts.map((sc) => (
+            <div className="fm-bench-row2" key={sc.key}>
+              <div className="fm-bench-head"><b>{sc.label}</b><span>연 {sc.annualReturnRate}%</span></div>
+              <div className="fm-bench-metrics"><span>자산수명 <b>{sc.runway}</b></span><span>성공확률 <b>{sc.success}%</b></span></div>
+              <div className="fm-bench-bar"><i style={{ width: `${sc.success}%` }} /></div>
+              <em>{sc.copy}</em>
             </div>
           ))}
         </div>
-        <small>예적금형(보수)부터 지수형(공격)까지 폭을 비교해 보세요. {sourceLine('returnPresets')}</small>
+        <small>성공확률은 수익률을 변동성과 함께 200회 무작위 시뮬한 값이에요. 특정 상품 추천이 아닌 일반 지수 가정입니다. {sourceLine('returnPresets')}</small>
       </section>
       <nav className="fm-bottom-nav">
         <button type="button" onClick={onBack}>취소</button>

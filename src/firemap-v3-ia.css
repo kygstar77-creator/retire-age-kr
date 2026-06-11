@@ -364,3 +364,15 @@
 .fm-mc-mid { border-color: #fde68a !important; } .fm-mc-mid .fm-mc-row b { color: #d97706; }
 .fm-mc-low { border-color: #fecaca !important; } .fm-mc-low .fm-mc-row b { color: #dc2626; }
 .fm-mc-note { color: #6b7280; font-size: 12.5px; line-height: 1.5; margin: 0; }
+
+/* 수익률 가정별 영향 비교 */
+.fm-bench-row2 { border: 1px solid #e5e7eb; border-radius: 14px; background: #fff; padding: 12px 14px; margin-bottom: 8px; }
+.fm-bench-head { display: flex; align-items: baseline; gap: 8px; }
+.fm-bench-head b { font-size: 15px; font-weight: 900; color: #111827; }
+.fm-bench-head span { font-size: 12px; font-weight: 800; color: #6b7280; }
+.fm-bench-metrics { display: flex; gap: 16px; margin: 6px 0; }
+.fm-bench-metrics span { font-size: 13px; color: #6b7280; font-weight: 700; }
+.fm-bench-metrics b { color: #ff5a00; font-weight: 900; }
+.fm-bench-bar { height: 6px; border-radius: 999px; background: #f1f5f9; overflow: hidden; }
+.fm-bench-bar i { display: block; height: 100%; background: #ff5a00; }
+.fm-bench-row2 em { display: block; margin-top: 6px; font-style: normal; font-size: 12px; color: #8b95a1; font-weight: 600; }

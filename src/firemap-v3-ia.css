@@ -265,3 +265,26 @@
 .fm-ce-visa { margin: 0 0 12px; color: #6b7280; font-size: 12.5px; line-height: 1.5; background: #f8fafc; border-radius: 12px; padding: 10px 12px; }
 .fm-ce-cta { width: 100%; min-height: 48px; border: 0; border-radius: 14px; background: #1e2859; color: #fff; font-size: 15px; font-weight: 800; cursor: pointer; }
 .fm-ce-note { margin: 14px 2px 0; color: #8b95a1; font-size: 12px; line-height: 1.5; }
+
+/* 배당 생활 계산기 */
+.fm-dl-field { margin: 6px 0 16px; }
+.fm-dl-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.fm-dl-head span { font-size: 14px; font-weight: 700; color: #374151; }
+.fm-dl-head b { font-size: 17px; font-weight: 900; color: #ff5a00; }
+.fm-dl-field input[type=range] { width: 100%; }
+.fm-dl-out { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 14px 0 10px; }
+.fm-dl-out div { border: 1px solid #e5e7eb; border-radius: 16px; background: #fff; padding: 14px; text-align: center; }
+.fm-dl-out div.hi { background: #fff7ed; border-color: #fed7aa; }
+.fm-dl-out small { display: block; color: #6b7280; font-size: 12px; font-weight: 700; }
+.fm-dl-out b { display: block; margin-top: 6px; color: #111827; font-size: 20px; font-weight: 900; letter-spacing: -.04em; }
+.fm-dl-cover { margin: 6px 0 12px; color: #374151; font-size: 14px; font-weight: 700; }
+.fm-dl-cover b { color: #ff5a00; }
+.fm-dl-warn { border-radius: 14px; padding: 11px 13px; font-size: 13px; font-weight: 700; line-height: 1.5; }
+.fm-dl-warn.ok { background: #ecfdf5; color: #065f46; }
+.fm-dl-warn.caution { background: #fff7ed; color: #9a3412; }
+.fm-dl-warn.no { background: #fef2f2; color: #991b1b; }
+.fm-dl-need { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 12px; }
+.fm-dl-need div { border: 1px solid #e5e7eb; border-radius: 14px; padding: 12px; text-align: center; }
+.fm-dl-need small { display: block; color: #6b7280; font-size: 12px; font-weight: 700; }
+.fm-dl-need b { display: block; margin-top: 4px; color: #1e2859; font-size: 15px; font-weight: 900; letter-spacing: -.04em; }
+.fm-dl-note { margin: 14px 2px 0; color: #8b95a1; font-size: 12px; line-height: 1.5; }

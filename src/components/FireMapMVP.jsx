@@ -14,6 +14,7 @@ import { ForeignStockTaxCard, DividendCard, PensionEarlyClaimCard } from './fire
 import FloatingFeedback from './firemap/FloatingFeedback.jsx';
 import Leaderboard from './firemap/Leaderboard.jsx';
 import CityExplorer from './firemap/CityExplorer.jsx';
+import DividendLifeCalc from './firemap/DividendLifeCalc.jsx';
 import Consent from './firemap/Consent.jsx';
 import { buildSimulation, defaultInputs } from '../utils/retirementSimulator.js';
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
@@ -111,7 +112,7 @@ export default function FireMapMVP() {
   else if (screen === 'cities') view = <CityExplorer inputs={inputs} simulation={simulation} onChange={onChange} onMove={setScreen} onBack={backOf('cities')} />;
   else if (screen === 'dependent') view = tool('dependent', <DependentCheck onApply={applyPatch} />);
   else if (screen === 'foreignTax') view = tool('foreignTax', <ForeignStockTaxCard />);
-  else if (screen === 'dividend') view = tool('dividend', <DividendCard />);
+  else if (screen === 'dividend') view = <DividendLifeCalc inputs={inputs} onChange={onChange} onMove={setScreen} onBack={backOf('dividend')} />;
   else if (screen === 'pension') view = tool('pension', <PensionEarlyClaimCard inputs={inputs} onApply={applyPatch} />);
   else view = <Result inputs={inputs} simulation={simulation} onMove={setScreen} onEditFinalQuestion={goFinalQuestion} />;
 

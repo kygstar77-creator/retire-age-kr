@@ -346,3 +346,12 @@
 
 /* 레버 적용 버튼 */
 .fm-improve-card .fm-lever-apply { width: 100%; margin-top: 10px; min-height: 38px; border: 0; border-radius: 12px; background: #1e2859; color: #fff; font-size: 13px; font-weight: 800; cursor: pointer; }
+
+/* 전세계 도시 지도 */
+.fm-wm { margin: 0 0 14px; }
+.fm-wm svg { width: 100%; height: auto; display: block; border-radius: 12px; }
+.fm-wm-pin circle { fill: #ff5a00; stroke: #fff; stroke-width: 1; transition: r .15s ease; }
+.fm-wm-pin.on circle { fill: #1e2859; }
+.fm-wm-lbl { font-size: 9px; font-weight: 800; fill: #1e2859; }
+.fm-wm-hint { margin: 6px 0 0; color: #8b95a1; font-size: 12px; text-align: center; }
+.fm-ce-card.active { outline: 2px solid #ff5a00; outline-offset: 2px; }

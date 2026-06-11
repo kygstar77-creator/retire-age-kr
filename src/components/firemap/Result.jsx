@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Header from './Header.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, fireStatus, runwayText, scenarioEndAge, survivalPhrase } from '../../firemap-v2/scenarios.js';
+import { monteCarloSuccess } from '../../utils/retirementSimulator.js';
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
 import { statsRank, gradeFromScore } from '../../firemap-v2/rank.js';
 import { submitScore, fetchUserRank } from '../../utils/firemapScoresApi.js';
@@ -94,6 +95,19 @@ function ResultHero({ simulation }) {
         <div className="fm-score-meter" aria-label={`FIRE 점수 ${simulation.survivalScore}점`}><i style={{ width: `${Math.max(8, simulation.survivalScore)}%` }} /></div>
         <p>높을수록 퇴사 후 자산 여유가 커요.</p>
       </div>
+    </section>
+  );
+}
+
+function SuccessProbability({ simulation }) {
+  const pct = useMemo(() => monteCarloSuccess(simulation.inputs), [simulation]);
+  const level = pct >= 80 ? 'ok' : pct >= 50 ? 'mid' : 'low';
+  const msg = pct >= 80 ? '시장이 출렁여도 안정적이에요' : pct >= 50 ? '변동성에 다소 취약해요' : '시장이 나쁘면 부족할 수 있어요';
+  return (
+    <section className={`fm-card fm-mc fm-mc-${level}`}>
+      <p className="fm-kicker">성공 확률 · 변동성 반영</p>
+      <div className="fm-mc-row"><b>{pct}%</b><span>{msg}</span></div>
+      <p className="fm-mc-note">수익률을 고정이 아니라 매년 평균±변동성으로 500번 무작위 시뮬해, {simulation.inputs.simulationUntilAge}세까지 자산이 버틸 확률을 계산했어요.</p>
     </section>
   );
 }
@@ -335,6 +349,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
         <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>등수 올리기</button>
       </div>
       <ResultHero simulation={simulation} />
+      <SuccessProbability simulation={simulation} />
       <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />
       <YearlyGrowth simulation={simulation} />
       <Roadmap simulation={simulation} />

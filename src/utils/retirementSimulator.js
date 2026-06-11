@@ -32,7 +32,7 @@ const yearly = (monthly) => Number(monthly || 0) * 12;
 const enabled = (value) => Number(value || 0) === 1;
 const clamp = (value, min, max) => Math.max(min, Math.min(max, Number(value || 0)));
 
-export function simulateRetirement(inputs, retirementAge = Number(inputs.targetRetirementAge)) {
+export function simulateRetirement(inputs, retirementAge = Number(inputs.targetRetirementAge), opts = {}) {
   const data = normalizeInputs(inputs);
   const annualReturn = toRate(data.annualReturnRate);
   const inflation = toRate(data.inflationRate);
@@ -62,7 +62,8 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
     const investmentAdded = stillSaving ? yearly(data.monthlyInvestment) * Math.pow(1 + salaryGrowth, yearsFromStart) : 0;
     const assetAfterCashFlow = financialAsset + investmentAdded - withdrawal;
     // 첫해(yearsFromStart 0)는 수익률·저축 미적용 — 시작 자산을 그대로 표시(직관성)
-    const investmentReturn = (yearsFromStart >= 1 && assetAfterCashFlow > 0) ? assetAfterCashFlow * annualReturn : 0;
+    const yearReturn = opts.returnFn ? opts.returnFn(yearsFromStart) : annualReturn;
+    const investmentReturn = (yearsFromStart >= 1 && assetAfterCashFlow > 0) ? assetAfterCashFlow * yearReturn : 0;
 
     financialAsset = assetAfterCashFlow + investmentReturn;
 
@@ -273,4 +274,25 @@ function getReferenceStatus({ targetResult, safeWithdrawalRate, simulationUntilA
   }
   if (safeWithdrawalRate >= 8) return 'caution';
   return 'stable';
+}
+
+
+function gaussian() {
+  let u = 0, v = 0;
+  while (u === 0) u = Math.random();
+  while (v === 0) v = Math.random();
+  return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+}
+
+// 수익률을 평균±변동성으로 무작위 추출해 여러 경로를 돌려, 목표 나이까지 버틸 확률(%)을 계산.
+export function monteCarloSuccess(inputs, { paths = 500, volatility = 0.14 } = {}) {
+  const data = normalizeInputs(inputs);
+  const mean = toRate(data.annualReturnRate);
+  const until = data.simulationUntilAge;
+  let success = 0;
+  for (let p = 0; p < paths; p += 1) {
+    const r = simulateRetirement(data, data.targetRetirementAge, { returnFn: () => mean + volatility * gaussian() });
+    if (!r.depletionAge || r.depletionAge > until) success += 1;
+  }
+  return Math.round((success / paths) * 100);
 }

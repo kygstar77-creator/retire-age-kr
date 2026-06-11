@@ -355,3 +355,12 @@
 .fm-wm-lbl { font-size: 9px; font-weight: 800; fill: #1e2859; }
 .fm-wm-hint { margin: 6px 0 0; color: #8b95a1; font-size: 12px; text-align: center; }
 .fm-ce-card.active { outline: 2px solid #ff5a00; outline-offset: 2px; }
+
+/* 몬테카를로 성공 확률 */
+.fm-mc-row { display: flex; align-items: baseline; gap: 12px; margin: 8px 0 6px; }
+.fm-mc-row b { font-size: 40px; font-weight: 950; letter-spacing: -.04em; }
+.fm-mc-row span { font-size: 14px; font-weight: 800; }
+.fm-mc-ok { border-color: #a7f3d0 !important; } .fm-mc-ok .fm-mc-row b { color: #059669; }
+.fm-mc-mid { border-color: #fde68a !important; } .fm-mc-mid .fm-mc-row b { color: #d97706; }
+.fm-mc-low { border-color: #fecaca !important; } .fm-mc-low .fm-mc-row b { color: #dc2626; }
+.fm-mc-note { color: #6b7280; font-size: 12.5px; line-height: 1.5; margin: 0; }

@@ -305,3 +305,12 @@
 .fm-stats-grid div { border: 1px solid #eef0f4; border-radius: 14px; background: #f8fafc; padding: 14px; text-align: center; }
 .fm-stats-grid small { display: block; color: #6b7280; font-size: 12px; font-weight: 700; }
 .fm-stats-grid b { display: block; margin-top: 4px; color: #1e2859; font-size: 20px; font-weight: 900; letter-spacing: -.04em; }
+
+/* 원탭 투표 */
+.fm-poll-list { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+.fm-poll-opt { position: relative; overflow: hidden; display: flex; align-items: center; width: 100%; min-height: 48px; padding: 0 14px; border: 1px solid #e5e7eb; border-radius: 14px; background: #fff; cursor: pointer; text-align: left; }
+.fm-poll-opt.voted { border-color: #ff5a00; }
+.fm-poll-bar { position: absolute; left: 0; top: 0; height: 100%; background: #fff2e8; transition: width .4s ease; }
+.fm-poll-label { position: relative; z-index: 1; font-size: 15px; font-weight: 700; color: #111827; }
+.fm-poll-pct { position: relative; z-index: 1; margin-left: auto; font-size: 14px; font-weight: 900; color: #ff5a00; }
+.fm-poll-total { margin: 10px 0 0; color: #6b7280; font-size: 13px; font-weight: 700; text-align: center; }

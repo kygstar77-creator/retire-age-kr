@@ -109,3 +109,37 @@ export async function fetchAggregates() {
     return null;
   }
 }
+
+const POLL_TABLE = 'firemap_poll_votes';
+
+export async function votePoll(pollKey, choice) {
+  const cid = deviceId();
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/${POLL_TABLE}?on_conflict=poll_key,client_id`, {
+      method: 'POST',
+      headers: headers({ prefer: 'return=minimal,resolution=merge-duplicates' }),
+      body: JSON.stringify({ poll_key: pollKey, choice, client_id: cid })
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
+export async function fetchPollResults(pollKey, choices) {
+  try {
+    const opts = { method: 'GET', headers: headers({ prefer: 'count=exact', range: '0-0' }) };
+    const counts = {};
+    let total = 0;
+    await Promise.all(choices.map(async (c) => {
+      const url = `${SUPABASE_URL}/rest/v1/${POLL_TABLE}?select=id&poll_key=eq.${encodeURIComponent(pollKey)}&choice=eq.${encodeURIComponent(c)}`;
+      const res = await fetch(url, opts);
+      const n = res.ok ? countFromRange(res) : 0;
+      counts[c] = n;
+      total += n;
+    }));
+    return { counts, total };
+  } catch {
+    return null;
+  }
+}

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { fetchTopScores, fetchUserRank, submitScore, fetchAggregates } from '../../utils/firemapScoresApi.js';
+import Poll from './Poll.jsx';
 
 const medal = (i) => (i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : String(i + 1));
 const readNick = () => { try { return localStorage.getItem('fm_nickname') || ''; } catch { return ''; } };
@@ -70,6 +71,8 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
           </div>
         </section>
       )}
+
+      <Poll />
 
       <section className="fm-card fm-nick">
         <label htmlFor="fm-nick-input">내 닉네임 (랭킹에 표시)</label>

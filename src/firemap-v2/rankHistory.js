@@ -9,7 +9,7 @@ export function saveRankSnapshot(snap) {
   try {
     const list = getHistory();
     const date = new Date().toISOString().slice(0, 10);
-    const entry = { percentile: snap.percentile, grade: snap.grade, score: snap.score, date };
+    const entry = { percentile: snap.percentile, grade: snap.grade, score: snap.score, earliest: snap.earliest, date };
     if (list.length && list[list.length - 1].date === date) list[list.length - 1] = entry;
     else list.push(entry);
     localStorage.setItem(KEY, JSON.stringify(list.slice(-12)));

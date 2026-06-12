@@ -1,5 +1,5 @@
 import Header from './Header.jsx';
-import { getLatestRank, getRankChange } from '../../firemap-v2/rankHistory.js';
+import { getLatestRank } from '../../firemap-v2/rankHistory.js';
 import DailyFire from './DailyFire.jsx';
 
 export default function Home({ onStart, onMove }) {
@@ -9,17 +9,12 @@ export default function Home({ onStart, onMove }) {
       {(() => {
         const latest = getLatestRank();
         if (!latest) return null;
-        const change = getRankChange();
         const goResult = () => { window.location.hash = '#result'; };
         return (
           <button type="button" className="fm-recent-rank" onClick={goResult}>
-            <span className="fm-recent-label">내 최근 등수</span>
-            <span className="fm-recent-main">또래 상위 {latest.percentile}% · {latest.grade}등급</span>
-            <span className="fm-recent-sub">
-              {change && change.deltaPercentile !== 0
-                ? `지난번보다 ${Math.abs(change.deltaPercentile)}%p ${change.deltaPercentile > 0 ? '상승 ▲' : '하락 ▼'} · 다시 확인하기 ›`
-                : '다시 확인하기 ›'}
-            </span>
+            <span className="fm-recent-label">내 최근 계산</span>
+            <span className="fm-recent-main">{latest.earliest ? `${latest.earliest}세에 퇴사 가능` : '내 퇴사 가능 나이'}</span>
+            <span className="fm-recent-sub">지난 계산 다시 보기 ›</span>
           </button>
         );
       })()}

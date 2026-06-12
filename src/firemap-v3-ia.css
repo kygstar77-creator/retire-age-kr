@@ -502,3 +502,7 @@
 .fm-save-hero-navy .fm-fp-cap { color: #fed7aa; }
 .fm-save-hero-navy .fm-fp-cap b { color: #ffb27a; }
 .fm-save-hero-navy .fm-fp-flag { color: #fff; }
+
+/* 결과 히어로 → 전체 랭킹 링크 */
+.fm-result-hero-v4 .fm-hero-ranklink { display: inline-block; margin-top: 12px; padding: 8px 14px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; background: rgba(255,255,255,.08); color: #fff; font-size: 13px; font-weight: 800; cursor: pointer; }
+.fm-result-hero-v4 .fm-hero-ranklink:active { background: rgba(255,255,255,.16); }

@@ -53,9 +53,8 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
         <p className="fm-rank-label">내 순위 · {scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} · 가장 빨리 은퇴 순</p>
         <div className="fm-rank-top">
           <span className="fm-rank-pct">{me ? `${me.position.toLocaleString()}위` : '집계 중…'}</span>
-          <span className="fm-rank-badge">{base.grade}등급</span>
         </div>
-        {me && <p className="fm-rank-line">{scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} {me.total.toLocaleString()}명 중 · {earliest ? `${earliest}세 은퇴 가능` : '아직 은퇴 어려움'} · {score}점</p>}
+        {me && <p className="fm-rank-line">{scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} {me.total.toLocaleString()}명 중 · {earliest ? `${earliest}세 은퇴 가능` : '아직 은퇴 어려움'}</p>}
         {me && (me.position > 1
           ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 더 일찍 은퇴 가능하면 순위가 올라가요</p>
           : <p className="fm-rank-climb">지금 전체 1등이에요! 가장 빨리 은퇴 가능한 사람</p>)}
@@ -73,7 +72,6 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
           <div className="fm-stats-grid">
             <div><small>함께 계산</small><b>{agg.total.toLocaleString()}명</b></div>
             {agg.avgEarliest != null && <div><small>평균 은퇴 가능</small><b>{agg.avgEarliest}세</b></div>}
-            {agg.avgScore != null && <div><small>평균 자산수명</small><b>{agg.avgScore}점</b></div>}
             {agg.topBand != null && <div><small>가장 많은 연령대</small><b>{agg.topBand}대</b></div>}
           </div>
         </section>

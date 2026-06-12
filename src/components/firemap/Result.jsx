@@ -22,7 +22,7 @@ function ResultHeroV2({ simulation }) {
 
   useEffect(() => {
     let alive = true;
-    saveRankSnapshot({ percentile: base.percentile, grade: base.grade, score });
+    saveRankSnapshot({ percentile: base.percentile, grade: base.grade, score, earliest });
     (async () => {
       try {
         const key = `fm_score_sent_${score}`;
@@ -66,6 +66,7 @@ function ResultHeroV2({ simulation }) {
       {live && (live.position > 1
         ? <p className="fm-rank-climb">1등까지 <b>{(live.position - 1).toLocaleString()}명</b> · 조건 바꾸면 등수가 올라가요</p>
         : <p className="fm-rank-climb">지금 전체 1등이에요!</p>)}
+      <button type="button" className="fm-hero-ranklink" onClick={() => { window.location.hash = '#ranking'; }}>전체 랭킹 보기 ›</button>
       <div className="fm-hero-mini">
         <span>목표 퇴사 <b>{target}세</b></span>
         <span>자산 버티는 나이 <b>{phrase.runway}</b></span>

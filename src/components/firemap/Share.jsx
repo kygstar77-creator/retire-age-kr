@@ -37,6 +37,7 @@ async function makeShareImage(inputs, simulation) {
   const ctx = canvas.getContext('2d');
   const rank = statsRank(simulation);
   const phrase = survivalPhrase(simulation);
+  const earliest = simulation.earliestRetirementAge;
   const NAVY = '#1e2859', SOFT = '#b6c0ee', WHITE = '#ffffff', GREEN = '#86e0a0', ORANGE = '#ff5a00';
   const FONT = 'system-ui, -apple-system, "Apple SD Gothic Neo", sans-serif';
   const PAD = 120;
@@ -67,28 +68,24 @@ async function makeShareImage(inputs, simulation) {
 
   // 라벨
   ctx.fillStyle = SOFT; ctx.font = `600 36px ${FONT}`;
-  ctx.fillText(`내 FIRE 자생력 · ${rank.ageBandLabel} 또래 기준`, PAD, 308);
+  ctx.fillText(`내 퇴사 가능 나이 · ${rank.ageBandLabel} 또래 기준`, PAD, 308);
 
-  // 히어로 백분위 + 등급 배지 (RankHero처럼 한 줄, 세로 중앙)
-  const heroText = `상위 ${rank.percentile}%`;
-  ctx.fillStyle = WHITE; ctx.font = `800 130px ${FONT}`;
+  // 히어로 — 퇴사 가능 나이
+  const heroText = earliest ? `${earliest}세 퇴사 가능` : '곧 퇴사 가능';
+  ctx.fillStyle = WHITE; ctx.font = `800 100px ${FONT}`;
   ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
-  ctx.fillText(heroText, PAD, 462);
-  const heroW = ctx.measureText(heroText).width;
-  const badgeH = 80;
-  const badgeCenter = 462 - 130 * 0.35;
-  pill(PAD + heroW + 40, badgeCenter - badgeH / 2, badgeH, `${rank.grade}등급`, `800 42px ${FONT}`, WHITE, NAVY);
+  ctx.fillText(heroText, PAD, 452);
 
-  // 결과 문구 + 점수
+  // 결과 문구
   ctx.fillStyle = WHITE; ctx.font = `800 54px ${FONT}`;
-  ctx.fillText(phrase.short, PAD, 730);
+  ctx.fillText(phrase.short, PAD, 720);
   ctx.fillStyle = SOFT; ctx.font = `600 34px ${FONT}`;
-  ctx.fillText(`자산수명 점수 ${simulation.survivalScore}/100`, PAD, 794);
+  ctx.fillText('지금 계획 기준 · 또래 중 내 등수도 확인', PAD, 786);
   ctx.fillStyle = GREEN; ctx.font = `600 30px ${FONT}`;
-  ctx.fillText('전국 또래와 비교한 내 FIRE 등수', PAD, 856);
+  ctx.fillText('전국 또래와 비교한 내 퇴사 나이', PAD, 850);
 
   // CTA (긍정 문구 · 중앙정렬)
-  pill(PAD, 952, 100, '나도 내 FIRE 등수 확인하기', `800 42px ${FONT}`, WHITE, NAVY);
+  pill(PAD, 952, 100, '나도 내 퇴사 나이 확인하기', `800 42px ${FONT}`, WHITE, NAVY);
 
   // URL
   ctx.fillStyle = SOFT; ctx.font = `700 30px ${FONT}`;
@@ -101,7 +98,8 @@ export default function Share({ inputs, simulation, onBack }) {
   const [message, setMessage] = useState('');
   const rank = statsRank(simulation);
   const phrase = survivalPhrase(simulation);
-  const resultLine = `또래 상위 ${rank.percentile}% · ${rank.grade}등급 · ${phrase.short}`;
+  const earliest = simulation.earliestRetirementAge;
+  const resultLine = earliest ? `나는 ${earliest}세에 퇴사 가능 · ${phrase.short}` : phrase.short;
 
   const flash = (text) => { setMessage(text); setTimeout(() => setMessage(''), 2000); };
   const copyFallback = async (text, label) => {
@@ -111,10 +109,10 @@ export default function Share({ inputs, simulation, onBack }) {
 
   const shareImage = async () => {
     const blob = await makeShareImage(inputs, simulation);
-    const file = new File([blob], 'firemap-grade.png', { type: 'image/png' });
+    const file = new File([blob], 'firemap-result.png', { type: 'image/png' });
     if (navigator.canShare?.({ files: [file] })) {
-      await navigator.share({ files: [file], title: '내 FIRE 등급', text: resultLine });
-      flash('등급 카드 공유창을 열었어요');
+      await navigator.share({ files: [file], title: '내 퇴사 나이', text: resultLine });
+      flash('결과 카드 공유창을 열었어요');
     } else {
       const url = URL.createObjectURL(blob);
       window.open(url, '_blank');
@@ -125,6 +123,7 @@ export default function Share({ inputs, simulation, onBack }) {
   const buildPreviewUrl = () => {
     const u = new URL(buildScenarioShareUrl(inputs));
     u.pathname = '/s';
+    if (earliest) u.searchParams.set('ea', String(earliest));
     u.searchParams.set('p', String(rank.percentile));
     u.searchParams.set('g', rank.grade);
     u.searchParams.set('rw', phrase.short);
@@ -153,18 +152,17 @@ export default function Share({ inputs, simulation, onBack }) {
       <Header onBack={onBack} />
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">공유</p>
-        <h2>내 FIRE 등급 자랑하기</h2>
+        <h2>내 결과 공유하기</h2>
         <section className="fm-rank-hero fm-share-hero">
-          <p className="fm-rank-label">내 FIRE 자생력 · {rank.ageBandLabel} 또래 기준</p>
+          <p className="fm-rank-label">내 퇴사 가능 나이 · {rank.ageBandLabel} 또래 기준</p>
           <div className="fm-rank-top">
-            <span className="fm-rank-pct">또래 상위 {rank.percentile}%</span>
-            <span className="fm-rank-badge">{rank.grade}등급</span>
+            <span className="fm-rank-pct">{earliest ? `${earliest}세 퇴사 가능` : '곧 가능'}</span>
           </div>
           <p className="fm-rank-line">{phrase.short}</p>
         </section>
         <div className="fm-share-actions">
           <button className="fm-share-btn fm-share-primary" type="button" onClick={shareImage}>
-            <b>등급 카드 이미지</b><span>또래 상위 %·등급만 — 금액은 안 담겨요</span>
+            <b>결과 카드 이미지</b><span>퇴사 나이·또래 비교만 — 금액은 안 담겨요</span>
           </button>
           <button className="fm-share-btn" type="button" onClick={shareCondition}>
             <b>내 조건 그대로 공유</b><span>계산값 링크 — 받은 사람 화면에 자동 입력</span>
@@ -178,7 +176,7 @@ export default function Share({ inputs, simulation, onBack }) {
       <section className="fm-card fm-info">
         <em>운영 안내</em>
         <h2>개인정보 · 면책 · 문의</h2>
-        <p>입력값은 브라우저에서 계산돼요. 등급 카드엔 금액이 들어가지 않고, 조건 링크는 본인이 공유할 때만 만들어져요.</p>
+        <p>입력값은 브라우저에서 계산돼요. 결과 카드엔 금액이 들어가지 않고, 조건 링크는 본인이 공유할 때만 만들어져요.</p>
         <small>문의: <b>{CONTACT_EMAIL}</b></small>
       </section>
     </main>

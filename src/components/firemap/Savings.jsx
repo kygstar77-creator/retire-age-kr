@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { statsRank } from '../../firemap-v2/rank.js';
+import { buildScenarioShareUrl } from '../../utils/shareState.js';
 import { submitSave, fetchSaveTop, fetchMySaveRank } from '../../utils/firemapSaveApi.js';
 import { CHALLENGES, QUOTES, QUICK, dayIdx, todayStr, wonStr, readJSON, fmtAdvance, dailyNeedOf, addSave, removeEntry, setTotal, track } from '../../firemap-v2/dailyData.js';
 
@@ -73,6 +74,24 @@ export default function Savings({ simulation, onMove }) {
     submitSave({ todaySaved: tVal, totalSaved: nextSv.total || 0, advancedDays: adv, streak: nextSv.streak, nickname: nick, ageBand })
       .then(() => refresh(tVal));
   };
+  const shareSave = async () => {
+    const adLabel = fmtAdvance(advSec(totalSaved)) || '';
+    let url;
+    try {
+      const u = new URL(buildScenarioShareUrl(simulation.inputs));
+      u.pathname = '/s';
+      u.searchParams.set('sd', String(Math.round(totalSaved)));
+      if (adLabel) u.searchParams.set('ad', adLabel);
+      url = u.toString();
+    } catch { url = 'https://retire-age-kr.pages.dev/'; }
+    const text = adLabel ? `절약으로 파이어를 ${adLabel} 앞당겼어요 🔥 나도 해보기` : '아낀 돈으로 파이어 앞당기기 🔥 나도 해보기';
+    if (navigator.share) {
+      try { await navigator.share({ title: '파이어맵 — 오늘의 절약', text, url }); track('save_share'); return; }
+      catch (e) { if (e && e.name === 'AbortError') return; }
+    }
+    try { await navigator.clipboard.writeText(url); track('save_share'); window.alert('공유 링크를 복사했어요. 단톡방에 붙여넣어 보세요!'); }
+    catch { onMove('share'); }
+  };
 
   const log = (amount, label) => { const next = addSave(amount, label); setSv(next); track('save_log', { value: amount, item: label || '직접입력' }); persist(next); };
   const editTotal = () => { const v = window.prompt('누적 절약액을 수정할까요? (원)', String(totalSaved)); if (v == null) return; { const next = setTotal(String(v).replace(/[^0-9]/g, '')); setSv(next); persist(next); } };
@@ -132,6 +151,7 @@ export default function Savings({ simulation, onMove }) {
           {' '}<button type="button" className="fm-inline-link" onClick={editTotal}>수정</button>
         </div>
         <p className="fm-save-link">이 결과는 <button type="button" className="fm-inline-link" onClick={() => onMove('result')}>퇴사 나이 계산</button> 결과와 연동돼요. 누적 기록은 사라지지 않고 계속 쌓여요.</p>
+        <button type="button" className="fm-save-share" onClick={shareSave}>🔥 내 절약 성과 공유하기</button>
       </section>
 
       <section className="fm-card">

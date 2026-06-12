@@ -11,7 +11,7 @@ const ogVersion = 'firemap-rank-v6-20260610';
 const ogImageUrl = `https://retire-age-kr.pages.dev/og-image.png?v=${ogVersion}`;
 const seoTitle = '파이어맵 | FIRE·조기은퇴 계산기 · 퇴사 가능 나이';
 const ogTitle = '또래 중 내 FIRE 등수는? — 파이어맵';
-const ogDescription = '내 진짜 사표 쓰는 날짜와 또래 중 내 등수를 1분 만에 확인하세요.';
+const ogDescription = '퇴사 가능 나이, 또래 중 내 등수, 절약으로 파이어 앞당기기까지 — 무료 1분.';
 
 html = html.replaceAll(/og-image\.png\?v=[^"']+/g, `og-image.png?v=${ogVersion}`);
 

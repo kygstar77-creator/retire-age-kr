@@ -468,3 +468,7 @@
 .fm-save-rec { display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; margin: 0 0 10px; padding: 12px 14px; border: 1px solid #fb923c; border-radius: 14px; background: #fff7ed; color: #9a3412; font-size: 13.5px; font-weight: 800; cursor: pointer; text-align: left; }
 .fm-save-rec em { color: #ff5a00; font-style: normal; font-weight: 900; white-space: nowrap; }
 .fm-save-rec:active { background: #ffedd5; }
+
+/* 절약 성과 공유 버튼 */
+.fm-save-share { width: 100%; margin-top: 12px; min-height: 48px; border: 0; border-radius: 14px; background: #ff5a00; color: #fff; font-size: 15px; font-weight: 900; cursor: pointer; }
+.fm-save-share:active { background: #e64f00; }

@@ -63,9 +63,9 @@ async function commGet(query) {
 
 // 게시글 + 답글을 한 번에 불러옴(파생 컬럼 없으면 평면으로 폴백)
 export async function loadCommunityThread() {
-  let rows = await commGet(`${TABLE}?select=id,client_id,nickname,message,created_at,parent_id,likes&kind=eq.community&status=eq.visible&order=created_at.asc&limit=300`);
+  let rows = await commGet(`${TABLE}?select=id,nickname,message,created_at,parent_id,likes&kind=eq.community&status=eq.visible&order=created_at.asc&limit=300`);
   if (rows === null) {
-    const flat = await commGet(`${TABLE}?select=id,client_id,nickname,message,created_at&kind=eq.community&status=eq.visible&order=created_at.asc&limit=300`);
+    const flat = await commGet(`${TABLE}?select=id,nickname,message,created_at&kind=eq.community&status=eq.visible&order=created_at.asc&limit=300`);
     rows = (flat || []).map((r) => ({ ...r, parent_id: null, likes: 0 }));
   }
   return rows || [];
@@ -76,10 +76,8 @@ export async function sendCommunity(message, parentId = null) {
   if (!clean) return null;
   let nick = '';
   try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
-  let cid = null;
-  try { cid = localStorage.getItem('fm_cid'); } catch { /* ignore */ }
   const body = {
-    message: clean, kind: 'community', nickname: nick || null, client_id: cid,
+    message: clean, kind: 'community', nickname: nick || null,
     page_path: '#community', client_type: window.innerWidth <= 640 ? 'mobile' : 'desktop'
   };
   if (parentId) body.parent_id = parentId;

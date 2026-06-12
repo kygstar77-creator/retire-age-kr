@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { loadCommunityThread, sendCommunity, likeCommunity } from '../../utils/firemapFeedbackApi.js';
-import { displayName } from '../../firemap-v2/funName.js';
+import { funHandle } from '../../firemap-v2/funName.js';
 
 function relativeTime(value) {
   const diff = Math.max(1, Math.round((Date.now() - new Date(value).getTime()) / 60000));
@@ -82,7 +82,7 @@ export default function Community({ onBack }) {
             <article className="fm-card fm-post" key={p.id}>
               <p className="fm-post-msg">{p.message}</p>
               <div className="fm-post-meta">
-                <span className="fm-post-author">{p.nickname || displayName(p)} · {relativeTime(p.created_at)}</span>
+                <span className="fm-post-author">{p.nickname || funHandle(p.id)} · {relativeTime(p.created_at)}</span>
                 <div className="fm-post-actions">
                   <button type="button" className={`fm-post-like${isLiked(p.id) ? ' on' : ''}`} onClick={() => like(p)} aria-label="공감">♥ {p.likes || 0}</button>
                   <button type="button" className="fm-post-reply" onClick={() => { setOpenId(open ? null : p.id); setReplyText(''); }}>💬 {reps.length}</button>
@@ -93,7 +93,7 @@ export default function Community({ onBack }) {
                   {reps.map((r) => (
                     <div className="fm-reply" key={r.id}>
                       <p>{r.message}</p>
-                      <small>{r.nickname || displayName(r)} · {relativeTime(r.created_at)}</small>
+                      <small>{r.nickname || funHandle(r.id)} · {relativeTime(r.created_at)}</small>
                     </div>
                   ))}
                   <div className="fm-reply-input">

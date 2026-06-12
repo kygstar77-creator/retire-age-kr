@@ -6,7 +6,6 @@ import AssetCompareChart from './AssetCompareChart.jsx';
 import { investmentScenarios } from '../../firemap-v2/data.js';
 import { sourceLine } from '../../firemap-v2/dataSources.js';
 import { buildChartRows, buildScenario, runwayText } from '../../firemap-v2/scenarios.js';
-import { monteCarloSuccess } from '../../utils/retirementSimulator.js';
 
 export default function Experiment({ inputs, onChange, simulation, onBack }) {
   const [improvedCost, setImprovedCost] = useState(Math.max(1500000, Math.min(3000000, inputs.monthlyLivingCost - 1000000)));
@@ -15,7 +14,7 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
   const savingYearsValue = inputs.savingYears > 0 ? Math.min(inputs.savingYears, yearsToRetire) : yearsToRetire;
   const impacts = useMemo(() => investmentScenarios.map((sc) => {
     const s = buildScenario(inputs, { annualReturnRate: sc.annualReturnRate });
-    return { ...sc, runway: runwayText(s), success: monteCarloSuccess({ ...inputs, annualReturnRate: sc.annualReturnRate }) };
+    return { ...sc, runway: runwayText(s) };
   }), [inputs]);
   const { chart } = buildChartRows(simulation, lowerCost, inputs);
   const ages = useMemo(() => chart.map((row) => row.age), [chart]);
@@ -54,7 +53,7 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
       <PensionControls inputs={inputs} onChange={onChange} />
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">수익률 가정</p><h2>어디에 두느냐에 따라 이렇게 달라져요</h2>
-        <p>현재 적용 수익률은 연 {inputs.annualReturnRate}%예요. {activeScenario ? activeScenario.copy : '직접 입력한 수익률 가정으로 계산 중이에요.'} 아래에서 가정을 바꾸면 자산수명·성공확률이 함께 바뀝니다.</p>
+        <p>현재 적용 수익률은 연 {inputs.annualReturnRate}%예요. {activeScenario ? activeScenario.copy : '직접 입력한 수익률 가정으로 계산 중이에요.'} 아래에서 가정을 바꾸면 자산수명이 함께 바뀝니다.</p>
         <div className="fm-chips fm-return-rail" aria-label="투자 수익률 가정 선택">
           {investmentScenarios.map((scenario) => <button type="button" key={scenario.key} className={scenario.annualReturnRate === inputs.annualReturnRate ? 'is-active' : ''} onClick={() => onChange('annualReturnRate', scenario.annualReturnRate)}>{scenario.label} · 연 {scenario.annualReturnRate}%</button>)}
         </div>
@@ -62,13 +61,12 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
           {impacts.map((sc) => (
             <div className={`fm-bench-row2${sc.annualReturnRate === inputs.annualReturnRate ? ' is-active' : ''}`} key={sc.key}>
               <div className="fm-bench-head"><b>{sc.label}</b><span>연 {sc.annualReturnRate}%</span></div>
-              <div className="fm-bench-metrics"><span>자산수명 <b>{sc.runway}</b></span><span>성공확률 <b>{sc.success}%</b></span></div>
-              <div className="fm-bench-bar"><i style={{ width: `${sc.success}%` }} /></div>
+              <div className="fm-bench-metrics"><span>이 가정이면 자산수명 <b>{sc.runway}</b>까지</span></div>
               <em>{sc.copy}</em>
             </div>
           ))}
         </div>
-        <small>예적금부터 공격적 투자까지, 같은 자산도 어디에 두느냐로 자산수명·성공확률이 달라져요. 가정이 높을수록 변동성(위험)도 커집니다. 성공확률은 변동성과 함께 500회 시뮬한 값(결과 화면과 같은 기준)이며 특정 상품 추천이 아니에요. {sourceLine('returnPresets')}</small>
+        <small>예적금부터 공격적 투자까지, 같은 자산도 어디에 두느냐로 자산수명이 달라져요. 가정이 높을수록 기대수익도, 변동성(위험)도 커집니다. 과거 통계 기반 가정이며 특정 상품 추천이 아니에요. {sourceLine('returnPresets')}</small>
       </section>
       <nav className="fm-bottom-nav">
         <button type="button" onClick={onBack}>취소</button>

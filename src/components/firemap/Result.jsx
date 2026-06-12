@@ -1,8 +1,8 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, fireStatus, runwayText, scenarioEndAge, survivalPhrase } from '../../firemap-v2/scenarios.js';
-import { monteCarloSuccess, simulateRetirement } from '../../utils/retirementSimulator.js';
+import { simulateRetirement } from '../../utils/retirementSimulator.js';
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
 import { statsRank, gradeFromScore } from '../../firemap-v2/rank.js';
 import { submitScore, fetchUserRank } from '../../utils/firemapScoresApi.js';
@@ -95,31 +95,6 @@ function ResultHero({ simulation }) {
         <div className="fm-score-meter" aria-label={`FIRE 점수 ${simulation.survivalScore}점`}><i style={{ width: `${Math.max(8, simulation.survivalScore)}%` }} /></div>
         <p>높을수록 퇴사 후 자산 여유가 커요.</p>
       </div>
-    </section>
-  );
-}
-
-const RISK_LEVELS = [
-  { k: 'safe', label: '안전', ret: 3 },
-  { k: 'balanced', label: '균형', ret: 5 },
-  { k: 'aggressive', label: '공격', ret: 8 }
-];
-function SuccessProbability({ simulation }) {
-  const [risk, setRisk] = useState('balanced');
-  const cfg = RISK_LEVELS.find((r) => r.k === risk) || RISK_LEVELS[1];
-  const pct = useMemo(() => monteCarloSuccess({ ...simulation.inputs, annualReturnRate: cfg.ret }), [simulation, cfg.ret]);
-  const level = pct >= 80 ? 'ok' : pct >= 50 ? 'mid' : 'low';
-  const msg = pct >= 80 ? '시장이 출렁여도 안정적이에요' : pct >= 50 ? '변동성에 다소 취약해요' : '시장이 나쁘면 부족할 수 있어요';
-  return (
-    <section className={`fm-card fm-mc fm-mc-${level}`}>
-      <p className="fm-kicker">성공 확률 · 변동성 반영</p>
-      <div className="fm-mc-row"><b>{pct}%</b><span>{msg}</span></div>
-      <div className="fm-mc-risk">
-        {RISK_LEVELS.map((r) => (
-          <button type="button" key={r.k} className={risk === r.k ? 'on' : ''} onClick={() => setRisk(r.k)}>{r.label}</button>
-        ))}
-      </div>
-      <p className="fm-mc-note">배분별 가정: 안전(연 3%) · 균형(5%) · 공격(8%). 수익률이 높을수록 변동성(위험)도 커집니다. 조건비교의 '수익률 가정'과 같은 기준이에요 — 확률만 보고 무리한 투자는 금물이에요.</p>
     </section>
   );
 }
@@ -373,7 +348,6 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
         <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>등수 올리기</button>
       </div>
       <ResultHero simulation={simulation} />
-      <SuccessProbability simulation={simulation} />
       <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />
       <AssetJourney simulation={simulation} />
       <TopLevers inputs={inputs} simulation={simulation} onChange={onChange} />

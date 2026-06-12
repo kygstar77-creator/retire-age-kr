@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
-import { loadCommunityThread, sendCommunity, likeCommunity } from '../../utils/firemapFeedbackApi.js';
+import { loadCommunityThread, sendCommunity, likeCommunity, editCommunity, deleteCommunity } from '../../utils/firemapFeedbackApi.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 
 function relativeTime(value) {
@@ -13,18 +13,32 @@ function relativeTime(value) {
 const likedKey = (id) => `fm_liked_${id}`;
 const isLiked = (id) => { try { return !!localStorage.getItem(likedKey(id)); } catch { return false; } };
 
+const MINE_KEY = 'fm_my_posts';
+const loadMine = () => { try { return JSON.parse(localStorage.getItem(MINE_KEY) || '[]'); } catch { return []; } };
+const addMine = (id) => { try { const m = loadMine(); if (!m.includes(id)) localStorage.setItem(MINE_KEY, JSON.stringify([...m, id])); } catch { /* ignore */ } };
+
+function myNickname() {
+  try { return localStorage.getItem('fm_nickname') || ''; } catch { return ''; }
+}
+
 export default function Community({ onBack }) {
   const [rows, setRows] = useState([]);
   const [post, setPost] = useState('');
   const [sending, setSending] = useState(false);
   const [openId, setOpenId] = useState(null);
   const [replyText, setReplyText] = useState('');
+  const [mine, setMine] = useState(loadMine());
+  const [editId, setEditId] = useState(null);
+  const [editText, setEditText] = useState('');
 
   useEffect(() => {
     let alive = true;
     loadCommunityThread().then((r) => { if (alive) setRows(r); });
     return () => { alive = false; };
   }, []);
+
+  const isMine = (id) => mine.includes(id);
+  const remember = (id) => { addMine(id); setMine(loadMine()); };
 
   const posts = rows.filter((r) => !r.parent_id).sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
   const repliesOf = (id) => rows.filter((r) => r.parent_id === id).sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
@@ -36,14 +50,14 @@ export default function Community({ onBack }) {
     setSending(true);
     const created = await sendCommunity(text, null);
     setSending(false);
-    if (created) { setRows((r) => [...r, { ...created, parent_id: null, likes: 0 }]); setPost(''); }
+    if (created) { setRows((r) => [...r, { ...created, parent_id: null, likes: 0 }]); remember(created.id); setPost(''); }
   };
 
   const submitReply = async (parentId) => {
     const text = replyText.trim().slice(0, 240);
     if (!text) return;
     const created = await sendCommunity(text, parentId);
-    if (created) { setRows((r) => [...r, { ...created, parent_id: parentId, likes: 0 }]); setReplyText(''); }
+    if (created) { setRows((r) => [...r, { ...created, parent_id: parentId, likes: 0 }]); remember(created.id); setReplyText(''); }
   };
 
   const like = async (row) => {
@@ -55,20 +69,61 @@ export default function Community({ onBack }) {
     }
   };
 
+  const startEdit = (row) => { setEditId(row.id); setEditText(row.message); };
+  const cancelEdit = () => { setEditId(null); setEditText(''); };
+  const saveEdit = async (id) => {
+    const text = editText.trim().slice(0, 240);
+    if (!text) return;
+    const ok = await editCommunity(id, text);
+    if (ok) {
+      setRows((r) => r.map((x) => (x.id === id ? { ...x, message: text } : x)));
+      cancelEdit();
+    }
+  };
+  const removeRow = async (row) => {
+    if (!window.confirm('이 글을 삭제할까요? 되돌릴 수 없어요.')) return;
+    const ok = await deleteCommunity(row.id);
+    if (ok) {
+      setRows((r) => r.filter((x) => x.id !== row.id && x.parent_id !== row.id));
+      if (editId === row.id) cancelEdit();
+    }
+  };
+
+  const nick = myNickname();
+
+  const OwnerControls = ({ row }) => (
+    isMine(row.id) ? (
+      <span className="fm-post-own">
+        <button type="button" className="fm-post-edit" onClick={() => startEdit(row)}>수정</button>
+        <button type="button" className="fm-post-del" onClick={() => removeRow(row)}>삭제</button>
+      </span>
+    ) : null
+  );
+
+  const EditBox = ({ id }) => (
+    <div className="fm-post-edit-box">
+      <textarea maxLength={240} value={editText} onChange={(e) => setEditText(e.target.value)} />
+      <div className="fm-post-edit-row">
+        <button type="button" className="fm-post-edit-cancel" onClick={cancelEdit}>취소</button>
+        <button type="button" className="fm-post-edit-save" onClick={() => saveEdit(id)} disabled={!editText.trim()}>저장</button>
+      </div>
+    </div>
+  );
+
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="커뮤니티" onBack={onBack} />
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">파이어족 라운지</p>
         <h2>다 같이 파이어 이야기</h2>
-        <p>익명으로 글 쓰고, 답글로 서로 대화해요. 버그·불편 신고는 홈 화면 맨 아래 ‘의견 보내기’로.</p>
+        <p>닉네임으로 글 쓰고, 답글로 서로 대화해요. 내가 쓴 글은 수정·삭제할 수 있어요. 버그·불편 신고는 홈 맨 아래 ‘의견 보내기’로.</p>
       </section>
 
       <form className="fm-card fm-community-form" onSubmit={submitPost}>
         <label htmlFor="fm-community-input">새 글 쓰기</label>
         <textarea id="fm-community-input" maxLength={240} value={post} onChange={(e) => setPost(e.target.value)} placeholder="예: 생활비를 줄이니 은퇴가 5년 당겨졌어요. 다들 어떻게 아끼세요?" />
         <div className="fm-community-form-row">
-          <small>{post.length}/240 · 익명</small>
+          <small>{post.length}/240 · {nick ? `${nick} 으로 게시` : '닉네임 자동 생성'}</small>
           <button type="submit" disabled={sending || !post.trim()}>{sending ? '올리는 중' : '글 올리기'}</button>
         </div>
       </form>
@@ -80,10 +135,11 @@ export default function Community({ onBack }) {
           const open = openId === p.id;
           return (
             <article className="fm-card fm-post" key={p.id}>
-              <p className="fm-post-msg">{p.message}</p>
+              {editId === p.id ? <EditBox id={p.id} /> : <p className="fm-post-msg">{p.message}</p>}
               <div className="fm-post-meta">
                 <span className="fm-post-author">{p.nickname || funHandle(p.id)} · {relativeTime(p.created_at)}</span>
                 <div className="fm-post-actions">
+                  <OwnerControls row={p} />
                   <button type="button" className={`fm-post-like${isLiked(p.id) ? ' on' : ''}`} onClick={() => like(p)} aria-label="공감">♥ {p.likes || 0}</button>
                   <button type="button" className="fm-post-reply" onClick={() => { setOpenId(open ? null : p.id); setReplyText(''); }}>💬 {reps.length}</button>
                 </div>
@@ -92,8 +148,11 @@ export default function Community({ onBack }) {
                 <div className="fm-replies">
                   {reps.map((r) => (
                     <div className="fm-reply" key={r.id}>
-                      <p>{r.message}</p>
-                      <small>{r.nickname || funHandle(r.id)} · {relativeTime(r.created_at)}</small>
+                      {editId === r.id ? <EditBox id={r.id} /> : <p>{r.message}</p>}
+                      <div className="fm-reply-meta">
+                        <small>{r.nickname || funHandle(r.id)} · {relativeTime(r.created_at)}</small>
+                        <OwnerControls row={r} />
+                      </div>
                     </div>
                   ))}
                   <div className="fm-reply-input">

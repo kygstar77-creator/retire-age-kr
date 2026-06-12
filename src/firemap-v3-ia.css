@@ -593,3 +593,18 @@
 /* 커뮤니티 피드 간격 축소 */
 .fm-community-feed { gap: 8px; }
 .fm-community-feed .fm-post { margin: 0 !important; }
+
+/* 커뮤니티 내 글 수정·삭제 */
+.fm-post-own { display: inline-flex; gap: 6px; margin-right: 2px; }
+.fm-post-edit, .fm-post-del { border: 1px solid #e5e7eb; border-radius: 999px; background: #fff; font-size: 12px; font-weight: 800; padding: 5px 10px; cursor: pointer; }
+.fm-post-edit { color: #6b7280; }
+.fm-post-del { color: #dc2626; border-color: #fecaca; background: #fff5f5; }
+.fm-post-edit-box { margin: 0 0 10px; }
+.fm-post-edit-box textarea { width: 100%; box-sizing: border-box; min-height: 70px; border: 1px solid #e5e7eb; border-radius: 12px; padding: 10px 12px; font: inherit; font-size: 14px; line-height: 1.5; resize: vertical; outline: none; }
+.fm-post-edit-box textarea:focus { border-color: #ff5a00; }
+.fm-post-edit-row { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+.fm-post-edit-cancel { border: 1px solid #e5e7eb; border-radius: 999px; background: #fff; color: #6b7280; font-size: 13px; font-weight: 800; padding: 7px 14px; cursor: pointer; }
+.fm-post-edit-save { border: 0; border-radius: 999px; background: #ff5a00; color: #fff; font-size: 13px; font-weight: 800; padding: 7px 16px; cursor: pointer; }
+.fm-post-edit-save:disabled { background: #fed7aa; }
+.fm-reply-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.fm-reply-meta .fm-post-own .fm-post-edit, .fm-reply-meta .fm-post-own .fm-post-del { padding: 3px 8px; font-size: 11px; }

@@ -98,3 +98,21 @@ export async function likeCommunity(id, currentLikes) {
     return true;
   } catch { return false; }
 }
+
+// 내 글 수정 — PATCH message
+export async function editCommunity(id, message) {
+  const clean = String(message || '').trim().slice(0, 240);
+  if (!clean) return false;
+  try {
+    await callFeedback(`${TABLE}?id=eq.${id}`, { method: 'PATCH', headers: { prefer: 'return=minimal' }, body: JSON.stringify({ message: clean }) });
+    return true;
+  } catch { return false; }
+}
+
+// 내 글 삭제 — 소프트삭제(status=hidden). delete 정책 없이 update 정책으로 처리.
+export async function deleteCommunity(id) {
+  try {
+    await callFeedback(`${TABLE}?id=eq.${id}`, { method: 'PATCH', headers: { prefer: 'return=minimal' }, body: JSON.stringify({ status: 'hidden' }) });
+    return true;
+  } catch { return false; }
+}

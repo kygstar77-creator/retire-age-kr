@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
-import { loadFeedback, sendFeedback } from '../../utils/firemapFeedbackApi.js';
+import { loadCommunity, sendCommunity } from '../../utils/firemapFeedbackApi.js';
 
 function relativeTime(value) {
   const diff = Math.max(1, Math.round((Date.now() - new Date(value).getTime()) / 60000));
@@ -18,7 +18,7 @@ export default function Community({ onBack }) {
 
   useEffect(() => {
     let alive = true;
-    loadFeedback().then((rows) => { if (alive) setItems(rows); });
+    loadCommunity().then((rows) => { if (alive) setItems(rows); });
     return () => { alive = false; };
   }, []);
 
@@ -29,7 +29,7 @@ export default function Community({ onBack }) {
     setSending(true);
     setError('');
     try {
-      const created = await sendFeedback(text);
+      const created = await sendCommunity(text);
       if (created) setItems((current) => [created, ...current]);
       setMessage('');
     } catch {
@@ -45,7 +45,7 @@ export default function Community({ onBack }) {
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">결과 이후</p>
         <h2>다른 사람들의 한마디</h2>
-        <p>익명으로 남기는 공간이에요. 입력한 금융 금액은 저장하지 않고, 남긴 글만 보여요.</p>
+        <p>파이어 여정의 한마디를 익명으로 남기는 공개 공간이에요. (버그·불편은 우측 하단 💬 의견 버튼으로 보내주세요.)</p>
       </section>
       <form className="fm-card fm-community-form" onSubmit={submit}>
         <label htmlFor="fm-community-input">한마디 남기기</label>

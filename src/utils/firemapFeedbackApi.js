@@ -24,16 +24,16 @@ async function callFeedback(path, options = {}) {
   return response.json();
 }
 
-export async function loadFeedback() {
+export async function loadFeedback(kind = 'feedback') {
   try {
-    const rows = await callFeedback(`${TABLE}?select=id,nickname,message,created_at&status=eq.visible&order=created_at.desc&limit=20`, { method: 'GET' });
+    const rows = await callFeedback(`${TABLE}?select=id,nickname,message,created_at&kind=eq.${kind}&status=eq.visible&order=created_at.desc&limit=30`, { method: 'GET' });
     return Array.isArray(rows) ? rows : [];
   } catch {
     return [];
   }
 }
 
-export async function sendFeedback(message) {
+export async function sendFeedback(message, kind = 'feedback') {
   const clean = String(message || '').trim().slice(0, 240);
   if (!clean) return null;
   const rows = await callFeedback(TABLE, {
@@ -41,9 +41,13 @@ export async function sendFeedback(message) {
     headers: { prefer: 'return=representation' },
     body: JSON.stringify({
       message: clean,
+      kind,
       page_path: window.location.hash || window.location.pathname || '/',
       client_type: window.innerWidth <= 640 ? 'mobile' : 'desktop'
     })
   });
   return rows?.[0] || null;
 }
+
+export const loadCommunity = () => loadFeedback('community');
+export const sendCommunity = (message) => sendFeedback(message, 'community');

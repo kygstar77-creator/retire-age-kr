@@ -45,7 +45,7 @@ export default function Community({ onBack }) {
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">결과 이후</p>
         <h2>다른 사람들의 한마디</h2>
-        <p>파이어 여정의 한마디를 익명으로 남기는 공개 공간이에요. (버그·불편은 우측 하단 💬 의견 버튼으로 보내주세요.)</p>
+        <p>파이어 여정의 한마디를 익명으로 남기는 공개 공간이에요. 버그·불편은 홈 화면 맨 아래 ‘의견 보내기’로 알려주세요.</p>
       </section>
       <form className="fm-card fm-community-form" onSubmit={submit}>
         <label htmlFor="fm-community-input">한마디 남기기</label>

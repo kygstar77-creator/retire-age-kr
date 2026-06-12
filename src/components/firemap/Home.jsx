@@ -38,12 +38,12 @@ export default function Home({ onStart, onMove }) {
         <div className="fm-home-age">
           <label htmlFor="fm-home-age-in">지금 몇 살인가요?</label>
           <div className="fm-home-age-ctrl">
-            <button type="button" aria-label="나이 감소" onClick={() => setClamp(age - 1)}>−</button>
-            <div className="fm-home-age-val">
-              <input id="fm-home-age-in" inputMode="numeric" value={age} onChange={(e) => setClamp(Number(String(e.target.value).replace(/[^0-9]/g, '')) || 0)} />
-              <span className="fm-home-age-unit">세</span>
+            <button type="button" className="fm-age-btn" aria-label="나이 감소" onClick={() => setClamp(age - 1)}>−</button>
+            <div className="fm-age-display">
+              <input id="fm-home-age-in" className="fm-age-input" inputMode="numeric" value={age} onChange={(e) => setClamp(Number(String(e.target.value).replace(/[^0-9]/g, '')) || 0)} />
+              <span className="fm-age-unit">세</span>
             </div>
-            <button type="button" aria-label="나이 증가" onClick={() => setClamp(age + 1)}>+</button>
+            <button type="button" className="fm-age-btn" aria-label="나이 증가" onClick={() => setClamp(age + 1)}>+</button>
           </div>
         </div>
         <button type="button" className="fm-home-cta" onClick={() => { track('start_calc', { age }); onStart(age); }}>이 나이로 1분 계산 시작 →</button>

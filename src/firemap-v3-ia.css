@@ -558,3 +558,11 @@
 
 /* 푸터 의견 보내기 버튼 (정책 링크와 동일 톤) */
 .fm-policy-fbtn { display: inline-flex; min-height: 36px; align-items: center; border: 1px solid #fed7aa; border-radius: 999px; background: #fff7ed; color: #9a3412; padding: 0 12px; font-size: 12px; font-weight: 500; cursor: pointer; }
+
+/* 홈 나이 스텝퍼 — 재작성(확실한 수직 중앙) */
+.fm-home-hero-card .fm-home-age-ctrl { display: flex !important; grid-template-columns: none !important; align-items: center; justify-content: space-between; gap: 10px; border: 1px solid #e5e7eb; border-radius: 16px; background: #fff; padding: 10px 14px; }
+.fm-home-hero-card .fm-age-btn { flex: 0 0 auto; width: 46px; height: 46px; min-width: 46px; min-height: 46px; display: inline-flex !important; align-items: center !important; justify-content: center !important; border: 0 !important; border-radius: 999px !important; background: #ff5a00 !important; color: #fff !important; font-size: 26px !important; line-height: 1 !important; font-weight: 700 !important; padding: 0 !important; box-shadow: none !important; cursor: pointer; }
+.fm-home-hero-card .fm-age-btn:active { background: #e64f00 !important; }
+.fm-home-hero-card .fm-age-display { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; gap: 4px; }
+.fm-home-hero-card .fm-age-input { width: 2.2em; border: 0; background: none; text-align: center; font-size: 30px; font-weight: 950; color: #111827; line-height: 1; padding: 0; outline: none; letter-spacing: -.03em; }
+.fm-home-hero-card .fm-age-unit { font-size: 18px; font-weight: 800; color: #6b7280; line-height: 1; }

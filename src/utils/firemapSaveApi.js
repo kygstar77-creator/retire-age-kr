@@ -1,0 +1,90 @@
+// 오늘의 절약 — Supabase 연동 (기기당 하루 한 줄 upsert)
+const DEFAULT_SUPABASE_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
+const DEFAULT_SUPABASE_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || DEFAULT_SUPABASE_URL;
+const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || DEFAULT_SUPABASE_KEY;
+const TABLE = 'firemap_save_events';
+
+function headers(extra = {}) {
+  return { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'content-type': 'application/json', ...extra };
+}
+
+function deviceId() {
+  try {
+    let id = localStorage.getItem('fm_cid');
+    if (!id) {
+      id = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+      localStorage.setItem('fm_cid', id);
+    }
+    return id;
+  } catch {
+    return null;
+  }
+}
+
+function todayStr() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function countFromRange(res) {
+  const cr = res.headers.get('content-range') || '';
+  const total = cr.split('/')[1];
+  return total && total !== '*' ? Number(total) : 0;
+}
+
+// 오늘 내 절약 한 줄을 upsert (client_id + date 기준 갱신)
+export async function submitSave({ todaySaved, totalSaved, advancedDays, streak, nickname, ageBand }) {
+  const cid = deviceId();
+  if (!cid) return false;
+  const nick = (nickname || '').trim().slice(0, 16) || null;
+  const body = {
+    client_id: cid,
+    date: todayStr(),
+    today_saved: Math.max(0, Math.round(todaySaved || 0)),
+    total_saved: Math.max(0, Math.round(totalSaved || 0)),
+    advanced_days: (advancedDays != null && Number.isFinite(Number(advancedDays))) ? Number(Number(advancedDays).toFixed(2)) : null,
+    streak: (streak != null && Number.isFinite(Number(streak))) ? Math.round(streak) : null,
+    nickname: nick,
+    age_band: ageBand != null ? String(ageBand) : null,
+    updated_at: new Date().toISOString()
+  };
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?on_conflict=client_id,date`, {
+      method: 'POST',
+      headers: headers({ prefer: 'return=minimal,resolution=merge-duplicates' }),
+      body: JSON.stringify(body)
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
+// 오늘 가장 많이 아낀 사람 top N
+export async function fetchSaveTop(limit = 10) {
+  try {
+    const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=nickname,today_saved,age_band&date=eq.${todayStr()}&today_saved=gt.0&order=today_saved.desc&limit=${limit}`;
+    const res = await fetch(url, { method: 'GET', headers: headers() });
+    if (!res.ok) return [];
+    return await res.json();
+  } catch {
+    return [];
+  }
+}
+
+// 오늘 기록자 중 내 순위
+export async function fetchMySaveRank(todaySaved) {
+  try {
+    const date = todayStr();
+    const opts = { method: 'GET', headers: headers({ prefer: 'count=exact', range: '0-0' }) };
+    const totalRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id&date=eq.${date}&today_saved=gt.0`, opts);
+    const total = countFromRange(totalRes);
+    const mine = Math.max(0, Math.round(todaySaved || 0));
+    if (mine <= 0) return { total, position: total + 1, mine: 0 };
+    const higherRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id&date=eq.${date}&today_saved=gt.${mine}`, opts);
+    const higher = countFromRange(higherRes);
+    return { total, position: higher + 1, mine };
+  } catch {
+    return null;
+  }
+}

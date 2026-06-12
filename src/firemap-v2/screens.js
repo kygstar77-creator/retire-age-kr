@@ -23,13 +23,12 @@ export const NEXT_ACTION_META = {
   ranking:    { tag: '랭킹', title: '전체 랭킹 보기',     desc: '1등까지 몇 명? 내 순위', primary: true },
   save:       { tag: '절약', title: '오늘부터 절약 적립',   desc: '아낀 돈이 파이어 며칠 당기는지' },
   experiment: { tag: '비교', title: '조건 바꿔 비교하기', desc: '증권앱 차트로 What-If' },
-  share:      { tag: '공유', title: '등급 카드 공유',     desc: '또래 상위 %·등급 자랑' },
+  share:      { tag: '공유', title: '내 결과 공유',       desc: '퇴사 나이·또래 비교 카드' },
   tools:      { tag: '도구', title: '정밀 도구 더보기',   desc: '건보료·세금·도시·커뮤니티' }
 };
 
 // 도구 허브 목록 (메인에서 분리된 기능들)
 export const TOOLS = [
-  { id: 'ranking',    tag: '랭킹',   title: '전체 FIRE 랭킹',     desc: '또래 중 내 순위·상위권' },
   { id: 'experiment', tag: '비교',   title: '조건 바꿔 비교',     desc: '증권앱 차트로 What-If 비교' },
   { id: 'dependent',  tag: '건보료', title: '피부양자 자격 판정', desc: '퇴사 후 건보료 박탈 여부' },
   { id: 'foreignTax', tag: '세금',   title: '해외주식 양도세',    desc: '분할 매도 절세 계산' },

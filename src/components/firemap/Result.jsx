@@ -341,7 +341,6 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
       <AssetJourney simulation={simulation} />
       <TopLevers inputs={inputs} simulation={simulation} onChange={onChange} />
       <NextActions onMove={onMove} />
-      <div className="fm-ad">광고</div>
     </main>
   );
 }

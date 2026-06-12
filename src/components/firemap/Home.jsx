@@ -3,6 +3,7 @@ import Header from './Header.jsx';
 import { getLatestRank } from '../../firemap-v2/rankHistory.js';
 import { fetchAggregates } from '../../utils/firemapScoresApi.js';
 import DailyFire from './DailyFire.jsx';
+import { track } from '../../firemap-v2/dailyData.js';
 
 export default function Home({ onStart, onMove }) {
   const [agg, setAgg] = useState(null);
@@ -42,7 +43,7 @@ export default function Home({ onStart, onMove }) {
             <button type="button" aria-label="나이 증가" onClick={() => setClamp(age + 1)}>+</button>
           </div>
         </div>
-        <button type="button" className="fm-home-cta" onClick={() => onStart(age)}>이 나이로 1분 계산 시작 →</button>
+        <button type="button" className="fm-home-cta" onClick={() => { track('start_calc', { age }); onStart(age); }}>이 나이로 1분 계산 시작 →</button>
         {proof && <p className="fm-home-proof">{proof}</p>}
       </section>
       <DailyFire onMove={onMove} />

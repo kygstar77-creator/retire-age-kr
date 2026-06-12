@@ -9,6 +9,7 @@ import { submitScore, fetchUserRank, fetchAggregates } from '../../utils/firemap
 import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js';
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
 import { FIRE_CITIES } from '../../firemap-v2/cities.js';
+import { track } from '../../firemap-v2/dailyData.js';
 
 function ResultHeroV2({ simulation }) {
   const base = statsRank(simulation);
@@ -23,6 +24,7 @@ function ResultHeroV2({ simulation }) {
   useEffect(() => {
     let alive = true;
     saveRankSnapshot({ percentile: base.percentile, grade: base.grade, score, earliest });
+    track('calc_complete', { earliest: earliest || 0 });
     (async () => {
       try {
         const key = `fm_score_sent_${score}`;
@@ -311,6 +313,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
     } catch { /* ignore */ }
   }, [simulation]);
   const shareRank = async () => {
+    track('share', { type: 'result' });
     const rk = statsRank(simulation);
     const ph = survivalPhrase(simulation);
     const earliest = simulation.earliestRetirementAge;

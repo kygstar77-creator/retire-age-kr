@@ -608,3 +608,25 @@
 .fm-post-edit-save:disabled { background: #fed7aa; }
 .fm-reply-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .fm-reply-meta .fm-post-own .fm-post-edit, .fm-reply-meta .fm-post-own .fm-post-del { padding: 3px 8px; font-size: 11px; }
+
+/* 퇴사 라이브 시계 (하루 저축 → 실시간 앞당김) */
+.fm-dc{background:linear-gradient(135deg,#0b1f3a,#13294b);color:#fff;border:0}
+.fm-dc .fm-kicker{color:#9fc1ff}
+.fm-dc h2{color:#fff;font-size:18px;margin:6px 0 4px;letter-spacing:-.02em}
+.fm-dc-sub{color:#c7d4e8;font-size:13px;line-height:1.55}
+.fm-dc-set{margin:14px 0 4px}
+.fm-dc-amt{font-size:14px;color:#e6edf8;margin-bottom:6px}
+.fm-dc-amt b{font-size:20px;color:#ffb14e}
+.fm-dc input[type=range]{width:100%}
+.fm-dc-start{margin-top:12px;width:100%;border:0;border-radius:12px;background:#ff5a00;color:#fff;font-size:15px;font-weight:800;padding:13px;cursor:pointer}
+.fm-dc-start:active{background:#e64f00}
+.fm-dc-note{margin-top:8px;font-size:11px;color:#8ea4c4}
+.fm-dc-top{display:flex;align-items:center;justify-content:space-between}
+.fm-dc-top .fm-inline-link{color:#9fc1ff}
+.fm-dc-big{text-align:center;padding:10px 0 2px}
+.fm-dc-big small{display:block;color:#c7d4e8;font-size:12px;margin-bottom:8px}
+.fm-dc-big b{display:block;font-size:27px;font-weight:950;letter-spacing:-.02em;color:#ffb14e}
+.fm-dc-tick{display:inline-block;margin-top:10px;font-size:12px;color:#9fe6b4;animation:fmdcpulse 1.8s ease-in-out infinite}
+@keyframes fmdcpulse{0%,100%{opacity:.5}50%{opacity:1}}
+.fm-dc-foot{margin-top:12px;font-size:12px;color:#c7d4e8;text-align:center;line-height:1.5}
+.fm-dc.done p{color:#c7d4e8;margin:6px 0 0}

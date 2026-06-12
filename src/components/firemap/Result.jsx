@@ -81,8 +81,8 @@ function ResultHero({ simulation }) {
         ? <h2>{targetAge}에 퇴사하면<br /><b>{phrase.runway}</b>까지 버틸 수 있어요.</h2>
         : <h2>지금 자산으론<br /><b>{targetAge}</b> 퇴사가 일러요.</h2>}
       <div className="fm-result-chips">
-        <span>은퇴 나이 <b>{targetAge}</b></span>
-        <span>경제적 자유 시점 <b>{phrase.runway}</b></span>
+        <span>퇴사 나이 <b>{targetAge}</b></span>
+        <span>{phrase.ok ? '자산 버티는 나이' : '자산 상태'} <b>{phrase.runway}</b></span>
       </div>
       <p className="fm-result-copy">{safeCopy}</p>
       <div className="fm-result-assumptions">

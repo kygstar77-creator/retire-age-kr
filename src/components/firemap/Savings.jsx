@@ -15,9 +15,11 @@ function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
   const totalDays = Math.max(1, (fireAge - inp.currentAge) * 365.25);
   const advancedDays = totalSaved / dailyNeed;
   const pct = Math.max(0, Math.min(100, (advancedDays / totalDays) * 100));
+  const advLabel = fmtAdvance(advancedDays * 86400) || '0초';
   const effAge = Math.max(inp.currentAge, fireAge - advancedDays / 365.25);
-  const yrs = Math.floor(effAge);
-  const mos = Math.round((effAge - yrs) * 12);
+  let yrs = Math.floor(effAge);
+  let mos = Math.round((effAge - yrs) * 12);
+  if (mos >= 12) { yrs += 1; mos = 0; }
   return (
     <div className="fm-fp">
       <div className="fm-fp-labels"><span>지금 {inp.currentAge}세</span><span>예상 퇴사 {fireAge}세</span></div>
@@ -25,7 +27,7 @@ function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
         <div className="fm-fp-gain" style={{ width: `${pct}%` }} />
         <div className="fm-fp-flag" style={{ left: `${100 - pct}%` }}>🏁</div>
       </div>
-      <p className="fm-fp-cap">절약으로 <b>{Math.floor(advancedDays)}일</b> 당겼어요 · 지금 속도면 퇴사 <b>{yrs}세 {mos}개월</b></p>
+      <p className="fm-fp-cap">{totalSaved > 0 ? <>절약으로 <b>{advLabel}</b> 당겼어요 · </> : null}지금 속도면 퇴사 <b>{yrs}세 {mos}개월</b></p>
     </div>
   );
 }

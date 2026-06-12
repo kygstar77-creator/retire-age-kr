@@ -89,7 +89,7 @@ async function makeShareImage(inputs, simulation) {
 
   // URL
   ctx.fillStyle = SOFT; ctx.font = `700 30px ${FONT}`;
-  ctx.fillText('retire-age-kr.pages.dev', PAD, 1108);
+  ctx.fillText('firemap.kr', PAD, 1108);
 
   return new Promise((resolve) => canvas.toBlob(resolve, 'image/png', 0.95));
 }

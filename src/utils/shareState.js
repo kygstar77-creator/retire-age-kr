@@ -1,5 +1,5 @@
 const encodedPrefix = 's=';
-const publicUrl = 'https://retire-age-kr.pages.dev/';
+const publicUrl = 'https://firemap.kr/';
 
 const compactKeyMap = {
   age: 'currentAge',

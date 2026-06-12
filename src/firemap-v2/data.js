@@ -1,6 +1,6 @@
 export const STORAGE_KEY = 'firemap-inputs-v3';
 export const CONTACT_EMAIL = 'retireage.kr@gmail.com';
-export const BASE_URL = 'https://retire-age-kr.pages.dev/';
+export const BASE_URL = 'https://firemap.kr/';
 
 export const returnAssumptions = {
   annualReturnRate: 5,

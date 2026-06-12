@@ -96,7 +96,7 @@ export default function Savings({ simulation, onMove }) {
       u.searchParams.set('sd', String(Math.round(totalSaved)));
       if (adLabel) u.searchParams.set('ad', adLabel);
       url = u.toString();
-    } catch { url = 'https://retire-age-kr.pages.dev/'; }
+    } catch { url = 'https://firemap.kr/'; }
     const text = adLabel ? `절약으로 파이어를 ${adLabel} 앞당겼어요 🔥 나도 해보기` : '아낀 돈으로 파이어 앞당기기 🔥 나도 해보기';
     if (navigator.share) {
       try { await navigator.share({ title: '파이어맵 — 오늘의 절약', text, url }); track('share', { type: 'save' }); track('share_link_copy', { type: 'save' }); return; }

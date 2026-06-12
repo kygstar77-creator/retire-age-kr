@@ -42,7 +42,7 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 
-Sitemap: https://retire-age-kr.pages.dev/sitemap.xml
+Sitemap: https://firemap.kr/sitemap.xml
 `;
 
 const adsTxt = `google.com, pub-${adsensePublisherId}, DIRECT, f08c47fec0942fa
@@ -50,7 +50,7 @@ const adsTxt = `google.com, pub-${adsensePublisherId}, DIRECT, f08c47fec0942fa
 
 const { readdir } = await import('node:fs/promises');
 const guideFiles = (await readdir(join(root, 'public', 'guide'))).filter((f) => f.endsWith('.html'));
-const site = 'https://retire-age-kr.pages.dev';
+const site = 'https://firemap.kr';
 const urlEntries = [
   { loc: `${site}/`, freq: 'weekly', pri: '1.0' },
   { loc: `${site}/guide/`, freq: 'weekly', pri: '0.8' },

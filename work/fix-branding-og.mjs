@@ -6,9 +6,9 @@ const deploy = join(process.cwd(), 'outputs', 'deploy');
 const indexPath = join(deploy, 'index.html');
 let html = await readFile(indexPath, 'utf8');
 
-const siteUrl = 'https://retire-age-kr.pages.dev/';
+const siteUrl = 'https://firemap.kr/';
 const ogVersion = 'firemap-screens-v7-20260613';
-const ogImageUrl = `https://retire-age-kr.pages.dev/og-image.png?v=${ogVersion}`;
+const ogImageUrl = `https://firemap.kr/og-image.png?v=${ogVersion}`;
 const seoTitle = '파이어맵 | FIRE·조기은퇴 계산기 · 퇴사 가능 나이';
 const ogTitle = '또래 중 내 FIRE 등수는? — 파이어맵';
 const ogDescription = '퇴사 가능 나이, 또래 중 내 등수, 절약으로 파이어 앞당기기까지 — 무료 1분.';

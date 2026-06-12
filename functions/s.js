@@ -4,7 +4,7 @@
 export async function onRequest(context) {
   const url = new URL(context.request.url);
   const q = url.searchParams;
-  const site = 'https://retire-age-kr.pages.dev';
+  const site = 'https://firemap.kr';
 
   const esc = (s) =>
     String(s == null ? '' : s)

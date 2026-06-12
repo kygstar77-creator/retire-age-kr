@@ -76,17 +76,18 @@ export async function sendCommunity(message, parentId = null) {
   if (!clean) return null;
   let nick = '';
   try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
-  const body = {
-    message: clean, kind: 'community', nickname: nick || null,
+  const base = {
+    message: clean, kind: 'community',
     page_path: '#community', client_type: window.innerWidth <= 640 ? 'mobile' : 'desktop'
   };
-  if (parentId) body.parent_id = parentId;
+  if (parentId) base.parent_id = parentId;
   const post = async (b) => {
     try { const rows = await callFeedback(TABLE, { method: 'POST', headers: { prefer: 'return=representation' }, body: JSON.stringify(b) }); return rows?.[0] || null; }
     catch { return null; }
   };
-  let r = await post(body);
-  if (!r && parentId == null) { const { parent_id, ...rest } = body; r = await post(rest); }
+  // 1) 닉네임 포함 시도(커뮤니티 닉네임 정책 있을 때만 통과) → 2) 막히면 닉네임 빼고(항상 통과)
+  let r = nick ? await post({ ...base, nickname: nick }) : null;
+  if (!r) r = await post(base);
   return r;
 }
 

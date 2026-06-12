@@ -5,7 +5,6 @@ export async function onRequest(context) {
   const url = new URL(context.request.url);
   const q = url.searchParams;
   const site = 'https://retire-age-kr.pages.dev';
-  const ogImg = `${site}/og-image.png?v=firemap-rank-v6-20260610`;
 
   const esc = (s) =>
     String(s == null ? '' : s)
@@ -19,6 +18,7 @@ export async function onRequest(context) {
   const rw = q.get('rw') || '';
   const sd = (q.get('sd') || '').replace(/[^0-9]/g, '');
   const ad = (q.get('ad') || '').slice(0, 24);
+  const ogImg = `${site}/${(sd && ad) ? 'og-save.png' : 'og-image.png'}?v=firemap-screens-v7-20260613`;
 
   const title = (sd && ad)
     ? `절약으로 파이어 ${ad} 앞당겼어요 — 파이어맵`

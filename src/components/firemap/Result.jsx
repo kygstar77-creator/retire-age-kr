@@ -57,7 +57,7 @@ function RankHero({ simulation }) {
         ? <p className="fm-rank-climb">1등까지 <b>{(live.position - 1).toLocaleString()}명</b> · 조건을 바꾸면 등수가 올라가요</p>
         : <p className="fm-rank-climb">지금 전체 1등이에요! 이 자리를 지켜보세요</p>)}
       <p className="fm-rank-trend">{base.source}</p>
-      <p className="fm-rank-note">등급은 내 자산수명 점수 기준 · 상위 %는 통계청 또래 순자산 기준</p>
+      <p className="fm-rank-note">등수는 ‘빨리 은퇴 가능한 순’ · 상위 %는 통계청 또래 순자산 기준 · 등급은 자산수명 점수 기준</p>
     </section>
   );
 }

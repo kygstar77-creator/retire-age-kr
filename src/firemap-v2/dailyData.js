@@ -132,3 +132,8 @@ export function setTotal(value) {
   try { localStorage.setItem('fm_save', JSON.stringify(next)); } catch { /* ignore */ }
   return next;
 }
+
+// GA 이벤트 (사용 측정 — 서버 불필요)
+export function track(name, params = {}) {
+  try { if (typeof window !== 'undefined' && window.gtag) window.gtag('event', name, { app_name: 'firemap', ...params }); } catch { /* ignore */ }
+}

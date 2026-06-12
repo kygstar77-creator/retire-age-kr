@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
-import { CHALLENGES, QUOTES, QUICK, dayIdx, todayStr, yesterdayStr, wonStr, readJSON, fmtAdvance, dailyNeedOf, addSave, removeEntry, setTotal } from '../../firemap-v2/dailyData.js';
+import { CHALLENGES, QUOTES, QUICK, dayIdx, todayStr, yesterdayStr, wonStr, readJSON, fmtAdvance, dailyNeedOf, addSave, removeEntry, setTotal, track } from '../../firemap-v2/dailyData.js';
 
 function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
   const inp = simulation.inputs;
@@ -46,6 +46,7 @@ export default function Savings({ simulation, onMove }) {
       localStorage.setItem('fm_plan', JSON.stringify({ dailyNeed, fireAge, currentAge: inp.currentAge, ok: dailyNeed == null }));
     } catch { /* ignore */ }
   }, [simulation, dailyNeed]);
+  useEffect(() => { track('save_tab_view'); }, []);
 
   const todaySaved = sv && sv.lastDate === todayStr() ? (sv.today || 0) : 0;
   const totalSaved = sv ? (sv.total || 0) : 0;
@@ -57,7 +58,7 @@ export default function Savings({ simulation, onMove }) {
   const totalAdv = fmtAdvance(advSec(totalSaved));
   const todayEntries = sv && sv.lastDate === todayStr() && Array.isArray(sv.entries) ? sv.entries : [];
 
-  const log = (amount, label) => setSv(addSave(amount, label));
+  const log = (amount, label) => { setSv(addSave(amount, label)); track('save_log', { value: amount, item: label || '직접입력' }); };
   const editTotal = () => { const v = window.prompt('누적 절약액을 수정할까요? (원)', String(totalSaved)); if (v == null) return; setSv(setTotal(String(v).replace(/[^0-9]/g, ''))); };
   const custom = () => {
     const v = window.prompt('오늘 얼마를 아꼈나요? (원)');
@@ -71,6 +72,7 @@ export default function Savings({ simulation, onMove }) {
     try { localStorage.setItem('fm_challenge', JSON.stringify(next)); } catch { /* ignore */ }
     setSt(next);
     if (ch.s > 0) setSv(addSave(ch.s, '오늘의 미션'));
+    track('save_mission_done');
   };
 
   return (

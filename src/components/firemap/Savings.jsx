@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { statsRank } from '../../firemap-v2/rank.js';
+import { funHandle } from '../../firemap-v2/funName.js';
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
 import { submitSave, fetchSaveTop, fetchMySaveRank } from '../../utils/firemapSaveApi.js';
 import { CHALLENGES, QUOTES, QUICK, dayIdx, todayStr, wonStr, readJSON, fmtAdvance, dailyNeedOf, addSave, removeEntry, setTotal, track } from '../../firemap-v2/dailyData.js';
@@ -183,7 +184,7 @@ export default function Savings({ simulation, onMove }) {
             return (
               <li key={i} className={`fm-lb-row${i < 3 ? ' top3' : ''}${mine ? ' me' : ''}`}>
                 <span className="fm-lb-rank">{medal(i)}</span>
-                <span className="fm-lb-who">{r.nickname || '익명'}{mine ? ' (나)' : ''}{r.age_band ? ` · ${r.age_band}대` : ''}</span>
+                <span className="fm-lb-who">{r.nickname || funHandle(r.client_id)}{mine ? ' (나)' : ''}{r.age_band ? ` · ${r.age_band}대` : ''}</span>
                 <span className="fm-lb-score">{wonStr(r.today_saved)}</span>
               </li>
             );

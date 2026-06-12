@@ -12,7 +12,7 @@ export const defaultInputs = {
   annualReturnRate: 5,
   inflationRate: 3,
   expectedPensionAge: 65,
-  expectedMonthlyPension: 0,
+  expectedMonthlyPension: 1000000,
   partTimeIncomeAfterRetirement: 0,
   simulationUntilAge: 90,
   healthInsuranceEnabled: 0,

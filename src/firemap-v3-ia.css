@@ -548,9 +548,13 @@
 /* 홈 — 나이 인라인 입력(발 들여놓기) */
 .fm-home-age { margin: 14px 0 0; }
 .fm-home-age label { display: block; font-size: 13px; font-weight: 800; color: #6b7280; margin: 0 0 8px; }
-.fm-home-age-ctrl { display: grid; grid-template-columns: 48px 1fr 48px; align-items: center; gap: 6px; border: 1px solid #e5e7eb; border-radius: 16px; background: #fff; padding: 8px; }
+.fm-home-age-ctrl { display: grid; grid-template-columns: 42px 1fr 42px; align-items: center; gap: 8px; border: 1px solid #e5e7eb; border-radius: 16px; background: #fff; padding: 8px 12px; }
 .fm-home-age-val { display: flex; align-items: baseline; justify-content: center; gap: 3px; }
-.fm-home-age-ctrl button { height: 44px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; color: #111827; font-size: 20px; font-weight: 800; cursor: pointer; }
+.fm-home-age-ctrl button { width: 42px !important; height: 42px !important; min-width: 42px !important; min-height: 42px !important; border: 1px solid #e5e7eb !important; border-radius: 999px !important; background: #fff !important; color: #4b5563 !important; font-size: 22px !important; font-weight: 700 !important; padding: 0 !important; box-shadow: none !important; cursor: pointer; }
+.fm-home-age-ctrl button:active { background: #f3f4f6 !important; }
 .fm-home-age-ctrl input { border: 0; background: none; text-align: right; font-size: 26px; font-weight: 950; color: #111827; width: 2.4em; outline: none; letter-spacing: -.04em; }
 .fm-home-age-unit { font-size: 17px; font-weight: 800; color: #6b7280; }
 .fm-home-cta { margin-top: 12px; }
+
+/* 푸터 의견 보내기 버튼 (정책 링크와 동일 톤) */
+.fm-policy-fbtn { border: 0; background: none; padding: 0; color: inherit; font: inherit; cursor: pointer; text-decoration: underline; }

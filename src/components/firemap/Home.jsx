@@ -3,6 +3,7 @@ import Header from './Header.jsx';
 import { getLatestRank } from '../../firemap-v2/rankHistory.js';
 import { fetchAggregates } from '../../utils/firemapScoresApi.js';
 import DailyFire from './DailyFire.jsx';
+import FeedbackButton from './FeedbackButton.jsx';
 import { track } from '../../firemap-v2/dailyData.js';
 
 export default function Home({ onStart, onMove }) {
@@ -58,6 +59,7 @@ export default function Home({ onStart, onMove }) {
         <a href="/disclaimer.html">면책 안내</a>
         <a href="/guide/">은퇴 백과</a>
         <a href="/contact.html">문의</a>
+        <FeedbackButton />
       </nav>
     </main>
   );

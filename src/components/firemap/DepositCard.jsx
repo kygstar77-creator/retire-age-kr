@@ -30,7 +30,7 @@ export default function DepositCard({ simulation, onMove }) {
 
   if (!cfg) {
     return (
-      <section className="fm-card fm-dc fm-dep">
+      <section className="fm-card fm-dep">
         <p className="fm-kicker">매일 적립 챌린지 💰</p>
         <h2>하루 한 번 모으고, 목표에 한 칸씩</h2>
         <p className="fm-dc-sub">하루 적립액은 계산기에 넣은 월 저축액 기준이에요(별도 추가가 아니라 ‘내 저축’ 그 자체). 매일 ‘오늘 적립’을 누르면 연속일이 쌓이고 목표 자산까지 게이지가 차올라요.</p>
@@ -62,7 +62,7 @@ export default function DepositCard({ simulation, onMove }) {
   const reached = hasGoal && saved >= target;
 
   return (
-    <section className="fm-card fm-dc fm-dep live">
+    <section className="fm-card fm-dep live">
       <div className="fm-dc-top">
         <p className="fm-kicker">매일 적립 💰 {dispStreak}일 연속{dispStreak >= 3 ? ' 🔥' : ''}</p>
         <button type="button" className="fm-inline-link" onClick={reset}>설정</button>

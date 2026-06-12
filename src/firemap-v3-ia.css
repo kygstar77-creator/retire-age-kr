@@ -646,3 +646,23 @@
 .fm-dep-gauge > i{display:block;height:100%;background:linear-gradient(90deg,#ff8a3d,#ff5a00);border-radius:999px;transition:width .5s ease}
 .fm-dep-mini{font-size:12px;color:#c7d4e8;margin:2px 0 0}
 .fm-dep-mini b{color:#fff}
+
+/* 적립 카드: 다른 카드와 동일한 라이트 톤으로 통일 (남색 제거) */
+.fm-dep{background:#fff;color:#1a1c22}
+.fm-dep .fm-kicker{color:#ea580c}
+.fm-dep h2{color:#16181d;font-size:18px}
+.fm-dep .fm-dc-sub{color:#5b6573;font-size:13px;line-height:1.55}
+.fm-dep .fm-dc-amt{color:#374151}
+.fm-dep .fm-dc-amt b{color:#ff5a00}
+.fm-dep .fm-dc-note{color:#8b95a1}
+.fm-dep .fm-dc-foot{color:#5b6573}
+.fm-dep .fm-dc-top .fm-inline-link{color:#6b7280}
+.fm-dep .fm-dc-big small{color:#6b7280}
+.fm-dep .fm-dc-big b{color:#ff5a00}
+.fm-dep .fm-dep-goalrow span{color:#374151}
+.fm-dep .fm-dep-goalrow b{color:#ff5a00}
+.fm-dep .fm-dep-gauge{background:#eef1f5}
+.fm-dep .fm-dep-mini{color:#5b6573}
+.fm-dep .fm-dep-mini b{color:#16181d}
+.fm-dep .fm-dep-done{border:1px solid #e5e7eb;background:#f3f4f6;color:#6b7280}
+.fm-dep .fm-inline-link{color:#ea580c}

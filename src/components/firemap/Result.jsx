@@ -169,6 +169,7 @@ function TopLevers({ inputs, simulation, onChange }) {
         ))}
       </ul>
       <p className="fm-goal-note">각 값은 목표 달성에 필요한 최소치예요. 수익률은 높이면 위험도 커지니 참고만 하세요.</p>
+      <button type="button" className="fm-goal-savelink" onClick={() => { window.location.hash = '#save'; }}>💡 이 저축, 매일 조금씩 채우려면 → 오늘의 절약 탭</button>
     </section>
   );
 }

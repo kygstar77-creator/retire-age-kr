@@ -14,7 +14,7 @@ export const screens = {
   pension:    { hash: '#pension',    title: '국민연금 조기수령',   type: 'tool', back: 'tools' },
   city:       { hash: '#city',       title: '도시 비교 · 해외 체류', type: 'tool', back: 'cities' },
   community:  { hash: '#community',  title: '커뮤니티',           type: 'tool', back: 'tools' },
-  ranking:    { hash: '#ranking',    title: 'FIRE 랭킹',          type: 'tool', back: 'result' },
+  ranking:    { hash: '#ranking',    title: 'FIRE 랭킹',          type: 'tool', back: 'result', tab: 'ranking' },
   cities:     { hash: '#cities',     title: '해외 도시 탐색',      type: 'tool', back: 'tools' }
 };
 
@@ -43,6 +43,7 @@ export const TOOLS = [
 export const TABS = [
   { id: 'home',  label: '홈',   target: 'home' },
   { id: 'save',  label: '절약', target: 'save' },
+  { id: 'ranking', label: '랭킹', target: 'ranking' },
   { id: 'tools', label: '도구', target: 'tools' },
   { id: 'guide', label: '백과', href: '/guide/' }
 ];

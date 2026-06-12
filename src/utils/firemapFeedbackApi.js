@@ -36,17 +36,23 @@ export async function loadFeedback(kind = 'feedback') {
 export async function sendFeedback(message, kind = 'feedback') {
   const clean = String(message || '').trim().slice(0, 240);
   if (!clean) return null;
-  const rows = await callFeedback(TABLE, {
+  const base = {
+    message: clean,
+    page_path: window.location.hash || window.location.pathname || '/',
+    client_type: window.innerWidth <= 640 ? 'mobile' : 'desktop'
+  };
+  const post = (body) => callFeedback(TABLE, {
     method: 'POST',
     headers: { prefer: 'return=representation' },
-    body: JSON.stringify({
-      message: clean,
-      kind,
-      page_path: window.location.hash || window.location.pathname || '/',
-      client_type: window.innerWidth <= 640 ? 'mobile' : 'desktop'
-    })
+    body: JSON.stringify(body)
   });
-  return rows?.[0] || null;
+  try {
+    const rows = await post({ ...base, kind });
+    return rows?.[0] || null;
+  } catch {
+    // kind 컬럼이 아직 없으면(마이그레이션 전) kind 없이 재시도
+    try { const rows = await post(base); return rows?.[0] || null; } catch { return null; }
+  }
 }
 
 export const loadCommunity = () => loadFeedback('community');

@@ -486,3 +486,19 @@
 .fm-rank-hero .fm-hero-mini { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 0; }
 .fm-rank-hero .fm-hero-mini span { background: rgba(255,255,255,.10); color: #fff; font-size: 13px; font-weight: 700; padding: 7px 11px; border-radius: 12px; }
 .fm-rank-hero .fm-hero-mini b { color: #fff; font-weight: 900; }
+
+/* 절약 히어로 블록 — 네이비(결과 화면과 동일 프리미엄 리듬) */
+.fm-save-hero-navy { background: var(--fm-navy); border-radius: 16px; padding: 16px 16px 18px; margin: 0 0 14px; }
+.fm-save-hero-navy .fm-kicker { color: #fed7aa !important; margin: 0 0 8px; }
+.fm-save-hero-navy .fm-save-hero { background: transparent; border: 0; padding: 0; margin: 0 0 6px; }
+.fm-save-hero-navy .fm-save-hero small { color: rgba(255,255,255,.72); }
+.fm-save-hero-navy .fm-save-hero > b { color: #fff; }
+.fm-save-hero-navy .fm-save-adv { color: #fed7aa; }
+.fm-save-hero-navy .fm-save-adv b { color: #ffb27a; }
+.fm-save-hero-navy .fm-save-adv.muted { color: rgba(255,255,255,.6); }
+.fm-save-hero-navy .fm-fp { margin: 14px 0 0; }
+.fm-save-hero-navy .fm-fp-labels span { color: rgba(255,255,255,.72); }
+.fm-save-hero-navy .fm-fp-track { background: rgba(255,255,255,.16); }
+.fm-save-hero-navy .fm-fp-cap { color: #fed7aa; }
+.fm-save-hero-navy .fm-fp-cap b { color: #ffb27a; }
+.fm-save-hero-navy .fm-fp-flag { color: #fff; }

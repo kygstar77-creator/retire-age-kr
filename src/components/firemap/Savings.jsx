@@ -107,16 +107,17 @@ export default function Savings({ simulation, onMove }) {
       <p className="fm-daily-wisdom">“{quote}”</p>
 
       <section className="fm-card fm-save-screen">
-        <p className="fm-kicker">오늘의 절약 🔥 {streak}일 연속</p>
-        <div className="fm-save-hero">
-          <small>오늘 아낀 돈</small>
-          <b>{wonStr(todaySaved)}</b>
-          {dailyNeed
-            ? (todaySaved > 0 && todayAdv && <span className="fm-save-adv">파이어 <b>{todayAdv}</b> 앞당김 ⏩</span>)
-            : <span className="fm-save-adv muted">이미 목표 달성 — 아낀 돈은 여유로 쌓여요</span>}
+        <div className="fm-save-hero-navy">
+          <p className="fm-kicker">오늘의 절약 🔥 {streak}일 연속</p>
+          <div className="fm-save-hero">
+            <small>오늘 아낀 돈</small>
+            <b>{wonStr(todaySaved)}</b>
+            {dailyNeed
+              ? (todaySaved > 0 && todayAdv && <span className="fm-save-adv">파이어 <b>{todayAdv}</b> 앞당김 ⏩</span>)
+              : <span className="fm-save-adv muted">이미 목표 달성 — 아낀 돈은 여유로 쌓여요</span>}
+          </div>
+          <FireProgressBar simulation={simulation} totalSaved={totalSaved} dailyNeed={dailyNeed} />
         </div>
-
-        <FireProgressBar simulation={simulation} totalSaved={totalSaved} dailyNeed={dailyNeed} />
 
         {ch.s > 0 && (
           <button type="button" className="fm-save-rec" onClick={() => log(ch.s, ch.t)}>

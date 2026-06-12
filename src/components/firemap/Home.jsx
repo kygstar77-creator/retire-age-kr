@@ -7,7 +7,7 @@ import FeedbackButton from './FeedbackButton.jsx';
 import { track } from '../../firemap-v2/dailyData.js';
 import DepositCard from './DepositCard.jsx';
 
-export default function Home({ onStart, onMove }) {
+export default function Home({ onStart, onMove, simulation }) {
   const [agg, setAgg] = useState(null);
   const [age, setAge] = useState(35);
   useEffect(() => {
@@ -50,7 +50,7 @@ export default function Home({ onStart, onMove }) {
         <button type="button" className="fm-home-cta" onClick={() => { track('start_calc', { age }); onStart(age); }}>이 나이로 1분 계산 시작 →</button>
         {proof && <p className="fm-home-proof">{proof}</p>}
       </section>
-      <DepositCard onMove={onMove} />
+      <DepositCard onMove={onMove} simulation={simulation} />
       <DailyFire onMove={onMove} />
       <section className="fm-home-mini-card">
         <strong>입력값은 기기 안에서 계산돼요</strong>

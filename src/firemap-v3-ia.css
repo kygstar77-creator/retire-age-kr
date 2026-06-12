@@ -637,3 +637,12 @@
 .fm-dep-check:active{background:#e64f00}
 .fm-dep-done{margin-top:12px;width:100%;border:1px solid #2f5a8f;border-radius:12px;background:rgba(255,255,255,.08);color:#bfe3c8;font-size:14px;font-weight:800;padding:13px;cursor:default}
 .fm-dep-hint{display:block;color:#8ea4c4;font-size:11px;margin-top:2px}
+
+/* 적립 진행형 게이지 */
+.fm-dep-goalrow{display:flex;align-items:baseline;justify-content:space-between;margin:6px 0 0}
+.fm-dep-goalrow span{font-size:13px;color:#c7d4e8}
+.fm-dep-goalrow b{font-size:20px;color:#ffb14e;font-weight:950}
+.fm-dep-gauge{height:10px;border-radius:999px;background:rgba(255,255,255,.14);overflow:hidden;margin:8px 0 6px}
+.fm-dep-gauge > i{display:block;height:100%;background:linear-gradient(90deg,#ff8a3d,#ff5a00);border-radius:999px;transition:width .5s ease}
+.fm-dep-mini{font-size:12px;color:#c7d4e8;margin:2px 0 0}
+.fm-dep-mini b{color:#fff}

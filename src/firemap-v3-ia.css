@@ -479,3 +479,10 @@
 .fm-peer-avg { background: rgba(148,163,184,.16); color: #475569; }
 .fm-peer-diff.up { background: #dcfce7; color: #166534; }
 .fm-peer-diff.down { background: #fee2e2; color: #b91c1c; }
+
+/* 결과 히어로 v4 — 네이비 프리미엄 룩 + 퇴사 나이 주인공 */
+.fm-result-hero-v4 .fm-rank-pct { font-size: 42px; font-weight: 800; letter-spacing: -.02em; }
+.fm-result-hero-v4 .fm-hero-headline { font-size: 16px; font-weight: 700; color: #fff; margin: 2px 0 12px; line-height: 1.35; }
+.fm-rank-hero .fm-hero-mini { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 0; }
+.fm-rank-hero .fm-hero-mini span { background: rgba(255,255,255,.10); color: #fff; font-size: 13px; font-weight: 700; padding: 7px 11px; border-radius: 12px; }
+.fm-rank-hero .fm-hero-mini b { color: #fff; font-weight: 900; }

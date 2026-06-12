@@ -47,41 +47,30 @@ function ResultHeroV2({ simulation }) {
 
   const peerAvg = agg && agg.avgEarliest ? agg.avgEarliest : null;
   const diff = (peerAvg != null && earliest != null) ? (peerAvg - earliest) : null;
-  const copy = !earliest
-    ? '더 모으거나 생활비를 줄이면 퇴사 시점이 보여요. 아래에서 방법을 확인하세요.'
-    : earliest < target
-      ? `목표(${target}세)보다 일찍 가능해요 👍`
-      : earliest > target
-        ? `목표(${target}세)보단 조금 늦지만, 조건을 바꾸면 당겨져요.`
-        : '목표 나이가 딱 적절해요.';
 
   return (
-    <section className="fm-card fm-result fm-result-v3">
-      <p>내 퇴사 가능 나이</p>
-      {earliest
-        ? <h2>지금 계획이면<br /><b>{earliest}세</b>에 퇴사할 수 있어요</h2>
-        : <h2>지금 계획으론<br /><b>조금 더</b> 모아야 해요</h2>}
-
-      <div className="fm-peer">
-        {peerAvg != null && <span className="fm-peer-avg">또래 평균 {peerAvg}세</span>}
+    <section className="fm-rank-hero fm-result-hero-v4">
+      <p className="fm-rank-label">내 퇴사 가능 나이 · {base.ageBandLabel} 또래 기준</p>
+      <div className="fm-rank-top">
+        <span className="fm-rank-pct">{earliest ? `${earliest}세` : '계산 필요'}</span>
         {diff != null && (
-          <span className={`fm-peer-diff ${diff >= 0 ? 'up' : 'down'}`}>
-            {diff > 0 ? `또래보다 ${diff}년 빠름` : diff < 0 ? `또래보다 ${Math.abs(diff)}년 느림` : '또래와 비슷'}
+          <span className={`fm-rank-delta ${diff >= 0 ? 'up' : 'down'}`}>
+            {diff > 0 ? `또래 ▲ ${diff}년 빠름` : diff < 0 ? `또래 ▼ ${Math.abs(diff)}년 느림` : '또래와 비슷'}
           </span>
         )}
       </div>
-
+      <p className="fm-hero-headline">{earliest ? '지금 계획이면 이 나이에 퇴사할 수 있어요' : '더 모으거나 생활비를 줄이면 퇴사 시점이 보여요'}</p>
       {live
-        ? <p className="fm-rank-line">함께 계산한 {live.total.toLocaleString()}명 중 <b>{live.position.toLocaleString()}등</b> · 빨리 은퇴 가능한 순</p>
-        : <p className="fm-rank-line">등수 집계 중…</p>}
-
-      <div className="fm-result-chips">
+        ? <p className="fm-rank-line">함께 계산한 <b>{live.total.toLocaleString()}명</b> 중 <b>{live.position.toLocaleString()}등</b> · 빨리 은퇴 가능한 순</p>
+        : <p className="fm-rank-line">실시간 집계 중…</p>}
+      {live && (live.position > 1
+        ? <p className="fm-rank-climb">1등까지 <b>{(live.position - 1).toLocaleString()}명</b> · 조건 바꾸면 등수가 올라가요</p>
+        : <p className="fm-rank-climb">지금 전체 1등이에요!</p>)}
+      <div className="fm-hero-mini">
         <span>목표 퇴사 <b>{target}세</b></span>
-        <span>{phrase.ok ? '자산 버티는 나이' : '자산 상태'} <b>{phrase.runway}</b></span>
+        <span>자산 버티는 나이 <b>{phrase.runway}</b></span>
       </div>
-
-      <p className="fm-result-copy">{copy}</p>
-      <p className="fm-rank-note">참고 · 또래 순자산 상위 {base.percentile}% · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)} 반영</p>
+      <p className="fm-rank-note">{peerAvg != null ? `또래 평균 ${peerAvg}세 · ` : ''}또래 순자산 상위 {base.percentile}% · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)}</p>
     </section>
   );
 }

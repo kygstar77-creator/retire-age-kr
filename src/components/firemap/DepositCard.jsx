@@ -1,65 +1,73 @@
 import { useState } from 'react';
+import { fmtAdvance, dailyNeedOf } from '../../firemap-v2/dailyData.js';
 
 const KEY = 'fm_daily';
 const todayStr = () => new Date().toISOString().slice(0, 10);
+const monthStr = () => new Date().toISOString().slice(0, 7);
 const yesterdayStr = () => new Date(Date.now() - 86400000).toISOString().slice(0, 10);
 const load = () => { try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch { return null; } };
 const save = (o) => { try { localStorage.setItem(KEY, JSON.stringify(o)); } catch { /* ignore */ } };
 const won = (n) => `${Math.round(n).toLocaleString('ko-KR')}원`;
-const big = (n) => {
-  if (n >= 100000000) { const v = n / 100000000; return `${v % 1 === 0 ? v : v.toFixed(1)}억`; }
-  if (n >= 10000) return `${Math.round(n / 10000).toLocaleString('ko-KR')}만`;
-  return `${Math.round(n).toLocaleString('ko-KR')}원`;
-};
 
-// 적립 = 내 본 저축(월 저축액과 동기). 매일 체크인으로 연속일·목표까지 게이지가 차오름.
-// 퇴사 나이는 계산 결과 그대로(이중계산·절약 중복 없음).
+// 적립 = 내 본 저축. 매월 '계획(월 저축액)'까지는 이미 퇴사 나이에 반영 → 앞당김 0.
+// 계획을 '초과'한 만큼만 추가 자산으로 보고 퇴사를 앞당김(이중계산 없음).
 export default function DepositCard({ simulation, onMove }) {
   const inp = (simulation && simulation.inputs) || {};
-  const target = (simulation && simulation.requiredFireAssetByFourPercent) || 0;
-  const currentAsset = inp.financialAsset || 0;
   const fireAge = (simulation && simulation.earliestRetirementAge) || inp.targetRetirementAge || null;
-  const monthlyInvest = inp.monthlyInvestment || 0;
-  const defaultDaily = monthlyInvest > 0 ? Math.max(1000, Math.round(monthlyInvest / 30 / 1000) * 1000) : 10000;
+  const monthlyPlan = inp.monthlyInvestment || 0;
+  const dailyNeed = dailyNeedOf(simulation);
+  const defaultDaily = monthlyPlan > 0 ? Math.max(1000, Math.round(monthlyPlan / 30 / 1000) * 1000) : 10000;
 
   const [cfg, setCfg] = useState(load);
   const [amount, setAmount] = useState((cfg && cfg.amount) || defaultDaily);
 
-  const start = () => { const o = { amount, total: 0, streak: 0, days: 0, lastDate: null }; save(o); setCfg(o); };
+  const start = () => { const o = { amount, total: 0, streak: 0, days: 0, lastDate: null, monthKey: null, monthTotal: 0, surplusTotal: 0 }; save(o); setCfg(o); };
   const reset = () => { try { localStorage.removeItem(KEY); } catch { /* ignore */ } setCfg(null); };
 
   if (!cfg) {
     return (
       <section className="fm-card fm-dep">
         <p className="fm-kicker">매일 적립 챌린지 💰</p>
-        <h2>하루 한 번 모으고, 목표에 한 칸씩</h2>
-        <p className="fm-dc-sub">하루 적립액은 계산기에 넣은 월 저축액 기준이에요(별도 추가가 아니라 ‘내 저축’ 그 자체). 매일 ‘오늘 적립’을 누르면 연속일이 쌓이고 목표 자산까지 게이지가 차올라요.</p>
+        <h2>하루 한 번 모으고, 계획을 넘기면 퇴사 당기기</h2>
+        <p className="fm-dc-sub">하루 적립액은 계산기에 넣은 월 저축액 기준이에요. 매일 ‘오늘 적립’을 누르면 이번 달 계획 바가 차오르고, <b>월 저축액을 초과해 더 모은 만큼만</b> 퇴사가 앞당겨져요(이미 반영된 계획분은 중복 없이).</p>
         <div className="fm-dc-set">
           <div className="fm-dc-amt">하루 <b>{won(amount)}</b></div>
           <input type="range" min="1000" max="100000" step="1000" value={amount} onChange={(e) => setAmount(Number(e.target.value))} />
         </div>
         <button type="button" className="fm-dc-start" onClick={start}>이 금액으로 시작하기 ▶</button>
-        <p className="fm-dc-note">퇴사 나이는 계산 결과 그대로예요. 적립은 그 목표까지 매일 채워가는 습관 트래커예요.</p>
+        <p className="fm-dc-note">퇴사 나이는 계산 결과 그대로예요. 계획보다 더 모은 ‘초과분’만 추가로 당깁니다.</p>
       </section>
     );
   }
 
   const today = todayStr();
+  const m = monthStr();
   const checkedToday = cfg.lastDate === today;
   const broken = cfg.lastDate && cfg.lastDate !== today && cfg.lastDate !== yesterdayStr();
   const dispStreak = broken && !checkedToday ? 0 : (cfg.streak || 0);
+  const monthTotal = cfg.monthKey === m ? (cfg.monthTotal || 0) : 0;
+  const surplus = cfg.surplusTotal || 0;
+  const planPct = monthlyPlan > 0 ? Math.max(0, Math.min(100, (monthTotal / monthlyPlan) * 100)) : 0;
+  const advLabel = dailyNeed && surplus > 0 ? (fmtAdvance((surplus / dailyNeed) * 86400) || null) : null;
 
   const checkIn = () => {
     if (cfg.lastDate === today) return;
     const cont = cfg.lastDate === yesterdayStr();
-    const next = { ...cfg, total: (cfg.total || 0) + cfg.amount, days: (cfg.days || 0) + 1, streak: cont ? (cfg.streak || 0) + 1 : 1, lastDate: today };
+    const base = cfg.monthKey === m ? (cfg.monthTotal || 0) : 0;
+    const after = base + cfg.amount;
+    const surplusGain = Math.max(0, after - Math.max(base, monthlyPlan)); // 계획 초과한 부분만
+    const next = {
+      ...cfg,
+      total: (cfg.total || 0) + cfg.amount,
+      days: (cfg.days || 0) + 1,
+      streak: cont ? (cfg.streak || 0) + 1 : 1,
+      lastDate: today,
+      monthKey: m,
+      monthTotal: after,
+      surplusTotal: (cfg.surplusTotal || 0) + surplusGain
+    };
     save(next); setCfg(next);
   };
-
-  const saved = currentAsset + (cfg.total || 0);
-  const hasGoal = target > 0;
-  const pct = hasGoal ? Math.max(0, Math.min(100, (saved / target) * 100)) : 0;
-  const reached = hasGoal && saved >= target;
 
   return (
     <section className="fm-card fm-dep live">
@@ -68,17 +76,21 @@ export default function DepositCard({ simulation, onMove }) {
         <button type="button" className="fm-inline-link" onClick={reset}>설정</button>
       </div>
 
-      {hasGoal ? (
+      {monthlyPlan > 0 ? (
         <>
           <div className="fm-dep-goalrow">
-            <span>목표 {big(target)}까지</span>
-            <b>{reached ? '달성! 🎉' : `${pct.toFixed(pct < 10 ? 1 : 0)}%`}</b>
+            <span>이번 달 적립 계획</span>
+            <b>{Math.round(planPct)}%</b>
           </div>
-          <div className="fm-dep-gauge"><i style={{ width: `${pct}%` }} /></div>
-          <p className="fm-dep-mini">{fireAge ? <>이 속도면 예상 퇴사 <b>{fireAge}세</b> · </> : null}누적 적립 {won(cfg.total || 0)} · {cfg.days || 0}일</p>
+          <div className="fm-dep-gauge"><i style={{ width: `${planPct}%` }} /></div>
+          <p className="fm-dep-mini">
+            이번 달 {won(monthTotal)} / 계획 {won(monthlyPlan)}
+            {advLabel ? <> · 계획 초과로 퇴사 <b>{advLabel}</b> 앞당김 ⏩</> : null}
+            {fireAge ? ` · 예상 퇴사 ${fireAge}세` : ''}
+          </p>
         </>
       ) : (
-        <p className="fm-dep-mini">누적 적립 {won(cfg.total || 0)} · {cfg.days || 0}일 적립 · <button type="button" className="fm-inline-link" onClick={() => onMove && onMove('result')}>퇴사 나이 계산</button>하면 목표 게이지가 생겨요</p>
+        <p className="fm-dep-mini">누적 적립 {won(cfg.total || 0)} · {cfg.days || 0}일 · <button type="button" className="fm-inline-link" onClick={() => onMove && onMove('result')}>퇴사 나이 계산</button>하면 계획 대비 진행이 보여요</p>
       )}
 
       {checkedToday
@@ -86,8 +98,8 @@ export default function DepositCard({ simulation, onMove }) {
         : <button type="button" className="fm-dep-check" onClick={checkIn}>오늘 적립 +{won(cfg.amount)} ✅</button>}
       <p className="fm-dc-foot">
         {checkedToday
-          ? `오늘 한 칸 채웠어요 · 내일도 적립하면 ${dispStreak + 1}일 연속!`
-          : (broken ? '며칠 쉬었네요 — 오늘 다시 시작해요!' : '오늘 적립을 눌러 목표에 한 걸음 더 다가가세요.')}
+          ? `오늘 채웠어요 · 내일도 적립하면 ${dispStreak + 1}일 연속!`
+          : (broken ? '며칠 쉬었네요 — 오늘 다시 시작해요!' : '오늘 적립을 눌러 이번 달 계획을 채워가세요.')}
       </p>
     </section>
   );

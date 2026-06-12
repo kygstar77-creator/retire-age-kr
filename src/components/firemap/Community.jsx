@@ -37,7 +37,8 @@ export default function Community({ onBack }) {
     return () => { alive = false; };
   }, []);
 
-  const isMine = (id) => mine.includes(id);
+  const nick = myNickname();
+  const isMine = (row) => mine.includes(row.id) || (!!nick && !!row.nickname && row.nickname === nick);
   const remember = (id) => { addMine(id); setMine(loadMine()); };
 
   const posts = rows.filter((r) => !r.parent_id).sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
@@ -89,10 +90,8 @@ export default function Community({ onBack }) {
     }
   };
 
-  const nick = myNickname();
-
   const OwnerControls = ({ row }) => (
-    isMine(row.id) ? (
+    isMine(row) ? (
       <span className="fm-post-own">
         <button type="button" className="fm-post-edit" onClick={() => startEdit(row)}>수정</button>
         <button type="button" className="fm-post-del" onClick={() => removeRow(row)}>삭제</button>

@@ -38,7 +38,9 @@ export default function Community({ onBack }) {
   }, []);
 
   const nick = myNickname();
-  const isMine = (row) => mine.includes(row.id) || (!!nick && !!row.nickname && row.nickname === nick);
+  const myCid = (() => { try { return localStorage.getItem('fm_cid'); } catch { return null; } })();
+  // '내 글' 판별: 이 기기에서 올린 글 ID(localStorage) 또는 기기 고유 client_id 일치. 닉네임은 중복될 수 있어 쓰지 않음.
+  const isMine = (row) => mine.includes(row.id) || (!!myCid && !!row.client_id && row.client_id === myCid);
   const remember = (id) => { addMine(id); setMine(loadMine()); };
 
   const posts = rows.filter((r) => !r.parent_id).sort((a, b) => new Date(b.created_at) - new Date(a.created_at));

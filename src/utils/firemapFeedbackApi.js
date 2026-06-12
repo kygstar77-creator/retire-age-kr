@@ -56,6 +56,13 @@ export async function sendFeedback(message, kind = 'feedback') {
 }
 
 // ===== 커뮤니티(스레드형) =====
+function ffDeviceId() {
+  try {
+    let id = localStorage.getItem('fm_cid');
+    if (!id) { id = (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random().toString(16).slice(2)); localStorage.setItem('fm_cid', id); }
+    return id;
+  } catch { return null; }
+}
 async function commGet(query) {
   try { const rows = await callFeedback(query, { method: 'GET' }); return Array.isArray(rows) ? rows : []; }
   catch { return null; }
@@ -63,7 +70,11 @@ async function commGet(query) {
 
 // 게시글 + 답글을 한 번에 불러옴(파생 컬럼 없으면 평면으로 폴백)
 export async function loadCommunityThread() {
-  let rows = await commGet(`${TABLE}?select=id,nickname,message,created_at,parent_id,likes&kind=eq.community&status=eq.visible&order=created_at.asc&limit=300`);
+  // 1순위: client_id 포함(마이그레이션 후) → 2순위: 스레드 컬럼만 → 3순위: 평면(레거시)
+  let rows = await commGet(`${TABLE}?select=id,nickname,message,created_at,parent_id,likes,client_id&kind=eq.community&status=eq.visible&order=created_at.asc&limit=300`);
+  if (rows === null) {
+    rows = await commGet(`${TABLE}?select=id,nickname,message,created_at,parent_id,likes&kind=eq.community&status=eq.visible&order=created_at.asc&limit=300`);
+  }
   if (rows === null) {
     const flat = await commGet(`${TABLE}?select=id,nickname,message,created_at&kind=eq.community&status=eq.visible&order=created_at.asc&limit=300`);
     rows = (flat || []).map((r) => ({ ...r, parent_id: null, likes: 0 }));
@@ -76,19 +87,24 @@ export async function sendCommunity(message, parentId = null) {
   if (!clean) return null;
   let nick = '';
   try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
+  const cid = ffDeviceId();
   const base = {
     message: clean, kind: 'community',
     page_path: '#community', client_type: window.innerWidth <= 640 ? 'mobile' : 'desktop'
   };
   if (parentId) base.parent_id = parentId;
+  const withCid = cid ? { ...base, client_id: cid } : base;
   const post = async (b) => {
     try { const rows = await callFeedback(TABLE, { method: 'POST', headers: { prefer: 'return=representation' }, body: JSON.stringify(b) }); return rows?.[0] || null; }
     catch { return null; }
   };
-  // 1) 닉네임 포함 시도(커뮤니티 닉네임 정책 있을 때만 통과) → 2) 막히면 닉네임 빼고(항상 통과)
-  let r = nick ? await post({ ...base, nickname: nick }) : null;
-  if (!r) r = await post(base);
-  return r;
+  // client_id 컬럼/닉네임 정책 유무와 무관하게 글은 항상 올라가도록 단계적으로 시도
+  const candidates = [];
+  if (nick) candidates.push({ ...withCid, nickname: nick });
+  candidates.push(withCid);
+  if (cid) { if (nick) candidates.push({ ...base, nickname: nick }); candidates.push(base); }
+  for (const b of candidates) { const r = await post(b); if (r) return r; }
+  return null;
 }
 
 // ===== 안전한 변경(204 빈응답도 성공 처리, json 파싱 안 함) =====

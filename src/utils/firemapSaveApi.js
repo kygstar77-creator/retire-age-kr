@@ -63,7 +63,7 @@ export async function submitSave({ todaySaved, totalSaved, advancedDays, streak,
 // 오늘 가장 많이 아낀 사람 top N
 export async function fetchSaveTop(limit = 10) {
   try {
-    const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=nickname,today_saved,age_band&date=eq.${todayStr()}&today_saved=gt.0&order=today_saved.desc&limit=${limit}`;
+    const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=client_id,nickname,today_saved,age_band&date=eq.${todayStr()}&today_saved=gt.0&order=today_saved.desc&limit=${limit}`;
     const res = await fetch(url, { method: 'GET', headers: headers() });
     if (!res.ok) return [];
     return await res.json();

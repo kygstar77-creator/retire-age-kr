@@ -506,3 +506,7 @@
 /* 결과 히어로 → 전체 랭킹 링크 */
 .fm-result-hero-v4 .fm-hero-ranklink { display: inline-block; margin-top: 12px; padding: 8px 14px; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; background: rgba(255,255,255,.08); color: #fff; font-size: 13px; font-weight: 800; cursor: pointer; }
 .fm-result-hero-v4 .fm-hero-ranklink:active { background: rgba(255,255,255,.16); }
+
+/* 절약 랭킹 — 내 행 하이라이트 */
+.fm-lb-row.me { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 12px; }
+.fm-lb-row.me .fm-lb-who { color: #c2410c; font-weight: 900; }

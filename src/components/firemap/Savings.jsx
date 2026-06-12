@@ -41,6 +41,9 @@ export default function Savings({ simulation, onMove }) {
   const ch = CHALLENGES[dayIdx() % CHALLENGES.length];
   const quote = QUOTES[dayIdx() % QUOTES.length];
   const [sv, setSv] = useState(() => readJSON('fm_save'));
+  const [nick, setNick] = useState(() => { try { return localStorage.getItem('fm_nickname') || ''; } catch { return ''; } });
+  const [nickSaved, setNickSaved] = useState(false);
+  const myCid = (() => { try { return localStorage.getItem('fm_cid'); } catch { return null; } })();
   const dailyNeed = dailyNeedOf(simulation);
 
   useEffect(() => {
@@ -73,6 +76,15 @@ export default function Savings({ simulation, onMove }) {
     try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
     submitSave({ todaySaved: tVal, totalSaved: nextSv.total || 0, advancedDays: adv, streak: nextSv.streak, nickname: nick, ageBand })
       .then(() => refresh(tVal));
+  };
+  const saveNick = () => {
+    const v = nick.trim().slice(0, 16);
+    try { localStorage.setItem('fm_nickname', v); } catch { /* ignore */ }
+    setNick(v);
+    const cur = readJSON('fm_save');
+    if (cur) persist(cur); else refresh(todaySaved);
+    setNickSaved(true);
+    setTimeout(() => setNickSaved(false), 1800);
   };
   const shareSave = async () => {
     const adLabel = fmtAdvance(advSec(totalSaved)) || '';
@@ -158,18 +170,25 @@ export default function Savings({ simulation, onMove }) {
         <p className="fm-kicker">오늘의 절약 랭킹 🏆</p>
         <p className="fm-section-sub">오늘 가장 많이 아낀 사람들이에요 · 매일 새로 시작해요</p>
         {rank && <p className="fm-save-myrank">오늘 내 절약 <b>{wonStr(todaySaved)}</b> · {rank.total.toLocaleString()}명 중 <b>{rank.position.toLocaleString()}위</b></p>}
+        <div className="fm-nick-row">
+          <input id="fm-save-nick" maxLength={16} value={nick} placeholder="닉네임 (예: 파이어왕)" onChange={(e) => setNick(e.target.value)} />
+          <button type="button" onClick={saveNick}>{nickSaved ? '등록됨 ✓' : '닉네임 등록'}</button>
+        </div>
+        <p className="fm-section-sub">닉네임을 넣으면 아래 랭킹에 바로 내 이름으로 올라가요. 익명도 괜찮아요.</p>
         <ol className="fm-lb-list">
           {top === null && <li className="fm-lb-empty">불러오는 중…</li>}
           {top && top.length === 0 && <li className="fm-lb-empty">아직 오늘 기록이 적어요. 첫 주자가 되어보세요!</li>}
-          {top && top.map((r, i) => (
-            <li key={i} className={`fm-lb-row${i < 3 ? ' top3' : ''}`}>
-              <span className="fm-lb-rank">{medal(i)}</span>
-              <span className="fm-lb-who">{r.nickname || '익명'}{r.age_band ? ` · ${r.age_band}대` : ''}</span>
-              <span className="fm-lb-score">{wonStr(r.today_saved)}</span>
-            </li>
-          ))}
+          {top && top.map((r, i) => {
+            const mine = r.client_id && myCid && r.client_id === myCid;
+            return (
+              <li key={i} className={`fm-lb-row${i < 3 ? ' top3' : ''}${mine ? ' me' : ''}`}>
+                <span className="fm-lb-rank">{medal(i)}</span>
+                <span className="fm-lb-who">{r.nickname || '익명'}{mine ? ' (나)' : ''}{r.age_band ? ` · ${r.age_band}대` : ''}</span>
+                <span className="fm-lb-score">{wonStr(r.today_saved)}</span>
+              </li>
+            );
+          })}
         </ol>
-        <p className="fm-section-sub">닉네임을 등록하면 이름으로 올라가요 → <button type="button" className="fm-inline-link" onClick={() => onMove('ranking')}>랭킹 탭에서 등록</button></p>
       </section>
     </main>
   );

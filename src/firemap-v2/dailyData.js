@@ -94,11 +94,17 @@ export function addSave(amount, label) {
   const newDay = !prev || prev.lastDate !== t;
   const prevEntries = newDay || !prev || !Array.isArray(prev.entries) ? [] : prev.entries;
   const entry = { id: `${Date.now()}_${Math.random().toString(36).slice(2, 6)}`, won: amount, label: label || '직접 입력' };
+  let streak;
+  if (!prev) streak = 1;
+  else if (prev.lastDate === t) streak = prev.streak || 1;
+  else if (prev.lastDate === yesterdayStr()) streak = (prev.streak || 0) + 1;
+  else streak = 1;
   const next = {
     today: (newDay ? 0 : (prev.today || 0)) + amount,
     total: (prev ? prev.total || 0 : 0) + amount,
     days: (prev ? prev.days || 0 : 0) + (newDay ? 1 : 0),
     lastDate: t,
+    streak,
     entries: [...prevEntries, entry]
   };
   try { localStorage.setItem('fm_save', JSON.stringify(next)); } catch { /* ignore */ }
@@ -118,6 +124,7 @@ export function removeEntry(id) {
     total: Math.max(0, (prev.total || 0) - entry.won),
     days: entries.length === 0 ? Math.max(0, (prev.days || 0) - 1) : (prev.days || 0),
     lastDate: t,
+    streak: prev.streak || 0,
     entries
   };
   try { localStorage.setItem('fm_save', JSON.stringify(next)); } catch { /* ignore */ }

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { submitSave, fetchSaveTop, fetchMySaveRank } from '../../utils/firemapSaveApi.js';
-import { CHALLENGES, QUOTES, QUICK, dayIdx, todayStr, yesterdayStr, wonStr, readJSON, fmtAdvance, dailyNeedOf, addSave, removeEntry, setTotal, track } from '../../firemap-v2/dailyData.js';
+import { CHALLENGES, QUOTES, QUICK, dayIdx, todayStr, wonStr, readJSON, fmtAdvance, dailyNeedOf, addSave, removeEntry, setTotal, track } from '../../firemap-v2/dailyData.js';
 
 function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
   const inp = simulation.inputs;
@@ -40,7 +40,6 @@ export default function Savings({ simulation, onMove }) {
   const ch = CHALLENGES[dayIdx() % CHALLENGES.length];
   const quote = QUOTES[dayIdx() % QUOTES.length];
   const [sv, setSv] = useState(() => readJSON('fm_save'));
-  const [st, setSt] = useState(() => readJSON('fm_challenge'));
   const dailyNeed = dailyNeedOf(simulation);
 
   useEffect(() => {
@@ -55,8 +54,7 @@ export default function Savings({ simulation, onMove }) {
   const todaySaved = sv && sv.lastDate === todayStr() ? (sv.today || 0) : 0;
   const totalSaved = sv ? (sv.total || 0) : 0;
   const daysCount = sv ? (sv.days || 0) : 0;
-  const streak = st ? st.count : 0;
-  const doneToday = st && st.lastDate === todayStr();
+  const streak = sv ? (sv.streak || 0) : 0;
   const advSec = (amount) => (dailyNeed ? (amount / dailyNeed) * 86400 : 0);
   const todayAdv = fmtAdvance(advSec(todaySaved));
   const totalAdv = fmtAdvance(advSec(totalSaved));
@@ -72,7 +70,7 @@ export default function Savings({ simulation, onMove }) {
     const adv = dailyNeed ? (nextSv.total || 0) / dailyNeed : null;
     let nick = '';
     try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
-    submitSave({ todaySaved: tVal, totalSaved: nextSv.total || 0, advancedDays: adv, streak: (readJSON('fm_challenge') || {}).count, nickname: nick, ageBand })
+    submitSave({ todaySaved: tVal, totalSaved: nextSv.total || 0, advancedDays: adv, streak: nextSv.streak, nickname: nick, ageBand })
       .then(() => refresh(tVal));
   };
 
@@ -82,15 +80,6 @@ export default function Savings({ simulation, onMove }) {
     const v = window.prompt('오늘 얼마를 아꼈나요? (원)');
     const n = Number(String(v || '').replace(/[^0-9]/g, ''));
     if (n > 0) log(n, '직접 입력');
-  };
-  const completeCh = () => {
-    if (doneToday) return;
-    const consec = st && st.lastDate === yesterdayStr() ? st.count + 1 : 1;
-    const next = { count: consec, lastDate: todayStr() };
-    try { localStorage.setItem('fm_challenge', JSON.stringify(next)); } catch { /* ignore */ }
-    setSt(next);
-    if (ch.s > 0) { const next = addSave(ch.s, '오늘의 미션'); setSv(next); persist(next); }
-    track('save_mission_done');
   };
 
   return (
@@ -110,6 +99,11 @@ export default function Savings({ simulation, onMove }) {
 
         <FireProgressBar simulation={simulation} totalSaved={totalSaved} dailyNeed={dailyNeed} />
 
+        {ch.s > 0 && (
+          <button type="button" className="fm-save-rec" onClick={() => log(ch.s, ch.t)}>
+            <span>💡 오늘의 추천 · {ch.t}</span><em>+{wonStr(ch.s)}</em>
+          </button>
+        )}
         <div className="fm-save-chips" aria-label="오늘 아낀 항목 기록">
           {QUICK.map((q) => (
             <button type="button" key={q.label} onClick={() => log(q.won, q.label)}>
@@ -156,13 +150,6 @@ export default function Savings({ simulation, onMove }) {
           ))}
         </ol>
         <p className="fm-section-sub">닉네임을 등록하면 이름으로 올라가요 → <button type="button" className="fm-inline-link" onClick={() => onMove('ranking')}>랭킹 탭에서 등록</button></p>
-      </section>
-
-      <section className="fm-card fm-daily-mission">
-        <p className="fm-daily-quote">오늘의 미션 · {ch.t}{ch.s > 0 ? ` (≈${wonStr(ch.s)})` : ''}</p>
-        <button type="button" className={`fm-daily-btn full${doneToday ? ' done' : ''}`} onClick={completeCh} disabled={doneToday}>
-          {doneToday ? '오늘 미션 완료 ✓' : '미션 완료하고 적립'}
-        </button>
       </section>
     </main>
   );

@@ -4,9 +4,8 @@ import { QUOTES, dayIdx, todayStr, wonStr, readJSON, fmtAdvance } from '../../fi
 export default function DailyFire({ onMove }) {
   const quote = QUOTES[dayIdx() % QUOTES.length];
   const sv = readJSON('fm_save');
-  const st = readJSON('fm_challenge');
   const plan = readJSON('fm_plan');
-  const streak = st ? st.count : 0;
+  const streak = sv ? (sv.streak || 0) : 0;
   const todaySaved = sv && sv.lastDate === todayStr() ? (sv.today || 0) : 0;
   const totalSaved = sv ? (sv.total || 0) : 0;
   const dailyNeed = plan && plan.dailyNeed ? plan.dailyNeed : null;

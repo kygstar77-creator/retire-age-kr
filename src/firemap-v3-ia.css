@@ -463,3 +463,8 @@
 /* 오늘의 절약 랭킹 — 내 순위 강조줄 */
 .fm-save-myrank { margin: 0 0 10px; padding: 10px 12px; border-radius: 12px; background: #fff7ed; color: #9a3412; font-size: 13.5px; font-weight: 800; }
 .fm-save-myrank b { color: #ff5a00; }
+
+/* 오늘의 추천 절약 칩 (미션 대체) */
+.fm-save-rec { display: flex; align-items: center; justify-content: space-between; gap: 8px; width: 100%; margin: 0 0 10px; padding: 12px 14px; border: 1px solid #fb923c; border-radius: 14px; background: #fff7ed; color: #9a3412; font-size: 13.5px; font-weight: 800; cursor: pointer; text-align: left; }
+.fm-save-rec em { color: #ff5a00; font-style: normal; font-weight: 900; white-space: nowrap; }
+.fm-save-rec:active { background: #ffedd5; }

@@ -5,6 +5,7 @@ import { fetchAggregates } from '../../utils/firemapScoresApi.js';
 import DailyFire from './DailyFire.jsx';
 import FeedbackButton from './FeedbackButton.jsx';
 import { track } from '../../firemap-v2/dailyData.js';
+import DepositCard from './DepositCard.jsx';
 
 export default function Home({ onStart, onMove }) {
   const [agg, setAgg] = useState(null);
@@ -49,6 +50,7 @@ export default function Home({ onStart, onMove }) {
         <button type="button" className="fm-home-cta" onClick={() => { track('start_calc', { age }); onStart(age); }}>이 나이로 1분 계산 시작 →</button>
         {proof && <p className="fm-home-proof">{proof}</p>}
       </section>
+      <DepositCard onMove={onMove} />
       <DailyFire onMove={onMove} />
       <section className="fm-home-mini-card">
         <strong>입력값은 기기 안에서 계산돼요</strong>

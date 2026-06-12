@@ -5,7 +5,6 @@ import { funHandle } from '../../firemap-v2/funName.js';
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
 import { submitSave, fetchSaveTop, fetchMySaveRank } from '../../utils/firemapSaveApi.js';
 import { CHALLENGES, QUOTES, QUICK, dayIdx, todayStr, wonStr, readJSON, fmtAdvance, dailyNeedOf, addSave, removeEntry, setTotal, track } from '../../firemap-v2/dailyData.js';
-import DailyClock from './DailyClock.jsx';
 
 function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
   const inp = simulation.inputs;
@@ -119,7 +118,6 @@ export default function Savings({ simulation, onMove }) {
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="절약" />
       <p className="fm-daily-wisdom">“{quote}”</p>
-      <DailyClock simulation={simulation} />
 
       <section className="fm-card fm-save-screen">
         <p className="fm-kicker">오늘의 절약 🔥 {streak}일 연속</p>

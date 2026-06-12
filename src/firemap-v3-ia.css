@@ -630,3 +630,10 @@
 @keyframes fmdcpulse{0%,100%{opacity:.5}50%{opacity:1}}
 .fm-dc-foot{margin-top:12px;font-size:12px;color:#c7d4e8;text-align:center;line-height:1.5}
 .fm-dc.done p{color:#c7d4e8;margin:6px 0 0}
+
+/* 매일 적립 카드(홈) — 체크인 버튼 */
+.fm-dep .fm-dc-big b{font-size:24px}
+.fm-dep-check{margin-top:12px;width:100%;border:0;border-radius:12px;background:#ff5a00;color:#fff;font-size:16px;font-weight:850;padding:14px;cursor:pointer}
+.fm-dep-check:active{background:#e64f00}
+.fm-dep-done{margin-top:12px;width:100%;border:1px solid #2f5a8f;border-radius:12px;background:rgba(255,255,255,.08);color:#bfe3c8;font-size:14px;font-weight:800;padding:13px;cursor:default}
+.fm-dep-hint{display:block;color:#8ea4c4;font-size:11px;margin-top:2px}

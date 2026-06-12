@@ -472,3 +472,10 @@
 /* 절약 성과 공유 버튼 */
 .fm-save-share { width: 100%; margin-top: 12px; min-height: 48px; border: 0; border-radius: 14px; background: #ff5a00; color: #fff; font-size: 15px; font-weight: 900; cursor: pointer; }
 .fm-save-share:active { background: #e64f00; }
+
+/* 결과 리뉴얼 — 또래 비교 */
+.fm-peer { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 12px; }
+.fm-peer span { font-size: 13px; font-weight: 800; padding: 6px 11px; border-radius: 999px; }
+.fm-peer-avg { background: rgba(148,163,184,.16); color: #475569; }
+.fm-peer-diff.up { background: #dcfce7; color: #166534; }
+.fm-peer-diff.down { background: #fee2e2; color: #b91c1c; }

@@ -17,17 +17,22 @@ export async function onRequest(context) {
   const g = (q.get('g') || '').replace(/[^A-Za-z]/g, '').slice(0, 2);
   const rw = q.get('rw') || '';
   const sd = (q.get('sd') || '').replace(/[^0-9]/g, '');
+  const ea = (q.get('ea') || '').replace(/[^0-9]/g, '').slice(0, 3);
   const ad = (q.get('ad') || '').slice(0, 24);
   const ogImg = `${site}/${(sd && ad) ? 'og-save.png' : 'og-image.png'}?v=firemap-screens-v7-20260613`;
 
   const title = (sd && ad)
     ? `절약으로 파이어 ${ad} 앞당겼어요 — 파이어맵`
-    : p && g
-      ? `또래 상위 ${p}% · ${g}등급 — 파이어맵`
-      : '또래 중 내 FIRE 등수는? — 파이어맵';
+    : ea
+      ? `나는 ${ea}세에 퇴사할 수 있어요 — 파이어맵`
+      : p && g
+        ? `또래 상위 ${p}% — 파이어맵`
+        : '나는 몇 살에 퇴사할 수 있을까? — 파이어맵';
   const desc = (sd && ad)
     ? '하루하루 아낀 돈이 퇴사를 앞당겨요. 나도 1분 계산하고 절약 적립 시작하기.'
-    : `${rw ? rw + ' · ' : ''}내 퇴사 가능 나이와 또래 중 내 등수를 1분 만에 확인하세요.`;
+    : ea
+      ? `또래 중 내 등수와 내 돈 버티는 나이까지 1분 계산. 너는 몇 살에 가능?`
+      : `${rw ? rw + ' · ' : ''}내 퇴사 가능 나이와 또래 중 내 등수를 1분 만에 확인하세요.`;
 
   // 사람은 앱 루트로(같은 조건 파라미터 유지) 이동 → 결과 화면 표시
   const redirect = `${site}/?${q.toString()}#result`;

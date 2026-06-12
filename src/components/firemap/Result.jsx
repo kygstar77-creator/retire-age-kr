@@ -5,17 +5,20 @@ import { buildScenario, fireStatus, runwayText, scenarioEndAge, survivalPhrase }
 import { simulateRetirement } from '../../utils/retirementSimulator.js';
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
 import { statsRank, gradeFromScore } from '../../firemap-v2/rank.js';
-import { submitScore, fetchUserRank } from '../../utils/firemapScoresApi.js';
+import { submitScore, fetchUserRank, fetchAggregates } from '../../utils/firemapScoresApi.js';
 import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js';
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
 import { FIRE_CITIES } from '../../firemap-v2/cities.js';
 
-function RankHero({ simulation }) {
+function ResultHeroV2({ simulation }) {
   const base = statsRank(simulation);
-  const [live, setLive] = useState(null);
-  const [prevSnap] = useState(() => getLatestRank());
+  const phrase = survivalPhrase(simulation);
   const score = simulation.survivalScore;
-  const delta = prevSnap ? prevSnap.percentile - base.percentile : 0;
+  const earliest = simulation.earliestRetirementAge;
+  const target = simulation.inputs.targetRetirementAge;
+  const inp = simulation.inputs;
+  const [live, setLive] = useState(null);
+  const [agg, setAgg] = useState(null);
 
   useEffect(() => {
     let alive = true;
@@ -31,70 +34,54 @@ function RankHero({ simulation }) {
             ageBand: base.ageBand,
             survivalAge: (simulation.targetResult && simulation.targetResult.depletionAge) || simulation.inputs.simulationUntilAge,
             nickname: nick,
-            earliestAge: simulation.earliestRetirementAge
+            earliestAge: earliest
           });
           sessionStorage.setItem(key, '1');
         }
       } catch { /* ignore */ }
-      const r = await fetchUserRank(simulation.earliestRetirementAge);
-      if (alive) setLive(r);
+      const [r, a] = await Promise.all([fetchUserRank(earliest), fetchAggregates()]);
+      if (alive) { setLive(r); setAgg(a); }
     })();
     return () => { alive = false; };
   }, [score]);
 
-  return (
-    <section className="fm-rank-hero">
-      <p className="fm-rank-label">내 FIRE 자생력 · {base.ageBandLabel} 또래 기준</p>
-      <div className="fm-rank-top">
-        <span className="fm-rank-pct">상위 {base.percentile}%</span>
-        <span className="fm-rank-badge">{base.grade}등급</span>
-        {delta !== 0 && <span className={`fm-rank-delta ${delta > 0 ? 'up' : 'down'}`}>{delta > 0 ? `▲ ${delta}%p` : `▼ ${Math.abs(delta)}%p`}</span>}
-      </div>
-      {live
-        ? <p className="fm-rank-line">함께 계산한 {live.total.toLocaleString()}명 중 <b>{live.position.toLocaleString()}등</b></p>
-        : <p className="fm-rank-line">함께 계산한 사용자 중 등수 집계 중…</p>}
-      {live && (live.position > 1
-        ? <p className="fm-rank-climb">1등까지 <b>{(live.position - 1).toLocaleString()}명</b> · 조건을 바꾸면 등수가 올라가요</p>
-        : <p className="fm-rank-climb">지금 전체 1등이에요! 이 자리를 지켜보세요</p>)}
-      <p className="fm-rank-trend">{base.source}</p>
-      <p className="fm-rank-note">등수는 ‘빨리 은퇴 가능한 순’ · 상위 %는 통계청 또래 순자산 기준 · 등급은 자산수명 점수 기준</p>
-    </section>
-  );
-}
-
-function ResultHero({ simulation }) {
-  const targetAge = `${simulation.inputs.targetRetirementAge}세`;
-  const phrase = survivalPhrase(simulation);
-  const earliest = simulation.earliestRetirementAge;
-  const target = simulation.inputs.targetRetirementAge;
-  const safeCopy = !earliest
-    ? '지금 가정으로는 더 모으거나 생활비를 줄여야 자산이 오래 버텨요.'
+  const peerAvg = agg && agg.avgEarliest ? agg.avgEarliest : null;
+  const diff = (peerAvg != null && earliest != null) ? (peerAvg - earliest) : null;
+  const copy = !earliest
+    ? '더 모으거나 생활비를 줄이면 퇴사 시점이 보여요. 아래에서 방법을 확인하세요.'
     : earliest < target
-      ? `지금 자산이면 더 일찍, ${earliest}세 퇴사도 가능해 보여요.`
+      ? `목표(${target}세)보다 일찍 가능해요 👍`
       : earliest > target
-        ? `${earliest}세까지 일하면 자산이 훨씬 안전해져요.`
-        : '지금 목표 나이가 적절해 보여요.';
+        ? `목표(${target}세)보단 조금 늦지만, 조건을 바꾸면 당겨져요.`
+        : '목표 나이가 딱 적절해요.';
+
   return (
     <section className="fm-card fm-result fm-result-v3">
-      <p>내 FIRE 현재 위치</p>
-      {phrase.ok
-        ? <h2>{targetAge}에 퇴사하면<br /><b>{phrase.runway}</b>까지 버틸 수 있어요.</h2>
-        : <h2>지금 자산으론<br /><b>{targetAge}</b> 퇴사가 일러요.</h2>}
+      <p>내 퇴사 가능 나이</p>
+      {earliest
+        ? <h2>지금 계획이면<br /><b>{earliest}세</b>에 퇴사할 수 있어요</h2>
+        : <h2>지금 계획으론<br /><b>조금 더</b> 모아야 해요</h2>}
+
+      <div className="fm-peer">
+        {peerAvg != null && <span className="fm-peer-avg">또래 평균 {peerAvg}세</span>}
+        {diff != null && (
+          <span className={`fm-peer-diff ${diff >= 0 ? 'up' : 'down'}`}>
+            {diff > 0 ? `또래보다 ${diff}년 빠름` : diff < 0 ? `또래보다 ${Math.abs(diff)}년 느림` : '또래와 비슷'}
+          </span>
+        )}
+      </div>
+
+      {live
+        ? <p className="fm-rank-line">함께 계산한 {live.total.toLocaleString()}명 중 <b>{live.position.toLocaleString()}등</b> · 빨리 은퇴 가능한 순</p>
+        : <p className="fm-rank-line">등수 집계 중…</p>}
+
       <div className="fm-result-chips">
-        <span>퇴사 나이 <b>{targetAge}</b></span>
+        <span>목표 퇴사 <b>{target}세</b></span>
         <span>{phrase.ok ? '자산 버티는 나이' : '자산 상태'} <b>{phrase.runway}</b></span>
       </div>
-      <p className="fm-result-copy">{safeCopy}</p>
-      <div className="fm-result-assumptions">
-        <span>현재 계산 기준 · 연 수익률 {simulation.inputs.annualReturnRate}% · 물가 {simulation.inputs.inflationRate}%</span>
-        <span>국민연금 {simulation.inputs.expectedPensionAge}세부터 월 {formatWon(simulation.inputs.expectedMonthlyPension)} 반영</span>
-      </div>
-      <div className="fm-score-box">
-        <div><small>FIRE 진단</small><b className="fm-score-status">{fireStatus(simulation.survivalScore)}</b></div>
-        <div><small>점수</small><b className="fm-score-number"><em>{simulation.survivalScore}</em>/100</b></div>
-        <div className="fm-score-meter" aria-label={`FIRE 점수 ${simulation.survivalScore}점`}><i style={{ width: `${Math.max(8, simulation.survivalScore)}%` }} /></div>
-        <p>높을수록 퇴사 후 자산 여유가 커요.</p>
-      </div>
+
+      <p className="fm-result-copy">{copy}</p>
+      <p className="fm-rank-note">참고 · 또래 순자산 상위 {base.percentile}% · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)} 반영</p>
     </section>
   );
 }
@@ -337,29 +324,30 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
   const shareRank = async () => {
     const rk = statsRank(simulation);
     const ph = survivalPhrase(simulation);
+    const earliest = simulation.earliestRetirementAge;
     const u = new URL(buildScenarioShareUrl(inputs));
     u.pathname = '/s';
+    if (earliest) u.searchParams.set('ea', String(earliest));
     u.searchParams.set('p', String(rk.percentile));
     u.searchParams.set('g', rk.grade);
     u.searchParams.set('rw', ph.short);
     const url = u.toString();
-    const text = `또래 상위 ${rk.percentile}% · ${rk.grade}등급 — 내 FIRE 등수, 너도 확인해봐`;
+    const text = earliest ? `나는 ${earliest}세에 퇴사 가능 — 너는 몇 살에 가능?` : '내 퇴사 가능 나이, 1분이면 나와 — 너도 해봐';
     if (navigator.share) {
-      try { await navigator.share({ title: '파이어맵 — 내 FIRE 등수', text, url }); return; }
+      try { await navigator.share({ title: '파이어맵 — 내 퇴사 가능 나이', text, url }); return; }
       catch (e) { if (e && e.name === 'AbortError') return; }
     }
-    try { await navigator.clipboard.writeText(url); window.alert('내 등수 링크를 복사했어요. 단톡방에 붙여넣어 보세요!'); }
+    try { await navigator.clipboard.writeText(url); window.alert('내 결과 링크를 복사했어요. 단톡방에 붙여넣어 보세요!'); }
     catch { onMove('share'); }
   };
   return (
     <main className="fm-screen fm-scroll">
       <Header />
-      <RankHero simulation={simulation} />
+      <ResultHeroV2 simulation={simulation} />
       <div className="fm-rank-cta">
-        <button type="button" className="fm-rank-cta-share" onClick={shareRank}>내 등급 자랑하기</button>
-        <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>등수 올리기</button>
+        <button type="button" className="fm-rank-cta-share" onClick={shareRank}>내 결과 공유하기</button>
+        <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>더 일찍 당겨보기</button>
       </div>
-      <ResultHero simulation={simulation} />
       <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />
       <AssetJourney simulation={simulation} />
       <TopLevers inputs={inputs} simulation={simulation} onChange={onChange} />

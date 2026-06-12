@@ -550,7 +550,7 @@
 .fm-home-age label { display: block; font-size: 13px; font-weight: 800; color: #6b7280; margin: 0 0 8px; }
 .fm-home-age-ctrl { display: grid; grid-template-columns: 42px 1fr 42px; align-items: center; gap: 8px; border: 1px solid #e5e7eb; border-radius: 16px; background: #fff; padding: 8px 12px; }
 .fm-home-age-val { display: flex; align-items: baseline; justify-content: center; gap: 3px; }
-.fm-home-hero-card .fm-home-age-ctrl button { width: 42px !important; height: 42px !important; min-width: 42px !important; min-height: 42px !important; border-radius: 999px !important; padding: 0 !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; line-height: 1 !important; font-size: 24px !important; font-weight: 700 !important; box-shadow: none !important; }
+
 .fm-home-age-ctrl input { border: 0; background: none; text-align: right; font-size: 26px; font-weight: 950; color: #111827; width: 2.2em; outline: none; letter-spacing: -.04em; line-height: 1; padding: 0; }
 .fm-home-age-val { line-height: 1; }
 .fm-home-age-unit { font-size: 17px; font-weight: 800; color: #6b7280; }
@@ -566,3 +566,8 @@
 .fm-home-hero-card .fm-age-display { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; gap: 4px; }
 .fm-home-hero-card .fm-age-input { width: 2.2em; border: 0; background: none; text-align: center; font-size: 30px; font-weight: 950; color: #111827; line-height: 1; padding: 0; outline: none; letter-spacing: -.03em; }
 .fm-home-hero-card .fm-age-unit { font-size: 18px; font-weight: 800; color: #6b7280; line-height: 1; }
+
+/* 홈 나이 스텝퍼 — 높이 강제 고정 + align-self 중앙 (전역 min-height 무력화) */
+.fm-home-hero-card .fm-home-age-ctrl .fm-age-btn { height: 46px !important; min-height: 46px !important; max-height: 46px !important; width: 46px !important; min-width: 46px !important; align-self: center !important; margin: 0 !important; }
+.fm-home-hero-card .fm-home-age-ctrl .fm-age-input { height: auto !important; min-height: 0 !important; margin: 0 !important; }
+.fm-home-hero-card .fm-home-age-ctrl .fm-age-display { align-self: center !important; }

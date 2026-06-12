@@ -38,8 +38,10 @@ export default function Home({ onStart, onMove }) {
           <label htmlFor="fm-home-age-in">지금 몇 살인가요?</label>
           <div className="fm-home-age-ctrl">
             <button type="button" aria-label="나이 감소" onClick={() => setClamp(age - 1)}>−</button>
-            <input id="fm-home-age-in" inputMode="numeric" value={age} onChange={(e) => setClamp(Number(String(e.target.value).replace(/[^0-9]/g, '')) || 0)} />
-            <span className="fm-home-age-unit">세</span>
+            <div className="fm-home-age-val">
+              <input id="fm-home-age-in" inputMode="numeric" value={age} onChange={(e) => setClamp(Number(String(e.target.value).replace(/[^0-9]/g, '')) || 0)} />
+              <span className="fm-home-age-unit">세</span>
+            </div>
             <button type="button" aria-label="나이 증가" onClick={() => setClamp(age + 1)}>+</button>
           </div>
         </div>

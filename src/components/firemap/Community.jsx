@@ -40,7 +40,7 @@ export default function Community({ onBack }) {
   };
 
   return (
-    <main className="fm-screen fm-scroll">
+    <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="커뮤니티" onBack={onBack} />
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">결과 이후</p>

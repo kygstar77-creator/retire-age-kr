@@ -86,18 +86,49 @@ export function dailyNeedOf(simulation) {
   return gap > 0 ? Math.max(1000, Math.round(gap / daysRemaining)) : null;
 }
 
-// 누적 저장 — 'today'만 매일 리셋, total/days는 영구 누적
-export function addSave(amount) {
+// 누적 저장 — 'today'/entries만 매일 리셋, total/days는 영구 누적
+export function addSave(amount, label) {
   if (!amount || amount <= 0) return readJSON('fm_save');
   const t = todayStr();
   const prev = readJSON('fm_save');
   const newDay = !prev || prev.lastDate !== t;
+  const prevEntries = newDay || !prev || !Array.isArray(prev.entries) ? [] : prev.entries;
+  const entry = { id: `${Date.now()}_${Math.random().toString(36).slice(2, 6)}`, won: amount, label: label || '직접 입력' };
   const next = {
     today: (newDay ? 0 : (prev.today || 0)) + amount,
     total: (prev ? prev.total || 0 : 0) + amount,
     days: (prev ? prev.days || 0 : 0) + (newDay ? 1 : 0),
-    lastDate: t
+    lastDate: t,
+    entries: [...prevEntries, entry]
   };
+  try { localStorage.setItem('fm_save', JSON.stringify(next)); } catch { /* ignore */ }
+  return next;
+}
+
+// 오늘 기록 한 건 삭제 — today/total에서 빼고, 오늘이 비면 days도 1 감소
+export function removeEntry(id) {
+  const t = todayStr();
+  const prev = readJSON('fm_save');
+  if (!prev || prev.lastDate !== t || !Array.isArray(prev.entries)) return prev;
+  const entry = prev.entries.find((e) => e.id === id);
+  if (!entry) return prev;
+  const entries = prev.entries.filter((e) => e.id !== id);
+  const next = {
+    today: Math.max(0, (prev.today || 0) - entry.won),
+    total: Math.max(0, (prev.total || 0) - entry.won),
+    days: entries.length === 0 ? Math.max(0, (prev.days || 0) - 1) : (prev.days || 0),
+    lastDate: t,
+    entries
+  };
+  try { localStorage.setItem('fm_save', JSON.stringify(next)); } catch { /* ignore */ }
+  return next;
+}
+
+// 누적 절약액 직접 보정 (과거 실수 수정용)
+export function setTotal(value) {
+  const prev = readJSON('fm_save') || { today: 0, days: 0, lastDate: todayStr(), entries: [] };
+  const total = Math.max(0, Math.round(Number(value) || 0));
+  const next = { ...prev, total };
   try { localStorage.setItem('fm_save', JSON.stringify(next)); } catch { /* ignore */ }
   return next;
 }

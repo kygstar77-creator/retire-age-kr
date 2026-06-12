@@ -25,6 +25,7 @@ function ResultHeroV2({ simulation }) {
     let alive = true;
     saveRankSnapshot({ percentile: base.percentile, grade: base.grade, score, earliest });
     track('calc_complete', { earliest: earliest || 0 });
+    track('result_view', { earliest: earliest || 0 });
     (async () => {
       try {
         const key = `fm_score_sent_${score}`;
@@ -314,6 +315,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
   }, [simulation]);
   const shareRank = async () => {
     track('share', { type: 'result' });
+    track('share_summary_copy', { type: 'result' });
     const rk = statsRank(simulation);
     const ph = survivalPhrase(simulation);
     const earliest = simulation.earliestRetirementAge;

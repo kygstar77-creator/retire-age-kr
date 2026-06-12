@@ -98,10 +98,10 @@ export default function Savings({ simulation, onMove }) {
     } catch { url = 'https://retire-age-kr.pages.dev/'; }
     const text = adLabel ? `절약으로 파이어를 ${adLabel} 앞당겼어요 🔥 나도 해보기` : '아낀 돈으로 파이어 앞당기기 🔥 나도 해보기';
     if (navigator.share) {
-      try { await navigator.share({ title: '파이어맵 — 오늘의 절약', text, url }); track('share', { type: 'save' }); return; }
+      try { await navigator.share({ title: '파이어맵 — 오늘의 절약', text, url }); track('share', { type: 'save' }); track('share_link_copy', { type: 'save' }); return; }
       catch (e) { if (e && e.name === 'AbortError') return; }
     }
-    try { await navigator.clipboard.writeText(url); track('share', { type: 'save' }); window.alert('공유 링크를 복사했어요. 단톡방에 붙여넣어 보세요!'); }
+    try { await navigator.clipboard.writeText(url); track('share', { type: 'save' }); track('share_link_copy', { type: 'save' }); window.alert('공유 링크를 복사했어요. 단톡방에 붙여넣어 보세요!'); }
     catch { onMove('share'); }
   };
 

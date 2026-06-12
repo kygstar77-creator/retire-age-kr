@@ -61,12 +61,11 @@ function ResultHeroV2({ simulation }) {
       </div>
       <p className="fm-hero-headline">{earliest ? '지금 계획이면 이 나이에 퇴사할 수 있어요' : '더 모으거나 생활비를 줄이면 퇴사 시점이 보여요'}</p>
       {live
-        ? <p className="fm-rank-line">함께 계산한 <b>{live.total.toLocaleString()}명</b> 중 <b>{live.position.toLocaleString()}등</b> · 빨리 은퇴 가능한 순</p>
+        ? <button type="button" className="fm-rank-line fm-rank-line-link" onClick={() => { window.location.hash = '#ranking'; }}>함께 계산한 <b>{live.total.toLocaleString()}명</b> 중 <b>{live.position.toLocaleString()}등</b> · <span className="fm-rank-go">전체 랭킹 보기 ›</span></button>
         : <p className="fm-rank-line">실시간 집계 중…</p>}
       {live && (live.position > 1
         ? <p className="fm-rank-climb">1등까지 <b>{(live.position - 1).toLocaleString()}명</b> · 조건 바꾸면 등수가 올라가요</p>
         : <p className="fm-rank-climb">지금 전체 1등이에요!</p>)}
-      <button type="button" className="fm-hero-ranklink" onClick={() => { window.location.hash = '#ranking'; }}>전체 랭킹 보기 ›</button>
       <div className="fm-hero-mini">
         <span>목표 퇴사 <b>{target}세</b></span>
         <span>자산 버티는 나이 <b>{phrase.runway}</b></span>

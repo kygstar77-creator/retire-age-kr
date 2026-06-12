@@ -510,3 +510,8 @@
 /* 절약 랭킹 — 내 행 하이라이트 */
 .fm-lb-row.me { background: #fff7ed; border: 1px solid #fed7aa; border-radius: 12px; }
 .fm-lb-row.me .fm-lb-who { color: #c2410c; font-weight: 900; }
+
+/* 랭킹 보드 선택 탭 */
+.fm-board-tabs { display: flex; gap: 6px; margin: 0 0 12px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.fm-board-tabs button { flex: 0 0 auto; padding: 9px 14px; border: 1px solid #e5e7eb; border-radius: 999px; background: #fff; color: #6b7280; font-size: 13px; font-weight: 800; white-space: nowrap; cursor: pointer; }
+.fm-board-tabs button.on { background: #1e2859; border-color: #1e2859; color: #fff; }

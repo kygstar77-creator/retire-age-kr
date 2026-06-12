@@ -72,6 +72,33 @@ export async function fetchSaveTop(limit = 10) {
   }
 }
 
+// 보드별 절약 랭킹 — today(오늘) / total(누적) / streak(연속일)
+export async function fetchSaveBoard(metric = 'today', limit = 10) {
+  try {
+    if (metric === 'today') {
+      const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=client_id,nickname,today_saved,age_band&date=eq.${todayStr()}&today_saved=gt.0&order=today_saved.desc&limit=${limit}`;
+      const res = await fetch(url, { method: 'GET', headers: headers() });
+      const rows = res.ok ? await res.json() : [];
+      return rows.map((r) => ({ ...r, value: r.today_saved }));
+    }
+    const col = metric === 'streak' ? 'streak' : 'total_saved';
+    const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=client_id,nickname,${col},age_band&${col}=gt.0&order=${col}.desc&limit=80`;
+    const res = await fetch(url, { method: 'GET', headers: headers() });
+    const rows = res.ok ? await res.json() : [];
+    const seen = new Set();
+    const out = [];
+    for (const r of rows) {
+      if (seen.has(r.client_id)) continue;
+      seen.add(r.client_id);
+      out.push({ ...r, value: r[col] });
+      if (out.length >= limit) break;
+    }
+    return out;
+  } catch {
+    return [];
+  }
+}
+
 // 오늘 기록자 중 내 순위
 export async function fetchMySaveRank(todaySaved) {
   try {

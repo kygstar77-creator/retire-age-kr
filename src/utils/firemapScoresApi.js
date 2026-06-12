@@ -84,7 +84,7 @@ export async function fetchUserRank(earliestAge, ageBand) {
 export async function fetchTopScores(limit = 10, ageBand) {
   try {
     const band = ageBand ? `&age_band=eq.${ageBand}` : '';
-    const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=nickname,fire_score,age_band,earliest_age${band}&order=earliest_age.asc.nullslast,fire_score.desc&limit=${limit}`;
+    const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=client_id,nickname,fire_score,age_band,earliest_age${band}&order=earliest_age.asc.nullslast,fire_score.desc&limit=${limit}`;
     const res = await fetch(url, { method: 'GET', headers: headers() });
     if (!res.ok) return [];
     return await res.json();
@@ -107,6 +107,26 @@ export async function fetchAggregates() {
     rows.forEach((r) => { if (r.age_band) bandCount[r.age_band] = (bandCount[r.age_band] || 0) + 1; });
     const topBand = Object.entries(bandCount).sort((a, b) => b[1] - a[1])[0];
     return { total, avgEarliest: avg(ea), avgScore: avg(sc), topBand: topBand ? Number(topBand[0]) : null };
+  } catch {
+    return null;
+  }
+}
+
+// 내 주변 순위 — 바로 위(더 빨리 은퇴) / 바로 아래
+export async function fetchNeighbors(earliestAge, ageBand) {
+  if (earliestAge == null || !Number.isFinite(Number(earliestAge))) return null;
+  try {
+    const mine = Math.round(Number(earliestAge));
+    const band = ageBand ? `&age_band=eq.${ageBand}` : '';
+    const sel = 'select=client_id,nickname,earliest_age,age_band';
+    const opts = { method: 'GET', headers: headers() };
+    const [aboveRes, belowRes] = await Promise.all([
+      fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&earliest_age=lt.${mine}${band}&order=earliest_age.desc&limit=2`, opts),
+      fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&earliest_age=gt.${mine}${band}&order=earliest_age.asc&limit=2`, opts)
+    ]);
+    const above = aboveRes.ok ? await aboveRes.json() : [];
+    const below = belowRes.ok ? await belowRes.json() : [];
+    return { above: above.reverse(), below };
   } catch {
     return null;
   }

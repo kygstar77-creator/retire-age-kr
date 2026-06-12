@@ -571,3 +571,21 @@
 .fm-home-hero-card .fm-home-age-ctrl .fm-age-btn { height: 46px !important; min-height: 46px !important; max-height: 46px !important; width: 46px !important; min-width: 46px !important; align-self: center !important; margin: 0 !important; }
 .fm-home-hero-card .fm-home-age-ctrl .fm-age-input { height: auto !important; min-height: 0 !important; margin: 0 !important; }
 .fm-home-hero-card .fm-home-age-ctrl .fm-age-display { align-self: center !important; }
+
+/* 커뮤니티 스레드형 */
+.fm-community-feed { display: flex; flex-direction: column; gap: 10px; }
+.fm-post { padding: 14px 16px !important; }
+.fm-post-msg { margin: 0 0 10px; color: #1a1c22; font-size: 14.5px; font-weight: 600; line-height: 1.55; white-space: pre-wrap; }
+.fm-post-meta { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.fm-post-author { color: #8b95a1; font-size: 12px; font-weight: 700; }
+.fm-post-actions { display: flex; gap: 6px; }
+.fm-post-actions button { border: 1px solid #e5e7eb; border-radius: 999px; background: #fff; color: #6b7280; font-size: 12px; font-weight: 800; padding: 5px 10px; cursor: pointer; }
+.fm-post-like.on { border-color: #fecaca; background: #fff1f2; color: #e11d48; }
+.fm-replies { margin-top: 12px; padding-top: 12px; border-top: 1px dashed #e5e7eb; display: flex; flex-direction: column; gap: 8px; }
+.fm-reply { background: #f8fafc; border-radius: 12px; padding: 9px 12px; }
+.fm-reply p { margin: 0 0 3px; color: #374151; font-size: 13.5px; font-weight: 600; line-height: 1.5; white-space: pre-wrap; }
+.fm-reply small { color: #9ca3af; font-size: 11px; font-weight: 700; }
+.fm-reply-input { display: flex; gap: 8px; margin-top: 2px; }
+.fm-reply-input input { flex: 1; min-height: 42px; border: 1px solid #e5e7eb; border-radius: 12px; padding: 0 12px; font: inherit; font-size: 13px; outline: none; }
+.fm-reply-input button { min-height: 42px; border: 0; border-radius: 12px; background: #ff5a00; color: #fff; font-size: 13px; font-weight: 800; padding: 0 14px; cursor: pointer; }
+.fm-reply-input button:disabled { background: #fed7aa; }

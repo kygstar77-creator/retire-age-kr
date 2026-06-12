@@ -322,6 +322,17 @@ function NextActions({ onMove }) {
 }
 
 export default function Result({ inputs, simulation, onMove, onChange, onEditFinalQuestion }) {
+  useEffect(() => {
+    try {
+      const inp = simulation.inputs;
+      const fireAge = simulation.earliestRetirementAge || inp.targetRetirementAge;
+      const target = simulation.requiredFireAssetByFourPercent || 0;
+      const daysRemaining = Math.max(30, (fireAge - inp.currentAge) * 365.25);
+      const gap = target - inp.financialAsset;
+      const dailyNeed = gap > 0 ? Math.max(1000, Math.round(gap / daysRemaining)) : null;
+      localStorage.setItem('fm_plan', JSON.stringify({ dailyNeed, fireAge, currentAge: inp.currentAge, ok: gap <= 0 }));
+    } catch { /* ignore */ }
+  }, [simulation]);
   const shareRank = async () => {
     const rk = statsRank(simulation);
     const ph = survivalPhrase(simulation);

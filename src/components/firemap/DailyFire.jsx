@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { formatWon } from '../../firemap-v2/formatters.js';
 
 const CHALLENGES = [
   { t: '오늘 배달·외식 0번 도전', s: 15000 },
@@ -52,34 +51,115 @@ const QUOTES = [
   '가장 비싼 지출은 남에게 보여주려는 지출이다.'
 ];
 
+const QUICK = [
+  { label: '커피 참기', emoji: '☕', won: 5000 },
+  { label: '외식 대신 집밥', emoji: '🍱', won: 20000 },
+  { label: '택시 대신 대중교통', emoji: '🚌', won: 12000 },
+  { label: '충동구매 멈춤', emoji: '🛑', won: 30000 }
+];
+
+const day = () => Math.floor(Date.now() / 86400000);
 const today = () => new Date().toISOString().slice(0, 10);
 const yesterday = () => new Date(Date.now() - 86400000).toISOString().slice(0, 10);
-const load = () => { try { return JSON.parse(localStorage.getItem('fm_challenge') || 'null'); } catch { return null; } };
+const won = (n) => `${Math.round(n).toLocaleString('ko-KR')}원`;
+const readJSON = (k) => { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch { return null; } };
+
+function fmtAdvance(sec) {
+  let x = Math.floor(sec);
+  if (x < 1) return null;
+  const d = Math.floor(x / 86400); x -= d * 86400;
+  const h = Math.floor(x / 3600); x -= h * 3600;
+  const m = Math.floor(x / 60); const s = x - m * 60;
+  if (d > 0) return `${d}일 ${h}시간`;
+  if (h > 0) return `${h}시간 ${m}분`;
+  if (m > 0) return `${m}분 ${s}초`;
+  return `${s}초`;
+}
 
 export default function DailyFire() {
-  const ch = CHALLENGES[Math.floor(Date.now() / 86400000) % CHALLENGES.length];
-  const quote = QUOTES[Math.floor(Date.now() / 86400000) % QUOTES.length];
-  const [st, setSt] = useState(load);
+  const ch = CHALLENGES[day() % CHALLENGES.length];
+  const quote = QUOTES[day() % QUOTES.length];
+  const [st, setSt] = useState(() => readJSON('fm_challenge'));
+  const [sv, setSv] = useState(() => readJSON('fm_save'));
+  const plan = readJSON('fm_plan');
+
   const doneToday = st && st.lastDate === today();
   const streak = st ? st.count : 0;
-  const saved = st ? (st.saved || 0) : 0;
-  const complete = () => {
+  const todaySaved = sv && sv.lastDate === today() ? (sv.today || 0) : 0;
+  const totalSaved = sv ? (sv.total || 0) : 0;
+  const daysCount = sv ? (sv.days || 0) : 0;
+  const dailyNeed = plan && plan.dailyNeed ? plan.dailyNeed : null;
+  const advSec = (amount) => (dailyNeed ? (amount / dailyNeed) * 86400 : 0);
+
+  const addSave = (amount) => {
+    if (!amount || amount <= 0) return;
+    const t = today();
+    const prev = readJSON('fm_save');
+    const newDay = !prev || prev.lastDate !== t;
+    const next = {
+      today: (newDay ? 0 : (prev.today || 0)) + amount,
+      total: (prev ? prev.total || 0 : 0) + amount,
+      days: (prev ? prev.days || 0 : 0) + (newDay ? 1 : 0),
+      lastDate: t
+    };
+    try { localStorage.setItem('fm_save', JSON.stringify(next)); } catch { /* ignore */ }
+    setSv(next);
+  };
+
+  const customSave = () => {
+    const v = window.prompt('오늘 얼마를 아꼈나요? (원)');
+    const n = Number(String(v || '').replace(/[^0-9]/g, ''));
+    if (n > 0) addSave(n);
+  };
+
+  const completeCh = () => {
     if (st && st.lastDate === today()) return;
     const consec = st && st.lastDate === yesterday() ? st.count + 1 : 1;
-    const next = { count: consec, lastDate: today(), saved: (st ? st.saved || 0 : 0) + ch.s };
+    const next = { count: consec, lastDate: today() };
     try { localStorage.setItem('fm_challenge', JSON.stringify(next)); } catch { /* ignore */ }
     setSt(next);
+    if (ch.s > 0) addSave(ch.s);
   };
+
+  const todayAdv = fmtAdvance(advSec(todaySaved));
+  const totalAdv = fmtAdvance(advSec(totalSaved));
+
   return (
     <section className="fm-daily">
       <p className="fm-daily-wisdom">“{quote}”</p>
-      <p className="fm-daily-kicker">오늘의 챌린지 🔥 {streak}일 연속</p>
-      <p className="fm-daily-quote">{ch.t}{ch.s > 0 ? ` (예상 절약 ≈ ${formatWon(ch.s)})` : ''}</p>
-      <button type="button" className={`fm-daily-btn full${doneToday ? ' done' : ''}`} onClick={complete} disabled={doneToday}>
-        {doneToday ? '오늘 챌린지 완료 ✓' : '완료하기'}
-      </button>
-      {saved > 0 && <p className="fm-daily-saved">지금까지 챌린지로 아낀 돈 ≈ <b>{formatWon(saved)}</b> · 이 습관이 은퇴를 앞당겨요</p>}
-      <p className="fm-daily-note">절약액은 대략 추정치예요. 매일 들어와 미션을 완료하면 연속일이 쌓여요.</p>
+
+      <p className="fm-daily-kicker">오늘의 절약 🔥 {streak}일 연속</p>
+      <div className="fm-save-hero">
+        <small>오늘 아낀 돈</small>
+        <b>{won(todaySaved)}</b>
+        {dailyNeed
+          ? (todaySaved > 0 && todayAdv && <span className="fm-save-adv">파이어 <b>{todayAdv}</b> 앞당김 ⏩</span>)
+          : <span className="fm-save-adv muted">계산하면 “며칠 앞당겼는지”까지 보여드려요</span>}
+      </div>
+
+      <div className="fm-save-chips" aria-label="오늘 아낀 항목 기록">
+        {QUICK.map((q) => (
+          <button type="button" key={q.label} onClick={() => addSave(q.won)}>
+            <span>{q.emoji} {q.label}</span><em>+{won(q.won)}</em>
+          </button>
+        ))}
+        <button type="button" className="fm-save-custom" onClick={customSave}>✏️ 직접 입력</button>
+      </div>
+
+      <div className="fm-save-total">
+        누적 <b>{won(totalSaved)}</b>
+        {dailyNeed && totalSaved > 0 && totalAdv && <> · 파이어 <b>{totalAdv}</b> 앞당김</>}
+        {daysCount > 0 && <> · {daysCount}일째</>}
+      </div>
+
+      <div className="fm-daily-mission">
+        <p className="fm-daily-quote">오늘의 미션 · {ch.t}{ch.s > 0 ? ` (≈${won(ch.s)})` : ''}</p>
+        <button type="button" className={`fm-daily-btn full${doneToday ? ' done' : ''}`} onClick={completeCh} disabled={doneToday}>
+          {doneToday ? '오늘 미션 완료 ✓' : '미션 완료하고 적립'}
+        </button>
+      </div>
+
+      <p className="fm-daily-note">절약액은 직접 기록한 값이에요. 매일 들어와 기록하면 연속일이 쌓이고, 아낀 돈이 파이어를 얼마나 앞당기는지 눈으로 확인돼요.</p>
     </section>
   );
 }

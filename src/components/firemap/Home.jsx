@@ -4,7 +4,7 @@ import DailyFire from './DailyFire.jsx';
 
 export default function Home({ onStart, onMove }) {
   return (
-    <main className="fm-screen fm-home-v3">
+    <main className="fm-screen fm-home-v3 fm-has-tabbar">
       <Header tag="1분 계산" />
       {(() => {
         const latest = getLatestRank();

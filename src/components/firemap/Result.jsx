@@ -330,7 +330,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
     catch { onMove('share'); }
   };
   return (
-    <main className="fm-screen fm-scroll">
+    <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header />
       <ResultHeroV2 simulation={simulation} />
       <div className="fm-rank-cta">

@@ -86,7 +86,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
   const belowN = neighbors ? neighbors.below : [];
 
   return (
-    <main className="fm-screen fm-scroll">
+    <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="랭킹" onBack={onBack} />
 
       <div className="fm-board-tabs">

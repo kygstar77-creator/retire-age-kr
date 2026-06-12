@@ -91,28 +91,31 @@ export async function sendCommunity(message, parentId = null) {
   return r;
 }
 
+// ===== 안전한 변경(204 빈응답도 성공 처리, json 파싱 안 함) =====
+async function mutate(path, method, body) {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, {
+      method,
+      headers: baseHeaders({ prefer: 'return=minimal' }),
+      ...(body ? { body: JSON.stringify(body) } : {})
+    });
+    return res.ok;
+  } catch { return false; }
+}
+
 // 공감(좋아요) — read-modify-write
 export async function likeCommunity(id, currentLikes) {
-  try {
-    await callFeedback(`${TABLE}?id=eq.${id}`, { method: 'PATCH', headers: { prefer: 'return=minimal' }, body: JSON.stringify({ likes: (Number(currentLikes) || 0) + 1 }) });
-    return true;
-  } catch { return false; }
+  return mutate(`${TABLE}?id=eq.${id}`, 'PATCH', { likes: (Number(currentLikes) || 0) + 1 });
 }
 
 // 내 글 수정 — PATCH message
 export async function editCommunity(id, message) {
   const clean = String(message || '').trim().slice(0, 240);
   if (!clean) return false;
-  try {
-    await callFeedback(`${TABLE}?id=eq.${id}`, { method: 'PATCH', headers: { prefer: 'return=minimal' }, body: JSON.stringify({ message: clean }) });
-    return true;
-  } catch { return false; }
+  return mutate(`${TABLE}?id=eq.${id}`, 'PATCH', { message: clean });
 }
 
-// 내 글 삭제 — 소프트삭제(status=hidden). delete 정책 없이 update 정책으로 처리.
+// 내 글 삭제 — 실제 DELETE(소프트삭제 status=hidden은 RLS 정책에 막혀 401). 글이면 답글까지 함께 삭제.
 export async function deleteCommunity(id) {
-  try {
-    await callFeedback(`${TABLE}?id=eq.${id}`, { method: 'PATCH', headers: { prefer: 'return=minimal' }, body: JSON.stringify({ status: 'hidden' }) });
-    return true;
-  } catch { return false; }
+  return mutate(`${TABLE}?or=(id.eq.${id},parent_id.eq.${id})`, 'DELETE');
 }

@@ -520,11 +520,12 @@
 .fm-bg-head { display: flex; align-items: center; justify-content: space-between; }
 .fm-bg-next { border: 0; background: none; color: #ff5a00; font-size: 13px; font-weight: 900; cursor: pointer; }
 .fm-bg-opts { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
-.fm-bg-opt { position: relative; min-height: 130px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; padding: 14px 12px; border: 1px solid #e5e7eb; border-radius: 16px; background: #fff; overflow: hidden; cursor: pointer; text-align: center; }
+.fm-bg-opt { position: relative; min-height: 138px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; padding: 14px 12px; border: 1px solid #e5e7eb; border-radius: 16px; background: #fff; overflow: hidden; cursor: pointer; text-align: center; }
 .fm-bg-opt.voted { border-color: #ff5a00; }
 .fm-bg-fill { position: absolute; left: 0; right: 0; bottom: 0; background: #fff1e7; transition: height .5s ease; }
 .fm-bg-opt.voted .fm-bg-fill { background: #ffd8c2; }
-.fm-bg-label { position: relative; z-index: 1; font-size: 14px; font-weight: 800; color: #1a1c22; line-height: 1.4; }
+.fm-bg-label { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 1px; font-size: 14.5px; font-weight: 800; color: #1a1c22; line-height: 1.32; letter-spacing: -.02em; word-break: keep-all; }
+.fm-bg-line { display: block; }
 .fm-bg-pct { position: relative; z-index: 1; font-size: 22px; font-weight: 950; color: #ff5a00; }
 .fm-bg-mine { position: relative; z-index: 1; font-size: 11px; font-weight: 900; color: #fff; background: #ff5a00; padding: 2px 8px; border-radius: 999px; }
 .fm-bg-vs { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 2; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: #1e2859; color: #fff; font-size: 13px; font-weight: 950; border: 3px solid #fff; }

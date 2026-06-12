@@ -2,7 +2,7 @@ import Header from './Header.jsx';
 import { getLatestRank, getRankChange } from '../../firemap-v2/rankHistory.js';
 import DailyFire from './DailyFire.jsx';
 
-export default function Home({ onStart }) {
+export default function Home({ onStart, onMove }) {
   return (
     <main className="fm-screen fm-home-v3">
       <Header tag="1분 계산" />
@@ -29,7 +29,7 @@ export default function Home({ onStart }) {
         <span>자산, 생활비, 수익률, 국민연금으로 나의 FIRE 시점을 계산해보세요.</span>
         <button type="button" onClick={onStart}>1분 만에 계산하기</button>
       </section>
-      <DailyFire />
+      <DailyFire onMove={onMove} />
       <section className="fm-home-mini-card">
         <strong>입력값은 기기 안에서 계산돼요</strong>
         <p>공유 전에는 민감한 금액이 링크에 포함되는지 확인해주세요.</p>

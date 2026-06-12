@@ -427,3 +427,24 @@
 .fm-save-total b { color: #111827; font-weight: 950; }
 .fm-daily-mission { margin-top: 4px; padding-top: 12px; border-top: 1px dashed #fed7aa; }
 .fm-daily-mission .fm-daily-quote { font-size: 14px; margin-bottom: 10px; }
+
+/* 홈 두 번째 기둥 — 오늘의 절약 진입 카드 */
+.fm-home-save-card { display: flex; flex-direction: column; gap: 4px; width: 100%; text-align: left; margin: 12px 0; padding: 16px 18px; border: 1px solid #fed7aa; border-radius: 20px; background: linear-gradient(180deg, #fff 0%, #fff7ed 100%); cursor: pointer; }
+.fm-hs-wisdom { color: #9a3412; font-size: 13px; font-weight: 800; font-style: italic; line-height: 1.45; margin-bottom: 2px; }
+.fm-hs-kicker { color: #ea580c; font-size: 12px; font-weight: 900; }
+.fm-hs-main { color: #111827; font-size: 18px; font-weight: 950; letter-spacing: -.02em; }
+.fm-hs-main b { color: #ff5a00; }
+.fm-hs-sub { color: #6b7280; font-size: 12.5px; font-weight: 800; }
+
+/* 절약 탭 — 퇴사 시점 당김 진행 바 */
+.fm-fp { margin: 16px 0 6px; }
+.fm-fp-labels { display: flex; justify-content: space-between; color: #6b7280; font-size: 12px; font-weight: 800; margin-bottom: 7px; }
+.fm-fp-track { position: relative; height: 14px; border-radius: 999px; background: #eef2f7; }
+.fm-fp-gain { position: absolute; right: 0; top: 0; height: 100%; border-radius: 999px; background: linear-gradient(90deg, #fb923c, #ff5a00); transition: width .5s ease; }
+.fm-fp-flag { position: absolute; top: -9px; transform: translateX(-50%); font-size: 17px; transition: left .5s ease; }
+.fm-fp-cap { margin: 12px 0 0; color: #9a3412; font-size: 13.5px; font-weight: 800; line-height: 1.5; }
+.fm-fp-cap b { color: #ff5a00; }
+.fm-fp.done .fm-fp-cap { color: #065f46; }
+.fm-save-link { margin: 12px 0 0; color: #6b7280; font-size: 12px; font-weight: 700; line-height: 1.5; }
+.fm-inline-link { border: 0; background: none; padding: 0; color: #ff5a00; font: inherit; font-weight: 900; cursor: pointer; text-decoration: underline; }
+.fm-card.fm-daily-mission { border-top: 0; margin-top: 12px; }

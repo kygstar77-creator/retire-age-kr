@@ -15,6 +15,7 @@ import FloatingFeedback from './firemap/FloatingFeedback.jsx';
 import Leaderboard from './firemap/Leaderboard.jsx';
 import CityExplorer from './firemap/CityExplorer.jsx';
 import DividendLifeCalc from './firemap/DividendLifeCalc.jsx';
+import Savings from './firemap/Savings.jsx';
 import Consent from './firemap/Consent.jsx';
 import { buildSimulation, defaultInputs } from '../utils/retirementSimulator.js';
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
@@ -101,7 +102,7 @@ export default function FireMapMVP() {
   );
 
   let view;
-  if (screen === 'home') view = <Home onStart={() => setScreen('question')} />;
+  if (screen === 'home') view = <Home onStart={() => setScreen('question')} onMove={setScreen} />;
   else if (screen === 'question') view = <Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />;
   else if (screen === 'tools') view = <Tools onMove={setScreen} />;
   else if (screen === 'experiment') view = <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} />;
@@ -113,6 +114,7 @@ export default function FireMapMVP() {
   else if (screen === 'dependent') view = tool('dependent', <DependentCheck onApply={applyPatch} />);
   else if (screen === 'foreignTax') view = tool('foreignTax', <ForeignStockTaxCard />);
   else if (screen === 'dividend') view = <DividendLifeCalc inputs={inputs} onChange={onChange} onMove={setScreen} onBack={backOf('dividend')} />;
+  else if (screen === 'save') view = <Savings simulation={simulation} onMove={setScreen} />;
   else if (screen === 'pension') view = tool('pension', <PensionEarlyClaimCard inputs={inputs} onApply={applyPatch} />);
   else view = <Result inputs={inputs} simulation={simulation} onMove={setScreen} onChange={onChange} onEditFinalQuestion={goFinalQuestion} />;
 

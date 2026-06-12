@@ -4,6 +4,7 @@ export const screens = {
   home:       { hash: '#home',       title: '홈',     type: 'home',     tab: 'home' },
   question:   { hash: '#question',   title: '질문',   type: 'question' },
   result:     { hash: '#result',     title: '결과',   type: 'result',   tab: 'home', next: ['ranking', 'experiment', 'share', 'tools'] },
+  save:       { hash: '#save',       title: '절약',   type: 'save',     tab: 'save' },
   tools:      { hash: '#tools',      title: '도구',   type: 'tools',    tab: 'tools' },
   experiment: { hash: '#experiment', title: '조건 비교',          type: 'tool', back: 'result' },
   share:      { hash: '#share',      title: '공유',               type: 'tool', back: 'result' },
@@ -40,6 +41,7 @@ export const TOOLS = [
 // 하단 탭
 export const TABS = [
   { id: 'home',  label: '홈',   target: 'home' },
+  { id: 'save',  label: '절약', target: 'save' },
   { id: 'tools', label: '도구', target: 'tools' },
   { id: 'guide', label: '백과', href: '/guide/' }
 ];

@@ -3,6 +3,7 @@ import { TABS, screens } from '../../firemap-v2/screens.js';
 const ICONS = {
   home: 'M3 11.5 12 4l9 7.5M5 10v9h5v-5h4v5h5v-9',
   tools: 'M4 5h6v6H4zM14 5h6v6h-6zM4 15h6v6H4zM14 15h6v6h-6z',
+  save: 'M5 9h14l-1 9a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2zM9 9V6a3 3 0 0 1 6 0v3M12 13v3',
   guide: 'M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 0-3 3zM5 4v16'
 };
 

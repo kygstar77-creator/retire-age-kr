@@ -11,7 +11,11 @@ export default function Home({ onStart, onMove }) {
     fetchAggregates().then((a) => { if (alive) setAgg(a); });
     return () => { alive = false; };
   }, []);
+
   const latest = getLatestRank();
+  const proof = agg && agg.total > 0
+    ? `${agg.total.toLocaleString()}명이 이미 계산했어요${agg.avgEarliest ? ` · 또래 평균 퇴사 ${agg.avgEarliest}세` : ''}`
+    : '';
 
   return (
     <main className="fm-screen fm-home-v3 fm-has-tabbar">
@@ -28,11 +32,19 @@ export default function Home({ onStart, onMove }) {
         <h1>나는 몇 살에<br />퇴사할 수 있을까?</h1>
         <span>자산·생활비만 입력하면 1분 만에 내 퇴사 가능 나이와 또래 중 내 등수까지 나와요.</span>
         <button type="button" onClick={onStart}>1분 만에 내 퇴사 나이 계산하기</button>
-        {agg && agg.total > 0 && (
-          <p className="fm-home-proof">
-            <b>{agg.total.toLocaleString()}명</b>이 이미 계산했어요{agg.avgEarliest ? <> · 또래 평균 퇴사 <b>{agg.avgEarliest}세</b></> : null}
-          </p>
-        )}
+        {proof && <p className="fm-home-proof">{proof}</p>}
       </section>
       <DailyFire onMove={onMove} />
-      <section className="fm-home-mini-card"
+      <section className="fm-home-mini-card">
+        <strong>입력값은 기기 안에서 계산돼요</strong>
+        <p>공유 전에는 민감한 금액이 링크에 포함되는지 확인해주세요.</p>
+      </section>
+      <nav className="fm-policy-links" aria-label="정책 및 문의">
+        <a href="/privacy.html">개인정보처리방침</a>
+        <a href="/disclaimer.html">면책 안내</a>
+        <a href="/guide/">은퇴 백과</a>
+        <a href="/contact.html">문의</a>
+      </nav>
+    </main>
+  );
+}

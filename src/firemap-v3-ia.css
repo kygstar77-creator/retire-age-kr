@@ -540,3 +540,7 @@
 /* 의견창 — 보내기 전용 감사 화면 */
 .fm-feedback-thanks { padding: 4px 18px 20px; }
 .fm-feedback-done { margin-top: 12px; width: 100%; min-height: 46px; border: 0; border-radius: 14px; background: #ff5a00; color: #fff; font-size: 15px; font-weight: 900; cursor: pointer; }
+
+/* 홈 사회적 증거 */
+.fm-home-proof { margin: 12px 0 0; color: #6b7280; font-size: 13px; font-weight: 700; line-height: 1.5; }
+.fm-home-proof b { color: #ea580c; font-weight: 900; }

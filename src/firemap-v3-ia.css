@@ -67,7 +67,14 @@
 .fm-dot-principal { background: #2f6fde; }
 .fm-dot-gains { background: #ff5a00; }
 .fm-chart-mode { margin: 0 0 10px; gap: 6px; }
-.fm-chart-mode button.is-active { background: #1e2859; color: #fff; border-color: #1e2859; }
+.fm-chart-mode button.is-active { background: #ff5a00 !important; color: #fff !important; border-color: #ff5a00 !important; }
+.fm-sim-actions { margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(128,128,128,.14); }
+.fm-sim-actions-note { display: block; font-size: 11.5px; color: #6b7280; line-height: 1.45; margin-bottom: 8px; }
+.fm-sim-actions-note b { color: #ff5a00; }
+.fm-sim-actions-btns { display: flex; gap: 8px; }
+.fm-sim-reset { flex: 0 0 auto; padding: 10px 14px; border-radius: 12px; border: 1px solid rgba(120,120,120,.35); background: transparent; color: #4b5563; font-size: 13px; font-weight: 700; cursor: pointer; }
+.fm-sim-save { flex: 1 1 auto; padding: 10px 14px; border-radius: 12px; border: 0; background: #ff5a00; color: #fff; font-size: 13px; font-weight: 800; cursor: pointer; }
+.fm-sim-save:active { filter: brightness(.94); }
 
 /* v3 input: quick-add chips + edit hint */
 .fm-range-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }

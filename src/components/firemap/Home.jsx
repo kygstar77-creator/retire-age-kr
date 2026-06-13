@@ -6,6 +6,7 @@ import DailyFire from './DailyFire.jsx';
 import FeedbackButton from './FeedbackButton.jsx';
 import { track } from '../../firemap-v2/dailyData.js';
 import DepositCard from './DepositCard.jsx';
+import FireStatus from './FireStatus.jsx';
 
 export default function Home({ onStart, onMove, simulation }) {
   const [agg, setAgg] = useState(null);
@@ -50,6 +51,7 @@ export default function Home({ onStart, onMove, simulation }) {
         <button type="button" className="fm-home-cta" onClick={() => { track('start_calc', { age }); onStart(age); }}>이 나이로 1분 계산 시작 →</button>
         {proof && <p className="fm-home-proof">{proof}</p>}
       </section>
+      <FireStatus onMove={onMove} simulation={simulation} />
       <DepositCard onMove={onMove} simulation={simulation} />
       <DailyFire onMove={onMove} />
       <section className="fm-home-mini-card">

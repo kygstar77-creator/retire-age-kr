@@ -33,6 +33,7 @@ import '../firemap-release-fixes.css';
 import '../firemap-v3-feedback.css';
 import '../firemap-v3-hotfix.css';
 import '../firemap-v3-ia.css';
+import '../firemap-status.css';
 
 function getSharedInputs() {
   try {

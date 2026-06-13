@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { fmtAdvance, dailyNeedOf } from '../../firemap-v2/dailyData.js';
 import { pushState, pullKey } from '../../utils/firemapStateApi.js';
+import { notifySavingsChanged } from '../../utils/savingsEngine.js';
 
 const KEY = 'fm_daily';
 const dayKey = (d) => d.toISOString().slice(0, 10);
@@ -24,9 +24,7 @@ function streakOf(days) {
 // 적립 = 매일 '실제로 저축한 금액'을 기록. 월별 실제 저축이 계획(월 저축액)을 넘긴 만큼만 퇴사 앞당김.
 export default function DepositCard({ simulation, onMove }) {
   const inp = (simulation && simulation.inputs) || {};
-  const fireAge = (simulation && simulation.earliestRetirementAge) || inp.targetRetirementAge || null;
   const monthlyPlan = inp.monthlyInvestment || 0;
-  const dailyNeed = dailyNeedOf(simulation);
   const suggested = monthlyPlan > 0 ? Math.max(1000, Math.round(monthlyPlan / 30 / 1000) * 1000) : 10000;
 
   const [cfg, setCfg] = useState(() => load() || { days: {} });
@@ -48,11 +46,8 @@ export default function DepositCard({ simulation, onMove }) {
   const byMonth = {};
   Object.entries(days).forEach(([d, amt]) => { const mk = d.slice(0, 7); byMonth[mk] = (byMonth[mk] || 0) + (Number(amt) || 0); });
   const monthTotal = byMonth[m] || 0;
-  let surplusTotal = 0;
-  Object.values(byMonth).forEach((t) => { surplusTotal += Math.max(0, t - monthlyPlan); });
   const streak = streakOf(days);
   const planPct = monthlyPlan > 0 ? Math.max(0, Math.min(100, (monthTotal / monthlyPlan) * 100)) : 0;
-  const advLabel = dailyNeed && surplusTotal > 0 ? (fmtAdvance((surplusTotal / dailyNeed) * 86400) || null) : null;
 
   const openInput = () => { setInputAmt(String(days[today] || suggested)); setEditing(true); };
   const saveToday = () => {
@@ -60,9 +55,9 @@ export default function DepositCard({ simulation, onMove }) {
     const nextDays = { ...days };
     if (amt > 0) nextDays[today] = amt; else delete nextDays[today];
     const next = { ...cfg, days: nextDays };
-    save(next); setCfg(next); pushState('fm_daily', next); setEditing(false);
+    save(next); setCfg(next); pushState('fm_daily', next); notifySavingsChanged(); setEditing(false);
   };
-  const reset = () => { if (!window.confirm('적립 기록을 모두 지울까요? 되돌릴 수 없어요.')) return; const next = { days: {} }; save(next); setCfg(next); pushState('fm_daily', next); setEditing(false); };
+  const reset = () => { if (!window.confirm('적립 기록을 모두 지울까요? 되돌릴 수 없어요.')) return; const next = { days: {} }; save(next); setCfg(next); pushState('fm_daily', next); notifySavingsChanged(); setEditing(false); };
 
   return (
     <section className="fm-card fm-dep live">
@@ -80,8 +75,7 @@ export default function DepositCard({ simulation, onMove }) {
           <div className="fm-dep-gauge"><i style={{ width: `${planPct}%` }} /></div>
           <p className="fm-dep-mini">
             이번 달 <b>{won(monthTotal)}</b> / 계획 {won(monthlyPlan)}
-            {advLabel ? <> · 계획 초과로 퇴사 <b>{advLabel}</b> 앞당김 ⏩</> : null}
-            {fireAge ? ` · 예상 퇴사 ${fireAge}세` : ''}
+            {monthTotal >= monthlyPlan && monthlyPlan > 0 ? <> · 계획 달성! 위 ‘실제 퇴사’에 반영돼요</> : null}
           </p>
         </>
       ) : (

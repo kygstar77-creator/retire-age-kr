@@ -7,6 +7,7 @@ import { statsRank } from '../../firemap-v2/rank.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
 import { submitSave, fetchSaveTop, fetchMySaveRank } from '../../utils/firemapSaveApi.js';
+import { notifySavingsChanged } from '../../utils/savingsEngine.js';
 import { CHALLENGES, QUOTES, QUICK, dayIdx, todayStr, wonStr, readJSON, fmtAdvance, dailyNeedOf, addSave, removeEntry, setTotal, track } from '../../firemap-v2/dailyData.js';
 
 function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
@@ -75,6 +76,7 @@ export default function Savings({ simulation, onMove }) {
     Promise.all([fetchSaveTop(10), fetchMySaveRank(todayVal)]).then(([t, r]) => { setTop(t); setRank(r); });
   };
   const persist = (nextSv) => {
+    notifySavingsChanged();
     pushState('fm_save', nextSv);
     const tVal = nextSv.lastDate === todayStr() ? (nextSv.today || 0) : 0;
     const adv = dailyNeed ? (nextSv.total || 0) / dailyNeed : null;

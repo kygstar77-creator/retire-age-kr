@@ -6,7 +6,7 @@ export const screens = {
   result:     { hash: '#result',     title: '결과',   type: 'result',   tab: 'home', next: ['ranking', 'save', 'experiment', 'share', 'tools'] },
   save:       { hash: '#save',       title: '저축',   type: 'save',     tab: 'save' },
   tools:      { hash: '#tools',      title: '도구',   type: 'tools',    tab: 'tools' },
-  experiment: { hash: '#experiment', title: '조건 비교',          type: 'tool', back: 'result' },
+  experiment: { hash: '#experiment', title: '바꿔보기',          type: 'tool', back: 'result', tab: 'home' },
   share:      { hash: '#share',      title: '공유',               type: 'tool', back: 'result' },
   dependent:  { hash: '#dependent',  title: '건보료 피부양자 판정', type: 'tool', back: 'tools' },
   foreignTax: { hash: '#foreignTax', title: '해외주식 양도세',     type: 'tool', back: 'tools' },

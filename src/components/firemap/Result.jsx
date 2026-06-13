@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
+import ResultSimTabs from './ResultSimTabs.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, fireStatus, runwayText, scenarioEndAge, survivalPhrase } from '../../firemap-v2/scenarios.js';
 import { simulateRetirement } from '../../utils/retirementSimulator.js';
@@ -333,6 +334,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header />
+      <ResultSimTabs current="result" />
       <ResultHeroV2 simulation={simulation} />
       <div className="fm-rank-cta">
         <button type="button" className="fm-rank-cta-share" onClick={shareRank}>내 결과 공유하기</button>

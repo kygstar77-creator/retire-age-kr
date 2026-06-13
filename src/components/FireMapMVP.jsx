@@ -19,6 +19,7 @@ import Savings from './firemap/Savings.jsx';
 import Consent from './firemap/Consent.jsx';
 import { buildSimulation, defaultInputs } from '../utils/retirementSimulator.js';
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
+import { getLatestRank } from '../firemap-v2/rankHistory.js';
 import { cleanNumber } from '../firemap-v2/formatters.js';
 import { screens, resolveScreen } from '../firemap-v2/screens.js';
 import { maybeClaimOnLoad } from '../utils/firemapStateApi.js';
@@ -113,7 +114,7 @@ export default function FireMapMVP() {
   const wrap = (node) => (
     <>
       {node}
-      {screens[screen]?.tab && <BottomTabs current={screen} onMove={setScreen} />}
+      {screens[screen]?.tab && <BottomTabs current={screen} onMove={(t) => setScreen(t === 'home' && getLatestRank() ? 'result' : t)} />}
       <FloatingFeedback />
       <Consent />
     </>

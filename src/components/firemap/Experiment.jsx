@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import Header from './Header.jsx';
+import ResultSimTabs from './ResultSimTabs.jsx';
 import PensionControls from './PensionControls.jsx';
 import RangeControl from './RangeControl.jsx';
 import AssetCompareChart from './AssetCompareChart.jsx';
@@ -23,8 +24,17 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
   const activeScenario = investmentScenarios.find((scenario) => scenario.annualReturnRate === inputs.annualReturnRate);
 
   return (
-    <main className="fm-screen fm-scroll">
-      <Header tag="비교" onBack={onBack} />
+    <main className="fm-screen fm-scroll fm-has-tabbar">
+      <Header tag="바꿔보기" onBack={onBack} />
+      <ResultSimTabs current="sim" />
+      <section className="fm-card fm-sim-live">
+        <p className="fm-sim-live-kicker">지금 조건이면</p>
+        <div className="fm-sim-live-row">
+          <div><small>퇴사 가능</small><b>{simulation.earliestRetirementAge ? `${simulation.earliestRetirementAge}세` : '아직'}</b></div>
+          <div><small>자산 수명</small><b>{runwayText(simulation)}</b></div>
+        </div>
+        <p className="fm-sim-live-note">아래 수치를 밀면 위 숫자가 바로 바뀌어요</p>
+      </section>
       <section className="fm-card fm-graph">
         <p className="fm-kicker">내 미래 자산 차트</p><h2>나이별 자산 흐름을 비교해보세요</h2>
         <div className="fm-chart-legend">
@@ -68,10 +78,6 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         </div>
         <small>예적금부터 공격적 투자까지, 같은 자산도 어디에 두느냐로 자산수명이 달라져요. 가정이 높을수록 기대수익도, 변동성(위험)도 커집니다. 과거 통계 기반 가정이며 특정 상품 추천이 아니에요. {sourceLine('returnPresets')}</small>
       </section>
-      <nav className="fm-bottom-nav">
-        <button type="button" onClick={onBack}>취소</button>
-        <button type="button" onClick={onBack}>결과 보기</button>
-      </nav>
     </main>
   );
 }

@@ -6,6 +6,7 @@ import DailyFire from './DailyFire.jsx';
 import FeedbackButton from './FeedbackButton.jsx';
 import { track } from '../../firemap-v2/dailyData.js';
 import FireStatus from './FireStatus.jsx';
+import InstallButton from './InstallButton.jsx';
 
 export default function Home({ onStart, onMove, simulation }) {
   const [agg, setAgg] = useState(null);
@@ -51,6 +52,7 @@ export default function Home({ onStart, onMove, simulation }) {
         {proof && <p className="fm-home-proof">{proof}</p>}
       </section>
       <FireStatus onMove={onMove} simulation={simulation} />
+      <InstallButton />
       <DailyFire onMove={onMove} />
       <section className="fm-home-mini-card">
         <strong>입력값은 기기 안에서 계산돼요</strong>

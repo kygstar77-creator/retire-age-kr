@@ -144,9 +144,7 @@ export default function Experiment({ inputs, onChange, onBack }) {
         <div className="fm-bench">
           {impacts.map((sc) => (
             <div className={`fm-bench-row2${sc.annualReturnRate === draft.annualReturnRate ? ' is-active' : ''}`} key={sc.key}>
-              <div className="fm-bench-head"><b>{sc.label}</b><span>연 {sc.annualReturnRate}%</span></div>
-              <div className="fm-bench-metrics"><span>이 가정이면 자산수명 <b>{sc.runway}</b>까지</span></div>
-              <em>{sc.copy}</em>
+              <b>{sc.label}</b><span>연 {sc.annualReturnRate}%</span><em>자산수명 {sc.runway}</em>
             </div>
           ))}
         </div>

@@ -5,6 +5,7 @@ import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, buildGrowthSeries, fireStatus, runwayText, scenarioEndAge, survivalPhrase } from '../../firemap-v2/scenarios.js';
 import { simulateRetirement } from '../../utils/retirementSimulator.js';
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
+import { shareToKakao } from '../../utils/kakaoShare.js';
 import { statsRank, gradeFromScore } from '../../firemap-v2/rank.js';
 import { submitScore, fetchUserRank, fetchAggregates, assetBandOf } from '../../utils/firemapScoresApi.js';
 import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js';
@@ -327,22 +328,40 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
     track('share', { type: 'result' });
     const ph = survivalPhrase(simulation);
     const earliest = simulation.earliestRetirementAge;
-    const text = '파이어족들을 위한 커뮤니티 · 파이어맵';
-    // 링크만 공유 → 카톡이 /og 개인 카드 하나로 미리보기 + 한 탭 입장(이미지+URL 동시전송 시 카드 중복 떠서 제거)
-    const u = new URL('/s', window.location.origin);
-    if (earliest) u.searchParams.set('ea', String(earliest));
-    u.searchParams.set('target', String(simulation.inputs.targetRetirementAge));
-    u.searchParams.set('rwy', ph.runway);
-    u.searchParams.set('ret', String(simulation.inputs.annualReturnRate));
-    u.searchParams.set('inf', String(simulation.inputs.inflationRate));
+    const target = simulation.inputs.targetRetirementAge;
+    const ret = simulation.inputs.annualReturnRate;
+    const inf = simulation.inputs.inflationRate;
+    let pos, tot;
+    try { const rr = await fetchUserRank(earliest); if (rr && rr.total) { pos = rr.position; tot = rr.total; } } catch (e) { /* ignore */ }
+    // 카드 이미지: 항상 프로덕션 /og(개인 숫자). 카카오 서버가 가져가므로 절대경로 firemap.kr.
+    const img = new URL('https://firemap.kr/og');
+    if (earliest) img.searchParams.set('ea', String(earliest));
+    img.searchParams.set('target', String(target));
+    img.searchParams.set('rw', ph.runway);
+    img.searchParams.set('ret', String(ret));
+    img.searchParams.set('inf', String(inf));
+    if (pos && tot) { img.searchParams.set('pos', String(pos)); img.searchParams.set('tot', String(tot)); }
+    const imageUrl = img.toString();
+    // 클릭 시 이동할 짧은 링크
+    const l = new URL('/s', window.location.origin);
+    if (earliest) l.searchParams.set('ea', String(earliest));
+    l.searchParams.set('target', String(target));
+    l.searchParams.set('rwy', ph.runway);
+    l.searchParams.set('ret', String(ret));
+    l.searchParams.set('inf', String(inf));
+    if (pos && tot) { l.searchParams.set('pos', String(pos)); l.searchParams.set('tot', String(tot)); }
+    const url = l.toString();
+    const title = earliest ? `나는 ${earliest}세에 퇴사할 수 있어요 — 파이어맵` : '파이어맵 — 내 퇴사 가능 나이';
+    const description = '나는 또래 중 파이어 랭킹 몇 등일까? 1분이면 확인';
+    track('share_summary_copy', { type: 'result_share' });
+    // 1순위: 카카오톡 카드(개인 /og 이미지) — 긴 URL 텍스트 없이 카드 하나만 안정적으로 전송
     try {
-      const rr = await fetchUserRank(earliest);
-      if (rr && rr.total) { u.searchParams.set('pos', String(rr.position)); u.searchParams.set('tot', String(rr.total)); }
-    } catch (e) { /* 등수 못 가져오면 og가 정적 폴백 */ }
-    const url = u.toString();
-    track('share_summary_copy', { type: 'result_link' });
+      await shareToKakao({ title, description, imageUrl, linkUrl: url });
+      return;
+    } catch (e) { /* SDK 미로드/도메인 미등록 등 → 폴백 */ }
+    // 폴백: 시스템 공유 / 복사
     if (navigator.share) {
-      try { await navigator.share({ title: '파이어맵 — 내 퇴사 가능 나이', text, url }); return; }
+      try { await navigator.share({ text: '파이어족들을 위한 커뮤니티 · 파이어맵', url }); return; }
       catch (e) { if (e && e.name === 'AbortError') return; }
     }
     try { await navigator.clipboard.writeText(url); window.alert('내 결과 링크를 복사했어요. 단톡방에 붙여넣어 보세요!'); }

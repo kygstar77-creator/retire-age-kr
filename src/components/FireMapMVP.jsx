@@ -21,6 +21,7 @@ import { buildSimulation, defaultInputs } from '../utils/retirementSimulator.js'
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
 import { cleanNumber } from '../firemap-v2/formatters.js';
 import { screens, resolveScreen } from '../firemap-v2/screens.js';
+import { maybeClaimOnLoad } from '../utils/firemapStateApi.js';
 import { decodeInputsFromHash } from '../utils/shareState.js';
 import '../firemap-v3-tokens.css';
 import '../firemap.css';
@@ -69,6 +70,7 @@ export default function FireMapMVP() {
     window.addEventListener('hashchange', sync);
     window.addEventListener('popstate', sync);
     if (!window.location.hash) window.history.replaceState(null, '', '#home');
+    maybeClaimOnLoad();
     return () => { window.removeEventListener('hashchange', sync); window.removeEventListener('popstate', sync); };
   }, []);
 

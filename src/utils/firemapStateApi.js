@@ -50,3 +50,23 @@ export async function syncAfterAuth() {
     }
   }
 }
+
+// 로그인 시: 이 기기의 옛 익명 기록(랭킹·절약·커뮤니티)을 계정으로 승계 + 닉네임을 핸들로 통일
+export async function claimDevice() {
+  const a = authed(); if (!a) return false;
+  let dev = null; try { dev = localStorage.getItem('fm_cid'); } catch { /* ignore */ }
+  if (!dev || dev === a.userId) { try { localStorage.setItem('fm_claimed', a.userId); } catch { /* ignore */ } return false; }
+  try {
+    await rpc('fm_claim', { p_user: a.userId, p_token: a.token, p_device: dev });
+    try { localStorage.setItem('fm_claimed', a.userId); } catch { /* ignore */ }
+    return true;
+  } catch { return false; }
+}
+
+// 앱 로드 시 한 번만 자동 승계(이미 로그인된 사용자도 재로그인 없이 적용)
+export async function maybeClaimOnLoad() {
+  const a = authed(); if (!a) return;
+  let done = null; try { done = localStorage.getItem('fm_claimed'); } catch { /* ignore */ }
+  if (done === a.userId) return;
+  await claimDevice();
+}

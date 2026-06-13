@@ -332,19 +332,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
     const earliest = simulation.earliestRetirementAge;
     const pctText = rk && rk.percentile ? ` · 또래 자산 상위 ${rk.percentile}%` : '';
     const text = earliest ? `나는 ${earliest}세에 퇴사 가능${pctText} — 너는 몇 살에 가능?` : '내 퇴사 가능 나이, 1분이면 나와 — 너도 해봐';
-    // 1순위: 결과 카드 이미지 파일 공유 — 개인 숫자가 박힌 카드가 카톡에 그대로 꽂힘(잡브레인식 캡처 공유)
-    try {
-      const blob = await makeShareImage(inputs, simulation);
-      const file = new File([blob], 'firemap-result.png', { type: 'image/png' });
-      if (navigator.canShare?.({ files: [file] })) {
-        await navigator.share({ files: [file], text });
-        track('share_summary_copy', { type: 'result_image' });
-        return;
-      }
-    } catch (e) {
-      if (e && e.name === 'AbortError') return;
-    }
-    // 폴백(이미지 공유 미지원 — 주로 데스크톱): 링크 공유
+    // 공유 링크(개인 조건 포함) — 이미지 캡션에도 함께 실어 탭으로 바로 입장 가능하도록
     const u = new URL(buildScenarioShareUrl(inputs));
     u.pathname = '/s';
     if (earliest) u.searchParams.set('ea', String(earliest));
@@ -352,6 +340,22 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
     u.searchParams.set('g', rk.grade);
     u.searchParams.set('rw', ph.short);
     const url = u.toString();
+    // 1순위: 결과 카드 이미지 + 링크 캡션 공유(개인 숫자 카드가 카톡에 꽂히고, 링크로 바로 입장)
+    try {
+      const blob = await makeShareImage(inputs, simulation);
+      const file = new File([blob], 'firemap-result.png', { type: 'image/png' });
+      const payload = navigator.canShare?.({ files: [file], text: `${text}\n${url}`, url })
+        ? { files: [file], text: `${text}\n${url}`, url }
+        : (navigator.canShare?.({ files: [file] }) ? { files: [file], text: `${text}\n${url}` } : null);
+      if (payload) {
+        await navigator.share(payload);
+        track('share_summary_copy', { type: 'result_image' });
+        return;
+      }
+    } catch (e) {
+      if (e && e.name === 'AbortError') return;
+    }
+    // 폴백(이미지 공유 미지원 — 주로 데스크톱): 링크 공유
     if (navigator.share) {
       try { await navigator.share({ title: '파이어맵 — 내 퇴사 가능 나이', text, url }); return; }
       catch (e) { if (e && e.name === 'AbortError') return; }

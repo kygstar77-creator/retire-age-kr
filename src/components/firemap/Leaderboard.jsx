@@ -3,7 +3,7 @@ import Header from './Header.jsx';
 import IdentityLine from './IdentityLine.jsx';
 import { identityIds, accountHandle } from '../../utils/identity.js';
 import { statsRank } from '../../firemap-v2/rank.js';
-import { fetchTopScores, fetchUserRank, submitScore, fetchAggregates, fetchNeighbors } from '../../utils/firemapScoresApi.js';
+import { fetchTopScores, fetchUserRank, submitScore, fetchAggregates, fetchNeighbors, fetchAssetPercentile, assetBandOf } from '../../utils/firemapScoresApi.js';
 import { fetchSaveBoard } from '../../utils/firemapSaveApi.js';
 import { displayName } from '../../firemap-v2/funName.js';
 import { wonStr, fmtAdvance, readJSON, todayStr } from '../../firemap-v2/dailyData.js';
@@ -34,11 +34,13 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
   const ids = identityIds();
   const acctHandle = accountHandle();
   const myAdvance = hasCalculated() ? Math.max(0, computeProgress(simulation).advanceDays) : 0;
+  const myBand = hasCalculated() ? assetBandOf(simulation.netWorth) : null;
   const [board, setBoard] = useState('fire');
   const [saveMetric, setSaveMetric] = useState('total');
   const [top, setTop] = useState(null);
   const [me, setMe] = useState(null);
   const [neighbors, setNeighbors] = useState(null);
+  const [assetPct, setAssetPct] = useState(null);
   const [agg, setAgg] = useState(null);
   const [scope, setScope] = useState('all');
   const [nick, setNick] = useState(readNick);
@@ -48,13 +50,14 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
 
   const load = async () => {
     if (board === 'fire') {
-      const [t, r, a, nb] = await Promise.all([
+      const [t, r, a, nb, ap] = await Promise.all([
         fetchTopScores(10, bandArg),
         fetchUserRank(earliest, bandArg, myAdvance),
         fetchAggregates(),
-        fetchNeighbors(earliest, bandArg)
+        fetchNeighbors(earliest, bandArg),
+        fetchAssetPercentile(bandArg, myBand)
       ]);
-      setTop(t); setMe(r); setAgg(a); setNeighbors(nb);
+      setTop(t); setMe(r); setAgg(a); setNeighbors(nb); setAssetPct(ap);
     } else {
       setTop(null); setNeighbors(null);
       const metric = board === 'save' ? saveMetric : board;
@@ -74,7 +77,8 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
       ageBand: base.ageBand,
       survivalAge: (simulation.targetResult && simulation.targetResult.depletionAge) || simulation.inputs.simulationUntilAge,
       nickname: v,
-      earliestAge: earliest
+      earliestAge: earliest,
+      assetBand: myBand
     });
     await load();
     setSaving(false);
@@ -193,8 +197,9 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
               <p className="fm-section-sub">지금까지 함께 계산한 모두의 익명 집계예요</p>
               <div className="fm-stats-grid">
                 <div><small>함께 계산</small><b>{agg.total.toLocaleString()}명</b></div>
-                {agg.avgEarliest != null && <div><small>평균 은퇴 가능</small><b>{agg.avgEarliest}세</b></div>}
-                {agg.topBand != null && <div><small>가장 많은 연령대</small><b>{agg.topBand}대</b></div>}
+                {agg.avgEarliest != null && <div><small>또래 평균 은퇴</small><b>{agg.avgEarliest}세</b></div>}
+                {agg.avgEarliest != null && earliest && <div><small>또래 대비 나</small><b>{agg.avgEarliest - earliest === 0 ? '평균과 같음' : `${Math.abs(agg.avgEarliest - earliest)}년 ${agg.avgEarliest - earliest > 0 ? '빠름' : '느림'}`}</b></div>}
+                {assetPct && <div><small>또래 중 자산</small><b>상위 {assetPct.percentile}%</b></div>}
               </div>
             </section>
           )}

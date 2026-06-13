@@ -343,7 +343,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
     if (pos && tot) { img.searchParams.set('pos', String(pos)); img.searchParams.set('tot', String(tot)); }
     const imageUrl = img.toString();
     // 클릭 시 이동할 짧은 링크
-    const l = new URL('/s', window.location.origin);
+    const l = new URL('https://firemap.kr/s');
     if (earliest) l.searchParams.set('ea', String(earliest));
     l.searchParams.set('target', String(target));
     l.searchParams.set('rwy', ph.runway);

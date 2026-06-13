@@ -24,7 +24,9 @@ export const defaultInputs = {
   overseasMonthlyCostLocal: 0,
   overseasExchangeRate: 40,
   overseasAnnualExtraCost: 0,
-  overseasApplyYears: 10
+  overseasApplyYears: 10,
+  investType: 0,
+  dividendYield: 4
 };
 
 const toRate = (value) => Number(value || 0) / 100;
@@ -38,6 +40,10 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
   const inflation = toRate(data.inflationRate);
   const savingYears = data.savingYears > 0 ? data.savingYears : Infinity; // 0 = 퇴사할 때까지 저축
   let financialAsset = data.financialAsset;
+  let costBasis = data.financialAsset; // 양도세 차익 추정용(취득원가 누적)
+  const investType = Math.round(data.investType) || 0; // 0 국내(면제) · 1 해외(양도세22%) · 2 배당(15.4%)
+  const dividendYield = toRate(data.dividendYield);
+  const CG_RATE = 0.22; const DIV_TAX = 0.154; const CG_EXEMPT = 2500000;
   let depletionAge = null;
   const rows = [];
 
@@ -60,7 +66,23 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
     const salaryGrowth = toRate(data.salaryGrowthRate);
     const stillSaving = !isRetired && yearsFromStart >= 1 && yearsFromStart <= savingYears;
     const investmentAdded = stillSaving ? yearly(data.monthlyInvestment) * Math.pow(1 + salaryGrowth, yearsFromStart) : 0;
-    const assetAfterCashFlow = financialAsset + investmentAdded - withdrawal;
+    if (investmentAdded > 0) costBasis += investmentAdded;
+    // 투자 유형별 세금(퇴사 후): 국내=0 · 해외=인출차익 22%(250만 공제) · 배당=배당세 15.4%
+    let investTax = 0;
+    if (isRetired && financialAsset > 0) {
+      if (investType === 1) {
+        const gainRatio = Math.max(0, (financialAsset - costBasis) / financialAsset);
+        const gain = withdrawal * gainRatio;
+        investTax = Math.max(0, gain - CG_EXEMPT) * CG_RATE;
+      } else if (investType === 2) {
+        investTax = financialAsset * dividendYield * DIV_TAX;
+      }
+    }
+    const assetAfterCashFlow = financialAsset + investmentAdded - withdrawal - investTax;
+    if (isRetired && financialAsset > 0) {
+      const sold = withdrawal + investTax;
+      costBasis = Math.max(0, costBasis - sold * (costBasis / financialAsset));
+    }
     // 첫해(yearsFromStart 0)는 수익률·저축 미적용 — 시작 자산을 그대로 표시(직관성)
     const yearReturn = opts.returnFn ? opts.returnFn(yearsFromStart) : annualReturn;
     const investmentReturn = (yearsFromStart >= 1 && assetAfterCashFlow > 0) ? assetAfterCashFlow * yearReturn : 0;
@@ -87,7 +109,8 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
       partTimeIncome,
       pensionIncome,
       withdrawal,
-      investmentAdded
+      investmentAdded,
+      investTax
     });
   }
 

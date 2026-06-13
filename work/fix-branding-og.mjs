@@ -54,12 +54,12 @@ const ogResult = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="6
   <rect x="34" y="30" width="1132" height="570" rx="54" fill="#ffffff" stroke="#fed7aa" stroke-width="4"/>
   <g opacity="0.07"><g transform="translate(667 111) scale(1.3)">${flame}</g></g>
   ${brand}
-  <text x="80" y="248" fill="#ff5a00" font-family="Arial, sans-serif" font-size="33" font-weight="900">내 FIRE 결과 · 무료 1분 계산</text>
-  <text x="80" y="346" fill="#111827" font-family="Arial, sans-serif" font-size="74" font-weight="900"><tspan fill="#ff5a00">42세</tspan>에 퇴사하면</text>
-  <text x="80" y="432" fill="#111827" font-family="Arial, sans-serif" font-size="74" font-weight="900"><tspan fill="#ff5a00">50세</tspan>까지 버텨요</text>
+  <text x="80" y="248" fill="#ff5a00" font-family="Arial, sans-serif" font-size="33" font-weight="900">또래 중 내 FIRE 등수는? · 무료 1분</text>
+  <text x="80" y="346" fill="#111827" font-family="Arial, sans-serif" font-size="74" font-weight="900">나는 몇 살에</text>
+  <text x="80" y="432" fill="#111827" font-family="Arial, sans-serif" font-size="74" font-weight="900"><tspan fill="#ff5a00">퇴사</tspan>할 수 있을까?</text>
   <rect x="80" y="478" width="486" height="92" rx="20" fill="#f8fafc"/>
-  <text x="106" y="516" fill="#6b7280" font-family="Arial, sans-serif" font-size="24" font-weight="800">퇴사 나이</text>
-  <text x="106" y="554" fill="#111827" font-family="Arial, sans-serif" font-size="36" font-weight="900">42세</text>
+  <text x="106" y="516" fill="#6b7280" font-family="Arial, sans-serif" font-size="24" font-weight="800">퇴사 가능 나이</text>
+  <text x="106" y="554" fill="#111827" font-family="Arial, sans-serif" font-size="36" font-weight="900">1분이면 확인</text>
   <rect x="582" y="478" width="538" height="92" rx="20" fill="#fff7ed"/>
   <text x="608" y="516" fill="#9a3412" font-family="Arial, sans-serif" font-size="24" font-weight="800">또래 중 내 등수</text>
   <text x="608" y="554" fill="#ff5a00" font-family="Arial, sans-serif" font-size="36" font-weight="900">1분이면 확인</text>
@@ -71,13 +71,13 @@ const ogSave = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630
   ${brand}
   <text x="80" y="232" fill="#ff5a00" font-family="Arial, sans-serif" font-size="33" font-weight="900">오늘의 절약 · 파이어 앞당기기</text>
   <text x="80" y="318" fill="#111827" font-family="Arial, sans-serif" font-size="66" font-weight="900">아낀 돈이 <tspan fill="#ff5a00">퇴사를 앞당겨요</tspan></text>
-  <text x="80" y="430" fill="#6b7280" font-family="Arial, sans-serif" font-size="28" font-weight="800">지금 35세</text>
-  <text x="1120" y="430" text-anchor="end" fill="#6b7280" font-family="Arial, sans-serif" font-size="28" font-weight="800">예상 퇴사 62세</text>
+  <text x="80" y="430" fill="#6b7280" font-family="Arial, sans-serif" font-size="28" font-weight="800">지금</text>
+  <text x="1120" y="430" text-anchor="end" fill="#6b7280" font-family="Arial, sans-serif" font-size="28" font-weight="800">예상 퇴사</text>
   <rect x="80" y="452" width="1040" height="24" rx="12" fill="#eef2f7"/>
-  <rect x="905" y="452" width="215" height="24" rx="12" fill="#ff5a00"/>
-  <line x1="905" y1="430" x2="905" y2="484" stroke="#111827" stroke-width="5"/>
-  <path d="M905 430 L947 444 L905 458 Z" fill="#ff5a00"/>
-  <text x="80" y="548" fill="#111827" font-family="Arial, sans-serif" font-size="34" font-weight="900">커피 한 잔 아끼면 <tspan fill="#ff5a00">퇴사가 2시간</tspan> 빨라져요</text>
+  <rect x="845" y="452" width="275" height="24" rx="12" fill="#ff5a00"/>
+  <line x1="845" y1="430" x2="845" y2="484" stroke="#111827" stroke-width="5"/>
+  <path d="M845 430 L887 444 L845 458 Z" fill="#ff5a00"/>
+  <text x="80" y="548" fill="#111827" font-family="Arial, sans-serif" font-size="34" font-weight="900">커피 한 잔 아껴도 <tspan fill="#ff5a00">퇴사가 빨라져요</tspan></text>
 </svg>`;
 
 await writeFile(join(deploy, 'og-image.svg'), ogResult, 'utf8');

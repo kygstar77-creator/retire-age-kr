@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import ResultSimTabs from './ResultSimTabs.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
-import { buildScenario, fireStatus, runwayText, scenarioEndAge, survivalPhrase } from '../../firemap-v2/scenarios.js';
+import { buildScenario, buildGrowthSeries, fireStatus, runwayText, scenarioEndAge, survivalPhrase } from '../../firemap-v2/scenarios.js';
 import { simulateRetirement } from '../../utils/retirementSimulator.js';
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
 import { statsRank, gradeFromScore } from '../../firemap-v2/rank.js';
@@ -161,15 +161,26 @@ function YearlyAssetChart({ simulation }) {
   const rows = simulation.targetResult.rows || [];
   const [sel, setSel] = useState(null);
   if (rows.length < 2) return null;
-  const pts = rows.map((r) => ({ age: r.age, v: Math.max(0, r.financialAsset), status: r.status }));
+  const g = buildGrowthSeries(simulation);
+  const pts = rows.map((r, i) => ({
+    age: r.age,
+    status: r.status,
+    principal: Math.max(0, g.principal[i] ?? 0),
+    gains: Math.max(0, g.gains[i] ?? 0),
+    v: Math.max(0, g.total[i] ?? r.financialAsset)
+  }));
   const n = pts.length;
   const maxV = Math.max(...pts.map((p) => p.v), 1);
   const a0 = pts[0].age, a1 = pts[n - 1].age;
   const W = 320, H = 120, P = 8;
   const X = (a) => P + ((a - a0) / Math.max(1, a1 - a0)) * (W - 2 * P);
   const Y = (v) => H - P - (v / maxV) * (H - 2 * P);
-  const line = pts.map((p, i) => `${i ? 'L' : 'M'}${X(p.age).toFixed(1)} ${Y(p.v).toFixed(1)}`).join(' ');
-  const area = `${line} L${X(a1).toFixed(1)} ${H - P} L${X(a0).toFixed(1)} ${H - P} Z`;
+  // 스택 영역: 원금(아래) + 불어난 돈(원금 위에)
+  const principalTop = pts.map((p, i) => `${i ? 'L' : 'M'}${X(p.age).toFixed(1)} ${Y(p.principal).toFixed(1)}`).join(' ');
+  const principalArea = `${principalTop} L${X(a1).toFixed(1)} ${(H - P).toFixed(1)} L${X(a0).toFixed(1)} ${(H - P).toFixed(1)} Z`;
+  const totalTop = pts.map((p, i) => `${i ? 'L' : 'M'}${X(p.age).toFixed(1)} ${Y(p.v).toFixed(1)}`).join(' ');
+  const principalBack = pts.slice().reverse().map((p) => `L${X(p.age).toFixed(1)} ${Y(p.principal).toFixed(1)}`).join(' ');
+  const gainsArea = `${totalTop} ${principalBack} Z`;
   const ret = simulation.inputs.targetRetirementAge;
   const retX = X(Math.min(a1, Math.max(a0, ret)));
   const retIdx = Math.max(0, pts.findIndex((p) => p.age >= ret));
@@ -187,6 +198,7 @@ function YearlyAssetChart({ simulation }) {
         <span className={cur.status === '퇴사 후' ? 'after' : 'before'}>{cur.status}</span>
         <strong>{formatWon(cur.v)}</strong>
       </div>
+      <p className="fm-yac-split"><i className="fm-dot fm-dot-principal" />내가 넣은 돈 {formatWon(cur.principal)} · <i className="fm-dot fm-dot-gains" />불어난 돈 {formatWon(cur.gains)}</p>
       <div
         className="fm-yac-canvas"
         style={{ touchAction: 'none' }}
@@ -195,9 +207,10 @@ function YearlyAssetChart({ simulation }) {
         onTouchStart={pick}
         onTouchMove={pick}
       >
-        <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" role="img" aria-label="나이별 내 자산 그래프 (눌러서 확인)">
-          <path d={area} className="fm-yac-area" />
-          <path d={line} className="fm-yac-line" fill="none" />
+        <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" role="img" aria-label="나이별 내 자산 그래프 — 원금과 불어난 돈 (눌러서 확인)">
+          <path d={principalArea} className="fm-yac-area-principal" />
+          <path d={gainsArea} className="fm-yac-area-gains" />
+          <path d={totalTop} className="fm-yac-line" fill="none" />
           <line x1={retX} y1={P} x2={retX} y2={H - P} className="fm-yac-ret" />
           <line x1={X(cur.age)} y1={P} x2={X(cur.age)} y2={H - P} className="fm-yac-cross" />
           <circle cx={X(cur.age)} cy={Y(cur.v)} r="3.5" className="fm-yac-dot" />

@@ -224,6 +224,9 @@
 .fm-yac { margin: 6px 0 12px; }
 .fm-yac svg { width: 100%; height: 116px; display: block; }
 .fm-yac-area { fill: rgba(255,90,0,.12); }
+.fm-yac-area-principal { fill: rgba(47,111,222,.22); }
+.fm-yac-area-gains { fill: rgba(255,90,0,.20); }
+.fm-yac-split { margin: 0 0 4px; font-size: 11px; font-weight: 600; color: #6b7280; display: flex; align-items: center; flex-wrap: wrap; gap: 2px 4px; }
 .fm-yac-line { stroke: #ff5a00; stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
 .fm-yac-ret { stroke: #9ca3af; stroke-width: 1.5; stroke-dasharray: 4 4; }
 .fm-yac-x { display: flex; justify-content: space-between; margin-top: 4px; color: #6b7280; font-size: 11px; font-weight: 600; }

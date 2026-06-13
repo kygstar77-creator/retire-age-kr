@@ -199,7 +199,7 @@
 .fm-rank-cta { display: flex; gap: 10px; margin: 0 0 14px; }
 .fm-rank-cta button { flex: 1; min-height: 52px; border-radius: 16px; font-size: 15px; font-weight: 800; cursor: pointer; }
 .fm-rank-cta-share { border: 0; background: #ff5a00; color: #fff; }
-.fm-rank-cta-up { border: 1px solid #e5e7eb; background: #fff; color: var(--fm-navy); }
+.fm-rank-cta-up { border: 0; background: #1e2859; color: #fff; }
 
 /* 리더보드 */
 .fm-lb-list { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }

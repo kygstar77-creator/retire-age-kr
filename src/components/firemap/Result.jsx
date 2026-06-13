@@ -336,7 +336,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
       <ResultHeroV2 simulation={simulation} />
       <div className="fm-rank-cta">
         <button type="button" className="fm-rank-cta-share" onClick={shareRank}>내 결과 공유하기</button>
-        <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>더 일찍 당겨보기</button>
+        <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>🎛️ 수치 바꿔보기</button>
       </div>
       <AccountCard kicker="내 기록 지키기 🔒" sub="방금 나온 퇴사 나이·등수와 적립·절약 기록을 닉네임+비밀번호로 저장하세요. 기기가 바뀌어도 같은 계정으로 이어집니다." />
       <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />

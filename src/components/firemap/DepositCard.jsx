@@ -80,7 +80,7 @@ export default function DepositCard({ simulation, onMove }) {
           <div className="fm-dep-gauge"><i style={{ width: `${planPct}%` }} /></div>
           <p className="fm-dep-mini">
             이번 달 <b>{won(monthTotal)}</b> / 계획 {won(monthlyPlan)}
-            {monthTotal >= monthlyPlan && monthlyPlan > 0 ? <> · 계획 달성! 위 ‘실제 퇴사’에 반영돼요</> : null}
+            {monthTotal >= monthlyPlan && monthlyPlan > 0 ? <> · 계획 달성! 홈 ‘내 파이어 현황’에 반영돼요</> : null}
           </p>
         </>
       ) : (

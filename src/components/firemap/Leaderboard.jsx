@@ -21,8 +21,8 @@ const BOARDS = [
   { key: 'save', label: '절약' }
 ];
 const SUBS = {
-  fire: '가장 빨리 은퇴 가능한 순 · 같은 나이면 더 모아 더 당긴 사람이 위로',
-  advance: '실제 저축(적립+절약)으로 퇴사를 가장 많이 당긴 순',
+  fire: '은퇴 가능 나이가 빠른 순 · 나이가 같으면 저축 많이 한 사람이 위',
+  advance: '적립·절약으로 은퇴를 가장 많이 앞당긴 순',
   deposit: '이번 달 실제 적립이 많은 순 · 매월 새로 시작',
   save: '아껴서 모은 돈 랭킹'
 };
@@ -152,7 +152,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
             </div>
             {me && <p className="fm-rank-line">{scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} {me.total.toLocaleString()}명 중 상위 {me.percentile}% · {earliest ? `${earliest}세 은퇴 가능` : '아직 은퇴 어려움'}</p>}
             {me && (me.position > 1
-              ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 더 일찍 은퇴하거나, 같은 나이면 <b>저축으로 더 당기면</b> 올라가요</p>
+              ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 은퇴 나이가 빠를수록 위로, <b>은퇴 나이가 같으면 저축 많이 한 사람이 위</b>예요</p>
               : <p className="fm-rank-climb">지금 전체 1등! 매일 저축해서 자리를 지켜요 🔥</p>)}
           </section>
 
@@ -165,7 +165,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
             <section className="fm-card">
               <h2 className="fm-section-title">내 주변 순위</h2>
               {nearAbove && earliest
-                ? <p className="fm-section-sub">바로 위 <b>{displayName(nearAbove)}</b>는 {nearAbove.earliest_age}세 · <b>{Math.max(1, earliest - nearAbove.earliest_age)}년</b>만 당기면 제쳐요!</p>
+                ? <p className="fm-section-sub">바로 위 <b>{displayName(nearAbove)}</b>는 {nearAbove.earliest_age}세 · 은퇴를 <b>{Math.max(1, earliest - nearAbove.earliest_age)}년</b>만 앞당기면 제쳐요!</p>
                 : <p className="fm-section-sub">바로 위·아래 라이벌이에요. 조건을 바꿔 따라잡아 보세요.</p>}
               <ol className="fm-lb-list">
                 {aboveN.map((r, i) => (

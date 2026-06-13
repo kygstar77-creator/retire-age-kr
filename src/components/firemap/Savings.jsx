@@ -151,15 +151,18 @@ export default function Savings({ simulation, onMove }) {
         </div>
 
         {todayEntries.length > 0 && (
-          <ul className="fm-save-entries" aria-label="오늘 기록">
-            {todayEntries.slice().reverse().map((e) => (
-              <li key={e.id}>
-                <span>{e.label}</span>
-                <em>+{wonStr(e.won)}</em>
-                <button type="button" className="fm-entry-del" aria-label="삭제" onClick={() => { const next = removeEntry(e.id); setSv(next); persist(next); }}>✕</button>
-              </li>
-            ))}
-          </ul>
+          <>
+            <ul className="fm-save-entries" aria-label="오늘 기록">
+              {todayEntries.slice().reverse().slice(0, 8).map((e) => (
+                <li key={e.id}>
+                  <span>{e.label}</span>
+                  <em>+{wonStr(e.won)}</em>
+                  <button type="button" className="fm-entry-del" aria-label="삭제" onClick={() => { const next = removeEntry(e.id); setSv(next); persist(next); }}>✕</button>
+                </li>
+              ))}
+            </ul>
+            {todayEntries.length > 8 && <p className="fm-save-entries-more">외 {todayEntries.length - 8}개 더 · 오늘 총 {todayEntries.length}건 (매일 0시 새로 시작)</p>}
+          </>
         )}
 
         <div className="fm-save-total">

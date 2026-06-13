@@ -54,3 +54,6 @@
 .fm-dep-daytoggle { display: inline-flex; gap: 6px; margin-bottom: 10px; }
 .fm-dep-daytoggle button { font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 0.5px solid rgba(120,120,120,0.35); background: transparent; cursor: pointer; }
 .fm-dep-daytoggle button.on { background: #1d9e75; border-color: #1d9e75; color: #fff; font-weight: 600; }
+
+/* 절약 오늘 기록 더보기 안내 */
+.fm-save-entries-more { font-size: 12px; color: var(--fm-muted, #9a9a9a); margin: 4px 2px 0; }

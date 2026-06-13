@@ -101,6 +101,9 @@ export function gapLabel(days) {
   return `${Math.round(totalMonths)}개월`;
 }
 
+// 사용자가 실제로 계산(입력)을 했는지 — 안 했으면 기본값 시뮬은 신뢰 불가
+export function hasCalculated() { try { return !!localStorage.getItem('firemap-inputs-v3'); } catch { return false; } }
+
 // 저축 기록이 바뀌었음을 알림(헤드라인 즉시 갱신용)
 export function notifySavingsChanged() {
   try { window.dispatchEvent(new Event('fm-savings-changed')); } catch { /* ignore */ }
@@ -119,6 +122,7 @@ export async function reportBoard(simulation) {
     try { const fd = JSON.parse(localStorage.getItem('fm_daily') || 'null'); const dd = (fd && fd.days) || {}; depTotal = Object.values(dd).reduce((a, b) => a + (Number(b) || 0), 0); } catch { /* ignore */ }
     let nick = ''; try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
     let band = null; try { band = statsRank(simulation).ageBand; } catch { /* ignore */ }
-    await submitSave({ todaySaved, totalSaved, advancedDays: p.advanceDays, streak, nickname: nick, ageBand: band, depositTotal: depTotal, depositMonth: p.monthDeposit });
+    const okCalc = hasCalculated() && !!(simulation && simulation.earliestRetirementAge);
+    await submitSave({ todaySaved, totalSaved, advancedDays: okCalc ? p.advanceDays : null, streak, nickname: nick, ageBand: band, depositTotal: depTotal, depositMonth: p.monthDeposit });
   } catch { /* ignore */ }
 }

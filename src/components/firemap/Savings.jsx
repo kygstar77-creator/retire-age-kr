@@ -8,10 +8,17 @@ import { statsRank } from '../../firemap-v2/rank.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
 import { fetchSaveTop, fetchMySaveRank } from '../../utils/firemapSaveApi.js';
-import { notifySavingsChanged, reportBoard } from '../../utils/savingsEngine.js';
+import { notifySavingsChanged, reportBoard, hasCalculated } from '../../utils/savingsEngine.js';
 import { CHALLENGES, QUOTES, QUICK, dayIdx, todayStr, wonStr, readJSON, fmtAdvance, dailyNeedOf, addSave, removeEntry, setTotal, track } from '../../firemap-v2/dailyData.js';
 
 function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
+  if (!hasCalculated()) {
+    return (
+      <div className="fm-fp">
+        <p className="fm-fp-cap">먼저 <b>퇴사 나이 계산</b>을 하면, 절약·적립이 퇴사를 며칠 당기는지 연동돼요.</p>
+      </div>
+    );
+  }
   const inp = simulation.inputs;
   const fireAge = simulation.earliestRetirementAge || inp.targetRetirementAge;
   if (!dailyNeed) {
@@ -164,7 +171,6 @@ export default function Savings({ simulation, onMove }) {
 
         <div className="fm-save-total">
           누적 절약 <b>{wonStr(totalSaved)}</b>
-          {dailyNeed && totalSaved > 0 && totalAdv && <> · 파이어 <b>{totalAdv}</b> 앞당김</>}
           {daysCount > 0 && <> · {daysCount}일째</>}
           {' '}<button type="button" className="fm-inline-link" onClick={editTotal}>수정</button>
         </div>

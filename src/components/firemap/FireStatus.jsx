@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { computeProgress, ageLabel, gapLabel } from '../../utils/savingsEngine.js';
+import { computeProgress, ageLabel, gapLabel, hasCalculated } from '../../utils/savingsEngine.js';
 
 const won = (n) => `${Math.round(n).toLocaleString('ko-KR')}원`;
 
@@ -13,11 +13,20 @@ export default function FireStatus({ simulation, onMove }) {
     return () => { window.removeEventListener('fm-savings-changed', fn); window.removeEventListener('focus', fn); };
   }, []);
 
+  if (!hasCalculated()) return null;
   const p = computeProgress(simulation);
-  if (!p.planAge || (p.monthlyPlan <= 0 && !p.hasData)) return null;
-
   const inp = simulation.inputs;
   const cur = Number(inp.currentAge) || 0;
+  const canRetire = !!(simulation && simulation.earliestRetirementAge);
+
+  if (!canRetire) {
+    return (
+      <section className="fm-card fm-status even">
+        <p className="fm-kicker">내 파이어 현황</p>
+        <p className="fm-status-note">지금 조건만으론 은퇴가 어려워요. 저축·절약을 쌓거나 <button type="button" className="fm-inline-link" onClick={() => onMove && onMove('result')}>조건을 바꿔</button> 보면 ‘실제 퇴사’가 잡혀요.</p>
+      </section>
+    );
+  }
 
   if (p.atGoal) {
     return (

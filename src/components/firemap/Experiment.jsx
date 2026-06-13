@@ -4,13 +4,15 @@ import ResultSimTabs from './ResultSimTabs.jsx';
 import PensionControls from './PensionControls.jsx';
 import RangeControl from './RangeControl.jsx';
 import AssetCompareChart from './AssetCompareChart.jsx';
+import AssetGrowthChart from './AssetGrowthChart.jsx';
 import { investmentScenarios } from '../../firemap-v2/data.js';
 import { sourceLine } from '../../firemap-v2/dataSources.js';
-import { buildChartRows, buildScenario, runwayText } from '../../firemap-v2/scenarios.js';
+import { buildChartRows, buildScenario, runwayText, buildGrowthSeries } from '../../firemap-v2/scenarios.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 
 export default function Experiment({ inputs, onChange, simulation, onBack }) {
   const [improvedCost, setImprovedCost] = useState(Math.max(1500000, Math.min(3000000, inputs.monthlyLivingCost - 1000000)));
+  const [chartMode, setChartMode] = useState('compare');
   const lowerCost = useMemo(() => buildScenario(inputs, { monthlyLivingCost: improvedCost }), [inputs, improvedCost]);
   const yearsToRetire = Math.max(1, inputs.targetRetirementAge - inputs.currentAge);
   const savingYearsValue = inputs.savingYears > 0 ? Math.min(inputs.savingYears, yearsToRetire) : yearsToRetire;
@@ -22,6 +24,10 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
   const ages = useMemo(() => chart.map((row) => row.age), [chart]);
   const currentSeries = useMemo(() => chart.map((row) => Math.max(0, row.current)), [chart]);
   const improvedSeries = useMemo(() => chart.map((row) => Math.max(0, row.improved)), [chart]);
+  const growth = useMemo(() => buildGrowthSeries(simulation), [simulation]);
+  const retIdx = useMemo(() => growth.ages.indexOf(inputs.targetRetirementAge), [growth, inputs.targetRetirementAge]);
+  const principalAtRet = retIdx >= 0 ? growth.principal[retIdx] : (growth.principal.at(-1) || 0);
+  const gainsAtRet = retIdx >= 0 ? growth.gains[retIdx] : (growth.gains.at(-1) || 0);
   const activeScenario = investmentScenarios.find((scenario) => scenario.annualReturnRate === inputs.annualReturnRate);
   const investType = Number(inputs.investType || 0);
   const grossDivAtRetire = Math.round((simulation.retirementFinancialAsset || inputs.financialAsset || 0) * ((inputs.dividendYield || 0) / 100));
@@ -40,12 +46,29 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
       </section>
       <section className="fm-card fm-graph">
         <p className="fm-kicker">내 미래 자산 차트</p><h2>나이별 자산 흐름을 비교해보세요</h2>
-        <div className="fm-chart-legend">
-          <span><i className="fm-dot fm-dot-current" />현재 계획 · {runwayText(simulation)}</span>
-          <span><i className="fm-dot fm-dot-improved" />절감안 · {runwayText(lowerCost)}</span>
+        <div className="fm-chips fm-chart-mode" role="tablist" aria-label="차트 보기 전환">
+          <button type="button" className={chartMode === 'compare' ? 'is-active' : ''} onClick={() => setChartMode('compare')}>현재 vs 절감안</button>
+          <button type="button" className={chartMode === 'growth' ? 'is-active' : ''} onClick={() => setChartMode('growth')}>원금 vs 불어난 돈</button>
         </div>
-        <AssetCompareChart ages={ages} current={currentSeries} improved={improvedSeries} depletionAge={simulation.targetResult.depletionAge} improvedDepletionAge={lowerCost.targetResult.depletionAge} retirementAge={inputs.targetRetirementAge} />
-        <p className="fm-chart-note">차트를 누르면 그 나이의 세후 자산이 표시돼요. 회색 점선은 현재 계획, 파란 영역은 절감안 기준입니다.</p>
+        {chartMode === 'compare' ? (
+          <>
+            <div className="fm-chart-legend">
+              <span><i className="fm-dot fm-dot-current" />현재 계획 · {runwayText(simulation)}</span>
+              <span><i className="fm-dot fm-dot-improved" />절감안 · {runwayText(lowerCost)}</span>
+            </div>
+            <AssetCompareChart ages={ages} current={currentSeries} improved={improvedSeries} depletionAge={simulation.targetResult.depletionAge} improvedDepletionAge={lowerCost.targetResult.depletionAge} retirementAge={inputs.targetRetirementAge} />
+            <p className="fm-chart-note">차트를 누르면 그 나이의 세후 자산이 표시돼요. 회색 점선은 현재 계획, 파란 영역은 절감안 기준입니다.</p>
+          </>
+        ) : (
+          <>
+            <div className="fm-chart-legend">
+              <span><i className="fm-dot fm-dot-principal" />내가 넣은 돈 · {formatWon(principalAtRet)}</span>
+              <span><i className="fm-dot fm-dot-gains" />불어난 돈 · {formatWon(gainsAtRet)}</span>
+            </div>
+            <AssetGrowthChart ages={growth.ages} principal={growth.principal} gains={growth.gains} retirementAge={inputs.targetRetirementAge} depletionAge={simulation.targetResult.depletionAge} />
+            <p className="fm-chart-note">퇴사({inputs.targetRetirementAge}세) 시점 기준 · 파란색은 내가 직접 넣은 돈, 주황색은 투자로 불어난 돈이에요. 퇴사 후엔 쓰면서 줄어들어요.</p>
+          </>
+        )}
       </section>
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">조건 바꿔보기</p><h2>손가락으로 밀어서 바로 바꿔보세요</h2>

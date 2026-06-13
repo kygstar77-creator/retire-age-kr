@@ -64,6 +64,10 @@
 .fm-dot { width: 8px; height: 8px; border-radius: 2px; display: inline-block; margin-right: 5px; }
 .fm-dot-current { background: var(--fm-faint); }
 .fm-dot-improved { background: var(--fm-accent); }
+.fm-dot-principal { background: #2f6fde; }
+.fm-dot-gains { background: #ff5a00; }
+.fm-chart-mode { margin: 0 0 10px; gap: 6px; }
+.fm-chart-mode button.is-active { background: #1e2859; color: #fff; border-color: #1e2859; }
 
 /* v3 input: quick-add chips + edit hint */
 .fm-range-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }

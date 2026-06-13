@@ -45,6 +45,23 @@ export function buildChartRows(simulation, improvedSimulation, inputs) {
   return { rows, chart, max, minAge, maxAge };
 }
 
+// 자산이 "내가 넣은 돈(원금)"과 "알아서 불어난 돈(수익)"으로 어떻게 구성되는지 나이별로 분해.
+// 원금 = 시작 금융자산 + 누적 납입액. 수익 = 총자산 - 원금(음수 방지). 인출 구간에선 수익이 먼저 줄고 원금이 그다음 줄도록 캡.
+export function buildGrowthSeries(simulation) {
+  const rows = simulation.targetResult.rows;
+  let cumPrincipal = Math.max(0, simulation.inputs.financialAsset || 0);
+  const ages = [], principal = [], gains = [], total = [];
+  rows.forEach((row, i) => {
+    if (i > 0) cumPrincipal += Math.max(0, row.investmentAdded || 0);
+    const t = Math.max(0, row.financialAsset);
+    ages.push(row.age);
+    principal.push(Math.min(cumPrincipal, t));
+    gains.push(Math.max(0, t - cumPrincipal));
+    total.push(t);
+  });
+  return { ages, principal, gains, total };
+}
+
 export function survivalPhrase(simulation) {
   const t = simulation.inputs.targetRetirementAge;
   const until = simulation.inputs.simulationUntilAge;

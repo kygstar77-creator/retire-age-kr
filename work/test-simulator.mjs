@@ -1,4 +1,5 @@
-import { simulateRetirement } from '../src/utils/retirementSimulator.js';
+import { simulateRetirement, buildSimulation } from '../src/utils/retirementSimulator.js';
+import { buildGrowthSeries } from '../src/firemap-v2/scenarios.js';
 
 const toEok = (value) => value / 100000000;
 
@@ -155,6 +156,22 @@ assert(
   const r = simulateRetirement(scenarioB);
   assert(Math.abs(r.rows[0].financialAsset - scenarioB.financialAsset) < 1, 'Invariant failed: 첫해 자산이 시작 자산과 다름(첫해 성장/저축이 적용됨).');
   assert(r.rows[0].investmentAdded === 0, 'Invariant failed: 첫해에 저축이 적용됨.');
+}
+
+// (7) 원금 vs 불어난 돈 분해: 원금+수익=총자산, 적립 구간 동안 원금 단조 비감소
+{
+  const sim = buildSimulation(scenarioB);
+  const g = buildGrowthSeries(sim);
+  assert(g.ages.length === sim.targetResult.rows.length, 'Invariant failed: growth 시리즈 길이 불일치.');
+  for (let i = 0; i < g.ages.length; i += 1) {
+    assert(Math.abs((g.principal[i] + g.gains[i]) - g.total[i]) < 1, `Invariant failed: 원금+수익 != 총자산 (age ${g.ages[i]}).`);
+    assert(g.gains[i] >= -1 && g.principal[i] >= -1, `Invariant failed: 원금/수익 음수 (age ${g.ages[i]}).`);
+  }
+  for (let i = 1; i < g.ages.length; i += 1) {
+    if (g.ages[i] <= scenarioB.targetRetirementAge) {
+      assert(g.principal[i] >= g.principal[i - 1] - 1, `Invariant failed: 적립 구간 원금이 감소 (age ${g.ages[i]}).`);
+    }
+  }
 }
 
 console.log('Simulation regression and invariant tests passed.');

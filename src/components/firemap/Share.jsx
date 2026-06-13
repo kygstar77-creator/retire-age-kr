@@ -5,6 +5,7 @@ import { statsRank } from '../../firemap-v2/rank.js';
 import { buildScenarioShareUrl, buildShareText } from '../../utils/shareState.js';
 import { survivalPhrase } from '../../firemap-v2/scenarios.js';
 import { makeShareImage } from '../../utils/shareImage.js';
+import { fetchUserRank } from '../../utils/firemapScoresApi.js';
 
 // 공유 이미지 생성은 utils/shareImage.js로 분리(결과 화면에서도 재사용)
 
@@ -34,17 +35,25 @@ export default function Share({ inputs, simulation, onBack }) {
     }
   };
 
-  const buildPreviewUrl = () => {
+  const buildPreviewUrl = async () => {
     const u = new URL(buildScenarioShareUrl(inputs));
     u.pathname = '/s';
     if (earliest) u.searchParams.set('ea', String(earliest));
     u.searchParams.set('p', String(rank.percentile));
     u.searchParams.set('g', rank.grade);
     u.searchParams.set('rw', phrase.short);
+    u.searchParams.set('rwy', phrase.runway);
+    u.searchParams.set('target', String(simulation.inputs.targetRetirementAge));
+    u.searchParams.set('ret', String(simulation.inputs.annualReturnRate));
+    u.searchParams.set('inf', String(simulation.inputs.inflationRate));
+    try {
+      const rr = await fetchUserRank(earliest);
+      if (rr && rr.total) { u.searchParams.set('pos', String(rr.position)); u.searchParams.set('tot', String(rr.total)); }
+    } catch (e) { /* 등수 없으면 og 정적 폴백 */ }
     return u.toString();
   };
   const shareCondition = async () => {
-    const url = buildPreviewUrl();
+    const url = await buildPreviewUrl();
     const text = `${resultLine}\n내 조건 그대로 열어보기`;
     if (navigator.share) {
       try { await navigator.share({ title: '파이어맵 — 내 조건', text, url }); flash('조건 링크 공유창을 열었어요'); return; }

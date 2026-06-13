@@ -11,19 +11,18 @@ function roundRect(ctx, x, y, width, height, radius) {
   ctx.closePath();
 }
 
-function drawFlame(ctx, x, y, scale, color, alpha = 1) {
+// 브랜드 로고(헤더와 동일한 두 겹 불꽃). viewBox 좌표를 캔버스에 맞춰 그림.
+const LOGO_OUTER = 'M256 84 C 232 150, 188 172, 188 256 C 188 322, 218 360, 256 360 C 294 360, 324 322, 324 256 C 324 212, 300 188, 286 162 C 282 192, 268 204, 252 210 C 268 166, 262 116, 256 84 Z';
+const LOGO_INNER = 'M256 250 C 246 276, 232 286, 232 312 C 232 336, 242 352, 256 352 C 270 352, 280 336, 280 312 C 280 292, 270 280, 264 268 C 262 282, 258 286, 252 290 C 258 274, 258 262, 256 250 Z';
+function drawLogo(ctx, x, y, h, alpha = 1, twoTone = true) {
   ctx.save();
   ctx.globalAlpha = alpha;
+  const s = h / 276;
   ctx.translate(x, y);
-  ctx.scale(scale, scale);
-  ctx.fillStyle = color;
-  ctx.beginPath();
-  ctx.moveTo(44, 4);
-  ctx.bezierCurveTo(88, 42, 86, 92, 44, 104);
-  ctx.bezierCurveTo(7, 94, 2, 51, 28, 24);
-  ctx.bezierCurveTo(26, 47, 47, 50, 44, 4);
-  ctx.closePath();
-  ctx.fill();
+  ctx.scale(s, s);
+  ctx.translate(-188, -84);
+  ctx.fillStyle = '#ff5a00'; ctx.fill(new Path2D(LOGO_OUTER));
+  if (twoTone) { ctx.fillStyle = '#fdba74'; ctx.fill(new Path2D(LOGO_INNER)); }
   ctx.restore();
 }
 
@@ -55,11 +54,11 @@ export async function makeShareImage(inputs, simulation) {
   };
 
   ctx.fillStyle = NAVY; ctx.fillRect(0, 0, 1200, 1200);
-  drawFlame(ctx, 880, 720, 4.4, ORANGE, 0.08);
+  drawLogo(ctx, 720, 600, 560, 0.06, false);
 
-  drawFlame(ctx, PAD, 108, 0.6, ORANGE, 1);
+  drawLogo(ctx, PAD, 104, 64, 1, true);
   ctx.fillStyle = WHITE; ctx.font = `800 46px ${FONT}`;
-  ctx.fillText('파이어맵', PAD + 76, 158);
+  ctx.fillText('파이어맵', PAD + 52, 158);
 
   ctx.fillStyle = SOFT; ctx.font = `600 36px ${FONT}`;
   ctx.fillText(`내 퇴사 가능 나이 · ${rank.ageBandLabel} 또래 기준`, PAD, 308);

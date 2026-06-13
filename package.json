@@ -10,6 +10,7 @@
     "qa:install": "playwright install chromium"
   },
   "dependencies": {
+    "@resvg/resvg-wasm": "^2.6.2",
     "@vitejs/plugin-react": "latest",
     "chart.js": "^4.5.1",
     "lucide-react": "latest",

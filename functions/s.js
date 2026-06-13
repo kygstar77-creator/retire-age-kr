@@ -19,7 +19,15 @@ export async function onRequest(context) {
   const sd = (q.get('sd') || '').replace(/[^0-9]/g, '');
   const ea = (q.get('ea') || '').replace(/[^0-9]/g, '').slice(0, 3);
   const ad = (q.get('ad') || '').slice(0, 24);
-  const ogImg = `${site}/${(sd && ad) ? 'og-save.png' : 'og-image.png'}?v=firemap-screens-v7-20260613`;
+  const pos = (q.get('pos') || '').replace(/[^0-9]/g, '');
+  const tot = (q.get('tot') || '').replace(/[^0-9]/g, '');
+  const tgt = (q.get('target') || '').replace(/[^0-9]/g, '').slice(0, 3);
+  const rwy = (q.get('rwy') || '').slice(0, 12);
+  const ret = (q.get('ret') || '').replace(/[^0-9]/g, '').slice(0, 2);
+  const inf = (q.get('inf') || '').replace(/[^0-9]/g, '').slice(0, 2);
+  const ogImg = (ea && pos && tot)
+    ? `${site}/og?ea=${ea}&pos=${pos}&tot=${tot}&target=${tgt}&rw=${encodeURIComponent(rwy)}&ret=${ret}&inf=${inf}`
+    : `${site}/${(sd && ad) ? 'og-save.png' : 'og-image.png'}?v=firemap-screens-v7-20260613`;
 
   const title = (sd && ad)
     ? `절약으로 파이어 ${ad} 앞당겼어요 — 파이어맵`

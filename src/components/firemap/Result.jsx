@@ -339,6 +339,14 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
     u.searchParams.set('p', String(rk.percentile));
     u.searchParams.set('g', rk.grade);
     u.searchParams.set('rw', ph.short);
+    u.searchParams.set('rwy', ph.runway);
+    u.searchParams.set('target', String(simulation.inputs.targetRetirementAge));
+    u.searchParams.set('ret', String(simulation.inputs.annualReturnRate));
+    u.searchParams.set('inf', String(simulation.inputs.inflationRate));
+    try {
+      const rr = await fetchUserRank(earliest);
+      if (rr && rr.total) { u.searchParams.set('pos', String(rr.position)); u.searchParams.set('tot', String(rr.total)); }
+    } catch (e) { /* 등수 못 가져오면 og가 정적 폴백 */ }
     const url = u.toString();
     // 1순위: 결과 카드 이미지 + 링크 캡션 공유(개인 숫자 카드가 카톡에 꽂히고, 링크로 바로 입장)
     try {

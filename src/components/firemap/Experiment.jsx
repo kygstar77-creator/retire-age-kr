@@ -49,9 +49,10 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         {investType === 2 && Number(inputs.dividendYield || 0) >= Number(inputs.annualReturnRate || 0) && <p className="fm-range-note fm-tax-warn">⚠️ 배당수익률이 연 수익률보다 크면 원금이 줄어요.</p>}
         {investType === 2 && grossDivAtRetire > 20000000 && <p className="fm-range-note">⚠️ 퇴사 시 연 배당 약 {formatWon(grossDivAtRetire)} · 금융소득 2,000만 초과 → 종합과세·건보료 부담↑ (도구 탭에서 정밀 확인)</p>}
         <div className="fm-tax-explain">
-          <p className="fm-tax-explain-title">ℹ️ 세금은 이렇게 반영돼요</p>
-          <p className="fm-tax-explain-line">퇴사 후 <b>매년 쓰는 만큼 팔 때</b> 그 차익에 양도세를 매겨요 (한 번에 매도 아님).</p>
-          <p className="fm-tax-explain-line">해외 <b>22%</b> · 매년 250만 공제 / 국내 <b>면제</b> / 배당 <b>15.4%</b>.</p>
+          <p className="fm-tax-explain-title">ℹ️ 선택한 유형의 세금</p>
+          {investType === 0 && <p className="fm-tax-explain-line">국내주식은 양도세가 <b>면제</b>예요(대주주 제외). 팔아서 생활비를 써도 투자 세금 부담이 없어요.</p>}
+          {investType === 1 && <p className="fm-tax-explain-line">해외주식은 퇴사 후 <b>매년 쓰는 만큼 팔 때 그 차익</b>에 <b>22%</b>(매년 250만 공제). 한 번에 매도가 아니에요.</p>}
+          {investType === 2 && <p className="fm-tax-explain-line">배당으로 생활하면 받는 배당마다 <b>15.4%</b> 원천징수돼요. (금융소득 2,000만 초과 시 종합과세↑)</p>}
           <p className="fm-tax-explain-sub">종합과세 누진·ISA/연금 절세는 개인 상황별이라 결과엔 반영하지 않아요.</p>
           <div className="fm-tax-links">
             <a href="/guide/dividend-tax-thresholds.html" target="_blank" rel="noopener">배당 세금 경계선 →</a>

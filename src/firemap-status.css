@@ -96,3 +96,5 @@
 
 /* 세금/배당 경고 */
 .fm-tax-warn { color: #854f0b; background: rgba(186,117,23,0.1); border-radius: 8px; padding: 8px 10px; }
+
+.fm-tax-explain-line b { font-size: inherit; font-weight: 800; color: #ff5a00; }

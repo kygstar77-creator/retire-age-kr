@@ -64,7 +64,8 @@ export default function FireMapMVP() {
   const [inputs, setInputs] = useState(loadInputs);
   const [screen, setScreenState] = useState(readScreenFromHash);
   const [step, setStep] = useState(0);
-  const simulation = useMemo(() => buildSimulation(inputs), [inputs]);
+  // 결과·등수·라벨은 항상 '세전(investType=0)' 기준으로 일관되게. 세금 탐색은 바꿔보기 미리보기에서만.
+  const simulation = useMemo(() => buildSimulation({ ...inputs, investType: 0 }), [inputs]);
 
   useEffect(() => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); } catch { /* ignore */ } }, [inputs]);
 

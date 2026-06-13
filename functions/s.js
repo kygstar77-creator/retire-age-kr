@@ -26,7 +26,7 @@ export async function onRequest(context) {
   const ret = (q.get('ret') || '').replace(/[^0-9]/g, '').slice(0, 2);
   const inf = (q.get('inf') || '').replace(/[^0-9]/g, '').slice(0, 2);
   const ogImg = (ea && pos && tot)
-    ? `${site}/og?ea=${ea}&pos=${pos}&tot=${tot}&target=${tgt}&rw=${encodeURIComponent(rwy)}&ret=${ret}&inf=${inf}`
+    ? `${site}/og?ea=${ea}&pos=${pos}&tot=${tot}&target=${tgt}&rw=${encodeURIComponent(rwy)}&ret=${ret}&inf=${inf}&v=c2`
     : `${site}/${(sd && ad) ? 'og-save.png' : 'og-image.png'}?v=firemap-screens-v7-20260613`;
 
   const title = (sd && ad)

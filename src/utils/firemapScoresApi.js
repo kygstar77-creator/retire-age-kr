@@ -1,3 +1,4 @@
+import { identityId } from './identity.js';
 const DEFAULT_SUPABASE_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
 const DEFAULT_SUPABASE_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || DEFAULT_SUPABASE_URL;
@@ -40,7 +41,7 @@ export async function submitScore({ fireScore, ageBand, survivalAge, nickname, e
     nickname: nick || null,
     earliest_age: (earliestAge != null && Number.isFinite(Number(earliestAge))) ? Math.round(Number(earliestAge)) : null
   };
-  const cid = deviceId();
+  const cid = identityId();
   const fullCid = { ...full, client_id: cid };
   const send = (body, merge) => fetch(`${SUPABASE_URL}/rest/v1/${TABLE}${merge ? '?on_conflict=client_id' : ''}`, {
     method: 'POST',
@@ -135,7 +136,7 @@ export async function fetchNeighbors(earliestAge, ageBand) {
 const POLL_TABLE = 'firemap_poll_votes';
 
 export async function votePoll(pollKey, choice) {
-  const cid = deviceId();
+  const cid = identityId();
   try {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/${POLL_TABLE}?on_conflict=poll_key,client_id`, {
       method: 'POST',

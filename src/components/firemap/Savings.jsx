@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
+import { identityIds } from '../../utils/identity.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
@@ -44,7 +45,7 @@ export default function Savings({ simulation, onMove }) {
   const [sv, setSv] = useState(() => readJSON('fm_save'));
   const [nick, setNick] = useState(() => { try { return localStorage.getItem('fm_nickname') || ''; } catch { return ''; } });
   const [nickSaved, setNickSaved] = useState(false);
-  const myCid = (() => { try { return localStorage.getItem('fm_cid'); } catch { return null; } })();
+  const myIds = identityIds();
   const dailyNeed = dailyNeedOf(simulation);
 
   useEffect(() => {
@@ -180,7 +181,7 @@ export default function Savings({ simulation, onMove }) {
           {top === null && <li className="fm-lb-empty">불러오는 중…</li>}
           {top && top.length === 0 && <li className="fm-lb-empty">아직 오늘 기록이 적어요. 첫 주자가 되어보세요!</li>}
           {top && top.map((r, i) => {
-            const mine = r.client_id && myCid && r.client_id === myCid;
+            const mine = r.client_id && myIds.includes(r.client_id);
             return (
               <li key={i} className={`fm-lb-row${i < 3 ? ' top3' : ''}${mine ? ' me' : ''}`}>
                 <span className="fm-lb-rank">{medal(i)}</span>

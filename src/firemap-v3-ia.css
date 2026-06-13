@@ -666,3 +666,15 @@
 .fm-dep .fm-dep-mini b{color:#16181d}
 .fm-dep .fm-dep-done{border:1px solid #e5e7eb;background:#f3f4f6;color:#6b7280}
 .fm-dep .fm-inline-link{color:#ea580c}
+
+/* 간편계정 카드 */
+.fm-acct h2{font-size:18px;margin:6px 0 4px;color:#16181d}
+.fm-acct-sub{font-size:13px;color:#5b6573;line-height:1.55;margin:0 0 10px}
+.fm-acct-who{font-size:13px;color:#374151;margin:6px 0 10px}
+.fm-acct-who b{color:#ff5a00}
+.fm-acct-in{width:100%;box-sizing:border-box;min-height:44px;border:1px solid #e5e7eb;border-radius:12px;padding:0 12px;font:inherit;font-size:14px;outline:none;margin-bottom:8px}
+.fm-acct-in:focus{border-color:#ff5a00}
+.fm-acct-err{color:#dc2626;font-size:12px;margin:2px 0 8px}
+.fm-acct-go{width:100%;border:0;border-radius:12px;background:#ff5a00;color:#fff;font-size:15px;font-weight:800;padding:13px;cursor:pointer}
+.fm-acct-go:disabled{background:#fed7aa}
+.fm-acct-switch{display:block;margin:10px auto 0;background:none;border:0;color:#6b7280;font-size:13px;text-decoration:underline;cursor:pointer}

@@ -1,3 +1,4 @@
+import { identityId } from './identity.js';
 // 오늘의 절약 — Supabase 연동 (기기당 하루 한 줄 upsert)
 const DEFAULT_SUPABASE_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
 const DEFAULT_SUPABASE_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
@@ -34,7 +35,7 @@ function countFromRange(res) {
 
 // 오늘 내 절약 한 줄을 upsert (client_id + date 기준 갱신)
 export async function submitSave({ todaySaved, totalSaved, advancedDays, streak, nickname, ageBand }) {
-  const cid = deviceId();
+  const cid = identityId();
   if (!cid) return false;
   const nick = (nickname || '').trim().slice(0, 16) || null;
   const body = {

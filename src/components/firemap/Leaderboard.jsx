@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
+import { identityIds } from '../../utils/identity.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { fetchTopScores, fetchUserRank, submitScore, fetchAggregates, fetchNeighbors } from '../../utils/firemapScoresApi.js';
 import { fetchSaveBoard } from '../../utils/firemapSaveApi.js';
@@ -28,7 +29,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
   const base = statsRank(simulation);
   const score = simulation.survivalScore;
   const earliest = simulation.earliestRetirementAge;
-  const cid = myCid();
+  const ids = identityIds();
   const [board, setBoard] = useState('fire');
   const [top, setTop] = useState(null);
   const [me, setMe] = useState(null);
@@ -173,7 +174,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
           {top === null && <li className="fm-lb-empty">불러오는 중…</li>}
           {top && top.length === 0 && <li className="fm-lb-empty">아직 데이터가 적어요. 첫 랭커가 되어보세요!</li>}
           {top && top.map((row, i) => {
-            const mine = row.client_id && cid && row.client_id === cid;
+            const mine = row.client_id && ids.includes(row.client_id);
             return (
               <li key={i} className={`fm-lb-row${i < 3 ? ' top3' : ''}${mine ? ' me' : ''}`}>
                 <span className="fm-lb-rank">{medal(i)}</span>

@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { loadCommunityThread, sendCommunity, likeCommunity, editCommunity, deleteCommunity } from '../../utils/firemapFeedbackApi.js';
 import { funHandle } from '../../firemap-v2/funName.js';
+import { identityIds } from '../../utils/identity.js';
+import AccountCard from './AccountCard.jsx';
 
 function relativeTime(value) {
   const diff = Math.max(1, Math.round((Date.now() - new Date(value).getTime()) / 60000));
@@ -38,9 +40,9 @@ export default function Community({ onBack }) {
   }, []);
 
   const nick = myNickname();
-  const myCid = (() => { try { return localStorage.getItem('fm_cid'); } catch { return null; } })();
+  const myIds = identityIds();
   // '내 글' 판별: 이 기기에서 올린 글 ID(localStorage) 또는 기기 고유 client_id 일치. 닉네임은 중복될 수 있어 쓰지 않음.
-  const isMine = (row) => mine.includes(row.id) || (!!myCid && !!row.client_id && row.client_id === myCid);
+  const isMine = (row) => mine.includes(row.id) || (!!row.client_id && myIds.includes(row.client_id));
   const remember = (id) => { addMine(id); setMine(loadMine()); };
 
   const posts = rows.filter((r) => !r.parent_id).sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
@@ -114,6 +116,7 @@ export default function Community({ onBack }) {
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="커뮤니티" onBack={onBack} />
+      <AccountCard />
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">파이어족 라운지</p>
         <h2>다 같이 파이어 이야기</h2>

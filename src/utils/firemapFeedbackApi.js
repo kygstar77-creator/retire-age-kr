@@ -1,3 +1,4 @@
+import { identityId } from './identity.js';
 const DEFAULT_SUPABASE_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
 const DEFAULT_SUPABASE_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || DEFAULT_SUPABASE_URL;
@@ -87,7 +88,7 @@ export async function sendCommunity(message, parentId = null) {
   if (!clean) return null;
   let nick = '';
   try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
-  const cid = ffDeviceId();
+  const cid = identityId();
   const base = {
     message: clean, kind: 'community',
     page_path: '#community', client_type: window.innerWidth <= 640 ? 'mobile' : 'desktop'

@@ -6,7 +6,8 @@ import { statsRank } from '../../firemap-v2/rank.js';
 import { fetchTopScores, fetchUserRank, submitScore, fetchAggregates, fetchNeighbors } from '../../utils/firemapScoresApi.js';
 import { fetchSaveBoard } from '../../utils/firemapSaveApi.js';
 import { displayName } from '../../firemap-v2/funName.js';
-import { wonStr, fmtAdvance } from '../../firemap-v2/dailyData.js';
+import { wonStr, fmtAdvance, readJSON, todayStr } from '../../firemap-v2/dailyData.js';
+import { computeProgress, hasCalculated } from '../../utils/savingsEngine.js';
 import BalanceGame from './BalanceGame.jsx';
 
 const medal = (i) => (i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : String(i + 1));
@@ -86,6 +87,25 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
     if (board === 'save' && saveMetric === 'streak') return `${row.value || 0}일`;
     return wonStr(row.value || 0);
   };
+
+  // 저축 계열 보드: 내 기록(로컬 기준) — top 10 밖이어도 내 숫자가 보이게
+  const myBoardValue = () => {
+    const sv = readJSON('fm_save') || {};
+    if (board === 'save') {
+      if (saveMetric === 'today') return sv.lastDate === todayStr() ? (sv.today || 0) : 0;
+      if (saveMetric === 'streak') return sv.streak || 0;
+      return sv.total || 0;
+    }
+    if (board === 'deposit') return computeProgress(simulation).monthDeposit || 0;
+    if (board === 'advance') return hasCalculated() ? Math.max(0, computeProgress(simulation).advanceDays) : 0;
+    return 0;
+  };
+  const fmtMyVal = (v) => {
+    if (board === 'advance') return (fmtAdvance(v * 86400) || '0초') + ' 앞당김';
+    if (board === 'save' && saveMetric === 'streak') return `${v}일`;
+    return wonStr(v);
+  };
+  const inTop = !!(top && top.some((r) => r.client_id && ids.includes(r.client_id)));
 
   // 균형 잡힌 주변 윈도우: 위 2 + 아래 2를 기본으로, 한쪽이 모자라면 반대쪽으로 채워 총 4명 유지
   const rawAbove = neighbors ? neighbors.above : [];
@@ -189,6 +209,11 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
       <section className="fm-card">
         <h2 className="fm-section-title">{BOARDS.find((b) => b.key === board).label} 상위</h2>
         <p className="fm-section-sub">{SUBS[board]}</p>
+        {board !== 'fire' && (
+          myBoardValue() > 0
+            ? <p className="fm-save-myrank">내 기록 <b>{fmtMyVal(myBoardValue())}</b> · {inTop ? '위 목록에 있어요 🎉' : '아직 10위권 밖이에요'}</p>
+            : <p className="fm-save-myrank">이 보드엔 아직 내 기록이 없어요 · ‘저축’ 탭에서 기록하면 올라가요</p>
+        )}
         <ol className="fm-lb-list">
           {top === null && <li className="fm-lb-empty">불러오는 중…</li>}
           {top && top.length === 0 && <li className="fm-lb-empty">아직 데이터가 적어요. 첫 랭커가 되어보세요!</li>}

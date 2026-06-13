@@ -325,11 +325,9 @@ function NextActions({ onMove }) {
 export default function Result({ inputs, simulation, onMove, onChange, onEditFinalQuestion }) {
   const shareRank = async () => {
     track('share', { type: 'result' });
-    const rk = statsRank(simulation);
     const ph = survivalPhrase(simulation);
     const earliest = simulation.earliestRetirementAge;
-    const pctText = rk && rk.percentile ? ` · 또래 자산 상위 ${rk.percentile}%` : '';
-    const text = earliest ? `나는 ${earliest}세에 퇴사 가능${pctText} — 너는 몇 살에 가능?` : '내 퇴사 가능 나이, 1분이면 나와 — 너도 해봐';
+    const text = '파이어족들을 위한 커뮤니티 · 파이어맵';
     // 링크만 공유 → 카톡이 /og 개인 카드 하나로 미리보기 + 한 탭 입장(이미지+URL 동시전송 시 카드 중복 떠서 제거)
     const u = new URL('/s', window.location.origin);
     if (earliest) u.searchParams.set('ea', String(earliest));

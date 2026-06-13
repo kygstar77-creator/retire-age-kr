@@ -28,7 +28,7 @@ function countFromRange(res) {
   return total && total !== '*' ? Number(total) : 0;
 }
 
-export async function submitScore({ fireScore, ageBand, survivalAge, nickname, earliestAge, assetBand }) {
+export async function submitScore({ fireScore, ageBand, survivalAge, nickname, earliestAge }) {
   const base = {
     fire_score: Math.max(0, Math.min(100, Math.round(fireScore))),
     age_band: ageBand || null,
@@ -42,19 +42,13 @@ export async function submitScore({ fireScore, ageBand, survivalAge, nickname, e
     earliest_age: (earliestAge != null && Number.isFinite(Number(earliestAge))) ? Math.round(Number(earliestAge)) : null
   };
   const cid = identityId();
-  const fullAsset = (assetBand != null) ? { ...full, asset_band: assetBand } : full;
   const send = (body, merge) => fetch(`${SUPABASE_URL}/rest/v1/${TABLE}${merge ? '?on_conflict=client_id' : ''}`, {
     method: 'POST',
     headers: headers({ prefer: merge ? 'return=minimal,resolution=merge-duplicates' : 'return=minimal' }),
     body: JSON.stringify(body)
   });
   try {
-    if (cid) {
-      let res = await send({ ...fullAsset, client_id: cid }, true);
-      if (!res.ok) res = await send({ ...full, client_id: cid }, true); // asset_band 컬럼 미존재 시 보존 폴백
-      if (res.ok) return true;
-    }
-    let res = await send(fullAsset, false);
+    let res = cid ? await send({ ...full, client_id: cid }, true) : { ok: false };
     if (!res.ok) res = await send(full, false);
     if (!res.ok) res = await send(base, false);
     return res.ok;
@@ -91,33 +85,6 @@ export async function fetchUserRank(earliestAge, ageBand, advancedDays) {
   } catch {
     return null;
   }
-}
-
-// 순자산 구간(금액 비공개, 구간만 저장) — 0:<1억 1:1~3억 2:3~5억 3:5~10억 4:10~20억 5:20억+
-export function assetBandOf(netWorth) {
-  const eok = (Number(netWorth) || 0) / 100000000;
-  if (eok < 1) return 0;
-  if (eok < 3) return 1;
-  if (eok < 5) return 2;
-  if (eok < 10) return 3;
-  if (eok < 20) return 4;
-  return 5;
-}
-
-// 또래(연령대) 중 내 자산 상위 X% — 구간 기준 익명 비교
-export async function fetchAssetPercentile(ageBand, assetBand) {
-  if (assetBand == null) return null;
-  try {
-    const band = ageBand ? `&age_band=eq.${ageBand}` : '';
-    const opts = { method: 'GET', headers: headers({ prefer: 'count=exact', range: '0-0' }) };
-    const totalRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id&asset_band=not.is.null${band}`, opts);
-    const total = countFromRange(totalRes);
-    if (!total) return null;
-    const higherRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id&asset_band=gt.${assetBand}${band}`, opts);
-    const higher = countFromRange(higherRes);
-    const percentile = Math.max(1, Math.min(99, Math.round(((higher + 0.5) / total) * 100)));
-    return { total, percentile };
-  } catch { return null; }
 }
 
 // 내 점수행의 advanced_days만 갱신(저축 변동 시) → 동점 분리에 즉시 반영

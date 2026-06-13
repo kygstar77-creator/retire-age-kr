@@ -5,7 +5,7 @@ import { buildScenario, fireStatus, runwayText, scenarioEndAge, survivalPhrase }
 import { simulateRetirement } from '../../utils/retirementSimulator.js';
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
 import { statsRank, gradeFromScore } from '../../firemap-v2/rank.js';
-import { submitScore, fetchUserRank, fetchAggregates, assetBandOf } from '../../utils/firemapScoresApi.js';
+import { submitScore, fetchUserRank, fetchAggregates } from '../../utils/firemapScoresApi.js';
 import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js';
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
 import { FIRE_CITIES } from '../../firemap-v2/cities.js';
@@ -38,8 +38,7 @@ function ResultHeroV2({ simulation }) {
             ageBand: base.ageBand,
             survivalAge: (simulation.targetResult && simulation.targetResult.depletionAge) || simulation.inputs.simulationUntilAge,
             nickname: nick,
-            earliestAge: earliest,
-            assetBand: assetBandOf(simulation.netWorth)
+            earliestAge: earliest
           });
           sessionStorage.setItem(key, '1');
         }

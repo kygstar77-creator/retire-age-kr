@@ -62,6 +62,7 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         <p className="fm-range-note">부업 소득은 물가에 연동되지 않아요 — 생활비·연금과 달리 매년 오르지 않는 고정 수입으로 계산해요.</p>
         <RangeControl label="연 수익률" value={inputs.annualReturnRate} inputKey="annualReturnRate" type="percent" step={1} onChange={(next) => onChange('annualReturnRate', next)} />
         <RangeControl label="물가 상승률(생활비 매년 증가)" value={inputs.inflationRate} inputKey="inflationRate" type="percent" step={1} onChange={(next) => onChange('inflationRate', next)} />
+        <p className="fm-range-note">이 비율만큼 <strong>생활비·국민연금·건보료·해외 체류비</strong>가 매년 올라요. (부업 소득만 제외)</p>
         <RangeControl label="절감안 생활비" value={improvedCost} inputKey="improvedCost" type="money" step={100000} onChange={setImprovedCost} />
       </section>
       <section className="fm-card fm-text-card">

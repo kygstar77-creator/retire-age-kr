@@ -121,13 +121,16 @@ export async function fetchNeighbors(earliestAge, ageBand) {
     const band = ageBand ? `&age_band=eq.${ageBand}` : '';
     const sel = 'select=client_id,nickname,earliest_age,age_band';
     const opts = { method: 'GET', headers: headers() };
-    const [aboveRes, belowRes] = await Promise.all([
-      fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&earliest_age=lt.${mine}${band}&order=earliest_age.desc&limit=2`, opts),
-      fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&earliest_age=gt.${mine}${band}&order=earliest_age.asc&limit=2`, opts)
+    const countOpts = { method: 'GET', headers: headers({ prefer: 'count=exact', range: '0-0' }) };
+    const [aboveRes, belowRes, sameRes] = await Promise.all([
+      fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&earliest_age=lt.${mine}${band}&order=earliest_age.desc&limit=3`, opts),
+      fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&earliest_age=gt.${mine}${band}&order=earliest_age.asc&limit=3`, opts),
+      fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=eq.${mine}${band}`, countOpts)
     ]);
     const above = aboveRes.ok ? await aboveRes.json() : [];
     const below = belowRes.ok ? await belowRes.json() : [];
-    return { above: above.reverse(), below };
+    const same = sameRes.ok ? countFromRange(sameRes) : 0; // 나와 같은 은퇴나이 인원(동점)
+    return { above: above.reverse(), below, same };
   } catch {
     return null;
   }

@@ -84,9 +84,19 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
     return wonStr(row.value || 0);
   };
 
-  const nearAbove = neighbors && neighbors.above.length ? neighbors.above[neighbors.above.length - 1] : null;
-  const aboveN = neighbors ? neighbors.above : [];
-  const belowN = neighbors ? neighbors.below : [];
+  // 균형 잡힌 주변 윈도우: 위 2 + 아래 2를 기본으로, 한쪽이 모자라면 반대쪽으로 채워 총 4명 유지
+  const rawAbove = neighbors ? neighbors.above : [];
+  const rawBelow = neighbors ? neighbors.below : [];
+  const sameCount = neighbors ? (neighbors.same || 0) : 0;
+  const aAvail = rawAbove.length;
+  const bAvail = rawBelow.length;
+  let aWant = Math.min(2, aAvail);
+  let bWant = Math.min(2, bAvail);
+  let slack = 4 - aWant - bWant;
+  if (slack > 0) { const addB = Math.min(slack, bAvail - bWant); bWant += addB; slack -= addB; aWant += Math.min(slack, aAvail - aWant); }
+  const aboveN = aWant > 0 ? rawAbove.slice(-aWant) : [];
+  const belowN = rawBelow.slice(0, bWant);
+  const nearAbove = aboveN.length ? aboveN[aboveN.length - 1] : null;
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
@@ -137,7 +147,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
                 </li>
                 {belowN.map((r, i) => (
                   <li key={`b${i}`} className="fm-lb-row">
-                    <span className="fm-lb-rank">{(me.position + i + 1).toLocaleString()}</span>
+                    <span className="fm-lb-rank">{(me.position + Math.max(1, sameCount) + i).toLocaleString()}</span>
                     <span className="fm-lb-who">{displayName(r)}</span>
                     <span className="fm-lb-score">{r.earliest_age ? `${r.earliest_age}세 은퇴` : '—'}</span>
                   </li>

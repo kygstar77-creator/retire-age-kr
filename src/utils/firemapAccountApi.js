@@ -1,3 +1,4 @@
+import { track } from '../firemap-v2/dailyData.js';
 const URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
 const KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || URL;
@@ -25,11 +26,13 @@ function persist(r) {
 
 export async function signup(handle, password) {
   const r = await rpc('fm_signup', { p_handle: handle, p_password: password });
+  track('signup');
   return persist(r);
 }
 export async function login(handle, password) {
   const r = await rpc('fm_login', { p_handle: handle, p_password: password });
   if (!r || !r.id) { const e = new Error('bad_credentials'); e.code = 'bad_credentials'; throw e; }
+  track('login');
   return persist(r);
 }
 export function logout() {

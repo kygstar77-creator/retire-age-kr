@@ -22,6 +22,7 @@ import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
 import { cleanNumber } from '../firemap-v2/formatters.js';
 import { screens, resolveScreen } from '../firemap-v2/screens.js';
 import { maybeClaimOnLoad } from '../utils/firemapStateApi.js';
+import { track } from '../firemap-v2/dailyData.js';
 import { decodeInputsFromHash } from '../utils/shareState.js';
 import '../firemap-v3-tokens.css';
 import '../firemap.css';
@@ -72,7 +73,21 @@ export default function FireMapMVP() {
     window.addEventListener('popstate', sync);
     if (!window.location.hash) window.history.replaceState(null, '', '#home');
     maybeClaimOnLoad();
-    return () => { window.removeEventListener('hashchange', sync); window.removeEventListener('popstate', sync); };
+    // 홈화면(스탠드얼론) 실행 · 설치 · 재방문 측정
+    try {
+      const standalone = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
+      if (standalone) track('app_standalone_open');
+      const FS = 'fm_first_seen';
+      const now = Date.now();
+      const first = Number(localStorage.getItem(FS) || 0);
+      if (!first) { localStorage.setItem(FS, String(now)); }
+      else { const days = Math.floor((now - first) / 86400000); if (days >= 1) track('returning_visit', { days }); }
+    } catch { /* ignore */ }
+    const onInstalled = () => track('app_installed');
+    const onPrompt = () => track('install_prompt_available');
+    window.addEventListener('appinstalled', onInstalled);
+    window.addEventListener('beforeinstallprompt', onPrompt);
+    return () => { window.removeEventListener('hashchange', sync); window.removeEventListener('popstate', sync); window.removeEventListener('appinstalled', onInstalled); window.removeEventListener('beforeinstallprompt', onPrompt); };
   }, []);
 
   const setScreen = (next) => {

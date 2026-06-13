@@ -34,7 +34,7 @@ export default function Home({ onStart, onMove, simulation }) {
         </button>
       )}
       <section className="fm-home-hero-card">
-        <p>퇴사나이 계산기</p>
+        <p>파이어맵</p>
         <h1>나는 몇 살에<br />퇴사할 수 있을까?</h1>
         <span>자산·생활비만 입력하면 1분 만에 내 퇴사 가능 나이와 또래 중 내 등수까지 나와요.</span>
         <div className="fm-home-age">

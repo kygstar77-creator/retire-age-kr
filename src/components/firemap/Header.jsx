@@ -3,8 +3,9 @@ export default function Header({ tag, onBack }) {
   return (
     <header className="fm-topbar">
       <button type="button" className="fm-logo" onClick={goHome} aria-label="처음으로">
-        <svg className="fm-logo-mark" viewBox="0 0 24 24" width="21" height="21" aria-hidden="true">
-          <path fillRule="evenodd" clipRule="evenodd" d="M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.176 7.547 7.547 0 0 1-1.705-1.715.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248ZM15.75 14.25a3.75 3.75 0 1 1-7.313-1.172c.628.465 1.35.81 2.133 1.013A5.99 5.99 0 0 1 12.6 8.539a3.75 3.75 0 0 1 3.15 5.711Z" fill="#ff5a00"/>
+        <svg className="fm-logo-mark" viewBox="118 84 276 276" width="21" height="21" aria-hidden="true">
+          <path d="M256 84 C 232 150, 188 172, 188 256 C 188 322, 218 360, 256 360 C 294 360, 324 322, 324 256 C 324 212, 300 188, 286 162 C 282 192, 268 204, 252 210 C 268 166, 262 116, 256 84 Z" fill="#ff5a00"/>
+          <path d="M256 250 C 246 276, 232 286, 232 312 C 232 336, 242 352, 256 352 C 270 352, 280 336, 280 312 C 280 292, 270 280, 264 268 C 262 282, 258 286, 252 290 C 258 274, 258 262, 256 250 Z" fill="#fdba74"/>
         </svg>
         파이어맵
       </button>

@@ -52,7 +52,7 @@ let inputStep = 0;
 
 function trackAppEvent(name, params = {}) {
   if (!window.gtag) return;
-  window.gtag('event', name, { app_name: 'toesanai', ...params });
+  window.gtag('event', name, { app_name: 'firemap', ...params });
 }
 
 function loadInputs() {

@@ -39,22 +39,22 @@ html = html.replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canoni
 await writeFile(indexPath, html, 'utf8');
 
 const flame = `
-  <path d="M105 153c-31-18-33-57-8-86 7 22 21 28 31 42 10-31 32-48 59-70-2 33 17 45 31 69 23 39 3 87-37 105 14-18 13-42-2-58-8-9-16-17-18-31-11 18-31 29-37 51-5 17 2 32 13 44-13-3-25-8-32-16z" fill="#ff5a00"/>
-  <path d="M142 218c-26-26-13-62 17-91 2 20 18 31 26 47 9 18 2 41-16 53-16 10-29 7-27-9z" fill="#fed7aa"/>
+  <path d="M256 84 C 232 150, 188 172, 188 256 C 188 322, 218 360, 256 360 C 294 360, 324 322, 324 256 C 324 212, 300 188, 286 162 C 282 192, 268 204, 252 210 C 268 166, 262 116, 256 84 Z" fill="#ff5a00"/>
+  <path d="M256 250 C 246 276, 232 286, 232 312 C 232 336, 242 352, 256 352 C 270 352, 280 336, 280 312 C 280 292, 270 280, 264 268 C 262 282, 258 286, 252 290 C 258 274, 258 262, 256 250 Z" fill="#fdba74"/>
 `;
 
 const brand = `
   <circle cx="118" cy="116" r="44" fill="#fff1e7"/>
-  <g transform="translate(86 74) scale(.40)">${flame}</g>
+  <g transform="translate(45.6 53.2) scale(.283)">${flame}</g>
   <text x="180" y="130" fill="#111827" font-family="Arial, sans-serif" font-size="44" font-weight="900">파이어맵</text>
 `;
 
 const ogResult = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="#fffdf9"/>
   <rect x="34" y="30" width="1132" height="570" rx="54" fill="#ffffff" stroke="#fed7aa" stroke-width="4"/>
-  <g opacity="0.07"><g transform="translate(940 360) scale(1.7)">${flame}</g></g>
+  <g opacity="0.07"><g transform="translate(667 111) scale(1.3)">${flame}</g></g>
   ${brand}
-  <text x="80" y="248" fill="#ea580c" font-family="Arial, sans-serif" font-size="33" font-weight="900">내 FIRE 결과 · 무료 1분 계산</text>
+  <text x="80" y="248" fill="#ff5a00" font-family="Arial, sans-serif" font-size="33" font-weight="900">내 FIRE 결과 · 무료 1분 계산</text>
   <text x="80" y="346" fill="#111827" font-family="Arial, sans-serif" font-size="74" font-weight="900"><tspan fill="#ff5a00">42세</tspan>에 퇴사하면</text>
   <text x="80" y="432" fill="#111827" font-family="Arial, sans-serif" font-size="74" font-weight="900"><tspan fill="#ff5a00">50세</tspan>까지 버텨요</text>
   <rect x="80" y="478" width="486" height="92" rx="20" fill="#f8fafc"/>
@@ -69,7 +69,7 @@ const ogSave = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630
   <rect width="1200" height="630" fill="#fffdf9"/>
   <rect x="34" y="30" width="1132" height="570" rx="54" fill="#ffffff" stroke="#fed7aa" stroke-width="4"/>
   ${brand}
-  <text x="80" y="232" fill="#ea580c" font-family="Arial, sans-serif" font-size="33" font-weight="900">오늘의 절약 · 파이어 앞당기기</text>
+  <text x="80" y="232" fill="#ff5a00" font-family="Arial, sans-serif" font-size="33" font-weight="900">오늘의 절약 · 파이어 앞당기기</text>
   <text x="80" y="318" fill="#111827" font-family="Arial, sans-serif" font-size="66" font-weight="900">아낀 돈이 <tspan fill="#ff5a00">퇴사를 앞당겨요</tspan></text>
   <text x="80" y="430" fill="#6b7280" font-family="Arial, sans-serif" font-size="28" font-weight="800">지금 35세</text>
   <text x="1120" y="430" text-anchor="end" fill="#6b7280" font-family="Arial, sans-serif" font-size="28" font-weight="800">예상 퇴사 62세</text>

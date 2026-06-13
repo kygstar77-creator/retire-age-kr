@@ -71,7 +71,7 @@ async function makeShareImage(inputs, simulation) {
   ctx.fillText(`내 퇴사 가능 나이 · ${rank.ageBandLabel} 또래 기준`, PAD, 308);
 
   // 히어로 — 퇴사 가능 나이
-  const heroText = earliest ? `${earliest}세 퇴사 가능` : '곧 퇴사 가능';
+  const heroText = earliest ? `${earliest}세 퇴사 가능` : '조금만 더!';
   ctx.fillStyle = WHITE; ctx.font = `800 100px ${FONT}`;
   ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
   ctx.fillText(heroText, PAD, 452);
@@ -156,7 +156,7 @@ export default function Share({ inputs, simulation, onBack }) {
         <section className="fm-rank-hero fm-share-hero">
           <p className="fm-rank-label">내 퇴사 가능 나이 · {rank.ageBandLabel} 또래 기준</p>
           <div className="fm-rank-top">
-            <span className="fm-rank-pct">{earliest ? `${earliest}세 퇴사 가능` : '곧 가능'}</span>
+            <span className="fm-rank-pct">{earliest ? `${earliest}세 퇴사 가능` : '조금만 더!'}</span>
           </div>
           <p className="fm-rank-line">{phrase.short}</p>
         </section>

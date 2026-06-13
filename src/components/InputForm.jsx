@@ -14,7 +14,7 @@ const fields = [
   { group: 'basic', section: '가정', name: 'annualReturnRate', label: '투자 수익률', help: '금융자산이 매년 평균 몇 % 불어난다고 볼지입니다.', suffix: '%' },
   { group: 'basic', section: '가정', name: 'inflationRate', label: '물가상승률', help: '생활비가 매년 몇 %씩 늘어난다고 볼지입니다.', suffix: '%' },
   { group: 'basic', section: '가정', name: 'simulationUntilAge', label: '몇 살까지 버티는지 볼까요?', help: '보통 90세 기준으로 확인합니다.', suffix: '세' },
-  { group: 'advanced', section: '연금·추가소득', name: 'partTimeIncomeAfterRetirement', label: '퇴사 후 매달 벌 수 있는 돈', help: '파트타임, 프리랜서, 임대소득 등 현재 돈 가치로 입력하세요.', suffix: '원', money: true },
+  { group: 'advanced', section: '연금·추가소득', name: 'partTimeIncomeAfterRetirement', label: '퇴사 후 매달 벌 수 있는 돈', help: '파트타임, 프리랜서, 임대소득 등 현재 돈 가치로 입력하세요. 물가 미반영(고정 수입으로 계산).', suffix: '원', money: true },
   { group: 'advanced', section: '연금·추가소득', name: 'expectedPensionAge', label: '국민연금 받기 시작하는 나이', help: '예상 수령 시작 나이를 넣으세요.', suffix: '세' },
   { group: 'advanced', section: '연금·추가소득', name: 'expectedMonthlyPension', label: '국민연금 월 예상 수령액', help: '현재 돈 가치로 입력하세요. 물가상승률을 반영해 계산합니다.', suffix: '원', money: true },
   { group: 'advanced', section: '건강보험료', name: 'healthInsuranceEnabled', label: '건보료 반영', help: '퇴사 후 예상 건강보험료를 비용에 반영합니다.', toggle: true },

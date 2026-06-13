@@ -35,7 +35,7 @@ function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
         <div className="fm-fp-gain" style={{ width: `${pct}%` }} />
         <div className="fm-fp-flag" style={{ left: `${100 - pct}%` }}>🏁</div>
       </div>
-      <p className="fm-fp-cap">{totalSaved > 0 ? <>절약으로 <b>{advLabel}</b> 당겼어요 · </> : null}지금 속도면 퇴사 <b>{yrs}세 {mos}개월</b></p>
+      <p className="fm-fp-cap">누적 절약 <b>{wonStr(totalSaved)}</b> · 실제 저축에 더해져 홈 ‘내 파이어 현황’에 반영돼요</p>
     </div>
   );
 }
@@ -132,7 +132,7 @@ export default function Savings({ simulation, onMove }) {
           <small>오늘 아낀 돈</small>
           <b>{wonStr(todaySaved)}</b>
           {dailyNeed
-            ? (todaySaved > 0 && todayAdv && <span className="fm-save-adv">파이어 <b>{todayAdv}</b> 앞당김 ⏩</span>)
+            ? (todaySaved > 0 && <span className="fm-save-adv">실제 저축에 <b>+{wonStr(todaySaved)}</b> 반영 · <button type="button" className="fm-inline-link" onClick={() => onMove('home')}>현황 보기</button></span>)
             : <span className="fm-save-adv muted">이미 목표 달성 — 아낀 돈은 여유로 쌓여요</span>}
         </div>
 

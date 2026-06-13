@@ -30,6 +30,7 @@ export default function DepositCard({ simulation, onMove }) {
   const [cfg, setCfg] = useState(() => load() || { days: {} });
   const [editing, setEditing] = useState(false);
   const [inputAmt, setInputAmt] = useState('');
+  const [dayChoice, setDayChoice] = useState('today'); // 'today' | 'yesterday'
 
   useEffect(() => {
     let alive = true;
@@ -39,8 +40,11 @@ export default function DepositCard({ simulation, onMove }) {
 
   const days = cfg.days || {};
   const today = todayStr();
+  const yest = dayKey(new Date(Date.now() - 86400000));
   const m = monthStr();
   const loggedToday = days[today] != null;
+  const selDate = dayChoice === 'yesterday' ? yest : today;
+  const loggedSel = days[selDate] != null;
 
   // 월별 합계 → 이번 달 실제 / 초과분 누적
   const byMonth = {};
@@ -49,11 +53,12 @@ export default function DepositCard({ simulation, onMove }) {
   const streak = streakOf(days);
   const planPct = monthlyPlan > 0 ? Math.max(0, Math.min(100, (monthTotal / monthlyPlan) * 100)) : 0;
 
-  const openInput = () => { setInputAmt(String(days[today] || suggested)); setEditing(true); };
+  const openInput = () => { setDayChoice('today'); setInputAmt(String(days[today] || suggested)); setEditing(true); };
+  const pickDay = (c) => { setDayChoice(c); const dt = c === 'yesterday' ? yest : today; setInputAmt(days[dt] != null ? String(days[dt]) : (c === 'today' ? String(suggested) : '')); };
   const saveToday = () => {
     const amt = Math.max(0, Math.round(Number(String(inputAmt).replace(/[^0-9]/g, '')) || 0));
     const nextDays = { ...days };
-    if (amt > 0) nextDays[today] = amt; else delete nextDays[today];
+    if (amt > 0) nextDays[selDate] = amt; else delete nextDays[selDate];
     const next = { ...cfg, days: nextDays };
     save(next); setCfg(next); pushState('fm_daily', next); notifySavingsChanged(); setEditing(false);
   };
@@ -84,13 +89,17 @@ export default function DepositCard({ simulation, onMove }) {
 
       {editing ? (
         <div className="fm-dep-edit">
-          <label className="fm-dep-inlabel" htmlFor="fm-dep-in">오늘 실제로 저축한 금액 (원)</label>
+          <div className="fm-dep-daytoggle" role="group" aria-label="기록할 날짜">
+            <button type="button" className={dayChoice === 'today' ? 'on' : ''} onClick={() => pickDay('today')}>오늘</button>
+            <button type="button" className={dayChoice === 'yesterday' ? 'on' : ''} onClick={() => pickDay('yesterday')}>어제</button>
+          </div>
+          <label className="fm-dep-inlabel" htmlFor="fm-dep-in">{dayChoice === 'yesterday' ? '어제' : '오늘'} 실제로 저축한 금액 (원)</label>
           <input id="fm-dep-in" inputMode="numeric" className="fm-dep-in" value={inputAmt} onChange={(e) => setInputAmt(e.target.value.replace(/[^0-9]/g, ''))} placeholder={String(suggested)} />
           <div className="fm-dep-edit-row">
             <button type="button" className="fm-dep-edit-reset" onClick={() => setEditing(false)}>취소</button>
             <button type="button" className="fm-dep-edit-save" onClick={saveToday}>저장</button>
           </div>
-          <p className="fm-dc-note">매일 실제 저축액을 기록하면 “이번 달 실제 저축”이 쌓여요. 계획(월 저축액)을 넘긴 만큼만 퇴사가 앞당겨져요.</p>
+          <p className="fm-dc-note">매일 실제 저축액을 기록하면 “이번 달 실제 저축”이 쌓여요. 빠뜨렸으면 ‘어제’로 바꿔 소급 입력할 수 있어요.</p>
         </div>
       ) : (
         <>

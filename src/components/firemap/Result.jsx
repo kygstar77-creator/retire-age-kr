@@ -240,6 +240,8 @@ function AssetJourney({ simulation }) {
   const start = rows[0].financialAsset;
   const y1 = rows[1] ? rows[1].financialAsset - start : 0;
   const y5 = rows[5] ? rows[5].financialAsset - start : null;
+  const save1 = rows[1] ? Math.max(0, rows[1].investmentAdded) : 0;
+  const ret1 = Math.max(0, y1 - save1);
   const cur = rows[0];
   const items = [{ age: cur.age, label: '지금 시작', sub: formatWon(cur.financialAsset), hi: false }];
   [100000000, 300000000, 500000000, 1000000000, 2000000000].forEach((t) => {
@@ -269,6 +271,9 @@ function AssetJourney({ simulation }) {
         {y5 != null && <div><small>5년 뒤</small><b>+{formatWon(Math.max(0, y5))}</b></div>}
         <div><small>은퇴 시점</small><b>{formatWon(simulation.retirementFinancialAsset)}</b></div>
       </div>
+      {y1 > 0 && (
+        <p className="fm-growth-split">1년 새 <b>+{formatWon(Math.max(0, y1))}</b> = 내 저축 <b>{formatWon(save1)}</b> + 투자수익 <b>{formatWon(ret1)}</b></p>
+      )}
       <ol className="fm-road-list">
         {list.map((m, i) => (
           <li key={i} className={`fm-road-step${m.hi ? ' hi' : ''}`}>

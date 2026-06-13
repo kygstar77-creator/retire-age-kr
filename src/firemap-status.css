@@ -45,3 +45,12 @@
 
 .fm-status-note { font-size: 12px; color: var(--fm-muted, #8f8f8f); line-height: 1.6; margin: 12px 0 0; }
 .fm-status-done { font-size: 14px; color: #0f6e56; font-weight: 600; line-height: 1.6; margin: 4px 0 0; }
+
+/* 자산 증가 분해 */
+.fm-growth-split { font-size: 13px; color: var(--fm-muted, #6f6f6f); margin: 8px 0 0; line-height: 1.6; }
+.fm-growth-split b { font-weight: 700; color: #185fa5; }
+
+/* 적립 오늘/어제 토글 */
+.fm-dep-daytoggle { display: inline-flex; gap: 6px; margin-bottom: 10px; }
+.fm-dep-daytoggle button { font-size: 13px; padding: 5px 14px; border-radius: 99px; border: 0.5px solid rgba(120,120,120,0.35); background: transparent; cursor: pointer; }
+.fm-dep-daytoggle button.on { background: #1d9e75; border-color: #1d9e75; color: #fff; font-weight: 600; }

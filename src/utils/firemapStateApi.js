@@ -35,18 +35,47 @@ export async function pullKey(key) {
   } catch { return null; }
 }
 
-// 로그인 직후: 서버에 있으면 로컬에 내려받고, 없으면 로컬 값을 서버로 올림
+// 적립 일별 장부 병합: 날짜별 더 큰 값 채택(같은 돈 이중계산 방지, 양쪽 기록 보존)
+function mergeDaily(localV, serverV) {
+  const a = (localV && localV.days) || {};
+  const b = (serverV && serverV.days) || {};
+  const days = {};
+  for (const k of new Set([...Object.keys(a), ...Object.keys(b)])) {
+    days[k] = Math.max(Number(a[k]) || 0, Number(b[k]) || 0);
+  }
+  return { ...(serverV || {}), ...(localV || {}), days };
+}
+// 절약 병합: 누적/연속은 더 멀리 간 값(max), 오늘분은 오늘인 쪽의 큰 값
+function mergeSave(localV, serverV) {
+  if (!localV) return serverV;
+  if (!serverV) return localV;
+  const today = new Date().toISOString().slice(0, 10);
+  const total = Math.max(Number(localV.total) || 0, Number(serverV.total) || 0);
+  const streak = Math.max(Number(localV.streak) || 0, Number(serverV.streak) || 0);
+  const daysCount = Math.max(Number(localV.days) || 0, Number(serverV.days) || 0);
+  const lt = localV.lastDate === today ? (Number(localV.today) || 0) : 0;
+  const st = serverV.lastDate === today ? (Number(serverV.today) || 0) : 0;
+  const entries = (localV.lastDate === today && Array.isArray(localV.entries)) ? localV.entries
+    : (serverV.lastDate === today && Array.isArray(serverV.entries)) ? serverV.entries : [];
+  return { total, streak, days: daysCount, today: Math.max(lt, st), lastDate: today, entries };
+}
+
+// 로그인 직후: 서버값과 로컬값을 '병합'(덮어쓰기 금지) 후 양쪽에 반영 → 두 기기 기록 안 날아감
 export async function syncAfterAuth() {
   const a = authed(); if (!a) return;
   let rows = [];
   try { rows = await rpc('fm_state_get', { p_user: a.userId, p_token: a.token }) || []; } catch { return; }
   const map = {}; rows.forEach((r) => { map[r.key] = r.value; });
   for (const k of SYNC_KEYS) {
-    if (map[k] !== undefined && map[k] !== null) {
-      try { localStorage.setItem(k, JSON.stringify(map[k])); } catch { /* ignore */ }
-    } else {
-      let local = null; try { local = JSON.parse(localStorage.getItem(k) || 'null'); } catch { /* ignore */ }
-      if (local) await pushState(k, local);
+    let local = null; try { local = JSON.parse(localStorage.getItem(k) || 'null'); } catch { /* ignore */ }
+    const server = (map[k] !== undefined ? map[k] : null);
+    let merged;
+    if (k === 'fm_daily') merged = mergeDaily(local, server);
+    else if (k === 'fm_save') merged = mergeSave(local, server);
+    else merged = server || local;
+    if (merged) {
+      try { localStorage.setItem(k, JSON.stringify(merged)); } catch { /* ignore */ }
+      await pushState(k, merged);
     }
   }
 }

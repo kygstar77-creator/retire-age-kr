@@ -149,7 +149,7 @@ function TopLevers({ inputs, simulation, onChange }) {
         ))}
       </ul>
       <p className="fm-goal-note">각 값은 목표 달성에 필요한 최소치예요. 수익률은 높이면 위험도 커지니 참고만 하세요.</p>
-      <button type="button" className="fm-goal-savelink" onClick={() => { window.location.hash = '#save'; }}>💡 이 저축, 매일 조금씩 채우려면 → 오늘의 절약 탭</button>
+      <button type="button" className="fm-goal-savelink" onClick={() => { window.location.hash = '#save'; }}>💡 이 저축, 매일 조금씩 채우려면 → 저축 탭</button>
     </section>
   );
 }
@@ -308,17 +308,6 @@ function NextActions({ onMove }) {
 }
 
 export default function Result({ inputs, simulation, onMove, onChange, onEditFinalQuestion }) {
-  useEffect(() => {
-    try {
-      const inp = simulation.inputs;
-      const fireAge = simulation.earliestRetirementAge || inp.targetRetirementAge;
-      const target = simulation.requiredFireAssetByFourPercent || 0;
-      const daysRemaining = Math.max(30, (fireAge - inp.currentAge) * 365.25);
-      const gap = target - inp.financialAsset;
-      const dailyNeed = gap > 0 ? Math.max(1000, Math.round(gap / daysRemaining)) : null;
-      localStorage.setItem('fm_plan', JSON.stringify({ dailyNeed, fireAge, currentAge: inp.currentAge, ok: gap <= 0 }));
-    } catch { /* ignore */ }
-  }, [simulation]);
   const shareRank = async () => {
     track('share', { type: 'result' });
     track('share_summary_copy', { type: 'result' });

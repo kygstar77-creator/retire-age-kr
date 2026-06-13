@@ -60,13 +60,6 @@ export default function Savings({ simulation, onMove }) {
   const acctHandle = accountHandle();
   const dailyNeed = dailyNeedOf(simulation);
 
-  useEffect(() => {
-    try {
-      const inp = simulation.inputs;
-      const fireAge = simulation.earliestRetirementAge || inp.targetRetirementAge;
-      localStorage.setItem('fm_plan', JSON.stringify({ dailyNeed, fireAge, currentAge: inp.currentAge, ok: dailyNeed == null }));
-    } catch { /* ignore */ }
-  }, [simulation, dailyNeed]);
   useEffect(() => { track('save_tab_view'); refresh(todaySaved); pullKey('fm_save').then((v) => { if (v) { try { localStorage.setItem('fm_save', JSON.stringify(v)); } catch { /* ignore */ } setSv(v); } }); /* eslint-disable-next-line */ }, []);
 
   const todaySaved = sv && sv.lastDate === todayStr() ? (sv.today || 0) : 0;

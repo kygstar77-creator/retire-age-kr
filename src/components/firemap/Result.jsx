@@ -341,7 +341,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
     img.searchParams.set('ret', String(ret));
     img.searchParams.set('inf', String(inf));
     if (pos && tot) { img.searchParams.set('pos', String(pos)); img.searchParams.set('tot', String(tot)); }
-    img.searchParams.set('v', 'c2');
+    img.searchParams.set('v', 'c3');
     const imageUrl = img.toString();
     // 클릭 시 이동할 짧은 링크
     const l = new URL('https://firemap.kr/s');

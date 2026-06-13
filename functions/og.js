@@ -30,15 +30,13 @@ const safeRunway = (v) => {
 
 function buildSvg(q) {
   const ea = intOr(q.get('ea'), 0, 0, 120);
-  const target = intOr(q.get('target'), 0, 0, 120);
   const pos = intOr(q.get('pos'), 0, 0, 9999999);
   const tot = Math.max(1, intOr(q.get('tot'), 1, 1, 9999999));
   const runway = safeRunway(q.get('rw'));
   const p = Math.max(1, Math.min(99, Math.round((pos / tot) * 100)));
   const parts = [];
   if (ea > 0) parts.push(ea + '세 퇴사 가능');
-  if (target > 0) parts.push('목표 ' + target + '세');
-  if (runway && runway !== '—') parts.push('자산수명 ' + runway);
+  if (runway && runway !== '—') parts.push(runway.indexOf('이상') >= 0 ? runway + ' 버팀' : runway + '까지 버팀');
   const mid = parts.join(' · ');
   return `<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
 <rect width="1200" height="600" fill="#18224d"/>
@@ -48,7 +46,7 @@ function buildSvg(q) {
 <text x="600" y="358" font-family="${KR}" font-weight="700" font-size="150" fill="#ff5a00" text-anchor="middle">${p}%</text>
 <text x="600" y="418" font-family="${KR}" font-weight="700" font-size="40" fill="#ffffff" text-anchor="middle">전체 <tspan fill="#ff8a4c">${comma(tot)}명</tspan> 중 <tspan fill="#ff8a4c">${comma(pos)}등</tspan></text>
 <text x="600" y="470" font-family="${KR}" font-weight="600" font-size="30" fill="#9aa4d4" text-anchor="middle">${mid}</text>
-<text x="600" y="540" font-family="${KR}" font-weight="700" font-size="30" fill="#ffffff" text-anchor="middle">나도 1분에 확인  →  <tspan fill="#ff8a4c">firemap.kr</tspan></text>
+<text x="600" y="540" font-family="${KR}" font-weight="700" font-size="30" fill="#ffffff" text-anchor="middle">나도 1분 만에 확인  →  <tspan fill="#ff8a4c">firemap.kr</tspan></text>
 </svg>`;
 }
 

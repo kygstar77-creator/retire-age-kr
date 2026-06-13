@@ -76,6 +76,11 @@ async function makeShareImage(inputs, simulation) {
   ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
   ctx.fillText(heroText, PAD, 452);
 
+  // 또래 상위 % 플렉스 배지 (결과 화면의 핵심 후킹 요소)
+  if (rank && rank.percentile) {
+    pill(PAD, 512, 96, `또래 자산 상위 ${rank.percentile}%`, `800 50px ${FONT}`, ORANGE, WHITE);
+  }
+
   // 결과 문구
   ctx.fillStyle = WHITE; ctx.font = `800 54px ${FONT}`;
   ctx.fillText(phrase.short, PAD, 720);

@@ -38,28 +38,6 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         </div>
         <p className="fm-sim-live-note">아래 수치를 밀면 위 숫자가 바로 바뀌어요</p>
       </section>
-      <section className="fm-card fm-text-card">
-        <p className="fm-kicker">투자 유형 · 세금</p><h2>어디에 투자하느냐로 세금이 달라져요</h2>
-        <div className="fm-chips fm-invest-chips" aria-label="투자 유형 선택">
-          <button type="button" className={investType === 0 ? 'is-active' : ''} onClick={() => onChange('investType', 0)}>국내주식 · 양도세 면제</button>
-          <button type="button" className={investType === 1 ? 'is-active' : ''} onClick={() => onChange('investType', 1)}>해외주식 · 양도세 22%</button>
-          <button type="button" className={investType === 2 ? 'is-active' : ''} onClick={() => onChange('investType', 2)}>배당 생활 · 배당세 15.4%</button>
-        </div>
-        {investType === 2 && <RangeControl label="배당수익률" value={inputs.dividendYield} inputKey="dividendYield" type="percent" step={1} onChange={(next) => onChange('dividendYield', next)} />}
-        {investType === 2 && Number(inputs.dividendYield || 0) >= Number(inputs.annualReturnRate || 0) && <p className="fm-range-note fm-tax-warn">⚠️ 배당수익률이 연 수익률보다 크면 원금이 줄어요.</p>}
-        {investType === 2 && grossDivAtRetire > 20000000 && <p className="fm-range-note">⚠️ 퇴사 시 연 배당 약 {formatWon(grossDivAtRetire)} · 금융소득 2,000만 초과 → 종합과세·건보료 부담↑ (도구 탭에서 정밀 확인)</p>}
-        <div className="fm-tax-explain">
-          <p className="fm-tax-explain-title">ℹ️ 선택한 유형의 세금</p>
-          {investType === 0 && <p className="fm-tax-explain-line">국내주식은 양도세가 <b>면제</b>예요(대주주 제외). 팔아서 생활비를 써도 투자 세금 부담이 없어요.</p>}
-          {investType === 1 && <p className="fm-tax-explain-line">해외주식은 퇴사 후 <b>매년 쓰는 만큼 팔 때 그 차익</b>에 <b>22%</b>(매년 250만 공제). 한 번에 매도가 아니에요.</p>}
-          {investType === 2 && <p className="fm-tax-explain-line">배당으로 생활하면 받는 배당마다 <b>15.4%</b> 원천징수돼요. (금융소득 2,000만 초과 시 종합과세↑)</p>}
-          <p className="fm-tax-explain-sub">종합과세 누진·ISA/연금 절세는 개인 상황별이라 결과엔 반영하지 않아요.</p>
-          <div className="fm-tax-links">
-            <a href="/guide/dividend-tax-thresholds.html" target="_blank" rel="noopener">배당 세금 경계선 →</a>
-            <a href="/guide/isa-pension-accounts.html" target="_blank" rel="noopener">ISA·연금 절세 →</a>
-          </div>
-        </div>
-      </section>
       <section className="fm-card fm-graph">
         <p className="fm-kicker">내 미래 자산 차트</p><h2>나이별 자산 흐름을 비교해보세요</h2>
         <div className="fm-chart-legend">
@@ -84,6 +62,28 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         <RangeControl label="연 수익률" value={inputs.annualReturnRate} inputKey="annualReturnRate" type="percent" step={1} onChange={(next) => onChange('annualReturnRate', next)} />
         <RangeControl label="물가 상승률(생활비 매년 증가)" value={inputs.inflationRate} inputKey="inflationRate" type="percent" step={1} onChange={(next) => onChange('inflationRate', next)} />
         <RangeControl label="절감안 생활비" value={improvedCost} inputKey="improvedCost" type="money" step={100000} onChange={setImprovedCost} />
+      </section>
+      <section className="fm-card fm-text-card">
+        <p className="fm-kicker">투자 유형 · 세금</p><h2>어디에 투자하느냐로 세금이 달라져요</h2>
+        <div className="fm-chips fm-invest-chips" aria-label="투자 유형 선택">
+          <button type="button" className={investType === 0 ? 'is-active' : ''} onClick={() => onChange('investType', 0)}>국내주식 · 양도세 면제</button>
+          <button type="button" className={investType === 1 ? 'is-active' : ''} onClick={() => onChange('investType', 1)}>해외주식 · 양도세 22%</button>
+          <button type="button" className={investType === 2 ? 'is-active' : ''} onClick={() => onChange('investType', 2)}>배당 생활 · 배당세 15.4%</button>
+        </div>
+        {investType === 2 && <RangeControl label="배당수익률" value={inputs.dividendYield} inputKey="dividendYield" type="percent" step={1} onChange={(next) => onChange('dividendYield', next)} />}
+        {investType === 2 && Number(inputs.dividendYield || 0) >= Number(inputs.annualReturnRate || 0) && <p className="fm-range-note fm-tax-warn">⚠️ 배당수익률이 연 수익률보다 크면 원금이 줄어요.</p>}
+        {investType === 2 && grossDivAtRetire > 20000000 && <p className="fm-range-note">⚠️ 퇴사 시 연 배당 약 {formatWon(grossDivAtRetire)} · 금융소득 2,000만 초과 → 종합과세·건보료 부담↑ (도구 탭에서 정밀 확인)</p>}
+        <div className="fm-tax-explain">
+          <p className="fm-tax-explain-title">ℹ️ 선택한 유형의 세금</p>
+          {investType === 0 && <p className="fm-tax-explain-line">국내주식은 양도세가 <b>면제</b>예요(대주주 제외). 팔아서 생활비를 써도 투자 세금 부담이 없어요.</p>}
+          {investType === 1 && <p className="fm-tax-explain-line">해외주식은 퇴사 후 <b>매년 쓰는 만큼 팔 때 그 차익</b>에 <b>22%</b>(매년 250만 공제). 한 번에 매도가 아니에요.</p>}
+          {investType === 2 && <p className="fm-tax-explain-line">배당으로 생활하면 받는 배당마다 <b>15.4%</b> 원천징수돼요. (금융소득 2,000만 초과 시 종합과세↑)</p>}
+          <p className="fm-tax-explain-sub">종합과세 누진·ISA/연금 절세는 개인 상황별이라 결과엔 반영하지 않아요.</p>
+          <div className="fm-tax-links">
+            <a href="/guide/dividend-tax-thresholds.html" target="_blank" rel="noopener">배당 세금 경계선 →</a>
+            <a href="/guide/isa-pension-accounts.html" target="_blank" rel="noopener">ISA·연금 절세 →</a>
+          </div>
+        </div>
       </section>
       <PensionControls inputs={inputs} onChange={onChange} />
       <section className="fm-card fm-text-card">

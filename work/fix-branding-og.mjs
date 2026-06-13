@@ -45,7 +45,7 @@ const flame = `
 
 const brand = `
   <circle cx="118" cy="116" r="44" fill="#fff1e7"/>
-  <g transform="translate(61.7 67.2) scale(.22)">${flame}</g>
+  <g transform="translate(61.7 63.5) scale(.22)">${flame}</g>
   <text x="180" y="130" fill="#111827" font-family="Arial, sans-serif" font-size="44" font-weight="900">파이어맵</text>
 `;
 

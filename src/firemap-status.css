@@ -76,3 +76,6 @@
 .fm-sim-live-row small { display: block; font-size: 12px; color: var(--fm-muted, #8a8a8a); margin-bottom: 2px; }
 .fm-sim-live-row b { font-size: 28px; font-weight: 800; color: #ff5a00; letter-spacing: -0.02em; }
 .fm-sim-live-note { font-size: 12px; color: var(--fm-muted, #9a9a9a); margin: 8px 0 0; }
+
+/* 결과 세금 안내 → 바꿔보기 유도 */
+.fm-tax-hint { display: inline-block; margin: 4px 0 0; padding: 7px 12px; border-radius: 99px; border: 0.5px solid rgba(255,90,0,0.4); background: rgba(255,90,0,0.06); color: #ff5a00; font-size: 12px; font-weight: 700; cursor: pointer; }

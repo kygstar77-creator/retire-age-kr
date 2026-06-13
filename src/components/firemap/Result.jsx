@@ -76,7 +76,8 @@ function ResultHeroV2({ simulation }) {
         <span>목표 퇴사 <b>{target}세</b></span>
         <span>자산 버티는 나이 <b>{phrase.runway}</b></span>
       </div>
-      <p className="fm-rank-note">{peerAvg != null ? `또래 평균 ${peerAvg}세 · ` : ''}또래 순자산 상위 {base.percentile}%(통계청 2025 가계금융복지조사 기준) · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)}</p>
+      <p className="fm-rank-note">{peerAvg != null ? `또래 평균 ${peerAvg}세 · ` : ''}또래 순자산 상위 {base.percentile}%(통계청 2025 가계금융복지조사 기준) · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)} · <b>세전(세금 미반영)</b></p>
+      <button type="button" className="fm-tax-hint" onClick={() => { window.location.hash = '#experiment'; }}>세금·배당 반영해 보기 → 🎛️ 바꿔보기</button>
     </section>
   );
 }

@@ -46,8 +46,7 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
           <button type="button" className={investType === 2 ? 'is-active' : ''} onClick={() => onChange('investType', 2)}>배당 생활 · 배당세 15.4%</button>
         </div>
         {investType === 2 && <RangeControl label="배당수익률" value={inputs.dividendYield} inputKey="dividendYield" type="percent" step={1} onChange={(next) => onChange('dividendYield', next)} />}
-        {investType === 2 && <p className="fm-range-note">💡 배당주 총수익률은 보통 성장주(나스닥 등)보다 낮아요. 위 <b>‘연 수익률’</b>을 배당 전략에 맞게(예: 5~7%) 잡으세요 — 배당수익률은 그 총수익률 <b>안에 포함</b>돼요(연 6%·배당 4% = 가격 2% + 배당 4%).</p>}
-        {investType === 2 && Number(inputs.dividendYield || 0) >= Number(inputs.annualReturnRate || 0) && <p className="fm-range-note fm-tax-warn">⚠️ 배당수익률({inputs.dividendYield}%)이 연 수익률({inputs.annualReturnRate}%)보다 크거나 같아요 → 원금이 줄어드는 비현실적 가정이에요. 연 수익률을 올리거나 배당수익률을 낮춰보세요.</p>}
+        {investType === 2 && Number(inputs.dividendYield || 0) >= Number(inputs.annualReturnRate || 0) && <p className="fm-range-note fm-tax-warn">⚠️ 배당수익률이 연 수익률보다 크면 원금이 줄어요.</p>}
         {investType === 2 && grossDivAtRetire > 20000000 && <p className="fm-range-note">⚠️ 퇴사 시 연 배당 약 {formatWon(grossDivAtRetire)} · 금융소득 2,000만 초과 → 종합과세·건보료 부담↑ (도구 탭에서 정밀 확인)</p>}
         <div className="fm-tax-explain">
           <p className="fm-tax-explain-title">ℹ️ 세금은 이렇게 반영돼요</p>

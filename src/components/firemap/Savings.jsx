@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
-import { identityIds } from '../../utils/identity.js';
+import { identityIds, accountHandle } from '../../utils/identity.js';
 import IdentityLine from './IdentityLine.jsx';
 import { pushState, pullKey } from '../../utils/firemapStateApi.js';
 import { statsRank } from '../../firemap-v2/rank.js';
@@ -48,6 +48,7 @@ export default function Savings({ simulation, onMove }) {
   const [nick, setNick] = useState(() => { try { return localStorage.getItem('fm_nickname') || ''; } catch { return ''; } });
   const [nickSaved, setNickSaved] = useState(false);
   const myIds = identityIds();
+  const acctHandle = accountHandle();
   const dailyNeed = dailyNeedOf(simulation);
 
   useEffect(() => {
@@ -184,7 +185,7 @@ export default function Savings({ simulation, onMove }) {
             return (
               <li key={i} className={`fm-lb-row${i < 3 ? ' top3' : ''}${mine ? ' me' : ''}`}>
                 <span className="fm-lb-rank">{medal(i)}</span>
-                <span className="fm-lb-who">{r.nickname || funHandle(r.client_id)}{mine ? ' (나)' : ''}{r.age_band ? ` · ${r.age_band}대` : ''}</span>
+                <span className="fm-lb-who">{mine && acctHandle ? acctHandle : (r.nickname || funHandle(r.client_id))}{mine ? ' (나)' : ''}{r.age_band ? ` · ${r.age_band}대` : ''}</span>
                 <span className="fm-lb-score">{wonStr(r.today_saved)}</span>
               </li>
             );

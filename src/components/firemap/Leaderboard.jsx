@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import IdentityLine from './IdentityLine.jsx';
-import { identityIds } from '../../utils/identity.js';
+import { identityIds, accountHandle } from '../../utils/identity.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { fetchTopScores, fetchUserRank, submitScore, fetchAggregates, fetchNeighbors } from '../../utils/firemapScoresApi.js';
 import { fetchSaveBoard } from '../../utils/firemapSaveApi.js';
@@ -31,6 +31,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
   const score = simulation.survivalScore;
   const earliest = simulation.earliestRetirementAge;
   const ids = identityIds();
+  const acctHandle = accountHandle();
   const [board, setBoard] = useState('fire');
   const [top, setTop] = useState(null);
   const [me, setMe] = useState(null);
@@ -176,7 +177,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
             return (
               <li key={i} className={`fm-lb-row${i < 3 ? ' top3' : ''}${mine ? ' me' : ''}`}>
                 <span className="fm-lb-rank">{medal(i)}</span>
-                <span className="fm-lb-who">{displayName(row)}{mine ? ' (나)' : ''}{row.age_band ? ` · ${row.age_band}대` : ''}</span>
+                <span className="fm-lb-who">{mine && acctHandle ? acctHandle : displayName(row)}{mine ? ' (나)' : ''}{row.age_band ? ` · ${row.age_band}대` : ''}</span>
                 <span className="fm-lb-score">{rowValue(row)}</span>
               </li>
             );

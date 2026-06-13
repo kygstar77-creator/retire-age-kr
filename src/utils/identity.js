@@ -17,6 +17,7 @@ export function account() {
   try { return JSON.parse(localStorage.getItem(ACC) || 'null'); } catch { return null; }
 }
 export function accountUserId() { const a = account(); return (a && a.userId) || null; }
+export function accountHandle() { const a = account(); return (a && a.handle) || ''; }
 
 // 제출/참여에 쓰는 식별자
 export function identityId() { return accountUserId() || deviceId(); }

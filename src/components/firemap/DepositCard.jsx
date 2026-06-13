@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { pushState, pullKey } from '../../utils/firemapStateApi.js';
-import { notifySavingsChanged } from '../../utils/savingsEngine.js';
+import { notifySavingsChanged, reportBoard } from '../../utils/savingsEngine.js';
 
 const KEY = 'fm_daily';
 const dayKey = (d) => d.toISOString().slice(0, 10);
@@ -60,9 +60,9 @@ export default function DepositCard({ simulation, onMove }) {
     const nextDays = { ...days };
     if (amt > 0) nextDays[selDate] = amt; else delete nextDays[selDate];
     const next = { ...cfg, days: nextDays };
-    save(next); setCfg(next); pushState('fm_daily', next); notifySavingsChanged(); setEditing(false);
+    save(next); setCfg(next); pushState('fm_daily', next); notifySavingsChanged(); reportBoard(simulation); setEditing(false);
   };
-  const reset = () => { if (!window.confirm('적립 기록을 모두 지울까요? 되돌릴 수 없어요.')) return; const next = { days: {} }; save(next); setCfg(next); pushState('fm_daily', next); notifySavingsChanged(); setEditing(false); };
+  const reset = () => { if (!window.confirm('적립 기록을 모두 지울까요? 되돌릴 수 없어요.')) return; const next = { days: {} }; save(next); setCfg(next); pushState('fm_daily', next); notifySavingsChanged(); reportBoard(simulation); setEditing(false); };
 
   return (
     <section className="fm-card fm-dep live">

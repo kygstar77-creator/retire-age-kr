@@ -5,6 +5,8 @@
 // - 절약(fm_save.total): 계획과 무관한 전액 보너스(항상 +). 즉시 반영.
 // - 중복 0: 계획분은 저축률로 1번(earliestRetirementAge), 차액은 자산으로 1번. 안 겹침.
 import { dailyNeedOf } from '../firemap-v2/dailyData.js';
+import { statsRank } from '../firemap-v2/rank.js';
+import { submitSave } from './firemapSaveApi.js';
 
 const readJSON = (k) => { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch { return null; } };
 const monthStr = () => new Date().toISOString().slice(0, 7);
@@ -102,4 +104,19 @@ export function gapLabel(days) {
 // 저축 기록이 바뀌었음을 알림(헤드라인 즉시 갱신용)
 export function notifySavingsChanged() {
   try { window.dispatchEvent(new Event('fm-savings-changed')); } catch { /* ignore */ }
+}
+
+// 리더보드에 '실제 저축' 한 줄 보고: 오늘/누적 절약 + 합친 앞당김(적립+절약)
+export async function reportBoard(simulation) {
+  try {
+    let sv = null; try { sv = JSON.parse(localStorage.getItem('fm_save') || 'null'); } catch { /* ignore */ }
+    const today = new Date().toISOString().slice(0, 10);
+    const todaySaved = sv && sv.lastDate === today ? (sv.today || 0) : 0;
+    const totalSaved = sv ? (sv.total || 0) : 0;
+    const streak = sv ? (sv.streak || 0) : 0;
+    const p = computeProgress(simulation);
+    let nick = ''; try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
+    let band = null; try { band = statsRank(simulation).ageBand; } catch { /* ignore */ }
+    await submitSave({ todaySaved, totalSaved, advancedDays: p.advanceDays, streak, nickname: nick, ageBand: band });
+  } catch { /* ignore */ }
 }

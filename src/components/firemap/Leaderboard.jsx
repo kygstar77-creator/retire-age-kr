@@ -6,7 +6,7 @@ import { statsRank } from '../../firemap-v2/rank.js';
 import { fetchTopScores, fetchUserRank, submitScore, fetchAggregates, fetchNeighbors } from '../../utils/firemapScoresApi.js';
 import { fetchSaveBoard } from '../../utils/firemapSaveApi.js';
 import { displayName } from '../../firemap-v2/funName.js';
-import { wonStr } from '../../firemap-v2/dailyData.js';
+import { wonStr, fmtAdvance } from '../../firemap-v2/dailyData.js';
 import BalanceGame from './BalanceGame.jsx';
 
 const medal = (i) => (i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : String(i + 1));
@@ -15,12 +15,14 @@ const myCid = () => { try { return localStorage.getItem('fm_cid'); } catch { ret
 
 const BOARDS = [
   { key: 'fire', label: '빠른 은퇴' },
+  { key: 'advance', label: '퇴사 앞당김' },
   { key: 'today', label: '오늘의 절약왕' },
   { key: 'total', label: '누적 절약' },
   { key: 'streak', label: '연속일' }
 ];
 const SUBS = {
   fire: '가장 빨리 은퇴 가능한 순 · 계산하는 사람이 늘수록 갱신',
+  advance: '실제 저축(적립+절약)으로 퇴사를 가장 많이 당긴 순',
   today: '오늘 가장 많이 아낀 순 · 매일 0시 새로 시작',
   total: '지금까지 누적 절약이 많은 순',
   streak: '절약을 연속으로 기록한 날이 많은 순'
@@ -80,6 +82,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
 
   const rowValue = (row) => {
     if (board === 'fire') return row.earliest_age ? `${row.earliest_age}세 은퇴` : '—';
+    if (board === 'advance') return (fmtAdvance((Number(row.value) || 0) * 86400) || '0초') + ' 앞당김';
     if (board === 'streak') return `${row.value || 0}일`;
     return wonStr(row.value || 0);
   };
@@ -113,9 +116,9 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
           <section className="fm-rank-hero">
             <p className="fm-rank-label">내 순위 · {scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} · 가장 빨리 은퇴 순</p>
             <div className="fm-rank-top">
-              <span className="fm-rank-pct">{me ? `상위 ${me.percentile}%` : '집계 중…'}</span>
+              <span className="fm-rank-pct">{me ? `${me.position.toLocaleString()}위` : '집계 중…'}</span>
             </div>
-            {me && <p className="fm-rank-line">{scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} {me.total.toLocaleString()}명 중 {me.position.toLocaleString()}위 · {earliest ? `${earliest}세 은퇴 가능` : '아직 은퇴 어려움'}</p>}
+            {me && <p className="fm-rank-line">{scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} {me.total.toLocaleString()}명 중 상위 {me.percentile}% · {earliest ? `${earliest}세 은퇴 가능` : '아직 은퇴 어려움'}</p>}
             {me && (me.position > 1
               ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 더 일찍 은퇴 가능하면 순위가 올라가요</p>
               : <p className="fm-rank-climb">지금 전체 1등이에요! 가장 빨리 은퇴 가능한 사람</p>)}

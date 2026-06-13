@@ -82,7 +82,7 @@ export async function fetchSaveBoard(metric = 'today', limit = 10) {
       const rows = res.ok ? await res.json() : [];
       return rows.map((r) => ({ ...r, value: r.today_saved }));
     }
-    const col = metric === 'streak' ? 'streak' : 'total_saved';
+    const col = metric === 'streak' ? 'streak' : metric === 'advance' ? 'advanced_days' : 'total_saved';
     const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=client_id,nickname,${col},age_band&${col}=gt.0&order=${col}.desc&limit=80`;
     const res = await fetch(url, { method: 'GET', headers: headers() });
     const rows = res.ok ? await res.json() : [];

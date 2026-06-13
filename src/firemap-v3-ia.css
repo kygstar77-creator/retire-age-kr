@@ -686,3 +686,10 @@
 .fm-idline-cta{border:1px solid #fed7aa;border-radius:999px;background:#fff7ed;color:#9a3412;font-size:13px;font-weight:800;padding:7px 12px;cursor:pointer}
 .fm-nick-reg{width:100%;border:0;border-radius:12px;background:#ff5a00;color:#fff;font-size:14px;font-weight:800;padding:11px;cursor:pointer;margin-top:6px}
 .fm-nick-reg:disabled{background:#fed7aa}
+
+/* 적립 금액 변경 패널 */
+.fm-dep-edit{padding:4px 0 2px}
+.fm-dep-edit-row{display:flex;gap:8px;margin-top:10px}
+.fm-dep-edit-reset{flex:0 0 auto;border:1px solid #fecaca;border-radius:12px;background:#fff5f5;color:#dc2626;font-size:13px;font-weight:800;padding:10px 14px;cursor:pointer}
+.fm-dep-edit-save{flex:1;border:0;border-radius:12px;background:#ff5a00;color:#fff;font-size:14px;font-weight:800;padding:10px;cursor:pointer}
+.fm-dep-edit-save:disabled{background:#fed7aa}

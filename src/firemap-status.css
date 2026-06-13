@@ -84,3 +84,6 @@
 .fm-invest-chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .fm-invest-chips button { padding: 12px 8px; border-radius: 12px; border: 0.5px solid rgba(120,120,120,0.3); background: transparent; font-size: 13px; font-weight: 700; cursor: pointer; line-height: 1.3; }
 .fm-invest-chips button.is-active { background: #1e2859; color: #fff; border-color: #1e2859; }
+
+/* 세금 설명 가이드 링크 */
+.fm-tax-explain a { color: #ff5a00; font-weight: 700; text-decoration: underline; }

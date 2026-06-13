@@ -47,7 +47,10 @@ export default function Experiment({ inputs, onChange, simulation, onBack }) {
         </div>
         {investType === 2 && <RangeControl label="배당수익률" value={inputs.dividendYield} inputKey="dividendYield" type="percent" step={1} onChange={(next) => onChange('dividendYield', next)} />}
         {investType === 2 && grossDivAtRetire > 20000000 && <p className="fm-range-note">⚠️ 퇴사 시 연 배당 약 {formatWon(grossDivAtRetire)} · 금융소득 2,000만 초과 → 종합과세·건보료 부담↑ (도구 탭에서 정밀 확인)</p>}
-        <p className="fm-range-note">국내주식 양도세는 (대주주 제외) 면제, 해외주식은 차익 <b>22%</b>(연 250만 공제), 배당은 <b>15.4%</b> 원천징수 기준의 단순 반영이에요. 종합과세 누진·계좌 절세는 도구 탭에서.</p>
+        <div className="fm-tax-explain">
+          <p className="fm-range-note"><b>양도세 계산법:</b> 한 번에 다 파는 게 아니라 <b>퇴사 후 매년 쓰는 만큼 팔 때 그 차익</b>에 매겨요. 해외주식 <b>22%</b>(매년 250만 공제), 국내주식은 (대주주 제외) <b>면제</b>, 배당은 받을 때마다 <b>15.4%</b> 원천징수.</p>
+          <p className="fm-range-note">금융소득종합과세 누진·ISA·연금 절세계좌는 개인 소득·계좌에 따라 달라 <b>결과엔 자동 반영하지 않아요.</b> 자세히 → <a href="/guide/dividend-tax-thresholds.html" target="_blank" rel="noopener">배당 세금 경계선</a> · <a href="/guide/isa-pension-accounts.html" target="_blank" rel="noopener">ISA·연금 절세</a></p>
+        </div>
       </section>
       <section className="fm-card fm-graph">
         <p className="fm-kicker">내 미래 자산 차트</p><h2>나이별 자산 흐름을 비교해보세요</h2>

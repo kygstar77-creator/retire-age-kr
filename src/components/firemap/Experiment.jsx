@@ -78,7 +78,7 @@ export default function Experiment({ inputs, onChange, onBack }) {
               <span><i className="fm-dot fm-dot-improved" />절감안 · {runwayText(lowerCost)}</span>
             </div>
             <AssetCompareChart ages={ages} current={currentSeries} improved={improvedSeries} depletionAge={simulation.targetResult.depletionAge} improvedDepletionAge={lowerCost.targetResult.depletionAge} retirementAge={draft.targetRetirementAge} />
-            <p className="fm-chart-note">차트를 누르면 그 나이의 세후 자산이 표시돼요. 회색 점선은 현재 계획, 파란 영역은 절감안 기준입니다.</p>
+            <p className="fm-chart-note">차트를 누르면 그 나이의 자산이 표시돼요(선택한 투자유형 세금 반영). 회색 점선은 현재 계획, 파란 영역은 절감안 기준입니다.</p>
           </>
         ) : (
           <>

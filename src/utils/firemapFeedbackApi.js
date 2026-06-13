@@ -83,6 +83,15 @@ export async function loadCommunityThread() {
   return rows || [];
 }
 
+// 커뮤니티 최근 원글 미리보기(라운지 유도용)
+export async function fetchCommunityPeek(limit = 3) {
+  let rows = await commGet(`${TABLE}?select=id,nickname,message,created_at,parent_id&kind=eq.community&status=eq.visible&parent_id=is.null&order=created_at.desc&limit=${limit}`);
+  if (rows === null) {
+    rows = await commGet(`${TABLE}?select=id,nickname,message,created_at&kind=eq.community&status=eq.visible&order=created_at.desc&limit=${limit}`);
+  }
+  return rows || [];
+}
+
 export async function sendCommunity(message, parentId = null) {
   const clean = String(message || '').trim().slice(0, 240);
   if (!clean) return null;

@@ -8,7 +8,7 @@ import { fetchSaveBoard } from '../../utils/firemapSaveApi.js';
 import { displayName } from '../../firemap-v2/funName.js';
 import { wonStr, fmtAdvance, readJSON, todayStr } from '../../firemap-v2/dailyData.js';
 import { computeProgress, hasCalculated } from '../../utils/savingsEngine.js';
-import BalanceGame from './BalanceGame.jsx';
+import CommunityPeek from './CommunityPeek.jsx';
 
 const medal = (i) => (i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : String(i + 1));
 const readNick = () => { try { return localStorage.getItem('fm_nickname') || ''; } catch { return ''; } };
@@ -236,7 +236,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
         </ol>
       </section>
 
-      {board === 'fire' && <BalanceGame />}
+      {board === 'fire' && <CommunityPeek onMove={onMove} />}
 
       <button type="button" className="fm-city-cta" onClick={() => onMove(board === 'fire' ? 'experiment' : 'save')}>{board === 'fire' ? '조건 바꿔 순위 올리기' : '저축 기록하러 가기'}</button>
     </main>

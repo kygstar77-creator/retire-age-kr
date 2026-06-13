@@ -678,3 +678,11 @@
 .fm-acct-go{width:100%;border:0;border-radius:12px;background:#ff5a00;color:#fff;font-size:15px;font-weight:800;padding:13px;cursor:pointer}
 .fm-acct-go:disabled{background:#fed7aa}
 .fm-acct-switch{display:block;margin:10px auto 0;background:none;border:0;color:#6b7280;font-size:13px;text-decoration:underline;cursor:pointer}
+
+/* 신원 줄(닉네임=계정 통일) */
+.fm-idline{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:13px;color:#374151;margin:4px 0 8px}
+.fm-idline b{color:#ff5a00}
+.fm-idline-link{background:none;border:0;color:#6b7280;font-size:12px;text-decoration:underline;cursor:pointer}
+.fm-idline-cta{border:1px solid #fed7aa;border-radius:999px;background:#fff7ed;color:#9a3412;font-size:13px;font-weight:800;padding:7px 12px;cursor:pointer}
+.fm-nick-reg{width:100%;border:0;border-radius:12px;background:#ff5a00;color:#fff;font-size:14px;font-weight:800;padding:11px;cursor:pointer;margin-top:6px}
+.fm-nick-reg:disabled{background:#fed7aa}

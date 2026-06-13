@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { identityIds } from '../../utils/identity.js';
+import IdentityLine from './IdentityLine.jsx';
 import { pushState, pullKey } from '../../utils/firemapStateApi.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { funHandle } from '../../firemap-v2/funName.js';
@@ -174,11 +175,7 @@ export default function Savings({ simulation, onMove }) {
         <p className="fm-kicker">오늘의 절약 랭킹 🏆</p>
         <p className="fm-section-sub">오늘 가장 많이 아낀 사람들이에요 · 매일 새로 시작해요</p>
         {rank && <p className="fm-save-myrank">오늘 내 절약 <b>{wonStr(todaySaved)}</b> · {rank.total.toLocaleString()}명 중 <b>{rank.position.toLocaleString()}위</b></p>}
-        <div className="fm-nick-row">
-          <input id="fm-save-nick" maxLength={16} value={nick} placeholder="닉네임 (예: 파이어왕)" onChange={(e) => setNick(e.target.value)} />
-          <button type="button" onClick={saveNick}>{nickSaved ? '등록됨 ✓' : '닉네임 등록'}</button>
-        </div>
-        <p className="fm-section-sub">닉네임을 넣으면 아래 랭킹에 바로 내 이름으로 올라가요. 익명도 괜찮아요.</p>
+        <IdentityLine onMove={onMove} />
         <ol className="fm-lb-list">
           {top === null && <li className="fm-lb-empty">불러오는 중…</li>}
           {top && top.length === 0 && <li className="fm-lb-empty">아직 오늘 기록이 적어요. 첫 주자가 되어보세요!</li>}

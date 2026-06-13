@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
+import IdentityLine from './IdentityLine.jsx';
 import { identityIds } from '../../utils/identity.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { fetchTopScores, fetchUserRank, submitScore, fetchAggregates, fetchNeighbors } from '../../utils/firemapScoresApi.js';
@@ -157,12 +158,9 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
           )}
 
           <section className="fm-card fm-nick">
-            <label htmlFor="fm-nick-input">내 닉네임 (랭킹에 표시)</label>
-            <div className="fm-nick-row">
-              <input id="fm-nick-input" maxLength={16} value={nick} placeholder="예: 파이어왕" onChange={(e) => setNick(e.target.value)} />
-              <button type="button" onClick={saveNick} disabled={saving || !nick.trim()}>{saving ? '등록 중' : saved ? '등록됨' : '랭킹 등록'}</button>
-            </div>
-            <small>닉네임을 안 넣어도 '알뜰한 너구리'처럼 자동 별명으로 올라가요. 넣으면 내 이름으로 바뀌어요.</small>
+            <IdentityLine onMove={onMove} />
+            <button type="button" className="fm-nick-reg" onClick={saveNick} disabled={saving}>{saving ? '등록 중' : saved ? '등록됨 ✓' : '내 등수 랭킹에 올리기'}</button>
+            <small>익명이면 '알뜰한 너구리'처럼 자동 별명으로, 계정을 만들면 내 이름으로 올라가요.</small>
           </section>
         </>
       )}

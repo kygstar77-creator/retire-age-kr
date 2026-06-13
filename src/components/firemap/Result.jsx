@@ -367,15 +367,37 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
     try { await navigator.clipboard.writeText(url); window.alert('내 결과 링크를 복사했어요. 단톡방에 붙여넣어 보세요!'); }
     catch { onMove('share'); }
   };
+  const shareOther = async () => {
+    track('share', { type: 'result_other' });
+    const ph = survivalPhrase(simulation);
+    const earliest = simulation.earliestRetirementAge;
+    let pos, tot;
+    try { const rr = await fetchUserRank(earliest); if (rr && rr.total) { pos = rr.position; tot = rr.total; } } catch (e) { /* ignore */ }
+    const l = new URL('https://firemap.kr/s');
+    if (earliest) l.searchParams.set('ea', String(earliest));
+    l.searchParams.set('target', String(simulation.inputs.targetRetirementAge));
+    l.searchParams.set('rwy', ph.runway);
+    l.searchParams.set('ret', String(simulation.inputs.annualReturnRate));
+    l.searchParams.set('inf', String(simulation.inputs.inflationRate));
+    if (pos && tot) { l.searchParams.set('pos', String(pos)); l.searchParams.set('tot', String(tot)); }
+    const url = l.toString();
+    if (navigator.share) {
+      try { await navigator.share({ text: '파이어족들을 위한 커뮤니티 · 파이어맵', url }); return; }
+      catch (e) { if (e && e.name === 'AbortError') return; }
+    }
+    try { await navigator.clipboard.writeText(url); window.alert('내 결과 링크를 복사했어요. 어디든 붙여넣어 보세요!'); }
+    catch { /* ignore */ }
+  };
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header />
       <ResultSimTabs current="result" />
       <ResultHeroV2 simulation={simulation} />
       <div className="fm-rank-cta">
-        <button type="button" className="fm-rank-cta-share" onClick={shareRank}>결과 카드 공유</button>
+        <button type="button" className="fm-rank-cta-share" onClick={shareRank}>카카오톡 공유</button>
         <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>🎛️ 수치 바꿔보기</button>
       </div>
+      <button type="button" className="fm-rank-cta-other" onClick={shareOther}>🔗 링크 복사 · 다른 앱으로 공유</button>
       <AccountCard kicker="내 기록 지키기 🔒" sub="방금 나온 퇴사 나이·등수와 적립·절약 기록을 닉네임+비밀번호로 저장하세요. 기기가 바뀌어도 같은 계정으로 이어집니다." />
       <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />
       <AssetJourney simulation={simulation} />

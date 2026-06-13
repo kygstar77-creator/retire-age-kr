@@ -212,6 +212,8 @@
 .fm-rank-cta-share { border: 0; background: #ff5a00; color: #fff; }
 .fm-rank-cta-up { border: 0; background: #1e2859; color: #fff; }
 .fm-rank-cta button:active { transform: scale(0.99); }
+.fm-rank-cta-other { display: block; width: 100%; margin: 0 0 14px; padding: 11px; border: 0; background: transparent; color: #6b7280; font-size: 13.5px; font-weight: 600; cursor: pointer; }
+.fm-rank-cta-other:active { color: #ff5a00; }
 
 /* 리더보드 */
 .fm-lb-list { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }

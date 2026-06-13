@@ -47,7 +47,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
     if (board === 'fire') {
       const [t, r, a, nb] = await Promise.all([
         fetchTopScores(10, bandArg),
-        fetchUserRank(earliest, bandArg),
+        fetchUserRank(earliest, bandArg, score),
         fetchAggregates(),
         fetchNeighbors(earliest, bandArg)
       ]);
@@ -113,9 +113,9 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
           <section className="fm-rank-hero">
             <p className="fm-rank-label">내 순위 · {scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} · 가장 빨리 은퇴 순</p>
             <div className="fm-rank-top">
-              <span className="fm-rank-pct">{me ? `${me.position.toLocaleString()}위` : '집계 중…'}</span>
+              <span className="fm-rank-pct">{me ? `상위 ${me.percentile}%` : '집계 중…'}</span>
             </div>
-            {me && <p className="fm-rank-line">{scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} {me.total.toLocaleString()}명 중 · {earliest ? `${earliest}세 은퇴 가능` : '아직 은퇴 어려움'}</p>}
+            {me && <p className="fm-rank-line">{scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} {me.total.toLocaleString()}명 중 {me.position.toLocaleString()}위 · {earliest ? `${earliest}세 은퇴 가능` : '아직 은퇴 어려움'}</p>}
             {me && (me.position > 1
               ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 더 일찍 은퇴 가능하면 순위가 올라가요</p>
               : <p className="fm-rank-climb">지금 전체 1등이에요! 가장 빨리 은퇴 가능한 사람</p>)}
@@ -147,7 +147,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
                 </li>
                 {belowN.map((r, i) => (
                   <li key={`b${i}`} className="fm-lb-row">
-                    <span className="fm-lb-rank">{(me.position + Math.max(1, sameCount) + i).toLocaleString()}</span>
+                    <span className="fm-lb-rank">{(me.position + i + 1).toLocaleString()}</span>
                     <span className="fm-lb-who">{displayName(r)}</span>
                     <span className="fm-lb-score">{r.earliest_age ? `${r.earliest_age}세 은퇴` : '—'}</span>
                   </li>

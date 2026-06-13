@@ -5,7 +5,6 @@ import { fetchAggregates } from '../../utils/firemapScoresApi.js';
 import DailyFire from './DailyFire.jsx';
 import FeedbackButton from './FeedbackButton.jsx';
 import { track } from '../../firemap-v2/dailyData.js';
-import DepositCard from './DepositCard.jsx';
 import FireStatus from './FireStatus.jsx';
 
 export default function Home({ onStart, onMove, simulation }) {
@@ -52,7 +51,6 @@ export default function Home({ onStart, onMove, simulation }) {
         {proof && <p className="fm-home-proof">{proof}</p>}
       </section>
       <FireStatus onMove={onMove} simulation={simulation} />
-      <DepositCard onMove={onMove} simulation={simulation} />
       <DailyFire onMove={onMove} />
       <section className="fm-home-mini-card">
         <strong>입력값은 기기 안에서 계산돼요</strong>

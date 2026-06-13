@@ -4,7 +4,7 @@ export const screens = {
   home:       { hash: '#home',       title: '홈',     type: 'home',     tab: 'home' },
   question:   { hash: '#question',   title: '질문',   type: 'question' },
   result:     { hash: '#result',     title: '결과',   type: 'result',   tab: 'home', next: ['ranking', 'save', 'experiment', 'share', 'tools'] },
-  save:       { hash: '#save',       title: '절약',   type: 'save',     tab: 'save' },
+  save:       { hash: '#save',       title: '저축',   type: 'save',     tab: 'save' },
   tools:      { hash: '#tools',      title: '도구',   type: 'tools',    tab: 'tools' },
   experiment: { hash: '#experiment', title: '조건 비교',          type: 'tool', back: 'result' },
   share:      { hash: '#share',      title: '공유',               type: 'tool', back: 'result' },
@@ -21,7 +21,7 @@ export const screens = {
 // 결과 화면 다음 행동 (MVP 메인)
 export const NEXT_ACTION_META = {
   ranking:    { tag: '랭킹', title: '전체 랭킹 보기',     desc: '1등까지 몇 명? 내 순위', primary: true },
-  save:       { tag: '절약', title: '오늘부터 절약 적립',   desc: '아낀 돈이 파이어 며칠 당기는지' },
+  save:       { tag: '저축', title: '오늘부터 저축 기록',   desc: '적립·절약이 퇴사를 며칠 당기는지' },
   experiment: { tag: '비교', title: '조건 바꿔 비교하기', desc: '증권앱 차트로 What-If' },
   share:      { tag: '공유', title: '내 결과 공유',       desc: '퇴사 나이·또래 비교 카드' },
   tools:      { tag: '도구', title: '정밀 도구 더보기',   desc: '건보료·세금·도시·커뮤니티' }
@@ -41,7 +41,7 @@ export const TOOLS = [
 // 하단 탭
 export const TABS = [
   { id: 'home',  label: '홈',   target: 'home' },
-  { id: 'save',  label: '절약', target: 'save' },
+  { id: 'save',  label: '저축', target: 'save' },
   { id: 'ranking', label: '랭킹', target: 'ranking' },
   { id: 'community', label: '커뮤니티', target: 'community' },
   { id: 'tools', label: '도구', target: 'tools' }

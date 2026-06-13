@@ -60,7 +60,7 @@ export async function submitScore({ fireScore, ageBand, survivalAge, nickname, e
 }
 
 // 함께 계산한 사용자 중 내 등수/백분위
-export async function fetchUserRank(earliestAge, ageBand) {
+export async function fetchUserRank(earliestAge, ageBand, fireScore) {
   try {
     const opts = { method: 'GET', headers: headers({ prefer: 'count=exact', range: '0-0' }) };
     const band = ageBand ? `&age_band=eq.${ageBand}` : '';
@@ -68,12 +68,18 @@ export async function fetchUserRank(earliestAge, ageBand) {
     const total = countFromRange(totalRes);
     if (!total) return null;
     const hasAge = earliestAge != null && Number.isFinite(Number(earliestAge));
+    const mine = hasAge ? Math.round(Number(earliestAge)) : null;
     // 더 이른 은퇴 가능 나이 = 더 높은 순위. 값 없으면(은퇴 불가) 값 있는 사람 모두가 상위.
     const higherQuery = hasAge
-      ? `${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=lt.${Math.round(Number(earliestAge))}${band}`
+      ? `${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=lt.${mine}${band}`
       : `${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=not.is.null${band}`;
     const higherRes = await fetch(higherQuery, opts);
-    const higher = countFromRange(higherRes);
+    let higher = countFromRange(higherRes);
+    // 같은 은퇴나이(동점)는 생존점수가 높은 사람이 상위 → 등수가 뭉치지 않게 세분화
+    if (hasAge && Number.isFinite(Number(fireScore))) {
+      const tieRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=eq.${mine}&fire_score=gt.${Math.round(Number(fireScore))}${band}`, opts);
+      higher += countFromRange(tieRes);
+    }
     const position = higher + 1;
     const percentile = Math.min(99, Math.max(1, Math.round((higher / total) * 100)));
     return { total, position, percentile };

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { identityIds, accountHandle } from '../../utils/identity.js';
 import IdentityLine from './IdentityLine.jsx';
+import DepositCard from './DepositCard.jsx';
 import { pushState, pullKey } from '../../utils/firemapStateApi.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { funHandle } from '../../firemap-v2/funName.js';
@@ -123,8 +124,9 @@ export default function Savings({ simulation, onMove }) {
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
-      <Header tag="절약" />
+      <Header tag="저축" />
       <p className="fm-daily-wisdom">“{quote}”</p>
+      <DepositCard simulation={simulation} onMove={onMove} />
 
       <section className="fm-card fm-save-screen">
         <p className="fm-kicker">오늘의 절약 🔥 {streak}일 연속</p>

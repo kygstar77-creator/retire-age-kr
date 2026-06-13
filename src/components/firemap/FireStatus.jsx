@@ -71,7 +71,7 @@ export default function FireStatus({ simulation, onMove }) {
       </div>
 
       <div className="fm-status-feed">
-        <button type="button" className="fm-status-chip" onClick={() => onMove && onMove('home')}>
+        <button type="button" className="fm-status-chip" onClick={() => onMove && onMove('save')}>
           <small>이번 달 적립</small>
           <b>{won(p.monthDeposit)}{p.monthlyPlan > 0 ? <em> / {won(p.monthlyPlan)}</em> : null}</b>
         </button>

@@ -12,7 +12,7 @@ function mapErr(code, msg) {
   return '잠시 후 다시 시도해주세요.';
 }
 
-export default function AccountCard() {
+export default function AccountCard({ kicker, sub } = {}) {
   const acc = account();
   const [mode, setMode] = useState('login');
   const [h, setH] = useState('');
@@ -45,9 +45,9 @@ export default function AccountCard() {
 
   return (
     <section className="fm-card fm-acct">
-      <p className="fm-kicker">내 계정 (선택)</p>
+      <p className="fm-kicker">{kicker || '내 계정 (선택)'}</p>
       <h2>{mode === 'signup' ? '계정 만들기' : '로그인'}</h2>
-      <p className="fm-acct-sub">닉네임+비밀번호만 정하면, 기기가 바뀌거나 브라우저를 지워도 내 글·적립·랭킹이 그대로 이어져요. 이메일·가입절차 없어요.</p>
+      <p className="fm-acct-sub">{sub || '닉네임+비밀번호만 정하면, 기기가 바뀌거나 브라우저를 지워도 내 글·적립·랭킹이 그대로 이어져요. 이메일·가입절차 없어요.'}</p>
       <input className="fm-acct-in" maxLength={16} placeholder="닉네임 (2~16자)" value={h} onChange={(e) => setH(e.target.value)} />
       <input className="fm-acct-in" type="password" maxLength={32} placeholder="비밀번호 (4자 이상)" value={pw} onChange={(e) => setPw(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter') submit(); }} />
       {err && <p className="fm-acct-err">{err}</p>}

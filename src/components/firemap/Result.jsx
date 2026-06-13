@@ -10,6 +10,7 @@ import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
 import { FIRE_CITIES } from '../../firemap-v2/cities.js';
 import { track } from '../../firemap-v2/dailyData.js';
+import AccountCard from './AccountCard.jsx';
 
 function ResultHeroV2({ simulation }) {
   const base = statsRank(simulation);
@@ -342,6 +343,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
         <button type="button" className="fm-rank-cta-share" onClick={shareRank}>내 결과 공유하기</button>
         <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>더 일찍 당겨보기</button>
       </div>
+      <AccountCard kicker="내 기록 지키기 🔒" sub="방금 나온 퇴사 나이·등수와 적립·절약 기록을 닉네임+비밀번호로 저장하세요. 기기가 바뀌어도 같은 계정으로 이어집니다." />
       <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />
       <AssetJourney simulation={simulation} />
       <TopLevers inputs={inputs} simulation={simulation} onChange={onChange} />

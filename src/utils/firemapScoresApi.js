@@ -60,7 +60,7 @@ export async function submitScore({ fireScore, ageBand, survivalAge, nickname, e
 }
 
 // 함께 계산한 사용자 중 내 등수/백분위
-export async function fetchUserRank(earliestAge, ageBand, fireScore) {
+export async function fetchUserRank(earliestAge, ageBand, advancedDays) {
   try {
     const opts = { method: 'GET', headers: headers({ prefer: 'count=exact', range: '0-0' }) };
     const band = ageBand ? `&age_band=eq.${ageBand}` : '';
@@ -75,9 +75,10 @@ export async function fetchUserRank(earliestAge, ageBand, fireScore) {
       : `${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=not.is.null${band}`;
     const higherRes = await fetch(higherQuery, opts);
     let higher = countFromRange(higherRes);
-    // 같은 은퇴나이(동점)는 생존점수가 높은 사람이 상위 → 등수가 뭉치지 않게 세분화
-    if (hasAge && Number.isFinite(Number(fireScore))) {
-      const tieRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=eq.${mine}&fire_score=gt.${Math.round(Number(fireScore))}${band}`, opts);
+    // 같은 은퇴나이(동점)는 실제 저축으로 더 많이 당긴 사람이 상위 → 매일 저축하면 같은 나이대를 제침
+    if (hasAge) {
+      const adv = Number.isFinite(Number(advancedDays)) ? Number(advancedDays) : 0;
+      const tieRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=eq.${mine}&advanced_days=gt.${adv}${band}`, opts);
       higher += countFromRange(tieRes);
     }
     const position = higher + 1;
@@ -88,11 +89,32 @@ export async function fetchUserRank(earliestAge, ageBand, fireScore) {
   }
 }
 
+// 내 점수행의 advanced_days만 갱신(저축 변동 시) → 동점 분리에 즉시 반영
+export async function updateScoreAdvance(advancedDays) {
+  const cid = identityId();
+  if (!cid) return false;
+  const v = (advancedDays != null && Number.isFinite(Number(advancedDays))) ? Number(Number(advancedDays).toFixed(2)) : 0;
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?client_id=eq.${cid}`, {
+      method: 'PATCH', headers: headers({ prefer: 'return=minimal' }),
+      body: JSON.stringify({ advanced_days: v })
+    });
+    return res.ok;
+  } catch { return false; }
+}
+
 export async function fetchTopScores(limit = 10, ageBand) {
   try {
     const band = ageBand ? `&age_band=eq.${ageBand}` : '';
-    const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=client_id,nickname,fire_score,age_band,earliest_age${band}&order=earliest_age.asc.nullslast,fire_score.desc&limit=${limit}`;
-    const res = await fetch(url, { method: 'GET', headers: headers() });
+    const sel = `select=client_id,nickname,fire_score,age_band,earliest_age${band}`;
+    // 1순위: 빠른 은퇴 → 같으면 실제 저축으로 더 당긴 사람(advanced_days) → 생존점수
+    const urlAdv = `${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&order=earliest_age.asc.nullslast,advanced_days.desc,fire_score.desc&limit=${limit}`;
+    let res = await fetch(urlAdv, { method: 'GET', headers: headers() });
+    if (!res.ok) {
+      // advanced_days 컬럼 마이그레이션 전이면 옛 정렬로 폴백
+      const urlOld = `${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&order=earliest_age.asc.nullslast,fire_score.desc&limit=${limit}`;
+      res = await fetch(urlOld, { method: 'GET', headers: headers() });
+    }
     if (!res.ok) return [];
     return await res.json();
   } catch {

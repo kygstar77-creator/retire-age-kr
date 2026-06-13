@@ -21,7 +21,7 @@ const BOARDS = [
   { key: 'save', label: '절약' }
 ];
 const SUBS = {
-  fire: '가장 빨리 은퇴 가능한 순 · 계산하는 사람이 늘수록 갱신',
+  fire: '가장 빨리 은퇴 가능한 순 · 같은 나이면 더 모아 더 당긴 사람이 위로',
   advance: '실제 저축(적립+절약)으로 퇴사를 가장 많이 당긴 순',
   deposit: '이번 달 실제 적립이 많은 순 · 매월 새로 시작',
   save: '아껴서 모은 돈 랭킹'
@@ -33,6 +33,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
   const earliest = simulation.earliestRetirementAge;
   const ids = identityIds();
   const acctHandle = accountHandle();
+  const myAdvance = hasCalculated() ? Math.max(0, computeProgress(simulation).advanceDays) : 0;
   const [board, setBoard] = useState('fire');
   const [saveMetric, setSaveMetric] = useState('total');
   const [top, setTop] = useState(null);
@@ -49,7 +50,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
     if (board === 'fire') {
       const [t, r, a, nb] = await Promise.all([
         fetchTopScores(10, bandArg),
-        fetchUserRank(earliest, bandArg, score),
+        fetchUserRank(earliest, bandArg, myAdvance),
         fetchAggregates(),
         fetchNeighbors(earliest, bandArg)
       ]);
@@ -147,8 +148,8 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
             </div>
             {me && <p className="fm-rank-line">{scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} {me.total.toLocaleString()}명 중 상위 {me.percentile}% · {earliest ? `${earliest}세 은퇴 가능` : '아직 은퇴 어려움'}</p>}
             {me && (me.position > 1
-              ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 더 일찍 은퇴 가능하면 순위가 올라가요</p>
-              : <p className="fm-rank-climb">지금 전체 1등이에요! 가장 빨리 은퇴 가능한 사람</p>)}
+              ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 더 일찍 은퇴하거나, 같은 나이면 <b>저축으로 더 당기면</b> 올라가요</p>
+              : <p className="fm-rank-climb">지금 전체 1등! 매일 저축해서 자리를 지켜요 🔥</p>)}
           </section>
 
           <div className="fm-scope-toggle">

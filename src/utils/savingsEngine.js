@@ -7,6 +7,7 @@
 import { dailyNeedOf } from '../firemap-v2/dailyData.js';
 import { statsRank } from '../firemap-v2/rank.js';
 import { submitSave } from './firemapSaveApi.js';
+import { updateScoreAdvance } from './firemapScoresApi.js';
 
 const readJSON = (k) => { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch { return null; } };
 const monthStr = () => new Date().toISOString().slice(0, 7);
@@ -124,5 +125,6 @@ export async function reportBoard(simulation) {
     let band = null; try { band = statsRank(simulation).ageBand; } catch { /* ignore */ }
     const okCalc = hasCalculated() && !!(simulation && simulation.earliestRetirementAge);
     await submitSave({ todaySaved, totalSaved, advancedDays: okCalc ? p.advanceDays : null, streak, nickname: nick, ageBand: band, depositTotal: depTotal, depositMonth: p.monthDeposit });
+    await updateScoreAdvance(okCalc ? Math.max(0, p.advanceDays) : 0);
   } catch { /* ignore */ }
 }

@@ -58,7 +58,8 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
     const adjustedLivingCost = overseasAdjustment ? overseasAdjustment.adjustedLivingCost : baseLivingCost;
     const healthInsuranceExpense = isRetired ? calculateHealthInsuranceExpense(data, inflationFactor) : 0;
     const livingCost = adjustedLivingCost + healthInsuranceExpense;
-    const partTimeIncome = isRetired ? yearly(data.partTimeIncomeAfterRetirement) * inflationFactor : 0;
+    // 부업소득은 물가 미반영(명목 고정): 생활비·월급과 달리 자동 인상 주체가 없으므로 입력한 금액 그대로 본다.
+    const partTimeIncome = isRetired ? yearly(data.partTimeIncomeAfterRetirement) : 0;
     const pensionIncome = isRetired && age >= data.expectedPensionAge
       ? yearly(data.expectedMonthlyPension) * inflationFactor
       : 0;

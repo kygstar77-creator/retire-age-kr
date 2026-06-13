@@ -5,7 +5,7 @@ import { buildScenario, fireStatus, runwayText, scenarioEndAge, survivalPhrase }
 import { simulateRetirement } from '../../utils/retirementSimulator.js';
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
 import { statsRank, gradeFromScore } from '../../firemap-v2/rank.js';
-import { submitScore, fetchUserRank, fetchAggregates } from '../../utils/firemapScoresApi.js';
+import { submitScore, fetchUserRank, fetchAggregates, assetBandOf } from '../../utils/firemapScoresApi.js';
 import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js';
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
 import { FIRE_CITIES } from '../../firemap-v2/cities.js';
@@ -38,7 +38,8 @@ function ResultHeroV2({ simulation }) {
             ageBand: base.ageBand,
             survivalAge: (simulation.targetResult && simulation.targetResult.depletionAge) || simulation.inputs.simulationUntilAge,
             nickname: nick,
-            earliestAge: earliest
+            earliestAge: earliest,
+            assetBand: assetBandOf(simulation.netWorth)
           });
           sessionStorage.setItem(key, '1');
         }
@@ -74,7 +75,7 @@ function ResultHeroV2({ simulation }) {
         <span>목표 퇴사 <b>{target}세</b></span>
         <span>자산 버티는 나이 <b>{phrase.runway}</b></span>
       </div>
-      <p className="fm-rank-note">{peerAvg != null ? `또래 평균 ${peerAvg}세 · ` : ''}또래 순자산 상위 {base.percentile}% · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)}</p>
+      <p className="fm-rank-note">{peerAvg != null ? `또래 평균 ${peerAvg}세 · ` : ''}또래 순자산 상위 {base.percentile}%(통계청 2025 가계금융복지조사 기준) · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)}</p>
     </section>
   );
 }

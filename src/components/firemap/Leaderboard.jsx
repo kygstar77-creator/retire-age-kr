@@ -16,16 +16,14 @@ const myCid = () => { try { return localStorage.getItem('fm_cid'); } catch { ret
 const BOARDS = [
   { key: 'fire', label: '빠른 은퇴' },
   { key: 'advance', label: '퇴사 앞당김' },
-  { key: 'today', label: '오늘의 절약왕' },
-  { key: 'total', label: '누적 절약' },
-  { key: 'streak', label: '연속일' }
+  { key: 'deposit', label: '이번 달 저축' },
+  { key: 'save', label: '절약' }
 ];
 const SUBS = {
   fire: '가장 빨리 은퇴 가능한 순 · 계산하는 사람이 늘수록 갱신',
   advance: '실제 저축(적립+절약)으로 퇴사를 가장 많이 당긴 순',
-  today: '오늘 가장 많이 아낀 순 · 매일 0시 새로 시작',
-  total: '지금까지 누적 절약이 많은 순',
-  streak: '절약을 연속으로 기록한 날이 많은 순'
+  deposit: '이번 달 실제 적립이 많은 순 · 매월 새로 시작',
+  save: '아껴서 모은 돈 랭킹'
 };
 
 export default function Leaderboard({ simulation, onBack, onMove }) {
@@ -35,6 +33,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
   const ids = identityIds();
   const acctHandle = accountHandle();
   const [board, setBoard] = useState('fire');
+  const [saveMetric, setSaveMetric] = useState('total');
   const [top, setTop] = useState(null);
   const [me, setMe] = useState(null);
   const [neighbors, setNeighbors] = useState(null);
@@ -56,12 +55,13 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
       setTop(t); setMe(r); setAgg(a); setNeighbors(nb);
     } else {
       setTop(null); setNeighbors(null);
-      const rows = await fetchSaveBoard(board, 10);
+      const metric = board === 'save' ? saveMetric : board;
+      const rows = await fetchSaveBoard(metric, 10);
       setTop(rows);
     }
   };
 
-  useEffect(() => { load(); /* eslint-disable-next-line */ }, [score, scope, board]);
+  useEffect(() => { load(); /* eslint-disable-next-line */ }, [score, scope, board, saveMetric]);
 
   const saveNick = async () => {
     const v = nick.trim().slice(0, 16);
@@ -83,7 +83,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
   const rowValue = (row) => {
     if (board === 'fire') return row.earliest_age ? `${row.earliest_age}세 은퇴` : '—';
     if (board === 'advance') return (fmtAdvance((Number(row.value) || 0) * 86400) || '0초') + ' 앞당김';
-    if (board === 'streak') return `${row.value || 0}일`;
+    if (board === 'save' && saveMetric === 'streak') return `${row.value || 0}일`;
     return wonStr(row.value || 0);
   };
 
@@ -110,6 +110,13 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
           <button type="button" key={b.key} className={board === b.key ? 'on' : ''} onClick={() => setBoard(b.key)}>{b.label}</button>
         ))}
       </div>
+      {board === 'save' && (
+        <div className="fm-scope-toggle">
+          <button type="button" className={saveMetric === 'total' ? 'on' : ''} onClick={() => setSaveMetric('total')}>누적</button>
+          <button type="button" className={saveMetric === 'today' ? 'on' : ''} onClick={() => setSaveMetric('today')}>오늘</button>
+          <button type="button" className={saveMetric === 'streak' ? 'on' : ''} onClick={() => setSaveMetric('streak')}>연속</button>
+        </div>
+      )}
 
       {board === 'fire' && (
         <>
@@ -200,7 +207,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
 
       {board === 'fire' && <BalanceGame />}
 
-      <button type="button" className="fm-city-cta" onClick={() => onMove(board === 'fire' ? 'experiment' : 'save')}>{board === 'fire' ? '조건 바꿔 순위 올리기' : '절약 더 하러 가기'}</button>
+      <button type="button" className="fm-city-cta" onClick={() => onMove(board === 'fire' ? 'experiment' : 'save')}>{board === 'fire' ? '조건 바꿔 순위 올리기' : '저축 기록하러 가기'}</button>
     </main>
   );
 }

@@ -34,7 +34,7 @@ function countFromRange(res) {
 }
 
 // 오늘 내 절약 한 줄을 upsert (client_id + date 기준 갱신)
-export async function submitSave({ todaySaved, totalSaved, advancedDays, streak, nickname, ageBand }) {
+export async function submitSave({ todaySaved, totalSaved, advancedDays, streak, nickname, ageBand, depositTotal, depositMonth }) {
   const cid = identityId();
   if (!cid) return false;
   const nick = (nickname || '').trim().slice(0, 16) || null;
@@ -47,14 +47,22 @@ export async function submitSave({ todaySaved, totalSaved, advancedDays, streak,
     streak: (streak != null && Number.isFinite(Number(streak))) ? Math.round(streak) : null,
     nickname: nick,
     age_band: ageBand != null ? String(ageBand) : null,
+    deposit_total: Math.max(0, Math.round(depositTotal || 0)),
+    deposit_month: Math.max(0, Math.round(depositMonth || 0)),
     updated_at: new Date().toISOString()
   };
+  const post = (b) => fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?on_conflict=client_id,date`, {
+    method: 'POST',
+    headers: headers({ prefer: 'return=minimal,resolution=merge-duplicates' }),
+    body: JSON.stringify(b)
+  });
   try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?on_conflict=client_id,date`, {
-      method: 'POST',
-      headers: headers({ prefer: 'return=minimal,resolution=merge-duplicates' }),
-      body: JSON.stringify(body)
-    });
+    let res = await post(body);
+    if (!res.ok) {
+      // 적립 컬럼(deposit_*) 마이그레이션 전이면 해당 필드 빼고 재시도 → 절약 저장은 항상 성공
+      const { deposit_total, deposit_month, ...rest } = body;
+      res = await post(rest);
+    }
     return res.ok;
   } catch {
     return false;
@@ -76,6 +84,21 @@ export async function fetchSaveTop(limit = 10) {
 // 보드별 절약 랭킹 — today(오늘) / total(누적) / streak(연속일)
 export async function fetchSaveBoard(metric = 'today', limit = 10) {
   try {
+    if (metric === 'deposit') {
+      const first = `${todayStr().slice(0, 7)}-01`;
+      const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=client_id,nickname,deposit_month,age_band&date=gte.${first}&deposit_month=gt.0&order=deposit_month.desc&limit=80`;
+      const res = await fetch(url, { method: 'GET', headers: headers() });
+      const rows = res.ok ? await res.json() : [];
+      const seen = new Set();
+      const out = [];
+      for (const r of rows) {
+        if (seen.has(r.client_id)) continue;
+        seen.add(r.client_id);
+        out.push({ ...r, value: r.deposit_month });
+        if (out.length >= limit) break;
+      }
+      return out;
+    }
     if (metric === 'today') {
       const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=client_id,nickname,today_saved,age_band&date=eq.${todayStr()}&today_saved=gt.0&order=today_saved.desc&limit=${limit}`;
       const res = await fetch(url, { method: 'GET', headers: headers() });

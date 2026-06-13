@@ -115,8 +115,10 @@ export async function reportBoard(simulation) {
     const totalSaved = sv ? (sv.total || 0) : 0;
     const streak = sv ? (sv.streak || 0) : 0;
     const p = computeProgress(simulation);
+    let depTotal = 0;
+    try { const fd = JSON.parse(localStorage.getItem('fm_daily') || 'null'); const dd = (fd && fd.days) || {}; depTotal = Object.values(dd).reduce((a, b) => a + (Number(b) || 0), 0); } catch { /* ignore */ }
     let nick = ''; try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
     let band = null; try { band = statsRank(simulation).ageBand; } catch { /* ignore */ }
-    await submitSave({ todaySaved, totalSaved, advancedDays: p.advanceDays, streak, nickname: nick, ageBand: band });
+    await submitSave({ todaySaved, totalSaved, advancedDays: p.advanceDays, streak, nickname: nick, ageBand: band, depositTotal: depTotal, depositMonth: p.monthDeposit });
   } catch { /* ignore */ }
 }

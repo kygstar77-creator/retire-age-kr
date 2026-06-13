@@ -352,7 +352,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
     if (pos && tot) { l.searchParams.set('pos', String(pos)); l.searchParams.set('tot', String(tot)); }
     const url = l.toString();
     const title = earliest ? `나는 ${earliest}세에 퇴사할 수 있어요 — 파이어맵` : '파이어맵 — 내 퇴사 가능 나이';
-    const description = '나는 또래 중 파이어 랭킹 몇 등일까? 1분이면 확인';
+    const description = '파이어족들을 위한 커뮤니티 · 나는 또래 중 파이어 랭킹 몇 등?';
     track('share_summary_copy', { type: 'result_share' });
     // 1순위: 카카오톡 카드(개인 /og 이미지) — 긴 URL 텍스트 없이 카드 하나만 안정적으로 전송
     try {

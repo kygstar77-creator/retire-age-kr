@@ -23,6 +23,29 @@ function myNickname() {
   try { return localStorage.getItem('fm_nickname') || ''; } catch { return ''; }
 }
 
+// 입력창 포커스 유지를 위해 컴포넌트를 모듈 스코프에 정의(부모 리렌더 시 remount 방지)
+function OwnerControls({ mine, row, onEdit, onDelete }) {
+  if (!mine) return null;
+  return (
+    <span className="fm-post-own">
+      <button type="button" className="fm-post-edit" onClick={() => onEdit(row)}>수정</button>
+      <button type="button" className="fm-post-del" onClick={() => onDelete(row)}>삭제</button>
+    </span>
+  );
+}
+
+function EditBox({ id, value, onChange, onCancel, onSave }) {
+  return (
+    <div className="fm-post-edit-box">
+      <textarea maxLength={240} value={value} onChange={(e) => onChange(e.target.value)} autoFocus />
+      <div className="fm-post-edit-row">
+        <button type="button" className="fm-post-edit-cancel" onClick={onCancel}>취소</button>
+        <button type="button" className="fm-post-edit-save" onClick={() => onSave(id)} disabled={!value.trim()}>저장</button>
+      </div>
+    </div>
+  );
+}
+
 export default function Community({ onBack }) {
   const [rows, setRows] = useState([]);
   const [post, setPost] = useState('');
@@ -94,25 +117,6 @@ export default function Community({ onBack }) {
     }
   };
 
-  const OwnerControls = ({ row }) => (
-    isMine(row) ? (
-      <span className="fm-post-own">
-        <button type="button" className="fm-post-edit" onClick={() => startEdit(row)}>수정</button>
-        <button type="button" className="fm-post-del" onClick={() => removeRow(row)}>삭제</button>
-      </span>
-    ) : null
-  );
-
-  const EditBox = ({ id }) => (
-    <div className="fm-post-edit-box">
-      <textarea maxLength={240} value={editText} onChange={(e) => setEditText(e.target.value)} />
-      <div className="fm-post-edit-row">
-        <button type="button" className="fm-post-edit-cancel" onClick={cancelEdit}>취소</button>
-        <button type="button" className="fm-post-edit-save" onClick={() => saveEdit(id)} disabled={!editText.trim()}>저장</button>
-      </div>
-    </div>
-  );
-
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="커뮤니티" onBack={onBack} />
@@ -139,11 +143,11 @@ export default function Community({ onBack }) {
           const open = openId === p.id;
           return (
             <article className="fm-card fm-post" key={p.id}>
-              {editId === p.id ? <EditBox id={p.id} /> : <p className="fm-post-msg">{p.message}</p>}
+              {editId === p.id ? <EditBox id={p.id} value={editText} onChange={setEditText} onCancel={cancelEdit} onSave={saveEdit} /> : <p className="fm-post-msg">{p.message}</p>}
               <div className="fm-post-meta">
                 <span className="fm-post-author">{p.nickname || funHandle(p.id)} · {relativeTime(p.created_at)}</span>
                 <div className="fm-post-actions">
-                  <OwnerControls row={p} />
+                  <OwnerControls mine={isMine(p)} row={p} onEdit={startEdit} onDelete={removeRow} />
                   <button type="button" className={`fm-post-like${isLiked(p.id) ? ' on' : ''}`} onClick={() => like(p)} aria-label="공감">♥ {p.likes || 0}</button>
                   <button type="button" className="fm-post-reply" onClick={() => { setOpenId(open ? null : p.id); setReplyText(''); }}>💬 {reps.length}</button>
                 </div>
@@ -152,10 +156,10 @@ export default function Community({ onBack }) {
                 <div className="fm-replies">
                   {reps.map((r) => (
                     <div className="fm-reply" key={r.id}>
-                      {editId === r.id ? <EditBox id={r.id} /> : <p>{r.message}</p>}
+                      {editId === r.id ? <EditBox id={r.id} value={editText} onChange={setEditText} onCancel={cancelEdit} onSave={saveEdit} /> : <p>{r.message}</p>}
                       <div className="fm-reply-meta">
                         <small>{r.nickname || funHandle(r.id)} · {relativeTime(r.created_at)}</small>
-                        <OwnerControls row={r} />
+                        <OwnerControls mine={isMine(r)} row={r} onEdit={startEdit} onDelete={removeRow} />
                       </div>
                     </div>
                   ))}

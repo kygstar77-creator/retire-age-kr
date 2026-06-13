@@ -93,3 +93,6 @@
 .fm-tax-explain-sub { font-size: 12px; color: var(--fm-muted, #8a8a8a); line-height: 1.5; margin: 8px 0 10px; }
 .fm-tax-links { display: flex; flex-wrap: wrap; gap: 8px; }
 .fm-tax-links a { font-size: 12px; font-weight: 700; color: #ff5a00; background: rgba(255,90,0,0.08); border: 0.5px solid rgba(255,90,0,0.3); border-radius: 99px; padding: 6px 12px; text-decoration: none; }
+
+/* 세금/배당 경고 */
+.fm-tax-warn { color: #854f0b; background: rgba(186,117,23,0.1); border-radius: 8px; padding: 8px 10px; }

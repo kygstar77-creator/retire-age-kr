@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { account } from '../../utils/identity.js';
 import { signup, login, logout } from '../../utils/firemapAccountApi.js';
+import { syncAfterAuth } from '../../utils/firemapStateApi.js';
 
 function mapErr(code, msg) {
   const m = code || msg || '';
@@ -37,6 +38,7 @@ export default function AccountCard() {
     setBusy(true);
     try {
       if (mode === 'signup') await signup(handle, pw); else await login(handle, pw);
+      await syncAfterAuth();
       window.location.reload();
     } catch (e) { setErr(mapErr(e && e.code, e && e.message)); setBusy(false); }
   };

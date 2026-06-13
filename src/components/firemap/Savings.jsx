@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { identityIds } from '../../utils/identity.js';
+import { pushState, pullKey } from '../../utils/firemapStateApi.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
@@ -55,7 +56,7 @@ export default function Savings({ simulation, onMove }) {
       localStorage.setItem('fm_plan', JSON.stringify({ dailyNeed, fireAge, currentAge: inp.currentAge, ok: dailyNeed == null }));
     } catch { /* ignore */ }
   }, [simulation, dailyNeed]);
-  useEffect(() => { track('save_tab_view'); refresh(todaySaved); /* eslint-disable-next-line */ }, []);
+  useEffect(() => { track('save_tab_view'); refresh(todaySaved); pullKey('fm_save').then((v) => { if (v) { try { localStorage.setItem('fm_save', JSON.stringify(v)); } catch { /* ignore */ } setSv(v); } }); /* eslint-disable-next-line */ }, []);
 
   const todaySaved = sv && sv.lastDate === todayStr() ? (sv.today || 0) : 0;
   const totalSaved = sv ? (sv.total || 0) : 0;
@@ -72,6 +73,7 @@ export default function Savings({ simulation, onMove }) {
     Promise.all([fetchSaveTop(10), fetchMySaveRank(todayVal)]).then(([t, r]) => { setTop(t); setRank(r); });
   };
   const persist = (nextSv) => {
+    pushState('fm_save', nextSv);
     const tVal = nextSv.lastDate === todayStr() ? (nextSv.today || 0) : 0;
     const adv = dailyNeed ? (nextSv.total || 0) / dailyNeed : null;
     let nick = '';

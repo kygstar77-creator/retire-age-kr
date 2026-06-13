@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { fmtAdvance, dailyNeedOf } from '../../firemap-v2/dailyData.js';
+import { pushState, pullKey } from '../../utils/firemapStateApi.js';
 
 const KEY = 'fm_daily';
 const todayStr = () => new Date().toISOString().slice(0, 10);
@@ -20,6 +21,12 @@ export default function DepositCard({ simulation, onMove }) {
 
   const [cfg, setCfg] = useState(load);
   const [amount, setAmount] = useState((cfg && cfg.amount) || defaultDaily);
+
+  useEffect(() => {
+    let alive = true;
+    pullKey('fm_daily').then((v) => { if (alive && v) { try { localStorage.setItem('fm_daily', JSON.stringify(v)); } catch { /* ignore */ } setCfg(v); if (v.amount) setAmount(v.amount); } });
+    return () => { alive = false; };
+  }, []);
 
   const start = () => { const o = { amount, total: 0, streak: 0, days: 0, lastDate: null, monthKey: null, monthTotal: 0, surplusTotal: 0 }; save(o); setCfg(o); };
   const reset = () => { try { localStorage.removeItem(KEY); } catch { /* ignore */ } setCfg(null); };
@@ -66,7 +73,7 @@ export default function DepositCard({ simulation, onMove }) {
       monthTotal: after,
       surplusTotal: (cfg.surplusTotal || 0) + surplusGain
     };
-    save(next); setCfg(next);
+    save(next); setCfg(next); pushState('fm_daily', next);
   };
 
   return (

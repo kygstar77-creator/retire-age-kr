@@ -17,7 +17,7 @@ async function rpc(fn, args) {
 function persist(r) {
   if (!r || !r.id) return null;
   try {
-    localStorage.setItem('fm_account', JSON.stringify({ userId: r.id, handle: r.handle }));
+    localStorage.setItem('fm_account', JSON.stringify({ userId: r.id, handle: r.handle, token: r.token }));
     localStorage.setItem('fm_nickname', r.handle);
   } catch { /* ignore */ }
   return r;

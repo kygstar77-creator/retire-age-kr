@@ -1,4 +1,4 @@
-import { identityId } from './identity.js';
+import { identityId, identityIds } from './identity.js';
 const DEFAULT_SUPABASE_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
 const DEFAULT_SUPABASE_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || DEFAULT_SUPABASE_URL;
@@ -91,11 +91,13 @@ export async function fetchUserRank(earliestAge, ageBand, advancedDays) {
 
 // 내 점수행의 advanced_days만 갱신(저축 변동 시) → 동점 분리에 즉시 반영
 export async function updateScoreAdvance(advancedDays) {
-  const cid = identityId();
-  if (!cid) return false;
+  // 계정ID + 기기ID 양쪽 점수행을 모두 갱신(로그인 전 기록이 기기ID로 남아 누락되는 것 방지)
+  const ids = identityIds();
+  if (!ids.length) return false;
   const v = (advancedDays != null && Number.isFinite(Number(advancedDays))) ? Number(Number(advancedDays).toFixed(2)) : 0;
+  const filter = ids.length > 1 ? `client_id=in.(${ids.join(',')})` : `client_id=eq.${ids[0]}`;
   try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?client_id=eq.${cid}`, {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?${filter}`, {
       method: 'PATCH', headers: headers({ prefer: 'return=minimal' }),
       body: JSON.stringify({ advanced_days: v })
     });

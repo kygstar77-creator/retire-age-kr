@@ -43,7 +43,9 @@ export async function onRequest(context) {
       : `${rw ? rw + ' · ' : ''}내 퇴사 가능 나이와 또래 중 내 등수를 1분 만에 확인하세요.`;
 
   // 사람은 앱 루트로(같은 조건 파라미터 유지) 이동 → 결과 화면 표시
-  const redirect = `${site}/?${q.toString()}#result`;
+  // 전체 시나리오(age 등)가 있으면 그 결과로 복원, 없으면(짧은 공유링크) 홈으로 보내 본인 계산 유도
+  const hasScenario = q.has('age') || q.has('fa');
+  const redirect = hasScenario ? `${site}/?${q.toString()}#result` : `${site}/`;
 
   const html = `<!doctype html><html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">

@@ -8,8 +8,6 @@ import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
 import { statsRank, gradeFromScore } from '../../firemap-v2/rank.js';
 import { submitScore, fetchUserRank, fetchAggregates, assetBandOf } from '../../utils/firemapScoresApi.js';
 import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js';
-import { buildScenarioShareUrl } from '../../utils/shareState.js';
-import { makeShareImage } from '../../utils/shareImage.js';
 import { FIRE_CITIES } from '../../firemap-v2/cities.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import AccountCard from './AccountCard.jsx';
@@ -332,15 +330,11 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
     const earliest = simulation.earliestRetirementAge;
     const pctText = rk && rk.percentile ? ` · 또래 자산 상위 ${rk.percentile}%` : '';
     const text = earliest ? `나는 ${earliest}세에 퇴사 가능${pctText} — 너는 몇 살에 가능?` : '내 퇴사 가능 나이, 1분이면 나와 — 너도 해봐';
-    // 공유 링크(개인 조건 포함) — 이미지 캡션에도 함께 실어 탭으로 바로 입장 가능하도록
-    const u = new URL(buildScenarioShareUrl(inputs));
-    u.pathname = '/s';
+    // 링크만 공유 → 카톡이 /og 개인 카드 하나로 미리보기 + 한 탭 입장(이미지+URL 동시전송 시 카드 중복 떠서 제거)
+    const u = new URL('/s', window.location.origin);
     if (earliest) u.searchParams.set('ea', String(earliest));
-    u.searchParams.set('p', String(rk.percentile));
-    u.searchParams.set('g', rk.grade);
-    u.searchParams.set('rw', ph.short);
-    u.searchParams.set('rwy', ph.runway);
     u.searchParams.set('target', String(simulation.inputs.targetRetirementAge));
+    u.searchParams.set('rwy', ph.runway);
     u.searchParams.set('ret', String(simulation.inputs.annualReturnRate));
     u.searchParams.set('inf', String(simulation.inputs.inflationRate));
     try {
@@ -348,22 +342,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
       if (rr && rr.total) { u.searchParams.set('pos', String(rr.position)); u.searchParams.set('tot', String(rr.total)); }
     } catch (e) { /* 등수 못 가져오면 og가 정적 폴백 */ }
     const url = u.toString();
-    // 1순위: 결과 카드 이미지 + 링크 캡션 공유(개인 숫자 카드가 카톡에 꽂히고, 링크로 바로 입장)
-    try {
-      const blob = await makeShareImage(inputs, simulation);
-      const file = new File([blob], 'firemap-result.png', { type: 'image/png' });
-      const payload = navigator.canShare?.({ files: [file], text: `${text}\n${url}`, url })
-        ? { files: [file], text: `${text}\n${url}`, url }
-        : (navigator.canShare?.({ files: [file] }) ? { files: [file], text: `${text}\n${url}` } : null);
-      if (payload) {
-        await navigator.share(payload);
-        track('share_summary_copy', { type: 'result_image' });
-        return;
-      }
-    } catch (e) {
-      if (e && e.name === 'AbortError') return;
-    }
-    // 폴백(이미지 공유 미지원 — 주로 데스크톱): 링크 공유
+    track('share_summary_copy', { type: 'result_link' });
     if (navigator.share) {
       try { await navigator.share({ title: '파이어맵 — 내 퇴사 가능 나이', text, url }); return; }
       catch (e) { if (e && e.name === 'AbortError') return; }
@@ -377,7 +356,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
       <ResultSimTabs current="result" />
       <ResultHeroV2 simulation={simulation} />
       <div className="fm-rank-cta">
-        <button type="button" className="fm-rank-cta-share" onClick={shareRank}>📸 내 결과 카드 공유하기</button>
+        <button type="button" className="fm-rank-cta-share" onClick={shareRank}>내 결과 카드 공유하기</button>
         <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>🎛️ 수치 바꿔보기</button>
       </div>
       <AccountCard kicker="내 기록 지키기 🔒" sub="방금 나온 퇴사 나이·등수와 적립·절약 기록을 닉네임+비밀번호로 저장하세요. 기기가 바뀌어도 같은 계정으로 이어집니다." />

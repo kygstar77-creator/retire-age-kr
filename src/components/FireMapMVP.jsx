@@ -68,6 +68,7 @@ export default function FireMapMVP() {
   const simulation = useMemo(() => buildSimulation({ ...inputs, investType: 0 }), [inputs]);
 
   useEffect(() => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); } catch { /* ignore */ } }, [inputs]);
+  useEffect(() => { try { window.scrollTo(0, 0); } catch { /* ignore */ } }, [screen, step]);
 
   useEffect(() => {
     const sync = () => setScreenState(readScreenFromHash());

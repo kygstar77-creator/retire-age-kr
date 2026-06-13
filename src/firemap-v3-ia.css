@@ -207,11 +207,11 @@
 .fm-rank-hero .fm-rank-delta.down { background: rgba(255,140,140,.20); color: #ffb4b4 !important; }
 .fm-rank-hero .fm-rank-climb { font-size: 13px; color: #fff !important; margin: 8px 0 0; font-weight: 600; }
 .fm-rank-hero .fm-rank-climb b { color: var(--fm-success) !important; }
-.fm-rank-cta { display: flex; flex-direction: column; gap: 9px; margin: 0 0 14px; }
-.fm-rank-cta button { width: 100%; border-radius: 16px; font-weight: 800; cursor: pointer; }
-.fm-rank-cta-share { border: 0; background: #ff5a00; color: #fff; min-height: 62px; font-size: 18px; box-shadow: 0 8px 22px rgba(255,90,0,0.30); }
-.fm-rank-cta-share:active { transform: scale(0.99); }
-.fm-rank-cta-up { border: 1.5px solid rgba(30,40,89,0.5); background: #fff; color: #1e2859; min-height: 48px; font-size: 15px; }
+.fm-rank-cta { display: flex; gap: 10px; margin: 0 0 14px; }
+.fm-rank-cta button { flex: 1; min-height: 56px; border-radius: 16px; font-size: 16px; font-weight: 800; cursor: pointer; }
+.fm-rank-cta-share { border: 0; background: #ff5a00; color: #fff; }
+.fm-rank-cta-up { border: 0; background: #1e2859; color: #fff; }
+.fm-rank-cta button:active { transform: scale(0.99); }
 
 /* 리더보드 */
 .fm-lb-list { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }

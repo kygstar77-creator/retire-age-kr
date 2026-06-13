@@ -3,7 +3,7 @@ export const SCREEN_ALIASES = { curation: 'city', advanced: 'tools' };
 export const screens = {
   home:       { hash: '#home',       title: '홈',     type: 'home',     tab: 'home' },
   question:   { hash: '#question',   title: '질문',   type: 'question' },
-  result:     { hash: '#result',     title: '결과',   type: 'result',   tab: 'home', next: ['ranking', 'save', 'experiment', 'share', 'tools'] },
+  result:     { hash: '#result',     title: '결과',   type: 'result',   tab: 'home', next: ['ranking', 'save', 'experiment', 'tools'] },
   save:       { hash: '#save',       title: '저축',   type: 'save',     tab: 'save' },
   tools:      { hash: '#tools',      title: '도구',   type: 'tools',    tab: 'tools' },
   experiment: { hash: '#experiment', title: '바꿔보기',          type: 'tool', back: 'result', tab: 'home' },

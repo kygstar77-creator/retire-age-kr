@@ -3,7 +3,7 @@ import Header from './Header.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { getAssetHistory, logAsset } from '../../utils/assetHistory.js';
 import InstallButton from './InstallButton.jsx';
-import AccountCard from './AccountCard.jsx';
+import { account } from '../../utils/identity.js';
 
 const won = (n) => formatWon(Math.round(n || 0));
 const eok = (n) => {
@@ -67,6 +67,19 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="내 파이어 플랜" onBack={asHome ? undefined : () => onMove('result')} />
 
+      {asHome && (() => {
+        const acc = account();
+        return (
+          <button type="button" className={`fm-acct-bar${acc && acc.handle ? ' on' : ''}`} onClick={() => onMove('account')}>
+            <span className="fm-acct-bar-ic">{acc && acc.handle ? '👤' : '🔒'}</span>
+            {acc && acc.handle
+              ? <span className="fm-acct-bar-tx"><b>{acc.handle}</b><em>기록이 안전하게 이어져요</em></span>
+              : <span className="fm-acct-bar-tx"><b>로그인하고 내 기록 지키기</b><em>기기 바꿔도 그대로 이어져요</em></span>}
+            <span className="fm-acct-bar-go">{acc && acc.handle ? '관리 ›' : '로그인 ›'}</span>
+          </button>
+        );
+      })()}
+
       <section className="fm-card fm-plan-hero">
         <div className="fm-plan-top">
           <div className="fm-plan-ring" style={{ background: `conic-gradient(#ff5a00 0 ${pct}%, #eef0f3 ${pct}% 100%)` }}>
@@ -127,7 +140,6 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
         );
       })()}
       <button type="button" className="fm-plan-tools" onClick={() => onMove('tools')}>🧰 정밀 도구 전체 보기 (지역·현금흐름·건보·세금) →</button>
-      {asHome && <AccountCard compact kicker="내 기록 저장하기 🔒" sub="로그인하면 기기를 바꾸거나 브라우저를 지워도 내 파이어 플랜·적립·절약 기록이 그대로 이어져요." />}
       {asHome && <InstallButton />}
       {asHome && (
         <nav className="fm-policy-links" aria-label="정책 및 문의">

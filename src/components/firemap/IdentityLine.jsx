@@ -15,7 +15,7 @@ export default function IdentityLine({ onMove }) {
   return (
     <div className="fm-idline">
       <span>닉네임 만들고 기록 지키기</span>
-      <button type="button" className="fm-idline-cta" onClick={() => onMove && onMove('community')}>계정 만들기 →</button>
+      <button type="button" className="fm-idline-cta" onClick={() => onMove && onMove('account')}>로그인 →</button>
     </div>
   );
 }

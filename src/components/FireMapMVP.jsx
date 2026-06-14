@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { getLatestRank } from '../firemap-v2/rankHistory.js';
 import Home from './firemap/Home.jsx';
+import AccountCard from './firemap/AccountCard.jsx';
 import Question from './firemap/Question.jsx';
 import Result from './firemap/Result.jsx';
 import Experiment from './firemap/Experiment.jsx';
@@ -132,7 +133,7 @@ export default function FireMapMVP() {
   else if (screen === 'experiment') view = <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} />;
   else if (screen === 'city') view = <City inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('city')} />;
   else if (screen === 'share') view = <Share inputs={inputs} simulation={simulation} onBack={backOf('share')} />;
-  else if (screen === 'community') view = <Community onBack={backOf('community')} />;
+  else if (screen === 'community') view = <Community onBack={backOf('community')} onMove={setScreen} />;
   else if (screen === 'ranking') view = <Leaderboard simulation={simulation} onBack={backOf('ranking')} onMove={setScreen} />;
   else if (screen === 'cities') view = <CityExplorer inputs={inputs} simulation={simulation} onChange={onChange} onMove={setScreen} onBack={backOf('cities')} />;
   else if (screen === 'dependent') view = tool('dependent', <DependentCheck onApply={applyPatch} />);
@@ -141,6 +142,7 @@ export default function FireMapMVP() {
   else if (screen === 'save') view = <Savings simulation={simulation} onMove={setScreen} />;
   else if (screen === 'firePlan') view = <FirePlan simulation={simulation} onMove={setScreen} onChange={onChange} />;
   else if (screen === 'pension') view = tool('pension', <PensionEarlyClaimCard inputs={inputs} onApply={applyPatch} />);
+  else if (screen === 'account') view = tool('account', <AccountCard />);
   else view = <Result inputs={inputs} simulation={simulation} onMove={setScreen} onChange={onChange} onEditFinalQuestion={goFinalQuestion} />;
 
   return wrap(view);

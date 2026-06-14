@@ -3,7 +3,6 @@ import Header from './Header.jsx';
 import { loadCommunityThread, sendCommunity, likeCommunity, editCommunity, deleteCommunity } from '../../utils/firemapFeedbackApi.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { identityIds } from '../../utils/identity.js';
-import AccountCard from './AccountCard.jsx';
 
 function relativeTime(value) {
   const diff = Math.max(1, Math.round((Date.now() - new Date(value).getTime()) / 60000));
@@ -46,7 +45,7 @@ function EditBox({ id, value, onChange, onCancel, onSave }) {
   );
 }
 
-export default function Community({ onBack }) {
+export default function Community({ onBack, onMove }) {
   const [rows, setRows] = useState([]);
   const [post, setPost] = useState('');
   const [sending, setSending] = useState(false);
@@ -172,7 +171,7 @@ export default function Community({ onBack }) {
           );
         })}
       </section>
-      <AccountCard />
+      <button type="button" className="fm-login-nudge" onClick={() => onMove && onMove('account')}>🔒 로그인하면 내 닉네임으로 글을 쓸 수 있어요 →</button>
     </main>
   );
 }

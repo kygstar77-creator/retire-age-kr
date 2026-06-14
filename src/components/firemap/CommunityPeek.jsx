@@ -3,7 +3,7 @@ import { fetchCommunityPeek } from '../../utils/firemapFeedbackApi.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 
 const SEED_PROMPTS = [
-  '퇴사하면 제일 하고 싶은 거 하나만 적어주세요',
+  '파이어하면 제일 하고 싶은 거 하나만 적어주세요',
   '한 달 생활비, 다들 얼마로 잡으세요?',
   '파이어 준비하면서 제일 어려운 점은?',
   '지금 제일 후회되는 소비 하나?'

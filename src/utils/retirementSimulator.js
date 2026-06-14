@@ -38,7 +38,7 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
   const data = normalizeInputs(inputs);
   const annualReturn = toRate(data.annualReturnRate);
   const inflation = toRate(data.inflationRate);
-  const savingYears = data.savingYears > 0 ? data.savingYears : Infinity; // 0 = 퇴사할 때까지 저축
+  const savingYears = data.savingYears > 0 ? data.savingYears : Infinity; // 0 = 파이어할 때까지 저축
   let financialAsset = data.financialAsset;
   let costBasis = data.financialAsset; // 양도세 차익 추정용(취득원가 누적)
   const investType = Math.round(data.investType) || 0; // 0 국내(면제) · 1 해외(양도세22%) · 2 배당(15.4%)
@@ -68,7 +68,7 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
     const stillSaving = !isRetired && yearsFromStart >= 1 && yearsFromStart <= savingYears;
     const investmentAdded = stillSaving ? yearly(data.monthlyInvestment) * Math.pow(1 + salaryGrowth, yearsFromStart) : 0;
     if (investmentAdded > 0) costBasis += investmentAdded;
-    // 투자 유형별 세금(퇴사 후): 국내=0 · 해외=인출차익 22%(250만 공제) · 배당=배당세 15.4%
+    // 투자 유형별 세금(파이어 후): 국내=0 · 해외=인출차익 22%(250만 공제) · 배당=배당세 15.4%
     let investTax = 0;
     if (isRetired && financialAsset > 0) {
       if (investType === 1) {
@@ -97,7 +97,7 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
     rows.push({
       year,
       age,
-      status: isRetired ? '퇴사 후' : '근무 중',
+      status: isRetired ? '파이어 후' : '근무 중',
       financialAsset,
       realEstateValue: data.realEstateValue,
       debt: data.debt,

@@ -27,7 +27,7 @@ export default function DependentCheck({ onApply }) {
     <section className="fm-card fm-text-card fm-advanced-section">
       <p className="fm-kicker">건강보험</p>
       <h2>피부양자 자격 판정</h2>
-      <p>퇴사 후 자녀 등의 건강보험 피부양자로 남을 수 있는지 조건으로 판정해요. 참고용이며 실제는 공단 확인이 필요해요.</p>
+      <p>파이어 후 자녀 등의 건강보험 피부양자로 남을 수 있는지 조건으로 판정해요. 참고용이며 실제는 공단 확인이 필요해요.</p>
       <div className="fm-dc-fields">
         <NumField label="금융 외 합산소득(연)" unit="만원" value={other} set={setOther} step={100} />
         <NumField label="금융소득(이자+배당, 연)" unit="만원" value={fin} set={setFin} step={100} />

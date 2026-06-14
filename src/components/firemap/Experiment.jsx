@@ -46,7 +46,7 @@ export default function Experiment({ inputs, onChange, onBack }) {
       <section className="fm-card fm-sim-live">
         <p className="fm-sim-live-kicker">{dirty ? '바꾼 조건 미리보기' : '지금 조건이면'}</p>
         <div className="fm-sim-live-row">
-          <div><small>퇴사 가능</small><b>{simulation.earliestRetirementAge ? `${simulation.earliestRetirementAge}세` : '아직'}</b></div>
+          <div><small>파이어 가능</small><b>{simulation.earliestRetirementAge ? `${simulation.earliestRetirementAge}세` : '아직'}</b></div>
           <div><small>자산 수명</small><b>{runwayText(simulation)}</b></div>
         </div>
         {dirty ? (
@@ -68,25 +68,25 @@ export default function Experiment({ inputs, onChange, onBack }) {
           <span><i className="fm-dot fm-dot-gains" />불어난 돈 · {formatWon(gainsAtRet)}</span>
         </div>
         <AssetGrowthChart ages={growth.ages} principal={growth.principal} gains={growth.gains} retirementAge={draft.targetRetirementAge} depletionAge={simulation.targetResult.depletionAge} />
-        <p className="fm-chart-note">퇴사({draft.targetRetirementAge}세) 시점 기준 · 파란색은 내가 직접 넣은 돈, 주황색은 투자로 불어난 돈이에요. 퇴사 후엔 쓰면서 줄어들어요.</p>
+        <p className="fm-chart-note">파이어({draft.targetRetirementAge}세) 시점 기준 · 파란색은 내가 직접 넣은 돈, 주황색은 투자로 불어난 돈이에요. 파이어 후엔 쓰면서 줄어들어요.</p>
       </section>
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">조건 바꿔보기</p><h2>손가락으로 밀어서 바로 바꿔보세요</h2>
         <p>핵심 수치를 밀면 위 결과가 즉시 바뀌어요. 더 자세한 가정은 ‘고급 설정’에서.</p>
         <RangeControl label="현재 나이" value={draft.currentAge} inputKey="currentAge" type="age" step={1} onChange={(next) => editDraft('currentAge', next)} />
-        <RangeControl label="퇴사 나이" value={draft.targetRetirementAge} inputKey="targetRetirementAge" type="age" step={1} onChange={(next) => editDraft('targetRetirementAge', next)} />
+        <RangeControl label="파이어 나이" value={draft.targetRetirementAge} inputKey="targetRetirementAge" type="age" step={1} onChange={(next) => editDraft('targetRetirementAge', next)} />
         <RangeControl label="현재 금융자산" value={draft.financialAsset} inputKey="financialAsset" type="money" step={10000000} onChange={(next) => editDraft('financialAsset', next)} />
         <RangeControl label="월 저축액" value={draft.monthlyInvestment} inputKey="monthlyInvestment" type="money" step={100000} onChange={(next) => editDraft('monthlyInvestment', next)} />
-        <RangeControl label="퇴사 후 월 생활비" value={draft.monthlyLivingCost} inputKey="monthlyLivingCost" type="money" step={100000} onChange={(next) => editDraft('monthlyLivingCost', next)} />
+        <RangeControl label="파이어 후 월 생활비" value={draft.monthlyLivingCost} inputKey="monthlyLivingCost" type="money" step={100000} onChange={(next) => editDraft('monthlyLivingCost', next)} />
         <button type="button" className="fm-advanced-toggle" onClick={() => setShowAdvanced((v) => !v)} aria-expanded={showAdvanced}>
           고급 설정 (저축 기간 · 연봉 상승 · 부업 · 물가) {showAdvanced ? '▴' : '▾'}
         </button>
         {showAdvanced && (
           <div className="fm-advanced">
             <RangeControl label="앞으로 저축하는 기간" value={savingYearsValue} inputKey="savingYears" type="years" step={1} maxOverride={yearsToRetire} onChange={(next) => editDraft('savingYears', next >= yearsToRetire ? 0 : next)} />
-            <p className="fm-range-note">기본은 퇴사까지({yearsToRetire}년) 매달 저축이에요. 줄이면 그만큼만 저축하고, 이후엔 모은 돈을 굴리기만 해요(코스트 파이어).</p>
+            <p className="fm-range-note">기본은 파이어까지({yearsToRetire}년) 매달 저축이에요. 줄이면 그만큼만 저축하고, 이후엔 모은 돈을 굴리기만 해요(코스트 파이어).</p>
             <RangeControl label="연봉 상승률(저축도 매년 증가)" value={draft.salaryGrowthRate} inputKey="salaryGrowthRate" type="percent" step={1} onChange={(next) => editDraft('salaryGrowthRate', next)} />
-            <RangeControl label="퇴사 후 부업 소득" value={draft.partTimeIncomeAfterRetirement} inputKey="partTimeIncomeAfterRetirement" type="money" step={100000} onChange={(next) => editDraft('partTimeIncomeAfterRetirement', next)} />
+            <RangeControl label="파이어 후 부업 소득" value={draft.partTimeIncomeAfterRetirement} inputKey="partTimeIncomeAfterRetirement" type="money" step={100000} onChange={(next) => editDraft('partTimeIncomeAfterRetirement', next)} />
             <p className="fm-range-note">부업 소득은 물가에 연동되지 않아요 — 생활비·연금과 달리 매년 오르지 않는 고정 수입으로 계산해요.</p>
             <RangeControl label="물가 상승률(생활비 매년 증가)" value={draft.inflationRate} inputKey="inflationRate" type="percent" step={1} onChange={(next) => editDraft('inflationRate', next)} />
             <p className="fm-range-note">이 비율만큼 <strong>생활비·국민연금·건보료·해외 체류비</strong>가 매년 올라요. (부업 소득만 제외)</p>
@@ -104,11 +104,11 @@ export default function Experiment({ inputs, onChange, onBack }) {
         <p className="fm-range-note">투자유형·세금은 <b>미리보기 전용</b>이에요 — 결과·등수는 공정성을 위해 항상 세전 기준으로 유지돼요.</p>
         {investType === 2 && <RangeControl label="배당수익률" value={draft.dividendYield} inputKey="dividendYield" type="percent" step={1} onChange={(next) => editDraft('dividendYield', next)} />}
         {investType === 2 && Number(draft.dividendYield || 0) >= Number(draft.annualReturnRate || 0) && <p className="fm-range-note fm-tax-warn">⚠️ 배당수익률이 연 수익률보다 크면 원금이 줄어요.</p>}
-        {investType === 2 && grossDivAtRetire > 20000000 && <p className="fm-range-note">⚠️ 퇴사 시 연 배당 약 {formatWon(grossDivAtRetire)} · 금융소득 2,000만 초과 → 종합과세·건보료 부담↑ (도구 탭에서 정밀 확인)</p>}
+        {investType === 2 && grossDivAtRetire > 20000000 && <p className="fm-range-note">⚠️ 파이어 시 연 배당 약 {formatWon(grossDivAtRetire)} · 금융소득 2,000만 초과 → 종합과세·건보료 부담↑ (도구 탭에서 정밀 확인)</p>}
         <div className="fm-tax-explain">
           <p className="fm-tax-explain-title">ℹ️ 선택한 유형의 세금</p>
           {investType === 0 && <p className="fm-tax-explain-line">국내주식은 양도세가 <b>면제</b>예요(대주주 제외). 팔아서 생활비를 써도 투자 세금 부담이 없어요.</p>}
-          {investType === 1 && <p className="fm-tax-explain-line">해외주식은 퇴사 후 <b>매년 쓰는 만큼 팔 때 그 차익</b>에 <b>22%</b>(매년 250만 공제). 한 번에 매도가 아니에요.</p>}
+          {investType === 1 && <p className="fm-tax-explain-line">해외주식은 파이어 후 <b>매년 쓰는 만큼 팔 때 그 차익</b>에 <b>22%</b>(매년 250만 공제). 한 번에 매도가 아니에요.</p>}
           {investType === 2 && <p className="fm-tax-explain-line">배당으로 생활하면 받는 배당마다 <b>15.4%</b> 원천징수돼요. (금융소득 2,000만 초과 시 종합과세↑)</p>}
           <p className="fm-tax-explain-sub">종합과세 누진·ISA/연금 절세는 개인 상황별이라 결과엔 반영하지 않아요.</p>
           <div className="fm-tax-links">

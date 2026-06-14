@@ -10,9 +10,9 @@ export default function SummaryCards({ simulation }) {
   const cards = [
     {
       icon: <Clock3 size={20} />,
-      label: '목표 퇴사 판정',
+      label: '목표 파이어 판정',
       value: verdictText,
-      detail: `${inputs.targetRetirementAge}세 퇴사 기준`,
+      detail: `${inputs.targetRetirementAge}세 파이어 기준`,
       tone: status
     },
     {
@@ -24,14 +24,14 @@ export default function SummaryCards({ simulation }) {
     },
     {
       icon: <CheckCircle2 size={20} />,
-      label: '가장 빠른 퇴사 가능 나이',
+      label: '가장 빠른 파이어 가능 나이',
       value: formatAge(earliestRetirementAge),
       detail: `${inputs.simulationUntilAge}세까지 금융자산 유지 기준`,
       tone: earliestRetirementAge ? 'stable' : 'risk'
     },
     {
       icon: <WalletCards size={20} />,
-      label: '퇴사 시점 금융자산',
+      label: '파이어 시점 금융자산',
       value: formatEok(retirementFinancialAsset),
       detail: `첫해 예상 인출률 ${safeWithdrawalRate.toLocaleString('ko-KR', { maximumFractionDigits: 1 })}%`,
       tone: 'neutral'

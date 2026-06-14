@@ -19,7 +19,7 @@ export default function AssetGrowthChart({ ages, principal, gains, retirementAge
       afterDatasetsDraw(chart) {
         const xs = chart.scales.x;
         const area = chart.chartArea;
-        const marks = [[retirementAge, '#ff5a00', `퇴사 ${retirementAge}세`], [depletionAge, '#9aa3bf', `고갈 ${depletionAge}세`]];
+        const marks = [[retirementAge, '#ff5a00', `파이어 ${retirementAge}세`], [depletionAge, '#9aa3bf', `고갈 ${depletionAge}세`]];
         marks.forEach(([age, color, text], i) => {
           if (!age) return;
           const idx = ages.indexOf(age);

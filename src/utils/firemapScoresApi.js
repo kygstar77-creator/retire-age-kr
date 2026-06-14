@@ -73,13 +73,13 @@ export async function fetchUserRank(earliestAge, ageBand, advancedDays) {
     if (!total) return null;
     const hasAge = earliestAge != null && Number.isFinite(Number(earliestAge));
     const mine = hasAge ? Math.round(Number(earliestAge)) : null;
-    // 더 이른 은퇴 가능 나이 = 더 높은 순위. 값 없으면(은퇴 불가) 값 있는 사람 모두가 상위.
+    // 더 이른 파이어 가능 나이 = 더 높은 순위. 값 없으면(파이어 불가) 값 있는 사람 모두가 상위.
     const higherQuery = hasAge
       ? `${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=lt.${mine}${band}`
       : `${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=not.is.null${band}`;
     const higherRes = await fetch(higherQuery, opts);
     let higher = countFromRange(higherRes);
-    // 같은 은퇴나이(동점)는 실제 저축으로 더 많이 당긴 사람이 상위 → 매일 저축하면 같은 나이대를 제침
+    // 같은 파이어나이(동점)는 실제 저축으로 더 많이 당긴 사람이 상위 → 매일 저축하면 같은 나이대를 제침
     if (hasAge) {
       const adv = Number.isFinite(Number(advancedDays)) ? Number(advancedDays) : 0;
       const tieRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=eq.${mine}&advanced_days=gt.${adv}${band}`, opts);
@@ -140,7 +140,7 @@ export async function fetchTopScores(limit = 10, ageBand) {
   try {
     const band = ageBand ? `&age_band=eq.${ageBand}` : '';
     const sel = `select=client_id,nickname,fire_score,age_band,earliest_age${band}`;
-    // 1순위: 빠른 은퇴 → 같으면 실제 저축으로 더 당긴 사람(advanced_days) → 생존점수
+    // 1순위: 빠른 파이어 → 같으면 실제 저축으로 더 당긴 사람(advanced_days) → 생존점수
     const urlAdv = `${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&order=earliest_age.asc.nullslast,advanced_days.desc,fire_score.desc&limit=${limit}`;
     let res = await fetch(urlAdv, { method: 'GET', headers: headers() });
     if (!res.ok) {
@@ -155,10 +155,11 @@ export async function fetchTopScores(limit = 10, ageBand) {
   }
 }
 
-export async function fetchAggregates() {
+export async function fetchAggregates(ageBand) {
   try {
     const opts = { method: 'GET', headers: headers({ prefer: 'count=exact', range: '0-1999' }) };
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=earliest_age,age_band,fire_score`, opts);
+    const band = ageBand ? `&age_band=eq.${ageBand}` : '';
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=earliest_age,age_band,fire_score${band}`, opts);
     if (!res.ok) return null;
     const total = countFromRange(res);
     const rows = await res.json();
@@ -174,7 +175,7 @@ export async function fetchAggregates() {
   }
 }
 
-// 내 주변 순위 — 바로 위(더 빨리 은퇴) / 바로 아래
+// 내 주변 순위 — 바로 위(더 빨리 파이어) / 바로 아래
 export async function fetchNeighbors(earliestAge, ageBand) {
   if (earliestAge == null || !Number.isFinite(Number(earliestAge))) return null;
   try {
@@ -190,7 +191,7 @@ export async function fetchNeighbors(earliestAge, ageBand) {
     ]);
     const above = aboveRes.ok ? await aboveRes.json() : [];
     const below = belowRes.ok ? await belowRes.json() : [];
-    const same = sameRes.ok ? countFromRange(sameRes) : 0; // 나와 같은 은퇴나이 인원(동점)
+    const same = sameRes.ok ? countFromRange(sameRes) : 0; // 나와 같은 파이어나이 인원(동점)
     return { above: above.reverse(), below, same };
   } catch {
     return null;

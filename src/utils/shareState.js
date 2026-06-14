@@ -80,17 +80,17 @@ export function buildShareText(simulation) {
   const { inputs, survivalScore, earliestRetirementAge, safeWithdrawalRate, targetResult } = simulation;
   const survivesTargetAge = !targetResult.depletionAge || targetResult.depletionAge > inputs.simulationUntilAge;
   const verdict = survivesTargetAge
-    ? `${inputs.targetRetirementAge}세 퇴사 시 ${inputs.simulationUntilAge}세까지 고갈 없음`
-    : `${inputs.targetRetirementAge}세 퇴사 시 ${targetResult.depletionAge}세 고갈 예상`;
+    ? `${inputs.targetRetirementAge}세 파이어 시 ${inputs.simulationUntilAge}세까지 고갈 없음`
+    : `${inputs.targetRetirementAge}세 파이어 시 ${targetResult.depletionAge}세 고갈 예상`;
 
   return [
-    '퇴사나이 계산 결과',
+    '파이어나이 계산 결과',
     verdict,
     `자산수명 점수: ${survivalScore}/100`,
-    `가장 빠른 퇴사 가능 나이: ${earliestRetirementAge ? `${earliestRetirementAge}세` : '없음'}`,
-    `퇴사 첫해 인출률: ${safeWithdrawalRate.toLocaleString('ko-KR', { maximumFractionDigits: 1 })}%`,
+    `가장 빠른 파이어 가능 나이: ${earliestRetirementAge ? `${earliestRetirementAge}세` : '없음'}`,
+    `파이어 첫해 인출률: ${safeWithdrawalRate.toLocaleString('ko-KR', { maximumFractionDigits: 1 })}%`,
     '',
-    '내 조건으로 몇 살에 퇴사 가능한지 바로 열어보기'
+    '내 조건으로 몇 살에 파이어 가능한지 바로 열어보기'
   ].join('\n');
 }
 

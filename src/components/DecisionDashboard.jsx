@@ -18,8 +18,8 @@ export default function DecisionDashboard({ simulation }) {
   const progress = Math.min(100, Math.max(0, survivalScore));
   const survivesTargetAge = !targetResult.depletionAge || targetResult.depletionAge > inputs.simulationUntilAge;
   const title = survivesTargetAge
-    ? `${inputs.targetRetirementAge}세 퇴사 후 ${inputs.simulationUntilAge}세까지 고갈되지 않습니다`
-    : `${inputs.targetRetirementAge}세 퇴사 시 ${targetResult.depletionAge}세에 고갈될 수 있습니다`;
+    ? `${inputs.targetRetirementAge}세 파이어 후 ${inputs.simulationUntilAge}세까지 고갈되지 않습니다`
+    : `${inputs.targetRetirementAge}세 파이어 시 ${targetResult.depletionAge}세에 고갈될 수 있습니다`;
   const survivalText = survivesTargetAge ? '통과' : `${runwayYears}년`;
   const referenceGapText = fireGap <= 0 ? `${formatEok(Math.abs(fireGap))} 여유` : `${formatEok(fireGap)} 낮음`;
 
@@ -29,7 +29,7 @@ export default function DecisionDashboard({ simulation }) {
         <span className={`badge badge-${status}`}>{meta.label}</span>
         <h2>{title}</h2>
         <p>
-          퇴사 시점 금융자산은 {formatEok(retirementFinancialAsset)}이고 첫해 예상 인출률은 {formatPercent(safeWithdrawalRate)}입니다.
+          파이어 시점 금융자산은 {formatEok(retirementFinancialAsset)}이고 첫해 예상 인출률은 {formatPercent(safeWithdrawalRate)}입니다.
           판정은 입력한 종료 나이까지 금융자산이 마이너스가 되는지로 계산합니다.
         </p>
         <div className="score-meter" aria-label="자산수명 점수">

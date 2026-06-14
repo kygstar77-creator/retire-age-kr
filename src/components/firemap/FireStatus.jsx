@@ -3,7 +3,7 @@ import { computeProgress, ageLabel, gapLabel, hasCalculated } from '../../utils/
 
 const won = (n) => `${Math.round(n).toLocaleString('ko-KR')}원`;
 
-// 헤드라인: 계획 퇴사(기준선) vs 실제 퇴사(실제 저축 반영) + 격차. 앞당김=초록, 밀림=앰버.
+// 헤드라인: 계획 파이어(기준선) vs 실제 파이어(실제 저축 반영) + 격차. 앞당김=초록, 밀림=앰버.
 export default function FireStatus({ simulation, onMove }) {
   const [, setTick] = useState(0);
   useEffect(() => {
@@ -23,7 +23,7 @@ export default function FireStatus({ simulation, onMove }) {
     return (
       <section className="fm-card fm-status even">
         <p className="fm-kicker">내 파이어 현황</p>
-        <p className="fm-status-note">지금 조건만으론 은퇴가 어려워요. 저축·절약을 쌓거나 <button type="button" className="fm-inline-link" onClick={() => onMove && onMove('result')}>조건을 바꿔</button> 보면 ‘실제 퇴사’가 잡혀요.</p>
+        <p className="fm-status-note">지금 조건만으론 파이어가 어려워요. 저축·절약을 쌓거나 <button type="button" className="fm-inline-link" onClick={() => onMove && onMove('result')}>조건을 바꿔</button> 보면 ‘실제 파이어’가 잡혀요.</p>
       </section>
     );
   }
@@ -32,7 +32,7 @@ export default function FireStatus({ simulation, onMove }) {
     return (
       <section className="fm-card fm-status done">
         <p className="fm-kicker">내 파이어 현황</p>
-        <p className="fm-status-done">🎉 이미 목표 자산을 넘었어요. 적립·절약으로 모은 돈은 은퇴 후 여유로 그대로 쌓여요.</p>
+        <p className="fm-status-done">🎉 이미 목표 자산을 넘었어요. 적립·절약으로 모은 돈은 파이어 후 여유로 그대로 쌓여요.</p>
       </section>
     );
   }
@@ -54,11 +54,11 @@ export default function FireStatus({ simulation, onMove }) {
 
       <div className="fm-status-ages">
         <div className="fm-status-age plan">
-          <small>계획 퇴사</small>
+          <small>계획 파이어</small>
           <b>{ageLabel(planAge)}</b>
         </div>
         <div className={`fm-status-age actual ${dir}`}>
-          <small>실제 퇴사</small>
+          <small>실제 파이어</small>
           <b>{ageLabel(actAge)}</b>
         </div>
       </div>
@@ -89,7 +89,7 @@ export default function FireStatus({ simulation, onMove }) {
           <b>{won(p.saveBonus)}</b>
         </button>
       </div>
-      <p className="fm-status-note">적립·절약이 ‘실제 저축’으로 합쳐져 실제 퇴사 나이에 반영돼요. 같은 돈은 한 번만 기록하세요.</p>
+      <p className="fm-status-note">적립·절약이 ‘실제 저축’으로 합쳐져 실제 파이어 나이에 반영돼요. 같은 돈은 한 번만 기록하세요.</p>
     </section>
   );
 }

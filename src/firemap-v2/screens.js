@@ -21,16 +21,16 @@ export const screens = {
 // 결과 화면 다음 행동 (MVP 메인)
 export const NEXT_ACTION_META = {
   ranking:    { tag: '랭킹', title: '전체 랭킹 보기',     desc: '1등까지 몇 명? 내 순위', primary: true },
-  save:       { tag: '저축', title: '오늘부터 저축 기록',   desc: '적립·절약이 퇴사를 며칠 당기는지' },
+  save:       { tag: '저축', title: '오늘부터 저축 기록',   desc: '적립·절약이 파이어를 며칠 당기는지' },
   experiment: { tag: '비교', title: '조건 바꿔 비교하기', desc: '증권앱 차트로 What-If' },
-  share:      { tag: '공유', title: '내 결과 공유',       desc: '퇴사 나이·또래 비교 카드' },
+  share:      { tag: '공유', title: '내 결과 공유',       desc: '파이어 나이·또래 비교 카드' },
   tools:      { tag: '도구', title: '정밀 도구 더보기',   desc: '건보료·세금·도시·커뮤니티' }
 };
 
 // 도구 허브 목록 (메인에서 분리된 기능들)
 export const TOOLS = [
   { id: 'experiment', tag: '비교',   title: '조건 바꿔 비교',     desc: '증권앱 차트로 What-If 비교' },
-  { id: 'dependent',  tag: '건보료', title: '피부양자 자격 판정', desc: '퇴사 후 건보료 박탈 여부' },
+  { id: 'dependent',  tag: '건보료', title: '피부양자 자격 판정', desc: '파이어 후 건보료 박탈 여부' },
   { id: 'foreignTax', tag: '세금',   title: '해외주식 양도세',    desc: '분할 매도 절세 계산' },
   { id: 'dividend',   tag: '배당',   title: '배당 생활 계산기',   desc: '월 배당·필요 원금·세금 경계' },
   { id: 'pension',    tag: '연금',   title: '국민연금 조기수령',  desc: '당겨 받기 득실' },

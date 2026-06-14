@@ -3,8 +3,8 @@ import { votePoll, fetchPollResults } from '../../utils/firemapScoresApi.js';
 import { BASE_URL } from '../../firemap-v2/data.js';
 
 const GAMES = [
-  { key: 'bg_money_vs_quit', q: '당신의 선택은?', a: '10억 받고\n80세까지 일', b: '0원이어도\n지금 퇴사' },
-  { key: 'bg_lean_vs_fat', q: '어떤 파이어?', a: '적게 쓰고\n빨리 은퇴', b: '많이 벌고\n늦게 은퇴' },
+  { key: 'bg_money_vs_quit', q: '당신의 선택은?', a: '10억 받고\n80세까지 일', b: '0원이어도\n지금 파이어' },
+  { key: 'bg_lean_vs_fat', q: '어떤 파이어?', a: '적게 쓰고\n빨리 파이어', b: '많이 벌고\n늦게 파이어' },
   { key: 'bg_now_vs_later', q: '돈 vs 시간', a: '월 200\n지금 자유', b: '월 500\n10년 뒤 자유' },
   { key: 'bg_city_vs_country', q: '어디서 살래?', a: '도시에서\n바쁘게', b: '시골·해외서\n느긋하게' },
   { key: 'bg_solo_vs_together', q: '누구랑?', a: '혼자\n빨리 파이어', b: '같이\n천천히 파이어' },

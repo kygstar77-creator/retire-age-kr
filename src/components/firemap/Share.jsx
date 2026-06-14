@@ -14,7 +14,7 @@ export default function Share({ inputs, simulation, onBack }) {
   const rank = statsRank(simulation);
   const phrase = survivalPhrase(simulation);
   const earliest = simulation.earliestRetirementAge;
-  const resultLine = earliest ? `나는 ${earliest}세에 퇴사 가능 · ${phrase.short}` : phrase.short;
+  const resultLine = earliest ? `나는 ${earliest}세에 파이어 가능 · ${phrase.short}` : phrase.short;
 
   const flash = (text) => { setMessage(text); setTimeout(() => setMessage(''), 2000); };
   const copyFallback = async (text, label) => {
@@ -26,7 +26,7 @@ export default function Share({ inputs, simulation, onBack }) {
     const blob = await makeShareImage(inputs, simulation);
     const file = new File([blob], 'firemap-result.png', { type: 'image/png' });
     if (navigator.canShare?.({ files: [file] })) {
-      await navigator.share({ files: [file], title: '내 퇴사 나이', text: resultLine });
+      await navigator.share({ files: [file], title: '내 파이어 나이', text: resultLine });
       flash('결과 카드 공유창을 열었어요');
     } else {
       const url = URL.createObjectURL(blob);
@@ -77,15 +77,15 @@ export default function Share({ inputs, simulation, onBack }) {
         <p className="fm-kicker">공유</p>
         <h2>내 결과 공유하기</h2>
         <section className="fm-rank-hero fm-share-hero">
-          <p className="fm-rank-label">내 퇴사 가능 나이 · {rank.ageBandLabel} 또래 기준</p>
+          <p className="fm-rank-label">내 파이어 가능 나이 · {rank.ageBandLabel} 또래 기준</p>
           <div className="fm-rank-top">
-            <span className="fm-rank-pct">{earliest ? `${earliest}세 퇴사 가능` : '조금만 더!'}</span>
+            <span className="fm-rank-pct">{earliest ? `${earliest}세 파이어 가능` : '조금만 더!'}</span>
           </div>
           <p className="fm-rank-line">{phrase.short}</p>
         </section>
         <div className="fm-share-actions">
           <button className="fm-share-btn fm-share-primary" type="button" onClick={shareImage}>
-            <b>결과 카드 이미지</b><span>퇴사 나이·또래 비교만 — 금액은 안 담겨요</span>
+            <b>결과 카드 이미지</b><span>파이어 나이·또래 비교만 — 금액은 안 담겨요</span>
           </button>
           <button className="fm-share-btn" type="button" onClick={shareCondition}>
             <b>내 조건 그대로 공유</b><span>계산값 링크 — 받은 사람 화면에 자동 입력</span>

@@ -38,7 +38,7 @@ export default function Home({ onStart, onMove, simulation }) {
 
   const latest = getLatestRank();
   const proof = agg && agg.total > 0
-    ? `${agg.total.toLocaleString()}명이 이미 계산했어요${agg.avgEarliest ? ` · 또래 평균 퇴사 ${agg.avgEarliest}세` : ''}`
+    ? `${agg.total.toLocaleString()}명이 이미 계산했어요${agg.avgEarliest ? ` · 전체 평균 파이어 ${agg.avgEarliest}세` : ''}`
     : '';
   const setClamp = (v) => setAge(Math.max(19, Math.min(80, v)));
 
@@ -48,7 +48,7 @@ export default function Home({ onStart, onMove, simulation }) {
       {latest && (
         <button type="button" className="fm-recent-rank" onClick={() => { window.location.hash = '#result'; }}>
           <span className="fm-recent-label">내 최근 계산</span>
-          <span className="fm-recent-main">{latest.earliest ? `${latest.earliest}세에 퇴사 가능` : '내 퇴사 가능 나이'}</span>
+          <span className="fm-recent-main">{latest.earliest ? `${latest.earliest}세에 파이어 가능` : '내 파이어 가능 나이'}</span>
           <span className="fm-recent-sub">지난 계산 다시 보기 ›</span>
         </button>
       )}
@@ -68,10 +68,11 @@ export default function Home({ onStart, onMove, simulation }) {
           <p className="fm-challenge-cta-line">당신은 몇 살에 가능할까요? 아래에서 1분이면 확인돼요 ↓</p>
         </section>
       )}
+      <FireStatus onMove={onMove} simulation={simulation} />
       <section className="fm-home-hero-card">
         <p>파이어맵</p>
-        <h1>나는 몇 살에<br />퇴사할 수 있을까?</h1>
-        <span>자산·생활비만 입력하면 1분 만에 내 퇴사 가능 나이와 또래 중 내 등수까지 나와요.</span>
+        <h1>나는 몇 살에<br />파이어할 수 있을까?</h1>
+        <span>자산·생활비만 입력하면 1분 만에 내 파이어 가능 나이와 또래 중 내 등수까지 나와요.</span>
         <div className="fm-home-age">
           <label htmlFor="fm-home-age-in">지금 몇 살인가요?</label>
           <div className="fm-home-age-ctrl">
@@ -86,7 +87,6 @@ export default function Home({ onStart, onMove, simulation }) {
         <button type="button" className="fm-home-cta" onClick={() => { track('start_calc', { age, from: challenge ? 'share' : 'home' }); onStart(age); }}>{challenge ? '나도 계산하고 친구랑 비교하기 →' : '이 나이로 1분 계산 시작 →'}</button>
         {proof && <p className="fm-home-proof">{proof}</p>}
       </section>
-      <FireStatus onMove={onMove} simulation={simulation} />
       <InstallButton />
       <DailyFire onMove={onMove} />
       <section className="fm-home-mini-card">
@@ -96,7 +96,7 @@ export default function Home({ onStart, onMove, simulation }) {
       <nav className="fm-policy-links" aria-label="정책 및 문의">
         <a href="/privacy.html">개인정보처리방침</a>
         <a href="/disclaimer.html">면책 안내</a>
-        <a href="/guide/">은퇴 백과</a>
+        <a href="/guide/">파이어 백과</a>
         <a href="/contact.html">문의</a>
         <FeedbackButton />
       </nav>

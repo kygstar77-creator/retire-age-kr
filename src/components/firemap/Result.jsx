@@ -57,7 +57,7 @@ function ResultHeroV2({ simulation }) {
 
   return (
     <section className="fm-rank-hero fm-result-hero-v4">
-      <p className="fm-rank-label">내 퇴사 가능 나이 · {base.ageBandLabel} 또래 기준</p>
+      <p className="fm-rank-label">내 파이어 가능 나이 · {base.ageBandLabel} 또래 기준</p>
       <div className="fm-rank-top">
         <span className="fm-rank-pct">{earliest ? `${earliest}세` : '계산 필요'}</span>
         {diff != null && (
@@ -66,7 +66,7 @@ function ResultHeroV2({ simulation }) {
           </span>
         )}
       </div>
-      <p className="fm-hero-headline">{earliest ? '지금 계획이면 이 나이에 퇴사할 수 있어요' : '더 모으거나 생활비를 줄이면 퇴사 시점이 보여요'}</p>
+      <p className="fm-hero-headline">{earliest ? '지금 계획이면 이 나이에 파이어할 수 있어요' : '더 모으거나 생활비를 줄이면 파이어 시점이 보여요'}</p>
       {live
         ? <button type="button" className="fm-rank-line fm-rank-line-link" onClick={() => { window.location.hash = '#ranking'; }}>함께 계산한 <b>{live.total.toLocaleString()}명</b> 중 <b>{live.position.toLocaleString()}등</b> · <span className="fm-rank-go">전체 랭킹 보기 ›</span></button>
         : <p className="fm-rank-line">실시간 집계 중…</p>}
@@ -74,7 +74,7 @@ function ResultHeroV2({ simulation }) {
         ? <p className="fm-rank-climb">1등까지 <b>{(live.position - 1).toLocaleString()}명</b> · 조건 바꾸면 등수가 올라가요</p>
         : <p className="fm-rank-climb">지금 전체 1등이에요!</p>)}
       <div className="fm-hero-mini">
-        <span>목표 퇴사 <b>{target}세</b></span>
+        <span>목표 파이어 <b>{target}세</b></span>
         <span>자산 버티는 나이 <b>{phrase.runway}</b></span>
       </div>
       <p className="fm-rank-note">{peerAvg != null ? `또래 평균 ${peerAvg}세 · ` : ''}또래 순자산 상위 {base.percentile}% · <b>세전(세금 미반영)</b></p>
@@ -121,7 +121,7 @@ function TopLevers({ inputs, simulation, onChange }) {
       <section className="fm-card fm-goal fm-goal-done">
         <p className="fm-kicker">목표 달성</p>
         <h2>이미 {until}세까지 버티는 계획이에요 🎉</h2>
-        <p className="fm-goal-sub">{simulation.earliestRetirementAge ? `가장 빠르면 ${simulation.earliestRetirementAge}세에도 은퇴할 수 있어요. 더 당겨볼까요?` : '여유가 있어요. 조건을 더 공격적으로 바꿔보세요.'}</p>
+        <p className="fm-goal-sub">{simulation.earliestRetirementAge ? `가장 빠르면 ${simulation.earliestRetirementAge}세에도 파이어할 수 있어요. 더 당겨볼까요?` : '여유가 있어요. 조건을 더 공격적으로 바꿔보세요.'}</p>
         <button type="button" className="fm-ce-cta" onClick={() => onChange && (window.location.hash = '#experiment')}>조건 바꿔 더 당겨보기</button>
       </section>
     );
@@ -136,14 +136,14 @@ function TopLevers({ inputs, simulation, onChange }) {
     { tag: '근무', solve: solveMin((d) => ok({ targetRetirementAge: ni.targetRetirementAge + d }), 15, 1),
       label: (d) => `${d}년 더 일하기 (${ni.targetRetirementAge + d}세)`, patch: (d) => ({ targetRetirementAge: ni.targetRetirementAge + d }) },
     { tag: '부업', solve: solveMin((d) => ok({ partTimeIncomeAfterRetirement: ni.partTimeIncomeAfterRetirement + d }), 10000000, 100000),
-      label: (d) => `퇴사 후 월 ${formatWon(d)} 벌기`, patch: (d) => ({ partTimeIncomeAfterRetirement: ni.partTimeIncomeAfterRetirement + d }) },
+      label: (d) => `파이어 후 월 ${formatWon(d)} 벌기`, patch: (d) => ({ partTimeIncomeAfterRetirement: ni.partTimeIncomeAfterRetirement + d }) },
     { tag: '수익률', solve: solveMin((d) => ok({ annualReturnRate: ni.annualReturnRate + d }), 15, 0.5),
       label: (d) => `수익률 +${d}%p (연 ${(ni.annualReturnRate + d).toFixed(1)}%)`, patch: (d) => ({ annualReturnRate: ni.annualReturnRate + d }) }
   ];
   return (
     <section className="fm-card fm-goal">
       <p className="fm-kicker">목표 달성 플랜</p>
-      <h2>{ni.targetRetirementAge}세 퇴사를 성공시키려면?</h2>
+      <h2>{ni.targetRetirementAge}세 파이어를 성공시키려면?</h2>
       <p className="fm-goal-sub">{until}세까지 자산이 버티게 하는 방법이에요. <b>아래 중 하나만</b> 해도 목표 달성!</p>
       <ul className="fm-goal-list">
         {items.map((it) => (
@@ -198,7 +198,7 @@ function YearlyAssetChart({ simulation }) {
     <div className="fm-yac">
       <div className="fm-yac-read">
         <b>{cur.age}세</b>
-        <span className={cur.status === '퇴사 후' ? 'after' : 'before'}>{cur.status}</span>
+        <span className={cur.status === '파이어 후' ? 'after' : 'before'}>{cur.status}</span>
         <strong>{formatWon(cur.v)}</strong>
       </div>
       <p className="fm-yac-split"><i className="fm-dot fm-dot-principal" />내가 넣은 돈 {formatWon(cur.principal)} · <i className="fm-dot fm-dot-gains" />불어난 돈 {formatWon(cur.gains)}</p>
@@ -219,7 +219,7 @@ function YearlyAssetChart({ simulation }) {
           <circle cx={X(cur.age)} cy={Y(cur.v)} r="3.5" className="fm-yac-dot" />
         </svg>
       </div>
-      <div className="fm-yac-x"><span>{a0}세</span><span>퇴사 {ret}세</span><span>{a1}세</span></div>
+      <div className="fm-yac-x"><span>{a0}세</span><span>파이어 {ret}세</span><span>{a1}세</span></div>
       <p className="fm-yac-hint">그래프를 눌러 나이별 자산을 확인하세요</p>
     </div>
   );
@@ -274,8 +274,8 @@ function AssetJourney({ simulation }) {
     const hit = rows.find((r) => r.financialAsset >= req);
     if (hit) items.push({ age: hit.age, label: 'FIRE 목표 자산 달성', sub: `4%룰 ${formatWon(req)}`, hi: true });
   }
-  if (simulation.earliestRetirementAge) items.push({ age: simulation.earliestRetirementAge, label: '가장 이른 은퇴 가능', sub: null, hi: true });
-  items.push({ age: simulation.inputs.targetRetirementAge, label: '목표 퇴사', sub: null, hi: true });
+  if (simulation.earliestRetirementAge) items.push({ age: simulation.earliestRetirementAge, label: '가장 이른 파이어 가능', sub: null, hi: true });
+  items.push({ age: simulation.inputs.targetRetirementAge, label: '목표 파이어', sub: null, hi: true });
   const seen = new Set();
   const list = items
     .filter((m) => { const k = m.age + m.label; if (seen.has(k)) return false; seen.add(k); return true; })
@@ -288,7 +288,7 @@ function AssetJourney({ simulation }) {
       <div className="fm-growth-grid">
         <div><small>1년 뒤</small><b>+{formatWon(Math.max(0, y1))}</b></div>
         {y5 != null && <div><small>5년 뒤</small><b>+{formatWon(Math.max(0, y5))}</b></div>}
-        <div><small>은퇴 시점</small><b>{formatWon(simulation.retirementFinancialAsset)}</b></div>
+        <div><small>파이어 시점</small><b>{formatWon(simulation.retirementFinancialAsset)}</b></div>
       </div>
       {y1 > 0 && (
         <p className="fm-growth-split">1년 새 <b>+{formatWon(Math.max(0, y1))}</b> = 내 저축 <b>{formatWon(save1)}</b> + 투자수익 <b>{formatWon(ret1)}</b></p>
@@ -355,7 +355,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
     l.searchParams.set('inf', String(inf));
     if (pos && tot) { l.searchParams.set('pos', String(pos)); l.searchParams.set('tot', String(tot)); }
     const url = l.toString();
-    const title = earliest ? `나는 ${earliest}세에 퇴사할 수 있어요 — 파이어맵` : '파이어맵 — 내 퇴사 가능 나이';
+    const title = earliest ? `나는 ${earliest}세에 파이어할 수 있어요 — 파이어맵` : '파이어맵 — 내 파이어 가능 나이';
     const description = '파이어족들을 위한 커뮤니티 · 나는 또래 중 파이어 랭킹 몇 등?';
     track('share_summary_copy', { type: 'result_share' });
     // 1순위: 카카오톡 카드(개인 /og 이미지) — 긴 URL 텍스트 없이 카드 하나만 안정적으로 전송
@@ -404,7 +404,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
       <button type="button" className="fm-rank-cta-other" onClick={shareOther}>🔗 링크 복사 · 다른 앱으로 공유</button>
       <AssetJourney simulation={simulation} />
       <TopLevers inputs={inputs} simulation={simulation} onChange={onChange} />
-      <AccountCard kicker="내 기록 지키기 🔒" sub="방금 나온 퇴사 나이·등수와 적립·절약 기록을 닉네임+비밀번호로 저장하세요. 기기가 바뀌어도 같은 계정으로 이어집니다." />
+      <AccountCard kicker="내 기록 지키기 🔒" sub="방금 나온 파이어 나이·등수와 적립·절약 기록을 닉네임+비밀번호로 저장하세요. 기기가 바뀌어도 같은 계정으로 이어집니다." />
       <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />
       <NextActions onMove={onMove} />
     </main>

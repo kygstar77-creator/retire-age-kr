@@ -15,14 +15,14 @@ const readNick = () => { try { return localStorage.getItem('fm_nickname') || '';
 const myCid = () => { try { return localStorage.getItem('fm_cid'); } catch { return null; } };
 
 const BOARDS = [
-  { key: 'fire', label: '빠른 은퇴' },
-  { key: 'advance', label: '퇴사 앞당김' },
+  { key: 'fire', label: '빠른 파이어' },
+  { key: 'advance', label: '파이어 앞당김' },
   { key: 'deposit', label: '이번 달 저축' },
   { key: 'save', label: '절약' }
 ];
 const SUBS = {
-  fire: '은퇴 가능 나이가 빠른 순 · 나이가 같으면 저축 많이 한 사람이 위',
-  advance: '적립·절약으로 은퇴를 가장 많이 앞당긴 순',
+  fire: '파이어 가능 나이가 빠른 순 · 나이가 같으면 저축 많이 한 사람이 위',
+  advance: '적립·절약으로 파이어를 가장 많이 앞당긴 순',
   deposit: '이번 달 실제 적립이 많은 순 · 매월 새로 시작',
   save: '아껴서 모은 돈 랭킹'
 };
@@ -47,13 +47,14 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
   const bandArg = scope === 'band' ? base.ageBand : undefined;
+  const scopeWord = scope === 'band' ? `${base.ageBandLabel} 또래` : '전체';
 
   const load = async () => {
     if (board === 'fire') {
       const [t, r, a, nb, ap] = await Promise.all([
         fetchTopScores(10, bandArg),
         fetchUserRank(earliest, bandArg, myAdvance),
-        fetchAggregates(),
+        fetchAggregates(bandArg),
         fetchNeighbors(earliest, bandArg),
         fetchAssetPercentile(bandArg, myBand)
       ]);
@@ -87,7 +88,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
   };
 
   const rowValue = (row) => {
-    if (board === 'fire') return row.earliest_age ? `${row.earliest_age}세 은퇴` : '—';
+    if (board === 'fire') return row.earliest_age ? `${row.earliest_age}세 파이어` : '—';
     if (board === 'advance') return (fmtAdvance((Number(row.value) || 0) * 86400) || '0초') + ' 앞당김';
     if (board === 'save' && saveMetric === 'streak') return `${row.value || 0}일`;
     return wonStr(row.value || 0);
@@ -146,13 +147,13 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
       {board === 'fire' && (
         <>
           <section className="fm-rank-hero">
-            <p className="fm-rank-label">내 순위 · {scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} · 가장 빨리 은퇴 순</p>
+            <p className="fm-rank-label">내 순위 · {scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} · 가장 빨리 파이어 순</p>
             <div className="fm-rank-top">
               <span className="fm-rank-pct">{me ? `${me.position.toLocaleString()}위` : '집계 중…'}</span>
             </div>
-            {me && <p className="fm-rank-line">{scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} {me.total.toLocaleString()}명 중 상위 {me.percentile}% · {earliest ? `${earliest}세 은퇴 가능` : '아직 은퇴 어려움'}</p>}
+            {me && <p className="fm-rank-line">{scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} {me.total.toLocaleString()}명 중 상위 {me.percentile}% · {earliest ? `${earliest}세 파이어 가능` : '아직 파이어 어려움'}</p>}
             {me && (me.position > 1
-              ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 은퇴 나이가 빠를수록 위로, <b>은퇴 나이가 같으면 저축 많이 한 사람이 위</b>예요</p>
+              ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 파이어 나이가 빠를수록 위로, <b>파이어 나이가 같으면 저축 많이 한 사람이 위</b>예요</p>
               : <p className="fm-rank-climb">지금 전체 1등! 매일 저축해서 자리를 지켜요 🔥</p>)}
           </section>
 
@@ -165,26 +166,26 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
             <section className="fm-card">
               <h2 className="fm-section-title">내 주변 순위</h2>
               {nearAbove && earliest
-                ? <p className="fm-section-sub">바로 위 <b>{displayName(nearAbove)}</b>는 {nearAbove.earliest_age}세 · 은퇴를 <b>{Math.max(1, earliest - nearAbove.earliest_age)}년</b>만 앞당기면 제쳐요!</p>
+                ? <p className="fm-section-sub">바로 위 <b>{displayName(nearAbove)}</b>는 {nearAbove.earliest_age}세 · 파이어를 <b>{Math.max(1, earliest - nearAbove.earliest_age)}년</b>만 앞당기면 제쳐요!</p>
                 : <p className="fm-section-sub">바로 위·아래 라이벌이에요. 조건을 바꿔 따라잡아 보세요.</p>}
               <ol className="fm-lb-list">
                 {aboveN.map((r, i) => (
                   <li key={`a${i}`} className="fm-lb-row">
                     <span className="fm-lb-rank">{(me.position - (aboveN.length - i)).toLocaleString()}</span>
                     <span className="fm-lb-who">{displayName(r)}</span>
-                    <span className="fm-lb-score">{r.earliest_age ? `${r.earliest_age}세 은퇴` : '—'}</span>
+                    <span className="fm-lb-score">{r.earliest_age ? `${r.earliest_age}세 파이어` : '—'}</span>
                   </li>
                 ))}
                 <li className="fm-lb-row me">
                   <span className="fm-lb-rank">{me.position.toLocaleString()}</span>
                   <span className="fm-lb-who">{nick.trim() ? nick.trim() : '나'} (나)</span>
-                  <span className="fm-lb-score">{earliest ? `${earliest}세 은퇴` : '—'}</span>
+                  <span className="fm-lb-score">{earliest ? `${earliest}세 파이어` : '—'}</span>
                 </li>
                 {belowN.map((r, i) => (
                   <li key={`b${i}`} className="fm-lb-row">
                     <span className="fm-lb-rank">{(me.position + i + 1).toLocaleString()}</span>
                     <span className="fm-lb-who">{displayName(r)}</span>
-                    <span className="fm-lb-score">{r.earliest_age ? `${r.earliest_age}세 은퇴` : '—'}</span>
+                    <span className="fm-lb-score">{r.earliest_age ? `${r.earliest_age}세 파이어` : '—'}</span>
                   </li>
                 ))}
               </ol>
@@ -194,12 +195,12 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
           {agg && agg.total > 0 && (
             <section className="fm-card fm-stats">
               <h2 className="fm-section-title">파이어맵 현황</h2>
-              <p className="fm-section-sub">지금까지 함께 계산한 모두의 익명 집계예요</p>
+              <p className="fm-section-sub">{scope === 'band' ? `${base.ageBandLabel} 또래끼리 비교한 익명 집계예요` : '지금까지 함께 계산한 모두의 익명 집계예요'}</p>
               <div className="fm-stats-grid">
-                <div><small>함께 계산</small><b>{agg.total.toLocaleString()}명</b></div>
-                {agg.avgEarliest != null && <div><small>또래 평균 은퇴</small><b>{agg.avgEarliest}세</b></div>}
-                {agg.avgEarliest != null && earliest && <div><small>또래 대비 나</small><b>{agg.avgEarliest - earliest === 0 ? '평균과 같음' : `${Math.abs(agg.avgEarliest - earliest)}년 ${agg.avgEarliest - earliest > 0 ? '빠름' : '느림'}`}</b></div>}
-                {assetPct && <div><small>파이어맵 또래 중 자산</small><b>상위 {assetPct.percentile}%</b></div>}
+                <div><small>{scope === 'band' ? `${scopeWord}` : '함께 계산'}</small><b>{agg.total.toLocaleString()}명</b></div>
+                {agg.avgEarliest != null && <div><small>{scopeWord} 평균 파이어</small><b>{agg.avgEarliest}세</b></div>}
+                {agg.avgEarliest != null && earliest && <div><small>{scopeWord} 대비 나</small><b>{agg.avgEarliest - earliest === 0 ? '평균과 같음' : `${Math.abs(agg.avgEarliest - earliest)}년 ${agg.avgEarliest - earliest > 0 ? '빠름' : '느림'}`}</b></div>}
+                {assetPct && <div><small>{scopeWord} 중 자산</small><b>상위 {assetPct.percentile}%</b></div>}
               </div>
             </section>
           )}

@@ -51,7 +51,7 @@ export default function FloatingFeedback() {
                 <p className="fm-feedback-safe">공개로 올라가요. 개인정보·구체적 금융정보는 남기지 마세요. (버그·불편 신고는 홈 하단 ‘의견 보내기’로)</p>
                 {error && <p className="fm-feedback-error">{error}</p>}
                 <form className="fm-feedback-form" onSubmit={submit}>
-                  <textarea value={message} onChange={(e) => setMessage(e.target.value)} maxLength={240} placeholder="예: 생활비 줄이니 은퇴가 5년 당겨졌어요!" aria-label="한마디 입력" />
+                  <textarea value={message} onChange={(e) => setMessage(e.target.value)} maxLength={240} placeholder="예: 생활비 줄이니 파이어가 5년 당겨졌어요!" aria-label="한마디 입력" />
                   <button type="submit" disabled={sending || !message.trim()}>{sending ? '올리는 중' : '올리기'}</button>
                 </form>
               </>

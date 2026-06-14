@@ -129,7 +129,7 @@ export default function Community({ onBack }) {
 
       <form className="fm-card fm-community-form" onSubmit={submitPost}>
         <label htmlFor="fm-community-input">새 글 쓰기</label>
-        <textarea id="fm-community-input" maxLength={240} value={post} onChange={(e) => setPost(e.target.value)} placeholder="예: 생활비를 줄이니 은퇴가 5년 당겨졌어요. 다들 어떻게 아끼세요?" />
+        <textarea id="fm-community-input" maxLength={240} value={post} onChange={(e) => setPost(e.target.value)} placeholder="예: 생활비를 줄이니 파이어가 5년 당겨졌어요. 다들 어떻게 아끼세요?" />
         <div className="fm-community-form-row">
           <small>{post.length}/240 · {nick ? `${nick} 으로 게시` : '닉네임 자동 생성'}</small>
           <button type="submit" disabled={sending || !post.trim()}>{sending ? '올리는 중' : '글 올리기'}</button>
@@ -137,7 +137,7 @@ export default function Community({ onBack }) {
       </form>
 
       <section className="fm-community-feed">
-        {posts.length === 0 && <p className="fm-community-empty">첫 글을 남겨보세요.</p>}
+        {posts.length === 0 && <p className="fm-community-empty">아직 글이 없어요. 첫 글을 남기면 다른 파이어족들이 답글로 응원해줘요 🔥</p>}
         {posts.map((p) => {
           const reps = repliesOf(p.id);
           const open = openId === p.id;

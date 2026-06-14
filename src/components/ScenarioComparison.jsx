@@ -18,7 +18,7 @@ export default function ScenarioComparison({ simulation }) {
           {scenarios.map((scenario) => (
             <article className="scenario-card" key={scenario.extraYears}>
               <div className="scenario-header">
-                <strong>{scenario.retirementAge}세 퇴사</strong>
+                <strong>{scenario.retirementAge}세 파이어</strong>
                 <span className={`badge badge-${scenario.status}`}>
                   {statusMeta[scenario.status].label}
                 </span>

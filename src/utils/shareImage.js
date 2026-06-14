@@ -61,9 +61,9 @@ export async function makeShareImage(inputs, simulation) {
   ctx.fillText('파이어맵', PAD + 52, 158);
 
   ctx.fillStyle = SOFT; ctx.font = `600 36px ${FONT}`;
-  ctx.fillText(`내 퇴사 가능 나이 · ${rank.ageBandLabel} 또래 기준`, PAD, 308);
+  ctx.fillText(`내 파이어 가능 나이 · ${rank.ageBandLabel} 또래 기준`, PAD, 308);
 
-  const heroText = earliest ? `${earliest}세 퇴사 가능` : '조금만 더!';
+  const heroText = earliest ? `${earliest}세 파이어 가능` : '조금만 더!';
   ctx.fillStyle = WHITE; ctx.font = `800 100px ${FONT}`;
   ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
   ctx.fillText(heroText, PAD, 452);
@@ -77,9 +77,9 @@ export async function makeShareImage(inputs, simulation) {
   ctx.fillStyle = SOFT; ctx.font = `600 34px ${FONT}`;
   ctx.fillText('지금 계획 기준 · 또래 중 내 등수도 확인', PAD, 786);
   ctx.fillStyle = GREEN; ctx.font = `600 30px ${FONT}`;
-  ctx.fillText('전국 또래와 비교한 내 퇴사 나이', PAD, 850);
+  ctx.fillText('전국 또래와 비교한 내 파이어 나이', PAD, 850);
 
-  pill(PAD, 952, 100, '나도 내 퇴사 나이 확인하기', `800 42px ${FONT}`, WHITE, NAVY);
+  pill(PAD, 952, 100, '나도 내 파이어 나이 확인하기', `800 42px ${FONT}`, WHITE, NAVY);
 
   ctx.fillStyle = SOFT; ctx.font = `700 30px ${FONT}`;
   ctx.fillText('firemap.kr', PAD, 1108);

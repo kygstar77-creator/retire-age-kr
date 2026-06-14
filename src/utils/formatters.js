@@ -1,7 +1,7 @@
 export const statusMeta = {
-  stable: { label: '안정', summary: '퇴사 가능성이 높습니다' },
+  stable: { label: '안정', summary: '파이어 가능성이 높습니다' },
   caution: { label: '주의', summary: '몇 가지 조건 확인이 필요합니다' },
-  risk: { label: '위험', summary: '목표 퇴사 나이에는 위험합니다' },
+  risk: { label: '위험', summary: '목표 파이어 나이에는 위험합니다' },
   neutral: { label: '정보', summary: '참고 지표입니다' }
 };
 

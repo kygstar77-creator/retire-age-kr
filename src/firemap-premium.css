@@ -243,3 +243,7 @@ button:active{ transform:scale(.985); }
 .fm-community-login span{ display:block; margin-top:6px; font-size:12px; font-weight:600; color:#8a93a0; }
 .fm-community-login:active{ background:#fff7ed; }
 .fm-reply-login{ width:100%; background:#fff5ec; border:1px solid #ffd6ad; border-radius:10px; padding:10px; color:#9a3412; font-size:12.5px; font-weight:800; cursor:pointer; margin-top:6px; }
+
+
+/* ── 도구: 백과 링크 타일(버튼 타일과 동일 톤) ── */
+.fm-tool-tile-link{ display:flex; flex-direction:column; text-decoration:none; }

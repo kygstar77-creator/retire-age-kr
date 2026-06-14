@@ -1,4 +1,5 @@
 // 등수 이력(로컬, 비식별) — 재방문 시 "지난번 대비" 변화를 보여주기 위함.
+import { pushState } from '../utils/firemapStateApi.js';
 const KEY = 'fm_rank_history_v1';
 
 export function getHistory() {
@@ -12,7 +13,9 @@ export function saveRankSnapshot(snap) {
     const entry = { percentile: snap.percentile, grade: snap.grade, score: snap.score, earliest: snap.earliest, date };
     if (list.length && list[list.length - 1].date === date) list[list.length - 1] = entry;
     else list.push(entry);
-    localStorage.setItem(KEY, JSON.stringify(list.slice(-12)));
+    const trimmed = list.slice(-12);
+    localStorage.setItem(KEY, JSON.stringify(trimmed));
+    try { pushState(KEY, trimmed); } catch { /* ignore */ }
   } catch { /* ignore */ }
 }
 

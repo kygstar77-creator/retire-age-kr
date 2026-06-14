@@ -35,6 +35,14 @@ export default function Tools({ onMove }) {
           </div>
         </div>
       ))}
+      <div className="fm-tool-group">
+        <p className="fm-tool-group-label">더 알아보기</p>
+        <a className="fm-tool-tile fm-tool-tile-link" href="/guide/">
+          <span className="fm-tool-ico">📚</span>
+          <strong>은퇴 백과</strong>
+          <em>건보료·세금·연금·현실 금액 가이드</em>
+        </a>
+      </div>
     </main>
   );
 }

@@ -400,7 +400,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
       <ResultSimTabs current="result" />
       <ResultHeroV2 simulation={simulation} />
       <div className="fm-rank-cta">
-        <button type="button" className="fm-rank-cta-share" onClick={shareRank}>🔥 내 등수 자랑하기</button>
+        <button type="button" className="fm-rank-cta-share" onClick={shareRank}>앱 공유하기</button>
         <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>🎛️ 수치 바꿔보기</button>
       </div>
       <button type="button" className="fm-rank-cta-other" onClick={shareOther}>🔗 링크 복사 · 다른 앱으로 공유</button>

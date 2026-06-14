@@ -1,3 +1,5 @@
+import { earlyClaim } from '../firemap-v2/pension.js';
+
 export const defaultInputs = {
   currentAge: 35,
   targetRetirementAge: 55,
@@ -28,7 +30,8 @@ export const defaultInputs = {
   investType: 0,
   dividendYield: 4,
   dividendIncomeMonthly: 0, // 배당 '인출 소득'(세후 월) — 부업소득과 분리. 배당세 모드와 상호배타.
-  dividendIncomeGrowth: 0   // 배당 인출 소득의 매년 성장률(%)
+  dividendIncomeGrowth: 0,  // 배당 인출 소득의 매년 성장률(%)
+  pensionClaimAge: 0        // 국민연금 조기수령 나이(0=정상). 정상연금은 baseline로 보존.
 };
 
 const toRate = (value) => Number(value || 0) / 100;
@@ -233,9 +236,16 @@ export function buildSimulation(inputs) {
 
 export function normalizeInputs(inputs) {
   const merged = { ...defaultInputs, ...inputs };
-  return Object.fromEntries(
+  const data = Object.fromEntries(
     Object.entries(merged).map(([key, value]) => [key, Number(String(value ?? '').replace(/[^\d.-]/g, '')) || 0])
   );
+  // 국민연금 조기수령: 정상연금(baseline)은 그대로, 조기수령 나이가 이르면 '실효 연금'만 감액(누적 감액 방지)
+  if (data.pensionClaimAge > 0 && data.pensionClaimAge < data.expectedPensionAge) {
+    const ec = earlyClaim(data.expectedMonthlyPension, data.expectedPensionAge, data.pensionClaimAge);
+    data.expectedMonthlyPension = ec.monthly;
+    data.expectedPensionAge = data.pensionClaimAge;
+  }
+  return data;
 }
 
 function calculateHealthInsuranceExpense(data, inflationFactor) {

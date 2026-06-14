@@ -83,9 +83,10 @@ export function DividendCard({ inputs, onApply }) {
 }
 
 export function PensionEarlyClaimCard({ inputs, onApply }) {
-  const normalAge = inputs.expectedPensionAge || 65;
-  const normalMonthly = inputs.expectedMonthlyPension || 0;
-  const [claimAge, setClaimAge] = useState(normalAge);
+  const normalAge = Number(inputs.expectedPensionAge) || 65;
+  const normalMonthly = Number(inputs.expectedMonthlyPension) || 0;
+  const appliedClaim = Number(inputs.pensionClaimAge) || 0;
+  const [claimAge, setClaimAge] = useState(appliedClaim > 0 ? appliedClaim : normalAge);
   const r = earlyClaim(normalMonthly, normalAge, claimAge);
   return (
     <section className="fm-card fm-text-card fm-advanced-section">
@@ -99,11 +100,12 @@ export function PensionEarlyClaimCard({ inputs, onApply }) {
           <li>예상 월 수령액 {formatWon(r.monthly)}</li>
         </ul>
       </div>
-      {normalMonthly > 0 && (
-        <button type="button" className="fm-dc-apply" onClick={() => onApply({ expectedPensionAge: claimAge, expectedMonthlyPension: r.monthly })}>
-          조기수령 가정 반영하기
-        </button>
-      )}
+      {normalMonthly > 0 && (appliedClaim > 0
+        ? <button type="button" className="fm-dc-apply on" onClick={() => onApply({ pensionClaimAge: 0 })}>✓ 조기수령 반영됨 ({appliedClaim}세 · {earlyClaim(normalMonthly, normalAge, appliedClaim).reductionPct}% 감액) · 되돌리기(정상 수령)</button>
+        : (claimAge < normalAge
+            ? <button type="button" className="fm-dc-apply" onClick={() => onApply({ pensionClaimAge: claimAge })}>이 조기수령({claimAge}세) 가정을 결과에 반영하기</button>
+            : <button type="button" className="fm-dc-apply" disabled>조기수령 나이를 정상({normalAge}세)보다 낮추면 반영할 수 있어요</button>))}
+      {normalMonthly > 0 && <small className="fm-dc-applynote">정상 수령 나이·월액은 질문 또는 ‘바꿔보기 › 국민연금 설정’에서 정해요. 여기선 <b>조기수령 나이만</b> 바꿔 반영해요 — 정상 연금은 보존되어 중복·누적 감액이 없어요.</small>}
     </section>
   );
 }

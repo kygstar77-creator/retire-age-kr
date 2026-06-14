@@ -17,9 +17,8 @@ function pickNextAction() {
   const sv = readJSONsafe('fm_save');
   const fd = readJSONsafe('fm_daily');
   const hasSave = (sv && (sv.total || 0) > 0) || (fd && fd.days && Object.keys(fd.days).length > 0);
-  const hasHist = getAssetHistory().length >= 2;
   if (!hasSave) return { label: '오늘 절약 한 번 기록하고 파이어 시간 벌기', to: 'save', ico: '⏱️' };
-  if (!hasHist) return { label: '이번 달 자산 기록하고 진행 추적 시작하기', to: 'self', ico: '📈' };
+  // 자산 업데이트는 바로 위 대시보드 카드에 이미 있어 중복 → 다음 할 일에서는 제외
   const pool = [
     { label: '지방 살면 몇 년 빨라지나 보기', to: 'cities', ico: '📍' },
     { label: '파이어 후 건보료 얼마인지 확인하기', to: 'dependent', ico: '🩺' },

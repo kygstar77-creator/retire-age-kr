@@ -125,14 +125,11 @@ export default function Experiment({ inputs, onChange, onBack }) {
       <section className="fm-card fm-text-card">
         <p>현재 적용 수익률은 연 {draft.annualReturnRate}%예요. {activeScenario ? activeScenario.copy : '직접 입력한 수익률 가정으로 계산 중이에요.'} 아래에서 가정을 바꾸면 자산수명이 함께 바뀝니다.</p>
         <RangeControl label="연 수익률" value={draft.annualReturnRate} inputKey="annualReturnRate" type="percent" step={1} onChange={(next) => editDraft('annualReturnRate', next)} />
-        <div className="fm-chips fm-return-rail" aria-label="투자 수익률 가정 선택">
-          {investmentScenarios.map((scenario) => <button type="button" key={scenario.key} className={scenario.annualReturnRate === draft.annualReturnRate ? 'is-active' : ''} onClick={() => editDraft('annualReturnRate', scenario.annualReturnRate)}>{scenario.label} · 연 {scenario.annualReturnRate}%</button>)}
-        </div>
         <div className="fm-bench">
           {impacts.map((sc) => (
-            <div className={`fm-bench-row2${sc.annualReturnRate === draft.annualReturnRate ? ' is-active' : ''}`} key={sc.key}>
+            <button type="button" className={`fm-bench-row2${sc.annualReturnRate === draft.annualReturnRate ? ' is-active' : ''}`} key={sc.key} onClick={() => editDraft('annualReturnRate', sc.annualReturnRate)}>
               <b>{sc.label}</b><span>연 {sc.annualReturnRate}%</span><em>자산수명 {sc.runway}</em>
-            </div>
+            </button>
           ))}
         </div>
         <small>예적금부터 공격적 투자까지, 같은 자산도 어디에 두느냐로 자산수명이 달라져요. 가정이 높을수록 기대수익도, 변동성(위험)도 커집니다. 과거 통계 기반 가정이며 특정 상품 추천이 아니에요. {sourceLine('returnPresets')}</small>

@@ -383,7 +383,8 @@
 .fm-mc-note { color: #6b7280; font-size: 12.5px; line-height: 1.5; margin: 0; }
 
 /* 수익률 가정별 영향 비교 */
-.fm-bench-row2 { display: flex; align-items: baseline; gap: 10px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; padding: 9px 13px; margin-bottom: 6px; }
+.fm-bench-row2 { display: flex; width: 100%; align-items: baseline; gap: 10px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; padding: 11px 13px; margin-bottom: 6px; text-align: left; font-family: inherit; cursor: pointer; }
+.fm-bench-row2:active { background: #fafafa; }
 .fm-bench-head { display: flex; align-items: baseline; gap: 8px; }
 .fm-bench-head b { font-size: 15px; font-weight: 900; color: #111827; }
 .fm-bench-head span { font-size: 12px; font-weight: 800; color: #6b7280; }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { pushState, pullKey } from '../../utils/firemapStateApi.js';
 import { notifySavingsChanged, reportBoard } from '../../utils/savingsEngine.js';
+import { track } from '../../firemap-v2/dailyData.js';
 
 const KEY = 'fm_daily';
 const dayKey = (d) => d.toISOString().slice(0, 10);
@@ -55,12 +56,21 @@ export default function DepositCard({ simulation, onMove }) {
 
   const openInput = () => { setDayChoice('today'); setInputAmt(String(days[today] || suggested)); setEditing(true); };
   const pickDay = (c) => { setDayChoice(c); const dt = c === 'yesterday' ? yest : today; setInputAmt(days[dt] != null ? String(days[dt]) : (c === 'today' ? String(suggested) : '')); };
+  const quickLog = () => {
+    const amt = suggested;
+    const nextDays = { ...days, [today]: amt };
+    const next = { ...cfg, days: nextDays };
+    save(next); setCfg(next); pushState('fm_daily', next); notifySavingsChanged(); reportBoard(simulation);
+    try { track('deposit_log', { mode: 'quick', amt }); } catch { /* ignore */ }
+  };
   const saveToday = () => {
     const amt = Math.max(0, Math.round(Number(String(inputAmt).replace(/[^0-9]/g, '')) || 0));
     const nextDays = { ...days };
     if (amt > 0) nextDays[selDate] = amt; else delete nextDays[selDate];
     const next = { ...cfg, days: nextDays };
-    save(next); setCfg(next); pushState('fm_daily', next); notifySavingsChanged(); reportBoard(simulation); setEditing(false);
+    save(next); setCfg(next); pushState('fm_daily', next); notifySavingsChanged(); reportBoard(simulation);
+    try { track('deposit_log', { mode: 'manual', amt }); } catch { /* ignore */ }
+    setEditing(false);
   };
   const reset = () => { if (!window.confirm('적립 기록을 모두 지울까요? 되돌릴 수 없어요.')) return; const next = { days: {} }; save(next); setCfg(next); pushState('fm_daily', next); notifySavingsChanged(); reportBoard(simulation); setEditing(false); };
 
@@ -101,16 +111,21 @@ export default function DepositCard({ simulation, onMove }) {
           </div>
           <p className="fm-dc-note">매일 실제 저축액을 기록하면 “이번 달 실제 저축”이 쌓여요. 빠뜨렸으면 ‘어제’로 바꿔 소급 입력할 수 있어요.</p>
         </div>
+      ) : loggedToday ? (
+        <>
+          <button type="button" className="fm-dep-check done" onClick={openInput}>오늘 저축 {won(days[today])} 기록됨 · 수정 ✏️</button>
+          <p className="fm-dc-foot">오늘 기록 완료 · 내일도 적으면 {streak + 1}일 연속!</p>
+        </>
+      ) : monthlyPlan > 0 ? (
+        <>
+          <button type="button" className="fm-dep-check" onClick={quickLog}>오늘 계획대로 {won(suggested)} 넣었어요 ✓</button>
+          <button type="button" className="fm-inline-link fm-dep-other" onClick={openInput}>다른 금액 입력 ✍️</button>
+          <p className="fm-dc-foot">버튼 한 번이면 오늘치 적립 끝. 계획보다 더 모으면 퇴사가 당겨져요.</p>
+        </>
       ) : (
         <>
-          {loggedToday
-            ? <button type="button" className="fm-dep-check done" onClick={openInput}>오늘 저축 {won(days[today])} 기록됨 · 수정 ✏️</button>
-            : <button type="button" className="fm-dep-check" onClick={openInput}>오늘 저축 입력하기 ✍️</button>}
-          <p className="fm-dc-foot">
-            {loggedToday
-              ? `오늘 기록 완료 · 내일도 적으면 ${streak + 1}일 연속!`
-              : '오늘 실제로 저축한 금액을 적어보세요. 계획보다 더 모으면 퇴사가 당겨져요.'}
-          </p>
+          <button type="button" className="fm-dep-check" onClick={openInput}>오늘 저축 입력하기 ✍️</button>
+          <p className="fm-dc-foot">오늘 실제로 저축한 금액을 적어보세요. 계획보다 더 모으면 퇴사가 당겨져요.</p>
         </>
       )}
     </section>

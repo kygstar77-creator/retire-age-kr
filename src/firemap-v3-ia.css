@@ -783,3 +783,7 @@
   font-weight: 700;
   color: #d9480f;
 }
+
+/* 적립 원탭: 보조 '다른 금액 입력' 링크 */
+.fm-dep-other{display:block;margin:10px auto 0;text-align:center;font-size:13px;font-weight:700;text-decoration:none;color:#9a3412}
+.fm-dep-other:active{opacity:.6}

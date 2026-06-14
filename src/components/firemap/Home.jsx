@@ -8,6 +8,7 @@ import FeedbackButton from './FeedbackButton.jsx';
 import { track } from '../../firemap-v2/dailyData.js';
 import FirePlan from './FirePlan.jsx';
 import InstallButton from './InstallButton.jsx';
+import IdentityLine from './IdentityLine.jsx';
 
 function readChallenge() {
   try {
@@ -49,6 +50,7 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
   return (
     <main className="fm-screen fm-home-v3 fm-has-tabbar">
       <Header tag="1분 계산" />
+      <IdentityLine onMove={onMove} />
       {latest && (
         <button type="button" className="fm-recent-rank" onClick={() => { window.location.hash = '#result'; }}>
           <span className="fm-recent-label">최근 계산 결과</span>

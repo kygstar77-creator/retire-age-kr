@@ -120,7 +120,7 @@ export default function DepositCard({ simulation, onMove }) {
         <>
           <button type="button" className="fm-dep-check" onClick={quickLog}>오늘 계획대로 {won(suggested)} 넣었어요 ✓</button>
           <button type="button" className="fm-inline-link fm-dep-other" onClick={openInput}>다른 금액 입력 ✍️</button>
-          <p className="fm-dc-foot">버튼 한 번이면 오늘치 적립 끝. 계획보다 더 모으면 퇴사가 당겨져요.</p>
+          <p className="fm-dc-foot">계획 지키는 중이에요 ✓ 이대로면 예상 퇴사 나이를 그대로 달성해요. 더 모으면 더 당겨져요.</p>
         </>
       ) : (
         <>

@@ -787,3 +787,18 @@
 /* 적립 원탭: 보조 '다른 금액 입력' 링크 */
 .fm-dep-other{display:block;margin:10px auto 0;text-align:center;font-size:13px;font-weight:700;text-decoration:none;color:#9a3412}
 .fm-dep-other:active{opacity:.6}
+
+/* 저축 탭: 적립/절약 설명 + 합산 요약 + 인라인 입력 */
+.fm-save-explain{margin:10px 16px 2px;font-size:12.5px;line-height:1.5;color:#5b6573}
+.fm-save-explain b{color:#16181d;font-weight:800}
+.fm-save-combined{margin:8px 16px 2px;padding:10px 12px;border-radius:12px;font-size:13px;font-weight:700;line-height:1.45;text-align:center}
+.fm-save-combined b{font-weight:900}
+.fm-save-combined.ahead{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412}
+.fm-save-combined.behind{background:#fef2f2;border:1px solid #fecaca;color:#b91c1c}
+.fm-save-combined.even{background:#f3f4f6;border:1px solid #e5e7eb;color:#374151}
+.fm-save-inline{display:flex;gap:8px;margin-top:10px;align-items:center}
+.fm-save-inline-in{flex:1;min-width:0;box-sizing:border-box;min-height:46px;border:1px solid #e5e7eb;border-radius:12px;padding:0 14px;font-size:18px;font-weight:800;color:#16181d;outline:none}
+.fm-save-inline-in:focus{border-color:#ff5a00}
+.fm-save-inline-go{flex:0 0 auto;border:0;border-radius:12px;background:#ff5a00;color:#fff;font-size:14px;font-weight:800;padding:0 18px;min-height:46px;cursor:pointer}
+.fm-save-inline-go:active{background:#e64f00}
+.fm-save-inline-cancel{flex:0 0 auto;border:1px solid #e5e7eb;border-radius:12px;background:#fff;color:#6b7280;font-size:13px;font-weight:700;padding:0 12px;min-height:46px;cursor:pointer}

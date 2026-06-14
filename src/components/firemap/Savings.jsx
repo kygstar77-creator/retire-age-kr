@@ -8,7 +8,7 @@ import { statsRank } from '../../firemap-v2/rank.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
 import { fetchSaveTop, fetchMySaveRank } from '../../utils/firemapSaveApi.js';
-import { notifySavingsChanged, reportBoard, hasCalculated } from '../../utils/savingsEngine.js';
+import { notifySavingsChanged, reportBoard, hasCalculated, computeProgress, gapLabel, ageLabel } from '../../utils/savingsEngine.js';
 import { CHALLENGES, QUOTES, QUICK, dayIdx, todayStr, wonStr, readJSON, fmtAdvance, dailyNeedOf, addSave, removeEntry, setTotal, track } from '../../firemap-v2/dailyData.js';
 
 function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
@@ -57,11 +57,23 @@ export default function Savings({ simulation, onMove }) {
   const [nick, setNick] = useState(() => { try { return localStorage.getItem('fm_nickname') || ''; } catch { return ''; } });
   const [nickSaved, setNickSaved] = useState(false);
   const [saveView, setSaveView] = useState('deposit');
+  const [tick, setTick] = useState(0);
+  const [customOpen, setCustomOpen] = useState(false);
+  const [customVal, setCustomVal] = useState('');
+  const [editTot, setEditTot] = useState(false);
+  const [totVal, setTotVal] = useState('');
   const myIds = identityIds();
   const acctHandle = accountHandle();
   const dailyNeed = dailyNeedOf(simulation);
 
   useEffect(() => { track('save_tab_view'); refresh(todaySaved); pullKey('fm_save').then((v) => { if (v) { try { localStorage.setItem('fm_save', JSON.stringify(v)); } catch { /* ignore */ } setSv(v); } }); /* eslint-disable-next-line */ }, []);
+
+  useEffect(() => {
+    const h = () => setTick((n) => n + 1);
+    window.addEventListener('fm-savings-changed', h);
+    return () => window.removeEventListener('fm-savings-changed', h);
+  }, []);
+  const prog = (() => { void tick; try { return computeProgress(simulation); } catch { return null; } })();
 
   const todaySaved = sv && sv.lastDate === todayStr() ? (sv.today || 0) : 0;
   const totalSaved = sv ? (sv.total || 0) : 0;
@@ -112,12 +124,9 @@ export default function Savings({ simulation, onMove }) {
   };
 
   const log = (amount, label) => { const next = addSave(amount, label); setSv(next); track('save_log', { value: amount, item: label || '직접입력' }); persist(next); };
-  const editTotal = () => { const v = window.prompt('누적 절약액을 수정할까요? (원)', String(totalSaved)); if (v == null) return; { const next = setTotal(String(v).replace(/[^0-9]/g, '')); setSv(next); persist(next); } };
-  const custom = () => {
-    const v = window.prompt('오늘 얼마를 아꼈나요? (원)');
-    const n = Number(String(v || '').replace(/[^0-9]/g, ''));
-    if (n > 0) log(n, '직접 입력');
-  };
+  const editTotal = () => { setTotVal(String(totalSaved)); setEditTot(true); };
+  const submitTotal = () => { const next = setTotal(String(totVal).replace(/[^0-9]/g, '')); setSv(next); persist(next); setEditTot(false); };
+  const submitCustom = () => { const n = Number(String(customVal).replace(/[^0-9]/g, '')); if (n > 0) log(n, '직접 입력'); setCustomVal(''); setCustomOpen(false); };
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
@@ -127,6 +136,20 @@ export default function Savings({ simulation, onMove }) {
         <button type="button" role="tab" aria-selected={saveView === 'deposit'} className={saveView === 'deposit' ? 'on' : ''} onClick={() => setSaveView('deposit')}>💰 적립</button>
         <button type="button" role="tab" aria-selected={saveView === 'frugal'} className={saveView === 'frugal' ? 'on' : ''} onClick={() => setSaveView('frugal')}>✂️ 절약</button>
       </div>
+      <p className="fm-save-explain">
+        {saveView === 'deposit'
+          ? <>💰 <b>적립</b> = 실제로 투자·저축한 돈. <b>퇴사 나이 결과에 바로 반영</b>돼요.</>
+          : <>✂️ <b>절약</b> = 오늘 안 쓴 돈. 이것도 <b>결과에 더해져</b> 퇴사를 당겨요.</>}
+      </p>
+      {hasCalculated() && prog && prog.planAge != null && (prog.hasData || prog.direction !== 'even') && (
+        <p className={`fm-save-combined ${prog.direction}`}>
+          {prog.direction === 'ahead'
+            ? <>🔥 적립·절약이 합쳐 퇴사를 <b>{gapLabel(prog.advanceDays)}</b> 당기는 중</>
+            : prog.direction === 'behind'
+              ? <>지금은 계획보다 <b>{gapLabel(prog.advanceDays)}</b> 밀려 있어요 · 오늘 채워볼까요?</>
+              : <>계획대로 진행 중 — 예상 퇴사 <b>{ageLabel(prog.actualAgeYears)}</b></>}
+        </p>
+      )}
       {saveView === 'deposit' && <DepositCard simulation={simulation} onMove={onMove} />}
       {saveView === 'frugal' && (
       <>
@@ -153,8 +176,14 @@ export default function Savings({ simulation, onMove }) {
               <span>{q.emoji} {q.label}</span><em>+{wonStr(q.won)}</em>
             </button>
           ))}
-          <button type="button" className="fm-save-custom" onClick={custom}>✏️ 직접 입력</button>
+          <button type="button" className="fm-save-custom" onClick={() => setCustomOpen((v) => !v)}>✏️ 직접 입력</button>
         </div>
+        {customOpen && (
+          <div className="fm-save-inline">
+            <input inputMode="numeric" className="fm-save-inline-in" value={customVal} onChange={(e) => setCustomVal(e.target.value.replace(/[^0-9]/g, ''))} placeholder="오늘 아낀 금액 (원)" autoFocus />
+            <button type="button" className="fm-save-inline-go" onClick={submitCustom}>기록</button>
+          </div>
+        )}
 
         {todayEntries.length > 0 && (
           <>
@@ -176,6 +205,13 @@ export default function Savings({ simulation, onMove }) {
           {daysCount > 0 && <> · {daysCount}일째</>}
           {' '}<button type="button" className="fm-inline-link" onClick={editTotal}>수정</button>
         </div>
+        {editTot && (
+          <div className="fm-save-inline">
+            <input inputMode="numeric" className="fm-save-inline-in" value={totVal} onChange={(e) => setTotVal(e.target.value.replace(/[^0-9]/g, ''))} placeholder="누적 절약액 (원)" autoFocus />
+            <button type="button" className="fm-save-inline-go" onClick={submitTotal}>저장</button>
+            <button type="button" className="fm-save-inline-cancel" onClick={() => setEditTot(false)}>취소</button>
+          </div>
+        )}
         <p className="fm-save-link">이 결과는 <button type="button" className="fm-inline-link" onClick={() => onMove('result')}>퇴사 나이 계산</button> 결과와 연동돼요. 누적 기록은 사라지지 않고 계속 쌓여요.</p>
         <button type="button" className="fm-save-share" onClick={shareSave}>🔥 내 절약 성과 공유하기</button>
       </section>

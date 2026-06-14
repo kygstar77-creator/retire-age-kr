@@ -5,7 +5,6 @@ import { fetchAggregates } from '../../utils/firemapScoresApi.js';
 import DailyFire from './DailyFire.jsx';
 import FeedbackButton from './FeedbackButton.jsx';
 import { track } from '../../firemap-v2/dailyData.js';
-import FireStatus from './FireStatus.jsx';
 import FirePlan from './FirePlan.jsx';
 import InstallButton from './InstallButton.jsx';
 
@@ -48,13 +47,6 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
   return (
     <main className="fm-screen fm-home-v3 fm-has-tabbar">
       <Header tag="1분 계산" />
-      {latest && (
-        <button type="button" className="fm-recent-rank" onClick={() => { window.location.hash = '#result'; }}>
-          <span className="fm-recent-label">내 최근 계산</span>
-          <span className="fm-recent-main">{latest.earliest ? `${latest.earliest}세에 파이어 가능` : '내 파이어 가능 나이'}</span>
-          <span className="fm-recent-sub">지난 계산 다시 보기 ›</span>
-        </button>
-      )}
       {challenge && (
         <section className="fm-challenge" aria-label="친구가 보낸 파이어 도전">
           <span className="fm-challenge-kicker">🔥 친구가 보낸 파이어 도전</span>
@@ -71,11 +63,10 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
           <p className="fm-challenge-cta-line">당신은 몇 살에 가능할까요? 아래에서 1분이면 확인돼요 ↓</p>
         </section>
       )}
-      <FireStatus onMove={onMove} simulation={simulation} />
       <section className="fm-home-hero-card">
         <p>파이어맵</p>
         <h1>나는 몇 살에<br />파이어할 수 있을까?</h1>
-        <span>자산·생활비만 넣으면 내 파이어 가능 나이와 또래 중 등수가 1분 만에 나와요.</span>
+        <span>물가·국민연금·건강보험료·세금까지 반영한 <b>가장 현실적인 계산</b>이에요. 자산·생활비만 넣으면 1분이면 나와요.</span>
         <div className="fm-home-age">
           <label htmlFor="fm-home-age-in">지금 몇 살인가요?</label>
           <div className="fm-home-age-ctrl">
@@ -89,6 +80,15 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
         </div>
         <button type="button" className="fm-home-cta" onClick={() => { track('start_calc', { age, from: challenge ? 'share' : 'home' }); onStart(age); }}>{challenge ? '나도 계산하고 친구랑 비교하기 →' : '내 파이어 나이 계산하기 →'}</button>
         {proof && <p className="fm-home-proof">{proof}</p>}
+      </section>
+      <section className="fm-why" aria-label="파이어맵이 다른 이유">
+        <p className="fm-why-cap">🔍 다른 계산기는 안 보여줘요</p>
+        <div className="fm-why-grid">
+          <span>✅ 물가 상승 반영</span>
+          <span>✅ 국민연금 반영</span>
+          <span>✅ 은퇴 후 건강보험료</span>
+          <span>✅ 세금까지 반영</span>
+        </div>
       </section>
       <InstallButton />
       <DailyFire onMove={onMove} />

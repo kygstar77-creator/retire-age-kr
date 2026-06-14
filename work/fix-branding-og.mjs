@@ -9,9 +9,9 @@ let html = await readFile(indexPath, 'utf8');
 const siteUrl = 'https://firemap.kr/';
 const ogVersion = 'firemap-screens-v7-20260613';
 const ogImageUrl = `https://firemap.kr/og-image.png?v=${ogVersion}`;
-const seoTitle = '파이어맵 | 또래 중 내 파이어 등수 · 퇴사 가능 나이 계산기';
+const seoTitle = '파이어맵 | 파이어 가능 나이 계산기 · 또래 중 내 등수';
 const ogTitle = '또래 중 내 FIRE 등수는? — 파이어맵';
-const ogDescription = '또래 중 내 파이어 등수와 퇴사 가능 나이를 1분 만에 — 자산·연금·세금 반영. 무료.';
+const ogDescription = '내 파이어 가능 나이와 목표 자산을 1분 만에 — 자산·연금·세금 반영. 또래 등수도. 무료.';
 
 html = html.replaceAll(/og-image\.png\?v=[^"']+/g, `og-image.png?v=${ogVersion}`);
 

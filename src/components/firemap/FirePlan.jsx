@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { getAssetHistory, logAsset } from '../../utils/assetHistory.js';
+import { getLatestRank } from '../../firemap-v2/rankHistory.js';
 import InstallButton from './InstallButton.jsx';
 import { account } from '../../utils/identity.js';
 
@@ -101,6 +102,30 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
       {asHome && (
         <button type="button" className="fm-plan-result" onClick={() => onMove('result')}>📊 내 파이어 결과·또래 등수 자세히 보기 →</button>
       )}
+
+      {asHome && (() => {
+        const fd = readJSONsafe('fm_daily');
+        const ym = new Date().toISOString().slice(0, 7);
+        const monthDep = fd && fd.days ? Object.entries(fd.days).filter(([k]) => k.startsWith(ym)).reduce((a, [, v]) => a + (Number(v) || 0), 0) : 0;
+        const sv = readJSONsafe('fm_save');
+        const totalSave = sv ? (sv.total || 0) : 0;
+        const streak = sv ? (sv.streak || 0) : 0;
+        const rk = getLatestRank();
+        return (
+          <div className="fm-sum-grid">
+            <button type="button" className="fm-sum-tile" onClick={() => onMove('save')}>
+              <small>저축·절약</small>
+              <b>이번 달 {won(monthDep)}</b>
+              <em>누적 절약 {won(totalSave)}{streak > 0 ? ` · ${streak}일 연속` : ''} ›</em>
+            </button>
+            <button type="button" className="fm-sum-tile" onClick={() => onMove('ranking')}>
+              <small>또래 랭킹</small>
+              <b>{rk && rk.percentile != null ? `상위 ${rk.percentile}%` : '순위 보기'}</b>
+              <em>전체 등수 보기 ›</em>
+            </button>
+          </div>
+        );
+      })()}
 
       <section className="fm-card">
         <p className="fm-kicker">내 금융자산 추이</p>

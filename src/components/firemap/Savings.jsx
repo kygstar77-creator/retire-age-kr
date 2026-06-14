@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Header from './Header.jsx';
 import { identityIds, accountHandle } from '../../utils/identity.js';
-import IdentityLine from './IdentityLine.jsx';
 import DepositCard from './DepositCard.jsx';
 import DepositCalendar from './DepositCalendar.jsx';
 import { pushState, pullKey } from '../../utils/firemapStateApi.js';
@@ -245,7 +244,6 @@ export default function Savings({ simulation, onMove }) {
         <p className="fm-kicker">오늘의 절약 랭킹 🏆</p>
         <p className="fm-section-sub">오늘 가장 많이 아낀 사람들이에요 · 매일 새로 시작해요</p>
         {rank && <p className="fm-save-myrank">오늘 내 절약 <b>{wonStr(todaySaved)}</b> · {rank.total.toLocaleString()}명 중 <b>{rank.position.toLocaleString()}위</b></p>}
-        <IdentityLine onMove={onMove} />
         <ol className="fm-lb-list">
           {top === null && <li className="fm-lb-empty">불러오는 중…</li>}
           {top && top.length === 0 && <li className="fm-lb-empty">아직 오늘 기록이 적어요. 첫 주자가 되어보세요!</li>}

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
-import IdentityLine from './IdentityLine.jsx';
 import { identityIds, accountHandle } from '../../utils/identity.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { fetchTopScores, fetchUserRank, submitScore, fetchAggregates, fetchNeighbors, fetchAssetPercentile, assetBandOf } from '../../utils/firemapScoresApi.js';
@@ -214,7 +213,6 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
           )}
 
           <section className="fm-card fm-nick">
-            <IdentityLine onMove={onMove} />
             <button type="button" className="fm-nick-reg" onClick={saveNick} disabled={saving}>{saving ? '등록 중' : saved ? '등록됨 ✓' : '내 등수 랭킹에 올리기'}</button>
             <small>익명이면 '알뜰한 너구리'처럼 자동 별명으로, 계정을 만들면 내 이름으로 올라가요.</small>
           </section>

@@ -218,3 +218,12 @@ button:active{ transform:scale(.985); }
 .fm-plan-one{ text-align:center; padding:8px 0 4px; }
 .fm-plan-one b{ display:block; font-size:24px; font-weight:800; color:#1e2859; }
 .fm-plan-one span{ display:block; font-size:12px; color:#8a93a0; margin-top:4px; word-break:keep-all; }
+
+
+/* ── 대시보드 요약 위젯(저축·절약 + 랭킹) ── */
+.fm-sum-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; width:calc(100% - 32px); margin:0 16px 12px; }
+.fm-sum-tile{ background:#fff; border:1px solid #eef0f3; border-radius:14px; padding:14px; text-align:left; cursor:pointer; box-shadow:0 1px 2px rgba(17,24,39,.04); }
+.fm-sum-tile:active{ background:#f8f9fb; }
+.fm-sum-tile small{ display:block; font-size:11.5px; font-weight:700; color:#8a93a0; }
+.fm-sum-tile b{ display:block; font-size:17px; font-weight:800; color:#1e2859; margin-top:3px; }
+.fm-sum-tile em{ display:block; font-size:11.5px; color:#ff5a00; font-weight:700; font-style:normal; margin-top:4px; word-break:keep-all; }

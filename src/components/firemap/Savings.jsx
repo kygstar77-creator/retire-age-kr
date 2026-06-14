@@ -8,7 +8,7 @@ import { statsRank } from '../../firemap-v2/rank.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
 import { fetchSaveTop, fetchMySaveRank } from '../../utils/firemapSaveApi.js';
-import { notifySavingsChanged, reportBoard, hasCalculated, computeProgress, ageBreakdown } from '../../utils/savingsEngine.js';
+import { notifySavingsChanged, reportBoard, hasCalculated, computeProgress } from '../../utils/savingsEngine.js';
 import { CHALLENGES, QUOTES, QUICK, dayIdx, todayStr, wonStr, readJSON, fmtAdvance, dailyNeedOf, addSave, removeEntry, setTotal, track } from '../../firemap-v2/dailyData.js';
 
 function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
@@ -141,21 +141,19 @@ export default function Savings({ simulation, onMove }) {
         <button type="button" role="tab" aria-selected={saveView === 'frugal'} className={saveView === 'frugal' ? 'on' : ''} onClick={() => setSaveView('frugal')}>✂️ 절약</button>
       </div>
       {hasCalculated() && prog && prog.planAge != null && (() => {
-        const b = ageBreakdown(prog.actualAgeYears != null ? prog.actualAgeYears : prog.planAge);
-        if (!b) return null;
+        const yearsVal = prog.actualAgeYears != null ? prog.actualAgeYears : prog.planAge;
+        const tm = Math.round(yearsVal * 12);
+        const ageStr = (tm % 12) > 0 ? `${Math.floor(tm / 12)}세 ${tm % 12}개월` : `${Math.floor(tm / 12)}세`;
         const ahead = prog.advanceDays >= 0.0001;
         return (
           <section className="fm-fireclock" aria-live="polite">
             <p className="fm-fireclock-cap">예상 파이어</p>
-            <p className="fm-fireclock-age">
-              <b>{b.y}세 {b.mo}개월</b> <span>{b.d}일 {b.h}시간 {b.mi}분</span>
-            </p>
+            <p className="fm-fireclock-age"><b>{ageStr}</b></p>
             {prog.atGoal
               ? <p className="fm-fireclock-delta">🎉 이미 목표 자산을 넘었어요</p>
               : ahead
-                ? <p className="fm-fireclock-delta">계획 <b>{Math.round(prog.planAge)}세</b>에서 ⏱️ <b>{fmtAdvance(prog.advanceDays * 86400) || '0초'}</b> 앞당겼어요</p>
-                : <p className="fm-fireclock-delta behind">계획 <b>{Math.round(prog.planAge)}세</b>보다 ⏱️ <b>{fmtAdvance(Math.abs(prog.advanceDays) * 86400) || '0초'}</b> 밀렸어요</p>}
-            <p className="fm-fireclock-note">기록할 때마다 이 시간이 줄어들어요 — 안 쓴 돈으로 시간을 사는 거예요.</p>
+                ? <p className="fm-fireclock-delta">⏱️ 적립·절약으로 <b>{fmtAdvance(prog.advanceDays * 86400) || '0초'}</b> 앞당겼어요</p>
+                : <p className="fm-fireclock-delta behind">계획보다 <b>{fmtAdvance(Math.abs(prog.advanceDays) * 86400) || '0초'}</b> 밀렸어요</p>}
           </section>
         );
       })()}

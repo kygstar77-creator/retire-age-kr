@@ -151,11 +151,11 @@ export default function Savings({ simulation, onMove }) {
               <b>{b.y}세 {b.mo}개월</b> <span>{b.d}일 {b.h}시간 {b.mi}분</span>
             </p>
             {prog.atGoal
-              ? <p className="fm-fireclock-bought">🎉 이미 목표 자산을 넘었어요 · 아낀 돈은 여유로 쌓여요</p>
+              ? <p className="fm-fireclock-delta">🎉 이미 목표 자산을 넘었어요</p>
               : ahead
-                ? <p className="fm-fireclock-bought">⏱️ 적립·절약으로 지금까지 <b>{fmtAdvance(prog.advanceDays * 86400) || '0초'}</b> 샀어요</p>
-                : <p className="fm-fireclock-bought behind">지금은 계획보다 <b>{fmtAdvance(Math.abs(prog.advanceDays) * 86400) || '0초'}</b> 밀렸어요 · 오늘 채워볼까요?</p>}
-            <p className="fm-fireclock-note">천 원만 아껴도 이 시간이 줄어들어요. 기록할 때마다 파이어를 사는 거예요.</p>
+                ? <p className="fm-fireclock-delta">계획 <b>{Math.round(prog.planAge)}세</b>에서 ⏱️ <b>{fmtAdvance(prog.advanceDays * 86400) || '0초'}</b> 앞당겼어요</p>
+                : <p className="fm-fireclock-delta behind">계획 <b>{Math.round(prog.planAge)}세</b>보다 ⏱️ <b>{fmtAdvance(Math.abs(prog.advanceDays) * 86400) || '0초'}</b> 밀렸어요</p>}
+            <p className="fm-fireclock-note">기록할 때마다 이 시간이 줄어들어요 — 안 쓴 돈으로 시간을 사는 거예요.</p>
           </section>
         );
       })()}

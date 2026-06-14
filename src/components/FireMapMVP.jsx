@@ -36,6 +36,7 @@ import '../firemap-v3-feedback.css';
 import '../firemap-v3-hotfix.css';
 import '../firemap-v3-ia.css';
 import '../firemap-status.css';
+import '../firemap-premium.css';
 
 function getSharedInputs() {
   try {

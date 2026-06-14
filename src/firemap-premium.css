@@ -1,0 +1,55 @@
+/* FireMap — 프리미엄 미니멀(토스풍) 전역 폴리시. 마지막 로드, 공통 프리미티브 리스킨. */
+
+:root{
+  --fm-text:#191f28; --fm-muted:#6b7684; --fm-faint:#8b95a1;
+  --fm-border:#eef0f3; --fm-border-soft:#f1f3f5; --fm-radius-lg:20px;
+}
+
+/* 배경: 따뜻한 주황 틴트 → 차분한 쿨 뉴트럴 + 한글 줄바꿈 정리 */
+html, body{ background:#f2f4f6 !important; }
+.fm-screen{ background:#f2f4f6 !important; color:#191f28; word-break:keep-all; overflow-wrap:break-word; }
+
+/* 카드: 크리스프 화이트 + 부드러운 그림자 + 큰 라운드 */
+.fm-card{
+  background:#fff !important; border:1px solid #f0f2f4 !important; border-radius:20px !important;
+  box-shadow:0 1px 2px rgba(17,24,39,.04), 0 6px 20px rgba(17,24,39,.05) !important; padding:20px !important;
+}
+
+/* 타이포 위계 */
+.fm-section-title, .fm-card h2, .fm-text-card h2{ color:#191f28 !important; font-weight:800 !important; letter-spacing:-.02em !important; }
+.fm-kicker{ color:#8b95a1 !important; font-weight:800 !important; font-size:12px !important; letter-spacing:.02em !important; }
+
+/* 하단 탭바 */
+.fm-tabbar{ background:rgba(255,255,255,.94) !important; border-top:1px solid #eef0f3 !important; box-shadow:0 -1px 24px rgba(17,24,39,.05) !important; backdrop-filter:blur(14px); }
+.fm-tabbar .fm-tab{ color:#aeb6c0 !important; }
+.fm-tabbar .fm-tab.is-active{ color:#ff5a00 !important; font-weight:800 !important; }
+.fm-tabbar .fm-tab svg{ opacity:1 !important; }
+
+/* 세그먼트 pill (적립/절약, 내결과/바꿔보기, 전체/또래, 랭킹 보드) */
+.fm-rs-tabs, .fm-scope-toggle, .fm-board-tabs{ background:#e9ecef !important; border:0 !important; border-radius:14px !important; padding:4px !important; gap:4px !important; }
+.fm-rs-tabs button, .fm-scope-toggle button, .fm-board-tabs button{ background:transparent !important; border:0 !important; border-radius:11px !important; color:#6b7684 !important; font-weight:700 !important; }
+.fm-rs-tabs button.on, .fm-scope-toggle button.on, .fm-board-tabs button.on{ background:#fff !important; color:#191f28 !important; box-shadow:0 1px 3px rgba(17,24,39,.12) !important; }
+
+/* 입력: 토스풍 채워진 인풋 */
+.fm-acct-in, .fm-dep-in, .fm-save-inline-in, .fm-community-form textarea, .fm-reply-input input, .fm-post-edit-box textarea{
+  background:#f2f4f6 !important; border:1px solid transparent !important; border-radius:12px !important;
+}
+.fm-acct-in:focus, .fm-dep-in:focus, .fm-save-inline-in:focus, .fm-community-form textarea:focus, .fm-reply-input input:focus, .fm-post-edit-box textarea:focus{
+  background:#fff !important; border-color:#ff5a00 !important;
+}
+
+/* 버튼: 큰 라운드 + 촉각 피드백 */
+.fm-home-cta,.fm-dep-check,.fm-save-share,.fm-rank-cta-share,.fm-nick-reg,.fm-acct-go,.fm-save-inline-go,.fm-dc-start,.fm-city-cta,.fm-rank-cta-up,.fm-community-form button,.fm-dep-edit-save{
+  border-radius:14px !important; box-shadow:none !important; letter-spacing:-.01em;
+}
+button{ transition:transform .08s ease; }
+button:active{ transform:scale(.985); }
+
+/* 파이어 시계 — 토스 화이트 카드 + 계획나이 기준 delta */
+.fm-fireclock{ background:#fff !important; border:1px solid #f0f2f4 !important; box-shadow:0 1px 2px rgba(17,24,39,.04), 0 6px 20px rgba(17,24,39,.05) !important; }
+.fm-fireclock-cap{ color:#8b95a1 !important; }
+.fm-fireclock-age b{ color:#191f28 !important; }
+.fm-fireclock-age span{ color:#191f28 !important; font-weight:800; }
+.fm-fireclock-delta{ display:inline-flex; align-items:center; gap:6px; margin:11px auto 0; background:#fff1e7; color:#c2410c; font-size:13px; font-weight:800; padding:8px 14px; border-radius:999px; }
+.fm-fireclock-delta b{ color:#9a3412; }
+.fm-fireclock-delta.behind{ background:#fef2f2; color:#b91c1c; }

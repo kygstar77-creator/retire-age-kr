@@ -120,7 +120,6 @@ export default function Community({ onBack }) {
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="커뮤니티" onBack={onBack} />
-      <AccountCard />
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">파이어족 라운지</p>
         <h2>다 같이 파이어 이야기</h2>
@@ -173,6 +172,7 @@ export default function Community({ onBack }) {
           );
         })}
       </section>
+      <AccountCard />
     </main>
   );
 }

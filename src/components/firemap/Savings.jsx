@@ -141,9 +141,13 @@ export default function Savings({ simulation, onMove }) {
         <button type="button" role="tab" aria-selected={saveView === 'frugal'} className={saveView === 'frugal' ? 'on' : ''} onClick={() => setSaveView('frugal')}>✂️ 절약</button>
       </div>
       {hasCalculated() && prog && prog.planAge != null && (() => {
-        const yearsVal = prog.actualAgeYears != null ? prog.actualAgeYears : prog.planAge;
-        const tm = Math.round(yearsVal * 12);
-        const ageStr = (tm % 12) > 0 ? `${Math.floor(tm / 12)}세 ${tm % 12}개월` : `${Math.floor(tm / 12)}세`;
+        const yv = prog.actualAgeYears != null ? prog.actualAgeYears : prog.planAge;
+        const yy = Math.floor(yv);
+        let rem = (yv - yy) * 365.25;
+        const mo = Math.floor(rem / 30.4375); rem -= mo * 30.4375;
+        const dd = Math.floor(rem);
+        const ageStr = `${yy}세${mo > 0 ? ` ${mo}개월` : ''}${dd > 0 ? ` ${dd}일` : ''}`;
+        const fmtMin = (sec) => { let m = Math.round(sec / 60); const d = Math.floor(m / 1440); m -= d * 1440; const h = Math.floor(m / 60); const mm = m - h * 60; const parts = []; if (d) parts.push(`${d}일`); if (h) parts.push(`${h}시간`); if (mm || !parts.length) parts.push(`${mm}분`); return parts.join(' '); };
         const ahead = prog.advanceDays >= 0.0001;
         return (
           <section className="fm-fireclock" aria-live="polite">
@@ -152,8 +156,8 @@ export default function Savings({ simulation, onMove }) {
             {prog.atGoal
               ? <p className="fm-fireclock-delta">🎉 이미 목표 자산을 넘었어요</p>
               : ahead
-                ? <p className="fm-fireclock-delta">⏱️ 적립·절약으로 <b>{fmtAdvance(prog.advanceDays * 86400) || '0초'}</b> 앞당겼어요</p>
-                : <p className="fm-fireclock-delta behind">계획보다 <b>{fmtAdvance(Math.abs(prog.advanceDays) * 86400) || '0초'}</b> 밀렸어요</p>}
+                ? <p className="fm-fireclock-delta">⏱️ 적립·절약으로 <b>{fmtMin(prog.advanceDays * 86400)}</b> 앞당겼어요</p>
+                : <p className="fm-fireclock-delta behind">계획보다 <b>{fmtMin(Math.abs(prog.advanceDays) * 86400)}</b> 밀렸어요</p>}
           </section>
         );
       })()}

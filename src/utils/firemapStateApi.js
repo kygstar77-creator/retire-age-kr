@@ -4,7 +4,7 @@ const URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
 const KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || URL;
 const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || KEY;
-const SYNC_KEYS = ['fm_daily', 'fm_save'];
+const SYNC_KEYS = ['fm_daily', 'fm_save', 'firemap-inputs-v3', 'fm_rank_history_v1', 'fm_asset_history', 'fm_nickname'];
 
 async function rpc(fn, args) {
   const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
@@ -72,7 +72,7 @@ export async function syncAfterAuth() {
     let merged;
     if (k === 'fm_daily') merged = mergeDaily(local, server);
     else if (k === 'fm_save') merged = mergeSave(local, server);
-    else merged = server || local;
+    else merged = local || server;
     if (merged) {
       try { localStorage.setItem(k, JSON.stringify(merged)); } catch { /* ignore */ }
       await pushState(k, merged);
@@ -93,6 +93,21 @@ export async function claimDevice() {
 }
 
 // 앱 로드 시 한 번만 자동 승계(이미 로그인된 사용자도 재로그인 없이 적용)
+const CLEAR_ON_LOGOUT = ['firemap-inputs-v3', 'fm_rank_history_v1', 'fm_asset_history', 'fm_nickname', 'fm_save', 'fm_daily', 'fm_claimed', 'fm_save_nudge_off'];
+
+// 로그아웃: (로그인 상태면) 서버에 백업 → 기기의 개인 데이터 전부 삭제(금융앱 프라이버시). 재로그인 시 syncAfterAuth가 복원.
+export async function logoutClearLocal() {
+  const a = authed();
+  if (a) {
+    for (const k of SYNC_KEYS) {
+      let v = null; try { v = JSON.parse(localStorage.getItem(k) || 'null'); } catch { /* ignore */ }
+      if (v != null) { try { await pushState(k, v); } catch { /* ignore */ } }
+    }
+  }
+  for (const k of CLEAR_ON_LOGOUT) { try { localStorage.removeItem(k); } catch { /* ignore */ } }
+  try { localStorage.removeItem('fm_account'); } catch { /* ignore */ }
+}
+
 export async function maybeClaimOnLoad() {
   const a = authed(); if (!a) return;
   let done = null; try { done = localStorage.getItem('fm_claimed'); } catch { /* ignore */ }

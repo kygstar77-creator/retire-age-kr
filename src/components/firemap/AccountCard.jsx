@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { account } from '../../utils/identity.js';
 import { signup, login, logout } from '../../utils/firemapAccountApi.js';
-import { syncAfterAuth, claimDevice } from '../../utils/firemapStateApi.js';
+import { syncAfterAuth, claimDevice, logoutClearLocal } from '../../utils/firemapStateApi.js';
 
 function mapErr(code, msg) {
   const m = code || msg || '';
@@ -26,7 +26,7 @@ export default function AccountCard({ kicker, sub, compact } = {}) {
       <section className="fm-card fm-acct">
         <p className="fm-kicker">내 계정</p>
         <p className="fm-acct-who"><b>{acc.handle}</b>으로 로그인됨 · 기기가 바뀌어도 내 글·적립·랭킹이 이어져요.</p>
-        <button type="button" className="fm-acct-switch" onClick={() => { logout(); window.location.reload(); }}>로그아웃</button>
+        <button type="button" className="fm-acct-switch" onClick={async () => { await logoutClearLocal(); window.location.reload(); }}>로그아웃</button>
       </section>
     );
   }

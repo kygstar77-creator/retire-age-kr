@@ -12,6 +12,7 @@ import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js
 import { FIRE_CITIES } from '../../firemap-v2/cities.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import AccountCard from './AccountCard.jsx';
+import FireStatus from './FireStatus.jsx';
 
 function ResultHeroV2({ simulation }) {
   const base = statsRank(simulation);
@@ -402,6 +403,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
         <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>🎛️ 수치 바꿔보기</button>
       </div>
       <button type="button" className="fm-rank-cta-other" onClick={shareOther}>🔗 링크 복사 · 다른 앱으로 공유</button>
+      <FireStatus simulation={simulation} onMove={onMove} />
       <AssetJourney simulation={simulation} />
       <TopLevers inputs={inputs} simulation={simulation} onChange={onChange} />
       <AccountCard kicker="내 기록 지키기 🔒" sub="방금 나온 파이어 나이·등수와 적립·절약 기록을 닉네임+비밀번호로 저장하세요. 기기가 바뀌어도 같은 계정으로 이어집니다." />

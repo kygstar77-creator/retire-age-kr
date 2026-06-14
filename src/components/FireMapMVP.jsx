@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { getLatestRank } from '../firemap-v2/rankHistory.js';
 import Home from './firemap/Home.jsx';
 import Question from './firemap/Question.jsx';
 import Result from './firemap/Result.jsx';
@@ -115,7 +116,7 @@ export default function FireMapMVP() {
   const wrap = (node) => (
     <>
       {node}
-      {screens[screen]?.tab && <BottomTabs current={screen} onMove={(t) => setScreen(t)} />}
+      {screens[screen]?.tab && <BottomTabs current={screen} onMove={(t) => setScreen(t === 'home' && getLatestRank() ? 'result' : t)} />}
       <FloatingFeedback />
       <Consent />
     </>

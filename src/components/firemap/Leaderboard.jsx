@@ -26,10 +26,11 @@ const SUBS = {
   save: '아껴서 모은 돈 랭킹'
 };
 
-export default function Leaderboard({ simulation, onBack, onMove }) {
-  const base = statsRank(simulation);
-  const score = simulation.survivalScore;
-  const earliest = simulation.earliestRetirementAge;
+export default function Leaderboard({ simulation, rankingSimulation, onBack, onMove }) {
+  const rs = rankingSimulation || simulation;
+  const base = statsRank(rs);
+  const score = rs.survivalScore;
+  const earliest = rs.earliestRetirementAge;
   const ids = identityIds();
   const acctHandle = accountHandle();
   const myAdvance = hasCalculated() ? Math.max(0, computeProgress(simulation).advanceDays) : 0;

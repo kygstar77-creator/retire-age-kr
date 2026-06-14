@@ -68,8 +68,10 @@ export default function FireMapMVP() {
   const [inputs, setInputs] = useState(loadInputs);
   const [screen, setScreenState] = useState(readScreenFromHash);
   const [step, setStep] = useState(0);
-  // 개인 결과는 도구에서 반영한 투자유형(해외 양도세·배당세)·건보료를 반영. 순자산 백분위 랭킹은 자산 기준이라 영향 없음.
+  // 개인 결과는 도구에서 반영한 투자유형(해외 양도세·배당세)·건보료를 반영.
   const simulation = useMemo(() => buildSimulation(inputs), [inputs]);
+  // 등수·점수 제출은 세전(investType=0)으로 모두에게 공정하게 비교 (양도·배당세 선택과 무관).
+  const rankingSimulation = useMemo(() => buildSimulation({ ...inputs, investType: 0 }), [inputs]);
 
   useEffect(() => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); } catch { /* ignore */ } try { pushState('firemap-inputs-v3', inputs); } catch { /* ignore */ } }, [inputs]);
   useEffect(() => { try { window.scrollTo(0, 0); } catch { /* ignore */ } }, [screen, step]);
@@ -135,7 +137,7 @@ export default function FireMapMVP() {
   else if (screen === 'city') view = <City inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('city')} />;
   else if (screen === 'share') view = <Share inputs={inputs} simulation={simulation} onBack={backOf('share')} />;
   else if (screen === 'community') view = <Community onBack={backOf('community')} onMove={setScreen} />;
-  else if (screen === 'ranking') view = <Leaderboard simulation={simulation} onBack={backOf('ranking')} onMove={setScreen} />;
+  else if (screen === 'ranking') view = <Leaderboard simulation={simulation} rankingSimulation={rankingSimulation} onBack={backOf('ranking')} onMove={setScreen} />;
   else if (screen === 'cities') view = <CityExplorer inputs={inputs} simulation={simulation} onChange={onChange} onMove={setScreen} onBack={backOf('cities')} />;
   else if (screen === 'dependent') view = tool('dependent', <DependentCheck onApply={applyPatch} />);
   else if (screen === 'foreignTax') view = tool('foreignTax', <><ForeignStockTaxCard inputs={inputs} onApply={applyPatch} /><DividendCard inputs={inputs} onApply={applyPatch} /></>);
@@ -144,7 +146,7 @@ export default function FireMapMVP() {
   else if (screen === 'firePlan') view = <FirePlan simulation={simulation} onMove={setScreen} onChange={onChange} />;
   else if (screen === 'pension') view = tool('pension', <PensionEarlyClaimCard inputs={inputs} onApply={applyPatch} />);
   else if (screen === 'account') view = tool('account', <AccountCard />);
-  else view = <Result inputs={inputs} simulation={simulation} onMove={setScreen} onChange={onChange} onEditFinalQuestion={goFinalQuestion} />;
+  else view = <Result inputs={inputs} simulation={simulation} rankingSimulation={rankingSimulation} onMove={setScreen} onChange={onChange} onEditFinalQuestion={goFinalQuestion} />;
 
   return wrap(view);
 }

@@ -144,7 +144,7 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
       {isApplied
         ? <button type="button" className="fm-city-cta on" onClick={unapply}>✓ 이 월배당이 결과에 반영됨 (파이어 후 소득) · 해제</button>
         : <button type="button" className="fm-city-cta" onClick={apply}>이 월배당을 파이어 후 소득으로 반영하기</button>}
-      <p className="fm-dl-note">배당소득세 15.4%(지방세 포함) 원천징수 기준의 단순 계산이에요. 적립 시뮬레이션은 배당을 전액 재투자하고 수익률이 매년 일정하다는 가정의 추정치이며, 실제 수익률·세금·물가는 다를 수 있어요. 2,000만원 초과분은 종합과세로 실효세율이 더 높아질 수 있고, 특정 종목·상품 추천이 아닌 일반 정보입니다.</p>
+      <p className="fm-dl-note">반영하면 세후 월배당이 <b>‘파이어 후 부업/기타 소득’</b>으로 들어가 결과의 인출 부담을 줄여요 (바꿔보기의 ‘파이어 후 부업 소득’과 같은 칸). 배당소득세 15.4%(지방세 포함) 원천징수 기준의 단순 계산이에요. 적립 시뮬레이션은 배당을 전액 재투자하고 수익률이 매년 일정하다는 가정의 추정치이며, 실제 수익률·세금·물가는 다를 수 있어요. 2,000만원 초과분은 종합과세로 실효세율이 더 높아질 수 있고, 특정 종목·상품 추천이 아닌 일반 정보입니다.</p>
     </main>
   );
 }

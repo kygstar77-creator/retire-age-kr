@@ -14,11 +14,14 @@ import { track } from '../../firemap-v2/dailyData.js';
 import { estimateLocalPremium } from '../../firemap-v2/healthInsurance.js';
 import FireStatus from './FireStatus.jsx';
 
-function ResultHeroV2({ simulation }) {
-  const base = statsRank(simulation);
+function ResultHeroV2({ simulation, rankingSimulation }) {
+  const rs = rankingSimulation || simulation;
+  const base = statsRank(rs);
   const phrase = survivalPhrase(simulation);
-  const score = simulation.survivalScore;
+  const score = rs.survivalScore;
   const earliest = simulation.earliestRetirementAge;
+  const rankEarliest = rs.earliestRetirementAge;
+  const taxedDiffers = rankEarliest != null && earliest != null && rankEarliest !== earliest;
   const target = simulation.inputs.targetRetirementAge;
   const inp = simulation.inputs;
   const [live, setLive] = useState(null);
@@ -39,22 +42,22 @@ function ResultHeroV2({ simulation }) {
           await submitScore({
             fireScore: score,
             ageBand: base.ageBand,
-            survivalAge: (simulation.targetResult && simulation.targetResult.depletionAge) || simulation.inputs.simulationUntilAge,
+            survivalAge: (rs.targetResult && rs.targetResult.depletionAge) || rs.inputs.simulationUntilAge,
             nickname: nick,
-            earliestAge: earliest,
-            assetBand: assetBandOf(simulation.netWorth)
+            earliestAge: rankEarliest,
+            assetBand: assetBandOf(rs.netWorth)
           });
           sessionStorage.setItem(key, '1');
         }
       } catch { /* ignore */ }
-      const [r, a] = await Promise.all([fetchUserRank(earliest), fetchAggregates()]);
+      const [r, a] = await Promise.all([fetchUserRank(rankEarliest), fetchAggregates()]);
       if (alive) { setLive(r); setAgg(a); }
     })();
     return () => { alive = false; };
   }, [score]);
 
   const peerAvg = agg && agg.avgEarliest ? agg.avgEarliest : null;
-  const diff = (peerAvg != null && earliest != null) ? (peerAvg - earliest) : null;
+  const diff = (peerAvg != null && rankEarliest != null) ? (peerAvg - rankEarliest) : null;
 
   return (
     <section className="fm-rank-hero fm-result-hero-v4">
@@ -68,6 +71,7 @@ function ResultHeroV2({ simulation }) {
         )}
       </div>
       <p className="fm-hero-headline">{earliest ? '지금 계획이면 이 나이에 파이어할 수 있어요' : '더 모으거나 생활비를 줄이면 파이어 시점이 보여요'}</p>
+      {taxedDiffers && <p className="fm-hero-pretax">세금 반영 결과예요 · 등수·또래 비교는 공정 위해 <b>세전 {rankEarliest}세</b> 기준이에요</p>}
       {live
         ? <button type="button" className="fm-rank-line fm-rank-line-link" onClick={() => { window.location.hash = '#ranking'; }}>함께 계산한 <b>{live.total.toLocaleString()}명</b> 중 <b>{live.position.toLocaleString()}등</b> · <span className="fm-rank-go">전체 랭킹 보기 ›</span></button>
         : <p className="fm-rank-line">실시간 집계 중…</p>}
@@ -79,7 +83,7 @@ function ResultHeroV2({ simulation }) {
         <span>자산 버티는 나이 <b>{phrase.runway}</b></span>
         <span>목표 파이어 <b>{target}세</b></span>
       </div>
-      <p className="fm-rank-note">{peerAvg != null ? `또래 평균 ${peerAvg}세 · ` : ''}또래 순자산 상위 {base.percentile}% · <b>{((Number(inp.investType) || 0) > 0 || Number(inp.healthInsuranceEnabled) > 0) ? '세금·건보료 반영' : '세전 기준'}</b></p>
+      <p className="fm-rank-note">{peerAvg != null ? `또래 평균 ${peerAvg}세(세전) · ` : ''}또래 순자산 상위 {base.percentile}% · <b>등수는 세전 공정 비교</b></p>
       <button type="button" className="fm-calc-toggle" onClick={() => setShowCalc((v) => !v)} aria-expanded={showCalc}>계산 가정·출처 {showCalc ? '▴' : '▾'}</button>
       {showCalc && <p className="fm-rank-note fm-rank-note-sub">통계청 2025 가계금융복지조사 기준 · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)}</p>}
       <button type="button" className="fm-tax-hint" onClick={() => { window.location.hash = '#experiment'; }}>세금·배당 반영해 보기 → 🎛️ 바꿔보기</button>

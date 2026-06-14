@@ -87,7 +87,7 @@ export default function Experiment({ inputs, onChange, onBack }) {
             <p className="fm-range-note">기본은 파이어까지({yearsToRetire}년) 매달 저축이에요. 줄이면 그만큼만 저축하고, 이후엔 모은 돈을 굴리기만 해요(코스트 파이어).</p>
             <RangeControl label="연봉 상승률(저축도 매년 증가)" value={draft.salaryGrowthRate} inputKey="salaryGrowthRate" type="percent" step={1} onChange={(next) => editDraft('salaryGrowthRate', next)} />
             <RangeControl label="파이어 후 부업 소득" value={draft.partTimeIncomeAfterRetirement} inputKey="partTimeIncomeAfterRetirement" type="money" step={100000} onChange={(next) => editDraft('partTimeIncomeAfterRetirement', next)} />
-            <p className="fm-range-note">부업 소득은 물가에 연동되지 않아요 — 생활비·연금과 달리 매년 오르지 않는 고정 수입으로 계산해요.</p>
+            <p className="fm-range-note">부업 소득은 물가에 연동되지 않아요 — 생활비·연금과 달리 매년 오르지 않는 고정 수입으로 계산해요. ‘파이어 후 현금흐름’ 도구에서 배당을 반영하면 이 ‘파이어 후 부업 소득’ 칸으로 들어와요.</p>
             <RangeControl label="물가 상승률(생활비 매년 증가)" value={draft.inflationRate} inputKey="inflationRate" type="percent" step={1} onChange={(next) => editDraft('inflationRate', next)} />
             <p className="fm-range-note">이 비율만큼 <strong>생활비·국민연금·건보료·해외 체류비</strong>가 매년 올라요. (부업 소득만 제외)</p>
           </div>

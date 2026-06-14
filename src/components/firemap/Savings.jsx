@@ -148,16 +148,19 @@ export default function Savings({ simulation, onMove }) {
         const dd = Math.floor(rem);
         const ageStr = `${yy}세${mo > 0 ? ` ${mo}개월` : ''}${dd > 0 ? ` ${dd}일` : ''}`;
         const fmtMin = (sec) => { let m = Math.round(sec / 60); const d = Math.floor(m / 1440); m -= d * 1440; const h = Math.floor(m / 60); const mm = m - h * 60; const parts = []; if (d) parts.push(`${d}일`); if (h) parts.push(`${h}시간`); if (mm || !parts.length) parts.push(`${mm}분`); return parts.join(' '); };
-        const ahead = prog.advanceDays >= 0.0001;
+        const adv = prog.advanceDays;
+        const TH = 1 / 1440;
         return (
           <section className="fm-fireclock" aria-live="polite">
             <p className="fm-fireclock-cap">예상 파이어</p>
             <p className="fm-fireclock-age"><b>{ageStr}</b></p>
             {prog.atGoal
               ? <p className="fm-fireclock-delta">🎉 이미 목표 자산을 넘었어요</p>
-              : ahead
-                ? <p className="fm-fireclock-delta">⏱️ 적립·절약으로 <b>{fmtMin(prog.advanceDays * 86400)}</b> 앞당겼어요</p>
-                : <p className="fm-fireclock-delta behind">계획보다 <b>{fmtMin(Math.abs(prog.advanceDays) * 86400)}</b> 밀렸어요</p>}
+              : adv >= TH
+                ? <p className="fm-fireclock-delta">⏱️ 적립·절약으로 <b>{fmtMin(adv * 86400)}</b> 앞당겼어요</p>
+                : adv <= -TH
+                  ? <p className="fm-fireclock-delta behind">계획보다 <b>{fmtMin(Math.abs(adv) * 86400)}</b> 밀렸어요</p>
+                  : <p className="fm-fireclock-delta neutral">계획대로 가는 중 · 기록하면 당겨져요</p>}
           </section>
         );
       })()}

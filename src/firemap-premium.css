@@ -53,3 +53,5 @@ button:active{ transform:scale(.985); }
 .fm-fireclock-delta{ display:inline-flex; align-items:center; gap:6px; margin:11px auto 0; background:#fff1e7; color:#c2410c; font-size:13px; font-weight:800; padding:8px 14px; border-radius:999px; }
 .fm-fireclock-delta b{ color:#9a3412; }
 .fm-fireclock-delta.behind{ background:#fef2f2; color:#b91c1c; }
+.fm-fireclock-delta.neutral{ background:#f1f3f5; color:#6b7684; }
+.fm-fireclock-delta.neutral b{ color:#6b7684; }

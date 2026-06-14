@@ -22,7 +22,7 @@ function streakOf(days) {
   return s;
 }
 
-// 적립 = 매일 '실제로 저축한 금액'을 기록. 월별 실제 저축이 계획(월 저축액)을 넘긴 만큼만 퇴사 앞당김.
+// 적립 = 매일 '실제로 저축한 금액'을 기록. 월별 실제 저축이 계획(월 저축액)을 넘긴 만큼만 파이어 앞당김.
 export default function DepositCard({ simulation, onMove }) {
   const inp = (simulation && simulation.inputs) || {};
   const monthlyPlan = inp.monthlyInvestment || 0;
@@ -94,7 +94,7 @@ export default function DepositCard({ simulation, onMove }) {
           </p>
         </>
       ) : (
-        <p className="fm-dep-mini">이번 달 실제 저축 <b>{won(monthTotal)}</b> · {Object.keys(days).length}일 기록 · <button type="button" className="fm-inline-link" onClick={() => onMove && onMove('result')}>퇴사 나이 계산</button>하면 계획 대비 진행이 보여요</p>
+        <p className="fm-dep-mini">이번 달 실제 저축 <b>{won(monthTotal)}</b> · {Object.keys(days).length}일 기록 · <button type="button" className="fm-inline-link" onClick={() => onMove && onMove('result')}>파이어 계산</button>하면 계획 대비 진행이 보여요</p>
       )}
 
       {editing ? (
@@ -120,12 +120,12 @@ export default function DepositCard({ simulation, onMove }) {
         <>
           <button type="button" className="fm-dep-check" onClick={quickLog}>오늘 계획대로 {won(suggested)} 넣었어요 ✓</button>
           <button type="button" className="fm-inline-link fm-dep-other" onClick={openInput}>다른 금액 입력 ✍️</button>
-          <p className="fm-dc-foot">계획 지키는 중이에요 ✓ 이대로면 예상 퇴사 나이를 그대로 달성해요. 더 모으면 더 당겨져요.</p>
+          <p className="fm-dc-foot">계획 지키는 중이에요 ✓ 이대로면 예상 파이어 시점을 그대로 달성해요. 더 모으면 더 당겨져요.</p>
         </>
       ) : (
         <>
           <button type="button" className="fm-dep-check" onClick={openInput}>오늘 저축 입력하기 ✍️</button>
-          <p className="fm-dc-foot">오늘 실제로 저축한 금액을 적어보세요. 계획보다 더 모으면 퇴사가 당겨져요.</p>
+          <p className="fm-dc-foot">오늘 실제로 저축한 금액을 적어보세요. 계획보다 더 모으면 파이어가 당겨져요.</p>
         </>
       )}
     </section>

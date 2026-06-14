@@ -15,7 +15,7 @@ function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
   if (!hasCalculated()) {
     return (
       <div className="fm-fp">
-        <p className="fm-fp-cap">먼저 <b>퇴사 나이 계산</b>을 하면, 절약·적립이 퇴사를 며칠 당기는지 연동돼요.</p>
+        <p className="fm-fp-cap">먼저 <b>파이어 계산</b>을 하면, 절약·적립이 파이어를 얼마나 당기는지 시간으로 보여드려요.</p>
       </div>
     );
   }
@@ -24,7 +24,7 @@ function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
   if (!dailyNeed) {
     return (
       <div className="fm-fp done">
-        <p className="fm-fp-cap">🎉 이미 목표 자산을 넘었어요. 절약한 돈은 은퇴 후 여유로 그대로 쌓여요.</p>
+        <p className="fm-fp-cap">🎉 이미 목표 자산을 넘었어요. 아낀 돈은 파이어 후 여유로 그대로 쌓여요.</p>
       </div>
     );
   }
@@ -38,12 +38,12 @@ function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
   if (mos >= 12) { yrs += 1; mos = 0; }
   return (
     <div className="fm-fp">
-      <div className="fm-fp-labels"><span>지금 {inp.currentAge}세</span><span>예상 퇴사 {fireAge}세</span></div>
+      <div className="fm-fp-labels"><span>지금 {inp.currentAge}세</span><span>목표 {fireAge}세</span></div>
       <div className="fm-fp-track">
         <div className="fm-fp-gain" style={{ width: `${pct}%` }} />
         <div className="fm-fp-flag" style={{ left: `${100 - pct}%` }}>🏁</div>
       </div>
-      <p className="fm-fp-cap">누적 절약 <b>{wonStr(totalSaved)}</b> · 실제 저축에 더해져 홈 ‘내 파이어 현황’에 반영돼요</p>
+      <p className="fm-fp-cap">절약 반영 예상 파이어 <b>{yrs}세{mos > 0 ? ` ${mos}개월` : ''}</b> · 누적 <b>{wonStr(totalSaved)}</b>로 ⏱️<b>{advLabel}</b> 샀어요</p>
     </div>
   );
 }
@@ -146,7 +146,7 @@ export default function Savings({ simulation, onMove }) {
       </div>
       <p className="fm-save-explain">
         {saveView === 'deposit'
-          ? <>💰 <b>적립</b> = 실제로 투자·저축한 돈. <b>퇴사 나이 결과에 바로 반영</b>돼요.</>
+          ? <>💰 <b>적립</b> = 실제로 투자·저축한 돈. <b>파이어 시점에 바로 반영</b>돼요.</>
           : <>✂️ <b>절약</b> = 안 쓴 돈으로 <b>파이어 시간을 사는 것</b>. 천 원 아끼면 그만큼 파이어가 당겨져요.</>}
       </p>
       {hasCalculated() && prog && prog.planAge != null && (prog.hasData || prog.direction !== 'even') && (
@@ -222,7 +222,7 @@ export default function Savings({ simulation, onMove }) {
             <button type="button" className="fm-save-inline-cancel" onClick={() => setEditTot(false)}>취소</button>
           </div>
         )}
-        <p className="fm-save-link">이 결과는 <button type="button" className="fm-inline-link" onClick={() => onMove('result')}>퇴사 나이 계산</button> 결과와 연동돼요. 누적 기록은 사라지지 않고 계속 쌓여요.</p>
+        <p className="fm-save-link">이 결과는 <button type="button" className="fm-inline-link" onClick={() => onMove('result')}>파이어 계산</button> 결과와 연동돼요. 누적 기록은 사라지지 않고 계속 쌓여요.</p>
         <button type="button" className="fm-save-share" onClick={shareSave}>🔥 내 절약 성과 공유하기</button>
       </section>
 

@@ -31,7 +31,6 @@ function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
   const totalDays = Math.max(1, (fireAge - inp.currentAge) * 365.25);
   const advancedDays = totalSaved / dailyNeed;
   const pct = Math.max(0, Math.min(100, (advancedDays / totalDays) * 100));
-  const advLabel = fmtAdvance(advancedDays * 86400) || '0초';
   return (
     <div className="fm-fp">
       <div className="fm-fp-labels"><span>지금 {inp.currentAge}세</span><span>목표 {fireAge}세</span></div>
@@ -39,7 +38,7 @@ function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
         <div className="fm-fp-gain" style={{ width: `${pct}%` }} />
         <div className="fm-fp-flag" style={{ left: `${100 - pct}%` }}>🏁</div>
       </div>
-      <p className="fm-fp-cap">누적 절약 <b>{wonStr(totalSaved)}</b>로 ⏱️ <b>{advLabel}</b> 샀어요</p>
+      <p className="fm-fp-cap">누적 절약 <b>{wonStr(totalSaved)}</b> · 실제 저축에 반영돼요</p>
     </div>
   );
 }
@@ -147,7 +146,7 @@ export default function Savings({ simulation, onMove }) {
         const mo = Math.floor(rem / 30.4375); rem -= mo * 30.4375;
         const dd = Math.floor(rem);
         const ageStr = `${yy}세${mo > 0 ? ` ${mo}개월` : ''}${dd > 0 ? ` ${dd}일` : ''}`;
-        const fmtMin = (sec) => { let m = Math.round(sec / 60); const d = Math.floor(m / 1440); m -= d * 1440; const h = Math.floor(m / 60); const mm = m - h * 60; const parts = []; if (d) parts.push(`${d}일`); if (h) parts.push(`${h}시간`); if (mm || !parts.length) parts.push(`${mm}분`); return parts.join(' '); };
+        const fmtMin = (sec) => { let m = Math.floor(sec / 60); const d = Math.floor(m / 1440); m -= d * 1440; const h = Math.floor(m / 60); const mm = m - h * 60; const parts = []; if (d) parts.push(`${d}일`); if (h) parts.push(`${h}시간`); if (mm || !parts.length) parts.push(`${mm}분`); return parts.join(' '); };
         const adv = prog.advanceDays;
         const TH = 1 / 1440;
         return (

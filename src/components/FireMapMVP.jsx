@@ -137,7 +137,7 @@ export default function FireMapMVP() {
   else if (screen === 'ranking') view = <Leaderboard simulation={simulation} onBack={backOf('ranking')} onMove={setScreen} />;
   else if (screen === 'cities') view = <CityExplorer inputs={inputs} simulation={simulation} onChange={onChange} onMove={setScreen} onBack={backOf('cities')} />;
   else if (screen === 'dependent') view = tool('dependent', <DependentCheck onApply={applyPatch} />);
-  else if (screen === 'foreignTax') view = tool('foreignTax', <ForeignStockTaxCard />);
+  else if (screen === 'foreignTax') view = tool('foreignTax', <><ForeignStockTaxCard /><DividendCard /></>);
   else if (screen === 'dividend') view = <DividendLifeCalc inputs={inputs} onChange={onChange} onMove={setScreen} onBack={backOf('dividend')} />;
   else if (screen === 'save') view = <Savings simulation={simulation} onMove={setScreen} />;
   else if (screen === 'firePlan') view = <FirePlan simulation={simulation} onMove={setScreen} onChange={onChange} />;

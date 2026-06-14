@@ -328,7 +328,7 @@ function MoatCard({ simulation, onMove }) {
       <p className="fm-moat-note">금융소득만으로 잡은 대략값이에요. 부양가족 등재·재산까지 넣어 정확히 보려면 ↓</p>
       <div className="fm-moat-cta">
         <button type="button" onClick={() => onMove('dependent')}>🩺 은퇴 후 건보료 정밀 계산</button>
-        <button type="button" onClick={() => onMove('foreignTax')}>💸 해외주식 양도세</button>
+        <button type="button" onClick={() => onMove('foreignTax')}>💸 양도·배당세</button>
       </div>
     </section>
   );

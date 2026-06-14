@@ -12,9 +12,10 @@ function mapErr(code, msg) {
   return '잠시 후 다시 시도해주세요.';
 }
 
-export default function AccountCard({ kicker, sub } = {}) {
+export default function AccountCard({ kicker, sub, compact } = {}) {
   const acc = account();
   const [mode, setMode] = useState('login');
+  const [open, setOpen] = useState(!compact);
   const [h, setH] = useState('');
   const [pw, setPw] = useState('');
   const [busy, setBusy] = useState(false);
@@ -26,6 +27,16 @@ export default function AccountCard({ kicker, sub } = {}) {
         <p className="fm-kicker">내 계정</p>
         <p className="fm-acct-who"><b>{acc.handle}</b>으로 로그인됨 · 기기가 바뀌어도 내 글·적립·랭킹이 이어져요.</p>
         <button type="button" className="fm-acct-switch" onClick={() => { logout(); window.location.reload(); }}>로그아웃</button>
+      </section>
+    );
+  }
+
+  if (compact && !open) {
+    return (
+      <section className="fm-card fm-acct">
+        <p className="fm-kicker">{kicker || '내 계정 (선택)'}</p>
+        <p className="fm-acct-sub">{sub || '닉네임만 정하면 기기를 바꾸거나 브라우저를 지워도 내 기록이 그대로 이어져요.'}</p>
+        <button type="button" className="fm-acct-go" onClick={() => setOpen(true)}>🔒 로그인 · 계정 만들기</button>
       </section>
     );
   }

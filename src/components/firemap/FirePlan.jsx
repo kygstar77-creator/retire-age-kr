@@ -110,7 +110,7 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
         <ul className="fm-plan-inst-list">
           <li><span>국민연금</span><b>{inp.expectedPensionAge || 65}세~ 月 {Math.round((inp.expectedMonthlyPension || 0) / 10000).toLocaleString()}만</b></li>
           <li><span>물가 상승</span><b>연 {inp.inflationRate ?? 3}%</b></li>
-          <li><span>건강보험료</span>{hi ? <b>月 {Math.round(inp.monthlyHealthInsurance / 10000)}만 반영</b> : <button type="button" className="fm-inline-link" onClick={() => onMove('experiment')}>설정에서 켜기</button>}</li>
+          <li><span>건강보험료</span>{hi ? <b>月 {Math.round(inp.monthlyHealthInsurance / 10000)}만 반영</b> : <button type="button" className="fm-inline-link" onClick={() => onMove('dependent')}>계산해서 반영하기 ›</button>}</li>
           <li><span>세금(양도·배당)</span><button type="button" className="fm-inline-link" onClick={() => onMove('tools')}>세금 도구로 점검 ›</button></li>
         </ul>
         <p className="fm-plan-inst-note">국민연금·물가·건보·세금까지 반영해요. (랭킹은 공정성 위해 세전 기준)</p>
@@ -127,7 +127,7 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
         );
       })()}
       <button type="button" className="fm-plan-tools" onClick={() => onMove('tools')}>🧰 정밀 도구 전체 보기 (지역·현금흐름·건보·세금) →</button>
-      {asHome && <AccountCard kicker="내 기록 저장하기 🔒" sub="로그인하면 기기를 바꾸거나 브라우저를 지워도 내 파이어 플랜·적립·절약 기록이 그대로 이어져요." />}
+      {asHome && <AccountCard compact kicker="내 기록 저장하기 🔒" sub="로그인하면 기기를 바꾸거나 브라우저를 지워도 내 파이어 플랜·적립·절약 기록이 그대로 이어져요." />}
       {asHome && <InstallButton />}
       {asHome && (
         <nav className="fm-policy-links" aria-label="정책 및 문의">

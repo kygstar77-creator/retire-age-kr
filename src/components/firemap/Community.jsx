@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { loadCommunityThread, sendCommunity, likeCommunity, editCommunity, deleteCommunity } from '../../utils/firemapFeedbackApi.js';
 import { funHandle } from '../../firemap-v2/funName.js';
-import { identityIds } from '../../utils/identity.js';
+import { identityIds, account } from '../../utils/identity.js';
 
 function relativeTime(value) {
   const diff = Math.max(1, Math.round((Date.now() - new Date(value).getTime()) / 60000));
@@ -62,6 +62,7 @@ export default function Community({ onBack, onMove }) {
   }, []);
 
   const nick = myNickname();
+  const loggedIn = !!(account() && account().handle);
   const myIds = identityIds();
   // '내 글' 판별: 이 기기에서 올린 글 ID(localStorage) 또는 기기 고유 client_id 일치. 닉네임은 중복될 수 있어 쓰지 않음.
   const isMine = (row) => mine.includes(row.id) || (!!row.client_id && myIds.includes(row.client_id));
@@ -134,6 +135,10 @@ export default function Community({ onBack, onMove }) {
         </div>
       </form>
 
+      {!loggedIn && (
+        <button type="button" className="fm-login-nudge" onClick={() => onMove && onMove('account')}>🔒 지금은 자동 별명으로 올라가요 · 로그인하면 내 닉네임으로 글 써요 →</button>
+      )}
+
       <section className="fm-community-feed">
         {posts.length === 0 && <p className="fm-community-empty">아직 글이 없어요. 첫 글을 남기면 다른 파이어족들이 답글로 응원해줘요 🔥</p>}
         {posts.map((p) => {
@@ -171,7 +176,6 @@ export default function Community({ onBack, onMove }) {
           );
         })}
       </section>
-      <button type="button" className="fm-login-nudge" onClick={() => onMove && onMove('account')}>🔒 로그인하면 내 닉네임으로 글을 쓸 수 있어요 →</button>
     </main>
   );
 }

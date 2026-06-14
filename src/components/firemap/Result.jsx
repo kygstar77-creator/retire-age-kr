@@ -308,22 +308,8 @@ function AssetJourney({ simulation }) {
 }
 
 function NextActions({ onMove }) {
-  const actions = screens.result.next || [];
   return (
-    <section className="fm-next-actions" aria-label="다음 행동">
-      <h2 className="fm-section-title">다음으로 해볼 것</h2>
-      <div className="fm-next-grid">
-        {actions.map((id) => {
-          const meta = NEXT_ACTION_META[id];
-          if (!meta) return null;
-          return (
-            <button type="button" key={id} className={`fm-next-card${meta.primary ? ' fm-next-primary' : ''}`} onClick={() => onMove(id)}>
-              <em>{meta.tag}</em><strong>{meta.title}</strong><span>{meta.desc}</span>
-            </button>
-          );
-        })}
-      </div>
-    </section>
+    <button type="button" className="fm-plan-tools" onClick={() => onMove('tools')}>🧰 정밀 도구 전체 보기 (지역·현금흐름·건보·세금) →</button>
   );
 }
 

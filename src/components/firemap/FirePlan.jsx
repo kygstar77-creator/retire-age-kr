@@ -10,6 +10,24 @@ const eok = (n) => {
   return v >= 10 ? `${Math.round(v)}억` : `${v.toFixed(1)}억`;
 };
 
+const readJSONsafe = (k) => { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch { return null; } };
+function pickNextAction() {
+  const sv = readJSONsafe('fm_save');
+  const fd = readJSONsafe('fm_daily');
+  const hasSave = (sv && (sv.total || 0) > 0) || (fd && fd.days && Object.keys(fd.days).length > 0);
+  const hasHist = getAssetHistory().length >= 2;
+  if (!hasSave) return { label: '오늘 절약 한 번 기록하고 파이어 시간 벌기', to: 'save', ico: '⏱️' };
+  if (!hasHist) return { label: '이번 달 자산 기록하고 진행 추적 시작하기', to: 'self', ico: '📈' };
+  const pool = [
+    { label: '지방 살면 몇 년 빨라지나 보기', to: 'cities', ico: '📍' },
+    { label: '은퇴 후 건보료 얼마인지 확인하기', to: 'dependent', ico: '🩺' },
+    { label: '배당으로 월 현금흐름 만들어보기', to: 'dividend', ico: '💵' },
+    { label: '조건 바꿔서 파이어 더 당겨보기', to: 'experiment', ico: '🎛️' },
+    { label: '또래 중 내 파이어 등수 보기', to: 'ranking', ico: '🏆' }
+  ];
+  return pool[Math.floor(Date.now() / 86400000) % pool.length];
+}
+
 export default function FirePlan({ simulation, onMove, onChange, asHome }) {
   const inp = (simulation && simulation.inputs) || {};
   const asset = Number(inp.financialAsset) || 0;
@@ -93,14 +111,17 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
         <p className="fm-plan-inst-note">대부분의 계산기가 빠뜨리는 제도까지 반영해요. (랭킹은 공정성 위해 세전 기준)</p>
       </section>
 
-      <div className="fm-plan-grid">
-        <button type="button" onClick={() => onMove('save')}><span>💰</span>저축 기록<em>적립·절약</em></button>
-        <button type="button" onClick={() => onMove('cities')}><span>📍</span>지역 비교<em>어디 살까</em></button>
-        <button type="button" onClick={() => onMove('dividend')}><span>💵</span>은퇴 현금흐름<em>배당·인출</em></button>
-        <button type="button" onClick={() => onMove('dependent')}><span>🩺</span>은퇴 건보료<em>월 얼마</em></button>
-        <button type="button" onClick={() => onMove('experiment')}><span>🎛️</span>조건 바꿔보기<em>What-if</em></button>
-        <button type="button" onClick={() => onMove('ranking')}><span>🏆</span>내 랭킹<em>또래 등수</em></button>
-      </div>
+      {(() => {
+        const na = pickNextAction();
+        return (
+          <button type="button" className="fm-next-best" onClick={() => (na.to === 'self' ? (setVal(String(asset)), setEditing(true)) : onMove(na.to))}>
+            <span className="fm-next-best-cap">🎯 다음 할 일</span>
+            <span className="fm-next-best-main">{na.ico} {na.label}</span>
+            <span className="fm-next-best-go">바로 하기 →</span>
+          </button>
+        );
+      })()}
+      <button type="button" className="fm-plan-tools" onClick={() => onMove('tools')}>🧰 정밀 도구 전체 보기 (지역·현금흐름·건보·세금) →</button>
       {asHome && <InstallButton />}
       {asHome && (
         <nav className="fm-policy-links" aria-label="정책 및 문의">

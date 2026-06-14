@@ -45,7 +45,20 @@ export async function onRequest(context) {
   // 사람은 앱 루트로(같은 조건 파라미터 유지) 이동 → 결과 화면 표시
   // 전체 시나리오(age 등)가 있으면 그 결과로 복원, 없으면(짧은 공유링크) 홈으로 보내 본인 계산 유도
   const hasScenario = q.has('age') || q.has('fa');
-  const redirect = hasScenario ? `${site}/?${q.toString()}#result` : `${site}/`;
+  let redirect;
+  if (hasScenario) {
+    redirect = `${site}/?${q.toString()}#result`;
+  } else if (ea || (pos && tot)) {
+    // 결과 스냅샷이 없는 짧은 공유링크: 친구의 등수·파이어 나이를 들고 홈으로 → "친구 도전" 후크
+    const sp = new URLSearchParams();
+    sp.set('from', 'share');
+    if (ea) sp.set('ea', ea);
+    if (pos) sp.set('pos', pos);
+    if (tot) sp.set('tot', tot);
+    redirect = `${site}/?${sp.toString()}#home`;
+  } else {
+    redirect = `${site}/`;
+  }
 
   const html = `<!doctype html><html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">

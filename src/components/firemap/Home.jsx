@@ -8,9 +8,28 @@ import { track } from '../../firemap-v2/dailyData.js';
 import FireStatus from './FireStatus.jsx';
 import InstallButton from './InstallButton.jsx';
 
+function readChallenge() {
+  try {
+    const q = new URLSearchParams(window.location.search || '');
+    if (q.get('from') !== 'share') return null;
+    const ea = parseInt(q.get('ea') || '', 10);
+    const pos = parseInt(q.get('pos') || '', 10);
+    const tot = parseInt(q.get('tot') || '', 10);
+    const pct = (pos > 0 && tot > 0) ? Math.max(1, Math.round((pos / tot) * 100)) : null;
+    if (!ea && !pct) return null;
+    return { ea: ea || null, pos: pos || null, tot: tot || null, pct };
+  } catch { return null; }
+}
+
 export default function Home({ onStart, onMove, simulation }) {
   const [agg, setAgg] = useState(null);
   const [age, setAge] = useState(35);
+  const [challenge] = useState(readChallenge);
+  useEffect(() => {
+    if (challenge) {
+      try { track('share_inbound', { ea: challenge.ea || 0, pct: challenge.pct || 0 }); } catch { /* ignore */ }
+    }
+  }, [challenge]);
   useEffect(() => {
     let alive = true;
     fetchAggregates().then((a) => { if (alive) setAgg(a); });
@@ -33,6 +52,22 @@ export default function Home({ onStart, onMove, simulation }) {
           <span className="fm-recent-sub">지난 계산 다시 보기 ›</span>
         </button>
       )}
+      {challenge && (
+        <section className="fm-challenge" aria-label="친구가 보낸 파이어 도전">
+          <span className="fm-challenge-kicker">🔥 친구가 보낸 파이어 도전</span>
+          <p className="fm-challenge-main">
+            {challenge.ea ? <>친구는 <b>{challenge.ea}세</b>에 파이어 가능</> : '친구가 파이어 등수를 보냈어요'}
+          </p>
+          {challenge.pct != null && (
+            <p className="fm-challenge-rank">
+              {challenge.pos && challenge.tot
+                ? <>함께 계산한 {challenge.tot.toLocaleString()}명 중 <b>{challenge.pos.toLocaleString()}등</b> · 또래 상위 <b>{challenge.pct}%</b></>
+                : <>또래 상위 <b>{challenge.pct}%</b></>}
+            </p>
+          )}
+          <p className="fm-challenge-cta-line">당신은 몇 살에 가능할까요? 아래에서 1분이면 확인돼요 ↓</p>
+        </section>
+      )}
       <section className="fm-home-hero-card">
         <p>파이어맵</p>
         <h1>나는 몇 살에<br />퇴사할 수 있을까?</h1>
@@ -48,7 +83,7 @@ export default function Home({ onStart, onMove, simulation }) {
             <button type="button" className="fm-age-btn" aria-label="나이 증가" onClick={() => setClamp(age + 1)}>+</button>
           </div>
         </div>
-        <button type="button" className="fm-home-cta" onClick={() => { track('start_calc', { age }); onStart(age); }}>이 나이로 1분 계산 시작 →</button>
+        <button type="button" className="fm-home-cta" onClick={() => { track('start_calc', { age, from: challenge ? 'share' : 'home' }); onStart(age); }}>{challenge ? '나도 계산하고 친구랑 비교하기 →' : '이 나이로 1분 계산 시작 →'}</button>
         {proof && <p className="fm-home-proof">{proof}</p>}
       </section>
       <FireStatus onMove={onMove} simulation={simulation} />

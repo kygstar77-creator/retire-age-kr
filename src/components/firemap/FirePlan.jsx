@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { getAssetHistory, logAsset } from '../../utils/assetHistory.js';
+import InstallButton from './InstallButton.jsx';
 
 const won = (n) => formatWon(Math.round(n || 0));
 const eok = (n) => {
@@ -9,7 +10,7 @@ const eok = (n) => {
   return v >= 10 ? `${Math.round(v)}억` : `${v.toFixed(1)}억`;
 };
 
-export default function FirePlan({ simulation, onMove, onChange }) {
+export default function FirePlan({ simulation, onMove, onChange, asHome }) {
   const inp = (simulation && simulation.inputs) || {};
   const asset = Number(inp.financialAsset) || 0;
   const target = Math.max(0, Math.round(simulation.requiredFireAssetByFourPercent || 0));
@@ -45,7 +46,7 @@ export default function FirePlan({ simulation, onMove, onChange }) {
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
-      <Header tag="내 파이어 플랜" onBack={() => onMove('result')} />
+      <Header tag="내 파이어 플랜" onBack={asHome ? undefined : () => onMove('result')} />
 
       <section className="fm-card fm-plan-hero">
         <div className="fm-plan-top">
@@ -92,11 +93,23 @@ export default function FirePlan({ simulation, onMove, onChange }) {
         <p className="fm-plan-inst-note">대부분의 계산기가 빠뜨리는 제도까지 반영해요. (랭킹은 공정성 위해 세전 기준)</p>
       </section>
 
-      <div className="fm-plan-mods">
-        <button type="button" onClick={() => onMove('cities')}><span>📍</span>지역 바꿔보기</button>
-        <button type="button" onClick={() => onMove('dividend')}><span>💰</span>배당 현금흐름</button>
-        <button type="button" onClick={() => onMove('experiment')}><span>🎛️</span>조건 바꿔보기</button>
+      <div className="fm-plan-grid">
+        <button type="button" onClick={() => onMove('save')}><span>💰</span>저축 기록<em>적립·절약</em></button>
+        <button type="button" onClick={() => onMove('cities')}><span>📍</span>지역 비교<em>어디 살까</em></button>
+        <button type="button" onClick={() => onMove('dividend')}><span>💵</span>은퇴 현금흐름<em>배당·인출</em></button>
+        <button type="button" onClick={() => onMove('dependent')}><span>🩺</span>은퇴 건보료<em>월 얼마</em></button>
+        <button type="button" onClick={() => onMove('experiment')}><span>🎛️</span>조건 바꿔보기<em>What-if</em></button>
+        <button type="button" onClick={() => onMove('ranking')}><span>🏆</span>내 랭킹<em>또래 등수</em></button>
       </div>
+      {asHome && <InstallButton />}
+      {asHome && (
+        <nav className="fm-policy-links" aria-label="정책 및 문의">
+          <a href="/privacy.html">개인정보처리방침</a>
+          <a href="/disclaimer.html">면책 안내</a>
+          <a href="/guide/">은퇴 백과</a>
+          <a href="/contact.html">문의</a>
+        </nav>
+      )}
     </main>
   );
 }

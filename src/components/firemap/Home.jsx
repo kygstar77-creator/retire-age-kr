@@ -6,6 +6,7 @@ import DailyFire from './DailyFire.jsx';
 import FeedbackButton from './FeedbackButton.jsx';
 import { track } from '../../firemap-v2/dailyData.js';
 import FireStatus from './FireStatus.jsx';
+import FirePlan from './FirePlan.jsx';
 import InstallButton from './InstallButton.jsx';
 
 function readChallenge() {
@@ -41,6 +42,8 @@ export default function Home({ onStart, onMove, simulation }) {
     ? `${agg.total.toLocaleString()}명이 이미 계산했어요${agg.avgEarliest ? ` · 전체 평균 파이어 ${agg.avgEarliest}세` : ''}`
     : '';
   const setClamp = (v) => setAge(Math.max(19, Math.min(80, v)));
+
+  if (latest) return <FirePlan simulation={simulation} onMove={onMove} onChange={onChange} asHome />;
 
   return (
     <main className="fm-screen fm-home-v3 fm-has-tabbar">

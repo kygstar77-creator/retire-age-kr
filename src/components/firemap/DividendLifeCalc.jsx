@@ -16,6 +16,7 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
   const monthlyPre = annual / 12;
   const afterTaxRate = 0.846; // 배당소득세 15.4% 원천징수
   const monthlyAfter = (annual * afterTaxRate) / 12;
+  const withdraw4 = (asset * 0.04) / 12; // 월 4% 인출(세전 대략)
   const livingCost = inputs?.monthlyLivingCost || 0;
   const coverage = livingCost > 0 ? Math.round((monthlyAfter / livingCost) * 100) : null;
   const need = (targetMonthlyWon) => (yieldPct > 0 ? (targetMonthlyWon * 12) / ((yieldPct / 100) * afterTaxRate) : 0);
@@ -50,11 +51,11 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
 
   return (
     <main className="fm-screen fm-scroll">
-      <Header tag="배당 생활" onBack={onBack} />
+      <Header tag="은퇴 후 현금흐름" onBack={onBack} />
       <section className="fm-card fm-text-card">
-        <p className="fm-kicker">배당 파이어</p>
+        <p className="fm-kicker">은퇴 후 현금흐름</p>
         <h2>배당으로 매달 얼마 받을 수 있을까?</h2>
-        <p>보유 자산과 배당수익률로 월 배당(세전·세후)과, 목표 월배당에 필요한 원금을 계산해요. 매달 적립하면 몇 년 뒤 얼마가 되는지도 확인할 수 있어요.</p>
+        <p>보유 자산·배당률로 월 배당(세전·세후)을 계산하고, <b>배당만 받기 vs 자산 인출(매도)</b>도 비교해요. 금융소득 종합과세·건보료 경고까지.</p>
       </section>
 
       <section className="fm-card">
@@ -62,6 +63,12 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
           <div className="fm-dl-head"><span>배당 투자 자산</span><b>{formatWon(asset)}</b></div>
           <input type="range" min="0" max="300000" step="1000" value={assetManwon} onChange={(e) => setAssetManwon(Number(e.target.value))} />
         </div>
+        <div className="fm-dl-presets">
+          {[{ l: 'S&P500', v: 13 }, { l: 'SCHD', v: 37 }, { l: '한국 고배당', v: 50 }, { l: 'JEPI', v: 84 }].map((pr) => (
+            <button type="button" key={pr.l} className={yieldX10 === pr.v ? 'on' : ''} onClick={() => setYieldX10(pr.v)}>{pr.l} {(pr.v / 10).toFixed(1)}%</button>
+          ))}
+        </div>
+        <p className="fm-dl-preset-note">SCHD=배당성장(상승 참여) · JEPI=고배당이지만 상승 제한. 높은 배당률이 늘 유리한 건 아니에요. (배당률 참고치)</p>
         <div className="fm-dl-field">
           <div className="fm-dl-head"><span>배당수익률(세전)</span><b>{yieldPct.toFixed(1)}%</b></div>
           <input type="range" min="5" max="100" step="1" value={yieldX10} onChange={(e) => setYieldX10(Number(e.target.value))} />
@@ -82,6 +89,17 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
               ? <span>연 배당 {formatWon(annual)} · 1,000만원 초과 → 지역가입 시 건보료 부과소득 합산, 피부양자 자격 영향</span>
               : <span>연 배당 {formatWon(annual)} · 종합과세·건보료 경고선 아래예요</span>}
         </div>
+      </section>
+
+      <section className="fm-card">
+        <h2 className="fm-section-title">배당만 받기 vs 자산 인출(매도)</h2>
+        <p className="fm-section-sub">같은 자산({formatWon(asset)})으로 비교 · 배당 논쟁의 다른 답</p>
+        <div className="fm-dl-cmp">
+          <div><small>배당만 (원금 유지)</small><b>월 {formatWon(monthlyAfter)}</b><em>평생</em></div>
+          <div><small>4% 정률 인출(매도)</small><b>월 약 {formatWon(withdraw4)}</b><em>평생 유지</em></div>
+          <div><small>4% 정액(물가연동)</small><b>월 {formatWon(withdraw4)}</b><em>약 30년</em></div>
+        </div>
+        <p className="fm-dl-note">정률 인출은 자산이 줄면 인출도 줄어 고갈 위험이 낮아요. 정액(물가연동)은 4% 룰 기준 약 30년 버팀. 절세는 연금계좌 비과세 원금부터 인출하는 게 유리해요. 매도 인출 세금은 계좌·상품별로 달라요(일반 정보).</p>
       </section>
 
       <section className="fm-card">

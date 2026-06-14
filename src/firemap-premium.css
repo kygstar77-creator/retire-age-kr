@@ -101,3 +101,14 @@ button:active{ transform:scale(.985); }
 .fm-region-res em.early{ color:#16a34a; }
 .fm-region-res em.late{ color:#b91c1c; }
 .fm-region-res em.same{ color:#8b95a1; }
+
+/* ── 은퇴 후 현금흐름 (배당·인출) ───────────────── */
+.fm-dl-presets{ display:flex; flex-wrap:wrap; gap:7px; margin:4px 0 8px; }
+.fm-dl-presets button{ border:1px solid #e6e9ec; border-radius:999px; padding:7px 12px; font-size:12.5px; font-weight:700; background:#fff; color:#6b7684; cursor:pointer; }
+.fm-dl-presets button.on{ border:2px solid #ff5a00; color:#c2410c; }
+.fm-dl-preset-note{ font-size:11.5px; color:#9aa3ab; margin:0 0 10px; line-height:1.5; }
+.fm-dl-cmp{ display:flex; flex-direction:column; gap:11px; margin-top:6px; }
+.fm-dl-cmp > div{ display:flex; align-items:baseline; gap:8px; }
+.fm-dl-cmp small{ flex:1; color:#6b7684; font-size:13.5px; }
+.fm-dl-cmp b{ color:#191f28; font-weight:800; font-size:14px; }
+.fm-dl-cmp em{ flex:0 0 auto; min-width:72px; text-align:right; color:#8b95a1; font-style:normal; font-size:12px; }

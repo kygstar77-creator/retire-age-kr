@@ -11,7 +11,7 @@ export const screens = {
   share:      { hash: '#share',      title: '공유',               type: 'tool', back: 'result' },
   dependent:  { hash: '#dependent',  title: '건보료 피부양자 판정', type: 'tool', back: 'tools' },
   foreignTax: { hash: '#foreignTax', title: '해외주식 양도세',     type: 'tool', back: 'tools' },
-  dividend:   { hash: '#dividend',   title: '배당 생활 계산기',     type: 'tool', back: 'tools' },
+  dividend:   { hash: '#dividend',   title: '은퇴 후 현금흐름',     type: 'tool', back: 'tools' },
   pension:    { hash: '#pension',    title: '국민연금 조기수령',   type: 'tool', back: 'tools' },
   city:       { hash: '#city',       title: '도시 비교 · 해외 체류', type: 'tool', back: 'cities' },
   community:  { hash: '#community',  title: '커뮤니티',           type: 'tool', back: 'tools', tab: 'community' },
@@ -33,7 +33,7 @@ export const TOOLS = [
   { id: 'experiment', tag: '비교',   title: '조건 바꿔 비교',     desc: '증권앱 차트로 What-If 비교' },
   { id: 'dependent',  tag: '건보료', title: '피부양자 자격 판정', desc: '파이어 후 건보료 박탈 여부' },
   { id: 'foreignTax', tag: '세금',   title: '해외주식 양도세',    desc: '분할 매도 절세 계산' },
-  { id: 'dividend',   tag: '배당',   title: '배당 생활 계산기',   desc: '월 배당·필요 원금·세금 경계' },
+  { id: 'dividend',   tag: '현금흐름', title: '은퇴 후 현금흐름',   desc: '배당·인출·세금·건보료까지' },
   { id: 'pension',    tag: '연금',   title: '국민연금 조기수령',  desc: '당겨 받기 득실' },
   { id: 'cities',     tag: '지역',   title: '지역별 파이어',   desc: '국내·해외 지역 생활비로 파이어 시점 비교' },
   { id: 'community',  tag: '커뮤니티', title: '다른 사람들',       desc: '익명 한마디·후기' }

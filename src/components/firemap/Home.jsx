@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { getLatestRank } from '../../firemap-v2/rankHistory.js';
+import { account } from '../../utils/identity.js';
 import { fetchAggregates } from '../../utils/firemapScoresApi.js';
 import DailyFire from './DailyFire.jsx';
 import FeedbackButton from './FeedbackButton.jsx';
@@ -42,11 +43,19 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
     : '';
   const setClamp = (v) => setAge(Math.max(19, Math.min(80, v)));
 
-  if (latest) return <FirePlan simulation={simulation} onMove={onMove} onChange={onChange} asHome />;
+  const loggedIn = !!(account() && account().handle);
+  if (latest && loggedIn) return <FirePlan simulation={simulation} onMove={onMove} onChange={onChange} asHome />;
 
   return (
     <main className="fm-screen fm-home-v3 fm-has-tabbar">
       <Header tag="1분 계산" />
+      {latest && (
+        <button type="button" className="fm-recent-rank" onClick={() => { window.location.hash = '#result'; }}>
+          <span className="fm-recent-label">최근 계산 결과</span>
+          <span className="fm-recent-main">{latest.earliest ? `${latest.earliest}세에 파이어 가능` : '내 파이어 결과 보기'}</span>
+          <span className="fm-recent-sub">로그인하면 이 결과·기록이 저장돼요 · 다시 보기 ›</span>
+        </button>
+      )}
       {challenge && (
         <section className="fm-challenge" aria-label="친구가 보낸 파이어 도전">
           <span className="fm-challenge-kicker">🔥 친구가 보낸 파이어 도전</span>

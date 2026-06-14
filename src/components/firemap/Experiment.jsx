@@ -93,31 +93,7 @@ export default function Experiment({ inputs, onChange, onBack }) {
           </div>
         )}
       </section>
-      <button type="button" className="fm-section-toggle" onClick={() => setShowTax((v) => !v)} aria-expanded={showTax}>투자 유형 · 세금 <small>국내·해외·배당별 세금</small><i>{showTax ? '▴' : '▾'}</i></button>
-      {showTax && (
-      <section className="fm-card fm-text-card">
-        <div className="fm-chips fm-invest-chips" aria-label="투자 유형 선택">
-          <button type="button" className={investType === 0 ? 'is-active' : ''} onClick={() => editDraft('investType', 0)}>국내주식 · 양도세 면제</button>
-          <button type="button" className={investType === 1 ? 'is-active' : ''} onClick={() => editDraft('investType', 1)}>해외주식 · 양도세 22%</button>
-          <button type="button" className={investType === 2 ? 'is-active' : ''} onClick={() => editDraft('investType', 2)}>배당 생활 · 배당세 15.4%</button>
-        </div>
-        <p className="fm-range-note">투자유형·세금은 <b>미리보기 전용</b>이에요 — 결과·등수는 공정성을 위해 항상 세전 기준으로 유지돼요.</p>
-        {investType === 2 && <RangeControl label="배당수익률" value={draft.dividendYield} inputKey="dividendYield" type="percent" step={1} onChange={(next) => editDraft('dividendYield', next)} />}
-        {investType === 2 && Number(draft.dividendYield || 0) >= Number(draft.annualReturnRate || 0) && <p className="fm-range-note fm-tax-warn">⚠️ 배당수익률이 연 수익률보다 크면 원금이 줄어요.</p>}
-        {investType === 2 && grossDivAtRetire > 20000000 && <p className="fm-range-note">⚠️ 파이어 시 연 배당 약 {formatWon(grossDivAtRetire)} · 금융소득 2,000만 초과 → 종합과세·건보료 부담↑ (도구 탭에서 정밀 확인)</p>}
-        <div className="fm-tax-explain">
-          <p className="fm-tax-explain-title">ℹ️ 선택한 유형의 세금</p>
-          {investType === 0 && <p className="fm-tax-explain-line">국내주식은 양도세가 <b>면제</b>예요(대주주 제외). 팔아서 생활비를 써도 투자 세금 부담이 없어요.</p>}
-          {investType === 1 && <p className="fm-tax-explain-line">해외주식은 파이어 후 <b>매년 쓰는 만큼 팔 때 그 차익</b>에 <b>22%</b>(매년 250만 공제). 한 번에 매도가 아니에요.</p>}
-          {investType === 2 && <p className="fm-tax-explain-line">배당으로 생활하면 받는 배당마다 <b>15.4%</b> 원천징수돼요. (금융소득 2,000만 초과 시 종합과세↑)</p>}
-          <p className="fm-tax-explain-sub">종합과세 누진·ISA/연금 절세는 개인 상황별이라 결과엔 반영하지 않아요.</p>
-          <div className="fm-tax-links">
-            <a href="/guide/dividend-tax-thresholds.html" target="_blank" rel="noopener">배당 세금 경계선 →</a>
-            <a href="/guide/isa-pension-accounts.html" target="_blank" rel="noopener">ISA·연금 절세 →</a>
-          </div>
-        </div>
-      </section>
-      )}
+      <button type="button" className="fm-section-toggle" onClick={() => { window.location.hash = '#foreignTax'; }}>투자 세금(양도·배당)은 ‘세금 도구’에서 <small>결과·등수는 공정성 위해 세전 기준</small><i>›</i></button>
       <button type="button" className="fm-section-toggle" onClick={() => setShowPension((v) => !v)} aria-expanded={showPension}>국민연금 설정 <small>받는 나이·월 수령액</small><i>{showPension ? '▴' : '▾'}</i></button>
       {showPension && <PensionControls inputs={draft} onChange={editDraft} />}
       <button type="button" className="fm-section-toggle" onClick={() => setShowReturns((v) => !v)} aria-expanded={showReturns}>수익률 가정 비교 <small>예적금~공격투자</small><i>{showReturns ? '▴' : '▾'}</i></button>

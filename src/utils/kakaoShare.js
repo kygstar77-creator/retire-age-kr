@@ -30,6 +30,6 @@ export async function shareToKakao({ title, description, imageUrl, linkUrl }) {
       imageUrl,
       link: { mobileWebUrl: linkUrl, webUrl: linkUrl }
     },
-    buttons: [{ title: '내 등수 확인하기', link: { mobileWebUrl: linkUrl, webUrl: linkUrl } }]
+    buttons: [{ title: '나도 파이어 계산하기', link: { mobileWebUrl: linkUrl, webUrl: linkUrl } }]
   });
 }

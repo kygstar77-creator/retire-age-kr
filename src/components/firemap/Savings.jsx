@@ -7,7 +7,7 @@ import { pushState, pullKey } from '../../utils/firemapStateApi.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
-import { fetchSaveTop, fetchMySaveRank } from '../../utils/firemapSaveApi.js';
+import { fetchSaveTop, fetchMySaveRank, fetchSaveBoard } from '../../utils/firemapSaveApi.js';
 import { notifySavingsChanged, reportBoard, hasCalculated, computeProgress } from '../../utils/savingsEngine.js';
 import { CHALLENGES, QUOTES, QUICK, dayIdx, todayStr, wonStr, readJSON, fmtAdvance, dailyNeedOf, addSave, removeEntry, setTotal, track } from '../../firemap-v2/dailyData.js';
 
@@ -64,7 +64,7 @@ export default function Savings({ simulation, onMove }) {
   const acctHandle = accountHandle();
   const dailyNeed = dailyNeedOf(simulation);
 
-  useEffect(() => { track('save_tab_view'); refresh(todaySaved); pullKey('fm_save').then((v) => { if (v) { try { localStorage.setItem('fm_save', JSON.stringify(v)); } catch { /* ignore */ } setSv(v); } }); /* eslint-disable-next-line */ }, []);
+  useEffect(() => { track('save_tab_view'); refresh(todaySaved); fetchSaveBoard('deposit', 10).then(setDepBoard); pullKey('fm_save').then((v) => { if (v) { try { localStorage.setItem('fm_save', JSON.stringify(v)); } catch { /* ignore */ } setSv(v); } }); /* eslint-disable-next-line */ }, []);
 
   useEffect(() => {
     const h = () => setTick((n) => n + 1);
@@ -86,6 +86,7 @@ export default function Savings({ simulation, onMove }) {
   const todayEntries = sv && sv.lastDate === todayStr() && Array.isArray(sv.entries) ? sv.entries : [];
   const ageBand = statsRank(simulation).ageBand;
   const [top, setTop] = useState(null);
+  const [depBoard, setDepBoard] = useState(null);
   const [rank, setRank] = useState(null);
   const refresh = (todayVal) => {
     Promise.all([fetchSaveTop(10), fetchMySaveRank(todayVal)]).then(([t, r]) => { setTop(t); setRank(r); });
@@ -184,6 +185,26 @@ export default function Savings({ simulation, onMove }) {
       </p>
       {saveView === 'deposit' && <DepositCard simulation={simulation} onMove={onMove} />}
       {saveView === 'deposit' && <DepositCalendar />}
+      {saveView === 'deposit' && (
+        <section className="fm-card">
+          <p className="fm-kicker">이번 달 저축 랭킹 🏆</p>
+          <p className="fm-section-sub">이번 달 가장 많이 적립한 사람들이에요</p>
+          <ol className="fm-lb-list">
+            {depBoard === null && <li className="fm-lb-empty">불러오는 중…</li>}
+            {depBoard && depBoard.length === 0 && <li className="fm-lb-empty">아직 이번 달 기록이 적어요. 첫 주자가 되어보세요!</li>}
+            {depBoard && depBoard.map((r, i) => {
+              const mine = r.client_id && myIds.includes(r.client_id);
+              return (
+                <li key={i} className={`fm-lb-row${i < 3 ? ' top3' : ''}${mine ? ' me' : ''}`}>
+                  <span className="fm-lb-rank">{medal(i)}</span>
+                  <span className="fm-lb-who">{mine && acctHandle ? acctHandle : (r.nickname || funHandle(r.client_id))}{mine ? ' (나)' : ''}{r.age_band ? ` · ${r.age_band}대` : ''}</span>
+                  <span className="fm-lb-score">{wonStr(r.value)}</span>
+                </li>
+              );
+            })}
+          </ol>
+        </section>
+      )}
       {saveView === 'frugal' && (
       <>
       <section className="fm-card fm-save-screen">

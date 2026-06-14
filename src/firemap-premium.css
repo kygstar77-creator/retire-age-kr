@@ -247,3 +247,10 @@ button:active{ transform:scale(.985); }
 
 /* ── 도구: 백과 링크 타일(버튼 타일과 동일 톤) ── */
 .fm-tool-tile-link{ display:flex; flex-direction:column; text-decoration:none; }
+
+
+/* ── 비로그인 최근 계산 결과 칩 ── */
+.fm-recent-rank{ display:block; width:calc(100% - 32px); margin:0 16px 12px; text-align:left; background:#1e2859; color:#fff; border:0; border-radius:16px; padding:14px 16px; cursor:pointer; }
+.fm-recent-label{ display:block; font-size:11.5px; font-weight:800; color:#c7cce0; }
+.fm-recent-main{ display:block; font-size:18px; font-weight:800; margin-top:3px; }
+.fm-recent-sub{ display:block; font-size:12px; color:#ffd6ad; font-weight:700; margin-top:5px; }

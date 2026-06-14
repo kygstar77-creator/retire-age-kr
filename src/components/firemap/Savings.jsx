@@ -213,7 +213,7 @@ export default function Savings({ simulation, onMove }) {
           <small>오늘 아낀 돈</small>
           <b>{wonStr(todaySaved)}</b>
           {dailyNeed
-            ? (todaySaved > 0 && <span className="fm-save-adv">⏱️ 오늘 파이어 <b>{todayAdv || '몇 초'}</b> 샀어요 · <button type="button" className="fm-inline-link" onClick={() => onMove('firePlan')}>현황 보기</button></span>)
+            ? (todaySaved > 0 && <span className="fm-save-adv">⏱️ 오늘 파이어 <b>{todayAdv || '몇 초'}</b> 샀어요</span>)
             : <span className="fm-save-adv muted">이미 목표 달성 — 아낀 돈은 여유로 쌓여요</span>}
         </div>
 

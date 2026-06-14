@@ -7,7 +7,7 @@ import { fetchTopScores, fetchUserRank, submitScore, fetchAggregates, fetchNeigh
 import { fetchSaveBoard } from '../../utils/firemapSaveApi.js';
 import { displayName } from '../../firemap-v2/funName.js';
 import { wonStr, fmtAdvance, readJSON, todayStr } from '../../firemap-v2/dailyData.js';
-import { computeProgress, hasCalculated } from '../../utils/savingsEngine.js';
+import { computeProgress, hasCalculated, reportBoard } from '../../utils/savingsEngine.js';
 import CommunityPeek from './CommunityPeek.jsx';
 
 const medal = (i) => (i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : String(i + 1));
@@ -67,7 +67,15 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
     }
   };
 
-  useEffect(() => { load(); /* eslint-disable-next-line */ }, [score, scope, board, saveMetric]);
+  useEffect(() => {
+    let alive = true;
+    (async () => {
+      if (hasCalculated()) { try { await reportBoard(simulation); } catch { /* ignore */ } }
+      if (alive) load();
+    })();
+    return () => { alive = false; };
+    // eslint-disable-next-line
+  }, [score, scope, board, saveMetric]);
 
   const saveNick = async () => {
     const v = nick.trim().slice(0, 16);

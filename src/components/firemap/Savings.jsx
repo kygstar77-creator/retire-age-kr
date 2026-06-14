@@ -56,6 +56,7 @@ export default function Savings({ simulation, onMove }) {
   const [sv, setSv] = useState(() => readJSON('fm_save'));
   const [nick, setNick] = useState(() => { try { return localStorage.getItem('fm_nickname') || ''; } catch { return ''; } });
   const [nickSaved, setNickSaved] = useState(false);
+  const [saveView, setSaveView] = useState('deposit');
   const myIds = identityIds();
   const acctHandle = accountHandle();
   const dailyNeed = dailyNeedOf(simulation);
@@ -122,8 +123,13 @@ export default function Savings({ simulation, onMove }) {
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="저축" />
       <p className="fm-daily-wisdom">“{quote}”</p>
-      <DepositCard simulation={simulation} onMove={onMove} />
-
+      <div className="fm-rs-tabs" role="tablist" aria-label="적립/절약">
+        <button type="button" role="tab" aria-selected={saveView === 'deposit'} className={saveView === 'deposit' ? 'on' : ''} onClick={() => setSaveView('deposit')}>💰 적립</button>
+        <button type="button" role="tab" aria-selected={saveView === 'frugal'} className={saveView === 'frugal' ? 'on' : ''} onClick={() => setSaveView('frugal')}>✂️ 절약</button>
+      </div>
+      {saveView === 'deposit' && <DepositCard simulation={simulation} onMove={onMove} />}
+      {saveView === 'frugal' && (
+      <>
       <section className="fm-card fm-save-screen">
         <p className="fm-kicker">오늘의 절약 🔥 {streak}일 연속</p>
         <div className="fm-save-hero">
@@ -194,6 +200,8 @@ export default function Savings({ simulation, onMove }) {
           })}
         </ol>
       </section>
+      </>
+      )}
     </main>
   );
 }

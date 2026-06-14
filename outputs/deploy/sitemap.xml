@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://firemap.kr/</loc><lastmod>2026-06-14</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://firemap.kr/contact.html</loc><lastmod>2026-06-14</lastmod><changefreq>weekly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://firemap.kr/disclaimer.html</loc><lastmod>2026-06-14</lastmod><changefreq>weekly</changefreq><priority>0.4</priority></url>
   <url><loc>https://firemap.kr/guide/</loc><lastmod>2026-06-14</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://firemap.kr/guide/asset-target-scenarios.html</loc><lastmod>2026-06-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://firemap.kr/guide/coast-fire-calculation.html</loc><lastmod>2026-06-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -25,7 +27,5 @@
   <url><loc>https://firemap.kr/guide/severance-irp-tax.html</loc><lastmod>2026-06-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://firemap.kr/guide/southeast-asia-retirement.html</loc><lastmod>2026-06-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://firemap.kr/guide/withdrawal-order-strategy.html</loc><lastmod>2026-06-14</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://firemap.kr/privacy.html</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://firemap.kr/disclaimer.html</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://firemap.kr/contact.html</loc><lastmod>2026-06-14</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://firemap.kr/privacy.html</loc><lastmod>2026-06-14</lastmod><changefreq>weekly</changefreq><priority>0.4</priority></url>
 </urlset>

@@ -151,7 +151,7 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
           <li><span>국민연금</span><b>{inp.expectedPensionAge || 65}세~ 月 {Math.round((inp.expectedMonthlyPension || 0) / 10000).toLocaleString()}만</b></li>
           <li><span>물가 상승</span><b>연 {inp.inflationRate ?? 3}%</b></li>
           <li><span>건강보험료</span>{hi ? <button type="button" className="fm-inline-link" onClick={() => onMove('dependent')}>月 {Math.round(inp.monthlyHealthInsurance / 10000)}만 반영 · 끄기 ›</button> : <button type="button" className="fm-inline-link" onClick={() => onMove('dependent')}>계산해서 반영하기 ›</button>}</li>
-          <li><span>세금(양도·배당)</span>{(() => { const t = Number(inp.investType) || 0; return t === 3 ? <b>양도세+배당세 반영</b> : t === 1 ? <b>해외 양도세 반영</b> : t === 2 ? <b>배당세 반영</b> : <button type="button" className="fm-inline-link" onClick={() => onMove('foreignTax')}>계산해서 반영하기 ›</button>; })()}</li>
+          <li><span>세금(양도·배당)</span>{(() => { const t = Number(inp.investType) || 0; const lbl = t === 3 ? '양도세+배당세 반영' : t === 1 ? '해외 양도세 반영' : t === 2 ? '배당세 반영' : null; return <button type="button" className="fm-inline-link" onClick={() => onMove('foreignTax')}>{lbl ? `${lbl} · 끄기 ›` : '계산해서 반영하기 ›'}</button>; })()}</li>
         </ul>
         <p className="fm-plan-inst-note">국민연금·물가·건보·세금까지 결과에 반영해요. (또래 순위는 순자산 기준)</p>
       </section>

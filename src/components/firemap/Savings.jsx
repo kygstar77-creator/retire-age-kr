@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import Header from './Header.jsx';
-import { identityIds, accountHandle } from '../../utils/identity.js';
+import { identityIds, accountHandle, account } from '../../utils/identity.js';
 import DepositCard from './DepositCard.jsx';
 import DepositCalendar from './DepositCalendar.jsx';
 import { pushState, pullKey } from '../../utils/firemapStateApi.js';
@@ -58,6 +58,7 @@ export default function Savings({ simulation, onMove }) {
   const [customOpen, setCustomOpen] = useState(false);
   const [customVal, setCustomVal] = useState('');
   const [editTot, setEditTot] = useState(false);
+  const [nudgeOff, setNudgeOff] = useState(() => { try { return localStorage.getItem('fm_save_nudge_off') === '1'; } catch { return false; } });
   const [totVal, setTotVal] = useState('');
   const myIds = identityIds();
   const acctHandle = accountHandle();
@@ -76,6 +77,9 @@ export default function Savings({ simulation, onMove }) {
   const totalSaved = sv ? (sv.total || 0) : 0;
   const daysCount = sv ? (sv.days || 0) : 0;
   const streak = sv ? (sv.streak || 0) : 0;
+  const acc = account();
+  const showSaveNudge = !(acc && acc.handle) && !nudgeOff && (totalSaved > 0 || streak >= 2 || daysCount >= 1);
+  const dismissNudge = () => { try { localStorage.setItem('fm_save_nudge_off', '1'); } catch { /* ignore */ } setNudgeOff(true); };
   const advSec = (amount) => (dailyNeed ? (amount / dailyNeed) * 86400 : 0);
   const todayAdv = fmtAdvance(advSec(todaySaved));
   const totalAdv = fmtAdvance(advSec(totalSaved));
@@ -135,6 +139,15 @@ export default function Savings({ simulation, onMove }) {
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="저축" />
       <p className="fm-daily-wisdom">“{quote}”</p>
+      {showSaveNudge && (
+        <div className="fm-save-nudge">
+          <span>🔒 지금까지 기록한 절약·적립이 <b>로그인 안 하면 기기 바꿀 때 사라져요.</b> 30초면 저장돼요.</span>
+          <div className="fm-save-nudge-act">
+            <button type="button" className="fm-save-nudge-go" onClick={() => onMove('account')}>저장하기 →</button>
+            <button type="button" className="fm-save-nudge-x" onClick={dismissNudge} aria-label="닫기">✕</button>
+          </div>
+        </div>
+      )}
       <div className="fm-rs-tabs" role="tablist" aria-label="적립/절약">
         <button type="button" role="tab" aria-selected={saveView === 'deposit'} className={saveView === 'deposit' ? 'on' : ''} onClick={() => setSaveView('deposit')}>💰 적립</button>
         <button type="button" role="tab" aria-selected={saveView === 'frugal'} className={saveView === 'frugal' ? 'on' : ''} onClick={() => setSaveView('frugal')}>✂️ 절약</button>

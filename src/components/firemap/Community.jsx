@@ -74,6 +74,7 @@ export default function Community({ onBack, onMove }) {
   const submitPost = async (event) => {
     event.preventDefault();
     const text = post.trim().slice(0, 240);
+    if (!loggedIn) { onMove && onMove('account'); return; }
     if (!text || sending) return;
     setSending(true);
     const created = await sendCommunity(text, null);
@@ -83,6 +84,7 @@ export default function Community({ onBack, onMove }) {
 
   const submitReply = async (parentId) => {
     const text = replyText.trim().slice(0, 240);
+    if (!loggedIn) { onMove && onMove('account'); return; }
     if (!text) return;
     const created = await sendCommunity(text, parentId);
     if (created) { setRows((r) => [...r, { ...created, parent_id: parentId, likes: 0 }]); remember(created.id); setReplyText(''); }
@@ -126,6 +128,7 @@ export default function Community({ onBack, onMove }) {
         <p>닉네임으로 글 쓰고, 답글로 서로 대화해요. 내가 쓴 글은 수정·삭제할 수 있어요. 버그·불편 신고는 홈 맨 아래 ‘의견 보내기’로.</p>
       </section>
 
+      {loggedIn ? (
       <form className="fm-card fm-community-form" onSubmit={submitPost}>
         <label htmlFor="fm-community-input">새 글 쓰기</label>
         <textarea id="fm-community-input" maxLength={240} value={post} onChange={(e) => setPost(e.target.value)} placeholder="예: 생활비를 줄이니 파이어가 5년 당겨졌어요. 다들 어떻게 아끼세요?" />
@@ -134,9 +137,11 @@ export default function Community({ onBack, onMove }) {
           <button type="submit" disabled={sending || !post.trim()}>{sending ? '올리는 중' : '글 올리기'}</button>
         </div>
       </form>
-
-      {!loggedIn && (
-        <button type="button" className="fm-login-nudge" onClick={() => onMove && onMove('account')}>🔒 지금은 자동 별명으로 올라가요 · 로그인하면 내 닉네임으로 글 써요 →</button>
+      ) : (
+        <button type="button" className="fm-community-login" onClick={() => onMove && onMove('account')}>
+          🔒 로그인하고 글 남기기
+          <span>읽기는 로그인 없이 자유롭게 · 글쓰기는 내 닉네임으로 남겨요</span>
+        </button>
       )}
 
       <section className="fm-community-feed">
@@ -166,10 +171,14 @@ export default function Community({ onBack, onMove }) {
                       </div>
                     </div>
                   ))}
-                  <div className="fm-reply-input">
-                    <input maxLength={240} value={replyText} onChange={(e) => setReplyText(e.target.value)} placeholder="답글 달기…" onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); submitReply(p.id); } }} />
-                    <button type="button" onClick={() => submitReply(p.id)} disabled={!replyText.trim()}>등록</button>
-                  </div>
+                  {loggedIn ? (
+                    <div className="fm-reply-input">
+                      <input maxLength={240} value={replyText} onChange={(e) => setReplyText(e.target.value)} placeholder="답글 달기…" onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); submitReply(p.id); } }} />
+                      <button type="button" onClick={() => submitReply(p.id)} disabled={!replyText.trim()}>등록</button>
+                    </div>
+                  ) : (
+                    <button type="button" className="fm-reply-login" onClick={() => onMove && onMove('account')}>🔒 로그인하고 답글 달기 →</button>
+                  )}
                 </div>
               )}
             </article>

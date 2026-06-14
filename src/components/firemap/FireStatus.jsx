@@ -41,6 +41,7 @@ export default function FireStatus({ simulation, onMove }) {
   const actAge = p.actualAgeYears != null ? p.actualAgeYears : planAge;
   const dir = p.direction; // ahead | behind | even
   const gap = gapLabel(p.advanceDays);
+  const src = (p.depDev > 0 && p.saveBonus > 0) ? '절약·초과 적립으로' : p.depDev > 0 ? '초과 적립으로' : '절약으로';
 
   const end = Math.max(planAge, actAge) + 0.0001;
   const span = Math.max(1, end - cur);
@@ -64,9 +65,9 @@ export default function FireStatus({ simulation, onMove }) {
       </div>
 
       <div className={`fm-status-gap ${dir}`}>
-        {dir === 'ahead' && <span>⏩ 계획보다 <b>{gap} 앞당김</b></span>}
-        {dir === 'behind' && <span>🐢 계획보다 <b>{gap} 밀림</b></span>}
-        {dir === 'even' && <span>계획대로 가는 중 — 더 모으면 앞당겨져요</span>}
+        {dir === 'ahead' && <span>⏩ {src} <b>{gap} 앞당김</b></span>}
+        {dir === 'behind' && <span>🐢 적립이 계획보다 부족해 <b>{gap} 밀림</b></span>}
+        {dir === 'even' && <span>계획대로 가는 중 — 절약하면 앞당겨져요</span>}
       </div>
 
       <div className="fm-status-track">

@@ -16,7 +16,7 @@ export const screens = {
   city:       { hash: '#city',       title: '도시 비교 · 해외 체류', type: 'tool', back: 'cities' },
   community:  { hash: '#community',  title: '커뮤니티',           type: 'tool', back: 'tools', tab: 'community' },
   ranking:    { hash: '#ranking',    title: 'FIRE 랭킹',          type: 'tool', back: 'result', tab: 'ranking' },
-  cities:     { hash: '#cities',     title: '해외 도시 탐색',      type: 'tool', back: 'tools' }
+  cities:     { hash: '#cities',     title: '지역별 파이어 (국내·해외)',      type: 'tool', back: 'tools' }
 };
 
 // 결과 화면 다음 행동 (MVP 메인)
@@ -35,7 +35,7 @@ export const TOOLS = [
   { id: 'foreignTax', tag: '세금',   title: '해외주식 양도세',    desc: '분할 매도 절세 계산' },
   { id: 'dividend',   tag: '배당',   title: '배당 생활 계산기',   desc: '월 배당·필요 원금·세금 경계' },
   { id: 'pension',    tag: '연금',   title: '국민연금 조기수령',  desc: '당겨 받기 득실' },
-  { id: 'cities',     tag: '해외',   title: '해외 파이어 도시',   desc: '세계 지도로 도시 선택 · 국내·체류 비교까지' },
+  { id: 'cities',     tag: '지역',   title: '지역별 파이어',   desc: '국내·해외 지역 생활비로 파이어 시점 비교' },
   { id: 'community',  tag: '커뮤니티', title: '다른 사람들',       desc: '익명 한마디·후기' }
 ];
 

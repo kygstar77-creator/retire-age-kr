@@ -3,7 +3,7 @@ import Header from './Header.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, runwayText, deltaText } from '../../firemap-v2/scenarios.js';
 import { sourceLine } from '../../firemap-v2/dataSources.js';
-import { FIRE_CITIES as CITIES } from '../../firemap-v2/cities.js';
+import { FIRE_CITIES as CITIES, KR_REGIONS } from '../../firemap-v2/cities.js';
 
 
 const LAND = [
@@ -89,49 +89,89 @@ function WorldMap({ cities, active, onPick }) {
 }
 
 export default function CityExplorer({ inputs, simulation, onChange, onMove, onBack }) {
+  const [tab, setTab] = useState('domestic');
   const [open, setOpen] = useState(null);
   const [active, setActive] = useState(null);
   const pick = (i) => { setActive(i); const el = document.getElementById(`ce-${i}`); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' }); };
-  const apply = (krw) => {
-    if (onChange) onChange('monthlyLivingCost', krw);
-    if (onMove) onMove('result');
-  };
+  const apply = (krw) => { if (onChange) onChange('monthlyLivingCost', krw); if (onMove) onMove('result'); };
+
+  const curCost = Number(inputs.monthlyLivingCost) || 0;
+  const curAge = simulation.earliestRetirementAge;
+  const overseas = CITIES.filter((c) => c.country !== '한국');
+
+  const regions = KR_REGIONS
+    .map((r) => ({ ...r, age: buildScenario(inputs, { monthlyLivingCost: r.krw }).earliestRetirementAge }))
+    .sort((a, b) => {
+      const aa = a.age == null ? 999 : a.age;
+      const bb = b.age == null ? 999 : b.age;
+      return aa !== bb ? aa - bb : a.krw - b.krw;
+    });
+
   return (
     <main className="fm-screen fm-scroll">
-      <Header tag="해외 도시" onBack={onBack} />
+      <Header tag="지역 탐색" onBack={onBack} />
       <section className="fm-card fm-text-card">
-        <p className="fm-kicker">파이어하면 어디서 살까</p>
-        <h2>전 세계 파이어 도시 탐색</h2>
-        <p>도시를 골라 "이 생활비로 살면 내 자산이 몇 살까지 버티는지" 바로 계산해 보세요. 파이어 후의 하루를 미리 그려보는 거예요.</p>
+        <p className="fm-kicker">어디서 살까</p>
+        <h2>지역 바꾸면 파이어가 당겨져요</h2>
+        <p>생활비 낮은 곳으로 옮기면 같은 자산으로 더 일찍·더 오래 파이어할 수 있어요. 지역을 골라 바로 계산해 보세요.</p>
       </section>
-      <WorldMap cities={CITIES} active={active} onPick={pick} />
-      <div className="fm-ce-grid">
-        {CITIES.map((c, i) => {
-          const sc = buildScenario(inputs, { monthlyLivingCost: c.krw });
-          const isOpen = open === i;
-          return (
-            <article className={`fm-ce-card${active === i ? ' active' : ''}`} id={`ce-${i}`} key={c.city}>
-              <button type="button" className="fm-ce-head" style={{ background: `linear-gradient(135deg, ${c.c1}, ${c.c2})` }} onClick={() => setOpen(isOpen ? null : i)}>
-                <span className="fm-ce-flag">{c.flag}</span>
-                <span className="fm-ce-name"><b>{c.city}</b><em>{c.country}</em></span>
-                <span className="fm-ce-cost">월 {formatWon(c.krw)}</span>
-              </button>
-              <div className="fm-ce-body">
-                <p className="fm-ce-vibe">{c.vibe}</p>
-                <div className="fm-ce-tags">
-                  {c.food.map((f) => <span key={f} className="fm-ce-tag food">🍽 {f}</span>)}
-                  {c.play.map((p) => <span key={p} className="fm-ce-tag play">📍 {p}</span>)}
-                </div>
-                <p className="fm-ce-run">이 생활비면 <b>{runwayText(sc)}</b>까지 버텨요 · {deltaText(simulation, sc)}</p>
-                {isOpen && <p className="fm-ce-visa">{c.visa}</p>}
-                <button type="button" className="fm-ce-cta" onClick={() => apply(c.krw)}>이 도시로 내 결과 보기</button>
-              </div>
-            </article>
-          );
-        })}
+
+      <div className="fm-scope-toggle fm-region-tabs">
+        <button type="button" className={tab === 'domestic' ? 'on' : ''} onClick={() => setTab('domestic')}>🇰🇷 국내</button>
+        <button type="button" className={tab === 'overseas' ? 'on' : ''} onClick={() => setTab('overseas')}>🌏 해외</button>
       </div>
-      <button type="button" className="fm-city-cta" onClick={() => onMove && onMove('city')}>국내 도시 비교 · 해외 체류 조건 직접 조절 →</button>
-      <p className="fm-ce-note">도시별 금액은 1인 월 생활비 대략 추정치예요. 실제 주거·의료·환율·비자 조건에 따라 달라질 수 있어요. {sourceLine('cityCost')}</p>
+
+      {tab === 'domestic' ? (
+        <>
+          {curAge != null && <p className="fm-region-base">지금 생활비 <b>월 {formatWon(curCost)}</b> 기준 <b>{curAge}세 파이어</b> · 지역 바꾸면 ↓</p>}
+          <section className="fm-card fm-region-list">
+            {regions.map((r) => {
+              const delta = (curAge != null && r.age != null) ? curAge - r.age : null;
+              return (
+                <button type="button" className="fm-region-row" key={r.city} onClick={() => apply(r.krw)}>
+                  <span className="fm-region-main"><b>{r.city}</b><em>월 {formatWon(r.krw)}{r.note ? ` \u00b7 ${r.note}` : ''}</em></span>
+                  <span className="fm-region-res">
+                    <b>{r.age != null ? `${r.age}세` : '자산 부족'}</b>
+                    {delta != null && <em className={delta > 0 ? 'early' : delta < 0 ? 'late' : 'same'}>{delta > 0 ? `${delta}년 일찍` : delta < 0 ? `${-delta}년 늦음` : '비슷'}</em>}
+                  </span>
+                </button>
+              );
+            })}
+          </section>
+          <p className="fm-ce-note">1인 월 생활비(주거 포함) 추정치 · 통계청 1인가구(월평균 약 169만)+지역 물가 참고. 실제는 주거·의료 조건에 따라 달라져요. {sourceLine('cityCost')}</p>
+        </>
+      ) : (
+        <>
+          <WorldMap cities={overseas} active={active} onPick={pick} />
+          <div className="fm-ce-grid">
+            {overseas.map((c, i) => {
+              const sc = buildScenario(inputs, { monthlyLivingCost: c.krw });
+              const isOpen = open === i;
+              return (
+                <article className={`fm-ce-card${active === i ? ' active' : ''}`} id={`ce-${i}`} key={c.city}>
+                  <button type="button" className="fm-ce-head" style={{ background: `linear-gradient(135deg, ${c.c1}, ${c.c2})` }} onClick={() => setOpen(isOpen ? null : i)}>
+                    <span className="fm-ce-flag">{c.flag}</span>
+                    <span className="fm-ce-name"><b>{c.city}</b><em>{c.country}</em></span>
+                    <span className="fm-ce-cost">월 {formatWon(c.krw)}</span>
+                  </button>
+                  <div className="fm-ce-body">
+                    <p className="fm-ce-vibe">{c.vibe}</p>
+                    <div className="fm-ce-tags">
+                      {c.food.map((f) => <span key={f} className="fm-ce-tag food">🍽 {f}</span>)}
+                      {c.play.map((pl) => <span key={pl} className="fm-ce-tag play">📍 {pl}</span>)}
+                    </div>
+                    <p className="fm-ce-run">이 생활비면 <b>{runwayText(sc)}</b>까지 버텨요 · {deltaText(simulation, sc)}</p>
+                    {isOpen && <p className="fm-ce-visa">{c.visa}</p>}
+                    <button type="button" className="fm-ce-cta" onClick={() => apply(c.krw)}>이 도시로 내 결과 보기</button>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+          <button type="button" className="fm-city-cta" onClick={() => onMove && onMove('city')}>해외 체류 조건 직접 조절 →</button>
+          <p className="fm-ce-note">도시별 금액은 1인 월 생활비 대략 추정치예요. 실제 주거·의료·환율·비자 조건에 따라 달라질 수 있어요. {sourceLine('cityCost')}</p>
+        </>
+      )}
     </main>
   );
 }

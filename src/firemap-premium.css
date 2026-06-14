@@ -83,3 +83,21 @@ button:active{ transform:scale(.985); }
 .fm-plan-mods button{ flex:1; background:#fff; border:1px solid #eef0f3; border-radius:14px; padding:13px 6px; font-size:12px; font-weight:700; color:#374151; cursor:pointer; box-shadow:0 1px 2px rgba(17,24,39,.04); }
 .fm-plan-mods button span{ display:block; font-size:18px; margin-bottom:4px; }
 .fm-plan-link{ display:block; margin:12px 0 2px; text-align:center; font-weight:800; }
+
+/* ── 국내 지역 탐색기 ───────────────── */
+.fm-region-tabs{ margin:12px 16px; }
+.fm-region-base{ margin:0 16px 8px; font-size:13px; color:#6b7684; }
+.fm-region-base b{ color:#191f28; font-weight:800; }
+.fm-region-list{ padding:6px 8px !important; }
+.fm-region-row{ width:100%; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:13px 10px; background:none; border:0; border-bottom:1px solid #f2f4f6; cursor:pointer; text-align:left; }
+.fm-region-row:last-child{ border-bottom:0; }
+.fm-region-row:active{ background:#f8f9fb; }
+.fm-region-main{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+.fm-region-main b{ font-size:15px; font-weight:800; color:#191f28; }
+.fm-region-main em{ font-size:12px; color:#8b95a1; font-style:normal; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.fm-region-res{ display:flex; flex-direction:column; align-items:flex-end; gap:2px; flex:0 0 auto; }
+.fm-region-res > b{ font-size:15px; font-weight:800; color:#191f28; }
+.fm-region-res em{ font-size:11px; font-style:normal; font-weight:800; }
+.fm-region-res em.early{ color:#16a34a; }
+.fm-region-res em.late{ color:#b91c1c; }
+.fm-region-res em.same{ color:#8b95a1; }

@@ -127,3 +127,12 @@ button:active{ transform:scale(.985); }
 .fm-plan-grid button:active{ background:#f8f9fb; }
 .fm-plan-grid button span{ display:block; font-size:19px; margin-bottom:6px; }
 .fm-plan-grid button em{ display:block; font-style:normal; font-weight:400; font-size:11.5px; color:#8b95a1; margin-top:2px; }
+
+/* ── 도구 탭 그리드 (홈 그리드와 통일) ───────── */
+.fm-tool-group-label{ margin:14px 16px 8px; font-size:12px; font-weight:800; color:#8b95a1; letter-spacing:.02em; }
+.fm-tool-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin:0 16px 8px; }
+.fm-tool-tile{ background:#fff; border:1px solid #eef0f3; border-radius:16px; padding:15px 13px; text-align:left; cursor:pointer; box-shadow:0 1px 2px rgba(17,24,39,.04); }
+.fm-tool-tile:active{ background:#f8f9fb; }
+.fm-tool-ico{ display:block; font-size:20px; margin-bottom:6px; }
+.fm-tool-tile strong{ display:block; font-size:14px; font-weight:800; color:#191f28; }
+.fm-tool-tile em{ display:block; font-style:normal; font-size:11.5px; color:#8b95a1; margin-top:3px; line-height:1.4; }

@@ -1,5 +1,4 @@
 import Header from './Header.jsx';
-import PensionControls from './PensionControls.jsx';
 import RangeControl from './RangeControl.jsx';
 import { questions } from '../../firemap-v2/data.js';
 import { cleanNumber } from '../../firemap-v2/formatters.js';
@@ -27,9 +26,8 @@ export default function Question({ step, inputs, onChange, onPrev, onNext }) {
           step={question.step}
           onChange={(nextValue) => onChange(question.key, nextValue)}
         />
-        <small>{isAge ? '손가락으로 움직여 1세 단위로 조절해요.' : `${question.unit} 단위로 조절해요.`}</small>
+        <small>{isAge ? '손가락으로 움직여 1세 단위로 조절해요.' : `${question.unit}로 조절해요.`}</small>
       </section>
-      {isFinalQuestion && <PensionControls inputs={inputs} onChange={onChange} />}
       <nav className="fm-bottom-nav">
         <button type="button" onClick={onPrev}>이전</button>
         <button type="button" onClick={onNext}>{isFinalQuestion ? '결과 보기' : '다음'}</button>

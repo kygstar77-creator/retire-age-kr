@@ -105,6 +105,18 @@ export async function fetchSaveBoard(metric = 'today', limit = 10) {
       const rows = res.ok ? await res.json() : [];
       return rows.map((r) => ({ ...r, value: r.today_saved }));
     }
+    if (metric === 'advance' || metric === 'streak') {
+      // 앞당김·연속일은 줄어들 수 있으므로 '과거 최고치'가 아니라 '최신값(최근 날짜)'으로 랭킹
+      const c = metric === 'streak' ? 'streak' : 'advanced_days';
+      const u = `${SUPABASE_URL}/rest/v1/${TABLE}?select=client_id,nickname,${c},age_band,date&${c}=gt.0&order=date.desc&limit=600`;
+      const r2 = await fetch(u, { method: 'GET', headers: headers() });
+      const rs = r2.ok ? await r2.json() : [];
+      const seen2 = new Set();
+      const latest = [];
+      for (const r of rs) { if (seen2.has(r.client_id)) continue; seen2.add(r.client_id); latest.push({ ...r, value: r[c] }); }
+      latest.sort((a, b) => (b.value || 0) - (a.value || 0));
+      return latest.slice(0, limit);
+    }
     const col = metric === 'streak' ? 'streak' : metric === 'advance' ? 'advanced_days' : 'total_saved';
     const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=client_id,nickname,${col},age_band&${col}=gt.0&order=${col}.desc&limit=80`;
     const res = await fetch(url, { method: 'GET', headers: headers() });

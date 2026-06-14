@@ -218,7 +218,7 @@ export default function Leaderboard({ simulation, onBack, onMove }) {
         <p className="fm-section-sub">{SUBS[board]}</p>
         {board !== 'fire' && (
           myBoardValue() > 0
-            ? <p className="fm-save-myrank">내 기록 <b>{fmtMyVal(myBoardValue())}</b> · {inTop ? '위 목록에 있어요 🎉' : '아직 10위권 밖이에요'}</p>
+            ? <p className="fm-save-myrank">내 기록 <b>{fmtMyVal(myBoardValue())}</b> · {inTop ? '상위 10위 안에 있어요 🎉' : '아직 10위권 밖 — 더 기록하면 올라가요'}</p>
             : <p className="fm-save-myrank">이 보드엔 아직 내 기록이 없어요 · ‘저축’ 탭에서 기록하면 올라가요</p>
         )}
         <ol className="fm-lb-list">

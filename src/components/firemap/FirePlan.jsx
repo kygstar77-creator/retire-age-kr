@@ -5,6 +5,7 @@ import { getAssetHistory, logAsset } from '../../utils/assetHistory.js';
 import { getLatestRank } from '../../firemap-v2/rankHistory.js';
 import InstallButton from './InstallButton.jsx';
 import { account } from '../../utils/identity.js';
+import { estimateLocalPremium } from '../../firemap-v2/healthInsurance.js';
 
 const won = (n) => formatWon(Math.round(n || 0));
 const eok = (n) => {
@@ -63,6 +64,18 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
   }).join(' ');
 
   const hi = inp.healthInsuranceEnabled && inp.monthlyHealthInsurance > 0;
+  // 건보료 스마트 기본값: 정밀계산/직접해제 전엔 지역가입자 근사치를 자동 반영(토스·뱅샐식 — 수동 개입 불필요). 1회만 적용해 사용자가 끄면 존중.
+  const hiDefault = estimateLocalPremium({ chargeableIncomeManwon: 0, propertyTaxBaseEok: 3 }).monthly;
+  useEffect(() => {
+    if (inp.healthInsuranceEnabled) return;
+    try { if (localStorage.getItem('fm_hi_auto')) return; } catch { /* ignore */ }
+    if (onChange) {
+      onChange('healthInsuranceEnabled', 1);
+      onChange('monthlyHealthInsurance', hiDefault);
+      try { localStorage.setItem('fm_hi_auto', '1'); } catch { /* ignore */ }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
@@ -151,7 +164,7 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
         <ul className="fm-plan-inst-list">
           <li><span>국민연금</span><b>{inp.expectedPensionAge || 65}세~ 月 {Math.round((inp.expectedMonthlyPension || 0) / 10000).toLocaleString()}만</b></li>
           <li><span>물가 상승</span><b>연 {inp.inflationRate ?? 3}%</b></li>
-          <li><span>건강보험료</span>{hi ? <b>月 {Math.round(inp.monthlyHealthInsurance / 10000)}만 반영</b> : <button type="button" className="fm-inline-link" onClick={() => onMove('dependent')}>계산해서 반영하기 ›</button>}</li>
+          <li><span>건강보험료</span><b>月 {Math.round((hi ? inp.monthlyHealthInsurance : hiDefault) / 10000)}만 {hi ? '반영' : '자동'}</b> <button type="button" className="fm-inline-link" onClick={() => onMove('dependent')}>정밀 계산 ›</button></li>
           <li><span>세금(양도·배당)</span><button type="button" className="fm-inline-link" onClick={() => onMove('foreignTax')}>양도·배당세 보기 ›</button></li>
         </ul>
         <p className="fm-plan-inst-note">국민연금·물가·건보·세금까지 반영해요. (랭킹은 공정성 위해 세전 기준)</p>

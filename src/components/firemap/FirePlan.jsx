@@ -107,7 +107,9 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
         <p className="fm-plan-sub">매달 한 번 자산을 기록하면, 목표까지 얼마나 다가가는지 그래프로 보여줘요.</p>
         {hist.length >= 2
           ? <svg viewBox="0 0 300 64" className="fm-plan-spark" preserveAspectRatio="none"><polyline points={line} fill="none" stroke="#ff5a00" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" /></svg>
-          : <p className="fm-plan-empty">지금 기록해두면 다음 달부터 추이 선이 그려져요.</p>}
+          : (hist.length === 1 || asset > 0)
+            ? <div className="fm-plan-one"><b>{won(hist.length ? hist[hist.length - 1].v : asset)}</b><span>이번 달 기록됨 · 다음 달 또 기록하면 추이 선이 그려져요</span></div>
+            : <p className="fm-plan-empty">지금 기록해두면 다음 달부터 추이 선이 그려져요.</p>}
         {!editing
           ? <button type="button" className="fm-plan-update" onClick={() => { setVal(String(asset)); setEditing(true); }}>이번 달 자산 업데이트</button>
           : (
@@ -125,7 +127,7 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
           <li><span>국민연금</span><b>{inp.expectedPensionAge || 65}세~ 月 {Math.round((inp.expectedMonthlyPension || 0) / 10000).toLocaleString()}만</b></li>
           <li><span>물가 상승</span><b>연 {inp.inflationRate ?? 3}%</b></li>
           <li><span>건강보험료</span>{hi ? <b>月 {Math.round(inp.monthlyHealthInsurance / 10000)}만 반영</b> : <button type="button" className="fm-inline-link" onClick={() => onMove('dependent')}>계산해서 반영하기 ›</button>}</li>
-          <li><span>세금(양도·배당)</span><button type="button" className="fm-inline-link" onClick={() => onMove('tools')}>세금 도구로 점검 ›</button></li>
+          <li><span>세금(양도·배당)</span><button type="button" className="fm-inline-link" onClick={() => onMove('foreignTax')}>양도세 계산 ›</button></li>
         </ul>
         <p className="fm-plan-inst-note">국민연금·물가·건보·세금까지 반영해요. (랭킹은 공정성 위해 세전 기준)</p>
       </section>

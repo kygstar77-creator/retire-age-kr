@@ -22,6 +22,7 @@ function ResultHeroV2({ simulation }) {
   const inp = simulation.inputs;
   const [live, setLive] = useState(null);
   const [agg, setAgg] = useState(null);
+  const [showCalc, setShowCalc] = useState(false);
 
   useEffect(() => {
     let alive = true;
@@ -76,7 +77,9 @@ function ResultHeroV2({ simulation }) {
         <span>목표 퇴사 <b>{target}세</b></span>
         <span>자산 버티는 나이 <b>{phrase.runway}</b></span>
       </div>
-      <p className="fm-rank-note">{peerAvg != null ? `또래 평균 ${peerAvg}세 · ` : ''}또래 순자산 상위 {base.percentile}%(통계청 2025 가계금융복지조사 기준) · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)} · <b>세전(세금 미반영)</b></p>
+      <p className="fm-rank-note">{peerAvg != null ? `또래 평균 ${peerAvg}세 · ` : ''}또래 순자산 상위 {base.percentile}% · <b>세전(세금 미반영)</b></p>
+      <button type="button" className="fm-calc-toggle" onClick={() => setShowCalc((v) => !v)} aria-expanded={showCalc}>계산 가정·출처 {showCalc ? '▴' : '▾'}</button>
+      {showCalc && <p className="fm-rank-note fm-rank-note-sub">통계청 2025 가계금융복지조사 기준 · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)}</p>}
       <button type="button" className="fm-tax-hint" onClick={() => { window.location.hash = '#experiment'; }}>세금·배당 반영해 보기 → 🎛️ 바꿔보기</button>
     </section>
   );
@@ -399,10 +402,10 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
         <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>🎛️ 수치 바꿔보기</button>
       </div>
       <button type="button" className="fm-rank-cta-other" onClick={shareOther}>🔗 링크 복사 · 다른 앱으로 공유</button>
-      <AccountCard kicker="내 기록 지키기 🔒" sub="방금 나온 퇴사 나이·등수와 적립·절약 기록을 닉네임+비밀번호로 저장하세요. 기기가 바뀌어도 같은 계정으로 이어집니다." />
-      <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />
       <AssetJourney simulation={simulation} />
       <TopLevers inputs={inputs} simulation={simulation} onChange={onChange} />
+      <AccountCard kicker="내 기록 지키기 🔒" sub="방금 나온 퇴사 나이·등수와 적립·절약 기록을 닉네임+비밀번호로 저장하세요. 기기가 바뀌어도 같은 계정으로 이어집니다." />
+      <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />
       <NextActions onMove={onMove} />
     </main>
   );

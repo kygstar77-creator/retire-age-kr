@@ -955,6 +955,7 @@ body { font-weight: 400 !important; letter-spacing: -0.01em; }
   -webkit-appearance: none !important; appearance: none !important;
   width: 100% !important; height: 24px !important; margin: 12px 0 !important;
   background: transparent !important; cursor: pointer; accent-color: auto !important;
+  touch-action: pan-y !important;
 }
 .fm-range-control input[type="range"]::-webkit-slider-runnable-track {
   height: 6px; border-radius: 999px;

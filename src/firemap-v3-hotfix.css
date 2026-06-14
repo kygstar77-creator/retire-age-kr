@@ -303,6 +303,7 @@
   width: 100%;
   margin: 14px 0;
   accent-color: #ff5a00;
+  touch-action: pan-y;
 }
 
 .fm-range-scale {

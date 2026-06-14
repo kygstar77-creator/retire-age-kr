@@ -3,6 +3,7 @@ import Header from './Header.jsx';
 import { identityIds, accountHandle } from '../../utils/identity.js';
 import IdentityLine from './IdentityLine.jsx';
 import DepositCard from './DepositCard.jsx';
+import DepositCalendar from './DepositCalendar.jsx';
 import { pushState, pullKey } from '../../utils/firemapStateApi.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { funHandle } from '../../firemap-v2/funName.js';
@@ -170,6 +171,7 @@ export default function Savings({ simulation, onMove }) {
           : <>✂️ <b>절약</b> = 안 쓴 돈으로 <b>파이어 시간을 사는 것</b>. 천 원 아끼면 그만큼 파이어가 당겨져요.</>}
       </p>
       {saveView === 'deposit' && <DepositCard simulation={simulation} onMove={onMove} />}
+      {saveView === 'deposit' && <DepositCalendar />}
       {saveView === 'frugal' && (
       <>
       <section className="fm-card fm-save-screen">

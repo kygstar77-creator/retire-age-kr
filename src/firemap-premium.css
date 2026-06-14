@@ -168,3 +168,17 @@ button:active{ transform:scale(.985); }
 .fm-next-best-go{ display:block; font-size:12.5px; font-weight:800; color:#c2410c; margin-top:8px; }
 .fm-plan-tools{ display:block; width:calc(100% - 32px); margin:0 16px 16px; border:1px solid #eef0f3; border-radius:14px; background:#fff; color:#374151; font-size:14px; font-weight:800; padding:14px; cursor:pointer; box-shadow:0 1px 2px rgba(17,24,39,.04); }
 .fm-plan-tools:active{ background:#f8f9fb; }
+
+/* ── 은퇴 후 건보료·세금 해자 카드 (수요조사 1순위 무기) ── */
+.fm-moat{ border:1px solid #ffe0c2; background:linear-gradient(180deg,#fffaf5,#fff); }
+.fm-moat h2{ font-size:18px; font-weight:800; color:#1e2859; margin:2px 0 8px; line-height:1.35; word-break:keep-all; }
+.fm-moat-lead{ font-size:14px; color:#4b5563; line-height:1.6; word-break:keep-all; }
+.fm-moat-est{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:12px 0; }
+.fm-moat-est > div{ background:#fff5ec; border:1px solid #ffe0c2; border-radius:14px; padding:12px; }
+.fm-moat-est small{ display:block; font-size:11.5px; color:#9a3412; font-weight:700; }
+.fm-moat-est b{ display:block; font-size:18px; font-weight:800; color:#c2410c; margin-top:4px; }
+.fm-moat-note{ font-size:12.5px; color:#6b7280; line-height:1.55; word-break:keep-all; }
+.fm-moat-cta{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:10px; }
+.fm-moat-cta button{ border:1px solid #ff5a00; background:#ff5a00; color:#fff; font-size:13px; font-weight:800; border-radius:12px; padding:12px 8px; cursor:pointer; line-height:1.3; }
+.fm-moat-cta button:last-child{ background:#fff; color:#c2410c; }
+.fm-moat-cta button:active{ opacity:.9; }

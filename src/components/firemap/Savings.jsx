@@ -239,6 +239,8 @@ export default function Savings({ simulation, onMove }) {
         <button type="button" className="fm-save-share" onClick={shareSave}>🔥 내 절약 성과 공유하기</button>
       </section>
 
+      <DepositCalendar storageKey="fm_save" field="daily" label="절약" />
+
       <section className="fm-card">
         <p className="fm-kicker">오늘의 절약 랭킹 🏆</p>
         <p className="fm-section-sub">오늘 가장 많이 아낀 사람들이에요 · 매일 새로 시작해요</p>

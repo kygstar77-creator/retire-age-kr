@@ -11,6 +11,7 @@ import { submitScore, fetchUserRank, fetchAggregates, assetBandOf } from '../../
 import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js';
 import { FIRE_CITIES } from '../../firemap-v2/cities.js';
 import { track } from '../../firemap-v2/dailyData.js';
+import { estimateLocalPremium } from '../../firemap-v2/healthInsurance.js';
 import AccountCard from './AccountCard.jsx';
 import FireStatus from './FireStatus.jsx';
 
@@ -75,8 +76,9 @@ function ResultHeroV2({ simulation }) {
         ? <p className="fm-rank-climb">1등까지 <b>{(live.position - 1).toLocaleString()}명</b> · 조건 바꾸면 등수가 올라가요</p>
         : <p className="fm-rank-climb">지금 전체 1등이에요!</p>)}
       <div className="fm-hero-mini">
-        <span>목표 파이어 <b>{target}세</b></span>
+        <span>필요 자산 <b>{simulation.requiredFireAssetByFourPercent ? formatWon(simulation.requiredFireAssetByFourPercent) : '—'}</b></span>
         <span>자산 버티는 나이 <b>{phrase.runway}</b></span>
+        <span>목표 파이어 <b>{target}세</b></span>
       </div>
       <p className="fm-rank-note">{peerAvg != null ? `또래 평균 ${peerAvg}세 · ` : ''}또래 순자산 상위 {base.percentile}% · <b>세전(세금 미반영)</b></p>
       <button type="button" className="fm-calc-toggle" onClick={() => setShowCalc((v) => !v)} aria-expanded={showCalc}>계산 가정·출처 {showCalc ? '▴' : '▾'}</button>
@@ -307,6 +309,32 @@ function AssetJourney({ simulation }) {
   );
 }
 
+function MoatCard({ simulation, onMove }) {
+  const inp = simulation.inputs;
+  const fireAsset = simulation.retirementFinancialAsset || simulation.netWorth || inp.financialAsset || 0;
+  const annualFinIncomeManwon = Math.round((fireAsset * 0.04) / 10000); // 4% 인출 기준 연 금융소득(만원)
+  let est = null;
+  try { est = estimateLocalPremium({ chargeableIncomeManwon: annualFinIncomeManwon, propertyTaxBaseEok: 0 }); } catch { est = null; }
+  return (
+    <section className="fm-card fm-moat">
+      <p className="fm-kicker">은퇴 후 건보료·세금 · 다른 계산기엔 없는 것</p>
+      <h2>파이어하면 건강보험이 지역가입자로 바뀌어요</h2>
+      <p className="fm-moat-lead">직장을 그만두면 회사와 절반씩 내던 건보료를 <b>혼자</b> 내고, 소득·재산 기준 <b>지역가입자</b>로 전환돼 부담이 커질 수 있어요. 대부분의 계산기는 이걸 안 보여줘요.</p>
+      {est && (
+        <div className="fm-moat-est">
+          <div><small>예상 월 건보료 (추정)</small><b>{est.monthly.toLocaleString()}원</b></div>
+          <div><small>4% 인출 시 연 금융소득</small><b>{annualFinIncomeManwon.toLocaleString()}만원</b></div>
+        </div>
+      )}
+      <p className="fm-moat-note">금융소득만으로 잡은 대략값이에요. 부양가족 등재·재산까지 넣어 정확히 보려면 ↓</p>
+      <div className="fm-moat-cta">
+        <button type="button" onClick={() => onMove('dependent')}>🩺 은퇴 후 건보료 정밀 계산</button>
+        <button type="button" onClick={() => onMove('foreignTax')}>💸 해외주식 양도세</button>
+      </div>
+    </section>
+  );
+}
+
 function NextActions({ onMove }) {
   return (
     <button type="button" className="fm-plan-tools" onClick={() => onMove('tools')}>🧰 정밀 도구 전체 보기 (지역·현금흐름·건보·세금) →</button>
@@ -391,6 +419,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
       </div>
       <button type="button" className="fm-rank-cta-other" onClick={shareOther}>🔗 링크 복사 · 다른 앱으로 공유</button>
       <FireStatus simulation={simulation} onMove={onMove} />
+      <MoatCard simulation={simulation} onMove={onMove} />
       <AssetJourney simulation={simulation} />
       <TopLevers inputs={inputs} simulation={simulation} onChange={onChange} />
       <AccountCard kicker="내 기록 지키기 🔒" sub="방금 나온 파이어 나이·등수와 적립·절약 기록을 닉네임+비밀번호로 저장하세요. 기기가 바뀌어도 같은 계정으로 이어집니다." />

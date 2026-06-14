@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 
-const readDays = () => { try { const v = JSON.parse(localStorage.getItem('fm_daily') || 'null'); return (v && v.days) || {}; } catch { return {}; } };
+const readDays = (key, field) => { try { const v = JSON.parse(localStorage.getItem(key) || 'null'); return (v && v[field]) || {}; } catch { return {}; } };
 const ymd = (y, m, d) => `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
 
-export default function DepositCalendar() {
-  const [days, setDays] = useState(readDays);
+export default function DepositCalendar({ storageKey = 'fm_daily', field = 'days', label = '적립' }) {
+  const [days, setDays] = useState(() => readDays(storageKey, field));
   useEffect(() => {
-    const h = () => setDays(readDays());
+    const h = () => setDays(readDays(storageKey, field));
     window.addEventListener('fm-savings-changed', h);
     return () => window.removeEventListener('fm-savings-changed', h);
-  }, []);
+  }, [storageKey, field]);
   const now = new Date();
   const y = now.getFullYear();
   const m = now.getMonth();
@@ -23,7 +23,7 @@ export default function DepositCalendar() {
   for (let d = 1; d <= dim; d += 1) cells.push(d);
   return (
     <section className="fm-card fm-cal">
-      <p className="fm-kicker">{m + 1}월 적립 달력 · {logged}일 기록</p>
+      <p className="fm-kicker">{m + 1}월 {label} 달력 · {logged}일 기록</p>
       <div className="fm-cal-grid">
         {['일', '월', '화', '수', '목', '금', '토'].map((w) => <span key={w} className="fm-cal-w">{w}</span>)}
         {cells.map((d, i) => {

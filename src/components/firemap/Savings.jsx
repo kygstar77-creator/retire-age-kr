@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Header from './Header.jsx';
 import { identityIds, accountHandle } from '../../utils/identity.js';
 import IdentityLine from './IdentityLine.jsx';
@@ -8,7 +8,7 @@ import { statsRank } from '../../firemap-v2/rank.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { buildScenarioShareUrl } from '../../utils/shareState.js';
 import { fetchSaveTop, fetchMySaveRank } from '../../utils/firemapSaveApi.js';
-import { notifySavingsChanged, reportBoard, hasCalculated, computeProgress, gapLabel, ageLabel } from '../../utils/savingsEngine.js';
+import { notifySavingsChanged, reportBoard, hasCalculated, computeProgress, ageLabel } from '../../utils/savingsEngine.js';
 import { CHALLENGES, QUOTES, QUICK, dayIdx, todayStr, wonStr, readJSON, fmtAdvance, dailyNeedOf, addSave, removeEntry, setTotal, track } from '../../firemap-v2/dailyData.js';
 
 function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
@@ -58,6 +58,8 @@ export default function Savings({ simulation, onMove }) {
   const [nickSaved, setNickSaved] = useState(false);
   const [saveView, setSaveView] = useState('deposit');
   const [tick, setTick] = useState(0);
+  const [flash, setFlash] = useState(null);
+  const flashRef = useRef(0);
   const [customOpen, setCustomOpen] = useState(false);
   const [customVal, setCustomVal] = useState('');
   const [editTot, setEditTot] = useState(false);
@@ -123,7 +125,13 @@ export default function Savings({ simulation, onMove }) {
     catch { onMove('share'); }
   };
 
-  const log = (amount, label) => { const next = addSave(amount, label); setSv(next); track('save_log', { value: amount, item: label || '직접입력' }); persist(next); };
+  const log = (amount, label) => {
+    const next = addSave(amount, label); setSv(next);
+    track('save_log', { value: amount, item: label || '직접입력' });
+    const t = fmtAdvance(advSec(amount));
+    if (t) { setFlash(t); window.clearTimeout(flashRef.current); flashRef.current = window.setTimeout(() => setFlash(null), 2600); }
+    persist(next);
+  };
   const editTotal = () => { setTotVal(String(totalSaved)); setEditTot(true); };
   const submitTotal = () => { const next = setTotal(String(totVal).replace(/[^0-9]/g, '')); setSv(next); persist(next); setEditTot(false); };
   const submitCustom = () => { const n = Number(String(customVal).replace(/[^0-9]/g, '')); if (n > 0) log(n, '직접 입력'); setCustomVal(''); setCustomOpen(false); };
@@ -139,15 +147,15 @@ export default function Savings({ simulation, onMove }) {
       <p className="fm-save-explain">
         {saveView === 'deposit'
           ? <>💰 <b>적립</b> = 실제로 투자·저축한 돈. <b>퇴사 나이 결과에 바로 반영</b>돼요.</>
-          : <>✂️ <b>절약</b> = 오늘 안 쓴 돈. 이것도 <b>결과에 더해져</b> 퇴사를 당겨요.</>}
+          : <>✂️ <b>절약</b> = 안 쓴 돈으로 <b>파이어 시간을 사는 것</b>. 천 원 아끼면 그만큼 파이어가 당겨져요.</>}
       </p>
       {hasCalculated() && prog && prog.planAge != null && (prog.hasData || prog.direction !== 'even') && (
         <p className={`fm-save-combined ${prog.direction}`}>
           {prog.direction === 'ahead'
-            ? <>🔥 적립·절약이 합쳐 퇴사를 <b>{gapLabel(prog.advanceDays)}</b> 당기는 중</>
+            ? <>🔥 적립·절약으로 지금까지 파이어 <b>{fmtAdvance(prog.advanceDays * 86400) || '0초'}</b>를 샀어요</>
             : prog.direction === 'behind'
-              ? <>지금은 계획보다 <b>{gapLabel(prog.advanceDays)}</b> 밀려 있어요 · 오늘 채워볼까요?</>
-              : <>계획대로 진행 중 — 예상 퇴사 <b>{ageLabel(prog.actualAgeYears)}</b></>}
+              ? <>지금은 계획보다 <b>{fmtAdvance(Math.abs(prog.advanceDays) * 86400) || '0초'}</b> 밀려 있어요 · 오늘 채워볼까요?</>
+              : <>계획대로 진행 중 — 예상 파이어 <b>{ageLabel(prog.actualAgeYears)}</b></>}
         </p>
       )}
       {saveView === 'deposit' && <DepositCard simulation={simulation} onMove={onMove} />}
@@ -159,21 +167,23 @@ export default function Savings({ simulation, onMove }) {
           <small>오늘 아낀 돈</small>
           <b>{wonStr(todaySaved)}</b>
           {dailyNeed
-            ? (todaySaved > 0 && <span className="fm-save-adv">실제 저축에 <b>+{wonStr(todaySaved)}</b> 반영 · <button type="button" className="fm-inline-link" onClick={() => onMove('home')}>현황 보기</button></span>)
+            ? (todaySaved > 0 && <span className="fm-save-adv">⏱️ 오늘 파이어 <b>{todayAdv || '몇 초'}</b> 샀어요 · <button type="button" className="fm-inline-link" onClick={() => onMove('home')}>현황 보기</button></span>)
             : <span className="fm-save-adv muted">이미 목표 달성 — 아낀 돈은 여유로 쌓여요</span>}
         </div>
+
+        {flash && <div className="fm-time-flash" role="status">⏱️ 방금 파이어 <b>{flash}</b>를 샀어요!</div>}
 
         <FireProgressBar simulation={simulation} totalSaved={totalSaved} dailyNeed={dailyNeed} />
 
         {ch.s > 0 && (
           <button type="button" className="fm-save-rec" onClick={() => log(ch.s, ch.t)}>
-            <span>💡 오늘의 추천 · {ch.t}</span><em>+{wonStr(ch.s)}</em>
+            <span>💡 오늘의 추천 · {ch.t}</span><em>+{wonStr(ch.s)}{dailyNeed && fmtAdvance(advSec(ch.s)) ? <i className="fm-chip-time">⏱️{fmtAdvance(advSec(ch.s))}</i> : null}</em>
           </button>
         )}
         <div className="fm-save-chips" aria-label="오늘 아낀 항목 기록">
           {QUICK.map((q) => (
             <button type="button" key={q.label} onClick={() => log(q.won, q.label)}>
-              <span>{q.emoji} {q.label}</span><em>+{wonStr(q.won)}</em>
+              <span>{q.emoji} {q.label}</span><em>+{wonStr(q.won)}{dailyNeed && fmtAdvance(advSec(q.won)) ? <i className="fm-chip-time">⏱️{fmtAdvance(advSec(q.won))}</i> : null}</em>
             </button>
           ))}
           <button type="button" className="fm-save-custom" onClick={() => setCustomOpen((v) => !v)}>✏️ 직접 입력</button>

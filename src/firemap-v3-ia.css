@@ -802,3 +802,9 @@
 .fm-save-inline-go{flex:0 0 auto;border:0;border-radius:12px;background:#ff5a00;color:#fff;font-size:14px;font-weight:800;padding:0 18px;min-height:46px;cursor:pointer}
 .fm-save-inline-go:active{background:#e64f00}
 .fm-save-inline-cancel{flex:0 0 auto;border:1px solid #e5e7eb;border-radius:12px;background:#fff;color:#6b7280;font-size:13px;font-weight:700;padding:0 12px;min-height:46px;cursor:pointer}
+
+/* "시간을 사는" 보상 — 분·초 플래시 + 칩 시간 */
+.fm-time-flash{margin:10px 0 2px;padding:11px 14px;border-radius:12px;background:linear-gradient(135deg,#fff7ed,#ffe4cc);border:1px solid #fed7aa;color:#9a3412;font-size:14px;font-weight:800;text-align:center;animation:fmTimeFlash .4s cubic-bezier(.2,.9,.3,1.2) both}
+.fm-time-flash b{color:#d9480f;font-weight:950}
+@keyframes fmTimeFlash{from{opacity:0;transform:translateY(-6px) scale(.96)}to{opacity:1;transform:none}}
+.fm-chip-time{display:block;margin-top:2px;font-style:normal;font-size:10.5px;font-weight:800;color:#ea580c;opacity:.92}

@@ -9,10 +9,11 @@ export const returnAssumptions = {
 };
 
 export const investmentScenarios = [
-  { key: 'conservative', label: '보수형', annualReturnRate: 3, copy: '예금·현금성 자산에 가까운 낮은 변동성 가정' },
-  { key: 'balanced', label: '균형형', annualReturnRate: 5, copy: '예금과 투자자산을 섞어보는 기본 가정' },
-  { key: 'sp500', label: 'S&P500형', annualReturnRate: 8, copy: '미국 대형주 지수 장기투자에 가까운 공격 가정' },
-  { key: 'nasdaq100', label: '나스닥100형', annualReturnRate: 10, copy: '성장주·기술주 비중이 높은 고변동 가정' }
+  { key: 'conservative', label: '보수형(예적금)', annualReturnRate: 3, copy: '예금·현금성 자산 수준의 낮은 변동성' },
+  { key: 'balanced', label: '균형형', annualReturnRate: 5, copy: '주식+예금·채권을 섞은 보수적 균형' },
+  { key: 'schd', label: '배당다우존스(SCHD)', annualReturnRate: 9, copy: '배당 중심 · S&P500보다 변동성 낮음' },
+  { key: 'sp500', label: 'S&P500형', annualReturnRate: 10, copy: '미국 대형주 장기 평균(통념 ~10%)' },
+  { key: 'nasdaq100', label: '나스닥100형', annualReturnRate: 13, copy: '성장·기술주 · 고수익 고변동' }
 ];
 
 export const questions = [

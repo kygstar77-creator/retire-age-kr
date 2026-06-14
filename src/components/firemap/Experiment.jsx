@@ -132,7 +132,7 @@ export default function Experiment({ inputs, onChange, onBack }) {
             </button>
           ))}
         </div>
-        <small>예적금부터 공격적 투자까지, 같은 자산도 어디에 두느냐로 자산수명이 달라져요. 가정이 높을수록 기대수익도, 변동성(위험)도 커집니다. 과거 통계 기반 가정이며 특정 상품 추천이 아니에요. {sourceLine('returnPresets')}</small>
+        <small>흔히 인용되는 장기 명목 평균 기준이에요(세전·물가 별도). 가정이 높을수록 기대수익도 변동성(위험)도 커지고, 과거 평균일 뿐 미래를 보장하지 않아요. 특정 상품 추천이 아닙니다. {sourceLine('returnPresets')}</small>
       </section>
       )}
     </main>

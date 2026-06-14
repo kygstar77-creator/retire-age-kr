@@ -78,6 +78,19 @@ export function computeProgress(simulation) {
   };
 }
 
+// 나이(소수) → 세·개월·일·시간·분 분해 (시간을 사는 걸 보여주기 위한 정밀 표기)
+export function ageBreakdown(years) {
+  if (years == null || Number.isNaN(years)) return null;
+  const y = Math.floor(years);
+  let days = (years - y) * 365.25;
+  const mo = Math.floor(days / 30.4375); days -= mo * 30.4375;
+  const d = Math.floor(days);
+  const hf = (days - d) * 24;
+  const h = Math.floor(hf);
+  const mi = Math.floor((hf - h) * 60);
+  return { y, mo, d, h, mi };
+}
+
 // 나이(소수) → "54세 3개월"
 export function ageLabel(years) {
   if (years == null || Number.isNaN(years)) return '–';

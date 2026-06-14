@@ -44,10 +44,13 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
   const futureMonthlyAfter = (futureAnnual * afterTaxRate) / 12;
   const futureCoverage = livingCost > 0 ? Math.round((futureMonthlyAfter / livingCost) * 100) : null;
 
+  const appliedMonthly = Math.round(monthlyAfter);
+  const isApplied = appliedMonthly > 0 && Math.round(Number(inputs?.partTimeIncomeAfterRetirement) || 0) === appliedMonthly;
   const apply = () => {
-    if (onChange) onChange('partTimeIncomeAfterRetirement', Math.round(monthlyAfter));
+    if (onChange) onChange('partTimeIncomeAfterRetirement', appliedMonthly);
     if (onMove) onMove('result');
   };
+  const unapply = () => { if (onChange) onChange('partTimeIncomeAfterRetirement', 0); };
 
   return (
     <main className="fm-screen fm-scroll">
@@ -138,7 +141,9 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
         </div>
       </section>
 
-      <button type="button" className="fm-city-cta" onClick={apply}>이 월배당을 파이어 후 소득으로 반영하기</button>
+      {isApplied
+        ? <button type="button" className="fm-city-cta on" onClick={unapply}>✓ 이 월배당이 결과에 반영됨 (파이어 후 소득) · 해제</button>
+        : <button type="button" className="fm-city-cta" onClick={apply}>이 월배당을 파이어 후 소득으로 반영하기</button>}
       <p className="fm-dl-note">배당소득세 15.4%(지방세 포함) 원천징수 기준의 단순 계산이에요. 적립 시뮬레이션은 배당을 전액 재투자하고 수익률이 매년 일정하다는 가정의 추정치이며, 실제 수익률·세금·물가는 다를 수 있어요. 2,000만원 초과분은 종합과세로 실효세율이 더 높아질 수 있고, 특정 종목·상품 추천이 아닌 일반 정보입니다.</p>
     </main>
   );

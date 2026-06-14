@@ -38,7 +38,7 @@ export default function Home({ onStart, onMove, simulation }) {
 
   const latest = getLatestRank();
   const proof = agg && agg.total > 0
-    ? `${agg.total.toLocaleString()}명이 이미 계산했어요${agg.avgEarliest ? ` · 전체 평균 파이어 ${agg.avgEarliest}세` : ''}`
+    ? `${agg.total.toLocaleString()}명이 이미 등수를 확인했어요${agg.avgEarliest ? ` · 전체 평균 파이어 ${agg.avgEarliest}세` : ''}`
     : '';
   const setClamp = (v) => setAge(Math.max(19, Math.min(80, v)));
 
@@ -71,8 +71,8 @@ export default function Home({ onStart, onMove, simulation }) {
       <FireStatus onMove={onMove} simulation={simulation} />
       <section className="fm-home-hero-card">
         <p>파이어맵</p>
-        <h1>나는 몇 살에<br />파이어할 수 있을까?</h1>
-        <span>자산·생활비만 입력하면 1분 만에 내 파이어 가능 나이와 또래 중 내 등수까지 나와요.</span>
+        <h1>나는 또래 중<br />파이어 <span className="fm-hl">몇 등?</span></h1>
+        <span>자산·생활비만 넣으면 또래 중 내 등수와 파이어 가능 나이가 1분 만에 나와요.</span>
         <div className="fm-home-age">
           <label htmlFor="fm-home-age-in">지금 몇 살인가요?</label>
           <div className="fm-home-age-ctrl">
@@ -84,7 +84,7 @@ export default function Home({ onStart, onMove, simulation }) {
             <button type="button" className="fm-age-btn" aria-label="나이 증가" onClick={() => setClamp(age + 1)}>+</button>
           </div>
         </div>
-        <button type="button" className="fm-home-cta" onClick={() => { track('start_calc', { age, from: challenge ? 'share' : 'home' }); onStart(age); }}>{challenge ? '나도 계산하고 친구랑 비교하기 →' : '이 나이로 1분 계산 시작 →'}</button>
+        <button type="button" className="fm-home-cta" onClick={() => { track('start_calc', { age, from: challenge ? 'share' : 'home' }); onStart(age); }}>{challenge ? '나도 계산하고 친구랑 비교하기 →' : '내 또래 등수 확인하기 →'}</button>
         {proof && <p className="fm-home-proof">{proof}</p>}
       </section>
       <InstallButton />

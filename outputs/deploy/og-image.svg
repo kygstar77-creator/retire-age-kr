@@ -15,9 +15,9 @@
 
   <text x="80" y="248" fill="#ff5a00" font-family="Arial, sans-serif" font-size="33" font-weight="900">또래 중 내 FIRE 등수는? · 무료 1분</text>
   <text x="80" y="346" fill="#111827" font-family="Arial, sans-serif" font-size="74" font-weight="900">나는 몇 살에</text>
-  <text x="80" y="432" fill="#111827" font-family="Arial, sans-serif" font-size="74" font-weight="900"><tspan fill="#ff5a00">퇴사</tspan>할 수 있을까?</text>
+  <text x="80" y="432" fill="#111827" font-family="Arial, sans-serif" font-size="74" font-weight="900"><tspan fill="#ff5a00">파이어</tspan>할 수 있을까?</text>
   <rect x="80" y="478" width="486" height="92" rx="20" fill="#f8fafc"/>
-  <text x="106" y="516" fill="#6b7280" font-family="Arial, sans-serif" font-size="24" font-weight="800">퇴사 가능 나이</text>
+  <text x="106" y="516" fill="#6b7280" font-family="Arial, sans-serif" font-size="24" font-weight="800">파이어 가능 나이</text>
   <text x="106" y="554" fill="#111827" font-family="Arial, sans-serif" font-size="36" font-weight="900">1분이면 확인</text>
   <rect x="582" y="478" width="538" height="92" rx="20" fill="#fff7ed"/>
   <text x="608" y="516" fill="#9a3412" font-family="Arial, sans-serif" font-size="24" font-weight="800">또래 중 내 등수</text>

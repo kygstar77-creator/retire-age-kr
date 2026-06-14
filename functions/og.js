@@ -1,5 +1,5 @@
 // Cloudflare Pages Function: /og
-// 공유 링크 미리보기(카톡 등)에 그 사람의 '파이어 랭킹 · 퇴사 나이'를 박은 PNG 카드를 그때그때 렌더.
+// 공유 링크 미리보기(카톡 등)에 그 사람의 '파이어 랭킹 · 파이어 나이'를 박은 PNG 카드를 그때그때 렌더.
 // 실패 시 정적 og-image.png로 폴백 → 미리보기가 절대 깨지지 않게.
 import { initWasm, Resvg } from '@resvg/resvg-wasm';
 import resvgWasm from '@resvg/resvg-wasm/index_bg.wasm';
@@ -35,7 +35,7 @@ function buildSvg(q) {
   const runway = safeRunway(q.get('rw'));
   const p = Math.max(1, Math.min(99, Math.round((pos / tot) * 100)));
   const parts = [];
-  if (ea > 0) parts.push(ea + '세 퇴사 가능');
+  if (ea > 0) parts.push(ea + '세 파이어 가능');
   if (runway && runway !== '—') parts.push(runway.indexOf('이상') >= 0 ? runway + ' 버팀' : runway + '까지 버팀');
   const mid = parts.join(' · ');
   return `<svg width="1200" height="600" viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">

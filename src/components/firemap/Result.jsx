@@ -356,7 +356,8 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
     l.searchParams.set('inf', String(inf));
     if (pos && tot) { l.searchParams.set('pos', String(pos)); l.searchParams.set('tot', String(tot)); }
     const url = l.toString();
-    const title = earliest ? `나는 ${earliest}세에 파이어할 수 있어요 — 파이어맵` : '파이어맵 — 내 파이어 가능 나이';
+    const pct = (pos && tot) ? Math.max(1, Math.round((pos / tot) * 100)) : null;
+    const title = pct ? `나는 또래 중 파이어 상위 ${pct}% 🔥 — 파이어맵` : (earliest ? `나는 ${earliest}세에 파이어 가능 — 파이어맵` : '파이어맵 — 또래 중 내 파이어 등수');
     const description = '파이어족들을 위한 커뮤니티 · 나는 또래 중 파이어 랭킹 몇 등?';
     track('share_summary_copy', { type: 'result_share' });
     // 1순위: 카카오톡 카드(개인 /og 이미지) — 긴 URL 텍스트 없이 카드 하나만 안정적으로 전송
@@ -399,7 +400,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
       <ResultSimTabs current="result" />
       <ResultHeroV2 simulation={simulation} />
       <div className="fm-rank-cta">
-        <button type="button" className="fm-rank-cta-share" onClick={shareRank}>카카오톡 공유</button>
+        <button type="button" className="fm-rank-cta-share" onClick={shareRank}>🔥 내 등수 자랑하기</button>
         <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>🎛️ 수치 바꿔보기</button>
       </div>
       <button type="button" className="fm-rank-cta-other" onClick={shareOther}>🔗 링크 복사 · 다른 앱으로 공유</button>

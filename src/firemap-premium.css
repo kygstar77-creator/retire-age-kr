@@ -55,3 +55,4 @@ button:active{ transform:scale(.985); }
 .fm-fireclock-delta.behind{ background:#fef2f2; color:#b91c1c; }
 .fm-fireclock-delta.neutral{ background:#f1f3f5; color:#6b7684; }
 .fm-fireclock-delta.neutral b{ color:#6b7684; }
+.fm-home-hero-card h1 .fm-hl{ color:#ff5a00; }

@@ -56,3 +56,30 @@ button:active{ transform:scale(.985); }
 .fm-fireclock-delta.neutral{ background:#f1f3f5; color:#6b7684; }
 .fm-fireclock-delta.neutral b{ color:#6b7684; }
 .fm-home-hero-card h1 .fm-hl{ color:#ff5a00; }
+
+/* ── 내 파이어 플랜 대시보드 ───────────────── */
+.fm-plan-top{ display:flex; align-items:center; gap:16px; }
+.fm-plan-ring{ position:relative; width:84px; height:84px; flex:0 0 auto; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.fm-plan-ring-in{ width:62px; height:62px; border-radius:50%; background:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.fm-plan-ring-in b{ font-size:20px; font-weight:800; color:#ff5a00; line-height:1; }
+.fm-plan-ring-in span{ font-size:10px; color:#8b95a1; margin-top:2px; }
+.fm-plan-meta small{ font-size:12px; color:#8b95a1; font-weight:700; }
+.fm-plan-meta strong{ display:block; font-size:24px; font-weight:900; letter-spacing:-.02em; color:#191f28; margin:2px 0; }
+.fm-plan-meta p{ margin:0; font-size:13px; color:#6b7684; }
+.fm-plan-meta p b{ color:#191f28; font-weight:800; }
+.fm-plan-mom{ margin-top:14px; border-radius:12px; padding:11px 13px; font-size:12.5px; font-weight:700; }
+.fm-plan-mom.up{ background:#f0fdf4; color:#15803d; }
+.fm-plan-mom.down{ background:#fef2f2; color:#b91c1c; }
+.fm-plan-mom b{ font-weight:900; }
+.fm-plan-spark{ width:100%; height:64px; display:block; margin:4px 0 2px; }
+.fm-plan-empty{ font-size:13px; color:#8b95a1; text-align:center; padding:14px 0; line-height:1.5; }
+.fm-plan-update{ margin-top:12px; width:100%; border:0; border-radius:14px; background:#fff1e7; color:#c2410c; font-size:14px; font-weight:800; padding:13px; cursor:pointer; }
+.fm-plan-update:active{ background:#ffe0c2; }
+.fm-plan-inst-list{ list-style:none; margin:8px 0 0; padding:0; display:flex; flex-direction:column; gap:11px; }
+.fm-plan-inst-list li{ display:flex; align-items:center; justify-content:space-between; font-size:13.5px; color:#6b7684; }
+.fm-plan-inst-list li b{ color:#191f28; font-weight:800; }
+.fm-plan-inst-note{ margin:13px 0 0; font-size:11.5px; color:#9aa3ab; line-height:1.5; }
+.fm-plan-mods{ display:flex; gap:8px; margin:2px 16px 16px; }
+.fm-plan-mods button{ flex:1; background:#fff; border:1px solid #eef0f3; border-radius:14px; padding:13px 6px; font-size:12px; font-weight:700; color:#374151; cursor:pointer; box-shadow:0 1px 2px rgba(17,24,39,.04); }
+.fm-plan-mods button span{ display:block; font-size:18px; margin-bottom:4px; }
+.fm-plan-link{ display:block; margin:12px 0 2px; text-align:center; font-weight:800; }

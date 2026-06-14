@@ -91,6 +91,7 @@ export default function FireStatus({ simulation, onMove }) {
         </button>
       </div>
       <p className="fm-status-note">적립·절약이 ‘실제 저축’으로 합쳐져 실제 파이어 나이에 반영돼요. 같은 돈은 한 번만 기록하세요.</p>
+      <button type="button" className="fm-inline-link fm-plan-link" onClick={() => onMove && onMove('firePlan')}>📊 내 파이어 플랜 자세히 보기 →</button>
     </section>
   );
 }

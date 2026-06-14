@@ -2,6 +2,7 @@ export const SCREEN_ALIASES = { curation: 'city', advanced: 'tools' };
 
 export const screens = {
   home:       { hash: '#home',       title: '홈',     type: 'home',     tab: 'home' },
+  firePlan:   { hash: '#plan',       title: '내 파이어 플랜', type: 'tool', back: 'result', tab: 'home' },
   question:   { hash: '#question',   title: '질문',   type: 'question' },
   result:     { hash: '#result',     title: '결과',   type: 'result',   tab: 'home', next: ['ranking', 'save', 'experiment', 'tools'] },
   save:       { hash: '#save',       title: '저축',   type: 'save',     tab: 'save' },

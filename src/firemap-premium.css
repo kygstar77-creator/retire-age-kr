@@ -112,3 +112,11 @@ button:active{ transform:scale(.985); }
 .fm-dl-cmp small{ flex:1; color:#6b7684; font-size:13.5px; }
 .fm-dl-cmp b{ color:#191f28; font-weight:800; font-size:14px; }
 .fm-dl-cmp em{ flex:0 0 auto; min-width:72px; text-align:right; color:#8b95a1; font-style:normal; font-size:12px; }
+
+/* ── 은퇴 후 건보료 추정 ───────────────── */
+.fm-dc-prem{ margin-top:12px; background:#fff7ed; border:1px solid #ffe0c2; border-radius:14px; padding:14px; }
+.fm-dc-prem-row{ display:flex; align-items:baseline; justify-content:space-between; gap:8px; }
+.fm-dc-prem-row span{ font-size:13.5px; color:#9a3412; font-weight:700; }
+.fm-dc-prem-row b{ font-size:20px; font-weight:900; color:#c2410c; }
+.fm-dc-prem small{ display:block; margin-top:8px; font-size:11px; color:#9aa3ab; line-height:1.5; }
+.fm-dc-prem-note{ margin:8px 0 0; font-size:12px; color:#9a3412; font-weight:700; }

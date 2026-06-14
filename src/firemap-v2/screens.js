@@ -9,7 +9,7 @@ export const screens = {
   tools:      { hash: '#tools',      title: '도구',   type: 'tools',    tab: 'tools' },
   experiment: { hash: '#experiment', title: '바꿔보기',          type: 'tool', back: 'result', tab: 'home' },
   share:      { hash: '#share',      title: '공유',               type: 'tool', back: 'result' },
-  dependent:  { hash: '#dependent',  title: '건보료 피부양자 판정', type: 'tool', back: 'tools' },
+  dependent:  { hash: '#dependent',  title: '은퇴 후 건보료', type: 'tool', back: 'tools' },
   foreignTax: { hash: '#foreignTax', title: '해외주식 양도세',     type: 'tool', back: 'tools' },
   dividend:   { hash: '#dividend',   title: '은퇴 후 현금흐름',     type: 'tool', back: 'tools' },
   pension:    { hash: '#pension',    title: '국민연금 조기수령',   type: 'tool', back: 'tools' },
@@ -31,7 +31,7 @@ export const NEXT_ACTION_META = {
 // 도구 허브 목록 (메인에서 분리된 기능들)
 export const TOOLS = [
   { id: 'experiment', tag: '비교',   title: '조건 바꿔 비교',     desc: '증권앱 차트로 What-If 비교' },
-  { id: 'dependent',  tag: '건보료', title: '피부양자 자격 판정', desc: '파이어 후 건보료 박탈 여부' },
+  { id: 'dependent',  tag: '건보료', title: '은퇴 후 건보료', desc: '피부양자 박탈 여부 + 지역가입 월 건보료 추정' },
   { id: 'foreignTax', tag: '세금',   title: '해외주식 양도세',    desc: '분할 매도 절세 계산' },
   { id: 'dividend',   tag: '현금흐름', title: '은퇴 후 현금흐름',   desc: '배당·인출·세금·건보료까지' },
   { id: 'pension',    tag: '연금',   title: '국민연금 조기수령',  desc: '당겨 받기 득실' },

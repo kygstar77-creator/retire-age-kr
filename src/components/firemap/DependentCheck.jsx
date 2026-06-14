@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { assessDependentEligibility } from '../../firemap-v2/healthInsurance.js';
+import { assessDependentEligibility, estimateLocalPremium } from '../../firemap-v2/healthInsurance.js';
+import { formatWon } from '../../firemap-v2/formatters.js';
 
 function NumField({ label, unit, value, set, step = 100 }) {
   return (
@@ -22,12 +23,13 @@ export default function DependentCheck({ onApply }) {
   const [biz, setBiz] = useState(false);
   const [rental, setRental] = useState(false);
   const r = assessDependentEligibility({ otherIncomeManwon: other, financialIncomeManwon: fin, propertyTaxBaseEok: prop, hasBusinessIncome: biz, hasRentalIncome: rental });
+  const est = estimateLocalPremium({ chargeableIncomeManwon: r.combinedIncome, propertyTaxBaseEok: prop });
 
   return (
     <section className="fm-card fm-text-card fm-advanced-section">
-      <p className="fm-kicker">건강보험</p>
-      <h2>피부양자 자격 판정</h2>
-      <p>파이어 후 자녀 등의 건강보험 피부양자로 남을 수 있는지 조건으로 판정해요. 참고용이며 실제는 공단 확인이 필요해요.</p>
+      <p className="fm-kicker">은퇴 후 건보료</p>
+      <h2>은퇴 후 건보료, 얼마 낼까?</h2>
+      <p>파이어 후 피부양자로 남을 수 있는지 + 지역가입자가 되면 <b>월 건보료가 얼마</b>인지 추정해요. 대부분의 계산기가 빠뜨리는 부분이에요. (참고용 근사 · 공단 확인 필요)</p>
       <div className="fm-dc-fields">
         <NumField label="금융 외 합산소득(연)" unit="만원" value={other} set={setOther} step={100} />
         <NumField label="금융소득(이자+배당, 연)" unit="만원" value={fin} set={setFin} step={100} />
@@ -42,11 +44,14 @@ export default function DependentCheck({ onApply }) {
         <small>합산소득 {r.combinedIncome.toLocaleString()}만원 기준</small>
         <ul>{r.reasons.map((t) => <li key={t}>{t}</li>)}</ul>
       </div>
-      {!r.eligible && (
-        <button type="button" className="fm-dc-apply" onClick={() => onApply({ healthInsuranceEnabled: 1, monthlyHealthInsurance: 230000 })}>
-          지역가입 건보료(월 23만 가정) 반영하기
-        </button>
-      )}
+      <div className="fm-dc-prem">
+        <div className="fm-dc-prem-row"><span>지역가입자가 되면 예상 월 건보료</span><b>약 {formatWon(est.monthly)}</b></div>
+        <small>소득보험료 약 {formatWon(est.incomeMonthly)} + 재산보험료 약 {formatWon(est.propMonthly)} · 장기요양 포함 · 2025 요율(7.09%)·점수단가 208.4원·재산 1억 공제 근사. 정확한 금액은 공단 확인.</small>
+        {r.eligible && <p className="fm-dc-prem-note">지금은 피부양자라 0원이지만, 위 소득·재산을 넘으면 이 금액을 내게 돼요.</p>}
+      </div>
+      <button type="button" className="fm-dc-apply" onClick={() => onApply({ healthInsuranceEnabled: 1, monthlyHealthInsurance: est.monthly })}>
+        이 건보료(월 {formatWon(est.monthly)})를 내 파이어 계산에 반영하기
+      </button>
     </section>
   );
 }

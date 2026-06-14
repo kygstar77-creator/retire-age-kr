@@ -21,3 +21,23 @@ export function assessDependentEligibility({ otherIncomeManwon = 0, financialInc
   if (eligible) reasons.unshift('현재 조건에서는 피부양자 자격 유지 가능');
   return { eligible, combinedIncome, reasons };
 }
+
+// 지역가입자 월 건강보험료 근사 추정 (2025: 건보료율 7.09%, 점수단가 208.4원, 재산 1억 공제, 자동차 폐지, 장기요양 건보료의 12.95%)
+// 정확한 금액은 국민건강보험공단 확인 필요 — 참고용 근사치.
+export function estimateLocalPremium({ chargeableIncomeManwon = 0, propertyTaxBaseEok = 0 }) {
+  const RATE = 0.0709;   // 2025 건강보험료율
+  const LTC = 0.1295;    // 장기요양보험료(건보료 대비)
+  const MIN = 19780;     // 2025 지역 최저보험료(근사)
+  const incomeMonthly = (Math.max(0, Number(chargeableIncomeManwon) || 0) * 10000) * RATE / 12;
+  const base = Math.max(0, (Number(propertyTaxBaseEok) || 0) - 1); // 억, 재산 1억 기본공제
+  let propMonthly = 0;
+  if (base > 0) {
+    const pts = base <= 1 ? base * 280
+      : base <= 3 ? 280 + (base - 1) * 220
+      : base <= 5 ? 720 + (base - 3) * 160
+      : 1040 + (base - 5) * 120;
+    propMonthly = pts * 208.4;
+  }
+  const health = Math.max(MIN, incomeMonthly + propMonthly);
+  return { incomeMonthly: Math.round(incomeMonthly), propMonthly: Math.round(propMonthly), monthly: Math.round(health * (1 + LTC)) };
+}

@@ -16,7 +16,7 @@ function NumField({ label, unit, value, set, step = 100 }) {
   );
 }
 
-export default function DependentCheck({ onApply }) {
+export default function DependentCheck({ inputs, onApply }) {
   const [other, setOther] = useState(0);
   const [fin, setFin] = useState(0);
   const [prop, setProp] = useState(3);
@@ -49,9 +49,9 @@ export default function DependentCheck({ onApply }) {
         <small>소득보험료 약 {formatWon(est.incomeMonthly)} + 재산보험료 약 {formatWon(est.propMonthly)} · 장기요양 포함 · 2025 요율(7.09%)·점수단가 208.4원·재산 1억 공제 근사. 정확한 금액은 공단 확인.</small>
         {r.eligible && <p className="fm-dc-prem-note">지금은 피부양자라 0원이지만, 위 소득·재산을 넘으면 이 금액을 내게 돼요.</p>}
       </div>
-      <button type="button" className="fm-dc-apply" onClick={() => onApply({ healthInsuranceEnabled: 1, monthlyHealthInsurance: est.monthly })}>
-        이 건보료(월 {formatWon(est.monthly)})를 내 파이어 계산에 반영하기
-      </button>
+      {Number(inputs?.healthInsuranceEnabled) > 0
+        ? <button type="button" className="fm-dc-apply on" onClick={() => onApply({ healthInsuranceEnabled: 0, monthlyHealthInsurance: 0 })}>✓ 건보료가 결과에 반영됨 (월 {formatWon(Number(inputs?.monthlyHealthInsurance) || 0)}) · 해제</button>
+        : <button type="button" className="fm-dc-apply" onClick={() => onApply({ healthInsuranceEnabled: 1, monthlyHealthInsurance: est.monthly })}>이 건보료(월 {formatWon(est.monthly)})를 내 파이어 계산에 반영하기</button>}
     </section>
   );
 }

@@ -68,8 +68,8 @@ export default function FireMapMVP() {
   const [inputs, setInputs] = useState(loadInputs);
   const [screen, setScreenState] = useState(readScreenFromHash);
   const [step, setStep] = useState(0);
-  // 결과·등수·라벨은 항상 '세전(investType=0)' 기준으로 일관되게. 세금 탐색은 바꿔보기 미리보기에서만.
-  const simulation = useMemo(() => buildSimulation({ ...inputs, investType: 0 }), [inputs]);
+  // 개인 결과는 도구에서 반영한 투자유형(해외 양도세·배당세)·건보료를 반영. 순자산 백분위 랭킹은 자산 기준이라 영향 없음.
+  const simulation = useMemo(() => buildSimulation(inputs), [inputs]);
 
   useEffect(() => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); } catch { /* ignore */ } try { pushState('firemap-inputs-v3', inputs); } catch { /* ignore */ } }, [inputs]);
   useEffect(() => { try { window.scrollTo(0, 0); } catch { /* ignore */ } }, [screen, step]);
@@ -138,7 +138,7 @@ export default function FireMapMVP() {
   else if (screen === 'ranking') view = <Leaderboard simulation={simulation} onBack={backOf('ranking')} onMove={setScreen} />;
   else if (screen === 'cities') view = <CityExplorer inputs={inputs} simulation={simulation} onChange={onChange} onMove={setScreen} onBack={backOf('cities')} />;
   else if (screen === 'dependent') view = tool('dependent', <DependentCheck onApply={applyPatch} />);
-  else if (screen === 'foreignTax') view = tool('foreignTax', <><ForeignStockTaxCard /><DividendCard /></>);
+  else if (screen === 'foreignTax') view = tool('foreignTax', <><ForeignStockTaxCard inputs={inputs} onApply={applyPatch} /><DividendCard inputs={inputs} onApply={applyPatch} /></>);
   else if (screen === 'dividend') view = <DividendLifeCalc inputs={inputs} onChange={onChange} onMove={setScreen} onBack={backOf('dividend')} />;
   else if (screen === 'save') view = <Savings simulation={simulation} onMove={setScreen} />;
   else if (screen === 'firePlan') view = <FirePlan simulation={simulation} onMove={setScreen} onChange={onChange} />;

@@ -17,7 +17,7 @@ function Stepper({ label, unit, value, set, step }) {
   );
 }
 
-export function ForeignStockTaxCard() {
+export function ForeignStockTaxCard({ inputs, onApply }) {
   const [gainManwon, setGain] = useState(5000);
   const { foreignStockTax: t } = calculateInvestmentTaxes({ foreignStockGain: gainManwon * 10000 });
   return (
@@ -34,11 +34,15 @@ export function ForeignStockTaxCard() {
         </ul>
       </div>
       <small>과거·가정 기반 참고 계산이며 특정 종목 추천이 아닙니다.</small>
+      {onApply && (Number(inputs?.investType) === 1
+        ? <button type="button" className="fm-dc-apply on" onClick={() => onApply({ investType: 0 })}>✓ 결과에 반영됨 (해외 양도세) · 해제</button>
+        : <button type="button" className="fm-dc-apply" onClick={() => onApply({ investType: 1 })}>이 세금(해외 양도세)을 결과에 반영하기</button>)}
+      {onApply && <small className="fm-dc-applynote">투자 유형은 하나만 반영돼요 — 국내(면제)·해외 양도세·배당세 중 택1.</small>}
     </section>
   );
 }
 
-export function DividendCard() {
+export function DividendCard({ inputs, onApply }) {
   const [annualManwon, setAnnual] = useState(1500);
   const annual = annualManwon * 10000;
   const { dividendTax: d } = calculateInvestmentTaxes({ annualDividendIncome: annual });
@@ -58,6 +62,10 @@ export function DividendCard() {
         </ul>
       </div>
       <small>참고용 계산이며 개별 투자 자문이 아닙니다.</small>
+      {onApply && (Number(inputs?.investType) === 2
+        ? <button type="button" className="fm-dc-apply on" onClick={() => onApply({ investType: 0 })}>✓ 결과에 반영됨 (배당세) · 해제</button>
+        : <button type="button" className="fm-dc-apply" onClick={() => onApply({ investType: 2 })}>이 세금(배당세 15.4%)을 결과에 반영하기</button>)}
+      {onApply && <small className="fm-dc-applynote">투자 유형은 하나만 반영돼요 — 국내(면제)·해외 양도세·배당세 중 택1.</small>}
     </section>
   );
 }

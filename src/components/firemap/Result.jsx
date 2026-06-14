@@ -79,7 +79,7 @@ function ResultHeroV2({ simulation }) {
         <span>자산 버티는 나이 <b>{phrase.runway}</b></span>
         <span>목표 파이어 <b>{target}세</b></span>
       </div>
-      <p className="fm-rank-note">{peerAvg != null ? `또래 평균 ${peerAvg}세 · ` : ''}또래 순자산 상위 {base.percentile}% · <b>세전(세금 미반영)</b></p>
+      <p className="fm-rank-note">{peerAvg != null ? `또래 평균 ${peerAvg}세 · ` : ''}또래 순자산 상위 {base.percentile}% · <b>{((Number(inp.investType) || 0) > 0 || Number(inp.healthInsuranceEnabled) > 0) ? '세금·건보료 반영' : '세전 기준'}</b></p>
       <button type="button" className="fm-calc-toggle" onClick={() => setShowCalc((v) => !v)} aria-expanded={showCalc}>계산 가정·출처 {showCalc ? '▴' : '▾'}</button>
       {showCalc && <p className="fm-rank-note fm-rank-note-sub">통계청 2025 가계금융복지조사 기준 · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)}</p>}
       <button type="button" className="fm-tax-hint" onClick={() => { window.location.hash = '#experiment'; }}>세금·배당 반영해 보기 → 🎛️ 바꿔보기</button>

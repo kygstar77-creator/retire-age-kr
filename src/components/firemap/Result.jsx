@@ -76,7 +76,7 @@ function ResultHeroV2({ simulation }) {
         ? <p className="fm-rank-climb">1등까지 <b>{(live.position - 1).toLocaleString()}명</b> · 조건 바꾸면 등수가 올라가요</p>
         : <p className="fm-rank-climb">지금 전체 1등이에요!</p>)}
       <div className="fm-hero-mini">
-        <span>필요 자산 <b>{simulation.requiredFireAssetByFourPercent ? formatWon(simulation.requiredFireAssetByFourPercent) : '—'}</b></span>
+        <span>파이어 때 내 자산 <b>{simulation.retirementFinancialAsset ? formatWon(simulation.retirementFinancialAsset) : '—'}</b></span>
         <span>자산 버티는 나이 <b>{phrase.runway}</b></span>
         <span>목표 파이어 <b>{target}세</b></span>
       </div>

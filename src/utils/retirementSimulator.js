@@ -41,7 +41,7 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
   const savingYears = data.savingYears > 0 ? data.savingYears : Infinity; // 0 = 파이어할 때까지 저축
   let financialAsset = data.financialAsset;
   let costBasis = data.financialAsset; // 양도세 차익 추정용(취득원가 누적)
-  const investType = Math.round(data.investType) || 0; // 0 국내(면제) · 1 해외(양도세22%) · 2 배당(15.4%)
+  const investType = Math.round(data.investType) || 0; // 0 국내(면제) · 1 해외 양도세22% · 2 배당15.4% · 3 둘 다
   const dividendYield = toRate(data.dividendYield);
   const CG_RATE = 0.22; const DIV_TAX = 0.154; const CG_EXEMPT = 2500000;
   let depletionAge = null;
@@ -71,12 +71,13 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
     // 투자 유형별 세금(파이어 후): 국내=0 · 해외=인출차익 22%(250만 공제) · 배당=배당세 15.4%
     let investTax = 0;
     if (isRetired && financialAsset > 0) {
-      if (investType === 1) {
+      if (investType === 1 || investType === 3) { // 해외주식 양도세: 매도 차익분 22%(250만 공제)
         const gainRatio = Math.max(0, (financialAsset - costBasis) / financialAsset);
         const gain = withdrawal * gainRatio;
-        investTax = Math.max(0, gain - CG_EXEMPT) * CG_RATE;
-      } else if (investType === 2) {
-        investTax = financialAsset * dividendYield * DIV_TAX;
+        investTax += Math.max(0, gain - CG_EXEMPT) * CG_RATE;
+      }
+      if (investType === 2 || investType === 3) { // 배당세: 연 배당(자산×배당률) 15.4%
+        investTax += financialAsset * dividendYield * DIV_TAX;
       }
     }
     const assetAfterCashFlow = financialAsset + investmentAdded - withdrawal - investTax;

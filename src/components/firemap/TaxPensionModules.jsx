@@ -34,10 +34,16 @@ export function ForeignStockTaxCard({ inputs, onApply }) {
         </ul>
       </div>
       <small>과거·가정 기반 참고 계산이며 특정 종목 추천이 아닙니다.</small>
-      {onApply && (Number(inputs?.investType) === 1
-        ? <button type="button" className="fm-dc-apply on" onClick={() => onApply({ investType: 0 })}>✓ 결과에 반영됨 (해외 양도세) · 해제</button>
-        : <button type="button" className="fm-dc-apply" onClick={() => onApply({ investType: 1 })}>이 세금(해외 양도세)을 결과에 반영하기</button>)}
-      {onApply && <small className="fm-dc-applynote">투자 유형은 하나만 반영돼요 — 국내(면제)·해외 양도세·배당세 중 택1.</small>}
+      {onApply && (() => {
+        const cur = Number(inputs?.investType) || 0;
+        const hasCG = cur === 1 || cur === 3;
+        const hasDiv = cur === 2 || cur === 3;
+        const next = hasCG ? (hasDiv ? 2 : 0) : (hasDiv ? 3 : 1);
+        return hasCG
+          ? <button type="button" className="fm-dc-apply on" onClick={() => onApply({ investType: next })}>✓ 결과에 반영됨 (해외 양도세) · 해제</button>
+          : <button type="button" className="fm-dc-apply" onClick={() => onApply({ investType: next })}>이 세금(해외 양도세)을 결과에 반영하기</button>;
+      })()}
+      {onApply && <small className="fm-dc-applynote">양도세·배당세는 함께 반영할 수 있어요 (해외주식 배당+매도 둘 다).</small>}
     </section>
   );
 }
@@ -62,10 +68,16 @@ export function DividendCard({ inputs, onApply }) {
         </ul>
       </div>
       <small>참고용 계산이며 개별 투자 자문이 아닙니다.</small>
-      {onApply && (Number(inputs?.investType) === 2
-        ? <button type="button" className="fm-dc-apply on" onClick={() => onApply({ investType: 0 })}>✓ 결과에 반영됨 (배당세) · 해제</button>
-        : <button type="button" className="fm-dc-apply" onClick={() => onApply({ investType: 2 })}>이 세금(배당세 15.4%)을 결과에 반영하기</button>)}
-      {onApply && <small className="fm-dc-applynote">투자 유형은 하나만 반영돼요 — 국내(면제)·해외 양도세·배당세 중 택1.</small>}
+      {onApply && (() => {
+        const cur = Number(inputs?.investType) || 0;
+        const hasCG = cur === 1 || cur === 3;
+        const hasDiv = cur === 2 || cur === 3;
+        const next = hasDiv ? (hasCG ? 1 : 0) : (hasCG ? 3 : 2);
+        return hasDiv
+          ? <button type="button" className="fm-dc-apply on" onClick={() => onApply({ investType: next })}>✓ 결과에 반영됨 (배당세) · 해제</button>
+          : <button type="button" className="fm-dc-apply" onClick={() => onApply({ investType: next })}>이 세금(배당세 15.4%)을 결과에 반영하기</button>;
+      })()}
+      {onApply && <small className="fm-dc-applynote">양도세·배당세는 함께 반영할 수 있어요 (해외주식 배당+매도 둘 다).</small>}
     </section>
   );
 }

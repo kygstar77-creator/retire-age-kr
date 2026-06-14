@@ -206,3 +206,9 @@ button:active{ transform:scale(.985); }
 .fm-acct-bar-go{ font-size:13px; font-weight:800; color:#ff5a00; white-space:nowrap; }
 .fm-login-nudge{ display:block; width:100%; margin:12px 0 0; background:#fff5ec; border:1px solid #ffd6ad; border-radius:12px; padding:13px; font-size:13.5px; font-weight:700; color:#c2410c; cursor:pointer; }
 .fm-login-nudge:active{ opacity:.9; }
+
+
+/* ── 결과 상단 홈 버튼 + 자산추이 설명 ── */
+.fm-home-btn{ border:1px solid #eef0f3; background:#fff; color:#1e2859; font-size:13px; font-weight:800; border-radius:999px; padding:6px 12px; cursor:pointer; }
+.fm-home-btn:active{ background:#f4f6f8; }
+.fm-plan-sub{ font-size:12.5px; color:#8a93a0; margin:-2px 0 10px; line-height:1.5; word-break:keep-all; }

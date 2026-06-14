@@ -90,8 +90,6 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
           <span>✅ 세금까지 반영</span>
         </div>
       </section>
-      <InstallButton />
-      <DailyFire onMove={onMove} />
       <section className="fm-home-mini-card">
         <strong>입력값은 기기 안에서 계산돼요</strong>
         <p>공유 전에는 민감한 금액이 링크에 포함되는지 확인해주세요.</p>

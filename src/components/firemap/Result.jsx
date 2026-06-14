@@ -409,7 +409,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
   };
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
-      <Header />
+      <Header home />
       <ResultSimTabs current="result" />
       <ResultHeroV2 simulation={simulation} />
       <div className="fm-rank-cta">

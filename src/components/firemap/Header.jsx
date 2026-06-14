@@ -1,4 +1,4 @@
-export default function Header({ tag, onBack }) {
+export default function Header({ tag, onBack, home }) {
   const goHome = () => { window.location.hash = '#home'; };
   return (
     <header className="fm-topbar">
@@ -11,6 +11,7 @@ export default function Header({ tag, onBack }) {
       </button>
       <div className="fm-actions">
         {tag && <span className="fm-tag">{tag}</span>}
+        {home && <button type="button" className="fm-home-btn" onClick={goHome}>🏠 홈</button>}
         {onBack && <button type="button" className="fm-back-btn" onClick={onBack}>‹ 이전</button>}
       </div>
     </header>

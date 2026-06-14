@@ -104,9 +104,10 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
 
       <section className="fm-card">
         <p className="fm-kicker">내 금융자산 추이</p>
+        <p className="fm-plan-sub">매달 한 번 자산을 기록하면, 목표까지 얼마나 다가가는지 그래프로 보여줘요.</p>
         {hist.length >= 2
           ? <svg viewBox="0 0 300 64" className="fm-plan-spark" preserveAspectRatio="none"><polyline points={line} fill="none" stroke="#ff5a00" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" /></svg>
-          : <p className="fm-plan-empty">이번 달 자산을 기록하면 다음 달부터 추이가 쌓여요.</p>}
+          : <p className="fm-plan-empty">지금 기록해두면 다음 달부터 추이 선이 그려져요.</p>}
         {!editing
           ? <button type="button" className="fm-plan-update" onClick={() => { setVal(String(asset)); setEditing(true); }}>이번 달 자산 업데이트</button>
           : (

@@ -189,3 +189,8 @@ button:active{ transform:scale(.985); }
 .fm-why-cap{ font-size:12.5px; font-weight:800; color:#9a3412; margin:0 0 8px 2px; }
 .fm-why-grid{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
 .fm-why-grid span{ background:#fff; border:1px solid #eef0f3; border-radius:12px; padding:11px 12px; font-size:13px; font-weight:700; color:#374151; box-shadow:0 1px 2px rgba(17,24,39,.04); word-break:keep-all; }
+
+
+/* ── 대시보드 → 결과 진입 ── */
+.fm-plan-result{ display:block; width:calc(100% - 32px); margin:0 16px 12px; background:#1e2859; color:#fff; border:none; border-radius:14px; padding:15px; font-size:14.5px; font-weight:800; cursor:pointer; box-shadow:0 4px 14px rgba(30,40,89,.22); }
+.fm-plan-result:active{ opacity:.92; }

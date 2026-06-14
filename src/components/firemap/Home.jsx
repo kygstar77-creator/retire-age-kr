@@ -82,7 +82,7 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
         {proof && <p className="fm-home-proof">{proof}</p>}
       </section>
       <section className="fm-why" aria-label="파이어맵이 다른 이유">
-        <p className="fm-why-cap">🔍 다른 계산기는 안 보여줘요</p>
+        <p className="fm-why-cap">🔍 한국 제도까지 꼼꼼히 반영해요</p>
         <div className="fm-why-grid">
           <span>✅ 물가 상승 반영</span>
           <span>✅ 국민연금 반영</span>

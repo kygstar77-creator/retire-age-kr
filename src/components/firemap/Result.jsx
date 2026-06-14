@@ -317,9 +317,9 @@ function MoatCard({ simulation, onMove }) {
   try { est = estimateLocalPremium({ chargeableIncomeManwon: annualFinIncomeManwon, propertyTaxBaseEok: 0 }); } catch { est = null; }
   return (
     <section className="fm-card fm-moat">
-      <p className="fm-kicker">은퇴 후 건보료·세금 · 다른 계산기엔 없는 것</p>
+      <p className="fm-kicker">은퇴 후 건보료·세금까지 반영</p>
       <h2>파이어하면 건강보험이 지역가입자로 바뀌어요</h2>
-      <p className="fm-moat-lead">직장을 그만두면 회사와 절반씩 내던 건보료를 <b>혼자</b> 내고, 소득·재산 기준 <b>지역가입자</b>로 전환돼 부담이 커질 수 있어요. 대부분의 계산기는 이걸 안 보여줘요.</p>
+      <p className="fm-moat-lead">직장을 그만두면 회사와 절반씩 내던 건보료를 <b>혼자</b> 내고, 소득·재산 기준 <b>지역가입자</b>로 전환돼 부담이 커질 수 있어요.</p>
       {est && (
         <div className="fm-moat-est">
           <div><small>예상 월 건보료 (추정)</small><b>{est.monthly.toLocaleString()}원</b></div>

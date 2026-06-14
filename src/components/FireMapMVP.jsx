@@ -119,7 +119,7 @@ export default function FireMapMVP() {
   const wrap = (node) => (
     <>
       {node}
-      {screens[screen]?.tab && <BottomTabs current={screen} onMove={(t) => setScreen(t === 'home' && getLatestRank() ? 'result' : t)} />}
+      {screens[screen]?.tab && <BottomTabs current={screen} onMove={setScreen} />}
       <FloatingFeedback />
       <Consent />
     </>

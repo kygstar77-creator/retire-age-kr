@@ -51,9 +51,9 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
 
   return (
     <main className="fm-screen fm-scroll">
-      <Header tag="은퇴 후 현금흐름" onBack={onBack} />
+      <Header tag="파이어 후 현금흐름" onBack={onBack} />
       <section className="fm-card fm-text-card">
-        <p className="fm-kicker">은퇴 후 현금흐름</p>
+        <p className="fm-kicker">파이어 후 현금흐름</p>
         <h2>배당으로 매달 얼마 받을 수 있을까?</h2>
         <p>보유 자산·배당률로 월 배당(세전·세후)을 계산하고, <b>배당만 받기 vs 자산 인출(매도)</b>도 비교해요. 금융소득 종합과세·건보료 경고까지.</p>
       </section>

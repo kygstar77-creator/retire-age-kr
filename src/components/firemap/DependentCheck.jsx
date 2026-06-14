@@ -27,8 +27,8 @@ export default function DependentCheck({ onApply }) {
 
   return (
     <section className="fm-card fm-text-card fm-advanced-section">
-      <p className="fm-kicker">은퇴 후 건보료</p>
-      <h2>은퇴 후 건보료, 얼마 낼까?</h2>
+      <p className="fm-kicker">파이어 후 건보료</p>
+      <h2>파이어 후 건보료, 얼마 낼까?</h2>
       <p>파이어 후 피부양자로 남을 수 있는지 + 지역가입자가 되면 <b>월 건보료가 얼마</b>인지 추정해요. 대부분의 계산기가 빠뜨리는 부분이에요. (참고용 근사 · 공단 확인 필요)</p>
       <div className="fm-dc-fields">
         <NumField label="금융 외 합산소득(연)" unit="만원" value={other} set={setOther} step={100} />

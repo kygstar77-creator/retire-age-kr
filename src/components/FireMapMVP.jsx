@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { getLatestRank } from '../firemap-v2/rankHistory.js';
+import { pushState } from '../utils/firemapStateApi.js';
 import Home from './firemap/Home.jsx';
 import AccountCard from './firemap/AccountCard.jsx';
 import Question from './firemap/Question.jsx';
@@ -70,7 +71,7 @@ export default function FireMapMVP() {
   // 결과·등수·라벨은 항상 '세전(investType=0)' 기준으로 일관되게. 세금 탐색은 바꿔보기 미리보기에서만.
   const simulation = useMemo(() => buildSimulation({ ...inputs, investType: 0 }), [inputs]);
 
-  useEffect(() => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); } catch { /* ignore */ } }, [inputs]);
+  useEffect(() => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); } catch { /* ignore */ } try { pushState('firemap-inputs-v3', inputs); } catch { /* ignore */ } }, [inputs]);
   useEffect(() => { try { window.scrollTo(0, 0); } catch { /* ignore */ } }, [screen, step]);
   useEffect(() => { if (screen === 'question') { try { if (sessionStorage.getItem('fm_recalc')) { sessionStorage.removeItem('fm_recalc'); setStep(0); } } catch { /* ignore */ } } }, [screen]);
 

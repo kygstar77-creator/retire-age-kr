@@ -316,7 +316,7 @@ function MoatCard({ simulation, onMove }) {
   try { est = estimateLocalPremium({ chargeableIncomeManwon: annualFinIncomeManwon, propertyTaxBaseEok: 0 }); } catch { est = null; }
   return (
     <section className="fm-card fm-moat">
-      <p className="fm-kicker">은퇴 후 건보료·세금까지 반영</p>
+      <p className="fm-kicker">파이어 후 건보료·세금 점검</p>
       <h2>파이어하면 건강보험이 지역가입자로 바뀌어요</h2>
       <p className="fm-moat-lead">직장을 그만두면 회사와 절반씩 내던 건보료를 <b>혼자</b> 내고, 소득·재산 기준 <b>지역가입자</b>로 전환돼 부담이 커질 수 있어요.</p>
       {est && (
@@ -327,7 +327,7 @@ function MoatCard({ simulation, onMove }) {
       )}
       <p className="fm-moat-note">금융소득만으로 잡은 대략값이에요. 부양가족 등재·재산까지 넣어 정확히 보려면 ↓</p>
       <div className="fm-moat-cta">
-        <button type="button" onClick={() => onMove('dependent')}>🩺 은퇴 후 건보료 정밀 계산</button>
+        <button type="button" onClick={() => onMove('dependent')}>🩺 파이어 후 건보료 정밀 계산</button>
         <button type="button" onClick={() => onMove('foreignTax')}>💸 양도·배당세</button>
       </div>
     </section>

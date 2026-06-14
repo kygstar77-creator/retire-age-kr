@@ -66,7 +66,7 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
       <section className="fm-home-hero-card">
         <p>파이어맵</p>
         <h1>나는 몇 살에<br />파이어할 수 있을까?</h1>
-        <span>물가·국민연금·건강보험료·세금까지 반영한 <b>가장 현실적인 계산</b>이에요. 자산·생활비만 넣으면 1분이면 나와요.</span>
+        <span>물가·국민연금까지 반영하는 <b>가장 현실적인 파이어 계산</b>이에요. 파이어 후 건보료·세금은 도구로 따로 점검해요. 자산·생활비만 넣으면 1분.</span>
         <div className="fm-home-age">
           <label htmlFor="fm-home-age-in">지금 몇 살인가요?</label>
           <div className="fm-home-age-ctrl">
@@ -82,12 +82,12 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
         {proof && <p className="fm-home-proof">{proof}</p>}
       </section>
       <section className="fm-why" aria-label="파이어맵이 다른 이유">
-        <p className="fm-why-cap">🔍 한국 제도까지 꼼꼼히 반영해요</p>
+        <p className="fm-why-cap">🔍 한국 제도까지 챙겨요</p>
         <div className="fm-why-grid">
-          <span>✅ 물가 상승 반영</span>
-          <span>✅ 국민연금 반영</span>
-          <span>✅ 은퇴 후 건강보험료</span>
-          <span>✅ 세금까지 반영</span>
+          <span>✅ 물가 상승 · 계산 반영</span>
+          <span>✅ 국민연금 · 계산 반영</span>
+          <span>🩺 파이어 후 건보료 · 도구</span>
+          <span>🧾 양도·배당세 · 도구</span>
         </div>
       </section>
       <section className="fm-home-mini-card">

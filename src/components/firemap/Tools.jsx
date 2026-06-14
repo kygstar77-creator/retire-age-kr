@@ -4,7 +4,7 @@ import { TOOLS } from '../../firemap-v2/screens.js';
 const ICONS = { experiment: '🎛️', dependent: '🩺', foreignTax: '🧾', dividend: '💵', pension: '🏦', cities: '📍', community: '💬' };
 const GROUPS = [
   { label: '내 파이어 시뮬', ids: ['cities', 'experiment'] },
-  { label: '은퇴 후 현금·세금·건보', ids: ['dividend', 'dependent', 'foreignTax', 'pension'] }
+  { label: '파이어 후 현금·세금·건보', ids: ['dividend', 'dependent', 'foreignTax', 'pension'] }
 ];
 const byId = Object.fromEntries(TOOLS.map((t) => [t.id, t]));
 
@@ -39,7 +39,7 @@ export default function Tools({ onMove }) {
         <p className="fm-tool-group-label">더 알아보기</p>
         <a className="fm-tool-tile fm-tool-tile-link" href="/guide/">
           <span className="fm-tool-ico">📚</span>
-          <strong>은퇴 백과</strong>
+          <strong>파이어 백과</strong>
           <em>건보료·세금·연금·현실 금액 가이드</em>
         </a>
       </div>

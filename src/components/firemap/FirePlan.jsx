@@ -22,7 +22,7 @@ function pickNextAction() {
   if (!hasHist) return { label: '이번 달 자산 기록하고 진행 추적 시작하기', to: 'self', ico: '📈' };
   const pool = [
     { label: '지방 살면 몇 년 빨라지나 보기', to: 'cities', ico: '📍' },
-    { label: '은퇴 후 건보료 얼마인지 확인하기', to: 'dependent', ico: '🩺' },
+    { label: '파이어 후 건보료 얼마인지 확인하기', to: 'dependent', ico: '🩺' },
     { label: '배당으로 월 현금흐름 만들어보기', to: 'dividend', ico: '💵' },
     { label: '조건 바꿔서 파이어 더 당겨보기', to: 'experiment', ico: '🎛️' },
     { label: '또래 중 내 파이어 등수 보기', to: 'ranking', ico: '🏆' }
@@ -173,7 +173,7 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
         <nav className="fm-policy-links" aria-label="정책 및 문의">
           <a href="/privacy.html">개인정보처리방침</a>
           <a href="/disclaimer.html">면책 안내</a>
-          <a href="/guide/">은퇴 백과</a>
+          <a href="/guide/">파이어 백과</a>
           <a href="/contact.html">문의</a>
         </nav>
       )}

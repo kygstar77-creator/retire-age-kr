@@ -75,9 +75,9 @@ export function DividendCard({ inputs, onApply }) {
         const next = hasDiv ? (hasCG ? 1 : 0) : (hasCG ? 3 : 2);
         return hasDiv
           ? <button type="button" className="fm-dc-apply on" onClick={() => onApply({ investType: next })}>✓ 결과에 반영됨 (배당세) · 해제</button>
-          : <button type="button" className="fm-dc-apply" onClick={() => onApply({ investType: next })}>이 세금(배당세 15.4%)을 결과에 반영하기</button>;
+          : <button type="button" className="fm-dc-apply" onClick={() => onApply({ investType: next, dividendIncomeMonthly: 0 })}>이 세금(배당세 15.4%)을 결과에 반영하기</button>;
       })()}
-      {onApply && <small className="fm-dc-applynote">양도세·배당세는 함께 반영할 수 있어요 (해외주식 배당+매도 둘 다).</small>}
+      {onApply && <small className="fm-dc-applynote">양도세와는 함께 반영 가능. ‘배당세(재투자)’와 ‘배당 인출 소득(현금흐름)’은 중복이라 한쪽만 켜져요.</small>}
     </section>
   );
 }

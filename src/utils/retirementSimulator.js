@@ -26,7 +26,9 @@ export const defaultInputs = {
   overseasAnnualExtraCost: 0,
   overseasApplyYears: 10,
   investType: 0,
-  dividendYield: 4
+  dividendYield: 4,
+  dividendIncomeMonthly: 0, // 배당 '인출 소득'(세후 월) — 부업소득과 분리. 배당세 모드와 상호배타.
+  dividendIncomeGrowth: 0   // 배당 인출 소득의 매년 성장률(%)
 };
 
 const toRate = (value) => Number(value || 0) / 100;
@@ -63,7 +65,8 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
     const pensionIncome = isRetired && age >= data.expectedPensionAge
       ? yearly(data.expectedMonthlyPension) * inflationFactor
       : 0;
-    const withdrawal = isRetired ? Math.max(0, livingCost - partTimeIncome - pensionIncome) : 0;
+    const dividendIncome = isRetired ? yearly(data.dividendIncomeMonthly) * Math.pow(1 + toRate(data.dividendIncomeGrowth), yearsFromRetirement) : 0;
+    const withdrawal = isRetired ? Math.max(0, livingCost - partTimeIncome - pensionIncome - dividendIncome) : 0;
     const salaryGrowth = toRate(data.salaryGrowthRate);
     const stillSaving = !isRetired && yearsFromStart >= 1 && yearsFromStart <= savingYears;
     const investmentAdded = stillSaving ? yearly(data.monthlyInvestment) * Math.pow(1 + salaryGrowth, yearsFromStart) : 0;

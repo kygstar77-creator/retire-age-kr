@@ -10,6 +10,7 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
   const [contribManwon, setContribManwon] = useState(50); // 월 적립 50만원
   const [growthPct, setGrowthPct] = useState(0); // 매년 적립액 증액률
   const [years, setYears] = useState(10); // 적립 기간(년)
+  const [divGrowth, setDivGrowth] = useState(0); // 반영할 배당 인출소득의 매년 성장률(%)
   const yieldPct = yieldX10 / 10;
   const asset = won(assetManwon);
   const annual = asset * (yieldPct / 100);
@@ -45,12 +46,17 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
   const futureCoverage = livingCost > 0 ? Math.round((futureMonthlyAfter / livingCost) * 100) : null;
 
   const appliedMonthly = Math.round(monthlyAfter);
-  const isApplied = appliedMonthly > 0 && Math.round(Number(inputs?.partTimeIncomeAfterRetirement) || 0) === appliedMonthly;
+  const isApplied = appliedMonthly > 0 && Math.round(Number(inputs?.dividendIncomeMonthly) || 0) === appliedMonthly;
   const apply = () => {
-    if (onChange) onChange('partTimeIncomeAfterRetirement', appliedMonthly);
-    if (onMove) onMove('result');
+    if (!onChange) return;
+    onChange('dividendIncomeMonthly', appliedMonthly);
+    onChange('dividendIncomeGrowth', divGrowth);
+    // 배당세(재투자) 모드와 상호배타 — 같은 배당 이중계산 방지
+    const it = Number(inputs?.investType) || 0;
+    if (it === 2) onChange('investType', 0);
+    else if (it === 3) onChange('investType', 1);
   };
-  const unapply = () => { if (onChange) onChange('partTimeIncomeAfterRetirement', 0); };
+  const unapply = () => { if (onChange) onChange('dividendIncomeMonthly', 0); };
 
   return (
     <main className="fm-screen fm-scroll">
@@ -141,10 +147,14 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
         </div>
       </section>
 
+      <div className="fm-dl-field">
+        <div className="fm-dl-head"><span>반영 시 배당 매년 성장률</span><b>{divGrowth}%</b></div>
+        <input type="range" min="0" max="10" step="1" value={divGrowth} onChange={(e) => setDivGrowth(Number(e.target.value))} />
+      </div>
       {isApplied
-        ? <button type="button" className="fm-city-cta on" onClick={unapply}>✓ 이 월배당이 결과에 반영됨 (파이어 후 소득) · 해제</button>
-        : <button type="button" className="fm-city-cta" onClick={apply}>이 월배당을 파이어 후 소득으로 반영하기</button>}
-      <p className="fm-dl-note">반영하면 세후 월배당이 <b>‘파이어 후 부업/기타 소득’</b>으로 들어가 결과의 인출 부담을 줄여요 (바꿔보기의 ‘파이어 후 부업 소득’과 같은 칸). 배당소득세 15.4%(지방세 포함) 원천징수 기준의 단순 계산이에요. 적립 시뮬레이션은 배당을 전액 재투자하고 수익률이 매년 일정하다는 가정의 추정치이며, 실제 수익률·세금·물가는 다를 수 있어요. 2,000만원 초과분은 종합과세로 실효세율이 더 높아질 수 있고, 특정 종목·상품 추천이 아닌 일반 정보입니다.</p>
+        ? <button type="button" className="fm-city-cta on" onClick={unapply}>✓ 배당 인출 소득이 결과에 반영됨 (월 {formatWon(appliedMonthly)}) · 해제</button>
+        : <button type="button" className="fm-city-cta" onClick={apply}>이 배당을 ‘배당 인출 소득’으로 결과에 반영하기</button>}
+      <p className="fm-dl-note">세후 월배당이 <b>‘배당 인출 소득’</b>(부업소득과 별도 칸으로 합산)으로 매년 들어가 인출 부담을 줄여요. 설정한 매년 성장률만큼 늘어요. <b>‘배당세(재투자)’ 모드와는 중복</b>이라 이걸 켜면 배당세 모드는 자동 해제돼요. 배당소득세 15.4%(지방세 포함) 원천징수 기준의 단순 계산이에요. 적립 시뮬레이션은 배당을 전액 재투자하고 수익률이 매년 일정하다는 가정의 추정치이며, 실제 수익률·세금·물가는 다를 수 있어요. 2,000만원 초과분은 종합과세로 실효세율이 더 높아질 수 있고, 특정 종목·상품 추천이 아닌 일반 정보입니다.</p>
     </main>
   );
 }

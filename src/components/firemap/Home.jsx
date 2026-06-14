@@ -22,7 +22,7 @@ function readChallenge() {
   } catch { return null; }
 }
 
-export default function Home({ onStart, onMove, simulation }) {
+export default function Home({ onStart, onMove, simulation, onChange }) {
   const [agg, setAgg] = useState(null);
   const [age, setAge] = useState(35);
   const [challenge] = useState(readChallenge);

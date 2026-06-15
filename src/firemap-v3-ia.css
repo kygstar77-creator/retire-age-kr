@@ -217,9 +217,9 @@
 
 /* 리더보드 */
 .fm-lb-list { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-.fm-lb-row { display: grid; grid-template-columns: 40px 1fr auto; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid var(--fm-border-soft, #eef0f4); border-radius: 14px; background: #fff; }
+.fm-lb-row { display: grid; grid-template-columns: minmax(54px, max-content) 1fr auto; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid var(--fm-border-soft, #eef0f4); border-radius: 14px; background: #fff; }
 .fm-lb-row.top3 { border-color: #fed7aa; background: #fff7ed; }
-.fm-lb-rank { font-size: 18px; font-weight: 800; text-align: center; color: var(--fm-navy); }
+.fm-lb-rank { font-size: 18px; font-weight: 800; text-align: center; color: var(--fm-navy); white-space: nowrap; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
 .fm-lb-who { font-size: 14px; color: #4b5563; font-weight: 600; }
 .fm-lb-score { font-size: 15px; font-weight: 800; color: #ff5a00; }
 .fm-lb-empty { padding: 18px; text-align: center; color: #8b95a1; font-size: 14px; }

@@ -3,7 +3,7 @@ import Header from './Header.jsx';
 import { identityIds, accountHandle } from '../../utils/identity.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { fetchTopScores, fetchUserRank, submitScore, fetchAggregates, fetchNeighbors, fetchAssetPercentile, assetBandOf } from '../../utils/firemapScoresApi.js';
-import { fetchSaveBoard } from '../../utils/firemapSaveApi.js';
+import { fetchSaveBoard, fetchCohortSaveBoard } from '../../utils/firemapSaveApi.js';
 import { displayName } from '../../firemap-v2/funName.js';
 import { wonStr, fmtAdvance, readJSON, todayStr } from '../../firemap-v2/dailyData.js';
 import { computeProgress, hasCalculated, reportBoard } from '../../utils/savingsEngine.js';
@@ -15,16 +15,19 @@ const myCid = () => { try { return localStorage.getItem('fm_cid'); } catch { ret
 
 const BOARDS = [
   { key: 'fire', label: '빠른 파이어' },
+  { key: 'cohort', label: '또래 저축' },
   { key: 'advance', label: '파이어 앞당김' },
   { key: 'deposit', label: '이번 달 저축' },
   { key: 'save', label: '절약' }
 ];
 const SUBS = {
   fire: '파이어 가능 나이가 빠른 순 · 나이가 같으면 저축 많이 한 사람이 위',
+  cohort: '나랑 비슷한 또래끼리 누적 저축 순위 — 같은 나이·파이어 목표끼리 비교',
   advance: '적립·절약으로 파이어를 가장 많이 앞당긴 순',
   deposit: '이번 달 실제 적립이 많은 순 · 매월 새로 시작',
   save: '아껴서 모은 돈 랭킹'
 };
+const COHORT_SCOPE_WORD = { cohort: '나랑 같은 나이·목표 또래', age: '같은 나이대 또래', all: '전체' };
 
 export default function Leaderboard({ simulation, rankingSimulation, onBack, onMove }) {
   const rs = rankingSimulation || simulation;
@@ -43,6 +46,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
   const [assetPct, setAssetPct] = useState(null);
   const [agg, setAgg] = useState(null);
   const [scope, setScope] = useState('all');
+  const [cohortScope, setCohortScope] = useState(null);
   const [nick, setNick] = useState(readNick);
   const [saving, setSaving] = useState(false);
   const [saved, setSaved] = useState(false);
@@ -59,6 +63,11 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
         fetchAssetPercentile(bandArg, myBand)
       ]);
       setTop(t); setMe(r); setAgg(a); setNeighbors(nb); setAssetPct(ap);
+    } else if (board === 'cohort') {
+      setTop(null); setNeighbors(null);
+      const rows = await fetchCohortSaveBoard(base.ageBand, rs.inputs.targetRetirementAge, 10);
+      setTop(rows);
+      setCohortScope(rows && rows.length ? rows[0].scope : null);
     } else {
       setTop(null); setNeighbors(null);
       const metric = board === 'save' ? saveMetric : board;
@@ -87,7 +96,8 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
       survivalAge: (simulation.targetResult && simulation.targetResult.depletionAge) || simulation.inputs.simulationUntilAge,
       nickname: v,
       earliestAge: earliest,
-      assetBand: myBand
+      assetBand: myBand,
+      targetAge: simulation.inputs.targetRetirementAge
     });
     await load();
     setSaving(false);
@@ -105,6 +115,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
   // 저축 계열 보드: 내 기록(로컬 기준) — top 10 밖이어도 내 숫자가 보이게
   const myBoardValue = () => {
     const sv = readJSON('fm_save') || {};
+    if (board === 'cohort') return sv.total || 0;
     if (board === 'save') {
       if (saveMetric === 'today') return sv.lastDate === todayStr() ? (sv.today || 0) : 0;
       if (saveMetric === 'streak') return sv.streak || 0;
@@ -220,9 +231,19 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
         </>
       )}
 
+      {board === 'cohort' && (
+        <section className="fm-rank-hero">
+          <p className="fm-rank-label">나랑 비슷한 또래끼리 저축 경쟁</p>
+          <p className="fm-rank-climb">같은 나이·파이어 목표를 가진 사람들 중 누가 더 모았나 — 매일 저축·절약하면 순위가 올라가요. ‘저축’ 탭에서 기록하세요.</p>
+        </section>
+      )}
+
       <section className="fm-card">
         <h2 className="fm-section-title">{BOARDS.find((b) => b.key === board).label} 상위</h2>
         <p className="fm-section-sub">{SUBS[board]}</p>
+        {board === 'cohort' && cohortScope && (
+          <p className="fm-section-sub"><b>{COHORT_SCOPE_WORD[cohortScope]}</b> 기준{cohortScope !== 'cohort' ? ' · 목표나이 기록이 더 쌓이면 같은 목표끼리 좁혀져요' : ''}</p>
+        )}
         {board !== 'fire' && (
           myBoardValue() > 0
             ? <p className="fm-save-myrank">내 기록 <b>{fmtMyVal(myBoardValue())}</b> · {inTop ? '상위 10위 안에 있어요 🎉' : '아직 10위권 밖 — 더 기록하면 올라가요'}</p>

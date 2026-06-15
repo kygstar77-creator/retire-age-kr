@@ -136,6 +136,22 @@ export async function fetchSaveBoard(metric = 'today', limit = 10) {
   }
 }
 
+// 코호트(같은 나이·목표 또래) 누적 저축 리더보드 — RPC 호출, 인원 부족 시 서버가 자동 폴백(scope: cohort→age→all)
+export async function fetchCohortSaveBoard(ageBand, targetAge, limit = 10) {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/fm_cohort_save_board`, {
+      method: 'POST',
+      headers: headers(),
+      body: JSON.stringify({ p_age_band: ageBand || 30, p_target_age: targetAge || 0, p_limit: limit })
+    });
+    if (!res.ok) return [];
+    const rows = await res.json();
+    return (rows || []).map((r) => ({ client_id: r.uid, nickname: r.nick, value: r.val, scope: r.scope }));
+  } catch {
+    return [];
+  }
+}
+
 // 오늘 기록자 중 내 순위
 export async function fetchMySaveRank(todaySaved) {
   try {

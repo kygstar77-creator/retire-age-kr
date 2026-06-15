@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { getLatestRank } from '../firemap-v2/rankHistory.js';
 import { pushState } from '../utils/firemapStateApi.js';
 import Home from './firemap/Home.jsx';
@@ -68,6 +68,12 @@ export default function FireMapMVP() {
   const [inputs, setInputs] = useState(loadInputs);
   const [screen, setScreenState] = useState(readScreenFromHash);
   const [step, setStep] = useState(0);
+  // 화면 진입 출처 기억: 도구에서 '이전'을 들어온 화면(예: 바꿔보기)으로 되돌리기 위함.
+  const referrerRef = useRef({});
+  const screenRef = useRef(screen);
+  const skipRecordRef = useRef(false);
+  // 바꿔보기(experiment) 샌드박스 draft를 부모가 보관 → 세금 도구 등 다른 화면을 다녀와도 유지.
+  const [expDraft, setExpDraft] = useState(null);
   // 개인 결과는 도구에서 반영한 투자유형(해외 양도세·배당세)·건보료를 반영.
   const simulation = useMemo(() => buildSimulation(inputs), [inputs]);
   // 등수·점수 제출은 세전(investType=0)으로 모두에게 공정하게 비교 (양도·배당세 선택과 무관).
@@ -76,6 +82,16 @@ export default function FireMapMVP() {
   useEffect(() => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); } catch { /* ignore */ } try { pushState('firemap-inputs-v3', inputs); } catch { /* ignore */ } }, [inputs]);
   useEffect(() => { try { window.scrollTo(0, 0); } catch { /* ignore */ } }, [screen, step]);
   useEffect(() => { if (screen === 'question') { try { if (sessionStorage.getItem('fm_recalc')) { sessionStorage.removeItem('fm_recalc'); setStep(0); } } catch { /* ignore */ } } }, [screen]);
+
+  // 화면이 바뀔 때마다 '어디서 왔는지' 기록(뒤로가기 제외) → 도구의 '이전'이 올바른 화면으로 복귀.
+  useEffect(() => {
+    const prev = screenRef.current;
+    if (prev !== screen) {
+      if (!skipRecordRef.current) referrerRef.current[screen] = prev;
+      skipRecordRef.current = false;
+      screenRef.current = screen;
+    }
+  }, [screen]);
 
   useEffect(() => {
     const sync = () => setScreenState(readScreenFromHash());
@@ -111,7 +127,12 @@ export default function FireMapMVP() {
   const next = () => step >= questions.length - 1 ? setScreen('result') : setStep((c) => c + 1);
   const prevQuestion = () => step === 0 ? setScreen('home') : setStep((c) => c - 1);
   const goFinalQuestion = () => { setStep(Math.max(0, questions.length - 1)); setScreen('question'); };
-  const backOf = (id) => () => setScreen(screens[id]?.back || 'tools');
+  const backOf = (id) => () => {
+    const ref = referrerRef.current[id];
+    delete referrerRef.current[id];
+    skipRecordRef.current = true; // 이번 이동은 '뒤로'이므로 referrer 기록 안 함(핑퐁 방지)
+    setScreen(ref || screens[id]?.back || 'tools');
+  };
 
   const tool = (id, node) => (
     <main className="fm-screen fm-scroll">
@@ -133,7 +154,7 @@ export default function FireMapMVP() {
   if (screen === 'home') view = <Home onStart={(age) => { if (typeof age === 'number' && age > 0) { onChange('currentAge', age); setStep(1); } else { setStep(0); } setScreen('question'); }} onMove={setScreen} onChange={onChange} simulation={simulation} />;
   else if (screen === 'question') view = <Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />;
   else if (screen === 'tools') view = <Tools onMove={setScreen} />;
-  else if (screen === 'experiment') view = <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} />;
+  else if (screen === 'experiment') view = <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} onMove={setScreen} draft={expDraft} setDraft={setExpDraft} />;
   else if (screen === 'city') view = <City inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('city')} />;
   else if (screen === 'share') view = <Share inputs={inputs} simulation={simulation} onBack={backOf('share')} />;
   else if (screen === 'community') view = <Community onBack={backOf('community')} onMove={setScreen} />;

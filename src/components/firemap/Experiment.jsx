@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Header from './Header.jsx';
 import ResultSimTabs from './ResultSimTabs.jsx';
 import PensionControls from './PensionControls.jsx';
@@ -9,10 +9,12 @@ import { sourceLine } from '../../firemap-v2/dataSources.js';
 import { buildScenario, runwayText, buildGrowthSeries } from '../../firemap-v2/scenarios.js';
 import { formatWon, cleanNumber } from '../../firemap-v2/formatters.js';
 
-export default function Experiment({ inputs, onChange, onBack }) {
-  // 바꿔보기는 '미리보기 샌드박스'. 로컬 draft에서만 굴리고, [저장]을 눌러야 실제 inputs에 반영.
-  const [draft, setDraft] = useState(inputs);
-  const editDraft = (key, value) => setDraft((c) => ({ ...c, [key]: cleanNumber(value) }));
+export default function Experiment({ inputs, onChange, onBack, onMove, draft: draftProp, setDraft: setDraftProp }) {
+  // 바꿔보기는 '미리보기 샌드박스'. draft를 부모가 보관하면 그걸 써서 세금 도구 등 다른 화면을 다녀와도 유지되고, 없으면 로컬로 동작.
+  const [localDraft, setLocalDraft] = useState(inputs);
+  const draft = draftProp ?? localDraft;
+  const setDraft = setDraftProp ?? setLocalDraft;
+  const editDraft = (key, value) => setDraft((c) => ({ ...(c ?? inputs), [key]: cleanNumber(value) }));
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [showTax, setShowTax] = useState(false);
   const [showPension, setShowPension] = useState(false);
@@ -37,7 +39,16 @@ export default function Experiment({ inputs, onChange, onBack }) {
   const PREVIEW_ONLY = ['investType', 'dividendYield'];
   const dirty = useMemo(() => Object.keys(draft).some((k) => !PREVIEW_ONLY.includes(k) && cleanNumber(draft[k]) !== cleanNumber(inputs[k])), [draft, inputs]);
   const commit = () => { Object.entries(draft).forEach(([k, v]) => { if (!PREVIEW_ONLY.includes(k)) onChange(k, v); }); setSaved(true); setTimeout(() => setSaved(false), 2400); };
-  const reset = () => { setDraft(inputs); setSaved(false); };
+  const reset = () => { setDraft({ ...inputs }); setSaved(false); };
+
+  // 세금 도구 등 다른 화면을 다녀와도 샌드박스 유지. 단, 실제 입력값(미리보기 전용 제외)이 바뀌었으면 새로 시드.
+  useEffect(() => {
+    setDraft((prev) => {
+      if (!prev) return { ...inputs };
+      const changed = Object.keys(inputs).some((k) => !PREVIEW_ONLY.includes(k) && cleanNumber(inputs[k]) !== cleanNumber(prev[k]));
+      return changed ? { ...inputs } : prev;
+    });
+  }, [inputs]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
@@ -93,7 +104,7 @@ export default function Experiment({ inputs, onChange, onBack }) {
           </div>
         )}
       </section>
-      <button type="button" className="fm-section-toggle" onClick={() => { window.location.hash = '#foreignTax'; }}>투자 세금(양도·배당)은 ‘세금 도구’에서 <small>결과·등수는 공정성 위해 세전 기준</small><i>›</i></button>
+      <button type="button" className="fm-section-toggle" onClick={() => (onMove ? onMove('foreignTax') : (window.location.hash = '#foreignTax'))}>투자 세금(양도·배당)은 ‘세금 도구’에서 <small>결과·등수는 공정성 위해 세전 기준</small><i>›</i></button>
       <button type="button" className="fm-section-toggle" onClick={() => setShowPension((v) => !v)} aria-expanded={showPension}>국민연금 설정 <small>받는 나이·월 수령액</small><i>{showPension ? '▴' : '▾'}</i></button>
       {showPension && <PensionControls inputs={draft} onChange={editDraft} />}
       <button type="button" className="fm-section-toggle" onClick={() => setShowReturns((v) => !v)} aria-expanded={showReturns}>수익률 가정 비교 <small>예적금~공격투자</small><i>{showReturns ? '▴' : '▾'}</i></button>

@@ -39,6 +39,17 @@ const yearly = (monthly) => Number(monthly || 0) * 12;
 const enabled = (value) => Number(value || 0) === 1;
 const clamp = (value, min, max) => Math.max(min, Math.min(max, Number(value || 0)));
 
+// 입력값이 '실제 사용자 데이터'인지(기본값과 다른지) 판별.
+// 동기화에서 미편집 기본값이 다른 기기 데이터를 덮어쓰는 것을 막는 데 사용.
+export function inputsIsReal(v) {
+  if (!v || typeof v !== 'object') return false;
+  const keys = new Set([...Object.keys(defaultInputs), ...Object.keys(v)]);
+  for (const k of keys) {
+    if (JSON.stringify(v[k]) !== JSON.stringify(defaultInputs[k])) return true;
+  }
+  return false;
+}
+
 export function simulateRetirement(inputs, retirementAge = Number(inputs.targetRetirementAge), opts = {}) {
   const data = normalizeInputs(inputs);
   const annualReturn = toRate(data.annualReturnRate);

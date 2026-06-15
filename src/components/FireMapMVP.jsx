@@ -21,7 +21,7 @@ import DividendLifeCalc from './firemap/DividendLifeCalc.jsx';
 import Savings from './firemap/Savings.jsx';
 import FirePlan from './firemap/FirePlan.jsx';
 import Consent from './firemap/Consent.jsx';
-import { buildSimulation, defaultInputs } from '../utils/retirementSimulator.js';
+import { buildSimulation, defaultInputs, inputsIsReal } from '../utils/retirementSimulator.js';
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
 import { cleanNumber } from '../firemap-v2/formatters.js';
 import { screens, resolveScreen } from '../firemap-v2/screens.js';
@@ -81,7 +81,7 @@ export default function FireMapMVP() {
   // 등수·점수 제출은 세전(investType=0)으로 모두에게 공정하게 비교 (양도·배당세 선택과 무관).
   const rankingSimulation = useMemo(() => buildSimulation({ ...inputs, investType: 0 }), [inputs]);
 
-  useEffect(() => { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); } catch { /* ignore */ } try { pushState('firemap-inputs-v3', inputs); } catch { /* ignore */ } }, [inputs]);
+  useEffect(() => { if (!inputsIsReal(inputs)) return; try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); } catch { /* ignore */ } try { pushState('firemap-inputs-v3', inputs); } catch { /* ignore */ } }, [inputs]);
   useEffect(() => { try { window.scrollTo(0, 0); } catch { /* ignore */ } }, [screen, step]);
   useEffect(() => { if (screen === 'question') { try { if (sessionStorage.getItem('fm_recalc')) { sessionStorage.removeItem('fm_recalc'); setStep(0); } } catch { /* ignore */ } } }, [screen]);
 

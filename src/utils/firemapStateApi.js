@@ -1,4 +1,5 @@
 import { account } from './identity.js';
+import { inputsIsReal } from './retirementSimulator.js';
 
 const URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
 const KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
@@ -74,6 +75,8 @@ export async function syncAfterAuth() {
     let merged;
     if (k === 'fm_daily') merged = mergeDaily(local, server);
     else if (k === 'fm_save') merged = mergeSave(local, server);
+    // 입력값: 이 기기 로컬이 '실제 편집된' 경우에만 로컬 우선. 미편집 기본값이면 서버(다른 기기) 우선 → 폰↔데스크탑 연동.
+    else if (k === 'firemap-inputs-v3') merged = inputsIsReal(local) ? (local || server) : server;
     else merged = local || server;
     if (merged) {
       try { localStorage.setItem(k, JSON.stringify(merged)); } catch { /* ignore */ }
@@ -103,7 +106,7 @@ export async function logoutClearLocal() {
   if (a) {
     for (const k of SYNC_KEYS) {
       let v = null; try { v = JSON.parse(localStorage.getItem(k) || 'null'); } catch { /* ignore */ }
-      if (v != null) { try { await pushState(k, v); } catch { /* ignore */ } }
+      if (v != null && (k !== 'firemap-inputs-v3' || inputsIsReal(v))) { try { await pushState(k, v); } catch { /* ignore */ } }
     }
   }
   for (const k of CLEAR_ON_LOGOUT) { try { localStorage.removeItem(k); } catch { /* ignore */ } }

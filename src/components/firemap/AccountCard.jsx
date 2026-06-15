@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { account } from '../../utils/identity.js';
-import { signup, login, logout } from '../../utils/firemapAccountApi.js';
+import { signup, login, logout, setHandle } from '../../utils/firemapAccountApi.js';
 import { syncAfterAuth, claimDevice, logoutClearLocal } from '../../utils/firemapStateApi.js';
 import { kakaoLoginStart } from '../../utils/kakaoAuth.js';
 
@@ -21,13 +21,36 @@ export default function AccountCard({ kicker, sub, compact } = {}) {
   const [pw, setPw] = useState('');
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState('');
+  const [editing, setEditing] = useState(false);
+  const [nh, setNh] = useState('');
 
   if (acc && acc.handle) {
+    const saveNick = async () => {
+      setErr('');
+      const v = nh.trim();
+      if (v.length < 2) { setErr('닉네임은 2자 이상으로 해주세요.'); return; }
+      setBusy(true);
+      try { await setHandle(v); window.location.reload(); }
+      catch (e) { setErr(mapErr(e && e.code, e && e.message)); setBusy(false); }
+    };
     return (
       <section className="fm-card fm-acct">
         <p className="fm-kicker">내 계정</p>
-        <p className="fm-acct-who"><b>{acc.handle}</b>으로 로그인됨 · 기기가 바뀌어도 내 글·적립·랭킹이 이어져요.</p>
-        <button type="button" className="fm-acct-switch" onClick={async () => { await logoutClearLocal(); window.location.reload(); }}>로그아웃</button>
+        {!editing ? (
+          <>
+            <p className="fm-acct-who"><b>{acc.handle}</b>으로 로그인됨 · 랭킹·저축 보드에 이 닉네임이 표시돼요.</p>
+            <button type="button" className="fm-acct-go" onClick={() => { setNh(acc.handle); setEditing(true); setErr(''); }}>✏️ 닉네임 변경</button>
+            <button type="button" className="fm-acct-switch" onClick={async () => { await logoutClearLocal(); window.location.reload(); }}>로그아웃</button>
+          </>
+        ) : (
+          <>
+            <p className="fm-acct-sub">랭킹·저축 보드에 표시될 닉네임이에요. (2~16자)</p>
+            <input className="fm-acct-in" maxLength={16} placeholder="새 닉네임" value={nh} onChange={(e) => setNh(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter') saveNick(); }} />
+            {err && <p className="fm-acct-err">{err}</p>}
+            <button type="button" className="fm-acct-go" onClick={saveNick} disabled={busy}>{busy ? '저장 중…' : '저장'}</button>
+            <button type="button" className="fm-acct-switch" onClick={() => { setEditing(false); setErr(''); }}>취소</button>
+          </>
+        )}
       </section>
     );
   }

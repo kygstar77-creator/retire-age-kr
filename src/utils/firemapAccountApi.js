@@ -1,4 +1,5 @@
 import { track } from '../firemap-v2/dailyData.js';
+import { account } from './identity.js';
 const URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
 const KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || URL;
@@ -37,4 +38,13 @@ export async function login(handle, password) {
 }
 export function logout() {
   try { localStorage.removeItem('fm_account'); } catch { /* ignore */ }
+}
+
+// 로그인 사용자가 닉네임(handle) 직접 변경 — 랭킹/저축 보드에 표시될 이름
+export async function setHandle(handle) {
+  const a = account();
+  if (!a || !a.userId || !a.token) { const e = new Error('not_logged_in'); e.code = 'not_logged_in'; throw e; }
+  const r = await rpc('fm_set_handle', { p_user: a.userId, p_token: a.token, p_handle: handle });
+  if (!r || !r.id) { const e = new Error('set_handle_failed'); e.code = 'set_handle_failed'; throw e; }
+  return persist(r);
 }

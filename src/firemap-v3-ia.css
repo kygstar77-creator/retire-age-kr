@@ -819,3 +819,13 @@
 .fm-fireclock-bought.behind{color:#b91c1c}
 .fm-fireclock-bought b{font-weight:950}
 .fm-fireclock-note{margin:8px 0 0;font-size:11.5px;color:#9b7b5c;line-height:1.45}
+
+/* 바꿔보기 하단 액션 독 (스티키, 탭바 위에 고정) */
+.fm-sim-dock { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(64px + env(safe-area-inset-bottom)); z-index: 140; width: min(456px, calc(100% - 24px)); display: flex; flex-direction: column; gap: 7px; padding: 11px 13px 12px; border: 1px solid #e5e7eb; border-radius: 18px; background: rgba(255,255,255,.97); backdrop-filter: blur(12px); box-shadow: 0 -4px 24px rgba(17,24,39,.14); animation: fm-dock-in .18s ease-out; }
+.fm-sim-dock-note { font-size: 11.5px; color: #6b7280; line-height: 1.4; text-align: center; }
+.fm-sim-dock-note b { color: #ff5a00; }
+.fm-sim-dock-btns { display: flex; gap: 8px; }
+@keyframes fm-dock-in { from { opacity: 0; transform: translate(-50%, 10px); } to { opacity: 1; transform: translate(-50%, 0); } }
+/* 독이 떠 있을 때: 본문 하단 여백 확보 + 피드백 FAB를 독 위로 */
+body.fm-exp-dock .fm-has-tabbar { padding-bottom: calc(186px + env(safe-area-inset-bottom)) !important; }
+body.fm-exp-dock .fm-feedback-fab { bottom: max(174px, calc(env(safe-area-inset-bottom) + 174px)) !important; }

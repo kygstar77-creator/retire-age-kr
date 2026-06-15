@@ -45,6 +45,12 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
   const commit = () => { Object.entries(draft).forEach(([k, v]) => { if (!PREVIEW_ONLY.includes(k)) onChange(k, v); }); setSaved(true); setTimeout(() => setSaved(false), 2400); };
   const reset = () => { setDraft({ ...inputs }); setBaseProp?.({ ...inputs }); setSaved(false); };
 
+  // 하단 액션 독이 떠 있는 동안 본문 여백 확보 + 피드백 FAB를 독 위로 올림.
+  useEffect(() => {
+    document.body.classList.toggle('fm-exp-dock', dirty);
+    return () => document.body.classList.remove('fm-exp-dock');
+  }, [dirty]);
+
   // 다른 화면(세금 도구 등)을 다녀와도 샌드박스 유지.
   // 판정 기준은 draft가 아니라 base(시드 시점 inputs 스냅샷): 사용자의 draft 편집은 base를 안 바꾸므로 안 날아가고,
   // 질문 재입력 등으로 '핵심 입력값(inputs)' 자체가 바뀐 경우에만 새로 시드한다.
@@ -71,17 +77,7 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
           <div><small>파이어 가능</small><b>{simulation.earliestRetirementAge ? `${simulation.earliestRetirementAge}세` : '아직'}</b></div>
           <div><small>자산 수명</small><b>{runwayText(simulation)}</b></div>
         </div>
-        {dirty ? (
-          <div className="fm-sim-actions">
-            <span className="fm-sim-actions-note">여기서 바꾼 값은 <b>미리보기</b>예요 · 저장 전엔 내 결과·등수에 반영되지 않아요</span>
-            <div className="fm-sim-actions-btns">
-              <button type="button" className="fm-sim-reset" onClick={reset}>되돌리기</button>
-              <button type="button" className="fm-sim-save" onClick={commit}>이 조건을 내 결과로 저장</button>
-            </div>
-          </div>
-        ) : (
-          <p className="fm-sim-live-note">{saved ? '✓ 내 결과·등수에 반영됐어요' : '아래 수치를 밀면 위 숫자가 바로 바뀌어요 (미리보기)'}</p>
-        )}
+        <p className="fm-sim-live-note">{dirty ? '바꾼 값은 미리보기예요 · 아래 버튼으로 저장 ↓' : (saved ? '✓ 내 결과·등수에 반영됐어요' : '아래 수치를 밀면 위 숫자가 바로 바뀌어요 (미리보기)')}</p>
       </section>
       <section className="fm-card fm-graph">
         <p className="fm-kicker">내 미래 자산 차트</p><h2>내가 넣은 돈, 이렇게 불어나요</h2>
@@ -132,6 +128,15 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
         </div>
         <small>흔히 인용되는 장기 명목 평균 기준이에요(세전·물가 별도). 가정이 높을수록 기대수익도 변동성(위험)도 커지고, 과거 평균일 뿐 미래를 보장하지 않아요. 특정 상품 추천이 아닙니다. {sourceLine('returnPresets')}</small>
       </section>
+      )}
+      {dirty && (
+        <div className="fm-sim-dock" role="region" aria-label="바꿔보기 저장">
+          <span className="fm-sim-dock-note">저장 전엔 <b>미리보기</b>예요 · 내 결과·등수 미반영</span>
+          <div className="fm-sim-dock-btns">
+            <button type="button" className="fm-sim-reset" onClick={reset}>되돌리기</button>
+            <button type="button" className="fm-sim-save" onClick={commit}>이 조건을 내 결과로 저장</button>
+          </div>
+        </div>
       )}
     </main>
   );

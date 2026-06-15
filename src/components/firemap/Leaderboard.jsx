@@ -15,7 +15,7 @@ const myCid = () => { try { return localStorage.getItem('fm_cid'); } catch { ret
 
 const BOARDS = [
   { key: 'fire', label: '빠른 파이어' },
-  { key: 'cohort', label: '또래 저축' },
+  { key: 'cohort', label: '목표 라이벌' },
   { key: 'advance', label: '파이어 앞당김' },
   { key: 'deposit', label: '이번 달 저축' },
   { key: 'save', label: '절약' }
@@ -226,7 +226,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
 
           <section className="fm-card fm-nick">
             <button type="button" className="fm-nick-reg" onClick={saveNick} disabled={saving}>{saving ? '등록 중' : saved ? '등록됨 ✓' : '내 등수 랭킹에 올리기'}</button>
-            <small>익명이면 '알뜰한 너구리'처럼 자동 별명으로, 계정을 만들면 내 이름으로 올라가요.</small>
+            <small>카카오로 로그인하거나 닉네임을 정하면 내 이름으로 올라가요. 익명이면 '알뜰한 너구리'처럼 자동 별명이 붙어요.</small>
           </section>
         </>
       )}

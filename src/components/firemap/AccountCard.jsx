@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { account } from '../../utils/identity.js';
 import { signup, login, logout } from '../../utils/firemapAccountApi.js';
 import { syncAfterAuth, claimDevice, logoutClearLocal } from '../../utils/firemapStateApi.js';
+import { kakaoLoginStart } from '../../utils/kakaoAuth.js';
 
 function mapErr(code, msg) {
   const m = code || msg || '';
@@ -41,6 +42,13 @@ export default function AccountCard({ kicker, sub, compact } = {}) {
     );
   }
 
+  const kakao = async () => {
+    setErr('');
+    setBusy(true);
+    try { await kakaoLoginStart(); } // 카카오로 리다이렉트 → 복귀 시 FireMapMVP가 처리
+    catch (e) { setErr('카카오 로그인을 시작할 수 없어요. 잠시 후 다시 시도해주세요.'); setBusy(false); }
+  };
+
   const submit = async () => {
     setErr('');
     const handle = h.trim();
@@ -59,7 +67,11 @@ export default function AccountCard({ kicker, sub, compact } = {}) {
     <section className="fm-card fm-acct">
       <p className="fm-kicker">{kicker || '내 계정 (선택)'}</p>
       <h2>{mode === 'signup' ? '계정 만들기' : '로그인'}</h2>
-      <p className="fm-acct-sub">{sub || '닉네임+비밀번호만 정하면, 기기가 바뀌거나 브라우저를 지워도 내 글·적립·랭킹이 그대로 이어져요. 이메일·가입절차 없어요.'}</p>
+      <p className="fm-acct-sub">{sub || '카카오로 3초 만에 시작하거나, 닉네임+비밀번호로 만들 수 있어요. 기기가 바뀌거나 브라우저를 지워도 내 글·적립·랭킹이 그대로 이어져요.'}</p>
+      <button type="button" className="fm-acct-kakao" onClick={kakao} disabled={busy}>
+        <span className="fm-acct-kakao-ico" aria-hidden="true">💬</span> 카카오로 시작하기
+      </button>
+      <div className="fm-acct-or"><span>또는 닉네임으로</span></div>
       <input className="fm-acct-in" maxLength={16} placeholder="닉네임 (2~16자)" value={h} onChange={(e) => setH(e.target.value)} />
       <input className="fm-acct-in" type="password" maxLength={32} placeholder="비밀번호 (4자 이상)" value={pw} onChange={(e) => setPw(e.target.value)} onKeyDown={(e) => { if (e.key === 'Enter') submit(); }} />
       {err && <p className="fm-acct-err">{err}</p>}

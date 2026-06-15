@@ -25,7 +25,8 @@ import { buildSimulation, defaultInputs, inputsIsReal } from '../utils/retiremen
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
 import { cleanNumber } from '../firemap-v2/formatters.js';
 import { screens, resolveScreen } from '../firemap-v2/screens.js';
-import { maybeClaimOnLoad } from '../utils/firemapStateApi.js';
+import { maybeClaimOnLoad, claimDevice, syncAfterAuth } from '../utils/firemapStateApi.js';
+import { handleKakaoRedirect } from '../utils/kakaoAuth.js';
 import { track } from '../firemap-v2/dailyData.js';
 import { decodeInputsFromHash } from '../utils/shareState.js';
 import '../firemap-v3-tokens.css';
@@ -100,7 +101,16 @@ export default function FireMapMVP() {
     window.addEventListener('hashchange', sync);
     window.addEventListener('popstate', sync);
     if (!window.location.hash) window.history.replaceState(null, '', '#home');
-    maybeClaimOnLoad();
+    // 카카오 로그인 복귀 처리: ?code 있으면 교환→계정 발급→익명기록 승계 후 새로고침
+    (async () => {
+      const r = await handleKakaoRedirect();
+      if (r && r.ok) {
+        try { await claimDevice(); await syncAfterAuth(); } catch (e) { /* ignore */ }
+        window.location.reload();
+        return;
+      }
+      maybeClaimOnLoad();
+    })();
     // 홈화면(스탠드얼론) 실행 · 설치 · 재방문 측정
     try {
       const standalone = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;

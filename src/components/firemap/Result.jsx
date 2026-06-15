@@ -45,7 +45,8 @@ function ResultHeroV2({ simulation, rankingSimulation }) {
             survivalAge: (rs.targetResult && rs.targetResult.depletionAge) || rs.inputs.simulationUntilAge,
             nickname: nick,
             earliestAge: rankEarliest,
-            assetBand: assetBandOf(rs.netWorth)
+            assetBand: assetBandOf(rs.netWorth),
+            targetAge: rs.inputs.targetRetirementAge
           });
           sessionStorage.setItem(key, '1');
         }

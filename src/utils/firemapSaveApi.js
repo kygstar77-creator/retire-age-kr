@@ -34,7 +34,7 @@ function countFromRange(res) {
 }
 
 // 오늘 내 절약 한 줄을 upsert (client_id + date 기준 갱신)
-export async function submitSave({ todaySaved, totalSaved, advancedDays, streak, nickname, ageBand, depositTotal, depositMonth }) {
+export async function submitSave({ todaySaved, totalSaved, advancedDays, streak, nickname, ageBand, depositTotal, depositMonth, targetAge }) {
   const cid = identityId();
   if (!cid) return false;
   const nick = (nickname || '').trim().slice(0, 16) || null;
@@ -47,6 +47,7 @@ export async function submitSave({ todaySaved, totalSaved, advancedDays, streak,
     streak: (streak != null && Number.isFinite(Number(streak))) ? Math.round(streak) : null,
     nickname: nick,
     age_band: ageBand != null ? String(ageBand) : null,
+    target_age: (targetAge != null && Number.isFinite(Number(targetAge))) ? Math.round(Number(targetAge)) : null,
     deposit_total: Math.max(0, Math.round(depositTotal || 0)),
     deposit_month: Math.max(0, Math.round(depositMonth || 0)),
     updated_at: new Date().toISOString()

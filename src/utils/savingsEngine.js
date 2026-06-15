@@ -137,7 +137,7 @@ export async function reportBoard(simulation) {
     let nick = ''; try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
     let band = null; try { band = statsRank(simulation).ageBand; } catch { /* ignore */ }
     const okCalc = hasCalculated() && !!(simulation && simulation.earliestRetirementAge);
-    await submitSave({ todaySaved, totalSaved, advancedDays: okCalc ? p.advanceDays : null, streak, nickname: nick, ageBand: band, depositTotal: depTotal, depositMonth: p.monthDeposit });
+    await submitSave({ todaySaved, totalSaved, advancedDays: okCalc ? p.advanceDays : null, streak, nickname: nick, ageBand: band, depositTotal: depTotal, depositMonth: p.monthDeposit, targetAge: (simulation && simulation.inputs) ? simulation.inputs.targetRetirementAge : null });
     await updateScoreAdvance(okCalc ? Math.max(0, p.advanceDays) : 0);
   } catch { /* ignore */ }
 }

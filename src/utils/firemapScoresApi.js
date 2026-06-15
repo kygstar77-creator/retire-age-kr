@@ -28,7 +28,7 @@ function countFromRange(res) {
   return total && total !== '*' ? Number(total) : 0;
 }
 
-export async function submitScore({ fireScore, ageBand, survivalAge, nickname, earliestAge, assetBand }) {
+export async function submitScore({ fireScore, ageBand, survivalAge, nickname, earliestAge, assetBand, targetAge }) {
   const base = {
     fire_score: Math.max(0, Math.min(100, Math.round(fireScore))),
     age_band: ageBand || null,
@@ -39,7 +39,8 @@ export async function submitScore({ fireScore, ageBand, survivalAge, nickname, e
   const full = {
     ...base,
     nickname: nick || null,
-    earliest_age: (earliestAge != null && Number.isFinite(Number(earliestAge))) ? Math.round(Number(earliestAge)) : null
+    earliest_age: (earliestAge != null && Number.isFinite(Number(earliestAge))) ? Math.round(Number(earliestAge)) : null,
+    target_age: (targetAge != null && Number.isFinite(Number(targetAge))) ? Math.round(Number(targetAge)) : null
   };
   const cid = identityId();
   const fullAsset = (assetBand != null) ? { ...full, asset_band: assetBand } : full;

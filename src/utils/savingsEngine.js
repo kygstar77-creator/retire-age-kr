@@ -137,7 +137,15 @@ export async function reportBoard(simulation) {
     let nick = ''; try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
     let band = null; try { band = statsRank(simulation).ageBand; } catch { /* ignore */ }
     const okCalc = hasCalculated() && !!(simulation && simulation.earliestRetirementAge);
-    await submitSave({ todaySaved, totalSaved, advancedDays: okCalc ? p.advanceDays : null, streak, nickname: nick, ageBand: band, depositTotal: depTotal, depositMonth: p.monthDeposit, targetAge: (simulation && simulation.inputs) ? simulation.inputs.targetRetirementAge : null });
+    // 목표 달성률(자산/목표자산 %) — 대시보드 링과 동일 산식
+    let goalPct = null;
+    try {
+      const inp2 = (simulation && simulation.inputs) || {};
+      const curAsset = Number(inp2.financialAsset) || 0;
+      const tgtAsset = Math.round((simulation && simulation.requiredFireAssetByFourPercent) || 0);
+      if (tgtAsset > 0) goalPct = Math.max(0, Math.min(100, Math.round((curAsset / tgtAsset) * 100)));
+    } catch { /* ignore */ }
+    await submitSave({ todaySaved, totalSaved, advancedDays: okCalc ? p.advanceDays : null, streak, nickname: nick, ageBand: band, depositTotal: depTotal, depositMonth: p.monthDeposit, targetAge: (simulation && simulation.inputs) ? simulation.inputs.targetRetirementAge : null, goalPct: okCalc ? goalPct : null });
     await updateScoreAdvance(okCalc ? Math.max(0, p.advanceDays) : 0);
   } catch { /* ignore */ }
 }

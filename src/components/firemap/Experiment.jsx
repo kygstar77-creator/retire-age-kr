@@ -9,7 +9,7 @@ import { sourceLine } from '../../firemap-v2/dataSources.js';
 import { buildScenario, runwayText, buildGrowthSeries } from '../../firemap-v2/scenarios.js';
 import { formatWon, cleanNumber } from '../../firemap-v2/formatters.js';
 
-export default function Experiment({ inputs, onChange, onBack, onMove, draft: draftProp, setDraft: setDraftProp }) {
+export default function Experiment({ inputs, onChange, onBack, onMove, draft: draftProp, setDraft: setDraftProp, base: baseProp, setBase: setBaseProp }) {
   // 바꿔보기는 '미리보기 샌드박스'. draft를 부모가 보관하면 그걸 써서 세금 도구 등 다른 화면을 다녀와도 유지되고, 없으면 로컬로 동작.
   const [localDraft, setLocalDraft] = useState(inputs);
   const draft = draftProp ?? localDraft;
@@ -37,17 +37,28 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
   const grossDivAtRetire = Math.round((simulation.retirementFinancialAsset || draft.financialAsset || 0) * ((draft.dividendYield || 0) / 100));
 
   const PREVIEW_ONLY = ['investType', 'dividendYield'];
+  // 샌드박스 슬라이더가 직접 바꾸는 핵심 값들. 이 값들이 (질문 재입력 등으로) 실제로 바뀐 경우에만 샌드박스를 새로 시드.
+  // 세금·연금 도구가 '반영'으로 건드리는 값(investType·dividendIncomeMonthly·pensionClaimAge 등)은 여기 없으므로,
+  // 도구를 다녀오거나 거기서 세금을 반영해도 바꿔보기 작업이 날아가지 않는다.
+  const SANDBOX_KEYS = ['currentAge', 'targetRetirementAge', 'financialAsset', 'monthlyInvestment', 'monthlyLivingCost', 'savingYears', 'salaryGrowthRate', 'partTimeIncomeAfterRetirement', 'inflationRate', 'annualReturnRate'];
   const dirty = useMemo(() => Object.keys(draft).some((k) => !PREVIEW_ONLY.includes(k) && cleanNumber(draft[k]) !== cleanNumber(inputs[k])), [draft, inputs]);
   const commit = () => { Object.entries(draft).forEach(([k, v]) => { if (!PREVIEW_ONLY.includes(k)) onChange(k, v); }); setSaved(true); setTimeout(() => setSaved(false), 2400); };
-  const reset = () => { setDraft({ ...inputs }); setSaved(false); };
+  const reset = () => { setDraft({ ...inputs }); setBaseProp?.({ ...inputs }); setSaved(false); };
 
-  // 세금 도구 등 다른 화면을 다녀와도 샌드박스 유지. 단, 실제 입력값(미리보기 전용 제외)이 바뀌었으면 새로 시드.
+  // 다른 화면(세금 도구 등)을 다녀와도 샌드박스 유지.
+  // 판정 기준은 draft가 아니라 base(시드 시점 inputs 스냅샷): 사용자의 draft 편집은 base를 안 바꾸므로 안 날아가고,
+  // 질문 재입력 등으로 '핵심 입력값(inputs)' 자체가 바뀐 경우에만 새로 시드한다.
   useEffect(() => {
-    setDraft((prev) => {
-      if (!prev) return { ...inputs };
-      const changed = Object.keys(inputs).some((k) => !PREVIEW_ONLY.includes(k) && cleanNumber(inputs[k]) !== cleanNumber(prev[k]));
-      return changed ? { ...inputs } : prev;
-    });
+    if (draftProp == null || baseProp == null) {
+      setDraftProp?.({ ...inputs });
+      setBaseProp?.({ ...inputs });
+      return;
+    }
+    const inputsChanged = SANDBOX_KEYS.some((k) => cleanNumber(inputs[k]) !== cleanNumber(baseProp[k]));
+    if (inputsChanged) {
+      setDraftProp({ ...inputs });
+      setBaseProp({ ...inputs });
+    }
   }, [inputs]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (

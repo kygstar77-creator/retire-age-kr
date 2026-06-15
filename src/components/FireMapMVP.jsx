@@ -72,8 +72,10 @@ export default function FireMapMVP() {
   const referrerRef = useRef({});
   const screenRef = useRef(screen);
   const skipRecordRef = useRef(false);
-  // 바꿔보기(experiment) 샌드박스 draft를 부모가 보관 → 세금 도구 등 다른 화면을 다녀와도 유지.
+  // 바꿔보기(experiment) 샌드박스: draft(편집본)와 base(draft를 뜬 시점의 inputs 스냅샷)를 부모가 보관.
+  // base가 있어야 '사용자 편집'과 '실제 inputs 변경'을 구분 가능 → 도구 왕복에도 작업이 안 날아감.
   const [expDraft, setExpDraft] = useState(null);
+  const [expBase, setExpBase] = useState(null);
   // 개인 결과는 도구에서 반영한 투자유형(해외 양도세·배당세)·건보료를 반영.
   const simulation = useMemo(() => buildSimulation(inputs), [inputs]);
   // 등수·점수 제출은 세전(investType=0)으로 모두에게 공정하게 비교 (양도·배당세 선택과 무관).
@@ -154,7 +156,7 @@ export default function FireMapMVP() {
   if (screen === 'home') view = <Home onStart={(age) => { if (typeof age === 'number' && age > 0) { onChange('currentAge', age); setStep(1); } else { setStep(0); } setScreen('question'); }} onMove={setScreen} onChange={onChange} simulation={simulation} />;
   else if (screen === 'question') view = <Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />;
   else if (screen === 'tools') view = <Tools onMove={setScreen} />;
-  else if (screen === 'experiment') view = <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} onMove={setScreen} draft={expDraft} setDraft={setExpDraft} />;
+  else if (screen === 'experiment') view = <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} onMove={setScreen} draft={expDraft} setDraft={setExpDraft} base={expBase} setBase={setExpBase} />;
   else if (screen === 'city') view = <City inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('city')} />;
   else if (screen === 'share') view = <Share inputs={inputs} simulation={simulation} onBack={backOf('share')} />;
   else if (screen === 'community') view = <Community onBack={backOf('community')} onMove={setScreen} />;

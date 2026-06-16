@@ -39,7 +39,7 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
   const earliest = simulation.earliestRetirementAge;
   const pct = target > 0 ? Math.max(0, Math.min(100, Math.round((asset / target) * 100))) : 0;
 
-  // 목표(사용자가 정한 목표 파이어 나이) = 기준선, 예상(지금 권도) = 현재 위치. 자산 '목표 N억 중 M억'과 동일한 목표-기준 프레이밍.
+  // 목표(사용자가 정한 목표 파이어 나이) = 기준선, 예상(지금 예상) = 현재 위치. 자산 '목표 N억 중 M억'과 동일한 목표-기준 프레이밍.
   const targetAge = Number(inp.targetRetirementAge) || 0;
   const ageGap = earliest != null ? earliest - targetAge : null;
   const gapDir = ageGap == null ? '' : ageGap > 0 ? 'behind' : ageGap < 0 ? 'ahead' : 'even';
@@ -111,7 +111,7 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
             <div className="fm-plan-ring-in"><b>{pct}%</b><span>달성</span></div>
           </div>
           <div className="fm-plan-meta">
-            <small>{targetAge ? `목표 ${targetAge}세 · 지금 권도` : '예상 파이어'}</small>
+            <small>{targetAge ? `목표 ${targetAge}세 · 지금 예상` : '예상 파이어'}</small>
             <strong>{earliest ? `${earliest}세` : '계산 필요'}</strong>
             {earliest && gapText
               ? <p><b style={{ color: gapColor }}>{gapText}</b> · 목표 <b>{eok(target)}</b> 중 <b>{eok(asset)}</b></p>

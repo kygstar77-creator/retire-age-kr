@@ -39,7 +39,7 @@ export default function CommunityPeek({ onMove }) {
         <p className="fm-lounge-empty">아직 조용해요 🤫 첫 한마디를 남겨보세요<br /><b>“{seed}”</b></p>
       )}
       <button type="button" className="fm-lounge-cta" onClick={() => onMove('community')}>
-        {hasPosts ? '나도 한마디 남기기  →' : '첫 글 남기러 가기  →'}
+        {hasPosts ? '나도 한마디 남기기 →' : '첫 글 남기러 가기 →'}
       </button>
     </section>
   );

@@ -46,6 +46,14 @@
 .fm-status-note { font-size: 12px; color: var(--fm-muted, #8f8f8f); line-height: 1.6; margin: 12px 0 0; }
 .fm-status-done { font-size: 14px; color: #0f6e56; font-weight: 600; line-height: 1.6; margin: 4px 0 0; }
 
+/* 첫 계산 직후 빈 상태 — 0원·동일나이(계획=실제) 중복 제거, 기록 시작 유도 */
+.fm-status-empty { gap: 0; }
+.fm-status-empty-age { font-size: 16px; font-weight: 700; color: #185fa5; margin: 0 0 8px; letter-spacing: -0.01em; }
+.fm-status-empty-age b { font-size: 22px; font-weight: 800; }
+.fm-status-empty-lead { font-size: 13px; color: var(--fm-muted, #6f6f6f); line-height: 1.6; margin: 0 0 14px; }
+.fm-status-empty-cta { display: block; width: 100%; padding: 12px 16px; border-radius: 12px; border: none; background: #378add; color: #fff; font-size: 14px; font-weight: 700; cursor: pointer; }
+.fm-status-empty-cta:active { transform: scale(0.99); }
+
 /* 자산 증가 분해 */
 .fm-growth-split { font-size: 13px; color: var(--fm-muted, #6f6f6f); margin: 8px 0 0; line-height: 1.6; }
 .fm-growth-split b { font-weight: 700; color: #185fa5; }

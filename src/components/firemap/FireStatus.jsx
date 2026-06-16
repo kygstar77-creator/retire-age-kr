@@ -37,6 +37,19 @@ export default function FireStatus({ simulation, onMove }) {
     );
   }
 
+  // 첫 계산 직후 — 아직 적립·절약 기록이 없으면 0원·동일나이(계획=실제) 중복 대신 '기록 시작' 빈 상태로.
+  // 추적 지표(이번 달 적립·누적 절약)는 한 번이라도 기록하면 그때부터 아래 풀카드로 채워진다.
+  if (!p.hasData) {
+    return (
+      <section className="fm-card fm-status even fm-status-empty">
+        <p className="fm-kicker">내 파이어 현황</p>
+        <p className="fm-status-empty-age">지금 계획대로면 <b>{ageLabel(p.planAge)}</b>에 파이어</p>
+        <p className="fm-status-empty-lead">저축·절약을 기록하면 ‘실제 파이어’가 며칠씩 앞당겨지는 게 여기에 바로 나타나요.</p>
+        <button type="button" className="fm-status-empty-cta" onClick={() => onMove && onMove('save')}>오늘부터 저축 기록 시작 →</button>
+      </section>
+    );
+  }
+
   const planAge = p.planAge;
   const actAge = p.actualAgeYears != null ? p.actualAgeYears : planAge;
   const dir = p.direction; // ahead | behind | even

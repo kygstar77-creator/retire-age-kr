@@ -62,17 +62,14 @@ export async function submitSave({ todaySaved, totalSaved, advancedDays, streak,
   try {
     let res = await post(body);
     if (!res.ok) {
-      // current_age 컬럼 미존재(구 DB) 보존 폴백
       const { current_age, ...noAge } = body;
       res = await post(noAge);
     }
     if (!res.ok) {
-      // goal_pct 컬럼 마이그레이션 전이면 빼고 재시도
       const { goal_pct, current_age, ...noGoal } = body;
       res = await post(noGoal);
     }
     if (!res.ok) {
-      // 적립 컬럼(deposit_*) 마이그레이션 전이면 해당 필드 빼고 재시도 → 절약 저장은 항상 성공
       const { deposit_total, deposit_month, goal_pct, current_age, ...rest } = body;
       res = await post(rest);
     }
@@ -119,7 +116,6 @@ export async function fetchSaveBoard(metric = 'today', limit = 10) {
       return rows.map((r) => ({ ...r, value: r.today_saved }));
     }
     if (metric === 'advance' || metric === 'streak') {
-      // 앞당김·연속일은 줄어들 수 있으므로 '과거 최고치'가 아니라 '최신값(최근 날짜)'으로 랭킹
       const c = metric === 'streak' ? 'streak' : 'advanced_days';
       const u = `${SUPABASE_URL}/rest/v1/${TABLE}?select=client_id,nickname,${c},age_band,date&${c}=gt.0&order=date.desc&limit=600`;
       const r2 = await fetch(u, { method: 'GET', headers: headers() });
@@ -148,7 +144,7 @@ export async function fetchSaveBoard(metric = 'today', limit = 10) {
   }
 }
 
-// 코호트(같은 나이·목표 또래) 누적 저축 리더보드 — RPC 호출, 인원 부족 시 서버가 자동 폴백(scope: cohort→age→all)
+// 코호트(같은 나이·목표 또래) 누적 저축 리더보드 — RPC 호출, 자동 폴백
 export async function fetchCohortSaveBoard(ageBand, targetAge, limit = 10) {
   try {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/fm_cohort_save_board`, {
@@ -164,11 +160,7 @@ export async function fetchCohortSaveBoard(ageBand, targetAge, limit = 10) {
   }
 }
 
-// 코호트 '파이어 당김(advanced_days)' 리더보드 — 프론트 정렬.
-// 같은 또래+목표끼리 "누가 파이어를 더 많이 당겼나"로 공평 비교. 절대 저축액(목표 크기에 오염)이 아니라
-// 계획 대비 당긴 일수가 단위. 매칭 우선순위(좁은→넓은):
-//   exact(정확나이+목표버킷) → cohort(나이밴드+목표버킷) → age(나이밴드) → all(전체).
-// current_age 표본이 충분(≥3)해지면 자동으로 '정확 나이'로 좁혀진다.
+// 코호트 '파이어 당김(advanced_days)' 리더보드 — exact(정확나이)→cohort(나이밴드)→age→all 폴백
 export async function fetchCohortAdvanceBoard(ageBand, tLo, tHi, limit = 10, currentAge = null) {
   const sel = 'select=client_id,nickname,advanced_days,age_band,target_age,goal_pct,date';
   const ageNum = (currentAge != null && Number.isFinite(Number(currentAge))) ? Math.round(Number(currentAge)) : null;
@@ -196,22 +188,18 @@ export async function fetchCohortAdvanceBoard(ageBand, tLo, tHi, limit = 10, cur
     return res.ok ? await res.json() : [];
   };
   try {
-    // 0) exact: 같은 '정확 나이' + 같은 목표나이 버킷 (가장 좁은 코호트, 표본 쌓이면 자동 적용)
     if (ageNum != null && tLo != null && tHi != null) {
       const rows = dedupeLatest(await q(`current_age=eq.${ageNum}&target_age=gte.${tLo}&target_age=lte.${tHi}`));
       if (rows.length >= 3) return rows.map((r) => ({ ...r, scope: 'exact' }));
     }
-    // 1) cohort: 같은 나이밴드 + 같은 목표나이 버킷
     if (ageBand != null && tLo != null && tHi != null) {
       const rows = dedupeLatest(await q(`age_band=eq.${encodeURIComponent(String(ageBand))}&target_age=gte.${tLo}&target_age=lte.${tHi}`));
       if (rows.length >= 3) return rows.map((r) => ({ ...r, scope: 'cohort' }));
     }
-    // 2) age: 같은 나이밴드만
     if (ageBand != null) {
       const rows = dedupeLatest(await q(`age_band=eq.${encodeURIComponent(String(ageBand))}`));
       if (rows.length >= 3) return rows.map((r) => ({ ...r, scope: 'age' }));
     }
-    // 3) all: 전체
     const rows = dedupeLatest(await q(''));
     return rows.map((r) => ({ ...r, scope: 'all' }));
   } catch {
@@ -219,17 +207,33 @@ export async function fetchCohortAdvanceBoard(ageBand, tLo, tHi, limit = 10, cur
   }
 }
 
-// 이번 주(월~) 절약(today_saved) 합산 주간 랭킹 — RPC 호출, 월요일 리셋
-export async function fetchWeeklySaveBoard(limit = 10) {
+// 주간 절약 랭킹 — offset 0=이번주, 1=지난주 (월요일 리셋)
+export async function fetchWeeklySaveBoard(limit = 10, offset = 0) {
   try {
     const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/fm_weekly_save_board`, {
       method: 'POST',
       headers: headers(),
-      body: JSON.stringify({ p_limit: limit })
+      body: JSON.stringify({ p_limit: limit, p_offset: offset })
     });
     if (!res.ok) return [];
     const rows = await res.json();
     return (rows || []).map((r) => ({ client_id: r.uid, nickname: r.nick, age_band: r.band, value: r.val }));
+  } catch {
+    return [];
+  }
+}
+
+// 명예의 전당 — 지난 주차별 절약왕(1위)
+export async function fetchWeeklyHall(weeks = 8) {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/fm_weekly_hall`, {
+      method: 'POST',
+      headers: headers(),
+      body: JSON.stringify({ p_weeks: weeks })
+    });
+    if (!res.ok) return [];
+    const rows = await res.json();
+    return (rows || []).map((r) => ({ weekLabel: r.week_label, weekStart: r.week_start, client_id: r.uid, nickname: r.nick, value: r.val }));
   } catch {
     return [];
   }

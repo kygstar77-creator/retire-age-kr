@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { identityIds, accountHandle } from '../../utils/identity.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { wonStr } from '../../firemap-v2/dailyData.js';
-import { fetchWeeklySaveBoard } from '../../utils/firemapSaveApi.js';
+import { fetchWeeklySaveBoard, fetchWeeklyHall } from '../../utils/firemapSaveApi.js';
 
 const medal = (i) => (i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : String(i + 1));
 
@@ -20,34 +20,68 @@ function resetText() {
 }
 
 export default function WeeklyBoard() {
+  const [tab, setTab] = useState('this');
   const [rows, setRows] = useState(null);
+  const [hall, setHall] = useState(null);
   const ids = identityIds();
   const acctHandle = accountHandle();
+
   useEffect(() => {
     let alive = true;
-    const run = () => fetchWeeklySaveBoard(10).then((r) => { if (alive) setRows(r); });
-    run();
-    window.addEventListener('fm-savings-changed', run);
-    return () => { alive = false; window.removeEventListener('fm-savings-changed', run); };
+    const off = tab === 'last' ? 1 : 0;
+    setRows(null);
+    fetchWeeklySaveBoard(10, off).then((r) => { if (alive) setRows(r); });
+    const onChange = () => { if (tab === 'this') fetchWeeklySaveBoard(10, 0).then((r) => { if (alive) setRows(r); }); };
+    window.addEventListener('fm-savings-changed', onChange);
+    return () => { alive = false; window.removeEventListener('fm-savings-changed', onChange); };
+  }, [tab]);
+
+  useEffect(() => {
+    let alive = true;
+    fetchWeeklyHall(8).then((h) => { if (alive) setHall(h); });
+    return () => { alive = false; };
   }, []);
+
+  const nameOf = (r) => (r.nickname && r.nickname.trim()) || funHandle(r.client_id || '');
+  const mine = (r) => r.client_id && ids.includes(r.client_id);
+
   return (
-    <section className='fm-card'>
-      <p className='fm-kicker'>이번 주 절약왕 🏆</p>
-      <p className='fm-section-sub'>이번 주(월~일) 가장 많이 아낀 사람 · {resetText()}</p>
-      <ol className='fm-lb-list'>
-        {rows === null && <li className='fm-lb-empty'>불러오는 중…</li>}
-        {rows && rows.length === 0 && <li className='fm-lb-empty'>이번 주 첫 주자가 되어보세요!</li>}
-        {rows && rows.map((r, i) => {
-          const mine = r.client_id && ids.includes(r.client_id);
-          return (
-            <li key={i} className={`fm-lb-row${i < 3 ? ' top3' : ''}${mine ? ' me' : ''}`}>
+    <>
+      <section className='fm-card'>
+        <p className='fm-kicker'>절약왕 시즌 🏆</p>
+        <div className='fm-scope-toggle'>
+          <button type='button' className={tab === 'this' ? 'on' : ''} onClick={() => setTab('this')}>이번 주</button>
+          <button type='button' className={tab === 'last' ? 'on' : ''} onClick={() => setTab('last')}>지난 주</button>
+        </div>
+        <p className='fm-section-sub'>{tab === 'this' ? `이번 주(월~일) 가장 많이 아낀 사람 · ${resetText()}` : '지난주 최종 순위'}</p>
+        <ol className='fm-lb-list'>
+          {rows === null && <li className='fm-lb-empty'>불러오는 중…</li>}
+          {rows && rows.length === 0 && <li className='fm-lb-empty'>{tab === 'this' ? '이번 주 첫 주자가 되어보세요!' : '지난주 기록이 없어요'}</li>}
+          {rows && rows.map((r, i) => (
+            <li key={i} className={`fm-lb-row${i < 3 ? ' top3' : ''}${mine(r) ? ' me' : ''}`}>
               <span className='fm-lb-rank'>{medal(i)}</span>
-              <span className='fm-lb-who'>{mine && acctHandle ? acctHandle : (r.nickname || funHandle(r.client_id))}{mine ? ' (나)' : ''}{r.age_band ? ` · ${r.age_band}대` : ''}</span>
+              <span className='fm-lb-who'>{mine(r) && acctHandle ? acctHandle : nameOf(r)}{mine(r) ? ' (나)' : ''}{r.age_band ? ` · ${r.age_band}대` : ''}</span>
               <span className='fm-lb-score'>{wonStr(r.value)}</span>
             </li>
-          );
-        })}
-      </ol>
-    </section>
+          ))}
+        </ol>
+      </section>
+
+      {hall && hall.length > 0 && (
+        <section className='fm-card'>
+          <p className='fm-kicker'>명예의 전당 👑</p>
+          <p className='fm-section-sub'>지난 주차별 절약왕</p>
+          <ol className='fm-lb-list'>
+            {hall.map((h, i) => (
+              <li key={i} className={`fm-lb-row${mine(h) ? ' me' : ''}`}>
+                <span className='fm-lb-rank'>👑</span>
+                <span className='fm-lb-who'>{h.weekLabel} · {mine(h) && acctHandle ? acctHandle : nameOf(h)}{mine(h) ? ' (나)' : ''}</span>
+                <span className='fm-lb-score'>{wonStr(h.value)}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+    </>
   );
 }

@@ -20,12 +20,17 @@ const catLabel = (k) => { const c = CATEGORIES.find((x) => x.key === k); return 
 const catOf = (row) => row.category || 'free';
 
 const STYLE = `
-.fm-cat-bar{display:flex;gap:8px;overflow-x:auto;padding:4px 0 12px;-webkit-overflow-scrolling:touch}
+.fm-cat-bar{display:flex;gap:8px;overflow-x:auto;padding:4px 0 10px;-webkit-overflow-scrolling:touch}
 .fm-cat-bar button{flex:0 0 auto;border:1px solid #e5e7eb;background:#fff;border-radius:99px;padding:7px 12px;font-size:13px;font-weight:700;color:#4b5563;cursor:pointer;white-space:nowrap}
 .fm-cat-bar button.on{background:#ff5a00;border-color:#ff5a00;color:#fff}
 .fm-cat-select{margin-bottom:8px}
 .fm-cat-select select{width:100%;padding:9px;border:1px solid #e5e7eb;border-radius:10px;font-size:14px;background:#fff}
 .fm-cat-badge{display:inline-block;font-size:11px;font-weight:800;color:#c2410c;background:#fff4e8;border-radius:6px;padding:1px 6px;margin-right:6px}
+.fm-sortbar{display:flex;gap:8px;margin-bottom:10px}
+.fm-sortbar button{border:1px solid #e5e7eb;background:#fff;border-radius:99px;padding:6px 14px;font-size:13px;font-weight:700;color:#4b5563;cursor:pointer}
+.fm-sortbar button.on{background:#18212c;border-color:#18212c;color:#fff}
+.fm-best{border:1px solid #ffd23f !important;background:#fffdf3 !important}
+.fm-best-tag{font-size:12px;font-weight:800;color:#b45309;margin:0 0 6px}
 `;
 
 function relativeTime(value) {
@@ -79,6 +84,7 @@ export default function Community({ onBack, onMove }) {
   const [editText, setEditText] = useState('');
   const [cat, setCat] = useState('all');
   const [postCat, setPostCat] = useState('free');
+  const [sort, setSort] = useState('new');
 
   useEffect(() => {
     let alive = true;
@@ -92,7 +98,10 @@ export default function Community({ onBack, onMove }) {
   const isMine = (row) => mine.includes(row.id) || (!!row.client_id && myIds.includes(row.client_id));
   const remember = (id) => { addMine(id); setMine(loadMine()); };
 
-  const posts = rows.filter((r) => !r.parent_id && (cat === 'all' || catOf(r) === cat)).sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+  const filtered = rows.filter((r) => !r.parent_id && (cat === 'all' || catOf(r) === cat));
+  const weekAgo = Date.now() - 7 * 86400000;
+  const best = filtered.filter((r) => (r.likes || 0) > 0 && new Date(r.created_at).getTime() > weekAgo).sort((a, b) => (b.likes || 0) - (a.likes || 0))[0] || null;
+  const posts = filtered.filter((r) => !best || r.id !== best.id).sort((a, b) => (sort === 'hot' ? ((b.likes || 0) - (a.likes || 0)) || (new Date(b.created_at) - new Date(a.created_at)) : (new Date(b.created_at) - new Date(a.created_at))));
   const repliesOf = (id) => rows.filter((r) => r.parent_id === id).sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
 
   const submitPost = async (event) => {
@@ -103,7 +112,7 @@ export default function Community({ onBack, onMove }) {
     setSending(true);
     const created = await sendCommunity(text, null, postCat);
     setSending(false);
-    if (created) { setRows((r) => [...r, { ...created, parent_id: null, likes: 0, category: postCat }]); remember(created.id); setPost(''); setCat(postCat); }
+    if (created) { setRows((r) => [...r, { ...created, parent_id: null, likes: 0, category: postCat }]); remember(created.id); setPost(''); setCat(postCat); setSort('new'); }
   };
 
   const submitReply = async (parentId) => {
@@ -143,6 +152,46 @@ export default function Community({ onBack, onMove }) {
     }
   };
 
+  const PostCard = (p, isBest) => {
+    const reps = repliesOf(p.id);
+    const open = openId === p.id;
+    return (
+      <article className={`fm-card fm-post${isBest ? ' fm-best' : ''}`} key={p.id}>
+        {isBest && <p className="fm-best-tag">🏆 이번 주 베스트</p>}
+        {editId === p.id ? <EditBox id={p.id} value={editText} onChange={setEditText} onCancel={cancelEdit} onSave={saveEdit} /> : <p className="fm-post-msg">{p.message}</p>}
+        <div className="fm-post-meta">
+          <span className="fm-post-author"><span className="fm-cat-badge">{catLabel(catOf(p))}</span>{p.nickname || funHandle(p.id)} · {relativeTime(p.created_at)}</span>
+          <div className="fm-post-actions">
+            <OwnerControls mine={isMine(p)} row={p} onEdit={startEdit} onDelete={removeRow} />
+            <button type="button" className={`fm-post-like${isLiked(p.id) ? ' on' : ''}`} onClick={() => like(p)} aria-label="공감">♥ {p.likes || 0}</button>
+            <button type="button" className="fm-post-reply" onClick={() => { setOpenId(open ? null : p.id); setReplyText(''); }}>💬 {reps.length}</button>
+          </div>
+        </div>
+        {open && (
+          <div className="fm-replies">
+            {reps.map((r) => (
+              <div className="fm-reply" key={r.id}>
+                {editId === r.id ? <EditBox id={r.id} value={editText} onChange={setEditText} onCancel={cancelEdit} onSave={saveEdit} /> : <p>{r.message}</p>}
+                <div className="fm-reply-meta">
+                  <small>{r.nickname || funHandle(r.id)} · {relativeTime(r.created_at)}</small>
+                  <OwnerControls mine={isMine(r)} row={r} onEdit={startEdit} onDelete={removeRow} />
+                </div>
+              </div>
+            ))}
+            {loggedIn ? (
+              <div className="fm-reply-input">
+                <input maxLength={240} value={replyText} onChange={(e) => setReplyText(e.target.value)} placeholder="답글 달기…" onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); submitReply(p.id); } }} />
+                <button type="button" onClick={() => submitReply(p.id)} disabled={!replyText.trim()}>등록</button>
+              </div>
+            ) : (
+              <button type="button" className="fm-reply-login" onClick={() => onMove && onMove('account')}>🔒 로그인하고 답글 달기 →</button>
+            )}
+          </div>
+        )}
+      </article>
+    );
+  };
+
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <style>{STYLE}</style>
@@ -158,6 +207,11 @@ export default function Community({ onBack, onMove }) {
         {CATEGORIES.map((c) => (
           <button type="button" key={c.key} className={cat === c.key ? 'on' : ''} onClick={() => setCat(c.key)}>{c.emoji} {c.label}</button>
         ))}
+      </div>
+
+      <div className="fm-sortbar">
+        <button type="button" className={sort === 'new' ? 'on' : ''} onClick={() => setSort('new')}>최신순</button>
+        <button type="button" className={sort === 'hot' ? 'on' : ''} onClick={() => setSort('hot')}>인기순</button>
       </div>
 
       {loggedIn ? (
@@ -182,45 +236,9 @@ export default function Community({ onBack, onMove }) {
       )}
 
       <section className="fm-community-feed">
-        {posts.length === 0 && <p className="fm-community-empty">{cat === 'all' ? '아직 글이 없어요. 첫 글을 남기면 다른 파이어족들이 답글로 응원해줘요 🔥' : `‘${catLabel(cat)}’ 게시판의 첫 글을 남겨보세요 🔥`}</p>}
-        {posts.map((p) => {
-          const reps = repliesOf(p.id);
-          const open = openId === p.id;
-          return (
-            <article className="fm-card fm-post" key={p.id}>
-              {editId === p.id ? <EditBox id={p.id} value={editText} onChange={setEditText} onCancel={cancelEdit} onSave={saveEdit} /> : <p className="fm-post-msg">{p.message}</p>}
-              <div className="fm-post-meta">
-                <span className="fm-post-author"><span className="fm-cat-badge">{catLabel(catOf(p))}</span>{p.nickname || funHandle(p.id)} · {relativeTime(p.created_at)}</span>
-                <div className="fm-post-actions">
-                  <OwnerControls mine={isMine(p)} row={p} onEdit={startEdit} onDelete={removeRow} />
-                  <button type="button" className={`fm-post-like${isLiked(p.id) ? ' on' : ''}`} onClick={() => like(p)} aria-label="공감">♥ {p.likes || 0}</button>
-                  <button type="button" className="fm-post-reply" onClick={() => { setOpenId(open ? null : p.id); setReplyText(''); }}>💬 {reps.length}</button>
-                </div>
-              </div>
-              {open && (
-                <div className="fm-replies">
-                  {reps.map((r) => (
-                    <div className="fm-reply" key={r.id}>
-                      {editId === r.id ? <EditBox id={r.id} value={editText} onChange={setEditText} onCancel={cancelEdit} onSave={saveEdit} /> : <p>{r.message}</p>}
-                      <div className="fm-reply-meta">
-                        <small>{r.nickname || funHandle(r.id)} · {relativeTime(r.created_at)}</small>
-                        <OwnerControls mine={isMine(r)} row={r} onEdit={startEdit} onDelete={removeRow} />
-                      </div>
-                    </div>
-                  ))}
-                  {loggedIn ? (
-                    <div className="fm-reply-input">
-                      <input maxLength={240} value={replyText} onChange={(e) => setReplyText(e.target.value)} placeholder="답글 달기…" onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); submitReply(p.id); } }} />
-                      <button type="button" onClick={() => submitReply(p.id)} disabled={!replyText.trim()}>등록</button>
-                    </div>
-                  ) : (
-                    <button type="button" className="fm-reply-login" onClick={() => onMove && onMove('account')}>🔒 로그인하고 답글 달기 →</button>
-                  )}
-                </div>
-              )}
-            </article>
-          );
-        })}
+        {best && PostCard(best, true)}
+        {posts.length === 0 && !best && <p className="fm-community-empty">{cat === 'all' ? '아직 글이 없어요. 첫 글을 남기면 다른 파이어족들이 답글로 응원해줘요 🔥' : `‘${catLabel(cat)}’ 게시판의 첫 글을 남겨보세요 🔥`}</p>}
+        {posts.map((p) => PostCard(p, false))}
       </section>
     </main>
   );

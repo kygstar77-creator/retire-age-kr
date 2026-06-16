@@ -8,6 +8,8 @@ import { ageBandOf } from '../../firemap-v2/stats.js';
 import { computeProgress, hasCalculated } from '../../utils/savingsEngine.js';
 import InstallButton from './InstallButton.jsx';
 import PetCard from './PetCard.jsx';
+import FireClock from './FireClock.jsx';
+import OpenChatNotice from './OpenChatNotice.jsx';
 import { account } from '../../utils/identity.js';
 
 const won = (n) => formatWon(Math.round(n || 0));
@@ -27,7 +29,7 @@ function pickNextAction() {
     { label: '지방 살면 몇 년 빨라지나 보기', to: 'cities', ico: '📍' },
     { label: '파이어 후 건보료 얼마인지 확인하기', to: 'dependent', ico: '🩺' },
     { label: '배당으로 월 현금흐름 만들어보기', to: 'dividend', ico: '💵' },
-    { label: '조건 바꿀서 파이어 더 당겨보기', to: 'experiment', ico: '🎛️' },
+    { label: '조건 바꿔서 파이어 더 당겨보기', to: 'experiment', ico: '🎛️' },
     { label: '또래 중 내 파이어 등수 보기', to: 'ranking', ico: '🏆' }
   ];
   return pool[Math.floor(Date.now() / 86400000) % pool.length];
@@ -40,7 +42,7 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
   const earliest = simulation.earliestRetirementAge;
   const pct = target > 0 ? Math.max(0, Math.min(100, Math.round((asset / target) * 100))) : 0;
 
-  // 목표(사용자가 정한 목표 파이어 나이) = 기준선, 예상(지금 예상) = 현재 위치. 자산 '목표 N억 중 M억'과 동일한 목표-기준 프레이밍.
+  // 목표(사용자가 정한 목표 파이어 나이) = 기준선, 예상(지금 예상) = 현재 위치.
   const targetAge = Number(inp.targetRetirementAge) || 0;
   const ageGap = earliest != null ? earliest - targetAge : null;
   const gapDir = ageGap == null ? '' : ageGap > 0 ? 'behind' : ageGap < 0 ? 'ahead' : 'even';
@@ -50,7 +52,6 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
   const [hist, setHist] = useState(getAssetHistory);
   const [editing, setEditing] = useState(false);
   const [val, setVal] = useState('');
-  // 홈 대시보드 '내 나이 순위' 타일 — 앱 사용자 실제 등수(통계 추정 아님). 랭킹 '내 나이 순위' 탭과 같은 fetchPeerBoard 사용 → 숫자 일치.
   const [peerRank, setPeerRank] = useState(null);
 
   useEffect(() => { if (asset > 0) setHist(logAsset(asset)); /* eslint-disable-next-line */ }, []);
@@ -126,6 +127,8 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
         )}
       </section>
 
+      {asHome && <FireClock simulation={simulation} />}
+
       {asHome && (
         <button type="button" className="fm-plan-result" onClick={() => onMove('result')}>📊 내 파이어 결과·또래 등수 자세히 보기 →</button>
       )}
@@ -155,6 +158,8 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
           </div>
         );
       })()}
+
+      {asHome && <OpenChatNotice />}
 
       {asHome && <PetCard />}
 

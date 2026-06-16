@@ -7,6 +7,7 @@ import { fetchPeerBoard } from '../../utils/firemapScoresApi.js';
 import { ageBandOf } from '../../firemap-v2/stats.js';
 import { computeProgress, hasCalculated } from '../../utils/savingsEngine.js';
 import InstallButton from './InstallButton.jsx';
+import PetCard from './PetCard.jsx';
 import { account } from '../../utils/identity.js';
 
 const won = (n) => formatWon(Math.round(n || 0));
@@ -26,7 +27,7 @@ function pickNextAction() {
     { label: '지방 살면 몇 년 빨라지나 보기', to: 'cities', ico: '📍' },
     { label: '파이어 후 건보료 얼마인지 확인하기', to: 'dependent', ico: '🩺' },
     { label: '배당으로 월 현금흐름 만들어보기', to: 'dividend', ico: '💵' },
-    { label: '조건 바꿔서 파이어 더 당겨보기', to: 'experiment', ico: '🎛️' },
+    { label: '조건 바꿀서 파이어 더 당겨보기', to: 'experiment', ico: '🎛️' },
     { label: '또래 중 내 파이어 등수 보기', to: 'ranking', ico: '🏆' }
   ];
   return pool[Math.floor(Date.now() / 86400000) % pool.length];
@@ -154,6 +155,8 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
           </div>
         );
       })()}
+
+      {asHome && <PetCard />}
 
       <section className="fm-card">
         <p className="fm-kicker">내 금융자산 추이</p>

@@ -21,6 +21,7 @@ import DividendLifeCalc from './firemap/DividendLifeCalc.jsx';
 import Savings from './firemap/Savings.jsx';
 import FirePlan from './firemap/FirePlan.jsx';
 import Consent from './firemap/Consent.jsx';
+import LiveBanner from './firemap/LiveBanner.jsx';
 import { buildSimulation, defaultInputs, inputsIsReal } from '../utils/retirementSimulator.js';
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
 import { cleanNumber } from '../firemap-v2/formatters.js';
@@ -28,6 +29,7 @@ import { screens, resolveScreen } from '../firemap-v2/screens.js';
 import { maybeClaimOnLoad, claimDevice, syncAfterAuth } from '../utils/firemapStateApi.js';
 import { handleKakaoRedirect } from '../utils/kakaoAuth.js';
 import { track } from '../firemap-v2/dailyData.js';
+import { logEvent } from '../utils/live.js';
 import { decodeInputsFromHash } from '../utils/shareState.js';
 import '../firemap-v3-tokens.css';
 import '../firemap.css';
@@ -74,7 +76,6 @@ export default function FireMapMVP() {
   const screenRef = useRef(screen);
   const skipRecordRef = useRef(false);
   // 바꿔보기(experiment) 샌드박스: draft(편집본)와 base(draft를 뜬 시점의 inputs 스냅샷)를 부모가 보관.
-  // base가 있어야 '사용자 편집'과 '실제 inputs 변경'을 구분 가능 → 도구 왕복에도 작업이 안 날아감.
   const [expDraft, setExpDraft] = useState(null);
   const [expBase, setExpBase] = useState(null);
   // 개인 결과는 도구에서 반영한 투자유형(해외 양도세·배당세)·건보료를 반영.
@@ -84,9 +85,11 @@ export default function FireMapMVP() {
 
   useEffect(() => { if (!inputsIsReal(inputs)) return; try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); } catch { /* ignore */ } try { pushState('firemap-inputs-v3', inputs); } catch { /* ignore */ } }, [inputs]);
   useEffect(() => { try { window.scrollTo(0, 0); } catch { /* ignore */ } }, [screen, step]);
+  useEffect(() => { try { logEvent('screen_view', { screen }); } catch { /* ignore */ } }, [screen]);
+  useEffect(() => { try { logEvent('session_start', {}); } catch { /* ignore */ } }, []);
   useEffect(() => { if (screen === 'question') { try { if (sessionStorage.getItem('fm_recalc')) { sessionStorage.removeItem('fm_recalc'); setStep(0); } } catch { /* ignore */ } } }, [screen]);
 
-  // 화면이 바뀔 때마다 '어디서 왔는지' 기록(뒤로가기 제외) → 도구의 '이전'이 올바른 화면으로 복귀.
+  // 화면이 바뀐 때마다 '어디서 왔는지' 기록(뒤로가기 제외) → 도구의 '이전'이 올바른 화면으로 복귀.
   useEffect(() => {
     const prev = screenRef.current;
     if (prev !== screen) {
@@ -142,7 +145,7 @@ export default function FireMapMVP() {
   const backOf = (id) => () => {
     const ref = referrerRef.current[id];
     delete referrerRef.current[id];
-    skipRecordRef.current = true; // 이번 이동은 '뒤로'이므로 referrer 기록 안 함(핑퐁 방지)
+    skipRecordRef.current = true; // 이번 이동은 '뒤로'이므로 referrer 기록 안 함(핵퍼 방지)
     setScreen(ref || screens[id]?.back || 'tools');
   };
 
@@ -155,6 +158,7 @@ export default function FireMapMVP() {
 
   const wrap = (node) => (
     <>
+      <LiveBanner />
       {node}
       {screens[screen]?.tab && <BottomTabs current={screen} onMove={setScreen} />}
       <FloatingFeedback />

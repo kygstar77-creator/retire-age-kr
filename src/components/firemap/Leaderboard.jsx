@@ -29,7 +29,7 @@ const SUBS = {
   deposit: '이번 달 실제 적립이 많은 순 · 매월 새로 시작',
   save: '아껴서 모은 돈 랭킹'
 };
-const COHORT_SCOPE_WORD = { cohort: '나랑 같은 나이·목표 또래', age: '같은 나이대 또래', all: '전체' };
+const COHORT_SCOPE_WORD = { exact: '나랑 같은 나이·목표 또래', cohort: '같은 나이대·목표 또래', age: '같은 나이대 또래', all: '전체' };
 
 export default function Leaderboard({ simulation, rankingSimulation, onBack, onMove }) {
   const rs = rankingSimulation || simulation;
@@ -82,7 +82,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
       const tgt = Number(rs.inputs && rs.inputs.targetRetirementAge) || null;
       const lo = tgt != null ? Math.floor(tgt / 5) * 5 : null;
       const hi = lo != null ? lo + 4 : null;
-      const rows = await fetchCohortAdvanceBoard(base.ageBand, lo, hi, 10);
+      const rows = await fetchCohortAdvanceBoard(base.ageBand, lo, hi, 10, rs.inputs && rs.inputs.currentAge);
       setTop(rows);
       setCohortScope(rows && rows.length ? rows[0].scope : null);
     } else {
@@ -169,9 +169,14 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
   const myTarget = Number(rs.inputs && rs.inputs.targetRetirementAge) || null;
   const tLo = myTarget != null ? Math.floor(myTarget / 5) * 5 : null;
   const tHi = tLo != null ? tLo + 4 : null;
-  const cohortTitle = cohortScope === 'cohort'
-    ? `${base.ageBandLabel} · 목표 ${tLo}~${tHi}세 라이벌`
-    : cohortScope === 'age' ? `${base.ageBandLabel} 또래` : '전체 파이어족';
+  const cohortTitle = cohortScope === 'exact'
+    ? `${myAge}세 · 목표 ${tLo}~${tHi}세 라이벌`
+    : cohortScope === 'cohort'
+      ? `${base.ageBandLabel} · 목표 ${tLo}~${tHi}세 라이벌`
+      : cohortScope === 'age' ? `${base.ageBandLabel} 또래` : '전체 파이어족';
+  const cohortHint = cohortScope === 'exact' ? ''
+    : cohortScope === 'cohort' ? ' · 같은 나이가 더 모이면 정확 나이로 좁혀져요'
+    : ' · 기록이 더 쌓이면 같은 나이·목표끼리 좁혀져요';
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
@@ -328,7 +333,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
         <h2 className="fm-section-title">{BOARDS.find((b) => b.key === board).label} 상위</h2>
         <p className="fm-section-sub">{SUBS[board]}</p>
         {board === 'cohort' && cohortScope && (
-          <p className="fm-section-sub"><b>{COHORT_SCOPE_WORD[cohortScope]}</b> 기준{cohortScope !== 'cohort' ? ' · 목표나이 기록이 더 쌓이면 같은 목표끼리 좁혀져요' : ''}</p>
+          <p className="fm-section-sub"><b>{COHORT_SCOPE_WORD[cohortScope]}</b> 기준{cohortHint}</p>
         )}
         {board !== 'fire' && board !== 'peer' && (
           myBoardValue() > 0

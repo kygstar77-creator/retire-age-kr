@@ -71,25 +71,31 @@ export default function FireMapMVP() {
   const [inputs, setInputs] = useState(loadInputs);
   const [screen, setScreenState] = useState(readScreenFromHash);
   const [step, setStep] = useState(0);
-  // 화면 진입 출처 기억: 도구에서 '이전'을 들어온 화면(예: 바꿔보기)으로 되돌리기 위함.
   const referrerRef = useRef({});
   const screenRef = useRef(screen);
   const skipRecordRef = useRef(false);
-  // 바꿔보기(experiment) 샌드박스: draft(편집본)와 base(draft를 뜬 시점의 inputs 스냅샷)를 부모가 보관.
   const [expDraft, setExpDraft] = useState(null);
   const [expBase, setExpBase] = useState(null);
-  // 개인 결과는 도구에서 반영한 투자유형(해외 양도세·배당세)·건보료를 반영.
   const simulation = useMemo(() => buildSimulation(inputs), [inputs]);
-  // 등수·점수 제출은 세전(investType=0)으로 모두에게 공정하게 비교 (양도·배당세 선택과 무관).
   const rankingSimulation = useMemo(() => buildSimulation({ ...inputs, investType: 0 }), [inputs]);
 
   useEffect(() => { if (!inputsIsReal(inputs)) return; try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); } catch { /* ignore */ } try { pushState('firemap-inputs-v3', inputs); } catch { /* ignore */ } }, [inputs]);
   useEffect(() => { try { window.scrollTo(0, 0); } catch { /* ignore */ } }, [screen, step]);
   useEffect(() => { try { logEvent('screen_view', { screen }); } catch { /* ignore */ } }, [screen]);
   useEffect(() => { try { logEvent('session_start', {}); } catch { /* ignore */ } }, []);
+  // 모든 track() 이벤트를 익명으로 Supabase에도 적재(GA는 그대로 유지)
+  useEffect(() => {
+    try {
+      const orig = window.gtag;
+      window.gtag = function (cmd, name, params) {
+        try { if (cmd === 'event' && name) logEvent(name, params || {}); } catch { /* ignore */ }
+        if (typeof orig === 'function') return orig.apply(this, arguments);
+        return undefined;
+      };
+    } catch { /* ignore */ }
+  }, []);
   useEffect(() => { if (screen === 'question') { try { if (sessionStorage.getItem('fm_recalc')) { sessionStorage.removeItem('fm_recalc'); setStep(0); } } catch { /* ignore */ } } }, [screen]);
 
-  // 화면이 바뀐 때마다 '어디서 왔는지' 기록(뒤로가기 제외) → 도구의 '이전'이 올바른 화면으로 복귀.
   useEffect(() => {
     const prev = screenRef.current;
     if (prev !== screen) {
@@ -104,7 +110,6 @@ export default function FireMapMVP() {
     window.addEventListener('hashchange', sync);
     window.addEventListener('popstate', sync);
     if (!window.location.hash) window.history.replaceState(null, '', '#home');
-    // 카카오 로그인 복귀 처리: ?code 있으면 교환→계정 발급→익명기록 승계 후 새로고침
     (async () => {
       const r = await handleKakaoRedirect();
       if (r && r.ok) {
@@ -114,7 +119,6 @@ export default function FireMapMVP() {
       }
       maybeClaimOnLoad();
     })();
-    // 홈화면(스탠드얼론) 실행 · 설치 · 재방문 측정
     try {
       const standalone = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
       if (standalone) track('app_standalone_open');
@@ -145,7 +149,7 @@ export default function FireMapMVP() {
   const backOf = (id) => () => {
     const ref = referrerRef.current[id];
     delete referrerRef.current[id];
-    skipRecordRef.current = true; // 이번 이동은 '뒤로'이므로 referrer 기록 안 함(핵퍼 방지)
+    skipRecordRef.current = true;
     setScreen(ref || screens[id]?.back || 'tools');
   };
 

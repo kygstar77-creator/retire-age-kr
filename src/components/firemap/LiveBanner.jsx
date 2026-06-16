@@ -4,7 +4,8 @@ import { wonStr } from '../../firemap-v2/dailyData.js';
 import { presencePing, fetchLivePresence, fetchRecentSaves, fetchTotalCalc } from '../../utils/live.js';
 
 const STYLE = `
-.fm-livebar{position:relative;width:100%;height:30px;background:#10151c;color:#fff;overflow:hidden;display:flex;align-items:center}
+.fm-livebar{position:sticky;top:0;z-index:60;width:100%;height:30px;background:#10151c;color:#fff;overflow:hidden;display:flex;align-items:center}
+.fm-topbar{top:30px !important}
 .fm-livebar-row{display:inline-flex;gap:26px;white-space:nowrap;padding-left:16px;animation:fmLiveScroll 36s linear infinite;will-change:transform}
 .fm-livebar-row span{font-size:12.5px;font-weight:600;opacity:.96}
 @keyframes fmLiveScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}

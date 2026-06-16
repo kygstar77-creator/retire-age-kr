@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { wonStr } from '../../firemap-v2/dailyData.js';
 import { computePet } from '../../utils/pet.js';
+import { identityIds } from '../../utils/identity.js';
+import { fetchWeeklySaveBoard } from '../../utils/firemapSaveApi.js';
 
 const STYLE = `
 .fm-petcard{text-align:center}
@@ -10,6 +12,7 @@ const STYLE = `
 @keyframes fmPetBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @keyframes fmPetPop{0%{transform:scale(.5) rotate(-10deg);opacity:.3}55%{transform:scale(1.15) rotate(5deg);opacity:1}100%{transform:scale(1)}}
 .fm-pet-name{font-weight:800;font-size:18px;color:#18212c;margin:2px 0}
+.fm-pet-rank{margin:2px 0 0;font-size:13px;font-weight:800;color:#b45309}
 .fm-pet-bar{height:10px;background:#eef0f3;border-radius:99px;overflow:hidden;margin:10px auto 6px;max-width:320px}
 .fm-pet-bar-fill{height:100%;background:linear-gradient(90deg,#ff8a3d,#ff5a00);border-radius:99px;transition:width .6s ease}
 .fm-pet-cap{font-size:13px;color:#4b5563;margin:2px 0}
@@ -86,6 +89,7 @@ function Raccoon({ idx }) {
 export default function PetCard() {
   const [pet, setPet] = useState(() => computePet());
   const [evo, setEvo] = useState(null);
+  const [weeklyRank, setWeeklyRank] = useState(null);
   const seen = useRef(null);
 
   useEffect(() => {
@@ -109,11 +113,26 @@ export default function PetCard() {
     return () => window.removeEventListener('fm-savings-changed', onChange);
   }, []);
 
+  useEffect(() => {
+    let alive = true;
+    const ids = identityIds();
+    const run = () => fetchWeeklySaveBoard(10).then((rows) => {
+      if (!alive) return;
+      const i = (rows || []).findIndex((r) => r.client_id && ids.includes(r.client_id));
+      setWeeklyRank(i >= 0 ? i + 1 : null);
+    });
+    run();
+    window.addEventListener('fm-savings-changed', run);
+    return () => { alive = false; window.removeEventListener('fm-savings-changed', run); };
+  }, []);
+
   const { idx, stage, next, pct, toNext, total } = pet;
+  const rankMark = weeklyRank === 1 ? '👑' : weeklyRank === 2 ? '🥈' : weeklyRank === 3 ? '🥉' : '';
   return (
     <section className='fm-card fm-petcard'>
       <style>{STYLE}</style>
       <p className='fm-pet-name'>{stage.name}{idx >= 5 ? ' 👑' : ''}</p>
+      {weeklyRank && weeklyRank <= 3 && <p className='fm-pet-rank'>{rankMark} 이번 주 절약왕 {weeklyRank}위!</p>}
       <div className={`fm-pet-art${evo ? ' evo' : ''}`}>
         <svg viewBox='0 0 220 210' role='img' aria-label={stage.name}>
           <Raccoon idx={idx} />

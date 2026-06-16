@@ -7,7 +7,7 @@ const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || URL;
 const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || KEY;
 // 서버 동기화: 기록·요약·닉네임만. 원본 금액(inputs)·정확한 자산추이는 방침대로 서버 저장 안 함(기기에만).
 // 로그인(간편계정) 시에만 서버 동기화. 비로그인은 전부 기기에만 남음.
-const SYNC_KEYS = ['fm_daily', 'fm_save', 'fm_rank_history_v1', 'fm_nickname', 'firemap-inputs-v3', 'fm_asset_history'];
+const SYNC_KEYS = ['fm_daily', 'fm_save', 'fm_rank_history_v1', 'fm_nickname', 'firemap-inputs-v3', 'fm_inputs_ts', 'fm_asset_history'];
 
 async function rpc(fn, args) {
   const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
@@ -64,25 +64,49 @@ function mergeSave(localV, serverV) {
 }
 
 // 로그인 직후: 서버값과 로컬값을 '병합'(덮어쓰기 금지) 후 양쪽에 반영 → 두 기기 기록 안 날아감
+// 입력값(계산값)은 '마지막 수정 우선(LWW)': fm_inputs_ts가 더 최근인 쪽을 채택 → 폰↔데스크탑 결과 일치
 export async function syncAfterAuth() {
   const a = authed(); if (!a) return;
   let rows = [];
   try { rows = await rpc('fm_state_get', { p_user: a.userId, p_token: a.token }) || []; } catch { return; }
   const map = {}; rows.forEach((r) => { map[r.key] = r.value; });
+  const lts0 = Number(localStorage.getItem('fm_inputs_ts') || 0);
+  const sts0 = Number(map['fm_inputs_ts'] || 0);
   for (const k of SYNC_KEYS) {
     let local = null; try { local = JSON.parse(localStorage.getItem(k) || 'null'); } catch { /* ignore */ }
     const server = (map[k] !== undefined ? map[k] : null);
     let merged;
     if (k === 'fm_daily') merged = mergeDaily(local, server);
     else if (k === 'fm_save') merged = mergeSave(local, server);
-    // 입력값: 이 기기 로컬이 '실제 편집된' 경우에만 로컬 우선. 미편집 기본값이면 서버(다른 기기) 우선 → 폰↔데스크탑 연동.
-    else if (k === 'firemap-inputs-v3') merged = inputsIsReal(local) ? (local || server) : server;
+    // 입력값: 서버(다른 기기)가 더 최근이면 서버, 아니면 이 기기 실제 입력 우선(미편집 기본값이면 서버)
+    else if (k === 'firemap-inputs-v3') merged = (server && sts0 > lts0) ? server : (inputsIsReal(local) ? (local || server) : server);
+    else if (k === 'fm_inputs_ts') merged = Math.max(lts0, sts0) || null;
     else merged = local || server;
     if (merged) {
       try { localStorage.setItem(k, JSON.stringify(merged)); } catch { /* ignore */ }
       await pushState(k, merged);
     }
   }
+}
+
+// 로그인 상태로 앱을 다시 열 때: 다른 기기에서 더 최근에 수정한 입력값이 있으면 받아와 반영(LWW)
+// 반영된 입력 객체를 반환 → 호출부에서 화면 상태(setInputs)까지 갱신. 타임스탬프 없는 과거 데이터엔 영향 없음.
+export async function pullInputsIfNewer() {
+  const a = authed(); if (!a) return null;
+  let rows = [];
+  try { rows = await rpc('fm_state_get', { p_user: a.userId, p_token: a.token }) || []; } catch { return null; }
+  const map = {}; rows.forEach((r) => { map[r.key] = r.value; });
+  const sIn = map['firemap-inputs-v3'];
+  const sts = Number(map['fm_inputs_ts'] || 0);
+  const lts = Number(localStorage.getItem('fm_inputs_ts') || 0);
+  if (sIn && sts > lts && inputsIsReal(sIn)) {
+    try {
+      localStorage.setItem('firemap-inputs-v3', JSON.stringify(sIn));
+      localStorage.setItem('fm_inputs_ts', String(sts));
+    } catch { /* ignore */ }
+    return sIn;
+  }
+  return null;
 }
 
 // 로그인 시: 이 기기의 옛 익명 기록(랭킹·절약·커뮤니티)을 계정으로 승계 + 닉네임을 핸들로 통일
@@ -98,7 +122,7 @@ export async function claimDevice() {
 }
 
 // 앱 로드 시 한 번만 자동 승계(이미 로그인된 사용자도 재로그인 없이 적용)
-const CLEAR_ON_LOGOUT = ['firemap-inputs-v3', 'fm_rank_history_v1', 'fm_asset_history', 'fm_nickname', 'fm_save', 'fm_daily', 'fm_claimed', 'fm_save_nudge_off'];
+const CLEAR_ON_LOGOUT = ['firemap-inputs-v3', 'fm_inputs_ts', 'fm_rank_history_v1', 'fm_asset_history', 'fm_nickname', 'fm_save', 'fm_daily', 'fm_claimed', 'fm_save_nudge_off'];
 
 // 로그아웃: (로그인 상태면) 서버에 백업 → 기기의 개인 데이터 전부 삭제(금융앱 프라이버시). 재로그인 시 syncAfterAuth가 복원.
 export async function logoutClearLocal() {

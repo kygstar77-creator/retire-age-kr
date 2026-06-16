@@ -26,7 +26,7 @@ import { buildSimulation, defaultInputs, inputsIsReal } from '../utils/retiremen
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
 import { cleanNumber } from '../firemap-v2/formatters.js';
 import { screens, resolveScreen } from '../firemap-v2/screens.js';
-import { maybeClaimOnLoad, claimDevice, syncAfterAuth } from '../utils/firemapStateApi.js';
+import { maybeClaimOnLoad, claimDevice, syncAfterAuth, pullInputsIfNewer } from '../utils/firemapStateApi.js';
 import { handleKakaoRedirect } from '../utils/kakaoAuth.js';
 import { track } from '../firemap-v2/dailyData.js';
 import { logEvent } from '../utils/live.js';
@@ -79,7 +79,7 @@ export default function FireMapMVP() {
   const simulation = useMemo(() => buildSimulation(inputs), [inputs]);
   const rankingSimulation = useMemo(() => buildSimulation({ ...inputs, investType: 0 }), [inputs]);
 
-  useEffect(() => { if (!inputsIsReal(inputs)) return; try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); } catch { /* ignore */ } try { pushState('firemap-inputs-v3', inputs); } catch { /* ignore */ } }, [inputs]);
+  useEffect(() => { if (!inputsIsReal(inputs)) return; const ts = Date.now(); try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); localStorage.setItem('fm_inputs_ts', String(ts)); } catch { /* ignore */ } try { pushState('firemap-inputs-v3', inputs); pushState('fm_inputs_ts', ts); } catch { /* ignore */ } }, [inputs]);
   useEffect(() => { try { window.scrollTo(0, 0); } catch { /* ignore */ } }, [screen, step]);
   useEffect(() => { try { logEvent('screen_view', { screen }); } catch { /* ignore */ } }, [screen]);
   useEffect(() => { try { logEvent('session_start', {}); } catch { /* ignore */ } }, []);
@@ -118,6 +118,7 @@ export default function FireMapMVP() {
         return;
       }
       maybeClaimOnLoad();
+      try { const sIn = await pullInputsIfNewer(); if (sIn) setInputs((c) => ({ ...c, ...sIn })); } catch (e) { /* ignore */ }
     })();
     try {
       const standalone = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;

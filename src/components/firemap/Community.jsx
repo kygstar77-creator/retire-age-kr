@@ -19,6 +19,16 @@ const CATEGORIES = [
 const catLabel = (k) => { const c = CATEGORIES.find((x) => x.key === k); return c ? `${c.emoji} ${c.label}` : '💬 자유수다'; };
 const catOf = (row) => row.category || 'free';
 
+// 기여 칭호 — 이미 불러온 스레드 데이터로 계산(진화·랭킹과 무관한 명예 표시)
+function titleFromStats(s) {
+  if (!s) return null;
+  if (s.posts >= 5 || s.likes >= 10) return '⭐ 라운지 스타';
+  if (s.replies >= 5) return '😇 답글 천사';
+  if (s.likes >= 5) return '💖 공감 부자';
+  if (s.posts >= 2) return '☕ 단골';
+  return null;
+}
+
 const STYLE = `
 .fm-cat-bar{display:flex;gap:8px;overflow-x:auto;padding:4px 0 10px;-webkit-overflow-scrolling:touch}
 .fm-cat-bar button{flex:0 0 auto;border:1px solid #e5e7eb;background:#fff;border-radius:99px;padding:7px 12px;font-size:13px;font-weight:700;color:#4b5563;cursor:pointer;white-space:nowrap}
@@ -31,6 +41,10 @@ const STYLE = `
 .fm-sortbar button.on{background:#18212c;border-color:#18212c;color:#fff}
 .fm-best{border:1px solid #ffd23f !important;background:#fffdf3 !important}
 .fm-best-tag{font-size:12px;font-weight:800;color:#b45309;margin:0 0 6px}
+.fm-title-chip{display:inline-block;font-size:10.5px;font-weight:800;color:#1d4ed8;background:#eaf1ff;border-radius:6px;padding:1px 6px;margin-left:6px}
+.fm-hot-chip{display:inline-block;font-size:10.5px;font-weight:800;color:#b91c1c;background:#fdecec;border-radius:6px;padding:1px 6px;margin-right:6px}
+.fm-mytitle{font-size:12px;color:#6b7280;margin:0 0 8px}
+.fm-mytitle b{color:#1d4ed8}
 `;
 
 function relativeTime(value) {
@@ -98,6 +112,19 @@ export default function Community({ onBack, onMove }) {
   const isMine = (row) => mine.includes(row.id) || (!!row.client_id && myIds.includes(row.client_id));
   const remember = (id) => { addMine(id); setMine(loadMine()); };
 
+  // 기여 통계(client_id별): 글 수·답글 수·받은 공감 → 칭호
+  const stats = {};
+  rows.forEach((r) => {
+    const cid = r.client_id;
+    if (!cid) return;
+    const s = stats[cid] || { posts: 0, replies: 0, likes: 0 };
+    if (r.parent_id) s.replies += 1; else s.posts += 1;
+    s.likes += Number(r.likes) || 0;
+    stats[cid] = s;
+  });
+  const titleOf = (cid) => titleFromStats(cid && stats[cid]);
+  const myTitle = (() => { for (const id of myIds) { const t = titleOf(id); if (t) return t; } return null; })();
+
   const filtered = rows.filter((r) => !r.parent_id && (cat === 'all' || catOf(r) === cat));
   const weekAgo = Date.now() - 7 * 86400000;
   const best = filtered.filter((r) => (r.likes || 0) > 0 && new Date(r.created_at).getTime() > weekAgo).sort((a, b) => (b.likes || 0) - (a.likes || 0))[0] || null;
@@ -155,12 +182,13 @@ export default function Community({ onBack, onMove }) {
   const PostCard = (p, isBest) => {
     const reps = repliesOf(p.id);
     const open = openId === p.id;
+    const ptitle = titleOf(p.client_id);
     return (
       <article className={`fm-card fm-post${isBest ? ' fm-best' : ''}`} key={p.id}>
         {isBest && <p className="fm-best-tag">🏆 이번 주 베스트</p>}
         {editId === p.id ? <EditBox id={p.id} value={editText} onChange={setEditText} onCancel={cancelEdit} onSave={saveEdit} /> : <p className="fm-post-msg">{p.message}</p>}
         <div className="fm-post-meta">
-          <span className="fm-post-author"><span className="fm-cat-badge">{catLabel(catOf(p))}</span>{p.nickname || funHandle(p.id)} · {relativeTime(p.created_at)}</span>
+          <span className="fm-post-author">{(p.likes || 0) >= 3 && <span className="fm-hot-chip">🔥 인기</span>}<span className="fm-cat-badge">{catLabel(catOf(p))}</span>{p.nickname || funHandle(p.id)}{ptitle && <span className="fm-title-chip">{ptitle}</span>} · {relativeTime(p.created_at)}</span>
           <div className="fm-post-actions">
             <OwnerControls mine={isMine(p)} row={p} onEdit={startEdit} onDelete={removeRow} />
             <button type="button" className={`fm-post-like${isLiked(p.id) ? ' on' : ''}`} onClick={() => like(p)} aria-label="공감">♥ {p.likes || 0}</button>
@@ -169,15 +197,18 @@ export default function Community({ onBack, onMove }) {
         </div>
         {open && (
           <div className="fm-replies">
-            {reps.map((r) => (
-              <div className="fm-reply" key={r.id}>
-                {editId === r.id ? <EditBox id={r.id} value={editText} onChange={setEditText} onCancel={cancelEdit} onSave={saveEdit} /> : <p>{r.message}</p>}
-                <div className="fm-reply-meta">
-                  <small>{r.nickname || funHandle(r.id)} · {relativeTime(r.created_at)}</small>
-                  <OwnerControls mine={isMine(r)} row={r} onEdit={startEdit} onDelete={removeRow} />
+            {reps.map((r) => {
+              const rtitle = titleOf(r.client_id);
+              return (
+                <div className="fm-reply" key={r.id}>
+                  {editId === r.id ? <EditBox id={r.id} value={editText} onChange={setEditText} onCancel={cancelEdit} onSave={saveEdit} /> : <p>{r.message}</p>}
+                  <div className="fm-reply-meta">
+                    <small>{r.nickname || funHandle(r.id)}{rtitle && <span className="fm-title-chip">{rtitle}</span>} · {relativeTime(r.created_at)}</small>
+                    <OwnerControls mine={isMine(r)} row={r} onEdit={startEdit} onDelete={removeRow} />
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
             {loggedIn ? (
               <div className="fm-reply-input">
                 <input maxLength={240} value={replyText} onChange={(e) => setReplyText(e.target.value)} placeholder="답글 달기…" onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); submitReply(p.id); } }} />
@@ -199,7 +230,7 @@ export default function Community({ onBack, onMove }) {
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">파이어족 라운지</p>
         <h2>다 같이 파이어 이야기</h2>
-        <p>관심 가는 카테고리를 골라 글을 쓰고, 답글로 서로 대화해요. 내가 쓴 글은 수정·삭제할 수 있어요. 버그·불편 신고는 홈 맨 아래 ‘의견 보내기’로.</p>
+        <p>관심 가는 카테고리를 골라 글을 쓰고, 답글로 서로 대화해요. 글·답글·공감이 쌓이면 닉네임 옆에 칭호가 붙어요. 내가 쓴 글은 수정·삭제할 수 있어요.</p>
       </section>
 
       <div className="fm-cat-bar">
@@ -217,6 +248,7 @@ export default function Community({ onBack, onMove }) {
       {loggedIn ? (
       <form className="fm-card fm-community-form" onSubmit={submitPost}>
         <label htmlFor="fm-community-input">새 글 쓰기</label>
+        <p className="fm-mytitle">내 칭호: {myTitle ? <b>{myTitle}</b> : '아직 없음 (글·답글·공감으로 모아요)'}</p>
         <div className="fm-cat-select">
           <select value={postCat} onChange={(e) => setPostCat(e.target.value)} aria-label="카테고리 선택">
             {CATEGORIES.map((c) => <option key={c.key} value={c.key}>{c.emoji} {c.label}</option>)}

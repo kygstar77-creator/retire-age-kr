@@ -308,6 +308,22 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
         </section>
       )}
 
+      {board === 'advance' && (
+        <section className="fm-rank-hero">
+          <p className="fm-rank-label">전체 중 내 파이어 앞당김</p>
+          <div className="fm-rank-top">
+            <span className="fm-rank-pct">{myAdvance > 0 ? (fmtAdvance(myAdvance * 86400) || '0초') : '0초'}</span>
+            <span className="fm-rank-badge">내 파이어 당김</span>
+          </div>
+          <p className="fm-rank-line">
+            {myAge != null ? `나 ${myAge}세` : '나'}{myTarget != null ? ` · 목표 ${myTarget}세 파이어` : ''}
+          </p>
+          {myAdvance > 0
+            ? <p className="fm-rank-climb">저축·절약을 기록할수록 파이어가 더 당겨지고 순위가 올라가요 🔥</p>
+            : <p className="fm-rank-climb">아직 당긴 기록이 없어요. ‘저축’ 탭에서 적립·절약을 기록하면 파이어가 당겨지고 순위가 올라가요.</p>}
+        </section>
+      )}
+
       <section className="fm-card">
         <h2 className="fm-section-title">{BOARDS.find((b) => b.key === board).label} 상위</h2>
         <p className="fm-section-sub">{SUBS[board]}</p>

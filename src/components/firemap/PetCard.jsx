@@ -203,7 +203,7 @@ export default function PetCard() {
         )
         : <p className='fm-pet-cap'>최종 진화 완료 — 황금 너구리예요 ✨</p>}
       <p className='fm-pet-total'>{total > 0 ? <>지금까지 모은 누적 저축·절약 <b>{wonStr(total)}</b></> : '저축·절약을 기록하면 알이 부화해요'}</p>
-      <p className='fm-pet-total'>{cp > 0 ? <>커뮤니티 기여 <b>{cp}</b>{nextCos ? ` · 다음 꼾미기 ‘${nextCos.name}’까지 ${nextCos.cp - cp}` : ' · 꼾미기 전부 획득 ✨'}</> : '커뮤니티에 글·공감이 쌓이면 펫 꼾미기를 얻어요'}</p>
+      <p className='fm-pet-total'>{cp > 0 ? <>커뮤니티 기여 <b>{cp}</b>{nextCos ? ` · 다음 꾸미기 ‘${nextCos.name}’까지 ${nextCos.cp - cp}` : ' · 꾸미기 전부 획득 ✨'}</> : '커뮤니티에 글·공감이 쌓이면 펫 꾸미기를 얻어요'}</p>
       {anyUnlocked && (
         <div className='fm-pet-wardrobe'>
           {COSMETICS.map((c) => {

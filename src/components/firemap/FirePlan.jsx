@@ -99,7 +99,7 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
             <span className="fm-acct-bar-ic">{acc && acc.handle ? '👤' : '🔒'}</span>
             {acc && acc.handle
               ? <span className="fm-acct-bar-tx"><b>{acc.handle}</b><em>기록이 안전하게 이어져요</em></span>
-              : <span className="fm-acct-bar-tx"><b>로그인하고 내 기록 지키기</b><em>기기 바귫도 그대로 이어져요</em></span>}
+              : <span className="fm-acct-bar-tx"><b>로그인하고 내 기록 지키기</b><em>기기 바꿔도 그대로 이어져요</em></span>}
             <span className="fm-acct-bar-go">{acc && acc.handle ? '관리 ›' : '로그인 ›'}</span>
           </button>
         );

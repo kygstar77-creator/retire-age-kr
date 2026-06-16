@@ -3,6 +3,14 @@ import { wonStr } from '../../firemap-v2/dailyData.js';
 import { computePet } from '../../utils/pet.js';
 import { identityIds } from '../../utils/identity.js';
 import { fetchWeeklySaveBoard } from '../../utils/firemapSaveApi.js';
+import { fetchMyContribution } from '../../utils/firemapFeedbackApi.js';
+
+const COSMETICS = [
+  { cp: 1, name: '모자' },
+  { cp: 5, name: '안경' },
+  { cp: 15, name: '나비넥타이' },
+  { cp: 40, name: '꽃' }
+];
 
 const STYLE = `
 .fm-petcard{text-align:center}
@@ -25,7 +33,7 @@ function Crown() {
   return <path d='M84 10 l9 18 17 -16 17 16 9 -18 -5 30 -42 0 z' fill='#ffd23f' stroke='#e0a92a' strokeWidth='2' strokeLinejoin='round' />;
 }
 
-function Raccoon({ idx }) {
+function Raccoon({ idx, cp = 0 }) {
   if (idx <= 0) {
     return (
       <g>
@@ -82,6 +90,32 @@ function Raccoon({ idx }) {
           <path d='M180 150 l2.5 6 6 2.5 -6 2.5 -2.5 6 -2.5 -6 -6 -2.5 6 -2.5 z' />
         </g>
       )}
+      {cp >= 1 && idx < 5 && (
+        <g>
+          <path d='M74 54 Q110 24 146 54 Z' fill='#3b82f6' />
+          <rect x='108' y='51' width='40' height='7' rx='3' fill='#2563eb' />
+        </g>
+      )}
+      {cp >= 5 && (
+        <g fill='none' stroke='#2a333d' strokeWidth='2.5'>
+          <circle cx='92' cy='90' r='13' />
+          <circle cx='128' cy='90' r='13' />
+          <path d='M105 90 h10' />
+        </g>
+      )}
+      {cp >= 15 && idx < 4 && (
+        <g fill='#ef4444'>
+          <path d='M110 128 l-16 -7 0 14 z' />
+          <path d='M110 128 l16 -7 0 14 z' />
+          <circle cx='110' cy='128' r='4' fill='#b91c1c' />
+        </g>
+      )}
+      {cp >= 40 && (
+        <g>
+          <g fill='#f472b6'><circle cx='62' cy='40' r='5' /><circle cx='70' cy='36' r='5' /><circle cx='70' cy='44' r='5' /><circle cx='54' cy='36' r='5' /><circle cx='54' cy='44' r='5' /></g>
+          <circle cx='62' cy='40' r='4' fill='#fde047' />
+        </g>
+      )}
     </g>
   );
 }
@@ -90,6 +124,7 @@ export default function PetCard() {
   const [pet, setPet] = useState(() => computePet());
   const [evo, setEvo] = useState(null);
   const [weeklyRank, setWeeklyRank] = useState(null);
+  const [cp, setCp] = useState(0);
   const seen = useRef(null);
 
   useEffect(() => {
@@ -126,8 +161,15 @@ export default function PetCard() {
     return () => { alive = false; window.removeEventListener('fm-savings-changed', run); };
   }, []);
 
+  useEffect(() => {
+    let alive = true;
+    fetchMyContribution(identityIds()).then((c) => { if (alive) setCp((c && c.cp) || 0); });
+    return () => { alive = false; };
+  }, []);
+
   const { idx, stage, next, pct, toNext, total } = pet;
   const rankMark = weeklyRank === 1 ? '👑' : weeklyRank === 2 ? '🥈' : weeklyRank === 3 ? '🥉' : '';
+  const nextCos = COSMETICS.find((c) => cp < c.cp);
   return (
     <section className='fm-card fm-petcard'>
       <style>{STYLE}</style>
@@ -135,7 +177,7 @@ export default function PetCard() {
       {weeklyRank && weeklyRank <= 3 && <p className='fm-pet-rank'>{rankMark} 이번 주 절약왕 {weeklyRank}위!</p>}
       <div className={`fm-pet-art${evo ? ' evo' : ''}`}>
         <svg viewBox='0 0 220 210' role='img' aria-label={stage.name}>
-          <Raccoon idx={idx} />
+          <Raccoon idx={idx} cp={cp} />
         </svg>
       </div>
       {next
@@ -147,6 +189,7 @@ export default function PetCard() {
         )
         : <p className='fm-pet-cap'>최종 진화 완료 — 황금 너구리예요 ✨</p>}
       <p className='fm-pet-total'>{total > 0 ? <>지금까지 모은 누적 저축·절약 <b>{wonStr(total)}</b></> : '저축·절약을 기록하면 알이 부화해요'}</p>
+      <p className='fm-pet-total'>{cp > 0 ? <>커뮤니티 기여 <b>{cp}</b>{nextCos ? ` · 다음 꼾미기 ‘${nextCos.name}’까지 ${nextCos.cp - cp}` : ' · 꼾미기 전부 획득 ✨'}</> : '커뮤니티에 글·공감이 쌓이면 펫 꼾미기를 얻어요'}</p>
       {evo && <div className='fm-pet-evolve'>🎉 진화! <b>{evo}</b>가 됐어요</div>}
     </section>
   );

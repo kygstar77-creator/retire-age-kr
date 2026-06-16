@@ -95,6 +95,20 @@ export async function fetchCommunityPeek(limit = 3) {
   return rows || [];
 }
 
+// 내 커뮤니티 기여(펫 꼾미기용): 내가 쓴 글·답글 수 + 받은 공감 합. 진화와 무관한 별도 철립.
+export async function fetchMyContribution(clientIds) {
+  try {
+    const ids = (clientIds || []).filter(Boolean);
+    if (!ids.length) return { posts: 0, likes: 0, cp: 0 };
+    const inList = ids.map((x) => `\"${x}\"`).join(',');
+    const rows = await commGet(`${TABLE}?select=likes&kind=eq.community&client_id=in.(${inList})`);
+    const arr = rows || [];
+    const posts = arr.length;
+    const likes = arr.reduce((a, r) => a + (Number(r.likes) || 0), 0);
+    return { posts, likes, cp: posts + likes };
+  } catch { return { posts: 0, likes: 0, cp: 0 }; }
+}
+
 export async function sendCommunity(message, parentId = null, category = null) {
   const clean = String(message || '').trim().slice(0, 240);
   if (!clean) return null;

@@ -28,7 +28,7 @@ function countFromRange(res) {
   return total && total !== '*' ? Number(total) : 0;
 }
 
-export async function submitScore({ fireScore, ageBand, survivalAge, nickname, earliestAge, assetBand, targetAge }) {
+export async function submitScore({ fireScore, ageBand, survivalAge, nickname, earliestAge, assetBand, targetAge, currentAge }) {
   const base = {
     fire_score: Math.max(0, Math.min(100, Math.round(fireScore))),
     age_band: ageBand || null,
@@ -40,7 +40,8 @@ export async function submitScore({ fireScore, ageBand, survivalAge, nickname, e
     ...base,
     nickname: nick || null,
     earliest_age: (earliestAge != null && Number.isFinite(Number(earliestAge))) ? Math.round(Number(earliestAge)) : null,
-    target_age: (targetAge != null && Number.isFinite(Number(targetAge))) ? Math.round(Number(targetAge)) : null
+    target_age: (targetAge != null && Number.isFinite(Number(targetAge))) ? Math.round(Number(targetAge)) : null,
+    current_age: (currentAge != null && Number.isFinite(Number(currentAge))) ? Math.round(Number(currentAge)) : null
   };
   const cid = identityId();
   const fullAsset = (assetBand != null) ? { ...full, asset_band: assetBand } : full;
@@ -49,14 +50,18 @@ export async function submitScore({ fireScore, ageBand, survivalAge, nickname, e
     headers: headers({ prefer: merge ? 'return=minimal,resolution=merge-duplicates' : 'return=minimal' }),
     body: JSON.stringify(body)
   });
+  // current_age 컬럼 미존재(구 DB) 보존 폴백용
+  const dropAge = (o) => { const { current_age, ...rest } = o; return rest; };
   try {
     if (cid) {
       let res = await send({ ...fullAsset, client_id: cid }, true);
-      if (!res.ok) res = await send({ ...full, client_id: cid }, true); // asset_band 컬럼 미존재 보존 폴백
+      if (!res.ok) res = await send({ ...dropAge(fullAsset), client_id: cid }, true); // current_age 컬럼 미존재 폴백
+      if (!res.ok) res = await send({ ...dropAge(full), client_id: cid }, true);        // asset_band 컬럼 미존재 폴백
       if (res.ok) return true;
     }
     let res = await send(fullAsset, false);
-    if (!res.ok) res = await send(full, false);
+    if (!res.ok) res = await send(dropAge(fullAsset), false);
+    if (!res.ok) res = await send(dropAge(full), false);
     if (!res.ok) res = await send(base, false);
     return res.ok;
   } catch {
@@ -89,6 +94,56 @@ export async function fetchUserRank(earliestAge, ageBand, advancedDays) {
     const position = higher + 1;
     const percentile = Math.min(99, Math.max(1, Math.round((higher / total) * 100)));
     return { total, position, percentile };
+  } catch {
+    return null;
+  }
+}
+
+// 또래(같은 나이) 순위 — current_age 표본이 충분하면 '정확 나이', 아니면 '나이밴드(N0대)'로 자동 폴백.
+// 들어온 사람의 핵심 질문("내 나이 중 몇 등?")에 바로 답하는 보드. 자산 아님 — 파이어 가능 나이 기준.
+export async function fetchPeerBoard({ currentAge, ageBand, earliestAge, advancedDays, limit = 10 }) {
+  const MIN_AGE_SAMPLE = 20; // 같은 나이가 이만큼 모이면 '정확 나이'로 좁힘
+  const opts = { method: 'GET', headers: headers({ prefer: 'count=exact', range: '0-0' }) };
+  const ageNum = (currentAge != null && Number.isFinite(Number(currentAge))) ? Math.round(Number(currentAge)) : null;
+  try {
+    // 1) 같은 나이 표본 수 확인
+    let useAge = false;
+    let ageTotal = 0;
+    if (ageNum != null) {
+      const r = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id&current_age=eq.${ageNum}`, opts);
+      ageTotal = countFromRange(r);
+      useAge = ageTotal >= MIN_AGE_SAMPLE;
+    }
+    const filter = useAge ? `&current_age=eq.${ageNum}` : (ageBand ? `&age_band=eq.${ageBand}` : '');
+    const scope = useAge ? 'age' : (ageBand ? 'band' : 'all');
+    const ageLabel = useAge ? `${ageNum}세` : (ageBand ? `${ageBand}대` : '전체');
+    // 2) 모수
+    const total = useAge ? ageTotal : countFromRange(await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id${filter}`, opts));
+    // 3) 내 등수 (fetchUserRank와 동일 규칙: 빠른 파이어 → 동점은 당긴 일수)
+    let position = null;
+    let percentile = null;
+    if (total > 0) {
+      const hasAge = earliestAge != null && Number.isFinite(Number(earliestAge));
+      const mine = hasAge ? Math.round(Number(earliestAge)) : null;
+      const higherQ = hasAge
+        ? `${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=lt.${mine}${filter}`
+        : `${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=not.is.null${filter}`;
+      let higher = countFromRange(await fetch(higherQ, opts));
+      if (hasAge) {
+        const adv = Number.isFinite(Number(advancedDays)) ? Number(advancedDays) : 0;
+        higher += countFromRange(await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=eq.${mine}&advanced_days=gt.${adv}${filter}`, opts));
+      }
+      position = higher + 1;
+      percentile = Math.min(99, Math.max(1, Math.round((higher / total) * 100)));
+    }
+    // 4) 상위 10
+    const sel = `select=client_id,nickname,fire_score,age_band,current_age,earliest_age${filter}`;
+    let topRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&order=earliest_age.asc.nullslast,advanced_days.desc,fire_score.desc&limit=${limit}`, { method: 'GET', headers: headers() });
+    if (!topRes.ok) {
+      topRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&order=earliest_age.asc.nullslast,fire_score.desc&limit=${limit}`, { method: 'GET', headers: headers() });
+    }
+    const top = topRes.ok ? await topRes.json() : [];
+    return { scope, ageLabel, total, position, percentile, top };
   } catch {
     return null;
   }

@@ -45,7 +45,8 @@ function ResultHeroV2({ simulation, rankingSimulation }) {
             nickname: nick,
             earliestAge: rankEarliest,
             assetBand: assetBandOf(rs.netWorth),
-            targetAge: rs.inputs.targetRetirementAge
+            targetAge: rs.inputs.targetRetirementAge,
+            currentAge: rs.inputs.currentAge
           });
           sessionStorage.setItem(key, '1');
         }
@@ -354,6 +355,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
     const inf = simulation.inputs.inflationRate;
     let pos, tot;
     try { const rr = await fetchUserRank(earliest); if (rr && rr.total) { pos = rr.position; tot = rr.total; } } catch (e) { /* ignore */ }
+    // 카드 이미지: 항상 프로덕션 /og(개인 숫자). 카카오 서버가 가져가므로 절대경로 firemap.kr.
     const img = new URL('https://firemap.kr/og');
     if (earliest) img.searchParams.set('ea', String(earliest));
     img.searchParams.set('target', String(target));
@@ -363,6 +365,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
     if (pos && tot) { img.searchParams.set('pos', String(pos)); img.searchParams.set('tot', String(tot)); }
     img.searchParams.set('v', 'c3');
     const imageUrl = img.toString();
+    // 클릭 시 이동할 짧은 링크
     const l = new URL('https://firemap.kr/s');
     if (earliest) l.searchParams.set('ea', String(earliest));
     l.searchParams.set('target', String(target));
@@ -375,10 +378,12 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
     const title = earliest ? `나는 ${earliest}세에 파이어 가능 🔥 — 파이어맵` : '나도 내 파이어 나이 계산하기 — 파이어맵';
     const description = '물가·국민연금까지 따진 가장 현실적인 파이어 계산 · 1분이면 내 파이어 나이가 나와요';
     track('share_summary_copy', { type: 'result_share' });
+    // 1순위: 카카오톡 카드(개인 /og 이미지) — 긴 URL 텍스트 없이 카드 하나만 안정적으로 전송
     try {
       await shareToKakao({ title, description, imageUrl, linkUrl: url });
       return;
     } catch (e) { /* SDK 미로드/도메인 미등록 등 → 폴백 */ }
+    // 폴백: 시스템 공유 / 복사
     if (navigator.share) {
       try { await navigator.share({ text: '파이어족들을 위한 커뮤니티 · 파이어맵', url }); return; }
       catch (e) { if (e && e.name === 'AbortError') return; }
@@ -423,7 +428,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
         <p style={{ fontSize: '13px', color: 'var(--fm-muted, #6b6f76)', lineHeight: 1.6, margin: '0 0 12px' }}>
           파이어맵은 한 번 계산하고 끝나는 계산기가 아니에요. 매달 자산 추이를 기록하고, 저축·절약이 파이어를 며칠씩 당기는지 추적하면서 <b>목표 대비 내 진행을 계속 관리</b>할 수 있어요.
         </p>
-        <button type="button" onClick={() => { track('discover_plan', { from: 'result' }); onMove('home'); }} style={{ display: 'block', width: '100%', padding: '13px 16px', borderRadius: '12px', border: 'none', background: '#1e2859', color: '#fff', fontSize: '14px', fontWeight: 700, cursor: 'pointer' }}>📋 내 파이어 플랜 열기 →</button>
+        <button type="button" onClick={() => onMove('home')} style={{ display: 'block', width: '100%', padding: '13px 16px', borderRadius: '12px', border: 'none', background: '#1e2859', color: '#fff', fontSize: '14px', fontWeight: 700, cursor: 'pointer' }}>📋 내 파이어 플랜 열기 →</button>
       </section>
       <AssetJourney simulation={simulation} />
       <MoatCard simulation={simulation} onMove={onMove} />

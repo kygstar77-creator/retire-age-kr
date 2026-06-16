@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { identityIds, accountHandle } from '../../utils/identity.js';
 import { statsRank } from '../../firemap-v2/rank.js';
-import { fetchTopScores, fetchUserRank, submitScore, fetchAggregates, fetchNeighbors, fetchAssetPercentile, assetBandOf } from '../../utils/firemapScoresApi.js';
+import { fetchTopScores, fetchUserRank, submitScore, fetchAggregates, fetchNeighbors, fetchAssetPercentile, assetBandOf, fetchPeerBoard } from '../../utils/firemapScoresApi.js';
 import { fetchSaveBoard, fetchCohortAdvanceBoard } from '../../utils/firemapSaveApi.js';
 import { displayName } from '../../firemap-v2/funName.js';
 import { wonStr, fmtAdvance, readJSON, todayStr } from '../../firemap-v2/dailyData.js';
@@ -14,14 +14,16 @@ const readNick = () => { try { return localStorage.getItem('fm_nickname') || '';
 const myCid = () => { try { return localStorage.getItem('fm_cid'); } catch { return null; } };
 
 const BOARDS = [
-  { key: 'fire', label: '빠른 파이어' },
-  { key: 'cohort', label: '목표 라이벌' },
+  { key: 'peer', label: '내 나이 순위' },
+  { key: 'fire', label: '전체 순위' },
   { key: 'advance', label: '파이어 앞당김' },
+  { key: 'cohort', label: '목표 라이벌' },
   { key: 'deposit', label: '이번 달 저축' },
   { key: 'save', label: '절약' }
 ];
 const SUBS = {
-  fire: '파이어 가능 나이가 빠른 순 · 나이가 같으면 저축 많이 한 사람이 위',
+  peer: '같은 나이 또래 중 내 파이어 등수 — 같은 나이가 모이면 정확 나이 기준으로 좁혀져요',
+  fire: '전체에서 파이어 가능 나이가 빠른 순 · 같으면 저축 많이 한 사람이 위',
   cohort: '같은 나이·목표 또래끼리 — 저축·절약으로 파이어를 더 많이 당긴 순 (절대 저축액이 아니라 공평)',
   advance: '적립·절약으로 파이어를 가장 많이 앞당긴 순',
   deposit: '이번 달 실제 적립이 많은 순 · 매월 새로 시작',
@@ -38,7 +40,8 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
   const acctHandle = accountHandle();
   const myAdvance = hasCalculated() ? Math.max(0, computeProgress(simulation).advanceDays) : 0;
   const myBand = hasCalculated() ? assetBandOf(simulation.netWorth) : null;
-  const [board, setBoard] = useState('fire');
+  const [board, setBoard] = useState('peer');
+  const [peer, setPeer] = useState(null);
   const [saveMetric, setSaveMetric] = useState('total');
   const [top, setTop] = useState(null);
   const [me, setMe] = useState(null);
@@ -63,6 +66,11 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
         fetchAssetPercentile(bandArg, myBand)
       ]);
       setTop(t); setMe(r); setAgg(a); setNeighbors(nb); setAssetPct(ap);
+    } else if (board === 'peer') {
+      setNeighbors(null); setMe(null);
+      const pr = await fetchPeerBoard({ currentAge: rs.inputs && rs.inputs.currentAge, ageBand: base.ageBand, earliestAge: earliest, advancedDays: myAdvance, limit: 10 });
+      setPeer(pr);
+      setTop(pr ? pr.top : []);
     } else if (board === 'cohort') {
       setTop(null); setNeighbors(null);
       const tgt = Number(rs.inputs && rs.inputs.targetRetirementAge) || null;
@@ -100,7 +108,8 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
       nickname: v,
       earliestAge: earliest,
       assetBand: myBand,
-      targetAge: simulation.inputs.targetRetirementAge
+      targetAge: simulation.inputs.targetRetirementAge,
+      currentAge: simulation.inputs.currentAge
     });
     await load();
     setSaving(false);
@@ -109,7 +118,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
   };
 
   const rowValue = (row) => {
-    if (board === 'fire') return row.earliest_age ? `${row.earliest_age}세 파이어` : '—';
+    if (board === 'fire' || board === 'peer') return row.earliest_age ? `${row.earliest_age}세 파이어` : '—';
     if (board === 'advance' || board === 'cohort') return (fmtAdvance((Number(row.value) || 0) * 86400) || '0초') + ' 앞당김';
     if (board === 'save' && saveMetric === 'streak') return `${row.value || 0}일`;
     return wonStr(row.value || 0);
@@ -188,11 +197,6 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
               : <p className="fm-rank-climb">지금 전체 1등! 매일 저축해서 자리를 지켜요 🔥</p>)}
           </section>
 
-          <div className="fm-scope-toggle">
-            <button type="button" className={scope === 'all' ? 'on' : ''} onClick={() => setScope('all')}>전체</button>
-            <button type="button" className={scope === 'band' ? 'on' : ''} onClick={() => setScope('band')}>{base.ageBandLabel} 또래</button>
-          </div>
-
           {me && (aboveN.length > 0 || belowN.length > 0) && (
             <section className="fm-card">
               <h2 className="fm-section-title">내 주변 순위</h2>
@@ -243,6 +247,31 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
         </>
       )}
 
+      {board === 'peer' && (
+        <>
+          <section className="fm-rank-hero">
+            <p className="fm-rank-label">{peer ? `${peer.ageLabel} 중 내 순위` : '집계 중…'}</p>
+            <div className="fm-rank-top">
+              <span className="fm-rank-pct">{peer && peer.percentile != null ? `상위 ${peer.percentile}%` : (peer && peer.position != null ? `${peer.position.toLocaleString()}위` : '집계 중…')}</span>
+            </div>
+            {peer && peer.position != null
+              ? <p className="fm-rank-line">{peer.ageLabel} {peer.total.toLocaleString()}명 중 <b>{peer.position.toLocaleString()}위</b> · {earliest ? `${earliest}세 파이어 가능` : '아직 파이어 어려움'}</p>
+              : <p className="fm-rank-line">{earliest ? `${earliest}세 파이어 가능` : '계산하면 내 또래 순위가 나와요'}</p>}
+            {peer && peer.scope === 'band'
+              ? <p className="fm-rank-climb">아직 같은 나이 표본이 적어 <b>{peer.ageLabel}</b> 기준이에요 · 같은 나이가 모이면 자동으로 좁혀져요</p>
+              : peer && peer.scope === 'age' && peer.position > 1
+                ? <p className="fm-rank-climb">1위까지 <b>{(peer.position - 1).toLocaleString()}명</b> · 조건 바꾸면 등수가 올라가요</p>
+                : peer && peer.scope === 'age' && peer.position === 1
+                  ? <p className="fm-rank-climb">{peer.ageLabel} 중 전체 1위예요! 🔥</p>
+                  : null}
+          </section>
+          <section className="fm-card fm-nick">
+            <button type="button" className="fm-nick-reg" onClick={saveNick} disabled={saving}>{saving ? '등록 중' : saved ? '등록됨 ✓' : '내 이름으로 랭킹에 올리기'}</button>
+            <small>카카오로 로그인하거나 닉네임을 정하면 내 이름으로 올라가요. 익명이면 '알뜰한 너구리'처럼 자동 별명이 붙어요.</small>
+          </section>
+        </>
+      )}
+
       {board === 'cohort' && (
         <section className="fm-rank-hero">
           <p className="fm-rank-label">{cohortTitle}</p>
@@ -265,7 +294,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
         {board === 'cohort' && cohortScope && (
           <p className="fm-section-sub"><b>{COHORT_SCOPE_WORD[cohortScope]}</b> 기준{cohortScope !== 'cohort' ? ' · 목표나이 기록이 더 쌓이면 같은 목표끼리 좁혀져요' : ''}</p>
         )}
-        {board !== 'fire' && (
+        {board !== 'fire' && board !== 'peer' && (
           myBoardValue() > 0
             ? <p className="fm-save-myrank">내 기록 <b>{fmtMyVal(myBoardValue())}</b> · {inTop ? '상위 10위 안에 있어요 🎉' : '아직 10위권 밖 — 더 기록하면 올라가요'}</p>
             : <p className="fm-save-myrank">이 보드엔 아직 내 기록이 없어요 · ‘저축’ 탭에서 기록하면 올라가요</p>
@@ -286,9 +315,9 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
         </ol>
       </section>
 
-      {board === 'fire' && <CommunityPeek onMove={onMove} />}
+      {(board === 'fire' || board === 'peer') && <CommunityPeek onMove={onMove} />}
 
-      <button type="button" className="fm-city-cta" onClick={() => onMove(board === 'fire' ? 'experiment' : 'save')}>{board === 'fire' ? '조건 바꿔 순위 올리기' : '저축 기록하러 가기'}</button>
+      <button type="button" className="fm-city-cta" onClick={() => onMove(board === 'fire' || board === 'peer' ? 'experiment' : 'save')}>{board === 'fire' || board === 'peer' ? '조건 바꿔 순위 올리기' : '저축 기록하러 가기'}</button>
     </main>
   );
 }

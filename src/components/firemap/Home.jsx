@@ -44,8 +44,10 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
     : '';
   const setClamp = (v) => setAge(Math.max(19, Math.min(80, v)));
 
-  const loggedIn = !!(account() && account().handle);
-  if (latest && loggedIn) return <FirePlan simulation={simulation} onMove={onMove} onChange={onChange} asHome />;
+  // 계산 이력이 있으면 재방문 시 홈을 '파이어 플랜 대시보드'로. (로그인 여부 무관 — 기록은 로컬에 있고,
+  // 로그인은 대시보드 안 fm-acct-bar에서 '기록 지키기'로 유도해 발견→로그인 동선을 만든다.)
+  // 단, 친구 공유로 들어온 도전(challenge) 방문은 랜딩+도전 카드를 그대로 보여준다.
+  if (latest && !challenge) return <FirePlan simulation={simulation} onMove={onMove} onChange={onChange} asHome />;
 
   return (
     <main className="fm-screen fm-home-v3 fm-has-tabbar">

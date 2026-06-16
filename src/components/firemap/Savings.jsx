@@ -4,6 +4,7 @@ import { identityIds, accountHandle, account } from '../../utils/identity.js';
 import DepositCard from './DepositCard.jsx';
 import DepositCalendar from './DepositCalendar.jsx';
 import PetCard from './PetCard.jsx';
+import WeeklyBoard from './WeeklyBoard.jsx';
 import { pushState, pullKey } from '../../utils/firemapStateApi.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { funHandle } from '../../firemap-v2/funName.js';
@@ -275,6 +276,8 @@ export default function Savings({ simulation, onMove }) {
       </section>
 
       <DepositCalendar storageKey="fm_save" field="daily" label="절약" />
+
+      <WeeklyBoard />
 
       <section className="fm-card">
         <p className="fm-kicker">오늘의 절약 랭킹 🏆</p>

@@ -219,6 +219,22 @@ export async function fetchCohortAdvanceBoard(ageBand, tLo, tHi, limit = 10, cur
   }
 }
 
+// 이번 주(월~) 절약(today_saved) 합산 주간 랭킹 — RPC 호출, 월요일 리셋
+export async function fetchWeeklySaveBoard(limit = 10) {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/fm_weekly_save_board`, {
+      method: 'POST',
+      headers: headers(),
+      body: JSON.stringify({ p_limit: limit })
+    });
+    if (!res.ok) return [];
+    const rows = await res.json();
+    return (rows || []).map((r) => ({ client_id: r.uid, nickname: r.nick, age_band: r.band, value: r.val }));
+  } catch {
+    return [];
+  }
+}
+
 // 오늘 기록자 중 내 순위
 export async function fetchMySaveRank(todaySaved) {
   try {

@@ -34,7 +34,7 @@ function countFromRange(res) {
 }
 
 // 오늘 내 절약 한 줄을 upsert (client_id + date 기준 갱신)
-export async function submitSave({ todaySaved, totalSaved, advancedDays, streak, nickname, ageBand, depositTotal, depositMonth, targetAge, goalPct }) {
+export async function submitSave({ todaySaved, totalSaved, advancedDays, streak, nickname, ageBand, depositTotal, depositMonth, targetAge, goalPct, currentAge }) {
   const cid = identityId();
   if (!cid) return false;
   const nick = (nickname || '').trim().slice(0, 16) || null;
@@ -48,6 +48,7 @@ export async function submitSave({ todaySaved, totalSaved, advancedDays, streak,
     nickname: nick,
     age_band: ageBand != null ? String(ageBand) : null,
     target_age: (targetAge != null && Number.isFinite(Number(targetAge))) ? Math.round(Number(targetAge)) : null,
+    current_age: (currentAge != null && Number.isFinite(Number(currentAge))) ? Math.round(Number(currentAge)) : null,
     goal_pct: (goalPct != null && Number.isFinite(Number(goalPct))) ? Math.max(0, Math.min(100, Math.round(Number(goalPct)))) : null,
     deposit_total: Math.max(0, Math.round(depositTotal || 0)),
     deposit_month: Math.max(0, Math.round(depositMonth || 0)),
@@ -61,13 +62,18 @@ export async function submitSave({ todaySaved, totalSaved, advancedDays, streak,
   try {
     let res = await post(body);
     if (!res.ok) {
+      // current_age 컬럼 미존재(구 DB) 보존 폴백
+      const { current_age, ...noAge } = body;
+      res = await post(noAge);
+    }
+    if (!res.ok) {
       // goal_pct 컬럼 마이그레이션 전이면 빼고 재시도
-      const { goal_pct, ...noGoal } = body;
+      const { goal_pct, current_age, ...noGoal } = body;
       res = await post(noGoal);
     }
     if (!res.ok) {
       // 적립 컬럼(deposit_*) 마이그레이션 전이면 해당 필드 빼고 재시도 → 절약 저장은 항상 성공
-      const { deposit_total, deposit_month, goal_pct, ...rest } = body;
+      const { deposit_total, deposit_month, goal_pct, current_age, ...rest } = body;
       res = await post(rest);
     }
     return res.ok;

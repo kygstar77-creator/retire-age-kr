@@ -145,7 +145,7 @@ export async function reportBoard(simulation) {
       const tgtAsset = Math.round((simulation && simulation.requiredFireAssetByFourPercent) || 0);
       if (tgtAsset > 0) goalPct = Math.max(0, Math.min(100, Math.round((curAsset / tgtAsset) * 100)));
     } catch { /* ignore */ }
-    await submitSave({ todaySaved, totalSaved, advancedDays: okCalc ? p.advanceDays : null, streak, nickname: nick, ageBand: band, depositTotal: depTotal, depositMonth: p.monthDeposit, targetAge: (simulation && simulation.inputs) ? simulation.inputs.targetRetirementAge : null, goalPct: okCalc ? goalPct : null });
+    await submitSave({ todaySaved, totalSaved, advancedDays: okCalc ? p.advanceDays : null, streak, nickname: nick, ageBand: band, depositTotal: depTotal, depositMonth: p.monthDeposit, targetAge: (simulation && simulation.inputs) ? simulation.inputs.targetRetirementAge : null, goalPct: okCalc ? goalPct : null, currentAge: (simulation && simulation.inputs) ? simulation.inputs.currentAge : null });
     await updateScoreAdvance(okCalc ? Math.max(0, p.advanceDays) : 0);
   } catch { /* ignore */ }
 }

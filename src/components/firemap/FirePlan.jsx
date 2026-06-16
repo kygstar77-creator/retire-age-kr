@@ -3,6 +3,9 @@ import Header from './Header.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { getAssetHistory, logAsset } from '../../utils/assetHistory.js';
 import { getLatestRank } from '../../firemap-v2/rankHistory.js';
+import { fetchPeerBoard } from '../../utils/firemapScoresApi.js';
+import { ageBandOf } from '../../firemap-v2/stats.js';
+import { computeProgress, hasCalculated } from '../../utils/savingsEngine.js';
 import InstallButton from './InstallButton.jsx';
 import { account } from '../../utils/identity.js';
 
@@ -36,7 +39,7 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
   const earliest = simulation.earliestRetirementAge;
   const pct = target > 0 ? Math.max(0, Math.min(100, Math.round((asset / target) * 100))) : 0;
 
-  // 목표(사용자가 정한 목표 파이어 나이) = 기준선, 예상(지금 궤도) = 현재 위치. 자산 '목표 N억 중 M억'과 동일한 목표-기준 프레이밍.
+  // 목표(사용자가 정한 목표 파이어 나이) = 기준선, 예상(지금 권도) = 현재 위치. 자산 '목표 N억 중 M억'과 동일한 목표-기준 프레이밍.
   const targetAge = Number(inp.targetRetirementAge) || 0;
   const ageGap = earliest != null ? earliest - targetAge : null;
   const gapDir = ageGap == null ? '' : ageGap > 0 ? 'behind' : ageGap < 0 ? 'ahead' : 'even';
@@ -46,8 +49,23 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
   const [hist, setHist] = useState(getAssetHistory);
   const [editing, setEditing] = useState(false);
   const [val, setVal] = useState('');
+  // 홈 대시보드 '내 나이 순위' 타일 — 앱 사용자 실제 등수(통계 추정 아님). 랭킹 '내 나이 순위' 탭과 같은 fetchPeerBoard 사용 → 숫자 일치.
+  const [peerRank, setPeerRank] = useState(null);
 
   useEffect(() => { if (asset > 0) setHist(logAsset(asset)); /* eslint-disable-next-line */ }, []);
+  useEffect(() => {
+    if (!asHome) return undefined;
+    let alive = true;
+    (async () => {
+      try {
+        const adv = hasCalculated() ? Math.max(0, computeProgress(simulation).advanceDays) : 0;
+        const pr = await fetchPeerBoard({ currentAge: inp.currentAge, ageBand: ageBandOf(inp.currentAge), earliestAge: earliest, advancedDays: adv });
+        if (alive) setPeerRank(pr);
+      } catch { /* ignore */ }
+    })();
+    return () => { alive = false; };
+    // eslint-disable-next-line
+  }, [asHome, earliest, inp.currentAge]);
 
   const prev = hist.length >= 2 ? hist[hist.length - 2].v : null;
   const mom = prev != null ? asset - prev : null;
@@ -81,7 +99,7 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
             <span className="fm-acct-bar-ic">{acc && acc.handle ? '👤' : '🔒'}</span>
             {acc && acc.handle
               ? <span className="fm-acct-bar-tx"><b>{acc.handle}</b><em>기록이 안전하게 이어져요</em></span>
-              : <span className="fm-acct-bar-tx"><b>로그인하고 내 기록 지키기</b><em>기기 바꿔도 그대로 이어져요</em></span>}
+              : <span className="fm-acct-bar-tx"><b>로그인하고 내 기록 지키기</b><em>기기 바귫도 그대로 이어져요</em></span>}
             <span className="fm-acct-bar-go">{acc && acc.handle ? '관리 ›' : '로그인 ›'}</span>
           </button>
         );
@@ -93,7 +111,7 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
             <div className="fm-plan-ring-in"><b>{pct}%</b><span>달성</span></div>
           </div>
           <div className="fm-plan-meta">
-            <small>{targetAge ? `목표 ${targetAge}세 · 지금 궤도` : '예상 파이어'}</small>
+            <small>{targetAge ? `목표 ${targetAge}세 · 지금 권도` : '예상 파이어'}</small>
             <strong>{earliest ? `${earliest}세` : '계산 필요'}</strong>
             {earliest && gapText
               ? <p><b style={{ color: gapColor }}>{gapText}</b> · 목표 <b>{eok(target)}</b> 중 <b>{eok(asset)}</b></p>
@@ -118,7 +136,9 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
         const sv = readJSONsafe('fm_save');
         const totalSave = sv ? (sv.total || 0) : 0;
         const streak = sv ? (sv.streak || 0) : 0;
-        const rk = getLatestRank();
+        const rankNum = peerRank && peerRank.percentile != null
+          ? `상위 ${peerRank.percentile}%`
+          : (peerRank && peerRank.position != null ? `${peerRank.position.toLocaleString()}위` : '순위 보기');
         return (
           <div className="fm-sum-grid">
             <button type="button" className="fm-sum-tile" onClick={() => onMove('save')}>
@@ -127,9 +147,9 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
               <em>누적 절약 {won(totalSave)}{streak > 0 ? ` · ${streak}일 연속` : ''} ›</em>
             </button>
             <button type="button" className="fm-sum-tile" onClick={() => onMove('ranking')}>
-              <small>또래 랭킹</small>
-              <b>{rk && rk.percentile != null ? `상위 ${rk.percentile}%` : '순위 보기'}</b>
-              <em>전체 등수 보기 ›</em>
+              <small>내 나이 순위</small>
+              <b>{rankNum}</b>
+              <em>{peerRank ? `${peerRank.ageLabel} 중 · 등수 보기 ›` : '내 또래 등수 보기 ›'}</em>
             </button>
           </div>
         );

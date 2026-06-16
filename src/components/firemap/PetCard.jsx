@@ -6,10 +6,10 @@ import { fetchWeeklySaveBoard } from '../../utils/firemapSaveApi.js';
 import { fetchMyContribution } from '../../utils/firemapFeedbackApi.js';
 
 const COSMETICS = [
-  { cp: 1, name: '모자' },
-  { cp: 5, name: '안경' },
-  { cp: 15, name: '나비넥타이' },
-  { cp: 40, name: '꽃' }
+  { key: 'cap', name: '모자', emoji: '🧢', cp: 1 },
+  { key: 'glasses', name: '안경', emoji: '👓', cp: 5 },
+  { key: 'bowtie', name: '나비넥타이', emoji: '🎀', cp: 15 },
+  { key: 'flower', name: '꽃', emoji: '🌸', cp: 40 }
 ];
 
 const STYLE = `
@@ -27,13 +27,17 @@ const STYLE = `
 .fm-pet-cap b{color:#c2410c}
 .fm-pet-total{font-size:12px;color:#8a93a0;margin-top:6px}
 .fm-pet-evolve{margin-top:10px;background:#fff4e8;color:#c2410c;font-weight:800;border-radius:12px;padding:9px 12px;font-size:14px;animation:fmPetPop .6s ease}
+.fm-pet-wardrobe{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:10px}
+.fm-cos{border:1px solid #e5e7eb;background:#fff;border-radius:99px;padding:5px 11px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer}
+.fm-cos.on{background:#eaf1ff;border-color:#1d4ed8;color:#1d4ed8}
+.fm-cos.locked{color:#aab2bd;background:#f5f6f8;cursor:default}
 `;
 
 function Crown() {
   return <path d='M84 10 l9 18 17 -16 17 16 9 -18 -5 30 -42 0 z' fill='#ffd23f' stroke='#e0a92a' strokeWidth='2' strokeLinejoin='round' />;
 }
 
-function Raccoon({ idx, cp = 0 }) {
+function Raccoon({ idx, cos = {} }) {
   if (idx <= 0) {
     return (
       <g>
@@ -90,27 +94,27 @@ function Raccoon({ idx, cp = 0 }) {
           <path d='M180 150 l2.5 6 6 2.5 -6 2.5 -2.5 6 -2.5 -6 -6 -2.5 6 -2.5 z' />
         </g>
       )}
-      {cp >= 1 && idx < 5 && (
+      {cos.cap && idx < 5 && (
         <g>
           <path d='M74 54 Q110 24 146 54 Z' fill='#3b82f6' />
           <rect x='108' y='51' width='40' height='7' rx='3' fill='#2563eb' />
         </g>
       )}
-      {cp >= 5 && (
+      {cos.glasses && (
         <g fill='none' stroke='#2a333d' strokeWidth='2.5'>
           <circle cx='92' cy='90' r='13' />
           <circle cx='128' cy='90' r='13' />
           <path d='M105 90 h10' />
         </g>
       )}
-      {cp >= 15 && idx < 4 && (
+      {cos.bowtie && idx < 4 && (
         <g fill='#ef4444'>
           <path d='M110 128 l-16 -7 0 14 z' />
           <path d='M110 128 l16 -7 0 14 z' />
           <circle cx='110' cy='128' r='4' fill='#b91c1c' />
         </g>
       )}
-      {cp >= 40 && (
+      {cos.flower && (
         <g>
           <g fill='#f472b6'><circle cx='62' cy='40' r='5' /><circle cx='70' cy='36' r='5' /><circle cx='70' cy='44' r='5' /><circle cx='54' cy='36' r='5' /><circle cx='54' cy='44' r='5' /></g>
           <circle cx='62' cy='40' r='4' fill='#fde047' />
@@ -125,6 +129,7 @@ export default function PetCard() {
   const [evo, setEvo] = useState(null);
   const [weeklyRank, setWeeklyRank] = useState(null);
   const [cp, setCp] = useState(0);
+  const [equip, setEquip] = useState(() => { try { return JSON.parse(localStorage.getItem('fm_pet_equip') || '{}'); } catch { return {}; } });
   const seen = useRef(null);
 
   useEffect(() => {
@@ -167,9 +172,18 @@ export default function PetCard() {
     return () => { alive = false; };
   }, []);
 
+  const toggleEquip = (key) => setEquip((e) => {
+    const n = { ...e, [key]: e[key] === false ? true : false };
+    try { localStorage.setItem('fm_pet_equip', JSON.stringify(n)); } catch { /* ignore */ }
+    return n;
+  });
+
   const { idx, stage, next, pct, toNext, total } = pet;
   const rankMark = weeklyRank === 1 ? '👑' : weeklyRank === 2 ? '🥈' : weeklyRank === 3 ? '🥉' : '';
   const nextCos = COSMETICS.find((c) => cp < c.cp);
+  const cos = {};
+  COSMETICS.forEach((c) => { cos[c.key] = cp >= c.cp && equip[c.key] !== false; });
+  const anyUnlocked = COSMETICS.some((c) => cp >= c.cp);
   return (
     <section className='fm-card fm-petcard'>
       <style>{STYLE}</style>
@@ -177,7 +191,7 @@ export default function PetCard() {
       {weeklyRank && weeklyRank <= 3 && <p className='fm-pet-rank'>{rankMark} 이번 주 절약왕 {weeklyRank}위!</p>}
       <div className={`fm-pet-art${evo ? ' evo' : ''}`}>
         <svg viewBox='0 0 220 210' role='img' aria-label={stage.name}>
-          <Raccoon idx={idx} cp={cp} />
+          <Raccoon idx={idx} cos={cos} />
         </svg>
       </div>
       {next
@@ -190,6 +204,16 @@ export default function PetCard() {
         : <p className='fm-pet-cap'>최종 진화 완료 — 황금 너구리예요 ✨</p>}
       <p className='fm-pet-total'>{total > 0 ? <>지금까지 모은 누적 저축·절약 <b>{wonStr(total)}</b></> : '저축·절약을 기록하면 알이 부화해요'}</p>
       <p className='fm-pet-total'>{cp > 0 ? <>커뮤니티 기여 <b>{cp}</b>{nextCos ? ` · 다음 꼾미기 ‘${nextCos.name}’까지 ${nextCos.cp - cp}` : ' · 꼾미기 전부 획득 ✨'}</> : '커뮤니티에 글·공감이 쌓이면 펫 꼾미기를 얻어요'}</p>
+      {anyUnlocked && (
+        <div className='fm-pet-wardrobe'>
+          {COSMETICS.map((c) => {
+            const unlocked = cp >= c.cp;
+            if (!unlocked) return <span key={c.key} className='fm-cos locked'>🔒 {c.emoji} 기여 {c.cp}</span>;
+            const on = equip[c.key] !== false;
+            return <button type='button' key={c.key} className={`fm-cos${on ? ' on' : ''}`} onClick={() => toggleEquip(c.key)}>{c.emoji} {c.name}{on ? '' : ' ✕'}</button>;
+          })}
+        </div>
+      )}
       {evo && <div className='fm-pet-evolve'>🎉 진화! <b>{evo}</b>가 됐어요</div>}
     </section>
   );

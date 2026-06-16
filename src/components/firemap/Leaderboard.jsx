@@ -68,9 +68,15 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
       setTop(t); setMe(r); setAgg(a); setNeighbors(nb); setAssetPct(ap);
     } else if (board === 'peer') {
       setNeighbors(null); setMe(null);
-      const pr = await fetchPeerBoard({ currentAge: rs.inputs && rs.inputs.currentAge, ageBand: base.ageBand, earliestAge: earliest, advancedDays: myAdvance, limit: 10 });
+      const [pr, a, ap] = await Promise.all([
+        fetchPeerBoard({ currentAge: rs.inputs && rs.inputs.currentAge, ageBand: base.ageBand, earliestAge: earliest, advancedDays: myAdvance, limit: 10 }),
+        fetchAggregates(base.ageBand),
+        fetchAssetPercentile(base.ageBand, myBand)
+      ]);
       setPeer(pr);
       setTop(pr ? pr.top : []);
+      setAgg(a);
+      setAssetPct(ap);
     } else if (board === 'cohort') {
       setTop(null); setNeighbors(null);
       const tgt = Number(rs.inputs && rs.inputs.targetRetirementAge) || null;
@@ -193,7 +199,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
             </div>
             {me && <p className="fm-rank-line">{scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} {me.total.toLocaleString()}명 중 상위 {me.percentile}% · {earliest ? `${earliest}세 파이어 가능` : '아직 파이어 어려움'}</p>}
             {me && (me.position > 1
-              ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 파이어 나이가 빠를수록 위로, <b>파이어 나이가 같으면 저축 많이 한 사람이 위</b>예요</p>
+              ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 파이어 나이가 빨를수록 위로, <b>파이어 나이가 같으면 저축 많이 한 사람이 위</b>예요</p>
               : <p className="fm-rank-climb">지금 전체 1등! 매일 저축해서 자리를 지켜요 🔥</p>)}
           </section>
 
@@ -229,13 +235,13 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
 
           {agg && agg.total > 0 && (
             <section className="fm-card fm-stats">
-              <h2 className="fm-section-title">파이어맵 현황</h2>
-              <p className="fm-section-sub">{scope === 'band' ? `${base.ageBandLabel} 또래끼리 비교한 익명 집계예요` : '지금까지 함께 계산한 모두의 익명 집계예요'}</p>
+              <h2 className="fm-section-title">통계 현황</h2>
+              <p className="fm-section-sub">지금까지 함께 계산한 모두의 익명 집계예요</p>
               <div className="fm-stats-grid">
-                <div><small>{scope === 'band' ? `${scopeWord}` : '함께 계산'}</small><b>{agg.total.toLocaleString()}명</b></div>
-                {agg.avgEarliest != null && <div><small>{scopeWord} 평균 파이어</small><b>{agg.avgEarliest}세</b></div>}
-                {agg.avgEarliest != null && earliest && <div><small>{scopeWord} 대비 나</small><b>{agg.avgEarliest - earliest === 0 ? '평균과 같음' : `${Math.abs(agg.avgEarliest - earliest)}년 ${agg.avgEarliest - earliest > 0 ? '빠름' : '느림'}`}</b></div>}
-                {assetPct && <div><small>{scopeWord} 중 자산</small><b>상위 {assetPct.percentile}%</b></div>}
+                <div><small>함께 계산</small><b>{agg.total.toLocaleString()}명</b></div>
+                {agg.avgEarliest != null && <div><small>전체 평균 파이어</small><b>{agg.avgEarliest}세</b></div>}
+                {agg.avgEarliest != null && earliest && <div><small>전체 대비 나</small><b>{agg.avgEarliest - earliest === 0 ? '평균과 같음' : `${Math.abs(agg.avgEarliest - earliest)}년 ${agg.avgEarliest - earliest > 0 ? '빠름' : '느림'}`}</b></div>}
+                {assetPct && <div><small>전체 중 자산</small><b>상위 {assetPct.percentile}%</b></div>}
               </div>
             </section>
           )}
@@ -265,6 +271,20 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
                   ? <p className="fm-rank-climb">{peer.ageLabel} 중 전체 1위예요! 🔥</p>
                   : null}
           </section>
+
+          {agg && agg.total > 0 && (
+            <section className="fm-card fm-stats">
+              <h2 className="fm-section-title">또래 비교</h2>
+              <p className="fm-section-sub">{base.ageBandLabel} 또래끼리 비교한 익명 집계예요</p>
+              <div className="fm-stats-grid">
+                <div><small>{base.ageBandLabel} 또래</small><b>{agg.total.toLocaleString()}명</b></div>
+                {agg.avgEarliest != null && <div><small>{base.ageBandLabel} 평균 파이어</small><b>{agg.avgEarliest}세</b></div>}
+                {agg.avgEarliest != null && earliest && <div><small>또래 대비 나</small><b>{agg.avgEarliest - earliest === 0 ? '평균과 같음' : `${Math.abs(agg.avgEarliest - earliest)}년 ${agg.avgEarliest - earliest > 0 ? '빠름' : '느림'}`}</b></div>}
+                {assetPct && <div><small>{base.ageBandLabel} 중 자산</small><b>상위 {assetPct.percentile}%</b></div>}
+              </div>
+            </section>
+          )}
+
           <section className="fm-card fm-nick">
             <button type="button" className="fm-nick-reg" onClick={saveNick} disabled={saving}>{saving ? '등록 중' : saved ? '등록됨 ✓' : '내 이름으로 랭킹에 올리기'}</button>
             <small>카카오로 로그인하거나 닉네임을 정하면 내 이름으로 올라가요. 익명이면 '알뜰한 너구리'처럼 자동 별명이 붙어요.</small>

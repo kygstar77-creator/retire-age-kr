@@ -187,6 +187,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
           <button type="button" key={b.key} className={board === b.key ? 'on' : ''} onClick={() => setBoard(b.key)}>{b.label}</button>
         ))}
       </div>
+      <p style={{ textAlign: 'center', fontSize: '12px', color: '#9a3412', background: '#fff7ed', border: '1px solid #fed7aa', borderRadius: '10px', padding: '7px 12px', margin: '0 0 10px' }}>✋ 모든 순위는 사용자가 직접 입력한 기록 기반이에요 — 서로 양심껏 기록해요</p>
       {board === 'save' && (
         <div className="fm-scope-toggle">
           <button type="button" className={saveMetric === 'total' ? 'on' : ''} onClick={() => setSaveMetric('total')}>누적</button>

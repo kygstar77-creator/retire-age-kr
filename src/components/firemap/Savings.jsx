@@ -3,6 +3,7 @@ import Header from './Header.jsx';
 import { identityIds, accountHandle, account } from '../../utils/identity.js';
 import DepositCard from './DepositCard.jsx';
 import DepositCalendar from './DepositCalendar.jsx';
+import PetCard from './PetCard.jsx';
 import { pushState, pullKey } from '../../utils/firemapStateApi.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { funHandle } from '../../firemap-v2/funName.js';
@@ -116,7 +117,7 @@ export default function Savings({ simulation, onMove }) {
       if (adLabel) u.searchParams.set('ad', adLabel);
       url = u.toString();
     } catch { url = 'https://firemap.kr/'; }
-    const text = adLabel ? `절약으로 파이어를 ${adLabel} 앞당겼어요 🔥 나도 해보기` : '아낀 돈으로 파이어 앞당기기 🔥 나도 해보기';
+    const text = adLabel ? `절약으로 파이어를 ${adLabel} 앞당겨어요 🔥 나도 해보기` : '아낀 돈으로 파이어 앞당기기 🔥 나도 해보기';
     if (navigator.share) {
       try { await navigator.share({ title: '파이어맵 — 오늘의 절약', text, url }); track('share', { type: 'save' }); track('share_link_copy', { type: 'save' }); return; }
       catch (e) { if (e && e.name === 'AbortError') return; }
@@ -139,6 +140,7 @@ export default function Savings({ simulation, onMove }) {
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="저축" />
+      <PetCard />
       <p className="fm-daily-wisdom">“{quote}”</p>
       {showSaveNudge && (
         <div className="fm-save-nudge">
@@ -171,7 +173,7 @@ export default function Savings({ simulation, onMove }) {
             {prog.atGoal
               ? <p className="fm-fireclock-delta">🎉 이미 목표 자산을 넘었어요</p>
               : adv >= TH
-                ? <p className="fm-fireclock-delta">⏱️ {src} <b>{fmtMin(adv * 86400)}</b> 앞당겼어요</p>
+                ? <p className="fm-fireclock-delta">⏱️ {src} <b>{fmtMin(adv * 86400)}</b> 앞당겨어요</p>
                 : adv <= -TH
                   ? <p className="fm-fireclock-delta behind">적립이 계획보다 부족해 <b>{fmtMin(Math.abs(adv) * 86400)}</b> 밀렸어요</p>
                   : <p className="fm-fireclock-delta neutral">계획대로 가는 중 · 절약하면 앞당겨져요</p>}
@@ -276,7 +278,7 @@ export default function Savings({ simulation, onMove }) {
 
       <section className="fm-card">
         <p className="fm-kicker">오늘의 절약 랭킹 🏆</p>
-        <p className="fm-section-sub">오늘 가장 많이 아낀 사람들이에요 · 매일 새로 시작해요</p>
+        <p className="fm-section-sub">오늘 가장 많이 아낌 사람들이에요 · 매일 새로 시작해요</p>
         {rank && <p className="fm-save-myrank">오늘 내 절약 <b>{wonStr(todaySaved)}</b> · {rank.total.toLocaleString()}명 중 <b>{rank.position.toLocaleString()}위</b></p>}
         <ol className="fm-lb-list">
           {top === null && <li className="fm-lb-empty">불러오는 중…</li>}

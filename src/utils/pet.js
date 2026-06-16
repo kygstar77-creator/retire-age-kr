@@ -5,7 +5,7 @@ const readJSON = (k) => { try { return JSON.parse(localStorage.getItem(k) || 'nu
 export const PET_STAGES = [
   { idx: 0, name: '너구리 알', min: 0 },
   { idx: 1, name: '아기 너구리', min: 10000 },
-  { idx: 2, name: '꾬마 너구리', min: 100000 },
+  { idx: 2, name: '꼬마 너구리', min: 100000 },
   { idx: 3, name: '너구리', min: 500000 },
   { idx: 4, name: '알뜰 너구리', min: 2000000 },
   { idx: 5, name: '황금 너구리', min: 10000000 }

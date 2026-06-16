@@ -5,6 +5,8 @@ const ranges = {
   currentAge: [20, 70],
   targetRetirementAge: [30, 80],
   financialAsset: [0, 2000000000],
+  realEstateValue: [0, 3000000000],
+  debt: [0, 1000000000],
   monthlyInvestment: [0, 20000000],
   monthlyLivingCost: [500000, 20000000],
   annualReturnRate: [0, 30],
@@ -21,6 +23,8 @@ const ranges = {
 // 돈 필드별 빠른 가산 칩 (타이핑 최소화, 상한 없음)
 const chipSets = {
   financialAsset: [10000000, 100000000, 1000000000],
+  realEstateValue: [100000000, 500000000, 1000000000],
+  debt: [10000000, 100000000],
   monthlyInvestment: [100000, 500000, 1000000],
   monthlyLivingCost: [100000, 500000, 1000000],
   improvedCost: [100000, 500000, 1000000],
@@ -57,7 +61,7 @@ export default function RangeControl({ label, value, onChange, step = 1, type = 
   const isMoney = type === 'money';
   const upperClamp = isMoney ? Infinity : max; // 돈은 직접 입력 시 상한 제거
   const stored = Math.max(min, Math.min(upperClamp, numeric)); // 표시용 실제 값(돈은 상한 없음)
-  const sliderValue = Math.max(min, Math.min(max, numeric)); // 슬라이더 썸 위치(범위 내)
+  const sliderValue = Math.max(min, Math.min(max, numeric)); // 슬라이더 썬 위치(범위 내)
   const percent = max > min ? ((sliderValue - min) / (max - min)) * 100 : 0;
   const overMax = isMoney && numeric > max;
   const chips = chipSets[inputKey] || [];

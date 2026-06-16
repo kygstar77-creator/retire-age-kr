@@ -199,7 +199,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
             </div>
             {me && <p className="fm-rank-line">{scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} {me.total.toLocaleString()}명 중 상위 {me.percentile}% · {earliest ? `${earliest}세 파이어 가능` : '아직 파이어 어려움'}</p>}
             {me && (me.position > 1
-              ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 파이어 나이가 빨를수록 위로, <b>파이어 나이가 같으면 저축 많이 한 사람이 위</b>예요</p>
+              ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 파이어 나이가 빠를수록 위로, <b>파이어 나이가 같으면 저축 많이 한 사람이 위</b>예요</p>
               : <p className="fm-rank-climb">지금 전체 1등! 매일 저축해서 자리를 지켜요 🔥</p>)}
           </section>
 
@@ -247,7 +247,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
           )}
 
           <section className="fm-card fm-nick">
-            <button type="button" className="fm-nick-reg" onClick={saveNick} disabled={saving}>{saving ? '등록 중' : saved ? '등록됨 ✓' : '내 등수 랭킹에 올리기'}</button>
+            <button type="button" className="fm-nick-reg" onClick={saveNick} disabled={saving}>{saving ? '등록 중' : saved ? '등록됨 ✓' : '내 닉네임으로 랭킹에 올리기'}</button>
             <small>카카오로 로그인하거나 닉네임을 정하면 내 이름으로 올라가요. 익명이면 '알뜰한 너구리'처럼 자동 별명이 붙어요.</small>
           </section>
         </>
@@ -286,7 +286,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
           )}
 
           <section className="fm-card fm-nick">
-            <button type="button" className="fm-nick-reg" onClick={saveNick} disabled={saving}>{saving ? '등록 중' : saved ? '등록됨 ✓' : '내 이름으로 랭킹에 올리기'}</button>
+            <button type="button" className="fm-nick-reg" onClick={saveNick} disabled={saving}>{saving ? '등록 중' : saved ? '등록됨 ✓' : '내 닉네임으로 랭킹에 올리기'}</button>
             <small>카카오로 로그인하거나 닉네임을 정하면 내 이름으로 올라가요. 익명이면 '알뜰한 너구리'처럼 자동 별명이 붙어요.</small>
           </section>
         </>

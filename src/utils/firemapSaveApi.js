@@ -158,6 +158,53 @@ export async function fetchCohortSaveBoard(ageBand, targetAge, limit = 10) {
   }
 }
 
+// 코호트(같은 나이밴드·목표나이 버킷) '파이어 당김(advanced_days)' 리더보드 — 프론트 정렬.
+// 같은 또래+목표끼리 "누가 파이어를 더 많이 당겼나"로 공평 비교. 절대 저축액(목표 크기에 오염)이 아니라
+// 계획 대비 당긴 일수가 단위. 인원이 적으면 나이밴드→전체로 자동 폴백(scope 표기).
+export async function fetchCohortAdvanceBoard(ageBand, tLo, tHi, limit = 10) {
+  const sel = 'select=client_id,nickname,advanced_days,age_band,target_age,goal_pct,date';
+  const dedupeLatest = (rows) => {
+    const seen = new Set();
+    const out = [];
+    for (const r of rows) {
+      if (seen.has(r.client_id)) continue;
+      seen.add(r.client_id);
+      out.push({
+        client_id: r.client_id,
+        nickname: r.nickname,
+        value: Number(r.advanced_days) || 0,
+        age_band: r.age_band,
+        target_age: r.target_age,
+        goalPct: r.goal_pct != null ? Number(r.goal_pct) : null
+      });
+    }
+    out.sort((a, b) => (b.value || 0) - (a.value || 0));
+    return out.slice(0, limit);
+  };
+  const q = async (filter) => {
+    const url = `${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&advanced_days=gt.0${filter ? `&${filter}` : ''}&order=date.desc&limit=600`;
+    const res = await fetch(url, { method: 'GET', headers: headers() });
+    return res.ok ? await res.json() : [];
+  };
+  try {
+    // 1) cohort: 같은 나이밴드 + 같은 목표나이 버킷
+    if (ageBand != null && tLo != null && tHi != null) {
+      const rows = dedupeLatest(await q(`age_band=eq.${encodeURIComponent(String(ageBand))}&target_age=gte.${tLo}&target_age=lte.${tHi}`));
+      if (rows.length >= 3) return rows.map((r) => ({ ...r, scope: 'cohort' }));
+    }
+    // 2) age: 같은 나이밴드만
+    if (ageBand != null) {
+      const rows = dedupeLatest(await q(`age_band=eq.${encodeURIComponent(String(ageBand))}`));
+      if (rows.length >= 3) return rows.map((r) => ({ ...r, scope: 'age' }));
+    }
+    // 3) all: 전체
+    const rows = dedupeLatest(await q(''));
+    return rows.map((r) => ({ ...r, scope: 'all' }));
+  } catch {
+    return [];
+  }
+}
+
 // 오늘 기록자 중 내 순위
 export async function fetchMySaveRank(todaySaved) {
   try {

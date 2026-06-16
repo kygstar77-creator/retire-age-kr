@@ -3,7 +3,7 @@ import Header from './Header.jsx';
 import { identityIds, accountHandle } from '../../utils/identity.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { fetchTopScores, fetchUserRank, submitScore, fetchAggregates, fetchNeighbors, fetchAssetPercentile, assetBandOf } from '../../utils/firemapScoresApi.js';
-import { fetchSaveBoard, fetchCohortSaveBoard } from '../../utils/firemapSaveApi.js';
+import { fetchSaveBoard, fetchCohortAdvanceBoard } from '../../utils/firemapSaveApi.js';
 import { displayName } from '../../firemap-v2/funName.js';
 import { wonStr, fmtAdvance, readJSON, todayStr } from '../../firemap-v2/dailyData.js';
 import { computeProgress, hasCalculated, reportBoard } from '../../utils/savingsEngine.js';
@@ -22,7 +22,7 @@ const BOARDS = [
 ];
 const SUBS = {
   fire: '파이어 가능 나이가 빠른 순 · 나이가 같으면 저축 많이 한 사람이 위',
-  cohort: '나랑 비슷한 또래끼리 누적 저축 순위 — 같은 나이·파이어 목표끼리 비교',
+  cohort: '같은 나이·목표 또래끼리 — 저축·절약으로 파이어를 더 많이 당긴 순 (절대 저축액이 아니라 공평)',
   advance: '적립·절약으로 파이어를 가장 많이 앞당긴 순',
   deposit: '이번 달 실제 적립이 많은 순 · 매월 새로 시작',
   save: '아껴서 모은 돈 랭킹'
@@ -65,7 +65,10 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
       setTop(t); setMe(r); setAgg(a); setNeighbors(nb); setAssetPct(ap);
     } else if (board === 'cohort') {
       setTop(null); setNeighbors(null);
-      const rows = await fetchCohortSaveBoard(base.ageBand, rs.inputs.targetRetirementAge, 10);
+      const tgt = Number(rs.inputs && rs.inputs.targetRetirementAge) || null;
+      const lo = tgt != null ? Math.floor(tgt / 5) * 5 : null;
+      const hi = lo != null ? lo + 4 : null;
+      const rows = await fetchCohortAdvanceBoard(base.ageBand, lo, hi, 10);
       setTop(rows);
       setCohortScope(rows && rows.length ? rows[0].scope : null);
     } else {
@@ -107,7 +110,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
 
   const rowValue = (row) => {
     if (board === 'fire') return row.earliest_age ? `${row.earliest_age}세 파이어` : '—';
-    if (board === 'advance') return (fmtAdvance((Number(row.value) || 0) * 86400) || '0초') + ' 앞당김';
+    if (board === 'advance' || board === 'cohort') return (fmtAdvance((Number(row.value) || 0) * 86400) || '0초') + ' 앞당김';
     if (board === 'save' && saveMetric === 'streak') return `${row.value || 0}일`;
     return wonStr(row.value || 0);
   };
@@ -115,7 +118,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
   // 저축 계열 보드: 내 기록(로컬 기준) — top 10 밖이어도 내 숫자가 보이게
   const myBoardValue = () => {
     const sv = readJSON('fm_save') || {};
-    if (board === 'cohort') return sv.total || 0;
+    if (board === 'cohort') return hasCalculated() ? Math.max(0, computeProgress(simulation).advanceDays) : 0;
     if (board === 'save') {
       if (saveMetric === 'today') return sv.lastDate === todayStr() ? (sv.today || 0) : 0;
       if (saveMetric === 'streak') return sv.streak || 0;
@@ -126,7 +129,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
     return 0;
   };
   const fmtMyVal = (v) => {
-    if (board === 'advance') return (fmtAdvance(v * 86400) || '0초') + ' 앞당김';
+    if (board === 'advance' || board === 'cohort') return (fmtAdvance(v * 86400) || '0초') + ' 앞당김';
     if (board === 'save' && saveMetric === 'streak') return `${v}일`;
     return wonStr(v);
   };
@@ -146,18 +149,11 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
   const belowN = rawBelow.slice(0, bWant);
   const nearAbove = aboveN.length ? aboveN[aboveN.length - 1] : null;
 
-  // 코호트(목표 라이벌) 정보 — 나이·목표나이 표시 + 목표 달성률(자산/목표자산)
+  // 코호트(목표 라이벌) 정보 — 나이·목표나이 표시
   const myAge = Number(rs.inputs && rs.inputs.currentAge) || null;
   const myTarget = Number(rs.inputs && rs.inputs.targetRetirementAge) || null;
   const tLo = myTarget != null ? Math.floor(myTarget / 5) * 5 : null;
   const tHi = tLo != null ? tLo + 4 : null;
-  const myGoalPct = (() => {
-    const a = Number(simulation.inputs && simulation.inputs.financialAsset) || 0;
-    const t = Math.round((simulation && simulation.requiredFireAssetByFourPercent) || 0);
-    return t > 0 ? Math.max(0, Math.min(100, Math.round((a / t) * 100))) : null;
-  })();
-  const goalRows = (top || []).filter((r) => r && r.goalPct != null);
-  const cohortAvgGoal = goalRows.length ? Math.round(goalRows.reduce((a, r) => a + r.goalPct, 0) / goalRows.length) : null;
   const cohortTitle = cohortScope === 'cohort'
     ? `${base.ageBandLabel} · 목표 ${tLo}~${tHi}세 라이벌`
     : cohortScope === 'age' ? `${base.ageBandLabel} 또래` : '전체 파이어족';
@@ -251,15 +247,15 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
         <section className="fm-rank-hero">
           <p className="fm-rank-label">{cohortTitle}</p>
           <div className="fm-rank-top">
-            <span className="fm-rank-pct">{myGoalPct != null ? `${myGoalPct}%` : '–'}</span>
-            <span className="fm-rank-badge">내 목표 달성</span>
+            <span className="fm-rank-pct">{myAdvance > 0 ? (fmtAdvance(myAdvance * 86400) || '0초') : '0초'}</span>
+            <span className="fm-rank-badge">내 파이어 당김</span>
           </div>
           <p className="fm-rank-line">
-            {myAge != null ? `나 ${myAge}세` : '나'}{myTarget != null ? ` · 목표 ${myTarget}세 파이어` : ''} · 누적 저축 {wonStr((readJSON('fm_save') || {}).total || 0)}
+            {myAge != null ? `나 ${myAge}세` : '나'}{myTarget != null ? ` · 목표 ${myTarget}세 파이어` : ''}
           </p>
-          {cohortAvgGoal != null
-            ? <p className="fm-rank-climb">또래 평균 목표 달성 <b>{cohortAvgGoal}%</b> · {myGoalPct == null ? '계산하면 내 달성률이 표시돼요' : myGoalPct >= cohortAvgGoal ? `나는 평균보다 ${myGoalPct - cohortAvgGoal}%p 앞서요 🔥` : `평균까지 ${cohortAvgGoal - myGoalPct}%p — 더 모아서 따라잡아요`}</p>
-            : <p className="fm-rank-climb">같은 나이·파이어 목표끼리 누가 더 모았나 — 매일 저축·절약하면 순위와 달성률이 올라가요. ‘저축’ 탭에서 기록하세요.</p>}
+          {myAdvance > 0
+            ? <p className="fm-rank-climb">같은 나이·목표 또래 중 누가 파이어를 더 많이 당겼나 — 저축·절약을 기록할수록 더 당겨져요 🔥</p>
+            : <p className="fm-rank-climb">아직 당긴 기록이 없어요. ‘저축’ 탭에서 적립·절약을 기록하면 파이어가 당겨지고 순위가 올라가요.</p>}
         </section>
       )}
 
@@ -282,7 +278,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
             return (
               <li key={i} className={`fm-lb-row${i < 3 ? ' top3' : ''}${mine ? ' me' : ''}`}>
                 <span className="fm-lb-rank">{medal(i)}</span>
-                <span className="fm-lb-who">{mine && acctHandle ? acctHandle : displayName(row)}{mine ? ' (나)' : ''}{row.age_band ? ` · ${row.age_band}대` : ''}{board === 'cohort' && row.goalPct != null ? ` · 목표 ${row.goalPct}%` : ''}</span>
+                <span className="fm-lb-who">{mine && acctHandle ? acctHandle : displayName(row)}{mine ? ' (나)' : ''}{row.age_band ? ` · ${row.age_band}대` : ''}</span>
                 <span className="fm-lb-score">{rowValue(row)}</span>
               </li>
             );

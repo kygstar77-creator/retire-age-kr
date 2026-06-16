@@ -12,7 +12,6 @@ import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js
 import { FIRE_CITIES } from '../../firemap-v2/cities.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import { estimateLocalPremium } from '../../firemap-v2/healthInsurance.js';
-import FireStatus from './FireStatus.jsx';
 
 function ResultHeroV2({ simulation, rankingSimulation }) {
   const rs = rankingSimulation || simulation;
@@ -422,9 +421,8 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
         <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>🎛️ 수치 바꿔보기</button>
       </div>
       <button type="button" className="fm-rank-cta-other" onClick={shareOther}>🔗 링크 복사 · 다른 앱으로 공유</button>
-      <FireStatus simulation={simulation} onMove={onMove} />
-      <MoatCard simulation={simulation} onMove={onMove} />
       <AssetJourney simulation={simulation} />
+      <MoatCard simulation={simulation} onMove={onMove} />
       <TopLevers inputs={inputs} simulation={simulation} onChange={onChange} />
       <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />
       <NextActions onMove={onMove} />

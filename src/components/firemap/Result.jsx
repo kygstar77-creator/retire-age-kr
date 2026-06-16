@@ -322,7 +322,7 @@ function MoatCard({ simulation, onMove }) {
   return (
     <section className="fm-card fm-moat">
       <p className="fm-kicker">파이어 후 건보료·세금 점검</p>
-      <h2>파이어하면 건강보험이 지역가입자로 바뀌어요</h2>
+      <h2>파이어하면 건강보험이 지역가입자로 바뀐어요</h2>
       <p className="fm-moat-lead">직장을 그만두면 회사와 절반씩 내던 건보료를 <b>혼자</b> 내고, 소득·재산 기준 <b>지역가입자</b>로 전환돼 부담이 커질 수 있어요.</p>
       {est && (
         <div className="fm-moat-est">
@@ -418,7 +418,7 @@ export default function Result({ inputs, simulation, onMove, onChange, onEditFin
       <ResultSimTabs current="result" />
       <ResultHeroV2 simulation={simulation} />
       <div className="fm-rank-cta">
-        <button type="button" className="fm-rank-cta-share" onClick={shareRank}>앱 공유하기</button>
+        <button type="button" className="fm-rank-cta-share" onClick={shareRank}>친구에게 보내보기</button>
         <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>🎛️ 수치 바꿔보기</button>
       </div>
       <button type="button" className="fm-rank-cta-other" onClick={shareOther}>🔗 링크 복사 · 다른 앱으로 공유</button>

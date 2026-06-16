@@ -186,6 +186,7 @@ export default function Savings({ simulation, onMove }) {
           ? <>💰 <b>적립</b> = 실제로 투자·저축한 돈. <b>파이어 시점에 바로 반영</b>돼요.</>
           : <>✂️ <b>절약</b> = 안 쓴 돈으로 <b>파이어 시간을 사는 것</b>. 천 원 아끼면 그만큼 파이어가 당겨져요.</>}
       </p>
+      <p className="fm-save-explain" style={{ background: '#fff7ed', border: '1px solid #fed7aa', color: '#9a3412', fontWeight: 600 }}>🤝 랭킹·절약왕은 서로의 신뢰로 굴러가요 — 실제로 저축·절약한 만큼만 양심껏 기록해 주세요.</p>
       {saveView === 'deposit' && <DepositCard simulation={simulation} onMove={onMove} />}
       {saveView === 'deposit' && <DepositCalendar />}
       {saveView === 'deposit' && (

@@ -19,6 +19,7 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
   const [showTax, setShowTax] = useState(false);
   const [showPension, setShowPension] = useState(false);
   const [showReturns, setShowReturns] = useState(false);
+  const [showAssets, setShowAssets] = useState(false);
   const [saved, setSaved] = useState(false);
 
   const simulation = useMemo(() => buildScenario(draft, {}), [draft]);
@@ -35,6 +36,10 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
   const activeScenario = investmentScenarios.find((scenario) => scenario.annualReturnRate === draft.annualReturnRate);
   const investType = Number(draft.investType || 0);
   const grossDivAtRetire = Math.round((simulation.retirementFinancialAsset || draft.financialAsset || 0) * ((draft.dividendYield || 0) / 100));
+  const reVal = cleanNumber(draft.realEstateValue);
+  const debtVal = cleanNumber(draft.debt);
+  const netWorth = simulation.netWorth;
+  const hasAssetExtra = reVal > 0 || debtVal > 0;
 
   const PREVIEW_ONLY = ['investType', 'dividendYield'];
   // 샌드박스 슬라이더가 직접 바꾸는 핵심 값들. 이 값들이 (질문 재입력 등으로) 실제로 바뀐 경우에만 샌드박스를 새로 시드.
@@ -108,6 +113,19 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
             <p className="fm-range-note">부업 소득은 물가에 연동되지 않아요 — 매년 오르지 않는 고정 수입으로 계산해요. ‘파이어 후 현금흐름’ 도구의 ‘배당 인출 소득’은 이와 <b>별도 칸</b>으로 합산되며 설정한 성장률만큼 매년 늘어요.</p>
             <RangeControl label="물가 상승률(생활비 매년 증가)" value={draft.inflationRate} inputKey="inflationRate" type="percent" step={1} onChange={(next) => editDraft('inflationRate', next)} />
             <p className="fm-range-note">이 비율만큼 <strong>생활비·국민연금·건보료·해외 체류비</strong>가 매년 올라요. (부업 소득만 제외)</p>
+          </div>
+        )}
+        <button type="button" className="fm-advanced-toggle" onClick={() => setShowAssets((v) => !v)} aria-expanded={showAssets}>
+          부동산·부채 (순자산용) {(showAssets || hasAssetExtra) ? '▴' : '▾'}
+        </button>
+        {(showAssets || hasAssetExtra) && (
+          <div className="fm-advanced">
+            <RangeControl label="부동산" value={reVal} inputKey="realEstateValue" type="money" step={1000000} onChange={(next) => editDraft('realEstateValue', next)} />
+            <RangeControl label="부채" value={debtVal} inputKey="debt" type="money" step={1000000} onChange={(next) => editDraft('debt', next)} />
+            <p className="fm-sim-networth" style={{ margin: '8px 0 0', padding: '10px 12px', borderRadius: '10px', background: 'rgba(30,40,89,0.06)', fontSize: '13px', color: '#1e2859', fontWeight: 700 }}>
+              순자산 {formatWon(netWorth)} <span style={{ fontWeight: 500, color: 'var(--fm-muted, #6b6f76)' }}>(금융자산 + 부동산 − 부채)</span>
+            </p>
+            <p className="fm-range-note">부동산·부채는 <b>순자산·또래 비교</b>에만 반영돼요. 살고 있는 집은 매달 생활비를 못 만들어서 <b>파이어 가능 나이엔 영향이 없어요</b> — 그래서 위 ‘파이어 가능’ 숫자는 바뀌지 않아요.</p>
           </div>
         )}
       </section>

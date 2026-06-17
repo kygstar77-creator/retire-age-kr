@@ -20,6 +20,7 @@ import CityExplorer from './firemap/CityExplorer.jsx';
 import DividendLifeCalc from './firemap/DividendLifeCalc.jsx';
 import Savings from './firemap/Savings.jsx';
 import FirePlan from './firemap/FirePlan.jsx';
+import FireIndex from './firemap/FireIndex.jsx';
 import Consent from './firemap/Consent.jsx';
 import LiveBanner from './firemap/LiveBanner.jsx';
 import { buildSimulation, defaultInputs, inputsIsReal } from '../utils/retirementSimulator.js';
@@ -83,13 +84,9 @@ export default function FireMapMVP() {
 
   useEffect(() => {
     if (!inputsIsReal(inputs)) return;
-    // 로컬엔 항상 저장(새로고침 대비). 단 타임스탬프 기록·서버푸시는 '실제 수정'일 때만.
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); } catch { /* ignore */ }
-    // 앱 첫 로드(로컬값 복원)는 '수정'이 아님 -> ts 갱신·서버푸시 건너뜀
     if (!inputsMounted.current) { inputsMounted.current = true; return; }
-    // 서버에서 받아온 값(pull)도 '수정'이 아님 -> 한 번 건너뛰고 플래그 해제
     if (skipStampRef.current) { skipStampRef.current = false; return; }
-    // 여기부터는 사용자가 실제로 값을 바꾼 경우만: 마지막 수정시각 기록 + 서버 반영(LWW)
     const ts = Date.now();
     try { localStorage.setItem('fm_inputs_ts', String(ts)); } catch { /* ignore */ }
     try { pushState('firemap-inputs-v3', inputs); pushState('fm_inputs_ts', ts); } catch { /* ignore */ }
@@ -97,7 +94,6 @@ export default function FireMapMVP() {
   useEffect(() => { try { window.scrollTo(0, 0); } catch { /* ignore */ } }, [screen, step]);
   useEffect(() => { try { logEvent('screen_view', { screen }); } catch { /* ignore */ } }, [screen]);
   useEffect(() => { try { logEvent('session_start', {}); } catch { /* ignore */ } }, []);
-  // 모든 track() 이벤트를 익명으로 Supabase에도 적재(GA는 그대로 유지)
   useEffect(() => {
     try {
       const orig = window.gtag;
@@ -189,6 +185,7 @@ export default function FireMapMVP() {
   if (screen === 'home') view = <Home onStart={(age) => { if (typeof age === 'number' && age > 0) { onChange('currentAge', age); setStep(1); } else { setStep(0); } setScreen('question'); }} onMove={setScreen} onChange={onChange} simulation={simulation} />;
   else if (screen === 'question') view = <Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />;
   else if (screen === 'tools') view = <Tools onMove={setScreen} />;
+  else if (screen === 'index') view = <FireIndex simulation={simulation} onBack={backOf('index')} />;
   else if (screen === 'experiment') view = <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} onMove={setScreen} draft={expDraft} setDraft={setExpDraft} base={expBase} setBase={setExpBase} />;
   else if (screen === 'city') view = <City inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('city')} />;
   else if (screen === 'share') view = <Share inputs={inputs} simulation={simulation} onBack={backOf('share')} />;

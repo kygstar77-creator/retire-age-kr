@@ -8,7 +8,6 @@ import { formatWon } from '../../firemap-v2/formatters.js';
 import { account } from '../../utils/identity.js';
 import { track } from '../../firemap-v2/dailyData.js';
 
-// 파이어 여정 지도 — 단계 경로 · 다음 한 걸음 · 다음 목표 진행 · 마일스톤 축하 · 살아있는 숫자.
 const ASSET_MS = [
   { v: 100000000, label: '1억' },
   { v: 300000000, label: '3억' },
@@ -34,7 +33,6 @@ export default function JourneyMap({ simulation, onMove }) {
     return journeyStage(simulation, { advanceDays: adv, peerAvg, assetHistoryLen: histLen });
   }, [simulation, peerAvg]);
 
-  // 새로 달성한 마일스톤 1회 축하 (이미 본 건 localStorage로 추적)
   useEffect(() => {
     if (!j.earliest) return;
     try {
@@ -47,7 +45,6 @@ export default function JourneyMap({ simulation, onMove }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [j.stage]);
 
-  // 살아있는 숫자: 지난 자산 기록 대비 파이어 나이가 얼마나 움직였나 (외부 시세 없이 내 기록으로)
   const living = useMemo(() => {
     try {
       const hist = getAssetHistory();
@@ -130,6 +127,10 @@ export default function JourneyMap({ simulation, onMove }) {
           🔒 이 여정을 저장하려면 — <b style={{ color: '#ff5a00' }}>내 파이어 프로필 만들기 ›</b>
         </button>
       )}
+
+      <button type="button" style={S.indexLink} onClick={() => { try { track('journey_index', {}); } catch { /* ignore */ } onMove('index'); }}>
+        📊 대한민국 파이어 지수에서 내 위치 보기 ›
+      </button>
     </section>
   );
 }
@@ -173,5 +174,6 @@ const S = {
   goalTrack: { height: 7, borderRadius: 9, background: '#f0ede9', overflow: 'hidden' },
   goalFill: { height: '100%', borderRadius: 9, background: 'linear-gradient(90deg,#FFB48F,#ff5a00)' },
   momentum: { fontSize: 12.5, color: '#0f6e56', fontWeight: 700, margin: '12px 0 0', textAlign: 'center' },
-  profile: { width: '100%', marginTop: 12, background: 'rgba(255,90,0,0.06)', border: '1px solid rgba(255,90,0,0.22)', borderRadius: 12, padding: '11px 13px', fontSize: 12.5, color: '#6b6f76', fontWeight: 600, cursor: 'pointer', textAlign: 'center' }
+  profile: { width: '100%', marginTop: 12, background: 'rgba(255,90,0,0.06)', border: '1px solid rgba(255,90,0,0.22)', borderRadius: 12, padding: '11px 13px', fontSize: 12.5, color: '#6b6f76', fontWeight: 600, cursor: 'pointer', textAlign: 'center' },
+  indexLink: { width: '100%', marginTop: 10, background: 'none', border: 0, color: '#1e2859', fontWeight: 700, fontSize: 12.5, cursor: 'pointer', textAlign: 'center', padding: '4px 0' }
 };

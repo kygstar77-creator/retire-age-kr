@@ -8,6 +8,7 @@ export const screens = {
   result:     { hash: '#result',     title: '결과',   type: 'result',   tab: 'home', next: ['ranking', 'save', 'experiment', 'tools'] },
   save:       { hash: '#save',       title: '저축',   type: 'save',     tab: 'save' },
   tools:      { hash: '#tools',      title: '도구',   type: 'tools',    tab: 'tools' },
+  index:      { hash: '#index',      title: '대한민국 파이어 지수', type: 'tool', back: 'home' },
   experiment: { hash: '#experiment', title: '바꿔보기',          type: 'tool', back: 'result', tab: 'home' },
   share:      { hash: '#share',      title: '공유',               type: 'tool', back: 'result' },
   dependent:  { hash: '#dependent',  title: '파이어 후 건보료', type: 'tool', back: 'tools' },
@@ -31,6 +32,7 @@ export const NEXT_ACTION_META = {
 
 // 도구 허브 목록 (메인에서 분리된 기능들)
 export const TOOLS = [
+  { id: 'index',      tag: '데이터', title: '대한민국 파이어 지수', desc: '7천여 명 집계로 보는 또래 중 내 위치' },
   { id: 'experiment', tag: '비교',   title: '조건 바꿔 비교',     desc: '증권앱 차트로 What-If 비교' },
   { id: 'dependent',  tag: '건보료', title: '파이어 후 건보료', desc: '피부양자 박탈 여부 + 지역가입 월 건보료 추정' },
   { id: 'foreignTax', tag: '세금',   title: '양도·배당세',    desc: '해외주식 양도세 + 배당 소득세·건보료 경고' },

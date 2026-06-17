@@ -8,6 +8,9 @@ import { formatWon } from '../../firemap-v2/formatters.js';
 import { account } from '../../utils/identity.js';
 import { track } from '../../firemap-v2/dailyData.js';
 
+const SUPABASE_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
+const SUPABASE_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
+
 const ASSET_MS = [
   { v: 100000000, label: '1억' },
   { v: 300000000, label: '3억' },
@@ -18,10 +21,13 @@ const ASSET_MS = [
 export default function JourneyMap({ simulation, onMove }) {
   const [peerAvg, setPeerAvg] = useState(null);
   const [celebrate, setCelebrate] = useState(null);
+  const [marketRet, setMarketRet] = useState(null);
 
   useEffect(() => {
     let alive = true;
     fetchAggregates().then((a) => { if (alive && a && a.avgEarliest) setPeerAvg(a.avgEarliest); }).catch(() => {});
+    fetch(`${SUPABASE_URL}/rest/v1/rpc/fm_market_latest`, { method: 'POST', headers: { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'content-type': 'application/json' }, body: '{}' })
+      .then((r) => (r.ok ? r.json() : [])).then((rows) => { const m = (rows || []).find((x) => x.symbol === '^spx'); if (alive && m && typeof m.ret_7d === 'number') setMarketRet(m.ret_7d); }).catch(() => {});
     return () => { alive = false; };
   }, []);
 
@@ -45,6 +51,20 @@ export default function JourneyMap({ simulation, onMove }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [j.stage]);
 
+  // 살아있는 파이어 — 이번 주 시장(S&P500)이 내 파이어를 며칠 움직였는지(자산에 주간 수익률 적용 추정)
+  const marketLiving = useMemo(() => {
+    if (marketRet == null) return null;
+    const asset = j.asset;
+    if (!(asset > 0) || !(simulation && simulation.earliestRetirementAge)) return { pct: marketRet, days: 0 };
+    try {
+      const before = asset / (1 + marketRet / 100);
+      const sb = buildSimulation({ ...simulation.inputs, financialAsset: before });
+      const dy = (sb.earliestRetirementAge || 0) - simulation.earliestRetirementAge;
+      return { pct: marketRet, days: Math.round(dy * 365.25) };
+    } catch { return { pct: marketRet, days: 0 }; }
+  }, [marketRet, simulation, j.asset]);
+
+  // 자산 기록 기반 변화(시장 데이터 없을 때 폴백)
   const living = useMemo(() => {
     try {
       const hist = getAssetHistory();
@@ -69,6 +89,8 @@ export default function JourneyMap({ simulation, onMove }) {
   const msProg = nextMs ? Math.max(4, Math.min(100, Math.round(((j.asset - prevMsV) / (nextMs.v - prevMsV)) * 100))) : 100;
 
   const go = (to) => { try { track('journey_next_step', { stage: j.stage, to }); } catch { /* ignore */ } onMove(to); };
+
+  const mlColor = marketLiving ? (marketLiving.days > 0 ? '#0f6e56' : marketLiving.days < 0 ? '#854f0b' : '#6b6f76') : '#0f6e56';
 
   return (
     <section className="fm-card" style={S.card}>
@@ -118,9 +140,11 @@ export default function JourneyMap({ simulation, onMove }) {
         </div>
       )}
 
-      {living
-        ? <p style={S.momentum}>📈 지난 기록보다 파이어 <b>{Math.abs(living.years) >= 1 ? `${Math.abs(living.years)}년` : '약간'}</b> {living.years > 0 ? '빨라졌어요' : '늘춰졌어요'}</p>
-        : (j.momentum ? <p style={S.momentum}>🔥 이번 달 파이어 <b>{fmtAdv(j.momentum.advanceDays)}</b> 당겼어요</p> : null)}
+      {marketLiving
+        ? <p style={{ ...S.momentum, color: mlColor }}>📈 이번 주 시장 {marketLiving.pct > 0 ? '+' : ''}{marketLiving.pct}%{marketLiving.days !== 0 ? <> — 파이어 <b>{Math.abs(marketLiving.days)}일</b> {marketLiving.days > 0 ? '빨라졌어요' : '늘춰졌어요'}</> : ' 반영 중'} <span style={S.mlNote}>· S&P500 기준</span></p>
+        : living
+          ? <p style={S.momentum}>📈 지난 기록보다 파이어 <b>{Math.abs(living.years) >= 1 ? `${Math.abs(living.years)}년` : '약간'}</b> {living.years > 0 ? '빨라졌어요' : '늘춰졌어요'}</p>
+          : (j.momentum ? <p style={S.momentum}>🔥 이번 달 파이어 <b>{fmtAdv(j.momentum.advanceDays)}</b> 당겼어요</p> : null)}
 
       {!loggedIn && (
         <button type="button" style={S.profile} onClick={() => { try { track('journey_profile_cta', {}); } catch { /* ignore */ } onMove('account'); }}>
@@ -173,7 +197,8 @@ const S = {
   goalGap: { fontSize: 12, color: '#ff5a00', fontWeight: 800, fontVariantNumeric: 'tabular-nums' },
   goalTrack: { height: 7, borderRadius: 9, background: '#f0ede9', overflow: 'hidden' },
   goalFill: { height: '100%', borderRadius: 9, background: 'linear-gradient(90deg,#FFB48F,#ff5a00)' },
-  momentum: { fontSize: 12.5, color: '#0f6e56', fontWeight: 700, margin: '12px 0 0', textAlign: 'center' },
+  momentum: { fontSize: 12.5, color: '#0f6e56', fontWeight: 700, margin: '12px 0 0', textAlign: 'center', lineHeight: 1.5 },
+  mlNote: { color: '#9aa3bf', fontWeight: 600, fontSize: 11 },
   profile: { width: '100%', marginTop: 12, background: 'rgba(255,90,0,0.06)', border: '1px solid rgba(255,90,0,0.22)', borderRadius: 12, padding: '11px 13px', fontSize: 12.5, color: '#6b6f76', fontWeight: 600, cursor: 'pointer', textAlign: 'center' },
   indexLink: { width: '100%', marginTop: 10, background: 'none', border: 0, color: '#1e2859', fontWeight: 700, fontSize: 12.5, cursor: 'pointer', textAlign: 'center', padding: '4px 0' }
 };

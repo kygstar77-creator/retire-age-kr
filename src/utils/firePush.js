@@ -60,24 +60,23 @@ async function saveSub(sub, meta) {
   let cid = null; try { cid = identityId(); } catch { /* ignore */ }
   let acc = null; try { acc = account(); } catch { /* ignore */ }
   let tz = 'Asia/Seoul'; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Asia/Seoul'; } catch { /* ignore */ }
-  const body = {
-    endpoint: sub.endpoint,
-    p256dh: json.keys && json.keys.p256dh,
-    auth: json.keys && json.keys.auth,
-    client_id: cid || null,
-    user_id: (acc && acc.userId) ? acc.userId : null,
-    target_fire_date: meta.targetFireDate || null,
-    earliest_age: meta.earliestAge ?? null,
-    current_age: meta.currentAge ?? null,
-    tz,
-    active: true,
-    updated_at: new Date().toISOString()
+  // RLS로 잠긴 테이블에 SECURITY DEFINER RPC로 안전하게 upsert(직접 테이블 쓰기 불가).
+  const args = {
+    p_endpoint: sub.endpoint,
+    p_p256dh: json.keys && json.keys.p256dh,
+    p_auth: json.keys && json.keys.auth,
+    p_client_id: cid || null,
+    p_user_id: (acc && acc.userId) ? acc.userId : null,
+    p_target_fire_date: meta.targetFireDate || null,
+    p_earliest_age: meta.earliestAge ?? null,
+    p_current_age: meta.currentAge ?? null,
+    p_tz: tz
   };
   try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/firemap_push_subs?on_conflict=endpoint`, {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/fm_push_subscribe`, {
       method: 'POST',
-      headers: { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'content-type': 'application/json', prefer: 'resolution=merge-duplicates,return=minimal' },
-      body: JSON.stringify(body)
+      headers: { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'content-type': 'application/json' },
+      body: JSON.stringify(args)
     });
     return res.ok;
   } catch { return false; }
@@ -132,10 +131,10 @@ export async function unsubscribeFireClock() {
     const sub = await currentSubscription();
     if (!sub) return true;
     try {
-      await fetch(`${SUPABASE_URL}/rest/v1/firemap_push_subs?endpoint=eq.${encodeURIComponent(sub.endpoint)}`, {
-        method: 'PATCH',
-        headers: { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'content-type': 'application/json', prefer: 'return=minimal' },
-        body: JSON.stringify({ active: false, updated_at: new Date().toISOString() })
+      await fetch(`${SUPABASE_URL}/rest/v1/rpc/fm_push_unsubscribe`, {
+        method: 'POST',
+        headers: { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'content-type': 'application/json' },
+        body: JSON.stringify({ p_endpoint: sub.endpoint })
       });
     } catch { /* ignore */ }
     await sub.unsubscribe();

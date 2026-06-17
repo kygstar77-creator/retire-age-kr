@@ -12,6 +12,8 @@ import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js
 import { FIRE_CITIES } from '../../firemap-v2/cities.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import { estimateLocalPremium } from '../../firemap-v2/healthInsurance.js';
+import { account } from '../../utils/identity.js';
+import OpenChatNotice from './OpenChatNotice.jsx';
 
 function ResultHeroV2({ simulation, rankingSimulation }) {
   const rs = rankingSimulation || simulation;
@@ -339,6 +341,19 @@ function MoatCard({ simulation, onMove }) {
   );
 }
 
+function AccountBar({ onMove }) {
+  const acc = account();
+  return (
+    <button type="button" className={`fm-acct-bar${acc && acc.handle ? ' on' : ''}`} onClick={() => onMove('account')}>
+      <span className="fm-acct-bar-ic">{acc && acc.handle ? '👤' : '🔒'}</span>
+      {acc && acc.handle
+        ? <span className="fm-acct-bar-tx"><b>{acc.handle}</b><em>결과·등수가 안전하게 저장돼요</em></span>
+        : <span className="fm-acct-bar-tx"><b>로그인하고 이 결과 저장하기</b><em>기기 바꿔도 등수·기록이 그대로 이어져요</em></span>}
+      <span className="fm-acct-bar-go">{acc && acc.handle ? '관리 ›' : '로그인 ›'}</span>
+    </button>
+  );
+}
+
 function NextActions({ onMove }) {
   return (
     <button type="button" className="fm-plan-tools" onClick={() => onMove('tools')}>🧰 정밀 도구 전체 보기 (지역·현금흐름·건보·세금) →</button>
@@ -422,6 +437,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
         <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>🎛️ 수치 바꿔보기</button>
       </div>
       <button type="button" className="fm-rank-cta-other" onClick={shareOther}>🔗 링크 복사 · 다른 앱으로 공유</button>
+      <AccountBar onMove={onMove} />
       <section className="fm-card" style={{ borderColor: 'rgba(255,90,0,0.3)' }}>
         <p className="fm-kicker">계산이 끝이 아니에요</p>
         <h2 style={{ margin: '2px 0 10px' }}>내 파이어 플랜으로 계속 관리해요</h2>
@@ -434,6 +450,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
       <MoatCard simulation={simulation} onMove={onMove} />
       <TopLevers inputs={inputs} simulation={simulation} onChange={onChange} />
       <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />
+      <OpenChatNotice />
       <NextActions onMove={onMove} />
     </main>
   );

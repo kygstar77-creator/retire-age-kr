@@ -10,6 +10,7 @@ import InstallButton from './InstallButton.jsx';
 import PetCard from './PetCard.jsx';
 import FireClock from './FireClock.jsx';
 import FireClockPush from './FireClockPush.jsx';
+import JourneyMap from './JourneyMap.jsx';
 import OpenChatNotice from './OpenChatNotice.jsx';
 import { account } from '../../utils/identity.js';
 
@@ -107,6 +108,8 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
           </button>
         );
       })()}
+
+      {asHome && <JourneyMap simulation={simulation} onMove={onMove} />}
 
       <section className="fm-card fm-plan-hero">
         <div className="fm-plan-top">

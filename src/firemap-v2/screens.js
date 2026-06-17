@@ -7,19 +7,20 @@ export const screens = {
   question:   { hash: '#question',   title: '질문',   type: 'question' },
   result:     { hash: '#result',     title: '결과',   type: 'result',   tab: 'home', next: ['ranking', 'save', 'experiment', 'tools'] },
   save:       { hash: '#save',       title: '저축',   type: 'save',     tab: 'save' },
-  tools:      { hash: '#tools',      title: '도구',   type: 'tools',    tab: 'tools' },
+  tools:      { hash: '#tools',      title: '도구',   type: 'tools',    tab: 'menu' },
+  menu:       { hash: '#menu',       title: '전체',   type: 'tool',     tab: 'menu' },
   journey:    { hash: '#journey',    title: '내 파이어 여정', type: 'tool', back: 'home', tab: 'home' },
   index:      { hash: '#index',      title: '대한민국 파이어 지수', type: 'tool', back: 'home' },
   experiment: { hash: '#experiment', title: '바꿔보기',          type: 'tool', back: 'result', tab: 'home' },
   share:      { hash: '#share',      title: '공유',               type: 'tool', back: 'result' },
-  dependent:  { hash: '#dependent',  title: '파이어 후 건보료', type: 'tool', back: 'tools' },
-  foreignTax: { hash: '#foreignTax', title: '파이어 후 세금(양도·배당)', type: 'tool', back: 'tools' },
-  dividend:   { hash: '#dividend',   title: '파이어 후 현금흐름',     type: 'tool', back: 'tools' },
-  pension:    { hash: '#pension',    title: '국민연금 조기수령',   type: 'tool', back: 'tools' },
+  dependent:  { hash: '#dependent',  title: '파이어 후 건보료', type: 'tool', back: 'menu' },
+  foreignTax: { hash: '#foreignTax', title: '파이어 후 세금(양도·배당)', type: 'tool', back: 'menu' },
+  dividend:   { hash: '#dividend',   title: '파이어 후 현금흐름',     type: 'tool', back: 'menu' },
+  pension:    { hash: '#pension',    title: '국민연금 조기수령',   type: 'tool', back: 'menu' },
   city:       { hash: '#city',       title: '도시 비교 · 해외 체류', type: 'tool', back: 'cities' },
-  community:  { hash: '#community',  title: '커뮤니티',           type: 'tool', back: 'tools', tab: 'community' },
+  community:  { hash: '#community',  title: '커뮤니티',           type: 'tool', back: 'menu', tab: 'community' },
   ranking:    { hash: '#ranking',    title: 'FIRE 랭킹',          type: 'tool', back: 'result', tab: 'ranking' },
-  cities:     { hash: '#cities',     title: '지역별 파이어 (국내·해외)',      type: 'tool', back: 'tools' }
+  cities:     { hash: '#cities',     title: '지역별 파이어 (국내·해외)',      type: 'tool', back: 'menu' }
 };
 
 export const NEXT_ACTION_META = {
@@ -46,7 +47,7 @@ export const TABS = [
   { id: 'save',  label: '저축', target: 'save' },
   { id: 'ranking', label: '랭킹', target: 'ranking' },
   { id: 'community', label: '커뮤니티', target: 'community' },
-  { id: 'tools', label: '도구', target: 'tools' }
+  { id: 'menu', label: '전체', target: 'menu' }
 ];
 
 export function resolveScreen(raw) {

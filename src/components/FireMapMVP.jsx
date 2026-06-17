@@ -10,6 +10,7 @@ import City from './firemap/City.jsx';
 import Share from './firemap/Share.jsx';
 import Community from './firemap/Community.jsx';
 import Tools from './firemap/Tools.jsx';
+import MenuAll from './firemap/MenuAll.jsx';
 import BottomTabs from './firemap/BottomTabs.jsx';
 import Header from './firemap/Header.jsx';
 import DependentCheck from './firemap/DependentCheck.jsx';
@@ -162,7 +163,7 @@ export default function FireMapMVP() {
     const ref = referrerRef.current[id];
     delete referrerRef.current[id];
     skipRecordRef.current = true;
-    setScreen(ref || screens[id]?.back || 'tools');
+    setScreen(ref || screens[id]?.back || 'menu');
   };
 
   const tool = (id, node) => (
@@ -186,6 +187,7 @@ export default function FireMapMVP() {
   if (screen === 'home') view = <Home onStart={(age) => { if (typeof age === 'number' && age > 0) { onChange('currentAge', age); setStep(1); } else { setStep(0); } setScreen('question'); }} onMove={setScreen} onChange={onChange} simulation={simulation} />;
   else if (screen === 'question') view = <Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />;
   else if (screen === 'tools') view = <Tools onMove={setScreen} />;
+  else if (screen === 'menu') view = <MenuAll onMove={setScreen} />;
   else if (screen === 'journey') view = <JourneyStage simulation={simulation} onMove={setScreen} onBack={backOf('journey')} />;
   else if (screen === 'index') view = <FireIndex simulation={simulation} onBack={backOf('index')} />;
   else if (screen === 'experiment') view = <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} onMove={setScreen} draft={expDraft} setDraft={setExpDraft} base={expBase} setBase={setExpBase} />;

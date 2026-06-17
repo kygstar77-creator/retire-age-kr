@@ -11,15 +11,12 @@ import PetCard from './PetCard.jsx';
 import FireClock from './FireClock.jsx';
 import FireClockPush from './FireClockPush.jsx';
 import DailyJourney from './DailyJourney.jsx';
+import CompletionCard from './CompletionCard.jsx';
 import JourneyMap from './JourneyMap.jsx';
 import OpenChatNotice from './OpenChatNotice.jsx';
 import { account } from '../../utils/identity.js';
 
 const won = (n) => formatWon(Math.round(n || 0));
-const eok = (n) => {
-  const v = (n || 0) / 1e8;
-  return v >= 10 ? `${Math.round(v)}억` : `${v.toFixed(1)}억`;
-};
 
 const readJSONsafe = (k) => { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch { return null; } };
 function pickNextAction() {
@@ -40,15 +37,7 @@ function pickNextAction() {
 export default function FirePlan({ simulation, onMove, onChange, asHome }) {
   const inp = (simulation && simulation.inputs) || {};
   const asset = Number(inp.financialAsset) || 0;
-  const target = Math.max(0, Math.round(simulation.requiredFireAssetByFourPercent || 0));
   const earliest = simulation.earliestRetirementAge;
-  const pct = target > 0 ? Math.max(0, Math.min(100, Math.round((asset / target) * 100))) : 0;
-
-  const targetAge = Number(inp.targetRetirementAge) || 0;
-  const ageGap = earliest != null ? earliest - targetAge : null;
-  const gapDir = ageGap == null ? '' : ageGap > 0 ? 'behind' : ageGap < 0 ? 'ahead' : 'even';
-  const gapText = ageGap == null ? '' : ageGap > 0 ? `목표보다 ${ageGap}년 늦음` : ageGap < 0 ? `목표보다 ${Math.abs(ageGap)}년 빠름` : '목표와 같음';
-  const gapColor = gapDir === 'ahead' ? '#0f6e56' : gapDir === 'behind' ? '#854f0b' : 'var(--fm-muted, #6b6f76)';
 
   const [hist, setHist] = useState(getAssetHistory);
   const [editing, setEditing] = useState(false);
@@ -69,9 +58,6 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
     return () => { alive = false; };
     // eslint-disable-next-line
   }, [asHome, earliest, inp.currentAge]);
-
-  const prev = hist.length >= 2 ? hist[hist.length - 2].v : null;
-  const mom = prev != null ? asset - prev : null;
 
   const saveAsset = () => {
     const v = Math.max(0, Math.round(Number(String(val).replace(/[^0-9]/g, '')) || 0));
@@ -110,27 +96,9 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
 
       {asHome && <DailyJourney onMove={onMove} />}
 
-      {asHome && <JourneyMap simulation={simulation} onMove={onMove} />}
+      <CompletionCard simulation={simulation} onMove={onMove} />
 
-      <section className="fm-card fm-plan-hero">
-        <div className="fm-plan-top">
-          <div className="fm-plan-ring" style={{ background: `conic-gradient(#ff5a00 0 ${pct}%, #eef0f3 ${pct}% 100%)` }}>
-            <div className="fm-plan-ring-in"><b>{pct}%</b><span>달성</span></div>
-          </div>
-          <div className="fm-plan-meta">
-            <small>{targetAge ? `목표 ${targetAge}세 · 지금 예상` : '예상 파이어'}</small>
-            <strong>{earliest ? `${earliest}세` : '계산 필요'}</strong>
-            {earliest && gapText
-              ? <p><b style={{ color: gapColor }}>{gapText}</b> · 목표 <b>{eok(target)}</b> 중 <b>{eok(asset)}</b></p>
-              : <p>목표 <b>{eok(target)}</b> 중 <b>{eok(asset)}</b></p>}
-          </div>
-        </div>
-        {mom != null && mom !== 0 && (
-          <div className={`fm-plan-mom ${mom >= 0 ? 'up' : 'down'}`}>
-            지난달보다 <b>{mom >= 0 ? '+' : '−'}{won(Math.abs(mom))}</b>{mom > 0 ? ' · 목표에 더 가까워졌어요' : ''}
-          </div>
-        )}
-      </section>
+      {asHome && <JourneyMap simulation={simulation} onMove={onMove} />}
 
       {asHome && <FireClock simulation={simulation} />}
 

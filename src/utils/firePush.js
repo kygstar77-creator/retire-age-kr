@@ -40,8 +40,11 @@ export function notifPermission() {
 
 async function registerSW() {
   if (!('serviceWorker' in navigator)) return null;
-  try { return await navigator.serviceWorker.register('/sw.js', { scope: '/' }); }
-  catch { return null; }
+  try {
+    const existing = await navigator.serviceWorker.getRegistration('/');
+    if (existing) return existing;
+    return await navigator.serviceWorker.register('/sw.js', { scope: '/' });
+  } catch { return null; }
 }
 
 export async function currentSubscription() {
@@ -70,28 +73,46 @@ async function saveSub(sub, meta) {
     active: true,
     updated_at: new Date().toISOString()
   };
-  const res = await fetch(`${SUPABASE_URL}/rest/v1/firemap_push_subs?on_conflict=endpoint`, {
-    method: 'POST',
-    headers: { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'content-type': 'application/json', prefer: 'resolution=merge-duplicates,return=minimal' },
-    body: JSON.stringify(body)
-  });
-  return res.ok;
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/firemap_push_subs?on_conflict=endpoint`, {
+      method: 'POST',
+      headers: { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'content-type': 'application/json', prefer: 'resolution=merge-duplicates,return=minimal' },
+      body: JSON.stringify(body)
+    });
+    return res.ok;
+  } catch { return false; }
 }
 
-// 구독 시작: 권한 요청 → 구독 → 서버 저장. meta={targetFireDate, earliestAge, currentAge}
+// 구독 시작: (iOS 대비) 권한을 클릭 제스처 직후 '가장 먼저' 요청 → SW 등록 → 구독 → 저장.
+// meta={targetFireDate, earliestAge, currentAge}
 export async function subscribeFireClock(meta = {}) {
-  if (!pushSupported()) return { ok: false, reason: isIOSDevice() ? 'ios-install' : 'unsupported' };
-  const reg = await registerSW();
-  if (!reg) return { ok: false, reason: 'sw' };
-  try { await navigator.serviceWorker.ready; } catch { /* ignore */ }
+  if (!('serviceWorker' in navigator) || !('PushManager' in window) || !('Notification' in window)) {
+    return { ok: false, reason: isIOSDevice() ? 'ios-install' : 'unsupported' };
+  }
+  if (isIOSDevice() && !isStandalone()) return { ok: false, reason: 'ios-install' };
+
+  // 1) 권한 먼저(awaits 전에 — iOS Safari 제스처 보존)
   let perm = notifPermission();
   if (perm === 'default') { try { perm = await Notification.requestPermission(); } catch { perm = 'denied'; } }
   if (perm !== 'granted') return { ok: false, reason: 'denied' };
-  let sub = await reg.pushManager.getSubscription();
+
+  // 2) 서비스워커 등록
+  const reg = await registerSW();
+  if (!reg) return { ok: false, reason: 'sw' };
+  try { await navigator.serviceWorker.ready; } catch { /* ignore */ }
+
+  // 3) 푸시 구독
+  let sub = null;
+  try { sub = await reg.pushManager.getSubscription(); } catch { /* ignore */ }
   if (!sub) {
-    try { sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC) }); }
-    catch { return { ok: false, reason: 'subscribe' }; }
+    try {
+      sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC) });
+    } catch (e) {
+      return { ok: false, reason: 'subscribe', detail: String((e && (e.message || e.name)) || e) };
+    }
   }
+
+  // 4) 서버 저장
   const saved = await saveSub(sub, meta);
   if (!saved) return { ok: false, reason: 'save' };
   return { ok: true };

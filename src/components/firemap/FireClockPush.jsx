@@ -64,7 +64,8 @@ export default function FireClockPush({ simulation }) {
       setStatus('denied');
     } else {
       setStatus('idle');
-      try { window.alert('알림 설정에 실패했어요. 잠시 후 다시 시도해 주세요.'); } catch { /* ignore */ }
+      const why = (r.reason || '?') + (r.detail ? ` · ${r.detail}` : '');
+      try { window.alert(`알림 설정에 실패했어요 (${why}). 잠시 후 다시 시도해 주세요.`); } catch { /* ignore */ }
     }
   };
 

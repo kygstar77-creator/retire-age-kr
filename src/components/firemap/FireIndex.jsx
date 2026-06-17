@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { track } from '../../firemap-v2/dailyData.js';
 
-// 대한민국 파이어 지수 — 우리 익명 집계로만 만들 수 있는 '표준' 콘텐츠 + 내 위치 비교.
+// 대한민국 파이어 지수 — 우리 익명 집계로만 만들 수 있는 '표준' 콘텐츠 + 내 위치 비교 + 공유.
 const SUPABASE_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
 const SUPABASE_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
 
@@ -44,6 +44,17 @@ export default function FireIndex({ simulation, onBack }) {
 
   const pos = (age) => Math.max(0, Math.min(100, ((age - 40) / 20) * 100));
 
+  const onShare = async () => {
+    try { track('fire_index_share', {}); } catch { /* ignore */ }
+    const mine = (myEarliest && myTarget) ? `, 나는 ${myEarliest}세` : '';
+    const txt = natAvgEarliest != null
+      ? `대한민국 파이어 평균 가능 나이 ${natAvgEarliest}세${mine}. 너의 파이어 위치는?`
+      : '대한민국 파이어 지수 — 너의 파이어 위치는?';
+    const url = 'https://firemap.kr/';
+    try { if (navigator.share) { await navigator.share({ title: '대한민국 파이어 지수 — 파이어맵', text: txt, url }); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
+    try { await navigator.clipboard.writeText(`${txt} ${url}`); window.alert('공유 문구를 복사했어요! 카톡·단톡방에 붙여넣어 보세요'); } catch { /* ignore */ }
+  };
+
   return (
     <main className="fm-screen fm-scroll">
       <Header tag="대한민국 파이어 지수" onBack={onBack} />
@@ -54,6 +65,7 @@ export default function FireIndex({ simulation, onBack }) {
         {natAvgEarliest != null
           ? <p style={S.heroSub}>함께 계산한 <b>{totalN.toLocaleString()}명</b>의 익명 집계 · 전국 평균 파이어 가능 나이 <b style={{ color: '#ff5a00' }}>{natAvgEarliest}세</b></p>
           : <p style={S.heroSub}>{err ? '집계를 불러오지 못했어요. 잠시 후 다시 시도해 주세요.' : '집계 불러오는 중…'}</p>}
+        {natAvgEarliest != null && <button type="button" style={S.share} onClick={onShare}>💬 내 파이어 위치 공유하기</button>}
       </section>
 
       {rows && rows.length > 0 && (
@@ -111,7 +123,8 @@ const S = {
   hero: { borderColor: 'rgba(255,90,0,0.3)' },
   kicker: { display: 'inline-block', fontSize: 11.5, fontWeight: 800, color: '#e8431c', background: '#fff0ea', padding: '5px 11px', borderRadius: 999 },
   h1: { fontSize: 22, fontWeight: 800, color: '#15151b', lineHeight: 1.3, letterSpacing: '-0.02em', margin: '13px 0 8px' },
-  heroSub: { fontSize: 13, color: '#6b6f76', lineHeight: 1.6, margin: 0 },
+  heroSub: { fontSize: 13, color: '#6b6f76', lineHeight: 1.6, margin: '0 0 12px' },
+  share: { width: '100%', border: 0, cursor: 'pointer', background: 'linear-gradient(180deg,#ff6a35,#ee4a1f)', color: '#fff', borderRadius: 13, padding: '12px', fontSize: 14, fontWeight: 800, boxShadow: '0 10px 22px -10px rgba(232,67,28,0.5)' },
   sectTitle: { fontSize: 13, fontWeight: 800, color: '#1e2859', margin: '0 0 14px' },
   bandRow: { padding: '12px 12px', borderRadius: 14, marginBottom: 10, border: '1px solid #ececec', background: '#fff' },
   bandMine: { borderColor: 'rgba(255,90,0,0.4)', background: 'rgba(255,90,0,0.04)' },

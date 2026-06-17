@@ -3,6 +3,7 @@ import { journeyStage } from '../../utils/journeyStage.js';
 import { computeProgress } from '../../utils/savingsEngine.js';
 import { getAssetHistory } from '../../utils/assetHistory.js';
 import { buildSimulation } from '../../utils/retirementSimulator.js';
+import { dailyNeedOf } from '../../firemap-v2/dailyData.js';
 import { fetchAggregates } from '../../utils/firemapScoresApi.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { account } from '../../utils/identity.js';
@@ -51,20 +52,19 @@ export default function JourneyMap({ simulation, onMove }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [j.stage]);
 
-  // 살아있는 파이어 — 이번 주 시장(S&P500)이 내 파이어를 며칠 움직였는지(자산에 주간 수익률 적용 추정)
+  // 살아있는 파이어 — 이번 주 시장(S&P500) 수익률을 내 자산에 적용 → 일일필요액으로 환산해 파이어 '며칠' 움직였는지.
   const marketLiving = useMemo(() => {
     if (marketRet == null) return null;
     const asset = j.asset;
-    if (!(asset > 0) || !(simulation && simulation.earliestRetirementAge)) return { pct: marketRet, days: 0 };
+    if (!(asset > 0)) return { pct: marketRet, days: 0 };
+    let days = 0;
     try {
-      const before = asset / (1 + marketRet / 100);
-      const sb = buildSimulation({ ...simulation.inputs, financialAsset: before });
-      const dy = (sb.earliestRetirementAge || 0) - simulation.earliestRetirementAge;
-      return { pct: marketRet, days: Math.round(dy * 365.25) };
-    } catch { return { pct: marketRet, days: 0 }; }
+      const need = dailyNeedOf(simulation); // 원/일, 목표 달성이면 null
+      if (need && need > 0) days = Math.round((asset * (marketRet / 100)) / need);
+    } catch { /* ignore */ }
+    return { pct: marketRet, days };
   }, [marketRet, simulation, j.asset]);
 
-  // 자산 기록 기반 변화(시장 데이터 없을 때 폴백)
   const living = useMemo(() => {
     try {
       const hist = getAssetHistory();
@@ -89,7 +89,6 @@ export default function JourneyMap({ simulation, onMove }) {
   const msProg = nextMs ? Math.max(4, Math.min(100, Math.round(((j.asset - prevMsV) / (nextMs.v - prevMsV)) * 100))) : 100;
 
   const go = (to) => { try { track('journey_next_step', { stage: j.stage, to }); } catch { /* ignore */ } onMove(to); };
-
   const mlColor = marketLiving ? (marketLiving.days > 0 ? '#0f6e56' : marketLiving.days < 0 ? '#854f0b' : '#6b6f76') : '#0f6e56';
 
   return (
@@ -141,7 +140,7 @@ export default function JourneyMap({ simulation, onMove }) {
       )}
 
       {marketLiving
-        ? <p style={{ ...S.momentum, color: mlColor }}>📈 이번 주 시장 {marketLiving.pct > 0 ? '+' : ''}{marketLiving.pct}%{marketLiving.days !== 0 ? <> — 파이어 <b>{Math.abs(marketLiving.days)}일</b> {marketLiving.days > 0 ? '빨라졌어요' : '늘춰졌어요'}</> : ' 반영 중'} <span style={S.mlNote}>· S&P500 기준</span></p>
+        ? <p style={{ ...S.momentum, color: mlColor }}>📈 이번 주 시장 {marketLiving.pct > 0 ? '+' : ''}{marketLiving.pct}%{Math.abs(marketLiving.days) >= 1 ? <> — 파이어 <b>{Math.abs(marketLiving.days)}일</b> {marketLiving.days > 0 ? '빨라졌어요' : '늘춰졌어요'}</> : ' 반영 중'} <span style={S.mlNote}>· S&P500 기준</span></p>
         : living
           ? <p style={S.momentum}>📈 지난 기록보다 파이어 <b>{Math.abs(living.years) >= 1 ? `${Math.abs(living.years)}년` : '약간'}</b> {living.years > 0 ? '빨라졌어요' : '늘춰졌어요'}</p>
           : (j.momentum ? <p style={S.momentum}>🔥 이번 달 파이어 <b>{fmtAdv(j.momentum.advanceDays)}</b> 당겼어요</p> : null)}

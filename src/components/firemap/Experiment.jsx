@@ -10,7 +10,7 @@ import { buildScenario, runwayText, buildGrowthSeries } from '../../firemap-v2/s
 import { formatWon, cleanNumber } from '../../firemap-v2/formatters.js';
 
 export default function Experiment({ inputs, onChange, onBack, onMove, draft: draftProp, setDraft: setDraftProp, base: baseProp, setBase: setBaseProp }) {
-  // 바꿔보기는 '미리보기 샌드박스'. draft를 부모가 보관하면 그걸 써서 세금 도구 등 다른 화면을 다녀와도 유지되고, 없으면 로컬로 동작.
+  // 바꿔보기는 '미리보기 샘드박스'. draft를 부모가 보관하면 그걸 써서 세금 도구 등 다른 화면을 다녀와도 유지되고, 없으면 로컬로 동작.
   const [localDraft, setLocalDraft] = useState(inputs);
   const draft = draftProp ?? localDraft;
   const setDraft = setDraftProp ?? setLocalDraft;
@@ -38,11 +38,12 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
   const grossDivAtRetire = Math.round((simulation.retirementFinancialAsset || draft.financialAsset || 0) * ((draft.dividendYield || 0) / 100));
   const reVal = cleanNumber(draft.realEstateValue);
   const debtVal = cleanNumber(draft.debt);
+  const rentVal = cleanNumber(draft.monthlyRentalIncome);
   const netWorth = simulation.netWorth;
-  const hasAssetExtra = reVal > 0 || debtVal > 0;
+  const hasAssetExtra = reVal > 0 || debtVal > 0 || rentVal > 0;
 
   const PREVIEW_ONLY = ['investType', 'dividendYield'];
-  // 샌드박스 슬라이더가 직접 바꾸는 핵심 값들. 이 값들이 (질문 재입력 등으로) 실제로 바뀐 경우에만 샌드박스를 새로 시드.
+  // 샘드박스 슬라이더가 직접 바꾸는 핵심 값들. 이 값들이 (질문 재입력 등으로) 실제로 바뀐 경우에만 샘드박스를 새로 시드.
   // 세금·연금 도구가 '반영'으로 건드리는 값(investType·dividendIncomeMonthly·pensionClaimAge 등)은 여기 없으므로,
   // 도구를 다녀오거나 거기서 세금을 반영해도 바꿔보기 작업이 날아가지 않는다.
   const SANDBOX_KEYS = ['currentAge', 'targetRetirementAge', 'financialAsset', 'monthlyInvestment', 'monthlyLivingCost', 'savingYears', 'salaryGrowthRate', 'partTimeIncomeAfterRetirement', 'inflationRate', 'annualReturnRate'];
@@ -56,8 +57,8 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
     return () => document.body.classList.remove('fm-exp-dock');
   }, [dirty]);
 
-  // 다른 화면(세금 도구 등)을 다녀와도 샌드박스 유지.
-  // 판정 기준은 draft가 아니라 base(시드 시점 inputs 스냅샷): 사용자의 draft 편집은 base를 안 바꾸므로 안 날아가고,
+  // 다른 화면(세금 도구 등)을 다녀와도 샘드박스 유지.
+  // 판정 기준은 draft가 아니라 base(시드 시점 inputs 스넹샷): 사용자의 draft 편집은 base를 안 바꾸므로 안 날아가고,
   // 질문 재입력 등으로 '핵심 입력값(inputs)' 자체가 바뀐 경우에만 새로 시드한다.
   useEffect(() => {
     if (draftProp == null || baseProp == null) {
@@ -77,12 +78,12 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
       <Header tag="바꿔보기" onBack={onBack} />
       <ResultSimTabs current="sim" />
       <section className="fm-card fm-sim-live">
-        <p className="fm-sim-live-kicker">{dirty ? '바꾼 조건 미리보기' : '지금 조건이면'}</p>
+        <p className="fm-sim-live-kicker">{dirty ? '바꿜 조건 미리보기' : '지금 조건이면'}</p>
         <div className="fm-sim-live-row">
           <div><small>파이어 가능</small><b>{simulation.earliestRetirementAge ? `${simulation.earliestRetirementAge}세` : '아직'}</b></div>
           <div><small>자산 수명</small><b>{runwayText(simulation)}</b></div>
         </div>
-        <p className="fm-sim-live-note">{dirty ? '바꾼 값은 미리보기예요 · 아래 버튼으로 저장 ↓' : (saved ? '✓ 내 결과·등수에 반영됐어요' : '아래 수치를 밀면 위 숫자가 바로 바뀌어요 (미리보기)')}</p>
+        <p className="fm-sim-live-note">{dirty ? '바꿜 값은 미리보기예요 · 아래 버튼으로 저장 ↓' : (saved ? '✓ 내 결과·등수에 반영됐어요' : '아래 수치를 밀면 위 숫자가 바로 바뀌어요 (미리보기)')}</p>
       </section>
       <section className="fm-card fm-graph">
         <p className="fm-kicker">내 미래 자산 차트</p><h2>내가 넣은 돈, 이렇게 불어나요</h2>
@@ -112,11 +113,11 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
             <RangeControl label="파이어 후 부업 소득" value={draft.partTimeIncomeAfterRetirement} inputKey="partTimeIncomeAfterRetirement" type="money" step={100000} onChange={(next) => editDraft('partTimeIncomeAfterRetirement', next)} />
             <p className="fm-range-note">부업 소득은 물가에 연동되지 않아요 — 매년 오르지 않는 고정 수입으로 계산해요. ‘파이어 후 현금흐름’ 도구의 ‘배당 인출 소득’은 이와 <b>별도 칸</b>으로 합산되며 설정한 성장률만큼 매년 늘어요.</p>
             <RangeControl label="물가 상승률(생활비 매년 증가)" value={draft.inflationRate} inputKey="inflationRate" type="percent" step={1} onChange={(next) => editDraft('inflationRate', next)} />
-            <p className="fm-range-note">이 비율만큼 <strong>생활비·국민연금·건보료·해외 체류비</strong>가 매년 올라요. (부업 소득만 제외)</p>
+            <p className="fm-range-note">이 비율만큼 <strong>생활비·국민연금·건보료·해외 체류비·임대수익</strong>이 매년 올라요. (부업 소득만 제외)</p>
           </div>
         )}
         <button type="button" className="fm-advanced-toggle" onClick={() => setShowAssets((v) => !v)} aria-expanded={showAssets}>
-          부동산·부채 (순자산용) {(showAssets || hasAssetExtra) ? '▴' : '▾'}
+          부동산·부채·임대수익 {(showAssets || hasAssetExtra) ? '▴' : '▾'}
         </button>
         {(showAssets || hasAssetExtra) && (
           <div className="fm-advanced">
@@ -125,7 +126,9 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
             <p className="fm-sim-networth" style={{ margin: '8px 0 0', padding: '10px 12px', borderRadius: '10px', background: 'rgba(30,40,89,0.06)', fontSize: '13px', color: '#1e2859', fontWeight: 700 }}>
               순자산 {formatWon(netWorth)} <span style={{ fontWeight: 500, color: 'var(--fm-muted, #6b6f76)' }}>(금융자산 + 부동산 − 부채)</span>
             </p>
-            <p className="fm-range-note">부동산·부채는 <b>순자산·또래 비교</b>에만 반영돼요. 살고 있는 집은 매달 생활비를 못 만들어서 <b>파이어 가능 나이엔 영향이 없어요</b> — 그래서 위 ‘파이어 가능’ 숫자는 바뀌지 않아요.</p>
+            <p className="fm-range-note">부동산 <b>가치</b>와 부채는 <b>순자산·또래 비교</b>에만 반영돼요. 살고 있는 집은 매달 생활비를 못 만들어서 파이어 가능 나이엔 영향이 없어요.</p>
+            <RangeControl label="파이어 후 월 임대수익" value={rentVal} inputKey="monthlyRentalIncome" type="money" step={100000} onChange={(next) => editDraft('monthlyRentalIncome', next)} />
+            <p className="fm-range-note">월세·전세 등에서 <b>매달 들어오는 임대수익</b>이에요(세후 기준). 이 돈은 생활비를 직접 메워주므로 <b>파이어 가능 나이를 앞당겨요</b> — 위 ‘파이어 가능’ 숫자가 바뀝니다. 임대료는 물가 따라 매년 오른다고 가정해요.</p>
           </div>
         )}
       </section>

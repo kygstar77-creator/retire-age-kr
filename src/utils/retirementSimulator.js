@@ -16,6 +16,7 @@ export const defaultInputs = {
   expectedPensionAge: 65,
   expectedMonthlyPension: 1000000,
   partTimeIncomeAfterRetirement: 0,
+  monthlyRentalIncome: 0, // 은퇴 후 월 임대수익(세후) — 물가 따라 매년 인상. 부동산을 안 팔고 월세로 버티는 현실 반영(파이어 나이에 영향).
   simulationUntilAge: 90,
   healthInsuranceEnabled: 0,
   monthlyHealthInsurance: 0,
@@ -39,7 +40,7 @@ const yearly = (monthly) => Number(monthly || 0) * 12;
 const enabled = (value) => Number(value || 0) === 1;
 const clamp = (value, min, max) => Math.max(min, Math.min(max, Number(value || 0)));
 
-// 입력값이 '실제 사용자 데이터'인지(기본값과 다른지) 판별.
+// 입력값이 '실제 사용자 데이터'인지(기본값과 다른지) 판버.
 // 동기화에서 미편집 기본값이 다른 기기 데이터를 덮어쓰는 것을 막는 데 사용.
 export function inputsIsReal(v) {
   if (!v || typeof v !== 'object') return false;
@@ -57,7 +58,7 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
   const savingYears = data.savingYears > 0 ? data.savingYears : Infinity; // 0 = 파이어할 때까지 저축
   let financialAsset = data.financialAsset;
   let costBasis = data.financialAsset; // 양도세 차익 추정용(취득원가 누적)
-  const investType = Math.round(data.investType) || 0; // 0 국내(면제) · 1 해외 양도세22% · 2 배당15.4% · 3 둘 다
+  const investType = Math.round(data.investType) || 0; // 0 국내(면제) · 1 해외 양도세２２% · 2 배당１５.４% · 3 둘 다
   const dividendYield = toRate(data.dividendYield);
   const CG_RATE = 0.22; const DIV_TAX = 0.154; const CG_EXEMPT = 2500000;
   let depletionAge = null;
@@ -80,7 +81,9 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
       ? yearly(data.expectedMonthlyPension) * inflationFactor
       : 0;
     const dividendIncome = isRetired ? yearly(data.dividendIncomeMonthly) * Math.pow(1 + toRate(data.dividendIncomeGrowth), yearsFromRetirement) : 0;
-    const withdrawal = isRetired ? Math.max(0, livingCost - partTimeIncome - pensionIncome - dividendIncome) : 0;
+    // 임대수익: 생활비처럼 물가 따라 매년 인상(임대료는 장기적으로 물가에 연동). 부동산을 안 팔고 월세로 버티는 현실 반영.
+    const rentalIncome = isRetired ? yearly(data.monthlyRentalIncome) * inflationFactor : 0;
+    const withdrawal = isRetired ? Math.max(0, livingCost - partTimeIncome - pensionIncome - dividendIncome - rentalIncome) : 0;
     const salaryGrowth = toRate(data.salaryGrowthRate);
     const stillSaving = !isRetired && yearsFromStart >= 1 && yearsFromStart <= savingYears;
     const investmentAdded = stillSaving ? yearly(data.monthlyInvestment) * Math.pow(1 + salaryGrowth, yearsFromStart) : 0;
@@ -127,6 +130,7 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
       overseasSavings: overseasAdjustment?.annualSavings ?? 0,
       partTimeIncome,
       pensionIncome,
+      rentalIncome,
       withdrawal,
       investmentAdded,
       investTax
@@ -228,6 +232,7 @@ export function buildSimulation(inputs) {
     firstYearOverseasSavings: retirementRow?.overseasSavings ?? 0,
     firstYearPartTimeIncome: retirementRow?.partTimeIncome ?? 0,
     firstYearPensionIncome: retirementRow?.pensionIncome ?? 0,
+    firstYearRentalIncome: retirementRow?.rentalIncome ?? 0,
     pensionStartWithdrawal: pensionStartRow?.withdrawal ?? null,
     retirementFinancialAsset,
     finalFinancialAsset: finalRow?.financialAsset ?? targetResult.finalFinancialAsset,

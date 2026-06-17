@@ -10,6 +10,7 @@ import InstallButton from './InstallButton.jsx';
 import PetCard from './PetCard.jsx';
 import FireClock from './FireClock.jsx';
 import FireClockPush from './FireClockPush.jsx';
+import DailyJourney from './DailyJourney.jsx';
 import JourneyMap from './JourneyMap.jsx';
 import OpenChatNotice from './OpenChatNotice.jsx';
 import { account } from '../../utils/identity.js';
@@ -26,7 +27,6 @@ function pickNextAction() {
   const fd = readJSONsafe('fm_daily');
   const hasSave = (sv && (sv.total || 0) > 0) || (fd && fd.days && Object.keys(fd.days).length > 0);
   if (!hasSave) return { label: '오늘 절약 한 번 기록하고 파이어 시간 벌기', to: 'save', ico: '⏱️' };
-  // 자산 업데이트는 바로 위 대시보드 카드에 이미 있어 중복 → 다음 할 일에서는 제외
   const pool = [
     { label: '지방 살면 몇 년 빨라지나 보기', to: 'cities', ico: '📍' },
     { label: '파이어 후 건보료 얼마인지 확인하기', to: 'dependent', ico: '🩺' },
@@ -44,7 +44,6 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
   const earliest = simulation.earliestRetirementAge;
   const pct = target > 0 ? Math.max(0, Math.min(100, Math.round((asset / target) * 100))) : 0;
 
-  // 목표(사용자가 정한 목표 파이어 나이) = 기준선, 예상(지금 예상) = 현재 위치.
   const targetAge = Number(inp.targetRetirementAge) || 0;
   const ageGap = earliest != null ? earliest - targetAge : null;
   const gapDir = ageGap == null ? '' : ageGap > 0 ? 'behind' : ageGap < 0 ? 'ahead' : 'even';
@@ -108,6 +107,8 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
           </button>
         );
       })()}
+
+      {asHome && <DailyJourney onMove={onMove} />}
 
       {asHome && <JourneyMap simulation={simulation} onMove={onMove} />}
 

@@ -26,7 +26,8 @@ const STYLE = `
 .fm-pet-cap{font-size:13px;color:#4b5563;margin:2px 0}
 .fm-pet-cap b{color:#c2410c}
 .fm-pet-total{font-size:12px;color:#8a93a0;margin-top:6px}
-.fm-pet-evolve{margin-top:10px;background:#fff4e8;color:#c2410c;font-weight:800;border-radius:12px;padding:9px 12px;font-size:14px;animation:fmPetPop .6s ease}
+.fm-pet-evolve{margin-top:10px;background:#fff4e8;color:#c2410c;font-weight:800;border-radius:12px;padding:9px 12px;font-size:14px;border:none;width:100%;max-width:320px;cursor:pointer;animation:fmPetPop .6s ease}
+.fm-pet-share{margin-top:12px;width:100%;max-width:320px;background:#ff5a00;color:#fff;border:none;border-radius:12px;padding:11px 14px;font-weight:800;font-size:14px;cursor:pointer}
 .fm-pet-wardrobe{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:10px}
 .fm-cos{border:1px solid #e5e7eb;background:#fff;border-radius:99px;padding:5px 11px;font-size:12px;font-weight:700;color:#4b5563;cursor:pointer}
 .fm-cos.on{background:#eaf1ff;border-color:#1d4ed8;color:#1d4ed8}
@@ -180,6 +181,20 @@ export default function PetCard() {
 
   const { idx, stage, next, pct, toNext, total } = pet;
   const rankMark = weeklyRank === 1 ? '👑' : weeklyRank === 2 ? '🥈' : weeklyRank === 3 ? '🥉' : '';
+
+  const sharePet = async () => {
+    const head = weeklyRank === 1 ? '이번 주 절약왕 등극! 🏆 ' : '';
+    const text = `${head}저축·절약으로 ${stage.name} 키우는 중 🦝 나도 파이어 너구리 키우러 가기`;
+    const url = 'https://firemap.kr/';
+    try { if (window.gtag) window.gtag('event', 'pet_share', { stage: idx }); } catch { /* ignore */ }
+    if (navigator.share) {
+      try { await navigator.share({ title: '파이어맵 — 내 절약 너구리', text, url }); return; }
+      catch (e) { if (e && e.name === 'AbortError') return; }
+    }
+    try { await navigator.clipboard.writeText(`${text} ${url}`); window.alert('자랑 문구를 복사했어요! 카톡·단톡방에 붙여넣어 보세요 🔥'); }
+    catch { /* ignore */ }
+  };
+
   const nextCos = COSMETICS.find((c) => cp < c.cp);
   const cos = {};
   COSMETICS.forEach((c) => { cos[c.key] = cp >= c.cp && equip[c.key] !== false; });
@@ -214,7 +229,9 @@ export default function PetCard() {
           })}
         </div>
       )}
-      {evo && <div className='fm-pet-evolve'>🎉 진화! <b>{evo}</b>가 됐어요</div>}
+      {evo
+        ? <button type='button' className='fm-pet-evolve' onClick={sharePet}>🎉 진화! <b>{evo}</b> — 자랑하기 →</button>
+        : (total > 0 && <button type='button' className='fm-pet-share' onClick={sharePet}>🦝 내 너구리 자랑하기</button>)}
     </section>
   );
 }

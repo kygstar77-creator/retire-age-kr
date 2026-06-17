@@ -6,13 +6,22 @@ import { getAssetHistory } from '../../utils/assetHistory.js';
 import { fetchAggregates } from '../../utils/firemapScoresApi.js';
 import { track } from '../../firemap-v2/dailyData.js';
 
-const INTRO = {
-  1: '내 파이어 나이를 알게 된 단계예요. 결과와 또래 위치를 확인하고 내 기록을 지켜요.',
-  2: '목표와 전략을 정하는 단계예요. 어떻게 도달할지 길을 그려요.',
-  3: '추적을 시작하는 단계예요. 기록이 쌓이면 파이어가 움직여요.',
-  4: '진짜 전진하는 단계예요. 가장 큰 레버로 파이어를 당겨요.',
-  5: '거의 다 온 단계예요. 건보·세금·인출을 점검해 검증해요.',
-  6: '파이어 단계예요. 지속 가능한 인출과 커뮤니티로 함께해요.'
+const GUIDE = {
+  1: '내 파이어 나이를 알았다면, 이제 ‘파이어’가 한 종류가 아니라는 걸 알 차례예요. 완전 은퇴(린·팫)부터 코스트·바리스타·반퇴까지 — 내게 맞는 유형을 정하면 목표가 또렷해져요. 결과와 또래 위치를 먼저 확인하고, 기록이 사라지지 않게 프로필을 만들어두세요.',
+  2: '목표를 정하는 단계예요. 목표 자산은 얼마인지, 코스트파이어(더 안 모아도 굴러가는 시점)는 언제인지, ISA·연금계좌로 세금을 줄이며 모으는 법까지 — 도달 경로를 그려요. ‘바꿔보기’로 저축·생활비·근무 레버를 돌려 내 목표 나이를 맞춰보세요.',
+  3: '가장 긴 구간이에요. 핵심은 ‘저축률’. 고정비부터 구조적으로 줄이고, 매달 자산을 기록해 진도를 눌로 보세요. 작은 절약도 파이어를 며칠씩 당김니다 — 기록이 쌓이면 숫자가 살아 움직여요.',
+  4: '모으는 속도를 끌어올리는 단계예요. 지방·동남아 이주로 생활비를 낮추거나, 부업·배당으로 현금흐름을 더하면 파이어가 몇 년씩 당겨져요. 세금(양도·배당)도 최적화 포인트예요.',
+  5: '돈은 거의 모였어요. 이제 ‘진짜 되는지’ 검증할 때. 퇴사하면 건강보험이 지역가입자로 바뀌고, 연금 받기 전까지 소득 공백(크레바스)이 생기고, 자산을 어떤 순서로 인출하느냐로 세금이 달라져요. 이걸 점검해야 안전한 파이어예요.',
+  6: '축하해요. 이제 ‘돈이 안 떨어지게’ 지키는 단계. 인출 순서 전략으로 세금을 아끼고, 같은 길을 걷는 파이어족과 이야기 나누며 길게 함께해요.'
+};
+
+const READS = {
+  1: [['파이어 종류 — 린·팫·코스트·바리스타', 'fire-types'], ['나이별 파이어 전략', 'fire-by-age'], ['4% 룰이란?', 'four-percent-rule'], ['물가와 은퇴 자금', 'inflation-retirement']],
+  2: [['목표 자산 시나리오', 'asset-target-scenarios'], ['코스트파이어 계산', 'coast-fire-calculation'], ['ISA·연금계좌 절세', 'isa-pension-accounts'], ['반퇴(세미리타이어)', 'semi-retirement']],
+  3: [['생활비 구조적으로 줄이기', 'cut-living-cost'], ['알뜰한 식비 절약법', 'frugal-food-tips'], ['배당으로 월 현금흐름', 'dividend-monthly-income']],
+  4: [['지방·주택 다운사이징', 'real-estate-downsizing'], ['동남아 은퇴', 'southeast-asia-retirement'], ['파이어 후 부업', 'post-retirement-side-jobs'], ['디지털노마드 소득', 'digital-nomad-income']],
+  5: [['파이어 후 건보료·피부양자', 'health-insurance-dependent'], ['소득 크레바스(연금 공백)', 'income-crevasse'], ['국민연금 조기수령', 'national-pension-early'], ['인출 순서 전략', 'withdrawal-order-strategy'], ['해외주식 양도세', 'foreign-stock-tax'], ['퇴직금·IRP 세금', 'severance-irp-tax']],
+  6: [['인출 순서 전략', 'withdrawal-order-strategy'], ['배당과 건강보험료', 'dividend-health-insurance'], ['배당 소득세 기준', 'dividend-tax-thresholds']]
 };
 
 function tasksFor(n, s) {
@@ -36,28 +45,32 @@ export default function JourneyStage({ simulation, onMove, onBack }) {
   const [open, setOpen] = useState(j.stage);
   const s = j.signals || {};
   const doneCount = (n) => { const ts = tasksFor(n, s); return ts.filter((t) => t.done).length + '/' + ts.length; };
+  const readGuide = (slug) => { try { track('journey_read', { slug }); } catch { /* ignore */ } try { window.open('/guide/' + slug + '.html', '_blank', 'noopener'); } catch { window.location.href = '/guide/' + slug + '.html'; } };
 
   return (
     <main className="fm-screen fm-scroll">
       <Header tag="내 파이어 여정" onBack={onBack} />
       <section className="fm-card" style={H.intro}>
         <span style={H.k}>{j.current.emoji} {j.stage}/6단계 · {j.current.name}</span>
-        <p style={H.t}>{INTRO[j.stage]}</p>
+        <p style={H.t}>{GUIDE[j.stage]}</p>
       </section>
       {j.stages.map((st) => {
         const done = st.n < j.stage, cur = st.n === j.stage, locked = st.n > j.stage;
         const isOpen = open === st.n;
         const tasks = tasksFor(st.n, s);
+        const reads = READS[st.n] || [];
         return (
           <section className="fm-card" key={st.key} style={{ ...H.card, ...(cur ? H.cardCur : null) }}>
             <button type="button" style={H.row} onClick={() => setOpen(isOpen ? 0 : st.n)}>
               <span style={{ ...H.badge, ...(done ? H.bDone : cur ? H.bCur : H.bLock) }}>{done ? '✓' : locked ? '🔒' : st.emoji}</span>
-              <span style={H.rowtx}><b style={{ color: locked ? '#9aa3bf' : '#15151b' }}>{st.n}. {st.name}</b><em>{st.tag} · 할 일 {doneCount(st.n)}</em></span>
+              <span style={H.rowtx}><b style={{ color: locked ? '#9aa3bf' : '#15151b' }}>{st.n}. {st.name}</b><span style={H.rowsub}>{st.tag} · 할 일 {doneCount(st.n)}</span></span>
               <span style={H.chev}>{isOpen ? '▴' : '▾'}</span>
             </button>
             {isOpen && (
               <div style={H.body}>
-                <p style={H.bodyIntro}>{INTRO[st.n]}</p>
+                <p style={H.bodyIntro}>{GUIDE[st.n]}</p>
+
+                <p style={H.subh}>✓ 지금 할 일</p>
                 <ul style={H.ul}>
                   {tasks.map((tk, i) => (
                     <li key={i} style={H.li}>
@@ -67,12 +80,25 @@ export default function JourneyStage({ simulation, onMove, onBack }) {
                     </li>
                   ))}
                 </ul>
+
+                {reads.length > 0 && (
+                  <>
+                    <p style={H.subh}>📖 이 단계에서 꿁 읽어볼 글</p>
+                    <div style={H.reads}>
+                      {reads.map(([title, slug]) => (
+                        <button type="button" key={slug + title} style={H.read} onClick={() => readGuide(slug)}>
+                          <span style={H.readT}>{title}</span><span style={H.readArrow}>›</span>
+                        </button>
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
             )}
           </section>
         );
       })}
-      <p style={H.foot}>각 단계의 할 일을 끝내면 다음 단계로 나아가요. 파이어까지 함께합니다.</p>
+      <p style={H.foot}>각 단계의 할 일과 읽을 거리를 끝내면 다음 단계로 나아가요. 파이어가 몇 년 남았든, 여기서 함께합니다.</p>
     </main>
   );
 }
@@ -80,7 +106,7 @@ export default function JourneyStage({ simulation, onMove, onBack }) {
 const H = {
   intro: { borderColor: 'rgba(255,90,0,0.3)', background: 'radial-gradient(120% 90% at 100% 0%, rgba(255,90,0,0.06), transparent 50%), #fff' },
   k: { display: 'inline-block', fontSize: 12, fontWeight: 800, color: '#e8431c', background: '#fff0ea', padding: '5px 11px', borderRadius: 999 },
-  t: { fontSize: 13.5, color: '#15151b', fontWeight: 600, lineHeight: 1.55, margin: '12px 0 0' },
+  t: { fontSize: 13.5, color: '#15151b', fontWeight: 500, lineHeight: 1.65, margin: '12px 0 0' },
   card: { padding: 0, overflow: 'hidden' },
   cardCur: { borderColor: 'rgba(255,90,0,0.4)', boxShadow: '0 1px 2px rgba(20,18,15,.04), 0 16px 32px -20px rgba(255,90,0,.3)' },
   row: { width: '100%', border: 0, background: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 12, padding: '16px 16px' },
@@ -88,16 +114,22 @@ const H = {
   bDone: { background: '#ff5a00', color: '#fff' },
   bCur: { background: '#fff0ea', boxShadow: '0 0 0 2px #ff5a00 inset' },
   bLock: { background: '#f1f0ee', color: '#b7b2a8' },
-  rowtx: { flex: 1, textAlign: 'left', display: 'flex', flexDirection: 'column', gap: 2 },
+  rowtx: { flex: 1, textAlign: 'left', display: 'flex', flexDirection: 'column', gap: 3 },
+  rowsub: { fontSize: 11.5, color: '#9aa3bf', fontWeight: 600, fontStyle: 'normal' },
   chev: { color: '#9aa3bf', fontSize: 13, flex: '0 0 auto' },
   body: { padding: '0 16px 16px' },
-  bodyIntro: { fontSize: 12.5, color: '#6b6f76', lineHeight: 1.55, margin: '0 0 12px' },
-  ul: { listStyle: 'none', margin: 0, padding: 0 },
-  li: { display: 'flex', alignItems: 'center', gap: 10, padding: '10px 0', borderTop: '1px solid #f2f0ec' },
+  bodyIntro: { fontSize: 13, color: '#565c68', lineHeight: 1.65, margin: '0 0 14px' },
+  subh: { fontSize: 12, fontWeight: 800, color: '#1e2859', margin: '0 0 8px' },
+  ul: { listStyle: 'none', margin: '0 0 16px', padding: 0 },
+  li: { display: 'flex', alignItems: 'center', gap: 10, padding: '9px 0', borderTop: '1px solid #f2f0ec' },
   cb: { width: 20, height: 20, borderRadius: 6, border: '2px solid #d7dae0', flex: '0 0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 12, fontWeight: 800 },
   cbDone: { background: '#ff5a00', borderColor: '#ff5a00' },
   litx: { flex: 1, fontSize: 13.5, color: '#15151b', fontWeight: 600 },
   litxDone: { color: '#9aa3bf', textDecoration: 'line-through' },
   do: { flex: '0 0 auto', fontSize: 12, fontWeight: 800, color: '#fff', background: 'linear-gradient(180deg,#ff6a35,#ee4a1f)', border: 0, borderRadius: 9, padding: '7px 12px', cursor: 'pointer' },
+  reads: { display: 'flex', flexDirection: 'column', gap: 8 },
+  read: { width: '100%', textAlign: 'left', display: 'flex', alignItems: 'center', gap: 8, background: '#f8f6f2', border: '1px solid #efece7', borderRadius: 11, padding: '11px 13px', cursor: 'pointer' },
+  readT: { flex: 1, fontSize: 13, color: '#15151b', fontWeight: 700 },
+  readArrow: { color: '#ff5a00', fontWeight: 800, fontSize: 15 },
   foot: { fontSize: 11.5, color: '#9aa3bf', lineHeight: 1.6, textAlign: 'center', padding: '6px 18px 0' }
 };

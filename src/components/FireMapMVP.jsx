@@ -74,12 +74,26 @@ export default function FireMapMVP() {
   const referrerRef = useRef({});
   const screenRef = useRef(screen);
   const skipRecordRef = useRef(false);
+  const inputsMounted = useRef(false);
+  const skipStampRef = useRef(false);
   const [expDraft, setExpDraft] = useState(null);
   const [expBase, setExpBase] = useState(null);
   const simulation = useMemo(() => buildSimulation(inputs), [inputs]);
   const rankingSimulation = useMemo(() => buildSimulation({ ...inputs, investType: 0 }), [inputs]);
 
-  useEffect(() => { if (!inputsIsReal(inputs)) return; const ts = Date.now(); try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); localStorage.setItem('fm_inputs_ts', String(ts)); } catch { /* ignore */ } try { pushState('firemap-inputs-v3', inputs); pushState('fm_inputs_ts', ts); } catch { /* ignore */ } }, [inputs]);
+  useEffect(() => {
+    if (!inputsIsReal(inputs)) return;
+    // 로컬엔 항상 저장(새로고침 대비). 단 타임스탬프 기록·서버푸시는 '실제 수정'일 때만.
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); } catch { /* ignore */ }
+    // 앱 첫 로드(로컬값 복원)는 '수정'이 아님 -> ts 갱신·서버푸시 건너뜀
+    if (!inputsMounted.current) { inputsMounted.current = true; return; }
+    // 서버에서 받아온 값(pull)도 '수정'이 아님 -> 한 번 건너뛰고 플래그 해제
+    if (skipStampRef.current) { skipStampRef.current = false; return; }
+    // 여기부터는 사용자가 실제로 값을 바꾼 경우만: 마지막 수정시각 기록 + 서버 반영(LWW)
+    const ts = Date.now();
+    try { localStorage.setItem('fm_inputs_ts', String(ts)); } catch { /* ignore */ }
+    try { pushState('firemap-inputs-v3', inputs); pushState('fm_inputs_ts', ts); } catch { /* ignore */ }
+  }, [inputs]);
   useEffect(() => { try { window.scrollTo(0, 0); } catch { /* ignore */ } }, [screen, step]);
   useEffect(() => { try { logEvent('screen_view', { screen }); } catch { /* ignore */ } }, [screen]);
   useEffect(() => { try { logEvent('session_start', {}); } catch { /* ignore */ } }, []);
@@ -118,7 +132,7 @@ export default function FireMapMVP() {
         return;
       }
       maybeClaimOnLoad();
-      try { const sIn = await pullInputsIfNewer(); if (sIn) setInputs((c) => ({ ...c, ...sIn })); } catch (e) { /* ignore */ }
+      try { const sIn = await pullInputsIfNewer(); if (sIn) { skipStampRef.current = true; setInputs((c) => ({ ...c, ...sIn })); } } catch (e) { /* ignore */ }
     })();
     try {
       const standalone = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;

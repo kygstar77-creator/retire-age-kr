@@ -20,6 +20,7 @@ export function journeyStage(simulation, opts = {}) {
   const curAge = Number(inp.currentAge) || 0;
   const targetAge = Number(inp.targetRetirementAge) || 0;
   const asset = Number(inp.financialAsset) || 0;
+  const monthlyInvestment = Number(inp.monthlyInvestment) || 0;
   const target = Math.max(0, Math.round((simulation && simulation.requiredFireAssetByFourPercent) || 0));
   const pct = target > 0 ? Math.max(0, Math.min(100, Math.round((asset / target) * 100))) : 0;
 
@@ -31,7 +32,7 @@ export function journeyStage(simulation, opts = {}) {
   let notif = opts.notifGranted;
   if (notif == null) { try { notif = (typeof Notification !== 'undefined') && Notification.permission === 'granted'; } catch { notif = false; } }
   const hasTracking = histLen >= 1 || saveTotal > 0 || dailyN > 0 || !!notif;
-  const hasPlan = (Number(inp.monthlyInvestment) || 0) > 0 || asset > 0 || (Number(inp.savingYears) || 0) > 0;
+  const hasPlan = monthlyInvestment > 0 || asset > 0 || (Number(inp.savingYears) || 0) > 0;
   const peerAvg = opts.peerAvg || null;
   const adv = Number(opts.advanceDays) || 0;
 
@@ -63,6 +64,8 @@ export function journeyStage(simulation, opts = {}) {
     { label: '파이어 달성', done: stage === 6 }
   ];
 
+  const signals = { calculated, earliest, curAge, targetAge, asset, monthlyInvestment, histLen, saveTotal, dailyN, notif: !!notif, hasTracking, hasPlan, peerAvg, pct, adv };
+
   return {
     stage,
     stages: JOURNEY_STAGES,
@@ -71,6 +74,7 @@ export function journeyStage(simulation, opts = {}) {
     pct,
     momentum: adv > 0.5 ? { advanceDays: adv } : null,
     milestones,
+    signals,
     target,
     asset,
     earliest,

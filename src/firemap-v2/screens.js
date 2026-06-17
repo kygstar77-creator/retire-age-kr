@@ -8,6 +8,7 @@ export const screens = {
   result:     { hash: '#result',     title: '결과',   type: 'result',   tab: 'home', next: ['ranking', 'save', 'experiment', 'tools'] },
   save:       { hash: '#save',       title: '저축',   type: 'save',     tab: 'save' },
   tools:      { hash: '#tools',      title: '도구',   type: 'tools',    tab: 'tools' },
+  journey:    { hash: '#journey',    title: '내 파이어 여정', type: 'tool', back: 'home', tab: 'home' },
   index:      { hash: '#index',      title: '대한민국 파이어 지수', type: 'tool', back: 'home' },
   experiment: { hash: '#experiment', title: '바꿔보기',          type: 'tool', back: 'result', tab: 'home' },
   share:      { hash: '#share',      title: '공유',               type: 'tool', back: 'result' },
@@ -21,7 +22,6 @@ export const screens = {
   cities:     { hash: '#cities',     title: '지역별 파이어 (국내·해외)',      type: 'tool', back: 'tools' }
 };
 
-// 결과 화면 다음 행동 (MVP 메인)
 export const NEXT_ACTION_META = {
   ranking:    { tag: '랭킹', title: '전체 랭킹 보기',     desc: '1등까지 몇 명? 내 순위', primary: true },
   save:       { tag: '저축', title: '오늘부터 저축 기록',   desc: '적립·절약이 파이어를 며칠 당기는지' },
@@ -30,7 +30,6 @@ export const NEXT_ACTION_META = {
   tools:      { tag: '도구', title: '정밀 도구 더보기',   desc: '건보료·세금·도시·커뮤니티' }
 };
 
-// 도구 허브 목록 (메인에서 분리된 기능들)
 export const TOOLS = [
   { id: 'index',      tag: '데이터', title: '대한민국 파이어 지수', desc: '7천여 명 집계로 보는 또래 중 내 위치' },
   { id: 'experiment', tag: '비교',   title: '조건 바꿔 비교',     desc: '증권앱 차트로 What-If 비교' },
@@ -42,7 +41,6 @@ export const TOOLS = [
   { id: 'community',  tag: '커뮤니티', title: '다른 사람들',       desc: '익명 한마디·후기' }
 ];
 
-// 하단 탭
 export const TABS = [
   { id: 'home',  label: '홈',   target: 'home' },
   { id: 'save',  label: '저축', target: 'save' },

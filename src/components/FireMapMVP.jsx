@@ -21,6 +21,7 @@ import DividendLifeCalc from './firemap/DividendLifeCalc.jsx';
 import Savings from './firemap/Savings.jsx';
 import FirePlan from './firemap/FirePlan.jsx';
 import FireIndex from './firemap/FireIndex.jsx';
+import JourneyStage from './firemap/JourneyStage.jsx';
 import Consent from './firemap/Consent.jsx';
 import LiveBanner from './firemap/LiveBanner.jsx';
 import { buildSimulation, defaultInputs, inputsIsReal } from '../utils/retirementSimulator.js';
@@ -185,6 +186,7 @@ export default function FireMapMVP() {
   if (screen === 'home') view = <Home onStart={(age) => { if (typeof age === 'number' && age > 0) { onChange('currentAge', age); setStep(1); } else { setStep(0); } setScreen('question'); }} onMove={setScreen} onChange={onChange} simulation={simulation} />;
   else if (screen === 'question') view = <Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />;
   else if (screen === 'tools') view = <Tools onMove={setScreen} />;
+  else if (screen === 'journey') view = <JourneyStage simulation={simulation} onMove={setScreen} onBack={backOf('journey')} />;
   else if (screen === 'index') view = <FireIndex simulation={simulation} onBack={backOf('index')} />;
   else if (screen === 'experiment') view = <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} onMove={setScreen} draft={expDraft} setDraft={setExpDraft} base={expBase} setBase={setExpBase} />;
   else if (screen === 'city') view = <City inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('city')} />;

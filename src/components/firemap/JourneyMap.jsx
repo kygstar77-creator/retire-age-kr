@@ -52,14 +52,13 @@ export default function JourneyMap({ simulation, onMove }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [j.stage]);
 
-  // 살아있는 파이어 — 이번 주 시장(S&P500) 수익률을 내 자산에 적용 → 일일필요액으로 환산해 파이어 '며칠' 움직였는지.
   const marketLiving = useMemo(() => {
     if (marketRet == null) return null;
     const asset = j.asset;
     if (!(asset > 0)) return { pct: marketRet, days: 0 };
     let days = 0;
     try {
-      const need = dailyNeedOf(simulation); // 원/일, 목표 달성이면 null
+      const need = dailyNeedOf(simulation);
       if (need && need > 0) days = Math.round((asset * (marketRet / 100)) / need);
     } catch { /* ignore */ }
     return { pct: marketRet, days };
@@ -97,10 +96,10 @@ export default function JourneyMap({ simulation, onMove }) {
         <div style={S.celebrate}>🎉 <b>{celebrate}</b> 달성! 한 단계 가까워졌어요</div>
       )}
 
-      <div style={S.head}>
+      <button type="button" style={S.head} onClick={() => { try { track('journey_open', {}); } catch { /* ignore */ } onMove('journey'); }}>
         <span style={S.kicker}>내 파이어 여정</span>
-        <span style={S.stageNo}>{j.stage}<span style={S.stageNoTot}>/6단계</span></span>
-      </div>
+        <span style={S.stageNo}>{j.stage}<span style={S.stageNoTot}>/6단계 ›</span></span>
+      </button>
 
       <div style={S.rail}>
         <div style={S.railLine} />
@@ -128,6 +127,8 @@ export default function JourneyMap({ simulation, onMove }) {
         </span>
         <span style={S.ctaArrow}>→</span>
       </button>
+
+      <button type="button" style={S.allSteps} onClick={() => { try { track('journey_open', {}); } catch { /* ignore */ } onMove('journey'); }}>📋 단계별 할 일 전체 보기 ›</button>
 
       {nextMs && (
         <div style={S.goal}>
@@ -168,7 +169,7 @@ function fmtAdv(days) {
 const S = {
   card: { borderColor: 'rgba(255,90,0,0.3)', boxShadow: '0 1px 2px rgba(20,18,15,.04), 0 18px 36px -20px rgba(255,90,0,.28)' },
   celebrate: { background: 'linear-gradient(90deg,#FFF0E8,#FFF8F4)', border: '1px solid rgba(255,90,0,0.25)', borderRadius: 12, padding: '9px 12px', fontSize: 12.5, color: '#9a3a12', fontWeight: 700, marginBottom: 13 },
-  head: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 },
+  head: { width: '100%', border: 0, background: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, padding: 0 },
   kicker: { fontSize: 13, fontWeight: 800, color: '#1e2859', letterSpacing: '-0.01em' },
   stageNo: { fontSize: 18, fontWeight: 800, color: '#ff5a00', fontVariantNumeric: 'tabular-nums' },
   stageNoTot: { fontSize: 11, fontWeight: 700, color: '#9aa3bf', marginLeft: 1 },
@@ -190,6 +191,7 @@ const S = {
   ctaCap: { fontSize: 10.5, fontWeight: 700, opacity: 0.85, letterSpacing: '0.02em' },
   ctaMain: { fontSize: 15, fontWeight: 800, marginTop: 2 },
   ctaArrow: { fontSize: 18, fontWeight: 800, marginLeft: 10, flex: '0 0 auto' },
+  allSteps: { width: '100%', marginTop: 9, background: '#fff', border: '1px solid #ececec', borderRadius: 12, padding: '11px', fontSize: 13, fontWeight: 700, color: '#1e2859', cursor: 'pointer' },
   goal: { marginTop: 13 },
   goalTop: { display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 6 },
   goalLabel: { fontSize: 12, color: '#6b6f76', fontWeight: 600 },

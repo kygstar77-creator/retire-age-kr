@@ -9,6 +9,7 @@ import { computeProgress, hasCalculated } from '../../utils/savingsEngine.js';
 import InstallButton from './InstallButton.jsx';
 import PetCard from './PetCard.jsx';
 import FireClock from './FireClock.jsx';
+import FireClockPush from './FireClockPush.jsx';
 import OpenChatNotice from './OpenChatNotice.jsx';
 import { account } from '../../utils/identity.js';
 
@@ -128,6 +129,8 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
       </section>
 
       {asHome && <FireClock simulation={simulation} />}
+
+      {asHome && <FireClockPush simulation={simulation} />}
 
       {asHome && (
         <button type="button" className="fm-plan-result" onClick={() => onMove('result')}>📊 내 파이어 결과·또래 등수 자세히 보기 →</button>

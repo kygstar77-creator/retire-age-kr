@@ -2,13 +2,23 @@ import { useEffect, useMemo, useState } from 'react';
 import { journeyStage } from '../../utils/journeyStage.js';
 import { computeProgress } from '../../utils/savingsEngine.js';
 import { getAssetHistory } from '../../utils/assetHistory.js';
+import { buildSimulation } from '../../utils/retirementSimulator.js';
 import { fetchAggregates } from '../../utils/firemapScoresApi.js';
+import { formatWon } from '../../firemap-v2/formatters.js';
 import { account } from '../../utils/identity.js';
 import { track } from '../../firemap-v2/dailyData.js';
 
-// 파이어 여정 지도 — "너 여기 + 다음 한 걸음 + 모멘텀". 흔어진 기능을 하나의 길로.
+// 파이어 여정 지도 — 단계 경로 · 다음 한 걸음 · 다음 목표 진행 · 마일스톤 축하 · 살아있는 숫자.
+const ASSET_MS = [
+  { v: 100000000, label: '1억' },
+  { v: 300000000, label: '3억' },
+  { v: 500000000, label: '5억' },
+  { v: 1000000000, label: '10억' }
+];
+
 export default function JourneyMap({ simulation, onMove }) {
   const [peerAvg, setPeerAvg] = useState(null);
+  const [celebrate, setCelebrate] = useState(null);
 
   useEffect(() => {
     let alive = true;
@@ -24,18 +34,51 @@ export default function JourneyMap({ simulation, onMove }) {
     return journeyStage(simulation, { advanceDays: adv, peerAvg, assetHistoryLen: histLen });
   }, [simulation, peerAvg]);
 
-  if (!j.earliest) return null; // 계산 전이면 지도 숨김
+  // 새로 달성한 마일스톤 1회 축하 (이미 본 건 localStorage로 추적)
+  useEffect(() => {
+    if (!j.earliest) return;
+    try {
+      const done = j.milestones.filter((m) => m.done).map((m) => m.label);
+      let seen = []; try { seen = JSON.parse(localStorage.getItem('fm_journey_seen') || '[]'); } catch { /* ignore */ }
+      const fresh = done.filter((l) => !seen.includes(l));
+      if (seen.length > 0 && fresh.length > 0) setCelebrate(fresh[fresh.length - 1]);
+      localStorage.setItem('fm_journey_seen', JSON.stringify(done));
+    } catch { /* ignore */ }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [j.stage]);
+
+  // 살아있는 숫자: 지난 자산 기록 대비 파이어 나이가 얼마나 움직였나 (외부 시세 없이 내 기록으로)
+  const living = useMemo(() => {
+    try {
+      const hist = getAssetHistory();
+      if (hist.length >= 2 && simulation && simulation.inputs && simulation.earliestRetirementAge) {
+        const prevAsset = hist[hist.length - 2].v;
+        const prevSim = buildSimulation({ ...simulation.inputs, financialAsset: prevAsset });
+        const e0 = prevSim.earliestRetirementAge;
+        const e1 = simulation.earliestRetirementAge;
+        if (e0 && e1 && e0 !== e1) return { years: e0 - e1 };
+      }
+    } catch { /* ignore */ }
+    return null;
+  }, [simulation]);
+
+  if (!j.earliest) return null;
 
   const acc = account();
   const loggedIn = !!(acc && acc.handle);
 
-  const go = (to) => {
-    try { track('journey_next_step', { stage: j.stage, to }); } catch { /* ignore */ }
-    onMove(to);
-  };
+  const nextMs = ASSET_MS.find((m) => j.asset < m.v);
+  const prevMsV = nextMs ? (ASSET_MS.filter((m) => m.v < nextMs.v).map((m) => m.v).pop() || 0) : 0;
+  const msProg = nextMs ? Math.max(4, Math.min(100, Math.round(((j.asset - prevMsV) / (nextMs.v - prevMsV)) * 100))) : 100;
+
+  const go = (to) => { try { track('journey_next_step', { stage: j.stage, to }); } catch { /* ignore */ } onMove(to); };
 
   return (
     <section className="fm-card" style={S.card}>
+      {celebrate && (
+        <div style={S.celebrate}>🎉 <b>{celebrate}</b> 달성! 한 단계 가까워졌어요</div>
+      )}
+
       <div style={S.head}>
         <span style={S.kicker}>내 파이어 여정</span>
         <span style={S.stageNo}>{j.stage}<span style={S.stageNoTot}>/6단계</span></span>
@@ -50,9 +93,7 @@ export default function JourneyMap({ simulation, onMove }) {
             const cur = st.n === j.stage;
             return (
               <div key={st.key} style={S.node}>
-                <div style={{ ...S.dot, ...(done ? S.dotDone : cur ? S.dotCur : S.dotFut) }}>
-                  {done ? '✓' : st.emoji}
-                </div>
+                <div style={{ ...S.dot, ...(done ? S.dotDone : cur ? S.dotCur : S.dotFut) }}>{done ? '✓' : st.emoji}</div>
                 <div style={{ ...S.nodeLabel, ...(cur ? S.nodeLabelCur : done ? S.nodeLabelDone : null) }}>{st.name}</div>
               </div>
             );
@@ -63,18 +104,30 @@ export default function JourneyMap({ simulation, onMove }) {
       <p style={S.here}><b style={{ color: '#ff5a00' }}>{j.current.emoji} {j.current.name}</b> 단계예요 · {j.current.tag}</p>
 
       <button type="button" style={S.cta} onClick={() => go(j.nextStep.to)}>
-        <span style={S.ctaCap}>다음 한 걸음</span>
-        <span style={S.ctaMain}>{j.nextStep.label}</span>
+        <span style={S.ctaTextWrap}>
+          <span style={S.ctaCap}>다음 한 걸음</span>
+          <span style={S.ctaMain}>{j.nextStep.label}</span>
+        </span>
         <span style={S.ctaArrow}>→</span>
       </button>
 
-      {j.momentum && (
-        <p style={S.momentum}>🔥 이번 달 파이어 <b>{fmtAdv(j.momentum.advanceDays)}</b> 당겨어요</p>
+      {nextMs && (
+        <div style={S.goal}>
+          <div style={S.goalTop}>
+            <span style={S.goalLabel}>다음 목표 · <b style={{ color: '#1e2859' }}>{nextMs.label} 돌파</b></span>
+            <span style={S.goalGap}>{formatWon(Math.max(0, nextMs.v - j.asset))} 남음</span>
+          </div>
+          <div style={S.goalTrack}><div style={{ ...S.goalFill, width: `${msProg}%` }} /></div>
+        </div>
       )}
+
+      {living
+        ? <p style={S.momentum}>📈 지난 기록보다 파이어 <b>{Math.abs(living.years) >= 1 ? `${Math.abs(living.years)}년` : '약간'}</b> {living.years > 0 ? '빨라졌어요' : '늘춰졌어요'}</p>
+        : (j.momentum ? <p style={S.momentum}>🔥 이번 달 파이어 <b>{fmtAdv(j.momentum.advanceDays)}</b> 당겼어요</p> : null)}
 
       {!loggedIn && (
         <button type="button" style={S.profile} onClick={() => { try { track('journey_profile_cta', {}); } catch { /* ignore */ } onMove('account'); }}>
-          🔒 이 여정을 저장하려면 — <b>내 파이어 프로필 만들기 ›</b>
+          🔒 이 여정을 저장하려면 — <b style={{ color: '#ff5a00' }}>내 파이어 프로필 만들기 ›</b>
         </button>
       )}
     </section>
@@ -89,28 +142,36 @@ function fmtAdv(days) {
 }
 
 const S = {
-  card: { borderColor: 'rgba(255,90,0,0.28)' },
+  card: { borderColor: 'rgba(255,90,0,0.3)', boxShadow: '0 1px 2px rgba(20,18,15,.04), 0 18px 36px -20px rgba(255,90,0,.28)' },
+  celebrate: { background: 'linear-gradient(90deg,#FFF0E8,#FFF8F4)', border: '1px solid rgba(255,90,0,0.25)', borderRadius: 12, padding: '9px 12px', fontSize: 12.5, color: '#9a3a12', fontWeight: 700, marginBottom: 13 },
   head: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14 },
   kicker: { fontSize: 13, fontWeight: 800, color: '#1e2859', letterSpacing: '-0.01em' },
   stageNo: { fontSize: 18, fontWeight: 800, color: '#ff5a00', fontVariantNumeric: 'tabular-nums' },
   stageNoTot: { fontSize: 11, fontWeight: 700, color: '#9aa3bf', marginLeft: 1 },
   rail: { position: 'relative', margin: '4px 4px 12px' },
   railLine: { position: 'absolute', top: 15, left: 15, right: 15, height: 3, background: '#eef0f3', borderRadius: 9 },
-  railFill: { position: 'absolute', top: 15, left: 15, height: 3, background: '#ff5a00', borderRadius: 9, maxWidth: 'calc(100% - 30px)' },
+  railFill: { position: 'absolute', top: 15, left: 15, height: 3, background: 'linear-gradient(90deg,#FFB48F,#ff5a00)', borderRadius: 9, maxWidth: 'calc(100% - 30px)' },
   nodes: { position: 'relative', display: 'flex', justifyContent: 'space-between' },
   node: { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 5, width: 46 },
   dot: { width: 30, height: 30, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, border: '2px solid #fff' },
   dotDone: { background: '#ff5a00', color: '#fff', boxShadow: '0 2px 6px rgba(255,90,0,0.35)' },
-  dotCur: { background: '#fff', boxShadow: '0 0 0 2px #ff5a00, 0 4px 10px rgba(255,90,0,0.35)', transform: 'scale(1.12)' },
+  dotCur: { background: '#fff', boxShadow: '0 0 0 2px #ff5a00, 0 4px 10px rgba(255,90,0,0.4)', transform: 'scale(1.14)' },
   dotFut: { background: '#f1f0ee', color: '#b7b2a8' },
   nodeLabel: { fontSize: 10, fontWeight: 700, color: '#b0aaa1' },
   nodeLabelCur: { color: '#ff5a00' },
   nodeLabelDone: { color: '#6b6f76' },
   here: { fontSize: 12.5, color: '#6b6f76', margin: '0 0 12px', lineHeight: 1.5 },
-  cta: { width: '100%', border: 0, cursor: 'pointer', textAlign: 'left', background: '#ff5a00', color: '#fff', borderRadius: 14, padding: '13px 15px', display: 'flex', flexDirection: 'column', position: 'relative', boxShadow: '0 10px 22px -10px rgba(255,90,0,0.5)' },
+  cta: { width: '100%', border: 0, cursor: 'pointer', textAlign: 'left', background: 'linear-gradient(180deg,#ff6a35,#ee4a1f)', color: '#fff', borderRadius: 14, padding: '13px 15px', display: 'flex', alignItems: 'center', boxShadow: '0 12px 24px -10px rgba(232,67,28,0.55)' },
+  ctaTextWrap: { display: 'flex', flexDirection: 'column', flex: 1, minWidth: 0 },
   ctaCap: { fontSize: 10.5, fontWeight: 700, opacity: 0.85, letterSpacing: '0.02em' },
-  ctaMain: { fontSize: 15, fontWeight: 800, marginTop: 2, paddingRight: 18 },
-  ctaArrow: { position: 'absolute', right: 15, top: '50%', transform: 'translateY(-50%)', fontSize: 18, fontWeight: 800 },
-  momentum: { fontSize: 12.5, color: '#0f6e56', fontWeight: 700, margin: '10px 0 0', textAlign: 'center' },
-  profile: { width: '100%', marginTop: 10, background: 'rgba(255,90,0,0.06)', border: '1px solid rgba(255,90,0,0.2)', borderRadius: 12, padding: '11px 13px', fontSize: 12.5, color: '#6b6f76', fontWeight: 600, cursor: 'pointer', textAlign: 'center' }
+  ctaMain: { fontSize: 15, fontWeight: 800, marginTop: 2 },
+  ctaArrow: { fontSize: 18, fontWeight: 800, marginLeft: 10, flex: '0 0 auto' },
+  goal: { marginTop: 13 },
+  goalTop: { display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 6 },
+  goalLabel: { fontSize: 12, color: '#6b6f76', fontWeight: 600 },
+  goalGap: { fontSize: 12, color: '#ff5a00', fontWeight: 800, fontVariantNumeric: 'tabular-nums' },
+  goalTrack: { height: 7, borderRadius: 9, background: '#f0ede9', overflow: 'hidden' },
+  goalFill: { height: '100%', borderRadius: 9, background: 'linear-gradient(90deg,#FFB48F,#ff5a00)' },
+  momentum: { fontSize: 12.5, color: '#0f6e56', fontWeight: 700, margin: '12px 0 0', textAlign: 'center' },
+  profile: { width: '100%', marginTop: 12, background: 'rgba(255,90,0,0.06)', border: '1px solid rgba(255,90,0,0.22)', borderRadius: 12, padding: '11px 13px', fontSize: 12.5, color: '#6b6f76', fontWeight: 600, cursor: 'pointer', textAlign: 'center' }
 };

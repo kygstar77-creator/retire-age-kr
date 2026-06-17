@@ -7,7 +7,6 @@ import { fetchPeerBoard } from '../../utils/firemapScoresApi.js';
 import { ageBandOf } from '../../firemap-v2/stats.js';
 import { computeProgress, hasCalculated } from '../../utils/savingsEngine.js';
 import InstallButton from './InstallButton.jsx';
-import PetCard from './PetCard.jsx';
 import FireClock from './FireClock.jsx';
 import FireClockPush from './FireClockPush.jsx';
 import DailyJourney from './DailyJourney.jsx';
@@ -141,8 +140,6 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
       })()}
 
       {asHome && <OpenChatNotice />}
-
-      {asHome && <PetCard />}
 
       <section className="fm-card">
         <p className="fm-kicker">내 금융자산 추이</p>

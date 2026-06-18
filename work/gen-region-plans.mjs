@@ -24,7 +24,7 @@ const HOUSEHOLD = [
 ];
 const FIRETYPE = [
   { key: '린', label: '린파이어', costMult: 1.0, note: '생활비를 최소화해 더 적은 자산으로 일찍' },
-  { key: '팻', label: '팻파이어', costMult: 1.4, note: '넓넓한 생활비를 유지하며 여유롭게' }
+  { key: '팻', label: '팻파이어', costMult: 1.4, note: '넹넹한 생활비를 유지하며 여유롭게' }
 ];
 const RET = 6;
 const SAVE_OPTS = [50, 100, 150, 200, 300]; // 월 저축(만원)
@@ -129,7 +129,7 @@ function comboPage(region, tier, hh, ft, market, macro) {
   <a class="cta" href="${BASE}/">🔥 내 파이어 가능 나이 1분 계산 →</a>`;
   const faq = [
     { q: `${region}에서 ${hh.label} ${ft.label}하려면 얼마가 필요한가요?`, a: `월 생활비 약 ${won(monthly)} 기준 4% 룰로 약 ${won(need)}이 필요합니다. 국민연금·물가·세금에 따라 달라지니 계산기로 확인하세요.` },
-    { q: '린파이어와 팻파이어 차이는?', a: '린파이어는 생활비를 최소화해 더 적은 자산으로 일찍 은퇴, 팻파이어는 넓넓한 생활비를 유지하며 은퇴하는 방식입니다.' }
+    { q: '린파이어와 팻파이어 차이는?', a: '린파이어는 생활비를 최소화해 더 적은 자산으로 일찍 은퇴, 팻파이어는 넹넹한 생활비를 유지하며 은퇴하는 방식입니다.' }
   ];
   return { slug: `${s}-${hh.key}-${ft.key}`, html: page({ title, desc, keywords, canonical, body, faq }) };
 }

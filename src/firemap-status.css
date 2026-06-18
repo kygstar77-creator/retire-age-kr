@@ -76,8 +76,8 @@
 .fm-rs-tabs > button.on { background: #1e2859; color: #fff; border-color: #1e2859; }
 .fm-rs-tabs .fm-rs-new { margin-left: auto; border: 0; font-weight: 500; font-size: 13px; color: var(--fm-muted, #8a8a8a); padding: 8px 6px; }
 
-/* 바꿔보기 라이브 결과 헤더 (sticky) */
-.fm-sim-live { position: sticky; top: 8px; z-index: 6; border: 1px solid rgba(255,90,0,0.35); background: #fff; padding: 12px 15px !important; margin: 10px 0 !important; }
+/* 바꿔보기 라이브 결과 헤더 (스크롤 고정 해제 — 일반 흐름) */
+.fm-sim-live { position: static; border: 1px solid rgba(255,90,0,0.35); background: #fff; padding: 12px 15px !important; margin: 10px 0 !important; }
 .fm-sim-live-kicker { font-size: 12px; color: var(--fm-muted, #8a8a8a); margin: 0 0 4px; font-weight: 700; }
 .fm-sim-live-row { display: flex; gap: 16px; }
 .fm-sim-live-row > div { flex: 1; }

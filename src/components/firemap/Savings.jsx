@@ -142,15 +142,14 @@ export default function Savings({ simulation, onMove }) {
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="저축" />
-      <div className="fm-board-tabs" role="tablist" aria-label="저축·절약·기록">
+      <div className="fm-board-tabs" role="tablist" aria-label="저축·기록">
         <button type="button" role="tab" aria-selected={seg === 'deposit'} className={seg === 'deposit' ? 'on' : ''} onClick={() => setSeg('deposit')}>💰 적립</button>
-        <button type="button" role="tab" aria-selected={seg === 'frugal'} className={seg === 'frugal' ? 'on' : ''} onClick={() => setSeg('frugal')}>✂️ 절약</button>
         <button type="button" role="tab" aria-selected={seg === 'today'} className={seg === 'today' ? 'on' : ''} onClick={() => setSeg('today')}>☀️ 오늘</button>
         <button type="button" role="tab" aria-selected={seg === 'mission'} className={seg === 'mission' ? 'on' : ''} onClick={() => setSeg('mission')}>🎖️ 미션</button>
       </div>
       {seg === 'today' && <DailyJourney onMove={onMove} />}
       {seg === 'mission' && <Missions simulation={simulation} onMove={onMove} />}
-      {(seg === 'deposit' || seg === 'frugal') && (<>
+      {seg === 'deposit' && (<>
       <p className="fm-daily-wisdom">“{quote}”</p>
       {showSaveNudge && (
         <div className="fm-save-nudge">
@@ -182,16 +181,12 @@ export default function Savings({ simulation, onMove }) {
                 ? <p className="fm-fireclock-delta">⏱️ {src} <b>{fmtMin(adv * 86400)}</b> 앞당겼어요</p>
                 : adv <= -TH
                   ? <p className="fm-fireclock-delta behind">적립이 계획보다 부족해 <b>{fmtMin(Math.abs(adv) * 86400)}</b> 밀렸어요</p>
-                  : <p className="fm-fireclock-delta neutral">계획대로 가는 중 · 절약하면 앞당겨져요</p>}
+                  : <p className="fm-fireclock-delta neutral">계획대로 가는 중 · 적립하면 앞당겨져요</p>}
           </section>
         );
       })()}
-      <p className="fm-save-explain">
-        {seg === 'deposit'
-          ? <>💰 <b>적립</b> = 실제로 투자·저축한 돈. <b>파이어 시점에 바로 반영</b>돼요.</>
-          : <>✂️ <b>절약</b> = 안 쓴 돈으로 <b>파이어 시간을 사는 것</b>. 천 원 아끼면 그만큼 파이어가 당겨져요.</>}
-      </p>
-      <p className="fm-save-explain" style={{ background: '#fff7ed', border: '1px solid #fed7aa', color: '#9a3412', fontWeight: 600 }}>🤝 랭킹·절약왕은 서로의 신뢰로 굴러가요 — 실제로 저축·절약한 만큼만 양심껏 기록해 주세요.</p>
+      <p className="fm-save-explain">💰 <b>적립</b> = 실제로 투자·저축한 돈. <b>파이어 시점에 바로 반영</b>돼요. 매달 기록하면 파이어가 며칠씩 당겨지는 게 보여요.</p>
+      <p className="fm-save-explain" style={{ background: '#fff7ed', border: '1px solid #fed7aa', color: '#9a3412', fontWeight: 600 }}>🤝 랭킹은 서로의 신뢰로 굴러가요 — 실제로 저축한 만큼만 양심껏 기록해 주세요.</p>
       {seg === 'deposit' && <DepositCard simulation={simulation} onMove={onMove} />}
       {seg === 'deposit' && <DepositCalendar />}
       {seg === 'deposit' && (

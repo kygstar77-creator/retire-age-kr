@@ -188,7 +188,7 @@ export default function Savings({ simulation, onMove }) {
       <p className="fm-save-explain">💰 <b>저축</b> = 실제로 투자·저축한 돈. <b>파이어 시점에 바로 반영</b>돼요. 매달 기록하면 파이어가 며칠씩 당겨지는 게 보여요.</p>
       <p className="fm-save-explain" style={{ background: '#fff7ed', border: '1px solid #fed7aa', color: '#9a3412', fontWeight: 600 }}>🤝 랭킹은 서로의 신뢰로 굴러가요 — 실제로 저축한 만큼만 양심껏 기록해 주세요.</p>
       {seg === 'deposit' && <DepositCard simulation={simulation} onMove={onMove} />}
-      {seg === 'deposit' && <DepositCalendar />}
+      {seg === 'deposit' && <DepositCalendar editable simulation={simulation} />}
       {seg === 'deposit' && (
         <section className="fm-card">
           <p className="fm-kicker">이번 달 저축 랭킹 🏆</p>

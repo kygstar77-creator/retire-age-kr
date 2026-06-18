@@ -68,7 +68,7 @@ export default function CompletionCard({ simulation, onMove }) {
 
       <div style={S.cta}>
         <button type="button" style={S.ctaSave} onClick={() => onMove('save')}>오늘 저축하기</button>
-        <button type="button" style={S.ctaPlan} onClick={() => onMove('experiment')}>플랜 바꿔보기</button>
+        <button type="button" style={S.ctaView} onClick={() => onMove('result')}>📊 결과·또래 등수 보기</button>
       </div>
     </section>
   );
@@ -107,5 +107,5 @@ const S = {
   monthFill: { height: '100%', borderRadius: 9, background: 'linear-gradient(90deg,#7fd3b0,#10b981)' },
   cta: { display: 'flex', gap: 9 },
   ctaSave: { flex: 1, border: 0, cursor: 'pointer', background: 'linear-gradient(180deg,#ff6a35,#ee4a1f)', color: '#fff', borderRadius: 12, padding: '12px', fontSize: 14, fontWeight: 800, boxShadow: '0 10px 22px -10px rgba(232,67,28,0.5)' },
-  ctaPlan: { flex: 1, border: '1px solid #d7dae0', cursor: 'pointer', background: '#fff', color: '#1e2859', borderRadius: 12, padding: '12px', fontSize: 14, fontWeight: 700 }
+  ctaView: { flex: 1, border: 0, cursor: 'pointer', background: 'linear-gradient(180deg,#3a4cff,#2230cc)', color: '#fff', borderRadius: 12, padding: '12px', fontSize: 14, fontWeight: 800, boxShadow: '0 10px 22px -10px rgba(34,48,204,0.5)' }
 };

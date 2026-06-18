@@ -92,11 +92,13 @@ function macroLine(macro) {
   if (!macro) return '';
   const cpi = macro.cpi;
   const dep = (macro.rates || []).find((r) => r.key === 'deposit_12m');
+  const base = (macro.rates || []).find((r) => r.key === 'base_rate');
   const parts = [];
+  if (base && base.value != null && base.source === 'ecos') parts.push(`기준금리 ${base.value}%`);
   if (cpi && cpi.yoy != null) parts.push(`물가 상승률 ${cpi.yoy}%(${cpi.period})`);
   if (dep && dep.value != null) parts.push(`예금금리 ${dep.value}%`);
   if (!parts.length) return '';
-  return `<p class="mkt">🇰🇷 거시 지표(참고) — ${parts.join(' · ')}${(dep && dep.source === 'worldbank') || (cpi && cpi.source === 'worldbank') ? ' · 출처 World Bank' : ''}</p>`;
+  return `<p class="mkt">🇰🇷 거시 지표(참고) — ${parts.join(' · ')}${[(base && base.source === 'ecos') ? '한국은행' : '', ((dep && dep.source === 'worldbank') || (cpi && cpi.source === 'worldbank')) ? 'World Bank' : ''].filter(Boolean).length ? ' · 출처 ' + [(base && base.source === 'ecos') ? '한국은행' : '', ((dep && dep.source === 'worldbank') || (cpi && cpi.source === 'worldbank')) ? 'World Bank' : ''].filter(Boolean).join('·') : ''}</p>`;
 }
 
 function comboPage(region, tier, hh, ft, market, macro) {

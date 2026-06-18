@@ -93,6 +93,7 @@ function regionPage(name, sido, tier, re) {
   <h2>주거 팁</h2>
   <p>${tier>=4?'월세·전세 모두 수도권보다 크게 저렴해 고정비를 줄이기 좋아요. 다만 일자리·병원 접근성을 미리 확인하세요.':tier===3?'역세권을 조금 벗어나면 주거비를 더 낮출 수 있어요. 자차 여부에 따라 체감 비용이 달라져요.':'주거비 비중이 커서, 평수를 줄이거나 외곽으로 이동하면 필요자산이 눈에 띄게 줄어요.'}</p>
   ${peers.length?`<h2>${sido}의 다른 지역</h2><div class="tags">${peers.map(p=>`<a href="${BASE}/guide/regions/${slugify(p[0])}.html">${p[0]} 생활비</a>`).join('')}</div>`:''}
+  <p class="note">가구형태(1인·부부·4인)와 파이어 유형(린·일반·팻)까지 반영하려면 <a href="${BASE}/guide/region-plan/">${sido} 지역·가구별 파이어 플랜</a>을 보세요.</p>
   <a class="cta" href="${BASE}/">${name} 생활비로 내 파이어 나이 계산하기 →</a>`;
   return page({ title, desc, body, canonical: `${BASE}/guide/regions/${slugify(name)}.html` });
 }
@@ -122,7 +123,7 @@ for (const [name, country, flag, cost, vibe, visa] of OVERSEAS) { writeFileSync(
 
 const bySido = {};
 for (const [name, sido] of REGIONS) { (bySido[sido] ||= []).push(name); }
-const hub = `<p><a href="${BASE}/">← 파이어맵</a></p><h1>지역별 파이어 백과</h1><p>사는 곳에 따라 파이어 시점이 달라져요. 국내 ${REGIONS.length}개 지역과 해외 ${OVERSEAS.length}개 체류지의 생활비·필요자산을 정리했어요.</p>` +
+const hub = `<p><a href="${BASE}/">← 파이어맵</a></p><h1>지역별 파이어 백과</h1><p>사는 곳에 따라 파이어 시점이 달라져요. 국내 ${REGIONS.length}개 지역과 해외 ${OVERSEAS.length}개 체류지의 생활비·필요자산을 정리했어요.</p><p class="note">도시별 생활비를 “찾아보는” 사전이에요. 내 가구형태·파이어 유형으로 “계산”하려면 <a href="${BASE}/guide/region-plan/">지역·가구별 파이어 플랜</a>을 보세요.</p>` +
   Object.entries(bySido).map(([s,arr])=>`<h2>${s}</h2><div class="tags">${arr.map(nm=>`<a href="${BASE}/guide/regions/${slugify(nm)}.html">${nm}</a>`).join('')}</div>`).join('') +
   `<h2>해외 체류지</h2><div class="tags">${OVERSEAS.map(o=>`<a href="${BASE}/guide/regions/${slugify(o[0])}.html">${o[2]} ${o[0]}</a>`).join('')}</div><a class="cta" href="${BASE}/">내 파이어 나이 계산하기 →</a>`;
 writeFileSync(join(OUT, 'index.html'), page({ title: '지역별 파이어 백과 — 도시별 생활비·필요자산 | 파이어맵', desc: `국내 ${REGIONS.length}개 지역·해외 ${OVERSEAS.length}개 체류지의 파이어 생활비와 필요자산 가이드.`, body: hub, canonical: `${BASE}/guide/regions/` }));

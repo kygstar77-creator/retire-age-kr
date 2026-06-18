@@ -17,7 +17,7 @@ function ScenarioList({ title, inputs, baseSimulation, scenarios }) {
             <div>
               <strong>{name}</strong><p>{copy}</p>
               {info && <p className="fm-city-info">{info}</p>}
-              <p>이 생활비로 계산하면 <b>{runwayText(citySimulation)}</b>까지 버틸 수 있어요. {deltaText(baseSimulation, citySimulation)}.</p>
+              <p>이 생활비로 계산하면 <b>{runwayText(citySimulation)}</b>까지 버텔 수 있어요. {deltaText(baseSimulation, citySimulation)}.</p>
             </div>
             <span>예상 월 {formatWon(cost)}<br /><b>{saving ? `현재 대비 ${formatWon(saving)} 절감` : '현재와 비슷함'}</b></span>
           </article>
@@ -42,7 +42,7 @@ function Stepper({ label, unit, value, set, step, min = 0, max = Infinity }) {
   );
 }
 
-function OverseasStayModule({ inputs, simulation, onChange }) {
+export function OverseasStayModule({ inputs, simulation, onChange }) {
   const [months, setMonths] = useState(3);
   const [localCost, setLocalCost] = useState(65000);
   const [fx, setFx] = useState(() => getFx('THB'));
@@ -63,7 +63,7 @@ function OverseasStayModule({ inputs, simulation, onChange }) {
     <section className="fm-card fm-text-card fm-advanced-section">
       <p className="fm-kicker">해외 체류 (직접 조절)</p>
       <h2>체류 조건을 바꿔 자산수명 보기</h2>
-      <p>연 체류 개월·현지 생활비·환율을 조절해 자산수명이 어떻게 달라지는지 직접 비교해요. 90일 이상 연속 체류 시 건보료 정지 가정을 켤 수 있어요.</p>
+      <p>연 체류 개월·현지 생활비·환율을 조절해 자산수명이 어떻게 달라지는지 직접 비교해요. 90일 이상 연속 체류 시 건보료 정지 가정을 켬 수 있어요.</p>
       <div className="fm-dc-fields">
         <Stepper label="연 체류 개월" unit="개월" value={months} set={setMonths} step={1} min={0} max={12} />
         <Stepper label="현지 월 생활비" unit="현지통화" value={localCost} set={setLocalCost} step={5000} />
@@ -88,7 +88,7 @@ export default function City({ inputs, simulation, onBack, onChange }) {
   return (
     <main className="fm-screen fm-scroll">
       <Header onBack={onBack} />
-      <section className="fm-card fm-text-card"><p className="fm-kicker">도시 비교 · 해외 체류</p><h2>도시·체류 조건을 바꾸면 자산이 얼마나 더 버틸까?</h2><p>국내 저비용 도시부터 해외 체류(연 체류 개월·환율·건보료 정지)까지, 내 조건에 바로 대입해 자산수명 변화를 비교해요. 세계 지도로 고르려면 「해외 파이어 도시」를 쓰세요.</p></section>
+      <section className="fm-card fm-text-card"><p className="fm-kicker">도시 비교 · 해외 체류</p><h2>도시·체류 조건을 바꾸면 자산이 얼마나 더 버텔까?</h2><p>국내 저비용 도시부터 해외 체류(연 체류 개월·환율·건보료 정지)까지, 내 조건에 바로 대입해 자산수명 변화를 비교해요. 세계 지도로 고르려면 「해외 파이어 도시」를 쓰세요.</p></section>
       <ScenarioList title="국내 저비용 도시" inputs={inputs} baseSimulation={simulation} scenarios={domesticCities} />
       <ScenarioList title="해외 저비용 생활" inputs={inputs} baseSimulation={simulation} scenarios={overseasCities} />
       {onChange && <OverseasStayModule inputs={inputs} simulation={simulation} onChange={onChange} />}

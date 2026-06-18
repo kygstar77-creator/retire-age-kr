@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from './Header.jsx';
+import { OverseasStayModule } from './City.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, runwayText, deltaText } from '../../firemap-v2/scenarios.js';
 import { sourceLine } from '../../firemap-v2/dataSources.js';
@@ -60,7 +61,7 @@ function WorldMap({ cities, active, onPick }) {
           }
         }
         if (alive) setDots(ds);
-      } catch { /* 폴백: 윤곽 */ }
+      } catch { /* 폴백: 윤곡 */ }
     })();
     return () => { alive = false; };
   }, []);
@@ -129,10 +130,10 @@ export default function CityExplorer({ inputs, simulation, onChange, onMove, onB
               const delta = (curAge != null && r.age != null) ? curAge - r.age : null;
               return (
                 <button type="button" className="fm-region-row" key={r.city} onClick={() => apply(r.krw)}>
-                  <span className="fm-region-main"><b>{r.city}</b><em>월 {formatWon(r.krw)}{r.note ? ` \u00b7 ${r.note}` : ''}</em></span>
+                  <span className="fm-region-main"><b>{r.city}</b><em>월 {formatWon(r.krw)}{r.note ? ` · ${r.note}` : ''}</em></span>
                   <span className="fm-region-res">
                     <b>{r.age != null ? `${r.age}세` : '자산 부족'}</b>
-                    {delta != null && <em className={delta > 0 ? 'early' : delta < 0 ? 'late' : 'same'}>{delta > 0 ? `${delta}년 일찍` : delta < 0 ? `${-delta}년 늦음` : '비슷'}</em>}
+                    {delta != null && <em className={delta > 0 ? 'early' : delta < 0 ? 'late' : 'same'}>{delta > 0 ? `${delta}년 일찍` : delta < 0 ? `${-delta}년 눊음` : '비슷'}</em>}
                   </span>
                 </button>
               );
@@ -160,7 +161,7 @@ export default function CityExplorer({ inputs, simulation, onChange, onMove, onB
                       {c.food.map((f) => <span key={f} className="fm-ce-tag food">🍽 {f}</span>)}
                       {c.play.map((pl) => <span key={pl} className="fm-ce-tag play">📍 {pl}</span>)}
                     </div>
-                    <p className="fm-ce-run">이 생활비면 <b>{runwayText(sc)}</b>까지 버텨요 · {deltaText(simulation, sc)}</p>
+                    <p className="fm-ce-run">이 생활비면 <b>{runwayText(sc)}</b>까지 버텔요 · {deltaText(simulation, sc)}</p>
                     {isOpen && <p className="fm-ce-visa">{c.visa}</p>}
                     <button type="button" className="fm-ce-cta" onClick={() => apply(c.krw)}>이 도시로 내 결과 보기</button>
                   </div>
@@ -168,7 +169,7 @@ export default function CityExplorer({ inputs, simulation, onChange, onMove, onB
               );
             })}
           </div>
-          <button type="button" className="fm-city-cta" onClick={() => onMove && onMove('city')}>해외 체류 조건 직접 조절 →</button>
+          {onChange && <OverseasStayModule inputs={inputs} simulation={simulation} onChange={onChange} />}
           <p className="fm-ce-note">도시별 금액은 1인 월 생활비 대략 추정치예요. 실제 주거·의료·환율·비자 조건에 따라 달라질 수 있어요. {sourceLine('cityCost')}</p>
         </>
       )}

@@ -1,4 +1,4 @@
-export const SCREEN_ALIASES = { curation: 'city', advanced: 'menu', tools: 'menu' };
+export const SCREEN_ALIASES = { curation: 'cities', city: 'cities', advanced: 'menu', tools: 'menu' };
 
 export const screens = {
   home:       { hash: '#home',       title: '홈',     type: 'home',     tab: 'home' },

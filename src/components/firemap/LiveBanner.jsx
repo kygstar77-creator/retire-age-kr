@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { wonStr } from '../../firemap-v2/dailyData.js';
-import { todayTip, todayAction } from '../../firemap-v2/journeyDaily.js';
 import { presencePing, fetchLivePresence, fetchRecentSaves, fetchTotalCalc } from '../../utils/live.js';
 
 const SB_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
 const SB_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
+const rpc = (fn) => fetch(`${SB_URL}/rest/v1/rpc/${fn}`, { method: 'POST', headers: { apikey: SB_KEY, authorization: `Bearer ${SB_KEY}`, 'content-type': 'application/json' }, body: '{}' }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+const eok = (manwon) => { const m = Math.round(Number(manwon) || 0); return m >= 10000 ? `${(m / 10000).toFixed(1)}억` : `${m.toLocaleString()}만원`; };
 
 const STYLE = `
 .fm-livebar{position:sticky;top:0;z-index:60;width:100%;height:30px;background:#10151c;color:#fff;overflow:hidden;display:flex;align-items:center}
@@ -15,16 +16,35 @@ const STYLE = `
 @keyframes fmLiveScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 `;
 
-function buildItems({ online, names, recent, total, market }) {
+function buildItems({ online, names, recent, total, market, macro, re }) {
   const items = [];
-  // 살아있는 시장 — firemap_market 실데이터
+  // 참고 지표 — 시장(매일)·거시(매주)·부동산(매주) 실데이터 자동 갱신
   if (market) {
     const spx = market.find((m) => m.symbol === '^spx');
-    if (spx && spx.ret_7d != null) items.push(`📈 이번 주 S&P500 ${spx.ret_7d > 0 ? '+' : ''}${spx.ret_7d}% — 시장이 내 파이어를 움직여요`);
+    const fx = market.find((m) => m.symbol === 'usdkrw');
+    const kospi = market.find((m) => m.symbol === '^kospi');
+    if (spx && spx.ret_7d != null) items.push(`📈 S&P500 주간 ${spx.ret_7d > 0 ? '+' : ''}${spx.ret_7d}%${fx && fx.level != null ? ` · 환율 1USD≈${Math.round(Number(fx.level)).toLocaleString()}원` : ''}`);
+    if (kospi && kospi.ret_7d != null) items.push(`📊 코스피 주간 ${kospi.ret_7d > 0 ? '+' : ''}${kospi.ret_7d}%`);
   }
-  // 오늘의 한 걸음 + 오늘의 파이어 지식 (매일 바뀜)
-  try { const a = todayAction(); if (a && a.label) items.push(`${a.ico || '☀️'} 오늘의 한 걸음 · ${a.label}`); } catch { /* ignore */ }
-  try { const t = todayTip(); if (t) items.push(`💡 ${t}`); } catch { /* ignore */ }
+  if (macro) {
+    const rates = macro.rates || [];
+    const base = rates.find((r) => r.key === 'base_rate');
+    const dep = rates.find((r) => r.key === 'deposit_12m');
+    const cpi = macro.cpi;
+    const parts = [];
+    if (base && base.value != null) parts.push(`기준금리 ${base.value}%`);
+    if (cpi && cpi.yoy != null) parts.push(`물가 ${cpi.yoy}%`);
+    if (dep && dep.value != null) parts.push(`예금금리 ${dep.value}%`);
+    if (parts.length) items.push(`🇰🇷 ${parts.join(' · ')}`);
+  }
+  if (re) {
+    const sale = re.find((r) => r.region === '서울' && r.deal_type === 'sale');
+    const jeonse = re.find((r) => r.region === '서울' && r.deal_type === 'jeonse');
+    const parts = [];
+    if (sale && sale.value != null) parts.push(`매매 ${eok(sale.value)}`);
+    if (jeonse && jeonse.value != null) parts.push(`전세 ${eok(jeonse.value)}`);
+    if (parts.length) items.push(`🏠 서울 아파트 ${parts.join(' · ')}`);
+  }
   // 또래 규모 (실데이터)
   if (total > 0) items.push(`🔥 지금까지 ${total.toLocaleString()}명이 파이어 나이를 계산했어요`);
   if (online >= 2) items.push(`🟢 지금 ${online}명이 함께 파이어를 그리는 중`);
@@ -43,14 +63,16 @@ export default function LiveBanner() {
   useEffect(() => {
     let alive = true;
     const load = async () => {
-      const [p, recent, total, market] = await Promise.all([
+      const [p, recent, total, market, macro, re] = await Promise.all([
         fetchLivePresence(),
         fetchRecentSaves(8),
         fetchTotalCalc(),
-        fetch(`${SB_URL}/rest/v1/rpc/fm_market_latest`, { method: 'POST', headers: { apikey: SB_KEY, authorization: `Bearer ${SB_KEY}`, 'content-type': 'application/json' }, body: '{}' }).then((r) => (r.ok ? r.json() : null)).catch(() => null)
+        rpc('fm_market_latest'),
+        rpc('fm_macro_latest'),
+        rpc('fm_realestate_latest')
       ]);
       if (!alive) return;
-      setItems(buildItems({ online: p ? p.online : 0, names: p ? p.names : [], recent, total, market }));
+      setItems(buildItems({ online: p ? p.online : 0, names: p ? p.names : [], recent, total, market, macro, re }));
     };
     presencePing();
     load();

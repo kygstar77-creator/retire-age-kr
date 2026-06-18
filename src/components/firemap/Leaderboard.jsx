@@ -80,7 +80,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
       ]);
       setTop(t); setMe(r); setAgg(a); setNeighbors(nb); setAssetPct(ap);
     } else if (board === 'peer') {
-      setNeighbors(null); setMe(null);
+      setMe(null);
       const [pr, a, ap] = await Promise.all([
         fetchPeerBoard({ currentAge: rs.inputs && rs.inputs.currentAge, ageBand: base.ageBand, earliestAge: earliest, advancedDays: myAdvance, limit: 10 }),
         fetchAggregates(base.ageBand),
@@ -90,6 +90,11 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
       setTop(pr ? pr.top : []);
       setAgg(a);
       setAssetPct(ap);
+      // 또래 보드도 전체 순위처럼 '내 주변 순위' 표시 — 보드 범위(정확 나이/연령대)에 맞춰 조회
+      const exactAge = pr && pr.scope === 'age' ? (rs.inputs && rs.inputs.currentAge) : undefined;
+      const bandForNb = pr && pr.scope === 'band' ? base.ageBand : undefined;
+      const nb = await fetchNeighbors(earliest, bandForNb, exactAge);
+      setNeighbors(nb);
     } else if (board === 'cohort') {
       setTop(null); setNeighbors(null);
       const tgt = Number(rs.inputs && rs.inputs.targetRetirementAge) || null;
@@ -201,7 +206,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
           <button type="button" key={b.key} className={board === b.key ? 'on' : ''} onClick={() => setBoard(b.key)}>{b.label}</button>
         ))}
       </div>
-      <p style={{ textAlign: 'center', fontSize: '12px', color: '#9a3412', background: '#fff7ed', border: '1px solid #fed7aa', borderRadius: '10px', padding: '7px 12px', margin: '0 0 10px' }}>✋ 모든 순위는 사용자가 직접 입력한 기록 기반이에요 — 서로 양심껏 기록해요</p>
+      <p style={{ textAlign: 'center', fontSize: '12px', color: '#9a3412', background: '#fff7ed', border: '1px solid #fed7aa', borderRadius: '10px', padding: '7px 12px', margin: '0 0 10px' }}>✋ 모든 순위는 사용자가 직접 입력한 기록 기반이에요 — 서로 양심ꆇ 기록해요</p>
       {board === 'save' && (
         <div className="fm-scope-toggle">
           <button type="button" className={saveMetric === 'total' ? 'on' : ''} onClick={() => setSaveMetric('total')}>누적</button>
@@ -239,7 +244,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
 
           <section className="fm-card fm-nick">
             <button type="button" className="fm-nick-reg" onClick={saveNick} disabled={saving}>{saving ? '등록 중' : saved ? '등록됨 ✓' : '내 닉네임으로 랭킹에 올리기'}</button>
-            <small>카카오로 로그인하거나 닉네임을 정하면 내 이름으로 올라가요. 익명이면 자동 별명이 붙어요.</small>
+            <small>카카오로 로그인하거나 닉네임을 정하면 내 이름으로 올라가요. 익명이면 자동 버명이 붙어요.</small>
           </section>
         </>
       )}
@@ -326,6 +331,36 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
                   : null}
           </section>
 
+          {peer && peer.position != null && (aboveN.length > 0 || belowN.length > 0) && (
+            <section className="fm-card">
+              <h2 className="fm-section-title">내 주변 순위</h2>
+              {nearAbove && earliest
+                ? <p className="fm-section-sub">바로 위 <b>{displayName(nearAbove)}</b>는 {nearAbove.earliest_age}세 · 파이어를 <b>{Math.max(1, earliest - nearAbove.earliest_age)}년</b>만 앞당기면 제쳐요!</p>
+                : <p className="fm-section-sub">{peer.ageLabel} 안에서 바로 위·아래 라이벌이에요.</p>}
+              <ol className="fm-lb-list">
+                {aboveN.map((r, i) => (
+                  <li key={`pa${i}`} className="fm-lb-row">
+                    <span className="fm-lb-rank">{(peer.position - (aboveN.length - i)).toLocaleString()}</span>
+                    <span className="fm-lb-who">{displayName(r)}</span>
+                    <span className="fm-lb-score">{r.earliest_age ? `${r.earliest_age}세 파이어` : '—'}</span>
+                  </li>
+                ))}
+                <li className="fm-lb-row me">
+                  <span className="fm-lb-rank">{peer.position.toLocaleString()}</span>
+                  <span className="fm-lb-who">{nick.trim() ? nick.trim() : '나'} (나)</span>
+                  <span className="fm-lb-score">{earliest ? `${earliest}세 파이어` : '—'}</span>
+                </li>
+                {belowN.map((r, i) => (
+                  <li key={`pb${i}`} className="fm-lb-row">
+                    <span className="fm-lb-rank">{(peer.position + i + 1).toLocaleString()}</span>
+                    <span className="fm-lb-who">{displayName(r)}</span>
+                    <span className="fm-lb-score">{r.earliest_age ? `${r.earliest_age}세 파이어` : '—'}</span>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          )}
+
           {agg && agg.total > 0 && (
             <section className="fm-card fm-stats">
               <h2 className="fm-section-title">또래 비교</h2>
@@ -357,7 +392,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
             {myAge != null ? `나 ${myAge}세` : '나'}{myTarget != null ? ` · 목표 ${myTarget}세 파이어` : ''}
           </p>
           {myAdvance > 0
-            ? <p className="fm-rank-climb">같은 나이·목표 또래 중 누가 파이어를 더 많이 당겼나 — 저축을 기록할수록 더 당겨져요 🔥</p>
+            ? <p className="fm-rank-climb">같은 나이·목표 또래 중 누가 파이어를 더 많이 당겨나 — 저축을 기록할수록 더 당겨져요 🔥</p>
             : <p className="fm-rank-climb">아직 당긴 기록이 없어요. ‘저축’ 탭에서 저축을 기록하면 파이어가 당겨지고 순위가 올라가요.</p>}
         </section>
       )}

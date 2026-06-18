@@ -7,7 +7,7 @@ const indexPath = join(deploy, 'index.html');
 let html = await readFile(indexPath, 'utf8');
 
 const siteUrl = 'https://firemap.kr/';
-const ogVersion = 'firemap-screens-v7-20260613';
+const ogVersion = 'firemap-premium-v8-20260618';
 const ogImageUrl = `https://firemap.kr/og-image.png?v=${ogVersion}`;
 const seoTitle = '파이어맵 | 파이어 가능 나이 계산기 · 또래 중 내 등수';
 const ogTitle = '또래 중 내 FIRE 등수는? — 파이어맵';
@@ -50,34 +50,49 @@ const brand = `
 `;
 
 const ogResult = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#fffdf9"/>
-  <rect x="34" y="30" width="1132" height="570" rx="54" fill="#ffffff" stroke="#fed7aa" stroke-width="4"/>
-  <g opacity="0.07"><g transform="translate(667 111) scale(1.3)">${flame}</g></g>
-  ${brand}
-  <text x="80" y="248" fill="#ff5a00" font-family="Arial, sans-serif" font-size="33" font-weight="900">또래 중 내 FIRE 등수는? · 무료 1분</text>
-  <text x="80" y="346" fill="#111827" font-family="Arial, sans-serif" font-size="74" font-weight="900">나는 몇 살에</text>
-  <text x="80" y="432" fill="#111827" font-family="Arial, sans-serif" font-size="74" font-weight="900"><tspan fill="#ff5a00">파이어</tspan>할 수 있을까?</text>
-  <rect x="80" y="478" width="486" height="92" rx="20" fill="#f8fafc"/>
-  <text x="106" y="516" fill="#6b7280" font-family="Arial, sans-serif" font-size="24" font-weight="800">파이어 가능 나이</text>
-  <text x="106" y="554" fill="#111827" font-family="Arial, sans-serif" font-size="36" font-weight="900">1분이면 확인</text>
-  <rect x="582" y="478" width="538" height="92" rx="20" fill="#fff7ed"/>
-  <text x="608" y="516" fill="#9a3412" font-family="Arial, sans-serif" font-size="24" font-weight="800">또래 중 내 등수</text>
-  <text x="608" y="554" fill="#ff5a00" font-family="Arial, sans-serif" font-size="36" font-weight="900">1분이면 확인</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff8f1"/><stop offset="1" stop-color="#ffffff"/></linearGradient>
+    <radialGradient id="glow" cx="0.82" cy="0.18" r="0.6"><stop offset="0" stop-color="#ffd9c2" stop-opacity="0.55"/><stop offset="1" stop-color="#ffd9c2" stop-opacity="0"/></radialGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8a4c"/><stop offset="1" stop-color="#ee4a1f"/></linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g opacity="0.05"><g transform="translate(760 120) scale(1.55)">${flame}</g></g>
+  <circle cx="96" cy="86" r="30" fill="#fff1e7"/>
+  <g transform="translate(73.5 63.5) scale(.088)">${flame}</g>
+  <text x="138" y="98" fill="#15151b" font-family="Arial, sans-serif" font-size="34" font-weight="900">파이어맵</text>
+  <rect x="72" y="150" width="470" height="48" rx="24" fill="#fff0ea"/>
+  <text x="96" y="182" fill="#e8431c" font-family="Arial, sans-serif" font-size="23" font-weight="800">무료 1분 · 자산·연금·세금까지 반영</text>
+  <text x="72" y="312" fill="#15151b" font-family="Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="-3">나는 몇 살에</text>
+  <text x="72" y="406" fill="#15151b" font-family="Arial, sans-serif" font-size="82" font-weight="900" letter-spacing="-3"><tspan fill="#ff5a00">파이어</tspan>할 수 있을까?</text>
+  <text x="74" y="466" fill="#6b7280" font-family="Arial, sans-serif" font-size="27" font-weight="700">또래 중 내 FIRE 등수까지 한 번에</text>
+  <rect x="72" y="506" width="250" height="74" rx="18" fill="#ffffff" stroke="#f0e3d9" stroke-width="2"/>
+  <text x="92" y="540" fill="#9aa3bf" font-family="Arial, sans-serif" font-size="20" font-weight="800">비용</text>
+  <text x="92" y="570" fill="#15151b" font-family="Arial, sans-serif" font-size="28" font-weight="900">완전 무료</text>
+  <rect x="336" y="506" width="250" height="74" rx="18" fill="#fff7ed" stroke="#fed7aa" stroke-width="2"/>
+  <text x="356" y="540" fill="#9a3412" font-family="Arial, sans-serif" font-size="20" font-weight="800">또래 중 내 등수</text>
+  <text x="356" y="570" fill="#ff5a00" font-family="Arial, sans-serif" font-size="28" font-weight="900">바로 확인</text>
+  <circle cx="965" cy="300" r="172" fill="#ffffff" stroke="#f3ece6" stroke-width="2"/>
+  <circle cx="965" cy="300" r="132" fill="none" stroke="#efe9e3" stroke-width="26"/>
+  <circle cx="965" cy="300" r="132" fill="none" stroke="url(#ring)" stroke-width="26" stroke-linecap="round" stroke-dasharray="597 232" transform="rotate(-90 965 300)"/>
+  <text x="965" y="262" text-anchor="middle" fill="#9aa3bf" font-family="Arial, sans-serif" font-size="24" font-weight="800">예상 파이어</text>
+  <text x="965" y="338" text-anchor="middle" fill="#ff5a00" font-family="Arial, sans-serif" font-size="92" font-weight="900">47세</text>
+  <rect x="889" y="356" width="152" height="40" rx="20" fill="#fff0ea"/>
+  <text x="965" y="383" text-anchor="middle" fill="#e8431c" font-family="Arial, sans-serif" font-size="21" font-weight="800">또래 상위 12%</text>
 </svg>`;
-
 const ogSave = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="#fffdf9"/>
   <rect x="34" y="30" width="1132" height="570" rx="54" fill="#ffffff" stroke="#fed7aa" stroke-width="4"/>
   ${brand}
   <text x="80" y="232" fill="#ff5a00" font-family="Arial, sans-serif" font-size="33" font-weight="900">오늘의 절약 · 파이어 앞당기기</text>
-  <text x="80" y="318" fill="#111827" font-family="Arial, sans-serif" font-size="66" font-weight="900">아낀 돈이 <tspan fill="#ff5a00">파이어를 앞당겨요</tspan></text>
+  <text x="80" y="318" fill="#111827" font-family="Arial, sans-serif" font-size="66" font-weight="900">아낌 돈이 <tspan fill="#ff5a00">파이어를 앞당겨요</tspan></text>
   <text x="80" y="430" fill="#6b7280" font-family="Arial, sans-serif" font-size="28" font-weight="800">지금</text>
   <text x="1120" y="430" text-anchor="end" fill="#6b7280" font-family="Arial, sans-serif" font-size="28" font-weight="800">예상 파이어</text>
   <rect x="80" y="452" width="1040" height="24" rx="12" fill="#eef2f7"/>
   <rect x="845" y="452" width="275" height="24" rx="12" fill="#ff5a00"/>
   <line x1="845" y1="430" x2="845" y2="484" stroke="#111827" stroke-width="5"/>
   <path d="M845 430 L887 444 L845 458 Z" fill="#ff5a00"/>
-  <text x="80" y="548" fill="#111827" font-family="Arial, sans-serif" font-size="34" font-weight="900">커피 한 잔 아껴도 <tspan fill="#ff5a00">파이어가 빨라져요</tspan></text>
+  <text x="80" y="548" fill="#111827" font-family="Arial, sans-serif" font-size="34" font-weight="900">커피 한 잔 아껰도 <tspan fill="#ff5a00">파이어가 빨라져요</tspan></text>
 </svg>`;
 
 await writeFile(join(deploy, 'og-image.svg'), ogResult, 'utf8');

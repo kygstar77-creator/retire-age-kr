@@ -1,5 +1,6 @@
 // 파이어 여정 데일리 엔진 — 매일 바뀌는 한 걸음/지식 + 연속 출석.
 import { dayIdx, todayStr } from './dailyData.js';
+import { pickDaily, pickTip } from './journeyPlaybook.js';
 
 export const TIPS = [
   '저축률이 50%면 약 17년, 25%면 약 32년 만에 파이어 — 수익률보다 저축률이 먼저예요.',
@@ -43,8 +44,9 @@ export const DAILY_ACTIONS = [
   { ico: '💬', label: '파이어족 커뮤니티 둘러보기', to: 'community' }
 ];
 
-export function todayTip() { return TIPS[dayIdx() % TIPS.length]; }
-export function todayAction() { return DAILY_ACTIONS[dayIdx() % DAILY_ACTIONS.length]; }
+// 단계(stage)를 주면 해당 단계 맞춤, 없거나 격자에 없으면 전역 폴백.
+export function todayTip(stage) { return (stage != null && pickTip(stage)) || TIPS[dayIdx() % TIPS.length]; }
+export function todayAction(stage) { return (stage != null && pickDaily(stage)) || DAILY_ACTIONS[dayIdx() % DAILY_ACTIONS.length]; }
 
 const KEY = 'fm_jcheckin';
 export function getCheckin() {

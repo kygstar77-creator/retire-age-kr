@@ -1,39 +1,38 @@
 import { useEffect, useRef, useState } from 'react';
 
-// 당겨서 새로고침 — 스크롤 맨 위에서 아래로 당기면 페이지를 새로고침해요(모바일 표준 제스처).
-// 전역 터치 리스너로 동작. 일반 스크롤은 방해하지 않도록 '맨 위 + 아래로 당김'일 때만 개입.
+// 당겨서 새로고침 — 페이지 맨 위(window 스크롤 0)에서 아래로 당길 때만 새로고침.
+// 이 앱은 .fm-scroll가 아니라 window가 스크롤되므로 window 스크롤 위치를 기준으로 판정한다.
 const THRESHOLD = 64;
+const scrollTop = () => (window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0);
 
 export default function PullToRefresh() {
   const [dist, setDist] = useState(0);
   const [refreshing, setRefreshing] = useState(false);
   const startY = useRef(0);
   const active = useRef(false);
-  const scroller = useRef(null);
   const distRef = useRef(0);
 
   useEffect(() => {
-    const atTop = (el) => (el ? el.scrollTop <= 0 : (window.scrollY || document.documentElement.scrollTop || 0) <= 0);
     const onStart = (e) => {
       if (e.touches.length !== 1 || refreshing) { active.current = false; return; }
-      const t = e.target;
-      scroller.current = (t && t.closest) ? t.closest('.fm-scroll') : null;
-      if (atTop(scroller.current)) { startY.current = e.touches[0].clientY; active.current = true; distRef.current = 0; } else { active.current = false; }
+      if (scrollTop() <= 0) { startY.current = e.touches[0].clientY; active.current = true; distRef.current = 0; } else { active.current = false; }
     };
     const onMove = (e) => {
       if (!active.current) return;
+      // 손가락을 뗼지 않은 채 스크롤이 0보다 커지면(중간으로 이동) 즉시 중단
+      if (scrollTop() > 0) { active.current = false; distRef.current = 0; setDist(0); return; }
       const dy = e.touches[0].clientY - startY.current;
-      if (dy > 0 && atTop(scroller.current)) {
+      if (dy > 0) {
         const d = Math.min(96, dy * 0.5);
         distRef.current = d;
         setDist(d);
         if (d > 6 && e.cancelable) e.preventDefault();
       } else {
-        active.current = false; distRef.current = 0; setDist(0);
+        distRef.current = 0; setDist(0);
       }
     };
     const onEnd = () => {
-      if (active.current && distRef.current >= THRESHOLD) {
+      if (active.current && distRef.current >= THRESHOLD && scrollTop() <= 0) {
         setRefreshing(true);
         setTimeout(() => { try { window.location.reload(); } catch { /* ignore */ } }, 220);
       }

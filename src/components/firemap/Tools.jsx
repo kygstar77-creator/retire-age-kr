@@ -24,9 +24,15 @@ export default function Tools({ onMove }) {
           <a className="fm-tool-tile fm-tool-tile-link" href="/guide/region-plan/">
             <span className="fm-tool-ico">📍</span>
             <strong>지역·가구별 파이어 플랜</strong>
-            <em>지역 × 가구형태 × 유형별 필요자산·생활비·아파트 실거래가까지 한 곳에</em>
+            <em>내 지역 × 가구형태 × 유형별 필요자산·생활비를 계산해요</em>
+          </a>
+          <a className="fm-tool-tile fm-tool-tile-link" href="/guide/regions/">
+            <span className="fm-tool-ico">🏙️</span>
+            <strong>도시별 생활비·집값 백과</strong>
+            <em>도시별 생활비·아파트 실거래가·물가를 한눈에 (사전처럼 찾아보기)</em>
           </a>
         </div>
+        <p style={{ margin: '8px 16px 0', fontSize: 12, lineHeight: 1.5, color: '#8b95a1' }}>플랜은 “내 상황으로 계산”, 백과는 “도시별로 찾아보기”예요. 서로 연결돼 있어요.</p>
       </div>
 
       {GROUPS.map((g) => (

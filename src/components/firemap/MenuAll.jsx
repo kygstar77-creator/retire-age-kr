@@ -5,35 +5,39 @@ import { track } from '../../firemap-v2/dailyData.js';
 // 전체(토스식) — 파이어 여정 단계별로 모든 기능을 한 목록에 정리.
 const SECTIONS = [
   {
-    label: '내 파이어 여정',
+    label: '① 내 여정',
     items: [
-      { ico: '🎯', title: '내 파이어 플랜', desc: '목표까지 매달·하루 얼마 · 진도', to: 'firePlan' },
-      { ico: '🧭', title: '여정 단계별 할 일', desc: '지금 단계에서 해야 할 것', to: 'journey' },
-      { ico: '📊', title: '내 파이어 결과', desc: '파이어 가능 나이 · 자산 추이', to: 'result' },
-      { ico: '🇰🇷', title: '대한민국 파이어 지수', desc: '7천여 명 집계 · 또래 중 내 위치', to: 'index' }
+      { ico: '🧭', title: '내 파이어 여정', desc: '지금 단계 · 다음 한 걸음 · 진도', to: 'journey' },
+      { ico: '🎯', title: '내 파이어 플랜', desc: '목표까지 매달·하루 얼마', to: 'firePlan' },
+      { ico: '📊', title: '내 파이어 결과', desc: '파이어 가능 나이 · 자산 추이', to: 'result' }
     ]
   },
   {
-    label: '저축 · 기록',
+    label: '② 실행·가속 (기록)',
     items: [
-      { ico: '💰', title: '내 저축', desc: '적립·절약 기록하고 파이어 당기기', to: 'save' }
+      { ico: '💰', title: '저축·기록', desc: '적립·절약·오늘의 한 걸음·미션 한 곳에', to: 'save' }
     ]
   },
   {
-    label: '또래 · 커뮤니티',
+    label: '③ 또래 속 나',
     items: [
-      { ico: '🏆', title: 'FIRE 랭킹', desc: '같은 또래 중 내 등수', to: 'ranking' },
-      { ico: '💬', title: '커뮤니티', desc: '익명 한마디 · 후기', to: 'community' }
+      { ico: '🏆', title: 'FIRE 랭킹 · 파이어 지수', desc: '여정 단계별 경쟁 · 또래 중 내 위치', to: 'ranking' },
+      { ico: '💬', title: '커뮤니티', desc: '단계별 그룹 · 익명 한마디·후기', to: 'community' }
     ]
   },
   {
-    label: '파이어 준비 도구',
+    label: '설계 도구',
     items: [
-      { ico: '📍', title: '지역별 파이어', desc: '국내·해외 생활비로 파이어 시점 비교', to: 'cities' },
       { ico: '🎛️', title: '조건 바꿔 비교', desc: '저축·수익률·은퇴나이 What-If', to: 'experiment' },
-      { ico: '💵', title: '파이어 후 현금흐름', desc: '배당·인출·세금·건보까지', to: 'dividend' },
+      { ico: '📍', title: '지역별 파이어', desc: '국내·해외 생활비로 파이어 시점 비교', to: 'cities' }
+    ]
+  },
+  {
+    label: '임박·파이어 — 리얼리티 체크',
+    items: [
       { ico: '🩺', title: '파이어 후 건보료', desc: '피부양자 자격 + 지역가입 보험료', to: 'dependent' },
       { ico: '🧾', title: '양도·배당세', desc: '해외주식 양도세 + 배당 소득세', to: 'foreignTax' },
+      { ico: '💵', title: '파이어 후 현금흐름', desc: '배당·인출·세금·건보까지', to: 'dividend' },
       { ico: '🏦', title: '국민연금 조기수령', desc: '당겨 받기 득실', to: 'pension' }
     ]
   }

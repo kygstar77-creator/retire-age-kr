@@ -61,7 +61,7 @@ function WorldMap({ cities, active, onPick }) {
           }
         }
         if (alive) setDots(ds);
-      } catch { /* 폴백: 윤곡 */ }
+      } catch { /* 폴백: 윤곽 */ }
     })();
     return () => { alive = false; };
   }, []);
@@ -133,7 +133,7 @@ export default function CityExplorer({ inputs, simulation, onChange, onMove, onB
                   <span className="fm-region-main"><b>{r.city}</b><em>월 {formatWon(r.krw)}{r.note ? ` · ${r.note}` : ''}</em></span>
                   <span className="fm-region-res">
                     <b>{r.age != null ? `${r.age}세` : '자산 부족'}</b>
-                    {delta != null && <em className={delta > 0 ? 'early' : delta < 0 ? 'late' : 'same'}>{delta > 0 ? `${delta}년 일찍` : delta < 0 ? `${-delta}년 눊음` : '비슷'}</em>}
+                    {delta != null && <em className={delta > 0 ? 'early' : delta < 0 ? 'late' : 'same'}>{delta > 0 ? `${delta}년 일찍` : delta < 0 ? `${-delta}년 늦음` : '비슷'}</em>}
                   </span>
                 </button>
               );
@@ -161,7 +161,7 @@ export default function CityExplorer({ inputs, simulation, onChange, onMove, onB
                       {c.food.map((f) => <span key={f} className="fm-ce-tag food">🍽 {f}</span>)}
                       {c.play.map((pl) => <span key={pl} className="fm-ce-tag play">📍 {pl}</span>)}
                     </div>
-                    <p className="fm-ce-run">이 생활비면 <b>{runwayText(sc)}</b>까지 버텔요 · {deltaText(simulation, sc)}</p>
+                    <p className="fm-ce-run">이 생활비면 <b>{runwayText(sc)}</b>까지 버텨요 · {deltaText(simulation, sc)}</p>
                     {isOpen && <p className="fm-ce-visa">{c.visa}</p>}
                     <button type="button" className="fm-ce-cta" onClick={() => apply(c.krw)}>이 도시로 내 결과 보기</button>
                   </div>

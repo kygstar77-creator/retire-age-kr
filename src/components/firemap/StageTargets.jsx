@@ -75,6 +75,7 @@ export default function StageTargets({ simulation, onMove }) {
         <div style={S.miniDiv} />
         <div style={S.miniCell}><small style={S.miniSmall}>비상금 목표</small><b style={S.miniBig}>{won(t.emergencyFund)}</b></div>
       </div>
+      <p style={S.miniNote}>권장 가이드예요 — 주거비는 월 생활비의 30% 이내, 비상금은 생활비 6개월치. 파이어 계산엔 직접 반영되지 않는 참고 기준이에요.</p>
 
       <p style={S.infoTitle}>지금 알아두면 좋은 것</p>
       <div style={S.infoList}>
@@ -117,6 +118,7 @@ const S = {
   miniSmall: { fontSize: 11, color: '#9aa3bf', fontWeight: 700 },
   miniBig: { fontSize: 16, color: '#15151b', fontWeight: 800, fontVariantNumeric: 'tabular-nums' },
   miniDiv: { width: 1, alignSelf: 'stretch', background: '#e7e3dd', margin: '2px 0' },
+  miniNote: { fontSize: 11, color: '#9aa3bf', lineHeight: 1.5, margin: '-8px 0 16px' },
   infoTitle: { fontSize: 12, fontWeight: 800, color: '#1e2859', margin: '0 0 10px' },
   infoList: { display: 'flex', flexDirection: 'column', gap: 8 },
   infoRow: { display: 'flex', alignItems: 'center', gap: 11, width: '100%', textAlign: 'left', cursor: 'pointer', background: '#fff', border: '1px solid #ececec', borderRadius: 12, padding: '11px 12px' },

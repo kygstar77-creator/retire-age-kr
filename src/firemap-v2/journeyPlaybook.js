@@ -40,7 +40,7 @@ export const PLAYBOOK = {
     yearly: { title: '올해 회고 · 설계', to: 'experiment',
       items: ['올해 목표 저축액을 채웠나요?', '내년 목표 나이·금액을 다시 잡아볼까요?'] },
     tips: [
-      'ISA·연금저축·IRP는 세금을 미루거나 줄여줘요. 파이어 종잣돈의 가속 페달.',
+      'ISA·연금저축·IRP는 세금을 미루거나 줄여줘요. 파이어 종잿돈의 가속 페달.',
       '목표 자산 = 연 생활비 ÷ 인출률. 생활비를 줄이면 목표 자체가 내려가요.',
       '코스트파이어 — 더 안 모아도 굴리기만 하면 목표에 닿는 시점. 생각보다 빨리 와요.'
     ] },
@@ -69,12 +69,12 @@ export const PLAYBOOK = {
       { ico: '📊', label: '또래 추월했는지 파이어 지수에서 확인', to: 'index' },
       { ico: '🏠', label: '지방·주택 다운사이징 읽기', href: '/guide/real-estate-downsizing.html' }
     ],
-    weekly: { mission: { ico: '📈', label: '지역·부업·세금 레버 1개 적용해보기', to: 'tools' },
+    weekly: { mission: { ico: '📈', label: '바꿔보기에서 ‘생활비·부업·수익률’ 중 1개를 바꿔 저장하기', to: 'experiment' },
       reads: [g('real-estate-downsizing', '지방·주택 다운사이징'), g('southeast-asia-retirement', '동남아 은퇴'), g('post-retirement-side-jobs', '파이어 후 부업'), hub('/guide/region-plan/', '지역×가구별 파이어 플랜'), hub('/guide/regions/', '지역별 생활비·필요자산')] },
     monthly: { title: '이번 달 점검 · 가속', to: 'tools',
       items: ['이번 달 순자산이 늘었나요?', '생활비를 더 낮출 지역을 살펴봤나요?', '부업·배당 현금흐름을 점검했나요?'] },
     yearly: { title: '올해 회고 · 가속', to: 'tools',
-      items: ['올해 파이어 나이를 몇 년 당겼나요?', '거주지·부업 전략을 바꿔볼까요?'] },
+      items: ['올해 파이어 나이를 몇 년 당겨나요?', '거주지·부업 전략을 바꿔볼까요?'] },
     tips: [
       '지방으로 옮겨 생활비를 월 50만 줄이면 필요 자산이 수억 줄기도 해요.',
       '살고 있는 집은 생활비를 못 만들어요. 임대수익이 있어야 파이어 나이가 당겨져요.',

@@ -36,7 +36,7 @@ export default function DepositCard({ simulation, onMove }) {
 
   useEffect(() => {
     let alive = true;
-    pullKey('fm_daily').then((v) => { if (alive && v && v.days) { try { localStorage.setItem('fm_daily', JSON.stringify(v)); } catch { /* ignore */ } setCfg(v); } });
+    pullKey('fm_daily').then((v) => { if (alive && v && v.days) { try { localStorage.setItem('fm_daily', JSON.stringify(v)); } catch { /* ignore */ } setCfg(v); notifySavingsChanged(); } });
     return () => { alive = false; };
   }, []);
 

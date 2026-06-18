@@ -1,13 +1,12 @@
-// fetch-realestate v2 — 국토부(MOLIT) 아파트 실거래가 수집기 (추가전용).
-// MOLIT_API_KEY 시크릿이 있을 때만 동작. 없으면 전체 건너뜀(graceful). 실패해도 기존 값 보존.
-// 매매(아파트 매매 실거래가 상세) + 전세(아파트 전월세 실거래가, 월세=0 보증금). 시(市)별 대표 자치구 평균.
-// region 키는 사이트 지역 페이지 이름과 동일하게 저장(예: '서울','부산','성남','세종') → 페이지에서 이름으로 조인.
+// fetch-realestate v5 — 국토부(MOLIT) 아파트 실거래가 수집기 (추가전용).
+// MOLIT_API_KEY 있을 때만 동작. 없으면 건너뜀(graceful). 실패해도 기존 값 보존.
+// 경로: /1613000/{op}/get{op}. 매매: 상세 → 기본 폴백. 전세: getRTMSDataSvcAptRent(월세 0).
+// region 키 = 사이트 지역 페이지 이름. 주 1회 cron(firemap-realestate-weekly, 수 22:40 UTC)으로 갱신.
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
 const MOLIT_KEY = Deno.env.get("MOLIT_API_KEY") || "";
 
-// [페이지 지역명, [대표 시군구 LAWD 5자리 ...]] — 평균으로 집계. 코드 추가/수정 시 그대로 확장.
 const REGIONS: [string, string[]][] = [
   ["서울", ["11680", "11710", "11350", "11440"]],
   ["부산", ["26350", "26230", "26260"]],
@@ -28,7 +27,17 @@ const REGIONS: [string, string[]][] = [
   ["포항", ["47111", "47113"]],
   ["제주시", ["50110"]],
   ["강릉", ["51150"]],
-  ["춘천", ["51110"]]
+  ["춘천", ["51110"]],
+  ["여수", ["46130"]],
+  ["경주", ["47130"]],
+  ["목포", ["46110"]],
+  ["군산", ["45130"]],
+  ["김해", ["48250"]],
+  ["진주", ["48170"]],
+  ["양산", ["48330"]],
+  ["구미", ["47190"]],
+  ["원주", ["51130"]],
+  ["아산", ["44200"]]
 ];
 
 function lastMonthYM(): string {
@@ -46,9 +55,7 @@ async function upsert(row: Record<string, unknown>) {
   if (!res.ok) throw new Error(`upsert ${res.status} ${await res.text()}`);
 }
 
-// kind: 'sale' = 거래금액 평균 / 'jeonse' = 월세 0인 전세 보증금 평균. 단위 만원.
-async function avgFor(kind: "sale" | "jeonse", lawds: string[], ymd: string): Promise<number | null> {
-  const op = kind === "sale" ? "RTMSDataSvcAptTradeDev" : "RTMSDataSvcAptRent";
+async function avgForOp(op: string, kind: "sale" | "jeonse", lawds: string[], ymd: string): Promise<number | null> {
   const amounts: number[] = [];
   for (const lawd of lawds) {
     try {
@@ -70,10 +77,18 @@ async function avgFor(kind: "sale" | "jeonse", lawds: string[], ymd: string): Pr
           if (isFinite(dep) && dep > 0 && mon === 0) amounts.push(dep);
         }
       }
-    } catch { /* skip this lawd */ }
+    } catch { /* skip */ }
   }
   if (!amounts.length) return null;
   return Math.round(amounts.reduce((a, b) => a + b, 0) / amounts.length);
+}
+
+async function saleAvg(lawds: string[], ymd: string): Promise<number | null> {
+  for (const op of ["RTMSDataSvcAptTradeDev", "RTMSDataSvcAptTrade"]) {
+    const v = await avgForOp(op, "sale", lawds, ymd);
+    if (v != null) return v;
+  }
+  return null;
 }
 
 Deno.serve(async (_req: Request) => {
@@ -86,12 +101,13 @@ Deno.serve(async (_req: Request) => {
   const skipped: Record<string, string> = {};
   for (const [name, lawds] of REGIONS) {
     try {
-      const sale = await avgFor("sale", lawds, ymd);
+      const sale = await saleAvg(lawds, ymd);
       if (sale != null) { await upsert({ region: name, deal_type: "sale", metric: "avg_price", value: sale, unit: "만원", period: ymd, source: "molit", updated_at: now }); updated.push(`${name}/sale:${sale}`); }
-      const jeonse = await avgFor("jeonse", lawds, ymd);
+      const jeonse = await avgForOp("RTMSDataSvcAptRent", "jeonse", lawds, ymd);
       if (jeonse != null) { await upsert({ region: name, deal_type: "jeonse", metric: "avg_deposit", value: jeonse, unit: "만원", period: ymd, source: "molit", updated_at: now }); updated.push(`${name}/jeonse:${jeonse}`); }
-      if (sale == null && jeonse == null) skipped[name] = "no deals";
+      if (sale == null) skipped[`${name}/sale`] = "no data";
+      if (jeonse == null) skipped[`${name}/jeonse`] = "no data";
     } catch (e) { skipped[name] = String((e as Error)?.message || e); }
   }
-  return new Response(JSON.stringify({ ok: true, at: now, ymd, updated, skipped }), { headers: { "content-type": "application/json" } });
+  return new Response(JSON.stringify({ ok: true, at: now, ymd, updated: updated.slice(0, 80), skipped }), { headers: { "content-type": "application/json" } });
 });

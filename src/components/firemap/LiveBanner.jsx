@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { funHandle } from '../../firemap-v2/funName.js';
-import { wonStr } from '../../firemap-v2/dailyData.js';
 import { presencePing, fetchLivePresence, fetchTotalCalc } from '../../utils/live.js';
 
 const SB_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
@@ -29,7 +28,7 @@ const STYLE = `
 @keyframes fmLiveScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 `;
 
-function buildItems({ online, names, recent, total, market, macro, re, calc }) {
+function buildItems({ online, names, recent, total, market, macro, re, calc, comm }) {
   const items = [];
   // 참고 지표 — 시장(매일)·거시(매주)·부동산(매주) 실데이터 자동 갱신
   if (market) {
@@ -61,7 +60,7 @@ function buildItems({ online, names, recent, total, market, macro, re, calc }) {
   // 또래 규모 (실데이터)
   if (total > 0) items.push(`🔥 지금까지 ${total.toLocaleString()}명이 파이어 나이를 계산했어요`);
   if (online >= 2) items.push(`🟢 지금 ${online}명이 함께 파이어를 그리는 중`);
-  // 최근 활동 — 계산·저축·절약 (실데이터, 경과시간 표기)
+  // 최근 활동 — 계산·저축·커뮤니티 (실데이터, 경과시간 표기)
   (calc || []).slice(0, 4).forEach((c) => {
     const rel = relSave(c.created_at);
     if (!rel) return;
@@ -70,10 +69,15 @@ function buildItems({ online, names, recent, total, market, macro, re, calc }) {
   });
   (recent || []).slice(0, 5).forEach((s) => {
     const rel = relSave(s.updated_at);
-    if (!rel) return; // 너무 오래된 기록은 활동으로 표시하지 않음
+    if (!rel || !(s.deposit_month > 0)) return; // 너무 오래된 기록은 표시 안 함
     const nm = (s.nickname && s.nickname.trim()) || funHandle(s.client_id || '');
-    if (s.today_saved > 0) items.push(`💰 ${nm}님이 ${rel} ${wonStr(s.today_saved)} 절약`);
-    else if (s.deposit_month > 0) items.push(`🏦 ${nm}님이 ${rel} 저축 기록을 남겼어요`);
+    items.push(`🏦 ${nm}님이 ${rel} 저축을 기록했어요`);
+  });
+  (comm || []).slice(0, 4).forEach((c) => {
+    const rel = relSave(c.created_at);
+    if (!rel) return;
+    const nm = (c.nickname && c.nickname.trim()) || funHandle(c.client_id || '');
+    items.push(c.parent_id ? `💬 ${nm}님이 ${rel} 댓글을 달았어요` : `💬 ${nm}님이 ${rel} 커뮤니티에 글을 남겼어요`);
   });
   (names || []).slice(0, 3).forEach((n) => { if (n) items.push(`👋 ${n}님 접속 중`); });
   if (!items.length) items.push('🔥 오늘의 작은 저축 하나가 파이어를 며칠 당겨요');
@@ -86,19 +90,21 @@ export default function LiveBanner() {
     let alive = true;
     const load = async () => {
       const H = { apikey: SB_KEY, authorization: `Bearer ${SB_KEY}` };
-      const recentAct = fetch(`${SB_URL}/rest/v1/firemap_save_events?select=client_id,nickname,today_saved,deposit_month,updated_at&or=(today_saved.gt.0,deposit_month.gt.0)&order=updated_at.desc&limit=8`, { headers: H }).then((r) => (r.ok ? r.json() : [])).catch(() => []);
+      const recentAct = fetch(`${SB_URL}/rest/v1/firemap_save_events?select=client_id,nickname,deposit_month,updated_at&deposit_month=gt.0&order=updated_at.desc&limit=8`, { headers: H }).then((r) => (r.ok ? r.json() : [])).catch(() => []);
       const recentCalc = fetch(`${SB_URL}/rest/v1/firemap_scores?select=client_id,nickname,earliest_age,created_at&order=created_at.desc&limit=8`, { headers: H }).then((r) => (r.ok ? r.json() : [])).catch(() => []);
-      const [p, recent, total, market, macro, re, calc] = await Promise.all([
+      const recentComm = fetch(`${SB_URL}/rest/v1/firemap_feedback?select=client_id,nickname,parent_id,created_at&kind=eq.community&status=eq.visible&order=created_at.desc&limit=8`, { headers: H }).then((r) => (r.ok ? r.json() : [])).catch(() => []);
+      const [p, recent, total, market, macro, re, calc, comm] = await Promise.all([
         fetchLivePresence(),
         recentAct,
         fetchTotalCalc(),
         rpc('fm_market_latest'),
         rpc('fm_macro_latest'),
         rpc('fm_realestate_latest'),
-        recentCalc
+        recentCalc,
+        recentComm
       ]);
       if (!alive) return;
-      setItems(buildItems({ online: p ? p.online : 0, names: p ? p.names : [], recent, total, market, macro, re, calc }));
+      setItems(buildItems({ online: p ? p.online : 0, names: p ? p.names : [], recent, total, market, macro, re, calc, comm }));
     };
     presencePing();
     load();

@@ -22,11 +22,11 @@ const BOARDS = [
 ];
 const SUBS = {
   stage: '나와 같은 FIRE 여정 단계에 있는 사람들끼리 순위 — 같은 출발선에서 누가 더 빨리 가나',
-  peer: '같은 나이 또래 중 내 파이어 등수 — 같은 나이가 모이면 정확 나이 기준으로 좁혀져요',
+  peer: '같은 나이 또래 중 내 파이어 등수 — 같은 나이가 모이면 정확 나이 기준으로 좀혀져요',
   fire: '전체에서 파이어 가능 나이가 빠른 순 · 같으면 저축 많이 한 사람이 위',
-  cohort: '같은 나이·목표 또래끼리 — 저축·절약으로 파이어를 더 당긴 순 (절대 저축액이 아니라 공평)',
-  advance: '적립·절약으로 파이어를 가장 많이 앞당긴 순',
-  deposit: '이번 달 실제 적립이 많은 순 · 매월 새로 시작',
+  cohort: '같은 나이·목표 또래끼리 — 저축으로 파이어를 더 당긴 순 (절대 저축액이 아니라 공평)',
+  advance: '저축으로 파이어를 가장 많이 앞당긴 순',
+  deposit: '이번 달 실제 저축이 많은 순 · 매월 새로 시작',
   save: '아껴서 모은 돈 랭킹'
 };
 const COHORT_SCOPE_WORD = { exact: '나랑 같은 나이·목표 또래', cohort: '같은 나이대·목표 또래', age: '같은 나이대 또래', all: '전체' };
@@ -189,8 +189,8 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
       ? `${base.ageBandLabel} · 목표 ${tLo}~${tHi}세 라이벌`
       : cohortScope === 'age' ? `${base.ageBandLabel} 또래` : '전체 파이어족';
   const cohortHint = cohortScope === 'exact' ? ''
-    : cohortScope === 'cohort' ? ' · 같은 나이가 더 모이면 정확 나이로 좁혀져요'
-    : ' · 기록이 더 쌓이면 같은 나이·목표끼리 좁혀져요';
+    : cohortScope === 'cohort' ? ' · 같은 나이가 더 모이면 정확 나이로 좀혀져요'
+    : ' · 기록이 더 쌓이면 같은 나이·목표끼리 좀혀져요';
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
@@ -220,7 +220,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
             {stageB && stageB.position != null
               ? <p className="fm-rank-line">같은 단계 {stageB.total.toLocaleString()}명 중 <b>{stageB.position.toLocaleString()}위</b> · {earliest ? `${earliest}세 파이어 가능` : '아직 파이어 어려움'}</p>
               : <p className="fm-rank-line">{myStage ? '같은 단계에 아직 사람이 적어요 — 내 닉네임으로 올리면 첫 주자!' : '계산하면 내 여정 단계가 정해져요'}</p>}
-            <p className="fm-rank-climb">같은 출발선(여정 단계)에 선 사람들끼리의 경쟁이에요 — 파이어가 빠를수록, 같으면 더 많이 당긴 사람이 위 🔥</p>
+            <p className="fm-rank-climb">같은 출발선(여정 단계)에 선 사람들끼리의 경쟁이에요 — 파이어가 빨림수록, 같으면 더 많이 당긴 사람이 위 🔥</p>
           </section>
 
           <button type="button" onClick={() => onMove('index')} style={{ width: '100%', border: '1px solid #e7ebf3', background: '#f6f7fb', borderRadius: 12, padding: '12px 14px', cursor: 'pointer', textAlign: 'left', margin: '0 0 12px', fontSize: 13, fontWeight: 700, color: '#1e2859' }}>🇰🇷 대한민국 파이어 지수 — 연령대별 현황·내 위치 자세히 ›</button>
@@ -253,7 +253,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
             </div>
             {me && <p className="fm-rank-line">{scope === 'band' ? `${base.ageBandLabel} 또래` : '전체'} {me.total.toLocaleString()}명 중 상위 {me.percentile}% · {earliest ? `${earliest}세 파이어 가능` : '아직 파이어 어려움'}</p>}
             {me && (me.position > 1
-              ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 파이어 나이가 빠를수록 위로, <b>파이어 나이가 같으면 저축 많이 한 사람이 위</b>예요</p>
+              ? <p className="fm-rank-climb">1등까지 <b>{(me.position - 1).toLocaleString()}명</b> · 파이어 나이가 빨림수록 위로, <b>파이어 나이가 같으면 저축 많이 한 사람이 위</b>예요</p>
               : <p className="fm-rank-climb">지금 전체 1등! 매일 저축해서 자리를 지켜요 🔥</p>)}
           </section>
 
@@ -318,7 +318,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
               ? <p className="fm-rank-line">{peer.ageLabel} {peer.total.toLocaleString()}명 중 <b>{peer.position.toLocaleString()}위</b> · {earliest ? `${earliest}세 파이어 가능` : '아직 파이어 어려움'}</p>
               : <p className="fm-rank-line">{earliest ? `${earliest}세 파이어 가능` : '계산하면 내 또래 순위가 나와요'}</p>}
             {peer && peer.scope === 'band'
-              ? <p className="fm-rank-climb">아직 같은 나이 표본이 적어 <b>{peer.ageLabel}</b> 기준이에요 · 같은 나이가 모이면 자동으로 좁혀져요</p>
+              ? <p className="fm-rank-climb">아직 같은 나이 표본이 적어 <b>{peer.ageLabel}</b> 기준이에요 · 같은 나이가 모이면 자동으로 좀혀져요</p>
               : peer && peer.scope === 'age' && peer.position > 1
                 ? <p className="fm-rank-climb">1위까지 <b>{(peer.position - 1).toLocaleString()}명</b> · 조건 바꾸면 등수가 올라가요</p>
                 : peer && peer.scope === 'age' && peer.position === 1
@@ -357,8 +357,8 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
             {myAge != null ? `나 ${myAge}세` : '나'}{myTarget != null ? ` · 목표 ${myTarget}세 파이어` : ''}
           </p>
           {myAdvance > 0
-            ? <p className="fm-rank-climb">같은 나이·목표 또래 중 누가 파이어를 더 많이 당겨나 — 저축·절약을 기록할수록 더 당겨져요 🔥</p>
-            : <p className="fm-rank-climb">아직 당긴 기록이 없어요. ‘저축’ 탭에서 적립·절약을 기록하면 파이어가 당겨지고 순위가 올라가요.</p>}
+            ? <p className="fm-rank-climb">같은 나이·목표 또래 중 누가 파이어를 더 많이 당겼나 — 저축을 기록할수록 더 당겨져요 🔥</p>
+            : <p className="fm-rank-climb">아직 당긴 기록이 없어요. ‘저축’ 탭에서 저축을 기록하면 파이어가 당겨지고 순위가 올라가요.</p>}
         </section>
       )}
 
@@ -373,8 +373,8 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
             {myAge != null ? `나 ${myAge}세` : '나'}{myTarget != null ? ` · 목표 ${myTarget}세 파이어` : ''}
           </p>
           {myAdvance > 0
-            ? <p className="fm-rank-climb">저축·절약을 기록할수록 파이어가 더 당겨지고 순위가 올라가요 🔥</p>
-            : <p className="fm-rank-climb">아직 당긴 기록이 없어요. ‘저축’ 탭에서 적립·절약을 기록하면 파이어가 당겨지고 순위가 올라가요.</p>}
+            ? <p className="fm-rank-climb">저축을 기록할수록 파이어가 더 당겨지고 순위가 올라가요 🔥</p>
+            : <p className="fm-rank-climb">아직 당긴 기록이 없어요. ‘저축’ 탭에서 저축을 기록하면 파이어가 당겨지고 순위가 올라가요.</p>}
         </section>
       )}
 

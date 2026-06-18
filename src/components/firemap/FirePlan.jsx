@@ -22,7 +22,7 @@ function pickNextAction() {
   const sv = readJSONsafe('fm_save');
   const fd = readJSONsafe('fm_daily');
   const hasSave = (sv && (sv.total || 0) > 0) || (fd && fd.days && Object.keys(fd.days).length > 0);
-  if (!hasSave) return { label: '오늘 절약 한 번 기록하고 파이어 시간 벌기', to: 'save', ico: '⏱️' };
+  if (!hasSave) return { label: '오늘 저축 한 번 기록하고 파이어 시간 벌기', to: 'save', ico: '⏱️' };
   const pool = [
     { label: '지방 살면 몇 년 빨라지나 보기', to: 'cities', ico: '📍' },
     { label: '파이어 후 건보료 얼마인지 확인하기', to: 'dependent', ico: '🩺' },
@@ -120,9 +120,9 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
         return (
           <div className="fm-sum-grid">
             <button type="button" className="fm-sum-tile" onClick={() => onMove('save')}>
-              <small>저축·절약</small>
+              <small>저축</small>
               <b>이번 달 {won(monthDep)}</b>
-              <em>누적 절약 {won(totalSave)}{streak > 0 ? ` · ${streak}일 연속` : ''} ›</em>
+              <em>누적 저축 {won(totalSave)}{streak > 0 ? ` · ${streak}일 연속` : ''} ›</em>
             </button>
             <button type="button" className="fm-sum-tile" onClick={() => onMove('ranking')}>
               <small>내 나이 순위</small>

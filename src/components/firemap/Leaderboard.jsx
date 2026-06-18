@@ -15,14 +15,14 @@ const readNick = () => { try { return localStorage.getItem('fm_nickname') || '';
 const myCid = () => { try { return localStorage.getItem('fm_cid'); } catch { return null; } };
 
 const BOARDS = [
-  { key: 'stage', label: '단계별 경쟁' },
-  { key: 'peer', label: '내 또래' },
-  { key: 'fire', label: '전체' },
-  { key: 'advance', label: '파이어 앞당김' }
+  { key: 'fire', label: '전체 순위' },
+  { key: 'peer', label: '내 또래 순위' },
+  { key: 'advance', label: '저축 순위' },
+  { key: 'stage', label: '여정별 순위' }
 ];
 const SUBS = {
   stage: '나와 같은 FIRE 여정 단계에 있는 사람들끼리 순위 — 같은 출발선에서 누가 더 빨리 가나',
-  peer: '같은 나이 또래 중 내 파이어 등수 — 같은 나이가 모이면 정확 나이 기준으로 좁혀져요',
+  peer: '같은 나이 또래 중 내 파이어 등수 — 같은 나이가 모이면 정확 나이 기준으로 좀혀져요',
   fire: '전체에서 파이어 가능 나이가 빠른 순 · 같으면 저축 많이 한 사람이 위',
   cohort: '같은 나이·목표 또래끼리 — 저축으로 파이어를 더 당긴 순 (절대 저축액이 아니라 공평)',
   advance: '저축으로 파이어를 가장 많이 앞당긴 순',
@@ -43,7 +43,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
   const acctHandle = accountHandle();
   const myAdvance = hasCalculated() ? Math.max(0, computeProgress(simulation).advanceDays) : 0;
   const myBand = hasCalculated() ? assetBandOf(simulation.netWorth) : null;
-  const [board, setBoard] = useState('stage');
+  const [board, setBoard] = useState('fire');
   const [peer, setPeer] = useState(null);
   const [stageB, setStageB] = useState(null);
   const [saveMetric, setSaveMetric] = useState('total');
@@ -189,8 +189,8 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
       ? `${base.ageBandLabel} · 목표 ${tLo}~${tHi}세 라이벌`
       : cohortScope === 'age' ? `${base.ageBandLabel} 또래` : '전체 파이어족';
   const cohortHint = cohortScope === 'exact' ? ''
-    : cohortScope === 'cohort' ? ' · 같은 나이가 더 모이면 정확 나이로 좁혀져요'
-    : ' · 기록이 더 쌓이면 같은 나이·목표끼리 좁혀져요';
+    : cohortScope === 'cohort' ? ' · 같은 나이가 더 모이면 정확 나이로 좀혀져요'
+    : ' · 기록이 더 쌓이면 같은 나이·목표끼리 좀혀져요';
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
@@ -318,7 +318,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
               ? <p className="fm-rank-line">{peer.ageLabel} {peer.total.toLocaleString()}명 중 <b>{peer.position.toLocaleString()}위</b> · {earliest ? `${earliest}세 파이어 가능` : '아직 파이어 어려움'}</p>
               : <p className="fm-rank-line">{earliest ? `${earliest}세 파이어 가능` : '계산하면 내 또래 순위가 나와요'}</p>}
             {peer && peer.scope === 'band'
-              ? <p className="fm-rank-climb">아직 같은 나이 표본이 적어 <b>{peer.ageLabel}</b> 기준이에요 · 같은 나이가 모이면 자동으로 좁혀져요</p>
+              ? <p className="fm-rank-climb">아직 같은 나이 표본이 적어 <b>{peer.ageLabel}</b> 기준이에요 · 같은 나이가 모이면 자동으로 좀혀져요</p>
               : peer && peer.scope === 'age' && peer.position > 1
                 ? <p className="fm-rank-climb">1위까지 <b>{(peer.position - 1).toLocaleString()}명</b> · 조건 바꾸면 등수가 올라가요</p>
                 : peer && peer.scope === 'age' && peer.position === 1

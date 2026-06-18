@@ -58,8 +58,11 @@ export const QUICK = [
 ];
 
 export const dayIdx = () => Math.floor(Date.now() / 86400000);
-export const todayStr = () => new Date().toISOString().slice(0, 10);
-export const yesterdayStr = () => new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+const _p2 = (n) => String(n).padStart(2, '0');
+const _localYmd = (d) => `${d.getFullYear()}-${_p2(d.getMonth() + 1)}-${_p2(d.getDate())}`;
+// 로컬(기기) 날짜 기준 — 저축 캘린더 표시와 키를 일치시켜 KST 새벽 입력이 어긋나는 문제 방지.
+export const todayStr = () => _localYmd(new Date());
+export const yesterdayStr = () => _localYmd(new Date(Date.now() - 86400000));
 export const wonStr = (n) => `${Math.round(n).toLocaleString('ko-KR')}원`;
 export const readJSON = (k) => { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch { return null; } };
 

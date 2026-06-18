@@ -4,9 +4,10 @@ import { notifySavingsChanged, reportBoard } from '../../utils/savingsEngine.js'
 import { track } from '../../firemap-v2/dailyData.js';
 
 const KEY = 'fm_daily';
-const dayKey = (d) => d.toISOString().slice(0, 10);
+const p2 = (n) => String(n).padStart(2, '0');
+const dayKey = (d) => `${d.getFullYear()}-${p2(d.getMonth() + 1)}-${p2(d.getDate())}`; // 로컬 날짜(캘린더와 일치)
 const todayStr = () => dayKey(new Date());
-const monthStr = () => new Date().toISOString().slice(0, 7);
+const monthStr = () => { const d = new Date(); return `${d.getFullYear()}-${p2(d.getMonth() + 1)}`; };
 const load = () => { try { return JSON.parse(localStorage.getItem(KEY) || 'null'); } catch { return null; } };
 const save = (o) => { try { localStorage.setItem(KEY, JSON.stringify(o)); } catch { /* ignore */ } };
 const won = (n) => `${Math.round(n).toLocaleString('ko-KR')}원`;

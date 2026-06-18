@@ -236,7 +236,7 @@ export async function fetchTopScores(limit = 10, ageBand) {
     const urlAdv = `${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&order=earliest_age.asc.nullslast,advanced_days.desc,fire_score.desc&limit=${limit}`;
     let res = await fetch(urlAdv, { method: 'GET', headers: headers() });
     if (!res.ok) {
-      // advanced_days 컬럼 마이그레이션 전이면 옆 정렬로 폴백
+      // advanced_days 컬럼 마이그레이션 전이면 옛 정렬로 폴백
       const urlOld = `${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&order=earliest_age.asc.nullslast,fire_score.desc&limit=${limit}`;
       res = await fetch(urlOld, { method: 'GET', headers: headers() });
     }

@@ -206,7 +206,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
           <button type="button" key={b.key} className={board === b.key ? 'on' : ''} onClick={() => setBoard(b.key)}>{b.label}</button>
         ))}
       </div>
-      <p style={{ textAlign: 'center', fontSize: '12px', color: '#9a3412', background: '#fff7ed', border: '1px solid #fed7aa', borderRadius: '10px', padding: '7px 12px', margin: '0 0 10px' }}>✋ 모든 순위는 사용자가 직접 입력한 기록 기반이에요 — 서로 양심ꆇ 기록해요</p>
+      <p style={{ textAlign: 'center', fontSize: '12px', color: '#9a3412', background: '#fff7ed', border: '1px solid #fed7aa', borderRadius: '10px', padding: '7px 12px', margin: '0 0 10px' }}>✋ 모든 순위는 사용자가 직접 입력한 기록 기반이에요 — 서로 양심껏 기록해요</p>
       {board === 'save' && (
         <div className="fm-scope-toggle">
           <button type="button" className={saveMetric === 'total' ? 'on' : ''} onClick={() => setSaveMetric('total')}>누적</button>
@@ -244,7 +244,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
 
           <section className="fm-card fm-nick">
             <button type="button" className="fm-nick-reg" onClick={saveNick} disabled={saving}>{saving ? '등록 중' : saved ? '등록됨 ✓' : '내 닉네임으로 랭킹에 올리기'}</button>
-            <small>카카오로 로그인하거나 닉네임을 정하면 내 이름으로 올라가요. 익명이면 자동 버명이 붙어요.</small>
+            <small>카카오로 로그인하거나 닉네임을 정하면 내 이름으로 올라가요. 익명이면 자동 별명이 붙어요.</small>
           </section>
         </>
       )}
@@ -392,7 +392,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
             {myAge != null ? `나 ${myAge}세` : '나'}{myTarget != null ? ` · 목표 ${myTarget}세 파이어` : ''}
           </p>
           {myAdvance > 0
-            ? <p className="fm-rank-climb">같은 나이·목표 또래 중 누가 파이어를 더 많이 당겨나 — 저축을 기록할수록 더 당겨져요 🔥</p>
+            ? <p className="fm-rank-climb">같은 나이·목표 또래 중 누가 파이어를 더 많이 당겼나 — 저축을 기록할수록 더 당겨져요 🔥</p>
             : <p className="fm-rank-climb">아직 당긴 기록이 없어요. ‘저축’ 탭에서 저축을 기록하면 파이어가 당겨지고 순위가 올라가요.</p>}
         </section>
       )}

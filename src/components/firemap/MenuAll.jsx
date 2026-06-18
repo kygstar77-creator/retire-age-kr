@@ -29,14 +29,21 @@ const SECTIONS = [
     label: '설계 도구',
     items: [
       { ico: '🎛️', title: '조건 바꿔 비교', desc: '저축·수익률·은퇴나이 What-If', to: 'experiment' },
-      { ico: '📍', title: '지역별 파이어', desc: '국내·해외 생활비로 파이어 시점 비교', to: 'cities' }
+      { ico: '📍', title: '지역별 파이어 — 내 조건으로 비교', desc: '내 입력값 기준, 도시를 옮기면 파이어가 몇 년 당겨지는지', to: 'cities' }
+    ]
+  },
+  {
+    label: '지역으로 보는 파이어 (자료·플랜)',
+    items: [
+      { ico: '🏘️', title: '지역·가구별 파이어 플랜', desc: '지역×가구형태×유형별 필요자산·저축 — 사례처럼 찾아보기', href: '/guide/region-plan/' },
+      { ico: '🏙️', title: '도시별 생활비·집값 백과', desc: '도시별 생활비·아파트 실거래가·물가 사전', href: '/guide/regions/' }
     ]
   },
   {
     label: '임박·파이어 — 리얼리티 체크',
     items: [
       { ico: '🩺', title: '파이어 후 건보료', desc: '피부양자 자격 + 지역가입 보험료', to: 'dependent' },
-      { ico: '🧾', title: '양도·배당세', desc: '해외주식 양도세 + 배당 소득세', to: 'foreignTax' },
+      { ico: '🧧', title: '양도·배당세', desc: '해외주식 양도세 + 배당 소득세', to: 'foreignTax' },
       { ico: '💵', title: '파이어 후 현금흐름', desc: '배당·인출·세금·건보까지', to: 'dividend' },
       { ico: '🏦', title: '국민연금 조기수령', desc: '당겨 받기 득실', to: 'pension' }
     ]
@@ -72,12 +79,21 @@ export default function MenuAll({ onMove }) {
         <div key={sec.label} style={S.section}>
           <p style={S.secLabel}>{sec.label}</p>
           <div style={S.list}>
-            {sec.items.map((it) => (
-              <button type="button" key={it.title} style={S.row} onClick={() => go(it.to)}>
-                <span style={S.rowIco}>{it.ico}</span>
-                <span style={S.rowTx}><b style={S.rowTitle}>{it.title}</b><em style={S.rowDesc}>{it.desc}</em></span>
-                <span style={S.rowGo}>›</span>
-              </button>
+            {sec.items.map((it) => (it.href
+              ? (
+                <a key={it.title} href={it.href} style={S.row}>
+                  <span style={S.rowIco}>{it.ico}</span>
+                  <span style={S.rowTx}><b style={S.rowTitle}>{it.title}</b><em style={S.rowDesc}>{it.desc}</em></span>
+                  <span style={S.rowGo}>›</span>
+                </a>
+              )
+              : (
+                <button type="button" key={it.title} style={S.row} onClick={() => go(it.to)}>
+                  <span style={S.rowIco}>{it.ico}</span>
+                  <span style={S.rowTx}><b style={S.rowTitle}>{it.title}</b><em style={S.rowDesc}>{it.desc}</em></span>
+                  <span style={S.rowGo}>›</span>
+                </button>
+              )
             ))}
           </div>
         </div>

@@ -1,5 +1,5 @@
 // 조합형 프로그래매틱 SEO (2) — "지역 × 가구형태 × 파이어유형"별 필요자산·저축 플랜 페이지.
-// 실제 계산된 고유 수치를 담아 thin content 회피. 빌드 시 firemap_market 실데이터 주입.
+// 실제 계산된 고유 수치를 담아 thin content 회피. 빌드 시 firemap_market·fm_macro 실데이터 주입.
 import { mkdirSync, writeFileSync, existsSync } from 'fs';
 import { join } from 'path';
 
@@ -80,7 +80,26 @@ function marketLine(market) {
   return `<p class="mkt">📈 오늘의 참고 시세 — ${parts.join(' · ')}${d ? ` (기준일 ${d})` : ''}.</p>`;
 }
 
-function comboPage(region, tier, hh, ft, market) {
+async function fetchMacro() {
+  try {
+    const res = await fetch(`${SUPA}/rest/v1/rpc/fm_macro_latest`, { method: 'POST', headers: { apikey: SKEY, authorization: `Bearer ${SKEY}`, 'content-type': 'application/json' }, body: '{}' });
+    if (!res.ok) return null;
+    const j = await res.json();
+    return j && typeof j === 'object' ? j : null;
+  } catch { return null; }
+}
+function macroLine(macro) {
+  if (!macro) return '';
+  const cpi = macro.cpi;
+  const dep = (macro.rates || []).find((r) => r.key === 'deposit_12m');
+  const parts = [];
+  if (cpi && cpi.yoy != null) parts.push(`물가 상승률 ${cpi.yoy}%(${cpi.period})`);
+  if (dep && dep.value != null) parts.push(`예금금리 ${dep.value}%`);
+  if (!parts.length) return '';
+  return `<p class="mkt">🇰🇷 거시 지표(참고) — ${parts.join(' · ')}${(dep && dep.source === 'worldbank') || (cpi && cpi.source === 'worldbank') ? ' · 출처 World Bank' : ''}</p>`;
+}
+
+function comboPage(region, tier, hh, ft, market, macro) {
   const monthly1 = TIER_COST[tier];
   const monthly = Math.round(monthly1 * hh.mult * ft.costMult);
   const annual = monthly * 12;
@@ -96,6 +115,7 @@ function comboPage(region, tier, hh, ft, market) {
   <h1>${region}에서 ${hh.label}로 ${ft.label}하려면?</h1>
   <p class="lead">${region}의 ${hh.label} 월 생활비를 약 <b>${won(monthly)}</b>으로 보면(${ft.label} 기준), 4% 룰로 필요한 자산은 약 <b>${won(need)}</b>이에요. ${ft.note} 방식이에요.</p>
   ${marketLine(market)}
+  ${macroLine(macro)}
   <div class="stat"><div><small>월 생활비(추정)</small><b>${won(monthly)}</b></div><div><small>연 생활비</small><b>${won(annual)}</b></div><div><small>필요자산(4% 룰)</small><b>${won(need)}</b></div></div>
   <h2>현재 자산 0에서 월 저축별 도달 기간 (연 ${RET}% 가정)</h2>
   <table><tr><th>월 저축</th><th>${won(need)} 도달</th></tr>${SAVE_OPTS.map((m) => `<tr><td>월 ${m}만원</td><td>${fmtDur(monthsToTarget(0, m * 10000, need, RET))}</td></tr>`).join('')}</table>
@@ -115,10 +135,10 @@ function comboPage(region, tier, hh, ft, market) {
 async function main() {
   if (!existsSync(ROOT)) { console.log(`[gen-region-plans] ROOT ${ROOT} 없음 — 건너뜀`); return; }
   mkdirSync(OUT, { recursive: true });
-  const market = await fetchMarket();
+  const [market, macro] = await Promise.all([fetchMarket(), fetchMacro()]);
   let n = 0;
   for (const [region, tier] of REGIONS) for (const hh of HOUSEHOLD) for (const ft of FIRETYPE) {
-    const { slug: sl, html } = comboPage(region, tier, hh, ft, market);
+    const { slug: sl, html } = comboPage(region, tier, hh, ft, market, macro);
     writeFileSync(join(OUT, `${sl}.html`), html);
     n++;
   }

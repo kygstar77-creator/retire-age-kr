@@ -15,7 +15,7 @@ const SECTIONS = [
   {
     label: '② 실행·가속 (기록)',
     items: [
-      { ico: '💰', title: '저축·기록', desc: '적립·절약·오늘의 한 걸음·미션 한 곳에', to: 'save' }
+      { ico: '💰', title: '저축·기록', desc: '저축·오늘의 한 걸음·미션 한 곳에', to: 'save' }
     ]
   },
   {

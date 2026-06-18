@@ -25,7 +25,7 @@ export const screens = {
 
 export const NEXT_ACTION_META = {
   ranking:    { tag: '랭킹', title: '전체 랭킹 보기',     desc: '1등까지 몇 명? 내 순위', primary: true },
-  save:       { tag: '저축', title: '오늘부터 저축 기록',   desc: '적립·절약이 파이어를 며칠 당기는지' },
+  save:       { tag: '저축', title: '오늘부터 저축 기록',   desc: '저축이 파이어를 며칠 당기는지' },
   experiment: { tag: '비교', title: '조건 바꿔 비교하기', desc: '증권앱 차트로 What-If' },
   share:      { tag: '공유', title: '내 결과 공유',       desc: '파이어 나이·또래 비교 카드' },
   tools:      { tag: '도구', title: '정밀 도구 더보기',   desc: '건보료·세금·도시·커뮤니티' }

@@ -22,7 +22,7 @@ function streakOf(days) {
   return s;
 }
 
-// 적립 = 매일 '실제로 저축한 금액'을 기록. 월별 실제 저축이 계획(월 저축액)을 넘긴 만큼만 파이어 앞당김.
+// 저축 = 매일 '실제로 저축한 금액'을 기록. 월별 실제 저축이 계획(월 저축액)을 넘긴 만큼만 파이어 앞당김.
 export default function DepositCard({ simulation, onMove }) {
   const inp = (simulation && simulation.inputs) || {};
   const monthlyPlan = inp.monthlyInvestment || 0;
@@ -72,12 +72,12 @@ export default function DepositCard({ simulation, onMove }) {
     try { track('deposit_log', { mode: 'manual', amt }); } catch { /* ignore */ }
     setEditing(false);
   };
-  const reset = () => { if (!window.confirm('적립 기록을 모두 지울까요? 되돌릴 수 없어요.')) return; const next = { days: {} }; save(next); setCfg(next); pushState('fm_daily', next); notifySavingsChanged(); reportBoard(simulation); setEditing(false); };
+  const reset = () => { if (!window.confirm('저축 기록을 모두 지울까요? 되돌릴 수 없어요.')) return; const next = { days: {} }; save(next); setCfg(next); pushState('fm_daily', next); notifySavingsChanged(); reportBoard(simulation); setEditing(false); };
 
   return (
     <section className="fm-card fm-dep live">
       <div className="fm-dc-top">
-        <p className="fm-kicker">매일 적립 💰 {streak}일 연속{streak >= 3 ? ' 🔥' : ''}</p>
+        <p className="fm-kicker">매일 저축 💰 {streak}일 연속{streak >= 3 ? ' 🔥' : ''}</p>
         {Object.keys(days).length > 0 && <button type="button" className="fm-inline-link" onClick={reset}>초기화</button>}
       </div>
 

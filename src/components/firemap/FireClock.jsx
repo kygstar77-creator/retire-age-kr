@@ -73,7 +73,7 @@ export default function FireClock({ simulation }) {
       <p className='fm-clock-cap'>🔥 파이어까지 남은 시간</p>
       <p className='fm-clock-big'><b>{d.yr}</b>년 <b>{d.days}</b>일</p>
       <p className='fm-clock-time'>{pad(d.h)}:{pad(d.m)}:{pad(d.s)}</p>
-      <p className='fm-clock-sub'>매일 저축·절약하면 시계가 빨라져요</p>
+      <p className='fm-clock-sub'>매일 저축하면 시계가 빨라져요</p>
     </section>
   );
 }

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const readDays = (key, field) => { try { const v = JSON.parse(localStorage.getItem(key) || 'null'); return (v && v[field]) || {}; } catch { return {}; } };
 const ymd = (y, m, d) => `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
 
-export default function DepositCalendar({ storageKey = 'fm_daily', field = 'days', label = '적립' }) {
+export default function DepositCalendar({ storageKey = 'fm_daily', field = 'days', label = '저축' }) {
   const [days, setDays] = useState(() => readDays(storageKey, field));
   useEffect(() => {
     const h = () => setDays(readDays(storageKey, field));

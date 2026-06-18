@@ -39,6 +39,13 @@ export default function DepositCard({ simulation, onMove }) {
     return () => { alive = false; };
   }, []);
 
+  // 달력 백필 등 다른 곳에서 저축이 바뀌면 월 게이지·연속일을 다시 읽어요
+  useEffect(() => {
+    const h = () => { const v = load(); if (v) setCfg(v); };
+    window.addEventListener('fm-savings-changed', h);
+    return () => window.removeEventListener('fm-savings-changed', h);
+  }, []);
+
   const days = cfg.days || {};
   const today = todayStr();
   const yest = dayKey(new Date(Date.now() - 86400000));
@@ -109,7 +116,7 @@ export default function DepositCard({ simulation, onMove }) {
             <button type="button" className="fm-dep-edit-reset" onClick={() => setEditing(false)}>취소</button>
             <button type="button" className="fm-dep-edit-save" onClick={saveToday}>저장</button>
           </div>
-          <p className="fm-dc-note">매일 실제 저축액을 기록하면 “이번 달 실제 저축”이 쌓여요. 빠뜨렸으면 ‘어제’로 바꿔 소급 입력할 수 있어요.</p>
+          <p className="fm-dc-note">매일 실제 저축액을 기록하면 “이번 달 실제 저축”이 쌓여요. 빠뜨렸으면 ‘어제’로 바꿔 소급 입력할 수 있어요. 더 오래전 날짜는 아래 달력에서 날짜를 눌러 넣으세요.</p>
         </div>
       ) : loggedToday ? (
         <>

@@ -4,7 +4,6 @@ import { computeProgress } from '../../utils/savingsEngine.js';
 import { getAssetHistory } from '../../utils/assetHistory.js';
 import { pickForToday } from '../../firemap-v2/journeyPlaybook.js';
 import { track } from '../../firemap-v2/dailyData.js';
-import WeeklyBoard from './WeeklyBoard.jsx';
 
 const SB_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
 const SB_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
@@ -93,11 +92,6 @@ export default function JourneyPulse({ simulation, onMove }) {
           )}
         </div>
       )}
-
-      <div style={S.block}>
-        <p style={S.blockCap}>🏅 이번 주 절약왕</p>
-        <WeeklyBoard />
-      </div>
 
       {showM && pb.monthly && (
         <div style={S.review}>

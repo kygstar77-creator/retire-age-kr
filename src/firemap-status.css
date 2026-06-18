@@ -106,3 +106,10 @@
 .fm-tax-warn { color: #854f0b; background: rgba(186,117,23,0.1); border-radius: 8px; padding: 8px 10px; }
 
 .fm-tax-explain-line b { font-size: inherit; font-weight: 800; color: #ff5a00; }
+
+/* 로고-텍스트 간격 축소 */
+.fm-logo{ gap:5px !important; }
+/* 로그인 카드(계정바) 신뢰감 강화 — 자물쇠 배지 + 강조 테두리 */
+.fm-acct-bar{ border-color:rgba(255,90,0,0.28) !important; background:linear-gradient(180deg,#fff6f2,#fff) !important; box-shadow:0 8px 20px -14px rgba(232,67,28,0.40) !important; }
+.fm-acct-bar-ic{ width:34px; height:34px; flex:0 0 auto; display:flex; align-items:center; justify-content:center; background:#fff1e7; border-radius:10px; font-size:17px; }
+.fm-acct-bar-go{ background:#ff5a00; color:#fff !important; border-radius:999px; padding:6px 12px; }

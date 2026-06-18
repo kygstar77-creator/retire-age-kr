@@ -9,7 +9,8 @@ const SECTIONS = [
     items: [
       { ico: '🧭', title: '내 파이어 여정', desc: '지금 단계 · 다음 한 걸음 · 진도', to: 'journey' },
       { ico: '🎯', title: '내 파이어 플랜', desc: '목표까지 매달·하루 얼마', to: 'firePlan' },
-      { ico: '📊', title: '내 파이어 결과', desc: '파이어 가능 나이 · 자산 추이', to: 'result' }
+      { ico: '📊', title: '내 파이어 결과', desc: '파이어 가능 나이 · 자산 추이', to: 'result' },
+      { ico: '🇰🇷', title: '대한민국 파이어 지수', desc: '연령대별 현황 · 또래 중 내 위치', to: 'index' }
     ]
   },
   {
@@ -70,7 +71,7 @@ export default function MenuAll({ onMove }) {
         <span style={S.acctTx}>
           {acc && acc.handle
             ? <><b style={S.acctName}>{acc.handle}</b><em style={S.acctSub}>기록이 안전하게 이어져요</em></>
-            : <><b style={S.acctName}>로그인하고 내 기록 지키기</b><em style={S.acctSub}>기기 바꿔도 그대로 이어져요</em></>}
+            : <><b style={S.acctName}>🔒 카카오로 간편·안전 로그인</b><em style={S.acctSub}>내 기록을 안전하게 보관 · 기기 바꿔도 그대로</em></>}
         </span>
         <span style={S.acctGo}>{acc && acc.handle ? '관리 ›' : '로그인 ›'}</span>
       </button>

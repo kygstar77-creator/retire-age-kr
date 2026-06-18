@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
+import MarketIndicators from './MarketIndicators.jsx';
 import { track } from '../../firemap-v2/dailyData.js';
 
 // 대한민국 파이어 지수 — 우리 익명 집계로만 만들 수 있는 '표준' 콘텐츠 + 내 위치 비교 + 공유.
@@ -67,6 +68,8 @@ export default function FireIndex({ simulation, onBack }) {
           : <p style={S.heroSub}>{err ? '집계를 불러오지 못했어요. 잠시 후 다시 시도해 주세요.' : '집계 불러오는 중…'}</p>}
         {natAvgEarliest != null && <button type="button" style={S.share} onClick={onShare}>💬 내 파이어 위치 공유하기</button>}
       </section>
+
+      <MarketIndicators region="서울" />
 
       {rows && rows.length > 0 && (
         <section className="fm-card">

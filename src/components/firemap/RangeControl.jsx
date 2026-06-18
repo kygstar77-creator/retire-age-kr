@@ -16,6 +16,8 @@ const ranges = {
   expectedMonthlyPension: [0, 5000000],
   improvedCost: [500000, 20000000],
   partTimeIncomeAfterRetirement: [0, 10000000],
+  monthlyIncome: [0, 20000000],
+  monthlyRentalIncome: [0, 10000000],
   savingYears: [0, 50],
   dividendYield: [0, 15]
 };
@@ -29,7 +31,9 @@ const chipSets = {
   monthlyLivingCost: [100000, 500000, 1000000],
   improvedCost: [100000, 500000, 1000000],
   expectedMonthlyPension: [100000, 500000, 1000000],
-  partTimeIncomeAfterRetirement: [100000, 500000, 1000000]
+  partTimeIncomeAfterRetirement: [100000, 500000, 1000000],
+  monthlyIncome: [500000, 1000000, 5000000],
+  monthlyRentalIncome: [100000, 500000, 1000000]
 };
 
 function niceStep(span) {
@@ -61,7 +65,7 @@ export default function RangeControl({ label, value, onChange, step = 1, type = 
   const isMoney = type === 'money';
   const upperClamp = isMoney ? Infinity : max; // 돈은 직접 입력 시 상한 제거
   const stored = Math.max(min, Math.min(upperClamp, numeric)); // 표시용 실제 값(돈은 상한 없음)
-  const sliderValue = Math.max(min, Math.min(max, numeric)); // 슬라이더 썬 위치(범위 내)
+  const sliderValue = Math.max(min, Math.min(max, numeric)); // 슬라이더 썸 위치(범위 내)
   const percent = max > min ? ((sliderValue - min) / (max - min)) * 100 : 0;
   const overMax = isMoney && numeric > max;
   const chips = chipSets[inputKey] || [];

@@ -24,7 +24,7 @@ const HOUSEHOLD = [
 ];
 const FIRETYPE = [
   { key: '린', label: '린파이어', costMult: 1.0, note: '생활비를 최소화해 더 적은 자산으로 일찍' },
-  { key: '팫', label: '팫파이어', costMult: 1.4, note: '넓넓한 생활비를 유지하며 여유롭게' }
+  { key: '팻', label: '팻파이어', costMult: 1.4, note: '넉넉한 생활비를 유지하며 여유롭게' }
 ];
 const RET = 6;
 const SAVE_OPTS = [50, 100, 150, 200, 300]; // 월 저축(만원)
@@ -107,7 +107,7 @@ function comboPage(region, tier, hh, ft, market) {
   <a class="cta" href="${BASE}/">🔥 내 파이어 가능 나이 1분 계산 →</a>`;
   const faq = [
     { q: `${region}에서 ${hh.label} ${ft.label}하려면 얼마가 필요한가요?`, a: `월 생활비 약 ${won(monthly)} 기준 4% 룰로 약 ${won(need)}이 필요합니다. 국민연금·물가·세금에 따라 달라지니 계산기로 확인하세요.` },
-    { q: '린파이어와 팫파이어 차이는?', a: '린파이어는 생활비를 최소화해 더 적은 자산으로 일찍 은퇴, 팫파이어는 넓넓한 생활비를 유지하며 은퇴하는 방식입니다.' }
+    { q: '린파이어와 팻파이어 차이는?', a: '린파이어는 생활비를 최소화해 더 적은 자산으로 일찍 은퇴, 팻파이어는 넉넉한 생활비를 유지하며 은퇴하는 방식입니다.' }
   ];
   return { slug: `${s}-${hh.key}-${ft.key}`, html: page({ title, desc, keywords, canonical, body, faq }) };
 }
@@ -122,10 +122,10 @@ async function main() {
     writeFileSync(join(OUT, `${sl}.html`), html);
     n++;
   }
-  const hubBody = `<p><a href="${BASE}/">← 파이어맵</a></p><h1>지역·가구별 파이어 플랜</h1><p class="lead">지역 × 가구형태(1인·부부·4인) × 파이어유형(린·팫)별 필요자산과 저축 플랜. ${n}개 조합.</p>` +
+  const hubBody = `<p><a href="${BASE}/">← 파이어맵</a></p><h1>지역·가구별 파이어 플랜</h1><p class="lead">지역 × 가구형태(1인·부부·4인) × 파이어유형(린·팻)별 필요자산과 저축 플랜. ${n}개 조합.</p>` +
     REGIONS.map(([r]) => `<h2>${r}</h2><div class="tags">${HOUSEHOLD.map((h) => FIRETYPE.map((f) => `<a href="${BASE}/guide/region-plan/${slug(r)}-${h.key}-${f.key}.html">${h.label}·${f.label}</a>`).join('')).join('')}</div>`).join('') +
     `<a class="cta" href="${BASE}/">내 파이어 나이 계산하기 →</a>`;
-  writeFileSync(join(OUT, 'index.html'), page({ title: '지역·가구별 파이어 플랜 — 필요자산·저축 계획 | 파이어맵', desc: `지역×가구형태×파이어유형 ${n}개 조합의 필요자산·저축 플랜.`, keywords: '지역 파이어, 가구별 필요자산, 린파이어, 팫파이어, 파이어 계산', canonical: `${BASE}/guide/region-plan/`, body: hubBody, faq: [{ q: '이 수치는 정확한가요?', a: '4% 룰·연 6% 가정의 근사치입니다. 정확한 값은 계산기에서 확인하세요.' }] }));
+  writeFileSync(join(OUT, 'index.html'), page({ title: '지역·가구별 파이어 플랜 — 필요자산·저축 계획 | 파이어맵', desc: `지역×가구형태×파이어유형 ${n}개 조합의 필요자산·저축 플랜.`, keywords: '지역 파이어, 가구별 필요자산, 린파이어, 팻파이어, 파이어 계산', canonical: `${BASE}/guide/region-plan/`, body: hubBody, faq: [{ q: '이 수치는 정확한가요?', a: '4% 룰·연 6% 가정의 근사치입니다. 정확한 값은 계산기에서 확인하세요.' }] }));
   n++;
   console.log(`[gen-region-plans] ${n} pages → ${OUT}${market ? ' (market injected)' : ''}`);
 }

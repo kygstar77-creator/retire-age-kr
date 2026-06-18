@@ -94,18 +94,12 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
         <button type="button" className="fm-home-cta" onClick={() => { track('start_calc', { age, from: challenge ? 'share' : 'home' }); onStart(age); }}>{challenge ? '나도 계산하고 친구랑 비교하기 →' : '내 파이어 나이 계산하기 →'}</button>
         {proof && <p className="fm-home-proof">{proof}</p>}
       </section>
-      <section className="fm-why" aria-label="파이어맵이 다른 이유">
-        <p className="fm-why-cap">🔍 한국 제도까지 챙겨요</p>
-        <div className="fm-why-grid">
-          <span>✅ 물가 상승 · 계산 반영</span>
-          <span>✅ 국민연금 · 계산 반영</span>
-          <span>🩺 파이어 후 건보료 · 도구</span>
-          <span>🧾 양도·배당세 · 도구</span>
-        </div>
-      </section>
-      <section className="fm-home-mini-card">
-        <strong>입력값은 기기 안에서 계산돼요</strong>
-        <p>공유 전에는 민감한 금액이 링크에 포함되는지 확인해주세요.</p>
+      <section className="fm-card" style={{ borderColor: 'rgba(255,90,0,0.3)' }}>
+        <p className="fm-kicker">🔥 숫자 하나로 끝이 아니에요</p>
+        <h2 style={{ margin: '2px 0 10px' }}>계산 다음, 파이어 여정이 시작돼요</h2>
+        <p style={{ fontSize: '13px', color: 'var(--fm-muted, #6b6f76)', lineHeight: 1.6, margin: 0 }}>
+          파이어맵은 물가·국민연금·건보료·세금까지 반영한 현실적인 계산으로 끝나지 않아요. 지금 내가 어느 단계인지, 다음 한 걸음은 무엇인지 — <b>목표까지 가는 길 전체를 지도로</b> 안내하고, 내 기록을 한 곳에 모아 계속 관리해요.
+        </p>
       </section>
       <nav className="fm-policy-links" aria-label="정책 및 문의">
         <a href="/privacy.html">개인정보처리방침</a>

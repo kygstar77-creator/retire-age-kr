@@ -147,7 +147,7 @@ export default function Savings({ simulation, onMove }) {
         <button type="button" role="tab" aria-selected={seg === 'today'} className={seg === 'today' ? 'on' : ''} onClick={() => setSeg('today')}>☀️ 오늘</button>
         <button type="button" role="tab" aria-selected={seg === 'mission'} className={seg === 'mission' ? 'on' : ''} onClick={() => setSeg('mission')}>🎖️ 미션</button>
       </div>
-      {seg === 'today' && <DailyJourney onMove={onMove} />}
+      {seg === 'today' && <DailyJourney onMove={onMove} simulation={simulation} />}
       {seg === 'mission' && <Missions simulation={simulation} onMove={onMove} />}
       {seg === 'deposit' && (<>
       <p className="fm-daily-wisdom">“{quote}”</p>

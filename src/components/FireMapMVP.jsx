@@ -25,6 +25,7 @@ import FireIndex from './firemap/FireIndex.jsx';
 import JourneyStage from './firemap/JourneyStage.jsx';
 import Consent from './firemap/Consent.jsx';
 import LiveBanner from './firemap/LiveBanner.jsx';
+import PullToRefresh from './firemap/PullToRefresh.jsx';
 import { buildSimulation, defaultInputs, inputsIsReal } from '../utils/retirementSimulator.js';
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
 import { cleanNumber } from '../firemap-v2/formatters.js';
@@ -175,6 +176,7 @@ export default function FireMapMVP() {
 
   const wrap = (node) => (
     <>
+      <PullToRefresh />
       <LiveBanner />
       {node}
       {screens[screen]?.tab && <BottomTabs current={screen} onMove={setScreen} />}

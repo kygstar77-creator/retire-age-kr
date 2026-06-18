@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { pushState } from '../../utils/firemapStateApi.js';
+import { pushState, pullKey } from '../../utils/firemapStateApi.js';
 import { notifySavingsChanged, reportBoard } from '../../utils/savingsEngine.js';
 import { track } from '../../firemap-v2/dailyData.js';
 
@@ -26,7 +26,14 @@ export default function DepositCalendar({ storageKey = 'fm_daily', field = 'days
   useEffect(() => {
     const h = () => setDays(readDays(storageKey, field));
     window.addEventListener('fm-savings-changed', h);
-    return () => window.removeEventListener('fm-savings-changed', h);
+    // 마운트 시 클라우드에서 한 번 받아와 로컬에 채우고 화면 갱신 (로그인 기기 동기화 대비)
+    let alive = true;
+    pullKey(storageKey).then((v) => {
+      if (!alive || !v || !v[field]) return;
+      try { localStorage.setItem(storageKey, JSON.stringify(v)); } catch { /* ignore */ }
+      setDays(v[field] || {});
+    }).catch(() => {});
+    return () => { alive = false; window.removeEventListener('fm-savings-changed', h); };
   }, [storageKey, field]);
   const now = new Date();
   const y = now.getFullYear();

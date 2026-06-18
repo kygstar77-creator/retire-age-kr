@@ -79,7 +79,7 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
       <section className="fm-home-hero-card">
         <p>파이어맵</p>
         <h1>나는 몇 살에<br />파이어할 수 있을까?</h1>
-        <span>물가·국민연금까지 반영하는 <b>가장 현실적인 파이어 계산</b>이에요. 파이어 후 건보료·세금은 도구로 따로 점검해요. 자산·생활비만 넣으면 1분.</span>
+        <span>자산·생활비만 넣으면 1분. 물가·국민연금까지 반영한 <b>현실적인 파이어 계산</b>이에요. 파이어 후 건보료·세금은 도구로 더 정밀하게 점검해요.</span>
         <div className="fm-home-age">
           <label htmlFor="fm-home-age-in">지금 몇 살인가요?</label>
           <div className="fm-home-age-ctrl">
@@ -98,7 +98,7 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
         <p className="fm-kicker">🔥 숫자 하나로 끝이 아니에요</p>
         <h2 style={{ margin: '2px 0 10px' }}>계산 다음, 파이어 여정이 시작돼요</h2>
         <p style={{ fontSize: '13px', color: 'var(--fm-muted, #6b6f76)', lineHeight: 1.6, margin: 0 }}>
-          파이어맵은 물가·국민연금·건보료·세금까지 반영한 현실적인 계산으로 끝나지 않아요. 지금 내가 어느 단계인지, 다음 한 걸음은 무엇인지 — <b>목표까지 가는 길 전체를 지도로</b> 안내하고, 내 기록을 한 곳에 모아 계속 관리해요.
+          물가·국민연금까지 반영한 현실적인 계산은 시작일 뿐이에요. 지금 내가 어느 단계인지, 다음 한 걸음은 무엇인지 — <b>목표까지 가는 길 전체를 지도로</b> 안내하고, 건보료·세금 같은 정밀 점검과 내 기록을 한 곳에 모아 계속 관리해요.
         </p>
       </section>
       <nav className="fm-policy-links" aria-label="정책 및 문의">

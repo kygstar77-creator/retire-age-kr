@@ -3,7 +3,8 @@ import Header from './Header.jsx';
 import { identityIds, accountHandle, account } from '../../utils/identity.js';
 import DepositCard from './DepositCard.jsx';
 import DepositCalendar from './DepositCalendar.jsx';
-import PetCard from './PetCard.jsx';
+import DailyJourney from './DailyJourney.jsx';
+import Missions from './Missions.jsx';
 import WeeklyBoard from './WeeklyBoard.jsx';
 import { pushState, pullKey } from '../../utils/firemapStateApi.js';
 import { statsRank } from '../../firemap-v2/rank.js';
@@ -26,7 +27,7 @@ function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
   if (!dailyNeed) {
     return (
       <div className="fm-fp done">
-        <p className="fm-fp-cap">🎉 이미 목표 자산을 넘었어요. 아낀 돈은 파이어 후 여유로 그대로 쌓여요.</p>
+        <p className="fm-fp-cap">🎉 이미 목표 자산을 넘었어요. 아낌 돈은 파이어 후 여유로 그대로 쌓여요.</p>
       </div>
     );
   }
@@ -54,6 +55,7 @@ export default function Savings({ simulation, onMove }) {
   const [nick, setNick] = useState(() => { try { return localStorage.getItem('fm_nickname') || ''; } catch { return ''; } });
   const [nickSaved, setNickSaved] = useState(false);
   const [saveView, setSaveView] = useState('deposit');
+  const [seg, setSeg] = useState('save');
   const [tick, setTick] = useState(0);
   const [flash, setFlash] = useState(null);
   const flashRef = useRef(0);
@@ -118,7 +120,7 @@ export default function Savings({ simulation, onMove }) {
       if (adLabel) u.searchParams.set('ad', adLabel);
       url = u.toString();
     } catch { url = 'https://firemap.kr/'; }
-    const text = adLabel ? `절약으로 파이어를 ${adLabel} 앞당겼어요 🔥 나도 해보기` : '아낀 돈으로 파이어 앞당기기 🔥 나도 해보기';
+    const text = adLabel ? `절약으로 파이어를 ${adLabel} 앞당겼어요 🔥 나도 해보기` : '아낌 돈으로 파이어 앞당기기 🔥 나도 해보기';
     if (navigator.share) {
       try { await navigator.share({ title: '파이어맵 — 오늘의 절약', text, url }); track('share', { type: 'save' }); track('share_link_copy', { type: 'save' }); return; }
       catch (e) { if (e && e.name === 'AbortError') return; }
@@ -141,7 +143,14 @@ export default function Savings({ simulation, onMove }) {
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="저축" />
-      <PetCard />
+      <div className="fm-board-tabs" role="tablist" aria-label="기록 종류">
+        <button type="button" role="tab" aria-selected={seg === 'save'} className={seg === 'save' ? 'on' : ''} onClick={() => setSeg('save')}>💰 저축</button>
+        <button type="button" role="tab" aria-selected={seg === 'today'} className={seg === 'today' ? 'on' : ''} onClick={() => setSeg('today')}>☀️ 오늘</button>
+        <button type="button" role="tab" aria-selected={seg === 'mission'} className={seg === 'mission' ? 'on' : ''} onClick={() => setSeg('mission')}>🎖️ 미션</button>
+      </div>
+      {seg === 'today' && <DailyJourney onMove={onMove} />}
+      {seg === 'mission' && <Missions simulation={simulation} onMove={onMove} />}
+      {seg === 'save' && (<>
       <p className="fm-daily-wisdom">“{quote}”</p>
       {showSaveNudge && (
         <div className="fm-save-nudge">
@@ -214,11 +223,11 @@ export default function Savings({ simulation, onMove }) {
       <section className="fm-card fm-save-screen">
         <p className="fm-kicker">오늘의 절약 🔥 {streak}일 연속</p>
         <div className="fm-save-hero">
-          <small>오늘 아낀 돈</small>
+          <small>오늘 아낌 돈</small>
           <b>{wonStr(todaySaved)}</b>
           {dailyNeed
             ? (todaySaved > 0 && <span className="fm-save-adv">⏱️ 오늘 파이어 <b>{todayAdv || '몇 초'}</b> 샀어요</span>)
-            : <span className="fm-save-adv muted">이미 목표 달성 — 아낀 돈은 여유로 쌓여요</span>}
+            : <span className="fm-save-adv muted">이미 목표 달성 — 아낌 돈은 여유로 쌓여요</span>}
         </div>
 
         {flash && <div className="fm-time-flash" role="status">⏱️ 방금 파이어 <b>{flash}</b>를 샀어요!</div>}
@@ -230,7 +239,7 @@ export default function Savings({ simulation, onMove }) {
             <span>💡 오늘의 추천 · {ch.t}</span><em>+{wonStr(ch.s)}{dailyNeed && fmtAdvance(advSec(ch.s)) ? <i className="fm-chip-time">⏱️{fmtAdvance(advSec(ch.s))}</i> : null}</em>
           </button>
         )}
-        <div className="fm-save-chips" aria-label="오늘 아낀 항목 기록">
+        <div className="fm-save-chips" aria-label="오늘 아낌 항목 기록">
           {QUICK.map((q) => (
             <button type="button" key={q.label} onClick={() => log(q.won, q.label)}>
               <span>{q.emoji} {q.label}</span><em>+{wonStr(q.won)}{dailyNeed && fmtAdvance(advSec(q.won)) ? <i className="fm-chip-time">⏱️{fmtAdvance(advSec(q.won))}</i> : null}</em>
@@ -240,7 +249,7 @@ export default function Savings({ simulation, onMove }) {
         </div>
         {customOpen && (
           <div className="fm-save-inline">
-            <input inputMode="numeric" className="fm-save-inline-in" value={customVal} onChange={(e) => setCustomVal(e.target.value.replace(/[^0-9]/g, ''))} placeholder="오늘 아낀 금액 (원)" autoFocus />
+            <input inputMode="numeric" className="fm-save-inline-in" value={customVal} onChange={(e) => setCustomVal(e.target.value.replace(/[^0-9]/g, ''))} placeholder="오늘 아낌 금액 (원)" autoFocus />
             <button type="button" className="fm-save-inline-go" onClick={submitCustom}>기록</button>
           </div>
         )}
@@ -282,7 +291,7 @@ export default function Savings({ simulation, onMove }) {
 
       <section className="fm-card">
         <p className="fm-kicker">오늘의 절약 랭킹 🏆</p>
-        <p className="fm-section-sub">오늘 가장 많이 아낀 사람들이에요 · 매일 새로 시작해요</p>
+        <p className="fm-section-sub">오늘 가장 많이 아낌 사람들이에요 · 매일 새로 시작해요</p>
         {rank && <p className="fm-save-myrank">오늘 내 절약 <b>{wonStr(todaySaved)}</b> · {rank.total.toLocaleString()}명 중 <b>{rank.position.toLocaleString()}위</b></p>}
         <ol className="fm-lb-list">
           {top === null && <li className="fm-lb-empty">불러오는 중…</li>}
@@ -299,6 +308,8 @@ export default function Savings({ simulation, onMove }) {
           })}
         </ol>
       </section>
+      </>
+      )}
       </>
       )}
     </main>

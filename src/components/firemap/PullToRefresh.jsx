@@ -19,7 +19,7 @@ export default function PullToRefresh() {
     };
     const onMove = (e) => {
       if (!active.current) return;
-      // 손가락을 뗼지 않은 채 스크롤이 0보다 커지면(중간으로 이동) 즉시 중단
+      // 손가락을 떼지 않은 채 스크롤이 0보다 커지면(중간으로 이동) 즉시 중단
       if (scrollTop() > 0) { active.current = false; distRef.current = 0; setDist(0); return; }
       const dy = e.touches[0].clientY - startY.current;
       if (dy > 0) {

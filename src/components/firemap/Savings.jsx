@@ -27,7 +27,7 @@ function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
   if (!dailyNeed) {
     return (
       <div className="fm-fp done">
-        <p className="fm-fp-cap">🎉 이미 목표 자산을 넘었어요. 아낀 돈은 파이어 후 여유로 그대로 쌓여요.</p>
+        <p className="fm-fp-cap">🎉 이미 목표 자산을 넘었어요. 아낌 돈은 파이어 후 여유로 그대로 쌓여요.</p>
       </div>
     );
   }
@@ -119,9 +119,9 @@ export default function Savings({ simulation, onMove }) {
       if (adLabel) u.searchParams.set('ad', adLabel);
       url = u.toString();
     } catch { url = 'https://firemap.kr/'; }
-    const text = adLabel ? `절약으로 파이어를 ${adLabel} 앞당겼어요 🔥 나도 해보기` : '아낀 돈으로 파이어 앞당기기 🔥 나도 해보기';
+    const text = adLabel ? `저축으로 파이어를 ${adLabel} 앞당겨어요 🔥 나도 해보기` : '저축으로 파이어 앞당기기 🔥 나도 해보기';
     if (navigator.share) {
-      try { await navigator.share({ title: '파이어맵 — 오늘의 절약', text, url }); track('share', { type: 'save' }); track('share_link_copy', { type: 'save' }); return; }
+      try { await navigator.share({ title: '파이어맵 — 오늘의 저축', text, url }); track('share', { type: 'save' }); track('share_link_copy', { type: 'save' }); return; }
       catch (e) { if (e && e.name === 'AbortError') return; }
     }
     try { await navigator.clipboard.writeText(url); track('share', { type: 'save' }); track('share_link_copy', { type: 'save' }); window.alert('공유 링크를 복사했어요. 단톡방에 붙여넣어 보세요!'); }
@@ -143,7 +143,7 @@ export default function Savings({ simulation, onMove }) {
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="저축" />
       <div className="fm-board-tabs" role="tablist" aria-label="저축·기록">
-        <button type="button" role="tab" aria-selected={seg === 'deposit'} className={seg === 'deposit' ? 'on' : ''} onClick={() => setSeg('deposit')}>💰 적립</button>
+        <button type="button" role="tab" aria-selected={seg === 'deposit'} className={seg === 'deposit' ? 'on' : ''} onClick={() => setSeg('deposit')}>💰 저축</button>
         <button type="button" role="tab" aria-selected={seg === 'today'} className={seg === 'today' ? 'on' : ''} onClick={() => setSeg('today')}>☀️ 오늘</button>
         <button type="button" role="tab" aria-selected={seg === 'mission'} className={seg === 'mission' ? 'on' : ''} onClick={() => setSeg('mission')}>🎖️ 미션</button>
       </div>
@@ -153,7 +153,7 @@ export default function Savings({ simulation, onMove }) {
       <p className="fm-daily-wisdom">“{quote}”</p>
       {showSaveNudge && (
         <div className="fm-save-nudge">
-          <span>🔒 지금까지 기록한 절약·적립이 <b>로그인 안 하면 기기 바꿀 때 사라져요.</b> 30초면 저장돼요.</span>
+          <span>🔒 지금까지 기록한 저축이 <b>로그인 안 하면 기기 바꿀 때 사라져요.</b> 30초면 저장돼요.</span>
           <div className="fm-save-nudge-act">
             <button type="button" className="fm-save-nudge-go" onClick={() => onMove('account')}>저장하기 →</button>
             <button type="button" className="fm-save-nudge-x" onClick={dismissNudge} aria-label="닫기">✕</button>
@@ -170,7 +170,7 @@ export default function Savings({ simulation, onMove }) {
         const fmtMin = (sec) => { let m = Math.floor(sec / 60); const d = Math.floor(m / 1440); m -= d * 1440; const h = Math.floor(m / 60); const mm = m - h * 60; const parts = []; if (d) parts.push(`${d}일`); if (h) parts.push(`${h}시간`); if (mm || !parts.length) parts.push(`${mm}분`); return parts.join(' '); };
         const adv = prog.advanceDays;
         const TH = 1 / 1440;
-        const src = (prog.depDev > 0 && prog.saveBonus > 0) ? '절약·초과 적립으로' : prog.depDev > 0 ? '초과 적립으로' : '절약으로';
+        const src = prog.depDev > 0 ? '추가 저축으로' : '저축으로';
         return (
           <section className="fm-fireclock" aria-live="polite">
             <p className="fm-fireclock-cap">예상 파이어</p>
@@ -178,21 +178,21 @@ export default function Savings({ simulation, onMove }) {
             {prog.atGoal
               ? <p className="fm-fireclock-delta">🎉 이미 목표 자산을 넘었어요</p>
               : adv >= TH
-                ? <p className="fm-fireclock-delta">⏱️ {src} <b>{fmtMin(adv * 86400)}</b> 앞당겼어요</p>
+                ? <p className="fm-fireclock-delta">⏱️ {src} <b>{fmtMin(adv * 86400)}</b> 앞당겨어요</p>
                 : adv <= -TH
-                  ? <p className="fm-fireclock-delta behind">적립이 계획보다 부족해 <b>{fmtMin(Math.abs(adv) * 86400)}</b> 밀렸어요</p>
-                  : <p className="fm-fireclock-delta neutral">계획대로 가는 중 · 적립하면 앞당겨져요</p>}
+                  ? <p className="fm-fireclock-delta behind">저축이 계획보다 부족해 <b>{fmtMin(Math.abs(adv) * 86400)}</b> 밀렸어요</p>
+                  : <p className="fm-fireclock-delta neutral">계획대로 가는 중 · 저축하면 앞당겨져요</p>}
           </section>
         );
       })()}
-      <p className="fm-save-explain">💰 <b>적립</b> = 실제로 투자·저축한 돈. <b>파이어 시점에 바로 반영</b>돼요. 매달 기록하면 파이어가 며칠씩 당겨지는 게 보여요.</p>
+      <p className="fm-save-explain">💰 <b>저축</b> = 실제로 투자·저축한 돈. <b>파이어 시점에 바로 반영</b>돼요. 매달 기록하면 파이어가 며칠씩 당겨지는 게 보여요.</p>
       <p className="fm-save-explain" style={{ background: '#fff7ed', border: '1px solid #fed7aa', color: '#9a3412', fontWeight: 600 }}>🤝 랭킹은 서로의 신뢰로 굴러가요 — 실제로 저축한 만큼만 양심껏 기록해 주세요.</p>
       {seg === 'deposit' && <DepositCard simulation={simulation} onMove={onMove} />}
       {seg === 'deposit' && <DepositCalendar />}
       {seg === 'deposit' && (
         <section className="fm-card">
           <p className="fm-kicker">이번 달 저축 랭킹 🏆</p>
-          <p className="fm-section-sub">이번 달 가장 많이 적립한 사람들이에요</p>
+          <p className="fm-section-sub">이번 달 가장 많이 저축한 사람들이에요</p>
           <ol className="fm-lb-list">
             {depBoard === null && <li className="fm-lb-empty">불러오는 중…</li>}
             {depBoard && depBoard.length === 0 && <li className="fm-lb-empty">아직 이번 달 기록이 적어요. 첫 주자가 되어보세요!</li>}
@@ -214,11 +214,11 @@ export default function Savings({ simulation, onMove }) {
       <section className="fm-card fm-save-screen">
         <p className="fm-kicker">오늘의 절약 🔥 {streak}일 연속</p>
         <div className="fm-save-hero">
-          <small>오늘 아낀 돈</small>
+          <small>오늘 아낌 돈</small>
           <b>{wonStr(todaySaved)}</b>
           {dailyNeed
             ? (todaySaved > 0 && <span className="fm-save-adv">⏱️ 오늘 파이어 <b>{todayAdv || '몇 초'}</b> 샀어요</span>)
-            : <span className="fm-save-adv muted">이미 목표 달성 — 아낀 돈은 여유로 쌓여요</span>}
+            : <span className="fm-save-adv muted">이미 목표 달성 — 아낌 돈은 여유로 쌓여요</span>}
         </div>
 
         {flash && <div className="fm-time-flash" role="status">⏱️ 방금 파이어 <b>{flash}</b>를 샀어요!</div>}
@@ -230,7 +230,7 @@ export default function Savings({ simulation, onMove }) {
             <span>💡 오늘의 추천 · {ch.t}</span><em>+{wonStr(ch.s)}{dailyNeed && fmtAdvance(advSec(ch.s)) ? <i className="fm-chip-time">⏱️{fmtAdvance(advSec(ch.s))}</i> : null}</em>
           </button>
         )}
-        <div className="fm-save-chips" aria-label="오늘 아낀 항목 기록">
+        <div className="fm-save-chips" aria-label="오늘 아낌 항목 기록">
           {QUICK.map((q) => (
             <button type="button" key={q.label} onClick={() => log(q.won, q.label)}>
               <span>{q.emoji} {q.label}</span><em>+{wonStr(q.won)}{dailyNeed && fmtAdvance(advSec(q.won)) ? <i className="fm-chip-time">⏱️{fmtAdvance(advSec(q.won))}</i> : null}</em>
@@ -240,7 +240,7 @@ export default function Savings({ simulation, onMove }) {
         </div>
         {customOpen && (
           <div className="fm-save-inline">
-            <input inputMode="numeric" className="fm-save-inline-in" value={customVal} onChange={(e) => setCustomVal(e.target.value.replace(/[^0-9]/g, ''))} placeholder="오늘 아낀 금액 (원)" autoFocus />
+            <input inputMode="numeric" className="fm-save-inline-in" value={customVal} onChange={(e) => setCustomVal(e.target.value.replace(/[^0-9]/g, ''))} placeholder="오늘 아낌 금액 (원)" autoFocus />
             <button type="button" className="fm-save-inline-go" onClick={submitCustom}>기록</button>
           </div>
         )}
@@ -282,7 +282,7 @@ export default function Savings({ simulation, onMove }) {
 
       <section className="fm-card">
         <p className="fm-kicker">오늘의 절약 랭킹 🏆</p>
-        <p className="fm-section-sub">오늘 가장 많이 아낀 사람들이에요 · 매일 새로 시작해요</p>
+        <p className="fm-section-sub">오늘 가장 많이 아낌 사람들이에요 · 매일 새로 시작해요</p>
         {rank && <p className="fm-save-myrank">오늘 내 절약 <b>{wonStr(todaySaved)}</b> · {rank.total.toLocaleString()}명 중 <b>{rank.position.toLocaleString()}위</b></p>}
         <ol className="fm-lb-list">
           {top === null && <li className="fm-lb-empty">불러오는 중…</li>}

@@ -19,7 +19,7 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
   const [showTax, setShowTax] = useState(false);
   const [showPension, setShowPension] = useState(false);
   const [showReturns, setShowReturns] = useState(false);
-  const [showAssets, setShowAssets] = useState(false);
+  const [showAssets, setShowAssets] = useState(() => cleanNumber(inputs.realEstateValue) > 0 || cleanNumber(inputs.debt) > 0 || cleanNumber(inputs.monthlyRentalIncome) > 0);
   const [saved, setSaved] = useState(false);
 
   const simulation = useMemo(() => buildScenario(draft, {}), [draft]);
@@ -78,12 +78,12 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
       <Header tag="바꿔보기" onBack={onBack} />
       <ResultSimTabs current="sim" />
       <section className="fm-card fm-sim-live">
-        <p className="fm-sim-live-kicker">{dirty ? '바꿜 조건 미리보기' : '지금 조건이면'}</p>
+        <p className="fm-sim-live-kicker">{dirty ? '바꿀 조건 미리보기' : '지금 조건이면'}</p>
         <div className="fm-sim-live-row">
           <div><small>파이어 가능</small><b>{simulation.earliestRetirementAge ? `${simulation.earliestRetirementAge}세` : '아직'}</b></div>
           <div><small>자산 수명</small><b>{runwayText(simulation)}</b></div>
         </div>
-        <p className="fm-sim-live-note">{dirty ? '바꿜 값은 미리보기예요 · 아래 버튼으로 저장 ↓' : (saved ? '✓ 내 결과·등수에 반영됐어요' : '아래 수치를 밀면 위 숫자가 바로 바뀌어요 (미리보기)')}</p>
+        <p className="fm-sim-live-note">{dirty ? '바꿀 값은 미리보기예요 · 아래 버튼으로 저장 ↓' : (saved ? '✓ 내 결과·등수에 반영됐어요' : '아래 수치를 밀면 위 숫자가 바로 바뀌어요 (미리보기)')}</p>
       </section>
       <section className="fm-card fm-graph">
         <p className="fm-kicker">내 미래 자산 차트</p><h2>내가 넣은 돈, 이렇게 불어나요</h2>
@@ -119,9 +119,9 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
           </div>
         )}
         <button type="button" className="fm-advanced-toggle" onClick={() => setShowAssets((v) => !v)} aria-expanded={showAssets}>
-          부동산·부채·임대수익 {(showAssets || hasAssetExtra) ? '▴' : '▾'}
+          부동산·부채·임대수익 {showAssets ? '▴' : '▾'}
         </button>
-        {(showAssets || hasAssetExtra) && (
+        {showAssets && (
           <div className="fm-advanced">
             <RangeControl label="부동산" value={reVal} inputKey="realEstateValue" type="money" step={1000000} onChange={(next) => editDraft('realEstateValue', next)} />
             <RangeControl label="부채" value={debtVal} inputKey="debt" type="money" step={1000000} onChange={(next) => editDraft('debt', next)} />

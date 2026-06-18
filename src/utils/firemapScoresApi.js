@@ -236,7 +236,7 @@ export async function fetchTopScores(limit = 10, ageBand) {
     const urlAdv = `${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&order=earliest_age.asc.nullslast,advanced_days.desc,fire_score.desc&limit=${limit}`;
     let res = await fetch(urlAdv, { method: 'GET', headers: headers() });
     if (!res.ok) {
-      // advanced_days 컬럼 마이그레이션 전이면 옛 정렬로 폴백
+      // advanced_days 컬럼 마이그레이션 전이면 옆 정렬로 폴백
       const urlOld = `${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&order=earliest_age.asc.nullslast,fire_score.desc&limit=${limit}`;
       res = await fetch(urlOld, { method: 'GET', headers: headers() });
     }
@@ -268,11 +268,14 @@ export async function fetchAggregates(ageBand) {
 }
 
 // 내 주변 순위 — 바로 위(더 빨리 파이어) / 바로 아래
-export async function fetchNeighbors(earliestAge, ageBand) {
+export async function fetchNeighbors(earliestAge, ageBand, exactAge) {
   if (earliestAge == null || !Number.isFinite(Number(earliestAge))) return null;
   try {
     const mine = Math.round(Number(earliestAge));
-    const band = ageBand ? `&age_band=eq.${ageBand}` : '';
+    // exactAge가 주어지면 같은 나이(current_age) 기준, 아니면 기존처럼 연령대(age_band) 기준 — 하위호환.
+    const band = (exactAge != null && Number.isFinite(Number(exactAge)))
+      ? `&current_age=eq.${Math.round(Number(exactAge))}`
+      : (ageBand ? `&age_band=eq.${ageBand}` : '');
     const sel = 'select=client_id,nickname,earliest_age,age_band';
     const opts = { method: 'GET', headers: headers() };
     const countOpts = { method: 'GET', headers: headers({ prefer: 'count=exact', range: '0-0' }) };

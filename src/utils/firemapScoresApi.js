@@ -28,7 +28,7 @@ function countFromRange(res) {
   return total && total !== '*' ? Number(total) : 0;
 }
 
-export async function submitScore({ fireScore, ageBand, survivalAge, nickname, earliestAge, assetBand, targetAge, currentAge }) {
+export async function submitScore({ fireScore, ageBand, survivalAge, nickname, earliestAge, assetBand, targetAge, currentAge, stage }) {
   const base = {
     fire_score: Math.max(0, Math.min(100, Math.round(fireScore))),
     age_band: ageBand || null,
@@ -45,6 +45,7 @@ export async function submitScore({ fireScore, ageBand, survivalAge, nickname, e
   };
   const cid = identityId();
   const fullAsset = (assetBand != null) ? { ...full, asset_band: assetBand } : full;
+  const withStage = (o) => (stage != null && Number.isFinite(Number(stage))) ? { ...o, stage: Math.max(1, Math.min(6, Math.round(Number(stage)))) } : o;
   const send = (body, merge) => fetch(`${SUPABASE_URL}/rest/v1/${TABLE}${merge ? '?on_conflict=client_id' : ''}`, {
     method: 'POST',
     headers: headers({ prefer: merge ? 'return=minimal,resolution=merge-duplicates' : 'return=minimal' }),
@@ -54,12 +55,14 @@ export async function submitScore({ fireScore, ageBand, survivalAge, nickname, e
   const dropAge = (o) => { const { current_age, ...rest } = o; return rest; };
   try {
     if (cid) {
-      let res = await send({ ...fullAsset, client_id: cid }, true);
+      let res = await send({ ...withStage(fullAsset), client_id: cid }, true);
+      if (!res.ok) res = await send({ ...fullAsset, client_id: cid }, true);          // stage 컬럼 미존재 폴백
       if (!res.ok) res = await send({ ...dropAge(fullAsset), client_id: cid }, true); // current_age 컬럼 미존재 폴백
       if (!res.ok) res = await send({ ...dropAge(full), client_id: cid }, true);        // asset_band 컬럼 미존재 폴백
       if (res.ok) return true;
     }
-    let res = await send(fullAsset, false);
+    let res = await send(withStage(fullAsset), false);
+    if (!res.ok) res = await send(fullAsset, false);
     if (!res.ok) res = await send(dropAge(fullAsset), false);
     if (!res.ok) res = await send(dropAge(full), false);
     if (!res.ok) res = await send(base, false);
@@ -147,6 +150,39 @@ export async function fetchPeerBoard({ currentAge, ageBand, earliestAge, advance
   } catch {
     return null;
   }
+}
+
+// 여정 단계별 경쟁 — 나와 같은 FIRE 여정 단계(1~6)에 있는 사람들끼리 순위(파이어 빠른 순, 동점은 더 당긴 사람).
+export async function fetchStageBoard({ stage, earliestAge, advancedDays, limit = 10 }) {
+  if (stage == null) return null;
+  const st = Math.max(1, Math.min(6, Math.round(Number(stage))));
+  const filter = `&stage=eq.${st}`;
+  const opts = { method: 'GET', headers: headers({ prefer: 'count=exact', range: '0-0' }) };
+  try {
+    const total = countFromRange(await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id${filter}`, opts));
+    let position = null; let percentile = null;
+    if (total > 0) {
+      const hasAge = earliestAge != null && Number.isFinite(Number(earliestAge));
+      const mine = hasAge ? Math.round(Number(earliestAge)) : null;
+      const higherQ = hasAge
+        ? `${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=lt.${mine}${filter}`
+        : `${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=not.is.null${filter}`;
+      let higher = countFromRange(await fetch(higherQ, opts));
+      if (hasAge) {
+        const adv = Number.isFinite(Number(advancedDays)) ? Number(advancedDays) : 0;
+        higher += countFromRange(await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=eq.${mine}&advanced_days=gt.${adv}${filter}`, opts));
+      }
+      position = higher + 1;
+      percentile = Math.min(99, Math.max(1, Math.round((higher / total) * 100)));
+    }
+    const sel = `select=client_id,nickname,fire_score,age_band,current_age,earliest_age,stage${filter}`;
+    let topRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&order=earliest_age.asc.nullslast,advanced_days.desc,fire_score.desc&limit=${limit}`, { method: 'GET', headers: headers() });
+    if (!topRes.ok) {
+      topRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&order=earliest_age.asc.nullslast,fire_score.desc&limit=${limit}`, { method: 'GET', headers: headers() });
+    }
+    const top = topRes.ok ? await topRes.json() : [];
+    return { total, position, percentile, top };
+  } catch { return null; }
 }
 
 // 순자산 구간(금액 비공개, 구간만 저장) — 0:<1억 1:1~3억 2:3~5억 3:5~10억 4:10~20억 5:20억+

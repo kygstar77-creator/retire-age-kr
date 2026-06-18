@@ -43,7 +43,7 @@ const SECTIONS = [
     label: '임박·파이어 — 리얼리티 체크',
     items: [
       { ico: '🩺', title: '파이어 후 건보료', desc: '피부양자 자격 + 지역가입 보험료', to: 'dependent' },
-      { ico: '🧧', title: '양도·배당세', desc: '해외주식 양도세 + 배당 소득세', to: 'foreignTax' },
+      { ico: '🧾', title: '양도·배당세', desc: '해외주식 양도세 + 배당 소득세', to: 'foreignTax' },
       { ico: '💵', title: '파이어 후 현금흐름', desc: '배당·인출·세금·건보까지', to: 'dividend' },
       { ico: '🏦', title: '국민연금 조기수령', desc: '당겨 받기 득실', to: 'pension' }
     ]

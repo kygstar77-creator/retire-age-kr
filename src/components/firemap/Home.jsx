@@ -110,7 +110,6 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
       <nav className="fm-policy-links" aria-label="정책 및 문의">
         <a href="/privacy.html">개인정보처리방침</a>
         <a href="/disclaimer.html">면책 안내</a>
-        <a href="/guide/">파이어 백과</a>
         <a href="/contact.html">문의</a>
         <FeedbackButton />
       </nav>

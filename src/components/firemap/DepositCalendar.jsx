@@ -8,7 +8,10 @@ const readDays = (key, field) => { const o = readObj(key); return (o && o[field]
 const ymd = (y, m, d) => `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
 
 const EDIT_STYLE = `
-.fm-cal button.fm-cal-cell{ appearance:none; border:0; background:none; font:inherit; cursor:pointer; padding:0; width:100%; }
+.fm-cal button.fm-cal-cell{ appearance:none; border:0; background:transparent; font:inherit; cursor:pointer; padding:0; width:100%; }
+.fm-cal button.fm-cal-cell.on{ background:#ff5a00 !important; color:#fff; font-weight:800; }
+.fm-cal button.fm-cal-cell.today{ border:1.5px solid #ff5a00; color:#c2410c; font-weight:800; }
+.fm-cal button.fm-cal-cell.on.today{ border:1.5px solid #fff; color:#fff; }
 .fm-cal-cell.future{ color:#cdd3db; cursor:default; }
 .fm-cal-cell.sel{ outline:2px solid #ff5a00; outline-offset:-2px; }
 .fm-cal-edit{ margin-top:10px; align-items:center; }
@@ -29,9 +32,10 @@ export default function DepositCalendar({ storageKey = 'fm_daily', field = 'days
     // 마운트 시 클라우드에서 한 번 받아와 로컬에 채우고 화면 갱신 (로그인 기기 동기화 대비)
     let alive = true;
     pullKey(storageKey).then((v) => {
-      if (!alive || !v || !v[field]) return;
-      try { localStorage.setItem(storageKey, JSON.stringify(v)); } catch { /* ignore */ }
-      setDays(v[field] || {});
+      if (!alive || !v || !v[field] || !Object.keys(v[field]).length) return;
+      const merged = { ...v[field], ...readDays(storageKey, field) }; // 로컬(방금 입력)이 우선, 클라우드 과거기록 병합
+      try { const o = readObj(storageKey); localStorage.setItem(storageKey, JSON.stringify({ ...o, [field]: merged })); } catch { /* ignore */ }
+      setDays(merged);
     }).catch(() => {});
     return () => { alive = false; window.removeEventListener('fm-savings-changed', h); };
   }, [storageKey, field]);

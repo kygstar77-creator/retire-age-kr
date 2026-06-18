@@ -7,6 +7,19 @@ const SB_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
 const SB_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
 const rpc = (fn) => fetch(`${SB_URL}/rest/v1/rpc/${fn}`, { method: 'POST', headers: { apikey: SB_KEY, authorization: `Bearer ${SB_KEY}`, 'content-type': 'application/json' }, body: '{}' }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
 const eok = (manwon) => { const m = Math.round(Number(manwon) || 0); return m >= 10000 ? `${(m / 10000).toFixed(1)}억` : `${m.toLocaleString()}만원`; };
+// 저축 기록 경과시간 — '방금'은 정말 최근(3분 이내)만, 오래된 건(3일 초과) 표시 안 함
+const relSave = (ts) => {
+  const t = ts ? new Date(ts).getTime() : 0;
+  if (!t) return null;
+  const min = Math.floor((Date.now() - t) / 60000);
+  if (min < 3) return '방금';
+  if (min < 60) return `${min}분 전`;
+  const hr = Math.floor(min / 60);
+  if (hr < 24) return `${hr}시간 전`;
+  const day = Math.floor(hr / 24);
+  if (day <= 3) return day === 1 ? '어제' : `${day}일 전`;
+  return null;
+};
 
 const STYLE = `
 .fm-livebar{position:sticky;top:0;z-index:60;width:100%;height:30px;background:#10151c;color:#fff;overflow:hidden;display:flex;align-items:center}
@@ -50,8 +63,10 @@ function buildItems({ online, names, recent, total, market, macro, re }) {
   if (online >= 2) items.push(`🟢 지금 ${online}명이 함께 파이어를 그리는 중`);
   // 최근 저축 (실데이터)
   (recent || []).slice(0, 5).forEach((s) => {
+    const rel = relSave(s.updated_at);
+    if (!rel) return; // 너무 오래된 기록은 활동으로 표시하지 않음
     const nm = (s.nickname && s.nickname.trim()) || funHandle(s.client_id || '');
-    items.push(`💰 ${nm}님이 방금 ${wonStr(s.today_saved)} 저축`);
+    items.push(`💰 ${nm}님이 ${rel} ${wonStr(s.today_saved)} 저축`);
   });
   (names || []).slice(0, 3).forEach((n) => { if (n) items.push(`👋 ${n}님 접속 중`); });
   if (!items.length) items.push('🔥 오늘의 작은 저축 하나가 파이어를 며칠 당겨요');

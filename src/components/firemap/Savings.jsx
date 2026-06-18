@@ -54,8 +54,7 @@ export default function Savings({ simulation, onMove }) {
   const [sv, setSv] = useState(() => readJSON('fm_save'));
   const [nick, setNick] = useState(() => { try { return localStorage.getItem('fm_nickname') || ''; } catch { return ''; } });
   const [nickSaved, setNickSaved] = useState(false);
-  const [saveView, setSaveView] = useState('deposit');
-  const [seg, setSeg] = useState('save');
+  const [seg, setSeg] = useState('deposit');
   const [tick, setTick] = useState(0);
   const [flash, setFlash] = useState(null);
   const flashRef = useRef(0);
@@ -143,14 +142,15 @@ export default function Savings({ simulation, onMove }) {
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="저축" />
-      <div className="fm-board-tabs" role="tablist" aria-label="기록 종류">
-        <button type="button" role="tab" aria-selected={seg === 'save'} className={seg === 'save' ? 'on' : ''} onClick={() => setSeg('save')}>💰 저축</button>
+      <div className="fm-board-tabs" role="tablist" aria-label="저축·절약·기록">
+        <button type="button" role="tab" aria-selected={seg === 'deposit'} className={seg === 'deposit' ? 'on' : ''} onClick={() => setSeg('deposit')}>💰 적립</button>
+        <button type="button" role="tab" aria-selected={seg === 'frugal'} className={seg === 'frugal' ? 'on' : ''} onClick={() => setSeg('frugal')}>✂️ 절약</button>
         <button type="button" role="tab" aria-selected={seg === 'today'} className={seg === 'today' ? 'on' : ''} onClick={() => setSeg('today')}>☀️ 오늘</button>
         <button type="button" role="tab" aria-selected={seg === 'mission'} className={seg === 'mission' ? 'on' : ''} onClick={() => setSeg('mission')}>🎖️ 미션</button>
       </div>
       {seg === 'today' && <DailyJourney onMove={onMove} />}
       {seg === 'mission' && <Missions simulation={simulation} onMove={onMove} />}
-      {seg === 'save' && (<>
+      {(seg === 'deposit' || seg === 'frugal') && (<>
       <p className="fm-daily-wisdom">“{quote}”</p>
       {showSaveNudge && (
         <div className="fm-save-nudge">
@@ -161,10 +161,6 @@ export default function Savings({ simulation, onMove }) {
           </div>
         </div>
       )}
-      <div className="fm-rs-tabs" role="tablist" aria-label="적립/절약">
-        <button type="button" role="tab" aria-selected={saveView === 'deposit'} className={saveView === 'deposit' ? 'on' : ''} onClick={() => setSaveView('deposit')}>💰 적립</button>
-        <button type="button" role="tab" aria-selected={saveView === 'frugal'} className={saveView === 'frugal' ? 'on' : ''} onClick={() => setSaveView('frugal')}>✂️ 절약</button>
-      </div>
       {hasCalculated() && prog && prog.planAge != null && (() => {
         const yv = prog.actualAgeYears != null ? prog.actualAgeYears : prog.planAge;
         const yy = Math.floor(yv);
@@ -191,14 +187,14 @@ export default function Savings({ simulation, onMove }) {
         );
       })()}
       <p className="fm-save-explain">
-        {saveView === 'deposit'
+        {seg === 'deposit'
           ? <>💰 <b>적립</b> = 실제로 투자·저축한 돈. <b>파이어 시점에 바로 반영</b>돼요.</>
           : <>✂️ <b>절약</b> = 안 쓴 돈으로 <b>파이어 시간을 사는 것</b>. 천 원 아끼면 그만큼 파이어가 당겨져요.</>}
       </p>
       <p className="fm-save-explain" style={{ background: '#fff7ed', border: '1px solid #fed7aa', color: '#9a3412', fontWeight: 600 }}>🤝 랭킹·절약왕은 서로의 신뢰로 굴러가요 — 실제로 저축·절약한 만큼만 양심껏 기록해 주세요.</p>
-      {saveView === 'deposit' && <DepositCard simulation={simulation} onMove={onMove} />}
-      {saveView === 'deposit' && <DepositCalendar />}
-      {saveView === 'deposit' && (
+      {seg === 'deposit' && <DepositCard simulation={simulation} onMove={onMove} />}
+      {seg === 'deposit' && <DepositCalendar />}
+      {seg === 'deposit' && (
         <section className="fm-card">
           <p className="fm-kicker">이번 달 저축 랭킹 🏆</p>
           <p className="fm-section-sub">이번 달 가장 많이 적립한 사람들이에요</p>
@@ -218,7 +214,7 @@ export default function Savings({ simulation, onMove }) {
           </ol>
         </section>
       )}
-      {saveView === 'frugal' && (
+      {seg === 'frugal' && (
       <>
       <section className="fm-card fm-save-screen">
         <p className="fm-kicker">오늘의 절약 🔥 {streak}일 연속</p>

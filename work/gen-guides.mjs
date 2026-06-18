@@ -5,6 +5,8 @@ import { join } from 'path';
 const ROOT = process.env.GUIDE_OUT || 'outputs/deploy';
 const OUT = join(ROOT, 'guide', 'regions');
 const BASE = 'https://firemap.kr';
+const SUPA = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
+const SKEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
 
 // 1인 월 생활비(주거 포함) 추정 — tier 기준(원). 통계청 1인가구 평균 + 지역 물가 참고.
 const TIER_COST = { 1: 2050000, 2: 1600000, 3: 1350000, 4: 1200000, 5: 1000000 };
@@ -25,15 +27,15 @@ const REGIONS = [
 ];
 
 const OVERSEAS = [
-  ['치앙마이','태국','🇹🇭',2200000,'카페·코워킹과 사원, 산이 공존하는 디지털 노마드의 성지','관광·교육·O-A 비자 옵션, 민간 의료보험 권장, 건기 11~2월 쿾적'],
+  ['치앙마이','태국','🇹🇭',2200000,'카페·코워킹과 사원, 산이 공존하는 디지털 노마드의 성지','관광·교육·O-A 비자 옵션, 민간 의료보험 권장, 건기 11~2월 쾌적'],
   ['다낭','베트남','🇻🇳',2300000,'긴 해변과 따뜻한 날씨, 낮은 물가로 시작하기 좋은 해외살이','관광·거주 옵션, 사보험 필요, 우기 9~12월 유의'],
-  ['우봇(발리)','인도네시아','🇮🇩',2300000,'논뱭과 요가, 자연 속 힐링형 라이프','관광·B211 등 장기 옵션, 사보험 필요, 우기 11~3월'],
-  ['쿠알라룼푸르','말레이시아','🇲🇾',2900000,'대도시 인프라와 영어 생활권, 든든한 의료','MM2H 등 장기 옵션, 의료 양호, 연중 고온다습'],
+  ['우붓(발리)','인도네시아','🇮🇩',2300000,'논밭과 요가, 자연 속 힐링형 라이프','관광·B211 등 장기 옵션, 사보험 필요, 우기 11~3월'],
+  ['쿠알라룸푸르','말레이시아','🇲🇾',2900000,'대도시 인프라와 영어 생활권, 든든한 의료','MM2H 등 장기 옵션, 의료 양호, 연중 고온다습'],
   ['트빌리시','조지아','🇬🇪',2000000,'초저비용과 관대한 체류 조건, 와인·온천의 숨은 성지','다수 국적 1년 무비자 체류(확인 필요), 물가 매우 저렴'],
   ['리스본','포르투갈','🇵🇹',3800000,'온화한 유럽, 해산물과 골목의 낭만형','유럽 장기 비자 옵션(요건 까다로움), 물가 서유럽 중 낮은 편'],
   ['후쿠오카','일본','🇯🇵',3300000,'한국과 가깝고 음식·치안 최고, 도시와 자연이 가까움','관광·장기 비자 옵션, 의료·치안 우수, 가까운 거리'],
   ['방콕','태국','🇹🇭',2700000,'없는 게 없는 대도시와 저렴한 외식, 의료 관광 허브','관광·장기 비자 옵션, 사보험 권장, 연중 무더위'],
-  ['호치민','베트남','🇻🇳',2200000,'활기차 거리와 초저비용, 빠르게 크는 노마드 도시','관광·거주 옵션, 사보험 필요, 우기 5~10월'],
+  ['호치민','베트남','🇻🇳',2200000,'활기찬 거리와 초저비용, 빠르게 크는 노마드 도시','관광·거주 옵션, 사보험 필요, 우기 5~10월'],
   ['페낭','말레이시아','🇲🇾',2400000,'음식의 천국과 영어 생활권, 저렴한 의료의 섬','MM2H 등 장기 옵션, 의료 양호, 고온다습'],
   ['세부','필리핀','🇵🇭',2100000,'에메랄드 바다와 다이빙, 영어 통하는 저비용 휴양','관광 연장·SRRV 옵션, 사보험 필요, 우기 유의'],
   ['타이베이','대만','🇹🇼',3000000,'한국과 가깝고 치안·교통·야시장이 강한 도시형','관광·장기 옵션, 의료·치안 우수, 습한 기후'],
@@ -51,7 +53,29 @@ function page({ title, desc, body, canonical }) {
   return `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><link rel="canonical" href="${canonical}"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:type" content="article"><meta name="theme-color" content="#ff5a00"><script type="application/ld+json">${JSON.stringify({"@context":"https://schema.org","@type":"Article","headline":title,"description":desc,"inLanguage":"ko-KR","isPartOf":{"@type":"WebSite","name":"파이어맵","url":BASE},"publisher":{"@type":"Organization","name":"파이어맵"}})}</script><style>${CSS}</style></head><body><main>${body}<p class="note">※ 파이어맵은 정보 제공 서비스이며 투자자문이 아니에요. 생활비·필요자산은 일반 통계·물가 기반 추정치이며, 실제 파이어 시점은 자산·국민연금·세금·건강보험료에 따라 달라져요 — <a href="${BASE}/">계산기로 내 수치 보기</a>.</p></main></body></html>`;
 }
 
-function regionPage(name, sido, tier) {
+async function fetchRealestate() {
+  try {
+    const res = await fetch(`${SUPA}/rest/v1/rpc/fm_realestate_latest`, { method: 'POST', headers: { apikey: SKEY, authorization: `Bearer ${SKEY}`, 'content-type': 'application/json' }, body: '{}' });
+    if (!res.ok) return null;
+    const rows = await res.json();
+    return Array.isArray(rows) ? rows : null;
+  } catch { return null; }
+}
+const reFmt = (manwon) => { const m = Math.round(Number(manwon) || 0); return m >= 10000 ? `${(m / 10000).toFixed(1)}억` : `${m.toLocaleString()}만원`; };
+function reLine(re, region) {
+  if (!re || !re.length) return '';
+  const sale = re.find((r) => r.region === region && r.deal_type === 'sale');
+  const jeonse = re.find((r) => r.region === region && r.deal_type === 'jeonse');
+  const parts = [];
+  if (sale && sale.value != null) parts.push(`매매 ${reFmt(sale.value)}`);
+  if (jeonse && jeonse.value != null) parts.push(`전세 ${reFmt(jeonse.value)}`);
+  if (!parts.length) return '';
+  const pp = String((sale && sale.period) || (jeonse && jeonse.period) || '');
+  const pf = pp.length === 6 ? `${pp.slice(0, 4)}.${pp.slice(4)}` : pp;
+  return `<div class="box" style="border-color:#d6efe4;background:#f1faf6"><b>🏠 ${region} 아파트 실거래 평균</b> — ${parts.join(' · ')} <span class="note">(${pf ? pf + ' · ' : ''}국토부 실거래가)</span></div>`;
+}
+
+function regionPage(name, sido, tier, re) {
   const monthly = TIER_COST[tier];
   const annual = monthly*12;
   const ref25 = annual*25;
@@ -62,6 +86,7 @@ function regionPage(name, sido, tier) {
   <h1>${name}에서 파이어하려면?</h1>
   <p>${name}(${sido})은 ${TIER_LABEL[tier]} 지역으로, 1인 가구 기준 주거를 포함한 월 생활비는 약 <b>${won(monthly)}</b>으로 추정돼요. 파이어는 결국 “생활비를 자산이 감당하느냐”의 문제라, 사는 곳의 생활비가 파이어 시점을 크게 좌우해요.</p>
   <div class="stat"><div><small>1인 월 생활비(추정)</small><b>${won(monthly)}</b></div><div><small>연 생활비</small><b>${won(annual)}</b></div><div><small>단순 참고 필요자산</small><b>${won(ref25)}</b></div></div>
+  ${reLine(re, name)}
   <p class="note">※ ‘단순 참고 필요자산’은 연 생활비×25의 일반적 참고치예요. 실제로는 국민연금·임대·배당·세금·건강보험료가 더해져 더 적게도, 더 많이도 필요해요. 정확한 값은 계산기에서 확인하세요.</p>
   <h2>${name} 파이어의 장점</h2>
   <p>${tier>=3?`수도권 대비 주거비가 낮아 같은 자산으로도 파이어 시점이 빨라질 수 있어요. 생활비를 ${won(2050000-monthly)} 아끼면 그만큼 필요자산이 줄어들어요.`:`인프라·의료·교통이 잘 갖춰져 파이어 후에도 생활 편의가 높아요. 다만 주거비가 높아 필요자산이 커지는 편이에요.`}</p>
@@ -86,11 +111,13 @@ function overseasPage(name, country, flag, monthly, vibe, visa) {
   return page({ title, desc, body, canonical: `${BASE}/guide/regions/${slugify(name)}.html` });
 }
 
-if (!existsSync(ROOT)) { console.log(`[gen-guides] ROOT ${ROOT} 없음 — 건너뜀`); process.exit(0); }
+async function main() {
+if (!existsSync(ROOT)) { console.log(`[gen-guides] ROOT ${ROOT} 없음 — 건너뜀`); return; }
 mkdirSync(OUT, { recursive: true });
+const re = await fetchRealestate();
 
 let n = 0;
-for (const [name, sido, tier] of REGIONS) { writeFileSync(join(OUT, `${slugify(name)}.html`), regionPage(name, sido, tier)); n++; }
+for (const [name, sido, tier] of REGIONS) { writeFileSync(join(OUT, `${slugify(name)}.html`), regionPage(name, sido, tier, re)); n++; }
 for (const [name, country, flag, cost, vibe, visa] of OVERSEAS) { writeFileSync(join(OUT, `${slugify(name)}.html`), overseasPage(name, country, flag, cost, vibe, visa)); n++; }
 
 const bySido = {};
@@ -100,4 +127,6 @@ const hub = `<p><a href="${BASE}/">← 파이어맵</a></p><h1>지역별 파이�
   `<h2>해외 체류지</h2><div class="tags">${OVERSEAS.map(o=>`<a href="${BASE}/guide/regions/${slugify(o[0])}.html">${o[2]} ${o[0]}</a>`).join('')}</div><a class="cta" href="${BASE}/">내 파이어 나이 계산하기 →</a>`;
 writeFileSync(join(OUT, 'index.html'), page({ title: '지역별 파이어 백과 — 도시별 생활비·필요자산 | 파이어맵', desc: `국내 ${REGIONS.length}개 지역·해외 ${OVERSEAS.length}개 체류지의 파이어 생활비와 필요자산 가이드.`, body: hub, canonical: `${BASE}/guide/regions/` }));
 n++;
-console.log(`[gen-guides] ${n} pages → ${OUT}`);
+console.log(`[gen-guides] ${n} pages → ${OUT}${re ? ' (realestate injected)' : ''}`);
+}
+main();

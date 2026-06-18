@@ -101,7 +101,29 @@ function macroLine(macro) {
   return `<p class="mkt">🇰🇷 거시 지표(참고) — ${parts.join(' · ')}${[(base && base.source === 'ecos') ? '한국은행' : '', ((dep && dep.source === 'worldbank') || (cpi && cpi.source === 'worldbank')) ? 'World Bank' : ''].filter(Boolean).length ? ' · 출처 ' + [(base && base.source === 'ecos') ? '한국은행' : '', ((dep && dep.source === 'worldbank') || (cpi && cpi.source === 'worldbank')) ? 'World Bank' : ''].filter(Boolean).join('·') : ''}</p>`;
 }
 
-function comboPage(region, tier, hh, ft, market, macro) {
+async function fetchRealestate() {
+  try {
+    const res = await fetch(`${SUPA}/rest/v1/rpc/fm_realestate_latest`, { method: 'POST', headers: { apikey: SKEY, authorization: `Bearer ${SKEY}`, 'content-type': 'application/json' }, body: '{}' });
+    if (!res.ok) return null;
+    const rows = await res.json();
+    return Array.isArray(rows) ? rows : null;
+  } catch { return null; }
+}
+const reFmt = (manwon) => { const m = Math.round(Number(manwon) || 0); return m >= 10000 ? `${(m / 10000).toFixed(1)}억` : `${m.toLocaleString()}만원`; };
+function reLine(re, region) {
+  if (!re || !re.length) return '';
+  const sale = re.find((r) => r.region === region && r.deal_type === 'sale');
+  const jeonse = re.find((r) => r.region === region && r.deal_type === 'jeonse');
+  const parts = [];
+  if (sale && sale.value != null) parts.push(`매매 ${reFmt(sale.value)}`);
+  if (jeonse && jeonse.value != null) parts.push(`전세 ${reFmt(jeonse.value)}`);
+  if (!parts.length) return '';
+  const pp = String((sale && sale.period) || (jeonse && jeonse.period) || '');
+  const pf = pp.length === 6 ? `${pp.slice(0, 4)}.${pp.slice(4)}` : pp;
+  return `<p class="mkt">🏠 ${region} 아파트 실거래 평균 — ${parts.join(' · ')} (${pf ? pf + ' · ' : ''}국토부 실거래가)</p>`;
+}
+
+function comboPage(region, tier, hh, ft, market, macro, re) {
   const monthly1 = TIER_COST[tier];
   const monthly = Math.round(monthly1 * hh.mult * ft.costMult);
   const annual = monthly * 12;
@@ -118,6 +140,7 @@ function comboPage(region, tier, hh, ft, market, macro) {
   <p class="lead">${region}의 ${hh.label} 월 생활비를 약 <b>${won(monthly)}</b>으로 보면(${ft.label} 기준), 4% 룰로 필요한 자산은 약 <b>${won(need)}</b>이에요. ${ft.note} 방식이에요.</p>
   ${marketLine(market)}
   ${macroLine(macro)}
+  ${reLine(re, region)}
   <div class="stat"><div><small>월 생활비(추정)</small><b>${won(monthly)}</b></div><div><small>연 생활비</small><b>${won(annual)}</b></div><div><small>필요자산(4% 룰)</small><b>${won(need)}</b></div></div>
   <h2>현재 자산 0에서 월 저축별 도달 기간 (연 ${RET}% 가정)</h2>
   <table><tr><th>월 저축</th><th>${won(need)} 도달</th></tr>${SAVE_OPTS.map((m) => `<tr><td>월 ${m}만원</td><td>${fmtDur(monthsToTarget(0, m * 10000, need, RET))}</td></tr>`).join('')}</table>
@@ -137,10 +160,10 @@ function comboPage(region, tier, hh, ft, market, macro) {
 async function main() {
   if (!existsSync(ROOT)) { console.log(`[gen-region-plans] ROOT ${ROOT} 없음 — 건너뜀`); return; }
   mkdirSync(OUT, { recursive: true });
-  const [market, macro] = await Promise.all([fetchMarket(), fetchMacro()]);
+  const [market, macro, re] = await Promise.all([fetchMarket(), fetchMacro(), fetchRealestate()]);
   let n = 0;
   for (const [region, tier] of REGIONS) for (const hh of HOUSEHOLD) for (const ft of FIRETYPE) {
-    const { slug: sl, html } = comboPage(region, tier, hh, ft, market, macro);
+    const { slug: sl, html } = comboPage(region, tier, hh, ft, market, macro, re);
     writeFileSync(join(OUT, `${sl}.html`), html);
     n++;
   }

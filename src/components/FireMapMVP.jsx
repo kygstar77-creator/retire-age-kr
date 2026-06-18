@@ -193,7 +193,7 @@ export default function FireMapMVP() {
   else if (screen === 'experiment') view = <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} onMove={setScreen} draft={expDraft} setDraft={setExpDraft} base={expBase} setBase={setExpBase} />;
   else if (screen === 'city') view = <City inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('city')} />;
   else if (screen === 'share') view = <Share inputs={inputs} simulation={simulation} onBack={backOf('share')} />;
-  else if (screen === 'community') view = <Community onBack={backOf('community')} onMove={setScreen} />;
+  else if (screen === 'community') view = <Community onBack={backOf('community')} onMove={setScreen} simulation={simulation} />;
   else if (screen === 'ranking') view = <Leaderboard simulation={simulation} rankingSimulation={rankingSimulation} onBack={backOf('ranking')} onMove={setScreen} />;
   else if (screen === 'cities') view = <CityExplorer inputs={inputs} simulation={simulation} onChange={onChange} onMove={setScreen} onBack={backOf('cities')} />;
   else if (screen === 'dependent') view = tool('dependent', <DependentCheck inputs={inputs} onApply={applyPatch} />);

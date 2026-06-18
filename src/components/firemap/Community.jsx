@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { loadCommunityThread, sendCommunity, likeCommunity, editCommunity, deleteCommunity } from '../../utils/firemapFeedbackApi.js';
 import { funHandle } from '../../firemap-v2/funName.js';
+import { JOURNEY_STAGES, journeyStage } from '../../utils/journeyStage.js';
 import { identityIds, account } from '../../utils/identity.js';
 
 const CATEGORIES = [
@@ -45,6 +46,14 @@ const STYLE = `
 .fm-hot-chip{display:inline-block;font-size:10.5px;font-weight:800;color:#b91c1c;background:#fdecec;border-radius:6px;padding:1px 6px;margin-right:6px}
 .fm-mytitle{font-size:12px;color:#6b7280;margin:0 0 8px}
 .fm-mytitle b{color:#1d4ed8}
+.fm-stage-bar{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;-webkit-overflow-scrolling:touch}
+.fm-stage-bar button{flex:0 0 auto;border:1px solid #e5e7eb;background:#fff;border-radius:99px;padding:7px 12px;font-size:13px;font-weight:700;color:#4b5563;cursor:pointer;white-space:nowrap}
+.fm-stage-bar button.on{background:#1e2859;border-color:#1e2859;color:#fff}
+.fm-stage-bar .fm-stage-mine{border-color:#ff8a4c;color:#c2410c}
+.fm-stage-bar .fm-stage-mine.on{background:#ff5a00;border-color:#ff5a00;color:#fff}
+.fm-stage-desc{font-size:12.5px;color:#565c68;background:#f6f7fb;border:1px solid #e7ebf3;border-radius:10px;padding:9px 12px;margin:0 0 10px;line-height:1.55}
+.fm-stage-desc b{color:#1e2859}
+.fm-stage-badge{display:inline-block;font-size:11px;font-weight:800;color:#1e2859;background:#eef1f9;border-radius:6px;padding:1px 6px;margin-right:6px}
 `;
 
 function relativeTime(value) {
@@ -87,7 +96,11 @@ function EditBox({ id, value, onChange, onCancel, onSave }) {
   );
 }
 
-export default function Community({ onBack, onMove }) {
+export default function Community({ onBack, onMove, simulation }) {
+  const myJourney = (() => { try { return journeyStage(simulation || null); } catch { return null; } })();
+  const myStage = myJourney ? myJourney.stage : null;
+  const stageMeta = (n) => JOURNEY_STAGES.find((x) => x.n === Number(n)) || null;
+  const stageOf = (row) => (row && row.stage != null ? Number(row.stage) : null);
   const [rows, setRows] = useState([]);
   const [post, setPost] = useState('');
   const [sending, setSending] = useState(false);
@@ -99,6 +112,7 @@ export default function Community({ onBack, onMove }) {
   const [cat, setCat] = useState('all');
   const [postCat, setPostCat] = useState('free');
   const [sort, setSort] = useState('new');
+  const [stageFilter, setStageFilter] = useState('all');
 
   useEffect(() => {
     let alive = true;
@@ -125,7 +139,7 @@ export default function Community({ onBack, onMove }) {
   const titleOf = (cid) => titleFromStats(cid && stats[cid]);
   const myTitle = (() => { for (const id of myIds) { const t = titleOf(id); if (t) return t; } return null; })();
 
-  const filtered = rows.filter((r) => !r.parent_id && (cat === 'all' || catOf(r) === cat));
+  const filtered = rows.filter((r) => !r.parent_id && (cat === 'all' || catOf(r) === cat) && (stageFilter === 'all' || stageOf(r) === Number(stageFilter)));
   const weekAgo = Date.now() - 7 * 86400000;
   const best = filtered.filter((r) => (r.likes || 0) > 0 && new Date(r.created_at).getTime() > weekAgo).sort((a, b) => (b.likes || 0) - (a.likes || 0))[0] || null;
   const posts = filtered.filter((r) => !best || r.id !== best.id).sort((a, b) => (sort === 'hot' ? ((b.likes || 0) - (a.likes || 0)) || (new Date(b.created_at) - new Date(a.created_at)) : (new Date(b.created_at) - new Date(a.created_at))));
@@ -137,9 +151,9 @@ export default function Community({ onBack, onMove }) {
     if (!loggedIn) { onMove && onMove('account'); return; }
     if (!text || sending) return;
     setSending(true);
-    const created = await sendCommunity(text, null, postCat);
+    const created = await sendCommunity(text, null, postCat, myStage || null);
     setSending(false);
-    if (created) { setRows((r) => [...r, { ...created, parent_id: null, likes: 0, category: postCat }]); remember(created.id); setPost(''); setCat(postCat); setSort('new'); }
+    if (created) { setRows((r) => [...r, { ...created, parent_id: null, likes: 0, category: postCat, stage: myStage || null }]); remember(created.id); setPost(''); setCat(postCat); setSort('new'); }
   };
 
   const submitReply = async (parentId) => {
@@ -188,7 +202,7 @@ export default function Community({ onBack, onMove }) {
         {isBest && <p className="fm-best-tag">🏆 이번 주 베스트</p>}
         {editId === p.id ? <EditBox id={p.id} value={editText} onChange={setEditText} onCancel={cancelEdit} onSave={saveEdit} /> : <p className="fm-post-msg">{p.message}</p>}
         <div className="fm-post-meta">
-          <span className="fm-post-author">{(p.likes || 0) >= 3 && <span className="fm-hot-chip">🔥 인기</span>}<span className="fm-cat-badge">{catLabel(catOf(p))}</span>{p.nickname || funHandle(p.id)}{ptitle && <span className="fm-title-chip">{ptitle}</span>} · {relativeTime(p.created_at)}</span>
+          <span className="fm-post-author">{(p.likes || 0) >= 3 && <span className="fm-hot-chip">🔥 인기</span>}<span className="fm-cat-badge">{catLabel(catOf(p))}</span>{stageOf(p) && stageMeta(stageOf(p)) && <span className="fm-stage-badge">{stageMeta(stageOf(p)).emoji} {stageOf(p)}단계</span>}{p.nickname || funHandle(p.id)}{ptitle && <span className="fm-title-chip">{ptitle}</span>} · {relativeTime(p.created_at)}</span>
           <div className="fm-post-actions">
             <OwnerControls mine={isMine(p)} row={p} onEdit={startEdit} onDelete={removeRow} />
             <button type="button" className={`fm-post-like${isLiked(p.id) ? ' on' : ''}`} onClick={() => like(p)} aria-label="공감">♥ {p.likes || 0}</button>
@@ -233,6 +247,20 @@ export default function Community({ onBack, onMove }) {
         <p>관심 가는 카테고리를 골라 글을 쓰고, 답글로 서로 대화해요. 글·답글·공감이 쌓이면 닉네임 옆에 칭호가 붙어요. 내가 쓴 글은 수정·삭제할 수 있어요.</p>
       </section>
 
+      <div className="fm-stage-bar">
+        <button type="button" className={stageFilter === 'all' ? 'on' : ''} onClick={() => setStageFilter('all')}>전체 단계</button>
+        {myStage && stageMeta(myStage) && (
+          <button type="button" className={'fm-stage-mine' + (String(stageFilter) === String(myStage) ? ' on' : '')} onClick={() => setStageFilter(String(myStage))}>⭐ 내 단계 · {stageMeta(myStage).emoji}{stageMeta(myStage).name}</button>
+        )}
+        {JOURNEY_STAGES.map((st) => (
+          <button type="button" key={st.key} className={String(stageFilter) === String(st.n) ? 'on' : ''} onClick={() => setStageFilter(String(st.n))}>{st.emoji} {st.n}.{st.name}</button>
+        ))}
+      </div>
+
+      {stageFilter !== 'all' && stageMeta(stageFilter) && (
+        <p className="fm-stage-desc">{stageMeta(stageFilter).emoji} <b>{stageMeta(stageFilter).n}단계 · {stageMeta(stageFilter).name}</b> — ‘{stageMeta(stageFilter).tag}’ 단계를 지나는 파이어족의 글 모음이에요. 같은 구간에 있는 분들과 이야기 나눠보세요.</p>
+      )}
+
       <div className="fm-cat-bar">
         <button type="button" className={cat === 'all' ? 'on' : ''} onClick={() => setCat('all')}>전체</button>
         {CATEGORIES.map((c) => (
@@ -249,6 +277,7 @@ export default function Community({ onBack, onMove }) {
       <form className="fm-card fm-community-form" onSubmit={submitPost}>
         <label htmlFor="fm-community-input">새 글 쓰기</label>
         <p className="fm-mytitle">내 칭호: {myTitle ? <b>{myTitle}</b> : '아직 없음 (글·답글·공감으로 모아요)'}</p>
+        {myStage && stageMeta(myStage) && <p className="fm-mytitle">내 단계: <b>{stageMeta(myStage).emoji} {myStage}단계 · {stageMeta(myStage).name}</b> · 글에 자동으로 표시돼 같은 단계 그룹에 모여요</p>}
         <div className="fm-cat-select">
           <select value={postCat} onChange={(e) => setPostCat(e.target.value)} aria-label="카테고리 선택">
             {CATEGORIES.map((c) => <option key={c.key} value={c.key}>{c.emoji} {c.label}</option>)}
@@ -269,7 +298,7 @@ export default function Community({ onBack, onMove }) {
 
       <section className="fm-community-feed">
         {best && PostCard(best, true)}
-        {posts.length === 0 && !best && <p className="fm-community-empty">{cat === 'all' ? '아직 글이 없어요. 첫 글을 남기면 다른 파이어족들이 답글로 응원해줘요 🔥' : `‘${catLabel(cat)}’ 게시판의 첫 글을 남겨보세요 🔥`}</p>}
+        {posts.length === 0 && !best && <p className="fm-community-empty">{(cat === 'all' && stageFilter === 'all') ? '아직 글이 없어요. 첫 글을 남기면 다른 파이어족들이 답글로 응원해줘요 🔥' : '이 그룹의 첫 글을 남겨보세요 🔥'}</p>}
         {posts.map((p) => PostCard(p, false))}
       </section>
     </main>

@@ -72,7 +72,7 @@ async function commGet(query) {
 // 게시글 + 답글을 한 번에 불러옴(파생 컬럼 없으면 평면으로 폴백)
 export async function loadCommunityThread() {
   // 1순위: category·client_id 포함(마이그레이션 후) → 2순위: 스레드 컬럼만 → 3순위: 평면(레거시)
-  let rows = await commGet(`${TABLE}?select=id,nickname,message,created_at,parent_id,likes,client_id,category&kind=eq.community&status=eq.visible&order=created_at.asc&limit=300`);
+  let rows = await commGet(`${TABLE}?select=id,nickname,message,created_at,parent_id,likes,client_id,category,stage&kind=eq.community&status=eq.visible&order=created_at.asc&limit=300`);
   if (rows === null) {
     rows = await commGet(`${TABLE}?select=id,nickname,message,created_at,parent_id,likes,client_id&kind=eq.community&status=eq.visible&order=created_at.asc&limit=300`);
   }
@@ -109,7 +109,7 @@ export async function fetchMyContribution(clientIds) {
   } catch { return { posts: 0, likes: 0, cp: 0 }; }
 }
 
-export async function sendCommunity(message, parentId = null, category = null) {
+export async function sendCommunity(message, parentId = null, category = null, stage = null) {
   const clean = String(message || '').trim().slice(0, 240);
   if (!clean) return null;
   let nick = '';
@@ -121,13 +121,14 @@ export async function sendCommunity(message, parentId = null, category = null) {
   };
   if (parentId) base.parent_id = parentId;
   if (category && !parentId) base.category = category;
+  if (stage && !parentId) base.stage = stage;
   const withCid = cid ? { ...base, client_id: cid } : base;
   const post = async (b) => {
     try { const rows = await callFeedback(TABLE, { method: 'POST', headers: { prefer: 'return=representation' }, body: JSON.stringify(b) }); return rows?.[0] || null; }
     catch { return null; }
   };
   // client_id·category 컬럼/닉네임 정책 유무와 무관하게 글은 항상 올라가도록 단계적으로 시도
-  const noCat = (o) => { const { category: _c, ...rest } = o; return rest; };
+  const noCat = (o) => { const { category: _c, stage: _s, ...rest } = o; return rest; };
   const candidates = [];
   if (nick) candidates.push({ ...withCid, nickname: nick });
   candidates.push(withCid);

@@ -10,9 +10,9 @@ const GUIDE = {
   1: '내 파이어 나이를 알았다면, 이제 ‘파이어’가 한 종류가 아니라는 걸 알 차례예요. 완전 은퇴(린·팻)부터 코스트·바리스타·반퇴까지 — 내게 맞는 유형을 정하면 목표가 또렷해져요. 결과와 또래 위치를 먼저 확인하고, 기록이 사라지지 않게 프로필을 만들어두세요.',
   2: '목표를 정하는 단계예요. 목표 자산은 얼마인지, 코스트파이어(더 안 모아도 굴러가는 시점)는 언제인지, ISA·연금계좌로 세금을 줄이며 모으는 법까지 — 도달 경로를 그려요. ‘바꿔보기’로 저축·생활비·근무 레버를 돌려 내 목표 나이를 맞춰보세요.',
   3: '가장 긴 구간이에요. 핵심은 ‘저축률’. 고정비부터 구조적으로 줄이고, 매달 자산을 기록해 진도를 눈으로 보세요. 작은 저축도 파이어를 며칠씩 당깁니다 — 기록이 쌓이면 숫자가 살아 움직여요.',
-  4: '모으는 속도를 끌어올리는 단계예요. 지방·동남아 이주로 생활비를 낮추거나, 부업·배당으로 현금흐름을 더하면 파이어가 몇 년씩 당겨져요. 세금(양도·배당)도 최적화 포인트예요.',
+  4: '모으는 속도를 끜어올리는 단계예요. 지방·동남아 이주로 생활비를 낮추거나, 부업·배당으로 현금흐름을 더하면 파이어가 몇 년씩 당겨져요. 세금(양도·배당)도 최적화 포인트예요.',
   5: '돈은 거의 모였어요. 이제 ‘진짜 되는지’ 검증할 때. 퇴사하면 건강보험이 지역가입자로 바뀌고, 연금 받기 전까지 소득 공백(크레바스)이 생기고, 자산을 어떤 순서로 인출하느냐로 세금이 달라져요. 이걸 점검해야 안전한 파이어예요.',
-  6: '축하해요. 이제 ‘돈이 안 떨어지게’ 지키는 단계. 인출 순서 전략으로 세금을 아끼고, 같은 길을 걷는 파이어족과 이야기 나누며 길게 함께해요.'
+  6: '축하해요. 이제 ‘돈이 안 떨어지게’ 지키는 단계. 인출 순서 전략으로 세금을 아끼고, 같은 길을 걷는 파이어족과 이야기 나누며 길게 함껴해요.'
 };
 
 const READS = {
@@ -45,6 +45,7 @@ export default function JourneyStage({ simulation, onMove, onBack }) {
   const [open, setOpen] = useState(j.stage);
   const s = j.signals || {};
   const doneCount = (n) => { const ts = tasksFor(n, s); return ts.filter((t) => t.done).length + '/' + ts.length; };
+  const overall = (() => { let d = 0, t = 0; for (let n = 1; n <= 6; n++) { const ts = tasksFor(n, s); d += ts.filter((x) => x.done).length; t += ts.length; } return { d, t, pct: t ? Math.round((d / t) * 100) : 0 }; })();
   const readGuide = (slug) => { try { track('journey_read', { slug }); } catch { /* ignore */ } try { window.open('/guide/' + slug + '.html', '_blank', 'noopener'); } catch { window.location.href = '/guide/' + slug + '.html'; } };
 
   return (
@@ -53,24 +54,34 @@ export default function JourneyStage({ simulation, onMove, onBack }) {
       <section className="fm-card" style={H.intro}>
         <span style={H.k}>{j.current.emoji} {j.stage}/6단계 · {j.current.name}</span>
         <p style={H.t}>{GUIDE[j.stage]}</p>
+        <div style={H.introBarTop}><span>여정 진행률</span><b>{overall.pct}% · 할 일 {overall.d}/{overall.t}</b></div>
+        <div style={H.introBar}><div style={{ ...H.introFill, width: `${Math.max(2, overall.pct)}%` }} /></div>
       </section>
       {j.stages.map((st) => {
         const done = st.n < j.stage, cur = st.n === j.stage, locked = st.n > j.stage;
         const isOpen = open === st.n;
         const tasks = tasksFor(st.n, s);
+        const td = tasks.filter((t) => t.done).length;
+        const tt = tasks.length;
+        const tpct = tt ? Math.round((td / tt) * 100) : 0;
+        const allDone = tt > 0 && td === tt;
         const reads = READS[st.n] || [];
         return (
           <section className="fm-card" key={st.key} style={{ ...H.card, ...(cur ? H.cardCur : null) }}>
             <button type="button" style={H.row} onClick={() => setOpen(isOpen ? 0 : st.n)}>
               <span style={{ ...H.badge, ...(done ? H.bDone : cur ? H.bCur : H.bLock) }}>{done ? '✓' : locked ? '🔒' : st.emoji}</span>
-              <span style={H.rowtx}><b style={{ color: locked ? '#9aa3bf' : '#15151b' }}>{st.n}. {st.name}</b><span style={H.rowsub}>{st.tag} · 할 일 {doneCount(st.n)}</span></span>
+              <span style={H.rowtx}>
+                <b style={{ color: locked ? '#9aa3bf' : '#15151b' }}>{st.n}. {st.name}</b>
+                <span style={H.rowsub}>{st.tag} · 할 일 {td}/{tt}{allDone ? ' · 완료 🎉' : ''}</span>
+                {!locked && <span style={H.miniBar}><span style={{ ...H.miniFill, width: `${Math.max(3, tpct)}%`, background: allDone ? '#10b981' : (cur ? '#ff5a00' : '#c2c7d0') }} /></span>}
+              </span>
               <span style={H.chev}>{isOpen ? '▴' : '▾'}</span>
             </button>
             {isOpen && (
               <div style={H.body}>
                 <p style={H.bodyIntro}>{GUIDE[st.n]}</p>
 
-                <p style={H.subh}>✓ 지금 할 일</p>
+                <p style={H.subh}>✓ 지금 할 일 ({td}/{tt})</p>
                 <ul style={H.ul}>
                   {tasks.map((tk, i) => (
                     <li key={i} style={H.li}>
@@ -107,6 +118,11 @@ const H = {
   intro: { borderColor: 'rgba(255,90,0,0.3)', background: 'radial-gradient(120% 90% at 100% 0%, rgba(255,90,0,0.06), transparent 50%), #fff' },
   k: { display: 'inline-block', fontSize: 12, fontWeight: 800, color: '#e8431c', background: '#fff0ea', padding: '5px 11px', borderRadius: 999 },
   t: { fontSize: 13.5, color: '#15151b', fontWeight: 500, lineHeight: 1.65, margin: '12px 0 0' },
+  introBarTop: { display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', fontSize: 11.5, fontWeight: 700, color: '#6b6f76', margin: '14px 0 6px' },
+  introBar: { height: 8, borderRadius: 9, background: '#f0ede9', overflow: 'hidden' },
+  introFill: { height: '100%', borderRadius: 9, background: 'linear-gradient(90deg,#FFB48F,#ff5a00)' },
+  miniBar: { display: 'block', height: 5, borderRadius: 6, background: '#f0ede9', overflow: 'hidden', marginTop: 6 },
+  miniFill: { display: 'block', height: '100%', borderRadius: 6 },
   card: { padding: 0, overflow: 'hidden' },
   cardCur: { borderColor: 'rgba(255,90,0,0.4)', boxShadow: '0 1px 2px rgba(20,18,15,.04), 0 16px 32px -20px rgba(255,90,0,.3)' },
   row: { width: '100%', border: 0, background: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 12, padding: '16px 16px' },

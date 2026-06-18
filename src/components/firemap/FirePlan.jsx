@@ -11,7 +11,6 @@ import FireClock from './FireClock.jsx';
 import FireClockPush from './FireClockPush.jsx';
 import CompletionCard from './CompletionCard.jsx';
 import StageTargets from './StageTargets.jsx';
-import JourneyMap from './JourneyMap.jsx';
 import JourneyPulse from './JourneyPulse.jsx';
 import OpenChatNotice from './OpenChatNotice.jsx';
 import { account } from '../../utils/identity.js';
@@ -19,20 +18,6 @@ import { account } from '../../utils/identity.js';
 const won = (n) => formatWon(Math.round(n || 0));
 
 const readJSONsafe = (k) => { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch { return null; } };
-function pickNextAction() {
-  const sv = readJSONsafe('fm_save');
-  const fd = readJSONsafe('fm_daily');
-  const hasSave = (sv && (sv.total || 0) > 0) || (fd && fd.days && Object.keys(fd.days).length > 0);
-  if (!hasSave) return { label: '오늘 저축 한 번 기록하고 파이어 시간 벌기', to: 'save', ico: '⏱️' };
-  const pool = [
-    { label: '지방 살면 몇 년 빨라지나 보기', to: 'cities', ico: '📍' },
-    { label: '파이어 후 건보료 얼마인지 확인하기', to: 'dependent', ico: '🩺' },
-    { label: '배당으로 월 현금흐름 만들어보기', to: 'dividend', ico: '💵' },
-    { label: '조건 바꿔서 파이어 더 당겨보기', to: 'experiment', ico: '🎛️' },
-    { label: '또래 중 내 파이어 등수 보기', to: 'ranking', ico: '🏆' }
-  ];
-  return pool[Math.floor(Date.now() / 86400000) % pool.length];
-}
 
 export default function FirePlan({ simulation, onMove, onChange, asHome }) {
   const inp = (simulation && simulation.inputs) || {};
@@ -97,8 +82,6 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
       <CompletionCard simulation={simulation} onMove={onMove} />
 
       <StageTargets simulation={simulation} onMove={onMove} />
-
-      {asHome && <JourneyMap simulation={simulation} onMove={onMove} />}
 
       {asHome && <JourneyPulse simulation={simulation} onMove={onMove} />}
 
@@ -168,16 +151,6 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
         <p className="fm-plan-inst-note">국민연금·물가·건보·세금까지 결과에 반영해요. (또래 순위는 순자산 기준)</p>
       </section>
 
-      {(() => {
-        const na = pickNextAction();
-        return (
-          <button type="button" className="fm-next-best" onClick={() => (na.to === 'self' ? (setVal(String(asset)), setEditing(true)) : onMove(na.to))}>
-            <span className="fm-next-best-cap">🎯 다음 할 일</span>
-            <span className="fm-next-best-main">{na.ico} {na.label}</span>
-            <span className="fm-next-best-go">바로 하기 →</span>
-          </button>
-        );
-      })()}
       <button type="button" className="fm-plan-tools" onClick={() => onMove('tools')}>🧰 정밀 도구 전체 보기 (지역·현금흐름·건보·세금) →</button>
       {asHome && <InstallButton />}
       {asHome && (

@@ -10,7 +10,7 @@ import { buildScenario, runwayText, buildGrowthSeries } from '../../firemap-v2/s
 import { formatWon, cleanNumber } from '../../firemap-v2/formatters.js';
 
 export default function Experiment({ inputs, onChange, onBack, onMove, draft: draftProp, setDraft: setDraftProp, base: baseProp, setBase: setBaseProp }) {
-  // 바꿔보기는 '미리보기 샘드박스'. draft를 부모가 보관하면 그걸 써서 세금 도구 등 다른 화면을 다녀와도 유지되고, 없으면 로컬로 동작.
+  // 바꿔보기는 '미리보기 샌드박스'. draft를 부모가 보관하면 그걸 써서 세금 도구 등 다른 화면을 다녀와도 유지되고, 없으면 로컬로 동작.
   const [localDraft, setLocalDraft] = useState(inputs);
   const draft = draftProp ?? localDraft;
   const setDraft = setDraftProp ?? setLocalDraft;
@@ -43,7 +43,7 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
   const hasAssetExtra = reVal > 0 || debtVal > 0 || rentVal > 0;
 
   const PREVIEW_ONLY = ['investType', 'dividendYield'];
-  // 샘드박스 슬라이더가 직접 바꾸는 핵심 값들. 이 값들이 (질문 재입력 등으로) 실제로 바뀐 경우에만 샘드박스를 새로 시드.
+  // 샌드박스 슬라이더가 직접 바꾸는 핵심 값들. 이 값들이 (질문 재입력 등으로) 실제로 바뀐 경우에만 샌드박스를 새로 시드.
   // 세금·연금 도구가 '반영'으로 건드리는 값(investType·dividendIncomeMonthly·pensionClaimAge 등)은 여기 없으므로,
   // 도구를 다녀오거나 거기서 세금을 반영해도 바꿔보기 작업이 날아가지 않는다.
   const SANDBOX_KEYS = ['currentAge', 'targetRetirementAge', 'financialAsset', 'monthlyInvestment', 'monthlyLivingCost', 'savingYears', 'salaryGrowthRate', 'partTimeIncomeAfterRetirement', 'inflationRate', 'annualReturnRate'];
@@ -57,8 +57,8 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
     return () => document.body.classList.remove('fm-exp-dock');
   }, [dirty]);
 
-  // 다른 화면(세금 도구 등)을 다녀와도 샘드박스 유지.
-  // 판정 기준은 draft가 아니라 base(시드 시점 inputs 스넹샷): 사용자의 draft 편집은 base를 안 바꾸므로 안 날아가고,
+  // 다른 화면(세금 도구 등)을 다녀와도 샌드박스 유지.
+  // 판정 기준은 draft가 아니라 base(시드 시점 inputs 스냅샷): 사용자의 draft 편집은 base를 안 바꾸므로 안 날아가고,
   // 질문 재입력 등으로 '핵심 입력값(inputs)' 자체가 바뀐 경우에만 새로 시드한다.
   useEffect(() => {
     if (draftProp == null || baseProp == null) {
@@ -102,6 +102,8 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
         <RangeControl label="현재 금융자산" value={draft.financialAsset} inputKey="financialAsset" type="money" step={10000000} onChange={(next) => editDraft('financialAsset', next)} />
         <RangeControl label="월 저축액" value={draft.monthlyInvestment} inputKey="monthlyInvestment" type="money" step={100000} onChange={(next) => editDraft('monthlyInvestment', next)} />
         <RangeControl label="파이어 후 월 생활비" value={draft.monthlyLivingCost} inputKey="monthlyLivingCost" type="money" step={100000} onChange={(next) => editDraft('monthlyLivingCost', next)} />
+        <RangeControl label="월 소득 (가용소득, 선택)" value={draft.monthlyIncome || 0} inputKey="monthlyIncome" type="money" step={100000} onChange={(next) => editDraft('monthlyIncome', next)} />
+        <p className="fm-range-note">저축률(소득 대비) 표시에만 쓰여요. 비워두면 ‘생활비+저축’ 추정으로 보여줘요. 파이어 가능 나이엔 영향이 없어요.</p>
         <button type="button" className="fm-advanced-toggle" onClick={() => setShowAdvanced((v) => !v)} aria-expanded={showAdvanced}>
           고급 설정 (저축 기간 · 연봉 상승 · 부업 · 물가) {showAdvanced ? '▴' : '▾'}
         </button>

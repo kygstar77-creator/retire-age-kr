@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { journeyModel } from '../../utils/journeyModel.js';
 import { journeyStage } from '../../utils/journeyStage.js';
 import { computeProgress } from '../../utils/savingsEngine.js';
@@ -9,17 +9,8 @@ import { track } from '../../firemap-v2/dailyData.js';
 const won = (n) => formatWon(Math.round(n || 0));
 
 // 내 단계 타깃 + 상황별 정보 — "투자 추천"이 아니라 단계에 맞는 재무 타깃과 필요한 정보를 제공.
-const readIncome = () => { try { return Number(localStorage.getItem('fm_income')) || 0; } catch { return 0; } };
 
 export default function StageTargets({ simulation, onMove }) {
-  const [income, setIncome] = useState(readIncome);
-  const [editIncome, setEditIncome] = useState(false);
-  const [incomeVal, setIncomeVal] = useState('');
-  const saveIncome = () => {
-    const v = Math.max(0, Math.round(Number(String(incomeVal).replace(/[^0-9]/g, '')) || 0));
-    try { if (v > 0) localStorage.setItem('fm_income', String(v)); else localStorage.removeItem('fm_income'); } catch { /* ignore */ }
-    setIncome(v); setEditIncome(false); setIncomeVal('');
-  };
   const m = useMemo(() => {
     let stage = 1;
     try {
@@ -29,8 +20,8 @@ export default function StageTargets({ simulation, onMove }) {
       try { histLen = getAssetHistory().length; } catch { /* ignore */ }
       stage = journeyStage(simulation, { advanceDays: adv, assetHistoryLen: histLen }).stage || 1;
     } catch { /* ignore */ }
-    return journeyModel(simulation, { stage, incomeOverride: income });
-  }, [simulation, income]);
+    return journeyModel(simulation, { stage });
+  }, [simulation]);
 
   if (!m.plan.G || !m.plan.targetAge) return null;
   const t = m.targets;
@@ -58,17 +49,9 @@ export default function StageTargets({ simulation, onMove }) {
             ? <>목표 저축률을 이미 넘었어요 👏 이 속도면 충분해요.</>
             : <>목표까지 매달 <b style={{ color: '#e8431c' }}>{won(t.needMonthly)}</b> 필요 {t.sideIncomeGoal > 0 ? <>· 부업·추가소득으로 <b>{won(t.sideIncomeGoal)}</b> 메우는 것도 방법</> : null}</>}
         </p>
-        {!editIncome
-          ? <button type="button" style={S.incomeBtn} onClick={() => { setIncomeVal(income ? String(income) : ''); setEditIncome(true); }}>
-              {income > 0 ? `월 소득 ${won(income)} 기준 · 수정` : '＋ 월 소득(또는 월 가용소득)을 넣으면 저축률이 정확해져요'}
-            </button>
-          : (
-            <div className="fm-save-inline" style={{ marginTop: 8 }}>
-              <input inputMode="numeric" className="fm-save-inline-in" value={incomeVal} onChange={(e) => setIncomeVal(e.target.value.replace(/[^0-9]/g, ''))} placeholder="월 소득 (원)" autoFocus />
-              <button type="button" className="fm-save-inline-go" onClick={saveIncome}>저장</button>
-              <button type="button" className="fm-save-inline-cancel" onClick={() => setEditIncome(false)}>취소</button>
-            </div>
-          )}
+        {!t.incomeIsReal && (
+          <button type="button" style={S.incomeBtn} onClick={() => go('experiment')}>＋ 바꿔보기에서 ‘월 소득’을 넣으면 저축률이 정확해져요 ›</button>
+        )}
       </div>
 
       <div style={S.block}>

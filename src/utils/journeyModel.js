@@ -78,8 +78,10 @@ export function journeyModel(simulation, { stage = 1, incomeOverride } = {}) {
   const living = Math.max(0, Number(inp.monthlyLivingCost) || 0);
   const invest = Math.max(0, Number(inp.monthlyInvestment) || 0);
   const proxyIncome = living + invest; // 가용소득(월) 추정: 쓰거나 모으거나
-  const incomeIsReal = Number(incomeOverride) > 0;
-  const income = incomeIsReal ? Number(incomeOverride) : proxyIncome; // 실제 월 소득 입력 시 그 값 사용
+  // 실제 월 소득 입력(바꿔보기의 monthlyIncome) 우선, 없으면 추정. incomeOverride는 하위호환용.
+  const incomeInput = Number(incomeOverride) > 0 ? Number(incomeOverride) : (Number(inp.monthlyIncome) > 0 ? Number(inp.monthlyIncome) : 0);
+  const incomeIsReal = incomeInput > 0;
+  const income = incomeIsReal ? incomeInput : proxyIncome;
   const curSavingsRate = income > 0 ? Math.round((invest / income) * 100) : 0;
   const needMonthly = plan.pmt;
   // 지금 저축률과 같은 소득 기준으로 비교(사과 대 사과). 목표 도달에 필요한 저축이 소득의 몇 %인지.

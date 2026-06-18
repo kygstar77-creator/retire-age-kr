@@ -90,7 +90,7 @@ export default function AccountCard({ kicker, sub, compact } = {}) {
     <section className="fm-card fm-acct">
       <p className="fm-kicker">{kicker || '내 계정 (선택)'}</p>
       <h2>{mode === 'signup' ? '계정 만들기' : '로그인'}</h2>
-      <p className="fm-acct-sub">{sub || '카카오로 3초 만에 시작하거나, 닉네임+비밀번호로 만들 수 있어요. 기기가 바뀌거나 브라우저를 지워도 내 글·적립·랭킹이 그대로 이어져요.'}</p>
+      <p className="fm-acct-sub">{sub || '카카오로 3초 만에 시작하거나, 닉네임+비밀번호로 만들 수 있어요. 기기가 바뀌거나 브라우저를 지워도 내 글·저축·랭킹이 그대로 이어져요.'}</p>
       <button type="button" className="fm-acct-kakao" onClick={kakao} disabled={busy}>
         <span className="fm-acct-kakao-ico" aria-hidden="true">💬</span> 카카오로 시작하기
       </button>

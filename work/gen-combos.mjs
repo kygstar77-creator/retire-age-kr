@@ -34,7 +34,8 @@ function monthsToTarget(assetWon, monthlyWon, targetWon, annualPct) {
 function fmtDur(months) {
   if (!isFinite(months)) return '도달 불가(저축·수익률 상향 필요)';
   if (months <= 0) return '이미 목표 달성';
-  const y = Math.floor(months / 12); const mo = Math.round(months - y * 12);
+  const tm = Math.round(months);
+  const y = Math.floor(tm / 12); const mo = tm - y * 12;
   if (y <= 0) return `${Math.max(1, mo)}개월`;
   return mo > 0 ? `${y}년 ${mo}개월` : `${y}년`;
 }

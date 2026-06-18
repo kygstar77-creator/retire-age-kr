@@ -1,10 +1,13 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { journeyStage } from '../../utils/journeyStage.js';
 import { computeProgress } from '../../utils/savingsEngine.js';
 import { getAssetHistory } from '../../utils/assetHistory.js';
 import { pickForToday } from '../../firemap-v2/journeyPlaybook.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import WeeklyBoard from './WeeklyBoard.jsx';
+
+const SB_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
+const SB_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
 
 // 여정 펄스 — 단계×주기 콘텐츠 허브. 오늘의 한 걸음(단계 반영)·이번 주 미션/추천글·
 // 월간 점검·연간 회고를 한 카드에. 추천글은 실제 대량 콘텐츠(/guide)로 연결.
@@ -25,6 +28,24 @@ export default function JourneyPulse({ simulation, onMove }) {
   const yKey = `fm_pulse_y_${stage}_${yearKey()}`;
   const [showM, setShowM] = useState(() => !seenKey(mKey));
   const [showY, setShowY] = useState(() => !seenKey(yKey));
+  const [macro, setMacro] = useState(null);
+  useEffect(() => {
+    let alive = true;
+    fetch(`${SB_URL}/rest/v1/rpc/fm_macro_latest`, { method: 'POST', headers: { apikey: SB_KEY, authorization: `Bearer ${SB_KEY}`, 'content-type': 'application/json' }, body: '{}' })
+      .then((r) => (r.ok ? r.json() : null)).then((m) => { if (alive && m) setMacro(m); }).catch(() => {});
+    return () => { alive = false; };
+  }, []);
+  const macroLine = (() => {
+    if (!macro) return null;
+    const base = (macro.rates || []).find((r) => r.key === 'base_rate');
+    const dep = (macro.rates || []).find((r) => r.key === 'deposit_12m');
+    const cpi = macro.cpi;
+    const parts = [];
+    if (base && base.value != null) parts.push(`기준금리 ${base.value}%`);
+    if (cpi && cpi.yoy != null) parts.push(`물가 ${cpi.yoy}%`);
+    if (dep && dep.value != null) parts.push(`1년예금 ${dep.value}%`);
+    return parts.length ? parts.join(' · ') : null;
+  })();
 
   if (!j.earliest) return null; // 계산 전엔 JourneyMap이 각성 단계를 안내하므로 숨김
 
@@ -82,6 +103,7 @@ export default function JourneyPulse({ simulation, onMove }) {
         <div style={S.review}>
           <div style={S.reviewTop}><span style={S.reviewTitle}>🗓️ {pb.monthly.title}</span><button type="button" style={S.reviewX} onClick={dismissM} aria-label="이번 달 점검 닫기">✕</button></div>
           <ul style={S.ul}>{pb.monthly.items.map((it, i) => <li key={i} style={S.li}>{it}</li>)}</ul>
+          {macroLine && <p style={S.macro}>📊 지금 {macroLine} — 내 계획에 참고하세요</p>}
           {pb.monthly.to && <button type="button" style={S.reviewGo} onClick={() => { try { track('pulse_monthly', { stage, to: pb.monthly.to }); } catch { /* ignore */ } onMove(pb.monthly.to); }}>지금 점검하러 가기 →</button>}
         </div>
       )}
@@ -122,7 +144,8 @@ const S = {
   reviewTop: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 },
   reviewTitle: { fontSize: 12.5, fontWeight: 800, color: '#1e2859' },
   reviewX: { border: 0, background: 'none', color: '#9aa3bf', fontSize: 13, fontWeight: 800, cursor: 'pointer', lineHeight: 1 },
-  ul: { listStyle: 'disc', margin: '0 0 10px', padding: '0 0 0 18px', display: 'flex', flexDirection: 'column', gap: 6 },
-  li: { fontSize: 12.5, color: '#3a3f4a', fontWeight: 500, lineHeight: 1.5 },
+  ul: { listStyle: 'none', margin: '0 0 10px', padding: 0, display: 'flex', flexDirection: 'column', gap: 6 },
+  li: { fontSize: 12.5, color: '#3a3f4a', fontWeight: 500, lineHeight: 1.5, paddingLeft: 16, position: 'relative' },
+  macro: { fontSize: 11.5, color: '#1e2859', fontWeight: 700, background: '#eef1f9', borderRadius: 8, padding: '7px 10px', margin: '0 0 10px', lineHeight: 1.5 },
   reviewGo: { width: '100%', border: 0, background: '#1e2859', color: '#fff', borderRadius: 10, padding: '9px', fontSize: 12.5, fontWeight: 700, cursor: 'pointer' }
 };

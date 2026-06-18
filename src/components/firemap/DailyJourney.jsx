@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import { todayTip, todayAction, getCheckin, checkInToday } from '../../firemap-v2/journeyDaily.js';
 import { todayStr, track } from '../../firemap-v2/dailyData.js';
+import { journeyStage } from '../../utils/journeyStage.js';
 
 // 오늘의 파이어 — 매일 새 지식 + 오늘의 한 걸음 + 연속 출석. 매일 열 이유.
-export default function DailyJourney({ onMove }) {
+export default function DailyJourney({ onMove, simulation }) {
+  const stage = (() => { try { return simulation ? journeyStage(simulation).stage : null; } catch { return null; } })();
   const [ck, setCk] = useState(getCheckin);
   const done = ck.last === todayStr();
-  const tip = todayTip();
-  const act = todayAction();
+  const tip = todayTip(stage);
+  const act = todayAction(stage);
   const doToday = () => {
     const nc = checkInToday();
     setCk(nc);

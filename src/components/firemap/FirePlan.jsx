@@ -12,6 +12,7 @@ import FireClockPush from './FireClockPush.jsx';
 import CompletionCard from './CompletionCard.jsx';
 import StageTargets from './StageTargets.jsx';
 import JourneyMap from './JourneyMap.jsx';
+import JourneyPulse from './JourneyPulse.jsx';
 import OpenChatNotice from './OpenChatNotice.jsx';
 import { account } from '../../utils/identity.js';
 
@@ -98,6 +99,8 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
       <StageTargets simulation={simulation} onMove={onMove} />
 
       {asHome && <JourneyMap simulation={simulation} onMove={onMove} />}
+
+      {asHome && <JourneyPulse simulation={simulation} onMove={onMove} />}
 
       {asHome && <FireClock simulation={simulation} />}
 

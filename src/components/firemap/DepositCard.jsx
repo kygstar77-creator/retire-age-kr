@@ -92,12 +92,12 @@ export default function DepositCard({ simulation, onMove }) {
       {monthlyPlan > 0 ? (
         <>
           <div className="fm-dep-goalrow">
-            <span>이번 달 실제 저축</span>
+            <span>이번 달 저축 · 월 목표 대비</span>
             <b>{Math.round(planPct)}%</b>
           </div>
           <div className="fm-dep-gauge"><i style={{ width: `${planPct}%` }} /></div>
           <p className="fm-dep-mini">
-            이번 달 <b>{won(monthTotal)}</b> / 계획 {won(monthlyPlan)}
+            이번 달 <b>{won(monthTotal)}</b> / 월 저축 목표 {won(monthlyPlan)}
             {monthTotal >= monthlyPlan && monthlyPlan > 0 ? <> · 계획 달성! 홈 ‘내 파이어 현황’에 반영돼요</> : null}
           </p>
         </>

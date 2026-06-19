@@ -26,6 +26,7 @@ function readChallenge() {
 export default function Home({ onStart, onMove, simulation, onChange }) {
   const [agg, setAgg] = useState(null);
   const [age, setAge] = useState(35);
+  const [ageStr, setAgeStr] = useState('35');
   const [challenge] = useState(readChallenge);
   useEffect(() => {
     if (challenge) {
@@ -42,7 +43,16 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
   const proof = agg && agg.total > 0
     ? `${agg.total.toLocaleString()}명이 이미 계산했어요${agg.avgEarliest ? ` · 전체 평균 파이어 ${agg.avgEarliest}세` : ''}`
     : '';
-  const setClamp = (v) => setAge(Math.max(19, Math.min(80, v)));
+  const clampAge = (v) => Math.max(19, Math.min(80, v));
+  const setClamp = (v) => { const c = clampAge(v); setAge(c); setAgeStr(String(c)); };
+  // 타이핑 중에는 clamp 보류: 빈 값/부분 값 허용, 범위 안의 완성값만 즉시 반영
+  const onAgeInput = (e) => {
+    const d = String(e.target.value).replace(/[^0-9]/g, '').slice(0, 3);
+    setAgeStr(d);
+    if (d !== '') { const n = Number(d); if (n >= 19 && n <= 80) setAge(n); }
+  };
+  // blur/확정 시에만 유효 범위로 보정. 보정된 값을 반환
+  const commitAge = () => { const n = Number(ageStr); const c = (ageStr === '' || Number.isNaN(n)) ? age : clampAge(n); setAge(c); setAgeStr(String(c)); return c; };
 
   // 계산 이력이 있으면 재방문 시 홈을 '파이어 플랜 대시보드'로. (로그인 여부 무관 — 기록은 로컬에 있고,
   // 로그인은 대시보드 안 fm-acct-bar에서 '기록 지키기'로 유도해 발견→로그인 동선을 만든다.)
@@ -85,13 +95,13 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
           <div className="fm-home-age-ctrl">
             <button type="button" className="fm-age-btn" aria-label="나이 감소" onClick={() => setClamp(age - 1)}>−</button>
             <div className="fm-age-display">
-              <input id="fm-home-age-in" className="fm-age-input" inputMode="numeric" value={age} onChange={(e) => setClamp(Number(String(e.target.value).replace(/[^0-9]/g, '')) || 0)} />
+              <input id="fm-home-age-in" className="fm-age-input" inputMode="numeric" value={ageStr} onChange={onAgeInput} onBlur={commitAge} />
               <span className="fm-age-unit">세</span>
             </div>
             <button type="button" className="fm-age-btn" aria-label="나이 증가" onClick={() => setClamp(age + 1)}>+</button>
           </div>
         </div>
-        <button type="button" className="fm-home-cta" onClick={() => { track('start_calc', { age, from: challenge ? 'share' : 'home' }); onStart(age); }}>{challenge ? '나도 계산하고 친구랑 비교하기 →' : '내 파이어 나이 계산하기 →'}</button>
+        <button type="button" className="fm-home-cta" onClick={() => { const a = commitAge(); track('start_calc', { age: a, from: challenge ? 'share' : 'home' }); onStart(a); }}>{challenge ? '나도 계산하고 친구랑 비교하기 →' : '내 파이어 나이 계산하기 →'}</button>
         {proof && <p className="fm-home-proof">{proof}</p>}
       </section>
       <section className="fm-card" style={{ borderColor: 'rgba(255,90,0,0.3)' }}>

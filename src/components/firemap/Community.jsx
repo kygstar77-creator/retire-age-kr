@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
-import { loadCommunityThread, sendCommunity, likeCommunity, editCommunity, deleteCommunity } from '../../utils/firemapFeedbackApi.js';
+import { loadCommunityThread, sendCommunity, likeCommunity, editCommunity, deleteCommunity, bumpView, loadViewCounts } from '../../utils/firemapFeedbackApi.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { JOURNEY_STAGES, journeyStage } from '../../utils/journeyStage.js';
 import { identityIds, account } from '../../utils/identity.js';
@@ -114,10 +114,12 @@ export default function Community({ onBack, onMove, simulation }) {
   const [postCat, setPostCat] = useState('free');
   const [sort, setSort] = useState('new');
   const [stageFilter, setStageFilter] = useState('all');
+  const [views, setViews] = useState({});
 
   useEffect(() => {
     let alive = true;
     loadCommunityThread().then((r) => { if (alive) setRows(r); });
+    loadViewCounts('community').then((m) => { if (alive) setViews(m); });
     return () => { alive = false; };
   }, []);
 
@@ -126,6 +128,8 @@ export default function Community({ onBack, onMove, simulation }) {
   const myIds = identityIds();
   const isMine = (row) => mine.includes(row.id) || (!!row.client_id && myIds.includes(row.client_id));
   const remember = (id) => { addMine(id); setMine(loadMine()); };
+  // 글을 펼쳐 읽을 때 조회수 +1 (낙관적 반영 후 서버 기록)
+  const onViewPost = (id) => { setViews((v) => ({ ...v, [id]: (v[id] || 0) + 1 })); bumpView('community', id); };
 
   // 기여 통계(client_id별): 글 수·답글 수·받은 공감 → 칭호
   const stats = {};
@@ -206,8 +210,9 @@ export default function Community({ onBack, onMove, simulation }) {
           <span className="fm-post-author">{(p.likes || 0) >= 3 && <span className="fm-hot-chip">🔥 인기</span>}<span className="fm-cat-badge">{catLabel(catOf(p))}</span>{stageOf(p) && stageMeta(stageOf(p)) && <span className="fm-stage-badge">{stageMeta(stageOf(p)).emoji} {stageOf(p)}단계</span>}{p.nickname || funHandle(p.id)}{ptitle && <span className="fm-title-chip">{ptitle}</span>} · {relativeTime(p.created_at)}</span>
           <div className="fm-post-actions">
             <OwnerControls mine={isMine(p)} row={p} onEdit={startEdit} onDelete={removeRow} />
+            <span className="fm-post-views" aria-label="조회수" style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', fontSize: '12px', fontWeight: 800, color: '#9ca3af', padding: '5px 4px', whiteSpace: 'nowrap' }}>👁 {views[p.id] || 0}</span>
             <button type="button" className={`fm-post-like${isLiked(p.id) ? ' on' : ''}`} onClick={() => like(p)} aria-label="공감">♥ {p.likes || 0}</button>
-            <button type="button" className="fm-post-reply" onClick={() => { setOpenId(open ? null : p.id); setReplyText(''); }}>💬 {reps.length}</button>
+            <button type="button" className="fm-post-reply" onClick={() => { const willOpen = !open; setOpenId(open ? null : p.id); setReplyText(''); if (willOpen) onViewPost(p.id); }}>💬 {reps.length}</button>
           </div>
         </div>
         {open && (

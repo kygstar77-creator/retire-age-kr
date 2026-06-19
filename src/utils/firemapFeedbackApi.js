@@ -167,3 +167,20 @@ export async function editCommunity(id, message) {
 export async function deleteCommunity(id) {
   return mutate(`${TABLE}?or=(id.eq.${id},parent_id.eq.${id})`, 'DELETE');
 }
+
+// 조회수 — 총 조회수(열릴 때마다 +1). RPC fm_view_hit / fm_view_counts 사용. 실패해도 조용히 무시.
+export async function bumpView(ctype, id) {
+  try {
+    const r = await callFeedback('rpc/fm_view_hit', { method: 'POST', body: JSON.stringify({ p_type: ctype, p_id: String(id) }) });
+    return typeof r === 'number' ? r : null;
+  } catch { return null; }
+}
+
+export async function loadViewCounts(ctype) {
+  try {
+    const rows = await callFeedback('rpc/fm_view_counts', { method: 'POST', body: JSON.stringify({ p_type: ctype }) });
+    const map = {};
+    if (Array.isArray(rows)) for (const r of rows) map[r.cid] = r.views;
+    return map;
+  } catch { return {}; }
+}

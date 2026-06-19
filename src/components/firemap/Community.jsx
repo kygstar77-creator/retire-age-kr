@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Header from './Header.jsx';
 import { loadCommunityThread, sendCommunity, likeCommunity, editCommunity, deleteCommunity, bumpView, loadViewCounts } from '../../utils/firemapFeedbackApi.js';
 import { funHandle } from '../../firemap-v2/funName.js';
@@ -128,8 +128,29 @@ export default function Community({ onBack, onMove, simulation }) {
   const myIds = identityIds();
   const isMine = (row) => mine.includes(row.id) || (!!row.client_id && myIds.includes(row.client_id));
   const remember = (id) => { addMine(id); setMine(loadMine()); };
-  // 글을 펼쳐 읽을 때 조회수 +1 (낙관적 반영 후 서버 기록)
-  const onViewPost = (id) => { setViews((v) => ({ ...v, [id]: (v[id] || 0) + 1 })); bumpView('community', id); };
+  // 글이 화면에 실제로 보이면(절반 이상 노출) 조회수 +1 — 세션당 글마다 1회.
+  // 커뮤니티 글은 목록에서 본문이 바로 읽히므로 '노출 = 조회'로 집계한다.
+  const seenRef = useRef(new Set());
+  useEffect(() => {
+    if (typeof IntersectionObserver === 'undefined') return undefined;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        const id = en.target.getAttribute('data-post-id');
+        if (!id || seenRef.current.has(id)) return;
+        seenRef.current.add(id);
+        io.unobserve(en.target);
+        setViews((v) => ({ ...v, [id]: (v[id] || 0) + 1 }));
+        bumpView('community', id);
+      });
+    }, { threshold: 0.5 });
+    const t = setTimeout(() => {
+      document.querySelectorAll('[data-post-id]').forEach((el) => {
+        if (!seenRef.current.has(el.getAttribute('data-post-id'))) io.observe(el);
+      });
+    }, 0);
+    return () => { clearTimeout(t); io.disconnect(); };
+  }, [rows, cat, stageFilter, sort]);
 
   // 기여 통계(client_id별): 글 수·답글 수·받은 공감 → 칭호
   const stats = {};
@@ -203,7 +224,7 @@ export default function Community({ onBack, onMove, simulation }) {
     const open = openId === p.id;
     const ptitle = titleOf(p.client_id);
     return (
-      <article className={`fm-card fm-post${isBest ? ' fm-best' : ''}`} key={p.id}>
+      <article className={`fm-card fm-post${isBest ? ' fm-best' : ''}`} key={p.id} data-post-id={p.id}>
         {isBest && <p className="fm-best-tag">🏆 이번 주 베스트</p>}
         {editId === p.id ? <EditBox id={p.id} value={editText} onChange={setEditText} onCancel={cancelEdit} onSave={saveEdit} /> : <p className="fm-post-msg">{p.message}</p>}
         <div className="fm-post-meta">
@@ -212,7 +233,7 @@ export default function Community({ onBack, onMove, simulation }) {
             <OwnerControls mine={isMine(p)} row={p} onEdit={startEdit} onDelete={removeRow} />
             <span className="fm-post-views" aria-label="조회수" style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', fontSize: '12px', fontWeight: 800, color: '#9ca3af', padding: '5px 4px', whiteSpace: 'nowrap' }}>👁 {views[p.id] || 0}</span>
             <button type="button" className={`fm-post-like${isLiked(p.id) ? ' on' : ''}`} onClick={() => like(p)} aria-label="공감">♥ {p.likes || 0}</button>
-            <button type="button" className="fm-post-reply" onClick={() => { const willOpen = !open; setOpenId(open ? null : p.id); setReplyText(''); if (willOpen) onViewPost(p.id); }}>💬 {reps.length}</button>
+            <button type="button" className="fm-post-reply" onClick={() => { setOpenId(open ? null : p.id); setReplyText(''); }}>💬 {reps.length}</button>
           </div>
         </div>
         {open && (

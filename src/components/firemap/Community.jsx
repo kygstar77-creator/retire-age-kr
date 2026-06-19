@@ -7,6 +7,7 @@ import { identityIds, account } from '../../utils/identity.js';
 
 const CATEGORIES = [
   { key: 'free', label: '자유수다', emoji: '💬' },
+  { key: 'news', label: '경제뉴스', emoji: '📰' },
   { key: 'save', label: '저축꿀팁', emoji: '✂️' },
   { key: 'invest', label: '투자·자산배분', emoji: '📈' },
   { key: 'realestate', label: '부동산', emoji: '🏠' },

@@ -433,6 +433,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
         <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>🎛️ 수치 바꿔보기</button>
       </div>
       <button type="button" className="fm-rank-cta-other" onClick={shareOther}>🔗 링크 복사 · 다른 앱으로 공유</button>
+      <OpenChatNotice />
       <AccountBar onMove={onMove} />
       <section className="fm-card" style={{ borderColor: 'rgba(255,90,0,0.3)' }}>
         <p className="fm-kicker">🔥 여기까지가 1단계</p>
@@ -446,7 +447,6 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
       <MoatCard simulation={simulation} onMove={onMove} />
       <TopLevers inputs={inputs} simulation={simulation} onChange={onChange} />
       <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />
-      <OpenChatNotice />
       <NextActions onMove={onMove} />
     </main>
   );

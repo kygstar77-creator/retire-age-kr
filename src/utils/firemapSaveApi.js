@@ -1,4 +1,4 @@
-import { identityId } from './identity.js';
+import { identityId, accountHandle } from './identity.js';
 // 오늘의 절약 — Supabase 연동 (기기당 하루 한 줄 upsert)
 const DEFAULT_SUPABASE_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
 const DEFAULT_SUPABASE_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
@@ -33,11 +33,28 @@ function countFromRange(res) {
   return total && total !== '*' ? Number(total) : 0;
 }
 
+// 랭킹 표시: client_id가 계정이면 그 계정의 '현재 handle'로 닉네임을 덮어씀(기기/익명은 행 nickname 폴백).
+// → 과거 행에 박힌 스테일 닉네임 대신 항상 현재 이름이 보임. 실패해도 원본 그대로 반환(무해).
+async function applyAccountHandles(rows) {
+  try {
+    const list = rows || [];
+    const ids = [...new Set(list.map((r) => r.client_id).filter(Boolean))];
+    if (!ids.length) return list;
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/fm_account_handles`, { method: 'POST', headers: headers(), body: JSON.stringify({ p_ids: ids }) });
+    if (!res.ok) return list;
+    const map = {};
+    for (const r of (await res.json()) || []) { if (r && r.client_id) map[r.client_id] = r.handle; }
+    return list.map((r) => (map[r.client_id] ? { ...r, nickname: map[r.client_id] } : r));
+  } catch { return rows || []; }
+}
+
 // 오늘 내 절약 한 줄을 upsert (client_id + date 기준 갱신)
 export async function submitSave({ todaySaved, totalSaved, advancedDays, streak, nickname, ageBand, depositTotal, depositMonth, targetAge, goalPct, currentAge }) {
   const cid = identityId();
   if (!cid) return false;
-  const nick = (nickname || '').trim().slice(0, 16) || null;
+  // 로그인 상태면 계정의 현재 handle을 우선 사용(다른 계정 닉네임이 localStorage에 남아 섞이는 것 차단). 비로그인은 전달된 닉네임 폴백.
+  const liveHandle = (accountHandle && accountHandle()) || '';
+  const nick = (liveHandle || nickname || '').trim().slice(0, 16) || null;
   const body = {
     client_id: cid,
     date: todayStr(),
@@ -85,7 +102,7 @@ export async function fetchSaveTop(limit = 10) {
     const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=client_id,nickname,today_saved,age_band&date=eq.${todayStr()}&today_saved=gt.0&order=today_saved.desc&limit=${limit}`;
     const res = await fetch(url, { method: 'GET', headers: headers() });
     if (!res.ok) return [];
-    return await res.json();
+    return await applyAccountHandles(await res.json());
   } catch {
     return [];
   }
@@ -107,13 +124,13 @@ export async function fetchSaveBoard(metric = 'today', limit = 10) {
         out.push({ ...r, value: r.deposit_month });
         if (out.length >= limit) break;
       }
-      return out;
+      return await applyAccountHandles(out);
     }
     if (metric === 'today') {
       const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=client_id,nickname,today_saved,age_band&date=eq.${todayStr()}&today_saved=gt.0&order=today_saved.desc&limit=${limit}`;
       const res = await fetch(url, { method: 'GET', headers: headers() });
       const rows = res.ok ? await res.json() : [];
-      return rows.map((r) => ({ ...r, value: r.today_saved }));
+      return await applyAccountHandles(rows.map((r) => ({ ...r, value: r.today_saved })));
     }
     if (metric === 'advance' || metric === 'streak') {
       const c = metric === 'streak' ? 'streak' : 'advanced_days';
@@ -124,7 +141,7 @@ export async function fetchSaveBoard(metric = 'today', limit = 10) {
       const latest = [];
       for (const r of rs) { if (seen2.has(r.client_id)) continue; seen2.add(r.client_id); latest.push({ ...r, value: r[c] }); }
       latest.sort((a, b) => (b.value || 0) - (a.value || 0));
-      return latest.slice(0, limit);
+      return await applyAccountHandles(latest.slice(0, limit));
     }
     const col = metric === 'streak' ? 'streak' : metric === 'advance' ? 'advanced_days' : 'total_saved';
     const url = `${SUPABASE_URL}/rest/v1/${TABLE}?select=client_id,nickname,${col},age_band&${col}=gt.0&order=${col}.desc&limit=80`;
@@ -138,7 +155,7 @@ export async function fetchSaveBoard(metric = 'today', limit = 10) {
       out.push({ ...r, value: r[col] });
       if (out.length >= limit) break;
     }
-    return out;
+    return await applyAccountHandles(out);
   } catch {
     return [];
   }

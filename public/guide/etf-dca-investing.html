@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ETF 적립식 투자 시작하기 — 코스트 애버리징(DCA)으로 파이어 종잣돈 굴리기 | 파이어맵</title>
+  <meta name="description" content="ETF 적립식 투자(DCA)의 원리와 장점, 초보자가 매월 같은 금액을 꾸준히 넣어 평균 매수 단가를 낮추는 법, 지수형·분산 ETF 고르는 기준과 흔한 실수까지. 파이어 종잣돈을 시간으로 굴리는 가장 무난한 방법을 정리했어요." />
+  <meta name="keywords" content="ETF 적립식 투자, 코스트 애버리징, DCA, 적립식 투자 장점, ETF 초보, 지수 투자, 분산 투자, 파이어 투자, 적립식 ETF 시작" />
+  <link rel="canonical" href="https://firemap.kr/guide/etf-dca-investing.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="파이어맵" />
+  <meta property="og:title" content="ETF 적립식 투자 시작하기 — 코스트 애버리징(DCA)" />
+  <meta property="og:description" content="매월 같은 금액을 꾸준히 넣어 평균 단가를 낮추는 적립식 투자의 원리와 장점, ETF 고르는 기준과 흔한 실수." />
+  <meta property="og:url" content="https://firemap.kr/guide/etf-dca-investing.html" />
+  <meta property="og:image" content="https://firemap.kr/og-image.png?v=firemap-screens-v7-20260613" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ETF 적립식 투자 시작하기 — 코스트 애버리징(DCA)",
+    "description": "ETF 적립식 투자(DCA)의 원리와 장점, 초보자가 평균 매수 단가를 낮추는 법, ETF 고르는 기준과 흔한 실수.",
+    "inLanguage": "ko",
+    "author": { "@type": "Organization", "name": "파이어맵" },
+    "publisher": { "@type": "Organization", "name": "파이어맵", "url": "https://firemap.kr" },
+    "mainEntityOfPage": "https://firemap.kr/guide/etf-dca-investing.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "적립식 투자(DCA)가 뭔가요?", "acceptedAnswer": { "@type": "Answer", "text": "적립식 투자(Dollar Cost Averaging)는 시장 타이밍을 맞히려 하지 않고, 매월 정해진 날짜에 같은 금액을 꾸준히 투자하는 방법입니다. 가격이 높을 때는 적게, 낮을 때는 많이 사게 되어 평균 매수 단가가 자연스럽게 낮아지고 감정적 매매를 줄일 수 있습니다." } },
+      { "@type": "Question", "name": "왜 개별 종목보다 ETF가 초보에게 권장되나요?", "acceptedAnswer": { "@type": "Answer", "text": "ETF는 한 번 사면 여러 종목·자산에 분산 투자되는 효과가 있어, 특정 기업의 급락으로 인한 손실 위험을 낮춰 줍니다. 초보자가 종목을 일일이 고르고 분석하지 않아도 시장 전체의 흐름을 따라갈 수 있다는 점에서 적립식과 잘 맞습니다." } },
+      { "@type": "Question", "name": "적립식 투자는 무조건 수익이 나나요?", "acceptedAnswer": { "@type": "Answer", "text": "아닙니다. 적립식은 평균 단가를 낮추고 변동성에 덜 흔들리게 도와주는 방법일 뿐, 손실 가능성을 없애지 못합니다. 투자 자산은 가격이 오르내리며 원금 손실이 발생할 수 있으므로, 비상금을 제외한 여윳돈으로 장기 관점에서 접근해야 합니다." } }
+    ]
+  }
+  </script>
+  <style>
+    :root{--orange:#ff5a00;--ink:#18212c;--mut:#5b6470;--line:#eceff3;--soft:#fff7f2}
+    *{box-sizing:border-box}
+    body{margin:0;background:#fffdf9;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.75;font-size:16px}
+    main{max-width:760px;margin:0 auto;padding:28px 20px 80px}
+    .top{font-size:13px}.top a{color:var(--orange);font-weight:800;text-decoration:none}
+    h1{font-size:30px;letter-spacing:-.04em;line-height:1.25;margin:14px 0 6px}
+    .lead{color:var(--mut);font-size:16px;margin:0 0 8px}
+    h2{font-size:22px;margin:34px 0 10px;letter-spacing:-.02em}
+    h3{font-size:17px;margin:20px 0 6px}
+    p{margin:10px 0}
+    ul{padding-left:20px}li{margin:6px 0}
+    .cta{display:block;background:var(--orange);color:#fff;text-align:center;font-weight:800;font-size:16px;padding:15px;border-radius:14px;text-decoration:none;margin:22px 0}
+    .box{background:var(--soft);border:1px solid #ffe1d0;border-radius:16px;padding:16px 18px;margin:18px 0}
+    table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px}
+    th,td{border:1px solid var(--line);padding:9px 10px;text-align:left}
+    th{background:#f7f8fa}
+    .faq dt{font-weight:800;margin-top:14px}
+    .faq dd{margin:4px 0 0;color:var(--mut)}
+    footer{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;font-size:13px;color:var(--mut)}
+    footer a{color:var(--orange);font-weight:700;text-decoration:none;margin-right:14px}
+  </style>
+</head>
+<body>
+<main>
+  <p class="top"><a href="https://firemap.kr/">🔥 파이어맵 — 내 파이어 가능 나이 1분 계산</a></p>
+  <h1>ETF 적립식 투자 시작하기 — 코스트 애버리징(DCA)</h1>
+  <p class="lead">종잣돈을 모았다면 다음은 '시간을 내 편으로' 만드는 단계예요. 타이밍을 맞히려 애쓰지 않고도 꾸준히 굴리는 적립식 투자의 원리를 정리했어요.</p>
+
+  <a class="cta" href="https://firemap.kr/">내 파이어 가능 나이 1분 만에 계산하기 →</a>
+
+  <h2>적립식 투자(DCA)란?</h2>
+  <p><b>적립식 투자(DCA, Dollar Cost Averaging)</b>는 시장의 고점·저점을 예측해 한 번에 큰돈을 넣는 대신, <b>매월 정해진 날짜에 같은 금액을 꾸준히 투자</b>하는 방법입니다. 핵심은 '<b>언제 살까</b>'라는 어려운 질문을 '<b>매달 산다</b>'는 규칙으로 바꾸는 것입니다. 시장이 오르든 내리든 기계적으로 매수하기 때문에, 초보자가 가장 흔히 저지르는 실수 — 비쌀 때 흥분해서 사고 쌀 때 무서워서 파는 — 를 구조적으로 막아 줍니다.</p>
+
+  <h2>왜 평균 매수 단가가 낮아질까</h2>
+  <p>같은 금액으로 매수하면, 가격이 <b>높을 때는 적은 수량</b>을, <b>낮을 때는 많은 수량</b>을 자동으로 사게 됩니다. 그 결과 전체 평균 매수 단가가 '늘 가격을 절반씩 맞히려는' 시도보다 안정적으로 형성됩니다. 아래는 매달 30만원씩 넣었을 때를 단순화한 예시입니다.</p>
+  <div class="box">
+    <b>매달 30만원 적립 예시(가정)</b>
+    <table>
+      <tr><th>월</th><th>가격</th><th>매수 수량</th></tr>
+      <tr><td>1월</td><td>10,000원</td><td>30주</td></tr>
+      <tr><td>2월</td><td>7,500원</td><td>40주</td></tr>
+      <tr><td>3월</td><td>12,000원</td><td>25주</td></tr>
+    </table>
+    <p style="margin:6px 0 0;font-size:14px;color:var(--mut)">3개월간 90만원으로 95주 매수 → 평균 단가 약 9,470원. 가격이 출렁여도 싼 달에 더 많이 담겨 평균이 내려갑니다. (수익을 보장하는 수치가 아니라 원리 설명용 예시입니다.)</p>
+  </div>
+
+  <h2>초보에게 ETF가 잘 맞는 이유</h2>
+  <p>적립식의 짝꿍으로 <b>ETF(상장지수펀드)</b>가 자주 언급되는 이유는 <b>한 번 사면 여러 종목·자산에 분산</b>되기 때문입니다. 개별 기업 한 곳이 휘청여도 묶음 전체로는 충격이 작아, 종목을 일일이 분석하기 어려운 초보자가 <b>시장 전체의 평균적인 흐름</b>을 따라가기에 적합합니다. 분산된 자산을 매달 적립식으로 사 모으면 '<b>분산 + 시간 분산</b>'이라는 두 겹의 안전장치가 생깁니다.</p>
+  <h3>ETF 고를 때 보는 기준</h3>
+  <ul>
+    <li><b>무엇을 담고 있나</b>: 넓은 시장지수를 추종하는지, 특정 테마·국가에 집중됐는지 확인.</li>
+    <li><b>보수(수수료)</b>: 장기로 적립하면 연 보수 차이가 누적되니 낮을수록 유리.</li>
+    <li><b>규모·거래량</b>: 순자산과 거래량이 충분해야 사고팔 때 불리하지 않음.</li>
+    <li><b>분배금·과세</b>: 국내·해외, 배당 ETF 등에 따라 세금 처리가 다름(상세는 세무 전문가 확인).</li>
+  </ul>
+
+  <h2>적립식 투자, 이렇게 시작하기</h2>
+  <ul>
+    <li><b>비상금부터</b>: 3~6개월 생활비를 안전한 곳에 확보한 뒤 시작합니다. 투자금은 당분간 안 써도 되는 여윳돈이어야 합니다.</li>
+    <li><b>금액·날짜 고정</b>: '매월 25일 ○○만원'처럼 규칙을 정하고 자동매수·자동이체로 설정합니다.</li>
+    <li><b>보수적 기대수익</b>: 과거 수익률을 미래로 단정하지 말고 보수적으로 가정합니다.</li>
+    <li><b>분산 유지</b>: 한 자산에 몰지 않고 넓게 분산된 ETF를 중심에 둡니다.</li>
+    <li><b>오래 유지</b>: 하락장에서도 규칙대로 계속 사 모으는 것이 DCA의 힘입니다. 변동성은 적립 기회로 봅니다.</li>
+  </ul>
+
+  <h2>흔한 오해와 주의점</h2>
+  <p>적립식 투자는 <b>손실을 없애 주는 마법이 아닙니다.</b> 평균 단가를 낮추고 감정을 다스리도록 돕는 방법일 뿐, 시장이 장기간 하락하면 평가손이 날 수 있습니다. 또한 '꾸준히만 하면 무조건 오른다'는 보장도 없습니다. 그래서 <b>여윳돈으로, 장기 관점에서, 분산된 자산에</b> 적용하는 것이 전제입니다. 빚을 내서 투자하거나, 단기 생활비로 투자하거나, 한두 종목에 몰빵하는 것은 적립식의 취지와 정반대입니다. 본 글은 정보 제공용이며 특정 상품 추천이나 투자 권유가 아닙니다.</p>
+
+  <a class="cta" href="https://firemap.kr/">적립 투자로 언제 파이어 가능한지 계산해보기 →</a>
+
+  <h2>자주 묻는 질문 (FAQ)</h2>
+  <dl class="faq">
+    <dt>Q. 적립식 투자(DCA)가 뭔가요?</dt>
+    <dd>매월 같은 금액을 정해진 날에 꾸준히 투자하는 방법입니다. 비쌀 때 적게·쌀 때 많이 사게 되어 평균 단가가 낮아지고 감정 매매를 줄여 줍니다.</dd>
+    <dt>Q. 왜 개별 종목보다 ETF인가요?</dt>
+    <dd>ETF는 한 번 사도 여러 종목에 분산돼 개별 기업 급락 위험이 작고, 시장 전체 흐름을 따라가기 쉬워 초보 적립식과 잘 맞습니다.</dd>
+    <dt>Q. 적립식이면 손해는 안 보나요?</dt>
+    <dd>아닙니다. 변동성에 덜 흔들리게 돕는 방법일 뿐 원금 손실 가능성은 남습니다. 비상금을 뺀 여윳돈으로 장기로 접근하세요.</dd>
+  </dl>
+
+  <a class="cta" href="https://firemap.kr/">🔥 내 파이어 가능 나이·필요 자산 1분 계산하기 →</a>
+
+  <footer>
+    <a href="https://firemap.kr/">파이어맵 홈</a>
+    <a href="https://firemap.kr/guide/">파이어 백과</a>
+    <a href="https://firemap.kr/privacy.html">개인정보처리방침</a>
+    <p>파이어맵은 입력값을 기계적으로 계산하는 참고용 시뮬레이션 도구이며, 투자·세무 자문이 아닙니다. 본문 예시는 원리 설명용이며 수익을 보장하지 않습니다.</p>
+  </footer>
+</main>
+</body>
+</html>

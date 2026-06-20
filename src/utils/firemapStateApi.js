@@ -148,3 +148,9 @@ export async function maybeClaimOnLoad() {
   if (done === a.userId) return;
   await claimDevice();
 }
+
+// 회원 탈퇴 후 로컬 정리 — 서버 백업 없이(계정이 이미 파기됨) 기기 데이터만 삭제.
+export function clearLocalOnly() {
+  for (const k of CLEAR_ON_LOGOUT) { try { localStorage.removeItem(k); } catch { /* ignore */ } }
+  try { localStorage.removeItem('fm_account'); } catch { /* ignore */ }
+}

@@ -48,3 +48,13 @@ export async function setHandle(handle) {
   if (!r || !r.id) { const e = new Error('set_handle_failed'); e.code = 'set_handle_failed'; throw e; }
   return persist(r);
 }
+
+// 회원 탈퇴(PIPA) — 본인 계정·개인정보 즉시 파기 + 기여물 익명화. 서버가 token으로 본인 검증(타인 불가).
+export async function deleteAccount() {
+  const a = account();
+  if (!a || !a.userId || !a.token) { const e = new Error('not_logged_in'); e.code = 'not_logged_in'; throw e; }
+  const ok = await rpc('fm_delete_account', { p_user: a.userId, p_token: a.token });
+  if (ok !== true) { const e = new Error('delete_failed'); e.code = 'delete_failed'; throw e; }
+  logout();
+  return true;
+}

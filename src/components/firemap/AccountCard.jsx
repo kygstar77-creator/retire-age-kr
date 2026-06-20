@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { account } from '../../utils/identity.js';
-import { signup, login, logout, setHandle } from '../../utils/firemapAccountApi.js';
-import { syncAfterAuth, claimDevice, logoutClearLocal } from '../../utils/firemapStateApi.js';
+import { signup, login, logout, setHandle, deleteAccount } from '../../utils/firemapAccountApi.js';
+import { syncAfterAuth, claimDevice, logoutClearLocal, clearLocalOnly } from '../../utils/firemapStateApi.js';
 import { kakaoLoginStart } from '../../utils/kakaoAuth.js';
 
 function mapErr(code, msg) {
@@ -23,6 +23,8 @@ export default function AccountCard({ kicker, sub, compact } = {}) {
   const [err, setErr] = useState('');
   const [editing, setEditing] = useState(false);
   const [nh, setNh] = useState('');
+  const [wd, setWd] = useState(false);
+  const [wbusy, setWbusy] = useState(false);
 
   if (acc && acc.handle) {
     const saveNick = async () => {
@@ -33,14 +35,32 @@ export default function AccountCard({ kicker, sub, compact } = {}) {
       try { await setHandle(v); window.location.reload(); }
       catch (e) { setErr(mapErr(e && e.code, e && e.message)); setBusy(false); }
     };
+    const doWithdraw = async () => {
+      setErr('');
+      setWbusy(true);
+      try {
+        await deleteAccount();
+        clearLocalOnly();
+        window.location.href = '/';
+      } catch (e) { setErr('탈퇴 처리 중 문제가 생겼어요. 잠시 후 다시 시도해주세요.'); setWbusy(false); }
+    };
     return (
       <section className="fm-card fm-acct">
         <p className="fm-kicker">내 계정</p>
-        {!editing ? (
+        {wd ? (
+          <>
+            <p className="fm-acct-who"><b>정말 탈퇴할까요?</b> 되돌릴 수 없어요.</p>
+            <p className="fm-acct-sub">탈퇴하면 <b>닉네임·비밀번호·카카오 연결 등 개인정보는 즉시 파기</b>돼요. 이미 남긴 커뮤니티 글·랭킹 점수는 작성자 정보를 지우고 <b>‘(탈퇴한 회원)’</b>으로 익명 처리돼 남을 수 있어요(통계 유지). 기기에 저장된 내 기록도 함께 삭제돼요.</p>
+            {err && <p className="fm-acct-err">{err}</p>}
+            <button type="button" className="fm-acct-go" style={{ background: '#dc2626' }} onClick={doWithdraw} disabled={wbusy}>{wbusy ? '탈퇴 처리 중…' : '탈퇴 확정하기'}</button>
+            <button type="button" className="fm-acct-switch" onClick={() => { setWd(false); setErr(''); }}>취소</button>
+          </>
+        ) : !editing ? (
           <>
             <p className="fm-acct-who"><b>{acc.handle}</b>으로 로그인됨 · 랭킹·저축 보드에 이 닉네임이 표시돼요.</p>
             <button type="button" className="fm-acct-go" onClick={() => { setNh(acc.handle); setEditing(true); setErr(''); }}>✏️ 닉네임 변경</button>
             <button type="button" className="fm-acct-switch" onClick={async () => { await logoutClearLocal(); window.location.reload(); }}>로그아웃</button>
+            <button type="button" className="fm-acct-withdraw" style={{ display: 'block', margin: '10px auto 0', background: 'transparent', border: 'none', color: '#9ca3af', fontSize: '12px', textDecoration: 'underline', cursor: 'pointer' }} onClick={() => { setWd(true); setErr(''); }}>회원 탈퇴</button>
           </>
         ) : (
           <>

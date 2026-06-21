@@ -25,9 +25,12 @@ export async function onRequest() {
     for (const e of entries) {
       const id = (e.match(/<yt:videoId>([^<]+)<\/yt:videoId>/) || [])[1];
       if (!id) continue;
-      const title = (e.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || '';
+      const rawTitle = (e.match(/<title>([\s\S]*?)<\/title>/) || [])[1] || '';
+      const title = decodeEntities(rawTitle).trim();
+      // 유튜브 기본 라이브 제목(직접 제목 안 붙인 종료/예약 라이브: 'OOO님의 실시간 스트림')은 제외 — 실제 업로드만 노출.
+      if (/실시간 스트림\s*$/.test(title) || /'s live stream\s*$/i.test(title) || /\blive stream\s*$/i.test(title)) continue;
       const published = (e.match(/<published>([^<]+)<\/published>/) || [])[1] || '';
-      videos.push({ id, title: decodeEntities(title).trim(), published, thumb: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`, url: `https://www.youtube.com/watch?v=${id}` });
+      videos.push({ id, title, published, thumb: `https://i.ytimg.com/vi/${id}/hqdefault.jpg`, url: `https://www.youtube.com/watch?v=${id}` });
       if (videos.length >= 3) break;
     }
     return json({ videos }, 3600);

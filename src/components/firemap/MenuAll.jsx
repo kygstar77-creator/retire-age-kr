@@ -52,6 +52,7 @@ const SECTIONS = [
 ];
 
 const LINKS = [
+  { ico: '▶️', title: '파이어맵 유튜브', desc: '영상으로 보는 파이어 — 채널 구독하기', href: 'https://www.youtube.com/@firemapkr', ext: true },
   { ico: '📚', title: '파이어 백과', desc: '건보료·세금·연금·현실 금액 가이드', href: '/guide/' },
   { ico: '📄', title: '면책 안내', desc: '정보 제공 목적 · 투자자문 아님', href: '/disclaimer.html' },
   { ico: '🔒', title: '개인정보처리방침', desc: '수집 항목 · 목적 · 보관', href: '/privacy.html' },
@@ -104,7 +105,7 @@ export default function MenuAll({ onMove }) {
         <p style={S.secLabel}>정보 · 정책</p>
         <div style={S.list}>
           {LINKS.map((it) => (
-            <a key={it.title} href={it.href} style={S.row}>
+            <a key={it.title} href={it.href} style={S.row} {...(it.ext ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
               <span style={S.rowIco}>{it.ico}</span>
               <span style={S.rowTx}><b style={S.rowTitle}>{it.title}</b><em style={S.rowDesc}>{it.desc}</em></span>
               <span style={S.rowGo}>›</span>

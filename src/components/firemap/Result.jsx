@@ -14,6 +14,7 @@ import { track } from '../../firemap-v2/dailyData.js';
 import { estimateLocalPremium } from '../../firemap-v2/healthInsurance.js';
 import { account } from '../../utils/identity.js';
 import OpenChatNotice from './OpenChatNotice.jsx';
+import YouTubeCard from './YouTubeCard.jsx';
 
 function ResultHeroV2({ simulation, rankingSimulation }) {
   const rs = rankingSimulation || simulation;
@@ -447,6 +448,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
       <MoatCard simulation={simulation} onMove={onMove} />
       <TopLevers inputs={inputs} simulation={simulation} onChange={onChange} />
       <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />
+      <YouTubeCard />
       <NextActions onMove={onMove} />
     </main>
   );

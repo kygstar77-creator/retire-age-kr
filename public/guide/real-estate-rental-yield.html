@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>월세 수익률(임대수익률) 계산법 — 표면·실질 수익률 쉽게 | 파이어맵</title>
+  <meta name="description" content="월세 임대수익률을 표면수익률과 실질(순)수익률로 나눠 계산하는 법, 공실·세금·관리비·대출이자까지 반영하는 방법을 예시와 함께 정리했어요. 부동산 임대소득을 파이어 현금흐름으로 보는 관점도 담았습니다." />
+  <meta name="keywords" content="월세 수익률, 임대수익률, 표면수익률, 실질수익률, 부동산 수익률 계산, 임대소득, 공실률, 갭투자, 부동산 파이어, 현금흐름" />
+  <link rel="canonical" href="https://firemap.kr/guide/real-estate-rental-yield.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="파이어맵" />
+  <meta property="og:title" content="월세 수익률(임대수익률) 계산법" />
+  <meta property="og:description" content="표면수익률과 실질수익률을 공실·세금·이자까지 반영해 계산하는 법." />
+  <meta property="og:url" content="https://firemap.kr/guide/real-estate-rental-yield.html" />
+  <meta property="og:image" content="https://firemap.kr/og-image.png?v=firemap-screens-v7-20260613" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "월세 수익률(임대수익률) 계산법",
+    "description": "표면수익률과 실질(순)수익률을 공실·세금·관리비·대출이자까지 반영해 계산하는 법.",
+    "inLanguage": "ko",
+    "author": { "@type": "Organization", "name": "파이어맵" },
+    "publisher": { "@type": "Organization", "name": "파이어맵", "url": "https://firemap.kr" },
+    "mainEntityOfPage": "https://firemap.kr/guide/real-estate-rental-yield.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "표면수익률은 어떻게 계산하나요?", "acceptedAnswer": { "@type": "Answer", "text": "표면(명목)수익률 = 연간 월세 합계 ÷ 투자금(매매가에서 보증금을 뺀 금액) × 100 입니다. 비용을 반영하지 않은 단순 지표라 매물 비교용으로만 쓰는 것이 좋습니다." } },
+      { "@type": "Question", "name": "실질수익률은 무엇이 다른가요?", "acceptedAnswer": { "@type": "Answer", "text": "실질(순)수익률은 연간 월세에서 공실 손실·재산세·관리비·수선비·대출이자 등 실제 비용을 빼고 계산합니다. 표면수익률보다 낮게 나오며, 실제 손에 쥐는 현금흐름에 가깝습니다." } },
+      { "@type": "Question", "name": "공실은 어떻게 반영하나요?", "acceptedAnswer": { "@type": "Answer", "text": "연간 월세에 (1 − 공실률)을 곱해 반영합니다. 예를 들어 공실률을 한 달(약 8%)로 보면 12개월치 월세 대신 약 11개월치로 계산하는 식입니다." } }
+    ]
+  }
+  </script>
+  <style>
+    :root{--orange:#ff5a00;--ink:#18212c;--mut:#5b6470;--line:#eceff3;--soft:#fff7f2}
+    *{box-sizing:border-box}
+    body{margin:0;background:#fffdf9;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.75;font-size:16px}
+    main{max-width:760px;margin:0 auto;padding:28px 20px 80px}
+    .top{font-size:13px}.top a{color:var(--orange);font-weight:800;text-decoration:none}
+    h1{font-size:30px;letter-spacing:-.04em;line-height:1.25;margin:14px 0 6px}
+    .lead{color:var(--mut);font-size:16px;margin:0 0 8px}
+    h2{font-size:22px;margin:34px 0 10px;letter-spacing:-.02em}
+    h3{font-size:17px;margin:20px 0 6px}
+    p{margin:10px 0}
+    ul{padding-left:20px}li{margin:6px 0}
+    .cta{display:block;background:var(--orange);color:#fff;text-align:center;font-weight:800;font-size:16px;padding:15px;border-radius:14px;text-decoration:none;margin:22px 0}
+    .box{background:var(--soft);border:1px solid #ffe1d0;border-radius:16px;padding:16px 18px;margin:18px 0}
+    table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px}
+    th,td{border:1px solid var(--line);padding:9px 10px;text-align:left}
+    th{background:#f7f8fa}
+    .faq dt{font-weight:800;margin-top:14px}
+    .faq dd{margin:4px 0 0;color:var(--mut)}
+    footer{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;font-size:13px;color:var(--mut)}
+    footer a{color:var(--orange);font-weight:700;text-decoration:none;margin-right:14px}
+  </style>
+</head>
+<body>
+<main>
+  <p class="top"><a href="https://firemap.kr/">🔥 파이어맵 — 내 파이어 가능 나이 1분 계산</a></p>
+  <h1>월세 수익률(임대수익률) 계산법</h1>
+  <p class="lead">"수익률 7%"라는 광고를 그대로 믿으면 안 됩니다. 표면수익률과 실질수익률을 나눠 계산해, 진짜 손에 쥐는 현금흐름을 보는 법을 정리했어요.</p>
+  <a class="cta" href="https://firemap.kr/">임대소득까지 반영해 파이어 나이 계산 →</a>
+  <h2>1. 표면수익률 — 빠른 비교용</h2>
+  <p><b>표면(명목)수익률</b>은 비용을 빼지 않은 단순 지표입니다.</p>
+  <div class="box">
+    <b>표면수익률 = (연간 월세 합계 ÷ 투자금) × 100</b><br>
+    투자금 = 매매가 − 임대보증금<br><br>
+    예) 매매가 2억원, 보증금 1,000만원, 월세 70만원<br>
+    투자금 = 2억 − 1,000만 = 1억 9,000만원<br>
+    연 월세 = 70만 × 12 = 840만원<br>
+    표면수익률 = 840만 ÷ 1억9,000만 × 100 ≈ <b>4.4%</b>
+  </div>
+  <p>매물끼리 빠르게 비교할 때는 편하지만, <b>실제 수익과는 차이가 큽니다.</b></p>
+  <h2>2. 실질(순)수익률 — 진짜 현금흐름</h2>
+  <p>실제로는 공실, 세금, 관리비, 수선비, 대출이자가 빠져나갑니다. 이를 모두 반영한 것이 <b>실질수익률</b>입니다.</p>
+  <div class="box">
+    <b>실질수익률 = (연 월세 − 연 비용) ÷ (투자금 + 취득비용) × 100</b><br><br>
+    위 예시에 비용을 더해 보면:<br>
+    공실 1개월 반영 → 연 월세 약 770만원<br>
+    재산세·관리비·수선비 연 90만원, 대출이자 연 200만원 가정<br>
+    순수익 = 770만 − 90만 − 200만 = 480만원<br>
+    취득세 등 부대비용 600만원 포함 시 총투자금 ≈ 1억 9,600만원<br>
+    실질수익률 = 480만 ÷ 1억9,600만 × 100 ≈ <b>2.4%</b>
+  </div>
+  <p>같은 매물인데 표면 4.4%가 실질 2.4%로 줄었습니다. <b>광고 수익률과 실제 수익률의 간극</b>이 바로 여기서 생깁니다.</p>
+  <h2>3. 꼭 챙겨야 할 변수</h2>
+  <ul>
+    <li><b>공실률</b>: 세입자가 비는 기간. 연 월세에 (1 − 공실률)을 곱해 반영합니다.</li>
+    <li><b>세금</b>: 취득세, 보유 중 재산세·종부세, 임대소득세 등. 임대소득은 과세 대상이 될 수 있으니 세무 확인이 필요합니다.</li>
+    <li><b>관리·수선비</b>: 노후 주택일수록 커집니다.</li>
+    <li><b>대출이자</b>: 레버리지는 수익률을 키우기도, 금리 상승기엔 현금흐름을 갉아먹기도 합니다.</li>
+  </ul>
+  <h2>4. 파이어 관점 — 현금흐름으로 보기</h2>
+  <p>파이어를 준비할 때 임대 부동산은 '<b>매달 들어오는 현금흐름</b>'이라는 점에서 매력적입니다. 다만 위 계산처럼 실질수익률은 생각보다 낮고, 부동산은 <b>유동성이 낮고 공실·금리·정책 리스크</b>가 큽니다. 표면 숫자가 아니라 <b>실질수익률과 최악의 시나리오(공실·금리 상승)</b>까지 따져, 다른 자산과의 분산 관점에서 판단하는 것이 안전합니다. 본 글은 정보 제공용이며 특정 투자를 권유하지 않습니다.</p>
+  <a class="cta" href="https://firemap.kr/">내 현금흐름 목표로 파이어 시점 계산 →</a>
+  <h2>자주 묻는 질문 (FAQ)</h2>
+  <dl class="faq">
+    <dt>Q. 표면수익률은 어떻게 계산하나요?</dt>
+    <dd>연간 월세 ÷ (매매가 − 보증금) × 100 입니다. 비용을 뺀 게 아니라 비교용 지표입니다.</dd>
+    <dt>Q. 실질수익률은 무엇이 다른가요?</dt>
+    <dd>공실·세금·관리비·이자 등 실제 비용을 뺀 수익률로, 손에 쥐는 현금흐름에 가깝습니다.</dd>
+    <dt>Q. 공실은 어떻게 반영하나요?</dt>
+    <dd>연 월세에 (1 − 공실률)을 곱합니다. 공실 1개월이면 약 11개월치로 계산하는 식입니다.</dd>
+  </dl>
+  <a class="cta" href="https://firemap.kr/">🔥 내 파이어 가능 나이·필요 자산 1분 계산하기 →</a>
+  <footer>
+    <a href="https://firemap.kr/">파이어맵 홈</a>
+    <a href="https://firemap.kr/guide/">파이어 백과</a>
+    <a href="https://firemap.kr/privacy.html">개인정보처리방침</a>
+    <p>파이어맵은 입력값을 기계적으로 계산하는 참고용 시뮬레이션 도구이며, 투자·세무 자문이 아닙니다. 수익률 예시는 가정이며 실제와 다를 수 있습니다.</p>
+  </footer>
+</main>
+</body>
+</html>

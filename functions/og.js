@@ -28,8 +28,12 @@ const safeRunway = (v) => {
   const s = String(v == null ? '' : v).replace(/[^0-9세이상\s]/g, '').trim().slice(0, 12);
   return s || '—';
 };
+const safeText = (v, max) => String(v == null ? '' : v).replace(/[<>&"]/g, '').trim().slice(0, max);
 
 function buildSvg(q) {
+  if ((q.get('mode') || '') === 'firetype') {
+    return buildCardSvg({ mode: 'firetype', tname: safeText(q.get('tn'), 16), nick: safeText(q.get('nk'), 16), cities: safeText(q.get('ct'), 40), font: KR });
+  }
   const ea = intOr(q.get('ea'), 0, 0, 120);
   const pos = intOr(q.get('pos'), 0, 0, 9999999);
   const tot = Math.max(1, intOr(q.get('tot'), 1, 1, 9999999));

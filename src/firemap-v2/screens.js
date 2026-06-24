@@ -20,7 +20,8 @@ export const screens = {
   city:       { hash: '#city',       title: '도시 비교 · 해외 체류', type: 'tool', back: 'cities' },
   community:  { hash: '#community',  title: '커뮤니티',           type: 'tool', back: 'menu', tab: 'community' },
   ranking:    { hash: '#ranking',    title: 'FIRE 랭킹',          type: 'tool', back: 'result', tab: 'ranking' },
-  cities:     { hash: '#cities',     title: '지역별 파이어 (국내·해외)',      type: 'tool', back: 'menu' }
+  cities:     { hash: '#cities',     title: '지역별 파이어 (국내·해외)',      type: 'tool', back: 'menu' },
+  firetype:   { hash: '#firetype',   title: '파이어 유형 테스트',  type: 'tool', back: 'home', tab: 'home' }
 };
 
 export const NEXT_ACTION_META = {
@@ -32,6 +33,7 @@ export const NEXT_ACTION_META = {
 };
 
 export const TOOLS = [
+  { id: 'firetype',   tag: '신규',   title: '파이어 유형 테스트', desc: '9문항으로 내 파이어족 유형 + 살 도시 Top3' },
   { id: 'index',      tag: '데이터', title: '대한민국 파이어 지수', desc: '7천여 명 집계로 보는 또래 중 내 위치' },
   { id: 'experiment', tag: '비교',   title: '조건 바꿔 비교',     desc: '증권앱 차트로 What-If 비교' },
   { id: 'dependent',  tag: '건보료', title: '파이어 후 건보료', desc: '피부양자 박탈 여부 + 지역가입 월 건보료 추정' },

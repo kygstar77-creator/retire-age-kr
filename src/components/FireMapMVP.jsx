@@ -14,6 +14,7 @@ import MenuAll from './firemap/MenuAll.jsx';
 import BottomTabs from './firemap/BottomTabs.jsx';
 import Header from './firemap/Header.jsx';
 import DependentCheck from './firemap/DependentCheck.jsx';
+import FireTypeTest from './firemap/FireTypeTest.jsx';
 import { ForeignStockTaxCard, DividendCard, PensionEarlyClaimCard } from './firemap/TaxPensionModules.jsx';
 import FloatingFeedback from './firemap/FloatingFeedback.jsx';
 import Leaderboard from './firemap/Leaderboard.jsx';
@@ -198,6 +199,7 @@ export default function FireMapMVP() {
   else if (screen === 'community') view = <Community onBack={backOf('community')} onMove={setScreen} simulation={simulation} />;
   else if (screen === 'ranking') view = <Leaderboard simulation={simulation} rankingSimulation={rankingSimulation} onBack={backOf('ranking')} onMove={setScreen} />;
   else if (screen === 'cities') view = <CityExplorer inputs={inputs} simulation={simulation} onChange={onChange} onMove={setScreen} onBack={backOf('cities')} />;
+  else if (screen === 'firetype') view = <FireTypeTest simulation={simulation} onChange={onChange} onMove={setScreen} onBack={backOf('firetype')} />;
   else if (screen === 'dependent') view = tool('dependent', <DependentCheck inputs={inputs} onApply={applyPatch} />);
   else if (screen === 'foreignTax') view = tool('foreignTax', <><ForeignStockTaxCard inputs={inputs} onApply={applyPatch} /><DividendCard inputs={inputs} onApply={applyPatch} /></>);
   else if (screen === 'dividend') view = <DividendLifeCalc inputs={inputs} onChange={onChange} onMove={setScreen} onBack={backOf('dividend')} />;

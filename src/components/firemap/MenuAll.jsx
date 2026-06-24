@@ -29,6 +29,7 @@ const SECTIONS = [
   {
     label: '설계 도구',
     items: [
+      { ico: '🧭', title: '파이어 유형 테스트 ✨', desc: '9문항으로 내 파이어족 유형 + 살 도시 Top3 (공유)', to: 'firetype' },
       { ico: '🎛️', title: '조건 바꿔 비교', desc: '저축·수익률·은퇴나이 What-If', to: 'experiment' },
       { ico: '📍', title: '지역별 파이어 — 내 조건으로 비교', desc: '내 입력값 기준, 도시를 옮기면 파이어가 몇 년 당겨지는지', to: 'cities' }
     ]

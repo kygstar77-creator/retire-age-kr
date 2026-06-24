@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 // 화려하지만 가벼운 글로우 지구본 — cobe(~5KB)를 esm.sh에서 동적 로드(번들 무영향).
-// WebGL 불가 / prefers-reduced-motion / 로드 실패 시 정적 SVG 글로우 폴백으로 자동 전환.
+// WebGL 불가 / 로드 실패 시에만 정적 SVG 글로우 폴백. prefers-reduced-motion은 회전만 멈춤(글로브는 그대로 표시).
 // markers: [{ location:[lat,lon], size }], focus:[lat,lon] 으로 해당 지점을 정면으로 회전.
 function hexToRgb(hex) {
   const h = (hex || '#ff5a00').replace('#', '');
@@ -13,7 +13,7 @@ const webglOK = () => { try { const c = document.createElement('canvas'); return
 
 export default function CobeGlobe({ markers = [], focus = null, accent = '#ff5a00', size = 300 }) {
   const canvasRef = useRef(null);
-  const [fail, setFail] = useState(() => !webglOK() || reduceMotion());
+  const [fail, setFail] = useState(() => !webglOK());
 
   useEffect(() => {
     if (fail) return undefined;
@@ -42,7 +42,7 @@ export default function CobeGlobe({ markers = [], focus = null, accent = '#ff5a0
           glowColor: hexToRgb(accent),
           markers: m,
           onRender: (state) => {
-            if (!focus) { phi += 0.006; }
+            if (!focus && !reduceMotion()) { phi += 0.006; }
             state.phi = phi;
             state.theta = theta;
           }

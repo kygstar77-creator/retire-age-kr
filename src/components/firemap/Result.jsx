@@ -15,6 +15,7 @@ import { estimateLocalPremium } from '../../firemap-v2/healthInsurance.js';
 import { account } from '../../utils/identity.js';
 import OpenChatNotice from './OpenChatNotice.jsx';
 import InstallNudge from './InstallNudge.jsx';
+import FireTypePopup from './FireTypePopup.jsx';
 import YouTubeCard from './YouTubeCard.jsx';
 
 function ResultHeroV2({ simulation, rankingSimulation }) {
@@ -189,7 +190,6 @@ function YearlyAssetChart({ simulation }) {
   const W = 320, H = 120, P = 8;
   const X = (a) => P + ((a - a0) / Math.max(1, a1 - a0)) * (W - 2 * P);
   const Y = (v) => H - P - (v / maxV) * (H - 2 * P);
-  // 스택 영역: 원금(아래) + 불어난 돈(원금 위에)
   const principalTop = pts.map((p, i) => `${i ? 'L' : 'M'}${X(p.age).toFixed(1)} ${Y(p.principal).toFixed(1)}`).join(' ');
   const principalArea = `${principalTop} L${X(a1).toFixed(1)} ${(H - P).toFixed(1)} L${X(a0).toFixed(1)} ${(H - P).toFixed(1)} Z`;
   const totalTop = pts.map((p, i) => `${i ? 'L' : 'M'}${X(p.age).toFixed(1)} ${Y(p.v).toFixed(1)}`).join(' ');
@@ -427,6 +427,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
   };
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
+      <FireTypePopup onMove={onMove} />
       <Header home />
       <ResultSimTabs current="result" />
       <ResultHeroV2 simulation={simulation} rankingSimulation={rankingSimulation} />

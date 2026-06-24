@@ -60,7 +60,8 @@ function Result({ answers, simulation, onChange, onMove, onRestart }) {
     track('firetype_share', { type: A.id });
     const title = `나는 ${A.name} (${A.nick}) ☕🔥`;
     const desc = `추천 도시 ${recs.map((r) => r.city.city).join('·')} · 9문항으로 내 파이어 유형 찾기`;
-    try { await shareToKakao({ title, description: desc, imageUrl: 'https://firemap.kr/og-image.png', linkUrl: TEST_URL }); return; }
+    const ogImg = `https://firemap.kr/og?mode=firetype&tn=${encodeURIComponent(A.name)}&nk=${encodeURIComponent(A.nick)}&ct=${encodeURIComponent(recs.map((r) => r.city.city).join('·'))}`;
+    try { await shareToKakao({ title, description: desc, imageUrl: ogImg, linkUrl: TEST_URL }); return; }
     catch (e) { /* 폴백 */ }
     try { await navigator.clipboard.writeText(`${title}\n${desc}\n${TEST_URL}`); setFlash('링크를 복사했어요! 단톡방에 붙여넣어 보세요'); setTimeout(() => setFlash(''), 2500); }
     catch { /* ignore */ }

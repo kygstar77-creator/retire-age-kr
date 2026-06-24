@@ -14,6 +14,7 @@ import { track } from '../../firemap-v2/dailyData.js';
 import { estimateLocalPremium } from '../../firemap-v2/healthInsurance.js';
 import { account } from '../../utils/identity.js';
 import OpenChatNotice from './OpenChatNotice.jsx';
+import InstallNudge from './InstallNudge.jsx';
 import YouTubeCard from './YouTubeCard.jsx';
 
 function ResultHeroV2({ simulation, rankingSimulation }) {
@@ -444,6 +445,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
         </p>
         <button type="button" onClick={() => onMove('home')} style={{ display: 'block', width: '100%', padding: '13px 16px', borderRadius: '12px', border: 'none', background: '#1e2859', color: '#fff', fontSize: '14px', fontWeight: 700, cursor: 'pointer' }}>🗺️ 내 파이어 여정 지도 보기 →</button>
       </section>
+      <InstallNudge moment="result" />
       <AssetJourney simulation={simulation} />
       <MoatCard simulation={simulation} onMove={onMove} />
       <TopLevers inputs={inputs} simulation={simulation} onChange={onChange} />

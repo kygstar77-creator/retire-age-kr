@@ -1,6 +1,7 @@
 // 파이어 라이프 유형 테스트 — 데이터 + 채점 로직 (순수 모듈, 기존 계산/데이터 무손상·추가전용).
 // 결과: 8개 파이어족 유형 중 1개 + 내게 맞는 국내·해외 도시 Top3(파이어 적합도 분해 점수).
 // 도시 태그(nature/warm/medical 0~1)는 재미용 추정치이며 화면에 "추정" 표기.
+// 국내 월생활비는 통계청 1인가구·한국부동산원 월세지수 신호 참고한 추정(정확치 아님). 에이징인플레이스(KB골드라이프 2025: "살던 동네 유지" 80.4%) 수요 반영·국내 강화.
 
 // ── 도시 풀 (국내 8 + 해외 10) — 자기완결 데이터(좌표·월생활비·테마컬러·태그) ──
 export const TEST_CITIES = [
@@ -13,6 +14,10 @@ export const TEST_CITIES = [
   { city: '전주', country: '한국', flag: '🇰🇷', dom: true, lat: 35.82, lon: 127.15, krw: 1300000, c1: '#d97706', c2: '#fbbf24', nature: 0.50, warm: 0.55, medical: 0.70, blurb: '물가 낮고 음식 좋은 한옥의 도시, 느린 삶에 어울려요.' },
   { city: '경주', country: '한국', flag: '🇰🇷', dom: true, lat: 35.86, lon: 129.22, krw: 1300000, c1: '#ca8a04', c2: '#facc15', nature: 0.60, warm: 0.55, medical: 0.65, blurb: '천년 고도, 평지·자전거·역사. 조용한 정착에 좋아요.' },
   { city: '통영', country: '한국', flag: '🇰🇷', dom: true, lat: 34.85, lon: 128.43, krw: 1250000, c1: '#0891b2', c2: '#22d3ee', nature: 0.85, warm: 0.65, medical: 0.55, blurb: '한려수도의 바다, 저비용·풍광형 남해 소도시.' },
+  { city: '서울', country: '한국', flag: '🇰🇷', dom: true, lat: 37.57, lon: 126.98, krw: 2050000, c1: '#475569', c2: '#94a3b8', nature: 0.20, warm: 0.55, medical: 0.98, blurb: '모든 인프라·의료 최고지만 전국 최고 물가. 익숙한 곳 선호형.' },
+  { city: '인천', country: '한국', flag: '🇰🇷', dom: true, lat: 37.46, lon: 126.71, krw: 1650000, c1: '#2563eb', c2: '#60a5fa', nature: 0.40, warm: 0.55, medical: 0.85, blurb: '수도권 + 바다·공항, 서울보다 낮은 주거비.' },
+  { city: '대전', country: '한국', flag: '🇰🇷', dom: true, lat: 36.35, lon: 127.38, krw: 1450000, c1: '#7c3aed', c2: '#a78bfa', nature: 0.40, warm: 0.55, medical: 0.85, blurb: '교통의 중심, 무난한 물가와 든든한 의료.' },
+  { city: '여수', country: '한국', flag: '🇰🇷', dom: true, lat: 34.76, lon: 127.66, krw: 1300000, c1: '#0d9488', c2: '#2dd4bf', nature: 0.85, warm: 0.65, medical: 0.55, blurb: '밤바다와 섬, 남해안 풍광·저비용의 휴양 도시.' },
   // 해외
   { city: '치앙마이', country: '태국', flag: '🇹🇭', dom: false, lat: 18.8, lon: 99.0, krw: 2200000, c1: '#f97316', c2: '#fb923c', nature: 0.70, warm: 0.95, medical: 0.55, blurb: '카페·코워킹·사원과 산, 디지털 노마드의 성지.' },
   { city: '다낭', country: '베트남', flag: '🇻🇳', dom: false, lat: 16.0, lon: 108.2, krw: 2300000, c1: '#0ea5e9', c2: '#38bdf8', nature: 0.70, warm: 0.95, medical: 0.50, blurb: '긴 해변과 따뜻한 날씨, 낮은 물가로 시작하기 좋은 해외살이.' },
@@ -108,11 +113,9 @@ export function scoreAnswers(answers) {
 // 도시 파이어 적합도(0~100) + 분해. simulation 있으면 비용적합도에 실제 계산 반영.
 export function scoreCity(city, axes, simulation, buildScenario) {
   const kMin = 1250000; const kMax = 3800000;
-  // 비용 적합도: 저렴할수록↑, 절약 성향이 강할수록 가중↑
   const cheap = clamp01(1 - (city.krw - kMin) / (kMax - kMin));
   const frugalW = clamp01(0.5 + axes.frugal * 0.18);
   let costFit = cheap * (0.6 + frugalW * 0.4);
-  // 실제 계산: 이 생활비로 더 일찍 파이어되면 가점
   let fireAge = null;
   if (simulation && buildScenario) {
     try {
@@ -127,9 +130,8 @@ export function scoreCity(city, axes, simulation, buildScenario) {
   const warmUser = clamp01(0.5 + axes.warm * 0.2);
   const warmFit = 1 - Math.abs(city.warm - warmUser);
   const medicalFit = city.medical * clamp01(0.4 + axes.medical * 0.22);
-  const domWant = axes.dom; // +국내 -해외
+  const domWant = axes.dom;
   const domFit = domWant === 0 ? 0.6 : (city.dom === (domWant > 0) ? 1 : 0.25);
-  // 가중 합
   const raw = costFit * 0.34 + natureFit * 0.16 + warmFit * 0.12 + medicalFit * 0.16 + domFit * 0.22;
   const score = Math.round(clamp01(raw) * 100);
   return { score, fireAge, parts: { 비용: Math.round(costFit * 100), 자연: Math.round(natureFit * 100), 날씨: Math.round(warmFit * 100), 의료: Math.round(medicalFit * 100), 지역: Math.round(domFit * 100) } };

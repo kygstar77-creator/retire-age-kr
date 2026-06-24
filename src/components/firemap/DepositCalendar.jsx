@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { pushState, pullKey } from '../../utils/firemapStateApi.js';
 import { notifySavingsChanged, reportBoard } from '../../utils/savingsEngine.js';
-import { track } from '../../firemap-v2/dailyData.js';
+import { track, dailyNeedOf, fmtAdvance, wonStr } from '../../firemap-v2/dailyData.js';
 
 const readObj = (key) => { try { return JSON.parse(localStorage.getItem(key) || 'null') || {}; } catch { return {}; } };
 const readDays = (key, field) => { const o = readObj(key); return (o && o[field]) || {}; };
@@ -17,6 +17,8 @@ const EDIT_STYLE = `
 .fm-cal-edit{ margin-top:10px; align-items:center; }
 .fm-cal-edit-date{ font-size:12.5px; font-weight:800; color:#c2410c; flex:0 0 auto; }
 .fm-cal-hint{ font-size:11px; color:#9aa3bf; margin:8px 0 0; line-height:1.5; }
+.fm-cal button.fm-cal-cell.todo{ border:1.5px dashed #ff5a00; color:#c2410c; font-weight:800; animation:fmTodoPulse 1.6s ease-in-out infinite; }
+@keyframes fmTodoPulse{ 0%,100%{ box-shadow:0 0 0 0 rgba(255,90,0,0.0);} 50%{ box-shadow:0 0 0 3px rgba(255,90,0,0.18);} }
 `;
 
 // 저축 달력 — 이번 달 기록을 한눈에. editable=true면 과거(오늘 포함) 날짜를 눌러
@@ -26,6 +28,8 @@ export default function DepositCalendar({ storageKey = 'fm_daily', field = 'days
   const [days, setDays] = useState(() => readDays(storageKey, field));
   const [pick, setPick] = useState(null); // 선택된 날짜 'YYYY-MM-DD' | null
   const [amt, setAmt] = useState('');
+  const [flash, setFlash] = useState(null);
+  const flashRef = useRef(0);
   useEffect(() => {
     const h = () => setDays(readDays(storageKey, field));
     window.addEventListener('fm-savings-changed', h);
@@ -70,6 +74,13 @@ export default function DepositCalendar({ storageKey = 'fm_daily', field = 'days
     notifySavingsChanged();
     if (simulation) { try { reportBoard(simulation); } catch { /* ignore */ } }
     try { track('deposit_backfill', { date: pick, amt: v }); } catch { /* ignore */ }
+    if (v > 0 && simulation) {
+      try {
+        const need = dailyNeedOf(simulation);
+        const adv = need ? fmtAdvance((v / need) * 86400) : '';
+        if (adv) { setFlash({ won: v, adv }); window.clearTimeout(flashRef.current); flashRef.current = window.setTimeout(() => setFlash(null), 2800); }
+      } catch { /* ignore */ }
+    }
     setPick(null); setAmt('');
   };
 
@@ -77,6 +88,7 @@ export default function DepositCalendar({ storageKey = 'fm_daily', field = 'days
     <section className="fm-card fm-cal">
       {editable && <style>{EDIT_STYLE}</style>}
       <p className="fm-kicker">{m + 1}월 {label} 달력 · {logged}일 기록{editable ? ' · 날짜를 눌러 입력' : ''}</p>
+      {flash && <div className="fm-time-flash" role="status">⏱️ {wonStr(flash.won)} 기록! 파이어 <b>{flash.adv}</b> 당겨졌어요</div>}
       <div className="fm-cal-grid">
         {['일', '월', '화', '수', '목', '금', '토'].map((w) => <span key={w} className="fm-cal-w">{w}</span>)}
         {cells.map((d, i) => {
@@ -84,7 +96,7 @@ export default function DepositCalendar({ storageKey = 'fm_daily', field = 'days
           const key = ymd(y, m, d);
           const has = days[key] > 0;
           const future = d > today;
-          const cls = `fm-cal-cell${has ? ' on' : ''}${d === today ? ' today' : ''}${editable && future ? ' future' : ''}${editable && pick === key ? ' sel' : ''}`;
+          const cls = `fm-cal-cell${has ? ' on' : ''}${d === today ? ' today' : ''}${editable && d === today && !has ? ' todo' : ''}${editable && future ? ' future' : ''}${editable && pick === key ? ' sel' : ''}`;
           if (editable && !future) {
             return <button type="button" key={d} className={cls} onClick={() => openCell(d)} aria-label={`${m + 1}월 ${d}일 ${label} 입력`}>{d}</button>;
           }

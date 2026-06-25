@@ -39,7 +39,7 @@ export const ARCHETYPES = {
   barista: { id: 'barista', name: '바리스타 파이어형', nick: '느긋한 반일러', emoji: '☕', c1: '#c2410c', c2: '#fb923c',
     tagline: '좋아하는 일을 조금 하며 자유와 안정을 함께.', strong: '소액 근로로 건보료·생활비 부담이 확 줄어요.', watch: '일과 쉼의 균형 설계가 핵심.', match: 'coast' },
   coast:   { id: 'coast',   name: '코스트 파이어형', nick: '굴려두는 낙천가', emoji: '🌊', c1: '#0f766e', c2: '#2dd4bf',
-    tagline: '일찍 씨앗을 심고 복리가 일하게 두는 타입.', strong: '추가 저축 없이도 시간이 자산을 키워줘요.', watch: '시장 변동에 흔들리지 않는 멘탈이 필요.', match: 'barista' },
+    tagline: '일찍 모아둔 씨앗이 복리로 굵어지게 두고, 생활비는 일로 버는 타입.', strong: '추가 저축 없이 시간이 자산을 불려줘요.', watch: '목표 나이까진 근로 소득이 필요 — 완전 은퇴는 아직이에요.', match: 'barista' },
   fat:     { id: 'fat',     name: '팻파이어 여유형', nick: '우아한 미식가', emoji: '🍷', c1: '#6d28d9', c2: '#a78bfa',
     tagline: '넉넉한 자산으로 풍요롭게 즐기는 파이어.', strong: '삶의 질을 지키며 은퇴해요.', watch: '필요 자산이 커서 더 오래 모아야 해요.', match: 'lean' },
   settle:  { id: 'settle',  name: '눌러앉기형', nick: '내 동네 터줏대감', emoji: '🏡', c1: '#15803d', c2: '#4ade80',
@@ -57,12 +57,12 @@ export const ARCHETYPES = {
 export const QUESTIONS = [
   { q: '파이어 후, 돈 쓰는 스타일은?', opts: [
     { t: '극단적 절약 — 적게 쓰고 빨리 자유', arch: { lean: 3, coast: 1 }, ax: { frugal: 2 } },
-    { t: '딱 필요한 만큼, 균형 있게', arch: { barista: 2, settle: 1 }, ax: { frugal: 0 } },
+    { t: '딱 필요한 만큼, 균형 있게', arch: { barista: 2, settle: 1, coast: 1 }, ax: { frugal: 0 } },
     { t: '쓸 땐 쓰는 여유로운 삶', arch: { fat: 3 }, ax: { frugal: -2 } } ] },
   { q: '은퇴 후에도 일은?', opts: [
-    { t: '완전히 안 한다', arch: { fat: 2, coast: 1, settle: 1 }, ax: {} },
-    { t: '좋아하는 일 조금(반일)', arch: { barista: 3 }, ax: {} },
-    { t: '투자만 굴리고 손 뗀다', arch: { coast: 3 }, ax: {} } ] },
+    { t: '완전히 그만두고 쉰다', arch: { fat: 2, settle: 1 }, ax: {} },
+    { t: '좋아하는 일로 반일 근로(건강보험·여유 챙기기)', arch: { barista: 3 }, ax: {} },
+    { t: '생활비는 일로 벌고, 투자 추가만 멈춘다', arch: { coast: 3 }, ax: {} } ] },
   { q: '살고 싶은 풍경은?', opts: [
     { t: '바다·산 — 자연 속에서', arch: { nature: 3, monthly: 1 }, ax: { nature: 2 } },
     { t: '활기찬 도시', arch: { fat: 1, nomad: 1 }, ax: { nature: -2 } },
@@ -81,14 +81,14 @@ export const QUESTIONS = [
     { t: '덜 중요 — 자유가 우선', arch: { nomad: 2, nature: 1 }, ax: { medical: -1 } } ] },
   { q: '한 달 생활비, 이상적인 수준은?', opts: [
     { t: '150만 원 이하로 단단하게', arch: { lean: 3, nature: 1 }, ax: { frugal: 2 } },
-    { t: '200만 원 안팎', arch: { barista: 1, monthly: 1 }, ax: { frugal: 0 } },
+    { t: '200만 원 안팎', arch: { barista: 1, monthly: 1, coast: 1 }, ax: { frugal: 0 } },
     { t: '넉넉하게 300만 원 이상', arch: { fat: 3 }, ax: { frugal: -2 } } ] },
   { q: '새로운 환경에 대한 마음은?', opts: [
     { t: '설렘 — 자꾸 옮겨보고 싶다', arch: { monthly: 2, nomad: 2 }, ax: {} },
     { t: '익숙함이 편하다', arch: { settle: 3 }, ax: { dom: 1, medical: 1 } },
     { t: '거점 두고 가끔 여행', arch: { coast: 1, barista: 1 }, ax: {} } ] },
   { q: '파이어에서 가장 중요한 건?', opts: [
-    { t: '최대한 빨리 자유', arch: { lean: 2, coast: 1 }, ax: { frugal: 1 } },
+    { t: '최대한 빨리 자유', arch: { lean: 3 }, ax: { frugal: 1 } },
     { t: '일·취미의 균형', arch: { barista: 2 }, ax: {} },
     { t: '삶의 질·여유', arch: { fat: 2 }, ax: { frugal: -1 } },
     { t: '안정·뿌리내림', arch: { settle: 2, nature: 1 }, ax: { dom: 1 } } ] }

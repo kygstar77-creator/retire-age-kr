@@ -48,6 +48,19 @@ function mergeDaily(localV, serverV) {
   }
   return { ...(serverV || {}), ...(localV || {}), days };
 }
+
+// 외부(저축 화면)에서 재사용 + fm_daily 안전 기록: 서버의 기존 날짜를 절대 잃지 않게 병합 저장(추가전용).
+// 과거: pushState로 통째 덮어써서, 로컬이 비거나 stale일 때(재로그인·빠른 탭) 서버의 지난 날짜가 날아갔음 → 그 버그를 막음.
+export function mergeDailyValues(localV, serverV) { return mergeDaily(localV, serverV); }
+export async function pushDailyMerged(localNext) {
+  const a = authed();
+  if (!a) return localNext; // 비로그인: 로컬만(서버 동기화 없음)
+  let server = null;
+  try { server = await pullKey('fm_daily'); } catch { server = null; }
+  const merged = mergeDaily(localNext, server); // union·max → 어떤 날짜도 손실 없음
+  try { await pushState('fm_daily', merged); } catch { /* ignore */ }
+  return merged;
+}
 // 절약 병합: 누적/연속은 더 멀리 간 값(max), 오늘분은 오늘인 쪽의 큰 값
 function mergeSave(localV, serverV) {
   if (!localV) return serverV;

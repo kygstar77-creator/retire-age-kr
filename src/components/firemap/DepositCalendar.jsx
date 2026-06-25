@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { pushState, pullKey } from '../../utils/firemapStateApi.js';
+import { pushState, pullKey, pushDailyMerged } from '../../utils/firemapStateApi.js';
 import { notifySavingsChanged, reportBoard } from '../../utils/savingsEngine.js';
 import { track, dailyNeedOf, fmtAdvance, wonStr } from '../../firemap-v2/dailyData.js';
 
@@ -70,9 +70,18 @@ export default function DepositCalendar({ storageKey = 'fm_daily', field = 'days
     const next = { ...obj, [field]: nextDays };
     try { localStorage.setItem(storageKey, JSON.stringify(next)); } catch { /* ignore */ }
     setDays(nextDays);
-    pushState(storageKey, next);
-    notifySavingsChanged();
-    if (simulation) { try { reportBoard(simulation); } catch { /* ignore */ } }
+    if (storageKey === 'fm_daily') {
+      // 적립 캘린더: 서버 기존 날짜 보존하며 병합 저장(추가전용)
+      pushDailyMerged(next).then((merged) => {
+        try { const o2 = readObj(storageKey); localStorage.setItem(storageKey, JSON.stringify({ ...o2, [field]: merged.days || {} })); } catch { /* ignore */ }
+        setDays(merged.days || {}); notifySavingsChanged();
+        if (simulation) { try { reportBoard(simulation); } catch { /* ignore */ } }
+      });
+    } else {
+      pushState(storageKey, next);
+      notifySavingsChanged();
+      if (simulation) { try { reportBoard(simulation); } catch { /* ignore */ } }
+    }
     try { track('deposit_backfill', { date: pick, amt: v }); } catch { /* ignore */ }
     if (v > 0 && simulation) {
       try {

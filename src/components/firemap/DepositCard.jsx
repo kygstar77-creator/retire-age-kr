@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { pushState, pullKey } from '../../utils/firemapStateApi.js';
+import { pushState, pullKey, pushDailyMerged, mergeDailyValues } from '../../utils/firemapStateApi.js';
 import { notifySavingsChanged, reportBoard } from '../../utils/savingsEngine.js';
 import { track } from '../../firemap-v2/dailyData.js';
 
@@ -36,7 +36,7 @@ export default function DepositCard({ simulation, onMove }) {
 
   useEffect(() => {
     let alive = true;
-    pullKey('fm_daily').then((v) => { if (alive && v && v.days) { try { localStorage.setItem('fm_daily', JSON.stringify(v)); } catch { /* ignore */ } setCfg(v); notifySavingsChanged(); } });
+    pullKey('fm_daily').then((v) => { if (alive && v && v.days) { const merged = mergeDailyValues(load() || { days: {} }, v); try { localStorage.setItem('fm_daily', JSON.stringify(merged)); } catch { /* ignore */ } setCfg(merged); notifySavingsChanged(); } });
     return () => { alive = false; };
   }, []);
 
@@ -68,7 +68,8 @@ export default function DepositCard({ simulation, onMove }) {
     const amt = suggested;
     const nextDays = { ...days, [today]: amt };
     const next = { ...cfg, days: nextDays };
-    save(next); setCfg(next); pushState('fm_daily', next); notifySavingsChanged(); reportBoard(simulation);
+    save(next); setCfg(next); notifySavingsChanged();
+    pushDailyMerged(next).then((merged) => { save(merged); setCfg(merged); notifySavingsChanged(); reportBoard(simulation); });
     try { track('deposit_log', { mode: 'quick', amt }); } catch { /* ignore */ }
   };
   const saveToday = () => {
@@ -76,7 +77,8 @@ export default function DepositCard({ simulation, onMove }) {
     const nextDays = { ...days };
     if (amt > 0) nextDays[selDate] = amt; else delete nextDays[selDate];
     const next = { ...cfg, days: nextDays };
-    save(next); setCfg(next); pushState('fm_daily', next); notifySavingsChanged(); reportBoard(simulation);
+    save(next); setCfg(next); notifySavingsChanged();
+    pushDailyMerged(next).then((merged) => { save(merged); setCfg(merged); notifySavingsChanged(); reportBoard(simulation); });
     try { track('deposit_log', { mode: 'manual', amt }); } catch { /* ignore */ }
     setEditing(false);
   };

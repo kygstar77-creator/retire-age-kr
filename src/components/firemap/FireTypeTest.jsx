@@ -49,7 +49,7 @@ function Result({ answers, simulation, onChange, onMove, onRestart }) {
   const [reveal, setReveal] = useState(false);
   const [flash, setFlash] = useState('');
   useEffect(() => {
-    track('firetype_result', { type: A.id, top: recs[0] && recs[0].city.city });
+    track('firetype_result', { type: A.id, top: recs[0] && recs[0].city.city, qa: (answers || []).join(''), nq: (answers || []).length });
     try { localStorage.setItem('fm_firetype_done', '1'); } catch { /* 유형 확인 완료 → 홈 권유 팝업 중단 */ }
     const t = setTimeout(() => setReveal(true), 120);
     return () => clearTimeout(t);

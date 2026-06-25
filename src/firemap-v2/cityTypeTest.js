@@ -28,7 +28,8 @@ export const TEST_CITIES = [
   { city: '후쿠오카', country: '일본', flag: '🇯🇵', dom: false, lat: 33.6, lon: 130.4, krw: 3300000, c1: '#3b82f6', c2: '#60a5fa', nature: 0.45, warm: 0.60, medical: 0.85, blurb: '한국과 가깝고 음식·치안 최고, 도시와 자연이 한 시간.' },
   { city: '방콕', country: '태국', flag: '🇹🇭', dom: false, lat: 13.7, lon: 100.5, krw: 2700000, c1: '#f59e0b', c2: '#fbbf24', nature: 0.20, warm: 0.95, medical: 0.70, blurb: '없는 게 없는 대도시 + 저렴한 외식, 의료관광 허브.' },
   { city: '호치민', country: '베트남', flag: '🇻🇳', dom: false, lat: 10.8, lon: 106.7, krw: 2200000, c1: '#06b6d4', c2: '#22d3ee', nature: 0.20, warm: 0.95, medical: 0.50, blurb: '활기찬 거리와 초저비용, 빠르게 성장하는 노마드 도시.' },
-  { city: '페낭', country: '말레이시아', flag: '🇲🇾', dom: false, lat: 5.4, lon: 100.3, krw: 2500000, c1: '#a855f7', c2: '#c084fc', nature: 0.55, warm: 0.95, medical: 0.75, blurb: '해변 + 유네스코 올드타운, 영어 통하고 의료 좋은 섬도시.' }
+  { city: '페낭', country: '말레이시아', flag: '🇲🇾', dom: false, lat: 5.4, lon: 100.3, krw: 2500000, c1: '#a855f7', c2: '#c084fc', nature: 0.55, warm: 0.95, medical: 0.75, blurb: '해변 + 유네스코 올드타운, 영어 통하고 의료 좋은 섬도시.' },
+  { city: '세부', country: '필리핀', flag: '🇵🇭', dom: false, lat: 10.3, lon: 123.9, krw: 2100000, c1: '#14b8a6', c2: '#2dd4bf', nature: 0.85, warm: 0.95, medical: 0.55, blurb: '에메랄드 바다와 다이빙, 영어 통하는 저비용 휴양형 섬도시.' }
 ];
 
 // ── 8개 파이어족 유형 ──

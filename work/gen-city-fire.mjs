@@ -12,7 +12,9 @@ const SLUG = {
   '제주(서귀포)': 'jeju', '부산': 'busan', '강릉': 'gangneung', '양평': 'yangpyeong', '속초': 'sokcho',
   '전주': 'jeonju', '경주': 'gyeongju', '통영': 'tongyeong', '서울': 'seoul', '인천': 'incheon', '대전': 'daejeon', '여수': 'yeosu',
   '치앙마이': 'chiangmai', '다낭': 'danang', '우붓(발리)': 'ubud-bali', '쿠알라룸푸르': 'kuala-lumpur',
-  '트빌리시': 'tbilisi', '리스본': 'lisbon', '후쿠오카': 'fukuoka', '방콕': 'bangkok', '호치민': 'hochiminh', '페낭': 'penang', '세부': 'cebu'
+  '트빌리시': 'tbilisi', '리스본': 'lisbon', '후쿠오카': 'fukuoka', '방콕': 'bangkok', '호치민': 'hochiminh', '페낭': 'penang', '세부': 'cebu',
+  '하노이': 'hanoi', '푸꾸옥': 'phu-quoc', '달랏': 'da-lat', '카메론하이랜드': 'cameron-highlands', '바기오': 'baguio',
+  '메데인': 'medellin', '부다페스트': 'budapest', '삿포로': 'sapporo', '바르셀로나': 'barcelona', '타이베이': 'taipei', '오사카': 'osaka'
 };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const eok = (won) => { const m = Math.round(won / 10000); return m >= 10000 ? `${(m / 10000).toFixed(1)}억원` : `${m.toLocaleString()}만원`; };

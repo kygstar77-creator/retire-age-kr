@@ -84,6 +84,7 @@ function Result({ answers, simulation, onChange, onMove, onRestart }) {
         <div className="fm-ft-sw">
           <span><b>강점</b> {A.strong}</span>
           <span><b>주의</b> {A.watch}</span>
+          {A.action && <span><b>추천 행동</b> {A.action}</span>}
         </div>
         <p className="fm-ft-match">잘 맞는 유형 · <b>{match.emoji} {match.nick}</b></p>
       </section>

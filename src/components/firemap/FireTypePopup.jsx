@@ -3,23 +3,37 @@ import { track } from '../../firemap-v2/dailyData.js';
 
 // 결과 직후 1회성 화려한 풀스크린 팝업 — 파이어 유형 테스트로 유도(유입 루프).
 // 닫거나 시작하면 일정 기간 재노출 자제(localStorage). 비로그인·무설치.
-const KEY = 'fm_firetype_popup_v1';
-const SUPPRESS_DAYS = 21;
+const SEEN = 'fm_firetype_popup_v1';            // 최근 노출 시각 — 연속 새로고침 스팸만 차단(짧은 쿨다운)
+const SNOOZE = 'fm_firetype_snooze';            // '다음에 할게요' — 명시적 거절(조금 더 길게 자제)
+const DONE = 'fm_firetype_done';                // 유형테스트 완료 — 더 이상 권유하지 않음
+const SEEN_COOLDOWN_MS = 30 * 60 * 1000;        // 30분: 이후 새로고침/재방문 때 다시 노출
+const SNOOZE_MS = 24 * 60 * 60 * 1000;          // 1일: '다음에' 누른 사용자 배려
+const readTs = (k) => { try { return Number(localStorage.getItem(k) || 0) || 0; } catch { return 0; } };
+// 안 떠야 하는 경우: (1) 이미 유형 확인 완료, (2) 최근 '다음에' 거절, (3) 방금 노출(쿨다운). 그 외엔 홈/결과에서 노출.
 function suppressed() {
-  try { const v = localStorage.getItem(KEY); if (!v) return false; const t = Number(v); return t ? (Date.now() - t) < SUPPRESS_DAYS * 86400000 : true; } catch { return false; }
+  try {
+    if (localStorage.getItem(DONE) === '1') return true;
+    const sn = readTs(SNOOZE); if (sn && Date.now() - sn < SNOOZE_MS) return true;
+    const se = readTs(SEEN); if (se && Date.now() - se < SEEN_COOLDOWN_MS) return true;
+    return false;
+  } catch { return false; }
 }
 
 export default function FireTypePopup({ onMove }) {
   const [open, setOpen] = useState(false);
   useEffect(() => {
     if (suppressed()) return undefined;
-    const t = setTimeout(() => { setOpen(true); try { track('firetype_popup_view'); } catch { /* ignore */ } }, 1400);
+    const t = setTimeout(() => {
+      setOpen(true);
+      try { localStorage.setItem(SEEN, String(Date.now())); } catch { /* ignore */ } // 노출 즉시 쿨다운 시작(스팸 방지)
+      try { track('firetype_popup_view'); } catch { /* ignore */ }
+    }, 1400);
     return () => clearTimeout(t);
   }, []);
   if (!open) return null;
-  const stamp = () => { try { localStorage.setItem(KEY, String(Date.now())); } catch { /* ignore */ } };
-  const go = () => { stamp(); try { track('firetype_popup_go'); } catch { /* ignore */ } setOpen(false); if (onMove) onMove('firetype'); };
-  const close = () => { stamp(); try { track('firetype_popup_close'); } catch { /* ignore */ } setOpen(false); };
+  const go = () => { try { track('firetype_popup_go'); } catch { /* ignore */ } setOpen(false); if (onMove) onMove('firetype'); };
+  const close = () => { try { track('firetype_popup_close'); } catch { /* ignore */ } setOpen(false); };
+  const later = () => { try { localStorage.setItem(SNOOZE, String(Date.now())); } catch { /* ignore */ } try { track('firetype_popup_later'); } catch { /* ignore */ } setOpen(false); };
 
   return (
     <div role="dialog" aria-modal="true" onClick={close} style={{
@@ -44,7 +58,7 @@ export default function FireTypePopup({ onMove }) {
         <h2 style={{ position: 'relative', margin: '0 0 8px', fontSize: 23, fontWeight: 900, lineHeight: 1.3 }}>나는 어떤 <span style={{ background: 'linear-gradient(90deg,#ff8a4c,#ffd166)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>파이어족</span>일까?</h2>
         <p style={{ position: 'relative', margin: '0 0 18px', fontSize: 13.5, lineHeight: 1.6, color: '#c7cce0' }}>9문항으로 내 유형 + 나에게 맞는<br /><b style={{ color: '#fff' }}>국내·해외 도시 Top3</b>를 찾아드려요.</p>
         <button type="button" onClick={go} style={{ position: 'relative', width: '100%', padding: '14px', borderRadius: 14, border: 0, fontSize: 15.5, fontWeight: 800, color: '#1a1330', background: 'linear-gradient(90deg,#ff8a4c,#ffd166)', cursor: 'pointer', boxShadow: '0 8px 26px #ff7a3c55' }}>내 파이어 유형 보기 →</button>
-        <button type="button" onClick={close} style={{ position: 'relative', marginTop: 10, background: 'transparent', border: 0, color: '#8b91ad', fontSize: 12.5, fontWeight: 700, cursor: 'pointer' }}>다음에 할게요</button>
+        <button type="button" onClick={later} style={{ position: 'relative', marginTop: 10, background: 'transparent', border: 0, color: '#8b91ad', fontSize: 12.5, fontWeight: 700, cursor: 'pointer' }}>다음에 할게요</button>
       </div>
     </div>
   );

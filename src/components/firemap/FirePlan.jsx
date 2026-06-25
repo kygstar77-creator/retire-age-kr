@@ -13,6 +13,7 @@ import CompletionCard from './CompletionCard.jsx';
 import StageTargets from './StageTargets.jsx';
 import JourneyPulse from './JourneyPulse.jsx';
 import OpenChatNotice from './OpenChatNotice.jsx';
+import FireTypePopup from './FireTypePopup.jsx';
 import { account } from '../../utils/identity.js';
 
 const won = (n) => formatWon(Math.round(n || 0));
@@ -88,6 +89,7 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
       <StageTargets simulation={simulation} onMove={onMove} />
 
       {asHome && <OpenChatNotice />}
+      {asHome && <FireTypePopup onMove={onMove} />}
 
       {asHome && <FireClockPush simulation={simulation} />}
 

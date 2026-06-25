@@ -4,6 +4,7 @@
 import { initWasm, Resvg } from '@resvg/resvg-wasm';
 import resvgWasm from '@resvg/resvg-wasm/index_bg.wasm';
 import { BOLD_B64, REGULAR_B64 } from './og-fonts.js';
+import { FT_BOLD_B64, FT_REGULAR_B64 } from './og-fonts-ft.js';
 import { buildCardSvg } from './og-card.js';
 
 const KR = 'Noto Sans CJK KR';
@@ -17,6 +18,8 @@ function b64ToBytes(b64) {
 }
 const BOLD = b64ToBytes(BOLD_B64);
 const REGULAR = b64ToBytes(REGULAR_B64);
+const FT_BOLD = b64ToBytes(FT_BOLD_B64);
+const FT_REGULAR = b64ToBytes(FT_REGULAR_B64);
 
 const comma = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 const intOr = (v, d, lo, hi) => {
@@ -50,7 +53,7 @@ export async function onRequest(context) {
     const svg = buildSvg(url.searchParams);
     const resvg = new Resvg(svg, {
       fitTo: { mode: 'width', value: 1200 },
-      font: { fontBuffers: [BOLD, REGULAR], defaultFontFamily: KR, loadSystemFonts: false }
+      font: { fontBuffers: [BOLD, REGULAR, FT_BOLD, FT_REGULAR], defaultFontFamily: KR, loadSystemFonts: false }
     });
     const png = resvg.render().asPng();
     return new Response(png, {

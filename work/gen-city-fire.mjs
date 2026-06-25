@@ -43,14 +43,14 @@ function cityPage(c, siblings) {
   const faqs = [
     { q: `${c.city}에서 한 달 생활비는 얼마인가요?`, a: `1인 기준 월 약 ${eok(c.krw)}로 추정해요(주거 포함, 통계·물가 기반 추정치). 실제는 주거 형태·환율에 따라 달라져요.` },
     { q: `${c.city}에서 파이어하려면 자산이 얼마나 필요한가요?`, a: `4%룰(연 생활비÷0.04) 기준 약 ${eok(required)}가 필요해요. 국민연금·부업·임대수입이 있으면 더 적어도 돼요 — 계산기로 내 조건을 넣어보세요.` },
-    { q: `${c.city}는 어떤 파이어족에게 어울리나요?`, a: `${c.blurb} 9문항 '파이어 유형 테스트'로 나에게 맞는지 확인할 수 있어요.` }
+    { q: `${c.city}는 어떤 파이어족에게 어울리나요?`, a: `${c.blurb} 12문항 '파이어 유형 테스트'로 나에게 맞는지 확인할 수 있어요.` }
   ];
   const ld = [placeLd(c), faqLd(faqs), crumbLd(c.city)];
   const sibLinks = siblings.map((s) => `<a href="${BASE}/fire-city/${SLUG[s.city] || encodeURIComponent(s.city)}/">${esc(s.city)}</a>`).join(' ');
   const body = `<h1>${esc(c.city)}에서 파이어하면? 월 생활비·필요 자산</h1>
 <p>${esc(c.country)} · ${esc(c.blurb)}</p>
 <div class="stat"><div><small>예상 월 생활비(1인)</small><b>약 ${eok(c.krw)}</b></div><div><small>연 생활비</small><b>약 ${eok(annual)}</b></div><div><small>4%룰 필요 자산</small><b>약 ${eok(required)}</b></div></div>
-<a class="cta" href="${BASE}/#firetype">🌍 9문항으로 내 파이어 유형 + 맞는 도시 Top3 보기</a>
+<a class="cta" href="${BASE}/#firetype">🌍 12문항으로 내 파이어 유형 + 맞는 도시 Top3 보기</a>
 <h2>내 조건으로 정확히 계산하기</h2>
 <p>위 필요 자산은 생활비만으로 잡은 추정이에요. 국민연금·건강보험료·세금·부업까지 반영한 <b>내 파이어 가능 나이</b>는 계산기로 확인하세요.</p>
 <a class="cta" href="${BASE}/">🔥 내 파이어 나이 계산하기 (1분)</a>

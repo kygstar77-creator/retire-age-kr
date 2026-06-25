@@ -14,7 +14,7 @@ function Cover({ onStart }) {
     <div className="fm-ft-cover">
       <style>{COVER_CSS}</style>
       <div className="fm-ft-cover-glow" aria-hidden="true" />
-      <p className="fm-ft-kick">9문항 · 30초</p>
+      <p className="fm-ft-kick">12문항 · 1분</p>
       <h1 className="fm-ft-title">나는 어떤<br /><span>파이어족</span>일까?</h1>
       <p className="fm-ft-sub">유형 + 나에게 맞는 <b>국내·해외 도시 Top3</b>를 찾아드려요.<br />로그인 없이 바로 시작.</p>
       <button type="button" className="fm-ft-start" onClick={onStart}>테스트 시작하기 →</button>
@@ -60,7 +60,7 @@ function Result({ answers, simulation, onChange, onMove, onRestart }) {
   const share = async () => {
     track('firetype_share', { type: A.id });
     const title = `나는 ${A.name} (${A.nick}) ☕🔥`;
-    const desc = `추천 도시 ${recs.map((r) => r.city.city).join('·')} · 9문항으로 내 파이어 유형 찾기`;
+    const desc = `추천 도시 ${recs.map((r) => r.city.city).join('·')} · 12문항으로 내 파이어 유형 찾기`;
     // v=ft2: 보충 폰트(og-fonts-ft) 적용 후 새 URL로 분리 → 카카오/CDN의 폰트픽스 이전 캐시 우회(재크롤)
     const ogImg = `https://firemap.kr/og?mode=firetype&v=ft2&tn=${encodeURIComponent(A.name)}&nk=${encodeURIComponent(A.nick)}&ct=${encodeURIComponent(recs.map((r) => r.city.city).join('·'))}`;
     try { await shareToKakao({ title, description: desc, imageUrl: ogImg, linkUrl: TEST_URL }); return; }

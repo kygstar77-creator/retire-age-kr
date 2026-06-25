@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>72의 법칙 — 내 돈이 두 배 되는 기간 계산하는 법 | 파이어맵</title>
+  <meta name="description" content="72의 법칙으로 복리 효과를 1초 만에 가늠하는 법: 72 ÷ 연수익률 = 원금이 두 배 되는 햇수. 수익률별 두 배 기간 표, 물가(인플레이션)에 적용하는 법, 그리고 복리가 파이어를 앞당기는 원리까지 쉽게 정리했어요. 내 파이어 나이는 1분 만에 계산해 보세요." />
+  <meta name="keywords" content="72의 법칙, 복리, 복리 계산, 돈 두 배, 72 법칙, 복리의 마법, 인플레이션, 파이어, 파이어 계산기" />
+  <link rel="canonical" href="https://firemap.kr/guide/rule-of-72-compounding.html" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="파이어맵" />
+  <meta property="og:title" content="72의 법칙 — 내 돈이 두 배 되는 기간 계산하는 법" />
+  <meta property="og:description" content="72 ÷ 연수익률 = 두 배 되는 햇수. 수익률별 표와 인플레이션 적용법, 복리가 파이어를 앞당기는 원리." />
+  <meta property="og:url" content="https://firemap.kr/guide/rule-of-72-compounding.html" />
+  <meta property="og:image" content="https://firemap.kr/og-image.png?v=firemap-screens-v7-20260613" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "72의 법칙 — 내 돈이 두 배 되는 기간 계산하는 법",
+    "description": "72의 법칙으로 복리 효과를 가늠하는 법과 수익률별 두 배 기간, 인플레이션 적용, 파이어와의 관계.",
+    "inLanguage": "ko",
+    "author": { "@type": "Organization", "name": "파이어맵" },
+    "publisher": { "@type": "Organization", "name": "파이어맵", "url": "https://firemap.kr" },
+    "mainEntityOfPage": "https://firemap.kr/guide/rule-of-72-compounding.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "72의 법칙이 뭔가요?", "acceptedAnswer": { "@type": "Answer", "text": "복리로 원금이 두 배가 되는 데 걸리는 햇수를 빠르게 어림하는 공식입니다. '72 ÷ 연수익률(%) = 두 배 되는 햇수'예요. 예를 들어 연 6% 복리면 72 ÷ 6 = 약 12년 만에 원금이 두 배가 됩니다." } },
+      { "@type": "Question", "name": "72의 법칙은 정확한가요?", "acceptedAnswer": { "@type": "Answer", "text": "어림 공식이라 정확한 값은 아니지만, 연 6~10% 구간에서는 실제 복리 계산과 매우 가깝습니다. 빠르게 감을 잡는 용도로 충분하며, 정밀한 금액은 복리 계산이나 시뮬레이터로 확인하세요." } },
+      { "@type": "Question", "name": "인플레이션에도 쓸 수 있나요?", "acceptedAnswer": { "@type": "Answer", "text": "네. 물가상승률에 적용하면 '돈의 가치가 절반이 되는 기간'을 알 수 있습니다. 예를 들어 물가가 매년 3%씩 오르면 72 ÷ 3 = 24년 만에 화폐 구매력이 절반으로 떨어집니다." } }
+    ]
+  }
+  </script>
+  <style>
+    :root{--orange:#ff5a00;--ink:#18212c;--mut:#5b6470;--line:#eceff3;--soft:#fff7f2}
+    *{box-sizing:border-box}
+    body{margin:0;background:#fffdf9;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.75;font-size:16px}
+    main{max-width:760px;margin:0 auto;padding:28px 20px 80px}
+    .top{font-size:13px}.top a{color:var(--orange);font-weight:800;text-decoration:none}
+    h1{font-size:30px;letter-spacing:-.04em;line-height:1.25;margin:14px 0 6px}
+    .lead{color:var(--mut);font-size:16px;margin:0 0 8px}
+    h2{font-size:22px;margin:34px 0 10px;letter-spacing:-.02em}
+    h3{font-size:17px;margin:20px 0 6px}
+    p{margin:10px 0}
+    ul{padding-left:20px}li{margin:6px 0}
+    .cta{display:block;background:var(--orange);color:#fff;text-align:center;font-weight:800;font-size:16px;padding:15px;border-radius:14px;text-decoration:none;margin:22px 0}
+    .box{background:var(--soft);border:1px solid #ffe1d0;border-radius:16px;padding:16px 18px;margin:18px 0}
+    table{width:100%;border-collapse:collapse;margin:12px 0;font-size:15px}
+    th,td{border:1px solid var(--line);padding:9px 10px;text-align:left}
+    th{background:#f7f8fa}
+    .faq dt{font-weight:800;margin-top:14px}
+    .faq dd{margin:4px 0 0;color:var(--mut)}
+    footer{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;font-size:13px;color:var(--mut)}
+    footer a{color:var(--orange);font-weight:700;text-decoration:none;margin-right:14px}
+  </style>
+</head>
+<body>
+<main>
+  <p class="top"><a href="https://firemap.kr/">🔥 파이어맵 — 내 파이어 가능 나이 1분 계산</a></p>
+  <h1>72의 법칙으로 보는 복리의 힘</h1>
+  <p class="lead">'내 돈이 두 배 되는 데 몇 년 걸릴까?'를 암산으로 푸는 마법의 공식이 있어요. 바로 72의 법칙. 복리가 왜 파이어의 엔진인지 한눈에 보여주는 도구죠.</p>
+
+  <a class="cta" href="https://firemap.kr/">내 파이어 가능 나이 1분 만에 계산하기 →</a>
+
+  <h2>1. 72의 법칙이란?</h2>
+  <p>복리로 <b>원금이 두 배가 되는 데 걸리는 햇수</b>를 빠르게 어림하는 공식입니다.</p>
+  <div class="box">
+    <b>두 배 되는 햇수 ≈ 72 ÷ 연수익률(%)</b><br><br>
+    예) 연 6% → 72 ÷ 6 = <b>약 12년</b><br>
+    예) 연 8% → 72 ÷ 8 = <b>약 9년</b><br>
+    예) 연 9% → 72 ÷ 9 = <b>약 8년</b>
+  </div>
+  <p>반대로 햇수를 알면 필요한 수익률도 거꾸로 구할 수 있어요. '10년 안에 두 배'를 원하면 72 ÷ 10 = 약 7.2%의 연수익률이 필요한 식입니다.</p>
+
+  <h2>2. 수익률별 '두 배 되는 기간'</h2>
+  <table>
+    <tr><th>연수익률</th><th>두 배 되는 기간(약)</th></tr>
+    <tr><td>3%</td><td>24년</td></tr>
+    <tr><td>5%</td><td>14.4년</td></tr>
+    <tr><td>6%</td><td>12년</td></tr>
+    <tr><td>8%</td><td>9년</td></tr>
+    <tr><td>10%</td><td>7.2년</td></tr>
+  </table>
+  <p>수익률이 조금만 높아져도 두 배 되는 기간이 확 줄어드는 게 보이죠. 수수료·세금을 줄여 실질 수익률을 1~2%p만 끌어올려도 장기적으로 자산 차이가 크게 벌어지는 이유입니다.</p>
+  <a class="cta" href="https://firemap.kr/">복리로 내 자산이 언제 목표에 닿는지 계산 →</a>
+
+  <h2>3. 인플레이션에도 쓰는 72의 법칙</h2>
+  <p>같은 공식을 <b>물가상승률</b>에 적용하면 '돈의 가치가 절반이 되는 기간'을 알 수 있어요.</p>
+  <ul>
+    <li>물가 연 3% → 72 ÷ 3 = <b>24년</b> 만에 화폐 구매력이 절반으로</li>
+    <li>물가 연 4% → 72 ÷ 4 = <b>18년</b> 만에 절반으로</li>
+  </ul>
+  <p>그래서 현금만 들고 있으면 시간이 갈수록 실질 가치가 깎입니다. 복리로 굴리는 자산이 인플레이션을 이겨야 진짜로 부가 늘어나는 거예요. 파이어 계산에서 물가를 반영해야 하는 이유이기도 합니다.</p>
+
+  <h2>4. 복리가 파이어의 엔진인 이유</h2>
+  <p>복리는 '이자가 다시 이자를 낳는' 구조라, 시간이 갈수록 가속됩니다. 초반엔 더디지만 두 배·네 배·여덟 배로 불어나는 후반 구간에서 폭발적으로 커지죠.</p>
+  <ul>
+    <li><b>일찍 시작할수록 유리</b> — 같은 금액이라도 빨리 넣을수록 '두 배' 사이클을 한 번 더 돌릴 수 있습니다.</li>
+    <li><b>중간에 빼지 않기</b> — 복리는 끊기지 않고 이어질 때 위력이 커집니다. 그래서 비상금으로 투자 자산을 지키는 게 중요해요.</li>
+    <li><b>실질 수익률 챙기기</b> — 수수료·세금을 줄여 실질 수익률을 높이면 두 배 사이클이 짧아집니다.</li>
+  </ul>
+  <p>※ 72의 법칙은 어림 공식입니다. 연 6~10% 구간에서 실제 복리와 매우 가깝지만, 정밀한 금액은 시뮬레이터로 확인하세요. 또한 과거 수익률이 미래를 보장하지 않습니다.</p>
+
+  <a class="cta" href="https://firemap.kr/">🔥 물가까지 반영해 내 파이어 가능 나이 계산하기 →</a>
+
+  <h2>자주 묻는 질문 (FAQ)</h2>
+  <dl class="faq">
+    <dt>Q. 72의 법칙이 뭔가요?</dt>
+    <dd>복리로 원금이 두 배 되는 햇수를 어림하는 공식입니다. '72 ÷ 연수익률(%)'이며, 연 6%면 약 12년 만에 두 배가 됩니다.</dd>
+    <dt>Q. 72의 법칙은 정확한가요?</dt>
+    <dd>어림 공식이지만 연 6~10% 구간에서는 실제 복리와 매우 가깝습니다. 정밀한 금액은 복리 계산·시뮬레이터로 확인하세요.</dd>
+    <dt>Q. 인플레이션에도 쓸 수 있나요?</dt>
+    <dd>네. 물가상승률에 적용하면 돈의 가치가 절반 되는 기간을 알 수 있어요. 물가 3%면 24년 만에 구매력이 절반으로 떨어집니다.</dd>
+  </dl>
+
+  <a class="cta" href="https://firemap.kr/">내 상황으로 직접 계산해 보기 →</a>
+
+  <footer>
+    <a href="https://firemap.kr/">파이어맵 홈</a>
+    <a href="https://firemap.kr/guide/">파이어 백과</a>
+    <a href="https://firemap.kr/privacy.html">개인정보처리방침</a>
+    <p>파이어맵은 입력값을 기계적으로 계산하는 참고용 시뮬레이션 도구이며, 투자·세무 자문이 아닙니다. 72의 법칙은 어림 공식이며 과거 수익률이 미래 수익을 보장하지 않습니다.</p>
+  </footer>
+</main>
+<style>.fm-vc{display:inline-flex;align-items:center;gap:5px;font-size:13px;color:#8e8e93;margin:8px 0 4px;font-weight:600}</style><script id="fm-vc-script">(function(){var U="https://cvhskxdwqubmshdgkzhj.supabase.co",K="sb_publishable_uhbAVqCA8JrJNXqaAcft9g_yYtwgct9",T="guide",I="rule-of-72-compounding";var admin=false;try{var p=new URLSearchParams(location.search||'');var v=p.get('vc');if(v==='on'){localStorage.setItem('fm_vc_admin','1');}else if(v==='off'){localStorage.removeItem('fm_vc_admin');}admin=localStorage.getItem('fm_vc_admin')==='1';}catch(e){}function fmt(n){try{return Number(n).toLocaleString('ko-KR');}catch(e){return n;}}function badge(){var b=document.getElementById('fm-vc');if(b)return b;b=document.createElement('span');b.id='fm-vc';b.className='fm-vc';b.textContent='\uD83D\uDC41 \u2026';var h=document.querySelector('main h1')||document.querySelector('h1');if(h&&h.parentNode){h.parentNode.insertBefore(b,h.nextSibling);}else{document.body.insertBefore(b,document.body.firstChild);}return b;}function show(n){if(!admin)return;var b=badge();if(typeof n==='number'&&!isNaN(n)){b.textContent='\uD83D\uDC41 '+fmt(n)+'\uD68C \uC870\uD68C (\uB098\uB9CC \uBCF4\uC784)';}}try{fetch(U+'/rest/v1/rpc/fm_view_hit',{method:'POST',headers:{apikey:K,authorization:'Bearer '+K,'content-type':'application/json'},body:JSON.stringify({p_type:T,p_id:I})}).then(function(r){return r.json();}).then(show).catch(function(){});}catch(e){}})();</script></body>
+</html>

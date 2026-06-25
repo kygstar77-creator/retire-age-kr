@@ -63,7 +63,7 @@ export const ARCHETYPES = {
     tagline: '자연 속에서 느리게 사는 힐링 파이어.', strong: '낮은 생활비 + 높은 만족도.', watch: '의료·교통 접근성을 미리 따져봐야 해요.', match: 'monthly', action: '귀촌 전 의료·교통 접근성을 확인하고 텃밭·부업으로 현금흐름을 만드세요.' }
 };
 
-// ── 9문항 (각 보기: 유형 점수 arch + 도시 성향 축 ax) ──
+// ── 12문항 (각 보기: 유형 점수 arch + 도시 성향 축 ax) ──
 // 축: frugal(절약), nature(자연+/도시-), warm(따뜻+/사계절-), medical(의료중요), dom(국내+/해외-)
 export const QUESTIONS = [
   { q: '파이어 후, 돈 쓰는 스타일은?', opts: [

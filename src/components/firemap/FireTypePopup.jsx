@@ -56,7 +56,7 @@ export default function FireTypePopup({ onMove }) {
         <div style={{ position: 'relative', fontSize: 52, animation: 'fmPopFloat 3s ease-in-out infinite' }}>🌍</div>
         <p style={{ position: 'relative', margin: '6px 0 4px', fontSize: 12.5, fontWeight: 800, letterSpacing: '.04em', color: '#ffd9c2' }}>잠깐, 하나 더!</p>
         <h2 style={{ position: 'relative', margin: '0 0 8px', fontSize: 23, fontWeight: 900, lineHeight: 1.3 }}>나는 어떤 <span style={{ background: 'linear-gradient(90deg,#ff8a4c,#ffd166)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent' }}>파이어족</span>일까?</h2>
-        <p style={{ position: 'relative', margin: '0 0 18px', fontSize: 13.5, lineHeight: 1.6, color: '#c7cce0' }}>9문항으로 내 유형 + 나에게 맞는<br /><b style={{ color: '#fff' }}>국내·해외 도시 Top3</b>를 찾아드려요.</p>
+        <p style={{ position: 'relative', margin: '0 0 18px', fontSize: 13.5, lineHeight: 1.6, color: '#c7cce0' }}>12문항으로 내 유형 + 나에게 맞는<br /><b style={{ color: '#fff' }}>국내·해외 도시 Top3</b>를 찾아드려요.</p>
         <button type="button" onClick={go} style={{ position: 'relative', width: '100%', padding: '14px', borderRadius: 14, border: 0, fontSize: 15.5, fontWeight: 800, color: '#1a1330', background: 'linear-gradient(90deg,#ff8a4c,#ffd166)', cursor: 'pointer', boxShadow: '0 8px 26px #ff7a3c55' }}>내 파이어 유형 보기 →</button>
         <button type="button" onClick={hideToday} style={{ position: 'relative', marginTop: 10, background: 'transparent', border: 0, color: '#8b91ad', fontSize: 12.5, fontWeight: 700, cursor: 'pointer' }}>오늘 보지 않기</button>
       </div>

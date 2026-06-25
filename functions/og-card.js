@@ -2,6 +2,18 @@
 // /og 동적 생성(functions/og.js)과 정적 og-image(work/fix-branding-og.mjs)가 함께 써서
 // 카카오·다른 앱·웹 링크 어디서 공유하든 같은 남색 카드가 나오게 한다.
 const COMMA = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+// 텍스트 폭 추정 후 카드 폭을 넘치면 폰트 크기 자동 축소(auto-fit). 한글/전각≈1.0em, 라틴·기호≈0.56em, 공백≈0.32em.
+function fitFont(text, base, maxWidth, min) {
+  let units = 0;
+  for (const ch of String(text)) {
+    const c = ch.codePointAt(0);
+    if (ch === ' ') units += 0.32;
+    else if (c >= 0x1100) units += 1.0;
+    else units += 0.56;
+  }
+  const est = units * base;
+  return est <= maxWidth ? base : Math.max(min, Math.round(base * maxWidth / est));
+}
 const FLAME = '<svg x="497" y="92" width="30" height="60" viewBox="188 84 136 276"><path d="M256 84 C 232 150, 188 172, 188 256 C 188 322, 218 360, 256 360 C 294 360, 324 322, 324 256 C 324 212, 300 188, 286 162 C 282 192, 268 204, 252 210 C 268 166, 262 116, 256 84 Z" fill="#ff5a00"/><path d="M256 250 C 246 276, 232 286, 232 312 C 232 336, 242 352, 256 352 C 270 352, 280 336, 280 312 C 280 292, 270 280, 264 268 C 262 282, 258 286, 252 290 C 258 274, 258 262, 256 250 Z" fill="#fdba74"/></svg>';
 
 // opts: { mode: 'rank'|'generic'|'save'|'firetype', ea, pos, tot, runway, tname, nick, cities, font }
@@ -25,10 +37,14 @@ ${FLAME}
     const tname = (opts.tname || '').trim() || '파이어족';
     const nick = (opts.nick || '').trim();
     const cities = (opts.cities || '').trim();
+    const citiesText = `추천 도시 · ${cities}`;
+    const tSize = fitFont(tname, 84, 1040, 46);       // 제목: 좌우 ~80px 여백 확보, 길면 자동 축소
+    const nSize = fitFont(`“${nick}”`, 40, 1060, 26); // 닉네임
+    const cSize = fitFont(citiesText, 34, 1100, 22);  // 추천 도시 줄(3개가 길어도 안 잘리게)
     body = `<text x="600" y="206" font-family="${font}" font-weight="400" font-size="34" fill="#9aa4d4" text-anchor="middle">나의 파이어 유형은</text>
-<text x="600" y="312" font-family="${font}" font-weight="700" font-size="84" fill="#ffffff" text-anchor="middle">${tname}</text>
-${nick ? `<text x="600" y="372" font-family="${font}" font-weight="700" font-size="40" fill="#ff8a4c" text-anchor="middle">“${nick}”</text>` : ''}
-${cities ? `<text x="600" y="448" font-family="${font}" font-weight="600" font-size="34" fill="#9aa4d4" text-anchor="middle">추천 도시 · ${cities}</text>` : ''}`;
+<text x="600" y="312" font-family="${font}" font-weight="700" font-size="${tSize}" fill="#ffffff" text-anchor="middle">${tname}</text>
+${nick ? `<text x="600" y="372" font-family="${font}" font-weight="700" font-size="${nSize}" fill="#ff8a4c" text-anchor="middle">“${nick}”</text>` : ''}
+${cities ? `<text x="600" y="448" font-family="${font}" font-weight="600" font-size="${cSize}" fill="#9aa4d4" text-anchor="middle">${citiesText}</text>` : ''}`;
   } else {
     // rank — 사용자별 또래 상위 %·등수·파이어 나이
     const ea = Number(opts.ea) || 0;

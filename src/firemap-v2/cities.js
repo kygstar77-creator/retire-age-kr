@@ -83,3 +83,11 @@ export const KR_REGIONS = [
   { city: '구미', krw: 1250000, note: '월세 저렴(40~50만대)' },
   { city: '군 단위 시골(읍·면)', krw: 1000000, note: '최저 비용, 인프라 적음' }
 ];
+
+// 도시 월생활비 '단일 소스' — FIRE_CITIES + KR_REGIONS에서 파생. 유형테스트도 이 값을 공유해 영구 싱크(드리프트 방지).
+// 비용을 바꿀 땐 위 두 리스트만 고치면 유형테스트까지 자동 일치.
+export const CITY_KRW = {};
+[...FIRE_CITIES, ...KR_REGIONS].forEach((c) => {
+  const base = String(c.city).split('(')[0].trim();
+  if (CITY_KRW[base] == null) CITY_KRW[base] = c.krw;
+});

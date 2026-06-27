@@ -84,7 +84,7 @@ function EditBox({ id, value, onChange, onCancel, onSave }) {
   );
 }
 
-export default function Community({ onBack, onMove, simulation }) {
+export default function Community({ onMove, simulation }) {
   const myJourney = (() => { try { return journeyStage(simulation || null); } catch { return null; } })();
   const myStage = myJourney ? myJourney.stage : null;
   const stageMeta = (n) => JOURNEY_STAGES.find((x) => x.n === Number(n)) || null;
@@ -228,7 +228,7 @@ export default function Community({ onBack, onMove, simulation }) {
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <style>{STYLE}</style>
-      <Header tag="파이어 인증" onBack={onBack} />
+      <Header tag="파이어 인증" />
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">🔥 파이어 인증</p>
         <h2>다들 몇 살에 파이어?</h2>

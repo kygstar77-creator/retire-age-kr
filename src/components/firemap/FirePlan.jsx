@@ -14,6 +14,7 @@ import StageTargets from './StageTargets.jsx';
 import JourneyPulse from './JourneyPulse.jsx';
 import OpenChatNotice from './OpenChatNotice.jsx';
 import FireTypePopup from './FireTypePopup.jsx';
+import SubscribePopup from './SubscribePopup.jsx';
 import { account } from '../../utils/identity.js';
 
 const won = (n) => formatWon(Math.round(n || 0));
@@ -90,6 +91,7 @@ export default function FirePlan({ simulation, onMove, onChange, asHome }) {
 
       {asHome && <OpenChatNotice />}
       {asHome && <FireTypePopup onMove={onMove} />}
+      {asHome && <SubscribePopup onMove={onMove} simulation={simulation} />}
 
       {asHome && <FireClockPush simulation={simulation} />}
 

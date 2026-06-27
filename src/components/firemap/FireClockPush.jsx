@@ -82,14 +82,14 @@ export default function FireClockPush({ simulation }) {
       <h2 style={h2Style}>파이어까지 D-{ddays.toLocaleString()}</h2>
       {status === 'on' ? (
         <>
-          <p style={subStyle}>매일 아침 파이어 시계 알림을 받고 있어요 🔥 휴대폰에서 매일 카운트다운을 확인하세요.</p>
+          <p style={subStyle}>매일 아침 경제뉴스 + 파이어 D-day 알림을 받고 있어요 🔥 하루 1회 발송.</p>
           <button type="button" onClick={onUnsubscribe} style={btnGhost} disabled={status === 'working'}>알림 끄기</button>
         </>
       ) : status === 'denied' ? (
         <p style={subStyle}>알림이 차단돼 있어요. 휴대폰 설정 → 파이어맵 → 알림을 허용한 뒤 다시 시도해 주세요.</p>
       ) : (
         <>
-          <p style={subStyle}>매일 아침 <b>‘파이어까지 며칠 남았는지’</b>를 알림으로 보내드려요. 휴대폰에서 매일 한 걸읍씩 확인하세요.</p>
+          <p style={subStyle}>매일 아침 <b>오늘 경제뉴스 + 파이어까지 D-day</b>를 한 번에 알림으로 보내드려요. 하루 1회, 매일 한 걸음씩.</p>
           <button type="button" onClick={onSubscribe} style={btnPrimary} disabled={status === 'working'}>
             {status === 'working' ? '설정 중…' : '🔔 매일 파이어 시계 받기'}
           </button>

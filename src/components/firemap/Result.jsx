@@ -16,6 +16,7 @@ import { account } from '../../utils/identity.js';
 import OpenChatNotice from './OpenChatNotice.jsx';
 import InstallNudge from './InstallNudge.jsx';
 import FireTypePopup from './FireTypePopup.jsx';
+import SubscribePopup from './SubscribePopup.jsx';
 import YouTubeCard from './YouTubeCard.jsx';
 
 function ResultHeroV2({ simulation, rankingSimulation }) {
@@ -428,6 +429,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <FireTypePopup onMove={onMove} />
+      <SubscribePopup onMove={onMove} simulation={simulation} />
       <Header home />
       <ResultSimTabs current="result" />
       <ResultHeroV2 simulation={simulation} rankingSimulation={rankingSimulation} />

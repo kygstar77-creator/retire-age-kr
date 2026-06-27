@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { track } from '../../firemap-v2/dailyData.js';
+import { claimPopup } from '../../utils/popupCoordinator.js';
 
 // 결과 직후 1회성 화려한 풀스크린 팝업 — 파이어 유형 테스트로 유도(유입 루프).
 // 닫거나 시작하면 일정 기간 재노출 자제(localStorage). 비로그인·무설치.
@@ -24,6 +25,7 @@ export default function FireTypePopup({ onMove }) {
   useEffect(() => {
     if (suppressed()) return undefined;
     const t = setTimeout(() => {
+      if (!claimPopup('firetype')) return; // 같은 뷰에 다른 팝업(구독)이 떴으면 양보
       setOpen(true);
       try { localStorage.setItem(SEEN, String(Date.now())); } catch { /* ignore */ } // 노출 즉시 쿨다운 시작(스팸 방지)
       try { track('firetype_popup_view'); } catch { /* ignore */ }

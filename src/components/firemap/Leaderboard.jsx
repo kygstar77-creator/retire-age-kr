@@ -17,8 +17,7 @@ const myCid = () => { try { return localStorage.getItem('fm_cid'); } catch { ret
 const BOARDS = [
   { key: 'fire', label: '전체 순위' },
   { key: 'peer', label: '내 또래 순위' },
-  { key: 'advance', label: '저축 순위' },
-  { key: 'stage', label: '여정별 순위' }
+  { key: 'advance', label: '저축 순위' }
 ];
 const SUBS = {
   stage: '나와 같은 FIRE 여정 단계에 있는 사람들끼리 순위 — 같은 출발선에서 누가 더 빨리 가나',
@@ -205,40 +204,6 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
         </div>
       )}
 
-      {board === 'stage' && (
-        <>
-          <section className="fm-rank-hero">
-            <p className="fm-rank-label">{myStage && stageMeta ? `${stageMeta.emoji} ${myStage}단계 · ${stageMeta.name} 또래 중 내 순위` : '여정 단계 집계 중…'}</p>
-            <div className="fm-rank-top">
-              <span className="fm-rank-pct">{stageB && stageB.percentile != null ? `상위 ${stageB.percentile}%` : (stageB && stageB.position != null ? `${stageB.position.toLocaleString()}위` : '집계 중…')}</span>
-            </div>
-            {stageB && stageB.position != null
-              ? <p className="fm-rank-line">같은 단계 {stageB.total.toLocaleString()}명 중 <b>{stageB.position.toLocaleString()}위</b> · {earliest ? `${earliest}세 파이어 가능` : '아직 파이어 어려움'}</p>
-              : <p className="fm-rank-line">{myStage ? '같은 단계에 아직 사람이 적어요 — 내 닉네임으로 올리면 첫 주자!' : '계산하면 내 여정 단계가 정해져요'}</p>}
-            <p className="fm-rank-climb">같은 출발선(여정 단계)에 선 사람들끼리의 경쟁이에요 — 파이어가 빠를수록, 같으면 더 많이 당긴 사람이 위 🔥</p>
-          </section>
-
-          <button type="button" onClick={() => onMove('index')} style={{ width: '100%', border: '1px solid #e7ebf3', background: '#f6f7fb', borderRadius: 12, padding: '12px 14px', cursor: 'pointer', textAlign: 'left', margin: '0 0 12px', fontSize: 13, fontWeight: 700, color: '#1e2859' }}>🇰🇷 대한민국 파이어 지수 — 연령대별 현황·내 위치 자세히 ›</button>
-
-          {agg && agg.total > 0 && (
-            <section className="fm-card fm-stats">
-              <h2 className="fm-section-title">또래 비교</h2>
-              <p className="fm-section-sub">{base.ageBandLabel} 또래끼리 비교한 익명 집계예요</p>
-              <div className="fm-stats-grid">
-                <div><small>{base.ageBandLabel} 또래</small><b>{agg.total.toLocaleString()}명</b></div>
-                {agg.avgEarliest != null && <div><small>{base.ageBandLabel} 평균 파이어</small><b>{agg.avgEarliest}세</b></div>}
-                {agg.avgEarliest != null && earliest && <div><small>또래 대비 나</small><b>{agg.avgEarliest - earliest === 0 ? '평균과 같음' : `${Math.abs(agg.avgEarliest - earliest)}년 ${agg.avgEarliest - earliest > 0 ? '빠름' : '느림'}`}</b></div>}
-              </div>
-            </section>
-          )}
-
-          <section className="fm-card fm-nick">
-            <button type="button" className="fm-nick-reg" onClick={saveNick} disabled={saving}>{saving ? '등록 중' : saved ? '등록됨 ✓' : '내 닉네임으로 랭킹에 올리기'}</button>
-            <small>카카오로 로그인하거나 닉네임을 정하면 내 이름으로 올라가요. 익명이면 자동 별명이 붙어요.</small>
-          </section>
-        </>
-      )}
-
       {board === 'fire' && (
         <>
           <section className="fm-rank-hero">
@@ -371,22 +336,6 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
         </>
       )}
 
-      {board === 'cohort' && (
-        <section className="fm-rank-hero">
-          <p className="fm-rank-label">{cohortTitle}</p>
-          <div className="fm-rank-top">
-            <span className="fm-rank-pct">{myAdvance > 0 ? (fmtAdvance(myAdvance * 86400) || '0초') : '0초'}</span>
-            <span className="fm-rank-badge">내 파이어 당김</span>
-          </div>
-          <p className="fm-rank-line">
-            {myAge != null ? `나 ${myAge}세` : '나'}{myTarget != null ? ` · 목표 ${myTarget}세 파이어` : ''}
-          </p>
-          {myAdvance > 0
-            ? <p className="fm-rank-climb">같은 나이·목표 또래 중 누가 파이어를 더 많이 당겼나 — 저축을 기록할수록 더 당겨져요 🔥</p>
-            : <p className="fm-rank-climb">아직 당긴 기록이 없어요. ‘저축’ 탭에서 저축을 기록하면 파이어가 당겨지고 순위가 올라가요.</p>}
-        </section>
-      )}
-
       {board === 'advance' && (
         <section className="fm-rank-hero">
           <p className="fm-rank-label">전체 중 내 파이어 앞당김</p>
@@ -406,9 +355,6 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
       <section className="fm-card">
         <h2 className="fm-section-title">{BOARDS.find((b) => b.key === board).label} 상위</h2>
         <p className="fm-section-sub">{SUBS[board]}</p>
-        {board === 'cohort' && cohortScope && (
-          <p className="fm-section-sub"><b>{COHORT_SCOPE_WORD[cohortScope]}</b> 기준{cohortHint}</p>
-        )}
         {board === 'advance' && (
           myBoardValue() > 0
             ? <p className="fm-save-myrank">내 기록 <b>{fmtMyVal(myBoardValue())}</b> · {inTop ? '상위 10위 안에 있어요 🎉' : '아직 10위권 밖 — 더 기록하면 올라요'}</p>
@@ -430,7 +376,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
         </ol>
       </section>
 
-      {(board === 'stage' || board === 'fire' || board === 'peer') && <CommunityPeek onMove={onMove} />}
+      {(board === 'fire' || board === 'peer') && <CommunityPeek onMove={onMove} />}
 
       <button type="button" className="fm-city-cta" onClick={() => onMove(board === 'advance' ? 'save' : 'experiment')}>{board === 'advance' ? '저축 기록하러 가기' : '조건 바꿔 순위 올리기'}</button>
     </main>

@@ -6,6 +6,8 @@ import { buildScenario, buildGrowthSeries, fireStatus, runwayText, scenarioEndAg
 import { simulateRetirement } from '../../utils/retirementSimulator.js';
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
 import { shareToKakao } from '../../utils/kakaoShare.js';
+import { sendCommunity } from '../../utils/firemapFeedbackApi.js';
+import { journeyStage } from '../../utils/journeyStage.js';
 import { statsRank, gradeFromScore } from '../../firemap-v2/rank.js';
 import { submitScore, fetchUserRank, fetchAggregates, assetBandOf } from '../../utils/firemapScoresApi.js';
 import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js';
@@ -364,6 +366,35 @@ function NextActions({ onMove }) {
 }
 
 export default function Result({ inputs, simulation, rankingSimulation, onMove, onChange, onEditFinalQuestion }) {
+  // 결과를 커뮤니티 피드에 카드로 공유(비로그인 익명 게시 허용). 같은 결과 도배 방지용 가드.
+  const shareKey = `fm_result_shared_${simulation.earliestRetirementAge || 'na'}_${simulation.inputs.targetRetirementAge}`;
+  const [commOpen, setCommOpen] = useState(false);
+  const [commComment, setCommComment] = useState('');
+  const [commSharing, setCommSharing] = useState(false);
+  const [commDone, setCommDone] = useState(() => { try { return localStorage.getItem(shareKey) === '1'; } catch { return false; } });
+  useEffect(() => { try { setCommDone(localStorage.getItem(shareKey) === '1'); } catch { /* ignore */ } }, [shareKey]);
+  const postToCommunity = async () => {
+    if (commSharing) return;
+    setCommSharing(true);
+    try { track('result_community_share', {}); } catch { /* ignore */ }
+    const earliest = simulation.earliestRetirementAge;
+    const ph = survivalPhrase(simulation);
+    const head = earliest ? `🔥 저는 ${earliest}세에 파이어 가능!` : '🔥 제 파이어 결과를 공유해요!';
+    const baseMsg = (ph && ph.short) ? `${head} (${ph.short})` : head;
+    const c = commComment.trim();
+    let msg = c ? `${baseMsg}\n${c}` : baseMsg;
+    if (msg.length > 240) msg = msg.slice(0, 240);
+    let stage = null;
+    try { const j = journeyStage(simulation); stage = j ? j.stage : null; } catch { /* ignore */ }
+    const created = await sendCommunity(msg, null, 'goal', stage);
+    setCommSharing(false);
+    if (created) {
+      setCommDone(true); setCommOpen(false);
+      try { localStorage.setItem(shareKey, '1'); } catch { /* ignore */ }
+    } else {
+      try { window.alert('잠시 후 다시 시도해 주세요.'); } catch { /* ignore */ }
+    }
+  };
   const shareRank = async () => {
     track('share', { type: 'result' });
     const ph = survivalPhrase(simulation);
@@ -438,6 +469,26 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
         <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>🎛️ 수치 바꿔보기</button>
       </div>
       <button type="button" className="fm-rank-cta-other" onClick={shareOther}>🔗 링크 복사 · 다른 앱으로 공유</button>
+      <div style={{ margin: '10px 0 4px' }}>
+        {commDone ? (
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8, background: '#fff7f2', border: '1px solid #ffe1d0', borderRadius: 14, padding: '12px 14px', fontSize: 13.5, fontWeight: 700, color: '#c2410c' }}>
+            <span>✅ 커뮤니티에 올렸어요!</span>
+            <button type="button" onClick={() => onMove('community')} style={{ border: 0, background: 'transparent', color: '#ff5a00', fontWeight: 800, cursor: 'pointer', fontSize: 13.5 }}>보러 가기 →</button>
+          </div>
+        ) : !commOpen ? (
+          <button type="button" onClick={() => setCommOpen(true)} style={{ display: 'block', width: '100%', padding: '13px', borderRadius: 14, border: '1px solid #ffd0b8', background: '#fff', color: '#c2410c', fontSize: 14, fontWeight: 800, cursor: 'pointer' }}>🔥 커뮤니티에 내 결과 올리기</button>
+        ) : (
+          <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: 16, padding: 14 }}>
+            <p style={{ margin: '0 0 8px', fontWeight: 800, fontSize: 14, color: '#15151b' }}>{simulation.earliestRetirementAge ? `🔥 저는 ${simulation.earliestRetirementAge}세에 파이어 가능!` : '🔥 제 파이어 결과를 공유해요!'}</p>
+            <textarea maxLength={180} value={commComment} onChange={(e) => setCommComment(e.target.value)} placeholder="한 줄 코멘트 (선택) — 예: 생활비 줄이는 게 관건이네요" style={{ width: '100%', minHeight: 56, boxSizing: 'border-box', border: '1px solid #e5e7eb', borderRadius: 10, padding: 9, fontSize: 13.5, resize: 'vertical' }} />
+            <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
+              <button type="button" onClick={() => setCommOpen(false)} style={{ flex: '0 0 auto', padding: '10px 14px', borderRadius: 10, border: '1px solid #e5e7eb', background: '#fff', color: '#6b6f76', fontWeight: 700, cursor: 'pointer', fontSize: 13.5 }}>취소</button>
+              <button type="button" disabled={commSharing} onClick={postToCommunity} style={{ flex: 1, padding: '10px 14px', borderRadius: 10, border: 0, background: '#ff5a00', color: '#fff', fontWeight: 800, cursor: 'pointer', fontSize: 13.5 }}>{commSharing ? '올리는 중…' : '커뮤니티에 올리기'}</button>
+            </div>
+            <small style={{ display: 'block', marginTop: 7, color: '#9aa3bf', fontSize: 11.5 }}>익명 닉네임으로 게시 · 목표·인증 카테고리에 올라가요</small>
+          </div>
+        )}
+      </div>
       <OpenChatNotice />
       <AccountBar onMove={onMove} />
       <section className="fm-card" style={{ borderColor: 'rgba(255,90,0,0.3)' }}>

@@ -5,15 +5,13 @@ import { funHandle } from '../../firemap-v2/funName.js';
 import { JOURNEY_STAGES, journeyStage } from '../../utils/journeyStage.js';
 import { identityIds, account } from '../../utils/identity.js';
 
-// 커뮤니티 카테고리는 '토론' 중심 5개로 간결화(뉴스성 분류는 뉴스탭이 담당). 옛 글 배지는 ALL_CAT_LABELS로 그대로 표시.
+// 인증 중심 커뮤니티 — 카테고리 3개(인증/질문/자유). 옛 글 배지는 ALL_CAT_LABELS로 그대로 표시.
 const CATEGORIES = [
-  { key: 'free', label: '자유수다', emoji: '💬' },
-  { key: 'qa', label: '질문·고민상담', emoji: '❓' },
-  { key: 'goal', label: '목표·인증', emoji: '🎯' },
-  { key: 'budget', label: '가계부·지출공유', emoji: '📊' },
-  { key: 'save', label: '저축·절약꿀팁', emoji: '✂️' }
+  { key: 'goal', label: '파이어 인증', emoji: '🔥' },
+  { key: 'qa', label: '질문·고민', emoji: '❓' },
+  { key: 'free', label: '자유수다', emoji: '💬' }
 ];
-const ALL_CAT_LABELS = { free: '💬 자유수다', news: '📰 경제뉴스', save: '✂️ 저축·절약꿀팁', invest: '📈 투자·자산배분', realestate: '🏠 부동산', sidejob: '💼 부업·N잡', pension: '🧾 연금·세금·건보', life: '🌴 파이어 후 삶', goal: '🎯 목표·인증', qa: '❓ 질문·고민상담', budget: '📊 가계부·지출공유' };
+const ALL_CAT_LABELS = { free: '💬 자유수다', news: '📰 경제뉴스', save: '✂️ 저축·절약꿀팁', invest: '📈 투자·자산배분', realestate: '🏠 부동산', sidejob: '💼 부업·N잡', pension: '🧾 연금·세금·건보', life: '🌴 파이어 후 삶', goal: '🔥 파이어 인증', qa: '❓ 질문·고민', budget: '📊 가계부·지출공유' };
 const catLabel = (k) => ALL_CAT_LABELS[k] || '💬 자유수다';
 const catOf = (row) => row.category || 'free';
 
@@ -127,7 +125,7 @@ export default function Community({ onBack, onMove, simulation }) {
   const titleOf = (cid) => titleFromStats(cid && stats[cid]);
   const myTitle = (() => { for (const id of myIds) { const t = titleOf(id); if (t) return t; } return null; })();
 
-  // 공식 글 중 '토론/자유' 성격(자유·목표·질문·가계부)은 커뮤니티에 노출, 공식 '뉴스'성 글은 제외(뉴스탭 전용)
+  // 공식 글 중 '토론/자유' 성격(인증·자유·질문·가계부)은 노출, 공식 '뉴스'성 글은 제외(뉴스탭 전용)
   const OFFICIAL_COMMUNITY_CATS = new Set(['free', 'goal', 'qa', 'budget']);
   const filtered = rows.filter((r) => !r.parent_id && (r.client_id !== 'firemap-official' || OFFICIAL_COMMUNITY_CATS.has(catOf(r))) && (cat === 'all' || catOf(r) === cat));
   const weekAgo = Date.now() - 7 * 86400000;
@@ -230,12 +228,14 @@ export default function Community({ onBack, onMove, simulation }) {
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <style>{STYLE}</style>
-      <Header tag="커뮤니티" onBack={onBack} />
+      <Header tag="파이어 인증" onBack={onBack} />
       <section className="fm-card fm-text-card">
-        <p className="fm-kicker">파이어족 라운지</p>
-        <h2>다 같이 파이어 이야기</h2>
-        <p>관심 가는 카테고리를 골라 글을 쓰고, 답글로 서로 대화해요. 글·답글·공감이 쌓이면 닉네임 옆에 칭호가 붙어요. 내가 쓴 글은 수정·삭제할 수 있어요.</p>
+        <p className="fm-kicker">🔥 파이어 인증</p>
+        <h2>다들 몇 살에 파이어?</h2>
+        <p>내 계산 결과를 인증하고, 다른 파이어족들의 목표 나이를 구경해요. 궁금한 건 질문·자유에서 편하게 물어보세요. 공감·답글이 쌓이면 닉네임 옆에 칭호가 붙어요.</p>
       </section>
+
+      <button type="button" onClick={() => onMove && onMove('result')} style={{ display: 'block', width: '100%', padding: '14px', borderRadius: 14, border: 0, background: '#ff5a00', color: '#fff', fontSize: 15, fontWeight: 800, cursor: 'pointer', margin: '0 0 12px', boxShadow: '0 6px 18px rgba(255,90,0,0.25)' }}>🔥 내 결과로 인증하기 →</button>
 
       <div className="fm-cat-bar">
         <button type="button" className={cat === 'all' ? 'on' : ''} onClick={() => setCat('all')}>전체</button>
@@ -274,7 +274,7 @@ export default function Community({ onBack, onMove, simulation }) {
 
       <section className="fm-community-feed">
         {best && PostCard(best, true)}
-        {posts.length === 0 && !best && <p className="fm-community-empty">{cat === 'all' ? '아직 글이 없어요. 첫 글을 남기면 다른 파이어족들이 답글로 응원해줘요 🔥' : '이 카테고리의 첫 글을 남겨보세요 🔥'}</p>}
+        {posts.length === 0 && !best && <p className="fm-community-empty">{cat === 'all' ? '아직 인증이 없어요. 위 버튼으로 내 결과를 첫 인증해 보세요 🔥' : '이 카테고리의 첫 글을 남겨보세요 🔥'}</p>}
         {posts.map((p) => PostCard(p, false))}
       </section>
     </main>

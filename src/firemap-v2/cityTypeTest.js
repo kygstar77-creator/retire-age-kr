@@ -1,3 +1,4 @@
+import { CITY_KRW } from './cities.js';
 // 파이어 라이프 유형 테스트 — 데이터 + 채점 로직 (순수 모듈, 기존 계산/데이터 무손상·추가전용).
 // 결과: 8개 파이어족 유형 중 1개 + 내게 맞는 국내·해외 도시 Top3(파이어 적합도 분해 점수).
 // 도시 태그(nature/warm/medical 0~1)는 재미용 추정치이며 화면에 "추정" 표기.
@@ -42,6 +43,12 @@ export const TEST_CITIES = [
   { city: '타이베이', country: '대만', flag: '🇹🇼', dom: false, lat: 25.03, lon: 121.56, krw: 3000000, c1: '#3b82f6', c2: '#60a5fa', nature: 0.45, warm: 0.70, medical: 0.90, climate: 'mild', blurb: '한국과 가깝고 치안·교통·야시장·의료 좋은 도시형, 온화한 겨울.' },
   { city: '오사카', country: '일본', flag: '🇯🇵', dom: false, lat: 34.69, lon: 135.5, krw: 3100000, c1: '#60a5fa', c2: '#93c5fd', nature: 0.35, warm: 0.55, medical: 0.85, climate: 'mild', blurb: '먹거리와 교통의 간사이 중심, 사계절 있고 겨울은 온화한 편.' }
 ];
+
+// 도시 월생활비는 cities.js의 CITY_KRW를 단일 소스로 공유 — '어디서 살까'와 영구 일치(공통 도시 한정).
+TEST_CITIES.forEach((c) => {
+  const base = String(c.city).split('(')[0].trim();
+  if (CITY_KRW[base] != null) c.krw = CITY_KRW[base];
+});
 
 // ── 8개 파이어족 유형 ──
 export const ARCHETYPES = {

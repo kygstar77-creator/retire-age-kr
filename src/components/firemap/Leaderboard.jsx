@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { identityIds, accountHandle } from '../../utils/identity.js';
 import { statsRank } from '../../firemap-v2/rank.js';
-import { fetchTopScores, fetchUserRank, submitScore, fetchAggregates, fetchNeighbors, fetchAssetPercentile, assetBandOf, fetchPeerBoard, fetchStageBoard } from '../../utils/firemapScoresApi.js';
+import { fetchTopScores, fetchUserRank, submitScoreFromSim, fetchAggregates, fetchNeighbors, fetchAssetPercentile, assetBandOf, fetchPeerBoard, fetchStageBoard } from '../../utils/firemapScoresApi.js';
 import { fetchSaveBoard, fetchCohortAdvanceBoard } from '../../utils/firemapSaveApi.js';
 import { displayName } from '../../firemap-v2/funName.js';
 import { wonStr, fmtAdvance, readJSON, todayStr } from '../../firemap-v2/dailyData.js';
@@ -125,17 +125,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
     const v = nick.trim().slice(0, 16);
     setSaving(true);
     try { localStorage.setItem('fm_nickname', v); } catch { /* ignore */ }
-    await submitScore({
-      fireScore: score,
-      ageBand: base.ageBand,
-      survivalAge: (simulation.targetResult && simulation.targetResult.depletionAge) || simulation.inputs.simulationUntilAge,
-      nickname: v,
-      earliestAge: earliest,
-      assetBand: myBand,
-      targetAge: simulation.inputs.targetRetirementAge,
-      currentAge: simulation.inputs.currentAge,
-      stage: myStage
-    });
+    await submitScoreFromSim({ rankingSimulation, simulation, nickname: v });
     await load();
     setSaving(false);
     setSaved(true);

@@ -9,7 +9,7 @@ import { shareToKakao } from '../../utils/kakaoShare.js';
 import { sendCommunity } from '../../utils/firemapFeedbackApi.js';
 import { journeyStage } from '../../utils/journeyStage.js';
 import { statsRank, gradeFromScore } from '../../firemap-v2/rank.js';
-import { submitScore, fetchUserRank, fetchAggregates, assetBandOf } from '../../utils/firemapScoresApi.js';
+import { submitScoreFromSim, fetchUserRank, fetchAggregates } from '../../utils/firemapScoresApi.js';
 import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js';
 import { FIRE_CITIES } from '../../firemap-v2/cities.js';
 import { track } from '../../firemap-v2/dailyData.js';
@@ -46,19 +46,7 @@ function ResultHeroV2({ simulation, rankingSimulation }) {
         if (!sessionStorage.getItem(key)) {
           let nick = '';
           try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
-          let stg = null;
-          try { const js = journeyStage(simulation); stg = js ? js.stage : null; } catch { /* ignore */ }
-          await submitScore({
-            fireScore: score,
-            ageBand: base.ageBand,
-            survivalAge: (rs.targetResult && rs.targetResult.depletionAge) || rs.inputs.simulationUntilAge,
-            nickname: nick,
-            earliestAge: rankEarliest,
-            assetBand: assetBandOf(rs.netWorth),
-            targetAge: rs.inputs.targetRetirementAge,
-            currentAge: rs.inputs.currentAge,
-            stage: stg
-          });
+          await submitScoreFromSim({ rankingSimulation, simulation, nickname: nick });
           sessionStorage.setItem(key, '1');
         }
       } catch { /* ignore */ }

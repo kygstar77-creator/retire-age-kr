@@ -1,4 +1,6 @@
 import { identityId, identityIds } from './identity.js';
+import { statsRank } from '../firemap-v2/rank.js';
+import { journeyStage } from './journeyStage.js';
 const DEFAULT_SUPABASE_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
 const DEFAULT_SUPABASE_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || DEFAULT_SUPABASE_URL;
@@ -70,6 +72,27 @@ export async function submitScore({ fireScore, ageBand, survivalAge, nickname, e
   } catch {
     return false;
   }
+}
+
+// 점수 제출 페이로드를 한 곳에서 생성 — 결과·순위 등 모든 호출부가 동일 필드를 보내도록(stage 등 누락 방지).
+// rankingSimulation(공정비교용) 기준 순위 필드 + simulation 기준 여정 단계(stage).
+export function submitScoreFromSim({ rankingSimulation, simulation, nickname = '' }) {
+  const rs = rankingSimulation || simulation;
+  if (!rs || !rs.inputs) return Promise.resolve(false);
+  const base = statsRank(rs);
+  let stage = null;
+  try { const js = journeyStage(simulation || rs); stage = js ? js.stage : null; } catch { /* ignore */ }
+  return submitScore({
+    fireScore: rs.survivalScore,
+    ageBand: base.ageBand,
+    survivalAge: (rs.targetResult && rs.targetResult.depletionAge) || rs.inputs.simulationUntilAge,
+    nickname,
+    earliestAge: rs.earliestRetirementAge,
+    assetBand: assetBandOf(rs.netWorth),
+    targetAge: rs.inputs.targetRetirementAge,
+    currentAge: rs.inputs.currentAge,
+    stage
+  });
 }
 
 // 함께 계산한 사용자 중 내 등수/백분위

@@ -5,20 +5,16 @@ import { funHandle } from '../../firemap-v2/funName.js';
 import { JOURNEY_STAGES, journeyStage } from '../../utils/journeyStage.js';
 import { identityIds, account } from '../../utils/identity.js';
 
+// 커뮤니티 카테고리는 '토론' 중심 5개로 간결화(뉴스성 분류는 뉴스탭이 담당). 옛 글 배지는 ALL_CAT_LABELS로 그대로 표시.
 const CATEGORIES = [
   { key: 'free', label: '자유수다', emoji: '💬' },
-  { key: 'news', label: '경제뉴스', emoji: '📰' },
-  { key: 'save', label: '저축꿀팁', emoji: '✂️' },
-  { key: 'invest', label: '투자·자산배분', emoji: '📈' },
-  { key: 'realestate', label: '부동산', emoji: '🏠' },
-  { key: 'sidejob', label: '부업·N잡', emoji: '💼' },
-  { key: 'pension', label: '연금·세금·건보', emoji: '🧾' },
-  { key: 'life', label: '파이어 후 삶', emoji: '🌴' },
-  { key: 'goal', label: '목표·인증', emoji: '🎯' },
   { key: 'qa', label: '질문·고민상담', emoji: '❓' },
-  { key: 'budget', label: '가계부·지출공유', emoji: '📊' }
+  { key: 'goal', label: '목표·인증', emoji: '🎯' },
+  { key: 'budget', label: '가계부·지출공유', emoji: '📊' },
+  { key: 'save', label: '저축·절약꿀팁', emoji: '✂️' }
 ];
-const catLabel = (k) => { const c = CATEGORIES.find((x) => x.key === k); return c ? `${c.emoji} ${c.label}` : '💬 자유수다'; };
+const ALL_CAT_LABELS = { free: '💬 자유수다', news: '📰 경제뉴스', save: '✂️ 저축·절약꿀팁', invest: '📈 투자·자산배분', realestate: '🏠 부동산', sidejob: '💼 부업·N잡', pension: '🧾 연금·세금·건보', life: '🌴 파이어 후 삶', goal: '🎯 목표·인증', qa: '❓ 질문·고민상담', budget: '📊 가계부·지출공유' };
+const catLabel = (k) => ALL_CAT_LABELS[k] || '💬 자유수다';
 const catOf = (row) => row.category || 'free';
 
 // 기여 칭호 — 이미 불러온 스레드 데이터로 계산(진화·랭킹과 무관한 명예 표시)
@@ -47,13 +43,6 @@ const STYLE = `
 .fm-hot-chip{display:inline-block;font-size:10.5px;font-weight:800;color:#b91c1c;background:#fdecec;border-radius:6px;padding:1px 6px;margin-right:6px}
 .fm-mytitle{font-size:12px;color:#6b7280;margin:0 0 8px}
 .fm-mytitle b{color:#1d4ed8}
-.fm-stage-bar{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;-webkit-overflow-scrolling:touch}
-.fm-stage-bar button{flex:0 0 auto;border:1px solid #e5e7eb;background:#fff;border-radius:99px;padding:7px 12px;font-size:13px;font-weight:700;color:#4b5563;cursor:pointer;white-space:nowrap}
-.fm-stage-bar button.on{background:#1e2859;border-color:#1e2859;color:#fff}
-.fm-stage-bar .fm-stage-mine{border-color:#ff8a4c;color:#c2410c}
-.fm-stage-bar .fm-stage-mine.on{background:#ff5a00;border-color:#ff5a00;color:#fff}
-.fm-stage-desc{font-size:12.5px;color:#565c68;background:#f6f7fb;border:1px solid #e7ebf3;border-radius:10px;padding:9px 12px;margin:0 0 10px;line-height:1.55}
-.fm-stage-desc b{color:#1e2859}
 .fm-stage-badge{display:inline-block;font-size:11px;font-weight:800;color:#1e2859;background:#eef1f9;border-radius:6px;padding:1px 6px;margin-right:6px}
 `;
 
@@ -113,7 +102,6 @@ export default function Community({ onBack, onMove, simulation }) {
   const [cat, setCat] = useState('all');
   const [postCat, setPostCat] = useState('free');
   const [sort, setSort] = useState('new');
-  const [stageFilter, setStageFilter] = useState('all');
 
   useEffect(() => {
     let alive = true;
@@ -141,7 +129,7 @@ export default function Community({ onBack, onMove, simulation }) {
 
   // 공식 글 중 '토론/자유' 성격(자유·목표·질문·가계부)은 커뮤니티에 노출, 공식 '뉴스'성 글은 제외(뉴스탭 전용)
   const OFFICIAL_COMMUNITY_CATS = new Set(['free', 'goal', 'qa', 'budget']);
-  const filtered = rows.filter((r) => !r.parent_id && (r.client_id !== 'firemap-official' || OFFICIAL_COMMUNITY_CATS.has(catOf(r))) && (cat === 'all' || catOf(r) === cat) && (stageFilter === 'all' || stageOf(r) === Number(stageFilter)));
+  const filtered = rows.filter((r) => !r.parent_id && (r.client_id !== 'firemap-official' || OFFICIAL_COMMUNITY_CATS.has(catOf(r))) && (cat === 'all' || catOf(r) === cat));
   const weekAgo = Date.now() - 7 * 86400000;
   const best = filtered.filter((r) => (r.likes || 0) > 0 && new Date(r.created_at).getTime() > weekAgo).sort((a, b) => (b.likes || 0) - (a.likes || 0))[0] || null;
   const posts = filtered.filter((r) => !best || r.id !== best.id).sort((a, b) => (sort === 'hot' ? ((b.likes || 0) - (a.likes || 0)) || (new Date(b.created_at) - new Date(a.created_at)) : (new Date(b.created_at) - new Date(a.created_at))));
@@ -249,20 +237,6 @@ export default function Community({ onBack, onMove, simulation }) {
         <p>관심 가는 카테고리를 골라 글을 쓰고, 답글로 서로 대화해요. 글·답글·공감이 쌓이면 닉네임 옆에 칭호가 붙어요. 내가 쓴 글은 수정·삭제할 수 있어요.</p>
       </section>
 
-      <div className="fm-stage-bar">
-        <button type="button" className={stageFilter === 'all' ? 'on' : ''} onClick={() => setStageFilter('all')}>전체 단계</button>
-        {myStage && stageMeta(myStage) && (
-          <button type="button" className={'fm-stage-mine' + (String(stageFilter) === String(myStage) ? ' on' : '')} onClick={() => setStageFilter(String(myStage))}>⭐ 내 단계 · {stageMeta(myStage).emoji}{stageMeta(myStage).name}</button>
-        )}
-        {JOURNEY_STAGES.map((st) => (
-          <button type="button" key={st.key} className={String(stageFilter) === String(st.n) ? 'on' : ''} onClick={() => setStageFilter(String(st.n))}>{st.emoji} {st.n}.{st.name}</button>
-        ))}
-      </div>
-
-      {stageFilter !== 'all' && stageMeta(stageFilter) && (
-        <p className="fm-stage-desc">{stageMeta(stageFilter).emoji} <b>{stageMeta(stageFilter).n}단계 · {stageMeta(stageFilter).name}</b> — ‘{stageMeta(stageFilter).tag}’ 단계를 지나는 파이어족의 글 모음이에요. 같은 구간에 있는 분들과 이야기 나눠보세요.</p>
-      )}
-
       <div className="fm-cat-bar">
         <button type="button" className={cat === 'all' ? 'on' : ''} onClick={() => setCat('all')}>전체</button>
         {CATEGORIES.map((c) => (
@@ -300,7 +274,7 @@ export default function Community({ onBack, onMove, simulation }) {
 
       <section className="fm-community-feed">
         {best && PostCard(best, true)}
-        {posts.length === 0 && !best && <p className="fm-community-empty">{(cat === 'all' && stageFilter === 'all') ? '아직 글이 없어요. 첫 글을 남기면 다른 파이어족들이 답글로 응원해줘요 🔥' : '이 그룹의 첫 글을 남겨보세요 🔥'}</p>}
+        {posts.length === 0 && !best && <p className="fm-community-empty">{cat === 'all' ? '아직 글이 없어요. 첫 글을 남기면 다른 파이어족들이 답글로 응원해줘요 🔥' : '이 카테고리의 첫 글을 남겨보세요 🔥'}</p>}
         {posts.map((p) => PostCard(p, false))}
       </section>
     </main>

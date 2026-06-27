@@ -99,6 +99,8 @@ export default function FireMapMVP() {
   useEffect(() => { try { window.scrollTo(0, 0); } catch { /* ignore */ } }, [screen, step]);
   useEffect(() => { try { logEvent('screen_view', { screen }); } catch { /* ignore */ } }, [screen]);
   useEffect(() => { try { logEvent('session_start', {}); } catch { /* ignore */ } }, []);
+  // 푸시 클릭 유입 로깅(리텐션 측정) — 알림에서 들어오면 ?from=push
+  useEffect(() => { try { const q = new URLSearchParams(window.location.search || ''); if (q.get('from') === 'push') logEvent('push_open', {}); } catch { /* ignore */ } }, []);
   useEffect(() => {
     try {
       const orig = window.gtag;

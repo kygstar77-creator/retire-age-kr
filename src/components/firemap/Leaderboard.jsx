@@ -30,7 +30,7 @@ const SUBS = {
 };
 const COHORT_SCOPE_WORD = { exact: '나랑 같은 나이·목표 또래', cohort: '같은 나이대·목표 또래', age: '같은 나이대 또래', all: '전체' };
 
-export default function Leaderboard({ simulation, rankingSimulation, onBack, onMove }) {
+export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
   const rs = rankingSimulation || simulation;
   const base = statsRank(rs);
   const myJourney = (() => { try { return journeyStage(simulation); } catch { return null; } })();
@@ -188,7 +188,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onBack, onM
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
-      <Header tag="랭킹" onBack={onBack} />
+      <Header tag="랭킹" />
 
       <div className="fm-board-tabs">
         {BOARDS.map((b) => (

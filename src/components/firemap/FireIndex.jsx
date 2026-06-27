@@ -106,12 +106,15 @@ export default function FireIndex({ simulation, onBack }) {
           <p style={S.sectTitle}>📍 {bandLabel(myBand)} 또래 중 내 위치</p>
           <p style={S.mineLead}>당신: 목표 <b>{myTarget}세</b> · 가능 <b style={{ color: '#ff5a00' }}>{myEarliest}세</b> · 격차 <b>{myGap > 0 ? `+${myGap}` : myGap}년</b></p>
           {(() => {
-            const cohortGap = Number(myRow.gap);
-            const diff = Math.round((myGap - cohortGap) * 10) / 10;
-            if (Math.abs(diff) < 0.3) return <p style={S.mineMsg}>또래 평균과 <b>거의 비슷한</b> 격차예요.</p>;
-            return diff < 0
-              ? <p style={{ ...S.mineMsg, color: '#0f6e56' }}>또래 평균보다 <b>{Math.abs(diff)}년 앞선</b> 계획이에요 👏</p>
-              : <p style={{ ...S.mineMsg, color: '#854f0b' }}>또래 평균보다 <b>{diff}년 더 벌어진</b> 격차예요. 다음 한 걸음으로 좁혀봐요.</p>;
+            // 가능 나이 직접 비교: (또래 평균 가능 나이) − (내 가능 나이). 양수면 또래보다 일찍 파이어 가능.
+            const earlyBy = Number(myRow.avg_earliest) - Number(myEarliest);
+            if (!Number.isFinite(earlyBy)) return null;
+            const abs = Math.abs(earlyBy);
+            const yrLabel = abs >= 1 ? `약 ${Math.round(abs)}년` : `${Math.round(abs * 10) / 10}년`;
+            if (abs < 0.5) return <p style={S.mineMsg}>또래와 <b>비슷한 속도</b>예요.</p>;
+            return earlyBy > 0
+              ? <p style={{ ...S.mineMsg, color: '#0f6e56' }}>또래보다 <b>{yrLabel} 일찍</b> 파이어 가능 👏</p>
+              : <p style={{ ...S.mineMsg, color: '#854f0b' }}>또래보다 <b>{yrLabel} 늦음</b>.</p>;
           })()}
           <p style={S.mineCmp}>{bandLabel(myBand)} 평균 — 목표 {myRow.avg_target}세 · 가능 {myRow.avg_earliest}세 · 격차 {Number(myRow.gap) > 0 ? `+${myRow.gap}` : myRow.gap}년</p>
         </section>

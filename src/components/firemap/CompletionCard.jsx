@@ -28,7 +28,7 @@ export default function CompletionCard({ simulation, onMove }) {
         <span style={S.bigPct}>{p.progress}<span style={S.bigPctU}>%</span></span>
         <div style={S.progMeta}>
           <div style={S.progTrack}><div style={{ ...S.progFill, width: `${Math.max(2, p.progress)}%` }} /></div>
-          <p style={S.progTx}>목표 <b>{eok(p.G)}</b> 중 <b style={{ color: '#ff5a00' }}>{eok(p.A)}</b> · <b>{eok(p.remaining)}</b> 남음</p>
+          <p style={S.progTx}>{(p.alreadyAhead || p.coast) ? <>목표 <b>{eok(p.G)}</b> · 지금 계획으로 도달 예정</> : <>목표 <b>{eok(p.G)}</b> 중 <b style={{ color: '#ff5a00' }}>{eok(p.A)}</b> · <b>{eok(p.remaining)}</b> 남음</>}</p>
         </div>
       </div>
 
@@ -38,10 +38,20 @@ export default function CompletionCard({ simulation, onMove }) {
         <div style={S.ageCell}><small style={S.ageSmall}>지금 속도면</small><b style={{ ...S.ageBig, color: '#ff5a00' }}>{earliest ? `${earliest}세` : '—'}</b></div>
       </div>
 
-      {p.alreadyOnTrack ? (
+      {!p.reachable ? (
+        <div style={S.planBox}>
+          <p style={S.planMain}>목표 {p.targetAge}세까진 자금이 빠듯해요</p>
+          <p style={S.planSub}>목표 나이를 조금 늦추거나 생활비를 낮추면 닿을 수 있어요. {earliest ? <>지금 속도면 <b>{earliest}세</b>에 가능해요.</> : null}</p>
+        </div>
+      ) : p.coast ? (
         <div style={S.planBox}>
           <p style={S.planMain}>🎉 지금 자산만 굴려도 목표 도달 — <b>코스트파이어</b> 상태예요</p>
           <p style={S.planSub}>더 안 모아도 연 {annualPct}% 가정 시 목표 나이에 닿아요.</p>
+        </div>
+      ) : p.alreadyAhead ? (
+        <div style={S.planBox}>
+          <p style={{ ...S.planMain, color: '#0f6e56' }}>👏 지금 계획이면 목표보다 앞서 파이어 가능</p>
+          <p style={S.planSub}>{earliest ? <>지금 속도면 <b>{earliest}세</b> — 목표 {p.targetAge}세보다 빨라요. </> : null}추가 저축 없이 달성!</p>
         </div>
       ) : (
         <div style={S.planBox}>
@@ -50,13 +60,11 @@ export default function CompletionCard({ simulation, onMove }) {
             <div style={S.pnCell}><small style={S.pnSmall}>매달</small><b style={S.pnBig}>{won(p.pmt)}</b></div>
             <div style={S.pnCell}><small style={S.pnSmall}>하루</small><b style={S.pnBig}>{won(p.daily)}</b></div>
           </div>
-          {p.shortfall > 0
-            ? <p style={S.planSub}>지금 계획(월 {won(p.planMonthly)})보다 <b style={{ color: '#e8431c' }}>매달 {won(p.shortfall)}</b> 더 모으면 달성해요.</p>
-            : <p style={{ ...S.planSub, color: '#0f6e56' }}>지금 계획(월 {won(p.planMonthly)})이면 충분해요 👏 더 빨리도 가능!</p>}
+          <p style={S.planSub}>지금 계획(월 {won(p.planMonthly)})보다 <b style={{ color: '#e8431c' }}>매달 {won(p.shortfall)}</b> 더 모으면 달성해요.</p>
         </div>
       )}
 
-      {!p.alreadyOnTrack && monthGoal > 0 && (
+      {p.reachable && !p.coast && !p.alreadyAhead && monthGoal > 0 && (
         <div style={S.month}>
           <div style={S.monthTop}>
             <span style={S.monthLabel}>이번 달 모은 돈</span>

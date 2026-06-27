@@ -23,7 +23,7 @@ function eligibleDevice() {
 function suppressed() {
   try {
     if (localStorage.getItem(SUBSCRIBED) === '1') return true;
-    if (notifPermission() === 'granted') return true; // 이미 알림 허용(구독 상태로 간주)
+    // 권한 granted여도 실제 구독은 아래 currentSubscription(비동기)로 확인 — granted만으로 막지 않음(허용했지만 미구독자도 유도).
     if (localStorage.getItem(HIDE_DAY) === todayStr()) return true;
     const se = readTs(SEEN); if (se && Date.now() - se < BURST_MS) return true;
     if (!eligibleDevice()) return true;

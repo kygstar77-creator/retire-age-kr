@@ -1,3 +1,5 @@
+import NotifBell from './NotifBell.jsx';
+
 export default function Header({ tag, onBack, home }) {
   const goHome = () => { window.location.hash = '#home'; };
   return (
@@ -10,6 +12,7 @@ export default function Header({ tag, onBack, home }) {
         파이어맵
       </button>
       <div className="fm-actions">
+        <NotifBell />
         {tag && <span className="fm-tag">{tag}</span>}
         {home && <button type="button" className="fm-home-btn" onClick={goHome}>🏠 홈</button>}
         {onBack && <button type="button" className="fm-back-btn" onClick={onBack}>‹ 이전</button>}

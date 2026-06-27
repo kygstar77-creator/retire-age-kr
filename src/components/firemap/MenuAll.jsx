@@ -36,9 +36,7 @@ const SECTIONS = [
   {
     label: '🗺️ 지역으로 파이어 보기',
     items: [
-      { ico: '📍', title: '내 조건으로 지역 비교', desc: '도시를 옮기면 파이어가 몇 년 당겨지는지 · 계산', to: 'cities' },
-      { ico: '🏘️', title: '지역·가구별 필요자산 사례', desc: '지역×가구×유형별 자료', href: '/guide/region-plan/' },
-      { ico: '🏙️', title: '도시별 생활비·집값', desc: '생활비·실거래가·물가 자료', href: '/guide/regions/' }
+      { ico: '🗺️', title: '지역으로 파이어 보기', desc: '국내·해외 도시 비교 + 생활비·집값·필요자산 자료까지 한 곳에', to: 'cities' }
     ]
   },
   {

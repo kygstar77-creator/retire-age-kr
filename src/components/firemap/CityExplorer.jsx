@@ -89,12 +89,13 @@ function WorldMap({ cities, active, onPick }) {
   );
 }
 
-export default function CityExplorer({ inputs, simulation, onChange, onMove, onBack }) {
+export default function CityExplorer({ inputs, simulation, onChange, onMove, onBack, onPreviewCity }) {
   const [tab, setTab] = useState('domestic');
   const [open, setOpen] = useState(null);
   const [active, setActive] = useState(null);
   const pick = (i) => { setActive(i); const el = document.getElementById(`ce-${i}`); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' }); };
-  const apply = (krw) => { if (onChange) onChange('monthlyLivingCost', krw); if (onMove) onMove('result'); };
+  // 적용 = 미리보기 샌드박스로만(기존 저장 무손상).
+  const apply = (krw) => { if (onPreviewCity) { onPreviewCity(krw); return; } if (onMove) onMove('result'); };
 
   const curCost = Number(inputs.monthlyLivingCost) || 0;
   const curAge = simulation.earliestRetirementAge;
@@ -163,7 +164,7 @@ export default function CityExplorer({ inputs, simulation, onChange, onMove, onB
                     </div>
                     <p className="fm-ce-run">이 생활비면 <b>{runwayText(sc)}</b>까지 버텨요 · {deltaText(simulation, sc)}</p>
                     {isOpen && <p className="fm-ce-visa">{c.visa}</p>}
-                    <button type="button" className="fm-ce-cta" onClick={() => apply(c.krw)}>이 도시로 내 결과 보기</button>
+                    <button type="button" className="fm-ce-cta" onClick={() => apply(c.krw)}>이 도시로 미리보기</button>
                   </div>
                 </article>
               );

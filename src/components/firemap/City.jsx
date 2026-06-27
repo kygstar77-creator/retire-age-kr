@@ -42,7 +42,7 @@ function Stepper({ label, unit, value, set, step, min = 0, max = Infinity }) {
   );
 }
 
-export function OverseasStayModule({ inputs, simulation, onChange }) {
+export function OverseasStayModule({ inputs, simulation, onChange, onPreviewPatch }) {
   const [months, setMonths] = useState(3);
   const [localCost, setLocalCost] = useState(65000);
   const [fx, setFx] = useState(() => getFx('THB'));
@@ -57,7 +57,8 @@ export function OverseasStayModule({ inputs, simulation, onChange }) {
     overseasApplyYears: 10
   };
   const scenario = buildScenario(inputs, patch);
-  const apply = () => Object.entries(patch).forEach(([k, v]) => onChange(k, v));
+  // 적용 = 미리보기 샌드박스로만(기존 저장 무손상). 저장은 미리보기 화면에서 명시적으로.
+  const apply = () => { if (onPreviewPatch) { onPreviewPatch(patch); return; } Object.entries(patch).forEach(([k, v]) => onChange(k, v)); };
 
   return (
     <section className="fm-card fm-text-card fm-advanced-section">
@@ -78,20 +79,20 @@ export function OverseasStayModule({ inputs, simulation, onChange }) {
           <li>첫해 생활비 절감 약 {formatWon(scenario.firstYearOverseasSavings)}</li>
         </ul>
       </div>
-      <button type="button" className="fm-dc-apply" onClick={apply}>이 해외체류 조건 반영하기</button>
+      <button type="button" className="fm-dc-apply" onClick={apply}>이 해외체류 조건 미리보기</button>
       <small>참고용 시나리오예요. 실제 비자·건보료 면제 요건은 제도 확인이 필요해요.</small>
     </section>
   );
 }
 
-export default function City({ inputs, simulation, onBack, onChange }) {
+export default function City({ inputs, simulation, onBack, onChange, onPreviewPatch }) {
   return (
     <main className="fm-screen fm-scroll">
       <Header onBack={onBack} />
       <section className="fm-card fm-text-card"><p className="fm-kicker">도시 비교 · 해외 체류</p><h2>도시·체류 조건을 바꾸면 자산이 얼마나 더 버틸까?</h2><p>국내 저비용 도시부터 해외 체류(연 체류 개월·환율·건보료 정지)까지, 내 조건에 바로 대입해 자산수명 변화를 비교해요. 세계 지도로 고르려면 「해외 파이어 도시」를 쓰세요.</p></section>
       <ScenarioList title="국내 저비용 도시" inputs={inputs} baseSimulation={simulation} scenarios={domesticCities} />
       <ScenarioList title="해외 저비용 생활" inputs={inputs} baseSimulation={simulation} scenarios={overseasCities} />
-      {onChange && <OverseasStayModule inputs={inputs} simulation={simulation} onChange={onChange} />}
+      {onChange && <OverseasStayModule inputs={inputs} simulation={simulation} onChange={onChange} onPreviewPatch={onPreviewPatch} />}
     </main>
   );
 }

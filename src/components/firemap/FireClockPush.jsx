@@ -91,7 +91,7 @@ export default function FireClockPush({ simulation }) {
         <>
           <p style={subStyle}>매일 아침 <b>오늘 경제뉴스 + 파이어까지 D-day</b>를 한 번에 알림으로 보내드려요. 하루 1회, 매일 한 걸음씩.</p>
           <button type="button" onClick={onSubscribe} style={btnPrimary} disabled={status === 'working'}>
-            {status === 'working' ? '설정 중…' : '🔔 매일 파이어 시계 받기'}
+            {status === 'working' ? '설정 중…' : '🔔 매일 알림 받기'}
           </button>
         </>
       )}

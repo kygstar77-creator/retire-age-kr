@@ -205,7 +205,7 @@ export default function FireMapMVP() {
   else if (screen === 'community') view = <Community onBack={backOf('community')} onMove={setScreen} simulation={simulation} />;
   else if (screen === 'ranking') view = <Leaderboard simulation={simulation} rankingSimulation={rankingSimulation} onBack={backOf('ranking')} onMove={setScreen} />;
   else if (screen === 'cities') view = <CityExplorer inputs={inputs} simulation={simulation} onChange={onChange} onMove={setScreen} onPreviewCity={previewCity} onBack={backOf('cities')} />;
-  else if (screen === 'news') view = <News onBack={backOf('news')} />;
+  else if (screen === 'news') view = <News onBack={backOf('news')} simulation={simulation} />;
   else if (screen === 'firetype') view = <FireTypeTest simulation={simulation} onChange={onChange} onMove={setScreen} onPreviewCity={previewCity} onBack={backOf('firetype')} />;
   else if (screen === 'dependent') view = tool('dependent', <DependentCheck inputs={inputs} onApply={applyPatch} />);
   else if (screen === 'foreignTax') view = tool('foreignTax', <><ForeignStockTaxCard inputs={inputs} onApply={applyPatch} /><DividendCard inputs={inputs} onApply={applyPatch} /></>);

@@ -46,6 +46,8 @@ function ResultHeroV2({ simulation, rankingSimulation }) {
         if (!sessionStorage.getItem(key)) {
           let nick = '';
           try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
+          let stg = null;
+          try { const js = journeyStage(simulation); stg = js ? js.stage : null; } catch { /* ignore */ }
           await submitScore({
             fireScore: score,
             ageBand: base.ageBand,
@@ -54,7 +56,8 @@ function ResultHeroV2({ simulation, rankingSimulation }) {
             earliestAge: rankEarliest,
             assetBand: assetBandOf(rs.netWorth),
             targetAge: rs.inputs.targetRetirementAge,
-            currentAge: rs.inputs.currentAge
+            currentAge: rs.inputs.currentAge,
+            stage: stg
           });
           sessionStorage.setItem(key, '1');
         }

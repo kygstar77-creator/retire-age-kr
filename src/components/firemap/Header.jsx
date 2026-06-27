@@ -14,8 +14,8 @@ export default function Header({ tag, onBack, home }) {
       <div className="fm-actions">
         <NotifBell />
         {tag && <span className="fm-tag">{tag}</span>}
-        {home && <button type="button" className="fm-home-btn" onClick={goHome}>🏠 홈</button>}
-        {onBack && <button type="button" className="fm-back-btn" onClick={onBack}>‹ 이전</button>}
+        {home && <button type="button" className="fm-home-btn" onClick={goHome} style={{ justifyContent: 'center' }}>🏠 홈</button>}
+        {onBack && <button type="button" className="fm-back-btn" onClick={onBack} style={{ justifyContent: 'center' }}>‹ 이전</button>}
       </div>
     </header>
   );

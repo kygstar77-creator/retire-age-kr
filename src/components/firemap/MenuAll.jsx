@@ -138,4 +138,3 @@ const S = {
   rowGo: { fontSize: 18, color: '#c2c7d0', fontWeight: 700, flex: '0 0 auto' },
   foot: { fontSize: 10.5, color: '#9aa3bf', lineHeight: 1.6, padding: '4px 8px 0', margin: 0 }
 };
-```

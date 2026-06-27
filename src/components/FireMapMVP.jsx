@@ -158,6 +158,8 @@ export default function FireMapMVP() {
   };
   const onChange = (key, value) => setInputs((c) => ({ ...c, [key]: cleanNumber(value) }));
   const applyPatch = (patch) => Object.entries(patch).forEach(([k, v]) => onChange(k, v));
+  // 도시 적용은 '미리보기 샌드박스'(experiment)로만 — 사용자가 명시적으로 저장하기 전엔 기존 저장 입력을 건드리지 않음.
+  const previewCity = (krw) => { const c = cleanNumber(krw); setExpBase(inputs); setExpDraft({ ...inputs, monthlyLivingCost: c }); setScreen('experiment'); };
   const next = () => step >= questions.length - 1 ? setScreen('result') : setStep((c) => c + 1);
   const prevQuestion = () => step === 0 ? setScreen('home') : setStep((c) => c - 1);
   const goFinalQuestion = () => { setStep(Math.max(0, questions.length - 1)); setScreen('question'); };
@@ -199,7 +201,7 @@ export default function FireMapMVP() {
   else if (screen === 'community') view = <Community onBack={backOf('community')} onMove={setScreen} simulation={simulation} />;
   else if (screen === 'ranking') view = <Leaderboard simulation={simulation} rankingSimulation={rankingSimulation} onBack={backOf('ranking')} onMove={setScreen} />;
   else if (screen === 'cities') view = <CityExplorer inputs={inputs} simulation={simulation} onChange={onChange} onMove={setScreen} onBack={backOf('cities')} />;
-  else if (screen === 'firetype') view = <FireTypeTest simulation={simulation} onChange={onChange} onMove={setScreen} onBack={backOf('firetype')} />;
+  else if (screen === 'firetype') view = <FireTypeTest simulation={simulation} onChange={onChange} onMove={setScreen} onPreviewCity={previewCity} onBack={backOf('firetype')} />;
   else if (screen === 'dependent') view = tool('dependent', <DependentCheck inputs={inputs} onApply={applyPatch} />);
   else if (screen === 'foreignTax') view = tool('foreignTax', <><ForeignStockTaxCard inputs={inputs} onApply={applyPatch} /><DividendCard inputs={inputs} onApply={applyPatch} /></>);
   else if (screen === 'dividend') view = <DividendLifeCalc inputs={inputs} onChange={onChange} onMove={setScreen} onBack={backOf('dividend')} />;

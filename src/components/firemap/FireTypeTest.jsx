@@ -42,7 +42,7 @@ function Quiz({ idx, onPick, onBack }) {
   );
 }
 
-function Result({ answers, simulation, onChange, onMove, onRestart }) {
+function Result({ answers, simulation, onChange, onMove, onRestart, onPreviewCity }) {
   const { archetype: A, axes } = scoreAnswers(answers);
   const recs = recommendCities(axes, simulation, buildScenario, 3);
   const match = ARCHETYPES[A.match];
@@ -69,7 +69,8 @@ function Result({ answers, simulation, onChange, onMove, onRestart }) {
     catch { /* ignore */ }
   };
   const copy = async () => { try { await navigator.clipboard.writeText(TEST_URL); setFlash('링크 복사 완료!'); setTimeout(() => setFlash(''), 2000); track('firetype_share', { type: A.id, via: 'copy' }); } catch { /* ignore */ } };
-  const pickCity = (krw) => { if (onChange) { onChange('monthlyLivingCost', krw); if (onMove) onMove('result'); } else if (onMove) onMove('cities'); };
+  // 도시 적용 = 미리보기(샌드박스)로만. 저장은 미리보기 화면에서 사용자가 명시적으로. 기존 저장값 무손상.
+  const pickCity = (krw) => { if (onPreviewCity) { onPreviewCity(krw); return; } if (onMove) onMove('cities'); };
 
   return (
     <div className="fm-ft-result">
@@ -110,7 +111,7 @@ function Result({ answers, simulation, onChange, onMove, onRestart }) {
             </div>
             {r.fireAge && <p className="fm-ft-fire">⏱️ 이 도시면 <b>{r.fireAge}세</b>에 파이어 가능</p>}
             <p className="fm-ft-blurb">{r.city.blurb}</p>
-            <button type="button" className="fm-ft-citycta" onClick={() => pickCity(r.city.krw)}>{onChange ? '이 도시로 내 결과 보기' : '지역별 파이어 보기'} →</button>
+            <button type="button" className="fm-ft-citycta" onClick={() => pickCity(r.city.krw)}>{onPreviewCity ? '이 도시로 미리보기' : '지역별 파이어 보기'} →</button>
           </article>
         ))}
       </div>
@@ -128,7 +129,7 @@ function Result({ answers, simulation, onChange, onMove, onRestart }) {
   );
 }
 
-export default function FireTypeTest({ simulation, onChange, onMove, onBack }) {
+export default function FireTypeTest({ simulation, onChange, onMove, onBack, onPreviewCity }) {
   const [stage, setStage] = useState('cover'); // 'cover' | 'quiz' | 'result'
   const [idx, setIdx] = useState(0);
   const [answers, setAnswers] = useState([]);
@@ -145,7 +146,7 @@ export default function FireTypeTest({ simulation, onChange, onMove, onBack }) {
       <Header tag="파이어 유형" onBack={onBack} />
       {stage === 'cover' && <Cover onStart={start} />}
       {stage === 'quiz' && <Quiz idx={idx} onPick={pick} onBack={back} />}
-      {stage === 'result' && <Result answers={answers} simulation={simulation} onChange={onChange} onMove={onMove} onRestart={restart} />}
+      {stage === 'result' && <Result answers={answers} simulation={simulation} onChange={onChange} onMove={onMove} onRestart={restart} onPreviewCity={onPreviewCity} />}
     </main>
   );
 }

@@ -58,7 +58,7 @@ export default function SubscribePopup({ onMove, simulation }) {
   const close = () => { try { track('subscribe_popup_close', {}); } catch { /* ignore */ } setOpen(false); };
   const hideToday = () => { try { localStorage.setItem(HIDE_DAY, todayStr()); } catch { /* ignore */ } try { track('subscribe_popup_hide_today', {}); } catch { /* ignore */ } setOpen(false); };
   const go = async () => {
-    if (iosInstall) { try { track('subscribe_popup_ios', {}); } catch { /* ignore */ } setMsg('사파리 공유 버튼 → ‘홈 화면에 추가’ 후, 홈 아이콘으로 다시 들어와 켜주세요.'); return; }
+    if (iosInstall) { try { track('subscribe_popup_ios', {}); } catch { /* ignore */ } setMsg('아이폰은 3단계예요 — ① 사파리 공유 버튼 → ‘홈 화면에 추가’ ② 홈 아이콘으로 다시 열기 ③ 상단 ‘🔔 알림’ 버튼 탭!'); return; }
     if (!loggedIn) { try { track('subscribe_popup_login', {}); } catch { /* ignore */ } setOpen(false); if (onMove) onMove('account'); return; }
     setWorking(true);
     try { track('subscribe_popup_try', {}); } catch { /* ignore */ }

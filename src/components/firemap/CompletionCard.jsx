@@ -51,7 +51,7 @@ export default function CompletionCard({ simulation, onMove }) {
       ) : p.alreadyAhead ? (
         <div style={S.planBox}>
           <p style={{ ...S.planMain, color: '#0f6e56' }}>👏 지금 계획이면 목표보다 앞서 파이어 가능</p>
-          <p style={S.planSub}>{earliest ? <>지금 속도면 <b>{earliest}세</b> — 목표 {p.targetAge}세보다 빨라요. </> : null}추가 저축 없이 달성!</p>
+          <p style={S.planSub}>{earliest ? <>지금 속도면 <b>{earliest}세</b> — 목표 {p.targetAge}세 이내예요. </> : null}추가 저축 없이 달성!</p>
         </div>
       ) : (
         <div style={S.planBox}>

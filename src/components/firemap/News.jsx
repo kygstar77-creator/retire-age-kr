@@ -36,7 +36,7 @@ const STYLE = `
 .fm-news-empty{text-align:center;color:#9aa3bf;font-size:13.5px;padding:30px 0}
 `;
 
-export default function News({ onBack, simulation }) {
+export default function News({ simulation }) {
   const [rows, setRows] = useState(null);
   const [cat, setCat] = useState('all');
 
@@ -57,7 +57,7 @@ export default function News({ onBack, simulation }) {
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <style>{STYLE}</style>
-      <Header tag="소식·뉴스" onBack={onBack} />
+      <Header tag="소식·뉴스" />
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">📰 오늘의 경제 소식</p>
         <h2>파이어에 필요한 뉴스만</h2>

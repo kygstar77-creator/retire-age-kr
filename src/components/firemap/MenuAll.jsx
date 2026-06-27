@@ -30,15 +30,15 @@ const SECTIONS = [
     label: '설계 도구',
     items: [
       { ico: '🧭', title: '파이어 유형 테스트 ✨', desc: '12문항으로 내 파이어족 유형 + 살 도시 Top3 (공유)', to: 'firetype' },
-      { ico: '🎛️', title: '조건 바꿔 비교', desc: '저축·수익률·은퇴나이 What-If', to: 'experiment' },
-      { ico: '📍', title: '지역별 파이어 — 내 조건으로 비교', desc: '내 입력값 기준, 도시를 옮기면 파이어가 몇 년 당겨지는지', to: 'cities' }
+      { ico: '🎛️', title: '조건 바꿔 비교', desc: '저축·수익률·은퇴나이 What-If', to: 'experiment' }
     ]
   },
   {
-    label: '지역으로 보는 파이어 (자료·플랜)',
+    label: '🗺️ 지역으로 파이어 보기',
     items: [
-      { ico: '🏘️', title: '지역·가구별 파이어 플랜', desc: '지역×가구형태×유형별 필요자산·저축 — 사례처럼 찾아보기', href: '/guide/region-plan/' },
-      { ico: '🏙️', title: '도시별 생활비·집값 백과', desc: '도시별 생활비·아파트 실거래가·물가 사전', href: '/guide/regions/' }
+      { ico: '📍', title: '내 조건으로 지역 비교', desc: '도시를 옮기면 파이어가 몇 년 당겨지는지 · 계산', to: 'cities' },
+      { ico: '🏘️', title: '지역·가구별 필요자산 사례', desc: '지역×가구×유형별 자료', href: '/guide/region-plan/' },
+      { ico: '🏙️', title: '도시별 생활비·집값', desc: '생활비·실거래가·물가 자료', href: '/guide/regions/' }
     ]
   },
   {
@@ -138,3 +138,4 @@ const S = {
   rowGo: { fontSize: 18, color: '#c2c7d0', fontWeight: 700, flex: '0 0 auto' },
   foot: { fontSize: 10.5, color: '#9aa3bf', lineHeight: 1.6, padding: '4px 8px 0', margin: 0 }
 };
+```

@@ -46,7 +46,13 @@ export default function News({ onBack, simulation }) {
     return () => { alive = false; };
   }, []);
 
-  const list = (rows || []).filter((r) => cat === 'all' || (r.category || 'news') === cat);
+  // 뉴스 카테고리만 노출(자유·질문 등 커뮤니티 글은 커뮤니티 탭으로) — 공식 자유토픽이 뉴스탭에 새던 문제 수정
+  const NEWS_CATS = new Set(['news', 'realestate', 'invest', 'sidejob', 'pension', 'life', 'save']);
+  const list = (rows || []).filter((r) => {
+    const c = r.category || 'news';
+    if (!NEWS_CATS.has(c)) return false;
+    return cat === 'all' || c === cat;
+  });
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">

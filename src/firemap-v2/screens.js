@@ -21,7 +21,8 @@ export const screens = {
   community:  { hash: '#community',  title: '커뮤니티',           type: 'tool', back: 'menu', tab: 'community' },
   ranking:    { hash: '#ranking',    title: 'FIRE 랭킹',          type: 'tool', back: 'result', tab: 'ranking' },
   cities:     { hash: '#cities',     title: '지역별 파이어 (국내·해외)',      type: 'tool', back: 'menu' },
-  firetype:   { hash: '#firetype',   title: '파이어 유형 테스트',  type: 'tool', back: 'home', tab: 'home' }
+  firetype:   { hash: '#firetype',   title: '파이어 유형 테스트',  type: 'tool', back: 'home', tab: 'home' },
+  news:       { hash: '#news',       title: '소식·뉴스',          type: 'tool', back: 'home', tab: 'news' }
 };
 
 export const NEXT_ACTION_META = {
@@ -33,6 +34,7 @@ export const NEXT_ACTION_META = {
 };
 
 export const TOOLS = [
+  { id: 'news',       tag: '소식',   title: '경제 뉴스',          desc: '파이어 관점 데일리 경제·부동산·투자·연금 소식' },
   { id: 'firetype',   tag: '신규',   title: '파이어 유형 테스트', desc: '12문항으로 내 파이어족 유형 + 살 도시 Top3' },
   { id: 'index',      tag: '데이터', title: '대한민국 파이어 지수', desc: '7천여 명 집계로 보는 또래 중 내 위치' },
   { id: 'experiment', tag: '비교',   title: '조건 바꿔 비교',     desc: '증권앱 차트로 What-If 비교' },
@@ -46,6 +48,7 @@ export const TOOLS = [
 
 export const TABS = [
   { id: 'home',  label: '홈',   target: 'home' },
+  { id: 'news',  label: '뉴스', target: 'news' },
   { id: 'save',  label: '저축', target: 'save' },
   { id: 'ranking', label: '랭킹', target: 'ranking' },
   { id: 'community', label: '커뮤니티', target: 'community' },

@@ -86,6 +86,14 @@ export async function loadCommunityThread() {
   return rows || [];
 }
 
+// 공식 경제뉴스(파이어맵 공식 글)만 — 커뮤니티(유저 글)와 분리해 '소식·뉴스' 탭에서 모아보기.
+export async function loadOfficialNews(limit = 80) {
+  let rows = await commGet(`${TABLE}?select=id,message,created_at,category&kind=eq.community&status=eq.visible&client_id=eq.firemap-official&parent_id=is.null&order=created_at.desc&limit=${limit}`);
+  if (rows === null) rows = await commGet(`${TABLE}?select=id,message,created_at,category&kind=eq.community&status=eq.visible&client_id=eq.firemap-official&order=created_at.desc&limit=${limit}`);
+  if (rows === null) rows = await commGet(`${TABLE}?select=id,message,created_at&kind=eq.community&status=eq.visible&client_id=eq.firemap-official&order=created_at.desc&limit=${limit}`);
+  return rows || [];
+}
+
 // 커뮤니티 최근 원글 미리보기(라운지 유도용)
 export async function fetchCommunityPeek(limit = 3) {
   let rows = await commGet(`${TABLE}?select=id,nickname,message,created_at,parent_id&kind=eq.community&status=eq.visible&parent_id=is.null&order=created_at.desc&limit=${limit}`);

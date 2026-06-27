@@ -139,7 +139,7 @@ export default function Community({ onBack, onMove, simulation }) {
   const titleOf = (cid) => titleFromStats(cid && stats[cid]);
   const myTitle = (() => { for (const id of myIds) { const t = titleOf(id); if (t) return t; } return null; })();
 
-  const filtered = rows.filter((r) => !r.parent_id && (cat === 'all' || catOf(r) === cat) && (stageFilter === 'all' || stageOf(r) === Number(stageFilter)));
+  const filtered = rows.filter((r) => !r.parent_id && r.client_id !== 'firemap-official' && (cat === 'all' || catOf(r) === cat) && (stageFilter === 'all' || stageOf(r) === Number(stageFilter)));
   const weekAgo = Date.now() - 7 * 86400000;
   const best = filtered.filter((r) => (r.likes || 0) > 0 && new Date(r.created_at).getTime() > weekAgo).sort((a, b) => (b.likes || 0) - (a.likes || 0))[0] || null;
   const posts = filtered.filter((r) => !best || r.id !== best.id).sort((a, b) => (sort === 'hot' ? ((b.likes || 0) - (a.likes || 0)) || (new Date(b.created_at) - new Date(a.created_at)) : (new Date(b.created_at) - new Date(a.created_at))));

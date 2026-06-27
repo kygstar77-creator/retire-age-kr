@@ -174,6 +174,29 @@ export default function CityExplorer({ inputs, simulation, onChange, onMove, onB
           <p className="fm-ce-note">도시별 금액은 1인 월 생활비 대략 추정치예요. 실제 주거·의료·환율·비자 조건에 따라 달라질 수 있어요. {sourceLine('cityCost')}</p>
         </>
       )}
+
+      <section className="fm-card" style={{ marginTop: 14 }}>
+        <p className="fm-kicker">더 깊이 보기</p>
+        <a href="/guide/region-plan/" style={CE.guideRow}>
+          <span style={CE.guideIco}>🏘️</span>
+          <span style={CE.guideTx}><b style={CE.guideTitle}>지역·가구별 필요자산 사례</b><em style={CE.guideDesc}>지역×가구×유형별 필요자산 자료</em></span>
+          <span style={CE.guideGo}>›</span>
+        </a>
+        <a href="/guide/regions/" style={{ ...CE.guideRow, borderBottom: 0 }}>
+          <span style={CE.guideIco}>🏙️</span>
+          <span style={CE.guideTx}><b style={CE.guideTitle}>도시별 생활비·집값</b><em style={CE.guideDesc}>생활비·실거래가·물가 자료</em></span>
+          <span style={CE.guideGo}>›</span>
+        </a>
+      </section>
     </main>
   );
 }
+
+const CE = {
+  guideRow: { display: 'flex', alignItems: 'center', gap: 12, width: '100%', textDecoration: 'none', borderBottom: '1px solid #f3f1ee', padding: '12px 2px' },
+  guideIco: { fontSize: 19, flex: '0 0 auto', width: 24, textAlign: 'center' },
+  guideTx: { display: 'flex', flexDirection: 'column', flex: 1, minWidth: 0, gap: 2 },
+  guideTitle: { fontSize: 14, fontWeight: 700, color: '#15151b', lineHeight: 1.3 },
+  guideDesc: { fontSize: 11.5, fontWeight: 500, color: '#8a8f99', fontStyle: 'normal', lineHeight: 1.4 },
+  guideGo: { fontSize: 18, color: '#c2c7d0', fontWeight: 700, flex: '0 0 auto' }
+};

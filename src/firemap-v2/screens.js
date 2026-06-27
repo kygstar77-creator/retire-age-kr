@@ -18,7 +18,7 @@ export const screens = {
   dividend:   { hash: '#dividend',   title: '파이어 후 현금흐름',     type: 'tool', back: 'menu' },
   pension:    { hash: '#pension',    title: '국민연금 조기수령',   type: 'tool', back: 'menu' },
   city:       { hash: '#city',       title: '도시 비교 · 해외 체류', type: 'tool', back: 'cities' },
-  community:  { hash: '#community',  title: '커뮤니티',           type: 'tool', back: 'menu', tab: 'community' },
+  community:  { hash: '#community',  title: '파이어 인증',        type: 'tool', back: 'menu', tab: 'community' },
   ranking:    { hash: '#ranking',    title: 'FIRE 랭킹',          type: 'tool', back: 'result', tab: 'ranking' },
   cities:     { hash: '#cities',     title: '지역별 파이어 (국내·해외)',      type: 'tool', back: 'menu' },
   firetype:   { hash: '#firetype',   title: '파이어 유형 테스트',  type: 'tool', back: 'home', tab: 'home' },
@@ -43,7 +43,7 @@ export const TOOLS = [
   { id: 'dividend',   tag: '현금흐름', title: '파이어 후 현금흐름',   desc: '배당·인출·세금·건보료까지' },
   { id: 'pension',    tag: '연금',   title: '국민연금 조기수령',  desc: '당겨 받기 득실' },
   { id: 'cities',     tag: '지역',   title: '지역별 파이어',   desc: '국내·해외 지역 생활비로 파이어 시점 비교' },
-  { id: 'community',  tag: '커뮤니티', title: '다른 사람들',       desc: '익명 한마디·후기' }
+  { id: 'community',  tag: '인증', title: '파이어 인증',       desc: '내 결과 인증·한마디' }
 ];
 
 export const TABS = [
@@ -51,7 +51,7 @@ export const TABS = [
   { id: 'news',  label: '뉴스', target: 'news' },
   { id: 'save',  label: '저축', target: 'save' },
   { id: 'ranking', label: '랭킹', target: 'ranking' },
-  { id: 'community', label: '커뮤니티', target: 'community' },
+  { id: 'community', label: '인증', target: 'community' },
   { id: 'menu', label: '전체', target: 'menu' }
 ];
 

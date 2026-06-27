@@ -139,7 +139,9 @@ export default function Community({ onBack, onMove, simulation }) {
   const titleOf = (cid) => titleFromStats(cid && stats[cid]);
   const myTitle = (() => { for (const id of myIds) { const t = titleOf(id); if (t) return t; } return null; })();
 
-  const filtered = rows.filter((r) => !r.parent_id && r.client_id !== 'firemap-official' && (cat === 'all' || catOf(r) === cat) && (stageFilter === 'all' || stageOf(r) === Number(stageFilter)));
+  // 공식 글 중 '토론/자유' 성격(자유·목표·질문·가계부)은 커뮤니티에 노출, 공식 '뉴스'성 글은 제외(뉴스탭 전용)
+  const OFFICIAL_COMMUNITY_CATS = new Set(['free', 'goal', 'qa', 'budget']);
+  const filtered = rows.filter((r) => !r.parent_id && (r.client_id !== 'firemap-official' || OFFICIAL_COMMUNITY_CATS.has(catOf(r))) && (cat === 'all' || catOf(r) === cat) && (stageFilter === 'all' || stageOf(r) === Number(stageFilter)));
   const weekAgo = Date.now() - 7 * 86400000;
   const best = filtered.filter((r) => (r.likes || 0) > 0 && new Date(r.created_at).getTime() > weekAgo).sort((a, b) => (b.likes || 0) - (a.likes || 0))[0] || null;
   const posts = filtered.filter((r) => !best || r.id !== best.id).sort((a, b) => (sort === 'hot' ? ((b.likes || 0) - (a.likes || 0)) || (new Date(b.created_at) - new Date(a.created_at)) : (new Date(b.created_at) - new Date(a.created_at))));

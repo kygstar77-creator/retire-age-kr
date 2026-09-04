@@ -28,7 +28,7 @@ export default function MarketIndicators({ region = '서울' }) {
   const cpi = macro && macro.cpi;
   const rates = (macro && macro.rates) || [];
   const base = rates.find((r) => r.key === 'base_rate');
-  const dep = rates.find((r) => r.key === 'deposit_12m');
+  const dep = rates.find((r) => r.key === 'deposit_12m' && r.source !== 'worldbank'); // 연간 평균(전년도)은 비노출
   const sale = re && re.find((r) => r.region === region && r.deal_type === 'sale');
   const jeonse = re && re.find((r) => r.region === region && r.deal_type === 'jeonse');
 

@@ -41,7 +41,8 @@ function buildItems({ online, names, recent, total, market, macro, re, calc, com
   if (macro) {
     const rates = macro.rates || [];
     const base = rates.find((r) => r.key === 'base_rate');
-    const dep = rates.find((r) => r.key === 'deposit_12m');
+    // 예금금리: World Bank 연간 평균은 시차가 커서(전년도 값) 오해 소지 → 월간 소스일 때만 노출
+    const dep = rates.find((r) => r.key === 'deposit_12m' && r.source !== 'worldbank');
     const cpi = macro.cpi;
     const parts = [];
     if (base && base.value != null) parts.push(`기준금리 ${base.value}%`);

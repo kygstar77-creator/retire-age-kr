@@ -49,6 +49,7 @@ import '../firemap-v3-hotfix.css';
 import '../firemap-v3-ia.css';
 import '../firemap-status.css';
 import '../firemap-premium.css';
+import { Toaster } from '../ui/index.js';
 
 function getSharedInputs() {
   try {
@@ -189,6 +190,7 @@ export default function FireMapMVP() {
       {screens[screen]?.tab && <BottomTabs current={screen} onMove={setScreen} />}
       <Wall visible={screen === 'home'} />   {/* 방명록 FAB은 홈 전용(스꾸 패턴) — 질문·결과 화면은 방해 없이 */}
       <Consent />
+      <Toaster />
     </>
   );
 

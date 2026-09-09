@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { pushSupported, isIOSDevice, isStandalone, notifPermission, currentSubscription, subscribeFireClock, unsubscribeFireClock } from '../../utils/firePush.js';
 import { track } from '../../firemap-v2/dailyData.js';
+import { toast } from '../../ui/index.js';
 
 // 헤더 상시 노출 알림 칩 — 🔔 알림(켜짐) / 🔕 알림(꺼짐) 한눈에, 탭하면 토글.
 // '켜진 건지 모르겠다' 혼란 해소. 헤더 .fm-actions button 공통 칩 스타일을 그대로 사용.
@@ -28,7 +29,7 @@ export default function NotifBell() {
   // 푸시 불가 기기(아이폰 미설치는 안내 목적상 예외)면 숨김
   if (!supported && !iosInstall) return null;
 
-  const notify = (t) => { try { window.alert(t); } catch { /* ignore */ } };
+  const notify = (t) => { try { toast(t); } catch { /* ignore */ } };
 
   const onClick = async () => {
     if (state === 'ios') { notify('아이폰은 사파리 공유 버튼 → ‘홈 화면에 추가’ 후, 홈 아이콘으로 들어와 다시 눌러 켜주세요.'); return; }

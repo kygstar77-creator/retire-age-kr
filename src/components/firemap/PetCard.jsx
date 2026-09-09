@@ -4,6 +4,7 @@ import { computePet } from '../../utils/pet.js';
 import { identityIds } from '../../utils/identity.js';
 import { fetchWeeklySaveBoard } from '../../utils/firemapSaveApi.js';
 import { fetchMyContribution } from '../../utils/firemapFeedbackApi.js';
+import { toast } from '../../ui/index.js';
 
 const COSMETICS = [
   { key: 'cap', name: '모자', emoji: '🧢', cp: 1 },
@@ -191,7 +192,7 @@ export default function PetCard() {
       try { await navigator.share({ title: '파이어맵 — 내 절약 너구리', text, url }); return; }
       catch (e) { if (e && e.name === 'AbortError') return; }
     }
-    try { await navigator.clipboard.writeText(`${text} ${url}`); window.alert('자랑 문구를 복사했어요! 카톡·단톡방에 붙여넣어 보세요 🔥'); }
+    try { await navigator.clipboard.writeText(`${text} ${url}`); toast.good('자랑 문구를 복사했어요! 카톡·단톡방에 붙여넣어 보세요 🔥'); }
     catch { /* ignore */ }
   };
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { votePoll, fetchPollResults } from '../../utils/firemapScoresApi.js';
 import { BASE_URL } from '../../firemap-v2/data.js';
+import { toast } from '../../ui/index.js';
 
 const GAMES = [
   { key: 'bg_money_vs_quit', q: '당신의 선택은?', a: '10억 받고\n80세까지 일', b: '0원이어도\n지금 파이어' },
@@ -41,7 +42,7 @@ export default function BalanceGame() {
       try { await navigator.share({ title: '파이어맵 — 밸런스 게임', text, url: BASE_URL }); return; }
       catch (e) { if (e && e.name === 'AbortError') return; }
     }
-    try { await navigator.clipboard.writeText(`${text} ${BASE_URL}`); window.alert('공유 문구를 복사했어요!'); } catch { /* ignore */ }
+    try { await navigator.clipboard.writeText(`${text} ${BASE_URL}`); toast.good('공유 문구를 복사했어요!'); } catch { /* ignore */ }
   };
 
   return (

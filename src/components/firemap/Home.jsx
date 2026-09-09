@@ -9,6 +9,7 @@ import { track } from '../../firemap-v2/dailyData.js';
 import FirePlan from './FirePlan.jsx';
 import InstallButton from './InstallButton.jsx';
 import IdentityLine from './IdentityLine.jsx';
+import { Card, SectionHead } from '../../ui/index.js';
 
 function readChallenge() {
   try {
@@ -104,13 +105,9 @@ export default function Home({ onStart, onMove, simulation, onChange }) {
         <button type="button" className="fm-home-cta" onClick={() => { const a = commitAge(); track('start_calc', { age: a, from: challenge ? 'share' : 'home' }); onStart(a); }}>{challenge ? '나도 계산하고 친구랑 비교하기 →' : '내 파이어 나이 계산하기 →'}</button>
         {proof && <p className="fm-home-proof">{proof}</p>}
       </section>
-      <section className="fm-card" style={{ borderColor: 'rgba(255,90,0,0.3)' }}>
-        <p className="fm-kicker">🔥 숫자 하나로 끝이 아니에요</p>
-        <h2 style={{ margin: '2px 0 10px' }}>계산 다음, 파이어 여정이 시작돼요</h2>
-        <p style={{ fontSize: '13px', color: 'var(--fm-muted, #6b6f76)', lineHeight: 1.6, margin: 0 }}>
-          물가·국민연금까지 반영한 현실적인 계산은 시작일 뿐이에요. 지금 내가 어느 단계인지, 다음 한 걸음은 무엇인지 — <b>목표까지 가는 길 전체를 지도로</b> 안내하고, 건보료·세금 같은 정밀 점검과 내 기록을 한 곳에 모아 계속 관리해요.
-        </p>
-      </section>
+      <Card variant="hero">
+        <SectionHead kicker="🔥 숫자 하나로 끝이 아니에요" title="계산 다음, 파이어 여정이 시작돼요" desc={<>물가·국민연금까지 반영한 현실적인 계산은 시작일 뿐이에요. 지금 내가 어느 단계인지, 다음 한 걸음은 무엇인지 — <b>목표까지 가는 길 전체를 지도로</b> 안내하고, 건보료·세금 같은 정밀 점검과 내 기록을 한 곳에 모아 계속 관리해요.</>} />
+      </Card>
       <nav className="fm-policy-links" aria-label="정책 및 문의">
         <a href="/privacy.html">개인정보처리방침</a>
         <a href="/disclaimer.html">면책 안내</a>

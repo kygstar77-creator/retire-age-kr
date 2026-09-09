@@ -1,5 +1,6 @@
 import Header from './Header.jsx';
 import { TOOLS } from '../../firemap-v2/screens.js';
+import { Card, SectionHead } from '../../ui/index.js';
 
 const ICONS = { experiment: '🎛️', dependent: '🩺', foreignTax: '🧾', dividend: '💵', pension: '🏦', community: '💬' };
 const GROUPS = [
@@ -12,11 +13,9 @@ export default function Tools({ onMove }) {
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="도구" />
-      <section className="fm-card fm-text-card">
-        <p className="fm-kicker">정밀 도구</p>
-        <h2>필요한 것만 골라서</h2>
-        <p>핵심 계산 외 현금흐름·세금·건보료·지역 같은 정밀 도구를 여기서 확인해요.</p>
-      </section>
+      <Card>
+        <SectionHead kicker="정밀 도구" title="필요한 것만 골라서" desc="핵심 계산 외 현금흐름·세금·건보료·지역 같은 정밀 도구를 여기서 확인해요." />
+      </Card>
 
       <div className="fm-tool-group">
         <p className="fm-tool-group-label">지역으로 보는 파이어</p>

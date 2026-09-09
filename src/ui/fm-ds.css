@@ -1,0 +1,276 @@
+/* =============================================================
+   FireMap Design System v1 — 토큰 1벌 + 컴포넌트 18개 (2026-09-10)
+   - 6차 결정서 기준. 새 화면·리팩터는 이 파일의 .ds-* 만 쓴다.
+   - !important 금지. 색은 토큰만. 숫자는 .num / Stat.
+   - 레거시 fm-* CSS와 공존(이름 충돌 없음). 로드 순서: main.jsx 마지막.
+   ============================================================= */
+:root {
+  --ds-bg: #f6f7f9;
+  --ds-surface: #ffffff;
+  --ds-surface-2: #f2f4f6;
+  --ds-line: #e6e9ee;
+  --ds-line-strong: #d9dee5;
+  --ds-ink: #18191d;
+  --ds-ink-2: #4b515c;
+  --ds-ink-3: #8a909b;
+  --ds-accent: #ff5a00;
+  --ds-accent-strong: #e64f00;
+  --ds-accent-soft: #fff1ea;
+  --ds-accent-ink: #c2410c;
+  --ds-good: #11a36b; --ds-good-soft: #e7f6ef;
+  --ds-warn: #c77700; --ds-warn-soft: #fdf3e3;
+  --ds-bad: #e5484d;  --ds-bad-soft: #fdecec;
+  --ds-r-sm: 10px; --ds-r-md: 14px; --ds-r-lg: 18px; --ds-r-xl: 24px; --ds-r-pill: 999px;
+  --ds-sp-1: 4px; --ds-sp-2: 8px; --ds-sp-3: 12px; --ds-sp-4: 16px; --ds-sp-5: 20px; --ds-sp-6: 24px; --ds-sp-8: 32px;
+  --ds-shadow-sm: 0 1px 2px rgba(17, 19, 25, .05);
+  --ds-shadow-md: 0 6px 20px rgba(17, 19, 25, .06);
+  --ds-shadow-pop: 0 18px 50px rgba(17, 19, 25, .16);
+  --ds-font: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --ds-fs-display: 40px; --ds-fs-title-1: 28px; --ds-fs-title-2: 22px; --ds-fs-body: 15px; --ds-fs-body-sm: 13.5px; --ds-fs-caption: 12px;
+  --ds-safe-top: env(safe-area-inset-top, 0px);
+  --ds-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --ds-tabbar-h: 56px;
+  --ds-focus: 0 0 0 3px rgba(255, 90, 0, .22);
+}
+/* 다크 토큰 — 지금은 opt-in(html[data-theme=dark])만. 레거시 CSS가 색을 하드코딩해서 자동 전환은 2단계. */
+html[data-theme="dark"] {
+  --ds-bg: #12161b; --ds-surface: #1a2028; --ds-surface-2: #222a33; --ds-line: #2b333d; --ds-line-strong: #343d48;
+  --ds-ink: #e8ecf1; --ds-ink-2: #b4bcc6; --ds-ink-3: #7f8994;
+  --ds-accent: #ff7a33; --ds-accent-strong: #ff8d52; --ds-accent-soft: #2b1d14; --ds-accent-ink: #ffa06b;
+  --ds-good: #4cc38a; --ds-good-soft: #12271c; --ds-warn: #e2b04a; --ds-warn-soft: #2a2213; --ds-bad: #ef6f5f; --ds-bad-soft: #2c1815;
+  --ds-shadow-sm: 0 1px 2px rgba(0, 0, 0, .4); --ds-shadow-md: 0 6px 20px rgba(0, 0, 0, .35); --ds-shadow-pop: 0 18px 50px rgba(0, 0, 0, .6);
+}
+
+/* ---------- utilities ---------- */
+.num { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum'; }
+.ds-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ds-stack { display: flex; flex-direction: column; gap: var(--ds-sp-3); }
+.ds-row { display: flex; align-items: center; gap: var(--ds-sp-2); }
+.ds-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ds-sp-2); }
+.ds-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ds-sp-2); }
+
+/* ---------- 1. Button / 2. IconButton ---------- */
+.ds-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  font-family: var(--ds-font); font-weight: 700; line-height: 1.2; cursor: pointer; user-select: none;
+  border: 1px solid transparent; border-radius: var(--ds-r-md); text-decoration: none;
+  transition: transform .12s ease, background .12s ease, box-shadow .12s ease, opacity .12s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.ds-btn:active { transform: translateY(1px) scale(.995); }
+.ds-btn:disabled, .ds-btn[aria-disabled="true"] { opacity: .5; cursor: not-allowed; transform: none; }
+.ds-btn:focus-visible { outline: none; box-shadow: var(--ds-focus); }
+.ds-btn--lg { min-height: 56px; padding: 0 20px; font-size: 16px; font-weight: 800; border-radius: var(--ds-r-lg); }
+.ds-btn--md { min-height: 48px; padding: 0 16px; font-size: 14.5px; }
+.ds-btn--sm { min-height: 36px; padding: 0 12px; font-size: 13px; border-radius: var(--ds-r-sm); }
+.ds-btn--full { width: 100%; }
+.ds-btn--primary { background: var(--ds-accent); color: #fff; box-shadow: 0 8px 20px rgba(255, 90, 0, .18); }
+.ds-btn--primary:hover { background: var(--ds-accent-strong); }
+.ds-btn--secondary { background: var(--ds-surface); color: var(--ds-ink); border-color: var(--ds-line-strong); }
+.ds-btn--secondary:hover { background: var(--ds-surface-2); }
+.ds-btn--ghost { background: transparent; color: var(--ds-accent-ink); }
+.ds-btn--ghost:hover { background: var(--ds-accent-soft); }
+.ds-btn--tint { background: var(--ds-accent-soft); color: var(--ds-accent-ink); }
+.ds-btn--dark { background: var(--ds-ink); color: var(--ds-surface); }
+.ds-btn--danger { background: var(--ds-bad-soft); color: var(--ds-bad); }
+.ds-btn--loading { position: relative; color: transparent; }
+.ds-btn--loading::after { content: ''; position: absolute; width: 16px; height: 16px; border-radius: 50%; border: 2px solid rgba(255,255,255,.5); border-top-color: #fff; animation: dsSpin .8s linear infinite; }
+.ds-btn--secondary.ds-btn--loading::after, .ds-btn--ghost.ds-btn--loading::after { border-color: var(--ds-line-strong); border-top-color: var(--ds-accent); }
+@keyframes dsSpin { to { transform: rotate(360deg); } }
+.ds-iconbtn {
+  display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: var(--ds-r-pill);
+  border: 1px solid var(--ds-line-strong); background: var(--ds-surface); color: var(--ds-ink); cursor: pointer; font-size: 18px; line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+.ds-iconbtn--sm { width: 32px; height: 32px; font-size: 15px; }
+.ds-iconbtn--plain { border-color: transparent; background: transparent; }
+.ds-iconbtn:active { background: var(--ds-surface-2); }
+.ds-iconbtn:focus-visible { outline: none; box-shadow: var(--ds-focus); }
+
+/* ---------- 3. BottomCTA ---------- */
+.ds-bottomcta { display: flex; gap: var(--ds-sp-2); margin-top: var(--ds-sp-4); }
+.ds-bottomcta > .ds-btn { flex: 1; }
+.ds-bottomcta > .ds-btn--secondary { flex: 0 0 auto; min-width: 96px; }
+.ds-bottomcta--fixed {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 140; margin: 0;
+  max-width: 480px; margin-inline: auto; padding: 10px 14px calc(10px + var(--ds-safe-bottom));
+  background: linear-gradient(180deg, rgba(246, 247, 249, 0), var(--ds-bg) 40%);
+}
+
+/* ---------- 4. Card ---------- */
+.ds-card {
+  background: var(--ds-surface); border: 1px solid var(--ds-line-strong); border-radius: var(--ds-r-xl);
+  padding: var(--ds-sp-4); box-shadow: var(--ds-shadow-sm); color: var(--ds-ink);
+}
+.ds-card--lg { padding: var(--ds-sp-5); }
+.ds-card--hero { border-color: rgba(255, 90, 0, .32); }
+.ds-card--soft { background: var(--ds-surface-2); border-color: transparent; box-shadow: none; }
+.ds-card--flat { box-shadow: none; }
+.ds-card--tint { background: var(--ds-accent-soft); border-color: rgba(255, 90, 0, .18); box-shadow: none; }
+.ds-card--dark { background: var(--ds-ink); color: var(--ds-surface); border-color: var(--ds-ink); }
+.ds-card--clickable { cursor: pointer; text-align: left; width: 100%; font: inherit; }
+.ds-card--clickable:active { background: var(--ds-surface-2); }
+.ds-card + .ds-card { margin-top: var(--ds-sp-3); }
+
+/* ---------- 5. SectionHead ---------- */
+.ds-sh { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--ds-sp-3); margin: 0 0 var(--ds-sp-3); }
+.ds-sh__kicker { display: block; font-size: var(--ds-fs-caption); font-weight: 800; color: var(--ds-accent-ink); letter-spacing: .01em; margin: 0 0 4px; }
+.ds-sh__title { margin: 0; font-size: var(--ds-fs-title-2); font-weight: 800; letter-spacing: -.02em; line-height: 1.25; color: var(--ds-ink); text-wrap: balance; }
+.ds-sh--sm .ds-sh__title { font-size: 17px; }
+.ds-sh__desc { margin: 6px 0 0; font-size: var(--ds-fs-body-sm); color: var(--ds-ink-2); line-height: 1.55; }
+.ds-sh__action { flex: 0 0 auto; }
+.ds-card--dark .ds-sh__title { color: inherit; } .ds-card--dark .ds-sh__desc { color: rgba(255,255,255,.72); } .ds-card--dark .ds-sh__kicker { color: #ffb38a; }
+
+/* ---------- 6. ListRow / ListGroup ---------- */
+.ds-list { background: var(--ds-surface); border: 1px solid var(--ds-line); border-radius: var(--ds-r-lg); overflow: hidden; }
+.ds-list__label { font-size: var(--ds-fs-caption); font-weight: 800; color: var(--ds-ink-3); letter-spacing: .01em; margin: 0 0 8px 4px; }
+.ds-listgroup + .ds-listgroup { margin-top: var(--ds-sp-5); }
+.ds-row-item {
+  display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; cursor: pointer; text-decoration: none;
+  background: none; border: 0; border-bottom: 1px solid var(--ds-line); color: var(--ds-ink); font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+.ds-row-item:last-child { border-bottom: 0; }
+.ds-row-item--S { padding: 9px 14px; } .ds-row-item--M { padding: 13px 14px; } .ds-row-item--L { padding: 16px 16px; }
+.ds-row-item--static { cursor: default; }
+.ds-row-item:not(.ds-row-item--static):active { background: var(--ds-surface-2); }
+.ds-row-item__lead { flex: 0 0 auto; width: 26px; text-align: center; font-size: 19px; line-height: 1; }
+.ds-row-item__body { display: flex; flex-direction: column; flex: 1; min-width: 0; gap: 2px; }
+.ds-row-item__title { font-size: 14px; font-weight: 700; line-height: 1.3; }
+.ds-row-item__desc { font-size: 11.5px; font-weight: 500; color: var(--ds-ink-3); line-height: 1.4; }
+.ds-row-item__trail { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 700; color: var(--ds-ink-2); }
+.ds-row-item__chev { color: var(--ds-line-strong); font-size: 18px; font-weight: 700; }
+.ds-row-item--accent .ds-row-item__trail { color: var(--ds-accent); }
+
+/* ---------- 7. Stat / 8. StatTiles ---------- */
+.ds-stat { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.ds-stat__label { font-size: var(--ds-fs-caption); font-weight: 700; color: var(--ds-ink-3); letter-spacing: .01em; }
+.ds-stat__value { font-weight: 800; letter-spacing: -.03em; line-height: 1.05; color: var(--ds-ink); font-variant-numeric: tabular-nums; font-feature-settings: 'tnum'; white-space: nowrap; }
+.ds-stat__value b, .ds-stat__value strong { color: var(--ds-accent); font-weight: inherit; }
+.ds-stat__unit { font-size: .55em; font-weight: 700; color: var(--ds-ink-2); margin-left: 2px; letter-spacing: 0; }
+.ds-stat--display .ds-stat__value { font-size: var(--ds-fs-display); }
+.ds-stat--title .ds-stat__value { font-size: var(--ds-fs-title-1); }
+.ds-stat--md .ds-stat__value { font-size: 20px; }
+.ds-stat--sm .ds-stat__value { font-size: 16px; }
+.ds-stat__delta { font-size: 12.5px; font-weight: 700; color: var(--ds-ink-2); }
+.ds-stat__delta--up { color: var(--ds-good); } .ds-stat__delta--down { color: var(--ds-bad); }
+.ds-stat--center { align-items: center; text-align: center; }
+.ds-card--dark .ds-stat__value, .ds-card--dark .ds-stat__label, .ds-card--dark .ds-stat__unit { color: inherit; }
+.ds-card--dark .ds-stat__label { opacity: .7; }
+.ds-tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ds-sp-2); }
+.ds-tile { background: var(--ds-surface-2); border-radius: var(--ds-r-sm); padding: 10px 8px; text-align: center; border: 0; font: inherit; color: inherit; min-width: 0; }
+.ds-tile--btn { cursor: pointer; }
+.ds-tile--btn:active { background: var(--ds-line); }
+.ds-tile .ds-stat__label { font-size: 11px; }
+.ds-tile .ds-stat__value { font-size: 17px; letter-spacing: -.02em; }
+
+/* ---------- 9. Progress ---------- */
+.ds-progress { display: flex; flex-direction: column; gap: 6px; }
+.ds-progress__labels { display: flex; justify-content: space-between; font-size: var(--ds-fs-caption); font-weight: 700; color: var(--ds-ink-3); }
+.ds-progress__track { height: 8px; background: var(--ds-surface-2); border-radius: var(--ds-r-pill); overflow: hidden; }
+.ds-progress__fill { display: block; height: 100%; background: var(--ds-accent); border-radius: var(--ds-r-pill); transition: width .4s ease; }
+.ds-progress--thin .ds-progress__track { height: 5px; }
+.ds-progress--good .ds-progress__fill { background: var(--ds-good); }
+
+/* ---------- 10. Chip / Badge ---------- */
+.ds-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.ds-chip {
+  display: inline-flex; align-items: center; gap: 4px; min-height: 32px; padding: 0 12px; border-radius: var(--ds-r-pill);
+  border: 1px solid var(--ds-line-strong); background: var(--ds-surface-2); color: var(--ds-ink-2); font: inherit; font-size: 12.5px; font-weight: 700; cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.ds-chip:active { background: var(--ds-line); }
+.ds-chip--on { background: var(--ds-accent-soft); border-color: var(--ds-accent); color: var(--ds-accent-ink); }
+.ds-chip--static { cursor: default; }
+.ds-badge { display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 6px; font-size: 11.5px; font-weight: 800; line-height: 1.5; white-space: nowrap; vertical-align: middle; }
+.ds-badge--neutral { background: var(--ds-surface-2); color: var(--ds-ink-2); }
+.ds-badge--accent { background: var(--ds-accent-soft); color: var(--ds-accent-ink); }
+.ds-badge--good { background: var(--ds-good-soft); color: var(--ds-good); }
+.ds-badge--warn { background: var(--ds-warn-soft); color: var(--ds-warn); }
+.ds-badge--bad { background: var(--ds-bad-soft); color: var(--ds-bad); }
+.ds-badge--dark { background: var(--ds-ink); color: var(--ds-surface); }
+
+/* ---------- 12. Sheet / 13. Dialog ---------- */
+.ds-dim { position: fixed; inset: 0; z-index: 200; background: rgba(17, 24, 39, .44); display: flex; align-items: flex-end; justify-content: center; animation: dsFade .18s ease; }
+.ds-dim--center { align-items: center; padding: 20px; }
+.ds-sheet {
+  width: min(480px, 100%); max-height: 88svh; display: flex; flex-direction: column;
+  background: var(--ds-surface); color: var(--ds-ink); border-radius: var(--ds-r-xl) var(--ds-r-xl) 0 0; box-shadow: var(--ds-shadow-pop);
+  padding: 8px 16px calc(16px + var(--ds-safe-bottom)); animation: dsUp .22s cubic-bezier(.2,.8,.2,1);
+}
+.ds-sheet__grab { width: 40px; height: 4px; border-radius: 2px; background: var(--ds-line-strong); margin: 4px auto 10px; }
+.ds-sheet__head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+.ds-sheet__title { margin: 0; font-size: 18px; font-weight: 800; letter-spacing: -.02em; }
+.ds-sheet__body { overflow: auto; -webkit-overflow-scrolling: touch; min-height: 0; }
+.ds-dialog {
+  width: min(360px, 100%); background: var(--ds-surface); color: var(--ds-ink); border-radius: var(--ds-r-xl); box-shadow: var(--ds-shadow-pop);
+  padding: 22px 20px 16px; animation: dsUp .18s ease;
+}
+.ds-dialog__title { margin: 0 0 6px; font-size: 18px; font-weight: 800; letter-spacing: -.02em; }
+.ds-dialog__desc { margin: 0 0 16px; font-size: 14px; color: var(--ds-ink-2); line-height: 1.55; }
+@keyframes dsFade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes dsUp { from { transform: translateY(16px); opacity: .6; } to { transform: none; opacity: 1; } }
+
+/* ---------- 13. Toast ---------- */
+.ds-toaster { position: fixed; left: 0; right: 0; bottom: calc(var(--ds-tabbar-h) + 22px + var(--ds-safe-bottom)); z-index: 260; display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: none; padding: 0 16px; }
+.ds-toast {
+  pointer-events: auto; max-width: 420px; background: var(--ds-ink); color: var(--ds-surface); font-size: 13.5px; font-weight: 600; line-height: 1.45;
+  padding: 11px 16px; border-radius: var(--ds-r-md); box-shadow: var(--ds-shadow-pop); animation: dsUp .2s ease; display: flex; align-items: center; gap: 10px;
+}
+.ds-toast--good { background: var(--ds-good); } .ds-toast--bad { background: var(--ds-bad); }
+.ds-toast__action { background: none; border: 0; color: inherit; font: inherit; font-weight: 800; text-decoration: underline; cursor: pointer; padding: 0; }
+.ds-toast--leaving { opacity: 0; transition: opacity .25s; }
+
+/* ---------- 14. Tabs (segmented) ---------- */
+.ds-tabs { display: flex; gap: 4px; background: var(--ds-surface-2); border-radius: var(--ds-r-md); padding: 4px; }
+.ds-tabs__item { flex: 1; min-height: 36px; border: 0; border-radius: var(--ds-r-sm); background: transparent; color: var(--ds-ink-3); font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.ds-tabs__item[aria-selected="true"] { background: var(--ds-surface); color: var(--ds-ink); box-shadow: var(--ds-shadow-sm); }
+.ds-tabs--pill { background: transparent; padding: 0; gap: 6px; }
+.ds-tabs--pill .ds-tabs__item { flex: 0 0 auto; padding: 0 12px; border: 1px solid var(--ds-line-strong); background: var(--ds-surface); border-radius: var(--ds-r-pill); }
+.ds-tabs--pill .ds-tabs__item[aria-selected="true"] { background: var(--ds-ink); color: var(--ds-surface); border-color: var(--ds-ink); box-shadow: none; }
+
+/* ---------- 17. Notice / EmptyState / 18. Skeleton ---------- */
+.ds-notice { display: flex; gap: 10px; align-items: flex-start; padding: 12px 14px; border-radius: var(--ds-r-md); font-size: 13.5px; line-height: 1.5; color: var(--ds-ink-2); background: var(--ds-surface-2); }
+.ds-notice__icon { flex: 0 0 auto; font-size: 16px; line-height: 1.4; }
+.ds-notice__body { flex: 1; min-width: 0; }
+.ds-notice__title { display: block; font-weight: 800; color: var(--ds-ink); margin-bottom: 2px; }
+.ds-notice--accent { background: var(--ds-accent-soft); color: var(--ds-accent-ink); } .ds-notice--accent .ds-notice__title { color: var(--ds-accent-ink); }
+.ds-notice--good { background: var(--ds-good-soft); color: var(--ds-good); } .ds-notice--good .ds-notice__title { color: var(--ds-good); }
+.ds-notice--warn { background: var(--ds-warn-soft); color: var(--ds-warn); } .ds-notice--warn .ds-notice__title { color: var(--ds-warn); }
+.ds-notice--bad { background: var(--ds-bad-soft); color: var(--ds-bad); } .ds-notice--bad .ds-notice__title { color: var(--ds-bad); }
+.ds-notice__close { flex: 0 0 auto; }
+.ds-empty { text-align: center; padding: 28px 16px; color: var(--ds-ink-3); }
+.ds-empty__icon { font-size: 34px; line-height: 1; margin-bottom: 8px; }
+.ds-empty__title { font-size: 15px; font-weight: 800; color: var(--ds-ink); margin: 0 0 4px; }
+.ds-empty__desc { font-size: 13px; margin: 0 0 12px; }
+.ds-skel { display: block; height: 14px; border-radius: 6px; background: linear-gradient(90deg, var(--ds-surface-2) 25%, var(--ds-line) 50%, var(--ds-surface-2) 75%); background-size: 200% 100%; animation: dsShimmer 1.2s infinite; }
+.ds-skel + .ds-skel { margin-top: 8px; }
+.ds-skel--title { height: 22px; width: 60%; } .ds-skel--card { height: 96px; border-radius: var(--ds-r-lg); }
+@keyframes dsShimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+.ds-spinner { display: inline-block; width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--ds-line-strong); border-top-color: var(--ds-accent); animation: dsSpin .8s linear infinite; }
+
+/* ---------- 16. TopBar (compact) ---------- */
+.ds-topbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 48px; padding-top: var(--ds-safe-top); }
+.ds-topbar__title { font-size: 17px; font-weight: 800; letter-spacing: -.02em; margin: 0; }
+.ds-topbar__side { display: inline-flex; align-items: center; gap: 6px; }
+
+/* ---------- 11. Field (textarea/input 기본) ---------- */
+.ds-textarea, .ds-input {
+  width: 100%; box-sizing: border-box; font: inherit; font-size: 14px; color: var(--ds-ink);
+  border: 1px solid var(--ds-line-strong); border-radius: var(--ds-r-sm); background: var(--ds-surface); padding: 10px 12px;
+}
+.ds-textarea { min-height: 64px; resize: vertical; line-height: 1.5; }
+.ds-textarea:focus, .ds-input:focus { outline: none; border-color: var(--ds-accent); box-shadow: var(--ds-focus); }
+
+/* ---------- 텍스트 유틸 ---------- */
+.ds-caption { font-size: var(--ds-fs-caption); color: var(--ds-ink-3); line-height: 1.5; }
+.ds-body-sm { font-size: var(--ds-fs-body-sm); color: var(--ds-ink-2); line-height: 1.55; }
+.ds-link { background: none; border: 0; padding: 0; font: inherit; font-weight: 800; color: var(--ds-accent); cursor: pointer; text-decoration: none; }
+
+/* ---------- 반응형 3분기 (결정서 §3) — medium부터 컬럼 폭 확장 ---------- */
+@media (min-width: 600px) {
+  .fm-screen { width: min(520px, 100%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ds-btn, .ds-progress__fill, .ds-dim, .ds-sheet, .ds-dialog, .ds-toast, .ds-skel { animation: none; transition: none; }
+}

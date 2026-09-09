@@ -20,6 +20,7 @@ import InstallNudge from './InstallNudge.jsx';
 import FireTypePopup from './FireTypePopup.jsx';
 import SubscribePopup from './SubscribePopup.jsx';
 import YouTubeCard from './YouTubeCard.jsx';
+import { Card, SectionHead, Button, Notice, toast } from '../../ui/index.js';
 
 function ResultHeroV2({ simulation, rankingSimulation }) {
   const rs = rankingSimulation || simulation;
@@ -383,7 +384,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
       setCommDone(true); setCommOpen(false);
       try { localStorage.setItem(shareKey, '1'); } catch { /* ignore */ }
     } else {
-      try { window.alert('잠시 후 다시 시도해 주세요.'); } catch { /* ignore */ }
+      toast.bad('잠시 후 다시 시도해 주세요.');
     }
   };
   const shareRank = async () => {
@@ -424,7 +425,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
       try { await navigator.share({ text: '파이어족들을 위한 커뮤니티 · 파이어맵', url }); return; }
       catch (e) { if (e && e.name === 'AbortError') return; }
     }
-    try { await navigator.clipboard.writeText(url); window.alert('내 결과 링크를 복사했어요. 단톡방에 붙여넣어 보세요!'); }
+    try { await navigator.clipboard.writeText(url); toast.good('내 결과 링크를 복사했어요. 단톡방에 붙여넣어 보세요!'); }
     catch { onMove('share'); }
   };
   const shareOther = async () => {
@@ -445,7 +446,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
       try { await navigator.share({ text: '파이어족들을 위한 커뮤니티 · 파이어맵', url }); return; }
       catch (e) { if (e && e.name === 'AbortError') return; }
     }
-    try { await navigator.clipboard.writeText(url); window.alert('내 결과 링크를 복사했어요. 어디든 붙여넣어 보세요!'); }
+    try { await navigator.clipboard.writeText(url); toast.good('내 결과 링크를 복사했어요. 어디든 붙여넣어 보세요!'); }
     catch { /* ignore */ }
   };
   return (
@@ -462,34 +463,29 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
       <button type="button" className="fm-rank-cta-other" onClick={shareOther}>🔗 링크 복사 · 다른 앱으로 공유</button>
       <div style={{ margin: '10px 0 4px' }}>
         {commDone ? (
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8, background: '#fff7f2', border: '1px solid #ffe1d0', borderRadius: 14, padding: '12px 14px', fontSize: 13.5, fontWeight: 700, color: '#c2410c' }}>
-            <span>✅ 커뮤니티에 올렸어요!</span>
-            <button type="button" onClick={() => onMove('community')} style={{ border: 0, background: 'transparent', color: '#ff5a00', fontWeight: 800, cursor: 'pointer', fontSize: 13.5 }}>보러 가기 →</button>
-          </div>
+          <Notice tone="accent" icon="✅" title="방명록에 올렸어요!">
+            <button type="button" className="ds-link" onClick={() => onMove('community')}>보러 가기 →</button>
+          </Notice>
         ) : !commOpen ? (
-          <button type="button" onClick={() => setCommOpen(true)} style={{ display: 'block', width: '100%', padding: '13px', borderRadius: 14, border: '1px solid #ffd0b8', background: '#fff', color: '#c2410c', fontSize: 14, fontWeight: 800, cursor: 'pointer' }}>🔥 커뮤니티에 내 결과 올리기</button>
+          <Button variant="tint" size="md" full onClick={() => setCommOpen(true)}>🔥 방명록에 내 결과 올리기</Button>
         ) : (
-          <div style={{ background: '#fff', border: '1px solid #eee', borderRadius: 16, padding: 14 }}>
-            <p style={{ margin: '0 0 8px', fontWeight: 800, fontSize: 14, color: '#15151b' }}>{simulation.earliestRetirementAge ? `🔥 저는 ${simulation.earliestRetirementAge}세에 파이어 가능!` : '🔥 제 파이어 결과를 공유해요!'}</p>
-            <textarea maxLength={180} value={commComment} onChange={(e) => setCommComment(e.target.value)} placeholder="한 줄 코멘트 (선택) — 예: 생활비 줄이는 게 관건이네요" style={{ width: '100%', minHeight: 56, boxSizing: 'border-box', border: '1px solid #e5e7eb', borderRadius: 10, padding: 9, fontSize: 13.5, resize: 'vertical' }} />
-            <div style={{ display: 'flex', gap: 8, marginTop: 8 }}>
-              <button type="button" onClick={() => setCommOpen(false)} style={{ flex: '0 0 auto', padding: '10px 14px', borderRadius: 10, border: '1px solid #e5e7eb', background: '#fff', color: '#6b6f76', fontWeight: 700, cursor: 'pointer', fontSize: 13.5 }}>취소</button>
-              <button type="button" disabled={commSharing} onClick={postToCommunity} style={{ flex: 1, padding: '10px 14px', borderRadius: 10, border: 0, background: '#ff5a00', color: '#fff', fontWeight: 800, cursor: 'pointer', fontSize: 13.5 }}>{commSharing ? '올리는 중…' : '커뮤니티에 올리기'}</button>
+          <Card>
+            <SectionHead size="sm" title={simulation.earliestRetirementAge ? `🔥 저는 ${simulation.earliestRetirementAge}세에 파이어 가능!` : '🔥 제 파이어 결과를 공유해요!'} />
+            <textarea className="ds-textarea" maxLength={180} value={commComment} onChange={(e) => setCommComment(e.target.value)} placeholder="한 줄 코멘트 (선택) — 예: 생활비 줄이는 게 관건이네요" />
+            <div className="ds-bottomcta" style={{ marginTop: 8 }}>
+              <Button variant="secondary" size="md" onClick={() => setCommOpen(false)}>취소</Button>
+              <Button variant="primary" size="md" loading={commSharing} onClick={postToCommunity}>방명록에 올리기</Button>
             </div>
-            <small style={{ display: 'block', marginTop: 7, color: '#9aa3bf', fontSize: 11.5 }}>익명 닉네임으로 게시 · 목표·인증 카테고리에 올라가요</small>
-          </div>
+            <p className="ds-caption" style={{ margin: '8px 0 0' }}>익명 닉네임으로 게시 · 목표·인증 카테고리에 올라가요</p>
+          </Card>
         )}
       </div>
       <OpenChatNotice />
       <AccountBar onMove={onMove} />
-      <section className="fm-card" style={{ borderColor: 'rgba(255,90,0,0.3)' }}>
-        <p className="fm-kicker">🔥 여기까지가 1단계</p>
-        <h2 style={{ margin: '2px 0 10px' }}>이제 당신의 파이어 여정이 시작돼요</h2>
-        <p style={{ fontSize: '13px', color: 'var(--fm-muted, #6b6f76)', lineHeight: 1.6, margin: '0 0 12px' }}>
-          계산은 시작일 뿐이에요. 지금 내가 어느 단계인지, 다음 한 걸음은 무엇인지 — <b>목표까지 가는 길 전체를 지도로</b> 안내하고, 내 기록을 한 곳에 모아 계속 관리해요.
-        </p>
-        <button type="button" onClick={() => onMove('home')} style={{ display: 'block', width: '100%', padding: '13px 16px', borderRadius: '12px', border: 'none', background: '#1e2859', color: '#fff', fontSize: '14px', fontWeight: 700, cursor: 'pointer' }}>🗺️ 내 파이어 여정 지도 보기 →</button>
-      </section>
+      <Card variant="hero">
+        <SectionHead kicker="🔥 여기까지가 1단계" title="이제 당신의 파이어 여정이 시작돼요" desc={<>계산은 시작일 뿐이에요. 지금 내가 어느 단계인지, 다음 한 걸음은 무엇인지 — <b>목표까지 가는 길 전체를 지도로</b> 안내하고, 내 기록을 한 곳에 모아 계속 관리해요.</>} />
+        <Button variant="dark" size="md" full onClick={() => onMove('home')}>🗺️ 내 파이어 여정 지도 보기 →</Button>
+      </Card>
       <InstallNudge moment="result" />
       <AssetJourney simulation={simulation} />
       <MoatCard simulation={simulation} onMove={onMove} />

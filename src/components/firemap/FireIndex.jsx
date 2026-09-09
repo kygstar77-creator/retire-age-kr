@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import MarketIndicators from './MarketIndicators.jsx';
 import { track } from '../../firemap-v2/dailyData.js';
+import { toast } from '../../ui/index.js';
 
 // 대한민국 파이어 지수 — 우리 익명 집계로만 만들 수 있는 '표준' 콘텐츠 + 내 위치 비교 + 공유.
 const SUPABASE_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
@@ -53,7 +54,7 @@ export default function FireIndex({ simulation, onBack }) {
       : '대한민국 파이어 지수 — 너의 파이어 위치는?';
     const url = 'https://firemap.kr/';
     try { if (navigator.share) { await navigator.share({ title: '대한민국 파이어 지수 — 파이어맵', text: txt, url }); return; } } catch (e) { if (e && e.name === 'AbortError') return; }
-    try { await navigator.clipboard.writeText(`${txt} ${url}`); window.alert('공유 문구를 복사했어요! 카톡·단톡방에 붙여넣어 보세요'); } catch { /* ignore */ }
+    try { await navigator.clipboard.writeText(`${txt} ${url}`); toast.good('공유 문구를 복사했어요! 카톡·단톡방에 붙여넣어 보세요'); } catch { /* ignore */ }
   };
 
   return (

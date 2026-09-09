@@ -15,6 +15,7 @@ import { buildScenarioShareUrl } from '../../utils/shareState.js';
 import { fetchSaveTop, fetchMySaveRank, fetchSaveBoard } from '../../utils/firemapSaveApi.js';
 import { notifySavingsChanged, reportBoard, hasCalculated, computeProgress } from '../../utils/savingsEngine.js';
 import { CHALLENGES, QUOTES, QUICK, dayIdx, todayStr, wonStr, readJSON, fmtAdvance, dailyNeedOf, addSave, removeEntry, setTotal, track } from '../../firemap-v2/dailyData.js';
+import { toast } from '../../ui/index.js';
 
 function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
   if (!hasCalculated()) {
@@ -126,7 +127,7 @@ export default function Savings({ simulation, onMove }) {
       try { await navigator.share({ title: '파이어맵 — 오늘의 저축', text, url }); track('share', { type: 'save' }); track('share_link_copy', { type: 'save' }); return; }
       catch (e) { if (e && e.name === 'AbortError') return; }
     }
-    try { await navigator.clipboard.writeText(url); track('share', { type: 'save' }); track('share_link_copy', { type: 'save' }); window.alert('공유 링크를 복사했어요. 단톡방에 붙여넣어 보세요!'); }
+    try { await navigator.clipboard.writeText(url); track('share', { type: 'save' }); track('share_link_copy', { type: 'save' }); toast.good('공유 링크를 복사했어요. 단톡방에 붙여넣어 보세요!'); }
     catch { onMove('share'); }
   };
 

@@ -1,8 +1,10 @@
 import Header from './Header.jsx';
 import { account } from '../../utils/identity.js';
 import { track } from '../../firemap-v2/dailyData.js';
+import { CAFE_URL, YOUTUBE_URL } from '../../firemap-v2/links.js';
+import { Card, ListGroup, ListRow } from '../../ui/index.js';
 
-// 전체(토스식) — 파이어 여정 단계별로 모든 기능을 한 목록에 정리.
+// 전체(토스식) — 파이어 여정 단계별로 모든 기능을 한 목록에 정리. DS v1: ListGroup/ListRow (인라인 스타일 0)
 const SECTIONS = [
   {
     label: '① 내 여정',
@@ -51,8 +53,8 @@ const SECTIONS = [
 ];
 
 const LINKS = [
-  { ico: '🟢', title: '파이어맵 네이버 카페', desc: '파이어 인증·질문·후기 — 파이어족 커뮤니티 본진', href: 'https://cafe.naver.com/firemap', ext: true },
-  { ico: '▶️', title: '파이어맵 유튜브', desc: '영상으로 보는 파이어 — 채널 구독하기', href: 'https://www.youtube.com/@firemapkr', ext: true },
+  { ico: '🟢', title: '파이어맵 네이버 카페', desc: '파이어 인증·질문·후기 — 파이어족 커뮤니티 본진', href: CAFE_URL, ext: true },
+  { ico: '▶️', title: '파이어맵 유튜브', desc: '영상으로 보는 파이어 — 채널 구독하기', href: YOUTUBE_URL, ext: true },
   { ico: '📚', title: '파이어 백과', desc: '건보료·세금·연금·현실 금액 가이드', href: '/guide/' },
   { ico: '📄', title: '면책 안내', desc: '정보 제공 목적 · 투자자문 아님', href: '/disclaimer.html' },
   { ico: '🔒', title: '개인정보처리방침', desc: '수집 항목 · 목적 · 보관', href: '/privacy.html' },
@@ -67,73 +69,34 @@ export default function MenuAll({ onMove }) {
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="전체" />
 
-      <button type="button" style={S.acct} onClick={() => go('account')}>
-        <span style={S.acctIco}>{acc && acc.handle ? '👤' : '🔒'}</span>
-        <span style={S.acctTx}>
-          {acc && acc.handle
-            ? <><b style={S.acctName}>{acc.handle}</b><em style={S.acctSub}>기록이 안전하게 이어져요</em></>
-            : <><b style={S.acctName}>🔒 카카오로 간편·안전 로그인</b><em style={S.acctSub}>내 기록을 안전하게 보관 · 기기 바꿔도 그대로</em></>}
-        </span>
-        <span style={S.acctGo}>{acc && acc.handle ? '관리 ›' : '로그인 ›'}</span>
-      </button>
+      <Card variant="hero" as="div" className="ds-card--flat" style={{ marginBottom: 18, padding: 0, overflow: 'hidden' }}>
+        <ListRow
+          lead={acc && acc.handle ? '👤' : '🔒'}
+          title={acc && acc.handle ? acc.handle : '카카오로 간편·안전 로그인'}
+          desc={acc && acc.handle ? '기록이 안전하게 이어져요' : '내 기록을 안전하게 보관 · 기기 바꿔도 그대로'}
+          trail={acc && acc.handle ? '관리' : '로그인'}
+          accent
+          size="L"
+          onClick={() => go('account')}
+        />
+      </Card>
 
-      {SECTIONS.map((sec) => (
-        <div key={sec.label} style={S.section}>
-          <p style={S.secLabel}>{sec.label}</p>
-          <div style={S.list}>
-            {sec.items.map((it) => (it.href
-              ? (
-                <a key={it.title} href={it.href} style={S.row}>
-                  <span style={S.rowIco}>{it.ico}</span>
-                  <span style={S.rowTx}><b style={S.rowTitle}>{it.title}</b><em style={S.rowDesc}>{it.desc}</em></span>
-                  <span style={S.rowGo}>›</span>
-                </a>
-              )
-              : (
-                <button type="button" key={it.title} style={S.row} onClick={() => go(it.to)}>
-                  <span style={S.rowIco}>{it.ico}</span>
-                  <span style={S.rowTx}><b style={S.rowTitle}>{it.title}</b><em style={S.rowDesc}>{it.desc}</em></span>
-                  <span style={S.rowGo}>›</span>
-                </button>
-              )
+      <div className="ds-stack" style={{ gap: 20 }}>
+        {SECTIONS.map((sec) => (
+          <ListGroup key={sec.label} label={sec.label}>
+            {sec.items.map((it) => (
+              <ListRow key={it.title} lead={it.ico} title={it.title} desc={it.desc} onClick={() => go(it.to)} />
             ))}
-          </div>
-        </div>
-      ))}
-
-      <div style={S.section}>
-        <p style={S.secLabel}>정보 · 정책</p>
-        <div style={S.list}>
+          </ListGroup>
+        ))}
+        <ListGroup label="정보 · 정책">
           {LINKS.map((it) => (
-            <a key={it.title} href={it.href} style={S.row} {...(it.ext ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
-              <span style={S.rowIco}>{it.ico}</span>
-              <span style={S.rowTx}><b style={S.rowTitle}>{it.title}</b><em style={S.rowDesc}>{it.desc}</em></span>
-              <span style={S.rowGo}>›</span>
-            </a>
+            <ListRow key={it.title} lead={it.ico} title={it.title} desc={it.desc} href={it.href} external={!!it.ext} />
           ))}
-        </div>
+        </ListGroup>
       </div>
 
-      <p style={S.foot}>※ 파이어맵은 정보 제공 서비스이며 투자자문이 아니에요. 모든 수치는 입력값 기반 추정이에요.</p>
+      <p className="ds-caption" style={{ padding: '14px 8px 0', margin: 0 }}>※ 파이어맵은 정보 제공 서비스이며 투자자문이 아니에요. 모든 수치는 입력값 기반 추정이에요.</p>
     </main>
   );
 }
-
-const S = {
-  acct: { display: 'flex', alignItems: 'center', gap: 11, width: '100%', textAlign: 'left', cursor: 'pointer', background: 'linear-gradient(180deg,#fff6f2,#fff)', border: '1px solid rgba(255,90,0,0.22)', borderRadius: 16, padding: '14px 15px', marginBottom: 18 },
-  acctIco: { fontSize: 22, flex: '0 0 auto' },
-  acctTx: { display: 'flex', flexDirection: 'column', flex: 1, minWidth: 0, gap: 2 },
-  acctName: { fontSize: 14, fontWeight: 800, color: '#15151b' },
-  acctSub: { fontSize: 11.5, fontWeight: 500, color: '#8a8f99', fontStyle: 'normal' },
-  acctGo: { fontSize: 12.5, fontWeight: 800, color: '#ff5a00', flex: '0 0 auto' },
-  section: { marginBottom: 20 },
-  secLabel: { fontSize: 12, fontWeight: 800, color: '#9aa3bf', letterSpacing: '0.01em', margin: '0 0 9px 4px' },
-  list: { background: '#fff', border: '1px solid #ececec', borderRadius: 16, overflow: 'hidden' },
-  row: { display: 'flex', alignItems: 'center', gap: 12, width: '100%', textAlign: 'left', cursor: 'pointer', background: 'none', border: 0, borderBottom: '1px solid #f3f1ee', padding: '13px 14px', textDecoration: 'none' },
-  rowIco: { fontSize: 19, flex: '0 0 auto', width: 24, textAlign: 'center' },
-  rowTx: { display: 'flex', flexDirection: 'column', flex: 1, minWidth: 0, gap: 2 },
-  rowTitle: { fontSize: 14, fontWeight: 700, color: '#15151b', lineHeight: 1.3 },
-  rowDesc: { fontSize: 11.5, fontWeight: 500, color: '#8a8f99', fontStyle: 'normal', lineHeight: 1.4 },
-  rowGo: { fontSize: 18, color: '#c2c7d0', fontWeight: 700, flex: '0 0 auto' },
-  foot: { fontSize: 10.5, color: '#9aa3bf', lineHeight: 1.6, padding: '4px 8px 0', margin: 0 }
-};

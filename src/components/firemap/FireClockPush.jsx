@@ -5,6 +5,7 @@ import {
   currentSubscription, subscribeFireClock, unsubscribeFireClock,
   refreshFireClockMeta, targetFireDateFrom
 } from '../../utils/firePush.js';
+import { toast } from '../../ui/index.js';
 
 // '파이어 시계' 매일 알림 구독 카드. 홈(파이어 플랜) 대시보드에 표시.
 export default function FireClockPush({ simulation }) {
@@ -59,13 +60,13 @@ export default function FireClockPush({ simulation }) {
     if (r.ok) {
       setStatus('on');
       try { track('fireclock_push_on', {}); } catch { /* ignore */ }
-      try { window.alert(`켜졌어요! 매일 아침 ‘파이어까지 D-${ddays.toLocaleString()}’ 알림을 보내드릴게요 🔥`); } catch { /* ignore */ }
+      toast.good(`켜졌어요! 매일 아침 ‘파이어까지 D-${ddays.toLocaleString()}’ 알림을 보내드릴게요 🔥`);
     } else if (r.reason === 'denied') {
       setStatus('denied');
     } else {
       setStatus('idle');
       const why = (r.reason || '?') + (r.detail ? ` · ${r.detail}` : '');
-      try { window.alert(`알림 설정에 실패했어요 (${why}). 잠시 후 다시 시도해 주세요.`); } catch { /* ignore */ }
+      toast.bad(`알림 설정에 실패했어요 (${why}). 잠시 후 다시 시도해 주세요.`);
     }
   };
 

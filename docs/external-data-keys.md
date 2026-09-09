@@ -8,7 +8,7 @@
 |---|---|---|---|---|---|
 | 주가지수(S&P500 등)·환율 | Yahoo Finance / er-api | 불필요 | `firemap_market` | `fetch-market` | 일(cron) |
 | 물가상승률(연) | World Bank | 불필요 | `firemap_cpi` | `fetch-macro` | 주(cron) |
-| 예금금리 | World Bank | 불필요 | `firemap_rates(deposit_12m)` | `fetch-macro` | 주 |
+| **예금금리(정기예금)** | **한국은행 ECOS 121Y002** (실패 시 World Bank 폴백) | `ECOS_API_KEY` (설정됨) | `firemap_rates(deposit_12m)` | `fetch-macro` | 주 |
 | **기준금리** | **한국은행 ECOS** | `ECOS_API_KEY` (설정됨) | `firemap_rates(base_rate)` | `fetch-macro` | 주 |
 | **물가지수·물가상승률(월)** | **한국은행 ECOS 901Y009** | `ECOS_API_KEY` (설정됨) | `firemap_cpi(source=ecos, 월별)` | `fetch-macro` | 주 |
 | **아파트 매매·전세 실거래가** | **국토부 MOLIT** | `MOLIT_API_KEY` (설정됨) | `firemap_realestate` | `fetch-realestate` | 수동/cron |

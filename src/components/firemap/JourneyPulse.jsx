@@ -37,7 +37,7 @@ export default function JourneyPulse({ simulation, onMove }) {
   const macroLine = (() => {
     if (!macro) return null;
     const base = (macro.rates || []).find((r) => r.key === 'base_rate');
-    const dep = (macro.rates || []).find((r) => r.key === 'deposit_12m');
+    const dep = (macro.rates || []).find((r) => r.key === 'deposit_12m' && r.source !== 'worldbank'); // 연간 평균(전년도)은 비노출
     const cpi = macro.cpi;
     const parts = [];
     if (base && base.value != null) parts.push(`기준금리 ${base.value}%`);

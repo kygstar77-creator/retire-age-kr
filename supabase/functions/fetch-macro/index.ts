@@ -1,5 +1,5 @@
-// fetch-macro v4 — 거시 지표 수집기 (추가전용).
-// World Bank(무키): CPI 물가상승률·예금금리. ECOS(키): 기준금리 + 월별 CPI(신규).
+// fetch-macro v5 — 거시 지표 수집기 (추가전용).
+// World Bank(무키): CPI 물가상승률 + 예금금리 폴백. ECOS(키): 기준금리 · 월별 CPI · 월별 정기예금 금리.
 // 안전: 실패/무키 시 해당 항목만 건너뜀(기존 값 보존). 쓰기는 service_role.
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
@@ -51,6 +51,22 @@ async function ecosSeries(stat: string, item: string, monthsBack: number): Promi
   return out;
 }
 
+// ECOS 통계항목 탐색: 항목코드를 박아두지 않고 항목명으로 찾는다.
+// (코드를 하드코딩하면 오타·개편 시 조용히 빈 값이 되므로)
+type EcosItem = { ITEM_CODE?: string; ITEM_NAME?: string };
+async function ecosItemFind(stat: string, re: RegExp): Promise<{ code: string; name: string } | null> {
+  const url = `https://ecos.bok.or.kr/api/StatisticItemList/${ECOS_KEY}/json/kr/1/500/${stat}`;
+  const res = await fetch(url);
+  const j = await res.json();
+  const rows: EcosItem[] = j?.StatisticItemList?.row || [];
+  if (!rows.length && j?.RESULT?.MESSAGE) throw new Error(`ecos items ${stat}: ${j.RESULT.MESSAGE}`);
+  const hits = rows.filter((r) => r.ITEM_CODE && re.test(String(r.ITEM_NAME || "")));
+  if (!hits.length) return null;
+  // 이름이 가장 짧은 것 = 세분류가 아닌 대표 항목 (예: '정기예금' < '정기예금(6개월미만)')
+  hits.sort((a, b) => String(a.ITEM_NAME).length - String(b.ITEM_NAME).length);
+  return { code: String(hits[0].ITEM_CODE), name: String(hits[0].ITEM_NAME) };
+}
+
 Deno.serve(async (_req: Request) => {
   const now = new Date().toISOString();
   const updated: string[] = [];
@@ -63,12 +79,33 @@ Deno.serve(async (_req: Request) => {
     else skipped["cpi_wb"] = "no value";
   } catch (e) { skipped["cpi_wb"] = String((e as Error)?.message || e); }
 
-  // 2) 예금금리 (World Bank FR.INR.DPST, %)
-  try {
-    const dep = await wbLatest("FR.INR.DPST");
-    if (dep) { await upsert("firemap_rates", "key", { key: "deposit_12m", label: "예금금리(World Bank)", value: round2(dep.value), unit: "%", as_of: dep.date, source: "worldbank", updated_at: now }); updated.push(`deposit:${dep.date}`); }
-    else skipped["deposit"] = "no value";
-  } catch (e) { skipped["deposit"] = String((e as Error)?.message || e); }
+  // 2) 예금금리 — ECOS 월별(121Y002 예금은행 수신금리 / 정기예금) 우선.
+  //    World Bank FR.INR.DPST는 '연평균'이라 최신 표기와 최대 1년 이상 어긋난다
+  //    (예: 2026년 9월에 2025년 연평균이 최신값으로 노출 → 기준금리보다 낮아 역전처럼 보임).
+  //    그래서 ECOS가 실패할 때만 폴백으로 쓰고, 그 경우 source='worldbank'라 UI가 알아서 숨긴다.
+  let depositFromEcos = false;
+  if (ECOS_KEY) {
+    try {
+      const item = await ecosItemFind("121Y002", /정기예금/);
+      if (!item) skipped["deposit_ecos"] = "121Y002에 정기예금 항목 없음";
+      else {
+        const s = await ecosSeries("121Y002", item.code, 24);
+        const latest = s.length ? s[s.length - 1] : null;
+        if (latest) {
+          await upsert("firemap_rates", "key", { key: "deposit_12m", label: `${item.name} 금리(ECOS)`, value: round2(latest.value), unit: "%", as_of: latest.time, source: "ecos", updated_at: now });
+          updated.push(`deposit_ecos:${latest.time}(${item.name})`);
+          depositFromEcos = true;
+        } else skipped["deposit_ecos"] = "ecos no value";
+      }
+    } catch (e) { skipped["deposit_ecos"] = String((e as Error)?.message || e); }
+  }
+  if (!depositFromEcos) {
+    try {
+      const dep = await wbLatest("FR.INR.DPST");
+      if (dep) { await upsert("firemap_rates", "key", { key: "deposit_12m", label: "예금금리(World Bank)", value: round2(dep.value), unit: "%", as_of: dep.date, source: "worldbank", updated_at: now }); updated.push(`deposit_wb:${dep.date}`); }
+      else skipped["deposit_wb"] = "no value";
+    } catch (e) { skipped["deposit_wb"] = String((e as Error)?.message || e); }
+  }
 
   // 3) 기준금리 — ECOS 키 있을 때만(722Y001/0101000, 최신값). 없으면 기존 seed 유지
   if (ECOS_KEY) {

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from './Header.jsx';
 import { loadOfficialNews } from '../../utils/firemapFeedbackApi.js';
-import FireClockPush from './FireClockPush.jsx';
 
 // 공식 경제뉴스(파이어맵 공식 글)만 모아 보는 '소식·뉴스' 화면. 커뮤니티(유저 글)와 분리.
 const CATS = [
@@ -64,7 +63,6 @@ export default function News({ simulation }) {
         <p>경제·부동산·투자·부업·연금·저축까지, 파이어 관점으로 매일 정리해 드려요. 출처 표기 · 정보 제공이며 투자 조언이 아니에요.</p>
       </section>
 
-      <FireClockPush simulation={simulation} />
 
       <div className="fm-news-cats">
         <button type="button" className={cat === 'all' ? 'on' : ''} onClick={() => setCat('all')}>전체</button>

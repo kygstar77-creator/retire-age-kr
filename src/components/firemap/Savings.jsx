@@ -1,292 +1,122 @@
-import { useEffect, useRef, useState } from 'react';
-import Header from './Header.jsx';
-import { identityIds, accountHandle, account } from '../../utils/identity.js';
+// 저축 — 파이어 통(Monzo Pot) · 오늘 규칙(Qapital) · 이번 달 계획 저축 · 26주 도전(카뱅) · 미션 · 달력은 시트.
+// 293행·데드 분기·명언·넛지·설명 2·랭킹 카드 → 6블록. 모델은 그대로(fm_save 절약 + fm_daily 적립), UI만 하나로.
+import { useEffect, useState } from 'react';
+import { TopBar, PotCard, Card, SectionHead, RuleChips, Chips, Chip, Button, Sheet, IconButton, Notice, toast } from '../../ui/index.js';
 import DepositCard from './DepositCard.jsx';
-import InstallNudge from './InstallNudge.jsx';
 import DepositCalendar from './DepositCalendar.jsx';
-import FireClock from './FireClock.jsx';
-import DailyJourney from './DailyJourney.jsx';
-import Missions from './Missions.jsx';
-import WeeklyBoard from './WeeklyBoard.jsx';
+import ConfirmScreen from './ConfirmScreen.jsx';
+import { RULES } from './rules.js';
 import { pushState, pullKey } from '../../utils/firemapStateApi.js';
-import { statsRank } from '../../firemap-v2/rank.js';
-import { funHandle } from '../../firemap-v2/funName.js';
-import { buildScenarioShareUrl } from '../../utils/shareState.js';
-import { fetchSaveTop, fetchMySaveRank, fetchSaveBoard } from '../../utils/firemapSaveApi.js';
-import { notifySavingsChanged, reportBoard, hasCalculated, computeProgress } from '../../utils/savingsEngine.js';
-import { CHALLENGES, QUOTES, QUICK, dayIdx, todayStr, wonStr, readJSON, fmtAdvance, dailyNeedOf, addSave, removeEntry, setTotal, track } from '../../firemap-v2/dailyData.js';
-import { toast } from '../../ui/index.js';
+import { notifySavingsChanged, reportBoard, hasCalculated } from '../../utils/savingsEngine.js';
+import { fmtAdvance, dailyNeedOf, addSave, readJSON, track } from '../../firemap-v2/dailyData.js';
+import { formatWon } from '../../firemap-v2/formatters.js';
+import { buildWidgetState, streakOf } from '../../utils/widgetState.js';
+import { prefs } from '../../utils/prefs.js';
+import { monthStr } from '../../utils/dates.js';
 
-function FireProgressBar({ simulation, totalSaved, dailyNeed }) {
-  if (!hasCalculated()) {
-    return (
-      <div className="fm-fp">
-        <p className="fm-fp-cap">먼저 <b>파이어 계산</b>을 하면, 절약·적립이 파이어를 얼마나 당기는지 시간으로 보여드려요.</p>
-      </div>
-    );
-  }
-  const inp = simulation.inputs;
-  const fireAge = simulation.earliestRetirementAge || inp.targetRetirementAge;
-  if (!dailyNeed) {
-    return (
-      <div className="fm-fp done">
-        <p className="fm-fp-cap">🎉 이미 목표 자산을 넘었어요. 아낀 돈은 파이어 후 여유로 그대로 쌓여요.</p>
-      </div>
-    );
-  }
-  const totalDays = Math.max(1, (fireAge - inp.currentAge) * 365.25);
-  const advancedDays = totalSaved / dailyNeed;
-  const pct = Math.max(0, Math.min(100, (advancedDays / totalDays) * 100));
-  return (
-    <div className="fm-fp">
-      <div className="fm-fp-labels"><span>지금 {inp.currentAge}세</span><span>목표 {fireAge}세</span></div>
-      <div className="fm-fp-track">
-        <div className="fm-fp-gain" style={{ width: `${pct}%` }} />
-        <div className="fm-fp-flag" style={{ left: `${100 - pct}%` }}>🏁</div>
-      </div>
-      <p className="fm-fp-cap">누적 절약 <b>{wonStr(totalSaved)}</b> · 실제 저축에 반영돼요</p>
-    </div>
-  );
+const eok = (n) => formatWon(Math.round(n || 0));
+const WEEK_MS = 7 * 86400000;
+
+function week26State() {
+  const w = prefs.week26();
+  if (!w || !w.startDate) return null;
+  const start = new Date(w.startDate).getTime();
+  const idx = Math.min(26, Math.floor((Date.now() - start) / WEEK_MS) + 1);
+  const weeks = w.weeks || {};
+  const done = Object.keys(weeks).length;
+  const total = Object.values(weeks).reduce((a, b) => a + (Number(b) || 0), 0);
+  return { ...w, idx, done, total, thisDone: !!weeks[idx] };
 }
 
-const medal = (i) => (i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : String(i + 1));
-
 export default function Savings({ simulation, onMove }) {
-  const ch = CHALLENGES[dayIdx() % CHALLENGES.length];
-  const quote = QUOTES[dayIdx() % QUOTES.length];
-  const [sv, setSv] = useState(() => readJSON('fm_save'));
-  const [nick, setNick] = useState(() => { try { return localStorage.getItem('fm_nickname') || ''; } catch { return ''; } });
-  const [nickSaved, setNickSaved] = useState(false);
-  const [seg, setSeg] = useState('deposit');
   const [tick, setTick] = useState(0);
-  const [flash, setFlash] = useState(null);
-  const flashRef = useRef(0);
+  const [confirm, setConfirm] = useState(null);
+  const [calOpen, setCalOpen] = useState(false);
   const [customOpen, setCustomOpen] = useState(false);
   const [customVal, setCustomVal] = useState('');
-  const [editTot, setEditTot] = useState(false);
-  const [nudgeOff, setNudgeOff] = useState(() => { try { return localStorage.getItem('fm_save_nudge_off') === '1'; } catch { return false; } });
-  const [totVal, setTotVal] = useState('');
-  const myIds = identityIds();
-  const acctHandle = accountHandle();
+  const [potOpen, setPotOpen] = useState(false);
+  const [potName, setPotName] = useState(() => prefs.pot().name);
+  const [potEmoji, setPotEmoji] = useState(() => prefs.pot().emoji);
   const dailyNeed = dailyNeedOf(simulation);
-
-  useEffect(() => { track('save_tab_view'); refresh(todaySaved); fetchSaveBoard('deposit', 10).then(setDepBoard); pullKey('fm_save').then((v) => { if (v) { try { localStorage.setItem('fm_save', JSON.stringify(v)); } catch { /* ignore */ } setSv(v); } }); /* eslint-disable-next-line */ }, []);
+  const ws = buildWidgetState(simulation);
+  const hide = prefs.hideAmount();
+  void tick;
 
   useEffect(() => {
+    track('save_tab_view');
+    pullKey('fm_save').then((v) => { if (v) { try { localStorage.setItem('fm_save', JSON.stringify(v)); } catch { /* ignore */ } setTick((n) => n + 1); } });
     const h = () => setTick((n) => n + 1);
     window.addEventListener('fm-savings-changed', h);
     return () => window.removeEventListener('fm-savings-changed', h);
   }, []);
-  const prog = (() => { void tick; try { return computeProgress(simulation); } catch { return null; } })();
 
-  const todaySaved = sv && sv.lastDate === todayStr() ? (sv.today || 0) : 0;
-  const totalSaved = sv ? (sv.total || 0) : 0;
-  const daysCount = sv ? (sv.days || 0) : 0;
-  const streak = sv ? (sv.streak || 0) : 0;
-  const acc = account();
-  const showSaveNudge = !(acc && acc.handle) && !nudgeOff && (totalSaved > 0 || streak >= 2 || daysCount >= 1);
-  const dismissNudge = () => { try { localStorage.setItem('fm_save_nudge_off', '1'); } catch { /* ignore */ } setNudgeOff(true); };
   const advSec = (amount) => (dailyNeed ? (amount / dailyNeed) * 86400 : 0);
-  const todayAdv = fmtAdvance(advSec(todaySaved));
-  const totalAdv = fmtAdvance(advSec(totalSaved));
-  const todayEntries = sv && sv.lastDate === todayStr() && Array.isArray(sv.entries) ? sv.entries : [];
-  const ageBand = statsRank(simulation).ageBand;
-  const [top, setTop] = useState(null);
-  const [depBoard, setDepBoard] = useState(null);
-  const [rank, setRank] = useState(null);
-  const refresh = (todayVal) => {
-    Promise.all([fetchSaveTop(10), fetchMySaveRank(todayVal)]).then(([t, r]) => { setTop(t); setRank(r); });
-  };
-  const persist = (nextSv) => {
-    notifySavingsChanged();
-    pushState('fm_save', nextSv);
-    const tVal = nextSv.lastDate === todayStr() ? (nextSv.today || 0) : 0;
-    reportBoard(simulation).then(() => refresh(tVal));
-  };
-  const saveNick = () => {
-    const v = nick.trim().slice(0, 16);
-    try { localStorage.setItem('fm_nickname', v); } catch { /* ignore */ }
-    setNick(v);
-    const cur = readJSON('fm_save');
-    if (cur) persist(cur); else refresh(todaySaved);
-    setNickSaved(true);
-    setTimeout(() => setNickSaved(false), 1800);
-  };
-  const shareSave = async () => {
-    const adLabel = fmtAdvance(advSec(totalSaved)) || '';
-    let url;
-    try {
-      const u = new URL(buildScenarioShareUrl(simulation.inputs));
-      u.pathname = '/s';
-      u.searchParams.set('sd', String(Math.round(totalSaved)));
-      if (adLabel) u.searchParams.set('ad', adLabel);
-      url = u.toString();
-    } catch { url = 'https://firemap.kr/'; }
-    const text = adLabel ? `저축으로 파이어를 ${adLabel} 앞당겼어요 🔥 나도 해보기` : '저축으로 파이어 앞당기기 🔥 나도 해보기';
-    if (navigator.share) {
-      try { await navigator.share({ title: '파이어맵 — 오늘의 저축', text, url }); track('share', { type: 'save' }); track('share_link_copy', { type: 'save' }); return; }
-      catch (e) { if (e && e.name === 'AbortError') return; }
-    }
-    try { await navigator.clipboard.writeText(url); track('share', { type: 'save' }); track('share_link_copy', { type: 'save' }); toast.good('공유 링크를 복사했어요. 단톡방에 붙여넣어 보세요!'); }
-    catch { onMove('share'); }
-  };
-
+  const rules = RULES.map((r) => ({ ...r, gain: dailyNeed ? fmtAdvance(advSec(r.amount)) : null }));
   const log = (amount, label) => {
-    const next = addSave(amount, label); setSv(next);
-    track('save_log', { value: amount, item: label || '직접입력' });
-    const t = fmtAdvance(advSec(amount));
-    if (t) { setFlash(t); window.clearTimeout(flashRef.current); flashRef.current = window.setTimeout(() => setFlash(null), 2600); }
-    persist(next);
+    const next = addSave(amount, label);
+    notifySavingsChanged();
+    try { pushState('fm_save', next); } catch { /* ignore */ }
+    reportBoard(simulation);
+    track('save_log', { value: amount, item: label || '직접입력', from: 'save' });
+    setConfirm({ amount, label, adv: fmtAdvance(advSec(amount)) });
   };
-  const editTotal = () => { setTotVal(String(totalSaved)); setEditTot(true); };
-  const submitTotal = () => { const next = setTotal(String(totVal).replace(/[^0-9]/g, '')); setSv(next); persist(next); setEditTot(false); };
   const submitCustom = () => { const n = Number(String(customVal).replace(/[^0-9]/g, '')); if (n > 0) log(n, '직접 입력'); setCustomVal(''); setCustomOpen(false); };
 
+  const sv = readJSON('fm_save') || {};
+  const totalSaved = sv.total || 0;
+  const streak = streakOf();
+  const w26 = week26State();
+  const start26 = () => { prefs.setWeek26({ startDate: new Date().toISOString(), weeks: {} }); setTick((n) => n + 1); toast.good('26주 도전 시작! 이번 주 1천원부터'); track('w26_start', {}); };
+  const tick26 = () => {
+    const w = prefs.week26(); if (!w) return;
+    const s = week26State(); if (!s || s.thisDone) return;
+    const amt = s.idx * 1000;
+    w.weeks = { ...(w.weeks || {}), [s.idx]: amt };
+    prefs.setWeek26(w);
+    log(amt, `26주 도전 ${s.idx}주차`);
+  };
+  const monthSaved = (() => { try { const fd = JSON.parse(localStorage.getItem('fm_daily') || 'null'); const m = monthStr(); return Object.entries((fd && fd.days) || {}).filter(([k]) => k.startsWith(m)).reduce((a, [, v]) => a + (Number(v) || 0), 0); } catch { return 0; } })();
+  const savePot = () => { prefs.setPot({ name: potName.trim().slice(0, 16) || '내 파이어 통', emoji: potEmoji }); setPotOpen(false); toast.good('파이어 통을 바꿨어요'); };
+
   return (
-    <main className="fm-screen fm-scroll fm-has-tabbar">
-      <Header tag="저축" />
-      {seg === 'deposit' && (<>
-      <p className="fm-daily-wisdom">“{quote}”</p>
-      {showSaveNudge && (
-        <div className="fm-save-nudge">
-          <span>🔒 지금까지 기록한 저축이 <b>로그인 안 하면 기기 바꿀 때 사라져요.</b> 30초면 저장돼요.</span>
-          <div className="fm-save-nudge-act">
-            <button type="button" className="fm-save-nudge-go" onClick={() => onMove('account')}>저장하기 →</button>
-            <button type="button" className="fm-save-nudge-x" onClick={dismissNudge} aria-label="닫기">✕</button>
-          </div>
-        </div>
-      )}
-      {hasCalculated() && <FireClock simulation={simulation} />}
-      {hasCalculated() && prog && prog.planAge != null && (() => {
-        const fmtMin = (sec) => { let m = Math.floor(sec / 60); const d = Math.floor(m / 1440); m -= d * 1440; const h = Math.floor(m / 60); const mm = m - h * 60; const parts = []; if (d) parts.push(`${d}일`); if (h) parts.push(`${h}시간`); if (mm || !parts.length) parts.push(`${mm}분`); return parts.join(' '); };
-        const adv = prog.advanceDays;
-        const TH = 1 / 1440;
-        const src = prog.depDev > 0 ? '추가 저축으로' : '저축으로';
-        const base = { textAlign: 'center', fontSize: 12.5, fontWeight: 700, margin: '-4px 0 6px', lineHeight: 1.5 };
-        if (prog.atGoal) return <p style={{ ...base, color: '#0f6e56' }}>🎉 이미 목표 자산을 넘었어요</p>;
-        if (adv >= TH) return <p style={{ ...base, color: '#0f6e56' }}>⏱️ {src} <b>{fmtMin(adv * 86400)}</b> 앞당겼어요</p>;
-        if (adv <= -TH) return <p style={{ ...base, color: '#b4540b' }}>저축이 계획보다 부족해 <b>{fmtMin(Math.abs(adv) * 86400)}</b> 밀렸어요</p>;
-        return <p style={{ ...base, color: '#6b6f76' }}>계획대로 가는 중 · 저축하면 앞당겨져요</p>;
-      })()}
-      <p className="fm-save-explain">💰 <b>저축</b> = 실제로 투자·저축한 돈. <b>파이어 시점에 바로 반영</b>돼요. 매달 기록하면 파이어가 며칠씩 당겨지는 게 보여요.</p>
-      <p className="fm-save-explain" style={{ background: '#fff7ed', border: '1px solid #fed7aa', color: '#9a3412', fontWeight: 600 }}>🤝 랭킹은 서로의 신뢰로 굴러가요 — 실제로 저축한 만큼만 양심껏 기록해 주세요.</p>
-      {seg === 'deposit' && <DepositCard simulation={simulation} onMove={onMove} />}
-      {seg === 'deposit' && <InstallNudge moment="save" />}
-      {seg === 'deposit' && <DepositCalendar editable simulation={simulation} />}
-      {seg === 'deposit' && (
-        <section className="fm-card">
-          <p className="fm-kicker">이번 달 저축 랭킹 🏆</p>
-          <p className="fm-section-sub">이번 달 가장 많이 저축한 사람들이에요</p>
-          <ol className="fm-lb-list">
-            {depBoard === null && <li className="fm-lb-empty">불러오는 중…</li>}
-            {depBoard && depBoard.length === 0 && <li className="fm-lb-empty">아직 이번 달 기록이 적어요. 첫 주자가 되어보세요!</li>}
-            {depBoard && depBoard.map((r, i) => {
-              const mine = r.client_id && myIds.includes(r.client_id);
-              return (
-                <li key={i} className={`fm-lb-row${i < 3 ? ' top3' : ''}${mine ? ' me' : ''}`}>
-                  <span className="fm-lb-rank">{medal(i)}</span>
-                  <span className="fm-lb-who">{mine && acctHandle ? acctHandle : (r.nickname || funHandle(r.client_id))}{mine ? ' (나)' : ''}{r.age_band ? ` · ${r.age_band}대` : ''}</span>
-                  <span className="fm-lb-score">{wonStr(r.value)}</span>
-                </li>
-              );
-            })}
-          </ol>
-        </section>
-      )}
-      {seg === 'frugal' && (
-      <>
-      <section className="fm-card fm-save-screen">
-        <p className="fm-kicker">오늘의 절약 🔥 {streak}일 연속</p>
-        <div className="fm-save-hero">
-          <small>오늘 아낀 돈</small>
-          <b>{wonStr(todaySaved)}</b>
-          {dailyNeed
-            ? (todaySaved > 0 && <span className="fm-save-adv">⏱️ 오늘 파이어 <b>{todayAdv || '몇 초'}</b> 샀어요</span>)
-            : <span className="fm-save-adv muted">이미 목표 달성 — 아낀 돈은 여유로 쌓여요</span>}
-        </div>
+    <main className="fm-screen fm-scroll fm-has-tabbar ds-screen-gap">
+      <TopBar title="저축" onHome={() => onMove('home')} actions={<><IconButton label="달력" onClick={() => setCalOpen(true)}>📅</IconButton><IconButton label="저축 리그" onClick={() => onMove('ranking')}>🏆</IconButton></>} />
 
-        {flash && <div className="fm-time-flash" role="status">⏱️ 방금 파이어 <b>{flash}</b>를 샀어요!</div>}
+      {!hasCalculated() && <Notice tone="accent" icon="🧮" title="먼저 파이어 나이를 계산하면"><button type="button" className="ds-link" onClick={() => onMove('question')}>아낀 돈이 파이어를 며칠 당기는지 시간으로 보여줘요 →</button></Notice>}
 
-        <FireProgressBar simulation={simulation} totalSaved={totalSaved} dailyNeed={dailyNeed} />
+      <PotCard pot={{ name: potName, emoji: potEmoji }} current={ws.asset} target={ws.target} monthLabel="이번 달" monthValue={formatWon(monthSaved)} fmt={eok} hideAmount={hide} onEdit={() => setPotOpen(true)} />
 
-        {ch.s > 0 && (
-          <button type="button" className="fm-save-rec" onClick={() => log(ch.s, ch.t)}>
-            <span>💡 오늘의 추천 · {ch.t}</span><em>+{wonStr(ch.s)}{dailyNeed && fmtAdvance(advSec(ch.s)) ? <i className="fm-chip-time">⏱️{fmtAdvance(advSec(ch.s))}</i> : null}</em>
-          </button>
-        )}
-        <div className="fm-save-chips" aria-label="오늘 아낀 항목 기록">
-          {QUICK.map((q) => (
-            <button type="button" key={q.label} onClick={() => log(q.won, q.label)}>
-              <span>{q.emoji} {q.label}</span><em>+{wonStr(q.won)}{dailyNeed && fmtAdvance(advSec(q.won)) ? <i className="fm-chip-time">⏱️{fmtAdvance(advSec(q.won))}</i> : null}</em>
-            </button>
-          ))}
-          <button type="button" className="fm-save-custom" onClick={() => setCustomOpen((v) => !v)}>✏️ 직접 입력</button>
-        </div>
-        {customOpen && (
-          <div className="fm-save-inline">
-            <input inputMode="numeric" className="fm-save-inline-in" value={customVal} onChange={(e) => setCustomVal(e.target.value.replace(/[^0-9]/g, ''))} placeholder="오늘 아낀 금액 (원)" autoFocus />
-            <button type="button" className="fm-save-inline-go" onClick={submitCustom}>기록</button>
-          </div>
-        )}
+      <Card variant="hero">
+        <SectionHead size="sm" kicker={`🔥 ${streak}일 연속`} title="오늘 아낀 돈, 통에 넣기" desc={totalSaved > 0 ? `지금까지 ${formatWon(totalSaved)} 아꼈어요${dailyNeed && fmtAdvance(advSec(totalSaved)) ? ` · 파이어 ${fmtAdvance(advSec(totalSaved))} 당김` : ''}` : '아낀 돈은 전부 파이어를 당기는 보너스예요'} />
+        <RuleChips rules={rules} onPick={(r) => log(r.amount, r.label)} onCustom={() => setCustomOpen(true)} />
+      </Card>
 
-        {todayEntries.length > 0 && (
+      <DepositCard simulation={simulation} onMove={onMove} />
+
+      <Card>
+        <SectionHead size="sm" kicker="26주 도전" title={w26 ? `${w26.idx}주차 · ${w26.done}/26 완료` : '1천원부터 매주 1천원씩 더'} desc={w26 ? `지금까지 ${formatWon(w26.total)} · 완주하면 351,000원` : '카카오뱅크 800만 좌가 한 그 방식. 26주 뒤 351,000원.'} />
+        {w26 ? (
           <>
-            <ul className="fm-save-entries" aria-label="오늘 기록">
-              {todayEntries.slice().reverse().slice(0, 8).map((e) => (
-                <li key={e.id}>
-                  <span>{e.label}</span>
-                  <em>+{wonStr(e.won)}</em>
-                  <button type="button" className="fm-entry-del" aria-label="삭제" onClick={() => { const next = removeEntry(e.id); setSv(next); persist(next); }}>✕</button>
-                </li>
-              ))}
-            </ul>
-            {todayEntries.length > 8 && <p className="fm-save-entries-more">외 {todayEntries.length - 8}개 더 · 오늘 총 {todayEntries.length}건 (매일 0시 새로 시작)</p>}
+            <Chips>{Array.from({ length: 26 }, (_, i) => i + 1).map((n) => <Chip key={n} on={!!(w26.weeks || {})[n]} onClick={n === w26.idx && !w26.thisDone ? tick26 : undefined}>{n}</Chip>)}</Chips>
+            <Button variant={w26.thisDone ? 'secondary' : 'primary'} size="md" full className="ds-mt-3" disabled={w26.thisDone} onClick={tick26}>{w26.thisDone ? `이번 주 ${formatWon(w26.idx * 1000)} 완료 ✓` : `이번 주 ${formatWon(w26.idx * 1000)} 넣기`}</Button>
           </>
-        )}
+        ) : <Button variant="secondary" size="md" full onClick={start26}>26주 도전 시작</Button>}
+      </Card>
 
-        <div className="fm-save-total">
-          누적 절약 <b>{wonStr(totalSaved)}</b>
-          {daysCount > 0 && <> · {daysCount}일째</>}
-          {' '}<button type="button" className="fm-inline-link" onClick={editTotal}>수정</button>
-        </div>
-        {editTot && (
-          <div className="fm-save-inline">
-            <input inputMode="numeric" className="fm-save-inline-in" value={totVal} onChange={(e) => setTotVal(e.target.value.replace(/[^0-9]/g, ''))} placeholder="누적 절약액 (원)" autoFocus />
-            <button type="button" className="fm-save-inline-go" onClick={submitTotal}>저장</button>
-            <button type="button" className="fm-save-inline-cancel" onClick={() => setEditTot(false)}>취소</button>
-          </div>
-        )}
-        <p className="fm-save-link">이 결과는 <button type="button" className="fm-inline-link" onClick={() => onMove('result')}>파이어 계산</button> 결과와 연동돼요. 누적 기록은 사라지지 않고 계속 쌓여요.</p>
-        <button type="button" className="fm-save-share" onClick={shareSave}>🔥 내 절약 성과 공유하기</button>
-      </section>
-
-      <DepositCalendar storageKey="fm_save" field="daily" label="절약" />
-
-      <WeeklyBoard />
-
-      <section className="fm-card">
-        <p className="fm-kicker">오늘의 절약 랭킹 🏆</p>
-        <p className="fm-section-sub">오늘 가장 많이 아낀 사람들이에요 · 매일 새로 시작해요</p>
-        {rank && <p className="fm-save-myrank">오늘 내 절약 <b>{wonStr(todaySaved)}</b> · {rank.total.toLocaleString()}명 중 <b>{rank.position.toLocaleString()}위</b></p>}
-        <ol className="fm-lb-list">
-          {top === null && <li className="fm-lb-empty">불러오는 중…</li>}
-          {top && top.length === 0 && <li className="fm-lb-empty">아직 오늘 기록이 적어요. 첫 주자가 되어보세요!</li>}
-          {top && top.map((r, i) => {
-            const mine = r.client_id && myIds.includes(r.client_id);
-            return (
-              <li key={i} className={`fm-lb-row${i < 3 ? ' top3' : ''}${mine ? ' me' : ''}`}>
-                <span className="fm-lb-rank">{medal(i)}</span>
-                <span className="fm-lb-who">{mine && acctHandle ? acctHandle : (r.nickname || funHandle(r.client_id))}{mine ? ' (나)' : ''}{r.age_band ? ` · ${r.age_band}대` : ''}</span>
-                <span className="fm-lb-score">{wonStr(r.today_saved)}</span>
-              </li>
-            );
-          })}
-        </ol>
-      </section>
-      </>
-      )}
-      </>
-      )}
+      <Sheet open={calOpen} title="저축 달력" onClose={() => setCalOpen(false)}>
+        <DepositCalendar editable simulation={simulation} />
+      </Sheet>
+      <Sheet open={customOpen} title="오늘 아낀 금액" onClose={() => setCustomOpen(false)}>
+        <input className="ds-input num" autoFocus inputMode="numeric" value={customVal} onChange={(e) => setCustomVal(e.target.value.replace(/[^0-9]/g, ''))} placeholder="예: 12000" onKeyDown={(e) => { if (e.key === 'Enter') submitCustom(); }} />
+        <Chips className="ds-mt-2">{[5000, 10000, 30000, 50000].map((n) => <Chip key={n} onClick={() => setCustomVal(String(n))}>{n / 10000}만</Chip>)}</Chips>
+        <div className="ds-bottomcta"><Button variant="secondary" size="md" onClick={() => setCustomOpen(false)}>취소</Button><Button variant="primary" size="md" onClick={submitCustom}>기록</Button></div>
+      </Sheet>
+      <Sheet open={potOpen} title="파이어 통" onClose={() => setPotOpen(false)}>
+        <Chips>{['🔥', '🏝️', '🏡', '✈️', '🐷', '🌱', '🎯'].map((e) => <Chip key={e} on={potEmoji === e} onClick={() => setPotEmoji(e)}>{e}</Chip>)}</Chips>
+        <input className="ds-input ds-mt-3" maxLength={16} value={potName} onChange={(e) => setPotName(e.target.value)} placeholder="통 이름" />
+        <div className="ds-bottomcta"><Button variant="secondary" size="md" onClick={() => setPotOpen(false)}>취소</Button><Button variant="primary" size="md" onClick={savePot}>저장</Button></div>
+      </Sheet>
+      {confirm && <ConfirmScreen amount={confirm.amount} label={confirm.label} adv={confirm.adv} streak={streakOf()} onMore={() => setConfirm(null)} onClose={() => setConfirm(null)} onCert={() => { setConfirm(null); onMove('result'); }} />}
     </main>
   );
 }

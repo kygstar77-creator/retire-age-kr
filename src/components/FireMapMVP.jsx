@@ -1,15 +1,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { getLatestRank } from '../firemap-v2/rankHistory.js';
 import { pushState } from '../utils/firemapStateApi.js';
 import Home from './firemap/Home.jsx';
 import AccountCard from './firemap/AccountCard.jsx';
 import Question from './firemap/Question.jsx';
 import Result from './firemap/Result.jsx';
 import Experiment from './firemap/Experiment.jsx';
-import City from './firemap/City.jsx';
-import Share from './firemap/Share.jsx';
 import Community from './firemap/Community.jsx';
-import Tools from './firemap/Tools.jsx';
 import MenuAll from './firemap/MenuAll.jsx';
 import BottomTabs from './firemap/BottomTabs.jsx';
 import Header from './firemap/Header.jsx';
@@ -21,13 +17,9 @@ import Leaderboard from './firemap/Leaderboard.jsx';
 import CityExplorer from './firemap/CityExplorer.jsx';
 import DividendLifeCalc from './firemap/DividendLifeCalc.jsx';
 import Savings from './firemap/Savings.jsx';
-import FirePlan from './firemap/FirePlan.jsx';
-import FireIndex from './firemap/FireIndex.jsx';
 import JourneyStage from './firemap/JourneyStage.jsx';
-import Consent from './firemap/Consent.jsx';
-import LiveBanner from './firemap/LiveBanner.jsx';
 import News from './firemap/News.jsx';
-import PullToRefresh from './firemap/PullToRefresh.jsx';
+import Settings from './firemap/Settings.jsx';
 import { buildSimulation, defaultInputs, inputsIsReal } from '../utils/retirementSimulator.js';
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
 import { cleanNumber } from '../firemap-v2/formatters.js';
@@ -37,6 +29,7 @@ import { handleKakaoRedirect } from '../utils/kakaoAuth.js';
 import { track } from '../firemap-v2/dailyData.js';
 import { logEvent } from '../utils/live.js';
 import { decodeInputsFromHash } from '../utils/shareState.js';
+import { applyTheme } from '../utils/prefs.js';
 import '../firemap-v3-tokens.css';
 import '../firemap.css';
 import '../firemap-overrides.css';
@@ -88,6 +81,7 @@ export default function FireMapMVP() {
   const simulation = useMemo(() => buildSimulation(inputs), [inputs]);
   const rankingSimulation = useMemo(() => buildSimulation({ ...inputs, investType: 0 }), [inputs]);
 
+  useEffect(() => { applyTheme(); }, []);
   useEffect(() => {
     if (!inputsIsReal(inputs)) return;
     try { localStorage.setItem(STORAGE_KEY, JSON.stringify(inputs)); } catch { /* ignore */ }
@@ -100,7 +94,6 @@ export default function FireMapMVP() {
   useEffect(() => { try { window.scrollTo(0, 0); } catch { /* ignore */ } }, [screen, step]);
   useEffect(() => { try { logEvent('screen_view', { screen }); } catch { /* ignore */ } }, [screen]);
   useEffect(() => { try { logEvent('session_start', {}); } catch { /* ignore */ } }, []);
-  // 푸시 클릭 유입 로깅(리텐션 측정) — 알림에서 들어오면 ?from=push
   useEffect(() => { try { const q = new URLSearchParams(window.location.search || ''); if (q.get('from') === 'push') logEvent('push_open', {}); } catch { /* ignore */ } }, []);
   useEffect(() => {
     try {
@@ -148,10 +141,8 @@ export default function FireMapMVP() {
       else { const days = Math.floor((now - first) / 86400000); if (days >= 1) track('returning_visit', { days }); }
     } catch { /* ignore */ }
     const onInstalled = () => track('app_installed');
-    const onPrompt = () => track('install_prompt_available');
     window.addEventListener('appinstalled', onInstalled);
-    window.addEventListener('beforeinstallprompt', onPrompt);
-    return () => { window.removeEventListener('hashchange', sync); window.removeEventListener('popstate', sync); window.removeEventListener('appinstalled', onInstalled); window.removeEventListener('beforeinstallprompt', onPrompt); };
+    return () => { window.removeEventListener('hashchange', sync); window.removeEventListener('popstate', sync); window.removeEventListener('appinstalled', onInstalled); };
   }, []);
 
   const setScreen = (next) => {
@@ -167,7 +158,6 @@ export default function FireMapMVP() {
   const previewCity = (krw) => previewPatch({ monthlyLivingCost: krw });
   const next = () => step >= questions.length - 1 ? setScreen('result') : setStep((c) => c + 1);
   const prevQuestion = () => step === 0 ? setScreen('home') : setStep((c) => c - 1);
-  const goFinalQuestion = () => { setStep(Math.max(0, questions.length - 1)); setScreen('question'); };
   const backOf = (id) => () => {
     const ref = referrerRef.current[id];
     delete referrerRef.current[id];
@@ -176,47 +166,41 @@ export default function FireMapMVP() {
   };
 
   const tool = (id, node) => (
-    <main className="fm-screen fm-scroll">
+    <main className="fm-screen fm-scroll fm-has-tabbar ds-screen-gap">
       <Header tag={screens[id].title} onBack={backOf(id)} />
       {node}
     </main>
   );
 
-  const wrap = (node) => (
+  // 화면 테이블 — screens.js의 키 = 여기 키. if/else 21개 → 표 1개.
+  const VIEWS = {
+    home: () => <Home onStart={(age) => { if (typeof age === 'number' && age > 0) { onChange('currentAge', age); setStep(1); } else { setStep(0); } setScreen('question'); }} onMove={setScreen} onChange={onChange} simulation={simulation} />,
+    question: () => <Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />,
+    result: () => <Result inputs={inputs} simulation={simulation} rankingSimulation={rankingSimulation} onMove={setScreen} onChange={onChange} />,
+    experiment: () => <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} onMove={setScreen} draft={expDraft} setDraft={setExpDraft} base={expBase} setBase={setExpBase} />,
+    save: () => <Savings simulation={simulation} onMove={setScreen} />,
+    ranking: () => <Leaderboard simulation={simulation} rankingSimulation={rankingSimulation} onMove={setScreen} />,
+    menu: () => <MenuAll onMove={setScreen} />,
+    settings: () => <Settings simulation={simulation} onMove={setScreen} onBack={backOf('settings')} />,
+    journey: () => <JourneyStage simulation={simulation} onMove={setScreen} onBack={backOf('journey')} />,
+    account: () => tool('account', <AccountCard />),
+    cities: () => <CityExplorer inputs={inputs} simulation={simulation} onChange={onChange} onMove={setScreen} onPreviewCity={previewCity} onPreviewPatch={previewPatch} onBack={backOf('cities')} />,
+    firetype: () => <FireTypeTest simulation={simulation} onChange={onChange} onMove={setScreen} onPreviewCity={previewCity} onBack={backOf('firetype')} />,
+    dependent: () => tool('dependent', <DependentCheck inputs={inputs} onApply={applyPatch} />),
+    foreignTax: () => tool('foreignTax', <><ForeignStockTaxCard inputs={inputs} onApply={applyPatch} /><DividendCard inputs={inputs} onApply={applyPatch} /></>),
+    dividend: () => <DividendLifeCalc inputs={inputs} onChange={onChange} onMove={setScreen} onBack={backOf('dividend')} />,
+    pension: () => tool('pension', <PensionEarlyClaimCard inputs={inputs} onApply={applyPatch} />),
+    news: () => <News onBack={backOf('news')} simulation={simulation} />,
+    wall: () => <Community onBack={backOf('wall')} onMove={setScreen} simulation={simulation} />
+  };
+  const render = VIEWS[screen] || VIEWS.home;
+
+  return (
     <>
-      <PullToRefresh />
-      <LiveBanner />
-      {node}
+      {render()}
       {screens[screen]?.tab && <BottomTabs current={screen} onMove={setScreen} />}
-      <Wall visible={screen === 'home'} />   {/* 방명록 FAB은 홈 전용(스꾸 패턴) — 질문·결과 화면은 방해 없이 */}
-      <Consent />
+      <Wall visible={screen === 'home'} />
       <Toaster />
     </>
   );
-
-  let view;
-  if (screen === 'home') view = <Home onStart={(age) => { if (typeof age === 'number' && age > 0) { onChange('currentAge', age); setStep(1); } else { setStep(0); } setScreen('question'); }} onMove={setScreen} onChange={onChange} simulation={simulation} />;
-  else if (screen === 'question') view = <Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />;
-  else if (screen === 'tools') view = <Tools onMove={setScreen} />;
-  else if (screen === 'menu') view = <MenuAll onMove={setScreen} />;
-  else if (screen === 'journey') view = <JourneyStage simulation={simulation} onMove={setScreen} onBack={backOf('journey')} />;
-  else if (screen === 'index') view = <FireIndex simulation={simulation} onBack={backOf('index')} />;
-  else if (screen === 'experiment') view = <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} onMove={setScreen} draft={expDraft} setDraft={setExpDraft} base={expBase} setBase={setExpBase} />;
-  else if (screen === 'city') view = <City inputs={inputs} onChange={onChange} simulation={simulation} onPreviewPatch={previewPatch} onBack={backOf('city')} />;
-  else if (screen === 'share') view = <Share inputs={inputs} simulation={simulation} onBack={backOf('share')} />;
-  else if (screen === 'community') view = <Community onBack={backOf('community')} onMove={setScreen} simulation={simulation} />;
-  else if (screen === 'ranking') view = <Leaderboard simulation={simulation} rankingSimulation={rankingSimulation} onBack={backOf('ranking')} onMove={setScreen} />;
-  else if (screen === 'cities') view = <CityExplorer inputs={inputs} simulation={simulation} onChange={onChange} onMove={setScreen} onPreviewCity={previewCity} onBack={backOf('cities')} />;
-  else if (screen === 'news') view = <News onBack={backOf('news')} simulation={simulation} />;
-  else if (screen === 'firetype') view = <FireTypeTest simulation={simulation} onChange={onChange} onMove={setScreen} onPreviewCity={previewCity} onBack={backOf('firetype')} />;
-  else if (screen === 'dependent') view = tool('dependent', <DependentCheck inputs={inputs} onApply={applyPatch} />);
-  else if (screen === 'foreignTax') view = tool('foreignTax', <><ForeignStockTaxCard inputs={inputs} onApply={applyPatch} /><DividendCard inputs={inputs} onApply={applyPatch} /></>);
-  else if (screen === 'dividend') view = <DividendLifeCalc inputs={inputs} onChange={onChange} onMove={setScreen} onBack={backOf('dividend')} />;
-  else if (screen === 'save') view = <Savings simulation={simulation} onMove={setScreen} />;
-  else if (screen === 'firePlan') view = <FirePlan simulation={simulation} onMove={setScreen} onChange={onChange} />;
-  else if (screen === 'pension') view = tool('pension', <PensionEarlyClaimCard inputs={inputs} onApply={applyPatch} />);
-  else if (screen === 'account') view = tool('account', <AccountCard />);
-  else view = <Result inputs={inputs} simulation={simulation} rankingSimulation={rankingSimulation} onMove={setScreen} onChange={onChange} onEditFinalQuestion={goFinalQuestion} />;
-
-  return wrap(view);
 }

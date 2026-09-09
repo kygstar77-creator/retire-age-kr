@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 import Header from './Header.jsx';
-import ResultSimTabs from './ResultSimTabs.jsx';
 import PensionControls from './PensionControls.jsx';
 import RangeControl from './RangeControl.jsx';
 import AssetGrowthChart from './AssetGrowthChart.jsx';
@@ -76,7 +75,6 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <Header tag="바꿔보기" onBack={onBack} />
-      <ResultSimTabs current="sim" />
       <section className="fm-card fm-sim-live">
         <p className="fm-sim-live-kicker">{dirty ? '바꿀 조건 미리보기' : '지금 조건이면'}</p>
         <div className="fm-sim-live-row">

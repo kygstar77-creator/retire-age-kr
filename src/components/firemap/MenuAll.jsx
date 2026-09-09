@@ -1,102 +1,58 @@
-import Header from './Header.jsx';
+import { TopBar, Card, ListGroup, ListRow } from '../../ui/index.js';
 import { account } from '../../utils/identity.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import { CAFE_URL, YOUTUBE_URL } from '../../firemap-v2/links.js';
-import { Card, ListGroup, ListRow } from '../../ui/index.js';
 
-// 전체(토스식) — 파이어 여정 단계별로 모든 기능을 한 목록에 정리. DS v1: ListGroup/ListRow (인라인 스타일 0)
+// 전체 — 토스식 목록. 그룹 3(내 여정 / 도구 / 커뮤니티·정보) + 설정.
 const SECTIONS = [
-  {
-    label: '① 내 여정',
-    items: [
-      { ico: '🧭', title: '내 파이어 여정', desc: '지금 단계 · 다음 한 걸음 · 진도', to: 'journey' },
-      { ico: '🎯', title: '내 파이어 플랜', desc: '목표까지 매달·하루 얼마', to: 'firePlan' },
-      { ico: '📊', title: '내 파이어 결과', desc: '파이어 가능 나이 · 자산 추이', to: 'result' },
-      { ico: '🇰🇷', title: '대한민국 파이어 지수', desc: '연령대별 현황 · 또래 중 내 위치', to: 'index' }
-    ]
-  },
-  {
-    label: '② 실행·가속 (기록)',
-    items: [
-      { ico: '💰', title: '저축·기록', desc: '저축·오늘의 한 걸음·미션 한 곳에', to: 'save' }
-    ]
-  },
-  {
-    label: '③ 또래 속 나',
-    items: [
-      { ico: '🏆', title: 'FIRE 랭킹 · 파이어 지수', desc: '여정 단계별 경쟁 · 또래 중 내 위치', to: 'ranking' },
-      { ico: '💬', title: '방명록 전체 보기', desc: '실시간 한마디는 홈의 💬 버튼 · 여기선 전체 글·답글', to: 'community' }
-    ]
-  },
-  {
-    label: '설계 도구',
-    items: [
-      { ico: '🧭', title: '파이어 유형 테스트 ✨', desc: '12문항으로 내 파이어족 유형 + 살 도시 Top3 (공유)', to: 'firetype' },
-      { ico: '🎛️', title: '조건 바꿔 비교', desc: '저축·수익률·은퇴나이 What-If', to: 'experiment' }
-    ]
-  },
-  {
-    label: '🗺️ 지역으로 파이어 보기',
-    items: [
-      { ico: '🗺️', title: '지역으로 파이어 보기', desc: '국내·해외 도시 비교 + 생활비·집값·필요자산 자료까지 한 곳에', to: 'cities' }
-    ]
-  },
-  {
-    label: '임박·파이어 — 리얼리티 체크',
-    items: [
-      { ico: '🩺', title: '파이어 후 건보료', desc: '피부양자 자격 + 지역가입 보험료', to: 'dependent' },
-      { ico: '🧾', title: '양도·배당세', desc: '해외주식 양도세 + 배당 소득세', to: 'foreignTax' },
-      { ico: '💵', title: '파이어 후 현금흐름', desc: '배당·인출·세금·건보까지', to: 'dividend' },
-      { ico: '🏦', title: '국민연금 조기수령', desc: '당겨 받기 득실', to: 'pension' }
-    ]
-  }
-];
-
-const LINKS = [
-  { ico: '🟢', title: '파이어맵 네이버 카페', desc: '파이어 인증·질문·후기 — 파이어족 커뮤니티 본진', href: CAFE_URL, ext: true },
-  { ico: '▶️', title: '파이어맵 유튜브', desc: '영상으로 보는 파이어 — 채널 구독하기', href: YOUTUBE_URL, ext: true },
-  { ico: '📚', title: '파이어 백과', desc: '건보료·세금·연금·현실 금액 가이드', href: '/guide/' },
-  { ico: '📄', title: '면책 안내', desc: '정보 제공 목적 · 투자자문 아님', href: '/disclaimer.html' },
-  { ico: '🔒', title: '개인정보처리방침', desc: '수집 항목 · 목적 · 보관', href: '/privacy.html' },
-  { ico: '✉️', title: '문의', desc: '의견·제보 보내기', href: '/contact.html' }
+  { label: '내 여정', items: [
+    { ico: '📊', title: '내 파이어 결과', desc: '파이어 나이 · 필요 자산 · 레버 3', to: 'result' },
+    { ico: '🪪', title: '인증 카드', desc: '카페 인증 게시판 · 카톡 · 링크', to: 'result' },
+    { ico: '🧭', title: '내 파이어 여정', desc: '지금 단계 · 다음 한 걸음', to: 'journey' },
+    { ico: '💰', title: '저축 · 파이어 통', desc: '오늘 한 걸음 · 26주 도전 · 달력', to: 'save' },
+    { ico: '🏆', title: '랭킹', desc: '같은 구간 · 또래 · 저축 리그', to: 'ranking' }
+  ] },
+  { label: '도구', items: [
+    { ico: '🎛️', title: '바꿔보기', desc: '저축·생활비·수익률 What-If', to: 'experiment' },
+    { ico: '💵', title: '배당으로 파이어', desc: '월 배당 목표 · 달성 나이 · 세후', to: 'dividend' },
+    { ico: '🩺', title: '파이어 후 건보료', desc: '피부양자 · 지역가입 보험료', to: 'dependent' },
+    { ico: '🧾', title: '양도·배당세', desc: '해외주식 양도세 · 배당 소득세', to: 'foreignTax' },
+    { ico: '🏦', title: '국민연금 조기수령', desc: '당겨 받기 득실', to: 'pension' },
+    { ico: '🗺️', title: '지역으로 파이어 보기', desc: '국내·해외 도시 생활비 비교', to: 'cities' },
+    { ico: '🧭', title: '파이어 유형 테스트', desc: '12문항 · 살 도시 Top3', to: 'firetype' }
+  ] },
+  { label: '커뮤니티 · 소식', items: [
+    { ico: '🟢', title: '파이어맵 네이버 카페', desc: '인증 · 봐주세요 · 파이어 후 하루', href: CAFE_URL, ext: true },
+    { ico: '💬', title: '방명록 전체', desc: '글 · 답글 · 공감', to: 'wall' },
+    { ico: '📰', title: '소식', desc: '지표 · 파이어 후 하루 · 배당락', to: 'news' },
+    { ico: '▶️', title: '파이어맵 유튜브', desc: '영상으로 보는 파이어', href: YOUTUBE_URL, ext: true },
+    { ico: '📚', title: '파이어 백과', desc: '건보료·세금·연금 가이드', href: '/guide/' }
+  ] }
 ];
 
 export default function MenuAll({ onMove }) {
   const acc = account();
   const go = (to) => { try { track('menu_all', { to }); } catch { /* ignore */ } onMove(to); };
-
   return (
-    <main className="fm-screen fm-scroll fm-has-tabbar">
-      <Header tag="전체" />
-
-      <Card variant="hero" as="div" className="ds-card--flat" style={{ marginBottom: 18, padding: 0, overflow: 'hidden' }}>
-        <ListRow
-          lead={acc && acc.handle ? '👤' : '🔒'}
-          title={acc && acc.handle ? acc.handle : '카카오로 간편·안전 로그인'}
-          desc={acc && acc.handle ? '기록이 안전하게 이어져요' : '내 기록을 안전하게 보관 · 기기 바꿔도 그대로'}
-          trail={acc && acc.handle ? '관리' : '로그인'}
-          accent
-          size="L"
-          onClick={() => go('account')}
-        />
+    <main className="fm-screen fm-scroll fm-has-tabbar ds-screen-gap">
+      <TopBar title="전체" onHome={() => onMove('home')} />
+      <Card variant="hero" as="div" padding="md" className="ds-card--flat ds-card--flush">
+        <ListRow lead={acc && acc.handle ? '👤' : '🔒'} title={acc && acc.handle ? acc.handle : '로그인 · 기록 지키기'} desc={acc && acc.handle ? '설정 · 알림 · 위젯' : '기기를 바꿔도 저축·랭킹이 이어져요'} trail={acc && acc.handle ? '설정' : '로그인'} accent size="L" onClick={() => go(acc && acc.handle ? 'settings' : 'account')} />
       </Card>
-
-      <div className="ds-stack" style={{ gap: 20 }}>
-        {SECTIONS.map((sec) => (
-          <ListGroup key={sec.label} label={sec.label}>
-            {sec.items.map((it) => (
-              <ListRow key={it.title} lead={it.ico} title={it.title} desc={it.desc} onClick={() => go(it.to)} />
-            ))}
-          </ListGroup>
-        ))}
-        <ListGroup label="정보 · 정책">
-          {LINKS.map((it) => (
-            <ListRow key={it.title} lead={it.ico} title={it.title} desc={it.desc} href={it.href} external={!!it.ext} />
-          ))}
+      {SECTIONS.map((sec) => (
+        <ListGroup key={sec.label} label={sec.label}>
+          {sec.items.map((it) => (it.href
+            ? <ListRow key={it.title} lead={it.ico} title={it.title} desc={it.desc} href={it.href} external={!!it.ext} />
+            : <ListRow key={it.title} lead={it.ico} title={it.title} desc={it.desc} onClick={() => go(it.to)} />))}
         </ListGroup>
-      </div>
-
-      <p className="ds-caption" style={{ padding: '14px 8px 0', margin: 0 }}>※ 파이어맵은 정보 제공 서비스이며 투자자문이 아니에요. 모든 수치는 입력값 기반 추정이에요.</p>
+      ))}
+      <ListGroup label="설정 · 정보">
+        <ListRow lead="⚙️" title="설정" desc="알림 · 금액 숨김 · 다크 모드 · 홈 화면 추가" onClick={() => go('settings')} />
+        <ListRow lead="📄" title="면책 안내" href="/disclaimer.html" />
+        <ListRow lead="🔒" title="개인정보처리방침" href="/privacy.html" />
+        <ListRow lead="✉️" title="문의" href="/contact.html" />
+      </ListGroup>
+      <p className="ds-caption ds-textcenter">파이어맵은 정보 제공 서비스이며 투자자문이 아니에요. 모든 수치는 입력값 기반 추정이에요.</p>
     </main>
   );
 }

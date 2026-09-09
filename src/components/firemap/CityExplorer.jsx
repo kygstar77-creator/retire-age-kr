@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from './Header.jsx';
-import { OverseasStayModule } from './City.jsx';
+import { OverseasStayModule } from './OverseasStayModule.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, runwayText, deltaText } from '../../firemap-v2/scenarios.js';
 import { sourceLine } from '../../firemap-v2/dataSources.js';
@@ -89,7 +89,7 @@ function WorldMap({ cities, active, onPick }) {
   );
 }
 
-export default function CityExplorer({ inputs, simulation, onChange, onMove, onBack, onPreviewCity }) {
+export default function CityExplorer({ inputs, simulation, onChange, onMove, onBack, onPreviewCity, onPreviewPatch }) {
   const [tab, setTab] = useState('domestic');
   const [open, setOpen] = useState(null);
   const [active, setActive] = useState(null);
@@ -170,7 +170,7 @@ export default function CityExplorer({ inputs, simulation, onChange, onMove, onB
               );
             })}
           </div>
-          {onChange && <OverseasStayModule inputs={inputs} simulation={simulation} onChange={onChange} />}
+          <OverseasStayModule inputs={inputs} simulation={simulation} onPreviewPatch={onPreviewPatch} />
           <p className="fm-ce-note">도시별 금액은 1인 월 생활비 대략 추정치예요. 실제 주거·의료·환율·비자 조건에 따라 달라질 수 있어요. {sourceLine('cityCost')}</p>
         </>
       )}

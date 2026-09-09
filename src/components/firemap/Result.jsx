@@ -1,173 +1,57 @@
-import { useEffect, useState } from 'react';
-import Header from './Header.jsx';
-import ResultSimTabs from './ResultSimTabs.jsx';
+// 결과 — 숫자 1(파이어 나이) + 필요 자산 + 레버 3 + 인증 카드. 세그먼트: 몇 살에? | N억이면?(역산).
+// 18블록·12~20버튼·팝업 2 → 6블록·버튼 ≤ 10·팝업 0. 근거: 최종본 §3-2, 4차 '얼마' 1위, ChooseFI 레버 3, TDS Result.
+import { useEffect, useMemo, useState } from 'react';
+import { TopBar, StatHero, Card, SectionHead, Button, LeverList, Fold, Tabs, RangeField, Stat, toast } from '../../ui/index.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
-import { buildScenario, buildGrowthSeries, fireStatus, runwayText, scenarioEndAge, survivalPhrase } from '../../firemap-v2/scenarios.js';
-import { simulateRetirement, inputsIsReal } from '../../utils/retirementSimulator.js';
-import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
-import { shareToKakao } from '../../utils/kakaoShare.js';
-import { sendCommunity } from '../../utils/firemapFeedbackApi.js';
-import { journeyStage } from '../../utils/journeyStage.js';
-import { statsRank, gradeFromScore } from '../../firemap-v2/rank.js';
-import { submitScoreFromSim, fetchUserRank, fetchAggregates } from '../../utils/firemapScoresApi.js';
-import { saveRankSnapshot, getLatestRank } from '../../firemap-v2/rankHistory.js';
+import { buildScenario, buildGrowthSeries, scenarioEndAge, survivalPhrase, runwayText } from '../../firemap-v2/scenarios.js';
+import { simulateRetirement, inputsIsReal, monteCarloSuccess, findEarliestRetirementAge } from '../../utils/retirementSimulator.js';
+import { statsRank } from '../../firemap-v2/rank.js';
+import { statsTopPercentile } from '../../firemap-v2/stats.js';
+import { submitScoreFromSim, fetchUserRank, fetchAggregates, assetBandOf, ASSET_BAND_LABELS } from '../../utils/firemapScoresApi.js';
+import { saveRankSnapshot } from '../../firemap-v2/rankHistory.js';
 import { FIRE_CITIES } from '../../firemap-v2/cities.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import { estimateLocalPremium } from '../../firemap-v2/healthInsurance.js';
-import { account } from '../../utils/identity.js';
-import OpenChatNotice from './OpenChatNotice.jsx';
-import InstallNudge from './InstallNudge.jsx';
-import FireTypePopup from './FireTypePopup.jsx';
-import SubscribePopup from './SubscribePopup.jsx';
-import YouTubeCard from './YouTubeCard.jsx';
-import { Card, SectionHead, Button, Notice, toast } from '../../ui/index.js';
+import { syncWidgetSnapshot } from '../../utils/widgetState.js';
+import ConsentSheet from './Consent.jsx';
+import ShareSheet from './ShareSheet.jsx';
 
-function ResultHeroV2({ simulation, rankingSimulation }) {
-  const rs = rankingSimulation || simulation;
-  const base = statsRank(rs);
-  const phrase = survivalPhrase(simulation);
-  const score = rs.survivalScore;
-  const earliest = simulation.earliestRetirementAge;
-  const rankEarliest = rs.earliestRetirementAge;
-  const taxedDiffers = rankEarliest != null && earliest != null && rankEarliest !== earliest;
-  const target = simulation.inputs.targetRetirementAge;
-  const inp = simulation.inputs;
-  const [live, setLive] = useState(null);
-  const [agg, setAgg] = useState(null);
-  const [showCalc, setShowCalc] = useState(false);
-
-  const inputsHash = `${earliest}|${rankEarliest}|${target}|${inp.financialAsset}|${inp.monthlyInvestment}|${inp.monthlyLivingCost}`;
-  useEffect(() => {
-    let alive = true;
-    // 0원·기본값 결과는 랭킹·스냅샷에 넣지 않는다(빈 입력이 상위권을 오염시키던 버그).
-    if (!inputsIsReal(inp)) return undefined;
-    saveRankSnapshot({ percentile: base.percentile, grade: base.grade, score, earliest });
-    track('calc_complete', { earliest: earliest || 0 });
-    track('result_view', { earliest: earliest || 0 });
-    (async () => {
-      try {
-        const key = `fm_score_sent_${inputsHash}`;
-        if (!sessionStorage.getItem(key)) {
-          let nick = '';
-          try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
-          await submitScoreFromSim({ rankingSimulation, simulation, nickname: nick });
-          sessionStorage.setItem(key, '1');
-        }
-      } catch { /* ignore */ }
-      const [r, a] = await Promise.all([fetchUserRank(rankEarliest), fetchAggregates()]);
-      if (alive) { setLive(r); setAgg(a); }
-    })();
-    return () => { alive = false; };
-  }, [inputsHash]);
-
-  const peerAvg = agg && agg.avgEarliest ? agg.avgEarliest : null;
-  const diff = (peerAvg != null && rankEarliest != null) ? (peerAvg - rankEarliest) : null;
-
-  return (
-    <section className="fm-rank-hero fm-result-hero-v4">
-      <p className="fm-rank-label">내 파이어 가능 나이 · {base.ageBandLabel} 또래 기준</p>
-      <div className="fm-rank-top">
-        <span className="fm-rank-pct">{earliest ? `${earliest}세` : '계산 필요'}</span>
-        {diff != null && (
-          <span className={`fm-rank-delta ${diff >= 0 ? 'up' : 'down'}`}>
-            {diff > 0 ? `또래 ▲ ${diff}년 빠름` : diff < 0 ? `또래 ▼ ${Math.abs(diff)}년 느림` : '또래와 비슷'}
-          </span>
-        )}
-      </div>
-      <p className="fm-hero-headline">{earliest ? '지금 계획이면 이 나이에 파이어할 수 있어요' : '더 모으거나 생활비를 줄이면 파이어 시점이 보여요'}</p>
-      {taxedDiffers && <p className="fm-hero-pretax">세금 반영 결과예요 · 등수·또래 비교는 공정 위해 <b>세전 {rankEarliest}세</b> 기준이에요</p>}
-      {live
-        ? <button type="button" className="fm-rank-line fm-rank-line-link" onClick={() => { window.location.hash = '#ranking'; }}>함께 계산한 <b>{live.total.toLocaleString()}명</b> 중 <b>{live.position.toLocaleString()}등</b> · <span className="fm-rank-go">전체 랭킹 보기 ›</span></button>
-        : <p className="fm-rank-line">실시간 집계 중…</p>}
-      {live && (live.position > 1
-        ? <p className="fm-rank-climb">1등까지 <b>{(live.position - 1).toLocaleString()}명</b> · 조건 바꾸면 등수가 올라가요</p>
-        : <p className="fm-rank-climb">지금 전체 1등이에요!</p>)}
-      <div className="fm-hero-mini">
-        <span>파이어 때 내 자산 <b>{simulation.retirementFinancialAsset ? formatWon(simulation.retirementFinancialAsset) : '—'}</b></span>
-        <span>자산 버티는 나이 <b>{phrase.runway}</b></span>
-        <span>목표 파이어 <b>{target}세</b></span>
-      </div>
-      <p className="fm-rank-note">{peerAvg != null ? `또래 평균 ${peerAvg}세(세전) · ` : ''}또래 순자산 상위 {base.percentile}% · <b>등수는 세전 공정 비교</b></p>
-      <button type="button" className="fm-calc-toggle" onClick={() => setShowCalc((v) => !v)} aria-expanded={showCalc}>계산 가정·출처 {showCalc ? '▴' : '▾'}</button>
-      {showCalc && <p className="fm-rank-note fm-rank-note-sub">통계청 2025 가계금융복지조사 기준 · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)}</p>}
-      <button type="button" className="fm-tax-hint" onClick={() => { window.location.hash = '#experiment'; }}>세금·배당 반영해 보기 → 🎛️ 바꿔보기</button>
-    </section>
-  );
-}
-
-function compareText(base, next) {
-  const diff = scenarioEndAge(next) - scenarioEndAge(base);
-  if (diff > 0) return `현재보다 ${diff}년 개선`;
-  if (diff === 0) return '현재와 비슷함';
-  return `${Math.abs(diff)}년 악화`;
-}
-
-function leverGain(diff) {
-  if (diff > 0) return `+${diff}년`;
-  if (diff === 0) return '비슷';
-  return `−${Math.abs(diff)}년`;
-}
+const eok = (n) => formatWon(Math.round(n || 0));
 
 function solveMin(test, hi, round) {
   if (test(0)) return 0;
   if (!test(hi)) return null;
   let lo = 0, h = hi;
-  for (let i = 0; i < 22; i += 1) { const m = (lo + h) / 2; if (test(m)) h = m; else lo = m; }
+  for (let i = 0; i < 18; i += 1) { const m = (lo + h) / 2; if (test(m)) h = m; else lo = m; }
   return Math.ceil(h / round) * round;
 }
 
-function TopLevers({ inputs, simulation, onChange }) {
-  const until = simulation.inputs.simulationUntilAge;
-  const ni = simulation.inputs;
-  const ok = (patch) => !simulateRetirement({ ...ni, ...patch }).depletionAge;
-  const apply = (patch) => {
-    if (onChange) Object.entries(patch).forEach(([k, v]) => onChange(k, v));
-    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch { /* ignore */ }
-  };
-  const baseOk = ok({});
-
-  if (baseOk) {
-    return (
-      <section className="fm-card fm-goal fm-goal-done">
-        <p className="fm-kicker">목표 달성</p>
-        <h2>이미 {until}세까지 버티는 계획이에요 🎉</h2>
-        <p className="fm-goal-sub">{simulation.earliestRetirementAge ? `가장 빠르면 ${simulation.earliestRetirementAge}세에도 파이어할 수 있어요. 더 당겨볼까요?` : '여유가 있어요. 조건을 더 공격적으로 바꿔보세요.'}</p>
-        <button type="button" className="fm-ce-cta" onClick={() => onChange && (window.location.hash = '#experiment')}>조건 바꿔 더 당겨보기</button>
-      </section>
-    );
-  }
-
-  const lc = ni.monthlyLivingCost || 0;
-  const items = [
-    { tag: '저축', solve: solveMin((d) => ok({ monthlyInvestment: ni.monthlyInvestment + d }), 30000000, 100000),
-      label: (d) => `월 ${formatWon(d)} 더 저축`, patch: (d) => ({ monthlyInvestment: ni.monthlyInvestment + d }) },
-    { tag: '생활비', solve: solveMin((d) => ok({ monthlyLivingCost: Math.max(800000, lc - d) }), Math.max(0, lc - 800000), 100000),
-      label: (d) => `생활비 월 ${formatWon(d)} 줄이기`, patch: (d) => ({ monthlyLivingCost: Math.max(800000, lc - d) }) },
-    { tag: '근무', solve: solveMin((d) => ok({ targetRetirementAge: ni.targetRetirementAge + d }), 15, 1),
-      label: (d) => `${d}년 더 일하기 (${ni.targetRetirementAge + d}세)`, patch: (d) => ({ targetRetirementAge: ni.targetRetirementAge + d }) },
-    { tag: '부업', solve: solveMin((d) => ok({ partTimeIncomeAfterRetirement: ni.partTimeIncomeAfterRetirement + d }), 10000000, 100000),
-      label: (d) => `파이어 후 월 ${formatWon(d)} 벌기`, patch: (d) => ({ partTimeIncomeAfterRetirement: ni.partTimeIncomeAfterRetirement + d }) },
-    { tag: '수익률', solve: solveMin((d) => ok({ annualReturnRate: ni.annualReturnRate + d }), 15, 0.5),
-      label: (d) => `수익률 +${d}%p (연 ${(ni.annualReturnRate + d).toFixed(1)}%)`, patch: (d) => ({ annualReturnRate: ni.annualReturnRate + d }) }
-  ];
-  return (
-    <section className="fm-card fm-goal">
-      <p className="fm-kicker">목표 달성 플랜</p>
-      <h2>{ni.targetRetirementAge}세 파이어를 성공시키려면?</h2>
-      <p className="fm-goal-sub">{until}세까지 자산이 버티게 하는 방법이에요. <b>아래 중 하나만</b> 해도 목표 달성!</p>
-      <ul className="fm-goal-list">
-        {items.map((it) => (
-          <li key={it.tag} className={`fm-goal-item${it.solve === null ? ' off' : ''}`}>
-            <span className="fm-goal-tag">{it.tag}</span>
-            <span className="fm-goal-need">{it.solve === null ? '이 방법만으론 어려워요' : it.label(it.solve)}</span>
-            {it.solve !== null && <button type="button" className="fm-goal-apply" onClick={() => apply(it.patch(it.solve))}>적용</button>}
-          </li>
-        ))}
-      </ul>
-      <p className="fm-goal-note">각 값은 목표 달성에 필요한 최소치예요. 수익률은 높이면 위험도 커지니 참고만 하세요.</p>
-      <button type="button" className="fm-goal-savelink" onClick={() => { window.location.hash = '#save'; }}>💡 이 저축, 매일 조금씩 채우려면 → 저축 탭</button>
-    </section>
-  );
+// 레버 3 — 목표 미달이면 '목표 달성', 달성 중이면 '1년 더 당기기'
+function useLevers(simulation, onChange) {
+  return useMemo(() => {
+    const ni = simulation.inputs;
+    const until = ni.simulationUntilAge;
+    const earliest = simulation.earliestRetirementAge;
+    const baseOk = !simulateRetirement(ni).depletionAge;
+    const goal = baseOk && earliest ? Math.max(ni.currentAge, earliest - 1) : null;
+    const ok = baseOk
+      ? (patch) => { const e = findEarliestRetirementAge({ ...ni, ...patch }); return e != null && e <= goal; }
+      : (patch) => !simulateRetirement({ ...ni, ...patch }).depletionAge;
+    const lc = ni.monthlyLivingCost || 0;
+    const defs = [
+      { key: 'save', tag: '저축', solve: solveMin((d) => ok({ monthlyInvestment: ni.monthlyInvestment + d }), 20000000, 100000), label: (d) => `월 ${formatWon(d)} 더 저축`, patch: (d) => ({ monthlyInvestment: ni.monthlyInvestment + d }) },
+      { key: 'cost', tag: '생활비', solve: solveMin((d) => ok({ monthlyLivingCost: Math.max(800000, lc - d) }), Math.max(0, lc - 800000), 100000), label: (d) => `파이어 후 생활비 월 ${formatWon(d)} 줄이기`, patch: (d) => ({ monthlyLivingCost: Math.max(800000, lc - d) }) },
+      { key: 'side', tag: '부업', solve: solveMin((d) => ok({ partTimeIncomeAfterRetirement: ni.partTimeIncomeAfterRetirement + d }), 6000000, 100000), label: (d) => `파이어 후 월 ${formatWon(d)} 벌기`, patch: (d) => ({ partTimeIncomeAfterRetirement: ni.partTimeIncomeAfterRetirement + d }) }
+    ];
+    const items = defs.map((it) => ({
+      key: it.key, tag: it.tag,
+      off: it.solve === null || it.solve === 0,
+      label: it.solve === null ? '이 방법만으론 어려워요' : it.solve === 0 ? '이미 충분해요' : it.label(it.solve),
+      gain: it.solve ? (baseOk ? `−1년 → ${goal}세` : `${ni.targetRetirementAge}세 달성`) : null,
+      onApply: it.solve ? () => { Object.entries(it.patch(it.solve)).forEach(([k, v]) => onChange(k, v)); try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch { /* ignore */ } toast.good('적용했어요. 위 숫자가 바뀌었어요'); } : null
+    }));
+    return { items, baseOk, goal, until };
+  }, [simulation, onChange]);
 }
 
 function YearlyAssetChart({ simulation }) {
@@ -175,17 +59,9 @@ function YearlyAssetChart({ simulation }) {
   const [sel, setSel] = useState(null);
   if (rows.length < 2) return null;
   const g = buildGrowthSeries(simulation);
-  const pts = rows.map((r, i) => ({
-    age: r.age,
-    status: r.status,
-    principal: Math.max(0, g.principal[i] ?? 0),
-    gains: Math.max(0, g.gains[i] ?? 0),
-    v: Math.max(0, g.total[i] ?? r.financialAsset)
-  }));
-  const n = pts.length;
-  const maxV = Math.max(...pts.map((p) => p.v), 1);
-  const a0 = pts[0].age, a1 = pts[n - 1].age;
-  const W = 320, H = 120, P = 8;
+  const pts = rows.map((r, i) => ({ age: r.age, status: r.status, principal: Math.max(0, g.principal[i] ?? 0), gains: Math.max(0, g.gains[i] ?? 0), v: Math.max(0, g.total[i] ?? r.financialAsset) }));
+  const n = pts.length; const maxV = Math.max(...pts.map((p) => p.v), 1);
+  const a0 = pts[0].age, a1 = pts[n - 1].age; const W = 320, H = 120, P = 8;
   const X = (a) => P + ((a - a0) / Math.max(1, a1 - a0)) * (W - 2 * P);
   const Y = (v) => H - P - (v / maxV) * (H - 2 * P);
   const principalTop = pts.map((p, i) => `${i ? 'L' : 'M'}${X(p.age).toFixed(1)} ${Y(p.principal).toFixed(1)}`).join(' ');
@@ -193,309 +69,173 @@ function YearlyAssetChart({ simulation }) {
   const totalTop = pts.map((p, i) => `${i ? 'L' : 'M'}${X(p.age).toFixed(1)} ${Y(p.v).toFixed(1)}`).join(' ');
   const principalBack = pts.slice().reverse().map((p) => `L${X(p.age).toFixed(1)} ${Y(p.principal).toFixed(1)}`).join(' ');
   const gainsArea = `${totalTop} ${principalBack} Z`;
-  const ret = simulation.inputs.targetRetirementAge;
-  const retX = X(Math.min(a1, Math.max(a0, ret)));
+  const ret = simulation.inputs.targetRetirementAge; const retX = X(Math.min(a1, Math.max(a0, ret)));
   const retIdx = Math.max(0, pts.findIndex((p) => p.age >= ret));
   const cur = sel != null ? pts[Math.min(sel, n - 1)] : (pts[retIdx] || pts[n - 1]);
-  const pick = (e) => {
-    const box = e.currentTarget.getBoundingClientRect();
-    const clientX = e.touches && e.touches[0] ? e.touches[0].clientX : e.clientX;
-    const idx = Math.max(0, Math.min(n - 1, Math.round(((clientX - box.left) / box.width) * (n - 1))));
-    setSel(idx);
-  };
+  const pick = (e) => { const box = e.currentTarget.getBoundingClientRect(); const cx = e.touches && e.touches[0] ? e.touches[0].clientX : e.clientX; setSel(Math.max(0, Math.min(n - 1, Math.round(((cx - box.left) / box.width) * (n - 1))))); };
   return (
     <div className="fm-yac">
-      <div className="fm-yac-read">
-        <b>{cur.age}세</b>
-        <span className={cur.status === '파이어 후' ? 'after' : 'before'}>{cur.status}</span>
-        <strong>{formatWon(cur.v)}</strong>
-      </div>
-      <p className="fm-yac-split"><i className="fm-dot fm-dot-principal" />내가 넣은 돈 {formatWon(cur.principal)} · <i className="fm-dot fm-dot-gains" />불어난 돈 {formatWon(cur.gains)}</p>
-      <div
-        className="fm-yac-canvas"
-        style={{ touchAction: 'none' }}
-        onPointerDown={pick}
-        onPointerMove={(e) => { if (e.buttons) pick(e); }}
-        onTouchStart={pick}
-        onTouchMove={pick}
-      >
-        <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" role="img" aria-label="나이별 내 자산 그래프 — 원금과 불어난 돈 (눌러서 확인)">
-          <path d={principalArea} className="fm-yac-area-principal" />
-          <path d={gainsArea} className="fm-yac-area-gains" />
-          <path d={totalTop} className="fm-yac-line" fill="none" />
-          <line x1={retX} y1={P} x2={retX} y2={H - P} className="fm-yac-ret" />
-          <line x1={X(cur.age)} y1={P} x2={X(cur.age)} y2={H - P} className="fm-yac-cross" />
-          <circle cx={X(cur.age)} cy={Y(cur.v)} r="3.5" className="fm-yac-dot" />
+      <div className="fm-yac-read"><b>{cur.age}세</b><span className={cur.status === '파이어 후' ? 'after' : 'before'}>{cur.status}</span><strong>{formatWon(cur.v)}</strong></div>
+      <p className="fm-yac-split"><i className="fm-dot fm-dot-principal" />넣은 돈 {formatWon(cur.principal)} · <i className="fm-dot fm-dot-gains" />불어난 돈 {formatWon(cur.gains)}</p>
+      <div className="fm-yac-canvas" style={{ touchAction: 'none' }} onPointerDown={pick} onPointerMove={(e) => { if (e.buttons) pick(e); }} onTouchStart={pick} onTouchMove={pick}>
+        <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" role="img" aria-label="나이별 자산 그래프">
+          <path d={principalArea} className="fm-yac-area-principal" /><path d={gainsArea} className="fm-yac-area-gains" /><path d={totalTop} className="fm-yac-line" fill="none" />
+          <line x1={retX} y1={P} x2={retX} y2={H - P} className="fm-yac-ret" /><line x1={X(cur.age)} y1={P} x2={X(cur.age)} y2={H - P} className="fm-yac-cross" /><circle cx={X(cur.age)} cy={Y(cur.v)} r="3.5" className="fm-yac-dot" />
         </svg>
       </div>
       <div className="fm-yac-x"><span>{a0}세</span><span>파이어 {ret}세</span><span>{a1}세</span></div>
-      <p className="fm-yac-hint">그래프를 눌러 나이별 자산을 확인하세요</p>
     </div>
   );
 }
 
-function OverseasHope({ inputs, simulation, onMove }) {
-  const baseEnd = scenarioEndAge(simulation);
-  const cands = FIRE_CITIES
-    .filter((c) => c.krw < inputs.monthlyLivingCost)
-    .map((c) => { const sc = buildScenario(inputs, { monthlyLivingCost: c.krw }); return { ...c, sc, gain: scenarioEndAge(sc) - baseEnd }; })
-    .filter((c) => c.gain > 0)
-    .sort((a, b) => b.gain - a.gain)
-    .slice(0, 3);
-  if (cands.length === 0) return null;
-  return (
-    <section className="fm-card fm-hope">
-      <p className="fm-kicker">희망편</p>
-      <h2>해외에 살면 더 오래 버틸 수 있어요</h2>
-      <p className="fm-hope-lead">지금 생활비({formatWon(inputs.monthlyLivingCost)})로는 <b>{runwayText(simulation)}</b>까지지만, 물가가 낮은 곳이라면:</p>
-      <ul className="fm-hope-list">
-        {cands.map((c) => (
-          <li key={c.city}>
-            <span className="fm-hope-city">{c.flag} {c.city}</span>
-            <span className="fm-hope-end">{runwayText(c.sc)}까지</span>
-            <span className="fm-hope-gain">+{c.gain}년</span>
-          </li>
-        ))}
-      </ul>
-      <button type="button" className="fm-hope-cta" onClick={() => onMove('cities')}>전 세계 파이어 도시 탐색 →</button>
-    </section>
-  );
-}
-
-function AssetJourney({ simulation }) {
-  const rows = simulation.targetResult.rows || [];
-  if (rows.length < 2) return null;
-  const start = rows[0].financialAsset;
-  const y1 = rows[1] ? rows[1].financialAsset - start : 0;
-  const y5 = rows[5] ? rows[5].financialAsset - start : null;
-  const save1 = rows[1] ? Math.max(0, rows[1].investmentAdded) : 0;
-  const ret1 = Math.max(0, y1 - save1);
-  const cur = rows[0];
-  const items = [{ age: cur.age, label: '지금 시작', sub: formatWon(cur.financialAsset), hi: false }];
-  [100000000, 300000000, 500000000, 1000000000, 2000000000].forEach((t) => {
-    if (t > cur.financialAsset) {
-      const hit = rows.find((r) => r.financialAsset >= t);
-      if (hit && hit.age > cur.age) items.push({ age: hit.age, label: `자산 ${formatWon(t)} 돌파`, sub: null, hi: false });
-    }
-  });
-  const req = simulation.requiredFireAssetByFourPercent;
-  if (req && req > cur.financialAsset) {
-    const hit = rows.find((r) => r.financialAsset >= req);
-    if (hit) items.push({ age: hit.age, label: 'FIRE 목표 자산 달성', sub: `4%룰 ${formatWon(req)}`, hi: true });
-  }
-  if (simulation.earliestRetirementAge) items.push({ age: simulation.earliestRetirementAge, label: '가장 이른 파이어 가능', sub: null, hi: true });
-  items.push({ age: simulation.inputs.targetRetirementAge, label: '목표 파이어', sub: null, hi: true });
-  const seen = new Set();
-  const list = items
-    .filter((m) => { const k = m.age + m.label; if (seen.has(k)) return false; seen.add(k); return true; })
-    .sort((a, b) => a.age - b.age);
-  return (
-    <section className="fm-card fm-growth">
-      <p className="fm-kicker">내 자산 흐름</p>
-      <h2>시간이 지나면 자산은 이렇게 움직여요</h2>
-      <YearlyAssetChart simulation={simulation} />
-      <div className="fm-growth-grid">
-        <div><small>1년 뒤</small><b>+{formatWon(Math.max(0, y1))}</b></div>
-        {y5 != null && <div><small>5년 뒤</small><b>+{formatWon(Math.max(0, y5))}</b></div>}
-        <div><small>파이어 시점</small><b>{formatWon(simulation.retirementFinancialAsset)}</b></div>
-      </div>
-      {y1 > 0 && (
-        <p className="fm-growth-split">1년 새 <b>+{formatWon(Math.max(0, y1))}</b> = 내 저축 <b>{formatWon(save1)}</b> + 투자수익 <b>{formatWon(ret1)}</b></p>
-      )}
-      <ol className="fm-road-list">
-        {list.map((m, i) => (
-          <li key={i} className={`fm-road-step${m.hi ? ' hi' : ''}`}>
-            <span className="fm-road-age">{m.age}세</span>
-            <span className="fm-road-body"><b>{m.label}</b>{m.sub && <em>{m.sub}</em>}</span>
-          </li>
-        ))}
-      </ol>
-      <p className="fm-growth-note">연 수익률 {simulation.inputs.annualReturnRate}% · 저축 반영 · 조건을 바꾸면 단계가 당겨져요</p>
-    </section>
-  );
-}
-
-function MoatCard({ simulation, onMove }) {
+function ReverseMode({ simulation, onOpenShare }) {
   const inp = simulation.inputs;
-  const fireAsset = simulation.retirementFinancialAsset || simulation.netWorth || inp.financialAsset || 0;
-  const annualFinIncomeManwon = Math.round((fireAsset * 0.04) / 10000); // 4% 인출 기준 연 금융소득(만원)
-  let est = null;
-  try { est = estimateLocalPremium({ chargeableIncomeManwon: annualFinIncomeManwon, propertyTaxBaseEok: 0 }); } catch { est = null; }
+  const [asset, setAsset] = useState(() => Math.max(100000000, Math.round((inp.financialAsset || 0) / 100000000) * 100000000 || 300000000));
+  const [debounced, setDebounced] = useState(asset);
+  useEffect(() => { const t = setTimeout(() => setDebounced(asset), 150); return () => clearTimeout(t); }, [asset]);
+  const age = useMemo(() => findEarliestRetirementAge({ ...inp, financialAsset: debounced }), [inp, debounced]);
+  const need = Math.round(simulation.requiredFireAssetByFourPercent || 0);
+  const gap = Math.max(0, need - debounced);
+  const bands = useMemo(() => [300000000, 500000000, 1000000000, need].filter((v, i, a) => v > 0 && a.indexOf(v) === i).sort((a, b) => a - b).map((v) => ({ v, age: findEarliestRetirementAge({ ...inp, financialAsset: v }), pct: statsTopPercentile(v, inp.currentAge) })), [inp, need]);
   return (
-    <section className="fm-card fm-moat">
-      <p className="fm-kicker">파이어 후 건보료·세금 점검</p>
-      <h2>파이어하면 건강보험이 지역가입자로 바뀌어요</h2>
-      <p className="fm-moat-lead">직장을 그만두면 회사와 절반씩 내던 건보료를 <b>혼자</b> 내고, 소득·재산 기준 <b>지역가입자</b>로 전환돼 부담이 커질 수 있어요.</p>
-      {est && (
-        <div className="fm-moat-est">
-          <div><small>예상 월 건보료 (추정)</small><b>{est.monthly.toLocaleString()}원</b></div>
-          <div><small>4% 인출 시 연 금융소득</small><b>{annualFinIncomeManwon.toLocaleString()}만원</b></div>
+    <>
+      <StatHero tone="dark" label={`${eok(debounced)}이면`} value={age ? `${age}세` : '아직'} unit={age ? '' : ''} sub={age ? `${age}세에 파이어 가능 · 필요 자산까지 ${gap > 0 ? `${eok(gap)} 부족` : '충분'}` : '이 자산만으론 70세까지도 어려워요 · 생활비를 낮춰보세요'}>
+        <div style={{ marginTop: 10 }}>
+          <RangeField label="자산이" value={asset} min={100000000} max={3000000000} step={50000000} money format={eok} onChange={setAsset} />
         </div>
-      )}
-      <p className="fm-moat-note">금융소득만으로 잡은 대략값이에요. 부양가족 등재·재산까지 넣어 정확히 보려면 ↓</p>
-      <div className="fm-moat-cta">
-        <button type="button" onClick={() => onMove('dependent')}>🩺 파이어 후 건보료 정밀 계산</button>
-        <button type="button" onClick={() => onMove('foreignTax')}>💸 양도·배당세</button>
-      </div>
-    </section>
-  );
-}
-
-function AccountBar({ onMove }) {
-  const acc = account();
-  return (
-    <button type="button" className={`fm-acct-bar${acc && acc.handle ? ' on' : ''}`} onClick={() => onMove('account')}>
-      <span className="fm-acct-bar-ic">{acc && acc.handle ? '👤' : '🔒'}</span>
-      {acc && acc.handle
-        ? <span className="fm-acct-bar-tx"><b>{acc.handle}</b><em>결과·등수가 안전하게 저장돼요</em></span>
-        : <span className="fm-acct-bar-tx"><b>로그인하고 이 결과 저장하기</b><em>기기 바꿔도 등수·기록이 그대로 이어져요</em></span>}
-      <span className="fm-acct-bar-go">{acc && acc.handle ? '관리 ›' : '로그인 ›'}</span>
-    </button>
-  );
-}
-
-function NextActions({ onMove }) {
-  return (
-    <button type="button" className="fm-plan-tools" onClick={() => onMove('tools')}>🧰 정밀 도구 전체 보기 (지역·현금흐름·건보·세금) →</button>
-  );
-}
-
-export default function Result({ inputs, simulation, rankingSimulation, onMove, onChange, onEditFinalQuestion }) {
-  // 결과를 커뮤니티 피드에 카드로 공유(비로그인 익명 게시 허용). 같은 결과 도배 방지용 가드.
-  const shareKey = `fm_result_shared_${simulation.earliestRetirementAge || 'na'}_${simulation.inputs.targetRetirementAge}`;
-  const [commOpen, setCommOpen] = useState(false);
-  const [commComment, setCommComment] = useState('');
-  const [commSharing, setCommSharing] = useState(false);
-  const [commDone, setCommDone] = useState(() => { try { return localStorage.getItem(shareKey) === '1'; } catch { return false; } });
-  useEffect(() => { try { setCommDone(localStorage.getItem(shareKey) === '1'); } catch { /* ignore */ } }, [shareKey]);
-  const postToCommunity = async () => {
-    if (commSharing) return;
-    setCommSharing(true);
-    try { track('result_community_share', {}); } catch { /* ignore */ }
-    const earliest = simulation.earliestRetirementAge;
-    const ph = survivalPhrase(simulation);
-    const head = earliest ? `🔥 저는 ${earliest}세에 파이어 가능!` : '🔥 제 파이어 결과를 공유해요!';
-    const baseMsg = (ph && ph.short) ? `${head} (${ph.short})` : head;
-    const c = commComment.trim();
-    let msg = c ? `${baseMsg}\n${c}` : baseMsg;
-    if (msg.length > 240) msg = msg.slice(0, 240);
-    let stage = null;
-    try { const j = journeyStage(simulation); stage = j ? j.stage : null; } catch { /* ignore */ }
-    const created = await sendCommunity(msg, null, 'goal', stage);
-    setCommSharing(false);
-    if (created) {
-      setCommDone(true); setCommOpen(false);
-      try { localStorage.setItem(shareKey, '1'); } catch { /* ignore */ }
-    } else {
-      toast.bad('잠시 후 다시 시도해 주세요.');
-    }
-  };
-  const shareRank = async () => {
-    track('share', { type: 'result' });
-    const ph = survivalPhrase(simulation);
-    const earliest = simulation.earliestRetirementAge;
-    const target = simulation.inputs.targetRetirementAge;
-    const ret = simulation.inputs.annualReturnRate;
-    const inf = simulation.inputs.inflationRate;
-    let pos, tot;
-    try { const rr = await fetchUserRank(earliest); if (rr && rr.total) { pos = rr.position; tot = rr.total; } } catch (e) { /* ignore */ }
-    const img = new URL('https://firemap.kr/og');
-    if (earliest) img.searchParams.set('ea', String(earliest));
-    img.searchParams.set('target', String(target));
-    img.searchParams.set('rw', ph.runway);
-    img.searchParams.set('ret', String(ret));
-    img.searchParams.set('inf', String(inf));
-    if (pos && tot) { img.searchParams.set('pos', String(pos)); img.searchParams.set('tot', String(tot)); }
-    img.searchParams.set('v', 'c3');
-    const imageUrl = img.toString();
-    const l = new URL('https://firemap.kr/s');
-    if (earliest) l.searchParams.set('ea', String(earliest));
-    l.searchParams.set('target', String(target));
-    l.searchParams.set('rwy', ph.runway);
-    l.searchParams.set('ret', String(ret));
-    l.searchParams.set('inf', String(inf));
-    if (pos && tot) { l.searchParams.set('pos', String(pos)); l.searchParams.set('tot', String(tot)); }
-    const url = l.toString();
-    const pct = (pos && tot) ? Math.max(1, Math.round((pos / tot) * 100)) : null;
-    const title = earliest ? `나는 ${earliest}세에 파이어 가능 🔥 — 파이어맵` : '나도 내 파이어 나이 계산하기 — 파이어맵';
-    const description = '물가·국민연금까지 따진 가장 현실적인 파이어 계산 · 1분이면 내 파이어 나이가 나와요';
-    track('share_summary_copy', { type: 'result_share' });
-    try {
-      await shareToKakao({ title, description, imageUrl, linkUrl: url });
-      return;
-    } catch (e) { /* SDK 미로드/도메인 미등록 등 → 폴백 */ }
-    if (navigator.share) {
-      try { await navigator.share({ text: '파이어족들을 위한 커뮤니티 · 파이어맵', url }); return; }
-      catch (e) { if (e && e.name === 'AbortError') return; }
-    }
-    try { await navigator.clipboard.writeText(url); toast.good('내 결과 링크를 복사했어요. 단톡방에 붙여넣어 보세요!'); }
-    catch { onMove('share'); }
-  };
-  const shareOther = async () => {
-    track('share', { type: 'result_other' });
-    const ph = survivalPhrase(simulation);
-    const earliest = simulation.earliestRetirementAge;
-    let pos, tot;
-    try { const rr = await fetchUserRank(earliest); if (rr && rr.total) { pos = rr.position; tot = rr.total; } } catch (e) { /* ignore */ }
-    const l = new URL('https://firemap.kr/s');
-    if (earliest) l.searchParams.set('ea', String(earliest));
-    l.searchParams.set('target', String(simulation.inputs.targetRetirementAge));
-    l.searchParams.set('rwy', ph.runway);
-    l.searchParams.set('ret', String(simulation.inputs.annualReturnRate));
-    l.searchParams.set('inf', String(simulation.inputs.inflationRate));
-    if (pos && tot) { l.searchParams.set('pos', String(pos)); l.searchParams.set('tot', String(tot)); }
-    const url = l.toString();
-    if (navigator.share) {
-      try { await navigator.share({ text: '파이어족들을 위한 커뮤니티 · 파이어맵', url }); return; }
-      catch (e) { if (e && e.name === 'AbortError') return; }
-    }
-    try { await navigator.clipboard.writeText(url); toast.good('내 결과 링크를 복사했어요. 어디든 붙여넣어 보세요!'); }
-    catch { /* ignore */ }
-  };
-  return (
-    <main className="fm-screen fm-scroll fm-has-tabbar">
-      <FireTypePopup onMove={onMove} />
-      <SubscribePopup onMove={onMove} simulation={simulation} />
-      <Header home />
-      <ResultSimTabs current="result" />
-      <ResultHeroV2 simulation={simulation} rankingSimulation={rankingSimulation} />
-      <div className="fm-rank-cta">
-        <button type="button" className="fm-rank-cta-share" onClick={shareRank}>친구에게 보내보기</button>
-        <button type="button" className="fm-rank-cta-up" onClick={() => onMove('experiment')}>🎛️ 수치 바꿔보기</button>
-      </div>
-      <button type="button" className="fm-rank-cta-other" onClick={shareOther}>🔗 링크 복사 · 다른 앱으로 공유</button>
-      <div style={{ margin: '10px 0 4px' }}>
-        {commDone ? (
-          <Notice tone="accent" icon="✅" title="방명록에 올렸어요!">
-            <button type="button" className="ds-link" onClick={() => onMove('community')}>보러 가기 →</button>
-          </Notice>
-        ) : !commOpen ? (
-          <Button variant="tint" size="md" full onClick={() => setCommOpen(true)}>🔥 방명록에 내 결과 올리기</Button>
-        ) : (
-          <Card>
-            <SectionHead size="sm" title={simulation.earliestRetirementAge ? `🔥 저는 ${simulation.earliestRetirementAge}세에 파이어 가능!` : '🔥 제 파이어 결과를 공유해요!'} />
-            <textarea className="ds-textarea" maxLength={180} value={commComment} onChange={(e) => setCommComment(e.target.value)} placeholder="한 줄 코멘트 (선택) — 예: 생활비 줄이는 게 관건이네요" />
-            <div className="ds-bottomcta" style={{ marginTop: 8 }}>
-              <Button variant="secondary" size="md" onClick={() => setCommOpen(false)}>취소</Button>
-              <Button variant="primary" size="md" loading={commSharing} onClick={postToCommunity}>방명록에 올리기</Button>
+      </StatHero>
+      <Card>
+        <SectionHead size="sm" kicker="구간별" title="자산이 이만큼이면 몇 살에?" desc="같은 저축·생활비 조건 · 또래 상위 %는 통계청 순자산 분포 기준" />
+        <div className="ds-list">
+          {bands.map((b) => (
+            <div key={b.v} className="ds-row-item ds-row-item--M ds-row-item--static">
+              <span className="ds-row-item__body"><span className="ds-row-item__title num">{eok(b.v)}{b.v === need ? ' · 필요 자산' : ''}</span><span className="ds-row-item__desc">또래 상위 {b.pct}%</span></span>
+              <span className="ds-row-item__trail num">{b.age ? `${b.age}세` : '—'}</span>
             </div>
-            <p className="ds-caption" style={{ margin: '8px 0 0' }}>익명 닉네임으로 게시 · 목표·인증 카테고리에 올라가요</p>
-          </Card>
-        )}
-      </div>
-      <OpenChatNotice />
-      <AccountBar onMove={onMove} />
-      <Card variant="hero">
-        <SectionHead kicker="🔥 여기까지가 1단계" title="이제 당신의 파이어 여정이 시작돼요" desc={<>계산은 시작일 뿐이에요. 지금 내가 어느 단계인지, 다음 한 걸음은 무엇인지 — <b>목표까지 가는 길 전체를 지도로</b> 안내하고, 내 기록을 한 곳에 모아 계속 관리해요.</>} />
-        <Button variant="dark" size="md" full onClick={() => onMove('home')}>🗺️ 내 파이어 여정 지도 보기 →</Button>
+          ))}
+        </div>
+        <Button variant="tint" size="md" full className="ds-mt-3" onClick={onOpenShare}>🪪 이 결과로 인증 카드</Button>
       </Card>
-      <InstallNudge moment="result" />
-      <AssetJourney simulation={simulation} />
-      <MoatCard simulation={simulation} onMove={onMove} />
-      <TopLevers inputs={inputs} simulation={simulation} onChange={onChange} />
-      <OverseasHope inputs={inputs} simulation={simulation} onMove={onMove} />
-      <YouTubeCard />
-      <NextActions onMove={onMove} />
+    </>
+  );
+}
+
+export default function Result({ inputs, simulation, rankingSimulation, onMove, onChange }) {
+  const rs = rankingSimulation || simulation;
+  const base = statsRank(rs);
+  const inp = simulation.inputs;
+  const earliest = simulation.earliestRetirementAge;
+  const rankEarliest = rs.earliestRetirementAge;
+  const target = inp.targetRetirementAge;
+  const need = Math.round(simulation.requiredFireAssetByFourPercent || 0);
+  const ph = survivalPhrase(simulation);
+  const [mode, setMode] = useState('age');
+  const [live, setLive] = useState(null);
+  const [agg, setAgg] = useState(null);
+  const [bandRank, setBandRank] = useState(null);
+  const [shareOpen, setShareOpen] = useState(false);
+  const levers = useLevers(simulation, onChange);
+  const success = useMemo(() => { try { return monteCarloSuccess(inp, { paths: 300 }); } catch { return null; } }, [inp]);
+  const myBand = assetBandOf(simulation.netWorth);
+  const inputsHash = `${earliest}|${rankEarliest}|${target}|${inp.financialAsset}|${inp.monthlyInvestment}|${inp.monthlyLivingCost}`;
+
+  useEffect(() => {
+    let alive = true;
+    if (!inputsIsReal(inp)) return undefined;
+    saveRankSnapshot({ percentile: base.percentile, grade: base.grade, score: rs.survivalScore, earliest });
+    syncWidgetSnapshot(simulation);
+    track('calc_complete', { earliest: earliest || 0 });
+    (async () => {
+      try {
+        const key = `fm_score_sent_${inputsHash}`;
+        if (!sessionStorage.getItem(key)) {
+          let nick = ''; try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
+          await submitScoreFromSim({ rankingSimulation, simulation, nickname: nick });
+          sessionStorage.setItem(key, '1');
+        }
+      } catch { /* ignore */ }
+      const [r, a, b] = await Promise.all([fetchUserRank(rankEarliest), fetchAggregates(), fetchUserRank(rankEarliest, undefined, undefined, myBand)]);
+      if (alive) { setLive(r); setAgg(a); setBandRank(b); }
+    })();
+    return () => { alive = false; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inputsHash]);
+
+  const peerAvg = agg && agg.avgEarliest ? agg.avgEarliest : null;
+  const diff = (peerAvg != null && rankEarliest != null) ? (peerAvg - rankEarliest) : null;
+  const delta = diff == null ? null : diff > 0 ? { text: `또래 평균보다 ${diff}년 빨라요`, dir: 'up' } : diff < 0 ? { text: `또래 평균보다 ${Math.abs(diff)}년 늦어요`, dir: 'down' } : { text: '또래 평균과 비슷해요' };
+
+  // 물가 낮은 곳(접힘)
+  const cities = useMemo(() => {
+    const baseEnd = scenarioEndAge(simulation);
+    return FIRE_CITIES.filter((c) => c.krw < inp.monthlyLivingCost).map((c) => { const sc = buildScenario(inp, { monthlyLivingCost: c.krw }); return { ...c, gain: scenarioEndAge(sc) - baseEnd, runway: runwayText(sc) }; }).filter((c) => c.gain > 0).sort((a, b) => b.gain - a.gain).slice(0, 3);
+  }, [inp, simulation]);
+  const fireAsset = simulation.retirementFinancialAsset || simulation.netWorth || inp.financialAsset || 0;
+  const hiEst = (() => { try { return estimateLocalPremium({ chargeableIncomeManwon: Math.round((fireAsset * 0.04) / 10000), propertyTaxBaseEok: 0 }); } catch { return null; } })();
+
+  return (
+    <main className="fm-screen fm-scroll fm-has-tabbar ds-screen-gap">
+      <TopBar title="결과" onBack={() => onMove('home')} actions={<Button variant="ghost" size="sm" onClick={() => { try { sessionStorage.setItem('fm_recalc', '1'); } catch { /* ignore */ } onMove('question'); }}>새로 계산</Button>} />
+      <ConsentSheet />
+      <Tabs items={[{ key: 'age', label: '몇 살에?' }, { key: 'asset', label: 'N억이면?' }]} value={mode} onChange={setMode} label="결과 모드" />
+
+      {mode === 'asset' ? <ReverseMode simulation={simulation} onOpenShare={() => setShareOpen(true)} /> : (
+        <>
+          <StatHero
+            tone="dark"
+            label={`내 파이어 나이 · ${base.ageBandLabel} 또래 기준`}
+            value={earliest ? `${earliest}` : '아직'} unit={earliest ? '세' : ''}
+            delta={delta}
+            sub={<>필요 자산 <b className="num">{eok(need)}</b> · 지금 <b className="num">{eok(inp.financialAsset)}</b>{success != null ? <> · 성공확률 <b className="num">{success}%</b></> : null}</>}
+            tiles={[
+              { label: '파이어 때 자산', value: simulation.retirementFinancialAsset ? eok(simulation.retirementFinancialAsset) : '—' },
+              { label: '버티는 나이', value: ph.runway },
+              { label: `같은 구간 · ${ASSET_BAND_LABELS[myBand]}`, value: bandRank ? `상위 ${bandRank.percentile}%` : (live ? `${live.position.toLocaleString()}등` : '집계 중'), onClick: () => onMove('ranking') }
+            ]}
+          >
+            {live && <p className="ds-caption ds-mt-3" style={{ margin: '12px 0 0' }}>함께 계산한 {live.total.toLocaleString()}명 중 {live.position.toLocaleString()}등 · 등수는 세전 공정 비교</p>}
+          </StatHero>
+
+          <Card>
+            <SectionHead size="sm" kicker={levers.baseOk ? '더 당기기' : '목표 달성 플랜'} title={levers.baseOk ? `${levers.goal}세로 1년 당기려면` : `${target}세 파이어를 성공시키려면`} desc={levers.baseOk ? '셋 중 하나만 해도 돼요. 적용하면 위 숫자가 바로 바뀌어요.' : `${levers.until}세까지 자산이 버티게 하는 최소치예요. 하나만 골라도 돼요.`} />
+            <LeverList items={levers.items} />
+          </Card>
+
+          <div className="ds-bottomcta" style={{ marginTop: 0 }}>
+            <Button variant="secondary" size="lg" onClick={() => onMove('experiment')}>🎛️ 바꿔보기</Button>
+            <Button variant="primary" size="lg" onClick={() => { track('cert_open', {}); setShareOpen(true); }}>🪪 인증 카드</Button>
+          </div>
+
+          <Fold icon="📈" title="자산 흐름" hint="넣은 돈 vs 불어난 돈 · 나이별" onOpen={() => track('fold_open', { k: 'flow' })}>
+            <YearlyAssetChart simulation={simulation} />
+          </Fold>
+          <Fold icon="🩺" title="파이어 후 건보료·세금" hint={hiEst ? `지역가입 전환 시 월 약 ${hiEst.monthly.toLocaleString()}원 (추정)` : '지역가입자 전환 · 배당세'}>
+            <p className="ds-p">직장을 그만두면 건보료를 혼자 내고 소득·재산 기준 <b>지역가입자</b>로 바뀌어요. 4% 인출 기준 연 금융소득 {Math.round((fireAsset * 0.04) / 10000).toLocaleString()}만원으로 잡은 대략값이에요.</p>
+            <div className="ds-bottomcta"><Button variant="secondary" size="md" onClick={() => onMove('dependent')}>건보료 정밀 계산</Button><Button variant="secondary" size="md" onClick={() => onMove('foreignTax')}>양도·배당세</Button></div>
+          </Fold>
+          {cities.length > 0 && (
+            <Fold icon="🌏" title="물가 낮은 곳에 살면" hint={`${cities[0].flag} ${cities[0].city} +${cities[0].gain}년`}>
+              <div className="ds-list">
+                {cities.map((c) => (
+                  <div key={c.city} className="ds-row-item ds-row-item--S ds-row-item--static">
+                    <span className="ds-row-item__lead">{c.flag}</span>
+                    <span className="ds-row-item__body"><span className="ds-row-item__title">{c.city}</span><span className="ds-row-item__desc">월 {formatWon(c.krw)} · {c.runway}까지</span></span>
+                    <span className="ds-row-item__trail num" style={{ color: 'var(--ds-good)' }}>+{c.gain}년</span>
+                  </div>
+                ))}
+              </div>
+              <Button variant="ghost" size="sm" className="ds-mt-2" onClick={() => onMove('cities')}>전 세계 파이어 도시 탐색 →</Button>
+            </Fold>
+          )}
+          <Fold icon="🧭" title="내 파이어 유형" hint="12문항 · 살 도시 Top3">
+            <Button variant="secondary" size="md" full onClick={() => onMove('firetype')}>유형 테스트 하기</Button>
+          </Fold>
+
+          <p className="ds-caption ds-textcenter">통계청 2025 가계금융복지조사 · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)} · 참고용 시뮬레이션</p>
+        </>
+      )}
+
+      <ShareSheet open={shareOpen} onClose={() => setShareOpen(false)} simulation={simulation} onMove={onMove} />
     </main>
   );
 }

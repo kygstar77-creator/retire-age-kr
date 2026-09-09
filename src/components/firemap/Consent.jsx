@@ -1,24 +1,17 @@
+// 이용 안내·면책 동의 — 첫 결과를 저장하는 시점(결과 화면 첫 진입)에만 Sheet로. 랜딩·홈에서는 안 뜬다.
 import { useState } from 'react';
+import { Sheet, Button } from '../../ui/index.js';
+import { prefs } from '../../utils/prefs.js';
 
-const KEY = 'fm_consent_v1';
-
-export default function Consent() {
-  const [done, setDone] = useState(() => {
-    try { return localStorage.getItem(KEY) === '1'; } catch { return false; }
-  });
-  if (done) return null;
-  const accept = () => {
-    try { localStorage.setItem(KEY, '1'); } catch { /* ignore */ }
-    setDone(true);
-  };
+export default function ConsentSheet({ when = true }) {
+  const [done, setDone] = useState(() => prefs.consent());
+  if (done || !when) return null;
+  const accept = () => { prefs.setConsent(); setDone(true); };
   return (
-    <div className="fm-consent-layer" role="dialog" aria-modal="true" aria-label="이용 안내 및 면책 동의">
-      <div className="fm-consent-sheet">
-        <strong>시작하기 전에</strong>
-        <p>파이어맵은 입력값을 기계적으로 계산하는 <b>참고용 시뮬레이션 도구</b>예요. 투자·세무 자문이나 특정 상품 권유가 아니며, 실제 세금·건강보험료·연금은 제도와 개인 상황에 따라 달라질 수 있어요. 자산 처분·파이어 결정 전에는 전문가 상담을 권장해요.</p>
-        <p className="fm-consent-privacy">입력값은 기기에서 계산되고, 로그인하면 기기 간 이어쓰기를 위해 계정에 연결해 안전하게 보관돼요. 이름·연락처·계좌번호는 받지 않아요. 파이어 등수엔 자산 원금액이 아닌 익명 점수가 쓰이고(자산은 구간만), 저축 순위엔 직접 기록한 저축액이 닉네임과 함께 표시돼요. <a href="/privacy.html">개인정보처리방침</a></p>
-        <button type="button" onClick={accept}>이해했어요</button>
-      </div>
-    </div>
+    <Sheet open title="시작하기 전에">
+      <p className="ds-p">파이어맵은 입력값을 기계적으로 계산하는 <b>참고용 시뮬레이션 도구</b>예요. 투자·세무 자문이나 특정 상품 권유가 아니며, 실제 세금·건강보험료·연금은 제도와 개인 상황에 따라 달라질 수 있어요.</p>
+      <p className="ds-caption" style={{ margin: '10px 0 0' }}>입력값은 기기에서 계산돼요. 이름·연락처·계좌번호는 받지 않아요. 랭킹엔 자산 원금이 아닌 익명 점수(자산은 구간만)가 쓰여요. <a className="ds-link" href="/privacy.html">개인정보처리방침</a></p>
+      <Button variant="primary" size="lg" full className="ds-mt-4" onClick={accept}>이해했어요</Button>
+    </Sheet>
   );
 }

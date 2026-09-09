@@ -23,9 +23,11 @@ export default defineConfig({
   },
   projects: [
     {
-      name: 'mobile-safari-size',
+      name: 'mobile-chromium',
       use: {
         ...devices['iPhone 14 Pro'],
+        browserName: 'chromium',
+        defaultBrowserType: 'chromium',
         viewport: { width: 393, height: 852 }
       }
     }

@@ -1,61 +1,40 @@
-export const SCREEN_ALIASES = { curation: 'cities', city: 'cities', advanced: 'menu', tools: 'menu' };
+// 화면 테이블 — 개편 최종본 §2. 탭 4(오늘·저축·랭킹·전체), 화면 17. 라우터는 이 표만 읽는다.
+// 별칭: 옛 해시(#tools·#city·#plan·#index·#share·#community·#curation)는 새 화면으로 흡수.
+export const SCREEN_ALIASES = {
+  curation: 'cities', city: 'cities', advanced: 'menu', tools: 'menu', firePlan: 'home', plan: 'home',
+  index: 'ranking', share: 'result', community: 'wall'
+};
 
 export const screens = {
-  home:       { hash: '#home',       title: '홈',     type: 'home',     tab: 'home' },
-  firePlan:   { hash: '#plan',       title: '내 파이어 플랜', type: 'tool', back: 'result', tab: 'home' },
-  account:    { hash: '#account',    title: '내 계정', type: 'tool', back: 'home', tab: 'home' },
-  question:   { hash: '#question',   title: '질문',   type: 'question' },
-  result:     { hash: '#result',     title: '결과',   type: 'result',   tab: 'home', next: ['ranking', 'save', 'experiment', 'tools'] },
-  save:       { hash: '#save',       title: '저축',   type: 'save',     tab: 'save' },
-  tools:      { hash: '#tools',      title: '도구',   type: 'tools',    tab: 'menu' },
-  menu:       { hash: '#menu',       title: '전체',   type: 'tool',     tab: 'menu' },
-  journey:    { hash: '#journey',    title: '내 파이어 여정', type: 'tool', back: 'home', tab: 'home' },
-  index:      { hash: '#index',      title: '대한민국 파이어 지수', type: 'tool', back: 'home' },
-  experiment: { hash: '#experiment', title: '바꿔보기',          type: 'tool', back: 'result', tab: 'home' },
-  share:      { hash: '#share',      title: '공유',               type: 'tool', back: 'result' },
-  dependent:  { hash: '#dependent',  title: '파이어 후 건보료', type: 'tool', back: 'menu' },
-  foreignTax: { hash: '#foreignTax', title: '파이어 후 세금(양도·배당)', type: 'tool', back: 'menu' },
-  dividend:   { hash: '#dividend',   title: '파이어 후 현금흐름',     type: 'tool', back: 'menu' },
-  pension:    { hash: '#pension',    title: '국민연금 조기수령',   type: 'tool', back: 'menu' },
-  city:       { hash: '#city',       title: '도시 비교 · 해외 체류', type: 'tool', back: 'cities' },
-  community:  { hash: '#community',  title: '방명록',             type: 'tool', back: 'menu', tab: 'menu' },   // 실시간 한마디는 홈 💬(Wall) — 여기는 전체 글·답글
-  ranking:    { hash: '#ranking',    title: 'FIRE 랭킹',          type: 'tool', back: 'result', tab: 'ranking' },
-  cities:     { hash: '#cities',     title: '지역별 파이어 (국내·해외)',      type: 'tool', back: 'menu' },
-  firetype:   { hash: '#firetype',   title: '파이어 유형 테스트',  type: 'tool', back: 'home', tab: 'home' },
-  news:       { hash: '#news',       title: '소식·뉴스',          type: 'tool', back: 'home', tab: 'news' }
+  home:       { hash: '#home',       title: '오늘',              tab: 'home' },
+  question:   { hash: '#question',   title: '질문' },
+  result:     { hash: '#result',     title: '결과',              tab: 'home' },
+  experiment: { hash: '#experiment', title: '바꿔보기',          tab: 'home', back: 'result' },
+  save:       { hash: '#save',       title: '저축',              tab: 'save' },
+  ranking:    { hash: '#ranking',    title: '랭킹',              tab: 'ranking' },
+  menu:       { hash: '#menu',       title: '전체',              tab: 'menu' },
+  settings:   { hash: '#settings',   title: '설정',              tab: 'menu', back: 'menu' },
+  journey:    { hash: '#journey',    title: '내 파이어 여정',    tab: 'home', back: 'home' },
+  account:    { hash: '#account',    title: '계정',              tab: 'menu', back: 'settings' },
+  cities:     { hash: '#cities',     title: '지역별 파이어',     back: 'menu' },
+  firetype:   { hash: '#firetype',   title: '파이어 유형 테스트', back: 'result' },
+  dependent:  { hash: '#dependent',  title: '파이어 후 건보료',  back: 'menu' },
+  foreignTax: { hash: '#foreignTax', title: '파이어 후 세금',    back: 'menu' },
+  dividend:   { hash: '#dividend',   title: '배당으로 파이어',   back: 'menu' },
+  pension:    { hash: '#pension',    title: '국민연금 조기수령', back: 'menu' },
+  news:       { hash: '#news',       title: '소식',              back: 'home' },
+  wall:       { hash: '#wall',       title: '방명록',            back: 'home' }
 };
-
-export const NEXT_ACTION_META = {
-  ranking:    { tag: '랭킹', title: '전체 랭킹 보기',     desc: '1등까지 몇 명? 내 순위', primary: true },
-  save:       { tag: '저축', title: '오늘부터 저축 기록',   desc: '저축이 파이어를 며칠 당기는지' },
-  experiment: { tag: '비교', title: '조건 바꿔 비교하기', desc: '증권앱 차트로 What-If' },
-  share:      { tag: '공유', title: '내 결과 공유',       desc: '파이어 나이·또래 비교 카드' },
-  tools:      { tag: '도구', title: '정밀 도구 더보기',   desc: '건보료·세금·도시·커뮤니티' }
-};
-
-export const TOOLS = [
-  { id: 'news',       tag: '소식',   title: '경제 뉴스',          desc: '파이어 관점 데일리 경제·부동산·투자·연금 소식' },
-  { id: 'firetype',   tag: '신규',   title: '파이어 유형 테스트', desc: '12문항으로 내 파이어족 유형 + 살 도시 Top3' },
-  { id: 'index',      tag: '데이터', title: '대한민국 파이어 지수', desc: '7천여 명 집계로 보는 또래 중 내 위치' },
-  { id: 'experiment', tag: '비교',   title: '조건 바꿔 비교',     desc: '증권앱 차트로 What-If 비교' },
-  { id: 'dependent',  tag: '건보료', title: '파이어 후 건보료', desc: '피부양자 박탈 여부 + 지역가입 월 건보료 추정' },
-  { id: 'foreignTax', tag: '세금',   title: '양도·배당세',    desc: '해외주식 양도세 + 배당 소득세·건보료 경고' },
-  { id: 'dividend',   tag: '현금흐름', title: '파이어 후 현금흐름',   desc: '배당·인출·세금·건보료까지' },
-  { id: 'pension',    tag: '연금',   title: '국민연금 조기수령',  desc: '당겨 받기 득실' },
-  { id: 'cities',     tag: '지역',   title: '지역별 파이어',   desc: '국내·해외 지역 생활비로 파이어 시점 비교' },
-  { id: 'community',  tag: '방명록', title: '방명록 전체',      desc: '파이어족 한마디·답글 모아보기' }
-];
 
 export const TABS = [
-  { id: 'home',  label: '홈',   target: 'home' },
-  { id: 'news',  label: '뉴스', target: 'news' },
-  { id: 'save',  label: '저축', target: 'save' },
+  { id: 'home',    label: '오늘', target: 'home' },
+  { id: 'save',    label: '저축', target: 'save' },
   { id: 'ranking', label: '랭킹', target: 'ranking' },
-  { id: 'menu', label: '전체', target: 'menu' }
+  { id: 'menu',    label: '전체', target: 'menu' }
 ];
 
 export function resolveScreen(raw) {
-  const id = String(raw || '').replace('#', '');
+  const id = String(raw || '').replace('#', '').split('?')[0];
   const aliased = SCREEN_ALIASES[id] || id;
   return screens[aliased] ? aliased : 'home';
 }

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Header from './Header.jsx';
-import CobeGlobe from './CobeGlobe.jsx';
 import { QUESTIONS, ARCHETYPES, scoreAnswers, recommendCities } from '../../firemap-v2/cityTypeTest.js';
 import { buildScenario } from '../../firemap-v2/scenarios.js';
 import { shareToKakao } from '../../utils/kakaoShare.js';
@@ -90,10 +89,6 @@ function Result({ answers, simulation, onChange, onMove, onRestart, onPreviewCit
         <p className="fm-ft-match">잘 맞는 유형 · <b>{match.emoji} {match.nick}</b></p>
       </section>
 
-      <section className="fm-ft-globe-wrap">
-        <p className="fm-ft-sec">🌍 나에게 맞는 도시 Top 3</p>
-        <CobeGlobe markers={markers} focus={top ? [top.city.lat, top.city.lon] : null} accent={A.c1} size={280} />
-      </section>
 
       <div className="fm-ft-cards">
         {recs.map((r, i) => (

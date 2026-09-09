@@ -1,119 +1,82 @@
+// 랜딩 — 계산 전 사용자. 팝업 0·로그인 유도 0. 1분 계산 · 가입 없음 · 결과 미리보기(ChooseFI 3체크 · Networthify).
 import { useEffect, useState } from 'react';
-import Header from './Header.jsx';
+import { TopBar, Card, SectionHead, Button, Stat, Notice, IconButton } from '../../ui/index.js';
 import { getLatestRank } from '../../firemap-v2/rankHistory.js';
-import { account } from '../../utils/identity.js';
 import { fetchAggregates } from '../../utils/firemapScoresApi.js';
-import DailyFire from './DailyFire.jsx';
-import FeedbackButton from './FeedbackButton.jsx';
 import { track } from '../../firemap-v2/dailyData.js';
-import FirePlan from './FirePlan.jsx';
-import InstallButton from './InstallButton.jsx';
-import IdentityLine from './IdentityLine.jsx';
-import { Card, SectionHead } from '../../ui/index.js';
+import { CAFE_URL } from '../../firemap-v2/links.js';
+import Today from './Today.jsx';
 
 function readChallenge() {
   try {
     const q = new URLSearchParams(window.location.search || '');
     if (q.get('from') !== 'share') return null;
-    const ea = parseInt(q.get('ea') || '', 10);
-    const pos = parseInt(q.get('pos') || '', 10);
-    const tot = parseInt(q.get('tot') || '', 10);
+    const ea = parseInt(q.get('ea') || '', 10); const pos = parseInt(q.get('pos') || '', 10); const tot = parseInt(q.get('tot') || '', 10);
     const pct = (pos > 0 && tot > 0) ? Math.max(1, Math.round((pos / tot) * 100)) : null;
     if (!ea && !pct) return null;
     return { ea: ea || null, pos: pos || null, tot: tot || null, pct };
   } catch { return null; }
 }
 
-export default function Home({ onStart, onMove, simulation, onChange }) {
+export default function Home({ onStart, onMove, simulation }) {
   const [agg, setAgg] = useState(null);
   const [age, setAge] = useState(35);
   const [ageStr, setAgeStr] = useState('35');
   const [challenge] = useState(readChallenge);
-  useEffect(() => {
-    if (challenge) {
-      try { track('share_inbound', { ea: challenge.ea || 0, pct: challenge.pct || 0 }); } catch { /* ignore */ }
-    }
-  }, [challenge]);
-  useEffect(() => {
-    let alive = true;
-    fetchAggregates().then((a) => { if (alive) setAgg(a); });
-    return () => { alive = false; };
-  }, []);
+  useEffect(() => { if (challenge) { try { track('share_inbound', { ea: challenge.ea || 0, pct: challenge.pct || 0 }); } catch { /* ignore */ } } }, [challenge]);
+  useEffect(() => { let alive = true; fetchAggregates().then((a) => { if (alive) setAgg(a); }); return () => { alive = false; }; }, []);
 
   const latest = getLatestRank();
-  const proof = agg && agg.total > 0
-    ? `${agg.total.toLocaleString()}명이 이미 계산했어요${agg.avgEarliest ? ` · 전체 평균 파이어 ${agg.avgEarliest}세` : ''}`
-    : '';
+  if (latest && !challenge) return <Today simulation={simulation} onMove={onMove} />;
+
   const clampAge = (v) => Math.max(19, Math.min(80, v));
   const setClamp = (v) => { const c = clampAge(v); setAge(c); setAgeStr(String(c)); };
-  // 타이핑 중에는 clamp 보류: 빈 값/부분 값 허용, 범위 안의 완성값만 즉시 반영
-  const onAgeInput = (e) => {
-    const d = String(e.target.value).replace(/[^0-9]/g, '').slice(0, 3);
-    setAgeStr(d);
-    if (d !== '') { const n = Number(d); if (n >= 19 && n <= 80) setAge(n); }
-  };
-  // blur/확정 시에만 유효 범위로 보정. 보정된 값을 반환
+  const onAgeInput = (e) => { const d = String(e.target.value).replace(/[^0-9]/g, '').slice(0, 3); setAgeStr(d); if (d !== '') { const n = Number(d); if (n >= 19 && n <= 80) setAge(n); } };
   const commitAge = () => { const n = Number(ageStr); const c = (ageStr === '' || Number.isNaN(n)) ? age : clampAge(n); setAge(c); setAgeStr(String(c)); return c; };
-
-  // 계산 이력이 있으면 재방문 시 홈을 '파이어 플랜 대시보드'로. (로그인 여부 무관 — 기록은 로컬에 있고,
-  // 로그인은 대시보드 안 fm-acct-bar에서 '기록 지키기'로 유도해 발견→로그인 동선을 만든다.)
-  // 단, 친구 공유로 들어온 도전(challenge) 방문은 랜딩+도전 카드를 그대로 보여준다.
-  if (latest && !challenge) return <FirePlan simulation={simulation} onMove={onMove} onChange={onChange} asHome />;
+  const proof = agg && agg.total > 0 ? `${agg.total.toLocaleString()}명이 계산했어요${agg.avgEarliest ? ` · 평균 파이어 ${agg.avgEarliest}세` : ''}` : '';
 
   return (
-    <main className="fm-screen fm-home-v3 fm-has-tabbar">
-      <Header tag="1분 계산" />
-      <IdentityLine onMove={onMove} />
-      {latest && (
-        <button type="button" className="fm-recent-rank" onClick={() => { window.location.hash = '#result'; }}>
-          <span className="fm-recent-label">최근 계산 결과</span>
-          <span className="fm-recent-main">{latest.earliest ? `${latest.earliest}세에 파이어 가능` : '내 파이어 결과 보기'}</span>
-          <span className="fm-recent-sub">로그인하면 이 결과·기록이 저장돼요 · 다시 보기 ›</span>
-        </button>
-      )}
+    <main className="fm-screen fm-scroll fm-has-tabbar ds-screen-gap">
+      <TopBar onHome={() => onMove('home')} actions={<a className="ds-topbar__handle" href={CAFE_URL} target="_blank" rel="noopener noreferrer"><span>🟢 카페</span></a>} />
+
       {challenge && (
-        <section className="fm-challenge" aria-label="친구가 보낸 파이어 도전">
-          <span className="fm-challenge-kicker">🔥 친구가 보낸 파이어 도전</span>
-          <p className="fm-challenge-main">
-            {challenge.ea ? <>친구는 <b>{challenge.ea}세</b>에 파이어 가능</> : '친구가 파이어 등수를 보냈어요'}
-          </p>
-          {challenge.pct != null && (
-            <p className="fm-challenge-rank">
-              {challenge.pos && challenge.tot
-                ? <>함께 계산한 {challenge.tot.toLocaleString()}명 중 <b>{challenge.pos.toLocaleString()}등</b> · 또래 상위 <b>{challenge.pct}%</b></>
-                : <>또래 상위 <b>{challenge.pct}%</b></>}
-            </p>
-          )}
-          <p className="fm-challenge-cta-line">당신은 몇 살에 가능할까요? 아래에서 1분이면 확인돼요 ↓</p>
-        </section>
+        <Notice tone="accent" icon="🔥" title={challenge.ea ? `친구는 ${challenge.ea}세에 파이어 가능` : '친구가 파이어 등수를 보냈어요'}>
+          {challenge.pct != null ? `또래 상위 ${challenge.pct}% · ` : ''}당신은 몇 살에 가능할까요? 1분이면 나와요.
+        </Notice>
       )}
-      <section className="fm-home-hero-card">
-        <p>파이어맵</p>
-        <h1>나는 몇 살에<br />파이어할 수 있을까?</h1>
-        <span>자산·생활비만 넣으면 1분. 물가·국민연금까지 반영한 <b>현실적인 파이어 계산</b>이에요. 파이어 후 건보료·세금은 도구로 더 정밀하게 점검해요.</span>
-        <div className="fm-home-age">
-          <label htmlFor="fm-home-age-in">지금 몇 살인가요?</label>
-          <div className="fm-home-age-ctrl">
-            <button type="button" className="fm-age-btn" aria-label="나이 감소" onClick={() => setClamp(age - 1)}>−</button>
-            <div className="fm-age-display">
-              <input id="fm-home-age-in" className="fm-age-input" inputMode="numeric" value={ageStr} onChange={onAgeInput} onBlur={commitAge} />
-              <span className="fm-age-unit">세</span>
-            </div>
-            <button type="button" className="fm-age-btn" aria-label="나이 증가" onClick={() => setClamp(age + 1)}>+</button>
+
+      <Card variant="hero" padding="lg">
+        <SectionHead kicker="1분 계산 · 가입 없음" title={<>나는 몇 살에<br />파이어할 수 있을까?</>} desc="자산·저축·생활비만 넣으면 물가·국민연금까지 반영한 현실적인 파이어 나이가 나와요." />
+        <div className="ds-row" style={{ justifyContent: 'space-between', background: 'var(--ds-surface-2)', borderRadius: 14, padding: '10px 12px', marginTop: 4 }}>
+          <span className="ds-body-sm" style={{ fontWeight: 700 }}>지금 나이</span>
+          <div className="ds-row">
+            <IconButton label="나이 감소" size="sm" onClick={() => setClamp(age - 1)}>−</IconButton>
+            <input aria-label="나이" className="ds-input num" style={{ width: 64, textAlign: 'center', fontSize: 18, fontWeight: 800, padding: '6px 4px' }} inputMode="numeric" value={ageStr} onChange={onAgeInput} onBlur={commitAge} />
+            <span className="ds-body-sm">세</span>
+            <IconButton label="나이 증가" size="sm" onClick={() => setClamp(age + 1)}>+</IconButton>
           </div>
         </div>
-        <button type="button" className="fm-home-cta" onClick={() => { const a = commitAge(); track('start_calc', { age: a, from: challenge ? 'share' : 'home' }); onStart(a); }}>{challenge ? '나도 계산하고 친구랑 비교하기 →' : '내 파이어 나이 계산하기 →'}</button>
-        {proof && <p className="fm-home-proof">{proof}</p>}
-      </section>
-      <Card variant="hero">
-        <SectionHead kicker="🔥 숫자 하나로 끝이 아니에요" title="계산 다음, 파이어 여정이 시작돼요" desc={<>물가·국민연금까지 반영한 현실적인 계산은 시작일 뿐이에요. 지금 내가 어느 단계인지, 다음 한 걸음은 무엇인지 — <b>목표까지 가는 길 전체를 지도로</b> 안내하고, 건보료·세금 같은 정밀 점검과 내 기록을 한 곳에 모아 계속 관리해요.</>} />
+        <Button variant="primary" size="lg" full className="ds-mt-3" onClick={() => { const a = commitAge(); track('start_calc', { age: a, from: challenge ? 'share' : 'home' }); onStart(a); }}>
+          {challenge ? '나도 계산하고 친구랑 비교하기 →' : '내 파이어 나이 계산하기 →'}
+        </Button>
+        {proof && <p className="ds-caption ds-textcenter ds-mt-2" style={{ marginBottom: 0 }}>{proof}</p>}
       </Card>
-      <nav className="fm-policy-links" aria-label="정책 및 문의">
-        <a href="/privacy.html">개인정보처리방침</a>
-        <a href="/disclaimer.html">면책 안내</a>
-        <a href="/contact.html">문의</a>
-        <FeedbackButton />
-      </nav>
+
+      <Card variant="soft">
+        <SectionHead size="sm" kicker="계산하면 이런 게 나와요" title="숫자 하나로 시작해요" />
+        <div className="ds-three" style={{ background: 'var(--ds-surface)', borderRadius: 14, padding: 6 }}>
+          <Stat label="파이어 나이" value={<>51<span className="ds-stat__unit">세</span></>} size="md" />
+          <Stat label="필요 자산" value={<>13.1<span className="ds-stat__unit">억</span></>} size="md" />
+          <Stat label="같은 구간" value={<>18<span className="ds-stat__unit">%</span></>} size="md" />
+        </div>
+        <p className="ds-caption ds-mt-2" style={{ marginBottom: 0 }}>예시예요. 결과에서 저축·생활비·부업 중 하나만 바꿔도 몇 년이 당겨지는지 보여줘요.</p>
+      </Card>
+
+      <Card padding="md">
+        <SectionHead size="sm" title="🟢 파이어맵 카페" desc="인증 · 봐주세요 · 파이어 후 하루 — 파이어족 커뮤니티 본진" action={<Button as="a" href={CAFE_URL} target="_blank" rel="noopener noreferrer" variant="tint" size="sm">가기</Button>} />
+      </Card>
+
+      <p className="ds-caption ds-textcenter"><a className="ds-link" href="/privacy.html" style={{ color: 'var(--ds-ink-3)' }}>개인정보처리방침</a> · <a className="ds-link" href="/disclaimer.html" style={{ color: 'var(--ds-ink-3)' }}>면책</a> · <a className="ds-link" href="/contact.html" style={{ color: 'var(--ds-ink-3)' }}>문의</a></p>
     </main>
   );
 }

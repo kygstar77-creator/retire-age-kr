@@ -274,3 +274,139 @@ html[data-theme="dark"] {
 @media (prefers-reduced-motion: reduce) {
   .ds-btn, .ds-progress__fill, .ds-dim, .ds-sheet, .ds-dialog, .ds-toast, .ds-skel { animation: none; transition: none; }
 }
+
+/* =============================================================
+   v1.1 — 개편 최종본 신규 컴포넌트 (TopBar sticky · StatHero · Fold · Lever · Range · Rules · Pot · Confirm · Switch)
+   ============================================================= */
+/* ---------- 16. TopBar (sticky 이관: v3-feedback .fm-topbar 대체) ---------- */
+.ds-topbar { position: relative; }
+.ds-topbar--sticky { position: sticky; top: 0; z-index: 40; margin: -18px -14px 12px; padding: calc(10px + var(--ds-safe-top)) 14px 8px; background: color-mix(in srgb, var(--ds-bg) 90%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--ds-line); }
+.ds-topbar__logo { display: inline-flex; align-items: center; gap: 7px; background: none; border: 0; padding: 4px 2px; font: inherit; font-size: 18px; font-weight: 900; letter-spacing: -.03em; color: var(--ds-ink); cursor: pointer; }
+.ds-topbar__title--center { position: absolute; left: 50%; transform: translateX(-50%); font-size: 16px; }
+.ds-topbar__side--end { margin-left: auto; }
+.ds-topbar .ds-iconbtn--plain { font-size: 26px; font-weight: 700; width: 36px; height: 36px; }
+.ds-topbar__handle { display: inline-flex; align-items: center; gap: 5px; min-height: 34px; padding: 0 10px; border-radius: var(--ds-r-pill); border: 1px solid var(--ds-line-strong); background: var(--ds-surface); font: inherit; font-size: 12.5px; font-weight: 800; color: var(--ds-ink); cursor: pointer; max-width: 140px; }
+.ds-topbar__handle span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* ---------- 19. StatHero ---------- */
+.ds-hero { padding: var(--ds-sp-5) var(--ds-sp-4); }
+.ds-hero .ds-stat__label { font-size: 12.5px; font-weight: 800; }
+.ds-hero__sub { margin: 6px 0 0; font-size: 13.5px; line-height: 1.5; opacity: .82; }
+.ds-hero__tiles { margin-top: 14px; }
+.ds-card--dark .ds-tile { background: rgba(255,255,255,.08); }
+.ds-card--dark .ds-tile .ds-stat__label { color: rgba(255,255,255,.7); }
+.ds-card--dark .ds-stat__delta { color: #ffb38a; }
+.ds-card--dark .ds-stat__delta--up { color: #7ee2b0; } .ds-card--dark .ds-stat__delta--down { color: #ff9a8a; }
+.ds-card--dark .ds-btn--tint { background: rgba(255,255,255,.12); color: #fff; }
+.ds-card--dark .ds-btn--secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,.28); }
+.ds-card--dark .ds-caption { color: rgba(255,255,255,.62); }
+.ds-card--dark .ds-progress__track { background: rgba(255,255,255,.14); }
+
+/* ---------- 20. Fold ---------- */
+.ds-fold { background: var(--ds-surface); border: 1px solid var(--ds-line); border-radius: var(--ds-r-lg); overflow: hidden; }
+.ds-fold + .ds-fold, .ds-card + .ds-fold, .ds-fold + .ds-card { margin-top: var(--ds-sp-2); }
+.ds-fold__head { display: flex; align-items: center; gap: 10px; width: 100%; padding: 13px 14px; background: none; border: 0; font: inherit; color: var(--ds-ink); text-align: left; cursor: pointer; }
+.ds-fold__icon { font-size: 18px; width: 24px; text-align: center; }
+.ds-fold__text { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.ds-fold__title { font-size: 14px; font-weight: 800; }
+.ds-fold__hint { font-size: 11.5px; color: var(--ds-ink-3); font-weight: 600; }
+.ds-fold__chev { color: var(--ds-ink-3); font-size: 13px; }
+.ds-fold__body { padding: 12px 14px 14px; border-top: 1px solid var(--ds-line); }
+
+/* ---------- 21. Lever ---------- */
+.ds-levers { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.ds-lever { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: var(--ds-r-md); background: var(--ds-surface-2); }
+.ds-lever--off { opacity: .55; }
+.ds-lever__tag { flex: 0 0 auto; font-size: 11px; font-weight: 800; color: var(--ds-accent-ink); background: var(--ds-accent-soft); padding: 3px 7px; border-radius: 6px; }
+.ds-lever__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.ds-lever__label { font-size: 13.5px; font-weight: 700; color: var(--ds-ink); }
+.ds-lever__gain { font-size: 12px; font-weight: 800; color: var(--ds-good); }
+.ds-lever__gain--bad { color: var(--ds-bad); }
+
+/* ---------- 11. RangeField ---------- */
+.ds-range { display: flex; flex-direction: column; gap: 8px; padding: 12px 0; }
+.ds-range + .ds-range { border-top: 1px solid var(--ds-line); }
+.ds-range__head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.ds-range__label { font-size: 13.5px; font-weight: 700; color: var(--ds-ink-2); }
+.ds-range__value { display: inline-flex; align-items: center; gap: 6px; background: var(--ds-surface-2); border: 1px solid var(--ds-line-strong); border-radius: var(--ds-r-sm); padding: 6px 10px; font: inherit; font-size: 16px; font-weight: 800; color: var(--ds-ink); cursor: pointer; letter-spacing: -.02em; white-space: nowrap; }
+.ds-range__edit { font-size: 12px; color: var(--ds-ink-3); }
+.ds-range--empty .ds-range__value { border-color: var(--ds-warn); color: var(--ds-warn); }
+.ds-range input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 28px; background: transparent; margin: 0; }
+.ds-range input[type="range"]::-webkit-slider-runnable-track { height: 6px; border-radius: 999px; background: linear-gradient(90deg, var(--ds-accent) var(--value, 0%), var(--ds-line-strong) var(--value, 0%)); }
+.ds-range input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 26px; height: 26px; margin-top: -10px; border-radius: 50%; background: var(--ds-surface); border: 2px solid var(--ds-accent); box-shadow: var(--ds-shadow-md); }
+.ds-range input[type="range"]::-moz-range-track { height: 6px; border-radius: 999px; background: var(--ds-line-strong); }
+.ds-range input[type="range"]::-moz-range-progress { height: 6px; border-radius: 999px; background: var(--ds-accent); }
+.ds-range input[type="range"]::-moz-range-thumb { width: 24px; height: 24px; border-radius: 50%; background: var(--ds-surface); border: 2px solid var(--ds-accent); }
+.ds-range__scale { display: flex; justify-content: space-between; font-size: 11px; color: var(--ds-ink-3); font-weight: 700; margin-top: -4px; }
+.ds-range__chips .ds-chip { min-height: 30px; padding: 0 10px; }
+.ds-range__hint { margin: 0; font-size: 12px; color: var(--ds-ink-3); line-height: 1.5; }
+.ds-range__hint--warn { color: var(--ds-warn); font-weight: 700; }
+
+/* ---------- 22. RuleChips ---------- */
+.ds-rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.ds-rule { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 12px 6px 10px; border-radius: var(--ds-r-md); border: 1px solid var(--ds-line-strong); background: var(--ds-surface); font: inherit; color: var(--ds-ink); cursor: pointer; min-width: 0; -webkit-tap-highlight-color: transparent; }
+.ds-rule:active { background: var(--ds-accent-soft); border-color: var(--ds-accent); }
+.ds-rule__emoji { font-size: 22px; line-height: 1; }
+.ds-rule__label { font-size: 12px; font-weight: 700; text-align: center; line-height: 1.25; word-break: keep-all; }
+.ds-rule__amount { font-size: 12.5px; font-weight: 800; color: var(--ds-accent-ink); }
+.ds-rule__gain { font-size: 10.5px; font-weight: 700; color: var(--ds-ink-3); white-space: nowrap; }
+.ds-rule--custom { border-style: dashed; }
+
+/* ---------- 23. PotCard ---------- */
+.ds-pot { display: flex; flex-direction: column; gap: 10px; }
+.ds-pot__head { display: flex; align-items: center; gap: 8px; background: none; border: 0; padding: 0; font: inherit; color: var(--ds-ink); cursor: pointer; text-align: left; }
+.ds-pot__emoji { font-size: 22px; line-height: 1; }
+.ds-pot__name { font-size: 15px; font-weight: 800; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ds-pot__edit { color: var(--ds-ink-3); font-size: 14px; }
+.ds-pot__nums { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.ds-pot__cur { font-size: 28px; font-weight: 800; letter-spacing: -.03em; line-height: 1.05; }
+.ds-pot__tgt { font-size: 13px; font-weight: 700; color: var(--ds-ink-3); }
+.ds-pot__foot { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: var(--ds-ink-3); }
+
+/* ---------- 24. Confirm(풀스크린 확인) ---------- */
+.ds-confirm { position: fixed; inset: 0; z-index: 210; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 24px 20px calc(24px + var(--ds-safe-bottom)); background: var(--ds-ink); color: var(--ds-surface); text-align: center; animation: dsFade .2s ease; }
+.ds-confirm__emoji { font-size: 56px; line-height: 1; animation: dsPop .5s cubic-bezier(.2,.9,.3,1.4); }
+.ds-confirm__title { margin: 0; font-size: 26px; font-weight: 900; letter-spacing: -.03em; line-height: 1.25; text-wrap: balance; }
+.ds-confirm__title b { color: #ffb38a; }
+.ds-confirm__sub { margin: 0; font-size: 14px; opacity: .8; line-height: 1.5; max-width: 34ch; }
+.ds-confirm__card { width: min(360px, 100%); margin-top: 6px; text-align: left; }
+.ds-confirm__actions { width: min(360px, 100%); display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+@keyframes dsPop { from { transform: scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* ---------- 25. Switch(설정) ---------- */
+.ds-switch { position: relative; width: 44px; height: 26px; border-radius: 999px; background: var(--ds-line-strong); border: 0; padding: 0; cursor: pointer; flex: 0 0 auto; transition: background .15s; }
+.ds-switch::after { content: ''; position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.25); transition: transform .15s; }
+.ds-switch[aria-checked="true"] { background: var(--ds-accent); }
+.ds-switch[aria-checked="true"]::after { transform: translateX(18px); }
+.ds-switch:disabled { opacity: .5; cursor: not-allowed; }
+
+/* ---------- 3숫자 카드(오늘 홈) ---------- */
+.ds-three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.ds-three .ds-stat { align-items: center; text-align: center; padding: 6px 2px; }
+.ds-three .ds-stat__value { font-size: 24px; }
+.ds-three .ds-stat__label { font-size: 11px; }
+.ds-three .ds-stat + .ds-stat { border-left: 1px solid var(--ds-line); }
+
+/* ---------- 순위 행 ---------- */
+.ds-rank-row .ds-row-item__lead { width: auto; min-width: 26px; font-size: 15px; font-weight: 800; color: var(--ds-ink-3); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ds-rank-row--me { background: var(--ds-accent-soft); }
+.ds-rank-row--me .ds-row-item__title { color: var(--ds-accent-ink); }
+
+/* ---------- 하단 탭바(DS) — fm-tabbar 대체 ---------- */
+.ds-tabbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 150; display: flex; max-width: 480px; margin: 0 auto; background: color-mix(in srgb, var(--ds-surface) 94%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-top: 1px solid var(--ds-line); padding-bottom: var(--ds-safe-bottom); }
+.ds-tabbar__tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 10px 0 12px; font: inherit; font-size: 11.5px; font-weight: 700; color: var(--ds-ink-3); background: none; border: 0; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.ds-tabbar__tab[aria-current="page"] { color: var(--ds-accent); font-weight: 800; }
+.ds-tabbar__tab svg { width: 22px; height: 22px; }
+
+/* ---------- 새 화면 공통 ---------- */
+.fm-screen { background: var(--ds-bg); }
+.ds-screen-gap > * + * { margin-top: var(--ds-sp-3); }
+.ds-stack--gap { display: flex; flex-direction: column; gap: var(--ds-sp-3); }
+.ds-textcenter { text-align: center; }
+.ds-mt-2 { margin-top: var(--ds-sp-2); } .ds-mt-3 { margin-top: var(--ds-sp-3); } .ds-mt-4 { margin-top: var(--ds-sp-4); }
+.ds-mb-0 { margin-bottom: 0; }
+.ds-p { margin: 0; font-size: var(--ds-fs-body-sm); color: var(--ds-ink-2); line-height: 1.55; }
+.ds-p b { color: var(--ds-ink); }
+.ds-card--dark .ds-p, .ds-card--dark .ds-p b { color: inherit; }
+.ds-card--flush { padding: 0; overflow: hidden; }
+.ds-card--flush .ds-row-item { border-bottom: 0; }

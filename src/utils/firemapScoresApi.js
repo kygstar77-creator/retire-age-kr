@@ -94,10 +94,10 @@ export function submitScoreFromSim({ rankingSimulation, simulation, nickname = '
 }
 
 // 함께 계산한 사용자 중 내 등수/백분위
-export async function fetchUserRank(earliestAge, ageBand, advancedDays) {
+export async function fetchUserRank(earliestAge, ageBand, advancedDays, assetBand) {
   try {
     const opts = { method: 'GET', headers: headers({ prefer: 'count=exact', range: '0-0' }) };
-    const band = ageBand ? `&age_band=eq.${ageBand}` : '';
+    const band = (ageBand ? `&age_band=eq.${ageBand}` : '') + (assetBand != null ? `&asset_band=eq.${assetBand}` : '');
     const totalRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id${band}`, opts);
     const total = countFromRange(totalRes);
     if (!total) return null;
@@ -207,6 +207,7 @@ export async function fetchStageBoard({ stage, earliestAge, advancedDays, limit 
 }
 
 // 순자산 구간(금액 비공개, 구간만 저장) — 0:<1억 1:1~3억 2:3~5억 3:5~10억 4:10~20억 5:20억+
+export const ASSET_BAND_LABELS = ['1억 미만', '1~3억', '3~5억', '5~10억', '10~20억', '20억 이상'];
 export function assetBandOf(netWorth) {
   const eok = (Number(netWorth) || 0) / 100000000;
   if (eok < 1) return 0;
@@ -249,9 +250,9 @@ export async function updateScoreAdvance(advancedDays) {
   } catch { return false; }
 }
 
-export async function fetchTopScores(limit = 10, ageBand) {
+export async function fetchTopScores(limit = 10, ageBand, assetBand) {
   try {
-    const band = ageBand ? `&age_band=eq.${ageBand}` : '';
+    const band = (ageBand ? `&age_band=eq.${ageBand}` : '') + (assetBand != null ? `&asset_band=eq.${assetBand}` : '');
     const sel = `select=client_id,nickname,fire_score,age_band,earliest_age${band}`;
     // 1순위: 빠른 파이어 → 같으면 실제 저축으로 더 당긴 사람(advanced_days) → 생존점수
     const urlAdv = `${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&order=earliest_age.asc.nullslast,advanced_days.desc,fire_score.desc&limit=${limit}`;
@@ -269,6 +270,15 @@ export async function fetchTopScores(limit = 10, ageBand) {
 }
 
 export async function fetchAggregates(ageBand) {
+  // 서버 집계 RPC(fm_aggregates)가 있으면 그것을, 없으면(마이그레이션 전) 2,000행 다운로드 폴백
+  try {
+    const r = await fetch(`${SUPABASE_URL}/rest/v1/rpc/fm_aggregates`, { method: 'POST', headers: headers(), body: JSON.stringify({ p_band: ageBand || null }) });
+    if (r.ok) {
+      const rows = await r.json();
+      const row = Array.isArray(rows) ? rows[0] : rows;
+      if (row && row.total != null) return { total: Number(row.total) || 0, avgEarliest: row.avg_earliest != null ? Math.round(Number(row.avg_earliest)) : null, avgScore: row.avg_score != null ? Math.round(Number(row.avg_score)) : null, topBand: null };
+    }
+  } catch { /* fallthrough */ }
   try {
     const opts = { method: 'GET', headers: headers({ prefer: 'count=exact', range: '0-1999' }) };
     const band = ageBand ? `&age_band=eq.${ageBand}` : '';
@@ -289,14 +299,14 @@ export async function fetchAggregates(ageBand) {
 }
 
 // 내 주변 순위 — 바로 위(더 빨리 파이어) / 바로 아래
-export async function fetchNeighbors(earliestAge, ageBand, exactAge) {
+export async function fetchNeighbors(earliestAge, ageBand, exactAge, assetBand) {
   if (earliestAge == null || !Number.isFinite(Number(earliestAge))) return null;
   try {
     const mine = Math.round(Number(earliestAge));
-    // exactAge가 주어지면 같은 나이(current_age) 기준, 아니면 기존처럼 연령대(age_band) 기준 — 하위호환.
-    const band = (exactAge != null && Number.isFinite(Number(exactAge)))
+    // exactAge가 주어지면 같은 나이(current_age) 기준, 아니면 기존처럼 연령대(age_band) 기준 — 하위호환. assetBand는 같은 자산 구간 보드용.
+    const band = ((exactAge != null && Number.isFinite(Number(exactAge)))
       ? `&current_age=eq.${Math.round(Number(exactAge))}`
-      : (ageBand ? `&age_band=eq.${ageBand}` : '');
+      : (ageBand ? `&age_band=eq.${ageBand}` : '')) + (assetBand != null ? `&asset_band=eq.${assetBand}` : '');
     const sel = 'select=client_id,nickname,earliest_age,age_band';
     const opts = { method: 'GET', headers: headers() };
     const countOpts = { method: 'GET', headers: headers({ prefer: 'count=exact', range: '0-0' }) };

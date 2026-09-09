@@ -16,7 +16,7 @@ import Header from './firemap/Header.jsx';
 import DependentCheck from './firemap/DependentCheck.jsx';
 import FireTypeTest from './firemap/FireTypeTest.jsx';
 import { ForeignStockTaxCard, DividendCard, PensionEarlyClaimCard } from './firemap/TaxPensionModules.jsx';
-import FloatingFeedback from './firemap/FloatingFeedback.jsx';
+import Wall from './firemap/Wall.jsx';
 import Leaderboard from './firemap/Leaderboard.jsx';
 import CityExplorer from './firemap/CityExplorer.jsx';
 import DividendLifeCalc from './firemap/DividendLifeCalc.jsx';
@@ -187,7 +187,7 @@ export default function FireMapMVP() {
       <LiveBanner />
       {node}
       {screens[screen]?.tab && <BottomTabs current={screen} onMove={setScreen} />}
-      <FloatingFeedback />
+      <Wall visible={screen === 'home'} />   {/* 방명록 FAB은 홈 전용(스꾸 패턴) — 질문·결과 화면은 방해 없이 */}
       <Consent />
     </>
   );

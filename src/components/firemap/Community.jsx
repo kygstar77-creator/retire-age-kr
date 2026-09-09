@@ -228,7 +228,7 @@ export default function Community({ onMove, simulation }) {
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar">
       <style>{STYLE}</style>
-      <Header tag="파이어 인증" />
+      <Header tag="방명록" />
       <section className="fm-card fm-text-card">
         <p className="fm-kicker">🔥 파이어 인증</p>
         <h2>다들 몇 살에 파이어?</h2>

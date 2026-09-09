@@ -23,7 +23,7 @@ const SECTIONS = [
     label: '③ 또래 속 나',
     items: [
       { ico: '🏆', title: 'FIRE 랭킹 · 파이어 지수', desc: '여정 단계별 경쟁 · 또래 중 내 위치', to: 'ranking' },
-      { ico: '💬', title: '커뮤니티', desc: '단계별 그룹 · 익명 한마디·후기', to: 'community' }
+      { ico: '💬', title: '방명록 전체 보기', desc: '실시간 한마디는 홈의 💬 버튼 · 여기선 전체 글·답글', to: 'community' }
     ]
   },
   {

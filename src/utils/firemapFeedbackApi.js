@@ -94,6 +94,14 @@ export async function loadOfficialNews(limit = 80) {
   return rows || [];
 }
 
+// 방명록(홈 플로팅 실시간 한마디): 유저 글만 최신순 — 공식 글(firemap-official)은 '소식·뉴스' 탭 담당.
+// client_id 컬럼이 없는 레거시 스키마면 필터 없이 폴백.
+export async function loadWall(limit = 50) {
+  let rows = await commGet(`${TABLE}?select=id,nickname,message,created_at,client_id&kind=eq.community&status=eq.visible&or=(client_id.is.null,client_id.neq.firemap-official)&order=created_at.desc&limit=${limit}`);
+  if (rows === null) rows = await commGet(`${TABLE}?select=id,nickname,message,created_at&kind=eq.community&status=eq.visible&order=created_at.desc&limit=${limit}`);
+  return rows || [];
+}
+
 // 커뮤니티 최근 원글 미리보기(라운지 유도용)
 export async function fetchCommunityPeek(limit = 3) {
   let rows = await commGet(`${TABLE}?select=id,nickname,message,created_at,parent_id&kind=eq.community&status=eq.visible&parent_id=is.null&order=created_at.desc&limit=${limit}`);

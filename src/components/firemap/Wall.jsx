@@ -15,7 +15,8 @@ const EMOJI = ['🔥', '🌱', '🐿️', '🦊', '🦦', '🐧', '🐢', '🦉'
 
 function hashOf(s) { let h = 0; const t = String(s || ''); for (let i = 0; i < t.length; i += 1) h = (h * 31 + t.charCodeAt(i)) >>> 0; return h; }
 const avatarOf = (row) => EMOJI[hashOf(row.client_id || row.id) % EMOJI.length];
-const nameOf = (row) => row.nickname || funHandle(row.client_id || row.id);
+// DB 기본값 '익명'은 이름이 아니므로 기기별 재미 닉네임으로 대체
+const nameOf = (row) => (row.nickname && row.nickname !== '익명') ? row.nickname : funHandle(row.client_id || row.id);
 function timeAgo(iso) {
   const d = new Date(iso); const diff = (Date.now() - d.getTime()) / 1000;
   if (diff < 60) return '방금';

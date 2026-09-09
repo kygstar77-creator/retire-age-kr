@@ -5,12 +5,12 @@
 // - 절약(fm_save.total): 계획과 무관한 전액 보너스(항상 +). 즉시 반영.
 // - 중복 0: 계획분은 저축률로 1번(earliestRetirementAge), 차액은 자산으로 1번. 안 겹침.
 import { dailyNeedOf } from '../firemap-v2/dailyData.js';
+import { todayStr, monthStr } from './dates.js';
 import { statsRank } from '../firemap-v2/rank.js';
 import { submitSave } from './firemapSaveApi.js';
 import { updateScoreAdvance } from './firemapScoresApi.js';
 
 const readJSON = (k) => { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch { return null; } };
-const monthStr = () => new Date().toISOString().slice(0, 7);
 
 // 적립 일별 장부 → 월별 합계
 function depositByMonth() {
@@ -127,7 +127,7 @@ export function notifySavingsChanged() {
 export async function reportBoard(simulation) {
   try {
     let sv = null; try { sv = JSON.parse(localStorage.getItem('fm_save') || 'null'); } catch { /* ignore */ }
-    const today = new Date().toISOString().slice(0, 10);
+    const today = todayStr();
     const todaySaved = sv && sv.lastDate === today ? (sv.today || 0) : 0;
     const totalSaved = sv ? (sv.total || 0) : 0;
     const streak = sv ? (sv.streak || 0) : 0;

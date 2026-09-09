@@ -5,9 +5,7 @@ import { getAssetHistory } from '../../utils/assetHistory.js';
 import { pickForToday } from '../../firemap-v2/journeyPlaybook.js';
 import { track } from '../../firemap-v2/dailyData.js';
 
-const SB_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
-const SB_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
-
+import { SUPABASE_URL, SUPABASE_KEY } from '../../utils/supabaseClient.js';
 // 여정 펄스 — 단계×주기 콘텐츠 허브. 오늘의 한 걸음(단계 반영)·이번 주 미션/추천글·
 // 월간 점검·연간 회고를 한 카드에. 추천글은 실제 대량 콘텐츠(/guide)로 연결.
 const seenKey = (k) => { try { return localStorage.getItem(k) === '1'; } catch { return false; } };
@@ -30,7 +28,7 @@ export default function JourneyPulse({ simulation, onMove }) {
   const [macro, setMacro] = useState(null);
   useEffect(() => {
     let alive = true;
-    fetch(`${SB_URL}/rest/v1/rpc/fm_macro_latest`, { method: 'POST', headers: { apikey: SB_KEY, authorization: `Bearer ${SB_KEY}`, 'content-type': 'application/json' }, body: '{}' })
+    fetch(`${SUPABASE_URL}/rest/v1/rpc/fm_macro_latest`, { method: 'POST', headers: { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'content-type': 'application/json' }, body: '{}' })
       .then((r) => (r.ok ? r.json() : null)).then((m) => { if (alive && m) setMacro(m); }).catch(() => {});
     return () => { alive = false; };
   }, []);

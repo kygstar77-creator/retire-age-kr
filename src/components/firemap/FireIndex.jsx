@@ -4,9 +4,8 @@ import MarketIndicators from './MarketIndicators.jsx';
 import { track } from '../../firemap-v2/dailyData.js';
 import { toast } from '../../ui/index.js';
 
+import { SUPABASE_URL, SUPABASE_KEY } from '../../utils/supabaseClient.js';
 // 대한민국 파이어 지수 — 우리 익명 집계로만 만들 수 있는 '표준' 콘텐츠 + 내 위치 비교 + 공유.
-const SUPABASE_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
-const SUPABASE_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
 
 const bandLabel = (b) => `${b}대`;
 

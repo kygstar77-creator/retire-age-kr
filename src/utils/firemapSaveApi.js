@@ -1,9 +1,8 @@
 import { identityId, accountHandle } from './identity.js';
+import { SUPABASE_URL, SUPABASE_KEY } from './supabaseClient.js';
+import { todayStr } from './dates.js';
 // 오늘의 절약 — Supabase 연동 (기기당 하루 한 줄 upsert)
-const DEFAULT_SUPABASE_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
-const DEFAULT_SUPABASE_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || DEFAULT_SUPABASE_URL;
-const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || DEFAULT_SUPABASE_KEY;
+
 const TABLE = 'firemap_save_events';
 
 function headers(extra = {}) {
@@ -23,9 +22,6 @@ function deviceId() {
   }
 }
 
-function todayStr() {
-  return new Date().toISOString().slice(0, 10);
-}
 
 function countFromRange(res) {
   const cr = res.headers.get('content-range') || '';

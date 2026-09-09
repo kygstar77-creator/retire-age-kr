@@ -1,7 +1,8 @@
 // 월별 금융자산 스냅샷 (파이어 플랜 추이용). 로컬 저장 + 로그인 시 서버 동기화.
 import { pushState } from './firemapStateApi.js';
 const KEY = 'fm_asset_history';
-const ym = (d = new Date()) => d.toISOString().slice(0, 7);
+import { ymOf } from './dates.js';
+const ym = (d = new Date()) => ymOf(d);
 
 export function getAssetHistory() {
   try { return JSON.parse(localStorage.getItem(KEY) || '[]'); } catch { return []; }

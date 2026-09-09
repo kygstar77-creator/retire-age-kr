@@ -1,5 +1,5 @@
 // 파이어 여정 데일리 엔진 — 매일 바뀌는 한 걸음/지식 + 연속 출석.
-import { dayIdx, todayStr } from './dailyData.js';
+import { dayIdx, todayStr, yesterdayStr } from './dailyData.js';
 import { pickDaily, pickTip } from './journeyPlaybook.js';
 
 export const TIPS = [
@@ -58,7 +58,7 @@ export function checkInToday() {
   const c = getCheckin();
   const t = todayStr();
   if (c.last === t) return c;
-  const y = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+  const y = yesterdayStr();
   const count = (c.last === y) ? (Number(c.count) || 0) + 1 : 1;
   const nc = { count, last: t };
   try { localStorage.setItem(KEY, JSON.stringify(nc)); } catch { /* ignore */ }

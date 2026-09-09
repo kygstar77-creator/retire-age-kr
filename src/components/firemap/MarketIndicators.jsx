@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
+import { SUPABASE_URL, SUPABASE_KEY } from '../../utils/supabaseClient.js';
 // 살아있는 참고 지표 — firemap_market / fm_macro_latest / fm_realestate_latest 실데이터.
 // 매일(시장)·매주(거시·부동산) 자동 수집된 값을 그대로 보여줘요. 데이터 없으면 조용히 숨김.
-const SB = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
-const KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
-const rpc = (fn) => fetch(`${SB}/rest/v1/rpc/${fn}`, { method: 'POST', headers: { apikey: KEY, authorization: `Bearer ${KEY}`, 'content-type': 'application/json' }, body: '{}' }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+
+const rpc = (fn) => fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, { method: 'POST', headers: { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'content-type': 'application/json' }, body: '{}' }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
 const eok = (manwon) => { const m = Math.round(Number(manwon) || 0); return m >= 10000 ? `${(m / 10000).toFixed(1)}억` : `${m.toLocaleString()}만원`; };
 const pf = (p) => { const s = String(p || ''); return s.length === 6 ? `${s.slice(0, 4)}.${s.slice(4)}` : s; };
 

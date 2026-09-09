@@ -3,7 +3,7 @@ import Header from './Header.jsx';
 import ResultSimTabs from './ResultSimTabs.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, buildGrowthSeries, fireStatus, runwayText, scenarioEndAge, survivalPhrase } from '../../firemap-v2/scenarios.js';
-import { simulateRetirement } from '../../utils/retirementSimulator.js';
+import { simulateRetirement, inputsIsReal } from '../../utils/retirementSimulator.js';
 import { screens, NEXT_ACTION_META } from '../../firemap-v2/screens.js';
 import { shareToKakao } from '../../utils/kakaoShare.js';
 import { sendCommunity } from '../../utils/firemapFeedbackApi.js';
@@ -36,14 +36,17 @@ function ResultHeroV2({ simulation, rankingSimulation }) {
   const [agg, setAgg] = useState(null);
   const [showCalc, setShowCalc] = useState(false);
 
+  const inputsHash = `${earliest}|${rankEarliest}|${target}|${inp.financialAsset}|${inp.monthlyInvestment}|${inp.monthlyLivingCost}`;
   useEffect(() => {
     let alive = true;
+    // 0원·기본값 결과는 랭킹·스냅샷에 넣지 않는다(빈 입력이 상위권을 오염시키던 버그).
+    if (!inputsIsReal(inp)) return undefined;
     saveRankSnapshot({ percentile: base.percentile, grade: base.grade, score, earliest });
     track('calc_complete', { earliest: earliest || 0 });
     track('result_view', { earliest: earliest || 0 });
     (async () => {
       try {
-        const key = `fm_score_sent_${score}`;
+        const key = `fm_score_sent_${inputsHash}`;
         if (!sessionStorage.getItem(key)) {
           let nick = '';
           try { nick = localStorage.getItem('fm_nickname') || ''; } catch { /* ignore */ }
@@ -55,7 +58,7 @@ function ResultHeroV2({ simulation, rankingSimulation }) {
       if (alive) { setLive(r); setAgg(a); }
     })();
     return () => { alive = false; };
-  }, [score]);
+  }, [inputsHash]);
 
   const peerAvg = agg && agg.avgEarliest ? agg.avgEarliest : null;
   const diff = (peerAvg != null && rankEarliest != null) ? (peerAvg - rankEarliest) : null;

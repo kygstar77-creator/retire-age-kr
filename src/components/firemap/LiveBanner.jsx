@@ -2,9 +2,8 @@ import { useEffect, useState } from 'react';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { presencePing, fetchLivePresence, fetchTotalCalc } from '../../utils/live.js';
 
-const SB_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
-const SB_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
-const rpc = (fn) => fetch(`${SB_URL}/rest/v1/rpc/${fn}`, { method: 'POST', headers: { apikey: SB_KEY, authorization: `Bearer ${SB_KEY}`, 'content-type': 'application/json' }, body: '{}' }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+import { SUPABASE_URL, SUPABASE_KEY } from '../../utils/supabaseClient.js';
+const rpc = (fn) => fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, { method: 'POST', headers: { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'content-type': 'application/json' }, body: '{}' }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
 const eok = (manwon) => { const m = Math.round(Number(manwon) || 0); return m >= 10000 ? `${(m / 10000).toFixed(1)}억` : `${m.toLocaleString()}만원`; };
 // 저축 기록 경과시간 — '방금'은 정말 최근(3분 이내)만, 오래된 건(3일 초과) 표시 안 함
 const relSave = (ts) => {
@@ -90,10 +89,10 @@ export default function LiveBanner() {
   useEffect(() => {
     let alive = true;
     const load = async () => {
-      const H = { apikey: SB_KEY, authorization: `Bearer ${SB_KEY}` };
-      const recentAct = fetch(`${SB_URL}/rest/v1/firemap_save_events?select=client_id,nickname,deposit_month,updated_at&deposit_month=gt.0&order=updated_at.desc&limit=8`, { headers: H }).then((r) => (r.ok ? r.json() : [])).catch(() => []);
-      const recentCalc = fetch(`${SB_URL}/rest/v1/firemap_scores?select=client_id,nickname,earliest_age,created_at&order=created_at.desc&limit=8`, { headers: H }).then((r) => (r.ok ? r.json() : [])).catch(() => []);
-      const recentComm = fetch(`${SB_URL}/rest/v1/firemap_feedback?select=client_id,nickname,parent_id,created_at&kind=eq.community&status=eq.visible&order=created_at.desc&limit=8`, { headers: H }).then((r) => (r.ok ? r.json() : [])).catch(() => []);
+      const H = { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}` };
+      const recentAct = fetch(`${SUPABASE_URL}/rest/v1/firemap_save_events?select=client_id,nickname,deposit_month,updated_at&deposit_month=gt.0&order=updated_at.desc&limit=8`, { headers: H }).then((r) => (r.ok ? r.json() : [])).catch(() => []);
+      const recentCalc = fetch(`${SUPABASE_URL}/rest/v1/firemap_scores?select=client_id,nickname,earliest_age,created_at&order=created_at.desc&limit=8`, { headers: H }).then((r) => (r.ok ? r.json() : [])).catch(() => []);
+      const recentComm = fetch(`${SUPABASE_URL}/rest/v1/firemap_feedback?select=client_id,nickname,parent_id,created_at&kind=eq.community&status=eq.visible&order=created_at.desc&limit=8`, { headers: H }).then((r) => (r.ok ? r.json() : [])).catch(() => []);
       const [p, recent, total, market, macro, re, calc, comm] = await Promise.all([
         fetchLivePresence(),
         recentAct,

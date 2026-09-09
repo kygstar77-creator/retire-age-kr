@@ -1,10 +1,7 @@
 import { track } from '../firemap-v2/dailyData.js';
 import { account } from './identity.js';
-const URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
-const KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || URL;
-const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || KEY;
 
+import { SUPABASE_URL, SUPABASE_KEY } from './supabaseClient.js';
 async function rpc(fn, args) {
   const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/${fn}`, {
     method: 'POST',

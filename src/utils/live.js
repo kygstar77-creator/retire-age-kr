@@ -1,7 +1,7 @@
 import { identityId } from './identity.js';
+import { SUPABASE_URL, SUPABASE_KEY } from './supabaseClient.js';
 // 실시간 접속(프레즈던) + 익명 이벤트 로깅 — 개인정보 없이 기기ID·이벤트명·익명 속성만
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
-const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
+
 const H = { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'content-type': 'application/json' };
 
 function nick() { try { return localStorage.getItem('fm_nickname') || ''; } catch { return ''; } }

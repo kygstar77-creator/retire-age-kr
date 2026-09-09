@@ -1,8 +1,7 @@
 // 파이어 시계 — 웹푸시 구독 유틸. 로그인 무관(익명 client_id로 식별), 매일 1회 'D-day' 알림.
 import { identityId, account } from './identity.js';
 
-const SUPABASE_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
-const SUPABASE_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
+import { SUPABASE_URL, SUPABASE_KEY } from './supabaseClient.js';
 // VAPID 공개키(서버 비밀키와 한 쌍). 공개키는 클라이언트 노출이 정상.
 const VAPID_PUBLIC = 'BJYJgOTmlTx9LcLWBex3RJZAicBp6D6Y8RJ3_cn4uKhDy6yFQp23uBagGUeZqcHHJTlXo8tJZp6t7HdI9eOTo44';
 

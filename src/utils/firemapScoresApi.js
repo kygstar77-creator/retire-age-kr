@@ -1,10 +1,8 @@
 import { identityId, identityIds } from './identity.js';
 import { statsRank } from '../firemap-v2/rank.js';
 import { journeyStage } from './journeyStage.js';
-const DEFAULT_SUPABASE_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
-const DEFAULT_SUPABASE_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || DEFAULT_SUPABASE_URL;
-const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || DEFAULT_SUPABASE_KEY;
+
+import { SUPABASE_URL, SUPABASE_KEY } from './supabaseClient.js';
 const TABLE = 'firemap_scores';
 
 function headers(extra = {}) {

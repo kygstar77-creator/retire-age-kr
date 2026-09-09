@@ -1,8 +1,6 @@
 import { identityId } from './identity.js';
-const DEFAULT_SUPABASE_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
-const DEFAULT_SUPABASE_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || DEFAULT_SUPABASE_URL;
-const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || DEFAULT_SUPABASE_KEY;
+
+import { SUPABASE_URL, SUPABASE_KEY, sbRpc } from './supabaseClient.js';
 const TABLE = 'firemap_feedback';
 
 export const feedbackReady = Boolean(SUPABASE_URL && SUPABASE_KEY);
@@ -167,20 +165,28 @@ async function mutate(path, method, body) {
   } catch { return false; }
 }
 
-// 공감(좋아요) — read-modify-write
+// 공감(좋아요) — 서버 원자 증가 RPC(fm_like). 마이그레이션 전이면 PATCH 폴백.
 export async function likeCommunity(id, currentLikes) {
+  const r = await sbRpc('fm_like', { p_id: Number(id) });
+  if (r != null) return true;
   return mutate(`${TABLE}?id=eq.${id}`, 'PATCH', { likes: (Number(currentLikes) || 0) + 1 });
 }
 
-// 내 글 수정 — PATCH message
+// 내 글 수정 — 작성자 검증 RPC(fm_edit). 마이그레이션 전이면 PATCH 폴백.
 export async function editCommunity(id, message) {
   const clean = String(message || '').trim().slice(0, 240);
   if (!clean) return false;
+  const r = await sbRpc('fm_edit', { p_id: Number(id), p_cid: identityId(), p_message: clean });
+  if (r === true) return true;
+  if (r === false) return false;
   return mutate(`${TABLE}?id=eq.${id}`, 'PATCH', { message: clean });
 }
 
-// 내 글 삭제 — 실제 DELETE(소프트삭제 status=hidden은 RLS 정책에 막혀 401). 글이면 답글까지 함께 삭제.
+// 내 글 삭제 — 작성자 검증 RPC(fm_delete, 답글 포함). 마이그레이션 전이면 DELETE 폴백.
 export async function deleteCommunity(id) {
+  const r = await sbRpc('fm_delete', { p_id: Number(id), p_cid: identityId() });
+  if (r === true) return true;
+  if (r === false) return false;
   return mutate(`${TABLE}?or=(id.eq.${id},parent_id.eq.${id})`, 'DELETE');
 }
 

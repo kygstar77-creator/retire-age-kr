@@ -57,12 +57,9 @@ export const QUICK = [
   { label: '충동구매 멈춤', emoji: '🛑', won: 30000 }
 ];
 
-export const dayIdx = () => Math.floor(Date.now() / 86400000);
-const _p2 = (n) => String(n).padStart(2, '0');
-const _localYmd = (d) => `${d.getFullYear()}-${_p2(d.getMonth() + 1)}-${_p2(d.getDate())}`;
-// 로컬(기기) 날짜 기준 — 저축 캘린더 표시와 키를 일치시켜 KST 새벽 입력이 어긋나는 문제 방지.
-export const todayStr = () => _localYmd(new Date());
-export const yesterdayStr = () => _localYmd(new Date(Date.now() - 86400000));
+// 날짜 키는 utils/dates.js 1벌(로컬 기준) — 여기서는 재수출만.
+import { dayIdx, todayStr, yesterdayStr } from '../utils/dates.js';
+export { dayIdx, todayStr, yesterdayStr };
 export const wonStr = (n) => `${Math.round(n).toLocaleString('ko-KR')}원`;
 export const readJSON = (k) => { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch { return null; } };
 

@@ -1,3 +1,4 @@
+import { SUPABASE_URL, SUPABASE_KEY } from './supabaseClient.js';
 // 카카오 로그인 (Authorization Code 플로우)
 // 시작: Kakao.Auth.authorize → 카카오 인증 → firemap.kr/?code=... 로 복귀
 // 복귀: code를 kakao-auth Edge Function에 보내 검증·계정 발급(기존 {userId,handle,token} 형식)
@@ -7,11 +8,6 @@ const KAKAO_JS_KEY = 'ab42112f15f44fd86a631e6cee694c29'; // 도메인 제한된 
 const REDIRECT_URI = (typeof window !== 'undefined' && window.location && window.location.origin)
   ? window.location.origin
   : 'https://firemap.kr';
-
-const URL_ = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
-const KEY_ = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || URL_;
-const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || KEY_;
 
 let loadPromise;
 function ensureKakao() {

@@ -1,10 +1,7 @@
 import { account } from './identity.js';
 import { inputsIsReal } from './retirementSimulator.js';
 
-const URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
-const KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || URL;
-const SUPABASE_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || KEY;
+import { SUPABASE_URL, SUPABASE_KEY } from './supabaseClient.js';
 // 서버 동기화: 기록·요약·닉네임만. 원본 금액(inputs)·정확한 자산추이는 방침대로 서버 저장 안 함(기기에만).
 // 로그인(간편계정) 시에만 서버 동기화. 비로그인은 전부 기기에만 남음.
 const SYNC_KEYS = ['fm_daily', 'fm_save', 'fm_rank_history_v1', 'fm_nickname', 'firemap-inputs-v3', 'fm_inputs_ts', 'fm_asset_history'];

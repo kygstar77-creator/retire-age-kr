@@ -9,9 +9,7 @@ import { formatWon } from '../../firemap-v2/formatters.js';
 import { account } from '../../utils/identity.js';
 import { track } from '../../firemap-v2/dailyData.js';
 
-const SUPABASE_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
-const SUPABASE_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
-
+import { SUPABASE_URL, SUPABASE_KEY } from '../../utils/supabaseClient.js';
 const ASSET_MS = [
   { v: 100000000, label: '1억' },
   { v: 300000000, label: '3억' },

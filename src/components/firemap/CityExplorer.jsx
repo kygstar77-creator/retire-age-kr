@@ -1,12 +1,16 @@
-import { useState, useEffect } from 'react';
-import Header from './Header.jsx';
+// 어디서 살까 — 결론 하나(여기 살면 N세) · 국내|해외 탭 · 지역 목록/도시 카드 · 해외 체류. 적용은 미리보기 샌드박스로만.
+import { useMemo, useState } from 'react';
+import { TopBar, StatHero, Tabs, Card, SectionHead, ListGroup, ListRow, Badge, Button, Chips, Chip } from '../../ui/index.js';
 import { OverseasStayModule } from './OverseasStayModule.jsx';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, runwayText, deltaText } from '../../firemap-v2/scenarios.js';
 import { sourceLine } from '../../firemap-v2/dataSources.js';
 import { FIRE_CITIES as CITIES, KR_REGIONS } from '../../firemap-v2/cities.js';
+import '../../ui/screens/cities.css';
 
+const eok = (n) => formatWon(Math.round(n || 0));
 
+// 정적 대륙 윤곽(등장방형 360×180). 외부 지도 데이터를 받지 않는다.
 const LAND = [
   'M18 30 L60 18 L95 16 L120 24 L126 40 L112 50 L100 56 L99 66 L86 64 L75 72 L68 64 L57 52 L55 42 L40 32 Z',
   'M100 84 L118 86 L145 96 L142 112 L128 130 L113 148 L110 130 L108 105 Z',
@@ -20,183 +24,136 @@ const LAND = [
   'M226 108 L230 110 L229 117 L225 115 Z',
   'M283 96 L300 95 L302 99 L285 100 Z'
 ];
-function ringContains(lon, lat, ring) {
-  let inside = false;
-  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-    const xi = ring[i][0], yi = ring[i][1], xj = ring[j][0], yj = ring[j][1];
-    if (((yi > lat) !== (yj > lat)) && (lon < ((xj - xi) * (lat - yi)) / (yj - yi) + xi)) inside = !inside;
-  }
-  return inside;
-}
-const featPolys = (f) => (f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates);
-function bboxOf(f) {
-  let a = 180, b = 90, c = -180, d = -90;
-  featPolys(f).forEach((poly) => poly[0].forEach(([x, y]) => { if (x < a) a = x; if (y < b) b = y; if (x > c) c = x; if (y > d) d = y; }));
-  return [a, b, c, d];
-}
 
 function WorldMap({ cities, active, onPick }) {
-  const [dots, setDots] = useState(null);
   const W = 360, H = 180;
   const proj = (lon, lat) => [((lon + 180) / 360) * W, ((90 - lat) / 180) * H];
-  useEffect(() => {
-    let alive = true;
-    (async () => {
-      try {
-        const [topo, topojson] = await Promise.all([
-          fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json').then((r) => r.json()),
-          import('https://esm.sh/topojson-client@3')
-        ]);
-        const feats = topojson.feature(topo, topo.objects.countries).features.map((f) => ({ f, bbox: bboxOf(f) }));
-        const ds = [];
-        for (let lat = 78; lat >= -56; lat -= 2.4) {
-          for (let lon = -180; lon < 180; lon += 2.4) {
-            for (const { f, bbox } of feats) {
-              if (lon >= bbox[0] && lon <= bbox[2] && lat >= bbox[1] && lat <= bbox[3]) {
-                let hit = false;
-                for (const poly of featPolys(f)) { if (ringContains(lon, lat, poly[0])) { hit = true; break; } }
-                if (hit) { const [x, y] = proj(lon, lat); ds.push(x.toFixed(1) + ',' + y.toFixed(1)); break; }
-              }
-            }
-          }
-        }
-        if (alive) setDots(ds);
-      } catch { /* 폴백: 윤곽 */ }
-    })();
-    return () => { alive = false; };
-  }, []);
   return (
-    <div className="fm-wm">
-      <svg viewBox="0 0 360 180" preserveAspectRatio="xMidYMid meet" role="img" aria-label="전세계 파이어 도시 지도">
-        <rect x="0" y="0" width="360" height="180" rx="12" fill="#0f1830" />
-        {dots
-          ? dots.map((xy, i) => { const [x, y] = xy.split(','); return <circle key={i} cx={x} cy={y} r="0.85" fill="#3b4a6b" />; })
-          : LAND.map((d, i) => <path key={i} d={d} fill="#26324f" stroke="#3b4a6b" strokeWidth="0.3" />)}
+    <div className="sc-ce-map">
+      <svg viewBox="0 0 360 180" preserveAspectRatio="xMidYMid meet" role="img" aria-label="전 세계 파이어 도시 지도">
+        <rect x="0" y="0" width="360" height="180" rx="12" className="sc-ce-sea" />
+        {LAND.map((d, i) => <path key={i} d={d} className="sc-ce-land" />)}
         {cities.map((c, i) => {
           if (c.lat == null || c.lon == null) return null;
           const [x, y] = proj(c.lon, c.lat);
           return (
-            <g key={c.city} className={`fm-wm-pin${active === i ? ' on' : ''}`} onClick={() => onPick(i)} style={{ cursor: 'pointer' }}>
-              {active === i && <circle cx={x} cy={y} r="6" className="fm-wm-halo" />}
+            <g key={c.city} className={`sc-ce-pin${active === i ? ' is-on' : ''}`} onClick={() => onPick(i)} role="button" aria-label={c.city}>
+              {active === i && <circle cx={x} cy={y} r="6" className="sc-ce-halo" />}
               <circle cx={x} cy={y} r={active === i ? 3.2 : 2.4} />
-              {active === i && <text x={x} y={y - 6} textAnchor="middle" className="fm-wm-lbl">{c.city}</text>}
+              {active === i && <text x={x} y={y - 6} textAnchor="middle" className="sc-ce-lbl">{c.city}</text>}
             </g>
           );
         })}
       </svg>
-      <p className="fm-wm-hint">지도의 점을 눌러 도시를 골라보세요</p>
+      <p className="ds-caption ds-textcenter ds-mt-2">지도의 점을 누르면 도시로 이동해요</p>
     </div>
   );
 }
 
+function deltaBadge(curAge, age) {
+  if (curAge == null || age == null) return null;
+  const d = curAge - age;
+  if (d > 0) return <Badge tone="good">{d}년 일찍</Badge>;
+  if (d < 0) return <Badge tone="bad">{-d}년 늦게</Badge>;
+  return <Badge tone="neutral">비슷</Badge>;
+}
+
 export default function CityExplorer({ inputs, simulation, onChange, onMove, onBack, onPreviewCity, onPreviewPatch }) {
   const [tab, setTab] = useState('domestic');
-  const [open, setOpen] = useState(null);
   const [active, setActive] = useState(null);
-  const pick = (i) => { setActive(i); const el = document.getElementById(`ce-${i}`); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' }); };
+  const [sel, setSel] = useState(null); // { name, krw }
+  void onChange;
   // 적용 = 미리보기 샌드박스로만(기존 저장 무손상).
   const apply = (krw) => { if (onPreviewCity) { onPreviewCity(krw); return; } if (onMove) onMove('result'); };
 
   const curCost = Number(inputs.monthlyLivingCost) || 0;
   const curAge = simulation.earliestRetirementAge;
-  const overseas = CITIES.filter((c) => c.country !== '한국');
-
-  const regions = KR_REGIONS
+  const overseas = useMemo(() => CITIES.filter((c) => c.country !== '한국'), []);
+  const regions = useMemo(() => KR_REGIONS
     .map((r) => ({ ...r, age: buildScenario(inputs, { monthlyLivingCost: r.krw }).earliestRetirementAge }))
     .sort((a, b) => {
       const aa = a.age == null ? 999 : a.age;
       const bb = b.age == null ? 999 : b.age;
       return aa !== bb ? aa - bb : a.krw - b.krw;
-    });
+    }), [inputs]);
+
+  const pick = (i) => {
+    const c = overseas[i];
+    setActive(i); setSel({ name: c.city, krw: c.krw });
+    const el = document.getElementById(`ce-${i}`); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  };
+  const selSim = useMemo(() => (sel ? buildScenario(inputs, { monthlyLivingCost: sel.krw }) : null), [inputs, sel]);
+  const selAge = selSim ? selSim.earliestRetirementAge : curAge;
+  const heroSub = sel
+    ? (selAge != null ? <>월 <b className="num">{eok(sel.krw)}</b>으로 살면 · {runwayText(selSim)}까지 버텨요 · {deltaText(simulation, selSim)}</> : '이 생활비로도 아직 안 나와요 · 더 낮은 곳을 골라봐요')
+    : (curAge != null ? '지역을 고르면 여기 숫자가 바뀌어요' : '아직 파이어 나이가 안 나와요 · 생활비 낮은 곳을 골라봐요');
 
   return (
-    <main className="fm-screen fm-scroll">
-      <Header tag="지역 탐색" onBack={onBack} />
-      <section className="fm-card fm-text-card">
-        <p className="fm-kicker">어디서 살까</p>
-        <h2>지역 바꾸면 파이어가 당겨져요</h2>
-        <p>생활비 낮은 곳으로 옮기면 같은 자산으로 더 일찍·더 오래 파이어할 수 있어요. 지역을 골라 바로 계산해 보세요.</p>
-      </section>
+    <main className="fm-screen fm-scroll ds-screen-gap">
+      <TopBar title="어디서 살까" onBack={onBack} />
 
-      <div className="fm-scope-toggle fm-region-tabs">
-        <button type="button" className={tab === 'domestic' ? 'on' : ''} onClick={() => setTab('domestic')}>🇰🇷 국내</button>
-        <button type="button" className={tab === 'overseas' ? 'on' : ''} onClick={() => setTab('overseas')}>🌏 해외</button>
-      </div>
+      <StatHero
+        tone="light" size="md"
+        label={sel ? `${sel.name}에 살면` : `지금 생활비 월 ${eok(curCost)}이면`}
+        value={selAge != null ? `${selAge}` : '아직'} unit={selAge != null ? '세' : ''}
+        delta={sel && curAge != null && selAge != null && curAge !== selAge ? { text: curAge > selAge ? `지금보다 ${curAge - selAge}년 일찍` : `지금보다 ${selAge - curAge}년 늦게`, dir: curAge > selAge ? 'up' : 'down' } : null}
+        sub={heroSub}
+      >
+        {sel && <Button variant="primary" size="md" full className="ds-mt-3" onClick={() => apply(sel.krw)}>이 조건으로 미리보기</Button>}
+      </StatHero>
+
+      <Tabs items={[{ key: 'domestic', label: '🇰🇷 국내' }, { key: 'overseas', label: '🌏 해외' }]} value={tab} onChange={setTab} label="지역 범위" />
 
       {tab === 'domestic' ? (
         <>
-          {curAge != null && <p className="fm-region-base">지금 생활비 <b>월 {formatWon(curCost)}</b> 기준 <b>{curAge}세 파이어</b> · 지역 바꾸면 ↓</p>}
-          <section className="fm-card fm-region-list">
-            {regions.map((r) => {
-              const delta = (curAge != null && r.age != null) ? curAge - r.age : null;
-              return (
-                <button type="button" className="fm-region-row" key={r.city} onClick={() => apply(r.krw)}>
-                  <span className="fm-region-main"><b>{r.city}</b><em>월 {formatWon(r.krw)}{r.note ? ` · ${r.note}` : ''}</em></span>
-                  <span className="fm-region-res">
-                    <b>{r.age != null ? `${r.age}세` : '자산 부족'}</b>
-                    {delta != null && <em className={delta > 0 ? 'early' : delta < 0 ? 'late' : 'same'}>{delta > 0 ? `${delta}년 일찍` : delta < 0 ? `${-delta}년 늦음` : '비슷'}</em>}
-                  </span>
-                </button>
-              );
-            })}
-          </section>
-          <p className="fm-ce-note">1인 월 생활비(주거 포함) 추정치 · 통계청 1인가구(월평균 약 169만)+지역 물가 참고. 실제는 주거·의료 조건에 따라 달라져요. {sourceLine('cityCost')}</p>
+          <ListGroup label="1인 월 생활비 기준 · 빠른 순">
+            {regions.map((r) => (
+              <ListRow
+                key={r.city} size="M"
+                title={r.city} desc={`월 ${eok(r.krw)}${r.note ? ` · ${r.note}` : ''}`}
+                trail={<><b className="num">{r.age != null ? `${r.age}세` : '아직'}</b>{deltaBadge(curAge, r.age)}</>}
+                className={sel && sel.name === r.city ? 'sc-ce-row sc-ce-row--on' : 'sc-ce-row'}
+                onClick={() => setSel({ name: r.city, krw: r.krw })}
+              />
+            ))}
+          </ListGroup>
+          <p className="ds-caption">주거 포함 1인 월 생활비 추정이에요 · 통계청 1인가구 월평균 169만과 지역 물가 참고 · {sourceLine('cityCost')}</p>
         </>
       ) : (
         <>
           <WorldMap cities={overseas} active={active} onPick={pick} />
-          <div className="fm-ce-grid">
-            {overseas.map((c, i) => {
-              const sc = buildScenario(inputs, { monthlyLivingCost: c.krw });
-              const isOpen = open === i;
-              return (
-                <article className={`fm-ce-card${active === i ? ' active' : ''}`} id={`ce-${i}`} key={c.city}>
-                  <button type="button" className="fm-ce-head" style={{ background: `linear-gradient(135deg, ${c.c1}, ${c.c2})` }} onClick={() => setOpen(isOpen ? null : i)}>
-                    <span className="fm-ce-flag">{c.flag}</span>
-                    <span className="fm-ce-name"><b>{c.city}</b><em>{c.country}</em></span>
-                    <span className="fm-ce-cost">월 {formatWon(c.krw)}</span>
-                  </button>
-                  <div className="fm-ce-body">
-                    <p className="fm-ce-vibe">{c.vibe}</p>
-                    <div className="fm-ce-tags">
-                      {c.food.map((f) => <span key={f} className="fm-ce-tag food">🍽 {f}</span>)}
-                      {c.play.map((pl) => <span key={pl} className="fm-ce-tag play">📍 {pl}</span>)}
-                    </div>
-                    <p className="fm-ce-run">이 생활비면 <b>{runwayText(sc)}</b>까지 버텨요 · {deltaText(simulation, sc)}</p>
-                    {isOpen && <p className="fm-ce-visa">{c.visa}</p>}
-                    <button type="button" className="fm-ce-cta" onClick={() => apply(c.krw)}>이 도시로 미리보기</button>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
+          {overseas.map((c, i) => {
+            const sc = buildScenario(inputs, { monthlyLivingCost: c.krw });
+            const on = active === i;
+            return (
+              <Card key={c.city} id={`ce-${i}`} className={on ? 'sc-ce-card--on' : ''}>
+                <ListRow
+                  size="M" lead={c.flag} title={c.city} desc={`${c.country} · 월 ${eok(c.krw)}`}
+                  trail={<><b className="num">{sc.earliestRetirementAge != null ? `${sc.earliestRetirementAge}세` : '아직'}</b>{deltaBadge(curAge, sc.earliestRetirementAge)}</>}
+                  onClick={() => { setActive(i); setSel({ name: c.city, krw: c.krw }); }}
+                  className="sc-ce-row sc-ce-cityrow"
+                />
+                <p className="ds-p ds-mt-2">{c.vibe}</p>
+                <Chips className="ds-mt-2">
+                  {c.food.map((f) => <Chip key={f}>🍽 {f}</Chip>)}
+                  {c.play.map((pl) => <Chip key={pl}>📍 {pl}</Chip>)}
+                </Chips>
+                <p className="ds-caption ds-mt-2">이 생활비면 <b className="num">{runwayText(sc)}</b>까지 버텨요 · {deltaText(simulation, sc)}</p>
+                <p className="ds-caption">{c.visa}</p>
+                <Button variant="tint" size="md" full className="ds-mt-2" onClick={() => apply(c.krw)}>이 도시로 미리보기</Button>
+              </Card>
+            );
+          })}
           <OverseasStayModule inputs={inputs} simulation={simulation} onPreviewPatch={onPreviewPatch} />
-          <p className="fm-ce-note">도시별 금액은 1인 월 생활비 대략 추정치예요. 실제 주거·의료·환율·비자 조건에 따라 달라질 수 있어요. {sourceLine('cityCost')}</p>
+          <p className="ds-caption">도시별 금액은 1인 월 생활비 대략 추정이에요 · 주거·의료·환율·비자에 따라 달라져요 · {sourceLine('cityCost')}</p>
         </>
       )}
 
-      <section className="fm-card" style={{ marginTop: 14 }}>
-        <p className="fm-kicker">더 깊이 보기</p>
-        <a href="/guide/region-plan/" style={CE.guideRow}>
-          <span style={CE.guideIco}>🏘️</span>
-          <span style={CE.guideTx}><b style={CE.guideTitle}>지역·가구별 필요자산 사례</b><em style={CE.guideDesc}>지역×가구×유형별 필요자산 자료</em></span>
-          <span style={CE.guideGo}>›</span>
-        </a>
-        <a href="/guide/regions/" style={{ ...CE.guideRow, borderBottom: 0 }}>
-          <span style={CE.guideIco}>🏙️</span>
-          <span style={CE.guideTx}><b style={CE.guideTitle}>도시별 생활비·집값</b><em style={CE.guideDesc}>생활비·실거래가·물가 자료</em></span>
-          <span style={CE.guideGo}>›</span>
-        </a>
-      </section>
+      <Card padding="md">
+        <SectionHead size="sm" kicker="더 깊이 보기" title="지역 자료" />
+        <ListRow lead="🏘️" title="지역·가구별 필요 자산 사례" desc="지역·가구·유형별 필요 자산" href="/guide/region-plan/" size="S" />
+        <ListRow lead="🏙️" title="도시별 생활비·집값" desc="생활비·실거래가·물가" href="/guide/regions/" size="S" />
+      </Card>
     </main>
   );
 }
-
-const CE = {
-  guideRow: { display: 'flex', alignItems: 'center', gap: 12, width: '100%', textDecoration: 'none', borderBottom: '1px solid #f3f1ee', padding: '12px 2px' },
-  guideIco: { fontSize: 19, flex: '0 0 auto', width: 24, textAlign: 'center' },
-  guideTx: { display: 'flex', flexDirection: 'column', flex: 1, minWidth: 0, gap: 2 },
-  guideTitle: { fontSize: 14, fontWeight: 700, color: '#15151b', lineHeight: 1.3 },
-  guideDesc: { fontSize: 11.5, fontWeight: 500, color: '#8a8f99', fontStyle: 'normal', lineHeight: 1.4 },
-  guideGo: { fontSize: 18, color: '#c2c7d0', fontWeight: 700, flex: '0 0 auto' }
-};

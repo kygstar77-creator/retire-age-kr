@@ -21,7 +21,7 @@ const SECTIONS = [
     { ico: '🗺️', title: '지역으로 파이어 보기', desc: '국내·해외 도시 생활비 비교', to: 'cities' },
     { ico: '🧭', title: '파이어 유형 테스트', desc: '12문항 · 살 도시 Top3', to: 'firetype' }
   ] },
-  { label: '커뮤니티 · 소식', items: [
+  { label: '카페 · 소식', items: [
     { ico: '🟢', title: '파이어맵 네이버 카페', desc: '인증 · 봐주세요 · 파이어 후 하루', href: CAFE_URL, ext: true },
     { ico: '💬', title: '방명록 전체', desc: '글 · 답글 · 공감', to: 'wall' },
     { ico: '📰', title: '소식', desc: '지표 · 파이어 후 하루 · 배당락', to: 'news' },

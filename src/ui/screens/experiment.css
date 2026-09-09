@@ -1,0 +1,16 @@
+/* 바꿔보기(experiment) — 화면 전용. 토큰만 사용. */
+
+/* 숫자 하나(StatHero)는 TopBar 아래에 붙어 따라온다. TopBar sticky 높이(≈58px + safe-top) 아래. */
+.sc-exp-hero { position: sticky; top: calc(58px + var(--ds-safe-top)); z-index: 30; }
+.sc-exp-hero .ds-hero__tiles { margin-top: 10px; }
+
+/* 하단 고정 CTA — 탭바 위에 얹는다(탭바가 safe-bottom을 이미 처리). */
+.sc-exp-cta.ds-bottomcta--fixed {
+  bottom: calc(var(--ds-tabbar-h) + var(--ds-safe-bottom));
+  padding-bottom: 10px;
+}
+
+/* 고정 CTA가 떠 있는 동안 본문 하단 여백.
+   레거시 .fm-has-tabbar 가 padding-bottom을 !important 로 고정하므로 ::after 스페이서로도 같은 여백을 보장한다. */
+.ds-has-fixedcta { padding-bottom: 120px; }
+.ds-has-fixedcta::after { content: ''; display: block; height: 72px; }

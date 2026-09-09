@@ -1,48 +1,43 @@
-import { useEffect, useState } from 'react';
-import Header from './Header.jsx';
+// 방명록 전체 — 홈 💬(Wall.jsx)에서 넘어오는 전체 글·답글 화면(screens 'wall'). 개편 최종본 §3 방명록.
+// 탭 4(전체·인증·질문·자유) · 글마다 카드 · 공감·답글 · 내 글 수정/삭제(RPC) · 글쓰기는 Sheet.
+import { useEffect, useMemo, useState } from 'react';
+import { TopBar, Tabs, Card, Button, Badge, Sheet, Dialog, Chips, Chip, Skeleton, EmptyState, toast } from '../../ui/index.js';
 import { loadCommunityThread, sendCommunity, likeCommunity, editCommunity, deleteCommunity } from '../../utils/firemapFeedbackApi.js';
-import { funHandle } from '../../firemap-v2/funName.js';
+import { displayNameOf } from '../../firemap-v2/funName.js';
 import { JOURNEY_STAGES, journeyStage } from '../../utils/journeyStage.js';
 import { identityIds, account } from '../../utils/identity.js';
+import '../../ui/screens/wall.css';
 
-// 인증 중심 커뮤니티 — 카테고리 3개(인증/질문/자유). 옛 글 배지는 ALL_CAT_LABELS로 그대로 표시.
-const CATEGORIES = [
-  { key: 'goal', label: '파이어 인증', emoji: '🔥' },
-  { key: 'qa', label: '질문·고민', emoji: '❓' },
-  { key: 'free', label: '자유수다', emoji: '💬' }
+const TABS = [
+  { key: 'all', label: '전체' },
+  { key: 'goal', label: '인증' },
+  { key: 'question', label: '질문' },
+  { key: 'free', label: '자유' }
 ];
-const ALL_CAT_LABELS = { free: '💬 자유수다', news: '📰 경제뉴스', save: '✂️ 저축·절약꿀팁', invest: '📈 투자·자산배분', realestate: '🏠 부동산', sidejob: '💼 부업·N잡', pension: '🧾 연금·세금·건보', life: '🌴 파이어 후 삶', goal: '🔥 파이어 인증', qa: '❓ 질문·고민', budget: '📊 가계부·지출공유' };
-const catLabel = (k) => ALL_CAT_LABELS[k] || '💬 자유수다';
-const catOf = (row) => row.category || 'free';
+// 쓰기 분류(저장값) — 옛 글의 'qa'도 질문으로 읽어요.
+const WRITE_CATS = [
+  { key: 'goal', label: '🔥 인증' },
+  { key: 'qa', label: '❓ 질문' },
+  { key: 'free', label: '💬 자유' }
+];
+const tabOf = (row) => {
+  const c = row.category || 'free';
+  if (c === 'goal') return 'goal';
+  if (c === 'qa' || c === 'question') return 'question';
+  return 'free';
+};
+const TAB_LABEL = { goal: '인증', question: '질문', free: '자유' };
+// 공식 계정 글 중 방명록 성격(인증·자유·질문·가계부)만 보여요. 뉴스성 글은 소식 화면 담당.
+const OFFICIAL_WALL_CATS = new Set(['free', 'goal', 'qa', 'question', 'budget']);
 
-// 기여 칭호 — 이미 불러온 스레드 데이터로 계산(진화·랭킹과 무관한 명예 표시)
 function titleFromStats(s) {
   if (!s) return null;
-  if (s.posts >= 5 || s.likes >= 10) return '⭐ 라운지 스타';
+  if (s.posts >= 5 || s.likes >= 10) return '⭐ 방명록 스타';
   if (s.replies >= 5) return '😇 답글 천사';
   if (s.likes >= 5) return '💖 공감 부자';
   if (s.posts >= 2) return '☕ 단골';
   return null;
 }
-
-const STYLE = `
-.fm-cat-bar{display:flex;gap:8px;overflow-x:auto;padding:4px 0 10px;-webkit-overflow-scrolling:touch}
-.fm-cat-bar button{flex:0 0 auto;border:1px solid #e5e7eb;background:#fff;border-radius:99px;padding:7px 12px;font-size:13px;font-weight:700;color:#4b5563;cursor:pointer;white-space:nowrap}
-.fm-cat-bar button.on{background:#ff5a00;border-color:#ff5a00;color:#fff}
-.fm-cat-select{margin-bottom:8px}
-.fm-cat-select select{width:100%;padding:9px;border:1px solid #e5e7eb;border-radius:10px;font-size:14px;background:#fff}
-.fm-cat-badge{display:inline-block;font-size:11px;font-weight:800;color:#c2410c;background:#fff4e8;border-radius:6px;padding:1px 6px;margin-right:6px}
-.fm-sortbar{display:flex;gap:8px;margin-bottom:10px}
-.fm-sortbar button{border:1px solid #e5e7eb;background:#fff;border-radius:99px;padding:6px 14px;font-size:13px;font-weight:700;color:#4b5563;cursor:pointer}
-.fm-sortbar button.on{background:#18212c;border-color:#18212c;color:#fff}
-.fm-best{border:1px solid #ffd23f !important;background:#fffdf3 !important}
-.fm-best-tag{font-size:12px;font-weight:800;color:#b45309;margin:0 0 6px}
-.fm-title-chip{display:inline-block;font-size:10.5px;font-weight:800;color:#1d4ed8;background:#eaf1ff;border-radius:6px;padding:1px 6px;margin-left:6px}
-.fm-hot-chip{display:inline-block;font-size:10.5px;font-weight:800;color:#b91c1c;background:#fdecec;border-radius:6px;padding:1px 6px;margin-right:6px}
-.fm-mytitle{font-size:12px;color:#6b7280;margin:0 0 8px}
-.fm-mytitle b{color:#1d4ed8}
-.fm-stage-badge{display:inline-block;font-size:11px;font-weight:800;color:#1e2859;background:#eef1f9;border-radius:6px;padding:1px 6px;margin-right:6px}
-`;
 
 function relativeTime(value) {
   const diff = Math.max(1, Math.round((Date.now() - new Date(value).getTime()) / 60000));
@@ -53,230 +48,226 @@ function relativeTime(value) {
 }
 const likedKey = (id) => `fm_liked_${id}`;
 const isLiked = (id) => { try { return !!localStorage.getItem(likedKey(id)); } catch { return false; } };
-
 const MINE_KEY = 'fm_my_posts';
 const loadMine = () => { try { return JSON.parse(localStorage.getItem(MINE_KEY) || '[]'); } catch { return []; } };
 const addMine = (id) => { try { const m = loadMine(); if (!m.includes(id)) localStorage.setItem(MINE_KEY, JSON.stringify([...m, id])); } catch { /* ignore */ } };
+const MAX = 240;
 
-function myNickname() {
-  try { return localStorage.getItem('fm_nickname') || ''; } catch { return ''; }
-}
-
-function OwnerControls({ mine, row, onEdit, onDelete }) {
-  if (!mine) return null;
-  return (
-    <span className="fm-post-own">
-      <button type="button" className="fm-post-edit" onClick={() => onEdit(row)}>수정</button>
-      <button type="button" className="fm-post-del" onClick={() => onDelete(row)}>삭제</button>
-    </span>
-  );
-}
-
-function EditBox({ id, value, onChange, onCancel, onSave }) {
-  return (
-    <div className="fm-post-edit-box">
-      <textarea maxLength={240} value={value} onChange={(e) => onChange(e.target.value)} autoFocus />
-      <div className="fm-post-edit-row">
-        <button type="button" className="fm-post-edit-cancel" onClick={onCancel}>취소</button>
-        <button type="button" className="fm-post-edit-save" onClick={() => onSave(id)} disabled={!value.trim()}>저장</button>
-      </div>
-    </div>
-  );
-}
-
-export default function Community({ onMove, simulation }) {
-  const myJourney = (() => { try { return journeyStage(simulation || null); } catch { return null; } })();
-  const myStage = myJourney ? myJourney.stage : null;
+export default function Community({ onBack, onMove, simulation }) {
+  const myStage = (() => { try { return journeyStage(simulation || null).stage; } catch { return null; } })();
   const stageMeta = (n) => JOURNEY_STAGES.find((x) => x.n === Number(n)) || null;
-  const stageOf = (row) => (row && row.stage != null ? Number(row.stage) : null);
-  const [rows, setRows] = useState([]);
-  const [post, setPost] = useState('');
-  const [sending, setSending] = useState(false);
+  const [rows, setRows] = useState(null);
+  const [tab, setTab] = useState('all');
   const [openId, setOpenId] = useState(null);
   const [replyText, setReplyText] = useState('');
   const [mine, setMine] = useState(loadMine());
-  const [editId, setEditId] = useState(null);
-  const [editText, setEditText] = useState('');
-  const [cat, setCat] = useState('all');
-  const [postCat, setPostCat] = useState('free');
-  const [sort, setSort] = useState('new');
+  const [composer, setComposer] = useState(null); // {mode:'new'|'edit', id?, cat, text}
+  const [sending, setSending] = useState(false);
+  const [delTarget, setDelTarget] = useState(null);
 
   useEffect(() => {
     let alive = true;
-    loadCommunityThread().then((r) => { if (alive) setRows(r); });
+    loadCommunityThread().then((r) => { if (alive) setRows(Array.isArray(r) ? r : []); }).catch(() => { if (alive) setRows([]); });
     return () => { alive = false; };
   }, []);
 
-  const nick = myNickname();
   const loggedIn = !!(account() && account().handle);
   const myIds = identityIds();
   const isMine = (row) => mine.includes(row.id) || (!!row.client_id && myIds.includes(row.client_id));
   const remember = (id) => { addMine(id); setMine(loadMine()); };
-  // 기여 통계(client_id별): 글 수·답글 수·받은 공감 → 칭호
-  const stats = {};
-  rows.forEach((r) => {
-    const cid = r.client_id;
-    if (!cid) return;
-    const s = stats[cid] || { posts: 0, replies: 0, likes: 0 };
-    if (r.parent_id) s.replies += 1; else s.posts += 1;
-    s.likes += Number(r.likes) || 0;
-    stats[cid] = s;
-  });
-  const titleOf = (cid) => titleFromStats(cid && stats[cid]);
-  const myTitle = (() => { for (const id of myIds) { const t = titleOf(id); if (t) return t; } return null; })();
 
-  // 공식 글 중 '토론/자유' 성격(인증·자유·질문·가계부)은 노출, 공식 '뉴스'성 글은 제외(뉴스탭 전용)
-  const OFFICIAL_COMMUNITY_CATS = new Set(['free', 'goal', 'qa', 'budget']);
-  const filtered = rows.filter((r) => !r.parent_id && (r.client_id !== 'firemap-official' || OFFICIAL_COMMUNITY_CATS.has(catOf(r))) && (cat === 'all' || catOf(r) === cat));
+  const stats = useMemo(() => {
+    const s = {};
+    (rows || []).forEach((r) => {
+      const cid = r.client_id; if (!cid) return;
+      const x = s[cid] || { posts: 0, replies: 0, likes: 0 };
+      if (r.parent_id) x.replies += 1; else x.posts += 1;
+      x.likes += Number(r.likes) || 0;
+      s[cid] = x;
+    });
+    return s;
+  }, [rows]);
+  const titleOf = (cid) => titleFromStats(cid && stats[cid]);
+
+  const all = rows || [];
+  const filtered = all
+    .filter((r) => !r.parent_id && (r.client_id !== 'firemap-official' || OFFICIAL_WALL_CATS.has(r.category || 'free')) && (tab === 'all' || tabOf(r) === tab))
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
   const weekAgo = Date.now() - 7 * 86400000;
   const best = filtered.filter((r) => (r.likes || 0) > 0 && new Date(r.created_at).getTime() > weekAgo).sort((a, b) => (b.likes || 0) - (a.likes || 0))[0] || null;
-  const posts = filtered.filter((r) => !best || r.id !== best.id).sort((a, b) => (sort === 'hot' ? ((b.likes || 0) - (a.likes || 0)) || (new Date(b.created_at) - new Date(a.created_at)) : (new Date(b.created_at) - new Date(a.created_at))));
-  const repliesOf = (id) => rows.filter((r) => r.parent_id === id).sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+  const repliesOf = (id) => all.filter((r) => r.parent_id === id).sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
 
-  const submitPost = async (event) => {
-    event.preventDefault();
-    const text = post.trim().slice(0, 240);
-    if (!loggedIn) { onMove && onMove('account'); return; }
-    if (!text || sending) return;
+  const needLogin = () => { toast('로그인하면 내 이름으로 남길 수 있어요'); onMove && onMove('account'); };
+  const openNew = () => { if (!loggedIn) { needLogin(); return; } setComposer({ mode: 'new', cat: tab === 'question' ? 'qa' : (tab === 'goal' ? 'goal' : 'free'), text: '' }); };
+  const openEdit = (row) => setComposer({ mode: 'edit', id: row.id, cat: row.category || 'free', text: row.message || '', isReply: !!row.parent_id });
+  const closeComposer = () => setComposer(null);
+
+  const submitComposer = async () => {
+    if (!composer || sending) return;
+    const text = composer.text.trim().slice(0, MAX);
+    if (!text) return;
     setSending(true);
-    const created = await sendCommunity(text, null, postCat, myStage || null);
-    setSending(false);
-    if (created) { setRows((r) => [...r, { ...created, parent_id: null, likes: 0, category: postCat, stage: myStage || null }]); remember(created.id); setPost(''); setCat(postCat); setSort('new'); }
+    if (composer.mode === 'new') {
+      const created = await sendCommunity(text, null, composer.cat, myStage || null);
+      setSending(false);
+      if (!created) { toast.bad('올리지 못했어요 · 잠시 뒤 다시 해보세요'); return; }
+      setRows((r) => [...(r || []), { ...created, parent_id: null, likes: 0, category: composer.cat, stage: myStage || null }]);
+      remember(created.id);
+      setTab(tabOf({ category: composer.cat }));
+      toast.good('방명록에 남겼어요');
+    } else {
+      const ok = await editCommunity(composer.id, text);
+      setSending(false);
+      if (!ok) { toast.bad('고치지 못했어요 · 내 글만 고칠 수 있어요'); return; }
+      setRows((r) => (r || []).map((x) => (x.id === composer.id ? { ...x, message: text } : x)));
+      toast.good('고쳤어요');
+    }
+    closeComposer();
   };
 
   const submitReply = async (parentId) => {
-    const text = replyText.trim().slice(0, 240);
-    if (!loggedIn) { onMove && onMove('account'); return; }
-    if (!text) return;
+    const text = replyText.trim().slice(0, MAX);
+    if (!loggedIn) { needLogin(); return; }
+    if (!text || sending) return;
+    setSending(true);
     const created = await sendCommunity(text, parentId);
-    if (created) { setRows((r) => [...r, { ...created, parent_id: parentId, likes: 0 }]); remember(created.id); setReplyText(''); }
+    setSending(false);
+    if (!created) { toast.bad('답글을 올리지 못했어요'); return; }
+    setRows((r) => [...(r || []), { ...created, parent_id: parentId, likes: 0 }]);
+    remember(created.id);
+    setReplyText('');
   };
 
   const like = async (row) => {
-    if (isLiked(row.id)) return;
+    if (isLiked(row.id)) { toast('이미 공감했어요'); return; }
     const ok = await likeCommunity(row.id, row.likes || 0);
-    if (ok) {
-      try { localStorage.setItem(likedKey(row.id), '1'); } catch { /* ignore */ }
-      setRows((r) => r.map((x) => (x.id === row.id ? { ...x, likes: (x.likes || 0) + 1 } : x)));
-    }
+    if (!ok) return;
+    try { localStorage.setItem(likedKey(row.id), '1'); } catch { /* ignore */ }
+    setRows((r) => (r || []).map((x) => (x.id === row.id ? { ...x, likes: (x.likes || 0) + 1 } : x)));
   };
 
-  const startEdit = (row) => { setEditId(row.id); setEditText(row.message); };
-  const cancelEdit = () => { setEditId(null); setEditText(''); };
-  const saveEdit = async (id) => {
-    const text = editText.trim().slice(0, 240);
-    if (!text) return;
-    const ok = await editCommunity(id, text);
-    if (ok) {
-      setRows((r) => r.map((x) => (x.id === id ? { ...x, message: text } : x)));
-      cancelEdit();
-    }
-  };
-  const removeRow = async (row) => {
-    if (!window.confirm('이 글을 삭제할까요? 되돌릴 수 없어요.')) return;
+  const confirmDelete = async () => {
+    const row = delTarget; if (!row) return;
     const ok = await deleteCommunity(row.id);
-    if (ok) {
-      setRows((r) => r.filter((x) => x.id !== row.id && x.parent_id !== row.id));
-      if (editId === row.id) cancelEdit();
-    }
+    setDelTarget(null);
+    if (!ok) { toast.bad('지우지 못했어요 · 내 글만 지울 수 있어요'); return; }
+    setRows((r) => (r || []).filter((x) => x.id !== row.id && x.parent_id !== row.id));
+    if (openId === row.id) setOpenId(null);
+    toast('지웠어요');
+  };
+
+  const Author = ({ row, size }) => {
+    const t = titleOf(row.client_id);
+    const st = row.stage != null ? stageMeta(row.stage) : null;
+    return (
+      <span className={`sc-wall-author${size === 'sm' ? ' sc-wall-author--sm' : ''}`}>
+        <b>{displayNameOf(row)}</b>
+        {isMine(row) && <Badge tone="accent">나</Badge>}
+        {st && <Badge tone="neutral">{st.emoji} {row.stage}단계</Badge>}
+        {t && <Badge tone="neutral">{t}</Badge>}
+        <span className="sc-wall-time">{relativeTime(row.created_at)}</span>
+      </span>
+    );
   };
 
   const PostCard = (p, isBest) => {
     const reps = repliesOf(p.id);
     const open = openId === p.id;
-    const ptitle = titleOf(p.client_id);
+    const liked = isLiked(p.id);
+    const mineRow = isMine(p);
     return (
-      <article className={`fm-card fm-post${isBest ? ' fm-best' : ''}`} key={p.id}>
-        {isBest && <p className="fm-best-tag">🏆 이번 주 베스트</p>}
-        {editId === p.id ? <EditBox id={p.id} value={editText} onChange={setEditText} onCancel={cancelEdit} onSave={saveEdit} /> : <p className="fm-post-msg">{p.message}</p>}
-        <div className="fm-post-meta">
-          <span className="fm-post-author">{(p.likes || 0) >= 3 && <span className="fm-hot-chip">🔥 인기</span>}<span className="fm-cat-badge">{catLabel(catOf(p))}</span>{stageOf(p) && stageMeta(stageOf(p)) && <span className="fm-stage-badge">{stageMeta(stageOf(p)).emoji} {stageOf(p)}단계</span>}{p.nickname || funHandle(p.id)}{ptitle && <span className="fm-title-chip">{ptitle}</span>} · {relativeTime(p.created_at)}</span>
-          <div className="fm-post-actions">
-            <OwnerControls mine={isMine(p)} row={p} onEdit={startEdit} onDelete={removeRow} />
-            <button type="button" className={`fm-post-like${isLiked(p.id) ? ' on' : ''}`} onClick={() => like(p)} aria-label="공감">♥ {p.likes || 0}</button>
-            <button type="button" className="fm-post-reply" onClick={() => { setOpenId(open ? null : p.id); setReplyText(''); }}>💬 {reps.length}</button>
-          </div>
+      <Card key={p.id} variant={isBest ? 'hero' : 'base'} className="sc-wall-post">
+        <div className="sc-wall-post__head">
+          <span className="sc-wall-post__tags">
+            {isBest && <Badge tone="accent">🏆 이번 주 베스트</Badge>}
+            <Badge tone="neutral">{TAB_LABEL[tabOf(p)]}</Badge>
+            {(p.likes || 0) >= 3 && <Badge tone="warn">인기</Badge>}
+          </span>
+        </div>
+        <p className="sc-wall-msg">{p.message}</p>
+        <Author row={p} />
+        <div className="sc-wall-actions">
+          <Button variant={liked ? 'tint' : 'secondary'} size="sm" onClick={() => like(p)} aria-pressed={liked} aria-label="공감">♥ <span className="num">{p.likes || 0}</span></Button>
+          <Button variant={open ? 'tint' : 'secondary'} size="sm" onClick={() => { setOpenId(open ? null : p.id); setReplyText(''); }} aria-expanded={open}>💬 <span className="num">{reps.length}</span></Button>
+          {mineRow && <span className="sc-wall-own"><Button variant="ghost" size="sm" onClick={() => openEdit(p)}>수정</Button><Button variant="ghost" size="sm" className="sc-wall-del" onClick={() => setDelTarget(p)}>삭제</Button></span>}
         </div>
         {open && (
-          <div className="fm-replies">
-            {reps.map((r) => {
-              const rtitle = titleOf(r.client_id);
-              return (
-                <div className="fm-reply" key={r.id}>
-                  {editId === r.id ? <EditBox id={r.id} value={editText} onChange={setEditText} onCancel={cancelEdit} onSave={saveEdit} /> : <p>{r.message}</p>}
-                  <div className="fm-reply-meta">
-                    <small>{r.nickname || funHandle(r.id)}{rtitle && <span className="fm-title-chip">{rtitle}</span>} · {relativeTime(r.created_at)}</small>
-                    <OwnerControls mine={isMine(r)} row={r} onEdit={startEdit} onDelete={removeRow} />
-                  </div>
+          <div className="sc-wall-replies">
+            {reps.length === 0 && <p className="ds-caption sc-wall-replies__empty">아직 답글이 없어요 · 첫 답글을 남겨보세요</p>}
+            {reps.map((r) => (
+              <div className="sc-wall-reply" key={r.id}>
+                <p className="sc-wall-reply__msg">{r.message}</p>
+                <div className="sc-wall-reply__foot">
+                  <Author row={r} size="sm" />
+                  {isMine(r) && <span className="sc-wall-own"><Button variant="ghost" size="sm" onClick={() => openEdit(r)}>수정</Button><Button variant="ghost" size="sm" className="sc-wall-del" onClick={() => setDelTarget(r)}>삭제</Button></span>}
                 </div>
-              );
-            })}
+              </div>
+            ))}
             {loggedIn ? (
-              <div className="fm-reply-input">
-                <input maxLength={240} value={replyText} onChange={(e) => setReplyText(e.target.value)} placeholder="답글 달기…" onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); submitReply(p.id); } }} />
-                <button type="button" onClick={() => submitReply(p.id)} disabled={!replyText.trim()}>등록</button>
+              <div className="sc-wall-reply-input">
+                <input className="ds-input" maxLength={MAX} value={replyText} onChange={(e) => setReplyText(e.target.value)} placeholder="답글 남기기" aria-label="답글 입력" onKeyDown={(e) => { if (e.key === 'Enter' && !e.nativeEvent.isComposing) { e.preventDefault(); submitReply(p.id); } }} />
+                <Button variant="primary" size="md" onClick={() => submitReply(p.id)} disabled={!replyText.trim()} loading={sending}>등록</Button>
               </div>
             ) : (
-              <button type="button" className="fm-reply-login" onClick={() => onMove && onMove('account')}>🔒 로그인하고 답글 달기 →</button>
+              <Button variant="secondary" size="sm" full onClick={needLogin}>🔒 로그인하고 답글 남기기</Button>
             )}
           </div>
         )}
-      </article>
+      </Card>
     );
   };
 
+  const posts = filtered.filter((r) => !best || r.id !== best.id);
+  const [shown, setShown] = useState(15);
+  const emptyText = tab === 'goal' ? '아직 인증이 없어요 · 내 결과로 첫 인증을 남겨보세요' : tab === 'question' ? '아직 질문이 없어요 · 궁금한 걸 남겨보세요' : '아직 조용해요 · 첫 한마디를 남겨보세요';
+
   return (
-    <main className="fm-screen fm-scroll fm-has-tabbar">
-      <style>{STYLE}</style>
-      <Header tag="방명록" />
-      <section className="fm-card fm-text-card">
-        <p className="fm-kicker">🔥 파이어 인증</p>
-        <h2>다들 몇 살에 파이어?</h2>
-        <p>내 계산 결과를 인증하고, 다른 파이어족들의 목표 나이를 구경해요. 궁금한 건 질문·자유에서 편하게 물어보세요. 공감·답글이 쌓이면 닉네임 옆에 칭호가 붙어요.</p>
-      </section>
+    <main className="fm-screen fm-scroll ds-screen-gap">
+      <TopBar title="방명록" onBack={onBack} />
+      <Tabs items={TABS} value={tab} onChange={(k) => { setTab(k); setOpenId(null); }} label="방명록 분류" />
+      <p className="ds-caption sc-wall-cap">파이어족끼리 한마디 · 욕설·비방·개인정보는 지워질 수 있어요</p>
 
-      <button type="button" onClick={() => onMove && onMove('result')} style={{ display: 'block', width: '100%', padding: '14px', borderRadius: 14, border: 0, background: '#ff5a00', color: '#fff', fontSize: 15, fontWeight: 800, cursor: 'pointer', margin: '0 0 12px', boxShadow: '0 6px 18px rgba(255,90,0,0.25)' }}>🔥 내 결과로 인증하기 →</button>
-
-      <div className="fm-cat-bar">
-        <button type="button" className={cat === 'all' ? 'on' : ''} onClick={() => setCat('all')}>전체</button>
-        {CATEGORIES.map((c) => (
-          <button type="button" key={c.key} className={cat === c.key ? 'on' : ''} onClick={() => setCat(c.key)}>{c.emoji} {c.label}</button>
-        ))}
+      <div className="ds-bottomcta sc-wall-cta">
+        <Button variant="tint" size="md" onClick={() => onMove && onMove('result')}>🪪 인증 카드 만들기</Button>
+        <Button variant="primary" size="md" onClick={openNew}>한마디 남기기</Button>
       </div>
 
-      <div className="fm-sortbar">
-        <button type="button" className={sort === 'new' ? 'on' : ''} onClick={() => setSort('new')}>최신순</button>
-        <button type="button" className={sort === 'hot' ? 'on' : ''} onClick={() => setSort('hot')}>인기순</button>
-      </div>
+      {rows === null && <Card><Skeleton lines={3} /></Card>}
+      {rows !== null && !best && posts.length === 0 && <EmptyState icon="💬" title={emptyText.split(' · ')[0]} desc={emptyText.split(' · ')[1]} action={{ label: tab === 'goal' ? '인증 카드 만들기' : '한마디 남기기', onClick: tab === 'goal' ? () => onMove && onMove('result') : openNew }} />}
+      {best && PostCard(best, true)}
+      {posts.slice(0, shown).map((p) => PostCard(p, false))}
+      {posts.length > shown && <Button variant="secondary" size="md" full onClick={() => setShown((n) => n + 15)}>더 보기 · {posts.length - shown}개</Button>}
 
-      {loggedIn ? (
-      <form className="fm-card fm-community-form" onSubmit={submitPost}>
-        <label htmlFor="fm-community-input">새 글 쓰기</label>
-        <p className="fm-mytitle">내 칭호: {myTitle ? <b>{myTitle}</b> : '아직 없음 (글·답글·공감으로 모아요)'}</p>
-        {myStage && stageMeta(myStage) && <p className="fm-mytitle">내 단계: <b>{stageMeta(myStage).emoji} {myStage}단계 · {stageMeta(myStage).name}</b> · 글에 자동으로 표시돼 같은 단계 그룹에 모여요</p>}
-        <div className="fm-cat-select">
-          <select value={postCat} onChange={(e) => setPostCat(e.target.value)} aria-label="카테고리 선택">
-            {CATEGORIES.map((c) => <option key={c.key} value={c.key}>{c.emoji} {c.label}</option>)}
-          </select>
+      <Sheet open={!!composer} title={composer && composer.mode === 'edit' ? '내 글 고치기' : '한마디 남기기'} onClose={closeComposer}>
+        {composer && composer.mode === 'new' && (
+          <Chips className="sc-wall-composer__cats">
+            {WRITE_CATS.map((c) => <Chip key={c.key} on={composer.cat === c.key} onClick={() => setComposer((s) => ({ ...s, cat: c.key }))}>{c.label}</Chip>)}
+          </Chips>
+        )}
+        <textarea
+          className="ds-textarea ds-mt-3"
+          maxLength={MAX}
+          autoFocus
+          value={composer ? composer.text : ''}
+          onChange={(e) => setComposer((s) => (s ? { ...s, text: e.target.value } : s))}
+          placeholder={composer && composer.cat === 'goal' ? '예: 56세 파이어 인증해요. 생활비를 줄이니 5년 당겨졌어요' : '예: 다들 생활비 어떻게 아끼세요?'}
+          aria-label="글 내용"
+        />
+        <p className="ds-caption sc-wall-composer__count"><span className="num">{composer ? composer.text.length : 0}</span>/{MAX}{composer && composer.mode === 'new' && myStage && stageMeta(myStage) ? ` · ${stageMeta(myStage).emoji} ${myStage}단계 표시로 올라가요` : ''}</p>
+        <div className="ds-bottomcta">
+          <Button variant="secondary" size="md" onClick={closeComposer}>취소</Button>
+          <Button variant="primary" size="md" onClick={submitComposer} disabled={!composer || !composer.text.trim()} loading={sending}>{composer && composer.mode === 'edit' ? '저장' : '올리기'}</Button>
         </div>
-        <textarea id="fm-community-input" maxLength={240} value={post} onChange={(e) => setPost(e.target.value)} placeholder="예: 생활비를 줄이니 파이어가 5년 당겨졌어요. 다들 어떻게 아끼세요?" />
-        <div className="fm-community-form-row">
-          <small>{post.length}/240 · {nick ? `${nick} 으로 게시` : '닉네임 자동 생성'}</small>
-          <button type="submit" disabled={sending || !post.trim()}>{sending ? '올리는 중' : '글 올리기'}</button>
-        </div>
-      </form>
-      ) : (
-        <button type="button" className="fm-community-login" onClick={() => onMove && onMove('account')}>
-          🔒 로그인하고 글 남기기
-          <span>읽기는 로그인 없이 자유롭게 · 글쓰기는 내 닉네임으로 남겨요</span>
-        </button>
-      )}
+      </Sheet>
 
-      <section className="fm-community-feed">
-        {best && PostCard(best, true)}
-        {posts.length === 0 && !best && <p className="fm-community-empty">{cat === 'all' ? '아직 인증이 없어요. 위 버튼으로 내 결과를 첫 인증해 보세요 🔥' : '이 카테고리의 첫 글을 남겨보세요 🔥'}</p>}
-        {posts.map((p) => PostCard(p, false))}
-      </section>
+      <Dialog
+        open={!!delTarget}
+        title="이 글을 지울까요?"
+        desc={delTarget && !delTarget.parent_id ? '답글도 같이 지워져요 · 되돌릴 수 없어요' : '되돌릴 수 없어요'}
+        primary={{ label: '지우기', variant: 'danger', onClick: confirmDelete }}
+        secondary={{ label: '취소' }}
+        onClose={() => setDelTarget(null)}
+      />
     </main>
   );
 }

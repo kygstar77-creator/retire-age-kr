@@ -410,3 +410,50 @@ html[data-theme="dark"] {
 .ds-card--dark .ds-p, .ds-card--dark .ds-p b { color: inherit; }
 .ds-card--flush { padding: 0; overflow: hidden; }
 .ds-card--flush .ds-row-item { border-bottom: 0; }
+
+/* ---------- 폰트: Pretendard Variable 로컬(앱 오프라인·CSP) ---------- */
+@font-face { font-family: 'Pretendard Variable'; font-weight: 45 920; font-style: normal; font-display: swap; src: url('/fonts/PretendardVariable.woff2') format('woff2'); }
+html, body { font-family: var(--ds-font); }
+
+/* ---------- 달력(DS) ---------- */
+.ds-cal__head { margin: 0 0 8px; }
+.ds-cal__grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
+.ds-cal__w { text-align: center; font-size: 11px; font-weight: 800; color: var(--ds-ink-3); padding: 4px 0; }
+.ds-cal__cell { display: flex; align-items: center; justify-content: center; aspect-ratio: 1; border-radius: var(--ds-r-sm); font: inherit; font-size: 13.5px; font-weight: 700; color: var(--ds-ink-2); background: var(--ds-surface-2); border: 0; padding: 0; cursor: default; font-variant-numeric: tabular-nums; }
+button.ds-cal__cell { cursor: pointer; }
+.ds-cal__cell--empty { background: transparent; }
+.ds-cal__cell--on { background: var(--ds-accent); color: #fff; }
+.ds-cal__cell--today { box-shadow: inset 0 0 0 2px var(--ds-accent); color: var(--ds-accent-ink); }
+.ds-cal__cell--on.ds-cal__cell--today { box-shadow: inset 0 0 0 2px #fff; color: #fff; }
+.ds-cal__cell--future { color: var(--ds-line-strong); background: transparent; }
+.ds-cal__cell--sel { outline: 2px solid var(--ds-accent); outline-offset: 1px; }
+
+/* ---------- 반응형 3분기 (결정서 §3) ---------- */
+@media (min-width: 600px) { .fm-screen { width: min(520px, 100%); } }
+@media (min-width: 1024px) {
+  /* 하단 탭 → 왼쪽 레일 */
+  .ds-tabbar { top: 0; bottom: 0; left: 0; right: auto; width: 88px; max-width: none; flex-direction: column; justify-content: center; gap: 6px; border-top: 0; border-right: 1px solid var(--ds-line); padding: 0; }
+  .ds-tabbar__tab { flex: 0 0 auto; padding: 12px 0; font-size: 12px; }
+  .fm-screen { width: min(640px, calc(100% - 88px)); margin-left: calc(88px + max(24px, (100% - 88px - 640px) / 2)); }
+  .fm-has-tabbar { padding-bottom: 40px; }
+  .ds-bottomcta--fixed { left: 88px; }
+  .ds-toaster { left: 88px; }
+  .ds-topbar--sticky { margin-left: -14px; margin-right: -14px; }
+}
+.ds-m-0 { margin: 0; }
+.ds-has-fixedcta { padding-bottom: calc(120px + var(--ds-safe-bottom)); }
+
+/* ---------- 여백·텍스트 유틸(인라인 스타일 0 규칙) ---------- */
+.ds-mt-0 { margin-top: 0; } .ds-mt-1-5 { margin-top: 6px; } .ds-mt-2-5 { margin-top: 10px; }
+.ds-mb-1-5 { margin-bottom: 6px; } .ds-mb-2 { margin-bottom: 8px; } .ds-mb-2-5 { margin-bottom: 10px; }
+.ds-p-3-5 { padding: 14px; } .ds-py-2 { padding-top: 8px; padding-bottom: 8px; }
+.ds-bold { font-weight: 700; } .ds-good { color: var(--ds-good); }
+.ds-row--between { justify-content: space-between; }
+.ds-link--muted { color: var(--ds-ink-3); font-weight: 600; }
+.ds-sh__main { min-width: 0; flex: 1; }
+.ds-confirm__card { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.14); }
+.sc-home-agebox { justify-content: space-between; background: var(--ds-surface-2); border-radius: var(--ds-r-md); padding: 10px 12px; margin-top: 4px; }
+.sc-home-agein { width: 64px; text-align: center; font-size: 18px; font-weight: 800; padding: 6px 4px; }
+.sc-home-three { background: var(--ds-surface); border-radius: var(--ds-r-md); padding: 6px; }
+.sc-cert-body { margin: 0; font-size: 13.5px; line-height: 1.6; white-space: pre-line; }
+.sc-os-in { width: 96px; text-align: center; padding: 6px 4px; }

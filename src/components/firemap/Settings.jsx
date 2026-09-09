@@ -64,7 +64,7 @@ export default function Settings({ simulation, onMove, onBack }) {
         <ListRow lead="📲" title="홈 화면에 추가" desc="앱처럼 아이콘으로 바로 열기" onClick={() => setInstallOpen(true)} />
       </ListGroup>
 
-      <ListGroup label="커뮤니티 · 정보">
+      <ListGroup label="카페 · 정보">
         <ListRow lead="🟢" title="파이어맵 네이버 카페" desc="인증 · 봐주세요 · 파이어 후 하루" href={CAFE_URL} external />
         <ListRow lead="📄" title="면책 안내" href="/disclaimer.html" />
         <ListRow lead="🔒" title="개인정보처리방침" href="/privacy.html" />
@@ -73,8 +73,8 @@ export default function Settings({ simulation, onMove, onBack }) {
 
       <Sheet open={installOpen} title="홈 화면에 추가" onClose={() => setInstallOpen(false)}>
         {iosInstall
-          ? <p className="ds-p">사파리 하단 <b>공유 버튼(□↑)</b> → <b>홈 화면에 추가</b>를 누르세요. 추가한 아이콘으로 열면 알림도 켤 수 있어요.</p>
-          : <p className="ds-p">브라우저 메뉴(⋮)에서 <b>앱 설치</b> 또는 <b>홈 화면에 추가</b>를 누르세요.</p>}
+          ? <p className="ds-p">사파리 하단 <b>공유 버튼(□↑)</b> → <b>홈 화면에 추가</b>를 눌러요. 추가한 아이콘으로 열면 알림도 켤 수 있어요.</p>
+          : <p className="ds-p">브라우저 메뉴(⋮)에서 <b>앱 설치</b> 또는 <b>홈 화면에 추가</b>를 눌러요.</p>}
         <Button variant="primary" size="md" full className="ds-mt-3" onClick={() => setInstallOpen(false)}>확인</Button>
       </Sheet>
     </main>

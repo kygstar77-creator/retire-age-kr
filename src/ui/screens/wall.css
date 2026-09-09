@@ -1,0 +1,29 @@
+/* 방명록 전체 화면(.sc-wall-*) — 토큰만 사용. 글 카드 · 작성자 줄 · 답글 · 글쓰기 Sheet */
+.sc-wall-cap { margin: 0 4px; word-break: keep-all; }
+.sc-wall-cta { margin-top: 0; }
+.sc-wall-cta > .ds-btn--tint { flex: 0 0 auto; }
+
+.sc-wall-post__head { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-sp-2); margin-bottom: var(--ds-sp-2); }
+.sc-wall-post__tags { display: inline-flex; flex-wrap: wrap; gap: 6px; }
+.sc-wall-msg { margin: 0 0 var(--ds-sp-2); font-size: var(--ds-fs-body); line-height: 1.6; color: var(--ds-ink); white-space: pre-line; word-break: keep-all; overflow-wrap: anywhere; }
+
+.sc-wall-author { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: var(--ds-fs-caption); color: var(--ds-ink-3); min-width: 0; }
+.sc-wall-author b { color: var(--ds-ink-2); font-weight: 800; }
+.sc-wall-author--sm { font-size: 11px; }
+.sc-wall-time { white-space: nowrap; }
+
+.sc-wall-actions { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: var(--ds-sp-3); }
+.sc-wall-own { display: inline-flex; gap: 2px; margin-left: auto; }
+.sc-wall-del { color: var(--ds-bad); }
+
+.sc-wall-replies { margin-top: var(--ds-sp-3); padding-top: var(--ds-sp-3); border-top: 1px solid var(--ds-line); display: flex; flex-direction: column; gap: var(--ds-sp-2); }
+.sc-wall-replies__empty { margin: 0; }
+.sc-wall-reply { background: var(--ds-surface-2); border-radius: var(--ds-r-md); padding: 10px 12px; }
+.sc-wall-reply__msg { margin: 0 0 6px; font-size: var(--ds-fs-body-sm); line-height: 1.55; color: var(--ds-ink); white-space: pre-line; word-break: keep-all; overflow-wrap: anywhere; }
+.sc-wall-reply__foot { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-sp-2); flex-wrap: wrap; }
+.sc-wall-reply-input { display: flex; gap: var(--ds-sp-2); align-items: center; }
+.sc-wall-reply-input .ds-input { flex: 1; min-width: 0; }
+.sc-wall-reply-input .ds-btn { flex: 0 0 auto; }
+
+.sc-wall-composer__cats { margin-top: var(--ds-sp-1); }
+.sc-wall-composer__count { margin: 6px 0 0; text-align: right; }

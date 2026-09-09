@@ -46,12 +46,12 @@ export function journeyStage(simulation, opts = {}) {
   else stage = 1;
 
   const NEXT = {
-    1: { label: '결과 자세히 보고 내 프로필 만들기', to: 'result' },
+    1: { label: '내 결과 보고 인증 카드 만들기', to: 'result' },
     2: { label: '조건 바꿔 파이어 당겨보기', to: 'experiment' },
-    3: { label: '이번 달 저축·절약 기록하기', to: 'save' },
-    4: { label: '파이어 더 당기는 도구 보기', to: 'tools' },
-    5: { label: '파이어 리얼리티 체크 (건보·세금)', to: 'dependent' },
-    6: { label: '파이어족 라운지 가기', to: 'community' }
+    3: { label: '오늘 한 걸음 기록하기', to: 'save' },
+    4: { label: '배당으로 파이어 계산하기', to: 'dividend' },
+    5: { label: '파이어 후 건보료·세금 점검하기', to: 'dependent' },
+    6: { label: '카페에 파이어 후 하루 남기기', to: 'wall' }
   };
 
   const milestones = [

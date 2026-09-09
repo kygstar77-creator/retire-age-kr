@@ -1,0 +1,7 @@
+/* 내 파이어 여정(journey) — 화면 전용. 토큰만 사용. */
+.sc-jr-row--cur { background: var(--ds-accent-soft); }
+.sc-jr-row--cur .ds-row-item__title { color: var(--ds-accent-ink); }
+.sc-jr-row--done .ds-row-item__title { color: var(--ds-ink-3); }
+.sc-jr-task--done .ds-row-item__title { color: var(--ds-ink-3); text-decoration: line-through; }
+.sc-jr-ms { display: flex; flex-wrap: wrap; gap: 4px 10px; word-break: keep-all; }
+.sc-jr-ms .is-done { color: var(--ds-good); font-weight: 700; }

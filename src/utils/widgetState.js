@@ -41,7 +41,7 @@ export function buildWidgetState(simulation) {
   let actual = null;
   try { const p = computeProgress(simulation); if (p && p.actualAgeYears != null) actual = p.actualAgeYears; } catch { /* ignore */ }
   const ageYears = actual != null ? actual : fireAge;
-  const dday = ageYears && cur ? Math.max(0, Math.round((ageYears - cur) * 365.25)) : null;
+  const dday = (simulation && simulation.earliestRetirementAge && ageYears && cur) ? Math.max(0, Math.round((ageYears - cur) * 365.25)) : null;
   const asset = Number(inp.financialAsset) || 0;
   const target = Math.round((simulation && simulation.requiredFireAssetByFourPercent) || 0);
   const progressPct = target > 0 ? Math.max(0, Math.min(100, Math.round((asset / target) * 100))) : 0;

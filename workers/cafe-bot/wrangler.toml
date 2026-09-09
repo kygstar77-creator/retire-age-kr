@@ -1,0 +1,19 @@
+name = "firemap-cafe-bot"
+main = "src/index.ts"
+compatibility_date = "2026-09-01"
+
+# 파이어맵 전용 Worker. 다른 프로젝트(스꾸) 계정·KV와 절대 섞지 않는다.
+# 비밀값은 전부 `wrangler secret put`으로 넣는다(파일에 적지 않음):
+#   SUPABASE_URL, SUPABASE_SERVICE_KEY, NAVER_CAFE_TOKEN, NAVER_CLUB_ID, NAVER_MENU_ID_NEWS
+
+[triggers]
+# UTC 기준. 07:00 KST 지표 · 금요일 18:00 KST 랭킹 · 매월 1일 09:00 KST 인증 모음
+crons = ["0 22 * * *", "0 9 * * 5", "0 0 1 * *"]
+
+[[kv_namespaces]]
+binding = "CAFEBOT_KV"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+[vars]
+APP_URL = "https://firemap.kr"
+CAFE_URL = "https://cafe.naver.com/firemap"

@@ -14,7 +14,7 @@ export function SectionHead({ kicker, title, desc, action, size, as = 'h2', clas
   const T = as;
   return (
     <div className={cx('ds-sh', size === 'sm' && 'ds-sh--sm', className)}>
-      <div style={{ minWidth: 0, flex: 1 }}>
+      <div className="ds-sh__main">
         {kicker && <span className="ds-sh__kicker">{kicker}</span>}
         {title && <T className="ds-sh__title">{title}</T>}
         {desc && <p className="ds-sh__desc">{desc}</p>}

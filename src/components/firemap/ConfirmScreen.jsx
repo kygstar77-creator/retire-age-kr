@@ -20,8 +20,8 @@ export default function ConfirmScreen({ amount, label, adv, streak = 0, onClose,
       <div className="ds-confirm__emoji" aria-hidden="true">{hit ? '🏅' : '🔥'}</div>
       <h2 className="ds-confirm__title">{adv ? <>파이어가 <b>{adv}</b> 가까워졌어요</> : <>{formatWon(amount)} 기록했어요</>}</h2>
       <p className="ds-confirm__sub">{label} +{formatWon(amount)}{hit ? ` · ${streak}일 연속 달성 배지를 받았어요!` : ''}</p>
-      <div className="ds-card ds-card--dark ds-confirm__card" style={{ background: 'rgba(255,255,255,.08)', borderColor: 'rgba(255,255,255,.14)' }}>
-        <div className="ds-row" style={{ justifyContent: 'space-between', marginBottom: 8 }}>
+      <div className="ds-card ds-card--dark ds-confirm__card">
+        <div className="ds-row ds-row--between ds-mb-2">
           <span className="ds-caption">🔥 {streak}일째</span>
           {next && <span className="ds-caption">다음 배지 {next}일</span>}
         </div>

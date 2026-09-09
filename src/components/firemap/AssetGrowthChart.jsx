@@ -11,7 +11,9 @@ export default function AssetGrowthChart({ ages, principal, gains, retirementAge
     const gainGrad = ctx.createLinearGradient(0, 0, 0, 260);
     gainGrad.addColorStop(0, 'rgba(255,90,0,0.55)');
     gainGrad.addColorStop(1, 'rgba(255,90,0,0.12)');
-    const axis = '#9aa3bf';
+    const cssVar = (n, d) => { try { return getComputedStyle(document.documentElement).getPropertyValue(n).trim() || d; } catch { return d; } };
+    const axis = cssVar('--ds-ink-3', '#8a909b');
+    const accent = cssVar('--ds-accent', '#ff5a00');
     const grid = 'rgba(128,128,128,0.12)';
 
     const markers = {
@@ -19,7 +21,7 @@ export default function AssetGrowthChart({ ages, principal, gains, retirementAge
       afterDatasetsDraw(chart) {
         const xs = chart.scales.x;
         const area = chart.chartArea;
-        const marks = [[retirementAge, '#ff5a00', `파이어 ${retirementAge}세`], [depletionAge, '#9aa3bf', `고갈 ${depletionAge}세`]];
+        const marks = [[retirementAge, accent, `파이어 ${retirementAge}세`], [depletionAge, axis, `고갈 ${depletionAge}세`]];
         marks.forEach(([age, color, text], i) => {
           if (!age) return;
           const idx = ages.indexOf(age);
@@ -44,7 +46,7 @@ export default function AssetGrowthChart({ ages, principal, gains, retirementAge
         labels: ages,
         datasets: [
           { label: '내가 넣은 돈', data: principal, borderColor: '#2f6fde', backgroundColor: 'rgba(47,111,222,0.35)', fill: 'origin', borderWidth: 2, pointRadius: 0, tension: 0.3 },
-          { label: '불어난 돈', data: gains, borderColor: '#ff5a00', backgroundColor: gainGrad, fill: '-1', borderWidth: 2, pointRadius: 0, tension: 0.3 }
+          { label: '불어난 돈', data: gains, borderColor: accent, backgroundColor: gainGrad, fill: '-1', borderWidth: 2, pointRadius: 0, tension: 0.3 }
         ]
       },
       options: {

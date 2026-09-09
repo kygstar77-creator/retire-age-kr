@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
+import { Button } from '../../ui/index.js';
 import { loadWall, sendCommunity } from '../../utils/firemapFeedbackApi.js';
 import { fetchLivePresence } from '../../utils/live.js';
 import { identityIds } from '../../utils/identity.js';
+import { prefs } from '../../utils/prefs.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import { CAFE_URL } from '../../firemap-v2/links.js';
+import '../../ui/screens/wall-fab.css';
 
-// 방명록 — 홈 전용 플로팅 💬 버튼 → 실시간 한마디 패널(스꾸 방명록 패턴 이식).
+// 방명록 — 홈 전용 플로팅 💬 버튼 → 실시간 한마디 패널.
 // 열려 있는 동안만 주기 폴링으로 새 글을 맨 위에 붙이고, 읽던 스크롤 위치는 유지한다.
-// 공식 글(firemap-official)은 여기 안 나옴 — '소식·뉴스' 탭 담당. 전체 글·답글은 #community.
+// 안 읽은 글 수는 FAB 배지로(마지막으로 본 id는 prefs.wallSeen). 공식 글(firemap-official)은 여기 안 나옴 — '소식' 담당.
 const POLL_MS = 10000;
 const PRESENCE_MS = 30000;
 const PAGE = 50;
@@ -18,6 +21,7 @@ function hashOf(s) { let h = 0; const t = String(s || ''); for (let i = 0; i < t
 const avatarOf = (row) => EMOJI[hashOf(row.client_id || row.id) % EMOJI.length];
 // DB 기본값 '익명'은 이름이 아니므로 기기별 재미 닉네임으로 대체
 const nameOf = (row) => (row.nickname && row.nickname !== '익명') ? row.nickname : funHandle(row.client_id || row.id);
+const maxId = (rows) => (rows || []).reduce((m, r) => Math.max(m, Number(r.id) || 0), 0);
 function timeAgo(iso) {
   const d = new Date(iso); const diff = (Date.now() - d.getTime()) / 1000;
   if (diff < 60) return '방금';
@@ -31,6 +35,7 @@ export default function Wall({ visible }) {
   const [open, setOpen] = useState(false);
   const [rows, setRows] = useState(null);      // 최신이 맨 위(desc)
   const [online, setOnline] = useState(0);
+  const [unread, setUnread] = useState(0);
   const [text, setText] = useState('');
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
@@ -56,6 +61,14 @@ export default function Wall({ visible }) {
   const loadFirst = () => { loadWall(PAGE).then((r) => { rowsRef.current = r || []; setRows(r || []); }).catch(() => { rowsRef.current = []; setRows([]); }); };
   const refreshOnline = () => { fetchLivePresence().then((p) => { if (p) setOnline(p.online || 0); }); };
 
+  // 안 읽은 글 수 — 홈에 들어올 때 한 번 확인(패널을 안 열어도 배지로 보임)
+  useEffect(() => {
+    if (!visible || open) return undefined;
+    let alive = true;
+    loadWall(30).then((r) => { if (!alive) return; const seen = prefs.wallSeen(); setUnread((r || []).filter((x) => Number(x.id) > seen).length); }).catch(() => {});
+    return () => { alive = false; };
+  }, [visible, open]);
+
   useEffect(() => {
     if (!open) return undefined;
     if (rows === null) loadFirst(); else pollOnce();   // 열 때 최신도 즉시 반영
@@ -68,6 +81,14 @@ export default function Wall({ visible }) {
     return () => { clearInterval(iv); clearInterval(pv); window.removeEventListener('keydown', onKey); };
   }, [open]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // 패널이 열려 있는 동안 본 글은 읽음 처리(가장 큰 id 저장) → 배지 0
+  useEffect(() => {
+    if (!open) return;
+    setUnread(0);
+    const m = maxId(rows);
+    if (m > prefs.wallSeen()) prefs.setWallSeen(m);
+  }, [open, rows]);
+
   // 홈을 벗어나면 열린 패널 자동 닫기(버튼 없이 열린 채 방치 방지)
   useEffect(() => { if (!visible && open) setOpen(false); }, [visible, open]);
 
@@ -79,8 +100,8 @@ export default function Wall({ visible }) {
     try {
       const created = await sendCommunity(clean, null, 'free');
       if (created) { setText(''); mergeFresh([created]); track('wall_post'); }
-      else setError('전송에 실패했어요. 잠시 후 다시 시도해주세요.');
-    } catch { setError('전송에 실패했어요. 잠시 후 다시 시도해주세요.'); }
+      else setError('전송이 안 됐어요 · 잠시 후 다시 해봐요');
+    } catch { setError('전송이 안 됐어요 · 잠시 후 다시 해봐요'); }
     finally { setSending(false); }
   };
   const onKeyDown = (e) => { if (e.key === 'Enter' && !e.nativeEvent.isComposing && e.keyCode !== 229) { e.preventDefault(); submit(); } };
@@ -88,28 +109,31 @@ export default function Wall({ visible }) {
   if (!visible) return null;
   return (
     <>
-      <button type="button" className={`fm-wall-fab${open ? ' is-open' : ''}`} aria-label={open ? '방명록 닫기' : '방명록'} aria-expanded={open} onClick={() => setOpen((o) => !o)}>{open ? '✕' : '💬'}</button>
+      <button type="button" className={`sc-fab${open ? ' is-open' : ''}`} aria-label={open ? '방명록 닫기' : (unread > 0 ? `방명록 · 새 글 ${unread}개` : '방명록')} aria-expanded={open} onClick={() => setOpen((o) => !o)}>
+        {open ? '✕' : '💬'}
+        {!open && unread > 0 && <span className="sc-fab-badge num" aria-hidden="true">{unread > 99 ? '99+' : unread}</span>}
+      </button>
       {open && (
-        <section className="fm-wall" role="dialog" aria-label="방명록">
-          <header className="fm-wall-head">
+        <section className="sc-fab-panel" role="dialog" aria-label="방명록">
+          <header className="sc-fab-head">
             <div>
-              <h3>💬 방명록</h3>
-              <p>파이어족끼리 자유롭게 한마디 🍀<br />욕설·비방·개인정보는 삭제될 수 있어요.</p>
+              <h3 className="sc-fab-title">💬 방명록</h3>
+              <p className="sc-fab-desc">파이어족끼리 자유롭게 한마디 · 욕설·개인정보는 지워질 수 있어요</p>
             </div>
-            <span className="fm-wall-live" aria-live="polite"><i aria-hidden="true" />{online > 0 ? `${online}명 접속 중` : '접속 확인 중'}</span>
+            <span className="sc-fab-live" aria-live="polite"><i aria-hidden="true" />{online > 0 ? `${online}명 접속 중` : '접속 확인 중'}</span>
           </header>
-          <a className="fm-wall-cafe" href={CAFE_URL} target="_blank" rel="noopener noreferrer" onClick={() => track('cafe_click', { from: 'wall' })}>
-            <span className="fm-wall-cafe-n" aria-hidden="true">N</span><b>파이어맵 네이버 카페</b><span>인증·질문·후기는 여기서 →</span>
+          <a className="sc-fab-cafe" href={CAFE_URL} target="_blank" rel="noopener noreferrer" onClick={() => track('cafe_click', { from: 'wall' })}>
+            <span className="sc-fab-cafe-n" aria-hidden="true">N</span><b>파이어맵 카페</b><span>인증·질문·후기는 여기서 →</span>
           </a>
-          <div className="fm-wall-list" ref={listRef}>
-            {rows === null && <p className="fm-wall-empty">불러오는 중…</p>}
-            {rows !== null && rows.length === 0 && <p className="fm-wall-empty">아직 조용해요 🤫<br />첫 한마디를 남겨보세요</p>}
+          <div className="sc-fab-list" ref={listRef}>
+            {rows === null && <p className="sc-fab-empty">불러오는 중…</p>}
+            {rows !== null && rows.length === 0 && <p className="sc-fab-empty">아직 조용해요 · 첫 한마디를 남겨봐요</p>}
             {rows !== null && rows.map((r) => {
               const isMine = r.client_id && mine.has(r.client_id);
               return (
-                <article key={r.id} className={`fm-wall-item${isMine ? ' mine' : ''}`}>
-                  <span className="fm-wall-ava" aria-hidden="true">{avatarOf(r)}</span>
-                  <div>
+                <article key={r.id} className={`sc-fab-item${isMine ? ' is-mine' : ''}`}>
+                  <span className="sc-fab-ava" aria-hidden="true">{avatarOf(r)}</span>
+                  <div className="sc-fab-body">
                     <b>{nameOf(r)}</b><small>{isMine ? '나 · ' : ''}{timeAgo(r.created_at)}</small>
                     <p>{r.message}</p>
                   </div>
@@ -117,10 +141,10 @@ export default function Wall({ visible }) {
               );
             })}
           </div>
-          {error && <p className="fm-wall-error">{error}</p>}
-          <form className="fm-wall-input" onSubmit={submit}>
-            <input value={text} maxLength={240} placeholder="한마디 남기기" autoComplete="off" aria-label="한마디 입력" onChange={(e) => setText(e.target.value)} onKeyDown={onKeyDown} />
-            <button type="submit" disabled={sending || !text.trim()}>{sending ? '올리는 중' : '등록'}</button>
+          {error && <p className="sc-fab-error" role="alert">{error}</p>}
+          <form className="sc-fab-input" onSubmit={submit}>
+            <input className="ds-input" value={text} maxLength={240} placeholder="한마디 남기기" autoComplete="off" aria-label="한마디 입력" onChange={(e) => setText(e.target.value)} onKeyDown={onKeyDown} />
+            <Button variant="primary" size="md" type="submit" loading={sending} disabled={!text.trim()}>남기기</Button>
           </form>
         </section>
       )}

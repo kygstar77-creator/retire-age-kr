@@ -94,7 +94,7 @@ export default function Today({ simulation, onMove }) {
           <Stat label="연속 기록" value={<>{ws.streak}<span className="ds-stat__unit">일</span></>} size="md" />
           <Stat label="목표 달성" value={<>{ws.progressPct}<span className="ds-stat__unit">%</span></>} size="md" />
         </div>
-        <p className="ds-caption ds-textcenter" style={{ margin: '8px 0 0' }}>
+        <p className="ds-caption ds-textcenter ds-mt-2">
           {ws.earliestAge ? <>지금 계획이면 <b>{ws.earliestAge}세</b>에 파이어 · 필요 자산 {hide ? '•••' : eok(ws.target)}</> : '아직 파이어 나이가 안 나와요 · 조건을 바꿔보세요'}
           {' '}<button type="button" className="ds-link" onClick={() => onMove('result')}>결과 →</button>
         </p>

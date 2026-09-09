@@ -85,16 +85,16 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
 
   return (
     <Sheet open={open} title="🪪 인증 카드" onClose={onClose}>
-      <div className="ds-card ds-card--dark" style={{ padding: 14 }}>
-        <p className="ds-caption" style={{ margin: '0 0 6px' }}>{title}</p>
-        <p style={{ margin: 0, fontSize: 13.5, lineHeight: 1.6, whiteSpace: 'pre-line' }}>{body}</p>
+      <div className="ds-card ds-card--dark ds-p-3-5">
+        <p className="ds-caption ds-mb-1-5">{title}</p>
+        <p className="sc-cert-body">{body}</p>
       </div>
-      <p className="ds-caption ds-mt-3" style={{ marginBottom: 6 }}>가족 형태</p>
+      <p className="ds-caption ds-mt-3 ds-mb-1-5">가족 형태</p>
       <Chips>{FAMILY.map((f) => <Chip key={f} on={family === f} onClick={() => setFamily(f)}>{f}</Chip>)}<Chip on={hideAmt} onClick={() => setHideAmt((v) => !v)}>🙈 금액 숨김</Chip></Chips>
       <p className="ds-caption ds-mt-2">카페 제목 공식(출생연도·가족·숫자·회차)이라 다른 인증 글과 나란히 비교돼요.</p>
       <div className="ds-stack ds-mt-3">
         <Button variant="primary" size="lg" full loading={busy} onClick={copyForCafe}>🟢 카페 인증 게시판에 올리기</Button>
-        <div className="ds-bottomcta" style={{ marginTop: 0 }}>
+        <div className="ds-bottomcta ds-mt-0">
           <Button variant="secondary" size="md" onClick={kakao}>💬 카톡</Button>
           <Button variant="secondary" size="md" onClick={copyLink}>🔗 링크</Button>
           <Button variant="secondary" size="md" onClick={toWall}>📝 방명록</Button>

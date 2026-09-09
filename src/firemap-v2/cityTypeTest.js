@@ -36,7 +36,7 @@ export const TEST_CITIES = [
   { city: '달랏', country: '베트남', flag: '🇻🇳', dom: false, lat: 11.94, lon: 108.44, krw: 1900000, c1: '#22c55e', c2: '#4ade80', nature: 0.85, warm: 0.45, medical: 0.45, climate: 'cool', blurb: '해발 1,500m 고원, 연중 18~23℃ 봄 날씨의 꽃·커피 도시. 시원한 곳 1순위.' },
   { city: '카메론하이랜드', country: '말레이시아', flag: '🇲🇾', dom: false, lat: 4.47, lon: 101.38, krw: 2000000, c1: '#16a34a', c2: '#4ade80', nature: 0.95, warm: 0.45, medical: 0.45, climate: 'cool', blurb: '말레이시아 고원, 차밭과 14~25℃ 선선함. 영어권 자연 힐링지.' },
   { city: '바기오', country: '필리핀', flag: '🇵🇭', dom: false, lat: 16.41, lon: 120.59, krw: 1900000, c1: '#4d7c0f', c2: '#a3e635', nature: 0.80, warm: 0.45, medical: 0.55, climate: 'cool', blurb: '필리핀 “여름 수도”, 해발 1,500m 소나무 숲의 선선한 산정 도시.' },
-  { city: '메데인', country: '콜롬비아', flag: '🇨🇴', dom: false, lat: 6.24, lon: -75.58, krw: 2000000, c1: '#ec4899', c2: '#f472b6', nature: 0.55, warm: 0.55, medical: 0.60, climate: 'cool', blurb: '“영원한 봄의 도시”, 연중 22℃ 상춘 기후 + 급성장 노마드 커뮤니티.' },
+  { city: '메데인', country: '콜롬비아', flag: '🇨🇴', dom: false, lat: 6.24, lon: -75.58, krw: 2000000, c1: '#ec4899', c2: '#f472b6', nature: 0.55, warm: 0.55, medical: 0.60, climate: 'cool', blurb: '“영원한 봄의 도시”, 연중 22℃ 상춘 기후 + 노마드가 빠르게 늘어요.' },
   { city: '부다페스트', country: '헝가리', flag: '🇭🇺', dom: false, lat: 47.5, lon: 19.04, krw: 2800000, c1: '#ef4444', c2: '#f87171', nature: 0.40, warm: 0.40, medical: 0.70, climate: 'cold', blurb: '도나우강과 온천, 사계절 뚜렷한 저렴한 유럽 수도.' },
   { city: '삿포로', country: '일본', flag: '🇯🇵', dom: false, lat: 43.06, lon: 141.35, krw: 3000000, c1: '#3b82f6', c2: '#60a5fa', nature: 0.70, warm: 0.30, medical: 0.85, climate: 'cold', blurb: '눈과 사계절, 깨끗한 자연과 음식의 일본 북방 도시.' },
   { city: '바르셀로나', country: '스페인', flag: '🇪🇸', dom: false, lat: 41.39, lon: 2.17, krw: 3600000, c1: '#0d9488', c2: '#2dd4bf', nature: 0.45, warm: 0.65, medical: 0.80, climate: 'mild', blurb: '지중해 해변과 건축, 온화한 기후의 남유럽 대도시.' },
@@ -53,21 +53,21 @@ TEST_CITIES.forEach((c) => {
 // ── 8개 파이어족 유형 ──
 export const ARCHETYPES = {
   lean:    { id: 'lean',    name: '린파이어 절약형', nick: '짠테크 수도승', emoji: '🧘', c1: '#475569', c2: '#94a3b8',
-    tagline: '적게 쓰고 빠르게 자유로워지는 미니멀리스트.', strong: '높은 저축률로 파이어를 가장 빨리 당겨요.', watch: '너무 조이면 지치기 쉬워요 — 가끔은 보상도.', match: 'fat', action: '자동이체로 저축률부터 끌어올리고, 고정비를 한 줄씩 줄여보세요.' },
+    tagline: '적게 쓰고 빨리 자유로워지는 미니멀리스트예요.', strong: '높은 저축률로 파이어를 가장 빨리 당겨요.', watch: '너무 조이면 지치기 쉬워요 · 가끔은 보상도 줘요.', match: 'fat', action: '자동이체로 저축률부터 끌어올리고, 고정비를 한 줄씩 줄여보요.' },
   barista: { id: 'barista', name: '바리스타 파이어형', nick: '느긋한 반일러', emoji: '☕', c1: '#c2410c', c2: '#fb923c',
-    tagline: '좋아하는 일을 조금 하며 자유와 안정을 함께.', strong: '소액 근로로 건보료·생활비 부담이 확 줄어요.', watch: '일과 쉼의 균형 설계가 핵심.', match: 'coast', action: '좋아하는 일로 월 50~100만 원 파트타임 수입을 설계하면 필요자산이 확 줄어요.' },
+    tagline: '좋아하는 일을 조금 하며 자유와 안정을 같이 가져요.', strong: '소액 근로로 건보료·생활비 부담이 확 줄어요.', watch: '일과 쉼의 균형이 핵심이에요.', match: 'coast', action: '좋아하는 일로 월 50~100만 원 파트타임 수입을 설계하면 필요자산이 확 줄어요.' },
   coast:   { id: 'coast',   name: '코스트 파이어형', nick: '굴려두는 낙천가', emoji: '🌊', c1: '#0f766e', c2: '#2dd4bf',
-    tagline: '일찍 모아둔 씨앗이 복리로 굵어지게 두고, 생활비는 일로 버는 타입.', strong: '추가 저축 없이 시간이 자산을 불려줘요.', watch: '목표 나이까진 근로 소득이 필요 — 완전 은퇴는 아직이에요.', match: 'barista', action: '목표 나이까지의 근로소득 계획을 세우고, 지금 자산은 인덱스에 묻어두세요.' },
+    tagline: '일찍 모은 자산은 굴리기만 하고, 생활비는 일해서 버는 유형이에요.', strong: '추가 저축 없이 시간이 자산을 불려줘요.', watch: '목표 나이까진 일해서 번 돈이 필요해요 · 완전 은퇴는 아직이에요.', match: 'barista', action: '목표 나이까지 벌 돈을 계획하고, 지금 자산은 지수에 묻어둬요.' },
   fat:     { id: 'fat',     name: '팻파이어 여유형', nick: '우아한 미식가', emoji: '🍷', c1: '#6d28d9', c2: '#a78bfa',
-    tagline: '넉넉한 자산으로 풍요롭게 즐기는 파이어.', strong: '삶의 질을 지키며 은퇴해요.', watch: '필요 자산이 커서 더 오래 모아야 해요.', match: 'lean', action: '목표 생활비부터 정하고 4%룰로 필요자산을 역산해 모으는 속도를 점검하세요.' },
+    tagline: '넉넉한 자산으로 여유롭게 즐기는 파이어예요.', strong: '삶의 질을 지키며 은퇴해요.', watch: '필요 자산이 커서 더 오래 모아야 해요.', match: 'lean', action: '목표 생활비부터 정하고 필요 자산(1년 생활비의 25배)까지 모으는 속도를 봐요.' },
   settle:  { id: 'settle',  name: '눌러앉기형', nick: '내 동네 터줏대감', emoji: '🏡', c1: '#15803d', c2: '#4ade80',
-    tagline: '익숙한 동네에서 안정적으로 머무는 현실파.', strong: '이사 비용·적응 리스크 없이 가장 현실적.', watch: '생활비 절감 여지는 적은 편.', match: 'nomad', action: '지금 동네 생활비를 유지하며 건강보험·연금 수령 시점을 최적화하세요.' },
+    tagline: '익숙한 동네에 안정적으로 머무는 현실파예요.', strong: '이사 비용·적응 부담 없이 가장 현실적이에요.', watch: '생활비를 줄일 여지는 적은 편이에요.', match: 'nomad', action: '지금 동네 생활비를 지키면서 건강보험·연금 받는 시점을 맞춰요.' },
   monthly: { id: 'monthly', name: '국내 한달살이형', nick: '국내 유랑자', emoji: '🧳', c1: '#0369a1', c2: '#38bdf8',
-    tagline: '제주·강릉·부산… 국내를 옮겨다니며 사는 타입.', strong: '비자·언어 부담 없이 새로움과 저비용을 동시에.', watch: '거점 없이 떠돌면 피로가 쌓여요.', match: 'nature', action: '제주·강릉 같은 거점 한 곳을 정해 분기마다 한 달씩 살아보세요.' },
+    tagline: '제주·강릉·부산을 옮겨 다니며 사는 유형이에요.', strong: '비자·언어 부담 없이 새로움과 저비용을 같이 누려요.', watch: '거점 없이 떠돌면 피로가 쌓여요.', match: 'nature', action: '제주·강릉 같은 거점 한 곳을 정해 분기마다 한 달씩 살아봐요.' },
   nomad:   { id: 'nomad',   name: '해외 노마드형', nick: '국경 없는 파이어', emoji: '🌏', c1: '#ea580c', c2: '#fb923c',
-    tagline: '저비용 해외에서 자유를 극대화하는 모험가.', strong: '같은 자산으로 더 오래·더 풍요롭게.', watch: '의료·비자·환율 리스크를 챙겨야 해요.', match: 'settle', action: '의료보험·비자·환율을 먼저 점검하고 저비용 도시부터 6개월 살아보세요.' },
+    tagline: '저비용 해외에서 자유를 크게 누리는 모험가예요.', strong: '같은 자산으로 더 오래, 더 여유롭게 살아요.', watch: '의료·비자·환율 리스크를 챙겨야 해요.', match: 'settle', action: '의료보험·비자·환율을 먼저 챙기고 저비용 도시에서 6개월 살아봐요.' },
   nature:  { id: 'nature',  name: '귀촌 자연형', nick: '산과 바다 은둔자', emoji: '⛰️', c1: '#4d7c0f', c2: '#a3e635',
-    tagline: '자연 속에서 느리게 사는 힐링 파이어.', strong: '낮은 생활비 + 높은 만족도.', watch: '의료·교통 접근성을 미리 따져봐야 해요.', match: 'monthly', action: '귀촌 전 의료·교통 접근성을 확인하고 텃밭·부업으로 현금흐름을 만드세요.' }
+    tagline: '자연 속에서 느리게 사는 힐링 파이어예요.', strong: '생활비는 낮고 만족도는 높아요.', watch: '의료·교통 접근성을 미리 따져봐야 해요.', match: 'monthly', action: '귀촌 전에 의료·교통을 확인하고 텃밭·부업으로 월 현금을 만들어요.' }
 };
 
 // ── 12문항 (각 보기: 유형 점수 arch + 도시 성향 축 ax) ──

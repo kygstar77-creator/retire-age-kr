@@ -1,6 +1,6 @@
 import { identityId } from './identity.js';
 
-import { SUPABASE_URL, SUPABASE_KEY, sbRpc } from './supabaseClient.js';
+import { SUPABASE_URL, SUPABASE_KEY, sbRpc, sbGet } from './supabaseClient.js';
 const TABLE = 'firemap_feedback';
 
 export const feedbackReady = Boolean(SUPABASE_URL && SUPABASE_KEY);
@@ -90,6 +90,27 @@ export async function loadOfficialNews(limit = 80) {
   if (rows === null) rows = await commGet(`${TABLE}?select=id,message,created_at,category&kind=eq.community&status=eq.visible&client_id=eq.firemap-official&order=created_at.desc&limit=${limit}`);
   if (rows === null) rows = await commGet(`${TABLE}?select=id,message,created_at&kind=eq.community&status=eq.visible&client_id=eq.firemap-official&order=created_at.desc&limit=${limit}`);
   return rows || [];
+}
+
+// 소식 화면용 — 1순위 firemap_news 테이블(자동 봇·사람 글 공용), 비어 있거나 아직 없으면 공식 글(loadOfficialNews)로 폴백.
+// 반환 행: { id, title, body, url, source, category, kind('auto'|'human'), created_at }
+export async function loadNews(limit = 80) {
+  const rows = await sbGet(`firemap_news?select=id,title,body,url,source,category,kind,created_at&order=created_at.desc&limit=${limit}`);
+  if (Array.isArray(rows) && rows.length) return rows;
+  const legacy = await loadOfficialNews(limit);
+  return (legacy || []).map((r) => {
+    const lines = String(r.message || '').split('\n');
+    return {
+      id: r.id,
+      title: (lines[0] || '').trim(),
+      body: lines.slice(1).join('\n').trim(),
+      url: null,
+      source: null,
+      category: r.category || 'news',
+      kind: 'human',
+      created_at: r.created_at
+    };
+  });
 }
 
 // 방명록(홈 플로팅 실시간 한마디): 유저 글만 최신순 — 공식 글(firemap-official)은 '소식·뉴스' 탭 담당.

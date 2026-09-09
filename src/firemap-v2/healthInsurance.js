@@ -9,16 +9,16 @@ export function assessDependentEligibility({ otherIncomeManwon = 0, financialInc
 
   const reasons = [];
   let eligible = true;
-  if (hasBusinessIncome) { eligible = false; reasons.push('사업자등록 + 소득 발생 → 즉시 자격 박탈'); }
-  if (hasRentalIncome) { eligible = false; reasons.push('주택임대소득 발생 → 즉시 자격 박탈'); }
-  if (prop > 9) { eligible = false; reasons.push('재산세 과표 9억 초과 → 소득과 무관하게 박탈'); }
+  if (hasBusinessIncome) { eligible = false; reasons.push('사업자 등록에 소득이 있으면 바로 자격을 잃어요'); }
+  if (hasRentalIncome) { eligible = false; reasons.push('주택 임대소득이 있으면 바로 자격을 잃어요'); }
+  if (prop > 9) { eligible = false; reasons.push('재산세 과표가 9억을 넘으면 소득과 상관없이 잃어요'); }
   else if (prop > 5.4) {
-    if (combinedIncome > 1000) { eligible = false; reasons.push('재산과표 5.4억~9억 구간은 합산소득 1,000만원 이하만 유지'); }
+    if (combinedIncome > 1000) { eligible = false; reasons.push('재산 과표 5.4억~9억이면 합산소득 1,000만원 이하만 유지돼요'); }
   } else if (combinedIncome > 2000) {
-    eligible = false; reasons.push('합산소득 2,000만원 초과 → 박탈');
+    eligible = false; reasons.push('합산소득이 2,000만원을 넘으면 잃어요');
   }
-  if (finIncome > 1000) reasons.push(`금융소득 ${finIncome.toLocaleString()}만원(1,000만원 초과) → 전액 합산소득에 포함`);
-  if (eligible) reasons.unshift('현재 조건에서는 피부양자 자격 유지 가능');
+  if (finIncome > 1000) reasons.push(`금융소득 ${finIncome.toLocaleString()}만원(1,000만원 초과) 이라 전액 합산소득에 들어가요`);
+  if (eligible) reasons.unshift('지금 조건이면 피부양자 자격을 유지해요');
   return { eligible, combinedIncome, reasons };
 }
 

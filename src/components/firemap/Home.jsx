@@ -47,11 +47,11 @@ export default function Home({ onStart, onMove, simulation }) {
 
       <Card variant="hero" padding="lg">
         <SectionHead kicker="1분 계산 · 가입 없음" title={<>나는 몇 살에<br />파이어할 수 있을까?</>} desc="자산·저축·생활비만 넣으면 물가·국민연금까지 반영한 현실적인 파이어 나이가 나와요." />
-        <div className="ds-row" style={{ justifyContent: 'space-between', background: 'var(--ds-surface-2)', borderRadius: 14, padding: '10px 12px', marginTop: 4 }}>
-          <span className="ds-body-sm" style={{ fontWeight: 700 }}>지금 나이</span>
+        <div className="ds-row sc-home-agebox">
+          <span className="ds-body-sm ds-bold">지금 나이</span>
           <div className="ds-row">
             <IconButton label="나이 감소" size="sm" onClick={() => setClamp(age - 1)}>−</IconButton>
-            <input aria-label="나이" className="ds-input num" style={{ width: 64, textAlign: 'center', fontSize: 18, fontWeight: 800, padding: '6px 4px' }} inputMode="numeric" value={ageStr} onChange={onAgeInput} onBlur={commitAge} />
+            <input aria-label="나이" className="ds-input num sc-home-agein" inputMode="numeric" value={ageStr} onChange={onAgeInput} onBlur={commitAge} />
             <span className="ds-body-sm">세</span>
             <IconButton label="나이 증가" size="sm" onClick={() => setClamp(age + 1)}>+</IconButton>
           </div>
@@ -59,24 +59,24 @@ export default function Home({ onStart, onMove, simulation }) {
         <Button variant="primary" size="lg" full className="ds-mt-3" onClick={() => { const a = commitAge(); track('start_calc', { age: a, from: challenge ? 'share' : 'home' }); onStart(a); }}>
           {challenge ? '나도 계산하고 친구랑 비교하기 →' : '내 파이어 나이 계산하기 →'}
         </Button>
-        {proof && <p className="ds-caption ds-textcenter ds-mt-2" style={{ marginBottom: 0 }}>{proof}</p>}
+        {proof && <p className="ds-caption ds-textcenter ds-mt-2 ds-mb-0">{proof}</p>}
       </Card>
 
       <Card variant="soft">
         <SectionHead size="sm" kicker="계산하면 이런 게 나와요" title="숫자 하나로 시작해요" />
-        <div className="ds-three" style={{ background: 'var(--ds-surface)', borderRadius: 14, padding: 6 }}>
+        <div className="ds-three sc-home-three">
           <Stat label="파이어 나이" value={<>51<span className="ds-stat__unit">세</span></>} size="md" />
           <Stat label="필요 자산" value={<>13.1<span className="ds-stat__unit">억</span></>} size="md" />
           <Stat label="같은 구간" value={<>18<span className="ds-stat__unit">%</span></>} size="md" />
         </div>
-        <p className="ds-caption ds-mt-2" style={{ marginBottom: 0 }}>예시예요. 결과에서 저축·생활비·부업 중 하나만 바꿔도 몇 년이 당겨지는지 보여줘요.</p>
+        <p className="ds-caption ds-mt-2 ds-mb-0">예시예요. 결과에서 저축·생활비·부업 중 하나만 바꿔도 몇 년이 당겨지는지 보여줘요.</p>
       </Card>
 
       <Card padding="md">
-        <SectionHead size="sm" title="🟢 파이어맵 카페" desc="인증 · 봐주세요 · 파이어 후 하루 — 파이어족 커뮤니티 본진" action={<Button as="a" href={CAFE_URL} target="_blank" rel="noopener noreferrer" variant="tint" size="sm">가기</Button>} />
+        <SectionHead size="sm" title="🟢 파이어맵 카페" desc="인증 · 봐주세요 · 파이어 후 하루 · 파이어족이 모이는 곳" action={<Button as="a" href={CAFE_URL} target="_blank" rel="noopener noreferrer" variant="tint" size="sm">가기</Button>} />
       </Card>
 
-      <p className="ds-caption ds-textcenter"><a className="ds-link" href="/privacy.html" style={{ color: 'var(--ds-ink-3)' }}>개인정보처리방침</a> · <a className="ds-link" href="/disclaimer.html" style={{ color: 'var(--ds-ink-3)' }}>면책</a> · <a className="ds-link" href="/contact.html" style={{ color: 'var(--ds-ink-3)' }}>문의</a></p>
+      <p className="ds-caption ds-textcenter"><a className="ds-link ds-link--muted" href="/privacy.html">개인정보처리방침</a> · <a className="ds-link ds-link--muted" href="/disclaimer.html">면책</a> · <a className="ds-link ds-link--muted" href="/contact.html">문의</a></p>
     </main>
   );
 }

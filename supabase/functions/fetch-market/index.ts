@@ -1,6 +1,7 @@
 // fetch-market — 파이어맵 시장 데이터 수집기 (Phase 1)
 // 무료/공개 소스(Yahoo Finance chart API, open.er-api.com)에서 지수·환율을 받아 firemap_market에 추가전용 upsert.
 // 안전 원칙: 심볼별 개별 upsert(부분 실패가 기존 행을 덮지 않음), 값 검증 실패 시 건너뜀(기존 값 유지). 입력 미신뢰(고정 소스만). 쓰기는 service_role.
+// 폴백(조사로 확인): S&P500은 FRED csv(SP500), KOSPI는 네이버 모바일 증권 JSON. 둘 다 실패하면 그 심볼만 건너뛰고 빈 값은 절대 쓰지 않음.
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
 const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
@@ -16,7 +17,10 @@ const SYMBOLS = [
 const round2 = (v: number) => Math.round(v * 100) / 100;
 const pct = (a: number, b: number) => (b > 0 && isFinite(a) && isFinite(b) ? round2((a / b - 1) * 100) : null);
 
-async function fetchSeries(ysym: string): Promise<{ closes: number[]; ts: number[] }> {
+type Series = { closes: number[]; ts: number[] };
+type Quote = { level: number; ret_1d: number | null };
+
+async function fetchSeries(ysym: string): Promise<Series> {
   const url = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(ysym)}?range=1y&interval=1d`;
   const res = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0 (firemap-fetch-market)" } });
   if (!res.ok) throw new Error(`yahoo ${ysym} ${res.status}`);
@@ -33,6 +37,37 @@ async function fetchSeries(ysym: string): Promise<{ closes: number[]; ts: number
   return { closes, ts };
 }
 
+// 폴백 1: FRED csv — S&P500 종가 일별 시계열. 값이 '.'이면 휴장(건너뜀). 최근 1년만 사용.
+async function fredSp500Series(): Promise<Series> {
+  const res = await fetch("https://fred.stlouisfed.org/graph/fredgraph.csv?id=SP500", { headers: { "User-Agent": "Mozilla/5.0 (firemap-fetch-market)" } });
+  if (!res.ok) throw new Error(`fred SP500 ${res.status}`);
+  const text = await res.text();
+  const lines = text.trim().split(/\r?\n/);
+  const closes: number[] = []; const ts: number[] = [];
+  const cutoff = Date.now() / 1000 - 370 * 86400;
+  for (let i = 1; i < lines.length; i++) {
+    const [d, v] = lines[i].split(",");
+    if (!d || v == null || v.trim() === ".") continue;
+    const n = Number(v);
+    const t = Date.parse(`${d.trim()}T00:00:00Z`) / 1000;
+    if (!isFinite(n) || n <= 0 || !isFinite(t) || t < cutoff) continue;
+    closes.push(n); ts.push(t);
+  }
+  if (closes.length < 1) throw new Error("fred SP500 no closes");
+  return { closes, ts };
+}
+
+// 폴백 2: 네이버 모바일 증권 — KOSPI 현재가·전일 대비 등락률만(시계열 없음 → 1d만 기록).
+async function naverKospiQuote(): Promise<Quote> {
+  const res = await fetch("https://m.stock.naver.com/api/index/KOSPI/basic", { headers: { "User-Agent": "Mozilla/5.0 (firemap-fetch-market)", accept: "application/json" } });
+  if (!res.ok) throw new Error(`naver KOSPI ${res.status}`);
+  const j = await res.json();
+  const level = Number(String(j?.closePrice ?? "").replace(/,/g, ""));
+  if (!isFinite(level) || level <= 0) throw new Error("naver KOSPI no closePrice");
+  const ratio = Number(String(j?.fluctuationsRatio ?? "").replace(/,/g, ""));
+  return { level: round2(level), ret_1d: isFinite(ratio) ? round2(ratio) : null };
+}
+
 async function fxUsdKrwFallback(): Promise<number | null> {
   try {
     const r = await fetch("https://open.er-api.com/v6/latest/USD");
@@ -40,6 +75,21 @@ async function fxUsdKrwFallback(): Promise<number | null> {
     const v = j?.rates?.KRW;
     return typeof v === "number" && v > 0 ? round2(v) : null;
   } catch { return null; }
+}
+
+function statsFromSeries({ closes, ts }: Series, year: number) {
+  const n = closes.length;
+  const last = closes[n - 1];
+  const back = (k: number) => (n - 1 - k >= 0 ? closes[n - 1 - k] : NaN);
+  let ytdBase = NaN;
+  for (let i = 0; i < ts.length; i++) { if (new Date(ts[i] * 1000).getUTCFullYear() === year) { ytdBase = closes[i]; break; } }
+  return {
+    level: round2(last),
+    ret_1d: pct(last, back(1)),
+    ret_7d: pct(last, back(5)),
+    ret_30d: pct(last, back(21)),
+    ret_ytd: pct(last, ytdBase),
+  };
 }
 
 async function upsertOne(row: Record<string, unknown>) {
@@ -68,19 +118,23 @@ Deno.serve(async (_req: Request) => {
       let ret_1d: number | null = null, ret_7d: number | null = null, ret_30d: number | null = null, ret_ytd: number | null = null;
       let source = "yahoo";
       try {
-        const { closes, ts } = await fetchSeries(meta.ysym);
-        const n = closes.length;
-        const last = closes[n - 1];
-        const back = (k: number) => (n - 1 - k >= 0 ? closes[n - 1 - k] : NaN);
-        level = round2(last);
-        ret_1d = pct(last, back(1));
-        ret_7d = pct(last, back(5));
-        ret_30d = pct(last, back(21));
-        let ytdBase = NaN;
-        for (let i = 0; i < ts.length; i++) { if (new Date(ts[i] * 1000).getUTCFullYear() === year) { ytdBase = closes[i]; break; } }
-        ret_ytd = pct(last, ytdBase);
+        const s = statsFromSeries(await fetchSeries(meta.ysym), year);
+        level = s.level; ret_1d = s.ret_1d; ret_7d = s.ret_7d; ret_30d = s.ret_30d; ret_ytd = s.ret_ytd;
       } catch (e) {
-        if (meta.asset_class === "fx") {
+        // 심볼별 폴백 — 폴백도 실패하면 원래 에러를 던져 이 심볼만 건너뜀(기존 행 유지)
+        if (meta.ysym === "^GSPC") {
+          try {
+            const s = statsFromSeries(await fredSp500Series(), year);
+            level = s.level; ret_1d = s.ret_1d; ret_7d = s.ret_7d; ret_30d = s.ret_30d; ret_ytd = s.ret_ytd;
+            source = "fred";
+          } catch (e2) { throw new Error(`${String((e as Error)?.message || e)} / ${String((e2 as Error)?.message || e2)}`); }
+        } else if (meta.ysym === "^KS11") {
+          try {
+            const q = await naverKospiQuote();
+            level = q.level; ret_1d = q.ret_1d;
+            source = "naver";
+          } catch (e2) { throw new Error(`${String((e as Error)?.message || e)} / ${String((e2 as Error)?.message || e2)}`); }
+        } else if (meta.asset_class === "fx") {
           const fx = await fxUsdKrwFallback();
           if (fx != null) { level = fx; source = "open.er-api.com"; }
           else throw e;

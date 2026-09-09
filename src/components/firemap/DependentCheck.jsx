@@ -1,101 +1,98 @@
+// 파이어 후 건보료 — 결론(피부양자 유지/박탈 + 월 건보료) StatHero 위, 조건 입력 아래. TopBar는 FireMapMVP 도구 래퍼가 그려요.
 import { useState } from 'react';
+import { Card, SectionHead, RangeField, StatHero, Tabs, Chips, Chip, Notice, Button, toast } from '../../ui/index.js';
 import { assessDependentEligibility, estimateLocalPremium, estimateBaristaPremium } from '../../firemap-v2/healthInsurance.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 
-function NumField({ label, unit, value, set, step = 100 }) {
-  return (
-    <label className="fm-dc-field">
-      <span>{label}</span>
-      <span className="fm-dc-input">
-        <button type="button" onClick={() => set(Math.max(0, value - step))} aria-label="감소">−</button>
-        <input inputMode="numeric" value={value} onChange={(e) => set(Math.max(0, Number(e.target.value.replace(/[^0-9]/g, '')) || 0))} />
-        <button type="button" onClick={() => set(value + step)} aria-label="증가">+</button>
-        <em>{unit}</em>
-      </span>
-    </label>
-  );
-}
+const eok = (n) => formatWon(Math.round(n || 0));
+const toMan = (won) => Math.round((Number(won) || 0) / 10000);
 
 export default function DependentCheck({ inputs, onApply }) {
-  const [other, setOther] = useState(0);
-  const [fin, setFin] = useState(0);
-  const [prop, setProp] = useState(3);
+  const [other, setOther] = useState(0);          // 금융 외 소득(연, 원)
+  const [fin, setFin] = useState(0);              // 금융소득(연, 원)
+  const [prop, setProp] = useState(3);            // 재산세 과세표준(억)
   const [biz, setBiz] = useState(false);
   const [rental, setRental] = useState(false);
-  const [mode, setMode] = useState('local'); // 'local' 지역가입자 | 'barista' 바리스타 파이어(직장가입자)
-  const [wage, setWage] = useState(100);      // 월 파트타임 급여(보수월액, 만원)
+  const [mode, setMode] = useState('local');      // local 지역가입자 | barista 직장가입자 유지
+  const [wage, setWage] = useState(1000000);      // 월 급여(원)
 
-  const r = assessDependentEligibility({ otherIncomeManwon: other, financialIncomeManwon: fin, propertyTaxBaseEok: prop, hasBusinessIncome: biz, hasRentalIncome: rental });
+  const r = assessDependentEligibility({ otherIncomeManwon: toMan(other), financialIncomeManwon: toMan(fin), propertyTaxBaseEok: prop, hasBusinessIncome: biz, hasRentalIncome: rental });
   const est = estimateLocalPremium({ chargeableIncomeManwon: r.combinedIncome, propertyTaxBaseEok: prop });
-  const bar = estimateBaristaPremium({ wageMonthlyManwon: wage, otherIncomeManwon: other, financialIncomeManwon: fin });
-  const saving = est.monthly - bar.monthly; // 지역 대비 바리스타 절감(원/월)
+  const bar = estimateBaristaPremium({ wageMonthlyManwon: toMan(wage), otherIncomeManwon: toMan(other), financialIncomeManwon: toMan(fin) });
+  const saving = est.monthly - bar.monthly;
   const applyMonthly = mode === 'barista' ? bar.monthly : est.monthly;
+  const applied = Number(inputs?.healthInsuranceEnabled) > 0;
+  const appliedMonthly = Number(inputs?.monthlyHealthInsurance) || 0;
+  const finMan = toMan(fin);
+
+  // 판정 근거 — 해요체 한 줄씩
+  const why = [];
+  if (biz) why.push('사업자 소득이 있으면 바로 박탈돼요');
+  if (rental) why.push('주택임대소득이 있으면 바로 박탈돼요');
+  if (prop > 9) why.push('재산세 과표 9억을 넘으면 소득과 상관없이 박탈돼요');
+  else if (prop > 5.4 && r.combinedIncome > 1000) why.push('재산 5.4억~9억 구간은 합산소득 1,000만원까지만 유지돼요');
+  else if (r.combinedIncome > 2000) why.push('합산소득 2,000만원을 넘으면 박탈돼요');
+  if (finMan > 1000) why.push('금융소득이 1,000만원을 넘어 전액 합산돼요');
+
+  const hero = mode === 'local'
+    ? {
+      label: r.eligible ? '피부양자 유지 가능 · 지역가입자가 되면 월' : '피부양자 박탈 · 지역가입자로 바뀌면 월',
+      value: eok(est.monthly),
+      sub: r.eligible ? '지금은 0원이에요 · 소득·재산이 기준을 넘으면 이 금액을 내요' : '회사 없이 혼자 내는 건강보험이에요 · 재산도 같이 잡혀요',
+      tiles: [
+        { label: '소득 보험료', value: eok(est.incomeMonthly) },
+        { label: '재산 보험료', value: eok(est.propMonthly) },
+        { label: '합산소득 · 연', value: eok(r.combinedIncome * 10000) }
+      ]
+    }
+    : {
+      label: '바리스타 파이어면 월 건보료',
+      value: eok(bar.monthly),
+      sub: saving > 0 ? <>완전 은퇴보다 월 <b className="num">{eok(saving)}</b> 덜 내요 · 재산은 안 잡혀요</> : '이 조건에선 지역가입자가 더 유리할 수 있어요',
+      tiles: [
+        { label: '급여 보험료', value: eok(bar.wagePremium) },
+        { label: '소득월액 보험료', value: bar.overThreshold ? eok(bar.incomePremium) : '0원' },
+        { label: '완전 은퇴면', value: eok(est.monthly) }
+      ]
+    };
 
   return (
-    <section className="fm-card fm-text-card fm-advanced-section">
-      <p className="fm-kicker">파이어 후 건보료</p>
-      <h2>파이어 후 건보료, 얼마 낼까?</h2>
-      <p>파이어 후 피부양자로 남을 수 있는지 + 지역가입자가 되면 <b>월 건보료가 얼마</b>인지 추정해요. 바리스타 파이어(파트타임으로 직장가입자 유지)와도 비교돼요. (참고용 근사 · 공단 확인 필요)</p>
+    <>
+      <StatHero tone="dark" label={hero.label} value={hero.value} sub={hero.sub} tiles={hero.tiles} />
 
-      <div className="fm-dc-mode" style={{ display: 'flex', gap: 8, margin: '4px 0 12px' }}>
-        <button type="button" onClick={() => setMode('local')} className={mode === 'local' ? 'on' : ''} style={{ flex: 1, padding: '10px 8px', borderRadius: 12, border: mode === 'local' ? '1.5px solid #2563eb' : '1px solid #e5e7eb', background: mode === 'local' ? '#eff6ff' : '#fff', fontWeight: 700, fontSize: 13, color: mode === 'local' ? '#1d4ed8' : '#6b7280', cursor: 'pointer' }}>완전 은퇴 (지역가입자)</button>
-        <button type="button" onClick={() => setMode('barista')} className={mode === 'barista' ? 'on' : ''} style={{ flex: 1, padding: '10px 8px', borderRadius: 12, border: mode === 'barista' ? '1.5px solid #ff5a00' : '1px solid #e5e7eb', background: mode === 'barista' ? '#fff4ec' : '#fff', fontWeight: 700, fontSize: 13, color: mode === 'barista' ? '#c2410c' : '#6b7280', cursor: 'pointer' }}>☕ 바리스타 파이어 (직장가입자)</button>
-      </div>
+      <Tabs items={[{ key: 'local', label: '완전 은퇴' }, { key: 'barista', label: '☕ 바리스타 파이어' }]} value={mode} onChange={setMode} label="가입 형태" />
 
-      <div className="fm-dc-fields">
-        {mode === 'barista' && <NumField label="월 파트타임 급여(보수월액)" unit="만원" value={wage} set={setWage} step={10} />}
-        <NumField label="금융 외 보수외소득(임대·연금·사업, 연)" unit="만원" value={other} set={setOther} step={100} />
-        <NumField label="금융소득(이자+배당, 연)" unit="만원" value={fin} set={setFin} step={100} />
-        {mode === 'local' && <NumField label="재산세 과세표준" unit="억" value={prop} set={setProp} step={1} />}
+      <Card>
+        <SectionHead size="sm" kicker="파이어 후 조건" title={mode === 'local' ? '소득과 재산을 넣어요' : '급여와 소득을 넣어요'} desc={mode === 'local' ? '1년 기준 · 금융소득은 1,000만원을 넘어야 합산돼요' : '파트타임으로 직장가입자를 유지하는 경우예요'} />
+        {mode === 'barista' && <RangeField label="월 급여" value={wage} min={0} max={5000000} step={100000} money format={eok} chips={[100000, 500000, 1000000]} onChange={setWage} />}
+        <RangeField label="금융 외 소득 · 연" value={other} min={0} max={50000000} step={1000000} money format={eok} chips={[1000000, 5000000, 10000000]} onChange={setOther} hint="임대·연금·사업 소득을 합쳐요" />
+        <RangeField label="금융소득 · 연" value={fin} min={0} max={50000000} step={1000000} money format={eok} chips={[1000000, 5000000, 10000000]} onChange={setFin} hint="이자와 배당을 합쳐요" />
+        {mode === 'local' && <RangeField label="재산세 과세표준" value={prop} min={0} max={20} step={0.5} format={(v) => `${Number(v) || 0}억`} onChange={setProp} hint="집·땅의 재산세 과세표준이에요 · 시세보다 낮아요" />}
         {mode === 'local' && (
-          <div className="fm-dc-toggles">
-            <button type="button" className={biz ? 'on' : ''} onClick={() => setBiz(!biz)}>사업자+소득</button>
-            <button type="button" className={rental ? 'on' : ''} onClick={() => setRental(!rental)}>주택임대소득</button>
-          </div>
+          <Chips className="ds-mt-2">
+            <Chip on={biz} onClick={() => setBiz(!biz)}>사업자 소득 있어요</Chip>
+            <Chip on={rental} onClick={() => setRental(!rental)}>주택임대소득 있어요</Chip>
+          </Chips>
         )}
-      </div>
+      </Card>
 
-      {mode === 'local' ? (
-        <>
-          <div className={`fm-dc-result ${r.eligible ? 'ok' : 'no'}`}>
-            <strong>{r.eligible ? '피부양자 자격 유지 가능' : '피부양자 자격 박탈 가능'}</strong>
-            <small>합산소득 {r.combinedIncome.toLocaleString()}만원 기준</small>
-            <ul>{r.reasons.map((t) => <li key={t}>{t}</li>)}</ul>
-          </div>
-          <div className="fm-dc-prem">
-            <div className="fm-dc-prem-row"><span>지역가입자가 되면 예상 월 건보료</span><b>약 {formatWon(est.monthly)}</b></div>
-            <small>소득보험료 약 {formatWon(est.incomeMonthly)} + 재산보험료 약 {formatWon(est.propMonthly)} · 장기요양 포함 · 2026 요율(7.19%)·점수단가 211.5원·재산 1억 공제 근사. 정확한 금액은 공단 확인.</small>
-            {r.eligible && <p className="fm-dc-prem-note">지금은 피부양자라 0원이지만, 위 소득·재산을 넘으면 이 금액을 내게 돼요.</p>}
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="fm-dc-prem" style={{ background: '#fff4ec', borderColor: '#ffd9c2' }}>
-            <div className="fm-dc-prem-row"><span>바리스타 파이어 시 예상 월 건보료</span><b>약 {formatWon(bar.monthly)}</b></div>
-            <small>
-              보수월액보험료 약 {formatWon(bar.wagePremium)}(급여 {formatWon(wage * 10000)} × 7.19% × 50% 근로자부담)
-              {bar.overThreshold
-                ? ` + 소득월액보험료 약 ${formatWon(bar.incomePremium)}(합산 보수외소득 ${bar.combinedOther.toLocaleString()}만원 중 2,000만원 초과분)`
-                : ' · 보수외소득 2,000만원 이하 → 추가 없음'} · 장기요양 포함 · 2026 요율.
-            </small>
-            <p className="fm-dc-prem-note">
-              ☕ 직장가입자라 <b>재산은 건보료에 안 잡혀요.</b> 이자·배당은 연 1,000만원까지는 건보료에 안 잡히고, 합산 보수외소득(금융소득+임대·연금·사업)이 <b>2,000만원 넘는 부분부터</b> 소득월액보험료가 추가돼요.
-            </p>
-          </div>
-          <div className="fm-dc-prem" style={{ marginTop: 8 }}>
-            <div className="fm-dc-prem-row"><span>완전 은퇴(지역가입자) 시</span><b>약 {formatWon(est.monthly)}</b></div>
-            {saving > 0
-              ? <p className="fm-dc-prem-note" style={{ color: '#c2410c', fontWeight: 700 }}>→ 바리스타 파이어 시 월 약 {formatWon(saving)} 절감 (자산 기반 지역 건보료 회피)</p>
-              : <p className="fm-dc-prem-note">→ 이 조건에선 지역가입자가 더 유리할 수 있어요(급여·소득에 따라 달라짐).</p>}
-          </div>
-        </>
+      {mode === 'local' && (
+        <Notice tone={r.eligible ? 'good' : 'warn'} icon={r.eligible ? '✅' : '⚠️'} title={r.eligible ? '피부양자 유지 가능' : '피부양자 박탈 가능'}>
+          {why.length > 0 ? why.map((t) => <p key={t} className="ds-caption ds-mb-0">{t}</p>) : <p className="ds-caption ds-mb-0">지금 조건이면 기준 안이에요</p>}
+        </Notice>
+      )}
+      {mode === 'barista' && (
+        <Notice tone="accent" icon="☕">
+          직장가입자라 재산은 건보료에 안 잡혀요 · 금융소득 외 소득이 <b className="num">2,000만원</b>을 넘는 부분부터 추가돼요
+        </Notice>
       )}
 
-      {Number(inputs?.healthInsuranceEnabled) > 0
-        ? <button type="button" className="fm-dc-apply on" onClick={() => onApply({ healthInsuranceEnabled: 0, monthlyHealthInsurance: 0 })}>✓ 건보료가 결과에 반영됨 (월 {formatWon(Number(inputs?.monthlyHealthInsurance) || 0)}) · 해제</button>
-        : <button type="button" className="fm-dc-apply" onClick={() => onApply({ healthInsuranceEnabled: 1, monthlyHealthInsurance: applyMonthly })}>이 건보료(월 {formatWon(applyMonthly)})를 내 파이어 계산에 반영하기</button>}
+      {applied
+        ? <Button variant="secondary" size="md" full onClick={() => { onApply({ healthInsuranceEnabled: 0, monthlyHealthInsurance: 0 }); toast('건보료 반영을 해제했어요'); }}>✓ 반영 중 · 월 {eok(appliedMonthly)} · 해제</Button>
+        : <Button variant="primary" size="md" full onClick={() => { onApply({ healthInsuranceEnabled: 1, monthlyHealthInsurance: applyMonthly }); toast.good('건보료를 반영했어요. 결과 숫자가 바뀌어요'); }}>월 {eok(applyMonthly)} 내 파이어 계산에 반영</Button>}
 
-      <p className="fm-dc-foot" style={{ fontSize: 11, color: '#9aa3bf', marginTop: 10, lineHeight: 1.5 }}>추정치예요(2026년 요율 기준). 분리과세 이자·배당 등 일부 예외는 단순화했어요. 정확한 금액은 국민건강보험공단에서 확인하세요. 투자·세무 조언이 아닙니다. · 출처: 국민건강보험공단·보건복지부 2026 요율</p>
-    </section>
+      <p className="ds-caption ds-textcenter">2026 요율 기준 추정이에요 · 정확한 금액은 건강보험공단에서 확인해요</p>
+      <p className="ds-caption ds-textcenter">참고용 계산이에요 · 투자 자문이 아니에요</p>
+    </>
   );
 }

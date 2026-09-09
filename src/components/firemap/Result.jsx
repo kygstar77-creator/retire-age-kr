@@ -100,7 +100,7 @@ function ReverseMode({ simulation, onOpenShare }) {
   return (
     <>
       <StatHero tone="dark" label={`${eok(debounced)}이면`} value={age ? `${age}세` : '아직'} unit={age ? '' : ''} sub={age ? `${age}세에 파이어 가능 · 필요 자산까지 ${gap > 0 ? `${eok(gap)} 부족` : '충분'}` : '이 자산만으론 70세까지도 어려워요 · 생활비를 낮춰보세요'}>
-        <div style={{ marginTop: 10 }}>
+        <div className="ds-mt-2-5">
           <RangeField label="자산이" value={asset} min={100000000} max={3000000000} step={50000000} money format={eok} onChange={setAsset} />
         </div>
       </StatHero>
@@ -154,7 +154,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
           sessionStorage.setItem(key, '1');
         }
       } catch { /* ignore */ }
-      const [r, a, b] = await Promise.all([fetchUserRank(rankEarliest), fetchAggregates(), fetchUserRank(rankEarliest, undefined, undefined, myBand)]);
+      const [r, a, b] = await Promise.all([fetchUserRank(rankEarliest), fetchAggregates(base.ageBand), fetchUserRank(rankEarliest, undefined, undefined, myBand)]);
       if (alive) { setLive(r); setAgg(a); setBandRank(b); }
     })();
     return () => { alive = false; };
@@ -193,7 +193,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
               { label: `같은 구간 · ${ASSET_BAND_LABELS[myBand]}`, value: bandRank ? `상위 ${bandRank.percentile}%` : (live ? `${live.position.toLocaleString()}등` : '집계 중'), onClick: () => onMove('ranking') }
             ]}
           >
-            {live && <p className="ds-caption ds-mt-3" style={{ margin: '12px 0 0' }}>함께 계산한 {live.total.toLocaleString()}명 중 {live.position.toLocaleString()}등 · 등수는 세전 공정 비교</p>}
+            {live && <p className="ds-caption ds-mt-3 ds-mt-3">함께 계산한 {live.total.toLocaleString()}명 중 {live.position.toLocaleString()}등 · 등수는 세전 공정 비교</p>}
           </StatHero>
 
           <Card>
@@ -201,7 +201,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
             <LeverList items={levers.items} />
           </Card>
 
-          <div className="ds-bottomcta" style={{ marginTop: 0 }}>
+          <div className="ds-bottomcta ds-mt-0">
             <Button variant="secondary" size="lg" onClick={() => onMove('experiment')}>🎛️ 바꿔보기</Button>
             <Button variant="primary" size="lg" onClick={() => { track('cert_open', {}); setShareOpen(true); }}>🪪 인증 카드</Button>
           </div>
@@ -220,7 +220,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
                   <div key={c.city} className="ds-row-item ds-row-item--S ds-row-item--static">
                     <span className="ds-row-item__lead">{c.flag}</span>
                     <span className="ds-row-item__body"><span className="ds-row-item__title">{c.city}</span><span className="ds-row-item__desc">월 {formatWon(c.krw)} · {c.runway}까지</span></span>
-                    <span className="ds-row-item__trail num" style={{ color: 'var(--ds-good)' }}>+{c.gain}년</span>
+                    <span className="ds-row-item__trail num ds-good">+{c.gain}년</span>
                   </div>
                 ))}
               </div>
@@ -231,7 +231,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
             <Button variant="secondary" size="md" full onClick={() => onMove('firetype')}>유형 테스트 하기</Button>
           </Fold>
 
-          <p className="ds-caption ds-textcenter">통계청 2025 가계금융복지조사 · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)} · 참고용 시뮬레이션</p>
+          <p className="ds-caption ds-textcenter">통계청 2024 가계금융복지조사 · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)} · 참고용 계산이에요 · 투자 자문이 아니에요</p>
         </>
       )}
 

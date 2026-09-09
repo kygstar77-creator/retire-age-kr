@@ -1,0 +1,8 @@
+/* 내 계정(account) — 화면 전용. 카카오 브랜드색은 여기 한 번만 정의한다. */
+:root { --sc-kakao: #FEE500; --sc-kakao-ink: #191600; }
+
+.sc-acct-kakao.ds-btn { background: var(--sc-kakao); color: var(--sc-kakao-ink); border-color: var(--sc-kakao); }
+.sc-acct-kakao.ds-btn:hover { background: var(--sc-kakao); opacity: .92; }
+.sc-acct-or { display: flex; align-items: center; gap: 10px; margin: 12px 0; font-size: var(--ds-fs-caption); color: var(--ds-ink-3); }
+.sc-acct-or::before, .sc-acct-or::after { content: ''; flex: 1; height: 1px; background: var(--ds-line); }
+.sc-acct-withdraw { display: block; margin: 4px auto 0; background: none; border: 0; padding: 6px 8px; font: inherit; font-size: var(--ds-fs-caption); color: var(--ds-ink-3); text-decoration: underline; cursor: pointer; }

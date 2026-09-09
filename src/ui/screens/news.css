@@ -1,0 +1,35 @@
+/* 소식 화면(.sc-news-*) — 토큰만 사용. 지표 목록 · 이야기 · 소식 목록 펼침 */
+.sc-news-idx-list { display: flex; flex-direction: column; }
+.sc-news-idx {
+  display: flex; align-items: center; gap: var(--ds-sp-2);
+  min-height: 40px; padding: 6px 0; border-bottom: 1px solid var(--ds-line);
+}
+.sc-news-idx:last-child { border-bottom: 0; }
+.sc-news-idx__label { flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 6px; font-size: var(--ds-fs-body-sm); font-weight: 700; color: var(--ds-ink-2); word-break: keep-all; }
+.sc-news-idx__sub { font-size: var(--ds-fs-caption); font-weight: 600; color: var(--ds-ink-3); }
+.sc-news-idx__value { flex: 0 0 auto; font-size: 16px; font-weight: 800; color: var(--ds-ink); white-space: nowrap; letter-spacing: -.01em; }
+.sc-news-idx__unit { margin-left: 2px; font-size: var(--ds-fs-caption); font-weight: 700; color: var(--ds-ink-3); }
+.sc-news-idx__delta { flex: 0 0 auto; min-width: 84px; text-align: right; font-size: var(--ds-fs-caption); font-weight: 800; white-space: nowrap; }
+.sc-news-idx__delta--up { color: var(--ds-bad); }
+.sc-news-idx__delta--down { color: var(--ds-accent-ink); }
+.sc-news-idx__delta--flat { color: var(--ds-ink-3); }
+.sc-news-idx__dl { margin-left: 4px; font-weight: 600; color: var(--ds-ink-3); }
+.sc-news-cap { margin: 0; word-break: keep-all; }
+
+.sc-news-story { margin: 0; font-size: var(--ds-fs-body); line-height: 1.6; color: var(--ds-ink); word-break: keep-all; }
+.sc-news-more { display: inline-block; margin-top: var(--ds-sp-3); font-size: var(--ds-fs-body-sm); }
+.sc-news-exp { margin-left: 6px; }
+
+.sc-news-cats { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding-bottom: 2px; }
+.sc-news-cats::-webkit-scrollbar { display: none; }
+.sc-news-cats .ds-tabs__item { white-space: nowrap; }
+
+.sc-news-item { border-bottom: 1px solid var(--ds-line); }
+.sc-news-item:last-child { border-bottom: 0; }
+.sc-news-item .ds-row-item { border-bottom: 0; }
+.sc-news-item--open .ds-row-item__chev { transform: rotate(90deg); }
+.sc-news-title { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; word-break: keep-all; }
+.sc-news-auto { flex: 0 0 auto; }
+.sc-news-body { padding: 0 14px 14px 52px; }
+.sc-news-body__text { white-space: pre-line; word-break: keep-all; }
+.sc-news-body .ds-link { display: inline-block; margin-top: var(--ds-sp-2); font-size: var(--ds-fs-body-sm); }

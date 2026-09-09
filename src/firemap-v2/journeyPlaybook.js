@@ -16,13 +16,13 @@ export const PLAYBOOK = {
       { ico: '🔒', label: '내 프로필 만들어 기록 지키기', to: 'account' }
     ],
     weekly: { mission: { ico: '🧭', label: '내 파이어 유형 정하고 결과 저장하기', to: 'result' },
-      reads: [g('fire-types', '파이어 종류 — 린·팻·코스트·바리스타'), g('fire-by-age', '나이별 파이어 전략'), g('four-percent-rule', '4% 룰이란?'), g('inflation-retirement', '물가와 은퇴 자금')] },
+      reads: [g('fire-types', '파이어 종류 — 린·팻·코스트·바리스타'), g('fire-by-age', '나이별 파이어 전략'), g('four-percent-rule', '필요 자산은 어떻게 정해요?'), g('inflation-retirement', '물가와 은퇴 자금')] },
     monthly: { title: '이번 달 점검 · 각성', to: 'result',
       items: ['내 파이어 나이를 다시 확인했나요?', '결과를 프로필에 저장했나요?', '파이어 유형(린/팻/코스트)을 정했나요?'] },
     yearly: { title: '올해 회고 · 각성', to: 'result',
       items: ['올해 파이어 목표를 글로 적어봤나요?', '내 파이어 유형이 바뀌었나요?'] },
     tips: [
-      '4% 룰은 미국 가정 — 한국은 물가·세금·건보까지 따로 봐야 현실적이에요.',
+      '필요 자산은 1년 생활비의 25배예요. 한국은 물가·세금·건보까지 같이 봐야 맞아요.',
       '파이어는 숫자가 아니라 선택지예요. 일을 안 해도 되는 자유가 목적.',
       '얼마 모았나보다 몇 년치 생활비를 모았나로 보면 진도가 또렷해요.'
     ] },
@@ -66,14 +66,14 @@ export const PLAYBOOK = {
     daily: [
       { ico: '📍', label: '지방 살면 몇 년 빨라지나 보기', to: 'cities' },
       { ico: '💵', label: '배당으로 월 현금흐름 만들어보기', to: 'dividend' },
-      { ico: '📊', label: '또래 추월했는지 파이어 지수에서 확인', to: 'index' },
+      { ico: '📊', label: '또래 추월했는지 파이어 지수에서 확인', to: 'ranking' },
       { ico: '🏠', label: '지방·주택 다운사이징 읽기', href: '/guide/real-estate-downsizing.html' }
     ],
     weekly: { mission: { ico: '📈', label: '바꿔보기에서 ‘생활비·부업·수익률’ 중 1개를 바꿔 저장하기', to: 'experiment' },
       reads: [g('real-estate-downsizing', '지방·주택 다운사이징'), g('southeast-asia-retirement', '동남아 은퇴'), g('post-retirement-side-jobs', '파이어 후 부업'), hub('/guide/region-plan/', '지역×가구별 파이어 플랜'), hub('/guide/regions/', '지역별 생활비·필요자산')] },
-    monthly: { title: '이번 달 점검 · 가속', to: 'tools',
+    monthly: { title: '이번 달 점검 · 가속', to: 'menu',
       items: ['이번 달 순자산이 늘었나요?', '생활비를 더 낮출 지역을 살펴봤나요?', '부업·배당 현금흐름을 점검했나요?'] },
-    yearly: { title: '올해 회고 · 가속', to: 'tools',
+    yearly: { title: '올해 회고 · 가속', to: 'menu',
       items: ['올해 파이어 나이를 몇 년 당겼나요?', '거주지·부업 전략을 바꿔볼까요?'] },
     tips: [
       '지방으로 옮겨 생활비를 월 50만 줄이면 필요 자산이 수억 줄기도 해요.',
@@ -101,10 +101,10 @@ export const PLAYBOOK = {
   6: { // 파이어 — 도달 & 이후
     daily: [
       { ico: '🪜', label: '인출 전략 점검하기', to: 'dividend' },
-      { ico: '💬', label: '파이어족 커뮤니티 둘러보기', to: 'community' },
+      { ico: '💬', label: '방명록 둘러보기', to: 'wall' },
       { ico: '🧾', label: '배당과 건강보험료 관계 읽기', href: '/guide/dividend-health-insurance.html' }
     ],
-    weekly: { mission: { ico: '🏝️', label: '인출 전략 점검 + 커뮤니티에 한 줄 남기기', to: 'community' },
+    weekly: { mission: { ico: '🏝️', label: '인출 순서 점검하고 방명록에 한 줄 남기기', to: 'wall' },
       reads: [g('withdrawal-order-strategy', '인출 순서 전략'), g('dividend-health-insurance', '배당과 건강보험료'), g('dividend-tax-thresholds', '배당 소득세 기준')] },
     monthly: { title: '이번 달 점검 · 파이어', to: 'dividend',
       items: ['이번 달 현금흐름이 생활비를 덮었나요?', '인출이 계획 범위 안이었나요?', '건보료·세금 변동을 확인했나요?'] },

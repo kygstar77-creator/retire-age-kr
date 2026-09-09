@@ -85,7 +85,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
             { label: '내 등수', value: data.me ? `${data.me.position.toLocaleString()}등` : '—' }
           ]}
         >
-          {needMonthly != null && nearAbove && <p className="ds-caption" style={{ margin: '12px 0 0' }}>바로 위 {displayName(nearAbove)}({nearAbove.earliest_age}세)까지 {needMonthly === 0 ? '거의 다 왔어요' : `월 +${formatWon(needMonthly)} 저축이면 제쳐요`}</p>}
+          {needMonthly != null && nearAbove && <p className="ds-caption ds-mt-3">바로 위 {displayName(nearAbove)}({nearAbove.earliest_age}세)까지 {needMonthly === 0 ? '거의 다 왔어요' : `월 +${formatWon(needMonthly)} 저축이면 제쳐요`}</p>}
         </StatHero>
       )}
       {calculated && board === 'save' && (
@@ -93,8 +93,8 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
       )}
 
       <ListGroup label={`${scopeLabel} 상위 10`}>
-        {data.loading && <div style={{ padding: 14 }}><Skeleton lines={4} /></div>}
-        {!data.loading && data.top && data.top.length === 0 && <div style={{ padding: 14 }}><p className="ds-caption" style={{ margin: 0 }}>아직 기록이 적어요. 첫 랭커가 되어보세요!</p></div>}
+        {data.loading && <div className="ds-p-3-5"><Skeleton lines={4} /></div>}
+        {!data.loading && data.top && data.top.length === 0 && <div className="ds-p-3-5"><p className="ds-caption ds-m-0">아직 기록이 적어요. 첫 랭커가 되어봐요.</p></div>}
         {!data.loading && data.top && data.top.map((r, i) => {
           const mine = r.client_id && ids.includes(r.client_id);
           return <ListRow key={i} className={`ds-rank-row${mine ? ' ds-rank-row--me' : ''}`} lead={medal(i)} title={`${mine && acctHandle ? acctHandle : displayName(r)}${mine ? ' (나)' : ''}`} desc={r.age_band ? `${r.age_band}대` : undefined} trail={<span className="num">{rowValue(r)}</span>} chevron={false} size="S" />;
@@ -105,7 +105,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
       </ListGroup>
 
       <p className="ds-caption ds-textcenter">✋ 모든 순위는 직접 입력한 기록 기반 · 자산은 구간만 저장돼요</p>
-      <div className="ds-bottomcta" style={{ marginTop: 0 }}>
+      <div className="ds-bottomcta ds-mt-0">
         <Button variant="secondary" size="md" onClick={() => onMove(board === 'save' ? 'save' : 'experiment')}>{board === 'save' ? '저축 기록하기' : '조건 바꿔 올리기'}</Button>
         <Button variant="tint" size="md" onClick={() => onMove('result')}>🪪 인증 카드</Button>
       </div>

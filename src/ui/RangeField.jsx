@@ -7,6 +7,7 @@ import { Chips, Chip } from './Chip.jsx';
 const cx = (...a) => a.filter(Boolean).join(' ');
 
 const clean = (v) => Number(String(v ?? '').replace(/[^\d.-]/g, '')) || 0;
+const allowDecimal = (step) => step != null && step > 0 && step < 1;
 function niceStep(span) {
   const raw = span / 200;
   if (!(raw > 0)) return 1;
@@ -31,7 +32,7 @@ export function RangeField({ label, value, min = 0, max = 100, step, format = (v
     <div className={cx('ds-range', empty && 'ds-range--empty', className)}>
       <div className="ds-range__head">
         <span className="ds-range__label">{label}</span>
-        <button type="button" className="ds-range__value num" onClick={() => { setDraft(String(Math.round(numeric))); setEditing(true); }} aria-label={`${label} 직접 입력`}>
+        <button type="button" className="ds-range__value num" onClick={() => { setDraft(String(allowDecimal(step) ? numeric : Math.round(numeric))); setEditing(true); }} aria-label={`${label} 직접 입력`}>
           {format(numeric)}<span className="ds-range__edit">✎</span>
         </button>
       </div>
@@ -44,9 +45,9 @@ export function RangeField({ label, value, min = 0, max = 100, step, format = (v
       )}
       {empty ? <p className="ds-range__hint ds-range__hint--warn">아직 0이에요. 대략이라도 넣어야 계산이 맞아요.</p> : (hint && <p className="ds-range__hint">{hint}</p>)}
       <Sheet open={editing} title={label} onClose={() => setEditing(false)}>
-        <p className="ds-body-sm" style={{ margin: '0 0 10px' }}>{money ? '슬라이더 최댓값보다 큰 금액도 넣을 수 있어요.' : '숫자만 입력해요.'}</p>
-        <input className="ds-input num" autoFocus inputMode="numeric" pattern="[0-9]*" value={draft} onChange={(e) => setDraft(e.target.value.replace(/[^0-9]/g, ''))} onKeyDown={(e) => { if (e.key === 'Enter') commit(); }} />
-        <p className="ds-caption" style={{ margin: '6px 0 0' }}>= {format(clean(draft))}</p>
+        <p className="ds-body-sm ds-mb-2-5">{money ? '슬라이더 최댓값보다 큰 금액도 넣을 수 있어요.' : '숫자만 입력해요.'}</p>
+        <input className="ds-input num" autoFocus inputMode={allowDecimal(step) ? 'decimal' : 'numeric'} value={draft} onChange={(e) => setDraft(e.target.value.replace(allowDecimal(step) ? /[^0-9.]/g : /[^0-9]/g, ''))} onKeyDown={(e) => { if (e.key === 'Enter') commit(); }} />
+        <p className="ds-caption ds-mt-1-5">= {format(clean(draft))}</p>
         <div className="ds-bottomcta">
           <Button variant="secondary" size="md" onClick={() => setEditing(false)}>취소</Button>
           <Button variant="primary" size="md" onClick={commit}>확인</Button>

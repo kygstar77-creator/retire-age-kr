@@ -13,3 +13,11 @@ export function funHandle(seed) {
 }
 
 export const displayName = (row) => (row && row.nickname ? row.nickname : funHandle(row && row.client_id));
+
+// DB 기본값 '익명'은 이름이 아니므로 기기별 재미 닉네임으로 대체(Wall.jsx nameOf와 같은 규칙). 방명록·소식 공용.
+export const displayNameOf = (row) => {
+  if (!row) return funHandle('');
+  const nick = row.nickname ? String(row.nickname).trim() : '';
+  if (nick && nick !== '익명') return nick;
+  return funHandle(String(row.client_id || row.id || ''));
+};

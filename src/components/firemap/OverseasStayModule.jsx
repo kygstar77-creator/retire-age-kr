@@ -8,12 +8,12 @@ import { Card, SectionHead, Button, Chip, Chips, Notice } from '../../ui/index.j
 
 function Stepper({ label, unit, value, set, step, min = 0, max = Infinity }) {
   return (
-    <div className="ds-range" style={{ padding: '8px 0' }}>
+    <div className="ds-range ds-py-2">
       <div className="ds-range__head">
         <span className="ds-range__label">{label}</span>
         <span className="ds-row">
           <button type="button" className="ds-iconbtn ds-iconbtn--sm" aria-label="감소" onClick={() => set(Math.max(min, value - step))}>−</button>
-          <input className="ds-input num" style={{ width: 96, textAlign: 'center', padding: '6px 4px' }} inputMode="numeric" value={value} onChange={(e) => set(Math.min(max, Math.max(min, Number(e.target.value.replace(/[^0-9]/g, '')) || 0)))} aria-label={label} />
+          <input className="ds-input num sc-os-in" inputMode="numeric" value={value} onChange={(e) => set(Math.min(max, Math.max(min, Number(e.target.value.replace(/[^0-9]/g, '')) || 0)))} aria-label={label} />
           <button type="button" className="ds-iconbtn ds-iconbtn--sm" aria-label="증가" onClick={() => set(Math.min(max, value + step))}>+</button>
           <span className="ds-caption">{unit}</span>
         </span>
@@ -38,7 +38,7 @@ export function OverseasStayModule({ inputs, simulation, onPreviewPatch }) {
       <Chips className="ds-mt-2"><Chip on={pause} onClick={() => setPause(!pause)}>건보료 정지 가정</Chip></Chips>
       <Notice tone="good" className="ds-mt-3">이 조건이면 <b>{runwayText(scenario)}</b>까지 — {deltaText(simulation, scenario)} · 첫해 절감 약 {formatWon(scenario.firstYearOverseasSavings)}</Notice>
       <Button variant="tint" size="md" full className="ds-mt-3" onClick={() => onPreviewPatch && onPreviewPatch(patch)}>이 조건 미리보기(바꿔보기)</Button>
-      <p className="ds-caption ds-mt-2" style={{ marginBottom: 0 }}>참고용 시나리오예요. 실제 비자·건보료 면제 요건은 제도 확인이 필요해요.</p>
+      <p className="ds-caption ds-mt-2 ds-mb-0">참고용 시나리오예요. 실제 비자·건보료 면제 요건은 제도 확인이 필요해요.</p>
     </Card>
   );
 }

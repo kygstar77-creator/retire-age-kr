@@ -30,18 +30,6 @@ import { track } from '../firemap-v2/dailyData.js';
 import { logEvent } from '../utils/live.js';
 import { decodeInputsFromHash } from '../utils/shareState.js';
 import { applyTheme } from '../utils/prefs.js';
-import '../firemap-v3-tokens.css';
-import '../firemap.css';
-import '../firemap-overrides.css';
-import '../firemap-polish.css';
-import '../firemap-result-density.css';
-import '../firemap-deploy-polish.css';
-import '../firemap-release-fixes.css';
-import '../firemap-v3-feedback.css';
-import '../firemap-v3-hotfix.css';
-import '../firemap-v3-ia.css';
-import '../firemap-status.css';
-import '../firemap-premium.css';
 import { Toaster } from '../ui/index.js';
 
 function getSharedInputs() {
@@ -190,7 +178,7 @@ export default function FireMapMVP() {
     foreignTax: () => tool('foreignTax', <><ForeignStockTaxCard inputs={inputs} onApply={applyPatch} /><DividendCard inputs={inputs} onApply={applyPatch} /></>),
     dividend: () => <DividendLifeCalc inputs={inputs} onChange={onChange} onMove={setScreen} onBack={backOf('dividend')} />,
     pension: () => tool('pension', <PensionEarlyClaimCard inputs={inputs} onApply={applyPatch} />),
-    news: () => <News onBack={backOf('news')} simulation={simulation} />,
+    news: () => <News onBack={backOf('news')} />,
     wall: () => <Community onBack={backOf('wall')} onMove={setScreen} simulation={simulation} />
   };
   const render = VIEWS[screen] || VIEWS.home;

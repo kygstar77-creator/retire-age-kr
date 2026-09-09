@@ -5,7 +5,7 @@ import { initWasm, Resvg } from '@resvg/resvg-wasm';
 import resvgWasm from '@resvg/resvg-wasm/index_bg.wasm';
 import { BOLD_B64, REGULAR_B64 } from './og-fonts.js';
 import { FT_BOLD_B64, FT_REGULAR_B64 } from './og-fonts-ft.js';
-import { buildCardSvg } from './og-card.js';
+import { buildCardSvg, buildCertSvg } from './og-card.js';
 
 const KR = 'Noto Sans CJK KR';
 let wasmReady;
@@ -34,6 +34,9 @@ const safeRunway = (v) => {
 const safeText = (v, max) => String(v == null ? '' : v).replace(/[<>&"]/g, '').trim().slice(0, max);
 
 function buildSvg(q) {
+  if ((q.get('mode') || '') === 'cert') {
+    return buildCertSvg({ year: intOr(q.get('yr'), 1990, 1900, 2030), family: safeText(q.get('fm'), 6) || '1인', ea: intOr(q.get('ea'), 0, 0, 120), target: intOr(q.get('target'), 0, 0, 120), need: safeText(q.get('need'), 12) || '—', asset: safeText(q.get('as'), 12) || '비공개', save: safeText(q.get('sv'), 12) || '비공개', cost: safeText(q.get('cost'), 12) || '—', ret: safeText(q.get('ret'), 4), inf: safeText(q.get('inf'), 4), pen: safeText(q.get('pen'), 3), round: intOr(q.get('rd'), 1, 1, 999), font: KR });
+  }
   if ((q.get('mode') || '') === 'firetype') {
     return buildCardSvg({ mode: 'firetype', tname: safeText(q.get('tn'), 16), nick: safeText(q.get('nk'), 16), cities: safeText(q.get('ct'), 40), font: KR });
   }
@@ -51,8 +54,9 @@ export async function onRequest(context) {
     await wasmReady;
     const url = new URL(context.request.url);
     const svg = buildSvg(url.searchParams);
+    const isCert = (url.searchParams.get('mode') || '') === 'cert';
     const resvg = new Resvg(svg, {
-      fitTo: { mode: 'width', value: 1200 },
+      fitTo: { mode: 'width', value: isCert ? 1080 : 1200 },
       font: { fontBuffers: [BOLD, REGULAR, FT_BOLD, FT_REGULAR], defaultFontFamily: KR, loadSystemFonts: false }
     });
     const png = resvg.render().asPng();

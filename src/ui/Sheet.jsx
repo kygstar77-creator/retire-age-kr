@@ -39,7 +39,7 @@ export function Dialog({ open, title, desc, primary, secondary, onClose, childre
         {title && <h2 className="ds-dialog__title">{title}</h2>}
         {desc && <p className="ds-dialog__desc">{desc}</p>}
         {children}
-        <div className="ds-bottomcta" style={{ marginTop: 8 }}>
+        <div className="ds-bottomcta ds-mt-2">
           {secondary && <Button variant="secondary" size="md" onClick={secondary.onClick || onClose}>{secondary.label}</Button>}
           {primary && <Button variant={primary.variant || 'primary'} size="md" onClick={primary.onClick}>{primary.label}</Button>}
         </div>

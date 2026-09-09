@@ -1,0 +1,12 @@
+{
+  "appId": "kr.firemap.app",
+  "appName": "파이어맵",
+  "webDir": "dist",
+  "server": { "androidScheme": "https" },
+  "ios": { "contentInset": "always" },
+  "android": { "allowMixedContent": false },
+  "plugins": {
+    "SplashScreen": { "launchShowDuration": 0, "backgroundColor": "#f6f7f9" },
+    "StatusBar": { "style": "LIGHT", "backgroundColor": "#f6f7f9" }
+  }
+}

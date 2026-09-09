@@ -4,6 +4,7 @@ import { fetchLivePresence } from '../../utils/live.js';
 import { identityIds } from '../../utils/identity.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { track } from '../../firemap-v2/dailyData.js';
+import { CAFE_URL } from '../../firemap-v2/links.js';
 
 // 방명록 — 홈 전용 플로팅 💬 버튼 → 실시간 한마디 패널(스꾸 방명록 패턴 이식).
 // 열려 있는 동안만 주기 폴링으로 새 글을 맨 위에 붙이고, 읽던 스크롤 위치는 유지한다.
@@ -97,6 +98,9 @@ export default function Wall({ visible }) {
             </div>
             <span className="fm-wall-live" aria-live="polite"><i aria-hidden="true" />{online > 0 ? `${online}명 접속 중` : '접속 확인 중'}</span>
           </header>
+          <a className="fm-wall-cafe" href={CAFE_URL} target="_blank" rel="noopener noreferrer" onClick={() => track('cafe_click', { from: 'wall' })}>
+            <span className="fm-wall-cafe-n" aria-hidden="true">N</span><b>파이어맵 네이버 카페</b><span>인증·질문·후기는 여기서 →</span>
+          </a>
           <div className="fm-wall-list" ref={listRef}>
             {rows === null && <p className="fm-wall-empty">불러오는 중…</p>}
             {rows !== null && rows.length === 0 && <p className="fm-wall-empty">아직 조용해요 🤫<br />첫 한마디를 남겨보세요</p>}

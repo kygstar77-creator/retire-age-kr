@@ -1054,3 +1054,7 @@ body { font-weight: 400 !important; letter-spacing: -0.01em; }
 .fm-wall-input input:focus { border-color: #ff5a00; }
 .fm-wall-input button { border: 0; border-radius: 14px; background: #ff5a00; color: #fff; font-weight: 900; cursor: pointer; }
 .fm-wall-input button:disabled { opacity: .45; cursor: default; }
+.fm-wall-cafe { display: flex; align-items: center; gap: 8px; margin: 0; padding: 9px 16px; background: #f0fdf4; border-bottom: 1px solid #dcfce7; color: #166534; font-size: 12.5px; text-decoration: none; }
+.fm-wall-cafe b { font-weight: 800; color: #14532d; }
+.fm-wall-cafe > span:last-child { color: #4d7c5f; margin-left: auto; white-space: nowrap; }
+.fm-wall-cafe-n { width: 18px; height: 18px; border-radius: 4px; background: #03c75a; color: #fff; font-weight: 900; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }

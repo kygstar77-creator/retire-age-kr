@@ -51,6 +51,7 @@ const SECTIONS = [
 ];
 
 const LINKS = [
+  { ico: '🟢', title: '파이어맵 네이버 카페', desc: '파이어 인증·질문·후기 — 파이어족 커뮤니티 본진', href: 'https://cafe.naver.com/firemap', ext: true },
   { ico: '▶️', title: '파이어맵 유튜브', desc: '영상으로 보는 파이어 — 채널 구독하기', href: 'https://www.youtube.com/@firemapkr', ext: true },
   { ico: '📚', title: '파이어 백과', desc: '건보료·세금·연금·현실 금액 가이드', href: '/guide/' },
   { ico: '📄', title: '면책 안내', desc: '정보 제공 목적 · 투자자문 아님', href: '/disclaimer.html' },

@@ -5,7 +5,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { TopBar, StatHero, Card, SectionHead, Button, StatTiles } from '../../ui/index.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
-import { buildScenario, buildGrowthSeries, scenarioEndAge, survivalPhrase, runwayText } from '../../firemap-v2/scenarios.js';
+import { buildScenario, buildGrowthSeries, scenarioEndAge, survivalPhrase, runwayText, runwayUntilText } from '../../firemap-v2/scenarios.js';
 import { inputsIsReal, monteCarloSuccess } from '../../utils/retirementSimulator.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { submitScoreFromSim, fetchUserRank, fetchAggregates, assetBandOf, ASSET_BAND_LABELS } from '../../utils/firemapScoresApi.js';
@@ -183,7 +183,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
             delta={delta}
             sub={<>지금 자산 <b className="num">{eok(inp.financialAsset)}</b>{success != null ? <> · 성공확률 <b className="num">{success}%</b></> : null}</>}
             tiles={[
-              { label: `목표 ${target}세 · 자산 수명`, value: ph.runway },
+              { label: `목표 ${target}세`, value: runwayUntilText(simulation) },
               { label: `${atE ? atE.age : target}세 때 자산`, value: atE ? eok(atE.assetToday) : (simulation.retirementFinancialAsset ? eok(simulation.retirementFinancialAsset) : '—') },
               { label: `같은 구간 · ${ASSET_BAND_LABELS[myBand]}`, value: bandRank ? `상위 ${bandRank.percentile}%` : (live ? `${live.position.toLocaleString()}등` : '집계 중'), onClick: () => onMove('ranking') }
             ]}

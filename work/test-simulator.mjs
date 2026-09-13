@@ -261,3 +261,14 @@ console.log('Simulation regression and invariant tests passed.');
   assert(findEarliestRetirementAge({ ...base, financialAsset: need * 0.9 }) > base.currentAge, '(16) 필요 자산에 못 미치면 지금 파이어할 수 없어야 한다');
 }
 console.log('(16) required-asset / fire-age same yardstick OK');
+
+// (17) 화면에 나란히 놓는 금액은 전부 오늘 돈이어야 한다.
+// 결과는 파이어 가능 나이 때 자산, 바꿔보기는 목표 나이 때 자산을 보여준다.
+// 한쪽만 명목이면 '나중 나이인데 돈이 더 적은' 모순이 화면에 나온다.
+{
+  const s = buildSimulation({ currentAge: 35, targetRetirementAge: 49, financialAsset: 100000000, monthlyInvestment: 3000000, monthlyLivingCost: 3000000, inflationRate: 3.1 });
+  const f = Math.pow(1 + 0.031, 49 - 35);
+  assert(Math.abs(s.retirementFinancialAssetToday * f - s.retirementFinancialAsset) < 1000, '(17) 목표 나이 자산의 오늘 돈 × 물가 = 명목');
+  assert(s.retirementFinancialAssetToday < s.atEarliest.assetToday, '(17) 목표 49세보다 파이어 가능 55세에 자산이 더 많아야 한다');
+}
+console.log('(17) today-money across screens OK');

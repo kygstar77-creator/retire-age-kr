@@ -4,6 +4,12 @@ export function runwayText(simulation) {
   return simulation.targetResult.depletionAge ? `${simulation.targetResult.depletionAge}세` : `${simulation.inputs.simulationUntilAge}세 이상`;
 }
 
+// 타일 값으로 쓰는 짧은 말 — 라벨이 '목표 49세'라서 값은 '76세까지'로 받아야 문장이 된다.
+export function runwayUntilText(simulation) {
+  const t = runwayText(simulation);
+  return /^\d+세$/.test(t) ? `${t}까지` : t;
+}
+
 export function scenarioEndAge(simulation) {
   return simulation.targetResult.depletionAge || simulation.inputs.simulationUntilAge;
 }

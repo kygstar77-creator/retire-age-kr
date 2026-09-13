@@ -251,6 +251,8 @@ export function buildSimulation(inputs) {
       depletionAge: er.depletionAge
     };
   }
+  // 목표 나이 때 자산은 그때 통장에 찍힐 금액(명목)이다. 화면은 오늘 돈으로 보여주므로 같이 내준다.
+  const retirementFinancialAssetToday = retirementFinancialAsset / inflationToTarget;
   const requiredAssetNow = findRequiredAssetNow(data);
   const fireGap = requiredFireAssetNominal - retirementFinancialAsset;
   const bridgeYears = Math.max(0, data.expectedPensionAge - data.targetRetirementAge);
@@ -286,6 +288,7 @@ export function buildSimulation(inputs) {
     retirementFinancialAsset,
     finalFinancialAsset: finalRow?.financialAsset ?? targetResult.finalFinancialAsset,
     safeWithdrawalRate,
+    retirementFinancialAssetToday,
     requiredAssetNow,
     requiredFireAssetByFourPercent,
     requiredFireAssetNominal,

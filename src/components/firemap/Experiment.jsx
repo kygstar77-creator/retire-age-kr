@@ -5,7 +5,7 @@ import PensionControls from './PensionControls.jsx';
 import AssetGrowthChart from './AssetGrowthChart.jsx';
 import { investmentScenarios } from '../../firemap-v2/data.js';
 import { sourceLine } from '../../firemap-v2/dataSources.js';
-import { buildScenario, runwayText, buildGrowthSeries } from '../../firemap-v2/scenarios.js';
+import { buildScenario, runwayText, runwayUntilText, buildGrowthSeries } from '../../firemap-v2/scenarios.js';
 import { formatWon, cleanNumber } from '../../firemap-v2/formatters.js';
 import '../../ui/screens/experiment.css';
 
@@ -94,9 +94,9 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
         value={earliest ? `${earliest}` : '아직'} unit={earliest ? '세' : ''}
         sub={heroSub}
         tiles={[
-          { label: '필요 자산 · 오늘 돈', value: eok(need) },
-          { label: `목표 ${simulation.inputs.targetRetirementAge}세 · 자산 수명`, value: runwayText(simulation) },
-          { label: `목표 ${simulation.inputs.targetRetirementAge}세 때 자산`, value: simulation.retirementFinancialAsset ? eok(simulation.retirementFinancialAsset) : '—' }
+          { label: '지금 그만두려면', value: eok(need) },
+          { label: `목표 ${simulation.inputs.targetRetirementAge}세`, value: runwayUntilText(simulation) },
+          { label: `${simulation.inputs.targetRetirementAge}세 때 자산`, value: simulation.retirementFinancialAssetToday ? eok(simulation.retirementFinancialAssetToday) : '—' }
         ]}
       />
 

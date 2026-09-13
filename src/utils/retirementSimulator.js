@@ -91,7 +91,11 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
 
   for (let age = data.currentAge; age <= data.simulationUntilAge; age += 1) {
     const year = data.startYear + (age - data.currentAge);
-    const isRetired = age >= retirementAge;
+    // 행 A는 'A세가 된 시점'의 자산이고, 그 행의 저축·인출은 A-1세→A세 한 해 동안의 것이다.
+    // A세에 파이어하면 그 직전 해(A-1→A)는 아직 일하는 해라 저축이 들어가야 하고, 인출은 A→A+1부터다.
+    // 예전엔 age >= retirementAge로 잡아 파이어 나이의 해 저축이 빠졌고, 그래서 모든 파이어 나이가 실제보다 1년 늦게 나왔다.
+    // (1억 · 월 2억 저축 · 생활비 139만: 1년만 더 일하면 되는데 37세로 나오던 것 → 36세)
+    const isRetired = age > retirementAge;
     const yearsFromStart = age - data.currentAge;
     const yearsFromRetirement = Math.max(0, age - retirementAge);
     const inflationFactor = Math.pow(1 + inflation, yearsFromStart);
@@ -151,7 +155,7 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
     rows.push({
       year,
       age,
-      status: isRetired ? '파이어 후' : '근무 중',
+      status: age >= retirementAge ? '파이어 후' : '근무 중',
       financialAsset,
       realEstateValue: data.realEstateValue,
       debt: data.debt,
@@ -247,7 +251,9 @@ export function buildSimulation(inputs) {
   const retirementRow = targetResult.rows.find((row) => row.age === data.targetRetirementAge);
   const pensionStartRow = targetResult.rows.find((row) => row.age === data.expectedPensionAge);
   const finalRow = targetResult.rows.at(-1);
-  const firstRetirementExpense = retirementRow?.withdrawal ?? 0;
+  // 파이어 나이 행은 '그 나이가 된 시점'이라 인출이 없다. 첫 은퇴 해 인출은 다음 행에 있다.
+  const firstRetiredRow = targetResult.rows.find((row) => row.age === data.targetRetirementAge + 1) || retirementRow;
+  const firstRetirementExpense = firstRetiredRow?.withdrawal ?? 0;
   const retirementFinancialAsset = retirementRow?.financialAsset ?? data.financialAsset;
   const safeWithdrawalRate = retirementFinancialAsset > 0
     ? (firstRetirementExpense / retirementFinancialAsset) * 100
@@ -270,11 +276,12 @@ export function buildSimulation(inputs) {
   if (earliestRetirementAge) {
     const er = simulateRetirement(data, earliestRetirementAge);
     const erRow = er.rows.find((row) => row.age === earliestRetirementAge);
+    const erNext = er.rows.find((row) => row.age === earliestRetirementAge + 1) || erRow;
     const f = Math.pow(1 + toRate(data.inflationRate), Math.max(0, earliestRetirementAge - data.currentAge));
     atEarliest = {
       age: earliestRetirementAge,
       assetToday: (erRow?.financialAsset ?? 0) / f,
-      requiredToday: ((erRow?.withdrawal ?? 0) / 0.04) / f,
+      requiredToday: ((erNext?.withdrawal ?? 0) / 0.04) / f,
       depletionAge: er.depletionAge,
       rows: toToday(er.rows)
     };

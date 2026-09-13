@@ -106,9 +106,6 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
       </ListGroup>
 
       <p className="ds-caption ds-textcenter">✋ 모든 순위는 직접 입력한 기록 기반 · 자산은 구간만 저장돼요</p>
-      <div className="ds-bottomcta ds-mt-0">
-        <Button variant="secondary" size="md" onClick={() => onMove('experiment')}>조건 바꿔 올리기</Button>
-      </div>
 
       <CommunityCta where="ranking" />
     </main>

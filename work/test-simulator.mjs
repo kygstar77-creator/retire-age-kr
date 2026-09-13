@@ -63,11 +63,11 @@ const scenarioB = {
 };
 
 const resultA = simulateRetirement(scenarioA);
-check('scenarioA age80 financialAsset', getRow(resultA, 80).financialAsset, -24.44);
+check('scenarioA age80 financialAsset', getRow(resultA, 80).financialAsset, -22.86);
 
 const resultB = simulateRetirement(scenarioB);
-check('scenarioB age80 financialAsset', getRow(resultB, 80).financialAsset, -46.51);
-check('scenarioB age90 financialAsset', getRow(resultB, 90).financialAsset, -68.59);
+check('scenarioB age80 financialAsset', getRow(resultB, 80).financialAsset, -45.19);
+check('scenarioB age90 financialAsset', getRow(resultB, 90).financialAsset, -67.26);
 
 const base = { ...scenarioB };
 const workLonger = simulateRetirement(base, base.targetRetirementAge + 1);
@@ -392,19 +392,19 @@ console.log('(23) target<current guard OK');
 // 감사 보고서가 독립 계산한 실효세율과 대조: 금융 1억·기타 0 → 17.47%, 금융 5,000만·기타 3,000만 → 17.74%, 금융 2억·기타 0 → 27.88%
 {
   const base = { currentAge: 40, targetRetirementAge: 40, financialAsset: 2500000000, monthlyInvestment: 0, monthlyLivingCost: 1000000, investType: 2, dividendYield: 4, annualReturnRate: 4, inflationRate: 0, expectedMonthlyPension: 0 };
-  // 자산 25억 × 4% = 배당 1억, 파이어 첫해(40세) 행의 investTax
+  // 자산 25억 × 4% = 배당 1억. 40세에 파이어하면 첫 은퇴 해는 41세 행(첫해는 수익 미적용이라 자산 그대로 25억)
   const r = simulateRetirement(base, 40);
-  const row = r.rows.find((x) => x.age === 40);
+  const row = r.rows.find((x) => x.age === 41);
   const eff = row.investTax / (2500000000 * 0.04);
   assert(Math.abs(eff - 0.1747) < 0.004, '(24) 배당 1억 실효세율 ≈17.5%, 실제 ' + (eff * 100).toFixed(2) + '%');
   const r2 = simulateRetirement({ ...base, financialAsset: 5000000000 }, 40);
-  const eff2 = r2.rows.find((x) => x.age === 40).investTax / (5000000000 * 0.04);
+  const eff2 = r2.rows.find((x) => x.age === 41).investTax / (5000000000 * 0.04);
   assert(Math.abs(eff2 - 0.2788) < 0.005, '(24) 배당 2억 실효세율 ≈27.9%, 실제 ' + (eff2 * 100).toFixed(2) + '%');
   const r3 = simulateRetirement({ ...base, financialAsset: 1250000000, partTimeIncomeAfterRetirement: 2500000 }, 40);
-  const eff3 = r3.rows.find((x) => x.age === 40).investTax / (1250000000 * 0.04);
+  const eff3 = r3.rows.find((x) => x.age === 41).investTax / (1250000000 * 0.04);
   assert(Math.abs(eff3 - 0.1774) < 0.005, '(24) 배당 5,000만+기타 3,000만 ≈17.7%, 실제 ' + (eff3 * 100).toFixed(2) + '%');
   const r4 = simulateRetirement({ ...base, financialAsset: 400000000 }, 40);
-  const eff4 = r4.rows.find((x) => x.age === 40).investTax / (400000000 * 0.04);
+  const eff4 = r4.rows.find((x) => x.age === 41).investTax / (400000000 * 0.04);
   assert(Math.abs(eff4 - 0.154) < 0.0001, '(24) 배당 1,600만은 원천징수 15.4%');
 }
 console.log('(24) comprehensive financial income tax OK');

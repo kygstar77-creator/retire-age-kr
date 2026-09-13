@@ -51,7 +51,7 @@ export default function Settings({ simulation, onMove, onBack }) {
       <TopBar title="설정" onBack={onBack} />
 
       <ListGroup label="계정">
-        <ListRow lead={<Icon name={acc && acc.handle ? 'user' : 'lock'} />} title={acc && acc.handle ? acc.handle : '로그인 · 기록 지키기'} desc={acc && acc.handle ? '닉네임 변경 · 로그아웃 · 탈퇴' : '기기를 바꿔도 저축·랭킹 기록이 이어져요'} onClick={() => onMove('account')} />
+        <ListRow lead={<Icon name={acc && acc.handle ? 'user' : 'lock'} />} title={acc && acc.handle ? acc.handle : '로그인 · 기록 지키기'} onClick={() => onMove('account')} />
       </ListGroup>
 
       <ListGroup label="알림">
@@ -59,9 +59,9 @@ export default function Settings({ simulation, onMove, onBack }) {
       </ListGroup>
 
       <ListGroup label="홈 · 위젯">
-        <ListRow lead={<Icon name="eyeoff" />} title="금액 숨기기" desc="홈·통에서 금액 대신 •••로 표시 (D-day·%만)" chevron={false} trail={<Switch on={hide} onChange={(v) => { prefs.setHideAmount(v); setHide(v); }} />} />
-        <ListRow lead={<Icon name="moon" />} title="다크 모드" desc="눈이 편한 어두운 화면" chevron={false} trail={<Switch on={dark} onChange={(v) => { prefs.setTheme(v ? 'dark' : 'light'); setDark(v); }} />} />
-        <ListRow lead={<Icon name="phone" />} title="홈 화면에 추가" desc="앱처럼 아이콘으로 바로 열기" onClick={() => setInstallOpen(true)} />
+        <ListRow lead={<Icon name="eyeoff" />} title="금액 숨기기" chevron={false} trail={<Switch on={hide} onChange={(v) => { prefs.setHideAmount(v); setHide(v); }} />} />
+        <ListRow lead={<Icon name="moon" />} title="다크 모드" chevron={false} trail={<Switch on={dark} onChange={(v) => { prefs.setTheme(v ? 'dark' : 'light'); setDark(v); }} />} />
+        <ListRow lead={<Icon name="phone" />} title="홈 화면에 추가" onClick={() => setInstallOpen(true)} />
       </ListGroup>
 
       <ListGroup label="카페 · 정보">

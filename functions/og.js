@@ -5,9 +5,10 @@ import { initWasm, Resvg } from '@resvg/resvg-wasm';
 import resvgWasm from '@resvg/resvg-wasm/index_bg.wasm';
 import { BOLD_B64, REGULAR_B64 } from './og-fonts.js';
 import { FT_BOLD_B64, FT_REGULAR_B64 } from './og-fonts-ft.js';
+import { PD_BOLD_B64, PD_REGULAR_B64 } from './og-fonts-pd.js';
 import { buildCardSvg, buildCertSvg } from './og-card.js';
 
-const KR = 'Noto Sans CJK KR';
+const KR = 'Pretendard';
 let wasmReady;
 
 function b64ToBytes(b64) {
@@ -20,6 +21,8 @@ const BOLD = b64ToBytes(BOLD_B64);
 const REGULAR = b64ToBytes(REGULAR_B64);
 const FT_BOLD = b64ToBytes(FT_BOLD_B64);
 const FT_REGULAR = b64ToBytes(FT_REGULAR_B64);
+const PD_BOLD = b64ToBytes(PD_BOLD_B64);
+const PD_REGULAR = b64ToBytes(PD_REGULAR_B64);
 
 const comma = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 const intOr = (v, d, lo, hi) => {
@@ -57,7 +60,7 @@ export async function onRequest(context) {
     const isCert = (url.searchParams.get('mode') || '') === 'cert';
     const resvg = new Resvg(svg, {
       fitTo: { mode: 'width', value: isCert ? 1080 : 1200 },
-      font: { fontBuffers: [BOLD, REGULAR, FT_BOLD, FT_REGULAR], defaultFontFamily: KR, loadSystemFonts: false }
+      font: { fontBuffers: [PD_BOLD, PD_REGULAR, BOLD, REGULAR, FT_BOLD, FT_REGULAR], defaultFontFamily: KR, loadSystemFonts: false }
     });
     const png = resvg.render().asPng();
     return new Response(png, {

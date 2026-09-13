@@ -73,18 +73,24 @@ ${cta}
 // 인증 카드(1080×1350, 카페·인스타 세로) — 배당 투자자 모임 제목 공식 + Reddit 댓글 6종(숫자·기간·가정)
 // opts: { year, family, ea, target, need(억 문자열), asset(억 문자열|'비공개'), save(만 문자열|'비공개'), cost, ret, inf, pen, round, font }
 export function buildCertSvg(opts = {}) {
-  const font = opts.font || 'Noto Sans CJK KR';
+  const font = opts.font || 'Pretendard';
   const esc = (v) => String(v == null ? '' : v).replace(/[<>&"]/g, '').slice(0, 40);
   const title = `${esc(opts.year)}년생 ${esc(opts.family)} · ${esc(opts.round) || 1}회차`;
   const ea = Number(opts.ea) || 0;
   const big = ea ? `${ea}세` : '아직';
-  const line1 = ea ? `${ea}세에 파이어 가능` : '파이어 준비 중';
+  // 큰 숫자가 이미 나이를 말하므로 아래 줄은 목표와의 차이를 알려준다.
+  const tgt = Number(opts.target) || 0;
+  const gap = ea && tgt ? tgt - ea : null;
+  const line1 = !ea ? '파이어 준비 중'
+    : gap == null ? '파이어 가능 나이'
+      : gap > 0 ? `목표보다 ${gap}년 빨라요`
+        : gap < 0 ? `목표보다 ${-gap}년 늦어요` : '목표와 같아요';
   const rows = [
-    ['필요 자산', esc(opts.need)], ['지금 자산', esc(opts.asset)], ['월 저축', esc(opts.save)], ['파이어 후 생활비', esc(opts.cost)],
+    ['필요 자산', esc(opts.need)], ['현재 자산', esc(opts.asset)], ['월 저축', esc(opts.save)], ['파이어 후 생활비', esc(opts.cost)],
     ['목표 나이', `${Number(opts.target) || 0}세`], ['가정', `수익률 ${esc(opts.ret)}% · 물가 ${esc(opts.inf)}% · 연금 ${esc(opts.pen)}세~`]
   ];
   const rowsSvg = rows.map(([k, v], i) => {
-    const y = 700 + i * 92;
+    const y = 640 + i * 92;
     return `<rect x="80" y="${y - 54}" width="920" height="78" rx="18" fill="rgba(255,255,255,0.06)"/>
 <text x="112" y="${y}" font-family="${font}" font-weight="600" font-size="30" fill="#9aa4d4">${k}</text>
 <text x="968" y="${y}" font-family="${font}" font-weight="700" font-size="${i === 5 ? 26 : 36}" fill="#ffffff" text-anchor="end">${v}</text>`;
@@ -98,7 +104,7 @@ export function buildCertSvg(opts = {}) {
 <text x="80" y="440" font-family="${font}" font-weight="700" font-size="180" fill="#ff5a00">${big}</text>
 <text x="80" y="520" font-family="${font}" font-weight="700" font-size="48" fill="#ffffff">${line1}</text>
 ${rowsSvg}
-<text x="80" y="1290" font-family="${font}" font-weight="600" font-size="28" fill="#9aa4d4">참고용 계산 · 검증 firemap.kr</text>
+<text x="80" y="1290" font-family="${font}" font-weight="600" font-size="28" fill="#9aa4d4">계산: firemap.kr</text>
 <text x="1000" y="1290" font-family="${font}" font-weight="700" font-size="30" fill="#ff8a4c" text-anchor="end">firemap.kr</text>
 </svg>`;
 }

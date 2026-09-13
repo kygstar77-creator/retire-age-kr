@@ -25,9 +25,22 @@ export async function onRequest(context) {
   const rwy = (q.get('rwy') || '').slice(0, 12);
   const ret = (q.get('ret') || '').replace(/[^0-9]/g, '').slice(0, 2);
   const inf = (q.get('inf') || '').replace(/[^0-9]/g, '').slice(0, 2);
-  const ogImg = (ea && pos && tot)
-    ? `${site}/og?ea=${ea}&pos=${pos}&tot=${tot}&target=${tgt}&rw=${encodeURIComponent(rwy)}&ret=${ret}&inf=${inf}&v=c3`
-    : `${site}/${(sd && ad) ? 'og-save.png' : 'og-image.png'}?v=firemap-screens-v7-20260613`;
+  // 인증 카드로 공유한 링크면 미리보기도 같은 인증 카드를 쓴다(화면에서 본 그림 = 상대가 보는 그림).
+  const isCert = (q.get('mode') || '') === 'cert';
+  const keep = (k, max = 12) => String(q.get(k) || '').replace(/[<>&"]/g, '').slice(0, max);
+  const certImg = () => {
+    const sp = new URLSearchParams();
+    ['mode', 'yr', 'fm', 'ea', 'target', 'need', 'as', 'sv', 'cost', 'ret', 'inf', 'pen', 'rd']
+      .forEach((k) => { const v = keep(k); if (v) sp.set(k, v); });
+    return `${site}/og?${sp.toString()}`;
+  };
+  const ogImg = isCert
+    ? certImg()
+    : (ea && pos && tot)
+      ? `${site}/og?ea=${ea}&pos=${pos}&tot=${tot}&target=${tgt}&rw=${encodeURIComponent(rwy)}&ret=${ret}&inf=${inf}&v=c3`
+      : `${site}/${(sd && ad) ? 'og-save.png' : 'og-image.png'}?v=firemap-screens-v7-20260613`;
+  const ogW = isCert ? 1080 : 1200;
+  const ogH = isCert ? 1350 : 600;
 
   const title = (sd && ad)
     ? `절약으로 파이어 ${ad} 앞당겼어요 — 파이어맵`
@@ -36,7 +49,8 @@ export async function onRequest(context) {
       : p && g
         ? `또래 상위 ${p}% — 파이어맵`
         : '나는 몇 살에 파이어할 수 있을까? — 파이어맵';
-  const desc = (sd && ad)
+  const certDesc = `필요 자산 ${keep('need')} · 목표 ${tgt || '—'}세 · 1분이면 나도 계산`;
+  const desc = isCert ? certDesc : (sd && ad)
     ? '하루하루 아낀 돈이 파이어를 앞당겨요. 나도 1분 계산하고 절약 적립 시작하기.'
     : ea
       ? `파이어족들을 위한 커뮤니티 · 나는 또래 중 파이어 랭킹 몇 등?`
@@ -72,8 +86,8 @@ export async function onRequest(context) {
 <meta property="og:image" content="${ogImg}">
 <meta property="og:image:secure_url" content="${ogImg}">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="600">
+<meta property="og:image:width" content="${ogW}">
+<meta property="og:image:height" content="${ogH}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(title)}">
 <meta name="twitter:description" content="${esc(desc)}">

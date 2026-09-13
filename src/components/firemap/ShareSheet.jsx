@@ -36,6 +36,24 @@ export function buildResultShare(simulation, extra = {}) {
   return { imageUrl: img.toString(), url: l.toString(), phrase: ph };
 }
 
+// 화면의 인증 카드와 같은 값으로 공유용 이미지·링크를 만든다. 앱에서 본 카드 = 상대가 보는 그림.
+function buildCertShare(simulation, { family, hideAmt, round, need, asset }) {
+  const inp = simulation.inputs;
+  const ea = simulation.earliestRetirementAge || 0;
+  const year = new Date().getFullYear() - (Number(inp.currentAge) || 35);
+  const q = {
+    mode: 'cert', yr: String(year), fm: family, ea: String(ea), target: String(inp.targetRetirementAge),
+    need: formatWon(need), as: hideAmt ? '비공개' : formatWon(asset),
+    sv: hideAmt ? '비공개' : formatWon(inp.monthlyInvestment), cost: formatWon(inp.monthlyLivingCost),
+    ret: String(inp.annualReturnRate), inf: String(inp.inflationRate), pen: String(inp.expectedPensionAge), rd: String(round)
+  };
+  const img = new URL('https://firemap.kr/og');
+  Object.entries(q).forEach(([k, v]) => img.searchParams.set(k, v));
+  const link = new URL('https://firemap.kr/s');
+  Object.entries(q).forEach(([k, v]) => link.searchParams.set(k, v));
+  return { imageUrl: img.toString(), url: link.toString() };
+}
+
 export default function ShareSheet({ open, onClose, simulation, onMove }) {
   const inp = simulation.inputs;
   const earliest = simulation.earliestRetirementAge;
@@ -56,9 +74,8 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
 
   const kakao = async () => {
     setBusy(true); track('share', { type: 'cert_kakao' });
-    let pos, tot; try { const rr = await fetchUserRank(earliest); if (rr && rr.total) { pos = rr.position; tot = rr.total; } } catch { /* ignore */ }
-    const s = buildResultShare(simulation, { pos, tot });
-    try { await shareToKakao({ title: earliest ? `나는 ${earliest}세에 파이어 가능 🔥 — 파이어맵` : '내 파이어 나이 — 파이어맵', description: '물가·국민연금까지 따진 현실적인 파이어 계산 · 1분', imageUrl: s.imageUrl, linkUrl: s.url }); prefs.bumpCert(); }
+    const s = buildCertShare(simulation, { family, hideAmt, round: roundNo(), need, asset });
+    try { await shareToKakao({ title: earliest ? `${earliest}세에 파이어 가능 🔥` : '내 파이어 나이', description: `필요 자산 ${formatWon(need)} · 목표 ${inp.targetRetirementAge}세 · 1분이면 나도 계산`, imageUrl: s.imageUrl, linkUrl: s.url }); prefs.bumpCert(); }
     catch {
       if (navigator.share) { try { await navigator.share({ text: `${title}\n${body}`, url: s.url }); prefs.bumpCert(); } catch { /* ignore */ } }
       else { try { await navigator.clipboard.writeText(`${title}\n${body}\n${s.url}`); toast.good('카드 내용을 복사했어요'); } catch { /* ignore */ } }
@@ -72,7 +89,7 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
     try { window.open(CAFE_URL, '_blank', 'noopener'); } catch { /* ignore */ }
   };
   const copyLink = async () => {
-    const s = buildResultShare(simulation);
+    const s = buildCertShare(simulation, { family, hideAmt, round: roundNo(), need, asset });
     try { await navigator.clipboard.writeText(s.url); toast.good('내 결과 링크를 복사했어요'); track('share', { type: 'cert_link' }); } catch { /* ignore */ }
   };
   const toWall = async () => {

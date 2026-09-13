@@ -44,7 +44,32 @@ export const TEST_CITIES = [
   { city: '삿포로', country: '일본', flag: '🇯🇵', dom: false, lat: 43.06, lon: 141.35, krw: 3000000, c1: '#3b82f6', c2: '#60a5fa', nature: 0.70, warm: 0.30, medical: 0.85, climate: 'cold', blurb: '눈과 사계절, 깨끗한 자연과 음식의 일본 북방 도시.' },
   { city: '바르셀로나', country: '스페인', flag: '🇪🇸', dom: false, lat: 41.39, lon: 2.17, krw: 3570000, c1: '#0d9488', c2: '#2dd4bf', nature: 0.45, warm: 0.65, medical: 0.80, climate: 'mild', blurb: '지중해 해변과 건축, 온화한 기후의 남유럽 대도시.' },
   { city: '타이베이', country: '대만', flag: '🇹🇼', dom: false, lat: 25.03, lon: 121.56, krw: 3000000, c1: '#3b82f6', c2: '#60a5fa', nature: 0.45, warm: 0.70, medical: 0.90, climate: 'mild', blurb: '대만 수도, 대중교통과 야시장이 발달했어요.' },
-  { city: '오사카', country: '일본', flag: '🇯🇵', dom: false, lat: 34.69, lon: 135.5, krw: 2020000, c1: '#60a5fa', c2: '#93c5fd', nature: 0.35, warm: 0.55, medical: 0.85, climate: 'mild', blurb: '먹거리와 교통의 간사이 중심, 사계절 있고 겨울은 온화한 편.' }
+  { city: '오사카', country: '일본', flag: '🇯🇵', dom: false, lat: 34.69, lon: 135.5, krw: 2020000, c1: '#60a5fa', c2: '#93c5fd', nature: 0.35, warm: 0.55, medical: 0.85, climate: 'mild', blurb: '먹거리와 교통의 간사이 중심, 사계절 있고 겨울은 온화한 편.' },
+  // ── 2026-09 추가 12곳 (근거: cities.js 머리말과 같음; nature/warm/medical/climate 산출 근거는 각 줄 주석)
+  { city: '발렌시아', country: '스페인', flag: '🇪🇸', dom: false, lat: 39.47, lon: -0.38, krw: 3010000, c1: '#f97316', c2: '#fdba74', nature: 0.60, warm: 0.60, medical: 0.75, climate: 'mild', blurb: '지중해 해변과 투리아 정원, 파에야의 고향 스페인 제3도시.' },
+  // basis: nature 0.60 = 지중해 해안+투리아 정원+알부페라 자연공원(en.wikipedia Valencia) · warm 0.60 = 연평균 18.6℃ · medical 0.75 = Health Care 77.0 · climate mild = Köppen BSh/Csa
+  { city: '마드리드', country: '스페인', flag: '🇪🇸', dom: false, lat: 40.42, lon: -3.70, krw: 3390000, c1: '#dc2626', c2: '#f87171', nature: 0.35, warm: 0.50, medical: 0.80, climate: 'mild', blurb: '해발 667m 고원의 스페인 수도, 미술관과 대형 공원이 있어요.' },
+  // basis: nature 0.35 = 내륙 대도시, 레티로·카사데캄포 공원(ko.wikipedia 마드리드) · warm 0.50 = 1월 6.5℃·7월 26.2℃ 중간값 16.4℃(연평균 미기재) · medical 0.80 = Health Care 79.2 · climate mild = BSk/Csa
+  { city: '프라하', country: '체코', flag: '🇨🇿', dom: false, lat: 50.08, lon: 14.42, krw: 2820000, c1: '#b45309', c2: '#f59e0b', nature: 0.45, warm: 0.30, medical: 0.75, climate: 'cold', blurb: '블타바강과 구시가, 치안 좋은 중부유럽 수도예요.' },
+  // basis: nature 0.45 = 강·페트린 언덕(en.wikipedia Prague) · warm 0.30 = 연평균 11.5℃ · medical 0.75 = Health Care 74.7 · climate cold = Cfb/Dfb 경계, 1월 1.8℃
+  { city: '아테네', country: '그리스', flag: '🇬🇷', dom: false, lat: 37.97, lon: 23.72, krw: 2280000, c1: '#0284c7', c2: '#7dd3fc', nature: 0.55, warm: 0.65, medical: 0.60, climate: 'mild', blurb: '아크로폴리스와 바다·산에 둘러싸인 지중해성 기후의 그리스 수도.' },
+  // basis: nature 0.55 = 4개 산으로 둘러싸인 분지+해안(en.wikipedia Athens) · warm 0.65 = 연평균 19.2℃ · medical 0.60 = Health Care 58.4 · climate mild = Csa
+  { city: '이스탄불', country: '튀르키예', flag: '🇹🇷', dom: false, lat: 41.02, lon: 28.97, krw: 2270000, c1: '#e11d48', c2: '#fb7185', nature: 0.40, warm: 0.45, medical: 0.70, climate: 'mild', blurb: '보스포루스 해협을 낀 유럽·아시아 경계의 대도시예요.' },
+  // basis: nature 0.40 = 해협·바다 접하지만 1,500만 대도시 · warm 0.45 = 연평균 14.4℃ · medical 0.70 = Health Care 70.1 · climate mild = Csa/Cfa 경계, 2월 6.1℃
+  { city: '안탈리아', country: '튀르키예', flag: '🇹🇷', dom: false, lat: 36.90, lon: 30.68, krw: 1570000, c1: '#0ea5e9', c2: '#67e8f9', nature: 0.80, warm: 0.65, medical: 0.75, climate: 'mild', blurb: '토로스 산맥과 지중해 해변이 만나는 튀르키예 휴양 도시예요.' },
+  // basis: nature 0.80 = 지중해 해변+토로스 산맥+뒤덴 폭포(en.wikipedia Antalya) · warm 0.65 = 연평균 19.0℃ · medical 0.75 = Health Care 73.7 · climate mild = Csa
+  { city: '두바이', country: 'UAE', flag: '🇦🇪', dom: false, lat: 25.20, lon: 55.27, krw: 4830000, c1: '#d97706', c2: '#fcd34d', nature: 0.35, warm: 0.95, medical: 0.70, climate: 'hot', blurb: '치안 최상급의 사막 초고층 도시, 여름은 40℃를 넘어요.' },
+  // basis: nature 0.35 = 해안 있으나 사막·초고층 도시 · warm 0.95 = 연평균 27.2℃ · medical 0.70 = Health Care 70.0 · climate hot = BWh
+  { city: '알마티', country: '카자흐스탄', flag: '🇰🇿', dom: false, lat: 43.28, lon: 76.90, krw: 2080000, c1: '#16a34a', c2: '#86efac', nature: 0.80, warm: 0.30, medical: 0.50, climate: 'cold', blurb: '톈산 산맥 기슭, 스키장·호수가 가까운 카자흐스탄 최대 도시.' },
+  // basis: nature 0.80 = 트랜스일리 알라타우 산맥 기슭 700~900m, 메데우·침불락·빅알마티호수 · warm 0.30 = 연평균 10℃ · medical 0.50 = Health Care 50.9 · climate cold = Dfa, 1월 −4.7℃
+  { city: '멕시코시티', country: '멕시코', flag: '🇲🇽', dom: false, lat: 19.43, lon: -99.13, krw: 2630000, c1: '#65a30d', c2: '#bef264', nature: 0.30, warm: 0.60, medical: 0.65, climate: 'cool', blurb: '해발 2,250m 고원의 대도시, 연중 15~20℃로 온화해요.' },
+  // basis: nature 0.30 = 2,000만 대도시, 차풀테펙·소치밀코 녹지 · warm 0.60 = 연평균 18.1℃ · medical 0.65 = Health Care 66.0 · climate cool = Cwb 아열대 고원(월평균 15.4~20.4℃)
+  { city: '부에노스아이레스', country: '아르헨티나', flag: '🇦🇷', dom: false, lat: -34.60, lon: -58.38, krw: 2190000, c1: '#0369a1', c2: '#7dd3fc', nature: 0.40, warm: 0.60, medical: 0.70, climate: 'mild', blurb: '라플라타강 하구, 공원 250곳과 탱고가 있는 남미의 유럽풍 수도.' },
+  // basis: nature 0.40 = 강 하구·팜파, 공원 250곳+(en.wikipedia Buenos Aires) · warm 0.60 = 연평균 18.1℃ · medical 0.70 = Health Care 68.0 · climate mild = Cfa, 7월 11.0℃
+  { city: '도쿄', country: '일본', flag: '🇯🇵', dom: false, lat: 35.68, lon: 139.77, krw: 3050000, c1: '#4f46e5', c2: '#a5b4fc', nature: 0.25, warm: 0.50, medical: 0.80, climate: 'mild', blurb: '교통·의료·치안이 촘촘한 일본 최대 도시, 겨울은 온화한 편.' },
+  // basis: nature 0.25 = 초거대 도시, 우에노 공원 등 · warm 0.50 = 연평균 15.8℃ · medical 0.80 = Health Care 78.3 · climate mild = Cfa, 1월 5.4℃
+  { city: '빈', country: '오스트리아', flag: '🇦🇹', dom: false, lat: 48.21, lon: 16.37, krw: 3380000, c1: '#7c3aed', c2: '#c4b5fd', nature: 0.55, warm: 0.35, medical: 0.80, climate: 'cold', blurb: '도나우강·빈 숲과 카페하우스, 의료 좋은 중부유럽 수도예요.' },
+  // basis: nature 0.55 = 도나우강·도나우섬·빈 숲(en.wikipedia Vienna) · warm 0.35 = 연평균 12.6℃ · medical 0.80 = Health Care 79.9 · climate cold = Cfa/Cfb, 1월 2.1℃
 ];
 
 // 도시 월생활비는 cities.js의 CITY_KRW를 단일 소스로 공유 — '어디서 살까'와 영구 일치(공통 도시 한정).

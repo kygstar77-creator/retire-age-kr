@@ -5,7 +5,7 @@ import { prefs } from '../../utils/prefs.js';
 import { account } from '../../utils/identity.js';
 import { pushSupported, isIOSDevice, isStandalone, notifPermission, currentSubscription, subscribeFireClock, unsubscribeFireClock, targetFireDateFrom } from '../../utils/firePush.js';
 import { track } from '../../firemap-v2/dailyData.js';
-import { CAFE_URL } from '../../firemap-v2/links.js';
+import { CAFE_URL, OPENCHAT_URL } from '../../firemap-v2/links.js';
 
 function Switch({ on, onChange, disabled }) {
   return <button type="button" className="ds-switch" role="switch" aria-checked={on ? 'true' : 'false'} disabled={disabled} onClick={() => onChange(!on)} />;
@@ -66,6 +66,7 @@ export default function Settings({ simulation, onMove, onBack }) {
 
       <ListGroup label="카페 · 정보">
         <ListRow lead="🟢" title="파이어맵 네이버 카페" desc="인증 · 봐주세요 · 파이어 후 하루" href={CAFE_URL} external />
+        {OPENCHAT_URL && <ListRow lead="💬" title="카카오톡 오픈채팅" desc="질문 하나 던지고 가도 돼요" href={OPENCHAT_URL} external />}
         <ListRow lead="📄" title="면책 안내" href="/disclaimer.html" />
         <ListRow lead="🔒" title="개인정보처리방침" href="/privacy.html" />
         <ListRow lead="✉️" title="문의" href="/contact.html" />

@@ -29,7 +29,7 @@ import { track } from '../firemap-v2/dailyData.js';
 import { logEvent } from '../utils/live.js';
 import { decodeInputsFromHash } from '../utils/shareState.js';
 import { applyTheme } from '../utils/prefs.js';
-import { Toaster } from '../ui/index.js';
+import { Toaster, toast } from '../ui/index.js';
 
 function getSharedInputs() {
   try {
@@ -145,6 +145,14 @@ export default function FireMapMVP() {
   };
   const onChange = (key, value) => setInputs((c) => ({ ...c, [key]: cleanNumber(value) }));
   const applyPatch = (patch) => Object.entries(patch).forEach(([k, v]) => onChange(k, v));
+  // 결과의 레버처럼 '한 번 누르면 내 입력이 바로 바뀌는' 경로에는 되돌리기를 함께 준다.
+  // 도구(건보·세금·연금)는 자체 '해제' 토글이 있어 그대로 둔다.
+  const applyPatchWithUndo = (patch, message = '적용했어요. 위 숫자가 바뀌었어요') => {
+    const before = {};
+    Object.keys(patch || {}).forEach((k) => { before[k] = inputs[k]; });
+    applyPatch(patch);
+    toast.good(message, { ms: 5200, action: { label: '되돌리기', onClick: () => applyPatch(before) } });
+  };
   // 도시/해외체류 적용은 '미리보기 샌드박스'(experiment)로만 — 사용자가 명시적으로 저장하기 전엔 기존 저장 입력을 건드리지 않음.
   const previewPatch = (patch) => { const clean = {}; Object.entries(patch || {}).forEach(([k, v]) => { clean[k] = cleanNumber(v); }); setExpBase(inputs); setExpDraft({ ...inputs, ...clean }); setScreen('experiment'); };
   const previewCity = (krw) => previewPatch({ monthlyLivingCost: krw });
@@ -168,7 +176,7 @@ export default function FireMapMVP() {
   const VIEWS = {
     home: () => <Home onStart={(age) => { if (typeof age === 'number' && age > 0) { onChange('currentAge', age); setStep(1); } else { setStep(0); } setScreen('question'); }} onMove={setScreen} onChange={onChange} simulation={simulation} />,
     question: () => <Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />,
-    result: () => <Result inputs={inputs} simulation={simulation} rankingSimulation={rankingSimulation} onMove={setScreen} onChange={onChange} />,
+    result: () => <Result inputs={inputs} simulation={simulation} rankingSimulation={rankingSimulation} onMove={setScreen} onChange={onChange} onApplyPatch={applyPatchWithUndo} />,
     experiment: () => <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} onMove={setScreen} draft={expDraft} setDraft={setExpDraft} base={expBase} setBase={setExpBase} />,
     ranking: () => <Leaderboard simulation={simulation} rankingSimulation={rankingSimulation} onMove={setScreen} />,
     menu: () => <MenuAll onMove={setScreen} />,

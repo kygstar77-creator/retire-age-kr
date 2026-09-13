@@ -1,7 +1,7 @@
 // 결과 — 숫자 1(파이어 나이) + 필요 자산 + 레버 3 + 인증 카드. 세그먼트: 몇 살에? | N억이면?(역산).
 // 18블록·12~20버튼·팝업 2 → 6블록·버튼 ≤ 10·팝업 0. 근거: 최종본 §3-2, 4차 '얼마' 1위, ChooseFI 레버 3, TDS Result.
 import { useEffect, useMemo, useState } from 'react';
-import { TopBar, StatHero, Card, SectionHead, Button, LeverList, Fold, Tabs, RangeField, Stat, toast } from '../../ui/index.js';
+import { TopBar, StatHero, Card, SectionHead, Button, LeverList, Fold, Tabs, RangeField, Stat } from '../../ui/index.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, buildGrowthSeries, scenarioEndAge, survivalPhrase, runwayText } from '../../firemap-v2/scenarios.js';
 import { simulateRetirement, inputsIsReal, monteCarloSuccess, findEarliestRetirementAge } from '../../utils/retirementSimulator.js';
@@ -29,7 +29,7 @@ function solveMin(test, hi, round) {
 }
 
 // 레버 3 — 목표 미달이면 '목표 달성', 달성 중이면 '1년 더 당기기'
-function useLevers(simulation, onChange) {
+function useLevers(simulation, applyPatch) {
   return useMemo(() => {
     const ni = simulation.inputs;
     const until = ni.simulationUntilAge;
@@ -50,10 +50,10 @@ function useLevers(simulation, onChange) {
       off: it.solve === null || it.solve === 0,
       label: it.solve === null ? '이 방법만으론 어려워요' : it.solve === 0 ? '이미 충분해요' : it.label(it.solve),
       gain: it.solve ? (baseOk ? `−1년 → ${goal}세` : `${ni.targetRetirementAge}세 달성`) : null,
-      onApply: it.solve ? () => { Object.entries(it.patch(it.solve)).forEach(([k, v]) => onChange(k, v)); try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch { /* ignore */ } toast.good('적용했어요. 위 숫자가 바뀌었어요'); } : null
+      onApply: it.solve ? () => { applyPatch(it.patch(it.solve)); try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch { /* ignore */ } } : null
     }));
     return { items, baseOk, goal, until };
-  }, [simulation, onChange]);
+  }, [simulation, applyPatch]);
 }
 
 function YearlyAssetChart({ simulation }) {
@@ -121,7 +121,7 @@ function ReverseMode({ simulation }) {
   );
 }
 
-export default function Result({ inputs, simulation, rankingSimulation, onMove, onChange }) {
+export default function Result({ inputs, simulation, rankingSimulation, onMove, onChange, onApplyPatch }) {
   const rs = rankingSimulation || simulation;
   const base = statsRank(rs);
   const inp = simulation.inputs;
@@ -139,7 +139,8 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
     try { if (sessionStorage.getItem('fm_open_cert')) { sessionStorage.removeItem('fm_open_cert'); return true; } } catch { /* ignore */ }
     return false;
   });
-  const levers = useLevers(simulation, onChange);
+  const applyLever = onApplyPatch || ((patch) => Object.entries(patch).forEach(([k, v]) => onChange(k, v)));
+  const levers = useLevers(simulation, applyLever);
   const success = useMemo(() => { try { return monteCarloSuccess(inp, { paths: 300 }); } catch { return null; } }, [inp]);
   const myBand = assetBandOf(simulation.netWorth);
   const inputsHash = `${earliest}|${rankEarliest}|${target}|${inp.financialAsset}|${inp.monthlyInvestment}|${inp.monthlyLivingCost}`;

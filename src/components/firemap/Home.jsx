@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { TopBar, Card, SectionHead, Button, Stat, Notice, IconButton } from '../../ui/index.js';
 import { fetchAggregates } from '../../utils/firemapScoresApi.js';
 import { track } from '../../firemap-v2/dailyData.js';
-import { CAFE_URL } from '../../firemap-v2/links.js';
+import { CAFE_URL, OPENCHAT_URL } from '../../firemap-v2/links.js';
+import CommunityCta from './CommunityCta.jsx';
 
 function readChallenge() {
   try {
@@ -32,7 +33,10 @@ export default function Home({ onStart, onMove, simulation }) {
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar ds-screen-gap">
-      <TopBar onHome={() => onMove('home')} actions={<a className="ds-topbar__handle" href={CAFE_URL} target="_blank" rel="noopener noreferrer"><span>🟢 카페</span></a>} />
+      <TopBar onHome={() => onMove('home')} actions={<>
+        <a className="ds-topbar__handle" href={CAFE_URL} target="_blank" rel="noopener noreferrer"><span>🟢 카페</span></a>
+        {OPENCHAT_URL && <a className="ds-topbar__handle" href={OPENCHAT_URL} target="_blank" rel="noopener noreferrer"><span>💬 채팅</span></a>}
+      </>} />
 
       {challenge && (
         <Notice tone="accent" icon="🔥" title={challenge.ea ? `친구는 ${challenge.ea}세에 파이어 가능` : '친구가 파이어 등수를 보냈어요'}>
@@ -67,9 +71,7 @@ export default function Home({ onStart, onMove, simulation }) {
         <p className="ds-caption ds-mt-2 ds-mb-0">예시예요. 결과에서 저축·생활비·부업 중 하나만 바꿔도 몇 년이 당겨지는지 보여줘요.</p>
       </Card>
 
-      <Card padding="md">
-        <SectionHead size="sm" title="🟢 파이어맵 카페" desc="인증 · 봐주세요 · 파이어 후 하루 · 파이어족이 모이는 곳" action={<Button as="a" href={CAFE_URL} target="_blank" rel="noopener noreferrer" variant="tint" size="sm">가기</Button>} />
-      </Card>
+      <CommunityCta where="landing" title="먼저 온 사람들 이야기" desc="인증 · 봐주세요 · 파이어 후 하루" />
 
       <p className="ds-caption ds-textcenter"><a className="ds-link ds-link--muted" href="/privacy.html">개인정보처리방침</a> · <a className="ds-link ds-link--muted" href="/disclaimer.html">면책</a> · <a className="ds-link ds-link--muted" href="/contact.html">문의</a></p>
     </main>

@@ -13,7 +13,7 @@ import { simulateRetirement, findEarliestRetirementAge } from '../../utils/retir
 import { formatWon } from '../../firemap-v2/formatters.js';
 
 const medal = (i) => (i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : String(i + 1));
-const BOARDS = [{ key: 'band', label: '같은 구간' }, { key: 'peer', label: '또래' }];
+const BOARDS = [{ key: 'all', label: '전체' }, { key: 'band', label: '같은 구간' }, { key: 'peer', label: '또래' }];
 
 // 바로 위 사람의 파이어 나이에 닿으려면 월 저축 얼마 더?
 function monthlyToReach(inp, targetAge) {
@@ -35,7 +35,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
   const calculated = hasCalculated();
   const myAdvance = calculated ? Math.max(0, computeProgress(simulation).advanceDays) : 0;
   const myBand = calculated ? assetBandOf(simulation.netWorth) : null;
-  const [board, setBoard] = useState('band');
+  const [board, setBoard] = useState('all');
   const [data, setData] = useState({ loading: true });
 
   useEffect(() => {
@@ -43,8 +43,10 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
     setData({ loading: true });
     (async () => {
       try {
-        if (board === 'band') {
-          const [top, me, nb, agg] = await Promise.all([fetchTopScores(10, undefined, myBand), fetchUserRank(earliest, undefined, myAdvance, myBand), fetchNeighbors(earliest, undefined, undefined, myBand), fetchAggregates()]);
+        if (board === 'all' || board === 'band') {
+          // 전체 보드는 구간 필터를 빼고 같은 질의를 쓴다(순위 기준은 자산이 아니라 파이어 나이).
+          const band = board === 'band' ? myBand : undefined;
+          const [top, me, nb, agg] = await Promise.all([fetchTopScores(10, undefined, band), fetchUserRank(earliest, undefined, myAdvance, band), fetchNeighbors(earliest, undefined, undefined, band), fetchAggregates()]);
           if (alive) setData({ top: top || [], me, nb, agg });
         } else if (board === 'peer') {
           const pr = await fetchPeerBoard({ currentAge: rs.inputs.currentAge, ageBand: base.ageBand, earliestAge: earliest, advancedDays: myAdvance, limit: 10 });
@@ -61,7 +63,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
   const nearAbove = data.nb && data.nb.above && data.nb.above.length ? data.nb.above[data.nb.above.length - 1] : null;
   const needMonthly = useMemo(() => (nearAbove && nearAbove.earliest_age && earliest && nearAbove.earliest_age < earliest) ? monthlyToReach(rs.inputs, nearAbove.earliest_age) : null, [board, nearAbove, earliest, rs.inputs]);
 
-  const scopeLabel = board === 'band' ? `자산 ${ASSET_BAND_LABELS[myBand] || '전체'} 구간` : (data.peer ? data.peer.ageLabel : `${base.ageBandLabel} 또래`);
+  const scopeLabel = board === 'all' ? '전체' : board === 'band' ? `자산 ${ASSET_BAND_LABELS[myBand] || '전체'} 구간` : (data.peer ? data.peer.ageLabel : `${base.ageBandLabel} 또래`);
   const rowValue = (r) => (r.earliest_age ? `${r.earliest_age}세` : '—');
 
   return (
@@ -78,7 +80,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
           value={data.me && data.me.percentile != null ? `상위 ${data.me.percentile}` : (data.loading ? '…' : '—')} unit={data.me && data.me.percentile != null ? '%' : ''}
           sub={data.me ? `${data.me.total.toLocaleString()}명 중 ${data.me.position.toLocaleString()}등 · ${earliest ? `${earliest}세 파이어 가능` : '아직 파이어 어려움'} · 세전 공정 비교` : '집계 중…'}
           tiles={[
-            { label: '구간 평균', value: data.agg && data.agg.avgEarliest ? `${data.agg.avgEarliest}세` : '—' },
+            { label: board === 'all' ? '전체 평균' : '구간 평균', value: data.agg && data.agg.avgEarliest ? `${data.agg.avgEarliest}세` : '—' },
             { label: '1등', value: data.top && data.top[0] && data.top[0].earliest_age ? `${data.top[0].earliest_age}세` : '—' },
             { label: '내 등수', value: data.me ? `${data.me.position.toLocaleString()}등` : '—' }
           ]}

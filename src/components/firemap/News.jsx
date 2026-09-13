@@ -125,7 +125,6 @@ export default function News({ onBack }) {
             {ind.rows.map((r) => { const { key, ...rest } = r; return <IndexRow key={key} {...rest} />; })}
           </div>
         )}
-        <p className="ds-caption ds-mt-2 sc-news-cap">지표는 참고만 · 내 파이어 나이엔 영향 없어요</p>
       </Card>
 
 
@@ -138,7 +137,6 @@ export default function News({ onBack }) {
               <ListRow key={d.key} lead="📅" title={d.name} desc={d.note || undefined} trail={<span className="num">{d.date ? mdOf(d.date) : ''}{d.expected ? <Badge tone="neutral" className="sc-news-exp">예상</Badge> : null}</span>} chevron={false} size="S" />
             ))}
           </ListGroup>
-          <p className="ds-caption ds-mt-2 sc-news-cap">과거 배당 기준 예상이에요 · 실제 날짜는 운용사 공지로 확인해요</p>
         </Card>
       )}
 

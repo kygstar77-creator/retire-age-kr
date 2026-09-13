@@ -43,7 +43,6 @@ export default function FireWidgetCard({ simulation, onMove }) {
         <ListRow
           lead="📰"
           title={news || '오늘의 소식'}
-          desc={news ? '지표 · 배당락' : '시장 지표 · 배당락'}
           onClick={() => onMove('news')}
           size="S"
         />

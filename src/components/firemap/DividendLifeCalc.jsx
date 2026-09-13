@@ -154,7 +154,7 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
       <Card>
         <SectionHead size="sm" kicker="내 조건" title="배당 자산과 배당수익률" desc="배당소득세 15.4%를 뺀 금액이에요" />
         <RangeField label="배당 자산" value={asset} min={0} max={3000000000} step={10000000} money format={eok} chips={[10000000, 100000000, 1000000000]} onChange={setAsset} />
-        <RangeField label="배당수익률" value={yieldPct} min={0} max={12} step={0.1} format={pctFmt} onChange={setYieldPct} hint="배당이 높을수록 주가 상승은 낮은 편이에요" />
+        <RangeField label="배당수익률" value={yieldPct} min={0} max={12} step={0.1} format={pctFmt} onChange={setYieldPct} />
         <Chips className="ds-mt-2">
           {YIELD_PRESETS.map((p) => <Chip key={p.label} on={Math.abs(yieldPct - p.value) < 0.05} onClick={() => setYieldPct(p.value)}>{p.label} {p.value.toFixed(1)}%</Chip>)}
         </Chips>
@@ -177,7 +177,7 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
       {!over2000 && over1000 && <Notice tone="warn" icon="🩺">연 배당 <b className="num">{eok(annual)}</b> · 1,000만원을 넘으면 건보료에 잡혀요</Notice>}
 
       <Card>
-        <SectionHead size="sm" kicker="월별" title="월별 배당" desc="달마다 얼마씩 들어오는지" action={
+        <SectionHead size="sm" kicker="월별" title="월별 배당" action={
           <Chips>
             <Chip on={barMode === 'quarter'} onClick={() => setBarMode('quarter')}>분기</Chip>
             <Chip on={barMode === 'month'} onClick={() => setBarMode('month')}>월배당</Chip>
@@ -187,15 +187,8 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
       </Card>
 
       <Card>
-        <SectionHead size="sm" kicker="배당락일" title="배당 캘린더" desc="배당락일 전 영업일까지 사야 받아요" />
+        <SectionHead size="sm" kicker="배당락일" title="배당 캘린더" />
         <MiniCalendar />
-      </Card>
-
-
-      <Card>
-        <SectionHead size="sm" kicker="읽어둘 것" title="배당은 수익률에 이미 들어 있어요" desc="결과 화면의 연 수익률은 주가 상승과 배당을 합친 값이에요" />
-        <p className="ds-body-sm sc-div-note">여기는 원금을 헐지 않고 배당만으로 생활비를 채우는 나이예요. 결과 화면은 원금도 쓰고 국민연금도 더하니 더 이른 나이가 나와요.</p>
-        <p className="ds-body-sm sc-div-note">그래서 이 배당을 결과에 따로 더하면 같은 돈을 두 번 세게 돼요. 이 화면은 배당만 떼어 보는 계산기로 쓰면 돼요.</p>
       </Card>
 
       <p className="ds-caption ds-textcenter">투자 권유가 아니에요</p>

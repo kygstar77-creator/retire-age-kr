@@ -102,13 +102,11 @@ function AssetJourney({ simulation }) {
     <Card>
       <SectionHead size="sm" kicker="내 자산 흐름" title="나이별로 얼마가 되는지" />
       <YearlyAssetChart simulation={simulation} />
-      <p className="ds-caption ds-textcenter">그래프를 누르면 그 나이의 자산이 보여요</p>
       <StatTiles className="ds-mt-3" items={[
         { label: '1년 뒤', value: `+${formatWon(Math.max(0, y1))}` },
         ...(y5 != null ? [{ label: '5년 뒤', value: `+${formatWon(Math.max(0, y5))}` }] : []),
         { label: `${simulation.displayResult.retirementAge}세 때`, value: formatWon(simulation.displayResult.fireAsset || 0) }
       ]} />
-      {y1 > 0 && <p className="ds-caption ds-mt-2">1년 새 <b className="num">+{formatWon(Math.max(0, y1))}</b> = 내 저축 <b className="num">{formatWon(save1)}</b> + 투자수익 <b className="num">{formatWon(ret1)}</b></p>}
       <ol className="ds-road">
         {list.map((m) => (
           <li key={`${m.age}|${m.label}`} className={`ds-road__step${m.hi ? ' ds-road__step--hi' : ''}`}>
@@ -117,7 +115,6 @@ function AssetJourney({ simulation }) {
           </li>
         ))}
       </ol>
-      <p className="ds-caption">연 수익률 {simulation.inputs.annualReturnRate}% · 물가 {simulation.inputs.inflationRate}% · 그때 통장에 찍힐 금액이라 물가는 빼지 않았어요</p>
     </Card>
   );
 }
@@ -209,7 +206,6 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
             <p className="ds-caption ds-mt-3">{[
               // 위 나이는 세금을 넣은 값인데 또래 비교·등수는 모두 세금을 뺀 값으로 맞춘다.
               // 두 값이 다를 때만 그 사실을 적어 준다.
-              earliest !== rankEarliest ? '또래 비교와 등수는 세금 빼고 맞춰요' : null,
               live ? `함께 계산한 ${live.total.toLocaleString()}명 중 ${live.position.toLocaleString()}등` : null
             ].filter(Boolean).join(' · ')}</p>
           </StatHero>
@@ -224,7 +220,6 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
           <AssetJourney simulation={simulation} />
           <Card>
             <SectionHead size="sm" kicker="파이어 후" title="건보료와 세금" desc={hiEst ? `지역가입자로 전환되면 월 약 ${hiEst.monthly.toLocaleString()}원 (추정)` : '지역가입자 전환 · 배당세'} />
-            <p className="ds-p">직장을 그만두면 건보료를 혼자 내고 소득·재산 기준 <b>지역가입자</b>로 바뀌어요. 오늘 화폐로 연 금융소득 {hiEst ? hiEst.finMan.toLocaleString() : '—'}만원을 가정한 대략값이고, 재산은 넣지 않았어요.</p>
             <div className="ds-bottomcta"><Button variant="secondary" size="md" onClick={() => onMove('dependent')}>건보료 정밀 계산</Button><Button variant="secondary" size="md" onClick={() => onMove('foreignTax')}>양도·배당세</Button></div>
           </Card>
           {cities.length > 0 && (

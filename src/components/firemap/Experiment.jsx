@@ -78,10 +78,6 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
   const money = (key, label, hint) => (
     <RangeField label={label} value={cleanNumber(draft[key])} min={R[key][0]} max={R[key][1]} money format={eok} chips={C[key] || []} hint={hint} onChange={(v) => editDraft(key, v)} />
   );
-  const heroSub = !earliest
-    ? '아직 파이어 나이가 안 나와요 · 생활비를 낮춰보세요'
-    : dirty ? '저장 전엔 미리보기예요 · 내 결과엔 아직 반영 안 됐어요'
-      : saved ? '내 결과와 등수에 반영됐어요' : '값을 바꾸면 위 숫자가 따라 바뀌어요';
 
   return (
     <main className={cx('fm-screen fm-scroll fm-has-tabbar ds-screen-gap', dirty && 'ds-has-fixedcta')}>
@@ -91,7 +87,7 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
         tone="dark" size="title" className="sc-exp-hero"
         label={dirty ? '바꾸면 이렇게 돼요' : '지금 조건이면'}
         value={earliest ? `${earliest}` : '아직'} unit={earliest ? '세' : ''}
-        sub={heroSub}
+        
         tiles={[
           { label: `${simulation.displayResult.retirementAge}세 때 자산`, value: eok(simulation.displayResult.fireAsset) },
           { label: `목표 ${simulation.inputs.targetRetirementAge}세`, value: targetGapText(simulation) },
@@ -100,10 +96,10 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
       />
 
       <Card>
-        <SectionHead size="sm" kicker="기본 조건" title="월 저축 · 생활비 · 수익률" desc="값을 누르면 직접 입력할 수 있어요" />
+        <SectionHead size="sm" kicker="기본 조건" title="월 저축 · 생활비 · 수익률" />
         {money('monthlyInvestment', '월 저축액')}
         {money('monthlyLivingCost', '파이어 후 월 생활비')}
-        {money('partTimeIncomeAfterRetirement', '파이어 후 부업 소득', '물가와 상관없이 고정 수입으로 계산해요')}
+        {money('partTimeIncomeAfterRetirement', '파이어 후 부업 소득')}
       </Card>
 
       <Fold icon="🎂" title="나이·자산" hint={`${draft.currentAge}세 → ${draft.targetRetirementAge}세 · 지금 ${eok(draft.financialAsset)}`}>
@@ -114,23 +110,20 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
 
       <Fold icon="⚙️" title="고급 가정" hint={`저축 ${savingYearsValue}년 · 연봉 ${draft.salaryGrowthRate}% · 물가 ${draft.inflationRate}% · 수익 ${draft.annualReturnRate}%`}>
         <RangeField label="저축 기간" value={savingYearsValue} min={1} max={yearsToRetire} step={1} format={(v) => `${v}년`} hint={`기본은 파이어까지 ${yearsToRetire}년 매달 저축이에요 · 줄이면 이후엔 모은 돈을 굴리기만 해요`} onChange={(v) => editDraft('savingYears', v >= yearsToRetire ? 0 : v)} />
-        <RangeField label="임금상승률" value={cleanNumber(draft.salaryGrowthRate)} min={R.salaryGrowthRate[0]} max={R.salaryGrowthRate[1]} step={1} format={pctFmt} hint="저축액도 매년 이만큼 늘어요" onChange={(v) => editDraft('salaryGrowthRate', v)} />
-        <RangeField label="물가 상승률" value={cleanNumber(draft.inflationRate)} min={R.inflationRate[0]} max={R.inflationRate[1]} step={1} format={pctFmt} hint="생활비·연금·건보료·임대수익이 매년 이만큼 올라요" onChange={(v) => editDraft('inflationRate', v)} />
+        <RangeField label="임금상승률" value={cleanNumber(draft.salaryGrowthRate)} min={R.salaryGrowthRate[0]} max={R.salaryGrowthRate[1]} step={1} format={pctFmt} onChange={(v) => editDraft('salaryGrowthRate', v)} />
+        <RangeField label="물가 상승률" value={cleanNumber(draft.inflationRate)} min={R.inflationRate[0]} max={R.inflationRate[1]} step={1} format={pctFmt} onChange={(v) => editDraft('inflationRate', v)} />
         <RangeField label="연 수익률" value={cleanNumber(draft.annualReturnRate)} min={R.annualReturnRate[0]} max={R.annualReturnRate[1]} step={1} format={pctFmt} onChange={(v) => editDraft('annualReturnRate', v)} />
         <Chips className="ds-mt-2">
           {investmentScenarios.map((sc) => (
             <Chip key={sc.key} on={sc.annualReturnRate === draft.annualReturnRate} onClick={() => editDraft('annualReturnRate', sc.annualReturnRate)}>{sc.label} {sc.annualReturnRate}%</Chip>
           ))}
         </Chips>
-        <p className="ds-caption ds-mt-2">{activeScenario ? activeScenario.copy : '직접 넣은 수익률로 계산해요'} · 과거 평균일 뿐 미래를 보장하지 않아요 · {sourceLine('returnPresets')}</p>
-        <Button variant="ghost" size="sm" className="ds-mt-2" onClick={() => (onMove ? onMove('foreignTax') : (window.location.hash = '#foreignTax'))}>양도·배당세는 세금 도구에서 →</Button>
       </Fold>
 
       <Fold icon="🏠" title="부동산·부채·임대수익" hint={hasAssetExtra ? `순자산 ${eok(netWorth)}` : '순자산·또래 비교에만 반영'} defaultOpen={hasAssetExtra}>
         {money('realEstateValue', '부동산')}
         {money('debt', '부채')}
-        <p className="ds-caption">순자산 <b className="num">{eok(netWorth)}</b> · 부동산과 부채는 순자산·또래 비교에만 반영돼요</p>
-        {money('monthlyRentalIncome', '파이어 후 월 임대수익', '세후 기준이에요 · 생활비를 메워 파이어 나이를 앞당겨요')}
+        {money('monthlyRentalIncome', '파이어 후 월 임대수익')}
       </Fold>
 
       <Fold icon="🏛️" title="국민연금" hint="수령 나이 · 월 수령액">
@@ -139,7 +132,6 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
 
       <Fold icon="📈" title="자산 흐름" hint={`납입 원금 ${eok(principalAtRet)} · 투자 수익 ${eok(gainsAtRet)}`}>
         <AssetGrowthChart ages={growth.ages} principal={growth.principal} gains={growth.gains} retirementAge={simulation.displayResult.retirementAge} depletionAge={simulation.displayResult.depletionAge} />
-        <p className="ds-caption ds-mt-2">파이어 <b className="num">{draft.targetRetirementAge}세</b> 기준 · 납입 원금 <b className="num">{eok(principalAtRet)}</b> · 투자 수익 <b className="num">{eok(gainsAtRet)}</b> · 파이어 후엔 쓰면서 줄어요</p>
       </Fold>
 
       <p className="ds-caption ds-textcenter">투자 권유가 아니에요</p>

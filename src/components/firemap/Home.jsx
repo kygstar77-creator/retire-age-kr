@@ -68,7 +68,6 @@ export default function Home({ onStart, onMove, simulation }) {
           <Stat label="필요 자산" value={<>13.1<span className="ds-stat__unit">억</span></>} size="md" />
           <Stat label="같은 구간" value={<>상위 18<span className="ds-stat__unit">%</span></>} size="md" />
         </div>
-        <p className="ds-caption ds-mt-2 ds-mb-0">저축·생활비·부업을 바꾸면 파이어 나이가 얼마나 앞당겨지는지도 같이 나와요</p>
       </Card>
 
       <CommunityCta where="landing" />

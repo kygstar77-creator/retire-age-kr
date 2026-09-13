@@ -50,7 +50,6 @@ export default function DependentCheck({ inputs, simulation, onApply }) {
     ? {
       label: r.eligible ? '피부양자 유지 가능 · 지역가입자로 전환되면 월' : '피부양자 제외 · 지역가입자로 전환되면 월',
       value: eok(est.monthly),
-      sub: r.eligible ? '지금은 0원이에요 · 소득·재산이 기준을 넘으면 이 금액을 내요' : '회사 없이 혼자 내는 건강보험이에요 · 재산도 같이 잡혀요',
       tiles: [
         { label: '소득 보험료', value: eok(est.incomeMonthly) },
         { label: '재산 보험료', value: eok(est.propMonthly) },
@@ -103,7 +102,6 @@ export default function DependentCheck({ inputs, simulation, onApply }) {
       {applied
         ? <Button variant="secondary" size="md" full onClick={() => { onApply({ healthInsuranceEnabled: 0, monthlyHealthInsurance: 0 }); toast('건보료 반영을 해제했어요'); }}>✓ 반영 중 · 월 {eok(appliedMonthly)} · 해제</Button>
         : <Button variant="primary" size="md" full onClick={() => { onApply({ healthInsuranceEnabled: 1, monthlyHealthInsurance: applyMonthly }); toast.good('건보료를 반영했어요. 결과 숫자가 바뀌어요'); }}>월 {eok(applyMonthly)} 내 파이어 계산에 반영</Button>}
-      <p className="ds-caption ds-mt-2">생활비에 건강보험료를 이미 넣었다면 그만큼 빼 주세요</p>
 
       <p className="ds-caption ds-textcenter">2026 요율 기준 추정이에요 · 정확한 금액은 국민건강보험공단에서 확인해요</p>
       <p className="ds-caption ds-textcenter">투자 권유가 아니에요</p>

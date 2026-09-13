@@ -1,18 +1,19 @@
-// 랭킹 — 같은 구간(자산 밴드) · 또래 · 저축 리그. 4차 조사 결론: 금액 훈수 갈등 → 같은 구간 비교만. 384행 → ~170행.
+// 랭킹 — 같은 구간(자산 밴드) · 또래. 4차 조사 결론: 금액 훈수 갈등 → 같은 구간 비교만.
+// 2026-09-13 저축 리그 제거(저축 기능 종료).
 import { useEffect, useMemo, useState } from 'react';
 import { TopBar, Tabs, StatHero, Card, SectionHead, ListGroup, ListRow, Button, Skeleton, EmptyState } from '../../ui/index.js';
 import { identityIds, accountHandle } from '../../utils/identity.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { fetchTopScores, fetchUserRank, fetchAggregates, fetchNeighbors, assetBandOf, ASSET_BAND_LABELS, fetchPeerBoard } from '../../utils/firemapScoresApi.js';
-import { fetchSaveBoard } from '../../utils/firemapSaveApi.js';
 import { displayName } from '../../firemap-v2/funName.js';
-import { wonStr, fmtAdvance, track } from '../../firemap-v2/dailyData.js';
+import { fmtAdvance, track } from '../../firemap-v2/dailyData.js';
 import { computeProgress, hasCalculated } from '../../utils/savingsEngine.js';
+import CommunityCta from './CommunityCta.jsx';
 import { simulateRetirement, findEarliestRetirementAge } from '../../utils/retirementSimulator.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 
 const medal = (i) => (i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : String(i + 1));
-const BOARDS = [{ key: 'band', label: '같은 구간' }, { key: 'peer', label: '또래' }, { key: 'save', label: '저축 리그' }];
+const BOARDS = [{ key: 'band', label: '같은 구간' }, { key: 'peer', label: '또래' }];
 
 // 바로 위 사람의 파이어 나이에 닿으려면 월 저축 얼마 더?
 function monthlyToReach(inp, targetAge) {
@@ -49,9 +50,6 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
           const pr = await fetchPeerBoard({ currentAge: rs.inputs.currentAge, ageBand: base.ageBand, earliestAge: earliest, advancedDays: myAdvance, limit: 10 });
           const nb = pr ? await fetchNeighbors(earliest, pr.scope === 'band' ? base.ageBand : undefined, pr.scope === 'age' ? rs.inputs.currentAge : undefined) : null;
           if (alive) setData({ top: pr ? pr.top : [], me: pr ? { position: pr.position, total: pr.total, percentile: pr.percentile } : null, nb, peer: pr });
-        } else {
-          const rows = await fetchSaveBoard('deposit', 10);
-          if (alive) setData({ top: rows || [], save: true });
         }
       } catch { if (alive) setData({ top: [] }); }
     })();
@@ -61,10 +59,10 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
   }, [board, earliest, myBand]);
 
   const nearAbove = data.nb && data.nb.above && data.nb.above.length ? data.nb.above[data.nb.above.length - 1] : null;
-  const needMonthly = useMemo(() => (board !== 'save' && nearAbove && nearAbove.earliest_age && earliest && nearAbove.earliest_age < earliest) ? monthlyToReach(rs.inputs, nearAbove.earliest_age) : null, [board, nearAbove, earliest, rs.inputs]);
+  const needMonthly = useMemo(() => (nearAbove && nearAbove.earliest_age && earliest && nearAbove.earliest_age < earliest) ? monthlyToReach(rs.inputs, nearAbove.earliest_age) : null, [board, nearAbove, earliest, rs.inputs]);
 
-  const scopeLabel = board === 'band' ? `자산 ${ASSET_BAND_LABELS[myBand] || '전체'} 구간` : board === 'peer' ? (data.peer ? data.peer.ageLabel : `${base.ageBandLabel} 또래`) : '이번 달 저축';
-  const rowValue = (r) => (data.save ? wonStr(r.value || 0) : (r.earliest_age ? `${r.earliest_age}세` : '—'));
+  const scopeLabel = board === 'band' ? `자산 ${ASSET_BAND_LABELS[myBand] || '전체'} 구간` : (data.peer ? data.peer.ageLabel : `${base.ageBandLabel} 또래`);
+  const rowValue = (r) => (r.earliest_age ? `${r.earliest_age}세` : '—');
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar ds-screen-gap">
@@ -73,7 +71,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
 
       {!calculated && <EmptyState icon="🧮" title="계산하면 내 등수가 나와요" desc="1분이면 같은 구간에서 몇 등인지 보여줘요" action={{ label: '계산하기', onClick: () => onMove('question') }} />}
 
-      {calculated && board !== 'save' && (
+      {calculated && (
         <StatHero
           tone="dark"
           label={`${scopeLabel} 중 내 위치`}
@@ -87,9 +85,6 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
         >
           {needMonthly != null && nearAbove && <p className="ds-caption ds-mt-3">바로 위 {displayName(nearAbove)}({nearAbove.earliest_age}세)까지 {needMonthly === 0 ? '거의 다 왔어요' : `월 +${formatWon(needMonthly)} 저축이면 제쳐요`}</p>}
         </StatHero>
-      )}
-      {calculated && board === 'save' && (
-        <StatHero tone="dark" label="내 파이어 앞당김" value={myAdvance > 0 ? (fmtAdvance(myAdvance * 86400) || '0초') : '0초'} sub={myAdvance > 0 ? '저축을 기록할수록 더 당겨져요 🔥' : '저축 탭에서 기록하면 파이어가 당겨지고 순위가 올라요'} size="title" />
       )}
 
       <ListGroup label={`${scopeLabel} 상위 10`}>
@@ -106,9 +101,11 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
 
       <p className="ds-caption ds-textcenter">✋ 모든 순위는 직접 입력한 기록 기반 · 자산은 구간만 저장돼요</p>
       <div className="ds-bottomcta ds-mt-0">
-        <Button variant="secondary" size="md" onClick={() => onMove(board === 'save' ? 'save' : 'experiment')}>{board === 'save' ? '저축 기록하기' : '조건 바꿔 올리기'}</Button>
+        <Button variant="secondary" size="md" onClick={() => onMove('experiment')}>조건 바꿔 올리기</Button>
         <Button variant="tint" size="md" onClick={() => onMove('result')}>🪪 인증 카드</Button>
       </div>
+
+      <CommunityCta where="ranking" title="내 숫자, 어디에 올릴까요" desc="같은 구간 사람들 글이 카페에 모여요" />
     </main>
   );
 }

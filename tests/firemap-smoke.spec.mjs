@@ -2,7 +2,7 @@
 import { expect, test } from '@playwright/test';
 
 const INPUTS = { currentAge: 34, targetRetirementAge: 50, financialAsset: 150000000, monthlyInvestment: 1500000, monthlyLivingCost: 2500000 };
-const SCREENS = ['#home', '#question', '#result', '#experiment', '#save', '#ranking', '#menu', '#settings', '#journey', '#account', '#cities', '#firetype', '#dependent', '#foreignTax', '#dividend', '#pension', '#news', '#wall'];
+const SCREENS = ['#home', '#question', '#result', '#experiment', '#ranking', '#menu', '#settings', '#account', '#cities', '#firetype', '#dependent', '#foreignTax', '#dividend', '#pension', '#news', '#wall'];
 
 async function seed(page, seeded = true) {
   await page.addInitScript(({ inp, seeded }) => {
@@ -55,7 +55,8 @@ test.describe('firemap smoke', () => {
     await page.goto('/#result');
     await page.waitForTimeout(700);
     const h = await page.evaluate(() => document.documentElement.scrollHeight);
-    expect(h, 'result page height ≤ 2.5 viewports').toBeLessThanOrEqual(852 * 2.5);
+    // 결과는 접지 않는다(계산기 37곳 조사에서 결과를 아코디언으로 숨긴 곳 0). 대신 폭주만 막는 상한.
+    expect(h, 'result page height ≤ 4 viewports').toBeLessThanOrEqual(852 * 4);
     const buttons = await page.locator('main.fm-screen button:visible').count();
     expect(buttons, 'result visible buttons').toBeLessThanOrEqual(16);
   });
@@ -73,30 +74,33 @@ test.describe('firemap smoke', () => {
     await expect(page.getByRole('button', { name: '다음' })).toBeEnabled();
   });
 
-  test('landing (no data) shows no popups and 4 tabs', async ({ page }) => {
+  test('landing (no data) shows no popups and no tab bar', async ({ page }) => {
     await seed(page, false);
     await page.goto('/#home');
     await page.waitForTimeout(500);
-    expect(await page.locator('.ds-tabbar__tab').count()).toBe(4);
+    // 랜딩은 계산 유도 하나만 — 탭바를 숨겨 첫 화면을 비운다.
+    expect(await page.locator('.ds-tabbar__tab').count()).toBe(0);
     expect(await page.locator('[role="dialog"]').count()).toBe(0);
   });
 
-  test('today home shows 3 numbers and rule chips', async ({ page }) => {
+  test('result is the front screen: 4 tabs and the widget 3 numbers', async ({ page }) => {
     await seed(page);
-    await page.goto('/#home');
+    await page.goto('/#result');
     await page.waitForTimeout(700);
+    expect(await page.locator('.ds-tabbar__tab').count()).toBe(4);
     expect(await page.locator('.ds-three .ds-stat').count()).toBe(3);
-    expect(await page.locator('.ds-rule').count()).toBeGreaterThanOrEqual(6);
+    // 저축은 걷어냈다 — 규칙 칩이 어디에도 없어야 한다.
+    expect(await page.locator('.ds-rule').count()).toBe(0);
   });
 
   test('copy rules: no 합니다/하세요, no banned system words', async ({ page }) => {
     await seed(page);
-    for (const hash of ['#home', '#result', '#save', '#ranking', '#menu', '#settings']) {
+    for (const hash of ['#home', '#result', '#ranking', '#menu', '#settings']) {
       await page.goto(`/${hash}`);
       await page.waitForTimeout(500);
       const text = await page.locator('main.fm-screen').innerText();
       expect(text, `${hash} 합니다체`).not.toMatch(/합니다|하세요|십시오/);
-      expect(text, `${hash} 시스템 용어`).not.toMatch(/시뮬레이션|파라미터|프리셋|세그먼트|샌드박스|커뮤니티|라운지|오픈채팅/);
+      expect(text, `${hash} 시스템 용어`).not.toMatch(/시뮬레이션|파라미터|프리셋|세그먼트|샌드박스|커뮤니티|라운지/);
     }
   });
 });

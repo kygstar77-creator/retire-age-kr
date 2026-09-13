@@ -16,14 +16,13 @@ import Wall from './firemap/Wall.jsx';
 import Leaderboard from './firemap/Leaderboard.jsx';
 import CityExplorer from './firemap/CityExplorer.jsx';
 import DividendLifeCalc from './firemap/DividendLifeCalc.jsx';
-import Savings from './firemap/Savings.jsx';
-import JourneyStage from './firemap/JourneyStage.jsx';
 import News from './firemap/News.jsx';
 import Settings from './firemap/Settings.jsx';
 import { buildSimulation, defaultInputs, inputsIsReal } from '../utils/retirementSimulator.js';
 import { STORAGE_KEY, questions } from '../firemap-v2/data.js';
 import { cleanNumber } from '../firemap-v2/formatters.js';
 import { screens, resolveScreen } from '../firemap-v2/screens.js';
+import { getLatestRank } from '../firemap-v2/rankHistory.js';
 import { maybeClaimOnLoad, claimDevice, syncAfterAuth, pullInputsIfNewer } from '../utils/firemapStateApi.js';
 import { handleKakaoRedirect } from '../utils/kakaoAuth.js';
 import { track } from '../firemap-v2/dailyData.js';
@@ -52,6 +51,11 @@ function loadInputs() {
 
 function readScreenFromHash() {
   if (getSharedInputs() && !Object.values(screens).some((s) => s.hash === window.location.hash)) return 'result';
+  // 해시가 없으면: 계산해 본 적이 있으면 결과로, 처음이면 랜딩으로.
+  if (!window.location.hash) {
+    try { if (getLatestRank()) return 'result'; } catch { /* ignore */ }
+    return 'home';
+  }
   return resolveScreen(window.location.hash);
 }
 
@@ -166,11 +170,9 @@ export default function FireMapMVP() {
     question: () => <Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />,
     result: () => <Result inputs={inputs} simulation={simulation} rankingSimulation={rankingSimulation} onMove={setScreen} onChange={onChange} />,
     experiment: () => <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} onMove={setScreen} draft={expDraft} setDraft={setExpDraft} base={expBase} setBase={setExpBase} />,
-    save: () => <Savings simulation={simulation} onMove={setScreen} />,
     ranking: () => <Leaderboard simulation={simulation} rankingSimulation={rankingSimulation} onMove={setScreen} />,
     menu: () => <MenuAll onMove={setScreen} />,
     settings: () => <Settings simulation={simulation} onMove={setScreen} onBack={backOf('settings')} />,
-    journey: () => <JourneyStage simulation={simulation} onMove={setScreen} onBack={backOf('journey')} />,
     account: () => tool('account', <AccountCard />),
     cities: () => <CityExplorer inputs={inputs} simulation={simulation} onChange={onChange} onMove={setScreen} onPreviewCity={previewCity} onPreviewPatch={previewPatch} onBack={backOf('cities')} />,
     firetype: () => <FireTypeTest simulation={simulation} onChange={onChange} onMove={setScreen} onPreviewCity={previewCity} onBack={backOf('firetype')} />,
@@ -187,7 +189,7 @@ export default function FireMapMVP() {
     <>
       {render()}
       {screens[screen]?.tab && <BottomTabs current={screen} onMove={setScreen} />}
-      <Wall visible={screen === 'home'} />
+      <Wall visible={screen === 'result'} />
       <Toaster />
     </>
   );

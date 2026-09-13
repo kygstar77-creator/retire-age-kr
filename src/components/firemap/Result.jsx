@@ -15,6 +15,8 @@ import { estimateLocalPremium } from '../../firemap-v2/healthInsurance.js';
 import { syncWidgetSnapshot } from '../../utils/widgetState.js';
 import ConsentSheet from './Consent.jsx';
 import ShareSheet from './ShareSheet.jsx';
+import FireWidgetCard from './FireWidgetCard.jsx';
+import CommunityCta from './CommunityCta.jsx';
 
 const eok = (n) => formatWon(Math.round(n || 0));
 
@@ -196,6 +198,8 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
             {live && <p className="ds-caption ds-mt-3 ds-mt-3">함께 계산한 {live.total.toLocaleString()}명 중 {live.position.toLocaleString()}등 · 등수는 세전 공정 비교</p>}
           </StatHero>
 
+          <FireWidgetCard simulation={simulation} onMove={onMove} />
+
           <Card>
             <SectionHead size="sm" kicker={levers.baseOk ? '더 당기기' : '목표 달성 플랜'} title={levers.baseOk ? `${levers.goal}세로 1년 당기려면` : `${target}세 파이어를 성공시키려면`} desc={levers.baseOk ? '셋 중 하나만 해도 돼요. 적용하면 위 숫자가 바로 바뀌어요.' : `${levers.until}세까지 자산이 버티게 하는 최소치예요. 하나만 골라도 돼요.`} />
             <LeverList items={levers.items} />
@@ -206,15 +210,18 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
             <Button variant="primary" size="lg" onClick={() => { track('cert_open', {}); setShareOpen(true); }}>🪪 인증 카드</Button>
           </div>
 
-          <Fold icon="📈" title="자산 흐름" hint="넣은 돈 vs 불어난 돈 · 나이별" onOpen={() => track('fold_open', { k: 'flow' })}>
+          <Card>
+            <SectionHead size="sm" kicker="자산 흐름" title="넣은 돈과 불어난 돈" desc="나이별로 쌓이는 모양이에요" />
             <YearlyAssetChart simulation={simulation} />
-          </Fold>
-          <Fold icon="🩺" title="파이어 후 건보료·세금" hint={hiEst ? `지역가입 전환 시 월 약 ${hiEst.monthly.toLocaleString()}원 (추정)` : '지역가입자 전환 · 배당세'}>
+          </Card>
+          <Card>
+            <SectionHead size="sm" kicker="파이어 후" title="건보료와 세금" desc={hiEst ? `지역가입으로 바뀌면 월 약 ${hiEst.monthly.toLocaleString()}원으로 잡혀요 (추정)` : '지역가입자 전환 · 배당세'} />
             <p className="ds-p">직장을 그만두면 건보료를 혼자 내고 소득·재산 기준 <b>지역가입자</b>로 바뀌어요. 4% 인출 기준 연 금융소득 {Math.round((fireAsset * 0.04) / 10000).toLocaleString()}만원으로 잡은 대략값이에요.</p>
             <div className="ds-bottomcta"><Button variant="secondary" size="md" onClick={() => onMove('dependent')}>건보료 정밀 계산</Button><Button variant="secondary" size="md" onClick={() => onMove('foreignTax')}>양도·배당세</Button></div>
-          </Fold>
+          </Card>
           {cities.length > 0 && (
-            <Fold icon="🌏" title="물가 낮은 곳에 살면" hint={`${cities[0].flag} ${cities[0].city} +${cities[0].gain}년`}>
+            <Card>
+              <SectionHead size="sm" kicker="어디서 살까" title="물가 낮은 곳에 살면" desc={`${cities[0].flag} ${cities[0].city}로 가면 ${cities[0].gain}년 당겨져요`} />
               <div className="ds-list">
                 {cities.map((c) => (
                   <div key={c.city} className="ds-row-item ds-row-item--S ds-row-item--static">
@@ -225,11 +232,9 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
                 ))}
               </div>
               <Button variant="ghost" size="sm" className="ds-mt-2" onClick={() => onMove('cities')}>전 세계 파이어 도시 탐색 →</Button>
-            </Fold>
+            </Card>
           )}
-          <Fold icon="🧭" title="내 파이어 유형" hint="12문항 · 살 도시 Top3">
-            <Button variant="secondary" size="md" full onClick={() => onMove('firetype')}>유형 테스트 하기</Button>
-          </Fold>
+          <CommunityCta where="result" />
 
           <p className="ds-caption ds-textcenter">통계청 2024 가계금융복지조사 · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)} · 참고용 계산이에요 · 투자 자문이 아니에요</p>
         </>

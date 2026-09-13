@@ -28,7 +28,8 @@ export function ListRow({ lead, title, desc, trail, chevron = true, size = 'M', 
       )}
     </>
   );
-  if (href) return <a className={cls} href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} {...rest}>{body}</a>;
+  // 외부 링크도 클릭 수를 셀 수 있게 onClick을 같이 넘긴다(기본 이동은 막지 않는다).
+  if (href) return <a className={cls} href={href} onClick={onClick} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})} {...rest}>{body}</a>;
   if (onClick) return <button type="button" className={cls} onClick={onClick} {...rest}>{body}</button>;
   return <div className={cls} {...rest}>{body}</div>;
 }

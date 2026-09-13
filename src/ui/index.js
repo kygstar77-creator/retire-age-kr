@@ -12,5 +12,3 @@ export { StatHero } from './StatHero.jsx';
 export { Fold } from './Fold.jsx';
 export { LeverList } from './LeverRow.jsx';
 export { RangeField } from './RangeField.jsx';
-export { RuleChips } from './RuleChips.jsx';
-export { PotCard } from './PotCard.jsx';

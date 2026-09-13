@@ -1,11 +1,9 @@
 // 랜딩 — 계산 전 사용자. 팝업 0·로그인 유도 0. 1분 계산 · 가입 없음 · 결과 미리보기(ChooseFI 3체크 · Networthify).
 import { useEffect, useState } from 'react';
 import { TopBar, Card, SectionHead, Button, Stat, Notice, IconButton } from '../../ui/index.js';
-import { getLatestRank } from '../../firemap-v2/rankHistory.js';
 import { fetchAggregates } from '../../utils/firemapScoresApi.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import { CAFE_URL } from '../../firemap-v2/links.js';
-import Today from './Today.jsx';
 
 function readChallenge() {
   try {
@@ -25,9 +23,6 @@ export default function Home({ onStart, onMove, simulation }) {
   const [challenge] = useState(readChallenge);
   useEffect(() => { if (challenge) { try { track('share_inbound', { ea: challenge.ea || 0, pct: challenge.pct || 0 }); } catch { /* ignore */ } } }, [challenge]);
   useEffect(() => { let alive = true; fetchAggregates().then((a) => { if (alive) setAgg(a); }); return () => { alive = false; }; }, []);
-
-  const latest = getLatestRank();
-  if (latest && !challenge) return <Today simulation={simulation} onMove={onMove} />;
 
   const clampAge = (v) => Math.max(19, Math.min(80, v));
   const setClamp = (v) => { const c = clampAge(v); setAge(c); setAgeStr(String(c)); };

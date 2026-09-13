@@ -34,7 +34,11 @@ img, svg { max-width: 100%; }
 .fm-yac-read span.after { background: var(--ds-accent-soft); color: var(--ds-accent-ink); }
 .fm-yac-read strong { margin-left: auto; font-size: 16px; font-weight: 800; color: var(--ds-accent); font-variant-numeric: tabular-nums; }
 .fm-yac-split { margin: 0 0 4px; font-size: 11px; font-weight: 600; color: var(--ds-ink-3); display: flex; align-items: center; flex-wrap: wrap; gap: 2px 4px; }
-.fm-yac-x { display: flex; justify-content: space-between; margin-top: 4px; color: var(--ds-ink-3); font-size: 11px; font-weight: 600; }
+.fm-yac-grid { stroke: color-mix(in srgb, var(--ds-ink) 12%, transparent); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.fm-yac-yl { position: absolute; right: 2px; transform: translateY(-100%); font-size: 10px; font-weight: 600; color: var(--ds-ink-3); pointer-events: none; padding: 0 3px; background: color-mix(in srgb, var(--ds-surface) 85%, transparent); border-radius: 4px; }
+.fm-yac-xl { position: relative; height: 16px; margin-top: 4px; color: var(--ds-ink-3); font-size: 11px; font-weight: 600; }
+.fm-yac-xl span { position: absolute; top: 0; white-space: nowrap; }
+.fm-yac-xl span.ret { color: var(--ds-accent-ink); font-weight: 700; }
 .fm-dot { width: 8px; height: 8px; border-radius: 2px; display: inline-block; margin-right: 5px; }
 .fm-dot-principal { background: var(--ds-info); }
 .fm-dot-gains { background: var(--ds-accent); }

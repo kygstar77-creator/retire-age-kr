@@ -28,7 +28,10 @@ function YearlyAssetChart({ simulation }) {
   if (rows.length < 2) return null;
   const g = buildGrowthSeries(simulation);
   const pts = rows.map((r, i) => ({ age: r.age, status: r.status, principal: Math.max(0, g.principal[i] ?? 0), gains: Math.max(0, g.gains[i] ?? 0), v: Math.max(0, g.total[i] ?? r.financialAsset) }));
-  const n = pts.length; const maxV = Math.max(...pts.map((p) => p.v), 1);
+  const n = pts.length; const rawMax = Math.max(...pts.map((p) => p.v), 1);
+  // 세로축은 '보기 좋은' 최대값으로 자른다(예: 4.6억 → 5억). 눈금은 0 · 절반 · 최대 세 줄.
+  const step = Math.pow(10, Math.floor(Math.log10(rawMax))) / 2;
+  const maxV = Math.ceil(rawMax / step) * step;
   const a0 = pts[0].age, a1 = pts[n - 1].age; const W = 320, H = 120, P = 8;
   const X = (a) => P + ((a - a0) / Math.max(1, a1 - a0)) * (W - 2 * P);
   const Y = (v) => H - P - (v / maxV) * (H - 2 * P);
@@ -41,17 +44,31 @@ function YearlyAssetChart({ simulation }) {
   const retIdx = Math.max(0, pts.findIndex((p) => p.age >= ret));
   const cur = sel != null ? pts[Math.min(sel, n - 1)] : (pts[retIdx] || pts[n - 1]);
   const pick = (e) => { const box = e.currentTarget.getBoundingClientRect(); const cx = e.touches && e.touches[0] ? e.touches[0].clientX : e.clientX; setSel(Math.max(0, Math.min(n - 1, Math.round(((cx - box.left) / box.width) * (n - 1))))); };
+  // 축 글자는 SVG 밖 HTML로 둔다(SVG가 가로로 늘어나면 글자도 찌그러진다). 위치는 같은 X·Y 함수로 %를 낸다.
+  const pctX = (a) => `${((X(a) / W) * 100).toFixed(2)}%`;
+  const pctY = (v) => `${((Y(v) / H) * 100).toFixed(2)}%`;
+  const retPct = (retX / W) * 100;
+  const yTicks = [maxV, maxV / 2];
   return (
     <div className="fm-yac">
       <div className="fm-yac-read"><b>{cur.age}세</b><span className={cur.status === '파이어 후' ? 'after' : 'before'}>{cur.status}</span><strong>{formatWon(cur.v)}</strong></div>
       <p className="fm-yac-split"><i className="fm-dot fm-dot-principal" />납입 원금 {formatWon(cur.principal)} · <i className="fm-dot fm-dot-gains" />투자 수익 {formatWon(cur.gains)}</p>
       <div className="fm-yac-canvas" style={{ touchAction: 'none' }} onPointerDown={pick} onPointerMove={(e) => { if (e.buttons) pick(e); }} onTouchStart={pick} onTouchMove={pick}>
         <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" role="img" aria-label="나이별 자산 그래프">
+          {yTicks.map((v) => <line key={v} x1={P} y1={Y(v)} x2={W - P} y2={Y(v)} className="fm-yac-grid" />)}
+          <line x1={P} y1={H - P} x2={W - P} y2={H - P} className="fm-yac-grid" />
           <path d={principalArea} className="fm-yac-area-principal" /><path d={gainsArea} className="fm-yac-area-gains" /><path d={totalTop} className="fm-yac-line" fill="none" />
-          <line x1={retX} y1={P} x2={retX} y2={H - P} className="fm-yac-ret" /><line x1={X(cur.age)} y1={P} x2={X(cur.age)} y2={H - P} className="fm-yac-cross" /><circle cx={X(cur.age)} cy={Y(cur.v)} r="3.5" className="fm-yac-dot" />
+          <line x1={retX} y1={P} x2={retX} y2={H - P} className="fm-yac-ret" />
+          {sel != null && <line x1={X(cur.age)} y1={P} x2={X(cur.age)} y2={H - P} className="fm-yac-cross" />}
+          <circle cx={X(cur.age)} cy={Y(cur.v)} r="3.5" className="fm-yac-dot" />
         </svg>
+        {yTicks.map((v) => <span key={v} className="fm-yac-yl num" style={{ top: pctY(v) }}>{formatWon(v)}</span>)}
       </div>
-      <div className="fm-yac-x"><span>{a0}세</span><span>파이어 {ret}세</span><span>{a1}세</span></div>
+      <div className="fm-yac-xl">
+        {retPct >= 18 && <span style={{ left: pctX(a0) }}>{a0}세</span>}
+        <span className="ret" style={{ left: pctX(ret), transform: retPct < 18 ? 'none' : retPct > 82 ? 'translateX(-100%)' : 'translateX(-50%)' }}>파이어 {ret}세</span>
+        {retPct <= 82 && <span style={{ left: pctX(a1), transform: 'translateX(-100%)' }}>{a1}세</span>}
+      </div>
 
     </div>
   );

@@ -6,7 +6,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { TopBar, StatHero, Card, SectionHead, Button, StatTiles } from '../../ui/index.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, buildGrowthSeries, scenarioEndAge, survivalPhrase, runwayText, runwayUntilText } from '../../firemap-v2/scenarios.js';
-import { inputsIsReal, monteCarloSuccess } from '../../utils/retirementSimulator.js';
+import { inputsIsReal } from '../../utils/retirementSimulator.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { submitScoreFromSim, fetchUserRank, fetchAggregates, assetBandOf, ASSET_BAND_LABELS } from '../../utils/firemapScoresApi.js';
 import { saveRankSnapshot } from '../../firemap-v2/rankHistory.js';
@@ -120,11 +120,6 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
     try { if (sessionStorage.getItem('fm_open_cert')) { sessionStorage.removeItem('fm_open_cert'); return true; } } catch { /* ignore */ }
     return false;
   });
-  // 성공확률은 화면에 띄운 나이(가장 이른 파이어) 기준으로 돌린다.
-  // 예전엔 목표 나이로 계산해 놓고 이른 나이 옆에 붙여서, 47세 옆에 55세의 확률이 보였다.
-  const success = useMemo(() => {
-    try { return monteCarloSuccess(earliest ? { ...inp, targetRetirementAge: earliest } : inp, { paths: 300 }); } catch { return null; }
-  }, [inp, earliest]);
   const myBand = assetBandOf(simulation.netWorth);
   const inputsHash = `${earliest}|${rankEarliest}|${target}|${inp.financialAsset}|${inp.monthlyInvestment}|${inp.monthlyLivingCost}`;
 
@@ -181,7 +176,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
             label={`내 파이어 나이 · ${base.ageBandLabel} 또래 기준`}
             value={earliest ? `${earliest}` : '아직'} unit={earliest ? '세' : ''}
             delta={delta}
-            sub={<>지금 자산 <b className="num">{eok(inp.financialAsset)}</b>{success != null ? <> · 성공확률 <b className="num">{success}%</b></> : null}</>}
+            sub={<>지금 자산 <b className="num">{eok(inp.financialAsset)}</b></>}
             tiles={[
               { label: `목표 ${target}세`, value: runwayUntilText(simulation) },
               { label: `${atE ? atE.age : target}세 때 자산`, value: atE ? eok(atE.assetToday) : (simulation.retirementFinancialAsset ? eok(simulation.retirementFinancialAsset) : '—') },

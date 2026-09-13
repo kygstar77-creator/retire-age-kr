@@ -1,4 +1,4 @@
-import { earlyClaim } from '../firemap-v2/pension.js';
+import { earlyClaim, pensionStartAgeForBirthYear, clampClaimAge } from '../firemap-v2/pension.js';
 
 export const defaultInputs = {
   currentAge: 35,
@@ -310,6 +310,11 @@ export function normalizeInputs(inputs) {
   const data = Object.fromEntries(
     Object.entries(merged).map(([key, value]) => [key, Number(String(value ?? '').replace(/[^\d.-]/g, '')) || 0])
   );
+  // 노령연금 개시 나이는 출생연도로 법에 정해져 있다. 화면에서 고칠 수 있는 값이 아니므로 여기서 정한다.
+  // 이렇게 막지 않으면 공유 링크의 pen 값이 그대로 들어와 40세 개시 같은 값도 통했다.
+  const birthYear = data.startYear - data.currentAge;
+  data.expectedPensionAge = pensionStartAgeForBirthYear(birthYear);
+  data.pensionClaimAge = clampClaimAge(data.pensionClaimAge, data.expectedPensionAge);
   // 국민연금 조기수령: 정상연금(baseline)은 그대로, 조기수령 나이가 이르면 '실효 연금'만 감액(누적 감액 방지)
   if (data.pensionClaimAge > 0 && data.pensionClaimAge !== data.expectedPensionAge) {
     const ec = earlyClaim(data.expectedMonthlyPension, data.expectedPensionAge, data.pensionClaimAge);

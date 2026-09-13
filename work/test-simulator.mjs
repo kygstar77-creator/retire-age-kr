@@ -1,4 +1,4 @@
-import { simulateRetirement, buildSimulation, findEarliestRetirementAge } from '../src/utils/retirementSimulator.js';
+import { simulateRetirement, buildSimulation, findEarliestRetirementAge, normalizeInputs } from '../src/utils/retirementSimulator.js';
 import { buildGrowthSeries } from '../src/firemap-v2/scenarios.js';
 import { earlyClaim } from '../src/firemap-v2/pension.js';
 
@@ -321,3 +321,23 @@ console.log('(17) today-money across screens OK');
   }
 }
 console.log('(18) random 1,000-case invariants OK');
+
+// (19) 국민연금 — 개시 나이는 출생연도로 정해지고, 청구 나이는 법정 범위를 벗어날 수 없다.
+// 예전엔 공유 링크의 pen 값이 그대로 들어와 40세 개시도 통했고, 그만큼 파이어 나이가 당겨졌다.
+{
+  const base = { currentAge: 35, startYear: 2026, targetRetirementAge: 50, financialAsset: 300000000, monthlyInvestment: 2500000, monthlyLivingCost: 3000000, expectedMonthlyPension: 1200000 };
+  assert(normalizeInputs({ ...base }).expectedPensionAge === 65, '(19) 1991년생은 65세 개시');
+  assert(normalizeInputs({ ...base, currentAge: 66 }).expectedPensionAge === 62, '(19) 1960년생은 62세 개시');
+  assert(normalizeInputs({ ...base, currentAge: 62 }).expectedPensionAge === 63, '(19) 1964년생은 63세 개시');
+  // 바깥에서 밀어 넣은 값은 무시해야 한다
+  assert(normalizeInputs({ ...base, expectedPensionAge: 40 }).expectedPensionAge === 65, '(19) 개시 나이 주입이 막혀야 한다');
+  assert(buildSimulation({ ...base, expectedPensionAge: 40 }).earliestRetirementAge === buildSimulation(base).earliestRetirementAge, '(19) 개시 나이 주입으로 파이어 나이가 당겨지면 안 된다');
+  // 조기·연기는 개시 나이 ±5년까지만
+  assert(normalizeInputs({ ...base, pensionClaimAge: 50 }).expectedPensionAge === 60, '(19) 조기는 60세까지만');
+  assert(normalizeInputs({ ...base, pensionClaimAge: 80 }).expectedPensionAge === 70, '(19) 연기는 70세까지만');
+  // 감액·가산 요율 (국민연금공단: 조기 연 6%, 연기 연 7.2%)
+  assert(earlyClaim(1000000, 65, 60).monthly === 700000, '(19) 5년 조기 = 30% 감액');
+  assert(earlyClaim(1000000, 65, 62).monthly === 820000, '(19) 3년 조기 = 18% 감액');
+  assert(earlyClaim(1000000, 65, 70).monthly === 1360000, '(19) 5년 연기 = 36% 가산');
+}
+console.log('(19) pension start age / claim clamp OK');

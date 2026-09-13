@@ -103,7 +103,7 @@ function AssetJourney({ simulation }) {
           </li>
         ))}
       </ol>
-      <p className="ds-caption">연 수익률 {simulation.inputs.annualReturnRate}% 기준 · 조건을 바꾸면 단계가 앞당겨져요</p>
+      <p className="ds-caption">연 수익률 {simulation.inputs.annualReturnRate}% 기준 · 그때 통장에 찍힐 금액이라 물가는 빼지 않았어요</p>
     </Card>
   );
 }
@@ -167,6 +167,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
   }, [inp, simulation]);
   // 건보료 추정 — 건보료 화면과 같은 경로로 계산한다(금융소득 1,000만 게이트 포함).
   // 예전엔 파이어 시점 '미래 명목' 자산의 4%를 전액 금융소득으로 넣어 4배 넘게 부풀려졌다.
+  const atE = simulation.atEarliest || null;
   const fireAssetToday = simulation.requiredFireAssetByFourPercent || inp.financialAsset || 0;
   const hiEst = (() => {
     try {
@@ -189,9 +190,9 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
             label={`내 파이어 나이 · ${base.ageBandLabel} 또래 기준`}
             value={earliest ? `${earliest}` : '아직'} unit={earliest ? '세' : ''}
             delta={delta}
-            sub={<>{need > 0 ? <>필요 자산 <b className="num">{eok(need)}</b> · 지금 <b className="num">{eok(inp.financialAsset)}</b></> : <>연금·부업만으로 생활비가 채워져요</>}{success != null ? <> · 성공확률 <b className="num">{success}%</b></> : null}</>}
+            sub={<>{atE && atE.requiredToday > 0 ? <>지금 <b className="num">{eok(inp.financialAsset)}</b> · {atE.age}세에 <b className="num">{eok(atE.assetToday)}</b> · 오늘 돈 기준</> : <>연금·부업만으로 생활비가 채워져요</>}{success != null ? <> · 성공확률 <b className="num">{success}%</b></> : null}</>}
             tiles={[
-              { label: '파이어 때 자산', value: simulation.retirementFinancialAsset ? eok(simulation.retirementFinancialAsset) : '—' },
+              { label: `${atE ? atE.age : target}세 때 자산`, value: atE ? eok(atE.assetToday) : (simulation.retirementFinancialAsset ? eok(simulation.retirementFinancialAsset) : '—') },
               { label: '자산 수명', value: ph.runway },
               { label: `같은 구간 · ${ASSET_BAND_LABELS[myBand]}`, value: bandRank ? `상위 ${bandRank.percentile}%` : (live ? `${live.position.toLocaleString()}등` : '집계 중'), onClick: () => onMove('ranking') }
             ]}
@@ -200,6 +201,21 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
           </StatHero>
 
           <FireWidgetCard simulation={simulation} onMove={onMove} />
+
+          {atE && atE.requiredToday > 0 && (
+            <Card>
+              <SectionHead size="sm" kicker="다른 잣대" title="원금을 안 헐고 버티려면" desc="오늘 돈 기준 · 국민연금은 빼고 계산했어요" />
+              <StatTiles items={[
+                { label: '필요 자산', value: eok(atE.requiredToday) },
+                { label: `${atE.age}세 때 자산`, value: eok(atE.assetToday) }
+              ]} />
+              <p className="ds-caption ds-mt-2">
+                {atE.assetToday >= atE.requiredToday
+                  ? `${atE.age}세에 원금을 안 헐어도 생활비가 나와요`
+                  : `${atE.age}세 파이어는 원금을 조금씩 헐고 국민연금까지 더해 ${inp.simulationUntilAge}세까지 버티는 계산이에요`}
+              </p>
+            </Card>
+          )}
 
           <div className="ds-bottomcta ds-mt-0">
             <Button variant="primary" size="lg" onClick={() => { track('cert_open', {}); setShareOpen(true); }}>🪪 인증 카드</Button>

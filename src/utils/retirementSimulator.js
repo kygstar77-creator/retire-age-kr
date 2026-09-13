@@ -219,6 +219,21 @@ export function buildSimulation(inputs) {
   const inflationToTarget = Math.pow(1 + toRate(data.inflationRate), yearsToTarget);
   const requiredFireAssetNominal = firstRetirementExpense / 0.04;
   const requiredFireAssetByFourPercent = requiredFireAssetNominal / inflationToTarget;
+
+  // 화면 히어로는 '가장 이른 파이어 나이'를 띄운다. 그 나이 기준 금액을 같은 잣대(오늘 화폐)로 같이 내준다.
+  // 이게 없으면 필요 자산(오늘 돈)과 파이어 때 자산(미래 명목)을 나란히 두게 돼 서로 비교가 안 된다.
+  let atEarliest = null;
+  if (earliestRetirementAge) {
+    const er = simulateRetirement(data, earliestRetirementAge);
+    const erRow = er.rows.find((row) => row.age === earliestRetirementAge);
+    const f = Math.pow(1 + toRate(data.inflationRate), Math.max(0, earliestRetirementAge - data.currentAge));
+    atEarliest = {
+      age: earliestRetirementAge,
+      assetToday: (erRow?.financialAsset ?? 0) / f,
+      requiredToday: ((erRow?.withdrawal ?? 0) / 0.04) / f,
+      depletionAge: er.depletionAge
+    };
+  }
   const fireGap = requiredFireAssetNominal - retirementFinancialAsset;
   const bridgeYears = Math.max(0, data.expectedPensionAge - data.targetRetirementAge);
   const runwayYears = targetResult.depletionAge
@@ -255,6 +270,7 @@ export function buildSimulation(inputs) {
     safeWithdrawalRate,
     requiredFireAssetByFourPercent,
     requiredFireAssetNominal,
+    atEarliest,
     fireGap,
     fourPercentReferenceGap: fireGap,
     bridgeYears,

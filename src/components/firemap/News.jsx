@@ -1,10 +1,9 @@
-// 소식 — 지표 5개 · 파이어 후 하루 · 배당락 이번 주 · 소식 목록(자동 봇 글은 '자동' 배지). 개편 최종본 §3 소식.
+// 소식 — 지표 5개 · 배당락 이번 주 · 소식 목록(자동 봇 글은 '자동' 배지). 개편 최종본 §3 소식.
 // 지표는 참고만. 내 파이어 나이 계산엔 쓰지 않아요.
 import { useEffect, useMemo, useState } from 'react';
 import { TopBar, Card, SectionHead, ListGroup, ListRow, Tabs, Badge, Button, Skeleton, EmptyState } from '../../ui/index.js';
 import { sbRpc } from '../../utils/supabaseClient.js';
 import { loadNews } from '../../utils/firemapFeedbackApi.js';
-import { storyOfDay } from '../../firemap-v2/afterFireStories.js';
 import { dayIdx } from '../../utils/dates.js';
 import { CAFE_URL, OPENCHAT_URL } from '../../firemap-v2/links.js';
 import '../../ui/screens/news.css';
@@ -110,7 +109,6 @@ export default function News({ onBack }) {
   const [shown, setShown] = useState(20);
   const [dividends, setDividends] = useState([]);
   const ind = useIndicators();
-  const story = useMemo(() => storyOfDay(dayIdx()), []);
 
   useEffect(() => {
     let alive = true;
@@ -142,13 +140,6 @@ export default function News({ onBack }) {
         <p className="ds-caption ds-mt-2 sc-news-cap">지표는 참고만 · 내 파이어 나이엔 영향 없어요</p>
       </Card>
 
-      {/* 2. 파이어 후 하루 */}
-      <Card variant="hero">
-        <SectionHead kicker="🏝️ 파이어 후 하루" title={story.title} size="sm" />
-        <p className="ds-p sc-news-story">{story.body}</p>
-        <a className="ds-link sc-news-more" href={CAFE_URL} target="_blank" rel="noopener noreferrer">카페에서 진짜 이야기 더 보기 →</a>
-        {OPENCHAT_URL && <a className="ds-link sc-news-more" href={OPENCHAT_URL} target="_blank" rel="noopener noreferrer">오픈채팅 →</a>}
-      </Card>
 
       {/* 3. 배당락 이번 주 — 데이터 있을 때만 */}
       {dividends.length > 0 && (

@@ -203,7 +203,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
             tiles={[
               { label: `목표 ${target}세`, value: targetGapText(simulation) },
               { label: `${atE ? atE.age : target}세 때 자산`, value: eok(simulation.displayResult.fireAsset) },
-              { label: `같은 구간 · ${ASSET_BAND_LABELS[myBand]}`, value: bandRank ? `상위 ${bandRank.percentile}%` : (live ? `${live.position.toLocaleString()}등` : '집계 중'), onClick: () => onMove('ranking') }
+              { label: `${ASSET_BAND_LABELS[myBand]} 구간`, value: bandRank ? `상위 ${bandRank.percentile}%` : (live ? `${live.position.toLocaleString()}등` : '집계 중'), onClick: () => onMove('ranking') }
             ]}
           >
             <p className="ds-caption ds-mt-3">{[
@@ -218,7 +218,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
 
 
           <div className="ds-bottomcta ds-mt-0">
-            <Button variant="primary" size="lg" onClick={() => { track('cert_open', {}); setShareOpen(true); }}>🪪 인증 카드</Button>
+            <Button variant="primary" size="lg" onClick={() => { track('cert_open', {}); setShareOpen(true); }}>인증 카드</Button>
           </div>
 
           <AssetJourney simulation={simulation} />

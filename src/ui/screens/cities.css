@@ -6,7 +6,7 @@
 .sc-ce-pin circle { fill: var(--ds-accent); stroke: var(--ds-surface); stroke-width: .6; transition: r .15s ease; }
 .sc-ce-pin.is-on circle { fill: var(--ds-warn); }
 .sc-ce-halo { fill: var(--ds-warn); opacity: .25; stroke: none; }
-.sc-ce-lbl { font-size: 8px; font-weight: 800; fill: var(--ds-surface); }
+.sc-ce-lbl { font-size: 8px; font-weight: 700; fill: var(--ds-surface); }
 
 .sc-ce-row--on { background: var(--ds-accent-soft); }
 .sc-ce-row--on .ds-row-item__title { color: var(--ds-accent-ink); }

@@ -30,7 +30,7 @@ export default function Question({ step, inputs, onChange, onPrev, onNext }) {
         <RangeField label={q.label} value={value} min={min} max={max} step={isAge ? 1 : undefined} money={!isAge} format={fmt} chips={CHIPS[q.key] || []} required={REQUIRED.has(q.key)} onChange={(v) => onChange(q.key, v)} hint={isAge ? '1세 단위로 조절해요' : `${q.unit}로 조절해요 · 값을 탭하면 직접 입력`} />
         {blocked && (
           <Chips className="ds-mt-2">
-            <Chip onClick={() => onChange(q.key, EXAMPLE[q.key])}>✨ 예시로 채우기 · {formatWon(EXAMPLE[q.key])}</Chip>
+            <Chip onClick={() => onChange(q.key, EXAMPLE[q.key])}>예시로 채우기 · {formatWon(EXAMPLE[q.key])}</Chip>
           </Chips>
         )}
         {isAsset && (

@@ -51,8 +51,8 @@ export function Countdown({ simulation }) {
   if (rem <= 0) {
     return (
       <div className="ds-countdown ds-countdown--done">
-        <p className="ds-countdown__cap">🔥 파이어 카운트다운</p>
-        <p className="ds-countdown__big">🎉 지금 파이어 가능!</p>
+        <p className="ds-countdown__cap">파이어 카운트다운</p>
+        <p className="ds-countdown__big">지금 파이어 가능!</p>
       </div>
     );
   }
@@ -60,7 +60,7 @@ export function Countdown({ simulation }) {
   const d = decompose((targetRef.current || Date.now()) - Date.now());
   return (
     <div className="ds-countdown">
-      <p className="ds-countdown__cap">🔥 파이어까지 남은 시간</p>
+      <p className="ds-countdown__cap">파이어까지 남은 시간</p>
       <p className="ds-countdown__big"><b className="num">{d.yr}</b>년 <b className="num">{d.days}</b>일</p>
       <p className="ds-countdown__time num">{pad(d.h)}:{pad(d.m)}:{pad(d.s)}</p>
     </div>

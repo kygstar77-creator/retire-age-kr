@@ -13,7 +13,7 @@ img, svg { max-width: 100%; }
 #root { min-height: 100svh; }
 
 /* 화면 틀 — compact(기본) · ≥600 520px · ≥1024 레일(fm-ds.css) */
-.fm-screen { width: min(430px, 100%); min-height: 100svh; margin: 0 auto; padding: 18px 14px 40px; color: var(--ds-ink); background: var(--ds-bg); }
+.fm-screen { width: min(430px, 100%); min-height: 100svh; margin: 0 auto; padding: var(--ds-sp-4) var(--ds-sp-4) 40px; color: var(--ds-ink); background: var(--ds-bg); }
 .fm-scroll { padding-bottom: 40px; }
 .fm-has-tabbar { padding-bottom: calc(96px + var(--ds-safe-bottom)); }
 .fm-question-screen { padding-bottom: 120px; }
@@ -21,5 +21,5 @@ img, svg { max-width: 100%; }
 
 /* 아직 옮기지 않은 레거시 카드(있다면) 최소 형태 */
 .fm-card { background: var(--ds-surface); border: 1px solid var(--ds-line-strong); border-radius: var(--ds-r-xl); padding: var(--ds-sp-4); margin: 0 0 var(--ds-sp-3); }
-.fm-kicker { margin: 0 0 6px; font-size: var(--ds-fs-caption); font-weight: 800; color: var(--ds-accent-ink); }
-.fm-card h2 { margin: 0 0 8px; font-size: var(--ds-fs-title-2); font-weight: 800; letter-spacing: -.02em; }
+.fm-kicker { margin: 0 0 6px; font-size: var(--ds-fs-caption); font-weight: 700; color: var(--ds-accent-ink); }
+.fm-card h2 { margin: 0 0 8px; font-size: var(--ds-fs-title-2); font-weight: 700; }

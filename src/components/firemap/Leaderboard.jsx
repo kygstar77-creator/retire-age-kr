@@ -105,7 +105,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
         )}
       </ListGroup>
 
-      <p className="ds-caption ds-textcenter">✋ 모든 순위는 직접 입력한 기록 기반 · 자산은 구간만 저장돼요</p>
+      <p className="ds-caption ds-textcenter">모든 순위는 직접 입력한 기록 기반 · 자산은 구간만 저장돼요</p>
 
       <CommunityCta where="ranking" />
     </main>

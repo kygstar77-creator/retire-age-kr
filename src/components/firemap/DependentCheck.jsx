@@ -72,7 +72,7 @@ export default function DependentCheck({ inputs, simulation, onApply }) {
     <>
       <StatHero tone="dark" label={hero.label} value={hero.value} sub={hero.sub} tiles={hero.tiles} />
 
-      <Tabs items={[{ key: 'local', label: '완전 은퇴' }, { key: 'barista', label: '☕ 바리스타 파이어' }]} value={mode} onChange={setMode} label="가입 형태" />
+      <Tabs items={[{ key: 'local', label: '완전 은퇴' }, { key: 'barista', label: '바리스타 파이어' }]} value={mode} onChange={setMode} label="가입 형태" />
 
       <Card>
         <SectionHead size="sm" kicker="파이어 후 조건" title={mode === 'local' ? '소득과 재산을 넣어요' : '급여와 소득을 넣어요'} desc={mode === 'local' ? '1년 기준 · 금융소득은 1,000만원을 넘어야 합산돼요' : '파트타임으로 직장가입자를 유지하는 경우예요'} />

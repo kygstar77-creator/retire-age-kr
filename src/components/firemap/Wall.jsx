@@ -116,7 +116,7 @@ export default function Wall({ visible }) {
         <section className="ds-fab-panel" role="dialog" aria-label="방명록">
           <header className="ds-fab-head">
             <div>
-              <h3 className="ds-fab-title">💬 방명록</h3>
+              <h3 className="ds-fab-title">방명록</h3>
               <p className="ds-fab-desc">파이어족끼리 자유롭게 한마디 · 욕설·개인정보는 지워질 수 있어요</p>
             </div>
             <span className="ds-fab-live" aria-live="polite"><i aria-hidden="true" />{online > 0 ? `${online}명 접속 중` : '접속 확인 중'}</span>

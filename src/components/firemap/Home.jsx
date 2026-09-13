@@ -34,8 +34,8 @@ export default function Home({ onStart, onMove, simulation }) {
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar ds-screen-gap">
       <TopBar onHome={() => onMove('home')} actions={<>
-        <a className="ds-topbar__handle" href={CAFE_URL} target="_blank" rel="noopener noreferrer"><span>🟢 카페</span></a>
-        {OPENCHAT_URL && <a className="ds-topbar__handle" href={OPENCHAT_URL} target="_blank" rel="noopener noreferrer"><span>💬 오픈채팅</span></a>}
+        <a className="ds-topbar__handle" href={CAFE_URL} target="_blank" rel="noopener noreferrer"><span>카페</span></a>
+        {OPENCHAT_URL && <a className="ds-topbar__handle" href={OPENCHAT_URL} target="_blank" rel="noopener noreferrer"><span>오픈채팅</span></a>}
       </>} />
 
       {challenge && (

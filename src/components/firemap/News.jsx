@@ -143,7 +143,7 @@ export default function News({ onBack }) {
       )}
 
       {/* 4. 소식 목록 */}
-      <Tabs items={CATS.map((c) => ({ key: c.key, label: c.key === 'all' ? c.label : `${c.emoji} ${c.label}` }))} value={cat} onChange={(k) => { setCat(k); setOpenId(null); }} variant="pill" label="소식 분류" className="sc-news-cats" />
+      <Tabs items={CATS.map((c) => ({ key: c.key, label: c.key === 'all' ? c.label : c.label }))} value={cat} onChange={(k) => { setCat(k); setOpenId(null); }} variant="pill" label="소식 분류" className="sc-news-cats" />
 
       {rows === null && <Card><Skeleton lines={4} /></Card>}
       {rows !== null && list.length === 0 && <EmptyState icon="📰" title="아직 이 분야 소식이 없어요" desc="지표는 위 카드에서 볼 수 있어요" />}

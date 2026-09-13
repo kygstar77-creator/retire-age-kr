@@ -107,7 +107,7 @@ export default function AccountCard({ kicker, sub, compact } = {}) {
   return (
     <Card>
       <SectionHead size="sm" kicker={kicker || '내 계정 · 선택'} title={mode === 'signup' ? '계정 만들기' : '로그인'} desc={sub || '카카오로 3초면 돼요 · 기기를 바꿔도 내 글·저축·등수가 이어져요'} />
-      <Button variant="secondary" size="lg" full className="sc-acct-kakao" onClick={kakao} disabled={busy}>💬 카카오로 시작하기</Button>
+      <Button variant="secondary" size="lg" full className="sc-acct-kakao" onClick={kakao} disabled={busy}>카카오로 시작하기</Button>
       <div className="sc-acct-or"><span>또는 닉네임으로</span></div>
       <div className="ds-stack">
         <input className="ds-input" maxLength={16} placeholder="닉네임 · 2~16자" value={h} onChange={(e) => setH(e.target.value)} aria-label="닉네임" autoComplete="username" />

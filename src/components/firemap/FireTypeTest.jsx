@@ -1,6 +1,6 @@
 // 파이어 유형 테스트 — 표지 · 12문항 · 결과(공유 카드). 도시 적용은 미리보기(샌드박스)로만.
 import { useState, useEffect } from 'react';
-import { TopBar, Card, SectionHead, Button, ProgressBar, ListGroup, ListRow, BottomCTA, toast } from '../../ui/index.js';
+import { TopBar, Card, SectionHead, Button, ProgressBar, ListGroup, ListRow, BottomCTA, toast, Icon } from '../../ui/index.js';
 import { QUESTIONS, ARCHETYPES, scoreAnswers, recommendCities } from '../../firemap-v2/cityTypeTest.js';
 import { buildScenario } from '../../firemap-v2/scenarios.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
@@ -55,7 +55,7 @@ function Result({ answers, simulation, onMove, onRestart, onPreviewCity }) {
 
   const share = async () => {
     track('firetype_share', { type: A.id });
-    const title = `나는 ${A.name} (${A.nick}) ☕🔥`;
+    const title = `나는 ${A.name} (${A.nick})`;
     const desc = `추천 도시 ${recs.map((r) => r.city.city).join('·')} · 12문항으로 내 파이어 유형 찾기`;
     // v=ft2: 보충 폰트(og-fonts-ft) 적용 후 새 URL로 분리 → 카카오/CDN의 폰트픽스 이전 캐시 우회(재크롤)
     const ogImg = `https://firemap.kr/og?mode=firetype&v=ft2&tn=${encodeURIComponent(A.name)}&nk=${encodeURIComponent(A.nick)}&ct=${encodeURIComponent(recs.map((r) => r.city.city).join('·'))}`;
@@ -77,9 +77,9 @@ function Result({ answers, simulation, onMove, onRestart, onPreviewCity }) {
         <p className="sc-ft-nick">“{A.nick}”</p>
         <p className="sc-ft-tag">{A.tagline}</p>
         <ListGroup className="sc-ft-list">
-          <ListRow size="S" lead="💪" title="강점" desc={A.strong} chevron={false} />
-          <ListRow size="S" lead="👀" title="주의" desc={A.watch} chevron={false} />
-          {A.action && <ListRow size="S" lead="👉" title="추천 행동" desc={A.action} chevron={false} />}
+          <ListRow size="S" lead={<Icon name="star" />} title="강점" desc={A.strong} chevron={false} />
+          <ListRow size="S" lead={<Icon name="eye" />} title="주의" desc={A.watch} chevron={false} />
+          {A.action && <ListRow size="S" lead={<Icon name="arrow" />} title="추천 행동" desc={A.action} chevron={false} />}
         </ListGroup>
         <p className="ds-caption ds-mt-3">잘 맞는 유형 · {match.emoji} {match.nick}</p>
 
@@ -98,8 +98,8 @@ function Result({ answers, simulation, onMove, onRestart, onPreviewCity }) {
         <p className="ds-caption ds-mt-2">도시를 누르면 그 생활비로 미리보기를 열어요</p>
       </Card>
 
-      <Button variant="ghost" size="sm" full onClick={copy}>🔗 링크만 복사</Button>
-      <BottomCTA secondary={{ label: '다시 하기', onClick: onRestart }} primary={{ label: '💬 카드로 공유', onClick: share }} />
+      <Button variant="ghost" size="sm" full onClick={copy}>링크만 복사</Button>
+      <BottomCTA secondary={{ label: '다시 하기', onClick: onRestart }} primary={{ label: '카드로 공유', onClick: share }} />
       <p className="ds-caption ds-textcenter">입력과 취향으로 추정한 결과예요 · 비용·비자·의료는 다를 수 있어요</p>
     </>
   );

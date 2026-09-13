@@ -1,7 +1,7 @@
 // 방명록 전체 — 홈 💬(Wall.jsx)에서 넘어오는 전체 글·답글 화면(screens 'wall'). 개편 최종본 §3 방명록.
 // 탭 4(전체·인증·질문·자유) · 글마다 카드 · 공감·답글 · 내 글 수정/삭제(RPC) · 글쓰기는 Sheet.
 import { useEffect, useMemo, useState } from 'react';
-import { TopBar, Tabs, Card, Button, Badge, Sheet, Dialog, Chips, Chip, Skeleton, EmptyState, toast } from '../../ui/index.js';
+import { TopBar, Tabs, Card, Button, Badge, Sheet, Dialog, Chips, Chip, Skeleton, EmptyState, toast, Icon } from '../../ui/index.js';
 import { loadCommunityThread, sendCommunity, likeCommunity, editCommunity, deleteCommunity } from '../../utils/firemapFeedbackApi.js';
 import { displayNameOf } from '../../firemap-v2/funName.js';
 import { JOURNEY_STAGES, journeyStage } from '../../utils/journeyStage.js';
@@ -15,9 +15,9 @@ const TABS = [
 ];
 // 쓰기 분류(저장값) — 옛 글의 'qa'도 질문으로 읽어요.
 const WRITE_CATS = [
-  { key: 'goal', label: '🔥 인증' },
-  { key: 'qa', label: '❓ 질문' },
-  { key: 'free', label: '💬 자유' }
+  { key: 'goal', label: '인증' },
+  { key: 'qa', label: '질문' },
+  { key: 'free', label: '자유' }
 ];
 const tabOf = (row) => {
   const c = row.category || 'free';
@@ -31,10 +31,10 @@ const OFFICIAL_WALL_CATS = new Set(['free', 'goal', 'qa', 'question', 'budget'])
 
 function titleFromStats(s) {
   if (!s) return null;
-  if (s.posts >= 5 || s.likes >= 10) return '⭐ 방명록 스타';
-  if (s.replies >= 5) return '😇 답글 천사';
-  if (s.likes >= 5) return '💖 공감 부자';
-  if (s.posts >= 2) return '☕ 단골';
+  if (s.posts >= 5 || s.likes >= 10) return '방명록 스타';
+  if (s.replies >= 5) return '답글 천사';
+  if (s.likes >= 5) return '공감 부자';
+  if (s.posts >= 2) return '단골';
   return null;
 }
 
@@ -178,7 +178,7 @@ export default function Community({ onBack, onMove, simulation }) {
       <Card key={p.id} variant={isBest ? 'hero' : 'base'} className="ds-post-post">
         <div className="ds-post-post__head">
           <span className="ds-post-post__tags">
-            {isBest && <Badge tone="accent">🏆 이번 주 베스트</Badge>}
+            {isBest && <Badge tone="accent">이번 주 베스트</Badge>}
             <Badge tone="neutral">{TAB_LABEL[tabOf(p)]}</Badge>
             {(p.likes || 0) >= 3 && <Badge tone="warn">인기</Badge>}
           </span>
@@ -186,8 +186,8 @@ export default function Community({ onBack, onMove, simulation }) {
         <p className="ds-post-msg">{p.message}</p>
         <Author row={p} />
         <div className="ds-post-actions">
-          <Button variant={liked ? 'tint' : 'secondary'} size="sm" onClick={() => like(p)} aria-pressed={liked} aria-label="공감">♥ <span className="num">{p.likes || 0}</span></Button>
-          <Button variant={open ? 'tint' : 'secondary'} size="sm" onClick={() => { setOpenId(open ? null : p.id); setReplyText(''); }} aria-expanded={open}>💬 <span className="num">{reps.length}</span></Button>
+          <Button variant={liked ? 'tint' : 'secondary'} size="sm" onClick={() => like(p)} aria-pressed={liked} aria-label="공감"><Icon name="heart" size={14} /> <span className="num">{p.likes || 0}</span></Button>
+          <Button variant={open ? 'tint' : 'secondary'} size="sm" onClick={() => { setOpenId(open ? null : p.id); setReplyText(''); }} aria-expanded={open}><Icon name="chat" size={14} /> <span className="num">{reps.length}</span></Button>
           {mineRow && <span className="ds-post-own"><Button variant="ghost" size="sm" onClick={() => openEdit(p)}>수정</Button><Button variant="ghost" size="sm" className="ds-post-del" onClick={() => setDelTarget(p)}>삭제</Button></span>}
         </div>
         {open && (
@@ -208,7 +208,7 @@ export default function Community({ onBack, onMove, simulation }) {
                 <Button variant="primary" size="md" onClick={() => submitReply(p.id)} disabled={!replyText.trim()} loading={sending}>등록</Button>
               </div>
             ) : (
-              <Button variant="secondary" size="sm" full onClick={needLogin}>🔒 로그인하고 답글 남기기</Button>
+              <Button variant="secondary" size="sm" full onClick={needLogin}>로그인하고 답글 남기기</Button>
             )}
           </div>
         )}
@@ -231,7 +231,7 @@ export default function Community({ onBack, onMove, simulation }) {
       </div>
 
       {rows === null && <Card><Skeleton lines={3} /></Card>}
-      {rows !== null && !best && posts.length === 0 && <EmptyState icon="💬" title={emptyText.split(' · ')[0]} desc={emptyText.split(' · ')[1]} action={{ label: '한마디 남기기', onClick: openNew }} />}
+      {rows !== null && !best && posts.length === 0 && <EmptyState icon={<Icon name="chat" size={28} />} title={emptyText.split(' · ')[0]} desc={emptyText.split(' · ')[1]} action={{ label: '한마디 남기기', onClick: openNew }} />}
       {best && PostCard(best, true)}
       {posts.slice(0, shown).map((p) => PostCard(p, false))}
       {posts.length > shown && <Button variant="secondary" size="md" full onClick={() => setShown((n) => n + 15)}>더 보기 · {posts.length - shown}개</Button>}

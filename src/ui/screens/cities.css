@@ -1,12 +1,11 @@
 /* 어디서 살까(cities) — 화면 전용. 토큰만 사용. 지도는 정적 윤곽(외부 데이터 없음). */
-.sc-ce-map svg { width: 100%; height: auto; display: block; border-radius: var(--ds-r-md); }
-.sc-ce-sea { fill: var(--ds-ink); }
-.sc-ce-land { fill: var(--ds-ink-2); stroke: var(--ds-ink-3); stroke-width: .3; opacity: .55; }
+.sc-ce-map svg { width: 100%; height: auto; display: block; border-radius: var(--ds-r-lg); background: var(--ds-surface-2); }
+.sc-ce-land { fill: color-mix(in srgb, var(--ds-ink) 14%, var(--ds-surface)); stroke: none; }
 .sc-ce-pin { cursor: pointer; }
-.sc-ce-pin circle { fill: var(--ds-accent); stroke: var(--ds-surface); stroke-width: .6; transition: r .15s ease; }
-.sc-ce-pin.is-on circle { fill: var(--ds-warn); }
-.sc-ce-halo { fill: var(--ds-warn); opacity: .25; stroke: none; }
-.sc-ce-lbl { font-size: 8px; font-weight: 700; fill: var(--ds-surface); }
+.sc-ce-pin circle { fill: var(--ds-accent); stroke: var(--ds-surface); stroke-width: .8; transition: r .15s ease; }
+.sc-ce-pin.is-on circle { fill: var(--ds-ink); }
+.sc-ce-halo { fill: var(--ds-accent); opacity: .22; stroke: none; }
+.sc-ce-lbl { font-size: 7px; font-weight: 700; fill: var(--ds-ink); paint-order: stroke; stroke: var(--ds-surface-2); stroke-width: 2px; }
 
 .sc-ce-row--on { background: var(--ds-accent-soft); }
 .sc-ce-row--on .ds-row-item__title { color: var(--ds-accent-ink); }

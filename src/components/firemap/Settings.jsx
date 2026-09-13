@@ -1,6 +1,6 @@
 // 설정 — 알림 진입점 1곳(항상 메타 포함) · 위젯(금액 숨김) · 앱(홈 화면 추가·다크) · 정보.
 import { useEffect, useState } from 'react';
-import { TopBar, ListGroup, ListRow, Sheet, Button, toast } from '../../ui/index.js';
+import { TopBar, ListGroup, ListRow, Sheet, Button, toast, Icon } from '../../ui/index.js';
 import { prefs } from '../../utils/prefs.js';
 import { account } from '../../utils/identity.js';
 import { pushSupported, isIOSDevice, isStandalone, notifPermission, currentSubscription, subscribeFireClock, unsubscribeFireClock, targetFireDateFrom } from '../../utils/firePush.js';
@@ -41,7 +41,7 @@ export default function Settings({ simulation, onMove, onBack }) {
     if (!want) { await unsubscribeFireClock(); setNotif('idle'); track('notif_off', {}); return; }
     const inp = (simulation && simulation.inputs) || {};
     const r = await subscribeFireClock({ targetFireDate: targetFireDateFrom(simulation), earliestAge: simulation && simulation.earliestRetirementAge, currentAge: inp.currentAge });
-    if (r && r.ok) { setNotif('on'); track('notif_on', {}); toast.good('켜졌어요. 매일 아침 파이어 시계가 가요 🔥'); }
+    if (r && r.ok) { setNotif('on'); track('notif_on', {}); toast.good('켜졌어요. 매일 아침 파이어 시계가 가요'); }
     else if (r && r.reason === 'denied') { setNotif('denied'); toast.bad('알림이 차단돼 있어요 · 브라우저 설정에서 허용하면 다시 켜져요'); }
     else { setNotif('idle'); toast.bad('잠시 후 다시 해봐요'); }
   };
@@ -51,25 +51,25 @@ export default function Settings({ simulation, onMove, onBack }) {
       <TopBar title="설정" onBack={onBack} />
 
       <ListGroup label="계정">
-        <ListRow lead={acc && acc.handle ? '👤' : '🔒'} title={acc && acc.handle ? acc.handle : '로그인 · 기록 지키기'} desc={acc && acc.handle ? '닉네임 변경 · 로그아웃 · 탈퇴' : '기기를 바꿔도 저축·랭킹 기록이 이어져요'} onClick={() => onMove('account')} />
+        <ListRow lead={<Icon name={acc && acc.handle ? 'user' : 'lock'} />} title={acc && acc.handle ? acc.handle : '로그인 · 기록 지키기'} desc={acc && acc.handle ? '닉네임 변경 · 로그아웃 · 탈퇴' : '기기를 바꿔도 저축·랭킹 기록이 이어져요'} onClick={() => onMove('account')} />
       </ListGroup>
 
       <ListGroup label="알림">
-        <ListRow lead="🔔" title="아침 파이어 시계" desc={notif === 'on' ? '매일 아침 D-day 알림이 가요' : notif === 'denied' ? '브라우저에서 차단됨' : notif === 'ios' ? '아이폰은 홈 화면에 추가한 뒤 켤 수 있어요' : '매일 아침 파이어까지 남은 날을 받아요'} chevron={false} trail={<Switch on={notif === 'on'} disabled={notif === 'working'} onChange={toggleNotif} />} />
+        <ListRow lead={<Icon name="bell" />} title="아침 파이어 시계" desc={notif === 'on' ? '매일 아침 D-day 알림이 가요' : notif === 'denied' ? '브라우저에서 차단됨' : notif === 'ios' ? '아이폰은 홈 화면에 추가한 뒤 켤 수 있어요' : '매일 아침 파이어까지 남은 날을 받아요'} chevron={false} trail={<Switch on={notif === 'on'} disabled={notif === 'working'} onChange={toggleNotif} />} />
       </ListGroup>
 
       <ListGroup label="홈 · 위젯">
-        <ListRow lead="🙈" title="금액 숨기기" desc="홈·통에서 금액 대신 •••로 표시 (D-day·%만)" chevron={false} trail={<Switch on={hide} onChange={(v) => { prefs.setHideAmount(v); setHide(v); }} />} />
-        <ListRow lead="🌙" title="다크 모드" desc="눈이 편한 어두운 화면" chevron={false} trail={<Switch on={dark} onChange={(v) => { prefs.setTheme(v ? 'dark' : 'light'); setDark(v); }} />} />
-        <ListRow lead="📲" title="홈 화면에 추가" desc="앱처럼 아이콘으로 바로 열기" onClick={() => setInstallOpen(true)} />
+        <ListRow lead={<Icon name="eyeoff" />} title="금액 숨기기" desc="홈·통에서 금액 대신 •••로 표시 (D-day·%만)" chevron={false} trail={<Switch on={hide} onChange={(v) => { prefs.setHideAmount(v); setHide(v); }} />} />
+        <ListRow lead={<Icon name="moon" />} title="다크 모드" desc="눈이 편한 어두운 화면" chevron={false} trail={<Switch on={dark} onChange={(v) => { prefs.setTheme(v ? 'dark' : 'light'); setDark(v); }} />} />
+        <ListRow lead={<Icon name="phone" />} title="홈 화면에 추가" desc="앱처럼 아이콘으로 바로 열기" onClick={() => setInstallOpen(true)} />
       </ListGroup>
 
       <ListGroup label="카페 · 정보">
-        <ListRow lead="🟢" title="파이어맵 네이버 카페" href={CAFE_URL} external />
-        {OPENCHAT_URL && <ListRow lead="💬" title="카카오톡 오픈채팅" href={OPENCHAT_URL} external />}
-        <ListRow lead="📄" title="면책 안내" href="/disclaimer.html" />
-        <ListRow lead="🔒" title="개인정보처리방침" href="/privacy.html" />
-        <ListRow lead="✉️" title="문의" href="/contact.html" />
+        <ListRow lead={<Icon name="leaf" />} title="파이어맵 네이버 카페" href={CAFE_URL} external />
+        {OPENCHAT_URL && <ListRow lead={<Icon name="chat" />} title="카카오톡 오픈채팅" href={OPENCHAT_URL} external />}
+        <ListRow lead={<Icon name="file" />} title="면책 안내" href="/disclaimer.html" />
+        <ListRow lead={<Icon name="lock" />} title="개인정보처리방침" href="/privacy.html" />
+        <ListRow lead={<Icon name="mail" />} title="문의" href="/contact.html" />
       </ListGroup>
 
       <Sheet open={installOpen} title="홈 화면에 추가" onClose={() => setInstallOpen(false)}>

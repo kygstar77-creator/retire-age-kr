@@ -1,7 +1,7 @@
 // 랭킹 — 같은 구간(자산 밴드) · 또래. 4차 조사 결론: 금액 훈수 갈등 → 같은 구간 비교만.
 // 2026-09-13 저축 리그 제거(저축 기능 종료).
 import { useEffect, useMemo, useState } from 'react';
-import { TopBar, Tabs, StatHero, Card, SectionHead, ListGroup, ListRow, Button, Skeleton, EmptyState } from '../../ui/index.js';
+import { TopBar, Tabs, StatHero, Card, SectionHead, ListGroup, ListRow, Button, Skeleton, EmptyState, Icon } from '../../ui/index.js';
 import { identityIds, accountHandle } from '../../utils/identity.js';
 import { statsRank } from '../../firemap-v2/rank.js';
 import { fetchTopScores, fetchUserRank, fetchAggregates, fetchNeighbors, assetBandOf, ASSET_BAND_LABELS, fetchPeerBoard } from '../../utils/firemapScoresApi.js';
@@ -12,7 +12,7 @@ import CommunityCta from './CommunityCta.jsx';
 import { simulateRetirement, findEarliestRetirementAge } from '../../utils/retirementSimulator.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 
-const medal = (i) => (i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : String(i + 1));
+const medal = (i) => String(i + 1);
 const BOARDS = [{ key: 'all', label: '전체' }, { key: 'band', label: '같은 구간' }, { key: 'peer', label: '또래' }];
 
 // 바로 위 사람의 파이어 나이에 닿으려면 월 저축 얼마 더?
@@ -75,7 +75,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
       <TopBar title="랭킹" onHome={() => onMove('result')} />
       <Tabs items={BOARDS} value={board} onChange={setBoard} label="랭킹 종류" />
 
-      {!calculated && <EmptyState icon="🧮" title="계산하면 내 등수가 나와요" desc="1분이면 같은 구간에서 몇 등인지 보여줘요" action={{ label: '계산하기', onClick: () => onMove('question') }} />}
+      {!calculated && <EmptyState icon={<Icon name="calc" size={28} />} title="계산하면 내 등수가 나와요" desc="1분이면 같은 구간에서 몇 등인지 보여줘요" action={{ label: '계산하기', onClick: () => onMove('question') }} />}
 
       {calculated && (
         <StatHero

@@ -1,6 +1,6 @@
 // 세금·연금 도구 3개 — 결론(StatHero md) 위, 입력(RangeField) 아래, 반영 버튼 하나. TopBar는 FireMapMVP 도구 래퍼가 그려요.
 import { useState } from 'react';
-import { Card, SectionHead, RangeField, StatHero, Button, Notice, toast } from '../../ui/index.js';
+import { Card, SectionHead, RangeField, StatHero, Button, Notice, toast, Icon } from '../../ui/index.js';
 import { calculateInvestmentTaxes } from '../../utils/taxCalculator.js';
 import { earlyClaim } from '../../firemap-v2/pension.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
@@ -31,7 +31,7 @@ export function ForeignStockTaxCard({ inputs, onApply }) {
         <SectionHead size="sm" kicker="해외주식 양도세" title="1년에 얼마나 팔아요?" desc="250만원 공제 후 22%" />
         <RangeField label="연 양도차익" value={gain} min={0} max={300000000} step={1000000} money format={eok} chips={[10000000, 50000000, 100000000]} onChange={setGain} hint="손실과 이익을 합친 금액이에요" />
         {onApply && (hasCG
-          ? <Button variant="secondary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next }); toast('해외 양도세 반영을 해제했어요'); }}>✓ 반영 중 · 해외 양도세 · 해제</Button>
+          ? <Button variant="secondary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next }); toast('해외 양도세 반영을 해제했어요'); }}>반영 중 · 해외 양도세 · 해제</Button>
           : <Button variant="primary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next }); toast.good('해외 양도세를 반영했어요'); }}>해외 양도세 반영</Button>)}
       </Card>
     </>
@@ -63,10 +63,10 @@ export function DividendCard({ inputs, onApply }) {
       <Card>
         <SectionHead size="sm" kicker="배당소득" title="1년에 배당을 얼마 받아요?" desc="이자와 배당을 합친 금융소득 기준이에요" />
         <RangeField label="연 배당소득" value={annual} min={0} max={50000000} step={1000000} money format={eok} chips={[1000000, 5000000, 10000000]} onChange={setAnnual} />
-        {over2000 && <Notice tone="warn" icon="⚠️" className="ds-mt-2">연 배당 <b className="num">{eok(annual)}</b> · 2,000만원을 넘으면 종합과세 대상이에요</Notice>}
-        {!over2000 && over1000 && <Notice tone="warn" icon="🩺" className="ds-mt-2">연 배당 <b className="num">{eok(annual)}</b> · 1,000만원을 넘으면 건보료에 잡혀요</Notice>}
+        {over2000 && <Notice tone="warn" icon={<Icon name="alert" />} className="ds-mt-2">연 배당 <b className="num">{eok(annual)}</b> · 2,000만원을 넘으면 종합과세 대상이에요</Notice>}
+        {!over2000 && over1000 && <Notice tone="warn" icon={<Icon name="stethoscope" />} className="ds-mt-2">연 배당 <b className="num">{eok(annual)}</b> · 1,000만원을 넘으면 건보료에 잡혀요</Notice>}
         {onApply && (hasDiv
-          ? <Button variant="secondary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next }); toast('배당세 반영을 해제했어요'); }}>✓ 반영 중 · 배당세 · 해제</Button>
+          ? <Button variant="secondary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next }); toast('배당세 반영을 해제했어요'); }}>반영 중 · 배당세 · 해제</Button>
           : <Button variant="primary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next, dividendIncomeMonthly: 0 }); toast.good('배당세를 반영했어요'); }}>배당소득세 15.4% 반영</Button>)}
         <p className="ds-caption ds-mt-2 ds-mb-0">투자 권유가 아니에요</p>
       </Card>
@@ -97,9 +97,9 @@ export function PensionEarlyClaimCard({ inputs, onApply }) {
       <Card>
         <SectionHead size="sm" kicker="국민연금" title="몇 살부터 받을까요?" desc="1년 당길 때마다 6%씩 · 최대 5년 30% 줄어요" />
         <RangeField label="받기 시작 나이" value={claimAge} min={normalAge - 5} max={normalAge} step={1} format={(v) => `${Math.round(v)}세`} onChange={(v) => setClaimAge(Math.round(v))} />
-        {normalMonthly <= 0 && <Notice tone="warn" icon="💬" className="ds-mt-2">예상연금월액이 0이에요 · 바꿔보기에서 국민연금을 먼저 넣어요</Notice>}
+        {normalMonthly <= 0 && <Notice tone="warn" icon={<Icon name="chat" />} className="ds-mt-2">예상연금월액이 0이에요 · 바꿔보기에서 국민연금을 먼저 넣어요</Notice>}
         {normalMonthly > 0 && (applied
-          ? <Button variant="secondary" size="md" full className="ds-mt-2" onClick={() => { onApply({ pensionClaimAge: 0 }); toast('지급개시연령으로 되돌렸어요'); }}>✓ 반영 중 · {appliedClaim}세 · {applied.reductionPct}% 감액 · 되돌리기</Button>
+          ? <Button variant="secondary" size="md" full className="ds-mt-2" onClick={() => { onApply({ pensionClaimAge: 0 }); toast('지급개시연령으로 되돌렸어요'); }}>반영 중 · {appliedClaim}세 · {applied.reductionPct}% 감액 · 되돌리기</Button>
           : (claimAge < normalAge
             ? <Button variant="primary" size="md" full className="ds-mt-2" onClick={() => { onApply({ pensionClaimAge: claimAge }); toast.good(`${claimAge}세 조기수령을 반영했어요`); }}>{claimAge}세 조기수령 반영</Button>
             : <Button variant="primary" size="md" full className="ds-mt-2" disabled>나이를 {normalAge}세보다 낮추면 반영할 수 있어요</Button>))}

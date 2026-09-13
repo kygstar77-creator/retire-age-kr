@@ -1,7 +1,7 @@
 // 배당으로 파이어 — 숫자 하나(월 배당이 생활비가 되는 나이) + 입력 3 + 월별 배당 막대 + 배당 캘린더(예상) + 내 계산에 반영.
 // 배당락 예상일은 dividendWatch.js 고정표. 실제 확정은 fetch-dividends(Yahoo)로만.
 import { useMemo, useState } from 'react';
-import { TopBar, Card, SectionHead, RangeField, StatHero, Chips, Chip, Button, Notice, toast } from '../../ui/index.js';
+import { TopBar, Card, SectionHead, RangeField, StatHero, Chips, Chip, Button, Notice, toast, Icon } from '../../ui/index.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { todayStr } from '../../utils/dates.js';
 import { expectedExDates, lastDayOf, YIELD_PRESETS } from '../../firemap-v2/dividendWatch.js';
@@ -173,8 +173,8 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
         ]}
       />
 
-      {over2000 && <Notice tone="warn" icon="⚠️">연 배당 <b className="num">{eok(annual)}</b> · 2,000만원을 넘으면 종합과세 대상이에요</Notice>}
-      {!over2000 && over1000 && <Notice tone="warn" icon="🩺">연 배당 <b className="num">{eok(annual)}</b> · 1,000만원을 넘으면 건보료에 잡혀요</Notice>}
+      {over2000 && <Notice tone="warn" icon={<Icon name="alert" />}>연 배당 <b className="num">{eok(annual)}</b> · 2,000만원을 넘으면 종합과세 대상이에요</Notice>}
+      {!over2000 && over1000 && <Notice tone="warn" icon={<Icon name="stethoscope" />}>연 배당 <b className="num">{eok(annual)}</b> · 1,000만원을 넘으면 건보료에 잡혀요</Notice>}
 
       <Card>
         <SectionHead size="sm" kicker="월별" title="월별 배당" action={

@@ -1,7 +1,7 @@
 // 소식 — 지표 5개 · 배당락 이번 주 · 소식 목록(자동 봇 글은 '자동' 배지). 개편 최종본 §3 소식.
 // 지표는 참고만. 내 파이어 나이 계산엔 쓰지 않아요.
 import { useEffect, useMemo, useState } from 'react';
-import { TopBar, Card, SectionHead, ListGroup, ListRow, Tabs, Badge, Button, Skeleton, EmptyState, IndexRow } from '../../ui/index.js';
+import { TopBar, Card, SectionHead, ListGroup, ListRow, Tabs, Badge, Button, Skeleton, EmptyState, IndexRow, Icon } from '../../ui/index.js';
 import { sbRpc } from '../../utils/supabaseClient.js';
 import { loadNews } from '../../utils/firemapFeedbackApi.js';
 import { dayIdx } from '../../utils/dates.js';
@@ -9,14 +9,14 @@ import { CAFE_URL, OPENCHAT_URL } from '../../firemap-v2/links.js';
 import '../../ui/screens/news.css';
 
 const CATS = [
-  { key: 'all', label: '전체', emoji: '📰' },
-  { key: 'news', label: '경제', emoji: '📈' },
-  { key: 'realestate', label: '부동산', emoji: '🏠' },
-  { key: 'invest', label: '투자', emoji: '🌎' },
-  { key: 'sidejob', label: '부업', emoji: '💼' },
-  { key: 'pension', label: '연금·세금', emoji: '🏦' },
-  { key: 'save', label: '저축', emoji: '💰' },
-  { key: 'life', label: '파이어 후', emoji: '🏝️' }
+  { key: 'all', label: '전체', icon: 'newspaper' },
+  { key: 'news', label: '경제', icon: 'chartline' },
+  { key: 'realestate', label: '부동산', icon: 'home' },
+  { key: 'invest', label: '투자', icon: 'globe' },
+  { key: 'sidejob', label: '부업', icon: 'receipt' },
+  { key: 'pension', label: '연금·세금', icon: 'bank' },
+  { key: 'save', label: '저축', icon: 'coins' },
+  { key: 'life', label: '파이어 후', icon: 'island' }
 ];
 const NEWS_CATS = new Set(CATS.map((c) => c.key).filter((k) => k !== 'all'));
 const catMeta = (k) => CATS.find((c) => c.key === k) || CATS[0];
@@ -117,7 +117,7 @@ export default function News({ onBack }) {
 
       {/* 1. 지표 */}
       <Card>
-        <SectionHead kicker="📊 지표" title="오늘의 참고 지표" size="sm" />
+        <SectionHead kicker="지표" title="오늘의 참고 지표" size="sm" />
         {ind.loading && <Skeleton lines={4} />}
         {!ind.loading && ind.rows.length === 0 && <p className="ds-p">지표를 아직 못 불러왔어요 · 잠시 뒤 다시 열어보세요</p>}
         {!ind.loading && ind.rows.length > 0 && (
@@ -131,10 +131,10 @@ export default function News({ onBack }) {
       {/* 3. 배당락 이번 주 — 데이터 있을 때만 */}
       {dividends.length > 0 && (
         <Card>
-          <SectionHead kicker="💸 배당락 이번 주" title="이 날 전에 사야 배당을 받아요" size="sm" />
+          <SectionHead kicker="배당락 이번 주" title="이 날 전에 사야 배당을 받아요" size="sm" />
           <ListGroup>
             {dividends.map((d) => (
-              <ListRow key={d.key} lead="📅" title={d.name} desc={d.note || undefined} trail={<span className="num">{d.date ? mdOf(d.date) : ''}{d.expected ? <Badge tone="neutral" className="sc-news-exp">예상</Badge> : null}</span>} chevron={false} size="S" />
+              <ListRow key={d.key} lead={<Icon name="calendar" />} title={d.name} desc={d.note || undefined} trail={<span className="num">{d.date ? mdOf(d.date) : ''}{d.expected ? <Badge tone="neutral" className="sc-news-exp">예상</Badge> : null}</span>} chevron={false} size="S" />
             ))}
           </ListGroup>
         </Card>
@@ -144,7 +144,7 @@ export default function News({ onBack }) {
       <Tabs items={CATS.map((c) => ({ key: c.key, label: c.key === 'all' ? c.label : c.label }))} value={cat} onChange={(k) => { setCat(k); setOpenId(null); }} variant="pill" label="소식 분류" className="sc-news-cats" />
 
       {rows === null && <Card><Skeleton lines={4} /></Card>}
-      {rows !== null && list.length === 0 && <EmptyState icon="📰" title="아직 이 분야 소식이 없어요" desc="지표는 위 카드에서 볼 수 있어요" />}
+      {rows !== null && list.length === 0 && <EmptyState icon={<Icon name="newspaper" size={28} />} title="아직 이 분야 소식이 없어요" desc="지표는 위 카드에서 볼 수 있어요" />}
       {rows !== null && list.length > 0 && (
         <ListGroup>
           {list.slice(0, shown).map((r) => {
@@ -156,7 +156,7 @@ export default function News({ onBack }) {
             return (
               <div key={r.id} className={`sc-news-item${open ? ' sc-news-item--open' : ''}`}>
                 <ListRow
-                  lead={m.emoji}
+                  lead=<Icon name={m.icon} />
                   title={<span className="sc-news-title">{auto && <Badge tone="neutral" className="sc-news-auto">자동</Badge>}{cleanTitle(r)}</span>}
                   desc={`${m.label} · ${relativeTime(r.created_at)}${r.source ? ` · ${r.source}` : ''}`}
                   chevron={expandable}

@@ -58,7 +58,7 @@ export default function AccountCard({ kicker, sub, compact } = {}) {
           </>
         ) : (
           <div className="ds-stack ds-mt-2">
-            <Button variant="secondary" size="md" full onClick={() => { setNh(acc.handle); setEditing(true); setErr(''); }}>✏️ 닉네임 바꾸기</Button>
+            <Button variant="secondary" size="md" full onClick={() => { setNh(acc.handle); setEditing(true); setErr(''); }}>닉네임 바꾸기</Button>
             <Button variant="ghost" size="md" full onClick={async () => { await logoutClearLocal(); window.location.reload(); }}>로그아웃</Button>
             <button type="button" className="sc-acct-withdraw" onClick={() => { setWd(true); setErr(''); }}>회원 탈퇴</button>
           </div>
@@ -78,7 +78,7 @@ export default function AccountCard({ kicker, sub, compact } = {}) {
     return (
       <Card>
         <SectionHead size="sm" kicker={kicker || '내 계정 · 선택'} title="기록을 지켜요" desc={sub || '닉네임만 정하면 기기를 바꿔도 내 기록이 그대로 이어져요'} />
-        <Button variant="secondary" size="md" full onClick={() => setOpen(true)}>🔒 로그인 · 계정 만들기</Button>
+        <Button variant="secondary" size="md" full onClick={() => setOpen(true)}>로그인 · 계정 만들기</Button>
       </Card>
     );
   }

@@ -1,6 +1,6 @@
 // 랜딩 — 계산 전 사용자. 팝업 0·로그인 유도 0. 1분 계산 · 가입 없음 · 결과 미리보기(ChooseFI 3체크 · Networthify).
 import { useEffect, useState } from 'react';
-import { TopBar, Card, SectionHead, Button, Stat, Notice, IconButton } from '../../ui/index.js';
+import { TopBar, Card, SectionHead, Button, Stat, Notice, IconButton, Icon } from '../../ui/index.js';
 import { fetchAggregates } from '../../utils/firemapScoresApi.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import { CAFE_URL, OPENCHAT_URL } from '../../firemap-v2/links.js';
@@ -39,7 +39,7 @@ export default function Home({ onStart, onMove, simulation }) {
       </>} />
 
       {challenge && (
-        <Notice tone="accent" icon="🔥" title={challenge.ea ? `친구는 ${challenge.ea}세에 파이어 가능` : '친구가 파이어 등수를 보냈어요'}>
+        <Notice tone="accent" icon={<Icon name="fire" />} title={challenge.ea ? `친구는 ${challenge.ea}세에 파이어 가능` : '친구가 파이어 등수를 보냈어요'}>
           {challenge.pct != null ? `또래 상위 ${challenge.pct}% · ` : ''}당신은 몇 살에 가능할까요? 1분이면 나와요.
         </Notice>
       )}

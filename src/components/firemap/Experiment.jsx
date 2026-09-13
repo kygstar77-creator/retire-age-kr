@@ -1,6 +1,6 @@
 // 바꿔보기 — 미리보기 샌드박스. 숫자 하나(StatHero) + 핵심 3개 + 접힘 5. 저장 전엔 내 결과·등수에 반영 안 됨.
 import { useEffect, useMemo, useState } from 'react';
-import { TopBar, StatHero, Card, SectionHead, RangeField, Fold, Chips, Chip, Badge, BottomCTA, Button, toast } from '../../ui/index.js';
+import { TopBar, StatHero, Card, SectionHead, RangeField, Fold, Chips, Chip, Badge, BottomCTA, Button, toast, Icon } from '../../ui/index.js';
 import PensionControls from './PensionControls.jsx';
 import AssetGrowthChart from './AssetGrowthChart.jsx';
 import { investmentScenarios } from '../../firemap-v2/data.js';
@@ -102,13 +102,13 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
         {money('partTimeIncomeAfterRetirement', '파이어 후 부업 소득')}
       </Card>
 
-      <Fold icon="🎂" title="나이·자산" hint={`${draft.currentAge}세 → ${draft.targetRetirementAge}세 · 지금 ${eok(draft.financialAsset)}`}>
+      <Fold icon={<Icon name="cake" />} title="나이·자산" hint={`${draft.currentAge}세 → ${draft.targetRetirementAge}세 · 지금 ${eok(draft.financialAsset)}`}>
         <RangeField label="현재 나이" value={cleanNumber(draft.currentAge)} min={R.currentAge[0]} max={R.currentAge[1]} step={1} format={ageFmt} onChange={(v) => editDraft('currentAge', v)} />
         <RangeField label="목표 나이" value={cleanNumber(draft.targetRetirementAge)} min={R.targetRetirementAge[0]} max={R.targetRetirementAge[1]} step={1} format={ageFmt} onChange={(v) => editDraft('targetRetirementAge', v)} />
         {money('financialAsset', '현재 자산', '저축·투자 등 금융자산 합계')}
       </Fold>
 
-      <Fold icon="⚙️" title="고급 가정" hint={`저축 ${savingYearsValue}년 · 연봉 ${draft.salaryGrowthRate}% · 물가 ${draft.inflationRate}% · 수익 ${draft.annualReturnRate}%`}>
+      <Fold icon={<Icon name="settings" />} title="고급 가정" hint={`저축 ${savingYearsValue}년 · 연봉 ${draft.salaryGrowthRate}% · 물가 ${draft.inflationRate}% · 수익 ${draft.annualReturnRate}%`}>
         <RangeField label="저축 기간" value={savingYearsValue} min={1} max={yearsToRetire} step={1} format={(v) => `${v}년`} hint={`기본은 파이어까지 ${yearsToRetire}년 매달 저축이에요 · 줄이면 이후엔 모은 돈을 굴리기만 해요`} onChange={(v) => editDraft('savingYears', v >= yearsToRetire ? 0 : v)} />
         <RangeField label="임금상승률" value={cleanNumber(draft.salaryGrowthRate)} min={R.salaryGrowthRate[0]} max={R.salaryGrowthRate[1]} step={1} format={pctFmt} onChange={(v) => editDraft('salaryGrowthRate', v)} />
         <RangeField label="물가 상승률" value={cleanNumber(draft.inflationRate)} min={R.inflationRate[0]} max={R.inflationRate[1]} step={1} format={pctFmt} onChange={(v) => editDraft('inflationRate', v)} />
@@ -120,17 +120,17 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
         </Chips>
       </Fold>
 
-      <Fold icon="🏠" title="부동산·부채·임대수익" hint={hasAssetExtra ? `순자산 ${eok(netWorth)}` : '순자산·또래 비교에만 반영'} defaultOpen={hasAssetExtra}>
+      <Fold icon={<Icon name="home" />} title="부동산·부채·임대수익" hint={hasAssetExtra ? `순자산 ${eok(netWorth)}` : '순자산·또래 비교에만 반영'} defaultOpen={hasAssetExtra}>
         {money('realEstateValue', '부동산')}
         {money('debt', '부채')}
         {money('monthlyRentalIncome', '파이어 후 월 임대수익')}
       </Fold>
 
-      <Fold icon="🏛️" title="국민연금" hint="수령 나이 · 월 수령액">
+      <Fold icon={<Icon name="bank" />} title="국민연금" hint="수령 나이 · 월 수령액">
         <PensionControls inputs={draft} onChange={editDraft} />
       </Fold>
 
-      <Fold icon="📈" title="자산 흐름" hint={`납입 원금 ${eok(principalAtRet)} · 투자 수익 ${eok(gainsAtRet)}`}>
+      <Fold icon={<Icon name="chartline" />} title="자산 흐름" hint={`납입 원금 ${eok(principalAtRet)} · 투자 수익 ${eok(gainsAtRet)}`}>
         <AssetGrowthChart ages={growth.ages} principal={growth.principal} gains={growth.gains} retirementAge={simulation.displayResult.retirementAge} depletionAge={simulation.displayResult.depletionAge} />
       </Fold>
 

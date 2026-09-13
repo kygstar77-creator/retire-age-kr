@@ -1,5 +1,6 @@
 // DS-17 Notice / EmptyState · DS-18 Skeleton / Spinner
 import { IconButton, Button } from './Button.jsx';
+import { Icon } from './Icon.jsx';
 const cx = (...a) => a.filter(Boolean).join(' ');
 
 // tone: neutral | accent | good | warn | bad
@@ -11,12 +12,12 @@ export function Notice({ tone = 'neutral', icon, title, onClose, className = '',
         {title && <span className="ds-notice__title">{title}</span>}
         {children}
       </div>
-      {onClose && <IconButton label="닫기" size="sm" plain className="ds-notice__close" onClick={onClose}>✕</IconButton>}
+      {onClose && <IconButton label="닫기" size="sm" plain className="ds-notice__close" onClick={onClose}><Icon name="close" size={16} /></IconButton>}
     </div>
   );
 }
 
-export function EmptyState({ icon = '🌱', title, desc, action, className = '' }) {
+export function EmptyState({ icon = <Icon name="leaf" size={28} />, title, desc, action, className = '' }) {
   return (
     <div className={cx('ds-empty', className)}>
       <div className="ds-empty__icon" aria-hidden="true">{icon}</div>

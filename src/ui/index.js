@@ -14,3 +14,4 @@ export { LeverList } from './LeverRow.jsx';
 export { RangeField } from './RangeField.jsx';
 export { Countdown } from './Countdown.jsx';
 export { IndexRow } from './IndexRow.jsx';
+export { Icon } from './Icon.jsx';

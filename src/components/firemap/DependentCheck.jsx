@@ -1,6 +1,6 @@
 // 파이어 후 건보료 — 결론(피부양자 유지/박탈 + 월 건보료) StatHero 위, 조건 입력 아래. TopBar는 FireMapMVP 도구 래퍼가 그려요.
 import { useState } from 'react';
-import { Card, SectionHead, RangeField, StatHero, Tabs, Chips, Chip, Notice, Button, toast } from '../../ui/index.js';
+import { Card, SectionHead, RangeField, StatHero, Tabs, Chips, Chip, Notice, Button, toast, Icon } from '../../ui/index.js';
 import { assessDependentEligibility, estimateLocalPremium, estimateBaristaPremium } from '../../firemap-v2/healthInsurance.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 
@@ -89,12 +89,12 @@ export default function DependentCheck({ inputs, simulation, onApply }) {
       </Card>
 
       {mode === 'local' && (
-        <Notice tone={r.eligible ? 'good' : 'warn'} icon={r.eligible ? '✅' : '⚠️'} title={r.eligible ? '피부양자 유지 가능' : '피부양자 제외'}>
+        <Notice tone={r.eligible ? 'good' : 'warn'} icon={<Icon name={r.eligible ? 'check' : 'alert'} />} title={r.eligible ? '피부양자 유지 가능' : '피부양자 제외'}>
           {why.length > 0 ? why.map((t) => <p key={t} className="ds-caption ds-mb-0">{t}</p>) : <p className="ds-caption ds-mb-0">지금 조건이면 기준 안이에요</p>}
         </Notice>
       )}
       {mode === 'barista' && (
-        <Notice tone="accent" icon="☕">
+        <Notice tone="accent" icon={<Icon name="coffee" />}>
           직장가입자라 재산은 안 잡혀요 · 보수 외 소득이 연 <b className="num">2,000만원</b>을 넘는 부분부터 추가돼요
         </Notice>
       )}

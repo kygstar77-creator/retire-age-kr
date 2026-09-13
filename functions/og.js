@@ -6,7 +6,8 @@ import resvgWasm from '@resvg/resvg-wasm/index_bg.wasm';
 import { BOLD_B64, REGULAR_B64 } from './og-fonts.js';
 import { FT_BOLD_B64, FT_REGULAR_B64 } from './og-fonts-ft.js';
 import { PD_BOLD_B64, PD_REGULAR_B64 } from './og-fonts-pd.js';
-import { buildCardSvg, buildCertSvg, buildCertWideSvg } from './og-card.js';
+import { buildCardSvg, buildCertSvg, buildCertWideSvg, seriesFromRows } from './og-card.js';
+import { buildSimulation } from '../src/utils/retirementSimulator.js';
 
 const KR = 'Pretendard';
 let wasmReady;
@@ -40,8 +41,18 @@ function buildSvg(q) {
   if ((q.get('mode') || '') === 'cert') {
     // 기본은 가로판 — 카카오톡·링크 미리보기가 가로 썸네일이라서. 세로 카드가 필요하면 ar=tall.
     const build = (q.get('ar') || '') === 'tall' ? buildCertSvg : buildCertWideSvg;
-    return build({ year: intOr(q.get('yr'), 1990, 1900, 2030), family: safeText(q.get('fm'), 6) || '1인', ea: intOr(q.get('ea'), 0, 0, 120), target: intOr(q.get('target'), 0, 0, 120), need: safeText(q.get('need'), 12) || '—', asset: safeText(q.get('as'), 12) || '비공개', save: safeText(q.get('sv'), 12) || '비공개', cost: safeText(q.get('cost'), 12) || '—', ret: safeText(q.get('ret'), 4), inf: safeText(q.get('inf'), 4), pen: safeText(q.get('pen'), 3), round: intOr(q.get('rd'), 1, 1, 999), font: KR });
+    // 자산 곡선: 원시 입력값(cur·fa·mi·lc·pa·pm)이 있으면 같은 엔진으로 다시 계산. 없거나 실패하면 곡선 없이.
+    let series = null;
+    try {
+      const cur = intOr(q.get('cur'), 0, 15, 90);
+      if (cur && q.get('fa') != null) {
+        const sim = buildSimulation({ currentAge: cur, targetRetirementAge: intOr(q.get('target'), cur + 20, cur, 100), financialAsset: Number(q.get('fa')) || 0, monthlyInvestment: Number(q.get('mi')) || 0, monthlyLivingCost: Number(q.get('lc')) || 0, annualReturnRate: Number(q.get('ret')) || 5, inflationRate: Number(q.get('inf')) || 3, expectedPensionAge: intOr(q.get('pa'), 65, 55, 75), expectedMonthlyPension: Number(q.get('pm')) || 0 });
+        series = seriesFromRows(sim.displayResult.rows, sim.displayResult.retirementAge);
+      }
+    } catch { series = null; }
+    return build({ year: intOr(q.get('yr'), 1990, 1900, 2030), ea: intOr(q.get('ea'), 0, 0, 120), target: intOr(q.get('target'), 0, 0, 120), need: safeText(q.get('need'), 12) || '—', asset: safeText(q.get('as'), 12) || '비공개', save: safeText(q.get('sv'), 12) || '비공개', cost: safeText(q.get('cost'), 12) || '—', ret: safeText(q.get('ret'), 4), inf: safeText(q.get('inf'), 4), pen: safeText(q.get('pen'), 3), round: intOr(q.get('rd'), 1, 1, 999), series, font: KR });
   }
+
   if ((q.get('mode') || '') === 'firetype') {
     return buildCardSvg({ mode: 'firetype', tname: safeText(q.get('tn'), 16), nick: safeText(q.get('nk'), 16), cities: safeText(q.get('ct'), 40), font: KR });
   }
@@ -53,7 +64,8 @@ function buildSvg(q) {
 }
 
 export async function onRequest(context) {
-  const site = 'https://firemap.kr';
+  // 접속한 주소(dev·운영)를 따른다 — dev 링크의 미리보기 이미지가 운영 서버로 가던 문제.
+  const site = (() => { try { return new URL(context.request.url).origin; } catch { return 'https://firemap.kr'; } })();
   try {
     if (!wasmReady) wasmReady = initWasm(resvgWasm);
     await wasmReady;

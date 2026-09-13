@@ -146,7 +146,6 @@ html[data-theme="dark"] .ds-card--dark { background: #26272e; color: #f2f3f5; bo
 .ds-row-item:not(.ds-row-item--static):active { background: var(--ds-surface-2); }
 .ds-row-item__lead { flex: 0 0 auto; width: 36px; height: 36px; border-radius: var(--ds-r-md); background: var(--ds-surface-2); color: var(--ds-ink-2); display: inline-flex; align-items: center; justify-content: center; font-size: 18px; line-height: 1; }
 .ds-row-item__lead svg { width: 18px; height: 18px; }
-.ds-card .ds-row-item__lead { background: var(--ds-surface); }
 .ds-row-item__body { display: flex; flex-direction: column; flex: 1; min-width: 0; gap: 2px; }
 .ds-row-item__title { font-size: var(--ds-fs-body-sm); font-weight: 700; line-height: 1.3; }
 .ds-row-item__desc { font-size: var(--ds-fs-micro); font-weight: 500; color: var(--ds-ink-3); line-height: 1.4; }

@@ -4,7 +4,8 @@
 export async function onRequest(context) {
   const url = new URL(context.request.url);
   const q = url.searchParams;
-  const site = 'https://firemap.kr';
+  // 접속한 주소(dev·운영)를 따른다 — dev 링크의 미리보기 이미지가 운영 서버로 가던 문제.
+  const site = (() => { try { return new URL(context.request.url).origin; } catch { return 'https://firemap.kr'; } })();
 
   const esc = (s) =>
     String(s == null ? '' : s)

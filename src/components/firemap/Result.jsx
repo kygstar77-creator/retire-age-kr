@@ -35,11 +35,7 @@ function YearlyAssetChart({ simulation }) {
   const a0 = pts[0].age, a1 = pts[n - 1].age; const W = 320, H = 120, P = 8;
   const X = (a) => P + ((a - a0) / Math.max(1, a1 - a0)) * (W - 2 * P);
   const Y = (v) => H - P - (v / maxV) * (H - 2 * P);
-  const principalTop = pts.map((p, i) => `${i ? 'L' : 'M'}${X(p.age).toFixed(1)} ${Y(p.principal).toFixed(1)}`).join(' ');
-  const principalArea = `${principalTop} L${X(a1).toFixed(1)} ${(H - P).toFixed(1)} L${X(a0).toFixed(1)} ${(H - P).toFixed(1)} Z`;
   const totalTop = pts.map((p, i) => `${i ? 'L' : 'M'}${X(p.age).toFixed(1)} ${Y(p.v).toFixed(1)}`).join(' ');
-  const principalBack = pts.slice().reverse().map((p) => `L${X(p.age).toFixed(1)} ${Y(p.principal).toFixed(1)}`).join(' ');
-  const gainsArea = `${totalTop} ${principalBack} Z`;
   const ret = simulation.displayResult.retirementAge; const retX = X(Math.min(a1, Math.max(a0, ret)));
   const retIdx = Math.max(0, pts.findIndex((p) => p.age >= ret));
   const cur = sel != null ? pts[Math.min(sel, n - 1)] : (pts[retIdx] || pts[n - 1]);
@@ -52,12 +48,12 @@ function YearlyAssetChart({ simulation }) {
   return (
     <div className="ds-chart">
       <div className="ds-chart__read"><b>{cur.age}세</b><span className={cur.status === '파이어 후' ? 'after' : 'before'}>{cur.status}</span><strong>{formatWon(cur.v)}</strong></div>
-      <p className="ds-chart__split"><i className="ds-chart__dot ds-chart__dot--principal" />납입 원금 {formatWon(cur.principal)} · <i className="ds-chart__dot ds-chart__dot--gains" />투자 수익 {formatWon(cur.gains)}</p>
       <div className="ds-chart__canvas" style={{ touchAction: 'none' }} onPointerDown={pick} onPointerMove={(e) => { if (e.buttons) pick(e); }} onTouchStart={pick} onTouchMove={pick}>
         <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" role="img" aria-label="나이별 자산 그래프">
           {yTicks.map((v) => <line key={v} x1={P} y1={Y(v)} x2={W - P} y2={Y(v)} className="ds-chart__grid" />)}
           <line x1={P} y1={H - P} x2={W - P} y2={H - P} className="ds-chart__grid" />
-          <path d={principalArea} className="ds-chart__area-principal" /><path d={gainsArea} className="ds-chart__area-gains" /><path d={totalTop} className="ds-chart__line" fill="none" />
+          <defs><linearGradient id="dsChartFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="var(--ds-accent)" stopOpacity="0.22" /><stop offset="1" stopColor="var(--ds-accent)" stopOpacity="0" /></linearGradient></defs>
+          <path d={`${totalTop} L${X(a1).toFixed(1)} ${(H - P).toFixed(1)} L${X(a0).toFixed(1)} ${(H - P).toFixed(1)} Z`} fill="url(#dsChartFill)" /><path d={totalTop} className="ds-chart__line" fill="none" />
           <line x1={retX} y1={P} x2={retX} y2={H - P} className="ds-chart__ret" />
           {sel != null && <line x1={X(cur.age)} y1={P} x2={X(cur.age)} y2={H - P} className="ds-chart__cross" />}
           <circle cx={X(cur.age)} cy={Y(cur.v)} r="3.5" className="ds-chart__dot" />

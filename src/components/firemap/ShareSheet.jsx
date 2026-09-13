@@ -10,7 +10,7 @@ import { track } from '../../firemap-v2/dailyData.js';
 import { prefs } from '../../utils/prefs.js';
 import { CAFE_URL } from '../../firemap-v2/links.js';
 import { siteOrigin } from '../../utils/shareState.js';
-import { buildCertSvg } from '../../../functions/og-card.js';
+import { buildCertSvg, seriesFromRows } from '../../../functions/og-card.js';
 
 const roundNo = () => { try { const f = Number(localStorage.getItem('fm_first_seen') || 0); if (!f) return 1; return Math.max(1, Math.floor((Date.now() - f) / (30.44 * 86400000)) + 1); } catch { return 1; } };
 
@@ -45,7 +45,9 @@ function buildCertShare(simulation, { hideAmt, round, need, asset }) {
     mode: 'cert', yr: String(year), ea: String(ea), target: String(inp.targetRetirementAge),
     need: formatWon(need), as: hideAmt ? '비공개' : formatWon(asset),
     sv: hideAmt ? '비공개' : formatWon(inp.monthlyInvestment), cost: formatWon(inp.monthlyLivingCost),
-    ret: String(inp.annualReturnRate), inf: String(inp.inflationRate), pen: String(inp.expectedPensionAge), rd: String(round)
+    ret: String(inp.annualReturnRate), inf: String(inp.inflationRate), pen: String(inp.expectedPensionAge), rd: String(round),
+    // 곡선용 원시 입력값 — 서버(/og)가 같은 엔진으로 같은 곡선을 그린다
+    cur: String(inp.currentAge), fa: String(Math.round(inp.financialAsset || 0)), mi: String(Math.round(inp.monthlyInvestment || 0)), lc: String(Math.round(inp.monthlyLivingCost || 0)), pa: String(inp.expectedPensionAge), pm: String(Math.round(inp.expectedMonthlyPension || 0))
   };
   const img = new URL(siteOrigin() + '/og');
   Object.entries(q).forEach(([k, v]) => img.searchParams.set(k, v));
@@ -94,7 +96,7 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
   return (
     <Sheet open={open} title="인증 카드" onClose={onClose}>
       {/* 미리보기 = 카톡·링크에 실리는 바로 그 이미지(같은 SVG 빌더). */}
-      <div className="ds-cert" dangerouslySetInnerHTML={{ __html: buildCertSvg({ year, round: roundNo(), ea: earliest, target: inp.targetRetirementAge, need: formatWon(need), asset: hideAmt ? '비공개' : formatWon(asset), save: hideAmt ? '비공개' : formatWon(inp.monthlyInvestment), cost: formatWon(inp.monthlyLivingCost), ret: inp.annualReturnRate, inf: inp.inflationRate, pen: inp.expectedPensionAge, font: 'Pretendard Variable' }).replace('width="1080" height="1350"', '') }} />
+      <div className="ds-cert" dangerouslySetInnerHTML={{ __html: buildCertSvg({ year, round: roundNo(), ea: earliest, target: inp.targetRetirementAge, need: formatWon(need), asset: hideAmt ? '비공개' : formatWon(asset), save: hideAmt ? '비공개' : formatWon(inp.monthlyInvestment), cost: formatWon(inp.monthlyLivingCost), ret: inp.annualReturnRate, inf: inp.inflationRate, pen: inp.expectedPensionAge, series: seriesFromRows(simulation.displayResult.rows, simulation.displayResult.retirementAge), font: 'Pretendard Variable' }).replace('width="1080" height="1350"', '') }} />
       <Chips className="ds-mt-3"><Chip on={hideAmt} onClick={() => setHideAmt((v) => !v)}>금액 숨기기</Chip></Chips>
       <div className="ds-stack ds-mt-3">
         <Button variant="primary" size="lg" full loading={busy} onClick={copyForCafe}>카페 인증 게시판</Button>

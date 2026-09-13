@@ -71,80 +71,88 @@ ${cta}
 }
 
 // 인증 카드(1080×1350, 카페·인스타 세로) — 배당 투자자 모임 제목 공식 + Reddit 댓글 6종(숫자·기간·가정)
-// opts: { year, family, ea, target, need(억 문자열), asset(억 문자열|'비공개'), save(만 문자열|'비공개'), cost, ret, inf, pen, round, font }
+// 자산 곡선용 점 — 엔진 rows(financialAsset)를 0~1로 정규화. 앱 화면·미리보기·공유 이미지가 같은 함수를 쓴다.
+export function seriesFromRows(rows, fireAge) {
+  const pts = (rows || []).map((r) => ({ age: r.age, v: Math.max(0, r.financialAsset || 0) }));
+  if (pts.length < 2) return null;
+  const max = Math.max(...pts.map((p) => p.v), 1);
+  const a0 = pts[0].age; const a1 = pts[pts.length - 1].age;
+  const out = pts.map((p) => ({ x: (p.age - a0) / Math.max(1, a1 - a0), y: p.v / max }));
+  const fx = fireAge ? Math.min(1, Math.max(0, (fireAge - a0) / Math.max(1, a1 - a0))) : null;
+  return { pts: out, fireX: fx, a0, a1 };
+}
+// 곡선 SVG 조각 — box {x,y,w,h}
+function curveSvg(series, box, opts = {}) {
+  if (!series || !series.pts || series.pts.length < 2) return '';
+  const { x, y, w, h } = box;
+  const P = (p) => `${(x + p.x * w).toFixed(1)} ${(y + h - p.y * h).toFixed(1)}`;
+  const line = series.pts.map((p, i) => (i ? 'L' : 'M') + P(p)).join(' ');
+  const area = `${line} L${(x + w).toFixed(1)} ${(y + h).toFixed(1)} L${x} ${(y + h).toFixed(1)} Z`;
+  const fireLine = series.fireX != null ? `<line x1="${(x + series.fireX * w).toFixed(1)}" y1="${y}" x2="${(x + series.fireX * w).toFixed(1)}" y2="${y + h}" stroke="#ffffff" stroke-opacity="0.35" stroke-width="${opts.thin ? 2 : 3}" stroke-dasharray="8 8"/>` : '';
+  const dot = series.fireX != null ? (() => { const p = series.pts.reduce((b, q) => (Math.abs(q.x - series.fireX) < Math.abs(b.x - series.fireX) ? q : b)); return `<circle cx="${(x + p.x * w).toFixed(1)}" cy="${(y + h - p.y * h).toFixed(1)}" r="${opts.thin ? 8 : 11}" fill="#ff5a00" stroke="#18191d" stroke-width="4"/>`; })() : '';
+  return `<path d="${area}" fill="#ff5a00" fill-opacity="0.16"/><path d="${line}" fill="none" stroke="#ff5a00" stroke-width="${opts.thin ? 5 : 7}" stroke-linejoin="round" stroke-linecap="round"/>${fireLine}${dot}`;
+}
+function certText(opts) {
+  const esc = (v) => String(v == null ? '' : v).replace(/[<>&"]/g, '').slice(0, 40);
+  const ea = Number(opts.ea) || 0; const tgt = Number(opts.target) || 0;
+  const gap = ea && tgt ? tgt - ea : null;
+  const big = ea ? `${ea}세` : '아직';
+  const line1 = !ea ? '파이어 준비 중' : gap == null ? '파이어 가능 나이' : gap > 0 ? `목표보다 ${gap}년 빨라요` : gap < 0 ? `목표보다 ${-gap}년 늦어요` : '목표와 같아요';
+  const title = `${esc(opts.year)}년생 · ${esc(opts.round) || 1}회차`;
+  const stats = [[`${ea || tgt}세 때 자산`, esc(opts.need)], ['현재 자산', esc(opts.asset)], ['월 저축액', esc(opts.save)]];
+  const assume = `파이어 후 월 생활비 ${esc(opts.cost)} · 수익률 ${esc(opts.ret)}% · 물가 ${esc(opts.inf)}% · 연금 ${esc(opts.pen)}세~`;
+  return { esc, ea, tgt, big, line1, title, stats, assume };
+}
+const LOGO = (x, y, w, h) => `<svg x="${x}" y="${y}" width="${w}" height="${h}" viewBox="188 84 136 276"><path d="M256 84 C 232 150, 188 172, 188 256 C 188 322, 218 360, 256 360 C 294 360, 324 322, 324 256 C 324 212, 300 188, 286 162 C 282 192, 268 204, 252 210 C 268 166, 262 116, 256 84 Z" fill="#ff5a00"/><path d="M256 250 C 246 276, 232 286, 232 312 C 232 336, 242 352, 256 352 C 270 352, 280 336, 280 312 C 280 292, 270 280, 264 268 C 262 282, 258 286, 252 290 C 258 274, 258 262, 256 250 Z" fill="#fdba74"/></svg>`;
+
+// 세로판 1080×1350 (인스타·카페 게시판)
 export function buildCertSvg(opts = {}) {
   const font = opts.font || 'Pretendard';
-  const esc = (v) => String(v == null ? '' : v).replace(/[<>&"]/g, '').slice(0, 40);
-  const title = `${esc(opts.year)}년생 · ${esc(opts.round) || 1}회차`;
-  const ea = Number(opts.ea) || 0;
-  const big = ea ? `${ea}세` : '아직';
-  // 큰 숫자가 이미 나이를 말하므로 아래 줄은 목표와의 차이를 알려준다.
-  const tgt = Number(opts.target) || 0;
-  const gap = ea && tgt ? tgt - ea : null;
-  const line1 = !ea ? '파이어 준비 중'
-    : gap == null ? '파이어 가능 나이'
-      : gap > 0 ? `목표보다 ${gap}년 빨라요`
-        : gap < 0 ? `목표보다 ${-gap}년 늦어요` : '목표와 같아요';
-  const rows = [
-    [`${opts.ea || opts.target}세 때 자산`, esc(opts.need)], ['현재 자산', esc(opts.asset)], ['월 저축액', esc(opts.save)], ['파이어 후 월 생활비', esc(opts.cost)],
-    ['목표 나이', `${Number(opts.target) || 0}세`], ['가정', `수익률 ${esc(opts.ret)}% · 물가 ${esc(opts.inf)}% · 연금 ${esc(opts.pen)}세~`]
-  ];
-  const rowsSvg = rows.map(([k, v], i) => {
-    const y = 640 + i * 92;
-    return `<rect x="80" y="${y - 54}" width="920" height="78" rx="18" fill="rgba(255,255,255,0.06)"/>
-<text x="112" y="${y}" font-family="${font}" font-weight="600" font-size="30" fill="#9aa4d4">${k}</text>
-<text x="968" y="${y}" font-family="${font}" font-weight="700" font-size="${i === 5 ? 26 : 36}" fill="#ffffff" text-anchor="end">${v}</text>`;
+  const t = certText(opts);
+  const statsSvg = t.stats.map(([k, v], i) => {
+    const x = 80 + i * 320;
+    return `${i ? `<line x1="${x - 20}" y1="1010" x2="${x - 20}" y2="1090" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2"/>` : ''}
+<text x="${x}" y="1030" font-family="${font}" font-weight="600" font-size="26" fill="#9aa0a8">${k}</text>
+<text x="${x}" y="1084" font-family="${font}" font-weight="700" font-size="44" fill="#ffffff">${v}</text>`;
   }).join('\n');
   return `<svg width="1080" height="1350" viewBox="0 0 1080 1350" xmlns="http://www.w3.org/2000/svg">
-<rect width="1080" height="1350" fill="#18224d"/>
-<rect x="0" y="0" width="1080" height="14" fill="#ff5a00"/>
-<svg x="80" y="80" width="44" height="88" viewBox="188 84 136 276"><path d="M256 84 C 232 150, 188 172, 188 256 C 188 322, 218 360, 256 360 C 294 360, 324 322, 324 256 C 324 212, 300 188, 286 162 C 282 192, 268 204, 252 210 C 268 166, 262 116, 256 84 Z" fill="#ff5a00"/><path d="M256 250 C 246 276, 232 286, 232 312 C 232 336, 242 352, 256 352 C 270 352, 280 336, 280 312 C 280 292, 270 280, 264 268 C 262 282, 258 286, 252 290 C 258 274, 258 262, 256 250 Z" fill="#fdba74"/></svg>
-<text x="140" y="140" font-family="${font}" font-weight="700" font-size="44" fill="#ffffff">파이어맵 인증 카드</text>
-<text x="80" y="250" font-family="${font}" font-weight="600" font-size="36" fill="#9aa4d4">${title}</text>
-<text x="80" y="440" font-family="${font}" font-weight="700" font-size="180" fill="#ff5a00">${big}</text>
-<text x="80" y="520" font-family="${font}" font-weight="700" font-size="48" fill="#ffffff">${line1}</text>
-${rowsSvg}
-<text x="80" y="1290" font-family="${font}" font-weight="600" font-size="28" fill="#9aa4d4">계산: firemap.kr</text>
-<text x="1000" y="1290" font-family="${font}" font-weight="700" font-size="30" fill="#ff8a4c" text-anchor="end">firemap.kr</text>
+<rect width="1080" height="1350" rx="0" fill="#18191d"/>
+${LOGO(80, 84, 40, 80)}
+<text x="134" y="140" font-family="${font}" font-weight="700" font-size="40" fill="#ffffff">파이어맵</text>
+<text x="1000" y="140" font-family="${font}" font-weight="600" font-size="30" fill="#9aa0a8" text-anchor="end">${t.title}</text>
+<text x="80" y="290" font-family="${font}" font-weight="600" font-size="34" fill="#9aa0a8">파이어 가능 나이</text>
+<text x="80" y="480" font-family="${font}" font-weight="700" font-size="200" fill="#ff5a00">${t.big}</text>
+<text x="80" y="560" font-family="${font}" font-weight="700" font-size="46" fill="#ffffff">${t.line1}</text>
+${curveSvg(opts.series, { x: 80, y: 640, w: 920, h: 300 })}
+<line x1="80" y1="980" x2="1000" y2="980" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2"/>
+${statsSvg}
+<text x="80" y="1170" font-family="${font}" font-weight="500" font-size="26" fill="#9aa0a8">${t.assume}</text>
+<text x="80" y="1270" font-family="${font}" font-weight="600" font-size="28" fill="#9aa0a8">계산: firemap.kr</text>
+<text x="1000" y="1270" font-family="${font}" font-weight="700" font-size="32" fill="#ff5a00" text-anchor="end">firemap.kr</text>
 </svg>`;
 }
 
-// 인증 카드 가로판(1200×630) — 카카오톡 피드와 링크 미리보기는 가로 썸네일이라 세로 카드는 잘린다.
-// 내용·문구는 세로판(buildCertSvg)과 같게 유지한다.
+// 가로판 1200×630 (카카오톡·링크 미리보기). 내용은 세로판과 같다.
 export function buildCertWideSvg(opts = {}) {
   const font = opts.font || 'Pretendard';
-  const esc = (v) => String(v == null ? '' : v).replace(/[<>&"]/g, '').slice(0, 40);
-  const ea = Number(opts.ea) || 0;
-  const tgt = Number(opts.target) || 0;
-  const gap = ea && tgt ? tgt - ea : null;
-  const big = ea ? `${ea}세` : '아직';
-  const line1 = !ea ? '파이어 준비 중'
-    : gap == null ? '파이어 가능 나이'
-      : gap > 0 ? `목표보다 ${gap}년 빨라요`
-        : gap < 0 ? `목표보다 ${-gap}년 늦어요` : '목표와 같아요';
-  const title = `${esc(opts.year)}년생 · ${esc(opts.round) || 1}회차`;
-  const rows = [
-    [`${opts.ea || opts.target}세 때 자산`, esc(opts.need)], ['현재 자산', esc(opts.asset)],
-    ['월 저축액', esc(opts.save)], ['파이어 후 월 생활비', esc(opts.cost)]
-  ];
-  const rowsSvg = rows.map(([k, v], i) => {
-    const x = 620 + (i % 2) * 280;
-    const y = 250 + Math.floor(i / 2) * 104;
-    return `<rect x="${x}" y="${y - 46}" width="258" height="78" rx="16" fill="rgba(255,255,255,0.06)"/>
-<text x="${x + 22}" y="${y - 16}" font-family="${font}" font-weight="600" font-size="22" fill="#9aa4d4">${k}</text>
-<text x="${x + 22}" y="${y + 18}" font-family="${font}" font-weight="700" font-size="30" fill="#ffffff">${v}</text>`;
+  const t = certText(opts);
+  const statsSvg = t.stats.map(([k, v], i) => {
+    const y = 300 + i * 96;
+    return `<text x="700" y="${y}" font-family="${font}" font-weight="600" font-size="22" fill="#9aa0a8">${k}</text>
+<text x="1130" y="${y}" font-family="${font}" font-weight="700" font-size="36" fill="#ffffff" text-anchor="end">${v}</text>
+<line x1="700" y1="${y + 26}" x2="1130" y2="${y + 26}" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2"/>`;
   }).join('\n');
   return `<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-<rect width="1200" height="630" fill="#18224d"/>
-<rect x="0" y="0" width="1200" height="10" fill="#ff5a00"/>
-<svg x="70" y="62" width="34" height="68" viewBox="188 84 136 276"><path d="M256 84 C 232 150, 188 172, 188 256 C 188 322, 218 360, 256 360 C 294 360, 324 322, 324 256 C 324 212, 300 188, 286 162 C 282 192, 268 204, 252 210 C 268 166, 262 116, 256 84 Z" fill="#ff5a00"/></svg>
-<text x="116" y="112" font-family="${font}" font-weight="700" font-size="32" fill="#ffffff">파이어맵 인증 카드</text>
-<text x="70" y="182" font-family="${font}" font-weight="600" font-size="26" fill="#9aa4d4">${title}</text>
-<text x="70" y="352" font-family="${font}" font-weight="700" font-size="150" fill="#ff5a00">${big}</text>
-<text x="70" y="416" font-family="${font}" font-weight="700" font-size="38" fill="#ffffff">${line1}</text>
-<text x="70" y="486" font-family="${font}" font-weight="600" font-size="24" fill="#9aa4d4">가정 · 수익률 ${esc(opts.ret)}% · 물가 ${esc(opts.inf)}% · 연금 ${esc(opts.pen)}세~</text>
-${rowsSvg}
-<text x="70" y="576" font-family="${font}" font-weight="600" font-size="24" fill="#9aa4d4">계산: firemap.kr</text>
-<text x="1130" y="576" font-family="${font}" font-weight="700" font-size="28" fill="#ff8a4c" text-anchor="end">firemap.kr</text>
+<rect width="1200" height="630" fill="#18191d"/>
+${LOGO(70, 56, 30, 60)}
+<text x="110" y="98" font-family="${font}" font-weight="700" font-size="30" fill="#ffffff">파이어맵</text>
+<text x="1130" y="98" font-family="${font}" font-weight="600" font-size="24" fill="#9aa0a8" text-anchor="end">${t.title}</text>
+<text x="70" y="196" font-family="${font}" font-weight="600" font-size="26" fill="#9aa0a8">파이어 가능 나이</text>
+<text x="70" y="346" font-family="${font}" font-weight="700" font-size="160" fill="#ff5a00">${t.big}</text>
+<text x="70" y="404" font-family="${font}" font-weight="700" font-size="36" fill="#ffffff">${t.line1}</text>
+${curveSvg(opts.series, { x: 70, y: 430, w: 560, h: 120 }, { thin: true })}
+${statsSvg}
+<text x="70" y="590" font-family="${font}" font-weight="500" font-size="20" fill="#9aa0a8">${t.assume}</text>
+<text x="1130" y="590" font-family="${font}" font-weight="700" font-size="26" fill="#ff5a00" text-anchor="end">firemap.kr</text>
 </svg>`;
 }

@@ -1,7 +1,7 @@
 // 소식 — 지표 5개 · 배당락 이번 주 · 소식 목록(자동 봇 글은 '자동' 배지). 개편 최종본 §3 소식.
 // 지표는 참고만. 내 파이어 나이 계산엔 쓰지 않아요.
 import { useEffect, useMemo, useState } from 'react';
-import { TopBar, Card, SectionHead, ListGroup, ListRow, Tabs, Badge, Button, Skeleton, EmptyState } from '../../ui/index.js';
+import { TopBar, Card, SectionHead, ListGroup, ListRow, Tabs, Badge, Button, Skeleton, EmptyState, IndexRow } from '../../ui/index.js';
 import { sbRpc } from '../../utils/supabaseClient.js';
 import { loadNews } from '../../utils/firemapFeedbackApi.js';
 import { dayIdx } from '../../utils/dates.js';
@@ -59,18 +59,6 @@ const mdOf = (iso) => { const d = new Date(iso); return Number.isNaN(d.getTime()
 const pct1 = (v) => (v == null || Number.isNaN(Number(v)) ? null : `${Number(v) > 0 ? '+' : ''}${Number(v).toFixed(1)}%`);
 const num0 = (v) => Math.round(Number(v)).toLocaleString('ko-KR');
 const periodOf = (p) => { const s = String(p || ''); return s.length === 6 ? `${s.slice(0, 4)}년 ${Number(s.slice(4))}월` : s; };
-
-// 지표 한 줄 — 라벨 · 값 · 변화. 소식 화면 전용(DS Stat보다 촘촘한 목록형).
-function IndexRow({ label, value, unit, delta, deltaLabel, sub }) {
-  const dir = delta == null ? null : (String(delta).startsWith('+') ? 'up' : (String(delta).startsWith('-') ? 'down' : 'flat'));
-  return (
-    <div className="sc-news-idx">
-      <span className="sc-news-idx__label">{label}{sub ? <span className="sc-news-idx__sub">{sub}</span> : null}</span>
-      <span className="sc-news-idx__value num">{value}{unit ? <span className="sc-news-idx__unit">{unit}</span> : null}</span>
-      {delta != null && <span className={`sc-news-idx__delta num sc-news-idx__delta--${dir}`}>{delta}{deltaLabel ? <span className="sc-news-idx__dl">{deltaLabel}</span> : null}</span>}
-    </div>
-  );
-}
 
 function useIndicators() {
   const [data, setData] = useState({ loading: true, rows: [] });
@@ -133,7 +121,7 @@ export default function News({ onBack }) {
         {ind.loading && <Skeleton lines={4} />}
         {!ind.loading && ind.rows.length === 0 && <p className="ds-p">지표를 아직 못 불러왔어요 · 잠시 뒤 다시 열어보세요</p>}
         {!ind.loading && ind.rows.length > 0 && (
-          <div className="sc-news-idx-list">
+          <div className="ds-idx-list">
             {ind.rows.map((r) => { const { key, ...rest } = r; return <IndexRow key={key} {...rest} />; })}
           </div>
         )}

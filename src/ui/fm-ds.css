@@ -1,5 +1,5 @@
 /* =============================================================
-   FireMap Design System v1 — 토큰 1벌 + 컴포넌트 18개 (2026-09-10)
+   FireMap Design System v1 — 토큰 1벌 + 컴포넌트 30개 (2026-09-10 · 26~30은 2026-09-14 추가)
    - 6차 결정서 기준. 새 화면·리팩터는 이 파일의 .ds-* 만 쓴다.
    - !important 금지. 색은 토큰만. 숫자는 .num / Stat.
    - 레거시 fm-* CSS와 공존(이름 충돌 없음). 로드 순서: main.jsx 마지막.
@@ -481,3 +481,152 @@ button.ds-cal__cell { cursor: pointer; }
 .ds-road__body b { font-size: 15px; font-weight: 700; color: var(--ds-ink); }
 .ds-road__step--hi .ds-road__body b { color: var(--ds-accent-ink); }
 .ds-road__body em { font-style: normal; font-size: 12.5px; color: var(--ds-ink-3); }
+
+/* ---------- 26. Countdown (파이어까지 남은 시간) ---------- */
+.ds-countdown { text-align: center; padding: var(--ds-sp-1) 0 var(--ds-sp-2); border-bottom: 1px solid var(--ds-line); }
+.ds-countdown__cap { margin: 0 0 var(--ds-sp-1); font-size: var(--ds-fs-caption); font-weight: 700; color: var(--ds-ink-3); }
+.ds-countdown__big { margin: 0; font-size: var(--ds-fs-title-2); font-weight: 800; letter-spacing: -.02em; color: var(--ds-ink); }
+.ds-countdown__big b { color: var(--ds-accent); }
+.ds-countdown__time { margin: 2px 0 0; font-size: var(--ds-fs-title-1); font-weight: 800; letter-spacing: -.01em; color: var(--ds-ink); font-variant-numeric: tabular-nums; font-feature-settings: 'tnum'; }
+.ds-countdown--done .ds-countdown__big { color: var(--ds-good); }
+
+/* ---------- 27. Chart (자산 흐름 · 주식 차트 문법: 선 + 면 + 축 눈금 + 파이어 선) ---------- */
+.ds-chart { margin: 6px 0 4px; }
+.ds-chart__canvas { position: relative; cursor: crosshair; }
+.ds-chart__canvas svg { width: 100%; height: 120px; display: block; }
+.ds-chart__area-principal { fill: color-mix(in srgb, var(--ds-info) 22%, transparent); }
+.ds-chart__area-gains { fill: color-mix(in srgb, var(--ds-accent) 20%, transparent); }
+.ds-chart__line { stroke: var(--ds-accent); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
+.ds-chart__ret { stroke: var(--ds-ink-3); stroke-width: 1.5; stroke-dasharray: 4 4; }
+.ds-chart__cross { stroke: var(--ds-ink); stroke-width: 1.5; stroke-dasharray: 3 3; }
+.ds-chart__dot { fill: var(--ds-accent); stroke: var(--ds-surface); stroke-width: 1.5; }
+.ds-chart__read { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+.ds-chart__read b { font-size: var(--ds-fs-body); font-weight: 800; color: var(--ds-ink); }
+.ds-chart__read span { font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 99px; background: var(--ds-surface-2); color: var(--ds-ink-2); }
+.ds-chart__read span.after { background: var(--ds-accent-soft); color: var(--ds-accent-ink); }
+.ds-chart__read strong { margin-left: auto; font-size: var(--ds-fs-body); font-weight: 800; color: var(--ds-accent); font-variant-numeric: tabular-nums; }
+.ds-chart__split { margin: 0 0 4px; font-size: 11px; font-weight: 600; color: var(--ds-ink-3); display: flex; align-items: center; flex-wrap: wrap; gap: 2px 4px; }
+.ds-chart__grid { stroke: color-mix(in srgb, var(--ds-ink) 12%, transparent); stroke-width: 1; vector-effect: non-scaling-stroke; }
+.ds-chart__yl { position: absolute; right: 2px; transform: translateY(-100%); font-size: 10px; font-weight: 600; color: var(--ds-ink-3); pointer-events: none; padding: 0 3px; background: color-mix(in srgb, var(--ds-surface) 85%, transparent); border-radius: 4px; }
+.ds-chart__xl { position: relative; height: 16px; margin-top: 4px; color: var(--ds-ink-3); font-size: 11px; font-weight: 600; }
+.ds-chart__xl span { position: absolute; top: 0; white-space: nowrap; }
+.ds-chart__xl span.ret { color: var(--ds-accent-ink); font-weight: 700; }
+.ds-chart__dot { width: 8px; height: 8px; border-radius: 2px; display: inline-block; margin-right: 5px; }
+.ds-chart__dot--principal { background: var(--ds-info); }
+.ds-chart__dot--gains { background: var(--ds-accent); }
+.ds-chart-compare { position: relative; height: 260px; width: 100%; }
+.ds-chart-legend { display: flex; gap: 14px; margin: 0 2px 8px; }
+.ds-chart-legend span { font-size: 11px; color: var(--ds-ink-3); display: inline-flex; align-items: center; }
+.ds-chart-note { margin: 8px 0 0; font-size: 12px; color: var(--ds-ink-3); line-height: 1.5; }
+
+/* ---------- 28. IndexRow (지표 행) ---------- */
+.ds-idx-list { display: flex; flex-direction: column; }
+.ds-idx {
+  display: flex; align-items: center; gap: var(--ds-sp-2);
+  min-height: 40px; padding: 6px 0; border-bottom: 1px solid var(--ds-line);
+}
+.ds-idx:last-child { border-bottom: 0; }
+.ds-idx__label { flex: 1; min-width: 0; display: flex; align-items: baseline; gap: 6px; font-size: var(--ds-fs-body-sm); font-weight: 700; color: var(--ds-ink-2); word-break: keep-all; }
+.ds-idx__sub { font-size: var(--ds-fs-caption); font-weight: 600; color: var(--ds-ink-3); }
+.ds-idx__value { flex: 0 0 auto; font-size: var(--ds-fs-body); font-weight: 800; color: var(--ds-ink); white-space: nowrap; letter-spacing: -.01em; }
+.ds-idx__unit { margin-left: 2px; font-size: var(--ds-fs-caption); font-weight: 700; color: var(--ds-ink-3); }
+.ds-idx__delta { flex: 0 0 auto; min-width: 84px; text-align: right; font-size: var(--ds-fs-caption); font-weight: 800; white-space: nowrap; }
+.ds-idx__delta--up { color: var(--ds-bad); }
+.ds-idx__delta--down { color: var(--ds-accent-ink); }
+.ds-idx__delta--flat { color: var(--ds-ink-3); }
+.ds-idx__dl { margin-left: 4px; font-weight: 600; color: var(--ds-ink-3); }
+
+/* ---------- 29. FAB · Panel (플로팅 버튼 + 패널 · 방명록) ---------- */
+.ds-fab {
+  position: fixed; z-index: 80;
+  right: max(18px, calc((100vw - 480px) / 2 + 18px));
+  bottom: calc(var(--ds-tabbar-h) + 18px + var(--ds-safe-bottom));
+  width: 48px; height: 48px; border: 0; border-radius: var(--ds-r-pill); padding: 0;
+  background: var(--ds-ink); color: var(--ds-surface); font-size: 22px; line-height: 1; cursor: pointer;
+  box-shadow: var(--ds-shadow-pop);
+  display: flex; align-items: center; justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+.ds-fab.is-open { background: var(--ds-surface); color: var(--ds-ink); border: 1px solid var(--ds-line-strong); font-size: 18px; font-weight: 900; }
+.ds-fab:focus-visible { outline: none; box-shadow: var(--ds-focus), var(--ds-shadow-pop); }
+.ds-fab-badge {
+  position: absolute; top: -4px; right: -4px; min-width: 20px; height: 20px; padding: 0 6px; box-sizing: border-box;
+  border-radius: var(--ds-r-pill); background: var(--ds-accent); color: var(--ds-surface); font-size: 11px; font-weight: 800; line-height: 20px; text-align: center;
+  border: 2px solid var(--ds-bg);
+}
+
+.ds-fab-panel {
+  position: fixed; z-index: 85;
+  left: max(12px, calc((100vw - 480px) / 2 + 12px));
+  right: max(12px, calc((100vw - 480px) / 2 + 12px));
+  bottom: calc(var(--ds-tabbar-h) + 74px + var(--ds-safe-bottom));
+  max-height: min(58svh, 560px);
+  display: flex; flex-direction: column; overflow: hidden;
+  background: var(--ds-surface); color: var(--ds-ink); border: 1px solid var(--ds-line-strong); border-radius: var(--ds-r-xl);
+  box-shadow: var(--ds-shadow-pop); animation: dsUp .22s cubic-bezier(.2, .8, .2, 1);
+}
+.ds-fab-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; padding: 14px 16px 10px; border-bottom: 1px solid var(--ds-line); }
+.ds-fab-title { margin: 0; font-size: 17px; font-weight: 800; letter-spacing: -.03em; }
+.ds-fab-desc { margin: 3px 0 0; font-size: var(--ds-fs-caption); line-height: 1.45; color: var(--ds-ink-3); word-break: keep-all; }
+.ds-fab-live { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px; font-size: var(--ds-fs-caption); font-weight: 800; color: var(--ds-good); background: var(--ds-good-soft); border-radius: var(--ds-r-pill); padding: 4px 9px; white-space: nowrap; }
+.ds-fab-live i { width: 7px; height: 7px; border-radius: var(--ds-r-pill); background: var(--ds-good); animation: dsFabPulse 1.8s infinite; }
+@keyframes dsFabPulse { 0% { box-shadow: 0 0 0 0 var(--ds-good-soft); } 70% { box-shadow: 0 0 0 6px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+
+.ds-fab-cafe { display: flex; align-items: center; gap: 8px; margin: 0; padding: 9px 16px; background: var(--ds-good-soft); border-bottom: 1px solid var(--ds-line); color: var(--ds-good); font-size: 12.5px; text-decoration: none; }
+.ds-fab-cafe b { font-weight: 800; }
+.ds-fab-cafe.is-chat { background: var(--ds-accent-soft); color: var(--ds-accent-ink); }
+.ds-fab-cafe.is-chat .ds-fab-cafe-n { background: transparent; color: inherit; font-size: 14px; }
+.ds-fab-cafe > span:last-child { margin-left: auto; white-space: nowrap; opacity: .85; }
+.ds-fab-cafe-n { width: 18px; height: 18px; border-radius: 4px; background: var(--ds-good); color: var(--ds-surface); font-weight: 900; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+
+.ds-fab-list { flex: 1; min-height: 120px; overflow: auto; -webkit-overflow-scrolling: touch; padding: 10px 14px; display: flex; flex-direction: column; gap: 10px; overscroll-behavior: contain; }
+.ds-fab-item { display: grid; grid-template-columns: 32px 1fr; gap: 9px; align-items: start; }
+.ds-fab-ava { width: 32px; height: 32px; border-radius: var(--ds-r-pill); background: var(--ds-accent-soft); display: flex; align-items: center; justify-content: center; font-size: 17px; }
+.ds-fab-body { min-width: 0; }
+.ds-fab-item b { font-size: 12.5px; color: var(--ds-ink); }
+.ds-fab-item small { margin-left: 6px; font-size: 11px; color: var(--ds-ink-3); }
+.ds-fab-item p { margin: 2px 0 0; font-size: 14px; line-height: 1.45; color: var(--ds-ink); word-break: break-word; white-space: pre-wrap; }
+.ds-fab-item.is-mine .ds-fab-ava { background: var(--ds-accent); }
+.ds-fab-item.is-mine b { color: var(--ds-accent-ink); }
+.ds-fab-empty { margin: auto; padding: 18px; text-align: center; font-size: var(--ds-fs-body-sm); font-weight: 700; color: var(--ds-ink-3); line-height: 1.6; word-break: keep-all; }
+.ds-fab-error { margin: 0 12px 6px; border-radius: var(--ds-r-md); background: var(--ds-bad-soft); color: var(--ds-bad); padding: 8px 12px; font-size: var(--ds-fs-caption); font-weight: 800; }
+.ds-fab-input { display: grid; grid-template-columns: 1fr auto; gap: 8px; padding: 10px 12px; border-top: 1px solid var(--ds-line); background: var(--ds-surface); }
+.ds-fab-input .ds-input { min-height: 44px; }
+
+@media (max-width: 380px) {
+  .ds-fab-panel { max-height: min(64svh, 600px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ds-fab-panel { animation: none; }
+  .ds-fab-live i { animation: none; }
+}
+
+/* ---------- 30. Post · Reply (방명록 글 · 답글 · 글쓰기) ---------- */
+.ds-post-cap { margin: 0 4px; word-break: keep-all; }
+.ds-post-cta { margin-top: 0; }
+.ds-post-cta > .ds-btn--tint { flex: 0 0 auto; }
+
+.ds-post-post__head { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-sp-2); margin-bottom: var(--ds-sp-2); }
+.ds-post-post__tags { display: inline-flex; flex-wrap: wrap; gap: 6px; }
+.ds-post-msg { margin: 0 0 var(--ds-sp-2); font-size: var(--ds-fs-body); line-height: 1.6; color: var(--ds-ink); white-space: pre-line; word-break: keep-all; overflow-wrap: anywhere; }
+
+.ds-post-author { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: var(--ds-fs-caption); color: var(--ds-ink-3); min-width: 0; }
+.ds-post-author b { color: var(--ds-ink-2); font-weight: 800; }
+.ds-post-author--sm { font-size: 11px; }
+.ds-post-time { white-space: nowrap; }
+
+.ds-post-actions { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: var(--ds-sp-3); }
+.ds-post-own { display: inline-flex; gap: 2px; margin-left: auto; }
+.ds-post-del { color: var(--ds-bad); }
+
+.ds-post-replies { margin-top: var(--ds-sp-3); padding-top: var(--ds-sp-3); border-top: 1px solid var(--ds-line); display: flex; flex-direction: column; gap: var(--ds-sp-2); }
+.ds-post-replies__empty { margin: 0; }
+.ds-post-reply { background: var(--ds-surface-2); border-radius: var(--ds-r-md); padding: 10px 12px; }
+.ds-post-reply__msg { margin: 0 0 6px; font-size: var(--ds-fs-body-sm); line-height: 1.55; color: var(--ds-ink); white-space: pre-line; word-break: keep-all; overflow-wrap: anywhere; }
+.ds-post-reply__foot { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-sp-2); flex-wrap: wrap; }
+.ds-post-reply-input { display: flex; gap: var(--ds-sp-2); align-items: center; }
+.ds-post-reply-input .ds-input { flex: 1; min-width: 0; }
+.ds-post-reply-input .ds-btn { flex: 0 0 auto; }
+
+.ds-post-composer__cats { margin-top: var(--ds-sp-1); }
+.ds-post-composer__count { margin: 6px 0 0; text-align: right; }

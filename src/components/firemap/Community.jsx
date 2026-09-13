@@ -6,7 +6,6 @@ import { loadCommunityThread, sendCommunity, likeCommunity, editCommunity, delet
 import { displayNameOf } from '../../firemap-v2/funName.js';
 import { JOURNEY_STAGES, journeyStage } from '../../utils/journeyStage.js';
 import { identityIds, account } from '../../utils/identity.js';
-import '../../ui/screens/wall.css';
 
 const TABS = [
   { key: 'all', label: '전체' },
@@ -160,12 +159,12 @@ export default function Community({ onBack, onMove, simulation }) {
     const t = titleOf(row.client_id);
     const st = row.stage != null ? stageMeta(row.stage) : null;
     return (
-      <span className={`sc-wall-author${size === 'sm' ? ' sc-wall-author--sm' : ''}`}>
+      <span className={`ds-post-author${size === 'sm' ? ' ds-post-author--sm' : ''}`}>
         <b>{displayNameOf(row)}</b>
         {isMine(row) && <Badge tone="accent">나</Badge>}
         {st && <Badge tone="neutral">{st.emoji} {row.stage}단계</Badge>}
         {t && <Badge tone="neutral">{t}</Badge>}
-        <span className="sc-wall-time">{relativeTime(row.created_at)}</span>
+        <span className="ds-post-time">{relativeTime(row.created_at)}</span>
       </span>
     );
   };
@@ -176,35 +175,35 @@ export default function Community({ onBack, onMove, simulation }) {
     const liked = isLiked(p.id);
     const mineRow = isMine(p);
     return (
-      <Card key={p.id} variant={isBest ? 'hero' : 'base'} className="sc-wall-post">
-        <div className="sc-wall-post__head">
-          <span className="sc-wall-post__tags">
+      <Card key={p.id} variant={isBest ? 'hero' : 'base'} className="ds-post-post">
+        <div className="ds-post-post__head">
+          <span className="ds-post-post__tags">
             {isBest && <Badge tone="accent">🏆 이번 주 베스트</Badge>}
             <Badge tone="neutral">{TAB_LABEL[tabOf(p)]}</Badge>
             {(p.likes || 0) >= 3 && <Badge tone="warn">인기</Badge>}
           </span>
         </div>
-        <p className="sc-wall-msg">{p.message}</p>
+        <p className="ds-post-msg">{p.message}</p>
         <Author row={p} />
-        <div className="sc-wall-actions">
+        <div className="ds-post-actions">
           <Button variant={liked ? 'tint' : 'secondary'} size="sm" onClick={() => like(p)} aria-pressed={liked} aria-label="공감">♥ <span className="num">{p.likes || 0}</span></Button>
           <Button variant={open ? 'tint' : 'secondary'} size="sm" onClick={() => { setOpenId(open ? null : p.id); setReplyText(''); }} aria-expanded={open}>💬 <span className="num">{reps.length}</span></Button>
-          {mineRow && <span className="sc-wall-own"><Button variant="ghost" size="sm" onClick={() => openEdit(p)}>수정</Button><Button variant="ghost" size="sm" className="sc-wall-del" onClick={() => setDelTarget(p)}>삭제</Button></span>}
+          {mineRow && <span className="ds-post-own"><Button variant="ghost" size="sm" onClick={() => openEdit(p)}>수정</Button><Button variant="ghost" size="sm" className="ds-post-del" onClick={() => setDelTarget(p)}>삭제</Button></span>}
         </div>
         {open && (
-          <div className="sc-wall-replies">
-            {reps.length === 0 && <p className="ds-caption sc-wall-replies__empty">아직 답글이 없어요 · 첫 답글을 남겨보세요</p>}
+          <div className="ds-post-replies">
+            {reps.length === 0 && <p className="ds-caption ds-post-replies__empty">아직 답글이 없어요 · 첫 답글을 남겨보세요</p>}
             {reps.map((r) => (
-              <div className="sc-wall-reply" key={r.id}>
-                <p className="sc-wall-reply__msg">{r.message}</p>
-                <div className="sc-wall-reply__foot">
+              <div className="ds-post-reply" key={r.id}>
+                <p className="ds-post-reply__msg">{r.message}</p>
+                <div className="ds-post-reply__foot">
                   <Author row={r} size="sm" />
-                  {isMine(r) && <span className="sc-wall-own"><Button variant="ghost" size="sm" onClick={() => openEdit(r)}>수정</Button><Button variant="ghost" size="sm" className="sc-wall-del" onClick={() => setDelTarget(r)}>삭제</Button></span>}
+                  {isMine(r) && <span className="ds-post-own"><Button variant="ghost" size="sm" onClick={() => openEdit(r)}>수정</Button><Button variant="ghost" size="sm" className="ds-post-del" onClick={() => setDelTarget(r)}>삭제</Button></span>}
                 </div>
               </div>
             ))}
             {loggedIn ? (
-              <div className="sc-wall-reply-input">
+              <div className="ds-post-reply-input">
                 <input className="ds-input" maxLength={MAX} value={replyText} onChange={(e) => setReplyText(e.target.value)} placeholder="답글 남기기" aria-label="답글 입력" onKeyDown={(e) => { if (e.key === 'Enter' && !e.nativeEvent.isComposing) { e.preventDefault(); submitReply(p.id); } }} />
                 <Button variant="primary" size="md" onClick={() => submitReply(p.id)} disabled={!replyText.trim()} loading={sending}>등록</Button>
               </div>
@@ -225,9 +224,9 @@ export default function Community({ onBack, onMove, simulation }) {
     <main className="fm-screen fm-scroll ds-screen-gap">
       <TopBar title="방명록" onBack={onBack} />
       <Tabs items={TABS} value={tab} onChange={(k) => { setTab(k); setOpenId(null); }} label="방명록 분류" />
-      <p className="ds-caption sc-wall-cap">파이어족끼리 한마디 · 욕설·비방·개인정보는 지워질 수 있어요</p>
+      <p className="ds-caption ds-post-cap">파이어족끼리 한마디 · 욕설·비방·개인정보는 지워질 수 있어요</p>
 
-      <div className="ds-bottomcta sc-wall-cta">
+      <div className="ds-bottomcta ds-post-cta">
         <Button variant="primary" size="md" full onClick={openNew}>한마디 남기기</Button>
       </div>
 
@@ -239,7 +238,7 @@ export default function Community({ onBack, onMove, simulation }) {
 
       <Sheet open={!!composer} title={composer && composer.mode === 'edit' ? '내 글 고치기' : '한마디 남기기'} onClose={closeComposer}>
         {composer && composer.mode === 'new' && (
-          <Chips className="sc-wall-composer__cats">
+          <Chips className="ds-post-composer__cats">
             {WRITE_CATS.map((c) => <Chip key={c.key} on={composer.cat === c.key} onClick={() => setComposer((s) => ({ ...s, cat: c.key }))}>{c.label}</Chip>)}
           </Chips>
         )}
@@ -252,7 +251,7 @@ export default function Community({ onBack, onMove, simulation }) {
           placeholder={composer && composer.cat === 'goal' ? '예: 56세 파이어 인증해요. 생활비를 줄이니 5년 앞당겼어요' : '예: 다들 생활비 어떻게 아끼세요?'}
           aria-label="글 내용"
         />
-        <p className="ds-caption sc-wall-composer__count"><span className="num">{composer ? composer.text.length : 0}</span>/{MAX}{composer && composer.mode === 'new' && myStage && stageMeta(myStage) ? ` · ${stageMeta(myStage).emoji} ${myStage}단계 표시로 올라가요` : ''}</p>
+        <p className="ds-caption ds-post-composer__count"><span className="num">{composer ? composer.text.length : 0}</span>/{MAX}{composer && composer.mode === 'new' && myStage && stageMeta(myStage) ? ` · ${stageMeta(myStage).emoji} ${myStage}단계 표시로 올라가요` : ''}</p>
         <div className="ds-bottomcta">
           <Button variant="secondary" size="md" onClick={closeComposer}>취소</Button>
           <Button variant="primary" size="md" onClick={submitComposer} disabled={!composer || !composer.text.trim()} loading={sending}>{composer && composer.mode === 'edit' ? '저장' : '올리기'}</Button>

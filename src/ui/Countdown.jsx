@@ -1,4 +1,4 @@
-// 파이어까지 남은 시간 — 년·일 + 시:분:초. 운영 빌드의 FireClock을 디자인 시스템 카드 안으로 옮긴 것.
+// DS-26 Countdown — 파이어까지 남은 시간(년·일 + 시:분:초). 글자 크기는 토큰(--ds-fs-*)만 쓴다.
 // 개편 1~2주차에 빠졌으나 조사 7번(디데이·카운트다운 수요 검증: TheDayBefore·倒数日)에 따라 되살린다.
 // 목표 시각은 한 번 정해 저장해 두므로 새로고침해도 리셋되지 않고 실제로 줄어든다. 파이어 나이가 바뀌면 다시 잡는다.
 import { useEffect, useRef, useState } from 'react';
@@ -20,7 +20,7 @@ function decompose(ms) {
 }
 const readTarget = () => { try { return JSON.parse(localStorage.getItem(TARGET_KEY) || 'null'); } catch { return null; } };
 
-export default function FireClock({ simulation }) {
+export function Countdown({ simulation }) {
   const [, setTick] = useState(0);
   const targetRef = useRef(null);
   const cur = Number(simulation?.inputs?.currentAge) || 0;
@@ -50,19 +50,19 @@ export default function FireClock({ simulation }) {
   if (rem == null) return null;
   if (rem <= 0) {
     return (
-      <div className="fm-clock fm-clock--done">
-        <p className="fm-clock__cap">🔥 파이어 카운트다운</p>
-        <p className="fm-clock__big">🎉 지금 파이어 가능!</p>
+      <div className="ds-countdown ds-countdown--done">
+        <p className="ds-countdown__cap">🔥 파이어 카운트다운</p>
+        <p className="ds-countdown__big">🎉 지금 파이어 가능!</p>
       </div>
     );
   }
   if (targetRef.current == null) reanchor();
   const d = decompose((targetRef.current || Date.now()) - Date.now());
   return (
-    <div className="fm-clock">
-      <p className="fm-clock__cap">🔥 파이어까지 남은 시간</p>
-      <p className="fm-clock__big"><b className="num">{d.yr}</b>년 <b className="num">{d.days}</b>일</p>
-      <p className="fm-clock__time num">{pad(d.h)}:{pad(d.m)}:{pad(d.s)}</p>
+    <div className="ds-countdown">
+      <p className="ds-countdown__cap">🔥 파이어까지 남은 시간</p>
+      <p className="ds-countdown__big"><b className="num">{d.yr}</b>년 <b className="num">{d.days}</b>일</p>
+      <p className="ds-countdown__time num">{pad(d.h)}:{pad(d.m)}:{pad(d.s)}</p>
     </div>
   );
 }

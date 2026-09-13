@@ -7,7 +7,6 @@ import { prefs } from '../../utils/prefs.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import { CAFE_URL, OPENCHAT_URL } from '../../firemap-v2/links.js';
-import '../../ui/screens/wall-fab.css';
 
 // 방명록 — 홈 전용 플로팅 💬 버튼 → 실시간 한마디 패널.
 // 열려 있는 동안만 주기 폴링으로 새 글을 맨 위에 붙이고, 읽던 스크롤 위치는 유지한다.
@@ -109,36 +108,36 @@ export default function Wall({ visible }) {
   if (!visible) return null;
   return (
     <>
-      <button type="button" className={`sc-fab${open ? ' is-open' : ''}`} aria-label={open ? '방명록 닫기' : (unread > 0 ? `방명록 · 새 글 ${unread}개` : '방명록')} aria-expanded={open} onClick={() => setOpen((o) => !o)}>
+      <button type="button" className={`ds-fab${open ? ' is-open' : ''}`} aria-label={open ? '방명록 닫기' : (unread > 0 ? `방명록 · 새 글 ${unread}개` : '방명록')} aria-expanded={open} onClick={() => setOpen((o) => !o)}>
         {open ? '✕' : '💬'}
-        {!open && unread > 0 && <span className="sc-fab-badge num" aria-hidden="true">{unread > 99 ? '99+' : unread}</span>}
+        {!open && unread > 0 && <span className="ds-fab-badge num" aria-hidden="true">{unread > 99 ? '99+' : unread}</span>}
       </button>
       {open && (
-        <section className="sc-fab-panel" role="dialog" aria-label="방명록">
-          <header className="sc-fab-head">
+        <section className="ds-fab-panel" role="dialog" aria-label="방명록">
+          <header className="ds-fab-head">
             <div>
-              <h3 className="sc-fab-title">💬 방명록</h3>
-              <p className="sc-fab-desc">파이어족끼리 자유롭게 한마디 · 욕설·개인정보는 지워질 수 있어요</p>
+              <h3 className="ds-fab-title">💬 방명록</h3>
+              <p className="ds-fab-desc">파이어족끼리 자유롭게 한마디 · 욕설·개인정보는 지워질 수 있어요</p>
             </div>
-            <span className="sc-fab-live" aria-live="polite"><i aria-hidden="true" />{online > 0 ? `${online}명 접속 중` : '접속 확인 중'}</span>
+            <span className="ds-fab-live" aria-live="polite"><i aria-hidden="true" />{online > 0 ? `${online}명 접속 중` : '접속 확인 중'}</span>
           </header>
-          <a className="sc-fab-cafe" href={CAFE_URL} target="_blank" rel="noopener noreferrer" onClick={() => track('cafe_click', { from: 'wall' })}>
-            <span className="sc-fab-cafe-n" aria-hidden="true">N</span><b>파이어맵 카페</b><span>인증·질문·후기는 여기서 →</span>
+          <a className="ds-fab-cafe" href={CAFE_URL} target="_blank" rel="noopener noreferrer" onClick={() => track('cafe_click', { from: 'wall' })}>
+            <span className="ds-fab-cafe-n" aria-hidden="true">N</span><b>파이어맵 카페</b><span>인증·질문·후기는 여기서 →</span>
           </a>
           {OPENCHAT_URL && (
-            <a className="sc-fab-cafe is-chat" href={OPENCHAT_URL} target="_blank" rel="noopener noreferrer" onClick={() => track('openchat_click', { from: 'wall' })}>
-              <span className="sc-fab-cafe-n" aria-hidden="true">💬</span><b>카카오톡 오픈채팅</b><span>→</span>
+            <a className="ds-fab-cafe is-chat" href={OPENCHAT_URL} target="_blank" rel="noopener noreferrer" onClick={() => track('openchat_click', { from: 'wall' })}>
+              <span className="ds-fab-cafe-n" aria-hidden="true">💬</span><b>카카오톡 오픈채팅</b><span>→</span>
             </a>
           )}
-          <div className="sc-fab-list" ref={listRef}>
-            {rows === null && <p className="sc-fab-empty">불러오는 중…</p>}
-            {rows !== null && rows.length === 0 && <p className="sc-fab-empty">아직 조용해요 · 첫 한마디를 남겨봐요</p>}
+          <div className="ds-fab-list" ref={listRef}>
+            {rows === null && <p className="ds-fab-empty">불러오는 중…</p>}
+            {rows !== null && rows.length === 0 && <p className="ds-fab-empty">아직 조용해요 · 첫 한마디를 남겨봐요</p>}
             {rows !== null && rows.map((r) => {
               const isMine = r.client_id && mine.has(r.client_id);
               return (
-                <article key={r.id} className={`sc-fab-item${isMine ? ' is-mine' : ''}`}>
-                  <span className="sc-fab-ava" aria-hidden="true">{avatarOf(r)}</span>
-                  <div className="sc-fab-body">
+                <article key={r.id} className={`ds-fab-item${isMine ? ' is-mine' : ''}`}>
+                  <span className="ds-fab-ava" aria-hidden="true">{avatarOf(r)}</span>
+                  <div className="ds-fab-body">
                     <b>{nameOf(r)}</b><small>{isMine ? '나 · ' : ''}{timeAgo(r.created_at)}</small>
                     <p>{r.message}</p>
                   </div>
@@ -146,8 +145,8 @@ export default function Wall({ visible }) {
               );
             })}
           </div>
-          {error && <p className="sc-fab-error" role="alert">{error}</p>}
-          <form className="sc-fab-input" onSubmit={submit}>
+          {error && <p className="ds-fab-error" role="alert">{error}</p>}
+          <form className="ds-fab-input" onSubmit={submit}>
             <input className="ds-input" value={text} maxLength={240} placeholder="한마디 남기기" autoComplete="off" aria-label="한마디 입력" onChange={(e) => setText(e.target.value)} onKeyDown={onKeyDown} />
             <Button variant="primary" size="md" type="submit" loading={sending} disabled={!text.trim()}>남기기</Button>
           </form>

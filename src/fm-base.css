@@ -18,40 +18,6 @@ img, svg { max-width: 100%; }
 .fm-has-tabbar { padding-bottom: calc(96px + var(--ds-safe-bottom)); }
 .fm-question-screen { padding-bottom: 120px; }
 
-/* 자산 흐름 차트(결과·바꿔보기) */
-.fm-clock { text-align: center; padding: 4px 0 8px; border-bottom: 1px solid color-mix(in srgb, var(--ds-ink) 10%, transparent); }
-.fm-clock__cap { margin: 0 0 4px; font-size: 12px; font-weight: 700; color: var(--ds-ink-3); }
-.fm-clock__big { margin: 0; font-size: 22px; font-weight: 800; color: var(--ds-ink); }
-.fm-clock__big b { color: var(--ds-accent); }
-.fm-clock__time { margin: 2px 0 0; font-size: 28px; font-weight: 800; letter-spacing: .02em; color: var(--ds-ink); font-variant-numeric: tabular-nums; }
-.fm-clock--done .fm-clock__big { color: var(--ds-good); }
-.fm-yac { margin: 6px 0 4px; }
-.fm-yac-canvas { position: relative; cursor: crosshair; }
-.fm-yac-canvas svg { width: 100%; height: 120px; display: block; }
-.fm-yac-area-principal { fill: color-mix(in srgb, var(--ds-info) 22%, transparent); }
-.fm-yac-area-gains { fill: color-mix(in srgb, var(--ds-accent) 20%, transparent); }
-.fm-yac-line { stroke: var(--ds-accent); stroke-width: 3; stroke-linejoin: round; stroke-linecap: round; }
-.fm-yac-ret { stroke: var(--ds-ink-3); stroke-width: 1.5; stroke-dasharray: 4 4; }
-.fm-yac-cross { stroke: var(--ds-ink); stroke-width: 1.5; stroke-dasharray: 3 3; }
-.fm-yac-dot { fill: var(--ds-accent); stroke: var(--ds-surface); stroke-width: 1.5; }
-.fm-yac-read { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
-.fm-yac-read b { font-size: 15px; font-weight: 800; color: var(--ds-ink); }
-.fm-yac-read span { font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 99px; background: var(--ds-surface-2); color: var(--ds-ink-2); }
-.fm-yac-read span.after { background: var(--ds-accent-soft); color: var(--ds-accent-ink); }
-.fm-yac-read strong { margin-left: auto; font-size: 16px; font-weight: 800; color: var(--ds-accent); font-variant-numeric: tabular-nums; }
-.fm-yac-split { margin: 0 0 4px; font-size: 11px; font-weight: 600; color: var(--ds-ink-3); display: flex; align-items: center; flex-wrap: wrap; gap: 2px 4px; }
-.fm-yac-grid { stroke: color-mix(in srgb, var(--ds-ink) 12%, transparent); stroke-width: 1; vector-effect: non-scaling-stroke; }
-.fm-yac-yl { position: absolute; right: 2px; transform: translateY(-100%); font-size: 10px; font-weight: 600; color: var(--ds-ink-3); pointer-events: none; padding: 0 3px; background: color-mix(in srgb, var(--ds-surface) 85%, transparent); border-radius: 4px; }
-.fm-yac-xl { position: relative; height: 16px; margin-top: 4px; color: var(--ds-ink-3); font-size: 11px; font-weight: 600; }
-.fm-yac-xl span { position: absolute; top: 0; white-space: nowrap; }
-.fm-yac-xl span.ret { color: var(--ds-accent-ink); font-weight: 700; }
-.fm-dot { width: 8px; height: 8px; border-radius: 2px; display: inline-block; margin-right: 5px; }
-.fm-dot-principal { background: var(--ds-info); }
-.fm-dot-gains { background: var(--ds-accent); }
-.fm-compare-chart { position: relative; height: 260px; width: 100%; }
-.fm-chart-legend { display: flex; gap: 14px; margin: 0 2px 8px; }
-.fm-chart-legend span { font-size: 11px; color: var(--ds-ink-3); display: inline-flex; align-items: center; }
-.fm-chart-note { margin: 8px 0 0; font-size: 12px; color: var(--ds-ink-3); line-height: 1.5; }
 
 /* 아직 옮기지 않은 레거시 카드(있다면) 최소 형태 */
 .fm-card { background: var(--ds-surface); border: 1px solid var(--ds-line-strong); border-radius: var(--ds-r-xl); padding: var(--ds-sp-4); margin: 0 0 var(--ds-sp-3); }

@@ -77,5 +77,5 @@ export default function AssetGrowthChart({ ages, principal, gains, retirementAge
     return () => { if (chartRef.current) chartRef.current.destroy(); };
   }, [ages, principal, gains, retirementAge, depletionAge]);
 
-  return <div className="fm-compare-chart"><canvas ref={canvasRef} /></div>;
+  return <div className="ds-chart-compare"><canvas ref={canvasRef} /></div>;
 }

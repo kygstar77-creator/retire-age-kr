@@ -50,21 +50,21 @@ function YearlyAssetChart({ simulation }) {
   const retPct = (retX / W) * 100;
   const yTicks = [maxV, maxV / 2];
   return (
-    <div className="fm-yac">
-      <div className="fm-yac-read"><b>{cur.age}세</b><span className={cur.status === '파이어 후' ? 'after' : 'before'}>{cur.status}</span><strong>{formatWon(cur.v)}</strong></div>
-      <p className="fm-yac-split"><i className="fm-dot fm-dot-principal" />납입 원금 {formatWon(cur.principal)} · <i className="fm-dot fm-dot-gains" />투자 수익 {formatWon(cur.gains)}</p>
-      <div className="fm-yac-canvas" style={{ touchAction: 'none' }} onPointerDown={pick} onPointerMove={(e) => { if (e.buttons) pick(e); }} onTouchStart={pick} onTouchMove={pick}>
+    <div className="ds-chart">
+      <div className="ds-chart__read"><b>{cur.age}세</b><span className={cur.status === '파이어 후' ? 'after' : 'before'}>{cur.status}</span><strong>{formatWon(cur.v)}</strong></div>
+      <p className="ds-chart__split"><i className="ds-chart__dot ds-chart__dot--principal" />납입 원금 {formatWon(cur.principal)} · <i className="ds-chart__dot ds-chart__dot--gains" />투자 수익 {formatWon(cur.gains)}</p>
+      <div className="ds-chart__canvas" style={{ touchAction: 'none' }} onPointerDown={pick} onPointerMove={(e) => { if (e.buttons) pick(e); }} onTouchStart={pick} onTouchMove={pick}>
         <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" role="img" aria-label="나이별 자산 그래프">
-          {yTicks.map((v) => <line key={v} x1={P} y1={Y(v)} x2={W - P} y2={Y(v)} className="fm-yac-grid" />)}
-          <line x1={P} y1={H - P} x2={W - P} y2={H - P} className="fm-yac-grid" />
-          <path d={principalArea} className="fm-yac-area-principal" /><path d={gainsArea} className="fm-yac-area-gains" /><path d={totalTop} className="fm-yac-line" fill="none" />
-          <line x1={retX} y1={P} x2={retX} y2={H - P} className="fm-yac-ret" />
-          {sel != null && <line x1={X(cur.age)} y1={P} x2={X(cur.age)} y2={H - P} className="fm-yac-cross" />}
-          <circle cx={X(cur.age)} cy={Y(cur.v)} r="3.5" className="fm-yac-dot" />
+          {yTicks.map((v) => <line key={v} x1={P} y1={Y(v)} x2={W - P} y2={Y(v)} className="ds-chart__grid" />)}
+          <line x1={P} y1={H - P} x2={W - P} y2={H - P} className="ds-chart__grid" />
+          <path d={principalArea} className="ds-chart__area-principal" /><path d={gainsArea} className="ds-chart__area-gains" /><path d={totalTop} className="ds-chart__line" fill="none" />
+          <line x1={retX} y1={P} x2={retX} y2={H - P} className="ds-chart__ret" />
+          {sel != null && <line x1={X(cur.age)} y1={P} x2={X(cur.age)} y2={H - P} className="ds-chart__cross" />}
+          <circle cx={X(cur.age)} cy={Y(cur.v)} r="3.5" className="ds-chart__dot" />
         </svg>
-        {yTicks.map((v) => <span key={v} className="fm-yac-yl num" style={{ top: pctY(v) }}>{formatWon(v)}</span>)}
+        {yTicks.map((v) => <span key={v} className="ds-chart__yl num" style={{ top: pctY(v) }}>{formatWon(v)}</span>)}
       </div>
-      <div className="fm-yac-xl">
+      <div className="ds-chart__xl">
         {retPct >= 18 && <span style={{ left: pctX(a0) }}>{a0}세</span>}
         <span className="ret" style={{ left: pctX(ret), transform: retPct < 18 ? 'none' : retPct > 82 ? 'translateX(-100%)' : 'translateX(-50%)' }}>파이어 {ret}세</span>
         {retPct <= 82 && <span style={{ left: pctX(a1), transform: 'translateX(-100%)' }}>{a1}세</span>}

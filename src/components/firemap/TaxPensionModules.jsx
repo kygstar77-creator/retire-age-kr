@@ -22,14 +22,14 @@ export function ForeignStockTaxCard({ inputs, onApply }) {
         value={eok(t.tax)}
         sub={<>세후 <b className="num">{eok(t.afterTaxGain)}</b> 남아요 · 실효 <b className="num">{Math.round(t.effectiveTaxRate)}%</b></>}
         tiles={[
-          { label: '매도 차익', value: eok(t.gain) },
+          { label: '양도차익', value: eok(t.gain) },
           { label: '과세표준', value: eok(t.taxableGain) },
           { label: '실효세율', value: `${Math.round(t.effectiveTaxRate)}%` }
         ]}
       />
       <Card>
         <SectionHead size="sm" kicker="해외주식 양도세" title="1년에 얼마나 팔아요?" desc="250만원 공제 후 22%" />
-        <RangeField label="연 매도 차익" value={gain} min={0} max={300000000} step={1000000} money format={eok} chips={[10000000, 50000000, 100000000]} onChange={setGain} hint="손실과 이익을 합친 금액이에요" />
+        <RangeField label="연 양도차익" value={gain} min={0} max={300000000} step={1000000} money format={eok} chips={[10000000, 50000000, 100000000]} onChange={setGain} hint="손실과 이익을 합친 금액이에요" />
         {onApply && (hasCG
           ? <Button variant="secondary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next }); toast('해외 양도세 반영을 해제했어요'); }}>✓ 반영 중 · 해외 양도세 · 해제</Button>
           : <Button variant="primary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next }); toast.good('해외 양도세를 반영했어요'); }}>해외 양도세 반영</Button>)}
@@ -62,13 +62,13 @@ export function DividendCard({ inputs, onApply }) {
         ]}
       />
       <Card>
-        <SectionHead size="sm" kicker="배당 소득" title="1년에 배당을 얼마 받아요?" desc="이자와 배당을 합친 금융소득 기준이에요" />
+        <SectionHead size="sm" kicker="배당소득" title="1년에 배당을 얼마 받아요?" desc="이자와 배당을 합친 금융소득 기준이에요" />
         <RangeField label="연 배당소득" value={annual} min={0} max={50000000} step={1000000} money format={eok} chips={[1000000, 5000000, 10000000]} onChange={setAnnual} />
         {over2000 && <Notice tone="warn" icon="⚠️" className="ds-mt-2">연 배당 <b className="num">{eok(annual)}</b> · 2,000만원을 넘으면 종합과세 대상이에요</Notice>}
         {!over2000 && over1000 && <Notice tone="warn" icon="🩺" className="ds-mt-2">연 배당 <b className="num">{eok(annual)}</b> · 1,000만원을 넘으면 건보료에 잡혀요</Notice>}
         {onApply && (hasDiv
           ? <Button variant="secondary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next }); toast('배당세 반영을 해제했어요'); }}>✓ 반영 중 · 배당세 · 해제</Button>
-          : <Button variant="primary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next, dividendIncomeMonthly: 0 }); toast.good('배당세를 반영했어요'); }}>배당세 15.4% 반영</Button>)}
+          : <Button variant="primary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next, dividendIncomeMonthly: 0 }); toast.good('배당세를 반영했어요'); }}>배당소득세 15.4% 반영</Button>)}
         {onApply && <p className="ds-caption ds-mt-2 ds-mb-0">양도세와 같이 켤 수 있어요 · 배당으로 파이어의 배당 소득과는 한쪽만 켜져요</p>}
         <p className="ds-caption ds-mt-2 ds-mb-0">참고용 계산이에요 · 투자 권유가 아니에요</p>
       </Card>
@@ -91,7 +91,7 @@ export function PensionEarlyClaimCard({ inputs, onApply }) {
         value={eok(r.monthly)}
         sub={r.yearsEarly > 0 ? <><b className="num">{r.yearsEarly}년</b> 일찍 · <b className="num">{r.reductionPct}%</b> 줄어 평생 이어져요</> : <>정상 수령 <b className="num">{normalAge}세</b> 기준이에요</>}
         tiles={[
-          { label: '정상 월 연금', value: eok(normalMonthly) },
+          { label: '예상연금월액', value: eok(normalMonthly) },
           { label: '줄어드는 비율', value: `${r.reductionPct}%` },
           { label: '월 차이', value: eok(normalMonthly - r.monthly) }
         ]}

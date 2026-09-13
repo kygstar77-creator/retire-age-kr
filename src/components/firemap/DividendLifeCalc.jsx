@@ -142,7 +142,7 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
   const heroSub = target <= 0
     ? '파이어 후 월 생활비를 먼저 정해 주세요'
     : yieldPct <= 0
-      ? '배당률을 넣어 주세요'
+      ? '배당수익률을 넣어 주세요'
       : years == null
         ? `${MAX_YEARS}년 안에는 안 닿아요`
       : years === 0 ? '이미 생활비를 넘겼어요 · 건보료 별도' : '세후 · 건보료 별도';
@@ -152,9 +152,9 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
       <TopBar title="배당으로 파이어" onBack={onBack} />
 
       <Card>
-        <SectionHead size="sm" kicker="내 조건" title="배당 자산과 배당률" desc="배당소득세 15.4%를 뺀 금액이에요" />
+        <SectionHead size="sm" kicker="내 조건" title="배당 자산과 배당수익률" desc="배당소득세 15.4%를 뺀 금액이에요" />
         <RangeField label="배당 자산" value={asset} min={0} max={3000000000} step={10000000} money format={eok} chips={[10000000, 100000000, 1000000000]} onChange={setAsset} />
-        <RangeField label="배당률" value={yieldPct} min={0} max={12} step={0.1} format={pctFmt} onChange={setYieldPct} hint="배당이 높을수록 주가 상승은 낮은 편이에요" />
+        <RangeField label="배당수익률" value={yieldPct} min={0} max={12} step={0.1} format={pctFmt} onChange={setYieldPct} hint="배당이 높을수록 주가 상승은 낮은 편이에요" />
         <Chips className="ds-mt-2">
           {YIELD_PRESETS.map((p) => <Chip key={p.label} on={Math.abs(yieldPct - p.value) < 0.05} onClick={() => setYieldPct(p.value)}>{p.label} {p.value.toFixed(1)}%</Chip>)}
         </Chips>
@@ -187,7 +187,7 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
       </Card>
 
       <Card>
-        <SectionHead size="sm" kicker="배당락" title="배당 캘린더" desc="이 날 전에 사야 그 배당을 받아요" />
+        <SectionHead size="sm" kicker="배당락일" title="배당 캘린더" desc="배당락일 전 영업일까지 사야 받아요" />
         <MiniCalendar />
       </Card>
 

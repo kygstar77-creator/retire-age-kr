@@ -19,7 +19,7 @@ export default function PensionControls({ inputs, onChange }) {
     <Card>
       <SectionHead size="sm" kicker="국민연금" title="국민연금 조건도 같이 바꿔요" desc="정상보다 일찍 받으면 1년에 6%씩 평생 줄어요" />
       <RangeField label="받기 시작 나이" value={claim} min={normalAge - 5} max={Math.min(75, normalAge + 5)} step={1} format={(v) => `${Math.round(v)}세`} onChange={(next) => onChange('pensionClaimAge', Math.round(next) === normalAge ? 0 : Math.round(next))} />
-      <RangeField label="정상 월 연금" value={monthly} min={0} max={5000000} step={100000} money format={eok} chips={[100000, 500000, 1000000]} onChange={(next) => onChange('expectedMonthlyPension', next)} />
+      <RangeField label="예상연금월액" value={monthly} min={0} max={5000000} step={100000} money format={eok} chips={[100000, 500000, 1000000]} onChange={(next) => onChange('expectedMonthlyPension', next)} />
       <p className="ds-caption ds-mt-2 ds-mb-0">{hint}</p>
     </Card>
   );

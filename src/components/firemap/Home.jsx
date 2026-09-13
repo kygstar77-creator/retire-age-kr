@@ -35,7 +35,7 @@ export default function Home({ onStart, onMove, simulation }) {
     <main className="fm-screen fm-scroll fm-has-tabbar ds-screen-gap">
       <TopBar onHome={() => onMove('home')} actions={<>
         <a className="ds-topbar__handle" href={CAFE_URL} target="_blank" rel="noopener noreferrer"><span>🟢 카페</span></a>
-        {OPENCHAT_URL && <a className="ds-topbar__handle" href={OPENCHAT_URL} target="_blank" rel="noopener noreferrer"><span>💬 채팅</span></a>}
+        {OPENCHAT_URL && <a className="ds-topbar__handle" href={OPENCHAT_URL} target="_blank" rel="noopener noreferrer"><span>💬 오픈채팅</span></a>}
       </>} />
 
       {challenge && (
@@ -62,11 +62,11 @@ export default function Home({ onStart, onMove, simulation }) {
       </Card>
 
       <Card variant="soft">
-        <SectionHead size="sm" kicker="예시" title="결과 미리 보기" />
+        <SectionHead size="sm" kicker="예시" title="결과 미리보기" />
         <div className="ds-three sc-home-three">
           <Stat label="파이어 나이" value={<>51<span className="ds-stat__unit">세</span></>} size="md" />
           <Stat label="필요 자산" value={<>13.1<span className="ds-stat__unit">억</span></>} size="md" />
-          <Stat label="같은 구간" value={<>18<span className="ds-stat__unit">%</span></>} size="md" />
+          <Stat label="같은 구간" value={<>상위 18<span className="ds-stat__unit">%</span></>} size="md" />
         </div>
         <p className="ds-caption ds-mt-2 ds-mb-0">저축·생활비·부업을 바꾸면 파이어 나이가 얼마나 앞당겨지는지도 같이 나와요</p>
       </Card>

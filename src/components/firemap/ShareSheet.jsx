@@ -96,13 +96,13 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
         <p className="sc-cert-body">{body}</p>
       </div>
       <p className="ds-caption ds-mt-3 ds-mb-1-5">금액</p>
-      <Chips><Chip on={hideAmt} onClick={() => setHideAmt((v) => !v)}>🙈 금액 숨김</Chip></Chips>
+      <Chips><Chip on={hideAmt} onClick={() => setHideAmt((v) => !v)}>🙈 금액 숨기기</Chip></Chips>
       <p className="ds-caption ds-mt-2">출생연도·숫자·회차 순이라 다른 인증 글과 나란히 비교돼요.</p>
       <div className="ds-stack ds-mt-3">
-        <Button variant="primary" size="lg" full loading={busy} onClick={copyForCafe}>🟢 카페 인증 게시판에 올리기</Button>
+        <Button variant="primary" size="lg" full loading={busy} onClick={copyForCafe}>🟢 카페 인증 게시판</Button>
         <div className="ds-bottomcta ds-mt-0">
-          <Button variant="secondary" size="md" onClick={kakao}>💬 카톡</Button>
-          <Button variant="secondary" size="md" onClick={copyLink}>🔗 링크</Button>
+          <Button variant="secondary" size="md" onClick={kakao}>💬 카카오톡 공유</Button>
+          <Button variant="secondary" size="md" onClick={copyLink}>🔗 링크 복사</Button>
         </div>
       </div>
     </Sheet>

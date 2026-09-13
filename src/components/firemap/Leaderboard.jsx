@@ -84,7 +84,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
           value={data.me && data.me.percentile != null ? `상위 ${data.me.percentile}` : (data.loading ? '…' : '—')} unit={data.me && data.me.percentile != null ? '%' : ''}
           sub={data.me ? `${data.me.total.toLocaleString()}명 중 ${data.me.position.toLocaleString()}등 · ${earliest ? `${earliest}세 파이어 가능` : '아직 파이어 어려움'} · 세전 공정 비교` : '집계 중…'}
           tiles={[
-            { label: board === 'all' ? '전체 평균' : '구간 평균', value: data.agg && data.agg.avgEarliest ? `${data.agg.avgEarliest}세` : '—' },
+            { label: '전체 평균', value: data.agg && data.agg.avgEarliest ? `${data.agg.avgEarliest}세` : '—' },
             { label: '1등', value: data.top && data.top[0] && data.top[0].earliest_age ? `${data.top[0].earliest_age}세` : '—' },
             { label: '내 등수', value: data.me ? `${data.me.position.toLocaleString()}등` : '—' }
           ]}

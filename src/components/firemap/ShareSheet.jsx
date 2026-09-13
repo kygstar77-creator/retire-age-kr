@@ -86,7 +86,7 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
     try { window.open(CAFE_URL, '_blank', 'noopener'); } catch { /* ignore */ }
   };
   const copyLink = async () => {
-    const s = buildCertShare(simulation, { family, hideAmt, round: roundNo(), need, asset });
+    const s = buildCertShare(simulation, { hideAmt, round: roundNo(), need, asset });
     try { await navigator.clipboard.writeText(s.url); toast.good('내 결과 링크를 복사했어요'); track('share', { type: 'cert_link' }); } catch { /* ignore */ }
   };
   return (

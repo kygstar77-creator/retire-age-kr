@@ -45,14 +45,19 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
         if (board === 'all' || board === 'band') {
           // 전체 보드는 구간 필터를 빼고 같은 질의를 쓴다(순위 기준은 자산이 아니라 파이어 나이).
           const band = board === 'band' ? myBand : undefined;
-          const [top, me, nb, agg] = await Promise.all([fetchTopScores(10, undefined, band), fetchUserRank(earliest, undefined, myAdvance, band), fetchNeighbors(earliest, undefined, undefined, band), fetchAggregates()]);
+          const [top, me, nb, agg] = await Promise.all([fetchTopScores(10, undefined, band), fetchUserRank(earliest, undefined, undefined, band), fetchNeighbors(earliest, undefined, undefined, band), fetchAggregates()]);
           if (alive) setData({ top: top || [], me, nb, agg });
         } else if (board === 'peer') {
           const pr = await fetchPeerBoard({ currentAge: rs.inputs.currentAge, ageBand: base.ageBand, earliestAge: earliest, advancedDays: 0, limit: 10 });
           const nb = pr ? await fetchNeighbors(earliest, pr.scope === 'band' ? base.ageBand : undefined, pr.scope === 'age' ? rs.inputs.currentAge : undefined) : null;
           if (alive) setData({ top: pr ? pr.top : [], me: pr ? { position: pr.position, total: pr.total, percentile: pr.percentile } : null, nb, peer: pr });
         }
-      } catch { if (alive) setData({ top: [] }); }
+      } catch (err) {
+        // 조용히 삼키면 화면만 비고 오류는 안 난다 — 실제로 myAdvance 오타 때문에
+        // 랭킹 전체·같은 구간 탭이 '아직 기록이 적어요'로만 보였고 테스트도 못 잡았다.
+        console.error('[ranking] 순위를 불러오지 못했어요', err);
+        if (alive) setData({ top: [] });
+      }
     })();
     track('ranking_view', { board });
     return () => { alive = false; };

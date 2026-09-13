@@ -137,7 +137,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
           await submitScoreFromSim({ rankingSimulation, simulation, nickname: nick });
           sessionStorage.setItem(key, '1');
         }
-      } catch { /* ignore */ }
+      } catch (err) { console.error('[result] 점수 전송 실패', err); }
       const [r, a, b] = await Promise.all([fetchUserRank(rankEarliest), fetchAggregates(base.ageBand), fetchUserRank(rankEarliest, undefined, undefined, myBand)]);
       if (alive) { setLive(r); setAgg(a); setBandRank(b); }
     })();

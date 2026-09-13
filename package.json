@@ -2,12 +2,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node work/test-simulator.mjs",
+    "prebuild": "node work/test-simulator.mjs && eslint src functions work tests --max-warnings=9999",
     "build": "node work/build-deploy.mjs && node work/fix-ads-txt.mjs && node work/fix-ga.mjs && node work/fix-branding-og.mjs && node work/gen-guides.mjs && node work/gen-combos.mjs && node work/gen-region-plans.mjs && node work/gen-city-fire.mjs && node work/gen-seo.mjs && node work/fix-view-counter.mjs",
     "build:deploy": "node work/test-simulator.mjs && node work/build-deploy.mjs && node work/fix-ads-txt.mjs && node work/fix-ga.mjs && node work/fix-branding-og.mjs && node work/gen-guides.mjs && node work/gen-combos.mjs && node work/gen-region-plans.mjs && node work/gen-city-fire.mjs && node work/gen-seo.mjs && node work/fix-view-counter.mjs",
     "preview": "vite preview",
     "qa:mobile": "playwright test --config=playwright.config.mjs",
-    "qa:install": "playwright install chromium"
+    "qa:install": "playwright install chromium",
+    "lint": "eslint src functions work tests --max-warnings=9999"
   },
   "dependencies": {
     "@resvg/resvg-wasm": "^2.6.2",
@@ -20,6 +21,9 @@
     "vite": "latest"
   },
   "devDependencies": {
-    "@playwright/test": "latest"
+    "@playwright/test": "latest",
+    "eslint": "^10.10.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.12.0"
   }
 }

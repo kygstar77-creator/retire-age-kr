@@ -6,7 +6,7 @@ import { identityIds } from '../../utils/identity.js';
 import { prefs } from '../../utils/prefs.js';
 import { funHandle } from '../../firemap-v2/funName.js';
 import { track } from '../../firemap-v2/dailyData.js';
-import { CAFE_URL } from '../../firemap-v2/links.js';
+import { CAFE_URL, OPENCHAT_URL } from '../../firemap-v2/links.js';
 import '../../ui/screens/wall-fab.css';
 
 // 방명록 — 홈 전용 플로팅 💬 버튼 → 실시간 한마디 패널.
@@ -125,6 +125,11 @@ export default function Wall({ visible }) {
           <a className="sc-fab-cafe" href={CAFE_URL} target="_blank" rel="noopener noreferrer" onClick={() => track('cafe_click', { from: 'wall' })}>
             <span className="sc-fab-cafe-n" aria-hidden="true">N</span><b>파이어맵 카페</b><span>인증·질문·후기는 여기서 →</span>
           </a>
+          {OPENCHAT_URL && (
+            <a className="sc-fab-cafe is-chat" href={OPENCHAT_URL} target="_blank" rel="noopener noreferrer" onClick={() => track('openchat_click', { from: 'wall' })}>
+              <span className="sc-fab-cafe-n" aria-hidden="true">💬</span><b>카카오톡 오픈채팅</b><span>→</span>
+            </a>
+          )}
           <div className="sc-fab-list" ref={listRef}>
             {rows === null && <p className="sc-fab-empty">불러오는 중…</p>}
             {rows !== null && rows.length === 0 && <p className="sc-fab-empty">아직 조용해요 · 첫 한마디를 남겨봐요</p>}

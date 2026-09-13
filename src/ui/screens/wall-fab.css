@@ -36,6 +36,8 @@
 
 .sc-fab-cafe { display: flex; align-items: center; gap: 8px; margin: 0; padding: 9px 16px; background: var(--ds-good-soft); border-bottom: 1px solid var(--ds-line); color: var(--ds-good); font-size: 12.5px; text-decoration: none; }
 .sc-fab-cafe b { font-weight: 800; }
+.sc-fab-cafe.is-chat { background: var(--ds-accent-soft); color: var(--ds-accent-ink); }
+.sc-fab-cafe.is-chat .sc-fab-cafe-n { background: transparent; color: inherit; font-size: 14px; }
 .sc-fab-cafe > span:last-child { margin-left: auto; white-space: nowrap; opacity: .85; }
 .sc-fab-cafe-n { width: 18px; height: 18px; border-radius: 4px; background: var(--ds-good); color: var(--ds-surface); font-weight: 900; font-size: 12px; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; }
 

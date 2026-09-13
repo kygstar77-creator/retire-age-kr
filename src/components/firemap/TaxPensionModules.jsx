@@ -89,7 +89,7 @@ export function PensionEarlyClaimCard({ inputs, onApply }) {
         tone="light" size="md"
         label={<><b className="num">{claimAge}세</b>부터 받으면 월</>}
         value={eok(r.monthly)}
-        sub={r.yearsEarly > 0 ? <><b className="num">{r.yearsEarly}년</b> 일찍 · <b className="num">{r.reductionPct}%</b> 줄어 평생 이어져요</> : <>정상 수령 <b className="num">{normalAge}세</b> 기준이에요</>}
+        sub={r.yearsEarly > 0 ? <><b className="num">{r.yearsEarly}년</b> 일찍 · <b className="num">{r.reductionPct}%</b> 줄어 평생 이어져요</> : <>지급개시연령 <b className="num">{normalAge}세</b> 기준이에요</>}
         tiles={[
           { label: '예상연금월액', value: eok(normalMonthly) },
           { label: '줄어드는 비율', value: `${r.reductionPct}%` },
@@ -101,7 +101,7 @@ export function PensionEarlyClaimCard({ inputs, onApply }) {
         <RangeField label="받기 시작 나이" value={claimAge} min={normalAge - 5} max={normalAge} step={1} format={(v) => `${Math.round(v)}세`} onChange={(v) => setClaimAge(Math.round(v))} />
         {normalMonthly <= 0 && <Notice tone="warn" icon="💬" className="ds-mt-2">정상 월 연금이 0이에요 · 바꿔보기에서 국민연금을 먼저 넣어요</Notice>}
         {normalMonthly > 0 && (applied
-          ? <Button variant="secondary" size="md" full className="ds-mt-2" onClick={() => { onApply({ pensionClaimAge: 0 }); toast('정상 수령으로 되돌렸어요'); }}>✓ 반영 중 · {appliedClaim}세 · {applied.reductionPct}% 감액 · 되돌리기</Button>
+          ? <Button variant="secondary" size="md" full className="ds-mt-2" onClick={() => { onApply({ pensionClaimAge: 0 }); toast('지급개시연령으로 되돌렸어요'); }}>✓ 반영 중 · {appliedClaim}세 · {applied.reductionPct}% 감액 · 되돌리기</Button>
           : (claimAge < normalAge
             ? <Button variant="primary" size="md" full className="ds-mt-2" onClick={() => { onApply({ pensionClaimAge: claimAge }); toast.good(`${claimAge}세 조기수령을 반영했어요`); }}>{claimAge}세 조기수령 반영</Button>
             : <Button variant="primary" size="md" full className="ds-mt-2" disabled>나이를 {normalAge}세보다 낮추면 반영할 수 있어요</Button>))}

@@ -239,6 +239,11 @@ export function buildSimulation(inputs) {
 
   // 화면 히어로는 '가장 이른 파이어 나이'를 띄운다. 그 나이 기준 금액을 같은 잣대(오늘 화폐)로 같이 내준다.
   // 이게 없으면 필요 자산(오늘 돈)과 파이어 때 자산(미래 명목)을 나란히 두게 돼 서로 비교가 안 된다.
+  // 화면에 나가는 금액은 전부 오늘 돈으로 바꾼다. 그래프·표·카드가 같은 줄을 읽게 하려는 것.
+  const toToday = (rows) => rows.map((row) => {
+    const f = Math.pow(1 + toRate(data.inflationRate), Math.max(0, row.age - data.currentAge));
+    return { ...row, financialAssetToday: Math.max(0, row.financialAsset) / f, investmentAddedToday: (row.investmentAdded || 0) / f };
+  });
   let atEarliest = null;
   if (earliestRetirementAge) {
     const er = simulateRetirement(data, earliestRetirementAge);
@@ -248,12 +253,17 @@ export function buildSimulation(inputs) {
       age: earliestRetirementAge,
       assetToday: (erRow?.financialAsset ?? 0) / f,
       requiredToday: ((erRow?.withdrawal ?? 0) / 0.04) / f,
-      depletionAge: er.depletionAge
+      depletionAge: er.depletionAge,
+      rows: toToday(er.rows)
     };
   }
   // 목표 나이 때 자산은 그때 통장에 찍힐 금액(명목)이다. 화면은 오늘 돈으로 보여주므로 같이 내준다.
   const retirementFinancialAssetToday = retirementFinancialAsset / inflationToTarget;
   const requiredAssetNow = findRequiredAssetNow(data);
+  // 결과·바꿔보기·인증 카드가 읽는 한 벌. 가능 나이가 없으면(70세까지 안 되면) 목표 나이 흐름을 보여준다.
+  const displayResult = atEarliest
+    ? { retirementAge: earliestRetirementAge, depletionAge: atEarliest.depletionAge, rows: atEarliest.rows, fireAssetToday: atEarliest.assetToday }
+    : { retirementAge: data.targetRetirementAge, depletionAge: targetResult.depletionAge, rows: toToday(targetResult.rows), fireAssetToday: retirementFinancialAssetToday };
   const fireGap = requiredFireAssetNominal - retirementFinancialAsset;
   const bridgeYears = Math.max(0, data.expectedPensionAge - data.targetRetirementAge);
   const runwayYears = targetResult.depletionAge
@@ -293,6 +303,7 @@ export function buildSimulation(inputs) {
     requiredFireAssetByFourPercent,
     requiredFireAssetNominal,
     atEarliest,
+    displayResult,
     fireGap,
     fourPercentReferenceGap: fireGap,
     bridgeYears,

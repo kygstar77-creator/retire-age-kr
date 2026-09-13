@@ -35,7 +35,7 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
   const yearsToRetire = Math.max(1, draft.targetRetirementAge - draft.currentAge);
   const savingYearsValue = draft.savingYears > 0 ? Math.min(draft.savingYears, yearsToRetire) : yearsToRetire;
   const growth = useMemo(() => buildGrowthSeries(simulation), [simulation]);
-  const retIdx = useMemo(() => growth.ages.indexOf(draft.targetRetirementAge), [growth, draft.targetRetirementAge]);
+  const retIdx = useMemo(() => growth.ages.indexOf(simulation.displayResult.retirementAge), [growth, simulation]);
   const principalAtRet = retIdx >= 0 ? growth.principal[retIdx] : (growth.principal.at(-1) || 0);
   const gainsAtRet = retIdx >= 0 ? growth.gains[retIdx] : (growth.gains.at(-1) || 0);
   const activeScenario = investmentScenarios.find((scenario) => scenario.annualReturnRate === draft.annualReturnRate);
@@ -45,7 +45,6 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
   const netWorth = simulation.netWorth;
   const hasAssetExtra = reVal > 0 || debtVal > 0 || rentVal > 0;
   const earliest = simulation.earliestRetirementAge;
-  const need = Math.round(simulation.requiredAssetNow || 0);
 
   const PREVIEW_ONLY = ['investType', 'dividendYield'];
   // 샌드박스 슬라이더가 직접 바꾸는 핵심 값들. 이 값들이 (질문 재입력 등으로) 실제로 바뀐 경우에만 샌드박스를 새로 시드.
@@ -94,9 +93,9 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
         value={earliest ? `${earliest}` : '아직'} unit={earliest ? '세' : ''}
         sub={heroSub}
         tiles={[
-          { label: '지금 그만두려면', value: eok(need) },
+          { label: `${simulation.displayResult.retirementAge}세 때 자산`, value: eok(simulation.displayResult.fireAssetToday) },
           { label: `목표 ${simulation.inputs.targetRetirementAge}세`, value: runwayUntilText(simulation) },
-          { label: `${simulation.inputs.targetRetirementAge}세 때 자산`, value: simulation.retirementFinancialAssetToday ? eok(simulation.retirementFinancialAssetToday) : '—' }
+          { label: '지금 자산', value: eok(draft.financialAsset) }
         ]}
       />
 
@@ -139,7 +138,7 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
       </Fold>
 
       <Fold icon="📈" title="자산 흐름" hint={`넣은 돈 ${eok(principalAtRet)} · 불어난 돈 ${eok(gainsAtRet)}`}>
-        <AssetGrowthChart ages={growth.ages} principal={growth.principal} gains={growth.gains} retirementAge={draft.targetRetirementAge} depletionAge={simulation.targetResult.depletionAge} />
+        <AssetGrowthChart ages={growth.ages} principal={growth.principal} gains={growth.gains} retirementAge={simulation.displayResult.retirementAge} depletionAge={simulation.displayResult.depletionAge} />
         <p className="ds-caption ds-mt-2">파이어 <b className="num">{draft.targetRetirementAge}세</b> 기준 · 넣은 돈 <b className="num">{eok(principalAtRet)}</b> · 불어난 돈 <b className="num">{eok(gainsAtRet)}</b> · 파이어 후엔 쓰면서 줄어요</p>
       </Fold>
 

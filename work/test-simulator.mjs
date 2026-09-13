@@ -341,3 +341,25 @@ console.log('(18) random 1,000-case invariants OK');
   assert(earlyClaim(1000000, 65, 70).monthly === 1360000, '(19) 5년 연기 = 36% 가산');
 }
 console.log('(19) pension start age / claim clamp OK');
+
+// (20) 화면에 나가는 자산 숫자는 한 벌이어야 한다.
+// 히어로 'N세 때 자산' = 그래프 파이어 지점 = 표 'N세 때' = 인증 카드. 전부 displayResult에서 읽는다.
+// 예전엔 히어로는 53세(오늘 돈), 그래프는 목표 55세(명목 14억), 카드는 '지금 그만두려면' 9억이 한 화면에 있었다.
+{
+  const s = buildSimulation({ currentAge: 35, targetRetirementAge: 55, financialAsset: 100000000, monthlyInvestment: 3000000, monthlyLivingCost: 3000000 });
+  const d = s.displayResult;
+  assert(d && Array.isArray(d.rows) && d.rows.length > 2, '(20) displayResult가 있어야 한다');
+  assert(d.retirementAge === s.earliestRetirementAge, '(20) 화면 은퇴 나이 = 파이어 가능 나이');
+  const row = d.rows.find((r) => r.age === d.retirementAge);
+  assert(Math.abs(row.financialAssetToday - d.fireAssetToday) < 1, '(20) 그래프의 파이어 지점 = 히어로 금액');
+  assert(Math.abs(d.fireAssetToday - s.atEarliest.assetToday) < 1, '(20) 히어로 금액 = atEarliest');
+  const g = buildGrowthSeries(s);
+  const gi = g.ages.indexOf(d.retirementAge);
+  assert(Math.abs(g.total[gi] - d.fireAssetToday) < 1, '(20) 넣은 돈+불어난 돈 = 히어로 금액');
+  // 오늘 돈이므로 파이어 전까지는 물가보다 빨리 불어야 한다(수익 5% > 물가 3%, 저축 중)
+  assert(d.rows[0].financialAssetToday < row.financialAssetToday, '(20) 저축 중엔 오늘 돈 기준으로도 자산이 는다');
+  // 가능 나이가 없을 때도 화면은 비지 않아야 한다
+  const none = buildSimulation({ currentAge: 35, targetRetirementAge: 55, financialAsset: 0, monthlyInvestment: 100000, monthlyLivingCost: 5000000 });
+  assert(none.earliestRetirementAge == null && none.displayResult.rows.length > 2, '(20) 가능 나이 없으면 목표 나이 흐름으로 대체');
+}
+console.log('(20) one display series across screens OK');

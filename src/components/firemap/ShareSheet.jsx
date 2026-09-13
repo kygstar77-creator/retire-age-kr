@@ -58,12 +58,12 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
   const year = new Date().getFullYear() - (Number(inp.currentAge) || 35);
   const [hideAmt, setHideAmt] = useState(false);
   const [busy, setBusy] = useState(false);
-  const need = Math.round(simulation.requiredAssetNow || 0);
+  const need = Math.round(simulation.displayResult.fireAssetToday || 0);  // 파이어 나이 때 자산(오늘 돈) — 히어로와 같은 값
   const asset = Number(inp.financialAsset) || 0;
   const title = `${year}년생 · ${earliest ? `${earliest}세 파이어 가능` : '파이어 준비 중'} · ${hideAmt ? '자산 비공개' : `자산 ${formatWon(asset)}`} · ${roundNo()}회차`;
   const body = [
     `🔥 파이어 나이 ${earliest ? `${earliest}세` : '아직'} (목표 ${inp.targetRetirementAge}세)`,
-    `필요 자산 ${formatWon(need)} · 지금 ${hideAmt ? '비공개' : formatWon(asset)}`,
+    `${earliest || inp.targetRetirementAge}세 때 자산 ${formatWon(need)} · 지금 ${hideAmt ? '비공개' : formatWon(asset)}`,
     `월 저축 ${hideAmt ? '비공개' : formatWon(inp.monthlyInvestment)} · 파이어 후 생활비 ${formatWon(inp.monthlyLivingCost)}`,
     `가정: 수익률 ${inp.annualReturnRate}% · 물가 ${inp.inflationRate}% · 국민연금 ${inp.expectedPensionAge}세~`,
     '계산: firemap.kr'
@@ -72,7 +72,7 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
   const kakao = async () => {
     setBusy(true); track('share', { type: 'cert_kakao' });
     const s = buildCertShare(simulation, { hideAmt, round: roundNo(), need, asset });
-    try { await shareToKakao({ title: earliest ? `${earliest}세에 파이어 가능 🔥` : '내 파이어 나이', description: `필요 자산 ${formatWon(need)} · 목표 ${inp.targetRetirementAge}세 · 1분이면 나도 계산`, imageUrl: s.imageUrl, linkUrl: s.url }); prefs.bumpCert(); }
+    try { await shareToKakao({ title: earliest ? `${earliest}세에 파이어 가능 🔥` : '내 파이어 나이', description: `${earliest || inp.targetRetirementAge}세 때 자산 ${formatWon(need)} · 지금 ${hideAmt ? '비공개' : formatWon(asset)} · 1분이면 나도 계산`, imageUrl: s.imageUrl, linkUrl: s.url }); prefs.bumpCert(); }
     catch {
       if (navigator.share) { try { await navigator.share({ text: `${title}\n${body}`, url: s.url }); prefs.bumpCert(); } catch { /* ignore */ } }
       else { try { await navigator.clipboard.writeText(`${title}\n${body}\n${s.url}`); toast.good('카드 내용을 복사했어요'); } catch { /* ignore */ } }

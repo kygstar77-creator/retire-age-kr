@@ -49,7 +49,7 @@ export async function onRequest(context) {
       : p && g
         ? `또래 상위 ${p}% — 파이어맵`
         : '나는 몇 살에 파이어할 수 있을까? — 파이어맵';
-  const certDesc = `필요 자산 ${keep('need')} · 목표 ${tgt || '—'}세 · 1분이면 나도 계산`;
+  const certDesc = `${keep('ea') || tgt || '—'}세 때 자산 ${keep('need')} · 지금 ${keep('as')} · 1분이면 나도 계산`;
   const desc = isCert ? certDesc : (sd && ad)
     ? '하루하루 아낀 돈이 파이어를 앞당겨요. 나도 1분 계산하고 절약 적립 시작하기.'
     : ea

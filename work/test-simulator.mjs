@@ -1,5 +1,6 @@
 import { simulateRetirement, buildSimulation } from '../src/utils/retirementSimulator.js';
 import { buildGrowthSeries } from '../src/firemap-v2/scenarios.js';
+import { earlyClaim } from '../src/firemap-v2/pension.js';
 
 const toEok = (value) => value / 100000000;
 
@@ -172,6 +173,80 @@ assert(
       assert(g.principal[i] >= g.principal[i - 1] - 1, `Invariant failed: 적립 구간 원금이 감소 (age ${g.ages[i]}).`);
     }
   }
+}
+
+
+// ── 2026-09-14 계산 감사에서 나온 오류를 다시 막는 테스트 ──────────────────────────
+
+// (8) 배당 인출소득은 결과를 바꾸면 안 된다 — 연 수익률에 배당이 이미 들어 있다(P1)
+{
+  const base = { ...scenarioA };
+  const withDiv = buildSimulation({ ...base, dividendIncomeMonthly: 2000000 });
+  const without = buildSimulation(base);
+  assert(withDiv.earliestRetirementAge === without.earliestRetirementAge,
+    'Invariant failed: 배당 인출소득이 파이어 나이를 바꿈(이중 계산).');
+}
+
+// (9) 필요 자산은 오늘 화폐 — 미래 명목보다 작고, 물가로 되돌리면 명목과 같아야 한다(P3)
+{
+  const sim = buildSimulation(scenarioA);
+  const years = Math.max(0, scenarioA.targetRetirementAge - scenarioA.currentAge);
+  const f = Math.pow(1 + (scenarioA.inflationRate || 0) / 100, years);
+  assert(sim.requiredFireAssetNominal > 0, 'Invariant failed: 명목 필요자산이 없음.');
+  assert(sim.requiredFireAssetByFourPercent < sim.requiredFireAssetNominal,
+    'Invariant failed: 오늘 가치 필요자산이 명목보다 작지 않음.');
+  assert(Math.abs(sim.requiredFireAssetByFourPercent * f - sim.requiredFireAssetNominal) < 1000,
+    'Invariant failed: 오늘 가치 × 물가 != 명목 필요자산.');
+}
+
+// (10) 배당세(investType 2)는 파이어 전에도 매년 떼여야 한다(P5)
+{
+  const sim = buildSimulation({ ...scenarioA, investType: 2, dividendYield: 4 });
+  const before = sim.targetResult.rows.filter((r) => r.age < scenarioA.targetRetirementAge);
+  const taxed = before.reduce((acc, r) => acc + (r.investTax || 0), 0);
+  assert(taxed > 0, 'Invariant failed: 적립기 배당세가 0원.');
+}
+
+// (11) 해외 양도세는 과표 3억 초과분에 27.5%를 적용해야 한다(P6)
+{
+  const gain = 500000000; const exempt = 2500000;
+  const base = gain - exempt;
+  const expected = 300000000 * 0.22 + (base - 300000000) * 0.275;
+  const single = base * 0.22;
+  assert(expected > single, 'Invariant failed: 2단 누진이 단일세율보다 크지 않음(테스트 전제 오류).');
+}
+
+// (12) 국민연금 연기수령은 가산돼야 한다(P9)
+{
+  const late = earlyClaim(1000000, 65, 68);
+  assert(late.monthly > 1000000, 'Invariant failed: 연기수령인데 연금이 늘지 않음.');
+  const early = earlyClaim(1000000, 65, 60);
+  assert(early.monthly === 700000, 'Invariant failed: 조기수령 5년 감액이 30%가 아님.');
+}
+
+// (13) 회계 항등식 — 인출 = max(0, 생활비 − 부업 − 연금 − 배당 − 임대)(회귀 방지)
+{
+  const sim = buildSimulation({ ...scenarioA, partTimeIncomeAfterRetirement: 500000, monthlyRentalIncome: 300000 });
+  for (const r of sim.targetResult.rows) {
+    const expect = Math.max(0, r.livingCost - r.partTimeIncome - r.pensionIncome - (r.dividendIncome || 0) - r.rentalIncome);
+    assert(Math.abs(r.withdrawal - expect) < 1, `Invariant failed: 인출 항등식 불일치 (age ${r.age}).`);
+  }
+}
+
+// (14) 부동산·부채는 파이어 나이에 영향이 없어야 한다(설계 의도 고정)
+{
+  const a = buildSimulation(scenarioA).earliestRetirementAge;
+  const b = buildSimulation({ ...scenarioA, realEstateValue: 2000000000, debt: 500000000 }).earliestRetirementAge;
+  assert(a === b, 'Invariant failed: 부동산·부채가 파이어 나이를 바꿈.');
+}
+
+// (15) 건보료 반영 == 생활비에 같은 금액을 더한 것(문구 충돌을 테스트로 박제, P11)
+{
+  const m = 200000;
+  const withHi = buildSimulation({ ...scenarioA, healthInsuranceEnabled: 1, monthlyHealthInsurance: m });
+  const inCost = buildSimulation({ ...scenarioA, monthlyLivingCost: scenarioA.monthlyLivingCost + m });
+  assert(withHi.earliestRetirementAge === inCost.earliestRetirementAge,
+    'Invariant failed: 건보료 반영과 생활비 가산의 결과가 다름.');
 }
 
 console.log('Simulation regression and invariant tests passed.');

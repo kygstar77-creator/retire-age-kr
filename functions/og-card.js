@@ -75,7 +75,7 @@ ${cta}
 export function buildCertSvg(opts = {}) {
   const font = opts.font || 'Pretendard';
   const esc = (v) => String(v == null ? '' : v).replace(/[<>&"]/g, '').slice(0, 40);
-  const title = `${esc(opts.year)}년생 ${esc(opts.family)} · ${esc(opts.round) || 1}회차`;
+  const title = `${esc(opts.year)}년생 · ${esc(opts.round) || 1}회차`;
   const ea = Number(opts.ea) || 0;
   const big = ea ? `${ea}세` : '아직';
   // 큰 숫자가 이미 나이를 말하므로 아래 줄은 목표와의 차이를 알려준다.
@@ -122,7 +122,7 @@ export function buildCertWideSvg(opts = {}) {
     : gap == null ? '파이어 가능 나이'
       : gap > 0 ? `목표보다 ${gap}년 빨라요`
         : gap < 0 ? `목표보다 ${-gap}년 늦어요` : '목표와 같아요';
-  const title = `${esc(opts.year)}년생 ${esc(opts.family)} · ${esc(opts.round) || 1}회차`;
+  const title = `${esc(opts.year)}년생 · ${esc(opts.round) || 1}회차`;
   const rows = [
     ['필요 자산', esc(opts.need)], ['현재 자산', esc(opts.asset)],
     ['월 저축', esc(opts.save)], ['파이어 후 생활비', esc(opts.cost)]

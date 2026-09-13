@@ -60,7 +60,12 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
   let costBasis = data.financialAsset; // 양도세 차익 추정용(취득원가 누적)
   const investType = Math.round(data.investType) || 0; // 0 국내(면제) · 1 해외 양도세２２% · 2 배당１５.４% · 3 둘 다
   const dividendYield = toRate(data.dividendYield);
-  const CG_RATE = 0.22; const DIV_TAX = 0.154; const CG_EXEMPT = 2500000;
+  const DIV_TAX = 0.154; const CG_EXEMPT = 2500000;
+  // 해외주식 양도세 — 과표 3억 이하 22%, 초과분 27.5%(taxCalculator와 같은 구간)
+  const capitalGainTax = (gain) => {
+    const base = Math.max(0, gain - CG_EXEMPT);
+    return base <= 300000000 ? base * 0.22 : 300000000 * 0.22 + (base - 300000000) * 0.275;
+  };
   let depletionAge = null;
   const rows = [];
 
@@ -74,13 +79,18 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
     const overseasAdjustment = isRetired ? calculateOverseasAdjustment(data, inflationFactor, yearsFromRetirement) : null;
     const adjustedLivingCost = overseasAdjustment ? overseasAdjustment.adjustedLivingCost : baseLivingCost;
     const healthInsuranceExpense = isRetired ? calculateHealthInsuranceExpense(data, inflationFactor) : 0;
+    // 해외에 나가 있으면 건보료도 그만큼 덜 낸다 — 절감액에 같이 넣어야 '첫해 절감'이 실제와 맞는다.
+    const healthInsuranceFull = (isRetired && enabled(data.healthInsuranceEnabled))
+      ? data.monthlyHealthInsurance * 12 * inflationFactor : 0;
+    const insuranceSaved = Math.max(0, healthInsuranceFull - healthInsuranceExpense);
     const livingCost = adjustedLivingCost + healthInsuranceExpense;
     // 부업소득은 물가 미반영(명목 고정): 생활비·월급과 달리 자동 인상 주체가 없으므로 입력한 금액 그대로 본다.
     const partTimeIncome = isRetired ? yearly(data.partTimeIncomeAfterRetirement) : 0;
     const pensionIncome = isRetired && age >= data.expectedPensionAge
       ? yearly(data.expectedMonthlyPension) * inflationFactor
       : 0;
-    const dividendIncome = isRetired ? yearly(data.dividendIncomeMonthly) * Math.pow(1 + toRate(data.dividendIncomeGrowth), yearsFromRetirement) : 0;
+    // 배당 인출소득은 쓰지 않는다 — 연 수익률(총수익률)에 배당이 이미 들어 있어 두 번 세어진다.
+    const dividendIncome = 0;
     // 임대수익: 생활비처럼 물가 따라 매년 인상(임대료는 장기적으로 물가에 연동). 부동산을 안 팔고 월세로 버티는 현실 반영.
     const rentalIncome = isRetired ? yearly(data.monthlyRentalIncome) * inflationFactor : 0;
     const withdrawal = isRetired ? Math.max(0, livingCost - partTimeIncome - pensionIncome - dividendIncome - rentalIncome) : 0;
@@ -90,14 +100,15 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
     if (investmentAdded > 0) costBasis += investmentAdded;
     // 투자 유형별 세금(파이어 후): 국내=0 · 해외=인출차익 22%(250만 공제) · 배당=배당세 15.4%
     let investTax = 0;
+    // 배당세는 파이어 전에도 매년 떼인다(재투자해도 원천징수). 양도세는 팔 때만이라 파이어 후에만.
+    if (financialAsset > 0 && (investType === 2 || investType === 3)) {
+      investTax += financialAsset * dividendYield * DIV_TAX;
+    }
     if (isRetired && financialAsset > 0) {
       if (investType === 1 || investType === 3) { // 해외주식 양도세: 매도 차익분 22%(250만 공제)
         const gainRatio = Math.max(0, (financialAsset - costBasis) / financialAsset);
         const gain = withdrawal * gainRatio;
-        investTax += Math.max(0, gain - CG_EXEMPT) * CG_RATE;
-      }
-      if (investType === 2 || investType === 3) { // 배당세: 연 배당(자산×배당률) 15.4%
-        investTax += financialAsset * dividendYield * DIV_TAX;
+        investTax += capitalGainTax(gain);
       }
     }
     const assetAfterCashFlow = financialAsset + investmentAdded - withdrawal - investTax;
@@ -127,7 +138,7 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
       baseLivingCost,
       healthInsuranceExpense,
       overseasLivingCost: overseasAdjustment?.overseasLivingCost ?? 0,
-      overseasSavings: overseasAdjustment?.annualSavings ?? 0,
+      overseasSavings: (overseasAdjustment?.annualSavings ?? 0) + insuranceSaved,
       partTimeIncome,
       pensionIncome,
       rentalIncome,
@@ -202,8 +213,13 @@ export function buildSimulation(inputs) {
   const safeWithdrawalRate = retirementFinancialAsset > 0
     ? (firstRetirementExpense / retirementFinancialAsset) * 100
     : 0;
-  const requiredFireAssetByFourPercent = firstRetirementExpense / 0.04;
-  const fireGap = requiredFireAssetByFourPercent - retirementFinancialAsset;
+  // 필요 자산 — 파이어 첫해 순인출액의 25배. 화면은 오늘 자산과 나란히 보므로 오늘 화폐로 돌려준다.
+  // (미래 명목값이 필요하면 requiredFireAssetNominal)
+  const yearsToTarget = Math.max(0, data.targetRetirementAge - data.currentAge);
+  const inflationToTarget = Math.pow(1 + toRate(data.inflationRate), yearsToTarget);
+  const requiredFireAssetNominal = firstRetirementExpense / 0.04;
+  const requiredFireAssetByFourPercent = requiredFireAssetNominal / inflationToTarget;
+  const fireGap = requiredFireAssetNominal - retirementFinancialAsset;
   const bridgeYears = Math.max(0, data.expectedPensionAge - data.targetRetirementAge);
   const runwayYears = targetResult.depletionAge
     ? Math.max(0, targetResult.depletionAge - data.targetRetirementAge)
@@ -238,6 +254,7 @@ export function buildSimulation(inputs) {
     finalFinancialAsset: finalRow?.financialAsset ?? targetResult.finalFinancialAsset,
     safeWithdrawalRate,
     requiredFireAssetByFourPercent,
+    requiredFireAssetNominal,
     fireGap,
     fourPercentReferenceGap: fireGap,
     bridgeYears,

@@ -10,7 +10,6 @@ import { track } from '../../firemap-v2/dailyData.js';
 import { prefs } from '../../utils/prefs.js';
 import { CAFE_URL } from '../../firemap-v2/links.js';
 
-const FAMILY = ['1인', '2인', '3인', '4인+'];
 const roundNo = () => { try { const f = Number(localStorage.getItem('fm_first_seen') || 0); if (!f) return 1; return Math.max(1, Math.floor((Date.now() - f) / (30.44 * 86400000)) + 1); } catch { return 1; } };
 
 export function buildResultShare(simulation, extra = {}) {
@@ -36,12 +35,12 @@ export function buildResultShare(simulation, extra = {}) {
 }
 
 // 화면의 인증 카드와 같은 값으로 공유용 이미지·링크를 만든다. 앱에서 본 카드 = 상대가 보는 그림.
-function buildCertShare(simulation, { family, hideAmt, round, need, asset }) {
+function buildCertShare(simulation, { hideAmt, round, need, asset }) {
   const inp = simulation.inputs;
   const ea = simulation.earliestRetirementAge || 0;
   const year = new Date().getFullYear() - (Number(inp.currentAge) || 35);
   const q = {
-    mode: 'cert', yr: String(year), fm: family, ea: String(ea), target: String(inp.targetRetirementAge),
+    mode: 'cert', yr: String(year), ea: String(ea), target: String(inp.targetRetirementAge),
     need: formatWon(need), as: hideAmt ? '비공개' : formatWon(asset),
     sv: hideAmt ? '비공개' : formatWon(inp.monthlyInvestment), cost: formatWon(inp.monthlyLivingCost),
     ret: String(inp.annualReturnRate), inf: String(inp.inflationRate), pen: String(inp.expectedPensionAge), rd: String(round)
@@ -57,12 +56,11 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
   const inp = simulation.inputs;
   const earliest = simulation.earliestRetirementAge;
   const year = new Date().getFullYear() - (Number(inp.currentAge) || 35);
-  const [family, setFamily] = useState('1인');
   const [hideAmt, setHideAmt] = useState(false);
   const [busy, setBusy] = useState(false);
   const need = Math.round(simulation.requiredFireAssetByFourPercent || 0);
   const asset = Number(inp.financialAsset) || 0;
-  const title = `${year}년생 ${family} · ${earliest ? `${earliest}세 파이어 가능` : '파이어 준비 중'} · ${hideAmt ? '자산 비공개' : `자산 ${formatWon(asset)}`} · ${roundNo()}회차`;
+  const title = `${year}년생 · ${earliest ? `${earliest}세 파이어 가능` : '파이어 준비 중'} · ${hideAmt ? '자산 비공개' : `자산 ${formatWon(asset)}`} · ${roundNo()}회차`;
   const body = [
     `🔥 파이어 나이 ${earliest ? `${earliest}세` : '아직'} (목표 ${inp.targetRetirementAge}세)`,
     `필요 자산 ${formatWon(need)} · 지금 ${hideAmt ? '비공개' : formatWon(asset)}`,
@@ -73,7 +71,7 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
 
   const kakao = async () => {
     setBusy(true); track('share', { type: 'cert_kakao' });
-    const s = buildCertShare(simulation, { family, hideAmt, round: roundNo(), need, asset });
+    const s = buildCertShare(simulation, { hideAmt, round: roundNo(), need, asset });
     try { await shareToKakao({ title: earliest ? `${earliest}세에 파이어 가능 🔥` : '내 파이어 나이', description: `필요 자산 ${formatWon(need)} · 목표 ${inp.targetRetirementAge}세 · 1분이면 나도 계산`, imageUrl: s.imageUrl, linkUrl: s.url }); prefs.bumpCert(); }
     catch {
       if (navigator.share) { try { await navigator.share({ text: `${title}\n${body}`, url: s.url }); prefs.bumpCert(); } catch { /* ignore */ } }
@@ -97,9 +95,9 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
         <p className="ds-caption ds-mb-1-5">{title}</p>
         <p className="sc-cert-body">{body}</p>
       </div>
-      <p className="ds-caption ds-mt-3 ds-mb-1-5">가족 형태</p>
-      <Chips>{FAMILY.map((f) => <Chip key={f} on={family === f} onClick={() => setFamily(f)}>{f}</Chip>)}<Chip on={hideAmt} onClick={() => setHideAmt((v) => !v)}>🙈 금액 숨김</Chip></Chips>
-      <p className="ds-caption ds-mt-2">카페 제목 공식(출생연도·가족·숫자·회차)이라 다른 인증 글과 나란히 비교돼요.</p>
+      <p className="ds-caption ds-mt-3 ds-mb-1-5">금액</p>
+      <Chips><Chip on={hideAmt} onClick={() => setHideAmt((v) => !v)}>🙈 금액 숨김</Chip></Chips>
+      <p className="ds-caption ds-mt-2">출생연도·숫자·회차 순이라 다른 인증 글과 나란히 비교돼요.</p>
       <div className="ds-stack ds-mt-3">
         <Button variant="primary" size="lg" full loading={busy} onClick={copyForCafe}>🟢 카페 인증 게시판에 올리기</Button>
         <div className="ds-bottomcta ds-mt-0">

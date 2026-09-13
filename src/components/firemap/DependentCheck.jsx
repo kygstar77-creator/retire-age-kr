@@ -90,6 +90,7 @@ export default function DependentCheck({ inputs, onApply }) {
       {applied
         ? <Button variant="secondary" size="md" full onClick={() => { onApply({ healthInsuranceEnabled: 0, monthlyHealthInsurance: 0 }); toast('건보료 반영을 해제했어요'); }}>✓ 반영 중 · 월 {eok(appliedMonthly)} · 해제</Button>
         : <Button variant="primary" size="md" full onClick={() => { onApply({ healthInsuranceEnabled: 1, monthlyHealthInsurance: applyMonthly }); toast.good('건보료를 반영했어요. 결과 숫자가 바뀌어요'); }}>월 {eok(applyMonthly)} 내 파이어 계산에 반영</Button>}
+      <p className="ds-caption ds-mt-2">생활비에 건강보험료를 이미 넣었다면 그만큼 빼 주세요</p>
 
       <p className="ds-caption ds-textcenter">2026 요율 기준 추정이에요 · 정확한 금액은 건강보험공단에서 확인해요</p>
       <p className="ds-caption ds-textcenter">참고용 계산이에요 · 투자 자문이 아니에요</p>

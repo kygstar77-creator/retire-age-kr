@@ -14,15 +14,18 @@ const pctFmt = (v) => `${(Number(v) || 0).toFixed(1)}%`;
 const WD = ['일', '월', '화', '수', '목', '금', '토'];
 
 // 매월 적립 + 배당 전액 재투자 — 세후 월 배당이 생활비에 닿는 첫 해
-function yearsToCover({ asset, yieldPct, contrib, target }) {
+// 자산은 결과 화면과 같은 연 수익률(주가 상승 + 배당)로 불어나고, 그중 배당률만큼이 세후 소득이 된다.
+// 목표 생활비도 물가만큼 같이 오른다 — 결과 화면과 같은 가정을 쓴다.
+function yearsToCover({ asset, yieldPct, contrib, target, inflationPct = 0, growthPct = 0 }) {
   if (!(target > 0) || !(yieldPct > 0)) return null;
   const monthlyAfter = (a) => (a * (yieldPct / 100) * AFTER_TAX) / 12;
   if (monthlyAfter(asset) >= target) return 0;
-  const r = yieldPct / 100 / 12;
+  const r = ((Number(growthPct) || yieldPct) / 100) / 12;
+  const inf = (Number(inflationPct) || 0) / 100;
   let a = asset;
   for (let y = 1; y <= MAX_YEARS; y += 1) {
     for (let k = 0; k < 12; k += 1) a = a * (1 + r) + contrib;
-    if (monthlyAfter(a) >= target) return y;
+    if (monthlyAfter(a) >= target * Math.pow(1 + inf, y)) return y;
   }
   return null;
 }
@@ -123,7 +126,9 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
   const monthlyAfter = annualAfter / 12;
   const needed = yieldPct > 0 && target > 0 ? (target * 12) / ((yieldPct / 100) * AFTER_TAX) : 0;
   const coverage = target > 0 ? Math.round((monthlyAfter / target) * 100) : null;
-  const years = useMemo(() => yearsToCover({ asset, yieldPct, contrib, target }), [asset, yieldPct, contrib, target]);
+  const inflationPct = Number(inputs?.inflationRate) || 0;
+  const growthPct = Number(inputs?.annualReturnRate) || 0;
+  const years = useMemo(() => yearsToCover({ asset, yieldPct, contrib, target, inflationPct, growthPct }), [asset, yieldPct, contrib, target, inflationPct, growthPct]);
   const fireAge = years == null ? null : currentAge + years;
   const over2000 = annual > 20000000;
   const over1000 = annual > 10000000;
@@ -197,6 +202,7 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
 
       <Card>
         <SectionHead size="sm" kicker="읽어둘 것" title="배당은 수익률에 이미 들어 있어요" desc="결과 화면의 연 수익률은 주가 상승과 배당을 합친 값이에요" />
+        <p className="ds-body-sm sc-div-note">여기는 원금을 헐지 않고 배당만으로 생활비를 채우는 나이예요. 결과 화면은 원금도 쓰고 국민연금도 더하니 더 이른 나이가 나와요.</p>
         <p className="ds-body-sm sc-div-note">그래서 이 배당을 결과에 따로 더하면 같은 돈을 두 번 세게 돼요. 이 화면은 배당만 떼어 보는 계산기로 쓰면 돼요.</p>
       </Card>
 

@@ -11,7 +11,7 @@ import { submitScoreFromSim, fetchUserRank, fetchAggregates, assetBandOf, ASSET_
 import { saveRankSnapshot } from '../../firemap-v2/rankHistory.js';
 import { FIRE_CITIES } from '../../firemap-v2/cities.js';
 import { track } from '../../firemap-v2/dailyData.js';
-import { estimateLocalPremium } from '../../firemap-v2/healthInsurance.js';
+import { assessDependentEligibility, estimateLocalPremium } from '../../firemap-v2/healthInsurance.js';
 import { syncWidgetSnapshot } from '../../utils/widgetState.js';
 import ConsentSheet from './Consent.jsx';
 import ShareSheet from './ShareSheet.jsx';
@@ -75,7 +75,7 @@ function AssetJourney({ simulation }) {
   const req = simulation.requiredFireAssetByFourPercent;
   if (req && req > cur.financialAsset) {
     const hit = rows.find((r) => r.financialAsset >= req);
-    if (hit) items.push({ age: hit.age, label: '필요 자산 달성', sub: `1년 생활비의 25배 ${formatWon(req)}`, hi: true });
+    if (hit) items.push({ age: hit.age, label: '필요 자산 달성', sub: `오늘 화폐로 ${formatWon(req)}`, hi: true });
   }
   if (simulation.earliestRetirementAge) items.push({ age: simulation.earliestRetirementAge, label: '가장 이른 파이어', sub: null, hi: true });
   items.push({ age: simulation.inputs.targetRetirementAge, label: '목표 파이어', sub: null, hi: true });
@@ -165,8 +165,16 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
     const baseEnd = scenarioEndAge(simulation);
     return FIRE_CITIES.filter((c) => c.krw < inp.monthlyLivingCost).map((c) => { const sc = buildScenario(inp, { monthlyLivingCost: c.krw }); return { ...c, gain: scenarioEndAge(sc) - baseEnd, runway: runwayText(sc) }; }).filter((c) => c.gain > 0).sort((a, b) => b.gain - a.gain).slice(0, 3);
   }, [inp, simulation]);
-  const fireAsset = simulation.retirementFinancialAsset || simulation.netWorth || inp.financialAsset || 0;
-  const hiEst = (() => { try { return estimateLocalPremium({ chargeableIncomeManwon: Math.round((fireAsset * 0.04) / 10000), propertyTaxBaseEok: 0 }); } catch { return null; } })();
+  // 건보료 추정 — 건보료 화면과 같은 경로로 계산한다(금융소득 1,000만 게이트 포함).
+  // 예전엔 파이어 시점 '미래 명목' 자산의 4%를 전액 금융소득으로 넣어 4배 넘게 부풀려졌다.
+  const fireAssetToday = simulation.requiredFireAssetByFourPercent || inp.financialAsset || 0;
+  const hiEst = (() => {
+    try {
+      const finMan = Math.round((fireAssetToday * 0.04) / 10000);
+      const r = assessDependentEligibility({ financialIncomeManwon: finMan, propertyTaxBaseEok: 0 });
+      return { ...estimateLocalPremium({ chargeableIncomeManwon: r.combinedIncome, propertyTaxBaseEok: 0 }), finMan };
+    } catch { return null; }
+  })();
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar ds-screen-gap">
@@ -181,7 +189,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
             label={`내 파이어 나이 · ${base.ageBandLabel} 또래 기준`}
             value={earliest ? `${earliest}` : '아직'} unit={earliest ? '세' : ''}
             delta={delta}
-            sub={<>필요 자산 <b className="num">{eok(need)}</b> · 지금 <b className="num">{eok(inp.financialAsset)}</b>{success != null ? <> · 성공확률 <b className="num">{success}%</b></> : null}</>}
+            sub={<>{need > 0 ? <>필요 자산 <b className="num">{eok(need)}</b> · 지금 <b className="num">{eok(inp.financialAsset)}</b></> : <>연금·부업만으로 생활비가 채워져요</>}{success != null ? <> · 성공확률 <b className="num">{success}%</b></> : null}</>}
             tiles={[
               { label: '파이어 때 자산', value: simulation.retirementFinancialAsset ? eok(simulation.retirementFinancialAsset) : '—' },
               { label: '자산 수명', value: ph.runway },
@@ -200,7 +208,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
           <AssetJourney simulation={simulation} />
           <Card>
             <SectionHead size="sm" kicker="파이어 후" title="건보료와 세금" desc={hiEst ? `지역가입으로 바뀌면 월 약 ${hiEst.monthly.toLocaleString()}원으로 잡혀요 (추정)` : '지역가입자 전환 · 배당세'} />
-            <p className="ds-p">직장을 그만두면 건보료를 혼자 내고 소득·재산 기준 <b>지역가입자</b>로 바뀌어요. 4% 인출 기준 연 금융소득 {Math.round((fireAsset * 0.04) / 10000).toLocaleString()}만원으로 잡은 대략값이에요.</p>
+            <p className="ds-p">직장을 그만두면 건보료를 혼자 내고 소득·재산 기준 <b>지역가입자</b>로 바뀌어요. 오늘 화폐로 연 금융소득 {hiEst ? hiEst.finMan.toLocaleString() : '—'}만원을 가정한 대략값이고, 재산은 넣지 않았어요.</p>
             <div className="ds-bottomcta"><Button variant="secondary" size="md" onClick={() => onMove('dependent')}>건보료 정밀 계산</Button><Button variant="secondary" size="md" onClick={() => onMove('foreignTax')}>양도·배당세</Button></div>
           </Card>
           {cities.length > 0 && (

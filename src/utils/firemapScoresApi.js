@@ -116,7 +116,7 @@ export async function fetchUserRank(earliestAge, ageBand, advancedDays, assetBan
       higher += countFromRange(tieRes);
     }
     const position = higher + 1;
-    const percentile = Math.min(99, Math.max(1, Math.round((higher / total) * 100)));
+    const percentile = Math.min(99, Math.max(1, Math.round((position / total) * 100)));
     return { total, position, percentile };
   } catch {
     return null;
@@ -158,7 +158,7 @@ export async function fetchPeerBoard({ currentAge, ageBand, earliestAge, advance
         higher += countFromRange(await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=eq.${mine}&advanced_days=gt.${adv}${filter}`, opts));
       }
       position = higher + 1;
-      percentile = Math.min(99, Math.max(1, Math.round((higher / total) * 100)));
+      percentile = Math.min(99, Math.max(1, Math.round((position / total) * 100)));
     }
     // 4) 상위 10
     const sel = `select=client_id,nickname,fire_score,age_band,current_age,earliest_age${filter}`;
@@ -194,7 +194,7 @@ export async function fetchStageBoard({ stage, earliestAge, advancedDays, limit 
         higher += countFromRange(await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id&earliest_age=eq.${mine}&advanced_days=gt.${adv}${filter}`, opts));
       }
       position = higher + 1;
-      percentile = Math.min(99, Math.max(1, Math.round((higher / total) * 100)));
+      percentile = Math.min(99, Math.max(1, Math.round((position / total) * 100)));
     }
     const sel = `select=client_id,nickname,fire_score,age_band,current_age,earliest_age,stage${filter}`;
     let topRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?${sel}&order=earliest_age.asc.nullslast,advanced_days.desc,fire_score.desc&limit=${limit}`, { method: 'GET', headers: headers() });
@@ -229,7 +229,7 @@ export async function fetchAssetPercentile(ageBand, assetBand) {
     if (!total) return null;
     const higherRes = await fetch(`${SUPABASE_URL}/rest/v1/${TABLE}?select=id&asset_band=gt.${assetBand}${band}`, opts);
     const higher = countFromRange(higherRes);
-    const percentile = Math.max(1, Math.min(99, Math.round(((higher + 0.5) / total) * 100)));
+    const percentile = Math.max(1, Math.min(99, Math.round(((higher + 1) / total) * 100)));
     return { total, percentile };
   } catch { return null; }
 }

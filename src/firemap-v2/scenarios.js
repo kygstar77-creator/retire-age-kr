@@ -17,7 +17,7 @@ export function targetGapText(simulation) {
   if (!e) return '아직';
   if (e < t) return `${t - e}년 빨라요`;
   if (e > t) return `${e - t}년 늦어요`;
-  return '딱 맞아요';
+  return '비슷해요';
 }
 
 export function scenarioEndAge(simulation) {

@@ -4,7 +4,7 @@ export function cleanNumber(value) {
 
 export function formatWon(value) {
   const amount = cleanNumber(value);
-  if (Math.abs(amount) >= 100000000) {
+  if (Math.abs(amount) >= 100000000 || Math.abs(Math.round(amount / 10000)) >= 10000) {
     const eok = amount / 100000000;
     return `${Number.isInteger(eok) ? eok.toFixed(0) : eok.toFixed(1)}억`;
   }

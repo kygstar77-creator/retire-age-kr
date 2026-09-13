@@ -27,22 +27,33 @@ const RATE_2026 = 0.0719;           // 2026 건강보험료율 7.19%
 const LTC_2026 = 0.9448 / 7.19;     // 2026 장기요양보험료(건보료 대비) ≈ 13.14%
 const POINT_2026 = 211.5;           // 2026 재산보험료 부과점수당 금액(원)
 const EMP_SHARE = 0.5;              // 직장가입자 보수월액보험료 근로자 부담 50%
-const LOCAL_MIN = 19780;            // 지역 최저보험료(근사)
+const LOCAL_MIN = 20160;            // 2026 지역가입자 소득 최저보험료(원)
+
+// 재산보험료 부과점수 — 국민건강보험법 시행령 [별표 4], 60등급 계단표(재산세 과표 만원 → 점수).
+// 출처: 국민건강보험공단 재산등급별 점수 https://www.nhis.or.kr/nhis/policy/wbhada07910p01.do
+const PROPERTY_GRADES = [
+  [450, 22], [900, 44], [1350, 66], [1800, 97], [2250, 122], [2700, 146], [3150, 171], [3600, 195], [4050, 219], [4500, 244],
+  [5020, 268], [5590, 294], [6220, 320], [6930, 344], [7710, 365], [8590, 386], [9570, 412], [10700, 439], [11900, 465], [13300, 490],
+  [14800, 516], [16400, 535], [18300, 559], [20400, 586], [22700, 611], [25300, 637], [28100, 659], [31300, 681], [34900, 706], [38800, 731],
+  [43200, 757], [48100, 785], [53600, 812], [59700, 841], [66500, 881], [74000, 921], [82400, 961], [91800, 1001], [103000, 1041], [114000, 1091],
+  [127000, 1141], [142000, 1191], [158000, 1241], [176000, 1291], [196000, 1341], [218000, 1391], [242000, 1451], [270000, 1511], [300000, 1571], [330000, 1641],
+  [363000, 1711], [399300, 1781], [439230, 1851], [483153, 1921], [531468, 1991], [584615, 2061], [643077, 2131], [707385, 2201], [778124, 2271], [Infinity, 2341]
+];
+export function propertyPoints(taxBaseManwon) {
+  const v = Math.max(0, Number(taxBaseManwon) || 0);
+  if (v <= 0) return 0;
+  for (const [upper, pts] of PROPERTY_GRADES) if (v <= upper) return pts;
+  return 2341;
+}
 
 // 지역가입자 월 건강보험료 근사 추정 (2026: 7.19%, 점수단가 211.5원, 재산 1억 공제, 장기요양 포함)
 // 정확한 금액은 국민건강보험공단 확인 필요 — 참고용 근사치.
 export function estimateLocalPremium({ chargeableIncomeManwon = 0, propertyTaxBaseEok = 0 }) {
   const incomeMonthly = (Math.max(0, Number(chargeableIncomeManwon) || 0) * 10000) * RATE_2026 / 12;
-  const base = Math.max(0, (Number(propertyTaxBaseEok) || 0) - 1); // 억, 재산 1억 기본공제
-  let propMonthly = 0;
-  if (base > 0) {
-    const pts = base <= 1 ? base * 280
-      : base <= 3 ? 280 + (base - 1) * 220
-      : base <= 5 ? 720 + (base - 3) * 160
-      : 1040 + (base - 5) * 120;
-    propMonthly = pts * POINT_2026;
-  }
-  const health = Math.max(LOCAL_MIN, incomeMonthly + propMonthly);
+  const baseManwon = Math.max(0, ((Number(propertyTaxBaseEok) || 0) - 1) * 10000); // 만원, 재산 1억 기본공제
+  const propMonthly = baseManwon > 0 ? propertyPoints(baseManwon) * POINT_2026 : 0;
+  // 공단 산식: 소득보험료(최저보험료 하한) + 재산보험료. 재산보험료가 최저보험료를 흡수하지 않는다.
+  const health = Math.max(LOCAL_MIN, incomeMonthly) + propMonthly;
   return { incomeMonthly: Math.round(incomeMonthly), propMonthly: Math.round(propMonthly), monthly: Math.round(health * (1 + LTC_2026)) };
 }
 

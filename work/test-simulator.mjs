@@ -207,14 +207,7 @@ assert(
   assert(taxed > 0, 'Invariant failed: 적립기 배당세가 0원.');
 }
 
-// (11) 해외 양도세는 과표 3억 초과분에 27.5%를 적용해야 한다(P6)
-{
-  const gain = 500000000; const exempt = 2500000;
-  const base = gain - exempt;
-  const expected = 300000000 * 0.22 + (base - 300000000) * 0.275;
-  const single = base * 0.22;
-  assert(expected > single, 'Invariant failed: 2단 누진이 단일세율보다 크지 않음(테스트 전제 오류).');
-}
+// (11) 예전 27.5% 구간 검사는 잘못된 규칙이라 삭제 — (21)에서 22% 단일로 검사한다.
 
 // (12) 국민연금 연기수령은 가산돼야 한다(P9)
 {
@@ -365,3 +358,31 @@ console.log('(19) pension start age / claim clamp OK');
   assert(none.earliestRetirementAge == null && none.displayResult.rows.length > 2, '(20) 가능 나이 없으면 목표 나이 흐름으로 대체');
 }
 console.log('(20) one display series across screens OK');
+
+
+// (21) 해외주식 양도세는 22% 단일. 250만원 공제. (국세청·한국투자증권·유안타·하나증권 안내)
+{
+  const { calculateInvestmentTaxes } = await import('../src/utils/taxCalculator.js');
+  const t = calculateInvestmentTaxes({ foreignStockGain: 1000000000 }).foreignStockTax;
+  assert(Math.abs(t.tax - (1000000000 - 2500000) * 0.22) < 1, '(21) 10억 차익 = (10억-250만)×22%');
+}
+console.log('(21) foreign stock tax flat 22% OK');
+
+// (22) 건보료 재산 점수는 법정 60등급표. 과표 3억(공제 후 2억) → 24등급 586점.
+{
+  const { propertyPoints, estimateLocalPremium } = await import('../src/firemap-v2/healthInsurance.js');
+  assert(propertyPoints(20000) === 586, '(22) 2억 → 586점');
+  assert(propertyPoints(450) === 22 && propertyPoints(451) === 44, '(22) 1·2등급 경계');
+  assert(propertyPoints(10000000) === 2341, '(22) 상한 2,341점');
+  // 소득 0 · 과표 3억: 최저보험료 20,160 + 586×211.5 = 144,099 → 장기요양 포함 163,0xx원 (공단 산식)
+  const e = estimateLocalPremium({ chargeableIncomeManwon: 0, propertyTaxBaseEok: 3 });
+  assert(Math.abs(e.monthly - 163032) < 200, '(22) 과표 3억 소득 0 → 약 163,000원, 실제 ' + e.monthly);
+}
+console.log('(22) health insurance property grades OK');
+
+// (23) 목표 나이가 현재 나이보다 앞이면 현재 나이로 맞춘다.
+{
+  const s = buildSimulation({ currentAge: 50, targetRetirementAge: 30, financialAsset: 500000000, monthlyInvestment: 1000000, monthlyLivingCost: 2000000 });
+  assert(s.inputs.targetRetirementAge === 50 && s.requiredFireAssetNominal > 0, '(23) 목표<현재 방어');
+}
+console.log('(23) target<current guard OK');

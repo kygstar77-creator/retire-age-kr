@@ -151,13 +151,15 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
 
   // 물가 낮은 곳(접힘)
   const cities = useMemo(() => {
-    const baseEnd = scenarioEndAge(simulation);
-    return FIRE_CITIES.filter((c) => c.krw < inp.monthlyLivingCost).map((c) => { const sc = buildScenario(inp, { monthlyLivingCost: c.krw }); return { ...c, gain: scenarioEndAge(sc) - baseEnd, runway: runwayText(sc) }; }).filter((c) => c.gain > 0).sort((a, b) => b.gain - a.gain).slice(0, 3);
+    // '앞당겨져요'는 파이어 나이가 몇 년 빨라지는지다. 예전엔 자산 수명 차이를 써서 2배 넘게 부풀려졌다.
+    const baseAge = simulation.earliestRetirementAge;
+    if (!baseAge) return [];
+    return FIRE_CITIES.filter((c) => c.krw < inp.monthlyLivingCost).map((c) => { const sc = buildScenario(inp, { monthlyLivingCost: c.krw }); const age = sc.earliestRetirementAge; return { ...c, gain: age ? baseAge - age : 0, runway: runwayText(sc) }; }).filter((c) => c.gain > 0).sort((a, b) => b.gain - a.gain).slice(0, 3);
   }, [inp, simulation]);
   // 건보료 추정 — 건보료 화면과 같은 경로로 계산한다(금융소득 1,000만 게이트 포함).
   // 예전엔 파이어 시점 '미래 명목' 자산의 4%를 전액 금융소득으로 넣어 4배 넘게 부풀려졌다.
   const atE = simulation.atEarliest || null;
-  const fireAssetToday = simulation.requiredAssetNow || inp.financialAsset || 0;
+  const fireAssetToday = simulation.displayResult.fireAsset || inp.financialAsset || 0;
   const hiEst = (() => {
     try {
       const finMan = Math.round((fireAssetToday * 0.04) / 10000);

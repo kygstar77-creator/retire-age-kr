@@ -61,11 +61,9 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
   const investType = Math.round(data.investType) || 0; // 0 국내(면제) · 1 해외 양도세２２% · 2 배당１５.４% · 3 둘 다
   const dividendYield = toRate(data.dividendYield);
   const DIV_TAX = 0.154; const CG_EXEMPT = 2500000;
-  // 해외주식 양도세 — 과표 3억 이하 22%, 초과분 27.5%(taxCalculator와 같은 구간)
-  const capitalGainTax = (gain) => {
-    const base = Math.max(0, gain - CG_EXEMPT);
-    return base <= 300000000 ? base * 0.22 : 300000000 * 0.22 + (base - 300000000) * 0.275;
-  };
+  // 해외주식 양도세 — 250만원 공제 후 22% 단일(양도세 20% + 지방세 2%). 구간 없음.
+  // 3억 초과 27.5%는 국내 상장주식 대주주 세율이라 해외주식엔 해당 없다(국세청·증권사 안내).
+  const capitalGainTax = (gain) => Math.max(0, gain - CG_EXEMPT) * 0.22;
   let depletionAge = null;
   const rows = [];
 
@@ -329,6 +327,8 @@ export function normalizeInputs(inputs) {
   const data = Object.fromEntries(
     Object.entries(merged).map(([key, value]) => [key, Number(String(value ?? '').replace(/[^\d.-]/g, '')) || 0])
   );
+  // 목표 나이가 현재 나이보다 앞이면 목표 행이 없어 필요 자산이 0원으로 나온다. 현재 나이로 맞춘다.
+  if (data.targetRetirementAge < data.currentAge) data.targetRetirementAge = data.currentAge;
   // 노령연금 개시 나이는 출생연도로 법에 정해져 있다. 화면에서 고칠 수 있는 값이 아니므로 여기서 정한다.
   // 이렇게 막지 않으면 공유 링크의 pen 값이 그대로 들어와 40세 개시 같은 값도 통했다.
   const birthYear = data.startYear - data.currentAge;

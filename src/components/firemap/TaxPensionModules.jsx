@@ -28,7 +28,7 @@ export function ForeignStockTaxCard({ inputs, onApply }) {
         ]}
       />
       <Card>
-        <SectionHead size="sm" kicker="해외주식 양도세" title="1년에 얼마나 팔아요?" desc="250만원 공제 후 22% · 3억 넘는 부분은 27.5%" />
+        <SectionHead size="sm" kicker="해외주식 양도세" title="1년에 얼마나 팔아요?" desc="250만원 공제 후 22%" />
         <RangeField label="연 매도 차익" value={gain} min={0} max={300000000} step={1000000} money format={eok} chips={[10000000, 50000000, 100000000]} onChange={setGain} hint="손실과 이익을 합친 금액이에요" />
         {onApply && (hasCG
           ? <Button variant="secondary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next }); toast('해외 양도세 반영을 해제했어요'); }}>✓ 반영 중 · 해외 양도세 · 해제</Button>

@@ -134,10 +134,6 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
   const over1000 = annual > 10000000;
   const nowMonth = Number(todayStr().split('-')[1]);
 
-  const appliedMonthly = Math.round(monthlyAfter);
-  const leftover = Math.round(Number(inputs?.dividendIncomeMonthly) || 0);
-  const isApplied = leftover > 0;
-  const unapply = () => { if (onChange) onChange('dividendIncomeMonthly', 0); toast('결과에서 뺐어요'); };
 
   const heroValue = target <= 0 ? '—' : years == null ? '아직' : years === 0 ? '지금' : String(fireAge);
   const heroUnit = target > 0 && years != null && years > 0 ? '세' : '';
@@ -193,12 +189,6 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
         <MiniCalendar />
       </Card>
 
-      {isApplied && (
-        <Notice tone="warn" icon="⚠️">
-          예전에 넣어둔 배당 소득 월 <b className="num">{eok(leftover)}</b>이 결과에 들어 있어요 · 연 수익률에 배당이 이미 포함돼 두 번 세어져요
-          <Button variant="secondary" size="sm" className="ds-mt-2" onClick={unapply}>결과에서 빼기</Button>
-        </Notice>
-      )}
 
       <Card>
         <SectionHead size="sm" kicker="읽어둘 것" title="배당은 수익률에 이미 들어 있어요" desc="결과 화면의 연 수익률은 주가 상승과 배당을 합친 값이에요" />

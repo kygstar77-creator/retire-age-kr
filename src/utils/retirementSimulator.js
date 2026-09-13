@@ -170,6 +170,23 @@ export function findEarliestRetirementAge(inputs) {
   return null;
 }
 
+// 필요 자산 — 지금 그만둬도 자산이 마르지 않는 최소 금액(오늘 돈).
+// 파이어 나이를 찾는 것과 같은 시뮬레이션을 쓴다. 그래서 지금 자산이 이 금액에 닿는 순간
+// 파이어 가능 나이가 현재 나이가 되고 달성률도 100%가 된다. 4% 룰과 답이 갈리지 않는다.
+export function findRequiredAssetNow(inputs) {
+  const data = normalizeInputs(inputs);
+  const cur = data.currentAge;
+  const fits = (v) => findEarliestRetirementAge({ ...data, financialAsset: v }) === cur;
+  let lo = 0;
+  let hi = 5000000000;
+  if (!fits(hi)) return null;
+  for (let i = 0; i < 26; i += 1) {
+    const mid = (lo + hi) / 2;
+    if (fits(mid)) hi = mid; else lo = mid;
+  }
+  return Math.round(hi);
+}
+
 export function compareWorkMoreScenarios(inputs) {
   const data = normalizeInputs(inputs);
   return [0, 1, 2, 3].map((extraYears) => {
@@ -234,6 +251,7 @@ export function buildSimulation(inputs) {
       depletionAge: er.depletionAge
     };
   }
+  const requiredAssetNow = findRequiredAssetNow(data);
   const fireGap = requiredFireAssetNominal - retirementFinancialAsset;
   const bridgeYears = Math.max(0, data.expectedPensionAge - data.targetRetirementAge);
   const runwayYears = targetResult.depletionAge
@@ -268,6 +286,7 @@ export function buildSimulation(inputs) {
     retirementFinancialAsset,
     finalFinancialAsset: finalRow?.financialAsset ?? targetResult.finalFinancialAsset,
     safeWithdrawalRate,
+    requiredAssetNow,
     requiredFireAssetByFourPercent,
     requiredFireAssetNominal,
     atEarliest,

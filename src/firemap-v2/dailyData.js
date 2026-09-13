@@ -23,7 +23,7 @@ export function dailyNeedOf(simulation) {
   if (!simulation || !simulation.inputs) return null;
   const inp = simulation.inputs;
   const fireAge = simulation.earliestRetirementAge || inp.targetRetirementAge;
-  const target = simulation.requiredFireAssetByFourPercent || 0;
+  const target = simulation.requiredAssetNow || 0;
   const daysRemaining = Math.max(30, (fireAge - inp.currentAge) * 365.25);
   const gap = target - inp.financialAsset;
   return gap > 0 ? Math.max(1000, Math.round(gap / daysRemaining)) : null;

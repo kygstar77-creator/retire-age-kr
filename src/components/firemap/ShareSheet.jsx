@@ -58,7 +58,7 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
   const year = new Date().getFullYear() - (Number(inp.currentAge) || 35);
   const [hideAmt, setHideAmt] = useState(false);
   const [busy, setBusy] = useState(false);
-  const need = Math.round(simulation.requiredFireAssetByFourPercent || 0);
+  const need = Math.round(simulation.requiredAssetNow || 0);
   const asset = Number(inp.financialAsset) || 0;
   const title = `${year}년생 · ${earliest ? `${earliest}세 파이어 가능` : '파이어 준비 중'} · ${hideAmt ? '자산 비공개' : `자산 ${formatWon(asset)}`} · ${roundNo()}회차`;
   const body = [

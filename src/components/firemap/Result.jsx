@@ -1,12 +1,13 @@
-// 결과 — 숫자 1(파이어 나이) + 필요 자산 + 레버 3 + 인증 카드. 세그먼트: 몇 살에? | N억이면?(역산).
-// 18블록·12~20버튼·팝업 2 → 6블록·버튼 ≤ 10·팝업 0. 근거: 최종본 §3-2, 4차 '얼마' 1위, ChooseFI 레버 3, TDS Result.
+// 결과 — 파이어 나이 하나를 크게 띄우고, 나머지 숫자에는 어느 나이 기준인지 이름표를 붙인다.
+// 나이는 둘뿐이다: 내가 적은 '목표 나이'와, 계산이 찾아낸 '파이어 가능 나이'.
+// 필요 자산도 파이어 나이와 같은 시뮬레이션으로 구한다(retirementSimulator의 findRequiredAssetNow).
+// 'N억이면?' 탭은 없앴다 — 바꿔보기에서 '지금 자산'을 움직이면 같은 답이 나온다.
 import { useEffect, useMemo, useState } from 'react';
-import { TopBar, StatHero, Card, SectionHead, Button, Fold, Tabs, RangeField, Stat, StatTiles } from '../../ui/index.js';
+import { TopBar, StatHero, Card, SectionHead, Button, StatTiles } from '../../ui/index.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, buildGrowthSeries, scenarioEndAge, survivalPhrase, runwayText } from '../../firemap-v2/scenarios.js';
-import { simulateRetirement, inputsIsReal, monteCarloSuccess } from '../../utils/retirementSimulator.js';
+import { inputsIsReal, monteCarloSuccess } from '../../utils/retirementSimulator.js';
 import { statsRank } from '../../firemap-v2/rank.js';
-import { statsTopPercentile } from '../../firemap-v2/stats.js';
 import { submitScoreFromSim, fetchUserRank, fetchAggregates, assetBandOf, ASSET_BAND_LABELS } from '../../utils/firemapScoresApi.js';
 import { saveRankSnapshot } from '../../firemap-v2/rankHistory.js';
 import { FIRE_CITIES } from '../../firemap-v2/cities.js';
@@ -72,11 +73,6 @@ function AssetJourney({ simulation }) {
       if (hit && hit.age > cur.age) items.push({ age: hit.age, label: `자산 ${formatWon(t)} 돌파`, sub: null, hi: false });
     }
   });
-  const req = simulation.requiredFireAssetByFourPercent;
-  if (req && req > cur.financialAsset) {
-    const hit = rows.find((r) => r.financialAsset >= req);
-    if (hit) items.push({ age: hit.age, label: '필요 자산 달성', sub: `오늘 화폐로 ${formatWon(req)}`, hi: true });
-  }
   if (simulation.earliestRetirementAge) items.push({ age: simulation.earliestRetirementAge, label: '가장 이른 파이어', sub: null, hi: true });
   items.push({ age: simulation.inputs.targetRetirementAge, label: '목표 파이어', sub: null, hi: true });
   const seen = new Set();
@@ -115,9 +111,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
   const earliest = simulation.earliestRetirementAge;
   const rankEarliest = rs.earliestRetirementAge;
   const target = inp.targetRetirementAge;
-  const need = Math.round(simulation.requiredFireAssetByFourPercent || 0);
   const ph = survivalPhrase(simulation);
-  const [mode, setMode] = useState('age');
   const [live, setLive] = useState(null);
   const [agg, setAgg] = useState(null);
   const [bandRank, setBandRank] = useState(null);
@@ -168,7 +162,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
   // 건보료 추정 — 건보료 화면과 같은 경로로 계산한다(금융소득 1,000만 게이트 포함).
   // 예전엔 파이어 시점 '미래 명목' 자산의 4%를 전액 금융소득으로 넣어 4배 넘게 부풀려졌다.
   const atE = simulation.atEarliest || null;
-  const fireAssetToday = simulation.requiredFireAssetByFourPercent || inp.financialAsset || 0;
+  const fireAssetToday = simulation.requiredAssetNow || inp.financialAsset || 0;
   const hiEst = (() => {
     try {
       const finMan = Math.round((fireAssetToday * 0.04) / 10000);
@@ -181,41 +175,24 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
     <main className="fm-screen fm-scroll fm-has-tabbar ds-screen-gap">
       <TopBar title="결과" onHome={() => { try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch { /* ignore */ } }} actions={<Button variant="ghost" size="sm" onClick={() => { try { sessionStorage.setItem('fm_recalc', '1'); } catch { /* ignore */ } onMove('question'); }}>새로 계산</Button>} />
       <ConsentSheet />
-      <Tabs items={[{ key: 'age', label: '몇 살에?' }, { key: 'asset', label: 'N억이면?' }]} value={mode} onChange={setMode} label="결과 모드" />
-
-      {mode === 'asset' ? <ReverseMode simulation={simulation} /> : (
-        <>
+      <>
           <StatHero
             tone="dark"
             label={`내 파이어 나이 · ${base.ageBandLabel} 또래 기준`}
             value={earliest ? `${earliest}` : '아직'} unit={earliest ? '세' : ''}
             delta={delta}
-            sub={<>{atE && atE.requiredToday > 0 ? <>지금 <b className="num">{eok(inp.financialAsset)}</b> · {atE.age}세에 <b className="num">{eok(atE.assetToday)}</b> · 오늘 돈 기준</> : <>연금·부업만으로 생활비가 채워져요</>}{success != null ? <> · 성공확률 <b className="num">{success}%</b></> : null}</>}
+            sub={<>지금 자산 <b className="num">{eok(inp.financialAsset)}</b>{success != null ? <> · 성공확률 <b className="num">{success}%</b></> : null}</>}
             tiles={[
+              { label: `목표 ${target}세 · 자산 수명`, value: ph.runway },
               { label: `${atE ? atE.age : target}세 때 자산`, value: atE ? eok(atE.assetToday) : (simulation.retirementFinancialAsset ? eok(simulation.retirementFinancialAsset) : '—') },
-              { label: '자산 수명', value: ph.runway },
               { label: `같은 구간 · ${ASSET_BAND_LABELS[myBand]}`, value: bandRank ? `상위 ${bandRank.percentile}%` : (live ? `${live.position.toLocaleString()}등` : '집계 중'), onClick: () => onMove('ranking') }
             ]}
           >
-            {live && <p className="ds-caption ds-mt-3 ds-mt-3">함께 계산한 {live.total.toLocaleString()}명 중 {live.position.toLocaleString()}등 · 등수는 세전 공정 비교</p>}
+            <p className="ds-caption ds-mt-3">{atE ? '금액은 오늘 돈 기준이에요' : null}{live ? `${atE ? ' · ' : ''}함께 계산한 ${live.total.toLocaleString()}명 중 ${live.position.toLocaleString()}등` : ''}</p>
           </StatHero>
 
           <FireWidgetCard simulation={simulation} onMove={onMove} />
 
-          {atE && atE.requiredToday > 0 && (
-            <Card>
-              <SectionHead size="sm" kicker="다른 잣대" title="원금을 안 헐고 버티려면" desc="오늘 돈 기준 · 국민연금은 빼고 계산했어요" />
-              <StatTiles items={[
-                { label: '필요 자산', value: eok(atE.requiredToday) },
-                { label: `${atE.age}세 때 자산`, value: eok(atE.assetToday) }
-              ]} />
-              <p className="ds-caption ds-mt-2">
-                {atE.assetToday >= atE.requiredToday
-                  ? `${atE.age}세에 원금을 안 헐어도 생활비가 나와요`
-                  : `${atE.age}세 파이어는 원금을 조금씩 헐고 국민연금까지 더해 ${inp.simulationUntilAge}세까지 버티는 계산이에요`}
-              </p>
-            </Card>
-          )}
 
           <div className="ds-bottomcta ds-mt-0">
             <Button variant="primary" size="lg" onClick={() => { track('cert_open', {}); setShareOpen(true); }}>🪪 인증 카드</Button>
@@ -245,8 +222,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
           <CommunityCta where="result" />
 
           <p className="ds-caption ds-textcenter">통계청 2024 가계금융복지조사 · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)} · 참고용 계산이에요 · 투자 자문이 아니에요</p>
-        </>
-      )}
+      </>
 
       <ShareSheet open={shareOpen} onClose={() => setShareOpen(false)} simulation={simulation} onMove={onMove} />
     </main>

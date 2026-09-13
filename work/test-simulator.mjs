@@ -1,4 +1,4 @@
-import { simulateRetirement, buildSimulation } from '../src/utils/retirementSimulator.js';
+import { simulateRetirement, buildSimulation, findEarliestRetirementAge } from '../src/utils/retirementSimulator.js';
 import { buildGrowthSeries } from '../src/firemap-v2/scenarios.js';
 import { earlyClaim } from '../src/firemap-v2/pension.js';
 
@@ -250,3 +250,14 @@ assert(
 }
 
 console.log('Simulation regression and invariant tests passed.');
+
+// (16) 필요 자산과 파이어 나이는 같은 잣대여야 한다.
+// 지금 자산이 '필요 자산'에 닿으면 파이어 가능 나이가 현재 나이가 되고, 그 아래면 안 된다.
+{
+  const base = { currentAge: 35, targetRetirementAge: 50, financialAsset: 300000000, monthlyInvestment: 2000000, monthlyLivingCost: 2500000 };
+  const need = buildSimulation(base).requiredAssetNow;
+  assert(need > 0, '(16) 필요 자산이 계산되어야 한다');
+  assert(findEarliestRetirementAge({ ...base, financialAsset: need }) === base.currentAge, '(16) 필요 자산만큼 있으면 지금 파이어할 수 있어야 한다');
+  assert(findEarliestRetirementAge({ ...base, financialAsset: need * 0.9 }) > base.currentAge, '(16) 필요 자산에 못 미치면 지금 파이어할 수 없어야 한다');
+}
+console.log('(16) required-asset / fire-age same yardstick OK');

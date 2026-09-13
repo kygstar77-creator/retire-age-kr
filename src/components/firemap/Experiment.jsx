@@ -45,7 +45,7 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
   const netWorth = simulation.netWorth;
   const hasAssetExtra = reVal > 0 || debtVal > 0 || rentVal > 0;
   const earliest = simulation.earliestRetirementAge;
-  const need = Math.round(simulation.requiredFireAssetByFourPercent || 0);
+  const need = Math.round(simulation.requiredAssetNow || 0);
 
   const PREVIEW_ONLY = ['investType', 'dividendYield'];
   // 샌드박스 슬라이더가 직접 바꾸는 핵심 값들. 이 값들이 (질문 재입력 등으로) 실제로 바뀐 경우에만 샌드박스를 새로 시드.
@@ -94,9 +94,9 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
         value={earliest ? `${earliest}` : '아직'} unit={earliest ? '세' : ''}
         sub={heroSub}
         tiles={[
-          { label: '필요 자산', value: eok(need) },
-          { label: '자산 수명', value: runwayText(simulation) },
-          { label: '파이어 때 자산', value: simulation.retirementFinancialAsset ? eok(simulation.retirementFinancialAsset) : '—' }
+          { label: '필요 자산 · 오늘 돈', value: eok(need) },
+          { label: `목표 ${simulation.inputs.targetRetirementAge}세 · 자산 수명`, value: runwayText(simulation) },
+          { label: `목표 ${simulation.inputs.targetRetirementAge}세 때 자산`, value: simulation.retirementFinancialAsset ? eok(simulation.retirementFinancialAsset) : '—' }
         ]}
       />
 

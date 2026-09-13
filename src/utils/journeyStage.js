@@ -21,7 +21,7 @@ export function journeyStage(simulation, opts = {}) {
   const targetAge = Number(inp.targetRetirementAge) || 0;
   const asset = Number(inp.financialAsset) || 0;
   const monthlyInvestment = Number(inp.monthlyInvestment) || 0;
-  const target = Math.max(0, Math.round((simulation && simulation.requiredFireAssetByFourPercent) || 0));
+  const target = Math.max(0, Math.round((simulation && simulation.requiredAssetNow) || 0));
   const pct = target > 0 ? Math.max(0, Math.min(100, Math.round((asset / target) * 100))) : 0;
 
   let calculated = false; try { calculated = !!localStorage.getItem('firemap-inputs-v3'); } catch { /* ignore */ }

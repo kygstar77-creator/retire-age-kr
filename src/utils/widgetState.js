@@ -11,7 +11,7 @@ export function buildWidgetState(simulation) {
   const fireAge = earliest || inp.targetRetirementAge || null;
   const dday = (earliest && fireAge && cur) ? Math.max(0, Math.round((fireAge - cur) * 365.25)) : null;
   const asset = Number(inp.financialAsset) || 0;
-  const target = Math.round((simulation && simulation.requiredFireAssetByFourPercent) || 0);
+  const target = Math.round((simulation && simulation.requiredAssetNow) || 0);
   const progressPct = target > 0 ? Math.max(0, Math.min(100, Math.round((asset / target) * 100))) : 0;
   return {
     calculated: hasCalculated(),

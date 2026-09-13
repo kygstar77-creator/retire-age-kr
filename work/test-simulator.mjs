@@ -393,18 +393,19 @@ console.log('(23) target<current guard OK');
 {
   const base = { currentAge: 40, targetRetirementAge: 40, financialAsset: 2500000000, monthlyInvestment: 0, monthlyLivingCost: 1000000, investType: 2, dividendYield: 4, annualReturnRate: 4, inflationRate: 0, expectedMonthlyPension: 0 };
   // 자산 25억 × 4% = 배당 1억. 40세에 파이어하면 첫 은퇴 해는 41세 행(첫해는 수익 미적용이라 자산 그대로 25억)
+  const divBase = (res) => res.rows.find((x) => x.age === 40).financialAsset * 0.04;  // 41세 행의 세금은 40세 말 자산에 매긴다
   const r = simulateRetirement(base, 40);
   const row = r.rows.find((x) => x.age === 41);
-  const eff = row.investTax / (2500000000 * 0.04);
+  const eff = row.investTax / divBase(r);
   assert(Math.abs(eff - 0.1747) < 0.004, '(24) 배당 1억 실효세율 ≈17.5%, 실제 ' + (eff * 100).toFixed(2) + '%');
   const r2 = simulateRetirement({ ...base, financialAsset: 5000000000 }, 40);
-  const eff2 = r2.rows.find((x) => x.age === 41).investTax / (5000000000 * 0.04);
+  const eff2 = r2.rows.find((x) => x.age === 41).investTax / divBase(r2);
   assert(Math.abs(eff2 - 0.2788) < 0.005, '(24) 배당 2억 실효세율 ≈27.9%, 실제 ' + (eff2 * 100).toFixed(2) + '%');
   const r3 = simulateRetirement({ ...base, financialAsset: 1250000000, partTimeIncomeAfterRetirement: 2500000 }, 40);
-  const eff3 = r3.rows.find((x) => x.age === 41).investTax / (1250000000 * 0.04);
+  const eff3 = r3.rows.find((x) => x.age === 41).investTax / divBase(r3);
   assert(Math.abs(eff3 - 0.1774) < 0.005, '(24) 배당 5,000만+기타 3,000만 ≈17.7%, 실제 ' + (eff3 * 100).toFixed(2) + '%');
   const r4 = simulateRetirement({ ...base, financialAsset: 400000000 }, 40);
-  const eff4 = r4.rows.find((x) => x.age === 41).investTax / (400000000 * 0.04);
+  const eff4 = r4.rows.find((x) => x.age === 41).investTax / divBase(r4);
   assert(Math.abs(eff4 - 0.154) < 0.0001, '(24) 배당 1,600만은 원천징수 15.4%');
 }
 console.log('(24) comprehensive financial income tax OK');

@@ -142,7 +142,7 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
         <p className="ds-caption ds-mt-2">파이어 <b className="num">{draft.targetRetirementAge}세</b> 기준 · 납입 원금 <b className="num">{eok(principalAtRet)}</b> · 투자 수익 <b className="num">{eok(gainsAtRet)}</b> · 파이어 후엔 쓰면서 줄어요</p>
       </Fold>
 
-      <p className="ds-caption ds-textcenter">참고용 계산이에요 · 투자 권유가 아니에요</p>
+      <p className="ds-caption ds-textcenter">투자 권유가 아니에요</p>
 
       {dirty && <BottomCTA fixed className="sc-exp-cta" secondary={{ label: '되돌리기', onClick: reset }} primary={{ label: '이 조건을 내 결과로 저장', onClick: commit }} />}
     </main>

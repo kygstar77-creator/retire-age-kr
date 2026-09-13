@@ -37,7 +37,6 @@ export default function FireWidgetCard({ simulation, onMove }) {
           <Stat label="기준금리" value={base || '—'} size="md" />
           <Stat label="물가" value={cpiNow || '—'} size="md" />
         </div>
-        <p className="ds-caption ds-textcenter ds-mt-2">참고용이에요</p>
       </Card>
 
       <Card variant="soft" padding="md">

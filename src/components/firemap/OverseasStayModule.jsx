@@ -38,7 +38,7 @@ export function OverseasStayModule({ inputs, simulation, onPreviewPatch }) {
       <Chips className="ds-mt-2"><Chip on={pause} onClick={() => setPause(!pause)}>건보료 정지 가정</Chip></Chips>
       <Notice tone="good" className="ds-mt-3">이 조건이면 <b>{runwayText(scenario)}</b>까지 — {deltaText(simulation, scenario)} · 첫해 절감 약 {formatWon(scenario.firstYearOverseasSavings)}</Notice>
       <Button variant="tint" size="md" full className="ds-mt-3" onClick={() => onPreviewPatch && onPreviewPatch(patch)}>이 조건 미리보기(바꿔보기)</Button>
-      <p className="ds-caption ds-mt-2 ds-mb-0">참고용 시나리오예요 · 실제 비자·건보료 면제 요건은 제도 확인이 필요해요</p>
+      <p className="ds-caption ds-mt-2 ds-mb-0">실제 비자·건보료 면제 요건은 제도 확인이 필요해요</p>
     </Card>
   );
 }

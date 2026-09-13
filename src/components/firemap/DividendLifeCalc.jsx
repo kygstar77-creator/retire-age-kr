@@ -198,7 +198,7 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
         <p className="ds-body-sm sc-div-note">그래서 이 배당을 결과에 따로 더하면 같은 돈을 두 번 세게 돼요. 이 화면은 배당만 떼어 보는 계산기로 쓰면 돼요.</p>
       </Card>
 
-      <p className="ds-caption ds-textcenter">참고용 계산이에요 · 투자 권유가 아니에요</p>
+      <p className="ds-caption ds-textcenter">투자 권유가 아니에요</p>
     </main>
   );
 }

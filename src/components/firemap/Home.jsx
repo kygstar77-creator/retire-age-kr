@@ -71,7 +71,7 @@ export default function Home({ onStart, onMove, simulation }) {
         <p className="ds-caption ds-mt-2 ds-mb-0">저축·생활비·부업을 바꾸면 파이어 나이가 얼마나 앞당겨지는지도 같이 나와요</p>
       </Card>
 
-      <CommunityCta where="landing" title="카페 · 오픈채팅" desc="같은 구간 사람들이 숫자와 후기를 올려요" />
+      <CommunityCta where="landing" />
 
       <p className="ds-caption ds-textcenter"><a className="ds-link ds-link--muted" href="/privacy.html">개인정보처리방침</a> · <a className="ds-link ds-link--muted" href="/disclaimer.html">면책</a> · <a className="ds-link ds-link--muted" href="/contact.html">문의</a></p>
     </main>

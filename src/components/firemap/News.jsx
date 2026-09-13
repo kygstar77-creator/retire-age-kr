@@ -149,7 +149,7 @@ export default function News({ onBack }) {
         <SectionHead kicker="🏝️ 파이어 후 하루" title={story.title} size="sm" />
         <p className="ds-p sc-news-story">{story.body}</p>
         <a className="ds-link sc-news-more" href={CAFE_URL} target="_blank" rel="noopener noreferrer">카페에서 진짜 이야기 더 보기 →</a>
-        {OPENCHAT_URL && <a className="ds-link sc-news-more" href={OPENCHAT_URL} target="_blank" rel="noopener noreferrer">오픈채팅에서 물어보기 →</a>}
+        {OPENCHAT_URL && <a className="ds-link sc-news-more" href={OPENCHAT_URL} target="_blank" rel="noopener noreferrer">오픈채팅 →</a>}
       </Card>
 
       {/* 3. 배당락 이번 주 — 데이터 있을 때만 */}

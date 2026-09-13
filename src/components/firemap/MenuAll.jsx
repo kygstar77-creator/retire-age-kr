@@ -19,8 +19,8 @@ const SECTIONS = [
     { ico: '🧭', title: '파이어 유형 테스트', desc: '12문항 · 살 도시 Top3', to: 'firetype' }
   ] },
   { label: '카페 · 소식', items: [
-    { ico: '🟢', title: '파이어맵 네이버 카페', desc: '파이어족이 모이는 곳', href: CAFE_URL, ext: true },
-    ...(OPENCHAT_URL ? [{ ico: '💬', title: '카카오톡 오픈채팅', desc: '질문 하나 던지고 가도 돼요', href: OPENCHAT_URL, ext: true }] : []),
+    { ico: '🟢', title: '파이어맵 네이버 카페', href: CAFE_URL, ext: true },
+    ...(OPENCHAT_URL ? [{ ico: '💬', title: '카카오톡 오픈채팅', href: OPENCHAT_URL, ext: true }] : []),
     { ico: '📰', title: '소식', desc: '지표 · 파이어 후 하루 · 배당락', to: 'news' },
     { ico: '▶️', title: '파이어맵 유튜브', desc: '영상으로 보는 파이어', href: YOUTUBE_URL, ext: true },
     { ico: '📚', title: '파이어 백과', desc: '건보료·세금·연금 가이드', href: '/guide/' }
@@ -32,7 +32,7 @@ export default function MenuAll({ onMove }) {
   const go = (to) => { try { track('menu_all', { to }); } catch { /* ignore */ } onMove(to); };
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar ds-screen-gap">
-      <TopBar title="전체" onHome={() => onMove('home')} />
+      <TopBar title="전체" onHome={() => onMove('result')} />
       <Card variant="hero" as="div" padding="md" className="ds-card--flat ds-card--flush">
         <ListRow lead={acc && acc.handle ? '👤' : '🔒'} title={acc && acc.handle ? acc.handle : '로그인 · 기록 지키기'} desc={acc && acc.handle ? '설정 · 알림 · 위젯' : '기기를 바꿔도 저축·랭킹이 이어져요'} trail={acc && acc.handle ? '설정' : '로그인'} accent size="L" onClick={() => go(acc && acc.handle ? 'settings' : 'account')} />
       </Card>

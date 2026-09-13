@@ -86,7 +86,7 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
 
   return (
     <main className={cx('fm-screen fm-scroll fm-has-tabbar ds-screen-gap', dirty && 'ds-has-fixedcta')}>
-      <TopBar title="바꿔보기" onBack={onBack} actions={saved ? <Badge tone="good">저장됨</Badge> : null} />
+      <TopBar title="바꿔보기" onBack={() => onMove('result')} actions={saved ? <Badge tone="good">저장됨</Badge> : null} />
 
       <StatHero
         tone="dark" size="title" className="sc-exp-hero"

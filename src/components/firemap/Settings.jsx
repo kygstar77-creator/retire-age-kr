@@ -65,8 +65,8 @@ export default function Settings({ simulation, onMove, onBack }) {
       </ListGroup>
 
       <ListGroup label="카페 · 정보">
-        <ListRow lead="🟢" title="파이어맵 네이버 카페" desc="파이어족이 모이는 곳" href={CAFE_URL} external />
-        {OPENCHAT_URL && <ListRow lead="💬" title="카카오톡 오픈채팅" desc="질문 하나 던지고 가도 돼요" href={OPENCHAT_URL} external />}
+        <ListRow lead="🟢" title="파이어맵 네이버 카페" href={CAFE_URL} external />
+        {OPENCHAT_URL && <ListRow lead="💬" title="카카오톡 오픈채팅" href={OPENCHAT_URL} external />}
         <ListRow lead="📄" title="면책 안내" href="/disclaimer.html" />
         <ListRow lead="🔒" title="개인정보처리방침" href="/privacy.html" />
         <ListRow lead="✉️" title="문의" href="/contact.html" />

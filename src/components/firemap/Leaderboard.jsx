@@ -67,7 +67,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar ds-screen-gap">
-      <TopBar title="랭킹" onHome={() => onMove('home')} />
+      <TopBar title="랭킹" onHome={() => onMove('result')} />
       <Tabs items={BOARDS} value={board} onChange={setBoard} label="랭킹 종류" />
 
       {!calculated && <EmptyState icon="🧮" title="계산하면 내 등수가 나와요" desc="1분이면 같은 구간에서 몇 등인지 보여줘요" action={{ label: '계산하기', onClick: () => onMove('question') }} />}
@@ -105,7 +105,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
         <Button variant="secondary" size="md" onClick={() => onMove('experiment')}>조건 바꿔 올리기</Button>
       </div>
 
-      <CommunityCta where="ranking" title="내 숫자, 어디에 올릴까요" desc="같은 구간 사람들 글이 카페에 모여요" />
+      <CommunityCta where="ranking" />
     </main>
   );
 }

@@ -27,14 +27,6 @@ export async function fetchLivePresence() {
 }
 
 // 최근 절약 기록(배너 활동 표시용)
-export async function fetchRecentSaves(limit = 8) {
-  try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/firemap_save_events?select=client_id,nickname,today_saved,age_band,updated_at&today_saved=gt.0&order=updated_at.desc&limit=${limit}`, { headers: H });
-    if (!res.ok) return [];
-    return await res.json();
-  } catch { return []; }
-}
-
 // 지금까지 계산한 총 인원(누적 통계)
 export async function fetchTotalCalc() {
   try {

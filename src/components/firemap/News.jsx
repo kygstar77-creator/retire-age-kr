@@ -169,7 +169,7 @@ export default function News({ onBack }) {
       <Tabs items={CATS.map((c) => ({ key: c.key, label: c.key === 'all' ? c.label : `${c.emoji} ${c.label}` }))} value={cat} onChange={(k) => { setCat(k); setOpenId(null); }} variant="pill" label="소식 분류" className="sc-news-cats" />
 
       {rows === null && <Card><Skeleton lines={4} /></Card>}
-      {rows !== null && list.length === 0 && <EmptyState icon="📰" title="아직 이 분야 소식이 없어요" desc="매일 아침 지표, 금요일 랭킹 소식이 올라와요" />}
+      {rows !== null && list.length === 0 && <EmptyState icon="📰" title="아직 이 분야 소식이 없어요" desc="지표는 위 카드에서 볼 수 있어요" />}
       {rows !== null && list.length > 0 && (
         <ListGroup>
           {list.slice(0, shown).map((r) => {

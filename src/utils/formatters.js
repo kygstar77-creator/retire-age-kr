@@ -1,8 +1,8 @@
 export const statusMeta = {
-  stable: { label: '안정', summary: '파이어 가능성이 높습니다' },
+  stable: { label: '안정', summary: '파이어 가능성이 높아요' },
   caution: { label: '주의', summary: '조건을 몇 가지 확인해야 해요' },
   risk: { label: '위험', summary: '목표 나이엔 자산이 부족해요' },
-  neutral: { label: '정보', summary: '참고 지표입니다' }
+  neutral: { label: '정보', summary: '참고 지표예요' }
 };
 
 export function formatWon(value) {

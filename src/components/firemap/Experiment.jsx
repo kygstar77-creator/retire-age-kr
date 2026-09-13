@@ -82,7 +82,7 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
   const heroSub = !earliest
     ? '아직 파이어 나이가 안 나와요 · 생활비를 낮춰보세요'
     : dirty ? '저장 전엔 미리보기예요 · 내 결과엔 아직 반영 안 됐어요'
-      : saved ? '내 결과와 등수에 반영됐어요' : '아래 값을 밀면 위 숫자가 바로 바뀌어요';
+      : saved ? '내 결과와 등수에 반영됐어요' : '값을 바꾸면 위 숫자가 따라 바뀌어요';
 
   return (
     <main className={cx('fm-screen fm-scroll fm-has-tabbar ds-screen-gap', dirty && 'ds-has-fixedcta')}>
@@ -101,16 +101,16 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
       />
 
       <Card>
-        <SectionHead size="sm" kicker="핵심 3개" title="이 셋이 파이어 나이를 정해요" desc="값을 탭하면 직접 입력할 수 있어요" />
-        {money('monthlyInvestment', '월 저축액')}
-        {money('monthlyLivingCost', '파이어 후 월 생활비')}
+        <SectionHead size="sm" kicker="기본 조건" title="월 저축 · 생활비 · 수익률" desc="값을 누르면 직접 입력할 수 있어요" />
+        {money('monthlyInvestment', '월 저축')}
+        {money('monthlyLivingCost', '파이어 후 생활비')}
         {money('partTimeIncomeAfterRetirement', '파이어 후 부업 소득', '물가와 상관없이 고정 수입으로 계산해요')}
       </Card>
 
       <Fold icon="🎂" title="나이·자산" hint={`${draft.currentAge}세 → ${draft.targetRetirementAge}세 · 지금 ${eok(draft.financialAsset)}`}>
-        <RangeField label="현재 나이" value={cleanNumber(draft.currentAge)} min={R.currentAge[0]} max={R.currentAge[1]} step={1} format={ageFmt} onChange={(v) => editDraft('currentAge', v)} />
-        <RangeField label="파이어 나이" value={cleanNumber(draft.targetRetirementAge)} min={R.targetRetirementAge[0]} max={R.targetRetirementAge[1]} step={1} format={ageFmt} onChange={(v) => editDraft('targetRetirementAge', v)} />
-        {money('financialAsset', '현재 금융자산', '주식·예금·현금처럼 파이어 후 생활비로 쓸 수 있는 돈이에요')}
+        <RangeField label="지금 나이" value={cleanNumber(draft.currentAge)} min={R.currentAge[0]} max={R.currentAge[1]} step={1} format={ageFmt} onChange={(v) => editDraft('currentAge', v)} />
+        <RangeField label="목표 나이" value={cleanNumber(draft.targetRetirementAge)} min={R.targetRetirementAge[0]} max={R.targetRetirementAge[1]} step={1} format={ageFmt} onChange={(v) => editDraft('targetRetirementAge', v)} />
+        {money('financialAsset', '지금 자산', '주식·예금·현금처럼 파이어 후 생활비로 쓸 수 있는 돈이에요')}
       </Fold>
 
       <Fold icon="⚙️" title="고급 가정" hint={`저축 ${savingYearsValue}년 · 연봉 ${draft.salaryGrowthRate}% · 물가 ${draft.inflationRate}% · 수익 ${draft.annualReturnRate}%`}>

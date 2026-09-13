@@ -1,56 +1,23 @@
-// 위젯 상태 1벌 — 홈 3숫자 카드와(나중에) 앱 위젯 브리지가 같은 함수를 읽는다.
-// { earliestAge, dday, streak, progressPct, updatedAt } — HIG '정보 하나'·Robinhood % only 원칙.
-import { computeProgress, hasCalculated } from './savingsEngine.js';
-import { todayStr, yesterdayStr, ymdOf } from './dates.js';
-
-const readJSON = (k) => { try { return JSON.parse(localStorage.getItem(k) || 'null'); } catch { return null; } };
-
-// 절약(fm_save.daily)과 적립(fm_daily.days)을 합친 연속 기록일. 오늘 없으면 어제부터 센다.
-export function streakOf() {
-  const a = (readJSON('fm_daily') || {}).days || {};
-  const b = (readJSON('fm_save') || {}).daily || {};
-  const has = (k) => (Number(a[k]) || 0) > 0 || (Number(b[k]) || 0) > 0;
-  let d = new Date();
-  if (!has(todayStr())) d = new Date(Date.now() - 86400000);
-  let s = 0;
-  for (let i = 0; i < 3660; i += 1) {
-    const k = ymdOf(d);
-    if (has(k)) { s += 1; d = new Date(d.getTime() - 86400000); } else break;
-  }
-  return s;
+// 위젯 상태 1벌 — 결과 화면 위젯 카드와(나중에) 앱 위젯 브리지가 같은 함수를 읽는다.
+// 2026-09-14 저축 기능을 걷어내면서 연속 기록·저축 앞당김을 뺐다. 이제 계산 결과만 본다.
+export function hasCalculated() {
+  try { return !!localStorage.getItem('firemap-inputs-v3'); } catch { return false; }
 }
-
-export const loggedToday = () => {
-  const a = (readJSON('fm_daily') || {}).days || {};
-  const b = (readJSON('fm_save') || {}).daily || {};
-  const t = todayStr();
-  return (Number(a[t]) || 0) > 0 || (Number(b[t]) || 0) > 0;
-};
-
-export const loggedYesterday = () => {
-  const a = (readJSON('fm_daily') || {}).days || {};
-  const b = (readJSON('fm_save') || {}).daily || {};
-  const t = yesterdayStr();
-  return (Number(a[t]) || 0) > 0 || (Number(b[t]) || 0) > 0;
-};
 
 export function buildWidgetState(simulation) {
   const inp = (simulation && simulation.inputs) || {};
   const cur = Number(inp.currentAge) || 0;
-  let fireAge = simulation && (simulation.earliestRetirementAge || inp.targetRetirementAge);
-  let actual = null;
-  try { const p = computeProgress(simulation); if (p && p.actualAgeYears != null) actual = p.actualAgeYears; } catch { /* ignore */ }
-  const ageYears = actual != null ? actual : fireAge;
-  const dday = (simulation && simulation.earliestRetirementAge && ageYears && cur) ? Math.max(0, Math.round((ageYears - cur) * 365.25)) : null;
+  const earliest = (simulation && simulation.earliestRetirementAge) || null;
+  const fireAge = earliest || inp.targetRetirementAge || null;
+  const dday = (earliest && fireAge && cur) ? Math.max(0, Math.round((fireAge - cur) * 365.25)) : null;
   const asset = Number(inp.financialAsset) || 0;
   const target = Math.round((simulation && simulation.requiredFireAssetByFourPercent) || 0);
   const progressPct = target > 0 ? Math.max(0, Math.min(100, Math.round((asset / target) * 100))) : 0;
   return {
     calculated: hasCalculated(),
-    earliestAge: (simulation && simulation.earliestRetirementAge) || null,
-    fireAgeYears: ageYears || null,
+    earliestAge: earliest,
+    fireAgeYears: fireAge || null,
     dday,
-    streak: streakOf(),
     progressPct,
     target,
     asset,
@@ -60,5 +27,9 @@ export function buildWidgetState(simulation) {
 
 // 앱(Capacitor) 단계에서 네이티브 위젯 브리지가 읽을 스냅샷. 웹에선 localStorage에만 둔다.
 export function syncWidgetSnapshot(simulation) {
-  try { localStorage.setItem('fm_widget', JSON.stringify(buildWidgetState(simulation))); } catch { /* ignore */ }
+  try {
+    const st = buildWidgetState(simulation);
+    localStorage.setItem('fm_widget_state', JSON.stringify(st));
+    return st;
+  } catch { return null; }
 }

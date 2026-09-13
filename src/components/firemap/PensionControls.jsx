@@ -14,7 +14,7 @@ export default function PensionControls({ inputs, onChange }) {
     ? <>조기수령 <b className="num">{claim}세</b> · <b className="num">{eff.reductionPct}%</b> 줄어 월 <b className="num">{eok(eff.monthly)}</b>로 계산해요</>
     : claim > normalAge
       ? <><b className="num">{claim}세</b>부터 받아요 · 늦게 받는 가산은 아직 안 넣어요</>
-      : <>정상 수령 <b className="num">{normalAge}세</b> 기준이에요 · 당기면 자동으로 줄어요</>;
+      : <>정상 수령 <b className="num">{normalAge}세</b> 기준이에요 · 일찍 받으면 감액돼요</>;
   return (
     <Card>
       <SectionHead size="sm" kicker="국민연금" title="국민연금 조건도 같이 바꿔요" desc="정상보다 일찍 받으면 1년에 6%씩 평생 줄어요" />

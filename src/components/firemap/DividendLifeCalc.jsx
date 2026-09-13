@@ -1,7 +1,7 @@
 // 배당으로 파이어 — 숫자 하나(월 배당이 생활비가 되는 나이) + 입력 3 + 월별 배당 막대 + 배당 캘린더(예상) + 내 계산에 반영.
 // 배당락 예상일은 dividendWatch.js 고정표. 실제 확정은 fetch-dividends(Yahoo)로만.
 import { useMemo, useState } from 'react';
-import { TopBar, Card, SectionHead, RangeField, StatHero, Chips, Chip, Fold, Button, Notice, toast } from '../../ui/index.js';
+import { TopBar, Card, SectionHead, RangeField, StatHero, Chips, Chip, Button, Notice, toast } from '../../ui/index.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { todayStr } from '../../utils/dates.js';
 import { expectedExDates, lastDayOf, YIELD_PRESETS } from '../../firemap-v2/dividendWatch.js';
@@ -74,7 +74,7 @@ function MiniCalendar() {
     <div className="sc-div-cal">
       <div className="sc-div-cal__head">
         <span className="sc-div-cal__title num">{yy}년 {mm}월</span>
-        <span className="sc-div-cal__tag">전부 예상일이에요</span>
+        <span className="sc-div-cal__tag">예상일</span>
       </div>
       <div className="sc-div-cal__grid" role="grid" aria-label={`${mm}월 배당 캘린더`}>
         {WD.map((w, i) => <span key={w} className={`sc-div-cal__wd${i === 0 ? ' sc-div-cal__wd--sun' : ''}`}>{w}</span>)}
@@ -115,7 +115,6 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
   const [yieldPct, setYieldPct] = useState(4.0);
   const [contrib, setContrib] = useState(() => Math.max(0, Number(inputs?.monthlyInvestment) || 500000));
   const [barMode, setBarMode] = useState('quarter');
-  const [divGrowth, setDivGrowth] = useState(0);
 
   const currentAge = Number(inputs?.currentAge) || 35;
   const target = Number(inputs?.monthlyLivingCost) || 0;
@@ -131,37 +130,28 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
   const nowMonth = Number(todayStr().split('-')[1]);
 
   const appliedMonthly = Math.round(monthlyAfter);
-  const isApplied = appliedMonthly > 0 && Math.round(Number(inputs?.dividendIncomeMonthly) || 0) === appliedMonthly;
-  const apply = () => {
-    if (!onChange) return;
-    onChange('dividendIncomeMonthly', appliedMonthly);
-    onChange('dividendIncomeGrowth', divGrowth);
-    // 배당세(재투자)와는 같은 배당을 두 번 세지 않도록 한쪽만 켜요
-    const it = Number(inputs?.investType) || 0;
-    if (it === 2) onChange('investType', 0);
-    else if (it === 3) onChange('investType', 1);
-    toast.good('반영했어요. 결과 숫자가 바뀌어요');
-  };
-  const unapply = () => { if (onChange) onChange('dividendIncomeMonthly', 0); toast('반영을 해제했어요'); };
+  const leftover = Math.round(Number(inputs?.dividendIncomeMonthly) || 0);
+  const isApplied = leftover > 0;
+  const unapply = () => { if (onChange) onChange('dividendIncomeMonthly', 0); toast('결과에서 뺐어요'); };
 
   const heroValue = target <= 0 ? '—' : years == null ? '아직' : years === 0 ? '지금' : String(fireAge);
   const heroUnit = target > 0 && years != null && years > 0 ? '세' : '';
   const heroSub = target <= 0
-    ? '파이어 후 생활비를 먼저 정하면 나이가 나와요'
+    ? '파이어 후 생활비를 먼저 정해 주세요'
     : yieldPct <= 0
-      ? '배당률을 넣으면 나이가 나와요'
+      ? '배당률을 넣어 주세요'
       : years == null
-        ? `${MAX_YEARS}년 안엔 안 닿아요 · 월 적립을 늘려보세요`
-      : years === 0 ? '벌써 생활비를 넘겼어요 · 세후 · 건보료 별도' : '세후 · 건보료 별도';
+        ? `${MAX_YEARS}년 안에는 안 닿아요`
+      : years === 0 ? '이미 생활비를 넘겼어요 · 건보료 별도' : '세후 · 건보료 별도';
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar ds-screen-gap">
       <TopBar title="배당으로 파이어" onBack={onBack} />
 
       <Card>
-        <SectionHead size="sm" kicker="내 조건" title="배당 자산과 배당률" desc="세후 15.4% 기준 · 배당은 전부 다시 투자한다고 봐요" />
+        <SectionHead size="sm" kicker="내 조건" title="배당 자산과 배당률" desc="배당소득세 15.4%를 뺀 금액이에요" />
         <RangeField label="배당 자산" value={asset} min={0} max={3000000000} step={10000000} money format={eok} chips={[10000000, 100000000, 1000000000]} onChange={setAsset} />
-        <RangeField label="배당률" value={yieldPct} min={0} max={12} step={0.1} format={pctFmt} onChange={(v) => setYieldPct(Math.round(v * 10) / 10)} hint="SCHD는 오르는 데 같이 가고, JEPI는 배당은 높지만 상승은 제한돼요" />
+        <RangeField label="배당률" value={yieldPct} min={0} max={12} step={0.1} format={pctFmt} onChange={(v) => setYieldPct(Math.round(v * 10) / 10)} hint="배당이 높을수록 주가 상승은 낮은 편이에요" />
         <Chips className="ds-mt-2">
           {YIELD_PRESETS.map((p) => <Chip key={p.label} on={Math.abs(yieldPct - p.value) < 0.05} onClick={() => setYieldPct(p.value)}>{p.label} {p.value.toFixed(1)}%</Chip>)}
         </Chips>
@@ -184,7 +174,7 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
       {!over2000 && over1000 && <Notice tone="warn" icon="🩺">연 배당 <b className="num">{eok(annual)}</b> · 1,000만원을 넘으면 건보료에 잡혀요</Notice>}
 
       <Card>
-        <SectionHead size="sm" kicker="월별" title="월별 배당" desc="지금 자산 기준 세후 배당이 달마다 얼마씩 들어오는지" action={
+        <SectionHead size="sm" kicker="월별" title="월별 배당" desc="달마다 얼마씩 들어오는지" action={
           <Chips>
             <Chip on={barMode === 'quarter'} onClick={() => setBarMode('quarter')}>분기</Chip>
             <Chip on={barMode === 'month'} onClick={() => setBarMode('month')}>월배당</Chip>
@@ -194,17 +184,21 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
       </Card>
 
       <Card>
-        <SectionHead size="sm" kicker="배당락" title="배당 캘린더" desc="배당락은 이 날 전에 사야 배당을 받는 날이에요 · 날짜를 누르면 종목이 보여요" />
+        <SectionHead size="sm" kicker="배당락" title="배당 캘린더" desc="이 날 전에 사야 그 배당을 받아요" />
         <MiniCalendar />
       </Card>
 
-      <Fold icon="🧮" title="내 파이어 계산에 반영" hint={isApplied ? `반영 중 · 월 ${eok(appliedMonthly)}` : `세후 월 ${eok(monthlyAfter)}을 배당 소득으로`}>
-        <p className="ds-body-sm sc-div-note">세후 월 배당이 파이어 후 배당 소득으로 매년 들어가요. 배당세 재투자 조건과는 한쪽만 켜져요.</p>
-        <RangeField label="배당 매년 성장률" value={divGrowth} min={0} max={10} step={1} format={(v) => `${Math.round(v)}%`} onChange={(v) => setDivGrowth(Math.round(v))} />
-        {isApplied
-          ? <Button variant="secondary" size="md" full onClick={unapply}>✓ 반영 중 · 월 {eok(appliedMonthly)} · 해제</Button>
-          : <Button variant="primary" size="md" full disabled={appliedMonthly <= 0} onClick={apply}>월 {eok(monthlyAfter)} 반영</Button>}
-      </Fold>
+      {isApplied && (
+        <Notice tone="warn" icon="⚠️">
+          예전에 넣어둔 배당 소득 월 <b className="num">{eok(leftover)}</b>이 결과에 들어 있어요 · 연 수익률에 배당이 이미 포함돼 두 번 세어져요
+          <Button variant="secondary" size="sm" className="ds-mt-2" onClick={unapply}>결과에서 빼기</Button>
+        </Notice>
+      )}
+
+      <Card>
+        <SectionHead size="sm" kicker="읽어둘 것" title="배당은 수익률에 이미 들어 있어요" desc="결과 화면의 연 수익률은 주가 상승과 배당을 합친 값이에요" />
+        <p className="ds-body-sm sc-div-note">그래서 이 배당을 결과에 따로 더하면 같은 돈을 두 번 세게 돼요. 이 화면은 배당만 떼어 보는 계산기로 쓰면 돼요.</p>
+      </Card>
 
       <p className="ds-caption ds-textcenter">참고용 계산이에요 · 투자 자문이 아니에요</p>
     </main>

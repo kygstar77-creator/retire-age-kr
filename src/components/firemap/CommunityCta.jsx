@@ -4,7 +4,7 @@ import { Card, SectionHead, ListGroup, ListRow } from '../../ui/index.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import { CAFE_URL, OPENCHAT_URL } from '../../firemap-v2/links.js';
 
-export default function CommunityCta({ where = 'result', title = '혼자 하면 오래 못 가요', desc = '같은 구간 사람들이 숫자와 후기를 올려요' }) {
+export default function CommunityCta({ where = 'result', title = '카페 · 오픈채팅', desc = '같은 구간 사람들이 숫자와 후기를 올려요' }) {
   const hit = (k) => { try { track(k, { where }); } catch { /* ignore */ } };
   return (
     <Card padding="md">
@@ -13,7 +13,7 @@ export default function CommunityCta({ where = 'result', title = '혼자 하면 
         <ListRow
           lead="🟢"
           title="파이어맵 네이버 카페"
-          desc="인증 · 봐주세요 · 파이어 후 하루"
+          desc="파이어족이 모이는 곳"
           href={CAFE_URL}
           external
           onClick={() => hit('cafe_click')}

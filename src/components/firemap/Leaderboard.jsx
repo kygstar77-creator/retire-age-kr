@@ -7,7 +7,7 @@ import { statsRank } from '../../firemap-v2/rank.js';
 import { fetchTopScores, fetchUserRank, fetchAggregates, fetchNeighbors, assetBandOf, ASSET_BAND_LABELS, fetchPeerBoard } from '../../utils/firemapScoresApi.js';
 import { displayName } from '../../firemap-v2/funName.js';
 import { fmtAdvance, track } from '../../firemap-v2/dailyData.js';
-import { computeProgress, hasCalculated } from '../../utils/savingsEngine.js';
+import { hasCalculated } from '../../utils/widgetState.js';
 import CommunityCta from './CommunityCta.jsx';
 import { simulateRetirement, findEarliestRetirementAge } from '../../utils/retirementSimulator.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
@@ -33,7 +33,6 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
   const ids = identityIds();
   const acctHandle = accountHandle();
   const calculated = hasCalculated();
-  const myAdvance = calculated ? Math.max(0, computeProgress(simulation).advanceDays) : 0;
   const myBand = calculated ? assetBandOf(simulation.netWorth) : null;
   const [board, setBoard] = useState('all');
   const [data, setData] = useState({ loading: true });
@@ -49,7 +48,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
           const [top, me, nb, agg] = await Promise.all([fetchTopScores(10, undefined, band), fetchUserRank(earliest, undefined, myAdvance, band), fetchNeighbors(earliest, undefined, undefined, band), fetchAggregates()]);
           if (alive) setData({ top: top || [], me, nb, agg });
         } else if (board === 'peer') {
-          const pr = await fetchPeerBoard({ currentAge: rs.inputs.currentAge, ageBand: base.ageBand, earliestAge: earliest, advancedDays: myAdvance, limit: 10 });
+          const pr = await fetchPeerBoard({ currentAge: rs.inputs.currentAge, ageBand: base.ageBand, earliestAge: earliest, advancedDays: 0, limit: 10 });
           const nb = pr ? await fetchNeighbors(earliest, pr.scope === 'band' ? base.ageBand : undefined, pr.scope === 'age' ? rs.inputs.currentAge : undefined) : null;
           if (alive) setData({ top: pr ? pr.top : [], me: pr ? { position: pr.position, total: pr.total, percentile: pr.percentile } : null, nb, peer: pr });
         }
@@ -104,7 +103,6 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
       <p className="ds-caption ds-textcenter">✋ 모든 순위는 직접 입력한 기록 기반 · 자산은 구간만 저장돼요</p>
       <div className="ds-bottomcta ds-mt-0">
         <Button variant="secondary" size="md" onClick={() => onMove('experiment')}>조건 바꿔 올리기</Button>
-        <Button variant="tint" size="md" onClick={() => { try { sessionStorage.setItem('fm_open_cert', '1'); } catch { /* ignore */ } onMove('result'); }}>🪪 인증 카드</Button>
       </div>
 
       <CommunityCta where="ranking" title="내 숫자, 어디에 올릴까요" desc="같은 구간 사람들 글이 카페에 모여요" />

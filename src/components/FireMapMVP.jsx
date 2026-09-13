@@ -5,14 +5,14 @@ import AccountCard from './firemap/AccountCard.jsx';
 import Question from './firemap/Question.jsx';
 import Result from './firemap/Result.jsx';
 import Experiment from './firemap/Experiment.jsx';
-import Community from './firemap/Community.jsx';
 import MenuAll from './firemap/MenuAll.jsx';
+import Community from './firemap/Community.jsx';
+import Wall from './firemap/Wall.jsx';
 import BottomTabs from './firemap/BottomTabs.jsx';
 import Header from './firemap/Header.jsx';
 import DependentCheck from './firemap/DependentCheck.jsx';
 import FireTypeTest from './firemap/FireTypeTest.jsx';
 import { ForeignStockTaxCard, DividendCard, PensionEarlyClaimCard } from './firemap/TaxPensionModules.jsx';
-import Wall from './firemap/Wall.jsx';
 import Leaderboard from './firemap/Leaderboard.jsx';
 import CityExplorer from './firemap/CityExplorer.jsx';
 import DividendLifeCalc from './firemap/DividendLifeCalc.jsx';
@@ -176,7 +176,7 @@ export default function FireMapMVP() {
   const VIEWS = {
     home: () => <Home onStart={(age) => { if (typeof age === 'number' && age > 0) { onChange('currentAge', age); setStep(1); } else { setStep(0); } setScreen('question'); }} onMove={setScreen} onChange={onChange} simulation={simulation} />,
     question: () => <Question step={step} inputs={inputs} onChange={onChange} onPrev={prevQuestion} onNext={next} />,
-    result: () => <Result inputs={inputs} simulation={simulation} rankingSimulation={rankingSimulation} onMove={setScreen} onChange={onChange} onApplyPatch={applyPatchWithUndo} />,
+    result: () => <Result inputs={inputs} simulation={simulation} rankingSimulation={rankingSimulation} onMove={setScreen} onChange={onChange} onApplyPatch={applyPatchWithUndo} onPreviewPatch={previewPatch} />,
     experiment: () => <Experiment inputs={inputs} onChange={onChange} simulation={simulation} onBack={backOf('experiment')} onMove={setScreen} draft={expDraft} setDraft={setExpDraft} base={expBase} setBase={setExpBase} />,
     ranking: () => <Leaderboard simulation={simulation} rankingSimulation={rankingSimulation} onMove={setScreen} />,
     menu: () => <MenuAll onMove={setScreen} />,

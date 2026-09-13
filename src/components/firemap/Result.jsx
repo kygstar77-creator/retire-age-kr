@@ -1,7 +1,7 @@
 // 결과 — 숫자 1(파이어 나이) + 필요 자산 + 레버 3 + 인증 카드. 세그먼트: 몇 살에? | N억이면?(역산).
 // 18블록·12~20버튼·팝업 2 → 6블록·버튼 ≤ 10·팝업 0. 근거: 최종본 §3-2, 4차 '얼마' 1위, ChooseFI 레버 3, TDS Result.
 import { useEffect, useMemo, useState } from 'react';
-import { TopBar, StatHero, Card, SectionHead, Button, LeverList, Fold, Tabs, RangeField, Stat } from '../../ui/index.js';
+import { TopBar, StatHero, Card, SectionHead, Button, LeverList, Fold, Tabs, RangeField, Stat, StatTiles } from '../../ui/index.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildScenario, buildGrowthSeries, scenarioEndAge, survivalPhrase, runwayText } from '../../firemap-v2/scenarios.js';
 import { simulateRetirement, inputsIsReal, monteCarloSuccess, findEarliestRetirementAge } from '../../utils/retirementSimulator.js';
@@ -28,8 +28,63 @@ function solveMin(test, hi, round) {
   return Math.ceil(h / round) * round;
 }
 
-// 레버 3 — 목표 미달이면 '목표 달성', 달성 중이면 '1년 더 당기기'
-function useLevers(simulation, applyPatch) {
+// 레버 3 — 목표 미달이면 '목표 달성', 달성 중이면 '1년 더 앞당기기'
+// 내 자산 흐름 — 그래프 + 1년/5년/파이어 시점 + 마일스톤 타임라인.
+// 프로덕션(main)에 있던 화면을 디자인 시스템으로 옮겨 되살린 것. 사장님이 이 흐름을 원했다.
+function AssetJourney({ simulation }) {
+  const rows = simulation.targetResult.rows || [];
+  if (rows.length < 2) return null;
+  const cur = rows[0];
+  const start = cur.financialAsset;
+  const y1 = rows[1] ? rows[1].financialAsset - start : 0;
+  const y5 = rows[5] ? rows[5].financialAsset - start : null;
+  const save1 = rows[1] ? Math.max(0, rows[1].investmentAdded) : 0;
+  const ret1 = Math.max(0, y1 - save1);
+
+  const items = [{ age: cur.age, label: '지금 시작', sub: formatWon(cur.financialAsset), hi: false }];
+  [100000000, 300000000, 500000000, 1000000000, 2000000000].forEach((t) => {
+    if (t > cur.financialAsset) {
+      const hit = rows.find((r) => r.financialAsset >= t);
+      if (hit && hit.age > cur.age) items.push({ age: hit.age, label: `자산 ${formatWon(t)} 돌파`, sub: null, hi: false });
+    }
+  });
+  const req = simulation.requiredFireAssetByFourPercent;
+  if (req && req > cur.financialAsset) {
+    const hit = rows.find((r) => r.financialAsset >= req);
+    if (hit) items.push({ age: hit.age, label: '필요 자산 달성', sub: `1년 생활비의 25배 ${formatWon(req)}`, hi: true });
+  }
+  if (simulation.earliestRetirementAge) items.push({ age: simulation.earliestRetirementAge, label: '가장 이른 파이어', sub: null, hi: true });
+  items.push({ age: simulation.inputs.targetRetirementAge, label: '목표 파이어', sub: null, hi: true });
+  const seen = new Set();
+  const list = items
+    .filter((m) => { const k = `${m.age}|${m.label}`; if (seen.has(k)) return false; seen.add(k); return true; })
+    .sort((a, b) => a.age - b.age);
+
+  return (
+    <Card>
+      <SectionHead size="sm" kicker="내 자산 흐름" title="나이별로 얼마가 되는지" />
+      <YearlyAssetChart simulation={simulation} />
+      <p className="ds-caption ds-textcenter">그래프를 누르면 그 나이의 자산이 보여요</p>
+      <StatTiles className="ds-mt-3" items={[
+        { label: '1년 뒤', value: `+${formatWon(Math.max(0, y1))}` },
+        ...(y5 != null ? [{ label: '5년 뒤', value: `+${formatWon(Math.max(0, y5))}` }] : []),
+        { label: '파이어 때', value: formatWon(simulation.retirementFinancialAsset || 0) }
+      ]} />
+      {y1 > 0 && <p className="ds-caption ds-mt-2">1년 새 <b className="num">+{formatWon(Math.max(0, y1))}</b> = 내 저축 <b className="num">{formatWon(save1)}</b> + 투자수익 <b className="num">{formatWon(ret1)}</b></p>}
+      <ol className="ds-road">
+        {list.map((m) => (
+          <li key={`${m.age}|${m.label}`} className={`ds-road__step${m.hi ? ' ds-road__step--hi' : ''}`}>
+            <span className="ds-road__age num">{m.age}세</span>
+            <span className="ds-road__body"><b>{m.label}</b>{m.sub && <em className="num">{m.sub}</em>}</span>
+          </li>
+        ))}
+      </ol>
+      <p className="ds-caption">연 수익률 {simulation.inputs.annualReturnRate}% 기준 · 조건을 바꾸면 단계가 앞당겨져요</p>
+    </Card>
+  );
+}
+
+function useLevers(simulation, openPreview) {
   return useMemo(() => {
     const ni = simulation.inputs;
     const until = ni.simulationUntilAge;
@@ -50,10 +105,10 @@ function useLevers(simulation, applyPatch) {
       off: it.solve === null || it.solve === 0,
       label: it.solve === null ? '이 방법만으론 어려워요' : it.solve === 0 ? '이미 충분해요' : it.label(it.solve),
       gain: it.solve ? (baseOk ? `−1년 → ${goal}세` : `${ni.targetRetirementAge}세 달성`) : null,
-      onApply: it.solve ? () => { applyPatch(it.patch(it.solve)); try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch { /* ignore */ } } : null
+      onApply: it.solve ? () => openPreview(it.patch(it.solve)) : null
     }));
     return { items, baseOk, goal, until };
-  }, [simulation, applyPatch]);
+  }, [simulation, openPreview]);
 }
 
 function YearlyAssetChart({ simulation }) {
@@ -86,6 +141,7 @@ function YearlyAssetChart({ simulation }) {
         </svg>
       </div>
       <div className="fm-yac-x"><span>{a0}세</span><span>파이어 {ret}세</span><span>{a1}세</span></div>
+
     </div>
   );
 }
@@ -101,7 +157,7 @@ function ReverseMode({ simulation }) {
   const bands = useMemo(() => [300000000, 500000000, 1000000000, need].filter((v, i, a) => v > 0 && a.indexOf(v) === i).sort((a, b) => a - b).map((v) => ({ v, age: findEarliestRetirementAge({ ...inp, financialAsset: v }), pct: statsTopPercentile(v, inp.currentAge) })), [inp, need]);
   return (
     <>
-      <StatHero tone="dark" label={`${eok(debounced)}이면`} value={age ? `${age}세` : '아직'} unit={age ? '' : ''} sub={age ? `${age}세에 파이어 가능 · 필요 자산까지 ${gap > 0 ? `${eok(gap)} 부족` : '충분'}` : '이 자산만으론 70세까지도 어려워요 · 생활비를 낮춰보세요'}>
+      <StatHero tone="dark" label={`${eok(debounced)}이면`} value={age ? `${age}세` : '아직'} unit={age ? '' : ''} sub={age ? `필요 자산까지 ${gap > 0 ? `${eok(gap)} 부족` : '충분'}` : '이 자산만으론 70세까지도 어려워요 · 생활비를 낮춰보세요'}>
         <div className="ds-mt-2-5">
           <RangeField label="자산이" value={asset} min={100000000} max={3000000000} step={50000000} money format={eok} onChange={setAsset} />
         </div>
@@ -121,7 +177,7 @@ function ReverseMode({ simulation }) {
   );
 }
 
-export default function Result({ inputs, simulation, rankingSimulation, onMove, onChange, onApplyPatch }) {
+export default function Result({ inputs, simulation, rankingSimulation, onMove, onChange, onApplyPatch, onPreviewPatch }) {
   const rs = rankingSimulation || simulation;
   const base = statsRank(rs);
   const inp = simulation.inputs;
@@ -139,8 +195,9 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
     try { if (sessionStorage.getItem('fm_open_cert')) { sessionStorage.removeItem('fm_open_cert'); return true; } } catch { /* ignore */ }
     return false;
   });
-  const applyLever = onApplyPatch || ((patch) => Object.entries(patch).forEach(([k, v]) => onChange(k, v)));
-  const levers = useLevers(simulation, applyLever);
+  // 레버를 누르면 그 값이 들어간 채 바꿔보기가 열린다(저장해야 내 결과에 반영).
+  const openPreview = onPreviewPatch || onApplyPatch || ((patch) => Object.entries(patch).forEach(([k, v]) => onChange(k, v)));
+  const levers = useLevers(simulation, openPreview);
   const success = useMemo(() => { try { return monteCarloSuccess(inp, { paths: 300 }); } catch { return null; } }, [inp]);
   const myBand = assetBandOf(simulation.netWorth);
   const inputsHash = `${earliest}|${rankEarliest}|${target}|${inp.financialAsset}|${inp.monthlyInvestment}|${inp.monthlyLivingCost}`;
@@ -195,7 +252,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
             sub={<>필요 자산 <b className="num">{eok(need)}</b> · 지금 <b className="num">{eok(inp.financialAsset)}</b>{success != null ? <> · 성공확률 <b className="num">{success}%</b></> : null}</>}
             tiles={[
               { label: '파이어 때 자산', value: simulation.retirementFinancialAsset ? eok(simulation.retirementFinancialAsset) : '—' },
-              { label: '버티는 나이', value: ph.runway },
+              { label: '자산 수명', value: ph.runway },
               { label: `같은 구간 · ${ASSET_BAND_LABELS[myBand]}`, value: bandRank ? `상위 ${bandRank.percentile}%` : (live ? `${live.position.toLocaleString()}등` : '집계 중'), onClick: () => onMove('ranking') }
             ]}
           >
@@ -205,19 +262,15 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
           <FireWidgetCard simulation={simulation} onMove={onMove} />
 
           <Card>
-            <SectionHead size="sm" kicker={levers.baseOk ? '더 당기기' : '목표 달성 플랜'} title={levers.baseOk ? `${levers.goal}세로 1년 당기려면` : `${target}세 파이어를 성공시키려면`} desc={levers.baseOk ? '셋 중 하나만 해도 돼요. 적용하면 위 숫자가 바로 바뀌어요.' : `${levers.until}세까지 자산이 버티게 하는 최소치예요. 하나만 골라도 돼요.`} />
+            <SectionHead size="sm" kicker={levers.baseOk ? '더 앞당기기' : '목표 달성 플랜'} title={levers.baseOk ? `${levers.goal}세로 1년 앞당기려면` : `${target}세 파이어를 성공시키려면`} desc={levers.baseOk ? '셋 중 하나만 해도 돼요' : `${levers.until}세까지 버티는 최소치예요`} />
             <LeverList items={levers.items} />
           </Card>
 
           <div className="ds-bottomcta ds-mt-0">
-            <Button variant="secondary" size="lg" onClick={() => onMove('experiment')}>🎛️ 바꿔보기</Button>
             <Button variant="primary" size="lg" onClick={() => { track('cert_open', {}); setShareOpen(true); }}>🪪 인증 카드</Button>
           </div>
 
-          <Card>
-            <SectionHead size="sm" kicker="자산 흐름" title="넣은 돈과 불어난 돈" desc="나이별로 쌓이는 모양이에요" />
-            <YearlyAssetChart simulation={simulation} />
-          </Card>
+          <AssetJourney simulation={simulation} />
           <Card>
             <SectionHead size="sm" kicker="파이어 후" title="건보료와 세금" desc={hiEst ? `지역가입으로 바뀌면 월 약 ${hiEst.monthly.toLocaleString()}원으로 잡혀요 (추정)` : '지역가입자 전환 · 배당세'} />
             <p className="ds-p">직장을 그만두면 건보료를 혼자 내고 소득·재산 기준 <b>지역가입자</b>로 바뀌어요. 4% 인출 기준 연 금융소득 {Math.round((fireAsset * 0.04) / 10000).toLocaleString()}만원으로 잡은 대략값이에요.</p>
@@ -225,7 +278,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
           </Card>
           {cities.length > 0 && (
             <Card>
-              <SectionHead size="sm" kicker="어디서 살까" title="물가 낮은 곳에 살면" desc={`${cities[0].flag} ${cities[0].city}로 가면 ${cities[0].gain}년 당겨져요`} />
+              <SectionHead size="sm" kicker="어디서 살까" title="물가 낮은 곳에 살면" desc={`${cities[0].flag} ${cities[0].city}로 가면 ${cities[0].gain}년 앞당겨져요`} />
               <div className="ds-list">
                 {cities.map((c) => (
                   <div key={c.city} className="ds-row-item ds-row-item--S ds-row-item--static">

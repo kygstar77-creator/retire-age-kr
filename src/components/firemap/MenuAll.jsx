@@ -7,21 +7,20 @@ import { CAFE_URL, YOUTUBE_URL, OPENCHAT_URL } from '../../firemap-v2/links.js';
 const SECTIONS = [
   { label: '내 여정', items: [
     { ico: '📊', title: '내 파이어 결과', desc: '파이어 나이 · 필요 자산 · 레버 3', to: 'result' },
-    { ico: '🏆', title: '랭킹', desc: '같은 구간 · 또래 · 저축 리그', to: 'ranking' }
+    { ico: '🏆', title: '랭킹', desc: '같은 구간 · 또래', to: 'ranking' }
   ] },
   { label: '도구', items: [
-    { ico: '🎛️', title: '바꿔보기', desc: '저축·생활비·수익률 What-If', to: 'experiment' },
+    { ico: '🎛️', title: '바꿔보기', desc: '저축·생활비·수익률 미리보기', to: 'experiment' },
     { ico: '💵', title: '배당으로 파이어', desc: '월 배당 목표 · 달성 나이 · 세후', to: 'dividend' },
     { ico: '🩺', title: '파이어 후 건보료', desc: '피부양자 · 지역가입 보험료', to: 'dependent' },
     { ico: '🧾', title: '양도·배당세', desc: '해외주식 양도세 · 배당 소득세', to: 'foreignTax' },
-    { ico: '🏦', title: '국민연금 조기수령', desc: '당겨 받기 득실', to: 'pension' },
-    { ico: '🗺️', title: '지역으로 파이어 보기', desc: '국내·해외 도시 생활비 비교', to: 'cities' },
+    { ico: '🏦', title: '국민연금 조기수령', desc: '1년 일찍 받을 때마다 6% 감액', to: 'pension' },
+    { ico: '🗺️', title: '어디서 살까', desc: '국내·해외 도시 생활비 비교', to: 'cities' },
     { ico: '🧭', title: '파이어 유형 테스트', desc: '12문항 · 살 도시 Top3', to: 'firetype' }
   ] },
   { label: '카페 · 소식', items: [
-    { ico: '🟢', title: '파이어맵 네이버 카페', desc: '인증 · 봐주세요 · 파이어 후 하루', href: CAFE_URL, ext: true },
+    { ico: '🟢', title: '파이어맵 네이버 카페', desc: '파이어족이 모이는 곳', href: CAFE_URL, ext: true },
     ...(OPENCHAT_URL ? [{ ico: '💬', title: '카카오톡 오픈채팅', desc: '질문 하나 던지고 가도 돼요', href: OPENCHAT_URL, ext: true }] : []),
-    { ico: '💬', title: '방명록 전체', desc: '글 · 답글 · 공감', to: 'wall' },
     { ico: '📰', title: '소식', desc: '지표 · 파이어 후 하루 · 배당락', to: 'news' },
     { ico: '▶️', title: '파이어맵 유튜브', desc: '영상으로 보는 파이어', href: YOUTUBE_URL, ext: true },
     { ico: '📚', title: '파이어 백과', desc: '건보료·세금·연금 가이드', href: '/guide/' }
@@ -50,7 +49,7 @@ export default function MenuAll({ onMove }) {
         <ListRow lead="🔒" title="개인정보처리방침" href="/privacy.html" />
         <ListRow lead="✉️" title="문의" href="/contact.html" />
       </ListGroup>
-      <p className="ds-caption ds-textcenter">파이어맵은 정보 제공 서비스이며 투자자문이 아니에요. 모든 수치는 입력값 기반 추정이에요.</p>
+      <p className="ds-caption ds-textcenter">파이어맵은 정보 제공 서비스예요 · 투자 자문이 아니에요 · 모든 수치는 입력값 기반 추정이에요</p>
     </main>
   );
 }

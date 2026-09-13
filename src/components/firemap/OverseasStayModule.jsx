@@ -31,14 +31,14 @@ export function OverseasStayModule({ inputs, simulation, onPreviewPatch }) {
   const scenario = buildScenario(inputs, patch);
   return (
     <Card>
-      <SectionHead size="sm" kicker="해외 체류" title="체류 조건을 바꿔 자산수명 보기" desc="연 체류 개월·현지 생활비·환율을 조절해요. 90일 이상 연속 체류면 건보료 정지 가정을 켤 수 있어요." />
+      <SectionHead size="sm" kicker="해외 체류" title="체류 조건을 바꿔 자산수명 보기" desc="연 체류·생활비·환율을 조절해요 · 90일 연속 체류하면 건보료 정지 가정도 켜져요" />
       <Stepper label="연 체류 개월" unit="개월" value={months} set={setMonths} step={1} min={0} max={12} />
       <Stepper label="현지 월 생활비" unit="현지통화" value={localCost} set={setLocalCost} step={5000} />
       <Stepper label="환율(현지통화당 원)" unit="원" value={fx} set={setFx} step={1} />
       <Chips className="ds-mt-2"><Chip on={pause} onClick={() => setPause(!pause)}>건보료 정지 가정</Chip></Chips>
       <Notice tone="good" className="ds-mt-3">이 조건이면 <b>{runwayText(scenario)}</b>까지 — {deltaText(simulation, scenario)} · 첫해 절감 약 {formatWon(scenario.firstYearOverseasSavings)}</Notice>
       <Button variant="tint" size="md" full className="ds-mt-3" onClick={() => onPreviewPatch && onPreviewPatch(patch)}>이 조건 미리보기(바꿔보기)</Button>
-      <p className="ds-caption ds-mt-2 ds-mb-0">참고용 시나리오예요. 실제 비자·건보료 면제 요건은 제도 확인이 필요해요.</p>
+      <p className="ds-caption ds-mt-2 ds-mb-0">참고용 시나리오예요 · 실제 비자·건보료 면제 요건은 제도 확인이 필요해요</p>
     </Card>
   );
 }

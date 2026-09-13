@@ -249,7 +249,7 @@ export default function Community({ onBack, onMove, simulation }) {
           autoFocus
           value={composer ? composer.text : ''}
           onChange={(e) => setComposer((s) => (s ? { ...s, text: e.target.value } : s))}
-          placeholder={composer && composer.cat === 'goal' ? '예: 56세 파이어 인증해요. 생활비를 줄이니 5년 당겨졌어요' : '예: 다들 생활비 어떻게 아끼세요?'}
+          placeholder={composer && composer.cat === 'goal' ? '예: 56세 파이어 인증해요. 생활비를 줄이니 5년 앞당겼어요' : '예: 다들 생활비 어떻게 아끼세요?'}
           aria-label="글 내용"
         />
         <p className="ds-caption sc-wall-composer__count"><span className="num">{composer ? composer.text.length : 0}</span>/{MAX}{composer && composer.mode === 'new' && myStage && stageMeta(myStage) ? ` · ${stageMeta(myStage).emoji} ${myStage}단계 표시로 올라가요` : ''}</p>

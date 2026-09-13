@@ -62,16 +62,16 @@ export default function Home({ onStart, onMove, simulation }) {
       </Card>
 
       <Card variant="soft">
-        <SectionHead size="sm" kicker="계산하면 이런 게 나와요" title="숫자 하나로 시작해요" />
+        <SectionHead size="sm" kicker="예시" title="결과 미리 보기" />
         <div className="ds-three sc-home-three">
           <Stat label="파이어 나이" value={<>51<span className="ds-stat__unit">세</span></>} size="md" />
           <Stat label="필요 자산" value={<>13.1<span className="ds-stat__unit">억</span></>} size="md" />
           <Stat label="같은 구간" value={<>18<span className="ds-stat__unit">%</span></>} size="md" />
         </div>
-        <p className="ds-caption ds-mt-2 ds-mb-0">예시예요. 결과에서 저축·생활비·부업 중 하나만 바꿔도 몇 년이 당겨지는지 보여줘요.</p>
+        <p className="ds-caption ds-mt-2 ds-mb-0">저축·생활비·부업을 바꾸면 파이어 나이가 얼마나 앞당겨지는지도 같이 나와요</p>
       </Card>
 
-      <CommunityCta where="landing" title="먼저 온 사람들 이야기" desc="인증 · 봐주세요 · 파이어 후 하루" />
+      <CommunityCta where="landing" title="카페 · 오픈채팅" desc="같은 구간 사람들이 숫자와 후기를 올려요" />
 
       <p className="ds-caption ds-textcenter"><a className="ds-link ds-link--muted" href="/privacy.html">개인정보처리방침</a> · <a className="ds-link ds-link--muted" href="/disclaimer.html">면책</a> · <a className="ds-link ds-link--muted" href="/contact.html">문의</a></p>
     </main>

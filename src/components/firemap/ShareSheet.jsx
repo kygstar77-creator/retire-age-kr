@@ -1,10 +1,9 @@
 // 인증 카드 시트 — 배당 투자자 모임 제목 공식(출생연도+가족+숫자+회차) · Reddit 댓글 6종(숫자·기간·가정) 포함.
-// 카톡(og 이미지) · 링크 복사 · 카페 인증 게시판(제목 복사 + 카페 열기; 게시 API는 사장님 앱 등록 후 활성) · 방명록.
+// 카톡(og 이미지) · 링크 복사 · 카페 인증 게시판(제목 복사 + 카페 열기; 게시 API는 사장님 앱 등록 후 활성).
 import { useState } from 'react';
 import { Sheet, Button, Chips, Chip, toast } from '../../ui/index.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { shareToKakao } from '../../utils/kakaoShare.js';
-import { sendCommunity } from '../../utils/firemapFeedbackApi.js';
 import { survivalPhrase } from '../../firemap-v2/scenarios.js';
 import { fetchUserRank } from '../../utils/firemapScoresApi.js';
 import { track } from '../../firemap-v2/dailyData.js';
@@ -66,7 +65,7 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
   const title = `${year}년생 ${family} · ${earliest ? `${earliest}세 파이어 가능` : '파이어 준비 중'} · ${hideAmt ? '자산 비공개' : `자산 ${formatWon(asset)}`} · ${roundNo()}회차`;
   const body = [
     `🔥 파이어 나이 ${earliest ? `${earliest}세` : '아직'} (목표 ${inp.targetRetirementAge}세)`,
-    `필요 자산 ${formatWon(need)} · 현재 ${hideAmt ? '비공개' : formatWon(asset)}`,
+    `필요 자산 ${formatWon(need)} · 지금 ${hideAmt ? '비공개' : formatWon(asset)}`,
     `월 저축 ${hideAmt ? '비공개' : formatWon(inp.monthlyInvestment)} · 파이어 후 생활비 ${formatWon(inp.monthlyLivingCost)}`,
     `가정: 수익률 ${inp.annualReturnRate}% · 물가 ${inp.inflationRate}% · 국민연금 ${inp.expectedPensionAge}세~`,
     '계산: firemap.kr'
@@ -92,14 +91,6 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
     const s = buildCertShare(simulation, { family, hideAmt, round: roundNo(), need, asset });
     try { await navigator.clipboard.writeText(s.url); toast.good('내 결과 링크를 복사했어요'); track('share', { type: 'cert_link' }); } catch { /* ignore */ }
   };
-  const toWall = async () => {
-    setBusy(true);
-    const created = await sendCommunity(`🔥 ${title}`, null, 'goal', null);
-    setBusy(false);
-    if (created) { toast.good('방명록에 올렸어요'); prefs.bumpCert(); onClose(); if (onMove) onMove('wall'); }
-    else toast.bad('잠시 후 다시 시도해 주세요');
-  };
-
   return (
     <Sheet open={open} title="🪪 인증 카드" onClose={onClose}>
       <div className="ds-card ds-card--dark ds-p-3-5">
@@ -114,7 +105,6 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
         <div className="ds-bottomcta ds-mt-0">
           <Button variant="secondary" size="md" onClick={kakao}>💬 카톡</Button>
           <Button variant="secondary" size="md" onClick={copyLink}>🔗 링크</Button>
-          <Button variant="secondary" size="md" onClick={toWall}>📝 방명록</Button>
         </div>
       </div>
     </Sheet>

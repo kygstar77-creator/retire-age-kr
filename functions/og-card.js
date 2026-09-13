@@ -108,3 +108,43 @@ ${rowsSvg}
 <text x="1000" y="1290" font-family="${font}" font-weight="700" font-size="30" fill="#ff8a4c" text-anchor="end">firemap.kr</text>
 </svg>`;
 }
+
+// 인증 카드 가로판(1200×630) — 카카오톡 피드와 링크 미리보기는 가로 썸네일이라 세로 카드는 잘린다.
+// 내용·문구는 세로판(buildCertSvg)과 같게 유지한다.
+export function buildCertWideSvg(opts = {}) {
+  const font = opts.font || 'Pretendard';
+  const esc = (v) => String(v == null ? '' : v).replace(/[<>&"]/g, '').slice(0, 40);
+  const ea = Number(opts.ea) || 0;
+  const tgt = Number(opts.target) || 0;
+  const gap = ea && tgt ? tgt - ea : null;
+  const big = ea ? `${ea}세` : '아직';
+  const line1 = !ea ? '파이어 준비 중'
+    : gap == null ? '파이어 가능 나이'
+      : gap > 0 ? `목표보다 ${gap}년 빨라요`
+        : gap < 0 ? `목표보다 ${-gap}년 늦어요` : '목표와 같아요';
+  const title = `${esc(opts.year)}년생 ${esc(opts.family)} · ${esc(opts.round) || 1}회차`;
+  const rows = [
+    ['필요 자산', esc(opts.need)], ['현재 자산', esc(opts.asset)],
+    ['월 저축', esc(opts.save)], ['파이어 후 생활비', esc(opts.cost)]
+  ];
+  const rowsSvg = rows.map(([k, v], i) => {
+    const x = 620 + (i % 2) * 280;
+    const y = 250 + Math.floor(i / 2) * 104;
+    return `<rect x="${x}" y="${y - 46}" width="258" height="78" rx="16" fill="rgba(255,255,255,0.06)"/>
+<text x="${x + 22}" y="${y - 16}" font-family="${font}" font-weight="600" font-size="22" fill="#9aa4d4">${k}</text>
+<text x="${x + 22}" y="${y + 18}" font-family="${font}" font-weight="700" font-size="30" fill="#ffffff">${v}</text>`;
+  }).join('\n');
+  return `<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="630" fill="#18224d"/>
+<rect x="0" y="0" width="1200" height="10" fill="#ff5a00"/>
+<svg x="70" y="62" width="34" height="68" viewBox="188 84 136 276"><path d="M256 84 C 232 150, 188 172, 188 256 C 188 322, 218 360, 256 360 C 294 360, 324 322, 324 256 C 324 212, 300 188, 286 162 C 282 192, 268 204, 252 210 C 268 166, 262 116, 256 84 Z" fill="#ff5a00"/></svg>
+<text x="116" y="112" font-family="${font}" font-weight="700" font-size="32" fill="#ffffff">파이어맵 인증 카드</text>
+<text x="70" y="182" font-family="${font}" font-weight="600" font-size="26" fill="#9aa4d4">${title}</text>
+<text x="70" y="352" font-family="${font}" font-weight="700" font-size="150" fill="#ff5a00">${big}</text>
+<text x="70" y="416" font-family="${font}" font-weight="700" font-size="38" fill="#ffffff">${line1}</text>
+<text x="70" y="486" font-family="${font}" font-weight="600" font-size="24" fill="#9aa4d4">가정 · 수익률 ${esc(opts.ret)}% · 물가 ${esc(opts.inf)}% · 연금 ${esc(opts.pen)}세~</text>
+${rowsSvg}
+<text x="70" y="576" font-family="${font}" font-weight="600" font-size="24" fill="#9aa4d4">계산: firemap.kr</text>
+<text x="1130" y="576" font-family="${font}" font-weight="700" font-size="28" fill="#ff8a4c" text-anchor="end">firemap.kr</text>
+</svg>`;
+}

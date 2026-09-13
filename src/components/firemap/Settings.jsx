@@ -42,8 +42,8 @@ export default function Settings({ simulation, onMove, onBack }) {
     const inp = (simulation && simulation.inputs) || {};
     const r = await subscribeFireClock({ targetFireDate: targetFireDateFrom(simulation), earliestAge: simulation && simulation.earliestRetirementAge, currentAge: inp.currentAge });
     if (r && r.ok) { setNotif('on'); track('notif_on', {}); toast.good('켜졌어요. 매일 아침 파이어 시계가 가요 🔥'); }
-    else if (r && r.reason === 'denied') { setNotif('denied'); toast.bad('알림이 차단돼 있어요. 브라우저 설정에서 허용한 뒤 다시 켜주세요.'); }
-    else { setNotif('idle'); toast.bad('잠시 후 다시 시도해 주세요.'); }
+    else if (r && r.reason === 'denied') { setNotif('denied'); toast.bad('알림이 차단돼 있어요 · 브라우저 설정에서 허용하면 다시 켜져요'); }
+    else { setNotif('idle'); toast.bad('잠시 후 다시 해봐요'); }
   };
 
   return (
@@ -65,7 +65,7 @@ export default function Settings({ simulation, onMove, onBack }) {
       </ListGroup>
 
       <ListGroup label="카페 · 정보">
-        <ListRow lead="🟢" title="파이어맵 네이버 카페" desc="인증 · 봐주세요 · 파이어 후 하루" href={CAFE_URL} external />
+        <ListRow lead="🟢" title="파이어맵 네이버 카페" desc="파이어족이 모이는 곳" href={CAFE_URL} external />
         {OPENCHAT_URL && <ListRow lead="💬" title="카카오톡 오픈채팅" desc="질문 하나 던지고 가도 돼요" href={OPENCHAT_URL} external />}
         <ListRow lead="📄" title="면책 안내" href="/disclaimer.html" />
         <ListRow lead="🔒" title="개인정보처리방침" href="/privacy.html" />

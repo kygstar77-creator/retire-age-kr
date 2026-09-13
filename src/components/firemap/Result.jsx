@@ -90,7 +90,7 @@ function YearlyAssetChart({ simulation }) {
   );
 }
 
-function ReverseMode({ simulation, onOpenShare }) {
+function ReverseMode({ simulation }) {
   const inp = simulation.inputs;
   const [asset, setAsset] = useState(() => Math.max(100000000, Math.round((inp.financialAsset || 0) / 100000000) * 100000000 || 300000000));
   const [debounced, setDebounced] = useState(asset);
@@ -116,7 +116,6 @@ function ReverseMode({ simulation, onOpenShare }) {
             </div>
           ))}
         </div>
-        <Button variant="tint" size="md" full className="ds-mt-3" onClick={onOpenShare}>🪪 이 결과로 인증 카드</Button>
       </Card>
     </>
   );
@@ -135,7 +134,11 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
   const [live, setLive] = useState(null);
   const [agg, setAgg] = useState(null);
   const [bandRank, setBandRank] = useState(null);
-  const [shareOpen, setShareOpen] = useState(false);
+  const [shareOpen, setShareOpen] = useState(() => {
+    // 랭킹에서 '인증 카드'로 넘어온 경우 결과를 열면서 시트도 같이 연다.
+    try { if (sessionStorage.getItem('fm_open_cert')) { sessionStorage.removeItem('fm_open_cert'); return true; } } catch { /* ignore */ }
+    return false;
+  });
   const levers = useLevers(simulation, onChange);
   const success = useMemo(() => { try { return monteCarloSuccess(inp, { paths: 300 }); } catch { return null; } }, [inp]);
   const myBand = assetBandOf(simulation.netWorth);
@@ -181,7 +184,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
       <ConsentSheet />
       <Tabs items={[{ key: 'age', label: '몇 살에?' }, { key: 'asset', label: 'N억이면?' }]} value={mode} onChange={setMode} label="결과 모드" />
 
-      {mode === 'asset' ? <ReverseMode simulation={simulation} onOpenShare={() => setShareOpen(true)} /> : (
+      {mode === 'asset' ? <ReverseMode simulation={simulation} /> : (
         <>
           <StatHero
             tone="dark"

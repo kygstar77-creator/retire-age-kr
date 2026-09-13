@@ -228,12 +228,11 @@ export default function Community({ onBack, onMove, simulation }) {
       <p className="ds-caption sc-wall-cap">파이어족끼리 한마디 · 욕설·비방·개인정보는 지워질 수 있어요</p>
 
       <div className="ds-bottomcta sc-wall-cta">
-        <Button variant="tint" size="md" onClick={() => onMove && onMove('result')}>🪪 인증 카드 만들기</Button>
-        <Button variant="primary" size="md" onClick={openNew}>한마디 남기기</Button>
+        <Button variant="primary" size="md" full onClick={openNew}>한마디 남기기</Button>
       </div>
 
       {rows === null && <Card><Skeleton lines={3} /></Card>}
-      {rows !== null && !best && posts.length === 0 && <EmptyState icon="💬" title={emptyText.split(' · ')[0]} desc={emptyText.split(' · ')[1]} action={{ label: tab === 'goal' ? '인증 카드 만들기' : '한마디 남기기', onClick: tab === 'goal' ? () => onMove && onMove('result') : openNew }} />}
+      {rows !== null && !best && posts.length === 0 && <EmptyState icon="💬" title={emptyText.split(' · ')[0]} desc={emptyText.split(' · ')[1]} action={{ label: '한마디 남기기', onClick: openNew }} />}
       {best && PostCard(best, true)}
       {posts.slice(0, shown).map((p) => PostCard(p, false))}
       {posts.length > shown && <Button variant="secondary" size="md" full onClick={() => setShown((n) => n + 15)}>더 보기 · {posts.length - shown}개</Button>}

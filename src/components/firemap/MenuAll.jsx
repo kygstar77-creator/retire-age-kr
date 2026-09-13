@@ -7,7 +7,6 @@ import { CAFE_URL, YOUTUBE_URL, OPENCHAT_URL } from '../../firemap-v2/links.js';
 const SECTIONS = [
   { label: '내 여정', items: [
     { ico: '📊', title: '내 파이어 결과', desc: '파이어 나이 · 필요 자산 · 레버 3', to: 'result' },
-    { ico: '🪪', title: '인증 카드', desc: '카페 인증 게시판 · 카톡 · 링크', to: 'result' },
     { ico: '🏆', title: '랭킹', desc: '같은 구간 · 또래 · 저축 리그', to: 'ranking' }
   ] },
   { label: '도구', items: [

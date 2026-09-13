@@ -104,7 +104,7 @@ export default function Leaderboard({ simulation, rankingSimulation, onMove }) {
       <p className="ds-caption ds-textcenter">✋ 모든 순위는 직접 입력한 기록 기반 · 자산은 구간만 저장돼요</p>
       <div className="ds-bottomcta ds-mt-0">
         <Button variant="secondary" size="md" onClick={() => onMove('experiment')}>조건 바꿔 올리기</Button>
-        <Button variant="tint" size="md" onClick={() => onMove('result')}>🪪 인증 카드</Button>
+        <Button variant="tint" size="md" onClick={() => { try { sessionStorage.setItem('fm_open_cert', '1'); } catch { /* ignore */ } onMove('result'); }}>🪪 인증 카드</Button>
       </div>
 
       <CommunityCta where="ranking" title="내 숫자, 어디에 올릴까요" desc="같은 구간 사람들 글이 카페에 모여요" />

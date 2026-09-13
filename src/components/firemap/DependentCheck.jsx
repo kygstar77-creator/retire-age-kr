@@ -10,7 +10,7 @@ const toMan = (won) => Math.round((Number(won) || 0) / 10000);
 export default function DependentCheck({ inputs, onApply }) {
   const [other, setOther] = useState(0);          // 금융 외 소득(연, 원)
   const [fin, setFin] = useState(0);              // 금융소득(연, 원)
-  const [prop, setProp] = useState(3);            // 재산세 과세표준(억)
+  const [prop, setProp] = useState(0);            // 재산세 과세표준(억) — 결과 화면의 추정(재산 0)과 같은 출발점
   const [biz, setBiz] = useState(false);
   const [rental, setRental] = useState(false);
   const [mode, setMode] = useState('local');      // local 지역가입자 | barista 직장가입자 유지

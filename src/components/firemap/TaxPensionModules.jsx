@@ -33,7 +33,7 @@ export function ForeignStockTaxCard({ inputs, onApply }) {
         {onApply && (hasCG
           ? <Button variant="secondary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next }); toast('해외 양도세 반영을 해제했어요'); }}>✓ 반영 중 · 해외 양도세 · 해제</Button>
           : <Button variant="primary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next }); toast.good('해외 양도세를 반영했어요'); }}>해외 양도세 반영</Button>)}
-        {onApply && <p className="ds-caption ds-mt-2 ds-mb-0">배당세와 같이 켤 수 있어요 · 참고용 계산이에요 · 투자 자문이 아니에요</p>}
+        {onApply && <p className="ds-caption ds-mt-2 ds-mb-0">배당세와 같이 켤 수 있어요 · 참고용 계산이에요 · 투자 권유가 아니에요</p>}
       </Card>
     </>
   );
@@ -70,7 +70,7 @@ export function DividendCard({ inputs, onApply }) {
           ? <Button variant="secondary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next }); toast('배당세 반영을 해제했어요'); }}>✓ 반영 중 · 배당세 · 해제</Button>
           : <Button variant="primary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next, dividendIncomeMonthly: 0 }); toast.good('배당세를 반영했어요'); }}>배당세 15.4% 반영</Button>)}
         {onApply && <p className="ds-caption ds-mt-2 ds-mb-0">양도세와 같이 켤 수 있어요 · 배당으로 파이어의 배당 소득과는 한쪽만 켜져요</p>}
-        <p className="ds-caption ds-mt-2 ds-mb-0">참고용 계산이에요 · 투자 자문이 아니에요</p>
+        <p className="ds-caption ds-mt-2 ds-mb-0">참고용 계산이에요 · 투자 권유가 아니에요</p>
       </Card>
     </>
   );

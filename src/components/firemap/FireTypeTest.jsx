@@ -18,7 +18,7 @@ function Cover({ onStart }) {
       <h2 className="sc-ft-title">나는 어떤<br /><b>파이어족</b>일까?</h2>
       <p className="sc-ft-sub">유형과 내게 맞는 국내·해외 도시 Top3를 찾아줘요 · 로그인 없이 바로</p>
       <Button variant="primary" size="lg" full onClick={onStart}>테스트 시작하기</Button>
-      <p className="ds-caption ds-mt-3 ds-textcenter">참고용 결과예요 · 투자 자문이 아니에요</p>
+      <p className="ds-caption ds-mt-3 ds-textcenter">참고용 결과예요 · 투자 권유가 아니에요</p>
     </Card>
   );
 }

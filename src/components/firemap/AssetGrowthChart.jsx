@@ -45,8 +45,8 @@ export default function AssetGrowthChart({ ages, principal, gains, retirementAge
       data: {
         labels: ages,
         datasets: [
-          { label: '내가 넣은 돈', data: principal, borderColor: '#2f6fde', backgroundColor: 'rgba(47,111,222,0.35)', fill: 'origin', borderWidth: 2, pointRadius: 0, tension: 0.3 },
-          { label: '불어난 돈', data: gains, borderColor: accent, backgroundColor: gainGrad, fill: '-1', borderWidth: 2, pointRadius: 0, tension: 0.3 }
+          { label: '납입 원금', data: principal, borderColor: '#2f6fde', backgroundColor: 'rgba(47,111,222,0.35)', fill: 'origin', borderWidth: 2, pointRadius: 0, tension: 0.3 },
+          { label: '투자 수익', data: gains, borderColor: accent, backgroundColor: gainGrad, fill: '-1', borderWidth: 2, pointRadius: 0, tension: 0.3 }
         ]
       },
       options: {

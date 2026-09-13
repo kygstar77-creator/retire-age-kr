@@ -140,7 +140,7 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
   const heroValue = target <= 0 ? '—' : years == null ? '아직' : years === 0 ? '지금' : String(fireAge);
   const heroUnit = target > 0 && years != null && years > 0 ? '세' : '';
   const heroSub = target <= 0
-    ? '파이어 후 생활비를 먼저 정해 주세요'
+    ? '파이어 후 월 생활비를 먼저 정해 주세요'
     : yieldPct <= 0
       ? '배당률을 넣어 주세요'
       : years == null
@@ -198,7 +198,7 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
         <p className="ds-body-sm sc-div-note">그래서 이 배당을 결과에 따로 더하면 같은 돈을 두 번 세게 돼요. 이 화면은 배당만 떼어 보는 계산기로 쓰면 돼요.</p>
       </Card>
 
-      <p className="ds-caption ds-textcenter">참고용 계산이에요 · 투자 자문이 아니에요</p>
+      <p className="ds-caption ds-textcenter">참고용 계산이에요 · 투자 권유가 아니에요</p>
     </main>
   );
 }

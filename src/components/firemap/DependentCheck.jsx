@@ -93,7 +93,7 @@ export default function DependentCheck({ inputs, onApply }) {
       <p className="ds-caption ds-mt-2">생활비에 건강보험료를 이미 넣었다면 그만큼 빼 주세요</p>
 
       <p className="ds-caption ds-textcenter">2026 요율 기준 추정이에요 · 정확한 금액은 건강보험공단에서 확인해요</p>
-      <p className="ds-caption ds-textcenter">참고용 계산이에요 · 투자 자문이 아니에요</p>
+      <p className="ds-caption ds-textcenter">참고용 계산이에요 · 투자 권유가 아니에요</p>
     </>
   );
 }

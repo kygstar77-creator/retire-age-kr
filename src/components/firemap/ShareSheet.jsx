@@ -64,7 +64,7 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
   const body = [
     `🔥 파이어 나이 ${earliest ? `${earliest}세` : '아직'} (목표 ${inp.targetRetirementAge}세)`,
     `${earliest || inp.targetRetirementAge}세 때 자산 ${formatWon(need)} · 지금 ${hideAmt ? '비공개' : formatWon(asset)}`,
-    `월 저축 ${hideAmt ? '비공개' : formatWon(inp.monthlyInvestment)} · 파이어 후 생활비 ${formatWon(inp.monthlyLivingCost)}`,
+    `월 저축액 ${hideAmt ? '비공개' : formatWon(inp.monthlyInvestment)} · 파이어 후 월 생활비 ${formatWon(inp.monthlyLivingCost)}`,
     `가정: 수익률 ${inp.annualReturnRate}% · 물가 ${inp.inflationRate}% · 국민연금 ${inp.expectedPensionAge}세~`,
     '계산: firemap.kr'
   ].join('\n');

@@ -86,7 +86,7 @@ export function buildCertSvg(opts = {}) {
       : gap > 0 ? `목표보다 ${gap}년 빨라요`
         : gap < 0 ? `목표보다 ${-gap}년 늦어요` : '목표와 같아요';
   const rows = [
-    [`${opts.ea || opts.target}세 때 자산`, esc(opts.need)], ['현재 자산', esc(opts.asset)], ['월 저축', esc(opts.save)], ['파이어 후 생활비', esc(opts.cost)],
+    [`${opts.ea || opts.target}세 때 자산`, esc(opts.need)], ['현재 자산', esc(opts.asset)], ['월 저축액', esc(opts.save)], ['파이어 후 월 생활비', esc(opts.cost)],
     ['목표 나이', `${Number(opts.target) || 0}세`], ['가정', `수익률 ${esc(opts.ret)}% · 물가 ${esc(opts.inf)}% · 연금 ${esc(opts.pen)}세~`]
   ];
   const rowsSvg = rows.map(([k, v], i) => {
@@ -125,7 +125,7 @@ export function buildCertWideSvg(opts = {}) {
   const title = `${esc(opts.year)}년생 · ${esc(opts.round) || 1}회차`;
   const rows = [
     [`${opts.ea || opts.target}세 때 자산`, esc(opts.need)], ['현재 자산', esc(opts.asset)],
-    ['월 저축', esc(opts.save)], ['파이어 후 생활비', esc(opts.cost)]
+    ['월 저축액', esc(opts.save)], ['파이어 후 월 생활비', esc(opts.cost)]
   ];
   const rowsSvg = rows.map(([k, v], i) => {
     const x = 620 + (i % 2) * 280;

@@ -95,26 +95,26 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
         tiles={[
           { label: `${simulation.displayResult.retirementAge}세 때 자산`, value: eok(simulation.displayResult.fireAsset) },
           { label: `목표 ${simulation.inputs.targetRetirementAge}세`, value: targetGapText(simulation) },
-          { label: '지금 자산', value: eok(draft.financialAsset) }
+          { label: '현재 자산', value: eok(draft.financialAsset) }
         ]}
       />
 
       <Card>
         <SectionHead size="sm" kicker="기본 조건" title="월 저축 · 생활비 · 수익률" desc="값을 누르면 직접 입력할 수 있어요" />
-        {money('monthlyInvestment', '월 저축')}
-        {money('monthlyLivingCost', '파이어 후 생활비')}
+        {money('monthlyInvestment', '월 저축액')}
+        {money('monthlyLivingCost', '파이어 후 월 생활비')}
         {money('partTimeIncomeAfterRetirement', '파이어 후 부업 소득', '물가와 상관없이 고정 수입으로 계산해요')}
       </Card>
 
       <Fold icon="🎂" title="나이·자산" hint={`${draft.currentAge}세 → ${draft.targetRetirementAge}세 · 지금 ${eok(draft.financialAsset)}`}>
-        <RangeField label="지금 나이" value={cleanNumber(draft.currentAge)} min={R.currentAge[0]} max={R.currentAge[1]} step={1} format={ageFmt} onChange={(v) => editDraft('currentAge', v)} />
+        <RangeField label="현재 나이" value={cleanNumber(draft.currentAge)} min={R.currentAge[0]} max={R.currentAge[1]} step={1} format={ageFmt} onChange={(v) => editDraft('currentAge', v)} />
         <RangeField label="목표 나이" value={cleanNumber(draft.targetRetirementAge)} min={R.targetRetirementAge[0]} max={R.targetRetirementAge[1]} step={1} format={ageFmt} onChange={(v) => editDraft('targetRetirementAge', v)} />
-        {money('financialAsset', '지금 자산', '주식·예금·현금처럼 파이어 후 생활비로 쓸 수 있는 돈이에요')}
+        {money('financialAsset', '현재 자산', '저축·투자 등 금융자산 합계')}
       </Fold>
 
       <Fold icon="⚙️" title="고급 가정" hint={`저축 ${savingYearsValue}년 · 연봉 ${draft.salaryGrowthRate}% · 물가 ${draft.inflationRate}% · 수익 ${draft.annualReturnRate}%`}>
         <RangeField label="저축 기간" value={savingYearsValue} min={1} max={yearsToRetire} step={1} format={(v) => `${v}년`} hint={`기본은 파이어까지 ${yearsToRetire}년 매달 저축이에요 · 줄이면 이후엔 모은 돈을 굴리기만 해요`} onChange={(v) => editDraft('savingYears', v >= yearsToRetire ? 0 : v)} />
-        <RangeField label="연봉 상승률" value={cleanNumber(draft.salaryGrowthRate)} min={R.salaryGrowthRate[0]} max={R.salaryGrowthRate[1]} step={1} format={pctFmt} hint="저축액도 매년 이만큼 늘어요" onChange={(v) => editDraft('salaryGrowthRate', v)} />
+        <RangeField label="임금상승률" value={cleanNumber(draft.salaryGrowthRate)} min={R.salaryGrowthRate[0]} max={R.salaryGrowthRate[1]} step={1} format={pctFmt} hint="저축액도 매년 이만큼 늘어요" onChange={(v) => editDraft('salaryGrowthRate', v)} />
         <RangeField label="물가 상승률" value={cleanNumber(draft.inflationRate)} min={R.inflationRate[0]} max={R.inflationRate[1]} step={1} format={pctFmt} hint="생활비·연금·건보료·임대수익이 매년 이만큼 올라요" onChange={(v) => editDraft('inflationRate', v)} />
         <RangeField label="연 수익률" value={cleanNumber(draft.annualReturnRate)} min={R.annualReturnRate[0]} max={R.annualReturnRate[1]} step={1} format={pctFmt} onChange={(v) => editDraft('annualReturnRate', v)} />
         <Chips className="ds-mt-2">
@@ -133,16 +133,16 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
         {money('monthlyRentalIncome', '파이어 후 월 임대수익', '세후 기준이에요 · 생활비를 메워 파이어 나이를 앞당겨요')}
       </Fold>
 
-      <Fold icon="🏛️" title="국민연금" hint="받는 나이 · 월 수령액">
+      <Fold icon="🏛️" title="국민연금" hint="수령 나이 · 월 수령액">
         <PensionControls inputs={draft} onChange={editDraft} />
       </Fold>
 
-      <Fold icon="📈" title="자산 흐름" hint={`넣은 돈 ${eok(principalAtRet)} · 불어난 돈 ${eok(gainsAtRet)}`}>
+      <Fold icon="📈" title="자산 흐름" hint={`납입 원금 ${eok(principalAtRet)} · 투자 수익 ${eok(gainsAtRet)}`}>
         <AssetGrowthChart ages={growth.ages} principal={growth.principal} gains={growth.gains} retirementAge={simulation.displayResult.retirementAge} depletionAge={simulation.displayResult.depletionAge} />
-        <p className="ds-caption ds-mt-2">파이어 <b className="num">{draft.targetRetirementAge}세</b> 기준 · 넣은 돈 <b className="num">{eok(principalAtRet)}</b> · 불어난 돈 <b className="num">{eok(gainsAtRet)}</b> · 파이어 후엔 쓰면서 줄어요</p>
+        <p className="ds-caption ds-mt-2">파이어 <b className="num">{draft.targetRetirementAge}세</b> 기준 · 납입 원금 <b className="num">{eok(principalAtRet)}</b> · 투자 수익 <b className="num">{eok(gainsAtRet)}</b> · 파이어 후엔 쓰면서 줄어요</p>
       </Fold>
 
-      <p className="ds-caption ds-textcenter">참고용 계산이에요 · 투자 자문이 아니에요</p>
+      <p className="ds-caption ds-textcenter">참고용 계산이에요 · 투자 권유가 아니에요</p>
 
       {dirty && <BottomCTA fixed className="sc-exp-cta" secondary={{ label: '되돌리기', onClick: reset }} primary={{ label: '이 조건을 내 결과로 저장', onClick: commit }} />}
     </main>

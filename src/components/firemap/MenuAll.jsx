@@ -49,7 +49,7 @@ export default function MenuAll({ onMove }) {
         <ListRow lead="🔒" title="개인정보처리방침" href="/privacy.html" />
         <ListRow lead="✉️" title="문의" href="/contact.html" />
       </ListGroup>
-      <p className="ds-caption ds-textcenter">파이어맵은 정보 제공 서비스예요 · 투자 자문이 아니에요 · 모든 수치는 입력값 기반 추정이에요</p>
+      <p className="ds-caption ds-textcenter">파이어맵은 정보 제공 서비스예요 · 투자 권유가 아니에요 · 모든 수치는 입력값 기반 추정이에요</p>
     </main>
   );
 }

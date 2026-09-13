@@ -47,7 +47,7 @@ export default function Home({ onStart, onMove, simulation }) {
       <Card variant="hero" padding="lg">
         <SectionHead kicker="1분 계산 · 가입 없음" title={<>나는 몇 살에<br />파이어할 수 있을까?</>} desc="자산·저축·생활비만 넣으면 물가·국민연금까지 반영한 현실적인 파이어 나이가 나와요." />
         <div className="ds-row sc-home-agebox">
-          <span className="ds-body-sm ds-bold">지금 나이</span>
+          <span className="ds-body-sm ds-bold">현재 나이</span>
           <div className="ds-row">
             <IconButton label="나이 감소" size="sm" onClick={() => setClamp(age - 1)}>−</IconButton>
             <input aria-label="나이" className="ds-input num sc-home-agein" inputMode="numeric" value={ageStr} onChange={onAgeInput} onBlur={commitAge} />

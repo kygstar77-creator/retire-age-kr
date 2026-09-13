@@ -203,7 +203,7 @@ export default function News({ onBack }) {
       {rows !== null && list.length > shown && (
         <Button variant="secondary" size="md" full onClick={() => setShown((n) => n + 20)}>더 보기 · {list.length - shown}개</Button>
       )}
-      <p className="ds-caption ds-textcenter sc-news-cap">참고용 정보예요 · 투자 자문이 아니에요</p>
+      <p className="ds-caption ds-textcenter sc-news-cap">참고용 정보예요 · 투자 권유가 아니에요</p>
     </main>
   );
 }

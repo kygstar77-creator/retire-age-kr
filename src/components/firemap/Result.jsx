@@ -1,7 +1,7 @@
 // 결과 — 파이어 나이 하나를 크게 띄우고, 나머지 숫자에는 어느 나이 기준인지 이름표를 붙인다.
 // 나이는 둘뿐이다: 내가 적은 '목표 나이'와, 계산이 찾아낸 '파이어 가능 나이'.
 // 필요 자산도 파이어 나이와 같은 시뮬레이션으로 구한다(retirementSimulator의 findRequiredAssetNow).
-// 'N억이면?' 탭은 없앴다 — 바꿔보기에서 '지금 자산'을 움직이면 같은 답이 나온다.
+// 'N억이면?' 탭은 없앴다 — 바꿔보기에서 '현재 자산'을 움직이면 같은 답이 나온다.
 import { useEffect, useMemo, useState } from 'react';
 import { TopBar, StatHero, Card, SectionHead, Button, StatTiles } from '../../ui/index.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
@@ -43,7 +43,7 @@ function YearlyAssetChart({ simulation }) {
   return (
     <div className="fm-yac">
       <div className="fm-yac-read"><b>{cur.age}세</b><span className={cur.status === '파이어 후' ? 'after' : 'before'}>{cur.status}</span><strong>{formatWon(cur.v)}</strong></div>
-      <p className="fm-yac-split"><i className="fm-dot fm-dot-principal" />넣은 돈 {formatWon(cur.principal)} · <i className="fm-dot fm-dot-gains" />불어난 돈 {formatWon(cur.gains)}</p>
+      <p className="fm-yac-split"><i className="fm-dot fm-dot-principal" />납입 원금 {formatWon(cur.principal)} · <i className="fm-dot fm-dot-gains" />투자 수익 {formatWon(cur.gains)}</p>
       <div className="fm-yac-canvas" style={{ touchAction: 'none' }} onPointerDown={pick} onPointerMove={(e) => { if (e.buttons) pick(e); }} onTouchStart={pick} onTouchMove={pick}>
         <svg viewBox={`0 0 ${W} ${H}`} preserveAspectRatio="none" role="img" aria-label="나이별 자산 그래프">
           <path d={principalArea} className="fm-yac-area-principal" /><path d={gainsArea} className="fm-yac-area-gains" /><path d={totalTop} className="fm-yac-line" fill="none" />
@@ -73,7 +73,7 @@ function AssetJourney({ simulation }) {
       if (hit && hit.age > cur.age) items.push({ age: hit.age, label: `자산 ${formatWon(t)} 돌파`, sub: null, hi: false });
     }
   });
-  if (simulation.earliestRetirementAge) items.push({ age: simulation.earliestRetirementAge, label: '가장 이른 파이어', sub: null, hi: true });
+  if (simulation.earliestRetirementAge) items.push({ age: simulation.earliestRetirementAge, label: '파이어 가능 나이', sub: null, hi: true });
   items.push({ age: simulation.inputs.targetRetirementAge, label: '목표 파이어', sub: null, hi: true });
   const seen = new Set();
   const list = items
@@ -159,7 +159,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
   // 건보료 추정 — 건보료 화면과 같은 경로로 계산한다(금융소득 1,000만 게이트 포함).
   // 예전엔 파이어 시점 '미래 명목' 자산의 4%를 전액 금융소득으로 넣어 4배 넘게 부풀려졌다.
   const atE = simulation.atEarliest || null;
-  const fireAssetToday = simulation.displayResult.fireAsset || inp.financialAsset || 0;
+  const fireAssetToday = simulation.displayResult.fireAssetToday || inp.financialAsset || 0;  // 문구가 '오늘 화폐로'라 오늘 돈을 쓴다
   const hiEst = (() => {
     try {
       const finMan = Math.round((fireAssetToday * 0.04) / 10000);
@@ -178,7 +178,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
             label={`내 파이어 나이 · ${base.ageBandLabel} 또래 기준`}
             value={earliest ? `${earliest}` : '아직'} unit={earliest ? '세' : ''}
             delta={delta}
-            sub={<>지금 자산 <b className="num">{eok(inp.financialAsset)}</b></>}
+            sub={<>현재 자산 <b className="num">{eok(inp.financialAsset)}</b></>}
             tiles={[
               { label: `목표 ${target}세`, value: targetGapText(simulation) },
               { label: `${atE ? atE.age : target}세 때 자산`, value: eok(simulation.displayResult.fireAsset) },
@@ -202,7 +202,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
 
           <AssetJourney simulation={simulation} />
           <Card>
-            <SectionHead size="sm" kicker="파이어 후" title="건보료와 세금" desc={hiEst ? `지역가입으로 바뀌면 월 약 ${hiEst.monthly.toLocaleString()}원으로 잡혀요 (추정)` : '지역가입자 전환 · 배당세'} />
+            <SectionHead size="sm" kicker="파이어 후" title="건보료와 세금" desc={hiEst ? `지역가입자로 전환되면 월 약 ${hiEst.monthly.toLocaleString()}원 (추정)` : '지역가입자 전환 · 배당세'} />
             <p className="ds-p">직장을 그만두면 건보료를 혼자 내고 소득·재산 기준 <b>지역가입자</b>로 바뀌어요. 오늘 화폐로 연 금융소득 {hiEst ? hiEst.finMan.toLocaleString() : '—'}만원을 가정한 대략값이고, 재산은 넣지 않았어요.</p>
             <div className="ds-bottomcta"><Button variant="secondary" size="md" onClick={() => onMove('dependent')}>건보료 정밀 계산</Button><Button variant="secondary" size="md" onClick={() => onMove('foreignTax')}>양도·배당세</Button></div>
           </Card>
@@ -223,7 +223,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
           )}
           <CommunityCta where="result" />
 
-          <p className="ds-caption ds-textcenter">통계청 2024 가계금융복지조사 · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)} · 참고용 계산이에요 · 투자 자문이 아니에요</p>
+          <p className="ds-caption ds-textcenter">통계청 2024 가계금융복지조사 · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)} · 참고용 계산이에요 · 투자 권유가 아니에요</p>
       </>
 
       <ShareSheet open={shareOpen} onClose={() => setShareOpen(false)} simulation={simulation} onMove={onMove} />

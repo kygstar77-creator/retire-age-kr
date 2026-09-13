@@ -12,8 +12,6 @@ import '../../ui/screens/news.css';
 const CATS = [
   { key: 'all', label: '전체', emoji: '📰' },
   { key: 'news', label: '경제', emoji: '📈' },
-  { key: 'ranking', label: '랭킹', emoji: '🏆' },
-  { key: 'goal', label: '인증', emoji: '🔥' },
   { key: 'realestate', label: '부동산', emoji: '🏠' },
   { key: 'invest', label: '투자', emoji: '🌎' },
   { key: 'sidejob', label: '부업', emoji: '💼' },

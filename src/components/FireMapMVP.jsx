@@ -184,7 +184,7 @@ export default function FireMapMVP() {
     account: () => tool('account', <AccountCard />),
     cities: () => <CityExplorer inputs={inputs} simulation={simulation} onChange={onChange} onMove={setScreen} onPreviewCity={previewCity} onPreviewPatch={previewPatch} onBack={backOf('cities')} />,
     firetype: () => <FireTypeTest simulation={simulation} onChange={onChange} onMove={setScreen} onPreviewCity={previewCity} onBack={backOf('firetype')} />,
-    dependent: () => tool('dependent', <DependentCheck inputs={inputs} onApply={applyPatch} />),
+    dependent: () => tool('dependent', <DependentCheck inputs={inputs} simulation={simulation} onApply={applyPatch} />),
     foreignTax: () => tool('foreignTax', <><ForeignStockTaxCard inputs={inputs} onApply={applyPatch} /><DividendCard inputs={inputs} onApply={applyPatch} /></>),
     dividend: () => <DividendLifeCalc inputs={inputs} onChange={onChange} onMove={setScreen} onBack={backOf('dividend')} />,
     pension: () => tool('pension', <PensionEarlyClaimCard inputs={inputs} onApply={applyPatch} />),

@@ -386,3 +386,35 @@ console.log('(22) health insurance property grades OK');
   assert(s.inputs.targetRetirementAge === 50 && s.requiredFireAssetNominal > 0, '(23) 목표<현재 방어');
 }
 console.log('(23) target<current guard OK');
+
+
+// (24) 금융소득종합과세 — 배당 2,000만 초과분은 누진세율, 비교과세로 15.4% 아래로는 안 내려간다.
+// 감사 보고서가 독립 계산한 실효세율과 대조: 금융 1억·기타 0 → 17.47%, 금융 5,000만·기타 3,000만 → 17.74%, 금융 2억·기타 0 → 27.88%
+{
+  const base = { currentAge: 40, targetRetirementAge: 40, financialAsset: 2500000000, monthlyInvestment: 0, monthlyLivingCost: 1000000, investType: 2, dividendYield: 4, annualReturnRate: 4, inflationRate: 0, expectedMonthlyPension: 0 };
+  // 자산 25억 × 4% = 배당 1억, 파이어 첫해(40세) 행의 investTax
+  const r = simulateRetirement(base, 40);
+  const row = r.rows.find((x) => x.age === 40);
+  const eff = row.investTax / (2500000000 * 0.04);
+  assert(Math.abs(eff - 0.1747) < 0.004, '(24) 배당 1억 실효세율 ≈17.5%, 실제 ' + (eff * 100).toFixed(2) + '%');
+  const r2 = simulateRetirement({ ...base, financialAsset: 5000000000 }, 40);
+  const eff2 = r2.rows.find((x) => x.age === 40).investTax / (5000000000 * 0.04);
+  assert(Math.abs(eff2 - 0.2788) < 0.005, '(24) 배당 2억 실효세율 ≈27.9%, 실제 ' + (eff2 * 100).toFixed(2) + '%');
+  const r3 = simulateRetirement({ ...base, financialAsset: 1250000000, partTimeIncomeAfterRetirement: 2500000 }, 40);
+  const eff3 = r3.rows.find((x) => x.age === 40).investTax / (1250000000 * 0.04);
+  assert(Math.abs(eff3 - 0.1774) < 0.005, '(24) 배당 5,000만+기타 3,000만 ≈17.7%, 실제 ' + (eff3 * 100).toFixed(2) + '%');
+  const r4 = simulateRetirement({ ...base, financialAsset: 400000000 }, 40);
+  const eff4 = r4.rows.find((x) => x.age === 40).investTax / (400000000 * 0.04);
+  assert(Math.abs(eff4 - 0.154) < 0.0001, '(24) 배당 1,600만은 원천징수 15.4%');
+}
+console.log('(24) comprehensive financial income tax OK');
+
+// (25) 건보료 — 근로·연금소득은 50%만 반영. 연 2,400만 공적연금만 있으면 월 81,348원(장기요양 포함, 감사 보고서 계산).
+{
+  const { estimateLocalPremium } = await import('../src/firemap-v2/healthInsurance.js');
+  const full = estimateLocalPremium({ chargeableIncomeManwon: 2400, propertyTaxBaseEok: 0 }).monthly;
+  const half = estimateLocalPremium({ chargeableIncomeManwon: 0, halfRatedIncomeManwon: 2400, propertyTaxBaseEok: 0 }).monthly;
+  assert(Math.abs(half * 2 - full) < 3, '(25) 50% 반영이면 보험료도 절반');
+  assert(Math.abs(half - 81348) < 300, '(25) 연금 2,400만 → 약 81,348원, 실제 ' + half);
+}
+console.log('(25) health insurance 50% rating OK');

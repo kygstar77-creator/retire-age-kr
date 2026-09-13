@@ -48,8 +48,12 @@ export function propertyPoints(taxBaseManwon) {
 
 // 지역가입자 월 건강보험료 근사 추정 (2026: 7.19%, 점수단가 211.5원, 재산 1억 공제, 장기요양 포함)
 // 정확한 금액은 국민건강보험공단 확인 필요 — 참고용 근사치.
-export function estimateLocalPremium({ chargeableIncomeManwon = 0, propertyTaxBaseEok = 0 }) {
-  const incomeMonthly = (Math.max(0, Number(chargeableIncomeManwon) || 0) * 10000) * RATE_2026 / 12;
+// halfRatedIncomeManwon: 근로소득·연금소득 — 지역가입자 소득월액 산정 때 50%만 반영된다(2022.9 부과체계 2단계 개편).
+// 출처: 보건복지부 보도자료 '건강보험료 부과체계 2단계 개편 9월부터 시행'(2022-08-29, 근로·연금소득 평가율 50%)
+//       https://www.mohw.go.kr/board.es?mid=a10503010100&bid=0027&act=view&list_no=372730
+export function estimateLocalPremium({ chargeableIncomeManwon = 0, halfRatedIncomeManwon = 0, propertyTaxBaseEok = 0 }) {
+  const ratedManwon = Math.max(0, Number(chargeableIncomeManwon) || 0) + Math.max(0, Number(halfRatedIncomeManwon) || 0) * 0.5;
+  const incomeMonthly = (ratedManwon * 10000) * RATE_2026 / 12;
   const baseManwon = Math.max(0, ((Number(propertyTaxBaseEok) || 0) - 1) * 10000); // 만원, 재산 1억 기본공제
   const propMonthly = baseManwon > 0 ? propertyPoints(baseManwon) * POINT_2026 : 0;
   // 공단 산식: 소득보험료(최저보험료 하한) + 재산보험료. 재산보험료가 최저보험료를 흡수하지 않는다.

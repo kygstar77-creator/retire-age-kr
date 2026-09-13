@@ -61,6 +61,28 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
   const investType = Math.round(data.investType) || 0; // 0 국내(면제) · 1 해외 양도세２２% · 2 배당１５.４% · 3 둘 다
   const dividendYield = toRate(data.dividendYield);
   const DIV_TAX = 0.154; const CG_EXEMPT = 2500000;
+  // 금융소득종합과세 — 이자·배당이 연 2,000만원을 넘으면 초과분을 다른 종합소득과 합산해 누진세율로 과세한다.
+  // 비교과세(소득세법 62조): 종합과세 세액이 '전액 14% 분리과세' 세액보다 적을 수는 없다.
+  // 세율표(소득세법 55조, 2025~): 1,400만 6% · 5,000만 15% · 8,800만 24% · 1.5억 35% · 3억 38% · 5억 40% · 10억 42% · 초과 45%
+  // 출처: 국세청 종합소득세 세율 https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7667&mi=2227
+  const FIN_THRESHOLD = 20000000; const BASIC_DEDUCTION = 1500000; const LOCAL_SURTAX = 1.1;
+  const BRACKETS = [[14000000, 0.06], [50000000, 0.15], [88000000, 0.24], [150000000, 0.35], [300000000, 0.38], [500000000, 0.40], [1000000000, 0.42], [Infinity, 0.45]];
+  const progressiveTax = (base) => {
+    let tax = 0; let lo = 0;
+    for (const [hi, rate] of BRACKETS) { if (base <= lo) break; tax += (Math.min(base, hi) - lo) * rate; lo = hi; }
+    return Math.max(0, tax);
+  };
+  // 배당 D에 붙는 소득세(지방세 포함). 다른 종합소득 O에 원래 붙을 세금은 앱이 따로 세지 않으므로 빼서 배당 몫만 남긴다.
+  const dividendTaxWithComprehensive = (D, O) => {
+    const withholding = D * DIV_TAX;
+    if (D <= FIN_THRESHOLD) return withholding;
+    const otherBase = Math.max(0, O - BASIC_DEDUCTION);
+    const taxOtherOnly = progressiveTax(otherBase);
+    const comprehensive = FIN_THRESHOLD * 0.14 + progressiveTax(Math.max(0, (D - FIN_THRESHOLD) + O - BASIC_DEDUCTION));
+    const separate = D * 0.14 + taxOtherOnly;
+    const total = Math.max(comprehensive, separate);              // 비교과세
+    return Math.max(withholding, (total - taxOtherOnly) * LOCAL_SURTAX);
+  };
   // 해외주식 양도세 — 250만원 공제 후 22% 단일(양도세 20% + 지방세 2%). 구간 없음.
   // 3억 초과 27.5%는 국내 상장주식 대주주 세율이라 해외주식엔 해당 없다(국세청·증권사 안내).
   const capitalGainTax = (gain) => Math.max(0, gain - CG_EXEMPT) * 0.22;
@@ -100,7 +122,9 @@ export function simulateRetirement(inputs, retirementAge = Number(inputs.targetR
     let investTax = 0;
     // 배당세는 파이어 전에도 매년 떼인다(재투자해도 원천징수). 양도세는 팔 때만이라 파이어 후에만.
     if (financialAsset > 0 && (investType === 2 || investType === 3)) {
-      investTax += financialAsset * dividendYield * DIV_TAX;
+      // 파이어 전엔 다른 소득을 모르니(근로소득은 앱 밖) 원천징수만, 파이어 후엔 부업·임대·연금과 합산해 종합과세를 본다.
+      const annualDividend = financialAsset * dividendYield;
+      investTax += isRetired ? dividendTaxWithComprehensive(annualDividend, partTimeIncome + rentalIncome + pensionIncome) : annualDividend * DIV_TAX;
     }
     if (isRetired && financialAsset > 0) {
       if (investType === 1 || investType === 3) { // 해외주식 양도세: 매도 차익분 22%(250만 공제)

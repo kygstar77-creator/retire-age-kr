@@ -13,6 +13,7 @@ import { saveRankSnapshot } from '../../firemap-v2/rankHistory.js';
 import { FIRE_CITIES } from '../../firemap-v2/cities.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import { assessDependentEligibility, estimateLocalPremium } from '../../firemap-v2/healthInsurance.js';
+import { fireIncomeParts } from './DependentCheck.jsx';
 import { syncWidgetSnapshot } from '../../utils/widgetState.js';
 import ConsentSheet from './Consent.jsx';
 import ShareSheet from './ShareSheet.jsx';
@@ -163,8 +164,11 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
   const hiEst = (() => {
     try {
       const finMan = Math.round((fireAssetToday * 0.04) / 10000);
-      const r = assessDependentEligibility({ financialIncomeManwon: finMan, propertyTaxBaseEok: 0 });
-      return { ...estimateLocalPremium({ chargeableIncomeManwon: r.combinedIncome, propertyTaxBaseEok: 0 }), finMan };
+      const parts = fireIncomeParts(inp, simulation);
+      const halfMan = Math.round((parts.work + parts.pension) / 10000);
+      const r = assessDependentEligibility({ otherIncomeManwon: Math.round(parts.rental / 10000) + halfMan, financialIncomeManwon: finMan, propertyTaxBaseEok: 0 });
+      // 건보료 화면과 같은 규칙: 금융소득 1,000만 게이트 · 임대 100% · 근로·연금 50%
+      return { ...estimateLocalPremium({ chargeableIncomeManwon: Math.round(parts.rental / 10000) + (finMan > 1000 ? finMan : 0), halfRatedIncomeManwon: halfMan, propertyTaxBaseEok: 0 }), finMan };
     } catch { return null; }
   })();
 

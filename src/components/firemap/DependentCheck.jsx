@@ -7,8 +7,19 @@ import { formatWon } from '../../firemap-v2/formatters.js';
 const eok = (n) => formatWon(Math.round(n || 0));
 const toMan = (won) => Math.round((Number(won) || 0) / 10000);
 
-export default function DependentCheck({ inputs, onApply }) {
-  const [other, setOther] = useState(0);          // 금융 외 소득(연, 원)
+// 파이어 후 소득은 앱 입력에서 가져온다: 임대(100%) · 부업=근로소득(50%) · 국민연금(50%, 개시 나이가 파이어 나이 이하일 때만).
+export function fireIncomeParts(inputs, simulation) {
+  const yr = (m) => Math.max(0, Number(m) || 0) * 12;
+  const fireAge = simulation?.displayResult?.retirementAge ?? (Number(inputs?.targetRetirementAge) || 0);
+  const pensionAge = Number(simulation?.inputs?.expectedPensionAge) || 65;
+  const pension = pensionAge <= fireAge ? yr(simulation?.inputs?.expectedMonthlyPension) : 0;
+  return { rental: yr(inputs?.monthlyRentalIncome), work: yr(inputs?.partTimeIncomeAfterRetirement), pension };
+}
+
+export default function DependentCheck({ inputs, simulation, onApply }) {
+  const parts = fireIncomeParts(inputs, simulation);
+  const halfRatedManwon = toMan(parts.work + parts.pension);   // 근로·연금 50% 반영분(만원/년, 전액)
+  const [other, setOther] = useState(() => parts.rental);          // 금융 외 소득(연, 원) — 임대·사업
   const [fin, setFin] = useState(0);              // 금융소득(연, 원)
   const [prop, setProp] = useState(0);            // 재산세 과세표준(억) — 결과 화면의 추정(재산 0)과 같은 출발점
   const [biz, setBiz] = useState(false);
@@ -16,8 +27,9 @@ export default function DependentCheck({ inputs, onApply }) {
   const [mode, setMode] = useState('local');      // local 지역가입자 | barista 직장가입자 유지
   const [wage, setWage] = useState(1000000);      // 월 급여(원)
 
-  const r = assessDependentEligibility({ otherIncomeManwon: toMan(other), financialIncomeManwon: toMan(fin), propertyTaxBaseEok: prop, hasBusinessIncome: biz, hasRentalIncome: rental });
-  const est = estimateLocalPremium({ chargeableIncomeManwon: r.combinedIncome, propertyTaxBaseEok: prop });
+  // 피부양자 판정은 전액 합산, 보험료 산정은 근로·연금 50%.
+  const r = assessDependentEligibility({ otherIncomeManwon: toMan(other) + halfRatedManwon, financialIncomeManwon: toMan(fin), propertyTaxBaseEok: prop, hasBusinessIncome: biz, hasRentalIncome: rental });
+  const est = estimateLocalPremium({ chargeableIncomeManwon: toMan(other) + (toMan(fin) > 1000 ? toMan(fin) : 0), halfRatedIncomeManwon: halfRatedManwon, propertyTaxBaseEok: prop });
   const bar = estimateBaristaPremium({ wageMonthlyManwon: toMan(wage), otherIncomeManwon: toMan(other), financialIncomeManwon: toMan(fin) });
   const saving = est.monthly - bar.monthly;
   const applyMonthly = mode === 'barista' ? bar.monthly : est.monthly;
@@ -65,7 +77,8 @@ export default function DependentCheck({ inputs, onApply }) {
       <Card>
         <SectionHead size="sm" kicker="파이어 후 조건" title={mode === 'local' ? '소득과 재산을 넣어요' : '급여와 소득을 넣어요'} desc={mode === 'local' ? '1년 기준 · 금융소득은 1,000만원을 넘어야 합산돼요' : '파트타임으로 직장가입자를 유지하는 경우예요'} />
         {mode === 'barista' && <RangeField label="보수월액" value={wage} min={0} max={5000000} step={100000} money format={eok} chips={[100000, 500000, 1000000]} onChange={setWage} />}
-        <RangeField label="금융 외 소득 · 연" value={other} min={0} max={50000000} step={1000000} money format={eok} chips={[1000000, 5000000, 10000000]} onChange={setOther} hint="임대·연금·사업 소득을 합쳐요" />
+        <RangeField label="금융 외 소득 · 연" value={other} min={0} max={50000000} step={1000000} money format={eok} chips={[1000000, 5000000, 10000000]} onChange={setOther} hint="임대·사업 소득을 합쳐요" />
+        {halfRatedManwon > 0 && <p className="ds-caption ds-mb-0">국민연금·부업 소득 연 {eok((parts.work + parts.pension))}은 50%만 반영돼요</p>}
         <RangeField label="금융소득 · 연" value={fin} min={0} max={50000000} step={1000000} money format={eok} chips={[1000000, 5000000, 10000000]} onChange={setFin} hint="이자와 배당을 합쳐요" />
         {mode === 'local' && <RangeField label="재산세 과세표준" value={prop} min={0} max={20} step={0.5} format={(v) => `${Number(v) || 0}억`} onChange={setProp} hint="집·땅의 재산세 과세표준이에요 · 시세보다 낮아요" />}
         {mode === 'local' && (

@@ -21,7 +21,7 @@ export const questions = [
   { key: 'targetRetirementAge', type: 'age', label: '목표 나이', title: '몇 살에 파이어하고 싶어요?', helper: '1살 차이로도 필요 자산이 많이 달라져요.', step: 1 },
   { key: 'financialAsset', type: 'money', label: '지금 자산', title: '지금 굴릴 수 있는 돈은 얼마예요?', helper: '주식·예금·현금처럼 파이어 후 생활비로 쓸 수 있는 돈이에요. 집은 빼요.', step: 1000000, presets: [0, 50000000, 100000000, 300000000], unit: '100만원 단위' },
   { key: 'monthlyInvestment', type: 'money', label: '월 저축', title: '매달 얼마를 모아요?', helper: '앞으로 매달 투자하거나 저축할 돈이에요.', step: 100000, presets: [0, 500000, 1000000, 2000000], unit: '10만원 단위' },
-  { key: 'monthlyLivingCost', type: 'money', label: '파이어 후 생활비', title: '파이어 후 한 달에 얼마 써요?', helper: '주거·식비·보험·취미·여행까지 다 넣은 한 달 생활비예요.', step: 100000, presets: [2000000, 3000000, 4000000, 5000000], unit: '10만원 단위' }
+  { key: 'monthlyLivingCost', type: 'money', label: '파이어 후 생활비', title: '파이어 후 한 달에 얼마 써요?', helper: '주거·식비·취미·여행을 넣은 한 달 생활비예요. 건강보험료는 따로 계산해요.', step: 100000, presets: [2000000, 3000000, 4000000, 5000000], unit: '10만원 단위' }
 ];
 
 export const domesticCities = [

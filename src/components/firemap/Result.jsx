@@ -198,7 +198,11 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
   // 레버를 누르면 그 값이 들어간 채 바꿔보기가 열린다(저장해야 내 결과에 반영).
   const openPreview = onPreviewPatch || onApplyPatch || ((patch) => Object.entries(patch).forEach(([k, v]) => onChange(k, v)));
   const levers = useLevers(simulation, openPreview);
-  const success = useMemo(() => { try { return monteCarloSuccess(inp, { paths: 300 }); } catch { return null; } }, [inp]);
+  // 성공확률은 화면에 띄운 나이(가장 이른 파이어) 기준으로 돌린다.
+  // 예전엔 목표 나이로 계산해 놓고 이른 나이 옆에 붙여서, 47세 옆에 55세의 확률이 보였다.
+  const success = useMemo(() => {
+    try { return monteCarloSuccess(earliest ? { ...inp, targetRetirementAge: earliest } : inp, { paths: 300 }); } catch { return null; }
+  }, [inp, earliest]);
   const myBand = assetBandOf(simulation.netWorth);
   const inputsHash = `${earliest}|${rankEarliest}|${target}|${inp.financialAsset}|${inp.monthlyInvestment}|${inp.monthlyLivingCost}`;
 

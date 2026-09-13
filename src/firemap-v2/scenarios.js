@@ -10,6 +10,16 @@ export function runwayUntilText(simulation) {
   return /^\d+세$/.test(t) ? `${t}까지` : t;
 }
 
+// 목표 나이 타일 값 — 목표와 가능 나이의 차이만 말한다.
+export function targetGapText(simulation) {
+  const e = simulation.earliestRetirementAge;
+  const t = simulation.inputs.targetRetirementAge;
+  if (!e) return '아직';
+  if (e < t) return `${t - e}년 빨라요`;
+  if (e > t) return `${e - t}년 늦어요`;
+  return '딱 맞아요';
+}
+
 export function scenarioEndAge(simulation) {
   return simulation.targetResult.depletionAge || simulation.inputs.simulationUntilAge;
 }

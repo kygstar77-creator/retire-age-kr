@@ -5,7 +5,7 @@ import PensionControls from './PensionControls.jsx';
 import AssetGrowthChart from './AssetGrowthChart.jsx';
 import { investmentScenarios } from '../../firemap-v2/data.js';
 import { sourceLine } from '../../firemap-v2/dataSources.js';
-import { buildScenario, runwayText, runwayUntilText, buildGrowthSeries } from '../../firemap-v2/scenarios.js';
+import { buildScenario, runwayText, targetGapText, buildGrowthSeries } from '../../firemap-v2/scenarios.js';
 import { formatWon, cleanNumber } from '../../firemap-v2/formatters.js';
 import '../../ui/screens/experiment.css';
 
@@ -94,7 +94,7 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
         sub={heroSub}
         tiles={[
           { label: `${simulation.displayResult.retirementAge}세 때 자산`, value: eok(simulation.displayResult.fireAssetToday) },
-          { label: `목표 ${simulation.inputs.targetRetirementAge}세`, value: runwayUntilText(simulation) },
+          { label: `목표 ${simulation.inputs.targetRetirementAge}세`, value: targetGapText(simulation) },
           { label: '지금 자산', value: eok(draft.financialAsset) }
         ]}
       />

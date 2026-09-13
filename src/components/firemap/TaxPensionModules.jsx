@@ -99,7 +99,7 @@ export function PensionEarlyClaimCard({ inputs, onApply }) {
       <Card>
         <SectionHead size="sm" kicker="국민연금" title="몇 살부터 받을까요?" desc="1년 당길 때마다 6%씩 · 최대 5년 30% 줄어요" />
         <RangeField label="받기 시작 나이" value={claimAge} min={normalAge - 5} max={normalAge} step={1} format={(v) => `${Math.round(v)}세`} onChange={(v) => setClaimAge(Math.round(v))} />
-        {normalMonthly <= 0 && <Notice tone="warn" icon="💬" className="ds-mt-2">정상 월 연금이 0이에요 · 바꿔보기에서 국민연금을 먼저 넣어요</Notice>}
+        {normalMonthly <= 0 && <Notice tone="warn" icon="💬" className="ds-mt-2">예상연금월액이 0이에요 · 바꿔보기에서 국민연금을 먼저 넣어요</Notice>}
         {normalMonthly > 0 && (applied
           ? <Button variant="secondary" size="md" full className="ds-mt-2" onClick={() => { onApply({ pensionClaimAge: 0 }); toast('지급개시연령으로 되돌렸어요'); }}>✓ 반영 중 · {appliedClaim}세 · {applied.reductionPct}% 감액 · 되돌리기</Button>
           : (claimAge < normalAge

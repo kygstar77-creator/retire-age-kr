@@ -3,8 +3,13 @@ import { useEffect, useState } from 'react';
 import { TopBar, Card, SectionHead, Button, Stat, Notice, IconButton, Icon } from '../../ui/index.js';
 import { fetchAggregates } from '../../utils/firemapScoresApi.js';
 import { track } from '../../firemap-v2/dailyData.js';
-import { CAFE_URL, OPENCHAT_URL } from '../../firemap-v2/links.js';
 import CommunityCta from './CommunityCta.jsx';
+import { buildSimulation } from '../../utils/retirementSimulator.js';
+import { targetGapText } from '../../firemap-v2/scenarios.js';
+import { formatWon } from '../../firemap-v2/formatters.js';
+
+// 결과 미리보기는 질문 화면 예시값(35세 · 1.5억 · 월 150만 · 생활비 250만 · 목표 55세)을 실제로 계산한 값이다.
+const SAMPLE = buildSimulation({ currentAge: 35, targetRetirementAge: 55, financialAsset: 150000000, monthlyInvestment: 1500000, monthlyLivingCost: 2500000 });
 
 function readChallenge() {
   try {
@@ -33,10 +38,7 @@ export default function Home({ onStart, onMove, simulation }) {
 
   return (
     <main className="fm-screen fm-scroll fm-has-tabbar ds-screen-gap">
-      <TopBar onHome={() => onMove('home')} actions={<>
-        <a className="ds-topbar__handle" href={CAFE_URL} target="_blank" rel="noopener noreferrer"><span>카페</span></a>
-        {OPENCHAT_URL && <a className="ds-topbar__handle" href={OPENCHAT_URL} target="_blank" rel="noopener noreferrer"><span>오픈채팅</span></a>}
-      </>} />
+      <TopBar onHome={() => onMove('home')} />
 
       {challenge && (
         <Notice tone="accent" icon={<Icon name="fire" />} title={challenge.ea ? `친구는 ${challenge.ea}세에 파이어 가능` : '친구가 파이어 등수를 보냈어요'}>
@@ -64,9 +66,9 @@ export default function Home({ onStart, onMove, simulation }) {
       <Card variant="soft">
         <SectionHead size="sm" kicker="예시" title="결과 미리보기" />
         <div className="ds-three sc-home-three">
-          <Stat label="파이어 나이" value={<>51<span className="ds-stat__unit">세</span></>} size="md" />
-          <Stat label="필요 자산" value={<>13.1<span className="ds-stat__unit">억</span></>} size="md" />
-          <Stat label="같은 구간" value={<>상위 18<span className="ds-stat__unit">%</span></>} size="md" />
+          <Stat label="파이어 나이" value={SAMPLE.earliestRetirementAge ? `${SAMPLE.earliestRetirementAge}세` : '아직'} size="md" />
+          <Stat label={`${SAMPLE.displayResult.retirementAge}세 때 자산`} value={formatWon(SAMPLE.displayResult.fireAsset)} size="md" />
+          <Stat label="목표 55세" value={targetGapText(SAMPLE)} size="md" />
         </div>
       </Card>
 

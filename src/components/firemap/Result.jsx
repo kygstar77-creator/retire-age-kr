@@ -239,7 +239,7 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
           )}
           <CommunityCta where="result" />
 
-          <p className="ds-caption ds-textcenter">통계청 2024 가계금융복지조사 · 연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)} · 투자 권유가 아니에요</p>
+          <p className="ds-caption ds-textcenter">연 수익률 {inp.annualReturnRate}% · 물가 {inp.inflationRate}% · 국민연금 {inp.expectedPensionAge}세~ 월 {formatWon(inp.expectedMonthlyPension)} · 투자 권유가 아니에요</p>
       </>
 
       <ShareSheet open={shareOpen} onClose={() => setShareOpen(false)} simulation={simulation} onMove={onMove} />

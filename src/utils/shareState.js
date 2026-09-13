@@ -1,5 +1,7 @@
 const encodedPrefix = 's=';
-const publicUrl = 'https://firemap.kr/';
+// 지금 접속한 주소(dev·운영)를 따른다. 브라우저 밖에서는 firemap.kr.
+export const siteOrigin = () => { try { const o = window.location.origin; if (o && o.startsWith('http')) return o; } catch { /* ignore */ } return 'https://firemap.kr'; };
+const publicUrl = siteOrigin() + '/';
 
 const compactKeyMap = {
   age: 'currentAge',

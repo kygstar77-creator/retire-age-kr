@@ -3,12 +3,13 @@ import { useState, useEffect } from 'react';
 import { TopBar, Card, SectionHead, Button, ProgressBar, ListGroup, ListRow, BottomCTA, toast, Icon } from '../../ui/index.js';
 import { QUESTIONS, ARCHETYPES, scoreAnswers, recommendCities } from '../../firemap-v2/cityTypeTest.js';
 import { buildScenario } from '../../firemap-v2/scenarios.js';
+import { siteOrigin } from '../../utils/shareState.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { shareToKakao } from '../../utils/kakaoShare.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import '../../ui/screens/firetype.css';
 
-const TEST_URL = 'https://firemap.kr/#firetype';
+const TEST_URL = () => siteOrigin() + '/#firetype';
 const eok = (n) => formatWon(Math.round(n || 0));
 
 function Cover({ onStart }) {
@@ -58,13 +59,13 @@ function Result({ answers, simulation, onMove, onRestart, onPreviewCity }) {
     const title = `나는 ${A.name} (${A.nick})`;
     const desc = `추천 도시 ${recs.map((r) => r.city.city).join('·')} · 12문항으로 내 파이어 유형 찾기`;
     // v=ft2: 보충 폰트(og-fonts-ft) 적용 후 새 URL로 분리 → 카카오/CDN의 폰트픽스 이전 캐시 우회(재크롤)
-    const ogImg = `https://firemap.kr/og?mode=firetype&v=ft2&tn=${encodeURIComponent(A.name)}&nk=${encodeURIComponent(A.nick)}&ct=${encodeURIComponent(recs.map((r) => r.city.city).join('·'))}`;
-    try { await shareToKakao({ title, description: desc, imageUrl: ogImg, linkUrl: TEST_URL }); return; }
+    const ogImg = `${siteOrigin()}/og?mode=firetype&v=ft2&tn=${encodeURIComponent(A.name)}&nk=${encodeURIComponent(A.nick)}&ct=${encodeURIComponent(recs.map((r) => r.city.city).join('·'))}`;
+    try { await shareToKakao({ title, description: desc, imageUrl: ogImg, linkUrl: TEST_URL() }); return; }
     catch { /* 폴백 */ }
-    try { await navigator.clipboard.writeText(`${title}\n${desc}\n${TEST_URL}`); toast.good('링크를 복사했어요 · 단톡방에 붙여넣어 봐요'); }
+    try { await navigator.clipboard.writeText(`${title}\n${desc}\n${TEST_URL()}`); toast.good('링크를 복사했어요 · 단톡방에 붙여넣어 봐요'); }
     catch { toast.bad('공유가 안 됐어요 · 잠시 후 다시 해봐요'); }
   };
-  const copy = async () => { try { await navigator.clipboard.writeText(TEST_URL); toast.good('링크를 복사했어요'); track('firetype_share', { type: A.id, via: 'copy' }); } catch { /* ignore */ } };
+  const copy = async () => { try { await navigator.clipboard.writeText(TEST_URL()); toast.good('링크를 복사했어요'); track('firetype_share', { type: A.id, via: 'copy' }); } catch { /* ignore */ } };
   // 도시 적용 = 미리보기(샌드박스)로만. 저장은 미리보기 화면에서 사용자가 명시적으로. 기존 저장값 무손상.
   const pickCity = (krw) => { if (onPreviewCity) { onPreviewCity(krw); return; } if (onMove) onMove('cities'); };
 

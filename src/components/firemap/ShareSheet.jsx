@@ -9,6 +9,8 @@ import { fetchUserRank } from '../../utils/firemapScoresApi.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import { prefs } from '../../utils/prefs.js';
 import { CAFE_URL } from '../../firemap-v2/links.js';
+import { siteOrigin } from '../../utils/shareState.js';
+import { buildCertSvg } from '../../../functions/og-card.js';
 
 const roundNo = () => { try { const f = Number(localStorage.getItem('fm_first_seen') || 0); if (!f) return 1; return Math.max(1, Math.floor((Date.now() - f) / (30.44 * 86400000)) + 1); } catch { return 1; } };
 
@@ -16,7 +18,7 @@ export function buildResultShare(simulation, extra = {}) {
   const ph = survivalPhrase(simulation);
   const earliest = simulation.earliestRetirementAge;
   const inp = simulation.inputs;
-  const img = new URL('https://firemap.kr/og');
+  const img = new URL(siteOrigin() + '/og');
   if (earliest) img.searchParams.set('ea', String(earliest));
   img.searchParams.set('target', String(inp.targetRetirementAge));
   img.searchParams.set('rw', ph.runway);
@@ -24,7 +26,7 @@ export function buildResultShare(simulation, extra = {}) {
   img.searchParams.set('inf', String(inp.inflationRate));
   if (extra.pos && extra.tot) { img.searchParams.set('pos', String(extra.pos)); img.searchParams.set('tot', String(extra.tot)); }
   img.searchParams.set('v', 'c3');
-  const l = new URL('https://firemap.kr/s');
+  const l = new URL(siteOrigin() + '/s');
   if (earliest) l.searchParams.set('ea', String(earliest));
   l.searchParams.set('target', String(inp.targetRetirementAge));
   l.searchParams.set('rwy', ph.runway);
@@ -45,9 +47,9 @@ function buildCertShare(simulation, { hideAmt, round, need, asset }) {
     sv: hideAmt ? '비공개' : formatWon(inp.monthlyInvestment), cost: formatWon(inp.monthlyLivingCost),
     ret: String(inp.annualReturnRate), inf: String(inp.inflationRate), pen: String(inp.expectedPensionAge), rd: String(round)
   };
-  const img = new URL('https://firemap.kr/og');
+  const img = new URL(siteOrigin() + '/og');
   Object.entries(q).forEach(([k, v]) => img.searchParams.set(k, v));
-  const link = new URL('https://firemap.kr/s');
+  const link = new URL(siteOrigin() + '/s');
   Object.entries(q).forEach(([k, v]) => link.searchParams.set(k, v));
   return { imageUrl: img.toString(), url: link.toString() };
 }
@@ -62,7 +64,7 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
   const asset = Number(inp.financialAsset) || 0;
   const title = `${year}년생 · ${earliest ? `${earliest}세 파이어 가능` : '파이어 준비 중'} · ${hideAmt ? '자산 비공개' : `자산 ${formatWon(asset)}`} · ${roundNo()}회차`;
   const body = [
-    `🔥 파이어 나이 ${earliest ? `${earliest}세` : '아직'} (목표 ${inp.targetRetirementAge}세)`,
+    `파이어 나이 ${earliest ? `${earliest}세` : '아직'} (목표 ${inp.targetRetirementAge}세)`,
     `${earliest || inp.targetRetirementAge}세 때 자산 ${formatWon(need)} · 지금 ${hideAmt ? '비공개' : formatWon(asset)}`,
     `월 저축액 ${hideAmt ? '비공개' : formatWon(inp.monthlyInvestment)} · 파이어 후 월 생활비 ${formatWon(inp.monthlyLivingCost)}`,
     `가정: 수익률 ${inp.annualReturnRate}% · 물가 ${inp.inflationRate}% · 국민연금 ${inp.expectedPensionAge}세~`,
@@ -91,13 +93,9 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
   };
   return (
     <Sheet open={open} title="인증 카드" onClose={onClose}>
-      <div className="ds-card ds-card--dark ds-p-3-5">
-        <p className="ds-caption ds-mb-1-5">{title}</p>
-        <p className="sc-cert-body">{body}</p>
-      </div>
-      <p className="ds-caption ds-mt-3 ds-mb-1-5">금액</p>
-      <Chips><Chip on={hideAmt} onClick={() => setHideAmt((v) => !v)}>금액 숨기기</Chip></Chips>
-      <p className="ds-caption ds-mt-2">출생연도·숫자·회차 순이라 다른 인증 글과 나란히 비교돼요.</p>
+      {/* 미리보기 = 카톡·링크에 실리는 바로 그 이미지(같은 SVG 빌더). */}
+      <div className="ds-cert" dangerouslySetInnerHTML={{ __html: buildCertSvg({ year, round: roundNo(), ea: earliest, target: inp.targetRetirementAge, need: formatWon(need), asset: hideAmt ? '비공개' : formatWon(asset), save: hideAmt ? '비공개' : formatWon(inp.monthlyInvestment), cost: formatWon(inp.monthlyLivingCost), ret: inp.annualReturnRate, inf: inp.inflationRate, pen: inp.expectedPensionAge, font: 'Pretendard Variable' }).replace('width="1080" height="1350"', '') }} />
+      <Chips className="ds-mt-3"><Chip on={hideAmt} onClick={() => setHideAmt((v) => !v)}>금액 숨기기</Chip></Chips>
       <div className="ds-stack ds-mt-3">
         <Button variant="primary" size="lg" full loading={busy} onClick={copyForCafe}>카페 인증 게시판</Button>
         <div className="ds-bottomcta ds-mt-0">

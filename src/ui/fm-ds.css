@@ -473,7 +473,7 @@ button.ds-cal__cell { cursor: pointer; }
 .sc-home-agebox { justify-content: space-between; background: var(--ds-surface-2); border-radius: var(--ds-r-md); padding: 10px 12px; margin-top: 4px; }
 .sc-home-agein { width: 64px; text-align: center; font-size: 18px; font-weight: 700; padding: 6px 4px; }
 .sc-home-three { background: var(--ds-surface); border-radius: var(--ds-r-md); padding: 6px; }
-.sc-cert-body { margin: 0; font-size: var(--ds-fs-body-sm); line-height: 1.6; white-space: pre-line; }
+.ds-cert svg { display: block; width: 100%; height: auto; border-radius: var(--ds-r-xl); }
 .sc-os-in { width: 96px; text-align: center; padding: 6px 4px; }
 
 /* 레버 줄 전체가 버튼 — 누르면 그 값이 들어간 채 바꿔보기가 열린다(예전 '적용' 버튼 대체) */

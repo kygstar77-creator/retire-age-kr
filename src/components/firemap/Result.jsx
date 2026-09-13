@@ -26,7 +26,7 @@ function YearlyAssetChart({ simulation }) {
   const [sel, setSel] = useState(null);
   if (rows.length < 2) return null;
   const g = buildGrowthSeries(simulation);
-  const pts = rows.map((r, i) => ({ age: r.age, status: r.status, principal: Math.max(0, g.principal[i] ?? 0), gains: Math.max(0, g.gains[i] ?? 0), v: Math.max(0, g.total[i] ?? r.financialAssetToday) }));
+  const pts = rows.map((r, i) => ({ age: r.age, status: r.status, principal: Math.max(0, g.principal[i] ?? 0), gains: Math.max(0, g.gains[i] ?? 0), v: Math.max(0, g.total[i] ?? r.financialAsset) }));
   const n = pts.length; const maxV = Math.max(...pts.map((p) => p.v), 1);
   const a0 = pts[0].age, a1 = pts[n - 1].age; const W = 320, H = 120, P = 8;
   const X = (a) => P + ((a - a0) / Math.max(1, a1 - a0)) * (W - 2 * P);
@@ -60,16 +60,16 @@ function AssetJourney({ simulation }) {
   const rows = simulation.displayResult.rows || [];
   if (rows.length < 2) return null;
   const cur = rows[0];
-  const start = cur.financialAssetToday;
-  const y1 = rows[1] ? rows[1].financialAssetToday - start : 0;
-  const y5 = rows[5] ? rows[5].financialAssetToday - start : null;
-  const save1 = rows[1] ? Math.max(0, rows[1].investmentAddedToday) : 0;
+  const start = cur.financialAsset;
+  const y1 = rows[1] ? rows[1].financialAsset - start : 0;
+  const y5 = rows[5] ? rows[5].financialAsset - start : null;
+  const save1 = rows[1] ? Math.max(0, rows[1].investmentAdded) : 0;
   const ret1 = Math.max(0, y1 - save1);
 
-  const items = [{ age: cur.age, label: '지금 시작', sub: formatWon(cur.financialAssetToday), hi: false }];
+  const items = [{ age: cur.age, label: '지금 시작', sub: formatWon(cur.financialAsset), hi: false }];
   [100000000, 300000000, 500000000, 1000000000, 2000000000].forEach((t) => {
-    if (t > cur.financialAssetToday) {
-      const hit = rows.find((r) => r.financialAssetToday >= t);
+    if (t > cur.financialAsset) {
+      const hit = rows.find((r) => r.financialAsset >= t);
       if (hit && hit.age > cur.age) items.push({ age: hit.age, label: `자산 ${formatWon(t)} 돌파`, sub: null, hi: false });
     }
   });
@@ -88,7 +88,7 @@ function AssetJourney({ simulation }) {
       <StatTiles className="ds-mt-3" items={[
         { label: '1년 뒤', value: `+${formatWon(Math.max(0, y1))}` },
         ...(y5 != null ? [{ label: '5년 뒤', value: `+${formatWon(Math.max(0, y5))}` }] : []),
-        { label: `${simulation.displayResult.retirementAge}세 때`, value: formatWon(simulation.displayResult.fireAssetToday || 0) }
+        { label: `${simulation.displayResult.retirementAge}세 때`, value: formatWon(simulation.displayResult.fireAsset || 0) }
       ]} />
       {y1 > 0 && <p className="ds-caption ds-mt-2">1년 새 <b className="num">+{formatWon(Math.max(0, y1))}</b> = 내 저축 <b className="num">{formatWon(save1)}</b> + 투자수익 <b className="num">{formatWon(ret1)}</b></p>}
       <ol className="ds-road">
@@ -99,7 +99,7 @@ function AssetJourney({ simulation }) {
           </li>
         ))}
       </ol>
-      <p className="ds-caption">연 수익률 {simulation.inputs.annualReturnRate}% · 물가 {simulation.inputs.inflationRate}% · 금액은 전부 오늘 돈 기준이에요</p>
+      <p className="ds-caption">연 수익률 {simulation.inputs.annualReturnRate}% · 물가 {simulation.inputs.inflationRate}% · 그때 통장에 찍힐 금액이라 물가는 빼지 않았어요</p>
     </Card>
   );
 }
@@ -179,12 +179,11 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
             sub={<>지금 자산 <b className="num">{eok(inp.financialAsset)}</b></>}
             tiles={[
               { label: `목표 ${target}세`, value: targetGapText(simulation) },
-              { label: `${atE ? atE.age : target}세 때 자산`, value: atE ? eok(atE.assetToday) : (simulation.retirementFinancialAsset ? eok(simulation.retirementFinancialAsset) : '—') },
+              { label: `${atE ? atE.age : target}세 때 자산`, value: eok(simulation.displayResult.fireAsset) },
               { label: `같은 구간 · ${ASSET_BAND_LABELS[myBand]}`, value: bandRank ? `상위 ${bandRank.percentile}%` : (live ? `${live.position.toLocaleString()}등` : '집계 중'), onClick: () => onMove('ranking') }
             ]}
           >
             <p className="ds-caption ds-mt-3">{[
-              atE ? '금액은 오늘 돈 기준이에요' : null,
               // 위 나이는 세금을 넣은 값인데 또래 비교·등수는 모두 세금을 뺀 값으로 맞춘다.
               // 두 값이 다를 때만 그 사실을 적어 준다.
               earliest !== rankEarliest ? '또래 비교와 등수는 세금 빼고 맞춰요' : null,

@@ -93,7 +93,7 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
         value={earliest ? `${earliest}` : '아직'} unit={earliest ? '세' : ''}
         sub={heroSub}
         tiles={[
-          { label: `${simulation.displayResult.retirementAge}세 때 자산`, value: eok(simulation.displayResult.fireAssetToday) },
+          { label: `${simulation.displayResult.retirementAge}세 때 자산`, value: eok(simulation.displayResult.fireAsset) },
           { label: `목표 ${simulation.inputs.targetRetirementAge}세`, value: targetGapText(simulation) },
           { label: '지금 자산', value: eok(draft.financialAsset) }
         ]}

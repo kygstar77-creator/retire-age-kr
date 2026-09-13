@@ -261,9 +261,17 @@ export function buildSimulation(inputs) {
   const retirementFinancialAssetToday = retirementFinancialAsset / inflationToTarget;
   const requiredAssetNow = findRequiredAssetNow(data);
   // 결과·바꿔보기·인증 카드가 읽는 한 벌. 가능 나이가 없으면(70세까지 안 되면) 목표 나이 흐름을 보여준다.
-  const displayResult = atEarliest
-    ? { retirementAge: earliestRetirementAge, depletionAge: atEarliest.depletionAge, rows: atEarliest.rows, fireAssetToday: atEarliest.assetToday }
-    : { retirementAge: data.targetRetirementAge, depletionAge: targetResult.depletionAge, rows: toToday(targetResult.rows), fireAssetToday: retirementFinancialAssetToday };
+  // 금액은 그때 통장에 찍힐 금액(명목). 오늘 돈으로 바꾸면 18년 모은 돈이 줄어든 것처럼 보인다.
+  const earliestRows = atEarliest ? atEarliest.rows : toToday(targetResult.rows);
+  const fireAge = atEarliest ? earliestRetirementAge : data.targetRetirementAge;
+  const fireRow = earliestRows.find((row) => row.age === fireAge);
+  const displayResult = {
+    retirementAge: fireAge,
+    depletionAge: atEarliest ? atEarliest.depletionAge : targetResult.depletionAge,
+    rows: earliestRows,
+    fireAsset: Math.max(0, fireRow?.financialAsset ?? 0),
+    fireAssetToday: atEarliest ? atEarliest.assetToday : retirementFinancialAssetToday
+  };
   const fireGap = requiredFireAssetNominal - retirementFinancialAsset;
   const bridgeYears = Math.max(0, data.expectedPensionAge - data.targetRetirementAge);
   const runwayYears = targetResult.depletionAge

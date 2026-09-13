@@ -5,20 +5,23 @@ import { CITY_KRW } from './cities.js';
 // 국내 월생활비는 통계청 1인가구·한국부동산원 월세지수 신호 참고한 추정(정확치 아님). 에이징인플레이스(KB골드라이프 2025: "살던 동네 유지" 80.4%) 수요 반영·국내 강화.
 
 // ── 도시 풀 (국내 8 + 해외 10) — 자기완결 데이터(좌표·월생활비·테마컬러·태그) ──
+// krw 출처는 cities.js 머리말과 같다(Numbeo 2026-08~09 / 통계청 2026 1Q + 부동산원).
+// 푸꾸옥·달랏은 Numbeo 페이지가 없어 livingcost.org(2026-06) 값이라 신뢰도가 낮다.
+// 양평은 군 단위 월세 통계가 없어 경기 시도 값을 쓴다. 카메론하이랜드·삿포로는 표본 부족으로 미확인, 예전 값 유지.
 export const TEST_CITIES = [
   // 국내
   { city: '제주(서귀포)', country: '한국', flag: '🇰🇷', dom: true, lat: 33.25, lon: 126.56, krw: 1900000, c1: '#22c55e', c2: '#4ade80', nature: 0.85, warm: 0.70, medical: 0.70, climate: 'mild', blurb: '제주 서귀포, 바다와 오름이 가까워요.' },
   { city: '부산', country: '한국', flag: '🇰🇷', dom: true, lat: 35.18, lon: 129.08, krw: 1550000, c1: '#0ea5e9', c2: '#38bdf8', nature: 0.45, warm: 0.65, medical: 0.85, climate: 'mild', blurb: '한국 제2도시, 바다·온천·회가 있어요.' },
-  { city: '강릉', country: '한국', flag: '🇰🇷', dom: true, lat: 37.75, lon: 128.90, krw: 1450000, c1: '#06b6d4', c2: '#22d3ee', nature: 0.80, warm: 0.45, medical: 0.60, climate: 'cold', blurb: 'KTX로 서울 2시간, 바다와 카페가 많아요.' },
-  { city: '양평', country: '한국', flag: '🇰🇷', dom: true, lat: 37.49, lon: 127.49, krw: 1500000, c1: '#16a34a', c2: '#4ade80', nature: 0.80, warm: 0.40, medical: 0.60, climate: 'cold', blurb: '수도권과 가까운 전원 지역이에요.' },
-  { city: '속초', country: '한국', flag: '🇰🇷', dom: true, lat: 38.21, lon: 128.59, krw: 1450000, c1: '#0284c7', c2: '#38bdf8', nature: 0.80, warm: 0.40, medical: 0.55, climate: 'cold', blurb: '설악산과 동해, 서울-양양 고속도로로 가까워요.' },
+  { city: '강릉', country: '한국', flag: '🇰🇷', dom: true, lat: 37.75, lon: 128.90, krw: 2120000, c1: '#06b6d4', c2: '#22d3ee', nature: 0.80, warm: 0.45, medical: 0.60, climate: 'cold', blurb: 'KTX로 서울 2시간, 바다와 카페가 많아요.' },
+  { city: '양평', country: '한국', flag: '🇰🇷', dom: true, lat: 37.49, lon: 127.49, krw: 2300000, c1: '#16a34a', c2: '#4ade80', nature: 0.80, warm: 0.40, medical: 0.60, climate: 'cold', blurb: '수도권과 가까운 전원 지역이에요.' },
+  { city: '속초', country: '한국', flag: '🇰🇷', dom: true, lat: 38.21, lon: 128.59, krw: 2120000, c1: '#0284c7', c2: '#38bdf8', nature: 0.80, warm: 0.40, medical: 0.55, climate: 'cold', blurb: '설악산과 동해, 서울-양양 고속도로로 가까워요.' },
   { city: '전주', country: '한국', flag: '🇰🇷', dom: true, lat: 35.82, lon: 127.15, krw: 1300000, c1: '#d97706', c2: '#fbbf24', nature: 0.50, warm: 0.55, medical: 0.70, climate: 'cold', blurb: '물가 낮고 음식 좋은 한옥의 도시, 느린 삶에 어울려요.' },
-  { city: '경주', country: '한국', flag: '🇰🇷', dom: true, lat: 35.86, lon: 129.22, krw: 1300000, c1: '#ca8a04', c2: '#facc15', nature: 0.60, warm: 0.55, medical: 0.65, climate: 'cold', blurb: '천년 고도, 평지·자전거·역사. 조용한 정착에 좋아요.' },
-  { city: '통영', country: '한국', flag: '🇰🇷', dom: true, lat: 34.85, lon: 128.43, krw: 1250000, c1: '#0891b2', c2: '#22d3ee', nature: 0.85, warm: 0.65, medical: 0.55, climate: 'mild', blurb: '한려수도의 바다가 있는 남해 소도시예요.' },
+  { city: '경주', country: '한국', flag: '🇰🇷', dom: true, lat: 35.86, lon: 129.22, krw: 2030000, c1: '#ca8a04', c2: '#facc15', nature: 0.60, warm: 0.55, medical: 0.65, climate: 'cold', blurb: '천년 고도, 평지·자전거·역사. 조용한 정착에 좋아요.' },
+  { city: '통영', country: '한국', flag: '🇰🇷', dom: true, lat: 34.85, lon: 128.43, krw: 2040000, c1: '#0891b2', c2: '#22d3ee', nature: 0.85, warm: 0.65, medical: 0.55, climate: 'mild', blurb: '한려수도의 바다가 있는 남해 소도시예요.' },
   { city: '서울', country: '한국', flag: '🇰🇷', dom: true, lat: 37.57, lon: 126.98, krw: 2050000, c1: '#475569', c2: '#94a3b8', nature: 0.20, warm: 0.55, medical: 0.98, climate: 'cold', blurb: '모든 인프라와 의료가 갖춰졌지만 물가가 가장 높아요.' },
   { city: '인천', country: '한국', flag: '🇰🇷', dom: true, lat: 37.46, lon: 126.71, krw: 1650000, c1: '#2563eb', c2: '#60a5fa', nature: 0.40, warm: 0.55, medical: 0.85, climate: 'cold', blurb: '수도권 + 바다·공항, 서울보다 낮은 주거비.' },
   { city: '대전', country: '한국', flag: '🇰🇷', dom: true, lat: 36.35, lon: 127.38, krw: 1450000, c1: '#7c3aed', c2: '#a78bfa', nature: 0.40, warm: 0.55, medical: 0.85, climate: 'cold', blurb: '교통의 중심, 무난한 물가와 든든한 의료.' },
-  { city: '여수', country: '한국', flag: '🇰🇷', dom: true, lat: 34.76, lon: 127.66, krw: 1300000, c1: '#0d9488', c2: '#2dd4bf', nature: 0.85, warm: 0.65, medical: 0.55, climate: 'mild', blurb: '밤바다와 섬, 남해안 풍광·저비용의 휴양 도시.' },
+  { city: '여수', country: '한국', flag: '🇰🇷', dom: true, lat: 34.76, lon: 127.66, krw: 2080000, c1: '#0d9488', c2: '#2dd4bf', nature: 0.85, warm: 0.65, medical: 0.55, climate: 'mild', blurb: '밤바다와 섬, 남해안 풍광·저비용의 휴양 도시.' },
   // 해외
   { city: '치앙마이', country: '태국', flag: '🇹🇭', dom: false, lat: 18.8, lon: 99.0, krw: 2200000, c1: '#f97316', c2: '#fb923c', nature: 0.70, warm: 0.95, medical: 0.55, climate: 'hot', blurb: '태국 북부 산악 도시, 사원과 카페가 많아요.' },
   { city: '다낭', country: '베트남', flag: '🇻🇳', dom: false, lat: 16.0, lon: 108.2, krw: 2300000, c1: '#0ea5e9', c2: '#38bdf8', nature: 0.70, warm: 0.95, medical: 0.50, climate: 'hot', blurb: '베트남 중부 해안 도시, 해변이 길게 이어져요.' },
@@ -31,17 +34,17 @@ export const TEST_CITIES = [
   { city: '호치민', country: '베트남', flag: '🇻🇳', dom: false, lat: 10.8, lon: 106.7, krw: 2200000, c1: '#06b6d4', c2: '#22d3ee', nature: 0.20, warm: 0.95, medical: 0.50, climate: 'hot', blurb: '베트남 남부 최대 도시, 상업 중심지예요.' },
   { city: '페낭', country: '말레이시아', flag: '🇲🇾', dom: false, lat: 5.4, lon: 100.3, krw: 2400000, c1: '#a855f7', c2: '#c084fc', nature: 0.55, warm: 0.95, medical: 0.75, climate: 'hot', blurb: '말레이시아 북서부 섬, 조지타운 벽화거리가 있어요.' },
   { city: '세부', country: '필리핀', flag: '🇵🇭', dom: false, lat: 10.3, lon: 123.9, krw: 2100000, c1: '#14b8a6', c2: '#2dd4bf', nature: 0.85, warm: 0.95, medical: 0.55, climate: 'hot', blurb: '필리핀 중부 섬, 해변과 다이빙 명소가 많아요.' },
-  { city: '하노이', country: '베트남', flag: '🇻🇳', dom: false, lat: 21.03, lon: 105.85, krw: 2100000, c1: '#0ea5e9', c2: '#38bdf8', nature: 0.30, warm: 0.85, medical: 0.55, climate: 'hot', blurb: '베트남 수도, 호수와 구시가가 있어요.' },
-  { city: '푸꾸옥', country: '베트남', flag: '🇻🇳', dom: false, lat: 10.22, lon: 103.96, krw: 2200000, c1: '#06b6d4', c2: '#22d3ee', nature: 0.90, warm: 0.95, medical: 0.40, climate: 'hot', blurb: '베트남 남부의 열대 섬, 해변이 있어요.' },
-  { city: '달랏', country: '베트남', flag: '🇻🇳', dom: false, lat: 11.94, lon: 108.44, krw: 1900000, c1: '#22c55e', c2: '#4ade80', nature: 0.85, warm: 0.45, medical: 0.45, climate: 'cool', blurb: '해발 1,500m 고원, 연중 18~23℃의 꽃·커피 도시예요.' },
+  { city: '하노이', country: '베트남', flag: '🇻🇳', dom: false, lat: 21.03, lon: 105.85, krw: 1160000, c1: '#0ea5e9', c2: '#38bdf8', nature: 0.30, warm: 0.85, medical: 0.55, climate: 'hot', blurb: '베트남 수도, 호수와 구시가가 있어요.' },
+  { city: '푸꾸옥', country: '베트남', flag: '🇻🇳', dom: false, lat: 10.22, lon: 103.96, krw: 740000, c1: '#06b6d4', c2: '#22d3ee', nature: 0.90, warm: 0.95, medical: 0.40, climate: 'hot', blurb: '베트남 남부의 열대 섬, 해변이 있어요.' },
+  { city: '달랏', country: '베트남', flag: '🇻🇳', dom: false, lat: 11.94, lon: 108.44, krw: 730000, c1: '#22c55e', c2: '#4ade80', nature: 0.85, warm: 0.45, medical: 0.45, climate: 'cool', blurb: '해발 1,500m 고원, 연중 18~23℃의 꽃·커피 도시예요.' },
   { city: '카메론하이랜드', country: '말레이시아', flag: '🇲🇾', dom: false, lat: 4.47, lon: 101.38, krw: 2000000, c1: '#16a34a', c2: '#4ade80', nature: 0.95, warm: 0.45, medical: 0.45, climate: 'cool', blurb: '말레이시아 고원, 차밭과 14~25℃ 선선한 기후예요.' },
-  { city: '바기오', country: '필리핀', flag: '🇵🇭', dom: false, lat: 16.41, lon: 120.59, krw: 1900000, c1: '#4d7c0f', c2: '#a3e635', nature: 0.80, warm: 0.45, medical: 0.55, climate: 'cool', blurb: '필리핀 “여름 수도”, 해발 1,500m 소나무 숲의 선선한 산정 도시.' },
+  { city: '바기오', country: '필리핀', flag: '🇵🇭', dom: false, lat: 16.41, lon: 120.59, krw: 1190000, c1: '#4d7c0f', c2: '#a3e635', nature: 0.80, warm: 0.45, medical: 0.55, climate: 'cool', blurb: '필리핀 “여름 수도”, 해발 1,500m 소나무 숲의 선선한 산정 도시.' },
   { city: '메데인', country: '콜롬비아', flag: '🇨🇴', dom: false, lat: 6.24, lon: -75.58, krw: 2000000, c1: '#ec4899', c2: '#f472b6', nature: 0.55, warm: 0.55, medical: 0.60, climate: 'cool', blurb: '콜롬비아 제2도시, 연중 봄 같은 기후예요.' },
-  { city: '부다페스트', country: '헝가리', flag: '🇭🇺', dom: false, lat: 47.5, lon: 19.04, krw: 2800000, c1: '#ef4444', c2: '#f87171', nature: 0.40, warm: 0.40, medical: 0.70, climate: 'cold', blurb: '도나우강과 온천, 사계절 뚜렷한 저렴한 유럽 수도.' },
+  { city: '부다페스트', country: '헝가리', flag: '🇭🇺', dom: false, lat: 47.5, lon: 19.04, krw: 2330000, c1: '#ef4444', c2: '#f87171', nature: 0.40, warm: 0.40, medical: 0.70, climate: 'cold', blurb: '도나우강과 온천, 사계절 뚜렷한 저렴한 유럽 수도.' },
   { city: '삿포로', country: '일본', flag: '🇯🇵', dom: false, lat: 43.06, lon: 141.35, krw: 3000000, c1: '#3b82f6', c2: '#60a5fa', nature: 0.70, warm: 0.30, medical: 0.85, climate: 'cold', blurb: '눈과 사계절, 깨끗한 자연과 음식의 일본 북방 도시.' },
-  { city: '바르셀로나', country: '스페인', flag: '🇪🇸', dom: false, lat: 41.39, lon: 2.17, krw: 3600000, c1: '#0d9488', c2: '#2dd4bf', nature: 0.45, warm: 0.65, medical: 0.80, climate: 'mild', blurb: '지중해 해변과 건축, 온화한 기후의 남유럽 대도시.' },
+  { city: '바르셀로나', country: '스페인', flag: '🇪🇸', dom: false, lat: 41.39, lon: 2.17, krw: 3570000, c1: '#0d9488', c2: '#2dd4bf', nature: 0.45, warm: 0.65, medical: 0.80, climate: 'mild', blurb: '지중해 해변과 건축, 온화한 기후의 남유럽 대도시.' },
   { city: '타이베이', country: '대만', flag: '🇹🇼', dom: false, lat: 25.03, lon: 121.56, krw: 3000000, c1: '#3b82f6', c2: '#60a5fa', nature: 0.45, warm: 0.70, medical: 0.90, climate: 'mild', blurb: '대만 수도, 대중교통과 야시장이 발달했어요.' },
-  { city: '오사카', country: '일본', flag: '🇯🇵', dom: false, lat: 34.69, lon: 135.5, krw: 3100000, c1: '#60a5fa', c2: '#93c5fd', nature: 0.35, warm: 0.55, medical: 0.85, climate: 'mild', blurb: '먹거리와 교통의 간사이 중심, 사계절 있고 겨울은 온화한 편.' }
+  { city: '오사카', country: '일본', flag: '🇯🇵', dom: false, lat: 34.69, lon: 135.5, krw: 2020000, c1: '#60a5fa', c2: '#93c5fd', nature: 0.35, warm: 0.55, medical: 0.85, climate: 'mild', blurb: '먹거리와 교통의 간사이 중심, 사계절 있고 겨울은 온화한 편.' }
 ];
 
 // 도시 월생활비는 cities.js의 CITY_KRW를 단일 소스로 공유 — '어디서 살까'와 영구 일치(공통 도시 한정).
@@ -144,7 +147,7 @@ export function scoreAnswers(answers) {
 
 // 도시 파이어 적합도(0~100) + 분해. simulation 있으면 비용적합도에 실제 계산 반영.
 export function scoreCity(city, axes, simulation, buildScenario) {
-  const kMin = 1250000; const kMax = 3800000;
+  const kMin = Math.min(...TEST_CITIES.map((c) => c.krw)); const kMax = Math.max(...TEST_CITIES.map((c) => c.krw));
   const cheap = clamp01(1 - (city.krw - kMin) / (kMax - kMin));
   const frugalW = clamp01(0.5 + axes.frugal * 0.18);
   let costFit = cheap * (0.6 + frugalW * 0.4);

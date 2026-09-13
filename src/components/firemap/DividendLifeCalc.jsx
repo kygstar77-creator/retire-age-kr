@@ -115,7 +115,9 @@ function MiniCalendar() {
 export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
   void onMove;
   const [asset, setAsset] = useState(() => Math.max(0, Number(inputs?.financialAsset) || 300000000));
-  const [yieldPct, setYieldPct] = useState(4.0);
+  // 배당률은 결과 계산(배당세 15.4% 원천징수분)도 같이 쓴다. 여기서 바꾸면 결과에도 들어간다.
+  const [yieldPct, setYieldPctState] = useState(() => Math.max(0, Number(inputs?.dividendYield) || 4.0));
+  const setYieldPct = (v) => { const n = Math.round((Number(v) || 0) * 10) / 10; setYieldPctState(n); if (onChange) onChange('dividendYield', n); };
   const [contrib, setContrib] = useState(() => Math.max(0, Number(inputs?.monthlyInvestment) || 500000));
   const [barMode, setBarMode] = useState('quarter');
 
@@ -152,7 +154,7 @@ export default function DividendLifeCalc({ inputs, onChange, onMove, onBack }) {
       <Card>
         <SectionHead size="sm" kicker="내 조건" title="배당 자산과 배당률" desc="배당소득세 15.4%를 뺀 금액이에요" />
         <RangeField label="배당 자산" value={asset} min={0} max={3000000000} step={10000000} money format={eok} chips={[10000000, 100000000, 1000000000]} onChange={setAsset} />
-        <RangeField label="배당률" value={yieldPct} min={0} max={12} step={0.1} format={pctFmt} onChange={(v) => setYieldPct(Math.round(v * 10) / 10)} hint="배당이 높을수록 주가 상승은 낮은 편이에요" />
+        <RangeField label="배당률" value={yieldPct} min={0} max={12} step={0.1} format={pctFmt} onChange={setYieldPct} hint="배당이 높을수록 주가 상승은 낮은 편이에요" />
         <Chips className="ds-mt-2">
           {YIELD_PRESETS.map((p) => <Chip key={p.label} on={Math.abs(yieldPct - p.value) < 0.05} onClick={() => setYieldPct(p.value)}>{p.label} {p.value.toFixed(1)}%</Chip>)}
         </Chips>

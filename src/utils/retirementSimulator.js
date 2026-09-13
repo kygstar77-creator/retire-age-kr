@@ -184,7 +184,7 @@ export function findRequiredAssetNow(inputs) {
     const mid = (lo + hi) / 2;
     if (fits(mid)) hi = mid; else lo = mid;
   }
-  return Math.round(hi);
+  return Math.ceil(hi);
 }
 
 export function compareWorkMoreScenarios(inputs) {
@@ -313,7 +313,7 @@ export function normalizeInputs(inputs) {
   // 국민연금 조기수령: 정상연금(baseline)은 그대로, 조기수령 나이가 이르면 '실효 연금'만 감액(누적 감액 방지)
   if (data.pensionClaimAge > 0 && data.pensionClaimAge !== data.expectedPensionAge) {
     const ec = earlyClaim(data.expectedMonthlyPension, data.expectedPensionAge, data.pensionClaimAge);
-    data.expectedMonthlyPension = ec.monthly; // 조기=감액, 연기=동일(증액 미반영)
+    data.expectedMonthlyPension = ec.monthly; // 조기=감액(연 6%), 연기=증액(연 7.2%)
     data.expectedPensionAge = data.pensionClaimAge;
   }
   return data;

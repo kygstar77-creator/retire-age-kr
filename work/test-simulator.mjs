@@ -272,3 +272,52 @@ console.log('(16) required-asset / fire-age same yardstick OK');
   assert(s.retirementFinancialAssetToday < s.atEarliest.assetToday, '(17) 목표 49세보다 파이어 가능 55세에 자산이 더 많아야 한다');
 }
 console.log('(17) today-money across screens OK');
+
+// (18) 무작위 1,000건 — 사람이 짠 예제로는 안 걸리는 모순을 잡는다.
+// 파이어 나이의 최소성, 목표와 가능 나이의 앞뒤 관계, 필요 자산의 경계, 오늘 돈 환산을 한꺼번에 본다.
+{
+  let a = 20250914 >>> 0;
+  const rng = () => { a |= 0; a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+  const pick = (arr) => arr[Math.floor(rng() * arr.length)];
+  for (let n = 0; n < 1000; n += 1) {
+    const currentAge = 20 + Math.floor(rng() * 50);
+    const i = {
+      currentAge,
+      targetRetirementAge: currentAge + Math.floor(rng() * 35),
+      financialAsset: Math.floor(rng() * 2e9),
+      monthlyInvestment: Math.floor(rng() * 8e6),
+      monthlyLivingCost: 500000 + Math.floor(rng() * 7e6),
+      annualReturnRate: +(rng() * 12).toFixed(1),
+      inflationRate: +(rng() * 6).toFixed(1),
+      expectedPensionAge: pick([60, 62, 63, 65]),
+      expectedMonthlyPension: Math.floor(rng() * 2e6),
+      partTimeIncomeAfterRetirement: Math.floor(rng() * 2e6),
+      realEstateValue: Math.floor(rng() * 1e9),
+      debt: Math.floor(rng() * 5e8),
+      savingYears: pick([0, 5, 10, 20]),
+      investType: pick([0, 1, 2, 3]),
+      simulationUntilAge: pick([85, 90, 95])
+    };
+    const s = buildSimulation(i);
+    const until = i.simulationUntilAge;
+    const survives = (r) => !r.depletionAge || r.depletionAge > until;
+    if (s.earliestRetirementAge) {
+      assert(survives(simulateRetirement(i, s.earliestRetirementAge)), `(18) 가능 나이인데 자산이 마름 ${JSON.stringify(i)}`);
+      if (s.earliestRetirementAge > i.currentAge) {
+        assert(!survives(simulateRetirement(i, s.earliestRetirementAge - 1)), `(18) 더 이른 나이도 되는데 못 찾음 ${JSON.stringify(i)}`);
+      }
+    }
+    if (survives(s.targetResult) && i.targetRetirementAge <= 70) {
+      assert(s.earliestRetirementAge != null && s.earliestRetirementAge <= i.targetRetirementAge, `(18) 목표는 되는데 가능 나이가 더 뒤 ${JSON.stringify(i)}`);
+    }
+    if (s.requiredAssetNow != null) {
+      assert(findEarliestRetirementAge({ ...i, financialAsset: s.requiredAssetNow }) === i.currentAge, `(18) 필요 자산인데 지금 파이어 불가 ${JSON.stringify(i)}`);
+    }
+    const f = Math.pow(1 + i.inflationRate / 100, Math.max(0, i.targetRetirementAge - i.currentAge));
+    assert(Math.abs(s.retirementFinancialAssetToday * f - s.retirementFinancialAsset) < 1000, `(18) 오늘 돈 환산 오류 ${JSON.stringify(i)}`);
+    for (const [k, v] of Object.entries(s)) {
+      assert(!(typeof v === 'number' && !Number.isFinite(v)), `(18) ${k}가 숫자가 아님 ${JSON.stringify(i)}`);
+    }
+  }
+}
+console.log('(18) random 1,000-case invariants OK');

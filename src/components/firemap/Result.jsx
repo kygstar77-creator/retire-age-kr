@@ -188,7 +188,13 @@ export default function Result({ inputs, simulation, rankingSimulation, onMove, 
               { label: `같은 구간 · ${ASSET_BAND_LABELS[myBand]}`, value: bandRank ? `상위 ${bandRank.percentile}%` : (live ? `${live.position.toLocaleString()}등` : '집계 중'), onClick: () => onMove('ranking') }
             ]}
           >
-            <p className="ds-caption ds-mt-3">{atE ? '금액은 오늘 돈 기준이에요' : null}{live ? `${atE ? ' · ' : ''}함께 계산한 ${live.total.toLocaleString()}명 중 ${live.position.toLocaleString()}등` : ''}</p>
+            <p className="ds-caption ds-mt-3">{[
+              atE ? '금액은 오늘 돈 기준이에요' : null,
+              // 위 나이는 세금을 넣은 값인데 또래 비교·등수는 모두 세금을 뺀 값으로 맞춘다.
+              // 두 값이 다를 때만 그 사실을 적어 준다.
+              earliest !== rankEarliest ? '또래 비교와 등수는 세금 빼고 맞춰요' : null,
+              live ? `함께 계산한 ${live.total.toLocaleString()}명 중 ${live.position.toLocaleString()}등` : null
+            ].filter(Boolean).join(' · ')}</p>
           </StatHero>
 
           <FireWidgetCard simulation={simulation} onMove={onMove} />

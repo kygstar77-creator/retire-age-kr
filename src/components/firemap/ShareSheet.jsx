@@ -65,7 +65,9 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
   const [busy, setBusy] = useState(false);
   // 카페에 바로 올릴 수 있는지(서버 설정) — 꺼져 있으면 예전처럼 복사 후 카페 열기.
   const [canPost, setCanPost] = useState(false);
-  useEffect(() => { if (!open) return; let alive = true; cafePostEnabled().then((v) => { if (alive) setCanPost(v); }); return () => { alive = false; }; }, [open]);
+  // 네이버 로그인 전이면 버튼이 '로그인부터 한다'고 먼저 말한다(누르면 네이버로 넘어가므로).
+  const [hasNaver, setHasNaver] = useState(false);
+  useEffect(() => { if (!open) return; let alive = true; setHasNaver(!!naverToken()); cafePostEnabled().then((v) => { if (alive) setCanPost(v); }); return () => { alive = false; }; }, [open]);
   const need = Math.round(simulation.displayResult.fireAsset || 0);  // 파이어 나이 때 자산 — 히어로와 같은 값
   const asset = Number(inp.financialAsset) || 0;
   const title = `현재 ${Number(inp.currentAge) || 35}세 · ${earliest ? `${earliest}세 파이어 가능` : '파이어 준비 중'} · ${hideAmt ? '자산 비공개' : `자산 ${formatWon(asset)}`} · ${roundNo()}회차`;
@@ -132,7 +134,7 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
       <div className="ds-cert" dangerouslySetInnerHTML={{ __html: buildCertSvg({ year, cur: inp.currentAge, round: roundNo(), ea: earliest, target: inp.targetRetirementAge, need: formatWon(need), asset: hideAmt ? '비공개' : formatWon(asset), save: hideAmt ? '비공개' : formatWon(inp.monthlyInvestment), cost: formatWon(inp.monthlyLivingCost), ret: inp.annualReturnRate, inf: inp.inflationRate, pen: inp.expectedPensionAge, series: seriesFromRows(simulation.displayResult.rows, simulation.displayResult.retirementAge), font: 'Pretendard Variable' }).replace('width="1080" height="1350"', '') }} />
       <Chips className="ds-mt-3"><Chip on={hideAmt} onClick={() => setHideAmt((v) => !v)}>금액 숨기기</Chip></Chips>
       <div className="ds-stack ds-mt-3">
-        <Button variant="primary" size="lg" full loading={busy} onClick={toCafe}>{canPost ? '카페에 올리기' : '카페 인증 게시판'}</Button>
+        <Button variant="primary" size="lg" full loading={busy} onClick={toCafe}>{canPost ? (hasNaver ? '카페에 올리기' : '네이버 로그인하고 카페에 올리기') : '카페 인증 게시판'}</Button>
         <div className="ds-bottomcta ds-mt-0">
           <Button variant="secondary" size="md" onClick={kakao}>카카오톡 공유</Button>
           <Button variant="secondary" size="md" onClick={copyLink}>링크 복사</Button>

@@ -82,8 +82,10 @@ export async function onRequestPost(context) {
     // 401/403도 이유가 여러 가지다(토큰 만료 · API 권한 없음 · 앱 상태). 네이버가 준 코드·메시지를 같이 넘긴다.
     const detail = (() => {
       try {
+        // 네이버는 error를 객체({code, msg})로 주기도 한다 — 객체면 통째로 글자로 바꿔야 이유가 보인다.
         const m = j && j.message;
-        return String((m && (m.error || m.errorMessage)) || j.errorMessage || j.errorCode || JSON.stringify(j) || '').slice(0, 200);
+        const e = (m && (m.error || m.errorMessage)) || j.errorMessage || j.errorCode || j;
+        return (typeof e === 'string' ? e : JSON.stringify(e)).slice(0, 200);
       } catch { return 'no_body'; }
     })();
     if (r.status === 401 || r.status === 403) return json({ ok: false, reason: 'login', detail: `${r.status} ${detail}` }, 401);

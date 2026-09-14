@@ -84,7 +84,13 @@ export async function onRequestPost(context) {
   let slot = 0;
   for (const one of urls) {
     const blob = await cardImage(context, { imageUrl: one });
-    if (blob) { form.set(String(slot), blob, `firemap-${slot + 1}.jpg`); slot += 1; }
+    // 파일 이름은 원래 그림 이름을 그대로 쓴다(quit-2-mailbox.jpg처럼 내용이 담긴 이름).
+    // 이미지 검색은 주변 글을 더 보지만, 이름이 내용과 맞아서 손해 볼 건 없다.
+    const name = (() => {
+      try { return (new URL(one, 'https://firemap.kr').pathname.split('/').pop() || '').slice(0, 60) || `firemap-${slot + 1}.jpg`; }
+      catch { return `firemap-${slot + 1}.jpg`; }
+    })();
+    if (blob) { form.set(String(slot), blob, name); slot += 1; }
   }
   if (!slot) {
     const img = await cardImage(context, body);

@@ -77,55 +77,55 @@ export async function onRequestPost(context) {
   const content = String(body.content || '').trim().slice(0, 4000);
   if (!subject || !content) return json({ ok: false, reason: 'empty' }, 400);
 
-  const form = new FormData();
-  // 인코딩·필드 이름은 개발자센터 multipart 예제(APIExamCafePostMultipart.java) 그대로.
-  //  - subject·content: UTF-8 URL 인코딩 한 번 (본문만 쓰는 예제는 MS949로 한 번 더 감싸지만 multipart는 한 번)
-  //  - content는 HTML로 해석된다(예제가 <font>·<br>을 넣는다) → 줄바꿈을 <br>로
-  //  - 이미지 파트의 이름은 'image'가 아니라 '0' (예제: mu.addFilePart("0", uploadFile))
-  form.set('subject', encodeURIComponent(subject));
-  // content는 아래에서 만든다 — 인라인 그림이 막히면 자리표시만 지우고 다시 보내야 해서.
-  // 공개 설정 — openyn의 기본값이 false(멤버 공개)라 안 보내면 회원만 볼 수 있는 글이 된다.
-  // 검색으로 사람이 들어오게 하려면 전체 공개여야 한다. openyn=true면 searchopen도 자동 true지만 같이 보낸다.
-  form.set('openyn', 'true');
-  form.set('searchopen', 'true');
-  form.set('replyyn', 'true');
-  // 이미지 — 네이버 예제가 파트 이름을 '0'으로 쓴다. 여러 장은 '0','1','2'로 이어 붙인다.
-  // imageUrls(배열)를 먼저 보고, 없으면 예전 방식(imageUrl/image 한 장)으로 떨어진다.
-  const urls = Array.isArray(body.imageUrls) ? body.imageUrls.filter(Boolean).slice(0, MAX_IMAGES) : [];
-  let slot = 0;
-  for (const one of urls) {
-    const blob = await cardImage(context, { imageUrl: one });
-    // 파일 이름은 원래 그림 이름을 그대로 쓴다(quit-2-mailbox.jpg처럼 내용이 담긴 이름).
-    // 이미지 검색은 주변 글을 더 보지만, 이름이 내용과 맞아서 손해 볼 건 없다.
-    const name = (() => {
-      try { return (new URL(one, 'https://firemap.kr').pathname.split('/').pop() || '').slice(0, 60) || `firemap-${slot + 1}.jpg`; }
-      catch { return `firemap-${slot + 1}.jpg`; }
-    })();
-    if (blob) { form.set(String(slot), blob, name); slot += 1; }
-  }
-  if (!slot) {
-    const img = await cardImage(context, body);
-    if (img) form.set('0', img, 'firemap-cert.png');
-  }
-
-  // 본문에 [[img1]] 자리표시가 있으면 그 자리에 <img>를 박아 보낸다. 없으면 그냥 자리표시만 지운다.
+  // 본문 만들기 — [[img1]] 자리표시가 있으면 그 자리에 <img>를 박는다.
   const origin = new URL(request.url).origin;
   const escaped = html(content);
+  const urls = Array.isArray(body.imageUrls) ? body.imageUrls.filter(Boolean).slice(0, MAX_IMAGES) : [];
   const hasPlaceholder = /\[\[img\d+\]\]/.test(escaped);
-  const inlineContent = hasPlaceholder && urls.length ? withInlineImages(escaped, urls, origin) : null;
   const plainContent = stripImagePlaceholders(escaped);
-  form.set('content', encodeURIComponent(inlineContent || plainContent));
+  const inlineContent = hasPlaceholder && urls.length ? withInlineImages(escaped, urls, origin) : null;
+
+  // 그림은 한 번만 받아온다(재시도 때 다시 받지 않도록).
+  const parts = [];
+  for (const one of urls) {
+    const blob = await cardImage(context, { imageUrl: one });
+    if (!blob) continue;
+    let name = `firemap-${parts.length + 1}.jpg`;
+    try { name = (new URL(one, origin).pathname.split('/').pop() || '').slice(0, 60) || name; } catch { /* 기본 이름 */ }
+    parts.push([blob, name]);
+  }
+  if (!parts.length) {
+    const img = await cardImage(context, body);
+    if (img) parts.push([img, 'firemap-cert.png']);
+  }
+
+  // multipart는 필드 순서를 지킨다 — 개발자센터 예제대로 subject, content 먼저, 그다음 이미지.
+  //  - subject·content: UTF-8 URL 인코딩 한 번
+  //  - content는 HTML로 해석된다 → 줄바꿈은 <br>
+  //  - 이미지 파트 이름은 'image'가 아니라 '0'. 여러 장은 '0','1','2'.
+  //  - openyn 기본값이 false(멤버 공개)라 안 보내면 회원만 보는 글이 된다.
+  // FormData는 한 번 보내면 본문 스트림이 소비되므로 재시도할 때마다 새로 만든다.
+  const buildForm = (bodyHtml) => {
+    const f = new FormData();
+    f.set('subject', encodeURIComponent(subject));
+    f.set('content', encodeURIComponent(bodyHtml));
+    f.set('openyn', 'true');
+    f.set('searchopen', 'true');
+    f.set('replyyn', 'true');
+    parts.forEach(([blob, name], i) => f.set(String(i), blob, name));
+    return f;
+  };
 
   const url = `https://openapi.naver.com/v1/cafe/${encodeURIComponent(clubOf(env))}/menu/${encodeURIComponent(menuOf(env))}/articles`;
   try {
-    let r = await fetch(url, { method: 'POST', headers: { authorization: `Bearer ${token}` }, body: form });
+    let r = await fetch(url, { method: 'POST', headers: { authorization: `Bearer ${token}` }, body: buildForm(inlineContent || plainContent) });
     let j = await r.json().catch(() => ({}));
     // <img>가 스팸 필터에 걸리면 네이버는 200을 주면서 글 주소를 빼놓는다(<a>일 때 그랬다).
     // 그때는 그림을 본문에서 빼고 첨부만으로 한 번 더 보낸다 — 글이 안 올라가는 것보다 낫다.
     const noLink = (x) => !(x && x.message && x.message.result && x.message.result.articleUrl);
-    if (inlineContent && r.ok && noLink(j)) {
-      form.set('content', encodeURIComponent(plainContent));
-      r = await fetch(url, { method: 'POST', headers: { authorization: `Bearer ${token}` }, body: form });
+    // 200이 아니어도(스팸 필터가 4xx로 막는 경우) 그림을 빼고 한 번 더 보낸다. 토큰 문제는 제외.
+    if (inlineContent && r.status !== 401 && r.status !== 403 && r.status !== 429 && (!r.ok || noLink(j))) {
+      r = await fetch(url, { method: 'POST', headers: { authorization: `Bearer ${token}` }, body: buildForm(plainContent) });
       j = await r.json().catch(() => ({}));
     }
     // 401/403도 이유가 여러 가지다(토큰 만료 · API 권한 없음 · 앱 상태). 네이버가 준 코드·메시지를 같이 넘긴다.

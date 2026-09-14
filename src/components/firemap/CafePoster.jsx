@@ -38,17 +38,23 @@ export default function CafePoster({ onBack }) {
       const next = { ...done, [p.id]: new Date().toISOString().slice(0, 10) };
       setDone(next); writeDone(next);
       track('cafe_post_ops', { id: p.id });
+      try { sessionStorage.removeItem('fm_naver_retried'); } catch { /* ignore */ }
       toast.good('카페에 올렸어요');
       if (r.url) { try { window.open(r.url, '_blank', 'noopener'); } catch { /* ignore */ } }
       return;
     }
     console.error('cafe post failed:', r.reason);
-    track('cafe_post_fail', { reason: String(r.reason || '').slice(0, 300), id: p.id });
+    track('cafe_post_fail', { reason: String(r.reason || '').slice(0, 60), detail: String(r.detail || '').slice(0, 240), id: p.id });
     if (r.reason === 'login') {
+      // 로그인을 새로 해도 또 막히면 토큰 문제가 아니다. 두 번째부터는 다시 보내지 않고 그대로 알려준다.
+      const again = sessionStorage.getItem('fm_naver_retried') === '1';
       try { sessionStorage.removeItem('fm_naver_token'); } catch { /* ignore */ }
+      if (again) { toast.bad('네이버가 글쓰기를 막고 있어요 · 토큰 문제는 아니에요'); return; }
+      try { sessionStorage.setItem('fm_naver_retried', '1'); } catch { /* ignore */ }
       await login();
       return;
     }
+    try { sessionStorage.removeItem('fm_naver_retried'); } catch { /* ignore */ }
     toast.bad('못 올렸어요 · 잠시 뒤 다시');
   };
 

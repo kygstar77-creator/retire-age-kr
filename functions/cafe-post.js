@@ -79,8 +79,15 @@ export async function onRequestPost(context) {
   try {
     const r = await fetch(url, { method: 'POST', headers: { authorization: `Bearer ${token}` }, body: form });
     const j = await r.json().catch(() => ({}));
-    if (r.status === 401 || r.status === 403) return json({ ok: false, reason: 'login' }, 401);
-    if (r.status === 429) return json({ ok: false, reason: 'rate_limit' }, 429);
+    // 401/403도 이유가 여러 가지다(토큰 만료 · API 권한 없음 · 앱 상태). 네이버가 준 코드·메시지를 같이 넘긴다.
+    const detail = (() => {
+      try {
+        const m = j && j.message;
+        return String((m && (m.error || m.errorMessage)) || j.errorMessage || j.errorCode || JSON.stringify(j) || '').slice(0, 200);
+      } catch { return 'no_body'; }
+    })();
+    if (r.status === 401 || r.status === 403) return json({ ok: false, reason: 'login', detail: `${r.status} ${detail}` }, 401);
+    if (r.status === 429) return json({ ok: false, reason: 'rate_limit', detail }, 429);
     if (!r.ok) return json({ ok: false, reason: (j && (j.errorMessage || j.message)) || `naver_${r.status}` }, 502);
     const link = j && j.message && j.message.result && j.message.result.articleUrl;
     // 네이버는 200을 주면서 본문에 에러를 담아 보내기도 한다(스팸 필터 등).

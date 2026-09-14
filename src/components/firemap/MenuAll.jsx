@@ -45,9 +45,9 @@ export default function MenuAll({ onMove }) {
       ))}
       <ListGroup label="설정 · 정보">
         <ListRow lead={<Icon name="settings" />} title="설정" onClick={() => go('settings')} />
-        <ListRow lead={<Icon name="file" />} title="면책 안내" href="/disclaimer.html" />
-        <ListRow lead={<Icon name="lock" />} title="개인정보처리방침" href="/privacy.html" />
-        <ListRow lead={<Icon name="mail" />} title="문의" href="/contact.html" />
+        <ListRow lead={<Icon name="file" />} title="면책 안내" href="/disclaimer" />
+        <ListRow lead={<Icon name="lock" />} title="개인정보처리방침" href="/privacy" />
+        <ListRow lead={<Icon name="mail" />} title="문의" href="/contact" />
       </ListGroup>
     </main>
   );

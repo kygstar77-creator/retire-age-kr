@@ -67,9 +67,9 @@ export default function Settings({ simulation, onMove, onBack }) {
       <ListGroup label="카페 · 정보">
         <ListRow lead={<Icon name="leaf" />} title="파이어맵 네이버 카페" href={CAFE_URL} external />
         {OPENCHAT_URL && <ListRow lead={<Icon name="chat" />} title="카카오톡 오픈채팅" href={OPENCHAT_URL} external />}
-        <ListRow lead={<Icon name="file" />} title="면책 안내" href="/disclaimer.html" />
-        <ListRow lead={<Icon name="lock" />} title="개인정보처리방침" href="/privacy.html" />
-        <ListRow lead={<Icon name="mail" />} title="문의" href="/contact.html" />
+        <ListRow lead={<Icon name="file" />} title="면책 안내" href="/disclaimer" />
+        <ListRow lead={<Icon name="lock" />} title="개인정보처리방침" href="/privacy" />
+        <ListRow lead={<Icon name="mail" />} title="문의" href="/contact" />
       </ListGroup>
 
       <Sheet open={installOpen} title="홈 화면에 추가" onClose={() => setInstallOpen(false)}>

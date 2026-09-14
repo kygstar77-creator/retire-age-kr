@@ -59,7 +59,7 @@ export default function Home({ onStart, onMove, simulation }) {
 
       <CommunityCta where="landing" />
 
-      <p className="ds-caption ds-textcenter"><a className="ds-link ds-link--muted" href="/privacy.html">개인정보처리방침</a> · <a className="ds-link ds-link--muted" href="/disclaimer.html">면책</a> · <a className="ds-link ds-link--muted" href="/contact.html">문의</a></p>
+      <p className="ds-caption ds-textcenter"><a className="ds-link ds-link--muted" href="/privacy">개인정보처리방침</a> · <a className="ds-link ds-link--muted" href="/disclaimer">면책</a> · <a className="ds-link ds-link--muted" href="/contact">문의</a></p>
     </main>
   );
 }

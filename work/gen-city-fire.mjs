@@ -14,7 +14,10 @@ const SLUG = {
   '치앙마이': 'chiangmai', '다낭': 'danang', '우붓(발리)': 'ubud-bali', '쿠알라룸푸르': 'kuala-lumpur',
   '트빌리시': 'tbilisi', '리스본': 'lisbon', '후쿠오카': 'fukuoka', '방콕': 'bangkok', '호치민': 'hochiminh', '페낭': 'penang', '세부': 'cebu',
   '하노이': 'hanoi', '푸꾸옥': 'phu-quoc', '달랏': 'da-lat', '카메론하이랜드': 'cameron-highlands', '바기오': 'baguio',
-  '메데인': 'medellin', '부다페스트': 'budapest', '삿포로': 'sapporo', '바르셀로나': 'barcelona', '타이베이': 'taipei', '오사카': 'osaka'
+  '메데인': 'medellin', '부다페스트': 'budapest', '삿포로': 'sapporo', '바르셀로나': 'barcelona', '타이베이': 'taipei', '오사카': 'osaka',
+  // 2026-09-14: 슬러그 없는 도시는 퍼센트 인코딩 문자열이 폴더 이름이 돼 주소가 앱 껍데기로 떨어졌다(soft 404). 전부 영문 슬러그.
+  '발렌시아': 'valencia', '마드리드': 'madrid', '프라하': 'prague', '아테네': 'athens', '이스탄불': 'istanbul', '안탈리아': 'antalya',
+  '두바이': 'dubai', '알마티': 'almaty', '멕시코시티': 'mexico-city', '부에노스아이레스': 'buenos-aires', '도쿄': 'tokyo', '빈': 'vienna'
 };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const eok = (won) => { const m = Math.round(won / 10000); return m >= 10000 ? `${(m / 10000).toFixed(1)}억원` : `${m.toLocaleString()}만원`; };

@@ -10,6 +10,8 @@ const MAX_IMAGE = 3 * 1024 * 1024;
 
 const clubOf = (env) => String(env.NAVER_CAFE_CLUB_ID || DEFAULT_CLUB);
 const menuOf = (env) => String(env.NAVER_CAFE_MENU_CERT || DEFAULT_MENU);
+// 카페 본문은 HTML로 들어간다 — 꺾쇠는 막고 줄바꿈만 <br>로 살린다.
+const html = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\r?\n/g, '<br>');
 
 export async function onRequestGet(context) {
   const { env } = context;
@@ -62,12 +64,14 @@ export async function onRequestPost(context) {
   if (!subject || !content) return json({ ok: false, reason: 'empty' }, 400);
 
   const form = new FormData();
-  // 네이버 문서는 MS949로 URL-encode한 값을 예로 들지만 multipart UTF-8도 받는다(개발자센터 예제 기준).
-  // 글자가 깨지면 앱이 폴백(복사 후 카페 열기)으로 돌아가게 해 뒀다.
+  // 인코딩·필드 이름은 개발자센터 multipart 예제(APIExamCafePostMultipart.java) 그대로.
+  //  - subject·content: UTF-8 URL 인코딩 한 번 (본문만 쓰는 예제는 MS949로 한 번 더 감싸지만 multipart는 한 번)
+  //  - content는 HTML로 해석된다(예제가 <font>·<br>을 넣는다) → 줄바꿈을 <br>로
+  //  - 이미지 파트의 이름은 'image'가 아니라 '0' (예제: mu.addFilePart("0", uploadFile))
   form.set('subject', encodeURIComponent(subject));
-  form.set('content', encodeURIComponent(content));
+  form.set('content', encodeURIComponent(html(content)));
   const img = await cardImage(context, body);
-  if (img) form.set('image', img, 'firemap-cert.png');
+  if (img) form.set('0', img, 'firemap-cert.png');
 
   const url = `https://openapi.naver.com/v1/cafe/${encodeURIComponent(clubOf(env))}/menu/${encodeURIComponent(menuOf(env))}/articles`;
   try {

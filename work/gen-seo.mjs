@@ -5,6 +5,7 @@
 import { readdirSync, statSync, writeFileSync, readFileSync, existsSync } from 'fs';
 import { execSync } from 'child_process';
 import { join, relative } from 'path';
+import { TOOL_PAGES } from '../src/firemap-v2/toolPages.js';
 
 const ROOT = 'outputs/deploy';
 const BASE = 'https://firemap.kr';
@@ -14,6 +15,7 @@ const urls = [];
 // 생성 파일의 원본: 파이어 백과 본문은 public/guide, 나머지는 생성 스크립트 자체의 날짜를 쓴다.
 function sourceOf(rel) {
   if (rel === 'index.html') return 'index.html';
+  if (rel === '__tool__') return 'src/firemap-v2/toolPages.js';
   if (/^guide\/[^/]+\.html$/.test(rel) && existsSync(join('public', rel))) return join('public', rel);
   if (rel.startsWith('guide/regions/')) return 'work/gen-guides.mjs';
   if (rel.startsWith('guide/region-plan/')) return 'work/gen-region-plans.mjs';
@@ -50,10 +52,13 @@ function walk(dir) {
   }
 }
 walk(ROOT);
+// 도구 화면의 검색용 경로 — 파일이 아니라 functions/_middleware.js가 만든다.
+for (const t of TOOL_PAGES) urls.push({ loc: `${BASE}${t.path}`, lastmod: lastmodOf('__tool__') });
 
 const seen = new Set();
 const clean = urls.filter((u) => (seen.has(u.loc) ? false : seen.add(u.loc))).sort((a, b) => a.loc.localeCompare(b.loc));
-const pr = (u) => (u === `${BASE}/` ? '1.0' : u.endsWith('/guide/') ? '0.8' : u.includes('/guide/') ? '0.7' : '0.4');
+const TOOL_LOCS = new Set(TOOL_PAGES.map((t) => `${BASE}${t.path}`));
+const pr = (u) => (u === `${BASE}/` ? '1.0' : TOOL_LOCS.has(u) ? '0.9' : u.endsWith('/guide/') ? '0.8' : u.includes('/guide/') ? '0.7' : '0.4');
 const body = clean.map((u) => `  <url><loc>${u.loc}</loc><lastmod>${u.lastmod}</lastmod><changefreq>weekly</changefreq><priority>${pr(u.loc)}</priority></url>`).join('\n');
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
 writeFileSync(join(ROOT, 'sitemap.xml'), sitemap);

@@ -25,6 +25,7 @@ import { screens, resolveScreen } from '../firemap-v2/screens.js';
 import { getLatestRank } from '../firemap-v2/rankHistory.js';
 import { maybeClaimOnLoad, claimDevice, syncAfterAuth, pullInputsIfNewer } from '../utils/firemapStateApi.js';
 import { handleKakaoRedirect } from '../utils/kakaoAuth.js';
+import { toolPageByPath } from '../firemap-v2/toolPages.js';
 import { track } from '../firemap-v2/dailyData.js';
 import { logEvent } from '../utils/live.js';
 import { decodeInputsFromHash } from '../utils/shareState.js';
@@ -51,6 +52,9 @@ function loadInputs() {
 
 function readScreenFromHash() {
   if (getSharedInputs() && !Object.values(screens).some((s) => s.hash === window.location.hash)) return 'result';
+  // 검색용 경로(/dividend 등)로 들어오면 그 도구 화면. functions/_middleware.js가 같은 표를 쓴다.
+  const tool = toolPageByPath(window.location.pathname);
+  if (tool && !window.location.hash) return tool.screen;
   // 해시가 없으면: 계산해 본 적이 있으면 결과로, 처음이면 랜딩으로.
   if (!window.location.hash) {
     try { if (getLatestRank()) return 'result'; } catch { /* ignore */ }
@@ -112,7 +116,11 @@ export default function FireMapMVP() {
     const sync = () => setScreenState(readScreenFromHash());
     window.addEventListener('hashchange', sync);
     window.addEventListener('popstate', sync);
-    if (!window.location.hash) window.history.replaceState(null, '', '#home');
+    // 검색용 경로로 들어왔으면 크롤러용 본문(#sSeo)을 지우고 주소를 앱 해시로 바꾼다 — 사람 눈엔 앱 그대로.
+    const tool = toolPageByPath(window.location.pathname);
+    try { const seo = document.getElementById('sSeo'); if (seo) seo.remove(); } catch { /* ignore */ }
+    if (tool && !window.location.hash) window.history.replaceState(null, '', `/${screens[tool.screen].hash}`);
+    else if (!window.location.hash) window.history.replaceState(null, '', '#home');
     (async () => {
       const r = await handleKakaoRedirect();
       if (r && r.ok) {

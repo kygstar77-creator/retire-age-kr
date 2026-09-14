@@ -1,5 +1,7 @@
 // 파이어맵 스모크 — 개편 주차 게이트. 화면 17개가 뜨고, 콘솔 에러 0, 가로 스크롤 0, 첫 진입 dialog 0(결과·질문은 예외 없음).
 import { expect, test } from '@playwright/test';
+import { TOOL_PAGES } from '../src/firemap-v2/toolPages.js';
+import { screens } from '../src/firemap-v2/screens.js';
 
 const INPUTS = { currentAge: 34, targetRetirementAge: 50, financialAsset: 150000000, monthlyInvestment: 1500000, monthlyLivingCost: 2500000 };
 const SCREENS = ['#home', '#question', '#result', '#experiment', '#ranking', '#menu', '#settings', '#account', '#cities', '#firetype', '#dependent', '#foreignTax', '#dividend', '#pension', '#news', '#wall'];
@@ -33,7 +35,8 @@ test.describe('firemap smoke', () => {
       expect(dialogs, `${hash} unexpected dialog on entry`).toBe(0);
       await expect(page.locator('main.fm-screen').first()).toBeVisible();
       const inline = await page.evaluate(() => document.querySelectorAll('main.fm-screen [style]').length);
-      expect(inline, `${hash} inline styles`).toBeLessThanOrEqual(6);
+      // 결과 화면의 자산 차트는 눈금·시작/끝 값·나이 라벨 위치를 인라인으로 잡는다(최대 8) — 그 밖엔 인라인 금지
+      expect(inline, `${hash} inline styles`).toBeLessThanOrEqual(hash === '#result' ? 10 : 6);
       const wrapped = await page.evaluate(() => {
         let n = 0;
         document.querySelectorAll('main.fm-screen .ds-stat__value, main.fm-screen .num').forEach((el) => {
@@ -83,14 +86,27 @@ test.describe('firemap smoke', () => {
     expect(await page.locator('[role="dialog"]').count()).toBe(0);
   });
 
-  test('result is the front screen: 4 tabs and the widget 3 numbers', async ({ page }) => {
+  test('result is the front screen: 4 tabs and the widget ticker', async ({ page }) => {
     await seed(page);
     await page.goto('/#result');
     await page.waitForTimeout(700);
     expect(await page.locator('.ds-tabbar__tab').count()).toBe(4);
-    expect(await page.locator('.ds-three .ds-stat').count()).toBe(3);
+    // 위젯 카드: 지표 한 줄(Ticker)이 넘어간다(2026-09-14, 3숫자 타일 대체)
+    await expect(page.locator('.ds-ticker').first(), '지표 한 줄(서버 지표를 받은 뒤 뜬다)').toBeVisible({ timeout: 15000 });
     // 저축은 걷어냈다 — 규칙 칩이 어디에도 없어야 한다.
     expect(await page.locator('.ds-rule').count()).toBe(0);
+  });
+
+  test('tool paths (/dividend …) open the screen and fold into the hash address', async ({ page }) => {
+    await seed(page);
+    for (const t of TOOL_PAGES) {
+      await page.goto(t.path);
+      await page.waitForTimeout(600);
+      await expect(page.locator('main.fm-screen').first()).toBeVisible();
+      const hash = await page.evaluate(() => window.location.hash);
+      expect(hash, `${t.path} → ${t.screen}`).toBe(screens[t.screen].hash);
+      expect(await page.locator('#sSeo').count(), `${t.path} crawler block removed`).toBe(0);
+    }
   });
 
   test('copy rules: no 합니다/하세요, no banned system words', async ({ page }) => {

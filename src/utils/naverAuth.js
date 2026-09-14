@@ -63,11 +63,11 @@ export async function handleNaverRedirect() {
 
 // 카페에 글 올리기 — 서버 Function(/cafe-post)이 openapi.naver.com에 대행 요청.
 // imageUrl은 같은 도메인의 /og 카드 주소. 서버가 그 PNG를 받아 글에 붙인다(화면에서 본 그림 그대로).
-export async function postToCafe({ subject, content, imageUrl }) {
+export async function postToCafe({ subject, content, imageUrl, imageUrls }) {
   const token = naverToken();
   if (!token) return { ok: false, reason: 'login' };
   try {
-    const res = await fetch('/cafe-post', { method: 'POST', headers: { 'content-type': 'application/json', authorization: `Bearer ${token}` }, body: JSON.stringify({ subject, content, imageUrl: imageUrl || null }) });
+    const res = await fetch('/cafe-post', { method: 'POST', headers: { 'content-type': 'application/json', authorization: `Bearer ${token}` }, body: JSON.stringify({ subject, content, imageUrl: imageUrl || null, imageUrls: imageUrls || null }) });
     const j = await res.json().catch(() => ({}));
     if (res.ok && j.ok) return { ok: true, url: j.url || null };
     return { ok: false, reason: j.reason || `http_${res.status}`, detail: j.detail || '' };

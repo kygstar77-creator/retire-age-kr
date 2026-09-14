@@ -34,7 +34,11 @@ export default function CafePoster({ onBack }) {
     setBusyId(p.id);
     // 대표 이미지: 우리 서버가 그리는 카드(/og?mode=post). 검색 결과에 썸네일이 붙는다.
     const img = p.card ? (() => { const u = new URL('/og', window.location.origin); u.searchParams.set('mode', 'post'); u.searchParams.set('t', p.card.t); p.card.l.forEach((v, i) => u.searchParams.set(`l${i + 1}`, v)); return u.toString(); })() : null;
-    const r = await postToCafe({ subject: p.title, content: p.body, imageUrl: img });
+    // 글에 딸린 그림(public/cafe/...)이 있으면 그걸 붙인다. 숫자 카드는 그림이 없는 글에만.
+    const pics = Array.isArray(p.images) && p.images.length
+      ? p.images.map((rel) => new URL(rel, window.location.origin).toString())
+      : null;
+    const r = await postToCafe({ subject: p.title, content: p.body, imageUrl: pics ? null : img, imageUrls: pics });
     setBusyId(null);
     if (r.ok) {
       const next = { ...done, [p.id]: new Date().toISOString().slice(0, 10) };

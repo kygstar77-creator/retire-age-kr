@@ -7,6 +7,7 @@
 const DEFAULT_CLUB = '31789001';
 const DEFAULT_MENU = '1';
 const MAX_IMAGE = 3 * 1024 * 1024;
+const MAX_IMAGES = 5;  // 한 글에 붙일 수 있는 그림 수 — 네이버가 몇 장까지 받는지 몰라 넉넉히 잡지 않는다
 
 const clubOf = (env) => String(env.NAVER_CAFE_CLUB_ID || DEFAULT_CLUB);
 const menuOf = (env) => String(env.NAVER_CAFE_MENU_CERT || DEFAULT_MENU);
@@ -77,8 +78,18 @@ export async function onRequestPost(context) {
   form.set('openyn', 'true');
   form.set('searchopen', 'true');
   form.set('replyyn', 'true');
-  const img = await cardImage(context, body);
-  if (img) form.set('0', img, 'firemap-cert.png');
+  // 이미지 — 네이버 예제가 파트 이름을 '0'으로 쓴다. 여러 장은 '0','1','2'로 이어 붙인다.
+  // imageUrls(배열)를 먼저 보고, 없으면 예전 방식(imageUrl/image 한 장)으로 떨어진다.
+  const urls = Array.isArray(body.imageUrls) ? body.imageUrls.filter(Boolean).slice(0, MAX_IMAGES) : [];
+  let slot = 0;
+  for (const one of urls) {
+    const blob = await cardImage(context, { imageUrl: one });
+    if (blob) { form.set(String(slot), blob, `firemap-${slot + 1}.jpg`); slot += 1; }
+  }
+  if (!slot) {
+    const img = await cardImage(context, body);
+    if (img) form.set('0', img, 'firemap-cert.png');
+  }
 
   const url = `https://openapi.naver.com/v1/cafe/${encodeURIComponent(clubOf(env))}/menu/${encodeURIComponent(menuOf(env))}/articles`;
   try {

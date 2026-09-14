@@ -6,7 +6,7 @@ import resvgWasm from '@resvg/resvg-wasm/index_bg.wasm';
 import { BOLD_B64, REGULAR_B64 } from './og-fonts.js';
 import { FT_BOLD_B64, FT_REGULAR_B64 } from './og-fonts-ft.js';
 import { PD_BOLD_B64, PD_REGULAR_B64 } from './og-fonts-pd.js';
-import { buildCardSvg, buildCertSvg, buildCertWideSvg, seriesFromRows } from './og-card.js';
+import { buildCardSvg, buildCertSvg, buildCertWideSvg, buildPostSvg, seriesFromRows } from './og-card.js';
 import { buildSimulation } from '../src/utils/retirementSimulator.js';
 
 const KR = 'Pretendard';
@@ -51,6 +51,11 @@ function buildSvg(q) {
       }
     } catch { series = null; }
     return build({ year: intOr(q.get('yr'), 1990, 1900, 2030), cur: intOr(q.get('cur'), 0, 0, 120), ea: intOr(q.get('ea'), 0, 0, 120), target: intOr(q.get('target'), 0, 0, 120), need: safeText(q.get('need'), 12) || '—', asset: safeText(q.get('as'), 12) || '비공개', save: safeText(q.get('sv'), 12) || '비공개', cost: safeText(q.get('cost'), 12) || '—', ret: safeText(q.get('ret'), 4), inf: safeText(q.get('inf'), 4), pen: safeText(q.get('pen'), 3), round: intOr(q.get('rd'), 1, 1, 999), series, font: KR });
+  }
+
+  // 카페 글 대표 이미지 — t=제목, l1~l3=숫자 줄(라벨|값)
+  if ((q.get('mode') || '') === 'post') {
+    return buildPostSvg({ title: safeText(q.get('t'), 44), lines: [q.get('l1'), q.get('l2'), q.get('l3')].map((v) => safeText(v, 44)).filter(Boolean), font: KR });
   }
 
   if ((q.get('mode') || '') === 'firetype') {

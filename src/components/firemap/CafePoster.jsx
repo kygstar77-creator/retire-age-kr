@@ -32,7 +32,9 @@ export default function CafePoster({ onBack }) {
   const post = async (p) => {
     if (!naverToken()) { await login(); return; }
     setBusyId(p.id);
-    const r = await postToCafe({ subject: p.title, content: p.body });
+    // 대표 이미지: 우리 서버가 그리는 카드(/og?mode=post). 검색 결과에 썸네일이 붙는다.
+    const img = p.card ? (() => { const u = new URL('/og', window.location.origin); u.searchParams.set('mode', 'post'); u.searchParams.set('t', p.card.t); p.card.l.forEach((v, i) => u.searchParams.set(`l${i + 1}`, v)); return u.toString(); })() : null;
+    const r = await postToCafe({ subject: p.title, content: p.body, imageUrl: img });
     setBusyId(null);
     if (r.ok) {
       const next = { ...done, [p.id]: new Date().toISOString().slice(0, 10) };

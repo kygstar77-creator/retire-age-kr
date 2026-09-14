@@ -158,3 +158,31 @@ ${statsSvg}
 <text x="1130" y="590" font-family="${font}" font-weight="700" font-size="26" fill="#ff5a00" text-anchor="end">firemap.kr</text>
 </svg>`;
 }
+
+// 카페 글에 붙이는 대표 이미지 — 제목 한 줄과 숫자 3줄. 네이버 검색 결과에 썸네일로 걸린다.
+// 글자는 og-fonts-pd 서브셋에 들어 있어야 그려진다(work/gen-og-fonts.py가 cafePosts.js도 훑는다).
+export function buildPostSvg(opts = {}) {
+  const font = opts.font || 'Pretendard';
+  const esc = (v) => String(v == null ? '' : v).replace(/[<>&"]/g, '').slice(0, 44);
+  const title = esc(opts.title);
+  const lines = (opts.lines || []).slice(0, 3).map(esc).filter(Boolean);
+  const ts = fitFont(title, 54, 1060, 34);
+  const rows = lines.map((ln, i) => {
+    const [k, v] = ln.split('|');
+    const y = 380 + i * 74;
+    return v == null
+      ? `<text x="70" y="${y}" font-family="${font}" font-weight="600" font-size="30" fill="#d6d9de">${k}</text>`
+      : `<text x="70" y="${y}" font-family="${font}" font-weight="600" font-size="30" fill="#9aa0a8">${k}</text>
+<text x="1130" y="${y}" font-family="${font}" font-weight="700" font-size="40" fill="#ffffff" text-anchor="end">${v}</text>
+<line x1="70" y1="${y + 24}" x2="1130" y2="${y + 24}" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2"/>`;
+  }).join('\n');
+  return `<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="630" fill="#18191d"/>
+${LOGO(70, 56, 30, 60)}
+<text x="110" y="98" font-family="${font}" font-weight="700" font-size="30" fill="#ffffff">파이어맵</text>
+<text x="70" y="232" font-family="${font}" font-weight="700" font-size="${ts}" fill="#ff5a00">${title}</text>
+<line x1="70" y1="290" x2="1130" y2="290" stroke="#ffffff" stroke-opacity="0.14" stroke-width="3"/>
+${rows}
+<text x="1130" y="590" font-family="${font}" font-weight="700" font-size="26" fill="#ff5a00" text-anchor="end">firemap.kr</text>
+</svg>`;
+}

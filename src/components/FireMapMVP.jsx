@@ -7,6 +7,7 @@ import Result from './firemap/Result.jsx';
 import Experiment from './firemap/Experiment.jsx';
 import MenuAll from './firemap/MenuAll.jsx';
 import Community from './firemap/Community.jsx';
+import CafePoster from './firemap/CafePoster.jsx';
 import Wall from './firemap/Wall.jsx';
 import BottomTabs from './firemap/BottomTabs.jsx';
 import Header from './firemap/Header.jsx';
@@ -53,6 +54,13 @@ function loadInputs() {
 
 function readScreenFromHash() {
   if (getSharedInputs() && !Object.values(screens).some((s) => s.hash === window.location.hash)) return 'result';
+  // 운영자 화면(#ops)은 ?ops=1 로 한 번 들어온 기기에서만 열린다. 그 외에는 홈.
+  if (resolveScreen(window.location.hash) === 'ops') {
+    try {
+      if (new URLSearchParams(window.location.search || '').get('ops') === '1') localStorage.setItem('fm_ops', '1');
+      return localStorage.getItem('fm_ops') === '1' ? 'ops' : 'home';
+    } catch { return 'home'; }
+  }
   // 검색용 경로(/dividend 등)로 들어오면 그 도구 화면. functions/_middleware.js가 같은 표를 쓴다.
   const tool = toolPageByPath(window.location.pathname);
   if (tool && !window.location.hash) return tool.screen;
@@ -205,7 +213,8 @@ export default function FireMapMVP() {
     dividend: () => <DividendLifeCalc inputs={inputs} onChange={onChange} onMove={setScreen} onBack={backOf('dividend')} />,
     pension: () => tool('pension', <PensionEarlyClaimCard inputs={inputs} onApply={applyPatch} />),
     news: () => <News onBack={backOf('news')} />,
-    wall: () => <Community onBack={backOf('wall')} onMove={setScreen} simulation={simulation} />
+    wall: () => <Community onBack={backOf('wall')} onMove={setScreen} simulation={simulation} />,
+    ops: () => <CafePoster onBack={backOf('ops')} />
   };
   const render = VIEWS[screen] || VIEWS.home;
 

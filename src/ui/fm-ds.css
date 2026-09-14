@@ -659,5 +659,6 @@ button.ds-cal__cell { cursor: pointer; }
 .ds-ticker__text { overflow: hidden; text-overflow: ellipsis; font-weight: 600; color: var(--ds-ink); }
 @keyframes ds-ticker-in { from { transform: translateY(70%); opacity: 0; } to { transform: none; opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .ds-ticker__item { animation: none; } }
+.sc-ops-body { white-space: pre-line; max-height: 210px; overflow-y: auto; word-break: keep-all; }
 .sc-widget-news { display: flex; align-items: center; gap: 12px; min-width: 0; }
 .sc-widget-news .ds-ticker { flex: 1; min-width: 0; }

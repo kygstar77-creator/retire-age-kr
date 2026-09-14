@@ -126,6 +126,9 @@ export async function onRequestPost(context) {
   //  3) 그림 한 장만 첨부   (파트 '1','2'를 네이버가 받는지 문서에 없다)
   //  4) 그림 없이 글만      (그래도 글은 올라가야 한다)
   const plans = [];
+  // inline+none은 아직 안 해본 조합이다. 막혔을 때는 인라인 <img>와 첨부를 같이 보냈으니,
+  // 첨부를 빼면 통과할 수도 있다. 이걸 맨 앞에 두면 다음 글 올릴 때 저절로 시험된다.
+  if (inlineContent) plans.push({ tag: 'inline+none', html: inlineContent, imgs: [] });
   if (inlineContent) plans.push({ tag: 'inline+all', html: inlineContent, imgs: parts });
   plans.push({ tag: 'plain+all', html: plainContent, imgs: parts });
   if (parts.length > 1) plans.push({ tag: 'plain+one', html: plainContent, imgs: parts.slice(0, 1) });

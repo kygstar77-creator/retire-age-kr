@@ -44,7 +44,7 @@ export default function CafePoster({ onBack }) {
     if (r.ok) {
       const next = { ...done, [p.id]: new Date().toISOString().slice(0, 10) };
       setDone(next); writeDone(next);
-      track('cafe_post_ops', { id: p.id });
+      track('cafe_post_ops', { id: p.id, via: String(r.via || '') });
       try { sessionStorage.removeItem('fm_naver_retried'); } catch { /* ignore */ }
       setLastError('');
       toast.good(r.via && r.via !== 'inline+all' ? `올렸어요 · ${r.via}로 통과` : '카페에 올렸어요');

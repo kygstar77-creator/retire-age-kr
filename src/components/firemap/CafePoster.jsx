@@ -15,6 +15,7 @@ export default function CafePoster({ onBack }) {
   const [canPost, setCanPost] = useState(false);
   const [hasNaver, setHasNaver] = useState(false);
   const [busyId, setBusyId] = useState(null);
+  const [lastError, setLastError] = useState('');
   const [done, setDone] = useState(readDone);
 
   useEffect(() => {
@@ -45,7 +46,8 @@ export default function CafePoster({ onBack }) {
       setDone(next); writeDone(next);
       track('cafe_post_ops', { id: p.id });
       try { sessionStorage.removeItem('fm_naver_retried'); } catch { /* ignore */ }
-      toast.good('카페에 올렸어요');
+      setLastError('');
+      toast.good(r.via && r.via !== 'inline+all' ? `올렸어요 · ${r.via}로 통과` : '카페에 올렸어요');
       if (r.url) { try { window.open(r.url, '_blank', 'noopener'); } catch { /* ignore */ } }
       return;
     }
@@ -61,7 +63,9 @@ export default function CafePoster({ onBack }) {
       return;
     }
     try { sessionStorage.removeItem('fm_naver_retried'); } catch { /* ignore */ }
-    toast.bad('못 올렸어요 · 잠시 뒤 다시');
+    // 네이버는 사유를 code 999로만 줄 때가 많다. 그래도 화면에 그대로 띄워야 뭘 고칠지 안다.
+    setLastError(`${r.reason || '알 수 없음'}${r.detail ? ` · ${r.detail}` : ''}`);
+    toast.bad('못 올렸어요 · 아래 사유 확인');
   };
 
   return (
@@ -74,6 +78,10 @@ export default function CafePoster({ onBack }) {
           <SectionHead size="sm" kicker="한 번만" title="네이버 로그인" />
           <Button variant="primary" size="lg" full onClick={login}>네이버 로그인</Button>
         </Card>
+      )}
+
+      {lastError && (
+        <Notice tone="warn" title="네이버가 돌려보낸 말" desc={lastError} />
       )}
 
       {CAFE_POSTS.map((p) => (

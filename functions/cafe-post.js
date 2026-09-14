@@ -117,42 +117,52 @@ export async function onRequestPost(context) {
   };
 
   const url = `https://openapi.naver.com/v1/cafe/${encodeURIComponent(clubOf(env))}/menu/${encodeURIComponent(menuOf(env))}/articles`;
+  // 무엇이 막는지 모르니 단계적으로 덜어내며 보낸다. 네이버는 사유를 code 999로만 주기 때문에
+  // 되돌려가며 어디서 되는지 보는 수밖에 없다. 성공하면 거기서 멈춘다.
+  //  1) 본문에 그림 박기 + 그림 전부 첨부
+  //  2) 본문에서 그림 빼기 + 그림 전부 첨부
+  //  3) 그림 한 장만 첨부   (파트 '1','2'를 네이버가 받는지 문서에 없다)
+  //  4) 그림 없이 글만      (그래도 글은 올라가야 한다)
+  const plans = [];
+  if (inlineContent) plans.push({ tag: 'inline+all', html: inlineContent, imgs: parts });
+  plans.push({ tag: 'plain+all', html: plainContent, imgs: parts });
+  if (parts.length > 1) plans.push({ tag: 'plain+one', html: plainContent, imgs: parts.slice(0, 1) });
+  if (parts.length) plans.push({ tag: 'plain+none', html: plainContent, imgs: [] });
+
+  const tried = [];
   try {
-    let r = await fetch(url, { method: 'POST', headers: { authorization: `Bearer ${token}` }, body: buildForm(inlineContent || plainContent) });
-    let j = await r.json().catch(() => ({}));
-    // <img>가 스팸 필터에 걸리면 네이버는 200을 주면서 글 주소를 빼놓는다(<a>일 때 그랬다).
-    // 그때는 그림을 본문에서 빼고 첨부만으로 한 번 더 보낸다 — 글이 안 올라가는 것보다 낫다.
-    const noLink = (x) => !(x && x.message && x.message.result && x.message.result.articleUrl);
-    // 200이 아니어도(스팸 필터가 4xx로 막는 경우) 그림을 빼고 한 번 더 보낸다. 토큰 문제는 제외.
-    if (inlineContent && r.status !== 401 && r.status !== 403 && r.status !== 429 && (!r.ok || noLink(j))) {
-      r = await fetch(url, { method: 'POST', headers: { authorization: `Bearer ${token}` }, body: buildForm(plainContent) });
+    let r = null; let j = {}; let link = null; let usedTag = '';
+    for (const plan of plans) {
+      const f = new FormData();
+      f.set('subject', encodeURIComponent(subject));
+      f.set('content', encodeURIComponent(plan.html));
+      f.set('openyn', 'true');
+      f.set('searchopen', 'true');
+      f.set('replyyn', 'true');
+      plan.imgs.forEach(([blob, name], i) => f.set(String(i), blob, name));
+      r = await fetch(url, { method: 'POST', headers: { authorization: `Bearer ${token}` }, body: f });
       j = await r.json().catch(() => ({}));
+      link = j && j.message && j.message.result && j.message.result.articleUrl;
+      if (link) { usedTag = plan.tag; break; }
+      tried.push(`${plan.tag}:${r.status}`);
+      // 토큰 문제면 덜어내봤자 소용없다 — 바로 멈춘다.
+      if (r.status === 401 || r.status === 403 || r.status === 429) break;
     }
-    // 401/403도 이유가 여러 가지다(토큰 만료 · API 권한 없음 · 앱 상태). 네이버가 준 코드·메시지를 같이 넘긴다.
+    if (link) {
+      return json({ ok: true, url: link, via: usedTag });
+    }
+    // 여기까지 왔으면 전부 실패했다. 네이버가 준 말을 그대로 넘긴다 — 사유는 code 999뿐일 때가 많다.
     const detail = (() => {
       try {
-        // 네이버는 error를 객체({code, msg})로 주기도 한다 — 객체면 통째로 글자로 바꿔야 이유가 보인다.
         const m = j && j.message;
         const e = (m && (m.error || m.errorMessage)) || j.errorMessage || j.errorCode || j;
         return (typeof e === 'string' ? e : JSON.stringify(e)).slice(0, 200);
       } catch { return 'no_body'; }
     })();
-    if (r.status === 401 || r.status === 403) return json({ ok: false, reason: 'login', detail: `${r.status} ${detail}` }, 401);
-    if (r.status === 429) return json({ ok: false, reason: 'rate_limit', detail }, 429);
-    if (!r.ok) return json({ ok: false, reason: (j && (j.errorMessage || j.message)) || `naver_${r.status}` }, 502);
-    const link = j && j.message && j.message.result && j.message.result.articleUrl;
-    // 네이버는 200을 주면서 본문에 에러를 담아 보내기도 한다(스팸 필터 등).
-    // 글 주소가 안 오면 올라간 게 아니므로 성공으로 치지 않고, 네이버가 뭐라 했는지 그대로 넘긴다.
-    if (!link) {
-      const detail = (() => {
-        try {
-          const m = j && j.message;
-          return String((m && (m.error || m.errorMessage)) || j.errorMessage || j.errorCode || JSON.stringify(j)).slice(0, 200);
-        } catch { return 'no_body'; }
-      })();
-      return json({ ok: false, reason: `no_article ${detail}` }, 502);
-    }
-    return json({ ok: true, url: link });
+    const trail = tried.join(' ');
+    if (r && (r.status === 401 || r.status === 403)) return json({ ok: false, reason: 'login', detail: `${r.status} ${detail}` }, 401);
+    if (r && r.status === 429) return json({ ok: false, reason: 'rate_limit', detail: `${detail} · ${trail}` }, 429);
+    return json({ ok: false, reason: `naver_${r ? r.status : 'none'}`, detail: `${detail} · 시도 ${trail}` }, 502);
   } catch { return json({ ok: false, reason: 'network' }, 502); }
 }
 

@@ -1,15 +1,9 @@
-// 랜딩 — 계산 전 사용자. 팝업 0·로그인 유도 0. 1분 계산 · 가입 없음 · 결과 미리보기(ChooseFI 3체크 · Networthify).
+// 랜딩 — 계산 전 사용자. 팝업 0·로그인 유도 0. 1분 계산 · 가입 없음. 예시 결과는 남의 숫자라 뺐다(2026-09-14).
 import { useEffect, useState } from 'react';
-import { TopBar, Card, SectionHead, Button, Stat, Notice, IconButton, Icon } from '../../ui/index.js';
+import { TopBar, Card, SectionHead, Button, Notice, IconButton, Icon } from '../../ui/index.js';
 import { fetchAggregates } from '../../utils/firemapScoresApi.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import CommunityCta from './CommunityCta.jsx';
-import { buildSimulation } from '../../utils/retirementSimulator.js';
-import { targetGapText } from '../../firemap-v2/scenarios.js';
-import { formatWon } from '../../firemap-v2/formatters.js';
-
-// 결과 미리보기는 질문 화면 예시값(35세 · 1.5억 · 월 150만 · 생활비 250만 · 목표 55세)을 실제로 계산한 값이다.
-const SAMPLE = buildSimulation({ currentAge: 35, targetRetirementAge: 55, financialAsset: 150000000, monthlyInvestment: 1500000, monthlyLivingCost: 2500000 });
 
 function readChallenge() {
   try {
@@ -61,15 +55,6 @@ export default function Home({ onStart, onMove, simulation }) {
           {challenge ? '나도 계산하고 친구랑 비교하기 →' : '내 파이어 나이 계산하기 →'}
         </Button>
         {proof && <p className="ds-caption ds-textcenter ds-mt-2 ds-mb-0">{proof}</p>}
-      </Card>
-
-      <Card variant="soft">
-        <SectionHead size="sm" kicker="예시" title="결과 미리보기" />
-        <div className="ds-three sc-home-three">
-          <Stat label="파이어 나이" value={SAMPLE.earliestRetirementAge ? `${SAMPLE.earliestRetirementAge}세` : '아직'} size="md" />
-          <Stat label={`${SAMPLE.displayResult.retirementAge}세 때 자산`} value={formatWon(SAMPLE.displayResult.fireAsset)} size="md" />
-          <Stat label="목표 55세" value={targetGapText(SAMPLE)} size="md" />
-        </div>
       </Card>
 
       <CommunityCta where="landing" />

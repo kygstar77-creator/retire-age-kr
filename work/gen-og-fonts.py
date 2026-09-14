@@ -24,12 +24,13 @@ def build(weight):
     f = TTFont(SRC)
     f = instancer.instantiateVariableFont(f, {'wght': weight})
     opts = subset.Options()
-    opts.flavor = 'woff2'
+    opts.flavor = None  # resvg는 woff2를 못 읽는다 — TTF 그대로
     opts.notdef_outline = False
     opts.layout_features = ['kern', 'liga', 'tnum']
     ss = subset.Subsetter(options=opts)
     ss.populate(text=chars)
     ss.subset(f)
+    f.flavor = None  # woff2로 읽어들인 flavor를 지워야 TTF로 저장된다
     buf = io.BytesIO(); f.save(buf)
     return base64.b64encode(buf.getvalue()).decode('ascii')
 

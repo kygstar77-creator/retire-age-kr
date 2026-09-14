@@ -471,7 +471,6 @@ button.ds-cal__cell { cursor: pointer; }
 .ds-confirm__card { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.14); }
 .sc-home-agebox { justify-content: space-between; background: var(--ds-surface-2); border-radius: var(--ds-r-md); padding: 10px 12px; margin-top: 4px; }
 .sc-home-agein { width: 64px; text-align: center; font-size: 18px; font-weight: 700; padding: 6px 4px; }
-.sc-home-three { background: var(--ds-surface); border-radius: var(--ds-r-md); padding: 6px; }
 .ds-cert svg { display: block; width: 100%; height: auto; border-radius: var(--ds-r-xl); }
 .sc-os-in { width: 96px; text-align: center; padding: 6px 4px; }
 

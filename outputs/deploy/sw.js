@@ -8,7 +8,7 @@ self.addEventListener('push', (event) => {
   try { data = event.data ? event.data.json() : {}; } catch { data = {}; }
   const title = data.title || '파이어맵';
   const options = {
-    body: data.body || '오늘의 파이어 시계를 확인해보세요',
+    body: data.body || '오늘 파이어까지 남은 날을 확인해요',
     icon: data.icon || '/icon-192.png',
     badge: data.badge || '/icon-192.png',
     tag: data.tag || 'fire-clock',

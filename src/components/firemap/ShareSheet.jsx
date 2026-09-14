@@ -1,6 +1,6 @@
 // 인증 카드 시트 — 배당 투자자 모임 제목 공식(출생연도+가족+숫자+회차) · Reddit 댓글 6종(숫자·기간·가정) 포함.
-// 카톡(og 이미지) · 링크 복사 · 카페 인증 게시판(제목 복사 + 카페 열기; 게시 API는 사장님 앱 등록 후 활성).
-import { useState } from 'react';
+// 카톡(og 이미지) · 링크 복사 · 카페 게시(네이버 로그인이 켜져 있으면 바로 올리고, 아니면 복사 후 카페 열기).
+import { useEffect, useState } from 'react';
 import { Sheet, Button, Chips, Chip, toast } from '../../ui/index.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { shareToKakao } from '../../utils/kakaoShare.js';
@@ -9,6 +9,7 @@ import { fetchUserRank } from '../../utils/firemapScoresApi.js';
 import { track } from '../../firemap-v2/dailyData.js';
 import { prefs } from '../../utils/prefs.js';
 import { CAFE_URL } from '../../firemap-v2/links.js';
+import { cafePostEnabled, naverLoginStart, naverToken, postToCafe } from '../../utils/naverAuth.js';
 import { siteOrigin } from '../../utils/shareState.js';
 import { buildCertSvg, seriesFromRows } from '../../../functions/og-card.js';
 
@@ -62,6 +63,9 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
   const year = new Date().getFullYear() - (Number(inp.currentAge) || 35);
   const [hideAmt, setHideAmt] = useState(false);
   const [busy, setBusy] = useState(false);
+  // 카페에 바로 올릴 수 있는지(서버 설정) — 꺼져 있으면 예전처럼 복사 후 카페 열기.
+  const [canPost, setCanPost] = useState(false);
+  useEffect(() => { if (!open) return; let alive = true; cafePostEnabled().then((v) => { if (alive) setCanPost(v); }); return () => { alive = false; }; }, [open]);
   const need = Math.round(simulation.displayResult.fireAsset || 0);  // 파이어 나이 때 자산 — 히어로와 같은 값
   const asset = Number(inp.financialAsset) || 0;
   const title = `현재 ${Number(inp.currentAge) || 35}세 · ${earliest ? `${earliest}세 파이어 가능` : '파이어 준비 중'} · ${hideAmt ? '자산 비공개' : `자산 ${formatWon(asset)}`} · ${roundNo()}회차`;
@@ -83,11 +87,38 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
     }
     setBusy(false);
   };
-  const copyForCafe = async () => {
-    track('share', { type: 'cert_cafe' });
-    try { await navigator.clipboard.writeText(`${title}\n\n${body}`); toast.good('제목·본문을 복사했어요. 카페 인증 게시판에 붙여넣기!', { ms: 3200 }); } catch { toast.bad('복사가 안 됐어요'); }
-    prefs.bumpCert();
+  // 바로 올리지 못하는 경우(설정 전·로그인 거부·게시 실패)의 폴백 — 예전 동작 그대로.
+  const copyForCafe = async (msg = '제목·본문을 복사했어요. 카페 인증 게시판에 붙여넣기!') => {
+    try { await navigator.clipboard.writeText(`${title}\n\n${body}`); toast.good(msg, { ms: 3200 }); } catch { toast.bad('복사가 안 됐어요'); }
     try { window.open(CAFE_URL, '_blank', 'noopener'); } catch { /* ignore */ }
+  };
+  const toCafe = async () => {
+    track('share', { type: 'cert_cafe' });
+    prefs.bumpCert();
+    if (!canPost) { await copyForCafe(); return; }
+    // 네이버 로그인이 없으면 로그인부터. 돌아오면 인증 카드가 다시 열린다(글은 한 번 더 눌러야 올라간다).
+    if (!naverToken()) {
+      const started = await naverLoginStart('#result');
+      if (!started) await copyForCafe();
+      return;
+    }
+    setBusy(true);
+    const s = buildCertShare(simulation, { hideAmt, round: roundNo(), need, asset });
+    const r = await postToCafe({ subject: title, content: body, imageUrl: s.imageUrl });
+    setBusy(false);
+    if (r.ok) {
+      track('share', { type: 'cert_cafe_posted' });
+      toast.good('카페에 올렸어요');
+      if (r.url) { try { window.open(r.url, '_blank', 'noopener'); } catch { /* ignore */ } }
+      return;
+    }
+    console.error('cafe post failed:', r.reason);
+    if (r.reason === 'login') {
+      try { sessionStorage.removeItem('fm_naver_token'); } catch { /* ignore */ }
+      const started = await naverLoginStart('#result');
+      if (started) return;
+    }
+    await copyForCafe('카페에 바로 못 올렸어요. 제목·본문을 복사했으니 붙여넣기!');
   };
   const copyLink = async () => {
     const s = buildCertShare(simulation, { hideAmt, round: roundNo(), need, asset });
@@ -99,7 +130,7 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
       <div className="ds-cert" dangerouslySetInnerHTML={{ __html: buildCertSvg({ year, cur: inp.currentAge, round: roundNo(), ea: earliest, target: inp.targetRetirementAge, need: formatWon(need), asset: hideAmt ? '비공개' : formatWon(asset), save: hideAmt ? '비공개' : formatWon(inp.monthlyInvestment), cost: formatWon(inp.monthlyLivingCost), ret: inp.annualReturnRate, inf: inp.inflationRate, pen: inp.expectedPensionAge, series: seriesFromRows(simulation.displayResult.rows, simulation.displayResult.retirementAge), font: 'Pretendard Variable' }).replace('width="1080" height="1350"', '') }} />
       <Chips className="ds-mt-3"><Chip on={hideAmt} onClick={() => setHideAmt((v) => !v)}>금액 숨기기</Chip></Chips>
       <div className="ds-stack ds-mt-3">
-        <Button variant="primary" size="lg" full loading={busy} onClick={copyForCafe}>카페 인증 게시판</Button>
+        <Button variant="primary" size="lg" full loading={busy} onClick={toCafe}>{canPost ? '카페에 올리기' : '카페 인증 게시판'}</Button>
         <div className="ds-bottomcta ds-mt-0">
           <Button variant="secondary" size="md" onClick={kakao}>카카오톡 공유</Button>
           <Button variant="secondary" size="md" onClick={copyLink}>링크 복사</Button>

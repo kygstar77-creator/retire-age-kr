@@ -25,6 +25,7 @@ import { screens, resolveScreen } from '../firemap-v2/screens.js';
 import { getLatestRank } from '../firemap-v2/rankHistory.js';
 import { maybeClaimOnLoad, claimDevice, syncAfterAuth, pullInputsIfNewer } from '../utils/firemapStateApi.js';
 import { handleKakaoRedirect } from '../utils/kakaoAuth.js';
+import { handleNaverRedirect } from '../utils/naverAuth.js';
 import { toolPageByPath } from '../firemap-v2/toolPages.js';
 import { track } from '../firemap-v2/dailyData.js';
 import { logEvent } from '../utils/live.js';
@@ -122,6 +123,13 @@ export default function FireMapMVP() {
     if (tool && !window.location.hash) window.history.replaceState(null, '', `/${screens[tool.screen].hash}`);
     else if (!window.location.hash) window.history.replaceState(null, '', '#home');
     (async () => {
+      // 카페 게시용 네이버 로그인에서 돌아온 경우 — 토큰을 받아 두고 인증 카드를 다시 연다.
+      const nv = await handleNaverRedirect();
+      if (nv && nv.ok) {
+        try { sessionStorage.setItem('fm_open_cert', '1'); } catch { /* ignore */ }
+        window.location.reload();
+        return;
+      }
       const r = await handleKakaoRedirect();
       if (r && r.ok) {
         try { await claimDevice(); await syncAfterAuth(); } catch (e) { /* ignore */ }

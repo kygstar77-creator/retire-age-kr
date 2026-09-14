@@ -31,7 +31,7 @@ export async function onRequest(context) {
   const keep = (k, max = 12) => String(q.get(k) || '').replace(/[<>&"]/g, '').slice(0, max);
   const certImg = () => {
     const sp = new URLSearchParams();
-    ['mode', 'yr', 'fm', 'ea', 'target', 'need', 'as', 'sv', 'cost', 'ret', 'inf', 'pen', 'rd']
+    ['mode', 'yr', 'fm', 'ea', 'target', 'need', 'as', 'sv', 'cost', 'ret', 'inf', 'pen', 'rd', 'cur', 'fa', 'mi', 'lc', 'pa', 'pm']
       .forEach((k) => { const v = keep(k); if (v) sp.set(k, v); });
     return `${site}/og?${sp.toString()}`;
   };

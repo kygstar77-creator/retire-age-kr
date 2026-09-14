@@ -98,7 +98,9 @@ function certText(opts) {
   const gap = ea && tgt ? tgt - ea : null;
   const big = ea ? `${ea}세` : '아직';
   const line1 = !ea ? '파이어 준비 중' : gap == null ? '파이어 가능 나이' : gap > 0 ? `목표보다 ${gap}년 빨라요` : gap < 0 ? `목표보다 ${-gap}년 늦어요` : '목표와 같아요';
-  const title = `${esc(opts.year)}년생 · ${esc(opts.round) || 1}회차`;
+  // 태어난 해는 앱이 묻지 않는다(연도-나이 추정은 한 해 틀릴 수 있어 뺐다). 입력한 현재 나이를 그대로 적는다.
+  const cur = Number(opts.cur) || 0;
+  const title = `${cur ? `현재 ${cur}세` : `${esc(opts.year)}년생`} · ${esc(opts.round) || 1}회차`;
   const stats = [[`${ea || tgt}세 때 자산`, esc(opts.need)], ['현재 자산', esc(opts.asset)], ['월 저축액', esc(opts.save)]];
   const assume = `파이어 후 월 생활비 ${esc(opts.cost)} · 수익률 ${esc(opts.ret)}% · 물가 ${esc(opts.inf)}% · 연금 ${esc(opts.pen)}세~`;
   return { esc, ea, tgt, big, line1, title, stats, assume };

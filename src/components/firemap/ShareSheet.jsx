@@ -64,7 +64,7 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
   const [busy, setBusy] = useState(false);
   const need = Math.round(simulation.displayResult.fireAsset || 0);  // 파이어 나이 때 자산 — 히어로와 같은 값
   const asset = Number(inp.financialAsset) || 0;
-  const title = `${year}년생 · ${earliest ? `${earliest}세 파이어 가능` : '파이어 준비 중'} · ${hideAmt ? '자산 비공개' : `자산 ${formatWon(asset)}`} · ${roundNo()}회차`;
+  const title = `현재 ${Number(inp.currentAge) || 35}세 · ${earliest ? `${earliest}세 파이어 가능` : '파이어 준비 중'} · ${hideAmt ? '자산 비공개' : `자산 ${formatWon(asset)}`} · ${roundNo()}회차`;
   const body = [
     `파이어 나이 ${earliest ? `${earliest}세` : '아직'} (목표 ${inp.targetRetirementAge}세)`,
     `${earliest || inp.targetRetirementAge}세 때 자산 ${formatWon(need)} · 지금 ${hideAmt ? '비공개' : formatWon(asset)}`,
@@ -76,7 +76,7 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
   const kakao = async () => {
     setBusy(true); track('share', { type: 'cert_kakao' });
     const s = buildCertShare(simulation, { hideAmt, round: roundNo(), need, asset });
-    try { await shareToKakao({ title: earliest ? `${earliest}세에 파이어 가능 🔥` : '내 파이어 나이', description: `${earliest || inp.targetRetirementAge}세 때 자산 ${formatWon(need)} · 지금 ${hideAmt ? '비공개' : formatWon(asset)} · 1분이면 나도 계산`, imageUrl: s.imageUrl, linkUrl: s.url }); prefs.bumpCert(); }
+    try { await shareToKakao({ title: earliest ? `나는 ${earliest}세에 파이어할 수 있어요` : '내 파이어 나이', description: `${earliest || inp.targetRetirementAge}세 때 자산 ${formatWon(need)} · 지금 ${hideAmt ? '비공개' : formatWon(asset)} · 1분이면 나도 계산`, imageUrl: s.imageUrl, linkUrl: s.url, imageWidth: 1200, imageHeight: 630 }); prefs.bumpCert(); }
     catch {
       if (navigator.share) { try { await navigator.share({ text: `${title}\n${body}`, url: s.url }); prefs.bumpCert(); } catch { /* ignore */ } }
       else { try { await navigator.clipboard.writeText(`${title}\n${body}\n${s.url}`); toast.good('카드 내용을 복사했어요'); } catch { /* ignore */ } }
@@ -96,7 +96,7 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
   return (
     <Sheet open={open} title="인증 카드" onClose={onClose}>
       {/* 미리보기 = 카톡·링크에 실리는 바로 그 이미지(같은 SVG 빌더). */}
-      <div className="ds-cert" dangerouslySetInnerHTML={{ __html: buildCertSvg({ year, round: roundNo(), ea: earliest, target: inp.targetRetirementAge, need: formatWon(need), asset: hideAmt ? '비공개' : formatWon(asset), save: hideAmt ? '비공개' : formatWon(inp.monthlyInvestment), cost: formatWon(inp.monthlyLivingCost), ret: inp.annualReturnRate, inf: inp.inflationRate, pen: inp.expectedPensionAge, series: seriesFromRows(simulation.displayResult.rows, simulation.displayResult.retirementAge), font: 'Pretendard Variable' }).replace('width="1080" height="1350"', '') }} />
+      <div className="ds-cert" dangerouslySetInnerHTML={{ __html: buildCertSvg({ year, cur: inp.currentAge, round: roundNo(), ea: earliest, target: inp.targetRetirementAge, need: formatWon(need), asset: hideAmt ? '비공개' : formatWon(asset), save: hideAmt ? '비공개' : formatWon(inp.monthlyInvestment), cost: formatWon(inp.monthlyLivingCost), ret: inp.annualReturnRate, inf: inp.inflationRate, pen: inp.expectedPensionAge, series: seriesFromRows(simulation.displayResult.rows, simulation.displayResult.retirementAge), font: 'Pretendard Variable' }).replace('width="1080" height="1350"', '') }} />
       <Chips className="ds-mt-3"><Chip on={hideAmt} onClick={() => setHideAmt((v) => !v)}>금액 숨기기</Chip></Chips>
       <div className="ds-stack ds-mt-3">
         <Button variant="primary" size="lg" full loading={busy} onClick={copyForCafe}>카페 인증 게시판</Button>

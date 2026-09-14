@@ -1,6 +1,6 @@
-// fetch-realestate v5 — 국토부(MOLIT) 아파트 실거래가 수집기 (추가전용).
+// fetch-realestate v6 — 국토부(MOLIT) 아파트 실거래가 수집기 (추가전용). v6: 월세(보증금·월세) 추가.
 // MOLIT_API_KEY 있을 때만 동작. 없으면 건너뜀(graceful). 실패해도 기존 값 보존.
-// 경로: /1613000/{op}/get{op}. 매매: 상세 → 기본 폴백. 전세: getRTMSDataSvcAptRent(월세 0).
+// 경로: /1613000/{op}/get{op}. 매매: 상세 → 기본 폴백. 전세·월세: getRTMSDataSvcAptRent(월세 0 → 전세, 월세 > 0 → 월세).
 // region 키 = 사이트 지역 페이지 이름. 주 1회 cron(firemap-realestate-weekly, 수 22:40 UTC)으로 갱신.
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
@@ -55,7 +55,8 @@ async function upsert(row: Record<string, unknown>) {
   if (!res.ok) throw new Error(`upsert ${res.status} ${await res.text()}`);
 }
 
-async function avgForOp(op: string, kind: "sale" | "jeonse", lawds: string[], ymd: string): Promise<number | null> {
+// 매매: 거래금액 평균(만원).
+async function saleForOp(op: string, lawds: string[], ymd: string): Promise<number | null> {
   const amounts: number[] = [];
   for (const lawd of lawds) {
     try {
@@ -63,29 +64,44 @@ async function avgForOp(op: string, kind: "sale" | "jeonse", lawds: string[], ym
       const res = await fetch(url);
       if (!res.ok) continue;
       const xml = await res.text();
-      if (kind === "sale") {
-        const re = /<(?:dealAmount|거래금액)>\s*([0-9,]+)\s*<\/(?:dealAmount|거래금액)>/g;
-        let m: RegExpExecArray | null;
-        while ((m = re.exec(xml)) !== null) { const v = Number(m[1].replace(/,/g, "")); if (isFinite(v) && v > 0) amounts.push(v); }
-      } else {
-        const items = xml.split(/<item>/).slice(1);
-        for (const it of items) {
-          const dm = it.match(/<(?:deposit|보증금액|보증금)>\s*([0-9,]+)/);
-          const mm = it.match(/<(?:monthlyRent|월세금액|월세)>\s*([0-9,]*)/);
-          const dep = dm ? Number(dm[1].replace(/,/g, "")) : 0;
-          const mon = mm ? Number((mm[1] || "0").replace(/,/g, "")) : 0;
-          if (isFinite(dep) && dep > 0 && mon === 0) amounts.push(dep);
-        }
+      const re = /<(?:dealAmount|거래금액)>\s*([0-9,]+)\s*<\/(?:dealAmount|거래금액)>/g;
+      let m: RegExpExecArray | null;
+      while ((m = re.exec(xml)) !== null) { const v = Number(m[1].replace(/,/g, "")); if (isFinite(v) && v > 0) amounts.push(v); }
+    } catch { /* skip */ }
+  }
+  return avg(amounts);
+}
+
+const avg = (xs: number[]): number | null => (xs.length ? Math.round(xs.reduce((a, b) => a + b, 0) / xs.length) : null);
+
+// 전월세 한 번 받아서 전세(월세 0)와 월세(월세 > 0)를 같이 낸다. 단위 만원.
+async function rentStats(lawds: string[], ymd: string): Promise<{ jeonse: number | null; rentDeposit: number | null; rent: number | null }> {
+  const jeonse: number[] = []; const rentDep: number[] = []; const rent: number[] = [];
+  for (const lawd of lawds) {
+    try {
+      const op = "RTMSDataSvcAptRent";
+      const url = `https://apis.data.go.kr/1613000/${op}/get${op}?serviceKey=${encodeURIComponent(MOLIT_KEY)}&LAWD_CD=${lawd}&DEAL_YMD=${ymd}&numOfRows=1000&pageNo=1`;
+      const res = await fetch(url);
+      if (!res.ok) continue;
+      const xml = await res.text();
+      const items = xml.split(/<item>/).slice(1);
+      for (const it of items) {
+        const dm = it.match(/<(?:deposit|보증금액|보증금)>\s*([0-9,]+)/);
+        const mm = it.match(/<(?:monthlyRent|월세금액|월세)>\s*([0-9,]*)/);
+        const dep = dm ? Number(dm[1].replace(/,/g, "")) : 0;
+        const mon = mm ? Number((mm[1] || "0").replace(/,/g, "")) : 0;
+        if (!isFinite(dep) || !isFinite(mon)) continue;
+        if (mon === 0 && dep > 0) jeonse.push(dep);
+        else if (mon > 0) { rentDep.push(dep); rent.push(mon); }
       }
     } catch { /* skip */ }
   }
-  if (!amounts.length) return null;
-  return Math.round(amounts.reduce((a, b) => a + b, 0) / amounts.length);
+  return { jeonse: avg(jeonse), rentDeposit: avg(rentDep), rent: avg(rent) };
 }
 
 async function saleAvg(lawds: string[], ymd: string): Promise<number | null> {
   for (const op of ["RTMSDataSvcAptTradeDev", "RTMSDataSvcAptTrade"]) {
-    const v = await avgForOp(op, "sale", lawds, ymd);
+    const v = await saleForOp(op, lawds, ymd);
     if (v != null) return v;
   }
   return null;
@@ -103,8 +119,13 @@ Deno.serve(async (_req: Request) => {
     try {
       const sale = await saleAvg(lawds, ymd);
       if (sale != null) { await upsert({ region: name, deal_type: "sale", metric: "avg_price", value: sale, unit: "만원", period: ymd, source: "molit", updated_at: now }); updated.push(`${name}/sale:${sale}`); }
-      const jeonse = await avgForOp("RTMSDataSvcAptRent", "jeonse", lawds, ymd);
+      const { jeonse, rentDeposit, rent } = await rentStats(lawds, ymd);
       if (jeonse != null) { await upsert({ region: name, deal_type: "jeonse", metric: "avg_deposit", value: jeonse, unit: "만원", period: ymd, source: "molit", updated_at: now }); updated.push(`${name}/jeonse:${jeonse}`); }
+      if (rent != null && rentDeposit != null) {
+        await upsert({ region: name, deal_type: "rent", metric: "avg_deposit", value: rentDeposit, unit: "만원", period: ymd, source: "molit", updated_at: now });
+        await upsert({ region: name, deal_type: "rent", metric: "avg_rent", value: rent, unit: "만원", period: ymd, source: "molit", updated_at: now });
+        updated.push(`${name}/rent:${rentDeposit}/${rent}`);
+      } else skipped[`${name}/rent`] = "no data";
       if (sale == null) skipped[`${name}/sale`] = "no data";
       if (jeonse == null) skipped[`${name}/jeonse`] = "no data";
     } catch (e) { skipped[name] = String((e as Error)?.message || e); }

@@ -60,7 +60,7 @@ function Result({ answers, simulation, onMove, onRestart, onPreviewCity }) {
     const desc = `추천 도시 ${recs.map((r) => r.city.city).join('·')} · 12문항으로 내 파이어 유형 찾기`;
     // v=ft2: 보충 폰트(og-fonts-ft) 적용 후 새 URL로 분리 → 카카오/CDN의 폰트픽스 이전 캐시 우회(재크롤)
     const ogImg = `${siteOrigin()}/og?mode=firetype&v=ft2&tn=${encodeURIComponent(A.name)}&nk=${encodeURIComponent(A.nick)}&ct=${encodeURIComponent(recs.map((r) => r.city.city).join('·'))}`;
-    try { await shareToKakao({ title, description: desc, imageUrl: ogImg, linkUrl: TEST_URL() }); return; }
+    try { await shareToKakao({ title, description: desc, imageUrl: ogImg, linkUrl: TEST_URL(), imageWidth: 1200, imageHeight: 600 }); return; }
     catch { /* 폴백 */ }
     try { await navigator.clipboard.writeText(`${title}\n${desc}\n${TEST_URL()}`); toast.good('링크를 복사했어요 · 단톡방에 붙여넣어 봐요'); }
     catch { toast.bad('공유가 안 됐어요 · 잠시 후 다시 해봐요'); }

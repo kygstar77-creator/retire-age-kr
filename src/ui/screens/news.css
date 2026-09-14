@@ -1,4 +1,6 @@
-/* 소식 화면(.sc-news-*) — 토큰만 사용. 지표 목록 · 이야기 · 소식 목록 펼침 */
+/* 소식 화면(.sc-news-*) — 토큰만 사용. 상단 지표 한 줄 · 지표 목록 · 소식 목록 펼침 */
+.sc-news-ticker { max-width: 230px; justify-content: flex-end; }
+.sc-news-ticker .ds-ticker__label { overflow: hidden; text-overflow: ellipsis; }
 .sc-news-cap { margin: 0; word-break: keep-all; }
 
 .sc-news-story { margin: 0; font-size: var(--ds-fs-body); line-height: 1.6; color: var(--ds-ink); word-break: keep-all; }

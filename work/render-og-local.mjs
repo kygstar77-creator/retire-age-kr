@@ -3,7 +3,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { initWasm, Resvg } from '@resvg/resvg-wasm';
 import { PD_BOLD_B64, PD_REGULAR_B64 } from '../functions/og-fonts-pd.js';
-import { buildCertWideSvg, seriesFromRows } from '../functions/og-card.js';
+import { buildCertWideSvg, buildCardSvg, seriesFromRows } from '../functions/og-card.js';
 import { buildSimulation } from '../src/utils/retirementSimulator.js';
 
 const out = process.argv[2] || 'outputs/og-cert-local.png';
@@ -18,3 +18,9 @@ const svg = buildCertWideSvg({ year: 1991, ea: sim.earliestRetirementAge, target
 const r = new Resvg(svg, { fitTo: { mode: 'width', value: 1200 }, font: { fontBuffers: [bold, b64(PD_REGULAR_B64)], defaultFontFamily: 'Pretendard', loadSystemFonts: false } });
 writeFileSync(out, r.render().asPng());
 console.log('wrote', out);
+// 유형 카드도 같이 — 도시 이름·유형 이름 글자가 서브셋에 있는지
+const ft = buildCardSvg({ mode: 'firetype', tname: '바리스타 파이어형', nick: '느긋한 반일러', cities: '달랏·바기오·멕시코시티', font: 'Pretendard' });
+const r2 = new Resvg(ft, { fitTo: { mode: 'width', value: 1200 }, font: { fontBuffers: [bold, b64(PD_REGULAR_B64)], defaultFontFamily: 'Pretendard', loadSystemFonts: false } });
+const out2 = out.replace(/\.png$/, '-firetype.png');
+writeFileSync(out2, r2.render().asPng());
+console.log('wrote', out2);

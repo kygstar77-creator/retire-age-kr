@@ -19,7 +19,8 @@ function ensureKakao() {
   return loadPromise;
 }
 
-export async function shareToKakao({ title, description, imageUrl, linkUrl }) {
+// imageWidth/imageHeight: 카드의 실제 픽셀. 안 넘기면 카톡이 정사각형으로 잘라 보여줘 가로 카드의 양끝이 잘린다.
+export async function shareToKakao({ title, description, imageUrl, linkUrl, imageWidth = 1200, imageHeight = 630 }) {
   const K = await ensureKakao();
   if (!K || !K.Share || !K.isInitialized()) throw new Error('kakao unavailable');
   K.Share.sendDefault({
@@ -28,6 +29,8 @@ export async function shareToKakao({ title, description, imageUrl, linkUrl }) {
       title,
       description,
       imageUrl,
+      imageWidth,
+      imageHeight,
       link: { mobileWebUrl: linkUrl, webUrl: linkUrl }
     },
     buttons: [{ title: '나도 파이어 계산하기', link: { mobileWebUrl: linkUrl, webUrl: linkUrl } }]

@@ -50,7 +50,7 @@ function buildSvg(q) {
         series = seriesFromRows(sim.displayResult.rows, sim.displayResult.retirementAge);
       }
     } catch { series = null; }
-    return build({ year: intOr(q.get('yr'), 1990, 1900, 2030), ea: intOr(q.get('ea'), 0, 0, 120), target: intOr(q.get('target'), 0, 0, 120), need: safeText(q.get('need'), 12) || '—', asset: safeText(q.get('as'), 12) || '비공개', save: safeText(q.get('sv'), 12) || '비공개', cost: safeText(q.get('cost'), 12) || '—', ret: safeText(q.get('ret'), 4), inf: safeText(q.get('inf'), 4), pen: safeText(q.get('pen'), 3), round: intOr(q.get('rd'), 1, 1, 999), series, font: KR });
+    return build({ year: intOr(q.get('yr'), 1990, 1900, 2030), cur: intOr(q.get('cur'), 0, 0, 120), ea: intOr(q.get('ea'), 0, 0, 120), target: intOr(q.get('target'), 0, 0, 120), need: safeText(q.get('need'), 12) || '—', asset: safeText(q.get('as'), 12) || '비공개', save: safeText(q.get('sv'), 12) || '비공개', cost: safeText(q.get('cost'), 12) || '—', ret: safeText(q.get('ret'), 4), inf: safeText(q.get('inf'), 4), pen: safeText(q.get('pen'), 3), round: intOr(q.get('rd'), 1, 1, 999), series, font: KR });
   }
 
   if ((q.get('mode') || '') === 'firetype') {

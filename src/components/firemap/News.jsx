@@ -1,8 +1,8 @@
-// 소식 — 지표 5개 · 배당락 이번 주 · 소식 목록(자동 봇 글은 '자동' 배지). 개편 최종본 §3 소식.
+// 소식 — 지표(상단 한 줄 자동 넘김 + 목록) · 배당락 이번 주 · 소식 목록(자동 봇 글은 '자동' 배지). 개편 최종본 §3 소식.
 // 지표는 참고만. 내 파이어 나이 계산엔 쓰지 않아요.
-import { useEffect, useMemo, useState } from 'react';
-import { TopBar, Card, SectionHead, ListGroup, ListRow, Tabs, Badge, Button, Skeleton, EmptyState, IndexRow, Icon } from '../../ui/index.js';
-import { sbRpc } from '../../utils/supabaseClient.js';
+import { useEffect, useState } from 'react';
+import { TopBar, Card, SectionHead, ListGroup, ListRow, Tabs, Badge, Button, Skeleton, EmptyState, IndexRow, Icon, Ticker } from '../../ui/index.js';
+import { fetchIndicators, buildIndicatorRows } from '../../utils/indicators.js';
 import { loadNews } from '../../utils/firemapFeedbackApi.js';
 import { dayIdx } from '../../utils/dates.js';
 import { CAFE_URL, OPENCHAT_URL } from '../../firemap-v2/links.js';
@@ -22,7 +22,9 @@ const NEWS_CATS = new Set(CATS.map((c) => c.key).filter((k) => k !== 'all'));
 const catMeta = (k) => CATS.find((c) => c.key === k) || CATS[0];
 const AUTO_RE = /^\s*\[자동\]\s*/;
 const isAuto = (r) => r.kind === 'auto' || AUTO_RE.test(String(r.title || ''));
-const cleanTitle = (r) => String(r.title || '').replace(AUTO_RE, '').trim();
+// RSS 제목 앞의 장식 이모지는 뗀다 — 앱 안에서 장식 이모지를 쓰지 않는다.
+const EMOJI_RE = /[\p{Extended_Pictographic}\u{FE0F}\u{200D}]/gu;
+const cleanTitle = (r) => String(r.title || '').replace(AUTO_RE, '').replace(EMOJI_RE, '').replace(/\s{2,}/g, ' ').trim();
 
 // 배당락 데이터는 있을 때만(파일이 없으면 조용히 숨김) — import.meta.glob은 파일이 없어도 빌드가 깨지지 않아요.
 const dividendModules = import.meta.glob('../../firemap-v2/dividendWatch.js');
@@ -56,35 +58,12 @@ function relativeTime(value) {
   return `${Math.round(h / 24)}일 전`;
 }
 const mdOf = (iso) => { const d = new Date(iso); return Number.isNaN(d.getTime()) ? '' : `${d.getMonth() + 1}월 ${d.getDate()}일`; };
-const pct1 = (v) => (v == null || Number.isNaN(Number(v)) ? null : `${Number(v) > 0 ? '+' : ''}${Number(v).toFixed(1)}%`);
-const num0 = (v) => Math.round(Number(v)).toLocaleString('ko-KR');
-const periodOf = (p) => { const s = String(p || ''); return s.length === 6 ? `${s.slice(0, 4)}년 ${Number(s.slice(4))}월` : s; };
 
 function useIndicators() {
   const [data, setData] = useState({ loading: true, rows: [] });
   useEffect(() => {
     let alive = true;
-    (async () => {
-      const [m, macro] = await Promise.all([sbRpc('fm_market_latest'), sbRpc('fm_macro_latest')]);
-      if (!alive) return;
-      const mk = Array.isArray(m) ? m : [];
-      const find = (sym) => mk.find((x) => x.symbol === sym);
-      const rows = [];
-      const kospi = find('^kospi'); const spx = find('^spx'); const fx = find('usdkrw');
-      const idx = (label, r) => {
-        if (!r || r.level == null) return;
-        const d1 = pct1(r.ret_1d); const d7 = pct1(r.ret_7d);
-        rows.push({ key: label, label, value: num0(r.level), delta: d1 || d7, deltaLabel: d1 ? '어제보다' : (d7 ? '이번 주' : null) });
-      };
-      idx('코스피', kospi); idx('S&P500', spx);
-      if (fx && fx.level != null) rows.push({ key: 'fx', label: '환율', sub: '1달러', value: num0(fx.level), unit: '원', delta: pct1(fx.ret_1d) || pct1(fx.ret_7d), deltaLabel: fx.ret_1d != null ? '어제보다' : (fx.ret_7d != null ? '이번 주' : null) });
-      const rates = (macro && Array.isArray(macro.rates)) ? macro.rates : [];
-      const base = rates.find((r) => r.key === 'base_rate');
-      if (base && base.value != null) rows.push({ key: 'base', label: '기준금리', value: Number(base.value).toFixed(2).replace(/0$/, ''), unit: '%', sub: base.as_of ? periodOf(base.as_of) : null });
-      const cpi = macro && macro.cpi;
-      if (cpi && cpi.yoy != null) rows.push({ key: 'cpi', label: '물가', sub: cpi.period ? periodOf(cpi.period) : '1년 전보다', value: Number(cpi.yoy).toFixed(1), unit: '%' });
-      setData({ loading: false, rows });
-    })();
+    fetchIndicators().then((v) => { if (alive) setData({ loading: false, rows: buildIndicatorRows(v) }); });
     return () => { alive = false; };
   }, []);
   return data;
@@ -113,7 +92,7 @@ export default function News({ onBack }) {
 
   return (
     <main className="fm-screen fm-scroll ds-screen-gap">
-      <TopBar title="소식" onBack={onBack} />
+      <TopBar title="소식" onBack={onBack} actions={ind.rows.length > 0 ? <Ticker className="sc-news-ticker" items={ind.rows} ariaLabel="오늘의 참고 지표" /> : null} />
 
       {/* 1. 지표 */}
       <Card>

@@ -643,3 +643,21 @@ button.ds-cal__cell { cursor: pointer; }
 
 .ds-post-composer__cats { margin-top: var(--ds-sp-1); }
 .ds-post-composer__count { margin: 6px 0 0; text-align: right; }
+
+/* ---------- 32. Ticker (지표·소식 한 줄 자동 넘김 — DS-28 IndexRow의 한 줄판) ---------- */
+.ds-ticker { display: flex; align-items: center; min-height: 28px; overflow: hidden; font-size: var(--ds-fs-body-sm); color: var(--ds-ink-2); white-space: nowrap; }
+.ds-ticker--btn { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; text-align: left; width: 100%; }
+.ds-ticker__item { display: inline-flex; align-items: baseline; gap: 6px; min-width: 0; max-width: 100%; animation: ds-ticker-in 320ms cubic-bezier(.2,.8,.2,1); }
+.ds-ticker__label { font-weight: 700; color: var(--ds-ink-2); }
+.ds-ticker__sub { margin-left: 4px; font-size: var(--ds-fs-caption); font-weight: 600; color: var(--ds-ink-3); }
+.ds-ticker__value { font-weight: 700; color: var(--ds-ink); }
+.ds-ticker__unit { margin-left: 1px; font-size: var(--ds-fs-caption); font-weight: 700; color: var(--ds-ink-3); }
+.ds-ticker__delta { font-size: var(--ds-fs-caption); font-weight: 700; }
+.ds-ticker__delta--up { color: var(--ds-bad); }
+.ds-ticker__delta--down { color: var(--ds-info); }
+.ds-ticker__delta--flat { color: var(--ds-ink-3); }
+.ds-ticker__text { overflow: hidden; text-overflow: ellipsis; font-weight: 600; color: var(--ds-ink); }
+@keyframes ds-ticker-in { from { transform: translateY(70%); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .ds-ticker__item { animation: none; } }
+.sc-widget-news { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.sc-widget-news .ds-ticker { flex: 1; min-width: 0; }

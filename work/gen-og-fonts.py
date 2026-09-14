@@ -14,6 +14,12 @@ OUT = os.path.join(ROOT, 'functions', 'og-fonts-pd.js')
 
 card = io.open(CARD, encoding='utf-8').read()
 hangul = set(re.findall(r'[가-힣]', card))
+# 카드에 동적으로 들어가는 앱 데이터의 글자도 전부 — 도시 이름·파이어 유형·닉네임 단어장·공유 문구·functions 전체.
+# (2026-09-14: 카드 글자만 남겼더니 유형 카드의 '달랏·바기오·멕시코시티'가 빠져 카톡 미리보기에 구멍이 났다)
+import glob
+for f in ['src/firemap-v2/cities.js', 'src/firemap-v2/cityTypeTest.js', 'src/firemap-v2/funName.js', 'src/components/firemap/FireTypeTest.jsx', 'src/components/firemap/ShareSheet.jsx'] + [g for g in glob.glob(os.path.join(ROOT, 'functions', '*.js')) if 'fonts' not in g]:
+    fp = f if os.path.isabs(f) else os.path.join(ROOT, f)
+    hangul |= set(re.findall(r'[가-힣]', io.open(fp, encoding='utf-8').read()))
 # 동적으로 들어오는 값에 쓰이는 글자(금액·나이·회차·비공개 등)도 포함
 hangul |= set('억만원세년월일회차비공개아직미만이상목표보다빨라요늦어요같아요준비중현재자산저축액생활비수익률물가연금계산가능나이파이어맵인증카드전체또래상위등')
 ascii_chars = set(' 0123456789.,%~:+-/()·—?!×→')

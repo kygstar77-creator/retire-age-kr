@@ -15,3 +15,5 @@ export { RangeField } from './RangeField.jsx';
 export { Countdown } from './Countdown.jsx';
 export { IndexRow } from './IndexRow.jsx';
 export { Icon } from './Icon.jsx';
+
+export { Ticker } from './Ticker.jsx';

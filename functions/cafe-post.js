@@ -72,6 +72,11 @@ export async function onRequestPost(context) {
   //  - 이미지 파트의 이름은 'image'가 아니라 '0' (예제: mu.addFilePart("0", uploadFile))
   form.set('subject', encodeURIComponent(subject));
   form.set('content', encodeURIComponent(html(content)));
+  // 공개 설정 — openyn의 기본값이 false(멤버 공개)라 안 보내면 회원만 볼 수 있는 글이 된다.
+  // 검색으로 사람이 들어오게 하려면 전체 공개여야 한다. openyn=true면 searchopen도 자동 true지만 같이 보낸다.
+  form.set('openyn', 'true');
+  form.set('searchopen', 'true');
+  form.set('replyyn', 'true');
   const img = await cardImage(context, body);
   if (img) form.set('0', img, 'firemap-cert.png');
 

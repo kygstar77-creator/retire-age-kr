@@ -51,7 +51,9 @@ async function cardImage(context, body) {
       if (!r.ok) return null;
       const buf = await r.arrayBuffer();
       if (!buf.byteLength || buf.byteLength > MAX_IMAGE) return null;
-      return new Blob([buf], { type: 'image/png' });
+      // 타입을 png로 박아두면 jpg를 보낼 때 파일명과 어긋난다 — 받아온 것을 그대로 쓴다.
+      const ct = (r.headers.get('content-type') || '').split(';')[0].trim();
+      return new Blob([buf], { type: /^image\//.test(ct) ? ct : 'image/png' });
     } catch { return null; }
   }
   const data = String(body.image || '');

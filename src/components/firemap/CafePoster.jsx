@@ -43,7 +43,7 @@ export default function CafePoster({ onBack }) {
       return;
     }
     console.error('cafe post failed:', r.reason);
-    track('cafe_post_fail', { reason: String(r.reason || '').slice(0, 120), id: p.id });
+    track('cafe_post_fail', { reason: String(r.reason || '').slice(0, 300), id: p.id });
     if (r.reason === 'login') {
       try { sessionStorage.removeItem('fm_naver_token'); } catch { /* ignore */ }
       await login();

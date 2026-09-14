@@ -83,7 +83,18 @@ export async function onRequestPost(context) {
     if (r.status === 429) return json({ ok: false, reason: 'rate_limit' }, 429);
     if (!r.ok) return json({ ok: false, reason: (j && (j.errorMessage || j.message)) || `naver_${r.status}` }, 502);
     const link = j && j.message && j.message.result && j.message.result.articleUrl;
-    return json({ ok: true, url: link || null });
+    // 네이버는 200을 주면서 본문에 에러를 담아 보내기도 한다(스팸 필터 등).
+    // 글 주소가 안 오면 올라간 게 아니므로 성공으로 치지 않고, 네이버가 뭐라 했는지 그대로 넘긴다.
+    if (!link) {
+      const detail = (() => {
+        try {
+          const m = j && j.message;
+          return String((m && (m.error || m.errorMessage)) || j.errorMessage || j.errorCode || JSON.stringify(j)).slice(0, 200);
+        } catch { return 'no_body'; }
+      })();
+      return json({ ok: false, reason: `no_article ${detail}` }, 502);
+    }
+    return json({ ok: true, url: link });
   } catch { return json({ ok: false, reason: 'network' }, 502); }
 }
 

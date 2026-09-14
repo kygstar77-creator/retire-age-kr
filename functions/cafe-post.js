@@ -133,7 +133,7 @@ export async function onRequestPost(context) {
 
   const tried = [];
   try {
-    let r = null; let j = {}; let link = null; let usedTag = '';
+    let r = null; let j = {}; let link = null; let usedTag = ''; let lastAuth = false;
     for (const plan of plans) {
       const f = new FormData();
       f.set('subject', encodeURIComponent(subject));
@@ -147,8 +147,12 @@ export async function onRequestPost(context) {
       link = j && j.message && j.message.result && j.message.result.articleUrl;
       if (link) { usedTag = plan.tag; break; }
       tried.push(`${plan.tag}:${r.status}`);
-      // 토큰 문제면 덜어내봤자 소용없다 — 바로 멈춘다.
-      if (r.status === 401 || r.status === 403 || r.status === 429) break;
+      // 403 code 999는 인증 실패가 아니라 네이버가 글 내용을 거부한 것이다
+      // (실측: 큰따옴표·<a href>가 들어갔을 때 이 코드로 막혔다). 그러니 덜어내며 계속 시도한다.
+      // 진짜 토큰 문제는 401이거나 본문에 Authentication failed가 들어온다 — 그때만 멈춘다.
+      const rawBody = (() => { try { return JSON.stringify(j); } catch { return ''; } })();
+      const authProblem = r.status === 401 || (r.status === 403 && /Authentication failed|인증에 실패/i.test(rawBody));
+      if (authProblem || r.status === 429) { lastAuth = authProblem; break; }
     }
     if (link) {
       return json({ ok: true, url: link, via: usedTag });
@@ -162,9 +166,11 @@ export async function onRequestPost(context) {
       } catch { return 'no_body'; }
     })();
     const trail = tried.join(' ');
-    if (r && (r.status === 401 || r.status === 403)) return json({ ok: false, reason: 'login', detail: `${r.status} ${detail}` }, 401);
+    // 인증 문제일 때만 로그인으로 보낸다. 403 code 999는 내용 문제라 로그인해봤자 똑같다.
+    if (lastAuth) return json({ ok: false, reason: 'login', detail: `${r.status} ${detail}` }, 401);
     if (r && r.status === 429) return json({ ok: false, reason: 'rate_limit', detail: `${detail} · ${trail}` }, 429);
-    return json({ ok: false, reason: `naver_${r ? r.status : 'none'}`, detail: `${detail} · 시도 ${trail}` }, 502);
+    // 네이버가 내용을 거부했다 — 무엇을 빼야 하는지 시도 기록을 그대로 넘긴다.
+    return json({ ok: false, reason: `naver_거부_${r ? r.status : 'none'}`, detail: `${detail} · 시도 ${trail}` }, 502);
   } catch { return json({ ok: false, reason: 'network' }, 502); }
 }
 

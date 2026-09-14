@@ -15,6 +15,17 @@ const menuOf = (env) => String(env.NAVER_CAFE_MENU_CERT || DEFAULT_MENU);
 // 2026-09-14: 마지막 줄 firemap.kr을 <a>로 감쌌더니 게시가 막혔다(그 변경 말고는 같은 코드로 성공했었다).
 // 네이버 카페 글쓰기 API의 스팸 필터로 보인다 → 링크 없이 글자 그대로 둔다. 근거 없이 다시 넣지 말 것.
 const html = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\r?\n/g, '<br>');
+// 본문 중간에 그림 넣기 — 네이버 공식 셀프체크가 맥락에 맞는 이미지를 권한다(개수 자체는 랭킹과 무관).
+// 글 본문에 [[img1]] 같은 자리표시를 두면 그 자리에 <img>를 박는다.
+// <a href>가 스팸 필터에 막힌 전례가 있어 <img>도 막힐 수 있다 — 막히면 자리표시만 지우고 한 번 더 보낸다.
+const withInlineImages = (escaped, urls, origin) => String(escaped).replace(/\[\[img(\d+)\]\]/g, (_, n) => {
+  const u = urls[Number(n) - 1];
+  if (!u) return '';
+  let abs = '';
+  try { abs = new URL(u, origin).toString(); } catch { abs = ''; }
+  return abs ? `<br><img src="${abs}"><br>` : '';
+});
+const stripImagePlaceholders = (escaped) => String(escaped).replace(/\[\[img\d+\]\]/g, '').replace(/(<br>){3,}/g, '<br><br>');
 
 export async function onRequestGet(context) {
   const { env } = context;
@@ -72,7 +83,7 @@ export async function onRequestPost(context) {
   //  - content는 HTML로 해석된다(예제가 <font>·<br>을 넣는다) → 줄바꿈을 <br>로
   //  - 이미지 파트의 이름은 'image'가 아니라 '0' (예제: mu.addFilePart("0", uploadFile))
   form.set('subject', encodeURIComponent(subject));
-  form.set('content', encodeURIComponent(html(content)));
+  // content는 아래에서 만든다 — 인라인 그림이 막히면 자리표시만 지우고 다시 보내야 해서.
   // 공개 설정 — openyn의 기본값이 false(멤버 공개)라 안 보내면 회원만 볼 수 있는 글이 된다.
   // 검색으로 사람이 들어오게 하려면 전체 공개여야 한다. openyn=true면 searchopen도 자동 true지만 같이 보낸다.
   form.set('openyn', 'true');
@@ -97,10 +108,26 @@ export async function onRequestPost(context) {
     if (img) form.set('0', img, 'firemap-cert.png');
   }
 
+  // 본문에 [[img1]] 자리표시가 있으면 그 자리에 <img>를 박아 보낸다. 없으면 그냥 자리표시만 지운다.
+  const origin = new URL(request.url).origin;
+  const escaped = html(content);
+  const hasPlaceholder = /\[\[img\d+\]\]/.test(escaped);
+  const inlineContent = hasPlaceholder && urls.length ? withInlineImages(escaped, urls, origin) : null;
+  const plainContent = stripImagePlaceholders(escaped);
+  form.set('content', encodeURIComponent(inlineContent || plainContent));
+
   const url = `https://openapi.naver.com/v1/cafe/${encodeURIComponent(clubOf(env))}/menu/${encodeURIComponent(menuOf(env))}/articles`;
   try {
-    const r = await fetch(url, { method: 'POST', headers: { authorization: `Bearer ${token}` }, body: form });
-    const j = await r.json().catch(() => ({}));
+    let r = await fetch(url, { method: 'POST', headers: { authorization: `Bearer ${token}` }, body: form });
+    let j = await r.json().catch(() => ({}));
+    // <img>가 스팸 필터에 걸리면 네이버는 200을 주면서 글 주소를 빼놓는다(<a>일 때 그랬다).
+    // 그때는 그림을 본문에서 빼고 첨부만으로 한 번 더 보낸다 — 글이 안 올라가는 것보다 낫다.
+    const noLink = (x) => !(x && x.message && x.message.result && x.message.result.articleUrl);
+    if (inlineContent && r.ok && noLink(j)) {
+      form.set('content', encodeURIComponent(plainContent));
+      r = await fetch(url, { method: 'POST', headers: { authorization: `Bearer ${token}` }, body: form });
+      j = await r.json().catch(() => ({}));
+    }
     // 401/403도 이유가 여러 가지다(토큰 만료 · API 권한 없음 · 앱 상태). 네이버가 준 코드·메시지를 같이 넘긴다.
     const detail = (() => {
       try {

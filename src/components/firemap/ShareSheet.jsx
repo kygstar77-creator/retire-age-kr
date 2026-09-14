@@ -112,7 +112,9 @@ export default function ShareSheet({ open, onClose, simulation, onMove }) {
       if (r.url) { try { window.open(r.url, '_blank', 'noopener'); } catch { /* ignore */ } }
       return;
     }
+    // 실패 이유를 기록만 해 둔다(화면엔 안 띄운다) — 네이버가 왜 막았는지 나중에 조회해서 고치려고.
     console.error('cafe post failed:', r.reason);
+    track('cafe_post_fail', { reason: String(r.reason || '').slice(0, 120) });
     if (r.reason === 'login') {
       try { sessionStorage.removeItem('fm_naver_token'); } catch { /* ignore */ }
       const started = await naverLoginStart('#result');

@@ -11,12 +11,9 @@ const MAX_IMAGE = 3 * 1024 * 1024;
 const clubOf = (env) => String(env.NAVER_CAFE_CLUB_ID || DEFAULT_CLUB);
 const menuOf = (env) => String(env.NAVER_CAFE_MENU_CERT || DEFAULT_MENU);
 // 카페 본문은 HTML로 들어간다(2026-09-14 실제 게시로 확인) — 꺾쇠는 막고 줄바꿈만 <br>로 살린다.
-// 맨 끝 'firemap.kr'은 눌러서 올 수 있게 링크로. 우리 도메인만 링크로 바꾼다(본문에 남의 주소가 섞여도 그대로 글자).
-const LINK = 'https://firemap.kr/?from=cafe';
-const html = (t) => String(t)
-  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-  .replace(/\r?\n/g, '<br>')
-  .replace(/(^|[\s>])(?:https?:\/\/)?firemap\.kr(?![\w./-])/g, `$1<a href="${LINK}">firemap.kr</a>`);
+// 2026-09-14: 마지막 줄 firemap.kr을 <a>로 감쌌더니 게시가 막혔다(그 변경 말고는 같은 코드로 성공했었다).
+// 네이버 카페 글쓰기 API의 스팸 필터로 보인다 → 링크 없이 글자 그대로 둔다. 근거 없이 다시 넣지 말 것.
+const html = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\r?\n/g, '<br>');
 
 export async function onRequestGet(context) {
   const { env } = context;

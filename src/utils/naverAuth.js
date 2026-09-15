@@ -69,7 +69,7 @@ export async function postToCafe({ subject, content, imageUrl, imageUrls }) {
   try {
     const res = await fetch('/cafe-post', { method: 'POST', headers: { 'content-type': 'application/json', authorization: `Bearer ${token}` }, body: JSON.stringify({ subject, content, imageUrl: imageUrl || null, imageUrls: imageUrls || null }) });
     const j = await res.json().catch(() => ({}));
-    if (res.ok && j.ok) return { ok: true, url: j.url || null };
+    if (res.ok && j.ok) return { ok: true, url: j.url || null, via: j.via || '' };
     return { ok: false, reason: j.reason || `http_${res.status}`, detail: j.detail || '' };
   } catch { return { ok: false, reason: 'network' }; }
 }

@@ -11,6 +11,24 @@ const DONE_KEY = 'fm_cafe_posted';
 const readDone = () => { try { return JSON.parse(localStorage.getItem(DONE_KEY) || '{}'); } catch { return {}; } };
 const writeDone = (v) => { try { localStorage.setItem(DONE_KEY, JSON.stringify(v)); } catch { /* ignore */ } };
 
+
+// 네이버 카페 API는 첨부 그림을 전부 글 맨 앞에 붙인다(공식 문서에 위치 지정 방법이 없고,
+// content에 <img>를 박으면 403 code 999로 막힌다 — 두 조합 다 실측). 그래서 본문 중간에
+// 넣으려면 올린 뒤 카페 편집기에서 사람이 끌어 옮겨야 한다. 어디로 옮길지는 여기서 알려준다.
+function placementGuide(p) {
+  if (!p || !Array.isArray(p.images) || !p.images.length) return [];
+  const paras = String(p.body || '').split(String.fromCharCode(10, 10));
+  const out = [];
+  paras.forEach((para, i) => {
+    const m = para.trim().match(/^\[\[img(\d+)\]\]$/);
+    if (!m) return;
+    const n = Number(m[1]);
+    const next = (paras[i + 1] || '').trim().slice(0, 24);
+    if (p.images[n - 1]) out.push({ n, file: p.images[n - 1].split('/').pop(), next });
+  });
+  return out;
+}
+
 export default function CafePoster({ onBack }) {
   const [canPost, setCanPost] = useState(false);
   const [hasNaver, setHasNaver] = useState(false);
@@ -97,6 +115,15 @@ export default function CafePoster({ onBack }) {
           >
             {done[p.id] ? '한 번 더 올리기' : '카페에 올리기'}
           </Button>
+          {placementGuide(p).length > 0 && (
+            <ul className="ds-list sc-ops-guide">
+              {placementGuide(p).map((g) => (
+                <li key={g.n} className="ds-caption">
+                  {g.n}번 {g.file} → {g.next ? `${g.next}… 문단 앞` : '글 끝'}
+                </li>
+              ))}
+            </ul>
+          )}
         </Card>
       ))}
     </main>

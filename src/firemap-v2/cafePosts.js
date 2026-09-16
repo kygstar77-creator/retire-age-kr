@@ -412,6 +412,7 @@ Our World in Data (ourworldindata.org) — 기대수명 같은 장기 데이터�
   },
   {
     id: 'dividend-income-wife',
+    hold: true,  // 2026-09-16 사장님: 남의 사례라 읽고 남는 게 없다. 정보 글로 방향 전환.
     title: `미국에서 투자자문 일을 하는 사람이 8억 7천만원으로 아내의 배당금 생활을 만들어준 이야기`,
     source: 'r/dividends 올해 인기글 · 초안 제미나이, 사실검증 클로드·GPT',
     card: { t: `8억 7천으로 월 690만`, l: [`인컴 몫|7억 5천`, `월 분배금|690만`, `본인 말|보장 아님`] },
@@ -438,6 +439,7 @@ Our World in Data (ourworldindata.org) — 기대수명 같은 장기 데이터�
   },
   {
     id: 'count-before-you-quit',
+    hold: true,  // 2026-09-16 사장님: 남의 사례라 읽고 남는 게 없다. 정보 글로 방향 전환.
     title: `18개월치 명세서를 AI에 넣어 실제 생활비를 센 46세, 사표 내려던 날 퇴직 패키지를 받았습니다`,
     source: 'r/financialindependence 인기글 · 초안 제미나이, 사실검증 클로드·GPT',
     card: { t: `실제로 센 생활비`, l: [`연 지출|5,934만`, `낮춘 목표|27.6억`, `지금 자산|26.2억`] },
@@ -462,6 +464,7 @@ Our World in Data (ourworldindata.org) — 기대수명 같은 장기 데이터�
   },
   {
     id: 'sabbatical-return-coast',
+    hold: true,  // 2026-09-16 사장님: 남의 사례라 읽고 남는 게 없다. 정보 글로 방향 전환.
     title: `번아웃으로 1년 안식년 갔다가 돌아온 28세, 코스트 파이어 근황입니다`,
     source: 'r/financialindependence 이번 달 인기글 · 초안 제미나이, 사실검증 클로드·GPT',
     card: { t: `안식년 1년, 그 뒤`, l: [`떠날 때|7억 4,500만`, `돌아와서|9억 8,900만`, `새 연봉|2억 7,600만`] },

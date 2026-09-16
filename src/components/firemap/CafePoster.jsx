@@ -102,7 +102,7 @@ export default function CafePoster({ onBack }) {
         <Notice tone="warn" title="네이버가 돌려보낸 말" desc={lastError} />
       )}
 
-      {CAFE_POSTS.map((p) => (
+      {CAFE_POSTS.filter((p) => !p.hold).map((p) => (
         <Card key={p.id}>
           <SectionHead size="sm" kicker={done[p.id] ? `올림 · ${done[p.id]}` : p.source} title={p.title} />
           <p className="ds-p sc-ops-body">{p.body}</p>

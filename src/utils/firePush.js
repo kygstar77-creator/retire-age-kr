@@ -24,9 +24,37 @@ export function isStandalone() {
   catch { return false; }
 }
 
+// 카카오톡·네이버·인스타그램 같은 앱 안에서 열린 브라우저는 웹푸시가 안 된다.
+// 파이어맵은 카페 글·카톡 공유로 많이 들어오는데, 그 링크는 거의 다 이 인앱 브라우저로 열린다.
+// 여기서 켜기를 누르면 조용히 실패하고 사용자는 이유를 모른다 — 그래서 따로 짚어 안내한다.
+export function inAppBrowser() {
+  try {
+    const ua = navigator.userAgent || '';
+    if (/KAKAOTALK/i.test(ua)) return 'kakao';
+    if (/NAVER\(inapp|NAVER\//i.test(ua) || /; NAVER/i.test(ua)) return 'naver';
+    if (/Instagram/i.test(ua)) return 'instagram';
+    if (/FBAN|FBAV/i.test(ua)) return 'facebook';
+    if (/Line\//i.test(ua)) return 'line';
+    if (/DaumApps|DAUM/i.test(ua)) return 'daum';
+    return '';
+  } catch { return ''; }
+}
+
+// 카카오톡은 외부 브라우저로 여는 공식 스킴이 있다. 나머지 앱은 없어서 안내만 한다.
+export function openExternalUrl(url) {
+  try {
+    if (inAppBrowser() === 'kakao') {
+      window.location.href = `kakaotalk://web/openExternal?url=${encodeURIComponent(url)}`;
+      return true;
+    }
+  } catch { /* ignore */ }
+  return false;
+}
+
 // 이 기기에서 웹푸시가 실제로 가능한지(iOS는 홈화면 추가 PWA에서만 가능)
 export function pushSupported() {
   try {
+    if (inAppBrowser()) return false; // 앱 안 브라우저는 API가 있어 보여도 실제 구독이 안 된다
     if (!('serviceWorker' in navigator) || !('PushManager' in window) || !('Notification' in window)) return false;
     if (isIOSDevice() && !isStandalone()) return false; // iOS는 홈화면 추가 후에만
     return true;
@@ -84,6 +112,8 @@ async function saveSub(sub, meta) {
 // 구독 시작: (iOS 대비) 권한을 클릭 제스처 직후 '가장 먼저' 요청 → SW 등록 → 구독 → 저장.
 // meta={targetFireDate, earliestAge, currentAge}
 export async function subscribeFireClock(meta = {}) {
+  const inApp = inAppBrowser();
+  if (inApp) return { ok: false, reason: 'inapp', detail: inApp };
   if (!('serviceWorker' in navigator) || !('PushManager' in window) || !('Notification' in window)) {
     return { ok: false, reason: isIOSDevice() ? 'ios-install' : 'unsupported' };
   }
@@ -111,7 +141,12 @@ export async function subscribeFireClock(meta = {}) {
   }
 
   // 4) 서버 저장
-  const saved = await saveSub(sub, meta);
+  let saved = await saveSub(sub, meta);
+  if (!saved) {
+    // 서버 저장 실패는 대개 일시적인 네트워크 문제다. 구독은 이미 됐으니 한 번만 더 보낸다.
+    await new Promise((r) => setTimeout(r, 1200));
+    saved = await saveSub(sub, meta);
+  }
   if (!saved) return { ok: false, reason: 'save' };
   return { ok: true };
 }

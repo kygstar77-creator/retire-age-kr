@@ -11,7 +11,8 @@ export const TOOL_PAGES = [
   { path: '/cities', screen: 'cities', title: '어디서 살까', sections: ['전 세계 파이어 도시 지도', '1인 월 생활비 기준 · 빠른 순', '도시별 생활비·집값', '지역·가구별 필요 자산 사례'] },
   { path: '/firetype', screen: 'firetype', title: '파이어 유형 테스트', sections: ['내게 맞는 도시 Top3', '강점', '주의', '추천 행동'] },
   { path: '/ranking', screen: 'ranking', title: '랭킹', sections: ['계산하면 내 등수가 나와요', '랭킹 종류'] },
-  { path: '/experiment', screen: 'experiment', title: '바꿔보기', sections: ['나이·자산', '월 저축 · 생활비 · 수익률', '국민연금', '부동산·부채·임대수익', '고급 가정', '자산 흐름'] }
+  { path: '/experiment', screen: 'experiment', title: '바꿔보기', sections: ['나이·자산', '월 저축 · 생활비 · 수익률', '국민연금', '부동산·부채·임대수익', '고급 가정', '자산 흐름'] },
+  { path: '/news', screen: 'news', title: '소식', sections: ['오늘의 참고 지표', '배당락 이번 주 · 이 날 전에 사야 배당을 받아요', '경제 · 부동산 · 투자 · 부업 · 연금·세금 · 저축 · 파이어 후'] }
 ];
 
 export const toolPageByPath = (pathname) => {

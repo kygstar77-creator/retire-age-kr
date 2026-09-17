@@ -3,7 +3,7 @@
 // 저절로 올라가는 글은 없다. 누른 사람 본인 계정으로 올라가고(봇 계정 없음), 올린 글은 기기에 기억해 중복 게시를 막는다.
 import { useEffect, useState } from 'react';
 import { TopBar, Card, SectionHead, Button, Notice, toast } from '../../ui/index.js';
-import { CAFE_POSTS } from '../../firemap-v2/cafePosts.js';
+import { CAFE_POSTS, CAFE_FOOTER } from '../../firemap-v2/cafePosts.js';
 import { cafePostEnabled, naverLoginStart, naverToken, postToCafe } from '../../utils/naverAuth.js';
 import { track } from '../../firemap-v2/dailyData.js';
 
@@ -57,7 +57,7 @@ export default function CafePoster({ onBack }) {
     const pics = Array.isArray(p.images) && p.images.length
       ? p.images.map((rel) => new URL(rel, window.location.origin).toString())
       : null;
-    const r = await postToCafe({ subject: p.title, content: p.body, imageUrl: pics ? null : img, imageUrls: pics });
+    const r = await postToCafe({ subject: p.title, content: p.body + CAFE_FOOTER, imageUrl: pics ? null : img, imageUrls: pics });
     setBusyId(null);
     if (r.ok) {
       const next = { ...done, [p.id]: new Date().toISOString().slice(0, 10) };

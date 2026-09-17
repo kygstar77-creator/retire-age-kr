@@ -47,7 +47,7 @@
 export const CAFE_FOOTER = `
 
 파이어맵 계산기(파이어 나이·배당·건보료·세금·국민연금) firemap.kr
-카카오톡 오픈채팅 open.kakao.com/o/gIGNhUzi (참여코드 firemap)`;
+카카오톡 오픈채팅 open.kakao.com/o/gIGNhUzi`;
 
 export const CAFE_POSTS = [
   {
@@ -749,7 +749,7 @@ LTV는 규제지역 40%, 비규제지역 70%입니다. DSR은 은행권 40%, 2�
 
 카카오톡 오픈채팅
 
-open.kakao.com/o/gIGNhUzi (참여코드 firemap)
+open.kakao.com/o/gIGNhUzi
 입력창에 / 를 치면 계산기와 카페로 가는 답이 바로 나옵니다.
 
 정보글 올리는 기준

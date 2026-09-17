@@ -46,8 +46,8 @@
 // 모든 글 끝에 붙는 홍보 줄(2026-09-17 사장님 지시: 카페에 웹앱·오픈채팅 홍보). 링크 태그는 403이라 평문 주소.
 export const CAFE_FOOTER = `
 
-파이어맵 계산기(파이어 나이·배당·건보료·세금·국민연금) firemap.kr
-카카오톡 오픈채팅 open.kakao.com/o/gIGNhUzi`;
+파이어맵 계산기(파이어 나이·배당·건보료·세금·국민연금) https://firemap.kr
+카카오톡 오픈채팅 https://open.kakao.com/o/gIGNhUzi`;
 
 export const CAFE_POSTS = [
   {

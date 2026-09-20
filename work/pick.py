@@ -84,53 +84,78 @@ def parse(ev):
         a = a.replace(year=a.year + 1); b = b.replace(year=b.year + 1)
     return a, b
 
-def main():
-    cal = json.load(open(os.path.join(HERE, 'calendar.json'), encoding='utf-8'))
-    cafe_done, blog_done = written()
-    rows = []
-    allkw = []
+def mark(kw, cafe_done, blog_done):
+    """이미 쓴 곳 표시. 감점하지 않는다 - 좋은 주제는 각도를 바꿔 여러 편 써도 된다.
+    다만 같은 각도로 또 쓰면 네이버 유사문서 판독시스템이 복사글로 묶으니 각도를 바꾼다."""
+    inb = any(w.replace(' ', '') in blog_done.replace(' ', '') for w in kw)
+    inc = any(w.replace(' ', '') in cafe_done.replace(' ', '') for w in kw)
+    if inb and inc: return '블로그·카페 씀'
+    if inb: return '블로그 씀'
+    if inc: return '카페 씀'
+    return '아직 안 씀'
+
+def section_cal(cal, cafe_done, blog_done):
+    rows, allkw = [], []
     for ev in cal['events']:
         a, b = parse(ev)
-        dday = (a - TODAY).days           # 시작까지 남은 날
-        end = (b - TODAY).days            # 종료까지 남은 날
-        if end < 0: continue              # 이미 끝난 일정
-        if dday > HORIZON: continue       # 너무 먼 일정
-        allkw += ev['kw']
-        rows.append({'ev': ev, 'a': a, 'b': b, 'dday': dday, 'end': end})
+        dday, end = (a - TODAY).days, (b - TODAY).days
+        if end < 0 or dday > HORIZON: continue
+        allkw += ev['kw']; rows.append({'ev': ev, 'a': a, 'b': b, 'dday': dday, 'end': end})
     V = vol(sorted(set(allkw)))
-    print(f'=== {TODAY} 기준 앞으로 {HORIZON}일 안에 걸린 일정 {len(rows)}건\n')
     out = []
     for r in rows:
         ev = r['ev']
         v = max((V.get(k.replace(' ', ''), 0) for k in ev['kw']), default=0)
         best = max(ev['kw'], key=lambda k: V.get(k.replace(' ', ''), 0))
         wk = fresh(best); time.sleep(0.4)
-        # 시의성 점수: 마감 전 lead일 안에 들어왔으면 만점, 진행 중이면 만점, 멀수록 감점
-        if r['dday'] <= 0 <= r['end']: timing = 1.0            # 진행 중
-        elif r['dday'] <= ev['lead']:  timing = 1.0            # 리드타임 안
+        if r['dday'] <= 0 <= r['end']: timing = 1.0
+        elif r['dday'] <= ev['lead']:  timing = 1.0
         else:                          timing = max(0.2, ev['lead'] / max(1, r['dday']))
-        comp = 1.0 if wk is None else max(0.3, 1 - wk / 10)    # 최근 글 많으면 감점
-        inc = any(w in cafe_done for w in ev['kw'])
-        inb = any(w in blog_done for w in ev['kw'])
-        left = (0 if inb else 1) + (0 if inc else 1)      # 아직 안 쓴 매체 수
-        vflag = v < 100                                    # 검색수가 가려진 키워드
-        score = v * timing * comp * (0.15 if left == 0 else (0.6 if left == 1 else 1.0))
-        out.append((score, v, timing, wk, (inb, inc), best, r, vflag))
+        comp = 1.0 if wk is None else max(0.3, 1 - wk / 10)
+        out.append((v * timing * comp, v, wk, best, r))
     out.sort(key=lambda x: -x[0])
-    for score, v, timing, wk, marks, best, r, vflag in out:
-        ev = r['ev']; inb, inc = marks
+    print('=== A. 마감이 있는 주제 — 앞으로 %d일 (%d건)' % (HORIZON, len(out)))
+    print('    점수 = 검색수 x 시의성 x (1-경쟁). 이미 쓴 것도 각도를 바꾸면 또 쓸 수 있다.\n')
+    for score, v, wk, best, r in out:
+        ev = r['ev']
         when = ('%02d/%02d' % (r['a'].month, r['a'].day)) + (('~%02d/%02d' % (r['b'].month, r['b'].day)) if r['b'] != r['a'] else '')
         state = '진행 중' if r['dday'] <= 0 <= r['end'] else ('D-%d' % r['dday'])
-        todo = []
-        if not inb: todo.append('블로그')
-        if not inc: todo.append('카페')
-        need = ('쓸 곳: ' + '·'.join(todo)) if todo else '둘 다 씀'
         warn = ' [날짜 미확인]' if ev['src'] == '미확인' else ''
-        if vflag: warn += ' [검색수 조회 불가]'
-        print('%9s  %s %7s | 검색 %7s | 최근7일글 %s/10 | %-16s | %s%s' % (format(int(score), ','), when, state, format(v, ','), wk if wk is not None else '?', need, ev['name'], warn))
+        if v < 100: warn += ' [검색수 조회 불가]'
+        print('%9s  %-13s %6s | %-4s | 검색 %7s | 최근7일글 %s/10 | %-13s | %s%s' % (
+            format(int(score), ','), when, state, ev.get('axis', '?'), format(v, ','),
+            wk if wk is not None else '?', mark(ev['kw'], cafe_done, blog_done), ev['name'], warn))
         print('%11s  대표 검색어: %s · 근거: %s' % ('', best, ev['src']))
-    print('')
-    print('점수 = 검색수 x 시의성 x (1-경쟁) x (둘 다 썼으면 0.15, 한 곳만 0.6)')
-    print('검색수 100 미만은 검색광고 API가 값을 가린 것 - 순위를 믿지 말고 사람이 판단할 것')
+
+def section_pool(cafe_done, blog_done):
+    p = os.path.join(HERE, 'topics.json')
+    if not os.path.exists(p):
+        print('\n(topics.json 없음 — 상시 주제 건너뜀)'); return
+    T = json.load(open(p, encoding='utf-8'))['topics']
+    hot = [t for t in T if t['axis'] != 'fire']
+    hot.sort(key=lambda t: -(t['vol'] * (1.0 if t['week'] is None else max(0.3, 1 - t['week'] / 10))))
+    print('\n\n=== B. 마감은 없고 늘 수요가 있는 주제 (상위 14 / 총 %d건)' % len(hot))
+    print('    점수 = 검색수 x (1-경쟁). A와 같은 자로 잰 게 아니니 A와 섞어서 비교하지 말 것.\n')
+    for t in hot[:14]:
+        s = t['vol'] * (1.0 if t['week'] is None else max(0.3, 1 - t['week'] / 10))
+        print('%9s  %-10s | 검색 %7s | 최근7일글 %s/10 | %-13s | %s' % (
+            format(int(s), ','), t['axis'], format(t['vol'], ','),
+            t['week'] if t['week'] is not None else '?', mark([t['kw']], cafe_done, blog_done), t['kw']))
+    fire = [t for t in T if t['axis'] == 'fire']
+    fire.sort(key=lambda t: -t['vol'])
+    print('\n\n=== C. 카페에서 읽히는 축 (fire) — 검색이 아니라 조회수로 가는 주제 (%d건)' % len(fire))
+    print('    검색수가 작다고 나쁜 주제가 아니다. 파이어족 카페 실측 조회수 중앙값 248인데')
+    print('    이 축(순자산·계층·파이어 금액·나이 비교)이 가장 높았다. 검색수로 줄세우지 말 것.\n')
+    for t in fire[:10]:
+        print('%9s  %-10s | 검색 %7s | %-13s | %s' % (
+            '', t['axis'], format(t['vol'], ','), mark([t['kw']], cafe_done, blog_done), t['kw']))
+
+def main():
+    cal = json.load(open(os.path.join(HERE, 'calendar.json'), encoding='utf-8'))
+    cafe_done, blog_done = written()
+    section_cal(cal, cafe_done, blog_done)
+    section_pool(cafe_done, blog_done)
+    print('\n검색수 100 미만은 검색광고 API가 값을 가린 것 - 순위를 믿지 말고 사람이 판단할 것')
+    print('축: ' + ' · '.join('%s=%s' % (k, v) for k, v in cal.get('axes', {}).items()))
 
 main()

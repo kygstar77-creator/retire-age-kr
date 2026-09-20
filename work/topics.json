@@ -1,0 +1,2183 @@
+{
+ "note": "상시 주제 풀 - 날짜 없이 늘 수요가 있는 검색어. vol=월 검색수(검색광고 API 실측), week=블로그탭 상위10 중 최근7일 글 수(없으면 미측정). fire 축은 검색수가 작지만 카페 실측 조회수가 가장 높은 축이라 검색수로 줄세우면 안 된다.",
+ "topics": [
+  {
+   "kw": "DSR계산기",
+   "axis": "realestate",
+   "vol": 78300,
+   "week": 3
+  },
+  {
+   "kw": "연봉실수령액",
+   "axis": "fire",
+   "vol": 75300,
+   "week": 3
+  },
+  {
+   "kw": "국제금값",
+   "axis": "macro",
+   "vol": 75100,
+   "week": 7
+  },
+  {
+   "kw": "보금자리론",
+   "axis": "realestate",
+   "vol": 73800,
+   "week": 2
+  },
+  {
+   "kw": "ETF",
+   "axis": "kr",
+   "vol": 72700,
+   "week": 3
+  },
+  {
+   "kw": "디딤돌대출",
+   "axis": "realestate",
+   "vol": 71200,
+   "week": 2
+  },
+  {
+   "kw": "재산세",
+   "axis": "realestate",
+   "vol": 69700,
+   "week": 2
+  },
+  {
+   "kw": "QQQ",
+   "axis": "us",
+   "vol": 64900,
+   "week": 5
+  },
+  {
+   "kw": "청년도약계좌",
+   "axis": "tax",
+   "vol": 64400,
+   "week": 4
+  },
+  {
+   "kw": "QLD",
+   "axis": "us",
+   "vol": 63300,
+   "week": 6
+  },
+  {
+   "kw": "부동산실거래가조회",
+   "axis": "realestate",
+   "vol": 63300,
+   "week": 5
+  },
+  {
+   "kw": "미국금리인상",
+   "axis": "macro",
+   "vol": 58900,
+   "week": 9
+  },
+  {
+   "kw": "주담대금리",
+   "axis": "realestate",
+   "vol": 55700,
+   "week": 5
+  },
+  {
+   "kw": "SCHD",
+   "axis": "us",
+   "vol": 53300,
+   "week": 6
+  },
+  {
+   "kw": "전세대출",
+   "axis": "realestate",
+   "vol": 50400,
+   "week": 3
+  },
+  {
+   "kw": "금리계산기",
+   "axis": "macro",
+   "vol": 47000,
+   "week": 4
+  },
+  {
+   "kw": "양도세계산기",
+   "axis": "tax",
+   "vol": 46400,
+   "week": 3
+  },
+  {
+   "kw": "실시간환율",
+   "axis": "macro",
+   "vol": 45680,
+   "week": 5
+  },
+  {
+   "kw": "청약",
+   "axis": "realestate",
+   "vol": 44700,
+   "week": 2
+  },
+  {
+   "kw": "한국국채10년",
+   "axis": "macro",
+   "vol": 43000,
+   "week": 7
+  },
+  {
+   "kw": "달러환율전망",
+   "axis": "macro",
+   "vol": 42430,
+   "week": 3
+  },
+  {
+   "kw": "미국달러환율",
+   "axis": "macro",
+   "vol": 42040,
+   "week": 5
+  },
+  {
+   "kw": "실거래가조회",
+   "axis": "realestate",
+   "vol": 40300,
+   "week": 5
+  },
+  {
+   "kw": "아파트실거래가조회",
+   "axis": "realestate",
+   "vol": 39600,
+   "week": 7
+  },
+  {
+   "kw": "취득세계산기",
+   "axis": "realestate",
+   "vol": 38100,
+   "week": 4
+  },
+  {
+   "kw": "퇴직금지급기준",
+   "axis": "tax",
+   "vol": 36560,
+   "week": 2
+  },
+  {
+   "kw": "LTV계산기",
+   "axis": "realestate",
+   "vol": 36100,
+   "week": 2
+  },
+  {
+   "kw": "QQQM",
+   "axis": "us",
+   "vol": 35930,
+   "week": 8
+  },
+  {
+   "kw": "주택청약",
+   "axis": "realestate",
+   "vol": 35700,
+   "week": 2
+  },
+  {
+   "kw": "아파트매매",
+   "axis": "realestate",
+   "vol": 35570,
+   "week": 3
+  },
+  {
+   "kw": "주택담보대출금리",
+   "axis": "realestate",
+   "vol": 35300,
+   "week": 7
+  },
+  {
+   "kw": "국채",
+   "axis": "macro",
+   "vol": 34840,
+   "week": 6
+  },
+  {
+   "kw": "IRP계좌",
+   "axis": "tax",
+   "vol": 34600,
+   "week": 2
+  },
+  {
+   "kw": "환율계산",
+   "axis": "macro",
+   "vol": 34400,
+   "week": 4
+  },
+  {
+   "kw": "실시간환율조회",
+   "axis": "macro",
+   "vol": 34110,
+   "week": 3
+  },
+  {
+   "kw": "주택담보대출계산기",
+   "axis": "realestate",
+   "vol": 33890,
+   "week": 4
+  },
+  {
+   "kw": "환율전망",
+   "axis": "macro",
+   "vol": 33800,
+   "week": 8
+  },
+  {
+   "kw": "주담대",
+   "axis": "realestate",
+   "vol": 33700,
+   "week": 5
+  },
+  {
+   "kw": "KODEX미국나스닥100",
+   "axis": "us",
+   "vol": 33500,
+   "week": 7
+  },
+  {
+   "kw": "JEPQ",
+   "axis": "us",
+   "vol": 33200,
+   "week": 7
+  },
+  {
+   "kw": "VOO",
+   "axis": "us",
+   "vol": 32600,
+   "week": 8
+  },
+  {
+   "kw": "TIGER미국배당다우존스",
+   "axis": "us",
+   "vol": 32500,
+   "week": 7
+  },
+  {
+   "kw": "TQQQ",
+   "axis": "us",
+   "vol": 32270,
+   "week": 4
+  },
+  {
+   "kw": "전세자금대출",
+   "axis": "realestate",
+   "vol": 32100,
+   "week": 4
+  },
+  {
+   "kw": "전세",
+   "axis": "realestate",
+   "vol": 31140,
+   "week": 3
+  },
+  {
+   "kw": "청약통장",
+   "axis": "realestate",
+   "vol": 30700,
+   "week": 4
+  },
+  {
+   "kw": "연금저축",
+   "axis": "tax",
+   "vol": 30310,
+   "week": 2
+  },
+  {
+   "kw": "주택연금",
+   "axis": "realestate",
+   "vol": 30230,
+   "week": 3
+  },
+  {
+   "kw": "정기예금금리비교",
+   "axis": "macro",
+   "vol": 29720,
+   "week": 7
+  },
+  {
+   "kw": "TIGER미국나스닥100",
+   "axis": "us",
+   "vol": 29480,
+   "week": 4
+  },
+  {
+   "kw": "양도소득세",
+   "axis": "tax",
+   "vol": 28850,
+   "week": 7
+  },
+  {
+   "kw": "퇴직연금",
+   "axis": "tax",
+   "vol": 28700,
+   "week": 3
+  },
+  {
+   "kw": "종합소득세",
+   "axis": "tax",
+   "vol": 28330,
+   "week": 3
+  },
+  {
+   "kw": "월세",
+   "axis": "realestate",
+   "vol": 28150,
+   "week": 2
+  },
+  {
+   "kw": "노령연금",
+   "axis": "tax",
+   "vol": 27440,
+   "week": 2
+  },
+  {
+   "kw": "ISA계좌개설",
+   "axis": "tax",
+   "vol": 27240,
+   "week": 2
+  },
+  {
+   "kw": "채권",
+   "axis": "macro",
+   "vol": 27090,
+   "week": 5
+  },
+  {
+   "kw": "퇴직연금DC형",
+   "axis": "tax",
+   "vol": 26440,
+   "week": 4
+  },
+  {
+   "kw": "양도소득세계산기",
+   "axis": "tax",
+   "vol": 26390,
+   "week": 3
+  },
+  {
+   "kw": "적금금리",
+   "axis": "macro",
+   "vol": 25800,
+   "week": 4
+  },
+  {
+   "kw": "아파트실거래가",
+   "axis": "realestate",
+   "vol": 25800,
+   "week": 6
+  },
+  {
+   "kw": "대출금리",
+   "axis": "macro",
+   "vol": 25530,
+   "week": 4
+  },
+  {
+   "kw": "부동산중개수수료",
+   "axis": "realestate",
+   "vol": 25110,
+   "week": 4
+  },
+  {
+   "kw": "예금금리비교",
+   "axis": "macro",
+   "vol": 24070,
+   "week": 7
+  },
+  {
+   "kw": "TIGER나스닥100",
+   "axis": "us",
+   "vol": 23820,
+   "week": 2
+  },
+  {
+   "kw": "서울아파트매매",
+   "axis": "realestate",
+   "vol": 23430,
+   "week": 2
+  },
+  {
+   "kw": "달러환율계산기",
+   "axis": "macro",
+   "vol": 23340,
+   "week": 4
+  },
+  {
+   "kw": "퇴직금계산",
+   "axis": "tax",
+   "vol": 23100,
+   "week": 3
+  },
+  {
+   "kw": "종부세",
+   "axis": "realestate",
+   "vol": 22730,
+   "week": 3
+  },
+  {
+   "kw": "저축은행금리비교",
+   "axis": "macro",
+   "vol": 22230,
+   "week": 3
+  },
+  {
+   "kw": "신혼부부전세대출",
+   "axis": "realestate",
+   "vol": 21690,
+   "week": 2
+  },
+  {
+   "kw": "S&P500ETF",
+   "axis": "us",
+   "vol": 21130,
+   "week": 5
+  },
+  {
+   "kw": "퇴직금",
+   "axis": "tax",
+   "vol": 21010,
+   "week": 2
+  },
+  {
+   "kw": "연금",
+   "axis": "tax",
+   "vol": 20730,
+   "week": 2
+  },
+  {
+   "kw": "커버드콜",
+   "axis": "us",
+   "vol": 20590,
+   "week": 7
+  },
+  {
+   "kw": "반도체ETF",
+   "axis": "us",
+   "vol": 20250,
+   "week": 4
+  },
+  {
+   "kw": "부동산계산기",
+   "axis": "realestate",
+   "vol": 20010,
+   "week": 5
+  },
+  {
+   "kw": "미국주식거래시간",
+   "axis": "us",
+   "vol": 19460,
+   "week": 6
+  },
+  {
+   "kw": "DSR",
+   "axis": "realestate",
+   "vol": 19390,
+   "week": 3
+  },
+  {
+   "kw": "부업",
+   "axis": "side",
+   "vol": 18300,
+   "week": 3
+  },
+  {
+   "kw": "IRP",
+   "axis": "tax",
+   "vol": 18080,
+   "week": 2
+  },
+  {
+   "kw": "CD금리",
+   "axis": "macro",
+   "vol": 17970,
+   "week": 3
+  },
+  {
+   "kw": "토지거래허가구역",
+   "axis": "realestate",
+   "vol": 17350,
+   "week": 6
+  },
+  {
+   "kw": "IRP퇴직연금",
+   "axis": "tax",
+   "vol": 16760,
+   "week": 4
+  },
+  {
+   "kw": "연금저축펀드",
+   "axis": "tax",
+   "vol": 16650,
+   "week": 5
+  },
+  {
+   "kw": "장기전세",
+   "axis": "realestate",
+   "vol": 16370,
+   "week": 4
+  },
+  {
+   "kw": "은행금리",
+   "axis": "macro",
+   "vol": 16240,
+   "week": 5
+  },
+  {
+   "kw": "금ETF",
+   "axis": "kr",
+   "vol": 16230,
+   "week": 4
+  },
+  {
+   "kw": "공무원연금",
+   "axis": "tax",
+   "vol": 16210,
+   "week": 3
+  },
+  {
+   "kw": "개인연금",
+   "axis": "tax",
+   "vol": 15380,
+   "week": 4
+  },
+  {
+   "kw": "ETF투자방법",
+   "axis": "kr",
+   "vol": 15250,
+   "week": 3
+  },
+  {
+   "kw": "아파트공시가격조회",
+   "axis": "realestate",
+   "vol": 14940,
+   "week": 3
+  },
+  {
+   "kw": "부동산홈",
+   "axis": "realestate",
+   "vol": 14760,
+   "week": 5
+  },
+  {
+   "kw": "연금저축계좌",
+   "axis": "tax",
+   "vol": 14600,
+   "week": 2
+  },
+  {
+   "kw": "양도세",
+   "axis": "tax",
+   "vol": 14450,
+   "week": 2
+  },
+  {
+   "kw": "연말정산",
+   "axis": "tax",
+   "vol": 14410,
+   "week": 3
+  },
+  {
+   "kw": "레버리지ETF",
+   "axis": "kr",
+   "vol": 14360,
+   "week": 4
+  },
+  {
+   "kw": "SH장기전세",
+   "axis": "realestate",
+   "vol": 14340,
+   "week": 3
+  },
+  {
+   "kw": "파킹통장금리비교",
+   "axis": "macro",
+   "vol": 13930,
+   "week": 4
+  },
+  {
+   "kw": "취득세",
+   "axis": "realestate",
+   "vol": 13730,
+   "week": 2
+  },
+  {
+   "kw": "아파트취득세",
+   "axis": "realestate",
+   "vol": 13580,
+   "week": 3
+  },
+  {
+   "kw": "배당금높은주식",
+   "axis": "kr",
+   "vol": 13480,
+   "week": 4
+  },
+  {
+   "kw": "CMA금리비교",
+   "axis": "macro",
+   "vol": 13470,
+   "week": 5
+  },
+  {
+   "kw": "라오스환율",
+   "axis": "macro",
+   "vol": 13390,
+   "week": 2
+  },
+  {
+   "kw": "채권금리",
+   "axis": "macro",
+   "vol": 13280,
+   "week": 6
+  },
+  {
+   "kw": "TIGER리츠부동산인프라",
+   "axis": "realestate",
+   "vol": 13160,
+   "week": 5
+  },
+  {
+   "kw": "퇴직금중간정산",
+   "axis": "tax",
+   "vol": 13140,
+   "week": 4
+  },
+  {
+   "kw": "IRP계좌개설",
+   "axis": "tax",
+   "vol": 13100,
+   "week": 6
+  },
+  {
+   "kw": "서울아파트",
+   "axis": "realestate",
+   "vol": 13010,
+   "week": 6
+  },
+  {
+   "kw": "2차전지ETF",
+   "axis": "kr",
+   "vol": 12940,
+   "week": 2
+  },
+  {
+   "kw": "파이어족",
+   "axis": "fire",
+   "vol": 12900,
+   "week": 6
+  },
+  {
+   "kw": "KODEX미국배당커버드콜액티브",
+   "axis": "us",
+   "vol": 12840,
+   "week": 5
+  },
+  {
+   "kw": "퇴직연금수령방법",
+   "axis": "tax",
+   "vol": 12620,
+   "week": 3
+  },
+  {
+   "kw": "아파트담보대출",
+   "axis": "realestate",
+   "vol": 12600,
+   "week": 3
+  },
+  {
+   "kw": "재택부업",
+   "axis": "side",
+   "vol": 12320,
+   "week": 4
+  },
+  {
+   "kw": "전세자금대출한도",
+   "axis": "realestate",
+   "vol": 12250,
+   "week": 6
+  },
+  {
+   "kw": "건강보험피부양자",
+   "axis": "fire",
+   "vol": 12190,
+   "week": null
+  },
+  {
+   "kw": "종부세기준",
+   "axis": "realestate",
+   "vol": 11990,
+   "week": 2
+  },
+  {
+   "kw": "목동아파트",
+   "axis": "realestate",
+   "vol": 11820,
+   "week": 2
+  },
+  {
+   "kw": "LTV",
+   "axis": "realestate",
+   "vol": 11630,
+   "week": 2
+  },
+  {
+   "kw": "미국ETF",
+   "axis": "kr",
+   "vol": 11310,
+   "week": 3
+  },
+  {
+   "kw": "국내배당주순위",
+   "axis": "kr",
+   "vol": 11280,
+   "week": 2
+  },
+  {
+   "kw": "미국주식시간",
+   "axis": "us",
+   "vol": 11230,
+   "week": 6
+  },
+  {
+   "kw": "SPY",
+   "axis": "us",
+   "vol": 11120,
+   "week": 8
+  },
+  {
+   "kw": "TIGERETF",
+   "axis": "kr",
+   "vol": 11080,
+   "week": 3
+  },
+  {
+   "kw": "월세세액공제",
+   "axis": "realestate",
+   "vol": 11000,
+   "week": 5
+  },
+  {
+   "kw": "은행금리비교",
+   "axis": "macro",
+   "vol": 10970,
+   "week": 5
+  },
+  {
+   "kw": "월세보증금대출",
+   "axis": "realestate",
+   "vol": 10910,
+   "week": 3
+  },
+  {
+   "kw": "금융소득종합과세",
+   "axis": "tax",
+   "vol": 10870,
+   "week": 4
+  },
+  {
+   "kw": "종합부동산세",
+   "axis": "realestate",
+   "vol": 10600,
+   "week": 2
+  },
+  {
+   "kw": "커버드콜ETF",
+   "axis": "us",
+   "vol": 10540,
+   "week": 5
+  },
+  {
+   "kw": "JEPI",
+   "axis": "us",
+   "vol": 10490,
+   "week": 5
+  },
+  {
+   "kw": "SCHDETF",
+   "axis": "us",
+   "vol": 10380,
+   "week": 5
+  },
+  {
+   "kw": "종합소득세세율",
+   "axis": "tax",
+   "vol": 10260,
+   "week": 3
+  },
+  {
+   "kw": "S&P",
+   "axis": "us",
+   "vol": 10120,
+   "week": 4
+  },
+  {
+   "kw": "미국S&P500",
+   "axis": "us",
+   "vol": 10020,
+   "week": 3
+  },
+  {
+   "kw": "SOL미국배당다우존스",
+   "axis": "us",
+   "vol": 9820,
+   "week": 3
+  },
+  {
+   "kw": "전세보증금",
+   "axis": "realestate",
+   "vol": 9660,
+   "week": 5
+  },
+  {
+   "kw": "부동산경매사이트",
+   "axis": "realestate",
+   "vol": 9550,
+   "week": 2
+  },
+  {
+   "kw": "부동산양도세계산기",
+   "axis": "realestate",
+   "vol": 9480,
+   "week": 5
+  },
+  {
+   "kw": "전세대출금리",
+   "axis": "realestate",
+   "vol": 9440,
+   "week": 4
+  },
+  {
+   "kw": "KODEXETF",
+   "axis": "kr",
+   "vol": 9210,
+   "week": 5
+  },
+  {
+   "kw": "아파트청약",
+   "axis": "realestate",
+   "vol": 9190,
+   "week": 2
+  },
+  {
+   "kw": "퇴직금세금",
+   "axis": "tax",
+   "vol": 9110,
+   "week": 3
+  },
+  {
+   "kw": "잠실아파트",
+   "axis": "realestate",
+   "vol": 9040,
+   "week": 3
+  },
+  {
+   "kw": "신동아아파트",
+   "axis": "realestate",
+   "vol": 9030,
+   "week": 4
+  },
+  {
+   "kw": "파킹통장금리",
+   "axis": "macro",
+   "vol": 8970,
+   "week": 4
+  },
+  {
+   "kw": "전세대출조건",
+   "axis": "realestate",
+   "vol": 8820,
+   "week": 3
+  },
+  {
+   "kw": "로봇ETF",
+   "axis": "kr",
+   "vol": 8710,
+   "week": 2
+  },
+  {
+   "kw": "울산부동산재테크",
+   "axis": "realestate",
+   "vol": 8540,
+   "week": 2
+  },
+  {
+   "kw": "양도소득세세율",
+   "axis": "tax",
+   "vol": 8520,
+   "week": 4
+  },
+  {
+   "kw": "아파트관리비조회",
+   "axis": "realestate",
+   "vol": 8520,
+   "week": 4
+  },
+  {
+   "kw": "법원부동산경매",
+   "axis": "realestate",
+   "vol": 8460,
+   "week": 3
+  },
+  {
+   "kw": "주택담보대출한도",
+   "axis": "realestate",
+   "vol": 8430,
+   "week": 2
+  },
+  {
+   "kw": "전세대출이자계산기",
+   "axis": "realestate",
+   "vol": 8350,
+   "week": 2
+  },
+  {
+   "kw": "실거래가",
+   "axis": "realestate",
+   "vol": 8320,
+   "week": 6
+  },
+  {
+   "kw": "종부세계산기",
+   "axis": "realestate",
+   "vol": 8280,
+   "week": 3
+  },
+  {
+   "kw": "아파트시세조회",
+   "axis": "realestate",
+   "vol": 8280,
+   "week": 6
+  },
+  {
+   "kw": "아파트전세",
+   "axis": "realestate",
+   "vol": 8230,
+   "week": 4
+  },
+  {
+   "kw": "톤틴연금",
+   "axis": "tax",
+   "vol": 8140,
+   "week": 4
+  },
+  {
+   "kw": "청약일정",
+   "axis": "realestate",
+   "vol": 8080,
+   "week": 2
+  },
+  {
+   "kw": "퇴직연금IRP",
+   "axis": "tax",
+   "vol": 7980,
+   "week": 3
+  },
+  {
+   "kw": "재산세계산기",
+   "axis": "realestate",
+   "vol": 7960,
+   "week": 4
+  },
+  {
+   "kw": "아파트분양",
+   "axis": "realestate",
+   "vol": 7920,
+   "week": 3
+  },
+  {
+   "kw": "전세사기",
+   "axis": "realestate",
+   "vol": 7830,
+   "week": 2
+  },
+  {
+   "kw": "연말정산소득공제",
+   "axis": "tax",
+   "vol": 7790,
+   "week": 3
+  },
+  {
+   "kw": "미국S&P500ETF",
+   "axis": "us",
+   "vol": 7750,
+   "week": 6
+  },
+  {
+   "kw": "유로환율전망",
+   "axis": "macro",
+   "vol": 7740,
+   "week": 6
+  },
+  {
+   "kw": "미국금리전망",
+   "axis": "macro",
+   "vol": 7700,
+   "week": 8
+  },
+  {
+   "kw": "개인투자용국채",
+   "axis": "macro",
+   "vol": 7680,
+   "week": 3
+  },
+  {
+   "kw": "미국나스닥",
+   "axis": "us",
+   "vol": 7600,
+   "week": 3
+  },
+  {
+   "kw": "양도소득세율",
+   "axis": "tax",
+   "vol": 7600,
+   "week": 6
+  },
+  {
+   "kw": "퇴직연금중도인출",
+   "axis": "tax",
+   "vol": 7540,
+   "week": 4
+  },
+  {
+   "kw": "하남아파트",
+   "axis": "realestate",
+   "vol": 7490,
+   "week": 4
+  },
+  {
+   "kw": "청년전세자금대출",
+   "axis": "realestate",
+   "vol": 7470,
+   "week": 3
+  },
+  {
+   "kw": "아파트전세대출",
+   "axis": "realestate",
+   "vol": 7380,
+   "week": 2
+  },
+  {
+   "kw": "덕소아파트",
+   "axis": "realestate",
+   "vol": 7370,
+   "week": 3
+  },
+  {
+   "kw": "나스닥100ETF",
+   "axis": "us",
+   "vol": 7270,
+   "week": 5
+  },
+  {
+   "kw": "미얀마환율",
+   "axis": "macro",
+   "vol": 7250,
+   "week": 2
+  },
+  {
+   "kw": "종합소득세환급",
+   "axis": "tax",
+   "vol": 7230,
+   "week": 2
+  },
+  {
+   "kw": "배당주",
+   "axis": "kr",
+   "vol": 7200,
+   "week": 6
+  },
+  {
+   "kw": "CMA금리",
+   "axis": "macro",
+   "vol": 7170,
+   "week": 6
+  },
+  {
+   "kw": "서울아파트가격",
+   "axis": "realestate",
+   "vol": 7120,
+   "week": 6
+  },
+  {
+   "kw": "종합소득세율",
+   "axis": "tax",
+   "vol": 7090,
+   "week": 2
+  },
+  {
+   "kw": "퇴직금수령방법",
+   "axis": "tax",
+   "vol": 7030,
+   "week": 5
+  },
+  {
+   "kw": "아파트대출",
+   "axis": "realestate",
+   "vol": 7010,
+   "week": 2
+  },
+  {
+   "kw": "아파트월세",
+   "axis": "realestate",
+   "vol": 7010,
+   "week": 4
+  },
+  {
+   "kw": "타이거미국S&P500",
+   "axis": "us",
+   "vol": 6980,
+   "week": 2
+  },
+  {
+   "kw": "달러전망",
+   "axis": "macro",
+   "vol": 6970,
+   "week": 3
+  },
+  {
+   "kw": "일본환율계산기",
+   "axis": "macro",
+   "vol": 6970,
+   "week": 2
+  },
+  {
+   "kw": "고배당ETF",
+   "axis": "kr",
+   "vol": 6940,
+   "week": 6
+  },
+  {
+   "kw": "개인연금저축",
+   "axis": "tax",
+   "vol": 6920,
+   "week": 3
+  },
+  {
+   "kw": "서울월세",
+   "axis": "realestate",
+   "vol": 6910,
+   "week": 6
+  },
+  {
+   "kw": "청주아파트매매",
+   "axis": "realestate",
+   "vol": 6890,
+   "week": 4
+  },
+  {
+   "kw": "종합소득세신고",
+   "axis": "tax",
+   "vol": 6840,
+   "week": 4
+  },
+  {
+   "kw": "전세퇴거자금대출",
+   "axis": "realestate",
+   "vol": 6840,
+   "week": 6
+  },
+  {
+   "kw": "부동산수수료",
+   "axis": "realestate",
+   "vol": 6830,
+   "week": 5
+  },
+  {
+   "kw": "TIGERS&P500",
+   "axis": "us",
+   "vol": 6730,
+   "week": 2
+  },
+  {
+   "kw": "적금금리비교",
+   "axis": "macro",
+   "vol": 6600,
+   "week": 5
+  },
+  {
+   "kw": "금값전망",
+   "axis": "macro",
+   "vol": 6550,
+   "week": 4
+  },
+  {
+   "kw": "화장품ETF",
+   "axis": "kr",
+   "vol": 6500,
+   "week": 2
+  },
+  {
+   "kw": "미국주식시장",
+   "axis": "us",
+   "vol": 6480,
+   "week": 4
+  },
+  {
+   "kw": "임대아파트입주조건",
+   "axis": "realestate",
+   "vol": 6450,
+   "week": 2
+  },
+  {
+   "kw": "퇴직금계산방법",
+   "axis": "tax",
+   "vol": 6440,
+   "week": 3
+  },
+  {
+   "kw": "저축은행정기예금금리",
+   "axis": "macro",
+   "vol": 6350,
+   "week": 2
+  },
+  {
+   "kw": "양도세기본세율",
+   "axis": "tax",
+   "vol": 6330,
+   "week": 3
+  },
+  {
+   "kw": "배당ETF",
+   "axis": "kr",
+   "vol": 6310,
+   "week": 3
+  },
+  {
+   "kw": "미니나스닥",
+   "axis": "us",
+   "vol": 6310,
+   "week": 6
+  },
+  {
+   "kw": "ETF추천",
+   "axis": "kr",
+   "vol": 6240,
+   "week": 3
+  },
+  {
+   "kw": "종합소득세환급일",
+   "axis": "tax",
+   "vol": 6220,
+   "week": 3
+  },
+  {
+   "kw": "주택청약1순위조건",
+   "axis": "realestate",
+   "vol": 6180,
+   "week": 3
+  },
+  {
+   "kw": "아파트경매사이트",
+   "axis": "realestate",
+   "vol": 6130,
+   "week": 6
+  },
+  {
+   "kw": "신협정기예금금리",
+   "axis": "macro",
+   "vol": 6030,
+   "week": 5
+  },
+  {
+   "kw": "비트코인ETF",
+   "axis": "kr",
+   "vol": 5950,
+   "week": 6
+  },
+  {
+   "kw": "ACE미국배당다우존스",
+   "axis": "us",
+   "vol": 5950,
+   "week": 5
+  },
+  {
+   "kw": "아파트분양일정",
+   "axis": "realestate",
+   "vol": 5950,
+   "week": 2
+  },
+  {
+   "kw": "주담대한도",
+   "axis": "realestate",
+   "vol": 5860,
+   "week": 6
+  },
+  {
+   "kw": "은평구아파트",
+   "axis": "realestate",
+   "vol": 5800,
+   "week": 4
+  },
+  {
+   "kw": "장기전세주택",
+   "axis": "realestate",
+   "vol": 5780,
+   "week": 3
+  },
+  {
+   "kw": "부동산매매",
+   "axis": "realestate",
+   "vol": 5710,
+   "week": 3
+  },
+  {
+   "kw": "보금자리론대출자격",
+   "axis": "realestate",
+   "vol": 5700,
+   "week": 3
+  },
+  {
+   "kw": "부업사이트",
+   "axis": "side",
+   "vol": 5700,
+   "week": 5
+  },
+  {
+   "kw": "강남아파트",
+   "axis": "realestate",
+   "vol": 5690,
+   "week": 7
+  },
+  {
+   "kw": "부동산매물",
+   "axis": "realestate",
+   "vol": 5680,
+   "week": 3
+  },
+  {
+   "kw": "주택담보대출고정금리",
+   "axis": "realestate",
+   "vol": 5670,
+   "week": 5
+  },
+  {
+   "kw": "정기적금금리비교",
+   "axis": "macro",
+   "vol": 5610,
+   "week": 3
+  },
+  {
+   "kw": "미국나스닥100",
+   "axis": "us",
+   "vol": 5600,
+   "week": 3
+  },
+  {
+   "kw": "미국배당주순위",
+   "axis": "us",
+   "vol": 5580,
+   "week": 4
+  },
+  {
+   "kw": "집에서하는부업",
+   "axis": "side",
+   "vol": 5570,
+   "week": 3
+  },
+  {
+   "kw": "원달러환율전망",
+   "axis": "macro",
+   "vol": 5500,
+   "week": 5
+  },
+  {
+   "kw": "공모주청약",
+   "axis": "kr",
+   "vol": 5440,
+   "week": 2
+  },
+  {
+   "kw": "상가월세",
+   "axis": "realestate",
+   "vol": 5440,
+   "week": 5
+  },
+  {
+   "kw": "청량리미주아파트",
+   "axis": "realestate",
+   "vol": 5430,
+   "week": 3
+  },
+  {
+   "kw": "더샵아파트",
+   "axis": "realestate",
+   "vol": 5400,
+   "week": 2
+  },
+  {
+   "kw": "소득공제용연금저축",
+   "axis": "tax",
+   "vol": 5370,
+   "week": 5
+  },
+  {
+   "kw": "미국나스닥100ETF",
+   "axis": "us",
+   "vol": 5360,
+   "week": 4
+  },
+  {
+   "kw": "강동구아파트",
+   "axis": "realestate",
+   "vol": 5350,
+   "week": 3
+  },
+  {
+   "kw": "해외주식양도소득세",
+   "axis": "kr",
+   "vol": 5290,
+   "week": 3
+  },
+  {
+   "kw": "노원구아파트",
+   "axis": "realestate",
+   "vol": 5190,
+   "week": 4
+  },
+  {
+   "kw": "평택월세",
+   "axis": "realestate",
+   "vol": 5170,
+   "week": 5
+  },
+  {
+   "kw": "미국주식세금",
+   "axis": "us",
+   "vol": 5120,
+   "week": 5
+  },
+  {
+   "kw": "나스닥ETF",
+   "axis": "us",
+   "vol": 5100,
+   "week": 7
+  },
+  {
+   "kw": "달러ETF",
+   "axis": "kr",
+   "vol": 5050,
+   "week": 6
+  },
+  {
+   "kw": "월배당ETF",
+   "axis": "kr",
+   "vol": 5040,
+   "week": 6
+  },
+  {
+   "kw": "다주택자양도세중과",
+   "axis": "tax",
+   "vol": 5020,
+   "week": 4
+  },
+  {
+   "kw": "서울청약",
+   "axis": "realestate",
+   "vol": 5020,
+   "week": 2
+  },
+  {
+   "kw": "정기예금금리높은곳",
+   "axis": "macro",
+   "vol": 5000,
+   "week": 5
+  },
+  {
+   "kw": "달러투자방법",
+   "axis": "macro",
+   "vol": 4930,
+   "week": 4
+  },
+  {
+   "kw": "광명역아파트",
+   "axis": "realestate",
+   "vol": 4930,
+   "week": 4
+  },
+  {
+   "kw": "미국환율전망",
+   "axis": "macro",
+   "vol": 4910,
+   "week": 5
+  },
+  {
+   "kw": "리츠ETF",
+   "axis": "kr",
+   "vol": 4750,
+   "week": 3
+  },
+  {
+   "kw": "주담대대출",
+   "axis": "realestate",
+   "vol": 4740,
+   "week": 2
+  },
+  {
+   "kw": "양도소득세신고방법",
+   "axis": "tax",
+   "vol": 4720,
+   "week": 4
+  },
+  {
+   "kw": "IRP세액공제",
+   "axis": "tax",
+   "vol": 4670,
+   "week": 4
+  },
+  {
+   "kw": "중소기업청년전세대출",
+   "axis": "realestate",
+   "vol": 4670,
+   "week": 4
+  },
+  {
+   "kw": "주택담보대출이자",
+   "axis": "realestate",
+   "vol": 4670,
+   "week": 3
+  },
+  {
+   "kw": "전월세보증금대출",
+   "axis": "realestate",
+   "vol": 4650,
+   "week": 2
+  },
+  {
+   "kw": "바이오ETF",
+   "axis": "kr",
+   "vol": 4640,
+   "week": 8
+  },
+  {
+   "kw": "연금저축추천",
+   "axis": "tax",
+   "vol": 4630,
+   "week": 2
+  },
+  {
+   "kw": "저축은행금리",
+   "axis": "macro",
+   "vol": 4570,
+   "week": 5
+  },
+  {
+   "kw": "월세보증금담보대출",
+   "axis": "realestate",
+   "vol": 4530,
+   "week": 2
+  },
+  {
+   "kw": "퇴직금IRP",
+   "axis": "tax",
+   "vol": 4510,
+   "week": 6
+  },
+  {
+   "kw": "고금리적금",
+   "axis": "macro",
+   "vol": 4490,
+   "week": 4
+  },
+  {
+   "kw": "미국배당ETF",
+   "axis": "us",
+   "vol": 4480,
+   "week": 4
+  },
+  {
+   "kw": "전세보증금반환대출",
+   "axis": "realestate",
+   "vol": 4480,
+   "week": 3
+  },
+  {
+   "kw": "ISA중개형",
+   "axis": "tax",
+   "vol": 4450,
+   "week": 4
+  },
+  {
+   "kw": "연금저축세액공제한도",
+   "axis": "tax",
+   "vol": 4450,
+   "week": 4
+  },
+  {
+   "kw": "아파트매매대출",
+   "axis": "realestate",
+   "vol": 4430,
+   "week": 4
+  },
+  {
+   "kw": "진주아파트매매",
+   "axis": "realestate",
+   "vol": 4430,
+   "week": 4
+  },
+  {
+   "kw": "아파트중도금대출",
+   "axis": "realestate",
+   "vol": 4420,
+   "week": 4
+  },
+  {
+   "kw": "양도소득세신고",
+   "axis": "tax",
+   "vol": 4400,
+   "week": 7
+  },
+  {
+   "kw": "서울아파트분양",
+   "axis": "realestate",
+   "vol": 4330,
+   "week": 3
+  },
+  {
+   "kw": "주식담보대출",
+   "axis": "kr",
+   "vol": 4320,
+   "week": 2
+  },
+  {
+   "kw": "광진구아파트",
+   "axis": "realestate",
+   "vol": 4300,
+   "week": 2
+  },
+  {
+   "kw": "전세자금대출금리",
+   "axis": "realestate",
+   "vol": 4300,
+   "week": 4
+  },
+  {
+   "kw": "부동산전망",
+   "axis": "realestate",
+   "vol": 4270,
+   "week": 3
+  },
+  {
+   "kw": "채권투자",
+   "axis": "macro",
+   "vol": 4260,
+   "week": 5
+  },
+  {
+   "kw": "교산신도시청약",
+   "axis": "realestate",
+   "vol": 4240,
+   "week": 3
+  },
+  {
+   "kw": "퇴직금IRP계좌개설",
+   "axis": "tax",
+   "vol": 4230,
+   "week": 6
+  },
+  {
+   "kw": "남양주아파트매매",
+   "axis": "realestate",
+   "vol": 4230,
+   "week": 2
+  },
+  {
+   "kw": "1가구2주택양도소득세",
+   "axis": "tax",
+   "vol": 4210,
+   "week": 2
+  },
+  {
+   "kw": "서울전세",
+   "axis": "realestate",
+   "vol": 4210,
+   "week": 7
+  },
+  {
+   "kw": "시중은행금리",
+   "axis": "macro",
+   "vol": 4160,
+   "week": 5
+  },
+  {
+   "kw": "일본환율전망",
+   "axis": "macro",
+   "vol": 4110,
+   "week": 6
+  },
+  {
+   "kw": "미국주식전망",
+   "axis": "us",
+   "vol": 4100,
+   "week": 7
+  },
+  {
+   "kw": "개인형IRP",
+   "axis": "tax",
+   "vol": 4090,
+   "week": 3
+  },
+  {
+   "kw": "양도세비과세조건",
+   "axis": "tax",
+   "vol": 4080,
+   "week": 4
+  },
+  {
+   "kw": "재택손부업",
+   "axis": "side",
+   "vol": 4080,
+   "week": 3
+  },
+  {
+   "kw": "아파트관리비",
+   "axis": "realestate",
+   "vol": 4070,
+   "week": 5
+  },
+  {
+   "kw": "아파트담보대출금리",
+   "axis": "realestate",
+   "vol": 4050,
+   "week": 5
+  },
+  {
+   "kw": "SOLETF",
+   "axis": "kr",
+   "vol": 4040,
+   "week": 4
+  },
+  {
+   "kw": "개인연금추천",
+   "axis": "tax",
+   "vol": 4020,
+   "week": 3
+  },
+  {
+   "kw": "전세금반환대출",
+   "axis": "realestate",
+   "vol": 4020,
+   "week": 4
+  },
+  {
+   "kw": "청약조건",
+   "axis": "realestate",
+   "vol": 4000,
+   "week": 3
+  },
+  {
+   "kw": "신축아파트청약",
+   "axis": "realestate",
+   "vol": 4000,
+   "week": 5
+  },
+  {
+   "kw": "아파트대출계산기",
+   "axis": "realestate",
+   "vol": 3990,
+   "week": 4
+  },
+  {
+   "kw": "토지담보대출",
+   "axis": "realestate",
+   "vol": 3950,
+   "week": 2
+  },
+  {
+   "kw": "주택청약신청방법",
+   "axis": "realestate",
+   "vol": 3920,
+   "week": 2
+  },
+  {
+   "kw": "성수동아파트",
+   "axis": "realestate",
+   "vol": 3920,
+   "week": 2
+  },
+  {
+   "kw": "양산아파트",
+   "axis": "realestate",
+   "vol": 3870,
+   "week": 4
+  },
+  {
+   "kw": "ISA서민형",
+   "axis": "tax",
+   "vol": 3820,
+   "week": 6
+  },
+  {
+   "kw": "부동산등기",
+   "axis": "realestate",
+   "vol": 3790,
+   "week": 4
+  },
+  {
+   "kw": "무순위청약",
+   "axis": "realestate",
+   "vol": 3750,
+   "week": 2
+  },
+  {
+   "kw": "LH임대아파트",
+   "axis": "realestate",
+   "vol": 3750,
+   "week": 4
+  },
+  {
+   "kw": "금리비교",
+   "axis": "macro",
+   "vol": 3720,
+   "week": 7
+  },
+  {
+   "kw": "송파구아파트",
+   "axis": "realestate",
+   "vol": 3720,
+   "week": 3
+  },
+  {
+   "kw": "미국월배당ETF",
+   "axis": "kr",
+   "vol": 3690,
+   "week": 4
+  },
+  {
+   "kw": "동탄청약",
+   "axis": "realestate",
+   "vol": 3690,
+   "week": 3
+  },
+  {
+   "kw": "한국10년물국채금리",
+   "axis": "macro",
+   "vol": 3610,
+   "week": 8
+  },
+  {
+   "kw": "고배당주",
+   "axis": "kr",
+   "vol": 3580,
+   "week": 3
+  },
+  {
+   "kw": "퇴직연금해지",
+   "axis": "tax",
+   "vol": 3580,
+   "week": 4
+  },
+  {
+   "kw": "채권ETF",
+   "axis": "kr",
+   "vol": 3550,
+   "week": 4
+  },
+  {
+   "kw": "KODEX한국부동산리츠인프라",
+   "axis": "realestate",
+   "vol": 3540,
+   "week": 7
+  },
+  {
+   "kw": "양도세율",
+   "axis": "tax",
+   "vol": 3510,
+   "week": 3
+  },
+  {
+   "kw": "자양동아파트",
+   "axis": "realestate",
+   "vol": 3510,
+   "week": 2
+  },
+  {
+   "kw": "용인아파트매매",
+   "axis": "realestate",
+   "vol": 3490,
+   "week": 3
+  },
+  {
+   "kw": "아파트양도세계산기",
+   "axis": "realestate",
+   "vol": 3450,
+   "week": 4
+  },
+  {
+   "kw": "순자산",
+   "axis": "fire",
+   "vol": 3430,
+   "week": 5
+  },
+  {
+   "kw": "금리높은예금",
+   "axis": "macro",
+   "vol": 3420,
+   "week": 5
+  },
+  {
+   "kw": "부동산양도소득세계산기",
+   "axis": "realestate",
+   "vol": 3410,
+   "week": 4
+  },
+  {
+   "kw": "오피스텔취득세",
+   "axis": "realestate",
+   "vol": 3400,
+   "week": 3
+  },
+  {
+   "kw": "주식양도소득세",
+   "axis": "kr",
+   "vol": 3360,
+   "week": 3
+  },
+  {
+   "kw": "전세보증금담보대출",
+   "axis": "realestate",
+   "vol": 3350,
+   "week": 3
+  },
+  {
+   "kw": "달러투자",
+   "axis": "macro",
+   "vol": 3330,
+   "week": 4
+  },
+  {
+   "kw": "부동산양도세율",
+   "axis": "realestate",
+   "vol": 3330,
+   "week": 4
+  },
+  {
+   "kw": "공공임대아파트",
+   "axis": "realestate",
+   "vol": 3330,
+   "week": 2
+  },
+  {
+   "kw": "VOOETF",
+   "axis": "us",
+   "vol": 3300,
+   "week": 6
+  },
+  {
+   "kw": "부동산담보대출",
+   "axis": "realestate",
+   "vol": 3300,
+   "week": 2
+  },
+  {
+   "kw": "전세대출한도",
+   "axis": "realestate",
+   "vol": 3300,
+   "week": 6
+  },
+  {
+   "kw": "양도세신고기간",
+   "axis": "tax",
+   "vol": 3260,
+   "week": 2
+  },
+  {
+   "kw": "퇴직금세금계산기",
+   "axis": "tax",
+   "vol": 3260,
+   "week": 2
+  },
+  {
+   "kw": "아파트담보대출한도",
+   "axis": "realestate",
+   "vol": 3260,
+   "week": 4
+  },
+  {
+   "kw": "일본환율계산",
+   "axis": "macro",
+   "vol": 3190,
+   "week": 2
+  },
+  {
+   "kw": "한국채권금리",
+   "axis": "macro",
+   "vol": 3180,
+   "week": 6
+  },
+  {
+   "kw": "주택담보대출이자계산기",
+   "axis": "realestate",
+   "vol": 3170,
+   "week": 2
+  },
+  {
+   "kw": "KODEX단기채권PLUS",
+   "axis": "macro",
+   "vol": 3160,
+   "week": 2
+  },
+  {
+   "kw": "부동산취득세",
+   "axis": "realestate",
+   "vol": 3140,
+   "week": 3
+  },
+  {
+   "kw": "토지거래허가",
+   "axis": "realestate",
+   "vol": 3130,
+   "week": 3
+  },
+  {
+   "kw": "아파트후순위담보대출",
+   "axis": "realestate",
+   "vol": 3120,
+   "week": 4
+  },
+  {
+   "kw": "서울청약일정",
+   "axis": "realestate",
+   "vol": 3110,
+   "week": 3
+  },
+  {
+   "kw": "나스닥실시간",
+   "axis": "us",
+   "vol": 3080,
+   "week": 7
+  },
+  {
+   "kw": "부동산사이트",
+   "axis": "realestate",
+   "vol": 3080,
+   "week": 2
+  },
+  {
+   "kw": "서울아파트전세",
+   "axis": "realestate",
+   "vol": 3080,
+   "week": 7
+  },
+  {
+   "kw": "연금저축세액공제",
+   "axis": "tax",
+   "vol": 3060,
+   "week": 5
+  },
+  {
+   "kw": "동탄부동산",
+   "axis": "realestate",
+   "vol": 3060,
+   "week": 5
+  },
+  {
+   "kw": "줍줍청약",
+   "axis": "realestate",
+   "vol": 3050,
+   "week": 5
+  },
+  {
+   "kw": "연금저축계좌개설",
+   "axis": "tax",
+   "vol": 3020,
+   "week": 5
+  },
+  {
+   "kw": "1억모으기",
+   "axis": "fire",
+   "vol": 2750,
+   "week": null
+  },
+  {
+   "kw": "노후생활비",
+   "axis": "fire",
+   "vol": 1520,
+   "week": null
+  },
+  {
+   "kw": "노후자금",
+   "axis": "fire",
+   "vol": 1290,
+   "week": null
+  },
+  {
+   "kw": "연봉순위",
+   "axis": "fire",
+   "vol": 1270,
+   "week": null
+  },
+  {
+   "kw": "평균연봉",
+   "axis": "fire",
+   "vol": 1140,
+   "week": null
+  },
+  {
+   "kw": "경제적자유",
+   "axis": "fire",
+   "vol": 1030,
+   "week": null
+  },
+  {
+   "kw": "30대평균자산",
+   "axis": "fire",
+   "vol": 790,
+   "week": null
+  },
+  {
+   "kw": "40대평균자산",
+   "axis": "fire",
+   "vol": 710,
+   "week": null
+  },
+  {
+   "kw": "지역가입자건강보험료",
+   "axis": "fire",
+   "vol": 420,
+   "week": null
+  },
+  {
+   "kw": "은퇴자금",
+   "axis": "fire",
+   "vol": 320,
+   "week": null
+  },
+  {
+   "kw": "은퇴준비",
+   "axis": "fire",
+   "vol": 220,
+   "week": null
+  },
+  {
+   "kw": "조기은퇴",
+   "axis": "fire",
+   "vol": 210,
+   "week": null
+  },
+  {
+   "kw": "10억모으기",
+   "axis": "fire",
+   "vol": 210,
+   "week": null
+  },
+  {
+   "kw": "4%룰",
+   "axis": "fire",
+   "vol": 170,
+   "week": null
+  },
+  {
+   "kw": "순자산순위",
+   "axis": "fire",
+   "vol": 170,
+   "week": null
+  },
+  {
+   "kw": "퇴사준비",
+   "axis": "fire",
+   "vol": 160,
+   "week": null
+  }
+ ]
+}

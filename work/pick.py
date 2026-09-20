@@ -49,10 +49,13 @@ def fresh(kw):
     return wk
 
 def written():
-    """이미 쓴 글 — (카페 텍스트, 블로그 텍스트)를 따로 돌려준다"""
+    """이미 쓴 글 — (카페 제목들, 블로그 제목들). 양쪽 다 제목만 본다.
+    본문까지 보면 스쳐 지나간 단어 하나로 '썼다'가 되어 카페가 전부 막힌다."""
     cafe = ''
     p = os.path.join(HERE, '..', 'src', 'firemap-v2', 'cafePosts.js')
-    if os.path.exists(p): cafe = open(p, encoding='utf-8').read()
+    if os.path.exists(p):
+        s = open(p, encoding='utf-8').read()
+        cafe = ' '.join(re.findall(r'title:\s*[\'"`](.*?)[\'"`]\s*,', s))
     blog = ''
     try:
         s = urllib.request.urlopen(urllib.request.Request('https://rss.blog.naver.com/kygstar7777.xml', headers=UA), timeout=18).read().decode('utf-8', 'ignore')

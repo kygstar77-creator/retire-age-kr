@@ -66,9 +66,9 @@ def main():
     cp = cafe_posts()
     if cp:
         reads = sorted(x['read'] for x in cp if isinstance(x['read'], int))
-        for a in cp[:12]:
-            print('  %5s회  %s' % (a['read'], a['title'][:46]))
-            today['cafe'].append({'title': a['title'], 'read': a['read']})
+        today['cafe'] = [{'title': a['title'], 'read': a['read']} for a in cp]   # 전량 저장
+        for a in sorted(cp, key=lambda x: -(x['read'] if isinstance(x['read'], int) else -1))[:12]:
+            print('  %5s회  %s' % (a['read'], a['title'][:46]))                  # 표시는 상위 12편
         if reads:
             print('  --- %d편 중앙값 %d회, 최고 %d회' % (len(reads), reads[len(reads) // 2], reads[-1]))
             print('  비교: 파이어족 카페(회원 많은 곳) 600편 실측 중앙값 248회.')

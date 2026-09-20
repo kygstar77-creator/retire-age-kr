@@ -132,11 +132,23 @@ def section_pool(cafe_done, blog_done):
     if not os.path.exists(p):
         print('\n(topics.json 없음 — 상시 주제 건너뜀)'); return
     T = json.load(open(p, encoding='utf-8'))['topics']
-    hot = [t for t in T if t['axis'] != 'fire']
-    hot.sort(key=lambda t: -(t['vol'] * (1.0 if t['week'] is None else max(0.3, 1 - t['week'] / 10))))
-    print('\n\n=== B. 마감은 없고 늘 수요가 있는 주제 (상위 14 / 총 %d건)' % len(hot))
-    print('    점수 = 검색수 x (1-경쟁). A와 같은 자로 잰 게 아니니 A와 섞어서 비교하지 말 것.\n')
-    for t in hot[:14]:
+    # 시세 조회형(quote)은 통합검색 최상단이 네이버 증권/환율 위젯이라 뒤로 민다. fire는 C에서 따로 낸다.
+    hot = [t for t in T if t['axis'] != 'fire' and not t.get('quote')]
+    hot.sort(key=lambda t: -t['vol'])
+    head = hot[:26]
+    dirty = False
+    for t in head:                                  # 경쟁도 미측정이면 그 자리에서 재고 파일에 남긴다
+        if t['week'] is None:
+            t['week'] = fresh(t['kw']); dirty = True; time.sleep(0.4)
+    if dirty:
+        json.dump(json.load(open(p, encoding='utf-8')) | {'topics': T},
+                  open(p, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    head.sort(key=lambda t: -(t['vol'] * (1.0 if t['week'] is None else max(0.3, 1 - t['week'] / 10))))
+    print('\n\n=== B. 마감은 없고 늘 수요가 있는 주제 (상위 14 / 글감형 %d건)' % len(hot))
+    print('    점수 = 검색수 x (1-경쟁). A와 같은 자로 잰 게 아니니 A와 섞어서 비교하지 말 것.')
+    print('    시세 조회형(XX주가·XX지수·XX환율) %d건은 뺐다 - 통합검색 최상단이 네이버 증권/환율 위젯이다.\n'
+          % sum(1 for t in T if t.get('quote')))
+    for t in head[:14]:
         s = t['vol'] * (1.0 if t['week'] is None else max(0.3, 1 - t['week'] / 10))
         print('%9s  %-10s | 검색 %7s | 최근7일글 %s/10 | %-13s | %s' % (
             format(int(s), ','), t['axis'], format(t['vol'], ','),

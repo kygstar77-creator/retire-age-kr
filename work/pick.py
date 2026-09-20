@@ -133,7 +133,7 @@ def section_pool(cafe_done, blog_done):
         print('\n(topics.json 없음 — 상시 주제 건너뜀)'); return
     T = json.load(open(p, encoding='utf-8'))['topics']
     # 시세 조회형(quote)은 통합검색 최상단이 네이버 증권/환율 위젯이라 뒤로 민다. fire는 C에서 따로 낸다.
-    hot = [t for t in T if t['axis'] != 'fire' and not t.get('quote')]
+    hot = [t for t in T if t['axis'] != 'fire' and not t.get('div') and not t.get('quote')]
     hot.sort(key=lambda t: -t['vol'])
     head = hot[:26]
     dirty = False
@@ -153,13 +153,19 @@ def section_pool(cafe_done, blog_done):
         print('%9s  %-10s | 검색 %7s | 최근7일글 %s/10 | %-13s | %s' % (
             format(int(s), ','), t['axis'], format(t['vol'], ','),
             t['week'] if t['week'] is not None else '?', mark([t['kw']], cafe_done, blog_done), t['kw']))
-    fire = [t for t in T if t['axis'] == 'fire']
-    fire.sort(key=lambda t: -t['vol'])
-    print('\n\n=== C. 카페에서 읽히는 축 (fire) — 검색이 아니라 조회수로 가는 주제 (%d건)' % len(fire))
-    print('    검색수가 작다고 나쁜 주제가 아니다. 파이어족 카페 실측 조회수 중앙값 248인데')
-    print('    이 축(순자산·계층·파이어 금액·나이 비교)이 가장 높았다. 검색수로 줄세우지 말 것.\n')
-    for t in fire[:10]:
-        print('%9s  %-10s | 검색 %7s | %-13s | %s' % (
+    div = [t for t in T if t.get('div') and not t.get('quote')]
+    fire = [t for t in T if t['axis'] == 'fire' and not t.get('quote')]
+    div.sort(key=lambda t: -t['vol']); fire.sort(key=lambda t: -t['vol'])
+    print('\n\n=== C. 카페에서 조회수로 읽히는 축 — 검색수로 줄세우지 말 것')
+    print('    파이어족 카페 실측 조회수 중앙값 248인데 커버드콜 1,169 · 부업 1,111 · 미국주식 912 ·')
+    print('    배당 857 순이었고, 순자산·파이어 금액·나이 비교가 그다음이다. 검색은 작아도 읽힌다.')
+    print('\n  [배당 %d건]' % len(div))
+    for t in div[:12]:
+        print('%11s%-4s | 검색 %7s | %-13s | %s' % (
+            '', t['axis'], format(t['vol'], ','), mark([t['kw']], cafe_done, blog_done), t['kw']))
+    print('\n  [파이어 금액·순자산 %d건]' % len(fire))
+    for t in fire[:8]:
+        print('%11s%-4s | 검색 %7s | %-13s | %s' % (
             '', t['axis'], format(t['vol'], ','), mark([t['kw']], cafe_done, blog_done), t['kw']))
 
 def main():

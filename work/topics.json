@@ -1,5 +1,5 @@
 {
- "note": "상시 주제 풀. vol=월 검색수(검색광고 API 실측). week=블로그탭 상위10 중 최근7일 글 수(None이면 미측정). quote=true는 시세 조회형 - 네이버 통합검색 최상단이 증권정보/환율 위젯인 것을 삼성전자주가·나스닥선물·SCHD에서 확인했다. 블로그가 몇 번째로 나오는지는 파싱 실패해서 확인 못 함. fire 축은 검색수가 작지만 카페 실측 조회수가 가장 높은 축이라 검색수로 줄세우면 안 된다.",
+ "note": "상시 주제 풀. vol=월 검색수(검색광고 API 실측). week=블로그탭 상위10 중 최근7일 글 수(None이면 미측정). quote=true는 시세 조회형 - 네이버 통합검색 최상단이 증권정보/환율 위젯인 것을 삼성전자주가·나스닥선물·SCHD에서 확인했다. 블로그가 몇 번째로 나오는지는 파싱 실패해서 확인 못 함. fire 축은 검색수가 작지만 카페 실측 조회수가 가장 높은 축이라 검색수로 줄세우면 안 된다. div=true는 배당 축 - 파이어족 카페 실측 조회수에서 커버드콜 1,169·배당 857로 가장 높은 축이다.",
  "topics": [
   {
    "kw": "삼성전자주가",
@@ -823,7 +823,8 @@
    "vol": 131300,
    "week": null,
    "adcomp": "중간",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "애플주가",
@@ -1271,7 +1272,8 @@
    "vol": 53300,
    "week": 6,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "AMD주가",
@@ -1655,7 +1657,8 @@
    "vol": 33200,
    "week": 7,
    "adcomp": "중간",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "신성델타테크주가",
@@ -1679,7 +1682,8 @@
    "vol": 32500,
    "week": 7,
    "adcomp": "중간",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "TQQQ",
@@ -2011,7 +2015,7 @@
   },
   {
    "kw": "미국주가지수",
-   "axis": "kr",
+   "axis": "us",
    "vol": 23560,
    "week": null,
    "adcomp": "높음",
@@ -2127,7 +2131,8 @@
    "vol": 20590,
    "week": 7,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "반도체ETF",
@@ -2211,7 +2216,7 @@
   },
   {
    "kw": "미국주가",
-   "axis": "kr",
+   "axis": "us",
    "vol": 18270,
    "week": null,
    "adcomp": "높음",
@@ -2235,7 +2240,7 @@
   },
   {
    "kw": "해외주식",
-   "axis": "kr",
+   "axis": "us",
    "vol": 18160,
    "week": null,
    "adcomp": "높음",
@@ -2511,7 +2516,8 @@
    "vol": 13480,
    "week": 4,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "CMA금리비교",
@@ -2615,7 +2621,8 @@
    "vol": 12840,
    "week": 5,
    "adcomp": "낮음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "머크주가",
@@ -2782,7 +2789,8 @@
    "vol": 11280,
    "week": 2,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "미국주식시간",
@@ -2878,7 +2886,8 @@
    "vol": 10540,
    "week": 5,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "JEPI",
@@ -2886,7 +2895,8 @@
    "vol": 10490,
    "week": 5,
    "adcomp": "중간",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "SCHDETF",
@@ -2894,7 +2904,8 @@
    "vol": 10380,
    "week": 5,
    "adcomp": "중간",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "종합소득세세율",
@@ -2958,7 +2969,16 @@
    "vol": 9820,
    "week": 3,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
+  },
+  {
+   "kw": "리얼티인컴",
+   "axis": "us",
+   "vol": 9790,
+   "week": null,
+   "quote": false,
+   "div": true
   },
   {
    "kw": "SCHD주가",
@@ -2966,7 +2986,8 @@
    "vol": 9730,
    "week": null,
    "adcomp": "중간",
-   "quote": true
+   "quote": true,
+   "div": true
   },
   {
    "kw": "오늘의주식시장",
@@ -3534,7 +3555,8 @@
    "vol": 7200,
    "week": 6,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "재건축",
@@ -3646,7 +3668,8 @@
    "vol": 6940,
    "week": 6,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "개인연금저축",
@@ -3838,7 +3861,8 @@
    "vol": 6310,
    "week": 3,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "미니나스닥",
@@ -3974,7 +3998,8 @@
    "vol": 5950,
    "week": 5,
    "adcomp": "중간",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "아파트분양일정",
@@ -4125,7 +4150,8 @@
    "vol": 5580,
    "week": 4,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "집에서하는부업",
@@ -4241,7 +4267,7 @@
   },
   {
    "kw": "해외주식양도소득세",
-   "axis": "kr",
+   "axis": "us",
    "vol": 5290,
    "week": 3,
    "adcomp": "높음",
@@ -4301,7 +4327,16 @@
    "vol": 5040,
    "week": 6,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
+  },
+  {
+   "kw": "배당금",
+   "axis": "kr",
+   "vol": 5040,
+   "week": null,
+   "quote": false,
+   "div": true
   },
   {
    "kw": "민간임대",
@@ -4565,7 +4600,8 @@
    "vol": 4480,
    "week": 4,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "전세보증금반환대출",
@@ -5033,11 +5069,12 @@
   },
   {
    "kw": "미국월배당ETF",
-   "axis": "kr",
+   "axis": "us",
    "vol": 3690,
    "week": 4,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "동탄청약",
@@ -5077,7 +5114,8 @@
    "vol": 3580,
    "week": 3,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "퇴직연금해지",
@@ -5102,6 +5140,14 @@
    "week": 4,
    "adcomp": "높음",
    "quote": false
+  },
+  {
+   "kw": "배당금상위종목",
+   "axis": "kr",
+   "vol": 3550,
+   "week": null,
+   "quote": false,
+   "div": true
   },
   {
    "kw": "KODEX한국부동산리츠인프라",
@@ -5390,6 +5436,14 @@
    "week": 2,
    "adcomp": "높음",
    "quote": false
+  },
+  {
+   "kw": "배당소득세",
+   "axis": "kr",
+   "vol": 3170,
+   "week": null,
+   "quote": false,
+   "div": true
   },
   {
    "kw": "KODEX단기채권PLUS",
@@ -5728,12 +5782,21 @@
    "quote": false
   },
   {
+   "kw": "DGRO",
+   "axis": "us",
+   "vol": 2870,
+   "week": null,
+   "quote": false,
+   "div": true
+  },
+  {
    "kw": "주식배당금",
    "axis": "kr",
    "vol": 2850,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "주식계좌개설",
@@ -5753,7 +5816,7 @@
   },
   {
    "kw": "해외주식시간",
-   "axis": "kr",
+   "axis": "us",
    "vol": 2770,
    "week": null,
    "adcomp": "중간",
@@ -5952,7 +6015,7 @@
   },
   {
    "kw": "미국국채ETF",
-   "axis": "kr",
+   "axis": "us",
    "vol": 2620,
    "week": null,
    "adcomp": "높음",
@@ -6077,6 +6140,14 @@
    "week": null,
    "adcomp": "높음",
    "quote": false
+  },
+  {
+   "kw": "배당락일",
+   "axis": "kr",
+   "vol": 2540,
+   "week": null,
+   "quote": false,
+   "div": true
   },
   {
    "kw": "오피스텔담보대출",
@@ -6392,7 +6463,7 @@
   },
   {
    "kw": "미국채권ETF",
-   "axis": "kr",
+   "axis": "us",
    "vol": 2340,
    "week": null,
    "adcomp": "높음",
@@ -6455,6 +6526,14 @@
    "quote": false
   },
   {
+   "kw": "배당",
+   "axis": "kr",
+   "vol": 2310,
+   "week": null,
+   "quote": false,
+   "div": true
+  },
+  {
    "kw": "주식장",
    "axis": "kr",
    "vol": 2300,
@@ -6504,7 +6583,7 @@
   },
   {
    "kw": "해외주식세금",
-   "axis": "kr",
+   "axis": "us",
    "vol": 2270,
    "week": null,
    "adcomp": "높음",
@@ -6656,7 +6735,7 @@
   },
   {
    "kw": "미국채ETF",
-   "axis": "kr",
+   "axis": "us",
    "vol": 2200,
    "week": null,
    "adcomp": "높음",
@@ -6908,7 +6987,8 @@
    "vol": 2050,
    "week": null,
    "adcomp": "중간",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "노량진재개발",
@@ -6917,6 +6997,14 @@
    "week": null,
    "adcomp": "중간",
    "quote": false
+  },
+  {
+   "kw": "배당금계산기",
+   "axis": "kr",
+   "vol": 2040,
+   "week": null,
+   "quote": false,
+   "div": true
   },
   {
    "kw": "SQQQ",
@@ -7148,7 +7236,8 @@
    "vol": 1850,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "서울아파트청약",
@@ -7525,6 +7614,14 @@
    "week": null,
    "adcomp": "높음",
    "quote": false
+  },
+  {
+   "kw": "QYLD",
+   "axis": "us",
+   "vol": 1650,
+   "week": null,
+   "quote": false,
+   "div": true
   },
   {
    "kw": "이더리움ETF",
@@ -8032,11 +8129,12 @@
   },
   {
    "kw": "미국고배당ETF",
-   "axis": "kr",
+   "axis": "us",
    "vol": 1440,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "주택담보대출이율",
@@ -8124,7 +8222,8 @@
    "vol": 1400,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "월세방",
@@ -8156,11 +8255,12 @@
    "vol": 1390,
    "week": null,
    "adcomp": "중간",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "미국반도체주식",
-   "axis": "kr",
+   "axis": "us",
    "vol": 1390,
    "week": null,
    "adcomp": "높음",
@@ -8668,7 +8768,8 @@
    "vol": 1260,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "코스피주식",
@@ -8708,7 +8809,8 @@
    "vol": 1250,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "야간코스피",
@@ -9000,7 +9102,7 @@
   },
   {
    "kw": "해외주식수수료",
-   "axis": "kr",
+   "axis": "us",
    "vol": 1130,
    "week": null,
    "adcomp": "높음",
@@ -9148,7 +9250,8 @@
    "vol": 1090,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "주식용어",
@@ -9444,7 +9547,8 @@
    "vol": 1010,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "사전청약",
@@ -9732,7 +9836,8 @@
    "vol": 940,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "주식종목추천",
@@ -9773,6 +9878,14 @@
    "week": null,
    "adcomp": "높음",
    "quote": false
+  },
+  {
+   "kw": "배당기준일",
+   "axis": "kr",
+   "vol": 940,
+   "week": null,
+   "quote": false,
+   "div": true
   },
   {
    "kw": "미국주식수수료",
@@ -10004,7 +10117,8 @@
    "vol": 890,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "사이버보안ETF",
@@ -10069,6 +10183,14 @@
    "week": null,
    "adcomp": "높음",
    "quote": false
+  },
+  {
+   "kw": "월배당",
+   "axis": "kr",
+   "vol": 890,
+   "week": null,
+   "quote": false,
+   "div": true
   },
   {
    "kw": "신탁형ISA",
@@ -10431,6 +10553,14 @@
    "quote": false
   },
   {
+   "kw": "배당수익률",
+   "axis": "kr",
+   "vol": 810,
+   "week": null,
+   "quote": false,
+   "div": true
+  },
+  {
    "kw": "연금계좌세액공제",
    "axis": "tax",
    "vol": 800,
@@ -10480,7 +10610,7 @@
   },
   {
    "kw": "해외주식수수료비교",
-   "axis": "kr",
+   "axis": "us",
    "vol": 790,
    "week": null,
    "adcomp": "높음",
@@ -10492,7 +10622,8 @@
    "vol": 790,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "국내배당ETF",
@@ -10500,7 +10631,8 @@
    "vol": 790,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "주식레버리지",
@@ -10990,12 +11122,21 @@
    "quote": false
   },
   {
+   "kw": "대한항공배당금",
+   "axis": "kr",
+   "vol": 720,
+   "week": null,
+   "quote": false,
+   "div": true
+  },
+  {
    "kw": "고배당주식",
    "axis": "kr",
    "vol": 710,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "현대위아주식",
@@ -11790,7 +11931,7 @@
   },
   {
    "kw": "해외주식시세",
-   "axis": "kr",
+   "axis": "us",
    "vol": 610,
    "week": null,
    "adcomp": "높음",
@@ -11802,7 +11943,8 @@
    "vol": 610,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "방산주식",
@@ -12014,7 +12156,7 @@
   },
   {
    "kw": "QYLD주가",
-   "axis": "kr",
+   "axis": "us",
    "vol": 580,
    "week": null,
    "adcomp": "중간",
@@ -12030,7 +12172,7 @@
   },
   {
    "kw": "ISA해외주식",
-   "axis": "kr",
+   "axis": "us",
    "vol": 580,
    "week": null,
    "adcomp": "높음",
@@ -12115,6 +12257,14 @@
    "week": null,
    "adcomp": "높음",
    "quote": false
+  },
+  {
+   "kw": "한전배당금",
+   "axis": "kr",
+   "vol": 580,
+   "week": null,
+   "quote": false,
+   "div": true
   },
   {
    "kw": "국내상장미국ETF",
@@ -12397,6 +12547,14 @@
    "quote": false
   },
   {
+   "kw": "포스코배당금",
+   "axis": "kr",
+   "vol": 550,
+   "week": null,
+   "quote": false,
+   "div": true
+  },
+  {
    "kw": "주식검색기",
    "axis": "kr",
    "vol": 540,
@@ -12410,7 +12568,8 @@
    "vol": 540,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "삼성코덱스ETF",
@@ -12523,6 +12682,14 @@
    "week": null,
    "adcomp": "높음",
    "quote": false
+  },
+  {
+   "kw": "배당투자",
+   "axis": "kr",
+   "vol": 540,
+   "week": null,
+   "quote": false,
+   "div": true
   },
   {
    "kw": "테슬라주식시세",
@@ -12757,6 +12924,14 @@
    "quote": false
   },
   {
+   "kw": "SPYD",
+   "axis": "us",
+   "vol": 520,
+   "week": null,
+   "quote": false,
+   "div": true
+  },
+  {
    "kw": "주가검색",
    "axis": "kr",
    "vol": 510,
@@ -12813,8 +12988,16 @@
    "quote": false
   },
   {
-   "kw": "미국달러ETF",
+   "kw": "KODEX배당가치",
    "axis": "kr",
+   "vol": 510,
+   "week": null,
+   "quote": false,
+   "div": true
+  },
+  {
+   "kw": "미국달러ETF",
+   "axis": "us",
    "vol": 500,
    "week": null,
    "adcomp": "높음",
@@ -12966,7 +13149,7 @@
   },
   {
    "kw": "미국리츠ETF",
-   "axis": "kr",
+   "axis": "us",
    "vol": 490,
    "week": null,
    "adcomp": "높음",
@@ -13493,8 +13676,24 @@
    "quote": false
   },
   {
-   "kw": "해외주식추천",
+   "kw": "SK배당금",
    "axis": "kr",
+   "vol": 460,
+   "week": null,
+   "quote": false,
+   "div": true
+  },
+  {
+   "kw": "배당금지급일",
+   "axis": "kr",
+   "vol": 460,
+   "week": null,
+   "quote": false,
+   "div": true
+  },
+  {
+   "kw": "해외주식추천",
+   "axis": "us",
    "vol": 450,
    "week": null,
    "adcomp": "높음",
@@ -13618,7 +13817,8 @@
    "vol": 440,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "주식커뮤니티",
@@ -13725,6 +13925,14 @@
    "quote": false
   },
   {
+   "kw": "VYM",
+   "axis": "us",
+   "vol": 440,
+   "week": null,
+   "quote": false,
+   "div": true
+  },
+  {
    "kw": "미국주식ETF",
    "axis": "us",
    "vol": 430,
@@ -13810,7 +14018,8 @@
    "vol": 420,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "주식공시",
@@ -13830,7 +14039,7 @@
   },
   {
    "kw": "해외주식양도소득세신고",
-   "axis": "kr",
+   "axis": "us",
    "vol": 420,
    "week": null,
    "adcomp": "높음",
@@ -13946,6 +14155,14 @@
    "vol": 420,
    "week": null,
    "quote": false
+  },
+  {
+   "kw": "KB금융배당",
+   "axis": "kr",
+   "vol": 420,
+   "week": null,
+   "quote": false,
+   "div": true
   },
   {
    "kw": "차이나전기차ETF",
@@ -14117,7 +14334,7 @@
   },
   {
    "kw": "해외주식증권사추천",
-   "axis": "kr",
+   "axis": "us",
    "vol": 400,
    "week": null,
    "adcomp": "중간",
@@ -14129,7 +14346,8 @@
    "vol": 400,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "미국주식배당주",
@@ -14137,7 +14355,8 @@
    "vol": 400,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "배당주식",
@@ -14145,7 +14364,8 @@
    "vol": 400,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "주식전문가",
@@ -14173,7 +14393,7 @@
   },
   {
    "kw": "해외주식양도세",
-   "axis": "kr",
+   "axis": "us",
    "vol": 400,
    "week": null,
    "adcomp": "높음",
@@ -14317,11 +14537,12 @@
   },
   {
    "kw": "미국월배당주",
-   "axis": "kr",
+   "axis": "us",
    "vol": 390,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "요즘뜨는주식",
@@ -14556,6 +14777,14 @@
    "quote": false
   },
   {
+   "kw": "대한전선배당금",
+   "axis": "kr",
+   "vol": 380,
+   "week": null,
+   "quote": false,
+   "div": true
+  },
+  {
    "kw": "ETF종목",
    "axis": "kr",
    "vol": 370,
@@ -14721,7 +14950,8 @@
    "vol": 360,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "은행주식",
@@ -15401,7 +15631,8 @@
    "vol": 320,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "div": true
   },
   {
    "kw": "부동산세무사",
@@ -15517,7 +15748,7 @@
   },
   {
    "kw": "해외주식이벤트",
-   "axis": "kr",
+   "axis": "us",
    "vol": 310,
    "week": null,
    "adcomp": "높음",
@@ -15525,7 +15756,7 @@
   },
   {
    "kw": "해외주식수수료무료",
-   "axis": "kr",
+   "axis": "us",
    "vol": 310,
    "week": null,
    "adcomp": "높음",
@@ -15898,6 +16129,14 @@
    "week": null,
    "adcomp": "높음",
    "quote": false
+  },
+  {
+   "kw": "대신증권배당금",
+   "axis": "kr",
+   "vol": 300,
+   "week": null,
+   "quote": false,
+   "div": true
   },
   {
    "kw": "은퇴준비",

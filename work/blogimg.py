@@ -25,3 +25,22 @@ def table(path, title, cols, rows, widths, note=None, hl_col=None, src=None):
     if note: d.text((pad,y+12),note,font=F(18),fill=SUB); y+=34
     if src: d.text((pad,y+10),src,font=F(16),fill=(150,156,168))
     im.save(path); return path
+
+def steps(path, title, items, note=None, src=None):
+    """번호가 붙은 절차 카드. 표와 달리 순서를 보여 줄 때."""
+    W=900; pad=36; rh=86
+    H=pad+56+18+rh*len(items)+(34 if note else 0)+(30 if src else 0)+pad
+    im=Image.new('RGB',(W,H),BG); d=ImageDraw.Draw(im)
+    d.text((pad,pad),title,font=F(30,True),fill=INK)
+    y=pad+56+18
+    for i,(head,desc) in enumerate(items,1):
+        d.rounded_rectangle((pad,y+10,pad+44,y+54),22,fill=ACC)
+        w=d.textlength(str(i),font=F(22,True))
+        d.text((pad+22-w/2,y+21),str(i),font=F(22,True),fill=(255,255,255))
+        d.text((pad+62,y+12),head,font=F(23,True),fill=INK)
+        if desc: d.text((pad+62,y+44),desc,font=F(19),fill=SUB)
+        y+=rh
+        if i<len(items): d.line((pad+62,y-6,W-pad,y-6),fill=LINE,width=1)
+    if note: d.text((pad,y+12),note,font=F(18),fill=SUB); y+=34
+    if src: d.text((pad,y+10),src,font=F(16),fill=(150,156,168))
+    im.save(path); return path

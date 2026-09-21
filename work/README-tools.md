@@ -45,3 +45,11 @@ computer-use의 `type` 액션으로 한글을 치면 Windows 입력기 창(TextI
 - 이 오류가 나면 더 시도하지 말고, 그 회차의 묶음을 pkg/ 에 저장하고
   runs_today.json note에 "입력기 창 차단"이라고 적고 끝낸다. 사장님이 화면을 한 번
   클릭하면 풀린다.
+
+## 예약 실행에서는 computer-use 승인이 안 난다 (2026-09-21 12시 테스트 회차)
+
+예약 작업(scheduled-tasks) 안에서 `request_access`를 부르면 "can't be approved during a
+scheduled run"으로 거부된다(웨일+보조앱 1회, 웨일 단독 1회 시도). 승인 카드를 띄울 사람이
+없기 때문이다. Chrome 확장(claude-in-chrome)은 naver.com 자체를 안전 제한으로 막는다.
+→ 자동 발행을 하려면 **예약 작업 설정에 '네이버 웨일'(필요하면 계산기·캡처 도구·스티커 메모)을
+허용 앱으로 미리 추가**해야 한다. 그 전까지 예약 회차는 묶음을 pkg/에 만들고 끝난다.

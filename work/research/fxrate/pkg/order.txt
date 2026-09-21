@@ -1,0 +1,17 @@
+블로그 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+b00.txt
+img/b1.jpg
+b02.txt
+img/b2.png
+b04.txt
+img/b3.png
+b06.txt
+img/b4.png
+b08.txt
+img/b5.png
+b10.txt
+img/b6.png
+b12.txt
+카테고리: 경제지식
+태그: 환율계산기, 환율우대, 환전수수료, 환율우대계산, 매매기준율, 현찰살때, 달러환전, 엔화환전, 유로환전, 위안화환전, 은행별환율우대, 환전우대율, 달러환율, 해외여행환전

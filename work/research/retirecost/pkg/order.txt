@@ -1,0 +1,11 @@
+카페 발행 순서 (cafe.naver.com/firemap)
+게시판: 자유게시판 · 전체공개
+제목: title.txt
+img/c1.png
+c00.txt
+c02.txt
+img/c2.png
+c04.txt
+img/c3.png
+c06.txt
+출처 표기(본문 끝 한 줄로 붙일 때): 국민연금공단 보도자료 「2024년 국민노후보장패널조사 제10차 부가조사 결과」(2025.12.31)

@@ -1,0 +1,19 @@
+블로그 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+b00.txt
+img/b1.jpg
+b02.txt
+img/b2.png
+b04.txt
+img/b3.png
+b06.txt
+img/b4.png
+b08.txt
+img/b5.png
+b10.txt
+b12.txt
+img/b6.png
+b14.txt
+카테고리: 미국주식
+태그: S&P500, S&P500ETF, S&P500ETF세금, 국내상장해외ETF, 해외주식양도소득세, 배당소득세, TIGER미국S&P500, KODEX미국S&P500, ACE미국S&P500, RISE미국S&P500, SOL미국S&P500, ISA, 금융소득종합과세, 미국주식세금
+사진 출처: Pexels, Alesia Kozik (https://www.pexels.com/photo/multiple-graphs-on-a-laptop-screen-6770610/)

@@ -1,0 +1,17 @@
+블로그 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+b00.txt
+img/b1.jpg
+b02.txt
+img/b2.png
+b04.txt
+img/b3.png
+b06.txt
+img/b4.png
+b08.txt
+img/b5.png
+b10.txt
+b12.txt
+img/b6.png
+카테고리: 부동산
+태그: 취득세계산기, 취득세, 아파트취득세, 주택취득세, 취득세율, 부동산취득세, 생애최초취득세감면, 취득세중과, 조정대상지역, 지방교육세, 농어촌특별세, 취득세신고기한, 출산취득세감면, 2주택취득세

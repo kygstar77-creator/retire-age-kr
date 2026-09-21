@@ -56,6 +56,30 @@ def search_rank(query, needle, tab):
         if needle in l: return i
     return None
 
+def norm(s):
+    return re.sub(r'[\s\W_]+', '', s or '')
+
+def draft_index():
+    """work/research/*/ 의 블로그 원고에서 {정규화한 제목: 본문 문장 하나}.
+    색인 여부는 본문 문장을 따옴표로 검색해 우리 블로그가 잡히는지로 잰다."""
+    out = {}
+    base = os.path.join(HERE, 'research')
+    if not os.path.isdir(base): return out
+    for d in os.listdir(base):
+        for fn in ('blog.txt', 'blog_final.txt'):
+            fp = os.path.join(base, d, fn)
+            if not os.path.exists(fp): continue
+            try: t = open(fp, encoding='utf-8').read()
+            except Exception: continue
+            lines = t.strip().split('\n')
+            title = lines[0].strip()
+            body = re.sub(r'\[이미지[^\]]*\]', '', '\n'.join(lines[1:]))
+            ss = [x.strip() for x in re.split(r'(?<=다\.)\s+', body)
+                  if 25 <= len(x.strip()) <= 55 and '출처' not in x and '"' not in x]
+            if len(ss) > 2: out[norm(title)] = ss[2]
+            break
+    return out
+
 def main():
     log = {}
     p = os.path.join(HERE, 'perf_log.json')
@@ -75,17 +99,27 @@ def main():
             print('        우리 수치가 낮은 것은 글 품질이 아니라 카페 규모 때문일 수 있다 —')
             print('        회원이 적으면 무엇을 써도 조회수가 낮다. 그래서 아래 검색 순위를 같이 본다.')
 
-    print('\n=== 블로그 글이 색인됐는가 (제목 그대로 검색해서 나오는지)')
-    bad = 0
+    # 색인과 순위를 따로 잰다. 2026-09-21까지는 "제목 검색에 안 나오면 색인 실패"로 판정했는데 틀렸다.
+    # 제목 검색에 안 나오던 9/20 글들이 본문 문장을 따옴표로 검색하면 우리 블로그로 잡혔다.
+    # 네이버가 글을 알고는 있는데(색인됨) 제목 검색 순위에 안 올린 것이다.
+    drafts = draft_index()
+    print('\n=== 블로그 글 — 색인(본문 문장으로 잡히나)과 순위(제목 검색 몇 위)를 따로 본다')
+    low = 0; noidx = 0
     for b in blog_posts(N):
         r = search_rank(b['title'], BLOGID, 'blog'); time.sleep(0.5)
-        state = ('%d위' % r) if r else '안 나옴'
-        if r is None or r > 10: bad += 1
-        print('  %-7s | %s | %s' % (state, b['date'], b['title'][:42]))
-        today['blog'].append({'title': b['title'], 'date': b['date'], 'self_rank': r})
-    print('  --- 제목 그대로 검색인데 10위 밖이거나 안 나오는 글: %d/%d편' % (bad, len(today['blog'])))
-    print('      제목 그대로 검색해서 안 나오면 색인이 안 됐거나 걸러진 것이다.')
-    print('      이 숫자가 줄지 않으면 편수를 늘려도 소용이 없다.')
+        idx = None
+        sent = drafts.get(norm(b['title']))
+        if sent:
+            idx = search_rank('"' + sent + '"', BLOGID, 'blog') is not None; time.sleep(0.5)
+        rank_s = ('%d위' % r) if r else '30위 밖'
+        idx_s = {True: '색인됨', False: '색인 안 됨', None: '원고 없어 못 잼'}[idx]
+        if r is None or r > 10: low += 1
+        if idx is False: noidx += 1
+        print('  %-6s | %-12s | %s | %s' % (rank_s, idx_s, b['date'], b['title'][:40]))
+        today['blog'].append({'title': b['title'], 'date': b['date'], 'self_rank': r, 'indexed': idx})
+    print('  --- 제목 검색 10위 밖: %d/%d편 · 색인 안 됨(본문 문장으로도 안 잡힘): %d편'
+          % (low, len(today['blog']), noidx))
+    print('      제목 검색 순위가 낮은 것은 색인 실패가 아니다. 색인 안 됨은 본문 문장으로도 안 잡힐 때만이다.')
 
     log[TODAY] = today
     json.dump(log, open(p, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

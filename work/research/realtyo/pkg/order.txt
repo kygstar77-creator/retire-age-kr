@@ -1,0 +1,10 @@
+카페 발행 순서
+제목: title.txt
+게시판: 자유게시판 · 전체공개
+c00.txt
+c02.txt
+img/r1.png
+c04.txt
+img/r2.png
+c06.txt
+img/r3.png

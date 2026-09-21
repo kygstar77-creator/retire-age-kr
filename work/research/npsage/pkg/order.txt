@@ -1,0 +1,19 @@
+블로그 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+b00.txt
+img/b1.jpg
+b02.txt
+img/b2.png
+b04.txt
+img/b3.png
+b06.txt
+img/b4.png
+b08.txt
+img/b5.png
+b10.txt
+img/b6.png
+b12.txt
+b14.txt
+카테고리: 경제지식
+태그: 국민연금, 국민연금수령나이, 국민연금조기수령, 조기노령연금, 연기연금, 국민연금수령나이표, 1969년생국민연금, 국민연금예상수령액, 노령연금, 국민연금감액, A값, 국민연금연기, 국민연금지급개시연령
+사진 출처: Pexels, Sadettin Dogan (https://www.pexels.com/photo/elderly-couple-sitting-on-bench-at-lake-in-city-20827832/)

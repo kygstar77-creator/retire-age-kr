@@ -44,6 +44,31 @@
     "status": "발행 대기 — work/research/savings1/pkg/"
    },
    "note": "12:50 회차. request_access('네이버 웨일', clipboardWrite) 1회 시도 → '예약 실행 중 승인 불가' 거부. 발행 대기 누적: 블로그 oil·q3earn, 카페 divtax·savings1. 블로그=A 1위 국내 3분기 실적(kr, 검색어 삼성전자실적발표 2,200), 카페=C 파이어 금액 '1억모으기'(2,730). 삼성전자 수치는 뉴스룸 원문, 3분기 잠정 발표일·컨콜 시각은 확인 못 해 제외. 적금 금리 3%는 예시로 명시(현재 시중 적금 금리 1차 출처 미확보)"
+  },
+  {
+   "hour": 14,
+   "ts": "15:00",
+   "note": "대화 세션에서 대기 4편 발행 완료",
+   "blog": [
+    {
+     "title": "국제유가 브렌트 130달러, 3월부터 무슨 일이 있었나",
+     "url": "https://blog.naver.com/kygstar7777/224418621755"
+    },
+    {
+     "title": "삼성전자 실적발표 세 번, 잠정·확정·분기보고서 날짜",
+     "url": "https://blog.naver.com/kygstar7777/224418728694"
+    }
+   ],
+   "cafe": [
+    {
+     "title": "배당 받을 때 떼이는 15.4%, 법에는 어떻게 적혀 있나 찾아봤습니다",
+     "url": "https://cafe.naver.com/firemap/35"
+    },
+    {
+     "title": "1억 모으기, 연 3% 적금 이자를 직접 계산해봤습니다",
+     "url": "https://cafe.naver.com/firemap/36"
+    }
+   ]
   }
  ]
 }

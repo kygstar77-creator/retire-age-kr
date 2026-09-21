@@ -29,6 +29,21 @@
     "status": "발행 대기(03시부터) — work/research/divtax/pkg/"
    },
    "note": "발행 확인 불가: computer-use request_access가 '예약 실행 중에는 승인 불가'로 거부(웨일+보조앱 1회, 웨일 단독 1회). Chrome 확장은 naver.com을 안전 제한으로 차단(카페·블로그 둘 다). 해결: 예약 작업 설정에 '네이버 웨일'을 허용 앱으로 추가해야 함. 블로그 주제는 B 1위 미작성 '국제유가'(macro). 국내 휘발유·두바이유는 원자료(오피넷 키 없음) 확인 못 해 제외 — toprank 상위 글 5/8편이 국내 휘발유가격을 다룸"
+  },
+  {
+   "hour": 12,
+   "ts": "12:58",
+   "blog": {
+    "title": "삼성전자 실적발표 세 번, 잠정·확정·분기보고서 날짜",
+    "url": null,
+    "status": "발행 대기 — work/research/q3earn/pkg/ (order.txt에 순서·태그)"
+   },
+   "cafe": {
+    "title": "1억 모으기, 연 3% 적금 이자를 직접 계산해봤습니다",
+    "url": null,
+    "status": "발행 대기 — work/research/savings1/pkg/"
+   },
+   "note": "12:50 회차. request_access('네이버 웨일', clipboardWrite) 1회 시도 → '예약 실행 중 승인 불가' 거부. 발행 대기 누적: 블로그 oil·q3earn, 카페 divtax·savings1. 블로그=A 1위 국내 3분기 실적(kr, 검색어 삼성전자실적발표 2,200), 카페=C 파이어 금액 '1억모으기'(2,730). 삼성전자 수치는 뉴스룸 원문, 3분기 잠정 발표일·컨콜 시각은 확인 못 해 제외. 적금 금리 3%는 예시로 명시(현재 시중 적금 금리 1차 출처 미확보)"
   }
  ]
 }

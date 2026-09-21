@@ -24,3 +24,24 @@ computer-use는 권한 목록에 없는 앱의 창이 있는 화면 영역을 **
 
 사장님 개인 앱(텔레그램, 카카오톡 등)은 요청하지 않는다. 그것들이 원인이면 마스크를
 피해 웨일 창을 옮기거나, 발행을 대기로 남기고 그 사실을 적는다.
+
+## 한글을 직접 타이핑하지 않는다 — 입력기 창이 발행을 8시간 막았다 (2026-09-21)
+
+computer-use의 `type` 액션으로 한글을 치면 Windows 입력기 창(TextInputHost.exe)이 뜬다.
+이 창이 포커스를 잡고 놓지 않으면 **이후 모든 클릭·키 입력이 차단**된다.
+"Textinputhost is not in the allowed applications and is currently in front" 오류가 난다.
+
+2026-09-21 새벽 블로그 태그 15개를 `type`으로 한글 입력한 뒤 이 상태가 되어,
+03:40부터 11:13까지 웨일 조작이 전부 막혔다. request_access에 textinputhost.exe를
+넣어도 시스템 앱이라 거부되고, PowerShell SetForegroundWindow·AppActivate로
+웨일을 앞으로 끌어와도 소용없었다.
+
+규칙:
+- **한글·긴 텍스트는 전부 클립보드로 넣는다.** PowerShell
+  `[System.Windows.Forms.Clipboard]::SetText(...)` 후 `ctrl+v`.
+- **블로그 태그도 한 개씩 클립보드로.** 쉼표로 한 번에 붙이면 하나로 뭉치므로
+  태그마다 SetText → ctrl+v → Return 을 반복한다.
+- `type` 은 URL·영문·숫자에만 쓴다.
+- 이 오류가 나면 더 시도하지 말고, 그 회차의 묶음을 pkg/ 에 저장하고
+  runs_today.json note에 "입력기 창 차단"이라고 적고 끝낸다. 사장님이 화면을 한 번
+  클릭하면 풀린다.

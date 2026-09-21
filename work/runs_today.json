@@ -14,6 +14,21 @@
    "hour": 3,
    "ts": "03:50",
    "note": "카페 글 \"배당 받을 때 떼이는 15.4%, 법에는 어떻게 적혀 있나 찾아봤습니다\" 본문·이미지 3장 완성. work/research/divtax/pkg/ 에 저장. 발행 대기 — Windows 입력기 창(TextInputHost)이 웨일 앞을 잡아 computer-use 입력이 차단됨. request_access 두 번 거부(시스템 앱). 다음 회차가 이어받을 것"
+  },
+  {
+   "hour": 12,
+   "ts": "13:10",
+   "blog": {
+    "title": "국제유가 브렌트 130달러, 3월부터 무슨 일이 있었나",
+    "url": null,
+    "status": "발행 대기 — work/research/oil/pkg/ (order.txt에 순서·태그)"
+   },
+   "cafe": {
+    "title": "배당 받을 때 떼이는 15.4%, 법에는 어떻게 적혀 있나 찾아봤습니다",
+    "url": null,
+    "status": "발행 대기(03시부터) — work/research/divtax/pkg/"
+   },
+   "note": "발행 확인 불가: computer-use request_access가 '예약 실행 중에는 승인 불가'로 거부(웨일+보조앱 1회, 웨일 단독 1회). Chrome 확장은 naver.com을 안전 제한으로 차단(카페·블로그 둘 다). 해결: 예약 작업 설정에 '네이버 웨일'을 허용 앱으로 추가해야 함. 블로그 주제는 B 1위 미작성 '국제유가'(macro). 국내 휘발유·두바이유는 원자료(오피넷 키 없음) 확인 못 해 제외 — toprank 상위 글 5/8편이 국내 휘발유가격을 다룸"
   }
  ]
 }

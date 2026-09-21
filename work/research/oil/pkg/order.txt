@@ -1,0 +1,16 @@
+블로그 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+b00.txt
+img/b1.png
+b02.txt
+img/b2.png
+b04.txt
+img/b3.png
+img/b4.png
+b06.txt
+img/b5.png
+b08.txt
+img/oil_tanker_2_39012056.jpg  (Pexels, Oleksiy Yeshtokyn)
+b10.txt
+카테고리: 경제지식
+태그: 국제유가, 브렌트유, WTI, 유가, 호르무즈해협, 원유가격, 유가상승, EIA, 중동, 사우디, 이란, 원유재고, 유가급등

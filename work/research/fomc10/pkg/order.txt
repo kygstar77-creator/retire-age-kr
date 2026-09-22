@@ -1,0 +1,15 @@
+카페 발행 순서 (cafe.naver.com/firemap)
+제목: title.txt
+c00.txt
+img/c1.jpg
+c02.txt
+img/c2.png
+c04.txt
+img/c3.png
+c06.txt
+img/c4.png
+c08.txt
+게시판: 자유게시판 · 전체공개
+소제목: c02·c04·c06·c08 조각의 첫 줄
+사진: img/c1.jpg Pexels 164527(Pixabay, 미국 달러 지폐) — 출처 표기 의무 없음
+출처: 미 연방준비제도 이사회(federalreserve.gov) FOMC 회의 일정표 · 2026-09-16 성명 · 2026-09-16 이행 공지 · 2026년 9월 경제전망요약, 2026-09-23 조회

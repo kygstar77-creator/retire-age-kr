@@ -37,9 +37,11 @@ def blog_posts(n):
     for it in re.findall(r'<item>(.*?)</item>', s, re.S)[:n]:
         t = re.search(r'<title>(.*?)</title>', it, re.S)
         d = re.search(r'<pubDate>(.*?)</pubDate>', it, re.S)
+        ds = re.search(r'<description>(.*?)</description>', it, re.S)
         if not t: continue
         out.append({'title': html.unescape(re.sub(r'<!\[CDATA\[|\]\]>', '', t.group(1))).strip(),
-                    'date': (d.group(1)[:16] if d else '')})
+                    'date': (d.group(1)[:16] if d else ''),
+                    'desc': html.unescape(re.sub(r'<!\[CDATA\[|\]\]>|<[^>]+>', '', ds.group(1))) if ds else ''})
     return out
 
 def search_rank(query, needle, tab):
@@ -58,6 +60,12 @@ def search_rank(query, needle, tab):
 
 def norm(s):
     return re.sub(r'[\s\W_]+', '', s or '')
+
+def pick_sentence(body):
+    # 따옴표 검색에 쓸 본문 문장 하나. 원고와 RSS 요약 모두 같은 기준으로 고른다.
+    ss = [x.strip() for x in re.split(r'(?<=다\.)\s+', body)
+          if 25 <= len(x.strip()) <= 55 and '출처' not in x and '"' not in x and '.....' not in x]
+    return ss[2] if len(ss) > 2 else (ss[-1] if ss else None)
 
 def draft_index():
     """work/research/*/ 의 블로그 원고에서 {정규화한 제목: 본문 문장 하나}.
@@ -109,10 +117,12 @@ def main():
         r = search_rank(b['title'], BLOGID, 'blog'); time.sleep(0.5)
         idx = None
         sent = drafts.get(norm(b['title']))
+        # 원고가 없는 글(예전 글, 원고 파일명이 다른 글)은 RSS 본문 요약에서 문장을 뽑는다 — 2026-09-22 추가
+        if not sent: sent = pick_sentence(b.get('desc', ''))
         if sent:
             idx = search_rank('"' + sent + '"', BLOGID, 'blog') is not None; time.sleep(0.5)
         rank_s = ('%d위' % r) if r else '30위 밖'
-        idx_s = {True: '색인됨', False: '색인 안 됨', None: '원고 없어 못 잼'}[idx]
+        idx_s = {True: '색인됨', False: '색인 안 됨', None: '본문 없어 못 잼'}[idx]
         if r is None or r > 10: low += 1
         if idx is False: noidx += 1
         print('  %-6s | %-12s | %s | %s' % (rank_s, idx_s, b['date'], b['title'][:40]))

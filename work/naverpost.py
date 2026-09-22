@@ -84,7 +84,8 @@ def click_last_paragraph(frame):
     page.wait_for_timeout(250)
 
 def body_text_len(frame):
-    return frame.evaluate("() => [...document.querySelectorAll('.se-component.se-text .se-text-paragraph')].map(e=>e.innerText).join('').replace(/[\\s\\u200b]+/g,'').length")
+    # 빈 편집기의 안내문 '내용을 입력하세요.'는 글자로 세지 않는다(첫 조각 검증이 -3자로 틀렸던 원인)
+    return frame.evaluate("() => [...document.querySelectorAll('.se-component.se-text .se-text-paragraph')].map(e=>e.innerText).filter(t=>t.trim()!=='내용을 입력하세요.').join('').replace(/[\\s\\u200b]+/g,'').length")
 
 def type_text(frame, text):
     page = frame.page

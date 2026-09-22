@@ -169,7 +169,32 @@ def verify_body(frame, seq, label):
     print(f'{label} 본문 {total}/{want}자, 사진 {imgs}/{want_img}장')
     if total < want * 0.9 or imgs < want_img: raise RuntimeError(f'{label} 본문이 덜 들어감 — 등록하지 않음')
 
+MIN_GAP_MIN = 45   # 같은 매체에 이 시간 안에 또 올리지 않는다(한 회차 1편 규칙을 코드로 강제. 2026-09-22 23시 회차가 지시문을 어기고 블로그 2편 발행)
+
+def last_published_minutes(kind):
+    """가장 최근 발행이 몇 분 전인지. 블로그는 RSS pubDate, 카페는 API writeDateTimestamp. 못 재면 None."""
+    import urllib.request, email.utils
+    UA = {'User-Agent': 'Mozilla/5.0', 'Referer': 'https://cafe.naver.com/'}
+    try:
+        if kind == 'blog':
+            s = urllib.request.urlopen(urllib.request.Request(f'https://rss.blog.naver.com/{BLOG_ID}.xml', headers=UA), timeout=20).read().decode('utf-8', 'ignore')
+            ts = max(email.utils.parsedate_to_datetime(d).timestamp() for d in re.findall(r'<pubDate>(.*?)</pubDate>', s))
+        else:
+            u = f'https://apis.naver.com/cafe-web/cafe2/ArticleListV2dot1.json?search.clubid={CAFE_ID}&search.queryType=lastArticle&search.page=1&search.perPage=5'
+            arts = json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=20))['message']['result']['articleList']
+            ts = max(a['writeDateTimestamp'] for a in arts) / 1000
+        return (time.time() - ts) / 60
+    except Exception as e:
+        print('최근 발행 시각 확인 실패:', e); return None
+
+def rate_guard(kind):
+    if os.environ.get('NAVER_FORCE') == '1': return
+    m = last_published_minutes(kind)
+    if m is not None and m < MIN_GAP_MIN:
+        raise RuntimeError(f'{kind} 직전 발행이 {m:.0f}분 전 — {MIN_GAP_MIN}분 안에는 같은 매체에 다시 올리지 않는다(한 회차 1편). 다음 회차에 올린다')
+
 def post_blog(page, pkg):
+    rate_guard('blog')
     title, seq, meta = read_pkg(pkg)
     page.goto(f'https://blog.naver.com/{BLOG_ID}/postwrite', wait_until='domcontentloaded')
     page.wait_for_timeout(6000)
@@ -216,6 +241,7 @@ def post_blog(page, pkg):
 
 # ---------- 카페 ----------
 def post_cafe(page, pkg):
+    rate_guard('cafe')
     title, seq, meta = read_pkg(pkg)
     page.goto(f'https://cafe.naver.com/ca-fe/cafes/{CAFE_ID}/articles/write', wait_until='domcontentloaded')
     page.wait_for_timeout(6000)

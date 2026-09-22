@@ -1,0 +1,21 @@
+블로그 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+b00.txt
+img/b1.jpg
+b02.txt
+img/b2.png
+b04.txt
+img/b3.png
+b06.txt
+img/b4.png
+b08.txt
+b09.txt
+img/b5.png
+b10.txt
+img/b6.png
+b12.txt
+소제목: b02·b04·b06·b08·b09·b10·b12 조각의 첫 줄
+카테고리: 경제지식
+태그: 국채금리, 국고채금리, 국고채10년, 한국국채10년, 국고채3년, 미국국채금리, 미국10년물국채, 기준금리, 한국은행기준금리, 정기예금금리, 개인투자용국채, 개인투자용국채금리, 시장금리, 채권금리
+사진: img/b1.jpg Pexels 6770610(Alesia Kozik, 노트북 화면 그래프) — 출처 표기 의무 없음
+출처: 한국은행 ECOS(817Y002·721Y001·722Y001·121Y002), 미국 재무부 Daily Treasury Par Yield Curve, 재정경제부 8.27 발표(보도 인용)·2.12 발표(korea.kr), 조세특례제한법 제91조의23

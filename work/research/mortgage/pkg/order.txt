@@ -1,0 +1,19 @@
+블로그 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+b00.txt
+img/b1.jpg
+b02.txt
+img/b2.png
+b04.txt
+img/b3.png
+b06.txt
+img/b4.png
+b08.txt
+img/b5.png
+b10.txt
+b12.txt
+img/b6.png
+소제목: b02·b04·b06·b08·b10 조각의 첫 줄
+카테고리: 부동산
+태그: 주담대금리, 주택담보대출금리, 코픽스, 코픽스금리, 신규코픽스, 잔액기준코픽스, 주담대변동금리, 은행별주담대금리, 가산금리, 우대금리, 중도상환수수료, 한국은행기준금리, 대출금리비교, 주담대월상환액
+사진: img/b1.jpg Pexels 15928940(byunghyun lee, 용인 아파트) — 출처 표기 의무 없음

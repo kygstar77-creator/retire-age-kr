@@ -1,0 +1,18 @@
+블로그 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+b00.txt
+img/b1.jpg
+b02.txt
+img/b2.png
+b04.txt
+b06.txt
+img/b3.png
+b08.txt
+img/b4.png
+b10.txt
+img/b5.png
+b12.txt
+img/b6.png
+카테고리: 부동산
+태그: 양도세계산기, 양도소득세, 양도세, 1세대1주택비과세, 고가주택양도세, 장기보유특별공제, 양도세율, 12억비과세, 양도소득세계산, 양도세예정신고, 단기양도세율, 부동산세금, 주택양도세
+사진 출처: Pexels, 尾 賀 (https://www.pexels.com/ko-kr/photo/5336495/)

@@ -250,6 +250,24 @@ def cafe_make_public(page, article_id):
     edit.wait_for_load_state('domcontentloaded'); edit.wait_for_timeout(3000)
     shot(edit, 'cafe_edit_page')
     close_popups(edit.main_frame)
+    # 옛 글은 구 SmartEditor(iframe 안, 버튼 '수정완료')로 열린다 → 프레임을 뒤져 처리
+    legacy = None
+    for fr in edit.frames:
+        try:
+            if fr.locator('input#all_open').count() and fr.locator('a#cafewritebtn').count():
+                legacy = fr; break
+        except Exception: pass
+    if legacy is not None:
+        edit.once('dialog', lambda d: d.accept())            # window.confirm 이면 확인
+        legacy.locator('input#all_open').first.click(); edit.wait_for_timeout(300)
+        ok = legacy.locator('input#all_open').first.is_checked()
+        print('전체공개(구 편집기):', '선택됨' if ok else '선택 실패')
+        legacy.locator('a#cafewritebtn').first.click()
+        # 구 편집기는 iframe 안에서 저장돼 바깥 URL이 안 바뀐다. 저장 프레임이 사라질 때까지만 기다리고 API(openArticle)로 검증한다.
+        for _ in range(20):
+            edit.wait_for_timeout(1000)
+            if not any('m=modify' in fr.url for fr in edit.frames): break
+        return f'https://cafe.naver.com/firemap/{article_id}'
     if not set_cafe_public(edit): raise RuntimeError('전체공개 선택 실패')
     return submit_cafe(edit)
 

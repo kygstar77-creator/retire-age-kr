@@ -1,0 +1,10 @@
+카페 발행 순서 (cafe.naver.com/firemap)
+제목: title.txt
+c00.txt
+img/c1.jpg
+c02.txt
+img/c2.png
+c04.txt
+img/c3.png
+c06.txt
+게시판: 자유게시판 · 전체공개

@@ -1,0 +1,20 @@
+블로그 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+b00.txt
+img/b1.jpg
+b02.txt
+img/b2.png
+b04.txt
+img/b3.png
+b06.txt
+img/b4.png
+b08.txt
+img/b5.png
+b10.txt
+b12.txt
+img/b6.png
+소제목: b02·b04·b06·b08·b10·b12 조각의 첫 줄
+카테고리: 미국주식
+태그: 나스닥, 나스닥종합지수, 나스닥지수, 나스닥100, 나스닥2026, 나스닥종가, 나스닥52주최고, 나스닥월별, 미국증시, 미국주식, 미국지수, 나스닥거래시간, 미국장시간, 서머타임
+사진: img/b1.jpg Pexels 16594725(Rômulo Queiroz, 시세 화면) — 출처 표기 의무 없음
+출처: Nasdaq 지수 일별 시세(api.nasdaq.com COMP·NDX historical), FRED NASDAQCOM·NASDAQ100(교차확인), Nasdaq 지수 사이트(indexes.nasdaqomx.com COMP·NDX 개요), NYSE 거래시간·nasdaq.com·Nasdaq Trader 캘린더·15 U.S.C. §260a(research/ushours/facts.txt)

@@ -1,0 +1,19 @@
+블로그 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+b00.txt
+img/b1.jpg
+b02.txt
+img/b2.png
+b04.txt
+img/b3.png
+b06.txt
+b08.txt
+img/b4.png
+b10.txt
+img/b5.png
+b12.txt
+img/b6.png
+b14.txt
+카테고리: 경제지식
+태그: 증여세, 증여세세율, 증여세율, 증여세면제한도, 자녀증여한도, 증여재산공제, 혼인출산증여공제, 증여세계산, 증여세신고, 손자녀증여할증, 누진공제액, 증여세가산세, 부모자녀증여
+사진 출처: Pexels, Leeloo The First (https://www.pexels.com/ko-kr/photo/6928994/)

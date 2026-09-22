@@ -1,0 +1,12 @@
+카페 발행 순서 (cafe.naver.com/firemap)
+게시판: 자유게시판 · 전체공개
+제목: title.txt
+img/c1.png
+c00.txt
+c02.txt
+img/c2.png
+c04.txt
+c06.txt
+img/c3.png
+c08.txt
+출처 표기(본문 끝 한 줄로 붙일 때): 국가데이터처·금융감독원·한국은행 「2025년 가계금융복지조사 결과」(2025.12.4) https://www.korea.kr/briefing/pressReleaseView.do?newsId=156733178

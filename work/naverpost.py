@@ -207,11 +207,51 @@ def post_cafe(page, pkg):
         if kind == 'text': type_text(frame, val)
         else: insert_image(frame, val, photo)
     shot(page, 'cafe_body')
+    set_cafe_public(page)
+    return submit_cafe(page)
+
+def set_cafe_public(page):
+    """공개 설정을 전체공개로. 라디오(name=public value=true)는 비활성이 아니다 — 2026-09-22 프로브로 확인.
+    화면 조작 때는 클릭 지점이 어긋나 안 바뀐 것뿐이었다."""
+    try:
+        page.get_by_text('공개 설정', exact=False).first.click(); page.wait_for_timeout(500)
+    except Exception: pass
+    lab = page.get_by_text('전체공개', exact=True).first
+    try: lab.click(timeout=5000)                    # 일반 클릭(앱 상태까지 바뀐다). 프로브로 확인
+    except Exception: lab.click(force=True)
+    page.wait_for_timeout(600)
+    ok = page.evaluate("() => { const r=document.querySelector('input[name=public][value=\"true\"]'); return !!(r && r.checked); }")
+    print('전체공개:', '선택됨' if ok else '선택 실패')
+    return ok
+
+def submit_cafe(page):
     page.get_by_role('button', name=re.compile(r'^\s*등록\s*$')).first.click()   # '임시등록'이 아니라 '등록'만
+    # 전체공개면 "이 글은 전체공개로 설정되어 있어요 ... 계속할까요?" 확인 창이 뜬다(2026-09-22 실측) → 확인
+    try:
+        dlg = page.get_by_text('전체공개로 설정', exact=False).first
+        if dlg.is_visible(timeout=3000):
+            page.get_by_role('button', name=re.compile(r'^\s*확인\s*$')).last.click(); page.wait_for_timeout(500)
+    except Exception: pass
     # 등록 뒤 ArticleRead.nhn?...&articleid=NN 또는 .../articles/NN 또는 /firemap/NN 으로 이동한다
     page.wait_for_url(re.compile(r'articleid=\d+|articles/\d+|cafe\.naver\.com/firemap/\d+', re.I), timeout=30000)
     m = re.search(r'articleid=(\d+)', page.url, re.I) or re.search(r'articles/(\d+)', page.url) or re.search(r'firemap/(\d+)', page.url)
     return f'https://cafe.naver.com/firemap/{m.group(1)}' if m else page.url
+
+def cafe_make_public(page, article_id):
+    """이미 올라간 카페 글을 수정 화면에서 전체공개로 바꿔 다시 등록한다."""
+    page.goto(f'https://cafe.naver.com/ca-fe/cafes/{CAFE_ID}/articles/{article_id}', wait_until='domcontentloaded')
+    page.wait_for_timeout(5000)
+    # '수정'은 새 탭으로 열릴 수 있다 → 새 페이지가 생기면 그쪽을 쓴다
+    ctx = page.context; before = set(ctx.pages)
+    page.get_by_role('button', name=re.compile(r'^\s*수정\s*$')).first.click()
+    page.wait_for_timeout(6000)
+    new = [q for q in ctx.pages if q not in before]
+    edit = new[0] if new else page
+    edit.wait_for_load_state('domcontentloaded'); edit.wait_for_timeout(3000)
+    shot(edit, 'cafe_edit_page')
+    close_popups(edit.main_frame)
+    if not set_cafe_public(edit): raise RuntimeError('전체공개 선택 실패')
+    return submit_cafe(edit)
 
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'check'
@@ -238,6 +278,11 @@ def main():
                 page.goto(sys.argv[2], wait_until='domcontentloaded'); page.wait_for_timeout(5000)
                 page.screenshot(path=sys.argv[3], full_page=True); print(sys.argv[3]); return
             if not logged_in(page): print('로그인 안 됨 — python work/naverpost.py login'); sys.exit(2)
+            if cmd == 'public':                       # python work/naverpost.py public 35 36 37
+                for aid in sys.argv[2:]:
+                    try: print(aid, cafe_make_public(page, aid))
+                    except Exception as e: print(aid, '실패:', repr(e)[:200]); shot(page, 'error_public_' + aid)
+                return
             pkg = os.path.abspath(sys.argv[2])
             url = post_blog(page, pkg) if cmd == 'blog' else post_cafe(page, pkg)
             open(os.path.join(pkg, 'published.txt'), 'w', encoding='utf-8').write(url + '\n')
@@ -247,4 +292,5 @@ def main():
         finally:
             ctx.close()
 
-main()
+if __name__ == '__main__':
+    main()

@@ -112,3 +112,12 @@ Telegram request_access가 두 번(인자 전부/최소) 모두 "can't be approv
   카페 등록은 정규식 `^등록$`(그냥 has-text("등록")은 임시등록을 잡는다). 발행 후 URL은 blog `logNo=`, cafe `articleid=`.
 - 카페 글쓰기 화면의 '전체공개'는 선택되지 않는다(멤버공개 고정, 검색·네이버 서비스 공개는 켜짐). 원인 미확인.
 - 네이버 약관은 자동화 수단에 의한 게시를 금지한다(2018.5.1 개정, 한국경제TV 보도). 사장님이 위험을 알고 진행을 결정했다(2026-09-22).
+
+## 카페 전체공개·텔레그램 보고 (2026-09-22 실측)
+- 카페 글쓰기의 '전체공개' 라디오는 비활성이 아니다. **일반 클릭**으로 앱 상태까지 바뀌고, 등록을 누르면
+  "이 글은 전체공개로 설정되어 있어요 … 계속할까요?" 확인 창이 뜬다 → 확인. naverpost.py가 처리한다.
+  force 클릭은 화면만 바꾸고 상태는 안 바뀌어 멤버공개로 올라갔다(35~38번이 그렇게 됐고 `public` 명령으로 되돌림).
+  검증은 카페 API `openArticle`(True=전체공개)로 한다.
+- 이미 올라간 글 전환: `python work/naverpost.py public <id> ...` (수정 → 전체공개 → 등록, 새 탭 처리).
+- 텔레그램 보고: `work/tgreport.py`. 봇 @firemap_report_bot, 키 파일 `Documents\telegram_bot.txt`(TOKEN, CHAT_ID).
+  `python work/tgreport.py sendfile <파일>` / `send "문장"`. HTTP라 무인 실행 가능. 12시 보고 루틴이 쓴다.

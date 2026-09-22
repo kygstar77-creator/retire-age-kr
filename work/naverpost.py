@@ -328,6 +328,34 @@ def rewrite_cafe(page, article_id, pkg):
     if not set_cafe_public(edit): raise RuntimeError('전체공개 선택 실패')
     return submit_cafe(edit)
 
+PUBLISHED_JS = """() => { const c = document.querySelector('.se-main-container') || document.body;
+  const t = [...c.querySelectorAll('.se-component.se-text .se-text-paragraph')].map(e=>e.innerText).join('').replace(/[\\s\\u200b]+/g,'').length;
+  return {text: t, img: c.querySelectorAll('.se-component.se-image').length}; }"""
+
+def verify_published(page, pkg):
+    """발행된 실제 페이지의 글자 수·사진 수를 묶음과 대조한다. 편집기 안이 아니라 '올라간 글'을 본다.
+    2026-09-22 사고: 편집기 스크린샷만 믿고 9편이 본문 없이 나갔다. 결과는 pkg/verify.txt에 남긴다."""
+    title, seq, meta = read_pkg(pkg)
+    pub = os.path.join(pkg, 'published.txt')
+    if not os.path.exists(pub): return {'ok': False, 'why': 'published.txt 없음'}
+    url = open(pub, encoding='utf-8').read().strip().splitlines()[-1]
+    m = re.search(r'logNo=(\d+)|kygstar7777/(\d+)', url); c = re.search(r'firemap/(\d+)|articles/(\d+)|articleid=(\d+)', url, re.I)
+    if m: page.goto(f'https://m.blog.naver.com/PostView.naver?blogId={BLOG_ID}&logNo={m.group(1) or m.group(2)}', wait_until='domcontentloaded')
+    elif c: page.goto(f'https://cafe.naver.com/ca-fe/cafes/{CAFE_ID}/articles/{c.group(1) or c.group(2) or c.group(3)}', wait_until='domcontentloaded')
+    else: return {'ok': False, 'why': 'URL 형식 모름 ' + url}
+    page.wait_for_timeout(4500)
+    best = {'text': -1, 'img': 0}
+    for fr in page.frames:
+        try:
+            r = fr.evaluate(PUBLISHED_JS)
+            if r['text'] > best['text']: best = r
+        except Exception: pass
+    want = sum(len(re.sub(r'\s+', '', v)) for k, v in seq if k == 'text'); want_img = sum(1 for k, _ in seq if k == 'img')
+    ok = best['text'] >= want * 0.9 and best['img'] >= want_img
+    res = {'ok': ok, 'url': url, 'text': best['text'], 'want': want, 'img': best['img'], 'want_img': want_img}
+    open(os.path.join(pkg, 'verify.txt'), 'w', encoding='utf-8').write(json.dumps(res, ensure_ascii=False) + '\n')
+    return res
+
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'check'
     with sync_playwright() as p:
@@ -353,6 +381,17 @@ def main():
                 page.goto(sys.argv[2], wait_until='domcontentloaded'); page.wait_for_timeout(5000)
                 page.screenshot(path=sys.argv[3], full_page=True); print(sys.argv[3]); return
             if not logged_in(page): print('로그인 안 됨 — python work/naverpost.py login'); sys.exit(2)
+            if cmd == 'verify':                       # python work/naverpost.py verify <pkg> [<pkg> ...]  또는 verify today
+                pkgs = sys.argv[2:]
+                if pkgs == ['today']:
+                    base = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research'); day = time.strftime('%Y-%m-%d')
+                    pkgs = [os.path.join(base, d, 'pkg') for d in os.listdir(base) if os.path.exists(os.path.join(base, d, 'pkg', 'published.txt'))
+                            and time.strftime('%Y-%m-%d', time.localtime(os.path.getmtime(os.path.join(base, d, 'pkg', 'published.txt')))) == day]
+                bad = 0
+                for pk in pkgs:
+                    r = verify_published(page, os.path.abspath(pk)); bad += (not r['ok'])
+                    print(('OK  ' if r['ok'] else 'BAD ') + os.path.basename(os.path.dirname(pk)), json.dumps(r, ensure_ascii=False))
+                sys.exit(1 if bad else 0)
             if cmd == 'rewrite':                      # python work/naverpost.py rewrite 45 work/research/sidejob/pkg
                 print(rewrite_cafe(page, int(sys.argv[2]), os.path.abspath(sys.argv[3]))); return
             if cmd == 'public':                       # python work/naverpost.py public 35 36 37

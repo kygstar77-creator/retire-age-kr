@@ -106,7 +106,12 @@ Telegram request_access가 두 번(인자 전부/최소) 모두 "can't be approv
 - `pending` 안 올라간 묶음(RSS·카페 API 제목 대조, published.txt 없는 것) 오래된 순.
 - `blog <pkg>` / `cafe <pkg>` 발행 후 `URL ...` 출력, pkg/published.txt 생성. 실패 시 research/_shots/error_*.png.
 - 로그인 쿠키는 세션 쿠키라 프로필만으로는 창을 닫으면 사라진다 → `storage_state.json`에 저장해 매번 add_cookies.
-- 편집기 요령(실측): 본문 문단은 `.se-text-paragraph` last를 가운데로 스크롤 후 클릭(글감 검색 바가 가림),
+- **사고(2026-09-22 22시 발견)**: 카페 37~45 아홉 편이 사진만 있고 본문 0자로 발행됐다. 사진을 넣으면 포커스가 업로드용
+  iframe에 남아 `locator.click()`으로는 다음 글자가 어디에도 안 들어간다. 고침: 마지막 글 문단(`.se-component.se-text .se-text-paragraph`,
+  사진 설명 문단 제외)의 bounding_box 좌표를 `page.mouse.click`. 등록 전 `verify_body`(글자 90%·사진 수)로 막고,
+  발행 뒤 `python work/naverpost.py verify <pkg>`(또는 `verify today`)로 **올라간 페이지**를 다시 잰다. 잘못 나간 카페 글은
+  `python work/naverpost.py rewrite <글번호> <pkg>`(수정 화면에서 본문 비우고 다시 넣기, 글 번호 유지)로 고쳤다.
+- 편집기 요령(실측): 본문 문단은 마지막 글 문단을 가운데로 스크롤 후 **마우스 좌표 클릭**(글감 검색 바가 가림),
   텍스트는 keyboard.insert_text + Enter, 이미지는 사진 버튼 → file chooser → `.se-component.se-image` 수가 늘 때까지 대기.
   블로그 발행 버튼은 `button[class^="publish_btn"]`(예약 버튼은 reserve_btn), 패널 항목은 문구(get_by_text/placeholder)로.
   카페 등록은 정규식 `^등록$`(그냥 has-text("등록")은 임시등록을 잡는다). 발행 후 URL은 blog `logNo=`, cafe `articleid=`.

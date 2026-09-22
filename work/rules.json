@@ -282,6 +282,18 @@
    "rule": "일일 보고는 텔레그램 봇으로 무인 전송한다",
    "src": "2026-09-22 tgreport.py setup으로 chat_id 확보, 확인 메시지 전송 성공",
    "measured": "2026-09-22"
+  },
+  {
+   "stage": "발행",
+   "rule": "발행 직후 올라간 실제 페이지의 글자·사진 수를 묶음과 대조한다(naverpost.py verify). 편집기 스크린샷은 발행 확인이 아니다",
+   "src": "2026-09-22 카페 37~45 아홉 편이 사진만 있고 본문 0자로 발행됨. 원인: 사진 삽입 뒤 포커스가 업로드 iframe에 남아 입력 유실",
+   "measured": "2026-09-22"
+  },
+  {
+   "stage": "발행",
+   "rule": "편집기 문단 클릭은 locator.click()이 아니라 bounding_box 좌표 mouse.click",
+   "src": "2026-09-22 프로브: 사진 뒤 locator.click은 글자 0, mouse.click은 정상 입력",
+   "measured": "2026-09-22"
   }
  ]
 }

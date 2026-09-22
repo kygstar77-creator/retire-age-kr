@@ -97,3 +97,18 @@ Telegram request_access가 두 번(인자 전부/최소) 모두 "can't be approv
 ## perf.py 색인 측정 보강 (2026-09-22)
 원고 파일(blog.txt)이 없는 글은 RSS `<description>` 본문 요약에서 문장을 골라 따옴표 검색한다.
 발행 묶음이 `draft.txt`·`pkg/`로 바뀐 뒤에도 색인을 잴 수 있다.
+
+## 발행은 naverpost.py로 한다 (2026-09-22부터) — 화면 조작 폐기
+
+`work/naverpost.py`는 Playwright 전용 크로미움(프로필 `Documents\naver_profile`)으로 네이버에 올린다.
+사장님 웨일·크롬과 완전히 별개라 PC를 같이 써도 안 섞이고, **화면 권한이 없어 예약 루틴이 무인으로 돌린다.**
+- `python work/naverpost.py check` 로그인 유지 여부 (쿠키 NID_AUT/NID_SES). 안 되면 `login`을 PC에서 사람이 한 번.
+- `pending` 안 올라간 묶음(RSS·카페 API 제목 대조, published.txt 없는 것) 오래된 순.
+- `blog <pkg>` / `cafe <pkg>` 발행 후 `URL ...` 출력, pkg/published.txt 생성. 실패 시 research/_shots/error_*.png.
+- 로그인 쿠키는 세션 쿠키라 프로필만으로는 창을 닫으면 사라진다 → `storage_state.json`에 저장해 매번 add_cookies.
+- 편집기 요령(실측): 본문 문단은 `.se-text-paragraph` last를 가운데로 스크롤 후 클릭(글감 검색 바가 가림),
+  텍스트는 keyboard.insert_text + Enter, 이미지는 사진 버튼 → file chooser → `.se-component.se-image` 수가 늘 때까지 대기.
+  블로그 발행 버튼은 `button[class^="publish_btn"]`(예약 버튼은 reserve_btn), 패널 항목은 문구(get_by_text/placeholder)로.
+  카페 등록은 정규식 `^등록$`(그냥 has-text("등록")은 임시등록을 잡는다). 발행 후 URL은 blog `logNo=`, cafe `articleid=`.
+- 카페 글쓰기 화면의 '전체공개'는 선택되지 않는다(멤버공개 고정, 검색·네이버 서비스 공개는 켜짐). 원인 미확인.
+- 네이버 약관은 자동화 수단에 의한 게시를 금지한다(2018.5.1 개정, 한국경제TV 보도). 사장님이 위험을 알고 진행을 결정했다(2026-09-22).

@@ -71,20 +71,34 @@ def ensure_plain(frame):
         except Exception: pass
 
 def click_last_paragraph(frame):
-    # 화면 아래 떠 있는 '글감 검색' 바가 마지막 문단을 가리면 클릭이 막힌다 → 가운데로 스크롤한 뒤 클릭, 그래도 막히면 강제 클릭
-    para = frame.locator('.se-text-paragraph').last
-    try: para.evaluate("e => e.scrollIntoView({block: 'center'})"); frame.page.wait_for_timeout(200)
+    # 사진을 넣은 뒤에는 포커스가 업로드용 iframe에 남아 locator.click()으로는 글자가 안 들어간다(2026-09-22 실측: 카페 글 9편이 본문 없이 발행).
+    # 마지막 '글 문단'(사진 설명 문단 제외)의 화면 좌표를 실제 마우스로 클릭해야 입력이 들어간다.
+    page = frame.page
+    para = frame.locator('.se-component.se-text .se-text-paragraph').last
+    if not para.count(): para = frame.locator('.se-text-paragraph').last
+    try: para.evaluate("e => e.scrollIntoView({block: 'center'})"); page.wait_for_timeout(200)
     except Exception: pass
-    try: para.click(timeout=4000)
-    except Exception: para.click(force=True)
-    frame.page.wait_for_timeout(200)
+    bb = para.bounding_box()
+    if bb: page.mouse.click(bb['x'] + min(20, bb['width'] / 2), bb['y'] + bb['height'] / 2)
+    else: para.click(force=True)
+    page.wait_for_timeout(250)
+
+def body_text_len(frame):
+    return frame.evaluate("() => [...document.querySelectorAll('.se-component.se-text .se-text-paragraph')].map(e=>e.innerText).join('').replace(/[\\s\\u200b]+/g,'').length")
 
 def type_text(frame, text):
     page = frame.page
-    click_last_paragraph(frame); ensure_plain(frame)
-    for para in text.split('\n'):
-        if para.strip(): page.keyboard.insert_text(para); page.wait_for_timeout(120)
-        page.keyboard.press('Enter'); page.wait_for_timeout(120)
+    want = len(re.sub(r'\s+', '', text))
+    for attempt in range(2):
+        before = body_text_len(frame)
+        click_last_paragraph(frame); ensure_plain(frame)
+        for para in text.splitlines():
+            if para.strip(): page.keyboard.insert_text(para); page.wait_for_timeout(120)
+            page.keyboard.press('Enter'); page.wait_for_timeout(120)
+        got = body_text_len(frame) - before
+        if got >= want * 0.9: return
+        print(f'본문 입력 확인 실패({got}/{want}자) — 다시 시도' if attempt == 0 else f'본문 입력 실패({got}/{want}자)')
+    raise RuntimeError('본문 글자가 편집기에 안 들어감')
 
 def insert_image(frame, path, photo_button):
     page = frame.page
@@ -147,6 +161,13 @@ def list_pending():
     return out
 
 # ---------- 블로그 ----------
+def verify_body(frame, seq, label):
+    """등록 직전 검증: 묶음의 글자 수·사진 수가 편집기에 실제로 들어갔는지. 모자라면 등록하지 않는다."""
+    total = body_text_len(frame); want = sum(len(re.sub(r'\s+', '', v)) for k, v in seq if k == 'text')
+    imgs = frame.locator('.se-component.se-image').count(); want_img = sum(1 for k, _ in seq if k == 'img')
+    print(f'{label} 본문 {total}/{want}자, 사진 {imgs}/{want_img}장')
+    if total < want * 0.9 or imgs < want_img: raise RuntimeError(f'{label} 본문이 덜 들어감 — 등록하지 않음')
+
 def post_blog(page, pkg):
     title, seq, meta = read_pkg(pkg)
     page.goto(f'https://blog.naver.com/{BLOG_ID}/postwrite', wait_until='domcontentloaded')
@@ -161,6 +182,7 @@ def post_blog(page, pkg):
     for kind, val in seq:
         if kind == 'text': type_text(frame, val)
         else: insert_image(frame, val, photo)
+    verify_body(frame, seq, '블로그')
     page.screenshot(path=os.path.join(SHOTS, 'blog_body.png'), full_page=True)
     # 발행 패널: 오른쪽 위 발행 버튼은 class가 publish_btn__..., 예약 버튼은 reserve_btn__... 라 구분한다
     frame.locator('button[class^="publish_btn"]').first.click(); page.wait_for_timeout(2500)
@@ -206,6 +228,7 @@ def post_cafe(page, pkg):
     for kind, val in seq:
         if kind == 'text': type_text(frame, val)
         else: insert_image(frame, val, photo)
+    verify_body(frame, seq, '카페')
     shot(page, 'cafe_body')
     set_cafe_public(page)
     return submit_cafe(page)
@@ -213,6 +236,8 @@ def post_cafe(page, pkg):
 def set_cafe_public(page):
     """공개 설정을 전체공개로. 라디오(name=public value=true)는 비활성이 아니다 — 2026-09-22 프로브로 확인.
     화면 조작 때는 클릭 지점이 어긋나 안 바뀐 것뿐이었다."""
+    already = "() => { const r=document.querySelector('input[name=public][value=\"true\"]'); return !!(r && r.checked); }"
+    if page.evaluate(already): print('전체공개: 이미 선택됨'); return True     # 수정 화면에서 이미 전체공개면 라벨이 클릭 불가한 <p>로 바뀐다
     try:
         page.get_by_text('공개 설정', exact=False).first.click(); page.wait_for_timeout(500)
     except Exception: pass
@@ -271,6 +296,38 @@ def cafe_make_public(page, article_id):
     if not set_cafe_public(edit): raise RuntimeError('전체공개 선택 실패')
     return submit_cafe(edit)
 
+def open_cafe_edit(page, article_id):
+    """글 보기 → '수정' → 편집 페이지(새 탭이면 그쪽) 반환."""
+    page.goto(f'https://cafe.naver.com/ca-fe/cafes/{CAFE_ID}/articles/{article_id}', wait_until='domcontentloaded')
+    page.wait_for_timeout(5000)
+    ctx = page.context; before = set(ctx.pages)
+    page.get_by_role('button', name=re.compile(r'^\s*수정\s*$')).first.click()
+    page.wait_for_timeout(6000)
+    new = [q for q in ctx.pages if q not in before]
+    edit = new[0] if new else page
+    edit.wait_for_load_state('domcontentloaded'); edit.wait_for_timeout(3000)
+    close_popups(edit.main_frame)
+    return edit
+
+def rewrite_cafe(page, article_id, pkg):
+    """본문이 빠진 채 올라간 글(2026-09-22 사고)을 같은 글 번호로 고친다: 수정 화면에서 본문을 비우고 묶음 순서대로 다시 넣는다."""
+    title, seq, meta = read_pkg(pkg)
+    edit = open_cafe_edit(page, article_id)
+    frame = edit.main_frame
+    if not frame.locator('.se-component').count(): raise RuntimeError('새 편집기가 아님(구 편집기 글은 rewrite 미지원)')
+    click_last_paragraph(frame)
+    edit.keyboard.press('Control+A'); edit.wait_for_timeout(200); edit.keyboard.press('Delete'); edit.wait_for_timeout(800)
+    left = frame.locator('.se-component.se-image').count()
+    if left: raise RuntimeError(f'본문 비우기 실패(사진 {left}장 남음)')
+    photo = edit.locator('button[data-name="image"]').first
+    for kind, val in seq:
+        if kind == 'text': type_text(frame, val)
+        else: insert_image(frame, val, photo)
+    verify_body(frame, seq, f'카페 {article_id} 재작성')
+    shot(edit, f'cafe_rewrite_{article_id}')
+    if not set_cafe_public(edit): raise RuntimeError('전체공개 선택 실패')
+    return submit_cafe(edit)
+
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'check'
     with sync_playwright() as p:
@@ -296,6 +353,8 @@ def main():
                 page.goto(sys.argv[2], wait_until='domcontentloaded'); page.wait_for_timeout(5000)
                 page.screenshot(path=sys.argv[3], full_page=True); print(sys.argv[3]); return
             if not logged_in(page): print('로그인 안 됨 — python work/naverpost.py login'); sys.exit(2)
+            if cmd == 'rewrite':                      # python work/naverpost.py rewrite 45 work/research/sidejob/pkg
+                print(rewrite_cafe(page, int(sys.argv[2]), os.path.abspath(sys.argv[3]))); return
             if cmd == 'public':                       # python work/naverpost.py public 35 36 37
                 for aid in sys.argv[2:]:
                     try: print(aid, cafe_make_public(page, aid))

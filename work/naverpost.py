@@ -178,7 +178,10 @@ def last_published_minutes(kind):
     try:
         if kind == 'blog':
             s = urllib.request.urlopen(urllib.request.Request(f'https://rss.blog.naver.com/{BLOG_ID}.xml', headers=UA), timeout=20).read().decode('utf-8', 'ignore')
-            ts = max(email.utils.parsedate_to_datetime(d).timestamp() for d in re.findall(r'<pubDate>(.*?)</pubDate>', s))
+            # 채널 <pubDate>는 피드를 만든 시각(=지금)이라 <item> 뒤쪽만 본다. 안 그러면 항상 '0분 전'이 되어 블로그 발행이 영구히 막힌다(2026-09-23 확인)
+            items = s.split('<item>', 1)
+            if len(items) < 2: return None
+            ts = max(email.utils.parsedate_to_datetime(d).timestamp() for d in re.findall(r'<pubDate>(.*?)</pubDate>', items[1]))
         else:
             u = f'https://apis.naver.com/cafe-web/cafe2/ArticleListV2dot1.json?search.clubid={CAFE_ID}&search.queryType=lastArticle&search.page=1&search.perPage=5'
             arts = json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=20))['message']['result']['articleList']

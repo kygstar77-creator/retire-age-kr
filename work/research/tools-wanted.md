@@ -18,4 +18,4 @@
 | YouTube 업로드 OAuth | 손품·브리핑 영상 자동 업로드, 채널 통계 | console.cloud.google.com | **완료 2026-09-23 17:05** — youtube_client.json + youtube_token.json(오프라인 토큰, 자동 갱신). ytupload.py upload/stats |
 | FMP 키 | 미국 종목 프로필(시가총액·최근 배당·52주 범위·업종·CEO)·실적 캘린더 | financialmodelingprep.com | **완료 2026-09-23 17:16** — fmp_key.txt. 무료 등급은 profile·earnings-calendar만 됨; quote·배당 이력·ETF 구성은 402(유료) → 그건 Nasdaq API·운용사 페이지로 |
 | Alpha Vantage 키 | PER·배당률·배당 이력·분기 실적(EPS 서프라이즈) | alphavantage.co | **완료 2026-09-23 17:18** — alphavantage_key.txt(하루 25회 무료) |
-| 공공데이터 오피스텔 전월세 | 오피스텔 월세 수익률 | data.go.kr | **완료 2026-09-23 17:16**(마포구 8월 453건). 오피스텔 매매는 활용신청 대기 |
+| 공공데이터 오피스텔 전월세 | 오피스텔 월세 수익률 | data.go.kr | **완료 2026-09-23 17:16**(마포구 8월 453건). 오피스텔 매매도 완료 2026-09-23 17:19 |

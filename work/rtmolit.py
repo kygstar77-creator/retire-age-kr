@@ -6,7 +6,8 @@ import sys, os, re, json, time, urllib.request, urllib.parse, xml.etree.ElementT
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, 'research', 'rt'); os.makedirs(OUT, exist_ok=True)
 KEY = [l.split('=', 1)[1].strip() for l in open(r'C:\Users\강영준\Documents\datago_key.txt', encoding='utf-8-sig') if l.startswith('KEY=')][0]
-EP = {'trade': 'RTMSDataSvcAptTradeDev/getRTMSDataSvcAptTradeDev', 'rent': 'RTMSDataSvcAptRent/getRTMSDataSvcAptRent'}
+EP = {'trade': 'RTMSDataSvcAptTradeDev/getRTMSDataSvcAptTradeDev', 'rent': 'RTMSDataSvcAptRent/getRTMSDataSvcAptRent',
+      'offi_trade': 'RTMSDataSvcOffiTrade/getRTMSDataSvcOffiTrade', 'offi_rent': 'RTMSDataSvcOffiRent/getRTMSDataSvcOffiRent'}   # 오피스텔 매매·전월세(2026-09-23 승인)
 
 def fetch(kind, lawd, ym):
     rows, page = [], 1
@@ -37,7 +38,7 @@ if __name__ == '__main__':
     for lawd, name in sgg.items():
         if only and lawd not in only: continue
         for ym in months:
-            for kind in ('trade', 'rent'):
+            for kind in ('trade', 'rent', 'offi_trade', 'offi_rent'):
                 p = os.path.join(OUT, f'{lawd}_{ym}_{kind}.json')
                 if os.path.exists(p) and ym < time.strftime('%Y%m'): continue   # 지난달 이전은 다시 안 받음
                 try:

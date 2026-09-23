@@ -89,16 +89,65 @@ def finlife(kind='deposit', group='020000', page=1):
                     '대출최저': o.get('lend_rate_min'), '대출최고': o.get('lend_rate_max'), '공시월': b.get('dcls_month')})
     return out
 
-def vworld_coord(address, road=True):
-    """주소 → 좌표. 국토교통부 브이월드. 손품 영상(sonpum.py)이 동네를 찾을 때 쓴다."""
+def vworld_coord(address, road=None):
+    """주소 → 좌표. 국토교통부 브이월드. 손품 영상(sonpum.py)이 동네를 찾을 때 쓴다.
+    '목동 917' 같은 지번 주소는 road로는 안 잡힌다(2026-09-23 확인) → 도로명·지번을 차례로 시도한다."""
     k = key('vworld')
     if not k: return None
-    u = ('https://api.vworld.kr/req/address?service=address&request=getcoord&format=json'
-         f'&key={k}&type={"road" if road else "parcel"}&address=' + urllib.parse.quote(address))
-    d = _j(u).get('response', {})
-    if d.get('status') != 'OK': return None
-    p = d['result']['point']
-    return {'주소': d.get('refined', {}).get('text', address), '경도': float(p['x']), '위도': float(p['y'])}
+    kinds = ['road', 'parcel'] if road is None else (['road'] if road else ['parcel'])
+    for t in kinds:
+        u = ('https://api.vworld.kr/req/address?service=address&request=getcoord&format=json'
+             f'&key={k}&type={t}&address=' + urllib.parse.quote(address))
+        try: d = _j(u).get('response', {})
+        except Exception: continue
+        if d.get('status') != 'OK': continue
+        p = d['result']['point']
+        return {'주소': (d.get('refined') or {}).get('text', address), '경도': float(p['x']), '위도': float(p['y']), '방식': t}
+    return None
+
+def _dist_m(lat1, lng1, lat2, lng2):
+    import math
+    R = 6371000.0
+    p1, p2 = math.radians(lat1), math.radians(lat2)
+    dp, dl = math.radians(lat2 - lat1), math.radians(lng2 - lng1)
+    a = math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
+    return int(2 * R * math.asin(math.sqrt(a)))
+
+def vworld_nearby(lat, lng, query, n=3, box=0.012):
+    """그 좌표 둘레에서 '지하철역'·'초등학교' 같은 것을 찾아 직선거리(m)와 함께 돌려준다.
+    사장님 2026-09-23 손품 아이디어: "집집마다 가격 구조 역과의 거리 주변에 뭐 있는지, 경사 접근성 학교".
+    2026-09-23 공덕동에서 확인: 공덕역·서울공덕초등학교가 좌표까지 나온다."""
+    k = key('vworld')
+    if not k: return []
+    bbox = f'{lng-box},{lat-box},{lng+box},{lat+box}'
+    u = ('https://api.vworld.kr/req/search?service=search&request=search&version=2.0&format=json'
+         f'&size=20&page=1&query={urllib.parse.quote(query)}&type=place&key={k}&crs=EPSG:4326&bbox={bbox}')
+    try: r = _j(u).get('response', {})
+    except Exception: return []
+    if r.get('status') != 'OK': return []
+    out = []
+    for it in (r.get('result', {}) or {}).get('items', []) or []:
+        p = it.get('point') or {}
+        try: x, y = float(p['x']), float(p['y'])
+        except Exception: continue
+        out.append({'이름': it.get('title'), '분류': (it.get('category') or '').strip(),
+                    '거리m': _dist_m(lat, lng, y, x), '위도': y, '경도': x})
+    seen, uniq = set(), []
+    for o in sorted(out, key=lambda z: z['거리m']):
+        if o['이름'] in seen: continue
+        seen.add(o['이름']); uniq.append(o)
+    return uniq[:n]
+
+def around(lat, lng):
+    """손품 영상·부동산 글에 넣을 '주변' 한 줄 — 역·초등학교·중학교.
+    '마트'로 찾으면 '○○마트부동산공인중개사사무소'가 섞여 나온다(2026-09-23 확인) → 분류로 거른다."""
+    out = {}
+    for label, q, must in (('지하철역', '역', '철도'), ('초등학교', '초등학교', '초등학교'),
+                           ('중학교', '중학교', '중학교'), ('고등학교', '고등학교', '고등학교')):
+        r = [x for x in vworld_nearby(lat, lng, q, n=8) if must in x['분류'] or must in x['이름']]
+        if r: out[label] = [f"{x['이름']} {x['거리m']}m" for x in r[:2]]
+        time.sleep(0.4)
+    return out
 
 CHECKS = [
     ('fred  미국 기준금리', lambda: fred('FEDFUNDS', 1)),

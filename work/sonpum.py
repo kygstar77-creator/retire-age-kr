@@ -103,6 +103,18 @@ with sync_playwright() as p:
                 print('건너뜀', name, info.get('세대')); page.goto(url, wait_until='domcontentloaded', timeout=60000); page.wait_for_timeout(4500); close_popup(page); markers = page.locator('.marker_complex--apart'); continue
             k += 1
             head = f"{k}번째 단지, {name}. {info['세대']:,}세대 {info['동']}개 동, {info['준공']} 준공, 전용 {info['면적']}. 매매 호가 {info['매매가'] or '없음'}, 전세 호가 {info['전세가'] or '없음'}." + (f" 최근 실거래 {info['실거래']}." if info.get('실거래') else '')
+            # 사장님 2026-09-23 손품 아이디어: "집집마다 가격 구조 역과의 거리 주변에 뭐 있는지, 경사 접근성 학교".
+            # 브이월드 무료 키로 붙인다(2026-09-23 공덕·목동·불광에서 역·초·중·고 거리 확인).
+            try:
+                sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+                import apis
+                c = apis.vworld_coord(f'{area} {name}') or {'위도': lat, '경도': lng}
+                nb = apis.around(c['위도'], c['경도'])
+                bits = []
+                for label, word in (('지하철역', '지하철은'), ('초등학교', '초등학교는'), ('중학교', '중학교는')):
+                    if nb.get(label): bits.append(word + ' ' + nb[label][0].replace('m', '미터'))
+                if bits: head += ' 가장 가까운 ' + ', '.join(bits) + ' 거리입니다.'
+            except Exception as e: print('주변 정보 실패', str(e)[:70])
             for code, nm in (('A1', '매매'), ('B1', '전세'), ('B2', '월세')):
                 page.goto(f'https://new.land.naver.com/complexes/{no}?ms={lat},{lng},16&a=APT&b={code}&e=RETAIL', wait_until='domcontentloaded', timeout=60000); page.wait_for_timeout(5500); close_popup(page)
                 ls = listings(page, nm); sp = os.path.join(TMP, f's{k:02d}_{code}.png'); page.screenshot(path=sp)

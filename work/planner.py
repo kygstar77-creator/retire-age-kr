@@ -164,7 +164,7 @@ def main():
                                 '③ 섹터·종목 등락(히트맵 요약) ④ 내부자 매수(insider.py)·실적 서프라이즈 '
                                 '⑤ 내일 일정(실적·지표·배당락) ⑥ 한국 투자자 숫자(원달러, 국내 상장 미국 ETF 등락)')
         if sid == 'B7': return '30일 안에 시행되는 개정 법령(세법·연금·건보) — 법령 API 시행일'
-        if sid == 'B8': return '부동산 한 장(구별 전세가율·변동률 히트맵 + 어제 실거래 신고 상위 + 코픽스·주담대 + 오늘 정책·청약 일정)'
+        if sid == 'B8': return ('부동산 한 장 — heatmap_re.py로 구별 히트맵 1장(jeonse/yield/offi/price 중 어제와 다른 것) + 어제 실거래 신고 상위 + 코픽스·주담대(apis.finlife) + 오늘 정책·청약 일정')
         if sid == 'B9': return f'{rot(LIVE, k)} 실제 매물 5~8건(동네·단지명·월세·면적·방 수·부대시설·층·게시 링크) + 생활비·비자·환율'
         if sid == 'B10': return f'{rot(UNDER, k)} — 국토부 실거래로 계산(권유 문구 금지, 지표와 순위만)'
         if sid == 'B11': return f'{rot(DONG, k)} 자동 손품 — sonpum.py로 네이버 부동산 녹화 + 같은 재료로 단지별 표'

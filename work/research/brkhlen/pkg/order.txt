@@ -1,0 +1,18 @@
+블로그 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+b00.txt
+img/b1.png
+b01.txt
+img/b2.png
+b02.txt
+img/b3.png
+b03.txt
+img/b4.png
+b04.txt
+img/b5.png
+b05.txt
+img/b6.png
+b06.txt
+카테고리: 미국주식
+태그: 버크셔해서웨이, 워런버핏, 레나, Lennar, LEN, 내부자매수, Form4, SEC공시, 미국주택건설, 미국부동산, 주택담보대출금리, 미국주식, 지분공시, 52주최저
+출처: SEC EDGAR Form 4 접수번호 0001193125-26-397059 (2026-09-21 접수) · Yahoo Finance chart API · 네이버페이 증권 API · 세인트루이스 연준 FRED (2026-09-23 조회)

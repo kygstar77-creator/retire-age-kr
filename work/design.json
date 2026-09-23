@@ -1,21 +1,23 @@
 {
  "short": {
   "text_y": 0.5019,
-  "bg_bright": 0.3794,
+  "bg_bright": 0.36,
   "panel_alpha": 150.0,
   "yellow_bottom": 0,
   "num_yellow": 1,
   "stroke_ratio": 40,
   "yellow_frac": 0.0997,
   "text_scale": 1.0,
-  "text_spread": 0.45,
+  "text_spread": 0.8,
   "bg_sat": 1.4056,
-  "text_tint": 0.8805,
+  "text_tint": 0.9579,
   "lines": 3,
-  "split_scale": 2.0
+  "split_scale": 2.0,
+  "yellow_tint": 0.453,
+  "tint_v": 0.75
  },
  "long": {
-  "text_y": 0.72,
+  "text_y": 0.5,
   "bg_bright": 1.7447,
   "panel_alpha": 212,
   "yellow_bottom": 0,
@@ -28,7 +30,7 @@
  "video": {
   "zoom": 0.0009
  },
- "step": 57,
+ "step": 64,
  "_memo": {
   "short.white.stroke_ratio=40": 0.0301,
   "long.yellow.yellow_bottom=1": 0.0526,
@@ -81,6 +83,10 @@
   "short.yellow.yellow_frac=0.0816@f7df30": 0.0003,
   "short.contrast.panel_alpha=150.0@8c8d46": 0.2638,
   "short.yellow.yellow_frac=0.1088@f7df30": 0.0099,
-  "short.contrast.panel_alpha=150.0@46b09e": 0.2638
+  "short.contrast.panel_alpha=150.0@46b09e": 0.2638,
+  "short.yellow.yellow_frac=0.0997@f7df30": 0.0003,
+  "short.bright.bg_bright=0.644@9daa16": 0.2169,
+  "short.contrast.tint_v=1.0@baf498": 0.2648,
+  "short.white.text_tint=0.8805@ba1439": 0.0137
  }
 }

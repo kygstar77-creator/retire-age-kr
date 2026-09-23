@@ -50,8 +50,8 @@ def cfg(kind):
     """loop.py가 매 회차 갱신하는 design.json. 없으면 첫 측정값(2026-09-23 경쟁 상위 중앙값)"""
     try: d = json.load(open(os.path.join(HERE, 'design.json'), encoding='utf-8'))
     except Exception: d = {}
-    base = {'long': {'text_y': 0.72, 'bg_bright': 0.45, 'panel_alpha': 150, 'yellow_bottom': 1, 'yellow_frac': 1.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0},
-            'short': {'text_y': 0.52, 'bg_bright': 0.30, 'panel_alpha': 150, 'yellow_bottom': 0, 'yellow_frac': 0.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'lines': 3, 'split_scale': 2.0}}[kind]
+    base = {'long': {'text_y': 0.72, 'bg_bright': 0.45, 'panel_alpha': 150, 'yellow_bottom': 1, 'yellow_frac': 1.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'tint_v': 1.0},
+            'short': {'text_y': 0.52, 'bg_bright': 0.30, 'panel_alpha': 150, 'yellow_bottom': 0, 'yellow_frac': 0.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'lines': 3, 'split_scale': 2.0}}[kind]
     base.update(d.get(kind, {})); return base
 
 def disp(sz):
@@ -171,7 +171,15 @@ def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
         mask = Image.fromarray(
             (np.asarray(gl, dtype=np.uint16) * np.asarray(col, dtype=np.uint16) // 255).astype(np.uint8)
         ) if np is not None else Image.composite(gl, Image.new('L', (W, H), 0), col.point(lambda v: 255 if v > 127 else 0))
-        im.paste(Image.new('RGB', (W, H), TINT), (0, 0), mask); dr = ImageDraw.Draw(im)
+        # 대비 손잡이(tint_v): 강조색의 밝기. 쇼츠 대비가 우리 0.2638 vs 경쟁 0.1791 로 여러 회차 막혀 있었다.
+        # 2026-09-24 갈라 재 보니 넘치는 대비는 배경이 아니라 글자 자리에서 온다(경쟁 상위 10장 vs 우리 3장):
+        #   배경만 대비  우리 0.0531 < 경쟁 0.0734   ← 우리 배경은 이미 경쟁보다 평평하다
+        #   글자자리 대비 우리 0.4063 > 경쟁 0.2732 · 아주 밝은 픽셀(V>0.80) 우리 0.0913 vs 경쟁 0.0235
+        # 얼음빛 파랑(185,222,255)은 V가 255라, text_tint 를 0.88 까지 올려 흰 면적을 맞춘 대신
+        # 글자의 절반 이상이 '아주 밝은' 픽셀이 됐다. 그래서 배경을 누르는 손잡이(bg_flat)가 아니라
+        # 강조색을 낮추는 손잡이를 단다 — 자료 화면은 1픽셀도 안 건드린다(사장님 "자료가 보여야 한다").
+        tv = min(max(float(c.get('tint_v', 1.0)), 0.75), 1.0)   # 0.75 하한: 더 낮추면 글자가 회색으로 죽는다(화면 검증 2026-09-24)
+        im.paste(Image.new('RGB', (W, H), tuple(int(v * tv) for v in TINT)), (0, 0), mask); dr = ImageDraw.Draw(im)
     # 마지막 줄 노랑: 켜고 끄는 스위치가 아니라 '앞에서부터 몇 글자까지 노랑인가'(yellow_frac 0~1).
     # 경쟁 상위 노랑 면적은 롱폼 0.0258 · 쇼츠 0.0067 인데 한 줄 통째 노랑은 0.0526 이라 늘 넘어갔다 — 그래서 연속 손잡이로 바꿨다(2026-09-23).
     fr = c.get('yellow_frac')
@@ -180,6 +188,27 @@ def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
     last = parts[-1]
     n = snap(last, int(round(len(last) * fr)))
     if n: dr.text((xs[-1], ys[-1]), last[:n], font=fonts[-1], fill=YELLOW)   # 같은 자리에 같은 글자를 덮어 칠해 앞부분만 노랑
+    # 노랑 손잡이 2: 마지막 줄 글자의 아래쪽 yellow_tint 만큼만 노랑으로 칠한다(0~1).
+    # yellow_frac 은 '글자 몇 개'라 계단이다 — 쇼츠 실측(2026-09-24, 배경 3종 중앙값):
+    #   0/0.0997 → 0.0003 · 0.1088~0.2 → 0.0099 · 0.3~0.6 → 0.0169 · 1.0 → 0.0345.
+    # 경쟁 상위 쇼츠 목표 0.0067 은 '글자 0개'와 '1개' 사이에 있어 어떤 값으로도 못 맞춘다(루프 53~61회차 막힘).
+    # 밑줄(형광펜)도 대 봤지만 못 쓴다: 실측 yellow_bar 0.15 에서 노랑 0.0051 로 잘 듣는 대신
+    # text_bot 이 0.3009 → 0.3894 로 뛴다(목표 0.3093 에서 +26%, 새 차이가 생긴다).
+    # 측정의 글자 지도가 Canny 가장자리를 25x9 로 두 번 부풀리기 때문에, 가로로 긴 줄 하나가
+    # 아래 칸 전체를 글자로 칠해 버린다. 그래서 '새 잉크를 안 더하는' 쪽으로 간다 —
+    # text_tint 와 같은 방식으로 이미 있는 글자 픽셀의 아래쪽만 노랑으로 바꾼다. 글자량·대비는 그대로다.
+    yt = min(max(float(c.get('yellow_tint', 0.0)), 0.0), 1.0)
+    if yt > 0.001:
+        gl = Image.new('L', (W, H), 0); gd = ImageDraw.Draw(gl)
+        gd.text((xs[-1], ys[-1]), last, font=fonts[-1], fill=255)
+        col = Image.new('L', (1, H), 0)
+        for yy in range(max(0, int(ys[-1] + lhs[-1] * (1.0 - yt))), min(H, ys[-1] + lhs[-1] + 1)):
+            col.putpixel((0, yy), 255)
+        col = col.resize((W, H)).filter(ImageFilter.GaussianBlur(max(1, szs[-1] // 24)))
+        mask = Image.fromarray(
+            (np.asarray(gl, dtype=np.uint16) * np.asarray(col, dtype=np.uint16) // 255).astype(np.uint8)
+        ) if np is not None else Image.composite(gl, Image.new('L', (W, H), 0), col.point(lambda v: 255 if v > 127 else 0))
+        im.paste(Image.new('RGB', (W, H), YELLOW), (0, 0), mask); dr = ImageDraw.Draw(im)
     fb = body(int(W * 0.028))
     dr.rectangle([pad, pad, pad + 10, pad + int(W * 0.045)], fill=YELLOW)
     dr.text((pad + 24, pad), brand, font=fb, fill=(235, 235, 240))

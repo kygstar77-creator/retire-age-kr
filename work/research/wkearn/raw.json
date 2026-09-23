@@ -1,0 +1,530 @@
+{
+ "earnings": {
+  "2026-09-24": [
+   {
+    "lastYearRptDt": "9/25/2025",
+    "lastYearEPS": "$5.87",
+    "time": "time-after-hours",
+    "symbol": "COST",
+    "name": "Costco Wholesale Corporation",
+    "marketCap": "$398,869,266,000",
+    "fiscalQuarterEnding": "Aug/2026",
+    "epsForecast": "$6.48",
+    "noOfEsts": "11"
+   },
+   {
+    "lastYearRptDt": "9/18/2025",
+    "lastYearEPS": "$1.97",
+    "time": "time-pre-market",
+    "symbol": "DRI",
+    "name": "Darden Restaurants, Inc.",
+    "marketCap": "$24,360,210,400",
+    "fiscalQuarterEnding": "Aug/2026",
+    "epsForecast": "$2.06",
+    "noOfEsts": "11"
+   },
+   {
+    "lastYearRptDt": "9/25/2025",
+    "lastYearEPS": "$3.47",
+    "time": "time-pre-market",
+    "symbol": "SNX",
+    "name": "TD SYNNEX Corporation",
+    "marketCap": "$22,648,315,900",
+    "fiscalQuarterEnding": "Aug/2026",
+    "epsForecast": "$4.46",
+    "noOfEsts": "5"
+   },
+   {
+    "lastYearRptDt": "9/04/2025",
+    "lastYearEPS": "($0.35)",
+    "time": "time-not-supplied",
+    "symbol": "VFS",
+    "name": "VinFast Auto Ltd.",
+    "marketCap": "$7,556,701,200",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "N/A"
+   },
+   {
+    "lastYearRptDt": "9/25/2025",
+    "lastYearEPS": "$0.03",
+    "time": "time-pre-market",
+    "symbol": "BB",
+    "name": "BlackBerry Limited",
+    "marketCap": "$5,061,469,700",
+    "fiscalQuarterEnding": "Aug/2026",
+    "epsForecast": "$0.03",
+    "noOfEsts": "2"
+   },
+   {
+    "lastYearRptDt": "7/31/2025",
+    "lastYearEPS": "$0.45",
+    "time": "time-not-supplied",
+    "symbol": "HUBG",
+    "name": "Hub Group, Inc.",
+    "marketCap": "$1,960,581,500",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "$0.38",
+    "noOfEsts": "4"
+   },
+   {
+    "lastYearRptDt": "9/18/2025",
+    "lastYearEPS": "($2.52)",
+    "time": "time-after-hours",
+    "symbol": "SCHL",
+    "name": "Scholastic Corporation",
+    "marketCap": "$668,318,270",
+    "fiscalQuarterEnding": "Aug/2026",
+    "epsForecast": "($3.42)",
+    "noOfEsts": "2"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "($0.05)",
+    "time": "time-pre-market",
+    "symbol": "UXIN",
+    "name": "Uxin Limited",
+    "marketCap": "$241,978,288",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "2"
+   },
+   {
+    "lastYearRptDt": "9/25/2025",
+    "lastYearEPS": "$0.09",
+    "time": "time-after-hours",
+    "symbol": "LGCY",
+    "name": "Legacy Education Inc.",
+    "marketCap": "$126,520,384",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "N/A"
+   },
+   {
+    "lastYearRptDt": "9/04/2025",
+    "lastYearEPS": "$0.22",
+    "time": "time-not-supplied",
+    "symbol": "DAVA",
+    "name": "Endava plc",
+    "marketCap": "$114,631,240",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "$0.07",
+    "noOfEsts": "1"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "$0.57",
+    "time": "time-not-supplied",
+    "symbol": "YRD",
+    "name": "Yiren Digital Ltd.",
+    "marketCap": "$88,363,344",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "2"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "$0.08",
+    "time": "time-not-supplied",
+    "symbol": "IH",
+    "name": "iHuman Inc.",
+    "marketCap": "$58,268,664",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "2"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "$0.06",
+    "time": "time-not-supplied",
+    "symbol": "RAVE",
+    "name": "Rave Restaurant Group, Inc.",
+    "marketCap": "$40,076,616",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "2"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "($0.06)",
+    "time": "time-not-supplied",
+    "symbol": "EONR",
+    "name": "EON Resources Inc.",
+    "marketCap": "$25,483,856",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "2"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "($1.40)",
+    "time": "time-not-supplied",
+    "symbol": "CMMB",
+    "name": "Chemomab Therapeutics Ltd. ",
+    "marketCap": "$17,244,548",
+    "fiscalQuarterEnding": "Sep/2026",
+    "epsForecast": "",
+    "noOfEsts": "2"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "($1.75)",
+    "time": "time-not-supplied",
+    "symbol": "ASTC",
+    "name": "Astrotech Corporation",
+    "marketCap": "$14,668,868",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "2"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "$0.17",
+    "time": "time-not-supplied",
+    "symbol": "ALAR",
+    "name": "Alarum Technologies Ltd.",
+    "marketCap": "$14,645,951",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "2"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "($0.13)",
+    "time": "time-not-supplied",
+    "symbol": "BTOC",
+    "name": "Armlogi Holding Corp.",
+    "marketCap": "$11,815,201",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "2"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "($0.48)",
+    "time": "time-not-supplied",
+    "symbol": "SMXT",
+    "name": "Solarmax Technology Inc.",
+    "marketCap": "$10,859,672",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "2"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "($0.65)",
+    "time": "time-not-supplied",
+    "symbol": "BTTC",
+    "name": "Black Titan Corp",
+    "marketCap": "$7,750,726",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "2"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "($0.02)",
+    "time": "time-pre-market",
+    "symbol": "MITQ",
+    "name": "Moving iMage Technologies, Inc.",
+    "marketCap": "$6,332,463",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "2"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "($0.16)",
+    "time": "time-not-supplied",
+    "symbol": "ITP",
+    "name": "IT Tech Packaging, Inc.",
+    "marketCap": "$2,814,563",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "2"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "($99.99)",
+    "time": "time-not-supplied",
+    "symbol": "IPST",
+    "name": "IP Strategy Holdings, Inc.",
+    "marketCap": "$2,042,066",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "2"
+   }
+  ],
+  "2026-09-25": [
+   {
+    "lastYearRptDt": "9/25/2025",
+    "lastYearEPS": "($0.59)",
+    "time": "time-pre-market",
+    "symbol": "TBN",
+    "name": "Tamboran Resources Corporation",
+    "marketCap": "$1,234,614,140",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "($0.25)",
+    "noOfEsts": "2"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "N/A",
+    "time": "time-after-hours",
+    "symbol": "IVA",
+    "name": "Inventiva S.A.",
+    "marketCap": "$862,422,720",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "($0.20)",
+    "noOfEsts": "1"
+   },
+   {
+    "lastYearRptDt": "7/11/2025",
+    "lastYearEPS": "($0.16)",
+    "time": "time-not-supplied",
+    "symbol": "NB",
+    "name": "NioCorp Developments Ltd.",
+    "marketCap": "$543,039,680",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "($0.03)",
+    "noOfEsts": "1"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "N/A",
+    "time": "time-not-supplied",
+    "symbol": "HTLM",
+    "name": "HomesToLife Ltd",
+    "marketCap": "$162,334,368",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "1"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "$0.02",
+    "time": "time-not-supplied",
+    "symbol": "TRT",
+    "name": "Trio-Tech International",
+    "marketCap": "$115,754,568",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "1"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "($0.46)",
+    "time": "time-not-supplied",
+    "symbol": "ZONE",
+    "name": "Zone Frontier Inc.",
+    "marketCap": "$68,284,272",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "1"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "N/A",
+    "time": "time-not-supplied",
+    "symbol": "LITS",
+    "name": "Lite Strategy, Inc.",
+    "marketCap": "$41,447,440",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "1"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "($1.02)",
+    "time": "time-not-supplied",
+    "symbol": "CELU",
+    "name": "Celularity Inc.",
+    "marketCap": "$34,156,232",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "1"
+   },
+   {
+    "lastYearRptDt": "8/29/2025",
+    "lastYearEPS": "($1.20)",
+    "time": "time-not-supplied",
+    "symbol": "ENLV",
+    "name": "Enlivex Ltd.",
+    "marketCap": "$11,302,603",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "($0.31)",
+    "noOfEsts": "1"
+   },
+   {
+    "lastYearRptDt": "N/A",
+    "lastYearEPS": "N/A",
+    "time": "time-not-supplied",
+    "symbol": "LNAI",
+    "name": "Lunai Bioworks Inc.",
+    "marketCap": "$10,110,575",
+    "fiscalQuarterEnding": "Jun/2026",
+    "epsForecast": "",
+    "noOfEsts": "1"
+   }
+  ],
+  "2026-09-26": []
+ },
+ "div": {
+  "2026-09-24": [
+   {
+    "companyName": "NewtekOne, Inc. Common Stock",
+    "symbol": "NEWT",
+    "dividend_Ex_Date": "9/24/2026",
+    "payment_Date": "10/01/2026",
+    "record_Date": "9/24/2026",
+    "dividend_Rate": 0.19,
+    "indicated_Annual_Dividend": 0.76,
+    "announcement_Date": "9/14/2026"
+   },
+   {
+    "companyName": "NewtekOne, Inc. Depositary Shares, Non-Cumulative Perpetual Preferred Stock, Series B",
+    "symbol": "NEWTP",
+    "dividend_Ex_Date": "9/24/2026",
+    "payment_Date": "10/01/2026",
+    "record_Date": "9/24/2026",
+    "dividend_Rate": 0.53125,
+    "indicated_Annual_Dividend": 2.125,
+    "announcement_Date": "9/14/2026"
+   },
+   {
+    "companyName": "Seagate Technology Holdings PLC Ordinary Shares (Ireland)",
+    "symbol": "STX",
+    "dividend_Ex_Date": "9/24/2026",
+    "payment_Date": "10/07/2026",
+    "record_Date": "9/24/2026",
+    "dividend_Rate": 0.74,
+    "indicated_Annual_Dividend": 2.96,
+    "announcement_Date": "7/28/2026"
+   },
+   {
+    "companyName": "Strive, Inc. Variable Rate Series A Perpetual Preferred Stock",
+    "symbol": "SATA",
+    "dividend_Ex_Date": "9/24/2026",
+    "payment_Date": "9/25/2026",
+    "record_Date": "9/24/2026",
+    "dividend_Rate": 0.0516,
+    "indicated_Annual_Dividend": 12.8484,
+    "announcement_Date": "8/13/2026"
+   }
+  ],
+  "2026-09-25": [
+   {
+    "companyName": "Alerus Financial Corporation Common Stock",
+    "symbol": "ALRS",
+    "dividend_Ex_Date": "9/25/2026",
+    "payment_Date": "10/09/2026",
+    "record_Date": "9/25/2026",
+    "dividend_Rate": 0.22,
+    "indicated_Annual_Dividend": 0.88,
+    "announcement_Date": "8/27/2026"
+   },
+   {
+    "companyName": "Chicago Atlantic BDC, Inc. Common Stock",
+    "symbol": "LIEN",
+    "dividend_Ex_Date": "9/25/2026",
+    "payment_Date": "10/09/2026",
+    "record_Date": "9/25/2026",
+    "dividend_Rate": 0.34,
+    "indicated_Annual_Dividend": 1.36,
+    "announcement_Date": "8/10/2026"
+   },
+   {
+    "companyName": "First Guaranty Bancshares, Inc. Common Stock",
+    "symbol": "FGBI",
+    "dividend_Ex_Date": "9/25/2026",
+    "payment_Date": "9/30/2026",
+    "record_Date": "9/25/2026",
+    "dividend_Rate": 0.01,
+    "indicated_Annual_Dividend": 0.04,
+    "announcement_Date": "8/20/2026"
+   },
+   {
+    "companyName": "Heartland Express, Inc. Common Stock",
+    "symbol": "HTLD",
+    "dividend_Ex_Date": "9/25/2026",
+    "payment_Date": "10/07/2026",
+    "record_Date": "9/25/2026",
+    "dividend_Rate": 0.02,
+    "indicated_Annual_Dividend": 0.08,
+    "announcement_Date": "9/01/2026"
+   },
+   {
+    "companyName": "Imperial Petroleum Inc. 8.75% Series A Cumulative Redeemable Perpetual Preferred Shares",
+    "symbol": "IMPPP",
+    "dividend_Ex_Date": "9/25/2026",
+    "payment_Date": "9/30/2026",
+    "record_Date": "9/25/2026",
+    "dividend_Rate": 0.546875,
+    "indicated_Annual_Dividend": 2.1875,
+    "announcement_Date": "9/11/2026"
+   },
+   {
+    "companyName": "NRC Health Common Stock",
+    "symbol": "NRC",
+    "dividend_Ex_Date": "9/25/2026",
+    "payment_Date": "10/09/2026",
+    "record_Date": "9/25/2026",
+    "dividend_Rate": 0.16,
+    "indicated_Annual_Dividend": 0.64,
+    "announcement_Date": "7/15/2026"
+   },
+   {
+    "companyName": "Public Policy Holding Company, Inc. Common Stock",
+    "symbol": "PPHC",
+    "dividend_Ex_Date": "9/25/2026",
+    "payment_Date": "10/23/2026",
+    "record_Date": "9/25/2026",
+    "dividend_Rate": 0.117,
+    "indicated_Annual_Dividend": 0.48,
+    "announcement_Date": "9/11/2026"
+   },
+   {
+    "companyName": "Seanergy Maritime Holdings Corp. Common Stock",
+    "symbol": "SHIP",
+    "dividend_Ex_Date": "9/25/2026",
+    "payment_Date": "10/09/2026",
+    "record_Date": "9/25/2026",
+    "dividend_Rate": 0.35,
+    "indicated_Annual_Dividend": 0.8,
+    "announcement_Date": "7/28/2026"
+   },
+   {
+    "companyName": "Strive, Inc. Variable Rate Series A Perpetual Preferred Stock",
+    "symbol": "SATA",
+    "dividend_Ex_Date": "9/25/2026",
+    "payment_Date": "9/28/2026",
+    "record_Date": "9/25/2026",
+    "dividend_Rate": 0.0516,
+    "indicated_Annual_Dividend": 12.8484,
+    "announcement_Date": "8/13/2026"
+   },
+   {
+    "companyName": "TowneBank Common Stock",
+    "symbol": "TOWN",
+    "dividend_Ex_Date": "9/25/2026",
+    "payment_Date": "10/09/2026",
+    "record_Date": "9/25/2026",
+    "dividend_Rate": 0.28,
+    "indicated_Annual_Dividend": 1.12,
+    "announcement_Date": "8/26/2026"
+   },
+   {
+    "companyName": "United Maritime Corporation Common Stock",
+    "symbol": "USEA",
+    "dividend_Ex_Date": "9/25/2026",
+    "payment_Date": "10/09/2026",
+    "record_Date": "9/25/2026",
+    "dividend_Rate": 0.1,
+    "indicated_Annual_Dividend": 0.4,
+    "announcement_Date": "7/28/2026"
+   }
+  ],
+  "2026-09-26": []
+ },
+ "quote": {}
+}

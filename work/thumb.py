@@ -51,7 +51,7 @@ def cfg(kind):
     try: d = json.load(open(os.path.join(HERE, 'design.json'), encoding='utf-8'))
     except Exception: d = {}
     base = {'long': {'text_y': 0.72, 'bg_bright': 0.45, 'panel_alpha': 150, 'yellow_bottom': 1, 'yellow_frac': 1.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0},
-            'short': {'text_y': 0.52, 'bg_bright': 0.30, 'panel_alpha': 150, 'yellow_bottom': 0, 'yellow_frac': 0.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0}}[kind]
+            'short': {'text_y': 0.52, 'bg_bright': 0.30, 'panel_alpha': 150, 'yellow_bottom': 0, 'yellow_frac': 0.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'lines': 3, 'split_scale': 2.0}}[kind]
     base.update(d.get(kind, {})); return base
 
 def disp(sz):
@@ -86,6 +86,14 @@ def stroked(dr, xy, text, f, fill, sw):
     x, y = xy
     dr.text((x, y), text, font=f, fill=fill, stroke_width=sw, stroke_fill=BLACK)
 
+def split2(t):
+    """한 줄을 띄어쓰기 중 가운데에 가장 가까운 곳에서 둘로 나눈다. 말은 그대로, 순서도 그대로."""
+    sp = [i for i, ch in enumerate(t) if ch == ' ']
+    if not sp: return None
+    i = min(sp, key=lambda x: abs(x - len(t) / 2))
+    a, b = t[:i].strip(), t[i + 1:].strip()
+    return (a, b) if a and b else None
+
 def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
     c = cfg('short' if short else 'long')
     W, H = (1080, 1920) if short else (1280, 720)
@@ -102,54 +110,67 @@ def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
         im = Image.composite(Image.new('RGB', (W, H), (v + 14, v + 18, v + 34)), im, g.resize((W, H)))
     dr = ImageDraw.Draw(im)
     pad = int(W * 0.05); maxw = W - pad * 2
-    f1 = fit(dr, top, maxw); f2 = fit(dr, bottom, maxw)
-    sz = min(f1.size, f2.size)
+    # --- 몇 줄로 쓸 것인가 (쇼츠 3줄 판형, 2026-09-24) -------------------------------------
+    # 경쟁 쇼츠 상위는 세로 세 칸에 글자가 골고루 있다(top 0.2748 · mid 0.4241 · bot 0.3093, 296장 측정).
+    # 우리는 두 줄뿐이라 text_spread 를 한계 1.0 까지 올려도 text_bot 0.203 에서 멈췄다(loop 45회차 실측).
+    # 두 줄로는 칸이 둘뿐이라 구조적으로 못 닿는다 — 아랫줄을 띄어쓰기에서 둘로 나눠 세 칸을 채운다.
+    # 글자를 새로 짓지 않는다: 주어진 말 그대로, 순서 그대로, 줄만 바꾼다.
+    parts = [top, bottom]
+    if short and int(c.get('lines', 2)) >= 3:
+        sp = split2(bottom)
+        if sp: parts = [top, sp[0], sp[1]]
+    fs = [fit(dr, t, maxw) for t in parts]
+    sz = min(f.size for f in fs)
     # 흰 면적은 흰 글자 픽셀에서 나온다. 외곽선(검정)으로는 줄지 않아 글자 크기를 손잡이로 뒀다(2026-09-23).
     sz = max(int(W * 0.055), int(sz * min(max(float(c.get('text_scale', 1.0)), 0.66), 1.0)))
-    f1 = disp(sz); f2 = disp(sz)
-    lh = int(sz * 1.18); block = lh * 2
-    y0 = int(min(max(c['text_y'], 0.15), 0.80) * H) - block // 2   # 글자 세로 위치. loop.py가 실측 차이를 보고 움직인다
-    # 두 줄을 위·아래로 벌린다(text_spread 0~1). 쇼츠(1080x1920)는 두 줄을 붙여 놓으면 세로 셋 중 한 칸에만 글자가 들어가
-    # text_y를 어디로 옮겨도 top·bot 두 칸을 동시에 채울 수 없었다(2026-09-23 step19~23 "듣지 않는 손잡이" 5회차).
-    # 경쟁 쇼츠 상위는 top 0.2748 · mid 0.4241 · bot 0.3093 으로 세 칸에 다 글자가 있다 — 훅을 위, 답을 아래에 두는 판형.
+    szs = [sz] * len(parts)
+    if len(parts) == 3:
+        # 나눈 두 줄은 짧아져서 폭에 여유가 생긴다 — 그 여유만큼 키운다(split_scale, 1.0이면 안 키움).
+        ss = min(max(float(c.get('split_scale', 1.0)), 1.0), 2.0)
+        for i in (1, 2): szs[i] = max(sz, min(fit(dr, parts[i], maxw).size, int(sz * ss)))
+    fonts = [disp(x) for x in szs]; lhs = [int(x * 1.18) for x in szs]
+    cy = int(min(max(c['text_y'], 0.15), 0.80) * H)   # 글자 세로 가운데. loop.py가 실측 차이를 보고 움직인다
+    # 줄을 위·아래로 벌린다(text_spread 0~1).
     spread = min(max(float(c.get('text_spread', 0.0)), 0.0), 1.0)
-    off = int(spread * H * 0.30)
-    ya = max(int(H * 0.04), y0 - off)                        # 윗줄
-    yb = min(H - lh - int(H * 0.05), y0 + lh + off)           # 아랫줄
+    if len(parts) == 2:
+        off = int(spread * H * 0.30)
+        y0 = cy - lhs[0]
+        ys = [max(int(H * 0.04), y0 - off), min(H - lhs[1] - int(H * 0.05), y0 + lhs[0] + off)]
+    else:
+        off = int(spread * H * 0.26)
+        m0 = cy - lhs[1] // 2
+        ys = [max(int(H * 0.04), m0 - lhs[0] - off), m0, min(H - lhs[2] - int(H * 0.05), m0 + lhs[1] + off)]
     # 글자 뒤 어둡게 — 벌어졌으면 줄마다 따로, 붙어 있으면 한 덩이로
     sh = Image.new('RGBA', (W, H), (0, 0, 0, 0)); dsh = ImageDraw.Draw(sh)
-    if off > lh * 0.4:
-        for y in (ya, yb): dsh.rectangle([0, y - int(lh * 0.35), W, y + lh + int(lh * 0.3)], fill=(0, 0, 0, int(c['panel_alpha'])))
+    if off > lhs[0] * 0.4:
+        for y, l in zip(ys, lhs): dsh.rectangle([0, y - int(l * 0.35), W, y + l + int(l * 0.3)], fill=(0, 0, 0, int(c['panel_alpha'])))
     else:
-        dsh.rectangle([0, ya - int(lh * 0.35), W, yb + lh + int(lh * 0.3)], fill=(0, 0, 0, int(c['panel_alpha'])))
+        dsh.rectangle([0, ys[0] - int(lhs[0] * 0.35), W, ys[-1] + lhs[-1] + int(lhs[-1] * 0.3)], fill=(0, 0, 0, int(c['panel_alpha'])))
     im = Image.alpha_composite(im.convert('RGBA'), sh.filter(ImageFilter.GaussianBlur(28))).convert('RGB'); dr = ImageDraw.Draw(im)
-    sw = max(3, int(sz // max(6, c['stroke_ratio'])))
-    tx = (W - dr.textlength(top, font=f1)) / 2
-    stroked(dr, (tx, ya), top, f1, WHITE, sw)
-    # 아랫줄 노랑: 켜고 끄는 스위치가 아니라 '앞에서부터 몇 글자까지 노랑인가'(yellow_frac 0~1).
-    # 경쟁 상위 노랑 면적은 롱폼 0.0258 · 쇼츠 0.0067 인데 한 줄 통째 노랑은 0.0526 이라 늘 넘어갔다 — 그래서 연속 손잡이로 바꿨다(2026-09-23).
-    fr = c.get('yellow_frac')
-    if fr is None: fr = 1.0 if c.get('yellow_bottom', 1) else 0.0
-    fr = min(max(float(fr), 0.0), 1.0)
-    bx = (W - dr.textlength(bottom, font=f2)) / 2
-    stroked(dr, (bx, yb), bottom, f2, WHITE, sw)          # 외곽선은 줄 전체에 한 번만
-    # 흰 면적 손잡이 2: 두 줄 모두 아래쪽 text_tint 만큼을 아이보리로 덮는다(노랑보다 먼저 — 노랑이 위에 온다)
+    xs = [(W - dr.textlength(t, font=f)) / 2 for t, f in zip(parts, fonts)]
+    for t, f, x, y, z in zip(parts, fonts, xs, ys, szs):
+        stroked(dr, (x, y), t, f, WHITE, max(3, int(z // max(6, c['stroke_ratio']))))   # 외곽선은 줄마다 한 번만
+    # 흰 면적 손잡이 2: 줄마다 아래쪽 text_tint 만큼을 얼음빛 파랑으로 덮는다(노랑보다 먼저 — 노랑이 위에 온다)
     tt = min(max(float(c.get('text_tint', 0.0)), 0.0), 1.0)
     if tt > 0.001:
         gl = Image.new('L', (W, H), 0); gd = ImageDraw.Draw(gl)
-        gd.text((tx, ya), top, font=f1, fill=255)
-        gd.text((bx, yb), bottom, font=f2, fill=255)
+        for t, f, x, y in zip(parts, fonts, xs, ys): gd.text((x, y), t, font=f, fill=255)
         col = Image.new('L', (1, H), 0)                      # 줄마다 아래 tt 만큼만 1
-        for ly in (ya, yb):
-            top_of_tint = int(ly + lh * (1.0 - tt))
-            for y in range(max(0, top_of_tint), min(H, ly + lh + 1)): col.putpixel((0, y), 255)
+        for y, l in zip(ys, lhs):
+            for yy in range(max(0, int(y + l * (1.0 - tt))), min(H, y + l + 1)): col.putpixel((0, yy), 255)
         col = col.resize((W, H)).filter(ImageFilter.GaussianBlur(max(1, sz // 24)))   # 경계를 부드럽게
         mask = Image.fromarray(
             (np.asarray(gl, dtype=np.uint16) * np.asarray(col, dtype=np.uint16) // 255).astype(np.uint8)
         ) if np is not None else Image.composite(gl, Image.new('L', (W, H), 0), col.point(lambda v: 255 if v > 127 else 0))
         im.paste(Image.new('RGB', (W, H), TINT), (0, 0), mask); dr = ImageDraw.Draw(im)
-    n = snap(bottom, int(round(len(bottom) * fr)))
-    if n: dr.text((bx, yb), bottom[:n], font=f2, fill=YELLOW)   # 같은 자리에 같은 글자를 덮어 칠해 앞부분만 노랑
+    # 마지막 줄 노랑: 켜고 끄는 스위치가 아니라 '앞에서부터 몇 글자까지 노랑인가'(yellow_frac 0~1).
+    # 경쟁 상위 노랑 면적은 롱폼 0.0258 · 쇼츠 0.0067 인데 한 줄 통째 노랑은 0.0526 이라 늘 넘어갔다 — 그래서 연속 손잡이로 바꿨다(2026-09-23).
+    fr = c.get('yellow_frac')
+    if fr is None: fr = 1.0 if c.get('yellow_bottom', 1) else 0.0
+    fr = min(max(float(fr), 0.0), 1.0)
+    last = parts[-1]
+    n = snap(last, int(round(len(last) * fr)))
+    if n: dr.text((xs[-1], ys[-1]), last[:n], font=fonts[-1], fill=YELLOW)   # 같은 자리에 같은 글자를 덮어 칠해 앞부분만 노랑
     fb = body(int(W * 0.028))
     dr.rectangle([pad, pad, pad + 10, pad + int(W * 0.045)], fill=YELLOW)
     dr.text((pad + 24, pad), brand, font=fb, fill=(235, 235, 240))

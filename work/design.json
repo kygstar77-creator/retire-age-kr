@@ -2,30 +2,33 @@
  "short": {
   "text_y": 0.5019,
   "bg_bright": 0.3794,
-  "panel_alpha": 150,
+  "panel_alpha": 128,
   "yellow_bottom": 0,
   "num_yellow": 1,
   "stroke_ratio": 40,
-  "yellow_frac": 0.3978,
+  "yellow_frac": 0.1224,
   "text_scale": 1.0,
-  "text_spread": 1.0,
-  "bg_sat": 2.3572,
-  "text_tint": 0.6889
+  "text_spread": 0.45,
+  "bg_sat": 1.4056,
+  "text_tint": 0.9455,
+  "lines": 3,
+  "split_scale": 2.0
  },
  "long": {
-  "text_y": 0.62,
+  "text_y": 0.5,
   "bg_bright": 1.7447,
   "panel_alpha": 212,
   "yellow_bottom": 0,
   "num_yellow": 1,
   "stroke_ratio": 16,
   "yellow_frac": 0.4769,
-  "text_scale": 1.0
+  "text_scale": 1.0,
+  "bg_sat": 1.4032
  },
  "video": {
   "zoom": 0.0009
  },
- "step": 42,
+ "step": 46,
  "_memo": {
   "short.white.stroke_ratio=40": 0.0301,
   "long.yellow.yellow_bottom=1": 0.0526,
@@ -52,9 +55,14 @@
   "short.text_top.text_spread=1.0": 0.3804,
   "short.yellow.yellow_frac=0.4896": 0.0085,
   "short.white.text_tint=0.0": 0.0273,
-  "short.yellow.yellow_frac=0.3978": 0.0086,
+  "short.yellow.yellow_frac=0.3978": 0.0089,
   "short.yellow.yellow_frac=0.3009": 0.0154,
   "short.white.text_tint=0.5478": 0.0174,
-  "short.white.text_tint=0.7689": 0.0076
+  "short.white.text_tint=0.7689": 0.0076,
+  "short.sat.bg_sat=2.3572": 0.5455,
+  "long.sat.bg_sat=0.8": 0.2225,
+  "short.yellow.yellow_frac=0.2856": 0.0099,
+  "short.contrast.panel_alpha=150": 0.2638,
+  "short.white.text_tint=0.85": 0.0144
  }
 }

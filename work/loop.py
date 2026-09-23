@@ -101,6 +101,12 @@ BAND_KEYS = ('text_top', 'text_mid', 'text_bot')
 BAND_KNOB = {'long': 'text_y', 'short': 'text_spread'}
 BAND_GRID = {'long':  [0.20, 0.35, 0.50, 0.62, 0.72, 0.80],
              'short': [0.0, 0.15, 0.30, 0.45, 0.60, 0.80, 1.0]}
+# 손잡이 하나로는 세 칸을 못 맞춘다(2026-09-24 실측): 쇼츠 두 줄 판형은 text_spread 를 한계 1.0 까지 올려도
+# text_bot 0.203 에서 멈췄다(경쟁 0.3093). 칸이 둘뿐인데 목표는 셋이라 구조적으로 못 닿는 것이었다.
+# 그래서 아랫줄을 띄어쓰기에서 둘로 나눠 세 칸을 채우고(thumb.lines=3), 나뉘어 짧아진 두 줄을
+# 폭 여유만큼 키우는 split_scale 을 두 번째 손잡이로 뒀다. 실측(lines=3): 1.0 → bot 0.1091,
+# 1.3 → 0.1565, 1.6 → 0.2144, 2.0 → 0.3035(세 칸 오차 합 0.8496 → 0.4092; 두 줄 판형 최선은 0.7165).
+BAND_KNOB2 = {'short': ('split_scale', [1.0, 1.3, 1.6, 2.0])}
 
 def band_err(rows, kind, spec):
     """세 칸 상대오차 합. 작을수록 경쟁 판형에 가깝다"""
@@ -111,13 +117,13 @@ def band_err(rows, kind, spec):
     if not got: return None, {}
     return sum(abs(got[k] - tgt[k]) / max(tgt[k], 1e-3) for k in got), got
 
-def tune_bands(design, spec, kind, did, blocked):
-    """격자를 실제로 그려 재고 가장 나은 값을 고른다. 미는 게 아니라 재는 것이라 흔들리지 않는다"""
-    knob = BAND_KNOB[kind]; d = design.setdefault(kind, {})
+def grid_pick(design, spec, kind, knob, base_grid, did, blocked):
+    """손잡이 하나를 격자로 실제로 그려 재고 가장 나은 값을 고른다. 미는 게 아니라 재는 것이라 흔들리지 않는다"""
+    d = design.setdefault(kind, {})
     cur = d.get(knob)
     if cur is None:
         cur = float(THUMB_DEFAULT.get(kind, {}).get(knob, 0.0))
-    grid = sorted(set(BAND_GRID[kind] + [round(float(cur), 4)]))
+    grid = sorted(set(base_grid + [round(float(cur), 4)]))
     best, table = None, []
     for v in grid:
         d[knob] = v
@@ -135,6 +141,15 @@ def tune_bands(design, spec, kind, did, blocked):
         did.append(f"{kind}.{knob} {cur} → {best['v']} (세 칸 오차 합 {was['err'] if was else '?'} → {best['err']}, 격자 {len(grid)}점 실측)")
     else:
         did.append(f"{kind}.{knob} {cur} 유지 (격자 {len(grid)}점 중 오차 합 {best['err']} 이 가장 작다)")
+    return table
+
+
+def tune_bands(design, spec, kind, did, blocked):
+    """세 칸 맞추기. 손잡이를 하나씩 차례로 골라 내려간다(좌표 하강) — 곱으로 다 돌면 너무 오래 걸린다."""
+    table = grid_pick(design, spec, kind, BAND_KNOB[kind], BAND_GRID[kind], did, blocked)
+    if kind in BAND_KNOB2 and table:
+        k2, g2 = BAND_KNOB2[kind]
+        table = grid_pick(design, spec, kind, k2, g2, did, blocked) or table
     return table
 
 

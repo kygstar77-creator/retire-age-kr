@@ -3,7 +3,7 @@
 #                                                          work/research/yt/lessons_<날짜>.md 에 훅(첫 30초)·구조(분 단위 첫 문장)·제목 패턴·자주 쓰는 말을 정리
 #   python work/ytlearn.py --channels UCxxxx UCyyyy        → 채널 ID 직접
 # 키 없음. youtube_transcript_api(자막)·yt-dlp(스토리보드 URL만, 영상 다운로드 안 함)·RSS 사용. 자막 없는 영상은 건너뛴다.
-import sys, os, re, json, time, subprocess, collections, urllib.request, urllib.parse
+import sys, os, re, json, time, subprocess, collections, urllib.request, urllib.parse, urllib.error
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, 'research', 'yt'); os.makedirs(OUT, exist_ok=True)
 H = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0) Chrome/126', 'Accept-Language': 'ko'}
@@ -13,18 +13,55 @@ def subs_num(s):
     if not m: return 0
     n = float(m.group(1)); return int(n * (10000 if m.group(2) == '만' else 1000 if m.group(2) == '천' else 1))
 
+def unesc(t):
+    # JSON 안의 유니코드 이스케이프를 글자로 되돌린다(채널 이름에 섞여 나온다).
+    try: return json.loads('"' + t + '"')
+    except Exception: return t
+
 def search_channels(q, n=5):
     s = get('https://www.youtube.com/results?' + urllib.parse.urlencode({'search_query': q, 'sp': 'EgIQAg%3D%3D'}))
     out = []
-    for m in re.finditer(r'"channelRenderer":\{"channelId":"(UC[\w-]+)".*?"title":\{"simpleText":"([^"]+)"\}.*?(?:"subscriberCountText"|"videoCountText")[^}]*?"simpleText":"([^"]+)"', s, re.S):
-        out.append({'id': m.group(1), 'name': m.group(2), 'subs': subs_num(m.group(3)), 'subs_text': m.group(3)})
+    # 2026-09-24 실측: 유튜브가 필드를 뒤바꿨다. subscriberCountText 에는 @핸들이, videoCountText 에는 '구독자 3.71만명'이 들어온다.
+    # 그래서 예전 정규식은 구독자 수 자리에 @핸들을 넣었고 subs 가 전부 0이 돼 '상위 채널' 정렬이 무의미했다.
+    # 필드 이름을 믿지 말고 채널 블록 안에서 '구독자 …명' 글자를 직접 찾는다.
+    for blk in s.split('{"channelRenderer":')[1:]:
+        blk = blk[:4000]
+        cid = re.match(r'\{"channelId":"(UC[\w-]+)"', blk)
+        ttl = re.search(r'"title":\{"simpleText":"([^"]+)"', blk)
+        if not (cid and ttl): continue
+        sub = re.search(r'"(구독자 [^"]+명)"', blk)
+        han = re.search(r'"canonicalBaseUrl":"/(@[\w.-]+)"', blk)
+        out.append({'id': cid.group(1), 'name': unesc(ttl.group(1)),
+                    'subs': subs_num(sub.group(1) if sub else ''), 'subs_text': sub.group(1) if sub else '?',
+                    'handle': han.group(1) if han else None})
     out.sort(key=lambda x: -x['subs']); return out[:n]
 
-def channel_videos(cid, n=2):
-    f = get(f'https://www.youtube.com/feeds/videos.xml?channel_id={cid}')
-    vids = re.findall(r'<entry>.*?<title>(.*?)</title>.*?<yt:videoId>(.*?)</yt:videoId>.*?<published>(.*?)</published>.*?<media:statistics views="(\d+)"', f, re.S)
-    vids = [{'title': t, 'id': v, 'pub': p[:10], 'views': int(c)} for t, v, p, c in vids]
-    vids.sort(key=lambda x: -x['views']); return vids[:n], [v['title'] for v in vids]
+def resolve_handle(handle):
+    # 채널 ID가 낡아 RSS 가 404 일 때 핸들(@xxx) 페이지에서 지금 ID를 다시 읽는다.
+    try:
+        m = re.search(r'"(?:externalId|channelId)":"(UC[\w-]+)"', get(f'https://www.youtube.com/{handle}'))
+        return m.group(1) if m else None
+    except Exception: return None
+
+def channel_videos(cid, n=2, handle=None):
+    f = None
+    for attempt in (1, 2, 3):
+        try:
+            f = get(f'https://www.youtube.com/feeds/videos.xml?channel_id={cid}'); break
+        except urllib.error.HTTPError as e:
+            if e.code >= 500 and attempt < 3: time.sleep(3); continue      # 500·503 은 일시 오류 — 쉬고 다시
+            if e.code == 404 and handle and attempt < 3:
+                c2 = resolve_handle(handle)
+                if c2 and c2 != cid: cid = c2; continue                    # 404 는 ID가 낡은 것 — 핸들로 다시 찾는다
+            raise
+    if f is None: raise RuntimeError('RSS 응답 없음')
+    vids = []
+    for e in re.findall(r'<entry>(.*?)</entry>', f, re.S):   # 한 항목에 조회수가 빠져도 그 항목만 0으로 두고 살린다(예전엔 통째로 버렸다)
+        t = re.search(r'<title>(.*?)</title>', e, re.S); v = re.search(r'<yt:videoId>(.*?)</yt:videoId>', e)
+        p = re.search(r'<published>(.*?)</published>', e); c = re.search(r'<media:statistics views="(\d+)"', e)
+        if not (t and v): continue
+        vids.append({'title': t.group(1), 'id': v.group(1), 'pub': p.group(1)[:10] if p else '', 'views': int(c.group(1)) if c else 0})
+    vids.sort(key=lambda x: -x['views']); return vids[:n], [x['title'] for x in vids]
 
 def transcript(vid):
     from youtube_transcript_api import YouTubeTranscriptApi
@@ -50,7 +87,8 @@ def main():
     args = sys.argv[1:]
     channels = []
     if args and args[0] == '--channels':
-        channels = [{'id': c, 'name': c, 'subs_text': '?'} for c in args[1:]]
+        channels = [({'id': c, 'name': c, 'subs_text': '?', 'handle': None} if c.startswith('UC')
+                     else {'id': resolve_handle(c) or c, 'name': c, 'subs_text': '?', 'handle': c}) for c in args[1:]]
     else:
         for q in (args or ['부동산', '미국주식', '배당', '연금', 'ETF']):
             found = search_channels(q); print(f'== "{q}" 상위 채널:', ' · '.join(f"{c['name']}({c['subs_text']})" for c in found))
@@ -59,7 +97,7 @@ def main():
     day = time.strftime('%Y-%m-%d'); lessons = [f'# 유튜브 학습 {day} — 채널 {len(channels)}개', '']
     words = collections.Counter(); hooks = []; titles_all = []
     for c in channels:
-        try: top, titles = channel_videos(c['id'])
+        try: top, titles = channel_videos(c['id'], handle=c.get('handle'))
         except Exception as e: print(c['name'], 'RSS 실패', str(e)[:60]); continue
         titles_all += titles
         lessons.append(f"## {c['name']} ({c.get('subs_text','?')}, 검색어 {c.get('q','-')})")

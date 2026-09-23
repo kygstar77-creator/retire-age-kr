@@ -77,9 +77,16 @@ def main():
     recent = sorted(pkgs, key=lambda p: -os.path.getmtime(os.path.join(p, 'published.txt')))[:20]
     ver = [load(os.path.join(p, 'verify.txt'), {}) for p in recent]
     okv = sum(1 for v in ver if v and v.get('ok'))
-    cc = sum(1 for p in recent if os.path.exists(os.path.join(p, 'check_gpt.txt')))
+    # 2026-09-24: 검증 비율이 check_gpt.txt만 세는 바람에 제미나이 무료 할당량(429)이 차는 날은
+    # 모든 묶음이 selfcheck로 제대로 검증됐는데도 0.0으로 찍혔다. 그러면 일감표 맨 위에 영영 남고
+    # 회차가 닫을 수 없는 항목이 된다. 사장님 지시(2026-09-23)대로 selfcheck도 검증으로 센다.
+    # 다만 바깥 모델을 못 쓴 사실은 따로 보이게 남긴다 — 429가 숨지 않도록.
+    def _has(p, *names): return any(os.path.exists(os.path.join(p, n)) for n in names)
+    cc = sum(1 for p in recent if _has(p, 'check_gpt.txt', 'check_gemini.txt', 'check_self.txt'))
+    ext = sum(1 for p in recent if _has(p, 'check_gpt.txt', 'check_gemini.txt'))
     M += [('품질', '최근 20편 실물검증 통과율', round(okv / max(1, len(recent)), 3), 0.95, 3, 'naverpost verify BAD → rewrite'),
-          ('품질', '최근 20편 교차검증 비율', round(cc / max(1, len(recent)), 3), 1.0, 3, 'crosscheck.py check 누락 회차 확인(키·시간)')]
+          ('품질', '최근 20편 검증 비율(교차 또는 자체)', round(cc / max(1, len(recent)), 3), 1.0, 3, '검증 없이 발행한 회차 확인 → crosscheck 실패 시 selfcheck 필수'),
+          ('품질', '최근 20편 바깥모델 교차검증 비율', round(ext / max(1, len(recent)), 3), 1.0, 1, '제미나이 429면 selfcheck로 대체됨 — 유료 키가 생기면 올라간다')]
 
     perf = load(os.path.join(HERE, 'perf_log.json'), {})
     if perf:

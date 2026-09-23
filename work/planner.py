@@ -107,6 +107,11 @@ def main():
         if sid == 'C6': return '이번 주 상위 유튜브 영상이 말한 숫자 3개 원문 검증(lessons_*.md에서)'
         if sid == 'C7': return '이번 주 내부자 매수 공시 상위 10(EDGAR Form 4·Nasdaq insider)'
         return '?'
+    lines = [f'# 내일 편성 {TOM} (planner.py, 생성 {time.strftime("%H:%M")})', '',
+             '## 데이터가 말하는 것', '- 유튜브 제목 %d개 조회 가중 패턴: ' % ntitles + ' · '.join(f'{k} {v}%' for k, v in sorted(pats.items(), key=lambda kv: -kv[1])),
+             '- 우리 블로그 형식별 제목검색 10위 안 비율: ' + (' · '.join(f'형식{f} {p}%({n}편)' for f, (p, n) in perf.items()) if perf else '측정치 없음'),
+             '- 카페 축 실측 조회 중앙값: ' + ' · '.join(f'{k} {v}' for k, v in CAFE_AXIS_VIEWS.items()), *[f'- {m}' for m in mkt], '',
+             '## 제목 규칙(위 패턴에서): 숫자 1개 이상 필수, 나이·금액이 있으면 앞에, 질문형은 하루 3편 이하, 자극어 금지(우리 규칙), 비교형은 카페에.', '']
     lines += ['## 오늘 글감(유튜브·카페에서 자가발전 루틴이 모은 것 — 있으면 같은 축 슬롯을 대체)', *([f'- {i}' for i in idea] or ['- 없음']), '']
     for name, series in (('블로그', blog_series), ('카페', cafe_series)):
         lines.append(f'## {name} 24슬롯'); lines.append('| 시 | 시리즈 | 형식 | 주제 | 먼저 할 일 |'); lines.append('|---|---|---|---|---|')

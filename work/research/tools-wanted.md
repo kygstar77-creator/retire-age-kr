@@ -7,3 +7,4 @@
 | FRED API 키 | 미국 금리·물가 시계열 | fred.stlouisfed.org My Account → API Keys(무료) | 대기 |
 | Alpha Vantage 키 | PER·배당률·실적(야후가 막음) | alphavantage.co 무료 키 | 대기 |
 | MCP 커넥터(Alpha Vantage·FMP) | 위와 같음, PC 앱에서만 연결 가능 | PC에서 이 대화의 커넥터 카드 | 대기 |
+| 공공데이터포털 키(국토부 실거래가 API) | 부동산 시리즈(B4·B8) 아파트 실거래 원자료 | data.go.kr 가입 → 활용신청(무료, 자동승인) | 대기 |

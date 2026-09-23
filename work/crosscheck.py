@@ -55,18 +55,37 @@ def gemini_models(kv):
 
 def gemini_pick(kv, prefer='pro'):
     if kv.get('MODEL'): return kv['MODEL']
-    ids = gemini_models(kv)
-    pats = (r'^gemini-\d+(\.\d+)?-pro$', r'^gemini-\d+(\.\d+)?-flash$') if prefer == 'pro' else (r'^gemini-\d+(\.\d+)?-flash$', r'^gemini-\d+(\.\d+)?-pro$')
-    for pat in pats:
-        c = [i for i in ids if re.match(pat, i)]
-        if c: return sorted(c, key=lambda s: [float(x) for x in re.findall(r'\d+\.?\d*', s)[:1]])[-1]
+    ids = [i for i in gemini_models(kv) if not re.search(r'tts|image|embed|audio|live|omni|lite|robot|computer|customtools|thinking|exp', i)]
+    def ver(i):
+        m = re.search(r'gemini-(\d+(?:\.\d+)?)', i); return float(m.group(1)) if m else 0
+    order = ('pro', 'flash') if prefer == 'pro' else ('flash', 'pro')
+    for kind in order:
+        c = [i for i in ids if kind in i]
+        if c: return sorted(c, key=lambda i: (ver(i), 'preview' not in i))[-1]
     return ids[-1]
 
+def gemini_candidates(kv, prefer='pro'):
+    ids = [i for i in gemini_models(kv) if not re.search(r'tts|image|embed|audio|live|omni|lite|robot|computer|customtools|thinking|exp', i)]
+    def ver(i):
+        m = re.search(r'gemini-(\d+(?:\.\d+)?)', i); return float(m.group(1)) if m else 0
+    pro = sorted([i for i in ids if 'pro' in i], key=lambda i: (ver(i), 'preview' not in i), reverse=True)
+    flash = sorted([i for i in ids if 'flash' in i], key=lambda i: (ver(i), 'preview' not in i), reverse=True)
+    if kv.get('MODEL'): return [kv['MODEL']] + flash[:3]
+    return (pro[:1] + flash[:4]) if prefer == 'pro' else flash[:4]
+
 def gemini_chat(kv, system, user, prefer='pro'):
-    model = gemini_pick(kv, prefer)
-    d = http(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={kv["KEY"]}',
-             {'system_instruction': {'parts': [{'text': system}]}, 'contents': [{'parts': [{'text': user}]}]})
-    return model, ''.join(p.get('text', '') for p in d['candidates'][0]['content']['parts'])
+    # 무료 등급은 Pro 한도가 없거나 작고(429), 인기 모델은 한때 503이 난다(2026-09-23 실측). 후보를 차례로 시도하고 성공한 모델 이름을 돌려준다.
+    last = None
+    for model in gemini_candidates(kv, prefer):
+        try:
+            d = http(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={kv["KEY"]}',
+                     {'system_instruction': {'parts': [{'text': system}]}, 'contents': [{'parts': [{'text': user}]}]})
+            return model, ''.join(p.get('text', '') for p in d['candidates'][0]['content']['parts'])
+        except RuntimeError as e:
+            last = e
+            if any(x in str(e) for x in ('HTTP 429', 'HTTP 404', 'HTTP 503', 'quota', 'UNAVAILABLE')): time.sleep(2); continue
+            raise
+    raise last
 
 # ---- 묶음 읽기 ----
 def read_pkg(pkg):
@@ -93,7 +112,7 @@ GPT_USER = """아래는 [사실표]로 쓴 네이버 {kind} 글이다. 오늘은
 [글]
 {body}"""
 GEMINI_SYSTEM = '너는 네이버 블로그·카페 글의 구조와 말투를 보는 편집자다. 사실·숫자는 건드리지 말고, 새 정보·전망·권유·질문형 마무리를 넣자고 하지 마라.'
-GEMINI_USER = """아래 네이버 {kind} 글({'평어체' if kind == '블로그' else '합쇼체'})을 모바일 독자 눈으로 봐 줘. 오늘은 {today}.
+GEMINI_USER = """아래 네이버 {kind} 글({tone_word})을 모바일 독자 눈으로 봐 줘. 오늘은 {today}.
 지적할 것만: (1) 첫 세 줄이 읽는 사람이 바로 얻는 게 뭔지 말해 주는지 (2) 소제목·문단 순서가 자연스러운지 (3) 한 문단이 길어 끊어야 할 곳 (4) 같은 말 반복 (5) 사람이 안 쓰는 표현·번역투 (6) 숫자가 문장 속에서 읽히는지.
 형식: 번호 · 원문 문장(그대로) · 문제 · 고친 문장. 고친 문장은 그대로 붙여 넣을 수 있게 완성된 문장으로 써. 사실·숫자·결론은 바꾸지 마. 잘한 점은 적지 마. 어색한 문장은 많으면 15개까지 전부 골라.
 
@@ -155,7 +174,7 @@ def main():
     else: done.append('GPT 건너뜀 — openai_key.txt 없음')
     if gm:
         try:
-            model, out = gemini_chat(gm, GEMINI_SYSTEM, GEMINI_USER.format(kind=kind, today=TODAY, title=title, body=body), prefer='flash')
+            model, out = gemini_chat(gm, GEMINI_SYSTEM, GEMINI_USER.format(kind=kind, tone_word=('평어체' if kind == '블로그' else '합쇼체'), today=TODAY, title=title, body=body), prefer='flash')
             open(os.path.join(pkg, 'check_gemini.txt'), 'w', encoding='utf-8').write(f'[{model} {time.strftime("%Y-%m-%d %H:%M")}]\n' + out); done.append(f'Gemini({model}) 구조·말투 {len(out)}자 → check_gemini.txt')
         except Exception as e: done.append('Gemini 실패: ' + str(e)[:200])
     else: done.append('Gemini 건너뜀 — gemini_key.txt 없음')

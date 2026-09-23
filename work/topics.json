@@ -396,7 +396,7 @@
   {
    "kw": "연봉계산기",
    "axis": "fire",
-   "vol": 348700,
+   "vol": 353500,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -941,7 +941,7 @@
   {
    "kw": "월급계산기",
    "axis": "fire",
-   "vol": 106800,
+   "vol": 107700,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -1101,7 +1101,7 @@
   {
    "kw": "연봉실수령액",
    "axis": "fire",
-   "vol": 75300,
+   "vol": 76100,
    "week": 3,
    "adcomp": "높음",
    "quote": false
@@ -2610,7 +2610,7 @@
   {
    "kw": "파이어족",
    "axis": "fire",
-   "vol": 12900,
+   "vol": 12890,
    "week": 6,
    "adcomp": "낮음",
    "quote": false
@@ -2691,7 +2691,7 @@
   {
    "kw": "건강보험피부양자",
    "axis": "fire",
-   "vol": 12190,
+   "vol": 12410,
    "week": null,
    "quote": false
   },
@@ -3216,7 +3216,7 @@
   {
    "kw": "연봉",
    "axis": "fire",
-   "vol": 8450,
+   "vol": 8580,
    "week": null,
    "adcomp": "중간",
    "quote": false
@@ -5208,7 +5208,7 @@
   {
    "kw": "순자산",
    "axis": "fire",
-   "vol": 3430,
+   "vol": 3500,
    "week": 5,
    "adcomp": "높음",
    "quote": false
@@ -5865,7 +5865,7 @@
   {
    "kw": "1억모으기",
    "axis": "fire",
-   "vol": 2750,
+   "vol": 2780,
    "week": null,
    "quote": false
   },
@@ -6120,7 +6120,7 @@
   {
    "kw": "노후준비",
    "axis": "fire",
-   "vol": 2560,
+   "vol": 2630,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -6976,7 +6976,7 @@
   {
    "kw": "생활비",
    "axis": "fire",
-   "vol": 2060,
+   "vol": 2170,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -7105,7 +7105,7 @@
   {
    "kw": "대학생생활비대출",
    "axis": "fire",
-   "vol": 1960,
+   "vol": 1950,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -7930,7 +7930,7 @@
   {
    "kw": "노후생활비",
    "axis": "fire",
-   "vol": 1520,
+   "vol": 1540,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -8195,7 +8195,7 @@
   {
    "kw": "월급통장추천",
    "axis": "fire",
-   "vol": 1420,
+   "vol": 1390,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -8653,7 +8653,7 @@
   {
    "kw": "노후자금",
    "axis": "fire",
-   "vol": 1290,
+   "vol": 1280,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -8757,7 +8757,7 @@
   {
    "kw": "연봉순위",
    "axis": "fire",
-   "vol": 1270,
+   "vol": 1290,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -9095,7 +9095,7 @@
   {
    "kw": "평균연봉",
    "axis": "fire",
-   "vol": 1140,
+   "vol": 1130,
    "week": null,
    "adcomp": "중간",
    "quote": false
@@ -9223,7 +9223,7 @@
   {
    "kw": "월급쟁이재테크",
    "axis": "fire",
-   "vol": 1100,
+   "vol": 1090,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -9456,7 +9456,7 @@
   {
    "kw": "경제적자유",
    "axis": "fire",
-   "vol": 1030,
+   "vol": 1040,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -9922,7 +9922,7 @@
   {
    "kw": "노후자격증",
    "axis": "fire",
-   "vol": 930,
+   "vol": 920,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -10379,7 +10379,7 @@
   {
    "kw": "연봉협상",
    "axis": "fire",
-   "vol": 850,
+   "vol": 880,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -10796,7 +10796,7 @@
   {
    "kw": "금감원연봉",
    "axis": "fire",
-   "vol": 770,
+   "vol": 760,
    "week": null,
    "adcomp": "중간",
    "quote": false
@@ -11197,7 +11197,7 @@
   {
    "kw": "40대평균자산",
    "axis": "fire",
-   "vol": 710,
+   "vol": 730,
    "week": null,
    "quote": false
   },
@@ -12469,7 +12469,7 @@
   {
    "kw": "연봉테이블",
    "axis": "fire",
-   "vol": 560,
+   "vol": 580,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -13078,7 +13078,7 @@
   {
    "kw": "생활비카드",
    "axis": "fire",
-   "vol": 500,
+   "vol": 490,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -13534,7 +13534,7 @@
   {
    "kw": "가정부월급",
    "axis": "fire",
-   "vol": 470,
+   "vol": 460,
    "week": null,
    "adcomp": "중간",
    "quote": false
@@ -13911,7 +13911,7 @@
   {
    "kw": "직장인평균연봉",
    "axis": "fire",
-   "vol": 440,
+   "vol": 430,
    "week": null,
    "adcomp": "중간",
    "quote": false
@@ -13919,7 +13919,7 @@
   {
    "kw": "검안사연봉",
    "axis": "fire",
-   "vol": 440,
+   "vol": 450,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -14152,7 +14152,7 @@
   {
    "kw": "지역가입자건강보험료",
    "axis": "fire",
-   "vol": 420,
+   "vol": 410,
    "week": null,
    "quote": false
   },
@@ -14223,14 +14223,6 @@
   {
    "kw": "개인연금IRP",
    "axis": "tax",
-   "vol": 410,
-   "week": null,
-   "adcomp": "높음",
-   "quote": false
-  },
-  {
-   "kw": "사파이어가격",
-   "axis": "fire",
    "vol": 410,
    "week": null,
    "adcomp": "높음",
@@ -14327,7 +14319,7 @@
   {
    "kw": "연봉높은직업",
    "axis": "fire",
-   "vol": 410,
+   "vol": 420,
    "week": null,
    "adcomp": "중간",
    "quote": false
@@ -15140,7 +15132,7 @@
   {
    "kw": "40대노후준비",
    "axis": "fire",
-   "vol": 360,
+   "vol": 350,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -15733,7 +15725,7 @@
   {
    "kw": "연봉정보",
    "axis": "fire",
-   "vol": 320,
+   "vol": 330,
    "week": null,
    "adcomp": "높음",
    "quote": false
@@ -15741,7 +15733,7 @@
   {
    "kw": "연봉확인",
    "axis": "fire",
-   "vol": 320,
+   "vol": 310,
    "week": null,
    "adcomp": "낮음",
    "quote": false
@@ -16141,14 +16133,14 @@
   {
    "kw": "은퇴준비",
    "axis": "fire",
-   "vol": 220,
+   "vol": 210,
    "week": null,
    "quote": false
   },
   {
    "kw": "조기은퇴",
    "axis": "fire",
-   "vol": 210,
+   "vol": 200,
    "week": null,
    "quote": false
   },
@@ -16162,14 +16154,14 @@
   {
    "kw": "4%룰",
    "axis": "fire",
-   "vol": 170,
+   "vol": 160,
    "week": null,
    "quote": false
   },
   {
    "kw": "순자산순위",
    "axis": "fire",
-   "vol": 170,
+   "vol": 180,
    "week": null,
    "quote": false
   },

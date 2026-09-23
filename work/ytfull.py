@@ -41,7 +41,7 @@ vids = listing(); print(name, '전체 영상', len(vids), flush=True)
 # 최신순(채널 목록 순서)으로 훑으며 업로드일이 DAYS보다 오래되면 멈춘다. 날짜는 영상 메타(-j)에서 본다(가벼운 호출).
 import datetime
 cutoff = (datetime.date.today() - datetime.timedelta(days=DAYS)).strftime('%Y%m%d')
-recent = []
+recent = []; fails = 0
 for v in vids[:limit]:
     rec0 = index.get(v['id'], {})
     if rec0.get('date'):
@@ -52,7 +52,11 @@ for v in vids[:limit]:
         j = json.loads(subprocess.run(YT + ['--skip-download', '-j', f"https://www.youtube.com/watch?v={v['id']}"], capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=120).stdout)
         v['date'] = j.get('upload_date', ''); v['views'] = j.get('view_count') or v['views']; v['dur'] = j.get('duration') or v['dur']
     except Exception: v['date'] = ''
-    if v['date'] and v['date'] < cutoff: break
+    if not v['date']:
+        fails += 1
+        if fails >= 3: print('영상 정보 조회가 계속 실패(차단 중일 수 있음) — 이번 회차 중단', flush=True); break
+        continue
+    if v['date'] < cutoff: break
     recent.append(v); time.sleep(3)
 vids = recent; print(name, f'최근 {DAYS}일 영상', len(vids), flush=True)
 api = YouTubeTranscriptApi(); done = 0; t0 = time.time()

@@ -57,7 +57,8 @@ def draw(rows, out, title):
                 f1 = font(fs); tw = dr.textlength(r['sym'], font=f1)
                 dr.text((ix + (iw - tw) / 2, iy + ih / 2 - fs * 0.95), r['sym'], font=f1, fill=(245, 245, 245))
                 if ih > 48:
-                    f2 = font(max(11, int(fs * 0.62)), False); s2 = f'{r["pct"]:+.2f}%'; tw2 = dr.textlength(s2, font=f2)
+                    # 칸에 찍을 값 — 부동산 히트맵처럼 색(편차)과 보여 줄 숫자(실제값)가 다를 때 label을 쓴다
+                    f2 = font(max(11, int(fs * 0.62)), False); s2 = r.get('label') or f'{r["pct"]:+.2f}%'; tw2 = dr.textlength(s2, font=f2)
                     dr.text((ix + (iw - tw2) / 2, iy + ih / 2 + fs * 0.15), s2, font=f2, fill=(235, 235, 235))
         dr.rectangle([x, y, x + w, y + 18], fill=(40, 40, 46))
         dr.text((x + 6, y + 1), KO.get(sec, sec), font=font(14, False), fill=(220, 220, 220))

@@ -1,76 +1,122 @@
-# 숏폼(9:16, 45~60초) 자동 제작 — 유튜브 쇼츠·인스타 릴스·틱톡·네이버 클립 공용 파일. 사장님 2026-09-23 "숏폼 다 만들어봐".
+# 숏폼(9:16) 자동 제작 — 유튜브 쇼츠·릴스·틱톡·네이버 클립 공용. 경쟁 459편 실측 규칙 반영(2026-09-23).
 #   py -3.12 work/shorts.py <대본.json> [출력.mp4]
-# 대본 형식: {"title": "...", "scenes": [{"label": "위 작은 글", "head": "큰 제목(한 줄~두 줄)", "lines": ["줄1", "줄2"], "image": "선택 png/jpg", "say": "읽을 문장(없으면 head+lines)"}], "outro": "마지막 한 줄"}
-# 그림: PIL(1080x1920, 검정 바탕·흰 큰 글자·숫자 강조), 음성: edge-tts(무료), 합치기: imageio-ffmpeg. 자막은 화면에 이미 큰 글자로 박혀 있어 무음 재생에도 읽힌다.
+# 대본은 shortscript.py(Gemini)가 쓴다. 내(클로드) 문장은 쓰지 않는다.
+#
+# 실측에서 가져온 규칙
+#  - 길이: 경쟁 쇼츠 80편 중앙 42초(30~55초가 대부분) → 장면 4~5개 × 8~11초, 총 45초 안팎
+#  - 글자: 제목체(Black Han Sans) 흰색 + 강조 줄 노란색, 검은 외곽선. 가로폭 88% 채움
+#  - 화면: 정지 금지. 장면마다 천천히 확대/이동(Ken Burns)과 0.25초 밀어넣기 전환으로 속도감
+#  - 첫 3초에 숫자가 보여야 한다(경쟁 쇼츠 제목 43%가 숫자)
 import sys, os, re, json, asyncio, subprocess, shutil, time
 sys.stdout.reconfigure(encoding='utf-8')
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter
 import edge_tts, imageio_ffmpeg
 HERE = os.path.dirname(os.path.abspath(__file__)); FD = os.path.join(HERE, 'fonts'); FF = imageio_ffmpeg.get_ffmpeg_exe()
-W, H = 1080, 1920; VOICE = 'ko-KR-SunHiNeural'
+W, H = 1080, 1920; VOICE = 'ko-KR-SunHiNeural'; YELLOW = (255, 214, 10); WHITE = (245, 245, 250)
+try: CFG = json.load(open(os.path.join(HERE, 'design.json'), encoding='utf-8')).get('video', {})
+except Exception: CFG = {}
+ZOOM = CFG.get('zoom', 0.0009)
 TMP = os.path.join(os.environ.get('TEMP', 'C:/Temp'), 'shorts_' + str(int(time.time()))); os.makedirs(TMP, exist_ok=True)
 
-def font(sz, bold=True):
+def disp(sz):
+    p = os.path.join(FD, 'BlackHanSans.ttf')
+    return ImageFont.truetype(p, sz) if os.path.exists(p) else ImageFont.truetype(os.path.join(FD, 'pd700.ttf'), sz)
+
+def body(sz, bold=False):
     p = os.path.join(FD, 'pd700.ttf' if bold else 'pd500.ttf')
-    return ImageFont.truetype(p, sz) if os.path.exists(p) else ImageFont.truetype(r'C:\Windows\Fonts\malgunbd.ttf' if bold else r'C:\Windows\Fonts\malgun.ttf', sz)
+    return ImageFont.truetype(p, sz) if os.path.exists(p) else ImageFont.truetype(r'C:\Windows\Fonts\malgun.ttf', sz)
 
-def wrap(dr, text, f, maxw):
-    lines, cur = [], ''
-    for w in text.split():
-        t = (cur + ' ' + w).strip()
-        if dr.textlength(t, font=f) <= maxw: cur = t
-        else:
-            if cur: lines.append(cur)
-            cur = w
-    if cur: lines.append(cur)
-    return lines
+def fit_lines(dr, text, maxw, maxsz=150, minsz=54):
+    """제목을 1~2줄로 나누고, 폭을 꽉 채우는 크기를 찾는다"""
+    words = text.split()
+    for sz in range(maxsz, minsz - 1, -2):
+        f = disp(sz); lines, cur = [], ''
+        for w in words:
+            t = (cur + ' ' + w).strip()
+            if dr.textlength(t, font=f) <= maxw: cur = t
+            else:
+                if cur: lines.append(cur)
+                cur = w
+        if cur: lines.append(cur)
+        if len(lines) <= 2 and all(dr.textlength(l, font=f) <= maxw for l in lines): return f, lines
+    f = disp(minsz); return f, [text[:14], text[14:28]]
 
-def draw_num(dr, x, y, text, f, fill=(255, 255, 255), accent=(255, 214, 10)):
-    """숫자·%·억·원은 노란색으로 강조해서 한 줄 그리기"""
-    for tok in re.split(r'(\d[\d,.]*\s?(?:%|억|만원|원|달러|배|세대|㎡|층|년|월|일|개|편|건|회)?)', text):
+def draw_tokens(dr, x, y, text, f, base, sw):
+    """숫자·단위는 노랑, 나머지는 base 색"""
+    for tok in re.split(r'(\d[\d,.]*\s?(?:%|억|만원|원|달러|배|세대|㎡|층|년|월|일|개|편|건|회|위|퍼센트)?)', text):
         if not tok: continue
-        dr.text((x, y), tok, font=f, fill=accent if re.match(r'\d', tok) else fill); x += dr.textlength(tok, font=f)
+        col = YELLOW if re.match(r'\d', tok) else base
+        dr.text((x, y), tok, font=f, fill=col, stroke_width=sw, stroke_fill=(0, 0, 0)); x += dr.textlength(tok, font=f)
 
 def scene_png(sc, idx, total, title, out):
-    im = Image.new('RGB', (W, H), (14, 14, 18)); dr = ImageDraw.Draw(im)
-    dr.rectangle([0, 0, W, 8], fill=(255, 214, 10)); dr.rectangle([0, 8, int(W * (idx + 1) / total), 16], fill=(255, 214, 10))   # 진행 바
-    dr.text((60, 60), title[:40], font=font(36, False), fill=(160, 160, 170))
-    y = 200
-    if sc.get('label'): dr.text((60, y), sc['label'], font=font(44, False), fill=(255, 214, 10)); y += 80
-    f = font(92)
-    for l in wrap(dr, sc.get('head', ''), f, W - 120)[:3]: draw_num(dr, 60, y, l, f); y += 112
-    y += 30
-    img = sc.get('image')
-    if img and os.path.exists(img):
-        pic = Image.open(img).convert('RGB'); r = min((W - 80) / pic.width, 700 / pic.height); pic = pic.resize((int(pic.width * r), int(pic.height * r)))
-        im.paste(pic, ((W - pic.width) // 2, y)); y += pic.height + 40
-    f2 = font(54, False)
-    for line in sc.get('lines', [])[:6]:
-        for l in wrap(dr, line, f2, W - 120)[:2]:
-            draw_num(dr, 60, y, l, f2, fill=(230, 230, 235)); y += 72
-        y += 12
-    dr.text((60, H - 120), '파이어맵 · cafe.naver.com/firemap', font=font(34, False), fill=(120, 120, 130))
+    bgp = sc.get('image')
+    if bgp and os.path.exists(bgp):
+        im = Image.open(bgp).convert('RGB'); r = max(W / im.width, H / im.height)
+        im = im.resize((int(im.width * r) + 1, int(im.height * r) + 1)).crop((0, 0, W, H))
+        im = ImageEnhance.Brightness(im).enhance(0.42)
+    else:
+        im = Image.new('RGB', (W, H), (11, 12, 16))
+        top = Image.new('RGB', (W, H), (26, 30, 48)); mask = Image.new('L', (1, H))
+        for y in range(H): mask.putpixel((0, y), int(70 * (1 - y / H)))
+        im = Image.composite(top, im, mask.resize((W, H)))
+    dr = ImageDraw.Draw(im); pad = 56; maxw = W - pad * 2
+    dr.rectangle([0, 0, W, 10], fill=(60, 60, 70)); dr.rectangle([0, 0, int(W * (idx + 1) / total), 10], fill=YELLOW)
+    y = 300
+    if sc.get('label'):
+        fl = body(46, True); tw = dr.textlength(sc['label'], font=fl)
+        dr.rounded_rectangle([pad, y - 14, pad + tw + 44, y + 70], 16, fill=YELLOW)
+        dr.text((pad + 22, y), sc['label'][:20], font=fl, fill=(10, 10, 12)); y += 118
+    f, lines = fit_lines(dr, sc.get('head', ''), maxw)
+    sw = max(5, f.size // 14)
+    for l in lines:
+        draw_tokens(dr, pad, y, l, f, WHITE, sw); y += int(f.size * 1.22)
+    y += 44
+    fb = body(56)
+    for line in sc.get('lines', [])[:4]:
+        dr.rectangle([pad, y + 16, pad + 8, y + 58], fill=YELLOW)
+        seg = line if dr.textlength(line, font=fb) <= maxw - 30 else line[:int(len(line) * (maxw - 30) / max(1, dr.textlength(line, font=fb)))]
+        draw_tokens(dr, pad + 30, y, seg, fb, (228, 228, 236), 3); y += 86
+    dr.text((pad, H - 108), '파이어맵 · cafe.naver.com/firemap', font=body(34), fill=(130, 130, 142))
     im.save(out)
 
-def tts(text, mp3): asyncio.run(edge_tts.Communicate(text, VOICE, rate='+8%').save(mp3))
+def tts(text, mp3): asyncio.run(edge_tts.Communicate(text, VOICE, rate='+10%').save(mp3))
+
+def dur_of(path):
+    pr = FF.replace('ffmpeg', 'ffprobe')
+    if not os.path.exists(pr): return None
+    r = subprocess.run([pr, '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', path], capture_output=True, text=True)
+    try: return float(r.stdout.strip())
+    except ValueError: return None
 
 def build(script, out):
-    scenes = script['scenes']; parts = []
-    if script.get('outro'): scenes = scenes + [{'head': script['outro'], 'say': script['outro']}]
+    scenes = list(script['scenes'])
+    if script.get('outro'): scenes.append({'head': script['outro'], 'say': script['outro']})
+    parts = []
     for i, sc in enumerate(scenes):
         png = os.path.join(TMP, f's{i:02d}.png'); scene_png(sc, i, len(scenes), script.get('title', ''), png)
         say = sc.get('say') or ' '.join([sc.get('head', '')] + sc.get('lines', []))
         mp3 = os.path.join(TMP, f'a{i:02d}.mp3'); tts(say, mp3)
-        seg = os.path.join(TMP, f'p{i:02d}.mp4')
-        subprocess.run([FF, '-y', '-loglevel', 'error', '-loop', '1', '-i', png, '-i', mp3, '-c:v', 'libx264', '-tune', 'stillimage', '-r', '30', '-c:a', 'aac', '-b:a', '128k', '-pix_fmt', 'yuv420p', '-af', 'apad=pad_dur=0.4', '-shortest', seg], check=True)
+        d = (dur_of(mp3) or 6) + 0.5
+        seg = os.path.join(TMP, f'p{i:02d}.mp4'); n = max(2, int(d * 30))
+        # Ken Burns: 홀수 장면은 확대, 짝수는 축소 — 정지 화면이 아니게
+        z = f"zoompan=z='min(zoom+{ZOOM},1.12)':d={n}:s={W}x{H}:fps=30" if i % 2 == 0 else f"zoompan=z='if(lte(zoom,1.0),1.12,max(1.001,zoom-{ZOOM}))':d={n}:s={W}x{H}:fps=30"
+        subprocess.run([FF, '-y', '-loglevel', 'error', '-loop', '1', '-i', png, '-i', mp3,
+                        '-filter_complex', f'[0:v]scale={W*2}:{H*2},{z},scale={W}:{H},setsar=1[v]', '-map', '[v]', '-map', '1:a',
+                        '-c:v', 'libx264', '-r', '30', '-c:a', 'aac', '-b:a', '128k', '-pix_fmt', 'yuv420p',
+                        '-af', 'apad=pad_dur=0.45', '-t', f'{d:.2f}', seg], check=True)
         parts.append(seg)
     lst = os.path.join(TMP, 'list.txt'); open(lst, 'w', encoding='utf-8').write(''.join(f"file '{p.replace(chr(92), '/')}'\n" for p in parts))
     tmp_out = os.path.join(TMP, 'final.mp4')
     subprocess.run([FF, '-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', lst, '-c', 'copy', tmp_out], check=True)
     os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True); shutil.copy(tmp_out, out)
-    dur = float(subprocess.run([FF.replace('ffmpeg', 'ffprobe'), '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', tmp_out], capture_output=True, text=True).stdout or 0) if os.path.exists(FF.replace('ffmpeg', 'ffprobe')) else -1
-    print('완성', out, os.path.getsize(out), 'bytes', f'{dur:.0f}초' if dur > 0 else '')
-    shutil.copy(os.path.join(TMP, 's00.png'), os.path.splitext(out)[0] + '_thumb.png')
+    total = dur_of(out)
+    # 썸네일은 thumb.py 규칙으로 따로(첫 장면 재활용 금지)
+    try:
+        sys.path.insert(0, HERE); import thumb
+        s0 = scenes[0]; thumb.make(s0.get('head', script.get('title', ''))[:16], (s0.get('lines') or [script.get('title', '')])[0][:18],
+                                   os.path.splitext(out)[0] + '_thumb.png', s0.get('image'), short=True)
+    except Exception as e: print('썸네일 실패', str(e)[:60])
+    print('완성', out, f'{os.path.getsize(out):,} bytes', f'{total:.0f}초' if total else '')
 
 if __name__ == '__main__':
     script = json.load(open(sys.argv[1], encoding='utf-8'))

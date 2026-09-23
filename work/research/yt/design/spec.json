@@ -1,0 +1,31 @@
+{
+ "n": 296,
+ "long": {
+  "bright": 0.4307,
+  "contrast": 0.3977,
+  "sat": 0.3153,
+  "yellow": 0.0258,
+  "red": 0.0228,
+  "white": 0.1092,
+  "dark": 0.4571,
+  "text": 0.8751,
+  "text_top": 0.9241,
+  "text_mid": 0.9469,
+  "text_bot": 0.7345,
+  "text_thick": 0.9222
+ },
+ "short": {
+  "bright": 0.1672,
+  "contrast": 0.1791,
+  "sat": 0.3991,
+  "yellow": 0.0067,
+  "red": 0.0,
+  "white": 0.0107,
+  "dark": 0.8463,
+  "text": 0.3325,
+  "text_top": 0.2748,
+  "text_mid": 0.4241,
+  "text_bot": 0.3093,
+  "text_thick": 0.7778
+ }
+}

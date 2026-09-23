@@ -140,3 +140,10 @@ Telegram request_access가 두 번(인자 전부/최소) 모두 "can't be approv
 - 생활비는 22개 도시 전부 됨 — Numbeo `?displayCurrency=KRW`가 **원화로 바로** 준다(환율 계산 필요 없음). "서울 대비 몇 % 싸다" 문장도 화면에 그대로 있다.
 - 막힘: 발리(fazwaz.com 404 / fazwaz.id Cloudflare 403)·스페인 도시(idealista.com 403)는 매물이 안 되고 생활비만. 글에는 '실매물 미확인'이라고 적는다.
 - 카드 선택자: FazWaz `div.result-search__item`(단지명은 동네 줄 바로 위, LISTED/UPDATED 배지 건너뛰기), Idealista `article.item` + `a.item-link`.
+
+## 자가개선 루프 (2026-09-23) — 사장님 "내가 묻지 않아도 계속 발전하게"
+- `work/loop.py` 한 바퀴: 경쟁 채널 수집(ytdesign) → 썸네일 픽셀 측정(thumbstat) → 우리 샘플을 지금 설정으로 그려서 같은 자로 측정 → 차이를 `work/design.json`의 **그리기 손잡이**(text_y·bg_bright·panel_alpha·yellow_bottom·stroke_ratio·zoom)로 옮김 → `work/loop_log.json` 기록. 조회가 내려가면 지난 조정을 되돌린다.
+- 루틴 **firemap-loop**(2시간마다 :45)가 돌린다. 루프가 못 닫는 차이는 그 회차가 직접 코드를 고쳐 닫고, 숫자로 확인한다.
+- 첫 측정(경쟁 264장, 롱폼 207·쇼츠 32): 롱폼 상위는 대비 0.372(하위 0.289)·노랑 0.050(0.017)·흰색 0.101(0.080)·위쪽 글자 0.911(0.736). 쇼츠 상위는 오히려 **채도·노랑이 낮고**(0.200/0.007) 글자가 가운데(text_mid 0.430). → 쇼츠에 노랑을 많이 쓰던 내 추측이 틀렸다.
+- 제목 실측(459편): 쇼츠 중앙 33자·42초, 따옴표 25%(조회 +27%)·지역명 28%(+30%)·경고어 8%(+38%). 롱폼 38자, 퍼센트 3%(조회 62,992 — 표본 작음)·경고어 15%(25,754)·따옴표 13%(12,657).
+- 무료 폰트 설치: Black Han Sans(제목), Noto Sans KR Black — 둘 다 OFL. `work/fonts/`.

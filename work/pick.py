@@ -195,5 +195,5 @@ def section_rotation():
     names = {'1': '① 원문 정리형', '2': '② 계산 사례형', '3': '③ 일정형', '4': '④ 통계·기록형'}
     nxt = min(forms, key=lambda k: forms[k])
     print('=== 다음 형식: %s   (오늘 %s)' % (names[nxt], ' '.join('%s=%d' % (names[k][:1], v) for k, v in forms.items())))
-    print('=== 축 남은 칸(하루 3편 상한): %s' % ' · '.join('%s %d' % (k, max(0, 3 - v)) for k, v in axes.items()))
+    print('=== 축 남은 칸(하루 6편 상한): %s' % ' · '.join('%s %d' % (k, max(0, 6 - v)) for k, v in axes.items()))
     print('    묶음에 pkg/form.txt(1~4)·pkg/axis.txt(세금연금|종목|부동산|배당현금흐름)를 만들어야 여기 잡힌다.\n')

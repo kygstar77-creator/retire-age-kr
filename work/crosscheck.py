@@ -101,11 +101,26 @@ GEMINI_USER = """아래 네이버 {kind} 글({'평어체' if kind == '블로그'
 
 [글]
 {body}"""
-DRAFT_USER = """네이버 {kind}(개인 재테크, 모바일 독자)에 올릴 글 초안을 써 줘. 아래 [확인된 사실]만 쓰고, 여기 없는 숫자·날짜·해석·전망·권유·경험담은 절대 추가하지 마. 글쓴이의 개인 경험이나 지인 이야기를 지어내지 마. 마지막은 질문이 아니라 사실 문장으로 끝내라. 오늘은 {today}.
-{kind} 분량: {'1,900~2,400자 평어체' if kind == '블로그' else '1,200~1,500자 합쇼체'}.
+DRAFT_USER = """네이버 {kind}(개인 재테크, 모바일 독자)에 올릴 글을 써 줘. 아래 [확인된 사실]만 쓰고, 여기 없는 숫자·날짜·해석·전망·권유·경험담은 절대 추가하지 마. 글쓴이의 개인 경험이나 지인 이야기를 지어내지 마. 오늘은 {today}.
+[제목] {title}
+[꼭 담을 항목 — 사람들이 검색하는 것] {wants}
+
+말투와 형식:
+{tone}
+- 소제목은 줄 하나로 따로 쓰고 앞에 '## '를 붙여. 소제목 3~4개.
+- 사진이 들어갈 자리에 '[이미지]' 한 줄을 {img}번 넣어(첫 문단 뒤에 하나).
+- 마지막은 질문이 아니라 사실 문장으로 끝내. 이모지 없음. "정리하면·핵심은·결론적으로·시사한다" 쓰지 마.
+- 글이 스스로를 설명하는 문장("원문을 대조했습니다", "이 글은 ~만 다뤘습니다") 쓰지 마. 출처는 맨 끝에 한 줄.
+- 분량: {length}.
 
 [확인된 사실]
 {facts}"""
+TONE_BLOG = """- 평어체(~다·~이다), 담백하게. 첫 문단은 읽는 사람이 바로 얻는 게 뭔지 세 줄 안에.
+- 한 문단 2~4문장, 숫자는 문장 속에서 읽히게(예: "12억을 넘으면 그때부터 세금이 붙는다")."""
+TONE_CAFE = """- 카페 회원에게 말하듯. 첫 문장은 회원이 겪는 상황 한 줄(예: "집은 있는데 매달 들어오는 돈이 없다는 글이 자주 올라오죠").
+- 문장은 짧게(평균 30자 안팎). ~습니다·~입니다는 네 문장 중 하나만, 나머지는 ~죠·~네요·~요·~다를 섞어.
+- 법 조문 번호를 본문에 나열하지 마(출처 줄에만). 본문은 "그래서 뭐가 달라지나"로 풀어.
+- 저는·제가 같은 1인칭은 열 문장에 한 번 정도, 단 경험은 지어내지 마."""
 
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'models'
@@ -113,10 +128,18 @@ def main():
     if cmd == 'models':
         print('OpenAI:', ('키 없음' if not oa else openai_pick(oa)), '| Gemini:', ('키 없음' if not gm else gemini_pick(gm))); return
     pkg = os.path.abspath(sys.argv[2]); facts, title, body, kind = read_pkg(pkg)
-    if not body and cmd == 'check': print('조각 파일 없음:', pkg); sys.exit(2)
     if cmd == 'draft':
+        op = os.path.join(pkg, 'order.txt')
+        if os.path.exists(op): kind = '카페' if '카페' in open(op, encoding='utf-8').readline() else '블로그'
+        elif len(sys.argv) > 3: kind = '카페' if sys.argv[3] == 'cafe' else '블로그'
+    if not body and cmd == 'check': print('조각 파일 없음:', pkg); sys.exit(2)
+    if cmd == 'draft':   # 글은 Gemini가 쓴다(사장님 2026-09-23: 내 한국어 문장은 전·후 다 이상하다). 나는 사실표·검증·조립만.
         if not gm: print('Gemini 키 없음 — 초안 건너뜀'); sys.exit(3)
-        model, out = gemini_chat(gm, '너는 개인 재테크 글을 쓰는 사람이다.', DRAFT_USER.format(kind=kind, today=TODAY, facts=facts))
+        wp = os.path.join(pkg, 'wants.txt'); wants = open(wp, encoding='utf-8').read().strip() if os.path.exists(wp) else '(없음)'
+        tone = TONE_BLOG if kind == '블로그' else TONE_CAFE
+        length = '2,400~3,000자(공백 포함)' if kind == '블로그' else '1,500~1,900자(공백 포함)'
+        model, out = gemini_chat(gm, '너는 한국 개인 재테크 블로그·카페에 글을 쓰는 사람이다. 한국 사람이 실제로 쓰는 문장으로 쓴다.',
+                                 DRAFT_USER.format(kind=kind, today=TODAY, title=title, wants=wants, tone=tone, img=6 if kind == '블로그' else 3, length=length, facts=facts), prefer='pro')
         open(os.path.join(pkg, 'gemini_draft.txt'), 'w', encoding='utf-8').write(out); print(f'Gemini({model}) 초안 {len(out)}자 → pkg/gemini_draft.txt'); return
     done = []
     if oa:

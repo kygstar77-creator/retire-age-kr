@@ -129,3 +129,6 @@ Telegram request_access가 두 번(인자 전부/최소) 모두 "can't be approv
 
 ## 교차검증은 API로 (2026-09-23)
 사장님 지시(09-14) "내 초안 → ChatGPT(사실·정확성) → Gemini(구조·말투) → 검증 안 된 건 뺀다"를 루틴이 09-20~23 동안 빼먹었다(웨일 창에서 손으로 하던 단계라 무인 루틴에 옮기지 않았다). `work/crosscheck.py check <pkg>`가 같은 프롬프트로 API를 부른다. 키는 `Documents\openai_key.txt`, `Documents\gemini_key.txt`(KEY=…). Gemini는 무료 등급 있음(ai.google.dev/pricing 확인). 키가 없으면 그 역할은 건너뛰고 runs note에 남긴다.
+
+## 파이썬은 3.12로 (2026-09-23)
+구글 라이브러리가 2026-10-04부터 3.10 지원을 끊는다는 경고가 떠서 전부 3.12로 옮겼다(`py -3.12`, 패키지·Playwright 크로미움 설치·주요 스크립트 시험 완료). 루틴 지시문은 `py -3.12 work/...`로 바꿨다. `python`은 아직 3.10을 가리키므로 새 스크립트 호출은 `py -3.12`로 쓴다.

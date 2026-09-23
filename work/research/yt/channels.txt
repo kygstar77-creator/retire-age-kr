@@ -1,0 +1,14 @@
+# 매일 수집할 채널(최근 90일치만). 형식: 채널ID 이름 분야
+UCC3yfxS5qC6PCwDzetUuEWg 소수몽키 미국주식
+UCfnqgWlC5IvJEAPTmyjaixA 수페TV 미국주식
+UC9meL6XNNckzlleWelmO9tQ 투미TV 부동산
+UClWhdsAcFX-t5OsBC7yWuSA 부동산쿨TV 부동산
+UCMsuAb9v3Q1AB89bB5EFK7A 하이클래스부동산 부동산
+UCHmXGmj6JA-4iQ1UFMC7LYw KB부동산TV 부동산
+UC3nsb3SxlRrJQ9egkKNnlfg 리치고TV 부동산
+UCaXYdIFec07keCSvEQ87-Bg 저평가아파트발굴단 부동산
+UCEoF-IS2vWlL1MGIMBry5Lw 아파트써처 부동산
+UCGzEAhEIZuQA7EibT-W-lCg 시크릿브라더TV 부동산
+UCU09s-DZfqlZsbIm49WbOZw 김경민의노트 부동산
+UCjtt1zQiVYuVgtSPyLj9wwA 오피스텔TV 부동산
+UCJ6pu5zitBOSNALEnGOSbCw 월세냄비 전월세

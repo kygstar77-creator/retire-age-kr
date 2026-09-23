@@ -1,5 +1,5 @@
 # 채널 전체 영상 수집 — 자막 전문 + **장면이 바뀔 때마다 한 장**(PPT 장표 전부). 사장님 2026-09-23 "장면 3장만? 장표가 엄청 많은데".
-#   python work/ytfull.py UCC3yfxS5qC6PCwDzetUuEWg 소수몽키 [최대편수]
+#   YTFULL_DAYS=90 YTFULL_GAP=90 python work/ytfull.py UCC3yfxS5qC6PCwDzetUuEWg 소수몽키 [최대편수]   ← 최근 90일치만, 90초 간격
 # 방법: yt-dlp(node 런타임)로 480p 영상만 잠깐 받아 OpenCV로 1초에 1프레임 읽고, 화면이 크게 바뀐 순간(히스토그램 차이)마다 JPG 저장 → 영상 파일은 지운다.
 # 결과: work/research/yt/full/<채널>/<videoId>.txt (자막), <videoId>/NNN_mmss.jpg (장면들), index.json (제목·날짜·조회·길이·자막글자·장면수)
 import sys, os, re, json, time, subprocess, glob
@@ -7,7 +7,8 @@ sys.stdout.reconfigure(encoding='utf-8')
 import cv2, numpy as np
 from youtube_transcript_api import YouTubeTranscriptApi
 cid, name = sys.argv[1], sys.argv[2]; limit = int(sys.argv[3]) if len(sys.argv) > 3 else 100000
-GAP = int(os.environ.get('YTFULL_GAP', '90'))   # 영상 사이 대기(초). 2026-09-23 180편쯤에서 유튜브가 '봇 확인'으로 막았다 → 천천히 받는다
+GAP = int(os.environ.get('YTFULL_GAP', '90'))
+DAYS = int(os.environ.get('YTFULL_DAYS', '90'))   # 최근 N일치만(사장님 2026-09-23 '최근 3개월씩만'). 전체 이력은 받지 않는다   # 영상 사이 대기(초). 2026-09-23 180편쯤에서 유튜브가 '봇 확인'으로 막았다 → 천천히 받는다
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research', 'yt', 'full', name); os.makedirs(OUT, exist_ok=True)
 TMP = os.path.join(os.environ.get('TEMP', 'C:/Temp'), 'ytfull_tmp'); os.makedirs(TMP, exist_ok=True)
 idx_p = os.path.join(OUT, 'index.json'); index = json.load(open(idx_p, encoding='utf-8')) if os.path.exists(idx_p) else {}
@@ -37,12 +38,28 @@ def scenes(vid, mp4, outdir, max_frames=120):
     cap.release(); return saved
 
 vids = listing(); print(name, '전체 영상', len(vids), flush=True)
-vids.sort(key=lambda v: -v['views']); vids = vids[:limit]
+# 최신순(채널 목록 순서)으로 훑으며 업로드일이 DAYS보다 오래되면 멈춘다. 날짜는 영상 메타(-j)에서 본다(가벼운 호출).
+import datetime
+cutoff = (datetime.date.today() - datetime.timedelta(days=DAYS)).strftime('%Y%m%d')
+recent = []
+for v in vids[:limit]:
+    rec0 = index.get(v['id'], {})
+    if rec0.get('date'):
+        if rec0['date'] >= cutoff: recent.append(v)
+        else: break
+        continue
+    try:
+        j = json.loads(subprocess.run(YT + ['--skip-download', '-j', f"https://www.youtube.com/watch?v={v['id']}"], capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=120).stdout)
+        v['date'] = j.get('upload_date', ''); v['views'] = j.get('view_count') or v['views']; v['dur'] = j.get('duration') or v['dur']
+    except Exception: v['date'] = ''
+    if v['date'] and v['date'] < cutoff: break
+    recent.append(v); time.sleep(3)
+vids = recent; print(name, f'최근 {DAYS}일 영상', len(vids), flush=True)
 api = YouTubeTranscriptApi(); done = 0; t0 = time.time()
 for k, v in enumerate(vids):
     vid = v['id']
     if index.get(vid, {}).get('frames', 0) > 0: continue   # 장면 받은 건 건너뜀(자막은 차단 풀리면 따로 채움)
-    rec = dict(v); rec.setdefault('chars', 0); rec.setdefault('frames', 0)
+    rec = dict(index.get(vid, {})); rec.update({k: v[k] for k in ('id', 'title', 'views', 'dur', 'date') if v.get(k)}); rec.setdefault('chars', 0); rec.setdefault('frames', 0)
     if rec['chars'] == 0:
         try:
             tr = api.list(vid).find_transcript(['ko']).fetch(); segs = [(round(x.start), x.text) for x in tr]

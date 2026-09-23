@@ -56,6 +56,11 @@ def read_pkg(pkg):
         tok = s.split()[0]
         if re.search(r'\.(png|jpe?g|webp)$', tok, re.I):
             path = tok if os.path.isabs(tok) else os.path.normpath(os.path.join(pkg, '..', tok))
+            # 묶음 안(pkg/img/…)에만 사진이 있는 경우도 받아 준다. 예전 묶음은 research/<주제>/img 에 두었다.
+            if not os.path.isabs(tok) and not os.path.exists(path):
+                alt = os.path.normpath(os.path.join(pkg, tok))
+                if os.path.exists(alt): path = alt
+            if not os.path.exists(path): raise FileNotFoundError('사진 없음: ' + path)
             seq.append(('img', path))
         elif tok.endswith('.txt'):
             seq.append(('text', open(os.path.join(pkg, tok), encoding='utf-8').read().strip()))

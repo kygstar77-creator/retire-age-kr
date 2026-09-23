@@ -1,12 +1,13 @@
 {
  "short": {
-  "text_y": 0.6895,
+  "text_y": 0.5609,
   "bg_bright": 0.3,
   "panel_alpha": 150,
   "yellow_bottom": 0,
   "num_yellow": 1,
   "stroke_ratio": 40,
-  "yellow_frac": 0.3264
+  "yellow_frac": 0.3264,
+  "text_scale": 0.812
  },
  "long": {
   "text_y": 0.72,
@@ -15,12 +16,13 @@
   "yellow_bottom": 0,
   "num_yellow": 1,
   "stroke_ratio": 16,
-  "yellow_frac": 0.4769
+  "yellow_frac": 0.4769,
+  "text_scale": 1.0
  },
  "video": {
   "zoom": 0.0009
  },
- "step": 19,
+ "step": 21,
  "_memo": {
   "short.white.stroke_ratio=40": 0.0301,
   "long.yellow.yellow_bottom=1": 0.0526,
@@ -31,6 +33,10 @@
   "long.dark.bg_bright=0.45": 0.8676,
   "short.text_top.text_y=0.6592": 0.0329,
   "short.text_bot.text_y=0.5503": 0.0,
-  "short.text_top.text_y=0.6895": 0.0329
+  "short.text_top.text_y=0.6895": 0.0329,
+  "short.text_mid.text_y=0.6895": 0.1383,
+  "short.white.text_scale=1.0": 0.0295,
+  "short.text_bot.text_y=0.5609": 0.0,
+  "short.text_top.text_y=0.5609": 0.0329
  }
 }

@@ -92,7 +92,9 @@ def main():
       'text_bot': ('text_y', -0.45, 0.15, 0.80),      # 아래쪽이 모자라면 text_y를 키운다(부호 반대로 들어옴)
       'bright':   ('bg_bright', -1.2, 0.12, 0.90),
       'dark':     ('bg_bright', +0.8, 0.12, 0.90),
-      'white':    ('stroke_ratio', +900.0, 6, 40),    # 흰 면적이 많으면 외곽선을 얇게(비율 값을 키움)
+      # 흰 면적은 흰 글자 픽셀에서 나온다. 외곽선은 검정이라 아무리 얇게 해도 흰 면적이 안 줄어 stroke_ratio가 한계 40에 붙어
+      # 버렸다(2026-09-23 step20). 그래서 글자 크기 배율로 바꿨다. 면적은 크기의 제곱이라 계수를 작게 잡아 한 칸씩 간다.
+      'white':    ('text_scale', -10.0, 0.66, 1.0),
       # 아랫줄 노랑 글자 비율(0~1). 2026-09-23 실측 5점(0/.25/.5/.75/1): 롱폼 0.0007→0.0533, 쇼츠 0.0003→0.0199.
       # 기울기가 판형마다 달라(롱폼 0.052 · 쇼츠 0.020) 계수를 판형별로 둔다.
       'yellow':   ('yellow_frac', {'long': -19.0, 'short': -51.0}, 0.0, 1.0),
@@ -105,8 +107,12 @@ def main():
         if g['key'] not in RULE:
             blocked.append(f"{g['kind']}.{g['key']} 우리 {g['ours']} vs 경쟁 {g['target']} — 그리기 손잡이 없음")
     memo = design.setdefault('_memo', {})   # "종류.항목.손잡이=값" → 그 값일 때 실측치. 같은 자리를 또 밟지 않으려고 적어 둔다
+    moved_knobs = set()   # 같은 손잡이를 한 바퀴에 두 번 움직이면 뒤 항목이 앞 항목을 덮어써 값이 계속 뒤집힌다(2026-09-23)
     for g in knobbed[:3]:
         knob, coef, lo, hi = RULE[g['key']]
+        if (g['kind'], knob) in moved_knobs:
+            blocked.append(f"{g['kind']}.{g['key']} — 같은 손잡이 {knob} 를 이번 바퀴에 다른 항목이 이미 움직였다, 다음 바퀴에 잰다")
+            continue
         if isinstance(coef, dict): coef = coef.get(g['kind'])   # 판형마다 손잡이 기울기가 다른 항목
         if coef is None: continue
         d = design.setdefault(g['kind'], {})
@@ -134,6 +140,7 @@ def main():
         if new == cur:
             if cur in (lo, hi): blocked.append(f"{g['kind']}.{g['key']} — {knob} 가 한계 {cur} 에 붙어 더 못 감, 다른 손잡이가 필요")
             continue
+        moved_knobs.add((g['kind'], knob))
         prev = seen.get(str(new))
         if prev is not None and abs(prev - g['target']) >= abs(g['ours'] - g['target']):
             blocked.append(f"{g['kind']}.{g['key']} — {knob}={new} 는 이미 재봤고 더 나빴다({prev} vs 지금 {g['ours']}), 그대로 둠")

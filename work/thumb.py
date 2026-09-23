@@ -17,8 +17,8 @@ def cfg(kind):
     """loop.py가 매 회차 갱신하는 design.json. 없으면 첫 측정값(2026-09-23 경쟁 상위 중앙값)"""
     try: d = json.load(open(os.path.join(HERE, 'design.json'), encoding='utf-8'))
     except Exception: d = {}
-    base = {'long': {'text_y': 0.72, 'bg_bright': 0.45, 'panel_alpha': 150, 'yellow_bottom': 1, 'yellow_frac': 1.0, 'num_yellow': 1, 'stroke_ratio': 16},
-            'short': {'text_y': 0.52, 'bg_bright': 0.30, 'panel_alpha': 150, 'yellow_bottom': 0, 'yellow_frac': 0.0, 'num_yellow': 1, 'stroke_ratio': 16}}[kind]
+    base = {'long': {'text_y': 0.72, 'bg_bright': 0.45, 'panel_alpha': 150, 'yellow_bottom': 1, 'yellow_frac': 1.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0},
+            'short': {'text_y': 0.52, 'bg_bright': 0.30, 'panel_alpha': 150, 'yellow_bottom': 0, 'yellow_frac': 0.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0}}[kind]
     base.update(d.get(kind, {})); return base
 
 def disp(sz):
@@ -70,7 +70,10 @@ def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
     dr = ImageDraw.Draw(im)
     pad = int(W * 0.05); maxw = W - pad * 2
     f1 = fit(dr, top, maxw); f2 = fit(dr, bottom, maxw)
-    sz = min(f1.size, f2.size); f1 = disp(sz); f2 = disp(sz)
+    sz = min(f1.size, f2.size)
+    # 흰 면적은 흰 글자 픽셀에서 나온다. 외곽선(검정)으로는 줄지 않아 글자 크기를 손잡이로 뒀다(2026-09-23).
+    sz = max(int(W * 0.055), int(sz * min(max(float(c.get('text_scale', 1.0)), 0.66), 1.0)))
+    f1 = disp(sz); f2 = disp(sz)
     lh = int(sz * 1.18); block = lh * 2
     y0 = int(min(max(c['text_y'], 0.15), 0.80) * H) - block // 2   # 글자 세로 위치. loop.py가 실측 차이를 보고 움직인다
     # 글자 뒤 어둡게

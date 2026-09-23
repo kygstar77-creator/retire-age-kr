@@ -112,23 +112,46 @@ def main():
     VS = ['SCHD 직투 vs TIGER 미국배당다우존스', 'JEPI vs JEPQ', 'QQQ vs QQQM', 'VOO vs SPY', 'TQQQ vs QLD', '커버드콜 국내 3종(KODEX·TIGER·SOL)', 'ISA vs 연금저축', '달러예금 vs 미국 단기채 ETF']
     deadlines = [c for c in cands if c['src'] == '마감']
     seed = TOM.toordinal()
+    # 2026-09-24: 같은 날 블로그 슬롯과 카페 슬롯에 똑같은 주제가 배정되는 일이 있었다.
+    # 08시 B12와 03시 C8이 둘 다 HEAT에서 '이번 주 배당 인상·삭감 발표 종목'을 받았다.
+    # 이미 쓴 것을 걸러낸 fresh가 하나만 남으면 슬롯 번호(k)가 달라도 같은 값이 나온다.
+    # 그래서 08시 회차가 06시 카페와 같은 주제가 되어 슬롯을 버리고 각도를 바꿔야 했다.
+    # 한 편성표 안에서 이미 배정한 주제는 다시 배정하지 않는다(더 고를 게 없을 때만 재사용).
+    taken = set()
     def rot(lst, k):
         if not lst: return '(후보 없음)'
         fresh = [x for x in lst if not used(x, wtitles)]
-        if fresh: return fresh[(seed + k) % len(fresh)]
-        return lst[(seed + k) % len(lst)] + ' ※이미 쓴 주제 — 각도를 바꾸거나 교체할 것'
+        pool = [x for x in fresh if x not in taken]
+        if pool:
+            pick = pool[(seed + k) % len(pool)]
+            taken.add(pick)
+            return pick
+        # 안 쓴 후보가 동났다. 이미 쓴 것 중에서 고르되 이 편성표에 아직 안 올린 것을 먼저 쓴다.
+        # 여기서 fresh로 되돌아가면 같은 날 같은 주제가 두 번 배정된다(2026-09-24에 그랬다).
+        pool = [x for x in lst if x not in taken] or lst
+        pick = pool[(seed + k) % len(pool)]
+        taken.add(pick)
+        return pick + ' ※이미 쓴 주제 — 각도를 바꾸거나 교체할 것'
     # 2026-09-23 사장님: "시리즈로 올릴 부동산이랑 주식이랑 배당 등등 많은데 왜 그런 글은 아예 안 올라오지?"
     # 원인: series-plan.md에 적힌 B8·B9·B10·B11(부동산 4종)과 C8(배당 히트맵)이 이 표에 통째로 빠져 있었다.
     # 편성에 없으니 회차가 쓸 일이 없었다. 실제로 카페 48편 중 부동산은 1편뿐이었다.
     LIVE = ['치앙마이 님만해민', '리스본 캄포 데 오리케', '쿠알라룸푸르 몽키아라']                    # B9 (series-plan)
-    DONG = ['공덕동', '옥수동', '상계동']                                                        # B11 (series-plan)
+    DONG = ['공덕동', '옥수동', '상계동', '목동', '불광동', '흑석동', '당산동', '창동', '방배동']                                                        # B11 (series-plan)
     UNDER = ['서울 25개 구 전세가율 순위', '고점 대비 20% 넘게 내린 단지 10', '오피스텔 월세 수익률 상위 10',
              '같은 구 평당가 편차 상위', '공시가격 대비 실거래 비율']                              # B10 지표(series-plan)
-    HEAT = ['배당귀족 30종목 히트맵', '월배당 ETF 12종 히트맵', '국내 고배당 히트맵', '이번 주 배당 인상·삭감 발표 종목']  # C8·B12
+    # C8·B12. 2026-09-24: 후보가 4개인데 슬롯은 C8 4칸 + B12 2칸 = 6칸이라 겹칠 수밖에 없었다.
+    # 실제로 09-24 편성에서 03시 카페와 08시 블로그가 둘 다 '배당 인상·삭감'을 받아 08시 회차가 주제를 바꿔야 했다.
+    # 슬롯 수만큼 후보를 채운다. 추가한 셋은 모두 지금 있는 도구로 만들 수 있는 것만 골랐다.
+    HEAT = ['배당귀족 30종목 히트맵', '월배당 ETF 12종 히트맵', '국내 고배당 히트맵',
+            '이번 주 배당 인상·삭감 발표 종목', '이번 주 배당락 예정 종목',
+            'REIT 배당 히트맵', '커버드콜 ETF 분배율 히트맵']
 
     def heat_tool(topic):
         if '인상' in topic or '삭감' in topic:
             return 'divchange.py(나스닥 배당 캘린더의 이번 주 발표를 직전 회차와 대조해 인상·삭감·동결·주기변경으로 가른다)'
+        if '배당락' in topic:
+            return ('나스닥 배당 캘린더 API(api.nasdaq.com/api/calendar/dividends?date=YYYY-MM-DD, 날짜별로 하루씩 받는다) '
+                    '+ Yahoo chart API 종가로 연 환산 배당률 계산')
         return 'heatmap.py --list <종목들>'
     # 사장님 2026-09-23: "배당 히트맵은 카페뿐만 아니라 블로그도 올려야지" → B12
     # 사장님 2026-09-23: "주식 종목별로 조사하고 검증해서 종목 발굴하는 글은?" → B13

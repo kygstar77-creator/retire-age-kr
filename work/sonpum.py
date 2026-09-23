@@ -74,6 +74,7 @@ def listings(page, nm):
 
 
 scenes = []   # (png, narration)
+rows = []     # 블로그 글(B11)용 단지별 표 재료
 with sync_playwright() as p:
     b = p.chromium.launch(headless=True); ctx = b.new_context(locale='ko-KR', viewport={'width': 1400, 'height': 900}, user_agent=UA); page = ctx.new_page()
     url = f'https://new.land.naver.com/complexes?ms={lat},{lng},16&a=APT&e=RETAIL'
@@ -102,6 +103,11 @@ with sync_playwright() as p:
             if not no or not info or info.get('세대', 0) < 100:
                 print('건너뜀', name, info.get('세대')); page.goto(url, wait_until='domcontentloaded', timeout=60000); page.wait_for_timeout(4500); close_popup(page); markers = page.locator('.marker_complex--apart'); continue
             k += 1
+            # 블로그 글(B11) 재료를 같이 남긴다. 사장님 2026-09-23 밤: "네이버 부동산으로 저평가 단지
+            # 찾아다니는 건 블로그 시리즈 안 올려?" — 편성에는 있는데 도구가 영상만 만들어 매번 다시 써야 했다.
+            row = {'단지': name, '세대': info.get('세대'), '동': info.get('동'), '준공': info.get('준공'),
+                   '면적': info.get('면적'), '매매호가': info.get('매매가'), '전세호가': info.get('전세가'),
+                   '최근실거래': info.get('실거래'), '주변': {}, '매물': {}}
             head = f"{k}번째 단지, {name}. {info['세대']:,}세대 {info['동']}개 동, {info['준공']} 준공, 전용 {info['면적']}. 매매 호가 {info['매매가'] or '없음'}, 전세 호가 {info['전세가'] or '없음'}." + (f" 최근 실거래 {info['실거래']}." if info.get('실거래') else '')
             # 사장님 2026-09-23 손품 아이디어: "집집마다 가격 구조 역과의 거리 주변에 뭐 있는지, 경사 접근성 학교".
             # 브이월드 무료 키로 붙인다(2026-09-23 공덕·목동·불광에서 역·초·중·고 거리 확인).
@@ -114,6 +120,7 @@ with sync_playwright() as p:
                 for label, word in (('지하철역', '지하철은'), ('초등학교', '초등학교는'), ('중학교', '중학교는')):
                     if nb.get(label): bits.append(word + ' ' + nb[label][0].replace('m', '미터'))
                 if bits: head += ' 가장 가까운 ' + ', '.join(bits) + ' 거리입니다.'
+                row['주변'] = nb
             except Exception as e: print('주변 정보 실패', str(e)[:70])
             for code, nm in (('A1', '매매'), ('B1', '전세'), ('B2', '월세')):
                 page.goto(f'https://new.land.naver.com/complexes/{no}?ms={lat},{lng},16&a=APT&b={code}&e=RETAIL', wait_until='domcontentloaded', timeout=60000); page.wait_for_timeout(5500); close_popup(page)
@@ -122,6 +129,8 @@ with sync_playwright() as p:
                 else: nar = f"{name}은 지금 {nm} 매물이 없습니다."
                 if code == 'A1': nar = head + ' ' + nar
                 scenes.append((sp, nar))
+                row['매물'][nm] = ls
+            rows.append(row)
             print(k, no, name, info, [len(listings(page, x)) for x in ('월세',)])
             page.goto(url, wait_until='domcontentloaded', timeout=60000); page.wait_for_timeout(5000); close_popup(page)
             markers = page.locator('.marker_complex--apart')
@@ -143,3 +152,40 @@ final = os.path.join(OUT, 'sonpum.mp4'); import shutil; shutil.copy(final_tmp, f
 json.dump([{'png': os.path.basename(p_), 'narration': n} for p_, n in scenes], open(os.path.join(OUT, 'scenes.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 for p_, _ in scenes: shutil.copy(p_, os.path.join(OUT, os.path.basename(p_)))
 print('완성', final, os.path.getsize(final), 'bytes, 장면', len(scenes))
+
+# ── 블로그 글(B11) 재료 ────────────────────────────────────────────────
+# 사장님 2026-09-23 밤: "네이버 부동산으로 저평가 아파트 오피스텔 단지들 찾아다니는 건
+# 블로그로 시리즈 안 올려? 숏츠로만 올릴 거야?"
+# 편성표에는 B11이 '영상 + 글'로 있었는데 도구가 영상만 만들어, 글은 매번 다시 써야 했다.
+# 이제 같은 숫자로 facts.txt와 단지별 표를 남긴다. 회차 루틴이 이걸로 블로그 글을 만든다.
+_fp = os.path.join(OUT, 'facts.txt')
+with open(_fp, 'w', encoding='utf-8') as _f:
+    _f.write('[' + area + ' 손품 사실표 — 확인일 ' + day + ']\n')
+    _f.write('출처: 네이버 부동산 화면에 그때 떠 있던 호가·실거래(new.land.naver.com)\n')
+    _f.write('출처: 주변 거리는 국토교통부 브이월드 POI 검색(직선거리)\n')
+    _f.write('주의: 호가는 중개사가 올린 값이고 실거래가 아니다. 화면에 보인 숫자만 적었고 예측·권유는 넣지 않았다.\n\n')
+    for _r in rows:
+        _f.write('[' + str(_r['단지']) + '] ' + str(_r['세대']) + '세대 ' + str(_r['동']) + '개동 · '
+                 + str(_r['준공']) + ' 준공 · 전용 ' + str(_r['면적']) + '\n')
+        _f.write('  매매 호가 ' + (_r['매매호가'] or '없음') + ' · 전세 호가 ' + (_r['전세호가'] or '없음')
+                 + ' · 최근 실거래 ' + (_r['최근실거래'] or '없음') + '\n')
+        for _k2, _v2 in (_r.get('주변') or {}).items():
+            _f.write('  ' + _k2 + ': ' + ', '.join(_v2) + '\n')
+        for _nm2, _ls2 in (_r.get('매물') or {}).items():
+            for _x in (_ls2 or [])[:3]:
+                _f.write('  ' + _nm2 + ' · ' + str(_x.get('동')) + ' ' + str(_x.get('가격'))
+                         + ' · 전용 ' + str(_x.get('면적')) + ' · ' + str(_x.get('층')) + '층 '
+                         + str(_x.get('향')) + ' · ' + str(_x.get('설명'))[:40] + '\n')
+        _f.write('\n')
+
+_tp = os.path.join(OUT, 'table.md')
+with open(_tp, 'w', encoding='utf-8') as _f:
+    _f.write('| 단지 | 세대 | 준공 | 전용 | 매매 호가 | 전세 호가 | 가까운 역 |\n')
+    _f.write('|---|---|---|---|---|---|---|\n')
+    for _r in rows:
+        _st = (_r.get('주변') or {}).get('지하철역') or ['-']
+        _f.write('| ' + str(_r['단지']) + ' | ' + str(_r['세대']) + ' | ' + str(_r['준공']) + ' | '
+                 + str(_r['면적']) + ' | ' + (_r['매매호가'] or '-') + ' | ' + (_r['전세호가'] or '-')
+                 + ' | ' + _st[0] + ' |\n')
+print('글 재료:', _fp)
+print('단지 표:', _tp, '· 단지', len(rows), '곳')

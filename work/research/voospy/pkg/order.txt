@@ -1,0 +1,15 @@
+카페 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+c00.txt
+img/c1.png
+c01.txt
+c02.txt
+img/c2.png
+c025.txt
+c03.txt
+img/c3.png
+c04.txt
+c05.txt
+소제목: c01·c02·c025·c03·c04·c05 조각의 첫 줄
+게시판: 자유게시판
+출처: stockanalysis.com VOO·SPY 종목 정보 및 배당 내역(2026-09-22 종가 기준) · Morningstar 2026-06-02 VOO 1조 달러 돌파 · TradingView/Zacks 2026-08-31 기준 순자산

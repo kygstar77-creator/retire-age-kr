@@ -52,3 +52,6 @@
 - short.white 는 이번 회차에도 못 닫았다. 실측해 보니 stroke_ratio(6~40)·panel_alpha(60~230)·text_y·text_spread
   어느 손잡이도 white 를 0.0214~0.0224 밖으로 움직이지 못한다. 외곽선은 흰 글자 뒤에 그려져 흰 픽셀을 깎지 않는다.
   text_scale 은 쇼츠 하한 0.9 에 붙어 있다(글자량을 지키려고 올려 둔 하한). 세 회차째 막힘 → tools-wanted.md 로 올림.
+- 숏폼 1편 생산·업로드(비공개): https://youtu.be/wIE0NIE_kvA — "JEPI vs JEPQ 1년, 100주 분배금 62만원 vs 92만원".
+  대본은 클로드가 직접 썼고 shortscript check 통과. 장면 4개 전부 chartimg 막대 차트를 자료 화면으로 깔았다
+  (글자만 있는 장면 없음). 사실은 work/research/jepiq/facts.txt(야후 파이낸스 chart API + JP모건 공식 팩트시트)만 썼다.

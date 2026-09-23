@@ -1,0 +1,26 @@
+{
+ "title": "JEPI vs JEPQ 1년, 분배금 4.583달러와 6.765달러",
+ "scenes": [
+  {"label": "100주 1년 분배금",
+   "head": "62만원 vs 92만원",
+   "lines": ["JEPI 458.30달러", "JEPQ 676.50달러", "환율 1,365.79원"],
+   "say": "같은 100주를 1년 들고 있었을 때 손에 들어온 분배금입니다. 30만원 차이가 납니다.",
+   "image": "work/research/_shots/jepiq/dist.png"},
+  {"label": "1년 총수익, 세전",
+   "head": "7.77%와 18.20%",
+   "lines": ["주가와 분배금을 더한 값", "재투자는 하지 않았습니다"],
+   "say": "분배금만 보면 안 됩니다. 주가가 JEPI는 거의 제자리, JEPQ는 6.40퍼센트 올랐습니다.",
+   "image": "work/research/_shots/jepiq/total.png"},
+  {"label": "월 100만원 받으려면",
+   "head": "1억 4,864 vs 1억 853",
+   "lines": ["세전 연 1,200만원 기준", "JEPI 1,918주 JEPQ 1,299주"],
+   "say": "같은 돈을 매달 받으려면 JEPI 쪽에 4천만원을 더 넣어야 한다는 계산이 나옵니다.",
+   "image": "work/research/_shots/jepiq/need.png"},
+  {"label": "운용사 공식 숫자",
+   "head": "SEC 7.88%와 15.06%",
+   "lines": ["총보수는 둘 다 0.350%", "JEPQ 설정 이후 베타 0.65"],
+   "say": "운용사 팩트시트에 적힌 7월 말 기준 수익률입니다. 보수는 두 상품이 똑같습니다.",
+   "image": "work/research/_shots/jepiq/sec.png"}
+ ],
+ "outro": "숫자는 야후 파이낸스와 JP모건 팩트시트에서 가져왔고, 전부 세전입니다."
+}

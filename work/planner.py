@@ -148,7 +148,11 @@ def main():
         if sid == 'B3': return f'{rot(AGES, k)} 순자산·소득·부채 중앙값과 상위 10%(가계금융복지조사)'
         if sid == 'B4': return f'순자산 {rot(["3억","5억","7억","10억"], k)}으로 살 수 있는 도시({rot(CITIES, k)} 등, firemap_realestate)'
         if sid == 'B5': return (deadlines[k % len(deadlines)]['kw'] + ' — 마감 ' + deadlines[k % len(deadlines)]['why']) if deadlines else '마감 후보 없음(calendar.json 확인)'
-        if sid == 'B6': return '미국증시 한 장(히트맵+4대 지수·환율·WTI·VIX, 이슈 5, 내일 일정) — heatmap.py'
+        # 수페TV 구조 그대로 여섯 코너. 2026-09-23 아침에 여섯 개로 정해 놓고 표에는 네 개만 적어 두었다.
+        if sid == 'B6': return ('미국증시 한 장(수페TV 구조 6코너) — ① heatmap.py 히트맵 1장 + 4대 지수·미10년(apis.fred DGS10)·'
+                                '원달러·WTI·VIX 한 줄 ② 오늘 이슈 5개(경제지표 실제/예상, 금리, 실적 결과) '
+                                '③ 섹터·종목 등락(히트맵 요약) ④ 내부자 매수(insider.py)·실적 서프라이즈 '
+                                '⑤ 내일 일정(실적·지표·배당락) ⑥ 한국 투자자 숫자(원달러, 국내 상장 미국 ETF 등락)')
         if sid == 'B7': return '30일 안에 시행되는 개정 법령(세법·연금·건보) — 법령 API 시행일'
         if sid == 'B8': return '부동산 한 장(구별 전세가율·변동률 히트맵 + 어제 실거래 신고 상위 + 코픽스·주담대 + 오늘 정책·청약 일정)'
         if sid == 'B9': return f'{rot(LIVE, k)} 실제 매물 5~8건(동네·단지명·월세·면적·방 수·부대시설·층·게시 링크) + 생활비·비자·환율'

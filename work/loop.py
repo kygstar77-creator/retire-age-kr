@@ -93,7 +93,9 @@ def main():
       'bright':   ('bg_bright', -1.2, 0.12, 0.90),
       'dark':     ('bg_bright', +0.8, 0.12, 0.90),
       'white':    ('stroke_ratio', +900.0, 6, 40),    # 흰 면적이 많으면 외곽선을 얇게(비율 값을 키움)
-      'yellow':   ('yellow_bottom', -60.0, 0, 1),     # 노랑이 많으면 아랫줄 노랑을 끈다
+      # 아랫줄 노랑 글자 비율(0~1). 2026-09-23 실측 5점(0/.25/.5/.75/1): 롱폼 0.0007→0.0533, 쇼츠 0.0003→0.0199.
+      # 기울기가 판형마다 달라(롱폼 0.052 · 쇼츠 0.020) 계수를 판형별로 둔다.
+      'yellow':   ('yellow_frac', {'long': -19.0, 'short': -51.0}, 0.0, 1.0),
       'contrast': ('panel_alpha', -260.0, 60, 230),   # 대비가 모자라면 패널을 더 진하게
       'text_mid': ('text_y', 'center', 0.15, 0.80),   # 가운데 띠에 글자가 없으면 text_y를 0.5 쪽으로 당긴다
     }
@@ -105,6 +107,8 @@ def main():
     memo = design.setdefault('_memo', {})   # "종류.항목.손잡이=값" → 그 값일 때 실측치. 같은 자리를 또 밟지 않으려고 적어 둔다
     for g in knobbed[:3]:
         knob, coef, lo, hi = RULE[g['key']]
+        if isinstance(coef, dict): coef = coef.get(g['kind'])   # 판형마다 손잡이 기울기가 다른 항목
+        if coef is None: continue
         d = design.setdefault(g['kind'], {})
         cur = d.get(knob)
         if cur is None: continue

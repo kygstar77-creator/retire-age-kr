@@ -42,23 +42,19 @@ def main():
     # 3) 빵꾸 메우기 — 늦었고, 올릴 묶음이 있으면 지금 올린다
     need = [k for k in ('blog', 'cafe') if (rec['late'][k] or 0) > LATE_MIN and any(x['kind'] == k for x in pend)]
     if need and not check_only:
-        try: got = N.acquire_lock(wait_sec=600)
-        except Exception as e:
-            got = False; rec['did'].append('잠금을 못 잡아 메우지 못했다: ' + str(e)[:80])
-        if got:
+        # 잠금은 여기서 잡지 않는다. naverpost.py가 launch()에서 스스로 잡는다.
+        # 감시기가 먼저 잡으면 제 자식을 막아 15분을 기다리다 실패한다(2026-09-23 18:49 실제 발생).
+        for kind in need:
+            pkg = next(x['pkg'] for x in pend if x['kind'] == kind)
             try:
-                for kind in need:
-                    pkg = next(x['pkg'] for x in pend if x['kind'] == kind)
-                    r = subprocess.run([sys.executable, os.path.join(HERE, 'naverpost.py'), kind, pkg],
-                                       capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=1500)
-                    out = ((r.stdout or '') + (r.stderr or '')).strip()
-                    u = re.search(r'URL (\S+)', out)
-                    if u: rec['did'].append(f'{kind} 빵꾸 메움 → {u.group(1)}')
-                    else: rec['did'].append(f'{kind} 메우기 실패: ' + (out.splitlines()[-1][:120] if out else '(출력 없음)'))
+                r = subprocess.run([sys.executable, os.path.join(HERE, 'naverpost.py'), kind, pkg],
+                                   capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=1500)
+                out = ((r.stdout or '') + (r.stderr or '')).strip()
             except Exception as e:
-                rec['did'].append(f'메우다 멈춤: {str(e)[:100]}')
-            finally:
-                N.release_lock()
+                rec['did'].append(f'{kind} 메우다 멈춤: {str(e)[:100]}'); continue
+            u = re.search(r'URL (\S+)', out)
+            if u: rec['did'].append(f'{kind} 빵꾸 메움 → {u.group(1)}')
+            else: rec['did'].append(f'{kind} 메우기 실패: ' + (out.splitlines()[-1][:120] if out else '(출력 없음)'))
     elif need:
         rec['did'].append('--check 라서 올리지는 않았다: ' + ', '.join(need))
     elif rec['alert'] and not any(any(x['kind'] == k for x in pend) for k in ('blog', 'cafe')):

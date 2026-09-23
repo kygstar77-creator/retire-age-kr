@@ -1,45 +1,74 @@
-# 채널 전체 영상 수집 — 사장님 2026-09-23 "전체 동영상 스크립트랑 화면 전부". 자막 전문 + 스토리보드 3장씩, 채널 목록·요약 파일.
+# 채널 전체 영상 수집 — 자막 전문 + **장면이 바뀔 때마다 한 장**(PPT 장표 전부). 사장님 2026-09-23 "장면 3장만? 장표가 엄청 많은데".
 #   python work/ytfull.py UCC3yfxS5qC6PCwDzetUuEWg 소수몽키 [최대편수]
-# 결과: work/research/yt/full/<채널>/<videoId>.txt (자막), <videoId>_sb{0,1,2}.jpg (장면), index.json (제목·날짜·조회·길이·자막유무)
-import sys, os, re, json, time, subprocess, urllib.request
+# 방법: yt-dlp(node 런타임)로 480p 영상만 잠깐 받아 OpenCV로 1초에 1프레임 읽고, 화면이 크게 바뀐 순간(히스토그램 차이)마다 JPG 저장 → 영상 파일은 지운다.
+# 결과: work/research/yt/full/<채널>/<videoId>.txt (자막), <videoId>/NNN_mmss.jpg (장면들), index.json (제목·날짜·조회·길이·자막글자·장면수)
+import sys, os, re, json, time, subprocess, glob
 sys.stdout.reconfigure(encoding='utf-8')
+import cv2, numpy as np
 from youtube_transcript_api import YouTubeTranscriptApi
 cid, name = sys.argv[1], sys.argv[2]; limit = int(sys.argv[3]) if len(sys.argv) > 3 else 100000
+GAP = int(os.environ.get('YTFULL_GAP', '90'))   # 영상 사이 대기(초). 2026-09-23 180편쯤에서 유튜브가 '봇 확인'으로 막았다 → 천천히 받는다
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research', 'yt', 'full', name); os.makedirs(OUT, exist_ok=True)
-H = {'User-Agent': 'Mozilla/5.0'}
+TMP = os.path.join(os.environ.get('TEMP', 'C:/Temp'), 'ytfull_tmp'); os.makedirs(TMP, exist_ok=True)
 idx_p = os.path.join(OUT, 'index.json'); index = json.load(open(idx_p, encoding='utf-8')) if os.path.exists(idx_p) else {}
-# 1) 채널 전체 목록(yt-dlp flat)
-r = subprocess.run([sys.executable, '-m', 'yt_dlp', '--js-runtimes', 'node', '--flat-playlist', '-j', f'https://www.youtube.com/channel/{cid}/videos'], capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=900)
-vids = []
-for line in r.stdout.splitlines():
-    try: j = json.loads(line); vids.append({'id': j['id'], 'title': j.get('title', ''), 'views': j.get('view_count') or 0, 'dur': j.get('duration') or 0})
-    except Exception: pass
-print(name, '전체 영상', len(vids)); vids = vids[:limit]
-api = YouTubeTranscriptApi(); done = 0
-for i, v in enumerate(vids):
+YT = [sys.executable, '-m', 'yt_dlp', '--js-runtimes', 'node', '-q', '--no-warnings']
+
+def listing():
+    r = subprocess.run(YT + ['--flat-playlist', '-j', f'https://www.youtube.com/channel/{cid}/videos'], capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=900)
+    out = []
+    for line in r.stdout.splitlines():
+        try: j = json.loads(line); out.append({'id': j['id'], 'title': j.get('title', ''), 'views': j.get('view_count') or 0, 'dur': j.get('duration') or 0})
+        except Exception: pass
+    return out
+
+def scenes(vid, mp4, outdir, max_frames=120):
+    cap = cv2.VideoCapture(mp4)   # 영상 임시 파일은 ASCII 경로(TMP)라 읽기는 된다
+    if not cap.isOpened(): return 0
+    fps = cap.get(cv2.CAP_PROP_FPS) or 30; n = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)); step = int(fps)  # 1초 간격
+    os.makedirs(outdir, exist_ok=True); last = None; saved = 0; i = 0
+    while i < n and saved < max_frames:
+        cap.set(cv2.CAP_PROP_POS_FRAMES, i); ok, fr = cap.read()
+        if not ok: break
+        small = cv2.resize(fr, (160, 90)); h = cv2.calcHist([cv2.cvtColor(small, cv2.COLOR_BGR2HSV)], [0, 1], None, [16, 8], [0, 180, 0, 256]); cv2.normalize(h, h)
+        if last is None or cv2.compareHist(last, h, cv2.HISTCMP_BHATTACHARYYA) > 0.25:
+            sec = int(i / fps); ok2, buf = cv2.imencode('.jpg', fr, [cv2.IMWRITE_JPEG_QUALITY, 80])   # imwrite는 한글 경로에 못 쓴다
+            if ok2: open(os.path.join(outdir, f'{saved:03d}_{sec//60:02d}{sec%60:02d}.jpg'), 'wb').write(buf.tobytes()); saved += 1; last = h
+        i += step
+    cap.release(); return saved
+
+vids = listing(); print(name, '전체 영상', len(vids), flush=True)
+vids.sort(key=lambda v: -v['views']); vids = vids[:limit]
+api = YouTubeTranscriptApi(); done = 0; t0 = time.time()
+for k, v in enumerate(vids):
     vid = v['id']
-    if vid in index and index[vid].get('sb', 0) >= 1 and index[vid].get('chars', 0) > 0: continue
-    rec = dict(v); rec['chars'] = 0; rec['sb'] = 0
-    try:
-        tr = api.list(vid).find_transcript(['ko']).fetch(); segs = [(round(x.start), x.text) for x in tr]
-        open(os.path.join(OUT, f'{vid}.txt'), 'w', encoding='utf-8').write(f"# {v['title']} | {v['views']}회 | {v['dur']}초\n" + '\n'.join(f'{s//60:02d}:{s%60:02d} {t}' for s, t in segs))
-        rec['chars'] = sum(len(t) for _, t in segs)
-    except Exception as e: rec['err'] = str(e)[:60]
-    try:
-        j = json.loads(subprocess.run([sys.executable, '-m', 'yt_dlp', '--js-runtimes', 'node', '-j', f'https://www.youtube.com/watch?v={vid}'], capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=120).stdout)
-        rec['date'] = j.get('upload_date', ''); rec['views'] = j.get('view_count') or rec['views']; rec['dur'] = j.get('duration') or rec['dur']
-        sb = [f for f in j['formats'] if f.get('format_id') == 'sb0']
-        if sb:
-            frags = sb[0].get('fragments', [])
-            for k, fi in enumerate(sorted({0, len(frags) // 2, len(frags) - 1})):
-                if fi < len(frags):
-                    b = urllib.request.urlopen(urllib.request.Request(frags[fi]['url'], headers=H), timeout=30).read()
-                    open(os.path.join(OUT, f'{vid}_sb{k}.jpg'), 'wb').write(b); rec['sb'] = k + 1
-    except Exception as e: rec['err2'] = str(e)[:60]
+    if index.get(vid, {}).get('frames', 0) > 0: continue   # 장면 받은 건 건너뜀(자막은 차단 풀리면 따로 채움)
+    rec = dict(v); rec.setdefault('chars', 0); rec.setdefault('frames', 0)
+    if rec['chars'] == 0:
+        try:
+            tr = api.list(vid).find_transcript(['ko']).fetch(); segs = [(round(x.start), x.text) for x in tr]
+            open(os.path.join(OUT, f'{vid}.txt'), 'w', encoding='utf-8').write(f"# {v['title']} | {v['views']}회 | {v['dur']}초\n" + '\n'.join(f'{s//60:02d}:{s%60:02d} {t}' for s, t in segs))
+            rec['chars'] = sum(len(t) for _, t in segs)
+        except Exception as e: rec['err'] = str(e)[:60]
+    if rec['frames'] == 0:
+        mp4 = os.path.join(TMP, vid + '.mp4')
+        try:
+            subprocess.run(YT + ['-f', '135/134/160', '-o', mp4, f'https://www.youtube.com/watch?v={vid}'], capture_output=True, text=True, timeout=600)
+            if os.path.exists(mp4): rec['frames'] = scenes(vid, mp4, os.path.join(OUT, vid))
+        except Exception as e: rec['err2'] = str(e)[:60]
+        if not os.path.exists(mp4):
+            r2 = subprocess.run(YT + ['-f', '135/134/160', '-o', mp4, f'https://www.youtube.com/watch?v={vid}'], capture_output=True, text=True, timeout=600)
+            if 'bot' in (r2.stderr or ''): rec['err2'] = 'bot-check'
+        finally:
+            for f in glob.glob(os.path.join(TMP, vid + '*')):
+                try: os.remove(f)
+                except Exception: pass
     index[vid] = rec; done += 1
-    if done % 10 == 0:
-        json.dump(index, open(idx_p, 'w', encoding='utf-8'), ensure_ascii=False, indent=0); print(f'{i+1}/{len(vids)} 저장', flush=True)
-    time.sleep(0.5)
+    if rec.get('err2', '').find('bot') >= 0 or (rec['chars'] == 0 and rec['frames'] == 0 and done > 3):
+        json.dump(index, open(idx_p, 'w', encoding='utf-8'), ensure_ascii=False, indent=0); print('유튜브 차단 신호 — 이번 회차 중단(다음 회차에 이어서)', flush=True); break
+    time.sleep(GAP)
+    if done % 5 == 0:
+        json.dump(index, open(idx_p, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
+        print(f'{k+1}/{len(vids)} 처리 | 자막 {rec["chars"]}자 · 장면 {rec["frames"]}장 | 경과 {int(time.time()-t0)//60}분', flush=True)
 json.dump(index, open(idx_p, 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
-ok = sum(1 for x in index.values() if x.get('chars', 0) > 0); sbn = sum(1 for x in index.values() if x.get('sb', 0) > 0)
-print(f'{name}: 영상 {len(index)}개 중 자막 {ok}개, 장면 {sbn}개 → {OUT}')
+ok = sum(1 for x in index.values() if x.get('chars', 0) > 0); fr = sum(x.get('frames', 0) for x in index.values())
+print(f'{name}: 영상 {len(index)}개, 자막 {ok}개, 장면 총 {fr}장 → {OUT}', flush=True)

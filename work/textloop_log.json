@@ -1,0 +1,32 @@
+[
+ {
+  "at": "2026-09-23 18:34",
+  "sec": 2,
+  "cafe_n": 35,
+  "blog_n": 13,
+  "cafe_rules": 1,
+  "blog_rules": 2,
+  "verdict": "(첫 회차)",
+  "cafe_median_per_day": 1.28
+ },
+ {
+  "at": "2026-09-23 18:35",
+  "sec": 2,
+  "cafe_n": 35,
+  "blog_n": 13,
+  "cafe_rules": 0,
+  "blog_rules": 2,
+  "verdict": "판정 보류 — 규칙 뒤 0편, 앞 35편으로 표본 부족",
+  "cafe_median_per_day": 1.28
+ },
+ {
+  "at": "2026-09-23 18:37",
+  "sec": 2,
+  "cafe_n": 35,
+  "blog_n": 13,
+  "cafe_rules": 1,
+  "blog_rules": 2,
+  "verdict": "판정 보류 — 규칙 뒤 0편, 앞 35편으로 표본 부족",
+  "cafe_median_per_day": 1.28
+ }
+]

@@ -126,3 +126,6 @@ Telegram request_access가 두 번(인자 전부/최소) 모두 "can't be approv
 - 이미 올라간 글 전환: `python work/naverpost.py public <id> ...` (수정 → 전체공개 → 등록, 새 탭 처리).
 - 텔레그램 보고: `work/tgreport.py`. 봇 @firemap_report_bot, 키 파일 `Documents\telegram_bot.txt`(TOKEN, CHAT_ID).
   `python work/tgreport.py sendfile <파일>` / `send "문장"`. HTTP라 무인 실행 가능. 12시 보고 루틴이 쓴다.
+
+## 교차검증은 API로 (2026-09-23)
+사장님 지시(09-14) "내 초안 → ChatGPT(사실·정확성) → Gemini(구조·말투) → 검증 안 된 건 뺀다"를 루틴이 09-20~23 동안 빼먹었다(웨일 창에서 손으로 하던 단계라 무인 루틴에 옮기지 않았다). `work/crosscheck.py check <pkg>`가 같은 프롬프트로 API를 부른다. 키는 `Documents\openai_key.txt`, `Documents\gemini_key.txt`(KEY=…). Gemini는 무료 등급 있음(ai.google.dev/pricing 확인). 키가 없으면 그 역할은 건너뛰고 runs note에 남긴다.

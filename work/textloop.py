@@ -94,6 +94,14 @@ AXIS_WORDS = [
     ('종목',          r'삼성전자|테슬라|엔비디아|애플|나스닥|코스피|S&P'),
 ]
 
+def title_end(t):
+    """제목을 어떻게 끝냈나. 사장님 2026-09-23 "카페 제목에다가 왜 계속 다를 붙이는 거야?" —
+    실측 결과 ~습니다로 끝낸 제목이 하루당 조회 중앙 0.5로 가장 낮았다(명사 끝 1.3, 물음 7.3)."""
+    t = t.strip().rstrip('.')
+    if re.search(r'(까요|나요|ㄹ까|가요|건가요)\??$', t): return '물음'
+    if t.endswith('다'): return '다로 끝'          # 습니다·입니다뿐 아니라 '낮았다·늘었다' 같은 평서형도 같다
+    return '명사로 끝'
+
 def guess_axis(title):
     for name, pat in AXIS_WORDS:
         if re.search(pat, title, re.I): return name
@@ -107,7 +115,7 @@ def handles(post, idx):
         '제목길이': len(t),
         '제목에 숫자': '있음' if re.search(r'\d', t) else '없음',
         '제목에 비교(vs·대)': '있음' if re.search(r'\bvs\b|\d\s*대\s*\d', t, re.I) else '없음',
-        '제목이 문장으로 끝남': '있음' if re.search(r'(니다|습니다|까요|요)[.?]?$', t.strip()) else '없음',
+        '제목 끝맺음': title_end(t),
         '발행 시각': time.localtime(post['ts']).tm_hour,
     }
     h.update({'주제축': (p and p['axis']) or guess_axis(t), '형식': (p and p['form']) or None,
@@ -150,6 +158,25 @@ def compare(rows, label):
     found.sort(key=lambda f: -abs(0 if isinstance(f['잘된 글'], str) else f['잘된 글'] - f['안된 글']))
     return found, f'{label} {n}편 중 상위 {k}편과 하위 {k}편 비교'
 
+def by_category(rows, label):
+    """상·하위 1/3 비교는 한쪽에 몰린 값을 놓친다. 그래서 갈래별 중앙값도 따로 낸다.
+    사장님이 눈으로 잡은 '제목 끝에 다 붙이기'를 상·하위 비교는 못 잡았다(2026-09-23)."""
+    out = []
+    for key in ('제목 끝맺음', '주제축', '형식'):
+        g = {}
+        for r in rows:
+            v = r['h'].get(key)
+            if v in (None, '', '미상'): continue
+            g.setdefault(str(v), []).append(r['score'])
+        g = {k: v for k, v in g.items() if len(v) >= 3}
+        if len(g) < 2: continue
+        rank = sorted(g.items(), key=lambda kv: -statistics.median(kv[1]))
+        out.append({'손잡이': key,
+                    '갈래': [{'값': k, '편수': len(v), '중앙': round(statistics.median(v), 1)} for k, v in rank],
+                    '규칙': f'{key}: ' + ' > '.join(f'{k}({len(v)}편 {statistics.median(v):.1f})' for k, v in rank)
+                             + f' — "{rank[0][0]}"로 쓰고 "{rank[-1][0]}"는 피한다'})
+    return out
+
 def main():
     t0 = time.time(); now = time.time()
     idx = pkg_index()
@@ -165,6 +192,8 @@ def main():
 
     cafe_found, cafe_note = compare(cafe_rows, '카페')
     blog_found, blog_note = compare(blog_rows, '블로그')
+    cafe_cat = by_category(cafe_rows, '카페')
+    blog_cat = by_category(blog_rows, '블로그')
 
     # 5) 지난 규칙 판정 — 규칙을 적은 뒤에 올린 글의 성적이 그 전보다 나은가
     verdict = '(첫 회차)'
@@ -179,6 +208,7 @@ def main():
             verdict = f'판정 보류 — 규칙 뒤 {len(after)}편, 앞 {len(before)}편으로 표본 부족'
 
     rule = {'at': time.strftime('%Y-%m-%d %H:%M'), 'cafe': cafe_found, 'blog': blog_found,
+            'cafe_cat': cafe_cat, 'blog_cat': blog_cat,
             'cafe_note': cafe_note, 'blog_note': blog_note, 'verdict': verdict,
             'cafe_median_per_day': round(statistics.median([r['score'] for r in cafe_rows]), 2) if cafe_rows else None}
     json.dump(rule, open(RULE, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
@@ -188,9 +218,11 @@ def main():
           f"지난 규칙 판정: {verdict}", '',
           '회차 루틴은 글을 쓰기 전에 이 파일을 읽고, 아래 규칙에 맞춰 제목·형식·사진 수를 정한다.', '',
           '## 카페', f'- {cafe_note}']
-    md += [f"- {f['규칙']}  (표본 {f['표본']})" for f in cafe_found] or ['- 아직 뚜렷한 차이 없음']
+    md += [f"- {f['규칙']}  (표본 {f['표본']})" for f in cafe_found] or ['- 상·하위 비교에서는 뚜렷한 차이 없음']
+    md += [f"- **{f['규칙']}**" for f in cafe_cat]
     md += ['', '## 블로그', f'- {blog_note}']
-    md += [f"- {f['규칙']}  (표본 {f['표본']})" for f in blog_found] or ['- 아직 뚜렷한 차이 없음']
+    md += [f"- {f['규칙']}  (표본 {f['표본']})" for f in blog_found] or ['- 상·하위 비교에서는 뚜렷한 차이 없음']
+    md += [f"- **{f['규칙']}**" for f in blog_cat]
     if cafe_rows:
         md += ['', '## 카페 잘된 글 (하루당 조회)']
         for r in sorted(cafe_rows, key=lambda x: -x['score'])[:6]:
@@ -208,6 +240,7 @@ def main():
     print(f"[글 루프 {rule['at']}] {int(time.time()-t0)}초 · 카페 {len(cafe_rows)}편 · 블로그 {len(blog_rows)}편")
     print(' ·', cafe_note)
     for f in cafe_found: print('   -', f['규칙'], f"(표본 {f['표본']})")
+    for f in cafe_cat: print('   *', f['규칙'])
     print(' ·', blog_note)
     for f in blog_found: print('   -', f['규칙'], f"(표본 {f['표본']})")
     print(' · 판정:', verdict)

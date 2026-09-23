@@ -29,16 +29,35 @@ def title_patterns():
     score = {k: round(sum(v for t, v in titles if re.search(p, t)) / tot * 100) for k, p in pats.items()}
     return score, len(titles)
 
+def written_titles():
+    """이미 쓴 묶음의 제목 — 같은 종목·같은 각도를 내일 또 배정하지 않기 위해(유사문서 회피)."""
+    out = []
+    for tp in glob.glob(os.path.join(R, '*', 'pkg', 'title.txt')):
+        try: out.append(open(tp, encoding='utf-8').read().strip())
+        except Exception: pass
+    return out
+
+def used(cand, titles):
+    """후보 문자열의 핵심어(티커·상품명)가 이미 쓴 제목에 있으면 True."""
+    key = re.split(r'[\s(]', str(cand).replace('(리얼티인컴)', ' 리얼티인컴'))[0].strip()
+    if len(key) < 2: return False
+    return any(key.lower() in t.lower() for t in titles)
+
 def our_perf():
+    """형식(form.txt)별 성과. form.txt가 있는 묶음만 센다 — 표기 없는 글을 '형식?'으로 묶어
+    비율을 내면 측정하지 않은 것을 측정한 것처럼 보이므로(2026-09-23 수정) 개수만 따로 돌려준다."""
     perf = load(os.path.join(HERE, 'perf_log.json'), {}); byform = collections.defaultdict(list)
     forms = {}
     for pkg in glob.glob(os.path.join(R, '*', 'pkg')):
         tp, fp = os.path.join(pkg, 'title.txt'), os.path.join(pkg, 'form.txt')
         if os.path.exists(tp) and os.path.exists(fp): forms[open(tp, encoding='utf-8').read().strip()] = open(fp, encoding='utf-8').read().strip()
+    unlabeled = 0
     for day, v in perf.items():
         for x in v.get('blog', []):
-            f = forms.get(x.get('title', ''), '?'); byform[f].append(1 if (x.get('self_rank') or 99) <= 10 else 0)
-    return {f: (round(sum(a) / len(a) * 100), len(a)) for f, a in byform.items() if a}
+            f = forms.get(x.get('title', '').strip())
+            if not f: unlabeled += 1; continue
+            byform[f].append(1 if (x.get('self_rank') or 99) <= 10 else 0)
+    return {f: (round(sum(a) / len(a) * 100), len(a)) for f, a in byform.items() if a}, unlabeled
 
 def market_today():
     out = []
@@ -62,7 +81,8 @@ def ideas():
 def main():
     topics = load(os.path.join(HERE, 'topics.json'), []); topics = topics if isinstance(topics, list) else topics.get('topics', [])
     cal = load(os.path.join(HERE, 'calendar.json'), {}); events = cal.get('events', cal if isinstance(cal, list) else [])
-    pats, ntitles = title_patterns(); perf = our_perf(); mkt = market_today(); idea = ideas()
+    pats, ntitles = title_patterns(); perf, unlabeled = our_perf(); mkt = market_today(); idea = ideas()
+    wtitles = written_titles()
     # 후보 점수: 검색수 × 마감 가중 × 축 로테이션
     cands = []
     for ev in events if isinstance(events, list) else []:
@@ -87,7 +107,11 @@ def main():
     VS = ['SCHD 직투 vs TIGER 미국배당다우존스', 'JEPI vs JEPQ', 'QQQ vs QQQM', 'VOO vs SPY', 'TQQQ vs QLD', '커버드콜 국내 3종(KODEX·TIGER·SOL)', 'ISA vs 연금저축', '달러예금 vs 미국 단기채 ETF']
     deadlines = [c for c in cands if c['src'] == '마감']
     seed = TOM.toordinal()
-    def rot(lst, k): return lst[(seed + k) % len(lst)] if lst else '(후보 없음)'
+    def rot(lst, k):
+        if not lst: return '(후보 없음)'
+        fresh = [x for x in lst if not used(x, wtitles)]
+        if fresh: return fresh[(seed + k) % len(fresh)]
+        return lst[(seed + k) % len(lst)] + ' ※이미 쓴 주제 — 각도를 바꾸거나 교체할 것'
     forms = {'B1': '② 계산 사례', 'B2': '① 원문 정리', 'B3': '④ 통계·기록', 'B4': '① 비교', 'B5': '③ 일정', 'B6': '③ 일정', 'B7': '① 원문 정리',
              'C1': '④ 기록', 'C3': '② 계산 사례', 'C4': '③ 일정', 'C5': '① 비교', 'C6': '① 원문 검증', 'C7': '④ 기록'}
     blog_series = ['B6', 'B1', 'B2', 'B3', 'B1', 'B2', 'B4', 'B5', 'B1', 'B2', 'B3', 'B7', 'B1', 'B2', 'B4', 'B1', 'B2', 'B5', 'B1', 'B2', 'B3', 'B4', 'B1', 'B2']
@@ -109,7 +133,7 @@ def main():
         return '?'
     lines = [f'# 내일 편성 {TOM} (planner.py, 생성 {time.strftime("%H:%M")})', '',
              '## 데이터가 말하는 것', '- 유튜브 제목 %d개 조회 가중 패턴: ' % ntitles + ' · '.join(f'{k} {v}%' for k, v in sorted(pats.items(), key=lambda kv: -kv[1])),
-             '- 우리 블로그 형식별 제목검색 10위 안 비율: ' + (' · '.join(f'형식{f} {p}%({n}편)' for f, (p, n) in perf.items()) if perf else '측정치 없음'),
+             '- 우리 블로그 형식별 제목검색 10위 안 비율: ' + (' · '.join(f'형식{f} {p}%({n}편)' for f, (p, n) in perf.items()) if perf else '측정 불가(form.txt 표기된 발행분 없음)') + f' / 형식 표기 없는 글 {unlabeled}편은 제외',
              '- 카페 축 실측 조회 중앙값: ' + ' · '.join(f'{k} {v}' for k, v in CAFE_AXIS_VIEWS.items()), *[f'- {m}' for m in mkt], '',
              '## 제목 규칙(위 패턴에서): 숫자 1개 이상 필수, 나이·금액이 있으면 앞에, 질문형은 하루 3편 이하, 자극어 금지(우리 규칙), 비교형은 카페에.', '']
     lines += ['## 오늘 글감(유튜브·카페에서 자가발전 루틴이 모은 것 — 있으면 같은 축 슬롯을 대체)', *([f'- {i}' for i in idea] or ['- 없음']), '']

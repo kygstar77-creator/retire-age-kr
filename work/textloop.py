@@ -10,7 +10,7 @@
 #
 # 중요: 조회수는 올린 지 오래될수록 쌓인다. 그래서 '하루당 조회'로 고치고, 18시간이 안 된 글은 제외한다.
 #       이걸 안 하면 "새벽에 올린 글이 잘 된다" 같은 가짜 규칙이 나온다.
-import sys, os, re, json, glob, time, math, statistics, urllib.request
+import sys, os, re, json, glob, time, math, statistics, urllib.request, hashlib
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__)); R = os.path.join(HERE, 'research')
 RULE = os.path.join(HERE, 'textrule.json'); RULE_MD = os.path.join(R, 'textrule.md')
@@ -19,6 +19,8 @@ UA = {'User-Agent': 'Mozilla/5.0', 'Referer': 'https://cafe.naver.com/'}
 CAFE_ID = '31789001'; BLOG_ID = 'kygstar7777'
 MIN_AGE_H = 18        # 이만큼 안 지난 글은 아직 성적을 매길 수 없다
 MIN_N = 4             # 한쪽에 이만큼은 있어야 규칙으로 인정한다
+MAX_AGE_D = 30        # 이보다 오래된 글은 표본에서 뺀다. 블로그 표본 18편 중 6편이
+                      # 95~655일 된 2024~2025년 옛 글이었다(2026-09-24 확인). 요즘 실력과 무관하다
 
 def load(p, d):
     try: return json.load(open(p, encoding='utf-8'))
@@ -177,17 +179,135 @@ def by_category(rows, label):
                              + f' — "{rank[0][0]}"로 쓰고 "{rank[-1][0]}"는 피한다'})
     return out
 
+# ── 판정 ───────────────────────────────────────────────────────────────────
+# 판정이 30회 연속 "규칙 뒤 0편"으로 보류됐다(2026-09-23 18:34 ~ 2026-09-24 08:10).
+# 표본은 18시간 지난 글만 쓰는데 기준 시각을 직전 회차(1시간 전)로 잡았으니
+# "기준 뒤에 쓴 글"은 산술적으로 언제나 0편이었다. 30회가 우연이 아니라 구조였다.
+#
+# 기준 뒤에 쓴 글도 18시간이 지나야 성적을 잴 수 있다. 그래서 쓸 수 있는 창은
+# (기준 ~ 지금-18시간)뿐이고, 그 창에 MIN_N편이 들어오려면 기준이 그만큼 더 과거여야 한다.
+# 기준을 '18시간보다 조금 전'으로 잡으면 창이 한 시간밖에 안 열려 또 0편이 된다.
+# 그래서 후보 회차를 다 놓고 '창에 MIN_N편이 실제로 들어오는 것' 중 가장 최근을 고른다.
+#
+# 규칙 판정과 별개로 추세(trend)는 언제나 낸다. 글을 시간순 절반으로 갈라 견주는 것이라
+# 회차 기록이 없어도 "요즘 글이 예전 글보다 나은가"는 답할 수 있다.
+def _ts(at): return time.mktime(time.strptime(at, '%Y-%m-%d %H:%M'))
+
+def rule_fp(*groups):
+    """이번 규칙의 지문. 규칙이 실제로 바뀐 회차를 찾는 데 쓴다."""
+    xs = []
+    for g in groups: xs += [f.get('규칙', '') for f in (g or [])]
+    return hashlib.md5('|'.join(sorted(xs)).encode('utf-8')).hexdigest()[:10]
+
+def pick_cut(logs, now, posts):
+    """판정 기준 시각. 앞뒤 양쪽에 MIN_N편이 실제로 들어오는 회차 중 가장 최근.
+    규칙이 바뀐 회차가 그 조건을 만족하면 그쪽을 먼저 쓴다(규칙의 효과를 보는 것이 되므로)."""
+    usable = now - MIN_AGE_H * 3600          # 이 시각보다 나중에 쓴 글은 아직 성적을 못 잰다
+    ok = []
+    for r in logs:
+        c = _ts(r['at'])
+        if c >= usable: continue
+        after = sum(1 for p in posts if c < p['ts'] <= usable)
+        before = sum(1 for p in posts if p['ts'] <= c)
+        if after >= MIN_N and before >= MIN_N: ok.append(r)
+    if not ok:
+        span = (now - _ts(logs[0]['at'])) / 3600 if logs else 0
+        need = MIN_AGE_H + MIN_N             # 시간당 1편 기준으로 이만큼은 쌓여야 첫 판정이 선다
+        return None, f'기록 {span:.0f}시간치 — 앞뒤로 {MIN_N}편씩 갈리려면 {need}시간은 쌓여야 한다'
+    changed = [r for r in ok if r.get('rule_changed')]
+    r = changed[-1] if changed else ok[-1]
+    return _ts(r['at']), r['at'] + (' 규칙 바뀐 회차' if changed else ' 회차')
+
+def judge_side(cut, now, posts, rows, label):
+    """기준 시각 앞뒤로 갈라 중앙값을 견준다. 성적을 잴 수 없는 최근 글은 양쪽 다에서 뺀다."""
+    usable = now - MIN_AGE_H * 3600
+    after = [r['score'] for p, r in zip(posts, rows) if cut < p['ts'] <= usable]
+    before = [r['score'] for p, r in zip(posts, rows) if p['ts'] <= cut]
+    if len(after) < MIN_N or len(before) < MIN_N:
+        return f'{label} 보류(뒤 {len(after)}·앞 {len(before)}편)'
+    a, b = statistics.median(after), statistics.median(before)
+    arrow = '↑좋아짐' if a > b else ('=변화없음' if a == b else '↓나빠짐')
+    return f'{label} {b:.2f} → {a:.2f} {arrow}(뒤 {len(after)}·앞 {len(before)}편)'
+
+SNAP = os.path.join(HERE, 'read_snaps.json')
+SNAP_AGE_H = 24        # 모든 글을 '올린 지 24시간' 시점으로 맞춰 견준다
+
+def save_snaps(posts, now):
+    """글마다 (측정 시각, 누적 조회)를 찍어 둔다. 나중에 같은 나이에서 견주기 위한 것.
+    이걸 안 쌓으면 나이가 다른 글을 견주게 되고, '하루당 조회'가 신생 글을 부풀린다
+    (2026-09-24: 34시간 글이 172시간 글보다 덜 읽혔는데 1.79 대 0.50으로 더 좋아 보였다)."""
+    s = load(SNAP, {}) or {}
+    for p in posts:
+        rec = s.setdefault(norm(p['title']), {'ts': p['ts'], 'pts': []})
+        if not rec['pts'] or now - rec['pts'][-1][0] > 1800:      # 30분에 한 번만 찍는다
+            rec['pts'].append([round(now), p['read']])
+            rec['pts'] = rec['pts'][-80:]
+    try: json.dump(s, open(SNAP, 'w', encoding='utf-8'), ensure_ascii=False)
+    except Exception as e: print('스냅 저장 실패:', str(e)[:80])
+    return s
+
+def read_at(rec, age_h):
+    """그 글이 age_h 시간 됐을 때의 누적 조회. 앞뒤 측정 사이는 선형 보간한다.
+    아직 그 나이가 안 됐거나 그 나이를 걸치는 측정이 없으면 None."""
+    pts = sorted(((m - rec['ts']) / 3600, r) for m, r in rec.get('pts', []))
+    if len(pts) < 2: return None
+    if pts[0][0] > age_h or pts[-1][0] < age_h: return None
+    for (a1, r1), (a2, r2) in zip(pts, pts[1:]):
+        if a1 <= age_h <= a2:
+            if a2 == a1: return r2
+            return r1 + (r2 - r1) * (age_h - a1) / (a2 - a1)
+    return None
+
+def trend_aged(posts, snaps, label, now):
+    """같은 나이(24시간) 시점의 조회수로 예전 글과 최근 글을 견준다. 나이 편향이 없다.
+    스냅샷이 쌓여야 쓸 수 있으므로, 모자라면 무엇이 모자란지 적는다."""
+    got = []
+    for p in posts:
+        rec = snaps.get(norm(p['title']))
+        v = read_at(rec, SNAP_AGE_H) if rec else None
+        if v is not None: got.append((p['ts'], v))
+    if len(got) < MIN_N * 2:
+        return f'{label} 나이 맞춘 비교 보류 — {SNAP_AGE_H}시간 시점을 아는 글 {len(got)}편(필요 {MIN_N*2}편, 스냅샷 쌓는 중)'
+    got.sort(); half = len(got) // 2
+    b = statistics.median([v for _, v in got[:half]])
+    a = statistics.median([v for _, v in got[half:]])
+    arrow = '↑좋아짐' if a > b else ('=변화없음' if a == b else '↓나빠짐')
+    return f'{label} {SNAP_AGE_H}시간 시점 조회 예전 {half}편 {b:.1f} → 최근 {len(got)-half}편 {a:.1f} {arrow}'
+
+def trend(posts, rows, label, now):
+    """성적을 잰 글을 시간순 앞 절반·뒤 절반으로 갈라 견준다.
+    단, 두 묶음의 '나이'가 비슷할 때만 견준다.
+
+    2026-09-24: 나이를 안 보고 견줬더니 카페가 0.50 → 1.79 "좋아짐"으로 나왔다. 거짓이었다.
+    예전 22편은 172시간 된 글(누적 조회 중앙 4회), 최근 23편은 34시간 된 글(누적 2회)이었다.
+    실제로는 최근 글이 덜 읽혔는데 '하루당'의 분모가 작아 높게 나온 것이다.
+    나이가 2배 넘게 차이나면 견줄 수 없다고 적는다. 가짜 개선 신호를 규칙표에 올리지 않는다."""
+    pair = sorted(zip(posts, rows), key=lambda x: x[0]['ts'])
+    n = len(pair)
+    if n < MIN_N * 2: return f'{label} 추세 보류({n}편)'
+    half = n // 2
+    age = lambda g: statistics.median([(now - p['ts']) / 3600 for p, _ in g])
+    ao, an = age(pair[:half]), age(pair[half:])
+    b = statistics.median([r['score'] for _, r in pair[:half]])
+    a = statistics.median([r['score'] for _, r in pair[half:]])
+    if max(ao, an) / max(min(ao, an), 1) >= 2:
+        return (f'{label} 추세 보류 — 예전 {half}편은 {ao:.0f}시간, 최근 {n-half}편은 {an:.0f}시간 된 글이라 '
+                f'나이가 달라 견줄 수 없다({b:.2f} vs {a:.2f}는 나이 차이지 실력 차이가 아니다)')
+    arrow = '↑좋아짐' if a > b else ('=변화없음' if a == b else '↓나빠짐')
+    return f'{label} 예전 {half}편({ao:.0f}h) {b:.2f} → 최근 {n-half}편({an:.0f}h) {a:.2f} {arrow}'
+
 def main():
     t0 = time.time(); now = time.time()
     idx = pkg_index()
     logs = load(LOG, []) or []
 
     # 카페 — 하루당 조회로 고친다
-    cp = [p for p in cafe_posts() if (now - p['ts']) / 3600 >= MIN_AGE_H]
+    cafe_all = cafe_posts()
+    cp = [p for p in cafe_all if MIN_AGE_H <= (now - p['ts']) / 3600 <= MAX_AGE_D * 24]
     for p in cp: p['score'] = p['read'] / max((now - p['ts']) / 86400, 0.75)
     cafe_rows = [{'title': p['title'], 'score': p['score'], 'h': handles(p, idx)} for p in cp]
 
-    bp = [p for p in blog_posts() if (now - p['ts']) / 3600 >= MIN_AGE_H]
+    bp = [p for p in blog_posts() if MIN_AGE_H <= (now - p['ts']) / 3600 <= MAX_AGE_D * 24]
     blog_rows = [{'title': p['title'], 'score': p['score'], 'h': handles(p, idx)} for p in bp]
 
     cafe_found, cafe_note = compare(cafe_rows, '카페')
@@ -196,25 +316,30 @@ def main():
     blog_cat = by_category(blog_rows, '블로그')
 
     # 5) 지난 규칙 판정 — 규칙을 적은 뒤에 올린 글의 성적이 그 전보다 나은가
-    verdict = '(첫 회차)'
-    if logs:
-        prev = logs[-1]; cut = time.mktime(time.strptime(prev['at'], '%Y-%m-%d %H:%M'))
-        after = [r['score'] for p, r in zip(cp, cafe_rows) if p['ts'] > cut]
-        before = [r['score'] for p, r in zip(cp, cafe_rows) if p['ts'] <= cut]
-        if len(after) >= MIN_N and len(before) >= MIN_N:
-            a, b = statistics.median(after), statistics.median(before)
-            verdict = f"규칙 적용 뒤 카페 하루당 조회 중앙값 {b:.1f} → {a:.1f} " + ('↑좋아짐' if a > b else ('=변화없음' if a == b else '↓나빠짐'))
-        else:
-            verdict = f'판정 보류 — 규칙 뒤 {len(after)}편, 앞 {len(before)}편으로 표본 부족'
+    fp = rule_fp(cafe_found, cafe_cat, blog_found, blog_cat)
+    cut, cut_why = pick_cut(logs, now, cp + bp)
+    if cut is None:
+        verdict = '규칙 판정 보류 — ' + cut_why
+    else:
+        verdict = (f'{cut_why} 기준 · '
+                   + judge_side(cut, now, cp, cafe_rows, '카페 하루당 조회')
+                   + ' · ' + judge_side(cut, now, bp, blog_rows, '블로그 색인+순위'))
+    # 규칙 판정이 보류여도 추세는 낸다. 이게 "발전하고 있나"에 대한 답이다.
+    # 나이를 맞춘 비교(trend_aged)가 먼저다. 그게 아직 안 되면 나이를 밝힌 추세를 낸다.
+    snaps = save_snaps(cafe_all, now)
+    trends = (trend_aged(cp, snaps, '카페', now) + ' · '
+              + trend(cp, cafe_rows, '카페 하루당 조회', now) + ' · '
+              + trend(bp, blog_rows, '블로그 색인+순위', now))
 
     rule = {'at': time.strftime('%Y-%m-%d %H:%M'), 'cafe': cafe_found, 'blog': blog_found,
             'cafe_cat': cafe_cat, 'blog_cat': blog_cat,
-            'cafe_note': cafe_note, 'blog_note': blog_note, 'verdict': verdict,
+            'cafe_note': cafe_note, 'blog_note': blog_note, 'verdict': verdict, 'trend': trends,
             'cafe_median_per_day': round(statistics.median([r['score'] for r in cafe_rows]), 2) if cafe_rows else None}
     json.dump(rule, open(RULE, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
     md = ['# 글 규칙 (textloop 자동 생성 — 사람이 고치지 않는다)', '',
-          f"측정 {rule['at']} · 카페 {len(cafe_rows)}편 · 블로그 {len(blog_rows)}편 · 18시간 안 된 글은 뺐다", '',
+          f"측정 {rule['at']} · 카페 {len(cafe_rows)}편 · 블로그 {len(blog_rows)}편 · {MIN_AGE_H}시간 안 된 글과 {MAX_AGE_D}일 넘은 글은 뺐다", '',
+          f"추세: {trends}", '',
           f"지난 규칙 판정: {verdict}", '',
           '회차 루틴은 글을 쓰기 전에 이 파일을 읽고, 아래 규칙에 맞춰 제목·형식·사진 수를 정한다.', '',
           '## 카페', f'- {cafe_note}']
@@ -233,8 +358,10 @@ def main():
     os.makedirs(R, exist_ok=True); open(RULE_MD, 'w', encoding='utf-8').write('\n'.join(md) + '\n')
 
     logs.append({'at': rule['at'], 'sec': int(time.time() - t0), 'cafe_n': len(cafe_rows), 'blog_n': len(blog_rows),
-                 'cafe_rules': len(cafe_found), 'blog_rules': len(blog_found), 'verdict': verdict,
-                 'cafe_median_per_day': rule['cafe_median_per_day']})
+                 'cafe_rules': len(cafe_found), 'blog_rules': len(blog_found), 'verdict': verdict, 'trend': trends,
+                 'fp': fp, 'rule_changed': bool(logs and logs[-1].get('fp') and logs[-1]['fp'] != fp),
+                 'cafe_median_per_day': rule['cafe_median_per_day'],
+                 'blog_median': round(statistics.median([r['score'] for r in blog_rows]), 2) if blog_rows else None})
     json.dump(logs[-300:], open(LOG, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
     print(f"[글 루프 {rule['at']}] {int(time.time()-t0)}초 · 카페 {len(cafe_rows)}편 · 블로그 {len(blog_rows)}편")
@@ -243,6 +370,7 @@ def main():
     for f in cafe_cat: print('   *', f['규칙'])
     print(' ·', blog_note)
     for f in blog_found: print('   -', f['규칙'], f"(표본 {f['표본']})")
+    print(' · 추세:', trends)
     print(' · 판정:', verdict)
     print(' · 규칙표:', RULE_MD)
 

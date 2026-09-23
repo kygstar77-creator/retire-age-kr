@@ -110,6 +110,16 @@ def main():
     gaps = llog[-1].get('gaps', []) if llog else []
     M.append(('디자인', '경쟁 대비 미해결 차이 수', len(gaps), 0, 2, 'loop.py RULE에 손잡이 추가 또는 thumbstat 측정 수정'))
 
+    # 글 루프가 규칙을 만들기만 하고 채점을 못 하고 있나.
+    # 2026-09-24: 30회 연속 "규칙 뒤 0편"으로 보류였는데 아무도 못 봤다. 계기판에 없었기 때문이다.
+    tl = load(os.path.join(HERE, 'textloop_log.json'), []) or []
+    streak = 0
+    for r in reversed(tl):
+        if '보류' in (r.get('verdict') or ''): streak += 1
+        else: break
+    M.append(('품질', '글 규칙 자기채점 연속 보류 회차', streak, 6, 3,
+              'textloop 판정이 왜 보류인지 verdict 문구를 읽는다 — 표본이 안 쌓인 것인지, 기준 잡는 식이 틀린 것인지'))
+
     # 같은 글이 두 번 올라간 적이 있나. 0이 아니면 발행기가 중복을 냈다는 뜻이다.
     # 2026-09-24 국채금리 글이 07:13·07:35 두 번 올라갔고 사장님이 화면으로 잡아 줬다. 이제 기계가 잡는다.
     try:

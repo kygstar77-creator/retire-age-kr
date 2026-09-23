@@ -127,8 +127,7 @@ def main():
     elif gm:   # 전부 무료로(사장님 2026-09-23): OpenAI 키가 없으면 사실 대조도 Gemini(Pro)가 맡는다. 결과 파일 머리에 어느 모델인지 적힌다
         try:
             model, out = gemini_chat(gm, GPT_SYSTEM, GPT_USER.format(kind=kind, today=TODAY, title=title, facts=facts, body=body), prefer='pro')
-            open(os.path.join(pkg, 'check_gpt.txt'), 'w', encoding='utf-8').write(f'[{model} {time.strftime("%Y-%m-%d %H:%M")} — OpenAI 키 없어 Gemini가 사실 대조]
-' + out); done.append(f'사실 대조를 Gemini({model})가 대신 {len(out)}자 → check_gpt.txt')
+            open(os.path.join(pkg, 'check_gpt.txt'), 'w', encoding='utf-8').write(f'[{model} {time.strftime("%Y-%m-%d %H:%M")} — OpenAI 키 없어 Gemini가 사실 대조]\n' + out); done.append(f'사실 대조를 Gemini({model})가 대신 {len(out)}자 → check_gpt.txt')
         except Exception as e: done.append('사실 대조(Gemini 대체) 실패: ' + str(e)[:200])
     else: done.append('GPT 건너뜀 — openai_key.txt 없음')
     if gm:

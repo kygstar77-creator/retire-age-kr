@@ -22,17 +22,30 @@ def load_key(name):
         if '=' in line: k, v = line.strip().split('=', 1); kv[k.strip().upper()] = v.strip()
     return kv if kv.get('KEY') else None
 
+# 전체 시간 예산 — 2026-09-23 21시 회차: 응답이 안 오는 날 재시도가 겹쳐 420초를 넘겨도 안 끝났다.
+# 회차 루틴은 여기서 막히면 selfcheck.py로 넘어가야 하므로, 예산을 넘기면 기다리지 않고 실패로 끝낸다.
+START = time.time()
+BUDGET = int(os.environ.get('CROSSCHECK_BUDGET', '300'))
+
+def left():
+    return BUDGET - (time.time() - START)
+
 def http(url, body=None, headers=None, timeout=180):
     body_ = body
+    rem = left()
+    if rem < 5: raise RuntimeError(f'시간 예산 초과({BUDGET}초) — 남은 검증을 건너뛴다')
+    timeout = min(timeout, max(5, int(rem)))
     req = urllib.request.Request(url, data=json.dumps(body).encode() if body else None, headers={'Content-Type': 'application/json', **(headers or {})})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r: return json.load(r)
     except urllib.error.HTTPError as e:
         body = e.read()[:300].decode("utf-8", "ignore")
-        # 503(혼잡)·429(속도제한)은 잠시 뒤 되는 경우가 많다 — 세 번까지 기다렸다 다시 건다
+        # 503(혼잡)·429(속도제한)은 잠시 뒤 되는 경우가 많다 — 세 번까지 기다렸다 다시 건다(예산 안에서만)
         if e.code in (429, 503) and getattr(http, '_try', 0) < 3:
+            wait = 8 * (getattr(http, '_try', 0) + 1)
+            if left() - wait < 5: raise RuntimeError(f'HTTP {e.code} {body} · 예산({BUDGET}초)이 남지 않아 재시도하지 않는다')
             http._try = getattr(http, '_try', 0) + 1
-            time.sleep(8 * http._try)
+            time.sleep(wait)
             try: return http(url, body=body_, headers=headers, timeout=timeout)
             finally: http._try = 0
         raise RuntimeError(f'HTTP {e.code} {body}')

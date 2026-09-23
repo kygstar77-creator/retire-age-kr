@@ -30,8 +30,12 @@ def wrap(text, font, maxw):
 def table(path, title, cols, rows, widths, note=None, hl_col=None, src=None):
     W=900; pad=36; th=54; lh=30; vpad=15
     x0=pad; tw=W-pad*2
+    # widths는 비율(합 1)로 받는다. 픽셀 값(합이 1보다 훨씬 큰 경우)으로 줘도
+    # 열이 화면 밖으로 밀리지 않도록 합으로 나눠 비율로 맞춘다.
+    tot=float(sum(widths)) or 1.0
+    ws=[w/tot for w in widths]
     xs=[x0]
-    for w in widths: xs.append(xs[-1]+int(tw*w))
+    for w in ws: xs.append(xs[-1]+int(tw*w))
     cw=[xs[i+1]-xs[i]-28 for i in range(len(widths))]      # 셀 안쪽 폭(좌우 여백 14씩)
     # 1차: 각 셀을 줄바꿈해서 행 높이를 먼저 구한다
     wrapped=[]; heights=[]

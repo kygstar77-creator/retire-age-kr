@@ -90,8 +90,15 @@ def gemini_chat(kv, system, user, prefer='pro'):
 # ---- 묶음 읽기 ----
 def read_pkg(pkg):
     root = os.path.dirname(pkg.rstrip('\\/')) if os.path.basename(pkg.rstrip('\\/')) == 'pkg' else pkg
-    facts_p = os.path.join(root, 'facts.txt')
-    facts = open(facts_p, encoding='utf-8').read() if os.path.exists(facts_p) else ''
+    # facts.txt는 주제 폴더에 두는 게 규약이지만, pkg 안에 둔 회차도 있어 둘 다 본다.
+    # (빈 사실표로 검증이 돌면 전 항목이 '확인 불가'로 나와 검증이 무의미해진다)
+    facts = ''
+    for facts_p in (os.path.join(root, 'facts.txt'), os.path.join(pkg, 'facts.txt')):
+        if os.path.exists(facts_p):
+            facts = open(facts_p, encoding='utf-8').read()
+            break
+    if not facts.strip():
+        print('경고: facts.txt를 찾지 못했다 — 사실 대조는 전부 확인 불가로 나온다', file=sys.stderr)
     title_p = os.path.join(pkg, 'title.txt'); title = open(title_p, encoding='utf-8').read().strip() if os.path.exists(title_p) else ''
     pieces = sorted(glob.glob(os.path.join(pkg, 'b[0-9]*.txt')) + glob.glob(os.path.join(pkg, 'c[0-9]*.txt')))
     body = '\n\n'.join(open(p, encoding='utf-8').read().strip() for p in pieces)

@@ -1,0 +1,22 @@
+블로그 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+b00.txt
+img/b1.jpg
+b02.txt
+img/b2.png
+b04.txt
+img/b3.png
+b06.txt
+b08.txt
+img/b4.png
+b09.txt
+b10.txt
+img/b5.png
+b11.txt
+img/b6.png
+b12.txt
+소제목: b02·b04·b06·b08·b09·b10·b11·b12 조각의 첫 줄
+카테고리: 미국주식
+태그: 미국주식배당, 배당일정, 배당락일, 배당지급일, JEPQ, JEPI, 리얼티인컴, QYLD, SCHD, 월배당ETF, 커버드콜ETF, 배당금, 미국ETF, 배당투자, 10월배당
+사진: img/b1.jpg Pexels 5849564(Monstera Production, 달력과 경제 그래프 일러스트) — 출처 표기 의무 없음
+출처: J.P. Morgan Exchange-Traded Fund Trust Dividend Calendar for 2026(제이피모간자산운용 공식 PDF) · stockanalysis.com JEPQ·JEPI·SCHD·리얼티인컴 배당 내역(2026-09-23 조회) · Nasdaq API QYLD dividends(2026-09-23 조회) · Global X 2026-09-22 분배금 발표 · Yahoo Finance KRW=X 환율(2026-09-23)

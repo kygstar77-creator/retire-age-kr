@@ -1,0 +1,19 @@
+[오늘 찾은 것] 2026-09-23 WebSearch·WebFetch·API로 새로 수집
+
+1. (1차 출처) J.P. Morgan Exchange-Traded Fund Trust, "Dividend Calendar for 2026" PDF — 월배당(Monthly Distributing Non Fund of Funds) 묶음에 JEPQ·JEPI·JPQH·JEPH가 들어 있고, 10월 Ex-Date/Record Date 10/1/2026, Pay Date 10/7/2026. 9월 9/1→9/8, 11월 11/2→11/6, 12월 12/1→12/7. 문서에 "All dates subject to change."
+   https://am.jpmorgan.com/content/dam/jpm-am-aem/americas/ca/en/supplemental/jpmorgan-exchange-traded-fund-trust-dividend-calendar-for-2026.pdf
+2. stockanalysis.com/etf/jepq/dividend (2026-09-23 조회): JEPQ 최근 1년 분배금 $6.76, 수익률 11.06%, 월 지급. 2026-09-01 배당락 $0.68255 → 2026-09-03 지급 / 08-03 $0.70497 → 08-05 / 07-01 $0.63658 → 07-06 / 06-01 $0.56444 → 06-03. 10월 분배금은 아직 표에 없음.
+3. stockanalysis.com/etf/jepi/dividend (2026-09-23 조회): JEPI 최근 1년 $4.58, 수익률 8.08%. 2026-09-01 배당락 $0.37142 → 09-03 지급 / 08-03 $0.36664 → 08-05 / 07-01 $0.38716 → 07-06 / 06-01 $0.38921 → 06-03. 10월분 미기재.
+4. stockanalysis.com/stocks/o/dividend (2026-09-23 조회): 리얼티인컴 연 배당 $3.25, 수익률 5.75%, 월 지급. 2026-09-30 배당락 $0.2715 → 2026-10-15 지급 / 08-31 $0.271 → 09-15 / 07-31 $0.271 → 08-14 / 06-30 $0.271 → 07-15. 회사가 "136th Common Stock Monthly Dividend Increase"로 주당 $0.0005 올려 $0.2715로 정했다고 표기. 10월 배당락분은 아직 발표 전.
+5. Nasdaq API api.nasdaq.com/api/quote/QYLD/dividends (2026-09-23 조회): QYLD 수익률 11.44%, 연환산 분배금 $2.1204. 2026-09-21 배당락 $0.1767 → 2026-09-24 지급(선언 09-18) / 08-24 $0.1829 → 08-27 / 07-20 $0.1775 → 07-23. 10월 날짜는 응답에 없음.
+6. Global X 2026-09-22 보도자료 "GLOBAL X ANNOUNCES SEPTEMBER 2026 QUARTERLY, MONTHLY & UPCOMING SEMI-MONTHLY DISTRIBUTIONS FOR ITS SUITE OF ETFs" (newswire.ca 883969767) — 9월 분배금 발표 건.
+7. stockanalysis.com/etf/schd/dividend (2026-09-23 조회): SCHD 연 배당 $1.05, 수익률 3.11%, 분기 지급. 2026-06-24 배당락 $0.2525 → 06-29 지급 / 03-25 $0.2569 → 03-30 / 2025-12-10 $0.2782 → 12-15 / 2025-09-24 $0.2604 → 09-29. 2026년 9월 배당락분은 표에 아직 없음.
+8. 환율: Yahoo Finance chart API KRW=X, 2026-09-23 조회 regularMarketPrice 1,355.78원.
+
+[계산] 전부 위 숫자에 산수만 한 값이다.
+- 1,000만원 ÷ 1,355.78원 = 약 $7,376.
+- 세전 연 분배금(수익률 × 1,000만원): JEPQ 11.06% = 110만 6,000원(월 약 9만 2,000원) / QYLD 11.44% = 114만 4,000원(월 약 9만 5,000원) / JEPI 8.08% = 80만 8,000원(월 약 6만 7,000원) / 리얼티인컴 5.75% = 57만 5,000원(월 약 4만 7,900원) / SCHD 3.11% = 31만 1,000원(분기 약 7만 7,750원).
+- 9월 분배금 1주치 원화 환산(환율 1,355.78원): JEPQ $0.68255 = 925원 / JEPI $0.37142 = 504원 / QYLD $0.1767 = 240원 / 리얼티인컴 $0.2715 = 368원.
+- 공식 캘린더 9월 지급일 9월 8일 vs 실제 지급일 9월 3일 = 5일 차이.
+- 리얼티인컴 9월 30일 배당락 → 10월 15일 지급 = 15일.
+- JEPQ·JEPI 10월 1일 배당락 → 10월 7일 지급(캘린더) = 6일.

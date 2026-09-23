@@ -38,19 +38,38 @@ def our_shorts_stats():
     return [{'date': d, 'views': int(v), 'title': t.strip()} for d, v, t in vids]
 
 def render_samples():
-    """지금 설정으로 샘플 썸네일 2장을 새로 그린다 — 이게 있어야 조정 효과가 다음 측정에 나타난다"""
-    sh(os.path.join(HERE, 'thumb.py'), '금천 61% 강남 36%', '서울 전세가율 전수 조사', os.path.join(SAMPLE, 'short.png'), '--short')
-    bg = os.path.join(R, '_shots', 'heatmap_2026-09-23.png')
+    """지금 설정으로 샘플 썸네일을 새로 그린다 — 이게 있어야 조정 효과가 다음 측정에 나타난다.
+    쇼츠 샘플을 '배경 없이' 그리던 것이 6회차 막힘의 진짜 원인이었다(step19~26). 실제 쇼츠(shorts.py:116)는
+    첫 장면 자료 화면을 배경으로 깔고 썸네일을 만드는데, 여기서만 맨 그라데이션 위에 글자 두 줄을 그렸다.
+    자료 화면이 없으면 글자 말고는 가장자리가 없어 text_top이 손잡이를 어떻게 돌려도 0.0329에 얼어붙는다
+    (실측: 같은 설정 + 차트 배경 → text_top 0.0329→0.5178, text_mid 0.1167→0.3902, text_bot 0.1299→0.2211).
+    경쟁은 전부 사진·자료 위에 글자를 얹은 판형이라, 배경 없는 샘플로 재는 것은 애초에 다른 물건을 재는 것이었다.
+    그래서 production이 실제로 쓰는 자료 화면 세 종류(차트·히트맵·부동산 화면) 위에 그려 중앙값을 낸다(2026-09-23).
+    """
+    for p in glob.glob(os.path.join(SAMPLE, '*.png')):
+        try: os.remove(p)
+        except OSError: pass
+    shots = os.path.join(R, '_shots')
+    chart = os.path.join(SAMPLE, '_bg_chart.png')   # 이름이 short*/long* 이 아니라 측정에서는 빠진다
+    sh(os.path.join(HERE, 'chartimg.py'), 'bar', '서울 구별 전세가율', chart,
+       '금천=61', '구로=58', '중랑=56', '강북=55', '노원=53', '강남=36',
+       '--unit', '%', '--hi', '3', '--short', '--source', '국토부 실거래가')
+    bgs = [chart, os.path.join(shots, 'heatmap_re_jeonse_2026-09-23.png'), os.path.join(shots, 'naverland_test.png')]
+    for i, bg in enumerate([b for b in bgs if os.path.exists(b)]):
+        sh(os.path.join(HERE, 'thumb.py'), '금천 61% 강남 36%', '서울 전세가율 전수 조사',
+           os.path.join(SAMPLE, f'short{i}.png'), bg, '--short')
+    bg = os.path.join(shots, 'heatmap_2026-09-23.png')
     sh(os.path.join(HERE, 'thumb.py'), '전세가율 61% vs 36%', '서울 25개 구 전부 계산', os.path.join(SAMPLE, 'long.png'), *( [bg] if os.path.exists(bg) else [] ))
 
 def measure_ours():
-    """우리 썸네일을 경쟁과 같은 자로 잰다"""
+    """우리 썸네일을 경쟁과 같은 자로 잰다. 쇼츠는 배경 종류별로 여러 장이라 뒤에서 중앙값을 낸다"""
     sys.path.insert(0, HERE)
     import thumbstat
     rows = []
-    for p, isshort in ((os.path.join(SAMPLE, 'short.png'), True), (os.path.join(SAMPLE, 'long.png'), False)):
-        st = thumbstat.measure(p)
-        if st: rows.append({**st, 'file': os.path.basename(p), 'short': isshort})
+    for pat, isshort in (('short*.png', True), ('long*.png', False)):
+        for p in sorted(glob.glob(os.path.join(SAMPLE, pat))):
+            st = thumbstat.measure(p)
+            if st: rows.append({**st, 'file': os.path.basename(p), 'short': isshort})
     return rows
 
 def main():

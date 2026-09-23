@@ -23,11 +23,19 @@ def load_key(name):
     return kv if kv.get('KEY') else None
 
 def http(url, body=None, headers=None, timeout=180):
+    body_ = body
     req = urllib.request.Request(url, data=json.dumps(body).encode() if body else None, headers={'Content-Type': 'application/json', **(headers or {})})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r: return json.load(r)
     except urllib.error.HTTPError as e:
-        raise RuntimeError(f'HTTP {e.code} {e.read()[:300].decode("utf-8", "ignore")}')
+        body = e.read()[:300].decode("utf-8", "ignore")
+        # 503(혼잡)·429(속도제한)은 잠시 뒤 되는 경우가 많다 — 세 번까지 기다렸다 다시 건다
+        if e.code in (429, 503) and getattr(http, '_try', 0) < 3:
+            http._try = getattr(http, '_try', 0) + 1
+            time.sleep(8 * http._try)
+            try: return http(url, body=body_, headers=headers, timeout=timeout)
+            finally: http._try = 0
+        raise RuntimeError(f'HTTP {e.code} {body}')
 
 # ---- OpenAI ----
 def openai_models(kv):

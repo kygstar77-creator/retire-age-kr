@@ -86,6 +86,7 @@ def main():
     gaps.sort(key=lambda g: -abs(g['diff'] / max(g['target'], 1e-3)))
 
     # 4) 조정 — 측정 차이를 '그리기 손잡이'로 옮긴다. (손잡이, 방향계수, 최소~최대)
+    BINARY = {'yellow_bottom', 'num_yellow'}
     RULE = {
       'text_top': ('text_y', +0.45, 0.15, 0.80),      # 위쪽 글자가 많으면 text_y를 키워 아래로 민다
       'text_bot': ('text_y', -0.45, 0.15, 0.80),      # 아래쪽이 모자라면 text_y를 키운다(부호 반대로 들어옴)
@@ -93,18 +94,46 @@ def main():
       'dark':     ('bg_bright', +0.8, 0.12, 0.90),
       'white':    ('stroke_ratio', +900.0, 6, 40),    # 흰 면적이 많으면 외곽선을 얇게(비율 값을 키움)
       'yellow':   ('yellow_bottom', -60.0, 0, 1),     # 노랑이 많으면 아랫줄 노랑을 끈다
-      'contrast': ('panel_alpha', +260.0, 60, 230),
+      'contrast': ('panel_alpha', -260.0, 60, 230),   # 대비가 모자라면 패널을 더 진하게
+      'text_mid': ('text_y', 'center', 0.15, 0.80),   # 가운데 띠에 글자가 없으면 text_y를 0.5 쪽으로 당긴다
     }
-    for g in gaps[:3]:
-        if g['key'] not in RULE: continue
+    # 손잡이 없는 차이가 위쪽 세 자리를 잡아먹지 않게 먼저 갈라 둔다
+    knobbed = [g for g in gaps if g['key'] in RULE]
+    for g in gaps:
+        if g['key'] not in RULE:
+            blocked.append(f"{g['kind']}.{g['key']} 우리 {g['ours']} vs 경쟁 {g['target']} — 그리기 손잡이 없음")
+    memo = design.setdefault('_memo', {})   # "종류.항목.손잡이=값" → 그 값일 때 실측치. 같은 자리를 또 밟지 않으려고 적어 둔다
+    for g in knobbed[:3]:
         knob, coef, lo, hi = RULE[g['key']]
         d = design.setdefault(g['kind'], {})
         cur = d.get(knob)
         if cur is None: continue
-        delta = (g['target'] - g['ours']) * coef
+        tag = f"{g['kind']}.{g['key']}.{knob}"
+        memo[f'{tag}={cur}'] = g['ours']
+        seen = {v: o for k, v, o in ((k, k.split('=')[1], o) for k, o in memo.items() if k.startswith(tag + '='))}
+        # 손잡이를 움직였는데 실측이 그대로면 그 항목에 듣지 않는 손잡이다 — 더 돌리지 않는다
+        if len(seen) > 1 and max(seen.values()) - min(seen.values()) < 0.002:
+            blocked.append(f"{g['kind']}.{g['key']} — {knob} 를 {'/'.join(sorted(seen))} 로 바꿔도 실측 그대로, 듣지 않는 손잡이")
+            continue
+        # 계수는 모두 '우리 - 경쟁' 기준으로 적혀 있다(주석 참고). 부호를 뒤집지 말 것.
+        if coef == 'center':
+            # 가운데 띠 비율은 text_y에 대해 단조가 아니다 — 0.5 쪽으로 당기기만 한다
+            if g['ours'] >= g['target']: continue
+            delta = (g['target'] - g['ours']) * 0.45 * (1 if 0.5 > cur else -1)
+        else:
+            delta = (g['ours'] - g['target']) * coef
         new = min(max(cur + delta, lo), hi)
-        new = round(new, 4) if isinstance(cur, float) else int(round(new))
-        if new == cur: continue
+        if knob in BINARY:                       # 0/1 스위치 — 0.5를 넘어서면 뒤집는다
+            new = 1 if cur + delta >= 0.5 else 0
+        else:
+            new = round(new, 4) if isinstance(cur, float) else int(round(new))
+        if new == cur:
+            if cur in (lo, hi): blocked.append(f"{g['kind']}.{g['key']} — {knob} 가 한계 {cur} 에 붙어 더 못 감, 다른 손잡이가 필요")
+            continue
+        prev = seen.get(str(new))
+        if prev is not None and abs(prev - g['target']) >= abs(g['ours'] - g['target']):
+            blocked.append(f"{g['kind']}.{g['key']} — {knob}={new} 는 이미 재봤고 더 나빴다({prev} vs 지금 {g['ours']}), 그대로 둠")
+            continue
         d[knob] = new
         did.append(f"{g['kind']}.{knob} {cur} → {new} ({g['key']} 우리 {g['ours']} vs 경쟁 {g['target']})")
     if not gaps: did.append('썸네일 수치는 경쟁 상위와 25% 안쪽 — 조정 없음')
@@ -125,11 +154,12 @@ def main():
     # 바꾼 값으로 우리 샘플을 다시 만든다 — 안 그러면 다음 회차가 같은 차이를 또 잡는다
     if any('→' in d for d in did): did.append('다음 회차가 바뀐 값으로 다시 그려 잰다')
     rec = {'step': step, 'at': time.strftime('%Y-%m-%d %H:%M'), 'sec': int(time.time() - t0),
-           'changed': [d for d in did if '→' in d], 'did': did, 'gaps': gaps[:6],
+           'changed': [d for d in did if '→' in d], 'did': did, 'gaps': gaps[:6], 'blocked': blocked[:8],
            'ours_views': sum(v['views'] for v in ours_before[:10]) if ours_before else None, 'verdict': verdict}
     log.append(rec); json.dump(log[-200:], open(LOG, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(f"[루프 {step}회차] {rec['sec']}초")
     for d in did: print(' ·', d)
+    for b in blocked[:8]: print(' · 막힘:', b)
     if verdict: print(' ·', verdict)
     if gaps: print(' 남은 차이:', ', '.join(f"{g['kind']}.{g['key']} {g['ours']}→{g['target']}" for g in gaps[:5]))
 

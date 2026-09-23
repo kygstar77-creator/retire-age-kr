@@ -23,3 +23,6 @@
 | 금융상품 한눈에 키 | 예금·적금 실제 금리(은행권 39상품) | finlife.fss.or.kr | **완료 2026-09-23 17:27** — finlife_key.txt |
 | FRED 키 | 연방기금금리·CPI·10년물·실업률 시계열 | fred.stlouisfed.org | **완료 2026-09-23 17:30** — fred_key.txt |
 | (막힘 기록 2026-09-23 17시) 발리·스페인 매물 | 해외 도시 글의 '지금 나와 있는 월세' | 사장님 손 필요 없음 — fazwaz.com/…/indonesia/bali 404, fazwaz.id Cloudflare 403, idealista.com(스페인) 403. 같은 스크립트로 태국(fazwaz.com)·포르투갈(idealista.pt)은 정상. 다음 도구 회차에서 대체 사이트(Rumah123·Fotocasa) 시험할 것 | 대기 |
+
+- (2026-09-23 19시) **OpenAI 키가 없다** — C:\Users\강영준\Documents\openai_key.txt 없음. 그래서 사실 대조를 Gemini 한 곳이 혼자 하고 있다(자기 계열 모델이 자기 글을 보는 셈이라 교차검증이 아니다). 무료 아님(종량). 절차: platform.openai.com → API keys → 발급 → 위 경로에 KEY=sk-... 한 줄.
+- (2026-09-23 19시) **Gemini 무료 등급이 503으로 막힌다** — 묶음 1개 검증에 10분 넘게 걸려 밀린 54개를 못 따라잡는다. 키 하나로는 하루 24편 검증이 안 된다. 무료 대안을 E 회차에 찾거나, 유료 전환은 사장님 판단.

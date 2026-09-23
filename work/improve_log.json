@@ -12,5 +12,12 @@
   "task": "C",
   "did": "대기열 1번 work/listings.py 신규(해외 매물+생활비) — 매물 6도시(치앙마이·방콕·푸켓·파타야·리스본·포르투) 실행 확인, 생활비 22도시 원화 직접. insider.py를 EDGAR 일별 인덱스로 고쳐 매수 1건→17건(109건 조회). rules.json 규칙 3개 추가.",
   "blocked": "발리 매물(fazwaz.com 404 / fazwaz.id Cloudflare 403)·스페인 매물(idealista.com 403) — 생활비만 받게 두고 tools-wanted에 대체 사이트 시험을 적음. 당일 EDGAR 인덱스는 마감 뒤 게시라 오늘분 404."
+ },
+ {
+  "date": "2026-09-23",
+  "hour": 19,
+  "task": "D",
+  "did": "일감표 1번(디자인 차이 6→0) 닫음 — loop.py 조정식 부호가 계수와 반대라 3회차째 안 움직이던 것을 고치고 text_mid 손잡이·0/1 스위치·되밟기/한계붙음 감지 추가(손잡이 3개가 처음 움직임). crosscheck.py에 503/429 재시도 추가. schd10 대기 묶음의 추측 문장 2건을 발행 전에 고침.",
+  "blocked": "Gemini 무료 등급 503 탓에 묶음 1개 검증에 10분 넘게 걸려 미검증 54개 중 2개만 돌렸다. OpenAI 키 없어 사실 대조를 Gemini가 혼자 함 — tools-wanted.md에 올림."
  }
 ]

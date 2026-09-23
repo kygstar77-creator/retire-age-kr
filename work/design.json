@@ -1,22 +1,28 @@
 {
  "short": {
-  "text_y": 0.2416,
+  "text_y": 0.6592,
   "bg_bright": 0.3,
   "panel_alpha": 150,
   "yellow_bottom": 0,
   "num_yellow": 1,
-  "stroke_ratio": 6
+  "stroke_ratio": 40
  },
  "long": {
   "text_y": 0.72,
   "bg_bright": 0.45,
   "panel_alpha": 150,
-  "yellow_bottom": 1,
+  "yellow_bottom": 0,
   "num_yellow": 1,
   "stroke_ratio": 16
  },
  "video": {
   "zoom": 0.0009
  },
- "step": 5
+ "step": 14,
+ "_memo": {
+  "short.white.stroke_ratio=40": 0.0353,
+  "long.yellow.yellow_bottom=1": 0.0526,
+  "short.yellow.yellow_bottom=0": 0.0003,
+  "long.yellow.yellow_bottom=0": 0.0007
+ }
 }

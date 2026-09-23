@@ -26,9 +26,11 @@ for lawd, name in sgg.items():
     sale = collections.defaultdict(list); jeonse = collections.defaultdict(list); wolse = collections.defaultdict(list)
     for r in tr:
         k = (r.get('aptNm', '').strip(), band(r.get('excluUseAr')))
+        if not k[0]: continue   # 단지명이 빈 거래는 한 덩어리로 묶여 전세가율이 119%처럼 튄다(2026-09-23 확인) — 뺀다
         if k[1] is not None and num(r.get('dealAmount')) > 0 and not r.get('cdealType'): sale[k].append(num(r.get('dealAmount')))   # 만원, 해제거래 제외
     for r in rt:
         k = (r.get('aptNm', '').strip(), band(r.get('excluUseAr')))
+        if not k[0]: continue
         if k[1] is None: continue
         dep, mon = num(r.get('deposit')), num(r.get('monthlyRent'))
         if mon == 0 and dep > 0: jeonse[k].append(dep)

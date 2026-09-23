@@ -6,200 +6,200 @@
 "districts": [
 {
 "name": "금천구",
-"trades": 272,
-"rents": 699,
+"trades": 319,
+"rents": 2020,
 "pairs": 27,
 "jeonse_ratio": 0.6137184115523465,
 "rent_yield": 0.023967828418230565
 },
 {
 "name": "도봉구",
-"trades": 605,
-"rents": 890,
+"trades": 650,
+"rents": 1159,
 "pairs": 55,
 "jeonse_ratio": 0.6024096385542169,
 "rent_yield": 0.02087160195113328
 },
 {
 "name": "강북구",
-"trades": 243,
-"rents": 525,
+"trades": 262,
+"rents": 685,
 "pairs": 29,
 "jeonse_ratio": 0.5816326530612245,
 "rent_yield": 0.02386444527981956
 },
 {
 "name": "중랑구",
-"trades": 769,
-"rents": 1952,
+"trades": 805,
+"rents": 2234,
 "pairs": 49,
 "jeonse_ratio": 0.575,
 "rent_yield": 0.019494584837545126
 },
 {
 "name": "관악구",
-"trades": 374,
-"rents": 1093,
+"trades": 448,
+"rents": 1867,
 "pairs": 47,
 "jeonse_ratio": 0.5590909090909091,
 "rent_yield": 0.017504886986981404
 },
 {
 "name": "은평구",
-"trades": 611,
-"rents": 1968,
+"trades": 671,
+"rents": 2525,
 "pairs": 63,
 "jeonse_ratio": 0.5466970387243736,
 "rent_yield": 0.02036568742655699
 },
 {
 "name": "구로구",
-"trades": 646,
-"rents": 2647,
+"trades": 753,
+"rents": 3509,
 "pairs": 77,
 "jeonse_ratio": 0.5300970873786408,
 "rent_yield": 0.0178
 },
 {
 "name": "노원구",
-"trades": 1311,
-"rents": 3097,
+"trades": 1326,
+"rents": 3181,
 "pairs": 174,
 "jeonse_ratio": 0.5273935002195872,
 "rent_yield": 0.019823788546255508
 },
 {
 "name": "종로구",
-"trades": 70,
-"rents": 391,
+"trades": 182,
+"rents": 836,
 "pairs": 6,
 "jeonse_ratio": 0.5153507735217993,
 "rent_yield": 0.009456716417910448
 },
 {
 "name": "성북구",
-"trades": 581,
-"rents": 1295,
+"trades": 589,
+"rents": 1422,
 "pairs": 77,
 "jeonse_ratio": 0.5151914893617021,
 "rent_yield": 0.01747089215008022
 },
 {
 "name": "서대문구",
-"trades": 409,
-"rents": 1231,
+"trades": 469,
+"rents": 1613,
 "pairs": 61,
 "jeonse_ratio": 0.5,
 "rent_yield": 0.01676057002144106
 },
 {
 "name": "강서구",
-"trades": 783,
-"rents": 3047,
+"trades": 943,
+"rents": 5565,
 "pairs": 92,
 "jeonse_ratio": 0.4697493336684627,
 "rent_yield": 0.015182505355915761
 },
 {
 "name": "동대문구",
-"trades": 411,
-"rents": 1546,
+"trades": 509,
+"rents": 2708,
 "pairs": 47,
 "jeonse_ratio": 0.4666666666666667,
 "rent_yield": 0.016385947482916264
 },
 {
 "name": "중구",
-"trades": 123,
-"rents": 638,
+"trades": 180,
+"rents": 1169,
 "pairs": 14,
 "jeonse_ratio": 0.4638595873208473,
 "rent_yield": 0.019478212906784337
 },
 {
 "name": "양천구",
-"trades": 398,
-"rents": 1935,
+"trades": 452,
+"rents": 2213,
 "pairs": 55,
 "jeonse_ratio": 0.462406015037594,
 "rent_yield": 0.012182741116751269
 },
 {
 "name": "영등포구",
-"trades": 439,
-"rents": 1901,
+"trades": 658,
+"rents": 3888,
 "pairs": 63,
 "jeonse_ratio": 0.44966442953020136,
 "rent_yield": 0.014431651843700932
 },
 {
 "name": "마포구",
-"trades": 290,
-"rents": 2055,
+"trades": 436,
+"rents": 3131,
 "pairs": 48,
 "jeonse_ratio": 0.4152700254850545,
 "rent_yield": 0.014555017590106245
 },
 {
 "name": "동작구",
-"trades": 389,
-"rents": 1445,
+"trades": 400,
+"rents": 1583,
 "pairs": 58,
 "jeonse_ratio": 0.413070328392909,
 "rent_yield": 0.012
 },
 {
 "name": "광진구",
-"trades": 139,
-"rents": 670,
+"trades": 198,
+"rents": 1108,
 "pairs": 11,
 "jeonse_ratio": 0.40353982300884955,
 "rent_yield": 0.010821864106689758
 },
 {
 "name": "성동구",
-"trades": 174,
-"rents": 1527,
+"trades": 213,
+"rents": 2055,
 "pairs": 27,
 "jeonse_ratio": 0.4004237288135593,
 "rent_yield": 0.01327
 },
 {
 "name": "강동구",
-"trades": 487,
-"rents": 2365,
+"trades": 568,
+"rents": 3026,
 "pairs": 59,
 "jeonse_ratio": 0.4003891050583658,
 "rent_yield": 0.011911601732783137
 },
 {
 "name": "용산구",
-"trades": 120,
-"rents": 1025,
+"trades": 172,
+"rents": 1462,
 "pairs": 16,
 "jeonse_ratio": 0.3969490888903403,
 "rent_yield": 0.012158606483350425
 },
 {
 "name": "송파구",
-"trades": 530,
-"rents": 3244,
+"trades": 695,
+"rents": 4581,
 "pairs": 61,
 "jeonse_ratio": 0.36737012987012985,
 "rent_yield": 0.011767807245763678
 },
 {
 "name": "서초구",
-"trades": 278,
-"rents": 2502,
+"trades": 366,
+"rents": 3004,
 "pairs": 21,
 "jeonse_ratio": 0.366412213740458,
 "rent_yield": 0.010844575822187761
 },
 {
 "name": "강남구",
-"trades": 289,
-"rents": 3192,
+"trades": 476,
+"rents": 3970,
 "pairs": 32,
 "jeonse_ratio": 0.358079606750756,
 "rent_yield": 0.010345115270168802

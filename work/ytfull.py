@@ -22,6 +22,33 @@ def listing():
         except Exception: pass
     return out
 
+def ytdlp_subs(vid):
+    """자막 API가 IP 차단(IpBlocked)일 때의 두 번째 경로. 2026-09-23 실측: api.list()는 되는데 .fetch()가
+    IpBlocked 로 떨어져 소수몽키·수페TV·투미TV 1,448편이 전부 자막 0개였다. yt-dlp는 같은 영상의 ko 자동자막을
+    목록에 보여 준다. 다만 영상 수집 직후에는 yt-dlp도 429(Too Many Requests)가 나므로 실패하면 조용히 넘긴다."""
+    base = os.path.join(TMP, 'sub_' + vid)
+    for f in glob.glob(base + '*'):
+        try: os.remove(f)
+        except OSError: pass
+    try:
+        subprocess.run(YT + ['--skip-download', '--write-auto-subs', '--write-subs', '--sub-langs', 'ko',
+                             '--sub-format', 'json3', '-o', base, f'https://www.youtube.com/watch?v={vid}'],
+                       capture_output=True, text=True, timeout=180)
+    except Exception:
+        return None
+    for f in glob.glob(base + '*.json3'):
+        try:
+            j = json.load(open(f, encoding='utf-8'))
+            segs = []
+            for ev in j.get('events', []):
+                t = ''.join(x.get('utf8', '') for x in ev.get('segs', [])).strip()
+                if t: segs.append((round(ev.get('tStartMs', 0) / 1000), t))
+            if segs: return segs
+        except Exception:
+            pass
+    return None
+
+
 def scenes(vid, mp4, outdir, max_frames=120):
     cap = cv2.VideoCapture(mp4)   # 영상 임시 파일은 ASCII 경로(TMP)라 읽기는 된다
     if not cap.isOpened(): return 0
@@ -65,11 +92,18 @@ for k, v in enumerate(vids):
     if index.get(vid, {}).get('frames', 0) > 0: continue   # 장면 받은 건 건너뜀(자막은 차단 풀리면 따로 채움)
     rec = dict(index.get(vid, {})); rec.update({k: v[k] for k in ('id', 'title', 'views', 'dur', 'date') if v.get(k)}); rec.setdefault('chars', 0); rec.setdefault('frames', 0)
     if rec['chars'] == 0:
+        segs = None
         try:
             tr = api.list(vid).find_transcript(['ko']).fetch(); segs = [(round(x.start), x.text) for x in tr]
+        except Exception as e:
+            # 오류를 60자로 자르는 바람에 IpBlocked 가 "video is no longer available" 안내문으로 보였고,
+            # 세 채널 1,448편이 자막 0개인 것을 아무도 못 알아챘다(2026-09-23 확인). 예외 이름을 앞에 적는다.
+            rec['err'] = type(e).__name__ + ': ' + ' '.join(str(e).split())[:80]
+            segs = ytdlp_subs(vid)          # 자막 API가 막히면 yt-dlp로 한 번 더
+            if segs: rec['err'] += ' -> yt-dlp로 받음'
+        if segs:
             open(os.path.join(OUT, f'{vid}.txt'), 'w', encoding='utf-8').write(f"# {v['title']} | {v['views']}회 | {v['dur']}초\n" + '\n'.join(f'{s//60:02d}:{s%60:02d} {t}' for s, t in segs))
             rec['chars'] = sum(len(t) for _, t in segs)
-        except Exception as e: rec['err'] = str(e)[:60]
     if rec['frames'] == 0:
         mp4 = os.path.join(TMP, vid + '.mp4')
         try:

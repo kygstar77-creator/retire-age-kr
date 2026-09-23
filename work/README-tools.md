@@ -132,3 +132,11 @@ Telegram request_access가 두 번(인자 전부/최소) 모두 "can't be approv
 
 ## 파이썬은 3.12로 (2026-09-23)
 구글 라이브러리가 2026-10-04부터 3.10 지원을 끊는다는 경고가 떠서 전부 3.12로 옮겼다(`py -3.12`, 패키지·Playwright 크로미움 설치·주요 스크립트 시험 완료). 루틴 지시문은 `py -3.12 work/...`로 바꿨다. `python`은 아직 3.10을 가리키므로 새 스크립트 호출은 `py -3.12`로 쓴다.
+
+## 해외 매물·생활비 읽기 — work/listings.py (2026-09-23)
+`py -3.12 work/listings.py 치앙마이 8` → 매물 8건 + 생활비 10항목을 `work/research/listings/<도시>_<날짜>.json`에 저장(첫 줄에 확인일, 항목마다 URL).
+`py -3.12 work/listings.py --cities` 로 지원 도시를 본다.
+- 매물 되는 도시(실측): 치앙마이·방콕·푸켓·파타야(fazwaz.com), 리스본·포르투(idealista.pt). 프로필 없는 Playwright chromium, 도시당 요청 2회.
+- 생활비는 22개 도시 전부 됨 — Numbeo `?displayCurrency=KRW`가 **원화로 바로** 준다(환율 계산 필요 없음). "서울 대비 몇 % 싸다" 문장도 화면에 그대로 있다.
+- 막힘: 발리(fazwaz.com 404 / fazwaz.id Cloudflare 403)·스페인 도시(idealista.com 403)는 매물이 안 되고 생활비만. 글에는 '실매물 미확인'이라고 적는다.
+- 카드 선택자: FazWaz `div.result-search__item`(단지명은 동네 줄 바로 위, LISTED/UPDATED 배지 건너뛰기), Idealista `article.item` + `a.item-link`.

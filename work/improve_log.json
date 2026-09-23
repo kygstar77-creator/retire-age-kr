@@ -5,5 +5,12 @@
   "task": "B",
   "did": "planner.py 2곳 수정(이미 쓴 묶음 제목과 겹치는 후보 제외 → 카페 00 리얼티인컴·02 VOO vs SPY 중복 잡음 / 형식 성과를 form.txt 있는 글만 세고 없으면 '측정 불가'로 표기). plan_2026-09-24.md 재생성, 블로그 07 '마감 후보 없음'을 국세청 세무일정 원문(10/12 원천세·10/26 부가세 2기 예정)으로 교체. 앞 6슬롯 중 5개 facts 작성: mktone·levetf(+wants)·xyldcc(+wants)·tenbil·usdvsbill. 1차 출처는 ProShares·Global X·SSGA·국세청·Nasdaq API·Yahoo chart.",
   "blocked": "Nasdaq dividends API가 JEPQ 빼고 전부 N/A(Yahoo chart로 대체 확인). 블로그 01 '금리계산기' 슬롯은 근거 확인 못 해 그대로 둠. 국내 달러예금 금리·XYLD 콜 매도 비중·TQQQ 배당 이력 미확인 — facts에 '확인 안 함'으로 적음."
+ },
+ {
+  "date": "2026-09-23",
+  "hour": 17,
+  "task": "C",
+  "did": "대기열 1번 work/listings.py 신규(해외 매물+생활비) — 매물 6도시(치앙마이·방콕·푸켓·파타야·리스본·포르투) 실행 확인, 생활비 22도시 원화 직접. insider.py를 EDGAR 일별 인덱스로 고쳐 매수 1건→17건(109건 조회). rules.json 규칙 3개 추가.",
+  "blocked": "발리 매물(fazwaz.com 404 / fazwaz.id Cloudflare 403)·스페인 매물(idealista.com 403) — 생활비만 받게 두고 tools-wanted에 대체 사이트 시험을 적음. 당일 EDGAR 인덱스는 마감 뒤 게시라 오늘분 404."
  }
 ]

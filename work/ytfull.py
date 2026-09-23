@@ -52,12 +52,11 @@ for k, v in enumerate(vids):
     if rec['frames'] == 0:
         mp4 = os.path.join(TMP, vid + '.mp4')
         try:
-            subprocess.run(YT + ['-f', '135/134/160', '-o', mp4, f'https://www.youtube.com/watch?v={vid}'], capture_output=True, text=True, timeout=600)
-            if os.path.exists(mp4): rec['frames'] = scenes(vid, mp4, os.path.join(OUT, vid))
-        except Exception as e: rec['err2'] = str(e)[:60]
-        if not os.path.exists(mp4):
             r2 = subprocess.run(YT + ['-f', '135/134/160', '-o', mp4, f'https://www.youtube.com/watch?v={vid}'], capture_output=True, text=True, timeout=600)
-            if 'bot' in (r2.stderr or ''): rec['err2'] = 'bot-check'
+            if os.path.exists(mp4): rec['frames'] = scenes(vid, mp4, os.path.join(OUT, vid))
+            elif 'bot' in (r2.stderr or ''): rec['err2'] = 'bot-check'   # 유튜브 '봇 확인' 차단
+            else: rec['err2'] = (r2.stderr or '')[-80:]
+        except Exception as e: rec['err2'] = str(e)[:60]
         finally:
             for f in glob.glob(os.path.join(TMP, vid + '*')):
                 try: os.remove(f)

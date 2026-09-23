@@ -6,9 +6,9 @@
   "yellow_bottom": 0,
   "num_yellow": 1,
   "stroke_ratio": 40,
-  "yellow_frac": 0.4896,
+  "yellow_frac": 0.3978,
   "text_scale": 0.9,
-  "text_spread": 1.0,
+  "text_spread": 0.15,
   "bg_sat": 2.3572
  },
  "long": {
@@ -24,7 +24,7 @@
  "video": {
   "zoom": 0.0009
  },
- "step": 31,
+ "step": 35,
  "_memo": {
   "short.white.stroke_ratio=40": 0.0301,
   "long.yellow.yellow_bottom=1": 0.0526,
@@ -45,6 +45,10 @@
   "long.bright.bg_bright=0.9": 0.2825,
   "long.contrast.panel_alpha=182": 0.2804,
   "short.sat.bg_sat=0.4": 0.098,
-  "short.text_mid.text_y=0.418": 0.2376
+  "short.text_mid.text_y=0.418": 0.2376,
+  "short.white.text_scale=0.9": 0.0224,
+  "short.text_mid.text_y=0.5019": 0.2375,
+  "short.text_top.text_spread=1.0": 0.3804,
+  "short.yellow.yellow_frac=0.4896": 0.0085
  }
 }

@@ -37,7 +37,7 @@ def our_shorts_stats():
     vids = re.findall(r'(\d{4}-\d{2}-\d{2})\s+(\d+)\s*회\s*\|\s*(.+)', out)
     return [{'date': d, 'views': int(v), 'title': t.strip()} for d, v, t in vids]
 
-def render_samples():
+def render_samples(keep_chart=False):
     """지금 설정으로 샘플 썸네일을 새로 그린다 — 이게 있어야 조정 효과가 다음 측정에 나타난다.
     쇼츠 샘플을 '배경 없이' 그리던 것이 6회차 막힘의 진짜 원인이었다(step19~26). 실제 쇼츠(shorts.py:116)는
     첫 장면 자료 화면을 배경으로 깔고 썸네일을 만드는데, 여기서만 맨 그라데이션 위에 글자 두 줄을 그렸다.
@@ -47,13 +47,15 @@ def render_samples():
     그래서 production이 실제로 쓰는 자료 화면 세 종류(차트·히트맵·부동산 화면) 위에 그려 중앙값을 낸다(2026-09-23).
     """
     for p in glob.glob(os.path.join(SAMPLE, '*.png')):
+        if keep_chart and os.path.basename(p) == '_bg_chart.png': continue
         try: os.remove(p)
         except OSError: pass
     shots = os.path.join(R, '_shots')
     chart = os.path.join(SAMPLE, '_bg_chart.png')   # 이름이 short*/long* 이 아니라 측정에서는 빠진다
-    sh(os.path.join(HERE, 'chartimg.py'), 'bar', '서울 구별 전세가율', chart,
-       '금천=61', '구로=58', '중랑=56', '강북=55', '노원=53', '강남=36',
-       '--unit', '%', '--hi', '3', '--short', '--source', '국토부 실거래가')
+    if not (keep_chart and os.path.exists(chart)):
+        sh(os.path.join(HERE, 'chartimg.py'), 'bar', '서울 구별 전세가율', chart,
+           '금천=61', '구로=58', '중랑=56', '강북=55', '노원=53', '강남=36',
+           '--unit', '%', '--hi', '3', '--short', '--source', '국토부 실거래가')
     bgs = [chart, os.path.join(shots, 'heatmap_re_jeonse_2026-09-23.png'), os.path.join(shots, 'naverland_test.png')]
     for i, bg in enumerate([b for b in bgs if os.path.exists(b)]):
         sh(os.path.join(HERE, 'thumb.py'), '금천 61% 강남 36%', '서울 전세가율 전수 조사',
@@ -83,6 +85,59 @@ def thumb_defaults():
 
 THUMB_DEFAULT = {}
 
+# ── 세 칸(위·가운데·아래)은 손잡이 하나를 나눠 쓴다 ────────────────────────────────
+# 한 칸씩 "우리-경쟁" 만큼 밀면 서로 반대로 밀어 영원히 흔들린다. 2026-09-23 실측(쇼츠, 배경 3종 중앙값):
+#   text_spread  0.0    top 0.2264  mid 0.4856  bot 0.2149
+#                0.3    top 0.2264  mid 0.4903  bot 0.2149
+#                0.45   top 0.3079  mid 0.3792  bot 0.1711
+#                0.6304 top 0.3441  mid 0.2375  bot 0.2831   ← 지금 값
+#                1.0    top 0.3804  mid 0.2375  bot 0.2318
+#   경쟁 상위     top 0.2748  mid 0.4241  bot 0.3093
+# 위·가운데는 낮은 쪽을, 아래는 높은 쪽을 원한다 — 한 손잡이로 셋을 동시에 맞출 수 없다.
+# 그래서 밀지 않고 "재서 고른다": 격자마다 실제로 그려 재고, 세 칸 상대오차 합이 가장 작은 값을 쓴다.
+# (text_mid 가 5회차 넘게 "듣지 않는 손잡이"로 막혀 있던 진짜 이유 — 쇼츠에서 text_y 를 보고 있었다.
+#  실측하면 text_y 는 text_mid 를 0.2375~0.3674 안에서만 흔들어 목표 0.4241 에 닿지 못한다.)
+BAND_KEYS = ('text_top', 'text_mid', 'text_bot')
+BAND_KNOB = {'long': 'text_y', 'short': 'text_spread'}
+BAND_GRID = {'long':  [0.20, 0.35, 0.50, 0.62, 0.72, 0.80],
+             'short': [0.0, 0.15, 0.30, 0.45, 0.60, 0.80, 1.0]}
+
+def band_err(rows, kind, spec):
+    """세 칸 상대오차 합. 작을수록 경쟁 판형에 가깝다"""
+    tgt = spec.get(kind) or {}
+    mine = [r for r in rows if (r['short'] if kind == 'short' else not r['short'])]
+    if not mine or not tgt: return None, {}
+    got = {k: statistics.median(r[k] for r in mine) for k in BAND_KEYS if k in tgt}
+    if not got: return None, {}
+    return sum(abs(got[k] - tgt[k]) / max(tgt[k], 1e-3) for k in got), got
+
+def tune_bands(design, spec, kind, did, blocked):
+    """격자를 실제로 그려 재고 가장 나은 값을 고른다. 미는 게 아니라 재는 것이라 흔들리지 않는다"""
+    knob = BAND_KNOB[kind]; d = design.setdefault(kind, {})
+    cur = d.get(knob)
+    if cur is None:
+        cur = float(THUMB_DEFAULT.get(kind, {}).get(knob, 0.0))
+    grid = sorted(set(BAND_GRID[kind] + [round(float(cur), 4)]))
+    best, table = None, []
+    for v in grid:
+        d[knob] = v
+        json.dump(design, open(DESIGN, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        render_samples(keep_chart=True)
+        err, got = band_err(measure_ours(), kind, spec)
+        if err is None:
+            blocked.append(f'{kind} 세 칸 맞추기 — 샘플이나 경쟁 기준이 없어 못 쟀다'); d[knob] = cur; return
+        table.append({'v': v, 'err': round(err, 4), **{k: round(x, 4) for k, x in got.items()}})
+        if best is None or err < best['err'] - 1e-9: best = table[-1]
+    d[knob] = best['v']
+    json.dump(design, open(DESIGN, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    if best['v'] != cur:
+        was = next((t for t in table if t['v'] == cur), None)
+        did.append(f"{kind}.{knob} {cur} → {best['v']} (세 칸 오차 합 {was['err'] if was else '?'} → {best['err']}, 격자 {len(grid)}점 실측)")
+    else:
+        did.append(f"{kind}.{knob} {cur} 유지 (격자 {len(grid)}점 중 오차 합 {best['err']} 이 가장 작다)")
+    return table
+
+
 def main():
     global THUMB_DEFAULT
     THUMB_DEFAULT = thumb_defaults()
@@ -101,8 +156,12 @@ def main():
     out = sh(os.path.join(HERE, 'thumbstat.py'), timeout=1200)
     m = re.search(r'썸네일 (\d+) 장 측정', out); did.append(f'경쟁 썸네일 {m.group(1) if m else "?"}장 재측정')
     spec = load(SPEC, {})
-    render_samples()          # 지금 design.json 값으로 샘플을 새로 그린다
-    ours = measure_ours()     # 그 샘플만 잰다
+    # 2-b) 세 칸(위·가운데·아래)은 손잡이 하나를 나눠 쓰므로 밀지 않고 격자로 재서 고른다
+    bands = {}
+    for kind in ('short', 'long'):
+        if spec.get(kind): bands[kind] = tune_bands(design, spec, kind, did, blocked)
+    render_samples(keep_chart=True)   # 고른 값으로 샘플을 새로 그린다
+    ours = measure_ours()             # 그 샘플만 잰다
 
     # 3) 비교 — 우리 평균 vs 경쟁 상위 중앙값
     gaps = []
@@ -120,6 +179,7 @@ def main():
     # 4) 조정 — 측정 차이를 '그리기 손잡이'로 옮긴다. (손잡이, 방향계수, 최소~최대)
     BINARY = {'yellow_bottom', 'num_yellow'}
     RULE = {
+      # ※ text_top/text_mid/text_bot 항목은 2026-09-23부터 tune_bands(격자 실측)가 맡는다. 아래 계수는 그때까지의 기록으로 남겨 둔다.
       # 손잡이·계수·한계는 판형별로 다르게 둘 수 있다({'long':..,'short':..}). 쇼츠는 세로 1920이라 두 줄을 붙여 두면
       # text_y를 어디로 옮겨도 top·bot 두 칸을 같이 못 채운다 — 5회차 연속 "듣지 않는 손잡이"로 막혀 있었다(step19~23).
       # 그래서 쇼츠는 두 줄을 위·아래로 벌리는 text_spread(thumb.py)로 바꿨다. 롱폼(1280x720)은 text_y가 듣는다.
@@ -155,8 +215,9 @@ def main():
       'text_mid': ('text_y', 'center', 0.15, 0.80),   # 가운데 띠에 글자가 없으면 text_y를 0.5 쪽으로 당긴다
     }
     # 손잡이 없는 차이가 위쪽 세 자리를 잡아먹지 않게 먼저 갈라 둔다
-    knobbed = [g for g in gaps if g['key'] in RULE]
+    knobbed = [g for g in gaps if g['key'] in RULE and g['key'] not in BAND_KEYS]
     for g in gaps:
+        if g['key'] in BAND_KEYS: continue      # 2-b 격자 탐색이 이미 최선을 골랐다. 여기서 또 밀면 서로 밀쳐 흔들린다
         if g['key'] not in RULE:
             blocked.append(f"{g['kind']}.{g['key']} 우리 {g['ours']} vs 경쟁 {g['target']} — 그리기 손잡이 없음")
     memo = design.setdefault('_memo', {})   # "종류.항목.손잡이=값" → 그 값일 때 실측치. 같은 자리를 또 밟지 않으려고 적어 둔다
@@ -223,7 +284,7 @@ def main():
     # 바꾼 값으로 우리 샘플을 다시 만든다 — 안 그러면 다음 회차가 같은 차이를 또 잡는다
     if any('→' in d for d in did): did.append('다음 회차가 바뀐 값으로 다시 그려 잰다')
     rec = {'step': step, 'at': time.strftime('%Y-%m-%d %H:%M'), 'sec': int(time.time() - t0),
-           'changed': [d for d in did if '→' in d], 'did': did, 'gaps': gaps[:6], 'blocked': blocked[:8],
+           'changed': [d for d in did if '→' in d], 'did': did, 'gaps': gaps[:6], 'blocked': blocked[:8], 'bands': bands,
            'ours_views': sum(v['views'] for v in ours_before[:10]) if ours_before else None, 'verdict': verdict}
     log.append(rec); json.dump(log[-200:], open(LOG, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(f"[루프 {step}회차] {rec['sec']}초")

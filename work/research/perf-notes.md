@@ -44,3 +44,11 @@
 올림: https://youtu.be/zHnqdIdQhHk (private)
 고친 것 하나 — 4번 장면에 "나머지는 전부 1%대 아래"라고 썼다가 종로 0.95%가 1% 아래라 틀린 말이라
 "나머지는 모두 2% 아래"로 바꿨다. 검사기는 숫자만 보지 이런 말은 못 잡는다.
+
+## 2026-09-24 00:2x — 루프 34·35회차 (디자인 차이 6 → 3)
+- 우리 영상 조회 합계(최근 10편) 3304 → 3304, 변화 없음. 하루치라 단정하지 않는다.
+- 썸네일 판형: 쇼츠 세 칸 오차 합 0.7769 → 0.6046 (실측). short.text_spread 0.6304 → 0.15.
+  닫힌 차이 short.text_mid·short.text_top·short.yellow / 남은 차이 short.white·short.text_bot·long.text_top.
+- short.white 는 이번 회차에도 못 닫았다. 실측해 보니 stroke_ratio(6~40)·panel_alpha(60~230)·text_y·text_spread
+  어느 손잡이도 white 를 0.0214~0.0224 밖으로 움직이지 못한다. 외곽선은 흰 글자 뒤에 그려져 흰 픽셀을 깎지 않는다.
+  text_scale 은 쇼츠 하한 0.9 에 붙어 있다(글자량을 지키려고 올려 둔 하한). 세 회차째 막힘 → tools-wanted.md 로 올림.

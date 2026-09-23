@@ -130,7 +130,7 @@ def building(sigungu_cd, bjdong_cd, bun, ji='0'):
     def pack(x, dong):
         park = sum(_i(x.get(f)) for f in PARK)
         d = str(x.get('useAprDay') or '')
-        hh = _i(x.get('hhldCnt'))
+        hh = _i(x.get('hhldCnt')) or _i(x.get('hoCnt'))   # 오피스텔은 세대가 아니라 호실로 센다
         return {'단지': x.get('bldNm') or x.get('dongNm'), '주소': x.get('platPlc'), '세대수': hh,
                 '주차대수': park, '동수': dong,
                 '준공': f'{d[:4]}년 {int(d[4:6])}월' if len(d) >= 6 else '',
@@ -138,17 +138,17 @@ def building(sigungu_cd, bjdong_cd, bun, ji='0'):
 
     it = rows(u)
     if it:
-        x = max(it, key=lambda z: _i(z.get('hhldCnt')))
-        if _i(x.get('hhldCnt')): return pack(x, _i(x.get('mainBldCnt')))
+        x = max(it, key=lambda z: _i(z.get('hhldCnt')) or _i(z.get('hoCnt')))
+        if _i(x.get('hhldCnt')) or _i(x.get('hoCnt')): return pack(x, _i(x.get('mainBldCnt')))
 
     # 총괄표제부는 단지형에만 있다. 오피스텔·연립처럼 한 동짜리는 표제부에서 주건축물만 합친다
     # (부속건축물인 경로당·관리동이 섞이면 세대수가 0으로 나온다 — 2026-09-24 확인).
     u2 = u.replace('getBrRecapTitleInfo', 'getBrTitleInfo').replace('numOfRows=5', 'numOfRows=100')
-    main = [x for x in rows(u2) if _i(x.get('hhldCnt'))]
+    main = [x for x in rows(u2) if _i(x.get('hhldCnt')) or _i(x.get('hoCnt'))]
     if not main: return None
-    hh = sum(_i(x.get('hhldCnt')) for x in main)
+    hh = sum(_i(x.get('hhldCnt')) or _i(x.get('hoCnt')) for x in main)
     park = sum(sum(_i(x.get(f)) for f in PARK) for x in main)
-    big = max(main, key=lambda z: _i(z.get('hhldCnt')))
+    big = max(main, key=lambda z: _i(z.get('hhldCnt')) or _i(z.get('hoCnt')))
     d = str(big.get('useAprDay') or '')
     return {'단지': big.get('bldNm') or big.get('dongNm'), '주소': big.get('platPlc'), '세대수': hh,
             '주차대수': park, '동수': len(main),

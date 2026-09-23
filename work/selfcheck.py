@@ -14,7 +14,8 @@ TARGET = {   # 실측값. 지어낸 값이 아니다.
     'cafe': {'문장길이중앙': (24, 40), '습니다비율': (0.10, 0.35), '1인칭비율': (0.03, 0.20),
              '조문번호': (0, 0), '물음표비율': (0.0, 0.08)},
     # 블로그는 평어체가 기준이다(사장님 "담백하잖아") — ~습니다로 끝나는 문장이 적은 게 정상이다.
-    'blog': {'문장길이중앙': (28, 60), '습니다비율': (0.0, 0.30), '1인칭비율': (0.0, 0.20),
+    # 2026-09-24 실측: 발행된 블로그 39편의 문장 길이 중앙값이 24~54자(중앙 39). 그 범위로 잡는다.
+    'blog': {'문장길이중앙': (24, 56), '습니다비율': (0.0, 0.30), '1인칭비율': (0.0, 0.20),
              '조문번호': (0, 1), '물음표비율': (0.0, 0.08)},
 }
 BAN = ['정리하면', '핵심은', '결론적으로', '시사한다', '살펴보겠습니다', '알아보겠습니다',
@@ -58,6 +59,34 @@ def numbers(t):
 def facts_numbers(t):
     """사실표 쪽만 표기를 넓혀서 모은다. 본문 숫자를 가공하면 없던 값이 생겨 헛짚는다(2026-09-23)."""
     return numbers(t) | numbers(money_norm(t))
+
+
+# 표본이 너무 적은데 일반화하는 글을 막는다.
+# 사장님 2026-09-24: "네 편만 보고 일반화를 시켜버렸네? 이딴 쓰레기 글을 올려놨어."
+def thin_sample(body, facts):
+    """남의 글 몇 편을 세어 결론을 내는 글을 막는다.
+    2026-09-24 사고: 블로그 후기 4편을 읽고 "자산을 밝힌 건 0편"을 제목으로 뽑아 발행했다.
+    숫자가 사실표와 맞아 [사실] 0건으로 통과했다. 맞는 숫자여도 표본이 4면 결론이 될 수 없다.
+
+    글 전체에서 '읽은 글 수'를 찾아, 그 수가 30 미만인데 전부/하나도 같은 말로
+    결론을 내면 잡는다. 공식 조사(응답자 수천 명)는 예외다."""
+    ss = sents(body)
+    text = ' '.join(ss)
+    # 이 글이 몇 편을 읽었는지
+    ns = [int(m.group(1)) for m in re.finditer(r'(\d+)\s*편', text)]
+    han = re.search(r'(글|후기|포스팅|사례)\s*(\d+)\s*편|(\d+)\s*편.{0,6}(골라|읽|봤|확인)', text)
+    small = [n for n in ns if 1 <= n < 30]
+    if not small:
+        return []
+    n_read = min(small)
+    CONCLUDE = r'(한 편도|하나도|전혀|모두|전부|다)\s*(없|않|아니|같)|공통|하나같이|뿐이|0편'
+    OFFICIAL = r'조사|패널|통계청|국민연금|가계금융|응답자|\d{3,}명|설문'
+    bad = []
+    for i, x in enumerate(ss, 1):
+        if not re.search(CONCLUDE, x): continue
+        if re.search(OFFICIAL, x): continue
+        bad.append((i, x[:80], n_read))
+    return bad
 
 def main(pkg):
     kind = 'cafe' if any(os.path.basename(p).startswith('c') for p in glob.glob(os.path.join(pkg, 'c0*.txt'))) else 'blog'
@@ -118,6 +147,11 @@ def main(pkg):
             if w in s: problems.append(('말투', i, f'글이 스스로를 설명 "{w}" · {s[:60]}'))
         if len(s) > 120: problems.append(('말투', i, f'{len(s)}자 한 문장 — 끊어야 한다 · {s[:60]}'))
 
+    # 표본이 적은데 일반화하는 문장 — 발행을 막는다
+    for i, s, nread in thin_sample(body, facts):
+        problems.append(('표본', i, (f'{nread}편으로 일반화' if nread else '적은 표본으로 일반화')
+                         + f' — 남의 글 몇 편을 세어 결론을 내지 않는다 · {s}'))
+
     # 3) 출처 개수
     # 출처는 URL로만 적히지 않는다(기관명·법령명으로 적힌 묶음도 있다 — 2026-09-23 확인)
     # 출처가 'proshares.com/...' 처럼 http 없이 적힌 묶음이 많다(2026-09-23 확인) → 맨 도메인도 센다
@@ -133,7 +167,7 @@ def main(pkg):
         out.append(f'[{tag}] {("문장 " + str(i)) if i else "전체"} — {msg}')
     open(os.path.join(pkg, 'check_self.txt'), 'w', encoding='utf-8').write('\n'.join(out) + '\n')
 
-    fact_n = sum(1 for t, _, _ in problems if t == '사실')
+    fact_n = sum(1 for t, _, _ in problems if t in ('사실', '표본'))
     calc_n = sum(1 for t, _, _ in problems if t == '계산')
     tone_n = sum(1 for t, _, _ in problems if t == '말투')
     print(f'[자체 검증] {os.path.basename(os.path.dirname(pkg))} · {kind} · 문장 {n}개')

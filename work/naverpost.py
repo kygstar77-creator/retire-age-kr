@@ -26,7 +26,25 @@ CAFE_ID = '31789001'
 SHOTS = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research', '_shots')
 os.makedirs(SHOTS, exist_ok=True)
 
+LOCK = os.path.join(PROFILE, '.firemap.lock')   # 같은 프로필을 두 회차가 동시에 열면 크로미움이 죽는다 → 잠금 파일로 순서를 정한다(최대 15분 대기)
+
+def acquire_lock(wait_sec=900):
+    t0 = time.time()
+    while True:
+        try:
+            if os.path.exists(LOCK) and time.time() - os.path.getmtime(LOCK) > 1800: os.remove(LOCK)   # 30분 넘은 잠금은 죽은 것으로 본다
+            fd = os.open(LOCK, os.O_CREAT | os.O_EXCL | os.O_WRONLY); os.write(fd, str(os.getpid()).encode()); os.close(fd); return
+        except FileExistsError:
+            if time.time() - t0 > wait_sec: raise RuntimeError('브라우저 프로필 잠금 대기 15분 초과')
+            time.sleep(10)
+
+def release_lock():
+    try: os.remove(LOCK)
+    except Exception: pass
+
 def launch(p, headless):
+    acquire_lock()
+    import atexit; atexit.register(release_lock)
     ctx = p.chromium.launch_persistent_context(
         PROFILE, headless=headless, viewport={'width': 1400, 'height': 1000}, locale='ko-KR',
         args=['--disable-blink-features=AutomationControlled'])
@@ -174,7 +192,7 @@ def verify_body(frame, seq, label):
     print(f'{label} 본문 {total}/{want}자, 사진 {imgs}/{want_img}장')
     if total < want * 0.9 or imgs < want_img: raise RuntimeError(f'{label} 본문이 덜 들어감 — 등록하지 않음')
 
-MIN_GAP_MIN = 45   # 같은 매체에 이 시간 안에 또 올리지 않는다(한 회차 1편 규칙을 코드로 강제. 2026-09-22 23시 회차가 지시문을 어기고 블로그 2편 발행)
+MIN_GAP_MIN = 20   # 같은 매체에 이 시간 안에 또 올리지 않는다(한 회차 1편 규칙을 코드로 강제). 45분이었으나 늦게 끝난 회차가 다음 회차까지 막아 0편이 나와(2026-09-23 16시) 20분으로
 
 def last_published_minutes(kind):
     """가장 최근 발행이 몇 분 전인지. 블로그는 RSS pubDate, 카페는 API writeDateTimestamp. 못 재면 None."""

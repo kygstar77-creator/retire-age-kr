@@ -15,3 +15,4 @@
 | 카카오 REST 키 | 주변 시설 거리 | developers.kakao.com | 키 저장(kakao_key.txt)했으나 **카카오맵 활성화 안 함**(계정당 1개 앱만 무료 쿼터 — 아껴 둠). 거리는 OpenStreetMap(무료·키 없음)으로 대체 확인 |
 | 네이버 검색·데이터랩 API | 뉴스 검색·검색 추세 | — | **불필요** — 2026-07-31부터 개발자센터 신규 신청 종료(NAVER API HUB로 이관, 추후 유료). 구글 뉴스 RSS(무료·키 없음)로 대체 확인 |
 | VWorld 키 | 지오코더·배경지도·2D 데이터(행정구역 등) | vworld.kr | **완료 2026-09-23 16:40** — vworld_key.txt(개발키, 2027-03-23 만료, 지오코더·타일·시군구 조회 확인) |
+| YouTube 업로드 OAuth | 손품·브리핑 영상 자동 업로드, 채널 통계 | console.cloud.google.com | **완료 2026-09-23 17:05** — youtube_client.json + youtube_token.json(오프라인 토큰, 자동 갱신). ytupload.py upload/stats |

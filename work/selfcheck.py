@@ -22,8 +22,16 @@ BAN = ['정리하면', '핵심은', '결론적으로', '시사한다', '살펴�
 SELF_TALK = ['이 글은', '본 글에서는', '원문을 그대로', '조문 내용만', '투자 판단은 적지']
 
 def sents(t):
-    t = re.sub(r'\s+', ' ', t)
-    return [s.strip() for s in re.split(r'(?<=[.!?])\s+|(?<=다\.)\s*', t) if len(s.strip()) > 4]
+    # 줄바꿈을 먼저 가르고 줄 안에서만 문장을 나눈다. 표처럼 줄마다 한 항목을 적은 목록은
+    # 끝에 마침표가 없어서, 전체를 한 줄로 펴면 여러 줄이 통째로 묶여 '177자 한 문장'으로 잡혔다
+    # (2026-09-24 firereview 묶음에서 확인한 헛짚형).
+    out = []
+    for line in t.splitlines():
+        line = re.sub(r'[ 	]+', ' ', line).strip()
+        if not line: continue
+        for s in re.split(r'(?<=[.!?])\s+|(?<=다\.)\s*', line):
+            if len(s.strip()) > 4: out.append(s.strip())
+    return out
 
 def money_norm(t):
     """'1억 8,907만원'과 사실표의 '18,907'(만원)을 같은 값으로 본다.

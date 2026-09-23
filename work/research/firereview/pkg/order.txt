@@ -1,0 +1,18 @@
+블로그 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+b00.txt
+img/b1.png
+b01.txt
+img/b2.png
+b02.txt
+b03.txt
+img/b3.png
+b04.txt
+img/b4.png
+b05.txt
+img/b5.png
+img/b6.png
+b06.txt
+카테고리: 경제지식
+태그: 파이어족, 파이어족후기, 조기은퇴, 경제적자유, 노후생활비, 적정생활비, 국민노후보장패널조사, 4퍼센트룰, 안전인출률, 파이어자산, 25배법칙, 은퇴자금, 바리스타파이어, 현금흐름, 배당투자
+출처: 국민연금연구원 국민노후보장패널조사 제10차 부가조사(2025-12-31 게시) · Morningstar The State of Retirement Income 2025 Edition(2025-12-03) · 네이버 블로그 공개 글 4편(2026-09-24 확인)

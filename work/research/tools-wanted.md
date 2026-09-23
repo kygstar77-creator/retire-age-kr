@@ -4,8 +4,8 @@
 |---|---|---|---|
 | Gemini API 키 | 교차검증(사실 대조·말투) | aistudio.google.com → API 키 만들기 → 키를 채팅에 붙이면 Documents\gemini_key.txt에 저장 | **완료 2026-09-23 16:14** — gemini_key.txt, 무료 등급. Pro는 한도 없음(429) → Flash 3.5~3.8로 자동 전환 |
 | DART 오픈API 키 | 국내 종목·국내상장 ETF 공시·실적 | opendart.fss.or.kr | **완료 2026-09-23 16:20** — dart_key.txt(공시목록·배당정보·회사코드 확인) |
-| FRED API 키 | 미국 금리·물가 시계열 | fred.stlouisfed.org My Account → API Keys(무료) | 대기 |
-| Alpha Vantage 키 | PER·배당률·실적(야후가 막음) | alphavantage.co 무료 키 | 대기 |
+| FRED API 키 | 미국 금리·물가 시계열 | fred.stlouisfed.org My Account → API Keys(무료) | **완료** — 아래 'FRED 키' 줄과 같은 항목이었다(중복). 2026-09-24 04:50 재확인: 기준금리 3.63·10년물 4.96 응답 |
+| Alpha Vantage 키 | PER·배당률·실적(야후가 막음) | alphavantage.co 무료 키 | **완료** — 아래 'Alpha Vantage 키' 줄과 같은 항목이었다(중복). 2026-09-24 04:50 재확인: SCHD 33.74 응답 |
 | MCP 커넥터(Alpha Vantage·FMP) | 위와 같음, PC 앱에서만 연결 가능 | PC에서 이 대화의 커넥터 카드 | 대기 |
 | 공공데이터포털 키(국토부 실거래가 API) | 부동산 시리즈(B4·B8·B10) 아파트 실거래 원자료 | data.go.kr | **완료 2026-09-23 16:16** — datago_key.txt, 아파트 매매·매매상세·전월세 승인(마포구 8월 매매 112건·전월세 774건 확인). 오피스텔 매매·전월세는 아직 미신청 |
 | (막힘 기록 2026-09-23 15시) Nasdaq dividends API | O·SCHD·VOO·SPY·QLD 모두 'N/A'만 돌려줌(JEPQ만 정상). assetclass를 stocks/etf 둘 다 시도해도 같음 | 사장님 손 필요 없음 — Yahoo chart `?events=div`로 대체 확인(7종목 전부 정상). 17시 도구 회차에서 stockwants/crosscheck가 Nasdaq 배당을 쓰면 Yahoo로 바꿀 것 | 대체됨 |
@@ -28,7 +28,7 @@
 - (2026-09-23 20:26 감시 회차) **Gemini 무료 등급이 하루 할당량을 다 썼다(HTTP 429 quota exceeded).** 503(일시 과부하)이 아니라 오늘치를 소진한 것이다. 이번 회차에 만든 묶음 6개 중 xyldcc 하나만 말투 검증을 받았고 나머지 다섯(nobl25·tenbil·jeonseratio·levetf·offiyield)은 check_*.txt가 없다. 발행 회차가 올리기 전에 다시 돌려야 한다. 하루 24편 × 2매체를 한 무료 키로 검증하는 구조가 한계다 — OpenAI 키를 받거나 유료 전환이 필요하다(사장님 판단).
 - (2026-09-23 19시) **Gemini 무료 등급이 503으로 막힌다** — 묶음 1개 검증에 10분 넘게 걸려 밀린 54개를 못 따라잡는다. 키 하나로는 하루 24편 검증이 안 된다. 무료 대안을 E 회차에 찾거나, 유료 전환은 사장님 판단.
 
-- [2026-09-23 19시] 금융감독원 금융상품통합비교공시 API 인증키가 "미등록 인증키(err_cd 010)"로 거부됨. 파일은 Documents\finlife_key.txt에 있다. 이 API가 살아야 은행별 정기예금·주담대 금리를 1차 출처로 쓸 수 있다(지금은 매체 보도로만 적고 있다). 사람이 봐야 함 — finlife.fss.or.kr에서 키 재발급·승인 확인 필요.
+- [2026-09-23 19시] 금융감독원 금융상품통합비교공시 API 인증키가 "미등록 인증키(err_cd 010)"로 거부됨. 파일은 Documents\finlife_key.txt에 있다. 이 API가 살아야 은행별 정기예금·주담대 금리를 1차 출처로 쓸 수 있다(지금은 매체 보도로만 적고 있다). → **해결됨(2026-09-24 04:50 확인)**. 키 등록 반영에 시간이 걸린 것으로 보인다. 지금은 정기예금(우리은행 WON플러스예금 2.7%)과 주담대(우리아파트론 4.18~5.28%) 모두 정상 응답한다. 사람 손 필요 없음.
 
 ## 사람이 봐야 함 — 2026-09-23 20:15 · **dev 푸시가 막혔다(비밀키가 커밋에 들어감)**
 

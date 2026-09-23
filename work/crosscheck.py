@@ -53,16 +53,17 @@ def gemini_models(kv):
     d = http('https://generativelanguage.googleapis.com/v1beta/models?key=' + kv['KEY'])
     return sorted(m['name'].split('/')[-1] for m in d.get('models', []) if 'generateContent' in m.get('supportedGenerationMethods', []))
 
-def gemini_pick(kv):
+def gemini_pick(kv, prefer='pro'):
     if kv.get('MODEL'): return kv['MODEL']
     ids = gemini_models(kv)
-    for pat in (r'^gemini-\d+(\.\d+)?-pro$', r'^gemini-\d+(\.\d+)?-flash$'):
+    pats = (r'^gemini-\d+(\.\d+)?-pro$', r'^gemini-\d+(\.\d+)?-flash$') if prefer == 'pro' else (r'^gemini-\d+(\.\d+)?-flash$', r'^gemini-\d+(\.\d+)?-pro$')
+    for pat in pats:
         c = [i for i in ids if re.match(pat, i)]
         if c: return sorted(c, key=lambda s: [float(x) for x in re.findall(r'\d+\.?\d*', s)[:1]])[-1]
     return ids[-1]
 
-def gemini_chat(kv, system, user):
-    model = gemini_pick(kv)
+def gemini_chat(kv, system, user, prefer='pro'):
+    model = gemini_pick(kv, prefer)
     d = http(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={kv["KEY"]}',
              {'system_instruction': {'parts': [{'text': system}]}, 'contents': [{'parts': [{'text': user}]}]})
     return model, ''.join(p.get('text', '') for p in d['candidates'][0]['content']['parts'])
@@ -123,10 +124,16 @@ def main():
             model, out = openai_chat(oa, GPT_SYSTEM, GPT_USER.format(kind=kind, today=TODAY, title=title, facts=facts, body=body))
             open(os.path.join(pkg, 'check_gpt.txt'), 'w', encoding='utf-8').write(f'[{model} {time.strftime("%Y-%m-%d %H:%M")}]\n' + out); done.append(f'GPT({model}) 사실검증 {len(out)}자 → check_gpt.txt')
         except Exception as e: done.append('GPT 실패: ' + str(e)[:200])
+    elif gm:   # 전부 무료로(사장님 2026-09-23): OpenAI 키가 없으면 사실 대조도 Gemini(Pro)가 맡는다. 결과 파일 머리에 어느 모델인지 적힌다
+        try:
+            model, out = gemini_chat(gm, GPT_SYSTEM, GPT_USER.format(kind=kind, today=TODAY, title=title, facts=facts, body=body), prefer='pro')
+            open(os.path.join(pkg, 'check_gpt.txt'), 'w', encoding='utf-8').write(f'[{model} {time.strftime("%Y-%m-%d %H:%M")} — OpenAI 키 없어 Gemini가 사실 대조]
+' + out); done.append(f'사실 대조를 Gemini({model})가 대신 {len(out)}자 → check_gpt.txt')
+        except Exception as e: done.append('사실 대조(Gemini 대체) 실패: ' + str(e)[:200])
     else: done.append('GPT 건너뜀 — openai_key.txt 없음')
     if gm:
         try:
-            model, out = gemini_chat(gm, GEMINI_SYSTEM, GEMINI_USER.format(kind=kind, today=TODAY, title=title, body=body))
+            model, out = gemini_chat(gm, GEMINI_SYSTEM, GEMINI_USER.format(kind=kind, today=TODAY, title=title, body=body), prefer='flash')
             open(os.path.join(pkg, 'check_gemini.txt'), 'w', encoding='utf-8').write(f'[{model} {time.strftime("%Y-%m-%d %H:%M")}]\n' + out); done.append(f'Gemini({model}) 구조·말투 {len(out)}자 → check_gemini.txt')
         except Exception as e: done.append('Gemini 실패: ' + str(e)[:200])
     else: done.append('Gemini 건너뜀 — gemini_key.txt 없음')

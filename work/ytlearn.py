@@ -93,7 +93,12 @@ def main():
     lessons += ['## 제목 패턴(최근 제목 %d개)' % len(titles_all), ' · '.join(f'{k} {v}' for k, v in pats.most_common()), '',
                 '## 말하는 방식에서 자주 나온 말', ' · '.join(common), '',
                 '## 훅 모음(글 첫 세 줄에 옮길 것)', *[f'- [{n}] {h}' for n, h in hooks]]
-    p = os.path.join(OUT, f'lessons_{day}.md'); open(p, 'w', encoding='utf-8').write('\n'.join(lessons)); print('저장', p)
+    # 하루에 여러 회차가 다른 검색어로 돌기 때문에 'w'로 쓰면 앞 회차 학습이 사라진다(2026-09-23 21시 회차가 배당주 회차분을 덮어썼다).
+    NL = chr(10)
+    p = os.path.join(OUT, f'lessons_{day}.md')
+    head = ('%s%s---%s%s## %s 회차 (검색어 %s)%s' % (NL, NL, NL, NL, time.strftime('%H:%M'), ', '.join(sys.argv[1:]), NL)) if os.path.exists(p) else ''
+    with open(p, 'a', encoding='utf-8') as f: f.write(head + NL.join(lessons))
+    print('저장', p)
     print('\n'.join(lessons[:12]))
 
 if __name__ == '__main__': main()

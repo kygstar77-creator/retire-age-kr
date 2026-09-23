@@ -154,3 +154,10 @@ Telegram request_access가 두 번(인자 전부/최소) 모두 "can't be approv
 - 모든 회차 루틴(write·improve·report·loop)은 **0-a 단계에서 일감표 맨 위 항목을 먼저 닫는다.** 사람이 일을 시키지 않는다.
 - 2026-09-23 18:07 첫 측정 전체 점수 46.76 — 상위: 디자인 미해결 차이 6, 만들기 대기열 5, 사람 손 필요 5, 오늘 발행 편수.
 - 고친 것: 12시 보고 루틴이 runs_today.json을 **삭제**해 오후 회차·계기판이 그날 실적을 0으로 보던 문제 → 삭제 대신 work/runs/<날짜>.json으로 보관.
+
+## vidIQ MCP — 유튜브 검색수·경쟁도 (2026-09-23 시험 완료, 연결돼 있고 키 발급 불필요)
+`mcp__b4f80c67-…__vidiq_keyword_research` 로 유튜브 키워드 수요를 잰다. 실제로 돌려서 값을 받았다(seed '배당주 투자', country KR).
+- 주는 값: 월 검색수 추정, 30일 기준선 대비 증감률(searchDemandGrowthPct), 경쟁도 0~100, 국가별 비중, KR 안에서의 검색수(countryVolume).
+- 우리에게 없던 값이다. `work/kwvol.py`는 네이버 검색수만 잰다 — 유튜브 수요와 '지금 뜨는 중'인지는 이쪽만 알 수 있다.
+- 쓰는 곳: 쇼츠 제목·주제 고르기, planner.py 슬롯 근거 보강.
+- 주의: `vidiq_outliers` 등 일부 도구는 "Cost: 5 credit(s) per call"이라 잔액을 쓴다. 전부 무료 원칙에 맞게 keyword_research(무료로 응답 확인)만 쓰고, 크레딧 쓰는 도구는 사장님 확인 전까지 부르지 않는다.

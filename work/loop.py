@@ -88,8 +88,16 @@ def main():
     # 4) 조정 — 측정 차이를 '그리기 손잡이'로 옮긴다. (손잡이, 방향계수, 최소~최대)
     BINARY = {'yellow_bottom', 'num_yellow'}
     RULE = {
-      'text_top': ('text_y', +0.45, 0.15, 0.80),      # 위쪽 글자가 많으면 text_y를 키워 아래로 민다
-      'text_bot': ('text_y', -0.45, 0.15, 0.80),      # 아래쪽이 모자라면 text_y를 키운다(부호 반대로 들어옴)
+      # 손잡이·계수·한계는 판형별로 다르게 둘 수 있다({'long':..,'short':..}). 쇼츠는 세로 1920이라 두 줄을 붙여 두면
+      # text_y를 어디로 옮겨도 top·bot 두 칸을 같이 못 채운다 — 5회차 연속 "듣지 않는 손잡이"로 막혀 있었다(step19~23).
+      # 그래서 쇼츠는 두 줄을 위·아래로 벌리는 text_spread(thumb.py)로 바꿨다. 롱폼(1280x720)은 text_y가 듣는다.
+      # 쇼츠 계수는 실측 5점(spread 0/.3/.5/.7/1.0)에서 나온 기울기다: text_bot 0→0.1265(0.5에서 포화),
+      # text_top 0.0329→0.1496, text_mid 0.2245→0(반대로 줄어든다). 기울기 0.25/단위 → 계수 -4.0.
+      # 0.55 위로는 아랫줄이 화면 아래 한계에 붙어 더 안 움직이므로 한계를 0.55로 둔다.
+      'text_top': ({'long': 'text_y', 'short': 'text_spread'}, {'long': +0.45, 'short': -4.0},
+                   {'long': 0.15, 'short': 0.0}, {'long': 0.80, 'short': 0.55}),
+      'text_bot': ({'long': 'text_y', 'short': 'text_spread'}, {'long': -0.45, 'short': -4.0},
+                   {'long': 0.15, 'short': 0.0}, {'long': 0.80, 'short': 0.55}),
       'bright':   ('bg_bright', -1.2, 0.12, 0.90),
       'dark':     ('bg_bright', +0.8, 0.12, 0.90),
       # 흰 면적은 흰 글자 픽셀에서 나온다. 외곽선은 검정이라 아무리 얇게 해도 흰 면적이 안 줄어 stroke_ratio가 한계 40에 붙어
@@ -108,16 +116,20 @@ def main():
             blocked.append(f"{g['kind']}.{g['key']} 우리 {g['ours']} vs 경쟁 {g['target']} — 그리기 손잡이 없음")
     memo = design.setdefault('_memo', {})   # "종류.항목.손잡이=값" → 그 값일 때 실측치. 같은 자리를 또 밟지 않으려고 적어 둔다
     moved_knobs = set()   # 같은 손잡이를 한 바퀴에 두 번 움직이면 뒤 항목이 앞 항목을 덮어써 값이 계속 뒤집힌다(2026-09-23)
+    def bykind(v, kind):
+        return v.get(kind) if isinstance(v, dict) else v
     for g in knobbed[:3]:
-        knob, coef, lo, hi = RULE[g['key']]
+        knob, coef, lo, hi = (bykind(v, g['kind']) for v in RULE[g['key']])
+        if knob is None: continue
         if (g['kind'], knob) in moved_knobs:
             blocked.append(f"{g['kind']}.{g['key']} — 같은 손잡이 {knob} 를 이번 바퀴에 다른 항목이 이미 움직였다, 다음 바퀴에 잰다")
             continue
-        if isinstance(coef, dict): coef = coef.get(g['kind'])   # 판형마다 손잡이 기울기가 다른 항목
         if coef is None: continue
         d = design.setdefault(g['kind'], {})
         cur = d.get(knob)
-        if cur is None: continue
+        if cur is None:
+            if knob != 'text_spread': continue
+            cur = d[knob] = 0.0        # 새로 생긴 손잡이는 0에서 시작한다
         tag = f"{g['kind']}.{g['key']}.{knob}"
         memo[f'{tag}={cur}'] = g['ours']
         seen = {v: o for k, v, o in ((k, k.split('=')[1], o) for k, o in memo.items() if k.startswith(tag + '='))}

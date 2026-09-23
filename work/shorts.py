@@ -129,7 +129,9 @@ def build(script, out):
     # 썸네일은 thumb.py 규칙으로 따로(첫 장면 재활용 금지)
     try:
         sys.path.insert(0, HERE); import thumb
-        s0 = scenes[0]; thumb.make(s0.get('head', script.get('title', ''))[:16], (s0.get('lines') or [script.get('title', '')])[0][:18],
+        # 3줄 판형(2026-09-24)이 생겨 아랫줄에 자리가 늘었다. 글자 수로 뚝 자르지 않고 띄어쓰기에서 자른다.
+        s0 = scenes[0]; thumb.make(thumb.clip_words(s0.get('head', script.get('title', '')), 20),
+                                   thumb.clip_words((s0.get('lines') or [script.get('title', '')])[0], 30),
                                    os.path.splitext(out)[0] + '_thumb.png', s0.get('image'), short=True)
     except Exception as e: print('썸네일 실패', str(e)[:60])
     print('완성', out, f'{os.path.getsize(out):,} bytes', f'{total:.0f}초' if total else '')

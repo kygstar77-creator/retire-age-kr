@@ -23,33 +23,51 @@ def bar_chart(title, pairs, out, unit='', hi=3, short=False, source=''):
     dr.rectangle([0, 0, W, 8], fill=YELLOW)
     ft = f_disp(int(W * 0.052)); dr.text((pad, int(H * 0.045)), title[:26], font=ft, fill=WHITE)
     top = int(H * 0.045) + int(ft.size * 1.7); bottom = H - int(H * 0.085)
-    rowh = (bottom - top) / max(1, n); bh = int(rowh * 0.62)
+    rowh = (bottom - top) / max(1, n)
+    bh = min(int(rowh * 0.62), int(H * 0.11))   # 줄이 두셋뿐이면 rowh 가 커져 막대가 세로 덩어리로 보인다(2026-09-24)
     # 음수가 섞이면 0을 가운데 두고 왼쪽으로 뻗는다. 안 그러면 마이너스 막대가 아예 안 그려진다
     # (2026-09-24 섹터 등락률 차트에서 확인 — 마이너스 섹터가 값만 찍히고 막대가 없었다).
     vs = [v for _, v in pairs]
     neg = min(vs) < 0
     mx = max(abs(v) for v in vs) or 1
     RED = (232, 72, 72)
-    lblw = max(dr.textlength(k, font=f_body(int(rowh * 0.42), True)) for k, _ in pairs) + 18
-    x0 = pad + lblw; barw = W - pad - x0 - int(W * 0.13)
+    # 값 글자와 이름 글자가 들어갈 자리를 먼저 재고, 남는 곳에 막대를 그린다.
+    # 2026-09-24 실측 고침: 이름이 길면(예: '마곡 대명투웨니퍼스트') lblw 가 폭을 다 먹어 barw 가 음수가 됐다.
+    # 그래서 막대가 사라지고 값이 화면 밖으로 잘려 나갔다 — 자료 화면이 장식이 되던 두 번째 원인이다.
+    # 줄 수가 적을수록 rowh 가 커져 글자가 터무니없이 커지는 것도 절대 상한으로 막는다.
+    vstrs = [f'{v:,.2f}'.rstrip('0').rstrip('.') + unit for _, v in pairs]
+    vsz = min(int(rowh * 0.5), int(W * 0.075))
+    fvm = f_disp(vsz); vw = max(dr.textlength(t, font=fvm) for t in vstrs) + 28
+    lbl_room = W - pad * 2 - vw - int(W * 0.22)          # 막대에 최소 22%는 남긴다
+    lsz = min(int(rowh * 0.42), int(W * 0.055))
+    while lsz > int(W * 0.026) and max(dr.textlength(k, font=f_body(lsz, True)) for k, _ in pairs) > lbl_room:
+        lsz -= 2
+    keys = []
+    for k, _ in pairs:                                    # 그래도 넘치면 줄임표로 자른다
+        while len(k) > 3 and dr.textlength(k, font=f_body(lsz, True)) > lbl_room: k = k[:-1]
+        keys.append(k if k == pairs[len(keys)][0] else k[:-1] + '…')
+    lblw = max(dr.textlength(k, font=f_body(lsz, True)) for k in keys) + 18
+    x0 = pad + lblw; barw = max(int(W * 0.18), W - pad - x0 - int(vw))
     zero = x0 + (barw * 0.45 if neg else 0)
     half = barw * 0.52 if neg else barw
     if neg: dr.line([(zero, top - 6), (zero, bottom)], fill=(70, 74, 88), width=2)
     for i, (k, v) in enumerate(pairs):
         y = top + rowh * i
         c = (YELLOW if v >= 0 else RED) if (i < hi or v < 0) else BAR
-        fl = f_body(int(rowh * 0.42), i < hi)
-        dr.text((pad, y + (bh - fl.size) / 2), k, font=fl, fill=WHITE if i < hi else DIM)
+        fl = f_body(lsz, i < hi)
+        dr.text((pad, y + (bh - fl.size) / 2), keys[i], font=fl, fill=WHITE if i < hi else DIM)
         w = max(6, int(half * abs(v) / mx))
         if v >= 0: box = [zero, y, zero + w, y + bh]
         else:      box = [zero - w, y, zero, y + bh]
         dr.rounded_rectangle(box, radius=int(bh * 0.28), fill=c)
-        fv = f_disp(int(rowh * 0.5)); s = f'{v:,.2f}'.rstrip('0').rstrip('.') + unit
+        fv = fvm; s = vstrs[i]
         tw = dr.textlength(s, font=fv)
         tx = (zero + w + 14) if v >= 0 else (zero - w - 14 - tw)
         # 막대가 길면 값이 왼쪽 이름과 겹친다(2026-09-24 확인) → 겹치면 막대 안쪽에 적는다
         inside = v < 0 and tx < pad + lblw
         if inside: tx = zero - w + 12
+        elif v >= 0 and tx + tw > W - pad:               # 오른쪽으로 삐져나가면 막대 안쪽에 적는다
+            inside = True; tx = max(zero + 12, zero + w - tw - 12)
         dr.text((tx, y + (bh - fv.size) / 2 - 2), s, font=fv,
                 fill=(14, 15, 20) if inside else (c if c != BAR else WHITE))
     if source: dr.text((pad, H - int(H * 0.062)), source[:60], font=f_body(int(W * 0.024)), fill=DIM)

@@ -86,6 +86,15 @@ def stroked(dr, xy, text, f, fill, sw):
     x, y = xy
     dr.text((x, y), text, font=f, fill=fill, stroke_width=sw, stroke_fill=BLACK)
 
+def clip_words(t, n):
+    """글자 수로 뚝 자르면 '월세 50만원'이 '월세 50만'이 된다(2026-09-24 썸네일에서 확인).
+    넘치면 띄어쓰기 앞에서 자른다 — 말이 깨지지 않게."""
+    t = (t or '').strip()
+    if len(t) <= n: return t
+    cut = t[:n]
+    sp = cut.rfind(' ')
+    return (cut[:sp].strip() if sp >= n // 2 else cut).strip()
+
 def split2(t):
     """한 줄을 띄어쓰기 중 가운데에 가장 가까운 곳에서 둘로 나눈다. 말은 그대로, 순서도 그대로."""
     sp = [i for i, ch in enumerate(t) if ch == ' ']

@@ -25,13 +25,31 @@ def sents(t):
     t = re.sub(r'\s+', ' ', t)
     return [s.strip() for s in re.split(r'(?<=[.!?])\s+|(?<=다\.)\s*', t) if len(s.strip()) > 4]
 
+def money_norm(t):
+    """'1억 8,907만원'과 사실표의 '18,907'(만원)을 같은 값으로 본다.
+    안 맞추면 억/만원 표기가 쪼개져 멀쩡한 숫자를 '사실표에 없다'고 잡는다(2026-09-23 확인)."""
+    def f(x): return float(x.replace(',', ''))
+    # '원'으로 끝나는 것만 만원 단위로 맞춘다. 달러 금액은 건드리지 않는다.
+    t = re.sub(r'(\d[\d,]*(?:\.\d+)?)\s*억\s*([\d,]+)\s*만\s*원',
+               lambda m: f'{f(m.group(1)) * 10000 + f(m.group(2)):.0f}', t)
+    t = re.sub(r'(\d[\d,]*(?:\.\d+)?)\s*억\s*원', lambda m: f'{f(m.group(1)) * 10000:.0f}', t)
+    t = re.sub(r'(\d[\d,]*)\s*만\s*원', lambda m: f'{f(m.group(1)):.0f}', t)
+    return t
+
 def numbers(t):
-    """비교할 만한 숫자만. 한 자리 수·연도 조각은 오탐이 많아 뺀다."""
+    """비교할 만한 숫자만. 한 자리 수·연도 조각은 오탐이 많아 뺀다.
+    사실표는 '28.38'처럼 원래 단위로, 본문은 '28.38억원'처럼 쓰는 일이 많다.
+    그래서 쓴 그대로와 만원으로 맞춘 것 **둘 다** 모아 비교한다(2026-09-23)."""
     out = set()
     for m in re.findall(r'\d[\d,]*\.?\d*', t):
-        x = m.replace(',', '')
+        x = m.replace(',', '').rstrip('.')
         if len(x.replace('.', '')) >= 2: out.add(x)
+        if x.endswith('.0'): out.add(x[:-2])
     return out
+
+def facts_numbers(t):
+    """사실표 쪽만 표기를 넓혀서 모은다. 본문 숫자를 가공하면 없던 값이 생겨 헛짚는다(2026-09-23)."""
+    return numbers(t) | numbers(money_norm(t))
 
 def main(pkg):
     kind = 'cafe' if any(os.path.basename(p).startswith('c') for p in glob.glob(os.path.join(pkg, 'c0*.txt'))) else 'blog'
@@ -53,12 +71,15 @@ def main(pkg):
     if not facts.strip():
         problems.append(('사실', 0, '(facts.txt가 비어 있다 — 사실 대조를 할 수 없다)'))
     else:
-        fnum = numbers(facts)
+        fnum = facts_numbers(facts)
+        # 사실표는 '18,907'로, 본문은 '1억 8,907만원'으로 쓴다. 단위 표기를 아무리 맞춰도 끝이 없어서,
+        # 사실표의 숫자만 이어 붙인 문자열에 그 자릿수가 들어 있으면 '있는 숫자'로 본다(2026-09-23).
+        fdigits = re.sub(r'\D', '', facts + ' ' + money_norm(facts))
         for i, s in enumerate(ss, 1):
-            extra = numbers(s) - fnum
+            extra = {x for x in numbers(s) - fnum if x.replace('.', '').replace(',', '') not in fdigits}
             if not extra: continue
             # 사실표 숫자끼리 더하고 빼서 나온 값은 '없는 숫자'가 아니다. 계산 문장은 참고로만 표시한다.
-            calc = re.search(r'빼|더하|곱하|나누|차이|합치|배다|배로|%p|퍼센트포인트|이 되고|쯤', s)
+            calc = re.search(r'빼|더하|곱하|나누|차이|합치|배다|배로|%p|퍼센트포인트|이 되고|쯤|그러니까|즉|곧|환산|기준으로', s)
             problems.append(('계산' if calc else '사실', i,
                              f'사실표에 없는 숫자 {sorted(extra)} · {s[:70]}'))
 
@@ -91,8 +112,10 @@ def main(pkg):
 
     # 3) 출처 개수
     # 출처는 URL로만 적히지 않는다(기관명·법령명으로 적힌 묶음도 있다 — 2026-09-23 확인)
-    urls = len(set(re.findall(r'https?://\S+', facts)))
-    orgs = len(set(re.findall(r'국토부|한국부동산원|한국은행|국세청|금융감독원|통계청|SEC|EDGAR|Nasdaq|연준|은행연합회|보건복지부|국민연금', facts)))
+    # 출처가 'proshares.com/...' 처럼 http 없이 적힌 묶음이 많다(2026-09-23 확인) → 맨 도메인도 센다
+    urls = len(set(re.findall(r'https?://\S+', facts))) + len(set(re.findall(r'\b[a-z0-9-]+\.(?:com|org|net|go\.kr|or\.kr|co\.kr|gov)\b/?\S*', facts)))
+    orgs = len(set(re.findall(r'국토부|한국부동산원|한국은행|국세청|금융감독원|통계청|SEC|EDGAR|Nasdaq|연준|은행연합회|'
+                              r'보건복지부|국민연금|ProShares|Yahoo|Vanguard|Invesco|Schwab|JPMorgan|미래에셋|삼성자산|법령|공시', facts, re.I)))
     if urls + orgs < 3: problems.append(('출처', 0, f'출처가 URL {urls}개 + 기관 {orgs}곳뿐 — 최소 3개'))
 
     out = [f'# 자체 검증 (제미나이 할당량 없을 때 쓰는 대체 검증)',

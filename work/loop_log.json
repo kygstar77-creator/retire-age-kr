@@ -2286,5 +2286,991 @@
   },
   "ours_views": 3304,
   "verdict": "지난 회차 이후 우리 영상 조회 합계 3304 → 3304"
+ },
+ {
+  "step": 36,
+  "at": "2026-09-24 00:13",
+  "sec": 61,
+  "changed": [],
+  "did": [
+   "경쟁 썸네일 296장 재측정",
+   "short.text_spread 0.15 유지 (격자 7점 중 오차 합 0.6046 이 가장 작다)",
+   "long.text_y 0.72 유지 (격자 6점 중 오차 합 0.4493 이 가장 작다)"
+  ],
+  "gaps": [
+   {
+    "kind": "short",
+    "key": "white",
+    "ours": 0.0224,
+    "target": 0.0107,
+    "diff": 0.0117
+   },
+   {
+    "kind": "short",
+    "key": "text_bot",
+    "ours": 0.2149,
+    "target": 0.3093,
+    "diff": -0.0944
+   },
+   {
+    "kind": "long",
+    "key": "text_top",
+    "ours": 0.6787,
+    "target": 0.9241,
+    "diff": -0.2454
+   }
+  ],
+  "blocked": [
+   "short.white — text_scale 가 한계 0.9 에 붙어 더 못 감, 다른 손잡이가 필요"
+  ],
+  "bands": {
+   "short": [
+    {
+     "v": 0.0,
+     "err": 0.6265,
+     "text_top": 0.2264,
+     "text_mid": 0.4856,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.15,
+     "err": 0.6046,
+     "text_top": 0.2264,
+     "text_mid": 0.4763,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.3,
+     "err": 0.6376,
+     "text_top": 0.2264,
+     "text_mid": 0.4903,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.45,
+     "err": 0.6732,
+     "text_top": 0.3079,
+     "text_mid": 0.3792,
+     "text_bot": 0.1711
+    },
+    {
+     "v": 0.6,
+     "err": 0.7956,
+     "text_top": 0.3492,
+     "text_mid": 0.2375,
+     "text_bot": 0.2831
+    },
+    {
+     "v": 0.8,
+     "err": 0.835,
+     "text_top": 0.3532,
+     "text_mid": 0.2375,
+     "text_bot": 0.2754
+    },
+    {
+     "v": 1.0,
+     "err": 1.0745,
+     "text_top": 0.3804,
+     "text_mid": 0.2375,
+     "text_bot": 0.2318
+    }
+   ],
+   "long": [
+    {
+     "v": 0.2,
+     "err": 0.5552,
+     "text_top": 0.8544,
+     "text_mid": 0.639,
+     "text_bot": 0.8481
+    },
+    {
+     "v": 0.35,
+     "err": 0.5802,
+     "text_top": 0.6832,
+     "text_mid": 0.7908,
+     "text_bot": 0.8481
+    },
+    {
+     "v": 0.5,
+     "err": 0.4635,
+     "text_top": 0.6493,
+     "text_mid": 0.8449,
+     "text_bot": 0.7774
+    },
+    {
+     "v": 0.62,
+     "err": 0.4765,
+     "text_top": 0.6787,
+     "text_mid": 0.8212,
+     "text_bot": 0.7919
+    },
+    {
+     "v": 0.72,
+     "err": 0.4493,
+     "text_top": 0.6787,
+     "text_mid": 0.7735,
+     "text_bot": 0.735
+    },
+    {
+     "v": 0.8,
+     "err": 0.5414,
+     "text_top": 0.6787,
+     "text_mid": 0.7552,
+     "text_bot": 0.6807
+    }
+   ]
+  },
+  "ours_views": 3266,
+  "verdict": "지난 회차 이후 우리 영상 조회 합계 3304 → 3266"
+ },
+ {
+  "step": 37,
+  "at": "2026-09-24 01:04",
+  "sec": 71,
+  "changed": [],
+  "did": [
+   "경쟁 썸네일 296장 재측정",
+   "short.text_spread 0.15 유지 (격자 7점 중 오차 합 0.6046 이 가장 작다)",
+   "long.text_y 0.72 유지 (격자 6점 중 오차 합 0.4493 이 가장 작다)"
+  ],
+  "gaps": [
+   {
+    "kind": "short",
+    "key": "white",
+    "ours": 0.0224,
+    "target": 0.0107,
+    "diff": 0.0117
+   },
+   {
+    "kind": "short",
+    "key": "text_bot",
+    "ours": 0.2149,
+    "target": 0.3093,
+    "diff": -0.0944
+   },
+   {
+    "kind": "long",
+    "key": "text_top",
+    "ours": 0.6787,
+    "target": 0.9241,
+    "diff": -0.2454
+   }
+  ],
+  "blocked": [
+   "short.white — text_scale 가 한계 0.9 에 붙어 더 못 감, 다른 손잡이가 필요"
+  ],
+  "bands": {
+   "short": [
+    {
+     "v": 0.0,
+     "err": 0.6265,
+     "text_top": 0.2264,
+     "text_mid": 0.4856,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.15,
+     "err": 0.6046,
+     "text_top": 0.2264,
+     "text_mid": 0.4763,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.3,
+     "err": 0.6376,
+     "text_top": 0.2264,
+     "text_mid": 0.4903,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.45,
+     "err": 0.6732,
+     "text_top": 0.3079,
+     "text_mid": 0.3792,
+     "text_bot": 0.1711
+    },
+    {
+     "v": 0.6,
+     "err": 0.7956,
+     "text_top": 0.3492,
+     "text_mid": 0.2375,
+     "text_bot": 0.2831
+    },
+    {
+     "v": 0.8,
+     "err": 0.835,
+     "text_top": 0.3532,
+     "text_mid": 0.2375,
+     "text_bot": 0.2754
+    },
+    {
+     "v": 1.0,
+     "err": 1.0745,
+     "text_top": 0.3804,
+     "text_mid": 0.2375,
+     "text_bot": 0.2318
+    }
+   ],
+   "long": [
+    {
+     "v": 0.2,
+     "err": 0.5552,
+     "text_top": 0.8544,
+     "text_mid": 0.639,
+     "text_bot": 0.8481
+    },
+    {
+     "v": 0.35,
+     "err": 0.5802,
+     "text_top": 0.6832,
+     "text_mid": 0.7908,
+     "text_bot": 0.8481
+    },
+    {
+     "v": 0.5,
+     "err": 0.4635,
+     "text_top": 0.6493,
+     "text_mid": 0.8449,
+     "text_bot": 0.7774
+    },
+    {
+     "v": 0.62,
+     "err": 0.4765,
+     "text_top": 0.6787,
+     "text_mid": 0.8212,
+     "text_bot": 0.7919
+    },
+    {
+     "v": 0.72,
+     "err": 0.4493,
+     "text_top": 0.6787,
+     "text_mid": 0.7735,
+     "text_bot": 0.735
+    },
+    {
+     "v": 0.8,
+     "err": 0.5414,
+     "text_top": 0.6787,
+     "text_mid": 0.7552,
+     "text_bot": 0.6807
+    }
+   ]
+  },
+  "ours_views": 3266,
+  "verdict": "지난 회차 이후 우리 영상 조회 합계 3266 → 3266"
+ },
+ {
+  "step": 38,
+  "at": "2026-09-24 01:54",
+  "sec": 63,
+  "changed": [],
+  "did": [
+   "경쟁 썸네일 296장 재측정",
+   "short.text_spread 0.15 유지 (격자 7점 중 오차 합 0.6046 이 가장 작다)",
+   "long.text_y 0.72 유지 (격자 6점 중 오차 합 0.4493 이 가장 작다)"
+  ],
+  "gaps": [
+   {
+    "kind": "short",
+    "key": "white",
+    "ours": 0.0224,
+    "target": 0.0107,
+    "diff": 0.0117
+   },
+   {
+    "kind": "short",
+    "key": "text_bot",
+    "ours": 0.2149,
+    "target": 0.3093,
+    "diff": -0.0944
+   },
+   {
+    "kind": "long",
+    "key": "text_top",
+    "ours": 0.6787,
+    "target": 0.9241,
+    "diff": -0.2454
+   }
+  ],
+  "blocked": [
+   "short.white — text_scale 가 한계 0.9 에 붙어 더 못 감, 다른 손잡이가 필요"
+  ],
+  "bands": {
+   "short": [
+    {
+     "v": 0.0,
+     "err": 0.6265,
+     "text_top": 0.2264,
+     "text_mid": 0.4856,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.15,
+     "err": 0.6046,
+     "text_top": 0.2264,
+     "text_mid": 0.4763,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.3,
+     "err": 0.6376,
+     "text_top": 0.2264,
+     "text_mid": 0.4903,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.45,
+     "err": 0.6732,
+     "text_top": 0.3079,
+     "text_mid": 0.3792,
+     "text_bot": 0.1711
+    },
+    {
+     "v": 0.6,
+     "err": 0.7956,
+     "text_top": 0.3492,
+     "text_mid": 0.2375,
+     "text_bot": 0.2831
+    },
+    {
+     "v": 0.8,
+     "err": 0.835,
+     "text_top": 0.3532,
+     "text_mid": 0.2375,
+     "text_bot": 0.2754
+    },
+    {
+     "v": 1.0,
+     "err": 1.0745,
+     "text_top": 0.3804,
+     "text_mid": 0.2375,
+     "text_bot": 0.2318
+    }
+   ],
+   "long": [
+    {
+     "v": 0.2,
+     "err": 0.5552,
+     "text_top": 0.8544,
+     "text_mid": 0.639,
+     "text_bot": 0.8481
+    },
+    {
+     "v": 0.35,
+     "err": 0.5802,
+     "text_top": 0.6832,
+     "text_mid": 0.7908,
+     "text_bot": 0.8481
+    },
+    {
+     "v": 0.5,
+     "err": 0.4635,
+     "text_top": 0.6493,
+     "text_mid": 0.8449,
+     "text_bot": 0.7774
+    },
+    {
+     "v": 0.62,
+     "err": 0.4765,
+     "text_top": 0.6787,
+     "text_mid": 0.8212,
+     "text_bot": 0.7919
+    },
+    {
+     "v": 0.72,
+     "err": 0.4493,
+     "text_top": 0.6787,
+     "text_mid": 0.7735,
+     "text_bot": 0.735
+    },
+    {
+     "v": 0.8,
+     "err": 0.5414,
+     "text_top": 0.6787,
+     "text_mid": 0.7552,
+     "text_bot": 0.6807
+    }
+   ]
+  },
+  "ours_views": 3266,
+  "verdict": "지난 회차 이후 우리 영상 조회 합계 3266 → 3266"
+ },
+ {
+  "step": 39,
+  "at": "2026-09-24 01:56",
+  "sec": 61,
+  "changed": [],
+  "did": [
+   "경쟁 썸네일 296장 재측정",
+   "short.text_spread 0.15 유지 (격자 7점 중 오차 합 0.6046 이 가장 작다)",
+   "long.text_y 0.72 유지 (격자 6점 중 오차 합 0.4493 이 가장 작다)"
+  ],
+  "gaps": [
+   {
+    "kind": "short",
+    "key": "white",
+    "ours": 0.0224,
+    "target": 0.0107,
+    "diff": 0.0117
+   },
+   {
+    "kind": "short",
+    "key": "text_bot",
+    "ours": 0.2149,
+    "target": 0.3093,
+    "diff": -0.0944
+   },
+   {
+    "kind": "long",
+    "key": "text_top",
+    "ours": 0.6787,
+    "target": 0.9241,
+    "diff": -0.2454
+   }
+  ],
+  "blocked": [
+   "short.white — text_scale 가 한계 0.9 에 붙어 더 못 감, 다른 손잡이가 필요"
+  ],
+  "bands": {
+   "short": [
+    {
+     "v": 0.0,
+     "err": 0.6265,
+     "text_top": 0.2264,
+     "text_mid": 0.4856,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.15,
+     "err": 0.6046,
+     "text_top": 0.2264,
+     "text_mid": 0.4763,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.3,
+     "err": 0.6376,
+     "text_top": 0.2264,
+     "text_mid": 0.4903,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.45,
+     "err": 0.6732,
+     "text_top": 0.3079,
+     "text_mid": 0.3792,
+     "text_bot": 0.1711
+    },
+    {
+     "v": 0.6,
+     "err": 0.7956,
+     "text_top": 0.3492,
+     "text_mid": 0.2375,
+     "text_bot": 0.2831
+    },
+    {
+     "v": 0.8,
+     "err": 0.835,
+     "text_top": 0.3532,
+     "text_mid": 0.2375,
+     "text_bot": 0.2754
+    },
+    {
+     "v": 1.0,
+     "err": 1.0745,
+     "text_top": 0.3804,
+     "text_mid": 0.2375,
+     "text_bot": 0.2318
+    }
+   ],
+   "long": [
+    {
+     "v": 0.2,
+     "err": 0.5552,
+     "text_top": 0.8544,
+     "text_mid": 0.639,
+     "text_bot": 0.8481
+    },
+    {
+     "v": 0.35,
+     "err": 0.5802,
+     "text_top": 0.6832,
+     "text_mid": 0.7908,
+     "text_bot": 0.8481
+    },
+    {
+     "v": 0.5,
+     "err": 0.4635,
+     "text_top": 0.6493,
+     "text_mid": 0.8449,
+     "text_bot": 0.7774
+    },
+    {
+     "v": 0.62,
+     "err": 0.4765,
+     "text_top": 0.6787,
+     "text_mid": 0.8212,
+     "text_bot": 0.7919
+    },
+    {
+     "v": 0.72,
+     "err": 0.4493,
+     "text_top": 0.6787,
+     "text_mid": 0.7735,
+     "text_bot": 0.735
+    },
+    {
+     "v": 0.8,
+     "err": 0.5414,
+     "text_top": 0.6787,
+     "text_mid": 0.7552,
+     "text_bot": 0.6807
+    }
+   ]
+  },
+  "ours_views": 3266,
+  "verdict": "지난 회차 이후 우리 영상 조회 합계 3266 → 3266"
+ },
+ {
+  "step": 40,
+  "at": "2026-09-24 02:00",
+  "sec": 79,
+  "changed": [
+   "short.text_spread 0.15 → 0.45 (세 칸 오차 합 0.6994 → 0.6605, 격자 7점 실측)",
+   "short.text_tint 0.0 → 0.5478 (white 우리 0.0273 vs 경쟁 0.0107)",
+   "short.yellow_frac 0.3978 → 0.3009 (yellow 우리 0.0086 vs 경쟁 0.0067)"
+  ],
+  "did": [
+   "경쟁 썸네일 296장 재측정",
+   "short.text_spread 0.15 → 0.45 (세 칸 오차 합 0.6994 → 0.6605, 격자 7점 실측)",
+   "long.text_y 0.72 유지 (격자 6점 중 오차 합 0.4493 이 가장 작다)",
+   "short.text_tint 0.0 → 0.5478 (white 우리 0.0273 vs 경쟁 0.0107)",
+   "short.yellow_frac 0.3978 → 0.3009 (yellow 우리 0.0086 vs 경쟁 0.0067)",
+   "다음 회차가 바뀐 값으로 다시 그려 잰다"
+  ],
+  "gaps": [
+   {
+    "kind": "short",
+    "key": "white",
+    "ours": 0.0273,
+    "target": 0.0107,
+    "diff": 0.0166
+   },
+   {
+    "kind": "short",
+    "key": "text_bot",
+    "ours": 0.1898,
+    "target": 0.3093,
+    "diff": -0.1195
+   },
+   {
+    "kind": "short",
+    "key": "yellow",
+    "ours": 0.0086,
+    "target": 0.0067,
+    "diff": 0.0019
+   },
+   {
+    "kind": "long",
+    "key": "text_top",
+    "ours": 0.6787,
+    "target": 0.9241,
+    "diff": -0.2454
+   }
+  ],
+  "blocked": [],
+  "bands": {
+   "short": [
+    {
+     "v": 0.0,
+     "err": 0.6649,
+     "text_top": 0.2264,
+     "text_mid": 0.5019,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.15,
+     "err": 0.6994,
+     "text_top": 0.2264,
+     "text_mid": 0.5165,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.3,
+     "err": 0.7294,
+     "text_top": 0.2264,
+     "text_mid": 0.5293,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.45,
+     "err": 0.6605,
+     "text_top": 0.3276,
+     "text_mid": 0.3893,
+     "text_bot": 0.1898
+    },
+    {
+     "v": 0.6,
+     "err": 0.8011,
+     "text_top": 0.3724,
+     "text_mid": 0.2375,
+     "text_bot": 0.3112
+    },
+    {
+     "v": 0.8,
+     "err": 0.8461,
+     "text_top": 0.3809,
+     "text_mid": 0.2375,
+     "text_bot": 0.303
+    },
+    {
+     "v": 1.0,
+     "err": 1.0871,
+     "text_top": 0.4088,
+     "text_mid": 0.2375,
+     "text_bot": 0.2599
+    }
+   ],
+   "long": [
+    {
+     "v": 0.2,
+     "err": 0.5552,
+     "text_top": 0.8544,
+     "text_mid": 0.639,
+     "text_bot": 0.8481
+    },
+    {
+     "v": 0.35,
+     "err": 0.5802,
+     "text_top": 0.6832,
+     "text_mid": 0.7908,
+     "text_bot": 0.8481
+    },
+    {
+     "v": 0.5,
+     "err": 0.4635,
+     "text_top": 0.6493,
+     "text_mid": 0.8449,
+     "text_bot": 0.7774
+    },
+    {
+     "v": 0.62,
+     "err": 0.4765,
+     "text_top": 0.6787,
+     "text_mid": 0.8212,
+     "text_bot": 0.7919
+    },
+    {
+     "v": 0.72,
+     "err": 0.4493,
+     "text_top": 0.6787,
+     "text_mid": 0.7735,
+     "text_bot": 0.735
+    },
+    {
+     "v": 0.8,
+     "err": 0.5414,
+     "text_top": 0.6787,
+     "text_mid": 0.7552,
+     "text_bot": 0.6807
+    }
+   ]
+  },
+  "ours_views": 3266,
+  "verdict": "지난 회차 이후 우리 영상 조회 합계 3266 → 3266"
+ },
+ {
+  "step": 41,
+  "at": "2026-09-24 02:02",
+  "sec": 92,
+  "changed": [
+   "short.yellow_frac 0.3009 → 0.0 (yellow 우리 0.0154 vs 경쟁 0.0067)",
+   "short.text_tint 0.5478 → 0.7689 (white 우리 0.0174 vs 경쟁 0.0107)"
+  ],
+  "did": [
+   "경쟁 썸네일 296장 재측정",
+   "short.text_spread 0.45 유지 (격자 7점 중 오차 합 0.6605 이 가장 작다)",
+   "long.text_y 0.72 유지 (격자 6점 중 오차 합 0.4493 이 가장 작다)",
+   "short.yellow_frac 0.3009 → 0.0 (yellow 우리 0.0154 vs 경쟁 0.0067)",
+   "short.text_tint 0.5478 → 0.7689 (white 우리 0.0174 vs 경쟁 0.0107)",
+   "다음 회차가 바뀐 값으로 다시 그려 잰다"
+  ],
+  "gaps": [
+   {
+    "kind": "short",
+    "key": "yellow",
+    "ours": 0.0154,
+    "target": 0.0067,
+    "diff": 0.0087
+   },
+   {
+    "kind": "short",
+    "key": "white",
+    "ours": 0.0174,
+    "target": 0.0107,
+    "diff": 0.0067
+   },
+   {
+    "kind": "short",
+    "key": "text_bot",
+    "ours": 0.1898,
+    "target": 0.3093,
+    "diff": -0.1195
+   },
+   {
+    "kind": "long",
+    "key": "text_top",
+    "ours": 0.6787,
+    "target": 0.9241,
+    "diff": -0.2454
+   }
+  ],
+  "blocked": [],
+  "bands": {
+   "short": [
+    {
+     "v": 0.0,
+     "err": 0.6649,
+     "text_top": 0.2264,
+     "text_mid": 0.5019,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.15,
+     "err": 0.6994,
+     "text_top": 0.2264,
+     "text_mid": 0.5165,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.3,
+     "err": 0.7295,
+     "text_top": 0.2264,
+     "text_mid": 0.5293,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.45,
+     "err": 0.6605,
+     "text_top": 0.3276,
+     "text_mid": 0.3893,
+     "text_bot": 0.1898
+    },
+    {
+     "v": 0.6,
+     "err": 0.8011,
+     "text_top": 0.3724,
+     "text_mid": 0.2375,
+     "text_bot": 0.3112
+    },
+    {
+     "v": 0.8,
+     "err": 0.8461,
+     "text_top": 0.3809,
+     "text_mid": 0.2375,
+     "text_bot": 0.303
+    },
+    {
+     "v": 1.0,
+     "err": 1.0843,
+     "text_top": 0.4088,
+     "text_mid": 0.2375,
+     "text_bot": 0.2607
+    }
+   ],
+   "long": [
+    {
+     "v": 0.2,
+     "err": 0.5552,
+     "text_top": 0.8544,
+     "text_mid": 0.639,
+     "text_bot": 0.8481
+    },
+    {
+     "v": 0.35,
+     "err": 0.5802,
+     "text_top": 0.6832,
+     "text_mid": 0.7908,
+     "text_bot": 0.8481
+    },
+    {
+     "v": 0.5,
+     "err": 0.4635,
+     "text_top": 0.6493,
+     "text_mid": 0.8449,
+     "text_bot": 0.7774
+    },
+    {
+     "v": 0.62,
+     "err": 0.4765,
+     "text_top": 0.6787,
+     "text_mid": 0.8212,
+     "text_bot": 0.7919
+    },
+    {
+     "v": 0.72,
+     "err": 0.4493,
+     "text_top": 0.6787,
+     "text_mid": 0.7735,
+     "text_bot": 0.735
+    },
+    {
+     "v": 0.8,
+     "err": 0.5414,
+     "text_top": 0.6787,
+     "text_mid": 0.7552,
+     "text_bot": 0.6807
+    }
+   ]
+  },
+  "ours_views": 3266,
+  "verdict": "지난 회차 이후 우리 영상 조회 합계 3266 → 3266"
+ },
+ {
+  "step": 42,
+  "at": "2026-09-24 02:05",
+  "sec": 84,
+  "changed": [
+   "short.text_tint 0.7689 → 0.6889 (white 우리 0.0076 vs 경쟁 0.0107)"
+  ],
+  "did": [
+   "경쟁 썸네일 296장 재측정",
+   "short.text_spread 0.45 유지 (격자 7점 중 오차 합 0.6604 이 가장 작다)",
+   "long.text_y 0.72 유지 (격자 6점 중 오차 합 0.4493 이 가장 작다)",
+   "short.text_tint 0.7689 → 0.6889 (white 우리 0.0076 vs 경쟁 0.0107)",
+   "다음 회차가 바뀐 값으로 다시 그려 잰다"
+  ],
+  "gaps": [
+   {
+    "kind": "short",
+    "key": "text_bot",
+    "ours": 0.1898,
+    "target": 0.3093,
+    "diff": -0.1195
+   },
+   {
+    "kind": "short",
+    "key": "white",
+    "ours": 0.0076,
+    "target": 0.0107,
+    "diff": -0.0031
+   },
+   {
+    "kind": "short",
+    "key": "yellow",
+    "ours": 0.0086,
+    "target": 0.0067,
+    "diff": 0.0019
+   },
+   {
+    "kind": "long",
+    "key": "text_top",
+    "ours": 0.6787,
+    "target": 0.9241,
+    "diff": -0.2454
+   }
+  ],
+  "blocked": [
+   "short.yellow — yellow_frac=0.3009 는 이미 재봤고 더 나빴다(0.0154 vs 지금 0.0086), 그대로 둠"
+  ],
+  "bands": {
+   "short": [
+    {
+     "v": 0.0,
+     "err": 0.6649,
+     "text_top": 0.2264,
+     "text_mid": 0.5019,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.15,
+     "err": 0.6994,
+     "text_top": 0.2264,
+     "text_mid": 0.5165,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.3,
+     "err": 0.7295,
+     "text_top": 0.2264,
+     "text_mid": 0.5293,
+     "text_bot": 0.2149
+    },
+    {
+     "v": 0.45,
+     "err": 0.6604,
+     "text_top": 0.3276,
+     "text_mid": 0.3893,
+     "text_bot": 0.1898
+    },
+    {
+     "v": 0.6,
+     "err": 0.8011,
+     "text_top": 0.3724,
+     "text_mid": 0.2375,
+     "text_bot": 0.3112
+    },
+    {
+     "v": 0.8,
+     "err": 0.8461,
+     "text_top": 0.3809,
+     "text_mid": 0.2375,
+     "text_bot": 0.3031
+    },
+    {
+     "v": 1.0,
+     "err": 1.0843,
+     "text_top": 0.4088,
+     "text_mid": 0.2375,
+     "text_bot": 0.2607
+    }
+   ],
+   "long": [
+    {
+     "v": 0.2,
+     "err": 0.5552,
+     "text_top": 0.8544,
+     "text_mid": 0.639,
+     "text_bot": 0.8481
+    },
+    {
+     "v": 0.35,
+     "err": 0.5802,
+     "text_top": 0.6832,
+     "text_mid": 0.7908,
+     "text_bot": 0.8481
+    },
+    {
+     "v": 0.5,
+     "err": 0.4635,
+     "text_top": 0.6493,
+     "text_mid": 0.8449,
+     "text_bot": 0.7774
+    },
+    {
+     "v": 0.62,
+     "err": 0.4765,
+     "text_top": 0.6787,
+     "text_mid": 0.8212,
+     "text_bot": 0.7919
+    },
+    {
+     "v": 0.72,
+     "err": 0.4493,
+     "text_top": 0.6787,
+     "text_mid": 0.7735,
+     "text_bot": 0.735
+    },
+    {
+     "v": 0.8,
+     "err": 0.5414,
+     "text_top": 0.6787,
+     "text_mid": 0.7552,
+     "text_bot": 0.6807
+    }
+   ]
+  },
+  "ours_views": 3266,
+  "verdict": "지난 회차 이후 우리 영상 조회 합계 3266 → 3266"
  }
 ]

@@ -10,15 +10,31 @@
 import sys, os, re, json
 sys.stdout.reconfigure(encoding='utf-8')
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter
+try: import numpy as np
+except Exception: np = None
 HERE = os.path.dirname(os.path.abspath(__file__)); FD = os.path.join(HERE, 'fonts')
 YELLOW = (255, 214, 10); WHITE = (255, 255, 255); BLACK = (0, 0, 0)
+# 흰 면적 손잡이 2 — 글자를 '작게' 말고 '흰색이 아니게' 만든다(2026-09-24 step39 막힘에서 나옴).
+# 측정에서 흰색은 (채도<40 & 명도>205)인 픽셀이다. text_scale 은 white 와 text_bot 이 같은 손잡이를 놓고 싸워
+# 하한 0.9 에 붙어 버렸다(loop step38~39 "한계에 붙어 더 못 감").
+# 글자 전체를 한 색으로 아이보리로 바꿔 보니(실측 2026-09-24) 0.25→0.5 사이에서 white 0.0224 → 0.0003 으로
+# 한 칸에 뛰어넘어 목표 0.0107 에 설 자리가 없었다. 그래서 '색의 세기'가 아니라 '아이보리로 칠하는 넓이'로 바꿨다.
+# 줄마다 아래쪽 text_tint 만큼을 강조색으로 칠한다(위는 흰색 그대로) — 글자 크기는 1픽셀도 안 줄어든다.
+# 색은 차갑게 간다. 처음에 아이보리(255,214,130)로 뒀더니 그 색의 색상각이 20도라 측정의 노랑 띠(20~35)에
+# 그대로 들어가서, tint 를 올릴수록 yellow 가 같이 올라가고 루프가 yellow_frac 을 0까지 깎아 버렸다
+# (step40→41 실측: yellow 0.0086 → 0.0154, yellow_frac 0.3978 → 0.3009 → 0.0). 두 손잡이가 서로를 망친다.
+# 얼음빛 파랑은 색상각이 파랑 쪽이라 노랑·빨강 띠 어디에도 안 걸리고, 채도 70 으로 흰색 기준(채도<40)도 벗어난다.
+TINT = (185, 222, 255)
+
+def tint_rgb():
+    return TINT
 
 def cfg(kind):
     """loop.py가 매 회차 갱신하는 design.json. 없으면 첫 측정값(2026-09-23 경쟁 상위 중앙값)"""
     try: d = json.load(open(os.path.join(HERE, 'design.json'), encoding='utf-8'))
     except Exception: d = {}
-    base = {'long': {'text_y': 0.72, 'bg_bright': 0.45, 'panel_alpha': 150, 'yellow_bottom': 1, 'yellow_frac': 1.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8},
-            'short': {'text_y': 0.52, 'bg_bright': 0.30, 'panel_alpha': 150, 'yellow_bottom': 0, 'yellow_frac': 0.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8}}[kind]
+    base = {'long': {'text_y': 0.72, 'bg_bright': 0.45, 'panel_alpha': 150, 'yellow_bottom': 1, 'yellow_frac': 1.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0},
+            'short': {'text_y': 0.52, 'bg_bright': 0.30, 'panel_alpha': 150, 'yellow_bottom': 0, 'yellow_frac': 0.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0}}[kind]
     base.update(d.get(kind, {})); return base
 
 def disp(sz):
@@ -93,7 +109,8 @@ def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
         dsh.rectangle([0, ya - int(lh * 0.35), W, yb + lh + int(lh * 0.3)], fill=(0, 0, 0, int(c['panel_alpha'])))
     im = Image.alpha_composite(im.convert('RGBA'), sh.filter(ImageFilter.GaussianBlur(28))).convert('RGB'); dr = ImageDraw.Draw(im)
     sw = max(3, int(sz // max(6, c['stroke_ratio'])))
-    stroked(dr, ((W - dr.textlength(top, font=f1)) / 2, ya), top, f1, WHITE, sw)
+    tx = (W - dr.textlength(top, font=f1)) / 2
+    stroked(dr, (tx, ya), top, f1, WHITE, sw)
     # 아랫줄 노랑: 켜고 끄는 스위치가 아니라 '앞에서부터 몇 글자까지 노랑인가'(yellow_frac 0~1).
     # 경쟁 상위 노랑 면적은 롱폼 0.0258 · 쇼츠 0.0067 인데 한 줄 통째 노랑은 0.0526 이라 늘 넘어갔다 — 그래서 연속 손잡이로 바꿨다(2026-09-23).
     fr = c.get('yellow_frac')
@@ -101,6 +118,21 @@ def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
     fr = min(max(float(fr), 0.0), 1.0)
     bx = (W - dr.textlength(bottom, font=f2)) / 2
     stroked(dr, (bx, yb), bottom, f2, WHITE, sw)          # 외곽선은 줄 전체에 한 번만
+    # 흰 면적 손잡이 2: 두 줄 모두 아래쪽 text_tint 만큼을 아이보리로 덮는다(노랑보다 먼저 — 노랑이 위에 온다)
+    tt = min(max(float(c.get('text_tint', 0.0)), 0.0), 1.0)
+    if tt > 0.001:
+        gl = Image.new('L', (W, H), 0); gd = ImageDraw.Draw(gl)
+        gd.text((tx, ya), top, font=f1, fill=255)
+        gd.text((bx, yb), bottom, font=f2, fill=255)
+        col = Image.new('L', (1, H), 0)                      # 줄마다 아래 tt 만큼만 1
+        for ly in (ya, yb):
+            top_of_tint = int(ly + lh * (1.0 - tt))
+            for y in range(max(0, top_of_tint), min(H, ly + lh + 1)): col.putpixel((0, y), 255)
+        col = col.resize((W, H)).filter(ImageFilter.GaussianBlur(max(1, sz // 24)))   # 경계를 부드럽게
+        mask = Image.fromarray(
+            (np.asarray(gl, dtype=np.uint16) * np.asarray(col, dtype=np.uint16) // 255).astype(np.uint8)
+        ) if np is not None else Image.composite(gl, Image.new('L', (W, H), 0), col.point(lambda v: 255 if v > 127 else 0))
+        im.paste(Image.new('RGB', (W, H), TINT), (0, 0), mask); dr = ImageDraw.Draw(im)
     n = snap(bottom, int(round(len(bottom) * fr)))
     if n: dr.text((bx, yb), bottom[:n], font=f2, fill=YELLOW)   # 같은 자리에 같은 글자를 덮어 칠해 앞부분만 노랑
     fb = body(int(W * 0.028))

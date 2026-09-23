@@ -1,6 +1,7 @@
 블로그 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
 제목: title.txt
 b00.txt
+b_intro.txt
 img/b1.png
 b01.txt
 img/b2.png

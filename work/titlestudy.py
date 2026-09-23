@@ -65,6 +65,38 @@ def shape(t, kw=None):
             '반전 연결(~는데·왜·vs)': '있음' if re.search(r'[는은ㄴ린]데|인데|지만|왜|\bvs\b|보다|차이|그런데', t, re.I) else '없음',
             '검색어 위치': head}
 
+
+TICKERS = (r'\b(LEN|NVDA|TSLA|AAPL|MSFT|AVGO|SCHD|JEPI|JEPQ|QQQ|QQQM|VOO|SPY|TQQQ|QLD|SOXL|SOXX|'
+           r'QYLD|XYLD|DIVO|DGRO|VYM|HDV|SPYD|NOBL|KO|JNJ|PG|MO|VZ|PEP|MCD|ABBV|CVX|XOM|BRK)\b')
+
+def ticker_rate(titles):
+    """상위 노출 제목이 티커를 쓰는 비율.
+    사장님 2026-09-24 "제목에 티커라도 병기해서 넣어줘야 하는 거 아니야".
+    2026-09-24 실측: SCHD 93% · 리얼티인컴 37% · 엔비디아 7% · 커버드콜 ETF 3% · 레나 3%.
+    70% 넘으면 티커만, 20~70%면 한글(티커) 병기, 20% 밑이면 한글만 쓴다.
+    다만 한글 이름이 낯선 종목은 비율과 무관하게 병기한다(사장님이 "레나 주가가 뭔데?"라고 물으셨다)."""
+    if not titles:
+        return None
+    # 한 글자 티커(리얼티인컴 O)는 일반 영문과 구분이 안 돼 괄호 안에 있을 때만 센다.
+    # 안 그러면 리얼티인컴 제목이 통째로 안 잡혀 비율이 37%에서 0%로 떨어진다(2026-09-24 확인).
+    one = r'[(（]\s*(O|V|F|T|C)\s*[)）]'
+    n = sum(1 for t in titles if re.search(TICKERS, t) or re.search(one, t))
+    return n / len(titles)
+
+def ticker_advice(kw):
+    """그 검색어로 상위 제목을 긁어 티커를 어떻게 쓸지 한 줄로 돌려준다."""
+    ts = ranked_titles(kw, 'blog')
+    r = ticker_rate(ts)
+    if r is None:
+        return kw, None, '상위 제목을 못 받음 — 한글(티커) 병기로 간다'
+    if r >= 0.7:
+        how = '티커를 그대로 쓴다'
+    elif r >= 0.2:
+        how = '한글(티커)로 병기한다'
+    else:
+        how = '한글만 쓴다. 다만 한글 이름이 낯선 종목이면 병기한다'
+    return kw, r, how
+
 def tally(rows, key):
     c = collections.Counter(r[key] for r in rows if r.get(key) is not None)
     n = sum(c.values()) or 1

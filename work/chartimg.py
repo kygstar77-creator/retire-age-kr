@@ -24,17 +24,34 @@ def bar_chart(title, pairs, out, unit='', hi=3, short=False, source=''):
     ft = f_disp(int(W * 0.052)); dr.text((pad, int(H * 0.045)), title[:26], font=ft, fill=WHITE)
     top = int(H * 0.045) + int(ft.size * 1.7); bottom = H - int(H * 0.085)
     rowh = (bottom - top) / max(1, n); bh = int(rowh * 0.62)
-    mx = max(v for _, v in pairs) or 1
+    # 음수가 섞이면 0을 가운데 두고 왼쪽으로 뻗는다. 안 그러면 마이너스 막대가 아예 안 그려진다
+    # (2026-09-24 섹터 등락률 차트에서 확인 — 마이너스 섹터가 값만 찍히고 막대가 없었다).
+    vs = [v for _, v in pairs]
+    neg = min(vs) < 0
+    mx = max(abs(v) for v in vs) or 1
+    RED = (232, 72, 72)
     lblw = max(dr.textlength(k, font=f_body(int(rowh * 0.42), True)) for k, _ in pairs) + 18
     x0 = pad + lblw; barw = W - pad - x0 - int(W * 0.13)
+    zero = x0 + (barw * 0.45 if neg else 0)
+    half = barw * 0.52 if neg else barw
+    if neg: dr.line([(zero, top - 6), (zero, bottom)], fill=(70, 74, 88), width=2)
     for i, (k, v) in enumerate(pairs):
-        y = top + rowh * i; c = YELLOW if i < hi else BAR
+        y = top + rowh * i
+        c = (YELLOW if v >= 0 else RED) if (i < hi or v < 0) else BAR
         fl = f_body(int(rowh * 0.42), i < hi)
         dr.text((pad, y + (bh - fl.size) / 2), k, font=fl, fill=WHITE if i < hi else DIM)
-        w = max(6, int(barw * v / mx))
-        dr.rounded_rectangle([x0, y, x0 + w, y + bh], radius=int(bh * 0.28), fill=c)
+        w = max(6, int(half * abs(v) / mx))
+        if v >= 0: box = [zero, y, zero + w, y + bh]
+        else:      box = [zero - w, y, zero, y + bh]
+        dr.rounded_rectangle(box, radius=int(bh * 0.28), fill=c)
         fv = f_disp(int(rowh * 0.5)); s = f'{v:,.2f}'.rstrip('0').rstrip('.') + unit
-        dr.text((x0 + w + 14, y + (bh - fv.size) / 2 - 2), s, font=fv, fill=YELLOW if i < hi else WHITE)
+        tw = dr.textlength(s, font=fv)
+        tx = (zero + w + 14) if v >= 0 else (zero - w - 14 - tw)
+        # 막대가 길면 값이 왼쪽 이름과 겹친다(2026-09-24 확인) → 겹치면 막대 안쪽에 적는다
+        inside = v < 0 and tx < pad + lblw
+        if inside: tx = zero - w + 12
+        dr.text((tx, y + (bh - fv.size) / 2 - 2), s, font=fv,
+                fill=(14, 15, 20) if inside else (c if c != BAR else WHITE))
     if source: dr.text((pad, H - int(H * 0.062)), source[:60], font=f_body(int(W * 0.024)), fill=DIM)
     os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True); im.save(out)
     print('차트', out, f'{W}x{H}', f'{n}개 항목')

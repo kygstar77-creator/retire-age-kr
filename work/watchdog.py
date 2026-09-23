@@ -19,6 +19,42 @@ def load(p, d):
     try: return json.load(open(p, encoding='utf-8'))
     except Exception: return d
 
+
+SERIES = {  # 시리즈가 실제로 발행됐는지 제목으로 확인한다
+            # 2026-09-24: 여덟 개 중 일곱 개가 한 편도 안 나갔다. 도구는 다 있는데 편성이 없어 안 쓰였다.
+    'B6 미국증시 한 장': r'미국증시|증시 한 장|섹터별',
+    'B8 부동산 한 장': r'부동산 한 장|구별 전세가율',
+    'B12/C8 배당 히트맵': r'히트맵',
+    'C7 내부자 매수': r'내부자',
+    'C4 주간 캘린더': r'이번 주.{0,6}캘린더|주간.{0,6}일정',
+    'C6 유튜버 숫자 검증': r'유튜[브버].{0,10}(숫자|검증)',
+    'B13 종목 발굴': r'발굴|조건에 걸린',
+    'B11 손품': r'손품',
+}
+
+def series_gap():
+    """며칠째 한 편도 안 나간 시리즈를 찾는다. 도구만 만들고 안 쓰는 일을 막는다."""
+    import urllib.request
+    UA2 = {'User-Agent': 'Mozilla/5.0', 'Referer': 'https://cafe.naver.com/'}
+    titles = []
+    try:
+        s = urllib.request.urlopen(urllib.request.Request(
+            'https://rss.blog.naver.com/kygstar7777.xml', headers=UA2), timeout=20).read().decode('utf-8', 'ignore')
+        titles += [re.sub(r'<!\[CDATA\[|\]\]>', '', m.group(1)).strip()
+                   for m in re.finditer(r'<title>(.*?)</title>', s, re.S)][1:]
+    except Exception:
+        pass
+    try:
+        u = ('https://apis.naver.com/cafe-web/cafe2/ArticleListV2dot1.json'
+             '?search.clubid=31789001&search.queryType=lastArticle&search.page=1&search.perPage=50')
+        arts = json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA2), timeout=20))
+        titles += [a.get('subject', '') for a in arts['message']['result']['articleList']]
+    except Exception:
+        pass
+    if not titles:
+        return []
+    return [n for n, pat in SERIES.items() if not any(re.search(pat, t) for t in titles)]
+
 def main():
     import naverpost as N
     check_only = '--check' in sys.argv
@@ -38,6 +74,10 @@ def main():
         n = sum(1 for x in pend if x['kind'] == kind)
         rec['stock'][kind] = n
         if n < STOCK_WANT: rec['alert'].append(f'{kind} 대기 묶음 {n}개 (목표 {STOCK_WANT}) — 회차가 처음부터 쓰느라 밀린다')
+
+    gaps = series_gap()
+    rec['안 나간 시리즈'] = gaps
+    if gaps: rec['alert'].append('최근 글에 한 편도 없는 시리즈: ' + ', '.join(gaps))
 
     # 3) 빵꾸 메우기 — 늦었고, 올릴 묶음이 있으면 지금 올린다
     need = [k for k in ('blog', 'cafe') if (rec['late'][k] or 0) > LATE_MIN and any(x['kind'] == k for x in pend)]

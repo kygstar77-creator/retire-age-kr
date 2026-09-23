@@ -9,7 +9,7 @@
 #   C:\Users\강영준\Documents\openai_key.txt   KEY=sk-...   (선택: MODEL=gpt-...)
 #   C:\Users\강영준\Documents\gemini_key.txt   KEY=AIza...  (선택: MODEL=gemini-...)
 # 키가 없는 역할은 건너뛰고 그 사실을 출력한다. 지어내지 않는다.
-import sys, os, re, json, glob, time, subprocess, urllib.request, urllib.error
+import sys, os, re, json, glob, time, socket, subprocess, urllib.request, urllib.error
 sys.stdout.reconfigure(encoding='utf-8')
 DOCS = r'C:\Users\강영준\Documents'
 TODAY = time.strftime('%Y년 %m월 %d일')
@@ -34,10 +34,23 @@ def http(url, body=None, headers=None, timeout=180):
     body_ = body
     rem = left()
     if rem < 5: raise RuntimeError(f'시간 예산 초과({BUDGET}초) — 남은 검증을 건너뛴다')
-    timeout = min(timeout, max(5, int(rem)))
+    # 한 번의 호출이 예산을 다 먹으면 뒤따르는 검증(말투 쪽)이 굶는다 — 2026-09-24 00시 회차:
+    # 사실 대조가 읽기 타임아웃으로 300초를 통째로 써서 남은 검증이 실행조차 못 됐다.
+    # 그래서 호출 하나가 쓸 수 있는 시간을 남은 예산의 45%로 묶는다(최소 25초).
+    timeout = min(timeout, max(25, int(rem * 0.45)))
     req = urllib.request.Request(url, data=json.dumps(body).encode() if body else None, headers={'Content-Type': 'application/json', **(headers or {})})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r: return json.load(r)
+    except (socket.timeout, TimeoutError, urllib.error.URLError) as e:
+        # 읽기 타임아웃·연결 끊김은 429처럼 다시 걸면 되는 경우가 많은데 예전에는 재시도가 없어
+        # 검증이 통째로 비었다(2026-09-24 00시 회차). HTTPError는 아래 분기가 따로 처리한다.
+        if isinstance(e, urllib.error.HTTPError): raise
+        if getattr(http, '_ttry', 0) < 2 and left() > 30:
+            http._ttry = getattr(http, '_ttry', 0) + 1
+            time.sleep(3)
+            try: return http(url, body=body_, headers=headers, timeout=timeout)
+            finally: http._ttry = 0
+        raise RuntimeError(f'응답 없음({type(e).__name__}: {getattr(e, "reason", e)}) · 남은 예산 {int(left())}초')
     except urllib.error.HTTPError as e:
         body = e.read()[:300].decode("utf-8", "ignore")
         # 503(혼잡)·429(속도제한)은 잠시 뒤 되는 경우가 많다 — 세 번까지 기다렸다 다시 건다(예산 안에서만)

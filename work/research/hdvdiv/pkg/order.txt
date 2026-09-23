@@ -1,0 +1,14 @@
+카페 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+c00.txt
+img/c1.png
+c01.txt
+c02.txt
+img/c2.png
+c025.txt
+c03.txt
+img/c3.png
+c04.txt
+소제목: c01·c02·c025·c03·c04 조각의 첫 줄
+게시판: 자유게시판
+출처: iShares 공식 HDV 제품 페이지(분배 이력·수익률·보수·순자산) 2026-09-24 조회 · Yahoo Finance chart API 시세·배당 이벤트·USDKRW 2026-09-24 조회

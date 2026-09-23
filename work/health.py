@@ -110,6 +110,18 @@ def main():
     gaps = llog[-1].get('gaps', []) if llog else []
     M.append(('디자인', '경쟁 대비 미해결 차이 수', len(gaps), 0, 2, 'loop.py RULE에 손잡이 추가 또는 thumbstat 측정 수정'))
 
+    # 같은 글이 두 번 올라간 적이 있나. 0이 아니면 발행기가 중복을 냈다는 뜻이다.
+    # 2026-09-24 국채금리 글이 07:13·07:35 두 번 올라갔고 사장님이 화면으로 잡아 줬다. 이제 기계가 잡는다.
+    try:
+        sys.path.insert(0, HERE)
+        from naverpost import dup_titles
+        for kind, name in (('blog', '블로그'), ('cafe', '카페')):
+            d = dup_titles(kind)
+            M.append(('발행', f'{name} 같은 글 두 번 올라간 수', len(d), 0, 3,
+                      '올라간 제목과 대조하고 올린다(naverpost already_up) · 겹친 글은 work/blogfix.py private 로 내린다'
+                      + (' · 지금: ' + ', '.join(list(d)[:2]) if d else '')))
+    except Exception as e: print('중복 검사 실패:', repr(e)[:120])
+
     tw = open(os.path.join(R, 'tools-wanted.md'), encoding='utf-8').read() if os.path.exists(os.path.join(R, 'tools-wanted.md')) else ''
     M.append(('도구', '사람 손 필요 항목', tw.count('| 대기 |'), 0, 1, '12:30 보고 "확인 필요"에 올린다'))
     bq = open(os.path.join(R, 'build-queue.md'), encoding='utf-8').read() if os.path.exists(os.path.join(R, 'build-queue.md')) else ''

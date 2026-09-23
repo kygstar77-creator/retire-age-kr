@@ -166,22 +166,52 @@ def close_popups(frame):
 
 def norm(t): return re.sub(r'[\s\W_]+', '', t or '')
 
+UA = {'User-Agent': 'Mozilla/5.0', 'Referer': 'https://cafe.naver.com/'}
+
+def live_pairs(kind, pages=1):
+    """올라가 있는 글의 (norm(제목), URL) 목록. 방금 올린 글까지 잡혀야 한다.
+    블로그는 RSS를 쓰지 않는다. RSS가 늦게 갱신돼 22분 전에 올린 글이 안 보였고
+    그 사이 같은 글이 한 번 더 올라갔다(2026-09-24 07:13·07:35 국채금리 글, 사장님이 화면으로 잡아 줌).
+    PostTitleListAsync는 로그인 없이 되고 방금 올린 글도 바로 보인다."""
+    import urllib.request, urllib.parse
+    out = []
+    try:
+        for pg in range(1, pages + 1):
+            if kind == 'blog':
+                u = (f'https://blog.naver.com/PostTitleListAsync.naver?blogId={BLOG_ID}'
+                     f'&viewdate=&currentPage={pg}&categoryNo=0&parentCategoryNo=&countPerPage=30')
+                # 이 응답은 제대로 된 JSON이 아니다(제목에 \' 같은 escape가 섞여 json.load가 깨진다). 짝만 뽑아 쓴다.
+                s = urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=20).read().decode('utf-8', 'ignore')
+                got = re.findall(r'"logNo":"(\d+)","title":"([^"]*)"', s)
+                if not got:
+                    if pg == 1: raise RuntimeError('글 목록에서 제목을 못 뽑음')
+                    break
+                out += [(norm(urllib.parse.unquote_plus(t)), f'https://blog.naver.com/{BLOG_ID}/{no}') for no, t in got]
+            else:
+                u = (f'https://apis.naver.com/cafe-web/cafe2/ArticleListV2dot1.json?search.clubid={CAFE_ID}'
+                     f'&search.queryType=lastArticle&search.page={pg}&search.perPage=50')
+                arts = json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=20))['message']['result']['articleList']
+                if not arts: break
+                out += [(norm(a.get('subject', '')), f'https://cafe.naver.com/ca-fe/cafes/{CAFE_ID}/articles/{a.get("articleId")}') for a in arts]
+    except Exception as e:
+        print(('블로그 글목록' if kind == 'blog' else '카페 API') + ' 실패:', repr(e)[:150])
+    return out
+
+def live_map(kind): return dict(live_pairs(kind))
+
+def dup_titles(kind, pages=4):
+    """같은 제목으로 두 번 올라간 글. 0이어야 한다. 값이 있으면 발행기가 또 중복을 냈다는 뜻."""
+    seen = {}
+    for t, u in live_pairs(kind, pages):
+        seen.setdefault(t, set()).add(u)
+    return {t: sorted(us) for t, us in seen.items() if len(us) > 1}
+
+def already_up(kind, title):
+    """이 제목이 이미 올라가 있으면 그 URL. 발행 직전과 실패 직후에 둘 다 본다."""
+    return live_map(kind).get(norm(title))
+
 def published_titles():
-    import urllib.request, html
-    UA = {'User-Agent': 'Mozilla/5.0', 'Referer': 'https://cafe.naver.com/'}
-    blog, cafe = set(), set()
-    try:
-        s = urllib.request.urlopen(urllib.request.Request(f'https://rss.blog.naver.com/{BLOG_ID}.xml', headers=UA), timeout=20).read().decode('utf-8', 'ignore')
-        for it in re.findall(r'<item>(.*?)</item>', s, re.S):
-            t = re.search(r'<title>(.*?)</title>', it, re.S)
-            if t: blog.add(norm(html.unescape(re.sub(r'<!\[CDATA\[|\]\]>', '', t.group(1)))))
-    except Exception as e: print('RSS 실패:', e)
-    try:
-        u = f'https://apis.naver.com/cafe-web/cafe2/ArticleListV2dot1.json?search.clubid={CAFE_ID}&search.queryType=lastArticle&search.page=1&search.perPage=50'
-        for a in json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=20))['message']['result']['articleList']:
-            cafe.add(norm(a.get('subject', '')))
-    except Exception as e: print('카페 API 실패:', e)
-    return blog, cafe
+    return set(live_map('blog')), set(live_map('cafe'))
 
 def list_pending():
     """work/research/*/pkg 중 아직 안 올라간 묶음. order.txt 첫 줄로 블로그/카페를 가른다."""
@@ -452,6 +482,7 @@ def main():
             print('로그인 확인 실패(시간 초과)'); ctx.close(); sys.exit(1)
         ctx = launch(p, headless=(cmd != 'shot' and os.environ.get('NAVER_HEADED') != '1'))
         page = ctx.new_page()
+        pkg = None
         try:
             if cmd == 'check':
                 ok = logged_in(page); print('로그인됨' if ok else '로그인 안 됨'); sys.exit(0 if ok else 2)
@@ -483,10 +514,27 @@ def main():
             args = [a for a in sys.argv[2:] if a != '--wait']
             wait = '--wait' in sys.argv
             pkg = os.path.abspath(args[0])
+            title = open(os.path.join(pkg, 'title.txt'), encoding='utf-8').read().strip()
+            # 올리기 전에 같은 제목이 이미 올라가 있는지 본다. published.txt가 없어도 글은 올라가 있을 수 있다.
+            up = already_up(cmd, title)
+            if up:
+                open(os.path.join(pkg, 'published.txt'), 'w', encoding='utf-8').write(up + '\n')
+                print('이미 올라가 있음 — 다시 올리지 않음'); print('URL', up); return
             url = post_blog(page, pkg, wait) if cmd == 'blog' else post_cafe(page, pkg, wait)
             open(os.path.join(pkg, 'published.txt'), 'w', encoding='utf-8').write(url + '\n')
             print('URL', url)
         except Exception as e:
+            # 발행 버튼까지 눌리고 그 뒤(주소 이동 대기 등)에서 터지면 글은 올라가 있다.
+            # 이걸 실패로 돌려주면 다음 회차가 같은 글을 또 올린다(2026-09-24 07:13·07:35).
+            if pkg and cmd in ('blog', 'cafe'):
+                try:
+                    t = open(os.path.join(pkg, 'title.txt'), encoding='utf-8').read().strip()
+                    up = already_up(cmd, t)
+                    if up:
+                        open(os.path.join(pkg, 'published.txt'), 'w', encoding='utf-8').write(up + '\n')
+                        print('발행 뒤 오류(' + repr(e)[:120] + ') — 글은 올라가 있어 성공으로 처리')
+                        print('URL', up); return
+                except Exception as e2: print('발행 확인 실패:', repr(e2)[:120])
             path = shot(page, 'error_' + cmd); print('실패:', repr(e)[:300]); print('스크린샷', path); sys.exit(1)
         finally:
             ctx.close()

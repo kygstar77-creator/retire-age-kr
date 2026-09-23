@@ -105,6 +105,60 @@ def vworld_coord(address, road=None):
         return {'주소': (d.get('refined') or {}).get('text', address), '경도': float(p['x']), '위도': float(p['y']), '방식': t}
     return None
 
+def building(sigungu_cd, bjdong_cd, bun, ji='0'):
+    """단지의 세대수·주차대수·준공일·동수. 국토교통부 건축HUB 건축물대장(2026-09-24 승인).
+    사장님 2026-09-23 "평수나 내부구조 세대수 주차장 연식 등도 봐야지".
+
+    **총괄표제부(getBrRecapTitleInfo)를 쓴다.** 표제부(getBrTitleInfo)는 동마다 한 줄이라
+    24개 동을 다 받아도 세대수·주차가 0으로 나온다(경로당 같은 부속건축물이 섞인다).
+    총괄표제부는 단지 전체를 한 줄로 준다 — 래미안신당하이베르 세대 784·주차 968·16개 동으로 확인.
+
+    인자는 실거래 자료에 그대로 있다: sggCd, umdCd, bonbun, bubun."""
+    k = key('datago')
+    if not k: return None
+    u = ('https://apis.data.go.kr/1613000/BldRgstHubService/getBrRecapTitleInfo'
+         f'?serviceKey={urllib.parse.quote(k, safe="")}&sigunguCd={sigungu_cd}&bjdongCd={bjdong_cd}'
+         f'&bun={str(bun).zfill(4)}&ji={str(ji or "0").zfill(4)}&_type=json&numOfRows=5')
+    PARK = ('indrAutoUtcnt', 'oudrAutoUtcnt', 'indrMechUtcnt', 'oudrMechUtcnt')
+
+    def rows(url):
+        try: b = _j(url, 30)['response']['body']
+        except Exception: return []
+        it = b.get('items'); it = (it.get('item') if isinstance(it, dict) else it) or []
+        return it if isinstance(it, list) else [it]
+
+    def pack(x, dong):
+        park = sum(_i(x.get(f)) for f in PARK)
+        d = str(x.get('useAprDay') or '')
+        hh = _i(x.get('hhldCnt'))
+        return {'단지': x.get('bldNm') or x.get('dongNm'), '주소': x.get('platPlc'), '세대수': hh,
+                '주차대수': park, '동수': dong,
+                '준공': f'{d[:4]}년 {int(d[4:6])}월' if len(d) >= 6 else '',
+                '세대당주차': round(park / hh, 2) if hh else None}
+
+    it = rows(u)
+    if it:
+        x = max(it, key=lambda z: _i(z.get('hhldCnt')))
+        if _i(x.get('hhldCnt')): return pack(x, _i(x.get('mainBldCnt')))
+
+    # 총괄표제부는 단지형에만 있다. 오피스텔·연립처럼 한 동짜리는 표제부에서 주건축물만 합친다
+    # (부속건축물인 경로당·관리동이 섞이면 세대수가 0으로 나온다 — 2026-09-24 확인).
+    u2 = u.replace('getBrRecapTitleInfo', 'getBrTitleInfo').replace('numOfRows=5', 'numOfRows=100')
+    main = [x for x in rows(u2) if _i(x.get('hhldCnt'))]
+    if not main: return None
+    hh = sum(_i(x.get('hhldCnt')) for x in main)
+    park = sum(sum(_i(x.get(f)) for f in PARK) for x in main)
+    big = max(main, key=lambda z: _i(z.get('hhldCnt')))
+    d = str(big.get('useAprDay') or '')
+    return {'단지': big.get('bldNm') or big.get('dongNm'), '주소': big.get('platPlc'), '세대수': hh,
+            '주차대수': park, '동수': len(main),
+            '준공': f'{d[:4]}년 {int(d[4:6])}월' if len(d) >= 6 else '',
+            '세대당주차': round(park / hh, 2) if hh else None}
+
+def _i(x):
+    try: return int(float(x or 0))
+    except Exception: return 0
+
 def _dist_m(lat1, lng1, lat2, lng2):
     import math
     R = 6371000.0

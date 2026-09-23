@@ -230,14 +230,25 @@ def last_published_minutes(kind):
     except Exception as e:
         print('최근 발행 시각 확인 실패:', e); return None
 
-def rate_guard(kind):
+# 회차 루틴이 --wait를 주면 거부하는 대신 남은 시간만큼 기다렸다 올린다.
+# 왜 필요한가(2026-09-24 07시): 앞 회차가 07:13에 블로그를 올려서 07:14 발행이 거부됐고,
+# 20분 뒤로 잡아 07:33에 다시 걸었더니 '20분 전'으로 또 경계에 걸렸다. 회차마다 사람이
+# 시각을 계산해 재시도를 거는 방식은 이렇게 한 번씩 빗나간다. 기다리는 쪽이 0편을 막는다.
+WAIT_MAX_MIN = 25   # 이보다 더 기다려야 하면 회차를 넘긴다
+
+def rate_guard(kind, wait=False):
     if os.environ.get('NAVER_FORCE') == '1': return
     m = last_published_minutes(kind)
-    if m is not None and m < MIN_GAP_MIN:
-        raise RuntimeError(f'{kind} 직전 발행이 {m:.0f}분 전 — {MIN_GAP_MIN}분 안에는 같은 매체에 다시 올리지 않는다(한 회차 1편). 다음 회차에 올린다')
+    if m is None or m >= MIN_GAP_MIN: return
+    left = MIN_GAP_MIN - m
+    if wait and left <= WAIT_MAX_MIN:
+        print(f'{kind} 직전 발행이 {m:.0f}분 전 — {left:.1f}분 기다렸다 올린다', flush=True)
+        time.sleep(left * 60 + 30)          # 경계에서 또 걸리지 않게 30초 더
+        return
+    raise RuntimeError(f'{kind} 직전 발행이 {m:.0f}분 전 — {MIN_GAP_MIN}분 안에는 같은 매체에 다시 올리지 않는다(한 회차 1편). 다음 회차에 올린다')
 
-def post_blog(page, pkg):
-    rate_guard('blog')
+def post_blog(page, pkg, wait=False):
+    rate_guard('blog', wait)
     title, seq, meta = read_pkg(pkg)
     page.goto(f'https://blog.naver.com/{BLOG_ID}/postwrite', wait_until='domcontentloaded')
     page.wait_for_timeout(6000)
@@ -283,8 +294,8 @@ def post_blog(page, pkg):
     return f'https://blog.naver.com/{BLOG_ID}/{m.group(1)}' if m else page.url
 
 # ---------- 카페 ----------
-def post_cafe(page, pkg):
-    rate_guard('cafe')
+def post_cafe(page, pkg, wait=False):
+    rate_guard('cafe', wait)
     title, seq, meta = read_pkg(pkg)
     page.goto(f'https://cafe.naver.com/ca-fe/cafes/{CAFE_ID}/articles/write', wait_until='domcontentloaded')
     page.wait_for_timeout(6000)
@@ -469,8 +480,10 @@ def main():
                     try: print(aid, cafe_make_public(page, aid))
                     except Exception as e: print(aid, '실패:', repr(e)[:200]); shot(page, 'error_public_' + aid)
                 return
-            pkg = os.path.abspath(sys.argv[2])
-            url = post_blog(page, pkg) if cmd == 'blog' else post_cafe(page, pkg)
+            args = [a for a in sys.argv[2:] if a != '--wait']
+            wait = '--wait' in sys.argv
+            pkg = os.path.abspath(args[0])
+            url = post_blog(page, pkg, wait) if cmd == 'blog' else post_cafe(page, pkg, wait)
             open(os.path.join(pkg, 'published.txt'), 'w', encoding='utf-8').write(url + '\n')
             print('URL', url)
         except Exception as e:

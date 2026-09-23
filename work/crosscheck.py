@@ -9,7 +9,7 @@
 #   C:\Users\강영준\Documents\openai_key.txt   KEY=sk-...   (선택: MODEL=gpt-...)
 #   C:\Users\강영준\Documents\gemini_key.txt   KEY=AIza...  (선택: MODEL=gemini-...)
 # 키가 없는 역할은 건너뛰고 그 사실을 출력한다. 지어내지 않는다.
-import sys, os, re, json, glob, time, urllib.request, urllib.error
+import sys, os, re, json, glob, time, subprocess, urllib.request, urllib.error
 sys.stdout.reconfigure(encoding='utf-8')
 DOCS = r'C:\Users\강영준\Documents'
 TODAY = time.strftime('%Y년 %m월 %d일')
@@ -207,6 +207,17 @@ def main():
         except Exception as e: done.append('Gemini 실패: ' + str(e)[:200])
     else: done.append('Gemini 건너뜀 — gemini_key.txt 없음')
     for d in done: print(d)
+    # 키가 있어도 429·타임아웃으로 두 검증이 다 비는 일이 잦다(2026-09-23 23시 회차: 300초 예산 초과).
+    # 검증 없이 대기로 남기지 않도록, 결과 파일이 하나도 안 생겼으면 키 없이 도는 selfcheck를 자동으로 돌린다.
+    made = [f for f in ('check_gpt.txt', 'check_gemini.txt') if os.path.exists(os.path.join(pkg, f))]
+    if not made:
+        print('검증 결과 없음 → selfcheck로 대체한다')
+        try:
+            r = subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'selfcheck.py'), pkg],
+                               capture_output=True, text=True, encoding='utf-8', timeout=180)
+            print((r.stdout or '').strip() or (r.stderr or '').strip()[:300])
+        except Exception as e:
+            print('selfcheck 대체도 실패: ' + str(e)[:200])
     if not oa and not gm: sys.exit(3)
 
 if __name__ == '__main__': main()

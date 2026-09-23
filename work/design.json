@@ -2,15 +2,15 @@
  "short": {
   "text_y": 0.5019,
   "bg_bright": 0.3794,
-  "panel_alpha": 128,
+  "panel_alpha": 150.0,
   "yellow_bottom": 0,
   "num_yellow": 1,
   "stroke_ratio": 40,
-  "yellow_frac": 0.1224,
+  "yellow_frac": 0.1088,
   "text_scale": 1.0,
   "text_spread": 0.45,
   "bg_sat": 1.4056,
-  "text_tint": 0.9455,
+  "text_tint": 0.8805,
   "lines": 3,
   "split_scale": 2.0
  },
@@ -28,7 +28,7 @@
  "video": {
   "zoom": 0.0009
  },
- "step": 46,
+ "step": 56,
  "_memo": {
   "short.white.stroke_ratio=40": 0.0301,
   "long.yellow.yellow_bottom=1": 0.0526,
@@ -63,6 +63,22 @@
   "long.sat.bg_sat=0.8": 0.2225,
   "short.yellow.yellow_frac=0.2856": 0.0099,
   "short.contrast.panel_alpha=150": 0.2638,
-  "short.white.text_tint=0.85": 0.0144
+  "short.white.text_tint=0.85": 0.0144,
+  "short.white.text_tint=0.9455": 0.0028,
+  "short.yellow.yellow_frac=0.1224": 0.0099,
+  "short.contrast.panel_alpha=128": 0.2623,
+  "short.contrast.panel_alpha=150.0": 0.2638,
+  "short.yellow.yellow_frac=0.3195": 0.0169,
+  "short.white.text_tint=0.8059": 0.0184,
+  "short.yellow.yellow_frac=0.2856@b08ed6": 0.0099,
+  "short.contrast.panel_alpha=150.0@76e2be": 0.2638,
+  "short.white.text_tint=0.85@b0700f": 0.0144,
+  "short.white.text_tint=0.9455@b0700f": 0.0028,
+  "short.yellow.yellow_frac=0.1224@f7df30": 0.0099,
+  "short.contrast.panel_alpha=150.0@bcc54e": 0.2639,
+  "short.yellow.yellow_frac=0.0@f7df30": 0.0003,
+  "short.contrast.panel_alpha=150.0@3ababc": 0.2638,
+  "short.yellow.yellow_frac=0.0816@f7df30": 0.0003,
+  "short.contrast.panel_alpha=150.0@8c8d46": 0.2638
  }
 }

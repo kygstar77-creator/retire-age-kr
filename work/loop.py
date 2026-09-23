@@ -117,6 +117,17 @@ def band_err(rows, kind, spec):
     if not got: return None, {}
     return sum(abs(got[k] - tgt[k]) / max(tgt[k], 1e-3) for k in got), got
 
+def ctx_tag(design, kind, knob):
+    """그 판형에서 '지금 움직이려는 손잡이 말고 나머지'가 어디에 있는지를 짧은 지문으로 만든다.
+    같은 지문에서 잰 값끼리만 견줄 수 있다 — 다른 손잡이가 움직인 뒤의 값과 섞으면 손잡이가 듣는지 안 듣는지,
+    목표를 지나쳤는지 아닌지를 알 수 없다."""
+    import hashlib
+    d = design.get(kind, {})
+    body = ';'.join(f'{k}={round(float(v), 4) if isinstance(v, (int, float)) else v}'
+                    for k, v in sorted(d.items()) if k != knob)
+    return hashlib.md5(body.encode('utf-8')).hexdigest()[:6]
+
+
 def grid_pick(design, spec, kind, knob, base_grid, did, blocked):
     """손잡이 하나를 격자로 실제로 그려 재고 가장 나은 값을 고른다. 미는 게 아니라 재는 것이라 흔들리지 않는다"""
     d = design.setdefault(kind, {})
@@ -261,12 +272,52 @@ def main():
             # bg_sat 같은 새 손잡이를 RULE에 넣어도 design.json에 없다는 이유로 영영 건너뛰었다(2026-09-23).
             cur = d[knob] = float(THUMB_DEFAULT.get(g['kind'], {}).get(knob, 0.0))
         tag = f"{g['kind']}.{g['key']}.{knob}"
-        memo[f'{tag}={cur}'] = g['ours']
-        seen = {v: o for k, v, o in ((k, k.split('=')[1], o) for k, o in memo.items() if k.startswith(tag + '='))}
+        # 실측치는 '그때 나머지 손잡이가 어디에 있었나'에 딸려 있다. 예전에는 손잡이 값만 적어 둬서, 다른 손잡이가
+        # 움직인 뒤에 잰 값과 그 전에 잰 값을 같은 줄에 놓고 비교했다 — short.white 실측이 text_tint 0.7689/0.8059/
+        # 0.85/0.9455 에서 0.0076/0.0184/0.0144/0.0028 로 오르락내리락한 것이 그 탓이다(강조색 얼음빛 파랑이
+        # 채도 40 아래라 흰 면적으로 세어져, yellow_frac 이 움직이면 white 도 같이 움직인다). 그래서 나머지 설정을
+        # 지문으로 같이 적고, 값끼리 견줄 때는 지문이 같은 것만 쓴다.
+        ctx = ctx_tag(design, g['kind'], knob)
+        memo[f'{tag}={cur}@{ctx}'] = g['ours']
+        seen, same = {}, {}   # seen: 지문 상관없이 전부(듣는 손잡이인지 보는 용도) · same: 지문이 지금과 같은 것만
+        for mk, mo in memo.items():
+            if not mk.startswith(tag + '='): continue
+            v, _, c = mk[len(tag) + 1:].partition('@')
+            seen[v] = mo
+            if c == ctx: same[v] = mo
         # 손잡이를 움직였는데 실측이 그대로면 그 항목에 듣지 않는 손잡이다 — 더 돌리지 않는다
         if len(seen) > 1 and max(seen.values()) - min(seen.values()) < 0.002:
             blocked.append(f"{g['kind']}.{g['key']} — {knob} 를 {'/'.join(sorted(seen))} 로 바꿔도 실측 그대로, 듣지 않는 손잡이")
             continue
+        # 이미 잰 값들이 목표를 위·아래로 끼고 있으면(사이에 낀다) 계수로 미는 대신 그 사이를 갈라 들어간다.
+        # 계수 밀기는 한 방향으로만 가므로 한 번 목표를 지나쳐 버리면 되돌아올 길이 없다 — 다음 회차에 그 값을
+        # 다시 제안해도 "이미 재봤고 더 나빴다"에 걸려 영영 그 자리에 선다. short.white 가 그 꼴이었다:
+        # text_tint 0.85 → 0.0144(목표 0.0107 위), 0.9455 → 0.0028(아래). 답은 두 값 사이인데 38~50회차 내내
+        # 못 들어갔다. 사이에 낀 두 점을 직선으로 이어 목표를 지나는 자리를 집으면 한 번에 들어간다.
+        if coef != 'center' and knob not in BINARY and len(same) > 1:
+            pts = []
+            for v, o in same.items():
+                try: pts.append((float(v), o))
+                except ValueError: pass
+            hi_pts = [(v, o) for v, o in pts if o > g['target']]
+            lo_pts = [(v, o) for v, o in pts if o < g['target']]
+            pair = min(((a, b) for a in hi_pts for b in lo_pts), key=lambda ab: abs(ab[0][0] - ab[1][0]), default=None)
+            if pair:
+                (va, oa), (vb, ob) = pair
+                span = abs(hi - lo) if hi is not None and lo is not None else 1.0
+                if abs(va - vb) <= max(span * 0.01, 1e-4):
+                    blocked.append(f"{g['kind']}.{g['key']} — {knob} {min(va, vb)}~{max(va, vb)} 까지 좁혔는데도 목표 {g['target']} 를 못 맞춘다, 다른 손잡이가 필요")
+                    continue
+                hit = va + (vb - va) * (g['target'] - oa) / (ob - oa)
+                hit = min(max(hit, min(va, vb)), max(va, vb))
+                cand = round(hit, 4) if isinstance(cur, float) else int(round(hit))
+                if str(cand) in same or cand == cur:
+                    blocked.append(f"{g['kind']}.{g['key']} — {knob} 사이 가르기가 이미 재본 {cand} 로 돌아온다, 다른 손잡이가 필요")
+                    continue
+                moved_knobs.add((g['kind'], knob))
+                d[knob] = cand
+                did.append(f"{g['kind']}.{knob} {cur} → {cand} ({g['key']} 목표 {g['target']} 를 {va}={oa}/{vb}={ob} 사이에서 갈라 집음)")
+                continue
         # 계수는 모두 '우리 - 경쟁' 기준으로 적혀 있다(주석 참고). 부호를 뒤집지 말 것.
         if coef == 'center':
             # 가운데 띠 비율은 text_y에 대해 단조가 아니다 — 0.5 쪽으로 당기기만 한다
@@ -283,7 +334,7 @@ def main():
             if cur in (lo, hi): blocked.append(f"{g['kind']}.{g['key']} — {knob} 가 한계 {cur} 에 붙어 더 못 감, 다른 손잡이가 필요")
             continue
         moved_knobs.add((g['kind'], knob))
-        prev = seen.get(str(new))
+        prev = same.get(str(new))
         if prev is not None and abs(prev - g['target']) >= abs(g['ours'] - g['target']):
             blocked.append(f"{g['kind']}.{g['key']} — {knob}={new} 는 이미 재봤고 더 나빴다({prev} vs 지금 {g['ours']}), 그대로 둠")
             continue

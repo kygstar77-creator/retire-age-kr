@@ -1,0 +1,13 @@
+카페 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+c00.txt
+c01.txt
+img/c1.png
+c02.txt
+img/c2.png
+c03.txt
+img/c3.png
+c04.txt
+소제목: c01·c02·c03·c04 조각의 첫 줄
+게시판: 자유게시판
+출처: State Street SPDR 분배금 일정 공시 · stockanalysis.com SPYD 배당 이력 · Yahoo Finance 2026-09-23 종가·환율 (모두 2026-09-24 조회)

@@ -8,12 +8,12 @@
   "stroke_ratio": 40,
   "yellow_frac": 0.3978,
   "text_scale": 1.0,
-  "text_spread": 0.45,
+  "text_spread": 1.0,
   "bg_sat": 2.3572,
   "text_tint": 0.6889
  },
  "long": {
-  "text_y": 0.72,
+  "text_y": 0.62,
   "bg_bright": 1.7447,
   "panel_alpha": 212,
   "yellow_bottom": 0,

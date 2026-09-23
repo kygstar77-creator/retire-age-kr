@@ -26,6 +26,23 @@ YELLOW = (255, 214, 10); WHITE = (255, 255, 255); BLACK = (0, 0, 0)
 # 얼음빛 파랑은 색상각이 파랑 쪽이라 노랑·빨강 띠 어디에도 안 걸리고, 채도 70 으로 흰색 기준(채도<40)도 벗어난다.
 TINT = (185, 222, 255)
 
+def fit_bg(im, W, H):
+    """자료 화면은 통째로 보이게 넣는다 — 잘라 채우지 않는다(사장님 2026-09-23 "자료 화면이 보여야 한다").
+    2026-09-24 실측: chartimg --short 는 1080x1350 인데 1080x1920 에 max 배율로 맞춰 (0,0) 에서 자르면
+    가로가 1536 으로 늘어나 오른쪽 30%가 잘려 나간다. 막대와 값이 통째로 사라지고 단지 이름만 남아서
+    자료 화면이 장식이 돼 버렸다(영상 프레임·썸네일 둘 다 확인). 그래서 '덮기'가 아니라 '안에 맞추기'다.
+    남는 자리는 원본 가장자리 색으로 채워 이어 붙인 티가 안 나게 한다."""
+    # 0.92 는 천천히 확대(design.json video.zoom)가 먹는 자리다 — 딱 맞춰 넣으면 확대되면서 다시 가장자리 값이 잘린다
+    r = min(W / im.width, H / im.height) * 0.92
+    nw, nh = max(1, int(im.width * r)), max(1, int(im.height * r))
+    sm = im.resize((nw, nh))
+    if nw >= W and nh >= H: return sm.crop((0, 0, W, H))
+    edge = im.resize((1, 1)).getpixel((0, 0))          # 원본 평균색 — 차트 바탕이 어두우면 어둡게 채워진다
+    out = Image.new('RGB', (W, H), edge)
+    out.paste(sm, ((W - nw) // 2, (H - nh) // 2))
+    return out
+
+
 def tint_rgb():
     return TINT
 
@@ -73,9 +90,7 @@ def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
     c = cfg('short' if short else 'long')
     W, H = (1080, 1920) if short else (1280, 720)
     if bg and os.path.exists(bg):
-        im = Image.open(bg).convert('RGB')
-        r = max(W / im.width, H / im.height)
-        im = im.resize((int(im.width * r) + 1, int(im.height * r) + 1)).crop((0, 0, W, H))
+        im = fit_bg(Image.open(bg).convert('RGB'), W, H)
         im = ImageEnhance.Brightness(im).enhance(max(0.12, min(1.8, c['bg_bright'])))
         # 배경 채도. 0.8로 박아 두었던 값을 손잡이로 바꿨다 — 쇼츠 채도가 우리 0.187 vs 경쟁 0.399로
         # 여섯 회차 연속 "그리기 손잡이 없음"으로 막혀 있었다(2026-09-23 step25~30).

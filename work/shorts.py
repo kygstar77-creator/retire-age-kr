@@ -18,6 +18,23 @@ except Exception: CFG = {}
 ZOOM = CFG.get('zoom', 0.0009)
 TMP = os.path.join(os.environ.get('TEMP', 'C:/Temp'), 'shorts_' + str(int(time.time()))); os.makedirs(TMP, exist_ok=True)
 
+def fit_bg(im, W, H):
+    """자료 화면은 통째로 보이게 넣는다 — 잘라 채우지 않는다(사장님 2026-09-23 "자료 화면이 보여야 한다").
+    2026-09-24 실측: chartimg --short 는 1080x1350 인데 1080x1920 에 max 배율로 맞춰 (0,0) 에서 자르면
+    가로가 1536 으로 늘어나 오른쪽 30%가 잘려 나간다. 막대와 값이 통째로 사라지고 단지 이름만 남아서
+    자료 화면이 장식이 돼 버렸다(영상 프레임·썸네일 둘 다 확인). 그래서 '덮기'가 아니라 '안에 맞추기'다.
+    남는 자리는 원본 가장자리 색으로 채워 이어 붙인 티가 안 나게 한다."""
+    # 0.92 는 천천히 확대(design.json video.zoom)가 먹는 자리다 — 딱 맞춰 넣으면 확대되면서 다시 가장자리 값이 잘린다
+    r = min(W / im.width, H / im.height) * 0.92
+    nw, nh = max(1, int(im.width * r)), max(1, int(im.height * r))
+    sm = im.resize((nw, nh))
+    if nw >= W and nh >= H: return sm.crop((0, 0, W, H))
+    edge = im.resize((1, 1)).getpixel((0, 0))          # 원본 평균색 — 차트 바탕이 어두우면 어둡게 채워진다
+    out = Image.new('RGB', (W, H), edge)
+    out.paste(sm, ((W - nw) // 2, (H - nh) // 2))
+    return out
+
+
 def disp(sz):
     p = os.path.join(FD, 'BlackHanSans.ttf')
     return ImageFont.truetype(p, sz) if os.path.exists(p) else ImageFont.truetype(os.path.join(FD, 'pd700.ttf'), sz)
@@ -51,8 +68,7 @@ def draw_tokens(dr, x, y, text, f, base, sw):
 def scene_png(sc, idx, total, title, out):
     bgp = sc.get('image')
     if bgp and os.path.exists(bgp):
-        im = Image.open(bgp).convert('RGB'); r = max(W / im.width, H / im.height)
-        im = im.resize((int(im.width * r) + 1, int(im.height * r) + 1)).crop((0, 0, W, H))
+        im = fit_bg(Image.open(bgp).convert('RGB'), W, H)
         im = ImageEnhance.Brightness(im).enhance(0.42)
     else:
         im = Image.new('RGB', (W, H), (11, 12, 16))

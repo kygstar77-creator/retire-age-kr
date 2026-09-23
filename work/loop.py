@@ -72,7 +72,20 @@ def measure_ours():
             if st: rows.append({**st, 'file': os.path.basename(p), 'short': isshort})
     return rows
 
+def thumb_defaults():
+    """thumb.py가 design.json 없이 쓰는 기본값 — 새 손잡이의 출발점"""
+    sys.path.insert(0, HERE)
+    try:
+        import thumb
+        return {k: thumb.cfg(k) for k in ('long', 'short')}
+    except Exception:
+        return {}
+
+THUMB_DEFAULT = {}
+
 def main():
+    global THUMB_DEFAULT
+    THUMB_DEFAULT = thumb_defaults()
     t0 = time.time(); log = load(LOG, []); design = load(DESIGN, DEFAULT)
     step = design.get('step', 0) + 1
     did, blocked = [], []
@@ -113,15 +126,28 @@ def main():
       # 쇼츠 계수는 실측 5점(spread 0/.3/.5/.7/1.0)에서 나온 기울기다: text_bot 0→0.1265(0.5에서 포화),
       # text_top 0.0329→0.1496, text_mid 0.2245→0(반대로 줄어든다). 기울기 0.25/단위 → 계수 -4.0.
       # 0.55 위로는 아랫줄이 화면 아래 한계에 붙어 더 안 움직이므로 한계를 0.55로 둔다.
-      'text_top': ({'long': 'text_y', 'short': 'text_spread'}, {'long': +0.45, 'short': -4.0},
-                   {'long': 0.15, 'short': 0.0}, {'long': 0.80, 'short': 0.55}),
-      'text_bot': ({'long': 'text_y', 'short': 'text_spread'}, {'long': -0.45, 'short': -4.0},
-                   {'long': 0.15, 'short': 0.0}, {'long': 0.80, 'short': 0.55}),
-      'bright':   ('bg_bright', -1.2, 0.12, 0.90),
-      'dark':     ('bg_bright', +0.8, 0.12, 0.90),
+      # 2026-09-23 step30 재실측(쇼츠 배경 3종 중앙값, spread 0.4/0.55/0.7/0.85/1.0):
+      #   text_bot 0.1117/0.1117/0.1260/0.2310/0.2416 — 0.55~0.7 구간이 평평해서 "한계에 붙었다"고 오판했을 뿐,
+      #   0.85를 넘기면 다시 오른다. 한계를 1.0으로 열고 기울기 0.2887/단위에서 계수 -3.5를 다시 냈다.
+      'text_top': ({'long': 'text_y', 'short': 'text_spread'}, {'long': +0.45, 'short': -3.5},
+                   {'long': 0.15, 'short': 0.0}, {'long': 0.80, 'short': 1.0}),
+      'text_bot': ({'long': 'text_y', 'short': 'text_spread'}, {'long': -0.45, 'short': -3.5},
+                   {'long': 0.15, 'short': 0.0}, {'long': 0.80, 'short': 1.0}),
+      # 밝기: 상한 0.9는 '원본 그대로'라 롱폼이 0.2825에서 멈춰 목표 0.4307에 닿지 못했다(step30 막힘).
+      # thumb.py 클램프를 1.8까지 열고 실측(0.6/0.9/1.2/1.5/1.8 → bright 0.2255/0.2825/0.3386/0.3926/0.4402),
+      # 기울기 0.1752/단위 → 계수 -5.7. 옛 -1.2는 기울기의 1/5라 한 칸에 0.02씩만 올라가 상한에 먼저 붙었다.
+      'bright':   ('bg_bright', -5.7, 0.12, 1.80),
+      'dark':     ('bg_bright', +3.8, 0.12, 1.80),
+      # 배경 채도. 2026-09-23 실측(bg_sat 0.4/0.8/1.5/2.2/3.0 → sat 0.0985/0.1871/0.3197/0.4167/0.4971),
+      # 기울기 0.1533/단위 → 계수 -6.5. 여섯 회차 "그리기 손잡이 없음"이던 항목이다.
+      'sat':      ('bg_sat', -6.5, 0.0, 3.0),
       # 흰 면적은 흰 글자 픽셀에서 나온다. 외곽선은 검정이라 아무리 얇게 해도 흰 면적이 안 줄어 stroke_ratio가 한계 40에 붙어
       # 버렸다(2026-09-23 step20). 그래서 글자 크기 배율로 바꿨다. 면적은 크기의 제곱이라 계수를 작게 잡아 한 칸씩 간다.
-      'white':    ('text_scale', -10.0, 0.66, 1.0),
+      # 흰 면적과 아랫줄 글자량이 같은 손잡이(text_scale)를 공유한다 — 2026-09-23 실측(spread 1.0 고정,
+      # text_scale 0.66/0.8/0.9/1.0 → text_bot 0.2251/0.2603/0.2803/0.3112, white 0.0114/0.0167/0.0205/0.0257).
+      # 쇼츠는 목표가 서로 반대라(text_bot 0.3093 ↑ / white 0.0107 ↓) 둘 다 만족하는 값이 없다. 글자량이
+      # 경쟁 판형의 핵심이므로 쇼츠 하한을 0.9로 올려 white가 글자를 못 줄이게 막는다(롱폼은 그대로 0.66).
+      'white':    ('text_scale', -10.0, {'long': 0.66, 'short': 0.90}, 1.0),
       # 아랫줄 노랑 글자 비율(0~1). 2026-09-23 실측 5점(0/.25/.5/.75/1): 롱폼 0.0007→0.0533, 쇼츠 0.0003→0.0199.
       # 기울기가 판형마다 달라(롱폼 0.052 · 쇼츠 0.020) 계수를 판형별로 둔다.
       'yellow':   ('yellow_frac', {'long': -19.0, 'short': -51.0}, 0.0, 1.0),
@@ -147,8 +173,9 @@ def main():
         d = design.setdefault(g['kind'], {})
         cur = d.get(knob)
         if cur is None:
-            if knob != 'text_spread': continue
-            cur = d[knob] = 0.0        # 새로 생긴 손잡이는 0에서 시작한다
+            # 새로 생긴 손잡이는 thumb.py가 쓰는 기본값에서 시작한다. 예전에는 text_spread만 열어 둬서
+            # bg_sat 같은 새 손잡이를 RULE에 넣어도 design.json에 없다는 이유로 영영 건너뛰었다(2026-09-23).
+            cur = d[knob] = float(THUMB_DEFAULT.get(g['kind'], {}).get(knob, 0.0))
         tag = f"{g['kind']}.{g['key']}.{knob}"
         memo[f'{tag}={cur}'] = g['ours']
         seen = {v: o for k, v, o in ((k, k.split('=')[1], o) for k, o in memo.items() if k.startswith(tag + '='))}

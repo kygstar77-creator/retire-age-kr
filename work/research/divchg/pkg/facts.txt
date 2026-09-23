@@ -1,0 +1,35 @@
+[오늘 찾은 것] 2026-09-24 새로 조사
+1. Nasdaq 배당 캘린더 API(api.nasdaq.com/api/calendar/dividends, 무키) — announcement_Date가 2026-09-21~09-24인 배당 발표 183건 수집. 종목별 배당 이력과 대조해 172건 비교 성공. 직접 조회, 원본 work/research/divchg/raw.json
+2. 같은 자료 집계 — 인상 72건 · 삭감 77건 · 동결 13건 · 주기변경 10건
+3. 배당 주기 분포(비교 성공분) — 91일(분기) 102건 · 28일(월) 46건 · 7일(주) 10건 · 97일 7건 · 35일 2건 · 182일 1건 · 364일 1건
+4. QQQ(Invesco QQQ Trust) 분배금 0.81349 → 0.75143달러, -7.63%. 배당락 2026-09-21, 발표 2026-09-23. 연환산 3.00572달러, 수익률 0.4% (Nasdaq 배당 캘린더·종목 배당 이력)
+   교차확인: TradingView/Seeking Alpha "Invesco QQQ Trust declares quarterly distribution of $0.7514", 배당락 9/21 — 금액·배당락 일치. 지급일은 Nasdaq 10/08 vs 기사 10/10으로 갈려 본문에 쓰지 않음
+5. SDTY(YieldMax S&P 500 0DTE Covered Call) 0.1557 → 0.1884달러, +21.0%, 주기 7일, 연환산 9.7968달러, 수익률 23.74%
+   교차확인: GuruFocus "SDTY Declares Weekly Dividend Yielding 23.62% Annually" 2026-09-23 발표, 1주당 0.1884달러 — 금액 일치, 수익률은 산출 시점 차이
+6. YieldMax 공식(globenewswire 2026-09) — Group 1 주간 지급 ETF 배당락·기록일 9월 23일, 지급일 9월 24일. Nasdaq 캘린더의 SDTY·QDTY·RDTY·YRAM 날짜와 일치
+7. 주간 분배(주기 7일) 10종 전부 커버드콜·인컴 ETF. 수익률(Nasdaq 제공, 연환산 기준):
+   CEPI 41.72% (연환산 13.512346) / YRAM 38.67% (21.84) / AIPI 34.68% (13.09074) / MST 30.47% (5.2936) /
+   QDTY 29.1% (11.5752) / RDTY 26.01% (9.308) / FEPI 25.15% (10.94548) / SDTY 23.74% (9.7968) /
+   TSYX 15.54% (3.64156) / QLDY 9.89% (4.1522)
+   직전 회차 대비: QDTY +15.0% · YRAM +7.8% · QLDY +5.3% · CEPI +3.4% · FEPI +3.0% · AIPI +2.8% · TSYX 0.0% · MST -2.5% · RDTY -9.6% · SDTY +21.0%
+8. 인상률 상위 5종과 그 정체(1주당 직전 → 이번) — QQQJ(Invesco NASDAQ Next Gen 100) 0.00905 → 0.19766달러 +2084.1% · BIB(ProShares Ultra Nasdaq Biotechnology) 0.00714 → 0.082554달러 +1056.2% ·
+   GGLS(Direxion Daily GOOGL Bear 1X) 0.03321 → 0.37538달러 +1030.3% · AMDD(Direxion Daily AMD Bear 1X) +873.0% · IBBQ(Invesco Nasdaq Biotechnology) +573.2%
+9. 삭감률 상위 3종 — MUU(Direxion Daily MU Bull 2X) 2.04702 → 0.20279달러 -90.1% · AMUU(Direxion Daily AMD Bull 2X) 0.67619 → 0.17142달러 -74.6% ·
+   PIZ(Invesco Dorsey Wright Developed Markets Momentum) -71.7%
+10. 172건 중 일반 기업 주식으로 배당 이력이 잡힌 것은 극소수. 동결 13건 안에 KDP(Keurig Dr Pepper) 1주당 0.23달러·수익률 2.92%·주기 94일,
+    HLNE(Hamilton Lane Class A) 0.60달러·2.74%·주기 95일이 들어 있다
+11. 월 분배(28일) 중 동결 종목 수익률 — KBWD(Invesco KBW High Dividend Yield Financial) 13.82% · KBWY(KBW Premium Yield Equity REIT) 8.36% ·
+    BSJT(BulletShares 2029 High Yield) 6.36% · PEY(High Yield Equity Dividend Achievers) 4.77% · VRIG 4.38% · BSCR 4.28% · GOVI 4.26%
+
+[출처]
+- Nasdaq 배당 캘린더 API https://api.nasdaq.com/api/calendar/dividends?date=YYYY-MM-DD (2026-09-24 조회)
+- Nasdaq 종목별 배당 이력 API https://api.nasdaq.com/api/quote/<종목>/dividends (2026-09-24 조회)
+- TradingView(Seeking Alpha) Invesco QQQ Trust declares quarterly distribution of $0.7514 (2026-09-23)
+- GuruFocus YieldMax S&P 500 0DTE Covered Call ETF (SDTY) Declares Weekly Dividend Yielding 23.62% Annually (2026-09-23)
+- GlobeNewswire YieldMax ETFs Announces Weekly Distributions for Group 1 ETFs (2026-09, 배당락·기록일 9/23 지급 9/24)
+- 수집 도구 work/divchange.py (2026-09-24 새로 만듦), 원본 work/research/divchg/raw.json
+
+[쓰지 않은 것]
+- SCHD 9월 분배금: 웹 검색에 0.2665달러(9/22 선언)가 보였으나 Nasdaq API가 403으로 막혀 1차 출처로 확인하지 못함 → 본문에 쓰지 않음
+- QQQ 지급일: Nasdaq 10/08, 기사 10/10으로 갈림 → 쓰지 않음
+- 각 ETF의 분배 재원 구성(배당/옵션 프리미엄/원금 반환 비율): 운용사 19a-1 자료를 확인하지 못함 → 단정하지 않음

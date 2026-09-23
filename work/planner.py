@@ -125,6 +125,11 @@ def main():
     UNDER = ['서울 25개 구 전세가율 순위', '고점 대비 20% 넘게 내린 단지 10', '오피스텔 월세 수익률 상위 10',
              '같은 구 평당가 편차 상위', '공시가격 대비 실거래 비율']                              # B10 지표(series-plan)
     HEAT = ['배당귀족 30종목 히트맵', '월배당 ETF 12종 히트맵', '국내 고배당 히트맵', '이번 주 배당 인상·삭감 발표 종목']  # C8·B12
+
+    def heat_tool(topic):
+        if '인상' in topic or '삭감' in topic:
+            return 'divchange.py(나스닥 배당 캘린더의 이번 주 발표를 직전 회차와 대조해 인상·삭감·동결·주기변경으로 가른다)'
+        return 'heatmap.py --list <종목들>'
     # 사장님 2026-09-23: "배당 히트맵은 카페뿐만 아니라 블로그도 올려야지" → B12
     # 사장님 2026-09-23: "주식 종목별로 조사하고 검증해서 종목 발굴하는 글은?" → B13
     DIG = ['내부자 매수가 몰린 종목(EDGAR Form 4 코드 P)', '배당 10년 이상 늘린 종목',
@@ -168,11 +173,15 @@ def main():
         if sid == 'B9': return f'{rot(LIVE, k)} 실제 매물 5~8건(동네·단지명·월세·면적·방 수·부대시설·층·게시 링크) + 생활비·비자·환율'
         if sid == 'B10': return f'{rot(UNDER, k)} — 국토부 실거래로 계산(권유 문구 금지, 지표와 순위만)'
         if sid == 'B11': return f'{rot(DONG, k)} 자동 손품 — sonpum.py로 네이버 부동산 녹화 + 같은 재료로 단지별 표'
-        if sid == 'B12': return f'{rot(HEAT, k)}(블로그판: 종목별 배당률·배당락일 표를 같이) — heatmap.py --list + Nasdaq 배당 API'
+        if sid == 'B12':
+            t = rot(HEAT, k)
+            return f'{t}(블로그판: 종목별 배당률·배당락일 표를 같이) — {heat_tool(t)} + Nasdaq 배당 API'
         if sid == 'B13': return f'{rot(DIG, k)} — Nasdaq 스크리너(무키 7,100종목)·EDGAR Form 4(insider.py)·배당 이력으로 추린 목록. "사라·사지 마라"는 쓰지 않고 조건과 순위만'
         if sid == 'B14': return (f'{rot(CASE, k)} — 실제 글·인터뷰를 찾아 **원문 링크와 날짜를 달고** 나이·자산·생활비·거주지를 표로. '
                                  '사례를 지어내지 않는다. 못 찾으면 그 슬롯은 건너뛰고 note에 적는다')
-        if sid == 'C8': return f'{rot(HEAT, k)} — heatmap.py --list + 이번 주 배당 뉴스(한·영 WebSearch)'
+        if sid == 'C8':
+            t = rot(HEAT, k)
+            return f'{t} — {heat_tool(t)} + 이번 주 배당 뉴스(한·영 WebSearch)'
         if sid == 'C9': return (f'{rot(DIVSTOCK, k)} 한 종목 분석(카페판) — 배당주는 배당 이력·배당률·배당성향, ETF는 분배금·보수·구성, 성장주는 실적·주가·배당 유무. 공통으로 '
                                 '세후 월 얼마·같은 계열 대안 한 개. stockwants로 사람들이 치는 항목부터 채우고 '
                                 'Nasdaq 배당 API·apis.av_quote·회사 IR로 확인한 숫자만 쓴다')

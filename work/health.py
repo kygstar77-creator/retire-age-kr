@@ -37,7 +37,14 @@ def main():
     M = []   # (영역, 항목, 값, 목표, 중요도, 어떻게 고치나)
     runs = load(os.path.join(HERE, 'runs_today.json'), {'runs': []})['runs']
     nb = sum(1 for r in runs if (r.get('blog') or {}).get('url')); nc = sum(1 for r in runs if (r.get('cafe') or {}).get('url'))
-    zero = sum(1 for r in runs if not (r.get('blog') or {}).get('url') and not (r.get('cafe') or {}).get('url'))
+    # 발행 의무가 있는 회차만 센다. 감시기(:45)·보고 회차도 같은 파일에 append하는데
+    # 그 회차는 발행이 일이 아니라서, 예전엔 2026-09-24 03시처럼 발행 3회차가 전부 2편씩
+    # 나갔는데도 '0편 회차 3'으로 잡혀 일감표 1번을 계속 차지했다.
+    def 발행회차(r):
+        if r.get('role') in ('watchdog', 'report', 'improve'): return False
+        return not re.match(r'\s*(감시기? 회차|보고 회차|자가발전 회차)', r.get('note') or '')
+    zero = sum(1 for r in runs if 발행회차(r)
+               and not (r.get('blog') or {}).get('url') and not (r.get('cafe') or {}).get('url'))
     M += [('발행', '오늘 블로그 편수', nb, 24, 3, 'firemap-write 회차 note에서 0편 사유 확인 → 대기 묶음·가드·시간초과'),
           ('발행', '오늘 카페 편수', nc, 24, 3, '위와 같음'),
           ('발행', '0편 회차 수', zero, 0, 3, '0편 사유를 없앤다(대기 묶음 3+3 유지가 가장 흔한 원인)')]

@@ -46,6 +46,15 @@ def main():
         # 감시기가 먼저 잡으면 제 자식을 막아 15분을 기다리다 실패한다(2026-09-23 18:49 실제 발생).
         for kind in need:
             pkg = next(x['pkg'] for x in pend if x['kind'] == kind)
+            # 교차검증이 없는 묶음은 먼저 돌린다(회차 규칙 1): 2026-09-23 19:22 감시기가 paycalc를
+            # 검증 전에 올려 Gemini 말투 수정을 못 받은 채로 나갔다. 실패해도 발행은 막지 않는다.
+            if not os.path.exists(os.path.join(pkg, 'check_gemini.txt')) and not os.path.exists(os.path.join(pkg, 'check_gpt.txt')):
+                try:
+                    subprocess.run([sys.executable, os.path.join(HERE, 'crosscheck.py'), 'check', pkg],
+                                   capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=300)
+                    rec['did'].append(f'{kind} 올리기 전 교차검증 실행')
+                except Exception as e:
+                    rec['did'].append(f'{kind} 올리기 전 교차검증 실패(발행은 계속): {str(e)[:80]}')
             try:
                 r = subprocess.run([sys.executable, os.path.join(HERE, 'naverpost.py'), kind, pkg],
                                    capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=1500)

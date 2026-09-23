@@ -46,6 +46,26 @@ def main():
     M += [('발행', '대기 묶음 블로그', pb, 3, 3, 'firemap-improve B/F 회차가 완성 묶음을 만든다'),
           ('발행', '대기 묶음 카페', pc, 3, 3, '위와 같음')]
 
+    # 빵꾸 감시 — 2026-09-23 오후 내내 0편이었는데 아무도 몰랐다(예약이 오전까지만 있었다).
+    # 회차 기록이 아니라 실제 네이버에서 잰다. 1이면 한 회차를 놓친 것.
+    try:
+        sys.path.insert(0, HERE); import naverpost as _np
+        for kind, ko in (('blog', '블로그'), ('cafe', '카페')):
+            mm = _np.last_published_minutes(kind)
+            if mm is not None:
+                M.append(('발행', f'{ko} 발행 빵꾸(75분 초과)', 1 if mm > 75 else 0, 0, 3,
+                          f'지금 {mm/60:.1f}시간 전이 마지막. py -3.12 work/watchdog.py 로 즉시 메운다'))
+    except Exception as e: print('빵꾸 측정 실패:', str(e)[:60])
+
+    # 글 자가발전 — 규칙표가 낡으면 회차가 옛 규칙으로 쓴다
+    tr = load(os.path.join(HERE, 'textrule.json'), {})
+    if tr:
+        try: old_h = (time.time() - time.mktime(time.strptime(tr['at'], '%Y-%m-%d %H:%M'))) / 3600
+        except Exception: old_h = 99
+        M.append(('품질', '글 규칙 낡음(12시간 초과)', 1 if old_h > 12 else 0, 0, 2, 'py -3.12 work/textloop.py 로 성과→규칙을 다시 뽑는다'))
+        M.append(('품질', '카페 하루당 조회 중앙값', tr.get('cafe_median_per_day') or 0, 5, 2,
+                  'work/research/textrule.md의 규칙을 회차가 실제로 따르는지 확인'))
+
     pkgs = [p for p in glob.glob(os.path.join(R, '*', 'pkg')) if os.path.exists(os.path.join(p, 'published.txt'))]
     recent = sorted(pkgs, key=lambda p: -os.path.getmtime(os.path.join(p, 'published.txt')))[:20]
     ver = [load(os.path.join(p, 'verify.txt'), {}) for p in recent]

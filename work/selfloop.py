@@ -25,6 +25,15 @@ AUTO = {
     '블로그 오늘 방문': None,
 }
 
+def always():
+    """점수와 상관없이 매 회차 돌리는 것 — 글 루프는 항상 최신이어야 회차가 규칙을 읽을 수 있다.
+    사장님 2026-09-23 '숏폼뿐만이 아니라 블로그랑 카페도 자가발전 하라고'."""
+    out = []
+    for name, script in (('글 규칙(카페·블로그 성과 → 규칙)', 'textloop.py'), ('발행 감시', 'watchdog.py')):
+        r = sh(os.path.join(HERE, script), timeout=900).strip()
+        out.append(f"{name}: " + (r.splitlines()[0][:100] if r else '(출력 없음)'))
+    return out
+
 def main():
     t0 = time.time(); log = load(LOG, []) or []
     before = load(HEALTH, {'items': []})
@@ -46,7 +55,7 @@ def main():
     picked = todo[:5]
 
     # 기계로 되는 건 지금 돌린다
-    ran = []
+    ran = always()
     for p in picked:
         fn = AUTO.get(p['name'])
         if fn:

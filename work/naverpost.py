@@ -28,14 +28,31 @@ os.makedirs(SHOTS, exist_ok=True)
 
 LOCK = os.path.join(PROFILE, '.firemap.lock')   # 같은 프로필을 두 회차가 동시에 열면 크로미움이 죽는다 → 잠금 파일로 순서를 정한다(최대 15분 대기)
 
+def _alive(pid):
+    """잠금을 쥔 프로세스가 아직 살아 있나. 죽은 프로세스가 남긴 잠금 때문에 회차가 통째로 날아갔다(2026-09-23 18:32 실제 발생)."""
+    try: pid = int(pid)
+    except Exception: return False
+    if os.name == 'nt':
+        import ctypes
+        h = ctypes.windll.kernel32.OpenProcess(0x1000, False, pid)   # PROCESS_QUERY_LIMITED_INFORMATION
+        if not h: return False
+        ctypes.windll.kernel32.CloseHandle(h); return True
+    try: os.kill(pid, 0); return True
+    except OSError: return False
+
 def acquire_lock(wait_sec=900):
     t0 = time.time()
     while True:
         try:
-            if os.path.exists(LOCK) and time.time() - os.path.getmtime(LOCK) > 1800: os.remove(LOCK)   # 30분 넘은 잠금은 죽은 것으로 본다
-            fd = os.open(LOCK, os.O_CREAT | os.O_EXCL | os.O_WRONLY); os.write(fd, str(os.getpid()).encode()); os.close(fd); return
+            if os.path.exists(LOCK):
+                # 주인이 죽었으면 바로 버린다. 나이만 보면 죽은 잠금을 30분이나 기다리다 회차를 놓친다.
+                try: owner = open(LOCK, encoding='utf-8').read().strip()
+                except Exception: owner = ''
+                if not _alive(owner) or time.time() - os.path.getmtime(LOCK) > 1800:
+                    print(f'죽은 잠금 제거 (PID {owner or "?"})'); os.remove(LOCK)
+            fd = os.open(LOCK, os.O_CREAT | os.O_EXCL | os.O_WRONLY); os.write(fd, str(os.getpid()).encode()); os.close(fd); return True
         except FileExistsError:
-            if time.time() - t0 > wait_sec: raise RuntimeError('브라우저 프로필 잠금 대기 15분 초과')
+            if time.time() - t0 > wait_sec: raise RuntimeError(f'브라우저 프로필 잠금 대기 {wait_sec//60}분 초과')
             time.sleep(10)
 
 def release_lock():

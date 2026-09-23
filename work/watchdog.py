@@ -1,0 +1,77 @@
+# 발행 감시기 — 사장님 2026-09-23 18:30 "6시에도 블로그랑 카페 안 올라갔다. 검사도 자동으로 하고 있었던 거 아니야?"
+#   py -3.12 work/watchdog.py            → 지금 상태를 재고, 빵꾸면 대기 묶음으로 즉시 메운다
+#   py -3.12 work/watchdog.py --check    → 재기만 하고 발행은 안 한다
+#
+# 왜 필요한가(실제 사고):
+#   1) firemap-write 예약이 '0 2-11'이라 새벽 2시~오전 11시만 돌았다. 오후·밤은 예약 자체가 없었다.
+#      → 오후 내내 0편인데 아무도 몰랐다. 검사(health.py)가 루틴 안에서만 돌았기 때문이다.
+#   2) 대기 묶음이 0이면 회차가 처음부터 글을 쓰다 40분 창을 넘겨 그냥 건너뛴다(16시·17시).
+# 그래서 감시기는 루틴과 별개로 매시 돌면서, 사람이 보지 않아도 빵꾸를 메우고 기록을 남긴다.
+import sys, os, re, json, time, subprocess
+sys.stdout.reconfigure(encoding='utf-8')
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+LOG = os.path.join(HERE, 'watchdog_log.json')
+LATE_MIN = 75          # 이 시간 넘게 안 올라갔으면 한 회차를 놓친 것으로 본다(정각 간격 60분 + 지터 여유)
+STOCK_WANT = 3         # 매체별로 이만큼은 미리 써 둬야 회차가 안 밀린다
+
+def load(p, d):
+    try: return json.load(open(p, encoding='utf-8'))
+    except Exception: return d
+
+def main():
+    import naverpost as N
+    check_only = '--check' in sys.argv
+    t0 = time.time()
+    rec = {'at': time.strftime('%Y-%m-%d %H:%M'), 'late': {}, 'stock': {}, 'did': [], 'alert': []}
+
+    # 1) 언제 마지막으로 올라갔나 — 실제 네이버에서 잰다(우리 기록이 아니라)
+    for kind in ('blog', 'cafe'):
+        m = N.last_published_minutes(kind)
+        rec['late'][kind] = None if m is None else round(m)
+        if m is None: rec['alert'].append(f'{kind} 최근 발행 시각을 못 쟀다(RSS·API 실패)')
+        elif m > LATE_MIN: rec['alert'].append(f'{kind} 마지막 발행이 {m/60:.1f}시간 전 — 회차를 놓쳤다')
+
+    # 2) 미리 써 둔 묶음이 몇 개인가 — 0이면 다음 회차도 놓친다
+    pend = N.list_pending()
+    for kind in ('blog', 'cafe'):
+        n = sum(1 for x in pend if x['kind'] == kind)
+        rec['stock'][kind] = n
+        if n < STOCK_WANT: rec['alert'].append(f'{kind} 대기 묶음 {n}개 (목표 {STOCK_WANT}) — 회차가 처음부터 쓰느라 밀린다')
+
+    # 3) 빵꾸 메우기 — 늦었고, 올릴 묶음이 있으면 지금 올린다
+    need = [k for k in ('blog', 'cafe') if (rec['late'][k] or 0) > LATE_MIN and any(x['kind'] == k for x in pend)]
+    if need and not check_only:
+        try: got = N.acquire_lock(wait_sec=600)
+        except Exception as e:
+            got = False; rec['did'].append('잠금을 못 잡아 메우지 못했다: ' + str(e)[:80])
+        if got:
+            try:
+                for kind in need:
+                    pkg = next(x['pkg'] for x in pend if x['kind'] == kind)
+                    r = subprocess.run([sys.executable, os.path.join(HERE, 'naverpost.py'), kind, pkg],
+                                       capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=1500)
+                    out = ((r.stdout or '') + (r.stderr or '')).strip()
+                    u = re.search(r'URL (\S+)', out)
+                    if u: rec['did'].append(f'{kind} 빵꾸 메움 → {u.group(1)}')
+                    else: rec['did'].append(f'{kind} 메우기 실패: ' + (out.splitlines()[-1][:120] if out else '(출력 없음)'))
+            except Exception as e:
+                rec['did'].append(f'메우다 멈춤: {str(e)[:100]}')
+            finally:
+                N.release_lock()
+    elif need:
+        rec['did'].append('--check 라서 올리지는 않았다: ' + ', '.join(need))
+    elif rec['alert'] and not any(any(x['kind'] == k for x in pend) for k in ('blog', 'cafe')):
+        rec['did'].append('메울 묶음이 하나도 없다 — 회차 루틴이 새로 써야 한다')
+
+    rec['sec'] = int(time.time() - t0)
+    log = load(LOG, []) or []; log.append(rec)
+    json.dump(log[-400:], open(LOG, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+
+    print(f"[감시 {rec['at']}] 블로그 {rec['late']['blog']}분 전 / 카페 {rec['late']['cafe']}분 전 · 대기 블로그 {rec['stock']['blog']} 카페 {rec['stock']['cafe']}")
+    for a in rec['alert']: print('  ! ' + a)
+    for d in rec['did']: print('  → ' + d)
+    if not rec['alert']: print('  이상 없음')
+    sys.exit(1 if rec['alert'] else 0)
+
+if __name__ == '__main__': main()

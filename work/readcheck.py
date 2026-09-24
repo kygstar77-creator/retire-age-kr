@@ -102,7 +102,34 @@ def acronyms(text):
             bad.append((i, w, s[:70]))
     return bad
 
-def check(text):
+
+KW_STOP = set('다음 이번 지난 최근 정도 관련 내용 확인 가능 필요 경우 기준 방법 이유 시작 정리 총정리 얼마 무엇 어디 언제'.split())
+
+def title_nouns(title):
+    """제목에서 그 글의 핵심어를 뽑는다. 조사가 붙은 채로 세면 '주가와'가 핵심어가 된다."""
+    try:
+        toks = kiwi().tokenize(title or '')
+        ws = [t.form for t in toks if t.tag in ('NNG', 'NNP', 'SL') and len(t.form) >= 2]
+    except Exception:
+        ws = [w for w in re.split(r'[^가-힣A-Za-z]+', title or '') if len(w) >= 2]
+    return [w for w in ws if w not in KW_STOP][:3]
+
+def title_kw_in_body(title, body):
+    """제목의 핵심어가 본문에 몇 번 나오나.
+    2026-09-24 실측이 결정적이었다 — "국채금리 2026, 국고채 10년 4.46%로 1.07%p 올랐다"는
+    제목에 '국채금리'를 걸어 놓고 본문에서 한 번도 안 썼다(0회). 본문에서는 '국고채 금리',
+    '10년물'로 바꿔 썼다. 같은 말 반복을 피하려던 것인데, 검색은 반대로 본다.
+    같은 주제 상위 글은 '코픽스'를 본문에서 23~43회(중앙 33회) 쓴다. 우리는 20회, 글도 절반 길이다.
+    밀도는 우리가 더 높았다(1.01% 대 0.84%) — 모자란 것은 밀도가 아니라 글의 양이다."""
+    body_n = len(re.sub(r'\s', '', body))
+    out = []
+    for w in title_nouns(title):
+        n = body.count(w)
+        if n == 0: out.append((w, 0, '제목에 걸어 놓고 본문에서 한 번도 안 썼다'))
+        elif body_n >= 1200 and n < 8: out.append((w, n, f'{n}회뿐 — 같은 주제 상위 글은 20~40회 쓴다'))
+    return out
+
+def check(text, title=None):
     out = []
     ss = sents(text)
     for i, s in enumerate(ss, 1):
@@ -118,6 +145,9 @@ def check(text):
             out.append(('숫자과다', i, f'한 문장에 숫자 {n}개 — 표로 빼거나 문장을 나눈다 · {s[:60]}'))
         if VAGUE.search(s) and i > 1:
             out.append(('지시어', i, f'가리키는 대상이 분명한지 확인 · {s[:60]}'))
+    if title:
+        for w, n, why in title_kw_in_body(title, text):
+            out.append(('제목말빠짐', 0, f'"{w}" {why}'))
     for i, w, s in acronyms(text):
         out.append(('설명없음', i, f'"{w}"가 처음 나오는데 무엇인지 안 밝혔다 · {s}'))
     # 같은 어미가 세 문장 연속이면 읽는 리듬이 죽는다
@@ -154,7 +184,9 @@ def main():
     for pk in pks:
         body = body_of(pk)
         if not body: continue
-        probs = check(body)
+        try: title = open(os.path.join(pk, 'title.txt'), encoding='utf-8').read().strip()
+        except Exception: title = None
+        probs = check(body, title)
         name = os.path.basename(os.path.dirname(pk))
         if probs:
             print(f'\n[{name}] {len(probs)}건')

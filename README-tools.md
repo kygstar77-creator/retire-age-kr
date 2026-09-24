@@ -28,3 +28,20 @@
   3개월 2.9% / 6개월 3.3%, 공시월 202609. 은행연합회 소비자포털에는 외화예금 금리 공시가 없다(확인함).
 - 이번 회차에는 WebSearch 로 새 오픈소스를 훑는 일은 **못 했다** — 루프 판정 버그와 숏폼 화면 겹침을
   고치는 데 시간을 다 썼다. 다음 도구 회차로 넘긴다.
+
+## 2026-09-25 04:1x (loop 회차) — 한국어 오프라인 TTS: MeloTTS → **이 PC에는 못 깖(빌드 도구 없음)**
+- 왜 찾았나: 2026-09-23에 kokoro-onnx 가 한국어 없어서 접고 "다음 회차에 다른 후보를 본다"고 남겨 둔 숙제다.
+  쇼츠 내레이션은 지금도 edge-tts(`ko-KR-SunHiNeural`)로 **마이크로소프트 서버**에 붙는다. 키는 없지만
+  남의 서버라 막히면 쇼츠 생산이 통째로 멈춘다.
+- 후보: **MeloTTS**(myshell-ai, MIT, CPU로 돌아감, 한국어 모델 `MeloTTS-Korean` 있음). 무료·키 없음.
+- 실제로 해 본 것 두 가지 — **둘 다 실패**:
+  1. `pip install melotts` → PyPI sdist 가 깨져 있다. 빌드 중
+     `FileNotFoundError: ... melotts_.../requirements.txt` 로 죽는다(패키지 쪽 문제, 우리 환경 문제 아님).
+  2. `pip install git+https://github.com/myshell-ai/MeloTTS.git` → 본체(melotts)와 의존 15개는 빌드에 성공했는데
+     **fugashi, tokenizers 두 개가 휠 빌드에 실패**한다(`failed-wheel-build-for-install`).
+     둘 다 C++/Rust 컴파일이 필요한데 이 PC에 빌드 도구가 없다. `import melo` → ModuleNotFoundError.
+- 결론: **edge-tts 를 계속 쓴다.** MeloTTS 자체가 안 되는 게 아니라 이 PC에 컴파일러가 없어서 못 깐다.
+- 다음에 누가 이어받을 때: (a) Visual Studio Build Tools + Rust 를 깔면 될 가능성이 있다(사장님 결정 필요,
+  설치 용량이 크다), 또는 (b) fugashi/tokenizers 의 미리 빌드된 휠이 py3.12 windows 용으로 올라왔는지 다시 본다.
+  fugashi 는 일본어 형태소 분석기라 **한국어에는 안 쓰일 수도 있다** — 의존에서 뺄 수 있는지 보는 게 가장 빠른 길이다.
+- 아직 못 한 것: 한국어 되는 오프라인 TTS를 실제로 돌려 본 적은 여전히 없다. 그렇게 적어 둔다.

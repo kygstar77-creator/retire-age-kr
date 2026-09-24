@@ -8,17 +8,17 @@
   "stroke_ratio": 40,
   "yellow_frac": 0.0997,
   "text_scale": 1.0,
-  "text_spread": 0.45,
+  "text_spread": 1.0,
   "bg_sat": 1.4056,
   "text_tint": 0.7,
   "lines": 3,
-  "split_scale": 2.0,
-  "yellow_tint": 0.4497,
+  "split_scale": 1.6,
+  "yellow_tint": 0.4956,
   "tint_v": 0.75
  },
  "long": {
-  "text_y": 0.5,
-  "bg_bright": 1.7447,
+  "text_y": 0.2,
+  "bg_bright": 1.2898,
   "panel_alpha": 212,
   "yellow_bottom": 0,
   "num_yellow": 1,
@@ -31,7 +31,7 @@
  "video": {
   "zoom": 0.0009
  },
- "step": 84,
+ "step": 86,
  "_memo": {
   "short.white.stroke_ratio=40": 0.0301,
   "long.yellow.yellow_bottom=1": 0.0526,
@@ -98,6 +98,9 @@
   "short.yellow.yellow_tint=0.5268@de5f02": 0.0114,
   "short.contrast.tint_v=0.75@50ac72": 0.2296,
   "short.white.text_tint=0.7@67afde": 0.0378,
-  "short.contrast.tint_v=0.75@1c8de7": 0.2294
+  "short.contrast.tint_v=0.75@1c8de7": 0.2294,
+  "short.white.text_tint=0.7@16b8a5": 0.0412,
+  "short.yellow.yellow_tint=0.4497@32879c": 0.0063,
+  "long.dark.bg_bright=1.7447@66ee7f": 0.295
  }
 }

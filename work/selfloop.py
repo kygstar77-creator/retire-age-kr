@@ -12,7 +12,15 @@ def sh(*a, timeout=1800):
     try:
         r = subprocess.run([sys.executable] + list(a), capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=timeout, cwd=os.path.dirname(HERE))
         return (r.stdout or '') + (r.stderr or '')
-    except Exception as e: return 'ERR ' + str(e)[:100]
+    except Exception as e:
+        # 2026-09-25: 전에는 str(e)[:100] 이었다. 예외 메시지가 python.exe 전체 경로로 시작해
+        # 100자가 명령줄 repr 로 다 차고, 정작 '무엇이 왜 실패했나'는 한 글자도 안 보였다.
+        # (`발행 감시: ERR Command '['C:\Users\...` — 타임아웃인지 비정상 종료인지조차 몰랐다.)
+        # 그래서 예외 종류를 맨 앞에 쓰고, 타임아웃이면 몇 초짜리였는지까지 적는다.
+        kind = type(e).__name__
+        if isinstance(e, subprocess.TimeoutExpired):
+            return f'ERR {kind} {timeout}초 안에 안 끝남 ({os.path.basename(a[0]) if a else "?"})'
+        return f'ERR {kind}: ' + str(e)[-140:]
 
 def load(p, d=None):
     try: return json.load(open(p, encoding='utf-8'))

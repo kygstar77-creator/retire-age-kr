@@ -15,9 +15,38 @@ def text_map(g):
     k = cv2.getStructuringElement(cv2.MORPH_RECT, (25, 9))
     return cv2.dilate(e, k, iterations=2) > 0
 
+def debar(im):
+    """유튜브가 끼워 넣은 새까만 여백(레터박스·필러박스)을 잘라낸다.
+
+    2026-09-25에 찾았다: 경쟁 '쇼츠' 썸네일 41장이 전부 가로형(1280x720)이었다. 유튜브는 9:16 영상의
+    썸네일도 16:9 칸에 담아 주고, 남는 좌우를 새까맣게 채운다. 41장 중 18장이 그랬고 가운데 실제 그림은
+    가로의 71%뿐이었다. 그 검은 여백까지 '경쟁사의 그림'으로 세는 바람에 면적 비율이 전부 묽어졌다 —
+    흰 면적 기준값 0.0107, 대비 0.1791. 우리 쇼츠(1080x1920)는 여백이 없으니 늘 기준보다 높게 나왔고,
+    회차들은 그 차이를 메우려고 글자 흰빛(text_tint)과 tint_v 를 끝까지 밀었다. 숫자는 가까워졌지만
+    글자가 잿빛으로 죽어 2026-09-24에 두 손잡이를 모두 한계에 묶어 세웠다 — 없는 차이를 쫓고 있었다.
+    여백을 떼고 재면 기준값이 흰 면적 0.0158, 대비 0.2085 로 올라간다(대비는 우리 0.2294 와 10% 차이라
+    더는 차이 항목이 아니다). 그림을 바꾸는 게 아니라 여백을 안 세는 것뿐이다.
+    """
+    g = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY); h, w = g.shape
+    cm = g.max(axis=0); rm = g.max(axis=1)
+    l = 0
+    while l < w and cm[l] < 40: l += 1
+    r = w - 1
+    while r > l and cm[r] < 40: r -= 1
+    t = 0
+    while t < h and rm[t] < 40: t += 1
+    b = h - 1
+    while b > t and rm[b] < 40: b -= 1
+    nw, nh = r + 1 - l, b + 1 - t
+    if nw < w * 0.3 or nh < h * 0.3: return im      # 통째로 어두운 그림은 건드리지 않는다
+    if nw > w * 0.98 and nh > h * 0.98: return im   # 여백이 없으면 그대로
+    return im[t:b + 1, l:r + 1]
+
+
 def measure(path):
     im = cv2.imdecode(np.fromfile(path, dtype=np.uint8), cv2.IMREAD_COLOR)   # 한글 경로는 imread가 못 읽는다
     if im is None: return None
+    im = debar(im)
     im = cv2.resize(im, (640, 360)) if im.shape[0] < im.shape[1] else cv2.resize(im, (360, 640))
     h, w = im.shape[:2]; hsv = cv2.cvtColor(im, cv2.COLOR_BGR2HSV); g = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
     H, S, V = hsv[:, :, 0].astype(int), hsv[:, :, 1].astype(int), hsv[:, :, 2].astype(int)

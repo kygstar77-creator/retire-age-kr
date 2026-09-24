@@ -41,6 +41,32 @@ def save(d):
     try: json.dump(d, open(BEAT, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     except Exception as e: print('맥박 저장 실패:', str(e)[:60])
 
+SINCE = '_watch_since'   # 언제부터 맥박을 보고 있었나. 한 번도 안 찍은 회차를 언제부터 셀지 정한다.
+
+
+def tasks(d=None):
+    """회차 기록만. 밑줄로 시작하는 키(메타)는 회차가 아니다."""
+    d = d if d is not None else load()
+    return {k: v for k, v in (d or {}).items() if not k.startswith('_')}
+
+
+def watch_since(d=None, save_if_new=True):
+    """이 파일이 언제부터 맥박을 보고 있었나(유닉스 시각).
+
+    2026-09-25: 전에는 기록이 없는 회차를 무조건 '예약 간격을 넘겼다'고 셌다.
+    그래서 report(하루 한 번)에 맥박 지시가 붙은 뒤 아직 첫 회차가 안 온 동안,
+    멀쩡한 회차가 계기판 1순위를 차지했다. 고칠 수 없는 걸 세고 있었던 셈이다.
+    이제는 '보기 시작한 뒤로 제 간격이 지났는데도 한 번도 안 왔을 때'만 센다."""
+    d = d if d is not None else load()
+    t = (d or {}).get(SINCE)
+    if t: return t
+    t = min([v for r in tasks(d).values()
+             for v in (r.get('start'), r.get('end')) if v] or [time.time()])
+    if save_if_new:
+        d = d or {}; d[SINCE] = t; save(d)
+    return t
+
+
 def start(task):
     d = load()
     d[task] = {'start': time.time(), 'end': None, 'at': time.strftime('%Y-%m-%d %H:%M')}
@@ -57,14 +83,14 @@ def end(task):
 def last_any(d=None):
     """어느 회차든 마지막으로 맥박을 찍은 시각. 기계가 켜져 있었는지 보는 데 쓴다."""
     d = d if d is not None else load()
-    ts = [v for r in (d or {}).values() for v in (r.get('start'), r.get('end')) if v]
+    ts = [v for r in tasks(d).values() for v in (r.get('start'), r.get('end')) if v]
     return max(ts) if ts else None
 
 
 def beats(d=None):
     """맥박 시각 전부(시작·끝 가리지 않고) 오름차순."""
     d = d if d is not None else load()
-    return sorted(v for r in (d or {}).values()
+    return sorted(v for r in tasks(d).values()
                   for v in (r.get('start'), r.get('end')) if v)
 
 
@@ -81,7 +107,7 @@ def cut_off(task, now=None, d=None):
     """
     now = now or time.time()
     d = d if d is not None else load()
-    r = (d or {}).get(task) or {}
+    r = tasks(d).get(task) or {}
     st = r.get('start')
     if not st or r.get('end'): return 0.0
     ts = beats(d)
@@ -99,7 +125,7 @@ def stuck(now=None):
     now = now or time.time()
     d = load() or {}
     out = []
-    for task, r in d.items():
+    for task, r in tasks(d).items():
         if not r.get('start') or r.get('end'): continue
         m = (now - r['start']) / 60
         b = BUDGET.get(task, 60)
@@ -116,9 +142,12 @@ def stale(now=None):
     d = load() or {}
     out = []
     for task, gap in GAP_OK.items():
-        st = (d.get(task) or {}).get('start')
+        st = (tasks(d).get(task) or {}).get('start')
         if not st:
-            out.append((task, None, gap)); continue
+            # 아직 한 번도 안 찍은 회차. 보기 시작한 지 제 간격도 안 지났으면 멀쩡한 것이다.
+            if (now - watch_since(d)) / 3600 > gap + SLACK:
+                out.append((task, None, gap))
+            continue
         h = (now - st) / 3600
         if h > gap + SLACK: out.append((task, round(h, 1), gap))
     return sorted(out, key=lambda x: -(x[1] if x[1] is not None else 9e9))
@@ -129,7 +158,7 @@ def main():
         (start if cmd == 'start' else end)(sys.argv[2]); return
     d = load(); now = time.time()
     print('회차     시작            끝              걸린시간   상태')
-    for task in sorted(set(list(d) + list(BUDGET))):
+    for task in sorted(set(list(tasks(d)) + list(BUDGET))):
         r = d.get(task) or {}
         if not r.get('start'):
             print(f'{task:9s} (기록 없음)'); continue
@@ -142,7 +171,7 @@ def main():
     s = stuck(now)
     if s: print('\n멈춘 것으로 보이는 회차:', ', '.join(f'{t}({m}분)' for t, m, _ in s))
 
-    for task in sorted(d):
+    for task in sorted(tasks(d)):
         h = cut_off(task, now, d)
         if h:
             print(NL + f'{task}: 멈춘 게 아니라 끊겼다 — {d[task].get("at")} 시작 뒤 '

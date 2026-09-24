@@ -359,6 +359,22 @@ def last_published_minutes(kind):
 # 시각을 계산해 재시도를 거는 방식은 이렇게 한 번씩 빗나간다. 기다리는 쪽이 0편을 막는다.
 WAIT_MAX_MIN = 25   # 이보다 더 기다려야 하면 회차를 넘긴다
 
+def jitter(kind):
+    """발행 시각을 흩뜨린다. 매시 정각에 올리면 사람이 쓴 글로 안 보인다.
+
+    네이버 공식(2016-07-12 '블로그 검색 저품질 관련 잘못된 소문 Top'):
+      "정확하게 일정한 시간 간격을 두고 글을 쓰면 오히려 어뷰징으로 오판될 수 있습니다."
+    같은 글에서 붙여넣기 자체는 괜찮다고 하면서도 조건을 달았다 —
+      "글 작성 시각 간격과 글 길이를 고려해 평균적인 타자 속도를 계산합니다."
+      "그 포스팅이 스팸 문서로 분류될 만큼 다량의 반복적 포스팅이 아니라면 문제가 되지 않습니다."
+    우리는 매시 정각 · 붙여넣기 · 하루 24편으로 세 조건이 전부 겹쳤다(2026-09-24).
+    그래서 회차마다 0~17분을 무작위로 쉰다. 정각에 몰리지 않게 하는 것이 목적이다."""
+    if os.environ.get('NAVER_FORCE') == '1': return
+    import random
+    s = random.randint(0, 17 * 60)
+    print(f'{kind} 발행 전 {s//60}분 {s%60}초 쉰다(정각 몰림 방지)', flush=True)
+    time.sleep(s)
+
 def rate_guard(kind, wait=False):
     if os.environ.get('NAVER_FORCE') == '1': return
     m = last_published_minutes(kind)
@@ -371,7 +387,7 @@ def rate_guard(kind, wait=False):
     raise RuntimeError(f'{kind} 직전 발행이 {m:.0f}분 전 — {MIN_GAP_MIN}분 안에는 같은 매체에 다시 올리지 않는다(한 회차 1편). 다음 회차에 올린다')
 
 def post_blog(page, pkg, wait=False):
-    rate_guard('blog', wait)
+    jitter('blog'); rate_guard('blog', wait)
     title, seq, meta = read_pkg(pkg)
     page.goto(f'https://blog.naver.com/{BLOG_ID}/postwrite', wait_until='domcontentloaded')
     page.wait_for_timeout(6000)
@@ -430,7 +446,7 @@ def post_blog(page, pkg, wait=False):
 
 # ---------- 카페 ----------
 def post_cafe(page, pkg, wait=False):
-    rate_guard('cafe', wait)
+    jitter('cafe'); rate_guard('cafe', wait)
     title, seq, meta = read_pkg(pkg)
     page.goto(f'https://cafe.naver.com/ca-fe/cafes/{CAFE_ID}/articles/write', wait_until='domcontentloaded')
     page.wait_for_timeout(6000)

@@ -452,8 +452,31 @@ def post_cafe(page, pkg, wait=False):
     page.wait_for_timeout(6000)
     frame = page.main_frame
     close_popups(frame)   # 임시등록 복구 팝업 등
-    page.locator('button:has-text("게시판을 선택해 주세요"), .FormSelectButton').first.click(); page.wait_for_timeout(600)
-    page.locator(f'text="{meta.get("게시판", "자유게시판")}"').first.click(); page.wait_for_timeout(500)
+    # 게시판 고르기. 묶음이 없는 게시판을 요구하면 드롭다운이 열린 채로 멈춰 회차가 통째로 날아간다
+    # (2026-09-25: 묶음이 '미국주식·배당'을 달라는데 카페에는 '자유게시판'뿐이라 9.4시간 빵꾸).
+    # 없으면 있는 것 중 첫째로 넘어간다. 글이 엉뚱한 판에 가는 것이 안 올라가는 것보다 낫다.
+    page.locator('button:has-text("게시판을 선택해 주세요"), .FormSelectButton').first.click(); page.wait_for_timeout(800)
+    want = meta.get('게시판', '자유게시판')
+    # 후보는 드롭다운 항목(li)만 본다. 예전엔 li·button·a·div를 통째로 긁는 바람에 목록을 여는 버튼
+    # 자체인 '게시판을 선택해 주세요.'가 ('게시판' in o) 조건에 먼저 걸려 후보 1번이 됐고, 그걸 다시
+    # 눌러 목록만 닫혔다 열렸다 했다. 게시판이 안 골라지면 제목 칸이 잠겨 그 아래가 전부 헛돌아
+    # 회차가 통째로 0편이 됐다(2026-09-25 05:45 _shots/error_cafe.png: 목록 열린 채 제목·본문 빈 화면).
+    opts = [o for o in page.evaluate("() => [...document.querySelectorAll('li')]"
+                                     ".map(e => (e.innerText||'').trim())"
+                                     ".filter(t => t && t.length <= 20 && t.indexOf(String.fromCharCode(10)) < 0)")
+            if '선택' not in o and '말머리' not in o]
+    pick = want if want in opts else (opts[0] if opts else None)
+    if not pick: raise RuntimeError(f'게시판 "{want}" 도 대체 게시판도 못 찾았다 (목록: {opts[:8]})')
+    if pick != want: print(f'게시판 "{want}" 없음 → "{pick}" 로 올린다 (있는 것: {opts[:8]})')
+    for i in range(3):
+        page.locator('li').filter(has_text=re.compile(r'^\s*' + re.escape(pick) + r'\s*$')).first.click()
+        page.wait_for_timeout(700)
+        if not page.locator('button:has-text("게시판을 선택해 주세요")').count(): break
+        print(f'게시판 선택이 안 먹었다 — 다시 연다 ({i+1}/3)')
+        page.locator('button:has-text("게시판을 선택해 주세요"), .FormSelectButton').first.click(); page.wait_for_timeout(800)
+    else:
+        shot(page, 'cafe_board_stuck')
+        raise RuntimeError(f'게시판 "{pick}" 을 세 번 눌러도 목록이 닫히지 않았다')
     page.locator('textarea[placeholder*="제목"], input[placeholder*="제목"]').first.fill(title)
     frame = page.main_frame
     photo = page.locator('button[data-name="image"]').first

@@ -1,6 +1,17 @@
 {
- "at": "2026-09-24 20:04",
+ "at": "2026-09-25 05:53",
  "items": [
+  {
+   "area": "발행",
+   "name": "0편 회차 수",
+   "value": 2,
+   "target": 0,
+   "weight": 3,
+   "gap": 2.0,
+   "score": 6.0,
+   "how": "0편 사유를 없앤다(대기 묶음 3+3 유지가 가장 흔한 원인)",
+   "owner": "루틴"
+  },
   {
    "area": "도구",
    "name": "사람 손 필요 항목",
@@ -14,24 +25,57 @@
   },
   {
    "area": "발행",
-   "name": "대기 묶음 블로그",
+   "name": "오늘 블로그 편수",
    "value": 0,
-   "target": 3,
+   "target": 24,
    "weight": 3,
    "gap": 1.0,
    "score": 3.0,
-   "how": "firemap-improve B/F 회차가 완성 묶음을 만든다",
+   "how": "firemap-write 회차 note에서 0편 사유 확인 → 대기 묶음·가드·시간초과",
    "owner": "루틴"
   },
   {
    "area": "발행",
-   "name": "대기 묶음 카페",
-   "value": 1,
-   "target": 3,
+   "name": "오늘 카페 편수",
+   "value": 0,
+   "target": 24,
    "weight": 3,
-   "gap": 0.667,
-   "score": 2.0,
+   "gap": 1.0,
+   "score": 3.0,
    "how": "위와 같음",
+   "owner": "루틴"
+  },
+  {
+   "area": "발행",
+   "name": "블로그 발행 빵꾸(75분 초과)",
+   "value": 1,
+   "target": 0,
+   "weight": 3,
+   "gap": 1.0,
+   "score": 3.0,
+   "how": "지금 8.7시간 전이 마지막. py -3.12 work/watchdog.py 로 즉시 메운다",
+   "owner": "루틴"
+  },
+  {
+   "area": "발행",
+   "name": "카페 발행 빵꾸(75분 초과)",
+   "value": 1,
+   "target": 0,
+   "weight": 3,
+   "gap": 1.0,
+   "score": 3.0,
+   "how": "지금 9.7시간 전이 마지막. py -3.12 work/watchdog.py 로 즉시 메운다",
+   "owner": "루틴"
+  },
+  {
+   "area": "성장",
+   "name": "블로그 오늘 방문",
+   "value": 8,
+   "target": 100,
+   "weight": 3,
+   "gap": 0.92,
+   "score": 2.76,
+   "how": "색인·순위가 먼저. 발행량만 늘리면 안 오른다",
    "owner": "루틴"
   },
   {
@@ -81,23 +125,12 @@
   {
    "area": "품질",
    "name": "카페 하루당 조회 중앙값",
-   "value": 1.15,
+   "value": 1.09,
    "target": 5,
    "weight": 2,
-   "gap": 0.77,
-   "score": 1.54,
+   "gap": 0.782,
+   "score": 1.564,
    "how": "work/research/textrule.md의 규칙을 회차가 실제로 따르는지 확인",
-   "owner": "루틴"
-  },
-  {
-   "area": "성장",
-   "name": "블로그 오늘 방문",
-   "value": 59,
-   "target": 100,
-   "weight": 3,
-   "gap": 0.41,
-   "score": 1.23,
-   "how": "색인·순위가 먼저. 발행량만 늘리면 안 오른다",
    "owner": "루틴"
   },
   {
@@ -112,6 +145,17 @@
    "owner": "루틴"
   },
   {
+   "area": "발행",
+   "name": "대기 묶음 카페",
+   "value": 2,
+   "target": 3,
+   "weight": 3,
+   "gap": 0.333,
+   "score": 1.0,
+   "how": "위와 같음",
+   "owner": "루틴"
+  },
+  {
    "area": "품질",
    "name": "최근 20편 바깥모델 교차검증 비율",
    "value": 0.05,
@@ -120,28 +164,6 @@
    "gap": 0.95,
    "score": 0.95,
    "how": "제미나이 429면 selfcheck로 대체됨 — 유료 키가 생기면 올라간다",
-   "owner": "루틴"
-  },
-  {
-   "area": "발행",
-   "name": "오늘 블로그 편수",
-   "value": 20,
-   "target": 24,
-   "weight": 3,
-   "gap": 0.167,
-   "score": 0.5,
-   "how": "firemap-write 회차 note에서 0편 사유 확인 → 대기 묶음·가드·시간초과",
-   "owner": "루틴"
-  },
-  {
-   "area": "발행",
-   "name": "오늘 카페 편수",
-   "value": 20,
-   "target": 24,
-   "weight": 3,
-   "gap": 0.167,
-   "score": 0.5,
-   "how": "위와 같음",
    "owner": "루틴"
   },
   {
@@ -157,35 +179,13 @@
   },
   {
    "area": "발행",
-   "name": "0편 회차 수",
-   "value": 0,
-   "target": 0,
+   "name": "대기 묶음 블로그",
+   "value": 3,
+   "target": 3,
    "weight": 3,
    "gap": 0.0,
    "score": 0.0,
-   "how": "0편 사유를 없앤다(대기 묶음 3+3 유지가 가장 흔한 원인)",
-   "owner": "루틴"
-  },
-  {
-   "area": "발행",
-   "name": "블로그 발행 빵꾸(75분 초과)",
-   "value": 0,
-   "target": 0,
-   "weight": 3,
-   "gap": 0.0,
-   "score": 0.0,
-   "how": "지금 0.4시간 전이 마지막. py -3.12 work/watchdog.py 로 즉시 메운다",
-   "owner": "루틴"
-  },
-  {
-   "area": "발행",
-   "name": "카페 발행 빵꾸(75분 초과)",
-   "value": 0,
-   "target": 0,
-   "weight": 3,
-   "gap": 0.0,
-   "score": 0.0,
-   "how": "지금 0.6시간 전이 마지막. py -3.12 work/watchdog.py 로 즉시 메운다",
+   "how": "firemap-improve B/F 회차가 완성 묶음을 만든다",
    "owner": "루틴"
   },
   {
@@ -202,7 +202,7 @@
   {
    "area": "품질",
    "name": "최근 20편 실물검증 통과율",
-   "value": 1.0,
+   "value": 0.95,
    "target": 0.95,
    "weight": 3,
    "gap": 0.0,
@@ -235,7 +235,7 @@
   {
    "area": "영상",
    "name": "올린 숏폼 수",
-   "value": 10,
+   "value": 11,
    "target": 10,
    "weight": 2,
    "gap": 0.0,
@@ -262,7 +262,29 @@
    "weight": 0,
    "gap": 0.0,
    "score": 0.0,
-   "how": "다시 밀지 않는다 · 지금: short.contrast, short.white",
+   "how": "다시 밀지 않는다 · 지금: long.text_mid, short.white",
+   "owner": "루틴"
+  },
+  {
+   "area": "회차",
+   "name": "예산 시간을 넘겨 멈춘 회차",
+   "value": 0,
+   "target": 0,
+   "weight": 3,
+   "gap": 0.0,
+   "score": 0.0,
+   "how": "예약 목록에서 running인 세션을 끊고(stop_session) 그 회차를 다시 돌린다",
+   "owner": "루틴"
+  },
+  {
+   "area": "회차",
+   "name": "제 예약 간격을 넘도록 안 돈 회차",
+   "value": 0,
+   "target": 0,
+   "weight": 2,
+   "gap": 0.0,
+   "score": 0.0,
+   "how": "그 회차 지시문에 beat.py start/end 가 있는지 · 예약이 꺼졌는지 확인",
    "owner": "루틴"
   },
   {

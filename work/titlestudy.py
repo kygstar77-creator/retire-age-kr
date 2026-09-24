@@ -160,7 +160,13 @@ def main():
     md += ['', '## 우리 잘된 제목 (하루당 조회)']
     for p in ours[:8]: md.append(f"- {p['per']:.1f}/일 · {p['title']}")
 
-    os.makedirs(R, exist_ok=True); open(OUT_MD, 'w', encoding='utf-8').write('\n'.join(md) + '\n')
+    # 손으로 적은 "## 제목 수정 실험" 절은 덮어쓰지 않고 그대로 이어 붙인다
+    keep = ''
+    if os.path.exists(OUT_MD):
+        prev = open(OUT_MD, encoding='utf-8').read()
+        j = prev.find('## 제목 수정 실험')
+        if j >= 0: keep = chr(10) + prev[j:].rstrip() + chr(10)
+    os.makedirs(R, exist_ok=True); open(OUT_MD, 'w', encoding='utf-8').write('\n'.join(md) + '\n' + keep)
     res['ranked'] = ranked[:200]; res['ours'] = ours_rows
     json.dump(res, open(OUT_JSON, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 

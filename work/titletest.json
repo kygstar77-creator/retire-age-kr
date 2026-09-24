@@ -55,5 +55,47 @@
    "cafe": false,
    "all": false
   }
+ },
+ {
+  "when": "2026-09-24 09:38",
+  "label": "수정 후",
+  "article": 59,
+  "api": {
+   "subject": "VYM과 DGRO에 3억, 세후 월 배당은 8만원 차이",
+   "writeDate": 1790159797683,
+   "readCount": 1,
+   "수정 관련 필드": "없음"
+  },
+  "page": {
+   "화면 글자": 2844,
+   "수정 표시": "없음"
+  },
+  "search": {
+   "cafe": true,
+   "all": false
+  }
+ },
+ {
+  "when": "2026-09-24 09:41",
+  "label": "수정 후 검색 3종",
+  "article": 59,
+  "search3": {
+   "옛 제목": {
+    "query": "3억으로 VYM 사면 세후 월 49만원, DGRO는 41만원",
+    "cafe": false,
+    "all": false
+   },
+   "새 제목": {
+    "query": "VYM과 DGRO에 3억, 세후 월 배당은 8만원 차이",
+    "cafe": true,
+    "all": false
+   },
+   "주제어": {
+    "query": "VYM DGRO 3억 월배당",
+    "cafe": true,
+    "all": false
+   }
+  },
+  "판정": "제목을 고쳐도 색인은 하루 안에 새 제목으로 갱신된다. 이미 올린 글도 고쳐도 된다."
  }
 ]

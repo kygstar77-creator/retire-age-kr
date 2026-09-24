@@ -25,6 +25,18 @@ AUTO = {
     '블로그 오늘 방문': None,
 }
 
+def _profile_locked_by_live():
+    """브라우저 프로필 잠금을 살아 있는 프로세스가 쥐고 있으면 그 PID, 아니면 None.
+    판단 기준은 naverpost 가 쓰는 것과 같은 것을 그대로 빌려 쓴다(두 군데서 다르게 세지 않게)."""
+    try:
+        sys.path.insert(0, HERE)
+        import naverpost
+        owner = open(naverpost.LOCK, encoding='utf-8').read().strip()
+        return owner if owner and naverpost._alive(owner) else None
+    except Exception:
+        return None   # 잠금 파일이 없거나 못 읽으면 막을 이유가 없다
+
+
 def always():
     """점수와 상관없이 매 회차 돌리는 것 — 글 루프는 항상 최신이어야 회차가 규칙을 읽을 수 있다.
     사장님 2026-09-23 '숏폼뿐만이 아니라 블로그랑 카페도 자가발전 하라고'."""
@@ -32,6 +44,17 @@ def always():
     for name, script in (('글 규칙(카페·블로그 성과 → 규칙)', 'textloop.py'),
                          ('제목 분석(네이버 상위 노출 제목 → 규칙)', 'titlestudy.py'),
                          ('발행 감시', 'watchdog.py')):
+        # 발행 감시는 브라우저 프로필을 쓴다. 그 프로필은 한 번에 한 회차만 열 수 있어서
+        # naverpost.acquire_lock 이 최대 900초를 기다리는데, 여기 timeout 도 900초다.
+        # 그래서 발행 회차(firemap-write)가 잠금을 쥐고 있으면 이 줄은 반드시 900초를 버리고
+        # ERR(TimeoutExpired)로 끝난다 — 2026-09-25 01:19 실제로 그랬다(PID 802948 이 쥐고 있었다).
+        # 기다릴 이유도 없다: 감시는 매시 예약(firemap-watchdog)으로 따로 돌기 때문이다.
+        # 주인이 살아 있으면 건너뛴다. 죽은 잠금이면 watchdog 이 스스로 치우므로 그대로 돌린다.
+        if script == 'watchdog.py':
+            held = _profile_locked_by_live()
+            if held:
+                out.append(f'{name}: 건너뜀 — 발행 회차가 브라우저를 쓰는 중(PID {held}) · 매시 예약이 따로 돈다')
+                continue
         r = sh(os.path.join(HERE, script), timeout=900).strip()
         out.append(f"{name}: " + (r.splitlines()[0][:100] if r else '(출력 없음)'))
     return out

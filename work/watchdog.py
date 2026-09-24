@@ -84,6 +84,23 @@ def main():
         rec['stock'][kind] = n
         if n < STOCK_WANT: rec['alert'].append(f'{kind} 대기 묶음 {n}개 (목표 {STOCK_WANT}) — 회차가 처음부터 쓰느라 밀린다')
 
+    # 2-b) 로그인이 살아 있나. 2026-09-25: 쿠키가 만료됐는데 아무도 못 알려
+    # 카페가 10시간, 어제는 블로그가 2시간 멈췄다. 사장님이 물어서야 알았다.
+    # 이건 사람 손이 필요한 유일한 항목이라 맨 앞에 알린다.
+    try:
+        import json as _j, time as _t
+        st = os.path.join(os.path.dirname(N.PROFILE), os.path.basename(N.PROFILE), 'storage_state.json')
+        if os.path.exists(st):
+            age_h = (_t.time() - os.path.getmtime(st)) / 3600
+            sess = sum(1 for c in _j.load(open(st, encoding='utf-8')).get('cookies', [])
+                       if c['name'] in ('NID_AUT', 'NID_SES') and (c.get('expires') or -1) <= 0)
+            rec['login_age_h'] = round(age_h, 1)
+            if sess:
+                rec['alert'].append(
+                    f'로그인 쿠키가 세션형이라 곧 풀린다(저장 {age_h:.0f}시간 전) — '
+                    '다음 로그인 때 "로그인 상태 유지"를 켜면 만료일이 붙어 오래 간다')
+    except Exception as e: print('로그인 쿠키 점검 실패:', repr(e)[:80])
+
     gaps = series_gap()
     rec['안 나간 시리즈'] = gaps
     if gaps: rec['alert'].append('최근 글에 한 편도 없는 시리즈: ' + ', '.join(gaps))

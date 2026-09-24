@@ -106,10 +106,21 @@ def gather(kind):
             per[sgg].append(mo * 12 / inv * 100)
     return {k: statistics.median(v) for k, v in per.items() if v}, cnt
 
-LABEL = {'jeonse': ('서울 25개 구 아파트 전세가율', '%', '전세 중앙값 ÷ 매매 중앙값'),
-         'yield':  ('서울 25개 구 아파트 월세 수익률', '%', '월세×12 ÷ (매매−보증금)'),
-         'offi':   ('서울 25개 구 오피스텔 월세 수익률', '%', '월세×12 ÷ (매매−보증금)'),
-         'price':  ('서울 25개 구 아파트 평당 매매가', '만원', '매매 중앙값 ÷ 평')}
+LABEL = {'jeonse': ('아파트 전세가율', '%', '전세 중앙값 ÷ 매매 중앙값'),
+         'yield':  ('아파트 월세 수익률', '%', '월세×12 ÷ (매매−보증금)'),
+         'offi':   ('오피스텔 월세 수익률', '%', '월세×12 ÷ (매매−보증금)'),
+         'price':  ('아파트 평당 매매가', '만원', '매매 중앙값 ÷ 평')}
+
+SEOUL = set(SGG.values())          # seoul_sgg.json의 구 이름 25개
+
+def area_name(vals):
+    """실제로 그린 지역에 맞는 이름을 만든다.
+    2026-09-24: 라벨이 '서울 25개 구'로 박혀 있었는데 work/research/rt/에 경기도(41xxx)
+    실거래가 함께 쌓여 안성시·파주시까지 62곳이 그려졌다. 글에 그대로 쓰면 사실이 틀린다."""
+    ks = set(vals); out = ks - SEOUL
+    if not out: return f'서울 {len(ks)}개 구'
+    if not (ks & SEOUL): return f'경기 {len(ks)}곳'
+    return f'수도권 {len(ks)}곳(서울 {len(ks & SEOUL)}개 구·경기 {len(out)}곳)'
 
 def main():
     kind = next((a for a in sys.argv[1:] if not a.startswith('--')), 'jeonse')
@@ -117,7 +128,10 @@ def main():
     if '--out' in sys.argv: out = sys.argv[sys.argv.index('--out') + 1]
     title, unit, how = LABEL.get(kind, LABEL['jeonse'])
     vals, cnt = gather(kind)
+    if '--seoul' in sys.argv:                       # 서울만 그린다(경기 실거래를 뺀다)
+        vals = {k: v for k, v in vals.items() if k in SEOUL}
     if not vals: print('자료가 모자라 그릴 수 없다 — work/research/rt/ 에 실거래 원자료가 있는지 본다'); return
+    title = f'{area_name(vals)} {title}'            # 이름은 실제 그린 지역으로
 
     if kind == 'price':
         # 사장님 2026-09-23: "부동산은 주식과 달리 구역별로 가치가 명확히 나뉜다.
@@ -133,9 +147,9 @@ def main():
         day = time.strftime('%Y-%m-%d'); os.makedirs(OUT, exist_ok=True)
         out = out or os.path.join(OUT, f'heatmap_re_price_{day}.png')
         span = f'{months[0]}→{months[-1]}' if months else ''
-        HM.draw(rows, out, f'서울 아파트 평당 매매가 {day} · 크기=평당가, 색={span} 등락률(같은 단지·같은 면적대)')
-        print(f'서울 25개 구 아파트 평당 매매가 — 크기는 평당가, 색은 같은 면적대끼리 견준 등락률')
-        print(f'  구 {len(vals)}곳 · 평당가 중앙 {statistics.median(vals.values()):,.0f}만원 · '
+        HM.draw(rows, out, f'{area_name(vals)} 아파트 평당 매매가 {day} · 크기=평당가, 색={span} 등락률(같은 단지·같은 면적대)')
+        print(f'{area_name(vals)} 아파트 평당 매매가 — 크기는 평당가, 색은 같은 면적대끼리 견준 등락률')
+        print(f'  지역 {len(vals)}곳 · 평당가 중앙 {statistics.median(vals.values()):,.0f}만원 · '
               f'등락률 중앙 {statistics.median(chg.values()):+.1f}% (구한 곳 {len(chg)}곳) · 그림 {out}')
         for k, v in sorted(vals.items(), key=lambda kv: -kv[1])[:5]:
             print(f'  비싼 곳 {k} 평당 {v:,.0f}만원 ({chg.get(k, 0):+.1f}%)')

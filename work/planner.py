@@ -3,6 +3,8 @@
 # 신호(전부 지금 있는 파일·API): ① 검색수(topics.json) ② 마감(calendar.json) ③ 유튜브 상위 채널 제목·조회(research/yt/lessons_*.md, full/*/index.json)
 #   ④ 우리 글 성과(perf_log.json·visitors_log.json·pkg/form.txt·axis.txt) ⑤ 카페 실측 조회 축 ⑥ 오늘 시장(Nasdaq 캘린더·히트맵 상위 등락) ⑦ 오늘 찾은 글감(topic-ideas.md)
 import sys, os, re, json, glob, time, datetime, collections, urllib.request, statistics
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import demand
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__)); R = os.path.join(HERE, 'research')
 H = {'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}
@@ -126,20 +128,29 @@ def main():
     # 그래서 08시 회차가 06시 카페와 같은 주제가 되어 슬롯을 버리고 각도를 바꿔야 했다.
     # 한 편성표 안에서 이미 배정한 주제는 다시 배정하지 않는다(더 고를 게 없을 때만 재사용).
     taken = set()
+    # 시리즈 안에서 무엇을 고를지는 수요(월 검색수)로 정한다.
+    # 사장님 2026-09-24: "기획한 시리즈물대로 쓰되, 그 안에서 어떤 걸 조사하고 포스팅할 때
+    # 수요가 높은 걸 선택하냐는 말이야. 단지 중에서라도."
+    # 그전에는 (seed + k) % len 으로 그냥 순서대로 돌렸다 — 검색수를 본 적이 없다.
+    # 실측 2026-09-24: 손품 동네 목동 22,210 · 흑석동 10,620 · 방배동 9,210 · 상계동 5,010 · 공덕동 1,630.
+    # 그런데 그날 고른 것은 수요 4위인 상계동이었다. 단지도 마찬가지 — 상계주공 5,900,
+    # 은마아파트 62,060으로 10배 차이인데 수요를 보지 않고 골랐다.
+    picked_why = []          # 편성표에 "무엇을 왜 골랐나"를 남긴다
     def rot(lst, k):
         if not lst: return '(후보 없음)'
         fresh = [x for x in lst if not used(x, wtitles)]
         pool = [x for x in fresh if x not in taken]
-        if pool:
-            pick = pool[(seed + k) % len(pool)]
-            taken.add(pick)
-            return pick
-        # 안 쓴 후보가 동났다. 이미 쓴 것 중에서 고르되 이 편성표에 아직 안 올린 것을 먼저 쓴다.
-        # 여기서 fresh로 되돌아가면 같은 날 같은 주제가 두 번 배정된다(2026-09-24에 그랬다).
-        pool = [x for x in lst if x not in taken] or lst
-        pick = pool[(seed + k) % len(pool)]
+        tail = ''
+        if not pool:
+            # 안 쓴 후보가 동났다. 이미 쓴 것 중에서 고르되 이 편성표에 아직 안 올린 것을 먼저 쓴다.
+            # 여기서 fresh로 되돌아가면 같은 날 같은 주제가 두 번 배정된다(2026-09-24에 그랬다).
+            pool = [x for x in lst if x not in taken] or list(lst)
+            tail = ' ※이미 쓴 주제 — 각도를 바꾸거나 교체할 것'
+        ranked = demand.rank(pool)           # 수요 높은 순. 못 잰 것은 뒤로 간다
+        pick = ranked[0]                     # taken이 중복을 막으므로 다음 슬롯은 자연히 2위로 내려간다
         taken.add(pick)
-        return pick + ' ※이미 쓴 주제 — 각도를 바꾸거나 교체할 것'
+        picked_why.append(demand.label(pick, demand.vols([pick], refresh=False).get(pick)))
+        return pick + tail
     # 2026-09-23 사장님: "시리즈로 올릴 부동산이랑 주식이랑 배당 등등 많은데 왜 그런 글은 아예 안 올라오지?"
     # 원인: series-plan.md에 적힌 B8·B9·B10·B11(부동산 4종)과 C8(배당 히트맵)이 이 표에 통째로 빠져 있었다.
     # 편성에 없으니 회차가 쓸 일이 없었다. 실제로 카페 48편 중 부동산은 1편뿐이었다.
@@ -239,6 +250,13 @@ def main():
             todo = 'stockwants' if sid in ('B2', 'C1', 'C3', 'C5') else 'toprank'
             lines.append(f"| {h:02d} | {sid} | {forms[sid]} | {topic(sid, k)} | {todo} → WebSearch 5건(한·영) → 1차 출처 → 초안 → 교차검증 |")
         lines.append('')
-    p = os.path.join(R, f'plan_{TOM}.md'); open(p, 'w', encoding='utf-8').write('\n'.join(lines)); print('저장', p); print('\n'.join(lines[:12]))
+    # 시리즈 안에서 무엇을 골랐고 그 수요가 얼마였는지 남긴다. 안 남기면 수요를 봤는지 확인할 길이 없다.
+    if picked_why:
+        lines += ['## 시리즈 안에서 고른 것 (수요 높은 순으로 고른다 — demand.py)', '']
+        lines += [f'- {w}' for w in picked_why]
+        lines += ['', '고른 근거는 네이버 검색광고 월간 검색수다. 캐시 7일(work/demand_cache.json).', '']
+    p = os.path.join(R, f'plan_{TOM}.md'); open(p, 'w', encoding='utf-8').write('\n'.join(lines)); print('저장', p)
+    print('\n시리즈 안에서 고른 것 (수요순):')
+    for w in picked_why[:14]: print('  ·', w)
 
 if __name__ == '__main__': main()

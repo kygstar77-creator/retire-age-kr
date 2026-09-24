@@ -45,4 +45,5 @@ def main():
     print('\n== 연관 키워드 상위 40')
     for k, v in [r for r in rows if r[0].upper() not in asked][:40]: print(f'{v[0]+v[1]:>9,}  {k}')
 
-main()
+# import해서 call()·num()만 쓰는 곳이 있다(demand.py). 가드가 없으면 import만 해도 main이 돈다.
+if __name__ == '__main__': main()

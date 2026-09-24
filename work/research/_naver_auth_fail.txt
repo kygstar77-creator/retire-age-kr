@@ -1,0 +1,1 @@
+2026-09-25 07:05 {"error":{"errorCode":"10004","message":"NaverUser 인증 실패 - loginStat : 'Failure-[401:IP check failure]'"}} (카페 글쓰기 API POST /editor/v2.0/cafes/31789001/menus/1/articles → 500)

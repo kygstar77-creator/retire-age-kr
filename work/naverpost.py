@@ -15,7 +15,7 @@
 #   카테고리: 경제지식      (블로그)
 #   태그: a, b, c           (블로그)
 #   게시판: 자유게시판       (카페)
-import sys, os, re, time, json
+import sys, os, re, time, json, io
 sys.stdout.reconfigure(encoding='utf-8')
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 
@@ -291,6 +291,22 @@ def cafe_boards():
     except Exception as e:
         print('게시판 목록 조회 실패:', repr(e)[:90]); return []
 
+AUTHFAIL = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research', '_naver_auth_fail.txt')
+
+def note_auth_fail(msg):
+    """글쓰기 API가 인증으로 막힌 것을 남긴다. 다음 회차가 글을 다 쓴 뒤에야 알아채면 한 시간이 날아간다."""
+    try:
+        io.open(AUTHFAIL, 'w', encoding='utf-8').write(time.strftime('%Y-%m-%d %H:%M') + ' ' + msg[:300])
+    except Exception: pass
+
+def auth_fail_seen():
+    """최근 6시간 안에 인증 실패가 있었으면 그 줄. 로그인에 성공하면 지운다."""
+    try:
+        if not os.path.exists(AUTHFAIL): return None
+        if time.time() - os.path.getmtime(AUTHFAIL) > 6 * 3600: return None
+        return io.open(AUTHFAIL, encoding='utf-8').read().strip()
+    except Exception: return None
+
 def already_up(kind, title):
     """이 제목이 이미 올라가 있으면 그 URL. 발행 직전과 실패 직후에 둘 다 본다."""
     return live_map(kind).get(norm(title))
@@ -439,6 +455,7 @@ def post_blog(page, pkg, wait=False):
                 tagbox.click(); page.keyboard.insert_text(tag); page.keyboard.press('Enter'); page.wait_for_timeout(250)
         except Exception as e: print('태그 입력 실패:', repr(e)[:120])
     shot(page, 'blog_publish_panel2')
+    page.on('dialog', lambda d: d.accept())   # 카페와 같은 이유 — 네이티브 확인 창을 안 받으면 자동 취소된다
     frame.get_by_role('button', name=re.compile(r'^\s*발행\s*$')).last.click()
     # 발행 뒤 PostView.naver?...&logNo=NNN 또는 /kygstar7777/NNN 으로 이동한다
     try:
@@ -474,8 +491,19 @@ def post_cafe(page, pkg, wait=False):
     pick = want if want in boards else (boards[0] if boards else want)
     if pick != want:
         print(f'게시판 "{want}" 없음 → "{pick}" 로 올린다 (있는 것: {boards})')
-    page.locator('button:has-text("게시판을 선택해 주세요"), .FormSelectButton').first.click(); page.wait_for_timeout(900)
-    page.get_by_text(pick, exact=True).last.click(); page.wait_for_timeout(600)
+    # 고른 뒤 실제로 닫혔는지 본다. 2026-09-25 06:02 실측: 목록은 열렸는데 항목 클릭이 안 먹어
+    # 버튼이 "게시판을 선택해 주세요." 그대로였고, 그 상태로 본문을 2분 동안 다 채운 뒤
+    # 등록이 눌리지 않아 30초 이동 실패로만 보였다. 여기서 못 고르면 본문 넣기 전에 멈춘다.
+    for i in range(3):
+        page.locator('button:has-text("게시판을 선택해 주세요"), .FormSelectButton').first.click(); page.wait_for_timeout(900)
+        try: page.get_by_text(pick, exact=True).last.click(timeout=5000)
+        except Exception as e: print(f'게시판 항목 클릭 실패({i+1}/3):', repr(e)[:80])
+        page.wait_for_timeout(700)
+        if not page.locator('button:has-text("게시판을 선택해 주세요")').count(): break
+        print(f'게시판이 안 골라졌다 — 다시 연다 ({i+1}/3)')
+    else:
+        shot(page, 'cafe_board_stuck')
+        raise RuntimeError(f'게시판 "{pick}" 을 세 번 눌러도 안 골라졌다 (있는 것: {boards})')
     page.locator('textarea[placeholder*="제목"], input[placeholder*="제목"]').first.fill(title)
     frame = page.main_frame
     photo = page.locator('button[data-name="image"]').first
@@ -504,17 +532,61 @@ def set_cafe_public(page):
     return ok
 
 def submit_cafe(page, title=None):
+    # 2026-09-25: 9시간 넘게 카페·블로그가 "등록 눌렀는데 화면이 안 넘어감"으로 전부 실패했다.
+    # 원인은 확인 창이 DOM 요소가 아니라 window.confirm 이었다는 것이다. Playwright는 손잡이를
+    # 안 걸어 두면 네이티브 대화상자를 자동으로 '취소'한다 — 그래서 등록이 조용히 없던 일이 되고
+    # 화면은 글쓰기 그대로 남아 30초 뒤 이동 실패로만 보였다. 수정 화면(cafe_make_public)에는
+    # 이미 손잡이가 있었는데 새 글 등록 쪽에만 빠져 있었다.
+    page.on('dialog', lambda d: d.accept())
+    # 등록이 왜 안 되는지는 화면이 아니라 서버 답이 말해 준다. 2026-09-25에 확인 창까지 제대로 눌렀는데도
+    # 화면이 안 넘어갔다 — 그때 서버가 뭐라고 했는지 아무도 안 봤다. 글쓰기 API 응답을 받아 적는다.
+    apierr = []
+    def _watch(resp):
+        try:
+            if 'articles' in resp.url and resp.request.method in ('POST', 'PUT'):
+                body = resp.text()[:400]
+                print('[등록 API]', resp.status, resp.url[:110])
+                print('[등록 API 답]', body)
+                if resp.status >= 400: apierr.append(body)
+        except Exception: pass
+    page.on('response', _watch)
     page.get_by_role('button', name=re.compile(r'^\s*등록\s*$')).first.click()   # '임시등록'이 아니라 '등록'만
+    page.wait_for_timeout(1500); shot(page, 'cafe_just_after_submit')   # 눌린 직후 화면(진단용)
     # 전체공개면 "이 글은 전체공개로 설정되어 있어요 ... 계속할까요?" 확인 창이 뜬다(2026-09-22 실측) → 확인
     # 2026-09-25: 예전에는 is_visible(timeout=3000)으로 봤다. Playwright의 is_visible은 즉시 판정이라
     # 창이 뜨기 전에 False가 나오고, 인자를 넘기면 예외가 나 except로 통째로 넘어갔다.
     # 그러면 확인 창이 그대로 남아 등록이 안 되고 30초 뒤 이동 실패로만 보인다. wait_for로 제대로 기다린다.
+    # 2026-09-25 06:33 실측(cafe_just_after_submit.png): 확인 창은 window.confirm 이 아니라 화면 안의
+    # 상자였다("이 글은 전체공개로 설정되어 있어요 … 계속할까요?" + 취소/확인). 창은 제대로 떴는데
+    # 확인 버튼을 .last 로 잡은 것이 화면에 없는 버튼이라 클릭이 시간초과로 죽었고, except: pass 가
+    # 그걸 통째로 삼켜 창이 그대로 남았다. 그래서 10시간 동안 '등록 눌렀는데 화면이 안 넘어감'으로만 보였다.
+    # 보이는 확인 버튼을 골라 누르고, 실패하면 삼키지 말고 찍어 남긴다.
     try:
-        page.get_by_text('전체공개로 설정', exact=False).first.wait_for(state='visible', timeout=5000)
-        page.get_by_role('button', name=re.compile(r'^\s*확인\s*$')).last.click()
-        page.wait_for_timeout(500)
-    except Exception: pass
+        page.get_by_text('계속할까요', exact=False).first.wait_for(state='visible', timeout=8000)
+        btns = page.get_by_role('button', name=re.compile(r'^\s*확인\s*$'))
+        hit = None
+        for i in range(btns.count()):
+            if btns.nth(i).is_visible(): hit = btns.nth(i); break
+        if hit is None: hit = page.get_by_text('확인', exact=True).last
+        hit.click(timeout=5000)
+        print('전체공개 확인 창 — 확인을 눌렀다')
+        page.wait_for_timeout(2500); shot(page, 'cafe_after_confirm')   # 확인 누른 직후(진단용)
+    except Exception as e:
+        print('확인 창 처리 실패:', repr(e)[:140]); shot(page, 'cafe_confirm_fail')
     # 등록 뒤 ArticleRead.nhn?...&articleid=NN 또는 .../articles/NN 또는 /firemap/NN 으로 이동한다
+    # 2026-09-25 07:05: 10시간 동안 "등록 눌렀는데 화면이 안 넘어감"으로만 적히던 것의 진짜 이유는
+    # 서버가 돌려준 이 답이었다 — {"errorCode":"10004","message":"NaverUser 인증 실패 …
+    # 'Failure-[401:IP check failure]'"}. 쿠키는 살아 있어 읽기는 되는데 글쓰기 API가 IP를 보고 막는다.
+    # 사람이 다시 로그인하는 것 말고는 길이 없다. 30초 시간초과로 뭉뚱그리지 말고 그대로 말한다.
+    for _ in range(10):
+        if apierr: break
+        page.wait_for_timeout(500)
+    auth = [b for b in apierr if '인증 실패' in b or 'IP check' in b or '10004' in b]
+    if auth:
+        shot(page, 'cafe_auth_fail')
+        note_auth_fail(auth[0])
+        raise RuntimeError('네이버 로그인 IP 불일치 — 사람이 `py -3.12 work/naverpost.py login` 을 다시 해야 한다. '
+                           '서버 답: ' + auth[0][:200])
     try:
         page.wait_for_url(re.compile(r'articleid=\d+|articles/\d+|cafe\.naver\.com/firemap/\d+', re.I), timeout=30000)
     except Exception as e:
@@ -641,6 +713,8 @@ def main():
         return
     with sync_playwright() as p:
         if cmd == 'login':
+            try: os.path.exists(AUTHFAIL) and os.remove(AUTHFAIL)
+            except Exception: pass
             ctx = launch(p, headless=False); page = ctx.new_page()
             page.goto('https://nid.naver.com/nidlogin.login?url=https://www.naver.com/')
             print('브라우저 창에서 네이버에 로그인하세요. 로그인이 확인되면 자동으로 닫힙니다(최대 10분).')
@@ -655,7 +729,14 @@ def main():
         pkg = None
         try:
             if cmd == 'check':
-                ok = logged_in(page); print('로그인됨' if ok else '로그인 안 됨'); sys.exit(0 if ok else 2)
+                ok = logged_in(page)
+                af = auth_fail_seen()
+                if ok and af:
+                    # 쿠키는 살아 있어도 글쓰기 API가 IP로 막으면 '로그인됨'은 거짓말이다(2026-09-25).
+                    print('로그인 안 됨 — 쿠키는 있는데 글쓰기가 IP 확인에서 막혔다:', af)
+                    print('사장님이 `py -3.12 work/naverpost.py login` 을 다시 해야 한다.')
+                    sys.exit(2)
+                print('로그인됨' if ok else '로그인 안 됨'); sys.exit(0 if ok else 2)
             if cmd == 'shot':
                 page.goto(sys.argv[2], wait_until='domcontentloaded'); page.wait_for_timeout(5000)
                 page.screenshot(path=sys.argv[3], full_page=True); print(sys.argv[3]); return

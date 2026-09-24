@@ -206,6 +206,58 @@ def dup_titles(kind, pages=4):
         seen.setdefault(t, set()).add(u)
     return {t: sorted(us) for t, us in seen.items() if len(us) > 1}
 
+# 제목이 달라도 같은 대상을 또 쓰는 것을 잡는다.
+# 2026-09-24: 03:46 "상계주공9단지 2,830세대 매매 5억 4,000부터…"와
+# 13:21 "상계주공9단지 8월 실거래 12건…"이 같은 날 나갔다. 제목 완전일치 검사로는 안 잡힌다.
+# 사장님 "상계주공만 왜 글을 쓰는 거야?"
+_STOP = set('서울 아파트 오피스텔 전세 월세 배당 실거래 매매 단지 수익률 기준 이유 경우 확인 계산 비교 정리'.split())
+
+# 약어는 대상이 아니다. 이걸 안 빼면 'ISA 연금저축'과 'ISA 배당'이 같은 대상으로 잡힌다.
+_NOTICKER = {'ETF', 'API', 'GDP', 'CPI', 'PPI', 'FOMC', 'EPS', 'PER', 'PBR', 'ROE', 'ISA', 'IRP',
+             'DSR', 'LTV', 'DTI', 'REIT', 'IPO', 'ETN', 'TDF', 'MMF', 'CMA', 'FED', 'EU', 'US'}
+
+def subject_keys(title):
+    """제목에서 '같은 대상'으로 볼 만한 말만 뽑는다 — 아파트 단지명과 종목 티커.
+    동네·구 이름은 넣지 않는다. 히트맵 시리즈가 매일 구 이름을 달고 나가는데 그걸 막으면 안 된다.
+    잘못 막는 쪽보다 못 막는 쪽이 낫다 — 잘못 막으면 발행이 멈춘다."""
+    ks = set()
+    for w in re.findall(r'[가-힣A-Za-z][가-힣A-Za-z0-9]+', title or ''):
+        if re.search(r'주공|자이|래미안|푸르지오|아이파크|힐스테이트|편한세상|캐슬|더샵|센트레빌|리버뷰|단지', w):
+            ks.add(w)                                            # 아파트 단지
+        elif re.fullmatch(r'[A-Z]{2,5}', w) and w not in _NOTICKER:
+            ks.add(w)                                            # 종목·ETF 티커
+    return ks
+
+def same_subject_today(kind, title):
+    """최근 글 중 같은 대상을 다룬 것. 있으면 [(제목, URL, 겹친 말)]."""
+    mine = subject_keys(title)
+    if not mine: return []
+    hits = []
+    for raw, url in _raw_recent(kind):
+        if norm(raw) == norm(title): continue      # 같은 글(재발행)은 already_up이 따로 잡는다
+        both = mine & subject_keys(raw)
+        if both: hits.append((raw, url, sorted(both)))
+    return hits
+
+def _raw_recent(kind, n=24):
+    """원제목 그대로의 최근 글 (제목, URL)."""
+    import urllib.request, urllib.parse
+    out = []
+    try:
+        if kind == 'blog':
+            u = (f'https://blog.naver.com/PostTitleListAsync.naver?blogId={BLOG_ID}'
+                 f'&viewdate=&currentPage=1&categoryNo=0&parentCategoryNo=&countPerPage=30')
+            s = urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=20).read().decode('utf-8', 'ignore')
+            out = [(urllib.parse.unquote_plus(t), f'https://blog.naver.com/{BLOG_ID}/{no}')
+                   for no, t in re.findall(r'"logNo":"(\d+)","title":"([^"]*)"', s)]
+        else:
+            u = (f'https://apis.naver.com/cafe-web/cafe2/ArticleListV2dot1.json?search.clubid={CAFE_ID}'
+                 f'&search.queryType=lastArticle&search.page=1&search.perPage={n}')
+            out = [(a.get('subject', ''), f'https://cafe.naver.com/ca-fe/cafes/{CAFE_ID}/articles/{a.get("articleId")}')
+                   for a in json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=20))['message']['result']['articleList']]
+    except Exception as e: print('최근 글 읽기 실패:', repr(e)[:120])
+    return out
+
 def already_up(kind, title):
     """이 제목이 이미 올라가 있으면 그 URL. 발행 직전과 실패 직후에 둘 다 본다."""
     return live_map(kind).get(norm(title))
@@ -520,6 +572,16 @@ def main():
             if up:
                 open(os.path.join(pkg, 'published.txt'), 'w', encoding='utf-8').write(up + '\n')
                 print('이미 올라가 있음 — 다시 올리지 않음'); print('URL', up); return
+            # 제목이 달라도 같은 대상을 또 쓰는 것을 막는다. 사장님 2026-09-24 "상계주공만 왜 글을 쓰는 거야?"
+            # 그날 03:46 "상계주공9단지 2,830세대 매매…"와 13:21 "상계주공9단지 8월 실거래…"가 같이 나갔다.
+            # 일부러 이어 쓰는 연재면 --same-ok 를 붙인다.
+            if '--same-ok' not in sys.argv:
+                dup = same_subject_today(cmd, title)
+                if dup:
+                    print('같은 대상을 최근에 이미 썼다 — 올리지 않는다. 편성표의 다음 슬롯으로 간다.')
+                    for t, u, keys in dup[:3]: print(f'  겹친 말 {keys} · {t[:46]} · {u}')
+                    print('이어 쓰는 연재가 맞으면 --same-ok 를 붙여 다시 실행한다.')
+                    sys.exit(3)
             url = post_blog(page, pkg, wait) if cmd == 'blog' else post_cafe(page, pkg, wait)
             open(os.path.join(pkg, 'published.txt'), 'w', encoding='utf-8').write(url + '\n')
             print('URL', url)

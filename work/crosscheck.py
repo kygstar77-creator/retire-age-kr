@@ -99,13 +99,17 @@ def gemini_pick(kv, prefer='pro'):
     return ids[-1]
 
 def gemini_candidates(kv, prefer='pro'):
-    ids = [i for i in gemini_models(kv) if not re.search(r'tts|image|embed|audio|live|omni|lite|robot|computer|customtools|thinking|exp', i)]
+    ids = [i for i in gemini_models(kv) if not re.search(r'tts|image|embed|audio|live|omni|robot|computer|customtools|thinking|exp', i)]
     def ver(i):
         m = re.search(r'gemini-(\d+(?:\.\d+)?)', i); return float(m.group(1)) if m else 0
-    pro = sorted([i for i in ids if 'pro' in i], key=lambda i: (ver(i), 'preview' not in i), reverse=True)
-    flash = sorted([i for i in ids if 'flash' in i], key=lambda i: (ver(i), 'preview' not in i), reverse=True)
-    if kv.get('MODEL'): return [kv['MODEL']] + flash[:3]
-    return (pro[:1] + flash[:4]) if prefer == 'pro' else flash[:4]
+    full = [i for i in ids if 'lite' not in i]
+    pro = sorted([i for i in full if 'pro' in i], key=lambda i: (ver(i), 'preview' not in i), reverse=True)
+    flash = sorted([i for i in full if 'flash' in i], key=lambda i: (ver(i), 'preview' not in i), reverse=True)
+    # lite는 품질이 낮아 앞에 두지 않지만, 무료 등급에서 pro·flash가 모두 429면 검증이 통째로 비는 것보다 낫다.
+    # 2026-09-24 14시 회차: pro·flash가 전부 429라 crosscheck가 두 묶음 연속으로 아무것도 못 냈다.
+    lite = sorted([i for i in ids if 'lite' in i], key=lambda i: (ver(i), 'preview' not in i), reverse=True)
+    if kv.get('MODEL'): return [kv['MODEL']] + flash[:3] + lite[:2]
+    return (pro[:1] + flash[:4] + lite[:2]) if prefer == 'pro' else flash[:4] + lite[:2]
 
 def gemini_chat(kv, system, user, prefer='pro'):
     # 무료 등급은 Pro 한도가 없거나 작고(429), 인기 모델은 한때 503이 난다(2026-09-23 실측). 후보를 차례로 시도하고 성공한 모델 이름을 돌려준다.

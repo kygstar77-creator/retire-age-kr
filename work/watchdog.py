@@ -74,7 +74,7 @@ def main():
         m = N.last_published_minutes(kind)
         rec['late'][kind] = None if m is None else round(m)
         if m is None: rec['alert'].append(f'{kind} 최근 발행 시각을 못 쟀다(RSS·API 실패)')
-        elif m > LATE_MIN and not quiet:
+        elif m > LATE_MIN and not (quiet and kind == 'blog'):
             rec['alert'].append(f'{kind} 마지막 발행이 {m/60:.1f}시간 전 — 회차를 놓쳤다')
 
     # 2) 미리 써 둔 묶음이 몇 개인가 — 0이면 다음 회차도 놓친다
@@ -89,8 +89,11 @@ def main():
     if gaps: rec['alert'].append('최근 글에 한 편도 없는 시리즈: ' + ', '.join(gaps))
 
     # 3) 빵꾸 메우기 — 늦었고, 올릴 묶음이 있으면 지금 올린다
-    need = [] if quiet else [k for k in ('blog', 'cafe')
-                             if (rec['late'][k] or 0) > LATE_MIN and any(x['kind'] == k for x in pend)]
+    # 쉬는 시간대(2~7시)에 쉬는 것은 **블로그뿐**이다. 카페는 24시간 간다
+    # (2026-09-25 사장님 "카페는 그대로 24시간 아니었어?" — 카페는 색인이 정상이라 줄일 이유가 없다).
+    kinds = ['cafe'] if quiet else ['blog', 'cafe']
+    need = [k for k in kinds
+            if (rec['late'][k] or 0) > LATE_MIN and any(x['kind'] == k for x in pend)]
     if need and not check_only:
         # 잠금은 여기서 잡지 않는다. naverpost.py가 launch()에서 스스로 잡는다.
         # 감시기가 먼저 잡으면 제 자식을 막아 15분을 기다리다 실패한다(2026-09-23 18:49 실제 발생).

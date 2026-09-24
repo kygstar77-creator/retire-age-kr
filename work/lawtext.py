@@ -80,10 +80,29 @@ def label(a):
 
 
 def main():
-    args = [x for x in sys.argv[1:] if not x.startswith('--')]
+    # --find/--out 뒤의 값은 위치 인자가 아니다. 예전에는 이것까지 법령 이름으로 세어
+    # 'soc 소득세법 시행령 1월 15일'처럼 붙었다.
+    argv, args, skip = sys.argv[1:], [], False
+    for x in argv:
+        if skip:
+            skip = False
+            continue
+        if x in ('--find', '--out'):
+            skip = True
+            continue
+        if x.startswith('--'):
+            continue
+        args.append(x)
     if not args:
         raise SystemExit(__doc__)
+    # 법령 이름에 띄어쓰기가 있으면(예: "소득세법 시행령") 셸이 인자를 쪼개 보낸다.
+    # 예전에는 args[0]만 써서 "소득세법 시행령"을 조용히 "소득세법"으로 바꿔 엉뚱한 법을 읽었다
+    # (2026-09-24 12:30 회차에서 실제로 당함). 조문 번호가 아닌 인자는 이름에 이어 붙인다.
     law = args[0]
+    rest = args[1:]
+    while rest and not re.fullmatch(r'\d+(-\d+)?', rest[0]):
+        law += ' ' + rest.pop(0)
+    args = [law] + rest
     out_path = None
     if '--out' in sys.argv:
         out_path = sys.argv[sys.argv.index('--out') + 1]

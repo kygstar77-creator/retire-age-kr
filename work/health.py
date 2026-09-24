@@ -191,12 +191,18 @@ def main():
     bq = open(os.path.join(R, 'build-queue.md'), encoding='utf-8').read() if os.path.exists(os.path.join(R, 'build-queue.md')) else ''
     M.append(('도구', '만들기 대기열 미완', len(re.findall(r'^\d+\.', bq, re.M)) - bq.count('완료'), 0, 2, 'firemap-improve C 회차가 위에서부터 만든다'))
 
+    # 루틴 권한 밖의 항목 — 사장님만 움직일 수 있다(키 발급·계정 가입·영상 공개 전환).
+    # 이 둘은 점수가 높아도 회차가 닫을 수 없어, 일감표 1순위를 매번 차지하면서
+    # 정작 루틴이 고칠 수 있는 항목(대기 묶음·안 쓰는 도구)을 밀어냈다(2026-09-24 19시 확인:
+    # '사람 손 필요 항목' 4.0이 =변화없음으로 며칠째 1순위). 계기판에는 그대로 두되 주인을 표시한다.
+    HUMAN = {'사람 손 필요 항목', '공개한 영상 수(최근 10편 중)'}
     rows = []
     for area, name, val, tgt, w, how in M:
         if val is None: continue
         gap = 0.0 if tgt == 0 and val == 0 else (abs(val - tgt) / max(abs(tgt), 1) if val < tgt or tgt == 0 else 0.0)
         if tgt == 0: gap = float(val)
-        rows.append({'area': area, 'name': name, 'value': val, 'target': tgt, 'weight': w, 'gap': round(gap, 3), 'score': round(gap * w, 3), 'how': how})
+        rows.append({'area': area, 'name': name, 'value': val, 'target': tgt, 'weight': w, 'gap': round(gap, 3), 'score': round(gap * w, 3), 'how': how,
+                     'owner': '사람' if name in HUMAN else '루틴'})
     rows.sort(key=lambda r: -r['score'])
     out = {'at': time.strftime('%Y-%m-%d %H:%M'), 'items': rows}
     json.dump(out, open(os.path.join(HERE, 'health.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

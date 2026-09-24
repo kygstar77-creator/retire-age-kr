@@ -53,7 +53,10 @@ def main():
             if ns is None: continue
             verdict.append(f"{name} {ps} → {ns} " + ('↓해결중' if ns < ps - 1e-9 else ('=변화없음' if abs(ns - ps) < 1e-9 else '↑나빠짐')))
 
-    todo = [i for i in items if i['score'] > 0]
+    # 일감은 '루틴이 닫을 수 있는 것'만 고른다. 사장님만 움직일 수 있는 항목(owner='사람')은
+    # 점수가 높아도 회차가 못 닫아 매번 1순위를 차지했다 — 아래 별도 칸으로 내리고 보고가 챙긴다.
+    todo = [i for i in items if i['score'] > 0 and i.get('owner', '루틴') != '사람']
+    waiting = [i for i in items if i['score'] > 0 and i.get('owner') == '사람']
     picked = todo[:5]
 
     # 기계로 되는 건 지금 돌린다
@@ -62,7 +65,11 @@ def main():
         fn = AUTO.get(p['name'])
         if fn:
             out = fn(); ran.append(f"{p['name']}: {out.strip().splitlines()[-1][:90] if out.strip() else '(출력 없음)'}")
-    if ran: sh(os.path.join(HERE, 'health.py'), timeout=1200); h = load(HEALTH, h); items = h.get('items', []); todo = [i for i in items if i['score'] > 0]; picked = todo[:5]
+    if ran:
+        sh(os.path.join(HERE, 'health.py'), timeout=1200); h = load(HEALTH, h); items = h.get('items', [])
+        todo = [i for i in items if i['score'] > 0 and i.get('owner', '루틴') != '사람']
+        waiting = [i for i in items if i['score'] > 0 and i.get('owner') == '사람']
+        picked = todo[:5]
 
     # 일감표 — 다음 회차 루틴이 이걸 맨 먼저 읽는다
     lines = [f'# 일감표 (selfloop {time.strftime("%Y-%m-%d %H:%M")} 자동 생성 — 사람이 고치지 않는다)', '',
@@ -71,6 +78,9 @@ def main():
     for i, p in enumerate(picked, 1):
         lines.append(f"{i}. **[{p['area']}] {p['name']}** — 지금 {p['value']} / 목표 {p['target']} (점수 {p['score']})")
         lines.append(f"   - 어떻게: {p['how']}")
+    if waiting:
+        lines += ['', '## 사장님만 할 수 있는 것 (루틴은 못 닫는다 — 12:30 보고가 챙긴다)',
+                  *[f"- [{w['area']}] {w['name']} — 지금 {w['value']} / 목표 {w['target']} · {w['how']}" for w in waiting]]
     lines += ['', '## 지난 회차 판정', *([f'- {v}' for v in verdict] or ['- (첫 회차)']),
               '', '## 기계로 이미 돌린 것', *([f'- {r}' for r in ran] or ['- 없음']),
               '', '## 전체 계기판', '| 점수 | 영역 | 항목 | 지금 | 목표 |', '|---|---|---|---|---|',
@@ -82,6 +92,7 @@ def main():
     log.append(rec); json.dump(log[-300:], open(LOG, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(f"[마스터 루프] {rec['sec']}초 · 전체 부족분 점수 {rec['total_score']}")
     for p in picked: print(f"  → [{p['area']}] {p['name']} {p['value']}/{p['target']} (점수 {p['score']})")
+    for w in waiting: print(f"  (사장님) [{w['area']}] {w['name']} {w['value']}/{w['target']}")
     for v in verdict: print('  판정:', v)
     for r in ran: print('  실행:', r)
     print('  일감표:', WORK)

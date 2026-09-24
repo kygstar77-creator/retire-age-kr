@@ -10,9 +10,9 @@
   "text_scale": 1.0,
   "text_spread": 0.45,
   "bg_sat": 1.4056,
-  "text_tint": 1.0,
+  "text_tint": 0.7,
   "lines": 3,
-  "split_scale": 2.0,
+  "split_scale": 1.0,
   "yellow_tint": 0.4497,
   "tint_v": 0.75
  },

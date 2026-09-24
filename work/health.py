@@ -133,6 +133,24 @@ def main():
         M.append(('디자인', '한계 확정(사람 눈으로 정함)', len(capped), len(capped), 0,
                   '다시 밀지 않는다 · 지금: ' + ', '.join(sorted(capped))))
 
+    # 회차 자체가 멈췄나. 2026-09-24: 감시기 회차 하나가 새벽 3:52에 시작해 16시간 23분 동안
+    # 안 끝났고, 예약은 앞 회차가 끝나야 다음을 돌리므로 그동안 감시기가 한 번도 안 돌았다.
+    # 원고 재고를 채우는 유일한 장치가 멈춘 것인데 아무도 몰랐다. 사장님이 물어서야 찾았다.
+    try:
+        sys.path.insert(0, HERE)
+        import beat
+        st = beat.stuck()
+        M.append(('회차', '예산 시간을 넘겨 멈춘 회차', len(st), 0, 3,
+                  '예약 목록에서 running인 세션을 끊고(stop_session) 그 회차를 다시 돌린다'
+                  + (' · 지금: ' + ', '.join(f'{t} {m}분' for t, m, _ in st[:3]) if st else '')))
+        d = beat.load() or {}
+        old_t = [t for t in beat.BUDGET
+                 if not d.get(t, {}).get('start') or (time.time() - d[t]['start']) / 3600 > 6]
+        M.append(('회차', '6시간 넘게 맥박 없는 회차', len(old_t), 0, 2,
+                  '그 회차 지시문에 beat.py start/end 가 들어 있는지 확인'
+                  + (' · 지금: ' + ', '.join(old_t[:4]) if old_t else '')))
+    except Exception as e: print('회차 맥박 점검 실패:', repr(e)[:90])
+
     # 만들어 놓고 아무 회차도 안 부르는 도구가 있나.
     # 2026-09-24 하루에만 이 패턴이 네 번 나왔다 — 오피스텔 단지표·건축물대장·유튜버 시리즈 조사,
     # 그리고 발굴 종목(결과를 파일로 안 남겨 분석이 못 썼다). 전부 사장님이 지적해서 알았다.

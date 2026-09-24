@@ -463,7 +463,7 @@ def post_cafe(page, pkg, wait=False):
     verify_body(frame, seq, '카페')
     shot(page, 'cafe_body')
     set_cafe_public(page)
-    return submit_cafe(page)
+    return submit_cafe(page, title)
 
 def set_cafe_public(page):
     """공개 설정을 전체공개로. 라디오(name=public value=true)는 비활성이 아니다 — 2026-09-22 프로브로 확인.
@@ -481,16 +481,36 @@ def set_cafe_public(page):
     print('전체공개:', '선택됨' if ok else '선택 실패')
     return ok
 
-def submit_cafe(page):
+def submit_cafe(page, title=None):
     page.get_by_role('button', name=re.compile(r'^\s*등록\s*$')).first.click()   # '임시등록'이 아니라 '등록'만
     # 전체공개면 "이 글은 전체공개로 설정되어 있어요 ... 계속할까요?" 확인 창이 뜬다(2026-09-22 실측) → 확인
+    # 2026-09-25: 예전에는 is_visible(timeout=3000)으로 봤다. Playwright의 is_visible은 즉시 판정이라
+    # 창이 뜨기 전에 False가 나오고, 인자를 넘기면 예외가 나 except로 통째로 넘어갔다.
+    # 그러면 확인 창이 그대로 남아 등록이 안 되고 30초 뒤 이동 실패로만 보인다. wait_for로 제대로 기다린다.
     try:
-        dlg = page.get_by_text('전체공개로 설정', exact=False).first
-        if dlg.is_visible(timeout=3000):
-            page.get_by_role('button', name=re.compile(r'^\s*확인\s*$')).last.click(); page.wait_for_timeout(500)
+        page.get_by_text('전체공개로 설정', exact=False).first.wait_for(state='visible', timeout=5000)
+        page.get_by_role('button', name=re.compile(r'^\s*확인\s*$')).last.click()
+        page.wait_for_timeout(500)
     except Exception: pass
     # 등록 뒤 ArticleRead.nhn?...&articleid=NN 또는 .../articles/NN 또는 /firemap/NN 으로 이동한다
-    page.wait_for_url(re.compile(r'articleid=\d+|articles/\d+|cafe\.naver\.com/firemap/\d+', re.I), timeout=30000)
+    try:
+        page.wait_for_url(re.compile(r'articleid=\d+|articles/\d+|cafe\.naver\.com/firemap/\d+', re.I), timeout=30000)
+    except Exception as e:
+        # 블로그에는 RSS로 실제 등록 여부를 되짚는 길이 있는데 카페에는 없었다(2026-09-25 회차에서 막힘).
+        # 화면만 보고 실패로 접으면 이미 올라간 글을 다음 회차가 또 올린다. 목록으로 확인한다.
+        print('등록 후 이동 실패 — 카페 목록으로 실제 등록 여부를 확인한다:', repr(e)[:100])
+        shot(page, 'cafe_after_submit')
+        if title:
+            for _ in range(6):
+                page.wait_for_timeout(5000)
+                try:
+                    up = already_up('cafe', title)
+                except Exception:
+                    up = None
+                if up:
+                    print('카페 목록에서 등록 확인:', up)
+                    return up
+        raise
     m = re.search(r'articleid=(\d+)', page.url, re.I) or re.search(r'articles/(\d+)', page.url) or re.search(r'firemap/(\d+)', page.url)
     return f'https://cafe.naver.com/firemap/{m.group(1)}' if m else page.url
 
@@ -590,6 +610,13 @@ def verify_published(page, pkg):
 
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'check'
+    # pending은 브라우저가 필요 없다 — live_pairs()가 평범한 HTTP로 올라간 제목을 받아 온다.
+    # 그런데도 launch()를 거치느라 브라우저 잠금을 잡고 있었다. 2026-09-25 01:55 실측:
+    # 잠금 주인이 pending(PID 919404)이었고, 그 뒤에서 blog 발행이 15분을 기다리다 시간 초과로 죽었다.
+    # 회차마다 pending을 부르는 루틴이 여럿이라 발행이 계속 굶었다(0편 회차의 원인).
+    if cmd == 'pending':
+        for x in list_pending(): print(json.dumps({k: v for k, v in x.items() if k != 'mtime'}, ensure_ascii=False))
+        return
     with sync_playwright() as p:
         if cmd == 'login':
             ctx = launch(p, headless=False); page = ctx.new_page()
@@ -607,9 +634,6 @@ def main():
         try:
             if cmd == 'check':
                 ok = logged_in(page); print('로그인됨' if ok else '로그인 안 됨'); sys.exit(0 if ok else 2)
-            if cmd == 'pending':
-                for x in list_pending(): print(json.dumps({k: v for k, v in x.items() if k != 'mtime'}, ensure_ascii=False))
-                return
             if cmd == 'shot':
                 page.goto(sys.argv[2], wait_until='domcontentloaded'); page.wait_for_timeout(5000)
                 page.screenshot(path=sys.argv[3], full_page=True); print(sys.argv[3]); return

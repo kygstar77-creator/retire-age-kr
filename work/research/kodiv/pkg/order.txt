@@ -3,8 +3,10 @@
 img/01.png
 c00.txt
 c01.txt
+img/02.png
 c02.txt
 c03.txt
 c04.txt
+img/03.png
 c05.txt
 게시판: 자유게시판

@@ -41,7 +41,7 @@ except Exception: SGG = {}
 def sgg_of(r):
     return r.get('sggNm') or SGG.get(str(r.get('sggCd', '')).strip())
 
-def price_change(min_pairs=5):
+def price_change(min_pairs=5, offi=False):
     """구 전체의 평당가 등락률. 같은 단지·같은 5㎡ 면적대끼리 첫 달과 끝 달을 견주고,
     거래가 많은 단지에 무게를 더 준다(사장님 2026-09-24 "저 등락률은 구 전체의 등락률").
 
@@ -51,14 +51,17 @@ def price_change(min_pairs=5):
       단지·면적대를 맞추면          양천  +2.6%   (서울 전체가 -1% ~ +5% 안으로 들어옴)
     앞의 두 값은 글에 쓰면 거짓이 된다."""
     cell = collections.defaultdict(lambda: collections.defaultdict(list))
+    # 오피스텔도 같은 식으로 잰다. 사장님 2026-09-24 "오피스텔도 평당가로 해야 하는 거 아니야".
+    # 오피스텔은 단지 이름이 aptNm이 아니라 offiNm 으로 온다.
     for f in glob.glob(os.path.join(HERE, 'research', 'rt', '*_trade.json')):
-        if '_offi_' in os.path.basename(f): continue
+        is_offi = '_offi_' in os.path.basename(f)
+        if is_offi != offi: continue
         ym = os.path.basename(f).split('_')[1]
         try: rows = json.load(open(f, encoding='utf-8'))
         except Exception: continue
         for r in rows:
             g = sgg_of(r); ar = num(r.get('excluUseAr')); a = num(r.get('dealAmount'))
-            nm = (r.get('aptNm') or '').strip()
+            nm = ((r.get('offiNm') if offi else r.get('aptNm')) or '').strip()
             if not g or not nm or ar <= 0 or a <= 0: continue
             cell[(g, nm, int(ar // 5 * 5))][ym].append(a / (ar / 3.3058))
     months = sorted({m for v in cell.values() for m in v})
@@ -74,7 +77,7 @@ def price_change(min_pairs=5):
 
 def gather(kind):
     """구별 지표를 낸다. 같은 구·같은 5㎡ 면적대끼리만 짝지어 계산한다(면적이 섞이면 뜻이 없다)."""
-    if kind == 'offi': tr, rt = load('*_offi_trade.json'), load('*_offi_rent.json')
+    if kind in ('offi', 'offiprice'): tr, rt = load('*_offi_trade.json'), load('*_offi_rent.json')
     else:              tr, rt = load('*_trade.json', drop_offi=True), load('*_rent.json', drop_offi=True)
     T, R = collections.defaultdict(list), collections.defaultdict(list)
     for r in tr:
@@ -93,7 +96,7 @@ def gather(kind):
             js = [d for d, m in rs if m == 0]                       # 전세만
             if len(js) < 3 or mm <= 0: continue
             per[sgg].append(statistics.median(js) / mm * 100)
-        elif kind == 'price':
+        elif kind in ('price', 'offiprice'):
             ar = key[1] + 2.5
             if ar <= 0: continue
             per[sgg].append(mm / (ar / 3.3058))                     # 평당 만원
@@ -109,7 +112,8 @@ def gather(kind):
 LABEL = {'jeonse': ('아파트 전세가율', '%', '전세 중앙값 ÷ 매매 중앙값'),
          'yield':  ('아파트 월세 수익률', '%', '월세×12 ÷ (매매−보증금)'),
          'offi':   ('오피스텔 월세 수익률', '%', '월세×12 ÷ (매매−보증금)'),
-         'price':  ('아파트 평당 매매가', '만원', '매매 중앙값 ÷ 평')}
+         'price':  ('아파트 평당 매매가', '만원', '매매 중앙값 ÷ 평'),
+         'offiprice': ('오피스텔 평당 매매가', '만원', '매매 중앙값 ÷ 평')}
 
 SEOUL = set(SGG.values())          # seoul_sgg.json의 구 이름 25개
 
@@ -133,11 +137,14 @@ def main():
     if not vals: print('자료가 모자라 그릴 수 없다 — work/research/rt/ 에 실거래 원자료가 있는지 본다'); return
     title = f'{area_name(vals)} {title}'            # 이름은 실제 그린 지역으로
 
-    if kind == 'price':
+    if kind in ('price', 'offiprice'):
         # 사장님 2026-09-23: "부동산은 주식과 달리 구역별로 가치가 명확히 나뉜다.
         #   시총을 못 구해도 값어치로 보면 등수가 정해진다."
         # 그래서 이 그림만 크기 = 평당가(그 구의 급지), 색 = 평당가 등락률로 그린다.
-        chg, months, pairs = price_change()
+        chg, months, pairs = price_change(offi=(kind == 'offiprice'))
+        # vals는 --seoul 로 걸렀는데 chg는 안 걸러, 화면에 찍는 '등락률 중앙값'이
+        # 경기까지 섞인 값으로 나왔다(2026-09-24: 지역 25곳인데 '구한 곳 46곳').
+        chg = {k: v for k, v in chg.items() if k in vals}
         # 구 이름을 그대로 쓴다(사장님 2026-09-24 "구도 붙여").
         # 등락률을 못 구한 구는 0%(회색)로 그리면 '변동 없음'과 구분이 안 된다 → 글자로 밝힌다.
         rows = [{'sym': k, 'sector': '서울', 'cap': v,
@@ -145,10 +152,11 @@ def main():
                  'label': (f'{v:,.0f}만원 {chg[k]:+.1f}%' if k in chg else f'{v:,.0f}만원 (등락 자료 부족)')}
                 for k, v in vals.items()]
         day = time.strftime('%Y-%m-%d'); os.makedirs(OUT, exist_ok=True)
-        out = out or os.path.join(OUT, f'heatmap_re_price_{day}.png')
+        out = out or os.path.join(OUT, f'heatmap_re_{kind}_{day}.png')
         span = f'{months[0]}→{months[-1]}' if months else ''
-        HM.draw(rows, out, f'{area_name(vals)} 아파트 평당 매매가 {day} · 크기=평당가, 색={span} 등락률(같은 단지·같은 면적대)')
-        print(f'{area_name(vals)} 아파트 평당 매매가 — 크기는 평당가, 색은 같은 면적대끼리 견준 등락률')
+        what = '오피스텔' if kind == 'offiprice' else '아파트'
+        HM.draw(rows, out, f'{area_name(vals)} {what} 평당 매매가 {day} · 크기=평당가, 색={span} 등락률(같은 단지·같은 면적대)')
+        print(f'{area_name(vals)} {what} 평당 매매가 — 크기는 평당가, 색은 같은 면적대끼리 견준 등락률')
         print(f'  지역 {len(vals)}곳 · 평당가 중앙 {statistics.median(vals.values()):,.0f}만원 · '
               f'등락률 중앙 {statistics.median(chg.values()):+.1f}% (구한 곳 {len(chg)}곳) · 그림 {out}')
         for k, v in sorted(vals.items(), key=lambda kv: -kv[1])[:5]:

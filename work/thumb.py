@@ -135,7 +135,10 @@ def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
     szs = [sz] * len(parts)
     if len(parts) == 3:
         # 나눈 두 줄은 짧아져서 폭에 여유가 생긴다 — 그 여유만큼 키운다(split_scale, 1.0이면 안 키움).
-        ss = min(max(float(c.get('split_scale', 1.0)), 1.0), 2.0)
+        # 윗한계 2.0은 임의로 박아 둔 값이었다 — loop 72회차까지 격자 최선이 늘 끝점 2.0 에 붙어
+        # "유지(가장 작다)"로 보고되며 short 판형 오차가 0.2653 에 얼어 있었다(2026-09-24 확인).
+        # 진짜 한계는 아래 fit(...) 폭 맞춤이므로 판을 넘치게 하지 않는다. 그래서 윗한계를 3.2 로 넓힌다.
+        ss = min(max(float(c.get('split_scale', 1.0)), 1.0), 3.2)
         for i in (1, 2): szs[i] = max(sz, min(fit(dr, parts[i], maxw).size, int(sz * ss)))
     fonts = [disp(x) for x in szs]; lhs = [int(x * 1.18) for x in szs]
     cy = int(min(max(c['text_y'], 0.15), 0.80) * H)   # 글자 세로 가운데. loop.py가 실측 차이를 보고 움직인다

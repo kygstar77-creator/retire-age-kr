@@ -115,7 +115,14 @@ BAND_GRID = {'long':  [0.20, 0.35, 0.50, 0.62, 0.72, 0.80],
 # 그래서 아랫줄을 띄어쓰기에서 둘로 나눠 세 칸을 채우고(thumb.lines=3), 나뉘어 짧아진 두 줄을
 # 폭 여유만큼 키우는 split_scale 을 두 번째 손잡이로 뒀다. 실측(lines=3): 1.0 → bot 0.1091,
 # 1.3 → 0.1565, 1.6 → 0.2144, 2.0 → 0.3035(세 칸 오차 합 0.8496 → 0.4092; 두 줄 판형 최선은 0.7165).
-BAND_KNOB2 = {'short': ('split_scale', [1.0, 1.3, 1.6, 2.0])}
+BAND_KNOB2 = {'short': ('split_scale', [1.0, 1.3, 1.6, 2.0, 2.4, 2.8])}
+# 격자 끝점에 최선이 붙으면 "유지(가장 작다)"는 수렴이 아니라 격자가 짧다는 뜻이다.
+# split_scale 은 72회차까지 늘 끝점 2.0 이 최선이었고(오차 1.0121→0.728→0.5784→0.2653, 계속 내려감)
+# 그릴 때 thumb.py 가 2.0 으로 깎고 있어 판형 오차가 0.2653 에 얼어 있었다(2026-09-24).
+# 그래서 (1) thumb.py 한계를 3.2 로 넓히고 (2) 끝점에 붙으면 아래 한계까지 격자를 저절로 늘린다.
+KNOB_LIMIT = {'text_spread': (0.0, 1.0),      # thumb.py 가 0~1 로 깎는다
+              'text_y':      (0.15, 0.80),    # thumb.py 가 0.15~0.80 으로 깎는다
+              'split_scale': (1.0, 3.2)}      # thumb.py 윗한계와 같게 유지한다
 
 def band_err(rows, kind, spec):
     """세 칸 상대오차 합. 작을수록 경쟁 판형에 가깝다"""
@@ -144,23 +151,51 @@ def grid_pick(design, spec, kind, knob, base_grid, did, blocked):
     if cur is None:
         cur = float(THUMB_DEFAULT.get(kind, {}).get(knob, 0.0))
     grid = sorted(set(base_grid + [round(float(cur), 4)]))
-    best, table = None, []
-    for v in grid:
-        d[knob] = v
-        json.dump(design, open(DESIGN, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-        render_samples(keep_chart=True)
-        err, got = band_err(measure_ours(), kind, spec)
-        if err is None:
-            blocked.append(f'{kind} 세 칸 맞추기 — 샘플이나 경쟁 기준이 없어 못 쟀다'); d[knob] = cur; return
-        table.append({'v': v, 'err': round(err, 4), **{k: round(x, 4) for k, x in got.items()}})
-        if best is None or err < best['err'] - 1e-9: best = table[-1]
+    table, failed = [], []
+
+    def measure(vals):
+        """격자 점들을 실제로 그려 재서 table 에 넣는다. 못 재면 failed 에 표시한다"""
+        for v in vals:
+            if any(abs(t['v'] - v) < 1e-9 for t in table): continue
+            d[knob] = v
+            json.dump(design, open(DESIGN, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+            render_samples(keep_chart=True)
+            err, got = band_err(measure_ours(), kind, spec)
+            if err is None: failed.append(v); return
+            table.append({'v': v, 'err': round(err, 4), **{k: round(x, 4) for k, x in got.items()}})
+        table.sort(key=lambda t: t['v'])
+
+    measure(grid)
+    if failed or not table:
+        blocked.append(f'{kind} 세 칸 맞추기 — 샘플이나 경쟁 기준이 없어 못 쟀다'); d[knob] = cur; return
+    pick = lambda: min(table, key=lambda t: t['err'])
+
+    # 끝점에 최선이 붙어 있으면 수렴이 아니다 — 한계까지 격자를 늘려 실제로 넘어가 본다.
+    lo_lim, hi_lim = KNOB_LIMIT.get(knob, (None, None))
+    for _ in range(3):
+        best, vs = pick(), [t['v'] for t in table]
+        step = max((round(b - a, 4) for a, b in zip(vs, vs[1:])), default=0) or 0.1
+        if abs(best['v'] - vs[-1]) < 1e-9 and hi_lim is not None and vs[-1] < hi_lim - 1e-9:
+            nxt = [round(min(vs[-1] + step * i, hi_lim), 4) for i in (1, 2)]
+        elif abs(best['v'] - vs[0]) < 1e-9 and lo_lim is not None and vs[0] > lo_lim + 1e-9:
+            nxt = [round(max(vs[0] - step * i, lo_lim), 4) for i in (1, 2)]
+        else:
+            break                                   # 안쪽에서 최선이 나왔다 = 진짜 수렴
+        measure(sorted(set(nxt)))
+        if failed: break
+        did.append(f'{kind}.{knob} 격자 끝점({best["v"]})에 최선이 붙어 한계 {hi_lim if nxt[0] > best["v"] else lo_lim} 쪽으로 {nxt} 를 더 재 봤다')
+    best = pick()
+    vs = [t['v'] for t in table]
+    if abs(best['v'] - vs[-1]) < 1e-9 and hi_lim is not None and abs(vs[-1] - hi_lim) < 1e-9:
+        # 한계까지 갔는데도 끝점이 최선이다 — 격자가 아니라 그리기 한계가 막고 있다. 숨기지 않고 남긴다.
+        blocked.append(f'{kind}.{knob} 가 그리기 한계 {hi_lim} 에서 멈췄다 — 오차 {best["err"]} 는 손잡이를 더 넓혀야 줄어든다')
     d[knob] = best['v']
     json.dump(design, open(DESIGN, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     if best['v'] != cur:
         was = next((t for t in table if t['v'] == cur), None)
-        did.append(f"{kind}.{knob} {cur} → {best['v']} (세 칸 오차 합 {was['err'] if was else '?'} → {best['err']}, 격자 {len(grid)}점 실측)")
+        did.append(f"{kind}.{knob} {cur} → {best['v']} (세 칸 오차 합 {was['err'] if was else '?'} → {best['err']}, 격자 {len(table)}점 실측)")
     else:
-        did.append(f"{kind}.{knob} {cur} 유지 (격자 {len(grid)}점 중 오차 합 {best['err']} 이 가장 작다)")
+        did.append(f"{kind}.{knob} {cur} 유지 (격자 {len(table)}점 중 오차 합 {best['err']} 이 가장 작다)")
     return table
 
 

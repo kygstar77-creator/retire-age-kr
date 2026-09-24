@@ -74,15 +74,23 @@ def shot(page, name):
     path = os.path.join(SHOTS, name + '.png'); page.screenshot(path=path, full_page=False); return path
 
 def logged_in(page, deep=True):
-    """쿠키 이름만 보면 만료를 못 잡는다.
-    2026-09-24: 쿠키는 남아 있어 check가 '로그인됨'으로 통과했는데 글 수정 화면은 로그인을 요구했다.
-    저장된 쿠키가 이틀 전(09-22 15:43) 것이었다. 그 사이 발행 회차들이 계속 실패하며 재시도해
-    같은 카페 글을 올리려는 프로세스가 4개 쌓였고, 발행이 두 시간 멈췄는데 아무도 몰랐다.
-    그래서 쿠키를 본 뒤 **로그인이 필요한 페이지를 실제로 열어** 본다."""
+    """쿠키도 화면도 못 믿는다. **쓰기 권한이 살아 있는지**를 본다.
+
+    2026-09-24: 쿠키 이름만 보다가 만료를 놓쳤다 → 글쓰기 화면을 열어 보게 고쳤다.
+    2026-09-25: 그것도 못 잡았다. 화면은 멀쩡히 열리고 제목·본문·사진까지 다 들어가는데
+    **등록을 누르는 순간**에만 "로그인이 필요합니다" 대화상자와 서버 500이 떴다.
+    그래서 카페가 10시간 넘게 "글은 다 쓰는데 등록만 안 되는" 상태로 멈춰 있었다.
+    이제 카페 글쓰기 권한 API를 직접 두드려 본다 — 로그인이 풀리면 여기서 바로 드러난다."""
     names = {c['name'] for c in page.context.cookies('https://www.naver.com')}
     if not ('NID_AUT' in names and 'NID_SES' in names): return False
     if not deep: return True
     try:
+        r = page.request.get(
+            f'https://apis.naver.com/cafe-web/cafe-editor-api/v1/cafes/{CAFE_ID}/menus/write-info',
+            headers={'Referer': f'https://cafe.naver.com/ca-fe/cafes/{CAFE_ID}/articles/write'})
+        if r.status in (401, 403): return False
+        if r.status < 400: return True
+        # 이 경로가 바뀌었을 수 있다. 그때는 글쓰기 화면으로 되짚는다(예전 방식).
         page.goto(f'https://blog.naver.com/{BLOG_ID}/postwrite', wait_until='domcontentloaded')
         page.wait_for_timeout(4000)
         return 'nidlogin' not in page.url and 'nid.naver.com' not in page.url

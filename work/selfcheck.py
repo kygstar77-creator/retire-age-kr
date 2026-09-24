@@ -149,10 +149,15 @@ def main(pkg):
                              f'사실표에 없는 숫자 {sorted(extra)} · {s[:70]}'))
 
     # 2) 말투 — 실측 기준과 견준다
+    # 표 행과 소제목은 문장이 아니다. 숫자 검사(1)에는 그대로 두되 말투 통계에서는 뺀다.
+    # 2026-09-25: 표 두 개(52행·중앙 19자)가 산문 79문장(중앙 29자, 기준 안)을 20자로 끌어내려
+    # 멀쩡한 글에 '문장이 짧다'는 지적이 붙었다. 표가 많은 통계형 글은 늘 이렇게 걸린다.
+    prose = [s for s in ss if not s.startswith(('|', '#', '-'))] or ss
     lo, hi = TARGET[kind]['문장길이중앙']
-    med = statistics.median(len(s) for s in ss)
+    med = statistics.median(len(s) for s in prose)
     if not lo <= med <= hi:
         problems.append(('말투', 0, f'문장 길이 중앙값 {med:.0f}자 — 기준 {lo}~{hi}자. 긴 문장을 끊어야 한다'))
+    ss = prose
     n = len(ss)
     r_sum = sum(1 for s in ss if s.rstrip('.').endswith(('습니다', '입니다'))) / n
     lo, hi = TARGET[kind]['습니다비율']

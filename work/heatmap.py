@@ -12,7 +12,7 @@ from PIL import Image, ImageDraw, ImageFont
 HERE = os.path.dirname(os.path.abspath(__file__)); FD = os.path.join(HERE, 'fonts'); OUT = os.path.join(HERE, 'research', '_shots')
 H = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0) Chrome/126', 'Accept': 'application/json'}
 KO = {'Technology': '기술', 'Finance': '금융', 'Health Care': '헬스케어', 'Consumer Discretionary': '경기소비재', 'Consumer Staples': '필수소비재',
-      'Industrials': '산업재', 'Energy': '에너지', 'Utilities': '유틸리티', 'Real Estate': '부동산', 'Telecommunications': '통신', 'Basic Materials': '소재', 'Miscellaneous': '기타', '': '기타'}
+      'Industrials': '산업재', 'Energy': '에너지', 'Utilities': '유틸리티', 'Real Estate': '부동산', 'Telecommunications': '통신', 'ETF': 'ETF', 'Basic Materials': '소재', 'Miscellaneous': '기타', '': '기타'}
 
 def font(sz, bold=True):
     p = os.path.join(FD, 'pd700.ttf' if bold else 'pd500.ttf')
@@ -75,6 +75,25 @@ def nobl_holdings(top=25):
     if not rows: raise SystemExit('NOBL 보유 목록을 읽지 못했다 — 페이지 구조가 바뀌었는지 확인할 것')
     return [(a, b.replace('&amp;', '&'), float(c)) for a, b, c in rows][:top]
 
+def yahoo_fill(syms):
+    """스크리너(개별주)에 없는 티커를 Yahoo chart API로 채운다. ETF가 여기 해당한다.
+    2026-09-24: C8 '월배당 ETF 히트맵' 슬롯에서 12종이 전부 빠져 그림이 1종목만 나왔다.
+    ETF는 스크리너에 시총이 없으므로 면적은 균등하게 두고(cap=1), 색만 등락률로 칠한다.
+    면적을 시총처럼 보이게 하면 없는 숫자를 지어내는 셈이라 그렇게 하지 않는다."""
+    got = []
+    for t in syms:
+        try:
+            u = f'https://query1.finance.yahoo.com/v8/finance/chart/{t}?range=5d&interval=1d'
+            d = json.load(urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=25))['chart']['result'][0]
+            m = d['meta']; px = m.get('regularMarketPrice'); prev = m.get('chartPreviousClose') or m.get('previousClose')
+            if not px or not prev: continue
+            got.append({'sym': t, 'name': m.get('shortName') or t, 'cap': 1.0,
+                        'pct': (px / prev - 1) * 100, 'sector': 'ETF', 'price': px})
+        except Exception as e:
+            print(f'  {t} Yahoo 조회 실패: {e}')
+        time.sleep(0.3)
+    return got
+
 def main():
     args = sys.argv[1:]; n = 110; only = None; out = None
     i = 0
@@ -95,9 +114,20 @@ def main():
     if only:
         sel = [r for r in rows if r['sym'] in only]
         miss = [s for s in only if s not in {r['sym'] for r in rows}]
-        if miss: print('스크리너에 없는 티커(그림에서 빠짐):', ','.join(miss))
-        if not sel: raise SystemExit('지정한 티커가 스크리너에 하나도 없다 — 티커 철자를 확인할 것')
-        title = f'미국 주식 {len(sel)}종목 등락 ({asof} 기준, 자료 Nasdaq)'
+        if miss:
+            print('스크리너에 없는 티커 — Yahoo로 보충:', ','.join(miss))
+            add = yahoo_fill(miss)
+            sel += add
+            still = [s2 for s2 in miss if s2 not in {r['sym'] for r in add}]
+            if still: print('끝내 못 받은 티커(그림에서 빠짐):', ','.join(still))
+        if not sel: raise SystemExit('지정한 티커를 스크리너·Yahoo 어디서도 받지 못했다 — 티커 철자를 확인할 것')
+        if any(r['sector'] == 'ETF' for r in sel):
+            # ETF는 시총을 받을 수 없어 면적이 0픽셀로 찌그러진다(개별주 시총과 자릿수가 다르다).
+            # 섞인 목록은 면적을 균등하게 두고 색(등락률)만 읽게 한다 — 면적에 없는 뜻을 싣지 않는다.
+            for r in sel: r['cap'] = 1.0
+            title = f'{len(sel)}종목 등락 ({asof} 기준, 자료 Nasdaq·Yahoo / 네모 크기 같음, 색만 등락률)'
+        else:
+            title = f'미국 주식 {len(sel)}종목 등락 ({asof} 기준, 자료 Nasdaq)'
     else:
         sel = sorted(rows, key=lambda r: -r['cap'])[:n]; title = f'미국 시총 상위 {len(sel)}개 등락 ({asof} 기준, 자료 Nasdaq)'
     os.makedirs(OUT, exist_ok=True); out = out or os.path.join(OUT, f'heatmap_{asof}.png')

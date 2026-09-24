@@ -233,13 +233,24 @@ def tune_bands(design, spec, kind, did, blocked):
     return table
 
 
+# 사람이 눈으로 보고 정한 한계. 숫자로는 더 갈 수 있지만 가면 썸네일이 제 일을 못 한다.
+# 여기 적힌 자리에 손잡이가 붙어 막히면 그건 '아직 못 푼 숙제'가 아니라 '풀지 않기로 한 것'이다.
+# 2026-09-24: 이 둘이 계기판의 '미해결 차이 수'에 계속 잡혀, 회차마다 이미 끝난 판단을 다시 뒤지게 만들었다
+# (75회차가 text_tint 를 1.0 까지 올렸다가 화면 검증에서 되돌린 것이 그 결과다). 갈라 센다.
+CAPPED = {
+    ('short', 'white'):    ('text_tint', 0.7,
+                            '2026-09-24 화면 검증 — 0.85·1.0 에서는 글자가 흰빛을 잃고 잿빛 파랑으로 죽는다'),
+    ('short', 'contrast'): ('tint_v', 0.75,
+                            '2026-09-24 화면 검증 — 0.6 은 숫자로는 목표에 맞는데 글자가 회색으로 죽는다'),
+}
+
 def main():
     global THUMB_DEFAULT
     THUMB_DEFAULT = thumb_defaults()
     if not take_lock(): return
     t0 = time.time(); log = load(LOG, []); design = load(DESIGN, DEFAULT)
     step = design.get('step', 0) + 1
-    did, blocked = [], []
+    did, blocked, capped = [], [], []
 
     # 1) 수집 — 경쟁(하루 한 번이면 충분하므로 마지막 수집이 12시간 넘었을 때만)
     last = log[-1]['at'] if log else '2000-01-01 00:00'
@@ -438,7 +449,13 @@ def main():
         else:
             new = round(new, 4) if isinstance(cur, float) else int(round(new))
         if new == cur:
-            if cur in (lo, hi): blocked.append(f"{g['kind']}.{g['key']} — {knob} 가 한계 {cur} 에 붙어 더 못 감, 다른 손잡이가 필요")
+            if cur in (lo, hi):
+                cap = CAPPED.get((g['kind'], g['key']))
+                if cap and cap[0] == knob and abs(cur - cap[1]) < 1e-9:
+                    capped.append(f"{g['kind']}.{g['key']} — {knob} 는 {cur} 에서 멈추기로 정했다: {cap[2]}"
+                                  f" (우리 {g['ours']} vs 경쟁 {g['target']})")
+                else:
+                    blocked.append(f"{g['kind']}.{g['key']} — {knob} 가 한계 {cur} 에 붙어 더 못 감, 다른 손잡이가 필요")
             continue
         moved_knobs.add((g['kind'], knob))
         prev = same.get(str(new))
@@ -503,14 +520,19 @@ def main():
     if any('→' in d for d in did): did.append('다음 회차가 바뀐 값으로 다시 그려 잰다')
     rec = {'step': step, 'at': time.strftime('%Y-%m-%d %H:%M'), 'sec': int(time.time() - t0),
            'changed': [d for d in did if '→' in d], 'did': did, 'gaps': gaps[:6], 'blocked': blocked[:8], 'bands': bands,
+           'capped': [c.split(' —')[0] for c in capped], 'capped_why': capped,
            'ours_views': sum(v['views'] for v in ours_before[:10]) if ours_before else None,
            'ch_views': ch_views, 'gain_rate': now_rate, 'px_err': px_err, 'verdict': verdict}
     log.append(rec); json.dump(log[-200:], open(LOG, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(f"[루프 {step}회차] {rec['sec']}초")
     for d in did: print(' ·', d)
     for b in blocked[:8]: print(' · 막힘:', b)
+    for c in capped: print(' · 한계 확정:', c)
     if verdict: print(' ·', verdict)
-    if gaps: print(' 남은 차이:', ', '.join(f"{g['kind']}.{g['key']} {g['ours']}→{g['target']}" for g in gaps[:5]))
+    capkeys = {c.split(' —')[0] for c in capped}
+    open_gaps = [g for g in gaps if f"{g['kind']}.{g['key']}" not in capkeys]
+    if open_gaps: print(' 남은 차이:', ', '.join(f"{g['kind']}.{g['key']} {g['ours']}→{g['target']}" for g in open_gaps[:5]))
+    elif gaps: print(' 남은 차이: 없음 — 남은 것은 한계 확정 ' + ', '.join(sorted(capkeys)))
 
 if __name__ == '__main__':
     try: main()

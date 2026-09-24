@@ -118,9 +118,20 @@ def main():
     M.append(('영상', '공개한 영상 수(최근 10편 중)', pub, 10, 2, '지금은 전부 private — 비공개면 조회가 영영 0이라 조정 효과를 잴 수 없다'))
     M.append(('영상', '올린 숏폼 수', len(glob.glob(os.path.join(R, 'shorts', '*.mp4'))), 10, 2, 'firemap-loop 6)에서 회차마다 한 편'))
 
+    # 2026-09-24: 이 숫자가 2에서 멈춰 있었는데 그 2는 short.white·short.contrast 였다.
+    # 둘 다 "더 밀면 글자가 죽는다"고 화면으로 확인해 한계를 박아 둔 자리다(loop.py CAPPED).
+    # 풀지 않기로 한 것을 '미해결'로 세니 회차마다 끝난 판단을 다시 뒤지게 됐다. 갈라 센다.
     llog = load(os.path.join(HERE, 'loop_log.json'), [])
-    gaps = llog[-1].get('gaps', []) if llog else []
-    M.append(('디자인', '경쟁 대비 미해결 차이 수', len(gaps), 0, 2, 'loop.py RULE에 손잡이 추가 또는 thumbstat 측정 수정'))
+    last = llog[-1] if llog else {}
+    gaps = last.get('gaps', [])
+    capped = set(last.get('capped') or [])
+    open_gaps = [g for g in gaps if f"{g.get('kind')}.{g.get('key')}" not in capped]
+    M.append(('디자인', '경쟁 대비 미해결 차이 수', len(open_gaps), 0, 2,
+              'loop.py RULE에 손잡이 추가 또는 thumbstat 측정 수정'))
+    if capped:
+        # 점수 0 — 줄일 것이 아니라 "이렇게 두기로 했다"를 보이게만 한다
+        M.append(('디자인', '한계 확정(사람 눈으로 정함)', len(capped), len(capped), 0,
+                  '다시 밀지 않는다 · 지금: ' + ', '.join(sorted(capped))))
 
     # 만들어 놓고 아무 회차도 안 부르는 도구가 있나.
     # 2026-09-24 하루에만 이 패턴이 네 번 나왔다 — 오피스텔 단지표·건축물대장·유튜버 시리즈 조사,

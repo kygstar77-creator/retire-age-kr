@@ -91,8 +91,14 @@ def main():
     perf = load(os.path.join(HERE, 'perf_log.json'), {})
     if perf:
         last = perf[sorted(perf)[-1]]; b = last.get('blog', [])
+        # 색인율은 '하루 지난 글'로 잰다. 그날 발행분을 그날 재면 색인될 시간이 없어 언제나 낮다
+        # (2026-09-24: 당일 글 0% · 같은 측정에서 어제 글 80%). mature가 없으면 당일 값으로 두되 목표를 낮춘다.
+        mt = last.get('mature')
+        if mt:
+            M.append(('검색', '색인율(하루 지난 글)', mt['rate'], 0.8, 3,
+                      f"{mt['n']}편 중 {mt['indexed']}편 · 색인 안 된 글의 본문 문장 검색 → 유사문서·품질 확인"))
         if b:
-            M += [('검색', '색인율', round(sum(1 for x in b if x.get('indexed')) / len(b), 3), 0.8, 3, '색인 안 된 글의 본문 문장 검색 → 유사문서·품질 확인'),
+            M += [('검색', '색인율(당일 글 — 참고용)', round(sum(1 for x in b if x.get('indexed')) / len(b), 3), 0.3, 1, '색인은 하루쯤 걸린다. 이 값이 낮은 것만으로 발행량을 줄이지 않는다'),
                   ('검색', '제목검색 10위 안 비율', round(sum(1 for x in b if (x.get('self_rank') or 99) <= 10) / len(b), 3), 0.6, 2, '제목 규칙(series-plan)·toprank 항목 채우기')]
     vis = load(os.path.join(HERE, 'visitors_log.json'), {})
     if vis:

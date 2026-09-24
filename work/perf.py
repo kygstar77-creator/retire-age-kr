@@ -183,7 +183,13 @@ def main():
         able = sum(1 for x in again if x['indexed'] is not None)
         if able: print('  --- 다시 잰 %d편 중 %d편이 뒤늦게 색인됐다 (%d%%)' % (able, got, round(got / able * 100)))
         today['recheck'] = again
+        # 하루 지난 글 기준 색인율. 색인에는 하루쯤 걸리므로 '그날 발행분'을 그날 재면 언제나 낮게 나온다.
+        # 2026-09-24 12:49 보고가 당일 글 16.7%를 근거로 "발행량을 줄여야 함" 브레이크를 걸었는데,
+        # 같은 측정에서 어제 글은 5편 중 4편(80%)이 색인돼 있었다. 판단은 이 숫자로 한다.
+        if able: today['mature'] = {'n': able, 'indexed': got, 'rate': round(got / able, 3)}
 
+    # 언제 쟀는지 남긴다. 어제는 17:33, 오늘은 12:49에 재 놓고 같은 조건으로 견줬다(2026-09-24).
+    today['at'] = time.strftime('%Y-%m-%d %H:%M')
     log[TODAY] = today
     json.dump(log, open(p, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print('\n기록: work/perf_log.json (%d일치)' % len(log))

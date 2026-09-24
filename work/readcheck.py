@@ -91,14 +91,21 @@ def acronyms(text):
     KNOWN = {'ETF', 'API', 'GDP', 'CPI', 'PPI', 'FOMC', 'EPS', 'PER', 'PBR', 'ROE', 'ISA', 'IRP',
              'DSR', 'LTV', 'DTI', 'IPO', 'CEO', 'GDP', 'US', 'EU', 'PDF', 'TV', 'AI'}
     first, bad = {}, []
-    for i, s in enumerate(sents(text), 1):
-        for m in re.finditer(r'\b([A-Z]{2,5})\b', s):
+    ss = sents(text)
+    # 한글 조사가 붙으면('ACE는') 가 경계로 안 잡혀 첫 등장을 놓쳤다 — 영문자만 경계로 본다
+    PAT = re.compile(r'(?<![A-Za-z])([A-Z]{2,5})(?![A-Za-z])')
+    EXPLAIN = re.compile(r'이름|운용사|브랜드|운용하는|약자|줄임말|지수|종목코드')
+    for i, s in enumerate(ss, 1):
+        for m in PAT.finditer(s):
             w = m.group(1)
             if w in KNOWN or w in first: continue
             first[w] = i
             # 같은 문장 안에 괄호 설명이나 한글 이름이 붙어 있으면 설명한 것으로 본다
             near = s[max(0, m.start() - 24):m.end() + 24]
             if re.search(r'[(（][^)）]*[)）]', near) or re.search(r'[가-힣]{2,}\s*\(' + w, s): continue
+            # 바로 다음 문장에서 풀어 쓰는 것도 설명으로 본다(한국어 글에서 흔한 순서)
+            nxt = ss[i] if i < len(ss) else ''
+            if w in nxt and EXPLAIN.search(nxt): continue
             bad.append((i, w, s[:70]))
     return bad
 
@@ -115,18 +122,23 @@ def title_nouns(title):
     return [w for w in ws if w not in KW_STOP][:3]
 
 def title_kw_in_body(title, body):
-    """제목의 핵심어가 본문에 몇 번 나오나.
-    2026-09-24 실측이 결정적이었다 — "국채금리 2026, 국고채 10년 4.46%로 1.07%p 올랐다"는
-    제목에 '국채금리'를 걸어 놓고 본문에서 한 번도 안 썼다(0회). 본문에서는 '국고채 금리',
-    '10년물'로 바꿔 썼다. 같은 말 반복을 피하려던 것인데, 검색은 반대로 본다.
-    같은 주제 상위 글은 '코픽스'를 본문에서 23~43회(중앙 33회) 쓴다. 우리는 20회, 글도 절반 길이다.
-    밀도는 우리가 더 높았다(1.01% 대 0.84%) — 모자란 것은 밀도가 아니라 글의 양이다."""
-    body_n = len(re.sub(r'\s', '', body))
+    """제목에 건 말을 본문에서 **한 번도 안 쓴 것만** 잡는다.
+
+    2026-09-24: 처음에 "상위 글은 23~43회 쓰니 우리도 20~40회 쓰라"는 기준을 넣었다가 뺐다.
+    네이버 공식 문서(2024-02-28 '생성형 AI 활용 문서에 대한 검색 노출 정책 안내')가
+    어뷰징 행위로 못박은 첫 항목이 바로 그것이다 —
+      "검색 노출을 위해 유사한 키워드를 반복적으로 사용하는 행위".
+    상위 글이 33회 쓰는 것은 글이 3,900자라 자연히 그렇게 된 것이지 일부러 넣은 것이 아니다.
+    밀도로 보면 우리가 오히려 높았다(1.01% 대 0.84%).
+
+    그래서 여기서는 횟수를 요구하지 않는다. **0회만 잡는다** —
+    "국채금리 2026…"이 본문에 '국채금리'를 한 번도 안 쓰고 '국고채 금리·10년물'로만 쓴 것,
+    "미국증시 섹터별로 갈린 하루"가 '증시'를 한 번도 안 쓴 것은 제목과 본문이 따로 노는 것이라
+    키워드 채우기와 다른 문제다. 길이는 bodyrule.md가 따로 본다."""
     out = []
     for w in title_nouns(title):
-        n = body.count(w)
-        if n == 0: out.append((w, 0, '제목에 걸어 놓고 본문에서 한 번도 안 썼다'))
-        elif body_n >= 1200 and n < 8: out.append((w, n, f'{n}회뿐 — 같은 주제 상위 글은 20~40회 쓴다'))
+        if body.count(w) == 0:
+            out.append((w, 0, '제목에 걸어 놓고 본문에서 한 번도 안 썼다 — 제목과 본문이 따로 논다'))
     return out
 
 def check(text, title=None):

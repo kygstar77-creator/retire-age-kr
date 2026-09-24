@@ -194,4 +194,5 @@ def main():
     json.dump(log, open(p, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print('\n기록: work/perf_log.json (%d일치)' % len(log))
 
-main()
+# rankwatch가 search_rank()만 가져다 쓴다. 가드가 없으면 import만 해도 측정이 통째로 돈다.
+if __name__ == '__main__': main()

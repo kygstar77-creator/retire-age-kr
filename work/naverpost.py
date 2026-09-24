@@ -73,10 +73,21 @@ def launch(p, headless):
 def shot(page, name):
     path = os.path.join(SHOTS, name + '.png'); page.screenshot(path=path, full_page=False); return path
 
-def logged_in(page):
-    # 화면이 아니라 로그인 쿠키(NID_AUT·NID_SES)로 판정한다. 화면 파싱은 헤드리스에서 틀렸다.
+def logged_in(page, deep=True):
+    """쿠키 이름만 보면 만료를 못 잡는다.
+    2026-09-24: 쿠키는 남아 있어 check가 '로그인됨'으로 통과했는데 글 수정 화면은 로그인을 요구했다.
+    저장된 쿠키가 이틀 전(09-22 15:43) 것이었다. 그 사이 발행 회차들이 계속 실패하며 재시도해
+    같은 카페 글을 올리려는 프로세스가 4개 쌓였고, 발행이 두 시간 멈췄는데 아무도 몰랐다.
+    그래서 쿠키를 본 뒤 **로그인이 필요한 페이지를 실제로 열어** 본다."""
     names = {c['name'] for c in page.context.cookies('https://www.naver.com')}
-    return 'NID_AUT' in names and 'NID_SES' in names
+    if not ('NID_AUT' in names and 'NID_SES' in names): return False
+    if not deep: return True
+    try:
+        page.goto(f'https://blog.naver.com/{BLOG_ID}/postwrite', wait_until='domcontentloaded')
+        page.wait_for_timeout(4000)
+        return 'nidlogin' not in page.url and 'nid.naver.com' not in page.url
+    except Exception as e:
+        print('로그인 실검사 실패:', repr(e)[:90]); return True   # 못 재면 막지 않는다
 
 def read_pkg(pkg):
     order = open(os.path.join(pkg, 'order.txt'), encoding='utf-8').read().splitlines()
@@ -300,6 +311,27 @@ def verify_body(frame, seq, label):
     print(f'{label} 본문 {total}/{want}자, 사진 {imgs}/{want_img}장')
     if total < want * 0.9 or imgs < want_img: raise RuntimeError(f'{label} 본문이 덜 들어감 — 등록하지 않음')
 
+def find_blog_url_by_title(title, tries=6, gap=15):
+    """RSS에서 이 제목의 글을 찾아 주소를 준다. 발행 클릭 뒤 화면이 안 넘어갈 때 실제 등록 여부 확인용."""
+    import urllib.request
+    UA = {'User-Agent': 'Mozilla/5.0'}
+    key = re.sub(r'\s+', '', title)[:14]
+    for _ in range(tries):
+        try:
+            x = urllib.request.urlopen(urllib.request.Request(
+                f'https://rss.blog.naver.com/{BLOG_ID}.xml', headers=UA), timeout=20).read().decode('utf-8', 'ignore')
+            for it in re.findall(r'<item>(.*?)</item>', x, re.S):
+                t = re.search(r'<title>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?</title>', it, re.S)
+                l = re.search(r'<link>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?</link>', it, re.S)
+                if t and l and key and key in re.sub(r'\s+', '', t.group(1)):
+                    n = re.search(BLOG_ID + r'/(\d+)', l.group(1))
+                    return f'https://blog.naver.com/{BLOG_ID}/{n.group(1)}' if n else l.group(1).split('?')[0]
+        except Exception as e:
+            print('RSS 확인 실패:', e)
+        time.sleep(gap)
+    return None
+
+
 MIN_GAP_MIN = 20   # 같은 매체에 이 시간 안에 또 올리지 않는다(한 회차 1편 규칙을 코드로 강제). 45분이었으나 늦게 끝난 회차가 다음 회차까지 막아 0편이 나와(2026-09-23 16시) 20분으로
 
 def last_published_minutes(kind):
@@ -380,7 +412,19 @@ def post_blog(page, pkg, wait=False):
     shot(page, 'blog_publish_panel2')
     frame.get_by_role('button', name=re.compile(r'^\s*발행\s*$')).last.click()
     # 발행 뒤 PostView.naver?...&logNo=NNN 또는 /kygstar7777/NNN 으로 이동한다
-    page.wait_for_url(re.compile(r'logNo=\d+|blog\.naver\.com/' + BLOG_ID + r'/\d+'), timeout=30000)
+    try:
+        page.wait_for_url(re.compile(r'logNo=\d+|blog\.naver\.com/' + BLOG_ID + r'/\d+'), timeout=30000)
+    except Exception as e:
+        # 2026-09-24 18시: 본문 2,172자·사진 6장이 다 들어간 뒤 네이버가 '페이지를 찾을 수 없습니다'를
+        # 띄워 이동이 안 됐다. 화면만 보고 실패로 접으면 올라간 글을 두 번 올리거나 회차가 0편이 된다.
+        # 실제로 올라갔는지는 RSS가 말해 준다.
+        print('발행 후 이동 실패 — RSS로 실제 등록 여부를 확인한다:', repr(e)[:100])
+        shot(page, 'blog_after_publish')
+        url = find_blog_url_by_title(title)
+        if url:
+            print('RSS에 등록 확인:', url)
+            return url
+        raise
     m = re.search(r'logNo=(\d+)', page.url) or re.search(BLOG_ID + r'/(\d+)', page.url)
     return f'https://blog.naver.com/{BLOG_ID}/{m.group(1)}' if m else page.url
 

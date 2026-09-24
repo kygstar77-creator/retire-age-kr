@@ -94,7 +94,7 @@ def acronyms(text):
     ss = sents(text)
     # 한글 조사가 붙으면('ACE는') 가 경계로 안 잡혀 첫 등장을 놓쳤다 — 영문자만 경계로 본다
     PAT = re.compile(r'(?<![A-Za-z])([A-Z]{2,5})(?![A-Za-z])')
-    EXPLAIN = re.compile(r'이름|운용사|브랜드|운용하는|약자|줄임말|지수|종목코드')
+    EXPLAIN = re.compile(r'이름|운용사|브랜드|운용하는|약자|줄임말|지수|종목코드|지표|뜻하|가리키|부른다|부릅니다')
     for i, s in enumerate(ss, 1):
         for m in PAT.finditer(s):
             w = m.group(1)
@@ -105,6 +105,9 @@ def acronyms(text):
             if s[m.end():m.end() + 1] in '(（': continue
             near = s[max(0, m.start() - 24):m.end() + 24]
             if re.search(r'[(（][^)）]*[)）]', near) or re.search(r'[가-힣]{2,}\s*\(' + w, s): continue
+            # 같은 문장에서 "...를 AFFO라고 합니다"처럼 풀어 쓴 것도 설명으로 본다.
+            # 2026-09-25: 괄호로만 인정해서, 앞에 뜻을 다 적고 "~라고 합니다"로 받은 문장을 설명 없음으로 잡았다.
+            if re.search(w + r'\s*(?:라고|라곤|라 부|라 한)', s) and len(re.findall(r'[가-힣]', s[:m.start()])) >= 6: continue
             # 바로 다음 문장에서 풀어 쓰는 것도 설명으로 본다(한국어 글에서 흔한 순서)
             nxt = ss[i] if i < len(ss) else ''
             if w in nxt and EXPLAIN.search(nxt): continue

@@ -1,0 +1,33 @@
+{
+ "when": "2026-09-24 17:45",
+ "n_comp": 80,
+ "n_ours": 25,
+ "comp": {
+  "bright": 0.8605,
+  "contrast": 0.2193,
+  "sat": 0.1562,
+  "yellow": 0.001,
+  "red": 0.0,
+  "white": 0.5501,
+  "dark": 0.046,
+  "text": 0.6767,
+  "text_top": 0.6455,
+  "text_mid": 0.7928,
+  "text_bot": 0.6814,
+  "text_thick": 0.8469
+ },
+ "ours": {
+  "bright": 0.9653,
+  "contrast": 0.1322,
+  "sat": 0.0177,
+  "yellow": 0.0,
+  "red": 0.0,
+  "white": 0.9428,
+  "dark": 0.0179,
+  "text": 0.4474,
+  "text_top": 0.4092,
+  "text_mid": 0.4657,
+  "text_bot": 0.4932,
+  "text_thick": 0.75
+ }
+}

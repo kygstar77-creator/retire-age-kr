@@ -33,14 +33,29 @@ def dong_codes():
             if r.get('umdNm') and r.get('umdCd'): m[(r['sggCd'], r['umdNm'])] = r['umdCd']
     return m
 
-def build(topn=15):
+# 시도 코드(sggCd 앞 2자리) — 표 제목에 '서울'이라고 적으면서 경기 단지를 같이 세지 않기 위해 쓴다.
+# 2026-09-24 실측: 이 표가 '서울 오피스텔'이라는 제목으로 상위 15곳을 전부 경기(평택·화성·오산·수원…)로 채웠고
+# 중앙값도 서울만 보면 4.28%인데 경기가 섞여 5.13%로 나왔다. heatmap_re.py가 같은 날 고친 것과 같은 버그다.
+SIDO = {'11': '서울', '26': '부산', '27': '대구', '28': '인천', '29': '광주', '30': '대전', '31': '울산',
+        '36': '세종', '41': '경기', '42': '강원', '43': '충북', '44': '충남', '45': '전북', '46': '전남',
+        '47': '경북', '48': '경남', '50': '제주'}
+
+def build(topn=15, only=None):
+    """only: 시도 코드 앞 2자리 집합(예: {'11'} 서울만). None이면 자료에 있는 전부."""
     trade, rent, meta = collections.defaultdict(list), collections.defaultdict(list), {}
+    seen = set()
+    def keep(r):
+        cd = str(r.get('sggCd') or '')[:2]
+        if only and cd not in only: return False
+        seen.add(cd); return True
     for f in glob.glob(os.path.join(RT, '*_offi_trade.json')):
         for r in json.load(open(f, encoding='utf-8')):
+            if not keep(r): continue
             k = (r.get('sggNm'), (r.get('offiNm') or '').strip(), int(num(r.get('excluUseAr')) // 5 * 5))
             trade[k].append(num(r.get('dealAmount'))); meta.setdefault(k, r)
     for f in glob.glob(os.path.join(RT, '*_offi_rent.json')):
         for r in json.load(open(f, encoding='utf-8')):
+            if not keep(r): continue
             mr = num(r.get('monthlyRent'))
             if mr <= 0: continue
             rent[(r.get('sggNm'), (r.get('offiNm') or '').strip(), int(num(r.get('excluUseAr')) // 5 * 5))].append((num(r.get('deposit')), mr))
@@ -74,7 +89,8 @@ def build(topn=15):
             b['비고'] = '주상복합 — 아파트 주차가 합산돼 오피스텔만 못 가름'
         r['건물'] = b; got += 1 if b.get('세대수') else 0
         r['동'] = x.get('umdNm'); r['준공'] = str(x.get('buildYear') or '')
-    return rows, pick, got
+    area = '·'.join(SIDO.get(c, c) for c in sorted(seen)) or '자료 없음'
+    return rows, pick, got, area
 
 def verify(pick):
     """표에 적은 숫자를 원자료로 다시 세어 대조한다.
@@ -109,13 +125,19 @@ def verify(pick):
     return bad
 
 def main():
-    topn = int(sys.argv[1]) if len(sys.argv) > 1 else 15
-    rows, pick, got = build(topn)
+    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    only = {'11'} if '--seoul' in sys.argv else None
+    topn = int(args[0]) if args else 15
+    rows, pick, got, area = build(topn, only)
+    if not rows:
+        print('계산된 단지가 없다 — 조건에 맞는 실거래가 없다. 파일:', RT); return
     os.makedirs(OUT, exist_ok=True)
     day = time.strftime('%Y-%m-%d')
     med = statistics.median(r['수익률'] for r in rows)
-    L = [f'# 서울 오피스텔 월세 수익률 단지표 ({day})', '',
+    L = [f'# {area} 오피스텔 월세 수익률 단지표 ({day})', '',
          f'실거래로 계산한 {len(rows)}곳. 수익률 중앙값 {med:.2f}%. 건축물대장이 붙은 곳 {got}/{len(pick)}.',
+         (f'대상 지역: {area}.' if only == {'11'} else
+          f'대상 지역: {area}. 중앙값도 순위도 이 지역을 합친 값이다 — 글에 "서울"이라고 쓰려면 `--seoul`로 다시 돌린다.'),
          '',
          '계산: 월세×12 ÷ (매매 중앙값 − 보증금 중앙값). 같은 단지·같은 5㎡ 면적대끼리만 짝지었다.',
          '거른 것: 매매 2건·월세 4건 미만, 월세 30만원 미만, 보증금이 매매가의 절반을 넘는 반전세.',
@@ -149,7 +171,8 @@ def main():
         for b in bad: print('  X', b)
         sys.exit(1)
     L += ['', f'검산: 표의 모든 수치를 원자료로 다시 세어 {len(pick)}줄 전부 일치함({day}).']
-    p = os.path.join(OUT, f'{day}.md')
+    tag = '서울' if only == {'11'} else '전체'
+    p = os.path.join(OUT, f'{day}_{tag}.md')
     open(p, 'w', encoding='utf-8').write('\n'.join(L) + '\n')
     print('\n'.join(L[:10]))
     print(f'\n... 표 {len(pick)}줄 · 저장 {p}')

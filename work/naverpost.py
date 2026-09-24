@@ -228,15 +228,24 @@ def subject_keys(title):
             ks.add(w)                                            # 종목·ETF 티커
     return ks
 
+def head_key(title, n=8):
+    """제목 앞머리(숫자·공백 뺀 앞 n글자). 숫자만 바꾼 같은 글을 잡는다.
+    2026-09-24: '재산세 계산기는 9만 9천원인데 고지서는 29만 9천원'과
+    '재산세 계산기는 26만원인데 고지서는 62만원'이 한 시간 간격으로 나갔다.
+    단지명도 티커도 안 겹쳐서 subject_keys로는 안 잡혔다. 앞머리는 '재산세계산기는'으로 같다."""
+    s = re.sub(r'[\s\d,%·\-~]+', '', title or '')
+    return s[:n]
+
 def same_subject_today(kind, title):
-    """최근 글 중 같은 대상을 다룬 것. 있으면 [(제목, URL, 겹친 말)]."""
+    """최근 글 중 같은 대상·같은 주제를 다룬 것. 있으면 [(제목, URL, 겹친 것)]."""
     mine = subject_keys(title)
-    if not mine: return []
+    hk = head_key(title)
     hits = []
     for raw, url in _raw_recent(kind):
         if norm(raw) == norm(title): continue      # 같은 글(재발행)은 already_up이 따로 잡는다
         both = mine & subject_keys(raw)
         if both: hits.append((raw, url, sorted(both)))
+        elif len(hk) >= 6 and head_key(raw) == hk: hits.append((raw, url, [f'제목 앞머리 "{hk}"']))
     return hits
 
 def _raw_recent(kind, n=24):

@@ -31,7 +31,14 @@ def num(s): return int(re.sub(r'[^\d]', '', s or '0') or 0)
 
 if __name__ == '__main__':
     ym0, ym1 = sys.argv[1], sys.argv[2]; only = sys.argv[3:]
+    # 서울(seoul_sgg.json 25개) + 실거래 API로 직접 확인한 다른 시도(sgg_found.json).
+    # 2026-09-24까지 서울만 받았다 — 받아 둔 602개 파일이 전부 11로 시작했다.
+    # 사장님: "부동산은 니가 서울 경기도 등등 구역 돌아다니면서 저평가 단지 찾고 있는 거야?"
     sgg = json.load(open(os.path.join(HERE, 'research', 'seoul_sgg.json'), encoding='utf-8'))
+    fp = os.path.join(HERE, 'research', 'sgg_found.json')
+    if os.path.exists(fp):
+        for code, v in json.load(open(fp, encoding='utf-8')).items():
+            sgg.setdefault(code, (v.get('dong') or code) + ' 일대')   # 시군 이름은 따로 없으니 대표 법정동으로 적는다
     months = []; y, m = int(ym0[:4]), int(ym0[4:])
     while f'{y}{m:02d}' <= ym1: months.append(f'{y}{m:02d}'); m += 1; (y, m) = (y + 1, 1) if m > 12 else (y, m)
     calls = 0; t0 = time.time()

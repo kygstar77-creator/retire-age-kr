@@ -14,6 +14,25 @@ DESIGN = os.path.join(HERE, 'design.json'); LOG = os.path.join(HERE, 'loop_log.j
 SPEC = os.path.join(R, 'yt', 'design', 'spec.json')
 SAMPLE = os.path.join(R, 'yt', 'design', 'ours'); os.makedirs(SAMPLE, exist_ok=True)
 PY = [sys.executable]
+LOCK = os.path.join(HERE, '.loop.lock')
+
+def take_lock(stale=3600):
+    """한 번에 한 바퀴만 돈다. 2026-09-24 15시 회차에 바퀴 둘이 겹쳐 돌아 격자 측정이 섞였다 —
+    앞 바퀴가 그린 샘플을 뒤 바퀴가 재는 바람에 text_spread 격자 7점이 전부 같은 값(0.2653)으로 나왔고,
+    그 '전부 같음'을 최선으로 골라 손잡이를 0.45→0.0 으로 옮겨 판형 오차가 0.2653 → 2.213 으로 뛰었다."""
+    try:
+        if os.path.exists(LOCK) and time.time() - os.path.getmtime(LOCK) < stale:
+            age = int(time.time() - os.path.getmtime(LOCK))
+            print(f'다른 바퀴가 {age}초째 돌고 있다 — 이번 바퀴는 돌지 않는다 ({LOCK})')
+            return False
+        open(LOCK, 'w', encoding='utf-8').write(str(os.getpid()))
+        return True
+    except Exception:
+        return True
+
+def drop_lock():
+    try: os.remove(LOCK)
+    except Exception: pass
 
 DEFAULT = {   # 생성기가 읽는 값. 처음 값은 2026-09-23 첫 측정에서 나온 경쟁 상위 중앙값
     'long':  {'yellow': 0.050, 'contrast': 0.372, 'white': 0.101, 'text_top': 0.911, 'bright': 0.447},
@@ -168,7 +187,13 @@ def grid_pick(design, spec, kind, knob, base_grid, did, blocked):
     measure(grid)
     if failed or not table:
         blocked.append(f'{kind} 세 칸 맞추기 — 샘플이나 경쟁 기준이 없어 못 쟀다'); d[knob] = cur; return
-    pick = lambda: min(table, key=lambda t: t['err'])
+    def pick():
+        # 비긴 값끼리는 지금 값을 이긴 것으로 치지 않는다. 격자 전체가 같은 값으로 나오는 경우(손잡이가
+        # 안 듣거나 측정이 섞인 경우)에 min() 은 늘 격자의 맨 아래값을 골라 손잡이를 끝으로 밀어 버린다.
+        best = min(table, key=lambda t: t['err'])
+        here = next((t for t in table if abs(t['v'] - cur) < 1e-9), None)
+        if here is not None and here['err'] <= best['err'] + 1e-4: return here
+        return best
 
     # 끝점에 최선이 붙어 있으면 수렴이 아니다 — 한계까지 격자를 늘려 실제로 넘어가 본다.
     lo_lim, hi_lim = KNOB_LIMIT.get(knob, (None, None))
@@ -211,6 +236,7 @@ def tune_bands(design, spec, kind, did, blocked):
 def main():
     global THUMB_DEFAULT
     THUMB_DEFAULT = thumb_defaults()
+    if not take_lock(): return
     t0 = time.time(); log = load(LOG, []); design = load(DESIGN, DEFAULT)
     step = design.get('step', 0) + 1
     did, blocked = [], []
@@ -481,4 +507,6 @@ def main():
     if verdict: print(' ·', verdict)
     if gaps: print(' 남은 차이:', ', '.join(f"{g['kind']}.{g['key']} {g['ours']}→{g['target']}" for g in gaps[:5]))
 
-if __name__ == '__main__': main()
+if __name__ == '__main__':
+    try: main()
+    finally: drop_lock()

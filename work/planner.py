@@ -131,6 +131,18 @@ def main():
               '애플(AAPL·성장주)', 'SCHD(ETF)', '알트리아(MO·배당주)', '브로드컴(AVGO·성장주)',
               'QLD(ETF)', '버라이즌(VZ·배당주)', '테슬라(TSLA·성장주)', 'JEPQ(ETF)',
               '펩시코(PEP·배당주)', 'KODEX 미국나스닥100(ETF)', 'VOO(ETF)', 'TQQQ(ETF)']
+    # 발굴(B13)에서 나온 종목을 분석(B2) 후보 앞에 붙인다.
+    # 2026-09-24까지 B2는 위 고정 20개만 돌았다. 스크리너 7,100종목·EDGAR Form 4로 발굴해 놓고
+    # 그 결과가 분석으로 이어지지 않았다 — 발굴 결과를 파일로 안 남겼기 때문이다(insider.py에서 고쳤다).
+    # 사장님 2026-09-24: "주식도 비슷하게 조사하고 있는 거야?"
+    dug = {}
+    for f in sorted(glob.glob(os.path.join(R, 'dig', '*.json')))[-7:]:
+        for r in load(f, []) or []:
+            t = (r.get('ticker') or '').strip().upper()
+            if not t or not re.fullmatch(r'[A-Z]{1,5}', t): continue
+            nm = (r.get('issuer') or '').strip()
+            dug[t] = f'{nm}({t})' if nm else t
+    if dug: STOCKS = list(dug.values()) + STOCKS
     CALC = [t['kw'] for t in sorted([x for x in topics if isinstance(x, dict) and '계산기' in x['kw']], key=lambda x: -(x.get('vol') or 0))][:24]
     CITIES = ['서울', '부산', '대구', '대전', '광주', '고양', '김해', '구미', '강릉', '경주', '목포', '춘천', '제주', '전주', '천안', '창원']
     AGES = ['30대', '40대', '50대', '60세 이상', '20대']

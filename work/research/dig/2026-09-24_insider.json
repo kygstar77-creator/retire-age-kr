@@ -1,0 +1,86 @@
+[
+{
+"ticker": "ETRA",
+"issuer": "Electra Therapeutics, Inc.",
+"amount": 15000000.0,
+"date": "2026-09-21",
+"src": "내부자 매수(Form 4)"
+},
+{
+"ticker": "ETRA",
+"issuer": "Electra Therapeutics, Inc.",
+"amount": 15000000.0,
+"date": "2026-09-21",
+"src": "내부자 매수(Form 4)"
+},
+{
+"ticker": "CRBG",
+"issuer": "Corebridge Financial, Inc.",
+"amount": 7465942.391600001,
+"date": "2026-09-21",
+"src": "내부자 매수(Form 4)"
+},
+{
+"ticker": "CV",
+"issuer": "CapsoVision, Inc",
+"amount": 5000002.15,
+"date": "2026-09-18",
+"src": "내부자 매수(Form 4)"
+},
+{
+"ticker": "CRAFX",
+"issuer": "Cascade Real Assets Fund",
+"amount": 5000000.0,
+"date": "2026-09-21",
+"src": "내부자 매수(Form 4)"
+},
+{
+"ticker": "CV",
+"issuer": "CapsoVision, Inc",
+"amount": 4999996.46,
+"date": "2026-09-18",
+"src": "내부자 매수(Form 4)"
+},
+{
+"ticker": "ETRA",
+"issuer": "Electra Therapeutics, Inc.",
+"amount": 4999995.0,
+"date": "2026-09-21",
+"src": "내부자 매수(Form 4)"
+},
+{
+"ticker": "ETRA",
+"issuer": "Electra Therapeutics, Inc.",
+"amount": 4999995.0,
+"date": "2026-09-21",
+"src": "내부자 매수(Form 4)"
+},
+{
+"ticker": "KBDC",
+"issuer": "Kayne Anderson BDC, Inc.",
+"amount": 1230995.48,
+"date": "2026-09-23",
+"src": "내부자 매수(Form 4)"
+},
+{
+"ticker": "INBX",
+"issuer": "Inhibrx Biosciences, Inc.",
+"amount": 500000.0,
+"date": "2026-09-23",
+"src": "내부자 매수(Form 4)"
+},
+{
+"ticker": "KBDC",
+"issuer": "Kayne Anderson BDC, Inc.",
+"amount": 273746.535,
+"date": "2026-09-22",
+"src": "내부자 매수(Form 4)"
+},
+{
+"ticker": "INR",
+"issuer": "INFINITY NATURAL RESOURCES, INC.",
+"amount": 233127.408,
+"date": "2026-09-21",
+"src": "내부자 매수(Form 4)"
+}
+]

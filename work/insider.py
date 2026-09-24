@@ -9,7 +9,7 @@
 — 2026-09-22 하루치 Form 4 847건 확인. SEC 요청 한도(초당 10회)를 지키려 0.12초씩 쉬고,
 한 회차에 --max 건까지만 읽는다(기본 400).
 """
-import sys, re, json, time, datetime, urllib.request, xml.etree.ElementTree as ET
+import sys, os, re, json, time, datetime, urllib.request, xml.etree.ElementTree as ET
 sys.stdout.reconfigure(encoding='utf-8')
 UA = {'User-Agent': 'firemap research kygstar77@gmail.com'}
 GAP = 0.12                      # SEC 초당 10회 한도 — 넉넉히 8회/초
@@ -136,6 +136,20 @@ def main(argv):
         (good if r.get('usd') is True else bad).append(r)
     for r in good[:top]:
         print(json.dumps(r, ensure_ascii=False))
+    # 발굴한 종목을 파일로 남긴다. 안 남기면 B13 글 한 편 쓰고 목록이 사라져
+    # B2 종목 분석이 그걸 못 쓴다 — 분석은 미리 적어 둔 20개 고정 목록만 돌고 있었다.
+    # 사장님 2026-09-24: "주식도 비슷하게 조사하고 있는 거야?"
+    try:
+        import datetime as _dt
+        pool = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research', 'dig')
+        os.makedirs(pool, exist_ok=True)
+        day = _dt.date.today().isoformat()
+        rows = [{'ticker': r.get('ticker'), 'issuer': r.get('issuer'), 'amount': r.get('amount'),
+                 'date': r.get('date'), 'src': '내부자 매수(Form 4)'} for r in good[:top] if r.get('ticker')]
+        json.dump(rows, open(os.path.join(pool, day + '_insider.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
+        print(f'# 발굴 종목 {len(rows)}개 저장: research/dig/{day}_insider.json', file=sys.stderr)
+    except Exception as e:
+        print('# 발굴 종목 저장 실패: ' + repr(e)[:90], file=sys.stderr)
     if bad:
         print(f'# 통화 확인이 안 된 {len(bad)}건은 순위에서 뺐다 - 아래에 따로 적는다', file=sys.stderr)
         for r in bad[:top]:

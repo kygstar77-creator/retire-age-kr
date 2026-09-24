@@ -93,10 +93,19 @@ def main():
     tw = ''
     twp = os.path.join(R, 'tools-wanted.md')
     if os.path.exists(twp): tw = open(twp, encoding='utf-8').read()
-    waiting = re.findall(r'^\|\s*([^|]{2,40}?)\s*\|[^|]*\|\s*대기\s*\|', tw, re.M)
+    # 표가 두 가지 모양이다: 상태칸이 맨 뒤인 줄(| 무엇 | 왜 | 절차 | 대기 |)과
+    # 맨 앞인 줄(| 대기 | 무엇 ... |). 앞엣것만 세던 탓에 무엇이 대기인지 한 번도 안 보였다.
+    waiting = []
+    for ln in tw.splitlines():
+        if '| 대기 |' not in ln: continue
+        cells = [c.strip() for c in ln.strip().strip('|').split('|')]
+        name = cells[1] if cells and cells[0] == '대기' else (cells[0] if cells else '')
+        name = re.sub(r'\*\*|\(.*?\)', '', name).split('—')[0].strip()
+        if name and name != '대기': waiting.append(name[:26])
     if waiting:
         out.append('')
-        out.append(f'계속 대기 {len(waiting)}건: ' + ', '.join(w.strip() for w in waiting[:6]))
+        out.append(f'계속 대기 {len(waiting)}건 — 사장님 손이 필요합니다')
+        for w in waiting[:6]: out.append(f'· {w}')
 
     out += ['', '오늘 고친 것', '· (회차가 채운다)', '', '손봐 주실 것', '· (없으면 이 두 줄을 지운다)', '', BOARD]
     print('\n'.join(out))

@@ -3,6 +3,7 @@
 #   python work/heatmap.py                    → 시총 상위 110개, 섹터별 묶음 → work/research/_shots/heatmap_<날짜>.png + 요약 출력
 #   python work/heatmap.py 60                 → 상위 60개
 #   python work/heatmap.py --list NVDA,AAPL,MSFT,...  → 지정 종목만(예: 매그7, 배당주 20)
+#   python work/heatmap.py --nobl [개수]      → 배당귀족(NOBL) 비중 상위 종목만. 티커를 손으로 적지 않아도 된다
 #   python work/heatmap.py --out <경로.png>
 import sys, os, re, json, time, urllib.request, collections
 sys.stdout.reconfigure(encoding='utf-8')
@@ -64,17 +65,39 @@ def draw(rows, out, title):
         dr.text((x + 6, y + 1), KO.get(sec, sec), font=font(14, False), fill=(220, 220, 220))
     img.save(out); return out
 
+def nobl_holdings(top=25):
+    """배당귀족 ETF(NOBL)의 비중 상위 종목. 편성표가 '배당귀족 N종목'이라고만 적어 두어도
+    티커를 손으로 옮겨 적지 않도록 여기서 받아 온다. 반환: [(티커, 이름, 비중%)] 비중 내림차순."""
+    u = 'https://stockanalysis.com/etf/nobl/holdings/'
+    h = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
+    html = urllib.request.urlopen(urllib.request.Request(u, headers=h), timeout=30).read().decode('utf-8', 'ignore')
+    rows = re.findall(r'<a href="/stocks/[a-z\.\-]{1,6}/" >([A-Z\.]{1,6})</a>.{0,120}?<td class="shr[^"]*">([^<]+)</td>.{0,80}?<td class="svelte-[^"]*">([\d\.]+)%</td>', html, re.S)
+    if not rows: raise SystemExit('NOBL 보유 목록을 읽지 못했다 — 페이지 구조가 바뀌었는지 확인할 것')
+    return [(a, b.replace('&amp;', '&'), float(c)) for a, b, c in rows][:top]
+
 def main():
     args = sys.argv[1:]; n = 110; only = None; out = None
     i = 0
+    def need(flag):
+        if i + 1 >= len(args): raise SystemExit(f'{flag} 뒤에 값이 필요하다. 예: --list NVDA,AAPL,MSFT / --out out.png')
+        return args[i + 1]
     while i < len(args):
-        if args[i] == '--list': only = [s.strip().upper() for s in args[i + 1].split(',')]; i += 2
-        elif args[i] == '--out': out = args[i + 1]; i += 2
+        if args[i] == '--list': only = [s.strip().upper() for s in need('--list').split(',')]; i += 2
+        elif args[i] == '--nobl':
+            top = int(args[i + 1]) if i + 1 < len(args) and args[i + 1].isdigit() else 25
+            only = [s for s, _nm, _w in nobl_holdings(top)]
+            print(f'NOBL 비중 상위 {len(only)}종목:', ','.join(only))
+            i += 2 if (i + 1 < len(args) and args[i + 1].isdigit()) else 1
+        elif args[i] == '--out': out = need('--out'); i += 2
         else: n = int(args[i]); i += 1
     rows = fetch()
     asof = time.strftime('%Y-%m-%d')
     if only:
-        sel = [r for r in rows if r['sym'] in only]; title = f'미국 주식 {len(sel)}종목 등락 ({asof} 기준, 자료 Nasdaq)'
+        sel = [r for r in rows if r['sym'] in only]
+        miss = [s for s in only if s not in {r['sym'] for r in rows}]
+        if miss: print('스크리너에 없는 티커(그림에서 빠짐):', ','.join(miss))
+        if not sel: raise SystemExit('지정한 티커가 스크리너에 하나도 없다 — 티커 철자를 확인할 것')
+        title = f'미국 주식 {len(sel)}종목 등락 ({asof} 기준, 자료 Nasdaq)'
     else:
         sel = sorted(rows, key=lambda r: -r['cap'])[:n]; title = f'미국 시총 상위 {len(sel)}개 등락 ({asof} 기준, 자료 Nasdaq)'
     os.makedirs(OUT, exist_ok=True); out = out or os.path.join(OUT, f'heatmap_{asof}.png')

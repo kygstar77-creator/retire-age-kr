@@ -1,0 +1,12 @@
+카페 발행 순서 (각 조각마다 ctrl+End 후 ctrl+v)
+제목: title.txt
+c00.txt
+img/c1.png
+c01.txt
+img/c2.png
+c02.txt
+img/c3.png
+c03.txt
+c04.txt
+소제목: c01·c02·c03·c04 조각의 첫 줄
+게시판: 자유게시판

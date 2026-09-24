@@ -101,6 +101,8 @@ def acronyms(text):
             if w in KNOWN or w in first: continue
             first[w] = i
             # 같은 문장 안에 괄호 설명이나 한글 이름이 붙어 있으면 설명한 것으로 본다
+            # 약어 바로 뒤에 괄호로 풀어 쓰면 설명한 것으로 본다(긴 정식명은 24자 창을 넘어간다)
+            if s[m.end():m.end() + 1] in '(（': continue
             near = s[max(0, m.start() - 24):m.end() + 24]
             if re.search(r'[(（][^)）]*[)）]', near) or re.search(r'[가-힣]{2,}\s*\(' + w, s): continue
             # 바로 다음 문장에서 풀어 쓰는 것도 설명으로 본다(한국어 글에서 흔한 순서)

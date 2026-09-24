@@ -5,6 +5,7 @@
 - 2026-09-24 같은 페이지 '최근 3년 분배금 지급현황' 표 10건 전량 수집 (지급기준일·실제지급일·분배금액·주당과세표준액·분배율)
 - 2026-09-24 S&P Dow Jones Indices: Dow Jones U.S. Dividend 100 Index는 연 1회 3월 정기변경으로 구성 종목을 바꾼다 (spglobal.com/spdji/en/indices/dividends-factors/dow-jones-us-dividend-100-index)
 - 2026-09-24 우리 과거 집계 work/research/tigerdiv/facts.txt — TIGER 미국배당다우존스 총보수 연 0.01%, 순자산 43,263억원, NAV 14,656.36원(2026.09.21)
+- 2026-09-24 Nasdaq API(api.nasdaq.com/api/quote/SCHD/info) 직접 조회 — SCHD 정식명 Schwab US Dividend Equity ETF · 자산군 ETF · 미국 상장(PSE)
 - 2026-09-24 work/demand.py 검색수: SCHD 52,300 · TIGER 미국배당다우존스 32,700 · ACE 미국배당다우존스 6,090 · 미국배당다우존스 5,720
 
 [기본 정보 — 운용사 공식, 2026-09-24 조회]
@@ -68,3 +69,4 @@
 3. S&P Dow Jones Indices — Dow Jones U.S. Dividend 100 Index 개요 (연 1회 3월 정기변경)
 4. work/research/tigerdiv/facts.txt (2026-09-21 운용사 공식 페이지 수집분)
 5. work/demand.py 네이버 검색수 (2026-09-24)
+4. Nasdaq API — https://api.nasdaq.com/api/quote/SCHD/info?assetclass=etf (2026-09-24 조회, SCHD 정식명)

@@ -197,6 +197,12 @@ def main():
         if spec.get(kind): bands[kind] = tune_bands(design, spec, kind, did, blocked)
     render_samples(keep_chart=True)   # 고른 값으로 샘플을 새로 그린다
     ours = measure_ours()             # 그 샘플만 잰다
+    # 조회로는 판정할 수 없을 때(전부 비공개) 쓸 판정 눈금 — 경쟁 판형과의 세 칸 거리.
+    # 이 값은 공개 여부와 무관하게 매 회차 재어지므로, 조정이 실제로 경쟁에 가까워졌는지 숫자로 남는다.
+    px_err = {}
+    for kind in ('short', 'long'):
+        e, _ = band_err(ours, kind, spec)
+        if e is not None: px_err[kind] = round(e, 4)
 
     # 3) 비교 — 우리 평균 vs 경쟁 상위 중앙값
     gaps = []
@@ -398,7 +404,13 @@ def main():
             pub = sum(1 for v in ours_before if v.get('privacy') == 'public')
             verdict = (f'채널 총조회 {pv} -> {ch_views} ({gain:+}회 / {hours:.1f}시간 = 시간당 {now_rate})'
                        f' · 최근 10편 중 공개 {pub}편')
-            if gain < MIN_GAIN:
+            if pub == 0:
+                # 2026-09-24에 고친 것: 최근 10편이 전부 비공개면 채널 총조회가 늘어도 그건 **옛 공개 영상**이
+                # 번 조회다 — 이번 회차 썸네일 손잡이와 아무 상관이 없다. 그런데도 아래 되돌리기 가지는
+                # gain >= MIN_GAIN 만 넘으면 '시간당 조회가 떨어졌다'며 직전 조정을 되돌릴 수 있었다.
+                # 공개 0편이면 조회는 판정 근거가 못 되므로 되돌리기에 쓰지 않는다.
+                verdict += ' -> 조회로는 판정 안 함(공개 0편, 늘어난 조회는 옛 공개 영상 몫)'
+            elif gain < MIN_GAIN:
                 verdict += f' -> 판정 보류(늘어난 조회 {gain}회 < {MIN_GAIN}회, 되돌리지 않는다)'
             elif prev_rate is not None and now_rate < prev_rate * 0.7 and log[-1].get('changed'):
                 for c in log[-1]['changed']:
@@ -408,6 +420,17 @@ def main():
                         did.append(f'되돌림 {mm.group(1)}.{mm.group(2)} -> {mm.group(3)} '
                                    f'(시간당 조회 {prev_rate} -> {now_rate})')
 
+    # 조회가 못 재는 회차에도 '나아졌나'를 숫자로 남긴다 — 경쟁 판형과의 세 칸 거리 비교.
+    if px_err:
+        prev_px = next((r.get('px_err') for r in reversed(log) if r.get('px_err')), None)
+        now_sum = round(sum(px_err.values()), 4)
+        if prev_px:
+            was_sum = round(sum(prev_px.values()), 4)
+            arrow = '줄었다' if now_sum < was_sum - 1e-4 else ('늘었다' if now_sum > was_sum + 1e-4 else '그대로')
+            verdict += f' · 경쟁 판형 거리 {was_sum} -> {now_sum} ({arrow})'
+        else:
+            verdict += f' · 경쟁 판형 거리 {now_sum} (이번 회차부터 비교한다)'
+
     design['step'] = step
     json.dump(design, open(DESIGN, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     # 바꾼 값으로 우리 샘플을 다시 만든다 — 안 그러면 다음 회차가 같은 차이를 또 잡는다
@@ -415,7 +438,7 @@ def main():
     rec = {'step': step, 'at': time.strftime('%Y-%m-%d %H:%M'), 'sec': int(time.time() - t0),
            'changed': [d for d in did if '→' in d], 'did': did, 'gaps': gaps[:6], 'blocked': blocked[:8], 'bands': bands,
            'ours_views': sum(v['views'] for v in ours_before[:10]) if ours_before else None,
-           'ch_views': ch_views, 'gain_rate': now_rate, 'verdict': verdict}
+           'ch_views': ch_views, 'gain_rate': now_rate, 'px_err': px_err, 'verdict': verdict}
     log.append(rec); json.dump(log[-200:], open(LOG, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(f"[루프 {step}회차] {rec['sec']}초")
     for d in did: print(' ·', d)

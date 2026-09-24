@@ -2,7 +2,7 @@
 #   python work/planner.py            → work/research/plan_<내일>.md (블로그 24·카페 24 슬롯: 시리즈·주제·제목 초안·훅·담을 항목·출처)
 # 신호(전부 지금 있는 파일·API): ① 검색수(topics.json) ② 마감(calendar.json) ③ 유튜브 상위 채널 제목·조회(research/yt/lessons_*.md, full/*/index.json)
 #   ④ 우리 글 성과(perf_log.json·visitors_log.json·pkg/form.txt·axis.txt) ⑤ 카페 실측 조회 축 ⑥ 오늘 시장(Nasdaq 캘린더·히트맵 상위 등락) ⑦ 오늘 찾은 글감(topic-ideas.md)
-import sys, os, re, json, glob, time, datetime, collections, urllib.request
+import sys, os, re, json, glob, time, datetime, collections, urllib.request, statistics
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__)); R = os.path.join(HERE, 'research')
 H = {'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'}
@@ -25,8 +25,16 @@ def title_patterns():
             if m: titles.append((m.group(1), int(m.group(2).replace(',', ''))))
     if not titles: return {}, 0
     pats = {'숫자': r'\d', '질문': r'\?', '따옴표': r'["“”\']', '이유·방법': r'이유|방법|정리|총정리|법$', '자극어': r'수혜|기회|위기|폭락|급등|역대|충격|긴급', '나이·금액': r'\d+대|\d+억|\d+만원|\d+세', '비교': r'vs|차이|비교'}
-    tot = sum(v for _, v in titles) or 1
-    score = {k: round(sum(v for t, v in titles if re.search(p, t)) / tot * 100) for k, p in pats.items()}
+    # 2026-09-24에 고친 것: 예전에는 '그 패턴이 있는 제목이 전체 조회의 몇 %를 가져갔나'(조회 가중 비율)를 냈다.
+    # 그 값은 조회 몇 십만짜리 한 편에 끌려간다 — 그 한 편에 들어 있는 말은 무엇이든 수십 %로 찍힌다.
+    # series-plan.md 의 제목 표는 이미 '조회 중앙 차이'(있는 것의 조회 중앙값 / 없는 것의 조회 중앙값 - 1)로
+    # 재고 있으므로 같은 자를 쓴다. 기준이 둘이면 두 표를 견줄 수 없다.
+    score = {}
+    for k, rx in pats.items():
+        has = [v for t, v in titles if v and re.search(rx, t)]
+        no = [v for t, v in titles if v and not re.search(rx, t)]
+        if len(has) < 5 or len(no) < 5: continue
+        score[k] = round((statistics.median(has) / max(statistics.median(no), 1) - 1) * 100)
     return score, len(titles)
 
 def written_titles():
@@ -216,7 +224,7 @@ def main():
         if sid == 'C7': return '이번 주 내부자 매수 공시 상위 10(EDGAR Form 4·Nasdaq insider)'
         return '?'
     lines = [f'# 내일 편성 {TOM} (planner.py, 생성 {time.strftime("%H:%M")})', '',
-             '## 데이터가 말하는 것', '- 유튜브 제목 %d개 조회 가중 패턴: ' % ntitles + ' · '.join(f'{k} {v}%' for k, v in sorted(pats.items(), key=lambda kv: -kv[1])),
+             '## 데이터가 말하는 것', '- 유튜브 제목 %d개 · 패턴별 조회 중앙 차이(있음/없음-1): ' % ntitles + ' · '.join(f'{k} {v:+}%' for k, v in sorted(pats.items(), key=lambda kv: -kv[1])),
              '- 우리 블로그 형식별 제목검색 10위 안 비율: ' + (' · '.join(f'형식{f} {p}%({n}편)' for f, (p, n) in perf.items()) if perf else '측정 불가(form.txt 표기된 발행분 없음)') + f' / 형식 표기 없는 글 {unlabeled}편은 제외',
              '- 카페 축 실측 조회 중앙값: ' + ' · '.join(f'{k} {v}' for k, v in CAFE_AXIS_VIEWS.items()), *[f'- {m}' for m in mkt], '',
              '## 제목 규칙: **work/research/titlerule.md를 본다**(titlestudy.py가 네이버 상위 노출 제목을 긁어 잰 값). '

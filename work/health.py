@@ -143,12 +143,21 @@ def main():
         M.append(('회차', '예산 시간을 넘겨 멈춘 회차', len(st), 0, 3,
                   '예약 목록에서 running인 세션을 끊고(stop_session) 그 회차를 다시 돌린다'
                   + (' · 지금: ' + ', '.join(f'{t} {m}분' for t, m, _ in st[:3]) if st else '')))
-        d = beat.load() or {}
-        old_t = [t for t in beat.BUDGET
-                 if not d.get(t, {}).get('start') or (time.time() - d[t]['start']) / 3600 > 6]
-        M.append(('회차', '6시간 넘게 맥박 없는 회차', len(old_t), 0, 2,
-                  '그 회차 지시문에 beat.py start/end 가 들어 있는지 확인'
-                  + (' · 지금: ' + ', '.join(old_t[:4]) if old_t else '')))
+        # 2026-09-25: 전에는 전부 6시간 하나로 쟀다. report는 하루 한 번, improve는 밤에 14시간
+        # 쉬는 회차라 아무리 잘 돌아도 늘 잡혔고, 그래서 이 점수가 회차를 거듭해도 안 내려갔다.
+        # 이제 회차마다 제 예약 간격(beat.GAP_OK)으로 잰다 — 줄일 수 있는 것만 센다.
+        sl = beat.stale()
+        M.append(('회차', '제 예약 간격을 넘도록 안 돈 회차', len(sl), 0, 2,
+                  '그 회차 지시문에 beat.py start/end 가 있는지 · 예약이 꺼졌는지 확인'
+                  + (' · 지금: ' + ', '.join(
+                      f'{t}({"기록 없음" if hh is None else str(hh) + "시간째"}/정상 {g}시간)'
+                      for t, hh, g in sl[:4]) if sl else '')))
+        # 기계가 자서 예약이 통째로 빠진 구간. 사람이 고칠 것이 아니라 보이게만 한다.
+        cut = [(t, beat.cut_off(t)) for t in beat.BUDGET]
+        cut = [(t, hh) for t, hh in cut if hh]
+        if cut:
+            M.append(('회차', '기계가 꺼져 예약이 빠진 구간', len(cut), len(cut), 0,
+                      '멈춘 회차가 아니다 · ' + ', '.join(f'{t} {hh}시간' for t, hh in cut)))
     except Exception as e: print('회차 맥박 점검 실패:', repr(e)[:90])
 
     # 만들어 놓고 아무 회차도 안 부르는 도구가 있나.

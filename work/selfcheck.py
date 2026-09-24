@@ -100,6 +100,22 @@ def thin_sample(body, facts):
         bad.append((i, x[:80], n_read))
     return bad
 
+
+def resolve_pkg(arg):
+    """묶음 경로를 받아준다. 다음을 모두 허용한다.
+      work/research/foo/pkg  ·  work/research/foo  ·  foo
+    이름만 준 경우 work/research/<이름>/pkg 를 찾는다(2026-09-24 13시 회차: 이름만 줬다가
+    저장소 루트로 해석돼 '조각 파일 없음'이 났다)."""
+    here = os.path.dirname(os.path.abspath(__file__))
+    cands = [arg, os.path.join(arg, 'pkg'),
+             os.path.join(here, 'research', arg, 'pkg'),
+             os.path.join(here, 'research', arg)]
+    for c in cands:
+        if os.path.isdir(c) and (glob.glob(os.path.join(c, 'b[0-9]*.txt')) or glob.glob(os.path.join(c, 'c[0-9]*.txt'))):
+            return os.path.abspath(c)
+    return os.path.abspath(arg)
+
+
 def main(pkg):
     kind = 'cafe' if any(os.path.basename(p).startswith('c') for p in glob.glob(os.path.join(pkg, 'c0*.txt'))) else 'blog'
     # 사실표는 pkg 안에 있기도 하고 한 단계 위에 있기도 하다(묶음마다 다르다 — 2026-09-23 확인)
@@ -190,4 +206,4 @@ def main(pkg):
     return 1 if fact_n else 0
 
 if __name__ == '__main__':
-    sys.exit(main(os.path.abspath(sys.argv[1])))
+    sys.exit(main(resolve_pkg(sys.argv[1])))

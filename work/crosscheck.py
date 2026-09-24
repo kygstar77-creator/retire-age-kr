@@ -122,6 +122,22 @@ def gemini_chat(kv, system, user, prefer='pro'):
     raise last
 
 # ---- 묶음 읽기 ----
+
+def resolve_pkg(arg):
+    """묶음 경로를 받아준다. 다음을 모두 허용한다.
+      work/research/foo/pkg  ·  work/research/foo  ·  foo
+    이름만 준 경우 work/research/<이름>/pkg 를 찾는다(2026-09-24 13시 회차: 이름만 줬다가
+    저장소 루트로 해석돼 '조각 파일 없음'이 났다)."""
+    here = os.path.dirname(os.path.abspath(__file__))
+    cands = [arg, os.path.join(arg, 'pkg'),
+             os.path.join(here, 'research', arg, 'pkg'),
+             os.path.join(here, 'research', arg)]
+    for c in cands:
+        if os.path.isdir(c) and (glob.glob(os.path.join(c, 'b[0-9]*.txt')) or glob.glob(os.path.join(c, 'c[0-9]*.txt'))):
+            return os.path.abspath(c)
+    return os.path.abspath(arg)
+
+
 def read_pkg(pkg):
     root = os.path.dirname(pkg.rstrip('\\/')) if os.path.basename(pkg.rstrip('\\/')) == 'pkg' else pkg
     # facts.txt는 주제 폴더에 두는 게 규약이지만, pkg 안에 둔 회차도 있어 둘 다 본다.
@@ -187,7 +203,7 @@ def main():
     oa, gm = load_key('openai_key.txt'), load_key('gemini_key.txt')
     if cmd == 'models':
         print('OpenAI:', ('키 없음' if not oa else openai_pick(oa)), '| Gemini:', ('키 없음' if not gm else gemini_pick(gm))); return
-    pkg = os.path.abspath(sys.argv[2]); facts, title, body, kind = read_pkg(pkg)
+    pkg = resolve_pkg(sys.argv[2]); facts, title, body, kind = read_pkg(pkg)
     if cmd == 'draft':
         op = os.path.join(pkg, 'order.txt')
         if os.path.exists(op): kind = '카페' if '카페' in open(op, encoding='utf-8').readline() else '블로그'

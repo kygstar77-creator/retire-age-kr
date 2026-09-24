@@ -9,7 +9,7 @@
 | MCP 커넥터(Alpha Vantage·FMP) | 위와 같음, PC 앱에서만 연결 가능 | PC에서 이 대화의 커넥터 카드 | 대기 |
 | 공공데이터포털 키(국토부 실거래가 API) | 부동산 시리즈(B4·B8·B10) 아파트 실거래 원자료 | data.go.kr | **완료 2026-09-23 16:16** — datago_key.txt, 아파트 매매·매매상세·전월세 승인(마포구 8월 매매 112건·전월세 774건 확인). 오피스텔 매매·전월세는 아직 미신청 |
 | (막힘 기록 2026-09-23 15시) Nasdaq dividends API | O·SCHD·VOO·SPY·QLD 모두 'N/A'만 돌려줌(JEPQ만 정상). assetclass를 stocks/etf 둘 다 시도해도 같음 | 사장님 손 필요 없음 — Yahoo chart `?events=div`로 대체 확인(7종목 전부 정상). 17시 도구 회차에서 stockwants/crosscheck가 Nasdaq 배당을 쓰면 Yahoo로 바꿀 것 | 대체됨 |
-| 은행연합회 달러예금 금리 공시 | 카페 '달러예금 vs 미국 단기채 ETF' 비교에 국내 예금 금리가 필요 | 무료 공개 페이지 — 읽는 스크립트가 없음(확인 안 함). 17시 회차에서 nvread/Playwright로 읽어볼 것 | 대기 |
+| 은행연합회 달러예금 금리 공시 | 카페 '달러예금 vs 미국 단기채 ETF' 비교에 국내 예금 금리가 필요 | **사장님 손 필요 없음(2026-09-24 09시 확인)** — 은행연합회 소비자포털에 외화예금 금리 공시가 **없다**: portal.kfb.or.kr 첫 화면의 compare/* 링크 23개 전부와 receiving_deposit_3·receiving_neosearch·receiving_neosearch_2·receiving_neosave·commission_exchange 본문에 '외화' 문자열이 0회(HTTP 200으로 받아 직접 셈). receiving_deposit_foreign.php·receiving_foreign.php는 본문 2,099바이트 안내 페이지. **대체**: 원화 정기예금은 금감원 finlife API로 1차 출처 확보(같은 날 확인 — 우리은행 WON플러스예금 6개월 3.3%, 공시월 202609). 달러예금 금리 자체는 은행별 고시 페이지뿐이라, 필요해지면 은행 한 곳을 정해 시험한다 | 대체됨 |
 - **해결 2026-09-23 17:50(17시 회차)** EDGAR 20건 제한 — 전문검색 대신 **일별 인덱스**(`Archives/edgar/daily-index/<연>/QTR<분기>/form.<YYYYMMDD>.idx`)로 바꿨다. 그날 접수분 전체를 준다(2026-09-22 Form 4 847건 확인). insider.py 실행 확인: 109건 조회 → 매수(P) 17건(예전 1건). `py -3.12 work/insider.py 20 --days 2 --max 400 --min-amt 100000`. 키 필요 없음. 같은 접수번호가 발행사·신고자 CIK 경로로 두 번 나와 접수번호로 중복을 지운다. 당일 인덱스는 장 마감 뒤에 올라온다(오늘 것은 404).
 | 한국은행 ECOS 키 | 기준금리·환율·물가 시계열 | ecos.bok.or.kr | **완료 2026-09-23 16:37** — ecos_key.txt(기준금리 2.5→2.75→3.0, 원달러 일별 확인) |
 | 카카오 REST 키 | 주변 시설 거리 | developers.kakao.com | 키 저장(kakao_key.txt)했으나 **카카오맵 활성화 안 함**(계정당 1개 앱만 무료 쿼터 — 아껴 둠). 거리는 OpenStreetMap(무료·키 없음)으로 대체 확인 |
@@ -22,7 +22,7 @@
 | Canva 커넥터 | 썸네일·숏폼·카드 이미지 자동 생성(generate-design·export-design) | 클로드 앱 커넥터 | **완료 2026-09-23 17:24** — 세션에서 API 응답 확인(브랜드 키트 0개). 루틴(새 세션)에서 바로 사용 가능 |
 | 금융상품 한눈에 키 | 예금·적금 실제 금리(은행권 39상품) | finlife.fss.or.kr | **완료 2026-09-23 17:27** — finlife_key.txt |
 | FRED 키 | 연방기금금리·CPI·10년물·실업률 시계열 | fred.stlouisfed.org | **완료 2026-09-23 17:30** — fred_key.txt |
-| (막힘 기록 2026-09-23 17시) 발리·스페인 매물 | 해외 도시 글의 '지금 나와 있는 월세' | 사장님 손 필요 없음 — fazwaz.com/…/indonesia/bali 404, fazwaz.id Cloudflare 403, idealista.com(스페인) 403. 같은 스크립트로 태국(fazwaz.com)·포르투갈(idealista.pt)은 정상. 다음 도구 회차에서 대체 사이트(Rumah123·Fotocasa) 시험할 것 | 대기 |
+| (막힘 기록 2026-09-23 17시) 발리·스페인 매물 | 해외 도시 글의 '지금 나와 있는 월세' | 사장님 손 필요 없음 — fazwaz.com/…/indonesia/bali 404, fazwaz.id Cloudflare 403, idealista.com(스페인) 403. **스페인은 2026-09-24 09시에 닫았다**: Fotocasa 목록 페이지 HTML에 매물 JSON이 그대로 박혀 있어 requests 한 번으로 읽힌다. listings.py에 fotocasa 출처를 붙여 마드리드 6건·바르셀로나 3건 실측(월세·면적·방·동네·URL). 발렌시아도 같은 주소 규칙. **발리는 아직 막힘** — Rumah123도 403(2026-09-24 확인). 다음 도구 회차에서 다른 인도네시아 사이트를 찾는다 | 절반 해결 |
 
 - (2026-09-23 19시) **OpenAI 키가 없다** — C:\Users\강영준\Documents\openai_key.txt 없음. 그래서 사실 대조를 Gemini 한 곳이 혼자 하고 있다(자기 계열 모델이 자기 글을 보는 셈이라 교차검증이 아니다). 무료 아님(종량). 절차: platform.openai.com → API keys → 발급 → 위 경로에 KEY=sk-... 한 줄.
 - (2026-09-23 20:26 감시 회차) **Gemini 무료 등급이 하루 할당량을 다 썼다(HTTP 429 quota exceeded).** 503(일시 과부하)이 아니라 오늘치를 소진한 것이다. 이번 회차에 만든 묶음 6개 중 xyldcc 하나만 말투 검증을 받았고 나머지 다섯(nobl25·tenbil·jeonseratio·levetf·offiyield)은 check_*.txt가 없다. 발행 회차가 올리기 전에 다시 돌려야 한다. 하루 24편 × 2매체를 한 무료 키로 검증하는 구조가 한계다 — OpenAI 키를 받거나 유료 전환이 필요하다(사장님 판단).

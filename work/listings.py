@@ -1,7 +1,8 @@
 # 해외 매물 읽기(대기열 1번) — 파이어맵 해외 도시 글에 쓸 "지금 나와 있는 월세" 실측.
 #   py -3.12 work/listings.py 치앙마이 [건수=8]   → 매물 JSON + 생활비(Numbeo, 원화) + 화면에 요약
 #   py -3.12 work/listings.py --cities            → 지원 도시와 출처
-# 출처: FazWaz(태국·발리, div.result-search__item) · Idealista(포르투갈·스페인, article.item) · Numbeo(생활비·평균 월세, KRW 직접)
+# 출처: FazWaz(태국, div.result-search__item) · Idealista(포르투갈, article.item)
+#       Fotocasa(스페인, 페이지에 박힌 JSON — requests만으로 읽힌다. idealista.com 스페인은 403) · Numbeo(생활비·평균 월세, KRW 직접)
 # 규칙: 프로필 없는 Playwright chromium(사장님 브라우저 안 씀), 도시당 요청 2회, 숫자는 화면에 있는 것만 적는다.
 # 결과: work/research/listings/<도시>_<날짜>.json — facts.txt에 그대로 옮겨 쓸 수 있게 확인일·URL 포함.
 import sys, os, re, json, time
@@ -23,10 +24,11 @@ CITIES = {
     # 매물 사이트가 막혔거나 아직 확인 안 된 도시 — 생활비(Numbeo)만 받는다
     # 2026-09-23 실측: fazwaz.com/…/indonesia/bali 404, fazwaz.id Cloudflare 403,
     #                 idealista.com(스페인) 403 — 같은 스크립트로 idealista.pt는 200
+    # 2026-09-24 실측: 스페인은 Fotocasa로 대체(마드리드 31건 읽힘). 발리는 아직 출처 없음
+    '마드리드':     ('fotocasa', 'https://www.fotocasa.es/es/alquiler/viviendas/madrid-capital/todas-las-zonas/l', 'Madrid'),
+    '바르셀로나':   ('fotocasa', 'https://www.fotocasa.es/es/alquiler/viviendas/barcelona-capital/todas-las-zonas/l', 'Barcelona'),
+    '발렌시아':     ('fotocasa', 'https://www.fotocasa.es/es/alquiler/viviendas/valencia-capital/todas-las-zonas/l', 'Valencia'),
     '발리':         (None, None, 'Denpasar'),
-    '바르셀로나':   (None, None, 'Barcelona'),
-    '발렌시아':     (None, None, 'Valencia'),
-    '마드리드':     (None, None, 'Madrid'),
     '다낭':         (None, None, 'Da-Nang'),
     '하노이':       (None, None, 'Hanoi'),
     '호치민':       (None, None, 'Ho-Chi-Minh-City'),
@@ -111,6 +113,59 @@ def idealista(page, url, n):
         if len(rows) >= n: break
     return rows
 
+# ── Fotocasa(스페인) ──────────────────────────────────────────────────────
+# 목록 페이지 HTML 안에 매물 JSON이 그대로 박혀 있다. 브라우저 없이 requests 한 번이면 된다.
+# (2026-09-24 확인: 마드리드 31건. idealista.com 스페인은 같은 날에도 403)
+FOTO_H = {'User-Agent': UA, 'Accept-Language': 'es-ES,es;q=0.9'}
+FOTO_FEAT = {'elevator': '엘리베이터', 'air_conditioner': '에어컨', 'heating': '난방', 'terrace': '테라스',
+             'furnished': '가구 포함', 'parking': '주차', 'pool': '수영장', 'garden': '정원'}
+
+def _json_objs(s, key='{"accuracy":'):
+    """HTML에 박힌 JSON 객체를 중괄호 짝으로 잘라 읽는다(문자열 안의 괄호는 건너뛴다)."""
+    out = []
+    for m in re.finditer(re.escape(key), s):
+        i, depth, inq, esc = m.start(), 0, False, False
+        for j in range(i, min(len(s), i + 40000)):
+            c = s[j]
+            if esc: esc = False; continue
+            if c == chr(92): esc = True; continue
+            if c == '"': inq = not inq; continue
+            if inq: continue
+            if c == '{': depth += 1
+            elif c == '}':
+                depth -= 1
+                if depth == 0:
+                    try: out.append(json.loads(s[i:j + 1]))
+                    except Exception: pass
+                    break
+    return out
+
+def fotocasa(url, n):
+    import requests
+    html = requests.get(url, headers=FOTO_H, timeout=30).text
+    rows, seen = [], set()
+    for it in _json_objs(html):
+        if not isinstance(it.get('rawPrice'), (int, float)): continue
+        a = it.get('address') or {}
+        f = {x.get('key'): x.get('value') for x in (it.get('features') or []) if isinstance(x, dict)}
+        d = (it.get('detail') or {}).get('es-ES') or ''
+        u = ('https://www.fotocasa.es' + d) if d.startswith('/') else d
+        if not u or u in seen: continue
+        area = f.get('surface'); rooms = f.get('rooms'); baths = f.get('bathrooms')
+        feats = ', '.join(ko for k, ko in FOTO_FEAT.items() if f.get(k))
+        hood = a.get('neighborhood') or a.get('district') or ''
+        rows.append({'단지': it.get('clientAlias') or '', '제목': f"{it.get('buildingType') or ''} {hood}".strip(),
+                     '동네': hood, '월세': (it.get('price') or '') + '/월',
+                     '㎡당': (f"{round(it['rawPrice'] / area, 1)} €/㎡" if area else ''),
+                     '면적': (f'{area} m²' if area else ''), '방': (str(rooms) if rooms else ''),
+                     '욕실': (str(baths) if baths else ''), '유형': it.get('buildingSubtype') or '',
+                     '준공': '', '시설': feats,
+                     '게시': (f"{(it.get('date') or {}).get('diff', '')}일 전" if (it.get('date') or {}).get('unit') == 'DAYS' else ''),
+                     '설명': ' '.join((it.get('description') or '').split())[:260], 'URL': u})
+        seen.add(u)
+        if len(rows) >= n: break
+    return rows
+
 # ── Numbeo(생활비·평균 월세, 원화) ────────────────────────────────────────
 NUMBEO_JS = """() => { const t = document.querySelector('table.data_wide_table'); if (!t) return [];
   return [...t.querySelectorAll('tr')].map(r => [...r.querySelectorAll('td,th')].map(c => c.innerText.trim())).filter(r => r.length >= 2); }"""
@@ -158,7 +213,8 @@ with sync_playwright() as pw:
     try:
         if src:
             try:
-                res['매물'] = (fazwaz if src == 'fazwaz' else idealista)(pg, url, want)
+                res['매물'] = (fotocasa(url, want) if src == 'fotocasa'
+                               else (fazwaz if src == 'fazwaz' else idealista)(pg, url, want))
                 if not res['매물']: res['막힘'] = f'{src} 카드 0건(선택자 또는 차단 확인 필요)'
             except Exception as e:
                 res['막힘'] = f'{src} 실패: {type(e).__name__} {str(e)[:120]}'

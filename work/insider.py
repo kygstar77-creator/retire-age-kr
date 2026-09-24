@@ -62,6 +62,44 @@ def parse_form4(txt, url):
                         url=url))
     return out
 
+def us_close(ticker, _c={}):
+    """미국 거래소 종가(달러). Form 4 단가가 달러가 맞는지 대조하는 데만 쓴다."""
+    if ticker in _c: return _c[ticker]
+    v = None
+    try:
+        u = f'https://query1.finance.yahoo.com/v8/finance/chart/{ticker}?range=5d&interval=1d'
+        m = json.loads(urllib.request.urlopen(urllib.request.Request(
+            u, headers={'User-Agent': 'Mozilla/5.0'}), timeout=20).read())['chart']['result'][0]['meta']
+        if (m.get('currency') or '').upper() == 'USD': v = m.get('regularMarketPrice')
+    except Exception:
+        pass
+    _c[ticker] = v
+    return v
+
+
+def currency_flag(r):
+    """달러가 아닌 본국 주식을 달러로 잘못 세는 것을 막는다.
+
+    2026-09-24 사고: BANK BRADESCO 임원 9명의 Form 4에 적힌 단가 17.98을 달러로 읽어
+    상위 12건 중 9건이 이 회사로 채워졌다. 서류의 종목은 'Preference shares - BBDC4'로
+    상파울루 거래소 우선주였고 17.98은 헤알이었다(뉴욕 ADR BBD 종가는 3.57달러).
+    달러로 치면 174만 달러, 헤알로 제대로 읽으면 약 33만 7천 달러다.
+    그래서 미국 종가와 3배 넘게 벌어지면 금액을 믿지 않고 표시만 해 둔다.
+    """
+    px = float(r.get('price') or 0)
+    close = us_close(r.get('ticker') or '')
+    if not px or not close:
+        r['usd'] = None; r['flag'] = '미국 종가 확인 실패 - 통화 확인 필요'
+        return r
+    ratio = px / close if close else 0
+    if ratio > 3 or ratio < 1 / 3:
+        r['usd'] = False
+        r['flag'] = f'단가 {px}가 미국 종가 {close}달러와 {ratio:.1f}배 차이 - 본국 통화일 수 있음(금액 신뢰 불가)'
+    else:
+        r['usd'] = True; r['flag'] = ''
+    return r
+
+
 def main(argv):
     top = int(argv[0]) if argv and not argv[0].startswith('--') else 20
     def opt(name, dflt):
@@ -89,9 +127,21 @@ def main(argv):
         time.sleep(GAP)
     out = [r for r in out if r['amount'] >= min_amt]
     out.sort(key=lambda r: -r['amount'])
-    for r in out[:top]:
+    # 금액이 큰 쪽부터 통화를 대조한다. 달러가 확인된 게 top개 찰 때까지만 내려가서
+    # 야후 호출을 아끼되, 확인 안 한 건이 조용히 사라지지 않게 한다.
+    good, bad = [], []
+    for r in out:
+        if len(good) >= top: break
+        currency_flag(r)
+        (good if r.get('usd') is True else bad).append(r)
+    for r in good[:top]:
         print(json.dumps(r, ensure_ascii=False))
-    print(f'# 매수(P) {len(out)}건 / Form 4 {read}건 조회 ({days}일치, 상위 {min(top, len(out))}건 출력)',
+    if bad:
+        print(f'# 통화 확인이 안 된 {len(bad)}건은 순위에서 뺐다 - 아래에 따로 적는다', file=sys.stderr)
+        for r in bad[:top]:
+            print('# 제외 ' + json.dumps({k: r[k] for k in ('issuer', 'ticker', 'owner', 'date', 'price', 'flag')},
+                                        ensure_ascii=False), file=sys.stderr)
+    print(f'# 매수(P) {len(out)}건 / Form 4 {read}건 조회 ({days}일치, 달러 확인 {len(good)}건 중 상위 {min(top, len(good))}건 출력)',
           file=sys.stderr)
 
 if __name__ == '__main__':

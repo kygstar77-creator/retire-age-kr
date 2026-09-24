@@ -1,0 +1,33 @@
+# 사실표 — insiderbrl (C7 내부자 매수) 2026-09-24 작성
+
+[오늘 찾은 것] 2026-09-24 SEC EDGAR 일별 인덱스를 새로 내려받아 집계
+1. 출처: SEC EDGAR 일별 인덱스 https://www.sec.gov/Archives/edgar/daily-index/2026/QTR3/form.<YYYYMMDD>.idx (무키·공개)
+   최근 7일치 중 인덱스가 있는 날의 Form 4 377건을 읽어 매수(코드 P) 71건을 뽑았다.
+   2026-09-19·09-20·09-23·09-24는 인덱스가 없어 빠졌다(주말 및 아직 게시 전).
+2. 금액 상위 12건 중 9건이 BANK BRADESCO(뉴욕 티커 BBD) 임원·이사였다. 9건 모두 거래일 2026-09-18, 단가가 모두 똑같이 17.98이었다.
+3. 원문 확인 https://www.sec.gov/Archives/edgar/data/1160330/0001292814-26-004658.txt
+   - securityTitle: "Preference shares - BBDC4" (브라질 상파울루 거래소에 상장된 우선주)
+   - transactionCode: P (공개시장 매수) · directOrIndirectOwnership: D (직접 보유)
+   - aff10b5One: 0 (10b5-1 사전 매매계획 표시 없음)
+   - 서명일 2026-09-21, 보고자 Roberto de Jesus Paris(임원), 96,702주
+4. 통화 확인 (Yahoo Finance chart API, 2026-09-24 조회)
+   - BBDC4.SA — 통화 BRL, 종가 18.03, 거래소 São Paulo → Form 4의 17.98은 헤알이다
+   - 뉴욕에 상장된 ADR인 BBD는 같은 날 종가 3.57달러다(나스닥 요약 API)
+   - BRLUSD 환율 0.1937 (Yahoo BRLUSD=X, 2026-09-24)
+5. 달러로 환산하면 96,702주 x 17.98헤알 = 1,738,702헤알 = 약 336,757달러다. 원래 표에는 약 174만 달러로 잡혀 있었다.
+
+[달러로 실제 확인된 매수 3건]
+- Corebridge Financial (CRBG) — 10% 주주 NIPPON LIFE INSURANCE CO, 2026-09-18, 131,333주 x 34.8847달러 = 458만 1,512달러. 거래 뒤 보유 1억 2,360만 7,185주.
+  회사: 미국 생명보험·연금 회사. 나스닥 요약 기준 전일 종가 33.84달러, 시가총액 151억 700만 달러, 52주 35.64~22.19달러, 업종 Life Insurance.
+  원문 https://www.sec.gov/Archives/edgar/data/1889539/0001193125-26-397991.txt
+- TriplePoint Venture Growth BDC (TPVG) — 이사 겸 CEO James Labe, 2026-09-18, 313,865.22주 x 4.7061달러 = 147만 7,081달러. 거래 뒤 보유 231만 2,354주.
+  회사: 벤처기업에 대출해 주는 BDC. 전일 종가 4.91달러, 시가총액 2억 29만 달러, 52주 6.95~4.395달러.
+  원문 https://www.sec.gov/Archives/edgar/data/1594983/0001594983-26-000015.txt
+- BCB Bancorp (BCBP) — 이사 겸 CEO Thomas M OBrien, 2026-09-18, 160,000주 x 7.75달러 = 124만 달러. 거래 뒤 보유 86만 9,220주.
+  회사: 뉴저지 지역 저축은행 지주사. 전일 종가 8.67달러, 시가총액 3억 6,282만 달러, 52주 11.71~7.3101달러, 연 배당 0.32달러, 배당수익률 3.69%.
+  원문 https://www.sec.gov/Archives/edgar/data/1228454/0001193125-26-397677.txt
+
+[주의 — 본문에 남길 것]
+- 매수 코드 P는 "공개시장에서 샀다"는 뜻일 뿐이다. 오를지 내릴지는 아무 말도 해 주지 않는다.
+- 인덱스가 없는 날(주말·게시 전)이 4일 있어 7일치가 다 들어간 집계가 아니다.
+- 브라질 임원 9명이 같은 날 같은 단가에 샀다는 사실만 확인했다. 왜 같은 값인지는 서류에 설명(footnote)이 없다.

@@ -1,5 +1,5 @@
 # 블로그 경쟁 강도: 네이버 블로그 탭 상위 결과가 얼마나 최근 글인가(7일 안 글 비율). 새 글이 매일 밀려오는 키워드는 오래 못 버틴다.
-import sys, json, re, time, urllib.request, urllib.parse
+import sys, json, re, time, datetime, urllib.request, urllib.parse
 sys.stdout.reconfigure(encoding='utf-8')
 UA={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126 Safari/537.36'}
 allk=json.load(open('kw_blog_all.json',encoding='utf-8'))
@@ -9,15 +9,35 @@ c=[(k,v['pc']+v['mo'],v) for k,v in allk.items() if INC.search(k) and not EXC.se
 c=[x for x in c if int(sys.argv[2])<=x[1]<=int(sys.argv[3])]
 c.sort(key=lambda x:-x[1]); c=c[:int(sys.argv[1])]
 print(len(c),'candidates',file=sys.stderr)
+# 2026-09-24: 네이버가 검색 결과 날짜를 `>날짜<` 가 아니라
+# `sds-comps-profile-info-subtext">날짜` 로 내려주게 바뀌어 아무 날짜도 못 잡고 있었다.
+# (이 도구가 몇 달째 빈 결과만 내던 이유. 기준 날짜도 '2026.09.20.'로 박혀 있어 같이 고친다.)
+DATE_PAT = re.compile(r'profile-info-subtext"?>\s*(\d{4}\.\d{1,2}\.\d{1,2}\.|\d+(?:일|시간|분|주) 전|어제)')
+
+def days_ago(x, today):
+    """네이버가 적은 날짜 표기를 '며칠 전'으로 바꾼다. 못 읽으면 None."""
+    if '시간' in x or '분' in x: return 0
+    if x == '어제': return 1
+    m = re.match(r'(\d+)일 전', x)
+    if m: return int(m.group(1))
+    m = re.match(r'(\d+)주 전', x)
+    if m: return int(m.group(1)) * 7
+    m = re.match(r'(\d{4})\.(\d{1,2})\.(\d{1,2})\.', x)
+    if m:
+        try: return (today - datetime.date(*map(int, m.groups()))).days
+        except ValueError: return None
+    return None
+
 def fresh(k):
     u='https://search.naver.com/search.naver?ssc=tab.blog.all&sm=tab_jum&query='+urllib.parse.quote(k)
     try: s=urllib.request.urlopen(urllib.request.Request(u,headers=UA),timeout=20).read().decode('utf-8','ignore')
     except Exception: return None
-    d=re.findall(r'>(\d{4}\.\d{1,2}\.\d{1,2}\.|\d+(?:일|시간|분|주) 전|어제)<',s)[:10]
+    d=DATE_PAT.findall(s)[:10]
     if not d: return None
-    wk=sum(1 for x in d if ('시간' in x or '분' in x or x=='어제' or (x.endswith('일 전') and int(x.split('일')[0])<=7) or x=='2026.09.20.'))
-    old=sum(1 for x in d if re.match(r'\d{4}\.',x) and x!='2026.09.20.')
-    return {'n':len(d),'week':wk,'old':old}
+    today=datetime.date.today()
+    ages=[a for a in (days_ago(x,today) for x in d) if a is not None]
+    if not ages: return None
+    return {'n':len(ages),'week':sum(1 for a in ages if a<=7),'old':sum(1 for a in ages if a>=365)}
 out=[]
 for i,(k,vol,v) in enumerate(c):
     f=fresh(k); time.sleep(0.5)

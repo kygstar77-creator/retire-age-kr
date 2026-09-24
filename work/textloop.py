@@ -199,21 +199,28 @@ def rule_fp(*groups):
     for g in groups: xs += [f.get('규칙', '') for f in (g or [])]
     return hashlib.md5('|'.join(sorted(xs)).encode('utf-8')).hexdigest()[:10]
 
-def pick_cut(logs, now, posts):
-    """판정 기준 시각. 앞뒤 양쪽에 MIN_N편이 실제로 들어오는 회차 중 가장 최근.
-    규칙이 바뀐 회차가 그 조건을 만족하면 그쪽을 먼저 쓴다(규칙의 효과를 보는 것이 되므로)."""
+def pick_cut(logs, now, *groups):
+    """판정 기준 시각. 카페·블로그 **각각** 앞뒤로 MIN_N편이 들어오는 회차 중 가장 최근.
+    규칙이 바뀐 회차가 그 조건을 만족하면 그쪽을 먼저 쓴다(규칙의 효과를 보는 것이 되므로).
+
+    2026-09-24: 기준을 카페+블로그를 합친 편수로 골랐는데 채점은 매체별로 따로 했다.
+    합쳐서 4편이면 카페 2·블로그 2로 갈려 양쪽 다 보류가 났다. 실제로 46회 연속 보류였고,
+    같은 시각에 19:36 회차를 기준으로 잡았으면 카페 7·4, 블로그 4·10으로 둘 다 채점이 됐다.
+    기준은 채점과 같은 잣대로 골라야 한다."""
     usable = now - MIN_AGE_H * 3600          # 이 시각보다 나중에 쓴 글은 아직 성적을 못 잰다
+    groups = [g for g in groups if g]
     ok = []
     for r in logs:
         c = _ts(r['at'])
         if c >= usable: continue
-        after = sum(1 for p in posts if c < p['ts'] <= usable)
-        before = sum(1 for p in posts if p['ts'] <= c)
-        if after >= MIN_N and before >= MIN_N: ok.append(r)
+        if all(sum(1 for p in g if c < p['ts'] <= usable) >= MIN_N
+               and sum(1 for p in g if p['ts'] <= c) >= MIN_N for g in groups): ok.append(r)
     if not ok:
         span = (now - _ts(logs[0]['at'])) / 3600 if logs else 0
         need = MIN_AGE_H + MIN_N             # 시간당 1편 기준으로 이만큼은 쌓여야 첫 판정이 선다
-        return None, f'기록 {span:.0f}시간치 — 앞뒤로 {MIN_N}편씩 갈리려면 {need}시간은 쌓여야 한다'
+        thin = ' · '.join(f'{len(g)}편' for g in groups)
+        return None, (f'기록 {span:.0f}시간치({thin}) — 매체마다 앞뒤로 {MIN_N}편씩 갈리려면 '
+                      f'{need}시간은 쌓여야 한다')
     changed = [r for r in ok if r.get('rule_changed')]
     r = changed[-1] if changed else ok[-1]
     return _ts(r['at']), r['at'] + (' 규칙 바뀐 회차' if changed else ' 회차')
@@ -317,7 +324,7 @@ def main():
 
     # 5) 지난 규칙 판정 — 규칙을 적은 뒤에 올린 글의 성적이 그 전보다 나은가
     fp = rule_fp(cafe_found, cafe_cat, blog_found, blog_cat)
-    cut, cut_why = pick_cut(logs, now, cp + bp)
+    cut, cut_why = pick_cut(logs, now, cp, bp)
     if cut is None:
         verdict = '규칙 판정 보류 — ' + cut_why
     else:

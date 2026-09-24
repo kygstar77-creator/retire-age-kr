@@ -7,6 +7,7 @@
 #
 # 다른 스크립트에서는 `import apis` 후 아래 함수를 쓴다. 숫자는 전부 출처가 있는 1차 자료다.
 import sys, os, re, json, time, urllib.request, urllib.parse
+import datetime
 sys.stdout.reconfigure(encoding='utf-8')
 D = os.path.expanduser('~/Documents')
 UA = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126 Safari/537.36'}
@@ -21,9 +22,17 @@ def key(name):
     line = s.strip().splitlines()
     return line[0].strip() if line else None
 
-def _j(u, t=25):
-    r = urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=t)
-    return json.loads(r.read().decode('utf-8', 'ignore'))
+def _j(u, t=25, tries=3):
+    """공공 API는 502·503을 자주 낸다(2026-09-24 FRED·건축물대장에서 확인). 잠깐 쉬고 다시 부른다."""
+    last = None
+    for i in range(tries):
+        try:
+            r = urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=t)
+            return json.loads(r.read().decode('utf-8', 'ignore'))
+        except Exception as e:
+            last = e
+            if i < tries - 1: time.sleep(1.5 * (i + 1))
+    raise last
 
 # ── 미국 ───────────────────────────────────────────────────────────────────
 FRED_SERIES = {'기준금리': 'FEDFUNDS', '10년국채': 'DGS10', '2년국채': 'DGS2', '소비자물가': 'CPIAUCSL',
@@ -44,6 +53,48 @@ def av_quote(symbol):
     if not d: return None
     return {'종목': d.get('01. symbol'), '종가': d.get('05. price'), '전일대비': d.get('09. change'),
             '등락률': d.get('10. change percent'), '기준일': d.get('07. latest trading day')}
+
+def dividends(symbol, years=2):
+    """미국 종목·ETF 배당 이력 — [(배당락일, 1주당 금액)] 오래된 순.
+
+    나스닥 배당 API는 뉴욕증권거래소(NYSE) 종목에 "Dividend History for Non-Nasdaq
+    symbols is not available"를 돌려준다. 2026-09-24 코카콜라(KO) 글을 쓰다 막혔다.
+    그래서 나스닥을 먼저 보고, 비어 있으면 Yahoo chart API(events=div)로 넘어간다.
+    Yahoo는 NYSE도 준다(KO로 확인: 2026-03-13부터 0.53, 그 전 0.51 — 회사 보도자료와 일치).
+
+    주의: 여기서 나오는 날짜는 배당락일이다. 지급일·기준일은 회사 보도자료로 확인한다.
+    """
+    sym = urllib.parse.quote(symbol)
+    try:
+        d = _j(f'https://api.nasdaq.com/api/quote/{sym}/dividends?assetclass=stocks', t=20)
+        rows = ((d or {}).get('data') or {}).get('dividends') or {}
+        out = []
+        for r in (rows.get('rows') or []):
+            amt = str(r.get('amount', '')).replace('$', '').strip()
+            exd = r.get('exOrEffDate') or ''
+            if amt and exd:
+                try: out.append((_us_date(exd), float(amt)))
+                except ValueError: pass
+        if out: return sorted(out)
+    except Exception:
+        pass
+    d = _j(f'https://query1.finance.yahoo.com/v8/finance/chart/{sym}'
+           f'?range={int(years)}y&interval=1d&events=div', t=25)
+    res = ((d or {}).get('chart') or {}).get('result') or [{}]
+    ev = (res[0].get('events') or {}).get('dividends') or {}
+    out = []
+    for v in ev.values():
+        try:
+            out.append((datetime.datetime.fromtimestamp(v['date'], datetime.timezone.utc)
+                        .strftime('%Y-%m-%d'), float(v['amount'])))
+        except Exception:
+            pass
+    return sorted(out)
+
+def _us_date(s):
+    """나스닥이 주는 MM/DD/YYYY를 YYYY-MM-DD로."""
+    m, d, y = s.split('/')
+    return f'{y}-{int(m):02d}-{int(d):02d}'
 
 # ── 국내 ───────────────────────────────────────────────────────────────────
 def dart_list(bgn=None, end=None, count=20, corp_code=None):

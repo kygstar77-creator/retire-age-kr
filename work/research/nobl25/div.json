@@ -1,0 +1,2128 @@
+[
+ {
+  "sym": "BDX",
+  "name": "Becton, Dickinson and Company",
+  "weight": 1.75,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$180.70",
+  "sector": "Health Care",
+  "industry": "Medical/Dental Instruments",
+  "mcap": "49,846,784,400",
+  "hi_lo": "$213.08/$140.11",
+  "rows": [],
+  "y_price": 182.52,
+  "y_divs": [
+   [
+    "2023-12-07",
+    0.746855
+   ],
+   [
+    "2024-03-07",
+    0.746855
+   ],
+   [
+    "2024-06-10",
+    0.746855
+   ],
+   [
+    "2024-09-09",
+    0.746855
+   ],
+   [
+    "2024-12-09",
+    0.81761
+   ],
+   [
+    "2025-03-10",
+    0.81761
+   ],
+   [
+    "2025-06-09",
+    0.81761
+   ],
+   [
+    "2025-09-08",
+    0.81761
+   ],
+   [
+    "2025-12-08",
+    0.825472
+   ],
+   [
+    "2026-03-10",
+    1.05
+   ],
+   [
+    "2026-06-09",
+    1.05
+   ],
+   [
+    "2026-09-09",
+    1.05
+   ]
+  ],
+  "y_annual": 3.9755,
+  "y_yield": 2.18,
+  "y_lastex": "2026-09-09",
+  "ttm": 3.9755,
+  "ttm_n": 4,
+  "ttm_yield": 2.18,
+  "growth": 21.56
+ },
+ {
+  "sym": "TGT",
+  "name": "Target Corporation",
+  "weight": 1.69,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$157.71",
+  "sector": "Consumer Discretionary",
+  "industry": "Department/Specialty Retail Stores",
+  "mcap": "72,242,266,959",
+  "hi_lo": "$170.75/$83.44",
+  "rows": [],
+  "y_price": 156.26,
+  "y_divs": [
+   [
+    "2023-11-14",
+    1.1
+   ],
+   [
+    "2024-02-20",
+    1.1
+   ],
+   [
+    "2024-05-14",
+    1.1
+   ],
+   [
+    "2024-08-21",
+    1.12
+   ],
+   [
+    "2024-11-20",
+    1.12
+   ],
+   [
+    "2025-02-12",
+    1.12
+   ],
+   [
+    "2025-05-14",
+    1.12
+   ],
+   [
+    "2025-08-13",
+    1.14
+   ],
+   [
+    "2025-11-12",
+    1.14
+   ],
+   [
+    "2026-02-11",
+    1.14
+   ],
+   [
+    "2026-05-13",
+    1.14
+   ],
+   [
+    "2026-08-12",
+    1.16
+   ]
+  ],
+  "y_annual": 4.58,
+  "y_yield": 2.93,
+  "y_lastex": "2026-08-12",
+  "ttm": 4.58,
+  "ttm_n": 4,
+  "ttm_yield": 2.93,
+  "growth": 1.78
+ },
+ {
+  "sym": "FDS",
+  "name": "FactSet Research Systems Inc.",
+  "weight": 1.65,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$284.10",
+  "sector": "Technology",
+  "industry": "Computer Software: Programming, Data Processing",
+  "mcap": "9,831,027,396",
+  "hi_lo": "$320.48/$185",
+  "rows": [],
+  "y_price": 279.43,
+  "y_divs": [
+   [
+    "2023-11-29",
+    0.98
+   ],
+   [
+    "2024-02-28",
+    0.98
+   ],
+   [
+    "2024-05-31",
+    1.04
+   ],
+   [
+    "2024-08-30",
+    1.04
+   ],
+   [
+    "2024-11-29",
+    1.04
+   ],
+   [
+    "2025-02-28",
+    1.04
+   ],
+   [
+    "2025-05-30",
+    1.1
+   ],
+   [
+    "2025-08-29",
+    1.1
+   ],
+   [
+    "2025-11-28",
+    1.1
+   ],
+   [
+    "2026-02-27",
+    1.1
+   ],
+   [
+    "2026-05-29",
+    1.16
+   ],
+   [
+    "2026-08-31",
+    1.16
+   ]
+  ],
+  "y_annual": 4.52,
+  "y_yield": 1.62,
+  "y_lastex": "2026-08-31",
+  "ttm": 4.52,
+  "ttm_n": 4,
+  "ttm_yield": 1.62,
+  "growth": 5.61
+ },
+ {
+  "sym": "IBM",
+  "name": "International Business Machines Corporation",
+  "weight": 1.65,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$231.93",
+  "sector": "Technology",
+  "industry": "Computer Manufacturing",
+  "mcap": "217,991,055,158",
+  "hi_lo": "$332.46/$199.19",
+  "rows": [],
+  "y_price": 232.76,
+  "y_divs": [
+   [
+    "2023-11-09",
+    1.66
+   ],
+   [
+    "2024-02-08",
+    1.66
+   ],
+   [
+    "2024-05-09",
+    1.67
+   ],
+   [
+    "2024-08-09",
+    1.67
+   ],
+   [
+    "2024-11-12",
+    1.67
+   ],
+   [
+    "2025-02-10",
+    1.67
+   ],
+   [
+    "2025-05-09",
+    1.68
+   ],
+   [
+    "2025-08-08",
+    1.68
+   ],
+   [
+    "2025-11-10",
+    1.68
+   ],
+   [
+    "2026-02-10",
+    1.68
+   ],
+   [
+    "2026-05-08",
+    1.69
+   ],
+   [
+    "2026-08-10",
+    1.69
+   ]
+  ],
+  "y_annual": 6.74,
+  "y_yield": 2.9,
+  "y_lastex": "2026-08-10",
+  "ttm": 6.74,
+  "ttm_n": 4,
+  "ttm_yield": 2.9,
+  "growth": 0.6
+ },
+ {
+  "sym": "ERIE",
+  "name": "Erie Indemnity Company",
+  "weight": 1.63,
+  "yield": "2.5%",
+  "annual": "5.85",
+  "exdate": "07/07/2026",
+  "pay": "07/21/2026",
+  "last_amt": "$1.4625",
+  "prev_amt": "$1.4625",
+  "price": "$235.95",
+  "sector": "Finance",
+  "industry": "Specialty Insurers",
+  "mcap": "10,825,793,758",
+  "hi_lo": "$330.535/$204.6301",
+  "rows": [
+   {
+    "exOrEffDate": "10/05/2026",
+    "amount": "$1.4625",
+    "paymentDate": "10/20/2026",
+    "declarationDate": "07/28/2026"
+   },
+   {
+    "exOrEffDate": "07/07/2026",
+    "amount": "$1.4625",
+    "paymentDate": "07/21/2026",
+    "declarationDate": "04/21/2026"
+   },
+   {
+    "exOrEffDate": "04/07/2026",
+    "amount": "$1.4625",
+    "paymentDate": "04/21/2026",
+    "declarationDate": "02/19/2026"
+   },
+   {
+    "exOrEffDate": "01/06/2026",
+    "amount": "$1.4625",
+    "paymentDate": "01/21/2026",
+    "declarationDate": "12/09/2025"
+   },
+   {
+    "exOrEffDate": "10/06/2025",
+    "amount": "$1.365",
+    "paymentDate": "10/21/2025",
+    "declarationDate": "07/29/2025"
+   },
+   {
+    "exOrEffDate": "07/08/2025",
+    "amount": "$1.365",
+    "paymentDate": "07/22/2025",
+    "declarationDate": "04/22/2025"
+   },
+   {
+    "exOrEffDate": "04/07/2025",
+    "amount": "$1.365",
+    "paymentDate": "04/22/2025",
+    "declarationDate": "02/20/2025"
+   },
+   {
+    "exOrEffDate": "01/07/2025",
+    "amount": "$1.365",
+    "paymentDate": "01/22/2025",
+    "declarationDate": "12/10/2024"
+   },
+   {
+    "exOrEffDate": "10/07/2024",
+    "amount": "$1.275",
+    "paymentDate": "10/22/2024",
+    "declarationDate": "07/23/2024"
+   }
+  ],
+  "y_price": 225.77,
+  "y_divs": [
+   [
+    "2023-10-04",
+    1.19
+   ],
+   [
+    "2024-01-05",
+    1.275
+   ],
+   [
+    "2024-04-08",
+    1.275
+   ],
+   [
+    "2024-07-09",
+    1.275
+   ],
+   [
+    "2024-10-07",
+    1.275
+   ],
+   [
+    "2025-01-07",
+    1.365
+   ],
+   [
+    "2025-04-07",
+    1.365
+   ],
+   [
+    "2025-07-08",
+    1.365
+   ],
+   [
+    "2025-10-06",
+    1.365
+   ],
+   [
+    "2026-01-06",
+    1.463
+   ],
+   [
+    "2026-04-07",
+    1.463
+   ],
+   [
+    "2026-07-07",
+    1.463
+   ]
+  ],
+  "y_annual": 5.754,
+  "y_yield": 2.55,
+  "y_lastex": "2026-07-07",
+  "ttm": 5.754,
+  "ttm_n": 4,
+  "ttm_yield": 2.55,
+  "growth": 7.15
+ },
+ {
+  "sym": "ADP",
+  "name": "Automatic Data Processing, Inc.",
+  "weight": 1.63,
+  "yield": "2.52%",
+  "annual": "6.8",
+  "exdate": "09/11/2026",
+  "pay": "10/01/2026",
+  "last_amt": "$1.70",
+  "prev_amt": "$1.70",
+  "price": "$269.94",
+  "sector": "Technology",
+  "industry": "EDP Services",
+  "mcap": "107,117,924,405",
+  "hi_lo": "$294.35/$188.16",
+  "rows": [
+   {
+    "exOrEffDate": "09/11/2026",
+    "amount": "$1.70",
+    "paymentDate": "10/01/2026",
+    "declarationDate": "08/05/2026"
+   },
+   {
+    "exOrEffDate": "06/12/2026",
+    "amount": "$1.70",
+    "paymentDate": "07/01/2026",
+    "declarationDate": "04/08/2026"
+   },
+   {
+    "exOrEffDate": "03/13/2026",
+    "amount": "$1.70",
+    "paymentDate": "04/01/2026",
+    "declarationDate": "01/14/2026"
+   },
+   {
+    "exOrEffDate": "12/12/2025",
+    "amount": "$1.70",
+    "paymentDate": "01/01/2026",
+    "declarationDate": "11/12/2025"
+   },
+   {
+    "exOrEffDate": "09/12/2025",
+    "amount": "$1.54",
+    "paymentDate": "10/01/2025",
+    "declarationDate": "08/06/2025"
+   },
+   {
+    "exOrEffDate": "06/13/2025",
+    "amount": "$1.54",
+    "paymentDate": "07/01/2025",
+    "declarationDate": "04/08/2025"
+   },
+   {
+    "exOrEffDate": "03/14/2025",
+    "amount": "$1.54",
+    "paymentDate": "04/01/2025",
+    "declarationDate": "01/15/2025"
+   },
+   {
+    "exOrEffDate": "12/13/2024",
+    "amount": "$1.54",
+    "paymentDate": "01/01/2025",
+    "declarationDate": "11/06/2024"
+   },
+   {
+    "exOrEffDate": "09/13/2024",
+    "amount": "$1.40",
+    "paymentDate": "10/01/2024",
+    "declarationDate": "08/07/2024"
+   }
+  ],
+  "y_price": 263.68,
+  "y_divs": [
+   [
+    "2023-12-07",
+    1.4
+   ],
+   [
+    "2024-03-07",
+    1.4
+   ],
+   [
+    "2024-06-14",
+    1.4
+   ],
+   [
+    "2024-09-13",
+    1.4
+   ],
+   [
+    "2024-12-13",
+    1.54
+   ],
+   [
+    "2025-03-14",
+    1.54
+   ],
+   [
+    "2025-06-13",
+    1.54
+   ],
+   [
+    "2025-09-12",
+    1.54
+   ],
+   [
+    "2025-12-12",
+    1.7
+   ],
+   [
+    "2026-03-13",
+    1.7
+   ],
+   [
+    "2026-06-12",
+    1.7
+   ],
+   [
+    "2026-09-11",
+    1.7
+   ]
+  ],
+  "y_annual": 6.8,
+  "y_yield": 2.58,
+  "y_lastex": "2026-09-11",
+  "ttm": 6.8,
+  "ttm_n": 4,
+  "ttm_yield": 2.58,
+  "growth": 10.39
+ },
+ {
+  "sym": "MDT",
+  "name": "Medtronic plc",
+  "weight": 1.62,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$91.75",
+  "sector": "Health Care",
+  "industry": "Biotechnology: Electromedical & Electrotherapeutic Apparatus",
+  "mcap": "116,107,346,275",
+  "hi_lo": "$106.33/$73.31",
+  "rows": [],
+  "y_price": 89.3,
+  "y_divs": [
+   [
+    "2023-12-19",
+    0.69
+   ],
+   [
+    "2024-03-21",
+    0.69
+   ],
+   [
+    "2024-06-28",
+    0.7
+   ],
+   [
+    "2024-09-27",
+    0.7
+   ],
+   [
+    "2024-12-27",
+    0.7
+   ],
+   [
+    "2025-03-28",
+    0.7
+   ],
+   [
+    "2025-06-27",
+    0.71
+   ],
+   [
+    "2025-09-26",
+    0.71
+   ],
+   [
+    "2025-12-26",
+    0.71
+   ],
+   [
+    "2026-03-27",
+    0.71
+   ],
+   [
+    "2026-06-26",
+    0.72
+   ]
+  ],
+  "y_annual": 2.85,
+  "y_yield": 3.19,
+  "y_lastex": "2026-06-26",
+  "ttm": 2.85,
+  "ttm_n": 4,
+  "ttm_yield": 3.19,
+  "growth": 1.42
+ },
+ {
+  "sym": "FAST",
+  "name": "Fastenal Company",
+  "weight": 1.62,
+  "yield": "2.08%",
+  "annual": "1.04",
+  "exdate": "07/28/2026",
+  "pay": "08/25/2026",
+  "last_amt": "$0.26",
+  "prev_amt": "$0.24",
+  "price": "$49.65",
+  "sector": "Consumer Discretionary",
+  "industry": "RETAIL: Building Materials",
+  "mcap": "57,466,678,456",
+  "hi_lo": "$52.915/$38.9703",
+  "rows": [
+   {
+    "exOrEffDate": "07/28/2026",
+    "amount": "$0.26",
+    "paymentDate": "08/25/2026",
+    "declarationDate": "07/10/2026"
+   },
+   {
+    "exOrEffDate": "04/28/2026",
+    "amount": "$0.24",
+    "paymentDate": "05/26/2026",
+    "declarationDate": "04/10/2026"
+   },
+   {
+    "exOrEffDate": "01/29/2026",
+    "amount": "$0.24",
+    "paymentDate": "02/26/2026",
+    "declarationDate": "01/16/2026"
+   },
+   {
+    "exOrEffDate": "10/28/2025",
+    "amount": "$0.22",
+    "paymentDate": "11/25/2025",
+    "declarationDate": "10/10/2025"
+   },
+   {
+    "exOrEffDate": "07/29/2025",
+    "amount": "$0.22",
+    "paymentDate": "08/26/2025",
+    "declarationDate": "07/11/2025"
+   },
+   {
+    "exOrEffDate": "04/25/2025",
+    "amount": "$0.44",
+    "paymentDate": "05/23/2025",
+    "declarationDate": "04/10/2025"
+   },
+   {
+    "exOrEffDate": "01/31/2025",
+    "amount": "$0.43",
+    "paymentDate": "02/28/2025",
+    "declarationDate": "01/16/2025"
+   },
+   {
+    "exOrEffDate": "10/25/2024",
+    "amount": "$0.39",
+    "paymentDate": "11/22/2024",
+    "declarationDate": "10/10/2024"
+   },
+   {
+    "exOrEffDate": "07/26/2024",
+    "amount": "$0.39",
+    "paymentDate": "08/23/2024",
+    "declarationDate": "07/11/2024"
+   }
+  ],
+  "y_price": 50.99,
+  "y_divs": [
+   [
+    "2023-10-25",
+    0.175
+   ],
+   [
+    "2023-12-05",
+    0.19
+   ],
+   [
+    "2024-01-31",
+    0.195
+   ],
+   [
+    "2024-04-24",
+    0.195
+   ],
+   [
+    "2024-07-26",
+    0.195
+   ],
+   [
+    "2024-10-25",
+    0.195
+   ],
+   [
+    "2025-01-31",
+    0.215
+   ],
+   [
+    "2025-04-25",
+    0.22
+   ],
+   [
+    "2025-07-29",
+    0.22
+   ],
+   [
+    "2025-10-28",
+    0.22
+   ],
+   [
+    "2026-01-29",
+    0.24
+   ],
+   [
+    "2026-04-28",
+    0.24
+   ],
+   [
+    "2026-07-28",
+    0.26
+   ]
+  ],
+  "y_annual": 0.96,
+  "y_yield": 1.88,
+  "y_lastex": "2026-07-28",
+  "ttm": 0.96,
+  "ttm_n": 4,
+  "ttm_yield": 1.88,
+  "growth": 12.94
+ },
+ {
+  "sym": "EMR",
+  "name": "Emerson Electric Co.",
+  "weight": 1.62,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$151.72",
+  "sector": "Technology",
+  "industry": "Consumer Electronics/Appliances",
+  "mcap": "86,007,182,000",
+  "hi_lo": "$166.35/$122.635",
+  "rows": [],
+  "y_price": 154.59,
+  "y_divs": [
+   [
+    "2023-11-16",
+    0.525
+   ],
+   [
+    "2024-02-15",
+    0.525
+   ],
+   [
+    "2024-05-16",
+    0.525
+   ],
+   [
+    "2024-08-16",
+    0.525
+   ],
+   [
+    "2024-11-15",
+    0.528
+   ],
+   [
+    "2025-02-14",
+    0.528
+   ],
+   [
+    "2025-05-16",
+    0.528
+   ],
+   [
+    "2025-08-15",
+    0.528
+   ],
+   [
+    "2025-11-14",
+    0.555
+   ],
+   [
+    "2026-02-13",
+    0.555
+   ],
+   [
+    "2026-05-15",
+    0.555
+   ],
+   [
+    "2026-08-14",
+    0.555
+   ]
+  ],
+  "y_annual": 2.22,
+  "y_yield": 1.44,
+  "y_lastex": "2026-08-14",
+  "ttm": 2.22,
+  "ttm_n": 4,
+  "ttm_yield": 1.44,
+  "growth": 5.11
+ },
+ {
+  "sym": "NDSN",
+  "name": "Nordson Corporation",
+  "weight": 1.61,
+  "yield": "1.18%",
+  "annual": "3.76",
+  "exdate": "09/10/2026",
+  "pay": "10/02/2026",
+  "last_amt": "$0.94",
+  "prev_amt": "$0.82",
+  "price": "$314.35",
+  "sector": "Industrials",
+  "industry": "Industrial Machinery/Components",
+  "mcap": "17,805,416,329",
+  "hi_lo": "$339.12/$220.47",
+  "rows": [
+   {
+    "exOrEffDate": "09/10/2026",
+    "amount": "$0.94",
+    "paymentDate": "10/02/2026",
+    "declarationDate": "08/27/2026"
+   },
+   {
+    "exOrEffDate": "06/18/2026",
+    "amount": "$0.82",
+    "paymentDate": "07/06/2026",
+    "declarationDate": "06/02/2026"
+   },
+   {
+    "exOrEffDate": "03/19/2026",
+    "amount": "$0.82",
+    "paymentDate": "04/03/2026",
+    "declarationDate": "03/03/2026"
+   },
+   {
+    "exOrEffDate": "12/17/2025",
+    "amount": "$0.82",
+    "paymentDate": "01/02/2026",
+    "declarationDate": "12/01/2025"
+   },
+   {
+    "exOrEffDate": "09/11/2025",
+    "amount": "$0.82",
+    "paymentDate": "09/25/2025",
+    "declarationDate": "08/28/2025"
+   },
+   {
+    "exOrEffDate": "06/18/2025",
+    "amount": "$0.78",
+    "paymentDate": "07/03/2025",
+    "declarationDate": "06/03/2025"
+   },
+   {
+    "exOrEffDate": "03/20/2025",
+    "amount": "$0.78",
+    "paymentDate": "04/03/2025",
+    "declarationDate": "03/06/2025"
+   },
+   {
+    "exOrEffDate": "01/02/2025",
+    "amount": "$0.78",
+    "paymentDate": "01/16/2025",
+    "declarationDate": "12/19/2024"
+   },
+   {
+    "exOrEffDate": "08/27/2024",
+    "amount": "$0.78",
+    "paymentDate": "09/10/2024",
+    "declarationDate": "08/14/2024"
+   }
+  ],
+  "y_price": 321.42,
+  "y_divs": [
+   [
+    "2023-12-18",
+    0.68
+   ],
+   [
+    "2024-02-16",
+    0.68
+   ],
+   [
+    "2024-05-20",
+    0.68
+   ],
+   [
+    "2024-08-27",
+    0.78
+   ],
+   [
+    "2025-01-02",
+    0.78
+   ],
+   [
+    "2025-03-20",
+    0.78
+   ],
+   [
+    "2025-06-18",
+    0.78
+   ],
+   [
+    "2025-09-11",
+    0.82
+   ],
+   [
+    "2025-12-17",
+    0.82
+   ],
+   [
+    "2026-03-19",
+    0.82
+   ],
+   [
+    "2026-06-18",
+    0.82
+   ],
+   [
+    "2026-09-10",
+    0.94
+   ]
+  ],
+  "y_annual": 3.4,
+  "y_yield": 1.06,
+  "y_lastex": "2026-09-10",
+  "ttm": 3.4,
+  "ttm_n": 4,
+  "ttm_yield": 1.06,
+  "growth": 7.59
+ },
+ {
+  "sym": "ROP",
+  "name": "Roper Technologies, Inc.",
+  "weight": 1.58,
+  "yield": "1%",
+  "annual": "3.64",
+  "exdate": "07/08/2026",
+  "pay": "07/22/2026",
+  "last_amt": "$0.91",
+  "prev_amt": "$0.91",
+  "price": "$365.40",
+  "sector": "Industrials",
+  "industry": "Industrial Machinery/Components",
+  "mcap": "35,985,083,005",
+  "hi_lo": "$521.28/$305.96",
+  "rows": [
+   {
+    "exOrEffDate": "10/02/2026",
+    "amount": "$0.91",
+    "paymentDate": "10/21/2026",
+    "declarationDate": "08/06/2026"
+   },
+   {
+    "exOrEffDate": "07/08/2026",
+    "amount": "$0.91",
+    "paymentDate": "07/22/2026",
+    "declarationDate": "N/A"
+   },
+   {
+    "exOrEffDate": "04/06/2026",
+    "amount": "$0.91",
+    "paymentDate": "04/22/2026",
+    "declarationDate": "N/A"
+   },
+   {
+    "exOrEffDate": "01/02/2026",
+    "amount": "$0.91",
+    "paymentDate": "01/16/2026",
+    "declarationDate": "11/05/2025"
+   },
+   {
+    "exOrEffDate": "10/03/2025",
+    "amount": "$0.825",
+    "paymentDate": "10/17/2025",
+    "declarationDate": "08/06/2025"
+   },
+   {
+    "exOrEffDate": "07/08/2025",
+    "amount": "$0.825",
+    "paymentDate": "07/22/2025",
+    "declarationDate": "06/11/2025"
+   },
+   {
+    "exOrEffDate": "04/04/2025",
+    "amount": "$0.825",
+    "paymentDate": "04/22/2025",
+    "declarationDate": "03/07/2025"
+   },
+   {
+    "exOrEffDate": "01/03/2025",
+    "amount": "$0.825",
+    "paymentDate": "01/17/2025",
+    "declarationDate": "11/06/2024"
+   },
+   {
+    "exOrEffDate": "10/08/2024",
+    "amount": "$0.75",
+    "paymentDate": "10/21/2024",
+    "declarationDate": "09/18/2024"
+   }
+  ],
+  "y_price": 366.36,
+  "y_divs": [
+   [
+    "2023-10-05",
+    0.683
+   ],
+   [
+    "2024-01-08",
+    0.75
+   ],
+   [
+    "2024-04-04",
+    0.75
+   ],
+   [
+    "2024-07-08",
+    0.75
+   ],
+   [
+    "2024-10-08",
+    0.75
+   ],
+   [
+    "2025-01-03",
+    0.825
+   ],
+   [
+    "2025-04-04",
+    0.825
+   ],
+   [
+    "2025-07-08",
+    0.825
+   ],
+   [
+    "2025-10-03",
+    0.825
+   ],
+   [
+    "2026-01-02",
+    0.91
+   ],
+   [
+    "2026-04-06",
+    0.91
+   ],
+   [
+    "2026-07-08",
+    0.91
+   ]
+  ],
+  "y_annual": 3.555,
+  "y_yield": 0.97,
+  "y_lastex": "2026-07-08",
+  "ttm": 3.555,
+  "ttm_n": 4,
+  "ttm_yield": 0.97,
+  "growth": 10.23
+ },
+ {
+  "sym": "KO",
+  "name": "The Coca-Cola Company",
+  "weight": 1.58,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$87.12",
+  "sector": "Consumer Staples",
+  "industry": "Beverages (Production/Distribution)",
+  "mcap": "381,248,888,422",
+  "hi_lo": "$92.49/$65.3538",
+  "rows": [],
+  "y_price": 88.09,
+  "y_divs": [
+   [
+    "2023-11-30",
+    0.46
+   ],
+   [
+    "2024-03-14",
+    0.485
+   ],
+   [
+    "2024-06-14",
+    0.485
+   ],
+   [
+    "2024-09-13",
+    0.485
+   ],
+   [
+    "2024-11-29",
+    0.485
+   ],
+   [
+    "2025-03-14",
+    0.51
+   ],
+   [
+    "2025-06-13",
+    0.51
+   ],
+   [
+    "2025-09-15",
+    0.51
+   ],
+   [
+    "2025-12-01",
+    0.51
+   ],
+   [
+    "2026-03-13",
+    0.53
+   ],
+   [
+    "2026-06-15",
+    0.53
+   ],
+   [
+    "2026-09-15",
+    0.53
+   ]
+  ],
+  "y_annual": 2.1,
+  "y_yield": 2.38,
+  "y_lastex": "2026-09-15",
+  "ttm": 2.1,
+  "ttm_n": 4,
+  "ttm_yield": 2.38,
+  "growth": 4.22
+ },
+ {
+  "sym": "GPC",
+  "name": "Genuine Parts Company",
+  "weight": 1.58,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$126.45",
+  "sector": "Consumer Discretionary",
+  "industry": "Automotive Aftermarket",
+  "mcap": "17,865,246,039",
+  "hi_lo": "$151.57/$90.78",
+  "rows": [],
+  "y_price": 128.76,
+  "y_divs": [
+   [
+    "2023-11-30",
+    0.95
+   ],
+   [
+    "2024-02-29",
+    1.0
+   ],
+   [
+    "2024-06-07",
+    1.0
+   ],
+   [
+    "2024-09-06",
+    1.0
+   ],
+   [
+    "2024-12-06",
+    1.0
+   ],
+   [
+    "2025-03-07",
+    1.03
+   ],
+   [
+    "2025-06-06",
+    1.03
+   ],
+   [
+    "2025-09-05",
+    1.03
+   ],
+   [
+    "2025-12-05",
+    1.03
+   ],
+   [
+    "2026-03-06",
+    1.063
+   ],
+   [
+    "2026-06-05",
+    1.063
+   ],
+   [
+    "2026-09-04",
+    1.063
+   ]
+  ],
+  "y_annual": 4.219,
+  "y_yield": 3.28,
+  "y_lastex": "2026-09-04",
+  "ttm": 4.219,
+  "ttm_n": 4,
+  "ttm_yield": 3.28,
+  "growth": 3.15
+ },
+ {
+  "sym": "EXPD",
+  "name": "Expeditors International of Washington, Inc.",
+  "weight": 1.55,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$192.15",
+  "sector": "Industrials",
+  "industry": "Integrated Freight & Logistics",
+  "mcap": "24,374,541,531",
+  "hi_lo": "$194.59/$112.945",
+  "rows": [],
+  "y_price": 188.03,
+  "y_divs": [
+   [
+    "2023-11-30",
+    0.69
+   ],
+   [
+    "2024-06-03",
+    0.73
+   ],
+   [
+    "2024-12-02",
+    0.73
+   ],
+   [
+    "2025-06-02",
+    0.77
+   ],
+   [
+    "2025-12-01",
+    0.77
+   ],
+   [
+    "2026-06-01",
+    0.81
+   ]
+  ],
+  "y_annual": 3.08,
+  "y_yield": 1.64,
+  "y_lastex": "2026-06-01",
+  "ttm": 1.58,
+  "ttm_n": 2,
+  "ttm_yield": 0.84,
+  "growth": 5.33
+ },
+ {
+  "sym": "JNJ",
+  "name": "Johnson & Johnson",
+  "weight": 1.54,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$269.47",
+  "sector": "Health Care",
+  "industry": "Biotechnology: Pharmaceutical Preparations",
+  "mcap": "648,720,603,326",
+  "hi_lo": "$281.07/$174.83",
+  "rows": [],
+  "y_price": 269.17,
+  "y_divs": [
+   [
+    "2023-11-20",
+    1.19
+   ],
+   [
+    "2024-02-16",
+    1.19
+   ],
+   [
+    "2024-05-20",
+    1.24
+   ],
+   [
+    "2024-08-27",
+    1.24
+   ],
+   [
+    "2024-11-26",
+    1.24
+   ],
+   [
+    "2025-02-18",
+    1.24
+   ],
+   [
+    "2025-05-27",
+    1.3
+   ],
+   [
+    "2025-08-26",
+    1.3
+   ],
+   [
+    "2025-11-25",
+    1.3
+   ],
+   [
+    "2026-02-24",
+    1.3
+   ],
+   [
+    "2026-05-26",
+    1.34
+   ],
+   [
+    "2026-08-25",
+    1.34
+   ]
+  ],
+  "y_annual": 5.28,
+  "y_yield": 1.96,
+  "y_lastex": "2026-08-25",
+  "ttm": 5.28,
+  "ttm_n": 4,
+  "ttm_yield": 1.96,
+  "growth": 3.94
+ },
+ {
+  "sym": "CVX",
+  "name": "Chevron Corporation",
+  "weight": 1.54,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$203.67",
+  "sector": "Energy",
+  "industry": "Integrated oil Companies",
+  "mcap": "399,915,863,570",
+  "hi_lo": "$217.78/$146.49",
+  "rows": [],
+  "y_price": 205.51,
+  "y_divs": [
+   [
+    "2023-11-16",
+    1.51
+   ],
+   [
+    "2024-02-15",
+    1.63
+   ],
+   [
+    "2024-05-16",
+    1.63
+   ],
+   [
+    "2024-08-19",
+    1.63
+   ],
+   [
+    "2024-11-18",
+    1.63
+   ],
+   [
+    "2025-02-14",
+    1.71
+   ],
+   [
+    "2025-05-19",
+    1.71
+   ],
+   [
+    "2025-08-19",
+    1.71
+   ],
+   [
+    "2025-11-18",
+    1.71
+   ],
+   [
+    "2026-02-17",
+    1.78
+   ],
+   [
+    "2026-05-19",
+    1.78
+   ],
+   [
+    "2026-08-19",
+    1.78
+   ]
+  ],
+  "y_annual": 7.05,
+  "y_yield": 3.43,
+  "y_lastex": "2026-08-19",
+  "ttm": 7.05,
+  "ttm_n": 4,
+  "ttm_yield": 3.43,
+  "growth": 4.29
+ },
+ {
+  "sym": "ABBV",
+  "name": "AbbVie Inc.",
+  "weight": 1.53,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$264.48",
+  "sector": "Health Care",
+  "industry": "Biotechnology: Pharmaceutical Preparations",
+  "mcap": "468,657,175,155",
+  "hi_lo": "$267.47/$190.75",
+  "rows": [],
+  "y_price": 265.08,
+  "y_divs": [
+   [
+    "2023-10-12",
+    1.48
+   ],
+   [
+    "2024-01-12",
+    1.55
+   ],
+   [
+    "2024-04-12",
+    1.55
+   ],
+   [
+    "2024-07-15",
+    1.55
+   ],
+   [
+    "2024-10-15",
+    1.55
+   ],
+   [
+    "2025-01-15",
+    1.64
+   ],
+   [
+    "2025-04-15",
+    1.64
+   ],
+   [
+    "2025-07-15",
+    1.64
+   ],
+   [
+    "2025-10-15",
+    1.64
+   ],
+   [
+    "2026-01-16",
+    1.73
+   ],
+   [
+    "2026-04-15",
+    1.73
+   ],
+   [
+    "2026-07-15",
+    1.73
+   ]
+  ],
+  "y_annual": 6.83,
+  "y_yield": 2.58,
+  "y_lastex": "2026-07-15",
+  "ttm": 6.83,
+  "ttm_n": 4,
+  "ttm_yield": 2.58,
+  "growth": 5.56
+ },
+ {
+  "sym": "NUE",
+  "name": "Nucor Corporation",
+  "weight": 1.53,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$242.40",
+  "sector": "Industrials",
+  "industry": "Steel/Iron Ore",
+  "mcap": "55,734,278,566",
+  "hi_lo": "$280.11/$131.32",
+  "rows": [],
+  "y_price": 246.98,
+  "y_divs": [
+   [
+    "2023-09-28",
+    0.51
+   ],
+   [
+    "2023-12-28",
+    0.54
+   ],
+   [
+    "2024-03-27",
+    0.54
+   ],
+   [
+    "2024-06-28",
+    0.54
+   ],
+   [
+    "2024-09-27",
+    0.54
+   ],
+   [
+    "2024-12-31",
+    0.55
+   ],
+   [
+    "2025-03-31",
+    0.55
+   ],
+   [
+    "2025-06-30",
+    0.55
+   ],
+   [
+    "2025-09-30",
+    0.55
+   ],
+   [
+    "2025-12-31",
+    0.56
+   ],
+   [
+    "2026-03-31",
+    0.56
+   ],
+   [
+    "2026-06-30",
+    0.56
+   ]
+  ],
+  "y_annual": 2.23,
+  "y_yield": 0.9,
+  "y_lastex": "2026-06-30",
+  "ttm": 2.23,
+  "ttm_n": 4,
+  "ttm_yield": 0.9,
+  "growth": 1.83
+ },
+ {
+  "sym": "WST",
+  "name": "West Pharmaceutical Services, Inc.",
+  "weight": 1.52,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$361.78",
+  "sector": "Health Care",
+  "industry": "Medical/Dental Instruments",
+  "mcap": "26,115,741,521",
+  "hi_lo": "$386/$223.83",
+  "rows": [],
+  "y_price": 375.87,
+  "y_divs": [
+   [
+    "2023-11-07",
+    0.2
+   ],
+   [
+    "2024-01-30",
+    0.2
+   ],
+   [
+    "2024-04-23",
+    0.2
+   ],
+   [
+    "2024-07-31",
+    0.2
+   ],
+   [
+    "2024-11-13",
+    0.21
+   ],
+   [
+    "2025-02-07",
+    0.21
+   ],
+   [
+    "2025-04-30",
+    0.21
+   ],
+   [
+    "2025-07-30",
+    0.21
+   ],
+   [
+    "2025-11-12",
+    0.22
+   ],
+   [
+    "2026-01-28",
+    0.22
+   ],
+   [
+    "2026-04-29",
+    0.22
+   ],
+   [
+    "2026-07-29",
+    0.22
+   ]
+  ],
+  "y_annual": 0.88,
+  "y_yield": 0.23,
+  "y_lastex": "2026-07-29",
+  "ttm": 0.88,
+  "ttm_n": 4,
+  "ttm_yield": 0.23,
+  "growth": 4.76
+ },
+ {
+  "sym": "ECL",
+  "name": "Ecolab Inc.",
+  "weight": 1.52,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$269.98",
+  "sector": "Consumer Discretionary",
+  "industry": "Package Goods/Cosmetics",
+  "mcap": "77,432,366,721",
+  "hi_lo": "$309.27/$243.15",
+  "rows": [],
+  "y_price": 276.72,
+  "y_divs": [
+   [
+    "2023-12-18",
+    0.57
+   ],
+   [
+    "2024-03-18",
+    0.57
+   ],
+   [
+    "2024-06-18",
+    0.57
+   ],
+   [
+    "2024-09-17",
+    0.57
+   ],
+   [
+    "2024-12-17",
+    0.65
+   ],
+   [
+    "2025-03-18",
+    0.65
+   ],
+   [
+    "2025-06-17",
+    0.65
+   ],
+   [
+    "2025-09-16",
+    0.65
+   ],
+   [
+    "2025-12-16",
+    0.73
+   ],
+   [
+    "2026-03-17",
+    0.73
+   ],
+   [
+    "2026-06-16",
+    0.73
+   ],
+   [
+    "2026-09-15",
+    0.73
+   ]
+  ],
+  "y_annual": 2.92,
+  "y_yield": 1.06,
+  "y_lastex": "2026-09-15",
+  "ttm": 2.92,
+  "ttm_n": 4,
+  "ttm_yield": 1.06,
+  "growth": 12.31
+ },
+ {
+  "sym": "SWK",
+  "name": "Stanley Black & Decker, Inc.",
+  "weight": 1.51,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$88.68",
+  "sector": "Consumer Discretionary",
+  "industry": "Industrial Machinery/Components",
+  "mcap": "13,913,163,135",
+  "hi_lo": "$104.68/$61.9",
+  "rows": [],
+  "y_price": 91.76,
+  "y_divs": [
+   [
+    "2023-11-30",
+    0.81
+   ],
+   [
+    "2024-03-07",
+    0.81
+   ],
+   [
+    "2024-06-04",
+    0.81
+   ],
+   [
+    "2024-09-03",
+    0.82
+   ],
+   [
+    "2024-11-29",
+    0.82
+   ],
+   [
+    "2025-03-04",
+    0.82
+   ],
+   [
+    "2025-06-03",
+    0.82
+   ],
+   [
+    "2025-09-02",
+    0.83
+   ],
+   [
+    "2025-12-01",
+    0.83
+   ],
+   [
+    "2026-03-10",
+    0.83
+   ],
+   [
+    "2026-06-08",
+    0.83
+   ],
+   [
+    "2026-09-08",
+    0.84
+   ]
+  ],
+  "y_annual": 3.33,
+  "y_yield": 3.63,
+  "y_lastex": "2026-09-08",
+  "ttm": 3.33,
+  "ttm_n": 4,
+  "ttm_yield": 3.63,
+  "growth": 1.22
+ },
+ {
+  "sym": "ABT",
+  "name": "Abbott Laboratories",
+  "weight": 1.51,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$102.98",
+  "sector": "Health Care",
+  "industry": "Biotechnology: Pharmaceutical Preparations",
+  "mcap": "179,423,443,962",
+  "hi_lo": "$136.88/$81.97",
+  "rows": [],
+  "y_price": 103.49,
+  "y_divs": [
+   [
+    "2023-10-12",
+    0.51
+   ],
+   [
+    "2024-01-11",
+    0.55
+   ],
+   [
+    "2024-04-12",
+    0.55
+   ],
+   [
+    "2024-07-15",
+    0.55
+   ],
+   [
+    "2024-10-15",
+    0.55
+   ],
+   [
+    "2025-01-15",
+    0.59
+   ],
+   [
+    "2025-04-15",
+    0.59
+   ],
+   [
+    "2025-07-15",
+    0.59
+   ],
+   [
+    "2025-10-15",
+    0.59
+   ],
+   [
+    "2026-01-15",
+    0.63
+   ],
+   [
+    "2026-04-15",
+    0.63
+   ],
+   [
+    "2026-07-15",
+    0.63
+   ]
+  ],
+  "y_annual": 2.48,
+  "y_yield": 2.4,
+  "y_lastex": "2026-07-15",
+  "ttm": 2.48,
+  "ttm_n": 4,
+  "ttm_yield": 2.4,
+  "growth": 6.9
+ },
+ {
+  "sym": "XOM",
+  "name": "ExxonMobil Holdings Corporation",
+  "weight": 1.51,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$158.30",
+  "sector": "Energy",
+  "industry": "Integrated oil Companies",
+  "mcap": "652,601,547,172",
+  "hi_lo": "$176.41/$110.385",
+  "rows": [],
+  "y_price": 161.23,
+  "y_divs": [
+   [
+    "2023-11-14",
+    0.95
+   ],
+   [
+    "2024-02-13",
+    0.95
+   ],
+   [
+    "2024-05-14",
+    0.95
+   ],
+   [
+    "2024-08-15",
+    0.95
+   ],
+   [
+    "2024-11-14",
+    0.99
+   ],
+   [
+    "2025-02-12",
+    0.99
+   ],
+   [
+    "2025-05-15",
+    0.99
+   ],
+   [
+    "2025-08-15",
+    0.99
+   ],
+   [
+    "2025-11-14",
+    1.03
+   ],
+   [
+    "2026-02-12",
+    1.03
+   ],
+   [
+    "2026-05-15",
+    1.03
+   ],
+   [
+    "2026-08-17",
+    1.03
+   ]
+  ],
+  "y_annual": 4.12,
+  "y_yield": 2.56,
+  "y_lastex": "2026-08-17",
+  "ttm": 4.12,
+  "ttm_n": 4,
+  "ttm_yield": 2.56,
+  "growth": 4.04
+ },
+ {
+  "sym": "SHW",
+  "name": "The Sherwin-Williams Company",
+  "weight": 1.5,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$321.31",
+  "sector": "Consumer Discretionary",
+  "industry": "RETAIL: Building Materials",
+  "mcap": "79,709,638,881",
+  "hi_lo": "$377.77/$289.86",
+  "rows": [],
+  "y_price": 326.46,
+  "y_divs": [
+   [
+    "2023-11-16",
+    0.605
+   ],
+   [
+    "2024-02-23",
+    0.715
+   ],
+   [
+    "2024-05-16",
+    0.715
+   ],
+   [
+    "2024-08-16",
+    0.715
+   ],
+   [
+    "2024-11-15",
+    0.715
+   ],
+   [
+    "2025-03-03",
+    0.79
+   ],
+   [
+    "2025-05-16",
+    0.79
+   ],
+   [
+    "2025-08-15",
+    0.79
+   ],
+   [
+    "2025-11-14",
+    0.79
+   ],
+   [
+    "2026-03-02",
+    0.8
+   ],
+   [
+    "2026-05-22",
+    0.8
+   ],
+   [
+    "2026-08-21",
+    0.8
+   ]
+  ],
+  "y_annual": 3.19,
+  "y_yield": 0.98,
+  "y_lastex": "2026-08-21",
+  "ttm": 3.19,
+  "ttm_n": 4,
+  "ttm_yield": 0.98,
+  "growth": 3.4
+ },
+ {
+  "sym": "SJM",
+  "name": "The J. M. Smucker Company",
+  "weight": 1.5,
+  "yield": "N/A",
+  "annual": "N/A",
+  "exdate": "N/A",
+  "pay": "N/A",
+  "last_amt": null,
+  "prev_amt": null,
+  "price": "$119.88",
+  "sector": "Consumer Staples",
+  "industry": "Packaged Foods",
+  "mcap": "12,937,355,693",
+  "hi_lo": "$135.89/$88.25",
+  "rows": [],
+  "y_price": 122.41,
+  "y_divs": [
+   [
+    "2023-11-16",
+    1.06
+   ],
+   [
+    "2024-02-15",
+    1.06
+   ],
+   [
+    "2024-05-16",
+    1.06
+   ],
+   [
+    "2024-08-16",
+    1.08
+   ],
+   [
+    "2024-11-15",
+    1.08
+   ],
+   [
+    "2025-02-14",
+    1.08
+   ],
+   [
+    "2025-05-16",
+    1.08
+   ],
+   [
+    "2025-08-15",
+    1.1
+   ],
+   [
+    "2025-11-14",
+    1.1
+   ],
+   [
+    "2026-02-13",
+    1.1
+   ],
+   [
+    "2026-05-15",
+    1.1
+   ],
+   [
+    "2026-08-14",
+    1.12
+   ]
+  ],
+  "y_annual": 4.42,
+  "y_yield": 3.61,
+  "y_lastex": "2026-08-14",
+  "ttm": 4.42,
+  "ttm_n": 4,
+  "ttm_yield": 3.61,
+  "growth": 1.84
+ }
+]

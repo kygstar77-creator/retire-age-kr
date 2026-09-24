@@ -82,5 +82,33 @@
 "amount": 233127.408,
 "date": "2026-09-21",
 "src": "내부자 매수(Form 4)"
+},
+{
+"ticker": "TNC",
+"issuer": "TENNANT CO",
+"amount": 208250.4,
+"date": "2026-08-31",
+"src": "내부자 매수(Form 4)"
+},
+{
+"ticker": "AIAI",
+"issuer": "AIAI Holdings Corp",
+"amount": 149999.5,
+"date": "2026-09-22",
+"src": "내부자 매수(Form 4)"
+},
+{
+"ticker": "INR",
+"issuer": "INFINITY NATURAL RESOURCES, INC.",
+"amount": 130650.0,
+"date": "2026-09-22",
+"src": "내부자 매수(Form 4)"
+},
+{
+"ticker": "BPRE",
+"issuer": "Bluerock Private Real Estate Fund",
+"amount": 124522.32,
+"date": "2026-09-21",
+"src": "내부자 매수(Form 4)"
 }
 ]

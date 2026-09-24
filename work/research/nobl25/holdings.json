@@ -1,0 +1,127 @@
+[
+ {
+  "sym": "BDX",
+  "name": "Becton, Dickinson and Company",
+  "weight": 1.75
+ },
+ {
+  "sym": "TGT",
+  "name": "Target Corporation",
+  "weight": 1.69
+ },
+ {
+  "sym": "FDS",
+  "name": "FactSet Research Systems Inc.",
+  "weight": 1.65
+ },
+ {
+  "sym": "IBM",
+  "name": "International Business Machines Corporation",
+  "weight": 1.65
+ },
+ {
+  "sym": "ERIE",
+  "name": "Erie Indemnity Company",
+  "weight": 1.63
+ },
+ {
+  "sym": "ADP",
+  "name": "Automatic Data Processing, Inc.",
+  "weight": 1.63
+ },
+ {
+  "sym": "MDT",
+  "name": "Medtronic plc",
+  "weight": 1.62
+ },
+ {
+  "sym": "FAST",
+  "name": "Fastenal Company",
+  "weight": 1.62
+ },
+ {
+  "sym": "EMR",
+  "name": "Emerson Electric Co.",
+  "weight": 1.62
+ },
+ {
+  "sym": "NDSN",
+  "name": "Nordson Corporation",
+  "weight": 1.61
+ },
+ {
+  "sym": "ROP",
+  "name": "Roper Technologies, Inc.",
+  "weight": 1.58
+ },
+ {
+  "sym": "KO",
+  "name": "The Coca-Cola Company",
+  "weight": 1.58
+ },
+ {
+  "sym": "GPC",
+  "name": "Genuine Parts Company",
+  "weight": 1.58
+ },
+ {
+  "sym": "EXPD",
+  "name": "Expeditors International of Washington, Inc.",
+  "weight": 1.55
+ },
+ {
+  "sym": "JNJ",
+  "name": "Johnson &amp; Johnson",
+  "weight": 1.54
+ },
+ {
+  "sym": "CVX",
+  "name": "Chevron Corporation",
+  "weight": 1.54
+ },
+ {
+  "sym": "ABBV",
+  "name": "AbbVie Inc.",
+  "weight": 1.53
+ },
+ {
+  "sym": "NUE",
+  "name": "Nucor Corporation",
+  "weight": 1.53
+ },
+ {
+  "sym": "WST",
+  "name": "West Pharmaceutical Services, Inc.",
+  "weight": 1.52
+ },
+ {
+  "sym": "ECL",
+  "name": "Ecolab Inc.",
+  "weight": 1.52
+ },
+ {
+  "sym": "SWK",
+  "name": "Stanley Black &amp; Decker, Inc.",
+  "weight": 1.51
+ },
+ {
+  "sym": "ABT",
+  "name": "Abbott Laboratories",
+  "weight": 1.51
+ },
+ {
+  "sym": "XOM",
+  "name": "ExxonMobil Holdings Corporation",
+  "weight": 1.51
+ },
+ {
+  "sym": "SHW",
+  "name": "The Sherwin-Williams Company",
+  "weight": 1.5
+ },
+ {
+  "sym": "SJM",
+  "name": "The J. M. Smucker Company",
+  "weight": 1.5
+ }
+]

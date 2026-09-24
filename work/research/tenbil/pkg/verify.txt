@@ -1,0 +1,1 @@
+{"ok": true, "url": "https://cafe.naver.com/firemap/63", "text": 1220, "want": 1220, "img": 3, "want_img": 3}

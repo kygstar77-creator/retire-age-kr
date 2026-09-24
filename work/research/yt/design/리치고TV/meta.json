@@ -1,0 +1,366 @@
+{
+ "channel": "리치고TV. 데이터로 보는 부동산, 주식 투자",
+ "subs": "137000",
+ "videos": [
+  {
+   "id": "ngsV3ceL8gM",
+   "title": "\"강남 아파트\" 거래량 443건 → 66건, 완전히 뚝 끊겼다",
+   "views": 93192,
+   "date": "2026-09-11",
+   "sec": 797,
+   "short": false,
+   "thumb": "https://i.ytimg.com/vi/ngsV3ceL8gM/maxresdefault.jpg"
+  },
+  {
+   "id": "ahjw7YA4tms",
+   "title": "AI 실업 오면 집값은? 미국 레딧 1천만 명이 싸운 토론, 데이터로 확인했습니다",
+   "views": 72221,
+   "date": "2026-09-14",
+   "sec": 1006,
+   "short": false,
+   "thumb": "https://i.ytimg.com/vi/ahjw7YA4tms/maxresdefault.jpg"
+  },
+  {
+   "id": "_t1guiSzSto",
+   "title": "강남 아파트 \"이미 하락 전환\"... 매물은 30% 늘고 거래는 반토막",
+   "views": 67802,
+   "date": "2026-09-22",
+   "sec": 828,
+   "short": false,
+   "thumb": "https://i.ytimg.com/vi/_t1guiSzSto/maxresdefault.jpg"
+  },
+  {
+   "id": "8fAtQTB7Lg8",
+   "title": "미국 국채금리 5% 돌파\" 20년 만에 최고치, 주식시장 진짜 괜찮을까",
+   "views": 17739,
+   "date": "2026-09-18",
+   "sec": 1304,
+   "short": false,
+   "thumb": "https://i.ytimg.com/vi/8fAtQTB7Lg8/maxresdefault.jpg"
+  },
+  {
+   "id": "rVrJGIRccFQ",
+   "title": "세제개편안 29일 만에 수정, 뭐가 돌아오고 뭐가 남았나",
+   "views": 16908,
+   "date": "2026-09-02",
+   "sec": 622,
+   "short": false,
+   "thumb": "https://i.ytimg.com/vi/rVrJGIRccFQ/maxresdefault.jpg"
+  },
+  {
+   "id": "cm5R5irE2UI",
+   "title": "서울 아파트 경매 낙찰가율 98.4%, 폭락 경고와 정반대로 갔습니다",
+   "views": 16123,
+   "date": "2026-09-10",
+   "sec": 532,
+   "short": false,
+   "thumb": "https://i.ytimg.com/vi/cm5R5irE2UI/maxresdefault.jpg"
+  },
+  {
+   "id": "g6CuV1KH_34",
+   "title": "레이 달리오 \"미국, 3년 안에 부채 위기\" 금 비중 15%까지",
+   "views": 14314,
+   "date": "2026-09-03",
+   "sec": 739,
+   "short": false,
+   "thumb": "https://i.ytimg.com/vi/g6CuV1KH_34/maxresdefault.jpg"
+  },
+  {
+   "id": "Ee5rvkdY4m0",
+   "title": "\"아파트 시세\" 동호수만 입력하면 급매가·적정가 바로 나온다",
+   "views": 13308,
+   "date": "2026-09-16",
+   "sec": 735,
+   "short": false,
+   "thumb": "https://i.ytimg.com/vi/Ee5rvkdY4m0/maxresdefault.jpg"
+  },
+  {
+   "id": "m9E46YbYblI",
+   "title": "\"이러다 진짜 큰일 납니다\" 무역흑자 227조의 배신, 반도체 하나 빼면 남는 건 적자뿐입니다. 지금 확인하세요",
+   "views": 10677,
+   "date": "2026-09-08",
+   "sec": 770,
+   "short": false,
+   "thumb": "https://i.ytimg.com/vi/m9E46YbYblI/maxresdefault.jpg"
+  },
+  {
+   "id": "mwHacd1iaCY",
+   "title": "충남 아산, 천안 부동산 전망, 삼성 46조 배방 팹 전국 첫 착공 · 비수도권 인구 증가율 1등. 침체 끝내고 이제 반등의 서막이 올 것인가?",
+   "views": 9641,
+   "date": "2026-09-21",
+   "sec": 2169,
+   "short": false,
+   "thumb": "https://i.ytimg.com/vi/mwHacd1iaCY/maxresdefault.jpg"
+  },
+  {
+   "id": "mdTgPmwtXSk",
+   "title": "세 번 파산하고 성공한 투자자가 알려주는 절대 생존 법칙\" 1억 → 5,827만 원, 12억 파산까지 겪고 찾은 손절 원칙을 확인하세요",
+   "views": 9394,
+   "date": "2026-09-04",
+   "sec": 1184,
+   "short": false,
+   "thumb": "https://i.ytimg.com/vi/mdTgPmwtXSk/maxresdefault.jpg"
+  },
+  {
+   "id": "1m_Thyc45Gk",
+   "title": "\"집값 50~70% 폭락\"할 수도 있다는 시나리오, 2008년보다 심하다 #AI실업 #집값폭락",
+   "views": 4913,
+   "date": "2026-09-14",
+   "sec": 36,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/1m_Thyc45Gk/maxresdefault.jpg"
+  },
+  {
+   "id": "WkJ6YyvNoQU",
+   "title": "\"전세 난리?\" 2020년엔 더 심했다, 지금은 오히려 하락 중 #전세수급 #서울전세",
+   "views": 3501,
+   "date": "2026-09-12",
+   "sec": 31,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/WkJ6YyvNoQU/maxresdefault.jpg"
+  },
+  {
+   "id": "hM-CnYsyrk0",
+   "title": "\"금리 오르면 폭락한다\"는 착각... 닷컴버블도 2008년도 \"금리 내릴 때\" 터졌다 #금리인상 #주식시장",
+   "views": 3078,
+   "date": "2026-09-18",
+   "sec": 28,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/hM-CnYsyrk0/maxresdefault.jpg"
+  },
+  {
+   "id": "fJh5jYttgHY",
+   "title": "\"강남은 빠지는데\" 노원은 오른다... 서울 부동산 완전히 갈렸다 #강남아파트 #노원구",
+   "views": 2751,
+   "date": "2026-09-13",
+   "sec": 46,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/fJh5jYttgHY/maxresdefault.jpg"
+  },
+  {
+   "id": "1rVjrIaXei4",
+   "title": "\"평택보다 많습니다\" 천안 수출 1,500억→3.9조, 아산은 10조...실화?",
+   "views": 2503,
+   "date": "2026-09-22",
+   "sec": 43,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/1rVjrIaXei4/maxresdefault.jpg"
+  },
+  {
+   "id": "SNrgHjuDbVg",
+   "title": "\"거래가 안 되는 게 문제입니다\" 서울 아파트 매물 1만 건 돌파...왜?",
+   "views": 2410,
+   "date": "2026-09-22",
+   "sec": 15,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/SNrgHjuDbVg/maxresdefault.jpg"
+  },
+  {
+   "id": "DIKnlPJCw90",
+   "title": "\"매매도 전세도 불붙었는데, 아무도 모르고 있습니다",
+   "views": 2201,
+   "date": "2026-08-31",
+   "sec": 23,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/DIKnlPJCw90/maxresdefault.jpg"
+  },
+  {
+   "id": "0dzSv_fEpfU",
+   "title": "\"강남 매매수급\" 69.3까지 뚝... 25년 이후 방향이 바뀌었다 #강남매매수급 #부동산",
+   "views": 1874,
+   "date": "2026-09-11",
+   "sec": 45,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/0dzSv_fEpfU/maxresdefault.jpg"
+  },
+  {
+   "id": "Hv5Qjex9baQ",
+   "title": "미국 빚, 하루에 8조원씩 늘어난다 #shorts #미국국채",
+   "views": 1861,
+   "date": "2026-09-03",
+   "sec": 20,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/Hv5Qjex9baQ/maxresdefault.jpg"
+  },
+  {
+   "id": "Hg0UIzsI2NU",
+   "title": "22년엔 금리급등+무역적자로 폭락, 지금은 무역흑자 \"사상 최대\" #금리인상 #무역흑자",
+   "views": 1834,
+   "date": "2026-09-18",
+   "sec": 33,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/Hg0UIzsI2NU/maxresdefault.jpg"
+  },
+  {
+   "id": "unzZcgneUFw",
+   "title": "동호수만 찍었더니 \"44억 4천 vs 46억 5,500만\" 바로 나왔다 #아파트시세 #리치고",
+   "views": 1821,
+   "date": "2026-09-16",
+   "sec": 19,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/unzZcgneUFw/maxresdefault.jpg"
+  },
+  {
+   "id": "rSgORw564CA",
+   "title": "무역수지 적자 터진 해, 서울 아파트는 예외 없이 무너졌다 #서울아파트 #무역수지",
+   "views": 1776,
+   "date": "2026-09-08",
+   "sec": 50,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/rSgORw564CA/maxresdefault.jpg"
+  },
+  {
+   "id": "sN00kL2ecEQ",
+   "title": "\"청년 일자리 28만개 증발\" 근데 서울 생애최초 매수는 역대 최고 #AI실업 #집값",
+   "views": 1770,
+   "date": "2026-09-14",
+   "sec": 27,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/sN00kL2ecEQ/maxresdefault.jpg"
+  },
+  {
+   "id": "oIJxsd8AVPg",
+   "title": "\"실거래가도 못 믿는다\"고? 호가는 ±6%, 평균시세는 층 정보 다 지워졌다 #부동산시세 #아파트시세",
+   "views": 1740,
+   "date": "2026-09-16",
+   "sec": 36,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/oIJxsd8AVPg/maxresdefault.jpg"
+  },
+  {
+   "id": "ZM3PNroEWpo",
+   "title": "\"연체율 늘어서 폭락\" 이라더니... 주담대 연체율은 오히려 하락했다 #주담대연체율 #부동산폭락",
+   "views": 1644,
+   "date": "2026-09-10",
+   "sec": 24,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/ZM3PNroEWpo/maxresdefault.jpg"
+  },
+  {
+   "id": "XuN6LiSZqmE",
+   "title": "명의 하나로 세금 최대 6억 차이납니다 #shorts #종부세",
+   "views": 1613,
+   "date": "2026-09-02",
+   "sec": 36,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/XuN6LiSZqmE/maxresdefault.jpg"
+  },
+  {
+   "id": "KSX1IKqhN0s",
+   "title": "\"전세 뛰는 동네\" 노원 1.88%, 성북 2.02%... 매매는 얼어붙었는데 #서울전세 #노원구",
+   "views": 1577,
+   "date": "2026-09-11",
+   "sec": 23,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/KSX1IKqhN0s/maxresdefault.jpg"
+  },
+  {
+   "id": "3HWGV5L-AkA",
+   "title": "비거주 부부 공동명의라면 꼭 확인하세요 #shorts #종부세",
+   "views": 1553,
+   "date": "2026-09-02",
+   "sec": 24,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/3HWGV5L-AkA/maxresdefault.jpg"
+  },
+  {
+   "id": "xqBQyO8oqEI",
+   "title": "아파트 \"급매로 내놔야 됩니다\" 강남 60개월, 서초 58개월 걸린다는데...실화?🤔",
+   "views": 1482,
+   "date": "2026-09-22",
+   "sec": 32,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/xqBQyO8oqEI/maxresdefault.jpg"
+  },
+  {
+   "id": "UjOWj-pfMzg",
+   "title": "\"다들 안 살 때가 기회다\" 무릎 아니라 발목까지 왔다는데...진짜요?🤔",
+   "views": 1462,
+   "date": "2026-09-22",
+   "sec": 44,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/UjOWj-pfMzg/maxresdefault.jpg"
+  },
+  {
+   "id": "diRbdBnyXbQ",
+   "title": "2주 만에 비트코인 +21%, 나스닥은 겨우 +0.3% #shorts #비트코인",
+   "views": 1447,
+   "date": "2026-09-03",
+   "sec": 40,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/diRbdBnyXbQ/maxresdefault.jpg"
+  },
+  {
+   "id": "tqC0w-tKnPE",
+   "title": "같은 서울인데 이렇게 다르다, 아파트 1,614건 vs 빌라 14,431건 #서울아파트경매 #빌라경매",
+   "views": 1436,
+   "date": "2026-09-10",
+   "sec": 44,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/tqC0w-tKnPE/maxresdefault.jpg"
+  },
+  {
+   "id": "QS1gCyJ1prA",
+   "title": "반도체 하나에 40%... 이런 나라는 역사상 없었습니다 #반도체수출 #반도체비중",
+   "views": 1389,
+   "date": "2026-09-08",
+   "sec": 40,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/QS1gCyJ1prA/maxresdefault.jpg"
+  },
+  {
+   "id": "bLcRhJHLCKg",
+   "title": "승률 3할인데 계좌는 늘어난다, 고수들의 진짜 비밀",
+   "views": 1382,
+   "date": "2026-09-04",
+   "sec": 34,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/bLcRhJHLCKg/maxresdefault.jpg"
+  },
+  {
+   "id": "i6n3Lc2aJ-4",
+   "title": "26주 연속 수익 낸 고수, 손절 못 한 이유는 \"체면\"이었다",
+   "views": 1377,
+   "date": "2026-09-04",
+   "sec": 30,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/i6n3Lc2aJ-4/maxresdefault.jpg"
+  },
+  {
+   "id": "jlpZvy3tu4k",
+   "title": "미국 국채금리 5% 돌파해도 \"집값 폭락은 없다\"... 무역수지 흑자 246개월 검증",
+   "views": 616,
+   "date": "2026-09-23",
+   "sec": 546,
+   "short": false,
+   "thumb": "https://i.ytimg.com/vi/jlpZvy3tu4k/maxresdefault.jpg"
+  },
+  {
+   "id": "WQ3aEJOdWiE",
+   "title": "용인시 수지구 시세 매물 실거래 리포트",
+   "views": 615,
+   "date": "2026-09-09",
+   "sec": 56,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/WQ3aEJOdWiE/maxresdefault.jpg"
+  },
+  {
+   "id": "r5IFaCrrJsU",
+   "title": "📍 경기 성남시 분당구 부동산 브리핑",
+   "views": 397,
+   "date": "2026-09-09",
+   "sec": 53,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/r5IFaCrrJsU/maxresdefault.jpg"
+  },
+  {
+   "id": "EG2WqMHHse8",
+   "title": "경기 과천시 시세 매물 실거래 리포트",
+   "views": 338,
+   "date": "2026-09-09",
+   "sec": 51,
+   "short": true,
+   "thumb": "https://i.ytimg.com/vi/EG2WqMHHse8/maxresdefault.jpg"
+  }
+ ]
+}

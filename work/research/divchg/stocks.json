@@ -1,0 +1,29 @@
+{
+ "asof": "2026-09-24",
+ "days": 4,
+ "up": [],
+ "down": [],
+ "flat": [
+  {
+   "companyName": "Hamilton Lane Incorporated Class A Common Stock",
+   "symbol": "HLNE",
+   "dividend_Ex_Date": "9/21/2026",
+   "payment_Date": "10/06/2026",
+   "record_Date": "9/21/2026",
+   "dividend_Rate": 0.6,
+   "indicated_Annual_Dividend": 2.4,
+   "announcement_Date": "9/23/2026",
+   "_ann": "2026-09-23",
+   "_cls": "stocks",
+   "_prev": 0.6,
+   "_cur": 0.6,
+   "_gap": 95,
+   "_n": 38,
+   "_pct": 0.0,
+   "_yield": "2.74%",
+   "_ann_div": "2.4",
+   "_payout": "28.72"
+  }
+ ],
+ "odd": []
+}

@@ -1,0 +1,11 @@
+HTTP/1.1 200 OK
+Date: Wed, 23 Sep 2026 15:56:46 GMT
+Server: Apache
+Content-Disposition: attachment; filename="%5B%EB%B3%84%ED%91%9C%206%5D%20%EC%A3%BC%ED%83%9D%20%EA%B4%80%EB%A0%A8%20%EB%8B%B4%EB%B3%B4%EB%8C%80%EC%B6%9C%20%EB%93%B1%EC%97%90%20%EB%8C%80%ED%95%9C%20%EB%A6%AC%EC%8A%A4%ED%81%AC%EA%B4%80%EB%A6%AC%EA%B8%B0%EC%A4%80%28%EC%9D%80%ED%96%89%EC%97%85%EA%B0%90%EB%8F%85%EA%B7%9C%EC%A0%95%20%29.hwp"
+FileName-Encoding: UTF-8
+Content-Transfer-Encoding: binary;
+Pragma: no-cache;
+Expires: -1;
+Transfer-Encoding: chunked
+Content-Type: application/hwp;;charset=UTF-8
+

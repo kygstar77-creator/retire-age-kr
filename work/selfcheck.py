@@ -56,9 +56,21 @@ def numbers(t):
         if x.endswith('.0'): out.add(x[:-2])
     return out
 
+def unit_expand(t):
+    """사실표의 '542.52억'과 본문의 '542억 5,200만'을 같은 값으로 본다.
+    소수점 억 표기를 만 단위 정수로 펴서 자릿수 문자열에 넣어 둔다.
+    2026-09-24: 애플 실적 글에서 제품별 매출 7줄이 통째로 '사실표에 없는 숫자'로 잡혔다.
+    값은 같은데 표기만 달랐다. 사실표를 매번 두 벌로 적는 대신 여기서 편다."""
+    out = []
+    for m in re.finditer(r'(\d[\d,]*\.\d+)\s*억', t):
+        out.append(f'{float(m.group(1).replace(",", "")) * 10000:.0f}')   # 억 -> 만 단위
+    for m in re.finditer(r'(\d[\d,]*\.\d+)\s*조', t):
+        out.append(f'{float(m.group(1).replace(",", "")) * 10000:.0f}')
+    return ' '.join(out)
+
 def facts_numbers(t):
     """사실표 쪽만 표기를 넓혀서 모은다. 본문 숫자를 가공하면 없던 값이 생겨 헛짚는다(2026-09-23)."""
-    return numbers(t) | numbers(money_norm(t))
+    return numbers(t) | numbers(money_norm(t)) | numbers(unit_expand(t))
 
 
 # 표본이 너무 적은데 일반화하는 글을 막는다.
@@ -111,7 +123,7 @@ def main(pkg):
         fnum = facts_numbers(facts)
         # 사실표는 '18,907'로, 본문은 '1억 8,907만원'으로 쓴다. 단위 표기를 아무리 맞춰도 끝이 없어서,
         # 사실표의 숫자만 이어 붙인 문자열에 그 자릿수가 들어 있으면 '있는 숫자'로 본다(2026-09-23).
-        fdigits = re.sub(r'\D', '', facts + ' ' + money_norm(facts))
+        fdigits = re.sub(r'\D', '', facts + ' ' + money_norm(facts) + ' ' + unit_expand(facts))
         for i, s in enumerate(ss, 1):
             extra = {x for x in numbers(s) - fnum if x.replace('.', '').replace(',', '') not in fdigits}
             if not extra: continue

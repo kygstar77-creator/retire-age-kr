@@ -158,6 +158,19 @@
     "url": "https://cafe.naver.com/firemap/75"
    },
    "note": "발행 2편 verify 모두 OK(블로그 2,047자·사진 6 / 카페 1,278자·사진 3). 검증 경로: crosscheck 시도했으나 Gemini 429 → selfcheck 대체, 두 묶음 모두 지적 0건. 새 묶음 2개 작성(대기 블로그 1·카페 1 회복). 블로그 슬롯 B10: 국토부 실거래 API로 고점(2021-10~12) 대비 2026-09 직접 계산 — 387쌍 중 20%↓ 38쌍, 중앙값 +2.2%, 구별로 도봉 -11.9% vs 동작 +34.7%. 자료조사 출처 14개(오늘 새로 찾은 것 6건: 경향 영문 9/17, 서울경제 영문 9/17·9/11·9/7, 스타뉴스 9/20, 서울신문 9/15). selfcheck 지적 2건(사실 1·말투 1) 모두 반영 후 0건. 카페 슬롯 C7: EDGAR Form 4 377건에서 매수 71건 집계. 금액 상위 12건 중 9건이 BANK BRADESCO였는데 원문 securityTitle이 'Preference shares - BBDC4'(상파울루 우선주)라 단가 17.98은 달러가 아니라 헤알임을 확인(BBDC4.SA 통화 BRL·종가 18.03, 뉴욕 ADR BBD 종가 3.57달러, BRLUSD 0.1937). 약 174만 달러로 잡히던 건이 실제 약 33.7만 달러. 출처 15개. selfcheck 말투 지적 2건 반영 후 0건. 개선: work/insider.py에 통화 대조(currency_flag/us_close) 추가 — Form 4 단가가 미국 종가와 3배 넘게 벌어지면 순위에서 빼고 이유를 따로 찍는다. 확인 안 한 건이 조용히 사라지던 문제도 함께 고침(달러 확인분이 top개 찰 때까지 내려가며 대조). 새 도구: work/peakdrop.py(고점 대비 하락 단지 계산, B10). rtmolit.py로 2021-10~12 실거래 300건 신규 수집."
+  },
+  {
+   "hour": 11,
+   "ts": "12:30",
+   "blog": {
+    "title": "고점 대비 20% 넘게 내린 서울 아파트 38건인데 전체 중앙값은 왜 올랐을까?",
+    "url": "https://blog.naver.com/kygstar7777/224421663726"
+   },
+   "cafe": {
+    "title": "우리가 보는 내부자 매수 상위 명단이 달러가 아니라 브라질 헤알이었던 이유",
+    "url": "https://cafe.naver.com/firemap/76"
+   },
+   "note": "발행 2/2 · verify 블로그 OK 1,883자·사진6 / 카페 OK 1,265자·사진3. 새 묶음 2개 작성(대기 0→2): 블로그 montkiara(B9 슬롯 11시, 부동산/형식4) — PropertyGuru 몽키아라 임대 매물 16건 Playwright 직접 수집, 카페 aaplcafe(C9 슬롯 11시, 배당현금흐름/형식1) — 애플 3분기 실적·자사주 대 배당. 자료조사 출처: montkiara 5건(PropertyGuru·iProperty·Yahoo MYRKRW·말레이시아 출입국관리국 MM2H·toprank), aaplcafe 6건(애플 뉴스룸 실적발표·SEC 8-K 별첨·SEC 10-Q 현금흐름표·Alpha Vantage 종가·Yahoo USDKRW·stockwants). 검증 경로: selfcheck(제미나이 429) — montkiara 사실 1건 지적→환율 10원 변동 계산을 검산해 사실표에 [계산]으로 추가, aaplcafe 사실 9건·말투 2건 지적→실적 숫자 7건은 표기 차이라 원문 대조 후 사실표에 풀어쓴 표기 추가, 100주 환산은 검산해 [계산] 추가, ~습니다 39%·1인칭 2%는 어미 섞어 수정. 최종 두 묶음 모두 지적 0건. iProperty는 403이라 숫자 사용 안 함, MM2H 2024 개편 티어는 공식 확인 실패로 미기재. 개선: selfcheck.py에 unit_expand 추가 — 사실표 '542.52억'과 본문 '542억 5,200만'을 같은 값으로 인식. 되돌려 시험해 실적 7줄 오탐이 사라지고 진짜 계산값 1건만 남는 것을 확인했다."
   }
  ]
 }

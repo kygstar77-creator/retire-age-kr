@@ -88,6 +88,21 @@ def ideas():
     p = os.path.join(R, 'topic-ideas.md')
     return [l.strip('- ').strip() for l in open(p, encoding='utf-8') if l.startswith('- ')][-12:] if os.path.exists(p) else []
 
+def pending_count():
+    """대기 묶음(아직 발행 안 된 완성 묶음)을 블로그·카페로 나눠 센다.
+    2026-09-24 15시 회차에서 붙였다 — 편성표만 보고 슬롯을 짜다가 정작 대기가 0이라
+    발행 회차가 새로 쓰다 시간을 넘기는 일이 반복됐다(9/23 16·17시 0편).
+    판정은 naverpost.py pending과 같은 기준: pkg/order.txt가 있고 published.txt가 없으면 대기."""
+    import glob
+    n = {'블로그': 0, '카페': 0}
+    for od in glob.glob(os.path.join(R, '*', 'pkg', 'order.txt')):
+        if os.path.exists(os.path.join(os.path.dirname(od), 'published.txt')):
+            continue
+        head = open(od, encoding='utf-8').readline()
+        n['카페' if '카페' in head else '블로그'] += 1
+    return n
+
+
 def main():
     topics = load(os.path.join(HERE, 'topics.json'), []); topics = topics if isinstance(topics, list) else topics.get('topics', [])
     cal = load(os.path.join(HERE, 'calendar.json'), {}); events = cal.get('events', cal if isinstance(cal, list) else [])
@@ -237,7 +252,9 @@ def main():
     lines = [f'# 내일 편성 {TOM} (planner.py, 생성 {time.strftime("%H:%M")})', '',
              '## 데이터가 말하는 것', '- 유튜브 제목 %d개 · 패턴별 조회 중앙 차이(있음/없음-1): ' % ntitles + ' · '.join(f'{k} {v:+}%' for k, v in sorted(pats.items(), key=lambda kv: -kv[1])),
              '- 우리 블로그 형식별 제목검색 10위 안 비율: ' + (' · '.join(f'형식{f} {p}%({n}편)' for f, (p, n) in perf.items()) if perf else '측정 불가(form.txt 표기된 발행분 없음)') + f' / 형식 표기 없는 글 {unlabeled}편은 제외',
-             '- 카페 축 실측 조회 중앙값: ' + ' · '.join(f'{k} {v}' for k, v in CAFE_AXIS_VIEWS.items()), *[f'- {m}' for m in mkt], '',
+             '- 카페 축 실측 조회 중앙값: ' + ' · '.join(f'{k} {v}' for k, v in CAFE_AXIS_VIEWS.items()), *[f'- {m}' for m in mkt],
+             '- 지금 대기 묶음(발행 대기): ' + ' · '.join(f'{k} {v}개' for k, v in pending_count().items())
+             + ' / 각 3개가 목표 — 모자란 만큼 이 회차에서 완성 묶음을 만든다', '',
              '## 제목 규칙: **work/research/titlerule.md를 본다**(titlestudy.py가 네이버 상위 노출 제목을 긁어 잰 값). '
              '2026-09-23 측정 — 길이 38자 · 명사로 끝 80%/물음 15%/다 5% · 물음표 43%·쉼표 24%·구분자 없음 24% · 숫자 0~1개 71% · 반전 연결 26% · 독자 지칭 9%. '
              '손으로 정한 규칙(숫자 1개 이상 필수, 질문형 하루 3편 이하)은 측정과 어긋나 폐기했다. 자극어 금지는 유지(우리 규칙).', '']

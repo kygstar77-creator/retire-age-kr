@@ -122,6 +122,35 @@ def main():
     gaps = llog[-1].get('gaps', []) if llog else []
     M.append(('디자인', '경쟁 대비 미해결 차이 수', len(gaps), 0, 2, 'loop.py RULE에 손잡이 추가 또는 thumbstat 측정 수정'))
 
+    # 만들어 놓고 아무 회차도 안 부르는 도구가 있나.
+    # 2026-09-24 하루에만 이 패턴이 네 번 나왔다 — 오피스텔 단지표·건축물대장·유튜버 시리즈 조사,
+    # 그리고 발굴 종목(결과를 파일로 안 남겨 분석이 못 썼다). 전부 사장님이 지적해서 알았다.
+    # 지시문 어디에도 이름이 안 나오는 도구는 영영 안 돈다. 그걸 기계가 센다.
+    try:
+        skills = ''
+        for sk in glob.glob(os.path.expanduser('~/.claude/scheduled-tasks/*/SKILL.md')):
+            try: skills += open(sk, encoding='utf-8').read()
+            except Exception: pass
+        mine = [os.path.basename(f) for f in glob.glob(os.path.join(HERE, '*.py'))]
+        # 다른 도구가 import해서 쓰는 것은 직접 불리지 않아도 된다
+        srcs = ''.join(open(f, encoding='utf-8', errors='ignore').read() for f in glob.glob(os.path.join(HERE, '*.py')))
+        orphan = [m for m in mine
+                  if m not in skills and m[:-3] not in skills
+                  and f'import {m[:-3]}' not in srcs and f'{m[:-3]}.py' not in srcs]
+        M.append(('도구', '어느 회차도 안 부르는 도구', len(orphan), 0, 3,
+                  '지시문에 넣어 회차가 돌게 하거나, 쓸모없으면 지운다'
+                  + (' · 지금: ' + ', '.join(sorted(orphan)[:4]) if orphan else '')))
+    except Exception as e: print('도구 점검 실패:', repr(e)[:90])
+
+    # 부동산을 서울 밖에서도 보고 있나. 2026-09-24까지 실거래 602개 파일이 전부 서울(11)이었다.
+    try:
+        codes = {os.path.basename(f).split('_')[0] for f in glob.glob(os.path.join(R, 'rt', '*.json'))}
+        codes = {c for c in codes if c.isdigit() and len(c) == 5}
+        outside = len({c for c in codes if not c.startswith('11')})
+        M.append(('자료', '서울 밖 시군구 실거래', outside, 10, 2,
+                  'py -3.12 work/lawdscan.py 41 <월> 로 코드를 확인하고 rtmolit로 받는다'))
+    except Exception: pass
+
     # 글 루프가 규칙을 만들기만 하고 채점을 못 하고 있나.
     # 2026-09-24: 30회 연속 "규칙 뒤 0편"으로 보류였는데 아무도 못 봤다. 계기판에 없었기 때문이다.
     tl = load(os.path.join(HERE, 'textloop_log.json'), []) or []
@@ -129,7 +158,9 @@ def main():
     for r in reversed(tl):
         if '보류' in (r.get('verdict') or ''): streak += 1
         else: break
-    M.append(('품질', '글 규칙 자기채점 연속 보류 회차', streak, 6, 3,
+    # 적을수록 좋은 항목이다. 계기판의 gap 식은 '목표보다 모자란 것'만 재므로
+    # 목표 6에 값 48이면 점수가 0으로 찍혔다(2026-09-24 확인). 목표 0에 초과분만 넣는다.
+    M.append(('품질', '글 규칙 자기채점 보류가 이어진 회차(6회 초과분)', max(0, streak - 6), 0, 3,
               'textloop 판정이 왜 보류인지 verdict 문구를 읽는다 — 표본이 안 쌓인 것인지, 기준 잡는 식이 틀린 것인지'))
 
     # 같은 글이 두 번 올라간 적이 있나. 0이 아니면 발행기가 중복을 냈다는 뜻이다.

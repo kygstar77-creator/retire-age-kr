@@ -103,7 +103,13 @@ def main():
 
     yt = sh(os.path.join(HERE, 'ytupload.py'), 'stats')
     vids = [int(v) for v in re.findall(r'\d{4}-\d{2}-\d{2}\s+(\d+)\s*회', yt)]
-    if vids: M.append(('영상', '최근 10편 조회 합계', sum(vids[:10]), 5000, 2, '제목 규칙·썸네일 손잡이(design.json)·루프'))
+    # 2026-09-24: '최근 10편 조회 합계'는 새 영상을 올릴 때마다 떨어진다(새 영상은 조회 0이라
+    # 조회가 쌓인 옛 영상을 10편 밖으로 밀어낸다). 실측 2089 -> 120 -> 6. 발행을 잘할수록 계기판이
+    # 나빠지는 셈이라 채널 총조회(누적, 절대 안 줄어든다)로 바꿨다. loop.py 의 회차 판정도 같이 고쳤다.
+    m_tot = re.search(r'총조회\s*(\d+)', yt)
+    if m_tot: M.append(('영상', '채널 총조회(누적)', int(m_tot.group(1)), 50000, 2, '제목 규칙·썸네일 손잡이(design.json)·루프'))
+    pub = len(re.findall(r'\|\s*public\s*\|', yt))
+    M.append(('영상', '공개한 영상 수(최근 10편 중)', pub, 10, 2, '지금은 전부 private — 비공개면 조회가 영영 0이라 조정 효과를 잴 수 없다'))
     M.append(('영상', '올린 숏폼 수', len(glob.glob(os.path.join(R, 'shorts', '*.mp4'))), 10, 2, 'firemap-loop 6)에서 회차마다 한 편'))
 
     llog = load(os.path.join(HERE, 'loop_log.json'), [])

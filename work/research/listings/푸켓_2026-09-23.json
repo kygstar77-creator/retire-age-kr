@@ -1,0 +1,108 @@
+{
+ "도시": "푸켓",
+ "확인일": "2026-09-23",
+ "출처": "fazwaz",
+ "매물URL": "https://www.fazwaz.com/property-for-rent/thailand/phuket",
+ "매물": [
+  {
+   "단지": "AP Grand Residence",
+   "제목": "3 Bedroom Townhouse for rent at AP Grand Residence",
+   "동네": "Kamala, Kathu, Phuket",
+   "월세": "฿60,000/mo",
+   "㎡당": "(฿341/SqM)",
+   "면적": "176 SqM",
+   "방": "3",
+   "욕실": "3.5",
+   "유형": "Townhouse",
+   "준공": "2013",
+   "시설": "",
+   "게시": "",
+   "설명": "This stunning and recently renovated townhouse is situated in the desirable area of Kamala and is now available for rent. Located within the popular AP Grand Residence project, this townhouse offers a...",
+   "URL": "https://www.fazwaz.com/property-rent/3-bedroom-townhouse-for-rent-at-ap-grand-residence-in-kamala-phuket-u1144048"
+  },
+  {
+   "단지": "Hotel Commercial Opportunity For Sale In Patong",
+   "제목": "14 Bedroom Hotel for rent in Patong, Phuket",
+   "동네": "Patong, Kathu, Phuket",
+   "월세": "฿500,000/mo",
+   "㎡당": "(฿167/SqM)",
+   "면적": "3,000 SqM",
+   "방": "14",
+   "욕실": "16",
+   "유형": "Hotel",
+   "준공": "2025",
+   "시설": "",
+   "게시": "",
+   "설명": "This property is a 3,000 SqM hotel with 14 bedrooms and 16 bathrooms that is available for rent. It is located in Patong, Phuket and was completed in Oct 2025. You can rent this hotel for ฿5...",
+   "URL": "https://www.fazwaz.com/property-rent/14-bedroom-hotel-for-rent-in-patong-phuket-u5803265"
+  },
+  {
+   "단지": "Zcape I",
+   "제목": "2 Bedroom Condo for rent at Zcape I",
+   "동네": "Choeng Thale, Thalang, Phuket",
+   "월세": "฿28,000/mo",
+   "㎡당": "(฿671/SqM)",
+   "면적": "41.70 SqM",
+   "방": "2",
+   "욕실": "1",
+   "유형": "Condo",
+   "준공": "2014",
+   "시설": "Low Rise",
+   "게시": "LISTED 1 DAY AGO",
+   "설명": "🏙️2-Bedroom Condo for Sale & Rent | ZCAPE Condominium 1🌿📍Cherng Talay, PhuketPrime location between Boat Avenue & Porto de Phuket✨Property Details🛏️ 2 Bedrooms📐 41.7 sq.m.🏢 7th Floor — To...",
+   "URL": "https://www.fazwaz.com/property-rent/2-bedroom-condo-for-rent-at-zcape-i-in-choeng-thale-phuket-u6802914"
+  }
+ ],
+ "생활비": {
+  "URL": "https://www.numbeo.com/cost-of-living/in/Phuket?displayCurrency=KRW",
+  "항목": {
+   "저렴한 식당 한 끼": {
+    "중앙값": "₩6,146.59",
+    "범위": "4,097.73-19,151.29"
+   },
+   "대중교통 정기권(월)": {
+    "중앙값": "₩31,086.23",
+    "범위": ""
+   },
+   "공과금(85㎡, 월)": {
+    "중앙값": "₩139,307.10",
+    "범위": "112,741.85-174,153.44"
+   },
+   "휴대폰 요금제(월, 10GB+)": {
+    "중앙값": "₩15,120.62",
+    "범위": "10,244.32-23,766.82"
+   },
+   "인터넷(월, 60Mbps+)": {
+    "중앙값": "₩23,654.62",
+    "범위": "16,390.91-28,684.10"
+   },
+   "헬스장(월)": {
+    "중앙값": "₩71,948.38",
+    "범위": "32,781.82-143,420.48"
+   },
+   "원룸 월세(도심)": {
+    "중앙값": "₩1,002,577.48",
+    "범위": "614,659.22-1,639,091.24"
+   },
+   "원룸 월세(도심 밖)": {
+    "중앙값": "₩666,563.77",
+    "범위": "614,659.22-1,147,363.87"
+   },
+   "방 3개 월세(도심)": {
+    "중앙값": "₩2,869,434.11",
+    "범위": "1,434,204.84-3,622,391.65"
+   },
+   "방 3개 월세(도심 밖)": {
+    "중앙값": "₩1,660,604.32",
+    "범위": "1,106,386.59-2,048,864.05"
+   }
+  },
+  "요약": [
+   "The estimated monthly costs for a family of four are ₩3,200,648.1 (฿78,107.9), excluding rent (using our estimator).",
+   "The estimated monthly costs for a single person are ₩881,892.7 (฿21,521.5), excluding rent.",
+   "Phuket is 45.1% less expensive than Seoul (excluding rent, see our cost of living index).",
+   "Rent in Phuket is, on average, 12.4% lower than in Seoul."
+  ]
+ },
+ "막힘": ""
+}

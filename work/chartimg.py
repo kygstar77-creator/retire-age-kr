@@ -21,7 +21,13 @@ def bar_chart(title, pairs, out, unit='', hi=3, short=False, source=''):
     n = len(pairs); pad = int(W * 0.06)
     im = Image.new('RGB', (W, H), BG); dr = ImageDraw.Draw(im)
     dr.rectangle([0, 0, W, 8], fill=YELLOW)
-    ft = f_disp(int(W * 0.052)); dr.text((pad, int(H * 0.045)), title[:26], font=ft, fill=WHITE)
+    # 제목은 26자에서 무조건 잘랐다 — 출처·조건이 붙은 제목이 "…5,000만원  5.2" 처럼 끊겨 나갔다
+    # (2026-09-24 dsr40 숏폼 프레임에서 확인). 이제 폭에 맞게 글자를 줄이고, 그래도 넘칠 때만 줄임표로 자른다.
+    tsz = int(W * 0.052)
+    while tsz > int(W * 0.030) and dr.textlength(title, font=f_disp(tsz)) > W - pad * 2: tsz -= 2
+    ft = f_disp(tsz); t = title
+    while len(t) > 4 and dr.textlength(t, font=ft) > W - pad * 2: t = t[:-1]
+    dr.text((pad, int(H * 0.045)), t if t == title else t[:-1] + '…', font=ft, fill=WHITE)
     top = int(H * 0.045) + int(ft.size * 1.7); bottom = H - int(H * 0.085)
     rowh = (bottom - top) / max(1, n)
     bh = min(int(rowh * 0.62), int(H * 0.11))   # 줄이 두셋뿐이면 rowh 가 커져 막대가 세로 덩어리로 보인다(2026-09-24)

@@ -1,0 +1,156 @@
+{
+ "도시": "리스본",
+ "확인일": "2026-09-23",
+ "출처": "idealista",
+ "매물URL": "https://www.idealista.pt/en/arrendar-casas/lisboa/",
+ "매물": [
+  {
+   "단지": "T3 flat in Rua Professor Mark Athias, 9, Telheiras, Lumiar",
+   "제목": "T3 flat in Rua Professor Mark Athias, 9, Telheiras, Lumiar",
+   "동네": "Lumiar",
+   "월세": "1,500€/month",
+   "㎡당": "",
+   "면적": "120 m²",
+   "방": "T3",
+   "욕실": "",
+   "유형": "T3 120 m² 6th floor with lift 11 minutes",
+   "준공": "",
+   "시설": "6th floor with lift",
+   "게시": "",
+   "설명": "Parquet flooring, drying rack, large pantry, large wardrobe in the hallway, located in an excellent, very green area, perfect for children and schools: nursery, primary, and secondary, with various public transport options including buses and metro. Residentia",
+   "URL": "https://www.idealista.pt/en/imovel/35350761/"
+  },
+  {
+   "단지": "T2 flat in Rua Ferreira Borges, 191, Centro, Campo de Ourique",
+   "제목": "T2 flat in Rua Ferreira Borges, 191, Centro, Campo de Ourique",
+   "동네": "Campo de Ourique",
+   "월세": "1,850€/month",
+   "㎡당": "",
+   "면적": "78 m²",
+   "방": "T2",
+   "욕실": "",
+   "유형": "T2 78 m² 2nd floor with lift",
+   "준공": "",
+   "시설": "2nd floor with lift",
+   "게시": "",
+   "설명": "Renovated 2-Bedroom Apartment for Rent | Campo de Ourique | Best central neighborhood in Lisbon Available for rent, an excellent 78 m² 2-bedroom apartment, fully renovated, located on the prestigious Rua Ferreira Borges, in the heart of Campo de Ourique, one o",
+   "URL": "https://www.idealista.pt/en/imovel/35227102/"
+  },
+  {
+   "단지": "Terraced house in Travessa da Trabuqueta, 18, Alcântara, Estrela",
+   "제목": "Terraced house in Travessa da Trabuqueta, 18, Alcântara, Estrela",
+   "동네": "Estrela",
+   "월세": "1,400€/month",
+   "㎡당": "",
+   "면적": "85 m²",
+   "방": "T2",
+   "욕실": "",
+   "유형": "T2 85 m² 11 minutes",
+   "준공": "",
+   "시설": "",
+   "게시": "",
+   "설명": "Beautiful 2-floor cottage in a tranquil Travessa close to Alcantara transport hub, with a double and single bedroom with a balcony upstairs and living, kitchen and dining area downstairs. There are 2 bathrooms. It is fully air conditioned and fully furnished a",
+   "URL": "https://www.idealista.pt/en/imovel/35350522/"
+  },
+  {
+   "단지": "T2 flat in Rua Joaquim António de Aguiar, Av. da Liberdade - Marquês de Pombal, Santo António",
+   "제목": "T2 flat in Rua Joaquim António de Aguiar, Av. da Liberdade - Marquês de Pombal, Santo António",
+   "동네": "Santo António",
+   "월세": "2,710€/month",
+   "㎡당": "",
+   "면적": "102 m²",
+   "방": "T2",
+   "욕실": "",
+   "유형": "T2 102 m² 6th floor with lift 17 hours",
+   "준공": "",
+   "시설": "6th floor with lift",
+   "게시": "",
+   "설명": "*COMPLETELY FURNISHED* *SHORT-TERM “RENT TO RENT” LEASES FROM 1 TO 11 MONTHS* Find your accommodation in Lisbon with Sazanka, a 102 sqm apartment with 2 double bedrooms and 2 bathrooms with showers. One of the highlights of the apartment is its 2 sqm terrace. ",
+   "URL": "https://www.idealista.pt/en/imovel/35350022/"
+  },
+  {
+   "단지": "T1 flat in Rua do Olival, 81, Lapa, Estrela",
+   "제목": "T1 flat in Rua do Olival, 81, Lapa, Estrela",
+   "동네": "Estrela",
+   "월세": "1,600€/month",
+   "㎡당": "",
+   "면적": "70 m²",
+   "방": "T1",
+   "욕실": "",
+   "유형": "Parking included T1 70 m² 1st floor with lift 12 minutes",
+   "준공": "",
+   "시설": "1st floor with lift",
+   "게시": "",
+   "설명": "Elegant one-bedroom apartment for rent with a two-car garage space on Rua do Olival. This fantastic apartment consists of a spacious living room with plenty of natural light, an equipped kitchen, a full bathroom, and a bedroom with built-in wardrobes. The view",
+   "URL": "https://www.idealista.pt/en/imovel/35350100/"
+  },
+  {
+   "단지": "T3 flat in Avenida Almirante Reis, Alameda - Praça do Chile - Almirante Reis, Arroios",
+   "제목": "T3 flat in Avenida Almirante Reis, Alameda - Praça do Chile - Almirante Reis, Arroios",
+   "동네": "Arroios",
+   "월세": "1,550€/month",
+   "㎡당": "",
+   "면적": "100 m²",
+   "방": "T3",
+   "욕실": "",
+   "유형": "T3 100 m² 2nd floor with lift 17 hours",
+   "준공": "",
+   "시설": "2nd floor with lift",
+   "게시": "",
+   "설명": "*3-Bedroom Apartment with 2 Bathrooms for Sale at Alameda Afonso Henriques* Discover this charming 3-bedroom apartment near Alameda Afonso Henriques, just one minute from the Metro station. Building with an elevator. With a total area of 100 m2, this property ",
+   "URL": "https://www.idealista.pt/en/imovel/35349832/"
+  }
+ ],
+ "생활비": {
+  "URL": "https://www.numbeo.com/cost-of-living/in/Lisbon?displayCurrency=KRW",
+  "항목": {
+   "저렴한 식당 한 끼": {
+    "중앙값": "₩23,307.31",
+    "범위": "18,645.85-31,076.42"
+   },
+   "대중교통 정기권(월)": {
+    "중앙값": "₩62,152.84",
+    "범위": "46,614.63-62,152.84"
+   },
+   "공과금(85㎡, 월)": {
+    "중앙값": "₩229,420.88",
+    "범위": "132,074.78-330,186.94"
+   },
+   "휴대폰 요금제(월, 10GB+)": {
+    "중앙값": "₩25,578.28",
+    "범위": "10,876.75-46,614.63"
+   },
+   "인터넷(월, 60Mbps+)": {
+    "중앙값": "₩45,240.09",
+    "범위": "31,076.42-93,229.25"
+   },
+   "헬스장(월)": {
+    "중앙값": "₩65,294.34",
+    "범위": "46,459.25-93,229.25"
+   },
+   "원룸 월세(도심)": {
+    "중앙값": "₩2,205,230.45",
+    "범위": "1,709,203.01-2,952,259.74"
+   },
+   "원룸 월세(도심 밖)": {
+    "중앙값": "₩1,658,237.68",
+    "범위": "1,243,056.73-2,175,349.28"
+   },
+   "방 3개 월세(도심)": {
+    "중앙값": "₩3,925,086.74",
+    "범위": "3,107,641.83-5,438,373.20"
+   },
+   "방 3개 월세(도심 밖)": {
+    "중앙값": "₩2,746,209.57",
+    "범위": "2,019,967.19-4,039,934.38"
+   }
+  },
+  "요약": [
+   "The estimated monthly costs for a family of four are ₩4,270,200.0 (€2,748.2), excluding rent (using our estimator).",
+   "The estimated monthly costs for a single person are ₩1,183,362.3 (€761.6), excluding rent.",
+   "Lisbon is 24.0% less expensive than Seoul (excluding rent, see our cost of living index).",
+   "Rent in Lisbon is, on average, 49.0% higher than in Seoul."
+  ]
+ },
+ "막힘": ""
+}

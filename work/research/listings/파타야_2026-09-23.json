@@ -1,0 +1,108 @@
+{
+ "도시": "파타야",
+ "확인일": "2026-09-23",
+ "출처": "fazwaz",
+ "매물URL": "https://www.fazwaz.com/property-for-rent/thailand/chon-buri/pattaya",
+ "매물": [
+  {
+   "단지": "Pattaya Condotel Chain",
+   "제목": "Studio Condo for rent at Pattaya Condotel Chain",
+   "동네": "Nong Prue, Pattaya",
+   "월세": "฿7,500/mo",
+   "㎡당": "(฿278/SqM)",
+   "면적": "27 SqM",
+   "방": "",
+   "욕실": "1",
+   "유형": "Condo",
+   "준공": "1993",
+   "시설": "High Rise",
+   "게시": "",
+   "설명": "Wake up every day to breathtaking sea views from this rare 14th-floor residence, featuring soaring 3m+ ceilings that fill your home with light and space. Just steps away—less than 300 meters&mda...",
+   "URL": "https://www.fazwaz.com/property-rent/studio-condo-for-rent-at-pattaya-condotel-chain-in-nong-prue-pattaya-u5766807"
+  },
+  {
+   "단지": "Paradise Park",
+   "제목": "1 Bedroom Condo for rent at Paradise Park",
+   "동네": "Nong Prue, Pattaya",
+   "월세": "฿7,000/mo",
+   "㎡당": "(฿206/SqM)",
+   "면적": "34 SqM",
+   "방": "1",
+   "욕실": "1",
+   "유형": "Condo",
+   "준공": "2012",
+   "시설": "Low Rise",
+   "게시": "",
+   "설명": "Paradise ParkComplete your stay with a modern style condominium in the heart of Jomtien Beach that is ready to take you to experience relaxation in a prime location surrounded by all amenities, includ...",
+   "URL": "https://www.fazwaz.com/property-rent/1-bedroom-condo-for-rent-at-paradise-park-in-nong-prue-pattaya-u1896256"
+  },
+  {
+   "단지": "Centara Avenue Residence and Suites",
+   "제목": "1 Bedroom Condo for rent at Centara Avenue Residence and Suites",
+   "동네": "Nong Prue, Pattaya",
+   "월세": "฿14,500/mo",
+   "㎡당": "(฿414/SqM)",
+   "면적": "35 SqM",
+   "방": "1",
+   "욕실": "1",
+   "유형": "Condo",
+   "준공": "2015",
+   "시설": "Low Rise",
+   "게시": "LISTED 1 DAY AGO",
+   "설명": "Centara Avenue Residence and Suites: meets the elegance in Centara style and be impressed by the management team from the largest hotel chain in Thailand. As it is designed as a mixed-use project, the...",
+   "URL": "https://www.fazwaz.com/property-rent/1-bedroom-condo-for-rent-at-centara-avenue-residence-and-suites-in-nong-prue-pattaya-u6802298"
+  }
+ ],
+ "생활비": {
+  "URL": "https://www.numbeo.com/cost-of-living/in/Pattaya?displayCurrency=KRW",
+  "항목": {
+   "저렴한 식당 한 끼": {
+    "중앙값": "₩4,507.50",
+    "범위": "2,663.52-8,195.46"
+   },
+   "대중교통 정기권(월)": {
+    "중앙값": "₩27,045.01",
+    "범위": "27,045.01-27,045.01"
+   },
+   "공과금(85㎡, 월)": {
+    "중앙값": "₩127,086.48",
+    "범위": "81,954.56-226,399.48"
+   },
+   "휴대폰 요금제(월, 10GB+)": {
+    "중앙값": "₩15,951.34",
+    "범위": "10,244.32-28,684.10"
+   },
+   "인터넷(월, 60Mbps+)": {
+    "중앙값": "₩26,210.09",
+    "범위": "21,881.87-36,879.55"
+   },
+   "헬스장(월)": {
+    "중앙값": "₩56,639.71",
+    "범위": "40,977.28-81,954.56"
+   },
+   "원룸 월세(도심)": {
+    "중앙값": "₩795,642.21",
+    "범위": "614,659.22-1,065,409.31"
+   },
+   "원룸 월세(도심 밖)": {
+    "중앙값": "₩522,460.33",
+    "범위": "409,772.81-737,591.06"
+   },
+   "방 3개 월세(도심)": {
+    "중앙값": "₩2,038,847.39",
+    "범위": "1,434,204.84-2,983,146.06"
+   },
+   "방 3개 월세(도심 밖)": {
+    "중앙값": "₩1,041,847.37",
+    "범위": "819,545.62-1,434,204.84"
+   }
+  },
+  "요약": [
+   "The estimated monthly costs for a family of four are ₩2,983,964.3 (฿72,820.0), excluding rent (using our estimator).",
+   "The estimated monthly costs for a single person are ₩822,976.5 (฿20,083.7), excluding rent.",
+   "Pattaya is 48.5% less expensive than Seoul (excluding rent, see our cost of living index).",
+   "Rent in Pattaya is, on average, 37.8% lower than in Seoul."
+  ]
+ },
+ "막힘": ""
+}

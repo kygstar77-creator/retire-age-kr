@@ -65,24 +65,53 @@ def draw_tokens(dr, x, y, text, f, base, sw):
         col = YELLOW if re.match(r'\d', tok) else base
         dr.text((x, y), tok, font=f, fill=col, stroke_width=sw, stroke_fill=(0, 0, 0)); x += dr.textlength(tok, font=f)
 
+def bg_base():
+    """자료 화면이 없을 때 쓰는 바탕"""
+    im = Image.new('RGB', (W, H), (11, 12, 16))
+    top = Image.new('RGB', (W, H), (26, 30, 48)); mask = Image.new('L', (1, H))
+    for y in range(H): mask.putpixel((0, y), int(70 * (1 - y / H)))
+    return Image.composite(top, im, mask.resize((W, H)))
+
 def scene_png(sc, idx, total, title, out):
+    """글자와 자료 화면을 위아래로 나눈다(2026-09-24).
+    전에는 자료 화면을 화면 전체에 깔고 그 위에 글자를 얹었다. chartimg 차트는 한가운데(y 339~1581)에
+    들어가는데 글자도 y 300 부터 시작해서, 차트 제목과 값이 머리글 뒤에 그대로 겹쳤다
+    (dsr40 1장면 실측: '만기별 대출 한도 (연소득 5,000만원  5.2' 가 잘린 채 '40년이면' 뒤에 깔림).
+    게다가 겹침을 가리려고 화면 전체를 0.42로 어둡게 눌러서 막대가 아예 안 보였다.
+    이제는 글자를 먼저 앉히고, 남은 아래 자리에 자료 화면을 통째로 넣는다. 겹치지 않으니 덜 어둡게 해도 된다."""
+    im = bg_base()
+    dr = ImageDraw.Draw(im); pad = 56; maxw = W - pad * 2
+
+    # 1) 글자가 어디까지 내려오는지 먼저 잰다(아직 그리지 않는다)
+    y0 = 150
+    y = y0
+    if sc.get('label'): y += 118
+    f, lines = fit_lines(dr, sc.get('head', ''), maxw)
+    y += int(f.size * 1.22) * len(lines) + 44
+    y += 86 * len(sc.get('lines', [])[:4])
+    text_bottom = y
+
+    # 2) 자료 화면은 글자 아래 남은 자리에 '통째로' 넣는다 — 잘리지도, 글자에 깔리지도 않는다
     bgp = sc.get('image')
     if bgp and os.path.exists(bgp):
-        im = fit_bg(Image.open(bgp).convert('RGB'), W, H)
-        im = ImageEnhance.Brightness(im).enhance(0.42)
-    else:
-        im = Image.new('RGB', (W, H), (11, 12, 16))
-        top = Image.new('RGB', (W, H), (26, 30, 48)); mask = Image.new('L', (1, H))
-        for y in range(H): mask.putpixel((0, y), int(70 * (1 - y / H)))
-        im = Image.composite(top, im, mask.resize((W, H)))
-    dr = ImageDraw.Draw(im); pad = 56; maxw = W - pad * 2
+        box_t, box_b = text_bottom + 36, H - 150
+        bw, bh = W - pad * 2, max(200, box_b - box_t)
+        src = Image.open(bgp).convert('RGB')
+        r = min(bw / src.width, bh / src.height) * 0.98
+        nw, nh = max(1, int(src.width * r)), max(1, int(src.height * r))
+        card = ImageEnhance.Brightness(src.resize((nw, nh))).enhance(0.82)
+        cx, cy = (W - nw) // 2, box_t + (bh - nh) // 2
+        dr.rounded_rectangle([cx - 12, cy - 12, cx + nw + 12, cy + nh + 12], 22, fill=(20, 22, 28))
+        im.paste(card, (cx, cy))
+        dr = ImageDraw.Draw(im)
+
+    # 3) 이제 글자를 그린다
     dr.rectangle([0, 0, W, 10], fill=(60, 60, 70)); dr.rectangle([0, 0, int(W * (idx + 1) / total), 10], fill=YELLOW)
-    y = 300
+    y = y0
     if sc.get('label'):
         fl = body(46, True); tw = dr.textlength(sc['label'], font=fl)
         dr.rounded_rectangle([pad, y - 14, pad + tw + 44, y + 70], 16, fill=YELLOW)
         dr.text((pad + 22, y), sc['label'][:20], font=fl, fill=(10, 10, 12)); y += 118
-    f, lines = fit_lines(dr, sc.get('head', ''), maxw)
     sw = max(5, f.size // 14)
     for l in lines:
         draw_tokens(dr, pad, y, l, f, WHITE, sw); y += int(f.size * 1.22)

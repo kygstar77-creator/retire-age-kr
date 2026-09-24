@@ -1,0 +1,108 @@
+{
+ "도시": "포르투",
+ "확인일": "2026-09-23",
+ "출처": "idealista",
+ "매물URL": "https://www.idealista.pt/en/arrendar-casas/porto/",
+ "매물": [
+  {
+   "단지": "T2 flat in Rua de Contumil, 381, Contumil - Nicolau Nasoni, Campanhã",
+   "제목": "T2 flat in Rua de Contumil, 381, Contumil - Nicolau Nasoni, Campanhã",
+   "동네": "Campanhã",
+   "월세": "900€/month",
+   "㎡당": "",
+   "면적": "68 m²",
+   "방": "T2",
+   "욕실": "",
+   "유형": "T2 68 m² 1st floor without lift 9 minutes",
+   "준공": "",
+   "시설": "1st floor without lift",
+   "게시": "",
+   "설명": "? 2-bedroom apartment in Rio Tinto — €900/month with expenses included Immediate lease | Furnished apartment 2-bedroom apartment available for rent in Rio Tinto, furnished and equipped, with comfortable and functional decor. Features 2 bedrooms, furnished Spac",
+   "URL": "https://www.idealista.pt/en/imovel/35351258/"
+  },
+  {
+   "단지": "T3 flat in Travessa do Bonjardim, Aliados - Clérigos - Carlos Alberto, Cedofeita - Santo Ildefonso - Sé - Miragaia - São Nicolau - Vitória",
+   "제목": "T3 flat in Travessa do Bonjardim, Aliados - Clérigos - Carlos Alberto, Cedofeita - Santo Ildefonso - Sé - Miragaia - São Nicolau - Vitória",
+   "동네": "Cedofeita - Santo Ildefonso - Sé - Miragaia - São Nicolau - Vitória",
+   "월세": "3,300€/month",
+   "㎡당": "",
+   "면적": "187 m²",
+   "방": "T3",
+   "욕실": "",
+   "유형": "Parking included T3 187 m² 2nd floor with lift 12 hours",
+   "준공": "",
+   "시설": "2nd floor with lift",
+   "게시": "",
+   "설명": "3-Bedroom Apartment with 3 En-suites and 3 Parking Spaces | Bonjardim | Porto High-quality 3-bedroom apartment, with 187 m² of gross area, fully furnished and equipped, located in the Bonjardim Development, in the heart of Porto. With 3 en-suites, 3 parking sp",
+   "URL": "https://www.idealista.pt/en/imovel/34495526/"
+  },
+  {
+   "단지": "T1 flat in Rua António de Sousa e Silva, 79, Hospital São João - Pólo Universitário, Paranhos",
+   "제목": "T1 flat in Rua António de Sousa e Silva, 79, Hospital São João - Pólo Universitário, Paranhos",
+   "동네": "Paranhos",
+   "월세": "1,000€/month",
+   "㎡당": "",
+   "면적": "60 m²",
+   "방": "T1",
+   "욕실": "",
+   "유형": "Parking included T1 60 m² 2nd floor with lift 12 minutes",
+   "준공": "",
+   "시설": "2nd floor with lift",
+   "게시": "",
+   "설명": "• T1 Evolutivo that can become T2. - South facing for a very quiet private garden. • 58 m² usable area on the 2nd floor • Kitchen equipped with ceramic hob, oven, dishwasher, combined refrigerator - Unfurnished • 1 complete WC • Balcony • Electric shutters • P",
+   "URL": "https://www.idealista.pt/en/imovel/34364260/"
+  }
+ ],
+ "생활비": {
+  "URL": "https://www.numbeo.com/cost-of-living/in/Porto?displayCurrency=KRW",
+  "항목": {
+   "저렴한 식당 한 끼": {
+    "중앙값": "₩18,645.85",
+    "범위": "13,984.39-31,076.42"
+   },
+   "대중교통 정기권(월)": {
+    "중앙값": "₩62,152.84",
+    "범위": "62,152.84-62,152.84"
+   },
+   "공과금(85㎡, 월)": {
+    "중앙값": "₩225,189.91",
+    "범위": "155,382.09-310,764.18"
+   },
+   "휴대폰 요금제(월, 10GB+)": {
+    "중앙값": "₩20,588.13",
+    "범위": "12,430.57-46,614.63"
+   },
+   "인터넷(월, 60Mbps+)": {
+    "중앙값": "₩50,654.56",
+    "범위": "31,076.42-82,352.51"
+   },
+   "헬스장(월)": {
+    "중앙값": "₩61,505.41",
+    "범위": "46,459.25-77,691.05"
+   },
+   "원룸 월세(도심)": {
+    "중앙값": "₩1,792,073.45",
+    "범위": "1,615,973.75-1,988,890.77"
+   },
+   "원룸 월세(도심 밖)": {
+    "중앙값": "₩1,323,522.46",
+    "범위": "1,165,365.69-1,631,511.96"
+   },
+   "방 3개 월세(도심)": {
+    "중앙값": "₩3,129,156.27",
+    "범위": "2,486,113.46-4,350,698.56"
+   },
+   "방 3개 월세(도심 밖)": {
+    "중앙값": "₩2,276,347.64",
+    "범위": "1,864,585.10-2,796,877.65"
+   }
+  },
+  "요약": [
+   "The estimated monthly costs for a family of four are ₩3,996,061.9 (€2,571.8), excluding rent (using our estimator).",
+   "The estimated monthly costs for a single person are ₩1,114,869.5 (€717.5), excluding rent.",
+   "Porto is 30.2% less expensive than Seoul (excluding rent, see our cost of living index).",
+   "Rent in Porto is, on average, 20.5% higher than in Seoul."
+  ]
+ },
+ "막힘": ""
+}

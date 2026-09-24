@@ -1,0 +1,156 @@
+{
+ "도시": "마드리드",
+ "확인일": "2026-09-24",
+ "출처": "fotocasa",
+ "매물URL": "https://www.fotocasa.es/es/alquiler/viviendas/madrid-capital/todas-las-zonas/l",
+ "매물": [
+  {
+   "단지": "HOUSINGANYWHERE",
+   "제목": "Flat Jerónimos",
+   "동네": "Jerónimos",
+   "월세": "3.537 €/월",
+   "㎡당": "40.7 €/㎡",
+   "면적": "87 m²",
+   "방": "2",
+   "욕실": "",
+   "유형": "Flat",
+   "준공": "",
+   "시설": "에어컨, 가구 포함",
+   "게시": "",
+   "설명": "Esta apartmento en Madrid, ofrece un espacio habitable no amueblado de ??m² perfecto para profesionales / estudiantes. Esta apartmento está disponible para que la puedas alquilar a través de HousingAnywhere.",
+   "URL": "https://www.fotocasa.es/es/alquiler/vivienda/madrid-capital/aire-acondicionado-amueblado-television/190924190/d"
+  },
+  {
+   "단지": "HOUSINGANYWHERE",
+   "제목": "Flat Embajadores - Lavapiés",
+   "동네": "Embajadores - Lavapiés",
+   "월세": "830 €/월",
+   "㎡당": "6.4 €/㎡",
+   "면적": "130 m²",
+   "방": "5",
+   "욕실": "",
+   "유형": "Flat",
+   "준공": "",
+   "시설": "",
+   "게시": "",
+   "설명": "Esta apartmento en Madrid, ofrece un espacio habitable no amueblado de ??m² perfecto para profesionales / estudiantes. Esta apartmento está disponible para que la puedas alquilar a través de HousingAnywhere.",
+   "URL": "https://www.fotocasa.es/es/alquiler/vivienda/madrid-capital/television-no-amueblado/190924188/d"
+  },
+  {
+   "단지": "HOUSINGANYWHERE",
+   "제목": "Flat Recoletos",
+   "동네": "Recoletos",
+   "월세": "2.400 €/월",
+   "㎡당": "58.5 €/㎡",
+   "면적": "41 m²",
+   "방": "1",
+   "욕실": "",
+   "유형": "Flat",
+   "준공": "",
+   "시설": "에어컨, 난방, 가구 포함",
+   "게시": "",
+   "설명": "Esta apartmento en Madrid, ofrece un espacio habitable no amueblado de ??m² perfecto para profesionales / estudiantes. Esta apartmento está disponible para que la puedas alquilar a través de HousingAnywhere.",
+   "URL": "https://www.fotocasa.es/es/alquiler/vivienda/madrid-capital/aire-acondicionado-calefaccion-amueblado-television/190924186/d"
+  },
+  {
+   "단지": "HOUSINGANYWHERE",
+   "제목": "Flat Sol",
+   "동네": "Sol",
+   "월세": "2.350 €/월",
+   "㎡당": "21.4 €/㎡",
+   "면적": "110 m²",
+   "방": "2",
+   "욕실": "",
+   "유형": "Flat",
+   "준공": "",
+   "시설": "에어컨, 난방, 가구 포함",
+   "게시": "",
+   "설명": "Esta apartmento en Madrid, ofrece un espacio habitable no amueblado de ??m² perfecto para profesionales / estudiantes. Esta apartmento está disponible para que la puedas alquilar a través de HousingAnywhere.",
+   "URL": "https://www.fotocasa.es/es/alquiler/vivienda/madrid-capital/aire-acondicionado-calefaccion-amueblado-television/190924184/d"
+  },
+  {
+   "단지": "HOUSINGANYWHERE",
+   "제목": "Flat Cortes - Huertas",
+   "동네": "Cortes - Huertas",
+   "월세": "2.450 €/월",
+   "㎡당": "37.7 €/㎡",
+   "면적": "65 m²",
+   "방": "2",
+   "욕실": "",
+   "유형": "Flat",
+   "준공": "",
+   "시설": "에어컨, 가구 포함",
+   "게시": "",
+   "설명": "Esta apartmento en Madrid, ofrece un espacio habitable no amueblado de ??m² perfecto para profesionales / estudiantes. Esta apartmento está disponible para que la puedas alquilar a través de HousingAnywhere.",
+   "URL": "https://www.fotocasa.es/es/alquiler/vivienda/madrid-capital/aire-acondicionado-amueblado-television/190924182/d"
+  },
+  {
+   "단지": "HOUSINGANYWHERE",
+   "제목": "Flat Ensanche de Vallecas - La Gavia",
+   "동네": "Ensanche de Vallecas - La Gavia",
+   "월세": "1.250 €/월",
+   "㎡당": "48.1 €/㎡",
+   "면적": "26 m²",
+   "방": "",
+   "욕실": "",
+   "유형": "Flat",
+   "준공": "",
+   "시설": "에어컨, 난방, 가구 포함",
+   "게시": "",
+   "설명": "Esta apartmento en Madrid, ofrece un espacio habitable no amueblado de ??m² perfecto para profesionales / estudiantes. Esta apartmento está disponible para que la puedas alquilar a través de HousingAnywhere.",
+   "URL": "https://www.fotocasa.es/es/alquiler/vivienda/madrid-capital/aire-acondicionado-calefaccion-jardin-amueblado-television-internet/190924181/d"
+  }
+ ],
+ "생활비": {
+  "URL": "https://www.numbeo.com/cost-of-living/in/Madrid?displayCurrency=KRW",
+  "항목": {
+   "저렴한 식당 한 끼": {
+    "중앙값": "₩24,882.43",
+    "범위": "18,661.82-38,878.80"
+   },
+   "대중교통 정기권(월)": {
+    "중앙값": "₩51,320.02",
+    "범위": "46,654.56-93,309.12"
+   },
+   "공과금(85㎡, 월)": {
+    "중앙값": "₩261,725.09",
+    "범위": "186,618.25-396,563.78"
+   },
+   "휴대폰 요금제(월, 10GB+)": {
+    "중앙값": "₩25,165.19",
+    "범위": "13,996.37-69,981.84"
+   },
+   "인터넷(월, 60Mbps+)": {
+    "중앙값": "₩48,344.95",
+    "범위": "31,103.04-77,757.60"
+   },
+   "헬스장(월)": {
+    "중앙값": "₩69,122.42",
+    "범위": "38,878.80-108,860.65"
+   },
+   "원룸 월세(도심)": {
+    "중앙값": "₩2,085,692.21",
+    "범위": "1,555,152.08-3,110,304.16"
+   },
+   "원룸 월세(도심 밖)": {
+    "중앙값": "₩1,621,916.37",
+    "범위": "1,244,121.66-2,177,212.91"
+   },
+   "방 3개 월세(도심)": {
+    "중앙값": "₩3,837,168.72",
+    "범위": "2,877,031.35-5,443,032.28"
+   },
+   "방 3개 월세(도심 밖)": {
+    "중앙값": "₩2,541,968.26",
+    "범위": "1,943,940.10-3,732,364.99"
+   }
+  },
+  "요약": [
+   "The estimated monthly costs for a family of four are ₩4,580,624.9 (€2,945.5), excluding rent (using our estimator).",
+   "The estimated monthly costs for a single person are ₩1,274,156.5 (€819.3), excluding rent.",
+   "Madrid is 19.2% less expensive than Seoul (excluding rent, see our cost of living index).",
+   "Rent in Madrid is, on average, 42.8% higher than in Seoul."
+  ]
+ },
+ "막힘": ""
+}

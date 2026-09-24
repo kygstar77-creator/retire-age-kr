@@ -1,0 +1,108 @@
+{
+ "도시": "바르셀로나",
+ "확인일": "2026-09-24",
+ "출처": "fotocasa",
+ "매물URL": "https://www.fotocasa.es/es/alquiler/viviendas/barcelona-capital/todas-las-zonas/l",
+ "매물": [
+  {
+   "단지": "Dils Lucas Fox",
+   "제목": "Flat Sant Antoni",
+   "동네": "Sant Antoni",
+   "월세": "3.200 €/월",
+   "㎡당": "33.3 €/㎡",
+   "면적": "96 m²",
+   "방": "3",
+   "욕실": "2",
+   "유형": "Flat",
+   "준공": "",
+   "시설": "엘리베이터, 에어컨, 테라스, 주차",
+   "게시": "7일 전",
+   "설명": "Alquier temporal vacacional. Piso de lujo en el corazón de Sant Antoni, Barcelona Ubicado en pleno corazón de Sant Antoni, uno de los barrios más emblemáticos, vibrantes y auténticos de Barcelona, encontramos esta magnífica propiedad de lujo, diseñada para ofr",
+   "URL": "https://www.fotocasa.es/es/alquiler/vivienda/barcelona-capital/aire-acondicionado-parking-terraza-ascensor/190808690/d"
+  },
+  {
+   "단지": "Grup Núñez i Navarro",
+   "제목": "Flat Pedralbes",
+   "동네": "Pedralbes",
+   "월세": "7.651 €/월",
+   "㎡당": "30.1 €/㎡",
+   "면적": "254 m²",
+   "방": "5",
+   "욕실": "5",
+   "유형": "Flat",
+   "준공": "",
+   "시설": "엘리베이터, 에어컨, 난방, 테라스",
+   "게시": "164일 전",
+   "설명": "Actualizado: 24Sep Ubicados en el residencial y exclusivo barrio de Pedralbes, estas fantásticas viviendas destacan por su amplitud, luminosidad y cuidada calidad de acabados. Pisos exteriores de 2, 3, 4 y 5 habitaciones. Las viviendas disponen de 2, 3 y 4 bañ",
+   "URL": "https://www.fotocasa.es/es/alquiler/vivienda/barcelona-capital/aire-acondicionado-calefaccion-jardin-terraza-trastero-ascensor-piscina/189351677/d"
+  },
+  {
+   "단지": "Proddigia Barcelona",
+   "제목": "Flat El Putget i el Farró",
+   "동네": "El Putget i el Farró",
+   "월세": "2.900 €/월",
+   "㎡당": "26.6 €/㎡",
+   "면적": "109 m²",
+   "방": "1",
+   "욕실": "1",
+   "유형": "Attic",
+   "준공": "",
+   "시설": "엘리베이터, 난방, 테라스, 가구 포함",
+   "게시": "546일 전",
+   "설명": "Exclusivo ático en la calle Balmes con Ronda General Mitre. Ubicado en una finca regia con ascensor y sin conserje tenemos este fantástico ático ya disponible. El piso viene totalmente equipado, amueblado con muebles de gran calidad, electrodomésticos de alta ",
+   "URL": "https://www.fotocasa.es/es/alquiler/vivienda/barcelona-capital/calefaccion-terraza-ascensor-amueblado/186035426/d"
+  }
+ ],
+ "생활비": {
+  "URL": "https://www.numbeo.com/cost-of-living/in/Barcelona?displayCurrency=KRW",
+  "항목": {
+   "저렴한 식당 한 끼": {
+    "중앙값": "₩24,882.43",
+    "범위": "18,661.82-38,878.80"
+   },
+   "대중교통 정기권(월)": {
+    "중앙값": "₩35,457.47",
+    "범위": "34,213.35-69,981.84"
+   },
+   "공과금(85㎡, 월)": {
+    "중앙값": "₩255,384.91",
+    "범위": "138,482.59-435,442.58"
+   },
+   "휴대폰 요금제(월, 10GB+)": {
+    "중앙값": "₩20,544.38",
+    "범위": "10,886.06-62,206.08"
+   },
+   "인터넷(월, 60Mbps+)": {
+    "중앙값": "₩50,195.99",
+    "범위": "31,103.04-93,309.12"
+   },
+   "헬스장(월)": {
+    "중앙값": "₩75,058.96",
+    "범위": "46,654.56-105,750.34"
+   },
+   "원룸 월세(도심)": {
+    "중앙값": "₩2,276,503.39",
+    "범위": "1,710,667.29-2,799,273.75"
+   },
+   "원룸 월세(도심 밖)": {
+    "중앙값": "₩1,777,299.57",
+    "범위": "1,399,636.87-2,177,212.91"
+   },
+   "방 3개 월세(도심)": {
+    "중앙값": "₩3,517,036.24",
+    "범위": "2,488,243.33-4,665,456.24"
+   },
+   "방 3개 월세(도심 밖)": {
+    "중앙값": "₩2,591,920.13",
+    "범위": "1,866,182.50-3,499,092.18"
+   }
+  },
+  "요약": [
+   "The estimated monthly costs for a family of four are ₩4,634,180.3 (€2,979.9), excluding rent (using our estimator).",
+   "The estimated monthly costs for a single person are ₩1,286,522.7 (€827.3), excluding rent.",
+   "Barcelona is 17.6% less expensive than Seoul (excluding rent, see our cost of living index).",
+   "Rent in Barcelona is, on average, 43.9% higher than in Seoul."
+  ]
+ },
+ "막힘": ""
+}

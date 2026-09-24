@@ -1,0 +1,108 @@
+{
+ "도시": "방콕",
+ "확인일": "2026-09-23",
+ "출처": "fazwaz",
+ "매물URL": "https://www.fazwaz.com/property-for-rent/thailand/bangkok",
+ "매물": [
+  {
+   "단지": "Quintara MHy’ZEN Phrom Phong",
+   "제목": "Studio Condo for rent at Quintara MHy’ZEN Phrom Phong",
+   "동네": "Khlong Tan Nuea, Watthana, Bangkok",
+   "월세": "฿16,000/mo",
+   "㎡당": "(฿727/SqM)",
+   "면적": "22 SqM",
+   "방": "",
+   "욕실": "1",
+   "유형": "Condo",
+   "준공": "2024",
+   "시설": "Low Rise",
+   "게시": "",
+   "설명": "Quintara MHy’ZEN Phrom Phong is a condo and apartment project located in Khlong Tan Nuea, Bangkok and it is scheduled for completion in Jan 2024. It has 276 units across 8 floors and was develop...",
+   "URL": "https://www.fazwaz.com/property-rent/studio-condo-for-rent-at-quintara-mhyzen-phrom-phong-in-khlong-tan-nuea-bangkok-u5353092"
+  },
+  {
+   "단지": "Sukhumvit Suite",
+   "제목": "1 Bedroom Condo for rent at Sukhumvit Suite",
+   "동네": "Khlong Toei Nuea, Watthana, Bangkok, Thailand",
+   "월세": "฿16,500/mo",
+   "㎡당": "(฿337/SqM)",
+   "면적": "49 SqM",
+   "방": "1",
+   "욕실": "1",
+   "유형": "Condo",
+   "준공": "1993",
+   "시설": "High Rise",
+   "게시": "LISTED 3 WEEKS AGO",
+   "설명": "Walk to BTS Nana & Asoke​Experience the ultimate city lifestyle in this spacious 48 sqm. 1-bedroom apartment at Sukhumvit Suites, located in the heart of Bangkok’s vibrant Sukhumvit 13.Why you’ll...",
+   "URL": "https://www.fazwaz.com/property-rent/1-bedroom-condo-for-rent-at-sukhumvit-suite-in-khlong-toei-nuea-bangkok-u6662698"
+  },
+  {
+   "단지": "Aspire Sathorn-Taksin Timber Zone",
+   "제목": "2 Bedroom Condo for rent at Aspire Sathorn-Taksin Timber Zone",
+   "동네": "Bang Kho, Chom Thong, Bangkok, Thailand",
+   "월세": "฿14,000/mo",
+   "㎡당": "(฿311/SqM)",
+   "면적": "45 SqM",
+   "방": "2",
+   "욕실": "1",
+   "유형": "Condo",
+   "준공": "2014",
+   "시설": "High Rise",
+   "게시": "",
+   "설명": "Experience a new dimension of living with a luxury condominium project, \"Aspire Sathorn-Taksin.\" The project has been designed to suit every lifestyle. The residences range from 1 bedroom to 2 bedroom...",
+   "URL": "https://www.fazwaz.com/property-rent/2-bedroom-condo-for-rent-at-aspire-sathorn-taksin-timber-zone-in-bang-kho-bangkok-u1658768"
+  }
+ ],
+ "생활비": {
+  "URL": "https://www.numbeo.com/cost-of-living/in/Bangkok?displayCurrency=KRW",
+  "항목": {
+   "저렴한 식당 한 끼": {
+    "중앙값": "₩4,097.73",
+    "범위": "2,458.64-10,244.32"
+   },
+   "대중교통 정기권(월)": {
+    "중앙값": "₩48,250.75",
+    "범위": "27,659.66-81,954.56"
+   },
+   "공과금(85㎡, 월)": {
+    "중앙값": "₩146,481.87",
+    "범위": "102,443.20-245,863.69"
+   },
+   "휴대폰 요금제(월, 10GB+)": {
+    "중앙값": "₩19,910.45",
+    "범위": "12,252.21-40,977.28"
+   },
+   "인터넷(월, 60Mbps+)": {
+    "중앙값": "₩24,092.69",
+    "범위": "20,488.64-40,977.28"
+   },
+   "헬스장(월)": {
+    "중앙값": "₩80,861.83",
+    "범위": "36,879.55-114,736.39"
+   },
+   "원룸 월세(도심)": {
+    "중앙값": "₩935,439.46",
+    "범위": "655,636.50-1,434,204.84"
+   },
+   "원룸 월세(도심 밖)": {
+    "중앙값": "₩479,434.19",
+    "범위": "368,795.53-737,591.06"
+   },
+   "방 3개 월세(도심)": {
+    "중앙값": "₩2,765,966.47",
+    "범위": "2,048,864.05-4,097,728.11"
+   },
+   "방 3개 월세(도심 밖)": {
+    "중앙값": "₩1,026,826.32",
+    "범위": "655,636.50-1,843,977.65"
+   }
+  },
+  "요약": [
+   "The estimated monthly costs for a family of four are ₩3,523,343.4 (฿85,982.8), excluding rent (using our estimator).",
+   "The estimated monthly costs for a single person are ₩964,859.1 (฿23,546.2), excluding rent.",
+   "Bangkok is 41.2% less expensive than Seoul (excluding rent, see our cost of living index).",
+   "Rent in Bangkok is, on average, 26.4% lower than in Seoul."
+  ]
+ },
+ "막힘": ""
+}

@@ -27,9 +27,39 @@ def wrap(text, font, maxw):
         out.append(cur)
     return out or ['']
 
-def table(path, title, cols, rows, widths, note=None, hl_col=None, src=None):
+def auto_widths(cols, rows, hl_col=None, cap=0.34):
+    """열 폭을 내용에 맞춰 정한다. 각 열에서 가장 긴 글자의 실제 픽셀 폭을 재고,
+    한 열이 전체의 cap(기본 34%)을 넘지 않게 눌러 비율로 돌려준다.
+    2026-09-24: 손으로 폭을 주면 '94,120주'가 '94,120 / 주'로 갈리는 일이 회차마다 반복돼 넣었다."""
+    need=[]
+    for i,c in enumerate(cols):
+        f=F(22, i==0 or i==hl_col)
+        w=_M.textlength(str(c), font=F(20,True))
+        for r in rows:
+            if i < len(r): w=max(w, _M.textlength(str(r[i]), font=f))
+        need.append(w+28)
+    tot=sum(need) or 1.0
+    auto_widths.need_px=tot            # 줄바꿈 없이 담으려면 몇 픽셀이 필요한지
+    ws=[n/tot for n in need]
+    over=[i for i,w in enumerate(ws) if w>cap]
+    if over:                                  # 한 열이 너무 넓으면 깎아 나머지에 나눠 준다
+        spare=sum(ws[i]-cap for i in over)
+        rest=sum(w for i,w in enumerate(ws) if i not in over) or 1.0
+        ws=[cap if i in over else w+spare*w/rest for i,w in enumerate(ws)]
+    return ws
+
+def table(path, title, cols, rows, widths=None, note=None, hl_col=None, src=None):
     W=900; pad=36; th=54; lh=30; vpad=15
     x0=pad; tw=W-pad*2
+    # widths를 안 주면 내용을 재서 자동으로 정한다.
+    fs=22
+    if not widths:
+        widths=auto_widths(cols, rows, hl_col)
+        # 열이 많아 가용폭(tw)에 다 못 담으면 글자를 한 단계씩 줄인다.
+        # 안 줄이면 '94,120주'가 '94,120 / 주'로 갈린다(2026-09-24).
+        gap=28*len(cols)                               # 셀 여백은 글자를 줄여도 그대로다
+        while fs>17 and (auto_widths.need_px-gap)*(fs/22.0)+gap > tw:
+            fs-=1
     # widths는 비율(합 1)로 받는다. 픽셀 값(합이 1보다 훨씬 큰 경우)으로 줘도
     # 열이 화면 밖으로 밀리지 않도록 합으로 나눠 비율로 맞춘다.
     tot=float(sum(widths)) or 1.0
@@ -40,7 +70,7 @@ def table(path, title, cols, rows, widths, note=None, hl_col=None, src=None):
     # 1차: 각 셀을 줄바꿈해서 행 높이를 먼저 구한다
     wrapped=[]; heights=[]
     for r in rows:
-        cells=[wrap(c, F(22, i==0 or i==hl_col), cw[i]) for i,c in enumerate(r)]
+        cells=[wrap(c, F(fs, i==0 or i==hl_col), cw[i]) for i,c in enumerate(r)]
         wrapped.append(cells)
         heights.append(max(len(c) for c in cells)*lh + vpad*2)
     tf=F(30,True); nf=F(18); sf=F(16)
@@ -51,12 +81,12 @@ def table(path, title, cols, rows, widths, note=None, hl_col=None, src=None):
     for ln in tl: d.text((pad,y),ln,font=tf,fill=INK); y+=42
     y+=18
     d.rounded_rectangle((x0,y,x0+tw,y+th),10,fill=HEAD)
-    for i,c in enumerate(cols): d.text((xs[i]+14,y+15),c,font=F(20,True),fill=SUB)
+    for i,c in enumerate(cols): d.text((xs[i]+14,y+15),c,font=F(min(20,fs-1),True),fill=SUB)
     y+=th
     for cells,rh in zip(wrapped,heights):
         for i,lines in enumerate(cells):
             col = ACC if (hl_col is not None and i==hl_col) else INK
-            f=F(22, i==0 or i==hl_col)
+            f=F(fs, i==0 or i==hl_col)
             ty=y+vpad
             for ln in lines: d.text((xs[i]+14,ty),ln,font=f,fill=col); ty+=lh
         y+=rh; d.line((x0,y,x0+tw,y),fill=LINE,width=1)

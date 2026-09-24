@@ -1,0 +1,65 @@
+[오늘 찾은 것] 2026-09-24 조사
+1. 2026-09-24 SEC EDGAR 일별 인덱스 — 9/22~9/24 접수 Form 4 255건 중 매수(코드 P) 52건. 9/24자 인덱스는 아직 없음(HTTPError). 출처 https://www.sec.gov/Archives/edgar/daily-index/2026/QTR3/form.20260922.idx 외
+2. 2026-09-24 Investing.com·GuruFocus — 니폰생명의 Corebridge(CRBG) 반복 매수 보도. 1차 출처 Form 4로 확인함
+3. 2026-09-23 MarketBeat·Webull·DividendChannel — Kayne Anderson BDC(KBDC) 이사 James Robo 매수 보도. 매체마다 금액이 519만·599만·150만 달러로 갈림 → 매체 숫자는 쓰지 않고 Form 4 원문 수치만 씀
+4. 2026-08-11 Agree Realty 회사 보도자료(businesswire·회사 IR) — 월 배당 0.267달러, 연환산 3.204달러, 2025년 3분기 연환산 3.072달러 대비 4.3% 인상. 9/15 지급, 8/31 기준일
+5. 2026-09-14 TheDesperateTrader — 9월 내부자 매수 상위로 RSG·GPI·QVCG 거론. 2차 출처라 숫자로 쓰지 않음
+
+[1차 출처 — SEC EDGAR Form 4 원문]
+출처: https://www.sec.gov/Archives/edgar/daily-index/2026/QTR3/ (무키 공개), 도구 work/insider.py
+조회 범위: 최근 3영업일치 Form 4 255건, 매수(P) 52건, 달러 표기 확인된 상위 20건
+
+금액 1위 — Electra Therapeutics(ETRA)
+  OrbiMed Advisors LLC(이사·10%주주) 100만주 × 15.00달러 = 1,500만 달러, 2026-09-21
+  GORDON CARL L(이사·10%주주) 같은 건 1,500만 달러, 2026-09-21
+  Form 4 각주 원문: "Reflects shares of the Issuer's Common Stock purchased in the Issuer's initial public offering."
+  → 장내 매수가 아니라 이 회사 IPO 공모 청약. 가격이 15.00달러로 균일한 이유
+  출처 https://www.sec.gov/Archives/edgar/data/2088082/0000947871-26-000880.txt
+
+금액 2위 — Corebridge Financial(CRBG)
+  NIPPON LIFE INSURANCE CO(10%주주) 212,828주 × 35.0797달러 = 746만 5,942달러, 2026-09-21
+  Form 4 각주 원문: "The purchases reported herein were effected pursuant to a Rule 10b5-1 plan adopted by the Reporting Person on August 7, 2026."
+  각주2: 가중평균가이며 실제 체결가는 34.83~35.47달러 범위
+  보유 주식 123,820,013주(자회사 닛세이에셋매니지먼트 33,271주 포함)
+  출처 https://www.sec.gov/Archives/edgar/data/1889539/0001193125-26-399477.txt
+
+장내 매수로 확인된 것
+  Kayne Anderson BDC(KBDC) ROBO JAMES L(이사) 94,120주 × 13.079달러 = 123만 995달러, 2026-09-23
+    같은 서류에 2026-09-22 20,841주 × 13.135달러 = 27만 3,746달러
+    간접 보유(Ventus Capital, LLC / Ventus Capital KABDC, LLC)
+    출처 https://www.sec.gov/Archives/edgar/data/1747172/0001183254-26-000006.txt
+  Tennant Company(TNC) ALLEN PATRICK E(이사) 3,000주 × 69.4168달러 = 20만 8,250달러, 2026-08-31
+    각주: 가중평균가, 체결가 69.17달러부터 여러 건으로 나뉨. 보유 4,927주
+    출처 https://www.sec.gov/Archives/edgar/data/1191569/0001191569-26-000012.txt
+  Agree Realty(ADC) Erlich Craig(임원, CHIEF GROWTH OFFICER) 1,000주 × 67.55달러 = 6만 7,550달러, 2026-09-21
+    각주 없음. 보유 60,388주
+    출처 https://www.sec.gov/Archives/edgar/data/917251/0001747962-26-000007.txt
+  Infinity Natural Resources(INR) Gieselman Scott(이사) 18,467주 × 12.624달러 = 23만 3,127달러, 2026-09-21
+
+[주가·배당 — Yahoo Finance chart API, 2026-09-24 조회]
+출처 https://query1.finance.yahoo.com/v8/finance/chart/<티커>?range=2y&events=div
+  CRBG 종가 33.89달러 · 52주 최고 35.64 최저 22.19 · 최근 분기배당 0.25달러(2026-09-16 배당락) · 12개월 배당 합 0.99달러
+  KBDC 종가 13.08달러 · 52주 최고 15.87 최저 12.88 · 최근 분기배당 0.40달러(2026-06-30) · 12개월 배당 합 1.60달러
+  ADC  종가 67.12달러 · 52주 최고 82.08 최저 66.50 · 월배당 0.267달러(2026-08-31 배당락) · 12개월 배당 합 3.163달러
+  TNC  종가 65.95달러 · 52주 최고 91.93 최저 60.18 · 최근 분기배당 0.31달러(2026-08-31) · 12개월 배당 합 1.24달러
+  INR  종가 13.03달러 · 52주 최고 19.585 최저 11.13 · 배당 지급 이력 없음(2년치 조회 결과 0건)
+
+[계산 — 위 숫자로 직접 계산, 원자료 아님]
+배당률(12개월 배당 합 ÷ 2026-09-24 종가)
+  KBDC 1.60 ÷ 13.08 = 12.23%
+  ADC  3.163 ÷ 67.12 = 4.71%
+  CRBG 0.99 ÷ 33.89 = 2.92%
+  TNC  1.24 ÷ 65.95 = 1.88%
+내부자 매수가 대비 현재가
+  TNC  65.95 ÷ 69.4168 = -4.99%
+  CRBG 33.89 ÷ 35.0797 = -3.39%
+  ADC  67.12 ÷ 67.55 = -0.64%
+  KBDC 13.08 ÷ 13.079 = +0.01%
+ADC 연환산 배당 3.204 ÷ 종가 67.12 = 4.77%
+
+[확인하지 못해 쓰지 않은 것]
+- 9/24 당일 접수분(일별 인덱스 미공개)
+- 매수 52건 전체의 각주(상위 20건만 원문 확인)
+- KBDC 이사의 9/14·9/16 매수(매체 보도만 있고 이번 조회 범위 밖)
+- 각 회사의 실적·전망·목표주가
+- 내부자 매수와 이후 주가의 관계(재지 않음)

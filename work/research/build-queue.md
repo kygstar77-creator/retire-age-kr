@@ -1,5 +1,13 @@
 # 도구 만들기 대기열 — 자가발전 루틴 C(17:30)가 위에서부터 하나씩 만든다. 만들면 "완료 날짜·파일"을 적는다.
 
+0. **[먼저] `work/coverstudy.py` — 블로그 대표 이미지 자가발전 루프.** 사장님 2026-09-24: "제목도 사람들이 누르고 싶게 올리고 대표 사진도 마찬가지고."
+   지금 썸네일 루프(loop.py·thumb.py·thumbstat.py·ytdesign.py)는 **전부 유튜브용**이다. 블로그 대표 이미지(본문 첫 장)는 재는 자도, 규칙도 없다. 유튜브에 한 것을 블로그에 그대로 한다.
+   - 수집: 네이버 블로그탭 검색 결과에서 상위 노출 글의 대표 이미지 URL을 긁는다. 실측 2026-09-24: "재산세 계산기" 검색 한 번에 이미지 URL 162개가 나온다. 정규식 `https://search\.pstatic\.net/common/\?src=([^"&]+)` 로 뽑고 URL 디코딩한다. **blogpfthumb-phinf는 글쓴이 프로필 사진이라 뺀다.** 본문 이미지는 blogfiles.naver.net 쪽이다.
+   - 측정: thumbstat.py의 함수를 그대로 쓴다(밝기·대비·글자 면적·색 수). 우리 글 첫 장과 견준다.
+   - 규칙: work/research/coverrule.md 에 적고, firemap-write 회차가 묶음을 만들 때 읽는다. textrule.md·titlerule.md와 같은 자리에 둔다.
+   - 주의: 남의 이미지를 글에 쓰지 않는다. 재기만 하고 버린다(측정값만 남긴다).
+
+
 1. **완료 2026-09-23 17:47** `work/listings.py` — 해외 매물+생활비 읽기. `py -3.12 work/listings.py <도시> [건수]` → work/research/listings/<도시>_<날짜>.json(확인일·URL 포함).
    실행 확인(2026-09-23): 매물 6도시 — 치앙마이·방콕·푸켓·파타야(fazwaz.com, `div.result-search__item`), 리스본·포르투(idealista.pt, `article.item`). 필드: 단지·제목·동네·월세·㎡당·면적·방·욕실·유형·준공·시설·게시일·설명·URL.
    생활비는 Numbeo `?displayCurrency=KRW`로 **원화 직접**(원룸/방3 월세 도심·도심밖, 식사·교통·공과금·통신·인터넷·헬스 10항목 + 서울 대비 % 요약) — 22개 도시 전부 됨.

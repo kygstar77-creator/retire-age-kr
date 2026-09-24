@@ -77,6 +77,9 @@ def sents(t):
     for line in t.splitlines():
         line = line.strip()
         if not line: continue
+        # 표 행·소제목은 문장이 아니다. 2026-09-24: 표 행 "| 1.75억 | 25건 |"이 문장으로 잡혀
+        # "'억건'로 끝나는 문장이 세 번 이어진다"는 어미반복 오탐이 났다.
+        if line[0] in '|■#': continue
         for s in re.split(r'(?<=[.!?])\s+|(?<=다\.)\s*', line):
             s = s.strip()
             if s: out.append(s)

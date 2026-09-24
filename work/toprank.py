@@ -122,4 +122,5 @@ def main():
                'missing_terms': miss[:60], 'missing_numbers': misn[:40]},
               open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'toprank_last.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
-main()
+# bodystudy.py가 search()·post()를 가져다 쓴다. 가드가 없으면 import만 해도 main이 돈다.
+if __name__ == '__main__': main()

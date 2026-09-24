@@ -61,12 +61,21 @@ def main():
     t0 = time.time()
     rec = {'at': time.strftime('%Y-%m-%d %H:%M'), 'late': {}, 'stock': {}, 'did': [], 'alert': []}
 
+    # 0) 쉬는 시간대인가. 사장님 2026-09-24 지시로 새벽 2~7시 발행을 뺐다(하루 24편 → 18편).
+    # 여기서 안 막으면 감시기가 새벽마다 "빵꾸"로 보고 대신 메워 줄인 의미가 없어진다.
+    # 네이버 공식이 어뷰징 오판 요인으로 든 "다량의 반복적 포스팅"을 줄이려는 것이 목적이다.
+    hour = time.localtime().tm_hour
+    quiet = 2 <= hour < 8
+    rec['quiet'] = quiet
+    if quiet: print(f'{hour}시 — 쉬는 시간대(2~7시)라 발행으로 메우지 않는다. 묶음 재고만 본다.')
+
     # 1) 언제 마지막으로 올라갔나 — 실제 네이버에서 잰다(우리 기록이 아니라)
     for kind in ('blog', 'cafe'):
         m = N.last_published_minutes(kind)
         rec['late'][kind] = None if m is None else round(m)
         if m is None: rec['alert'].append(f'{kind} 최근 발행 시각을 못 쟀다(RSS·API 실패)')
-        elif m > LATE_MIN: rec['alert'].append(f'{kind} 마지막 발행이 {m/60:.1f}시간 전 — 회차를 놓쳤다')
+        elif m > LATE_MIN and not quiet:
+            rec['alert'].append(f'{kind} 마지막 발행이 {m/60:.1f}시간 전 — 회차를 놓쳤다')
 
     # 2) 미리 써 둔 묶음이 몇 개인가 — 0이면 다음 회차도 놓친다
     pend = N.list_pending()
@@ -80,7 +89,8 @@ def main():
     if gaps: rec['alert'].append('최근 글에 한 편도 없는 시리즈: ' + ', '.join(gaps))
 
     # 3) 빵꾸 메우기 — 늦었고, 올릴 묶음이 있으면 지금 올린다
-    need = [k for k in ('blog', 'cafe') if (rec['late'][k] or 0) > LATE_MIN and any(x['kind'] == k for x in pend)]
+    need = [] if quiet else [k for k in ('blog', 'cafe')
+                             if (rec['late'][k] or 0) > LATE_MIN and any(x['kind'] == k for x in pend)]
     if need and not check_only:
         # 잠금은 여기서 잡지 않는다. naverpost.py가 launch()에서 스스로 잡는다.
         # 감시기가 먼저 잡으면 제 자식을 막아 15분을 기다리다 실패한다(2026-09-23 18:49 실제 발생).

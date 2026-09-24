@@ -801,7 +801,13 @@ def main():
                         print('발행 뒤 오류(' + repr(e)[:120] + ') — 글은 올라가 있어 성공으로 처리')
                         print('URL', up); return
                 except Exception as e2: print('발행 확인 실패:', repr(e2)[:120])
-            path = shot(page, 'error_' + cmd); print('실패:', repr(e)[:300]); print('스크린샷', path); sys.exit(1)
+            # 오류 메시지를 **먼저** 찍는다. 2026-09-25: 브라우저가 이미 닫힌 채로 오류가 나면
+            # shot()이 TargetClosedError로 같이 죽어서, 정작 원인인 e가 한 줄도 안 남았다.
+            # 로그에 Playwright 내부 traceback만 남고 "왜 실패했나"는 사라져 회차마다 원인을 못 찾았다.
+            print('실패:', repr(e)[:300])
+            try: print('스크린샷', shot(page, 'error_' + cmd))
+            except Exception as e3: print('스크린샷 실패(브라우저가 이미 닫힘):', repr(e3)[:120])
+            sys.exit(1)
         finally:
             ctx.close()
 

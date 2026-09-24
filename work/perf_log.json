@@ -512,6 +512,14 @@
  "2026-09-24": {
   "cafe": [
    {
+    "title": "월배당 DIVO, 12개월 배당을 더하면 왜 공시 분배율보다 높게 나올까?",
+    "read": 0
+   },
+   {
+    "title": "배당 2천만원 넘으면 피부양자 탈락인데 공단이 보는 건 재작년 소득",
+    "read": 0
+   },
+   {
     "title": "애플 배당률 0.32%인데 자사주 매입은 배당의 4.8배, 주주가 받는 돈",
     "read": 0
    },
@@ -589,7 +597,7 @@
    },
    {
     "title": "리얼티인컴 136번째 배당 인상, 월 0.2710달러에서 0.2715달러였습니다",
-    "read": 5
+    "read": 6
    },
    {
     "title": "VOO vs SPY, 보수 0.03%와 0.09%보다 배당 들어오는 날이 더 달랐습니다",
@@ -622,88 +630,65 @@
    {
     "title": "파이어맵 3,454대 집계, 목표는 50세인데 계산은 54세였습니다",
     "read": 0
-   },
-   {
-    "title": "국민연금 임의계속가입·추납, 2026년 보험료율 9.5%와 12월 특례",
-    "read": 34
-   },
-   {
-    "title": "SOL 미국배당다우존스 분배금 45회, 세후 월 100만원 4억 7천만원",
-    "read": 4
    }
   ],
-  "blog": [
+  "blog": [],
+  "recheck": [
    {
-    "title": "몽키아라 콘도 월세는 왜 70만원과 570만원으로 갈리는지 실제 매물로 확인",
-    "date": "Thu, 24 Sep 2026",
-    "self_rank": null,
-    "indexed": false
+    "title": "내 파이어 가능 나이를 계산해보자! 언제 파이어 하려나?",
+    "date": "Sat, 20 Jun 2026",
+    "self_rank": 3,
+    "indexed": true,
+    "first_seen": "2026-09-21"
    },
    {
-    "title": "고점 대비 20% 넘게 내린 서울 아파트 38건인데 전체 중앙값은 왜 올랐을까?",
-    "date": "Thu, 24 Sep 2026",
+    "title": "[공유] 아파트 전세가율 최고갱신",
+    "date": "Sat, 07 Dec 2024",
     "self_rank": null,
-    "indexed": false
+    "indexed": null,
+    "first_seen": "2026-09-22"
    },
    {
-    "title": "배당률 0.32%인 애플, 주주에게 돌려주는 돈은 배당이 아니라 자사주",
-    "date": "Thu, 24 Sep 2026",
+    "title": "[공유] 아파트 vs 주식 투자",
+    "date": "Sat, 07 Dec 2024",
     "self_rank": null,
-    "indexed": false
+    "indexed": null,
+    "first_seen": "2026-09-22"
    },
    {
-    "title": "9월 30일 하루에 배당락 38건, 내가 그날 사면 이번 배당은 못 받는 이유",
-    "date": "Thu, 24 Sep 2026",
+    "title": "[공유] 젊은 사람들은 자산의 90%를 주식에 투자해야 한다",
+    "date": "Sat, 07 Dec 2024",
     "self_rank": null,
-    "indexed": false
+    "indexed": null,
+    "first_seen": "2026-09-22"
    },
    {
-    "title": "평당가는 4.8배 벌어졌는데 등락률은 같은 강남구와 도봉구, 실거래 10,741건",
-    "date": "Thu, 24 Sep 2026",
-    "self_rank": null,
-    "indexed": false
-   },
-   {
-    "title": "미국 10년 국채금리 19년 만의 최고, 경기가 너무 좋아서 오른 거라면?",
-    "date": "Thu, 24 Sep 2026",
-    "self_rank": null,
-    "indexed": false
-   },
-   {
-    "title": "코스트코 4분기 매출은 이미 공개, 24일에 남은 숫자는 EPS 6.48달러",
-    "date": "Thu, 24 Sep 2026",
-    "self_rank": null,
-    "indexed": false
-   },
-   {
-    "title": "20대 순자산 평균은 1억 796만원인데 중앙값은 왜 5,000만원일까?",
-    "date": "Thu, 24 Sep 2026",
-    "self_rank": null,
-    "indexed": false
-   },
-   {
-    "title": "상계주공9단지 2,830세대 매매 5억 4,000부터, 마들역 408m 손품으로 본 상계동",
-    "date": "Thu, 24 Sep 2026",
-    "self_rank": null,
-    "indexed": false
-   },
-   {
-    "title": "연봉 5천만원 DSR 한도 3억 182만원, 금리가 지우는 9,869만원",
-    "date": "Thu, 24 Sep 2026",
-    "self_rank": null,
-    "indexed": false
-   },
-   {
-    "title": "오피스텔이 아파트값의 20.6%인 강남구, 69.6%까지 따라붙은 종로구",
-    "date": "Thu, 24 Sep 2026",
+    "title": "코픽스 9월 공시 3.18%, 다음 공시는 10월 15일입니다",
+    "date": "Wed, 23 Sep 2026",
     "self_rank": 1,
-    "indexed": true
+    "indexed": true,
+    "first_seen": "2026-09-23"
    },
    {
-    "title": "기술 -1.25%인데 에너지는 +1.53%, 9월 24일 미국증시 섹터별로 갈린 하루",
-    "date": "Thu, 24 Sep 2026",
+    "title": "10월 배당 일정, JEPQ·JEPI 10월 1일 배당락과 리얼티인컴 10월 15일 지급",
+    "date": "Wed, 23 Sep 2026",
+    "self_rank": 1,
+    "indexed": true,
+    "first_seen": "2026-09-23"
+   },
+   {
+    "title": "근로장려금 2026, 165·285·330만원과 11월 30일",
+    "date": "Wed, 23 Sep 2026",
+    "self_rank": 1,
+    "indexed": true,
+    "first_seen": "2026-09-23"
+   },
+   {
+    "title": "건강보험료율 2026, 직장·지역 7.19%와 실제 계산",
+    "date": "Wed, 23 Sep 2026",
     "self_rank": null,
-    "indexed": true
+    "indexed": false,
+    "first_seen": "2026-09-23"
    }
   ]
  }

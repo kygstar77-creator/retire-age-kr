@@ -32,10 +32,19 @@ def load(p, d):
     except Exception: return d
 
 def our_shorts_stats():
-    """우리가 올린 영상의 조회수 — 조정이 효과 있었는지 보는 유일한 답"""
+    """우리가 올린 영상의 조회수 — 조정이 효과 있었는지 보는 유일한 답.
+    id·공개상태까지 돌려준다. 2026-09-24에 알아낸 것: 최근 10편을 '합계'로 재면 새 영상을 올릴 때마다
+    합계가 무너진다(2089 → 120 → 6). 새로 올린 영상은 조회 0이라 최신 10편 합계가 떨어지는 것이지
+    디자인이 나빠진 게 아니다. 그래서 회차 판정은 채널 총조회(누적, 절대 안 줄어든다)로 한다."""
     out = sh(os.path.join(HERE, 'ytupload.py'), 'stats')
-    vids = re.findall(r'(\d{4}-\d{2}-\d{2})\s+(\d+)\s*회\s*\|\s*(.+)', out)
-    return [{'date': d, 'views': int(v), 'title': t.strip()} for d, v, t in vids]
+    vids = re.findall(r'(\d{4}-\d{2}-\d{2})\s+(\d+)\s*회\s*\|\s*(\w+)\s*\|\s*([\w-]{6,})\s*\|\s*(.+)', out)
+    rows = [{'date': d, 'views': int(v), 'privacy': pv, 'id': vid, 'title': t.strip()} for d, v, pv, vid, t in vids]
+    if not rows:   # 옛 형식(아이디 없음)도 읽는다
+        rows = [{'date': d, 'views': int(v), 'privacy': '?', 'id': '', 'title': t.strip()}
+                for d, v, t in re.findall(r'(\d{4}-\d{2}-\d{2})\s+(\d+)\s*회\s*\|\s*(.+)', out)]
+    m = re.search(r'총조회\s*(\d+)', out)
+    total = int(m.group(1)) if m else None
+    return rows, total
 
 def render_samples(keep_chart=False):
     """지금 설정으로 샘플 썸네일을 새로 그린다 — 이게 있어야 조정 효과가 다음 측정에 나타난다.
@@ -176,7 +185,7 @@ def main():
     if time.time() - time.mktime(time.strptime(last, '%Y-%m-%d %H:%M')) > 12 * 3600:
         out = sh(os.path.join(HERE, 'ytdesign.py'), '--all', '40', timeout=2400)
         did.append('경쟁 수집: ' + str(len(re.findall(r'구독', out))) + '채널')
-    ours_before = our_shorts_stats()
+    ours_before, ch_views = our_shorts_stats()
 
     # 2) 측정
     out = sh(os.path.join(HERE, 'thumbstat.py'), timeout=1200)
@@ -369,15 +378,35 @@ def main():
     if not gaps: did.append('썸네일 수치는 경쟁 상위와 25% 안쪽 — 조정 없음')
 
     # 5) 지난 조정의 효과 판정
-    verdict = ''
-    if log and log[-1].get('ours_views') is not None and ours_before:
-        prev = log[-1]['ours_views']; now = sum(v['views'] for v in ours_before[:10])
-        verdict = f"지난 회차 이후 우리 영상 조회 합계 {prev} → {now}"
-        if now < prev * 0.98 and log[-1].get('changed'):
-            for c in log[-1]['changed']:
-                mm = re.match(r'(\w+)\.(\w+) ([\d.]+) →', c)
-                if mm and mm.group(1) in design and mm.group(2) in design[mm.group(1)]:
-                    design[mm.group(1)][mm.group(2)] = float(mm.group(3)); did.append(f'되돌림 {mm.group(1)}.{mm.group(2)} → {mm.group(3)} (조회 하락)')
+    # 2026-09-24에 고친 것: 예전에는 '최신 10편 조회 합계'로 판정했다. 새 영상을 올리면 그 합계가
+    # 무너지므로(실측 2089 -> 120 -> 6) 발행할 때마다 "조회 하락"으로 읽혀 직전 회차의 조정을 전부 되돌렸다.
+    # 그래서 short.contrast / short.white 는 회차마다 넣었다 뺐다만 반복하고 영영 안 닫혔다(step 64~66).
+    # 이제는 (a) 누적이라 절대 줄지 않는 채널 총조회로 '시간당 늘어난 조회'를 재고,
+    #        (b) 그 창에서 실제로 늘어난 조회가 MIN_GAIN 미만이면 판정을 보류한다(되돌리지 않는다).
+    #        (c) 최근 10편이 전부 비공개면 조회는 영영 0이므로 그 사실을 판정문에 적어 둔다.
+    MIN_GAIN = 30
+    verdict, now_rate, prev_rate = '', None, None
+    if ch_views is not None and log:
+        pv, pat = log[-1].get('ch_views'), log[-1].get('at')
+        if pv is None:
+            verdict = f'채널 총조회 {ch_views} — 지난 회차 기록이 없어 이번 회차부터 비교한다'
+        else:
+            hours = max(0.25, (time.time() - time.mktime(time.strptime(pat, '%Y-%m-%d %H:%M'))) / 3600)
+            gain = ch_views - pv
+            now_rate = round(gain / hours, 2)
+            prev_rate = log[-1].get('gain_rate')
+            pub = sum(1 for v in ours_before if v.get('privacy') == 'public')
+            verdict = (f'채널 총조회 {pv} -> {ch_views} ({gain:+}회 / {hours:.1f}시간 = 시간당 {now_rate})'
+                       f' · 최근 10편 중 공개 {pub}편')
+            if gain < MIN_GAIN:
+                verdict += f' -> 판정 보류(늘어난 조회 {gain}회 < {MIN_GAIN}회, 되돌리지 않는다)'
+            elif prev_rate is not None and now_rate < prev_rate * 0.7 and log[-1].get('changed'):
+                for c in log[-1]['changed']:
+                    mm = re.match(r'(\w+)\.(\w+) ([\d.]+) ', c)
+                    if mm and mm.group(1) in design and mm.group(2) in design[mm.group(1)]:
+                        design[mm.group(1)][mm.group(2)] = float(mm.group(3))
+                        did.append(f'되돌림 {mm.group(1)}.{mm.group(2)} -> {mm.group(3)} '
+                                   f'(시간당 조회 {prev_rate} -> {now_rate})')
 
     design['step'] = step
     json.dump(design, open(DESIGN, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
@@ -385,7 +414,8 @@ def main():
     if any('→' in d for d in did): did.append('다음 회차가 바뀐 값으로 다시 그려 잰다')
     rec = {'step': step, 'at': time.strftime('%Y-%m-%d %H:%M'), 'sec': int(time.time() - t0),
            'changed': [d for d in did if '→' in d], 'did': did, 'gaps': gaps[:6], 'blocked': blocked[:8], 'bands': bands,
-           'ours_views': sum(v['views'] for v in ours_before[:10]) if ours_before else None, 'verdict': verdict}
+           'ours_views': sum(v['views'] for v in ours_before[:10]) if ours_before else None,
+           'ch_views': ch_views, 'gain_rate': now_rate, 'verdict': verdict}
     log.append(rec); json.dump(log[-200:], open(LOG, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(f"[루프 {step}회차] {rec['sec']}초")
     for d in did: print(' ·', d)

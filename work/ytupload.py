@@ -46,8 +46,11 @@ def stats():
     items = yt.playlistItems().list(part='snippet', playlistId=pl, maxResults=10).execute().get('items', [])
     ids = [i['snippet']['resourceId']['videoId'] for i in items]
     if ids:
-        for v in yt.videos().list(part='snippet,statistics', id=','.join(ids)).execute()['items']:
-            print(' ', v['snippet']['publishedAt'][:10], v['statistics'].get('viewCount', '0'), '회 |', v['snippet']['title'][:50])
+        # 영상 id와 공개상태도 같이 찍는다 — loop.py가 회차 사이에 같은 영상을 짝지어 재려면 id가 있어야 하고,
+        # 비공개(private)면 조회가 영영 0이라 조회로는 디자인 조정을 판정할 수 없다(2026-09-24).
+        for v in yt.videos().list(part='snippet,statistics,status', id=','.join(ids)).execute()['items']:
+            print(' ', v['snippet']['publishedAt'][:10], v['statistics'].get('viewCount', '0'), '회 |',
+                  v['status'].get('privacyStatus', '?'), '|', v['id'], '|', v['snippet']['title'][:50])
 
 if __name__ == '__main__':
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'stats'

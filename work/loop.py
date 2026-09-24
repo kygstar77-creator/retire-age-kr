@@ -151,7 +151,11 @@ BAND_KNOB2 = {'short': ('split_scale', [1.0, 1.3, 1.6, 2.0, 2.4, 2.8])}
 # split_scale 은 72회차까지 늘 끝점 2.0 이 최선이었고(오차 1.0121→0.728→0.5784→0.2653, 계속 내려감)
 # 그릴 때 thumb.py 가 2.0 으로 깎고 있어 판형 오차가 0.2653 에 얼어 있었다(2026-09-24).
 # 그래서 (1) thumb.py 한계를 3.2 로 넓히고 (2) 끝점에 붙으면 아래 한계까지 격자를 저절로 늘린다.
-KNOB_LIMIT = {'text_spread': (0.0, 1.0),      # thumb.py 가 0~1 로 깎는다
+# text_spread 도 같은 모양으로 92회차에 끝점 1.0 에 붙어 막혔다(쇼츠 오차 0.1912).
+# 그릴 때 실제로 움직이는 구간을 재 보니 1.4 까지였다(thumb.py 주석에 숫자) — 한계를 1.4 로 넓힌다.
+# 넓힌 뒤 94회차 실측: 1.0 err 0.1912 · 1.2 0.3412 · 1.4 0.4096 → 오차는 안 줄었고 1.0 이 진짜 최선이다.
+# 얻은 것은 오차가 아니라 판정이다 — 이 자리는 '아직 못 푼 막힘'이 아니라 '재서 고른 값'이 됐다.
+KNOB_LIMIT = {'text_spread': (0.0, 1.4),      # thumb.py 가 0~1.4 로 깎는다
               'text_y':      (0.15, 0.80),    # thumb.py 가 0.15~0.80 으로 깎는다
               'split_scale': (1.0, 3.2)}      # thumb.py 윗한계와 같게 유지한다
 
@@ -237,12 +241,21 @@ def grid_pick(design, spec, kind, knob, base_grid, did, blocked):
 
 
 def tune_bands(design, spec, kind, did, blocked):
-    """세 칸 맞추기. 손잡이를 하나씩 차례로 골라 내려간다(좌표 하강) — 곱으로 다 돌면 너무 오래 걸린다."""
-    table = grid_pick(design, spec, kind, BAND_KNOB[kind], BAND_GRID[kind], did, blocked)
-    if kind in BAND_KNOB2 and table:
+    """세 칸 맞추기. 손잡이를 하나씩 차례로 골라 내려간다(좌표 하강) — 곱으로 다 돌면 너무 오래 걸린다.
+
+    격자표는 손잡이마다 따로 남긴다. 예전에는 두 번째 손잡이 표가 첫 번째 것을 통째로 덮어써서
+    loop_log 의 bands 에 split_scale 표만 남고 text_spread 표는 한 번도 안 남았다 —
+    92회차가 'text_spread 가 그리기 한계 1.0 에서 멈췄다'고 알렸는데 다음 회차가 로그만 보고는
+    그 격자가 실제로 무슨 값을 냈는지 따질 수 없던 이유다(2026-09-25).
+    """
+    out = {}
+    t1 = grid_pick(design, spec, kind, BAND_KNOB[kind], BAND_GRID[kind], did, blocked)
+    if t1: out[BAND_KNOB[kind]] = t1
+    if kind in BAND_KNOB2 and t1:
         k2, g2 = BAND_KNOB2[kind]
-        table = grid_pick(design, spec, kind, k2, g2, did, blocked) or table
-    return table
+        t2 = grid_pick(design, spec, kind, k2, g2, did, blocked)
+        if t2: out[k2] = t2
+    return out
 
 
 # 사람이 눈으로 보고 정한 한계. 숫자로는 더 갈 수 있지만 가면 썸네일이 제 일을 못 한다.

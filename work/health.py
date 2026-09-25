@@ -33,6 +33,16 @@ def cafe_today():
         return n, (statistics.median(reads) if reads else 0)
     except Exception: return None, None
 
+def _cafe_cap():
+    """카페 하루 상한. 못 읽으면 None(막힌 회차로 치지 않는다)."""
+    try:
+        sys.path.insert(0, HERE)
+        from naverpost import DAY_CAP
+        return DAY_CAP.get('cafe')
+    except Exception:
+        return None
+
+
 def main():
     M = []   # (영역, 항목, 값, 목표, 중요도, 어떻게 고치나)
     runs = load(os.path.join(HERE, 'runs_today.json'), {'runs': []})['runs']
@@ -50,9 +60,22 @@ def main():
     # 이어져도 '0편 회차 6'이 일감표 1번을 하루 내내 차지해 실제 할 일을 밀어냈다.
     # 그래서 '마지막으로 발행에 성공한 회차 이후'의 0편만 센다 — 지금도 이어지는 고장만 남는다.
     last_ok = max((i for i, r in enumerate(runs) if 냈나(r)), default=-1)
-    zero = sum(1 for r in runs[last_ok + 1:] if 발행회차(r) and not 냈나(r))
+    # 새벽 2~7시는 블로그를 쉬므로 올릴 수 있는 곳이 카페뿐인데, 그 시각에 카페가 이미
+    # 하루 상한(DAY_CAP)에 닿아 있으면 그 회차는 무엇을 해도 0편이다 — 고장이 아니라 설계다.
+    # 2026-09-26 04·05시 두 회차가 정확히 이 경우였는데 '0편 회차 2'로 잡혀 일감표 1번을
+    # 차지했다. 회차가 닫을 수 없는 항목이 1번에 앉으면 실제 할 일이 밀린다(위 두 주석과 같은 사고).
+    # 상한 자체가 지시서(24편)와 어긋나는 문제는 사람이 볼 일이라 tools-wanted.md에 따로 올라가 있다.
+    def 막힌회차(i, r):
+        h = r.get('hour')
+        if h is None or not (2 <= h < 8): return False
+        cap = _cafe_cap()
+        if cap is None: return False
+        return sum(1 for x in runs[:i] if (x.get('cafe') or {}).get('url')) >= cap
+    blocked = [i for i, r in enumerate(runs) if i > last_ok and 발행회차(r) and not 냈나(r) and 막힌회차(i, r)]
+    zero = sum(1 for i, r in enumerate(runs) if i > last_ok and 발행회차(r) and not 냈나(r) and i not in blocked)
     how_zero = '0편 사유를 없앤다(대기 묶음 3+3 유지가 가장 흔한 원인)'
     if zero_all > zero: how_zero += f' · 오늘 누적 {zero_all}회였으나 마지막 발행 성공 뒤로는 {zero}회(이미 끝난 장애는 빼고 센다)'
+    if blocked: how_zero += f' · 새벽 카페 상한에 막혀 애초에 올릴 수 없던 회차 {len(blocked)}회는 빼고 센다'
     # 목표 편수는 naverpost.DAY_CAP(실측으로 건 하루 상한)을 따른다. 두 군데에 숫자를
     # 따로 적어 두면 어긋난다 — 2026-09-26 04시에 실제로 어긋났다. 카페 상한을 4편으로
     # 건 뒤에도 여기 목표가 24편으로 남아 있어, 일감표 1·2번이 영영 못 닫는 항목으로

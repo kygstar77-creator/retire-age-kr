@@ -40,8 +40,11 @@ def main():
 
     # 발행
     runs = (load(os.path.join(HERE, 'runs_today.json'), {'runs': []}) or {}).get('runs', [])
-    nb = sum(1 for r in runs if (r.get('blog') or {}).get('url'))
-    nc = sum(1 for r in runs if (r.get('cafe') or {}).get('url'))
+    # 같은 글이 여러 회차 기록에 들어간다 — 발행한 회차와 그것을 확인한 회차가 둘 다 적는다.
+    # 2026-09-25: law1001 하나가 10시·11시 기록에 겹쳐 블로그가 4편으로 나왔다(실제 3편,
+    # verify today와 RSS로 확인). 편수는 회차가 아니라 서로 다른 주소를 센다.
+    nb = len({(r.get('blog') or {}).get('url') for r in runs if (r.get('blog') or {}).get('url')})
+    nc = len({(r.get('cafe') or {}).get('url') for r in runs if (r.get('cafe') or {}).get('url')})
     out.append(f'발행  블로그 {nb}/24 · 카페 {nc}/24')
 
     # 색인 — 하루 지난 글 기준. 당일 글은 색인될 시간이 없어 언제나 낮다.
@@ -66,7 +69,15 @@ def main():
     if vd:
         today_v = vis[vd[-1]].get('today')
         prev_v = vis[vd[-2]].get('today') if len(vd) > 1 else None
-        out.append(f'방문  {today_v}명{delta(today_v, prev_v, "명")}')
+        # 어제와 오늘을 잰 시각이 다르면 '오늘 방문'끼리 견주는 것이 뜻이 없다.
+        # 2026-09-24는 19:58에, 9/25는 12:39에 쟀는데 보고에는 '-35명'만 나갔다(2026-09-25).
+        at_now, at_prev = vis[vd[-1]].get('at'), (vis[vd[-2]].get('at') if len(vd) > 1 else None)
+        same_hour = at_now and at_prev and at_now[:2] == at_prev[:2]
+        line = f'방문  {today_v}명'
+        if prev_v is not None and same_hour: line += delta(today_v, prev_v, '명')
+        elif prev_v is not None:
+            line += f' (어제 {prev_v}명 — 잰 시각이 달라 그대로 비교하지 않는다: 어제 {at_prev} · 오늘 {at_now})'
+        out.append(line)
 
     med, mx = cafe_reads()
     if med is not None: out.append(f'카페  조회 중앙 {med:.0f}회 · 최고 {mx}회')

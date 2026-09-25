@@ -279,7 +279,27 @@ def grid_pick(design, spec, kind, knob, base_grid, did, blocked):
     def pick():
         # 비긴 값끼리는 지금 값을 이긴 것으로 치지 않는다. 격자 전체가 같은 값으로 나오는 경우(손잡이가
         # 안 듣거나 측정이 섞인 경우)에 min() 은 늘 격자의 맨 아래값을 골라 손잡이를 끝으로 밀어 버린다.
+        #
+        # 다만 그 '지금 값 지키기'가 한쪽으로만 걸려서, 한때 듣던 손잡이가 안 듣게 된 뒤에도 그 자리에
+        # 얼어붙는다. 2026-09-25 119회차 실측 — long.bot_scrim 이 그랬다. 116회차에 scrim x text_y x
+        # text_scale 을 같이 훑어 0.38/0.35/0.55 를 골랐는데, 그 뒤 text_y 0.3875 · text_scale 0.775 로
+        # 옮겨 가면서 scrim 이 세 칸에 아무 영향을 못 주게 됐다. 지금 값으로 실제로 그려 재 보면:
+        #     bot_scrim 0.00 → text_top 0.1028 · text_mid 0.1391 · text_bot 0.0000
+        #     bot_scrim 0.38 → text_top 0.1028 · text_mid 0.1391 · text_bot 0.0000   (세 칸 전부 같다)
+        #     대신 bright 0.4935 → 0.4286 (-0.0649) · contrast 0.2852 → 0.2573 (-0.0279)
+        # 세 칸에는 0을 벌면서 밝기·대비에서는 값을 치르고 있었고, 그게 long.bright·long.dark 가 '미해결
+        # 차이'로 다시 잡힌 이유다. 격자가 통째로 평평하면 그 손잡이는 지금 자리에서 안 듣는 것이므로,
+        # 지금 값을 지키지 말고 기본값(아무것도 안 하는 자리)으로 되돌린다 — 벌지 못하는 손잡이가 다른
+        # 곳에서 값을 치르게 두지 않는다. 다시 듣기 시작하면 격자가 평평하지 않을 테니 저절로 풀린다.
         best = min(table, key=lambda t: t['err'])
+        spread = max(t['err'] for t in table) - min(t['err'] for t in table)
+        if len(table) > 1 and spread <= 1e-4:
+            neutral = float(THUMB_DEFAULT.get(kind, {}).get(knob, table[0]['v']))
+            flat = min(table, key=lambda t: abs(t['v'] - neutral))
+            if abs(flat['v'] - cur) > 1e-9:
+                did.append(f'{kind}.{knob} 격자가 통째로 평평하다(세 칸 오차 폭 {spread:.4f}) — '
+                           f'지금 자리에서 안 듣는 손잡이라 {cur} → {flat["v"]}(기본값)으로 되돌린다')
+            return flat
         here = next((t for t in table if abs(t['v'] - cur) < 1e-9), None)
         if here is not None and here['err'] <= best['err'] + 1e-4: return here
         return best

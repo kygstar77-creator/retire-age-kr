@@ -4,8 +4,10 @@ c00.txt
 c01.txt
 c02.txt
 c03.txt
+img/02.png
 img/01.png
 c04.txt
+img/03.png
 c05.txt
 c06.txt
 게시판: 자유게시판

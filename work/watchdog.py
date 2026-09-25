@@ -68,7 +68,7 @@ def main():
     import naverpost as N
     check_only = '--check' in sys.argv
     t0 = time.time()
-    rec = {'at': time.strftime('%Y-%m-%d %H:%M'), 'late': {}, 'stock': {}, 'did': [], 'alert': []}
+    rec = {'at': time.strftime('%Y-%m-%d %H:%M'), 'late': {}, 'stock': {}, 'blocked': {}, 'did': [], 'alert': []}
 
     # 0) 쉬는 시간대인가. 사장님 2026-09-24 지시로 새벽 2~7시 발행을 뺐다(하루 24편 → 18편).
     # 여기서 안 막으면 감시기가 새벽마다 "빵꾸"로 보고 대신 메워 줄인 의미가 없어진다.
@@ -88,9 +88,18 @@ def main():
 
     # 2) 미리 써 둔 묶음이 몇 개인가 — 0이면 다음 회차도 놓친다
     pend = N.list_pending()
+    # 막힌 묶음(같은 대상 이미 씀 등)은 올릴 수 없으니 재고로 세지 않는다.
+    # 2026-09-25: 카페 2개로 보였는데 하나가 AVGO 중복이라 실제로 올릴 건 1개였다.
     for kind in ('blog', 'cafe'):
-        n = sum(1 for x in pend if x['kind'] == kind)
+        mine = [x for x in pend if x['kind'] == kind]
+        for x in mine:
+            try: x['block'] = N.pending_block(x['kind'], x['pkg'], x['title'])
+            except Exception: x['block'] = ''
+        n = sum(1 for x in mine if not x['block'])
+        blocked = len(mine) - n
         rec['stock'][kind] = n
+        rec['blocked'][kind] = blocked
+        if blocked: rec['alert'].append(f'{kind} 막힌 묶음 {blocked}개 — 올릴 수 없다(주제 겹침). 재고에서 뺐다')
         if n < STOCK_WANT: rec['alert'].append(f'{kind} 대기 묶음 {n}개 (목표 {STOCK_WANT}) — 회차가 처음부터 쓰느라 밀린다')
 
     # 2-b) 로그인이 살아 있나. 2026-09-25: 쿠키가 만료됐는데 아무도 못 알려

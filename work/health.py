@@ -53,8 +53,20 @@ def main():
     zero = sum(1 for r in runs[last_ok + 1:] if 발행회차(r) and not 냈나(r))
     how_zero = '0편 사유를 없앤다(대기 묶음 3+3 유지가 가장 흔한 원인)'
     if zero_all > zero: how_zero += f' · 오늘 누적 {zero_all}회였으나 마지막 발행 성공 뒤로는 {zero}회(이미 끝난 장애는 빼고 센다)'
-    M += [('발행', '오늘 블로그 편수', nb, 24, 3, 'firemap-write 회차 note에서 0편 사유 확인 → 대기 묶음·가드·시간초과'),
-          ('발행', '오늘 카페 편수', nc, 24, 3, '위와 같음'),
+    # 목표 편수는 naverpost.DAY_CAP(실측으로 건 하루 상한)을 따른다. 두 군데에 숫자를
+    # 따로 적어 두면 어긋난다 — 2026-09-26 04시에 실제로 어긋났다. 카페 상한을 4편으로
+    # 건 뒤에도 여기 목표가 24편으로 남아 있어, 일감표 1·2번이 영영 못 닫는 항목으로
+    # 굳었고 회차마다 "카페 4/24 부족"을 띄워 막힌 벽에 계속 발행을 시도하게 만들었다.
+    # 상한이 걸린 종류는 상한이 곧 목표다. 안 걸린 블로그는 새벽 2~7시를 쉬므로 18편.
+    def 목표(kind, 기본):
+        try:
+            sys.path.insert(0, HERE)
+            from naverpost import DAY_CAP
+            return DAY_CAP.get(kind, 기본)
+        except Exception:
+            return 기본
+    M += [('발행', '오늘 블로그 편수', nb, 목표('blog', 18), 3, 'firemap-write 회차 note에서 0편 사유 확인 → 대기 묶음·가드·시간초과'),
+          ('발행', '오늘 카페 편수', nc, 목표('cafe', 24), 3, '위와 같음'),
           ('발행', '0편 회차 수', zero, 0, 3, how_zero)]
     pend = sh(os.path.join(HERE, 'naverpost.py'), 'pending')
     pb = len(re.findall(r'"kind": "blog"', pend)); pc = len(re.findall(r'"kind": "cafe"', pend))
@@ -130,7 +142,21 @@ def main():
     vis = load(os.path.join(HERE, 'visitors_log.json'), {})
     if vis:
         days = sorted(vis); today_v = vis[days[-1]]['today']
-        M.append(('성장', '블로그 오늘 방문', today_v, 100, 3, '색인·순위가 먼저. 발행량만 늘리면 안 오른다'))
+        # 2026-09-26: '오늘 방문'을 새벽에 재면 언제나 목표에 한참 못 미친다 — 하루가 막 시작해서다
+        # (실측: 9/25 하루치 53(23:56 측정), 9/26 4(02:20 측정)). 그래서 매일 밤 이 항목이 일감표
+        # 1순위로 올라왔고 회차는 '색인·순위를 올려라'라는, 한 회차에 닫을 수 없는 일을 또 받았다.
+        # 색인율·순위에서 이미 같은 것을 고쳤다(당일 글 → 하루 지난 글). 방문도 똑같이 완결된 하루로 잰다.
+        # report.py 도 같은 이유로 '잰 시각이 다르면 오늘 방문끼리 견주지 않는다'고 해 뒀다.
+        td = time.strftime('%Y-%m-%d')
+        done = [d for d in days if d < td]
+        if done:
+            dv = vis[done[-1]]
+            M.append(('성장', '블로그 하루 방문(마지막 완결일)', dv['today'], 100, 3,
+                      f"{done[-1]} {dv.get('at','')} 측정 · 색인·순위가 먼저. 발행량만 늘리면 안 오른다"))
+            M.append(('성장', '블로그 오늘 방문(하루가 덜 지났다 — 참고용)', today_v, 100, 0,
+                      f"{days[-1]} {vis[days[-1]].get('at','')} 측정 · 하루가 끝나야 견줄 수 있다"))
+        else:
+            M.append(('성장', '블로그 오늘 방문', today_v, 100, 3, '색인·순위가 먼저. 발행량만 늘리면 안 오른다'))
     ncafe, medread = cafe_today()
     if medread is not None: M.append(('성장', '카페 최근 20편 조회 중앙값', medread, 50, 2, '카페 축(커버드콜·배당·파이어 금액)·제목·회원 상호작용'))
 

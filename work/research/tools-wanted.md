@@ -378,3 +378,11 @@ cafe_just_after_submit.png에 **본문·표·전체공개 확인창까지 다 �
 
 **사장님이 해 주실 것은 그대로다** — PC에서 `py -3.12 work/naverpost.py login` 한 번.
 지금 검증까지 끝난 대기 원고가 블로그 6편·카페 5편이다.
+
+### 2026-09-25 12:30 보고 회차 — 새 커넥터는 못 찾았다 (사람 손 필요 없음)
+
+`search_mcp_registry`로 "korea statistics / real estate / stock market data / open data"를 찾았다.
+나온 것은 Yardi Matrix(미국 부동산·상용) · Alpha Vantage(키 필요) · Bigdata.com(상용) ·
+viaNexus(상용) 넷뿐이고, **한국 데이터를 주는 것도, 키 없이 무료인 것도 없다.**
+전부 무료 원칙에 걸려 아무것도 붙이지 않았다. 지금 쓰는 ECOS·국토부·공공데이터가 그대로 낫다.
+다음에 다시 찾을 때 같은 네 개가 또 나오면 새로 알아볼 것이 없다는 뜻이다.

@@ -307,11 +307,11 @@ def note_auth_fail(msg):
         io.open(AUTHFAIL, 'w', encoding='utf-8').write(time.strftime('%Y-%m-%d %H:%M') + ' ' + msg[:300])
     except Exception: pass
 
-def auth_fail_seen():
-    """최근 6시간 안에 인증 실패가 있었으면 그 줄. 로그인에 성공하면 지운다."""
+def auth_fail_seen(hours=6):
+    """최근 <hours>시간 안에 인증 실패가 있었으면 그 줄. 로그인에 성공하면 지운다."""
     try:
         if not os.path.exists(AUTHFAIL): return None
-        if time.time() - os.path.getmtime(AUTHFAIL) > 6 * 3600: return None
+        if time.time() - os.path.getmtime(AUTHFAIL) > hours * 3600: return None
         return io.open(AUTHFAIL, encoding='utf-8').read().strip()
     except Exception: return None
 
@@ -840,6 +840,19 @@ def main():
                     try: print(aid, cafe_make_public(page, aid))
                     except Exception as e: print(aid, '실패:', repr(e)[:200]); shot(page, 'error_public_' + aid)
                 return
+            # 글쓰기 API가 방금 인증으로 막혔으면 원고를 넣기 전에 접는다(2026-09-25).
+            # 이날 0편 회차 6번이 전부 같은 모양이었다 — 본문 1,816~2,140자와 사진 4장을
+            # 매번 100% 넣고 마지막 '등록'에서만 401 IP check failure로 깨졌다. 편집기 작업이
+            # 회차 시간을 먹고, 실패한 묶음이 '오늘 재시도 3회 상한'에 걸려 멀쩡한 원고가 잠겼다
+            # (09/25 08시 회차 kodiv). 앞에서 알면 그 시간에 다른 일을 한다.
+            # 창을 35분으로 좁게 잡는다 — IP 차단이 저절로 풀리는 경우 한 슬롯만 건너뛰고
+            # 다음 시각 회차는 다시 제대로 시도한다(6시간으로 잡으면 풀린 뒤에도 계속 막힌다).
+            if cmd in ('blog', 'cafe'):
+                af = auth_fail_seen(hours=0.6)
+                if af:
+                    print('올리지 않는다 — 글쓰기가 인증에서 막힌 지 35분이 안 됐다:', af[:200])
+                    print('사장님이 `py -3.12 work/naverpost.py login` 을 한 번 하면 바로 풀린다.')
+                    sys.exit(2)
             args = [a for a in sys.argv[2:] if a != '--wait']
             wait = '--wait' in sys.argv
             pkg = os.path.abspath(args[0])

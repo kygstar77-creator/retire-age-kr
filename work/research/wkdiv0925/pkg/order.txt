@@ -1,0 +1,14 @@
+카페 발행 순서
+제목: title.txt
+게시판: 자유게시판
+c00.txt
+img/01.png
+c01.txt
+c02.txt
+img/02.png
+c03.txt
+img/03.png
+c04.txt
+img/04.png
+c05.txt
+c06.txt

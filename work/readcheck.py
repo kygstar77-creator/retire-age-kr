@@ -116,6 +116,16 @@ def acronyms(text):
             # 같은 문장에서 "...를 AFFO라고 합니다"처럼 풀어 쓴 것도 설명으로 본다.
             # 2026-09-25: 괄호로만 인정해서, 앞에 뜻을 다 적고 "~라고 합니다"로 받은 문장을 설명 없음으로 잡았다.
             if re.search(w + r'\s*(?:라고|라곤|라 부|라 한)', s) and len(re.findall(r'[가-힣]', s[:m.start()])) >= 6: continue
+            # 약어 바로 앞에 관형절이 붙으면 설명한 것으로 본다 — "나스닥 종목에 커버드콜을 거는 JEPQ",
+            # "AMD를 따라가는 AMYY" 처럼 한국어에서 가장 흔한 꼴인데 괄호만 인정해서 계속 잡혔다(2026-09-25 19시 회차).
+            # 단순히 가리키기만 하는 말(앞서 본·해당·위의)은 설명이 아니므로 뺀다.
+            before = s[:m.start()].rstrip()
+            mod = re.search(r'([가-힣]{2,})\s*$', before)
+            if (mod
+                    and re.search(r'(?:하는|되는|가는|오는|담는|거는|주는|만드는|따르는|쓰는|받는|내는|인)$', mod.group(1))
+                    and not re.search(r'(?:앞서\s*본|해당|위의|같은|그런|이런)\s*$', before)
+                    and len(re.findall(r'[가-힣]', before)) >= 6):
+                continue
             # 바로 다음 문장에서 풀어 쓰는 것도 설명으로 본다(한국어 글에서 흔한 순서)
             nxt = ss[i] if i < len(ss) else ''
             if w in nxt and EXPLAIN.search(nxt): continue

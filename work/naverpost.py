@@ -267,8 +267,14 @@ def same_subject_today(kind, title):
         elif len(hk) >= 6 and head_key(raw) == hk: hits.append((raw, url, [f'제목 앞머리 "{hk}"']))
     return hits
 
+_RECENT_CACHE = {}
+
 def _raw_recent(kind, n=24):
-    """원제목 그대로의 최근 글 (제목, URL)."""
+    """원제목 그대로의 최근 글 (제목, URL).
+
+    한 번 실행하는 동안은 캐시를 쓴다. pending이 묶음마다 이걸 부르면서
+    같은 목록을 예닐곱 번씩 다시 받아 오고 있었다(2026-09-25 20시 회차)."""
+    if (kind, n) in _RECENT_CACHE: return _RECENT_CACHE[(kind, n)]
     import urllib.request, urllib.parse
     out = []
     try:
@@ -284,6 +290,7 @@ def _raw_recent(kind, n=24):
             out = [(a.get('subject', ''), f'https://cafe.naver.com/ca-fe/cafes/{CAFE_ID}/articles/{a.get("articleId")}')
                    for a in json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=20))['message']['result']['articleList']]
     except Exception as e: print('최근 글 읽기 실패:', repr(e)[:120])
+    if out: _RECENT_CACHE[(kind, n)] = out
     return out
 
 def cafe_boards():
@@ -357,6 +364,24 @@ def list_pending():
         out.append({'kind': kind, 'pkg': pkg, 'title': title, 'mtime': os.path.getmtime(os.path.join(pkg, 'order.txt'))})
     out.sort(key=lambda x: x['mtime'])
     return out
+
+def pending_block(kind, pkg, title, check_dup=True):
+    """이 묶음을 지금 올리면 거부당할 이유. 없으면 ''.
+
+    발행 쪽 관문(사진 수·같은 대상 중복)은 브라우저를 띄운 뒤에야 도는데,
+    거기서 거부되면 그 회차는 브라우저 잠금 대기 13분을 그냥 버린다.
+    2026-09-25 20시 회차가 avgo0925로 그걸 두 번 겪었다(사진 2장 → 같은 대상 중복).
+    둘 다 브라우저 없이 셀 수 있는 것이라 pending이 미리 세어 준다."""
+    need = 4 if kind == 'blog' else 3
+    have = sum(1 for ln in open(os.path.join(pkg, 'order.txt'), encoding='utf-8')
+               if ln.strip().startswith('img/'))
+    if have < need:
+        return f'사진 {have}/{need}장'
+    if check_dup:
+        dup = same_subject_today(kind, title)
+        if dup:
+            return '같은 대상 이미 씀(%s)' % ','.join(str(k) for _, _, keys in dup[:1] for k in keys)
+    return ''
 
 # ---------- 블로그 ----------
 def verify_body(frame, seq, label):
@@ -765,7 +790,13 @@ def main():
     # 잠금 주인이 pending(PID 919404)이었고, 그 뒤에서 blog 발행이 15분을 기다리다 시간 초과로 죽었다.
     # 회차마다 pending을 부르는 루틴이 여럿이라 발행이 계속 굶었다(0편 회차의 원인).
     if cmd == 'pending':
-        for x in list_pending(): print(json.dumps({k: v for k, v in x.items() if k != 'mtime'}, ensure_ascii=False))
+        # --raw 를 주면 옛날처럼 관문 검사 없이 목록만 찍는다.
+        check = '--raw' not in sys.argv
+        for x in list_pending():
+            row = {k: v for k, v in x.items() if k != 'mtime'}
+            if check:
+                row['block'] = pending_block(x['kind'], x['pkg'], x['title'])
+            print(json.dumps(row, ensure_ascii=False))
         return
     with sync_playwright() as p:
         if cmd == 'login':

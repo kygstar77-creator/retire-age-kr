@@ -3,11 +3,12 @@
 게시판: 자유게시판
 c00.txt
 c01.txt
+img/01.png
 c02.txt
 c03.txt
 img/02.png
 c04.txt
-img/01.png
-c05.txt
 img/03.png
+c05.txt
+img/04.png
 c06.txt

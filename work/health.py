@@ -43,11 +43,19 @@ def main():
     def 발행회차(r):
         if r.get('role') in ('watchdog', 'report', 'improve'): return False
         return not re.match(r'\s*(감시기? 회차|보고 회차|자가발전 회차)', r.get('note') or '')
-    zero = sum(1 for r in runs if 발행회차(r)
-               and not (r.get('blog') or {}).get('url') and not (r.get('cafe') or {}).get('url'))
+    def 냈나(r): return bool((r.get('blog') or {}).get('url') or (r.get('cafe') or {}).get('url'))
+    zero_all = sum(1 for r in runs if 발행회차(r) and not 냈나(r))
+    # 이미 끝난 장애까지 하루 종일 세지 않는다. 2026-09-25 00~10시 0편 6회는 전부
+    # 네이버 IP 확인 차단 하나였고 11:30에 풀렸는데, 누적으로 세니 그 뒤로 정상 발행이
+    # 이어져도 '0편 회차 6'이 일감표 1번을 하루 내내 차지해 실제 할 일을 밀어냈다.
+    # 그래서 '마지막으로 발행에 성공한 회차 이후'의 0편만 센다 — 지금도 이어지는 고장만 남는다.
+    last_ok = max((i for i, r in enumerate(runs) if 냈나(r)), default=-1)
+    zero = sum(1 for r in runs[last_ok + 1:] if 발행회차(r) and not 냈나(r))
+    how_zero = '0편 사유를 없앤다(대기 묶음 3+3 유지가 가장 흔한 원인)'
+    if zero_all > zero: how_zero += f' · 오늘 누적 {zero_all}회였으나 마지막 발행 성공 뒤로는 {zero}회(이미 끝난 장애는 빼고 센다)'
     M += [('발행', '오늘 블로그 편수', nb, 24, 3, 'firemap-write 회차 note에서 0편 사유 확인 → 대기 묶음·가드·시간초과'),
           ('발행', '오늘 카페 편수', nc, 24, 3, '위와 같음'),
-          ('발행', '0편 회차 수', zero, 0, 3, '0편 사유를 없앤다(대기 묶음 3+3 유지가 가장 흔한 원인)')]
+          ('발행', '0편 회차 수', zero, 0, 3, how_zero)]
     pend = sh(os.path.join(HERE, 'naverpost.py'), 'pending')
     pb = len(re.findall(r'"kind": "blog"', pend)); pc = len(re.findall(r'"kind": "cafe"', pend))
     M += [('발행', '대기 묶음 블로그', pb, 3, 3, 'firemap-improve B/F 회차가 완성 묶음을 만든다'),

@@ -10932,5 +10932,1591 @@
    "long": 79.6371
   },
   "verdict": "채널 총조회 3535 -> 3535 (+0회 / 0.2시간 = 시간당 0.0) · 최근 10편 중 공개 0편 -> 조회로는 판정 안 함(공개 0편, 늘어난 조회는 옛 공개 영상 몫) · 경쟁 판형 거리 0.8202 -> 80.8332 (늘었다)"
+ },
+ {
+  "step": 100,
+  "at": "2026-09-25 12:13",
+  "sec": 120,
+  "changed": [
+   "short.yellow_tint 0.5678 → 0.6154 (yellow 우리 0.0058 vs 경쟁 0.0087)"
+  ],
+  "did": [
+   "경쟁 수집 건너뜀 — 마지막 수집 2026-09-25 11:58 (12시간 안)",
+   "경쟁 썸네일 451장 그대로 — 지난 측정값을 쓴다(재측정 건너뜀)",
+   "short.text_spread 0.3 유지 (격자 7점 중 오차 합 1.1961 이 가장 작다)",
+   "short.split_scale 1.3 유지 (격자 6점 중 오차 합 1.1961 이 가장 작다)",
+   "long.text_y 0.5 유지 (격자 6점 중 오차 합 79.6371 이 가장 작다)",
+   "short.yellow_tint 0.5678 → 0.6154 (yellow 우리 0.0058 vs 경쟁 0.0087)",
+   "다음 회차가 바뀐 값으로 다시 그려 잰다"
+  ],
+  "gaps": [
+   {
+    "kind": "long",
+    "key": "text_mid",
+    "ours": 0.5784,
+    "target": 0.0784,
+    "diff": 0.5
+   },
+   {
+    "kind": "short",
+    "key": "text_mid",
+    "ours": 0.1253,
+    "target": 0.0788,
+    "diff": 0.0465
+   },
+   {
+    "kind": "short",
+    "key": "white",
+    "ours": 0.0241,
+    "target": 0.0153,
+    "diff": 0.0088
+   },
+   {
+    "kind": "short",
+    "key": "text_top",
+    "ours": 0.061,
+    "target": 0.1186,
+    "diff": -0.0576
+   },
+   {
+    "kind": "long",
+    "key": "text_top",
+    "ours": 0.081,
+    "target": 0.1309,
+    "diff": -0.0499
+   },
+   {
+    "kind": "short",
+    "key": "yellow",
+    "ours": 0.0058,
+    "target": 0.0087,
+    "diff": -0.0029
+   }
+  ],
+  "blocked": [
+   "long.white — text_scale 가 한계 1.0 에 붙어 더 못 감, 다른 손잡이가 필요"
+  ],
+  "bands": {
+   "short": {
+    "text_spread": [
+     {
+      "v": 0.0,
+      "err": 6.3915,
+      "text_top": 0.0084,
+      "text_mid": 0.4304,
+      "text_bot": 0.0
+     },
+     {
+      "v": 0.15,
+      "err": 3.566,
+      "text_top": 0.0084,
+      "text_mid": 0.2078,
+      "text_bot": 0.0
+     },
+     {
+      "v": 0.3,
+      "err": 1.1961,
+      "text_top": 0.061,
+      "text_mid": 0.1253,
+      "text_bot": 0.0297
+     },
+     {
+      "v": 0.45,
+      "err": 2.6487,
+      "text_top": 0.1293,
+      "text_mid": 0.0,
+      "text_bot": 0.0865
+     },
+     {
+      "v": 0.6,
+      "err": 2.6487,
+      "text_top": 0.1293,
+      "text_mid": 0.0,
+      "text_bot": 0.0865
+     },
+     {
+      "v": 0.8,
+      "err": 2.6792,
+      "text_top": 0.1276,
+      "text_mid": 0.0,
+      "text_bot": 0.088
+     },
+     {
+      "v": 1.0,
+      "err": 2.664,
+      "text_top": 0.13,
+      "text_mid": 0.0,
+      "text_bot": 0.0868
+     }
+    ],
+    "split_scale": [
+     {
+      "v": 1.0,
+      "err": 1.9259,
+      "text_top": 0.0328,
+      "text_mid": 0.0948,
+      "text_bot": 0.0
+     },
+     {
+      "v": 1.3,
+      "err": 1.1961,
+      "text_top": 0.061,
+      "text_mid": 0.1253,
+      "text_bot": 0.0297
+     },
+     {
+      "v": 1.6,
+      "err": 1.7772,
+      "text_top": 0.0904,
+      "text_mid": 0.0866,
+      "text_bot": 0.0825
+     },
+     {
+      "v": 2.0,
+      "err": 3.2651,
+      "text_top": 0.0904,
+      "text_mid": 0.0921,
+      "text_bot": 0.1304
+     },
+     {
+      "v": 2.4,
+      "err": 1.9277,
+      "text_top": 0.0904,
+      "text_mid": 0.0641,
+      "text_bot": 0.0846
+     },
+     {
+      "v": 2.8,
+      "err": 1.9277,
+      "text_top": 0.0904,
+      "text_mid": 0.0641,
+      "text_bot": 0.0846
+     }
+    ]
+   },
+   "long": {
+    "text_y": [
+     {
+      "v": 0.2,
+      "err": 134.0264,
+      "text_top": 0.6586,
+      "text_mid": 0.0543,
+      "text_bot": 0.1297
+     },
+     {
+      "v": 0.35,
+      "err": 124.8626,
+      "text_top": 0.3467,
+      "text_mid": 0.2436,
+      "text_bot": 0.1211
+     },
+     {
+      "v": 0.5,
+      "err": 79.6371,
+      "text_top": 0.081,
+      "text_mid": 0.5784,
+      "text_bot": 0.0729
+     },
+     {
+      "v": 0.62,
+      "err": 220.1032,
+      "text_top": 0.0878,
+      "text_mid": 0.4027,
+      "text_bot": 0.2156
+     },
+     {
+      "v": 0.72,
+      "err": 300.7755,
+      "text_top": 0.1026,
+      "text_mid": 0.3152,
+      "text_bot": 0.2975
+     },
+     {
+      "v": 0.8,
+      "err": 533.2198,
+      "text_top": 0.1028,
+      "text_mid": 0.1252,
+      "text_bot": 0.5324
+     }
+    ]
+   }
+  },
+  "capped": [
+   "short.white"
+  ],
+  "capped_why": [
+   "short.white — text_tint 는 0.7 에서 멈추기로 정했다: 2026-09-24 화면 검증 — 0.85·1.0 에서는 글자가 흰빛을 잃고 잿빛 파랑으로 죽는다 (우리 0.0241 vs 경쟁 0.0153)"
+  ],
+  "ours_views": 0,
+  "ch_views": 3535,
+  "gain_rate": 0.0,
+  "px_err": {
+   "short": 1.1961,
+   "long": 79.6371
+  },
+  "verdict": "채널 총조회 3535 -> 3535 (+0회 / 0.2시간 = 시간당 0.0) · 최근 10편 중 공개 0편 -> 조회로는 판정 안 함(공개 0편, 늘어난 조회는 옛 공개 영상 몫) · 경쟁 판형 거리 80.8332 -> 80.8332 (그대로)"
+ },
+ {
+  "step": 101,
+  "at": "2026-09-25 12:36",
+  "sec": 110,
+  "changed": [
+   "short.yellow_tint 0.6154 → 0.6515 (yellow 우리 0.0065 vs 경쟁 0.0087)"
+  ],
+  "did": [
+   "경쟁 수집 건너뜀 — 마지막 수집 2026-09-25 11:58 (12시간 안)",
+   "경쟁 썸네일 451장 그대로 — 지난 측정값을 쓴다(재측정 건너뜀)",
+   "short.text_spread 0.3 유지 (격자 7점 중 오차 합 1.1961 이 가장 작다)",
+   "short.split_scale 1.3 유지 (격자 6점 중 오차 합 1.1961 이 가장 작다)",
+   "long.text_y 0.5 유지 (격자 6점 중 오차 합 79.6371 이 가장 작다)",
+   "short.yellow_tint 0.6154 → 0.6515 (yellow 우리 0.0065 vs 경쟁 0.0087)",
+   "다음 회차가 바뀐 값으로 다시 그려 잰다"
+  ],
+  "gaps": [
+   {
+    "kind": "long",
+    "key": "text_mid",
+    "ours": 0.5784,
+    "target": 0.0784,
+    "diff": 0.5
+   },
+   {
+    "kind": "short",
+    "key": "text_mid",
+    "ours": 0.1253,
+    "target": 0.0788,
+    "diff": 0.0465
+   },
+   {
+    "kind": "short",
+    "key": "white",
+    "ours": 0.0241,
+    "target": 0.0153,
+    "diff": 0.0088
+   },
+   {
+    "kind": "short",
+    "key": "text_top",
+    "ours": 0.061,
+    "target": 0.1186,
+    "diff": -0.0576
+   },
+   {
+    "kind": "long",
+    "key": "text_top",
+    "ours": 0.081,
+    "target": 0.1309,
+    "diff": -0.0499
+   },
+   {
+    "kind": "long",
+    "key": "white",
+    "ours": 0.0851,
+    "target": 0.1247,
+    "diff": -0.0396
+   }
+  ],
+  "blocked": [
+   "long.white — text_scale 가 한계 1.0 에 붙어 더 못 감, 다른 손잡이가 필요"
+  ],
+  "bands": {
+   "short": {
+    "text_spread": [
+     {
+      "v": 0.0,
+      "err": 6.3915,
+      "text_top": 0.0084,
+      "text_mid": 0.4304,
+      "text_bot": 0.0
+     },
+     {
+      "v": 0.15,
+      "err": 3.566,
+      "text_top": 0.0084,
+      "text_mid": 0.2078,
+      "text_bot": 0.0
+     },
+     {
+      "v": 0.3,
+      "err": 1.1961,
+      "text_top": 0.061,
+      "text_mid": 0.1253,
+      "text_bot": 0.0297
+     },
+     {
+      "v": 0.45,
+      "err": 2.6487,
+      "text_top": 0.1293,
+      "text_mid": 0.0,
+      "text_bot": 0.0865
+     },
+     {
+      "v": 0.6,
+      "err": 2.6487,
+      "text_top": 0.1293,
+      "text_mid": 0.0,
+      "text_bot": 0.0865
+     },
+     {
+      "v": 0.8,
+      "err": 2.6796,
+      "text_top": 0.1276,
+      "text_mid": 0.0,
+      "text_bot": 0.088
+     },
+     {
+      "v": 1.0,
+      "err": 2.664,
+      "text_top": 0.13,
+      "text_mid": 0.0,
+      "text_bot": 0.0868
+     }
+    ],
+    "split_scale": [
+     {
+      "v": 1.0,
+      "err": 1.9259,
+      "text_top": 0.0328,
+      "text_mid": 0.0948,
+      "text_bot": 0.0
+     },
+     {
+      "v": 1.3,
+      "err": 1.1961,
+      "text_top": 0.061,
+      "text_mid": 0.1253,
+      "text_bot": 0.0297
+     },
+     {
+      "v": 1.6,
+      "err": 1.7772,
+      "text_top": 0.0904,
+      "text_mid": 0.0866,
+      "text_bot": 0.0825
+     },
+     {
+      "v": 2.0,
+      "err": 3.2651,
+      "text_top": 0.0904,
+      "text_mid": 0.0921,
+      "text_bot": 0.1304
+     },
+     {
+      "v": 2.4,
+      "err": 1.9277,
+      "text_top": 0.0904,
+      "text_mid": 0.0641,
+      "text_bot": 0.0846
+     },
+     {
+      "v": 2.8,
+      "err": 1.9277,
+      "text_top": 0.0904,
+      "text_mid": 0.0641,
+      "text_bot": 0.0846
+     }
+    ]
+   },
+   "long": {
+    "text_y": [
+     {
+      "v": 0.2,
+      "err": 134.0264,
+      "text_top": 0.6586,
+      "text_mid": 0.0543,
+      "text_bot": 0.1297
+     },
+     {
+      "v": 0.35,
+      "err": 124.8626,
+      "text_top": 0.3467,
+      "text_mid": 0.2436,
+      "text_bot": 0.1211
+     },
+     {
+      "v": 0.5,
+      "err": 79.6371,
+      "text_top": 0.081,
+      "text_mid": 0.5784,
+      "text_bot": 0.0729
+     },
+     {
+      "v": 0.62,
+      "err": 220.1032,
+      "text_top": 0.0878,
+      "text_mid": 0.4027,
+      "text_bot": 0.2156
+     },
+     {
+      "v": 0.72,
+      "err": 300.7755,
+      "text_top": 0.1026,
+      "text_mid": 0.3152,
+      "text_bot": 0.2975
+     },
+     {
+      "v": 0.8,
+      "err": 533.2198,
+      "text_top": 0.1028,
+      "text_mid": 0.1252,
+      "text_bot": 0.5324
+     }
+    ]
+   }
+  },
+  "capped": [
+   "short.white"
+  ],
+  "capped_why": [
+   "short.white — text_tint 는 0.7 에서 멈추기로 정했다: 2026-09-24 화면 검증 — 0.85·1.0 에서는 글자가 흰빛을 잃고 잿빛 파랑으로 죽는다 (우리 0.0241 vs 경쟁 0.0153)"
+  ],
+  "ours_views": 0,
+  "ch_views": 3535,
+  "gain_rate": 0.0,
+  "px_err": {
+   "short": 1.1961,
+   "long": 79.6371
+  },
+  "verdict": "채널 총조회 3535 -> 3535 (+0회 / 0.4시간 = 시간당 0.0) · 최근 10편 중 공개 0편 -> 조회로는 판정 안 함(공개 0편, 늘어난 조회는 옛 공개 영상 몫) · 경쟁 판형 거리 80.8332 -> 80.8332 (그대로)"
+ },
+ {
+  "step": 102,
+  "at": "2026-09-25 13:13",
+  "sec": 111,
+  "changed": [],
+  "did": [
+   "경쟁 수집 건너뜀 — 마지막 수집 2026-09-25 11:58 (12시간 안)",
+   "경쟁 썸네일 451장 그대로 — 지난 측정값을 쓴다(재측정 건너뜀)",
+   "short.text_spread 0.3 유지 (격자 7점 중 오차 합 1.1961 이 가장 작다)",
+   "short.split_scale 1.3 유지 (격자 6점 중 오차 합 1.1961 이 가장 작다)",
+   "long.text_y 0.5 유지 (격자 6점 중 오차 합 79.6371 이 가장 작다)"
+  ],
+  "gaps": [
+   {
+    "kind": "long",
+    "key": "text_mid",
+    "ours": 0.5784,
+    "target": 0.0784,
+    "diff": 0.5
+   },
+   {
+    "kind": "short",
+    "key": "text_mid",
+    "ours": 0.1253,
+    "target": 0.0788,
+    "diff": 0.0465
+   },
+   {
+    "kind": "short",
+    "key": "white",
+    "ours": 0.0241,
+    "target": 0.0153,
+    "diff": 0.0088
+   },
+   {
+    "kind": "short",
+    "key": "text_top",
+    "ours": 0.061,
+    "target": 0.1186,
+    "diff": -0.0576
+   },
+   {
+    "kind": "long",
+    "key": "text_top",
+    "ours": 0.081,
+    "target": 0.1309,
+    "diff": -0.0499
+   },
+   {
+    "kind": "long",
+    "key": "white",
+    "ours": 0.0851,
+    "target": 0.1247,
+    "diff": -0.0396
+   }
+  ],
+  "blocked": [
+   "long.white — text_scale 가 한계 1.0 에 붙어 더 못 감, 다른 손잡이가 필요"
+  ],
+  "bands": {
+   "short": {
+    "text_spread": [
+     {
+      "v": 0.0,
+      "err": 6.3915,
+      "text_top": 0.0084,
+      "text_mid": 0.4304,
+      "text_bot": 0.0
+     },
+     {
+      "v": 0.15,
+      "err": 3.566,
+      "text_top": 0.0084,
+      "text_mid": 0.2078,
+      "text_bot": 0.0
+     },
+     {
+      "v": 0.3,
+      "err": 1.1961,
+      "text_top": 0.061,
+      "text_mid": 0.1253,
+      "text_bot": 0.0297
+     },
+     {
+      "v": 0.45,
+      "err": 2.6487,
+      "text_top": 0.1293,
+      "text_mid": 0.0,
+      "text_bot": 0.0865
+     },
+     {
+      "v": 0.6,
+      "err": 2.6487,
+      "text_top": 0.1293,
+      "text_mid": 0.0,
+      "text_bot": 0.0865
+     },
+     {
+      "v": 0.8,
+      "err": 2.6796,
+      "text_top": 0.1276,
+      "text_mid": 0.0,
+      "text_bot": 0.088
+     },
+     {
+      "v": 1.0,
+      "err": 2.664,
+      "text_top": 0.13,
+      "text_mid": 0.0,
+      "text_bot": 0.0868
+     }
+    ],
+    "split_scale": [
+     {
+      "v": 1.0,
+      "err": 1.9259,
+      "text_top": 0.0328,
+      "text_mid": 0.0948,
+      "text_bot": 0.0
+     },
+     {
+      "v": 1.3,
+      "err": 1.1961,
+      "text_top": 0.061,
+      "text_mid": 0.1253,
+      "text_bot": 0.0297
+     },
+     {
+      "v": 1.6,
+      "err": 1.7772,
+      "text_top": 0.0904,
+      "text_mid": 0.0866,
+      "text_bot": 0.0825
+     },
+     {
+      "v": 2.0,
+      "err": 3.2663,
+      "text_top": 0.0904,
+      "text_mid": 0.0921,
+      "text_bot": 0.1305
+     },
+     {
+      "v": 2.4,
+      "err": 1.9277,
+      "text_top": 0.0904,
+      "text_mid": 0.0641,
+      "text_bot": 0.0846
+     },
+     {
+      "v": 2.8,
+      "err": 1.9277,
+      "text_top": 0.0904,
+      "text_mid": 0.0641,
+      "text_bot": 0.0846
+     }
+    ]
+   },
+   "long": {
+    "text_y": [
+     {
+      "v": 0.2,
+      "err": 134.0264,
+      "text_top": 0.6586,
+      "text_mid": 0.0543,
+      "text_bot": 0.1297
+     },
+     {
+      "v": 0.35,
+      "err": 124.8626,
+      "text_top": 0.3467,
+      "text_mid": 0.2436,
+      "text_bot": 0.1211
+     },
+     {
+      "v": 0.5,
+      "err": 79.6371,
+      "text_top": 0.081,
+      "text_mid": 0.5784,
+      "text_bot": 0.0729
+     },
+     {
+      "v": 0.62,
+      "err": 220.1032,
+      "text_top": 0.0878,
+      "text_mid": 0.4027,
+      "text_bot": 0.2156
+     },
+     {
+      "v": 0.72,
+      "err": 300.7755,
+      "text_top": 0.1026,
+      "text_mid": 0.3152,
+      "text_bot": 0.2975
+     },
+     {
+      "v": 0.8,
+      "err": 533.2198,
+      "text_top": 0.1028,
+      "text_mid": 0.1252,
+      "text_bot": 0.5324
+     }
+    ]
+   }
+  },
+  "capped": [
+   "short.white"
+  ],
+  "capped_why": [
+   "short.white — text_tint 는 0.7 에서 멈추기로 정했다: 2026-09-24 화면 검증 — 0.85·1.0 에서는 글자가 흰빛을 잃고 잿빛 파랑으로 죽는다 (우리 0.0241 vs 경쟁 0.0153)"
+  ],
+  "ours_views": 0,
+  "ch_views": 3535,
+  "gain_rate": 0.0,
+  "px_err": {
+   "short": 1.1961,
+   "long": 79.6371
+  },
+  "verdict": "채널 총조회 3535 -> 3535 (+0회 / 0.6시간 = 시간당 0.0) · 최근 10편 중 공개 0편 -> 조회로는 판정 안 함(공개 0편, 늘어난 조회는 옛 공개 영상 몫) · 경쟁 판형 거리 80.8332 -> 80.8332 (그대로)"
+ },
+ {
+  "step": 103,
+  "at": "2026-09-25 13:39",
+  "sec": 117,
+  "changed": [],
+  "did": [
+   "경쟁 수집 건너뜀 — 마지막 수집 2026-09-25 11:58 (12시간 안)",
+   "경쟁 썸네일 451장 그대로 — 지난 측정값을 쓴다(재측정 건너뜀)",
+   "short.text_spread 0.3 유지 (격자 7점 중 오차 합 1.1961 이 가장 작다)",
+   "short.split_scale 1.3 유지 (격자 6점 중 오차 합 1.1961 이 가장 작다)",
+   "long.text_y 0.5 유지 (격자 6점 중 오차 합 79.6371 이 가장 작다)"
+  ],
+  "gaps": [
+   {
+    "kind": "long",
+    "key": "text_mid",
+    "ours": 0.5784,
+    "target": 0.0784,
+    "diff": 0.5
+   },
+   {
+    "kind": "short",
+    "key": "text_mid",
+    "ours": 0.1253,
+    "target": 0.0788,
+    "diff": 0.0465
+   },
+   {
+    "kind": "short",
+    "key": "white",
+    "ours": 0.0241,
+    "target": 0.0153,
+    "diff": 0.0088
+   },
+   {
+    "kind": "short",
+    "key": "text_top",
+    "ours": 0.061,
+    "target": 0.1186,
+    "diff": -0.0576
+   },
+   {
+    "kind": "long",
+    "key": "text_top",
+    "ours": 0.081,
+    "target": 0.1309,
+    "diff": -0.0499
+   },
+   {
+    "kind": "long",
+    "key": "white",
+    "ours": 0.0851,
+    "target": 0.1247,
+    "diff": -0.0396
+   }
+  ],
+  "blocked": [
+   "long.white — text_scale 가 한계 1.0 에 붙어 더 못 감, 다른 손잡이가 필요"
+  ],
+  "bands": {
+   "short": {
+    "text_spread": [
+     {
+      "v": 0.0,
+      "err": 6.3915,
+      "text_top": 0.0084,
+      "text_mid": 0.4304,
+      "text_bot": 0.0
+     },
+     {
+      "v": 0.15,
+      "err": 3.566,
+      "text_top": 0.0084,
+      "text_mid": 0.2078,
+      "text_bot": 0.0
+     },
+     {
+      "v": 0.3,
+      "err": 1.1961,
+      "text_top": 0.061,
+      "text_mid": 0.1253,
+      "text_bot": 0.0297
+     },
+     {
+      "v": 0.45,
+      "err": 2.6487,
+      "text_top": 0.1293,
+      "text_mid": 0.0,
+      "text_bot": 0.0865
+     },
+     {
+      "v": 0.6,
+      "err": 2.6487,
+      "text_top": 0.1293,
+      "text_mid": 0.0,
+      "text_bot": 0.0865
+     },
+     {
+      "v": 0.8,
+      "err": 2.6796,
+      "text_top": 0.1276,
+      "text_mid": 0.0,
+      "text_bot": 0.088
+     },
+     {
+      "v": 1.0,
+      "err": 2.664,
+      "text_top": 0.13,
+      "text_mid": 0.0,
+      "text_bot": 0.0868
+     }
+    ],
+    "split_scale": [
+     {
+      "v": 1.0,
+      "err": 1.9259,
+      "text_top": 0.0328,
+      "text_mid": 0.0948,
+      "text_bot": 0.0
+     },
+     {
+      "v": 1.3,
+      "err": 1.1961,
+      "text_top": 0.061,
+      "text_mid": 0.1253,
+      "text_bot": 0.0297
+     },
+     {
+      "v": 1.6,
+      "err": 1.7772,
+      "text_top": 0.0904,
+      "text_mid": 0.0866,
+      "text_bot": 0.0825
+     },
+     {
+      "v": 2.0,
+      "err": 3.2663,
+      "text_top": 0.0904,
+      "text_mid": 0.0921,
+      "text_bot": 0.1305
+     },
+     {
+      "v": 2.4,
+      "err": 1.9277,
+      "text_top": 0.0904,
+      "text_mid": 0.0641,
+      "text_bot": 0.0846
+     },
+     {
+      "v": 2.8,
+      "err": 1.9277,
+      "text_top": 0.0904,
+      "text_mid": 0.0641,
+      "text_bot": 0.0846
+     }
+    ]
+   },
+   "long": {
+    "text_y": [
+     {
+      "v": 0.2,
+      "err": 134.0264,
+      "text_top": 0.6586,
+      "text_mid": 0.0543,
+      "text_bot": 0.1297
+     },
+     {
+      "v": 0.35,
+      "err": 124.8626,
+      "text_top": 0.3467,
+      "text_mid": 0.2436,
+      "text_bot": 0.1211
+     },
+     {
+      "v": 0.5,
+      "err": 79.6371,
+      "text_top": 0.081,
+      "text_mid": 0.5784,
+      "text_bot": 0.0729
+     },
+     {
+      "v": 0.62,
+      "err": 220.1032,
+      "text_top": 0.0878,
+      "text_mid": 0.4027,
+      "text_bot": 0.2156
+     },
+     {
+      "v": 0.72,
+      "err": 300.7755,
+      "text_top": 0.1026,
+      "text_mid": 0.3152,
+      "text_bot": 0.2975
+     },
+     {
+      "v": 0.8,
+      "err": 533.2198,
+      "text_top": 0.1028,
+      "text_mid": 0.1252,
+      "text_bot": 0.5324
+     }
+    ]
+   }
+  },
+  "capped": [
+   "short.white"
+  ],
+  "capped_why": [
+   "short.white — text_tint 는 0.7 에서 멈추기로 정했다: 2026-09-24 화면 검증 — 0.85·1.0 에서는 글자가 흰빛을 잃고 잿빛 파랑으로 죽는다 (우리 0.0241 vs 경쟁 0.0153)"
+  ],
+  "ours_views": 0,
+  "ch_views": 3535,
+  "gain_rate": 0.0,
+  "px_err": {
+   "short": 1.1961,
+   "long": 79.6371
+  },
+  "verdict": "채널 총조회 3535 -> 3535 (+0회 / 0.4시간 = 시간당 0.0) · 최근 10편 중 공개 0편 -> 조회로는 판정 안 함(공개 0편, 늘어난 조회는 옛 공개 영상 몫) · 경쟁 판형 거리 80.8332 -> 80.8332 (그대로)"
+ },
+ {
+  "step": 104,
+  "at": "2026-09-25 13:55",
+  "sec": 111,
+  "changed": [],
+  "did": [
+   "경쟁 수집 건너뜀 — 마지막 수집 2026-09-25 11:58 (12시간 안)",
+   "경쟁 썸네일 451장 그대로 — 지난 측정값을 쓴다(재측정 건너뜀)",
+   "short.text_spread 0.3 유지 (격자 7점 중 오차 합 1.1961 이 가장 작다)",
+   "short.split_scale 1.3 유지 (격자 6점 중 오차 합 1.1961 이 가장 작다)",
+   "long.text_y 0.5 유지 (격자 6점 중 오차 합 79.6371 이 가장 작다)"
+  ],
+  "gaps": [
+   {
+    "kind": "long",
+    "key": "text_mid",
+    "ours": 0.5784,
+    "target": 0.0784,
+    "diff": 0.5
+   },
+   {
+    "kind": "short",
+    "key": "text_mid",
+    "ours": 0.1253,
+    "target": 0.0788,
+    "diff": 0.0465
+   },
+   {
+    "kind": "short",
+    "key": "white",
+    "ours": 0.0241,
+    "target": 0.0153,
+    "diff": 0.0088
+   },
+   {
+    "kind": "short",
+    "key": "text_top",
+    "ours": 0.061,
+    "target": 0.1186,
+    "diff": -0.0576
+   },
+   {
+    "kind": "long",
+    "key": "text_top",
+    "ours": 0.081,
+    "target": 0.1309,
+    "diff": -0.0499
+   },
+   {
+    "kind": "long",
+    "key": "white",
+    "ours": 0.0851,
+    "target": 0.1247,
+    "diff": -0.0396
+   }
+  ],
+  "blocked": [
+   "long.white — text_scale 가 한계 1.0 에 붙어 더 못 감, 다른 손잡이가 필요"
+  ],
+  "bands": {
+   "short": {
+    "text_spread": [
+     {
+      "v": 0.0,
+      "err": 6.3915,
+      "text_top": 0.0084,
+      "text_mid": 0.4304,
+      "text_bot": 0.0
+     },
+     {
+      "v": 0.15,
+      "err": 3.566,
+      "text_top": 0.0084,
+      "text_mid": 0.2078,
+      "text_bot": 0.0
+     },
+     {
+      "v": 0.3,
+      "err": 1.1961,
+      "text_top": 0.061,
+      "text_mid": 0.1253,
+      "text_bot": 0.0297
+     },
+     {
+      "v": 0.45,
+      "err": 2.6487,
+      "text_top": 0.1293,
+      "text_mid": 0.0,
+      "text_bot": 0.0865
+     },
+     {
+      "v": 0.6,
+      "err": 2.6487,
+      "text_top": 0.1293,
+      "text_mid": 0.0,
+      "text_bot": 0.0865
+     },
+     {
+      "v": 0.8,
+      "err": 2.6796,
+      "text_top": 0.1276,
+      "text_mid": 0.0,
+      "text_bot": 0.088
+     },
+     {
+      "v": 1.0,
+      "err": 2.664,
+      "text_top": 0.13,
+      "text_mid": 0.0,
+      "text_bot": 0.0868
+     }
+    ],
+    "split_scale": [
+     {
+      "v": 1.0,
+      "err": 1.9259,
+      "text_top": 0.0328,
+      "text_mid": 0.0948,
+      "text_bot": 0.0
+     },
+     {
+      "v": 1.3,
+      "err": 1.1961,
+      "text_top": 0.061,
+      "text_mid": 0.1253,
+      "text_bot": 0.0297
+     },
+     {
+      "v": 1.6,
+      "err": 1.7772,
+      "text_top": 0.0904,
+      "text_mid": 0.0866,
+      "text_bot": 0.0825
+     },
+     {
+      "v": 2.0,
+      "err": 3.2663,
+      "text_top": 0.0904,
+      "text_mid": 0.0921,
+      "text_bot": 0.1305
+     },
+     {
+      "v": 2.4,
+      "err": 1.9277,
+      "text_top": 0.0904,
+      "text_mid": 0.0641,
+      "text_bot": 0.0846
+     },
+     {
+      "v": 2.8,
+      "err": 1.9277,
+      "text_top": 0.0904,
+      "text_mid": 0.0641,
+      "text_bot": 0.0846
+     }
+    ]
+   },
+   "long": {
+    "text_y": [
+     {
+      "v": 0.2,
+      "err": 134.0264,
+      "text_top": 0.6586,
+      "text_mid": 0.0543,
+      "text_bot": 0.1297
+     },
+     {
+      "v": 0.35,
+      "err": 124.8626,
+      "text_top": 0.3467,
+      "text_mid": 0.2436,
+      "text_bot": 0.1211
+     },
+     {
+      "v": 0.5,
+      "err": 79.6371,
+      "text_top": 0.081,
+      "text_mid": 0.5784,
+      "text_bot": 0.0729
+     },
+     {
+      "v": 0.62,
+      "err": 220.1032,
+      "text_top": 0.0878,
+      "text_mid": 0.4027,
+      "text_bot": 0.2156
+     },
+     {
+      "v": 0.72,
+      "err": 300.7755,
+      "text_top": 0.1026,
+      "text_mid": 0.3152,
+      "text_bot": 0.2975
+     },
+     {
+      "v": 0.8,
+      "err": 533.2198,
+      "text_top": 0.1028,
+      "text_mid": 0.1252,
+      "text_bot": 0.5324
+     }
+    ]
+   }
+  },
+  "capped": [
+   "short.white"
+  ],
+  "capped_why": [
+   "short.white — text_tint 는 0.7 에서 멈추기로 정했다: 2026-09-24 화면 검증 — 0.85·1.0 에서는 글자가 흰빛을 잃고 잿빛 파랑으로 죽는다 (우리 0.0241 vs 경쟁 0.0153)"
+  ],
+  "ours_views": 0,
+  "ch_views": 3535,
+  "gain_rate": 0.0,
+  "px_err": {
+   "short": 1.1961,
+   "long": 79.6371
+  },
+  "verdict": "채널 총조회 3535 -> 3535 (+0회 / 0.3시간 = 시간당 0.0) · 최근 10편 중 공개 0편 -> 조회로는 판정 안 함(공개 0편, 늘어난 조회는 옛 공개 영상 몫) · 경쟁 판형 거리 80.8332 -> 80.8332 (그대로)"
+ },
+ {
+  "step": 105,
+  "at": "2026-09-25 13:57",
+  "sec": 110,
+  "changed": [],
+  "did": [
+   "경쟁 수집 건너뜀 — 마지막 수집 2026-09-25 11:58 (12시간 안)",
+   "경쟁 썸네일 451장 그대로 — 지난 측정값을 쓴다(재측정 건너뜀)",
+   "short.text_spread 0.3 유지 (격자 7점 중 오차 합 1.1961 이 가장 작다)",
+   "short.split_scale 1.3 유지 (격자 6점 중 오차 합 1.1961 이 가장 작다)",
+   "long.text_y 0.5 유지 (격자 6점 중 오차 합 79.6371 이 가장 작다)"
+  ],
+  "gaps": [
+   {
+    "kind": "long",
+    "key": "text_mid",
+    "ours": 0.5784,
+    "target": 0.0784,
+    "diff": 0.5
+   },
+   {
+    "kind": "short",
+    "key": "text_mid",
+    "ours": 0.1253,
+    "target": 0.0788,
+    "diff": 0.0465
+   },
+   {
+    "kind": "short",
+    "key": "white",
+    "ours": 0.0241,
+    "target": 0.0153,
+    "diff": 0.0088
+   },
+   {
+    "kind": "short",
+    "key": "text_top",
+    "ours": 0.061,
+    "target": 0.1186,
+    "diff": -0.0576
+   },
+   {
+    "kind": "long",
+    "key": "text_top",
+    "ours": 0.081,
+    "target": 0.1309,
+    "diff": -0.0499
+   },
+   {
+    "kind": "long",
+    "key": "white",
+    "ours": 0.0851,
+    "target": 0.1247,
+    "diff": -0.0396
+   }
+  ],
+  "blocked": [
+   "long.white — text_scale 가 한계 1.0 에 붙어 더 못 감, 다른 손잡이가 필요"
+  ],
+  "bands": {
+   "short": {
+    "text_spread": [
+     {
+      "v": 0.0,
+      "err": 6.3915,
+      "text_top": 0.0084,
+      "text_mid": 0.4304,
+      "text_bot": 0.0
+     },
+     {
+      "v": 0.15,
+      "err": 3.566,
+      "text_top": 0.0084,
+      "text_mid": 0.2078,
+      "text_bot": 0.0
+     },
+     {
+      "v": 0.3,
+      "err": 1.1961,
+      "text_top": 0.061,
+      "text_mid": 0.1253,
+      "text_bot": 0.0297
+     },
+     {
+      "v": 0.45,
+      "err": 2.6487,
+      "text_top": 0.1293,
+      "text_mid": 0.0,
+      "text_bot": 0.0865
+     },
+     {
+      "v": 0.6,
+      "err": 2.6487,
+      "text_top": 0.1293,
+      "text_mid": 0.0,
+      "text_bot": 0.0865
+     },
+     {
+      "v": 0.8,
+      "err": 2.6796,
+      "text_top": 0.1276,
+      "text_mid": 0.0,
+      "text_bot": 0.088
+     },
+     {
+      "v": 1.0,
+      "err": 2.664,
+      "text_top": 0.13,
+      "text_mid": 0.0,
+      "text_bot": 0.0868
+     }
+    ],
+    "split_scale": [
+     {
+      "v": 1.0,
+      "err": 1.9259,
+      "text_top": 0.0328,
+      "text_mid": 0.0948,
+      "text_bot": 0.0
+     },
+     {
+      "v": 1.3,
+      "err": 1.1961,
+      "text_top": 0.061,
+      "text_mid": 0.1253,
+      "text_bot": 0.0297
+     },
+     {
+      "v": 1.6,
+      "err": 1.7772,
+      "text_top": 0.0904,
+      "text_mid": 0.0866,
+      "text_bot": 0.0825
+     },
+     {
+      "v": 2.0,
+      "err": 3.2663,
+      "text_top": 0.0904,
+      "text_mid": 0.0921,
+      "text_bot": 0.1305
+     },
+     {
+      "v": 2.4,
+      "err": 1.9277,
+      "text_top": 0.0904,
+      "text_mid": 0.0641,
+      "text_bot": 0.0846
+     },
+     {
+      "v": 2.8,
+      "err": 1.9277,
+      "text_top": 0.0904,
+      "text_mid": 0.0641,
+      "text_bot": 0.0846
+     }
+    ]
+   },
+   "long": {
+    "text_y": [
+     {
+      "v": 0.2,
+      "err": 134.0264,
+      "text_top": 0.6586,
+      "text_mid": 0.0543,
+      "text_bot": 0.1297
+     },
+     {
+      "v": 0.35,
+      "err": 124.8626,
+      "text_top": 0.3467,
+      "text_mid": 0.2436,
+      "text_bot": 0.1211
+     },
+     {
+      "v": 0.5,
+      "err": 79.6371,
+      "text_top": 0.081,
+      "text_mid": 0.5784,
+      "text_bot": 0.0729
+     },
+     {
+      "v": 0.62,
+      "err": 220.1032,
+      "text_top": 0.0878,
+      "text_mid": 0.4027,
+      "text_bot": 0.2156
+     },
+     {
+      "v": 0.72,
+      "err": 300.7755,
+      "text_top": 0.1026,
+      "text_mid": 0.3152,
+      "text_bot": 0.2975
+     },
+     {
+      "v": 0.8,
+      "err": 533.2198,
+      "text_top": 0.1028,
+      "text_mid": 0.1252,
+      "text_bot": 0.5324
+     }
+    ]
+   }
+  },
+  "capped": [
+   "short.white"
+  ],
+  "capped_why": [
+   "short.white — text_tint 는 0.7 에서 멈추기로 정했다: 2026-09-24 화면 검증 — 0.85·1.0 에서는 글자가 흰빛을 잃고 잿빛 파랑으로 죽는다 (우리 0.0241 vs 경쟁 0.0153)"
+  ],
+  "ours_views": 0,
+  "ch_views": 3535,
+  "gain_rate": 0.0,
+  "px_err": {
+   "short": 1.1961,
+   "long": 79.6371
+  },
+  "verdict": "채널 총조회 3535 -> 3535 (+0회 / 0.2시간 = 시간당 0.0) · 최근 10편 중 공개 0편 -> 조회로는 판정 안 함(공개 0편, 늘어난 조회는 옛 공개 영상 몫) · 경쟁 판형 거리 80.8332 -> 80.8332 (그대로)"
+ },
+ {
+  "step": 106,
+  "at": "2026-09-25 14:06",
+  "sec": 138,
+  "changed": [
+   "short.split_scale 1.3 → 1.6 (세 칸 오차 합 1.4034 → 1.0986, 격자 6점 실측)",
+   "long.text_y 0.5 → 0.35 (세 칸 오차 합 8.9276 → 7.1971, 격자 6점 실측)",
+   "long.text_scale 1.0 → 0.55 (세 칸 오차 합 7.1971 → 4.1055, 격자 5점 실측)",
+   "long.yellow_frac 0.4769 → 0.8531 (yellow 우리 0.008 vs 경쟁 0.0278)"
+  ],
+  "did": [
+   "경쟁 수집 건너뜀 — 마지막 수집 2026-09-25 11:58 (12시간 안)",
+   "경쟁 썸네일 451장 그대로 — 지난 측정값을 쓴다(재측정 건너뜀)",
+   "short.text_spread 0.3 유지 (격자 7점 중 오차 합 1.4034 이 가장 작다)",
+   "short.split_scale 1.3 → 1.6 (세 칸 오차 합 1.4034 → 1.0986, 격자 6점 실측)",
+   "long.text_y 0.5 → 0.35 (세 칸 오차 합 8.9276 → 7.1971, 격자 6점 실측)",
+   "long.text_scale 1.0 → 0.55 (세 칸 오차 합 7.1971 → 4.1055, 격자 5점 실측)",
+   "long.yellow_frac 0.4769 → 0.8531 (yellow 우리 0.008 vs 경쟁 0.0278)",
+   "다음 회차가 바뀐 값으로 다시 그려 잰다"
+  ],
+  "gaps": [
+   {
+    "kind": "short",
+    "key": "text_bot",
+    "ours": 0.0825,
+    "target": 0.0338,
+    "diff": 0.0487
+   },
+   {
+    "kind": "long",
+    "key": "text_mid",
+    "ours": 0.1757,
+    "target": 0.0784,
+    "diff": 0.0973
+   },
+   {
+    "kind": "short",
+    "key": "white",
+    "ours": 0.0327,
+    "target": 0.0153,
+    "diff": 0.0174
+   },
+   {
+    "kind": "long",
+    "key": "white",
+    "ours": 0.0344,
+    "target": 0.1247,
+    "diff": -0.0903
+   },
+   {
+    "kind": "long",
+    "key": "yellow",
+    "ours": 0.008,
+    "target": 0.0278,
+    "diff": -0.0198
+   },
+   {
+    "kind": "long",
+    "key": "contrast",
+    "ours": 0.2452,
+    "target": 0.3911,
+    "diff": -0.1459
+   }
+  ],
+  "blocked": [],
+  "bands": {
+   "short": {
+    "text_spread": [
+     {
+      "v": 0.0,
+      "err": 6.4313,
+      "text_top": 0.0084,
+      "text_mid": 0.4304,
+      "text_bot": 0.0
+     },
+     {
+      "v": 0.15,
+      "err": 3.5422,
+      "text_top": 0.0084,
+      "text_mid": 0.2078,
+      "text_bot": 0.0
+     },
+     {
+      "v": 0.3,
+      "err": 1.4034,
+      "text_top": 0.061,
+      "text_mid": 0.1253,
+      "text_bot": 0.0297
+     },
+     {
+      "v": 0.45,
+      "err": 1.8445,
+      "text_top": 0.1293,
+      "text_mid": 0.0,
+      "text_bot": 0.0865
+     },
+     {
+      "v": 0.6,
+      "err": 1.8445,
+      "text_top": 0.1293,
+      "text_mid": 0.0,
+      "text_bot": 0.0865
+     },
+     {
+      "v": 0.8,
+      "err": 1.8426,
+      "text_top": 0.1276,
+      "text_mid": 0.0,
+      "text_bot": 0.088
+     },
+     {
+      "v": 1.0,
+      "err": 1.8579,
+      "text_top": 0.13,
+      "text_mid": 0.0,
+      "text_bot": 0.0868
+     }
+    ],
+    "split_scale": [
+     {
+      "v": 1.0,
+      "err": 1.7588,
+      "text_top": 0.0328,
+      "text_mid": 0.0948,
+      "text_bot": 0.0
+     },
+     {
+      "v": 1.3,
+      "err": 1.4034,
+      "text_top": 0.061,
+      "text_mid": 0.1253,
+      "text_bot": 0.0297
+     },
+     {
+      "v": 1.6,
+      "err": 1.0986,
+      "text_top": 0.0904,
+      "text_mid": 0.0866,
+      "text_bot": 0.0825
+     },
+     {
+      "v": 2.0,
+      "err": 1.7929,
+      "text_top": 0.0904,
+      "text_mid": 0.0921,
+      "text_bot": 0.1305
+     },
+     {
+      "v": 2.4,
+      "err": 1.2162,
+      "text_top": 0.0904,
+      "text_mid": 0.0641,
+      "text_bot": 0.0846
+     },
+     {
+      "v": 2.8,
+      "err": 1.2162,
+      "text_top": 0.0904,
+      "text_mid": 0.0641,
+      "text_bot": 0.0846
+     }
+    ]
+   },
+   "long": {
+    "text_y": [
+     {
+      "v": 0.2,
+      "err": 9.7682,
+      "text_top": 0.6586,
+      "text_mid": 0.0543,
+      "text_bot": 0.1297
+     },
+     {
+      "v": 0.35,
+      "err": 7.1971,
+      "text_top": 0.3467,
+      "text_mid": 0.2436,
+      "text_bot": 0.1211
+     },
+     {
+      "v": 0.5,
+      "err": 8.9276,
+      "text_top": 0.081,
+      "text_mid": 0.5784,
+      "text_bot": 0.0729
+     },
+     {
+      "v": 0.62,
+      "err": 8.3562,
+      "text_top": 0.0878,
+      "text_mid": 0.4027,
+      "text_bot": 0.2156
+     },
+     {
+      "v": 0.72,
+      "err": 8.0643,
+      "text_top": 0.1026,
+      "text_mid": 0.3152,
+      "text_bot": 0.2975
+     },
+     {
+      "v": 0.8,
+      "err": 8.7041,
+      "text_top": 0.1028,
+      "text_mid": 0.1252,
+      "text_bot": 0.5324
+     }
+    ],
+    "text_scale": [
+     {
+      "v": 0.55,
+      "err": 4.1055,
+      "text_top": 0.1763,
+      "text_mid": 0.1757,
+      "text_bot": 0.1437
+     },
+     {
+      "v": 0.66,
+      "err": 5.1958,
+      "text_top": 0.2273,
+      "text_mid": 0.1992,
+      "text_bot": 0.1453
+     },
+     {
+      "v": 0.75,
+      "err": 4.3911,
+      "text_top": 0.1628,
+      "text_mid": 0.213,
+      "text_bot": 0.1398
+     },
+     {
+      "v": 0.85,
+      "err": 4.6171,
+      "text_top": 0.191,
+      "text_mid": 0.2071,
+      "text_bot": 0.1334
+     },
+     {
+      "v": 1.0,
+      "err": 7.1971,
+      "text_top": 0.3467,
+      "text_mid": 0.2436,
+      "text_bot": 0.1211
+     }
+    ]
+   }
+  },
+  "capped": [
+   "short.white",
+   "long.white"
+  ],
+  "capped_why": [
+   "short.white — text_tint 는 0.7 에서 멈추기로 정했다: 2026-09-24 화면 검증 — 0.85·1.0 에서는 글자가 흰빛을 잃고 잿빛 파랑으로 죽는다 (우리 0.0327 vs 경쟁 0.0153)",
+   "long.white — 이 판형에서는 손잡이를 떼기로 정했다 (우리 0.0344 vs 경쟁 0.1247, RULE 주석에 이유)"
+  ],
+  "ours_views": 0,
+  "ch_views": 3535,
+  "gain_rate": 0.0,
+  "px_err": {
+   "short": 1.0986,
+   "long": 4.1055
+  },
+  "verdict": "채널 총조회 3535 -> 3535 (+0회 / 0.2시간 = 시간당 0.0) · 최근 10편 중 공개 0편 -> 조회로는 판정 안 함(공개 0편, 늘어난 조회는 옛 공개 영상 몫) · 경쟁 판형 거리 80.8332 -> 5.2041 (줄었다)"
  }
 ]

@@ -131,7 +131,14 @@ def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
     fs = [fit(dr, t, maxw) for t in parts]
     sz = min(f.size for f in fs)
     # 흰 면적은 흰 글자 픽셀에서 나온다. 외곽선(검정)으로는 줄지 않아 글자 크기를 손잡이로 뒀다(2026-09-23).
-    sz = max(int(W * 0.055), int(sz * min(max(float(c.get('text_scale', 1.0)), 0.66), 1.0)))
+    # 하한 0.66·바닥 0.055 는 2026-09-23에 임의로 박아 둔 값이다. 2026-09-25에 넓혔다 —
+    # 새 글자 지도로 다시 잰 경쟁 롱폼은 글자 잉크가 text 0.0769 인데 우리는 0.2441 로 3.2배였고,
+    # 면적이 크기의 제곱이라 0.66 으로는 절반까지도 못 줄어 격자가 하한에 붙은 채 막혔다.
+    # 읽히는 크기는 지킨다: 바닥을 롱폼 W의 4%(1280 → 51px, 360px 로 줄여 봐도 14px)로 둔다.
+    # 하한 0.55 는 2026-09-25 화면 검증에서 정했다 — 1.0/0.66/0.55/0.45 를 같은 배경·같은 문구로 그려
+    # 480px(실제 피드 크기)로 견줬고, 0.45 는 두 줄이 히트맵 글자에 묻혀 안 읽힌다. 0.55 까지만 내려간다.
+    _lo = 0.55 if not short else 0.66
+    sz = max(int(W * (0.042 if not short else 0.055)), int(sz * min(max(float(c.get('text_scale', 1.0)), _lo), 1.0)))
     szs = [sz] * len(parts)
     if len(parts) == 3:
         # 나눈 두 줄은 짧아져서 폭에 여유가 생긴다 — 그 여유만큼 키운다(split_scale, 1.0이면 안 키움).

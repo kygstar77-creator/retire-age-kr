@@ -12,26 +12,26 @@
   "bg_sat": 1.4056,
   "text_tint": 0.7,
   "lines": 3,
-  "split_scale": 1.3,
-  "yellow_tint": 0.5678,
+  "split_scale": 1.6,
+  "yellow_tint": 0.6515,
   "tint_v": 0.75
  },
  "long": {
-  "text_y": 0.5,
+  "text_y": 0.35,
   "bg_bright": 1.2898,
   "panel_alpha": 212,
   "yellow_bottom": 0,
   "num_yellow": 1,
   "stroke_ratio": 16,
-  "yellow_frac": 0.4769,
-  "text_scale": 1.0,
+  "yellow_frac": 0.8531,
+  "text_scale": 0.55,
   "bg_sat": 1.4032,
   "text_spread": 0.0
  },
  "video": {
   "zoom": 0.0009
  },
- "step": 99,
+ "step": 106,
  "_memo": {
   "short.white.stroke_ratio=40": 0.0301,
   "long.yellow.yellow_bottom=1": 0.0526,
@@ -107,7 +107,14 @@
   "short.white.text_tint=0.7@231e7a": 0.0395,
   "short.white.text_tint=0.7@2637cf": 0.0241,
   "short.yellow.yellow_tint=0.4956@bbb38f": 0.0043,
-  "long.white.text_scale=1.0@381c92": 0.0851
+  "long.white.text_scale=1.0@381c92": 0.0851,
+  "short.white.text_tint=0.7@460b11": 0.0241,
+  "short.yellow.yellow_tint=0.5678@bbb38f": 0.0058,
+  "short.white.text_tint=0.7@64d801": 0.0241,
+  "short.yellow.yellow_tint=0.6154@bbb38f": 0.0065,
+  "short.white.text_tint=0.7@ec78ee": 0.0241,
+  "short.white.text_tint=0.7@258f43": 0.0327,
+  "long.yellow.yellow_frac=0.4769@be1c35": 0.008
  },
  "collected_at": "2026-09-25 11:58"
 }

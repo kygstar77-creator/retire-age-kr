@@ -97,9 +97,22 @@ def main():
         if mt:
             M.append(('검색', '색인율(하루 지난 글)', mt['rate'], 0.8, 3,
                       f"{mt['n']}편 중 {mt['indexed']}편 · 색인 안 된 글의 본문 문장 검색 → 유사문서·품질 확인"))
+        # 순위도 색인율과 같은 이유로 '하루 지난 글'로 잰다. 색인이 안 된 글은 제목으로 검색해도
+        # 안 잡히니 self_rank 가 None 이고, 그날 발행분은 거의 다 그 상태다 — 이 눈금을 당일 글로 재면
+        # 0.0 에 붙박여 일감표 맨 위에 영영 남는다(2026-09-25 실측: 당일 12편 0/12, 같은 측정에서
+        # 하루 지난 글 5편 중 4편이 10위 안 — 코픽스·10월배당·근로장려금 1위, 파이어나이 3위).
+        # 색인율은 이미 mature 로 고쳐 놓고(9/24) 순위만 당일 글에 남아 있었다.
+        rc = [x for x in (last.get('recheck') or []) if x.get('indexed') is not None]
+        if rc:
+            M.append(('검색', '제목검색 10위 안 비율(하루 지난 글)',
+                      round(sum(1 for x in rc if (x.get('self_rank') or 99) <= 10) / len(rc), 3), 0.6, 2,
+                      f'{len(rc)}편 기준 · 제목 규칙(series-plan)·toprank 항목 채우기'))
         if b:
-            M += [('검색', '색인율(당일 글 — 참고용)', round(sum(1 for x in b if x.get('indexed')) / len(b), 3), 0.3, 1, '색인은 하루쯤 걸린다. 이 값이 낮은 것만으로 발행량을 줄이지 않는다'),
-                  ('검색', '제목검색 10위 안 비율', round(sum(1 for x in b if (x.get('self_rank') or 99) <= 10) / len(b), 3), 0.6, 2, '제목 규칙(series-plan)·toprank 항목 채우기')]
+            M += [('검색', '색인율(당일 글 — 참고용)', round(sum(1 for x in b if x.get('indexed')) / len(b), 3), 0.3, 1, '색인은 하루쯤 걸린다. 이 값이 낮은 것만으로 발행량을 줄이지 않는다')]
+            if not rc:
+                M.append(('검색', '제목검색 10위 안 비율(당일 글 — 하루 지난 글이 없어 대신 씀)',
+                          round(sum(1 for x in b if (x.get('self_rank') or 99) <= 10) / len(b), 3), 0.6, 1,
+                          '색인 전이라 낮게 나온다 — 다음 날 다시 잰다'))
     vis = load(os.path.join(HERE, 'visitors_log.json'), {})
     if vis:
         days = sorted(vis); today_v = vis[days[-1]]['today']

@@ -7,11 +7,12 @@
 #   4) 조정  design.json(생성기가 읽는 값)을 그 방향으로 한 칸 움직인다. 한 번에 최대 3개만.
 #   5) 기록  무엇을 왜 바꿨는지, 지난번 조정 뒤 성과가 올랐는지 loop_log.json에 남긴다
 # 규칙: 한 번에 다 바꾸지 않는다(무엇이 효과였는지 알 수 없어서). 성과가 내려가면 되돌린다.
-import sys, os, re, json, glob, time, subprocess, statistics
+import sys, os, re, json, glob, time, subprocess, statistics, hashlib
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__)); R = os.path.join(HERE, 'research')
 DESIGN = os.path.join(HERE, 'design.json'); LOG = os.path.join(HERE, 'loop_log.json')
 SPEC = os.path.join(R, 'yt', 'design', 'spec.json')
+SPEC_FP = os.path.join(R, 'yt', 'design', 'spec.fingerprint.json')
 SAMPLE = os.path.join(R, 'yt', 'design', 'ours'); os.makedirs(SAMPLE, exist_ok=True)
 PY = [sys.executable]
 LOCK = os.path.join(HERE, '.loop.lock')
@@ -43,8 +44,37 @@ DEFAULT = {   # 생성기가 읽는 값. 처음 값은 2026-09-23 첫 측정에�
 }
 
 def sh(*a, timeout=1800):
-    r = subprocess.run(PY + list(a), capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=timeout, cwd=os.path.dirname(HERE))
-    return (r.stdout or '') + (r.stderr or '')
+    """시간이 넘으면 그때까지 받은 출력만 돌려준다.
+
+    예전에는 subprocess.run 의 TimeoutExpired 가 그대로 올라와 바퀴 전체가 죽었다. 수집처럼 오래 걸리는
+    일에 상한을 걸면 그 상한이 곧 바퀴를 죽이는 장치가 된다 — 수집은 다음 회차에 이어받으면 되는 일이다."""
+    try:
+        r = subprocess.run(PY + list(a), capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=timeout, cwd=os.path.dirname(HERE))
+        return (r.stdout or '') + (r.stderr or '')
+    except subprocess.TimeoutExpired as e:
+        got = (e.stdout or '') + (e.stderr or '')
+        if isinstance(got, bytes): got = got.decode('utf-8', 'ignore')
+        return got + ('\n[시간초과 %d초 — 여기까지만 받았다]' % timeout)
+
+def spec_fingerprint():
+    """경쟁 썸네일 측정이 이번에도 같은 답을 낼지 미리 알아보는 지문.
+
+    thumbstat 은 design/*/*.jpg 를 픽셀로 재어 spec.json 을 만든다. 같은 파일을 넣으면 같은 값이 나오는
+    순수 계산이라, 파일이 하나도 안 바뀌었으면 다시 재도 답이 같다. 그런데 89~95회차 일곱 바퀴가
+    전부 같은 296장을 다시 쟀다 — 수집은 12시간마다라 그 사이 파일이 늘지 않는다.
+    2026-09-25 실측: 재측정 한 번이 23.0초, 그날 95회차 한 바퀴 전체가 345초였다(6.7%).
+    지문은 파일 목록·크기·수정시각과 thumbstat.py 자신의 수정시각이다 — 재는 자가 바뀌면 다시 잰다."""
+    D = os.path.join(R, 'yt', 'design')
+    items = []
+    for f in sorted(glob.glob(os.path.join(D, '*', '*.jpg'))):
+        try: st = os.stat(f)
+        except OSError: continue
+        items.append((os.path.relpath(f, D).replace(os.sep, '/'), int(st.st_mtime), st.st_size))
+    try: ts = int(os.path.getmtime(os.path.join(HERE, 'thumbstat.py')))
+    except OSError: ts = 0
+    return {'n': len(items), 'thumbstat': ts,
+            'hash': hashlib.sha1(repr(items).encode('utf-8')).hexdigest()}
+
 
 def load(p, d):
     try: return json.load(open(p, encoding='utf-8'))
@@ -298,16 +328,33 @@ def main():
     step = design.get('step', 0) + 1
     did, blocked, capped = [], [], []
 
-    # 1) 수집 — 경쟁(하루 한 번이면 충분하므로 마지막 수집이 12시간 넘었을 때만)
-    last = log[-1]['at'] if log else '2000-01-01 00:00'
-    if time.time() - time.mktime(time.strptime(last, '%Y-%m-%d %H:%M')) > 12 * 3600:
-        out = sh(os.path.join(HERE, 'ytdesign.py'), '--all', '40', timeout=2400)
+    # 1) 수집 — 경쟁(하루 한 번이면 충분하므로 마지막 '수집'이 12시간 넘었을 때만)
+    # 2026-09-25에 찾았다: 이 문이 마지막 **수집** 시각이 아니라 마지막 **회차** 시각(log[-1]['at'])과
+    # 견주고 있었다. 이 루프는 두 시간마다 도니까 그 간격은 늘 2시간 안쪽이라 12시간을 영영 못 넘는다.
+    # 실측: 97회차를 도는 동안 '경쟁 수집'이 did 에 뜬 것은 **딱 한 번**(2026-09-23 18:02, 첫 바퀴)이고,
+    # design/*/meta.json 12개가 그때 이후 41시간째 그대로였다(영상 459편 고정).
+    # 그래서 89~97회차 아홉 바퀴가 같은 296장·같은 459개 제목에서 같은 답을 다시 뽑고 있었다 —
+    # 루프가 안 발전한 게 아니라 **새 재료가 한 번도 안 들어왔다**. 이제 수집 시각을 따로 적고 그것과 견준다.
+    lastcol = design.get('collected_at') or (log[0]['at'] if log else '2000-01-01 00:00')
+    if time.time() - time.mktime(time.strptime(lastcol, '%Y-%m-%d %H:%M')) > 12 * 3600:
+        # 상한 2400초(40분)는 회차 예산(loop 40분)과 같아서, 수집이 길어지면 바퀴가 통째로 예산을 넘긴다.
+        # 수집은 못 끝내도 다음 회차에 이어받으면 되는 일이라 1200초로 줄였다(나머지 단계가 약 310초).
+        out = sh(os.path.join(HERE, 'ytdesign.py'), '--all', '40', timeout=1200)
         did.append('경쟁 수집: ' + str(len(re.findall(r'구독', out))) + '채널')
+        design['collected_at'] = time.strftime('%Y-%m-%d %H:%M')
+    else:
+        did.append(f'경쟁 수집 건너뜀 — 마지막 수집 {lastcol} (12시간 안)')
     ours_before, ch_views = our_shorts_stats()
 
-    # 2) 측정
-    out = sh(os.path.join(HERE, 'thumbstat.py'), timeout=1200)
-    m = re.search(r'썸네일 (\d+) 장 측정', out); did.append(f'경쟁 썸네일 {m.group(1) if m else "?"}장 재측정')
+    # 2) 측정 — 경쟁 썸네일이 한 장도 안 바뀌었으면 다시 재지 않는다(같은 파일 → 같은 spec.json)
+    fp_now, fp_old = spec_fingerprint(), load(SPEC_FP, {})
+    if fp_now == fp_old and os.path.exists(SPEC):
+        did.append(f"경쟁 썸네일 {fp_now['n']}장 그대로 — 지난 측정값을 쓴다(재측정 건너뜀)")
+    else:
+        out = sh(os.path.join(HERE, 'thumbstat.py'), timeout=1200)
+        m = re.search(r'썸네일 (\d+) 장 측정', out); did.append(f'경쟁 썸네일 {m.group(1) if m else "?"}장 재측정')
+        if os.path.exists(SPEC):
+            json.dump(fp_now, open(SPEC_FP, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     spec = load(SPEC, {})
     # 2-b) 세 칸(위·가운데·아래)은 손잡이 하나를 나눠 쓰므로 밀지 않고 격자로 재서 고른다
     bands = {}

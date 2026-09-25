@@ -31,7 +31,7 @@
  "video": {
   "zoom": 0.0009
  },
- "step": 94,
+ "step": 97,
  "_memo": {
   "short.white.stroke_ratio=40": 0.0301,
   "long.yellow.yellow_bottom=1": 0.0526,
@@ -104,5 +104,6 @@
   "long.dark.bg_bright=1.7447@66ee7f": 0.295,
   "short.white.text_tint=0.7@f7521f": 0.0412,
   "short.white.text_tint=0.7@95f05f": 0.0412
- }
+ },
+ "collected_at": "2026-09-23 18:02"
 }

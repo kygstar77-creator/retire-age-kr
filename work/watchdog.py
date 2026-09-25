@@ -78,12 +78,27 @@ def main():
     rec['quiet'] = quiet
     if quiet: print(f'{hour}시 — 쉬는 시간대(2~7시)라 발행으로 메우지 않는다. 묶음 재고만 본다.')
 
+    # 0-b) 오늘 상한을 이미 채운 매체인가. naverpost 는 하루 상한(카페 4편)을 넘으면 발행을 거부하는데
+    # 감시기는 그걸 몰라 "빵꾸"로 보고 메우러 갔다. 2026-09-26 04:52 실측: 카페가 03:38에 4편째를
+    # 올려 그날치가 끝났는데도 76분 빵꾸로 알리고 브라우저까지 띄웠다가 day_guard 에 거부당했다.
+    # 그대로 두면 자정까지 매시 같은 헛발질을 한다. 상한에 닿은 매체는 알리지도, 메우지도 않는다.
+    capped = {}
+    for kind in ('blog', 'cafe'):
+        cap = getattr(N, 'DAY_CAP', {}).get(kind)
+        if cap is None: continue
+        try: n = N.published_today(kind)
+        except Exception: n = None
+        if n is not None and n >= cap:
+            capped[kind] = (n, cap)
+            print(f'{kind} 오늘 {n}편 — 상한 {cap}편을 채웠다. 빵꾸로 보지 않고 메우지도 않는다.')
+    rec['capped'] = {k: v[0] for k, v in capped.items()}
+
     # 1) 언제 마지막으로 올라갔나 — 실제 네이버에서 잰다(우리 기록이 아니라)
     for kind in ('blog', 'cafe'):
         m = N.last_published_minutes(kind)
         rec['late'][kind] = None if m is None else round(m)
         if m is None: rec['alert'].append(f'{kind} 최근 발행 시각을 못 쟀다(RSS·API 실패)')
-        elif m > LATE_MIN and not (quiet and kind == 'blog'):
+        elif m > LATE_MIN and not (quiet and kind == 'blog') and kind not in capped:
             rec['alert'].append(f'{kind} 마지막 발행이 {m/60:.1f}시간 전 — 회차를 놓쳤다')
 
     # 2) 미리 써 둔 묶음이 몇 개인가 — 0이면 다음 회차도 놓친다
@@ -127,6 +142,7 @@ def main():
     # 쉬는 시간대(2~7시)에 쉬는 것은 **블로그뿐**이다. 카페는 24시간 간다
     # (2026-09-25 사장님 "카페는 그대로 24시간 아니었어?" — 카페는 색인이 정상이라 줄일 이유가 없다).
     kinds = ['cafe'] if quiet else ['blog', 'cafe']
+    kinds = [k for k in kinds if k not in capped]
     # 막힌 묶음은 메우기 대상이 아니다. 2026-09-26 00:52 실측: 카페가 89분 빵꾸인데
     # 첫 묶음(avgo0925)이 AVGO 중복으로 막혀 있어 naverpost 가 거부했고, 뒤에 있던
     # 멀쩡한 cvx0926·pg0926 은 손도 못 댔다. 재고에서는 빼면서 메울 때는 첫 개를

@@ -186,6 +186,21 @@ BAND_GRID = {'long':  [0.20, 0.35, 0.50, 0.62, 0.72, 0.80],
 #   text_bot 0.0729/0.0821/0.1125/0.1259/0.1392/0.1464 · white 0.0851→0.0275
 BAND_KNOB2 = {'short': ('split_scale', [1.0, 1.3, 1.6, 2.0, 2.4, 2.8]),
               'long':  ('text_scale',  [0.55, 0.66, 0.75, 0.85, 1.0])}
+# 쇼츠 세 번째 손잡이 text_y. 2026-09-24에 "쇼츠에서 text_y 는 안 듣는다"고 떼어 낸 자리다(위 주석).
+# 그 판정은 옛 글자 지도로 잰 목표(mid 0.4241)에서 나왔고, 새 자는 목표가 정반대다(mid 0.0788 · bot 0.0338).
+# 2026-09-25 113회차에 다시 재 봤다(lines=3 · spread 0.3 · split 1.6 고정, 배경 3종 중앙값):
+#   text_y 0.20 err 1.1971 · 0.35 1.2487 · 0.41 1.2165 · 0.44 1.2165 · 0.46 1.0153 · 0.48 0.3690 · 0.50 0.9878
+#   0.48 에서 top 0.1300(목표 0.1186) · mid 0.0884(0.0788) · bot 0.0413(0.0338) — 세 칸이 전부 0.01 안에 든다.
+# 듣지 않는 손잡이가 아니었다. 다만 **최저점이 뾰족하다**: 0.46 과 0.50 은 1.0 근처인데 그 사이 0.48 만 0.37 이다.
+# 이유는 아랫줄 윗변이 가운데/아래 칸 경계(1280px)를 넘느냐 마느냐로 갈리기 때문이다 — 3px 움직이면 한 줄이
+# 통째로 다른 칸으로 센다. 그래서 격자를 0.02 간격으로 촘촘히 두고, 아래 grid_pick 에 반쪼개기(refine)를 넣었다.
+# 성긴 격자로는 이 골짜기를 그냥 건너뛴다(24칸 훑기에서 0.50 이 최선으로 보였던 이유).
+#
+# 같은 이유로 lines=2 로 되돌리는 길은 닫혔다. lines=3 은 옛 자(bot 목표 0.3093)에서 나온 값이라
+# 새 자에서는 근거가 없어졌다고 보고 113회차에 24칸(lines 2·3 × text_y 4 × spread 3)을 전부 그려 재 봤다.
+# lines=2 는 12칸 최선이 1.4697 로 lines=3 최선(0.9878)보다 나빴다 — 두 줄이면 아래 칸이 늘 0.0000 이고
+# (줄이 둘뿐이라 아래 칸에 들어갈 줄이 없다) 가운데 칸도 0 아니면 0.17 로 튄다. 되돌리지 않는다.
+BAND_KNOB3 = {'short': ('text_y', [0.20, 0.35, 0.44, 0.46, 0.48, 0.50, 0.62, 0.72])}
 # 격자 끝점에 최선이 붙으면 "유지(가장 작다)"는 수렴이 아니라 격자가 짧다는 뜻이다.
 # split_scale 은 72회차까지 늘 끝점 2.0 이 최선이었고(오차 1.0121→0.728→0.5784→0.2653, 계속 내려감)
 # 그릴 때 thumb.py 가 2.0 으로 깎고 있어 판형 오차가 0.2653 에 얼어 있었다(2026-09-24).
@@ -275,6 +290,25 @@ def grid_pick(design, spec, kind, knob, base_grid, did, blocked):
         measure(sorted(set(nxt)))
         if failed: break
         did.append(f'{kind}.{knob} 격자 끝점({best["v"]})에 최선이 붙어 한계 {hi_lim if nxt[0] > best["v"] else lo_lim} 쪽으로 {nxt} 를 더 재 봤다')
+    # 안쪽에서 최선이 나왔어도 '수렴'이 아니다 — 격자 사이에 더 깊은 골짜기가 있을 수 있다.
+    # 2026-09-25 113회차: 쇼츠 text_y 를 0.02 간격으로 재니 0.46 err 1.0153 · 0.48 0.3690 · 0.50 0.9878 이었다.
+    # 성긴 격자(0.44/0.50/0.62)로는 0.50 을 최선으로 골라 그 골짜기를 통째로 지나쳤다. 세 칸 오차는 줄의 윗변이
+    # 칸 경계(쇼츠 1280px)를 넘느냐로 갈려서, 손잡이가 몇 px만 움직여도 한 줄이 다른 칸으로 통째로 센다.
+    # 그래서 최선 양옆을 반으로 갈라 들어간다. 한 바퀴에 두 점(왼쪽·오른쪽 중간)만 재고,
+    # 그 바퀴에서 최선이 안 바뀌면 멈춘다 — 손잡이 하나당 최대 4장만 더 그린다(회차 시간을 지키려고).
+    for _ in range(2):
+        best, vs = pick(), sorted(t['v'] for t in table)
+        i = vs.index(best['v'])
+        mids = []
+        for j in (i - 1, i + 1):
+            if 0 <= j < len(vs):
+                m = round((best['v'] + vs[j]) / 2, 4)
+                if m != best['v'] and not any(abs(t['v'] - m) < 1e-9 for t in table): mids.append(m)
+        if not mids: break
+        measure(sorted(set(mids)))
+        if failed: break
+        if pick()['v'] == best['v']: break      # 갈라도 최선이 그대로다 = 이 자리가 진짜 골짜기 바닥
+        did.append(f'{kind}.{knob} 격자 사이를 갈라 더 나은 자리를 찾았다: {best["v"]}(오차 {best["err"]}) → {pick()["v"]}({pick()["err"]})')
     best = pick()
     vs = [t['v'] for t in table]
     if abs(best['v'] - vs[-1]) < 1e-9 and hi_lim is not None and abs(vs[-1] - hi_lim) < 1e-9:
@@ -305,6 +339,10 @@ def tune_bands(design, spec, kind, did, blocked):
         k2, g2 = BAND_KNOB2[kind]
         t2 = grid_pick(design, spec, kind, k2, g2, did, blocked)
         if t2: out[k2] = t2
+    if kind in BAND_KNOB3 and t1:
+        k3, g3 = BAND_KNOB3[kind]
+        t3 = grid_pick(design, spec, kind, k3, g3, did, blocked)
+        if t3: out[k3] = t3
     return out
 
 

@@ -1,6 +1,6 @@
 {
  "short": {
-  "text_y": 0.5019,
+  "text_y": 0.48,
   "bg_bright": 0.36,
   "panel_alpha": 150.0,
   "yellow_bottom": 0,
@@ -8,7 +8,7 @@
   "stroke_ratio": 40,
   "yellow_frac": 0.0997,
   "text_scale": 1.0,
-  "text_spread": 0.45,
+  "text_spread": 0.3,
   "bg_sat": 1.4056,
   "text_tint": 0.7,
   "lines": 3,
@@ -31,7 +31,7 @@
  "video": {
   "zoom": 0.0009
  },
- "step": 111,
+ "step": 113,
  "_memo": {
   "short.white.stroke_ratio=40": 0.0301,
   "long.yellow.yellow_bottom=1": 0.0526,
@@ -116,7 +116,8 @@
   "short.white.text_tint=0.7@258f43": 0.0327,
   "long.yellow.yellow_frac=0.4769@be1c35": 0.008,
   "long.contrast.panel_alpha=212@8f4d39": 0.2694,
-  "long.contrast.panel_alpha=230@8f4d39": 0.2778
+  "long.contrast.panel_alpha=230@8f4d39": 0.2778,
+  "short.white.text_tint=0.7@e6d71f": 0.0327
  },
  "collected_at": "2026-09-25 11:58"
 }

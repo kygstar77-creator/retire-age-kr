@@ -7,7 +7,16 @@
 #      → 오후 내내 0편인데 아무도 몰랐다. 검사(health.py)가 루틴 안에서만 돌았기 때문이다.
 #   2) 대기 묶음이 0이면 회차가 처음부터 글을 쓰다 40분 창을 넘겨 그냥 건너뛴다(16시·17시).
 # 그래서 감시기는 루틴과 별개로 매시 돌면서, 사람이 보지 않아도 빵꾸를 메우고 기록을 남긴다.
-import sys, os, re, json, time, subprocess
+import sys, os, re, io, json, time, subprocess
+
+def kill_tree(pid):
+    """자식(크로미움)까지 끊는다. Popen.kill() 은 파이썬 하나만 죽여서 손자가 남는다."""
+    try:
+        subprocess.run(['taskkill', '/PID', str(pid), '/T', '/F'],
+                       capture_output=True, timeout=60)
+    except Exception:
+        try: os.kill(pid, 9)
+        except Exception: pass
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
@@ -125,10 +134,23 @@ def main():
                     rec['did'].append(f'{kind} 올리기 전 교차검증 실행')
                 except Exception as e:
                     rec['did'].append(f'{kind} 올리기 전 교차검증 실패(발행은 계속): {str(e)[:80]}')
+            # 파이프로 받지 않고 파일로 받는다. 2026-09-25 05:52·08:12·(그 전 08:30 회차가 기록)
+            # 두 번 다 감시기가 메우기 실패 뒤 영영 안 끝나 빵꾸를 아무에게도 못 알렸다.
+            # 원인: capture_output 파이프를 naverpost.py 의 손자(크로미움)까지 물려받아,
+            # timeout 으로 naverpost.py 만 죽여도 파이프가 안 닫혀 communicate() 가 무한 대기한다.
+            # 파일로 받으면 파이프가 없어 timeout 이 제때 돌아오고, 자식 트리는 taskkill 로 정리한다.
+            out = ''
+            logf = os.path.join(HERE, 'research', f'_fill_{kind}.log')
             try:
-                r = subprocess.run([sys.executable, os.path.join(HERE, 'naverpost.py'), kind, pkg],
-                                   capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=1500)
-                out = ((r.stdout or '') + (r.stderr or '')).strip()
+                with open(logf, 'w', encoding='utf-8') as fh:
+                    pr = subprocess.Popen([sys.executable, os.path.join(HERE, 'naverpost.py'), kind, pkg],
+                                          stdout=fh, stderr=subprocess.STDOUT)
+                    try:
+                        pr.wait(timeout=1500)
+                    except subprocess.TimeoutExpired:
+                        kill_tree(pr.pid)
+                        rec['did'].append(f'{kind} 메우기 25분 초과 — 자식까지 끊었다')
+                out = io.open(logf, encoding='utf-8', errors='ignore').read().strip()
             except Exception as e:
                 rec['did'].append(f'{kind} 메우다 멈춤: {str(e)[:100]}'); continue
             u = re.search(r'URL (\S+)', out)

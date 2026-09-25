@@ -415,7 +415,7 @@ def last_published_minutes(kind):
     except Exception as e:
         print('최근 발행 시각 확인 실패:', e); return None
 
-# 회차 루틴이 --wait를 주면 거부하는 대신 남은 시간만큼 기다렸다 올린다.
+# 거부하는 대신 남은 시간만큼 기다렸다 올린다(기본 동작. --nowait 로만 끈다).
 # 왜 필요한가(2026-09-24 07시): 앞 회차가 07:13에 블로그를 올려서 07:14 발행이 거부됐고,
 # 20분 뒤로 잡아 07:33에 다시 걸었더니 '20분 전'으로 또 경계에 걸렸다. 회차마다 사람이
 # 시각을 계산해 재시도를 거는 방식은 이렇게 한 번씩 빗나간다. 기다리는 쪽이 0편을 막는다.
@@ -853,9 +853,25 @@ def main():
                     print('올리지 않는다 — 글쓰기가 인증에서 막힌 지 35분이 안 됐다:', af[:200])
                     print('사장님이 `py -3.12 work/naverpost.py login` 을 한 번 하면 바로 풀린다.')
                     sys.exit(2)
-            args = [a for a in sys.argv[2:] if a != '--wait']
-            wait = '--wait' in sys.argv
+            # 기다리기가 기본이다(2026-09-25 13시 회차). --wait 라는 손잡이는 2026-09-24에
+            # 만들어 뒀는데 회차 루틴 어디에도 그 손잡이를 주라는 말이 없어 한 번도 켜지지 않았다.
+            # 그래서 앞 회차가 늦게 끝나면 다음 회차가 그대로 거부당해 0편이 됐다 — 오늘만 6회차.
+            # 끄고 싶을 때만 --nowait 를 붙인다.
+            args = [a for a in sys.argv[2:] if a not in ('--wait', '--nowait')]
+            wait = '--nowait' not in sys.argv
             pkg = os.path.abspath(args[0])
+            # 사진이 한 장도 없는 묶음은 올리지 않는다(2026-09-25 13시 회차).
+            # cma1007이 order.txt에 img 줄이 하나도 없는 채로 카페에 나갔다 — 사진 0장.
+            # 같은 날 나간 다른 카페 글은 모두 3~4장이었으니 규칙이 아니라 묶음 하나가 빠진 것이고,
+            # 편집기는 본문만 보고 통과시켜 아무도 몰랐다. 여기서 세는 쪽이 싸다.
+            need = 4 if cmd == 'blog' else 3
+            have = sum(1 for ln in open(os.path.join(pkg, 'order.txt'), encoding='utf-8')
+                       if ln.strip().startswith('img/'))
+            if have < need and '--noimg-ok' not in sys.argv:
+                print(f'사진이 {have}장뿐이다 — {cmd}는 {need}장 이상 있어야 올린다.')
+                print(f'  PYTHONPATH=work py -3.12 work/blogimg.py 로 그림을 만들고 order.txt에 img/ 줄을 넣은 뒤 다시 올린다.')
+                print('  그림 없이 올려야 할 이유가 있으면 --noimg-ok 를 붙인다.')
+                sys.exit(4)
             title = open(os.path.join(pkg, 'title.txt'), encoding='utf-8').read().strip()
             # 올리기 전에 같은 제목이 이미 올라가 있는지 본다. published.txt가 없어도 글은 올라가 있을 수 있다.
             up = already_up(cmd, title)

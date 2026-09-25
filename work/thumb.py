@@ -50,8 +50,8 @@ def cfg(kind):
     """loop.py가 매 회차 갱신하는 design.json. 없으면 첫 측정값(2026-09-23 경쟁 상위 중앙값)"""
     try: d = json.load(open(os.path.join(HERE, 'design.json'), encoding='utf-8'))
     except Exception: d = {}
-    base = {'long': {'text_y': 0.72, 'bg_bright': 0.45, 'panel_alpha': 150, 'yellow_bottom': 1, 'yellow_frac': 1.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'tint_v': 1.0},
-            'short': {'text_y': 0.52, 'bg_bright': 0.30, 'panel_alpha': 150, 'yellow_bottom': 0, 'yellow_frac': 0.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'lines': 3, 'split_scale': 2.0}}[kind]
+    base = {'long': {'text_y': 0.72, 'bg_bright': 0.45, 'panel_alpha': 150, 'yellow_bottom': 1, 'yellow_frac': 1.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'panel_pad': 1.0, 'panel_blur': 28},
+            'short': {'text_y': 0.52, 'bg_bright': 0.30, 'panel_alpha': 150, 'yellow_bottom': 0, 'yellow_frac': 0.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'panel_pad': 1.0, 'panel_blur': 28, 'lines': 3, 'split_scale': 2.0}}[kind]
     base.update(d.get(kind, {})); return base
 
 def disp(sz):
@@ -180,11 +180,16 @@ def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
         ys = [max(int(H * 0.04), m0 - lhs[0] - off), m0, min(H - lhs[2] - int(H * 0.05), m0 + lhs[1] + off)]
     # 글자 뒤 어둡게 — 벌어졌으면 줄마다 따로, 붙어 있으면 한 덩이로
     sh = Image.new('RGBA', (W, H), (0, 0, 0, 0)); dsh = ImageDraw.Draw(sh)
+    # panel_pad: 글자 위아래로 띠를 얼마나 더 벌리나(1.0 = 옛 0.35/0.3). panel_blur: 띠 가장자리 번짐 반경.
+    # 2026-09-25 실측으로 단 손잡이다 — panel_alpha 는 롱폼 대비가 듣지 않았다(150→0.2736, 182→0.2804, 230→0.2778).
+    # 번짐 28 이 띠를 완만한 그라데이션으로 퍼뜨려, 알파를 올려도 어두운 픽셀이 한 곳에 안 모였던 것이다.
+    pp = max(0.2, min(3.0, float(c.get('panel_pad', 1.0))))
+    pb = max(0.0, min(60.0, float(c.get('panel_blur', 28))))
     if off > lhs[0] * 0.4:
-        for y, l in zip(ys, lhs): dsh.rectangle([0, y - int(l * 0.35), W, y + l + int(l * 0.3)], fill=(0, 0, 0, int(c['panel_alpha'])))
+        for y, l in zip(ys, lhs): dsh.rectangle([0, y - int(l * 0.35 * pp), W, y + l + int(l * 0.3 * pp)], fill=(0, 0, 0, int(c['panel_alpha'])))
     else:
-        dsh.rectangle([0, ys[0] - int(lhs[0] * 0.35), W, ys[-1] + lhs[-1] + int(lhs[-1] * 0.3)], fill=(0, 0, 0, int(c['panel_alpha'])))
-    im = Image.alpha_composite(im.convert('RGBA'), sh.filter(ImageFilter.GaussianBlur(28))).convert('RGB'); dr = ImageDraw.Draw(im)
+        dsh.rectangle([0, ys[0] - int(lhs[0] * 0.35 * pp), W, ys[-1] + lhs[-1] + int(lhs[-1] * 0.3 * pp)], fill=(0, 0, 0, int(c['panel_alpha'])))
+    im = Image.alpha_composite(im.convert('RGBA'), sh.filter(ImageFilter.GaussianBlur(pb))).convert('RGB'); dr = ImageDraw.Draw(im)
     xs = [(W - dr.textlength(t, font=f)) / 2 for t, f in zip(parts, fonts)]
     for t, f, x, y, z in zip(parts, fonts, xs, ys, szs):
         stroked(dr, (x, y), t, f, WHITE, max(3, int(z // max(6, c['stroke_ratio']))))   # 외곽선은 줄마다 한 번만

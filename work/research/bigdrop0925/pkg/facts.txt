@@ -1,0 +1,60 @@
+# 사실표 — 시총 상위 100 중 올해 낙폭 큰 종목 (2026-09-25 작성, 블로그)
+
+[수집 방법]
+1. 나스닥 스크리너 API에서 미국 상장 7,028종목을 받았다(2026-09-25).
+2. 시가총액 순으로 줄 세워 상위 100곳을 골랐다(1위 NVDA 5조 4,300억달러, 100위 UNP 1,640억달러).
+3. 각 종목의 2025년 마지막 거래일 종가와 최신 종가를 Yahoo Finance chart API로 받아 올해 등락률을 계산했다.
+   96곳에서 두 값이 다 받아졌다. 기준일 2025-12-31 · 최신 2026-09-24 종가.
+
+[전체 그림]
+· 96곳 등락률 중앙값 +16.6%
+· 마이너스인 곳 22곳 (96곳 중)
+· 20% 넘게 내린 곳 6곳
+· S&P 500 6,845.50 → 7,704.13 = +12.54%
+· 나스닥 종합 23,241.99 → 26,939.37 = +15.91%
+· 다우 48,063.29 → 51,349.98 = +6.84%
+
+[가장 많이 내린 12곳]
+1. ORCL Oracle Corporation Common Stock — -28.41% · 194.91 → 139.54달러 · 시총 437십억달러 · Technology
+2. BABA Alibaba Group Holding Limited American Depositary Shares each representing eight Ordinary share — -24.53% · 146.58 → 110.63달러 · 시총 268십억달러 · Consumer Discretionary
+3. NVO Novo Nordisk A/S Common Stock — -24.1% · 50.88 → 38.62달러 · 시총 169십억달러 · Health Care
+4. NFLX Netflix Inc. Common Stock — -23.51% · 93.76 → 71.72달러 · 시총 297십억달러 · Consumer Discretionary
+5. IBM International Business Machines Corporation Common Stock — -23.34% · 296.21 → 227.06달러 · 시총 219십억달러 · Technology
+6. MCD McDonald's Corporation Common Stock — -22.45% · 305.63 → 237.02달러 · 시총 169십억달러 · Consumer Discretionary
+7. ABT Abbott Laboratories Common Stock — -19.33% · 125.29 → 101.07달러 · 시총 179십억달러 · Health Care
+8. TMUS T-Mobile US Inc. Common Stock — -18.56% · 203.04 → 165.35달러 · 시총 178십억달러 · Telecommunications
+9. AXP American Express Company Common Stock — -17.38% · 369.95 → 305.66달러 · 시총 204십억달러 · Finance
+10. TSLA Tesla Inc. Common Stock — -15.96% · 449.72 → 377.94달러 · 시총 1501십억달러 · Industrials
+11. HD Home Depot Inc. (The) Common Stock — -15.09% · 344.1 → 292.18달러 · 시총 296십억달러 · Consumer Discretionary
+12. SAP SAP  SE ADS — -13.91% · 242.91 → 209.11달러 · 시총 259십억달러 · Technology
+
+[가장 많이 오른 8곳]
+1. SNDK Sandisk Corporation Common Stock — +638.74% · 237.38 → 1753.62달러 · Technology
+2. DELL Dell Technologies Inc. Class C Common Stock  — +325.82% · 125.88 → 536.02달러 · Technology
+3. MU Micron Technology Inc. Common Stock — +278.59% · 285.41 → 1080.53달러 · Technology
+4. INTC Intel Corporation Common Stock — +245.23% · 36.9 → 127.39달러 · Technology
+5. STX Seagate Technology Holdings PLC Ordinary Shares (Ireland) — +228.96% · 275.39 → 905.92달러 · Technology
+6. MRVL Marvell Technology Inc. Common Stock — +204.72% · 84.98 → 258.95달러 · Technology
+7. AMD Advanced Micro Devices Inc. Common Stock — +193.83% · 214.16 → 629.26달러 · Technology
+8. ARM Arm Holdings plc American Depositary Shares — +180.25% · 109.31 → 306.34달러 · Technology
+
+[본문에서 쓴 환산값]
+· 테슬라 시총 1,501십억달러 = 1조 5,010억달러 (96곳 중 최대)
+· 인텔 2025년 말 종가 36.9달러 = 36.90달러
+
+[출처 주소]
+· 나스닥 스크리너: https://api.nasdaq.com/api/screener/stocks
+· Yahoo Finance chart API: https://query1.finance.yahoo.com/v8/finance/chart/
+· 지수 기호: ^GSPC(S&P 500) · ^IXIC(나스닥 종합) · ^DJI(다우존스)
+
+[하위 10곳 업종 분포]
+경기소비재 3 · 기술 2 · 헬스케어 2 · 통신 1 · 금융 1 · 산업재 1
+
+[확인 안 한 것]
+· 왜 내렸는지·올랐는지의 원인 — 종목별로 확인하지 않았다. 숫자만 세었다.
+· 앞으로의 방향 — 알 수 없다.
+· 배당을 포함한 총수익이 아니라 주가만으로 계산한 등락률이다.
+
+[출처]
+· 나스닥 스크리너 API, 2026-09-25 수집
+· Yahoo Finance chart API 종가, 2026-09-25 조회 (기준 2025-12-31, 최신 2026-09-24)

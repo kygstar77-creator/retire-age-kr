@@ -743,11 +743,34 @@ def main():
             except Exception: pass
             ctx = launch(p, headless=False); page = ctx.new_page()
             page.goto('https://nid.naver.com/nidlogin.login?url=https://www.naver.com/')
+            page.wait_for_timeout(2500)
+            # '로그인 상태 유지'를 미리 켜 둔다. 이게 꺼져 있으면 네이버가 만료일 없는 **세션 쿠키**를 줘서
+            # 브라우저를 닫는 순간 사라진다. 우리는 파일로 되살려 쓰지만 하루이틀이면 풀린다 —
+            # 2026-09-25에 카페가 11시간, 전날 블로그가 2시간 멈춘 원인이 전부 이것이었다.
+            # 비밀번호는 사람이 친다. 여기서는 체크박스만 건드린다.
+            try:
+                box = page.locator('#keep, input[name="nvlong"], label:has-text("로그인 상태 유지") input').first
+                if box.count():
+                    if not box.is_checked():
+                        box.check(force=True); page.wait_for_timeout(300)
+                    print('로그인 상태 유지: 켬' if box.is_checked() else '로그인 상태 유지: 못 켬(직접 눌러 주세요)')
+                else:
+                    page.get_by_text('로그인 상태 유지', exact=False).first.click(); page.wait_for_timeout(300)
+                    print('로그인 상태 유지: 눌렀다(글자 클릭)')
+            except Exception as e:
+                print('로그인 상태 유지를 못 켰다 — 창에서 직접 체크해 주세요:', repr(e)[:80])
             print('브라우저 창에서 네이버에 로그인하세요. 로그인이 확인되면 자동으로 닫힙니다(최대 10분).')
             for _ in range(120):
                 page.wait_for_timeout(5000)
                 if 'nidlogin' not in page.url and logged_in(page):
                     ctx.storage_state(path=STATE)
+                    # 알림 쿨다운 도장을 여기서 지운다. 안 지우면 방금 푼 로그인이 6시간 안에 또 막혀도
+                    # alert_login이 쿨다운에 걸려 조용히 넘어간다(2026-09-25 11:15 실측:
+                    # 10:32에 찍힌 도장이 11:15 로그인 뒤에도 그대로 남아 있었다).
+                    try:
+                        stamp = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research', '.login_alert')
+                        os.path.exists(stamp) and os.remove(stamp)
+                    except Exception: pass
                     print('로그인 확인. 쿠키 저장:', STATE); ctx.close(); return
             print('로그인 확인 실패(시간 초과)'); ctx.close(); sys.exit(1)
         ctx = launch(p, headless=(cmd != 'shot' and os.environ.get('NAVER_HEADED') != '1'))

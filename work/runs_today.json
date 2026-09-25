@@ -158,8 +158,8 @@
     "url": "https://blog.naver.com/kygstar7777/224422355827"
    },
    "cafe": {
-    "title": "마이크로소프트가 배당을 7센트 올렸다, 12월 10일에 들어오는 돈",
-    "url": "https://cafe.naver.com/ca-fe/cafes/31789001/articles/86"
+    "title": "코카콜라 배당 64년 연속 인상, 100주 가진 사람이 1년에 받는 세후 금액은?",
+    "url": "https://cafe.naver.com/ca-fe/cafes/31789001/articles/87"
    },
    "note": "로그인 13시간 만료가 풀려(check=로그인됨) 오늘 첫 발행. 블로그 law1001 verify OK 1,816자·사진 4장. 카페는 동시 회차가 11:30에 msftdiv를 올려(가드가 10분 전으로 거부 — 정상 동작) 이 시각 몫이 찼고, 남이 올린 그 글도 verify OK 1,580자·사진 3장으로 대조했다. kodiv는 대기로 남겼다(회차당 카페 1편 초과 금지). 검증 경로: 두 묶음 모두 이전 회차 selfcheck 완료 — check_self.txt 지적 없음(제미나이 할당량 문제로 selfcheck 경로). 자료조사: 이번 회차는 새 글을 쓰지 않았다(대기 블로그 5개·카페 4개로 각 3개 이상 유지). 개선: naverpost.py 카페 가드가 queryType=lastArticle로 카페 전체 최신 글을 읽어 회원 글까지 우리 발행으로 세던 것을 CAFE_NICK(파이어맵) 글쓴이 필터 + perPage 30으로 고쳤다. 회원이 늘면 남의 글에 막혀 0편이 나는 경로였다."
   }

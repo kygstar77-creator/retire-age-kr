@@ -102,6 +102,10 @@ def steps(path, title, items, note=None, src=None):
     """번호가 붙은 절차 카드. 표와 달리 순서를 보여 줄 때."""
     W=900; pad=36; tx=pad+62; iw=W-pad-tx
     hf=F(23,True); df=F(19); tf=F(30,True); nf=F(18); sf=F(16)
+    # 2026-09-25: items 에 (제목, 설명) 쌍이 아니라 문자열만 넘기면 "too many values to unpack"
+    # 으로 죽었다. 이미 그린 장수만 남고 나머지가 안 그려져, 회차가 원인을 찾느라 시간을 썼다.
+    # 문자열 한 줄만 넘겨도 설명 없는 항목으로 받아 준다.
+    items = [(it, '') if isinstance(it, str) else (tuple(it) + ('',))[:2] for it in items]
     body=[(wrap(h,hf,iw), wrap(dsc,df,iw) if dsc else []) for h,dsc in items]
     heights=[max(86, 22+len(hl)*30+(len(dl)*26 if dl else 0)+18) for hl,dl in body]
     tl=wrap(title,tf,W-pad*2); nl=wrap(note,nf,W-pad*2) if note else []; sl=wrap(src,sf,W-pad*2) if src else []

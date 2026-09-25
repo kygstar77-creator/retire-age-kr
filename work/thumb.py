@@ -50,8 +50,8 @@ def cfg(kind):
     """loop.py가 매 회차 갱신하는 design.json. 없으면 첫 측정값(2026-09-23 경쟁 상위 중앙값)"""
     try: d = json.load(open(os.path.join(HERE, 'design.json'), encoding='utf-8'))
     except Exception: d = {}
-    base = {'long': {'text_y': 0.72, 'bg_bright': 0.45, 'panel_alpha': 150, 'yellow_bottom': 1, 'yellow_frac': 1.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'panel_pad': 1.0, 'panel_blur': 28, 'bot_scrim': 0.0, 'scrim_a': 110, 'sub_scale': 1.0},
-            'short': {'text_y': 0.52, 'bg_bright': 0.30, 'panel_alpha': 150, 'yellow_bottom': 0, 'yellow_frac': 0.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'panel_pad': 1.0, 'panel_blur': 28, 'bot_scrim': 0.0, 'scrim_a': 110, 'lines': 3, 'split_scale': 2.0}}[kind]
+    base = {'long': {'text_y': 0.72, 'bg_bright': 0.45, 'panel_alpha': 150, 'yellow_bottom': 1, 'yellow_frac': 1.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'bg_contrast': 1.0, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'panel_pad': 1.0, 'panel_blur': 28, 'bot_scrim': 0.0, 'scrim_a': 110, 'sub_scale': 1.0},
+            'short': {'text_y': 0.52, 'bg_bright': 0.30, 'panel_alpha': 150, 'yellow_bottom': 0, 'yellow_frac': 0.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'bg_contrast': 1.0, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'panel_pad': 1.0, 'panel_blur': 28, 'bot_scrim': 0.0, 'scrim_a': 110, 'lines': 3, 'split_scale': 2.0}}[kind]
     base.update(d.get(kind, {})); return base
 
 def disp(sz):
@@ -112,6 +112,12 @@ def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
         # 배경 채도. 0.8로 박아 두었던 값을 손잡이로 바꿨다 — 쇼츠 채도가 우리 0.187 vs 경쟁 0.399로
         # 여섯 회차 연속 "그리기 손잡이 없음"으로 막혀 있었다(2026-09-23 step25~30).
         im = ImageEnhance.Color(im).enhance(max(0.0, min(3.0, float(c.get('bg_sat', 0.8)))))
+        # 배경 대비. 2026-09-26: 롱폼 contrast 가 '한계 확정'으로 닫혀 있었는데, 그 한계는 글자 뒤 띠
+        # 손잡이(panel_alpha 등) 쪽 한계였다. 정작 차이가 어디서 오는지는 같은 줄에 적혀 있었다 —
+        # 배경(우리 0.2573 vs 경쟁 0.3222). 배경을 만지는 손잡이는 밝기·채도뿐이라 대비는 손댈 길이 없었다.
+        # 배경을 '누르는' 손잡이(bg_flat)는 자료가 안 보이게 되니 안 된다고 이미 판단했지만(2026-09-24),
+        # 올리는 쪽은 그 판단에 안 걸린다 — 자료가 더 또렷해진다. 1.0 은 원본 그대로라 기본값이 무해하다.
+        im = ImageEnhance.Contrast(im).enhance(max(0.4, min(3.0, float(c.get('bg_contrast', 1.0)))))
     else:
         v = int(255 * c['bg_bright'] * 0.35)
         im = Image.new('RGB', (W, H), (max(8, v - 6), max(9, v - 4), max(14, v + 6)))

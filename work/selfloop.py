@@ -30,7 +30,7 @@ def load(p, d=None):
 AUTO = {
     '경쟁 대비 미해결 차이 수': lambda: sh(os.path.join(HERE, 'loop.py')),
     '올린 숏폼 수': None,          # 대본을 Gemini가 써야 해서 회차 루틴이 한다
-    '블로그 오늘 방문': None,
+    '블로그 하루 방문(마지막 완결일)': None,   # 방문은 기계가 못 올린다 — 색인·순위·글이 올린다
 }
 
 def _profile_locked_by_live():

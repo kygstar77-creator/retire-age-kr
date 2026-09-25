@@ -29,12 +29,13 @@
   "text_spread": 0.0,
   "bot_scrim": 0.5,
   "scrim_a": 110,
-  "sub_scale": 0.9
+  "sub_scale": 0.9,
+  "bg_contrast": 1.0
  },
  "video": {
   "zoom": 0.0009
  },
- "step": 128,
+ "step": 131,
  "_memo": {
   "short.white.stroke_ratio=40": 0.0301,
   "long.yellow.yellow_bottom=1": 0.0526,
@@ -126,7 +127,9 @@
   "long.contrast.panel_alpha=230@ad44f7": 0.267,
   "long.contrast.panel_alpha=230@3650bd": 0.2637,
   "long.contrast.panel_alpha=230@45af3d": 0.2597,
-  "long.contrast.panel_alpha=230@41543a": 0.2606
+  "long.contrast.panel_alpha=230@41543a": 0.2606,
+  "long.contrast.bg_contrast=1.0@e37796": 0.2606,
+  "long.sat.bg_sat=1.4032@60c141": 0.5826
  },
  "collected_at": "2026-09-26 01:57"
 }

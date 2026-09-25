@@ -193,6 +193,21 @@ def main(pkg):
                               r'보건복지부|국민연금|ProShares|Yahoo|Vanguard|Invesco|Schwab|JPMorgan|미래에셋|삼성자산|법령|공시', facts, re.I)))
     if urls + orgs < 3: problems.append(('출처', 0, f'출처가 URL {urls}개 + 기관 {orgs}곳뿐 — 최소 3개'))
 
+    # 4) 주제축 이름
+    # 2026-09-25: 규격 밖 축은 pick.py 가 발행 뒤에야 알려 줬고, 그동안 그 묶음은 축 상한에서 빠져
+    # 하루 6편 제한이 헐거워졌다. 발행 전에 도는 이 검사에서 먼저 잡는다.
+    try:
+        import axisname
+        ax = os.path.join(pkg, 'axis.txt')
+        raw = open(ax, encoding='utf-8').read().strip() if os.path.exists(ax) else ''
+        if not raw:
+            problems.append(('축', 0, 'pkg/axis.txt 가 없거나 비었다 — pick.py 축 상한에서 빠진다'))
+        elif axisname.off_spec(raw):
+            problems.append(('축', 0, f'축 이름 "{raw}"가 규격 밖 — {"|".join(axisname.CANON)} 중 하나로 고치거나 '
+                                     f'axisname.ALIAS 에 접는 규칙을 넣는다'))
+    except Exception as e:
+        problems.append(('축', 0, f'축 이름 검사 실패: {e}'))
+
     out = [f'# 자체 검증 (제미나이 할당량 없을 때 쓰는 대체 검증)',
            f'# 묶음: {os.path.basename(os.path.dirname(pkg))} · 종류: {kind} · 문장 {n}개 · 기준 출처: cafe_style/benchmark_2026-09-23.md', '']
     if not problems: out.append('지적 없음')

@@ -19,10 +19,44 @@ def f_body(sz, bold=False):
 # 표시용 글꼴(BlackHanSans)에 없는 글자는 **아무 자리도 안 차지하고 조용히 사라진다**.
 # 2026-09-24 화면 검증에서 확인: '전용 53.16㎡ 실거래' 가 '전용 53.16  실거래' 로 나왔다.
 # 값·제목은 전부 이 글꼴로 그리므로, 없는 글자는 읽을 수 있는 글자로 바꿔 둔다.
-DISP_SUB = {'㎡': 'm2', '㎥': 'm3', '²': '2', '³': '3', '℃': 'C', '№': 'No'}
+DISP_SUB = {'㎡': 'm2', '㎥': 'm3', '²': '2', '³': '3', '℃': 'C', '№': 'No',
+            # 2026-09-26 화면 검증에서 또 걸렸다. 제목 '배당률 — 버라이즌과 미국 리츠 11곳'의
+            # em대시가 통째로 사라져 '배당률    버라이즌과'로 나왔다.
+            # 글꼴에 있는지 폭(textlength)으로는 알 수 없다 — 없는 글자도 .notdef 폭을 돌려준다.
+            # 실제로 그려 보고(getbbox) 판정해 아래 표를 만들었다. 중점(·)도 안 그려진다.
+            '—': '-', '–': '-', '―': '-', '─': '-', '‐': '-', '‑': '-',
+            '…': '...', '·': '.', '±': '+-', '→': '>', '←': '<', '↑': '^', '↓': 'v',
+            '≥': '>=', '≤': '<=', '≒': '=', '～': '~', '％': '%', '￦': 'W', '°': '도',
+            '※': '*', '★': '*', '☆': '*', '◆': '*', '●': '*', '■': '*', '▲': '^', '▶': '>', '◀': '<'}
 
-def disp_safe(t):
+# 표에 없는 글자가 또 조용히 사라지는 것을 막는다. 실제로 그려 보고 비어 있으면 알린다.
+_MISS_CACHE = {}
+
+def warn_missing(text, font, where=''):
+    """표시용 글꼴에 없어 안 그려질 글자를 찾아 알린다(그리지는 않는다)."""
+    bad = []
+    for ch in set(str(text)):
+        if ch.isspace() or ch in _MISS_CACHE and not _MISS_CACHE[ch]:
+            continue
+        if ch not in _MISS_CACHE:
+            im = Image.new('L', (160, 160), 0)
+            ImageDraw.Draw(im).text((30, 30), ch, font=font, fill=255)
+            _MISS_CACHE[ch] = im.getbbox() is None
+        if _MISS_CACHE[ch]:
+            bad.append(ch)
+    if bad:
+        print('경고: 글꼴에 없어 안 그려지는 글자 %s %s — DISP_SUB에 넣어라'
+              % (''.join(sorted(bad)), ('(' + where + ')') if where else ''))
+    return bad
+
+
+def disp_safe(t, where=''):
+    t = str(t)
     for a, b in DISP_SUB.items(): t = t.replace(a, b)
+    try:
+        warn_missing(t, f_disp(40), where)      # 치환하고도 남은 글자가 있으면 알린다
+    except Exception:
+        pass
     return t
 
 

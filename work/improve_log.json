@@ -103,5 +103,12 @@
   "task": "E",
   "did": "재고 채우기 먼저: 블로그 offitbl0925(서울·경기 오피스텔 798곳 실거래 수익률, offitable.py)·카페 ccdist0925(KODEX 커버드콜 11종 분배금, etfdist.py) 완성 묶음 2개를 만들어 대기 블로그 3·카페 3 달성. 둘 다 readcheck 0건·selfcheck 사실 0건. 안 쓰던 도구 offitable.py를 돌려 2026-09-25_전체.md 생성(798곳·중앙값 5.13%·검산 20줄 일치). ytlearn.py를 청약·재개발·월배당·달러 투자·절세 연금으로 돌려 lessons_2026-09-25.md(채널 23·제목 345개) 생성하고 writing-lessons.md에 3줄, topic-ideas.md에 3건 적음. 도구 고침: selfcheck.py 기관 정규식이 정식 명칭('국토교통부')을 못 잡아 출처를 다 적고도 '기관 0곳'이 뜨던 것 수정(약칭·정식명 같이 세고 중복은 접음). 네이버 공식 블로그 스팸 사례(2026-07-06)·AI 콘텐츠 가이드(2026-05-26) 원문 확인 — 둘 다 이미 메모리에 반영돼 있어 갱신할 새 사실 없음. mcp-registry를 real estate·stock market·dividend·korea statistics·financial data로 검색 — 10곳 전부 무료·무키로 못 쓰거나(Alpha Vantage는 이미 쓰는 중) 미국 전용이라 채택할 것이 없었다. 결과를 tools-wanted.md에 적었다.",
   "blocked": "(1) crosscheck는 Gemini 429·503으로 못 돌려 두 묶음 다 selfcheck로 대체했다. (2) 카페 대기 3개 중 1개(avgo0925)는 '같은 대상 이미 씀(AVGO)'으로 차단 상태라 실질 대기는 2개다 — 다음 회차에 하나 더 만들어야 한다. (3) divchange.py를 같은 날 두 번 돌렸더니 상위 명단이 달라졌다(발표일 경계) — 재현성 문제로 기록만 남기고 글로는 안 썼다. 다음 회차에 고칠 후보. (4) 네이버가 2026-06-04에 내겠다고 예고한 '콘텐츠 셀프 체크 가이드' 후속 글은 확인 안 함. (5) 회차 중간에 경과 시간을 잘못 읽어 예산 초과로 판단하고 mcp-registry 조사를 한 번 건너뛰었다. 맥박이 27.7분으로 찍힌 걸 보고 되돌려 실제로 했다."
+ },
+ {
+  "date": "2026-09-25",
+  "hour": 23,
+  "task": "F",
+  "did": "재고 0순위에 회차 전체를 썼다. 완성 묶음 5개 신규(카페 earncal0926·cvx0926·pg0926, 블로그 vz0926·reitdiv0926) + 다른 회차가 사진 없이 남긴 acedist0926에 차트 3장을 채웠다. 전부 readcheck 0건·selfcheck 0건. 쓸 수 있는 재고 블로그 1/카페 0 → 블로그 3/카페 3. chartimg.py 결함 수정: 표시 글꼴(BlackHanSans)에 없는 글자가 폭만 차지하고 안 그려지던 문제 — em대시·중점·화살표·※·℃ 등 33자를 실측해 DISP_SUB에 넣고, 남은 글자를 렌더로 자동 감지해 경고하는 warn_missing() 추가.",
+  "blocked": "F 본업(유튜브 ytfull 90일 수집, pick.py 로테이션 점검)은 손도 못 댔다 — 재고가 1순위라 시간을 전부 썼다. crosscheck는 Gemini 429/503으로 두 번 다 실패해 selfcheck로 대체했다. avgo0925(AVGO)·acedist0926(ACE)은 같은 대상 중복으로 계속 막혀 있어 재고로 안 잡힌다."
  }
 ]

@@ -66,3 +66,13 @@ avgo 쇼츠(https://youtu.be/sLO1YW3tf0c)를 만들고 **영상 프레임과 썸
 - 카페 글이라 `py -3.12 work/naverpost.py rewrite <번호> avgo0924` 로 고칠 수 있다. 다음 D 회차(19시)가 처리한다.
 
 **firereview (제목)** — 제목의 "0편"이 본문에 없다. 이미 알려진 '4편으로 일반화' 사고 글이라 같이 둔다.
+
+## 2026-09-25 19시 회차(D 품질 소급)
+
+- **교차검증 미실행** — OpenAI 키 파일(Documents\openai_key.txt)이 없고, Gemini는 이번 회차에 한도 초과였다
+  (크로스체크 실행 결과: 사실 대조 HTTP 429, Gemini HTTP 503). 오늘 발행된 20묶음 중 check_gpt.txt가 있는 것은 0개다.
+  대신 오프라인 검산(calcheck)을 **오늘 발행 20묶음 전수**로 돌렸고 지적 0건이었다.
+  → 사람 손: OpenAI 키를 Documents\openai_key.txt 에 `KEY=...` 형식으로 넣어 주면 GPT 역할이 살아난다(tools-wanted.md에도 적음).
+- **wkdiv0925/pkg/facts.txt 조회 시각이 앞서 있다** — "19:50~20:05 KST"로 적혀 있는데 이 회차가 20:00 전에 그 파일을 읽었다.
+  숫자가 틀린 것은 아니고 시각 표기가 실제보다 뒤로 적힌 것이다. 발행 전이라 고칠 수 있다(내가 만든 묶음이 아니라 손대지 않았다).
+  → 다음 발행 회차가 facts.txt 첫 줄 시각을 실제 조회 시각으로 맞춰 적을 것.

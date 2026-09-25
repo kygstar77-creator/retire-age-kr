@@ -1,0 +1,54 @@
+# 사실표 — QLD(ProShares Ultra QQQ) · 2026-09-25 19시 회차(자가발전)
+# 조회 시각: 2026-09-25 19:38~19:47 KST · 기준 종가: 2026-09-24(미국 현지)
+
+[출처]
+1. ProShares 공식 펀드 페이지(운용사) — proshares.com/our-etfs/leveraged-and-inverse/qld
+   운용목표·보수·설정일·순자산.
+2. Yahoo chart API(query1.finance.yahoo.com/v8/finance/chart) — 종가·수정종가(분배금 재투자 반영).
+3. 계산은 수정종가(adjclose) 기준. 같은 날짜 구간을 QQQ와 나란히 놓았다.
+
+[운용사 공식 — ProShares, 2026-09-24 기준]
+운용 목표 = "나스닥100 지수의 하루 성과의 2배(2x)를, 보수·비용 차감 전에 좇는다"
+   원문: "QLD seeks daily investment results, before fees and expenses, that correspond to
+   two times (2x) the daily performance of the Nasdaq-100 Index"
+총보수(Gross) = 0.98%
+실보수(Net) = 0.95%
+설정일 = 2006년 6월 19일
+순자산 = 151억 2,116만 6,374달러
+기준지수 = 나스닥100 지수
+운용사 경고 원문 = "While the Fund has a daily investment objective, you may hold Fund shares
+   for longer than one day if you believe it is consistent with your goals and risk tolerance.
+   For any holding period other than a day, your return may be higher or lower than the Daily Target."
+   또한 "Smaller index gains/losses and higher index volatility contribute to returns worse
+   than the Daily Target"라고 적었다.
+
+[주가 — 2026-09-24 종가, Yahoo]
+QLD 96.10달러 (52주 56.60~101.19)
+QQQ 741.10달러 (52주 555.60~748.65)
+
+[기간별 총수익 — 수정종가, 시작일~2026-09-24]
+1년 (2025-09-25 시작): QLD +43.4% / QQQ +25.4% → 1.71배
+3년 (2023-09-25 시작): QLD +223.4% / QQQ +109.6% → 2.04배
+5년 (2021-09-27 시작): QLD +149.2% / QQQ +106.2% → 1.40배
+10년 (2016-09-26 시작): QLD +1,745.5% / QQQ +575.9% → 3.03배
+
+[2022년 한 해 — 수정종가]
+QQQ 2022-01-03 → 2022-12-30: -33.2%
+QLD 같은 기간: -61.3%  (QQQ 손실의 1.85배)
+2022년 안 최대 낙폭: QQQ -34.8% / QLD -63.1%
+
+[회복에 필요한 상승률 — 위 낙폭으로 계산]
+최대 낙폭 -63.1%를 겪은 값(100 → 36.9)이 100으로 돌아오려면 +171.0%가 올라야 한다.
+   계산: 100 / 36.9 - 1 = 1.7100
+같은 방식으로 -34.8%(100 → 65.2)는 +53.4%가 필요하다.
+
+[2021년 고점 회복에 걸린 날]
+QQQ 고점 2021-12-27 → 회복 2023-12-13 (716일)
+QLD 고점 2021-11-19 → 회복 2024-05-24 (917일)
+차이 201일
+
+[유의]
+- 배수는 하루 단위 목표다. 기간이 길어지면 배수가 2배에서 벗어난다(운용사 문구 그대로).
+- 위 계산은 분배금을 재투자한 수정종가 기준이며, 세금·환전 비용은 넣지 않았다.
+- 국내 계좌에서 미국 상장 ETF를 사면 매매차익에 양도소득세, 분배금에 배당소득세가 붙는다.
+  세율·공제는 개인 상황에 따라 다르다.

@@ -89,5 +89,12 @@
   "task": "C",
   "did": "대기열 0-b 닫음 — work/calcheck.py(계산 검산 9종) 만들어 selfcheck.py에 [검산] 태그로 붙임. 발행 123묶음 전수 검증(지적 2건, 둘 다 진짜) · 오류 주입 6건 전수 검출 · 대기 원고 6편 지적 0건. avgo0924에서 실제 계산 오류 발견해 fix-needed.md에 올림. 안 쓰던 offitable.py 실행.",
   "blocked": "없음"
+ },
+ {
+  "date": "2026-09-25",
+  "hour": 19,
+  "task": "D",
+  "did": "재고 3+3 채움(블로그 peak0925·qld0925, 카페 abbv0925 완성 묶음 3개, readcheck·selfcheck 0건) · 오늘 발행 20묶음 calcheck 전수 지적 0건 · fire-cases에 원문 확인 사례 1건(retireby40 Q1 2026) 추가",
+  "blocked": "교차검증(crosscheck) 미실행 — OpenAI 키 없음, Gemini 429/503. fix-needed.md·tools-wanted.md에 적음"
  }
 ]

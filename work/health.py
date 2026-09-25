@@ -65,7 +65,13 @@ def main():
     # 회차 기록이 아니라 실제 네이버에서 잰다. 1이면 한 회차를 놓친 것.
     try:
         sys.path.insert(0, HERE); import naverpost as _np
+        # 새벽 2~7시는 블로그를 일부러 쉰다(사장님 2026-09-25). watchdog은 이걸 알고 안 메우는데
+        # 여기서는 안 봐서, 새벽마다 "블로그 빵꾸"가 일감표 1순위로 올라왔다. 쉬는 걸 빵꾸로 세지 않는다.
+        _quiet = 2 <= time.localtime().tm_hour < 8
         for kind, ko in (('blog', '블로그'), ('cafe', '카페')):
+            if _quiet and kind == 'blog':
+                M.append(('발행', f'{ko} 발행 빵꾸(75분 초과)', 0, 0, 3, '새벽 2~7시는 블로그를 쉬는 시간대라 빵꾸로 세지 않는다'))
+                continue
             mm = _np.last_published_minutes(kind)
             if mm is not None:
                 M.append(('발행', f'{ko} 발행 빵꾸(75분 초과)', 1 if mm > 75 else 0, 0, 3,

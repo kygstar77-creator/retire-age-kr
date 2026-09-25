@@ -23,15 +23,29 @@ def rss_today():
         return len([d for d in re.findall(r'<pubDate>(.*?)</pubDate>', s) if time.strftime('%d %b %Y') in d])
     except Exception: return None
 
+CAFE_MIN_AGE_H = 24     # 조회를 잴 수 있는 최소 나이. 이보다 어린 글은 표본에서 뺀다
+
 def cafe_today():
+    """(오늘 편수, 24시간 지난 글의 조회 중앙값, 24시간 안 된 글의 조회 중앙값, 표본 수).
+
+    2026-09-26: 조회 중앙값을 '최근 20편'으로 재고 있었다. 카페는 하루 4편을 올리므로
+    최근 20편이면 18편이 21시간 안 된 글이고, 갓 올린 글은 조회가 0이다. 그래서 실측
+    중앙값 0.5가 나왔는데, 같은 시각 24시간 지난 32편의 중앙값은 2.0(평균 3.97)이었다.
+    발행을 잘할수록(새 글이 표본을 채울수록) 계기판이 나빠지는 셈이다 — 이 파일이 색인율
+    (당일 글 -> 하루 지난 글)·방문(오늘 -> 마지막 완결일)에서 이미 두 번 고친 것과 같은 고장.
+    textloop.py 는 처음부터 18시간 안 된 글을 빼고 24시간 시점으로 맞춰 견주고 있었다."""
     try:
         u = 'https://apis.naver.com/cafe-web/cafe2/ArticleListV2dot1.json?search.clubid=31789001&search.queryType=lastArticle&search.page=1&search.perPage=50'
         arts = json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=20))['message']['result']['articleList']
-        today = time.strftime('%Y-%m-%d')
+        today = time.strftime('%Y-%m-%d'); now = time.time()
         n = sum(1 for a in arts if time.strftime('%Y-%m-%d', time.localtime(a['writeDateTimestamp'] / 1000)) == today)
-        reads = [a.get('readCount', 0) for a in arts[:20]]
-        return n, (statistics.median(reads) if reads else 0)
-    except Exception: return None, None
+        aged, fresh = [], []
+        for a in arts:
+            age_h = (now - a['writeDateTimestamp'] / 1000) / 3600
+            (aged if age_h >= CAFE_MIN_AGE_H else fresh).append(a.get('readCount', 0))
+        med = lambda xs: (statistics.median(xs) if xs else None)
+        return n, med(aged), med(fresh), len(aged)
+    except Exception: return None, None, None, 0
 
 def _cafe_cap():
     """카페 하루 상한. 못 읽으면 None(막힌 회차로 치지 않는다)."""
@@ -206,8 +220,13 @@ def main():
                       f"{days[-1]} {vis[days[-1]].get('at','')} 측정 · 하루가 끝나야 견줄 수 있다"))
         else:
             M.append(('성장', '블로그 오늘 방문', today_v, 100, 3, '색인·순위가 먼저. 발행량만 늘리면 안 오른다'))
-    ncafe, medread = cafe_today()
-    if medread is not None: M.append(('성장', '카페 최근 20편 조회 중앙값', medread, 50, 2, '카페 축(커버드콜·배당·파이어 금액)·제목·회원 상호작용'))
+    ncafe, medread, medfresh, n_aged = cafe_today()
+    if medread is not None:
+        M.append(('성장', f'카페 조회 중앙값({CAFE_MIN_AGE_H}시간 지난 글)', medread, 50, 2,
+                  f'{n_aged}편 기준 · 카페 축(커버드콜·배당·파이어 금액)·제목·회원 상호작용'))
+    if medfresh is not None:
+        M.append(('성장', f'카페 조회 중앙값({CAFE_MIN_AGE_H}시간 안 된 글 — 참고용)', medfresh, 50, 0,
+                  '갓 올린 글은 조회가 0에서 시작한다 — 이 값이 낮은 것만으로 규칙을 바꾸지 않는다'))
 
     yt = sh(os.path.join(HERE, 'ytupload.py'), 'stats')
     vids = [int(v) for v in re.findall(r'\d{4}-\d{2}-\d{2}\s+(\d+)\s*회', yt)]

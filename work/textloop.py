@@ -168,9 +168,35 @@ def compare(rows, label):
     found.sort(key=lambda f: -abs(0 if isinstance(f['잘된 글'], str) else f['잘된 글'] - f['안된 글']))
     return found, f'{label} {n}편 중 상위 {k}편과 하위 {k}편 비교'
 
+GAP_MIN = 0.25         # log1p 평균이 이만큼은 벌어져야 "피한다"를 쓴다(≈ 조회 30% 차이)
+
+def _lg(xs): return sum(math.log1p(max(x, 0)) for x in xs) / len(xs)
+
+def _dedup(found, cat):
+    """같은 손잡이를 상·하위 비교와 갈래 순위가 둘 다 말하면 갈래 순위만 남긴다.
+
+    2026-09-26: 규칙표에 "주제축은 배당현금흐름으로 한다"(상·하위 비교)와
+    "주제축: 파이어·자산으로 쓰고"(갈래 순위)가 같이 적혀 있었다. 회차는 축을 하나만
+    고를 수 있는데 지시가 두 개였다. 상·하위 비교의 갈래 항목은 '비율'로 보는데,
+    많이 쓴 축이 자동으로 상위에 많이 들어가 편향된다(배당현금흐름은 78편 중 34편).
+    갈래 순위는 모든 갈래를 쏠림보정해 견주니 그쪽을 남긴다. 숫자 손잡이는 겹치지 않는다."""
+    covered = {f['손잡이'] for f in cat}
+    return [f for f in found if f['손잡이'] not in covered or f['손잡이'] in NUMERIC]
+
 def by_category(rows, label):
-    """상·하위 1/3 비교는 한쪽에 몰린 값을 놓친다. 그래서 갈래별 중앙값도 따로 낸다.
-    사장님이 눈으로 잡은 '제목 끝에 다 붙이기'를 상·하위 비교는 못 잡았다(2026-09-23)."""
+    """상·하위 1/3 비교는 한쪽에 몰린 값을 놓친다. 그래서 갈래별 순위도 따로 낸다.
+    사장님이 눈으로 잡은 '제목 끝에 다 붙이기'를 상·하위 비교는 못 잡았다(2026-09-23).
+
+    2026-09-26: 이 순위를 **중앙값**으로 매기고 있었는데, 카페 조회는 한쪽으로 크게 쏠린다.
+    실측 78편: 조회 중앙 0.95/일, 0회 글 12편, 상위 5편이 전체 조회의 60%.
+    이러면 중앙값 순위는 0과 1 사이 한 번 클릭 차이를 줄 세우는 것이고, 정작 신호가 있는
+    꼬리를 버린다. 그 결과 규칙이 뒤집혔다 — "파이어·자산"은 11편 중앙 0.35로 꼴찌라
+    '피한다'로 적혀 있었는데, 실제로는 **전체 조회 931회 중 542회(58%)가 그 갈래**였다
+    (389회 한 편 포함). 회차들은 가장 많이 읽히는 축을 피하라는 규칙을 받아 왔다.
+    그래서 log1p 평균으로 매긴다. 한 편의 대박이 지워지지도(중앙값), 혼자 다 결정하지도
+    (평균: 파이어·자산 12.25 vs 2등 2.93) 않는다. 중앙값은 같이 적어 눈으로 볼 수 있게 둔다.
+    또 갈래 차이가 GAP_MIN 안쪽이면 '피한다'를 쓰지 않는다 — "명사로 끝 1.08 > 다로 끝 0.56"이
+    중앙값으로는 2배 차이로 보였지만 log1p로는 0.82 대 0.83, 사실상 같았다."""
     out = []
     for key in ('제목 끝맺음', '주제축', '형식'):
         g = {}
@@ -180,11 +206,16 @@ def by_category(rows, label):
             g.setdefault(str(v), []).append(r['score'])
         g = {k: v for k, v in g.items() if len(v) >= 3}
         if len(g) < 2: continue
-        rank = sorted(g.items(), key=lambda kv: -statistics.median(kv[1]))
+        rank = sorted(g.items(), key=lambda kv: -_lg(kv[1]))
+        gap = _lg(rank[0][1]) - _lg(rank[-1][1])
+        줄 = ' > '.join(f'{k}({len(v)}편 쏠림보정 {_lg(v):.2f}·중앙 {statistics.median(v):.1f})' for k, v in rank)
+        꼬리 = (f' — "{rank[0][0]}"로 쓰고 "{rank[-1][0]}"는 피한다' if gap >= GAP_MIN
+                else f' — 차이 {gap:.2f}는 문턱({GAP_MIN}) 안쪽이라 어느 쪽을 쓰라고 하지 않는다')
         out.append({'손잡이': key,
-                    '갈래': [{'값': k, '편수': len(v), '중앙': round(statistics.median(v), 1)} for k, v in rank],
-                    '규칙': f'{key}: ' + ' > '.join(f'{k}({len(v)}편 {statistics.median(v):.1f})' for k, v in rank)
-                             + f' — "{rank[0][0]}"로 쓰고 "{rank[-1][0]}"는 피한다'})
+                    '갈래': [{'값': k, '편수': len(v), '쏠림보정': round(_lg(v), 2),
+                              '중앙': round(statistics.median(v), 1)} for k, v in rank],
+                    '차이': round(gap, 2),
+                    '규칙': f'{key}: ' + 줄 + 꼬리})
     return out
 
 # ── 판정 ───────────────────────────────────────────────────────────────────
@@ -233,6 +264,17 @@ def pick_cut(logs, now, *groups):
     r = changed[-1] if changed else ok[-1]
     return _ts(r['at']), r['at'] + (' 규칙 바뀐 회차' if changed else ' 회차')
 
+NOISE = 0.20           # 이 비율 안쪽 차이는 방향을 말하지 않는다
+
+def _arrow(b, a):
+    """방향 판정. 2026-09-26: 카페 조회 중앙값 1.1 → 1.0 을 "↓나빠짐"이라 적고 있었다.
+    글 한 편당 클릭 한 번 차이인데, 그 신호로 규칙을 넣고 빼 왔다. 상대 차이가 NOISE
+    안쪽이면 '거의 같음'이라 적는다(0.5 → 0.0 같은 실제 변화는 그대로 잡힌다)."""
+    if b == a: return '=변화없음'
+    if max(abs(b), abs(a)) and abs(a - b) / max(abs(b), abs(a)) < NOISE:
+        return f'≈거의 같음(차이 {abs(a-b):.2f}, {NOISE:.0%} 안쪽이라 방향을 말하지 않는다)'
+    return '↑좋아짐' if a > b else '↓나빠짐'
+
 def judge_side(cut, now, posts, rows, label):
     """기준 시각 앞뒤로 갈라 중앙값을 견준다. 성적을 잴 수 없는 최근 글은 양쪽 다에서 뺀다."""
     usable = now - MIN_AGE_H * 3600
@@ -241,8 +283,7 @@ def judge_side(cut, now, posts, rows, label):
     if len(after) < MIN_N or len(before) < MIN_N:
         return f'{label} 보류(뒤 {len(after)}·앞 {len(before)}편)'
     a, b = statistics.median(after), statistics.median(before)
-    arrow = '↑좋아짐' if a > b else ('=변화없음' if a == b else '↓나빠짐')
-    return f'{label} {b:.2f} → {a:.2f} {arrow}(뒤 {len(after)}·앞 {len(before)}편)'
+    return f'{label} {b:.2f} → {a:.2f} {_arrow(b, a)}(뒤 {len(after)}·앞 {len(before)}편)'
 
 SNAP = os.path.join(HERE, 'read_snaps.json')
 SNAP_AGE_H = 24        # 모든 글을 '올린 지 24시간' 시점으로 맞춰 견준다
@@ -286,8 +327,7 @@ def trend_aged(posts, snaps, label, now):
     got.sort(); half = len(got) // 2
     b = statistics.median([v for _, v in got[:half]])
     a = statistics.median([v for _, v in got[half:]])
-    arrow = '↑좋아짐' if a > b else ('=변화없음' if a == b else '↓나빠짐')
-    return f'{label} {SNAP_AGE_H}시간 시점 조회 예전 {half}편 {b:.1f} → 최근 {len(got)-half}편 {a:.1f} {arrow}'
+    return f'{label} {SNAP_AGE_H}시간 시점 조회 예전 {half}편 {b:.1f} → 최근 {len(got)-half}편 {a:.1f} {_arrow(b, a)}'
 
 def trend(posts, rows, label, now):
     """성적을 잰 글을 시간순 앞 절반·뒤 절반으로 갈라 견준다.
@@ -308,8 +348,7 @@ def trend(posts, rows, label, now):
     if max(ao, an) / max(min(ao, an), 1) >= 2:
         return (f'{label} 추세 보류 — 예전 {half}편은 {ao:.0f}시간, 최근 {n-half}편은 {an:.0f}시간 된 글이라 '
                 f'나이가 달라 견줄 수 없다({b:.2f} vs {a:.2f}는 나이 차이지 실력 차이가 아니다)')
-    arrow = '↑좋아짐' if a > b else ('=변화없음' if a == b else '↓나빠짐')
-    return f'{label} 예전 {half}편({ao:.0f}h) {b:.2f} → 최근 {n-half}편({an:.0f}h) {a:.2f} {arrow}'
+    return f'{label} 예전 {half}편({ao:.0f}h) {b:.2f} → 최근 {n-half}편({an:.0f}h) {a:.2f} {_arrow(b, a)}'
 
 def main():
     t0 = time.time(); now = time.time()
@@ -329,6 +368,7 @@ def main():
     blog_found, blog_note = compare(blog_rows, '블로그')
     cafe_cat = by_category(cafe_rows, '카페')
     blog_cat = by_category(blog_rows, '블로그')
+    cafe_found = _dedup(cafe_found, cafe_cat); blog_found = _dedup(blog_found, blog_cat)
 
     # 5) 지난 규칙 판정 — 규칙을 적은 뒤에 올린 글의 성적이 그 전보다 나은가
     fp = rule_fp(cafe_found, cafe_cat, blog_found, blog_cat)

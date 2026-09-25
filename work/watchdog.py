@@ -127,13 +127,27 @@ def main():
     # 쉬는 시간대(2~7시)에 쉬는 것은 **블로그뿐**이다. 카페는 24시간 간다
     # (2026-09-25 사장님 "카페는 그대로 24시간 아니었어?" — 카페는 색인이 정상이라 줄일 이유가 없다).
     kinds = ['cafe'] if quiet else ['blog', 'cafe']
+    # 막힌 묶음은 메우기 대상이 아니다. 2026-09-26 00:52 실측: 카페가 89분 빵꾸인데
+    # 첫 묶음(avgo0925)이 AVGO 중복으로 막혀 있어 naverpost 가 거부했고, 뒤에 있던
+    # 멀쩡한 cvx0926·pg0926 은 손도 못 댔다. 재고에서는 빼면서 메울 때는 첫 개를
+    # 그냥 집던 탓이다.
+    okpend = [x for x in pend if not x.get('block')]
     need = [k for k in kinds
-            if (rec['late'][k] or 0) > LATE_MIN and any(x['kind'] == k for x in pend)]
+            if (rec['late'][k] or 0) > LATE_MIN and any(x['kind'] == k for x in okpend)]
     if need and not check_only:
         # 잠금은 여기서 잡지 않는다. naverpost.py가 launch()에서 스스로 잡는다.
         # 감시기가 먼저 잡으면 제 자식을 막아 15분을 기다리다 실패한다(2026-09-23 18:49 실제 발생).
         for kind in need:
-            pkg = next(x['pkg'] for x in pend if x['kind'] == kind)
+            # 메우기 직전에 한 번 더 잰다. 2026-09-26 00:52 실측: 카페 89분 빵꾸로 판정한 뒤
+            # 교차검증·발행에 23분이 걸렸고 그 사이 00시 write 회차가 01:10에 먼저 올렸다.
+            # 내 메우기는 5분 뒤 겹쳐 그 시간에 카페 글이 두 편 나갔다.
+            m2 = None
+            try: m2 = N.last_published_minutes(kind)
+            except Exception: pass
+            if m2 is not None and m2 <= LATE_MIN:
+                rec['did'].append(f'{kind} 메우기 취소 — 다시 재니 {round(m2)}분 전에 올라가 있다(다른 회차가 먼저 채웠다)')
+                continue
+            pkg = next(x['pkg'] for x in okpend if x['kind'] == kind)
             # 교차검증이 없는 묶음은 먼저 돌린다(회차 규칙 1): 2026-09-23 19:22 감시기가 paycalc를
             # 검증 전에 올려 Gemini 말투 수정을 못 받은 채로 나갔다. 실패해도 발행은 막지 않는다.
             if not os.path.exists(os.path.join(pkg, 'check_gemini.txt')) and not os.path.exists(os.path.join(pkg, 'check_gpt.txt')):
@@ -167,7 +181,7 @@ def main():
             else: rec['did'].append(f'{kind} 메우기 실패: ' + (out.splitlines()[-1][:120] if out else '(출력 없음)'))
     elif need:
         rec['did'].append('--check 라서 올리지는 않았다: ' + ', '.join(need))
-    elif rec['alert'] and not any(any(x['kind'] == k for x in pend) for k in ('blog', 'cafe')):
+    elif rec['alert'] and not any(any(x['kind'] == k for x in okpend) for k in ('blog', 'cafe')):
         rec['did'].append('메울 묶음이 하나도 없다 — 회차 루틴이 새로 써야 한다')
 
     rec['sec'] = int(time.time() - t0)

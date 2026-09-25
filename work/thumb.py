@@ -50,7 +50,7 @@ def cfg(kind):
     """loop.py가 매 회차 갱신하는 design.json. 없으면 첫 측정값(2026-09-23 경쟁 상위 중앙값)"""
     try: d = json.load(open(os.path.join(HERE, 'design.json'), encoding='utf-8'))
     except Exception: d = {}
-    base = {'long': {'text_y': 0.72, 'bg_bright': 0.45, 'panel_alpha': 150, 'yellow_bottom': 1, 'yellow_frac': 1.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'panel_pad': 1.0, 'panel_blur': 28, 'bot_scrim': 0.0, 'scrim_a': 110},
+    base = {'long': {'text_y': 0.72, 'bg_bright': 0.45, 'panel_alpha': 150, 'yellow_bottom': 1, 'yellow_frac': 1.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'panel_pad': 1.0, 'panel_blur': 28, 'bot_scrim': 0.0, 'scrim_a': 110, 'sub_scale': 1.0},
             'short': {'text_y': 0.52, 'bg_bright': 0.30, 'panel_alpha': 150, 'yellow_bottom': 0, 'yellow_frac': 0.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'panel_pad': 1.0, 'panel_blur': 28, 'bot_scrim': 0.0, 'scrim_a': 110, 'lines': 3, 'split_scale': 2.0}}[kind]
     base.update(d.get(kind, {})); return base
 
@@ -138,8 +138,21 @@ def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
     # 하한 0.55 는 2026-09-25 화면 검증에서 정했다 — 1.0/0.66/0.55/0.45 를 같은 배경·같은 문구로 그려
     # 480px(실제 피드 크기)로 견줬고, 0.45 는 두 줄이 히트맵 글자에 묻혀 안 읽힌다. 0.55 까지만 내려간다.
     _lo = 0.55 if not short else 0.66
+    nat = sz                      # 폭에 딱 맞는 자연 크기. 읽힘 바닥은 이 값에 대고 잰다
     sz = max(int(W * (0.042 if not short else 0.055)), int(sz * min(max(float(c.get('text_scale', 1.0)), _lo), 1.0)))
     szs = [sz] * len(parts)
+    # 아랫줄만 작게(sub_scale, 롱폼 2줄 판형). 2026-09-25 121회차에 달았다.
+    # 닫으려는 것: long.text_mid 하나다. 120회차 격자표에서 두 줄이 같은 크기라 top 과 mid 를 따로 못 만졌다 —
+    #   text_y 0.20  → top 0.3890 · mid 0.0275   (두 줄이 다 위 칸, mid 는 비지만 top 이 목표 0.1309 의 3배)
+    #   text_y 0.3875 → top 0.1558 · mid 0.1389  (top 은 맞는데 아랫줄이 통째로 가운데 칸에 있다)
+    # 판형 오차 1.2245 의 71%가 mid 한 칸이었다. 아랫줄만 줄이면 윗줄은 1px도 안 움직인다 —
+    # 아래 ys[1] = cy 는 lhs[0](윗줄 높이)로만 정해지기 때문이다. 그래서 top 을 지키고 mid 만 내린다.
+    # 큰 제목 + 작은 부제는 경쟁 롱폼이 실제로 쓰는 배치라 판형을 지어낸 것이 아니다.
+    # 읽힘 바닥은 여기서 지킨다: 아랫줄도 자연 크기의 0.55 밑으로는 안 내려간다(2026-09-25 화면 검증에서
+    # 0.45 는 두 줄이 히트맵 글자에 묻혀 안 읽혔다 — 그 바닥을 아랫줄에도 그대로 적용한다).
+    ss2 = min(max(float(c.get('sub_scale', 1.0)), 0.0), 1.0)
+    if not short and len(parts) == 2 and ss2 < 0.999:
+        szs[-1] = max(int(W * 0.042), int(nat * _lo), int(sz * ss2))
     if len(parts) == 3:
         # 나눈 두 줄은 짧아져서 폭에 여유가 생긴다 — 그 여유만큼 키운다(split_scale, 1.0이면 안 키움).
         # 윗한계 2.0은 임의로 박아 둔 값이었다 — loop 72회차까지 격자 최선이 늘 끝점 2.0 에 붙어

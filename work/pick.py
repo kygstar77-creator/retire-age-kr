@@ -176,13 +176,14 @@ def main():
     print('\n검색수 100 미만은 검색광고 API가 값을 가린 것 - 순위를 믿지 말고 사람이 판단할 것')
     print('축: ' + ' · '.join('%s=%s' % (k, v) for k, v in cal.get('axes', {}).items()))
 
-main()
 
 # ---- 형식·축 로테이션 (2026-09-23) — 같은 템플릿 대량 발행은 네이버 스팸 기준. 오늘 발행·대기 묶음의 pkg/form.txt·axis.txt를 센다.
 def section_rotation():
-    import glob
+    import glob, sys
+    sys.path.insert(0, HERE)
+    import axisname
     base = os.path.join(HERE, 'research'); today = TODAY.isoformat()
-    forms = {'1': 0, '2': 0, '3': 0, '4': 0}; axes = {'세금연금': 0, '종목': 0, '부동산': 0, '배당현금흐름': 0}
+    forms = {'1': 0, '2': 0, '3': 0, '4': 0}; axes = {k: 0 for k in axisname.CANON}; offspec = []
     for pkg in glob.glob(os.path.join(base, '*', 'pkg')):
         pub = os.path.join(pkg, 'published.txt'); od = os.path.join(pkg, 'order.txt')
         stamp = pub if os.path.exists(pub) else (od if os.path.exists(od) else None)
@@ -191,9 +192,20 @@ def section_rotation():
             p = os.path.join(pkg, name)
             if os.path.exists(p):
                 v = open(p, encoding='utf-8').read().strip()
+                if name == 'axis.txt':
+                    v = axisname.canon(v) or ''      # '1배당'·'2미국주식' 같은 오기를 접는다
+                    if v not in table: offspec.append((os.path.basename(os.path.dirname(pkg)), v))
                 if v in table: table[v] += 1
     names = {'1': '① 원문 정리형', '2': '② 계산 사례형', '3': '③ 일정형', '4': '④ 통계·기록형'}
     nxt = min(forms, key=lambda k: forms[k])
     print('=== 다음 형식: %s   (오늘 %s)' % (names[nxt], ' '.join('%s=%d' % (names[k][:1], v) for k, v in forms.items())))
     print('=== 축 남은 칸(하루 6편 상한): %s' % ' · '.join('%s %d' % (k, max(0, 6 - v)) for k, v in axes.items()))
     print('    묶음에 pkg/form.txt(1~4)·pkg/axis.txt(세금연금|종목|부동산|배당현금흐름)를 만들어야 여기 잡힌다.\n')
+    if offspec:
+        print('    !! 축 이름이 규격 밖이라 안 세어진 묶음: %s — axis.txt를 네 이름 중 하나로 고친다.'
+              % ' · '.join('%s(%s)' % (n, v or '빈칸') for n, v in offspec))
+
+# 2026-09-25: 이 함수가 정의만 되고 한 번도 불리지 않았다. 회차 지침이 "pick.py 맨 위 다음 형식 / 축
+# 남은 칸을 보고 축 상한을 지킨다"고 하는데, 그 줄이 여태 찍힌 적이 없어 로테이션 가드가 죽어 있었다.
+section_rotation()
+main()

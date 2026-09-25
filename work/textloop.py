@@ -104,9 +104,17 @@ def title_end(t):
     if t.endswith('다'): return '다로 끝'          # 습니다·입니다뿐 아니라 '낮았다·늘었다' 같은 평서형도 같다
     return '명사로 끝'
 
+# 같은 축을 두 이름으로 세던 것을 하나로 묶는다(2026-09-25 확인).
+# 묶음의 axis.txt는 pick.py 어휘('배당현금흐름·세금연금')로 적히는데 AXIS_WORDS는 가운뎃점을 넣은
+# 다른 이름('배당·현금흐름·연금·세금')이라, 같은 축이 표본 절반씩으로 쪼개져 규칙이 서로를 부정했다.
+# 실측: "배당·현금흐름 15편 1.9"와 "배당현금흐름 15편 0.8"이 같은 표에 나란히 찍혔다.
+# 표는 work/axisname.py 한 곳에만 둔다(pick.py도 같은 걸 쓴다).
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from axisname import canon as canon_axis
+
 def guess_axis(title):
     for name, pat in AXIS_WORDS:
-        if re.search(pat, title, re.I): return name
+        if re.search(pat, title, re.I): return canon_axis(name)
     return None
 
 def handles(post, idx):
@@ -120,7 +128,7 @@ def handles(post, idx):
         '제목 끝맺음': title_end(t),
         '발행 시각': time.localtime(post['ts']).tm_hour,
     }
-    h.update({'주제축': (p and p['axis']) or guess_axis(t), '형식': (p and p['form']) or None,
+    h.update({'주제축': canon_axis(p and p['axis']) or guess_axis(t), '형식': (p and p['form']) or None,
               '사진 수': p['imgs'] if p else None, '본문 길이': p['body'] if p else None})
     return h
 

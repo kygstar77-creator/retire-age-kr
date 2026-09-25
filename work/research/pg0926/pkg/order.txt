@@ -6,8 +6,8 @@ c01.txt
 c02.txt
 img/01.png
 c03.txt
-c04.txt
 img/02.png
+c04.txt
+img/03.png
 c05.txt
 c06.txt
-img/03.png

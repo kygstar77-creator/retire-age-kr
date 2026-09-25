@@ -159,8 +159,11 @@ def title_kw_in_body(title, body):
     "미국증시 섹터별로 갈린 하루"가 '증시'를 한 번도 안 쓴 것은 제목과 본문이 따로 노는 것이라
     키워드 채우기와 다른 문제다. 길이는 bodyrule.md가 따로 본다."""
     out = []
+    # 형태소 분석기가 붙여 쓴 고유명사를 쪼개 돌려준다("프록터앤갬블" → "프록터 앤 갬블").
+    # 그대로 본문과 맞추면 쓴 말도 안 썼다고 잡혔다(2026-09-26). 공백을 뺀 쪽도 같이 본다.
+    body_ns = ''.join(body.split())
     for w in title_nouns(title):
-        if body.count(w) == 0:
+        if body.count(w) == 0 and body_ns.count(''.join(w.split())) == 0:
             out.append((w, 0, '제목에 걸어 놓고 본문에서 한 번도 안 썼다 — 제목과 본문이 따로 논다'))
     return out
 
@@ -226,7 +229,9 @@ def body_style(text):
             run += 1
             if run == 4: out.append(('숫자가 많은 문장이 네 줄 연달아 — 표로 빼거나 결론만 남긴다', i, x[:56]))
         else: run = 0
-    tables = text.count('|---')
+    # 표 개수는 구분선 '줄'을 센다. 전에는 '|---' 출현 횟수를 세서
+    # |---|---|---| 한 줄이 표 3개로 잡혔다(2026-09-26 3개짜리 글이 10개로 나왔다).
+    tables = sum(1 for ln in text.splitlines() if re.match(r'^\s*\|[\s|:-]*-[\s|:-]*\|?\s*$', ln))
     if tables >= 4: out.append((f'표 {tables}개 — 한 글에 셋까지. 넘으면 글이 자료집이 된다', 0, ''))
     nums = len(re.findall(r'\d[\d,.]*\s*(?:%|달러|원|배|주|곳|개|건)', text))
     body_n = max(len(re.sub(r'\s', '', text)), 1)
@@ -261,7 +266,9 @@ def speech_mix(text):
     ss = [x for x in ss if len(x) >= 8]
     if len(ss) < 10: return []
     polite = sum(1 for x in ss if re.search(r'(습니다|어요|에요|예요|죠|네요|군요)[.!?]?$', x))
-    plain  = sum(1 for x in ss if re.search(r'(다|음|함)[.!?]?$', x) and not re.search(r'(습니다|합니다|입니다)[.!?]?$', x))
+    # 존댓말 종결은 'ㅂ니다' 전체다. 전에는 습니다·합니다·입니다 셋만 빼서
+    # 들어옵니다·내려옵니다·됩니다 같은 문장이 평어체로 잡혔다(2026-09-26).
+    plain  = sum(1 for x in ss if re.search(r'(다|음|함)[.!?]?$', x) and not re.search(r'(니다|니까)[.!?]?$', x))
     tot = polite + plain
     if tot < 8: return []
     r = min(polite, plain) / tot

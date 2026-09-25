@@ -96,5 +96,12 @@
   "task": "D",
   "did": "재고 3+3 채움(블로그 peak0925·qld0925, 카페 abbv0925 완성 묶음 3개, readcheck·selfcheck 0건) · 오늘 발행 20묶음 calcheck 전수 지적 0건 · fire-cases에 원문 확인 사례 1건(retireby40 Q1 2026) 추가",
   "blocked": "교차검증(crosscheck) 미실행 — OpenAI 키 없음, Gemini 429/503. fix-needed.md·tools-wanted.md에 적음"
+ },
+ {
+  "date": "2026-09-25",
+  "hour": 21,
+  "task": "E",
+  "did": "재고 채우기 먼저: 블로그 offitbl0925(서울·경기 오피스텔 798곳 실거래 수익률, offitable.py)·카페 ccdist0925(KODEX 커버드콜 11종 분배금, etfdist.py) 완성 묶음 2개를 만들어 대기 블로그 3·카페 3 달성. 둘 다 readcheck 0건·selfcheck 사실 0건. 안 쓰던 도구 offitable.py를 돌려 2026-09-25_전체.md 생성(798곳·중앙값 5.13%·검산 20줄 일치). ytlearn.py를 청약·재개발·월배당·달러 투자·절세 연금으로 돌려 lessons_2026-09-25.md(채널 23·제목 345개) 생성하고 writing-lessons.md에 3줄, topic-ideas.md에 3건 적음. 도구 고침: selfcheck.py 기관 정규식이 정식 명칭('국토교통부')을 못 잡아 출처를 다 적고도 '기관 0곳'이 뜨던 것 수정(약칭·정식명 같이 세고 중복은 접음). 네이버 공식 블로그 스팸 사례(2026-07-06)·AI 콘텐츠 가이드(2026-05-26) 원문 확인 — 둘 다 이미 메모리에 반영돼 있어 갱신할 새 사실 없음.",
+  "blocked": "(1) crosscheck는 Gemini 429·503으로 못 돌려 두 묶음 다 selfcheck로 대체했다. (2) 카페 대기 3개 중 1개(avgo0925)는 '같은 대상 이미 씀(AVGO)'으로 차단 상태라 실질 대기는 2개다 — 다음 회차에 하나 더 만들어야 한다. (3) 임무 E의 mcp-registry 커넥터 조사는 시간이 없어 못 했다(회차 40분을 넘겼다). (4) divchange.py를 같은 날 두 번 돌렸더니 상위 명단이 달라졌다(발표일 경계) — 재현성 문제로 기록만 남기고 글로는 안 썼다. (5) 네이버가 2026-06-04에 내겠다고 예고한 '콘텐츠 셀프 체크 가이드' 후속 글은 확인 안 함."
  }
 ]

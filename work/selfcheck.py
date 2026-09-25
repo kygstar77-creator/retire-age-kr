@@ -204,8 +204,13 @@ def main(pkg):
     # 출처는 URL로만 적히지 않는다(기관명·법령명으로 적힌 묶음도 있다 — 2026-09-23 확인)
     # 출처가 'proshares.com/...' 처럼 http 없이 적힌 묶음이 많다(2026-09-23 확인) → 맨 도메인도 센다
     urls = len(set(re.findall(r'https?://\S+', facts))) + len(set(re.findall(r'\b[a-z0-9-]+\.(?:com|org|net|go\.kr|or\.kr|co\.kr|gov)\b/?\S*', facts)))
-    orgs = len(set(re.findall(r'국토부|한국부동산원|한국은행|국세청|금융감독원|통계청|SEC|EDGAR|Nasdaq|연준|은행연합회|'
-                              r'보건복지부|국민연금|ProShares|Yahoo|Vanguard|Invesco|Schwab|JPMorgan|미래에셋|삼성자산|법령|공시', facts, re.I)))
+    # 2026-09-25: 정식 명칭('국토교통부')이 약칭('국토부')에 안 걸려 출처를 다 적고도 '기관 0곳'이 떴다.
+    # 정식 명칭과 약칭을 같이 센다. 같은 기관을 두 꼴로 적어도 set 이 하나로 접는다.
+    ORG = (r'국토교통부|국토부|한국부동산원|한국은행|국세청|금융감독원|금융위원회|한국거래소|예금보험공사|'
+           r'통계청|보건복지부|고용노동부|기획재정부|행정안전부|국민연금|건강보험공단|근로복지공단|공공데이터포털|'
+           r'SEC|EDGAR|Nasdaq|NYSE|FRED|연준|은행연합회|생명보험협회|손해보험협회|'
+           r'ProShares|Yahoo|Vanguard|Invesco|Schwab|JPMorgan|BlackRock|미래에셋|삼성자산|삼성자산운용|법령|공시')
+    orgs = len({m.replace('국토교통부', '국토부') for m in re.findall(ORG, facts, re.I)})
     if urls + orgs < 3: problems.append(('출처', 0, f'출처가 URL {urls}개 + 기관 {orgs}곳뿐 — 최소 3개'))
 
     # 4) 주제축 이름

@@ -410,3 +410,12 @@ viaNexus(상용) 넷뿐이고, **한국 데이터를 주는 것도, 키 없이 �
   지금 `Documents\openai_key.txt`가 없어 오늘 발행 20묶음 전부 check_gpt.txt가 비어 있다. Gemini도 이번 회차엔 429/503으로 막혔다.
   무료 여부: 유료(사용량 과금). 절차: platform.openai.com에서 키 발급 → `Documents\openai_key.txt`에 `KEY=...` 한 줄.
   유료라서 사장님 판단이 필요하다. 그때까지는 selfcheck + calcheck로 대체한다(오늘 전수 검산 지적 0건).
+
+## 2026-09-25 21시 — MCP 커넥터 조사 결과 (채택할 것 없음)
+mcp-registry에서 "real estate · stock market · dividend · korea statistics · financial data"로 찾았다.
+나온 10곳 전부 무료·무키로 바로 못 쓴다. 사장님 손이 필요한지까지 적어 둔다.
+- Alpha Vantage (mcp.alphavantage.co) — 우리가 이미 apis.av_quote로 같은 자료를 쓰고 있다. 새로 붙일 이유 없음.
+- Twelve Data (mcp.twelvedata.com) — get_dividends·get_company_info 있음. 무료 등급이 있는지 확인 안 함. 우리는 Nasdaq 무키 API로 배당을 받고 있어 급하지 않다.
+- Webull / FactSet / Zacks / Quartr / Yardi Matrix — 계정·기관 계약이 필요하거나 미국 시장 전용. 한국 부동산·통계는 한 곳도 없다.
+- Ramp / Grasshopper / Links Connect — 우리 일과 상관없는 사내 지출·뱅킹용.
+→ 결론: 한국 부동산·통계는 지금처럼 공공데이터포털 API(국토부 실거래·건축물대장·법령)를 직접 부르는 게 맞다. 커넥터로 바꿀 것 없음.

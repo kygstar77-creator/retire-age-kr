@@ -164,6 +164,37 @@ def title_kw_in_body(title, body):
             out.append((w, 0, '제목에 걸어 놓고 본문에서 한 번도 안 썼다 — 제목과 본문이 따로 논다'))
     return out
 
+
+# ── 제목이 말이 되는지 ──────────────────────────────────────────────────
+# 사장님 2026-09-26: "제목이 일반적으로 쓰는 문장이 아닌데 한국인이."
+#   "비는 5년", "헐어 쓸 때의 차이", "돈 빌려주는 회사", "300원짜리가 167원짜리보다"
+# 숫자를 욱여넣고 쉼표로 이어 붙이다 보니 말로는 안 하는 문어체 압축이 나온다.
+# 실측(2026-09-26 · 네이버 상위 699개 대 우리 74개):
+#   쉼표 19% 대 70% · 숫자 0개 59% 대 5% · 물음으로 끝 16% 대 3% · '다'로 끝 6% 대 24%
+TITLE_BAD = [
+    (r'(하는|되는|드는|비는|남는|받는|주는|나는)\s*\d+\s*(년|개월|곳|건|개|명)',
+     '관형형 + 숫자 + 단위로 압축("비는 5년") — 말로는 이렇게 안 한다'),
+    (r'\S*[할쓸울들볼줄؟]\s*때[의와과]', '"~할 때의 차이" 식 압축 — 풀어서 쓴다'),
+    (r'\S+[을를]?\s*(헐어|메울|메워|비는|남는)\s', '"헐어 쓸 때·메울 때" — 일상에서 안 쓰는 말이다'),
+    (r'\d+원짜리', '"300원짜리" — 무엇이 300원인지 제목만 보고 모른다'),
+    (r'(저점|고점)의\s*\d', '"저점의 7배" — 주가인지 실적인지 안 밝혔다'),
+    (r'돈\s*(빌려주는|빌리는)\s*회사', '"돈 빌려주는 회사" — 그렇게 부르는 사람이 없다. 원말을 쓰고 한 줄 풀어 준다'),
+    (r'[가-힣]+의\s+[가-힣]+의\s', "'의'가 겹침 — 한 번만 쓴다"),
+]
+
+def title_check(t):
+    """제목 하나를 읽고 말이 되는지 본다. 길이가 아니라 **표현**을 본다."""
+    out = []
+    if not t: return out
+    for pat, why in TITLE_BAD:
+        if re.search(pat, t): out.append(why)
+    n = len(re.findall(r'\d[\d,.]*', t))
+    if n >= 3: out.append(f'숫자 {n}개 — 상위 노출 제목은 59%가 0개다. 하나만 남긴다')
+    if t.count(',') >= 2: out.append('쉼표 2개 이상 — 한 제목에 한 가지만 말한다')
+    if re.search(r'다$', t.strip().rstrip('.')): out.append('"~다"로 끝남 — 상위 6%뿐이다. 명사나 물음으로 끝낸다')
+    if len(t) > 45: out.append(f'{len(t)}자 — 상위 중앙값 33자')
+    return out
+
 def check(text, title=None):
     out = []
     ss = sents(text)
@@ -181,6 +212,8 @@ def check(text, title=None):
         if VAGUE.search(s) and i > 1:
             out.append(('지시어', i, f'가리키는 대상이 분명한지 확인 · {s[:60]}'))
     if title:
+        for why in title_check(title):
+            out.append(('제목', 0, f'{why} · {title[:44]}'))
         for w, n, why in title_kw_in_body(title, text):
             out.append(('제목말빠짐', 0, f'"{w}" {why}'))
     for i, w, s in acronyms(text):

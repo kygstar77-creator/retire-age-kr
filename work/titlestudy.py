@@ -23,15 +23,30 @@ def clean(t):
     return re.sub(r'\s+', ' ', html.unescape(re.sub('<[^>]+>', '', t))).strip()
 
 def ranked_titles(kw, tab):
-    """네이버 검색 상위에 실제로 뜬 제목. 블로그 이름이 아니라 글 제목만 고른다
-    (글 제목에만 titleHref 뒤에 글 번호가 붙는다)."""
+    """네이버 검색 상위에 실제로 뜬 글 제목.
+
+    2026-09-26: 카페 탭이 오래 0건이었다. titleHref 패턴이 블로그 결과에만 맞았기 때문이다.
+    그래서 '제목 규칙'이 블로그 제목만으로 만들어졌고, 그 규칙을 카페 글에도 그대로 썼다.
+    사장님 지적: "제목이 일반적으로 쓰는 문장이 아닌데 한국인이."
+    카페는 쓰임이 다르다 — 검색으로도 들어오지만 목록에서 눌려야 한다.
+    실측(카페 탭): "전세가율 높은 지역, 지금 매매 기회일까?" 처럼
+    **검색어를 앞에 두고 뒤를 말하듯 끝낸다.** 결론을 제목에 다 넣지 않는다."""
     host = 'blog' if tab == 'blog' else 'cafe'
     s = get(f'https://search.naver.com/search.naver?ssc=tab.{tab}.all&query=' + urllib.parse.quote(kw))
-    pat = r'"title":"(.{6,90}?)","titleEllipsis":\d+,"titleHref":"https://' + host + r'\.naver\.com/[^/"]+/\d+"'
     out, seen = [], set()
+    # ① 예전 패턴(블로그 결과에 맞는다)
+    pat = r'"title":"(.{6,90}?)","titleEllipsis":\d+,"titleHref":"https://' + host + r'\.naver\.com/[^/"]+/\d+"'
     for m in re.finditer(pat, s):
         t = clean(m.group(1))
         if t and t not in seen: seen.add(t); out.append(t)
+    # ② a 태그 안의 글 제목(카페 결과가 이 모양이다)
+    if not out:
+        for m in re.finditer(r'<a[^>]+href="https?://' + host + r'\.naver\.com/[^"]+"[^>]*>(.{5,200}?)</a>', s, re.S):
+            t = clean(m.group(1))
+            # 카페·블로그 '이름'이 섞여 든다. 댓글(RE…)과 너무 짧은 것도 뺀다.
+            if not (8 <= len(t) <= 70) or t in seen: continue
+            if t.startswith('RE') or 'ㅣ' in t or t.endswith("'"): continue
+            seen.add(t); out.append(t)
     return out
 
 # ── 제목의 모양을 재는 자 ────────────────────────────────────────────────

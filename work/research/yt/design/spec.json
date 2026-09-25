@@ -1,31 +1,31 @@
 {
- "n": 296,
+ "n": 451,
  "long": {
-  "bright": 0.4663,
-  "contrast": 0.3905,
+  "bright": 0.4797,
+  "contrast": 0.3911,
   "sat": 0.3454,
   "yellow": 0.0278,
-  "red": 0.0259,
-  "white": 0.1209,
-  "dark": 0.4147,
-  "text": 0.9433,
-  "text_top": 0.9211,
-  "text_mid": 0.9429,
-  "text_bot": 0.9714,
-  "text_thick": 1.0
+  "red": 0.026,
+  "white": 0.1247,
+  "dark": 0.4104,
+  "text": 0.0769,
+  "text_top": 0.1309,
+  "text_mid": 0.0784,
+  "text_bot": 0.0,
+  "text_thick": 0.0278
  },
  "short": {
-  "bright": 0.2069,
+  "bright": 0.184,
   "contrast": 0.2091,
-  "sat": 0.3502,
-  "yellow": 0.0091,
+  "sat": 0.3117,
+  "yellow": 0.0087,
   "red": 0.0001,
-  "white": 0.0158,
+  "white": 0.0153,
   "dark": 0.7907,
-  "text": 0.354,
-  "text_top": 0.275,
-  "text_mid": 0.4387,
-  "text_bot": 0.3095,
-  "text_thick": 0.7778
+  "text": 0.0771,
+  "text_top": 0.1186,
+  "text_mid": 0.0788,
+  "text_bot": 0.0338,
+  "text_thick": 0.1056
  }
 }

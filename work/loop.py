@@ -128,7 +128,7 @@ def measure_ours():
     rows = []
     for pat, isshort in (('short*.png', True), ('long*.png', False)):
         for p in sorted(glob.glob(os.path.join(SAMPLE, pat))):
-            st = thumbstat.measure(p)
+            st = thumbstat.measure(p, pad=False)   # 우리 그림에는 유튜브 여백이 없다(2026-09-25)
             if st: rows.append({**st, 'file': os.path.basename(p), 'short': isshort})
     return rows
 
@@ -315,9 +315,10 @@ CAPPED = {
 #     프레임을 꽉 채우는 자료 화면을 깔아야 닿는 숫자다 — 그리기 손잡이가 아니라 '무엇을 배경에 까나'의 문제라
 #     tools-wanted.md 에 사람 판단으로 올렸다. 숫자를 맞추려고 없는 자료를 지어 깔지 않는다.
 BAND_CAPPED = {
-    ('long', 'text_mid'): '2026-09-25 실측 — 격자(text_y 0.15~0.80)·panel_alpha 0~212·bg_bright 0.5~1.8·3줄 나누기를 '
-                          '전부 재 봤지만 bot 이 0.363 에 고정된다. 경쟁 기준값(text 0.9433·text_thick 1.0)은 '
-                          '프레임을 꽉 채운 사진에서 나온 값이라 배경을 바꾸지 않으면 닿지 않는다',
+    # ('long', 'text_mid') 는 2026-09-25 98회차까지 '한계 확정'이었다. 근거는 "경쟁 기준값 0.9433 은
+    # 프레임을 꽉 채운 사진에서 나온 값이라 닿지 않는다" 였는데, 그 0.9433 자체가 옛 text_map 이 포화된
+    # 결과였다(가장자리가 있으면 켜지는 자였다 — thumbstat.text_map 주석의 실측 참고). 재는 자를 고쳤으니
+    # 근거가 없어졌다. 다시 격자로 재게 풀어 둔다. 새 자로도 못 닿으면 그때 실측을 적어 다시 세운다.
 }
 
 def main():

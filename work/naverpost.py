@@ -489,6 +489,20 @@ def post_blog(page, pkg, wait=False):
         except Exception as e: print('태그 입력 실패:', repr(e)[:120])
     shot(page, 'blog_publish_panel2')
     page.on('dialog', lambda d: d.accept())   # 카페와 같은 이유 — 네이티브 확인 창을 안 받으면 자동 취소된다
+    # 2026-09-25: 9/24 21:09~9/25 11:30 사이 13시간 동안 블로그가 한 편도 안 나갔는데, 회차 기록에는
+    # '발행 클릭 뒤 화면 이동 30초 초과'로만 남았다. 진짜 이유(네이버 글쓰기 API가 IP 확인으로 막음)는
+    # 카페 쪽에서 먼저 드러났다 — 카페에만 응답 감시가 걸려 있었기 때문이다. 블로그에도 똑같이 건다.
+    # 블로그가 먼저 막히면 note_auth_fail이 안 찍혀 check가 '로그인됨'이라 답하고 알림도 안 갔다.
+    apierr = []
+    def _watch_blog(resp):
+        try:
+            if resp.request.method in ('POST', 'PUT') and resp.status >= 400:
+                body = resp.text()[:400]
+                print('[발행 API]', resp.status, resp.url[:110])
+                print('[발행 API 답]', body)
+                apierr.append(body)
+        except Exception: pass
+    page.on('response', _watch_blog)
     frame.get_by_role('button', name=re.compile(r'^\s*발행\s*$')).last.click()
     # 발행 뒤 PostView.naver?...&logNo=NNN 또는 /kygstar7777/NNN 으로 이동한다
     try:
@@ -503,6 +517,14 @@ def post_blog(page, pkg, wait=False):
         if url:
             print('RSS에 등록 확인:', url)
             return url
+        for _ in range(10):
+            if apierr: break
+            page.wait_for_timeout(500)
+        auth = [b for b in apierr if '인증 실패' in b or 'IP check' in b or '10004' in b or 'loginStat' in b]
+        if auth:
+            note_auth_fail(auth[0]); alert_login(auth[0])
+            raise RuntimeError('네이버 로그인 IP 불일치 — 사람이 `py -3.12 work/naverpost.py login` 을 다시 해야 한다. '
+                               '서버 답: ' + auth[0][:200])
         raise
     m = re.search(r'logNo=(\d+)', page.url) or re.search(BLOG_ID + r'/(\d+)', page.url)
     return f'https://blog.naver.com/{BLOG_ID}/{m.group(1)}' if m else page.url
@@ -618,6 +640,7 @@ def submit_cafe(page, title=None):
     if auth:
         shot(page, 'cafe_auth_fail')
         note_auth_fail(auth[0])
+        alert_login(auth[0])   # 2026-09-25: 적어 두기만 하면 다음 check 회차까지 아무도 모른다. 막힌 그 자리에서 알린다.
         raise RuntimeError('네이버 로그인 IP 불일치 — 사람이 `py -3.12 work/naverpost.py login` 을 다시 해야 한다. '
                            '서버 답: ' + auth[0][:200])
     try:

@@ -181,6 +181,11 @@ def main(pkg):
         for w in BAN:
             if w in s: problems.append(('말투', i, f'보고서투 "{w}" · {s[:60]}'))
         for w in SELF_TALK:
+            # AI를 썼다는 고지는 네이버 공식 권고다(2024-02-28 생성형 AI 정책 안내:
+            # "생성형 AI를 활용했다면 해당 사실을 문서에 명시할 것을 권고합니다").
+            # 규칙이 시키는 문장을 규칙이 도로 지적하면 회차마다 같은 지적을 받고
+            # 매번 "유지"라고 적게 된다 — 2026-09-26 07시에 또 그랬다. 이 한 줄만 뺀다.
+            if w == '이 글은' and 'AI' in s: continue
             if w in s: problems.append(('말투', i, f'글이 스스로를 설명 "{w}" · {s[:60]}'))
         if len(s) > 120: problems.append(('말투', i, f'{len(s)}자 한 문장 — 끊어야 한다 · {s[:60]}'))
 

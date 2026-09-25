@@ -88,7 +88,21 @@ def main():
             return DAY_CAP.get(kind, 기본)
         except Exception:
             return 기본
-    M += [('발행', '오늘 블로그 편수', nb, 목표('blog', 18), 3, 'firemap-write 회차 note에서 0편 사유 확인 → 대기 묶음·가드·시간초과'),
+    # 목표는 '하루가 끝났을 때'가 아니라 '지금 시각까지 나갔어야 할' 편수로 잰다.
+    # 왜(2026-09-26 07시): 블로그는 새벽 2~7시를 일부러 쉬는데 목표가 18로 고정이라,
+    # 07시에 2편이면 규정을 정확히 지킨 것인데도 부족분 2.667로 일감표 1번에 앉았다.
+    # 새벽 여섯 회차가 내리 이 항목을 1번으로 받아 "0편 사유 확인"을 시켰고, 사유는
+    # 매번 "쉬는 시간대라 안 올림"이었다. 회차가 닫을 수 없는 항목이 1번을 차지하면
+    # 실제 할 일이 밀린다(위 주석들과 같은 사고가 네 번째다).
+    # 블로그 슬롯은 00·01시와 08~23시 열여덟 자리. 지금 회차는 아직 진행 중이라 빼고,
+    # 이미 지나간 슬롯만 센다. 하루가 다 돌면 18이 되어 종전과 같아진다.
+    BLOG_SLOTS = [0, 1] + list(range(8, 24))
+    def 지금까지목표(slots, cap):
+        h = time.localtime().tm_hour
+        due = sum(1 for x in slots if x < h)
+        return min(due, cap) if cap else due
+    blog_due = 지금까지목표(BLOG_SLOTS, 목표('blog', 18))
+    M += [('발행', '오늘 블로그 편수', nb, blog_due, 3, f'지금 시각까지 나갔어야 할 {blog_due}편 기준(새벽 2~7시는 쉼) · 모자라면 회차 note에서 0편 사유 확인 → 대기 묶음·가드·시간초과'),
           ('발행', '오늘 카페 편수', nc, 목표('cafe', 24), 3, '위와 같음'),
           ('발행', '0편 회차 수', zero, 0, 3, how_zero)]
     pend = sh(os.path.join(HERE, 'naverpost.py'), 'pending')

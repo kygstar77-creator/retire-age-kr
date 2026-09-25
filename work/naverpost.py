@@ -15,7 +15,7 @@
 #   카테고리: 경제지식      (블로그)
 #   태그: a, b, c           (블로그)
 #   게시판: 자유게시판       (카페)
-import sys, os, re, time, json, io
+import sys, os, re, time, json, io, subprocess
 sys.stdout.reconfigure(encoding='utf-8')
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 
@@ -314,6 +314,24 @@ def auth_fail_seen():
         if time.time() - os.path.getmtime(AUTHFAIL) > 6 * 3600: return None
         return io.open(AUTHFAIL, encoding='utf-8').read().strip()
     except Exception: return None
+
+def alert_login(reason):
+    """로그인이 막혔다는 걸 사장님 휴대폰으로 알린다(텔레그램).
+    회차는 스스로 멈춘 걸 알릴 수 없고, 계기판은 사장님이 봐야 보인다.
+    2026-09-25: 로그인이 13시간 막혀 블로그·카페 0편이었는데 아무도 몰랐다.
+    같은 내용을 매시 보내면 알림이 무뎌지므로 6시간에 한 번만 보낸다."""
+    stamp = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research', '.login_alert')
+    try:
+        if os.path.exists(stamp) and time.time() - os.path.getmtime(stamp) < 6 * 3600: return
+    except Exception: pass
+    msg = ('[파이어맵] 네이버 로그인이 막혔습니다 - ' + str(reason)[:200] +
+           '  /  PC에서 `py -3.12 work/naverpost.py login` 한 번만 해주시면 대기 원고가 바로 나갑니다.')
+    try:
+        subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tgreport.py'),
+                        'send', msg], timeout=60, capture_output=True)
+        io.open(stamp, 'w', encoding='utf-8').write(time.strftime('%Y-%m-%d %H:%M'))
+    except Exception as e:
+        print('알림 실패:', e)
 
 def already_up(kind, title):
     """이 제목이 이미 올라가 있으면 그 URL. 발행 직전과 실패 직후에 둘 다 본다."""
@@ -743,7 +761,9 @@ def main():
                     # 쿠키는 살아 있어도 글쓰기 API가 IP로 막으면 '로그인됨'은 거짓말이다(2026-09-25).
                     print('로그인 안 됨 — 쿠키는 있는데 글쓰기가 IP 확인에서 막혔다:', af)
                     print('사장님이 `py -3.12 work/naverpost.py login` 을 다시 해야 한다.')
+                    alert_login(af)
                     sys.exit(2)
+                if not ok: alert_login('쿠키가 만료됐다(로그인 화면으로 넘어간다)')
                 print('로그인됨' if ok else '로그인 안 됨'); sys.exit(0 if ok else 2)
             if cmd == 'shot':
                 page.goto(sys.argv[2], wait_until='domcontentloaded'); page.wait_for_timeout(5000)

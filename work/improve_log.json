@@ -82,5 +82,12 @@
   "task": "B",
   "did": "내일(9/26) 편성표 생성 · 원고 재고 블로그 2→3 카페 2→4(gfs50s 50대 가계금융복지조사, pep0925 펩시코) 완성 묶음 2개 추가, readcheck 0건·selfcheck 0건 · planner.py 나스닥 실적 캘린더 data:null 크래시 수정(실패 문구 대신 '예정 없음'을 적는다)",
   "blocked": "crosscheck 바깥모델 검증은 Gemini·대체 모두 HTTP 429로 실패해 selfcheck로 대체 · worklist 1순위(디자인 경쟁 차이 3건)는 재고 채우기에 시간을 써서 못 닫음"
+ },
+ {
+  "date": "2026-09-25",
+  "hour": 17,
+  "task": "C",
+  "did": "대기열 0-b 닫음 — work/calcheck.py(계산 검산 9종) 만들어 selfcheck.py에 [검산] 태그로 붙임. 발행 123묶음 전수 검증(지적 2건, 둘 다 진짜) · 오류 주입 6건 전수 검출 · 대기 원고 6편 지적 0건. avgo0924에서 실제 계산 오류 발견해 fix-needed.md에 올림. 안 쓰던 offitable.py 실행.",
+  "blocked": "없음"
  }
 ]

@@ -180,6 +180,21 @@ def main(pkg):
             if w in s: problems.append(('말투', i, f'글이 스스로를 설명 "{w}" · {s[:60]}'))
         if len(s) > 120: problems.append(('말투', i, f'{len(s)}자 한 문장 — 끊어야 한다 · {s[:60]}'))
 
+    # 2-b) 계산 검산 — 값을 실제로 다시 계산한다(calcheck.py, 2026-09-25 17시 C 회차).
+    # 여기까지의 검사는 "본문 숫자가 사실표에 있나"만 본다. 사실표 숫자로 만든 파생값이 틀려도
+    # 자릿수가 섞여 있으면 통과했다(acediv0924 의 4억 5,340만원, jnj0925 의 9월 23일→24일).
+    # 그 구멍을 막는다. 발행된 123묶음에 돌려 지적 2건(둘 다 실제 문제)만 나오는 걸 확인했다.
+    try:
+        import calcheck
+        tpath = os.path.join(pkg, 'title.txt')
+        title = open(tpath, encoding='utf-8').read() if os.path.exists(tpath) else ''
+        for i, msg in calcheck.check_sents(sents(body)):
+            problems.append(('검산', i, msg))
+        for msg in calcheck.check_title(title, body) + calcheck.check_dates(body, facts):
+            problems.append(('검산', 0, msg))
+    except Exception as e:
+        problems.append(('검산', 0, f'계산 검산이 돌지 않았다: {e}'))
+
     # 표본이 적은데 일반화하는 문장 — 발행을 막는다
     for i, s, nread in thin_sample(body, facts):
         problems.append(('표본', i, (f'{nread}편으로 일반화' if nread else '적은 표본으로 일반화')
@@ -215,11 +230,13 @@ def main(pkg):
         out.append(f'[{tag}] {("문장 " + str(i)) if i else "전체"} — {msg}')
     open(os.path.join(pkg, 'check_self.txt'), 'w', encoding='utf-8').write('\n'.join(out) + '\n')
 
-    fact_n = sum(1 for t, _, _ in problems if t in ('사실', '표본'))
+    # 검산 지적은 사실 지적과 같이 센다 — 되돌아온 값이 틀린 글은 발행하면 안 된다.
+    fact_n = sum(1 for t, _, _ in problems if t in ('사실', '표본', '검산'))
     calc_n = sum(1 for t, _, _ in problems if t == '계산')
+    recalc_n = sum(1 for t, _, _ in problems if t == '검산')
     tone_n = sum(1 for t, _, _ in problems if t == '말투')
     print(f'[자체 검증] {os.path.basename(os.path.dirname(pkg))} · {kind} · 문장 {n}개')
-    print(f'  사실 지적 {fact_n}건 · 계산 확인 {calc_n}건 · 말투 지적 {tone_n}건 · 출처 {urls+orgs}개')
+    print(f'  사실 지적 {fact_n}건(검산 {recalc_n}건 포함) · 계산 확인 {calc_n}건 · 말투 지적 {tone_n}건 · 출처 {urls+orgs}개')
     for tag, i, msg in problems[:20]: print(f'  [{tag}] {("문장 "+str(i)) if i else "전체"} — {msg[:110]}')
     if len(problems) > 20: print(f'  … 외 {len(problems)-20}건 (check_self.txt)')
     print('  →', os.path.join(pkg, 'check_self.txt'))

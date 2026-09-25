@@ -200,7 +200,14 @@ BAND_KNOB2 = {'short': ('split_scale', [1.0, 1.3, 1.6, 2.0, 2.4, 2.8]),
 # 새 자에서는 근거가 없어졌다고 보고 113회차에 24칸(lines 2·3 × text_y 4 × spread 3)을 전부 그려 재 봤다.
 # lines=2 는 12칸 최선이 1.4697 로 lines=3 최선(0.9878)보다 나빴다 — 두 줄이면 아래 칸이 늘 0.0000 이고
 # (줄이 둘뿐이라 아래 칸에 들어갈 줄이 없다) 가운데 칸도 0 아니면 0.17 로 튄다. 되돌리지 않는다.
-BAND_KNOB3 = {'short': ('text_y', [0.20, 0.35, 0.44, 0.46, 0.48, 0.50, 0.62, 0.72])}
+BAND_KNOB3 = {'short': ('text_y', [0.20, 0.35, 0.44, 0.46, 0.48, 0.50, 0.62, 0.72]),
+              # 롱폼 세 번째 손잡이 bot_scrim(아래 칸을 눌러 평평하게, thumb.py). 2026-09-25 116회차.
+              # 롱폼 세 칸 오차가 3.2773 에 얼어 있었고 그 75%(0.1719/0.2286)가 아래 칸 하나였다.
+              # 글자 손잡이로는 못 닫는다 — text_y 6점 x text_scale 3점 18장을 전부 그려 쟀고 아래 칸
+              # 최저가 0.0845 였다. 글자만 빼고 같은 설정으로 그리면 아래 칸이 0.0000 이라, 아래 칸 잉크는
+              # 글자(거기 있을 때) 아니면 배경(글자 뒤 띠가 위로 비켜났을 때)이다. 경쟁은 정확히 0.0 이다.
+              # 실측(scrim x text_y x text_scale 24장): 0.38/0.35/0.55 에서 오차 2.0042 · bot 0.0100.
+              'long':  ('bot_scrim', [0.0, 0.2, 0.3, 0.38, 0.45])}
 # 격자 끝점에 최선이 붙으면 "유지(가장 작다)"는 수렴이 아니라 격자가 짧다는 뜻이다.
 # split_scale 은 72회차까지 늘 끝점 2.0 이 최선이었고(오차 1.0121→0.728→0.5784→0.2653, 계속 내려감)
 # 그릴 때 thumb.py 가 2.0 으로 깎고 있어 판형 오차가 0.2653 에 얼어 있었다(2026-09-24).
@@ -215,7 +222,8 @@ KNOB_LIMIT = {'text_spread': (0.0, 1.4),      # thumb.py 가 0~1.4 로 깎는다
               # 하한 0.55 는 화면 검증에서 나왔다(2026-09-25). 같은 배경·같은 문구로 1.0/0.66/0.55/0.45 를
               # 그려 480px(실제 피드 크기)로 견줬다. 0.45 는 두 줄이 히트맵 글자에 묻혀 안 읽힌다.
               # 숫자로는 0.45 가 더 낫지만(오차 4.11 vs 4.98) 거기까지 내려가지 않는다.
-              'text_scale':  (0.55, 1.0)}
+              'text_scale':  (0.55, 1.0),
+              'bot_scrim':   (0.0, 0.5)}    # thumb.py 가 0~0.5 로 깎는다
 
 def band_err(rows, kind, spec):
     """세 칸 상대오차 합. 작을수록 경쟁 판형에 가깝다"""
@@ -324,6 +332,53 @@ def grid_pick(design, spec, kind, knob, base_grid, did, blocked):
     return table
 
 
+# 두 손잡이를 같이 움직여야만 보이는 자리. 좌표 하강은 이런 자리를 구조적으로 못 찾는다 —
+# 손잡이를 하나씩 고르는데, 각자 혼자서는 이득이 없기 때문이다.
+# 2026-09-25 118회차 실측이 그 장면이다. bot_scrim 을 새로 달고 두 바퀴를 돌렸는데 3.2773 → 3.2047 로
+# 0.07 밖에 안 줄었다. 이유: 첫 바퀴에 scrim 을 고를 때 글자가 아직 아래(text_y 0.72)에 있어서, 아래 칸 잉크가
+# 배경이 아니라 글자다. 글자는 scrim 위에 그리므로 scrim 을 아무리 올려도 그 자리에서는 이득이 0 이다
+# (격자 전 구간 3.26~3.31 로 평평했고 0.1 이 뽑혔다). 그래서 다음 바퀴의 text_y 도 0.67 에 머문다.
+# 둘을 같이 움직이면 보인다(24장 전수 실측, text_scale 0.55):
+#   scrim 0.00 · text_y 0.72 → 3.4919      scrim 0.38 · text_y 0.72 → 3.2631   (글자를 안 옮기면 이득 없음)
+#   scrim 0.00 · text_y 0.35 → 4.1839      scrim 0.38 · text_y 0.35 → 2.0042   (같이 옮기면 -2.18)
+# 그래서 롱폼은 좌표 하강 앞에 거친 2차원 훑기를 한 번 둔다. 8점만 본다(회차 시간).
+JOINT = {'long': ('text_y', [0.25, 0.35, 0.50, 0.72], 'bot_scrim', [0.0, 0.38])}
+
+
+def joint_seed(design, spec, kind, did, blocked):
+    """두 손잡이를 곱으로 훑어 출발점을 잡는다. 여기서 고른 값 위에서 좌표 하강이 다듬는다"""
+    if kind not in JOINT: return
+    ka, ga, kb, gb = JOINT[kind]
+    d = design.setdefault(kind, {})
+    cur = (d.get(ka), d.get(kb))
+    best = None
+    for va in ga:
+        for vb in gb:
+            d[ka], d[kb] = va, vb
+            json.dump(design, open(DESIGN, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+            render_samples(keep_chart=True)
+            err, got = band_err(measure_ours(), kind, spec)
+            if err is None:
+                blocked.append(f'{kind} 두 손잡이 같이 훑기 — 못 쟀다')
+                d[ka], d[kb] = cur; json.dump(design, open(DESIGN, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+                return
+            if best is None or err < best[0] - 1e-4: best = (err, va, vb, got)
+    here = None
+    if cur[0] is not None and cur[1] is not None:
+        d[ka], d[kb] = cur
+        json.dump(design, open(DESIGN, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        render_samples(keep_chart=True)
+        here, _ = band_err(measure_ours(), kind, spec)
+    if best and (here is None or best[0] < here - 1e-4):
+        d[ka], d[kb] = best[1], best[2]
+        did.append(f"{kind} 두 손잡이 같이 훑기({len(ga) * len(gb)}점): {ka} {cur[0]}→{best[1]} · {kb} {cur[1]}→{best[2]} "
+                   f"(세 칸 오차 합 {round(here, 4) if here else '?'} → {round(best[0], 4)}, "
+                   f"{ {k: round(v, 4) for k, v in best[3].items()} })")
+    else:
+        did.append(f'{kind} 두 손잡이 같이 훑기 — 지금 자리({cur[0]}·{cur[1]}, 오차 {round(here, 4) if here else "?"})가 여전히 최선이다')
+    json.dump(design, open(DESIGN, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+
+
 def tune_bands(design, spec, kind, did, blocked):
     """세 칸 맞추기. 손잡이를 하나씩 차례로 골라 내려간다(좌표 하강) — 곱으로 다 돌면 너무 오래 걸린다.
 
@@ -333,16 +388,25 @@ def tune_bands(design, spec, kind, did, blocked):
     그 격자가 실제로 무슨 값을 냈는지 따질 수 없던 이유다(2026-09-25).
     """
     out = {}
-    t1 = grid_pick(design, spec, kind, BAND_KNOB[kind], BAND_GRID[kind], did, blocked)
-    if t1: out[BAND_KNOB[kind]] = t1
-    if kind in BAND_KNOB2 and t1:
-        k2, g2 = BAND_KNOB2[kind]
-        t2 = grid_pick(design, spec, kind, k2, g2, did, blocked)
-        if t2: out[k2] = t2
-    if kind in BAND_KNOB3 and t1:
-        k3, g3 = BAND_KNOB3[kind]
-        t3 = grid_pick(design, spec, kind, k3, g3, did, blocked)
-        if t3: out[k3] = t3
+    plan = [(BAND_KNOB[kind], BAND_GRID[kind])]
+    for tbl in (BAND_KNOB2, BAND_KNOB3):
+        if kind in tbl: plan.append(tbl[kind])
+    # 한 바퀴만 돌면 '나중에 단 손잡이'가 굶는다. 좌표 하강은 앞 손잡이를 뒤 손잡이가 없는 세상에서 고르기
+    # 때문이다 — 2026-09-25 116회차에 bot_scrim 을 달고 실측으로 확인했다(24장 전수):
+    #   한 바퀴: text_y 0.72(scrim 없을 때 최선) → scrim 0.28 → scale 0.55 → 오차 3.2631 에서 멈춘다
+    #   두 바퀴: 새 scrim 자리에서 text_y 를 다시 고르면 0.35 로 옮겨 가고 오차가 2.0042 까지 내려간다
+    # 그래서 두 바퀴를 돌되, 한 바퀴에서 손잡이가 하나도 안 움직이면 거기가 바닥이므로 멈춘다.
+    d = design.setdefault(kind, {})
+    joint_seed(design, spec, kind, did, blocked)
+    for rnd in range(2):
+        before = {k: d.get(k) for k, _ in plan}
+        for i, (knob, grid) in enumerate(plan):
+            t = grid_pick(design, spec, kind, knob, grid, did, blocked)
+            if t: out[knob] = t
+            elif i == 0: return out          # 첫 손잡이를 못 쟀으면 샘플·기준이 없는 것이라 더 돌지 않는다
+        if all(before.get(k) == d.get(k) for k, _ in plan):
+            if rnd: did.append(f'{kind} 세 칸 — 두 바퀴째에 움직인 손잡이가 없다(좌표 하강 바닥)')
+            break
     return out
 
 

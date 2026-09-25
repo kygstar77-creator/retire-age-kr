@@ -50,8 +50,8 @@ def cfg(kind):
     """loop.py가 매 회차 갱신하는 design.json. 없으면 첫 측정값(2026-09-23 경쟁 상위 중앙값)"""
     try: d = json.load(open(os.path.join(HERE, 'design.json'), encoding='utf-8'))
     except Exception: d = {}
-    base = {'long': {'text_y': 0.72, 'bg_bright': 0.45, 'panel_alpha': 150, 'yellow_bottom': 1, 'yellow_frac': 1.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'panel_pad': 1.0, 'panel_blur': 28},
-            'short': {'text_y': 0.52, 'bg_bright': 0.30, 'panel_alpha': 150, 'yellow_bottom': 0, 'yellow_frac': 0.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'panel_pad': 1.0, 'panel_blur': 28, 'lines': 3, 'split_scale': 2.0}}[kind]
+    base = {'long': {'text_y': 0.72, 'bg_bright': 0.45, 'panel_alpha': 150, 'yellow_bottom': 1, 'yellow_frac': 1.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'panel_pad': 1.0, 'panel_blur': 28, 'bot_scrim': 0.0, 'scrim_a': 110},
+            'short': {'text_y': 0.52, 'bg_bright': 0.30, 'panel_alpha': 150, 'yellow_bottom': 0, 'yellow_frac': 0.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'panel_pad': 1.0, 'panel_blur': 28, 'bot_scrim': 0.0, 'scrim_a': 110, 'lines': 3, 'split_scale': 2.0}}[kind]
     base.update(d.get(kind, {})); return base
 
 def disp(sz):
@@ -189,7 +189,34 @@ def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
         for y, l in zip(ys, lhs): dsh.rectangle([0, y - int(l * 0.35 * pp), W, y + l + int(l * 0.3 * pp)], fill=(0, 0, 0, int(c['panel_alpha'])))
     else:
         dsh.rectangle([0, ys[0] - int(lhs[0] * 0.35 * pp), W, ys[-1] + lhs[-1] + int(lhs[-1] * 0.3 * pp)], fill=(0, 0, 0, int(c['panel_alpha'])))
-    im = Image.alpha_composite(im.convert('RGBA'), sh.filter(ImageFilter.GaussianBlur(pb))).convert('RGB'); dr = ImageDraw.Draw(im)
+    im = Image.alpha_composite(im.convert('RGBA'), sh.filter(ImageFilter.GaussianBlur(pb))).convert('RGB')
+    # 아래 칸 비우기(bot_scrim, 0 = 끔 / 값 = 아래에서 몇 %를 눌러 평평하게 하나). 2026-09-25 116회차에 달았다.
+    # 롱폼 세 칸 오차가 3.2773 에 얼어 있었고 그 75%가 아래 칸 하나였다(우리 0.1719 · 경쟁 0.0000).
+    # 글자를 어디에 두고 얼마나 키우든 안 닫혔다 — text_y 6점 x text_scale 3점 18장을 전부 그려 재 봤고
+    # 아래 칸 최저가 0.0845 였다(0.58/0.65). 원인을 갈라 재서 찾았다: 같은 배경·같은 설정에서 글자만 빼면
+    # 아래 칸이 0.0000 이다. 즉 아래 칸 잉크는 (글자가 거기 있으면) 글자이고, 글자를 위로 올리면
+    # 글자 뒤 어두운 띠도 같이 올라가서 이번엔 배경(히트맵)의 결이 그대로 드러나 0.14 가 된다.
+    # 경쟁 롱폼은 아래 칸이 정확히 0.0 이다 — 아래쪽이 비어 있거나 눌려 있다는 뜻이다.
+    # 그래서 '글자 손잡이'가 아니라 '아래를 누르는 손잡이'를 단다. 위는 투명, 아래로 갈수록 진해지는
+    # 그라데이션이라 자료 화면이 잘려 사라지지 않는다(사장님 "자료 화면이 보여야 한다").
+    scr = min(max(float(c.get('bot_scrim', 0.0)), 0.0), 0.5)
+    if scr > 0.005:
+        top_y = int(H * (1.0 - scr))
+        col = Image.new('L', (1, H), 0)
+        # 110 은 재서 고른 균형점이다(2026-09-25 119회차, 같은 배경·같은 문구로 110/150/190/230 실측).
+        # 230 은 아래 칸을 0.0000 까지 눌러 세 칸 오차가 제일 작지만(1.2245) 그림이 어두워져서
+        # bright 0.3315(경쟁 0.4797)·dark 0.5147(경쟁 0.4104)이 새 차이로 떴다 — 차이 하나를 닫고 둘을 열었다.
+        #   110 → 세 칸 1.4910 · 아래 칸 0.0074 · bright 0.3999 · dark 0.3592   ← bright·dark 둘 다 차이에서 빠진다
+        #   150 → 1.3592 · 0.0033 · 0.3770 · 0.4160     190 → 1.3254 · 0.0011 · 0.3542 · 0.4646
+        # 아래 칸은 110 에서도 0.0074 라 이미 '차이 없음'(0.01 미만)이다. 더 눌러 얻는 0.007 은
+        # 밝기 두 항목을 내주고 살 값이 아니다.
+        sa = min(max(float(c.get('scrim_a', 110)), 0.0), 255.0)   # 누르는 세기. 밝기와 아래 칸이
+        # 한 손잡이를 나눠 쥐지 않게 '얼마나 넓게'(bot_scrim)와 '얼마나 진하게'(scrim_a)를 갈라 둔다
+        for yy in range(top_y, H):
+            col.putpixel((0, yy), int(sa * ((yy - top_y) / max(1, H - top_y)) ** 0.7))
+        a = col.resize((W, H))
+        im = Image.composite(Image.new('RGB', (W, H), (0, 0, 0)), im, a)
+    dr = ImageDraw.Draw(im)
     xs = [(W - dr.textlength(t, font=f)) / 2 for t, f in zip(parts, fonts)]
     for t, f, x, y, z in zip(parts, fonts, xs, ys, szs):
         stroked(dr, (x, y), t, f, WHITE, max(3, int(z // max(6, c['stroke_ratio']))))   # 외곽선은 줄마다 한 번만

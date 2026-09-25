@@ -73,15 +73,19 @@ def market_today():
     out = []
     try:
         d = json.load(urllib.request.urlopen(urllib.request.Request(f'https://api.nasdaq.com/api/calendar/earnings?date={TOM.isoformat()}', headers=H), timeout=20))
-        rows = d.get('data', {}).get('rows') or []
+        # 2026-09-25: 실적이 하나도 없는 날(주말·휴장일)에는 나스닥이 HTTP 200에 "data": null을 준다.
+        # d.get('data', {})는 기본값이 아니라 None을 돌려줘서 .get('rows')에서 죽었고,
+        # 편성표에 "실적 캘린더 실패 'NoneType'..."만 남아 마치 API가 막힌 것처럼 보였다.
+        rows = ((d or {}).get('data') or {}).get('rows') or []
         big = sorted(rows, key=lambda r: -float(re.sub(r'[^\d.]', '', r.get('marketCap') or '0') or 0))[:6]
         if big: out.append('내일 실적: ' + ', '.join(f"{r['symbol']}({r.get('time','')})" for r in big))
-    except Exception as e: out.append('실적 캘린더 실패 ' + str(e)[:40])
+        else: out.append('내일 실적: 나스닥 캘린더에 예정된 발표가 없다(B5 마감 슬롯은 다른 일정으로 채운다)')
+    except Exception as e: out.append('실적 캘린더 실패 ' + type(e).__name__ + ' ' + str(e)[:40])
     try:
         d = json.load(urllib.request.urlopen(urllib.request.Request(f'https://api.nasdaq.com/api/calendar/economicevents?date={TOM.isoformat()}', headers=H), timeout=20))
-        rows = [r for r in (d.get('data', {}).get('rows') or []) if r.get('country') in ('US', 'United States')][:6]
+        rows = [r for r in (((d or {}).get('data') or {}).get('rows') or []) if r.get('country') in ('US', 'United States')][:6]
         if rows: out.append('내일 지표: ' + ', '.join(f"{r['eventName']}({r.get('gmt','')})" for r in rows))
-    except Exception: pass
+    except Exception as e: out.append('지표 캘린더 실패 ' + type(e).__name__ + ' ' + str(e)[:40])
     return out
 
 def ideas():

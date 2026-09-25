@@ -195,6 +195,45 @@ def title_check(t):
     if len(t) > 45: out.append(f'{len(t)}자 — 상위 중앙값 33자')
     return out
 
+
+# ── 본문이 읽히는지 ────────────────────────────────────────────────────
+# 사장님 2026-09-26: "내용에도 문어체 압축, 말로는 안 하는 내용들 넣은 거 전부 확인해 봐.
+#   데이터를 마구잡이로 나열해서 사람들이 글을 도저히 읽을 수가 없어.
+#   그리고 출처만 말하면 되지 끝에 쓸데없는 말을 왜 해."
+# 실제 글(쉐브론 배당편)에서 센 것: 표 5개 · 숫자 60개 넘음 · "~인 셈이죠" 3번 ·
+#   맺음말 "앞으로 어떻게 될지는 쓰지 않았습니다" 같은 변명 2줄.
+BODY_BAD = [
+    (r'(인|한|된|하는)\s*셈이(죠|에요|예요|다|네요)', '"~인 셈이죠" — 말로는 잘 안 한다. 그냥 단정해서 쓴다'),
+    (r'제가\s*(보기에|보니|봤|만들어|계산해|세어|열어)', '"제가 보기에·제가 표를 만들어 보니" — 글쓴이를 내세우지 않는다'),
+    (r'저는\s.{0,12}(봤|했|썼)', '"저는 ~했어요" — 필요 없으면 뺀다'),
+    (r'\S+로\s*바꾸면\s*\d+주', '"돈을 주식으로 바꾸면" — 산다고 쓴다'),
+    (r'(쪽\s*사정|서\s*있는\s*자리|꼭대기\s*가까이)', '문어체 압축 — 풀어서 쓴다'),
+    (r'(어느\s*쪽이\s*좋고\s*나쁘|좋다\s*나쁘다는\s*얘기는\s*아)', '안 한다는 말을 굳이 쓰지 않는다'),
+    (r'(쓰지\s*않았습니다|적지\s*않았습니다|말하지\s*않)\s*[.。]?\s*$', '맺음말에 변명 — 출처만 남긴다'),
+    (r'여기까지가\s', '"여기까지가 ~입니다" — 맺음말 군더더기'),
+]
+
+def body_style(text):
+    """본문 표현과 숫자 밀도. 사장님이 "읽을 수가 없다"고 한 것을 숫자로 잡는다."""
+    out, ss = [], sents(text)
+    for i, x in enumerate(ss, 1):
+        for pat, why in BODY_BAD:
+            if re.search(pat, x): out.append((why, i, x[:56]))
+    # 계산 과정을 한 줄씩 읊는 것 — 연달아 숫자 문장이 이어지면 읽기가 막힌다
+    run = 0
+    for i, x in enumerate(ss, 1):
+        if len(re.findall(r'\d[\d,.]*', x)) >= 2:
+            run += 1
+            if run == 4: out.append(('숫자가 많은 문장이 네 줄 연달아 — 표로 빼거나 결론만 남긴다', i, x[:56]))
+        else: run = 0
+    tables = text.count('|---')
+    if tables >= 4: out.append((f'표 {tables}개 — 한 글에 셋까지. 넘으면 글이 자료집이 된다', 0, ''))
+    nums = len(re.findall(r'\d[\d,.]*\s*(?:%|달러|원|배|주|곳|개|건)', text))
+    body_n = max(len(re.sub(r'\s', '', text)), 1)
+    if nums / body_n * 1000 > 35:
+        out.append((f'1,000자당 숫자 {nums/body_n*1000:.0f}개 — 35개 넘으면 읽다가 놓친다', 0, ''))
+    return out
+
 def check(text, title=None):
     out = []
     ss = sents(text)
@@ -216,6 +255,8 @@ def check(text, title=None):
             out.append(('제목', 0, f'{why} · {title[:44]}'))
         for w, n, why in title_kw_in_body(title, text):
             out.append(('제목말빠짐', 0, f'"{w}" {why}'))
+    for why, i, frag in body_style(text):
+        out.append(('본문말투', i, f'{why}' + (f' · {frag}' if frag else '')))
     for i, w, s in acronyms(text):
         out.append(('설명없음', i, f'"{w}"가 처음 나오는데 무엇인지 안 밝혔다 · {s}'))
     # 같은 어미가 세 문장 연속이면 읽는 리듬이 죽는다

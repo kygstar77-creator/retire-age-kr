@@ -399,7 +399,14 @@ def main():
         for k, want in tgt.items():
             if k not in ('yellow', 'contrast', 'white', 'bright', 'text_top', 'text_mid', 'text_bot', 'sat', 'dark'): continue
             got = statistics.median(r[k] for r in mine)
-            if want and abs(got - want) / max(want, 1e-3) > 0.25:
+            # 2026-09-25: 25% 는 '상대' 기준뿐이라 값이 0 근처인 항목은 눈에 안 보이는 차이로도 걸렸다.
+            # short.yellow 가 그랬다 — 우리 0.0114 대 경쟁 0.0087, 노란 픽셀 비율로 0.27%포인트 차이다.
+            # 이 항목들은 전부 0~1로 정규화된 값이다(yellow·white·dark·text_* 는 픽셀 비율,
+            # bright·contrast·sat 은 V.mean/V.std/S.mean 을 255로 나눈 값 — thumbstat.measure 참고).
+            # 그래서 같은 자로 잴 수 있다. 1%포인트 안쪽 차이는 손잡이를 돌려도 화면이 달라지지 않으므로
+            # 차이로 세지 않는다. 안 그러면 계기판이 회차마다 노이즈를 '미해결'로 띄우고,
+            # 다음 회차가 그걸 닫으려고 격자를 처음부터 다시 훑는다.
+            if want and abs(got - want) / max(want, 1e-3) > 0.25 and abs(got - want) >= 0.01:
                 gaps.append({'kind': kind, 'key': k, 'ours': round(got, 4), 'target': round(want, 4), 'diff': round(got - want, 4)})
     gaps.sort(key=lambda g: -abs(g['diff'] / max(g['target'], 1e-3)))
 

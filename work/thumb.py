@@ -106,7 +106,24 @@ def split2(t):
 def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
     c = cfg('short' if short else 'long')
     W, H = (1080, 1920) if short else (1280, 720)
-    if bg and os.path.exists(bg):
+    # 자료를 아래로 내리고 글자를 위 빈자리에 놓는 판형(data_frac > 0). 2026-09-26 붙였다.
+    # 왜: 지금 판형은 자료 화면을 판 전체에 깔고 그 위에 글자를 얹는다. 그래서 ① 글자가 읽히게
+    # 배경을 눌러야 하고(bg_bright 0.30) 막대가 어두워지고 ② 차트 안 글자("금천구 63.39")와
+    # 제목 글자가 같은 자리에서 겹친다. 픽셀 자(thumbstat)는 겹친 글자도 그냥 글자로 세니 이 증상을
+    # 못 잡는다(loop 133회차 기록). 기본값 0.0 은 지금 판형 그대로다 — 재서 좋아질 때만 켠다.
+    dfrac = min(max(float(c.get('data_frac', 0.0)), 0.0), 0.9) if short else 0.0
+    if dfrac > 0 and bg and os.path.exists(bg):
+        src = Image.open(bg).convert('RGB')
+        dh = int(H * dfrac)
+        r = min(W / src.width, dh / src.height)
+        nw, nh = max(1, int(src.width * r)), max(1, int(src.height * r))
+        sm = src.resize((nw, nh))
+        edge = src.resize((1, 1)).getpixel((0, 0))
+        im = Image.new('RGB', (W, H), (max(8, edge[0] // 3), max(9, edge[1] // 3), max(14, edge[2] // 3)))
+        im.paste(sm, ((W - nw) // 2, H - dh + (dh - nh) // 2))
+        # 자료는 안 누른다 — 글자가 그 위에 없으니 어둡게 할 이유가 없다. 이게 이 판형의 요점이다.
+        im = ImageEnhance.Color(im).enhance(max(0.0, min(3.0, float(c.get('bg_sat', 0.8)))))
+    elif bg and os.path.exists(bg):
         im = fit_bg(Image.open(bg).convert('RGB'), W, H)
         im = ImageEnhance.Brightness(im).enhance(max(0.12, min(1.8, c['bg_bright'])))
         # 배경 채도. 0.8로 박아 두었던 값을 손잡이로 바꿨다 — 쇼츠 채도가 우리 0.187 vs 경쟁 0.399로
@@ -175,6 +192,7 @@ def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
         # 그 여유를 못 잰다. text_top 을 올리려면 글자 크기가 아니라 윗줄도 둘로 나눠 칸을 채워야 한다.
     fonts = [disp(x) for x in szs]; lhs = [int(x * 1.18) for x in szs]
     cy = int(min(max(c['text_y'], 0.15), 0.80) * H)   # 글자 세로 가운데. loop.py가 실측 차이를 보고 움직인다
+    if dfrac > 0: cy = int(H * (1 - dfrac) * 0.52)   # 자료 위 빈자리 가운데. 겹치지 않는 것이 이 판형의 목적이다
     # 줄을 위·아래로 벌린다(text_spread 0~1.4).
     # 윗한계 1.0 은 임의로 박아 둔 값이었다 — loop 92회차에 격자 최선이 끝점 1.0 에 붙은 채
     # "그리기 한계 1.0 에서 멈췄다"로 막혔다(쇼츠 판형 오차 0.1912). 실측(1080x1920, 루프 샘플,

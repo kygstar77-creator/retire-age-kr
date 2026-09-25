@@ -387,6 +387,8 @@ def find_blog_url_by_title(title, tries=6, gap=15):
     return None
 
 
+CAFE_NICK = '파이어맵'   # 카페에 글을 쓰는 우리 계정의 별명. 가드가 남의 글을 우리 발행으로 세지 않게 쓴다
+
 MIN_GAP_MIN = 20   # 같은 매체에 이 시간 안에 또 올리지 않는다(한 회차 1편 규칙을 코드로 강제). 45분이었으나 늦게 끝난 회차가 다음 회차까지 막아 0편이 나와(2026-09-23 16시) 20분으로
 
 def last_published_minutes(kind):
@@ -401,9 +403,14 @@ def last_published_minutes(kind):
             if len(items) < 2: return None
             ts = max(email.utils.parsedate_to_datetime(d).timestamp() for d in re.findall(r'<pubDate>(.*?)</pubDate>', items[1]))
         else:
-            u = f'https://apis.naver.com/cafe-web/cafe2/ArticleListV2dot1.json?search.clubid={CAFE_ID}&search.queryType=lastArticle&search.page=1&search.perPage=5'
+            # lastArticle은 카페 '전체' 최신 글이라 회원 글까지 섞인다. 우리 글만 골라야 한다.
+            # 2026-09-25 11:37: 회원 글이 아니라 우리 글이 10분 전이어서 막힌 것은 맞았지만,
+            # 카페에 회원이 늘면 남이 쓴 글 때문에 우리 발행이 막혀 0편이 난다. 글쓴이로 걸러 둔다.
+            u = f'https://apis.naver.com/cafe-web/cafe2/ArticleListV2dot1.json?search.clubid={CAFE_ID}&search.queryType=lastArticle&search.page=1&search.perPage=30'
             arts = json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=20))['message']['result']['articleList']
-            ts = max(a['writeDateTimestamp'] for a in arts) / 1000
+            ours = [a for a in arts if a.get('writerNickname') == CAFE_NICK]
+            if not ours: return None          # 최근 30편에 우리 글이 없다 = 최근에 안 올렸다
+            ts = max(a['writeDateTimestamp'] for a in ours) / 1000
         return (time.time() - ts) / 60
     except Exception as e:
         print('최근 발행 시각 확인 실패:', e); return None

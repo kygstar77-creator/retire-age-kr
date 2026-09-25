@@ -105,11 +105,23 @@ def main():
         _quiet = 2 <= time.localtime().tm_hour < 8
         for kind, ko in (('blog', '블로그'), ('cafe', '카페')):
             if _quiet and kind == 'blog':
-                M.append(('발행', f'{ko} 발행 빵꾸(75분 초과)', 0, 0, 3, '새벽 2~7시는 블로그를 쉬는 시간대라 빵꾸로 세지 않는다'))
+                M.append(('발행', f'{ko} 발행 빵꾸', 0, 0, 3, '새벽 2~7시는 블로그를 쉬는 시간대라 빵꾸로 세지 않는다'))
+                continue
+            # 빵꾸 기준은 그 매체가 실제로 지켜야 하는 간격에서 끌어온다(2026-09-26).
+            # 75분 고정이던 때: 카페는 하루 4편 상한이라 다섯 시간 간격이 정상인데도
+            # 상한을 다 채운 날조차 스무 시간 내내 "빵꾸"로 떠서 일감표 1순위를 차지했다.
+            # 계기판이 재촉하는데 발행기는 상한으로 막는, 서로 어긋난 두 기준이었다.
+            gap = getattr(_np, 'GAP_MIN', {}).get(kind, 75)
+            late = gap + 60                      # 회차가 늦게 끝나는 여유
+            cap = getattr(_np, 'DAY_CAP', {}).get(kind)
+            done = _np.published_today(kind) if cap else None
+            if cap and done is not None and done >= cap:
+                M.append(('발행', f'{ko} 발행 빵꾸', 0, 0, 3,
+                          f'오늘 {done}편으로 상한({cap}편)을 채웠다 — 더 올리지 않는 게 맞다'))
                 continue
             mm = _np.last_published_minutes(kind)
             if mm is not None:
-                M.append(('발행', f'{ko} 발행 빵꾸(75분 초과)', 1 if mm > 75 else 0, 0, 3,
+                M.append(('발행', f'{ko} 발행 빵꾸({late}분 초과)', 1 if mm > late else 0, 0, 3,
                           f'지금 {mm/60:.1f}시간 전이 마지막. py -3.12 work/watchdog.py 로 즉시 메운다'))
     except Exception as e: print('빵꾸 측정 실패:', str(e)[:60])
 

@@ -121,8 +121,11 @@ def acronyms(text):
             # 단순히 가리키기만 하는 말(앞서 본·해당·위의)은 설명이 아니므로 뺀다.
             before = s[:m.start()].rstrip()
             mod = re.search(r'([가-힣]{2,})\s*$', before)
+            # 동사를 하나씩 적어 두니 계속 빈틈이 생겼다(2026-09-26: "설계도를 파는 ARM",
+            # "인텔을 뒤쫓는 AMD"가 목록에 없어 설명을 붙였는데도 지적으로 잡혔다).
+            # 관형형 어미 '-는/-인'으로 끝나는 말이면 관형절로 본다. 가리키기만 하는 말은 아래에서 뺀다.
             if (mod
-                    and re.search(r'(?:하는|되는|가는|오는|담는|거는|주는|만드는|따르는|쓰는|받는|내는|인)$', mod.group(1))
+                    and re.search(r'(?:는|인)$', mod.group(1))
                     and not re.search(r'(?:앞서\s*본|해당|위의|같은|그런|이런)\s*$', before)
                     and len(re.findall(r'[가-힣]', before)) >= 6):
                 continue
@@ -299,6 +302,12 @@ def check(text, title=None):
             out.append(('제목말빠짐', 0, f'"{w}" {why}'))
     for why, i, frag in opening(text) + speech_mix(text) + body_style(text):
         out.append(('본문말투', i, f'{why}' + (f' · {frag}' if frag else '')))
+    # 숫자가 중간에서 갈라진 것. 2026-09-26 06시 회차: 문단을 잘게 나누려고 돌린 스크립트가
+    # 소수점을 문장 끝으로 보고 잘라 "5.18%"가 "5. 18%"로, "0.93%"가 "0. 93%"로 깨졌다.
+    # 본문 세 조각이 그렇게 망가졌는데 readcheck도 selfcheck도 지적 0건으로 통과시켰다.
+    # 숫자가 틀린 채 나가는 것은 가장 큰 사고라 발행 전에 반드시 걸러야 한다.
+    for m in re.finditer(r'\d\.\s+\d', text):
+        out.append(('숫자깨짐', 0, f'숫자가 소수점에서 갈라졌다 · …{text[max(0, m.start() - 14):m.end() + 14]}…'))
     for i, w, s in acronyms(text):
         out.append(('설명없음', i, f'"{w}"가 처음 나오는데 무엇인지 안 밝혔다 · {s}'))
     # 같은 어미가 세 문장 연속이면 읽는 리듬이 죽는다

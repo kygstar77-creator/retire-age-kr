@@ -22,6 +22,16 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 LOG = os.path.join(HERE, 'watchdog_log.json')
 LATE_MIN = 75          # 이 시간 넘게 안 올라갔으면 한 회차를 놓친 것으로 본다(정각 간격 60분 + 지터 여유)
+
+def late_min(kind):
+    """그 매체의 지각 기준. 발행기가 실제로 지키는 간격에서 끌어온다(2026-09-26).
+
+    75분 고정이던 때: 카페는 하루 4편 상한이라 다섯 시간 간격이 정상인데도
+    감시기가 두 시간만 비면 "회차를 놓쳤다"며 메우러 들었다. 그렇게 메운 네 편이
+    새벽 세 시간 안에 다 나가 하루 상한을 새벽에 소진시켰다."""
+    import naverpost as _n
+    g = getattr(_n, 'GAP_MIN', {}).get(kind)
+    return LATE_MIN if g is None else g + 60
 STOCK_WANT = 3         # 매체별로 이만큼은 미리 써 둬야 회차가 안 밀린다
 
 def load(p, d):
@@ -98,7 +108,7 @@ def main():
         m = N.last_published_minutes(kind)
         rec['late'][kind] = None if m is None else round(m)
         if m is None: rec['alert'].append(f'{kind} 최근 발행 시각을 못 쟀다(RSS·API 실패)')
-        elif m > LATE_MIN and not (quiet and kind == 'blog') and kind not in capped:
+        elif m > late_min(kind) and not (quiet and kind == 'blog') and kind not in capped:
             rec['alert'].append(f'{kind} 마지막 발행이 {m/60:.1f}시간 전 — 회차를 놓쳤다')
 
     # 2) 미리 써 둔 묶음이 몇 개인가 — 0이면 다음 회차도 놓친다
@@ -149,7 +159,7 @@ def main():
     # 그냥 집던 탓이다.
     okpend = [x for x in pend if not x.get('block')]
     need = [k for k in kinds
-            if (rec['late'][k] or 0) > LATE_MIN and any(x['kind'] == k for x in okpend)]
+            if (rec['late'][k] or 0) > late_min(k) and any(x['kind'] == k for x in okpend)]
     if need and not check_only:
         # 잠금은 여기서 잡지 않는다. naverpost.py가 launch()에서 스스로 잡는다.
         # 감시기가 먼저 잡으면 제 자식을 막아 15분을 기다리다 실패한다(2026-09-23 18:49 실제 발생).
@@ -160,7 +170,7 @@ def main():
             m2 = None
             try: m2 = N.last_published_minutes(kind)
             except Exception: pass
-            if m2 is not None and m2 <= LATE_MIN:
+            if m2 is not None and m2 <= late_min(kind):
                 rec['did'].append(f'{kind} 메우기 취소 — 다시 재니 {round(m2)}분 전에 올라가 있다(다른 회차가 먼저 채웠다)')
                 continue
             pkg = next(x['pkg'] for x in okpend if x['kind'] == kind)

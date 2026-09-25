@@ -297,12 +297,15 @@ def cafe_boards():
     """카페에 실제로 있는 게시판 이름. 없는 게시판을 고르려다 회차가 날아가는 것을 막는다.
     2026-09-25 확인: 파이어맵 카페에는 '자유게시판' 하나뿐인데 묶음들이 '미국주식·배당' 같은
     이름을 달고 있었다. 글감 편성이 카페 구조보다 앞서 나간 것이다."""
-    import urllib.request
+    import urllib.request, html as _html
     try:
         u = f'https://apis.naver.com/cafe-web/cafe2/SideMenuList?cafeId={CAFE_ID}'
         d = json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=20))
         ms = d.get('message', {}).get('result', {}).get('menus') or []
-        return [m.get('menuName') for m in ms if m.get('menuType') == 'B' and m.get('menuName')]
+        # 이 API는 이름을 HTML 엔티티로 준다('질문&middot;고민'). 그대로 쓰면 화면의 '질문·고민'과
+        # 글자가 달라 사람 자리 차단도, 게시판 클릭도 빗나간다(2026-09-26 게시판 9개로 늘린 뒤 확인).
+        return [_html.unescape(m['menuName']) for m in ms
+                if m.get('menuType') == 'B' and m.get('menuName')]
     except Exception as e:
         print('게시판 목록 조회 실패:', repr(e)[:90]); return []
 
@@ -416,6 +419,19 @@ CAFE_NICK = '파이어맵'   # 카페에 글을 쓰는 우리 계정의 별명. 
 
 MIN_GAP_MIN = 20   # 같은 매체에 이 시간 안에 또 올리지 않는다(한 회차 1편 규칙을 코드로 강제). 45분이었으나 늦게 끝난 회차가 다음 회차까지 막아 0편이 나와(2026-09-23 16시) 20분으로
 
+# 매체별 최소 간격. 총량 상한(DAY_CAP)이 있는 매체는 간격도 총량에서 끌어와야 한다.
+# 왜 필요한가(2026-09-26 06시 확인): 카페는 하루 4편 상한인데 간격은 20분이라,
+# 00:54 · 01:15 · 02:28 · 03:36 — 네 편이 새벽 세 시간 만에 다 나갔다.
+# 그래서 04시부터 자정까지 스무 시간은 상한에 막혀 구조적으로 0편이 됐고,
+# 계기판은 그 스무 시간 내내 "카페 발행 빵꾸"를 일감 1순위로 띄웠다.
+# 상한을 지키면서 하루에 펴려면 간격이 상한에서 나와야 한다.
+#   24시간 ÷ 4편 = 6시간. 300분으로 두면 네 편이 최소 15시간에 걸쳐 퍼지고,
+#   마지막 편이 자정에 밀려 4편을 못 채우는 일도 없다.
+# 읽히는 시간대가 언제인지는 아직 정하지 않았다 — 우리 카페 글 74편을 시간대로 갈라 보니
+# 밴드마다 12~27편뿐이라 표본 30개 미만으로 결론 내지 않는다는 규칙에 걸린다.
+# 여기서 정하는 것은 "어느 시각이 좋다"가 아니라 "한 구간에 몰아 쓰지 않는다"까지다.
+GAP_MIN = {'blog': MIN_GAP_MIN, 'cafe': 300}
+
 def last_published_minutes(kind):
     """가장 최근 발행이 몇 분 전인지. 블로그는 RSS pubDate, 카페는 API writeDateTimestamp. 못 재면 None."""
     import urllib.request, email.utils
@@ -446,6 +462,68 @@ def last_published_minutes(kind):
 # 시각을 계산해 재시도를 거는 방식은 이렇게 한 번씩 빗나간다. 기다리는 쪽이 0편을 막는다.
 WAIT_MAX_MIN = 25   # 이보다 더 기다려야 하면 회차를 넘긴다
 
+# 하루에 몇 편까지 — 간격만 막고 총량을 안 막아서 9/24에 카페 21편이 나갔다(2026-09-26 확인).
+# 20분 간격이면 산술적으로 하루 72편까지 열려 있었다.
+#
+# 카페 4편의 근거: 우리 주제 카페 70곳을 하루 글 수로 나눠 재 봤다(work/cafestudy.py).
+#   하루 5편 미만 22곳 — 조회 중앙 74, 댓글 달린 글 73%
+#   하루 20편 넘음 12곳 — 조회 중앙  2, 댓글 달린 글  9%
+# 같은 은퇴 주제 두 곳을 붙이면 더 분명하다.
+#   인생 후반전 카페  하루 48.6편 · 조회   1 · 댓글 달린 글  2%
+#   신파람의 은퇴준비  하루  4.6편 · 조회 126 · 댓글 달린 글 97%
+# 많이 올릴수록 안 읽힌다. 우리 9/23~25는 18·21·14편이었다.
+DAY_CAP = {'cafe': 4}          # 블로그는 실측 전이라 아직 안 건다
+
+def published_today(kind):
+    """오늘 우리가 올린 편수. 못 세면 None(막지 않는다)."""
+    import urllib.request, email.utils
+    UA = {'User-Agent': 'Mozilla/5.0', 'Referer': 'https://cafe.naver.com/'}
+    today = time.strftime('%Y-%m-%d')
+    try:
+        if kind == 'blog':
+            s = urllib.request.urlopen(urllib.request.Request(
+                f'https://rss.blog.naver.com/{BLOG_ID}.xml', headers=UA), timeout=20).read().decode('utf-8', 'ignore')
+            body = s.split('<item>', 1)
+            if len(body) < 2: return None
+            n = 0
+            for d in re.findall(r'<pubDate>(.*?)</pubDate>', body[1]):
+                try:
+                    if time.strftime('%Y-%m-%d', time.localtime(
+                            email.utils.parsedate_to_datetime(d).timestamp())) == today: n += 1
+                except Exception: pass
+            return n
+        n, seen = 0, set()
+        for pg in range(1, 6):                      # 한 번에 20편만 주므로 쪽을 넘긴다
+            u = (f'https://apis.naver.com/cafe-web/cafe2/ArticleListV2dot1.json?search.clubid={CAFE_ID}'
+                 f'&search.queryType=lastArticle&search.page={pg}&search.perPage=20')
+            arts = json.load(urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=20))\
+                       ['message']['result']['articleList']
+            if not arts: break
+            stop = False
+            for a in arts:
+                if a.get('articleId') in seen: stop = True; continue
+                seen.add(a.get('articleId'))
+                ts = (a.get('writeDateTimestamp') or 0) / 1000
+                if not ts: continue
+                if time.strftime('%Y-%m-%d', time.localtime(ts)) != today:
+                    stop = True; continue           # 어제 글까지 내려왔다 — 더 볼 것 없다
+                if a.get('writerNickname') == CAFE_NICK: n += 1
+            if stop: break
+        return n
+    except Exception as e:
+        print(f'{kind} 오늘 편수 확인 실패:', e); return None
+
+def day_guard(kind):
+    cap = DAY_CAP.get(kind)
+    if cap is None or os.environ.get('NAVER_FORCE') == '1': return
+    n = published_today(kind)
+    if n is None: return
+    print(f'{kind} 오늘 {n}편 (상한 {cap}편)', flush=True)
+    if n >= cap:
+        raise RuntimeError(
+            f'{kind} 오늘 이미 {n}편 올렸다 — 하루 {cap}편까지만 올린다. '
+            f'많이 올릴수록 안 읽힌다(하루 5편 미만 카페 조회 74 vs 20편 넘는 카페 조회 2). 내일 올린다')
+
 def jitter(kind):
     """발행 시각을 흩뜨린다. 매시 정각에 올리면 사람이 쓴 글로 안 보인다.
 
@@ -464,18 +542,33 @@ def jitter(kind):
 
 def rate_guard(kind, wait=False):
     if os.environ.get('NAVER_FORCE') == '1': return
+    gap = GAP_MIN.get(kind, MIN_GAP_MIN)
     m = last_published_minutes(kind)
-    if m is None or m >= MIN_GAP_MIN: return
-    left = MIN_GAP_MIN - m
+    if m is None or m >= gap: return
+    left = gap - m
     if wait and left <= WAIT_MAX_MIN:
         print(f'{kind} 직전 발행이 {m:.0f}분 전 — {left:.1f}분 기다렸다 올린다', flush=True)
         time.sleep(left * 60 + 30)          # 경계에서 또 걸리지 않게 30초 더
         return
-    raise RuntimeError(f'{kind} 직전 발행이 {m:.0f}분 전 — {MIN_GAP_MIN}분 안에는 같은 매체에 다시 올리지 않는다(한 회차 1편). 다음 회차에 올린다')
+    raise RuntimeError(f'{kind} 직전 발행이 {m:.0f}분 전 — {gap}분 안에는 같은 매체에 다시 올리지 않는다'
+                       f'(하루 {DAY_CAP.get(kind, "?")}편을 한 구간에 몰아 쓰지 않으려는 것). 다음 회차에 올린다')
+
+# 블로그 글 끝에 카페로 가는 자리. 2026-09-26까지 블로그 글 517편 중 카페 링크가 든 글은 0편이었다.
+# 카페 활동점수 항목에 '검색으로 들어옴'이 있는데 가지1단계 카페는 2주에 626, 우리는 1이다.
+# 사람이 없어도 우리가 혼자 움직일 수 있는 항목이 이것뿐이라 통로를 낸다.
+# 문구는 한 줄로 둔다 — 매 글에 긴 안내가 붙으면 글마다 같은 덩어리가 반복된다.
+CAFE_URL = 'https://cafe.naver.com/firemap'
+CAFE_TAIL = f'파이어맵 카페 {CAFE_URL}'
+
+def with_cafe_tail(seq):
+    """본문 맨 끝에 카페 주소 한 줄. 이미 있으면 그대로 둔다."""
+    if any(k == 'text' and CAFE_URL in (v or '') for k, v in seq): return seq
+    return list(seq) + [('text', CAFE_TAIL)]
 
 def post_blog(page, pkg, wait=False):
     jitter('blog'); rate_guard('blog', wait)
     title, seq, meta = read_pkg(pkg)
+    seq = with_cafe_tail(seq)
     page.goto(f'https://blog.naver.com/{BLOG_ID}/postwrite', wait_until='domcontentloaded')
     page.wait_for_timeout(6000)
     frame = page.main_frame
@@ -555,8 +648,33 @@ def post_blog(page, pkg, wait=False):
     return f'https://blog.naver.com/{BLOG_ID}/{m.group(1)}' if m else page.url
 
 # ---------- 카페 ----------
+# 2026-09-26 게시판을 1개에서 9개로 늘렸다. 자동 발행 글이 아무 데나 가면 안 된다.
+#
+# 사람 자리는 비워 둔다. 채점 항목이 '글 쓴 사람 수'와 '댓글 쓴 사람 수'인데
+# 운영자가 질문·고민 게시판을 채우면 사람이 들어올 자리가 없어진다.
+# 공지사항·가입인사도 자동 글이 갈 곳이 아니다.
+HUMAN_ONLY = ('공지사항', '가입인사', '질문·고민', '내 포트폴리오', '출석부', '파이어 이야기')
+FALLBACK = '자유게시판'
+# 묶음이 부르는 이름과 게시판 이름이 딱 안 맞을 때 — 말이 겹치면 그쪽으로 보낸다
+BOARD_HINT = [
+    (('배당', '현금흐름', '분배금', '월배당'), '배당·현금흐름'),
+    (('미국', 'ETF', 'etf', '해외', '종목', '주식'), '미국주식·ETF'),
+    (('연금', '세금', '절세', '건보', '국민연금', '퇴직'), '연금·세금'),
+    (('부동산', '아파트', '전세', '월세', '청약', '단지', '분양'), '부동산'),
+]
+
+def pick_board(want, boards):
+    """올릴 게시판을 고른다. 없는 이름을 부르면 뜻이 가까운 곳으로, 그래도 없으면 자유게시판."""
+    if not boards: return want
+    safe = [b for b in boards if b not in HUMAN_ONLY] or boards
+    if want in safe: return want
+    for words, board in BOARD_HINT:
+        if any(w in want for w in words) and board in safe: return board
+    if FALLBACK in safe: return FALLBACK
+    return safe[0]
+
 def post_cafe(page, pkg, wait=False):
-    jitter('cafe'); rate_guard('cafe', wait)
+    day_guard('cafe'); jitter('cafe'); rate_guard('cafe', wait)
     title, seq, meta = read_pkg(pkg)
     page.goto(f'https://cafe.naver.com/ca-fe/cafes/{CAFE_ID}/articles/write', wait_until='domcontentloaded')
     page.wait_for_timeout(6000)
@@ -568,7 +686,7 @@ def post_cafe(page, pkg, wait=False):
     # 글이 엉뚱한 판에 가는 것이 안 올라가는 것보다 낫다.
     want = meta.get('게시판', '자유게시판')
     boards = cafe_boards()
-    pick = want if want in boards else (boards[0] if boards else want)
+    pick = pick_board(want, boards)
     if pick != want:
         print(f'게시판 "{want}" 없음 → "{pick}" 로 올린다 (있는 것: {boards})')
     # 고른 뒤 실제로 닫혔는지 본다. 2026-09-25 06:02 실측: 목록은 열렸는데 항목 클릭이 안 먹어

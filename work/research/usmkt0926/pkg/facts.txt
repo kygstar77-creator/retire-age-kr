@@ -1,0 +1,53 @@
+# usmkt0926 · B6 미국증시 한 장 · 2026-09-26 06시 회차 조사
+
+[오늘 찾은 것] (WebSearch 한·영 — 2026-09-26 06:3x~06:4x 조회)
+- 2026-09-25 CNBC "Stock market news for Sept. 25, 2026" — 3대 지수 상승 마감. https://www.cnbc.com/2026/09/24/stock-market-today-live-updates.html
+- 2026-09-25 Yahoo Finance "Dow, S&P 500, Nasdaq notch weekly wins as market shrugs off bond sell-off, oil prices ease" — 국채 매도세에도 주간 상승 마감. https://finance.yahoo.com/markets/live/stock-market-today-friday-september-25-dow-sp-500-nasdaq-081738529.html
+- 2026-09-24 Axios "Treasury yields rip higher on renewed inflation fear" — 인플레 재부각에 금리 급등. https://www.axios.com/2026/09/24/treasury-yields-inflation-bonds
+- 2026-09-25 invezz "10-year Treasury yield holds near 5.17% as global bond selloff continues" — 10년물 5.17% 부근. https://invezz.com/news/2026/09/25/10-year-treasury-yield-holds-near-5-17-as-global-bond-selloff-continues/
+- 2026-09-15 Bloomberg "US 10-Year Treasury Yields Rise to Highest Level Since 2007" — 10년물이 2007년 이후 최고 수준. https://www.bloomberg.com/news/articles/2026-09-15/us-10-year-treasury-yields-rise-to-highest-level-since-2007
+- 2026-09-23 CNBC "Market sees next Fed hike in October, following Barr comments and hot inflation reading" — 10월 인상 기대. https://www.cnbc.com/2026/09/23/market-sees-next-fed-hike-in-october-following-barr-comments-hot-inflation.html
+
+[1차 출처로 직접 받은 숫자]
+# Yahoo Finance chart API(query1.finance.yahoo.com/v8/finance/chart) 2026-09-26 06:3x 조회, 2026-09-25 종가 기준
+다우 51,828.62 +0.93%
+S&P500 7,743.41 +0.51%
+나스닥 27,068.72 +0.48%
+러셀2000 2,837.55 +0.07%
+VIX 14.87 -5.11%
+미국 10년 국채 금리 5.18% (+0.43%p 아님 — 전일 대비 +0.43% 변동률)
+WTI 92.44달러 -2.29%
+금 4,320.50달러 +0.52%
+원달러 1,355.28원 -0.88%
+# 세인트루이스 연준 FRED(apis.fred) 2026-09-26 조회
+DGS10 = 5.18 (2026-09-24 기준) — Yahoo 값과 일치
+FEDFUNDS = 3.63 (2026-08-01 기준, 9월 인상 반영 전 월평균)
+# 한국은행 ECOS(apis.ecos) 2026-09-26 조회
+한국 기준금리 2026-06 2.5 / 2026-07 2.75 / 2026-08 3.00
+
+[연준 일정·확률] (검색으로 확인, 1차 출처 아님 — 글에는 출처를 밝혀 적는다)
+- 2026-09-16 FOMC: 25bp 인상, 목표범위 3.75~4.00%. 2023년 이후 첫 인상.
+- 다음 FOMC: 2026년 10월 27~28일, 결정 발표 10월 28일.
+- CME FedWatch 2026-09-25 기준 10월 25bp 추가 인상 확률 75.8%. (9월 23일에는 73%)
+
+[섹터별 등락] work/heatmap.py 2026-09-26 06:3x 실행, 나스닥 스크리너 시총 상위 110종목 시총가중
+헬스케어 +0.82% (13개) / 통신 +0.62% (6개) / 에너지 +0.36% (6개) / 기술 +0.22% (40개) / 금융 +0.09% (16개)
+경기소비재 -0.19% (11개) / 소재 -0.27% (2개) / 필수소비재 -0.28% (3개) / 기타 -0.58% (2개) / 산업재 -0.66% (9개)
+부동산 +1.63% (1개) / 유틸리티 -1.82% (1개)
+※ 종목이 1~2개뿐인 부동산·유틸리티·소재·기타는 섹터 전체를 대표하지 못한다. 글에서 그렇게 밝힌다.
+
+[개별 종목] 같은 실행
+상승: META +4.50% / INTC +3.91% / LLY +2.69% / AMD +2.38% / DIS +2.03%
+하락: ARM -7.88% / WDC -4.94% / ORCL -3.47% / SNDK -3.46% / WMT -2.66%
+
+[쓰지 않기로 한 것]
+- 국내 상장 미국 ETF(TIGER 미국S&P500, KODEX 미국나스닥100): API가 2026-09-23 값을 줬다.
+  최근 거래일이 아니어서 뺀다. 확인 못 한 숫자는 쓰지 않는다.
+- DART 오늘 공시: 새벽이라 목록이 비어 있었다.
+- 금리 급등 원인(AI 투자용 회사채 발행 급증 등)은 매체 해설이라 숫자로 쓰지 않는다.
+
+[출처 URL]
+- Yahoo Finance chart API https://query1.finance.yahoo.com/v8/finance/chart/
+- 세인트루이스 연준 FRED https://fred.stlouisfed.org (DGS10, FEDFUNDS)
+- 한국은행 경제통계시스템 https://ecos.bok.or.kr
+- 나스닥 스크리너 https://api.nasdaq.com/api/screener/stocks

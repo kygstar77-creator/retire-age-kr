@@ -368,6 +368,23 @@ def list_pending():
     out.sort(key=lambda x: x['mtime'])
     return out
 
+def pending_check(pkg):
+    """이 묶음에 남아 있는 검증 지적. 없으면 ''.
+
+    readcheck·selfcheck는 글을 쓴 회차가 돌리는데, 지적이 남은 채로 대기에 들어가는 일이 있다.
+    2026-09-26 08시 실측: reitdiv0926이 00:02부터 [제목] 2건·[본문말투] 2건을 단 채 8시간 누워 있었고,
+    발행 회차가 파일을 직접 열어 보고서야 알았다. 목록에 띄워 두면 쓰는 회차가 바로 안다."""
+    out = []
+    for name, tag in (('check_read.txt', '읽기'), ('check_self.txt', '자체')):
+        f = os.path.join(pkg, name)
+        if not os.path.exists(f):
+            out.append(tag + ' 안 돌림'); continue
+        body = open(f, encoding='utf-8').read()
+        n = sum(1 for ln in body.splitlines()
+                if ln.strip() and not ln.startswith('#') and '지적 없음' not in ln)
+        if n: out.append('%s %d건' % (tag, n))
+    return ' · '.join(out)
+
 def pending_block(kind, pkg, title, check_dup=True):
     """이 묶음을 지금 올리면 거부당할 이유. 없으면 ''.
 
@@ -914,6 +931,7 @@ def main():
             row = {k: v for k, v in x.items() if k != 'mtime'}
             if check:
                 row['block'] = pending_block(x['kind'], x['pkg'], x['title'])
+            row['check'] = pending_check(x['pkg'])
             print(json.dumps(row, ensure_ascii=False))
         return
     with sync_playwright() as p:

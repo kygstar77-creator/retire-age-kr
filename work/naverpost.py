@@ -904,6 +904,22 @@ def main():
                 print('  그림 없이 올려야 할 이유가 있으면 --noimg-ok 를 붙인다.')
                 sys.exit(4)
             title = open(os.path.join(pkg, 'title.txt'), encoding='utf-8').read().strip()
+            # 읽기 검사에서 지적이 남아 있으면 올리지 않는다.
+            # 2026-09-26: check_read.txt에 지적이 다 적혀 있는데도 글이 그대로 나갔다.
+            # 지시문에 "고치고 다시 돌린다"고만 써 두니 회차가 검사만 하고 넘어갔다.
+            # 사장님 "왜 계속 검사하고 개선하는 거 안 했어?" — 말이 아니라 코드로 막는다.
+            if '--skip-read' not in sys.argv:
+                rp = os.path.join(pkg, 'check_read.txt')
+                if os.path.exists(rp):
+                    bad = [l for l in open(rp, encoding='utf-8').read().splitlines()
+                           if l.strip() and not l.startswith('지적 없음')]
+                    if bad:
+                        print(f'읽기 검사 지적 {len(bad)}건이 남아 있다 — 고치고 다시 올린다.')
+                        for l in bad[:8]: print('   ' + l.replace('	', ' · ')[:120])
+                        print('py -3.12 work/readcheck.py ' + pkg + ' 로 다시 확인한다.')
+                        sys.exit(4)
+                else:
+                    print('읽기 검사를 안 돌렸다 — py -3.12 work/readcheck.py ' + pkg); sys.exit(4)
             # 올리기 전에 같은 제목이 이미 올라가 있는지 본다. published.txt가 없어도 글은 올라가 있을 수 있다.
             up = already_up(cmd, title)
             if up:

@@ -234,6 +234,41 @@ def body_style(text):
         out.append((f'1,000자당 숫자 {nums/body_n*1000:.0f}개 — 35개 넘으면 읽다가 놓친다', 0, ''))
     return out
 
+
+# ── 여는 방식이 매번 같은가 ────────────────────────────────────────────
+# 사장님 2026-09-26: "이상한 거 다른 것도 전부 다 확인해 봐."
+# 최근 12편 중 8편이 같은 틀로 시작했다 — "~하게 되죠" 뒤에 "저도 그랬습니다".
+# "저도 그랬습니다"만 네 번이다. 공감하는 척하는 같은 수법을 반복한 것이고,
+# 네이버 공식 스팸 사례의 "동일·유사한 템플릿"에 그대로 해당한다.
+OPEN_BAD = [
+    (r'(보게\s*되죠|보시게\s*되죠|하게\s*되죠)', '"~하게 되죠"로 열지 않는다 — 최근 글 대부분이 이 틀이다'),
+    (r'저도\s*(그랬|그렇게\s*알|처음엔|처음에는)', '"저도 그랬습니다" — 최근 12편에 네 번 나온 상투구다'),
+    (r'(본\s*적\s*있으실|보신\s*적\s*있으실)', '"~보신 적 있으실 겁니다" — 같은 수법이다'),
+]
+
+def opening(text):
+    """글 앞 세 문장이 늘 같은 틀이면 잡는다."""
+    ss = sents(text)[:3]
+    out = []
+    for i, x in enumerate(ss, 1):
+        for pat, why in OPEN_BAD:
+            if re.search(pat, x): out.append((why, i, x[:50]))
+    return out
+
+def speech_mix(text):
+    """한 글 안에서 평어체와 존댓말이 섞였나. 카페·블로그 통틀어 말투는 하나로 간다."""
+    ss = [re.sub(r'\s', '', x) for x in sents(text)]
+    ss = [x for x in ss if len(x) >= 8]
+    if len(ss) < 10: return []
+    polite = sum(1 for x in ss if re.search(r'(습니다|어요|에요|예요|죠|네요|군요)[.!?]?$', x))
+    plain  = sum(1 for x in ss if re.search(r'(다|음|함)[.!?]?$', x) and not re.search(r'(습니다|합니다|입니다)[.!?]?$', x))
+    tot = polite + plain
+    if tot < 8: return []
+    r = min(polite, plain) / tot
+    if r > 0.25:
+        return [(f'말투가 섞였다 — 존댓말 {polite}문장, 평어체 {plain}문장. 한 글은 하나로 간다', 0, '')]
+    return []
+
 def check(text, title=None):
     out = []
     ss = sents(text)
@@ -255,7 +290,7 @@ def check(text, title=None):
             out.append(('제목', 0, f'{why} · {title[:44]}'))
         for w, n, why in title_kw_in_body(title, text):
             out.append(('제목말빠짐', 0, f'"{w}" {why}'))
-    for why, i, frag in body_style(text):
+    for why, i, frag in opening(text) + speech_mix(text) + body_style(text):
         out.append(('본문말투', i, f'{why}' + (f' · {frag}' if frag else '')))
     for i, w, s in acronyms(text):
         out.append(('설명없음', i, f'"{w}"가 처음 나오는데 무엇인지 안 밝혔다 · {s}'))

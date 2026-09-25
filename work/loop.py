@@ -24,8 +24,24 @@ def take_lock(stale=3600):
     try:
         if os.path.exists(LOCK) and time.time() - os.path.getmtime(LOCK) < stale:
             age = int(time.time() - os.path.getmtime(LOCK))
-            print(f'다른 바퀴가 {age}초째 돌고 있다 — 이번 바퀴는 돌지 않는다 ({LOCK})')
-            return False
+            # 나이만 보던 것을 2026-09-25 125회차에 고쳤다. 앞 바퀴가 죽으면(타임아웃·재부팅) 락 파일이
+            # 그대로 남고, 그 뒤 한 시간(stale) 동안 오는 바퀴가 **전부** 그냥 돌아간다. 두 시간마다 도는
+            # 회차이므로 한 번 죽으면 다음 회차까지 통째로 날아간다 — 실제로 이번 회차가 그렇게 막혔다
+            # (죽은 PID 753288 이 604초째 '돌고 있다'고 나왔다). 주인이 살아 있는지 물어보면 되는 일이다.
+            # 판단 기준은 naverpost 가 쓰는 것을 그대로 빌려 쓴다 — 두 군데서 다르게 세지 않으려고.
+            owner = ''
+            try: owner = open(LOCK, encoding='utf-8').read().strip()
+            except Exception: pass
+            alive = True
+            try:
+                sys.path.insert(0, HERE); import naverpost
+                alive = bool(owner) and naverpost._alive(owner)
+            except Exception:
+                alive = True      # 못 물어보면 막는 쪽으로 둔다(겹쳐 도는 것이 더 나쁘다)
+            if alive:
+                print(f'다른 바퀴가 {age}초째 돌고 있다 — 이번 바퀴는 돌지 않는다 ({LOCK})')
+                return False
+            print(f'죽은 락을 치운다 — 주인 {owner or "?"} 는 살아 있지 않다 ({age}초 전에 잡힌 락)')
         open(LOCK, 'w', encoding='utf-8').write(str(os.getpid()))
         global HELD; HELD = True
         return True
@@ -300,6 +316,12 @@ def grid_pick(design, spec, kind, knob, base_grid, did, blocked):
         cur = float(THUMB_DEFAULT.get(kind, {}).get(knob, 0.0))
     grid = sorted(set(base_grid + [round(float(cur), 4)]))
     table, failed = [], []
+    # 격자를 훑는 동안 design.json 에는 '지금 재보는 값'이 들어 있다. 회차가 그 사이에 죽으면(타임아웃·재부팅)
+    # 고른 값이 아니라 우연히 마지막으로 재던 격자 점이 그대로 남아, 다음 회차까지 production 썸네일이
+    # 그 값으로 그려진다. 2026-09-25 125회차에 실제로 겪었다 — 앞 회차를 300초에서 끊었더니 long.text_y 가
+    # 고른 값 0.3688 이 아니라 격자 점 0.72 에 남아 있었고(세 칸 오차 0.5297 → 2.5731), 커밋된 값과 달라진
+    # 것을 git diff 로 찾기 전까지 아무도 몰랐다. 그래서 '되돌릴 자리'를 파일에 같이 적어 둔다(main 이 치운다).
+    design['_probe'] = {'kind': kind, 'knob': knob, 'safe': cur}
 
     def measure(vals):
         """격자 점들을 실제로 그려 재서 table 에 넣는다. 못 재면 failed 에 표시한다"""
@@ -315,7 +337,10 @@ def grid_pick(design, spec, kind, knob, base_grid, did, blocked):
 
     measure(grid)
     if failed or not table:
-        blocked.append(f'{kind} 세 칸 맞추기 — 샘플이나 경쟁 기준이 없어 못 쟀다'); d[knob] = cur; return
+        blocked.append(f'{kind} 세 칸 맞추기 — 샘플이나 경쟁 기준이 없어 못 쟀다')
+        d[knob] = cur; design.pop('_probe', None)
+        json.dump(design, open(DESIGN, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        return
     def pick():
         # 비긴 값끼리는 지금 값을 이긴 것으로 치지 않는다. 격자 전체가 같은 값으로 나오는 경우(손잡이가
         # 안 듣거나 측정이 섞인 경우)에 min() 은 늘 격자의 맨 아래값을 골라 손잡이를 끝으로 밀어 버린다.
@@ -380,9 +405,36 @@ def grid_pick(design, spec, kind, knob, base_grid, did, blocked):
     best = pick()
     vs = [t['v'] for t in table]
     if abs(best['v'] - vs[-1]) < 1e-9 and hi_lim is not None and abs(vs[-1] - hi_lim) < 1e-9:
-        # 한계까지 갔는데도 끝점이 최선이다 — 격자가 아니라 그리기 한계가 막고 있다. 숨기지 않고 남긴다.
-        blocked.append(f'{kind}.{knob} 가 그리기 한계 {hi_lim} 에서 멈췄다 — 오차 {best["err"]} 는 손잡이를 더 넓혀야 줄어든다')
+        # 한계까지 갔는데도 끝점이 최선이다. 예전에는 여기서 무조건 "손잡이를 더 넓혀야 줄어든다"고 적었다.
+        # 그 말이 맞으려면 '남은 오차를 만드는 칸'을 이 손잡이가 한계 근처에서 아직 움직이고 있어야 한다.
+        # 2026-09-25 125회차 실측 — long.bot_scrim 이 그 말이 틀린 경우였다. thumb.py 한계를 0.5 → 0.8 로
+        # 열고 실제로 그려 쟀다(text_y 0.3688 · text_scale 0.775 · sub_scale 0.9 고정, 배경 3종 중앙값):
+        #     0.50 → 세 칸 오차 0.5297 (top 0.1673 · mid 0.0778 · bot 0.0000)
+        #     0.55 → 0.5297   0.60 → 0.5297   0.70 → 0.5297   0.80 → 0.5297   (세 칸이 1픽셀도 안 움직인다)
+        #     대신 bright 0.3881 → 0.3644 (목표 0.4797 에서 더 멀어진다) · contrast 0.2597 → 0.2521 (역시 멀어진다)
+        # 아래 칸은 0.5 에서 이미 목표(0.0)에 정확히 닿아 있어 더 눌러도 벌 것이 없고, 남은 오차는 전부
+        # text_top(0.0364, 잔차의 98%) 이다. 그 칸은 BAND_CAPPED 에 "text_y 로만 움직이고 그 대가로 mid 가
+        # 빈다"고 실측으로 세워 둔 자리다. 그래서 넓히면 밝기·대비만 내주고 세 칸은 그대로다.
+        # 그래서 thumb.py 한계는 0.5 로 되돌렸다. 넓혀 봐야 소용없는 자리를 회차마다 '막힘'으로 띄우면
+        # 다음 회차가 그걸 닫으려고 같은 일을 또 한다(이번 회차가 실제로 그렇게 시작했다).
+        # 판정 기준: 남은 오차의 10% 이상을 차지하는 칸이 격자 윗구간에서 이미 평평(<0.002)하면,
+        # 이 손잡이는 한계에서 '멈춘' 것이 아니라 '다 쓴' 것이다 — 막힘이 아니라 기록으로 남긴다.
+        tgt_l = spec.get(kind) or {}
+        resid = {k: abs(best[k] - tgt_l[k]) for k in BAND_KEYS if k in best and k in tgt_l}
+        tot = sum(resid.values())
+        topband = sorted(table, key=lambda t: t['v'])[-3:]    # 격자 맨 위 세 점
+        live = [k for k, r in resid.items()
+                if tot > 0 and r / tot >= 0.10
+                and max(t[k] for t in topband) - min(t[k] for t in topband) >= 0.002]
+        if live:
+            blocked.append(f'{kind}.{knob} 가 그리기 한계 {hi_lim} 에서 멈췄다 — 오차 {best["err"]} 는 '
+                           f'손잡이를 더 넓혀야 줄어든다(아직 움직이는 칸: {", ".join(sorted(live))})')
+        else:
+            did.append(f'{kind}.{knob} 가 한계 {hi_lim} 에 있지만 넓혀도 소용없다 — 남은 오차 {best["err"]} 는 '
+                       + ', '.join(f'{k} {r:.4f}' for k, r in sorted(resid.items(), key=lambda kv: -kv[1]) if r > 0)
+                       + ' 에서 오고, 그 칸들은 격자 윗구간에서 이미 평평하다')
     d[knob] = best['v']
+    design.pop('_probe', None)        # 고른 값을 적는 순간 되돌릴 이유가 없어진다
     json.dump(design, open(DESIGN, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     if best['v'] != cur:
         was = next((t for t in table if t['v'] == cur), None)
@@ -546,6 +598,18 @@ def main():
     t0 = time.time(); log = load(LOG, []); design = load(DESIGN, DEFAULT)
     step = design.get('step', 0) + 1
     did, blocked, capped = [], [], []
+
+    # 앞 회차가 격자를 훑다가 죽었으면 design.json 에 '재보던 값'이 남아 있다 — 고른 값으로 되돌린다.
+    # 이걸 안 하면 다음 회차가 그 우연한 값을 '지금 자리(cur)'로 알고 거기서부터 격자를 다시 짜고,
+    # 그 사이에 나가는 썸네일도 그 값으로 그려진다(grid_pick 의 _probe 주석 참고).
+    pr = design.pop('_probe', None)
+    if pr and isinstance(pr, dict) and pr.get('kind') in design:
+        was = design[pr['kind']].get(pr['knob'])
+        if pr.get('safe') is not None and was != pr['safe']:
+            design[pr['kind']][pr['knob']] = pr['safe']
+            did.append(f"앞 회차가 {pr['kind']}.{pr['knob']} 격자를 훑다 죽었다 — "
+                       f"재보던 값 {was} 를 고른 값 {pr['safe']} 로 되돌렸다")
+        json.dump(design, open(DESIGN, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
     # 1) 수집 — 경쟁(하루 한 번이면 충분하므로 마지막 '수집'이 12시간 넘었을 때만)
     # 2026-09-25에 찾았다: 이 문이 마지막 **수집** 시각이 아니라 마지막 **회차** 시각(log[-1]['at'])과

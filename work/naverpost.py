@@ -469,7 +469,20 @@ MIN_GAP_MIN = 20   # 같은 매체에 이 시간 안에 또 올리지 않는다(
 # 읽히는 시간대가 언제인지는 아직 정하지 않았다 — 우리 카페 글 74편을 시간대로 갈라 보니
 # 밴드마다 12~27편뿐이라 표본 30개 미만으로 결론 내지 않는다는 규칙에 걸린다.
 # 여기서 정하는 것은 "어느 시각이 좋다"가 아니라 "한 구간에 몰아 쓰지 않는다"까지다.
-GAP_MIN = {'blog': MIN_GAP_MIN, 'cafe': 300}
+# 그때 상한 4편과 간격 300분을 한 커밋에서 같이 박아 뒀다(2908e7d). 그 뒤 사장님 지시로
+# 상한만 24편으로 되돌리고 간격 300분은 그대로 뒀더니, 상한은 24인데 간격이 하루 4.8편에서
+# 막는 상태가 됐다. 2026-09-26 14시 실측: 카페 마지막 발행이 03:36이고 그 뒤 열 시간 동안
+# 08·09·10시 회차가 전부 카페 0편이었다. 숫자 두 개를 손으로 맞춰 두면 이렇게 어긋난다.
+# 그래서 간격을 상한에서 계산한다 — 손으로 고칠 값은 DAY_CAP 하나뿐이다.
+def gap_min(kind):
+    """이 매체에 연달아 올릴 때 지킬 최소 간격(분). 상한이 있으면 거기서 끌어온다.
+
+    상한을 하루에 펴려면 이상적인 간격은 1440÷상한이지만(24편이면 60분),
+    회차가 정각보다 조금 일찍 끝나면 그 자리에서 막힌다. 절반을 쓰면
+    몰아쓰기는 막으면서 회차 시각이 흔들리는 것은 받아 준다(24편 → 30분)."""
+    cap = DAY_CAP.get(kind)
+    if not cap: return MIN_GAP_MIN
+    return max(MIN_GAP_MIN, int(24 * 60 / cap / 2))
 
 def last_published_minutes(kind):
     """가장 최근 발행이 몇 분 전인지. 블로그는 RSS pubDate, 카페는 API writeDateTimestamp. 못 재면 None."""
@@ -584,7 +597,7 @@ def jitter(kind):
 
 def rate_guard(kind, wait=False):
     if os.environ.get('NAVER_FORCE') == '1': return
-    gap = GAP_MIN.get(kind, MIN_GAP_MIN)
+    gap = gap_min(kind)
     m = last_published_minutes(kind)
     if m is None or m >= gap: return
     left = gap - m

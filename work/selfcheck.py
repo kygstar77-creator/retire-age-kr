@@ -34,6 +34,8 @@ def sents(t):
     for line in t.splitlines():
         line = re.sub(r'[ 	]+', ' ', line).strip()
         if not line: continue
+        # 출처 주소만 있는 줄은 문장이 아니다. meta0927에서 IR 주소 한 줄이 '130자 한 문장'으로 잡혔다(2026-09-27).
+        if re.fullmatch(r'https?://\S+', line): continue
         for s in re.split(r'(?<=[.!?])\s+|(?<=다\.)\s*', line):
             if len(s.strip()) > 4: out.append(s.strip())
     return out

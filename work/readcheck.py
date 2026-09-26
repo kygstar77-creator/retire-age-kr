@@ -195,7 +195,10 @@ def title_check(t):
     for pat, why in TITLE_BAD:
         if re.search(pat, t): out.append(why)
     n = len(re.findall(r'\d[\d,.]*', t))
-    if n >= 3: out.append(f'숫자 {n}개 — 상위 노출 제목은 59%가 0개다. 하나만 남긴다')
+    # 2026-09-26 09시 회차: 기준은 "숫자는 하나만 남긴다"인데 코드는 3개부터 잡고 있었다.
+    # 그래서 "…29세 이하 한 곳인데 순자산은 410만원 증가"(숫자 2개)가 지적 0건으로 통과했고,
+    # 사장님이 말한 문어체 압축을 기계가 아니라 사람이 손으로 잡아야 했다. 기준과 코드를 맞춘다.
+    if n >= 2: out.append(f'숫자 {n}개 — 상위 노출 제목은 59%가 0개다. 하나만 남긴다')
     if t.count(',') >= 2: out.append('쉼표 2개 이상 — 한 제목에 한 가지만 말한다')
     if re.search(r'다$', t.strip().rstrip('.')): out.append('"~다"로 끝남 — 상위 6%뿐이다. 명사나 물음으로 끝낸다')
     if len(t) > 45: out.append(f'{len(t)}자 — 상위 중앙값 33자')

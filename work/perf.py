@@ -160,9 +160,16 @@ def main():
             k = norm(x.get('title', ''))
             if not k or k in seen: continue
             old_posts[k] = x; stamp.setdefault(k, day)
-    # 아직 색인 안 된 글부터, 오래된 것부터 (하루 8편까지 — 검색 요청을 늘리지 않으려고)
-    todo = sorted((v for k, v in old_posts.items() if not v.get('indexed')),
-                  key=lambda x: stamp[norm(x['title'])])[:8]
+    # 아직 색인 안 된 글부터. **어제 글을 먼저 넣는다** — 브레이크 판단(mature)이 쓰는 숫자가
+    # 어제 글 색인율이기 때문이다. 2026-09-26 13:36 실측: 09-24·25·26 사흘 연속 mature가
+    # {n:5, indexed:4, rate:0.8}로 똑같았다. 아래 recheck 결과를 log[일자]['blog']에 되돌려
+    # 쓰지 않아서, 발행 당일 indexed=False로 박힌 가장 오래된 8편이 매일 다시 잡혔고
+    # 어제·그제 글은 영원히 표본에 못 들어왔다. 얼어붙은 숫자로 브레이크를 걸거나 풀 수 없다.
+    yday = (datetime.date.today() - datetime.timedelta(days=1)).isoformat()
+    unindexed = [v for k, v in old_posts.items() if not v.get('indexed')]
+    unindexed.sort(key=lambda x: (stamp[norm(x['title'])] != yday,      # 어제 글 먼저
+                                  stamp[norm(x['title'])]))            # 그다음 오래된 것부터
+    todo = unindexed[:8]
     if todo:
         print('\n=== 지난 글 다시 재기 — 그때 색인 안 됐던 글이 지금은 잡히나')
         again = []
@@ -179,6 +186,11 @@ def main():
                      first, b['title'][:36]))
             again.append({'title': b['title'], 'date': b.get('date', ''), 'self_rank': r,
                           'indexed': idx, 'first_seen': first})
+            # 색인된 글은 원래 기록에 되돌려 써서 표본에서 빼낸다. 이걸 빼먹으면 같은 8편이
+            # 매일 다시 잡히고 어제 글은 끝까지 안 들어온다(b는 log[일자]['blog']의 그 객체다).
+            if idx:
+                b['indexed'] = True
+                if r is not None: b['self_rank'] = r
         got = sum(1 for x in again if x['indexed'])
         able = sum(1 for x in again if x['indexed'] is not None)
         if able: print('  --- 다시 잰 %d편 중 %d편이 뒤늦게 색인됐다 (%d%%)' % (able, got, round(got / able * 100)))
@@ -186,7 +198,17 @@ def main():
         # 하루 지난 글 기준 색인율. 색인에는 하루쯤 걸리므로 '그날 발행분'을 그날 재면 언제나 낮게 나온다.
         # 2026-09-24 12:49 보고가 당일 글 16.7%를 근거로 "발행량을 줄여야 함" 브레이크를 걸었는데,
         # 같은 측정에서 어제 글은 5편 중 4편(80%)이 색인돼 있었다. 판단은 이 숫자로 한다.
-        if able: today['mature'] = {'n': able, 'indexed': got, 'rate': round(got / able, 3)}
+        # 어제 글만 골라 센다. 섞어 세면 몇 달 전 글이 표본을 채워 어제 상태를 못 읽는다.
+        yy = [x for x in again if x['first_seen'] == yday and x['indexed'] is not None]
+        if yy:
+            today['mature'] = {'n': len(yy), 'indexed': sum(1 for x in yy if x['indexed']),
+                               'rate': round(sum(1 for x in yy if x['indexed']) / len(yy), 3),
+                               'basis': '어제(%s) 글' % yday}
+            print('  --- 브레이크 기준(어제 %s 글) %d편 중 %d편 색인 (%d%%)'
+                  % (yday, len(yy), today['mature']['indexed'], round(today['mature']['rate'] * 100)))
+        elif able:
+            today['mature'] = {'n': able, 'indexed': got, 'rate': round(got / able, 3),
+                               'basis': '어제 글 표본 없음 — 지난 글 전체'}
 
     # 언제 쟀는지 남긴다. 어제는 17:33, 오늘은 12:49에 재 놓고 같은 조건으로 견줬다(2026-09-24).
     today['at'] = time.strftime('%Y-%m-%d %H:%M')

@@ -115,7 +115,10 @@ with sync_playwright() as p:
                 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
                 import apis
                 c = apis.vworld_coord(f'{area} {name}') or {'위도': lat, '경도': lng}
-                nb = apis.around(c['위도'], c['경도'])
+                # 인자로 받은 좌표는 문자열이다. 단지 이름으로 주소를 못 찾으면
+                # 그 문자열이 around에 그대로 들어가 str - float 로 터진다(2026-09-26 목동 회차,
+                # 단지 8곳 전부 '주변 정보 실패'로 역·학교 거리가 한 줄도 안 남았다).
+                nb = apis.around(float(c['위도']), float(c['경도']))
                 bits = []
                 for label, word in (('지하철역', '지하철은'), ('초등학교', '초등학교는'), ('중학교', '중학교는')):
                     if nb.get(label): bits.append(word + ' ' + nb[label][0].replace('m', '미터'))

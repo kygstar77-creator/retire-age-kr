@@ -1,0 +1,32 @@
+[오늘 찾은 것] 2026-09-27 07시 회차 WebSearch(한·영)
+- 2026-09-23 DailyForex "Nasdaq 100 Index Closes at Record High" https://www.dailyforex.com/forex-news/2026/09/forex-today-nasdaq-record-high-23-september-2026/249966 (숫자는 야후 시세로 따로 확인)
+- 2026-09-22 FX Leaders 나스닥 종합 사상 최고 https://www.fxleaders.com/news/2026/09/22/nasdaq-composite-index-hits-record-high-and-heads-for-30k-as-chip-stocks-drive-rally/ (기사만 봄, 숫자 안 씀)
+- Invesco QQQ 공식 "Invesco QQQ's total expense ratio is 0.18%" https://www.invesco.com/qqq-etf/en/home.html (2026-09-27 조회)
+- 삼성자산운용 KODEX 미국나스닥100 상품 페이지 https://www.samsungfund.com/etf/product/view.do?id=2ETFE3 (2026-09-27 Playwright 조회, 기준일 26.9.23)
+- 미래에셋 TIGER 미국나스닥100 상품 페이지 https://investments.miraeasset.com/tigeretf/ko/product/search/detail/index.do?ksdFund=KR7133690008 (2026-09-27 조회)
+- 서울신문 2026-05-25 서학개미 양도세 가이드 https://www.seoul.co.kr/news/plan/taxtech/2026/05/25/20260525500093 (기사만 봄 — 국내 복귀 감면 얘기는 1차 출처 못 봐 안 씀)
+
+[총보수]
+- QQQ 0.18% (Invesco 공식)
+- KODEX 미국나스닥100(379810) 총보수 연 0.0062%, 순자산 총액 98,559억원, 상장 2021.04.09 (삼성 상품 페이지, 기준일 26.9.23)
+- TIGER 미국나스닥100(133690) 총보수 연 0.0068%, 순자산 규모 121,510억원, 상장 2010-10-18 (미래에셋 상품 페이지)
+- 1,000만원 1년 총보수: QQQ 18,000원 · KODEX 620원 · TIGER 680원 [계산]
+
+[세금 — 1차 출처]
+- 소득세법(시행 2026-01-01, 법령 API) 제103조 양도소득 기본공제 연 250만원(제94조제1항제3호 주식등)
+- 제104조제1항제12호 나목: 제94조제1항제3호다목(외국법인 주식등) 그 밖의 주식등 20%. 지방소득세 10% 더해 22%
+- KODEX 상품 페이지 과세내용: "매매차익은 배당소득세 과세(보유기간 과세): Min(매매차익, 과표 증분) X 15.4%", "분배금은 배당소득세 과세: Min(현금분배금, 과표증분) X 15.4%"
+- 금융소득(이자+배당) 연 2천만원 넘으면 종합과세 (소득세법 제14조 — 2천만원 기준)
+
+[계산 — 차익만 있고 다른 해외주식 거래 없다고 가정, 국내 ETF는 매매차익=과표증분으로 가정]
+- 차익 300만원: 직투 (300-250)×22% = 11만원 / 국내 300×15.4% = 46만 2천원
+- 차익 1,000만원: 직투 165만원 / 국내 154만원
+- 같아지는 차익: 0.22(x-250)=0.154x → x ≈ 833만원 (128만 3천원)
+
+[시세 — 야후 파이낸스 차트 API 2026-09-27 조회]
+- QQQ 744.50달러(미국 9/25 종가), 52주 555.60~748.65
+- KODEX 미국나스닥100 27,665원(9/23 종가), 52주 22,935~31,275 → 최고가 대비 -11.5%
+- TIGER 미국나스닥100 184,985원(9/23 종가)
+- 원달러 1,354.40원 → QQQ 1주 약 100만 8천원 [계산]
+- KODEX 상품 페이지 분류 문구에 '환노출' 표기 / TIGER '환헤지를 하지 아니함'
+- 원달러 52주 범위 1,322.42~1,587.70 (야후 KRW=X)

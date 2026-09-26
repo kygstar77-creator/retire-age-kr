@@ -58,6 +58,20 @@ def search_rank(query, needle, tab):
         if needle in l: return i
     return None
 
+def quoted_found(sent, needle=BLOGID, tab='blog'):
+    """본문 문장 따옴표 검색에 우리 글이 잡히나. True/False, 검색 자체가 실패하면 None(못 잼).
+    2026-09-27: search_rank는 요청 실패·차단(작은 응답)도 None을 돌려줘서 색인 판정이
+    '색인 안 됨'으로 적혔다. 못 잰 것을 안 된 것으로 세면 브레이크가 엉뚱하게 걸린다."""
+    u = 'https://search.naver.com/search.naver?ssc=tab.%s.all&query=%s' % (tab, urllib.parse.quote('"' + sent + '"'))
+    try:
+        s = get(u)
+    except Exception:
+        return None
+    if len(s) < 20000:          # 정상 결과 페이지는 30만 바이트대, 차단 응답은 수십 바이트(naver-scrape-limits)
+        return None
+    links = re.findall(r'https?://(?:m\.)?(?:blog|cafe)\.naver\.com/[A-Za-z0-9_\-/]+', s)
+    return any(needle in l for l in links[:60])
+
 def norm(s):
     return re.sub(r'[\s\W_]+', '', s or '')
 
@@ -134,7 +148,7 @@ def main():
         # 원고가 없는 글(예전 글, 원고 파일명이 다른 글)은 RSS 본문 요약에서 문장을 뽑는다 — 2026-09-22 추가
         if not sent: sent = pick_sentence(b.get('desc', ''))
         if sent:
-            idx = search_rank('"' + sent + '"', BLOGID, 'blog') is not None; time.sleep(0.5)
+            idx = quoted_found(sent); time.sleep(0.5)
         # 제목 검색에 우리 글이 잡혔다면 네이버가 그 글을 아는 것이다 = 색인됨.
         # 본문 문장 따옴표 검색만으로 판정하던 때는 제목 검색 1위인 글도 '색인 안 됨'으로 적혔다
         # (2026-09-24 실측: 9/23 발행 3편이 제목 1위인데 본문 문장으로는 안 잡혔다).
@@ -177,7 +191,7 @@ def main():
             first = stamp[norm(b['title'])]
             r = search_rank(b['title'], BLOGID, 'blog'); time.sleep(0.5)
             sent = drafts.get(norm(b['title']))
-            idx = (search_rank('"' + sent + '"', BLOGID, 'blog') is not None) if sent else None
+            idx = quoted_found(sent) if sent else None
             if sent: time.sleep(0.5)
             if r is not None: idx = True
             print('  %-6s | %-12s | 발행 %s | %s'
@@ -215,6 +229,61 @@ def main():
     log[TODAY] = today
     json.dump(log, open(p, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print('\n기록: work/perf_log.json (%d일치)' % len(log))
+    brake(today, log)
+
+
+# ---------- 브레이크 ----------
+# 2026-09-24 13:05 회차 기록에 이렇게 적혀 있다.
+#   "perf 12편 색인 2/12(16.7%) — 어제 같은 시각 같은 조건 8/12(66.7%)에서 떨어져 브레이크 조건에 걸림"
+# 걸렸다고 적고는 아무것도 멈추지 않았다. 그 뒤 사흘을 같은 속도로 계속 올렸다.
+# 브레이크가 코드가 아니라 **보고에 쓰는 문장**이었기 때문이다. 읽는 사람이 없으면 아무 일도 안 생긴다.
+# 그래서 파일로 남긴다. 발행기가 매 회차 이 파일을 읽어 맨 앞에 띄운다.
+ALERT = os.path.join(HERE, 'research', '_ALERT.txt')
+BRAKE_RATE = 0.50        # 어제 글 색인율이 이 아래면 경고. 9/23은 83%였다
+BRAKE_MIN_N = 3          # 표본이 이보다 적으면 판단하지 않는다
+
+def brake(today, log):
+    """색인이 무너졌거나 측정이 멈췄으면 경고를 남긴다. 정상이면 경고를 지운다."""
+    out = []
+    m = today.get('mature') or {}
+    basis_ok = str(m.get('basis', '')).startswith('어제')
+    if basis_ok and m.get('n', 0) >= BRAKE_MIN_N and m.get('rate', 1) < BRAKE_RATE:
+        out.append('블로그 색인 급락 — 어제 글 %d편 중 %d편만 색인 (%d%%, 기준 %d%%)'
+                   % (m['n'], m['indexed'], round(m['rate'] * 100), round(BRAKE_RATE * 100)))
+    if m and not basis_ok:
+        out.append('색인 측정 표본이 어제 글이 아니다(%s) — 이 숫자로는 판단하지 않는다' % m.get('basis'))
+
+    # 같은 값이 이틀 반복되면 재는 것이 멈춘 것이다. 9/24·25·26 사흘 내내 {n:5,indexed:4}였다.
+    sigs = []
+    for d in sorted(log)[-3:]:
+        mm = log[d].get('mature') or {}
+        if mm.get('n') is not None: sigs.append((mm.get('n'), mm.get('indexed')))
+    if len(sigs) >= 2 and len(set(sigs)) == 1:
+        out.append('색인 수치가 %d일 연속 똑같다 %s — 재는 것이 멈췄는지 본다' % (len(sigs), sigs[0]))
+
+    # 오늘 올린 글이 하나도 안 잡히는데 어제 것도 안 잡히면 둘을 같이 적어 둔다
+    b = [x for x in (today.get('blog') or []) if isinstance(x, dict)]
+    if b and not any(x.get('indexed') for x in b):
+        out.append('오늘 잰 블로그 %d편 중 색인 0편' % len(b))
+
+    os.makedirs(os.path.dirname(ALERT), exist_ok=True)
+    if out:
+        txt = '[%s]\n' % time.strftime('%Y-%m-%d %H:%M') + '\n'.join('- ' + x for x in out) + '\n'
+        open(ALERT, 'w', encoding='utf-8').write(txt)
+        print('\n' + '!' * 60)
+        print('브레이크 — work/research/_ALERT.txt')
+        for x in out: print('  ! ' + x)
+        print('!' * 60)
+    else:
+        if os.path.exists(ALERT): os.remove(ALERT); print('\n브레이크 해제 — 경고 없음')
+
+def read_alert():
+    """발행기·감시기가 회차 맨 앞에서 부른다. 경고가 있으면 그 줄들을, 없으면 빈 리스트."""
+    try:
+        t = open(ALERT, encoding='utf-8').read().strip()
+        return [x[2:] for x in t.splitlines() if x.startswith('- ')]
+    except Exception:
+        return []
 
 # rankwatch가 search_rank()만 가져다 쓴다. 가드가 없으면 import만 해도 측정이 통째로 돈다.
 if __name__ == '__main__': main()

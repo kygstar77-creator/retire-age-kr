@@ -8,7 +8,12 @@
 #   5) 기록  무엇을 왜 바꿨는지, 지난번 조정 뒤 성과가 올랐는지 loop_log.json에 남긴다
 # 규칙: 한 번에 다 바꾸지 않는다(무엇이 효과였는지 알 수 없어서). 성과가 내려가면 되돌린다.
 import sys, os, re, json, glob, time, subprocess, statistics, hashlib
-sys.stdout.reconfigure(encoding='utf-8')
+# 2026-09-26: 출력을 줄 단위로 흘린다. 전에는 기본(블록) 버퍼라, 이 바퀴가 도중에 죽으면
+# 그때까지 찍은 것이 전부 버퍼에 남은 채 사라졌다 — 파일로 받아 보면 0바이트다.
+# 실제로 이날 14:00 바퀴가 도중에 죽었는데 어디까지 갔는지 아무 흔적이 없었고,
+# 11:52 회차가 죽은 것도 같은 이유로 진단할 수 없었다. 한 바퀴가 6~10분 걸리므로
+# 줄마다 흘려도 값은 무시할 만하고, 대신 죽어도 어디서 죽었는지가 남는다.
+sys.stdout.reconfigure(encoding='utf-8', line_buffering=True)
 HERE = os.path.dirname(os.path.abspath(__file__)); R = os.path.join(HERE, 'research')
 DESIGN = os.path.join(HERE, 'design.json'); LOG = os.path.join(HERE, 'loop_log.json')
 SPEC = os.path.join(R, 'yt', 'design', 'spec.json')

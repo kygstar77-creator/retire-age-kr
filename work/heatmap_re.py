@@ -77,8 +77,13 @@ def price_change(min_pairs=5, offi=False):
 
 def gather(kind):
     """구별 지표를 낸다. 같은 구·같은 5㎡ 면적대끼리만 짝지어 계산한다(면적이 섞이면 뜻이 없다)."""
-    if kind in ('offi', 'offiprice'): tr, rt = load('*_offi_trade.json'), load('*_offi_rent.json')
-    else:              tr, rt = load('*_trade.json', drop_offi=True), load('*_rent.json', drop_offi=True)
+    # 최근 석 달만 쓴다. 2026-09-24부터 rt/에 2021년 10~12월(고점 비교용)이 같이 쌓여
+    # 2021년 매매와 2026년 전월세가 한 칸에 섞였다(2026-09-27 02시 회차가 발견).
+    ms = sorted({os.path.basename(f).split('_')[1] for f in glob.glob(os.path.join(HERE, 'research', 'rt', '*_rent.json'))})[-3:]
+    tr, rt = [], []
+    for m in ms:
+        if kind in ('offi', 'offiprice'): tr += load(f'*_{m}_offi_trade.json'); rt += load(f'*_{m}_offi_rent.json')
+        else:              tr += load(f'*_{m}_trade.json', drop_offi=True); rt += load(f'*_{m}_rent.json', drop_offi=True)
     T, R = collections.defaultdict(list), collections.defaultdict(list)
     for r in tr:
         sgg = sgg_of(r)

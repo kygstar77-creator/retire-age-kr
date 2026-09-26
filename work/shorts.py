@@ -35,8 +35,20 @@ def fit_bg(im, W, H):
     return out
 
 
-def disp(sz):
+def _bhs_lacks(text):
+    """BlackHanSans 에 없는 글자(가운뎃점 · 등)가 있으면 True — 그 글자는 폭만 먹고 빈칸으로 나온다.
+    2026-09-27 avgo 출처 '나스닥 배당·시세'가 '나스닥 배당  시세'로 나온 것을 화면에서 봤다."""
     p = os.path.join(FD, 'BlackHanSans.ttf')
+    if not os.path.exists(p): return False
+    f = ImageFont.truetype(p, 40)
+    return any(not ch.isspace() and f.getmask(ch).getbbox() is None for ch in set(text))
+
+def disp(sz, text=''):
+    p = os.path.join(FD, 'BlackHanSans.ttf')
+    if text and _bhs_lacks(text) and os.path.exists(os.path.join(FD, 'NotoSansKR-Black.ttf')):
+        f = ImageFont.truetype(os.path.join(FD, 'NotoSansKR-Black.ttf'), sz)
+        f.set_variation_by_axes([900])   # 가변 글꼴이라 그대로 열면 Thin(100)으로 나온다
+        return f
     return ImageFont.truetype(p, sz) if os.path.exists(p) else ImageFont.truetype(os.path.join(FD, 'pd700.ttf'), sz)
 
 def body(sz, bold=False):
@@ -47,7 +59,7 @@ def fit_lines(dr, text, maxw, maxsz=150, minsz=54):
     """제목을 1~2줄로 나누고, 폭을 꽉 채우는 크기를 찾는다"""
     words = text.split()
     for sz in range(maxsz, minsz - 1, -2):
-        f = disp(sz); lines, cur = [], ''
+        f = disp(sz, text); lines, cur = [], ''
         for w in words:
             t = (cur + ' ' + w).strip()
             if dr.textlength(t, font=f) <= maxw: cur = t
@@ -56,7 +68,7 @@ def fit_lines(dr, text, maxw, maxsz=150, minsz=54):
                 cur = w
         if cur: lines.append(cur)
         if len(lines) <= 2 and all(dr.textlength(l, font=f) <= maxw for l in lines): return f, lines
-    f = disp(minsz); return f, [text[:14], text[14:28]]
+    f = disp(minsz, text); return f, [text[:14], text[14:28]]
 
 def draw_tokens(dr, x, y, text, f, base, sw):
     """숫자·단위는 노랑, 나머지는 base 색"""

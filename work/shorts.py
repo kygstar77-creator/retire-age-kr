@@ -136,7 +136,11 @@ def dur_of(path):
 
 def build(script, out):
     scenes = list(script['scenes'])
-    if script.get('outro'): scenes.append({'head': script['outro'], 'say': script['outro']})
+    # 출처 장면도 글자만 두지 않는다(사장님 09-23 "자료 화면 없으면 아무도 안 본다"). 2026-09-27 avgo 재생성
+    # 38초 프레임에서 까만 바탕에 출처 한 줄만 뜨는 것을 봤다 — 첫 장면(제목 숫자)의 자료를 다시 깐다.
+    if script.get('outro'):
+        img = next((s['image'] for s in scenes if s.get('image')), None)
+        scenes.append({'head': script['outro'], 'say': script['outro'], **({'image': img} if img else {})})
     parts = []
     for i, sc in enumerate(scenes):
         png = os.path.join(TMP, f's{i:02d}.png'); scene_png(sc, i, len(scenes), script.get('title', ''), png)

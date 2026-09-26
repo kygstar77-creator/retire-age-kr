@@ -154,6 +154,21 @@ def main():
                     '다음 로그인 때 "로그인 상태 유지"를 켜면 만료일이 붙어 오래 간다')
     except Exception as e: print('로그인 쿠키 점검 실패:', repr(e)[:80])
 
+    # 2-c) 쓰기 권한이 살아 있나. 쿠키 나이만 보면 이걸 못 잡는다.
+    # 2026-09-26 13:43 실측: 쿠키는 멀집한데 등록을 누르는 순간만
+    # 401 IP check failure 가 떠 카페가 10시간 멈췤다. 감시기는 '쿠키 세션형' 만
+    # 알리고 있어 진짜 이유를 한 번도 말하지 못했다.
+    # 막혔을 때 메우면 글은 다 써지고 등록에서만 튕겨 20분을 버리고
+    # 임시저장만 쌓인다. 그래서 메우기도 멈춘다.
+    authfail = None
+    try: authfail = N.auth_fail_seen()
+    except Exception as e: print('쓰기 권한 점검 실패:', repr(e)[:80])
+    if authfail:
+        rec['authfail'] = authfail[:200]
+        rec['alert'].insert(0, '네이버 글쓰기가 IP 확인에서 막혔다(쿠키는 살아 있다) — '
+                               '사장님이 `py -3.12 work/naverpost.py login` 을 한 번 해야 대기 원고가 나간다: '
+                               + authfail[:120])
+
     gaps = series_gap()
     rec['안 나간 시리즈'] = gaps
     if gaps: rec['alert'].append('최근 글에 한 편도 없는 시리즈: ' + ', '.join(gaps))
@@ -163,6 +178,10 @@ def main():
     # (2026-09-25 사장님 "카페는 그대로 24시간 아니었어?" — 카페는 색인이 정상이라 줄일 이유가 없다).
     kinds = ['cafe'] if quiet else ['blog', 'cafe']
     kinds = [k for k in kinds if k not in capped]
+    # 쓰기가 막혔 상태면 메우지 않는다 — 올려도 등록에서 튕긴다(2026-09-26).
+    if authfail:
+        kinds = []
+        rec['did'].append('메우기 건너뜀 — 글쓰기가 IP 확인에서 막혔다. 재로그인 전에는 무엇을 올려도 등록이 안 된다')
     # 막힌 묶음은 메우기 대상이 아니다. 2026-09-26 00:52 실측: 카페가 89분 빵꾸인데
     # 첫 묶음(avgo0925)이 AVGO 중복으로 막혀 있어 naverpost 가 거부했고, 뒤에 있던
     # 멀쩡한 cvx0926·pg0926 은 손도 못 댔다. 재고에서는 빼면서 메울 때는 첫 개를

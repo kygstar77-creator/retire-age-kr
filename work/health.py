@@ -270,14 +270,24 @@ def main():
         # 2026-09-26: 위 '멈춘 회차'는 지금 열려 있는 것만 센다. 다음 회차가 start를 부르면
         # 그 기록이 덮어써져 점수가 0으로 돌아갔고, 회차가 죽는 일 자체는 한 번도 안 세어졌다.
         ab = beat.abandoned(24)
-        M.append(('회차', '끝을 못 찍고 죽은 회차(최근 24시간)', len(ab), 0, 3,
+        # 2026-09-26 loop: 23:07에 loop·improve가 밀린 예약으로 같이 떠서 23:08:40 같은 초에 둘 다 끊겼다
+        # (예약 실행 기록 두 세션 last_activity가 같은 초, 둘 다 Bash 도중). 회차 지시문 문제가 아니라
+        # 앱이 한꺼번에 세션을 끊은 한 사건이다. 따로 세면 점수가 두 배가 되고 일감표가 지시문을 뒤지게 만든다.
+        # 같은 분에 시작한 서로 다른 회차들이 함께 죽었으면 한 건('동시 중단')으로 센다.
+        grp = {}
+        for g in ab: grp.setdefault(g.get('at'), []).append(g)
+        mass = [(at, v) for at, v in grp.items() if len({x['task'] for x in v}) >= 2]
+        ab = [g for v in grp.values() if len({x['task'] for x in v}) < 2 for g in v]
+        mass_txt = ''.join(f' · {at} 동시 중단({"+".join(x["task"] for x in v)} — 앱이 세션을 한꺼번에 끊음, 지시문 문제 아님)'
+                           for at, v in mass)
+        M.append(('회차', '끝을 못 찍고 죽은 회차(최근 24시간)', len(ab) + len(mass), 0, 3,
                   '그 회차 지시문에 beat.py mark 가 단계마다 있는지(없으면 죽은 시각을 모른다) · '
                   '맨 끝에 beat.py end 가 있는지'
                   + (' · 지금: ' + ', '.join(
                       f'{g["task"]} {g["at"]}('
                       + (f'{g["min"]}분' if g.get('how') == 'mark' else f'{g["min"]}분 이내·상한')
                       + (f', {g["stage"]}에서' if g.get('stage') else ', 단계 기록 없음') + ')'
-                      for g in ab[-3:]) if ab else '')))
+                      for g in ab[-3:]) if ab else '') + mass_txt))
         sl = beat.stale()
         M.append(('회차', '제 예약 간격을 넘도록 안 돈 회차', len(sl), 0, 2,
                   '그 회차 지시문에 beat.py start/end 가 있는지 · 예약이 꺼졌는지 확인'

@@ -70,7 +70,23 @@ def prev_amount(rows, ex_date, rate):
     gap = None
     if prev and cur: gap = (cur[0] - prev[0]).days
     elif prev and ex_date: gap = (ex_date - prev[0]).days
-    return (prev[1] if prev else None), gap, len(hist)
+    return (prev[1] if prev else None), gap, len(hist), hist
+
+def yoy_and_alt(hist, ex_date, cur, prev):
+    """1년 전 같은 회차 금액과, 금액이 번갈아 나오는지(교대)를 본다.
+    2026-09-26 23시 회차: CCAP가 0.03 → 0.34 '+1,033% 인상' 1위로 잡혔는데 이력은
+    0.42·0.03·0.34·0.03·0.34로 큰 회차와 작은 회차가 번갈아 있었다. 0.34는 석 달 전과 같은 금액(동결)이다.
+    UMMA '+3,675%'도 1년 전 같은 9월(0.23)보다는 34% 적었다. 바로 앞 회차만 보면 이런 걸 인상으로 센다."""
+    if not ex_date or not hist: return None, False
+    before = [(ed, a) for ed, a in hist if ed < ex_date]
+    yoy = None
+    near = [(abs((ex_date - ed).days - 365), a) for ed, a in before if abs((ex_date - ed).days - 365) <= 45]
+    if near: yoy = min(near)[1]
+    # 교대: 바로 앞은 다른데, 그 앞 3회 안에 지금과 같은 금액(±0.5%)이 있다
+    alt = False
+    if prev and abs(cur - prev) / prev > 0.005:
+        alt = any(abs(a - cur) / cur <= 0.005 for _, a in before[1:4])
+    return yoy, alt
 
 def main():
     args = [a for a in sys.argv[1:]]
@@ -91,10 +107,14 @@ def main():
         if not h: return None
         r['_cls'] = cls
         if only_stocks and cls != 'stocks': return None
-        prev, gap, n = prev_amount(h, d2s(r.get('dividend_Ex_Date') or ''), r.get('dividend_Rate'))
+        exd = d2s(r.get('dividend_Ex_Date') or '')
+        prev, gap, n, hist = prev_amount(h, exd, r.get('dividend_Rate'))
         try: cur = float(r.get('dividend_Rate') or 0)
         except Exception: return None
         if not prev or not cur or cur < floor: return None
+        yoy, alt = yoy_and_alt(hist, exd, cur, prev)
+        r['_yoy_prev'] = yoy; r['_alt'] = alt
+        r['_yoy_pct'] = (cur - yoy) / yoy * 100 if yoy else None
         r['_prev'] = prev; r['_cur'] = cur; r['_gap'] = gap; r['_n'] = n
         r['_pct'] = (cur - prev) / prev * 100
         r['_yield'] = meta.get('yield'); r['_ann_div'] = meta.get('annualizedDividend')
@@ -109,27 +129,30 @@ def main():
         g = r.get('_gap')
         return g is not None and not (20 <= g <= 40 or 75 <= g <= 105 or 160 <= g <= 200 or 330 <= g <= 400)
 
-    normal = [r for r in got if not 주기바뀜(r)]
+    normal = [r for r in got if not 주기바뀜(r) and not r.get('_alt')]
     odd = [r for r in got if 주기바뀜(r)]
+    alt = [r for r in got if not 주기바뀜(r) and r.get('_alt')]
     up = sorted([r for r in normal if r['_pct'] > 0.5], key=lambda r: -r['_pct'])
     dn = sorted([r for r in normal if r['_pct'] < -0.5], key=lambda r: r['_pct'])
     flat = [r for r in normal if -0.5 <= r['_pct'] <= 0.5]
 
-    print(f'비교 성공 {len(got)}건 · 인상 {len(up)} · 삭감 {len(dn)} · 동결 {len(flat)} · 주기변경 {len(odd)}')
+    print(f'비교 성공 {len(got)}건 · 인상 {len(up)} · 삭감 {len(dn)} · 동결 {len(flat)} · 주기변경 {len(odd)} · 교대 {len(alt)}')
     def show(t, items, k=12):
         print(f'\n[{t}]')
         for r in items[:k]:
             print(f"  {r['symbol']:6s} {r['_prev']:.4f} → {r['_cur']:.4f} ({r['_pct']:+.1f}%) "
                   f"배당락 {r.get('dividend_Ex_Date')} 발표 {r['_ann']} 지급 {r.get('payment_Date')} "
                   f"연환산 {r.get('indicated_Annual_Dividend')} 수익률 {r.get('_yield')} "
-                  f"성향 {r.get('_payout')} [{r.get('_cls')}] | {r['companyName'][:42]}")
+                  f"성향 {r.get('_payout')} [{r.get('_cls')}] "
+                  f"1년전 {('%+.1f%%' % r['_yoy_pct']) if r.get('_yoy_pct') is not None else '-'} | {r['companyName'][:42]}")
     show('인상', up); show('삭감', dn); show('주기변경(증감률 무의미)', odd, 8)
+    show('교대(큰 회차·작은 회차가 번갈아 — 앞 회차 대비 증감률 무의미)', alt, 8)
 
     if jout:
         os.makedirs(os.path.dirname(jout) or '.', exist_ok=True)
         with open(jout, 'w', encoding='utf-8') as f:
             json.dump({'asof': str(datetime.date.today()), 'days': days,
-                       'up': up, 'down': dn, 'flat': flat, 'odd': odd},
+                       'up': up, 'down': dn, 'flat': flat, 'odd': odd, 'alt': alt},
                       f, ensure_ascii=False, default=str, indent=1)
         print('\n저장', jout)
 

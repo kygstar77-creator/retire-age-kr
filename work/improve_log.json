@@ -118,5 +118,12 @@
   "task": "A",
   "did": "재고: 카페 완성묶음 1개 신규(berkshire_len0926 — SEC Form 4 원문으로 버크셔의 레나 1,679,700주/$136,382,789 매수 확인, readcheck 0건·selfcheck 0건). 일감표 3번: 죽은 회차가 기록에서 조용히 지워지던 것 고침(beat.py _abandoned/abandoned(), health.py 새 항목). A 성과: perf.py 12편 — 상위에 든 2편이 둘 다 코픽스 공식 공시 글, 비교형은 전부 색인 안 됨(perf-notes.md). divchange.py가 ETF 분배금을 '배당 인상·삭감'으로 부르는 문제 발견 → tools-wanted·build-queue에 올림",
   "blocked": "카페 재고 2/3(1개 모자람) — 남은 시간에 억지로 세 번째를 쓰지 않았다. C8 슬롯 재료인 divchange 결과가 ETF뿐이라 그대로 쓰면 틀린 글이 된다. crosscheck는 429/503으로 실패해 selfcheck로 대체함"
+ },
+ {
+  "date": "2026-09-26",
+  "hour": 23,
+  "task": "F",
+  "did": "재고 블로그3·카페2→3: 카페 divcheck0926(이번 주 배당 인상 113건 중 ETF 111, CCAP +1,033%는 교대 회차라 실제 동결, 실제 인상 BANF 1곳) readcheck·selfcheck 0건. divchange.py가 교대 회차를 인상으로 세던 것 고침(교대 분류+1년 전 같은 회차 비교). 준비상태: check 로그인됨이나 글쓰기 IP 차단 지속(14시 확정)",
+  "blocked": "divchange 전체 재실행은 Nasdaq 연속 호출 제한으로 1건만 비교돼 이력 고정값으로 함수만 검증 · 파이어 사례 새 건 못 찾음 · ytfull 90일 수집은 시간 부족으로 이번 회차 안 함"
  }
 ]

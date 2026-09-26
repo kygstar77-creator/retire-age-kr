@@ -1,0 +1,13 @@
+◆ 남기는 숫자
+
+이번 주 배당 인상 발표 113건 중 111건이 ETF였어요. 개별 종목 두 곳 중 CCAP는 같은 금액으로 돌아온 것이었고요. 실제로 올린 곳은 BancFirst 한 곳, 0.49달러에서 0.52달러였습니다.
+
+인상률 순위를 볼 때는 앞 회차가 뭐였는지 이력부터 한 번 보세요.
+
+- 출처: Nasdaq 배당 캘린더 https://api.nasdaq.com/api/calendar/dividends (2026년 9월 26일 조회, 발표일 기준 최근 7일)
+- 출처: Nasdaq 배당 이력 CCAP https://www.nasdaq.com/market-activity/stocks/ccap/dividend-history
+- 출처: Nasdaq 배당 이력 BANF https://www.nasdaq.com/market-activity/stocks/banf/dividend-history
+- 출처: Nasdaq 분배금 이력 UMMA https://www.nasdaq.com/market-activity/etf/umma/dividend-history
+- 계산: 이번 발표 금액 ÷ 같은 종목 바로 앞 회차 금액. 주기가 바뀐 22건은 뺐습니다.
+- 특정 종목을 사거나 팔라는 뜻이 아닙니다.
+- 이 글은 자료 수집과 초안 작성에 생성형 AI를 함께 썼습니다.

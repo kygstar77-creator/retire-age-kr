@@ -146,14 +146,21 @@ def body_text_len(frame):
     # 빈 편집기의 안내문 '내용을 입력하세요.'는 글자로 세지 않는다(첫 조각 검증이 -3자로 틀렸던 원인)
     return frame.evaluate("() => [...document.querySelectorAll('.se-component.se-text .se-text-paragraph')].map(e=>e.innerText).filter(t=>t.trim()!=='내용을 입력하세요.').join('').replace(/[\\s\\u200b]+/g,'').length")
 
+HEAD_RE = re.compile(r'^\s*#{1,6}\s+')
+
 def type_text(frame, text):
+    # 원고의 '## 소제목'은 마크다운이라 편집기가 모른다. 2026-09-27 확인: 9/25부터 카페·블로그 11편이
+    # '## 기간은 늘린 만큼…'처럼 샵 기호를 그대로 달고 나갔다. 샵을 떼고 굵게 넣는다.
     page = frame.page
-    want = len(re.sub(r'\s+', '', text))
+    want = len(re.sub(r'\s+', '', ' '.join(HEAD_RE.sub('', l) for l in text.splitlines())))
     for attempt in range(2):
         before = body_text_len(frame)
         click_last_paragraph(frame); ensure_plain(frame)
         for para in text.splitlines():
-            if para.strip(): page.keyboard.insert_text(para); page.wait_for_timeout(120)
+            if HEAD_RE.match(para):
+                page.keyboard.press('Control+B'); page.keyboard.insert_text(HEAD_RE.sub('', para))
+                page.keyboard.press('Control+B'); page.wait_for_timeout(120)
+            elif para.strip(): page.keyboard.insert_text(para); page.wait_for_timeout(120)
             page.keyboard.press('Enter'); page.wait_for_timeout(120)
         got = body_text_len(frame) - before
         if got >= want * 0.9: return
@@ -439,7 +446,7 @@ def pending_block(kind, pkg, title, check_dup=True):
 # ---------- 블로그 ----------
 def verify_body(frame, seq, label):
     """등록 직전 검증: 묶음의 글자 수·사진 수가 편집기에 실제로 들어갔는지. 모자라면 등록하지 않는다."""
-    total = body_text_len(frame); want = sum(len(re.sub(r'\s+', '', v)) for k, v in seq if k == 'text')
+    total = body_text_len(frame); want = sum(len(re.sub(r'\s+', '', re.sub(r'(?m)^\s*#{1,6}\s+', '', v))) for k, v in seq if k == 'text')
     imgs = frame.locator('.se-component.se-image').count(); want_img = sum(1 for k, _ in seq if k == 'img')
     print(f'{label} 본문 {total}/{want}자, 사진 {imgs}/{want_img}장')
     if total < want * 0.9 or imgs < want_img: raise RuntimeError(f'{label} 본문이 덜 들어감 — 등록하지 않음')
@@ -979,7 +986,7 @@ def verify_published(page, pkg):
             r = fr.evaluate(PUBLISHED_JS)
             if r['text'] > best['text']: best = r
         except Exception: pass
-    want = sum(len(re.sub(r'\s+', '', v)) for k, v in seq if k == 'text'); want_img = sum(1 for k, _ in seq if k == 'img')
+    want = sum(len(re.sub(r'\s+', '', re.sub(r'(?m)^\s*#{1,6}\s+', '', v))) for k, v in seq if k == 'text'); want_img = sum(1 for k, _ in seq if k == 'img')
     ok = best['text'] >= want * 0.9 and best['img'] >= want_img
     res = {'ok': ok, 'url': url, 'text': best['text'], 'want': want, 'img': best['img'], 'want_img': want_img}
     open(os.path.join(pkg, 'verify.txt'), 'w', encoding='utf-8').write(json.dumps(res, ensure_ascii=False) + '\n')

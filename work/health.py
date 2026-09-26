@@ -59,7 +59,10 @@ def _cafe_cap():
 
 def main():
     M = []   # (영역, 항목, 값, 목표, 중요도, 어떻게 고치나)
-    runs = load(os.path.join(HERE, 'runs_today.json'), {'runs': []})['runs']
+    _rt = load(os.path.join(HERE, 'runs_today.json'), {'runs': []})
+    # 날짜가 오늘이 아니면 어제 기록이다. 2026-09-27 00:12에 어제(09-26) 파일을 그대로 세어
+    # '오늘 블로그 5 / 목표 0'이 점수 15로 일감표 1번에 앉았다 — 자정 직후 첫 회차가 아직 파일을 새로 만들기 전이다.
+    runs = _rt['runs'] if _rt.get('date') in (None, time.strftime('%Y-%m-%d')) else []
     nb = sum(1 for r in runs if (r.get('blog') or {}).get('url')); nc = sum(1 for r in runs if (r.get('cafe') or {}).get('url'))
     # 발행 의무가 있는 회차만 센다. 감시기(:45)·보고 회차도 같은 파일에 append하는데
     # 그 회차는 발행이 일이 아니라서, 예전엔 2026-09-24 03시처럼 발행 3회차가 전부 2편씩
@@ -117,7 +120,7 @@ def main():
         return min(due, cap) if cap else due
     blog_due = 지금까지목표(BLOG_SLOTS, 목표('blog', 18))
     M += [('발행', '오늘 블로그 편수', nb, blog_due, 3, f'지금 시각까지 나갔어야 할 {blog_due}편 기준(새벽 2~7시는 쉼) · 모자라면 회차 note에서 0편 사유 확인 → 대기 묶음·가드·시간초과'),
-          ('발행', '오늘 카페 편수', nc, 목표('cafe', 24), 3, '위와 같음'),
+          ('발행', '오늘 카페 편수', nc, 지금까지목표(list(range(24)), 목표('cafe', 24)), 3, '지금 시각까지 나갔어야 할 편수 기준(카페는 24시간) · 위와 같음'),
           ('발행', '0편 회차 수', zero, 0, 3, how_zero)]
     pend = sh(os.path.join(HERE, 'naverpost.py'), 'pending')
     pb = len(re.findall(r'"kind": "blog"', pend)); pc = len(re.findall(r'"kind": "cafe"', pend))
@@ -370,6 +373,9 @@ def main():
         if val is None: continue
         gap = 0.0 if tgt == 0 and val == 0 else (abs(val - tgt) / max(abs(tgt), 1) if val < tgt or tgt == 0 else 0.0)
         if tgt == 0: gap = float(val)
+        # 편수 목표는 '최소 이만큼'이다. 지금 시각까지 나갔어야 할 편수가 0인데(자정 직후)
+        # 이미 나간 글이 있으면 모자란 게 아니다 — 위 줄이 '0이 목표인 나쁜 값'과 같이 세어 점수를 매겼다.
+        if name in ('오늘 블로그 편수', '오늘 카페 편수'): gap = max(0.0, (tgt - val) / max(tgt, 1))
         rows.append({'area': area, 'name': name, 'value': val, 'target': tgt, 'weight': w, 'gap': round(gap, 3), 'score': round(gap * w, 3), 'how': how,
                      'owner': '사람' if name in HUMAN else '루틴'})
     rows.sort(key=lambda r: -r['score'])

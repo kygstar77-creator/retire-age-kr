@@ -1,0 +1,58 @@
+확인일 2026-09-26 (모든 숫자 이 날짜에 1차 출처에서 직접 받음)
+
+[1] SEC EDGAR Form 4 원문 — 접수번호 0001193125-26-403089
+https://www.sec.gov/Archives/edgar/data/1067983/0001193125-26-403089.txt
+- 보고자(rptOwnerName): BERKSHIRE HATHAWAY INC, BUFFETT WARREN E
+- isTenPercentOwner: true / isDirector: false  → 10% 주주 신고
+- 발행사(issuerName): LENNAR CORP /NEW/  (issuerTradingSymbol: LEN)
+- periodOfReport: 2026-09-23
+- 비파생 거래 9건, 전부 transactionCode=P(매수) / AcquiredDisposed=A(취득)
+
+거래 9건 (거래일 · 주수 · 신고단가=가중평균 · 거래 후 보유):
+ 2026-09-23   532,993주  $81.65   24,252,102
+ 2026-09-23     1,263주  $79.99      529,480
+ 2026-09-24   399,238주  $80.58   24,651,340
+ 2026-09-24   241,692주  $81.44   24,893,032
+ 2026-09-24     9,415주  $79.42      538,895
+ 2026-09-24     2,975주  $79.91      541,870
+ 2026-09-25   313,379주  $80.90   25,206,411
+ 2026-09-25   171,723주  $81.60   25,378,134
+ 2026-09-25     7,022주  $79.53      548,892
+ 합계 1,679,700주 · 주수×신고단가로 더하면 $136,382,789
+ (신고단가는 전부 가중평균값이다. 각주 F3~F11이 밝힌 실제 체결 구간은 전체로 보면 $78.85~$82.00)
+
+[2] 같은 Form 4의 각주 — 누가 들고 있나 (거래 후)
+ 각주 F1 · Class A 25,378,134주 = 버크셔 자회사 6곳
+   AZGUARD Insurance 3,098,000 / BHG Life Insurance 3,625,000 /
+   Medical Protective 3,875,785 / National Indemnity 12,366,349 /
+   NorGUARD Insurance 1,195,000 / WestGUARD Insurance 1,218,000
+   → 여섯 곳 합 25,378,134 (각주 숫자와 일치. 내가 더해서 맞춰 봤다)
+ 각주 F2 · Class B 548,892주 = AZGUARD 273,264 + National Indemnity 275,628
+   → 합 548,892 (일치)
+ A+B 합 25,927,026주
+ 버핏 본인은 "pecuniary interest 범위를 넘는 실질 소유는 부인한다"고 같은 각주에 적었다.
+
+[3] 주가 — Yahoo Finance chart API (2026-09-26 확인)
+ LEN   종가 $82.15 · 52주 저 $75.70 · 52주 고 $133.76 · 최근 한 달 $76.43~$87.15
+ LEN-B 종가 $80.49 · 52주 저 $74.44 · 52주 고 $125.48 · 최근 한 달 $74.71~$85.61
+ 52주 고점 대비: 82.15 / 133.76 = 0.6142 → -38.6%
+
+[4] 발행주식수 — SEC XBRL companyfacts (CIK 0000920760), 10-Q
+ WeightedAverageNumberOfSharesOutstandingBasic, 기준일 2026-05-31(CY2026Q2): 240,776,000주
+ → Class A 25,378,134 / 240,776,000 = 약 10.5%
+ (가중평균 발행주식수다. 특정 시점 발행주식수가 아니므로 '약'으로만 쓴다.
+  Form 4가 10%주주로 신고한 것과 방향이 맞는다 — 두 출처가 서로를 받쳐 준다.)
+
+[5] 같은 기간 다른 내부자 매수 — 같은 EDGAR 일별 인덱스에서 뽑음
+ (2026-09-23~25 접수 Form 4 299건 조회 · 매수(P) 86건)
+ Corebridge Financial(CRBG) · NIPPON LIFE INSURANCE(10%주주) · 09-23 · 219,273주 @ $34.134 = $7,484,665
+   https://www.sec.gov/Archives/edgar/data/1889539/0001193125-26-402895.txt
+ CEMEX(CX) · Zambrano Lozano Rogelio(이사) · 09-25 · 400,800주 @ $17.2812 = $6,926,305
+   https://www.sec.gov/Archives/edgar/data/1076378/0002035244-26-000009.txt
+ Kayne Anderson BDC(KBDC) · ROBO JAMES L(이사) · 09-24 · 105,000주 @ $13.046 = $1,369,830
+   https://www.sec.gov/Archives/edgar/data/1747172/0001183254-26-000007.txt
+
+확인 안 한 것 (글에 쓰지 않는다):
+- 버크셔가 왜 샀는지. 공시에 이유는 없다.
+- 이번 매수 전 버크셔의 LEN 보유 수량이 언제 시작됐는지(13F 이력은 이 회차에서 안 봄).
+- LEN의 실적·배당 숫자(이 글에서 안 다룬다).

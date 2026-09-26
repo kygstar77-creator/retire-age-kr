@@ -111,5 +111,12 @@
   "did": "재고 0순위에 회차 전체를 썼다. 완성 묶음 5개 신규(카페 earncal0926·cvx0926·pg0926, 블로그 vz0926·reitdiv0926) + 다른 회차가 사진 없이 남긴 acedist0926에 차트 3장을 채웠다. 전부 readcheck 0건·selfcheck 0건. 쓸 수 있는 재고 블로그 1/카페 0 → 블로그 3/카페 3. chartimg.py 결함 수정: 표시 글꼴(BlackHanSans)에 없는 글자가 폭만 차지하고 안 그려지던 문제 — em대시·중점·화살표·※·℃ 등 33자를 실측해 DISP_SUB에 넣고, 남은 글자를 렌더로 자동 감지해 경고하는 warn_missing() 추가.",
   "blocked": "F 본업(유튜브 ytfull 90일 수집, pick.py 로테이션 점검)은 손도 못 댔다 — 재고가 1순위라 시간을 전부 썼다. crosscheck는 Gemini 429/503으로 두 번 다 실패해 selfcheck로 대체했다. avgo0925(AVGO)·acedist0926(ACE)은 같은 대상 중복으로 계속 막혀 있어 재고로 안 잡힌다.",
   "ended": "2026-09-26 00:04 (28.8분)"
+ },
+ {
+  "date": "2026-09-26",
+  "hour": 13,
+  "task": "A",
+  "did": "재고: 카페 완성묶음 1개 신규(berkshire_len0926 — SEC Form 4 원문으로 버크셔의 레나 1,679,700주/$136,382,789 매수 확인, readcheck 0건·selfcheck 0건). 일감표 3번: 죽은 회차가 기록에서 조용히 지워지던 것 고침(beat.py _abandoned/abandoned(), health.py 새 항목). A 성과: perf.py 12편 — 상위에 든 2편이 둘 다 코픽스 공식 공시 글, 비교형은 전부 색인 안 됨(perf-notes.md). divchange.py가 ETF 분배금을 '배당 인상·삭감'으로 부르는 문제 발견 → tools-wanted·build-queue에 올림",
+  "blocked": "카페 재고 2/3(1개 모자람) — 남은 시간에 억지로 세 번째를 쓰지 않았다. C8 슬롯 재료인 divchange 결과가 ETF뿐이라 그대로 쓰면 틀린 글이 된다. crosscheck는 429/503으로 실패해 selfcheck로 대체함"
  }
 ]

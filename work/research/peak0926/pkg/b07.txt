@@ -1,0 +1,10 @@
+◆ 남기는 숫자
+
+짝지어진 374쌍의 중앙 변동률은 2021년 고점보다 7.55% 높다. 그런데 138쌍은 아직 고점 아래고, 그중 20쌍은 20% 넘게 모자란다. 구별로는 금천구 -20.6%가 가장 뒤, 송파구 +30.2%가 가장 앞이다.
+
+- 출처: 국토교통부 실거래가 공개시스템 아파트 매매 신고분 https://rt.molit.go.kr (2021년 10~12월·2026년 7~9월 신고분, 2026년 9월 26일 조회)
+- 출처: 서울경제 「스멀스멀 오르더니…결국 전고점 바라보는 서울 중하위권 아파트」 2026년 8월 30일 https://www.sedaily.com/article/20084857 — 한국부동산원 주간 아파트 매매가격지수 전고점·현재 값
+- 출처: 서울신문 「서울 아파트 매수 심리 5년 만에 최고… 노원 '국평' 14억 팔렸다」 2026년 9월 24일 https://www.seoul.co.kr/news/economy/estate/2026/09/24/20260924032003 — 매매수급지수 114.4
+- 출처: Seoul Economic Daily 「Seoul Apartment Prices Rise for 84th Straight Week as Outer Districts Surge」 2026년 9월 18일 https://en.sedaily.com/finance/2026/09/18/seoul-apartment-prices-rise-for-84th-straight-week-as-outer
+- 계산: 같은 구·같은 단지명·같은 5제곱미터 면적대끼리 2021년 10~12월 최고 거래가와 2026년 7~9월 거래 중앙값을 견줬다. 양쪽 거래 2건 이상, 전용 40제곱미터 이상만 썼다. 도구 work/peakdrop.py
+- 이 글은 자료 수집과 초안 작성에 생성형 AI를 함께 썼다.

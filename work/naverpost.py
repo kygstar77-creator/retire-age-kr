@@ -385,6 +385,25 @@ def pending_check(pkg):
         if n: out.append('%s %d건' % (tag, n))
     return ' · '.join(out)
 
+_DAY_LEFT = {}
+
+def day_left(kind):
+    """오늘 이 매체에 더 올릴 수 있는 편수. 상한이 없거나 못 세면 None.
+
+    2026-09-26 실측: 카페 네 편이 새벽 3시 반까지 다 나가 상한에 걸렸는데,
+    04·05·06·07·08·09·10시 일곱 회차가 그걸 모르고 매번 묶음을 고르고 검증하고
+    발행까지 들어가서야 DAY_CAP에 튕겼다. 상한은 브라우저 없이 HTTP로 세는 값이라
+    pending 목록에서 미리 알려 줄 수 있다 — 회차가 "오늘 카페는 끝"을 보고
+    대기 묶음 쌓기로 바로 넘어가면 된다.
+    한 번 실행하는 동안은 캐시를 쓴다(pending이 묶음마다 부른다)."""
+    cap = DAY_CAP.get(kind)
+    if cap is None or os.environ.get('NAVER_FORCE') == '1':
+        return None
+    if kind not in _DAY_LEFT:
+        n = published_today(kind)
+        _DAY_LEFT[kind] = None if n is None else cap - n
+    return _DAY_LEFT[kind]
+
 def pending_block(kind, pkg, title, check_dup=True):
     """이 묶음을 지금 올리면 거부당할 이유. 없으면 ''.
 
@@ -392,6 +411,9 @@ def pending_block(kind, pkg, title, check_dup=True):
     거기서 거부되면 그 회차는 브라우저 잠금 대기 13분을 그냥 버린다.
     2026-09-25 20시 회차가 avgo0925로 그걸 두 번 겪었다(사진 2장 → 같은 대상 중복).
     둘 다 브라우저 없이 셀 수 있는 것이라 pending이 미리 세어 준다."""
+    left = day_left(kind)
+    if left is not None and left <= 0:
+        return '하루 상한 도달(오늘 %d편/상한 %d편) — 내일 올린다' % (DAY_CAP[kind] - left, DAY_CAP[kind])
     need = 4 if kind == 'blog' else 3
     have = sum(1 for ln in open(os.path.join(pkg, 'order.txt'), encoding='utf-8')
                if ln.strip().startswith('img/'))

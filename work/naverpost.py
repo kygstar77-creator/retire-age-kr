@@ -417,6 +417,11 @@ def pending_block(kind, pkg, title, check_dup=True):
     거기서 거부되면 그 회차는 브라우저 잠금 대기 13분을 그냥 버린다.
     2026-09-25 20시 회차가 avgo0925로 그걸 두 번 겪었다(사진 2장 → 같은 대상 중복).
     둘 다 브라우저 없이 셀 수 있는 것이라 pending이 미리 세어 준다."""
+    hold = os.path.join(pkg, 'hold.txt')
+    if os.path.exists(hold):
+        # 2026-09-27 01시: peak0926(2021 고점 대비 구별)이 00:48 블로그(5년 전 대비 구별)와 같은 계산인데
+        # 단지명·티커·제목 앞머리가 안 겹쳐 same_subject_today가 못 잡았다. 회차가 판단해 보류를 걸면 남는다.
+        return '보류: ' + open(hold, encoding='utf-8').read().strip()[:80]
     left = day_left(kind)
     if left is not None and left <= 0:
         return '하루 상한 도달(오늘 %d편/상한 %d편) — 내일 올린다' % (DAY_CAP[kind] - left, DAY_CAP[kind])
@@ -747,7 +752,15 @@ def post_cafe(page, pkg, wait=False):
     # 글이 엉뚱한 판에 가는 것이 안 올라가는 것보다 낫다.
     want = meta.get('게시판', '자유게시판')
     boards = cafe_boards()
-    pick = pick_board(want, boards)
+    # --board <이름> 은 사람 자리 보호를 일부러 넘는다. 공지사항·가입인사에 운영자가
+    # 손으로 한 번 올릴 때만 쓴다. 자동 발행 회차는 이 인자를 주지 않으므로 그대로 막힌다.
+    force = None
+    if '--board' in sys.argv:
+        i = sys.argv.index('--board')
+        if i + 1 < len(sys.argv): force = sys.argv[i + 1]
+    pick = force if (force and force in boards) else pick_board(want, boards)
+    if force and pick != force:
+        print(f'--board "{force}" 가 카페에 없다 → "{pick}" (있는 것: {boards})')
     if pick != want:
         print(f'게시판 "{want}" 없음 → "{pick}" 로 올린다 (있는 것: {boards})')
     # 고른 뒤 실제로 닫혔는지 본다. 2026-09-25 06:02 실측: 목록은 열렸는데 항목 클릭이 안 먹어
@@ -962,8 +975,50 @@ def verify_published(page, pkg):
     open(os.path.join(pkg, 'verify.txt'), 'w', encoding='utf-8').write(json.dumps(res, ensure_ascii=False) + '\n')
     return res
 
+def auth_failed():
+    """글쓰기가 인증으로 막힌 기록이 남아 있나.
+
+    쿠키 파일을 읽어 판정하려 했다가 접었다 — 크롬 쿠키는 암호화돼 있어 값이 안 읽히고,
+    그러면 로그인이 멀쩡해도 늘 '풀림'으로 뜬다(2026-09-26 확인).
+    믿을 것은 **실제 저장 요청이 받은 응답**이다. note_auth_fail()이 그때 이 파일을 쓰고,
+    login 명령이 성공하면 지운다. 화면이 열리는지가 아니라 글이 저장되는지를 본다."""
+    try:
+        t = open(AUTHFAIL, encoding='utf-8').read().strip()
+        return t[:200] if t else ''
+    except Exception:
+        return ''
+
+def show_alert():
+    """색인이 무너졌으면 회차 맨 앞에서 알린다.
+
+    2026-09-24 13:05 회차가 색인 급락(66.7%→16.7%)을 재 놓고 "브레이크 조건에 걸림"이라고만
+    적었다. 브레이크가 코드가 아니라 보고 문장이어서 아무것도 멈추지 않았고 사흘이 갔다.
+    perf.py가 남긴 경고를 여기서 꺼내 놓는다. 발행을 막지는 않는다 — 막으면 0편이 된다.
+    대신 회차가 이것을 보고도 그냥 지나칠 수 없게 맨 앞에 세운다."""
+    # perf를 import하지 않는다. perf.py는 모듈 최상단에서 sys.argv[1]을 int()로 읽어
+    # 'pending' 같은 인자로 부르면 import만으로 터진다(2026-09-26 확인). 파일만 읽는다.
+    try:
+        p = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research', '_ALERT.txt')
+        lines = [x[2:] for x in open(p, encoding='utf-8').read().splitlines() if x.startswith('- ')]
+    except Exception:
+        lines = []
+    # 로그인이 풀렸으면 그게 먼저다. 2026-09-26: 색인율 0%를 사흘 파고들어 유사문서·발행량·
+    # 게시판까지 뒤졌는데 정작 loggedIn=false였다. 글이 안 나가는 중에 잰 색인율로 원인을
+    # 논하고 있었던 것이다. 사장님 지적 — "로그인 안돼서 그런 거 아니야?"
+    af = auth_failed()
+    if af:
+        lines = ['글쓰기가 인증으로 막혀 있다 — py -3.12 work/naverpost.py login 부터. '
+                 '색인 숫자는 판단에 쓰지 않는다',
+                 '마지막 기록: ' + af.replace('\n', ' ')[:140]]
+    if not lines: return
+    print('!' * 60, flush=True)
+    print('브레이크 — 이 회차는 이것부터 본다 (work/research/_ALERT.txt)', flush=True)
+    for x in lines: print('  ! ' + x, flush=True)
+    print('!' * 60, flush=True)
+
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'check'
+    show_alert()
     # pending은 브라우저가 필요 없다 — live_pairs()가 평범한 HTTP로 올라간 제목을 받아 온다.
     # 그런데도 launch()를 거치느라 브라우저 잠금을 잡고 있었다. 2026-09-25 01:55 실측:
     # 잠금 주인이 pending(PID 919404)이었고, 그 뒤에서 blog 발행이 15분을 기다리다 시간 초과로 죽었다.
@@ -1111,6 +1166,9 @@ def main():
             # 제목이 달라도 같은 대상을 또 쓰는 것을 막는다. 사장님 2026-09-24 "상계주공만 왜 글을 쓰는 거야?"
             # 그날 03:46 "상계주공9단지 2,830세대 매매…"와 13:21 "상계주공9단지 8월 실거래…"가 같이 나갔다.
             # 일부러 이어 쓰는 연재면 --same-ok 를 붙인다.
+            if '--same-ok' not in sys.argv and os.path.exists(os.path.join(pkg, 'hold.txt')):
+                print('보류 걸린 묶음 — 올리지 않는다:', open(os.path.join(pkg, 'hold.txt'), encoding='utf-8').read().strip()[:120])
+                sys.exit(3)
             if '--same-ok' not in sys.argv:
                 dup = same_subject_today(cmd, title)
                 if dup:

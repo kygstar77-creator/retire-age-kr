@@ -13,6 +13,19 @@
     "url": "https://cafe.naver.com/ca-fe/cafes/31789001/articles/107"
    },
    "note": "대기 묶음 발행(seoulpyeong0926·jeonse0926, 둘 다 selfcheck·readcheck 지적 0 확인 후). verify: 블로그 OK 1678자·사진6, 카페 OK 1469자·사진3. 카페 등록 후 이동 타임아웃 → 목록에서 등록 확인됨. 새 묶음: 카페 schd0927(SCHD 9월 배당금, C1 슬롯). 슬롯 C1은 리얼티인컴이었으나 9/25까지 O 글 4편(o0925·realtyo·odiv136·octdiv)이라 같은 시리즈 안 수요 1위 SCHD 배당금(월 8,540)으로 대체. 블로그 B2 슬롯(ETRA)은 이번 회차에 대기 묶음을 올려 새로 쓰지 않음. 자료조사: 오늘 찾은 것 8건(stockanalysis·야후 시세/환율·WebSearch 3건·S&P DJI 방법론), 슈왑 운용사 페이지는 403(헤드리스 차단). 검증 경로: selfcheck(제미나이 429·503) — 사실 1건(1.048 반올림 표기) 반영, readcheck 4건+1건 반영. 개선: health.py가 어제 runs_today.json을 오늘로 세어 '블로그 5/목표 0'이 점수 15로 일감표 1번에 앉던 것 고침(날짜 확인·편수 목표는 최소치로·카페 목표도 지금 시각 기준). 대기: 블로그 1(peak0926), 카페 2+보류2(divcheck0926·schd0927)"
+  },
+  {
+   "hour": 1,
+   "ts": "01:42",
+   "blog": {
+    "title": "평균자산 6억인데 노인 빈곤율은 왜 이렇게 높을까",
+    "url": "https://blog.naver.com/kygstar7777/224423502231"
+   },
+   "cafe": {
+    "title": "이번 주 미국 배당 인상 발표 113건, 개별 종목은 두 곳뿐",
+    "url": "https://cafe.naver.com/ca-fe/cafes/31789001/articles/108"
+   },
+   "note": "카페: 대기 divcheck0926 발행(readcheck·selfcheck 지적 0). offiyield0926은 00시 카페(전세가율 구 순위)와 제목 모양·시리즈가 같아 건너뜀. 등록 후 이동 타임아웃 → 목록에서 등록 확인. verify OK 1850자·사진3. 블로그: 대기 peak0926(2021 고점 대비 구별)이 00:48 블로그(seoulpyeong0926 5년 전 대비 구별)·9/25 peak0925와 같은 계산이라 발행 안 하고 hold.txt로 보류. 새로 씀 gfs60s0927 — 슬롯 B3(20대, 이미 쓴 주제)를 같은 시리즈 안 60세 이상으로 각도 변경(30·40·50·20대는 이미 씀, 수요: 노인 빈곤율 460·60대 평균자산 260). verify OK 1936자·사진6. 자료조사: 가계금융복지조사 2025 통계표 엑셀 직접 내려받음(통계표1~10·11·13), OECD Pensions at a Glance 2025 한국 노트 PDF(66세 이상 40%), 복지부 기초연금 선정기준액 보도자료, WebSearch 5건(브라보·Korea Times·주택연금 등, 1차 확인 못 한 25.7%·기준연금액은 안 씀). 검증 경로: crosscheck 사실 대조 429 → selfcheck 사실 0건, 제미나이 말투 13건 중 13 반영(1건 '20%p에 달한다'는 19.6이라 '가까이'로 유지), readcheck 3건 반영(제목 숫자 2개→1개 등). 일감표 1번(죽은 회차) 완료: firemap 루틴 5개 지시문 모두 beat start·mark·end 있음, 남은 2건은 수정 전·앱 일괄 종료. 개선: naverpost.py에 pkg/hold.txt 보류 표시 추가 — pending에 '보류:'로 뜨고 발행 명령도 거부(same_subject_today가 단지명·티커·제목 앞머리로만 봐서 같은 계산 다른 제목을 못 잡음). 대기: 블로그 0(peak0926 보류) · 카페 3 — 블로그 대기 부족, 02~07시 회차가 블로그 슬롯 묶음을 채운다."
   }
  ]
 }

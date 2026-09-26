@@ -127,11 +127,12 @@ def scene_png(sc, idx, total, title, out):
 def tts(text, mp3): asyncio.run(edge_tts.Communicate(text, VOICE, rate='+10%').save(mp3))
 
 def dur_of(path):
-    pr = FF.replace('ffmpeg', 'ffprobe')
-    if not os.path.exists(pr): return None
-    r = subprocess.run([pr, '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', path], capture_output=True, text=True)
-    try: return float(r.stdout.strip())
-    except ValueError: return None
+    # imageio_ffmpeg 에는 ffprobe 가 없다. 예전엔 여기서 None 을 돌려 장면이 전부 6.5초로 고정됐고
+    # 그보다 긴 내레이션은 잘렸다(2026-09-27 발견 — 09-24~26 쇼츠 10편이 39.0초·32.5초로 똑같았던 이유).
+    # 그래서 ffmpeg -i 의 Duration 줄을 읽는다.
+    r = subprocess.run([FF, '-hide_banner', '-i', path], capture_output=True, text=True, encoding='utf-8', errors='ignore')
+    m = re.search(r'Duration: (\d+):(\d+):([\d.]+)', r.stderr)
+    return int(m[1]) * 3600 + int(m[2]) * 60 + float(m[3]) if m else None
 
 def build(script, out):
     scenes = list(script['scenes'])

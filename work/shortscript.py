@@ -63,7 +63,13 @@ def check(path, facts_path=None):
             extra = nums(h + ' ' + ' '.join(ls) + ' ' + say) - fnums
             extra = {x for x in extra if len(x.replace(',', '').replace('.', '')) >= 2}
             if extra: bad.append(f'{i}번에 사실표에 없는 숫자 {sorted(extra)}')
-    print(f'[대본 검사] {os.path.basename(path)} · 장면 {len(sc)}개')
+    # 길이: edge-tts(+10%) 실측 공백 뺀 51자 → 10.3초(2026-09-27), 장면마다 0.5초 여백. 전에는 길이를 안 재서
+    # 39초짜리가 통과했다(shorts.py 가 장면을 6.5초로 잘라 먹던 버그와 겹쳐 있었다).
+    says = [s.get('say', '') for s in sc] + ([d['outro']] if d.get('outro') else [])
+    est = sum(len(x.replace(' ', '')) for x in says) / 5.0 + 0.5 * len(says)
+    if not 42 <= est <= 65: bad.append(f'예상 길이 {est:.0f}초 — 45~60초여야 한다(say 글자 수로 맞춘다)')
+    elif not 45 <= est <= 60: warn.append(f'예상 길이 {est:.0f}초 — 45~60초 권장')
+    print(f'[대본 검사] {os.path.basename(path)} · 장면 {len(sc)}개 · 예상 {est:.0f}초')
     for b in bad: print('  X ' + b)
     for w in warn: print('  · ' + w)
     if not bad: print('  통과 — shorts.py로 만들면 된다')

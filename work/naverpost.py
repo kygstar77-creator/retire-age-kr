@@ -336,9 +336,15 @@ def alert_login(reason):
     except Exception: pass
     msg = ('[파이어맵] 네이버 로그인이 막혔습니다 - ' + str(reason)[:200] +
            '  /  PC에서 `py -3.12 work/naverpost.py login` 한 번만 해주시면 대기 원고가 바로 나갑니다.')
+    # 보냈는지 확인하고 나서 도장을 찍는다. 예전에는 returncode를 안 봐서 tgreport가 죽어도
+    # 도장이 찍혔고, 그러면 6시간 쿨다운이 재시도를 막아 아무도 모르는 채로 하루가 간다
+    # (2026-09-26 확인). 실패했으면 도장을 안 찍어 다음 회차가 다시 보낸다.
     try:
-        subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tgreport.py'),
-                        'send', msg], timeout=60, capture_output=True)
+        r = subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tgreport.py'),
+                            'send', msg], timeout=60, capture_output=True)
+        if r.returncode != 0:
+            print('알림 실패(tgreport 종료코드 %s):' % r.returncode, (r.stderr or b'').decode('utf-8', 'ignore')[:200])
+            return
         io.open(stamp, 'w', encoding='utf-8').write(time.strftime('%Y-%m-%d %H:%M'))
     except Exception as e:
         print('알림 실패:', e)

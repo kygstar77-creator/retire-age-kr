@@ -860,8 +860,18 @@ def submit_cafe(page, title=None):
         alert_login(auth[0])   # 2026-09-25: 적어 두기만 하면 다음 check 회차까지 아무도 모른다. 막힌 그 자리에서 알린다.
         raise RuntimeError('네이버 로그인 IP 불일치 — 사람이 `py -3.12 work/naverpost.py login` 을 다시 해야 한다. '
                            '서버 답: ' + auth[0][:200])
+    # 2026-09-27: 09-26~27 회차마다 여기서 30초 시간초과가 났고 목록으로 확인하면 매번 올라가 있었다.
+    # wait_for_url은 load 이벤트를 기다리는데 등록 뒤 이동이 새 탭이나 SPA 전환이면 그 이벤트가 안 온다.
+    # 탭 전부의 주소를 직접 본다.
+    art = re.compile(r'articleid=\d+|articles/\d+|cafe\.naver\.com/firemap/\d+', re.I)
     try:
-        page.wait_for_url(re.compile(r'articleid=\d+|articles/\d+|cafe\.naver\.com/firemap/\d+', re.I), timeout=30000)
+        for _ in range(60):
+            hitp = next((q for q in page.context.pages if art.search(q.url or '')), None)
+            if hitp is not None:
+                page = hitp; break
+            page.wait_for_timeout(500)
+        else:
+            raise TimeoutError('등록 뒤 30초 동안 어느 탭에도 글 주소가 안 뜸: ' + page.url[:120])
     except Exception as e:
         # 블로그에는 RSS로 실제 등록 여부를 되짚는 길이 있는데 카페에는 없었다(2026-09-25 회차에서 막힘).
         # 화면만 보고 실패로 접으면 이미 올라간 글을 다음 회차가 또 올린다. 목록으로 확인한다.

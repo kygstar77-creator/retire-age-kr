@@ -78,7 +78,7 @@ def main():
     import naverpost as N
     check_only = '--check' in sys.argv
     t0 = time.time()
-    rec = {'at': time.strftime('%Y-%m-%d %H:%M'), 'late': {}, 'stock': {}, 'blocked': {}, 'did': [], 'alert': []}
+    rec = {'at': time.strftime('%Y-%m-%d %H:%M'), 'late': {}, 'stock': {}, 'blocked': {}, 'did': [], 'alert': [], 'note': []}
 
     # 0) 쉬는 시간대인가. 사장님 2026-09-24 지시로 새벽 2~7시 발행을 뺐다(하루 24편 → 18편).
     # 여기서 안 막으면 감시기가 새벽마다 "빵꾸"로 보고 대신 메워 줄인 의미가 없어진다.
@@ -120,11 +120,21 @@ def main():
         for x in mine:
             try: x['block'] = N.pending_block(x['kind'], x['pkg'], x['title'])
             except Exception: x['block'] = ''
-        n = sum(1 for x in mine if not x['block'])
-        blocked = len(mine) - n
+        # 하루 상한 때문에 막힌 것은 '오늘만' 못 올리는 것이라 재고로 센다.
+        # 2026-09-26 10:52 실측: 카페 묶음 3개가 전부 상한(4/4)으로 막혔는데
+        # 재고 0으로 세어 "재고 부족" 거짓 경보가 났다. 실제로는 내일 올릴 3편이 있었다.
+        capblk = [x for x in mine if x['block'] and x['block'].startswith('하루 상한 도달')]
+        realblk = [x for x in mine if x['block'] and x not in capblk]
+        n = len(mine) - len(realblk)
+        blocked = len(realblk)
         rec['stock'][kind] = n
         rec['blocked'][kind] = blocked
-        if blocked: rec['alert'].append(f'{kind} 막힌 묶음 {blocked}개 — 올릴 수 없다(주제 겹침). 재고에서 뺐다')
+        rec['capblocked'] = rec.get('capblocked', {}); rec['capblocked'][kind] = len(capblk)
+        if blocked:
+            why = '; '.join(sorted({x['block'] for x in realblk}))
+            rec['alert'].append(f'{kind} 막힌 묶음 {blocked}개 — 올릴 수 없다({why}). 재고에서 뺐다')
+        if capblk:
+            rec['note'].append(f'{kind} 묶음 {len(capblk)}개는 하루 상한으로 대기 — 내일 올린다(재고로 셈)')
         if n < STOCK_WANT: rec['alert'].append(f'{kind} 대기 묶음 {n}개 (목표 {STOCK_WANT}) — 회차가 처음부터 쓰느라 밀린다')
 
     # 2-b) 로그인이 살아 있나. 2026-09-25: 쿠키가 만료됐는데 아무도 못 알려
@@ -216,6 +226,7 @@ def main():
 
     print(f"[감시 {rec['at']}] 블로그 {rec['late']['blog']}분 전 / 카페 {rec['late']['cafe']}분 전 · 대기 블로그 {rec['stock']['blog']} 카페 {rec['stock']['cafe']}")
     for a in rec['alert']: print('  ! ' + a)
+    for n_ in rec['note']: print('  · ' + n_)
     for d in rec['did']: print('  → ' + d)
     if not rec['alert']: print('  이상 없음')
     sys.exit(1 if rec['alert'] else 0)

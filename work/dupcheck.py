@@ -12,6 +12,41 @@ import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import naverpost as np
 
+RESEARCH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research')
+
+
+def local_hits(kind, cand, days=14):
+    """발행된 우리 묶음(published.txt 있는 것)의 제목과 본문 조각에서 후보를 찾는다.
+    2026-09-27 13시 회차: 네이버 제목만 보던 판단이 두 번 놓쳤다.
+      - '레나' — 카페 104번 제목은 "버크셔가 52주 최저가 근처에서 사흘 연속 담은 종목"이라 이름이 본문에만 있었다.
+      - '다음 주 미국 실적 캘린더' — 카페 82번·100번이 "다음 주 미국 증시 일정…"으로 같은 주를 이미 다뤘다.
+    그래서 (1) 후보가 제목·첫 조각에 있거나 본문에 3번 이상 나오거나 (2) 후보 낱말(2자 이상)의 3/4 이상이 제목에 있으면 겹친 것으로 본다."""
+    import glob, time, re
+    piece = 'c0*.txt' if kind == 'cafe' else 'b0*.txt'
+    words = [w for w in re.split(r'\s+', cand) if len(w) >= 2]
+    flat = re.sub(r'\s+', '', cand)
+    out = []
+    for pub in glob.glob(os.path.join(RESEARCH, '*', 'pkg', 'published.txt')):
+        if time.time() - os.path.getmtime(pub) > days * 86400: continue
+        pkg = os.path.dirname(pub)
+        parts = glob.glob(os.path.join(pkg, piece))
+        if not parts: continue
+        try:
+            title = open(os.path.join(pkg, 'title.txt'), encoding='utf-8').read().strip()
+            body = ''.join(open(p, encoding='utf-8').read() for p in parts)
+            url = open(pub, encoding='utf-8').read().split()[0]
+        except Exception:
+            continue
+        first = sorted(parts)[0]
+        lead = re.sub(r'\s+', '', title + open(first, encoding='utf-8').read())
+        n_body = re.sub(r'\s+', '', body).count(flat) if flat else 0
+        # 본문에 한 번 스친 이름(쉐브론 글 속 리얼티인컴)은 겹친 게 아니다 — 제목·첫 조각에 있거나 본문에 3번 이상
+        if flat and (flat in lead or n_body >= 3):
+            out.append((title, url, '제목·첫 조각에 있음' if flat in lead else '본문에 %d번' % n_body))
+        elif len(words) >= 2 and sum(w in title for w in words) * 4 >= len(words) * 3:
+            out.append((title, url, '제목 낱말 %d/%d 겹침' % (sum(w in title for w in words), len(words))))
+    return out
+
 
 def main():
     if len(sys.argv) < 3:
@@ -24,10 +59,15 @@ def main():
     for cand in sys.argv[2:]:
         # 후보 이름만으로 제목 흉내를 내 같은 판단 함수에 넣는다
         hits = np.same_subject_today(kind, cand + ' 기록')
+        local = local_hits(kind, cand)
         if hits:
             raw, url, keys = hits[0]
             print(f'  씀   {cand}  ← {raw[:52]}')
             print(f'       {url}  (겹친 것: {", ".join(keys)})')
+        elif local:
+            title, url, why = local[0]
+            print(f'  씀   {cand}  ← {title[:52]}')
+            print(f'       {url}  ({why})')
         else:
             print(f'  새것 {cand}')
             fresh.append(cand)

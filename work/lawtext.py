@@ -45,6 +45,10 @@ def articles(xml):
         num = _tag(block, '조문번호')
         gaji = _tag(block, '조문가지번호')
         title = _tag(block, '조문제목')
+        # 장·절 제목도 '조문단위'로 오고 바로 뒤 조의 번호를 달고 온다(조문여부=전문).
+        # 2026-09-27: '소득세법 14'가 제14조 대신 "제2절 과세표준과 세액의 계산"을 돌려줬다.
+        if _tag(block, '조문여부') == '전문':
+            continue
         # 조문내용 + 항내용 + 호내용 + 목내용을 순서대로 이어 붙인다(전부 CDATA).
         lines = []
         for m in re.finditer(r'<(조문내용|항내용|호내용|목내용)>(.*?)</\1>', block, re.S):

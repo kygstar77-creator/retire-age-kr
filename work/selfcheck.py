@@ -76,7 +76,10 @@ def unit_expand(t):
 
 def facts_numbers(t):
     """사실표 쪽만 표기를 넓혀서 모은다. 본문 숫자를 가공하면 없던 값이 생겨 헛짚는다(2026-09-23)."""
-    return numbers(t) | numbers(money_norm(t)) | numbers(unit_expand(t))
+    # 보도자료의 "'25년"(2025년 약식)을 연도로 편다. 2026-09-27 청년미래적금 글에서
+    # 사실표 "직전년도('25년)"와 본문 "2025년"이 달라 [사실]로 잡혔다.
+    years = ' '.join('20' + y for y in re.findall(r"[‘'’](\d{2})년", t))
+    return numbers(t) | numbers(money_norm(t)) | numbers(unit_expand(t)) | numbers(years)
 
 
 # 표본이 너무 적은데 일반화하는 글을 막는다.

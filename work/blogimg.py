@@ -142,9 +142,15 @@ def line(path, title, xs, ys, marks=(), unit='', src=None):
     from matplotlib import font_manager as fm
     fp = fm.FontProperties(fname=os.path.join(FD, 'pd500.ttf')); fb = fm.FontProperties(fname=os.path.join(FD, 'pd700.ttf'))
     fig, ax = plt.subplots(figsize=(9, 5.2), dpi=100)
-    ax.plot(xs, ys, color='#2060e0', lw=2)
+    # 글자 축은 위치(0,1,2…)로 그린다. 2026-09-27 JEPQ 분배금: 12월에 두 번 받은 달이 같은 이름이라
+    # 한 칸에 겹쳐 선이 수직으로 튀었고, 36개 눈금 글자가 서로 덮였다. 눈금은 8개 안팎만 찍는다.
+    lab = [str(x) for x in xs]; pos = list(range(len(lab)))
+    ax.plot(pos, ys, color='#2060e0', lw=2)
+    step = max(1, len(lab) // 8)
+    ax.set_xticks(pos[::step]); ax.set_xticklabels(lab[::step], fontproperties=fp, fontsize=11)
     for i, (x, y, t, c) in enumerate(marks):
         col = '#d64541' if c == 'red' else '#181c26'
+        x = x if isinstance(x, int) else (len(lab) - 1 - lab[::-1].index(str(x)) if str(x) in lab else 0)
         ax.scatter([x], [y], color=col, zorder=5)
         ax.annotate(t, (x, y), xytext=(-12, 12 if i % 2 else -22), textcoords='offset points', ha='right',
                     fontproperties=fb, fontsize=13, color=col)

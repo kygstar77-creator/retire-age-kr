@@ -94,6 +94,10 @@ def bar_chart(title, pairs, out, unit='', hi=3, short=False, source=''):
     vstrs = [disp_safe(f'{v:,.2f}'.rstrip('0').rstrip('.') + unit) for _, v in pairs]
     vsz = min(int(rowh * 0.5), int(W * 0.075))
     fvm = f_disp(vsz); vw = max(dr.textlength(t, font=fvm) for t in vstrs) + 28
+    # 2026-09-27 화면 검증(nps_years.png): '1,331,600' 같은 긴 값이 큰 글자로 폭의 40%를 먹어 막대 자리가 36%뿐이었다.
+    # 막대 비율(1:4)은 맞았지만 막대+값 글자를 합친 길이가 비슷해 보여 차이가 안 읽혔다. 값 글자 자리를 폭 26%로 묶는다.
+    while vsz > int(W * 0.04) and vw > W * 0.26:
+        vsz -= 2; fvm = f_disp(vsz); vw = max(dr.textlength(t, font=fvm) for t in vstrs) + 28
     lbl_room = W - pad * 2 - vw - int(W * 0.22)          # 막대에 최소 22%는 남긴다
     lsz = min(int(rowh * 0.42), int(W * 0.055))
     while lsz > int(W * 0.026) and max(dr.textlength(k, font=f_body(lsz, True)) for k, _ in pairs) > lbl_room:

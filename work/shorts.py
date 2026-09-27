@@ -161,7 +161,12 @@ def build(script, out):
         d = (dur_of(mp3) or 6) + 0.5
         seg = os.path.join(TMP, f'p{i:02d}.mp4'); n = max(2, int(d * 30))
         # Ken Burns: 홀수 장면은 확대, 짝수는 축소 — 정지 화면이 아니게
-        z = f"zoompan=z='min(zoom+{ZOOM},1.12)':d={n}:s={W}x{H}:fps=30" if i % 2 == 0 else f"zoompan=z='if(lte(zoom,1.0),1.12,max(1.001,zoom-{ZOOM}))':d={n}:s={W}x{H}:fps=30"
+        # 2026-09-27 화면 검증(gfs60 25초 프레임): 확대 기준점이 왼쪽 위(x=0,y=0)라 1.12배에서 오른쪽 12%가 통째로 잘렸다.
+        # 머리글 '자산의 81.3%가'의 '가'와 차트 오른쪽 값이 장면 대부분(4.4초 뒤부터 상한) 화면 밖이었다.
+        # 가로는 가운데 기준으로 양쪽을 나눠 자르고(진행 막대가 있는 위쪽은 그대로 둔다), 상한을 1.06으로 낮춰
+        # 잘리는 폭을 양쪽 31px로 줄인다 — 글자·차트 여백(56px) 안이다.
+        zc = f":x='iw/2-(iw/zoom/2)':y=0:d={n}:s={W}x{H}:fps=30"
+        z = f"zoompan=z='min(zoom+{ZOOM},1.06)'{zc}" if i % 2 == 0 else f"zoompan=z='if(lte(zoom,1.0),1.06,max(1.001,zoom-{ZOOM}))'{zc}"
         subprocess.run([FF, '-y', '-loglevel', 'error', '-loop', '1', '-i', png, '-i', mp3,
                         '-filter_complex', f'[0:v]scale={W*2}:{H*2},{z},scale={W}:{H},setsar=1[v]', '-map', '[v]', '-map', '1:a',
                         '-c:v', 'libx264', '-r', '30', '-c:a', 'aac', '-b:a', '128k', '-pix_fmt', 'yuv420p',

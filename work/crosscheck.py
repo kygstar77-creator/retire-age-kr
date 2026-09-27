@@ -173,8 +173,10 @@ GPT_USER = """아래는 [사실표]로 쓴 네이버 {kind} 글이다. 오늘은
 [글]
 {body}"""
 GEMINI_SYSTEM = '너는 네이버 블로그·카페 글의 구조와 말투를 보는 편집자다. 사실·숫자는 건드리지 말고, 새 정보·전망·권유·질문형 마무리를 넣자고 하지 마라.'
+# 2026-09-27: 카페 tone_word가 '합쇼체'라 제미나이가 ~요 문장을 전부 '혼용'으로 잡고 "결론부터 말씀드리면"·"~에 해당합니다"로 고쳐 왔다(voo0928). 말투 규칙과 정반대라 고쳤다.
 GEMINI_USER = """아래 네이버 {kind} 글({tone_word})을 모바일 독자 눈으로 봐 줘. 오늘은 {today}.
 지적할 것만: (1) 첫 세 줄이 읽는 사람이 바로 얻는 게 뭔지 말해 주는지 (2) 소제목·문단 순서가 자연스러운지 (3) 한 문단이 길어 끊어야 할 곳 (4) 같은 말 반복 (5) 사람이 안 쓰는 표현·번역투 (6) 숫자가 문장 속에서 읽히는지.
+고친 문장에 이런 보고서 말투는 쓰지 마: "결론부터 말씀드리면", "~에 해당합니다", "~인 셈이다", "~라는 점", "짚어 보겠습니다", "~한 상태입니다". 옆 사람에게 말하듯 고쳐.
 형식: 번호 · 원문 문장(그대로) · 문제 · 고친 문장. 고친 문장은 그대로 붙여 넣을 수 있게 완성된 문장으로 써. 사실·숫자·결론은 바꾸지 마. 잘한 점은 적지 마. 어색한 문장은 많으면 15개까지 전부 골라.
 
 [제목] {title}
@@ -235,7 +237,7 @@ def main():
     else: done.append('GPT 건너뜀 — openai_key.txt 없음')
     if gm:
         try:
-            model, out = gemini_chat(gm, GEMINI_SYSTEM, GEMINI_USER.format(kind=kind, tone_word=('평어체' if kind == '블로그' else '합쇼체'), today=TODAY, title=title, body=body), prefer='flash')
+            model, out = gemini_chat(gm, GEMINI_SYSTEM, GEMINI_USER.format(kind=kind, tone_word=('평어체' if kind == '블로그' else '존댓말 — ~요·~죠 중심에 ~습니다를 네 문장 중 하나쯤 섞는 게 정상이다. 섞였다고 지적하지 마'), today=TODAY, title=title, body=body), prefer='flash')
             open(os.path.join(pkg, 'check_gemini.txt'), 'w', encoding='utf-8').write(f'[{model} {time.strftime("%Y-%m-%d %H:%M")}]\n' + out); done.append(f'Gemini({model}) 구조·말투 {len(out)}자 → check_gemini.txt')
         except Exception as e: done.append('Gemini 실패: ' + str(e)[:200])
     else: done.append('Gemini 건너뜀 — gemini_key.txt 없음')

@@ -54,7 +54,20 @@ def cfg(kind):
             'short': {'text_y': 0.52, 'bg_bright': 0.30, 'panel_alpha': 150, 'yellow_bottom': 0, 'yellow_frac': 0.0, 'num_yellow': 1, 'stroke_ratio': 16, 'text_scale': 1.0, 'text_spread': 0.0, 'bg_sat': 0.8, 'bg_contrast': 1.0, 'text_tint': 0.0, 'yellow_tint': 0.0, 'tint_v': 1.0, 'panel_pad': 1.0, 'panel_blur': 28, 'bot_scrim': 0.0, 'scrim_a': 110, 'lines': 3, 'split_scale': 2.0}}[kind]
     base.update(d.get(kind, {})); return base
 
-def disp(sz):
+def _bhs_lacks(text):
+    """BlackHanSans 에 없는 글자(가운뎃점 · 등)가 있으면 True — 그 글자는 폭만 먹고 빈칸으로 나온다.
+    shorts.py 에서 2026-09-27에 먼저 고쳤고(avgo 출처 '배당·시세'가 빈칸), 썸네일도 같은 글꼴이라 같이 고친다."""
+    p = os.path.join(FD, 'BlackHanSans.ttf')
+    if not text or not os.path.exists(p): return False
+    f = ImageFont.truetype(p, 40)
+    return any(not ch.isspace() and f.getmask(ch).getbbox() is None for ch in set(text))
+
+def disp(sz, text=''):
+    nb = os.path.join(FD, 'NotoSansKR-Black.ttf')
+    if _bhs_lacks(text) and os.path.exists(nb):
+        f = ImageFont.truetype(nb, sz)
+        f.set_variation_by_axes([900])   # 가변 글꼴이라 그대로 열면 Thin(100)으로 나온다
+        return f
     for n in ('BlackHanSans.ttf', 'pd700.ttf'):
         p = os.path.join(FD, n)
         if os.path.exists(p): return ImageFont.truetype(p, sz)
@@ -68,9 +81,9 @@ def fit(dr, text, maxw, lo=40, hi=260):
     """글자가 maxw를 꽉 채우는 최대 크기"""
     while lo < hi:
         mid = (lo + hi + 1) // 2
-        if dr.textlength(text, font=disp(mid)) <= maxw: lo = mid
+        if dr.textlength(text, font=disp(mid, text)) <= maxw: lo = mid
         else: hi = mid - 1
-    return disp(lo)
+    return disp(lo, text)
 
 def snap(text, n):
     """노랑/흰색 경계가 숫자·영문 한 덩어리 안을 가르지 않게 가까운 쪽 끝으로 민다('2|5개' → '25|개')"""
@@ -190,7 +203,7 @@ def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
         # 이미 폭을 꽉 채운 줄이라 어떤 배수를 곱해도 fit 이 도로 깎는다. 실제 제목에는 1.0~1.23 배 여유가
         # 있는 것도 있지만(40대 순자산 1.23 · 코카콜라 배당 1.11 · 국민연금 수령액 1.00), 루프 샘플이 한 개라
         # 그 여유를 못 잰다. text_top 을 올리려면 글자 크기가 아니라 윗줄도 둘로 나눠 칸을 채워야 한다.
-    fonts = [disp(x) for x in szs]; lhs = [int(x * 1.18) for x in szs]
+    fonts = [disp(x, t) for x, t in zip(szs, parts)]; lhs = [int(x * 1.18) for x in szs]
     cy = int(min(max(c['text_y'], 0.15), 0.80) * H)   # 글자 세로 가운데. loop.py가 실측 차이를 보고 움직인다
     if dfrac > 0: cy = int(H * (1 - dfrac) * 0.52)   # 자료 위 빈자리 가운데. 겹치지 않는 것이 이 판형의 목적이다
     # 줄을 위·아래로 벌린다(text_spread 0~1.4).
@@ -215,6 +228,10 @@ def make(top, bottom, out, bg=None, short=False, brand='파이어맵'):
         off = int(spread * H * 0.26)
         m0 = cy - lhs[1] // 2
         ys = [max(int(H * 0.04), m0 - lhs[0] - off), m0, min(H - lhs[2] - int(H * 0.05), m0 + lhs[1] + off)]
+    # 가운뎃점 때문에 NotoSansKR 로 바꾼 줄은 글자 윗면이 BlackHanSans 보다 한참 아래에 찍힌다(같은 y 에서
+    # 윗줄이 아랫줄을 덮었다, 2026-09-27 화면 확인). 한글 '가'의 잉크 윗면을 BlackHanSans 에 맞춰 올린다.
+    for i, (t, f) in enumerate(zip(parts, fonts)):
+        if _bhs_lacks(t): ys[i] -= f.getbbox('가')[1] - disp(f.size).getbbox('가')[1]
     # 글자 뒤 어둡게 — 벌어졌으면 줄마다 따로, 붙어 있으면 한 덩이로
     sh = Image.new('RGBA', (W, H), (0, 0, 0, 0)); dsh = ImageDraw.Draw(sh)
     # panel_pad: 글자 위아래로 띠를 얼마나 더 벌리나(1.0 = 옛 0.35/0.3). panel_blur: 띠 가장자리 번짐 반경.

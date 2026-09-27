@@ -189,17 +189,25 @@ TITLE_BAD = [
     (r'(하는|되는|드는|비는|남는|받는|주는|나는)\s*\d+\s*(년|개월|곳|건|개|명)',
      '관형형 + 숫자 + 단위로 압축("비는 5년") — 말로는 이렇게 안 한다'),
     (r'\S*[할쓸울들볼줄؟]\s*때[의와과]', '"~할 때의 차이" 식 압축 — 풀어서 쓴다'),
-    (r'\S+[을를]?\s*(헐어|메울|메워|비는|남는)\s', '"헐어 쓸 때·메울 때" — 일상에서 안 쓰는 말이다'),
+    # 낱말 경계 필수 — "생활비는"의 '비는'을 잡던 오탐(2026-09-28)
+    (r'(?:^|\s)(헐어|메울|메워|비는|남는)\s', '"헐어 쓸 때·메울 때" — 일상에서 안 쓰는 말이다'),
     (r'\d+원짜리', '"300원짜리" — 무엇이 300원인지 제목만 보고 모른다'),
     (r'(저점|고점)의\s*\d', '"저점의 7배" — 주가인지 실적인지 안 밝혔다'),
     (r'돈\s*(빌려주는|빌리는)\s*회사', '"돈 빌려주는 회사" — 그렇게 부르는 사람이 없다. 원말을 쓰고 한 줄 풀어 준다'),
     (r'[가-힣]+의\s+[가-힣]+의\s', "'의'가 겹침 — 한 번만 쓴다"),
 ]
 
+# 검색 노출이 목적이 아닌 운영 게시판. 여기 글에는 상위 노출 제목 규칙을 대지 않는다.
+NOTICE_BOARD = re.compile(r'공지|가입인사|출석')
+
+# 카페 매일 코너 머리말 — "[미국 증시 시황] ". 코너 표시이지 제목 문장이 아니라 떼고 본다(2026-09-27).
+CORNER_HEAD = re.compile(r'^\s*\[[^\]]{2,14}\]\s*')
+
 def title_check(t):
     """제목 하나를 읽고 말이 되는지 본다. 길이가 아니라 **표현**을 본다."""
     out = []
     if not t: return out
+    t = CORNER_HEAD.sub('', t)
     for pat, why in TITLE_BAD:
         if re.search(pat, t): out.append(why)
     n = len(re.findall(r'\d[\d,.]*', t))
@@ -295,7 +303,7 @@ def speech_mix(text):
         return [(f'말투가 섞였다 — 존댓말 {polite}문장, 평어체 {plain}문장. 한 글은 하나로 간다', 0, '')]
     return []
 
-def check(text, title=None):
+def check(text, title=None, board=None):
     out = []
     ss = sents(text)
     for i, s in enumerate(ss, 1):
@@ -312,10 +320,17 @@ def check(text, title=None):
         if VAGUE.search(s) and i > 1:
             out.append(('지시어', i, f'가리키는 대상이 분명한지 확인 · {s[:60]}'))
     if title:
-        for why in title_check(title):
-            out.append(('제목', 0, f'{why} · {title[:44]}'))
-        for w, n, why in title_kw_in_body(title, text):
-            out.append(('제목말빠짐', 0, f'"{w}" {why}'))
+        # 제목 규칙은 전부 '검색 상위 노출 제목' 실측에서 나온 것이라, 검색으로 사람을
+        # 데려오는 글에만 맞는다. 공지사항·가입인사 같은 운영 글에까지 들이대면
+        # 규칙을 만족시키려고 말을 비틀게 된다 — 2026-09-26에 "파이어맵 카페는 이런 곳입니다"가
+        # '~다로 끝남' 규칙에 걸리자 "무엇을 하는 곳인가"로 바꿨다. 아무도 안 쓰는 말이 됐고
+        # 사장님이 "이거 이상한데 왜 쓴거야"로 잡았다. 실측한 공지 제목 42개는 전부 명사형이다
+        # ("9월 셋째주 카페 활동 점수 안내", "● 조합 알림 - …").
+        if not NOTICE_BOARD.search(board or ''):
+            for why in title_check(title):
+                out.append(('제목', 0, f'{why} · {title[:44]}'))
+            for w, n, why in title_kw_in_body(title, text):
+                out.append(('제목말빠짐', 0, f'"{w}" {why}'))
     for why, i, frag in opening(text) + speech_mix(text) + body_style(text):
         out.append(('본문말투', i, f'{why}' + (f' · {frag}' if frag else '')))
     # 숫자가 중간에서 갈라진 것. 2026-09-26 06시 회차: 문단을 잘게 나누려고 돌린 스크립트가
@@ -369,7 +384,12 @@ def main():
         if not body: continue
         try: title = open(os.path.join(pk, 'title.txt'), encoding='utf-8').read().strip()
         except Exception: title = None
-        probs = check(body, title)
+        board = ''                       # order.txt 의 '게시판:' 줄. 공지·가입인사면 제목 규칙을 빼려고 읽는다
+        try:
+            for ln in open(os.path.join(pk, 'order.txt'), encoding='utf-8'):
+                if ln.startswith('게시판:'): board = ln.split(':', 1)[1].strip(); break
+        except Exception: pass
+        probs = check(body, title, board)
         name = os.path.basename(os.path.dirname(pk))
         if probs:
             print(f'\n[{name}] {len(probs)}건')

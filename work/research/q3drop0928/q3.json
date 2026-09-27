@@ -1,0 +1,1487 @@
+[
+ {
+  "sym": "NVDA",
+  "name": "NVIDIA Corporation Common Stock",
+  "sector": "Technology",
+  "cap": 5412378000000.0,
+  "base": [
+   "2026-06-30",
+   200.08999633789062
+  ],
+  "last": [
+   "2026-09-25",
+   225.07000732421875
+  ],
+  "chg": 12.48
+ },
+ {
+  "sym": "AAPL",
+  "name": "Apple Inc. Common Stock",
+  "sector": "Technology",
+  "cap": 4902476945600.0,
+  "base": [
+   "2026-06-30",
+   289.3599853515625
+  ],
+  "last": [
+   "2026-09-25",
+   341.07000732421875
+  ],
+  "chg": 17.87
+ },
+ {
+  "sym": "GOOGL",
+  "name": "Alphabet Inc. Class A Common Stock",
+  "sector": "Technology",
+  "cap": 4187062800000.0,
+  "base": [
+   "2026-06-30",
+   357.3699951171875
+  ],
+  "last": [
+   "2026-09-25",
+   343.9200134277344
+  ],
+  "chg": -3.76
+ },
+ {
+  "sym": "MSFT",
+  "name": "Microsoft Corporation Common Stock",
+  "sector": "Technology",
+  "cap": 3697401866334.0,
+  "base": [
+   "2026-06-30",
+   373.0199890136719
+  ],
+  "last": [
+   "2026-09-25",
+   516.1699829101562
+  ],
+  "chg": 38.38
+ },
+ {
+  "sym": "AMZN",
+  "name": "Amazon.com Inc. Common Stock",
+  "sector": "Consumer Discretionary",
+  "cap": 2689890878585.0,
+  "base": [
+   "2026-06-30",
+   238.33999633789062
+  ],
+  "last": [
+   "2026-09-25",
+   249.6699981689453
+  ],
+  "chg": 4.75
+ },
+ {
+  "sym": "TSM",
+  "name": "Taiwan Semiconductor Manufacturing Company Ltd.",
+  "sector": "Technology",
+  "cap": 2339891687440.0,
+  "base": [
+   "2026-06-30",
+   477.57000732421875
+  ],
+  "last": [
+   "2026-09-25",
+   450.6099853515625
+  ],
+  "chg": -5.65
+ },
+ {
+  "sym": "SPCX",
+  "name": "Space Exploration Technologies Corp. Class A Common Stock",
+  "sector": "Technology",
+  "cap": 2009184785149.0,
+  "base": [
+   "2026-06-30",
+   170.86000061035156
+  ],
+  "last": [
+   "2026-09-25",
+   148.67999267578125
+  ],
+  "chg": -12.98
+ },
+ {
+  "sym": "META",
+  "name": "Meta Platforms Inc. Class A Common Stock",
+  "sector": "Technology",
+  "cap": 1980915365498.0,
+  "base": [
+   "2026-06-30",
+   563.2899780273438
+  ],
+  "last": [
+   "2026-09-25",
+   751.6599731445312
+  ],
+  "chg": 33.44
+ },
+ {
+  "sym": "AVGO",
+  "name": "Broadcom Inc. Common Stock",
+  "sector": "Technology",
+  "cap": 1672488959501.0,
+  "base": [
+   "2026-06-30",
+   377.75
+  ],
+  "last": [
+   "2026-09-25",
+   352.80999755859375
+  ],
+  "chg": -6.6
+ },
+ {
+  "sym": "TSLA",
+  "name": "Tesla Inc. Common Stock",
+  "sector": "Industrials",
+  "cap": 1492691942088.0,
+  "base": [
+   "2026-06-30",
+   420.6000061035156
+  ],
+  "last": [
+   "2026-09-25",
+   372.1099853515625
+  ],
+  "chg": -11.53
+ },
+ {
+  "sym": "MU",
+  "name": "Micron Technology Inc. Common Stock",
+  "sector": "Technology",
+  "cap": 1220343181450.0,
+  "base": [
+   "2026-06-30",
+   1154.2900390625
+  ],
+  "last": [
+   "2026-09-25",
+   1082.280029296875
+  ],
+  "chg": -6.24
+ },
+ {
+  "sym": "LLY",
+  "name": "Eli Lilly and Company Common Stock",
+  "sector": "Health Care",
+  "cap": 1112580501553.0,
+  "base": [
+   "2026-06-30",
+   1199.4300537109375
+  ],
+  "last": [
+   "2026-09-25",
+   1183.4599609375
+  ],
+  "chg": -1.33
+ },
+ {
+  "sym": "AMD",
+  "name": "Advanced Micro Devices Inc. Common Stock",
+  "sector": "Technology",
+  "cap": 1027251244929.0,
+  "base": [
+   "2026-06-30",
+   580.9099731445312
+  ],
+  "last": [
+   "2026-09-25",
+   630.6300048828125
+  ],
+  "chg": 8.56
+ },
+ {
+  "sym": "JPM",
+  "name": "JP Morgan Chase & Co. Common Stock",
+  "sector": "Finance",
+  "cap": 899955518179.0,
+  "base": [
+   "2026-06-30",
+   327.3299865722656
+  ],
+  "last": [
+   "2026-09-25",
+   343.05999755859375
+  ],
+  "chg": 4.81
+ },
+ {
+  "sym": "WMT",
+  "name": "Walmart Inc. Common Stock",
+  "sector": "Consumer Discretionary",
+  "cap": 853591758069.0,
+  "base": [
+   "2026-06-30",
+   113.26000213623047
+  ],
+  "last": [
+   "2026-09-25",
+   107.9800033569336
+  ],
+  "chg": -4.66
+ },
+ {
+  "sym": "INTC",
+  "name": "Intel Corporation Common Stock",
+  "sector": "Technology",
+  "cap": 673265005006.0,
+  "base": [
+   "2026-06-30",
+   139.6300048828125
+  ],
+  "last": [
+   "2026-09-25",
+   123.0
+  ],
+  "chg": -11.91
+ },
+ {
+  "sym": "XOM",
+  "name": "ExxonMobil Holdings Corporation Common Stock",
+  "sector": "Energy",
+  "cap": 666705405194.0,
+  "base": [
+   "2026-06-30",
+   136.72000122070312
+  ],
+  "last": [
+   "2026-09-25",
+   160.58999633789062
+  ],
+  "chg": 17.46
+ },
+ {
+  "sym": "ASML",
+  "name": "ASML Holding N.V. New York Registry Shares",
+  "sector": "Technology",
+  "cap": 663881927963.0,
+  "base": [
+   "2026-06-30",
+   1989.43994140625
+  ],
+  "last": [
+   "2026-09-25",
+   1743.93994140625
+  ],
+  "chg": -12.34
+ },
+ {
+  "sym": "V",
+  "name": "Visa Inc.",
+  "sector": "Consumer Discretionary",
+  "cap": 657490187696.0,
+  "base": [
+   "2026-06-30",
+   343.0899963378906
+  ],
+  "last": [
+   "2026-09-25",
+   367.3800048828125
+  ],
+  "chg": 7.08
+ },
+ {
+  "sym": "JNJ",
+  "name": "Johnson & Johnson Common Stock",
+  "sector": "Health Care",
+  "cap": 652311352236.0,
+  "base": [
+   "2026-06-30",
+   253.97000122070312
+  ],
+  "last": [
+   "2026-09-25",
+   271.2200012207031
+  ],
+  "chg": 6.79
+ },
+ {
+  "sym": "MA",
+  "name": "Mastercard Incorporated Common Stock",
+  "sector": "Consumer Discretionary",
+  "cap": 495891706835.0,
+  "base": [
+   "2026-06-30",
+   513.5999755859375
+  ],
+  "last": [
+   "2026-09-25",
+   567.6500244140625
+  ],
+  "chg": 10.52
+ },
+ {
+  "sym": "ABBV",
+  "name": "AbbVie Inc. Common Stock",
+  "sector": "Health Care",
+  "cap": 468498134599.0,
+  "base": [
+   "2026-06-30",
+   251.63999938964844
+  ],
+  "last": [
+   "2026-09-25",
+   264.3399963378906
+  ],
+  "chg": 5.05
+ },
+ {
+  "sym": "PLTR",
+  "name": "Palantir Technologies Inc. Class A Common Stock",
+  "sector": "Technology",
+  "cap": 462611479713.0,
+  "base": [
+   "2026-06-30",
+   116.66999816894531
+  ],
+  "last": [
+   "2026-09-25",
+   189.6699981689453
+  ],
+  "chg": 62.57
+ },
+ {
+  "sym": "ORCL",
+  "name": "Oracle Corporation Common Stock",
+  "sector": "Technology",
+  "cap": 421932121440.0,
+  "base": [
+   "2026-06-30",
+   146.5500030517578
+  ],
+  "last": [
+   "2026-09-25",
+   137.10000610351562
+  ],
+  "chg": -6.45
+ },
+ {
+  "sym": "CSCO",
+  "name": "Cisco Systems Inc. Common Stock (DE)",
+  "sector": "Telecommunications",
+  "cap": 421738517805.0,
+  "base": [
+   "2026-06-30",
+   117.45999908447266
+  ],
+  "last": [
+   "2026-09-25",
+   106.69999694824219
+  ],
+  "chg": -9.16
+ },
+ {
+  "sym": "CVX",
+  "name": "Chevron Corporation Common Stock",
+  "sector": "Energy",
+  "cap": 406317362498.0,
+  "base": [
+   "2026-06-30",
+   165.75999450683594
+  ],
+  "last": [
+   "2026-09-25",
+   204.4499969482422
+  ],
+  "chg": 23.34
+ },
+ {
+  "sym": "COST",
+  "name": "Costco Wholesale Corporation Common Stock",
+  "sector": "Consumer Discretionary",
+  "cap": 397569878210.0,
+  "base": [
+   "2026-06-30",
+   935.469970703125
+  ],
+  "last": [
+   "2026-09-25",
+   922.77001953125
+  ],
+  "chg": -1.36
+ },
+ {
+  "sym": "BAC",
+  "name": "Bank of America Corporation Common Stock",
+  "sector": "Finance",
+  "cap": 391803690891.0,
+  "base": [
+   "2026-06-30",
+   56.97999954223633
+  ],
+  "last": [
+   "2026-09-25",
+   56.70000076293945
+  ],
+  "chg": -0.49
+ },
+ {
+  "sym": "LRCX",
+  "name": "Lam Research Corporation Common Stock",
+  "sector": "Technology",
+  "cap": 384355758360.0,
+  "base": [
+   "2026-06-30",
+   433.3299865722656
+  ],
+  "last": [
+   "2026-09-25",
+   315.2099914550781
+  ],
+  "chg": -27.26
+ },
+ {
+  "sym": "KO",
+  "name": "Coca-Cola Company (The) Common Stock",
+  "sector": "Consumer Staples",
+  "cap": 379054588308.0,
+  "base": [
+   "2026-06-30",
+   81.2699966430664
+  ],
+  "last": [
+   "2026-09-25",
+   87.80999755859375
+  ],
+  "chg": 8.05
+ },
+ {
+  "sym": "AMAT",
+  "name": "Applied Materials Inc. Common Stock",
+  "sector": "Technology",
+  "cap": 376363587343.0,
+  "base": [
+   "2026-06-30",
+   723.0
+  ],
+  "last": [
+   "2026-09-25",
+   485.0
+  ],
+  "chg": -32.92
+ },
+ {
+  "sym": "CAT",
+  "name": "Caterpillar Inc. Common Stock",
+  "sector": "Industrials",
+  "cap": 370153204367.0,
+  "base": [
+   "2026-06-30",
+   1064.9000244140625
+  ],
+  "last": [
+   "2026-09-25",
+   821.5800170898438
+  ],
+  "chg": -22.85
+ },
+ {
+  "sym": "MRK",
+  "name": "Merck & Company Inc. Common Stock (new)",
+  "sector": "Health Care",
+  "cap": 365092058991.0,
+  "base": [
+   "2026-06-30",
+   128.5
+  ],
+  "last": [
+   "2026-09-25",
+   148.77999877929688
+  ],
+  "chg": 15.78
+ },
+ {
+  "sym": "HSBC",
+  "name": "HSBC Holdings plc. Common Stock",
+  "sector": "Finance",
+  "cap": 343917503221.0,
+  "base": [
+   "2026-06-30",
+   95.08999633789062
+  ],
+  "last": [
+   "2026-09-25",
+   100.94999694824219
+  ],
+  "chg": 6.16
+ },
+ {
+  "sym": "DELL",
+  "name": "Dell Technologies Inc. Class C Common Stock ",
+  "sector": "Technology",
+  "cap": 340808350255.0,
+  "base": [
+   "2026-06-30",
+   431.4599914550781
+  ],
+  "last": [
+   "2026-09-25",
+   562.8900146484375
+  ],
+  "chg": 30.46
+ },
+ {
+  "sym": "PG",
+  "name": "Procter & Gamble Company (The) Common Stock",
+  "sector": "Consumer Discretionary",
+  "cap": 338623408181.0,
+  "base": [
+   "2026-06-30",
+   146.63999938964844
+  ],
+  "last": [
+   "2026-09-25",
+   146.22999572753906
+  ],
+  "chg": -0.28
+ },
+ {
+  "sym": "UNH",
+  "name": "UnitedHealth Group Incorporated Common Stock (DE)",
+  "sector": "Health Care",
+  "cap": 336607043573.0,
+  "base": [
+   "2026-06-30",
+   415.6300048828125
+  ],
+  "last": [
+   "2026-09-25",
+   376.5899963378906
+  ],
+  "chg": -9.39
+ },
+ {
+  "sym": "GE",
+  "name": "GE Aerospace Common Stock",
+  "sector": "Technology",
+  "cap": 331791740407.0,
+  "base": [
+   "2026-06-30",
+   373.7300109863281
+  ],
+  "last": [
+   "2026-09-25",
+   327.0899963378906
+  ],
+  "chg": -12.48
+ },
+ {
+  "sym": "ARM",
+  "name": "Arm Holdings plc American Depositary Shares",
+  "sector": "Technology",
+  "cap": 325962685898.0,
+  "base": [
+   "2026-06-30",
+   354.57000732421875
+  ],
+  "last": [
+   "2026-09-25",
+   310.32000732421875
+  ],
+  "chg": -12.48
+ },
+ {
+  "sym": "PANW",
+  "name": "Palo Alto Networks Inc. Common Stock",
+  "sector": "Technology",
+  "cap": 318954560000.0,
+  "base": [
+   "2026-06-30",
+   341.0199890136719
+  ],
+  "last": [
+   "2026-09-25",
+   374.739990234375
+  ],
+  "chg": 9.89
+ },
+ {
+  "sym": "MS",
+  "name": "Morgan Stanley Common Stock",
+  "sector": "Finance",
+  "cap": 308333574445.0,
+  "base": [
+   "2026-06-30",
+   209.0399932861328
+  ],
+  "last": [
+   "2026-09-25",
+   196.30999755859375
+  ],
+  "chg": -6.09
+ },
+ {
+  "sym": "NFLX",
+  "name": "Netflix Inc. Common Stock",
+  "sector": "Consumer Discretionary",
+  "cap": 298637753563.0,
+  "base": [
+   "2026-06-30",
+   71.4000015258789
+  ],
+  "last": [
+   "2026-09-25",
+   71.1500015258789
+  ],
+  "chg": -0.35
+ },
+ {
+  "sym": "PM",
+  "name": "Philip Morris International Inc Common Stock",
+  "sector": "Health Care",
+  "cap": 298474473569.0,
+  "base": [
+   "2026-06-30",
+   180.91000366210938
+  ],
+  "last": [
+   "2026-09-25",
+   190.47999572753906
+  ],
+  "chg": 5.29
+ },
+ {
+  "sym": "HD",
+  "name": "Home Depot Inc. (The) Common Stock",
+  "sector": "Consumer Discretionary",
+  "cap": 291504954925.0,
+  "base": [
+   "2026-06-30",
+   352.67999267578125
+  ],
+  "last": [
+   "2026-09-25",
+   293.20001220703125
+  ],
+  "chg": -16.87
+ },
+ {
+  "sym": "RY",
+  "name": "Royal Bank Of Canada Common Stock",
+  "sector": "Finance",
+  "cap": 276193744901.0,
+  "base": [
+   "2026-06-30",
+   206.97000122070312
+  ],
+  "last": [
+   "2026-09-25",
+   201.97999572753906
+  ],
+  "chg": -2.41
+ },
+ {
+  "sym": "NVS",
+  "name": "Novartis AG Common Stock",
+  "sector": "Health Care",
+  "cap": 273953336554.0,
+  "base": [
+   "2026-06-30",
+   156.72000122070312
+  ],
+  "last": [
+   "2026-09-25",
+   145.4600067138672
+  ],
+  "chg": -7.18
+ },
+ {
+  "sym": "GS",
+  "name": "Goldman Sachs Group Inc. (The) Common Stock",
+  "sector": "Finance",
+  "cap": 268835649292.0,
+  "base": [
+   "2026-06-30",
+   1011.3699951171875
+  ],
+  "last": [
+   "2026-09-25",
+   935.4500122070312
+  ],
+  "chg": -7.51
+ },
+ {
+  "sym": "BABA",
+  "name": "Alibaba Group Holding Limited American Depositary Shares each representing eight Ordinary share",
+  "sector": "Consumer Discretionary",
+  "cap": 267999628171.0,
+  "base": [
+   "2026-06-30",
+   95.9800033569336
+  ],
+  "last": [
+   "2026-09-25",
+   109.73999786376953
+  ],
+  "chg": 14.34
+ },
+ {
+  "sym": "MUFG",
+  "name": "Mitsubishi UFJ Financial Group Inc. Common Stock",
+  "sector": "Finance",
+  "cap": 267854235464.0,
+  "base": [
+   "2026-06-30",
+   19.889999389648438
+  ],
+  "last": [
+   "2026-09-25",
+   23.479999542236328
+  ],
+  "chg": 18.05
+ },
+ {
+  "sym": "CRWD",
+  "name": "CrowdStrike Holdings Inc. Class A Common Stock",
+  "sector": "Technology",
+  "cap": 265885160422.0,
+  "base": [
+   "2026-06-30",
+   190.78500366210938
+  ],
+  "last": [
+   "2026-09-25",
+   252.1300048828125
+  ],
+  "chg": 32.15
+ },
+ {
+  "sym": "SHEL",
+  "name": "Shell PLC American Depositary Shares (each representing two (2) Ordinary Shares) ",
+  "sector": "Energy",
+  "cap": 264436563408.0,
+  "base": [
+   "2026-06-30",
+   77.54000091552734
+  ],
+  "last": [
+   "2026-09-25",
+   95.77999877929688
+  ],
+  "chg": 23.52
+ },
+ {
+  "sym": "ANET",
+  "name": "Arista Networks Inc. Common Stock",
+  "sector": "Telecommunications",
+  "cap": 259433910094.0,
+  "base": [
+   "2026-06-30",
+   169.8800048828125
+  ],
+  "last": [
+   "2026-09-25",
+   206.5500030517578
+  ],
+  "chg": 21.59
+ },
+ {
+  "sym": "SAP",
+  "name": "SAP  SE ADS",
+  "sector": "Technology",
+  "cap": 256892519954.0,
+  "base": [
+   "2026-06-30",
+   154.11000061035156
+  ],
+  "last": [
+   "2026-09-25",
+   210.67999267578125
+  ],
+  "chg": 36.71
+ },
+ {
+  "sym": "SNDK",
+  "name": "Sandisk Corporation Common Stock",
+  "sector": "Technology",
+  "cap": 256763288534.0,
+  "base": [
+   "2026-06-30",
+   2273.72998046875
+  ],
+  "last": [
+   "2026-09-25",
+   1777.800048828125
+  ],
+  "chg": -21.81
+ },
+ {
+  "sym": "AZN",
+  "name": "AstraZeneca PLC Ordinary Shares",
+  "sector": "Health Care",
+  "cap": 255187449003.0,
+  "base": [
+   "2026-06-30",
+   189.6199951171875
+  ],
+  "last": [
+   "2026-09-25",
+   166.5800018310547
+  ],
+  "chg": -12.15
+ },
+ {
+  "sym": "GEV",
+  "name": "GE Vernova Inc. Common Stock",
+  "sector": "Technology",
+  "cap": 254359223198.0,
+  "base": [
+   "2026-06-30",
+   1174.8599853515625
+  ],
+  "last": [
+   "2026-09-25",
+   957.6300048828125
+  ],
+  "chg": -18.49
+ },
+ {
+  "sym": "RTX",
+  "name": "RTX Corporation Common Stock",
+  "sector": "Industrials",
+  "cap": 254200663540.0,
+  "base": [
+   "2026-06-30",
+   189.72999572753906
+  ],
+  "last": [
+   "2026-09-25",
+   189.39999389648438
+  ],
+  "chg": -0.17
+ },
+ {
+  "sym": "TMO",
+  "name": "Thermo Fisher Scientific Inc Common Stock",
+  "sector": "Industrials",
+  "cap": 250832861350.0,
+  "base": [
+   "2026-06-30",
+   501.3599853515625
+  ],
+  "last": [
+   "2026-09-25",
+   675.0
+  ],
+  "chg": 34.63
+ },
+ {
+  "sym": "WFC",
+  "name": "Wells Fargo & Company Common Stock",
+  "sector": "Finance",
+  "cap": 248512265432.0,
+  "base": [
+   "2026-06-30",
+   82.63999938964844
+  ],
+  "last": [
+   "2026-09-25",
+   82.97000122070312
+  ],
+  "chg": 0.4
+ },
+ {
+  "sym": "TXN",
+  "name": "Texas Instruments Incorporated Common Stock",
+  "sector": "Technology",
+  "cap": 247170486216.0,
+  "base": [
+   "2026-06-30",
+   298.07000732421875
+  ],
+  "last": [
+   "2026-09-25",
+   278.07000732421875
+  ],
+  "chg": -6.71
+ },
+ {
+  "sym": "KLAC",
+  "name": "KLA Corporation Common Stock",
+  "sector": "Technology",
+  "cap": 244179764718.0,
+  "base": [
+   "2026-06-30",
+   301.7099914550781
+  ],
+  "last": [
+   "2026-09-25",
+   187.9199981689453
+  ],
+  "chg": -37.72
+ },
+ {
+  "sym": "TM",
+  "name": "Toyota Motor Corporation Common Stock",
+  "sector": "Industrials",
+  "cap": 243369577744.0,
+  "base": [
+   "2026-06-30",
+   168.4199981689453
+  ],
+  "last": [
+   "2026-09-25",
+   190.33999633789062
+  ],
+  "chg": 13.02
+ },
+ {
+  "sym": "CCZ",
+  "name": "Comcast Holdings ZONES",
+  "sector": "Telecommunications",
+  "cap": 229490327176.0,
+  "base": [
+   "2026-06-30",
+   66.5
+  ],
+  "last": [
+   "2026-09-25",
+   64.66999816894531
+  ],
+  "chg": -2.75
+ },
+ {
+  "sym": "MRVL",
+  "name": "Marvell Technology Inc. Common Stock",
+  "sector": "Technology",
+  "cap": 227073255000.0,
+  "base": [
+   "2026-06-30",
+   297.8900146484375
+  ],
+  "last": [
+   "2026-09-25",
+   261.94000244140625
+  ],
+  "chg": -12.07
+ },
+ {
+  "sym": "C",
+  "name": "Citigroup Inc. Common Stock",
+  "sector": "Finance",
+  "cap": 221589399034.0,
+  "base": [
+   "2026-06-30",
+   139.9600067138672
+  ],
+  "last": [
+   "2026-09-25",
+   134.27999877929688
+  ],
+  "chg": -4.06
+ },
+ {
+  "sym": "AMGN",
+  "name": "Amgen Inc. Common Stock",
+  "sector": "Health Care",
+  "cap": 219518219310.0,
+  "base": [
+   "2026-06-30",
+   362.1199951171875
+  ],
+  "last": [
+   "2026-09-25",
+   414.6099853515625
+  ],
+  "chg": 14.5
+ },
+ {
+  "sym": "BHP",
+  "name": "BHP Group Limited American Depositary Shares (Each representing two Ordinary Shares)",
+  "sector": "Energy",
+  "cap": 216306540633.0,
+  "base": [
+   "2026-06-30",
+   83.30999755859375
+  ],
+  "last": [
+   "2026-09-25",
+   84.97000122070312
+  ],
+  "chg": 1.99
+ },
+ {
+  "sym": "LIN",
+  "name": "Linde plc Ordinary Shares",
+  "sector": "Basic Materials",
+  "cap": 215803253507.0,
+  "base": [
+   "2026-06-30",
+   518.9400024414062
+  ],
+  "last": [
+   "2026-09-25",
+   469.8900146484375
+  ],
+  "chg": -9.45
+ },
+ {
+  "sym": "IBM",
+  "name": "International Business Machines Corporation Common Stock",
+  "sector": "Technology",
+  "cap": 213921034593.0,
+  "base": [
+   "2026-06-30",
+   281.2099914550781
+  ],
+  "last": [
+   "2026-09-25",
+   225.50999450683594
+  ],
+  "chg": -19.81
+ },
+ {
+  "sym": "STX",
+  "name": "Seagate Technology Holdings PLC Ordinary Shares (Ireland)",
+  "sector": "Technology",
+  "cap": 207200709722.0,
+  "base": [
+   "2026-06-30",
+   965.0
+  ],
+  "last": [
+   "2026-09-25",
+   916.8300170898438
+  ],
+  "chg": -4.99
+ },
+ {
+  "sym": "SAN",
+  "name": "Banco Santander S.A. Sponsored ADR (Spain)",
+  "sector": "Finance",
+  "cap": 206698836452.0,
+  "base": [
+   "2026-06-30",
+   13.800000190734863
+  ],
+  "last": [
+   "2026-09-25",
+   14.420000076293945
+  ],
+  "chg": 4.49
+ },
+ {
+  "sym": "AXP",
+  "name": "American Express Company Common Stock",
+  "sector": "Finance",
+  "cap": 206415203555.0,
+  "base": [
+   "2026-06-30",
+   338.25
+  ],
+  "last": [
+   "2026-09-25",
+   308.8900146484375
+  ],
+  "chg": -8.68
+ },
+ {
+  "sym": "APH",
+  "name": "Amphenol Corporation Common Stock",
+  "sector": "Technology",
+  "cap": 204872531215.0,
+  "base": [
+   "2026-06-30",
+   88.16000366210938
+  ],
+  "last": [
+   "2026-09-25",
+   84.08999633789062
+  ],
+  "chg": -4.62
+ },
+ {
+  "sym": "QCOM",
+  "name": "QUALCOMM Incorporated Common Stock",
+  "sector": "Technology",
+  "cap": 204018441493.0,
+  "base": [
+   "2026-06-30",
+   184.7899932861328
+  ],
+  "last": [
+   "2026-09-25",
+   201.97000122070312
+  ],
+  "chg": 9.3
+ },
+ {
+  "sym": "TTE",
+  "name": "TotalEnergies SE Ordinary Shares",
+  "sector": "Energy",
+  "cap": 200491281170.0,
+  "base": [
+   "2026-06-30",
+   77.76000213623047
+  ],
+  "last": [
+   "2026-09-25",
+   90.94000244140625
+  ],
+  "chg": 16.95
+ },
+ {
+  "sym": "VZ",
+  "name": "Verizon Communications Inc. Common Stock",
+  "sector": "Telecommunications",
+  "cap": 196603962559.0,
+  "base": [
+   "2026-06-30",
+   42.34000015258789
+  ],
+  "last": [
+   "2026-09-25",
+   47.08000183105469
+  ],
+  "chg": 11.2
+ },
+ {
+  "sym": "CRM",
+  "name": "Salesforce Inc. Common Stock",
+  "sector": "Technology",
+  "cap": 196055060000.0,
+  "base": [
+   "2026-06-30",
+   156.66000366210938
+  ],
+  "last": [
+   "2026-09-25",
+   234.02000427246094
+  ],
+  "chg": 49.38
+ },
+ {
+  "sym": "TD",
+  "name": "Toronto Dominion Bank (The) Common Stock",
+  "sector": "Finance",
+  "cap": 195395226220.0,
+  "base": [
+   "2026-06-30",
+   121.43000030517578
+  ],
+  "last": [
+   "2026-09-25",
+   120.6500015258789
+  ],
+  "chg": -0.64
+ },
+ {
+  "sym": "SHOP",
+  "name": "Shopify Inc. Class A Subordinate Voting Shares",
+  "sector": "Technology",
+  "cap": 188099928389.0,
+  "base": [
+   "2026-06-30",
+   114.18000030517578
+  ],
+  "last": [
+   "2026-09-25",
+   142.25
+  ],
+  "chg": 24.58
+ },
+ {
+  "sym": "DE",
+  "name": "Deere & Company Common Stock",
+  "sector": "Industrials",
+  "cap": 187373483815.0,
+  "base": [
+   "2026-06-30",
+   634.3300170898438
+  ],
+  "last": [
+   "2026-09-25",
+   690.4600219726562
+  ],
+  "chg": 8.85
+ },
+ {
+  "sym": "GILD",
+  "name": "Gilead Sciences Inc. Common Stock",
+  "sector": "Health Care",
+  "cap": 185608887152.0,
+  "base": [
+   "2026-06-30",
+   126.33999633789062
+  ],
+  "last": [
+   "2026-09-25",
+   150.92999267578125
+  ],
+  "chg": 19.46
+ },
+ {
+  "sym": "ADI",
+  "name": "Analog Devices Inc. Common Stock",
+  "sector": "Technology",
+  "cap": 185399592564.0,
+  "base": [
+   "2026-06-30",
+   397.1700134277344
+  ],
+  "last": [
+   "2026-09-25",
+   393.6000061035156
+  ],
+  "chg": -0.9
+ },
+ {
+  "sym": "DIS",
+  "name": "Walt Disney Company (The) Common Stock",
+  "sector": "Consumer Discretionary",
+  "cap": 182269069375.0,
+  "base": [
+   "2026-06-30",
+   96.25
+  ],
+  "last": [
+   "2026-09-25",
+   106.1500015258789
+  ],
+  "chg": 10.29
+ },
+ {
+  "sym": "TMUS",
+  "name": "T-Mobile US Inc. Common Stock",
+  "sector": "Telecommunications",
+  "cap": 177366251210.0,
+  "base": [
+   "2026-06-30",
+   167.72999572753906
+  ],
+  "last": [
+   "2026-09-25",
+   165.42999267578125
+  ],
+  "chg": -1.37
+ },
+ {
+  "sym": "PEP",
+  "name": "PepsiCo Inc. Common Stock",
+  "sector": "Consumer Staples",
+  "cap": 174910853158.0,
+  "base": [
+   "2026-06-30",
+   135.39999389648438
+  ],
+  "last": [
+   "2026-09-25",
+   128.6300048828125
+  ],
+  "chg": -5.0
+ },
+ {
+  "sym": "ABT",
+  "name": "Abbott Laboratories Common Stock",
+  "sector": "Health Care",
+  "cap": 174889839727.0,
+  "base": [
+   "2026-06-30",
+   90.73999786376953
+  ],
+  "last": [
+   "2026-09-25",
+   101.29000091552734
+  ],
+  "chg": 11.63
+ },
+ {
+  "sym": "T",
+  "name": "AT&T Inc.",
+  "sector": "Telecommunications",
+  "cap": 174393214793.0,
+  "base": [
+   "2026-06-30",
+   20.700000762939453
+  ],
+  "last": [
+   "2026-09-25",
+   25.3799991607666
+  ],
+  "chg": 22.61
+ },
+ {
+  "sym": "SCHW",
+  "name": "Charles Schwab Corporation (The) Common Stock",
+  "sector": "Finance",
+  "cap": 172051610186.0,
+  "base": [
+   "2026-06-30",
+   92.2699966430664
+  ],
+  "last": [
+   "2026-09-25",
+   99.02999877929688
+  ],
+  "chg": 7.33
+ },
+ {
+  "sym": "NVO",
+  "name": "Novo Nordisk A/S Common Stock",
+  "sector": "Health Care",
+  "cap": 171006676682.0,
+  "base": [
+   "2026-06-30",
+   47.939998626708984
+  ],
+  "last": [
+   "2026-09-25",
+   38.79999923706055
+  ],
+  "chg": -19.07
+ },
+ {
+  "sym": "ETN",
+  "name": "Eaton Corporation PLC Ordinary Shares",
+  "sector": "Technology",
+  "cap": 170896000000.0,
+  "base": [
+   "2026-06-30",
+   426.1199951171875
+  ],
+  "last": [
+   "2026-09-25",
+   439.9800109863281
+  ],
+  "chg": 3.25
+ },
+ {
+  "sym": "WELL",
+  "name": "Welltower Inc. Common Stock",
+  "sector": "Real Estate",
+  "cap": 168373228003.0,
+  "base": [
+   "2026-06-30",
+   226.97000122070312
+  ],
+  "last": [
+   "2026-09-25",
+   231.3699951171875
+  ],
+  "chg": 1.94
+ },
+ {
+  "sym": "SCCO",
+  "name": "Southern Copper Corporation Common Stock",
+  "sector": "Basic Materials",
+  "cap": 168184585295.0,
+  "base": [
+   "2026-06-30",
+   172.1936798095703
+  ],
+  "last": [
+   "2026-09-25",
+   203.9199981689453
+  ],
+  "chg": 18.42
+ },
+ {
+  "sym": "MCD",
+  "name": "McDonald's Corporation Common Stock",
+  "sector": "Consumer Discretionary",
+  "cap": 167725195678.0,
+  "base": [
+   "2026-06-30",
+   270.30999755859375
+  ],
+  "last": [
+   "2026-09-25",
+   236.5
+  ],
+  "chg": -12.51
+ },
+ {
+  "sym": "BLK",
+  "name": "BlackRock Inc. Common Stock",
+  "sector": "Finance",
+  "cap": 166244406074.0,
+  "base": [
+   "2026-06-30",
+   961.5599975585938
+  ],
+  "last": [
+   "2026-09-25",
+   1086.31005859375
+  ],
+  "chg": 12.97
+ },
+ {
+  "sym": "UNP",
+  "name": "Union Pacific Corporation Common Stock",
+  "sector": "Industrials",
+  "cap": 162818271737.0,
+  "base": [
+   "2026-06-30",
+   272.0
+  ],
+  "last": [
+   "2026-09-25",
+   273.7900085449219
+  ],
+  "chg": 0.66
+ },
+ {
+  "sym": "BBVA",
+  "name": "Banco Bilbao Vizcaya Argentaria S.A. Common Stock",
+  "sector": "Finance",
+  "cap": 162534338889.0,
+  "base": [
+   "2026-06-30",
+   25.059999465942383
+  ],
+  "last": [
+   "2026-09-25",
+   28.8700008392334
+  ],
+  "chg": 15.2
+ },
+ {
+  "sym": "WDC",
+  "name": "Western Digital Corporation Common Stock",
+  "sector": "Technology",
+  "cap": 162355192493.0,
+  "base": [
+   "2026-06-30",
+   638.719970703125
+  ],
+  "last": [
+   "2026-09-25",
+   456.80999755859375
+  ],
+  "chg": -28.48
+ },
+ {
+  "sym": "PFE",
+  "name": "Pfizer Inc. Common Stock",
+  "sector": "Health Care",
+  "cap": 161927726663.0,
+  "base": [
+   "2026-06-30",
+   24.079999923706055
+  ],
+  "last": [
+   "2026-09-25",
+   28.670000076293945
+  ],
+  "chg": 19.06
+ },
+ {
+  "sym": "NEE",
+  "name": "NextEra Energy Inc. Common Stock",
+  "sector": "Utilities",
+  "cap": 157741672165.0,
+  "base": [
+   "2026-06-30",
+   87.7699966430664
+  ],
+  "last": [
+   "2026-09-25",
+   76.08000183105469
+  ],
+  "chg": -13.32
+ }
+]

@@ -1,0 +1,37 @@
+# 사실표 — 3분기 시가총액 상위 100 중 많이 내린 종목 (2026-09-28 00시 작성, 카페 K00)
+
+[오늘 찾은 것]
+1) 2026-07-01 CNBC "Chip stocks that notched record rallies in second quarter start Q3 with a dud" — 3분기 첫날 반도체주 하락(본문 403, 제목만 확인) https://www.cnbc.com/2026/07/01/chip-stocks-notched-record-rallies-in-second-quarter-start-q3-with-dud.html
+2) 2026-07-02 Bloomberg "Chip Stocks Off to Rough Start in Third Quarter With 2-Day Skid"(제목만 확인) https://www.bloomberg.com/news/articles/2026-07-02/chip-stocks-off-to-rough-start-in-third-quarter-with-2-day-skid
+3) 2026-08-13 Applied Materials 3분기(5~7월, 7/26 마감) 실적 — 매출 91.2억달러 사상 최대, 영업이익 30.8억달러, 주당순이익 3.17달러(GAAP). SEC 8-K 첨부 99.1 원문 확인 https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/exhibit991q32026earningsre.htm
+4) 2026-09-14 24/7 Wall St. 반도체 장비주 하락 기사(AMAT·LRCX 6%) — 원인으로 AI 기업 CEO 발언을 들었으나 1차 출처 미확인이라 본문에 안 씀 https://247wallst.com/investing/2026/09/14/chip-equipment-stocks-slide-as-ai-pacing-call-reaches-fab-spending-applied-materials-and-lam-research-fall-6-asml-sinks-5/
+5) 서울경제 "어플라이드, 깜짝 실적에도 주가 3% 하락" https://www.sedaily.com/article/20079441 · 뉴스핌 2026-08-14 "어플라이드 머티어리얼즈, 매출 전망 상향 불구 시간 외서 4%↓" https://www.newspim.com/news/view/20260814000027 (숫자는 안 씀)
+
+[수집 방법]
+- 나스닥 스크리너 API(api.nasdaq.com/api/screener/stocks) 6,617종목을 시가총액 순으로 세워 상위 100(1위 NVDA, 100위 NEE). GOOG·GOOGM·GOOGN은 알파벳 중복이라 뺐다. 2026-09-28 00시 조회.
+- 야후 파이낸스 chart API 일별 종가. 3분기 = 2026-06-30 종가 → 2026-09-25 종가(마지막 거래일). 99곳 받음(SKHY 실패).
+- 올해 = 2025-12-31 종가 → 2026-09-25 종가. 분할 이벤트는 3분기 구간에 없음(events=split 확인).
+
+[전체]
+- 99곳 3분기 등락 중앙값 +0.4%, 마이너스 49곳
+- S&P 500: 6/30 7,499.36 → 9/25 7,743.41 (+3.25%), 올해 +13.12%, 올해 고점(8/13) 대비 -0.7%
+- 나스닥 종합: 6/30 26,213.72 → 9/25 27,068.72 (+3.26%), 올해 +16.46%, 고점 대비 -0.6%
+- SOXX(반도체 ETF): 3분기 -10.62%, 올해 +90.16%, 고점(6/22) 대비 -12.6%
+
+[3분기 많이 내린 10곳] 3분기 / 올해 / 6/30 → 9/25 종가(달러)
+1 KLAC KLA -37.72% / +54.66% · 301.71 → 187.92 (7/1 하루 -11.8%)
+2 AMAT 어플라이드머티어리얼즈 -32.92% / +88.72% · 723.00 → 485.00 (7/1 하루 -10.0%)
+3 WDC 웨스턴디지털 -28.48% / +165.17% · 638.72 → 456.81
+4 LRCX 램리서치 -27.26% / +84.14% · 433.33 → 315.21 (7/2 하루 -10.2%)
+5 CAT 캐터필러 -22.85% / +43.41% · 1,064.90 → 821.58
+6 SNDK 샌디스크 -21.81% / +648.93% · 2,273.73 → 1,777.80
+7 IBM -19.81% / -23.87%
+8 NVO 노보노디스크 -19.07% / -23.74%
+9 GEV GE버노바 -18.49% / +46.52%
+10 HD 홈디포 -16.87% / -14.79%
+- KLAC·AMAT·LRCX·CAT·GEV 올해 최고 종가는 6/30(분기 마지막 날). WDC 6/18, SNDK 6/25.
+- AMAT 주간 종가: 12/29주 268.9 → 6/22주 626.8(최고) → 9/25 485.0
+
+[계산]
+- 10곳 중 올해 플러스 7곳, 마이너스 3곳(IBM·NVO·HD). 1~6위는 전부 플러스.
+- 회사 설명: IBM 미국 컴퓨터·기업 서비스, 노보노디스크 덴마크 제약사(위고비), 홈디포 미국 집수리용품 체인, KLA 반도체 검사장비(나스닥 스크리너 업종 Technology·Health Care·Consumer Discretionary)

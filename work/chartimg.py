@@ -1,5 +1,5 @@
 # 자료 화면 생성 — 숏폼·블로그에 들어갈 차트. 글자만 있는 화면을 금지하기 위해 만든다(사장님 2026-09-23 "관련 자료가 없으면 아무도 안 본다").
-#   py -3.12 work/chartimg.py bar <제목> <출력.png> "이름=값" "이름=값" ... [--unit %] [--hi 3] [--short]
+#   py -3.12 work/chartimg.py bar <제목> <출력.png> "이름=값" "이름=값" ... [--unit %] [--hi 3 | --hi -3(아래 3개)] [--short]
 #   py -3.12 work/chartimg.py rank <제목> <출력.png> <json파일> [--key 이름필드] [--val 값필드] [--top 8]
 # 규칙(경쟁 화면 실측): 어두운 바탕, 막대는 굵게, 값은 막대 끝에 큰 숫자, 상위 몇 개만 노랑 강조, 출처 한 줄.
 import sys, os, re, json
@@ -122,11 +122,14 @@ def bar_chart(title, pairs, out, unit='', hi=3, short=False, source='', dec=None
     # (2026-09-24 화면 검증 — '도봉'의 '봉'이 막대에 가렸다). 이름 자리를 침범하지 않게 0.42로 줄인다.
     half = barw * 0.42 if neg else barw
     if neg: dr.line([(zero, top - 6), (zero, bottom)], fill=(70, 74, 88), width=2)
+    # hi 가 음수면 아래쪽 |hi|개를 강조한다. 2026-09-27 ggjs_low.png: '낮은 곳 5곳' 차트에서 기본 hi=3 이
+    # 위 3개를 노랑으로, 정작 꼴찌 2곳을 회색으로 그렸다. 장면 주제가 '낮은 쪽'이면 아래를 밝힌다.
+    lit = (lambda i: i >= n + hi) if hi < 0 else (lambda i: i < hi)
     for i, (k, v) in enumerate(pairs):
         y = top + rowh * i
-        c = (YELLOW if v >= 0 else RED) if (i < hi or v < 0) else BAR
-        fl = f_body(lsz, i < hi)
-        dr.text((pad, y + (bh - fl.size) / 2), keys[i], font=fl, fill=WHITE if i < hi else DIM)
+        c = (YELLOW if v >= 0 else RED) if (lit(i) or v < 0) else BAR
+        fl = f_body(lsz, lit(i))
+        dr.text((pad, y + (bh - fl.size) / 2), keys[i], font=fl, fill=WHITE if lit(i) else DIM)
         w = max(6, int(half * abs(v) / mx))
         if v >= 0: box = [zero, y, zero + w, y + bh]
         else:      box = [zero - w, y, zero, y + bh]
@@ -156,11 +159,13 @@ def bar_chart(title, pairs, out, unit='', hi=3, short=False, source='', dec=None
 
 if __name__ == '__main__':
     a = sys.argv[1:]; mode = a[0]; title = a[1]; out = a[2]
-    short = '--short' in a; unit = ''; hi = 3; src = ''
+    short = '--short' in a; unit = ''; hi = None; src = ''
     for i, x in enumerate(a):
         if x == '--unit': unit = a[i + 1]
         if x == '--hi': hi = int(a[i + 1])
         if x == '--source': src = a[i + 1]
+    # --hi 를 안 주면 제목으로 정한다: '낮은·꼴찌·하위·적은' 차트는 아래 3개, 그 밖은 위 3개.
+    if hi is None: hi = -3 if any(w in title for w in ('낮은', '꼴찌', '하위', '적은', '싼 ')) else 3
     items = [x for x in a[3:] if '=' in x and not x.startswith('--')]
     pairs = [(x.split('=')[0], float(x.split('=')[1])) for x in items]
     # 입력에 적힌 소수 자릿수를 지킨다(가장 긴 자릿수로 맞춘다). 정수만 있으면 정수로 그린다.

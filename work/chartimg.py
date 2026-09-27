@@ -80,7 +80,9 @@ def bar_chart(title, pairs, out, unit='', hi=3, short=False, source='', dec=None
     if rowh > cap:
         top += (bottom - top - cap * n) / 2
         rowh = cap
-    bh = min(int(rowh * 0.62), int(H * 0.11))   # 줄이 두셋뿐이면 rowh 가 커져 막대가 세로 덩어리로 보인다(2026-09-24)
+    # 2026-09-27 화면 검증(reit_1eok.png, 5줄): 상한 H*0.11 이면 막대가 148px 높이 둥근 덩어리가 돼
+    # 가로 길이 차이(1위 277px·5위 107px)보다 높이가 더 눈에 띄었다. 막대는 가로로 읽히게 얇게 둔다.
+    bh = min(int(rowh * 0.62), int(H * 0.075))   # 줄이 두셋뿐이면 rowh 가 커져 막대가 세로 덩어리로 보인다(2026-09-24)
     # 음수가 섞이면 0을 가운데 두고 왼쪽으로 뻗는다. 안 그러면 마이너스 막대가 아예 안 그려진다
     # (2026-09-24 섹터 등락률 차트에서 확인 — 마이너스 섹터가 값만 찍히고 막대가 없었다).
     vs = [v for _, v in pairs]
@@ -97,13 +99,15 @@ def bar_chart(title, pairs, out, unit='', hi=3, short=False, source='', dec=None
         vstrs = [disp_safe(f'{v:,.{dec}f}' + unit) for _, v in pairs]
     else:
         vstrs = [disp_safe(f'{v:,.2f}'.rstrip('0').rstrip('.') + unit) for _, v in pairs]
-    vsz = min(int(rowh * 0.5), int(W * 0.075))
+    vsz = min(int(rowh * 0.5), int(W * 0.06))    # 2026-09-27 reit_1eok: 0.075 면 값 글자가 막대보다 먼저 보였다
     fvm = f_disp(vsz); vw = max(dr.textlength(t, font=fvm) for t in vstrs) + 28
     # 2026-09-27 화면 검증(nps_years.png): '1,331,600' 같은 긴 값이 큰 글자로 폭의 40%를 먹어 막대 자리가 36%뿐이었다.
     # 막대 비율(1:4)은 맞았지만 막대+값 글자를 합친 길이가 비슷해 보여 차이가 안 읽혔다. 값 글자 자리를 폭 26%로 묶는다.
-    while vsz > int(W * 0.04) and vw > W * 0.26:
+    while vsz > int(W * 0.04) and vw > W * 0.22:
         vsz -= 2; fvm = f_disp(vsz); vw = max(dr.textlength(t, font=fvm) for t in vstrs) + 28
-    lbl_room = W - pad * 2 - vw - int(W * 0.22)          # 막대에 최소 22%는 남긴다
+    # 2026-09-27 화면 검증(reit_1eok.png): 이름 글자가 큰 채로 폭 34%를 먹어 막대 자리가 26%뿐이었다.
+    # '최소 22%'는 바닥일 뿐이라 이름이 길면 늘 바닥까지 밀렸다. 이름 자리는 폭 30%, 값 글자 자리는 22%로 묶어 막대에 40% 넘게 준다.
+    lbl_room = min(int(W * 0.30), W - pad * 2 - vw - int(W * 0.22))
     lsz = min(int(rowh * 0.42), int(W * 0.055))
     while lsz > int(W * 0.026) and max(dr.textlength(k, font=f_body(lsz, True)) for k, _ in pairs) > lbl_room:
         lsz -= 2

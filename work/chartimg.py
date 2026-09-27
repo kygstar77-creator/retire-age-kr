@@ -60,7 +60,7 @@ def disp_safe(t, where=''):
     return t
 
 
-def bar_chart(title, pairs, out, unit='', hi=3, short=False, source=''):
+def bar_chart(title, pairs, out, unit='', hi=3, short=False, source='', dec=None):
     W, H = (1080, 1350) if short else (1280, 720)
     title = disp_safe(title); n = len(pairs); pad = int(W * 0.06)
     im = Image.new('RGB', (W, H), BG); dr = ImageDraw.Draw(im)
@@ -91,7 +91,12 @@ def bar_chart(title, pairs, out, unit='', hi=3, short=False, source=''):
     # 2026-09-24 실측 고침: 이름이 길면(예: '마곡 대명투웨니퍼스트') lblw 가 폭을 다 먹어 barw 가 음수가 됐다.
     # 그래서 막대가 사라지고 값이 화면 밖으로 잘려 나갔다 — 자료 화면이 장식이 되던 두 번째 원인이다.
     # 줄 수가 적을수록 rowh 가 커져 글자가 터무니없이 커지는 것도 절대 상한으로 막는다.
-    vstrs = [disp_safe(f'{v:,.2f}'.rstrip('0').rstrip('.') + unit) for _, v in pairs]
+    # 2026-09-27 화면 검증: 사실표의 6.60%가 6.6%, 0.90달러가 0.9로 그려졌다(끝자리 0을 지웠다).
+    # 사실표와 화면 숫자가 다르면 대본 검사·독자 대조가 어긋난다. 넘겨받은 자릿수(dec)가 있으면 그대로 쓴다.
+    if dec is not None:
+        vstrs = [disp_safe(f'{v:,.{dec}f}' + unit) for _, v in pairs]
+    else:
+        vstrs = [disp_safe(f'{v:,.2f}'.rstrip('0').rstrip('.') + unit) for _, v in pairs]
     vsz = min(int(rowh * 0.5), int(W * 0.075))
     fvm = f_disp(vsz); vw = max(dr.textlength(t, font=fvm) for t in vstrs) + 28
     # 2026-09-27 화면 검증(nps_years.png): '1,331,600' 같은 긴 값이 큰 글자로 폭의 40%를 먹어 막대 자리가 36%뿐이었다.
@@ -154,4 +159,6 @@ if __name__ == '__main__':
         if x == '--source': src = a[i + 1]
     items = [x for x in a[3:] if '=' in x and not x.startswith('--')]
     pairs = [(x.split('=')[0], float(x.split('=')[1])) for x in items]
-    bar_chart(title, pairs, out, unit, hi, short, src)
+    # 입력에 적힌 소수 자릿수를 지킨다(가장 긴 자릿수로 맞춘다). 정수만 있으면 정수로 그린다.
+    dec = max((len(x.split('=')[1].split('.')[1]) if '.' in x.split('=')[1] else 0) for x in items)
+    bar_chart(title, pairs, out, unit, hi, short, src, dec)

@@ -96,11 +96,14 @@ def pending_count():
     """대기 묶음(아직 발행 안 된 완성 묶음)을 블로그·카페로 나눠 센다.
     2026-09-24 15시 회차에서 붙였다 — 편성표만 보고 슬롯을 짜다가 정작 대기가 0이라
     발행 회차가 새로 쓰다 시간을 넘기는 일이 반복됐다(9/23 16·17시 0편).
-    판정은 naverpost.py pending과 같은 기준: pkg/order.txt가 있고 published.txt가 없으면 대기."""
+    판정은 naverpost.py pending과 같은 기준: pkg/order.txt가 있고 published.txt·hold.txt가 없으면 대기."""
     import glob
     n = {'블로그': 0, '카페': 0}
     for od in glob.glob(os.path.join(R, '*', 'pkg', 'order.txt')):
         if os.path.exists(os.path.join(os.path.dirname(od), 'published.txt')):
+            continue
+        # hold.txt(보류)가 걸린 묶음은 발행기가 안 올린다 — 세면 재고가 부풀어 모자란 걸 못 본다(2026-09-27 15시: 블로그 실제 1개인데 2개로 셈)
+        if os.path.exists(os.path.join(os.path.dirname(od), 'hold.txt')):
             continue
         head = open(od, encoding='utf-8').readline()
         n['카페' if '카페' in head else '블로그'] += 1
@@ -116,9 +119,15 @@ def main():
     cands = []
     for ev in events if isinstance(events, list) else []:
         try:   # calendar.json의 date는 'MM-DD' 또는 'MM-DD~MM-DD'(연도 없음)
-            ds = str(ev.get('date') or ev.get('start') or '')[:5]; d0 = datetime.date(TOM.year, int(ds[:2]), int(ds[3:5]))
+            raw = str(ev.get('date') or ev.get('start') or ''); ds = raw[:5]; d0 = datetime.date(TOM.year, int(ds[:2]), int(ds[3:5]))
             if d0 < TOM - datetime.timedelta(days=60): d0 = d0.replace(year=TOM.year + 1)
             dd = (d0 - TOM).days
+            # 'MM-DD~MM-DD'는 기간이다. 시작일만 보면 이미 열린 신고 기간(9/16~9/30)이 D-12로 잘려 '마감 후보 없음'이 됐다
+            # (2026-09-27 15시 회차 발견 — 재산세 2기가 마감 D-2인데 편성에서 빠졌다). 기간 안이면 마감일 기준으로 센다.
+            if '~' in raw:
+                de = raw.split('~')[1][:5]; d1 = datetime.date(d0.year, int(de[:2]), int(de[3:5]))
+                if d1 < d0: d1 = d1.replace(year=d0.year + 1)
+                if d0 <= TOM <= d1: dd = (d1 - TOM).days
         except Exception: continue
         if not (-3 <= dd <= 30): continue
         kw = ev.get('name') or ev.get('title') or ev.get('kw'); kw = kw[0] if isinstance(kw, list) else str(kw)

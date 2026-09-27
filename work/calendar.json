@@ -252,6 +252,18 @@
    "lead": 25,
    "src": "법 소득세법 제70조",
    "axis": "tax"
+  },
+  {
+   "name": "종합부동산세 합산배제·과세특례 신고",
+   "date": "09-16~09-30",
+   "kw": [
+    "종부세 합산배제",
+    "합산배제 신고",
+    "종부세 과세특례"
+   ],
+   "lead": 14,
+   "src": "국세청 법인신고안내 종합부동산세 합산배제 및 과세특례 신고 https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=40605&cntntsId=239015 (2026-09-27 확인)",
+   "axis": "realestate"
   }
  ],
  "axes": {

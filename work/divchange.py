@@ -45,12 +45,26 @@ def calendar(days):
     return rows
 
 def history(sym):
+    """배당 이력 · 머리값 · 종류('stocks'|'etf').
+    2026-09-27 실측: Nasdaq 이력 API는 NYSE 상장 종목(KO·O·SCHD…)에 rows=null과
+    'Dividend History for Non-Nasdaq symbols is not available'을 돌려준다. 같은 날 7일치 실행에서
+    보통주 11건 중 10건(BANF·ERIC 같은 나스닥 상장 포함)이 Nasdaq 이력 없이 Yahoo로만 비교됐다.
+    (배당 캘린더 자체에 NYSE 종목이 적은지는 아직 확인 안 함 — build-queue에 올려 둠)
+    Nasdaq에 없으면 Yahoo chart(events=div, 무키)로 이력과 종류(instrumentType)를 받는다."""
     for cls in ('stocks', 'etf'):
         j = get(f'https://api.nasdaq.com/api/quote/{sym}/dividends?assetclass={cls}')
         d = (j or {}).get('data') or {}
         rows = (d.get('dividends') or {}).get('rows') or []
         if rows: return rows, d, cls
-    return [], {}, None
+    j = get(f'https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range=3y&interval=1d&events=div')
+    try: r = j['chart']['result'][0]
+    except Exception: return [], {}, None
+    ev = (r.get('events') or {}).get('dividends') or {}
+    rows = [{'exOrEffDate': datetime.datetime.fromtimestamp(v['date'], datetime.timezone.utc).strftime('%m/%d/%Y'),
+             'amount': str(v['amount'])} for v in ev.values()]
+    it = (r.get('meta') or {}).get('instrumentType')
+    cls = 'etf' if it == 'ETF' else 'stocks' if it == 'EQUITY' else None
+    return (rows, {'_src': 'yahoo'}, cls) if rows and cls else ([], {}, None)
 
 def prev_amount(rows, ex_date, rate):
     """직전 회차 금액과 주기(일 간격)를 돌려준다. 같은 배당락 건은 건너뛴다."""
@@ -118,7 +132,8 @@ def main():
         r['_prev'] = prev; r['_cur'] = cur; r['_gap'] = gap; r['_n'] = n
         r['_pct'] = (cur - prev) / prev * 100
         r['_yield'] = meta.get('yield'); r['_ann_div'] = meta.get('annualizedDividend')
-        r['_payout'] = meta.get('payoutRatio')
+        r['_payout'] = meta.get('payoutRatio'); r['_src'] = meta.get('_src', 'nasdaq')
+        r['_last4'] = [f'{ed:%y.%m.%d} {a:g}' for ed, a in hist[:4]]
         return r
 
     with ThreadPoolExecutor(max_workers=8) as ex:
@@ -129,6 +144,10 @@ def main():
         g = r.get('_gap')
         return g is not None and not (20 <= g <= 40 or 75 <= g <= 105 or 160 <= g <= 200 or 330 <= g <= 400)
 
+    # ETF 분배금은 운용 결과라 매달 오르내린다 — '배당 인상·삭감'으로 부르면 틀린 글이 된다(2026-09-26 improve A).
+    # 보통주만 인상·삭감으로 가르고, ETF는 '분배금 변동'으로 따로 최근 4회와 함께 보인다.
+    etf = sorted([r for r in got if r.get('_cls') == 'etf'], key=lambda r: -abs(r['_pct']))
+    got = [r for r in got if r.get('_cls') != 'etf']
     normal = [r for r in got if not 주기바뀜(r) and not r.get('_alt')]
     odd = [r for r in got if 주기바뀜(r)]
     alt = [r for r in got if not 주기바뀜(r) and r.get('_alt')]
@@ -136,23 +155,29 @@ def main():
     dn = sorted([r for r in normal if r['_pct'] < -0.5], key=lambda r: r['_pct'])
     flat = [r for r in normal if -0.5 <= r['_pct'] <= 0.5]
 
-    print(f'비교 성공 {len(got)}건 · 인상 {len(up)} · 삭감 {len(dn)} · 동결 {len(flat)} · 주기변경 {len(odd)} · 교대 {len(alt)}')
+    ny = sum(1 for r in got if r.get('_src') == 'yahoo')
+    print(f'보통주 비교 {len(got)}건(이 중 NYSE 등 Yahoo 이력 {ny}건) · 인상 {len(up)} · 삭감 {len(dn)} · 동결 {len(flat)} '
+          f'· 주기변경 {len(odd)} · 교대 {len(alt)} / ETF 분배금 {len(etf)}건(인상·삭감으로 세지 않음)')
     def show(t, items, k=12):
         print(f'\n[{t}]')
         for r in items[:k]:
             print(f"  {r['symbol']:6s} {r['_prev']:.4f} → {r['_cur']:.4f} ({r['_pct']:+.1f}%) "
                   f"배당락 {r.get('dividend_Ex_Date')} 발표 {r['_ann']} 지급 {r.get('payment_Date')} "
                   f"연환산 {r.get('indicated_Annual_Dividend')} 수익률 {r.get('_yield')} "
-                  f"성향 {r.get('_payout')} [{r.get('_cls')}] "
-                  f"1년전 {('%+.1f%%' % r['_yoy_pct']) if r.get('_yoy_pct') is not None else '-'} | {r['companyName'][:42]}")
-    show('인상', up); show('삭감', dn); show('주기변경(증감률 무의미)', odd, 8)
+                  f"성향 {r.get('_payout')} [{r.get('_cls')}·{r.get('_src')}] "
+                  f"1년전 {('%+.1f%%' % r['_yoy_pct']) if r.get('_yoy_pct') is not None else '-'} | {r['companyName'][:42]}"
+                  + ('  ※ADR — 달러 환산액이라 환율만으로도 오르내린다' if 'Depositary' in (r.get('companyName') or '') else ''))
+    show('보통주 배당 인상', up); show('보통주 배당 삭감', dn); show('주기변경(증감률 무의미)', odd, 8)
     show('교대(큰 회차·작은 회차가 번갈아 — 앞 회차 대비 증감률 무의미)', alt, 8)
+    print('\n[ETF 분배금 변동 — 인상·삭감 아님, 최근 4회 같이 본다]')
+    for r in etf[:12]:
+        print(f"  {r['symbol']:6s} {r['_prev']:.4f} → {r['_cur']:.4f} ({r['_pct']:+.1f}%) 최근 {' / '.join(r['_last4'])} | {r['companyName'][:40]}")
 
     if jout:
         os.makedirs(os.path.dirname(jout) or '.', exist_ok=True)
         with open(jout, 'w', encoding='utf-8') as f:
             json.dump({'asof': str(datetime.date.today()), 'days': days,
-                       'up': up, 'down': dn, 'flat': flat, 'odd': odd, 'alt': alt},
+                       'up': up, 'down': dn, 'flat': flat, 'odd': odd, 'alt': alt, 'etf': etf},
                       f, ensure_ascii=False, default=str, indent=1)
         print('\n저장', jout)
 

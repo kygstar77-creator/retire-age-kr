@@ -30,7 +30,13 @@ def load(pattern, drop_offi=False):
         try: d = json.load(open(f, encoding='utf-8'))
         except Exception: continue
         rows += d if isinstance(d, list) else (d.get('rows') or [])
-    return rows
+    return [r for r in rows if keep(r)]
+
+def keep(r):
+    """해제된 거래와 공공기관 일괄 매입을 뺀다. 2026-09-27 확인: 7~8월 서울 아파트 매매 9,295건 중
+    433건이 공공기관 매수였고, 중랑구 신축 한 곳은 7월 9일 하루에 전용 18㎡ 278건이 한꺼번에 잡혔다.
+    매입임대용 소형 신축이라 구 평당가·단지 순위를 흔든다."""
+    return not r.get('cdealType') and r.get('buyerGbn') != '공공기관'
 
 def area_key(r): return int(num(r.get('excluUseAr')) // 5 * 5)
 
@@ -62,7 +68,7 @@ def price_change(min_pairs=5, offi=False):
         for r in rows:
             g = sgg_of(r); ar = num(r.get('excluUseAr')); a = num(r.get('dealAmount'))
             nm = ((r.get('offiNm') if offi else r.get('aptNm')) or '').strip()
-            if not g or not nm or ar <= 0 or a <= 0: continue
+            if not g or not nm or ar <= 0 or a <= 0 or not keep(r): continue
             cell[(g, nm, int(ar // 5 * 5))][ym].append(a / (ar / 3.3058))
     months = sorted({m for v in cell.values() for m in v})
     wsum, wn, pairs = collections.Counter(), collections.Counter(), collections.Counter()

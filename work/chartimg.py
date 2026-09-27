@@ -122,9 +122,13 @@ def bar_chart(title, pairs, out, unit='', hi=3, short=False, source='', dec=None
     # (2026-09-24 화면 검증 — '도봉'의 '봉'이 막대에 가렸다). 이름 자리를 침범하지 않게 0.42로 줄인다.
     half = barw * 0.42 if neg else barw
     if neg: dr.line([(zero, top - 6), (zero, bottom)], fill=(70, 74, 88), width=2)
-    # hi 가 음수면 아래쪽 |hi|개를 강조한다. 2026-09-27 ggjs_low.png: '낮은 곳 5곳' 차트에서 기본 hi=3 이
-    # 위 3개를 노랑으로, 정작 꼴찌 2곳을 회색으로 그렸다. 장면 주제가 '낮은 쪽'이면 아래를 밝힌다.
-    lit = (lambda i: i >= n + hi) if hi < 0 else (lambda i: i < hi)
+    # hi 가 음수면 값이 가장 작은 |hi|개, 양수면 가장 큰 hi개를 강조한다. 2026-09-27 ggjs_low.png: '낮은 곳 5곳' 차트에서 기본 hi=3 이
+    # 위 3개를 노랑으로, 정작 꼴찌 2곳을 회색으로 그렸다. 장면 주제가 '낮은 쪽'이면 낮은 값을 밝힌다.
+    # 2026-09-27 22시 mort_var.png: 자리(아래 3칸)로 밝혔더니 낮은 순으로 넣은 '최저금리 낮은 은행'에서
+    # 4.20·4.29가 회색, 4.41~4.50이 노랑으로 거꾸로 칠해졌다. 자리가 아니라 값의 크기로 고른다.
+    order = sorted(range(n), key=lambda i: pairs[i][1], reverse=hi > 0)
+    on = set(order[:abs(hi)])
+    lit = lambda i: i in on
     for i, (k, v) in enumerate(pairs):
         y = top + rowh * i
         c = (YELLOW if v >= 0 else RED) if (lit(i) or v < 0) else BAR

@@ -79,6 +79,17 @@ def main():
         else:
             print(f'  새것 {cand}')
             fresh.append(cand)
+            # 2026-09-28 04시 회차: "건강보험료 피부양자"는 새것으로 나왔는데 "피부양자"만 넣으면
+            # 카페 78번(9/24, 같은 별표를 다룬 글)이 잡혔다. 첫 낱말이 제목에 없어서 놓친 것이다.
+            # 여러 낱말 후보는 낱말마다 다시 보고, 걸리면 '각도를 바꿔야 할 수 있음'으로 알린다.
+            ws = [w for w in cand.split() if len(w) >= 3 and w not in GENERIC_HEAD]
+            if len(ws) >= 2:
+                for w in ws:
+                    part = local_hits(kind, w)
+                    if part:
+                        title, url, why = part[0]
+                        print(f'       ↳ 낱말 "{w}"로는 겹침 ← {title[:48]}  {url} ({why}) — 각도가 다른지 확인')
+                        break
     print()
     if fresh:
         print('이 중에서 고른다(수요 높은 순으로 이미 정렬해 왔다면 맨 앞):', ' · '.join(fresh))

@@ -1,0 +1,26 @@
+[오늘 찾은 것] 2026-09-27 20시 회차 조사 (WebSearch 한·영, 1차 출처 따라감)
+- 2026-09-24 T-Mobile IR "T-Mobile Announces a 15% Quarterly Dividend Increase": 분기 1.02→1.17달러(+0.15, 15%), 기준일 2026-11-25, 지급일 2026-12-10. https://investor.t-mobile.com/news-releases/news-release-details/t-mobile-announces-15-quarterly-dividend-increase
+- 2026-09-18 PMI(Business Wire): 분기 1.47→1.60달러, 연 6.40달러, 8.8% 인상. 기준일 10-02, 지급일 10-26. 2008년 상장 뒤 매년 인상. SEC 8-K https://www.sec.gov/Archives/edgar/data/0001413329/000162828026062621/september2026dividend.htm
+- 2026-09-15 Microsoft Source "Microsoft announces quarterly dividend increase": 분기 0.98달러, 7센트(8%) 인상. 나스닥 배당 API: 기준일 11-19, 지급일 12-10, 직전 0.91. https://news.microsoft.com/source/2026/09/15/microsoft-announces-quarterly-dividend-increase-7/
+- 2026-09-08 U.S. Bancorp(Business Wire): 분기 0.54달러(직전 0.52, 3.8%), 기준일 09-30, 지급일 10-15. https://www.businesswire.com/news/home/20260908218327/en/U.S.-Bancorp-Announces-Quarterly-Dividends
+- 2026-09-08 Realty Income "136th Common Stock Monthly Dividend Increase": 월 0.2710→0.2715달러, 연 3.252→3.258달러. 기준일 09-30, 지급일 10-15. 1994년 NYSE 상장 뒤 136번째 인상. https://www.nasdaq.com/press-release/136th-common-stock-monthly-dividend-increase-declared-realty-income-2026-09-08
+- 2026-09-03 VICI Properties IR: 분기 0.45→0.46달러, 연 1.84달러, 2.2% 인상. 기준일 09-17, 지급일 10-08. https://investors.viciproperties.com/news-releases/news-release-details/vici-properties-inc-increases-regular-quarterly-dividend-2
+- 2026-09-23 OGE Energy(PR Newswire): 분기 0.42875달러, 기준일 10-05, 지급일 10-30. 직전 0.425(야후 배당 이력). 배당성향 목표 55~60%. https://www.prnewswire.com/news-releases/oge-energy-corp-board-of-directors-declares-quarterly-dividend-302888212.html
+- 2026-09-22 GE HealthCare: 나스닥 배당 API(api.nasdaq.com/api/quote/GEHC/dividends) 선언일 09-22, 0.04달러, 기준일 10-23, 지급일 11-13. 직전 0.035.
+- 목록 출처: dividendstocks.com 2026년 9월 배당 인상 목록(https://www.dividendstocks.com/tools/dividend-increases/) — 여기서 후보를 뽑고 위 회사 발표로 확인.
+
+[시세] 야후 파이낸스 차트 API, 2026-09-25(금) 미국 종가, 2026-09-27 조회. 52주 최고·최저는 같은 API meta 값.
+TMUS 165.43 (52주 161.14~240.95) / GEHC 66.63 (58.75~89.77) / PM 190.48 (142.11~207.76) / MSFT 516.17 (349.2~553.72)
+USB 59.33 (45.02~66.08) / VICI 23.51 (23.18~33.005) / OGE 44.81 (41.7~50.59) / O 55.54 (55.07~67.94)
+원/달러 1,354.4 (야후 KRW=X)
+
+[계산] research/divup0927/calc_result.txt
+인상률: TMUS 14.7% · GEHC 14.3% · PM 8.8% · MSFT 7.7% · USB 3.8% · VICI 2.2% · OGE 0.9% · O 0.18%
+새 배당 기준 배당률(연간 배당/종가): VICI 7.83% · O 5.87% · OGE 3.83% · USB 3.64% · PM 3.36% · TMUS 2.83% · MSFT 0.76% · GEHC 0.24%
+52주 최고가 대비: TMUS -31.3% · VICI -28.8% · GEHC -25.8% · O -18.3% · OGE -11.4% · USB -10.2% · PM -8.3% · MSFT -6.8%
+52주 최저가 대비: O +0.9% · VICI +1.4% · TMUS +2.7%
+티모바일 100주 새 분기 배당 117달러, 미국 15% 원천징수 뒤 99.45달러, ×1,354.4 = 약 13만 4,700원
+티모바일 주간 종가 1년 최고 237.47달러(2025-09) → 165.43달러
+
+[회사 설명 — 일반 공개 정보]
+티모바일: 미국 이동통신사 / GE헬스케어: 의료영상 장비, 2023년 GE에서 분리 / 필립모리스: 말보로 등 담배와 전자담배, 미국 밖에서 판매 / 마이크로소프트: 윈도우·오피스·클라우드 / US뱅코프: 미국 상업은행 / VICI: 카지노·리조트 건물을 가진 리츠 / OGE에너지: 오클라호마 전력회사 / 리얼티인컴: 상가 건물 임대 리츠, 매달 배당

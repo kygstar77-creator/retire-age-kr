@@ -14,6 +14,9 @@ H = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0) Chrome/126', 'Accept': 'applic
 KO = {'Technology': '기술', 'Finance': '금융', 'Health Care': '헬스케어', 'Consumer Discretionary': '경기소비재', 'Consumer Staples': '필수소비재',
       'Industrials': '산업재', 'Energy': '에너지', 'Utilities': '유틸리티', 'Real Estate': '부동산', 'Telecommunications': '통신', 'ETF': 'ETF', 'Basic Materials': '소재', 'Miscellaneous': '기타', '': '기타'}
 
+# 나스닥 스크리너 섹터가 틀린 종목 — 2026-09-27 필립모리스(PM)가 '헬스케어'로 나와 담배회사가 의료 칸에 들어갔다.
+FIX = {'PM': 'Consumer Staples', 'MO': 'Consumer Staples', 'BTI': 'Consumer Staples'}
+
 def font(sz, bold=True):
     p = os.path.join(FD, 'pd700.ttf' if bold else 'pd500.ttf')
     return ImageFont.truetype(p, sz) if os.path.exists(p) else ImageFont.truetype(r'C:\Windows\Fonts\malgunbd.ttf' if bold else r'C:\Windows\Fonts\malgun.ttf', sz)
@@ -26,7 +29,7 @@ def fetch():
             cap = float(r['marketCap'] or 0); pct = float((r['pctchange'] or '0').replace('%', ''))
         except ValueError: continue
         if cap <= 0 or r['symbol'].endswith(('^', '.')) or '^' in r['symbol']: continue
-        rows.append({'sym': r['symbol'], 'name': r['name'], 'cap': cap, 'pct': pct, 'sector': r['sector'] or '', 'price': r['lastsale']})
+        rows.append({'sym': r['symbol'], 'name': r['name'], 'cap': cap, 'pct': pct, 'sector': FIX.get(r['symbol'], r['sector'] or ''), 'price': r['lastsale']})
     return rows
 
 def color(p):

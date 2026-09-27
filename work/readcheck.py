@@ -98,6 +98,7 @@ def acronyms(text):
     처음 나올 때 무엇인지 안 밝히면 독자가 못 따라온다."""
     KNOWN = {'ETF', 'API', 'GDP', 'CPI', 'PPI', 'FOMC', 'EPS', 'PER', 'PBR', 'ROE', 'ISA', 'IRP',
              'DSR', 'LTV', 'DTI', 'IPO', 'CEO', 'GDP', 'US', 'EU', 'PDF', 'TV', 'AI'}
+    GROUPS = {'SK', 'LG', 'KB', 'GS', 'CJ', 'HD', 'KT', 'LS', 'HL', 'DB', 'NH', 'IBK', 'BNK', 'KCC', 'SH', 'LH', 'HUG'}
     first, bad = {}, []
     ss = sents(text)
     # 한글 조사가 붙으면('ACE는') 가 경계로 안 잡혀 첫 등장을 놓쳤다 — 영문자만 경계로 본다
@@ -107,6 +108,9 @@ def acronyms(text):
         for m in PAT.finditer(s):
             w = m.group(1)
             if w in KNOWN or w in first: continue
+            # 그룹 이름이 한글 회사명 앞에 붙은 꼴(SK하이닉스·LG화학·KB국민은행)은 약어가 아니라 회사 이름이다.
+            # 2026-09-27 15시 회차: "SK하이닉스"를 설명 없는 약어로 잡았다.
+            if w in GROUPS and re.match(r'[가-힣]{2,}', s[m.end():]): continue
             first[w] = i
             # 같은 문장 안에 괄호 설명이나 한글 이름이 붙어 있으면 설명한 것으로 본다
             # 약어 바로 뒤에 괄호로 풀어 쓰면 설명한 것으로 본다(긴 정식명은 24자 창을 넘어간다)

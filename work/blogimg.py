@@ -152,7 +152,12 @@ def line(path, title, xs, ys, marks=(), unit='', src=None):
         col = '#d64541' if c == 'red' else '#181c26'
         x = x if isinstance(x, int) else (len(lab) - 1 - lab[::-1].index(str(x)) if str(x) in lab else 0)
         ax.scatter([x], [y], color=col, zorder=5)
-        ax.annotate(t, (x, y), xytext=(-12, 12 if i % 2 else -22), textcoords='offset points', ha='right',
+        # 2026-09-28 노령연금 수급자 추이: 첫 점 글자가 바닥 아래로 내려가 x축 '2020'과 겹쳤다.
+        # 바닥 15% 안쪽 점은 글자를 위로, 왼쪽 끝 점은 글자를 오른쪽으로 민다.
+        y0, y1 = ax.get_ylim(); low = (y - y0) / ((y1 - y0) or 1) < 0.15
+        dy = 12 if (i % 2 or low) else -22
+        left = x <= (len(lab) - 1) * 0.1
+        ax.annotate(t, (x, y), xytext=(12 if left else -12, dy), textcoords='offset points', ha='left' if left else 'right',
                     fontproperties=fb, fontsize=13, color=col)
     ax.set_title(title, fontproperties=fb, fontsize=19, loc='left', pad=14)
     for s in ('top', 'right'): ax.spines[s].set_visible(False)

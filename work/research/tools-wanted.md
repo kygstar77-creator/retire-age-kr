@@ -620,3 +620,4 @@ mid·bot 칸에 들어앉아 text_mid 가 0.0884 → 0.2005 로 튄다. thumbsta
 - 2026-09-27 13시 improve: Nasdaq 경제지표 캘린더 API(api.nasdaq.com/api/calendar/economicevents?date=D)는 D의 전날 지표를 돌려준다(date=10-02에 목요일 실업수당·ISM). 캘린더 글을 쓸 때 날짜를 하루 당겨 읽거나 BLS·BEA 발표 일정 원문으로 대조해야 한다. 무료·키 없음, 사람 손 불필요 — 캘린더 도구에 보정을 넣을 것.
 
 - 2026-09-27 21시 E회차 mcp-registry 재검색("exchange rates · treasury yields · economic data · real estate · korea statistics"): 새로 나온 것 Oxford Economics·Moody's·Wolfram·Aleph — 전부 계정·유료 계약 필요. Alpha Vantage는 이미 apis.py로 쓰는 중. 한국 통계·부동산 커넥터는 여전히 없음. 붙일 것 없음(사장님 손 불필요).
+- [사람이 봐야 함] 2026-09-28 01시 write: 블로그 9/23 이후 새 글 색인 0% — 일감표 1순위가 회차마다 막힘. 원인 미확인(대조군 옛 글은 잡힘). 발행량·계정 상태(서치어드바이저 등) 확인은 사람 판단이 필요

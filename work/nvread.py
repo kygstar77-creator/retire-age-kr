@@ -10,7 +10,7 @@ def run(cmd, blog, arg, pat=None):
         b = p.chromium.launch(headless=True); page = b.new_page(locale='ko-KR')
         if cmd == 'search':
             page.goto(f'https://m.blog.naver.com/PostSearchList.naver?blogId={blog}&searchText={quote(arg)}', wait_until='domcontentloaded'); page.wait_for_timeout(5000)
-            items = page.evaluate("() => [...document.querySelectorAll('a')].map(a=>[a.innerText.trim().replace(/\s+/g,' ').slice(0,90), (a.href.match(/logNo=(\d+)/)||[])[1]]).filter(x=>x[1] && x[0].length>8)")
+            items = page.evaluate(r"() => [...document.querySelectorAll('a')].map(a=>[a.innerText.trim().replace(/\s+/g,' ').slice(0,90), (a.href.match(/logNo=(\d+)/)||[])[1]]).filter(x=>x[1] && x[0].length>8)")
             seen = set()
             for t, l in items:
                 if l in seen: continue

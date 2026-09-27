@@ -618,3 +618,5 @@ mid·bot 칸에 들어앉아 text_mid 가 0.0884 → 0.2005 로 튄다. thumbsta
   - seoulpyeong0926(5년 전 대비)은 price_change()로 2021↔2026을 일부러 견준 것이라 해당 없음
 - **사장님이 정할 것**: 이미 나간 세 글을 고쳐 다시 올릴지(naverpost.py rewrite), 내릴지. 루틴은 verify BAD일 때만 rewrite하게 돼 있어 손대지 않았다.
 - 2026-09-27 13시 improve: Nasdaq 경제지표 캘린더 API(api.nasdaq.com/api/calendar/economicevents?date=D)는 D의 전날 지표를 돌려준다(date=10-02에 목요일 실업수당·ISM). 캘린더 글을 쓸 때 날짜를 하루 당겨 읽거나 BLS·BEA 발표 일정 원문으로 대조해야 한다. 무료·키 없음, 사람 손 불필요 — 캘린더 도구에 보정을 넣을 것.
+
+- 2026-09-27 21시 E회차 mcp-registry 재검색("exchange rates · treasury yields · economic data · real estate · korea statistics"): 새로 나온 것 Oxford Economics·Moody's·Wolfram·Aleph — 전부 계정·유료 계약 필요. Alpha Vantage는 이미 apis.py로 쓰는 중. 한국 통계·부동산 커넥터는 여전히 없음. 붙일 것 없음(사장님 손 불필요).

@@ -1,0 +1,21 @@
+[오늘 찾은 것] 2026-09-27 회차 조사 (원문 세 곳을 WebFetch·curl로 다시 열어 문장을 직접 확인)
+- Go Curry Cracker https://www.gocurrycracker.com/expenses/ — 페이지 "Last updated: October 2019". "It has now been 7 full years since we left the working world behind" / "our then home of Seattle" / "we have spent an inflation-adjusted (2019$) $526,409, for an annual average of $75,200, or approximately $200/day" / "This includes all expenses: housing, transportation, food, taxes, health insurance, medical care, etc…" / 연도별 2013: $38,996, 2014: $59,086, 2015: $56,900, 2016: $72,002, 2017: $93,648, 2018: $89,000, 2019: $95,000 (estimated) / 서명 "Jeremy, Winnie, & Julian" / 사진 캡션 "Life in Ubud, Bali" / 2018-09-03 글쓴이 댓글 "our increase in spending isn't really kid related. It is because we have been living large in Europe vs living large in Central America." 나이·순자산 금액은 글에 없음($1.9 million은 4% 룰로 필요한 금액 계산이지 자산이 아님 → 쓰지 않음)
+- Retire by 40 https://retireby40.org/q1-2026-fire-update/ (2026-04-05) — "Mrs. RB40 retired from her job last year, and 2026 will be the first full year of FIRE for both of us" / Net Worth (-3.7%) / "keep our expenses below $80,000. This is a 25% increase from 2025" / FIRE Income: $10,630 (Pension $3,273 "Mrs. RB40 has a small pension", RE crowdfunding $963, Dividend $4,397, Online $145, Odd jobs $950, Misc $902) / Spending: $16,938 (Housing $4,971, Transportation $503, Groceries $1,573, Entertainment $2,382 "splurged on an expensive Sumi ukulele ($1,000)", Health $1,008, Kid $1,024, Personal $887, Travel $4,417 "flight tickets for our summer trip to Thailand and Australia") / Rental Loss -$3,593 "That rental condo is vacant" / Retirement Savings Withdrawal –$9,901 / "sunny and warm in Portland when I wrote this blog post" / RB40Jr "he's a teenager now" / 저자 소개란 "achieved financial independence and retired at 38" / 2026-04-06 글쓴이 댓글 "Last year, we spent about $60,000." 은퇴 연도·현재 나이·순자산 금액은 글에 없음
+- Root of Good https://rootofgood.com/december-2025-early-retirement-update-year-end-edition/ (2026-01-15) — "We spent $44,013 during the full year of 2025. This annual spending is about $4,000 above our budgeted $40,000" / "We ended the year at $3,958,000" / "we did finally blow past that number [$4 million] in the first few days of 2026" / "our net worth reported above includes our home value (which is fully paid off). I value the house at $300,000" / "Having a paid off home certainly helps with that." / "5 tickets for the family" / "Cary, North Carolina", "downtown Raleigh"
+- Root of Good https://rootofgood.com/august-september-2026-early-retirement-update-california-redwoods-edition/ (2026-09-15) — 머리말 "Retired in 2013 at age 33." / "We are at home in Raleigh for a two month stretch right now" / "we are still comfortably above $4 million in mid-September" / "All three kids were able to travel with us" / "The only significant out of pocket cost was ~$200 in gas for the rental car. Overall the trip probably would have cost about $5,000 if we paid regular cash prices." / "Our trip was mostly paid for using points and miles"
+- 환율: Yahoo Finance chart API KRW=X regularMarketPrice 1,354.40원, 2026-09-27 조회(https://query1.finance.yahoo.com/v8/finance/chart/KRW=X) → 1달러 1,354원으로 환산
+- 쓰지 않은 것: CNBC(403), Rastelli 부부·Purple(원문 못 읽음), 레딧(도메인 차단)
+
+[숫자]
+- GCC 7년 52만 6,409달러, 연평균 7만 5,200달러, 하루 약 200달러 — 원문
+- 75,200 x 1,354 = 1억 182만원 [계산], /12 = 약 849만원 [계산]
+- GCC 2013년 3만 8,996달러, 2019년 9만 5,000달러(추정), 2017년 93,648달러 — 원문
+- RB40 1분기 지출 1만 6,938달러 → 2,293만원 [계산], /3 = 5,646달러 → 약 764만원 [계산]
+- RB40 항목 합 4,971+503+1,573+2,382+1,008+1,024+887+4,417 = 16,765달러, 합계와 차 173달러 [계산]
+- RB40 수입 1만 630달러, 배당 4,397, 연금 3,273, 임대 손실 3,593, 인출 9,901달러 → 1,341만원 [계산] (10,630 − 16,938 − 3,593 = −9,901 [계산, 원문 숫자와 일치])
+- RB40 목표 8만 달러, 25% 증가, 작년 약 6만 달러 — 원문(댓글 포함), 순자산 −3.7% — 원문
+- RB40 38세 은퇴 — 저자 소개란
+- RoG 2025년 4만 4,013달러 → 5,959만원 [계산], /12 = 3,668달러 → 약 497만원 [계산], 예산 4만 달러, 약 4천 달러 초과 — 원문
+- RoG 순자산 395만 8천 달러 → 53억 5,913만원 [계산], 집 30만 달러 포함 — 원문
+- RoG 2013년 33세 은퇴, 자녀 셋, 기름값 약 200달러, 약 5,000달러 — 원문
+- 75,200 / 44,013 = 1.71 → 약 1.7배 [계산]

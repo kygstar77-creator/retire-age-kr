@@ -153,5 +153,12 @@
   "task": "D",
   "did": "재고 블로그2·카페2→3+3(credit0927 카페 신용대출 은행별, saving0927 블로그 적금 7% 3개, sbdep0927 블로그 저축은행 예금) · apis.finlife 버그 2개 고침(상품코드 은행 간 충돌로 우리→농협·전북→신한 오표기, 신용대출 금리칸 전부 None) · 발행분 소급 대조: mortfix·dep3eok·jeonwol 영향 없음, reone0925 블로그 표에서 은행 6곳 누락 → fix-needed.md · 일감표 1번(안 부르는 도구 joinbody·joinui) oneoff/로 이동",
   "blocked": "crosscheck: OpenAI 키 없음, Gemini 429/503 → selfcheck·readcheck 0건으로 대체"
+ },
+ {
+  "date": "2026-09-27",
+  "hour": 21,
+  "task": "E",
+  "did": "재고 3+3 채움(블로그 fire0927 해외 파이어족 3가구 실제 지출·카페 fx0928 [금리·환율] 지난주 움직임, 둘 다 selfcheck·readcheck 0건) · 일감 1번 확인 완료(지시문 5개 beat 정상, 9/26 23:07 동시중단은 앱) · 네이버 공식블로그 어뷰징/스팸/AI 검색(새 글 AI탭 1편 메모리 반영) · ytlearn 5검색어 25채널 · cafelearn 재실측→rules.json 카페 말투 규칙 갱신(요 36%·1인칭 1%·물음표 0%) · offitable 15 전체 521곳 · nvread SyntaxWarning 수정 · mcp-registry 새 무료 커넥터 없음",
+  "blocked": "crosscheck 사실 대조 Gemini 429/503 — selfcheck로 대체"
  }
 ]

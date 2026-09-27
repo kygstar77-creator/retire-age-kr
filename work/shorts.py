@@ -57,7 +57,12 @@ def body(sz, bold=False):
 
 def fit_lines(dr, text, maxw, maxsz=150, minsz=54):
     """제목을 1~2줄로 나누고, 폭을 꽉 채우는 크기를 찾는다"""
-    words = text.split()
+    # 2026-09-28 화면 검증: '월 34만 9,700원'이 '월 34만 / 9,700원'으로 숫자 한가운데서 갈렸다.
+    # 가장 큰 글자로 두 줄을 채우려다 보니 '만·억' 뒤 공백을 줄바꿈 자리로 썼다. 한 금액은 한 낱말로 묶는다.
+    words = []
+    for w in text.split():
+        if words and re.match(r'^\d', w) and re.search(r'\d[억만]$', words[-1]): words[-1] += ' ' + w
+        else: words.append(w)
     for sz in range(maxsz, minsz - 1, -2):
         f = disp(sz, text); lines, cur = [], ''
         for w in words:

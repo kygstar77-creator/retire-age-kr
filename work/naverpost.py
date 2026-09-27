@@ -15,7 +15,7 @@
 #   카테고리: 경제지식      (블로그)
 #   태그: a, b, c           (블로그)
 #   게시판: 자유게시판       (카페)
-import sys, os, re, time, json, io, subprocess
+import sys, os, re, time, json, io, subprocess, datetime
 sys.stdout.reconfigure(encoding='utf-8')
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 
@@ -71,7 +71,18 @@ def launch(p, headless):
     return ctx
 
 def shot(page, name):
-    path = os.path.join(SHOTS, name + '.png'); page.screenshot(path=path, full_page=False); return path
+    """디버그용 스크린샷. 실패해도 하던 일을 멈추지 않는다.
+
+    2026-09-27: 공지 글 제목을 고치는 중에 Page.captureScreenshot 이 프로토콜 오류를 내며
+    터졌고, 그 예외가 등록까지 통째로 날렸다. 제목·본문은 이미 다 들어간 상태였다.
+    사진 한 장 못 찍은 것 때문에 글이 안 올라가면 안 된다."""
+    path = os.path.join(SHOTS, name + '.png')
+    try:
+        page.screenshot(path=path, full_page=False)
+        return path
+    except Exception as e:
+        print(f'스크린샷 실패({name}) — 넘어간다: {repr(e)[:80]}', flush=True)
+        return ''
 
 def logged_in(page, deep=True):
     """쿠키도 화면도 못 믿는다. **쓰기 권한이 살아 있는지**를 본다.
@@ -117,8 +128,41 @@ def read_pkg(pkg):
             if not os.path.exists(path): raise FileNotFoundError('사진 없음: ' + path)
             seq.append(('img', path))
         elif tok.endswith('.txt'):
-            seq.append(('text', open(os.path.join(pkg, tok), encoding='utf-8').read().strip()))
+            seq.append(('text', md_tables_to_lines(open(os.path.join(pkg, tok), encoding='utf-8').read().strip())))
     return title, seq, meta
+
+# 원고의 마크다운 표('| 연도 | 잠정실적 |', '|---|---|')는 편집기가 표로 바꾸지 않는다. 그대로 치면
+# 휴대폰에서 막대기 문자 덩어리로 보인다 — 2026-09-27 확인: 카페 글 114편 중 13편(124·114·110·104 …).
+# 표 그림이 바로 아래 따로 들어가므로 글 표를 지우고 싶어지지만, 네이버 AI 브리핑은 그림 속 글자를
+# 못 읽어서 글로도 남겨야 인용된다. 그래서 지우지 않고 사람이 읽는 줄로 바꾼다.
+#   | 연도 | 잠정실적 | 확정실적 |          2022: 잠정실적 10월 7일(금), 확정실적 10월 27일
+#   | 2022 | 10월 7일(금) | 10월 27일 |  →
+# 읽어 들이는 자리(read_pkg)에서 바꾸므로 발행·본문 검증·수정·발행 뒤 검증이 모두 같은 글을 본다.
+_MD_ROW = re.compile(r'^\s*\|.*\|\s*$')
+_MD_SEP = re.compile(r'^\s*\|?\s*:?-{3,}:?\s*(\|\s*:?-{3,}:?\s*)*\|?\s*$')
+
+def _cells(line):
+    return [c.strip() for c in line.strip().strip('|').split('|')]
+
+def md_tables_to_lines(text):
+    lines = text.splitlines(); out = []; i = 0
+    while i < len(lines):
+        if _MD_ROW.match(lines[i]):
+            block = []
+            while i < len(lines) and (_MD_ROW.match(lines[i]) or _MD_SEP.match(lines[i])):
+                block.append(lines[i]); i += 1
+            rows = [_cells(l) for l in block if not _MD_SEP.match(l)]
+            has_head = any(_MD_SEP.match(l) for l in block) and len(rows) >= 2
+            head, body = (rows[0], rows[1:]) if has_head else (None, rows)
+            for r in body:
+                if head and len(head) == len(r) and len(r) >= 2:
+                    rest = ', '.join(f'{h} {v}'.strip() for h, v in zip(head[1:], r[1:]) if v)
+                    out.append(f'{r[0]}: {rest}' if rest else r[0])
+                else:
+                    out.append(' · '.join(c for c in r if c))
+            continue
+        out.append(lines[i]); i += 1
+    return chr(10).join(out)
 
 def ensure_plain(frame):
     # 취소선·굵게 같은 서식 버튼이 켜져 있으면 끈다(첫 실행에서 취소선이 켜진 채 본문이 들어갔다)
@@ -254,21 +298,37 @@ def subject_keys(title):
             ks.add(w)                                            # 종목·ETF 티커
     return ks
 
+# 카페 매일 코너 머리말 — "[미국 증시 시황] 나스닥 …". 2026-09-27 카페를 24개 고정 코너로 바꿨다.
+# 매일 같은 코너가 같은 머리말로 나가는 것이 정상이라, 중복 가드가 머리말끼리 겹친다고 막으면
+# 둘째 날부터 매일 코너가 전부 멈춘다. 머리말은 떼고 비교하고, 같은 코너끼리는 비교하지 않는다.
+# 같은 날 같은 코너가 두 번 나가는 것은 already_up(정확한 제목)과 편성기(코너당 하루 1칸)가 막는다.
+CORNER_HEAD = re.compile(r'^\s*\[([^\]]{2,14})\]\s*')
+
+def strip_corner(title):
+    """(코너 이름 또는 None, 머리말을 뗀 제목)"""
+    m = CORNER_HEAD.match(title or '')
+    return (m.group(1).strip(), (title or '')[m.end():]) if m else (None, title or '')
+
 def head_key(title, n=8):
     """제목 앞머리(숫자·공백 뺀 앞 n글자). 숫자만 바꾼 같은 글을 잡는다.
     2026-09-24: '재산세 계산기는 9만 9천원인데 고지서는 29만 9천원'과
     '재산세 계산기는 26만원인데 고지서는 62만원'이 한 시간 간격으로 나갔다.
-    단지명도 티커도 안 겹쳐서 subject_keys로는 안 잡혔다. 앞머리는 '재산세계산기는'으로 같다."""
-    s = re.sub(r'[\s\d,%·\-~]+', '', title or '')
+    단지명도 티커도 안 겹쳐서 subject_keys로는 안 잡혔다. 앞머리는 '재산세계산기는'으로 같다.
+    코너 머리말은 떼고 본다 — 머리말이 앞머리를 차지하면 모든 코너 글이 같은 앞머리가 된다."""
+    _, body = strip_corner(title)
+    s = re.sub(r'[\s\d,%·\-~]+', '', body)
     return s[:n]
 
 def same_subject_today(kind, title):
     """최근 글 중 같은 대상·같은 주제를 다룬 것. 있으면 [(제목, URL, 겹친 것)]."""
+    corner, _ = strip_corner(title)
     mine = subject_keys(title)
     hk = head_key(title)
     hits = []
     for raw, url in _raw_recent(kind):
         if norm(raw) == norm(title): continue      # 같은 글(재발행)은 already_up이 따로 잡는다
+        if corner and strip_corner(raw)[0] == corner:
+            continue                                # 같은 매일 코너는 매일 나가는 게 정상이다
         both = mine & subject_keys(raw)
         if both: hits.append((raw, url, sorted(both)))
         elif len(hk) >= 6 and head_key(raw) == hk: hits.append((raw, url, [f'제목 앞머리 "{hk}"']))
@@ -377,8 +437,18 @@ def list_pending():
         title = open(os.path.join(pkg, 'title.txt'), encoding='utf-8').read().strip()
         if norm(title) in (cafe_t if kind == 'cafe' else blog_t):
             open(os.path.join(pkg, 'published.txt'), 'w', encoding='utf-8').write('already published (title matched)\n'); continue
-        out.append({'kind': kind, 'pkg': pkg, 'title': title, 'mtime': os.path.getmtime(os.path.join(pkg, 'order.txt'))})
-    out.sort(key=lambda x: x['mtime'])
+        row = {'kind': kind, 'pkg': pkg, 'title': title, 'mtime': os.path.getmtime(os.path.join(pkg, 'order.txt'))}
+        # 2026-09-27: 시효 있는 묶음(voo0928 배당락 9/28, mdiv0927 분배금 매수 마감 9/28)을 회차가 매번
+        # 손으로 앞세웠다. 오래된 순만 보면 시효가 지나 버린다. pkg/deadline.txt("YYYY-MM-DD HH:MM")가
+        # 있으면 마감 이른 순으로 맨 앞에 두고, 마감이 지났으면 expired로 표시해 발행 회차가 거른다.
+        dl = os.path.join(pkg, 'deadline.txt')
+        if os.path.exists(dl):
+            try:
+                row['deadline'] = open(dl, encoding='utf-8').read().strip()[:16]
+                row['expired'] = datetime.datetime.strptime(row['deadline'], '%Y-%m-%d %H:%M') < datetime.datetime.now()
+            except Exception: row.pop('deadline', None)
+        out.append(row)
+    out.sort(key=lambda x: (0, x['deadline']) if x.get('deadline') and not x.get('expired') else (1, str(x['mtime'])) if not x.get('expired') else (2, str(x['mtime'])))
     return out
 
 def pending_check(pkg):
@@ -756,10 +826,34 @@ def pick_board(want, boards):
     if FALLBACK in safe: return FALLBACK
     return safe[0]
 
+# 매일 코너 글 끝에 '매일 받아보는 법' 한 줄. 사장님 2026-09-27: "매일 연동해서 보내줄 수 있으면 더 좋지 신문배달하듯이".
+# 네이버 카페 구독은 가입해야 쓸 수 있다(공식 도움말 '구독 서비스 소개': "활동하는 카페에서 … 구독").
+# 그래서 이 한 줄이 '읽는 건 공짜, 매일 받아보려면 가입'이라는 가입 이유가 된다. 글은 전체공개 그대로다.
+# 버튼 이름은 네이버 공식 도움말('구독 설정/해제 방법') 표현을 그대로 쓴다 — "키워드로 쓴 글" 버튼을 ON.
+def _josa(word, with_final, without_final):
+    """마지막 글자 받침에 맞는 조사. '아파트 시황'은 / '오늘의 투표'는."""
+    ch = (word or ' ').strip()[-1]
+    if '가' <= ch <= '힣':
+        return with_final if (ord(ch) - 0xAC00) % 28 else without_final
+    return with_final
+
+def with_corner_tail(title, seq):
+    corner, _ = strip_corner(title)
+    if not corner: return seq
+    # 본문이 '~해요' 중심이라 그 말투에 맞춘다. 한 문장에 한 동작만 — 처음 쓴 문장은 '가입한 뒤 … 검색하고
+    # … 켜 두면 … 모입니다'로 절차 넷을 한 문장에 몰아넣은 설명서 말투였다(사장님 "구어체로 잘 작성하고 있지?").
+    # '왼쪽 위'는 네이버 공식 도움말의 버튼 위치 표현 그대로다.
+    # 매 글 끝에 붙으니 짧게 두 문장. 세 문장일 때 사장님 "불필요한 말은 빼라고".
+    line = (f'{corner}{_josa(corner, "은", "는")} 매일 이 시간에 올라와요. '
+            f'가입하고 카페에서 {corner}{_josa(corner, "을", "를")} 검색한 뒤 왼쪽 위 "키워드로 쓴 글"을 켜 두면 매일 받아볼 수 있어요.')
+    if any(k == 'text' and '키워드로 쓴 글' in (v or '') for k, v in seq): return seq
+    return list(seq) + [('text', line)]
+
 def post_cafe(page, pkg, wait=False):
     day_guard('cafe'); jitter('cafe'); rate_guard('cafe', wait)
     page = alive(page)
     title, seq, meta = read_pkg(pkg)
+    seq = with_corner_tail(title, seq)
     page.goto(f'https://cafe.naver.com/ca-fe/cafes/{CAFE_ID}/articles/write', wait_until='domcontentloaded')
     page.wait_for_timeout(6000)
     frame = page.main_frame
@@ -956,12 +1050,52 @@ def open_cafe_edit(page, article_id):
     close_popups(edit.main_frame)
     return edit
 
+def rewrite_saved(article_id, pkg, tries=4):
+    """고친 글이 실제로 저장됐나. 로그인 없이 글 API를 읽어 원고의 앞·뒤 문장이 들어 있는지 본다.
+    저장 직후엔 늦게 반영될 수 있어 몇 번 기다렸다 다시 읽는다."""
+    import urllib.request, html as _html
+    title, seq, meta = read_pkg(pkg)
+    texts = [v for k, v in seq if k == 'text' and v and v.strip()]
+    if not texts: return True, '확인할 글이 없다'
+    # 네이버 편집기는 문단 사이에 보이지 않는 문자(U+200B)를 끼운다. \s에 안 걸려서 지우지 않으면
+    # 문단을 넘는 비교가 전부 어긋난다 — 저장된 106을 '안 됨'으로 오판했다(2026-09-27).
+    norm_ = lambda s: re.sub(r'[\s​‌‍﻿]+', '', _html.unescape(re.sub(r'<[^>]+>', ' ', s or '')))
+    first = norm_(texts[0])[:30]
+    last = norm_(texts[-1])[-30:]
+    u = f'https://apis.naver.com/cafe-web/cafe-articleapi/v2.1/cafes/{CAFE_ID}/articles/{article_id}'
+    for i in range(tries):
+        try:
+            d = json.load(urllib.request.urlopen(urllib.request.Request(
+                u + f'?_={int(time.time())}', headers=UA), timeout=20))
+            art = (d.get('result') or {}).get('article') or {}
+            body = norm_(art.get('contentHtml', ''))
+            got_title = (art.get('subject') or '').strip()
+            if first in body and last in body:
+                return True, f'제목 "{got_title[:30]}" · 본문 앞·끝 문장 일치'
+        except Exception as e:
+            if i == tries - 1: return False, f'글을 못 읽음 {repr(e)[:80]}'
+        time.sleep(8)
+    return False, '실제 글에 새 원고 앞·끝 문장이 없다 — 저장이 안 됐다'
+
 def rewrite_cafe(page, article_id, pkg):
-    """본문이 빠진 채 올라간 글(2026-09-22 사고)을 같은 글 번호로 고친다: 수정 화면에서 본문을 비우고 묶음 순서대로 다시 넣는다."""
+    """본문이 빠진 채 올라간 글(2026-09-22 사고)을 같은 글 번호로 고친다: 수정 화면에서 본문을 비우고 묶음 순서대로 다시 넣는다.
+
+    제목도 묶음 것으로 맞춘다. 2026-09-26까지는 본문만 갈아 끼우고 제목은 건드리지 않았다 —
+    공지·가입인사 제목을 고치려고 돌렸더니 "성공"이라 찍고는 옛 제목이 그대로 남아 있었다."""
     title, seq, meta = read_pkg(pkg)
     edit = open_cafe_edit(page, article_id)
     frame = edit.main_frame
     if not frame.locator('.se-component').count(): raise RuntimeError('새 편집기가 아님(구 편집기 글은 rewrite 미지원)')
+    tl = edit.locator('textarea[placeholder*="제목"], input[placeholder*="제목"]').first
+    if tl.count():
+        before = (tl.input_value() or '').strip()
+        if before != title:
+            tl.click(); tl.fill(title); edit.wait_for_timeout(300)
+            after = (tl.input_value() or '').strip()
+            print(f'제목 바꿈: "{before[:30]}" -> "{after[:30]}"' if after == title
+                  else f'제목 바꾸기 실패 - 그대로 "{after[:30]}"')
+    else:
+        print('제목 칸을 못 찾았다 - 본문만 고친다')
     click_last_paragraph(frame)
     edit.keyboard.press('Control+A'); edit.wait_for_timeout(200); edit.keyboard.press('Delete'); edit.wait_for_timeout(800)
     left = frame.locator('.se-component.se-image').count()
@@ -1058,6 +1192,8 @@ def main():
             row = {k: v for k, v in x.items() if k != 'mtime'}
             if check:
                 row['block'] = pending_block(x['kind'], x['pkg'], x['title'])
+                if x.get('expired') and not row['block']:
+                    row['block'] = '보류: 시효 지남(deadline.txt ' + x['deadline'] + ')'
             row['check'] = pending_check(x['pkg'])
             print(json.dumps(row, ensure_ascii=False))
         return
@@ -1131,7 +1267,15 @@ def main():
                     print(('OK  ' if r['ok'] else 'BAD ') + os.path.basename(os.path.dirname(pk)), json.dumps(r, ensure_ascii=False))
                 sys.exit(1 if bad else 0)
             if cmd == 'rewrite':                      # python work/naverpost.py rewrite 45 work/research/sidejob/pkg
-                print(rewrite_cafe(page, int(sys.argv[2]), os.path.abspath(sys.argv[3]))); return
+                aid, pkg = int(sys.argv[2]), os.path.abspath(sys.argv[3])
+                print(rewrite_cafe(page, aid, pkg))
+                # 저장됐는지 실제 글을 다시 읽어 본다. 2026-09-27: 105·106을 같은 방식으로 고쳤는데
+                # 둘 다 주소를 찍고 성공처럼 끝났고, 실제로는 106만 저장되고 105는 옛 본문 그대로였다.
+                # 편집기 안 글자 수(424/424)는 '넣었다'는 증거일 뿐 '저장됐다'는 증거가 아니다.
+                ok, why = rewrite_saved(aid, pkg)
+                print(('저장 확인: ' if ok else '저장 안 됨: ') + why)
+                if not ok: sys.exit(3)
+                return
             if cmd == 'public':                       # python work/naverpost.py public 35 36 37
                 for aid in sys.argv[2:]:
                     try: print(aid, cafe_make_public(page, aid))

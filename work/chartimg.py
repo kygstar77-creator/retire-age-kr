@@ -158,6 +158,10 @@ def bar_chart(title, pairs, out, unit='', hi=3, short=False, source='', dec=None
                 fill=(14, 15, 20) if inside else (c if c != BAR else WHITE))
     if source: dr.text((pad, H - int(H * 0.062)), source[:60], font=f_body(int(W * 0.024)), fill=DIM)
     os.makedirs(os.path.dirname(os.path.abspath(out)), exist_ok=True); im.save(out)
+    # 어느 막대를 밝혔는지 옆에 남긴다 → shortscript check 가 장면 글자 숫자와 맞춰 본다. 2026-09-28 nb_old(머리글 17.3%인데
+    # 41.3·62.4가 노랑)·pl_price(글에 189.67인데 207.18이 노랑) 두 번 모두 프레임을 보고서야 잡았다.
+    json.dump({'lit': [vstrs[i] for i in sorted(on)], 'dim': [vstrs[i] for i in range(n) if i not in on]},
+              open(os.path.splitext(out)[0] + '.lit.json', 'w', encoding='utf-8'), ensure_ascii=False)
     print('차트', out, f'{W}x{H}', f'{n}개 항목')
     return out
 

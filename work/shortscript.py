@@ -57,6 +57,18 @@ def check(path, facts_path=None):
         img = s.get('image')
         if not img: bad.append(f'{i}번 image 없음 — 글자만 있는 장면은 만들지 않는다')
         elif not os.path.exists(img): bad.append(f'{i}번 image 파일이 없다: {img}')
+        else:
+            # 화면 글자(head·lines)가 짚는 숫자가 차트에서 회색이고, 밝힌 막대 숫자는 글자에 하나도 없으면 눈이 엉뚱한 막대로 간다.
+            # 2026-09-28 nb_old·pl_price 두 번 프레임에서야 잡혔다. chartimg.py 가 남기는 <그림>.lit.json 으로 미리 본다.
+            side = os.path.splitext(img)[0] + '.lit.json'
+            if os.path.exists(side):
+                lit = json.load(open(side, encoding='utf-8'))
+                val = lambda xs: {float(x.replace(',', '')) for t in xs for x in nums(t) if x.replace(',', '').replace('.', '')}
+                on, off = val(lit.get('lit', [])), val(lit.get('dim', []))
+                # head 가 차트 숫자를 짚으면 head 로만 본다(가장 크게 박히는 글자다). 안 짚으면 lines 까지 본다.
+                shown = val([h]) if val([h]) & (on | off) else val([h, *ls])
+                if shown & off and not shown & on:
+                    bad.append(f'{i}번 글자가 짚는 숫자 {sorted(shown & off)}는 차트에서 회색, 밝힌 막대는 {lit.get("lit")} — chartimg --hi 를 고친다')
         for w in BAN:
             if w in h or w in say or any(w in l for l in ls): bad.append(f'{i}번에 금지어 "{w}"')
         if fnums:

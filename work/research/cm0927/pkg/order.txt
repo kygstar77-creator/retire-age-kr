@@ -1,0 +1,17 @@
+블로그 발행 순서
+제목: title.txt
+카테고리: 부동산
+태그: 치앙마이, 치앙마이한달살기, 님만해민, 치앙마이콘도, 치앙마이월세, 태국은퇴비자, DTV비자, 태국LTR비자, 해외은퇴, 파이어족, 해외살기, 치앙마이생활비, 태국장기체류
+img/01.png
+b00.txt
+b01.txt
+img/02.png
+b02.txt
+b05.txt
+img/06.png
+b03.txt
+img/03.png
+img/04.png
+b04.txt
+img/05.png
+b06.txt

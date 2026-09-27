@@ -186,7 +186,8 @@ def section_rotation():
     forms = {'1': 0, '2': 0, '3': 0, '4': 0}; axes = {k: 0 for k in axisname.CANON}; offspec = []
     for pkg in glob.glob(os.path.join(base, '*', 'pkg')):
         pub = os.path.join(pkg, 'published.txt'); od = os.path.join(pkg, 'order.txt')
-        stamp = pub if os.path.exists(pub) else (od if os.path.exists(od) else None)
+        # 2026-09-27: 보류 묶음도 order.txt를 오늘 고치면 세어져 부동산이 '0칸'으로 나왔다. 발행한 것만 센다.
+        stamp = pub if os.path.exists(pub) else None
         if not stamp or datetime.date.fromtimestamp(os.path.getmtime(stamp)).isoformat() != today: continue
         for name, table in (('form.txt', forms), ('axis.txt', axes)):
             p = os.path.join(pkg, name)
@@ -199,7 +200,10 @@ def section_rotation():
     names = {'1': '① 원문 정리형', '2': '② 계산 사례형', '3': '③ 일정형', '4': '④ 통계·기록형'}
     nxt = min(forms, key=lambda k: forms[k])
     print('=== 다음 형식: %s   (오늘 %s)' % (names[nxt], ' '.join('%s=%d' % (names[k][:1], v) for k, v in forms.items())))
-    print('=== 축 남은 칸(하루 6편 상한): %s' % ' · '.join('%s %d' % (k, max(0, 6 - v)) for k, v in axes.items()))
+    # 상한 6은 하루 24편(카페만) 시절 값이다. 2026-09-25부터 카페 24 + 블로그 18 = 42편이라
+    # 네 축에 6씩이면 24편에서 막혀 편성표 슬롯(B11 손품 등)과 부딪친다. 42/4를 올림해 11로 둔다.
+    cap = -(-(24 + 18) // 4)
+    print('=== 축 남은 칸(하루 %d편 상한, 블로그+카페 발행분): %s' % (cap, ' · '.join('%s %d' % (k, max(0, cap - v)) for k, v in axes.items())))
     print('    묶음에 pkg/form.txt(1~4)·pkg/axis.txt(세금연금|종목|부동산|배당현금흐름)를 만들어야 여기 잡힌다.\n')
     if offspec:
         print('    !! 축 이름이 규격 밖이라 안 세어진 묶음: %s — axis.txt를 네 이름 중 하나로 고친다.'

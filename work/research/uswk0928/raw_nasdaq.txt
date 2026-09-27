@@ -1,0 +1,22 @@
+2026-09-28 JEF Jefferies Financial Group Inc. time-after-hours fq Aug/2026 est $1.04 n 2 lastyr $1.05 9/29/2025
+2026-09-28 MTN Vail Resorts, Inc. time-after-hours fq Jul/2026 est ($5.37) n 6 lastyr ($5.08) 9/29/2025
+2026-09-29 CCL Carnival Corporation Ltd. time-pre-market fq Aug/2026 est $1.36 n 7 lastyr $1.43 9/29/2025
+2026-09-29 KMX CarMax Inc time-pre-market fq Aug/2026 est $0.67 n 7 lastyr $0.64 9/25/2025
+2026-09-30 MU Micron Technology, Inc. time-after-hours fq Aug/2026 est $31.24 n 10 lastyr $2.86 9/23/2025
+2026-09-30 JBL Jabil Inc. time-pre-market fq Aug/2026 est $3.86 n 4 lastyr $3.12 9/25/2025
+2026-09-30 FDS FactSet Research Systems Inc. time-pre-market fq Aug/2026 est $4.32 n 7 lastyr $4.05 9/18/2025
+2026-09-30 CAG ConAgra Brands, Inc. time-pre-market fq Aug/2026 est $0.31 n 5 lastyr $0.39 10/01/2025
+2026-09-30 CALM Cal-Maine Foods, Inc. time-pre-market fq Aug/2026 est  n 2 lastyr $4.12 N/A
+2026-10-01 ACN Accenture plc time-pre-market fq Aug/2026 est $3.19 n 7 lastyr $3.03 9/25/2025
+2026-10-01 NKE Nike, Inc. time-after-hours fq Aug/2026 est $0.44 n 12 lastyr $0.49 9/30/2025
+2026-10-01 MKC McCormick & Company, Incorporated time-pre-market fq Aug/2026 est $0.75 n 6 lastyr $0.85 10/07/2025
+DIV 2026-09-28 {"companyName": "Keurig Dr Pepper Inc. Common Stock", "symbol": "KDP", "dividend_Ex_Date": "9/28/2026", "payment_Date": "10/09/2026", "record_Date": "9/28/2026", "dividend_Rate": 0.23, "indicated_Annual_Dividend": 0.92, "announcement_Date": "9/26/2026"}
+DIV 2026-09-30 {"companyName": "AGNC Investment Corp. Common Stock", "symbol": "AGNC", "dividend_Ex_Date": "9/30/2026", "payment_Date": "10/09/2026", "record_Date": "9/30/2026", "dividend_Rate": 0.12, "indicated_Annual_Dividend": 1.44, "announcement_Date": "9/09/2026"}
+DIV 2026-09-30 {"companyName": "Host Hotels & Resorts, Inc. Common Stock", "symbol": "HST", "dividend_Ex_Date": "9/30/2026", "payment_Date": "10/15/2026", "record_Date": "9/30/2026", "dividend_Rate": 0.2, "indicated_Annual_Dividend": 0.8, "announcement_Date": "9/15/2026"}
+DIV 2026-09-30 {"companyName": "Mondelez International, Inc. Class A Common Stock", "symbol": "MDLZ", "dividend_Ex_Date": "9/30/2026", "payment_Date": "10/14/2026", "record_Date": "9/30/2026", "dividend_Rate": 0.52, "indicated_Annual_Dividend": 2.0, "announcement_Date": "7/28/2026"}
+DIV 2026-09-30 {"companyName": "Steel Dynamics, Inc.", "symbol": "STLD", "dividend_Ex_Date": "9/30/2026", "payment_Date": "10/09/2026", "record_Date": "9/30/2026", "dividend_Rate": 0.53, "indicated_Annual_Dividend": 2.12, "announcement_Date": "8/14/2026"}
+DIV 2026-09-30 {"companyName": "Willis Towers Watson Public Limited Company Ordinary Shares", "symbol": "WTW", "dividend_Ex_Date": "9/30/2026", "payment_Date": "10/15/2026", "record_Date": "9/30/2026", "dividend_Rate": 0.96, "indicated_Annual_Dividend": 3.84, "announcement_Date": "8/27/2026"}
+DIV 2026-10-02 {"companyName": "Cisco Systems, Inc. Common Stock (DE)", "symbol": "CSCO", "dividend_Ex_Date": "10/02/2026", "payment_Date": "10/21/2026", "record_Date": "10/02/2026", "dividend_Rate": 0.42, "indicated_Annual_Dividend": 1.68, "announcement_Date": "8/12/2026"}
+DIV 2026-10-02 {"companyName": "Morningstar, Inc. Common Stock", "symbol": "MORN", "dividend_Ex_Date": "10/02/2026", "payment_Date": "10/30/2026", "record_Date": "10/02/2026", "dividend_Rate": 0.5, "indicated_Annual_Dividend": 2.0, "announcement_Date": "9/18/2026"}
+DIV 2026-10-02 {"companyName": "Roper Technologies, Inc. Common Stock", "symbol": "ROP", "dividend_Ex_Date": "10/02/2026", "payment_Date": "10/21/2026", "record_Date": "10/02/2026", "dividend_Rate": 0.91, "indicated_Annual_Dividend": 3.64, "announcement_Date": "8/06/2026"}
+DIV 2026-10-02 {"companyName": "Royal Gold, Inc. Common Stock", "symbol": "RGLD", "dividend_Ex_Date": "10/02/2026", "payment_Date": "10/16/2026", "record_Date": "10/02/2026", "dividend_Rate": 0.475, "indicated_Annual_Dividend": 1.9, "announcement_Date": "8/18/2026"}

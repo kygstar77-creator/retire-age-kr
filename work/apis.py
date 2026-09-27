@@ -137,7 +137,10 @@ def finlife(kind='deposit', group='020000', page=1):
         b = base.get(o['fin_prdt_cd'], {})
         out.append({'은행': b.get('kor_co_nm'), '상품': b.get('fin_prdt_nm'),
                     '기간': o.get('save_trm'), '금리': o.get('intr_rate'), '최고금리': o.get('intr_rate2'),
-                    '대출최저': o.get('lend_rate_min'), '대출최고': o.get('lend_rate_max'), '공시월': b.get('dcls_month')})
+                    '대출최저': o.get('lend_rate_min'), '대출최고': o.get('lend_rate_max'), '공시월': b.get('dcls_month'),
+                    # 2026-09-27: 주담대는 한 상품에 줄이 여럿인데 고정/변동·상환방식·담보를 빼면 어느 줄이 무엇인지 모른다
+                    '금리유형': o.get('lend_rate_type_nm') or o.get('intr_rate_type_nm'),
+                    '상환방식': o.get('rpay_type_nm'), '담보': o.get('mrtg_type_nm')})
     return out
 
 def vworld_coord(address, road=None):

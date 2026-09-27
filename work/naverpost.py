@@ -613,6 +613,15 @@ def jitter(kind):
     print(f'{kind} 발행 전 {s//60}분 {s%60}초 쉰다(정각 몰림 방지)', flush=True)
     time.sleep(s)
 
+def alive(page):
+    """쉬는 동안 탭이 죽었으면 새 탭을 연다. 2026-09-27 12시 카페: jitter로 16분 31초를 쉬는 사이
+    열어 둔 탭이 'Page crashed'로 죽어 발행이 통째로 실패했다. 쉬는 건 파이썬이지만 탭은 그동안 열려 있다."""
+    try:
+        page.evaluate('1'); return page
+    except Exception:
+        print('쉬는 동안 탭이 죽었다 — 새 탭으로 연다', flush=True)
+        return page.context.new_page()
+
 def rate_guard(kind, wait=False):
     if os.environ.get('NAVER_FORCE') == '1': return
     gap = gap_min(kind)
@@ -640,6 +649,7 @@ def with_cafe_tail(seq):
 
 def post_blog(page, pkg, wait=False):
     jitter('blog'); rate_guard('blog', wait)
+    page = alive(page)
     title, seq, meta = read_pkg(pkg)
     seq = with_cafe_tail(seq)
     page.goto(f'https://blog.naver.com/{BLOG_ID}/postwrite', wait_until='domcontentloaded')
@@ -748,6 +758,7 @@ def pick_board(want, boards):
 
 def post_cafe(page, pkg, wait=False):
     day_guard('cafe'); jitter('cafe'); rate_guard('cafe', wait)
+    page = alive(page)
     title, seq, meta = read_pkg(pkg)
     page.goto(f'https://cafe.naver.com/ca-fe/cafes/{CAFE_ID}/articles/write', wait_until='domcontentloaded')
     page.wait_for_timeout(6000)

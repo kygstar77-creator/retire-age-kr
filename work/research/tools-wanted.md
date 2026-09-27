@@ -617,3 +617,4 @@ mid·bot 칸에 들어앉아 text_mid 가 0.0884 → 0.2005 로 튄다. thumbsta
   - 카페 83 "서울 오피스텔 월세 수익률 6.09%와 3.00%"(offi0924), 블로그 224422471354 "실거래로 계산한 서울 오피스텔 월세 수익률 순위"(offi0925) — 같은 계산을 썼다. 서울만 다시 재 봐야 함
   - seoulpyeong0926(5년 전 대비)은 price_change()로 2021↔2026을 일부러 견준 것이라 해당 없음
 - **사장님이 정할 것**: 이미 나간 세 글을 고쳐 다시 올릴지(naverpost.py rewrite), 내릴지. 루틴은 verify BAD일 때만 rewrite하게 돼 있어 손대지 않았다.
+- 2026-09-27 13시 improve: Nasdaq 경제지표 캘린더 API(api.nasdaq.com/api/calendar/economicevents?date=D)는 D의 전날 지표를 돌려준다(date=10-02에 목요일 실업수당·ISM). 캘린더 글을 쓸 때 날짜를 하루 당겨 읽거나 BLS·BEA 발표 일정 원문으로 대조해야 한다. 무료·키 없음, 사람 손 불필요 — 캘린더 도구에 보정을 넣을 것.

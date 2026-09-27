@@ -1,0 +1,17 @@
+블로그 발행 순서
+제목: title.txt
+카테고리: 미국주식
+태그: 코어브릿지, CRBG, 코어브릿지파이낸셜, 에퀴터블, EQH, 미국보험주, 생명보험주, 미국배당주, 합병, 일본생명, 배당금, 미국주식, 해외주식세금
+b00.txt
+img/01.png
+b01.txt
+img/02.png
+b02.txt
+img/03.png
+b03.txt
+img/04.png
+b04.txt
+img/05.png
+b05.txt
+img/06.png
+b06.txt

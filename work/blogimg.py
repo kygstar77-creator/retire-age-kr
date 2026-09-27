@@ -132,3 +132,25 @@ def steps(path, title, items, note=None, src=None):
         y+=10
         for ln in sl: d.text((pad,y),ln,font=sf,fill=(150,156,168)); y+=22
     im.save(path); return path
+
+def line(path, title, xs, ys, marks=(), unit='', src=None):
+    """주가·금리 같은 시계열 선 그래프. marks=[(x, y, '글자', 'red'|'ink'), ...] 로 점과 글자를 찍는다.
+    2026-09-27: 종목 글마다 주가 차트를 회차가 즉석 스크립트로 그리고 있었고, matplotlib 이 안 깔려 있어
+    그 자리에서 설치했다. 한 곳에 모아 둔다. (pip install matplotlib)"""
+    import matplotlib; matplotlib.use('Agg')
+    import matplotlib.pyplot as plt
+    from matplotlib import font_manager as fm
+    fp = fm.FontProperties(fname=os.path.join(FD, 'pd500.ttf')); fb = fm.FontProperties(fname=os.path.join(FD, 'pd700.ttf'))
+    fig, ax = plt.subplots(figsize=(9, 5.2), dpi=100)
+    ax.plot(xs, ys, color='#2060e0', lw=2)
+    for i, (x, y, t, c) in enumerate(marks):
+        col = '#d64541' if c == 'red' else '#181c26'
+        ax.scatter([x], [y], color=col, zorder=5)
+        ax.annotate(t, (x, y), xytext=(-12, 12 if i % 2 else -22), textcoords='offset points', ha='right',
+                    fontproperties=fb, fontsize=13, color=col)
+    ax.set_title(title, fontproperties=fb, fontsize=19, loc='left', pad=14)
+    for s in ('top', 'right'): ax.spines[s].set_visible(False)
+    ax.grid(axis='y', color='#e2e6ee')
+    if unit: ax.set_ylabel(unit, fontproperties=fp, fontsize=12)
+    if src: fig.text(0.01, 0.01, src, fontproperties=fp, fontsize=11, color='#626a7a')
+    plt.tight_layout(rect=(0, 0.03, 1, 1)); plt.savefig(path); plt.close(fig)

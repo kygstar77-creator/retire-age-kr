@@ -320,6 +320,13 @@ def check(text, title=None):
     # 숫자가 틀린 채 나가는 것은 가장 큰 사고라 발행 전에 반드시 걸러야 한다.
     for m in re.finditer(r'\d\.\s+\d', text):
         out.append(('숫자깨짐', 0, f'숫자가 소수점에서 갈라졌다 · …{text[max(0, m.start() - 14):m.end() + 14]}…'))
+    # 편집기가 못 알아듣는 것. 2026-09-27 09시: 카페 묶음 출처 줄에 URL을 맨몸으로 두고 **굵게**를 적었더니
+    # 편집기가 링크 카드를 끼워 넣고 글감 창이 열린 채 등록이 30초 안에 안 끝나 발행이 실패했다.
+    # 화면에도 별표 두 개가 그대로 찍혔다. 출처는 이름만 적는다(맺음말은 출처만).
+    for m in re.finditer(r'https?://\S+', text):
+        out.append(('편집기', 0, f'본문에 URL을 그대로 두면 링크 카드가 끼어든다 — 출처 이름만 · {m.group(0)[:50]}'))
+    for m in re.finditer(r'\*\*[^*\n]+\*\*', text):
+        out.append(('편집기', 0, f'마크다운 굵게는 편집기에서 별표로 찍힌다 · {m.group(0)[:40]}'))
     for i, w, s in acronyms(text):
         out.append(('설명없음', i, f'"{w}"가 처음 나오는데 무엇인지 안 밝혔다 · {s}'))
     # 같은 어미가 세 문장 연속이면 읽는 리듬이 죽는다

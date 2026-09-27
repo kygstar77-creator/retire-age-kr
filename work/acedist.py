@@ -22,10 +22,18 @@ def get(url):
     return json.load(urllib.request.urlopen(urllib.request.Request(url, headers=H), timeout=30))
 
 
+KNOWN = [('402970', 'K55101DN4471', 'ACE 미국배당다우존스')]
+
+
 def find_fund(want):
     """이름 조각으로 펀드코드를 찾는다. 펀드코드를 그대로 줬으면 그대로 쓴다."""
     if want.startswith('K55') and len(want) >= 10:
         return want, want
+    # 검색 API가 이름으로 못 찾는 일이 있다(2026-09-28: 도움말이 예로 든 '미국배당다우존스'가 실패).
+    # 이미 아는 펀드는 검색 전에 바로 쓴다. 종목코드(402970)로 줘도 된다.
+    for key, cd, nm in KNOWN:
+        if want in nm or want == key:
+            return cd, nm
     q = urllib.parse.quote(want)
     for path in (f'/funds?searchValue={q}&page=1&size=50', f'/funds/search?searchValue={q}'):
         try:

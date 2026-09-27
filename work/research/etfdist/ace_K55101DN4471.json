@@ -275,20 +275,20 @@
   "fundDur": 0,
   "fundYtm": 0.0087067259,
   "listingDate": "20211021",
-  "total_FEE": 0.01,
-  "sal_FEE": 0.0005,
-  "group_FEE": 0.0005,
-  "trust_FEE": 0.005,
-  "office_FEE": 0.004,
-  "clpr": 3.2,
+  "clpr": 3.21,
   "isOpenBaseIndexLinkUrl": true,
   "trcm_CD": "001300",
   "trcm_Name": "한국씨티은행",
   "ofwr_TRCM_CD": "080003",
   "ofwr_TRCM_Name": "신한펀드파트너스",
+  "total_FEE": 0.01,
   "aplp_FEE": 0.0005,
   "set_UNIT": 100000,
   "min_TR_UNIT": 1,
-  "isExistDIVIDENDHistory": true
+  "isExistDIVIDENDHistory": true,
+  "group_FEE": 0.0005,
+  "trust_FEE": 0.005,
+  "office_FEE": 0.004,
+  "sal_FEE": 0.0005
  }
 }

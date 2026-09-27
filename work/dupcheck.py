@@ -12,6 +12,7 @@ import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import naverpost as np
 
+GENERIC_HEAD = {'오늘의', '오늘', '이번', '다음', '지난', '내일', '이번주', '다음주', '지난주', '올해', '내년', '서울', '미국', '한국'}
 RESEARCH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research')
 
 
@@ -45,6 +46,13 @@ def local_hits(kind, cand, days=14):
             out.append((title, url, '제목·첫 조각에 있음' if flat in lead else '본문에 %d번' % n_body))
         elif len(words) >= 2 and sum(w in title for w in words) * 4 >= len(words) * 3:
             out.append((title, url, '제목 낱말 %d/%d 겹침' % (sum(w in title for w in words), len(words))))
+        # 2026-09-27 23시 회차: 카페 후보 "리얼티인컴 O 배당 이력 배당락 지급일"이 '새것'으로 나왔는데
+        # 카페에 리얼티인컴 글이 이미 셋(o0925·odiv136·realtyo) 있었다. 제목 낱말이 3/5라 3/4 기준에 못 미쳤다.
+        # 후보의 첫 낱말은 대상(종목·상품) 자체다. 일반어가 아니면, 일주일 안에 나간 제목에
+        # (띄어쓰기 무시) 들어 있을 때 겹친 것으로 본다. '이번'·'오늘의' 같은 머리말은 대상이 아니라 뺀다.
+        elif (words and words[0] not in GENERIC_HEAD
+              and time.time() - os.path.getmtime(pub) <= 7 * 86400 and words[0] in re.sub(r'\s+', '', title)):
+            out.append((title, url, '일주일 안에 같은 대상(%s)이 제목에 있음' % words[0]))
     return out
 
 

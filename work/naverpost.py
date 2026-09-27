@@ -680,7 +680,10 @@ def jitter(kind):
     if os.environ.get('NAVER_FORCE') == '1': return
     import random
     s = random.randint(0, 17 * 60)
-    print(f'{kind} 발행 전 {s//60}분 {s%60}초 쉰다(정각 몰림 방지)', flush=True)
+    # 2026-09-28 03시: 회차가 `timeout 900`으로 감싸 돌렸는데 15분 16초를 뽑아 쉬는 중에 죽었다.
+    # 출력엔 에러가 없고 published.txt만 없어 한참 헤맸다. 잠금 대기 15분 + 여기 17분 + 발행이라
+    # 바깥에서 시간 제한을 걸려면 35분 넘게 준다(아니면 백그라운드로 돌린다).
+    print(f'{kind} 발행 전 {s//60}분 {s%60}초 쉰다(정각 몰림 방지) — 바깥 timeout은 35분 이상', flush=True)
     time.sleep(s)
 
 def alive(page):

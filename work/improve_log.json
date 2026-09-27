@@ -146,5 +146,12 @@
   "task": "C",
   "did": "재고 카페 1편 채움(rettax0927 퇴직금 연금수령 21년차 50%, 소득세법 129조 원문·직접 계산, selfcheck·readcheck 0건) → 3+3. divchange.py: 보통주/ETF 분리 출력, Nasdaq 이력 빈 종목 Yahoo 대체(9/27 보통주 11건 중 10건 해당), ADR 표시, rules.json 규칙 1개",
   "blocked": "Nasdaq 배당 캘린더에 NYSE 보통주가 들어오는지 미확인(build-queue에 올림) · selfloop 1순위(죽은 회차)는 앱 동시 중단 건이라 지시문 수정 없음"
+ },
+ {
+  "date": "2026-09-27",
+  "hour": 19,
+  "task": "D",
+  "did": "재고 블로그2·카페2→3+3(credit0927 카페 신용대출 은행별, saving0927 블로그 적금 7% 3개, sbdep0927 블로그 저축은행 예금) · apis.finlife 버그 2개 고침(상품코드 은행 간 충돌로 우리→농협·전북→신한 오표기, 신용대출 금리칸 전부 None) · 발행분 소급 대조: mortfix·dep3eok·jeonwol 영향 없음, reone0925 블로그 표에서 은행 6곳 누락 → fix-needed.md · 일감표 1번(안 부르는 도구 joinbody·joinui) oneoff/로 이동",
+  "blocked": "crosscheck: OpenAI 키 없음, Gemini 429/503 → selfcheck·readcheck 0건으로 대체"
  }
 ]

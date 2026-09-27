@@ -131,16 +131,26 @@ def finlife(kind='deposit', group='020000', page=1):
           'rent': 'rentHouseLoanProductsSearch', 'credit': 'creditLoanProductsSearch'}[kind]
     d = _j(f'http://finlife.fss.or.kr/finlifeapi/{ep}.json?auth={k}&topFinGrpNo={group}&pageNo={page}').get('result', {})
     if d.get('err_cd') != '000': return []
-    base = {b['fin_prdt_cd']: b for b in d.get('baseList', [])}
+    # 2026-09-27 19시: 상품코드는 은행끼리 겹친다(우리은행·농협 둘 다 CR0001A). 코드만으로 붙이면
+    # 뒤에 온 은행 이름이 덮어써 우리은행 금리가 '농협'으로 찍혔다. 회사코드까지 같이 키로 쓴다.
+    base = {(b.get('fin_co_no'), b['fin_prdt_cd']): b for b in d.get('baseList', [])}
     out = []
     for o in d.get('optionList', []):
-        b = base.get(o['fin_prdt_cd'], {})
+        b = base.get((o.get('fin_co_no'), o['fin_prdt_cd']), {})
         out.append({'은행': b.get('kor_co_nm'), '상품': b.get('fin_prdt_nm'),
                     '기간': o.get('save_trm'), '금리': o.get('intr_rate'), '최고금리': o.get('intr_rate2'),
                     '대출최저': o.get('lend_rate_min'), '대출최고': o.get('lend_rate_max'), '공시월': b.get('dcls_month'),
                     # 2026-09-27: 주담대는 한 상품에 줄이 여럿인데 고정/변동·상환방식·담보를 빼면 어느 줄이 무엇인지 모른다
                     '금리유형': o.get('lend_rate_type_nm') or o.get('intr_rate_type_nm'),
                     '상환방식': o.get('rpay_type_nm'), '담보': o.get('mrtg_type_nm')})
+        # 2026-09-27 19시: 신용대출은 금리 칸 이름이 전혀 달라(crdt_grad_*) 위 칸이 전부 None으로 나왔다.
+        # 신용점수 구간(finlife 개인신용대출 화면 열 순서로 확인): 1=900점 초과, 4=801~900, 5=701~800,
+        # 6=601~700, 10=501~600, 11=401~500, 12=301~400, 13=300 이하, avg=평균.
+        # 값은 공시 직전월 신규 취급분의 가중평균. 금리구분은 대출금리/기준금리/가산금리/가감조정금리.
+        if kind == 'credit':
+            out[-1].update({'상품': (b.get('fin_prdt_nm') or '').replace('\n', ''), '상품유형': b.get('crdt_prdt_type_nm'),
+                            '신용평가사': b.get('cb_name'), '금리구분': o.get('crdt_lend_rate_type_nm'),
+                            **{f'등급{g}': o.get(f'crdt_grad_{g}') for g in ('1', '4', '5', '6', '10', '11', '12', '13', 'avg')}})
     return out
 
 def vworld_coord(address, road=None):

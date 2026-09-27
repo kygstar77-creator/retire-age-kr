@@ -1,0 +1,28 @@
+# 사실표 — 팔란티어(PLTR) 한 종목 분석 (2026-09-28 02시 작성, 카페 K02 — 애플은 이미 두 번 써서 검색수로 교체: 팔란티어 주가 138,830/월)
+
+[오늘 찾은 것]
+1) 2026-08-03 팔란티어 2분기 실적 발표 SEC 8-K 첨부 99.1 원문 확인 https://www.sec.gov/Archives/edgar/data/0001321655/000132165526000039/a2026q2ex991pressrelease.htm
+2) 2026-08-03 CNBC "Palantir soars 12% on blowout quarter" (시간 외 기준, 숫자 안 씀) https://www.cnbc.com/2026/08/03/palantir-pltr-earnings-q2-2026.html
+3) 2026-09-23 FX Leaders "PLTR Holds Near $185" (숫자 안 씀) https://www.fxleaders.com/news/2026/09/23/palantir-stock-forecast-pltr-ai-growth/
+4) 2026-08-26 24/7 Wall St. "Palantir Stock Could Be in for a Big September" (숫자 안 씀) https://247wallst.com/investing/2026/08/26/palantir-stock-could-be-in-for-a-big-september-heres-why/
+5) Benzinga Korea "팔란티어 주가를 괴롭히는 요인은?" — 52주 최저 106.37(장중) 언급, 원인 해석은 안 씀 https://kr.benzinga.com/
+6) businesswire 2026-07-13 2분기 실적 발표일 공지
+
+[실적 — SEC 8-K 원문]
+- 2분기 매출 1,935,464천 달러(19억 3,500만), 전년 대비 +93%
+- 미국 기업 7억 6,400만 +149% · 미국 정부 8억 900만 +90% · 미국 합계 15억 7,300만 +115%
+- 미국 밖 = 1,935 - 1,573 = 3억 6,200만 [계산] → 비중 18.7% (다섯 중 하나 미만)
+- GAAP 순이익 1,061,890천(10억 6,000만) → 매출 대비 54.9% [계산]
+- 2026년 매출 가이던스 81억 5,000만~81억 5,800만
+- 발표일 2026-08-03(장 마감 뒤)
+
+[시세 — 야후 chart API, 2026-09-28 02시 조회]
+- 9/25 종가 189.67 · 6/25 종가 107.27(1년 최저 종가) → +76.8%
+- 2025/12/31 177.75 → 올해 +6.7%
+- 1년 최고 종가 2025/11/03 207.18 → 지금 -8.5%
+- 8/3 125.65 → 8/4 162.66 = +29.5%
+- 3분기(6/30→9/25): PLTR +62.6, CRM +49.4, MSFT +38.4, NOW +36.6, ADBE +14.9, ORCL -6.4 / 올해: PLTR +6.7, MSFT +6.7, CRM -11.7, NOW -11.5, ADBE -32.7, ORCL -29.7
+
+[나스닥 summary API, 2026-09-28 조회]
+- 업종 Technology / Computer Software: Prepackaged Software, 시가총액 455,597,483,552 달러 → 약 4,556억 달러 [계산]
+- AnnualizedDividend·ExDividendDate·Yield 전부 N/A → 배당 없음

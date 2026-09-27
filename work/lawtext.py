@@ -138,4 +138,11 @@ def main():
 
 
 if __name__ == '__main__':
+    # 2026-09-27 17시 회차: '조문이 없다' 메시지(SystemExit)는 stderr로 나가는데 Windows 기본 cp949라
+    # Git Bash에서 '�ҵ漼���'로 깨져 무슨 말인지 못 읽었다. 둘 다 utf-8로 맞춘다.
+    for _s in (sys.stdout, sys.stderr):
+        try:
+            _s.reconfigure(encoding='utf-8', errors='replace')
+        except Exception:
+            pass
     main()

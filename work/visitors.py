@@ -8,8 +8,19 @@ BLOG_ID = 'kygstar7777'
 LOG = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'visitors_log.json')
 with sync_playwright() as p:
     b = p.chromium.launch(headless=True); page = b.new_page(locale='ko-KR')
-    page.goto(f'https://m.blog.naver.com/{BLOG_ID}?tab=1', wait_until='domcontentloaded'); page.wait_for_timeout(4000)
-    txt = page.evaluate('document.body.innerText'); b.close()
+    # 2026-09-29: evaluate 가 끝없이 멈춰 회차가 timeout 으로 죽었다(페이지가 읽는 중에 다시 넘어감).
+    # 시간 제한을 걸고, 숫자가 보일 때까지 최대 3번 다시 연다.
+    page.set_default_timeout(20000); txt = ''
+    for _ in range(3):
+        try:
+            page.goto(f'https://m.blog.naver.com/{BLOG_ID}?tab=1', wait_until='domcontentloaded', timeout=30000)
+            page.wait_for_timeout(4000)
+            txt = page.inner_text('body', timeout=15000)
+            if re.search(r'오늘\s*[\d,]+\s*전체', txt): break
+        except Exception as e:
+            print('다시 연다:', type(e).__name__)
+    try: b.close()
+    except Exception: pass
 m = re.search(r'오늘\s*([\d,]+)\s*전체\s*([\d,]+)', txt)
 if not m: print('방문자 숫자를 못 읽음'); sys.exit(1)
 log = json.load(open(LOG, encoding='utf-8')) if os.path.exists(LOG) else {}

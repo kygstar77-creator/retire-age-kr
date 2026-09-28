@@ -147,6 +147,19 @@
     "url": "https://cafe.naver.com/ca-fe/cafes/31789001/articles/142"
    },
    "note": "카페: 11시 코너 aptmkt0928(slot now) 발행, verify OK 534/474자·사진 3/3. 발행기가 '등록 후 이동 실패(30초)' 뒤 목록에서 142번 확인. 블로그: 슬롯 B9 쿠알라룸푸르 몽키아라였으나 이미 발행됨(montkiara) → 같은 B9 후보 리스본 캄푸 지 오리크로 대체. 대기 블로그 peak0926은 보류라 새로 씀. 자료조사 7건(idealista 매물 30건 직접 수집, 포르투갈 통계청 INE 2026Q1 임대료 PDF 원문, Numbeo 9/24, 외교부 비자 포털, 최저임금 법령 Decreto-Lei 139/2025, 야후 환율, 스카이스캐너 한글 표기). verify OK 1754/1718자·사진 6/6. 검증 경로: selfcheck(제미나이 429) — 블로그 [사실]4·[계산]1 → 전부 계산값이라 facts.txt [계산]에 식을 적고 문구 1곳 수정, 재검 0건. readcheck 4건→0. 다음 회차용: 12시 카페 [ETF 시황] etfmkt0928 작성·slot.txt=12(장중 11:41 기준, selfcheck 사실 0·말투 1→0, readcheck 4→0). 일감표 1위(색인율) 막힘 — 이미 tools-wanted에 사람 판단 필요로 올라가 있음. 개선: [ETF 시황] 코너 재료 도구가 없어 work/etfmkt.py 신설(네이버 ETF 시세 상승·하락·거래대금 상위, 인버스 제외 순위, 코스피·코스닥)."
+  },
+  {
+   "hour": 12,
+   "ts": "12:35",
+   "blog": {
+    "title": "서울 오피스텔 월세 수익률, 대출 이자보다 높은 구는 몇 곳일까?",
+    "url": "https://blog.naver.com/kygstar7777/224424661233"
+   },
+   "cafe": {
+    "title": "[ETF 시황] 연휴 끝나고 첫날, 반도체 레버리지 ETF는 얼마나 빠졌을까?",
+    "url": "https://cafe.naver.com/ca-fe/cafes/31789001/articles/143"
+   },
+   "note": "카페: 12시 코너 etfmkt0928(slot now) 발행, verify OK 801/741자·사진 3/3. 블로그: 대기 블로그가 전부 보류라 슬롯 B8(부동산 한 장)을 새로 씀 — heatmap_re offi --seoul(어제 B8은 yield, 9/26 jeonse, 오늘 10시 price라 offi) + finlife 주담대(아파트 외 담보) + ECOS 기준금리 + 오늘 이슈 국고채 3년물 4.112%·보금자리론 동결. dupcheck가 9/25 오피스텔 수익률 순위 글과 같은 대상이라 경고 — 각도(대출 금리 대비)가 달라 진행. verify OK 1816/1780자·사진 6/6. 자료조사 웹 검색 한·영 9건, 1차 출처 연합뉴스 원문 2건·KB·금감원·한은·국토부. 검증 경로: selfcheck(제미나이 429) 사실 0·말투 0, readcheck 지적 2건 모두 고침. 다음 시각 카페 13시 [배당주 시황] divmkt0928 작성·slot.txt 13 — Nasdaq 배당 캘린더·이력, 몬덜리즈 IR·KDP 8-K·BANF 8-K·에릭슨 IR, selfcheck 사실 1건(1,300달러대) 고침·말투 1건 고침, readcheck 0. 블로그 대기 여전히 0(보류 1) — 이번 회차 추가 작성 못 함. 개선: heatmap_re.area_name이 인천 9개 구를 '경기'로 세어 '경기 46곳'으로 찍던 것 → 인천 따로 셈."
   }
  ]
 }

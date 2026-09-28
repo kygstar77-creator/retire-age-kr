@@ -1,0 +1,1 @@
+{"ok": true, "url": "https://blog.naver.com/kygstar7777/224424661233", "text": 1816, "want": 1780, "img": 6, "want_img": 6}

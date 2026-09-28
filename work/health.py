@@ -123,7 +123,16 @@ def main():
           ('발행', '오늘 카페 편수', nc, 지금까지목표(list(range(24)), 목표('cafe', 24)), 3, '지금 시각까지 나갔어야 할 편수 기준(카페는 24시간) · 위와 같음'),
           ('발행', '0편 회차 수', zero, 0, 3, how_zero)]
     pend = sh(os.path.join(HERE, 'naverpost.py'), 'pending')
-    pb = len(re.findall(r'"kind": "blog"', pend)); pc = len(re.findall(r'"kind": "cafe"', pend))
+    # 보류 묶음은 발행기가 건너뛴다 — 대기로 세면 쓸 묶음 0개인데 '블로그 1'로 보인다(2026-09-28 확인).
+    def _ready(kind):
+        n = 0
+        for ln in pend.splitlines():
+            if ln.startswith('{') and f'"kind": "{kind}"' in ln:
+                try: held = str(json.loads(ln).get('block') or '').startswith('보류')
+                except Exception: held = False
+                n += 0 if held else 1
+        return n
+    pb, pc = _ready('blog'), _ready('cafe')
     M += [('발행', '대기 묶음 블로그', pb, 3, 3, 'firemap-improve B/F 회차가 완성 묶음을 만든다'),
           ('발행', '대기 묶음 카페', pc, 3, 3, '위와 같음')]
 

@@ -396,10 +396,11 @@
   {
    "kw": "연봉계산기",
    "axis": "fire",
-   "vol": 353500,
+   "vol": 315900,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "vol_at": "2026-09-28"
   },
   {
    "kw": "제주반도체주가",
@@ -941,10 +942,11 @@
   {
    "kw": "월급계산기",
    "axis": "fire",
-   "vol": 107700,
+   "vol": 96700,
    "week": null,
    "adcomp": "높음",
-   "quote": false
+   "quote": false,
+   "vol_at": "2026-09-28"
   },
   {
    "kw": "정기예금금리",
@@ -2691,9 +2693,10 @@
   {
    "kw": "건강보험피부양자",
    "axis": "fire",
-   "vol": 12410,
+   "vol": 11130,
    "week": null,
-   "quote": false
+   "quote": false,
+   "vol_at": "2026-09-28"
   },
   {
    "kw": "오늘의주식시황",
@@ -3216,10 +3219,11 @@
   {
    "kw": "연봉",
    "axis": "fire",
-   "vol": 8580,
+   "vol": 7870,
    "week": null,
    "adcomp": "중간",
-   "quote": false
+   "quote": false,
+   "vol_at": "2026-09-28"
   },
   {
    "kw": "주택담보대출한도",
@@ -5865,9 +5869,10 @@
   {
    "kw": "1억모으기",
    "axis": "fire",
-   "vol": 2780,
+   "vol": 2610,
    "week": null,
-   "quote": false
+   "quote": false,
+   "vol_at": "2026-09-28"
   },
   {
    "kw": "AI주식",

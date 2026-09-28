@@ -89,8 +89,23 @@ def main():
         pend = subprocess.run([sys.executable, os.path.join(HERE, 'naverpost.py'), 'pending'],
                               capture_output=True, text=True, encoding='utf-8', errors='ignore', timeout=300).stdout or ''
     except Exception: pass
-    pb = len(re.findall(r'"kind": "blog"', pend)); pc = len(re.findall(r'"kind": "cafe"', pend))
-    if pb < 3 or pc < 3: out.append(f'대기  블로그 {pb} · 카페 {pc}  ← 3편씩은 있어야 한다')
+    # 보류(중복 등)된 묶음은 발행기가 건너뛰므로 대기로 치지 않는다. 9/28 보고가 보류 5개를
+    # '대기 블로그 1 · 카페 4'로 찍었는데 실제로 쓸 수 있는 묶음은 0이었다.
+    pb = pc = hb = hc = 0
+    for ln in pend.splitlines():
+        if not ln.startswith('{'): continue
+        try: j = json.loads(ln)
+        except Exception: continue
+        held = str(j.get('block') or '').startswith('보류')
+        if j.get('kind') == 'blog':
+            if held: hb += 1
+            else: pb += 1
+        elif j.get('kind') == 'cafe':
+            if held: hc += 1
+            else: pc += 1
+    if pb < 3 or pc < 3:
+        held = f' (보류 블로그 {hb} · 카페 {hc} 제외)' if hb or hc else ''
+        out.append(f'대기  블로그 {pb} · 카페 {pc}{held}  ← 3편씩은 있어야 한다')
 
     # 계기판에서 지금 가장 나쁜 것 세 개만
     h = load(os.path.join(HERE, 'health.json'), {}) or {}

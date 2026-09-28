@@ -2,6 +2,8 @@
 #   python work/ytlearn.py "부동산" "미국주식" "배당" ...   → 검색어별 상위 채널을 찾고, 채널마다 최신 영상 2개의 자막(전문)·스토리보드(장면 모음)를 저장,
 #                                                          work/research/yt/lessons_<날짜>.md 에 훅(첫 30초)·구조(분 단위 첫 문장)·제목 패턴·자주 쓰는 말을 정리
 #   python work/ytlearn.py --channels UCxxxx UCyyyy        → 채널 ID 직접
+#   python work/ytlearn.py --re                            → 부동산 상위 11채널(build-queue 4번, 2026-09-28) + 저평가 판단 기준 집계
+#                                                          → work/research/yt/re_criteria_<날짜>.md (자막에서 기준 낱말이 몇 영상에서 몇 번 나왔나)
 # 키 없음. youtube_transcript_api(자막)·yt-dlp(스토리보드 URL만, 영상 다운로드 안 함)·RSS 사용. 자막 없는 영상은 건너뛴다.
 import sys, os, re, json, time, subprocess, collections, urllib.request, urllib.parse, urllib.error
 sys.stdout.reconfigure(encoding='utf-8')
@@ -63,12 +65,22 @@ def channel_videos(cid, n=2, handle=None):
         vids.append({'title': t.group(1), 'id': v.group(1), 'pub': p.group(1)[:10] if p else '', 'views': int(c.group(1)) if c else 0})
     vids.sort(key=lambda x: -x['views']); return vids[:n], [x['title'] for x in vids]
 
+BLOCKED = []  # 차단을 한 번 맞으면 이 회차는 자막을 더 부르지 않는다(더 부르면 차단이 길어진다).
+
 def transcript(vid):
+    # 2026-09-28 17시: 부동산 11채널 22편이 전부 '자막 없음'으로 적혔다. 실제로는 ko 자동자막이 있었고
+    # youtube_transcript_api 가 IpBlocked, yt-dlp 자막도 429였다. 예외를 삼켜 차단이 '자막 없음'으로 숨었다.
+    # 차단은 'BLOCKED' 로 돌려 기록에 그대로 남긴다. 사장님 계정 쿠키로 우회하지 않는다.
+    if BLOCKED: return 'BLOCKED'
     from youtube_transcript_api import YouTubeTranscriptApi
     try:
         tr = YouTubeTranscriptApi().list(vid).find_transcript(['ko']).fetch()
         return [(round(x.start), x.text) for x in tr]
-    except Exception: return None
+    except Exception as e:
+        n = type(e).__name__
+        if n in ('IpBlocked', 'RequestBlocked', 'TooManyRequests') or '429' in str(e):
+            BLOCKED.append(n); print('자막 차단:', n, '— 이 회차는 자막을 더 부르지 않는다'); return 'BLOCKED'
+        return None
 
 def storyboard(vid):
     try:
@@ -83,11 +95,47 @@ def storyboard(vid):
         return saved
     except Exception: return []
 
+# build-queue 4번: 부동산 상위 채널. 자막에서 '사람들이 궁금해하는 저평가 판단 기준'을 센다.
+RE_CHANNELS = [('UC9meL6XNNckzlleWelmO9tQ', '투미TV'), ('UClWhdsAcFX-t5OsBC7yWuSA', '부동산쿨TV'), ('UCMsuAb9v3Q1AB89bB5EFK7A', '하이클래스'),
+               ('UCHmXGmj6JA-4iQ1UFMC7LYw', 'KB부동산TV'), ('UC3nsb3SxlRrJQ9egkKNnlfg', '리치고TV'), ('UCaXYdIFec07keCSvEQ87-Bg', '저평가 아파트 발굴단'),
+               ('UCEoF-IS2vWlL1MGIMBry5Lw', '아파트써처'), ('UCGzEAhEIZuQA7EibT-W-lCg', '시크릿브라더'), ('UCU09s-DZfqlZsbIm49WbOZw', '김경민의 노트'),
+               ('UCjtt1zQiVYuVgtSPyLj9wwA', '오피스텔TV'), ('UCJ6pu5zitBOSNALEnGOSbCw', '월세냄비')]
+# 기준 이름 → (자막에서 찾을 말, B10 지표(undervalue.py·offitable.py)에 이미 있나)
+RE_CRITERIA = {'전세가율': (r'전세가율|전세 ?비율|갭 ?투자|매매.{0,6}전세.{0,4}차이', '있음'),
+               '고점 대비 하락': (r'고점 대비|전고점|최고가 대비|고점에서', '있음'), '평당가': (r'평당|평단가', '있음'),
+               '월세 수익률': (r'수익률', '있음'), '공시가격': (r'공시가', '있음'),
+               '입주 물량·공급': (r'입주 ?물량|공급 ?물량|공급 ?부족|입주량', '없음'), '거래량': (r'거래량|거래 ?건수', '없음'),
+               '미분양': (r'미분양', '없음'), '역세권·교통': (r'역세권|GTX|지하철|노선', '없음'), '학군': (r'학군|학원가', '없음'),
+               '신축·연식': (r'신축|구축|연식|준공', '없음'), '재건축·재개발': (r'재건축|재개발|정비사업', '없음'),
+               '대장 단지·키 맞추기': (r'대장|키 ?맞추|갭 ?메우', '없음'), '대출·DSR·금리': (r'DSR|LTV|대출|금리', '없음'),
+               '소득 대비 가격(PIR)': (r'PIR|소득 대비', '없음'), '인구·일자리': (r'인구|일자리|직주', '없음')}
+
+def re_criteria(texts, day, basis='자막'):
+    # texts: [(채널, 제목, 자막 전문)] — 기준마다 몇 영상에서, 모두 몇 번 나왔는지 센다. 센 것만 적는다.
+    rows = []
+    for name, (pat, have) in RE_CRITERIA.items():
+        hits = [(c, ti, len(re.findall(pat, tx))) for c, ti, tx in texts]
+        vids = [h for h in hits if h[2]]
+        rows.append((len(vids), sum(h[2] for h in hits), name, have, vids[:3]))
+    rows.sort(key=lambda r: (r[0], r[1]), reverse=True)
+    L = [f'# 부동산 채널 저평가 판단 기준 {day} — {basis} {len(texts)}편', '',
+         '| 기준 | 나온 영상 수 | 나온 횟수 | B10 지표 | 예 |', '|---|---|---|---|---|']
+    for nv, nn, name, have, ex in rows:
+        L.append(f"| {name} | {nv}/{len(texts)} | {nn} | {have} | {' / '.join(f'{c}: {ti[:24]}' for c, ti, _ in ex)} |")
+    miss = [r for r in rows if r[3] == '없음' and len(texts) and r[0] >= max(2, len(texts) / 3)]
+    L += ['', '## B10 지표에 없는데 자주 나온 기준(영상 3분의 1 이상)', *([f'- {r[2]} — {r[0]}편' for r in miss] or ['- 없음'])]
+    p = os.path.join(OUT, f're_criteria_{day}.md'); open(p, 'w', encoding='utf-8').write('\n'.join(L) + '\n'); print('저장', p)
+    return p
+
 def main():
     args = sys.argv[1:]
     channels = []
+    RE = bool(args) and args[0] == '--re'
+    if RE: args = ['--channels'] + [c for c, _ in RE_CHANNELS]
+    names = dict(RE_CHANNELS)
+    re_texts = []; re_titles = []
     if args and args[0] == '--channels':
-        channels = [({'id': c, 'name': c, 'subs_text': '?', 'handle': None} if c.startswith('UC')
+        channels = [({'id': c, 'name': names.get(c, c), 'subs_text': '?', 'handle': None} if c.startswith('UC')
                      else {'id': resolve_handle(c) or c, 'name': c, 'subs_text': '?', 'handle': c}) for c in args[1:]]
     else:
         for q in (args or ['부동산', '미국주식', '배당', '연금', 'ETF']):
@@ -100,13 +148,16 @@ def main():
         try: top, titles = channel_videos(c['id'], handle=c.get('handle'))
         except Exception as e: print(c['name'], 'RSS 실패', str(e)[:60]); continue
         titles_all += titles
+        import html; re_titles.extend((c['name'], html.unescape(ti), html.unescape(ti)) for ti in titles)
         lessons.append(f"## {c['name']} ({c.get('subs_text','?')}, 검색어 {c.get('q','-')})")
         lessons.append('최근 제목: ' + ' | '.join(t[:40] for t in titles[:8]))
         for v in top:
             segs = transcript(v['id'])
+            if segs == 'BLOCKED': lessons.append(f"- {v['title'][:50]} ({v['views']:,}회) — 자막 차단({BLOCKED[0]}, 자막 유무 확인 못 함)"); continue
             if not segs: lessons.append(f"- {v['title'][:50]} ({v['views']:,}회) — 자막 없음"); continue
             open(os.path.join(OUT, f"{c['id'][:8]}_{v['id']}.txt"), 'w', encoding='utf-8').write(f"# {c['name']} | {v['title']} | {v['pub']} | {v['views']}회\n" + '\n'.join(f'{s//60:02d}:{s%60:02d} {t}' for s, t in segs))
             hook = ' '.join(t for s, t in segs if s < 30)[:220]; hooks.append((c['name'], hook))
+            re_texts.append((c['name'], v['title'], ' '.join(t for _, t in segs)))
             marks = []
             for mk in (60, 180, 300, 480, 720):
                 near = [t for s, t in segs if s >= mk][:2]
@@ -137,6 +188,8 @@ def main():
     head = ('%s%s---%s%s## %s 회차 (검색어 %s)%s' % (NL, NL, NL, NL, time.strftime('%H:%M'), ', '.join(sys.argv[1:]), NL)) if os.path.exists(p) else ''
     with open(p, 'a', encoding='utf-8') as f: f.write(head + NL.join(lessons))
     print('저장', p)
+    # 자막이 막힌 날은 최근 제목으로 센다(제목 기준이라고 파일 첫 줄에 밝힌다).
+    if RE: re_criteria(re_texts or re_titles, day, '자막' if re_texts else f"제목(자막 차단 {BLOCKED[0] if BLOCKED else '0편'})")
     print('\n'.join(lessons[:12]))
 
 if __name__ == '__main__': main()

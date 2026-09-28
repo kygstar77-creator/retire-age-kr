@@ -1,0 +1,18 @@
+[오늘 찾은 것] 2026-09-28
+- 2026-09-14 세계일보: 광명·동대문 평당가 서울 평균 넘었다…강남은 격차 더 벌려 https://www.segye.com/newsView/20260914504001 (배경만, 숫자 안 씀)
+- 2026-09-24 파이낸셜뉴스: 부동산원 9/21 기준 서울 +0.13%, 강남 -0.42%, 서초 -0.37%, 동대문 +0.39%, 노원 +0.37% https://www.fnnews.com/news/202609241401354062 (부동산원 원문 표를 못 열어 숫자는 안 쓰고 흐름만 씀)
+- 2026-09-28 서울신문: 서울 아파트 전세 상승…강남 집값은 하락 https://www.seoul.co.kr/news/economy/estate/2026/09/28/20260928031001
+- 2026-09-28 Seoul Economic Daily: Gangnam Rebuild Prices Slide Billions as Outer Seoul Hits Records https://en.sedaily.com/finance/2026/09/28/gangnam-rebuild-prices-slide-billions-as-outer-seoul-hits
+- 2026-09-10 Seoul Economic Daily: Seoul Home Prices Split as Gangnam Cools, Northern Districts Surge https://en.sedaily.com/finance/2026/09/10/seoul-home-prices-split-as-gangnam-cools-northern-districts
+- SBS Biz: 전세도 강남은 하락, 노원 성북 등은 강세 https://biz.sbs.co.kr/article/20000336660
+
+[1차 출처] 국토교통부 아파트매매 실거래 상세 API(공공데이터포털), work/rtmolit.py 202608 202609 로 9/28 10:25 재수집, 7월분은 9/23 수집
+계산: work/research/gap0928/calc.py → gap.json (전용 80~85㎡, 해제거래·공공기관 매입 제외, 단지별 3.3㎡당(전용) 중앙값, 거래 2건 이상 단지, 구 안 단지 10곳 이상)
+- 서울 합계 22개 구 753단지 2,557건 (용산 6단지·중구 7단지 제외)
+- 위4분의1/아래4분의1: 서초 1.97(8,040/15,878) 강동 1.97(3,554/7,018) 양천 1.79 서대문 1.73 관악 1.71 … 강남 1.52(11단지) … 노원 1.39(76단지, 최다) 중랑 1.25 광진 1.23
+- 실거래(84㎡): 올림픽파크포레온 둔촌동 2024 준공 23억~31.95억(7/29 30억, 8/7 30억, 8/11 31.95억, 8/12 29.9억, 8/22 30.5억, 9/12 23억)
+  KNP이스트빌 둔촌동 2004 7억(8/7), 8.15억(8/7)
+  반포자이 반포동 2009 52억(7/23, 7/31), 50.5억(9/8)
+  서초포레스타2단지 내곡동 2015 17억(8/9), 19.9억(8/1)
+  목동청구한신 목동 1997 19.15억~22.5억 (7건)
+  덕현해밀(101동) 신월동 2013 4.85억, 4.9억

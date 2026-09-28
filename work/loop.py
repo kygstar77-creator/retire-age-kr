@@ -834,7 +834,18 @@ def main():
     moved_knobs = set()   # 같은 손잡이를 한 바퀴에 두 번 움직이면 뒤 항목이 앞 항목을 덮어써 값이 계속 뒤집힌다(2026-09-23)
     def bykind(v, kind):
         return v.get(kind) if isinstance(v, dict) else v
-    for g in knobbed[:3]:
+    # 멈추기로 정한 항목(손잡이를 뗐거나 CAPPED 값에 서 있는 것)은 세 자리 셈에서 뺀다. 2026-09-28 22시:
+    # short.white(text_tint 0.7 멈춤)·long.white·long.contrast(손잡이 뗌) 세 개가 늘 앞 세 자리를 차지해,
+    # 새로 벌어진 short.sat 0.3378 vs 0.2599 는 RULE(bg_sat)이 있는데도 한 번도 안 움직였다.
+    # 멈춘 항목은 뒤에 그대로 돌려 '한계 확정' 문구는 계속 남긴다.
+    def parked(g):
+        knob = bykind(RULE[g['key']][0], g['kind'])
+        if knob is None: return True
+        cap = CAPPED.get((g['kind'], g['key']))
+        cur = design.get(g['kind'], {}).get(knob)
+        return bool(cap and cap[0] == knob and cur is not None and abs(cur - cap[1]) < 1e-9)
+    active = [g for g in knobbed if not parked(g)]
+    for g in active[:3] + [g for g in knobbed if parked(g)]:
         knob, coef, lo, hi = (bykind(v, g['kind']) for v in RULE[g['key']])
         if knob is None:
             # 손잡이를 일부러 뗀 자리는 조용히 넘기지 않는다 — 넘기면 다음 회차가 또 손잡이를 찾는다.

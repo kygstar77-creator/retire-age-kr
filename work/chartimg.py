@@ -173,7 +173,8 @@ if __name__ == '__main__':
         if x == '--hi': hi = int(a[i + 1])
         if x == '--source': src = a[i + 1]
     # --hi 를 안 주면 제목으로 정한다: '낮은·꼴찌·하위·적은' 차트는 아래 3개, 그 밖은 위 3개.
-    if hi is None: hi = -3 if any(w in title for w in ('낮은', '꼴찌', '하위', '적은', '싼 ')) else 3
+    # '비싼 ' 도 '싼 ' 을 품는다 — 2026-09-28 '중앙값 비싼 구' 차트가 아래 3개(싼 쪽)를 밝혔다. '비싼'을 먼저 지우고 본다.
+    if hi is None: hi = -3 if any(w in title.replace('비싼', '') for w in ('낮은', '꼴찌', '하위', '적은', '싼 ')) else 3
     items = [x for x in a[3:] if '=' in x and not x.startswith('--')]
     pairs = [(x.split('=')[0], float(x.split('=')[1])) for x in items]
     # 입력에 적힌 소수 자릿수를 지킨다(가장 긴 자릿수로 맞춘다). 정수만 있으면 정수로 그린다.

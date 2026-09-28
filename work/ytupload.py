@@ -27,6 +27,8 @@ def service():
     return build('youtube', 'v3', credentials=c)
 
 def upload(path, title, desc, privacy='private', tags=''):
+    # 유튜브는 제목·설명의 < > 를 받지 않는다(400 invalidDescription, 2026-09-28 나이키 숏폼). 전각으로 바꾼다.
+    title, desc = [x.replace('<', '＜').replace('>', '＞') for x in (title, desc)]
     from googleapiclient.http import MediaFileUpload
     yt = service()
     body = {'snippet': {'title': title[:100], 'description': desc[:5000], 'tags': [t.strip() for t in tags.split(',') if t.strip()][:30], 'categoryId': '22', 'defaultLanguage': 'ko'},

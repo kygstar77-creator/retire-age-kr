@@ -47,11 +47,14 @@ def written_titles():
         except Exception: pass
     return out
 
-def used(cand, titles):
-    """후보 문자열의 핵심어(티커·상품명)가 이미 쓴 제목에 있으면 True."""
+def used(cand, titles, ctx=None):
+    """후보 문자열의 핵심어(티커·상품명)가 이미 쓴 제목에 있으면 True.
+    ctx를 주면 그 말이 같은 제목에 함께 있어야 쓴 것으로 친다.
+    2026-09-29: K01 '60세 이상'의 핵심어 '60세'가 국민연금 글 "조기는 60세"에 걸려
+    한 번도 안 쓴 60대 순자산 대신 두 번 쓴 30대가 배정됐다."""
     key = re.split(r'[\s(]', str(cand).replace('(리얼티인컴)', ' 리얼티인컴'))[0].strip()
     if len(key) < 2: return False
-    return any(key.lower() in t.lower() for t in titles)
+    return any(key.lower() in t.lower() and (not ctx or ctx in t) for t in titles)
 
 def our_perf():
     """형식(form.txt)별 성과. form.txt가 있는 묶음만 센다 — 표기 없는 글을 '형식?'으로 묶어
@@ -166,7 +169,7 @@ def main():
     if dug: STOCKS = list(dug.values()) + STOCKS
     CALC = [t['kw'] for t in sorted([x for x in topics if isinstance(x, dict) and '계산기' in x['kw']], key=lambda x: -(x.get('vol') or 0))][:24]
     CITIES = ['서울', '부산', '대구', '대전', '광주', '고양', '김해', '구미', '강릉', '경주', '목포', '춘천', '제주', '전주', '천안', '창원']
-    AGES = ['30대', '40대', '50대', '60세 이상', '20대']
+    AGES = ['30대', '40대', '50대', '60대 이상', '20대']
     VS = ['SCHD 직투 vs TIGER 미국배당다우존스', 'JEPI vs JEPQ', 'QQQ vs QQQM', 'VOO vs SPY', 'TQQQ vs QLD', '커버드콜 국내 3종(KODEX·TIGER·SOL)', 'ISA vs 연금저축', '달러예금 vs 미국 단기채 ETF']
     deadlines = [c for c in cands if c['src'] == '마감']
     seed = TOM.toordinal()
@@ -184,9 +187,9 @@ def main():
     # 그런데 그날 고른 것은 수요 4위인 상계동이었다. 단지도 마찬가지 — 상계주공 5,900,
     # 은마아파트 62,060으로 10배 차이인데 수요를 보지 않고 골랐다.
     picked_why = []          # 편성표에 "무엇을 왜 골랐나"를 남긴다
-    def rot(lst, k):
+    def rot(lst, k, ctx=None):
         if not lst: return '(후보 없음)'
-        fresh = [x for x in lst if not used(x, wtitles)]
+        fresh = [x for x in lst if not used(x, wtitles, ctx)]
         pool = [x for x in fresh if x not in taken]
         tail = ''
         if not pool:
@@ -297,7 +300,7 @@ def main():
     # 전부 '조건·순위·숫자'만. '사라·사지 마라'는 쓰지 않는다. 기사를 퍼오지 않는다 — 1차 자료로 직접 계산한 숫자만.
     CORNER = {
         'K00': ('주식 종목 발굴', False, lambda k: f'{rot(DIG, k)} — Nasdaq 스크리너·EDGAR Form 4(insider.py)·배당 이력으로 추린 목록(B13 카페판). 조건과 순위만'),
-        'K01': ('나는 어디쯤', False, lambda k: f'{rot(AGES, k)} 순자산·소득·부채 중앙값과 상위 10%(가계금융복지조사, B3 카페판) — 우리 카페 조회 1위가 이 형식(455회)'),
+        'K01': ('나는 어디쯤', False, lambda k: f'{rot(AGES, k, "순자산")} 순자산·소득·부채 중앙값과 상위 10%(가계금융복지조사, B3 카페판) — 우리 카페 조회 1위가 이 형식(455회)'),
         'K02': ('한 종목 분석', False, lambda k: topic('C9', k)),
         'K03': ('실적 발표', False, lambda k: topic('C4', k)),
         'K04': ('내부자 매수', False, lambda k: topic('C7', k)),
@@ -328,7 +331,7 @@ def main():
             return f'**{name}** — {head}{fn(k)}'
         if sid == 'B1': return f'{rot(CALC, k)} 숫자 vs 실제 낼 돈'
         if sid == 'B2': return f'{rot(STOCKS, k)} 한 편(사업·실적·배당·보수·세금)'
-        if sid == 'B3': return f'{rot(AGES, k)} 순자산·소득·부채 중앙값과 상위 10%(가계금융복지조사)'
+        if sid == 'B3': return f'{rot(AGES, k, "순자산")} 순자산·소득·부채 중앙값과 상위 10%(가계금융복지조사)'
         if sid == 'B4': return f'순자산 {rot(["3억","5억","7억","10억"], k)}으로 살 수 있는 도시({rot(CITIES, k)} 등, firemap_realestate)'
         if sid == 'B5': return (deadlines[k % len(deadlines)]['kw'] + ' — 마감 ' + deadlines[k % len(deadlines)]['why']) if deadlines else '마감 후보 없음(calendar.json 확인)'
         # 수페TV 구조 그대로 여섯 코너. 2026-09-23 아침에 여섯 개로 정해 놓고 표에는 네 개만 적어 두었다.

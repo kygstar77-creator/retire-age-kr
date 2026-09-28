@@ -220,5 +220,12 @@
   "task": "D",
   "did": "재고 블로그0·카페1→3+3(블로그 sbux0928·busan84_0928·law1113, 카페 mpoffi0928·cost0928, 전부 selfcheck·readcheck 0건) · 최근 24시간 발행 44묶음 selfcheck 전수 사실·검산 지적 0건(calcheck가 일부러 틀린 문장 2개를 잡는지 먼저 확인) · selfcheck가 발행된 자기 글을 '이미 씀'으로 잡던 버그 고침 · cafedossier.py→oneoff · offitable 15 실행(526곳 중앙 6.45%) · fire-cases 1건(u/jayybonelie 45세)",
   "blocked": "crosscheck 사실 대조 미실행 — OpenAI 키 없음, Gemini 429/503. 말투 지적 3건(dep3eok 문장 길이, pibuyang·yujok 조문)은 조문이 출처 줄에 있어 고칠 것 없음. DSR·개정법령(세법·건보) 슬롯은 이미 씀이라 주제 교체"
+ },
+ {
+  "date": "2026-09-28",
+  "hour": 23,
+  "task": "F",
+  "did": "재고 블로그1·카페2(쓸 수 있는 것) → 완성 묶음 3개 추가: 블로그 ccl0929(카니발 3분기 실적, deadline 9/29 22:00)·gold0929(금값 고점 대비 하락률 기준별 실측), 카페 main0929(메인스트리트캐피탈 월배당 세후 월 100만원). 셋 다 dupcheck 새것·selfcheck 사실 0·readcheck 0. gold 제목 '폭락'→'하락'. 로그인 check 로그인됨. offitable 15 실행(2026-09-28_전체.md). ytfull KB부동산TV 15분 한도로 수집. B3·B4 각 2칸 유지 확인. 파이어 사례 새로 못 찾음",
+  "blocked": "색인율 일감 사람 판단 대기(막힘 표기). 1unwu3e 레딧 RSS 빈 응답. MAIN 조사 중 SEC 요청 1건에 사장님 이메일이 User-Agent로 나감(이후 일반 문자열로 교체)"
  }
 ]

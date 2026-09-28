@@ -25,3 +25,4 @@
 - 2026-09-28 회차 메모: **레딧 읽는 길 찾음** — search.json·api.reddit.com은 403, old.reddit JSON은 로그인 벽. 브라우저 UA로 `https://www.reddit.com/r/<sub>/search.rss?q=...&restrict_sr=1&sort=top&t=year` 와 `/comments/<id>/.rss?limit=1`(첫 entry가 본문)은 200. 연달아 부르면 429 → 15~20초 간격. 이번 회차 r/fatFIRE·r/leanfire는 429로 못 봄. 받아 두고 안 읽은 후보: 1ubxal5(1111 days, retired @45), 1v3lbhy(Retired@45), 1unwu3e.
 - 2026-09-28 15시 improve: 못 찾음 — 후보 1ubxal5 RSS가 429(레딧 속도 제한). 다음 회차에 1ubxal5·1v3lbhy·1unwu3e부터
 - 2026-09-28 | u/jayybonelie(레딧) | 2023년 45세 퇴직(시스템 엔지니어 25년+), 4인 가족 | 순자산 2026년 790만 달러(S&P500 38%·RSU 단일종목 23%·부동산 35%·기타 3%·현금 1%) | 연 지출 6만~8만 달러, 인출률 1~3% | 거주지: 글에 없음(확인 안 함) | 출처 https://www.reddit.com/r/financialindependence/comments/1ubxal5/1111_days_since_fire_retired_45/ (2026-06-21) · "35세나 40세였으면 더 좋았다", SNS 삭제 소감
+- 2026-09-28 23시 improve: 새 사례 못 찾음 — 1v3lbhy(2026-07-22)는 위 u/jayybonelie와 같은 사람의 소감 글이라 자산·생활비 숫자 없음(중복 제외). 1unwu3e는 RSS 빈 응답(속도 제한 추정). 다음 회차 1unwu3e부터

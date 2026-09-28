@@ -23,3 +23,4 @@
 - 2026-09-28 | u/FIREAwayAnyway(레딧) | 42세 군인 퇴역 | 380만 달러(집·자녀 계좌 제외) + 군인연금 연 약 12만 달러 | 생활비·거주지 글에 없음 | 출처 https://www.reddit.com/r/financialindependence/comments/1onbzmb/ (2025-11-03)
 - 2026-09-28 | u/ihasanemail(레딧) | 2018-06-09 38세 퇴직, 지금 46세, 미혼 | 230만 달러 → 1,200만 달러(레버리지 ETF·은행·기술주, 2022년 610만까지 하락) | 방콕 1년차 월 고정비 850달러(집 제공), 직접 구하면 월 1,350달러 추정 | 거주지: 미국 텍사스(털사 거쳐 귀향) | 출처 https://www.reddit.com/r/financialindependence/comments/1tt9e5r/ (2026-05-31) · 월 8만~15만 달러 지출은 세금 선납이라 생활비 아님
 - 2026-09-28 회차 메모: **레딧 읽는 길 찾음** — search.json·api.reddit.com은 403, old.reddit JSON은 로그인 벽. 브라우저 UA로 `https://www.reddit.com/r/<sub>/search.rss?q=...&restrict_sr=1&sort=top&t=year` 와 `/comments/<id>/.rss?limit=1`(첫 entry가 본문)은 200. 연달아 부르면 429 → 15~20초 간격. 이번 회차 r/fatFIRE·r/leanfire는 429로 못 봄. 받아 두고 안 읽은 후보: 1ubxal5(1111 days, retired @45), 1v3lbhy(Retired@45), 1unwu3e.
+- 2026-09-28 15시 improve: 못 찾음 — 후보 1ubxal5 RSS가 429(레딧 속도 제한). 다음 회차에 1ubxal5·1v3lbhy·1unwu3e부터

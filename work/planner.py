@@ -116,6 +116,9 @@ def main():
     pats, ntitles = title_patterns(); perf, unlabeled = our_perf(); mkt = market_today(); idea = ideas()
     wtitles = written_titles()
     # 후보 점수: 검색수 × 마감 가중 × 축 로테이션
+    # dd는 '마감까지 남은 날'이다. f'D{dd:+d}'로 찍어 마감 하루 전(9/29, 재산세 9/30)이 'D+1'로 나갔다 —
+    # D+는 마감이 지난 뒤를 뜻해서 회차가 '이미 끝난 일정'으로 읽는다(2026-09-28 15시 회차 발견). 한국식 D-표기로 바꾼다.
+    dlabel = lambda dd: f'D-{dd}' if dd > 0 else ('D-day' if dd == 0 else f'D+{-dd}')
     cands = []
     for ev in events if isinstance(events, list) else []:
         try:   # calendar.json의 date는 'MM-DD' 또는 'MM-DD~MM-DD'(연도 없음)
@@ -131,7 +134,7 @@ def main():
         except Exception: continue
         if not (-3 <= dd <= 30): continue
         kw = ev.get('name') or ev.get('title') or ev.get('kw'); kw = kw[0] if isinstance(kw, list) else str(kw)
-        cands.append({'src': '마감', 'kw': kw, 'axis': AXIS.get(ev.get('axis'), '세금연금'), 'score': (ev.get('vol') or 1000) * (3 if dd <= 7 else 1.5), 'why': f'D{dd:+d}'})
+        cands.append({'src': '마감', 'kw': kw, 'axis': AXIS.get(ev.get('axis'), '세금연금'), 'score': (ev.get('vol') or 1000) * (3 if dd <= 7 else 1.5), 'why': dlabel(dd)})
     for t in sorted([x for x in topics if isinstance(x, dict) and not x.get('quote')], key=lambda x: -(x.get('vol') or 0))[:80]:
         cands.append({'src': '검색', 'kw': t['kw'], 'axis': AXIS.get(t.get('axis'), '종목'), 'score': (t.get('vol') or 0) * (0.5 if t.get('adcomp') == '높음' else 1), 'why': f"검색 {t.get('vol'):,}"})
     for i in idea: cands.append({'src': '오늘 글감', 'kw': i[:60], 'axis': '종목', 'score': 200000, 'why': '유튜브·카페에서 오늘 나온 것'})

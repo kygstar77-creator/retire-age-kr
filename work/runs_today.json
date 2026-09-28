@@ -225,6 +225,19 @@
     "url": "https://cafe.naver.com/ca-fe/cafes/31789001/articles/148"
    },
    "note": "카페 K17 오피스텔 발굴(gnoffi0928, slot now) verify OK 811/811자·사진 3/3. 블로그 nflx0928(대기 묶음) verify OK 1877/1731자·사진 4/4. 두 묶음 모두 사전 selfcheck·readcheck 지적 0. 새로 씀: 블로그 ptaxgap0928 '9월 재산세는 왜 공시가격만큼 안 올랐을까'(B5 18시 슬롯, 대기) — WebSearch 9건(서울·부산·대구·대전·구리·계양 9월분 발표, 국토부 공시가격 확정, 카드 무이자, 전자고지) + 법령 API 7조문(지방세법 110·115·118·122, 시행령 109·109의2, 지방세기본법 55). 과세표준상한 예시 계산 직접 검산. 검증 경로: selfcheck(crosscheck 사실 429·Gemini 503) — 사실 0·말투 1건(출처 긴 문장) 반영, readcheck 제목 숫자 3개 지적 반영(제목 교체). 카페 divtax0928에 slot.txt(2026-09-28 18) 추가 — facts에 K18 슬롯용이라 적혀 있었는데 빠져 있었음. 일감표 1번(색인율) 막힘 — tools-wanted에 이미 사람 확인으로 올라가 있음. 개선: naverpost.py pending이 facts에 'Kxx(hh시) 슬롯'이라 적힌 카페 묶음에 slot.txt가 없으면 warn을 붙인다. 참고: 발행 지연은 naverpost의 '정각 몰림 방지' 대기(블로그 16분 34초)였다."
+  },
+  {
+   "hour": 18,
+   "ts": "18:32",
+   "blog": {
+    "title": "9월 재산세는 왜 공시가격만큼 안 올랐을까",
+    "url": "https://blog.naver.com/kygstar7777/224425049543"
+   },
+   "cafe": {
+    "title": "미국 배당 ETF, 배당소득세는 비슷한데 금융소득종합과세는 왜 다르게 찰까?",
+    "url": "https://cafe.naver.com/ca-fe/cafes/31789001/articles/149"
+   },
+   "note": "발행: 대기 묶음 ptaxgap0928(블로그)·divtax0928(카페 18시 코너 slot now). verify 블로그 OK 1743자/사진4 · 카페 OK 1260자/사진3. 검증 경로: selfcheck(제미나이 사실대조 429·구조 503) — 두 묶음 [사실] 0건, readcheck 0건. 19시 코너: ratefx0928(13:42 작성, 오늘 FRED·ECOS 값)에 slot.txt '2026-09-28 19'을 달았다 — FRED 재조회해 새 값 없음 확인, '~인 셈이에요' 1곳 고침. 새 블로그 ssearn0928(삼성전자 3분기 실적발표일, DART 공시 3년치·자본시장법 제160조 law API·삼성 뉴스룸·SK하이닉스 뉴스룸·LG 보도자료, 웹검색 6건)을 썼으나 dupcheck에서 블로그 q3earn·카페 124번(9/27)과 같은 주제로 확인돼 hold.txt 보류. 대기 블로그 1(amzn0928)·카페 2(divmkt0928b·ratefx0928) — 3개 미만, 자가발전 회차가 채워야 함. 일감 1(cafedossier.py) 막힘: 다른 세션 미커밋 조사(18:00 수정) — 건드리지 않음. 개선: selfcheck.py에 [중복] 검사 추가 — 제목 첫 낱말로 dupcheck.local_hits를 돌려 이미 쓴 대상을 발행 전 검증에서 알린다(코너·숫자 머리말 제외, 막지는 않음)."
   }
  ]
 }

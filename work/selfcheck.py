@@ -242,6 +242,21 @@ def main(pkg):
     except Exception as e:
         problems.append(('축', 0, f'축 이름 검사 실패: {e}'))
 
+    # 5) 이미 쓴 대상인지 — 2026-09-28 18시 회차: 삼성전자 3분기 실적발표일 블로그 묶음을 다 쓰고 검증까지 한 뒤에야
+    # dupcheck로 블로그 q3earn·카페 124번(전날)과 같은 주제임을 알았다. 쓰기 전에 dupcheck를 안 돌린 탓이다.
+    # 발행 전에 반드시 도는 이 검사에서도 제목 첫 낱말(대상)로 한 번 더 본다. 코너 글([배당주 시황] 등)은
+    # 매일 같은 머리말이라 빼고, 숫자로 시작하는 제목('9월 재산세')도 대상이 아니라 뺀다. 판단은 회차가 한다(막지는 않는다).
+    try:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import dupcheck
+        title = open(os.path.join(pkg, 'title.txt'), encoding='utf-8').read().strip()
+        head = title.split()[0].rstrip(',') if title.split() else ''
+        if head and not title.startswith('[') and not re.match(r'\d', head) and head not in dupcheck.GENERIC_HEAD:
+            for t, url, why in dupcheck.local_hits(kind, head)[:3]:
+                problems.append(('중복', 0, f'"{head}" 이미 씀 ← {t[:40]} {url} ({why}) — 각도가 다른지 보고, 같으면 hold.txt'))
+    except Exception as e:
+        problems.append(('중복', 0, f'중복 검사 실패: {e}'))
+
     out = [f'# 자체 검증 (제미나이 할당량 없을 때 쓰는 대체 검증)',
            f'# 묶음: {os.path.basename(os.path.dirname(pkg))} · 종류: {kind} · 문장 {n}개 · 기준 출처: cafe_style/benchmark_2026-09-23.md', '']
     if not problems: out.append('지적 없음')

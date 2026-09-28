@@ -1,0 +1,32 @@
+# 사실표 — 미국 3분기 실적 시즌 날짜 (2026-09-29 02시 회차, K03 슬롯 03시 코너)
+# 이번 주(9/28~10/2) 캘린더는 카페 82번(uscal928)에서 이미 다뤄 각도를 10월 실적 시즌으로 바꿨다
+
+[오늘 찾은 것]
+- 2026-09-17 · JPMorganChase IR · 3분기 실적 10월 13일(화) 오전 7시(미 동부) 공개, 8시 30분 콜 https://www.jpmorganchase.com/ir/news/2026/jpmc-to-host-third-quarter-2026-earnings-call
+- 2025 · Citi 보도자료 · 3Q26 실적 2026년 10월 13일(화) 오전 8시(미 동부) 보도자료, 11시 콜 https://www.citigroup.com/global/news/press-release/2025/citi-third-fourth-quarter-2025-and-2026-earnings-calls
+- TSMC IR · 3분기 실적 컨퍼런스 10월 15일(목) 대만 14시, 조용한 기간 10월 5~14일 https://investor.tsmc.com/english/quarterly-results/teleconference
+- Netflix IR · 3분기 실적 10월 20일 오후 1시 1분(미 태평양) 공개, 1시 45분 인터뷰 https://ir.netflix.net/investor-news-and-events/financial-releases/press-release-details/2026/Netflix-to-Announce-Third-Quarter-2026-Financial-Results/default.aspx
+- 2026-09-18 · 아시아경제 · 10월 글로벌 증시 이벤트로 3분기 실적 시즌 꼽음 https://view.asiae.co.kr/article/2026091811035083777
+- Tesla IR · 3분기 실적 날짜 공지 아직 없음(검색 기준 2026-09-29 02시) https://ir.tesla.com/press
+
+[나스닥 실적 캘린더 — 2026-09-29 02:20 조회, api.nasdaq.com/api/calendar/earnings?date=]
+- 10월 1~31일 평일 합계 1,204건
+- 10/12~16 주 78건, 10/19~23 주 325건, 10/26~30 주 742건
+- 10월 13일: JPM·JNJ·UNH·GS·C (장 시작 전 표시)
+- 10월 14일: BAC·MS·WFC·ASML (장 시작 전 표시)
+- 10월 15일: TSM (장 시작 전 표시)
+- 10월 20일: NFLX(장 마감 후)·KO·GE·PM·RTX·TXN
+- 10월 22일: INTC·PG
+- 10월 28일: TSLA (시간 미표시)
+- 10월 29일: AAPL·AMZN·LLY·MA (애플·아마존 시간 미표시)
+- 11월 4일: MSFT·GOOGL·META (시간 미표시, 2026-09-29 02:40 조회). 11/2 PLTR·O, 11/3 AMD
+- 같은 주제 선행 글: 카페 53번(9/23, usq3) — 나스닥 예상일 나열, 한국 시각은 확인 안 함. 이번 글은 회사 확정 공지와 한국 시각으로 각도를 바꿨다
+- 시간 미표시(time-not-supplied)는 회사가 확정하지 않은 예상일일 수 있다
+- 예상 EPS(나스닥 집계): 애플 1.98달러(1년 전 1.85) · 테슬라 0.26달러(1년 전 0.37) · JP모건 5.84달러(1년 전 5.07)
+
+[한국 시각 환산 — 미국 서머타임은 11월 1일까지, 동부 +13시간]
+- JP모건 10/13 07:00 ET → 10/13 20:00 KST
+- 씨티 10/13 08:00 ET → 10/13 21:00 KST
+- TSMC 10/15 14:00 대만 → 10/15 15:00 KST
+- 넷플릭스 10/20 13:01 PT(=16:01 ET) → 10/21 05:01 KST
+- TSMC: 반도체 위탁생산(파운드리) 회사, 대만 본사 (TSMC IR https://investor.tsmc.com/english)

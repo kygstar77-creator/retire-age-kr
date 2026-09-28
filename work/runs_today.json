@@ -26,6 +26,19 @@
     "url": "https://cafe.naver.com/ca-fe/cafes/31789001/articles/156"
    },
    "note": "대기 묶음 발행(카페 gfs60_0929 slot now=K01, 블로그 gold0929). 검증 경로: selfcheck(제미나이 429) — gold0929 사실 0·말투 0, readcheck 0건 / gfs60 00시 회차 selfcheck 0·readcheck 0. verify: 카페 OK 747/747자·사진3, 블로그 OK 1871/1835자·사진4. 02시 카페 코너 K02 묶음 ionq0929 작성(slot 2026-09-29 02) — 슬롯 K02는 애플이었으나 9월에 두 번(aapl·aaplcafe) 써서 수요 상위 중 안 쓴 아이온큐(월 290,900)로 대체. 자료조사: WebSearch 7건 + 1차 출처 4개(SEC 8-K 8/5, IonQ 뉴스룸 2건, Nasdaq·Yahoo API). 9/28 시세는 조회 시각이 미국 장중이라 9/25 종가로 바꿈. 검증: crosscheck 429 → selfcheck 사실 1건(시가총액 180 → 179억 남짓으로 수정) 반영 후 0, readcheck 지적 6건(약어 IONQ·SDT·CNBC 설명, 숫자 몰림, 긴 출처 문장) 모두 반영 후 0. 확인 못 한 인과('아이온큐 구미' 검색 이유) 문장은 뺌. 재고: 블로그 1(heukseok0929) — 시간 예산으로 새 블로그는 못 씀, 01:30 improve·다음 회차 몫. 카페 4(ionq0929 02시, mpoffi0928, main0929, divmkt0928b 13시). 일감1(안 불리는 도구 ytcompete.py) 막힘 — 다른 세션의 미커밋 작업. 개선: naverpost.submit_cafe가 등록 뒤 주소(iframe_url_utf8=%2F…articles%2F156)를 인코딩된 채 봐서 매번 30초 시간초과 → 목록 확인으로 돌던 것을 unquote해서 바로 잡게 고침."
+  },
+  {
+   "hour": 2,
+   "ts": "02:45",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "아이온큐 주가, 매출은 크게 늘었는데 왜 1년 전보다 낮을까?",
+    "url": "https://cafe.naver.com/firemap/157"
+   },
+   "note": "02시: 새벽이라 블로그 쉼(규칙). 카페 K02 ionq0929 발행 verify OK 977/977자·사진 3/3. 03시 코너 K03 묶음 q3season0929 작성(slot 03) — 이번 주 캘린더는 카페 82번, 10월 예상일 나열은 카페 53번(9/23)이 이미 다뤄 '회사 확정 공지+한국 시각'으로 각도 변경. 자료조사: WebSearch 7건, 1차 출처 4곳(JPM·씨티·TSMC·넷플릭스 IR)+나스닥 캘린더 API. 검증 경로: selfcheck(제미나이 429/503) 사실 0·말투 0, readcheck 지적 3건 전부 반영. 원고 약 900자로 목표보다 짧음. 블로그 B10 슬롯은 묶음 못 만듦(시간). 일감표 1번(색인율 0) 막힘 — 9/23 이후 블로그 무색인 건, 이 회차 시간 안에 못 닫음. 개선: 없음 — titlestudy.py가 네이버 403으로 상위 제목 0개(기록만)."
   }
  ]
 }

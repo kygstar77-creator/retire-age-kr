@@ -39,7 +39,7 @@ def close_popup(page):
             if el.count() and el.is_visible(timeout=800): el.click(); page.wait_for_timeout(500); break
         except Exception: pass
 
-PANEL_JS = """() => { const all=[...document.querySelectorAll('div,section,article')].filter(e=>/세대 \/ 총/.test(e.innerText||'') && e.innerText.length<4000); all.sort((a,b)=>a.innerText.length-b.innerText.length); return all.length? all[0].innerText : '' }"""
+PANEL_JS = r"""() => { const all=[...document.querySelectorAll('div,section,article')].filter(e=>/세대 \/ 총/.test(e.innerText||'') && e.innerText.length<4000); all.sort((a,b)=>a.innerText.length-b.innerText.length); return all.length? all[0].innerText : '' }"""
 def panel(page):
     # 화면 텍스트 실측(2026-09-23): 단지명/유형/아파트/세대수/534세대/동수/총 10동/사용승인일/2003.12.05/면적/108.04㎡ ~ 189.8㎡/최근 매매 실거래가/26억/2026.09.15, 18층, 108㎡/매매가28억 5,000~34억 2,000/전세가15억
     import re as _re

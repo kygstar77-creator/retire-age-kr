@@ -160,6 +160,19 @@
     "url": "https://cafe.naver.com/ca-fe/cafes/31789001/articles/143"
    },
    "note": "카페: 12시 코너 etfmkt0928(slot now) 발행, verify OK 801/741자·사진 3/3. 블로그: 대기 블로그가 전부 보류라 슬롯 B8(부동산 한 장)을 새로 씀 — heatmap_re offi --seoul(어제 B8은 yield, 9/26 jeonse, 오늘 10시 price라 offi) + finlife 주담대(아파트 외 담보) + ECOS 기준금리 + 오늘 이슈 국고채 3년물 4.112%·보금자리론 동결. dupcheck가 9/25 오피스텔 수익률 순위 글과 같은 대상이라 경고 — 각도(대출 금리 대비)가 달라 진행. verify OK 1816/1780자·사진 6/6. 자료조사 웹 검색 한·영 9건, 1차 출처 연합뉴스 원문 2건·KB·금감원·한은·국토부. 검증 경로: selfcheck(제미나이 429) 사실 0·말투 0, readcheck 지적 2건 모두 고침. 다음 시각 카페 13시 [배당주 시황] divmkt0928 작성·slot.txt 13 — Nasdaq 배당 캘린더·이력, 몬덜리즈 IR·KDP 8-K·BANF 8-K·에릭슨 IR, selfcheck 사실 1건(1,300달러대) 고침·말투 1건 고침, readcheck 0. 블로그 대기 여전히 0(보류 1) — 이번 회차 추가 작성 못 함. 개선: heatmap_re.area_name이 인천 9개 구를 '경기'로 세어 '경기 46곳'으로 찍던 것 → 인천 따로 셈."
+  },
+  {
+   "hour": 13,
+   "ts": "13:25",
+   "blog": {
+    "title": "창동 아파트, 고점 넘은 단지와 아직 한참 아래인 단지는 어디일까",
+    "url": "https://blog.naver.com/kygstar7777/224424708743"
+   },
+   "cafe": {
+    "title": "[배당주 시황] 이번 주 배당락 종목, 배당을 올린 곳과 줄어든 곳은?",
+    "url": "https://cafe.naver.com/ca-fe/cafes/31789001/articles/144"
+   },
+   "note": "슬롯대로: 블로그 B11 창동(sonpum.py 창동 5단지 돌림, 글은 국토부 실거래로 단지별 평당가·2021년4분기 고점 대비·이웃 동 비교), 카페 K13 배당주 시황(대기 묶음 slot now). 자료조사: WebSearch 5회+WebFetch 4건(국민일보 GTX-C, 한국부동산원 주간 via 중앙데일리·서울경제, 정책브리핑 토허 실거주 유예), 1차 출처 국토부 실거래 API. demand.py로 창동 단지 검색수 잼(주공3 12,330 최상). 검증 경로: crosscheck 제미나이 429 → selfcheck, 블로그 [사실] 3건 전부 반영(4,800만원대·2,200~2,400만원대 표현 교체, 2024 착공식 사실표 추가), readcheck 3건 반영. verify: 카페 OK 1188자/사진3, 블로그 OK 1876자/사진6. 다음 시각 카페 K14 묶음 gap84_0928 작성(slot 2026-09-28 14, 서울 구별 84㎡ 매매-신규전세 차액 + 토허 실거주 유예 2027년 말 연장), selfcheck·readcheck 0건, dupcheck '전세' 겹침으로 제목 교체. 블로그 대기 새로 못 채움(대기 블로그 0, 보류 1). 개선: sonpum.py PANEL_JS 문자열 raw로 바꿔 SyntaxWarning(잘못된 이스케이프) 제거."
   }
  ]
 }

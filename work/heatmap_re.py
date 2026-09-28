@@ -70,15 +70,25 @@ def price_change(min_pairs=5, offi=False):
             nm = ((r.get('offiNm') if offi else r.get('aptNm')) or '').strip()
             if not g or not nm or ar <= 0 or a <= 0 or not keep(r): continue
             cell[(g, nm, int(ar // 5 * 5))][ym].append(a / (ar / 3.3058))
-    months = sorted({m for v in cell.values() for m in v})
-    wsum, wn, pairs = collections.Counter(), collections.Counter(), collections.Counter()
-    for (g, _, _), bym in cell.items():
-        ms = [m for m in months if bym.get(m)]
-        if len(ms) < 2: continue
-        f0, l0 = statistics.median(bym[ms[0]]), statistics.median(bym[ms[-1]])
-        if f0 <= 0: continue
-        n = sum(len(v) for v in bym.values())
-        wsum[g] += (l0 - f0) / f0 * 100 * n; wn[g] += n; pairs[g] += 1
+    # 2026-09-29 07시: rt/에 2021년 7~12월(고점 비교용)이 쌓인 뒤로 '첫 달'이 단지마다 달라졌다.
+    # 2021년 거래가 있는 단지는 5년 등락, 없는 단지는 1년 등락이 한 구 평균에 섞였고
+    # 그림에는 '202107→202609 등락률'로 찍혔다. 기준을 고정한다 — 최근 석 달 대 1년 전 같은 석 달.
+    # 1년 전 자료는 동네 몇 곳(손품으로 받은 곳)에만 있다. 25개 구가 다 있는 건 2021년 10~12월(서울 고점)뿐이라
+    # 1년 전 창이 20개 구를 못 채우면 2021년 4분기 대비로 잰다. 어느 창을 썼는지는 months[0]이 말한다.
+    allm = sorted({m for v in cell.values() for m in v})
+    now = allm[-3:]
+    windows = [[f'{int(m[:4]) - 1}{m[4:]}' for m in now], ['202110', '202111', '202112']]
+    for base in windows:
+        wsum, wn, pairs = collections.Counter(), collections.Counter(), collections.Counter()
+        for (g, _, _), bym in cell.items():
+            b = [x for m in base for x in bym.get(m, [])]; l = [x for m in now for x in bym.get(m, [])]
+            if not b or not l: continue
+            f0, l0 = statistics.median(b), statistics.median(l)
+            if f0 <= 0: continue
+            n = len(b) + len(l)
+            wsum[g] += (l0 - f0) / f0 * 100 * n; wn[g] += n; pairs[g] += 1
+        if sum(1 for g in wn if pairs[g] >= min_pairs) >= 20: break
+    months = [base[0], now[-1]]
     return {g: wsum[g] / wn[g] for g in wn if pairs[g] >= min_pairs}, months, pairs
 
 def conv_rate(rt, offi=False, min_pairs=30):
@@ -213,7 +223,7 @@ def main():
                 for k, v in vals.items()]
         day = time.strftime('%Y-%m-%d'); os.makedirs(OUT, exist_ok=True)
         out = out or os.path.join(OUT, f'heatmap_re_{kind}_{day}.png')
-        span = f'{months[0]}→{months[-1]}' if months else ''
+        span = f'{months[0][:4]}.{months[0][4:]}~ 석 달 대비 최근 석 달' if months else ''
         what = '오피스텔' if kind == 'offiprice' else '아파트'
         HM.draw(rows, out, f'{area_name(vals)} {what} 평당 매매가 {day} · 크기=평당가, 색={span} 등락률(같은 단지·같은 면적대)')
         print(f'{area_name(vals)} {what} 평당 매매가 — 크기는 평당가, 색은 같은 면적대끼리 견준 등락률')

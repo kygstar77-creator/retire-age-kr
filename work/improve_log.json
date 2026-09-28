@@ -180,5 +180,24 @@
    ],
    "login": "로그인됨"
   }
+ },
+ {
+  "date": "2026-09-28",
+  "hour": 13,
+  "task": "A",
+  "did": "재고 0+1 → 블로그 3(law1028·firecase0928·aristo0928)·카페 4(gap84 14시분 포함, divtax0928·ratefx0928·divmkt0928b) 완성 묶음, 전부 selfcheck·readcheck 0건 · A: perf.py 12(블로그 12편 색인 0, 카페 중앙 2회)·formperf·blogfreq 3검색어·visitors(오늘 17) → perf-notes · offitable.py 15(526곳 중앙 6.45%)",
+  "blocked": "블로그 색인 0% 계속(9/23 이후, 사람이 봐야 함에 이미 있음) · 레딧 fatFIRE/leanfire 429 · 카페 묶음 2개가 처음엔 사진 2장이라 pending이 막아 3장째 추가",
+  "ready": {
+   "blog": [
+    "law1028",
+    "firecase0928",
+    "aristo0928"
+   ],
+   "cafe": [
+    "divtax0928",
+    "ratefx0928",
+    "divmkt0928b"
+   ]
+  }
  }
 ]

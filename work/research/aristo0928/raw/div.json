@@ -1,0 +1,792 @@
+{
+ "KO": {
+  "price": 87.81,
+  "ptime": "2026-09-25T20:00:02+00:00",
+  "ydiv": [
+   [
+    "2025-06-13",
+    0.51
+   ],
+   [
+    "2025-09-15",
+    0.51
+   ],
+   [
+    "2025-12-01",
+    0.51
+   ],
+   [
+    "2026-03-13",
+    0.53
+   ],
+   [
+    "2026-06-15",
+    0.53
+   ],
+   [
+    "2026-09-15",
+    0.53
+   ]
+  ]
+ },
+ "PEP": {
+  "nasdaq": {
+   "exDividendDate": "09/04/2026",
+   "dividendPaymentDate": "09/30/2026",
+   "yield": "4.62%",
+   "annualizedDividend": "5.92"
+  },
+  "nasdaq_rows": [
+   {
+    "exOrEffDate": "09/04/2026",
+    "type": "Cash",
+    "amount": "$1.48",
+    "declarationDate": "07/17/2026",
+    "recordDate": "09/04/2026",
+    "paymentDate": "09/30/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "06/05/2026",
+    "type": "Cash",
+    "amount": "$1.48",
+    "declarationDate": "05/06/2026",
+    "recordDate": "06/05/2026",
+    "paymentDate": "06/30/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "03/06/2026",
+    "type": "Cash",
+    "amount": "$1.4225",
+    "declarationDate": "02/04/2026",
+    "recordDate": "03/06/2026",
+    "paymentDate": "03/31/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "12/05/2025",
+    "type": "Cash",
+    "amount": "$1.4225",
+    "declarationDate": "11/19/2025",
+    "recordDate": "12/05/2025",
+    "paymentDate": "01/06/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "09/05/2025",
+    "type": "Cash",
+    "amount": "$1.4225",
+    "declarationDate": "07/24/2025",
+    "recordDate": "09/05/2025",
+    "paymentDate": "09/30/2025",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "06/06/2025",
+    "type": "Cash",
+    "amount": "$1.4225",
+    "declarationDate": "05/06/2025",
+    "recordDate": "06/06/2025",
+    "paymentDate": "06/30/2025",
+    "currency": "USD"
+   }
+  ],
+  "price": 128.63,
+  "ptime": "2026-09-25T20:00:00+00:00",
+  "ydiv": [
+   [
+    "2025-06-06",
+    1.423
+   ],
+   [
+    "2025-09-05",
+    1.423
+   ],
+   [
+    "2025-12-05",
+    1.423
+   ],
+   [
+    "2026-03-06",
+    1.423
+   ],
+   [
+    "2026-06-05",
+    1.48
+   ],
+   [
+    "2026-09-04",
+    1.48
+   ]
+  ]
+ },
+ "PG": {
+  "price": 146.23,
+  "ptime": "2026-09-25T20:03:59+00:00",
+  "ydiv": [
+   [
+    "2025-04-21",
+    1.057
+   ],
+   [
+    "2025-07-18",
+    1.057
+   ],
+   [
+    "2025-10-24",
+    1.057
+   ],
+   [
+    "2026-01-23",
+    1.057
+   ],
+   [
+    "2026-04-24",
+    1.089
+   ],
+   [
+    "2026-07-24",
+    1.089
+   ]
+  ]
+ },
+ "JNJ": {
+  "price": 271.22,
+  "ptime": "2026-09-25T20:00:02+00:00",
+  "ydiv": [
+   [
+    "2025-05-27",
+    1.3
+   ],
+   [
+    "2025-08-26",
+    1.3
+   ],
+   [
+    "2025-11-25",
+    1.3
+   ],
+   [
+    "2026-02-24",
+    1.3
+   ],
+   [
+    "2026-05-26",
+    1.34
+   ],
+   [
+    "2026-08-25",
+    1.34
+   ]
+  ]
+ },
+ "MCD": {
+  "price": 236.5,
+  "ptime": "2026-09-25T20:00:03+00:00",
+  "ydiv": [
+   [
+    "2025-06-02",
+    1.77
+   ],
+   [
+    "2025-09-02",
+    1.77
+   ],
+   [
+    "2025-12-01",
+    1.86
+   ],
+   [
+    "2026-03-03",
+    1.86
+   ],
+   [
+    "2026-06-02",
+    1.86
+   ],
+   [
+    "2026-09-01",
+    1.86
+   ]
+  ]
+ },
+ "O": {
+  "price": 55.54,
+  "ptime": "2026-09-25T20:00:02+00:00",
+  "ydiv": [
+   [
+    "2026-03-31",
+    0.271
+   ],
+   [
+    "2026-04-30",
+    0.271
+   ],
+   [
+    "2026-05-29",
+    0.271
+   ],
+   [
+    "2026-06-30",
+    0.271
+   ],
+   [
+    "2026-07-31",
+    0.271
+   ],
+   [
+    "2026-08-31",
+    0.271
+   ]
+  ]
+ },
+ "ABBV": {
+  "price": 264.34,
+  "ptime": "2026-09-25T20:03:33+00:00",
+  "ydiv": [
+   [
+    "2025-04-15",
+    1.64
+   ],
+   [
+    "2025-07-15",
+    1.64
+   ],
+   [
+    "2025-10-15",
+    1.64
+   ],
+   [
+    "2026-01-16",
+    1.73
+   ],
+   [
+    "2026-04-15",
+    1.73
+   ],
+   [
+    "2026-07-15",
+    1.73
+   ]
+  ]
+ },
+ "CL": {
+  "price": 86.06,
+  "ptime": "2026-09-25T20:00:02+00:00",
+  "ydiv": [
+   [
+    "2025-04-17",
+    0.52
+   ],
+   [
+    "2025-07-18",
+    0.52
+   ],
+   [
+    "2025-10-17",
+    0.52
+   ],
+   [
+    "2026-01-21",
+    0.52
+   ],
+   [
+    "2026-04-20",
+    0.53
+   ],
+   [
+    "2026-07-20",
+    0.53
+   ]
+  ]
+ },
+ "KMB": {
+  "nasdaq": {
+   "exDividendDate": "09/04/2026",
+   "dividendPaymentDate": "10/02/2026",
+   "yield": "5.27%",
+   "annualizedDividend": "5.12"
+  },
+  "nasdaq_rows": [
+   {
+    "exOrEffDate": "09/04/2026",
+    "type": "Cash",
+    "amount": "$1.28",
+    "declarationDate": "08/03/2026",
+    "recordDate": "09/04/2026",
+    "paymentDate": "10/02/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "06/05/2026",
+    "type": "Cash",
+    "amount": "$1.28",
+    "declarationDate": "05/14/2026",
+    "recordDate": "06/05/2026",
+    "paymentDate": "07/02/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "03/06/2026",
+    "type": "Cash",
+    "amount": "$1.28",
+    "declarationDate": "01/27/2026",
+    "recordDate": "03/06/2026",
+    "paymentDate": "04/02/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "12/05/2025",
+    "type": "Cash",
+    "amount": "$1.26",
+    "declarationDate": "11/20/2025",
+    "recordDate": "12/05/2025",
+    "paymentDate": "01/05/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "09/05/2025",
+    "type": "Cash",
+    "amount": "$1.26",
+    "declarationDate": "08/01/2025",
+    "recordDate": "09/05/2025",
+    "paymentDate": "10/02/2025",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "06/06/2025",
+    "type": "Cash",
+    "amount": "$1.26",
+    "declarationDate": "05/01/2025",
+    "recordDate": "06/06/2025",
+    "paymentDate": "07/02/2025",
+    "currency": "USD"
+   }
+  ],
+  "price": 98.43,
+  "ptime": "2026-09-25T20:00:01+00:00",
+  "ydiv": [
+   [
+    "2025-06-06",
+    1.26
+   ],
+   [
+    "2025-09-05",
+    1.26
+   ],
+   [
+    "2025-12-05",
+    1.26
+   ],
+   [
+    "2026-03-06",
+    1.28
+   ],
+   [
+    "2026-06-05",
+    1.28
+   ],
+   [
+    "2026-09-04",
+    1.28
+   ]
+  ]
+ },
+ "CVX": {
+  "price": 204.45,
+  "ptime": "2026-09-25T20:03:38+00:00",
+  "ydiv": [
+   [
+    "2025-05-19",
+    1.71
+   ],
+   [
+    "2025-08-19",
+    1.71
+   ],
+   [
+    "2025-11-18",
+    1.71
+   ],
+   [
+    "2026-02-17",
+    1.78
+   ],
+   [
+    "2026-05-19",
+    1.78
+   ],
+   [
+    "2026-08-19",
+    1.78
+   ]
+  ]
+ },
+ "XOM": {
+  "price": 160.59,
+  "ptime": "2026-09-25T20:04:11+00:00",
+  "ydiv": [
+   [
+    "2025-05-15",
+    0.99
+   ],
+   [
+    "2025-08-15",
+    0.99
+   ],
+   [
+    "2025-11-14",
+    1.03
+   ],
+   [
+    "2026-02-12",
+    1.03
+   ],
+   [
+    "2026-05-15",
+    1.03
+   ],
+   [
+    "2026-08-17",
+    1.03
+   ]
+  ]
+ },
+ "TGT": {
+  "price": 157.45,
+  "ptime": "2026-09-25T20:00:02+00:00",
+  "ydiv": [
+   [
+    "2025-05-14",
+    1.12
+   ],
+   [
+    "2025-08-13",
+    1.14
+   ],
+   [
+    "2025-11-12",
+    1.14
+   ],
+   [
+    "2026-02-11",
+    1.14
+   ],
+   [
+    "2026-05-13",
+    1.14
+   ],
+   [
+    "2026-08-12",
+    1.16
+   ]
+  ]
+ },
+ "LOW": {
+  "price": 189.28,
+  "ptime": "2026-09-25T20:03:05+00:00",
+  "ydiv": [
+   [
+    "2025-04-23",
+    1.15
+   ],
+   [
+    "2025-07-23",
+    1.2
+   ],
+   [
+    "2025-10-22",
+    1.2
+   ],
+   [
+    "2026-01-21",
+    1.2
+   ],
+   [
+    "2026-04-22",
+    1.2
+   ],
+   [
+    "2026-07-22",
+    1.25
+   ]
+  ]
+ },
+ "WMT": {
+  "nasdaq": {
+   "exDividendDate": "08/21/2026",
+   "dividendPaymentDate": "09/08/2026",
+   "yield": "0.92%",
+   "annualizedDividend": "0.99"
+  },
+  "nasdaq_rows": [
+   {
+    "exOrEffDate": "12/11/2026",
+    "type": "Cash",
+    "amount": "$0.2475",
+    "declarationDate": "02/19/2026",
+    "recordDate": "12/11/2026",
+    "paymentDate": "01/04/2027",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "08/21/2026",
+    "type": "Cash",
+    "amount": "$0.2475",
+    "declarationDate": "02/19/2026",
+    "recordDate": "08/21/2026",
+    "paymentDate": "09/08/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "05/08/2026",
+    "type": "Cash",
+    "amount": "$0.2475",
+    "declarationDate": "02/19/2026",
+    "recordDate": "05/08/2026",
+    "paymentDate": "05/26/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "03/20/2026",
+    "type": "Cash",
+    "amount": "$0.2475",
+    "declarationDate": "02/19/2026",
+    "recordDate": "03/20/2026",
+    "paymentDate": "04/06/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "12/12/2025",
+    "type": "Cash",
+    "amount": "$0.235",
+    "declarationDate": "N/A",
+    "recordDate": "12/12/2025",
+    "paymentDate": "01/05/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "08/15/2025",
+    "type": "Cash",
+    "amount": "$0.235",
+    "declarationDate": "02/20/2025",
+    "recordDate": "08/15/2025",
+    "paymentDate": "09/02/2025",
+    "currency": "USD"
+   }
+  ],
+  "price": 107.98,
+  "ptime": "2026-09-25T20:00:01+00:00",
+  "ydiv": [
+   [
+    "2025-05-09",
+    0.235
+   ],
+   [
+    "2025-08-15",
+    0.235
+   ],
+   [
+    "2025-12-12",
+    0.235
+   ],
+   [
+    "2026-03-20",
+    0.248
+   ],
+   [
+    "2026-05-08",
+    0.248
+   ],
+   [
+    "2026-08-21",
+    0.248
+   ]
+  ]
+ },
+ "ADP": {
+  "nasdaq": {
+   "exDividendDate": "09/11/2026",
+   "dividendPaymentDate": "10/01/2026",
+   "yield": "2.58%",
+   "annualizedDividend": "6.8"
+  },
+  "nasdaq_rows": [
+   {
+    "exOrEffDate": "09/11/2026",
+    "type": "Cash",
+    "amount": "$1.70",
+    "declarationDate": "08/05/2026",
+    "recordDate": "09/11/2026",
+    "paymentDate": "10/01/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "06/12/2026",
+    "type": "Cash",
+    "amount": "$1.70",
+    "declarationDate": "04/08/2026",
+    "recordDate": "06/12/2026",
+    "paymentDate": "07/01/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "03/13/2026",
+    "type": "Cash",
+    "amount": "$1.70",
+    "declarationDate": "01/14/2026",
+    "recordDate": "03/13/2026",
+    "paymentDate": "04/01/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "12/12/2025",
+    "type": "Cash",
+    "amount": "$1.70",
+    "declarationDate": "11/12/2025",
+    "recordDate": "12/12/2025",
+    "paymentDate": "01/01/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "09/12/2025",
+    "type": "Cash",
+    "amount": "$1.54",
+    "declarationDate": "08/06/2025",
+    "recordDate": "09/12/2025",
+    "paymentDate": "10/01/2025",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "06/13/2025",
+    "type": "Cash",
+    "amount": "$1.54",
+    "declarationDate": "04/08/2025",
+    "recordDate": "06/13/2025",
+    "paymentDate": "07/01/2025",
+    "currency": "USD"
+   }
+  ],
+  "price": 263.67,
+  "ptime": "2026-09-25T20:00:01+00:00",
+  "ydiv": [
+   [
+    "2025-06-13",
+    1.54
+   ],
+   [
+    "2025-09-12",
+    1.54
+   ],
+   [
+    "2025-12-12",
+    1.7
+   ],
+   [
+    "2026-03-13",
+    1.7
+   ],
+   [
+    "2026-06-12",
+    1.7
+   ],
+   [
+    "2026-09-11",
+    1.7
+   ]
+  ]
+ },
+ "CINF": {
+  "nasdaq": {
+   "exDividendDate": "09/23/2026",
+   "dividendPaymentDate": "10/15/2026",
+   "yield": "2.32%",
+   "annualizedDividend": "3.76"
+  },
+  "nasdaq_rows": [
+   {
+    "exOrEffDate": "09/23/2026",
+    "type": "Cash",
+    "amount": "$0.94",
+    "declarationDate": "08/21/2026",
+    "recordDate": "09/23/2026",
+    "paymentDate": "10/15/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "06/23/2026",
+    "type": "Cash",
+    "amount": "$0.94",
+    "declarationDate": "05/02/2026",
+    "recordDate": "06/23/2026",
+    "paymentDate": "07/15/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "03/24/2026",
+    "type": "Cash",
+    "amount": "$0.94",
+    "declarationDate": "01/30/2026",
+    "recordDate": "03/24/2026",
+    "paymentDate": "04/15/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "12/22/2025",
+    "type": "Cash",
+    "amount": "$0.87",
+    "declarationDate": "11/14/2025",
+    "recordDate": "12/22/2025",
+    "paymentDate": "01/15/2026",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "09/22/2025",
+    "type": "Cash",
+    "amount": "$0.87",
+    "declarationDate": "08/22/2025",
+    "recordDate": "09/22/2025",
+    "paymentDate": "10/15/2025",
+    "currency": "USD"
+   },
+   {
+    "exOrEffDate": "06/23/2025",
+    "type": "Cash",
+    "amount": "$0.87",
+    "declarationDate": "05/03/2025",
+    "recordDate": "06/23/2025",
+    "paymentDate": "07/15/2025",
+    "currency": "USD"
+   }
+  ],
+  "price": 162.54,
+  "ptime": "2026-09-25T20:00:01+00:00",
+  "ydiv": [
+   [
+    "2025-06-23",
+    0.87
+   ],
+   [
+    "2025-09-22",
+    0.87
+   ],
+   [
+    "2025-12-22",
+    0.87
+   ],
+   [
+    "2026-03-24",
+    0.94
+   ],
+   [
+    "2026-06-23",
+    0.94
+   ],
+   [
+    "2026-09-23",
+    0.94
+   ]
+  ]
+ }
+}

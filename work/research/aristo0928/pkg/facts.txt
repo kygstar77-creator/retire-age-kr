@@ -1,0 +1,69 @@
+확인일 2026-09-28 · 출처(이번 회차에 직접 받아 본 것)
+- S&P 다우존스 지수(S&P Dow Jones Indices) 배당귀족 지수 안내: S&P 500 편입 종목 중 최소 25년 연속 배당을 늘린 종목 https://www.spglobal.com/spdji/en/indices/dividends-factors/sp-500-dividend-aristocrats/ (페이지 직접 접속은 403, 검색 결과 요약문으로 확인 — 구성 종목 명단은 확인 못 함)
+- 나스닥 배당 API(무키) https://api.nasdaq.com/api/quote/{종목}/dividends?assetclass=stocks — 나스닥 상장 종목만 줌: 펩시코·킴벌리클라크·월마트
+- 야후 파이낸스 차트 API https://query1.finance.yahoo.com/v8/finance/chart/{종목}?range=2y&interval=1d&events=div — 9월 25일(미국 시간) 종가와 배당락일 목록. 금액은 소수 셋째 자리로 반올림돼 나와서 금액은 회사 발표문 값을 쓴다.
+- 코카콜라 2026-02-19 이사회 보도자료 https://investors.coca-colacompany.com/news-events/press-releases/detail/1152/board-of-directors-of-the-coca-cola-company-elects-new-officer-and-approves-64th-consecutive-annual-dividend-increase
+- 코카콜라 2026-07-15 보도자료 https://investors.coca-colacompany.com/news-events/press-releases/detail/1165/board-of-directors-of-the-coca-cola-company-elects-new-officer-and-declares-regular-quarterly-dividend
+- P&G 2026-04-14 보도자료 https://www.pginvestor.com/news/news-details/2026/PG-Declares-Dividend-Increase-for-April-2026/default.aspx
+- 존슨앤드존슨 2026-04-14 보도자료 https://www.investor.jnj.com/investor-news/news-details/2026/Johnson--Johnson-Announces-64th-Consecutive-Year-of-Dividend-Increase-Raises-Quarterly-Dividend-by-3-1/default.aspx
+- 펩시코 2025년 4분기 실적 보도자료(SEC 8-K 첨부 99.1) https://www.sec.gov/Archives/edgar/data/77476/000007747626000009/q420258-kxexhibit991.htm
+- 킴벌리클라크 2026-01-27 보도자료 https://www.prnewswire.com/news-releases/kimberly-clark-declares-dividend-increase-302670325.html
+- 월마트 2026-02-19 보도자료 https://corporate.walmart.com/news/2026/02/19/walmart-raises-annual-dividend-to-0-99-per-share-marking-53rd-consecutive-year-of-dividend-increases
+- 타깃 2026-06-11 보도자료 https://corporate.target.com/press/release/2026/06/target-corporation-increases-quarterly-dividend-by-1-8-percent
+- 맥도날드 2026-09-17 보도자료 https://www.prnewswire.com/news-releases/mcdonalds-marks-50-consecutive-years-of-dividend-increases-joining-the-ranks-of-dividend-kings-302882422.html
+- 셰브론 2025년 4분기 실적 보도자료(SEC 8-K 첨부 99.1) https://www.sec.gov/Archives/edgar/data/93410/000009341026000019/a12312025ex9918-k.htm
+- 리얼티인컴 2026-09-08 보도자료 https://www.prnewswire.com/news-releases/136th-common-stock-monthly-dividend-increase-declared-by-realty-income-302872745.html
+- 로우스 2026-05-29 보도자료 https://corporate.lowes.com/newsroom/press-releases/lowes-companies-inc-announces-increase-quarterly-cash-dividend-125-share-05-29-26 (문구는 prnewswire 재배포본 검색 요약으로 확인)
+
+[회사 발표문 — 연속 인상 연수와 배당금]
+코카콜라: 64년 연속 연간 배당 인상(2026-02-19 발표). 분기 51센트 → 53센트(0.51달러 → 0.53달러), 약 4% 인상. 7월 15일 발표 분기 53센트, 기준일 9월 15일(Sept. 15), 지급일 10월 1일(Oct. 1).
+P&G(프록터앤드갬블): 2026-04-14 분기 1.0885달러로 3% 인상. 70년 연속 인상. 1890년 설립 이후 136년 연속 배당 지급. 기준일 4월 24일, 지급 5월 15일 이후.
+존슨앤드존슨: 2026-04-14 분기 1.30달러 → 1.34달러, 3.1% 인상. 64년 연속 인상. 연 5.20달러 → 5.36달러. 6월 9일 지급, 기준일·배당락일 5월 26일.
+펩시코: 연간 배당 5.69달러 → 5.92달러, 4% 인상(2026년 6월 지급분부터). 54년 연속 연간 배당 인상.
+킴벌리클라크: 2026-01-27 분기 1.26달러 → 1.28달러. 54년 연속 인상, 92년 연속 배당 지급. 4월 2일 지급, 기준일 3월 6일.
+월마트: 2026-02-19 연간 0.94달러 → 0.99달러, 5% 인상. 53년 연속 인상. 분기 0.2475달러 네 번. 기준일/지급일: 3월 20일/4월 6일, 5월 8일/5월 26일, 8월 21일/9월 8일, 12월 11일/2027년 1월 4일.
+타깃: 2026-06-11 분기 1.14달러 → 1.16달러, 1.8% 인상. 9월 1일 지급, 기준일 8월 12일. "2026년은 55년 연속 인상한 해가 될 예정"(회사 표현 on track). 1967년 10월 상장 이후 236번째 연속 배당.
+맥도날드: 2026-09-17 분기 1.93달러로 4% 인상, 50년 연속 인상. 기준일 12월 1일, 지급일 12월 15일. 직전 분기 1.86달러(야후 배당 목록).
+셰브론: 2026년 1월 분기 1.78달러로 4% 인상. 회사 표현 "39년 연속 연간 배당 인상 궤도(positions ... for the 39th consecutive year)". 직전 분기 1.71달러(야후 배당 목록).
+리얼티인컴: 2026-09-08 월 0.2710달러 → 0.2715달러, 연 3.252달러 → 3.258달러. 상장 이후 136번째 인상. "31년 넘게 연속 인상", S&P 500 배당귀족 지수 편입이라고 회사가 밝힘. 기준일 9월 30일, 지급일 10월 15일.
+로우스: 2026-05-29 분기 1.20달러 → 1.25달러, 4% 인상. 8월 5일 지급, 기준일 7월 22일. "25년 넘게 연속 인상", 배당귀족 지위를 중시한다고 회사가 밝힘(정확한 연수는 발표문에 없음 — 본문에 연수 안 씀).
+
+[나스닥 배당 API 2026-09-28]
+펩시코: 배당락일 09/04/2026, 지급일 09/30/2026, 분기 1.48달러, 배당률 4.62%, 연 5.92달러
+킴벌리클라크: 배당락일 09/04/2026, 지급일 10/02/2026, 분기 1.28달러, 배당률 5.27%, 연 5.12달러
+월마트: 배당락일 08/21/2026, 지급일 09/08/2026, 배당률 0.92%, 연 0.99달러
+
+[야후 차트 API 2026-09-28 조회 — 9월 25일 종가와 최근 배당락일]
+코카콜라 87.81달러, 최근 배당락일 2026-09-15
+P&G 146.23달러, 2026-07-24
+존슨앤드존슨 271.22달러, 2026-08-25
+펩시코 128.63달러, 2026-09-04
+킴벌리클라크 98.43달러, 2026-09-04
+월마트 107.98달러, 2026-08-21
+타깃 157.45달러, 2026-08-12
+맥도날드 236.5달러, 2026-09-01
+셰브론 204.45달러, 2026-08-19
+리얼티인컴 55.54달러, 2026-08-31(월 배당)
+로우스 189.28달러, 2026-07-22
+
+[계산 — 연 배당(회사 발표 현재 금액 기준) ÷ 9월 25일 종가]
+리얼티인컴 3.258 ÷ 55.54 = 5.87%
+킴벌리클라크 5.12 ÷ 98.43 = 5.20%
+펩시코 5.92 ÷ 128.63 = 4.60% (나스닥 표시 4.62%, 가격 시점 차이)
+셰브론 1.78×4 = 7.12 ÷ 204.45 = 3.48%
+맥도날드 1.93×4 = 7.72 ÷ 236.5 = 3.26% (12월 지급분부터 새 금액. 직전 1.86 기준이면 3.15%)
+P&G 1.0885×4 = 4.354 ÷ 146.23 = 2.98%
+타깃 1.16×4 = 4.64 ÷ 157.45 = 2.95%
+로우스 1.25×4 = 5.00 ÷ 189.28 = 2.64%
+코카콜라 0.53×4 = 2.12 ÷ 87.81 = 2.41%
+존슨앤드존슨 5.36 ÷ 271.22 = 1.98%
+월마트 0.99 ÷ 107.98 = 0.92%
+배당률 5.87%와 0.92% 차이는 6배 넘게(5.87 ÷ 0.92 = 6.4배).
+연속 인상 연수 순: P&G 70 · 코카콜라 64 · 존슨앤드존슨 64 · 타깃 55(올해 예정) · 펩시코 54 · 킴벌리클라크 54 · 월마트 53 · 맥도날드 50 · 셰브론 39(올해 예정) · 리얼티인컴 31년 넘게 · 로우스 25년 넘게
+11종목 중 50년 이상 8곳(P&G·코카콜라·존슨앤드존슨·타깃·펩시코·킴벌리클라크·월마트·맥도날드)
+인상률: 존슨앤드존슨 3.1% · 월마트 5% · 타깃 1.8% · 맥도날드 4% · 셰브론 4% · 코카콜라 약 4% · P&G 3% · 펩시코 4% · 로우스 4% · 킴벌리클라크 1.6%(1.26→1.28, 계산) · 리얼티인컴 0.2%(0.2710→0.2715, 계산)
+
+[확인 못 한 것 — 본문에 안 씀]
+- S&P 배당귀족 지수의 현재 구성 종목 명단(S&P 페이지 403). 리얼티인컴·로우스만 회사가 직접 편입을 밝혔다.
+- 콜게이트 연속 인상 연수(검색 요약에서 36년과 63년이 엇갈림, 회사 페이지 시간 초과) — 표에서 뺐다.
+- 나스닥 비상장(뉴욕증권거래소) 종목의 이번 분기 지급일 중 회사 발표문으로 확인 못 한 것(P&G·존슨앤드존슨·맥도날드·셰브론·로우스 최근분).

@@ -405,19 +405,24 @@ def grid_pick(design, spec, kind, knob, base_grid, did, blocked):
     # 성긴 격자(0.44/0.50/0.62)로는 0.50 을 최선으로 골라 그 골짜기를 통째로 지나쳤다. 세 칸 오차는 줄의 윗변이
     # 칸 경계(쇼츠 1280px)를 넘느냐로 갈려서, 손잡이가 몇 px만 움직여도 한 줄이 다른 칸으로 통째로 센다.
     # 그래서 최선 양옆을 반으로 갈라 들어간다. 한 바퀴에 두 점(왼쪽·오른쪽 중간)만 재고,
-    # 그 바퀴에서 최선이 안 바뀌면 멈춘다 — 손잡이 하나당 최대 4장만 더 그린다(회차 시간을 지키려고).
-    for _ in range(2):
+    # 이웃 간격이 0.01 아래가 되면 멈춘다 — 손잡이 하나당 최대 6장만 더 그린다(회차 시간을 지키려고).
+    # 2026-09-29 163회차: '최선이 그대로면 멈춘다'가 틀렸다. 한 바퀴째 양옆 중간(0.225·0.375)만 재고
+    # short.text_spread 0.3 이 그대로라 멈췄는데, 그보다 안쪽 0.32 는 한 번도 안 재졌다. 실측(나머지 고정):
+    #   0.30 err 0.3246 mid 0.0943 · 0.32 err 0.3041 mid 0.0706(목표 0.0747) · 0.34 err 0.7498 · 0.375 1.1899
+    # short.text_mid 가 '미해결 차이 1'로 남은 이유가 이 한 칸이었다. 최선이 안 바뀌어도 이웃이 가까워졌으니
+    # 한 번 더 가른다. 대신 이웃 간격이 0.01 아래면 멈춘다(그 밑은 칸 경계 몇 px 이라 재 봐야 잡음이다).
+    for _ in range(3):
         best, vs = pick(), sorted(t['v'] for t in table)
         i = vs.index(best['v'])
         mids = []
         for j in (i - 1, i + 1):
-            if 0 <= j < len(vs):
+            if 0 <= j < len(vs) and abs(vs[j] - best['v']) >= 0.01:
                 m = round((best['v'] + vs[j]) / 2, 4)
                 if m != best['v'] and not any(abs(t['v'] - m) < 1e-9 for t in table): mids.append(m)
         if not mids: break
         measure(sorted(set(mids)))
         if failed: break
-        if pick()['v'] == best['v']: break      # 갈라도 최선이 그대로다 = 이 자리가 진짜 골짜기 바닥
+        if pick()['v'] == best['v']: continue   # 최선은 그대로지만 이웃이 가까워졌다 — 한 번 더 가른다
         did.append(f'{kind}.{knob} 격자 사이를 갈라 더 나은 자리를 찾았다: {best["v"]}(오차 {best["err"]}) → {pick()["v"]}({pick()["err"]})')
     best = pick()
     vs = [t['v'] for t in table]

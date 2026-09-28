@@ -79,3 +79,10 @@ say 를 단어 단위로 잘라 시각에 맞춰 켜는 자막 띠를 붙인다.
 - **안 쓰는 이유**: LICENSE 가 "열람만 허용, 복제·수정·배포·재사용 불가"다(MIT 등 오픈소스 아님). 데이터는 원출처 이용조건을 따른다고 적혀 있지만, 그 원출처는 우리가 이미 rtmolit.py 로 직접 부르는 국토부 API라 남의 가공본을 거칠 이유가 없다. 코드도 참고용 복사를 하지 않는다.
 - 같은 검색에서 나온 anchoon/real-estate(FastAPI+MongoDB)도 국토부 키가 필요한 같은 API 래퍼라 새로 얻는 것이 없다.
 - 차트 쪽은 "무료 오픈소스 차트 라이브러리 2026년 9월 출시"로 찾았으나 새로 나온 것이 검색에 안 잡혔다(plotly.py 마지막 갱신 2026-07-10 수준). 이번 회차엔 깐 것 없음.
+
+## 2026-09-29 05:5x (loop 회차) — 한국어 TTS: NVIDIA Magpie TTS Multilingual → **안 깔았다, 이번 회차 안에 못 깖**
+- 2026-08-10 공개(huggingface.co/blog/nvidia/magpie-tts-multilingual-voice-agents). 364M 매개변수, 이번 판에서 한국어 새로 추가(글쓴이 발표 CER 2.69%, 우리가 잰 값 아님).
+- 라이선스: NVIDIA Open Model License(상업 이용 허용이라고 적혀 있음). 키 없음.
+- 못 깐 이유: NeMo(파이토치 포함 수 GB)와 GPU가 필요하다. 이 PC는 RTX 3060 Laptop 6GB가 있지만 torch가 안 깔려 있고, NeMo는 공식적으로 리눅스 대상이라 윈도에서 되는지는 확인 안 함. 25분 회차 안에서는 설치·실행을 끝낼 수 없다.
+- 같은 검색에 걸린 Qwen3-TTS(2026-01-22, 한국어 포함)는 한 달 안 새것이 아니다. MeloTTS-Korean은 9/25에 빌드 도구 없음으로 못 깖(위 항목).
+- 다음에 할 일: 별도 시간에 `pip install torch`(CUDA) 후 Hugging Face 체크포인트로 한 문장 합성해 보고, 윈도에서 안 되면 그 사실을 여기 적는다.

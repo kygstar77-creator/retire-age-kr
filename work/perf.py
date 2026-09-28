@@ -72,6 +72,22 @@ def quoted_found(sent, needle=BLOGID, tab='blog'):
     links = re.findall(r'https?://(?:m\.)?(?:blog|cafe)\.naver\.com/[A-Za-z0-9_\-/]+', s)
     return any(needle in l for l in links[:60])
 
+# 대조군 — 9/23 이전에 색인이 확인된 우리 글(2026-09-27 blog-noindex 실측). 이 글들도 안 잡히면
+# 새 글 색인 0%는 '색인 안 됨'이 아니라 측정이 고장났거나 막힌 것이다. 9/26에 로그인 풀린 채 잰 0%로
+# 반나절을 판 뒤 "다시 잴 때는 대조 검색을 같이 돌린다"고 적었는데, 손으로만 돌려서 04시 회차는 빠뜨렸다.
+CONTROL_LOGNOS = ('224417955457', '224420188590', '224420736444')
+
+def control_found():
+    """블로그탭에서 블로그 아이디로 검색해 대조군 글이 하나라도 잡히나. True/False, 못 재면 None."""
+    u = 'https://search.naver.com/search.naver?ssc=tab.blog.all&query=%s' % urllib.parse.quote(BLOGID)
+    try:
+        s = get(u)
+    except Exception:
+        return None
+    if len(s) < 20000:
+        return None
+    return any(n in s for n in CONTROL_LOGNOS)
+
 def norm(s):
     return re.sub(r'[\s\W_]+', '', s or '')
 
@@ -139,6 +155,11 @@ def main():
     # 제목 검색에 안 나오던 9/20 글들이 본문 문장을 따옴표로 검색하면 우리 블로그로 잡혔다.
     # 네이버가 글을 알고는 있는데(색인됨) 제목 검색 순위에 안 올린 것이다.
     drafts = draft_index()
+    ctl = control_found(); time.sleep(0.5)
+    today['control'] = ctl
+    print('\n=== 대조군(9/23 이전 색인 확인 글 %d편) — %s' % (len(CONTROL_LOGNOS),
+          {True: '잡힌다 = 측정 살아 있음', False: '안 잡힌다 = 측정 고장·차단 의심, 아래 색인 숫자를 믿지 않는다',
+           None: '검색 자체가 실패 = 못 잼, 아래 색인 숫자를 믿지 않는다'}[ctl]))
     print('\n=== 블로그 글 — 색인(본문 문장으로 잡히나)과 순위(제목 검색 몇 위)를 따로 본다')
     low = 0; noidx = 0
     for b in blog_posts(N):
@@ -245,6 +266,9 @@ BRAKE_MIN_N = 3          # 표본이 이보다 적으면 판단하지 않는다
 def brake(today, log):
     """색인이 무너졌거나 측정이 멈췄으면 경고를 남긴다. 정상이면 경고를 지운다."""
     out = []
+    if today.get('control') is not True:
+        out.append('대조군(9/23 이전 글)이 검색에 안 잡힌다(%s) — 측정이 막혔을 수 있다, 이번 색인 숫자로 판단하지 않는다'
+                   % today.get('control'))
     m = today.get('mature') or {}
     basis_ok = str(m.get('basis', '')).startswith('어제')
     if basis_ok and m.get('n', 0) >= BRAKE_MIN_N and m.get('rate', 1) < BRAKE_RATE:

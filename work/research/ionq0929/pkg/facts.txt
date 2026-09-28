@@ -1,0 +1,45 @@
+# 사실표 — 아이온큐(IONQ) 한 종목 분석 (2026-09-29 01시 회차, K02 슬롯. 애플은 9월에 두 번 써서 교체)
+
+[오늘 찾은 것]
+- 2026-09-28 · CNBC · 뱅크오브아메리카가 아이온큐 분석을 시작하며 매수 의견, 목표가 60달러 https://www.cnbc.com/2026/09/28/ionq-has-been-on-fire-this-month-bank-of-america-says-buy-the-quantum-computing-stock.html
+- 2026-09-23 · CNBC · 실시간 오류 해독기 시험 성공 발표 뒤 주가 상승 https://www.cnbc.com/2026/09/23/ionq-shares-rally-after-company-says-it-made-a-major-quantum-computing-breakthrough.html
+- 2026-09-08 · IonQ 뉴스룸 · 6세대 양자컴퓨터 플랫폼 슈페리온 256 공개, 고객 인도는 2027년 예정 https://www.ionq.com/news/ionq-launches-superion-product-line-industry-leading-upgradeable-platform-designed-to-scale-manufacturable-fault-tolerant-quantum-computing
+- 2026-09-21~24 · 슈페리온 256 설치처 세 곳 발표 — 한국 SDT 공급 계약, 엔비디아 양자 연구센터, 미국 플로리다국제대 https://thequantuminsider.com/2026/09/24/ionq-superion-256-florida-international-university/
+- 2026-09 · IonQ 뉴스룸 · 스카이워터 인수 반영해 2026년 매출 전망을 4억 5,000만~4억 6,000만달러로 올림(7월 31일 인수 완료분부터 반영) https://www.ionq.com/news/ionq-announces-increased-full-year-2026-financial-outlook-following-skywater-acquisition
+
+- 2026-09-22 · ZDNet Korea · 국내 양자기술 기업 SDT가 아이온큐와 제휴, 슈페리온 256 국내 첫 도입, 경북 구미에 양자 제조·조립 거점 조성 https://zdnet.co.kr/view/?no=20260922194445
+
+[출처 주소 — 1차]
+- SEC 8-K 첨부 99.1 (2026-08-05, 2분기 실적) https://www.sec.gov/Archives/edgar/data/0001824920/000119312526335040/ionq-ex99_1.htm
+- IonQ 뉴스룸 (위 두 건)
+- Nasdaq 요약 API https://api.nasdaq.com/api/quote/IONQ/summary (2026-09-29 01:40 조회)
+- Yahoo 차트 API https://query1.finance.yahoo.com/v8/finance/chart/IONQ (5년 일봉, 2026-09-29 01:40 조회)
+
+[회사]
+- 양자컴퓨터 회사. 이온 트랩 방식. 뉴욕증권거래소 상장, 티커 IONQ
+- 시가총액 179억 8,712만달러 (Nasdaq 요약, 2026-09-29 01:40 조회)
+- 배당 없음 (Nasdaq 요약·8-K에 배당 언급 없음)
+
+[2분기 실적 — 8-K 2026-08-05]
+- 매출 8,010만달러, 1년 전 2,069만달러에서 287% 증가
+- 순손실 18억 6,770만달러, 주당 -5.08달러
+- 순손실 대부분은 워런트(신주인수권) 평가손실 16억 4,912만달러 — 현금이 나간 손실이 아니다
+- 조정 EBITDA -1억 2,030만달러
+- 6월 말 현금·투자자산 30억달러
+- 2026년 매출 전망 2억 8,000만~2억 9,000만달러(스카이워터 제외) → 인수 뒤 4억 5,000만~4억 6,000만달러
+
+[주가 — Yahoo 종가]
+- 9월 25일(금) 종가 45.48달러 — 9월 28일 값(47.20)은 조회 시각(한국 01:40)에 미국 장중이라 쓰지 않음
+- 52주 최고 82.09달러(2025-10-13) → 9/25 종가는 44.6% 낮다
+- 52주 최저 26.59달러(2026-03-30) → 9/25 종가는 71.0% 높다
+- 1년 전(2025-09-29) 64.26달러 → 29.2% 하락
+- 올해 첫 거래일(2026-01-02) 46.77달러 → 2.8% 낮다
+- 5년 최저 3.10달러(2022-12-27)
+- 증권사 목표가: 뱅크오브아메리카 60달러(CNBC). Nasdaq 요약의 1년 목표가 65달러
+
+[계산]
+- 44.6% = 1 - 45.48/82.09
+- 71.0% = 45.48/26.59 - 1
+- 29.2% = 1 - 45.48/64.26
+- 45.48/82.09 = 55.4% → "절반을 조금 넘는 자리"
+- 2.8% = 1 - 45.48/46.77

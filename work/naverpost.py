@@ -15,7 +15,7 @@
 #   카테고리: 경제지식      (블로그)
 #   태그: a, b, c           (블로그)
 #   게시판: 자유게시판       (카페)
-import sys, os, re, time, json, io, subprocess, datetime
+import sys, os, re, time, json, io, subprocess, datetime, urllib.parse
 sys.stdout.reconfigure(encoding='utf-8')
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
 
@@ -1027,7 +1027,9 @@ def submit_cafe(page, title=None):
     art = re.compile(r'articleid=\d+|articles/\d+|cafe\.naver\.com/firemap/\d+', re.I)
     try:
         for _ in range(60):
-            hitp = next((q for q in page.context.pages if art.search(q.url or '')), None)
+            # 2026-09-29: 등록 뒤 주소가 firemap?iframe_url_utf8=%2Fca-fe%2Fcafes%2F…%2Farticles%2F156 처럼
+            # 인코딩돼 있어 매번 30초를 다 쓰고 목록 확인으로 넘어갔다. 풀어서 본다.
+            hitp = next((q for q in page.context.pages if art.search(urllib.parse.unquote(q.url or ''))), None)
             if hitp is not None:
                 page = hitp; break
             page.wait_for_timeout(500)
@@ -1049,7 +1051,8 @@ def submit_cafe(page, title=None):
                     print('카페 목록에서 등록 확인:', up)
                     return up
         raise
-    m = re.search(r'articleid=(\d+)', page.url, re.I) or re.search(r'articles/(\d+)', page.url) or re.search(r'firemap/(\d+)', page.url)
+    u = urllib.parse.unquote(page.url)
+    m = re.search(r'articleid=(\d+)', u, re.I) or re.search(r'articles/(\d+)', u) or re.search(r'firemap/(\d+)', u)
     return f'https://cafe.naver.com/firemap/{m.group(1)}' if m else page.url
 
 def cafe_make_public(page, article_id):

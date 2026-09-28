@@ -98,7 +98,7 @@ def acronyms(text):
     처음 나올 때 무엇인지 안 밝히면 독자가 못 따라온다."""
     KNOWN = {'ETF', 'API', 'GDP', 'CPI', 'PPI', 'FOMC', 'EPS', 'PER', 'PBR', 'ROE', 'ISA', 'IRP',
              'DSR', 'LTV', 'DTI', 'IPO', 'CEO', 'GDP', 'US', 'EU', 'PDF', 'TV', 'AI'}
-    GROUPS = {'SK', 'LG', 'KB', 'GS', 'CJ', 'HD', 'KT', 'LS', 'HL', 'DB', 'NH', 'IBK', 'BNK', 'KCC', 'SH', 'LH', 'HUG'}
+    GROUPS = {'SK', 'LG', 'KB', 'GS', 'CJ', 'HD', 'KT', 'LS', 'HL', 'DB', 'NH', 'IBK', 'BNK', 'KCC', 'SH', 'LH', 'HUG', 'JP'}
     first, bad = {}, []
     ss = sents(text)
     # 한글 조사가 붙으면('ACE는') 가 경계로 안 잡혀 첫 등장을 놓쳤다 — 영문자만 경계로 본다
@@ -130,7 +130,9 @@ def acronyms(text):
             mod = re.search(r'([가-힣]{2,})\s*$', before)
             # 2026-09-27 07시: "인베스코가 운용하는 나스닥100 ETF QQQ"처럼 앞에 종류를 붙여 부르는 꼴(동격)을
             # 설명 없음으로 잡았다. 바로 앞이 ETF·펀드·리츠이고 그 앞에 한글 설명이 있으면 설명한 것으로 본다.
-            if re.search(r'(?:ETF|펀드|리츠)\s*$', before) and len(re.findall(r'[가-힣]', before[-24:])) >= 4:
+            # 2026-09-28 21시: "커버드콜 ETF인 QQQI"처럼 '-인'이 붙은 꼴과 "미국 ETF 운용사 NEOS"처럼
+            # 회사 종류를 앞에 붙인 동격도 설명인데 잡았다.
+            if re.search(r'(?:ETF인?|펀드인?|리츠인?|운용사|자산운용|증권사|회사|기업)\s*$', before) and len(re.findall(r'[가-힣]', before[-24:])) >= 4:
                 continue
             # 동사를 하나씩 적어 두니 계속 빈틈이 생겼다(2026-09-26: "설계도를 파는 ARM",
             # "인텔을 뒤쫓는 AMD"가 목록에 없어 설명을 붙였는데도 지적으로 잡혔다).

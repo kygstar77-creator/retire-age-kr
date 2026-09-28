@@ -423,6 +423,27 @@ def already_up(kind, title):
 def published_titles():
     return set(live_map('blog')), set(live_map('cafe'))
 
+def slot_of(pkg):
+    """카페 코너 묶음이 올라갈 시각(pkg/slot.txt "YYYY-MM-DD HH"). 없으면 None.
+
+    2026-09-28 06시 실측: 공지·대문·글 끝에 "매일 같은 시간에 올라와요"라고 적어 놓고,
+    [오늘의 투표](10시 코너)가 05:28에, [금리·환율](19시 코너)가 23:29에 나갔다.
+    회차가 대기열에서 '가장 오래된 묶음'을 올리고 이번 시각 코너는 새로 써서 뒤에 붙이니,
+    대기 3개만큼 약 3시간씩 밀린 것이다. 코너는 제 시각에만 나가야 한다."""
+    f = os.path.join(pkg, 'slot.txt')
+    if not os.path.exists(f): return None
+    try: return datetime.datetime.strptime(open(f, encoding='utf-8').read().strip()[:13], '%Y-%m-%d %H')
+    except Exception: return None
+
+def slot_state(pkg, now=None):
+    """'early'(아직 그 시각 전) · 'now'(그 시각 안) · 'late'(지남) · None(시각 없음)."""
+    t = slot_of(pkg)
+    if not t: return None
+    now = now or datetime.datetime.now()
+    if now < t: return 'early'
+    if now < t + datetime.timedelta(hours=1): return 'now'
+    return 'late'
+
 def list_pending():
     """work/research/*/pkg 중 아직 안 올라간 묶음. order.txt 첫 줄로 블로그/카페를 가른다."""
     base = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research')
@@ -447,8 +468,26 @@ def list_pending():
                 row['deadline'] = open(dl, encoding='utf-8').read().strip()[:16]
                 row['expired'] = datetime.datetime.strptime(row['deadline'], '%Y-%m-%d %H:%M') < datetime.datetime.now()
             except Exception: row.pop('deadline', None)
+        row['slot'] = slot_state(pkg)
+        # 2026-09-28 17시: divtax0928은 facts 첫 줄에 "K18 카페 18시 슬롯용"이라 적어 놓고 slot.txt가 없어
+        # 코너가 아닌 대타 묶음으로 떠 있었다. 코너용으로 쓴 흔적이 있는데 slot.txt가 없으면 알린다.
+        if kind == 'cafe' and row['slot'] is None:
+            try:
+                head = open(os.path.join(pkg, 'facts.txt'), encoding='utf-8').read(400)
+                m = re.search(r'K(\d\d)[^\n]{0,20}?(\d\d)시 슬롯', head)
+                if m: row['warn'] = 'slot.txt 없음 — facts에 K%s(%s시) 코너용이라 적혀 있다' % (m.group(1), m.group(2))
+            except Exception: pass
         out.append(row)
-    out.sort(key=lambda x: (0, x['deadline']) if x.get('deadline') and not x.get('expired') else (1, str(x['mtime'])) if not x.get('expired') else (2, str(x['mtime'])))
+    # 순서: 이번 시각 코너 → 시효 있는 묶음 → 시각 지난 코너 → 나머지 → 시효 지남 → 시각 전 코너(보류)
+    def order(x):
+        st = x.get('slot')
+        if st == 'now': return (0, '')
+        if st == 'early': return (9, str(x['mtime']))
+        if x.get('deadline') and not x.get('expired'): return (1, x['deadline'])
+        if st == 'late': return (2, str(x['mtime']))
+        if x.get('expired'): return (4, str(x['mtime']))
+        return (3, str(x['mtime']))
+    out.sort(key=order)
     return out
 
 def pending_check(pkg):
@@ -499,6 +538,8 @@ def pending_block(kind, pkg, title, check_dup=True):
         # 2026-09-27 01시: peak0926(2021 고점 대비 구별)이 00:48 블로그(5년 전 대비 구별)와 같은 계산인데
         # 단지명·티커·제목 앞머리가 안 겹쳐 same_subject_today가 못 잡았다. 회차가 판단해 보류를 걸면 남는다.
         return '보류: ' + open(hold, encoding='utf-8').read().strip()[:80]
+    if slot_state(pkg) == 'early':
+        return '보류: 코너 시각 전(%s시에 올린다)' % slot_of(pkg).strftime('%m-%d %H')
     left = day_left(kind)
     if left is not None and left <= 0:
         return '하루 상한 도달(오늘 %d편/상한 %d편) — 내일 올린다' % (DAY_CAP[kind] - left, DAY_CAP[kind])
@@ -853,10 +894,15 @@ def with_corner_tail(title, seq):
     return list(seq) + [('text', line)]
 
 def post_cafe(page, pkg, wait=False):
+    if slot_state(pkg) == 'early' and os.environ.get('NAVER_FORCE') != '1':
+        raise RuntimeError('코너 시각 전이다 — %s시에 올린다(pkg/slot.txt)' % slot_of(pkg).strftime('%m-%d %H'))
     day_guard('cafe'); jitter('cafe'); rate_guard('cafe', wait)
     page = alive(page)
     title, seq, meta = read_pkg(pkg)
-    seq = with_corner_tail(title, seq)
+    # "매일 이 시간에 올라와요"는 제 시각에 올라갈 때만 붙인다. 쉬는 시간(jitter) 뒤에 잰다.
+    # 시각이 없거나 지난 묶음에 붙이면 거짓말이 된다(2026-09-28 [오늘의 투표] 05:28).
+    if slot_state(pkg) == 'now':
+        seq = with_corner_tail(title, seq)
     page.goto(f'https://cafe.naver.com/ca-fe/cafes/{CAFE_ID}/articles/write', wait_until='domcontentloaded')
     page.wait_for_timeout(6000)
     frame = page.main_frame

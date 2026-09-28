@@ -1,0 +1,15 @@
+블로그 발행 순서
+제목: title.txt
+카테고리: 부동산
+태그: 주담대한도, 스트레스DSR, DSR, 주택담보대출, 주담대, 스트레스금리, 대출한도, 연봉별대출한도, LTV, 수도권주담대, 규제지역, 주담대금리, 가계부채관리방안
+b00.txt
+img/00.png
+b01.txt
+img/01.png
+b02.txt
+b03.txt
+img/02.png
+b04.txt
+img/03.png
+b05.txt
+b06.txt

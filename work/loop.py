@@ -111,6 +111,24 @@ def spec_fingerprint():
             'hash': hashlib.sha1(repr(items).encode('utf-8')).hexdigest()}
 
 
+def sweep_fingerprint(design):
+    """세 칸 격자를 다시 훑어도 같은 답이 나올지 미리 알아보는 지문.
+
+    격자 훑기는 '그려서 잰다'는 순수 계산이다 — 경쟁 기준(spec.json)·손잡이 값·그리는 코드·배경 그림이
+    전부 그대로면 몇 번을 다시 훑어도 같은 표가 나오고 같은 값을 '유지'한다.
+    2026-09-29 165회차 실측: 경쟁 수집·재측정 둘 다 건너뛴 회차가 574초(loop 예산 25분의 38%)를 썼고,
+    출력은 전부 '유지'였다 — 새 재료가 없는데 같은 격자 100여 장을 다시 그렸다.
+    지문은 spec.json 내용, design 의 short·long 손잡이, 그리는·재는 코드와 배경 그림의 크기·수정시각이다."""
+    items = [json.dumps({k: design.get(k) for k in ('short', 'long')}, sort_keys=True, ensure_ascii=False)]
+    try: items.append(hashlib.sha1(open(SPEC, 'rb').read()).hexdigest())
+    except OSError: items.append('nospec')
+    shots = os.path.join(R, '_shots')
+    for f in [os.path.join(HERE, n) for n in ('thumb.py', 'chartimg.py', 'thumbstat.py', 'loop.py')] +              [os.path.join(shots, n) for n in ('heatmap_re_jeonse_2026-09-23.png', 'naverland_test.png', 'heatmap_2026-09-23.png')]:
+        try: st = os.stat(f); items.append(f'{os.path.basename(f)}:{int(st.st_mtime)}:{st.st_size}')
+        except OSError: items.append(f'{os.path.basename(f)}:-')
+    return hashlib.sha1('|'.join(items).encode('utf-8')).hexdigest()[:12]
+
+
 def load(p, d):
     try: return json.load(open(p, encoding='utf-8'))
     except Exception: return d
@@ -679,8 +697,16 @@ def main():
     spec = load(SPEC, {})
     # 2-b) 세 칸(위·가운데·아래)은 손잡이 하나를 나눠 쓰므로 밀지 않고 격자로 재서 고른다
     bands = {}
-    for kind in ('short', 'long'):
-        if spec.get(kind): bands[kind] = tune_bands(design, spec, kind, did, blocked)
+    # 앞 회차가 훑고 끝낸 자리와 재료가 하나도 안 바뀌었으면 격자를 다시 훑지 않는다(sweep_fingerprint 참고).
+    # 그래도 하루에 한 번은 다시 훑는다 — 지문에 안 잡히는 것(글꼴·라이브러리 갱신)이 바뀌었을 수 있다.
+    sw = design.get('_swept') or {}
+    fresh = sw.get('at') and time.time() - time.mktime(time.strptime(sw['at'], '%Y-%m-%d %H:%M')) < 24 * 3600
+    if fresh and sw.get('fp') == sweep_fingerprint(design):
+        did.append(f"세 칸 격자 다시 안 훑음 — 경쟁 기준·손잡이·그리는 코드·배경이 {sw['at']} 훑은 뒤 그대로")
+    else:
+        for kind in ('short', 'long'):
+            if spec.get(kind): bands[kind] = tune_bands(design, spec, kind, did, blocked)
+        design['_swept'] = {'at': time.strftime('%Y-%m-%d %H:%M')}
     render_samples(keep_chart=True)   # 고른 값으로 샘플을 새로 그린다
     ours = measure_ours()             # 그 샘플만 잰다
     # 조회로는 판정할 수 없을 때(전부 비공개) 쓸 판정 눈금 — 경쟁 판형과의 세 칸 거리.
@@ -993,6 +1019,8 @@ def main():
             verdict += f' · 경쟁 판형 거리 {now_sum} (이번 회차부터 비교한다)'
 
     design['step'] = step
+    # 지문은 회차 끝 손잡이로 찍는다 — 뒤쪽 규칙(노랑·밝기 등)이 손잡이를 옮겼으면 다음 회차가 다시 훑는다
+    if design.get('_swept', {}).get('at'): design['_swept']['fp'] = sweep_fingerprint(design)
     json.dump(design, open(DESIGN, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     # 바꾼 값으로 우리 샘플을 다시 만든다 — 안 그러면 다음 회차가 같은 차이를 또 잡는다
     if any('→' in d for d in did): did.append('다음 회차가 바뀐 값으로 다시 그려 잰다')

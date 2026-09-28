@@ -1,0 +1,18 @@
+블로그 발행 순서
+제목: title.txt
+카테고리: 미국주식
+태그: 스타벅스주가, 스타벅스주식, SBUX, 스타벅스배당, 스타벅스배당락일, 스타벅스실적, 스타벅스배당률, 미국배당주, 미국배당세금, 미국주식
+b00.txt
+img/00.png
+b01.txt
+b02.txt
+b03.txt
+img/01.png
+b04.txt
+b05.txt
+img/02.png
+b06.txt
+img/03.png
+b07.txt
+img/04.png
+b08.txt

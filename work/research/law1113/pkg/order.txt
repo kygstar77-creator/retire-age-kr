@@ -1,0 +1,17 @@
+블로그 발행 순서
+제목: title.txt
+카테고리: 경제지식
+태그: 코너스톤투자자, 공모주, 공모주청약, 사전수요예측, 보호예수, 자본시장법개정, IPO, 공모주배정, 합병가액, 주식매수청구권
+b00.txt
+img/00.png
+b01.txt
+b02.txt
+img/01.png
+b03.txt
+img/02.png
+b04.txt
+img/03.png
+b05.txt
+b06.txt
+img/04.png
+b07.txt

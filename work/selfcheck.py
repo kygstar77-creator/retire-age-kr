@@ -252,7 +252,10 @@ def main(pkg):
         title = open(os.path.join(pkg, 'title.txt'), encoding='utf-8').read().strip()
         head = title.split()[0].rstrip(',') if title.split() else ''
         if head and not title.startswith('[') and not re.match(r'\d', head) and head not in dupcheck.GENERIC_HEAD:
-            for t, url, why in dupcheck.local_hits(kind, head)[:3]:
+            # 이미 발행된 묶음을 소급 검증하면 자기 글이 '이미 씀'으로 잡혔다(2026-09-28 19시 D 회차, dep3eok0927·yujok0928).
+            own = os.path.join(pkg, 'published.txt')
+            own_url = open(own, encoding='utf-8').read().split()[0] if os.path.exists(own) else None
+            for t, url, why in [h for h in dupcheck.local_hits(kind, head) if h[1] != own_url][:3]:
                 problems.append(('중복', 0, f'"{head}" 이미 씀 ← {t[:40]} {url} ({why}) — 각도가 다른지 보고, 같으면 hold.txt'))
     except Exception as e:
         problems.append(('중복', 0, f'중복 검사 실패: {e}'))

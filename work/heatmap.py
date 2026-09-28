@@ -78,6 +78,42 @@ def nobl_holdings(top=25):
     if not rows: raise SystemExit('NOBL 보유 목록을 읽지 못했다 — 페이지 구조가 바뀌었는지 확인할 것')
     return [(a, b.replace('&amp;', '&'), float(c)) for a, b, c in rows][:top]
 
+def last2(d):
+    """Yahoo chart 결과에서 마지막 두 종가(오늘, 전일). range=5d의 chartPreviousClose는 5일 전 종가라
+    등락률이 5일치로 나온다(2026-09-29 발견) — 반드시 종가 배열의 끝 두 개를 쓴다."""
+    c = [x for x in d['indicators']['quote'][0]['close'] if x]
+    return (c[-1], c[-2]) if len(c) >= 2 else (None, None)
+
+def yahoo_close(t, with_date=False):
+    u = f'https://query1.finance.yahoo.com/v8/finance/chart/{t.replace("/", "-")}?range=5d&interval=1d'
+    d = json.load(urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=25))['chart']['result'][0]
+    if with_date:   # 마지막 종가의 뉴욕 날짜 — 그림 제목에 한국 날짜(오늘)를 쓰면 하루가 틀린다
+        return last2(d), time.strftime('%Y-%m-%d', time.gmtime(d['timestamp'][-1] + d['meta'].get('gmtoffset', -14400)))
+    return last2(d)
+
+SRC = {'name': 'Nasdaq', 'date': None}
+
+def fresh_or_fix(sel):
+    """나스닥 스크리너는 한국 새벽(미국 장 마감 직후)에도 전 거래일 값을 준다.
+    2026-09-29 06시: NVDA $225.07(9/25 종가)·+0.2%로 나왔는데 9/28 실제 종가는 $228.86·+1.68%.
+    07시 [미국 증시 시황]이 하루 묵은 숫자를 쓸 뻔했다. 시총 1위로 대조하고, 어긋나면 전부 Yahoo 종가로 바꾼다."""
+    global SRC
+    top = max(sel, key=lambda r: r['cap'])
+    try:
+        (px, _), SRC['date'] = yahoo_close(top['sym'], with_date=True)
+        scr = float(str(top['price']).replace('$', '').replace(',', ''))
+    except Exception as e:
+        print(f'  대조 실패({e}) — 스크리너 값을 그대로 쓴다. 숫자를 글에 쓰기 전에 Yahoo로 확인할 것'); return sel
+    if abs(scr / px - 1) < 0.001: return sel
+    SRC['name'] = 'Yahoo 종가'
+    print(f'  스크리너가 낡았다({top["sym"]} 스크리너 {scr} / Yahoo 종가 {px:.2f}) — {len(sel)}종목을 Yahoo 종가로 다시 받는다')
+    for r in sel:
+        try:
+            p, q = yahoo_close(r['sym']); r['price'] = p; r['pct'] = (p / q - 1) * 100
+        except Exception as e: print(f'  {r["sym"]} Yahoo 실패: {e} — 스크리너 값 유지')
+        time.sleep(0.15)
+    return sel
+
 def yahoo_fill(syms):
     """스크리너(개별주)에 없는 티커를 Yahoo chart API로 채운다. ETF가 여기 해당한다.
     2026-09-24: C8 '월배당 ETF 히트맵' 슬롯에서 12종이 전부 빠져 그림이 1종목만 나왔다.
@@ -88,7 +124,7 @@ def yahoo_fill(syms):
         try:
             u = f'https://query1.finance.yahoo.com/v8/finance/chart/{t}?range=5d&interval=1d'
             d = json.load(urllib.request.urlopen(urllib.request.Request(u, headers=H), timeout=25))['chart']['result'][0]
-            m = d['meta']; px = m.get('regularMarketPrice'); prev = m.get('chartPreviousClose') or m.get('previousClose')
+            m = d['meta']; px, prev = last2(d)
             if not px or not prev: continue
             got.append({'sym': t, 'name': m.get('shortName') or t, 'cap': 1.0,
                         'pct': (px / prev - 1) * 100, 'sector': 'ETF', 'price': px})
@@ -133,6 +169,9 @@ def main():
             title = f'미국 주식 {len(sel)}종목 등락 ({asof} 기준, 자료 Nasdaq)'
     else:
         sel = sorted(rows, key=lambda r: -r['cap'])[:n]; title = f'미국 시총 상위 {len(sel)}개 등락 ({asof} 기준, 자료 Nasdaq)'
+    sel = fresh_or_fix(sel)
+    if SRC['date']: title = title.replace(f'{asof} 기준', f'뉴욕 {SRC["date"]} 종가 기준')
+    title = title.replace('자료 Nasdaq', f'자료 {SRC["name"]}')
     os.makedirs(OUT, exist_ok=True); out = out or os.path.join(OUT, f'heatmap_{asof}.png')
     draw(sel, out, title)
     by = collections.defaultdict(list)

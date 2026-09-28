@@ -1,0 +1,30 @@
+# usmkt0929c · K07 [미국 증시 시황] · 2026-09-29 06시 회차 조사 (07시 슬롯)
+
+[오늘 찾은 것] (WebSearch 한·영 2026-09-29 06:1x 조회)
+- 2026-09-28 Yahoo Finance live "Dow, S&P 500, Nasdaq fall as Treasury yields continue to climb" — 10년물 5.24%(2007년 이후 최고), 30년물 5.56%(2004년 이후 최고), 트럼프 이란 휴전 제안(호르무즈 재개방) 거절, 이번 주 수요일 PCE·금요일 고용보고서. https://finance.yahoo.com/markets/live/stock-market-today-monday-september-28-dow-sp-500-nasdaq-080420627.html
+- 2026-09-29 뉴스핌 "뉴욕증시, 유가·금리 부담에 하락…나스닥 0.92%↓" — 다우 -347.11p(0.67%) 51,481.51 / S&P -59.72p(0.77%) 7,683.69 / 나스닥 -248.34p(0.92%) 26,820.38, 보잉 -6.89%, 테슬라 -3.94%, 엔비디아 +1.68%, PCE 30일·고용 10월 2일. https://www.newspim.com/news/view/20260929000013
+- 2026-09-28 CNBC "Nvidia share buyback plan gets $150 billion boost" — 자사주 매입 한도 1,500억달러 추가(총 2,350억달러), 역대 최대 증액. https://www.cnbc.com/2026/09/28/nvidia-share-buyback-plan-gets-150-billion-boost.html
+- 2026-09-28 CNBC "Boeing 737 Max 10 certification delayed by software issue, FAA says" — FAA 인증 지연, 청장 브라이언 베드퍼드 기간 모름(days, weeks or months). https://www.cnbc.com/2026/09/28/faa-boeing-737-max-10-certification-delay-software-issue.html
+- 2026-09-28 Bloomberg "Stock Market Today: Dow, S&P Live Updates for September 28" https://www.bloomberg.com/news/articles/2026-09-27/stock-market-today-dow-s-p-live-updates
+- 2026-09-28 CNBC "Stock market news for Sept. 28, 2026" https://www.cnbc.com/2026/09/27/stock-market-today-live-updates.html
+
+[1차 출처로 직접 받은 숫자] Yahoo chart API 2026-09-29 06:1x 조회, 9/28 종가 (전일 9/25)
+다우 51,481.51 (51,828.62) -0.67%
+S&P500 7,683.69 (7,743.41) -0.77%
+나스닥 26,820.38 (27,068.72) -0.92%
+러셀2000 2,817.91 (2,837.55) -0.69%
+VIX 16.07 (14.87) +8.07%
+^TNX 10년물 5.24 (5.18)  / 3개월 전 06-29 4.37 → 차 0.87%p [계산]
+^TYX 30년물 5.56 (5.50)
+NVDA 228.86 (225.07) +1.68%
+BA 184.39 (198.07) -6.91%
+TSLA 357.45 (372.11) -3.94%
+업종 ETF: XLV +0.33 / XLP +0.27 / XLE +0.10 / XLK -0.89 / XLF -1.19 / XLY -1.41 / XLC -1.58 / XLI -0.97 / XLU -0.66 / XLRE -0.51 / XLB -0.66
+FRED DGS10 = 5.17 (2026-09-25, 최신)
+다음 FOMC 2026-10-27~28 (usmkt0926 facts, 연준 일정)
+
+[버린 것]
+- work/heatmap.py(나스닥 스크리너) 업종·종목 등락이 야후 종가와 안 맞음(NVDA +0.2 vs +1.68, TSLA -1.5 vs -3.94) → 안 씀
+- 브렌트유 값이 매체마다 다름(98 vs 105.28) → 유가 숫자 안 씀
+- 테슬라 하락 이유(뉴스핌 "3분기 인도량 부진") — 3분기 인도량은 아직 발표 전이라 확인 불가 → 이유 안 씀
+# work/heatmap.py 110 (Yahoo 종가로 다시 받음, 2026-09-29 06:3x): 하락 상위 ARM -8.70% · QCOM -7.17% · BA -6.91% · INTC -5.67% · SKHY -5.03% / 상승 상위 PANW +4.63% · CRWD +2.82% · PG +1.91% · PM +1.72% · NVDA +1.68%

@@ -1,0 +1,39 @@
+리스본 캄푸 지 오리크 월세 — 확인된 사실 (조사 2026-09-28 11:12~11:30 KST)
+원칙: 페이지에서 직접 읽은 값만. [계산]은 내가 계산한 값.
+
+[오늘 찾은 것]
+1. 2026-09-28 조회 · idealista · 캄푸 지 오리크 임대 매물 229건, 첫 페이지 30건 수집 · https://www.idealista.pt/en/arrendar-casas/lisboa/campo-de-ourique/
+2. 2026-06(발표) · 포르투갈 통계청 INE "Estatísticas de Rendas da Habitação ao Nível Local – 1.º trimestre de 2026" · 2025-04~2026-03 신규 계약 중간값: 리스본시 17.22€/㎡(+4.9%), 캄푸 지 오리크 19.09€/㎡(+3.1%), 산투 안토니우 21.33€/㎡(최고), 산타 클라라 12.85€/㎡(최저). 2026년 1분기 리스본시 17.42€/㎡(+8.2%), 전국 9.46€/㎡(+9.1%) · https://www.ine.pt/ngt_server/attachfileu.jsp?look_parentBoui=800184186&att_display=n&att_download=y
+3. 2026-09-24 갱신 · Numbeo 리스본 · 1인 월 생활비(월세 제외) €761.0, 4인 €2,745.8, 시내 1베드룸 €1,419.23, 시외 €1,067.20, 시내 3베드룸 €2,526.09, 최근 12개월 1,831건/209명 · https://www.numbeo.com/cost-of-living/in/Lisbon
+4. 포르투갈 외교부 비자 포털 · 생계 수단 기준은 최저임금(RMMG) 연동 · https://vistos.mne.gov.pt/pt/vistos-nacionais/documentacao-instrutoria/meios-de-subsistencia
+5. 2025-12-29 · Decreto-Lei 139/2025 · 2026년 최저임금 월 €920(2026-01-01 시행), 2027년 €970·2028년 €1,020 예정 · https://www.jornaldenegocios.pt/economia/emprego/detalhe/subida-do-salario-minimo-para-920-euros-em-2026-publicada-em-diario-da-republica
+6. 2026-09 · Global Citizen Solutions 등 · D7 배우자 +50%, 자녀 +30% (업체 안내) · https://www.globalcitizensolutions.com/portugal-d7-visa/
+7. 스카이스캐너 한국어판 · 캄푸 지 오리크를 현지인 생활권 동네로 소개(한글 표기 출처) · https://www.skyscanner.co.kr/destinations/advice/best5-cities-for-living-a-month-in-europe
+
+[환율] Yahoo chart EURKRW=X 1,548.5원 (2026-09-28 조회)
+
+[매물] idealista 첫 페이지 30건 (최신순) · list.json
+- 30건 월세 중간값 €2,345, 최저 €1,246, 최고 €5,500 [계산]
+- ㎡당 중간값 €23.9 [계산]
+- 7건은 "Minimum Rental Duration: 27~28 days" 등 단기 예약 플랫폼 매물, 1건은 "until the end of may", 1건 3~6개월 → 제외
+- 장기 T1 5건 중간값 €1,950, T2 8건 €1,950, T3 7건 €2,500 [계산]
+선정 8건 (URL)
+1) Rua Maria Pia T2 73㎡ 2nd floor without lift €1,300 · 가구 미포함 명시(UNFURNISHED) · https://www.idealista.pt/en/imovel/35353603/ · 201만원[계산]
+2) Rua Ferreira Borges T1 68㎡ 4th floor with lift €1,246 · https://www.idealista.pt/en/imovel/35268545/ · 193만원
+3) Rua Saraiva de Carvalho T2 75㎡ 3rd floor with lift €1,790 · 리모델링 · https://www.idealista.pt/en/imovel/35355054/ · 277만원
+4) Rua 4 de Infantaria T2 85㎡ 5th floor with lift €1,890 · 1966년 건물 전면 리모델링 · https://www.idealista.pt/en/imovel/33295518/ · 293만원
+5) Rua Coelho da Rocha T2 99㎡ 4th floor with lift €1,900 · 발코니 · https://www.idealista.pt/en/imovel/35360735/ · 294만원
+6) Rua 4 de Infantaria T2 74㎡ 2nd floor without lift €2,000 · FURNISHED · https://www.idealista.pt/en/imovel/35359785/ · 310만원
+7) São João Bosco T2 78㎡ 5th floor with lift €2,150 · 전용 주차 1칸 · https://www.idealista.pt/en/imovel/33174161/ · 333만원
+8) Rua Silva Carvalho T2 100㎡ 6th floor with lift €2,800 · Furnished, 에어컨 · https://www.idealista.pt/en/imovel/34432782/ · 434만원
+
+[계산] (환율 1,548.5원)
+- T2 7건 중 5건 €1,790~2,150 → 277만~333만원
+- 75㎡ × 19.09€ = 1,431.75€ ≈ 1,430유로 → 1,430×1,548.5 = 221.4만원 ≈ 222만원
+- 761€ → 117.8만원 ≈ 118만원
+- 1,430 + 761 = 2,191€ → 339.3만원 ≈ 340만원
+- 920€ → 142.5만원 ≈ 142만원
+- 1,419€ → 219.7만원 ≈ 220만원
+- 게시 23.9 / 계약 19.09 = 1.252 → 약 25% 높음
+- 캄푸 19.09 / 리스본 17.22 = 1.109 → 11% 비쌈
+- 23.9-19.09 = 4.81 → ㎡당 5유로 가까이

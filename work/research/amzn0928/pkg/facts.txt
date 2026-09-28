@@ -1,3 +1,11 @@
+[오늘 찾은 것] (2026-09-28 19시 회차 WebSearch)
+- 2026-09 야후 파이낸스 "Amazon Layoffs Continue: How to Play AMZN Stock Now in September 2026" https://finance.yahoo.com/markets/stocks/articles/amazon-layoffs-continue-play-amzn-130002261.html — 인력 감축 계속·AI 집중(매체 기사, 숫자는 안 씀)
+- 2026-09 CNBC AMZN 시세면 https://www.cnbc.com/quotes/AMZN — 헤드라인: 픽업 거점 약 3만곳 확대, 인디애나 1억달러 제조시설, 인도 퀵커머스 30억달러(매체, 1차 출처 미확인 → 숫자 안 씀)
+- 2026-09-01 Pintu News AMZN 259.77달러(야후 월말 종가 26/08 259.77과 일치)
+- ad-hoc-news 2026-09-24 종가 249.38달러(야후 차트 전일종가와 일치)
+- 나스닥 요약 API https://api.nasdaq.com/api/quote/AMZN/summary?assetclass=stocks (19:1x 조회): 시가총액 2,670,475,514,156달러(약 2조 6,700억달러), 섹터 Consumer Discretionary, 52주 287.2/196, 1년 목표가 325달러(쓰지 않음 — 전망)
+- 본사: 워싱턴주 시애틀 410 Terry Avenue North (위 SEC 8-K 표지)
+
 확인일 2026-09-28 · 출처(이번 회차에 직접 받아 본 것)
 - 아마존 2026년 2분기 실적 발표(SEC 8-K Ex.99.1, 2026-07-30) https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260630xex991.htm
   · 매출 2,006억달러(200.6B), 전년 1,677억달러 대비 +20%

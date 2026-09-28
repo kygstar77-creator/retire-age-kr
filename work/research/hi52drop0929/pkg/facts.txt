@@ -1,0 +1,26 @@
+확인일 2026-09-28 23:47 (한국 시각)
+
+[오늘 찾은 것]
+- 2026-09-22 Trefis "S&P 500 Stocks At 52-Week Lows" — 9/21 기준 52주 최저 17종목, 가장 큰 곳 T-Mobile US https://www.trefis.com/stock/spy/articles/616111/sp-500-stocks-at-52-week-lows-mondays-full-list-3/2026-09-22
+- financecharts Large-Cap Stocks at 52-Week Lows — 맥도날드가 최근 52주 최저를 찍은 가장 큰 회사로 올라 있음 https://www.financecharts.com/screener/52-week-lows-large-cap
+- 2026-09-12 뉴스핌: 오라클, 클라우드 호실적에도 마진 악화에 하락 https://www.newspim.com/news/view/20260912000021
+- 2026-09-22 글로벌이코노믹: 노보 노디스크, 2027~2030 연평균 성장률 약 4% 제시에 주가 급락 https://www.g-enews.com/article/Global-Biz/2026/09/202609221615347349fda4f5ab74_1
+- 톱스타뉴스: 오라클 137.10달러 1.75% 하락 마감 (9/25 종가, 우리 Yahoo 값과 같음) https://www.topstarnews.net/news/articleView.html?idxno=16215502
+- (하락 이유는 기사 인용이라 본문에 숫자로 안 씀)
+
+[1차 데이터]
+1. 시총 순위: Nasdaq 스크리너 API https://api.nasdaq.com/api/screener/stocks?tableonly=true&limit=10000&download=true 2026-09-28 23:44 조회. 상위 100(GOOG 중복 제외) 1위 NVDA, 100위 NEE
+2. 종가·배당: Yahoo chart API query1.finance.yahoo.com/v8/finance/chart/<T>?range=1y&interval=1d&events=div — 1년 일별 종가 중 최고와 9/25(금) 종가. 9/28 장중 값 제외. 배당은 최근 1년 지급 합계(9/27까지 배당락)
+3. 결과(hi.json): 100종목 중앙값 -12.22% · -20% 이하 25곳 · -30% 이하 10곳
+ 오라클 ORCL -56.2% (최고 2025-10-16 313.00 → 137.10) 1년 배당 2.00달러 1.46%
+ 넷플릭스 NFLX -42.68% (2025-10-21 124.14 → 71.15) 배당 없음
+ 알리바바 BABA -42.04% (2025-10-02 189.34 → 109.74) 0.96%
+ 노보 노디스크 NVO -39.36% (2026-01-26 63.98 → 38.80) 1.854달러 4.78%
+ 웨스턴디지털 WDC -38.78% (2026-06-18 746.23 → 456.81) 0.12%
+ KLA KLAC -37.72% (2026-06-30 301.71 → 187.92) 0.45%
+ 어플라이드 머티어리얼즈 AMAT -32.92% (2026-06-30 723.00 → 485.00) 0.41%
+ IBM -31.5% (2026-06-02 329.23 → 225.51) 6.74달러 2.99%
+ T모바일 TMUS -30.89% (2025-09-30 239.38 → 165.43) 4.08달러 2.47%
+ 맥도날드 MCD -30.66% (2026-02-27 341.06 → 236.50) 7.44달러 3.15%
+ (11~ SPCX -29.67, ARM -29.39, HD -27.93 배당 9.29달러 3.17%, LRCX -27.26, AVGO -26.74)
+[계산] 배당률 = 최근 1년 배당 합계 ÷ 9/25 종가. 노보 노디스크는 ADR이라 환율·원천세에 따라 달러 배당이 달라진다(일반 사실)

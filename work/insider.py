@@ -55,12 +55,31 @@ def parse_form4(txt, url):
         pr = t.findtext('transactionAmounts/transactionPricePerShare/value', '').strip()
         try: amt = float(sh) * float(pr)
         except Exception: amt = 0.0
-        out.append(dict(issuer=issuer, ticker=tick, owner=owner, roles=' '.join(roles),
+        fx = price_currency_note(d, t)
+        out.append(dict(fxnote=fx, issuer=issuer, ticker=tick, owner=owner, roles=' '.join(roles),
                         date=t.findtext('transactionDate/value', '').strip(), shares=sh, price=pr,
                         amount=amt,
                         owned=t.findtext('postTransactionAmounts/sharesOwnedFollowingTransaction/value', '').strip(),
                         url=url))
     return out
+
+FX_WORDS = re.compile(r'peso|MXN|real(?:s)?|BRL|shekel|NIS|ILS|canadian dollar|CAD|euro|EUR|GBP|pound|yen|JPY|CHF|HKD|INR|rupee', re.I)
+
+def price_currency_note(d, t):
+    """단가(transactionPricePerShare)에 달린 각주가 외화를 말하면 그 문장을 돌려준다.
+
+    2026-09-29 04시 원고: 세멕스(CX) 이사 매수 400,800주 @17.2812가 각주 F2 "Price in Mexican Pesos"였는데
+    달러로 세어 690만 달러, 명단 3위로 올라왔다(실제 약 39만 달러). 뉴욕 ADR 1주 = CPO 10주라
+    ADR 종가 9.5달러와 비율이 1.8배밖에 안 나 currency_flag의 3배 문턱을 통과했다.
+    환율(exchange rate)까지 적어 달러로 바꿔 신고한 경우(NYAX: "paid in NIS ... exchange rate 3.047")는 달러로 본다.
+    """
+    ids = [e.get('id') for e in t.findall('transactionAmounts/transactionPricePerShare/footnoteId')]
+    for fn in d.findall('footnotes/footnote'):
+        if fn.get('id') not in ids: continue
+        txt = ' '.join(''.join(fn.itertext()).split())
+        if FX_WORDS.search(txt) and not re.search(r'exchange rate|converted', txt, re.I):
+            return txt[:120]
+    return ''
 
 def us_close(ticker, _c={}):
     """미국 거래소 종가(달러). Form 4 단가가 달러가 맞는지 대조하는 데만 쓴다."""
@@ -86,6 +105,9 @@ def currency_flag(r):
     달러로 치면 174만 달러, 헤알로 제대로 읽으면 약 33만 7천 달러다.
     그래서 미국 종가와 3배 넘게 벌어지면 금액을 믿지 않고 표시만 해 둔다.
     """
+    if r.get('fxnote'):
+        r['usd'] = False; r['flag'] = f"단가 각주가 외화: {r['fxnote']} (금액 신뢰 불가)"
+        return r
     px = float(r.get('price') or 0)
     close = us_close(r.get('ticker') or '')
     if not px or not close:

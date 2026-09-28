@@ -1,0 +1,18 @@
+# 2026-09-29 인덱스 없음(HTTPError)
+# 2026-09-28 인덱스 없음(HTTPError)
+# 2026-09-27 인덱스 없음(HTTPError)
+# 2026-09-26 인덱스 없음(HTTPError)
+# 발굴 종목 30개 저장: research/dig/2026-09-29_insider.json
+# 통화 확인이 안 된 11건은 순위에서 뺐다 - 아래에 따로 적는다
+# 제외 {"issuer": "Calamos Aksia Hedged Strategies Fund", "ticker": "N/A", "owner": "Calamos Aksia Hedged Strategies Fund (Offshore), Ltd.", "date": "2026-09-23", "price": "10.47", "flag": "미국 종가 확인 실패 - 통화 확인 필요"}
+# 제외 {"issuer": "Blackstone Multi-Strategy Hedge Fund L.P.", "ticker": "NONE", "owner": "Querrey Kimberly K.", "date": "2026-09-01", "price": "25.54", "flag": "미국 종가 확인 실패 - 통화 확인 필요"}
+# 제외 {"issuer": "Blackstone Private Real Estate Credit & Income Fund", "ticker": "NONE", "owner": "Blackstone Private Multi-Asset Credit & Income Fund", "date": "2026-09-23", "price": "26.17", "flag": "미국 종가 확인 실패 - 통화 확인 필요"}
+# 제외 {"issuer": "Blackstone Private Real Estate Credit & Income Fund", "ticker": "NONE", "owner": "Blackstone Holdings IV L.P.", "date": "2026-09-23", "price": "26.17", "flag": "미국 종가 확인 실패 - 통화 확인 필요"}
+# 제외 {"issuer": "Blackstone Multi-Strategy Hedge Fund L.P.", "ticker": "NONE", "owner": "Collins Philip Daniel", "date": "2026-09-01", "price": "25.54", "flag": "미국 종가 확인 실패 - 통화 확인 필요"}
+# 제외 {"issuer": "Uxin Ltd", "ticker": "UXIN", "owner": "Li Bin (William)", "date": "2026-09-23", "price": "0.0095", "flag": "단가 0.0095가 미국 종가 1.349달러와 0.0배 차이 - 본국 통화일 수 있음(금액 신뢰 불가)"}
+# 제외 {"issuer": "Intercont (Cayman) Ltd", "ticker": "NCT", "owner": "Zhu Muchun", "date": "2026-09-25", "price": "0.4", "flag": "단가 0.4가 미국 종가 3.662달러와 0.1배 차이 - 본국 통화일 수 있음(금액 신뢰 불가)"}
+# 제외 {"issuer": "Blackstone Multi-Strategy Hedge Fund L.P.", "ticker": "NONE", "owner": "Desai Ravi Rajendra", "date": "2026-09-01", "price": "25.54", "flag": "미국 종가 확인 실패 - 통화 확인 필요"}
+# 제외 {"issuer": "STUDIO CITY INTERNATIONAL HOLDINGS Ltd", "ticker": "MSC", "owner": "HO LAWRENCE YAU LUNG", "date": "2026-09-23", "price": "0.1977", "flag": "단가 0.1977가 미국 종가 0.8달러와 0.2배 차이 - 본국 통화일 수 있음(금액 신뢰 불가)"}
+# 제외 {"issuer": "Blackstone Multi-Strategy Hedge Fund L.P.", "ticker": "NONE", "owner": "Abrahams Riad M", "date": "2026-09-01", "price": "25.54", "flag": "미국 종가 확인 실패 - 통화 확인 필요"}
+# 제외 {"issuer": "Blackstone Multi-Strategy Hedge Fund L.P.", "ticker": "NONE", "owner": "Knopp Paul James", "date": "2026-09-01", "price": "25.54", "flag": "미국 종가 확인 실패 - 통화 확인 필요"}
+# 매수(P) 143건 / Form 4 624건 조회 (3일치, 달러 확인 30건 중 상위 30건 출력)

@@ -39,6 +39,19 @@
     "url": "https://cafe.naver.com/firemap/157"
    },
    "note": "02시: 새벽이라 블로그 쉼(규칙). 카페 K02 ionq0929 발행 verify OK 977/977자·사진 3/3. 03시 코너 K03 묶음 q3season0929 작성(slot 03) — 이번 주 캘린더는 카페 82번, 10월 예상일 나열은 카페 53번(9/23)이 이미 다뤄 '회사 확정 공지+한국 시각'으로 각도 변경. 자료조사: WebSearch 7건, 1차 출처 4곳(JPM·씨티·TSMC·넷플릭스 IR)+나스닥 캘린더 API. 검증 경로: selfcheck(제미나이 429/503) 사실 0·말투 0, readcheck 지적 3건 전부 반영. 원고 약 900자로 목표보다 짧음. 블로그 B10 슬롯은 묶음 못 만듦(시간). 일감표 1번(색인율 0) 막힘 — 9/23 이후 블로그 무색인 건, 이 회차 시간 안에 못 닫음. 개선: 없음 — titlestudy.py가 네이버 403으로 상위 제목 0개(기록만)."
+  },
+  {
+   "hour": 3,
+   "ts": "03:42",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "미국 3분기 실적 발표, 한국 시각으로는 언제 볼 수 있을까?",
+    "url": "https://cafe.naver.com/firemap/158"
+   },
+   "note": "03시 카페만(새벽 2~7시 블로그 쉼). 카페 q3season0929(slot now) 발행 → verify OK 819/819자·사진 3/3. 다음 시각 04시 K04 내부자 매수 묶음 insider0929 작성(slot.txt 2026-09-29 04) — SEC Form 4 624건 중 매수 143건, 임원·이사 매수만 금액순(NYAX CEO 460만 달러·HHH·KBDC·DKS), 레나(9/24·9/26 기사)·크로브리지(9/27)는 이미 써서 한 줄만. 자료조사 WebSearch 5건+SEC 원문 6건+야후 시세. 검증 경로: selfcheck(crosscheck 제미나이 429/503) — 사실 지적 5건 전부 원문 숫자의 반올림 표기라 사실표에 반올림 줄 추가 후 0건, readcheck 4건 반영 0건 남음. 일감표 1번(색인율) 막힘 — 이미 tools-wanted 사람이 봐야 함(9/28). 개선: insider.py가 단가 각주의 외화(세멕스 'Price in Mexican Pesos')를 못 보고 690만 달러로 셌다(실제 약 39만 달러, ADR 1=CPO 10이라 3배 문턱 통과) → price_currency_note 추가, 환율 적어 달러로 신고한 NYAX는 그대로 통과 확인."
   }
  ]
 }

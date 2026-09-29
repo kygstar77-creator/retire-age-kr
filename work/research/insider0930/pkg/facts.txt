@@ -1,0 +1,21 @@
+[오늘 찾은 것]
+2026-09-29 Investing.com — Inhibrx CEO Mark Lappe $998k 매수(9/25·9/28). https://www.investing.com/news/insider-trading-news/inhibrx-biosciences-ceo-mark-lappe-buys-998k-in-company-stock-93CH-4921342
+2026-09-15 Motley Fool — Lappe 9/8 25,000주 가중평균 105.82달러, 약 260만 달러. 본사 캘리포니아 라호이아. https://www.fool.com/coverage/filings/2026/09/15/inhibrx-founder-and-ceo-mark-lappe-buys-25-000-shares-for-usd2-6-million-what-does-his-confidence-tell-investors/
+2026-09-08 Inhibrx 보도자료 — INBRX-106+키트루다 2상(두경부 편평세포암 1차, PD-L1 CPS≥20) 반응률 48.3% vs 키트루다 단독 26.5%, 무진행생존 중앙값 9.6개월 vs 4.9개월, 평가 63명. HPV 양성 약 50명 늘려 가속승인 추진, 이후 3상. https://inhibrxbiosciences.investorroom.com/2026-09-08-Inhibrxs-INBRX-106-Nearly-Doubles-Response-Rate-and-Achieves-Interim-Median-PFS-of-9-6-months-in-Phase-2-HNSCC-Study
+2026-08 Dave & Buster's 8-K — Cory Hatton 8/3부터 임시 CFO, 전 CFO Darin Harper가 CEO로. https://www.sec.gov/Archives/edgar/data/0001525769/000152576926000032/play-20260803.htm
+2026-03-20 Damora 8-K — Jennifer Jarrett 3/30부터 CEO(전 Arcus 최고운영책임자). 혈액질환 치료제 바이오. https://www.sec.gov/Archives/edgar/data/1800315/000119312526118699/dmra-20260320.htm
+2026-09 MarketBeat/Investing — INR 이사 Scott Gieselman 36만 달러 매수(9/21 등), CFO 22,000주. https://www.investing.com/news/insider-trading-news/evp-and-cfo-cary-baetz-buys-299993-of-infinity-natural-resources-stock-93CH-4921327
+
+[Form 4 원문 — work/insider.py, EDGAR 일별 인덱스 2026-09-28·29 접수분]
+Form 4 357건 조회, 매수(P) 65건. 10% 대주주만인 건 제외.
+INBX Lappe Mark(이사·CEO): 9/25 3,324주@98.8659 · 2,176주@99.5988, 9/28 3,000주@101.702 · 1,500주@98.8803 = 10,000주 998,784달러(가중평균 99.88). 가족 신탁 명의(F2·F6). https://www.sec.gov/Archives/edgar/data/2007919/0001366074-26-000004.txt
+INR Baetz Cary D(EVP·CFO): 9/24 22,000주@13.441, 9/25 316주@13.58 = 22,316주 299,993달러(평균 13.44). https://www.sec.gov/Archives/edgar/data/1331940/0002029118-26-000113.txt
+DMRA Jarrett Jennifer(사장·CEO): 9/25 12,500주@20.23 = 252,875달러, 각주 "개인 돈으로 장내 매수". https://www.sec.gov/Archives/edgar/data/1800315/0001193125-26-403355.txt
+PLAY Hatton Cory(임시 CFO): 9/28 4,000주@6.4999 = 26,000달러, 보유 104,475주. https://www.sec.gov/Archives/edgar/data/1525769/0001193125-26-405479.txt
+
+[회사·주가 — Nasdaq summary API, Yahoo chart 1년 일봉(9/28 종가)]
+INBX 나스닥, 바이오, 시총 15.4억 달러. 9/28 종가 101.71, 1년 최고 종가 141.84(5/6), 최저 28.36(2025-10-23)
+INR 뉴욕증권거래소, 석유·가스 생산, 시총 7.9억 달러. 9/28 12.53, 1년 최고 19.23, 최저 11.20
+DMRA 나스닥, 바이오, 시총 12.7억 달러. 9/28 20.75, 1년 최고 34.14, 최저 3.52
+PLAY 나스닥, 식당, 시총 2.3억 달러. 9/28 6.41(1년 최저 종가), 1년 최고 21.17
+[계산] INBX 101.71/99.88-1=+1.8%, 고점 대비 -28.3%, 최저의 3.6배 · INR 12.53/13.44-1=-6.8%, 고점 대비 -34.8% · DMRA 20.75/20.23-1=+2.6%, 고점 대비 -39.2% · PLAY 6.41/6.50-1=-1.4%, 고점 대비 -69.7% · 48.3/26.5=1.82배

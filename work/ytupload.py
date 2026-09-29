@@ -43,8 +43,23 @@ def upload(path, title, desc, privacy='private', tags=''):
 def stats():
     yt = service()
     ch = yt.channels().list(part='snippet,statistics,contentDetails', mine=True).execute()['items'][0]
-    print('채널:', ch['snippet']['title'], '| 구독', ch['statistics'].get('subscriberCount'), '| 영상', ch['statistics'].get('videoCount'), '| 총조회', ch['statistics'].get('viewCount'))
     pl = ch['contentDetails']['relatedPlaylists']['uploads']
+    # 2026-09-29: 채널 statistics.viewCount 는 며칠씩 늦게 갱신된다 — 3556 이 여섯 회차(12시간) 그대로인데
+    # 같은 시간에 공개 쇼츠 두 편이 104회·162회로 올랐다(영상 수도 8로 멈춰 있었다). loop.py·health.py 가 이 숫자로
+    # '늘어난 조회 0회'라 판정해 루프가 멈춰 있었다. 올린 영상 전부의 조회를 더한 값을 '총조회'로 찍는다(큰 쪽).
+    all_ids, tok = [], None
+    while True:
+        r = yt.playlistItems().list(part='contentDetails', playlistId=pl, maxResults=50, pageToken=tok).execute()
+        all_ids += [i['contentDetails']['videoId'] for i in r.get('items', [])]
+        tok = r.get('nextPageToken')
+        if not tok: break
+    vsum = 0
+    for k in range(0, len(all_ids), 50):
+        for v in yt.videos().list(part='statistics', id=','.join(all_ids[k:k + 50])).execute()['items']:
+            vsum += int(v['statistics'].get('viewCount', 0))
+    chv = int(ch['statistics'].get('viewCount', 0))
+    print('채널:', ch['snippet']['title'], '| 구독', ch['statistics'].get('subscriberCount'), '| 영상', len(all_ids),
+          '| 총조회', max(vsum, chv), f'(영상별 합 {vsum} · 채널 통계 {chv})')
     items = yt.playlistItems().list(part='snippet', playlistId=pl, maxResults=10).execute().get('items', [])
     ids = [i['snippet']['resourceId']['videoId'] for i in items]
     if ids:

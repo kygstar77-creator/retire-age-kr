@@ -981,7 +981,11 @@ def main():
     verdict, now_rate, prev_rate = '', None, None
     if ch_views is not None and log:
         pv, pat = log[-1].get('ch_views'), log[-1].get('at')
-        if pv is None:
+        # 2026-09-29: 총조회를 채널 통계(며칠 늦게 갱신, 3556에 12시간 얼어 있었다)에서 영상별 합으로 바꿨다.
+        # 옛 기록과 빼면 밀린 조회 332회가 한 창에 몰려 시간당 조회가 부풀므로, 기준이 다른 회차와는 비교하지 않는다.
+        if pv is not None and log[-1].get('views_basis') != 'vsum':
+            verdict = f'채널 총조회 {ch_views} — 측정 기준이 바뀌어(채널 통계 → 영상별 합) 이번 회차부터 비교한다'
+        elif pv is None:
             verdict = f'채널 총조회 {ch_views} — 지난 회차 기록이 없어 이번 회차부터 비교한다'
         else:
             hours = max(0.25, (time.time() - time.mktime(time.strptime(pat, '%Y-%m-%d %H:%M'))) / 3600)
@@ -1028,7 +1032,7 @@ def main():
            'changed': [d for d in did if '→' in d], 'did': did, 'gaps': gaps[:6], 'blocked': blocked[:8], 'bands': bands,
            'capped': [c.split(' —')[0] for c in capped], 'capped_why': capped,
            'ours_views': sum(v['views'] for v in ours_before[:10]) if ours_before else None,
-           'ch_views': ch_views, 'gain_rate': now_rate, 'px_err': px_err, 'verdict': verdict}
+           'ch_views': ch_views, 'views_basis': 'vsum', 'gain_rate': now_rate, 'px_err': px_err, 'verdict': verdict}
     log.append(rec); json.dump(log[-200:], open(LOG, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(f"[루프 {step}회차] {rec['sec']}초")
     for d in did: print(' ·', d)

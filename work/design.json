@@ -35,7 +35,7 @@
  "video": {
   "zoom": 0.0009
  },
- "step": 168,
+ "step": 170,
  "_memo": {
   "short.white.stroke_ratio=40": 0.0301,
   "long.yellow.yellow_bottom=1": 0.0526,
@@ -137,7 +137,7 @@
  },
  "collected_at": "2026-09-28 21:56",
  "_swept": {
-  "at": "2026-09-29 03:53",
-  "fp": "41dfc1e76e3c"
+  "at": "2026-09-29 10:01",
+  "fp": "3df453e46afb"
  }
 }

@@ -2089,6 +2089,14 @@
  "2026-09-30": {
   "cafe": [
    {
+    "title": "미국 장기 국채 금리 24년 만에 최고, 대출 금리는 얼마나 올랐을까?",
+    "read": 0
+   },
+   {
+    "title": "미국 내부자 매수 이번 주 1위 인히브릭스(INBX), 어떤 회사일까?",
+    "read": 0
+   },
+   {
     "title": "액센츄어 실적 발표, 회사가 미리 밝힌 매출 전망은 얼마일까?",
     "read": 0
    },
@@ -2174,7 +2182,7 @@
    },
    {
     "title": "TIGER와 KODEX 미국S&P500, 수익은 어디가 더 났을까?",
-    "read": 8
+    "read": 9
    },
    {
     "title": "국고채 금리 2022년 이후 최고, 연휴 끝나고 첫날 무슨 일이 있었을까?",
@@ -2199,14 +2207,6 @@
    {
     "title": "고점보다 30% 빠진 미국 대형주, 배당은 얼마나 줄까?",
     "read": 0
-   },
-   {
-    "title": "[오늘의 한 줄] 코스피 2.7% 빠진 날, 계좌 열어 보셨어요?",
-    "read": 1
-   },
-   {
-    "title": "맥쿼리인프라 배당금, 1억 넣으면 한 달에 얼마 나올까?",
-    "read": 8
    }
   ],
   "blog": [
@@ -2268,19 +2268,19 @@
     "title": "성동구 아파트 매매, 작년 여름의 절반으로 줄었는데 평당 가격은?",
     "date": "Tue, 29 Sep 2026",
     "self_rank": null,
-    "indexed": null
+    "indexed": false
    },
    {
     "title": "개포동 아파트 실거래가, 개포주공 전세 4억일 때 옆 새 아파트는 얼마?",
     "date": "Tue, 29 Sep 2026",
     "self_rank": null,
-    "indexed": null
+    "indexed": false
    },
    {
     "title": "평촌동 아파트 실거래가, 같은 단지 1년 전과 견주면 얼마나 올랐을까?",
     "date": "Tue, 29 Sep 2026",
     "self_rank": null,
-    "indexed": null
+    "indexed": false
    }
   ],
   "control": true,
@@ -2289,28 +2289,28 @@
     "title": "방배동 아파트 실거래가, 같은 국민평형끼리 견주면 얼마나 갈릴까",
     "date": "Tue, 29 Sep 2026",
     "self_rank": null,
-    "indexed": null,
+    "indexed": false,
     "first_seen": "2026-09-29"
    },
    {
     "title": "분당 재건축 예비구역 첫 도입, 내년 공모는 어떻게 달라질까",
     "date": "Tue, 29 Sep 2026",
     "self_rank": null,
-    "indexed": null,
+    "indexed": false,
     "first_seen": "2026-09-29"
    },
    {
     "title": "방콕 콘도 월세, 같은 스쿰빗인데 두 배 차이 나는 이유는?",
     "date": "Tue, 29 Sep 2026",
     "self_rank": null,
-    "indexed": null,
+    "indexed": false,
     "first_seen": "2026-09-29"
    },
    {
     "title": "팔란티어 주가, 미국 소프트웨어 6종 중 올해 몇 등일까?",
     "date": "Tue, 29 Sep 2026",
     "self_rank": null,
-    "indexed": null,
+    "indexed": false,
     "first_seen": "2026-09-29"
    },
    {
@@ -2338,10 +2338,16 @@
     "title": "건강보험료율 2026, 직장·지역 7.19%와 실제 계산",
     "date": "Wed, 23 Sep 2026",
     "self_rank": null,
-    "indexed": null,
+    "indexed": false,
     "first_seen": "2026-09-23"
    }
   ],
-  "at": "2026-09-30 03:58"
+  "mature": {
+   "n": 4,
+   "indexed": 0,
+   "rate": 0.0,
+   "basis": "어제(2026-09-29) 글"
+  },
+  "at": "2026-09-30 05:55"
  }
 }

@@ -27,3 +27,4 @@
 - 2026-09-28 | u/jayybonelie(레딧) | 2023년 45세 퇴직(시스템 엔지니어 25년+), 4인 가족 | 순자산 2026년 790만 달러(S&P500 38%·RSU 단일종목 23%·부동산 35%·기타 3%·현금 1%) | 연 지출 6만~8만 달러, 인출률 1~3% | 거주지: 글에 없음(확인 안 함) | 출처 https://www.reddit.com/r/financialindependence/comments/1ubxal5/1111_days_since_fire_retired_45/ (2026-06-21) · "35세나 40세였으면 더 좋았다", SNS 삭제 소감
 - 2026-09-28 23시 improve: 새 사례 못 찾음 — 1v3lbhy(2026-07-22)는 위 u/jayybonelie와 같은 사람의 소감 글이라 자산·생활비 숫자 없음(중복 제외). 1unwu3e는 RSS 빈 응답(속도 제한 추정). 다음 회차 1unwu3e부터
 - 2026-09-29 16시 improve: 새 사례 못 찾음 — 1unwu3e RSS(/comments/·/r/financialindependence/comments/ 둘 다) 빈 응답 0바이트, 사흘째 속도 제한 추정. 다음 회차 1unwu3e
+- 2026-09-29 17시 improve: 새 사례 못 찾음 — 1unwu3e RSS는 이번엔 열림(200)이나 u/jayybonelie(위 9/28 사례와 같은 사람)의 소감 에세이 'Retired@45 Finding the joy in missing out'이라 자산·생활비 숫자 없음(중복 제외). 새 후보 검색 search.rss는 429. 다음 회차는 다른 서브(r/leanfire·r/Fire) 검색부터

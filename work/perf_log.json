@@ -2089,6 +2089,14 @@
  "2026-09-30": {
   "cafe": [
    {
+    "title": "액센츄어 실적 발표, 회사가 미리 밝힌 매출 전망은 얼마일까?",
+    "read": 0
+   },
+   {
+    "title": "AMD 월드랩스 인수, 82억 달러에 사는 회사는 뭘 하는 곳일까?",
+    "read": 0
+   },
+   {
     "title": "전세 사는 우리 집 순자산, 자가 가구와 비교하면 어디쯤일까?",
     "read": 0
    },
@@ -2102,7 +2110,7 @@
    },
    {
     "title": "5억 예금 이자, 요즘 금리면 금융소득종합과세에 걸릴까?",
-    "read": 0
+    "read": 1
    },
    {
     "title": "SPYI 월배당 12%, 분배금 받는 동안 주가는 깎였을까?",
@@ -2110,7 +2118,7 @@
    },
    {
     "title": "일시적 2주택 비과세 기간 줄어든다는데, 이미 산 집도 해당될까?",
-    "read": 0
+    "read": 1
    },
    {
     "title": "[금리·환율] 국고채 금리 하루 만에 내렸는데, 1년 전보다는 얼마나 높을까?",
@@ -2138,7 +2146,7 @@
    },
    {
     "title": "[배당주 시황] 다음 주 배당락 종목, 인튜이트는 배당을 15% 올렸어요",
-    "read": 0
+    "read": 1
    },
    {
     "title": "[ETF 시황] 어제 빠진 반도체 레버리지 ETF, 오늘은 얼마나 올랐을까?",
@@ -2158,11 +2166,11 @@
    },
    {
     "title": "예금금리, 6개월만 맡기면 얼마나 덜 받을까?",
-    "read": 5
+    "read": 6
    },
    {
     "title": "[미국 증시 시황] 국채 금리가 또 올랐는데 엔비디아는 왜 올랐을까?",
-    "read": 9
+    "read": 11
    },
    {
     "title": "TIGER와 KODEX 미국S&P500, 수익은 어디가 더 났을까?",
@@ -2199,14 +2207,6 @@
    {
     "title": "맥쿼리인프라 배당금, 1억 넣으면 한 달에 얼마 나올까?",
     "read": 8
-   },
-   {
-    "title": "QQQI 배당락일, 10월 분배금은 며칠까지 사야 받을까?",
-    "read": 9
-   },
-   {
-    "title": "코스트코 배당으로 세후 월 100만원 받으려면 몇 주가 필요할까",
-    "read": 2
    }
   ],
   "blog": [
@@ -2268,19 +2268,19 @@
     "title": "성동구 아파트 매매, 작년 여름의 절반으로 줄었는데 평당 가격은?",
     "date": "Tue, 29 Sep 2026",
     "self_rank": null,
-    "indexed": false
+    "indexed": null
    },
    {
     "title": "개포동 아파트 실거래가, 개포주공 전세 4억일 때 옆 새 아파트는 얼마?",
     "date": "Tue, 29 Sep 2026",
     "self_rank": null,
-    "indexed": false
+    "indexed": null
    },
    {
     "title": "평촌동 아파트 실거래가, 같은 단지 1년 전과 견주면 얼마나 올랐을까?",
     "date": "Tue, 29 Sep 2026",
     "self_rank": null,
-    "indexed": false
+    "indexed": null
    }
   ],
   "control": true,
@@ -2289,28 +2289,28 @@
     "title": "방배동 아파트 실거래가, 같은 국민평형끼리 견주면 얼마나 갈릴까",
     "date": "Tue, 29 Sep 2026",
     "self_rank": null,
-    "indexed": false,
+    "indexed": null,
     "first_seen": "2026-09-29"
    },
    {
     "title": "분당 재건축 예비구역 첫 도입, 내년 공모는 어떻게 달라질까",
     "date": "Tue, 29 Sep 2026",
     "self_rank": null,
-    "indexed": false,
+    "indexed": null,
     "first_seen": "2026-09-29"
    },
    {
     "title": "방콕 콘도 월세, 같은 스쿰빗인데 두 배 차이 나는 이유는?",
     "date": "Tue, 29 Sep 2026",
     "self_rank": null,
-    "indexed": false,
+    "indexed": null,
     "first_seen": "2026-09-29"
    },
    {
     "title": "팔란티어 주가, 미국 소프트웨어 6종 중 올해 몇 등일까?",
     "date": "Tue, 29 Sep 2026",
     "self_rank": null,
-    "indexed": false,
+    "indexed": null,
     "first_seen": "2026-09-29"
    },
    {
@@ -2338,16 +2338,10 @@
     "title": "건강보험료율 2026, 직장·지역 7.19%와 실제 계산",
     "date": "Wed, 23 Sep 2026",
     "self_rank": null,
-    "indexed": false,
+    "indexed": null,
     "first_seen": "2026-09-23"
    }
   ],
-  "mature": {
-   "n": 4,
-   "indexed": 0,
-   "rate": 0.0,
-   "basis": "어제(2026-09-29) 글"
-  },
-  "at": "2026-09-30 01:55"
+  "at": "2026-09-30 03:58"
  }
 }

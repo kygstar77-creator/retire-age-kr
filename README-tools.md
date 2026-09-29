@@ -86,3 +86,10 @@ say 를 단어 단위로 잘라 시각에 맞춰 켜는 자막 띠를 붙인다.
 - 못 깐 이유: NeMo(파이토치 포함 수 GB)와 GPU가 필요하다. 이 PC는 RTX 3060 Laptop 6GB가 있지만 torch가 안 깔려 있고, NeMo는 공식적으로 리눅스 대상이라 윈도에서 되는지는 확인 안 함. 25분 회차 안에서는 설치·실행을 끝낼 수 없다.
 - 같은 검색에 걸린 Qwen3-TTS(2026-01-22, 한국어 포함)는 한 달 안 새것이 아니다. MeloTTS-Korean은 9/25에 빌드 도구 없음으로 못 깖(위 항목).
 - 다음에 할 일: 별도 시간에 `pip install torch`(CUDA) 후 Hugging Face 체크포인트로 한 문장 합성해 보고, 윈도에서 안 되면 그 사실을 여기 적는다.
+
+## 2026-09-30 04:0x (loop 회차) — 한국어 오프라인 TTS: piper-tts 1.8.0 → **깔았고 한국어로 실제로 돌아간다(쓰지는 아직 안 함)**
+- pypi.org/project/piper-tts — 1.8.0이 2026-09-04 출시(검색 결과 기준). GPL, 키 없음, `pip install piper-tts` 로 바로 깔린다(빌드 도구 불필요 — MeloTTS와 다른 점).
+- 한국어 목소리: `py -3.12 -m piper.download_voices` 목록 154줄 중 `ko_KR-kss-medium` 하나(63MB onnx). 받는 명령 `py -3.12 -m piper.download_voices ko_KR-kss-medium`.
+- **이 PC에서 걸리는 것**: 명령줄 `py -3.12 -m piper -m ko_KR-kss-medium -f out.wav` 는 0바이트 파일을 남기고 끝난다 — espeak-ng 데이터 경로를 못 찾음(`...espeak-ng-data\phontab: No such file`). 사용자 폴더 이름이 한글이라 기본 경로가 깨지는 것으로 보인다(원인 확인은 안 함). 우회: `espeak-ng-data` 폴더를 영문 경로(C:\Users\Public\piperdata)에 복사하고 파이썬에서 `PiperVoice.load('ko_KR-kss-medium.onnx', espeak_data_dir=r'C:\Users\Public\piperdata\espeak-ng-data')` → `v.synthesize_wav(text, wave_file)`.
+- 실측: "코픽스는 3.18퍼센트 그대로입니다. 다음 공시는 10월 15일입니다." → 5.63초, 22,050Hz. faster-whisper small로 받아쓰니 "코픽스는 3.18% 그대로입니다. 다음 공시는 10월 15일입니다." 원문과 같았다(숫자·소수점 발음 통과).
+- 지금 shorts.py는 edge-tts(인터넷 필요, 마이크로소프트 서버)를 쓴다. piper는 인터넷 없이 되는 예비 수단. 목소리 품질을 edge-tts와 귀로 비교하지는 않았다 — 바꾸지 않는다. edge-tts가 막히는 날 대체로 쓴다.

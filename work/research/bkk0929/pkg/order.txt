@@ -1,0 +1,17 @@
+블로그 발행 순서
+제목: title.txt
+카테고리: 부동산
+태그: 방콕, 방콕월세, 방콕콘도, 방콕한달살기, 방콕1년살기, 스쿰빗, 태국은퇴비자, 태국DTV비자, 해외은퇴, 파이어족, 해외살기, 방콕생활비, 태국장기체류
+img/01.png
+b00.txt
+b01.txt
+img/02.png
+b02.txt
+b03.txt
+img/03.png
+b04.txt
+img/04.png
+b05.txt
+img/05.png
+img/06.png
+b06.txt

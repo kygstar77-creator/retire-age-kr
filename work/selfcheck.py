@@ -79,6 +79,8 @@ def facts_numbers(t):
     # 보도자료의 "'25년"(2025년 약식)을 연도로 편다. 2026-09-27 청년미래적금 글에서
     # 사실표 "직전년도('25년)"와 본문 "2025년"이 달라 [사실]로 잡혔다.
     years = ' '.join('20' + y for y in re.findall(r"[‘'’](\d{2})년", t))
+    # 세제개편안 표의 "'29.12.31." · "'27.1.1." 약식 날짜도 편다(2026-09-29 ISA 글: 본문 2029·2027이 [사실]로 잡혔다).
+    years += ' ' + ' '.join('20' + y for y in re.findall(r"[‘'’](\d{2})\.\s?\d{1,2}\.", t))
     return numbers(t) | numbers(money_norm(t)) | numbers(unit_expand(t)) | numbers(years)
 
 

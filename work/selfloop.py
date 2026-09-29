@@ -67,6 +67,11 @@ def always():
         out.append(f"{name}: " + (r.splitlines()[0][:100] if r else '(출력 없음)'))
     return out
 
+# 한 회차만 닫을 수 있는 항목. 일감표는 모든 회차가 같이 읽는데 '대기 묶음 블로그'는 improve만 만든다.
+# 2026-09-29 하루에만 loop·write가 이 1순위에 '막힘 역할 밖'을 세 번 적고 끝났다 — 담당을 적어 건너뛰게 한다.
+ROUND = {'대기 묶음 블로그': 'improve', '만들기 대기열 미완': 'improve',
+         '오늘 블로그 편수': 'write', '오늘 카페 편수': 'write'}
+
 def main():
     t0 = time.time(); log = load(LOG, []) or []
     before = load(HEALTH, {'items': []})
@@ -105,9 +110,12 @@ def main():
     # 일감표 — 다음 회차 루틴이 이걸 맨 먼저 읽는다
     lines = [f'# 일감표 (selfloop {time.strftime("%Y-%m-%d %H:%M")} 자동 생성 — 사람이 고치지 않는다)', '',
              '회차 루틴은 시작할 때 이 파일 맨 위 항목부터 닫는다. 닫았으면 그 줄에 `완료 <날짜시각> <무엇을 했는지>`를 붙인다.',
-             '못 닫았으면 `막힘 <이유>`를 붙인다. 세 회차 연속 막히면 tools-wanted.md에 "사람이 봐야 함"으로 올린다.', '']
+             '못 닫았으면 `막힘 <이유>`를 붙인다. 세 회차 연속 막히면 tools-wanted.md에 "사람이 봐야 함"으로 올린다.',
+             '`담당 X`가 붙은 항목은 X 회차만 닫는다 — 다른 회차는 막힘을 적지 말고 담당 표시가 없는 첫 항목을 닫는다.', '']
     for i, p in enumerate(picked, 1):
-        lines.append(f"{i}. **[{p['area']}] {p['name']}** — 지금 {p['value']} / 목표 {p['target']} (점수 {p['score']})")
+        rd = ROUND.get(p['name'])
+        tag = f" · 담당 {rd} (다른 회차는 건너뛰고 다음 항목)" if rd else ''
+        lines.append(f"{i}. **[{p['area']}] {p['name']}** — 지금 {p['value']} / 목표 {p['target']} (점수 {p['score']}){tag}")
         lines.append(f"   - 어떻게: {p['how']}")
     if waiting:
         lines += ['', '## 사장님만 할 수 있는 것 (루틴은 못 닫는다 — 12:30 보고가 챙긴다)',

@@ -8,10 +8,27 @@ import { TOOL_PAGES, toolPageByPath } from '../src/firemap-v2/toolPages.js';
 
 const esc = (v) => String(v == null ? '' : v).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
+const NOTE = '파이어맵은 입력값을 기계적으로 계산하는 참고용 시뮬레이션이며 투자·세무 자문이 아니에요.';
+function footHtml(site) {
+  return `<p>${esc(NOTE)} <a href="${site}/disclaimer">면책</a> · <a href="${site}/privacy">개인정보처리방침</a> · <a href="${site}/contact">문의</a></p>`;
+}
+const BOX = 'style="max-width:640px;margin:24px auto;padding:0 16px;font-family:sans-serif"';
+
 function seoBlock(tool, site) {
   const items = tool.sections.map((s) => `<li>${esc(s)}</li>`).join('');
   const others = TOOL_PAGES.filter((t) => t.path !== tool.path).map((t) => `<a href="${site}${t.path}">${esc(t.title)}</a>`).join(' · ');
-  return `<div id="sSeo" style="max-width:640px;margin:24px auto;padding:0 16px;font-family:sans-serif"><h1>${esc(tool.title)}</h1><ul>${items}</ul><p><a href="${site}/">1분이면 나도 계산</a></p><p>${others} · <a href="${site}/guide/">파이어 백과</a></p></div>`;
+  return `<div id="sSeo" ${BOX}><h1>${esc(tool.title)}</h1><ul>${items}</ul><p><a href="${site}/">1분이면 나도 계산</a></p><p>${others} · <a href="${site}/guide/">파이어 백과</a></p>${footHtml(site)}</div>`;
+}
+
+// 첫 화면(/) — 2026-09-30까지는 크롤러가 제목 한 줄(34자)만 받았다. 문구는 index.html의 description·JSON-LD와 도구 화면 라벨 그대로.
+// 이 블록은 앱 화면에 있는 것만 담는다(스꾸 총무 2026-09-30: 크롤러 블록은 회색 지대 — 앱 화면과 다른 내용을 넣거나 CSS로 숨기면 위반). 글은 /guide 독립 페이지로.
+function homeBlock(site) {
+  const tools = TOOL_PAGES.map((t) => `<h3><a href="${site}${t.path}">${esc(t.title)}</a></h3><p>${t.sections.map(esc).join(' · ')}</p>`).join('');
+  return `<div id="sSeo" ${BOX}><h1>파이어맵 — FIRE·조기은퇴 계산기</h1>` +
+    `<p>내 파이어(조기은퇴) 가능 나이와 목표 자산을 1분 만에 계산. 자산·연금·세금 반영. 또래 중 내 등수도.</p>` +
+    `<p>FIRE·조기은퇴 계산기. 내 자산·저축으로 퇴사 가능 나이와 또래 중 내 등수를 계산하는 파이어맵.</p>` +
+    `<h2>도구</h2>${tools}` +
+    `<p><a href="${site}/guide/">파이어 백과</a> · <a href="${site}/fire-city/">어디서 파이어할까</a></p>${footHtml(site)}</div>`;
 }
 
 export async function onRequest(context) {
@@ -24,7 +41,14 @@ export async function onRequest(context) {
     return Response.redirect(url.toString(), 301);
   }
 
-  const tool = request.method === 'GET' ? toolPageByPath(url.pathname) : null;
+  const isHome = request.method === 'GET' && (url.pathname === '/' || url.pathname === '/index.html');
+  const tool = request.method === 'GET' && !isHome ? toolPageByPath(url.pathname) : null;
+  if (isHome) {
+    const shell = await next();
+    if (!(shell.headers.get('content-type') || '').includes('text/html')) return shell;
+    const home = new Response(shell.body, shell);
+    return new HTMLRewriter().on('body', { element(el) { el.prepend(homeBlock(url.origin), { html: true }); } }).transform(home);
+  }
   if (!tool) return next();
 
   // 앱 껍데기를 그대로 받아서(SPA 폴백 = index.html) 머리와 본문만 바꾼다.

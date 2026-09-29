@@ -1,4 +1,5 @@
 // 조합형 프로그래매틱 SEO — "현재자산 × 월저축 × 목표자산"별 파이어 도달 플랜 페이지를 대량 생성.
+// 2026-09-30 애드센스 "가치가 별로 없는 콘텐츠" 대응: 숫자만 바꾼 틀 페이지라 noindex(사이트맵에서도 빠짐, 링크는 따라가게 follow). 결정 문서 work/research/decisions/2026-09-30-adsense-fix.md
 // 각 페이지는 실제 계산된 고유 수치(도달 기간/나이 무관 연수)를 담아 thin content 회피.
 // 빌드 시 firemap_market(실데이터)을 가져와 '오늘의 참고 시세'를 주입(실패해도 빌드 지속).
 import { mkdirSync, writeFileSync, existsSync } from 'fs';
@@ -48,7 +49,7 @@ function page({ title, desc, keywords, canonical, body, faq }) {
     { '@context': 'https://schema.org', '@type': 'Article', headline: title, description: desc, inLanguage: 'ko-KR', isPartOf: { '@type': 'WebSite', name: '파이어맵', url: BASE }, publisher: { '@type': 'Organization', name: '파이어맵' }, mainEntityOfPage: canonical },
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) }
   ];
-  return `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><meta name="keywords" content="${esc(keywords)}"><link rel="canonical" href="${canonical}"><meta name="robots" content="index, follow"><meta property="og:type" content="article"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${BASE}/og-image.png"><meta name="theme-color" content="#ff5a00"><script type="application/ld+json">${JSON.stringify(ld)}</script><style>${CSS}</style></head><body><main>${body}${MINI}<p class="note">※ 파이어맵은 입력값을 기계적으로 계산하는 참고용 시뮬레이션이며 투자·세무 자문이 아니에요. 도달 기간은 연 ${RET}% 수익 가정의 근사치로, 실제는 물가·세금·건강보험료·국민연금에 따라 달라져요 — <a href="${BASE}/">계산기로 내 수치 보기</a>.</p></main></body></html>`;
+  return `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(desc)}"><meta name="keywords" content="${esc(keywords)}"><link rel="canonical" href="${canonical}"><meta name="robots" content="noindex, follow"><meta property="og:type" content="article"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${BASE}/og-image.png"><meta name="theme-color" content="#ff5a00"><script type="application/ld+json">${JSON.stringify(ld)}</script><style>${CSS}</style></head><body><main>${body}${MINI}<p class="note">※ 파이어맵은 입력값을 기계적으로 계산하는 참고용 시뮬레이션이며 투자·세무 자문이 아니에요. 도달 기간은 연 ${RET}% 수익 가정의 근사치로, 실제는 물가·세금·건강보험료·국민연금에 따라 달라져요 — <a href="${BASE}/">계산기로 내 수치 보기</a>.</p></main></body></html>`;
 }
 
 async function fetchMarket() {

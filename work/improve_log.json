@@ -255,5 +255,12 @@
   "task": "D",
   "did": "재고 블로그4·카페3 확인, crosscheck 429/503에서 다음 모델로 못 넘어가던 버그(HTTPError를 URLError 분기가 먼저 잡음) 고침 → 블로그 4편 소급 대조, gaepo0929 오해 소지 표현 fix-needed, 색인 0% 유사문서 가설 배제",
   "blocked": "OpenAI 키 없음 · Gemini pro/3.8-flash 무료 한도 소진, 3.5-flash-lite로만 대조(품질 낮음) · pyeongchon0929 응답 없음"
+ },
+ {
+  "date": "2026-09-29",
+  "hour": 21,
+  "task": "E",
+  "did": "재고 블로그1→3(daechi0929 대치동 실거래·xom0929 엑슨모빌 홀딩스, SEC 8-K12B 원문)·카페 +1(offimkt_ic0929 [오피스텔 시황] 인천, 9/30 16시 슬롯) 모두 readcheck 0·selfcheck 사실 0 / 일감표 색인율: AI고지 가설 배제·미색인 시작은 9/24 발행분, 제목 형식 변화 관찰 기록 / 네이버 공식 어뷰징·스팸·AI 새 글 없음 / ytlearn 5검색어→writing-lessons·topic-ideas, blogimg.bignum() 추가 / MCP 레지스트리 무료·무키 없음 / fire-cases r/leanfire 1건(자산 미기재) / offitable 15 재실행",
+  "blocked": "ytlearn 자막 IpBlocked(일부 영상 자막 없음) · reddit .json 빈 응답(RSS는 열림) · 인천 옛 시군구 코드 0건→새 코드로 해결 · 카페 대기 중 2개는 코너 시각 보류(dep5eok 22시·offimkt_ic 내일 16시)"
  }
 ]

@@ -179,3 +179,12 @@ Telegram request_access가 두 번(인자 전부/최소) 모두 "can't be approv
 
 실행 확인(2026-09-25): 발행된 123묶음 전수 → 지적 2건(둘 다 진짜 문제). 오류를 심은 사본 6곳 전수 검출.
 대기 원고 6편 지적 0건.
+
+## blogimg.bignum (2026-09-29 21시 improve)
+`B.bignum(path, label, number, sub=None, src=None, color="acc"|"red"|"ink")` — 결론 숫자 하나를 크게 보여 주는 카드. 첫 사진이 늘 표라 결론이 칸 속에 묻히던 것을 유튜브 장면(한 줄 큰 글씨)에서 배워 만들었다. selfcheck는 이 카드를 표처럼 대조하지 않으니 숫자는 본문에 그대로 있는 것만 넣는다.
+
+## MCP 레지스트리 조사 (2026-09-29 21시)
+"sec edgar·financial filings·stock dividends·economic data"로 검색 — Oxford Economics·Moody's(유료), Webull(계정 필요), Wolfram. 무료·키 없이 바로 쓸 만한 것 없음. SEC는 지금처럼 efts.sec.gov 전문검색 + Archives 원문(User-Agent에 연락처)으로 충분하다.
+
+## 인천 시군구 코드 (2026-09-29)
+국토부 실거래 API 9월분: 28125 제물포구·28155 영종구·28275 서해구·28290 검단구가 새로 나오고 옛 28110·28140·28260은 0건. work/research/sgg_found.json에 새 코드가 이미 있다.

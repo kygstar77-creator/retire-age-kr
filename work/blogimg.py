@@ -151,6 +151,31 @@ def steps(path, title, items, note=None, src=None, numbered=True):
         for ln in sl: d.text((pad,y),ln,font=sf,fill=(150,156,168)); y+=22
     im.save(path); return path
 
+def bignum(path, label, number, sub=None, src=None, color='acc'):
+    """숫자 하나를 크게 보여 주는 카드 — 글의 결론 숫자 한 개를 첫 사진으로 쓸 때.
+    2026-09-29 유튜브 학습: 상위 채널 장면이 화면마다 핵심 말 한 줄을 큰 글씨로 띄운다
+    ("삼전닉스 다녀도 불가능", "예측 적중"). 우리 첫 사진은 늘 표라 결론이 칸 속에 묻혔다.
+    number 는 본문에 그대로 있는 숫자만 넣는다(selfcheck가 표처럼 대조하지 않으니 직접 확인)."""
+    W=900; pad=48; col=ACC if color=='acc' else (WARN if color=='red' else INK)
+    lf=F(28,True); sf=F(22); rf=F(16)
+    size=120
+    while size>48 and _M.textlength(str(number),font=F(size,True))>W-pad*2: size-=6
+    nf=F(size,True)
+    ll=wrap(label,lf,W-pad*2); ul=wrap(sub,sf,W-pad*2) if sub else []; rl=wrap(src,rf,W-pad*2) if src else []
+    H=pad+len(ll)*40+24+int(size*1.2)+(24+len(ul)*32 if ul else 0)+(20+len(rl)*22 if rl else 0)+pad
+    im=Image.new('RGB',(W,H),BG); d=ImageDraw.Draw(im)
+    d.rectangle((0,0,10,H),fill=col)
+    y=pad
+    for ln in ll: d.text((pad,y),ln,font=lf,fill=SUB); y+=40
+    y+=24; d.text((pad,y),str(number),font=nf,fill=col); y+=int(size*1.2)
+    if ul:
+        y+=24
+        for ln in ul: d.text((pad,y),ln,font=sf,fill=INK); y+=32
+    if rl:
+        y+=20
+        for ln in rl: d.text((pad,y),ln,font=rf,fill=(150,156,168)); y+=22
+    im.save(path); return path
+
 def line(path, title, xs, ys, marks=(), unit='', src=None):
     """주가·금리 같은 시계열 선 그래프. marks=[(x, y, '글자', 'red'|'ink'), ...] 로 점과 글자를 찍는다.
     2026-09-27: 종목 글마다 주가 차트를 회차가 즉석 스크립트로 그리고 있었고, matplotlib 이 안 깔려 있어

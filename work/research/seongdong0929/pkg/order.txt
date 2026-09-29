@@ -9,5 +9,7 @@ b02.txt
 b03.txt
 img/01.png
 b04.txt
+img/02.png
+img/03.png
 b05.txt
 b06.txt

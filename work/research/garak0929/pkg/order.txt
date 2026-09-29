@@ -6,4 +6,5 @@ img/00.png
 c01.txt
 img/01.png
 c02.txt
+img/02.png
 c03.txt

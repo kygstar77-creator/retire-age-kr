@@ -11,4 +11,6 @@ b03.txt
 b04.txt
 img/02.png
 b05.txt
+img/03.png
 b06.txt
+b07.txt

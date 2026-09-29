@@ -6,6 +6,7 @@ b00.txt
 b01.txt
 img/00.png
 b02.txt
+img/03.png
 b03.txt
 img/01.png
 b04.txt

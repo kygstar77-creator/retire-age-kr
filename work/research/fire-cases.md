@@ -29,3 +29,4 @@
 - 2026-09-29 16시 improve: 새 사례 못 찾음 — 1unwu3e RSS(/comments/·/r/financialindependence/comments/ 둘 다) 빈 응답 0바이트, 사흘째 속도 제한 추정. 다음 회차 1unwu3e
 - 2026-09-29 17시 improve: 새 사례 못 찾음 — 1unwu3e RSS는 이번엔 열림(200)이나 u/jayybonelie(위 9/28 사례와 같은 사람)의 소감 에세이 'Retired@45 Finding the joy in missing out'이라 자산·생활비 숫자 없음(중복 제외). 새 후보 검색 search.rss는 429. 다음 회차는 다른 서브(r/leanfire·r/Fire) 검색부터
 - 2026-09-29 21시 improve: r/leanfire u/waterykyle "Looking for Community: Anyone else hit leanFIRE in their mid 30s?" (2026-09-18) https://www.reddit.com/r/leanfire/comments/1wjycvg/ — 나이 곧 35세 · 2.5년 전 퇴사 후 여행·자원봉사 · 거주 하와이 · 생활비 월 약 2,000달러 · 자산 금액 **미기재**("leanFIRE number"에 도달했다고만). 근무 업계: 아웃도어(가이드·사무). 수집 경로: r/leanfire search.rss(200, 이번엔 열림) — reddit .json은 빈 응답
+- 2026-09-29 23시 improve: WebSearch(영) 'retired early interview net worth annual spending' — 실제 인물 글 못 찾음(일반 기사만)

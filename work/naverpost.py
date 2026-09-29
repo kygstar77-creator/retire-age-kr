@@ -292,6 +292,9 @@ def subject_keys(title):
     잘못 막는 쪽보다 못 막는 쪽이 낫다 — 잘못 막으면 발행이 멈춘다."""
     ks = set()
     for w in re.findall(r'[가-힣A-Za-z][가-힣A-Za-z0-9]+', title or ''):
+        # 2026-09-29 23시: '단지는'·'단지별' 같은 보통 낱말이 단지명으로 잡혀, 제목에 '단지'만 있으면
+        # 서로 다른 동네 글끼리 "같은 대상 이미 씀"으로 막혔다(dogok0930). 앞에 이름이 붙은 것만 단지명이다.
+        if w.startswith('단지'): continue
         if re.search(r'주공|자이|래미안|푸르지오|아이파크|힐스테이트|편한세상|캐슬|더샵|센트레빌|리버뷰|단지', w):
             ks.add(w)                                            # 아파트 단지
         elif re.fullmatch(r'[A-Z]{2,5}', w) and w not in _NOTICKER:

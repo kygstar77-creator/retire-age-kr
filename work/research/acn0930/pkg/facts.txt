@@ -1,0 +1,30 @@
+[오늘 찾은 것]
+2026-09-15 Accenture 뉴스룸 — 4분기·2026 회계연도 실적 발표 예고. 설명회 2026-10-01(목) 오전 8:00 EDT, 실적 자료는 설명회 전에 낸다. https://newsroom.accenture.com/news/2026/accenture-to-announce-fourth-quarter-and-full-year-fiscal-2026-results
+2026-06-18 SEC 8-K EX-99 — 3분기 실적(아래). https://www.sec.gov/Archives/edgar/data/0001467373/000146737326000031/q3fy26earnings8-kexhibit.htm
+2026-09-28 Yahoo Finance(Barchart) — 4분기 EPS 예상 3.19달러(1년 전 3.03달러, +5.3%), 지난 네 분기 연속 예상치 상회, 9/18 구겐하임 '중립' 하향. https://finance.yahoo.com/markets/stocks/articles/accenture-q4-2026-earnings-expect-074552883.html
+2026-06-21 인베스팅닷컴 한국어 — 3분기 발표 뒤 주가 17.97% 하락(156.01→127.98달러). 이유로 신규 수주 약화·거시 불확실성·4분기에 대한 신중한 어조를 적음. https://kr.investing.com/news/transcripts/article-93CH-1990258
+2026-09-24 인베스팅닷컴 한국어 — 옵션 시장 예상 변동폭 7.6%(블룸버그 집계). 원자료 확인 못 해 본문에 안 씀. 이 기사의 6/18 하락폭 24.9%는 야후 종가(-17.97%)와 달라 쓰지 않음. https://kr.investing.com/news/stock-market-news/article-93CH-2105863
+2026-09-30 Nasdaq 실적 캘린더 API — 10/1 ACN pre-market, EPS 예상 $3.19, 1년 전 $3.03, 분기 Aug/2026. https://api.nasdaq.com/api/calendar/earnings?date=2026-10-01
+
+[회사]
+Accenture plc, 본사 아일랜드 더블린(SEC submissions business address), 뉴욕증권거래소(Nasdaq summary Exchange NYSE)
+회계연도 끝 8월 31일(SEC fiscalYearEnd 0831) → 4분기 = 2026년 6~8월
+직원 약 799,000명(3분기 8-K)
+시가총액 116,573,983,074달러(Nasdaq summary, 조회 2026-09-30 02:35 KST) ≈ 1,166억 달러
+1 Year Target $194.50, 52주 최고/최저 $291.09/$118.15 (Nasdaq summary, 장중 기준)
+
+[3분기 실적 — SEC 8-K 2026-06-18]
+매출 187억 달러, 달러 기준 +6%, 현지 통화 +3%
+신규 수주 193억 달러(1년 전 197억 달러)
+희석 EPS 3.80달러(+9%)
+컨설팅 93억 3천만 달러(+4%), 매니지드 서비스 93억 9천만 달러(+8%)
+4분기 매출 전망 177억 5천만~184억 달러, 현지 통화 +1~5%
+2026 회계연도 전망: 현지 통화 매출 +3~4%, 희석 EPS 13.38~13.50달러
+분기 배당 주당 1.63달러(10% 인상), 8월 14일 지급
+직원 약 799,000명
+
+[주가 — Yahoo chart ACN 종가]
+2025-12-31 268.30 / 2026-01-14 288.54(1년 최고 종가) / 2026-06-17 156.01 / 2026-06-18 127.98(-17.97%) / 2026-06-30 124.44(1년 최저 종가) / 2026-09-29 174.69
+[계산] 올해 변화 174.69/268.30-1 = -34.9% · 최고 종가 대비 174.69/288.54-1 = -39.5% · 최저 종가 대비 174.69/124.44-1 = +40.4%
+[계산] 연 배당 1.63×4 = 6.52달러, 6.52/174.69 = 3.73%
+[계산] 설명회 8:00 EDT(UTC-4) = 한국 시각 10월 1일 21:00

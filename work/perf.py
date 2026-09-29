@@ -72,6 +72,20 @@ def quoted_found(sent, needle=BLOGID, tab='blog'):
     links = re.findall(r'https?://(?:m\.)?(?:blog|cafe)\.naver\.com/[A-Za-z0-9_\-/]+', s)
     return any(needle in l for l in links[:60])
 
+def quoted_retry(sent):
+    """quoted_found가 None(검색 막힘·작은 응답)이면 몇 초 쉬고 한 번 더.
+    2026-09-29 13시 loop: 재측정 8편이 전부 '본문 없어 못 잼'으로 찍혔는데 원고 문장은 다 있었다 —
+    연달아 검색하다 작은 응답을 받은 것. 같은 문장을 바로 다시 재면 False(색인 안 됨)로 잡혔다.
+    못 잰 이유가 원고 없음인지 검색 막힘인지 섞이면 엉뚱한 곳을 고친다."""
+    v = quoted_found(sent)
+    if v is None:
+        time.sleep(4)
+        v = quoted_found(sent)
+    return v
+
+def why_none(sent):
+    return '원고 없어 못 잼' if not sent else '검색 막혀 못 잼'
+
 # 대조군 — 9/23 이전에 색인이 확인된 우리 글(2026-09-27 blog-noindex 실측). 이 글들도 안 잡히면
 # 새 글 색인 0%는 '색인 안 됨'이 아니라 측정이 고장났거나 막힌 것이다. 9/26에 로그인 풀린 채 잰 0%로
 # 반나절을 판 뒤 "다시 잴 때는 대조 검색을 같이 돌린다"고 적었는데, 손으로만 돌려서 04시 회차는 빠뜨렸다.
@@ -169,13 +183,13 @@ def main():
         # 원고가 없는 글(예전 글, 원고 파일명이 다른 글)은 RSS 본문 요약에서 문장을 뽑는다 — 2026-09-22 추가
         if not sent: sent = pick_sentence(b.get('desc', ''))
         if sent:
-            idx = quoted_found(sent); time.sleep(0.5)
+            idx = quoted_retry(sent); time.sleep(0.5)
         # 제목 검색에 우리 글이 잡혔다면 네이버가 그 글을 아는 것이다 = 색인됨.
         # 본문 문장 따옴표 검색만으로 판정하던 때는 제목 검색 1위인 글도 '색인 안 됨'으로 적혔다
         # (2026-09-24 실측: 9/23 발행 3편이 제목 1위인데 본문 문장으로는 안 잡혔다).
         if r is not None: idx = True
         rank_s = ('%d위' % r) if r else '30위 밖'
-        idx_s = {True: '색인됨', False: '색인 안 됨', None: '본문 없어 못 잼'}[idx]
+        idx_s = {True: '색인됨', False: '색인 안 됨', None: why_none(sent)}[idx]
         if r is None or r > 10: low += 1
         if idx is False: noidx += 1
         print('  %-6s | %-12s | %s | %s' % (rank_s, idx_s, b['date'], b['title'][:40]))
@@ -212,12 +226,12 @@ def main():
             first = stamp[norm(b['title'])]
             r = search_rank(b['title'], BLOGID, 'blog'); time.sleep(0.5)
             sent = drafts.get(norm(b['title']))
-            idx = quoted_found(sent) if sent else None
+            idx = quoted_retry(sent) if sent else None
             if sent: time.sleep(0.5)
             if r is not None: idx = True
             print('  %-6s | %-12s | 발행 %s | %s'
                   % (('%d위' % r) if r else '30위 밖',
-                     {True: '이제 색인됨', False: '아직 안 됨', None: '본문 없어 못 잼'}[idx],
+                     {True: '이제 색인됨', False: '아직 안 됨', None: why_none(sent)}[idx],
                      first, b['title'][:36]))
             again.append({'title': b['title'], 'date': b.get('date', ''), 'self_rank': r,
                           'indexed': idx, 'first_seen': first})
@@ -287,8 +301,13 @@ def brake(today, log):
 
     # 오늘 올린 글이 하나도 안 잡히는데 어제 것도 안 잡히면 둘을 같이 적어 둔다
     b = [x for x in (today.get('blog') or []) if isinstance(x, dict)]
-    if b and not any(x.get('indexed') for x in b):
-        out.append('오늘 잰 블로그 %d편 중 색인 0편' % len(b))
+    # 2026-09-29 13:49: 12편 중 10편이 '못 잼'(따옴표 검색이 도중에 막힘)이었는데 "12편 중 색인 0편"으로 적혔다.
+    # 실제로 잰 것은 2편이다. 못 잰 글은 분모에서 빼고, 잰 글이 적으면 판단하지 않는다고 적는다.
+    bm = [x for x in b if x.get('indexed') is not None]
+    if b and len(bm) < len(b):
+        out.append('오늘 블로그 %d편 중 %d편은 검색이 막혀 못 잼' % (len(b), len(b) - len(bm)))
+    if bm and not any(x.get('indexed') for x in bm):
+        out.append('오늘 잰 블로그 %d편 중 색인 0편%s' % (len(bm), '' if len(bm) >= BRAKE_MIN_N else ' (표본이 %d편 미만이라 판단하지 않는다)' % BRAKE_MIN_N))
 
     os.makedirs(os.path.dirname(ALERT), exist_ok=True)
     if out:

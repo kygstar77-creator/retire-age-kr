@@ -1,0 +1,33 @@
+[JEPI] JPMorgan 일일 보유 종목 엑셀(am.jpmorgan.com FundsMarketingHandler dailyETFHoldings), 기준일 As of Date: 09/28/2026, 행 140
+  유형 DOMESTIC COMMON STOCK: 116개, 순자산 비중 합 82.08%
+  유형 MONEY MARKET: 1개, 순자산 비중 합 1.71%
+  유형 Equity Linked Notes: 15개, 순자산 비중 합 13.74%
+  유형 REIT: 4개, 순자산 비중 합 1.96%
+  유형 CURRENCIES: 2개, 순자산 비중 합 0.15%
+  유형 None: 2개, 순자산 비중 합 0.00%
+  상위 10 주식: MSFT 1.99% · AAPL 1.93% · NVDA 1.92% · META 1.84% · JNJ 1.82% · AMZN 1.81% · TT 1.79% · MA 1.78% · MMM 1.73% · GOOGL 1.73% | 상위10 합 18.34%
+  비주식: JPMORGAN PRIME MONEY MONEY MARKET 1.71%
+  비주식: SPX_26 Equity Linked Notes 0.99%
+  비주식: SPX_23 Equity Linked Notes 0.99%
+  비주식: SPX_25 Equity Linked Notes 0.98%
+  비주식: SPX_27 Equity Linked Notes 0.98%
+  비주식: SPX_22 Equity Linked Notes 0.98%
+  섹터: Information Technology 15.6% · Industrials 12.4% · Health Care 11.4% · Financials 10.3% · Consumer Discretionary 9.1% · Consumer Staples 7.9%
+[JEPQ] JPMorgan 일일 보유 종목 엑셀(am.jpmorgan.com FundsMarketingHandler dailyETFHoldings), 기준일 As of Date: 09/28/2026, 행 112
+  유형 DOMESTIC COMMON STOCK: 89개, 순자산 비중 합 80.71%
+  유형 MONEY MARKET: 1개, 순자산 비중 합 1.68%
+  유형 Equity Linked Notes: 15개, 순자산 비중 합 15.63%
+  유형 ADR: 3개, 순자산 비중 합 1.32%
+  유형 REIT: 1개, 순자산 비중 합 0.15%
+  유형 CURRENCIES: 1개, 순자산 비중 합 0.03%
+  유형 None: 2개, 순자산 비중 합 0.00%
+  상위 10 주식: NVDA 7.35% · AAPL 6.49% · MSFT 5.14% · MU 4.88% · GOOG 4.68% · AMD 3.90% · AMZN 3.66% · META 2.92% · TSLA 2.01% · LRCX 2.01% | 상위10 합 43.04%
+  비주식: JPMORGAN PRIME MONEY MONEY MARKET 1.68%
+  비주식: NDX_3 Equity Linked Notes 1.11%
+  비주식: NDX_19 Equity Linked Notes 1.08%
+  비주식: NDX_20 Equity Linked Notes 1.08%
+  비주식: NDX_1 Equity Linked Notes 1.08%
+  비주식: NDX_2 Equity Linked Notes 1.08%
+  섹터: Information Technology 48.6% · Communication Services 11.4% · Consumer Discretionary 8.5% · Consumer Staples 4.4% · Health Care 3.5% · Industrials 2.0%
+[SCHD] Schwab Asset Management 전체 보유 종목 페이지(schwabassetmanagement.com/allholdings/SCHD), 조회 2026-09-30, 종목 100
+  상위 10: QCOM 4.64% · TXN 4.59% · PG 4.24% · KO 4.15% · MRK 4.12% · CVX 4.10% · UNH 3.97% · AMGN 3.97% · VZ 3.91% · COP 3.86% | 상위10 합 41.55%

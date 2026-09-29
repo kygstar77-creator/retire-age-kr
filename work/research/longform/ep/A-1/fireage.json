@@ -1,0 +1,1 @@
+{"inputs":{"currentAge":35,"financialAsset":100000000,"monthlyInvestment":3000000,"monthlyLivingCost":3000000,"inflationRate":3,"expectedPensionAge":65,"expectedMonthlyPension":1000000,"simulationUntilAge":90},"earliestAgeByReturn":{"3":61,"4":57,"5":54,"6":51,"7":48,"8":46}}

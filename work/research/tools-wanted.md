@@ -622,3 +622,5 @@ mid·bot 칸에 들어앉아 text_mid 가 0.0884 → 0.2005 로 튄다. thumbsta
 - 2026-09-27 21시 E회차 mcp-registry 재검색("exchange rates · treasury yields · economic data · real estate · korea statistics"): 새로 나온 것 Oxford Economics·Moody's·Wolfram·Aleph — 전부 계정·유료 계약 필요. Alpha Vantage는 이미 apis.py로 쓰는 중. 한국 통계·부동산 커넥터는 여전히 없음. 붙일 것 없음(사장님 손 불필요).
 - [사람이 봐야 함] 2026-09-28 01시 write: 블로그 9/23 이후 새 글 색인 0% — 일감표 1순위가 회차마다 막힘. 원인 미확인(대조군 옛 글은 잡힘). 발행량·계정 상태(서치어드바이저 등) 확인은 사람 판단이 필요
 - 2026-09-29 12:30 report mcp-registry 재검색(stock·korea·real estate·statistics·finance): 새 무료·무키 커넥터 없음. Alpha Vantage·Twelve Data는 이미 적혀 있음. 붙일 것 없음.
+- 2026-09-29 17시 improve: 위 2026-09-27 13시 "Nasdaq 경제지표 캘린더가 전날 지표를 준다" — **해결**. 재측정으로 맞음을 확인하고 planner.market_today가 date=내일+1로 부르게 고침(이 API를 쓰는 곳은 planner 하나). rules.json 자료조사 규칙 추가. 실적 캘린더는 밀리지 않음(asOf=요청일).
+- 2026-09-29 17시 improve: **한국부동산원 R-ONE 오픈API 인증키** — 무엇을 위해: 편성표(planner.py)와 B8·K11 부동산 시황에 주간 아파트 매매·전세가격지수(구별)를 넣으려고. 무료. 절차: reb.or.kr/r-one → 회원가입 → 오픈API 인증키 신청 → 키를 Documents\rone_key.txt 에 저장. 키 없이 부르면 견본 5줄만 온다(실측).

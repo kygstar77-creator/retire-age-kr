@@ -1,7 +1,7 @@
 # 기획 자동화 — "무엇을 쓰면 클릭·조회·완독이 많을지"를 데이터로 정해 내일 24회차 편성표를 만든다(사장님 2026-09-23).
 #   python work/planner.py            → work/research/plan_<내일>.md (블로그 24·카페 24 슬롯: 시리즈·주제·제목 초안·훅·담을 항목·출처)
 # 신호(전부 지금 있는 파일·API): ① 검색수(topics.json) ② 마감(calendar.json) ③ 유튜브 상위 채널 제목·조회(research/yt/lessons_*.md, full/*/index.json)
-#   ④ 우리 글 성과(perf_log.json·visitors_log.json·pkg/form.txt·axis.txt) ⑤ 카페 실측 조회 축 ⑥ 오늘 시장(Nasdaq 캘린더·히트맵 상위 등락) ⑦ 오늘 찾은 글감(topic-ideas.md)
+#   ④ 우리 글 성과(perf_log.json·visitors_log.json·pkg/form.txt·axis.txt) ⑤ 카페 실측 조회 축 ⑥ 오늘 시장(Nasdaq 캘린더·히트맵 상위 등락) ⑦ 오늘 찾은 글감(topic-ideas.md) ⑧ 다른 카페 잘 읽힌 제목(cafe_style/benchmark_*.json)
 import sys, os, re, json, glob, time, datetime, collections, urllib.request, statistics
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import demand
@@ -85,11 +85,39 @@ def market_today():
         else: out.append('내일 실적: 나스닥 캘린더에 예정된 발표가 없다(B5 마감 슬롯은 다른 일정으로 채운다)')
     except Exception as e: out.append('실적 캘린더 실패 ' + type(e).__name__ + ' ' + str(e)[:40])
     try:
-        d = json.load(urllib.request.urlopen(urllib.request.Request(f'https://api.nasdaq.com/api/calendar/economicevents?date={TOM.isoformat()}', headers=H), timeout=20))
+        # 나스닥 경제지표 캘린더는 요청한 날의 '전날' 지표를 돌려준다(2026-09-27 13시 발견, 09-29 17시 재측정:
+        # date=10-01 → 9/30 수요일 ADP·시카고 PMI, date=10-02 → 10/1 목요일 실업수당·ISM 제조업).
+        # 그동안 편성표의 '내일 지표'는 오늘 지표였다. 하루 뒤 날짜로 부른다. 실적 캘린더(earnings)는 해당 없음.
+        d = json.load(urllib.request.urlopen(urllib.request.Request(f'https://api.nasdaq.com/api/calendar/economicevents?date={(TOM + datetime.timedelta(days=1)).isoformat()}', headers=H), timeout=20))
         rows = [r for r in (((d or {}).get('data') or {}).get('rows') or []) if r.get('country') in ('US', 'United States')][:6]
         if rows: out.append('내일 지표: ' + ', '.join(f"{r['eventName']}({r.get('gmt','')})" for r in rows))
     except Exception as e: out.append('지표 캘린더 실패 ' + type(e).__name__ + ' ' + str(e)[:40])
     return out
+
+def heat_movers(n=100, k=3):
+    """시총 상위 n개 중 전 거래일 등락 상·하위 k개(build-queue 6번, 2026-09-29).
+    헤더 ⑥에 '히트맵 상위 등락'을 적어 두고 실제로는 부르지 않았다 — 편성표에 등락 종목이 한 번도 안 나왔다.
+    heatmap.py와 같은 자료·같은 낡은 값 보정(fresh_or_fix)을 쓴다. 기준 날짜를 같이 찍는다."""
+    try:
+        import heatmap
+        sel = heatmap.fresh_or_fix(sorted(heatmap.fetch(), key=lambda r: -r['cap'])[:n])
+        sel = sorted(sel, key=lambda r: -r['pct'])
+        f = lambda rs: ', '.join(f"{r['sym']} {r['pct']:+.1f}%" for r in rs)
+        when = f"뉴욕 {heatmap.SRC['date']} 종가" if heatmap.SRC.get('date') else '날짜 대조 실패'
+        return [f'시총 상위 {len(sel)}개 등락({when}, {heatmap.SRC["name"]}) 오른 쪽: {f(sel[:k])} / 내린 쪽: {f(sel[-k:][::-1])}'
+                ' — B2·K02 후보에 같은 종목이 있으면 그 종목을 먼저 쓴다']
+    except Exception as e:
+        return ['히트맵 등락 실패 ' + type(e).__name__ + ' ' + str(e)[:40]]
+
+def cafe_bench_titles(k=8):
+    """다른 카페에서 잘 읽힌 글 제목(cafelearn.py가 모은 최신 benchmark json, build-queue 6번).
+    조회수는 그 파일에 없다 — '잘 읽히는 글'로 뽑힌 표본의 제목만 보여 준다. 제목 모양을 볼 뿐 베끼지 않는다."""
+    fs = sorted(glob.glob(os.path.join(R, 'cafe_style', 'benchmark_*.json')))
+    if not fs: return []
+    rows = load(fs[-1], []) or []
+    day = os.path.basename(fs[-1])[10:20]
+    return [f'카페 벤치마크 제목({day}, {len(rows)}편 중 {min(k, len(rows))}편): ' +
+            ' / '.join(f"[{r.get('q','')}] {r.get('title','')}" for r in rows[:k])]
 
 def ideas():
     p = os.path.join(R, 'topic-ideas.md')
@@ -116,7 +144,7 @@ def pending_count():
 def main():
     topics = load(os.path.join(HERE, 'topics.json'), []); topics = topics if isinstance(topics, list) else topics.get('topics', [])
     cal = load(os.path.join(HERE, 'calendar.json'), {}); events = cal.get('events', cal if isinstance(cal, list) else [])
-    pats, ntitles = title_patterns(); perf, unlabeled = our_perf(); mkt = market_today(); idea = ideas()
+    pats, ntitles = title_patterns(); perf, unlabeled = our_perf(); mkt = market_today() + heat_movers() + cafe_bench_titles(); idea = ideas()
     wtitles = written_titles()
     # 후보 점수: 검색수 × 마감 가중 × 축 로테이션
     # dd는 '마감까지 남은 날'이다. f'D{dd:+d}'로 찍어 마감 하루 전(9/29, 재산세 9/30)이 'D+1'로 나갔다 —

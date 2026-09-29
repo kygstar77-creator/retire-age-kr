@@ -217,6 +217,28 @@ def main(pkg):
         problems.append(('표본', i, (f'{nread}편으로 일반화' if nread else '적은 표본으로 일반화')
                          + f' — 남의 글 몇 편을 세어 결론을 내지 않는다 · {s}'))
 
+    # 표 이미지 숫자가 본문에도 있나 — rules.json "표 이미지 속 숫자를 본문 텍스트에도 쓴다"(네이버 AI 브리핑 FAQ).
+    # 2026-09-29 report: pltr0929 표의 금액 두 줄이 본문에 없었다. blogimg.table 이 남긴 pkg/tables.json 과 대조한다.
+    # 발행을 막지는 않는다('표' 태그는 fact_n 에 안 센다) — 회차가 본문에 한 줄 넣는다.
+    tp = os.path.join(pkg, 'tables.json')
+    if os.path.exists(tp):
+        try:
+            flat = re.sub(r'[\s,]', '', body)
+            for name, t in json.load(open(tp, encoding='utf-8')).items():
+                miss = []
+                for r in t.get('rows', []):
+                    for c in r[1:]:
+                        # '7억 6,400만'은 통째로 본다 — 6400만 떼면 본문 다른 금액(21억 6,400만)에 우연히 걸린다
+                        for m in re.findall(r'\d[\d,]*(?:\.\d+)?(?:\s*[조억만]\s*\d[\d,]*)*\s*[조억만]?', c):
+                            k = re.sub(r'[\s,]', '', m)
+                            if len(re.sub(r'\D', '', k)) >= 2 and k not in flat:
+                                miss.append(f'{r[0]} {c}')
+                                break
+                if miss:
+                    problems.append(('표', 0, f'{name} 표에만 있고 본문에 없는 칸 {len(miss)}개: ' + ' / '.join(miss[:4])))
+        except Exception as e:
+            problems.append(('표', 0, f'표 대조 실패: {e}'))
+
     # 3) 출처 개수
     # 출처는 URL로만 적히지 않는다(기관명·법령명으로 적힌 묶음도 있다 — 2026-09-23 확인)
     # 출처가 'proshares.com/...' 처럼 http 없이 적힌 묶음이 많다(2026-09-23 확인) → 맨 도메인도 센다

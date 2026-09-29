@@ -1825,16 +1825,28 @@
  "2026-09-29": {
   "cafe": [
    {
-    "title": "주담대 금리는 같은 은행에서도 사람마다 얼마나 다를까?",
+    "title": "[ETF 시황] 어제 빠진 반도체 레버리지 ETF, 오늘은 얼마나 올랐을까?",
     "read": 2
+   },
+   {
+    "title": "[아파트 시황] 경기 남부 9월 아파트 매매, 어디서 가장 많이 팔렸을까?",
+    "read": 0
+   },
+   {
+    "title": "[오늘의 투표] 몇 살까지 일하고 싶으세요?",
+    "read": 0
+   },
+   {
+    "title": "주담대 금리는 같은 은행에서도 사람마다 얼마나 다를까?",
+    "read": 4
    },
    {
     "title": "예금금리, 6개월만 맡기면 얼마나 덜 받을까?",
-    "read": 1
+    "read": 2
    },
    {
     "title": "[미국 증시 시황] 국채 금리가 또 올랐는데 엔비디아는 왜 올랐을까?",
-    "read": 2
+    "read": 4
    },
    {
     "title": "TIGER와 KODEX 미국S&P500, 수익은 어디가 더 났을까?",
@@ -1850,7 +1862,7 @@
    },
    {
     "title": "미국 3분기 실적 발표, 한국 시각으로는 언제 볼 수 있을까?",
-    "read": 0
+    "read": 1
    },
    {
     "title": "아이온큐 주가, 매출은 크게 늘었는데 왜 1년 전보다 낮을까?",
@@ -1870,15 +1882,15 @@
    },
    {
     "title": "맥쿼리인프라 배당금, 1억 넣으면 한 달에 얼마 나올까?",
-    "read": 2
-   },
-   {
-    "title": "QQQI 배당락일, 10월 분배금은 며칠까지 사야 받을까?",
     "read": 3
    },
    {
+    "title": "QQQI 배당락일, 10월 분배금은 며칠까지 사야 받을까?",
+    "read": 5
+   },
+   {
     "title": "코스트코 배당으로 세후 월 100만원 받으려면 몇 주가 필요할까",
-    "read": 1
+    "read": 2
    },
    {
     "title": "[금리·환율] 한국·미국 기준금리와 10년물·원달러, 한 달 전과 비교",
@@ -1898,7 +1910,7 @@
    },
    {
     "title": "퇴직연금 디폴트옵션, 적립금 82%가 초저위험에 있다는데 수익률은?",
-    "read": 2
+    "read": 3
    },
    {
     "title": "세입자 있는 서울 아파트, 살 때 내 돈은 구마다 얼마나 들까?",
@@ -1926,26 +1938,32 @@
    },
    {
     "title": "정기예금 금리, 길게 묶으면 더 줄까?",
-    "read": 22
+    "read": 27
    },
    {
     "title": "유족연금 받으면 내 국민연금은 어떻게 될까?",
     "read": 1
-   },
-   {
-    "title": "건강보험 피부양자, 국민연금 월 얼마부터 탈락할까?",
-    "read": 0
-   },
-   {
-    "title": "[오늘의 투표] 주택담보대출, 고정금리와 변동금리 중 어느 쪽을 고르시겠어요?",
-    "read": 3
-   },
-   {
-    "title": "팔란티어 주가 석 달 만에 77% 올랐는데 실적은 얼마나 늘었을까?",
-    "read": 4
    }
   ],
   "blog": [
+   {
+    "title": "분당 재건축 예비구역 첫 도입, 내년 공모는 어떻게 달라질까",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "방콕 콘도 월세, 같은 스쿰빗인데 두 배 차이 나는 이유는?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "팔란티어 주가, 미국 소프트웨어 6종 중 올해 몇 등일까?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
    {
     "title": "흑석동 아파트 실거래가, 단지별 매매·전세 가격과 1년 전 비교",
     "date": "Tue, 29 Sep 2026",
@@ -1999,28 +2017,31 @@
     "date": "Mon, 28 Sep 2026",
     "self_rank": null,
     "indexed": false
-   },
+   }
+  ],
+  "control": true,
+  "recheck": [
    {
     "title": "넷플릭스 주가 올해 24% 하락, 워너 인수 무산부터 실적까지",
     "date": "Mon, 28 Sep 2026",
     "self_rank": null,
-    "indexed": false
+    "indexed": false,
+    "first_seen": "2026-09-28"
    },
    {
     "title": "배당귀족 종목 배당률·배당락일, 70년 올린 P&G는 몇 위일까",
     "date": "Mon, 28 Sep 2026",
     "self_rank": null,
-    "indexed": false
+    "indexed": false,
+    "first_seen": "2026-09-28"
    },
    {
     "title": "주담대 한도 6억, 수도권에서 다 받으려면 연봉은 얼마여야 할까",
     "date": "Mon, 28 Sep 2026",
     "self_rank": null,
-    "indexed": false
-   }
-  ],
-  "control": true,
-  "recheck": [
+    "indexed": false,
+    "first_seen": "2026-09-28"
+   },
    {
     "title": "10월부터 바뀌는 법, 건보료 분할납부 기준과 가상자산 보이스피싱 환급",
     "date": "Mon, 28 Sep 2026",
@@ -2055,35 +2076,14 @@
     "self_rank": null,
     "indexed": false,
     "first_seen": "2026-09-28"
-   },
-   {
-    "title": "[공유] 아파트 전세가율 최고갱신",
-    "date": "Sat, 07 Dec 2024",
-    "self_rank": null,
-    "indexed": null,
-    "first_seen": "2026-09-22"
-   },
-   {
-    "title": "[공유] 아파트 vs 주식 투자",
-    "date": "Sat, 07 Dec 2024",
-    "self_rank": null,
-    "indexed": null,
-    "first_seen": "2026-09-22"
-   },
-   {
-    "title": "[공유] 젊은 사람들은 자산의 90%를 주식에 투자해야 한다",
-    "date": "Sat, 07 Dec 2024",
-    "self_rank": null,
-    "indexed": null,
-    "first_seen": "2026-09-22"
    }
   ],
   "mature": {
-   "n": 5,
+   "n": 8,
    "indexed": 0,
    "rate": 0.0,
    "basis": "어제(2026-09-28) 글"
   },
-  "at": "2026-09-29 09:51"
+  "at": "2026-09-29 12:37"
  }
 }

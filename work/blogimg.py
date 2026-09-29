@@ -96,7 +96,22 @@ def table(path, title, cols, rows, widths=None, note=None, hl_col=None, src=None
     if sl:
         y+=10
         for ln in sl: d.text((pad,y),ln,font=sf,fill=(150,156,168)); y+=22
-    im.save(path); return path
+    im.save(path); _keep_table(path, title, cols, rows); return path
+
+def _keep_table(path, title, cols, rows):
+    """표 칸을 pkg/tables.json 에 남긴다 — selfcheck가 '표에만 있고 본문에 없는 숫자'를 찾는다.
+    2026-09-29 report: pltr0929 표의 7억 6,400만달러·8억 900만달러가 본문에 없었는데
+    selfcheck는 본문→사실표 방향만 봐서 못 잡았다. img/ 안에 두면 사진 수를 세는 스크립트(bodystudy)가 틀리니 pkg 에 둔다."""
+    try:
+        import json
+        d = os.path.dirname(os.path.abspath(path))
+        if os.path.basename(d) != 'img': return
+        tp = os.path.join(os.path.dirname(d), 'tables.json')
+        cur = json.load(open(tp, encoding='utf-8')) if os.path.exists(tp) else {}
+        cur[os.path.basename(path)] = {'title': title, 'cols': list(cols), 'rows': [[str(c) for c in r] for r in rows]}
+        json.dump(cur, open(tp, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    except Exception:
+        pass
 
 def steps(path, title, items, note=None, src=None):
     """번호가 붙은 절차 카드. 표와 달리 순서를 보여 줄 때."""

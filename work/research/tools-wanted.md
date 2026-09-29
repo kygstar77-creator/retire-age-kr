@@ -621,3 +621,4 @@ mid·bot 칸에 들어앉아 text_mid 가 0.0884 → 0.2005 로 튄다. thumbsta
 
 - 2026-09-27 21시 E회차 mcp-registry 재검색("exchange rates · treasury yields · economic data · real estate · korea statistics"): 새로 나온 것 Oxford Economics·Moody's·Wolfram·Aleph — 전부 계정·유료 계약 필요. Alpha Vantage는 이미 apis.py로 쓰는 중. 한국 통계·부동산 커넥터는 여전히 없음. 붙일 것 없음(사장님 손 불필요).
 - [사람이 봐야 함] 2026-09-28 01시 write: 블로그 9/23 이후 새 글 색인 0% — 일감표 1순위가 회차마다 막힘. 원인 미확인(대조군 옛 글은 잡힘). 발행량·계정 상태(서치어드바이저 등) 확인은 사람 판단이 필요
+- 2026-09-29 12:30 report mcp-registry 재검색(stock·korea·real estate·statistics·finance): 새 무료·무키 커넥터 없음. Alpha Vantage·Twelve Data는 이미 적혀 있음. 붙일 것 없음.

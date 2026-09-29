@@ -53,6 +53,8 @@ def load(sgg_name=None, offi=False):
         for r in data:
             g = (r.get('sggNm') or SGG.get(str(r.get('sggCd', '')).strip()) or '').strip()
             if sgg_name and g != sgg_name: continue
+            # 해제된 거래는 뺀다 — 2026-09-29 강동 고덕아르테온 7월 21억 7,000만원이 해제분과 겹쳐 두 번 세어졌다
+            if (r.get('cdealType') or '').strip() == 'O': continue
             ar = num(r.get('excluUseAr')); amt = num(r.get('dealAmount'))
             nm = ((r.get('offiNm') if offi else r.get('aptNm')) or '').strip()
             fb = floor_band(r.get('floor')); ab = age_band(r.get('buildYear'))
@@ -132,7 +134,14 @@ def main():
     rows = load(sgg, offi)
     what = '오피스텔' if offi else '아파트'
     if not rows: sys.exit(f'{sgg} {what} 실거래가 없다 — work/research/rt/ 를 먼저 채운다(rtmolit.py)')
-    print(f'[{sgg} {what}] 실거래 {len(rows)}건 · {rows[0]["월"]}~{max(r["월"] for r in rows)}')
+    # 2026-09-29: rt/에 2021-10~12와 2026-07~09가 같이 있어 기간을 안 맞추면 2021년에 주로 팔린 단지가
+    # 2026년 거래가 섞인 기준선보다 '싸게' 나왔다(강동 롯데캐슬퍼스트 -17.0% — 2021년 5건이 끌어내림).
+    # 기준선은 최근 12개월 거래로만 만든다. 옛 거래까지 보려면 --all.
+    if '--all' not in sys.argv:
+        last = max(r['월'] for r in rows); y, m = int(last[:4]), int(last[5:7])
+        cut = f'{y - 1}-{m:02d}'
+        rows = [r for r in rows if r['월'] > cut]
+    print(f'[{sgg} {what}] 실거래 {len(rows)}건 · {min(r["월"] for r in rows)}~{max(r["월"] for r in rows)}')
 
     if len(args) > 1:
         r0, tbl = complex_detail(rows, args[1])

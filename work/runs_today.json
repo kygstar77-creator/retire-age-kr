@@ -263,7 +263,7 @@
   },
   {
    "hour": 20,
-   "ts": "20:50",
+   "ts": "20:32",
    "blog": {
     "title": "반포동 아파트 실거래가, 같은 국민평형인데 단지마다 20억 갈린 석 달",
     "url": "https://blog.naver.com/kygstar7777/224426294190"
@@ -272,7 +272,7 @@
     "title": "일시적 2주택 비과세 기간 줄어든다는데, 이미 산 집도 해당될까?",
     "url": "https://cafe.naver.com/firemap/175"
    },
-   "note": "발행: 블로그 banpo0929(대기 최고참) verify OK 1770/1734자·사진 4/4, 카페 tmp2house0929(20시 코너, slot now) verify OK 851/851자·사진 3/3. 다음 시각 카페 K21 월배당 ETF 새 묶음 spyi0929(slot 2026-09-29 21, 배당현금흐름·형식④) — 편성표는 O(리얼티인컴)였으나 dupcheck에서 O는 9/25 o0925로 이미 씀·대기 main0929가 같은 '세후 월 100만원' 각도라, 월배당 ETF 수요순(JEPQ 32,820·TIGER 미국배당다우존스 32,700·JEPI 10,180·SPYI 3,080) dupcheck 첫 새것 SPYI로 바꾸고 각도를 '분배금 받는 동안 주가·총수익 SPY 비교'로 잡음. 자료조사 WebSearch 3회(영·한)+NEOS 공식 SPYI 페이지·ROC 설명글·SEC 497K·24/7 Wall St.(ROC 95%는 19a-1 원문 못 봐 본문에서 뺌)·야후 chart(SPYI·SPY·KRW=X). 검증 경로: crosscheck(Gemini flash-lite) 사실 5건 중 반영 4(기준일 표기)·유지 1(24.228→24.23 반올림), 말투 5건 중 반영 5(단 SPYI 정식명·JP모건 JEPI 설명은 readcheck 때문에 남김) → selfcheck 사실 0·계산 1(24.23=24.228 반올림 확인) → readcheck 7건→0. 대기: 블로그 2(munjeong·voo — 3개 미만, 회차 시간 50분 넘어 이번엔 못 채움, 다음 회차·자가발전 회차 몫) · 카페 3(spyi 21시·main·garak). 일감1 색인율: 막힘(세 번째, tools-wanted 623행 기존 항목). 개선: 없음."
+   "note": "발행: 블로그 banpo0929(대기 최고참) verify OK 1770/1734자·사진 4/4, 카페 tmp2house0929(20시 코너, slot now) verify OK 851/851자·사진 3/3. 다음 시각 카페 K21 월배당 ETF 새 묶음 spyi0929(slot 2026-09-29 21, 배당현금흐름·형식④) — 편성표는 O(리얼티인컴)였으나 dupcheck에서 O는 9/25 o0925로 이미 씀·대기 main0929가 같은 '세후 월 100만원' 각도라, 월배당 ETF 수요순(JEPQ 32,820·TIGER 미국배당다우존스 32,700·JEPI 10,180·SPYI 3,080) dupcheck 첫 새것 SPYI로 바꾸고 각도를 '분배금 받는 동안 주가·총수익 SPY 비교'로 잡음. 자료조사 WebSearch 3회(영·한)+NEOS 공식 SPYI 페이지·ROC 설명글·SEC 497K·24/7 Wall St.(ROC 95%는 19a-1 원문 못 봐 본문에서 뺌)·야후 chart(SPYI·SPY·KRW=X). 검증 경로: crosscheck(Gemini flash-lite) 사실 5건 중 반영 4(기준일 표기)·유지 1(24.228→24.23 반올림), 말투 5건 중 반영 5(단 SPYI 정식명·JP모건 JEPI 설명은 readcheck 때문에 남김) → selfcheck 사실 0·계산 1(24.23=24.228 반올림 확인) → readcheck 7건→0. 대기: 블로그 2(munjeong·voo — 3개 미만, 21시 코너를 먼저 씀, 다음 회차·자가발전 회차 몫) · 카페 3(spyi 21시·main·garak). 일감1 색인율: 막힘(세 번째, tools-wanted 623행 기존 항목). 개선: 없음."
   }
  ]
 }

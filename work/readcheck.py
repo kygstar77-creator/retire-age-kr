@@ -74,9 +74,15 @@ VAGUE = re.compile(r'(이것|그것|저것|이런\s*점|해당\s*(부분|내용)
 
 def sents(t):
     out = []
+    src = False
     for line in t.splitlines():
         line = line.strip()
-        if not line: continue
+        if not line: src = False; continue
+        # 맺음 출처 묶음은 문장이 아니다. 2026-09-30 04시: "출처:" 다음 줄
+        # "인히브릭스 보도자료(2026-09-08), 데이브앤버스터스·다모라 8-K 공시"가 '숫자 문장 네 줄 연달아'로 잡혀
+        # 발행기가 멈췄다. 출처 이름에 붙은 날짜·공시 번호는 고칠 대상이 아니다. 빈 줄이 나올 때까지 건너뛴다.
+        if line.startswith('출처'): src = True
+        if src: continue
         # 표 행·소제목은 문장이 아니다. 2026-09-24: 표 행 "| 1.75억 | 25건 |"이 문장으로 잡혀
         # "'억건'로 끝나는 문장이 세 번 이어진다"는 어미반복 오탐이 났다.
         # 2026-09-25: 같은 오탐이 글머리표 목록에서도 났다. 카페 글 한 편에서 세 건이 그랬다 —

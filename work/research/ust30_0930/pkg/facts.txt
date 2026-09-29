@@ -1,0 +1,20 @@
+[오늘 찾은 것]
+2026-09-29 Bloomberg — 미 30년물 금리 화요일(29일) 5.61% 넘어 2002년 이후 최고, 6거래일 연속 상승. 이유로 물가 걱정·대규모 회사채 발행, 중동 전쟁 관련 고유가로 세계 국채 매도, 연준 포함 중앙은행 추가 인상 예상. https://www.bloomberg.com/news/articles/2026-09-29/us-30-year-treasury-yield-approaches-highest-level-since-2002
+2026-09-29 CNBC — 30-year Treasury bond yield scales to highest level since 2002. https://www.cnbc.com/2026/09/29/treasury-yields-bonds.html (본문 403, 제목만 확인)
+2026-09-30 한국경제 — 美 30년물국채 수익률 5.609%…2002년 이후 최고치. https://www.hankyung.com/article/202609303116i
+2026-09-29 파이낸셜뉴스 — 美 국채 30년물 금리 24년만에 최고. https://www.fnnews.com/news/202609291819297502
+2026-09-29 Yahoo Finance — 30-year Treasury climbs to highest level since 2002. https://finance.yahoo.com/markets/article/30-year-treasury-climbs-to-highest-level-since-2002-132103385.html
+2026-09-24 CNBC — 30년물 2004년 이후 최고(당시). https://www.cnbc.com/2026/09/24/us-treasury-yields-bonds-fed-inflation.html
+
+[1차 출처 숫자]
+미 재무부 Daily Treasury Par Yield Curve Rates (https://home.treasury.gov/resource-center/data-chart-center/interest-rates/daily-treasury-rates.csv/2026/all?type=daily_treasury_yield_curve&field_tdr_date_value=2026&_format=csv, 2025 동일) — 조회 2026-09-30 04:40 KST, 9/29 종가 아직 없음
+30년물: 2026-01-02 4.86% · 2026-02-27 4.64%(올해 최저) · 2026-09-28 5.56% · 2025-09-29 4.71%
+10년물: 2026-01-02 4.19% · 2026-09-28 5.24%
+2년물: 2026-01-02 3.47% · 2026-09-28 4.92%
+20년물: 2026-09-28 5.60%
+[계산] 30년물 1년 사이 +0.85%p, 연초 대비 +0.70%p / 10년물 +1.05%p / 2년물 +1.45%p
+
+프레디맥 PMMS 30년 고정 주담대(FRED MORTGAGE30US, https://fred.stlouisfed.org/series/MORTGAGE30US)
+2026-09-24 7.03% · 2026-02-26 5.98%(올해 최저) · 2026-01-08 6.16% · 2025-09-25 6.30%
+발표는 매주 목요일 → 다음 발표 2026-10-01(목)
+한경 5.609%·블룸버그 5.61% 넘음 → 본문은 둘 다 맞는 5.6%로 적음

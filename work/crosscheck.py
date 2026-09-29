@@ -41,27 +41,31 @@ def http(url, body=None, headers=None, timeout=180):
     req = urllib.request.Request(url, data=json.dumps(body).encode() if body else None, headers={'Content-Type': 'application/json', **(headers or {})})
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r: return json.load(r)
-    except (socket.timeout, TimeoutError, urllib.error.URLError) as e:
-        # 읽기 타임아웃·연결 끊김은 429처럼 다시 걸면 되는 경우가 많은데 예전에는 재시도가 없어
-        # 검증이 통째로 비었다(2026-09-24 00시 회차). HTTPError는 아래 분기가 따로 처리한다.
-        if isinstance(e, urllib.error.HTTPError): raise
-        if getattr(http, '_ttry', 0) < 2 and left() > 30:
-            http._ttry = getattr(http, '_ttry', 0) + 1
-            time.sleep(3)
-            try: return http(url, body=body_, headers=headers, timeout=timeout)
-            finally: http._ttry = 0
-        raise RuntimeError(f'응답 없음({type(e).__name__}: {getattr(e, "reason", e)}) · 남은 예산 {int(left())}초')
+    # HTTPError는 URLError의 하위 클래스라 반드시 먼저 잡는다. 2026-09-29 19시 회차: URLError 분기가 먼저 있어
+    # HTTPError를 날것으로 다시 던졌고, 그래서 429·503 재시도도, gemini_chat의 다음 모델로 넘어가기(except RuntimeError)도
+    # 한 번도 안 돌았다 — Pro가 429면 Flash·Lite를 시도조차 않고 selfcheck로 떨어졌다(9/26~29 발행 120편 check_gpt 0건).
     except urllib.error.HTTPError as e:
         body = e.read()[:300].decode("utf-8", "ignore")
-        # 503(혼잡)·429(속도제한)은 잠시 뒤 되는 경우가 많다 — 세 번까지 기다렸다 다시 건다(예산 안에서만)
-        if e.code in (429, 503) and getattr(http, '_try', 0) < 3:
-            wait = 8 * (getattr(http, '_try', 0) + 1)
+        # 429 "exceeded your current quota"는 무료 등급 한도 소진이라 기다려도 안 풀린다 — 바로 다음 모델로 넘긴다.
+        # 503(혼잡)·일시 429는 한 번만 5초 기다린다. 후보가 7개라 모델마다 오래 기다리면 뒤의 되는 모델에 닿기 전에
+        # 예산 300초가 끝난다(2026-09-29 19시 실측: pro·3.8-flash 429 quota, 3.7·3.6-flash 503, 3.5-flash부터 응답).
+        if e.code in (429, 503) and 'quota' not in body and getattr(http, '_try', 0) < 1:
+            wait = 5
             if left() - wait < 5: raise RuntimeError(f'HTTP {e.code} {body} · 예산({BUDGET}초)이 남지 않아 재시도하지 않는다')
             http._try = getattr(http, '_try', 0) + 1
             time.sleep(wait)
             try: return http(url, body=body_, headers=headers, timeout=timeout)
             finally: http._try = 0
         raise RuntimeError(f'HTTP {e.code} {body}')
+    except (socket.timeout, TimeoutError, urllib.error.URLError) as e:
+        # 읽기 타임아웃·연결 끊김은 429처럼 다시 걸면 되는 경우가 많은데 예전에는 재시도가 없어
+        # 검증이 통째로 비었다(2026-09-24 00시 회차).
+        if getattr(http, '_ttry', 0) < 2 and left() > 30:
+            http._ttry = getattr(http, '_ttry', 0) + 1
+            time.sleep(3)
+            try: return http(url, body=body_, headers=headers, timeout=timeout)
+            finally: http._ttry = 0
+        raise RuntimeError(f'응답 없음({type(e).__name__}: {getattr(e, "reason", e)}) · 남은 예산 {int(left())}초')
 
 # ---- OpenAI ----
 def openai_models(kv):

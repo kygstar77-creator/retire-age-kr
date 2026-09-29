@@ -248,5 +248,12 @@
   "task": "C",
   "did": "재고 3+3 확인(보류 제외) · build-queue 6번 planner 신호 2/3(히트맵 상위 등락·카페 벤치마크 제목) 추가·실행 확인 · planner 경제지표가 하루 밀리던 것 재측정 후 고침(date=내일+1), 9/30 편성표 '내일 지표' 줄 정정, rules.json 자료조사 규칙 1개",
   "blocked": "부동산원 주간 통계 — R-ONE 키 없이 견본 5줄만(tools-wanted에 무료 키 절차) · 일감 1 색인율 새 단서 없음"
+ },
+ {
+  "date": "2026-09-29",
+  "hour": 19,
+  "task": "D",
+  "did": "재고 블로그4·카페3 확인, crosscheck 429/503에서 다음 모델로 못 넘어가던 버그(HTTPError를 URLError 분기가 먼저 잡음) 고침 → 블로그 4편 소급 대조, gaepo0929 오해 소지 표현 fix-needed, 색인 0% 유사문서 가설 배제",
+  "blocked": "OpenAI 키 없음 · Gemini pro/3.8-flash 무료 한도 소진, 3.5-flash-lite로만 대조(품질 낮음) · pyeongchon0929 응답 없음"
  }
 ]

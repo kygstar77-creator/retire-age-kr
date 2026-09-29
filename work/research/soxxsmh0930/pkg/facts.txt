@@ -1,0 +1,18 @@
+[오늘 찾은 것]
+2026-09-30 · iShares SOXX 상품 페이지 · 총보수 0.33%, 순자산 483억달러(9/28), 30종목, NYSE Semiconductor Index, 연초 대비 +86.53%(9/28 NAV) · https://www.ishares.com/us/products/239705/ishares-phlx-semiconductor-etf
+2026-08-21 · SEC EDGAR 497(iShares Trust) · SOXX 3대1 액면분할, 기준일 2026-11-03, 11-04 장 마감 후 시행, 11-05부터 분할 가격 거래 · https://www.sec.gov/Archives/edgar/data/1100663/000119312526361162/d133118d497.htm
+2026-09-21 · 아시아경제(영문) · SK하이닉스 ADR 2026-07-10 나스닥 상장, 9월 정기변경으로 MVIS US Listed Semiconductor 25 지수에 편입(비중 약 4.8%), SMH와 KODEX 미국반도체가 같이 담음 · https://www.asiae.co.kr/en/article/2026092109164342016
+2026-09-30 · VanEck SMH 상품 페이지 · 총보수 0.35% · https://www.vaneck.com/us/en/investments/semiconductor-etf-smh/
+2026-09-26 · stockanalysis SMH 보유종목(VanEck 공시 옮김) · 26종목, 엔비디아 19.14%, TSMC 9.16%, AMD 5.76%, 브로드컴 5.24%, 마이크론 5.01%, 인텔 4.94%, SK하이닉스 4.59%, 상위 10개 합 67.24% · https://stockanalysis.com/etf/smh/holdings/
+2026-09-28 · stockanalysis SOXX 보유종목 · 인텔 9.38%, AMD 9.34%, 마이크론 7.95%, 엔비디아 7.50%, 브로드컴 6.83%, 상위 10개 합 61% · https://stockanalysis.com/etf/soxx/holdings/
+2026 · etf.com·The Motley Fool 비교 기사(SMH는 시가총액 그대로, SOXX는 종목 비중 상한) — 해석만 참고, 숫자는 안 씀
+
+[분배금] Nasdaq API
+SMH: 1년에 한 번. 2025-12-22 배당락 1.1047달러(지급 12-26), 2024-12-23 1.0713달러 · https://api.nasdaq.com/api/quote/SMH/dividends?assetclass=etf
+SOXX: 분기마다. 2026-09-15 배당락 0.325046달러(지급 9-18), 2026-06-15 0.282726달러, 최근 1년 합 1.300184달러 · https://api.nasdaq.com/api/quote/SOXX/dividends?assetclass=etf
+
+[가격] Yahoo chart API 종가
+SMH: 2025-09-30 326.36 → 2026-09-29 606.90 (+85.96%) · 1년 최고 2026-06-22 668.91 · 최저 2025-11-20 325.10
+SOXX: 2025-09-30 271.12 → 2026-09-29 567.44 (+109.29%) · 1년 최고 2026-06-22 655.01 · 최저 2025-11-20 268.10
+[계산] 최고가 대비 SMH -9.3%, SOXX -13.4% / 엔비디아 비중 19.14÷7.50 = 2.55배
+2026-09-30 · stockanalysis SMH 개요 · 순자산 746.2억달러(74.62B), 26종목, 1년 1회 분배 · https://stockanalysis.com/etf/smh/

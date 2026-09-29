@@ -1,0 +1,32 @@
+[gemini-3.6-flash 2026-09-30 05:27 — OpenAI 키 없어 Gemini가 사실 대조]
+**1. 오해 소지 / 다르게 옮긴 항목**
+
+1. 
+* **원문 문장:** 상위 10개를 합쳐도 SMH는 67%, SOXX는 61%로 SOXX 쪽이 덜 몰려 있습니다.
+* **문제:** 사실표의 SMH 상위 10개 합 비중 숫자를 다르게 옮겼습니다.
+* **근거:** [사실표] 2026-09-26 stockanalysis SMH 보유종목 공시에 따르면 상위 10개 합은 67.24%입니다.
+* **고친 문장:** 상위 10개를 합쳐도 SMH는 67.24%, SOXX는 61%로 SOXX 쪽이 덜 몰려 있습니다.
+
+---
+
+**2. 사실표 출처(URL·법령명) 대조 및 확인 불가**
+
+* **확인:** 
+  * iShares SOXX 상품 페이지 (`https://www.ishares.com/us/products/239705/ishares-phlx-semiconductor-etf`)
+  * SEC EDGAR 497(iShares Trust) (`https://www.sec.gov/Archives/edgar/data/1100663/000119312526361162/d133118d497.htm`)
+  * 아시아경제(영문) (`https://www.asiae.co.kr/en/article/2026092109164342016`)
+  * VanEck SMH 상품 페이지 (`https://www.vaneck.com/us/en/investments/semiconductor-etf-smh/`)
+  * stockanalysis SMH 보유종목 (`https://stockanalysis.com/etf/smh/holdings/`)
+  * stockanalysis SOXX 보유종목 (`https://stockanalysis.com/etf/soxx/holdings/`)
+  * Nasdaq API (`https://api.nasdaq.com/api/quote/SMH/dividends?assetclass=etf`, `https://api.nasdaq.com/api/quote/SOXX/dividends?assetclass=etf`)
+  * stockanalysis SMH 개요 (`https://stockanalysis.com/etf/smh/`)
+* **확인 불가:**
+  * etf.com·The Motley Fool 비교 기사 (URL 및 법령명이 미기재되어 확인 불가)
+  * Yahoo chart API 종가 (URL 및 법령명이 미기재되어 확인 불가)
+
+---
+
+**3. AI가 쓴 것 같은 어색한 문장**
+
+* **"둘 다 6월 22일에 1년 중 가장 높았고, 지금은 그때보다 SMH가 9.3%, SOXX가 13.4% 아래에 있어요."**
+  (영어식 표현인 'is down ~%'를 그대로 번역한 듯한 어색한 문장 구조입니다.)

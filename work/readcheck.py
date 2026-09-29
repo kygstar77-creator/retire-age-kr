@@ -123,7 +123,7 @@ def acronyms(text):
             first[w] = i
             # 금융회사 이름 바로 뒤에 붙은 상품 브랜드("산업은행 KDB 정기예금", "국민은행 KB Star")는
             # 누가 파는 상품인지 밝힌 것이다. 2026-09-28 07시 회차: 은행 이름을 붙였는데도 계속 잡았다.
-            if re.search(r'(은행|증권|카드|보험|생명|화재|운용|금융|캐피탈|뱅크)\s*$', s[:m.start()]): continue
+            if re.search(r'(은행|증권|카드|보험|생명|화재|운용|금융|캐피탈|뱅크)(?:의)?\s*$', s[:m.start()]): continue
             # 같은 문장 안에 괄호 설명이나 한글 이름이 붙어 있으면 설명한 것으로 본다
             # 약어 바로 뒤에 괄호로 풀어 쓰면 설명한 것으로 본다(긴 정식명은 24자 창을 넘어간다)
             if s[m.end():m.end() + 1] in '(（': continue
@@ -141,7 +141,7 @@ def acronyms(text):
             # 설명 없음으로 잡았다. 바로 앞이 ETF·펀드·리츠이고 그 앞에 한글 설명이 있으면 설명한 것으로 본다.
             # 2026-09-28 21시: "커버드콜 ETF인 QQQI"처럼 '-인'이 붙은 꼴과 "미국 ETF 운용사 NEOS"처럼
             # 회사 종류를 앞에 붙인 동격도 설명인데 잡았다.
-            if re.search(r'(?:ETF인?|펀드인?|리츠인?|운용사|자산운용|증권사|회사|기업)\s*$', before) and len(re.findall(r'[가-힣]', before[-24:])) >= 4:
+            if re.search(r'(?:ETF인?|펀드인?|리츠인?|운용사|자산운용|증권사|회사|기업|파운드리|제조사)\s*$', before) and len(re.findall(r'[가-힣]', before[-24:])) >= 4:
                 continue
             # 동사를 하나씩 적어 두니 계속 빈틈이 생겼다(2026-09-26: "설계도를 파는 ARM",
             # "인텔을 뒤쫓는 AMD"가 목록에 없어 설명을 붙였는데도 지적으로 잡혔다).
@@ -154,6 +154,10 @@ def acronyms(text):
             # 바로 다음 문장에서 풀어 쓰는 것도 설명으로 본다(한국어 글에서 흔한 순서)
             nxt = ss[i] if i < len(ss) else ''
             if w in nxt and EXPLAIN.search(nxt): continue
+            # 2026-09-30 05시: "ADR은 미국 증시에서 거래되는 주식예탁증서입니다"·"SOXX는 블랙록 아이셰어즈, SMH는
+            # 반에크가 굴리는 미국 반도체 ETF예요"처럼 다음 문장이 'X는 ~이다' 꼴로 정의하는데도 잡았다.
+            if re.search(re.escape(w) + r'(?:은|는|이란|란)\s', nxt) and re.search(r'(?:예요|이에요|입니다|이다|ETF다)\W*$', nxt.strip()):
+                continue
             bad.append((i, w, s[:70]))
     return bad
 

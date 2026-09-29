@@ -1,0 +1,16 @@
+블로그 발행 순서
+제목: title.txt
+카테고리: 미국주식
+태그: VOO, VOO 배당금, VOO 배당일, VOO 배당락일, VOO 주가, SPY, SPYM, IVV, S&P500 ETF, 뱅가드, 미국 ETF 배당, 미국 배당 세금, ETF 총보수
+b00.txt
+img/00.png
+b01.txt
+img/05.png
+b02.txt
+img/01.png
+b03.txt
+img/02.png
+b04.txt
+img/03.png
+img/04.jpg
+b05.txt

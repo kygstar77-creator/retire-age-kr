@@ -91,6 +91,37 @@ def dividends(symbol, years=2):
             pass
     return sorted(out)
 
+def vanguard(symbol):
+    """뱅가드 ETF(VOO·VTI·VYM·VIG·BND …) 공식 배당 공시와 총보수.
+
+    2026-09-29 VOO 글: 나스닥 배당 API는 ETF에 전부 'N/A'를 주고, Yahoo는 배당락일만 준다.
+    지급일·기준일은 운용사 공시로 확인해야 하는데 뱅가드 상품 페이지는 JS라 비어 있다.
+    페이지가 부르는 JSON(vmf/api)은 키 없이 열린다.
+    돌려주는 것: {'총보수': '0.0300'(%), '총보수기준일', '배당': [(기준일, 지급일, 1주당 금액)] 최근 순}
+    """
+    sym = urllib.parse.quote(symbol.upper())
+    p = _j(f'https://investor.vanguard.com/vmf/api/{sym}/profile', t=20) or {}
+    d = _j(f'https://investor.vanguard.com/vmf/api/{sym}/distribution', t=20) or {}
+    def find(o, k):
+        if isinstance(o, dict):
+            if k in o: return o[k]
+            for v in o.values():
+                r = find(v, k)
+                if r is not None: return r
+        elif isinstance(o, list):
+            for v in o:
+                r = find(v, k)
+                if r is not None: return r
+    out = []
+    for it in ((d.get('divCapGain') or {}).get('item') or []):
+        try:
+            out.append((it['recordDate'][:10], it['payableDate'][:10],
+                        float(str(it['perShareAmount']).replace('$', ''))))
+        except Exception:
+            pass
+    return {'총보수': find(p, 'expenseRatio'), '총보수기준일': (find(p, 'expenseRatioAsOfDate') or '')[:10],
+            '배당': out}
+
 def _us_date(s):
     """나스닥이 주는 MM/DD/YYYY를 YYYY-MM-DD로."""
     m, d, y = s.split('/')

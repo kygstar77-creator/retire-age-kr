@@ -1,0 +1,23 @@
+[오늘 찾은 것] 2026-09-29 조회
+- 뱅가드 VOO 배당 공시 https://investor.vanguard.com/vmf/api/VOO/distribution — 1.822600달러 기준일 2026-09-28 지급 2026-09-30 / 1.962200 2026-06-26·06-30 / 1.872400 2026-03-27·03-31 / 1.771000 2025-12-22·12-24 / 1.740000 2025-09-29·10-01 / 분기 지급
+- 뱅가드 VOO 상품 정보 https://investor.vanguard.com/vmf/api/VOO/profile — expenseRatio 0.0300 (2026-04-28 기준)
+- 스테이트스트리트 SPY 상품 페이지 https://www.ssga.com/us/en/intermediary/etfs/spdr-sp-500-etf-trust-spy — Expense Ratio 0.0945%
+- 스테이트스트리트 SPYM 상품 페이지 https://www.ssga.com/us/en/intermediary/etfs/state-street-spdr-portfolio-sp-500-etf-spym — Expense Ratio 0.02%
+- 아이셰어즈 IVV 상품 페이지 https://www.ishares.com/us/products/239726/ishares-core-sp-500-etf — Expense Ratio 0.03
+- MIAX 2025-10-30 공지 https://www.miaxglobal.com/alert/2025/10/30/miax-exchange-group-options-markets-corporate-action-alert-spdr-portfolio-0 — SPDR Portfolio S&P 500 ETF(SPLG) → State Street SPDR Portfolio S&P 500 ETF(SPYM), 2025-10-31 시행 (OCC 메모 57498)
+- 야후 파이낸스 차트 API query1.finance.yahoo.com/v8/finance/chart/<T> — 2026-09-28 종가 VOO 703.61 · SPY 765.61 · IVV 768.93 · SPYM 90.08 / 52주 VOO 최고 716.39 최저 578.46 / 1년 전(2025-09-29) VOO 610.13
+- 야후 배당 기록: SPY 1.993(2025-12-19)·1.797(2026-03-20)·1.904(06-18)·1.889(09-18) 합 7.583 / IVV 2.414·1.784·1.996·2.203 합 8.397 / SPYM 0.238·0.194·0.239·0.239 합 0.91 / VOO 2021-09-27 1.308
+- 야후 수정주가 총수익(2025-09-29→2026-09-28 / 2021-09-29→2026-09-28): VOO 16.65% / 88.94% · SPY 16.60% / 88.42% · IVV 16.69% / 88.96% · SPYM 16.64% / 89.05%. 가격만: VOO 1년 15.32%
+- 나스닥 요약 API api.nasdaq.com/api/quote/<T>/summary?assetclass=etf — 50일 평균 거래량 SPY 74,459,844 · VOO 6,183,565. 나스닥 배당 API는 네 ETF 모두 빈 값
+- 한미 조세조약 배당 제한세율 15% (미국 현지 원천징수)
+
+[숫자] 계산
+- VOO 최근 4회 합 1.8226+1.9622+1.8724+1.7710 = 7.4282 → 7.43달러
+- 배당률 7.4282 ÷ 703.61 = 1.056% → 1.06% · SPY 7.583 ÷ 765.61 = 0.99% · IVV 8.397 ÷ 768.93 = 1.09% · SPYM 0.91 ÷ 90.08 = 1.01%
+- 1.8226 ÷ 1.74 = 1.047 → 4.7% 많음 · 1.96 = 1.9622 반올림 · 1.31 = 1.308 반올림
+- 100주 × 1.8226 = 182.26달러, × 0.85 = 154.92달러
+- 1만 달러 × 0.0945% = 9.45달러, × 0.03% = 3달러
+- 88.94 − 88.42 = 0.52 → 0.5%포인트 · 1년 총수익 최대 16.69 − 최소 16.60 = 0.09 → 0.1%포인트 안
+- (716.39 − 703.61) ÷ 716.39 = 1.78% → 1.8%
+- 74,459,844 ÷ 6,183,565 = 12.04 → 열두 배, 7,446만 주
+- 9월 28일 = 월요일(2026-09-29 화요일 기준), 전 거래일 9월 25일 금요일

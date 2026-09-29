@@ -113,8 +113,10 @@ def _keep_table(path, title, cols, rows):
     except Exception:
         pass
 
-def steps(path, title, items, note=None, src=None):
-    """번호가 붙은 절차 카드. 표와 달리 순서를 보여 줄 때."""
+def steps(path, title, items, note=None, src=None, numbered=True):
+    """번호가 붙은 절차 카드. 표와 달리 순서를 보여 줄 때.
+    numbered=False면 번호 대신 체크 표시 — 순서가 없는 조건 목록(2026-09-29: 자동지급 대상 조건 세 개에
+    1·2·3이 붙어 '차례로 밟는 절차'처럼 읽혔다)."""
     W=900; pad=36; tx=pad+62; iw=W-pad-tx
     hf=F(23,True); df=F(19); tf=F(30,True); nf=F(18); sf=F(16)
     # 2026-09-25: items 에 (제목, 설명) 쌍이 아니라 문자열만 넘기면 "too many values to unpack"
@@ -131,8 +133,9 @@ def steps(path, title, items, note=None, src=None):
     y+=18
     for i,((hl,dl),rh) in enumerate(zip(body,heights),1):
         d.rounded_rectangle((pad,y+10,pad+44,y+54),22,fill=ACC)
-        w=d.textlength(str(i),font=F(22,True))
-        d.text((pad+22-w/2,y+21),str(i),font=F(22,True),fill=(255,255,255))
+        mk=str(i) if numbered else '✓'
+        w=d.textlength(mk,font=F(22,True))
+        d.text((pad+22-w/2,y+21),mk,font=F(22,True),fill=(255,255,255))
         ty=y+12
         for ln in hl: d.text((tx,ty),ln,font=hf,fill=INK); ty+=30
         if dl:

@@ -1,0 +1,99 @@
+# 롱폼 업로드 + 관문 — ytupload.py(쇼츠용)에 없는 것: 예약 공개(publishAt), 합성 미디어 표시(containsSyntheticMedia), 썸네일(thumbnails.set),
+# 그리고 yt-policy-algorithm.md §5.1 관문(C1·C5·C7·C8·C9·C11)을 코드로 막는다. §5.2 판단 5문항 답은 meta.json에 적혀 있어야 올린다.
+#   py -3.12 work/ytlong.py gate <ep폴더>            # 관문만(업로드 안 함)
+#   py -3.12 work/ytlong.py up <ep폴더>              # 관문 통과 시 업로드 → uploads.jsonl 기록
+# ep폴더/meta.json: {"video": mp4, "thumb": png, "title", "desc", "tags": [...], "publishAt": "2026-10-01T19:30:00+09:00",
+#                   "synthetic": bool, "veo": bool, "answers": {"q1".."q5"}, "missing": 0}
+# 예약 공개는 API 규칙상 privacyStatus=private + publishAt이어야 한다(videos 문서 status.publishAt). 그래서 C11(비공개 금지)은
+# "publishAt 없는 private"만 막는다 — 정해진 시각에 자동으로 공개로 바뀌므로 비공개 쌓기가 아니다.
+import sys, os, json, re, glob, datetime
+sys.stdout.reconfigure(encoding='utf-8')
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+LOOP = os.path.join(HERE, 'research', 'longform', 'loop'); UPL = os.path.join(LOOP, 'uploads.jsonl')
+EPS = os.path.join(HERE, 'research', 'longform', 'ep')
+BANNED = ['사세요', '사지 마', '무조건', '추천 종목', '수익 보장', '원금 보장', '!!', '전문가인 제가', '제가 추천', '지금 당장', '파세요']
+KST = datetime.timezone(datetime.timedelta(hours=9))
+
+def uploads():
+    if not os.path.exists(UPL): return []
+    return [json.loads(l) for l in open(UPL, encoding='utf-8') if l.strip()]
+
+def body_sentences(md):
+    t = open(md, encoding='utf-8').read().split('\n---', 1)[0]
+    return [re.sub(r'\s*\(화면.*$', '', l.strip()[2:]).strip() for l in t.splitlines() if l.lstrip().startswith('- ')]
+
+def gate(ep):
+    m = json.load(open(os.path.join(ep, 'meta.json'), encoding='utf-8')); bad = []
+    # C1 롱폼 주 2편·하루 1편(uploads.jsonl 기준, 예약 시각으로 센다)
+    pa = datetime.datetime.fromisoformat(m['publishAt'])
+    prev = [datetime.datetime.fromisoformat(u['publishAt']) for u in uploads() if u.get('publishAt')]
+    if sum(1 for p in prev if abs((pa - p).total_seconds()) < 7 * 86400) >= 2: bad.append('C1 롱폼 주 2편 넘음')
+    if any(p.astimezone(KST).date() == pa.astimezone(KST).date() for p in prev): bad.append('C1 같은 날 롱폼 2편')
+    if not (19 <= pa.astimezone(KST).hour < 21): bad.append('예약 시각이 한국 19~21시 밖')
+    if pa < datetime.datetime.now(KST) + datetime.timedelta(minutes=20): bad.append('예약 시각이 너무 가깝거나 지났다')
+    # C5 이전 편 대본과 같은 문장 20% 초과(첫·끝 문장 제외)
+    mine = body_sentences(os.path.join(ep, 'script.md'))[1:-1]
+    others = set()
+    for s in glob.glob(os.path.join(EPS, '*', 'script.md')):
+        if os.path.dirname(s) != os.path.normpath(ep): others |= set(body_sentences(s))
+    same = sum(1 for s in mine if s in others)
+    if mine and same / len(mine) > 0.2: bad.append(f'C5 이전 편과 같은 문장 {same}/{len(mine)}')
+    # C7 금지 표현(제목·설명·대본)
+    txt = m['title'] + '\n' + m['desc'] + '\n' + '\n'.join(mine)
+    hit = [w for w in BANNED if w in txt]
+    if hit: bad.append('C7 금지 표현 ' + ','.join(hit))
+    if re.search(r'\b[A-Z]{5,}\b', m['title']) and not re.search(r'\b(KODEX|TIGER)\b', m['title']): bad.append('C7 제목 전부 대문자 단어')
+    # C8 AI 공개
+    if m.get('veo') and not m.get('synthetic'): bad.append('C8 Veo 사용인데 합성 미디어 표시 없음')
+    # C9 설명란
+    d = m['desc']
+    if '출처' not in d: bad.append('C9 출처 줄 없음')
+    if len(re.findall(r'cafe\.naver\.com', d)) > 1: bad.append('C9 카페 링크 2개 이상')
+    if not (3 <= len(m['tags']) <= 5): bad.append('C9 태그 3~5개 아님')
+    ch = re.findall(r'^(\d+):(\d\d) ', d, flags=re.M)
+    secs = [int(a) * 60 + int(b) for a, b in ch]
+    if len(secs) < 3 or secs[0] != 0 or any(b - a < 10 for a, b in zip(secs, secs[1:])): bad.append('C9 챕터(00:00 시작·3개 이상·10초 이상)')
+    if 'AI 음성' not in d: bad.append('AI 음성 내레이션 명시 없음')
+    for u in uploads():
+        a, b = set(d.split()), set(u.get('desc', '').split())
+        if a and len(a & b) / len(a) > 0.8: bad.append('C9 설명이 이전 편과 80% 넘게 같다')
+    # C11 · 목소리 빠짐 · 5문항
+    if m.get('privacy', 'private') == 'private' and not m.get('publishAt'): bad.append('C11 예약 없는 비공개')
+    if m.get('missing', 1): bad.append(f'목소리 없는 문장 {m.get("missing")}개')
+    ans = m.get('answers', {})
+    if len(ans) < 5 or any(not str(v).strip() for v in ans.values()): bad.append('§5.2 판단 5문항 답 없음')
+    for f in ('video', 'thumb'):
+        if not os.path.exists(os.path.join(ep, m[f]) if not os.path.isabs(m[f]) else m[f]): bad.append(f'{f} 파일 없음')
+    return m, bad
+
+def up(ep):
+    m, bad = gate(ep)
+    if bad: print('관문 막힘:', *bad, sep='\n  '); sys.exit(3)
+    from ytupload import service
+    from googleapiclient.http import MediaFileUpload
+    yt = service(); p = lambda f: m[f] if os.path.isabs(m[f]) else os.path.join(ep, m[f])
+    title, desc = [x.replace('<', '＜').replace('>', '＞') for x in (m['title'], m['desc'])]
+    body = {'snippet': {'title': title[:100], 'description': desc[:5000], 'tags': m['tags'], 'categoryId': '27', 'defaultLanguage': 'ko', 'defaultAudioLanguage': 'ko'},
+            'status': {'privacyStatus': 'private', 'publishAt': datetime.datetime.fromisoformat(m['publishAt']).astimezone(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+                       'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': bool(m.get('synthetic'))}}
+    notes = []
+    req = yt.videos().insert(part='snippet,status', body=body, media_body=MediaFileUpload(p('video'), chunksize=8 * 1024 * 1024, resumable=True))
+    res = None
+    while res is None:
+        st, res = req.next_chunk()
+        if st: print(f'업로드 {int(st.progress() * 100)}%', flush=True)
+    vid = res['id']; print('완료 https://youtu.be/' + vid)
+    try: yt.thumbnails().set(videoId=vid, media_body=MediaFileUpload(p('thumb'))).execute(); notes.append('썸네일 설정')
+    except Exception as e: notes.append('썸네일 실패 ' + str(e)[:120])
+    v = yt.videos().list(part='status,snippet', id=vid).execute()['items'][0]['status']
+    rec = {'ep': os.path.basename(os.path.normpath(ep)), 'videoId': vid, 'title': m['title'], 'publishAt': m['publishAt'], 'desc': m['desc'],
+           'status': v, 'answers': m['answers'], 'notes': notes, 'at': datetime.datetime.now(KST).isoformat(timespec='minutes')}
+    open(UPL, 'a', encoding='utf-8').write(json.dumps(rec, ensure_ascii=False) + '\n')
+    print(json.dumps({'videoId': vid, 'status': v, 'notes': notes}, ensure_ascii=False))
+
+if __name__ == '__main__':
+    cmd, ep = sys.argv[1], os.path.abspath(sys.argv[2])
+    if cmd == 'gate':
+        m, bad = gate(ep); print('통과' if not bad else '막힘:\n  ' + '\n  '.join(bad))
+    elif cmd == 'up': up(ep)

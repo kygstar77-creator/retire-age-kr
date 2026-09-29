@@ -1,5 +1,5 @@
 # A-1 목소리 — script.md 말하는 문장을 한 줄씩 제미나이 TTS로 읽혀 video/public/audio/a1/에 두고, 장별 문장·길이를 voice.json에 남긴다.
-#   py -3.12 work/research/longform/ep/A-1/voice.py [--budget 초]   (이미 만든 문장은 건너뛴다 — 429로 끊겨도 다음 회차가 이어서 돈다)
+#   py -3.12 work/research/longform/ep/A-1/voice.py [--budget 초] [--by-section]   (이미 만든 문장은 건너뛴다 — 429로 끊겨도 다음 회차가 이어서 돈다)
 # 방식은 research/sonpum2/tour_voice.py와 같다(gemini-3.8-flash-tts, 목소리 Charon — 9-1 결정). 화면 자막은 대본 글자 그대로, 읽는 문장만 영문 약어를 한국 유튜버들이 읽는 소리로 바꾼다.
 import json, os, re, sys, time, base64, wave, array, hashlib, urllib.request, urllib.error
 sys.stdout.reconfigure(encoding='utf-8')
@@ -25,7 +25,7 @@ def sections():
         if line.startswith('## '):
             cur = {'title': line[3:].strip(), 'lines': []}; out.append(cur)
         elif line.lstrip().startswith('- ') and cur is not None:
-            t = re.sub(r'\s*\(화면[^)]*\)', '', line.strip()[2:]).strip()
+            t = re.sub(r'\s*\(화면.*$', '', line.strip()[2:]).strip()   # 화면 메모는 줄 끝에 온다(안에 괄호가 있어도 통째로 뺀다)
             if t: cur['lines'].append(t)
     return out
 
@@ -68,7 +68,62 @@ def tts(text):
             print('  재시도', m, str(e)[:80]); time.sleep(8)
     raise Stop()
 
+# 2026-09-30 PD: 무료 등급 TTS는 모델마다 하루 10회(quotaId GenerateRequestsPerDayPerProjectPerModel-FreeTier, quotaValue 10)라
+# 문장별 108회는 하루에 못 끝난다. --by-section: 한 장을 한 번에 읽히고, 문장 수-1개의 가장 긴 무음에서 잘라 문장별 파일로 둔다
+# (파일 이름이 문장별 방식과 같아 아래 반복문이 그대로 가져다 쓴다). 자른 조각 길이 비율이 글자 비율과 2배 넘게 어긋나면 버린다.
+# 이 모드에서는 문장별 요청을 하지 않는다(--line-fallback을 붙이면 한다).
+BYSEC = '--by-section' in sys.argv
+def split_section(pcm, texts):
+    win = 480
+    loud = [max((abs(x) for x in pcm[i:i + win]), default=0) > 600 for i in range(0, len(pcm), win)]
+    gaps, i = [], 0
+    while i < len(loud):
+        if not loud[i]:
+            j = i
+            while j < len(loud) and not loud[j]: j += 1
+            if i > 0 and j < len(loud) and (j - i) >= 8: gaps.append((j - i, (i + j) // 2 * win))
+            i = j
+        else: i += 1
+    need = len(texts) - 1
+    if len(gaps) < need: return None
+    cuts = sorted(c for _, c in sorted(gaps, reverse=True)[:need])
+    segs = [pcm[a:b] for a, b in zip([0] + cuts, cuts + [len(pcm)])]
+    syl = [len(re.findall('[가-힣0-9]', t)) for t in texts]; ts, tl = sum(syl), len(pcm)
+    for s, n in zip(segs, syl):
+        r = (len(s) / tl) / (n / ts)
+        if r < 0.5 or r > 2.0: return None
+    return segs
+
+def wav_of(t): return os.path.join(AUD, hashlib.md5((VOICE + '|' + t).encode()).hexdigest()[:16] + '.wav')
+
+def tts_section(texts):
+    if all(os.path.exists(wav_of(t)) for t in texts): return True
+    body = {'contents': [{'parts': [{'text': 'Read these Korean lines in order as a calm, clear YouTube narration at a natural pace. Pause about one second between lines:\n' + '\n'.join(texts)}]}],
+            'generationConfig': {'responseModalities': ['AUDIO'], 'speechConfig': {'voiceConfig': {'prebuiltVoiceConfig': {'voiceName': VOICE}}}}}
+    for m in MODELS:
+        if time.time() - T0 > BUDGET: return False
+        try:
+            r = json.load(urllib.request.urlopen(urllib.request.Request(f'https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={KEY}',
+                data=json.dumps(body).encode(), headers={'Content-Type': 'application/json'}), timeout=300))
+            pcm = array.array('h'); pcm.frombytes(base64.b64decode(r['candidates'][0]['content']['parts'][0]['inlineData']['data']))
+            segs = split_section(pcm, texts)
+            if segs is None: print('  장 자르기 실패', m, texts[0][:20]); continue
+            pad = array.array('h', [0] * 2400)   # 앞뒤 0.1초
+            for t, sg in zip(texts, segs):
+                fn = wav_of(t)
+                if os.path.exists(fn): continue
+                with wave.open(fn, 'wb') as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(24000); w.writeframes((pad + sg + pad).tobytes())
+                if voiced_rate(fn, t) < MIN_RATE: open(fn + '.slow', 'w').close()
+            print('  장 완료', m, len(texts), '문장', texts[0][:20]); return True
+        except urllib.error.HTTPError as e: print('  장 실패', m, e.code)
+        except Exception as e: print('  장 실패', m, str(e)[:80])
+    return False
+
 secs = sections(); done = missing = 0
+if BYSEC:
+    for sc in secs:
+        if sc['lines']: tts_section([speak(t) for t in sc['lines']])
+    if '--line-fallback' not in sys.argv: BUDGET = -1   # 없는 문장은 요청하지 않고 빈칸으로 남긴다
 for sc in secs:
     out = []
     for t in sc['lines']:

@@ -1,6 +1,7 @@
 # [오피스텔 시황] 코너(카페 16시) 숫자 뽑기 — 2026-09-28 15시 write 회차가 만들었다.
 # 그전까지 이 코너용 도구가 없어 회차마다 즉석 스크립트를 짜야 했다.
-#   py -3.12 work/offimkt.py 202609 [<저장폴더>]
+#   py -3.12 work/offimkt.py 202609 [<저장폴더>] [seoul|gyeonggi|incheon]
+# 지역 인자는 2026-09-29 15시 추가 — 편성표 K16이 '경기'를 적는데 서울만 받던 탓에 매일 같은 서울 숫자가 나갈 뻔했다.
 # 국토부 오피스텔 매매·전월세 실거래(rtmolit.fetch)를 서울 25개 구 전부 새로 받아 요약한다.
 # 한 건물 몰림(법인 일괄 매매 등)은 구별 순위를 왜곡하니 10건 넘게 몰린 건물은 따로 빼서 보여 준다.
 import sys, os, re, json, time, statistics as st
@@ -11,8 +12,8 @@ import rtmolit
 
 def n(s): return int(re.sub(r'[^\d]', '', s or '0') or 0)
 
-def main(ym, outdir=None):
-    sgg = json.load(open(os.path.join(HERE, 'research', 'seoul_sgg.json'), encoding='utf-8'))
+def main(ym, outdir=None, region='seoul'):
+    sgg = json.load(open(os.path.join(HERE, 'research', f'{region}_sgg.json'), encoding='utf-8'))
     raw = {}
     for code, name in sgg.items():
         for kind in ('offi_trade', 'offi_rent'):
@@ -48,4 +49,4 @@ def main(ym, outdir=None):
         print('  전월세 많은 구', Counter(r['sggNm'] for r in rn).most_common(3))
 
 if __name__ == '__main__':
-    main(sys.argv[1] if len(sys.argv) > 1 else time.strftime('%Y%m'), sys.argv[2] if len(sys.argv) > 2 else None)
+    main(sys.argv[1] if len(sys.argv) > 1 else time.strftime('%Y%m'), sys.argv[2] if len(sys.argv) > 2 and sys.argv[2] != '-' else None, sys.argv[3] if len(sys.argv) > 3 else 'seoul')

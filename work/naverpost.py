@@ -63,8 +63,9 @@ def launch(p, headless):
     acquire_lock()
     import atexit; atexit.register(release_lock)
     ctx = p.chromium.launch_persistent_context(
-        PROFILE, headless=headless, viewport={'width': 1400, 'height': 1000}, locale='ko-KR',
-        args=['--disable-blink-features=AutomationControlled'])
+        PROFILE, headless=headless, viewport={'width': 1400, 'height': 1000}, locale='ko-KR')
+    # 2026-09-30: '--disable-blink-features=AutomationControlled'(자동화 숨기기)를 뺐다. 네이버 이용약관(2025-07-10 시행)은
+    #   "어뷰징(남용) 행위를 막기 위한 네이버의 기술적 조치를 무력화하려는 일체의 행위"를 금지한다(research/naver-policy.md).
     if os.path.exists(STATE):
         try: ctx.add_cookies(json.load(open(STATE, encoding='utf-8'))['cookies'])
         except Exception as e: print('쿠키 불러오기 실패:', e)
@@ -543,6 +544,13 @@ def pending_block(kind, pkg, title, check_dup=True):
         return '보류: ' + open(hold, encoding='utf-8').read().strip()[:80]
     if slot_state(pkg) == 'early':
         return '보류: 코너 시각 전(%s시에 올린다)' % slot_of(pkg).strftime('%m-%d %H')
+    # 2026-09-30 07시: 하루 상한(카페 5편)이 새벽에 차서 [미국 증시 시황](usmkt0930)이 제 시각에 못 나갔다.
+    # 시각 지난 코너는 순서 2번이라 다음 날 대타로 올라간다 — 어제 장 얘기가 "오늘 시황"으로 나간다.
+    # 그날 숫자가 생명인 코너(시황·오늘의·금리·환율)는 12시간 지나면 버린다.
+    t = slot_of(pkg)
+    if t and re.search(r'^\[[^\]]*(시황|오늘의|금리·환율)', title) \
+            and datetime.datetime.now() > t + datetime.timedelta(hours=12):
+        return '보류: 코너 시효 지남(%s시 코너, 12시간 넘음)' % t.strftime('%m-%d %H')
     left = day_left(kind)
     if left is not None and left <= 0:
         return '하루 상한 도달(오늘 %d편/상한 %d편) — 내일 올린다' % (DAY_CAP[kind] - left, DAY_CAP[kind])
@@ -659,7 +667,11 @@ WAIT_MAX_MIN = 25   # 이보다 더 기다려야 하면 회차를 넘긴다
 # 발행량과 조회수 사이 상관은 따로 있다(카페 70곳, work/cafestudy.py) — 하루 5편 미만 조회 74,
 # 20편 넘음 조회 2. 다만 그 카페들은 글쓴이도 적어(19명 대 68명) 양 탓인지 사람 탓인지 못 가른다.
 # 색인 근거로는 쓸 수 없다.
-DAY_CAP = {'cafe': 24}         # 블로그는 실측 전이라 아직 안 건다
+DAY_CAP = {'cafe': 5, 'blog': 1}   # 카페 24→5(9/30): 가지 1~2단계 카페 2주 글 수 중앙 73~92편(하루 5~7편)을 글쓴이 32~36명이 나눠 씀(cafebench.py) — 우리는 운영자 혼자 24편. 카페 운영정책 '기계적 패턴 글 도배' 제재(주의=검색 제외)   # 블로그 3→1(9/30 네이버 정책 조사: 공식 권고는 패턴을 멈추는 것, 색인 회복 전까지 0~1편)
+# 2026-09-30 블로그 3편 상한: 9/24 발행분부터 새 글이 전부 검색에 안 들어간다(메모리 blog-noindex-since-0923).
+#   공개·색인허용·RSS·중복·제목·구조 가설은 전부 배제됐고, 남은 후보는 네이버 공식 제한 기준 4번
+#   "기계적으로 대량 생산한 경우"(하루 18~20편 자동 발행과 시점이 겹침 — 원인 확정 아님). 사장님 "블로그 저품질도 알아서 잘 고쳐 봐".
+#   되살아나는지 perf.py 색인으로 매일 보고, 색인이 돌아오고 2주 유지되면 한 단계씩(3→5→8) 올린다.
 
 def published_today(kind):
     """오늘 우리가 올린 편수. 못 세면 None(막지 않는다)."""

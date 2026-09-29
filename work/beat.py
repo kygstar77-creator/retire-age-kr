@@ -35,11 +35,20 @@ GAP_OK = {'write': 7, 'watchdog': 1, 'improve': 14, 'loop': 2, 'report': 24}
 SLACK = 1.5   # 예약이 늦게 떠도 되도록 얹는 시간
 
 def load():
-    try: return json.load(open(BEAT, encoding='utf-8'))
-    except Exception: return {}
+    # 2026-09-29 loop: start 직후 mark가 '시작 기록이 없다'로 튕겼다. 다른 회차가 'w'로 여는 순간
+    # (파일이 비어 있을 때) 읽으면 {}가 나오고, 그 {}에 제 것만 얹어 저장해 남의 기록을 다 지웠다.
+    # 그래서 깨진 읽기는 잠깐 뒤 다시 읽고, 쓰기는 임시 파일→교체(os.replace)로 한 번에 바꾼다.
+    for i in range(5):
+        try: return json.load(open(BEAT, encoding='utf-8'))
+        except FileNotFoundError: return {}
+        except Exception: time.sleep(0.2)
+    return {}
 
 def save(d):
-    try: json.dump(d, open(BEAT, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    tmp = f'{BEAT}.{os.getpid()}.tmp'
+    try:
+        with open(tmp, 'w', encoding='utf-8') as f: json.dump(d, f, ensure_ascii=False, indent=1)
+        os.replace(tmp, BEAT)
     except Exception as e: print('맥박 저장 실패:', str(e)[:60])
 
 SINCE = '_watch_since'   # 언제부터 맥박을 보고 있었나. 한 번도 안 찍은 회차를 언제부터 셀지 정한다.

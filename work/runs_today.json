@@ -234,6 +234,19 @@
     "url": "https://cafe.naver.com/firemap/172"
    },
    "note": "카페=17시 코너 묶음 mpoffi0928(slot now) verify OK 876/876자·사진3/3. 블로그=isa0929 — 가장 오래된 banpo·munjeong 대신 고름: 오늘 부동산 축 남은 칸 0(pick.py), ISA는 세금연금. verify OK 1692/1656자·사진4/4. 편성 17시 B10(오피스텔 수익률, 부동산) 슬롯은 축 상한으로 안 씀. 검증 경로: selfcheck(제미나이 429·503) — isa·mpoffi 사실 0·말투 0. 새 묶음: 카페 pentax0929(18시 K18 ISA·IRP·연금저축 슬롯, slot.txt 18) — 편성 주제 국민연금 실수령액은 15시 카페가 노령연금을 다뤄 같은 시리즈 안에서 연금소득세(월 1,270)로 바꿈. 법령 API 원문(소득세법 제14·20의3·64의4·129조, 시행령 40의2) 5건+웹 4건. selfcheck 사실 0, 말투 3→0 반영, readcheck 제목 쉼표 지적 반영. 블로그 schd0929(대기 2개라 보충, 배당현금흐름·dupcheck 새것) — stockanalysis·야후·웹검색 6건, Schwab 공식은 403이라 확인 안 함(글에 밝힘). selfcheck 사실 1(운용자산 환산)·계산 1 → facts에 식 추가, readcheck 4+2건 반영 0건 남음. 일감표: 죽은 회차 1건 = watchdog 16:42가 11분 뒤 다음 start에 덮여 잡힌 것 → beat.py가 예산 안 덮어쓰기를 overlap으로 따로 적고 죽음에서 뺌. 개선: beat.py overlap 구분(위)."
+  },
+  {
+   "hour": 18,
+   "ts": "18:37",
+   "blog": {
+    "title": "SCHD 9월 배당금, 주가가 뛰는 동안 배당은 얼마나 늘었을까?",
+    "url": "https://blog.naver.com/kygstar7777/224426218793"
+   },
+   "cafe": {
+    "title": "연금소득세, 연금저축 한 해 1500만원 넘게 받으면 얼마나 늘까?",
+    "url": "https://cafe.naver.com/firemap/173"
+   },
+   "note": "카페 K18 코너 pentax0929 제 시각 발행, verify OK 952/952자·사진 3/3. 블로그 schd0929 verify OK 1256자(기대 1111)·사진 6/6 — 대기 중 가장 오래된 banpo0929 대신 SCHD를 올림: 오늘 블로그 부동산 축이 이미 6편 넘음(흑석·방콕·분당·방배·평촌·개포·성동) + 같은 '아파트 실거래가' 제목 틀 연속 회피. 검증 경로: schd0929 selfcheck(제미나이 사실 429·말투 503) 지적 0, readcheck 0. 새로 씀: 카페 19시 [금리·환율] ratefx0929(slot 2026-09-29 19, ECOS 국고채 3·10년·FRED DGS10·오늘 찾은 것 5건, selfcheck 0·readcheck 0 — 제미나이 429로 교차검증 대체) · 블로그 대기 tlt0929 TLT(월 검색 7,540, 아이셰어즈 원문·야후 차트·FRED, 오늘 찾은 것 6건, selfcheck 사실 0·readcheck 0). 편성 18시 블로그 B5 재산세 D-1은 재산세 글이 이미 4편(ptax·ptax0927·ptaxbill·ptaxgap0928)이라 새로 쓰지 않음. 대기: 블로그 3·카페 3(19시 코너 포함). 일감1 색인율: 막힘(이미 tools-wanted 사람이 봐야 함, 제보 대기). 개선: blogimg.line 점 글자에 흰 바탕 — TLT 5년 차트 오른쪽 끝 글자가 선에 덮이던 것. 주의: 이 회차 첫 카페 발행을 timeout 900으로 감쌌다가 무작위 대기(최대 17분)에 걸릴 뻔해 timeout만 죽이고 살림 — 발행기는 백그라운드로 돌린다."
   }
  ]
 }

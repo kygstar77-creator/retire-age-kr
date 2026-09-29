@@ -39,6 +39,9 @@ if __name__ == '__main__':
     if os.path.exists(fp):
         for code, v in json.load(open(fp, encoding='utf-8')).items():
             sgg.setdefault(code, (v.get('dong') or code) + ' 일대')   # 시군 이름은 따로 없으니 대표 법정동으로 적는다
+    # 경기 남부 시·구 이름(2026-09-29). 화성은 2026-02 분구로 41590이 0건이고 41591·41593·41595·41597로 나뉘었다.
+    gp = os.path.join(HERE, 'research', 'gyeonggi_south_sgg.json')
+    if os.path.exists(gp): sgg.update(json.load(open(gp, encoding='utf-8')))
     months = []; y, m = int(ym0[:4]), int(ym0[4:])
     while f'{y}{m:02d}' <= ym1: months.append(f'{y}{m:02d}'); m += 1; (y, m) = (y + 1, 1) if m > 12 else (y, m)
     calls = 0; t0 = time.time()

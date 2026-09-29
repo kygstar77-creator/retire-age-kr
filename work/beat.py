@@ -34,6 +34,12 @@ BUDGET = {'write': 45, 'watchdog': 20, 'improve': 40, 'loop': 40, 'report': 50}
 GAP_OK = {'write': 7, 'watchdog': 1, 'improve': 14, 'loop': 2, 'report': 24}
 SLACK = 1.5   # 예약이 늦게 떠도 되도록 얹는 시간
 
+# 예산을 넘겼어도 마지막 단계 맥박이 이 안(분)이면 살아서 일하는 중이다. 끊지 않는다.
+# 2026-09-29 17:53: write가 46분(예산 45)으로 '멈춤'에 잡혀 일감표 1번이 "stop_session으로 끊어라"를 시켰는데,
+# 그 세션은 17:40에 맥박을 찍었고 naverpost.py로 블로그를 발행하는 중이었다. 끊었으면 발행이 반쯤 깨졌다.
+# 다만 예산의 두 배를 넘기면 맥박이 있어도 멈춘 것으로 센다(단계 안에서 도는 무한 재시도).
+ALIVE_FRESH = 15
+
 def load():
     # 2026-09-29 loop: start 직후 mark가 '시작 기록이 없다'로 튕겼다. 다른 회차가 'w'로 여는 순간
     # (파일이 비어 있을 때) 읽으면 {}가 나오고, 그 {}에 제 것만 얹어 저장해 남의 기록을 다 지웠다.
@@ -109,10 +115,14 @@ def start(task):
         # 마지막 단계 맥박(mark)이 있으면 그게 죽은 시각이다. 없으면 발견 시각까지가 상한일 뿐이다.
         # 상한을 소요 시간이라고 적으면 전부 '예산 초과'로 보여 원인을 엉뚱한 데서 찾게 된다.
         alive = prev.get('alive')
+        # 2026-09-29 write: watchdog 16:42 시작이 11분 뒤(16:53) 다음 watchdog start에 '죽음 0분'으로 잡혔다.
+        # 예산(20분) 안이면 죽었는지 아직 도는지 모른다 — 예약이 겹쳐 두 번 뜬 것일 수 있다.
+        # 그런 건 'overlap'으로 따로 적고 죽은 회차로 세지 않는다(abandoned()가 뺀다).
+        fresh = (time.time() - (alive or prev['start'])) / 60 < BUDGET.get(task, 60)
         gone = d.get(GONE) or []
         gone.append({'task': task, 'at': prev.get('at'),
                      'min': round(((alive or time.time()) - prev['start']) / 60),
-                     'how': 'mark' if alive else 'upper',
+                     'how': 'overlap' if fresh else ('mark' if alive else 'upper'),
                      'stage': prev.get('stage') or '',
                      'budget': BUDGET.get(task, 60), 'found': time.strftime('%Y-%m-%d %H:%M')})
         d[GONE] = gone[-60:]
@@ -135,6 +145,7 @@ def abandoned(hours=24, now=None):
     for g in (load() or {}).get(GONE) or []:
         try: t = time.mktime(time.strptime(g.get('found', ''), '%Y-%m-%d %H:%M'))
         except Exception: continue
+        if g.get('how') == 'overlap': continue   # 예산 안에 다음 start가 떴다 — 죽음으로 확인 안 됨
         if (now - t) / 3600 <= hours: out.append(g)
     return out
 
@@ -196,10 +207,17 @@ def stuck(now=None):
         m = (now - r['start']) / 60
         b = BUDGET.get(task, 60)
         if m <= b: continue
+        if alive_now(r, now) and m <= 2 * b: continue
         # 돌아야 할 구간 뒤에 맥박 구멍이 있으면 기계가 꺼진 것이지 이 회차가 문 게 아니다.
         if cut_off(task, now, d): continue
         out.append((task, round(m), b))
     return sorted(out, key=lambda x: -x[1])
+
+
+def alive_now(r, now=None):
+    """마지막 단계 맥박이 ALIVE_FRESH분 안이면 True."""
+    a = r.get('alive')
+    return bool(a) and ((now or time.time()) - a) / 60 <= ALIVE_FRESH
 
 
 def stale(now=None):
@@ -233,6 +251,8 @@ def main():
         m = (now - r['start']) / 60
         if r.get('end'): st = '끝남'
         elif m <= BUDGET.get(task, 60): st = f'도는 중 {round(m)}분'
+        elif alive_now(r, now) and m <= 2 * BUDGET.get(task, 60):
+            st = f'느림 {round(m)}분째 (예산 {BUDGET.get(task, 60)}분, 맥박 {r.get("alive_at", "")[-5:]})'
         elif cut_off(task, now, d): st = f'끊김 ({round(m)}분 전 시작, 기계 꺼짐)'
         else: st = f'멈춤? {round(m)}분째 (예산 {BUDGET.get(task, 60)}분)'
         if not r.get('end') and r.get('stage'): st += f' · 단계 {r["stage"]}'

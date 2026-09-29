@@ -260,6 +260,19 @@
     "url": "https://cafe.naver.com/firemap/174"
    },
    "note": "카페 19시 코너 ratefx0929(slot now) 제 시각 발행, verify OK 856자(기대 796)·사진 3/3. 블로그 tlt0929 verify OK 1314/1278자·사진 6/6 — 대기 중 banpo·munjeong은 오늘 블로그 부동산 축 초과라 TLT(배당현금흐름)를 올림. 둘 다 전 회차 selfcheck 0·readcheck 0, 금지어 없음. 새로 씀: 카페 20시 K20 정부정책 tmp2house0929 '일시적 2주택 비과세 기간 줄어든다는데, 이미 산 집도 해당될까?'(slot 2026-09-29 20, 세금연금·형식③) — 오늘 국무회의 의결 4개 세법 시행령(일시적 2주택 3→2년, 상생임대 올해 말 종료, 매입임대 아파트 중과배제 2027년 말) · issues.py가 잡은 오늘 이슈 · 자료조사 WebSearch 2회+재정경제부 발표문 전문(외교저널 게재)·연합·뉴스웍스·서울경제 영문·일간NTN, 1차 법령 API 소득세법 시행령 제155조·제155조의3, 국토부 공고 제2026-882호(조정대상지역). 검색수 상생임대 1,720·일시적2주택 920. 블로그 대기 보충 voo0929 'VOO 배당금 9월 지급일, SPY·SPYM과 비교하면 뭐가 다를까?'(배당현금흐름·형식④, VOO 월 31,490, dupcheck 새것) — 뱅가드 배당 공시(1.8226달러, 기준 9/28·지급 9/30)·총보수 API, SSGA SPY 0.0945%·SPYM 0.02%, 아이셰어즈 IVV 0.03%, MIAX SPLG→SPYM 공지, 야후 수정주가 5년 총수익. 검증 경로: selfcheck(제미나이 503) — 두 묶음 사실 0·계산 0, readcheck tmp2house 4건→0·voo 5건→0(약어 설명·긴 문장·제목 숫자). 대기: 블로그 3(banpo·munjeong·voo) · 카페 3(main·garak·tmp2house). 일감1 색인율: 막힘(9/23 이후 새 글 무색인, 사장님 제보·발행량 판단 대기). 개선: apis.vanguard(ticker) 추가 — 뱅가드 ETF 공식 배당 기준일·지급일·금액과 총보수(나스닥 배당 API는 ETF에 N/A, 야후는 배당락일만 줘서 막혔던 것). VOO·VYM으로 확인."
+  },
+  {
+   "hour": 20,
+   "ts": "20:50",
+   "blog": {
+    "title": "반포동 아파트 실거래가, 같은 국민평형인데 단지마다 20억 갈린 석 달",
+    "url": "https://blog.naver.com/kygstar7777/224426294190"
+   },
+   "cafe": {
+    "title": "일시적 2주택 비과세 기간 줄어든다는데, 이미 산 집도 해당될까?",
+    "url": "https://cafe.naver.com/firemap/175"
+   },
+   "note": "발행: 블로그 banpo0929(대기 최고참) verify OK 1770/1734자·사진 4/4, 카페 tmp2house0929(20시 코너, slot now) verify OK 851/851자·사진 3/3. 다음 시각 카페 K21 월배당 ETF 새 묶음 spyi0929(slot 2026-09-29 21, 배당현금흐름·형식④) — 편성표는 O(리얼티인컴)였으나 dupcheck에서 O는 9/25 o0925로 이미 씀·대기 main0929가 같은 '세후 월 100만원' 각도라, 월배당 ETF 수요순(JEPQ 32,820·TIGER 미국배당다우존스 32,700·JEPI 10,180·SPYI 3,080) dupcheck 첫 새것 SPYI로 바꾸고 각도를 '분배금 받는 동안 주가·총수익 SPY 비교'로 잡음. 자료조사 WebSearch 3회(영·한)+NEOS 공식 SPYI 페이지·ROC 설명글·SEC 497K·24/7 Wall St.(ROC 95%는 19a-1 원문 못 봐 본문에서 뺌)·야후 chart(SPYI·SPY·KRW=X). 검증 경로: crosscheck(Gemini flash-lite) 사실 5건 중 반영 4(기준일 표기)·유지 1(24.228→24.23 반올림), 말투 5건 중 반영 5(단 SPYI 정식명·JP모건 JEPI 설명은 readcheck 때문에 남김) → selfcheck 사실 0·계산 1(24.23=24.228 반올림 확인) → readcheck 7건→0. 대기: 블로그 2(munjeong·voo — 3개 미만, 회차 시간 50분 넘어 이번엔 못 채움, 다음 회차·자가발전 회차 몫) · 카페 3(spyi 21시·main·garak). 일감1 색인율: 막힘(세 번째, tools-wanted 623행 기존 항목). 개선: 없음."
   }
  ]
 }

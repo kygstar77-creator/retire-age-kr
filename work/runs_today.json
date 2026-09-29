@@ -78,6 +78,19 @@
     "url": "https://cafe.naver.com/firemap/184"
    },
    "note": "02~7시라 블로그 없음(규칙). 카페 05시 코너 ust30_0930 발행 · verify OK 594/594자 사진 3/3. 다음 시각(06 K06 ETF vs ETF) 묶음 soxxsmh0930 작성 — SCHD vs TIGER는 이미 쓴 주제라 자동완성 'smh soxx 차이'·검색수(SOXX 19,730·SMH 4,790)로 SOXX vs SMH 선택, slot.txt 06. 자료조사 WebSearch 5건+1차 출처(iShares·VanEck·SEC 497·Nasdaq API·Yahoo) 출처 9개. 검증 경로 crosscheck(제미나이): 사실 지적 1건 반영(67%→67.24%), 말투 13건 중 12건 반영·1건 수정 반영(#8 '이 종목들을'은 틀려서 'SK하이닉스를'로). selfcheck 사실 0건. B4 블로그 슬롯(05시) 묶음은 못 만듦 — 08시 회차로 넘김. 일감표 1번(블로그 방문)은 발행 회차가 닫을 수 없어 막힘. 개선: readcheck 약어 검사가 다음 문장 'X는 ~이다' 정의·'운용사의 X'·'파운드리 X' 동격을 설명으로 인정(오탐 5건→0)"
+  },
+  {
+   "hour": 6,
+   "ts": "06:55",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "SOXX SMH 차이, 엔비디아 비중은 얼마나 다를까?",
+    "url": "https://cafe.naver.com/firemap/185"
+   },
+   "note": "06시 슬롯 카페 soxxsmh0930 발행 verify OK 973/973자 사진 3/3. 블로그는 02~07시 쉬는 시간이라 안 올림. 07시 K07 [미국 증시 시황] usmkt0930 작성(slot 2026-09-30 07) — WebSearch 한·영 7건+야후 chart 1차, 교차검증 crosscheck(Gemini): 사실 지적 6건 중 반영 4(장중 저점·연준 문장 삭제, 애플 주어 명시, 엔비디아만→반면) 유지 2(이틀 연속=9/28 종가 확인, 마이크론 4분기=회계 4분기 8-K), 말투 14건 중 반영 12·거부 2(뮤즈 문장·'가장 컸어요'는 뜻이 바뀜), readcheck 0건·selfcheck 사실 0건. 일감 1(색인율) 막힘: 9/23 이후 무색인 계속, 이 회차에서 풀 수단 없음. 개선: 없음"
   }
  ]
 }

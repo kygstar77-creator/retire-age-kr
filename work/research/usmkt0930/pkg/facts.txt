@@ -1,0 +1,30 @@
+# usmkt0930 · K07 [미국 증시 시황] · 2026-09-30 06시 회차 조사 (07시 슬롯)
+
+[오늘 찾은 것] (WebSearch 한·영 2026-09-30 06:3x 조회)
+- 2026-09-29 Yahoo Finance live "Dow, S&P 500, Nasdaq wobble as 30-year Treasury..." — 다우 51,349.92 -0.26% / S&P 7,670.84 -0.17% / 나스닥 26,797.54 -0.09%, 30년물 5.62% 2002년 이후 최고, 소비자신뢰 81.9(전월 88.6) 2014년 이후 최저, JOLTS 709.7만, WTI 88.94 -3.95%, 사우디 동서 송유관 수출 재개. https://finance.yahoo.com/markets/live/stock-market-today-tuesday-september-29-dow-sp-500-nasdaq-080526442.html
+- 2026-09-29 Conference Board 9월 소비자신뢰지수 81.9(8월 88.6, -6.7), 현재상황 109.3, 기대 63.6. 예상 89.2(로이터). 서술 응답에 물가·기름값. https://www.conference-board.org/topics/consumer-confidence/ · https://www.cnbc.com/2026/09/29/consumer-optimism-slides-sharply-as-fears-escalate-over-rising-prices-and-jobs.html · https://investinglive.com/news/sept-us-consumer-confidence-81-9-vs-89-2-expected/
+- 2026-09-30 서울신문 서울데이터랩 "미국 증시 혼조 마감…반도체 강세" — 필라델피아 반도체지수 +1.32% 12,629.16, ASML +3.56%, 램리서치 +2.99%, 애플 -2.66%, 메타 +3.24%, 엔비디아 -0.72%, 테슬라 -1.29%. https://www.seoul.co.kr/news/economy/securities/2026/09/30/20260930500005
+- 2026-09-30 Yahoo Finance "Apple Stock Falls After Bank of America Flags a New AI Threat" — BofA 매수 유지, 메타 뮤즈가 쇼핑 활동을 애플 생태계 밖으로, 뮤즈는 쇼피파이·익스피디아·페이팔 연결. https://finance.yahoo.com/markets/stocks/articles/apple-stock-falls-bank-america-160904185.html
+- 2026-09-29 MarketBeat — Monness Crespi & Hardt 메타 목표가 730→830달러, 매수. https://www.marketbeat.com/instant-alerts/price-meta-platforms-nasdaq-meta-stock-jumps-33-on-analyst-upgrade-2026-09-29/
+- 2026-09-29 CNBC "Stock market news for Sept. 29, 2026" https://www.cnbc.com/2026/09/28/stock-market-today-live-updates.html
+- 마이크론 실적 9/30 장 마감 뒤(plan_2026-09-30 03 슬롯: TipRanks·Investing "Sep 30 After Market"), PCE 30일·고용보고서 10월 2일(usmkt0929c facts, 야후 9/28)
+
+[1차 출처로 직접 받은 숫자] Yahoo chart API 2026-09-30 06:3x 조회, 9/29 종가 (전일 9/28)
+다우 51,349.92 (51,481.51) -0.26%
+S&P500 7,670.84 (7,683.69) -0.17%
+나스닥 26,797.54 (26,820.38) -0.09%
+러셀2000 2,807.92 (2,817.91) -0.35%
+^TNX 10년물 5.26 (5.24)
+^TYX 30년물 종가 5.59 (5.56) / 3개월 전 06/29 4.86
+META 738.79 +3.24% · MU 1,065.08 +1.05% · NVDA 227.21 -0.72% · TSLA 352.84 -1.29% · AAPL 329.40 -2.66%
+CL=F WTI 88.94 (92.60) -3.95%
+
+[버린 것]
+- BZ=F 브렌트 -9.13%: 근월물 교체로 보여 안 씀(야후 기사는 ~96달러)
+- 오라클 +3.91%: 이유 확인 못 해 안 씀
+- 앤트로픽·오픈AI 관련 기사: 확인 안 했고 시황과 거리 멀어 안 씀
+
+[교차검증 반영 메모]
+- 이틀 연속 하락: 9/28 다우·S&P·나스닥 모두 하락(usmkt0929c facts, 야후 종가) + 야후 9/29 "back-to-back losing sessions" → 유지
+- 마이크론 "4분기": 회계연도 4분기(8월 말 마감) 실적 — plan_2026-09-30 03 슬롯, 회사 3분기 8-K 가이던스 원문 https://www.sec.gov/Archives/edgar/data/0000723125/000072312526000013/a2026q3ex991-pressrelease.htm → 유지
+- 장중 저점 반등 문장·"연준이 먼저 보는 숫자" 문장: 1차 확인 안 해 삭제

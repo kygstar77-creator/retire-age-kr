@@ -1,0 +1,16 @@
+블로그 발행 순서
+제목: title.txt
+카테고리: 미국주식
+태그: TLT, TLT 주가, TLT 배당, 미국 장기채 ETF, 미국채 ETF, IEF, SHY, 미국 국채금리, 미국 10년물, 채권 ETF, 듀레이션, 아이셰어즈, 월배당 ETF
+b00.txt
+img/00.png
+b01.txt
+img/03.png
+b02.txt
+img/01.png
+b03.txt
+img/02.png
+b04.txt
+img/04.jpg
+img/05.png
+b05.txt

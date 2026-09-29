@@ -1,0 +1,27 @@
+[확인일] 2026-09-29
+[오늘 찾은 것]
+1) 2026-09-23 Bloomberg "Biggest Long-Bond ETF Hits Record Low as Traders Dump Treasuries" https://www.bloomberg.com/news/articles/2026-09-23/biggest-long-bond-etf-hits-record-low-as-traders-dump-treasuries — TLT 사상 최저(야후 일별 종가로 재확인)
+2) 2026-09-28 GuruFocus "U.S. Treasury Yields Surge, Pressuring TLT" https://www.gurufocus.com/news/9100128/ — 28일 10년물 5.25%, 2년물 5% 근처(매체 값, 본문 숫자로 안 씀)
+3) 2026-09-27 24/7 Wall St. "TLT Is Down More Than Half From Its Peak" https://247wallst.com/investing/2026/09/27/tlt-is-down-more-than-half-from-its-peak-is-it-a-bargain-or-a-trap/ — 고점 대비 절반 넘게 하락(야후 max 차트로 재계산 -54.0%)
+4) 2026-09-29 CNBC "Treasury yields ease as inflation concerns persist" https://www.cnbc.com/2026/09/29/treasury-yields-bonds.html — 10년물 5.238% 부근
+5) 2026-09-28 아시아경제 "美 국채금리 급등에…3년물 국고채 4.1% 돌파" https://view.asiae.co.kr/article/2026092818444405696 — 국고채 3년 4.119%, 2022-11 이후 최고(ECOS로 재확인: 2022-11-08 4.156 이후 최고)
+6) 2026-06-11 뉴스핌 "[서학개미 ETF 디코딩] TLT" https://www.newspim.com/news/view/20260611000998 — TLT = 미국 장기채 ETF 중 운용 규모 최대(아이셰어즈 순자산으로 재확인은 안 함, 본문은 '가장 크다' 유지 — 아래 순자산 참고)
+
+[1차 출처로 직접 받은 숫자]
+- 아이셰어즈 TLT https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf (2026-09-29 조회, as of Sep 28, 2026)
+  총보수 0.15 / 유효 듀레이션 14.84 yrs (as of Sep 25, 2026) / 순자산 $46,219,557,303 / 12m Trailing Yield 4.91%
+- 아이셰어즈 IEF https://www.ishares.com/us/products/239456/ishares-710-year-treasury-bond-etf : 0.15 / 6.86 yrs / $41,136,034,634 / 4.12%
+- 아이셰어즈 SHY https://www.ishares.com/us/products/239452/ishares-13-year-treasury-bond-etf : 0.15 / 1.79 yrs / $26,115,473,629 / 3.65%
+- 야후 차트 API https://query1.finance.yahoo.com/v8/finance/chart/TLT (원자료 ../data.json)
+  TLT 9/28 종가 78.62 / 2025-09-29 89.63 / 상장(2002-08-01) 이후 일별 종가 최저 = 9/28 78.62 / 최고 2020-07-01 171.00 → -54.0%
+  최근 5년 주간 종가 최고 2021-11-29 154.35
+  1년 주가(계산): TLT 89.63→78.62 -12.3% / IEF 96.50→89.53 -7.2% / SHY 82.92→81.11 -2.2%
+  1년 총수익(adjclose 계산): TLT 85.70→78.62 -8.3% / IEF 92.83→89.53 -3.6% / SHY 80.00→81.11 +1.4%
+  TLT 분배금 12회(배당락일): 2025-10-01 0.310 / 11-03 0.325 / 12-01 0.321 / 12-19 0.342 / 2026-02-02 0.332 / 03-02 0.301 / 04-01 0.345 / 05-01 0.315 / 06-01 0.336 / 07-01 0.318 / 08-03 0.330 / 09-01 0.315 → 합 3.89, 범위 0.30~0.35, 2026년 1월 없음
+- FRED DGS10 https://fred.stlouisfed.org/series/DGS10 : 2026-09-25 5.17 / 2025-09-29 4.15
+- 한국은행 ECOS 817Y002 국고채(3년) 2026-09-28 4.119
+- 세금: 한미 조세조약 배당 제한세율 15%(국세청 해외주식 배당 원천징수 안내). 소득세법 제103조(양도소득 기본공제 250만원)·제118조의5(국외자산 양도 세율 20%) + 지방소득세 2% = 22% https://www.law.go.kr/법령/소득세법
+
+[쓰지 않은 것]
+- 30년물 5.47%, 179달러 고점(매체 값, 야후 종가와 다름) — 뺐다.
+- 전망("금리가 내리면 오른다" 이상의 예측) — 쓰지 않았다.

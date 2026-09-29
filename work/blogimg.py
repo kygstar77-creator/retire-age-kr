@@ -175,8 +175,10 @@ def line(path, title, xs, ys, marks=(), unit='', src=None):
         y0, y1 = ax.get_ylim(); low = (y - y0) / ((y1 - y0) or 1) < 0.15
         dy = 12 if (i % 2 or low) else -22
         left = x <= (len(lab) - 1) * 0.1
+        # 2026-09-29 TLT 5년 차트: 오른쪽 끝 바닥 점의 글자가 위에서 내려오는 선에 덮였다 → 흰 바탕을 깐다.
         ax.annotate(t, (x, y), xytext=(12 if left else -12, dy), textcoords='offset points', ha='left' if left else 'right',
-                    fontproperties=fb, fontsize=13, color=col)
+                    fontproperties=fb, fontsize=13, color=col, zorder=6,
+                    bbox=dict(boxstyle='round,pad=0.15', fc='white', ec='none', alpha=0.9))
     ax.set_title(title, fontproperties=fb, fontsize=19, loc='left', pad=14)
     for s in ('top', 'right'): ax.spines[s].set_visible(False)
     ax.grid(axis='y', color='#e2e6ee')

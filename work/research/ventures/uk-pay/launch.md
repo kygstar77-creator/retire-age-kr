@@ -23,8 +23,33 @@
 | 17 | 법 개정 감시 | 영국 세금 해 4/6 시작. 매년 3월 Budget·Spring Statement 뒤 확인, 담당 venture-builder, 달력 2027-03-20 | 답함 |
 | 18 | 공개 설정 되읽기 | 공개 후 curl로 robots·sitemap·noindex 없음 확인 | **빌더 채움** |
 | 19 | 내부 방문 제외 | 점검은 ?fm_internal=1 | **빌더 채움**(internal:1 확인) |
-| 20 | 첫 100명 경로 | ① 결과 공유 카드(fmkit.share, utm_source=share) — 빌더, 오늘 ② Hacker News "Show HN" 1회 — 규칙 확인 research-global 10/1 20:00, 게시는 계정이 필요해 approvals.md(사장님 계정 1회) ③ r/UKPersonalFinance — 자기 홍보 규칙 확인 research-global 10/1 20:00, 금지면 뺀다 ④ Bing 웹마스터·IndexNow(검색이지만 구글보다 빠름) — 빌더 공개 직후. utm_source=hn / reddit / share | 경로 ②③ 규칙 확인 전이면 ①④만으로 공개하고 10/2에 보강 — **3개 조건은 ②③ 확인 뒤 채움** |
+| 20 | 첫 100명 경로 | ① 결과 공유 카드(fmkit.share, utm_source=share) — 빌더, 오늘 ② Hacker News "Show HN" 1회 — 규칙 확인 research-global 10/1 20:00, 게시는 계정이 필요해 approvals.md(사장님 계정 1회) ③ r/UKPersonalFinance — 자기 홍보 규칙 확인 research-global 10/1 20:00, 금지면 뺀다 ④ Bing 웹마스터·IndexNow(검색이지만 구글보다 빠름) — 빌더 공개 직후. utm_source=hn / reddit / share | ② Show HN **허용**(조건부, 원문 확인) · ③ r/UKPF **확인 안 함**(레딧이 도구 전부 차단 → 경로로 세지 않음) · 무계정 연락 2곳 확인(목록 게재 여부는 확인 안 함). 근거는 아래 '20번 규칙 원문' — research-global 10/1 07:57 |
 
 ## 본부장 메모
 - 20번은 '남의 커뮤니티 홍보글은 경로로 치지 않는다'는 규칙과 부딪친다. HN Show HN은 자기 제품 소개가 허용되는 자리라 예외로 두되, 규칙 원문을 research-global이 확인한다. 확인 전에는 경로로 세지 않는다.
 - 20번이 3개를 못 채워도 **이 사이트는 공개한다**: 20번 규칙은 product-dev 운영 배포(firemap.kr)용이고, 이 실험의 목적은 "새 도메인이 색인·유입을 받는가"다. 대신 1주 판정표에 경로별 숫자를 따로 적는다. (결정 근거 decisions/log.md 07:4x)
+
+## 20번 규칙 원문 (firemap-venture-research-global, 2026-10-01 07:57 확인)
+
+**② Hacker News Show HN — 허용(조건 3개)**
+- 원문 https://news.ycombinator.com/showhn.html (07:55 WebFetch)
+  - 허용 근거: "Show HN is for something you've made that other people can play with." / "On topic: things people can run on their computers or hold in their hands." → 브라우저에서 바로 쓰는 계산기는 해당.
+  - 금지: "Off topic: blog posts, sign-up pages, newsletters, lists, and other reading material." / "Don't post landing pages or fundraisers." → 설명 글·가입 페이지로 링크 걸지 말고 계산기 페이지로.
+  - 조건: "Please make it easy for users to try your thing out, ideally without barriers such as signups or emails." → 우리 사이트는 가입·메일 없음, 충족.
+  - 금지: "Please don't ask friends to upvote or comment. That's not ok on HN." → 카페·카톡방에 HN 링크 올려 추천 부탁 금지.
+- 원문 https://news.ycombinator.com/newsguidelines.html (07:56)
+  - "It's ok to post your own stuff part of the time, but the primary use of the site should be for curiosity." / "Don't solicit upvotes, comments, or submissions." → 1회 게시는 허용 범위, 반복 홍보 계정으로 쓰면 안 됨.
+- 게시에는 HN 계정이 필요 → 사람 손(approvals.md, 사장님 계정 1회). 계정 만들기·로그인은 AI 직원이 하지 않음.
+
+**③ r/UKPersonalFinance 자기 홍보 규칙 — 확인 안 함**
+- 시도: reddit.com/r/UKPersonalFinance/about/rules.json(curl) → 403 / old.reddit.com 규칙 페이지 → "blocked by network security. Please try to login" / WebFetch → "unable to fetch from www.reddit.com" / 브라우저 창·Chrome 도구 → 둘 다 "not allowed due to safety restrictions".
+- 2차 자료(검색 요약: 자기 홍보·광고 금지)는 원문이 아니라 근거로 쓰지 않음.
+- 결론: 원문 확인 전에는 **경로로 세지 않는다**(본부장 메모 규칙). 사람이 로그인 없이 브라우저로 사이드바 규칙을 한 번 보면 풀림 — 필요하면 10/2 회차에 다른 경로(검색 캐시·아카이브 원문) 재시도.
+- 참고(원문 확인): 이 서브레딧의 공식 위키 https://ukpersonal.finance/income-tax/ 가 외부 계산기로 listentotaxman.com·thesalarycalculator.co.uk 두 곳만 링크(07:57 curl). 위키 기여 창구는 "Join our Discord server!"(https://ukpersonal.finance/recommended-resources/) → 디스코드 계정 필요, 무계정 경로 아님.
+
+**무계정 목록·뉴스레터 2곳 — 연락 창구만 확인, '계산기 소개 목록'인지는 확인 안 함**
+1. Monevator (영국 개인재정 블로그, ukpersonal.finance 추천 사이트) — https://monevator.com/contact/ 문의 폼, 계정 불필요(07:57 curl). 원문: "Got an idea for a feature? ... Please let me know!" / 금지: "I do not accept unasked for guest post requests" · "I do not do any text link advertising" → 기고·링크 구매 요청은 금지, 도구 한 줄 소개 메일만 가능. 보낼지 여부는 사람 결재(메시지 발송).
+2. Freedom Isn't Free (영국 개인재정, 주간 'Monday Digest' 뉴스레터) — https://freedomisntfree.co.uk/contact 일반 문의 메일 hello@freedomisntfree.co.uk, 계정 불필요(07:57 curl). 자기 계산기 'Tools'를 직접 운영하는 곳이라 경쟁자이기도 함. 외부 도구 소개 규칙은 원문에 없음(확인 안 함).
+- 못 찾은 것: "UK 계산기 제출" 창구가 있는 무계정 목록(검색 1회, GitHub 저장소 검색 0건). 계산기 모음 사이트(calctool.co.uk·onlinecalculator.co.uk)는 모두 자체 계산기라 소개 경로 아님.
+
+**본부장 판단용 한 줄:** 경로 3개 중 확인된 것은 ① 공유 카드(빌더) · ② Show HN(허용, 사장님 계정 1회 필요) · ④ Bing/IndexNow. ③ 레딧은 확인 안 함이라 뺀다. 메일 2곳은 게재 보장이 없어 '경로'가 아니라 '시도'로만 센다.

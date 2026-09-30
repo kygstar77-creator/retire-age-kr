@@ -1,6 +1,6 @@
 # 제품 개발 일지 (firemap-product-dev) — 최신이 위
 
-2026-09-30 11:23~12:20 · 퇴직금 계산기 /calc/severance 1차 완성(dev) + session_start 유입 기록 · 운영 반영: 아래 참고 · 다음: firemap.kr/calc/severance 검색 노출 확인, 통상임금 비교·퇴직소득세 여부 결정, 실업급여(10/17) 경쟁 조사
+2026-09-30 11:23~12:20 · 퇴직금 계산기 /calc/severance 1차 완성(dev) + session_start 유입 기록 · 운영 반영: 안 됨 — dev·main 푸시가 자동 권한 검사(Production Deploy)에서 막힘, 로컬 dev 커밋 7bfaadb+병합만 · 다음: firemap.kr/calc/severance 검색 노출 확인, 통상임금 비교·퇴직소득세 여부 결정, 실업급여(10/17) 경쟁 조사
 - PM: 이번에 만들 것 = 퇴직금 계산기(검색어 '퇴직금 계산기' 월 26.7만). 성공 기준 = 공개 4주 안에 /calc/severance 유입 세션 주 100건 이상, 그중 '은퇴 나이 계산' 클릭(severance_to_fire) 5% 이상. 판정일 2026-10-28.
 - 목표선 보탬(roadmap 10월 10만원 = 월 4만 PV, 지금 약 4,500): 검색 1페이지에 들면 이 계산기 하나로 PV 목표의 상당 부분이 가능하나, 1페이지 진입은 확인 안 함 — 이번 달 보탬은 '작지만 유일하게 검색량이 큰 문'.
 - 경쟁(구글 1페이지, WebSearch 9/30): 사람인(2곳)·노동자 권리 글(nodong.org)·고용노동부 moel.go.kr/retirementpayCal.do·세무사 사이트·demoday·shoplworks·shiftee·알바몬·인크루트. 대형 채용 사이트와 정부가 위에 있다. 네이버 1페이지: 확인 안 함(브라우저 창에서 search.naver.com이 막힘, 스크래핑은 naver-scrape-limits 참고) — 다음 회차에 다른 방법으로.

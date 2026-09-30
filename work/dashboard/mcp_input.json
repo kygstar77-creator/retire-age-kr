@@ -258,6 +258,34 @@
    "description": "매일 22:30 — 오늘 결승선 표를 실측해 ✅/❌",
    "schedule": "매일 22:30",
    "enabled": true
+  },
+  {
+   "taskId": "firemap-venture-research-global",
+   "title": "신사업 시장조사원(해외·전 세계)",
+   "description": "하루 2회(08·14시 :20) + 호출 — 전 세계 사업 후보 발굴",
+   "schedule": "매일 08:20·14:20",
+   "enabled": true
+  },
+  {
+   "taskId": "firemap-venture-research-kr",
+   "title": "신사업 시장조사원(국내)",
+   "description": "하루 2회(09·15시 :20) + 호출 — 국내 사업 후보 발굴(계산기 밖까지)",
+   "schedule": "매일 09:20·15:20",
+   "enabled": true
+  },
+  {
+   "taskId": "firemap-venture-builder",
+   "title": "신사업 빌더(사이트 개발·배포)",
+   "description": "하루 5회 + 호출 — 신사업 지시서대로 만들고 배포",
+   "schedule": "매일 09·12·15·18·21시 :40",
+   "enabled": true
+  },
+  {
+   "taskId": "firemap-dispatcher-2",
+   "title": "운영실장 2(매시 :35)",
+   "description": "매시 :35 — 두 번째 배차 담당",
+   "schedule": "매시 :35",
+   "enabled": true
   }
  ],
  "runs": {
@@ -491,6 +519,27 @@
     "status": "succeeded",
     "started_at": "2026-09-30T16:09:53.311Z",
     "last_activity_at": "2026-09-30T16:10:47.017Z"
+   }
+  ],
+  "firemap-venture-research-global": [
+   {
+    "status": "running",
+    "started_at": "2026-09-30T22:25:00Z",
+    "last_activity_at": "2026-09-30T22:25:00Z"
+   }
+  ],
+  "firemap-venture-research-kr": [
+   {
+    "status": "running",
+    "started_at": "2026-09-30T22:25:00Z",
+    "last_activity_at": "2026-09-30T22:25:00Z"
+   }
+  ],
+  "firemap-venture-builder": [
+   {
+    "status": "running",
+    "started_at": "2026-09-30T22:22:00Z",
+    "last_activity_at": "2026-09-30T22:22:00Z"
    }
   ]
  }

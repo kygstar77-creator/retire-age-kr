@@ -1,6 +1,6 @@
 {
- "generated_at": "2026-10-01T07:03+09:00",
- "generated_label": "2026-10-01 07:03",
+ "generated_at": "2026-10-01T07:28+09:00",
+ "generated_label": "2026-10-01 07:28",
  "mcp_captured_at": "10-01 07:01",
  "approvals": [
   {
@@ -95,14 +95,14 @@
    "five_hour_pct": 6,
    "five_hour_reset": "10-01 08:29"
   },
-  "commits24": 110,
-  "commits24_unmapped": 19
+  "commits24": 128,
+  "commits24_unmapped": 18
  },
  "chips": {
-  "일함": 20,
+  "일함": 23,
   "헛돎": 1,
   "대기": 7,
-  "확인 안 함": 1
+  "확인 안 함": 2
  },
  "depts": [
   {
@@ -165,13 +165,19 @@
    "key": "venture",
    "name": "신사업본부",
    "ids": [
-    "firemap-venture"
+    "firemap-venture",
+    "firemap-venture-research-global",
+    "firemap-venture-research-kr",
+    "firemap-venture-builder"
    ]
   },
   {
    "key": "ops",
    "name": "운영·품질본부",
    "ids": [
+    "firemap-dispatcher",
+    "firemap-dispatcher-2",
+    "firemap-finishline-check",
     "firemap-audit",
     "firemap-watchdog",
     "firemap-improve",
@@ -191,14 +197,6 @@
    "ids": [
     "firemap-ai-lab"
    ]
-  },
-  {
-   "key": "etc",
-   "name": "미분류",
-   "ids": [
-    "firemap-dispatcher",
-    "firemap-finishline-check"
-   ]
   }
  ],
  "staff": [
@@ -210,15 +208,15 @@
    "hours": "확인 안 함",
    "chip": "일함",
    "chip_why": "3시간 안에 기록 있음",
-   "last_run": "10-01 06:58",
+   "last_run": "10-01 07:25",
    "last_run_iso": null,
    "last_end_iso": null,
    "run_status": null,
    "fails_in_last3": 0,
    "next_run": "대화 때",
-   "summary": "10/1 결승선 F1~F8(쿠팡 자리 전면·연봉 계산기 1등·수익 계측 앞당김)",
-   "summary_at": "10-01 06:58",
-   "commits24": 27,
+   "summary": "신사업본부 확장(조사원 2·빌더), 하루 1실험 규칙",
+   "summary_at": "10-01 07:25",
+   "commits24": 37,
    "today": []
   },
   {
@@ -254,8 +252,8 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-01 00:42",
-   "summary": "E-1 Q4 원문 재대조·영업이익률 계산식·관문 ②~⑥ 통과 기록, PD 지시",
-   "summary_at": "10-01 06:43",
+   "summary": "F2 쿠팡 설명란 적용 도구·계획·백업 준비(쿠팡 본인인증·수정 권한 막힘)",
+   "summary_at": "10-01 07:19",
    "commits24": 8,
    "today": [
     "마이크론 실적(10/1 05:30)을 반영해 E-1 대본을 쓴다."
@@ -275,9 +273,9 @@
    "run_status": "running",
    "fails_in_last3": 0,
    "next_run": "10-01 02:16",
-   "summary": "E-1 화면 준비(Remotion E1·e1props), 대본 배수 15.36·19.14 고침",
-   "summary_at": "10-01 03:37",
-   "commits24": 8,
+   "summary": "E-1",
+   "summary_at": "10-01 07:24",
+   "commits24": 9,
    "today": [
     "[지시] 박차 — 48시간 출시 목표",
     "E-1 대본이 나오면 제작한다. 대본이 없으면 그 회차는 한 줄만 기록한다."
@@ -321,7 +319,7 @@
    "next_run": "10-01 08:19",
    "summary": "22시 회차 — 상한 도달로 발행 없음, main0929 시세 갱신·재계산, pending 시세 묵음 경고",
    "summary_at": "09-30 22:25",
-   "commits24": 7,
+   "commits24": 6,
    "today": [
     "[지시] 박차 — 48시간 출시 목표",
     "블로그는 쓰지 않는다(STOP_blog)."
@@ -360,9 +358,9 @@
    "run_status": null,
    "fails_in_last3": 0,
    "next_run": "10-01 07:03",
-   "summary": "04시 회차 — 카페 대기 2편 사람 말투 편집(a1cafe1001·main0929), 박차 #6 원고 write 요청, 말투 가이드·비교표",
-   "summary_at": "10-01 04:53",
-   "commits24": 1,
+   "summary": "E-1 카드 쇼츠 삼성 부제 질문형으로, 경쟁 쇼츠 제목 비교",
+   "summary_at": "10-01 07:15",
+   "commits24": 3,
    "today": []
   },
   {
@@ -476,12 +474,12 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-01 11:22",
-   "summary": "박차 #1 연봉 계산기 완료 판정 — 운영 화면 손검산 A·D 일치, IndexNow 202, 구글 1페이지 실측",
-   "summary_at": "10-01 04:52",
-   "commits24": 6,
+   "summary": "긴급 해시 추락 수정 기록(운영 확인 스크린샷·교훈·교본)",
+   "summary_at": "10-01 07:24",
+   "commits24": 8,
    "today": [
-    "[지시] 쿠팡 링크 앞당김",
-    "[지시] 신사업 후보 — 핫딜 큐레이션 + 쿠팡"
+    "[지시] Claude Design 시험",
+    "[지시] 쿠팡 링크 앞당김"
    ]
   },
   {
@@ -498,10 +496,12 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-01 10:31",
-   "summary": "A-1 썸네일 시안(저울·금액 간판·두 줄 폭 92%), 경쟁 비교·심사 2명·사용자 반론, 영상 PD 인계",
-   "summary_at": "09-30 23:34",
-   "commits24": 1,
-   "today": []
+   "summary": "X-TOOL-1 1회차 Claude Design vs 코드 시안, 연봉 결과·쿠팡 1칸 시안",
+   "summary_at": "10-01 07:25",
+   "commits24": 2,
+   "today": [
+    "[지시] Claude Design 시험"
+   ]
   },
   {
    "id": "firemap-loop",
@@ -627,6 +627,120 @@
    ]
   },
   {
+   "id": "firemap-venture-research-global",
+   "name": "해외 시장조사원",
+   "dept": "venture",
+   "role": "전 세계 사업 후보 발굴",
+   "hours": "확인 안 함",
+   "chip": "일함",
+   "chip_why": "지금 근무 중",
+   "last_run": "10-01 07:25",
+   "last_run_iso": "2026-10-01T07:25:00+09:00",
+   "last_end_iso": "2026-10-01T07:25:00+09:00",
+   "run_status": "running",
+   "fails_in_last3": 0,
+   "next_run": "확인 안 함",
+   "summary": "지금 근무 중",
+   "summary_at": null,
+   "commits24": 0,
+   "today": []
+  },
+  {
+   "id": "firemap-venture-research-kr",
+   "name": "국내 시장조사원",
+   "dept": "venture",
+   "role": "국내 사업 후보 발굴(계산기 밖까지)",
+   "hours": "확인 안 함",
+   "chip": "일함",
+   "chip_why": "지금 근무 중",
+   "last_run": "10-01 07:25",
+   "last_run_iso": "2026-10-01T07:25:00+09:00",
+   "last_end_iso": "2026-10-01T07:25:00+09:00",
+   "run_status": "running",
+   "fails_in_last3": 0,
+   "next_run": "확인 안 함",
+   "summary": "지금 근무 중",
+   "summary_at": null,
+   "commits24": 0,
+   "today": []
+  },
+  {
+   "id": "firemap-venture-builder",
+   "name": "신사업 빌더",
+   "dept": "venture",
+   "role": "신사업 지시서대로 만들고 배포",
+   "hours": "확인 안 함",
+   "chip": "일함",
+   "chip_why": "지금 근무 중",
+   "last_run": "10-01 07:22",
+   "last_run_iso": "2026-10-01T07:22:00+09:00",
+   "last_end_iso": "2026-10-01T07:22:00+09:00",
+   "run_status": "running",
+   "fails_in_last3": 0,
+   "next_run": "확인 안 함",
+   "summary": "지금 근무 중",
+   "summary_at": null,
+   "commits24": 0,
+   "today": []
+  },
+  {
+   "id": "firemap-dispatcher",
+   "name": "운영실장",
+   "dept": "ops",
+   "role": "대기열·트리거를 보고 필요한 직원만 즉시 호출(사용량 예산 안)",
+   "hours": "매시 :05",
+   "chip": "일함",
+   "chip_why": "지금 근무 중",
+   "last_run": "10-01 04:46",
+   "last_run_iso": "2026-10-01T04:46:36.176000+09:00",
+   "last_end_iso": "2026-10-01T07:01:23.154000+09:00",
+   "run_status": "running",
+   "fails_in_last3": 0,
+   "next_run": "확인 안 함",
+   "summary": "2026-10-01 01:10",
+   "summary_at": "10-01 01:10",
+   "commits24": 3,
+   "today": []
+  },
+  {
+   "id": "firemap-dispatcher-2",
+   "name": "운영실장 2",
+   "dept": "ops",
+   "role": "두 번째 배차 담당",
+   "hours": "확인 안 함",
+   "chip": "확인 안 함",
+   "chip_why": "회차 정보 없음",
+   "last_run": "확인 안 함",
+   "last_run_iso": null,
+   "last_end_iso": null,
+   "run_status": null,
+   "fails_in_last3": 0,
+   "next_run": "확인 안 함",
+   "summary": "확인 안 함",
+   "summary_at": null,
+   "commits24": 0,
+   "today": []
+  },
+  {
+   "id": "firemap-finishline-check",
+   "name": "결승선 점검관",
+   "dept": "ops",
+   "role": "오늘 결승선 표를 실측해 ✅/❌",
+   "hours": "확인 안 함",
+   "chip": "확인 안 함",
+   "chip_why": "회차 정보 없음",
+   "last_run": "확인 안 함",
+   "last_run_iso": null,
+   "last_end_iso": null,
+   "run_status": null,
+   "fails_in_last3": 0,
+   "next_run": "확인 안 함",
+   "summary": "확인 안 함",
+   "summary_at": null,
+   "commits24": 0,
+   "today": []
+  },
+  {
    "id": "firemap-audit",
    "name": "감사관",
    "dept": "ops",
@@ -739,53 +853,34 @@
    "run_status": null,
    "fails_in_last3": 0,
    "next_run": "10-01 09:43",
-   "summary": "아직 첫 근무 전",
-   "summary_at": null,
-   "commits24": 0,
-   "today": []
-  },
-  {
-   "id": "firemap-dispatcher",
-   "name": "운영실장(호출 배차)",
-   "dept": "etc",
-   "role": "대기열·트리거를 보고 필요한 직원만 즉시 호출(사용량 예산 안)",
-   "hours": "매시 :05",
-   "chip": "일함",
-   "chip_why": "지금 근무 중",
-   "last_run": "10-01 04:46",
-   "last_run_iso": "2026-10-01T04:46:36.176000+09:00",
-   "last_end_iso": "2026-10-01T07:01:23.154000+09:00",
-   "run_status": "running",
-   "fails_in_last3": 0,
-   "next_run": "확인 안 함",
-   "summary": "지금 근무 중",
-   "summary_at": null,
-   "commits24": 0,
-   "today": []
-  },
-  {
-   "id": "firemap-finishline-check",
-   "name": "결승선 점검(매일 22:30)",
-   "dept": "etc",
-   "role": "오늘 결승선 표를 실측해 ✅/❌",
-   "hours": "확인 안 함",
-   "chip": "확인 안 함",
-   "chip_why": "회차 정보 없음",
-   "last_run": "확인 안 함",
-   "last_run_iso": null,
-   "last_end_iso": null,
-   "run_status": null,
-   "fails_in_last3": 0,
-   "next_run": "확인 안 함",
-   "summary": "확인 안 함",
-   "summary_at": null,
-   "commits24": 0,
-   "today": []
+   "summary": "Mobbin 무료 대안 시험 — WWIT 채택, 유아이볼 보류",
+   "summary_at": "10-01 07:17",
+   "commits24": 1,
+   "today": [
+    "[지시] Mobbin 무료 대안 찾기"
+   ]
   }
  ],
  "queue": {
   "headline": "로드맵 판정: 뒤처짐(선행지표). 오늘 수익은 0원이다. 외부 방문은 약 27세션(추정)이지만, 10월 10만원에는 하루 약 1,300화면이 필요하다. 10월에 돈이 들어올 문은 사실상 애드센스 하나다. 그래서 검색 유입과 색인을 가장 위에 둔다.",
   "orders": [
+   {
+    "title": "Claude Design 시험 (순돌이 → firemap-designer, 기한 오늘 16:20 회차 끝, 사장님 07:1x \"클로드 디자인은 성능 안 좋나?\")",
+    "owner": "확인 안 함",
+    "due": "확인 안 함",
+    "staff": [
+     "firemap-designer",
+     "firemap-product-dev"
+    ]
+   },
+   {
+    "title": "Mobbin 무료 대안 찾기 (순돌이 → firemap-ai-lab, 기한 오늘 12:00, 사장님 07:2x)",
+    "owner": "확인 안 함",
+    "due": "확인 안 함",
+    "staff": [
+     "firemap-ai-lab"
+    ]
+   },
    {
     "title": "쿠팡 링크 앞당김 (순돌이, 레드팀 10/1: 10월 현금이 나올 사실상 유일한 엔진)",
     "owner": "확인 안 함",
@@ -851,7 +946,12 @@
    "긴급(순돌이 23:2x) — A-1 썸네일, 담당이 다시 만든다"
   ],
   "done": [
+   "완료: 원인 확정·수정·운영 배포 07:23 — 운영 재현: 주소 끝에 해시가 붙으면(/calc/salary#home·/calc/severance#home) 새 기기·재방문 기기 모두 첫 화면, 해시 없으면 localStorage 상태와 무관하게 정상 → 원인은 해시(저장 상태 아님). 수정: 처음 열 때 도구 경로가 해시를 이기고 해시를 지움(공유 입력·ops 제외, FireMapMVP.jsx readInitialScreen). 스모크 테스트 추가(4경로×#home·#result, 30개 통과). 운영 index-CRiqTGEj.js에서 10가지 상태 전부 도구 화면, 스크린샷 work/research/calc-salary/hashfix-salary.png·hashfix-severance.png. 사장님 기기에 해시가 붙은 경로(방문 기록 자동완성·로그인 복귀 추정)는 확인 안 함 — 어느 쪽이든 이제 도구 화면이 뜸. 카카오톡 인앱 브라우저 실기기는 확인 안 함. (firemap-product-dev, edebf22)",
+   "완료: X-TOOL-1 1회차 07:25 — Design System https://claude.ai/artifact/P4fwu71ximrBCATjtvS8K9 · 캔버스 https://claude.ai/artifact/LcR4aCPejQu2akSWpnk5zQ(2안). 심사 평균 Claude Design 5.2 vs 코드 시안 7.8 → 기본 도구 보류(무인 세션에서 로그인 화면·Pretendard 2MB가 글꼴 상한 1MB 초과), 사장님께 여러 안 보여 줄 때만 보조로. 두 아티팩트는 비공개 — 사장님이 Share 메뉴에서 켜야 남이 봄. 근거 design/salary-result/compare.md",
+   "완료: firemap-venture-builder 채용·즉시 출근(순돌이). 본부장은 계산기 출시 기획(14:00)과 전 세계 전략(bizdev 13:00)을 보고 첫 사이트 한 개를 정해 빌더에게 지시서로 넘긴다(12:00까지). 정할 근거가 부족하면 계산기 3종 중 하나의 독립 사이트 또는 영어판 중 수요가 큰 쪽.",
+   "완료: 후보 11곳 시험 → 추천 WWIT(무료·가입 없음·curl 통과·금융 앱 14개), 보조 유아이볼(무료는 최신 3개, Pro 월 14,000원). tools.md·designer.md 반영. 상세 ai-lab/bench/2026-10-01-mobbin-alternatives.md 07:17",
    "완료: A-1 v5a 교체 02:22 (PD, decisions/log.md 기록). 순돌이가 확인하지 않고 04:37에 같은 그림을 다시 올림 — 교훈 8",
+   "완료: E-1 썸네일 e1c를 ep/E-1/meta.json(thumb)에 넣음, 길이 표시 자리 비어 있음 확인 07:2x (PD) — 업로드는 목소리 3문장 남아 다음 PD 회차(16시 뒤)",
    "완료: 핫딜 후보 판정 탈락(딜 모음 사이트·카페 형태) 04:45 — ventures/hotdeal/decision.md(19항목·전략·법·레드팀 반영). 무인 수집 길이 쿠팡 약관·봇 차단·DB권으로 막혔고 경쟁 우위 0개. 핵심(구매 의도 순간)만 아래 요청으로 흡수.",
    "완료: #1 연봉 실수령 계산기 04:53 — 운영 https://firemap.kr/calc/salary 에서 손검산 A·D 원 단위 일치(손검산 6+경계 8 재통과), 이길 점 3개(2026.2.27 개정표·80/100/120%·8~20세 자녀 / 결과→은퇴 나이 / 근거 한 줄), 배포는 순돌이 01:32, IndexNow 202, 구글 1페이지 실측(파이어맵 미색인 → 서치 콘솔 제출 growth 요청). 기록 calc-salary/launch-checklist.md·product-log.md (firemap-product-dev)",
    "완료: E-1 Q4 채움 06:43 — 05:10 루프 8회차가 채운 숫자를 SEC EDGAR 8-K EX-99.1 원문(acc 0000723125-26-000018)과 다시 대조해 전부 일치, 영업이익률 계산식(43,751÷54,229=80.7%) facts [12]에 추가, 관문 ②~⑥ 통과(scriptnum 0개·humanlike 본문 차이 없음·제미나이 현재판 틀림 0·제목 1위 근거 유지). 기록 ep/E-1/script.md 머리·check/applied.md (firemap-e1-q4)",
@@ -866,6 +966,7 @@
    {
     "title": "막힘 (총무·인사팀 2026-09-30 23:39 실측 — 상세 admin/tools.md)",
     "items": [
+     "(youtube-loop 10/1 07:40) F2 유튜브 쿠팡: 쿠팡 파트너스 본인인증(사장님) + 유튜브 설명 수정 권한 구글 동의(py -3.12 work/f2_coupang.py auth) 필요. 준비물은 F2 줄 아래.",
      "주의(영상 PD 06:53): PD가 자기 작업을 멈추려다 taskkill /IM py.exe·python.exe /T로 이 PC의 파이썬 전체를 06:53에 끝냈다. 그 시각에 돌던 다른 직원의 파이썬 작업(발행·측정 등)이 중간에 끊겼을 수 있다 — 06:50~06:55 사이 실행분은 결과를 확인하고 필요하면 다시 돌린다. 앞으로 PD는 자기 작업 번호(PID)만 끝낸다.",
      "제미나이 이미지: 429. 공식 가격표상 이미지 모델엔 무료 등급이 아예 없다 → 기다려도 안 풀림. 유료만 답(결재함에 가격 채움).",
      "Mobbin: 로그인 문제가 아니라 유료 요금제 필요(MCP 응답). 결재함.",
@@ -881,6 +982,11 @@
   ],
   "blocked_commits": [
    {
+    "at": "10-01 07:19",
+    "who": "유튜브·카페 총괄",
+    "text": "F2 쿠팡 설명란 적용 도구·계획·백업 준비(쿠팡 본인인증·수정 권한 막힘)"
+   },
+   {
     "at": "10-01 01:32",
     "who": "순돌이",
     "text": "연봉 계산기 배포·호출 구조 실패 기록"
@@ -892,8 +998,8 @@
    },
    {
     "at": "10-01 00:11",
-    "who": "기타",
-    "text": "dispatch: 2026-10-01 00:11 막힘(호출 도구 무인 차단)"
+    "who": "운영실장",
+    "text": "2026-10-01 00:11 막힘(호출 도구 무인 차단)"
    },
    {
     "at": "09-30 22:04",
@@ -914,11 +1020,6 @@
     "at": "09-30 16:15",
     "who": "디자인 개선",
     "text": "퇴직금 계산기 디자인 리뷰(고칠 점 4개 product-log), 일감1 막힘, 남은 차이 없음, 끊긴 격자 시험값 복구"
-   },
-   {
-    "at": "09-30 11:40",
-    "who": "제품 개발",
-    "text": "배포 푸시 막힘 기록·결재 요청"
    }
   ],
   "stop_switches": [
@@ -927,67 +1028,75 @@
  },
  "decisions": [
   {
-   "at": "10-01 07:00",
+   "at": "10-01 07:25",
    "who": "순돌이",
-   "what": "수익 계측 장치 긴급 지시(growth, 10/2), 쿠팡 링크 쇼츠 오늘부터·계산기 10/3으로 앞당김, 애드센스 재심사 대비 담당 product-dev",
-   "why": "레드팀 빠진 것 상위 3"
+   "what": "신사업본부 확장: 해외·국내 시장조사원 채용(즉시 출근), 빌더 채용(07:2x), 속도 규칙 하루 1실험·작은 실험 1주 판정, 계산기·도구 절반 이하",
+   "why": "사장님 \"계산기에만 목매달고 있나, 시장조사 왜 안 하나\""
   },
   {
-   "at": "10-01 07:00",
-   "who": "순돌이",
-   "what": "레드팀 사후 검토 반영: 1순위 규칙은 '담당이 나인 지시만+착수 표시'로 고침(꺼진 작업 3개에서 제거), 운영실장 최대 2명·주간 75% 차단·착수 선점, '차이 없음/근거 없음'은 실측했으면 정상 종료, 26명 문서 4개 쓰기 규칙 취소(회의 roadmap 실적 줄만 유지), X-OPS 지표에 방문자·클릭 추가",
-   "why": "레드팀: 중복 처리·git 충돌·지어내기 유도·47KB 읽기 부담"
+   "at": "10-01 07:25",
+   "who": "designer",
+   "what": "완료: [지시] Claude Design 시험 07:25",
+   "why": "design/salary-result/compare.md"
   },
   {
-   "at": "10-01 06:50",
-   "who": "순돌이",
-   "what": "직원 26명에 로드맵·실험 장부·교훈·교본 쓰기 규칙, 회의가 roadmap.md에 매일 실적 줄",
-   "why": "20명 로드맵 미참조, 교훈·실험은 순돌이만 적음"
+   "at": "10-01 07:25",
+   "who": "designer",
+   "what": "연봉 결과 화면 A안 채택+B의 80/100/120% 칩",
+   "why": "심사 A 2:B 1, 칩은 경쟁 5곳에 없는 이길 점 ①"
   },
   {
-   "at": "10-01 06:41",
-   "who": "순돌이",
-   "what": "비교 루프 '남은 차이 없음' 금지, 글 규칙 24시간 무갱신=헛돎, 운영실장이 두 루프 감시",
-   "why": "9/30 loop 3회 연속 무차이·rules.json 9/29 이후 무갱신"
+   "at": "10-01 07:25",
+   "who": "designer",
+   "what": "X-TOOL-1 1회차: Claude Design 기본 도구 보류, 보조(여러 안 보여 주기·시제품)만",
+   "why": "심사 평균 5.2 vs 7.8, 무인 세션 열람 불가, 글꼴 상한 1MB로 Pretendard 불가"
   },
   {
-   "at": "10-01 06:38",
-   "who": "순돌이",
-   "what": "직원 운영 방식 실험 X-OPS-1~3 등록",
-   "why": "사장님 \"직원 부리는 것도 실험하며 멈추지 말라\""
+   "at": "10-01 07:23",
+   "who": "firemap-product-dev",
+   "what": "[지시·긴급] 계산기 주소 첫 화면 추락 수정·운영 배포(edebf22)",
+   "why": "원인=주소 끝 해시(#home)가 도구 경로를 이김, 운영 재현 후 처음 열 때 도구 경로 우선으로 고침, 운영 10가지 상태 확인"
   },
   {
-   "at": "10-01 04:50",
-   "who": "순돌이",
-   "what": "운영실장 재가동, 호출을 Agent(에이전트 투입)로",
-   "why": "run_scheduled_task는 무인 세션에서 막힘, Agent는 04:47 작동 확인 · 참모 검토 없이 결정 → 레드팀 사후 검토 요청"
-  },
-  {
-   "at": "10-01 04:40",
-   "who": "순돌이",
-   "what": "전 직원 지시문 맨 앞에 'today.md 지시 1순위' 규칙",
-   "why": "근거였던 'PD 누락'은 틀린 진단(교훈 8). 규칙 자체는 유지하되 X-OPS-2에서 효과를 잰다"
-  },
-  {
-   "at": "10-01 06:43",
-   "who": "firemap-e1-q4",
-   "what": "E-1 Q4 원문 재대조·관문 ②~⑥ 통과 확인, 제미나이 오해 소지 3건 유지",
-   "why": "틀림 0, 유지 이유는 check/applied.md"
-  },
-  {
-   "at": "10-01 05:25",
+   "at": "10-01 07:40",
    "who": "youtube-loop",
-   "what": "A-1에 13:42 안내 댓글 게시(계산기 utm medium=comment)",
-   "why": "회의 배정, 고정은 무인 크롬 메뉴 오류로 실패 → 채팅 세션 C11"
+   "what": "F2 대상에서 공개 쇼츠 4편 제외(롱폼 7편만)",
+   "why": "쇼츠 설명 URL 클릭 불가(YouTube 13748639)라 수익 0·유료 광고 표시만 붙음, 주담대 쇼츠는 대출 주제 금지 — 순돌이가 뒤집으면 f2_plan.json skip 삭제"
   },
   {
-   "at": "10-01 05:20",
+   "at": "10-01 07:40",
    "who": "youtube-loop",
-   "what": "E-1 새 장은 Claude 초안 채택, 제미나이 초안 불채택",
-   "why": "제미나이 초안이 'DX 비상'·'결국 줄었다'로 보고서에 없는 인과를 단정하고 반기 vs 연간을 감소로 읽히게 씀"
+   "what": "F2 링크 적용 보류(막힘), 적용 도구·계획·백업만 준비",
+   "why": "쿠팡 전 메뉴 본인인증 요구로 유튜브 매체 등록 확인·링크 발급 불가(미등록 매체 링크=제재 A등급), 설명 수정 권한(force-ssl) 토큰 없음"
+  },
+  {
+   "at": "10-01 07:20",
+   "who": "firemap-video-producer",
+   "what": "E-1 쿠팡 안 붙임",
+   "why": "주식 종목 주제(금융 주제 제외 규칙)"
+  },
+  {
+   "at": "10-01 07:20",
+   "who": "firemap-video-producer",
+   "what": "E-1 업로드 이번 회차 안 함, 예약 목표 10/3 19:30 유지",
+   "why": "목소리 1문장 남음(관문 '목소리 없는 문장')"
+  },
+  {
+   "at": "10-01 07:20",
+   "who": "firemap-video-producer",
+   "what": "lfvoice에 readback·fixcut·cutat 추가, RULES 목소리 규칙 4(받아쓰기 대조)",
+   "why": "TTS가 지시문을 읽고 문장 파일이 밀린 사고(lessons 9)"
   }
  ],
  "experiments": [
+  {
+   "id": "X-TOOL-1",
+   "what": "디자인 도구",
+   "ab": "Figma·코드 시안 vs Claude Design(Design 캔버스+Design System)",
+   "metric": "심사 3명 평균, 시안까지 걸린 시간, 배포 뒤 클릭·체류",
+   "period": "1주",
+   "due": "2026-10-08  1회차 10/1 07:25: Claude Design 5.2 vs 코드 시안 7.8(제미나이 5/8·GPT 6.5/8.5·레드팀 4/7), 무인 세션 열람 불가·글꼴 1MB 상한 → 기본 도구 보류, 보조(여러 안 보여 주기)만. design/salary-result/compare.md"
+  },
   {
    "id": "X-OPS-1",
    "what": "직원 부리는 방식 ① 투입 방식",

@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 import { TOOL_PAGES } from '../src/firemap-v2/toolPages.js';
 
 const INPUTS = { currentAge: 34, targetRetirementAge: 50, financialAsset: 150000000, monthlyInvestment: 1500000, monthlyLivingCost: 2500000 };
-const SCREENS = ['#home', '#question', '#result', '#experiment', '#ranking', '#menu', '#settings', '#account', '#cities', '#firetype', '#dependent', '#foreignTax', '#dividend', '#pension', '#severance', '#unemployment', '#news', '#wall'];
+const SCREENS = ['#home', '#question', '#result', '#experiment', '#ranking', '#menu', '#settings', '#account', '#cities', '#firetype', '#dependent', '#foreignTax', '#dividend', '#pension', '#severance', '#unemployment', '#salary', '#news', '#wall'];
 
 async function seed(page, seeded = true) {
   await page.addInitScript(({ inp, seeded }) => {
@@ -161,6 +161,25 @@ test.describe('firemap smoke', () => {
       await expect(page.locator('main.fm-screen'), `${path} 기준일`).toContainText('기준 · 참고용, 실제와 다를 수 있어요');
       await expect(page.locator('main.fm-screen a[href="/disclaimer"]')).toHaveCount(1);
     }
+  });
+
+  test('salary take-home: hand-check A, crawler text is on screen, next step to fire', async ({ page }) => {
+    const bodies = [];
+    await page.route('**/rest/v1/firemap_events', async (route) => { try { bodies.push(JSON.parse(route.request().postData() || '{}')); } catch { /* ignore */ } await route.fulfill({ status: 201, body: '' }); });
+    await seed(page);
+    await page.goto('/calc/salary');
+    const hero = page.locator('main.fm-screen');
+    // 손검산 A(work/test-salary.mjs): 연봉 4,000만·비과세 20만·본인 1·자녀 0·100% — 사람인·잡코리아·인크루트와 줄마다 대조
+    await expect(hero).toContainText('2,935,813원');
+    await expect(hero).toContainText('84,620원');
+    await expect(hero).toContainText('112,640원');
+    const tool = TOOL_PAGES.find((t) => t.path === '/calc/salary');
+    const screenText = (await hero.innerText()).replace(/\s+/g, ' ');
+    for (const b of tool.body.slice(1)) expect(screenText, `crawler text on screen: ${b.slice(0, 20)}`).toContain(b);
+    await page.getByRole('button', { name: '은퇴 나이 계산' }).click();
+    await page.waitForTimeout(500);
+    expect(bodies.some((b) => b.event === 'salary_to_fire'), 'salary_to_fire 이벤트').toBe(true);
+    expect(await page.evaluate(() => window.location.hash)).toBe('#result');
   });
 
   test('copy rules: no 합니다/하세요, no banned system words', async ({ page }) => {

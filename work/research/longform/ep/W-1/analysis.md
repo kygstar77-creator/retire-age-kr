@@ -123,6 +123,6 @@ ytbreak.py(gemini-3-flash-preview, 오늘 6편째로 하루 한도 도달). 원�
 
 ## 다음 회차가 할 일
 - ③ 채우기(ytbreak 결과) → ⑥ 확정
-- series-plan 9-2에 일요일 변경 한 줄, 경쟁 두 편 댓글 분류, weekly_facts.py 만들기, X3D8NVks04w 쪼개기 이어서(내일 한도)
+- (완료 10/1 04:58 루프 8회차: weekly_facts.py — FRED 8개+ECOS 2개, 9/25 주로 시험 통과, 지연 지표에 ※ 표시) series-plan 9-2에 일요일 변경 한 줄, 경쟁 두 편 댓글 분류, X3D8NVks04w 쪼개기 이어서(내일 한도)
 - 10/5 월요일 week 파일에서 W-1 최종 편성
 - 10/7~8: 그 주 숫자 facts.txt → 대본

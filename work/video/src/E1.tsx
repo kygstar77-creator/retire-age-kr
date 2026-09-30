@@ -1,11 +1,12 @@
 // E-1 "메모리 3사 — 이익은 몇 배, 주가는 얼마나 흔들렸나" — 재료: work/video/e1.json(ep/E-1/e1props.py가 script.md·voice.json·원자료로 만든다)
-// 장면 종류 13가지(선+낙폭 음영·목록·같은 출발점 선·낙폭 막대+달력 띠·작은 막대 3폭·이익률 선·쌍 막대·카운터+표·원문 카드+범위 띠·일정 카드·
+// 장면 종류 20가지(10/1 v1 추가: 마이크론 8분기 큰 막대·전망 범위 띠·사업부 전후 막대·삼성 DS 반기 vs 연간+도넛·SK 계단·원문 카드 2장·저울·전망 점선 막대 / 선+낙폭 음영·목록·같은 출발점 선·낙폭 막대+달력 띠·작은 막대 3폭·이익률 선·쌍 막대·카운터+표·원문 카드+범위 띠·일정 카드·
 // 입력 카드·나이 막대·정리 표). 숫자는 전부 e1.json에서 온다(코드 안에는 눈금·배치 값만). 단계 시점은 data.at(문장 번호, 못 찾으면 −1=안 나옴).
 import React from 'react';
 import {AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame} from 'remotion';
 import {scaleLinear} from 'd3-scale';
 import {line as d3line, curveMonotoneX} from 'd3-shape';
 import {T, F, CL, FONT_CSS, VScene, at, appear, HandCircle, CountUp, Caption, Page, LogoSting, ProgressRail} from './parts/fm';
+import {BarSeries, RangeDot, PairBars, Donut, Seesaw, QuoteCard, Stairs} from './parts/charts';
 
 export type E1Props = {fps: number; scenes: VScene[]; missing: number; holes: number};
 export const e1Frames = (p: E1Props) => p.scenes.reduce((a, s) => a + s.frames, 0);
@@ -49,8 +50,8 @@ const Open: React.FC<S> = ({s}) => {
         <div style={{...F, fontWeight: 700, fontSize: 44, color: T.dink3}}>그 안의 최대 낙폭</div>
         <div style={{...F, fontWeight: 700, fontSize: 128, color: '#6f9cf0', lineHeight: 1.1}}><CountUp to={p.dd} p={dn} digits={1} />%</div>
       </div>
-      <div style={{...F, fontWeight: 700, fontSize: 36, color: T.dink, position: 'absolute', left: 1230, top: 740, opacity: Math.max(q4, qs), background: T.dsurface, borderRadius: 16, padding: '14px 26px'}}>
-        {qs > q4 ? '이익은 주가만큼 늘었을까?' : '+ 마이크론 회계 4분기 실적'}</div>
+      <div style={{...F, fontWeight: 700, fontSize: 30, color: T.dink, position: 'absolute', left: 1230, top: 740, opacity: Math.max(q4, qs), background: T.dsurface, borderRadius: 16, padding: '14px 24px', whiteSpace: 'nowrap'}}>
+        {qs > q4 ? '이익은 주가만큼 늘었을까?' : (s.data.q4 || '+ 마이크론 회계 4분기 실적')}</div>
       <div style={{...F, fontWeight: 500, fontSize: 22, color: T.dink3, position: 'absolute', left: 120, bottom: 20}}>출처 {s.source}</div>
       <Caption s={s} dark />
     </AbsoluteFill>
@@ -122,7 +123,124 @@ const DateBand: React.FC<{s: VScene; cos: any[]; start: number}> = ({cos, start}
   );
 };
 
-// ───── 3. 여덟 분기 매출 — 작은 막대 3폭 ─────
+// ───── 3a. 마이크론 여덟 분기 매출 — 큰 막대 하나(1년 전 테두리) + 14주 꼬리표 ─────
+const Mu8: React.FC<S> = ({s}) => {
+  const f = useCurrentFrame(); const d = s.data; const p = appear(f, 8, 40); const b = appear(f, A(s, 2)); const w = appear(f, A(s, 3));
+  return (
+    <P s={s}>
+      <BarSeries x={240} y={800} w={1180} h={470} vals={d.rev} labels={d.q} p={p} color={T.ink} hi={[7]} ring={[3]} />
+      <div style={{...F, position: 'absolute', left: 1480, top: 300, opacity: b}}>
+        <div style={{fontWeight: 700, fontSize: 34, color: T.ink3}}>1년 전 같은 분기의</div>
+        <div style={{fontWeight: 700, fontSize: 120, color: T.accent, lineHeight: 1.1}}><CountUp to={d.revx} p={b} digits={2} />배</div></div>
+      <div style={{...F, position: 'absolute', left: 1480, top: 560, opacity: w, background: T.surface, borderRadius: 16, padding: '20px 26px', width: 400}}>
+        <div style={{fontWeight: 700, fontSize: 34, color: T.ink}}>{`이번 분기 ${d.weeks[0]}주`}</div>
+        <div style={{fontWeight: 500, fontSize: 28, color: T.ink2, marginTop: 6}}>{`1년 전 분기 ${d.weeks[1]}주 — 한 주 더`}</div>
+        <div style={{fontWeight: 500, fontSize: 22, color: T.ink3, marginTop: 6}}>분기 끝 날짜로 계산</div></div>
+    </P>
+  );
+};
+
+// ───── 3b. 회사 전망(6월) 범위 띠 위에 실제 매출 점 ─────
+const Guide: React.FC<S> = ({s}) => {
+  const f = useCurrentFrame(); const d = s.data;
+  return (
+    <P s={s}>
+      <RangeDot x0={260} x1={1660} y={580} dom={[460, 560]} lo={d.lo} hi={d.hi} act={d.act} pBand={appear(f, 10, 20)} pDot={appear(f, 50, 30)} unit="억$"
+        bandLabel="회사 전망(2026년 6월)" actLabel={`실제 ${d.act.toFixed(1)}억$`} />
+    </P>
+  );
+};
+
+// ───── 3c. 마이크론 사업부 4개 — 1년 전 vs 이번 분기 ─────
+const Seg: React.FC<S> = ({s}) => {
+  const f = useCurrentFrame(); const rows = s.data.rows;
+  return (
+    <P s={s}>
+      <PairBars x={200} y={280} w={960} rows={rows} p={rows.map((_: any, i: number) => appear(f, 8 + i * 14, 24))} hi={0} tags={['1년 전 같은 분기', '이번 분기']} />
+    </P>
+  );
+};
+
+// ───── 3e. 삼성전자 DS 부문 — 2025년 12개월 vs 2026년 상반기 6개월 + 97.4% 도넛 ─────
+const DsDx: React.FC<S> = ({s}) => {
+  const f = useCurrentFrame(); const d = s.data; const pa = appear(f, A(s, 2) === NEVER ? 10 : A(s, 2), 24), pb = appear(f, A(s, 1) === NEVER ? 10 : A(s, 1), 24);
+  const po = appear(f, A(s, 3), 24), dn = appear(f, A(s, 4), 30);
+  const jo = (v: number) => `${Math.floor(v / 10000)}조 ${(v % 10000).toLocaleString()}억`;
+  const grp = (x: number, title: string, a: number, b: number, qa: number, qb: number, mult: string) => {
+    const mx = Math.max(a, b) * 1.1; const H = 400, base = 800;
+    return <g>
+      <text x={x + 170} y={290} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={38} fill={T.ink}>{title}</text>
+      <rect x={x} y={base - (a / mx) * H * qa} width={150} height={(a / mx) * H * qa} rx={8} fill={T.line} stroke={T.ink3} strokeWidth={2} />
+      <rect x={x + 190} y={base - (b / mx) * H * qb} width={150} height={(b / mx) * H * qb} rx={8} fill={T.accent} />
+      <text x={x + 75} y={base - (a / mx) * H * qa - 14} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={26} fill={T.ink} opacity={qa}>{jo(a)}</text>
+      <text x={x + 265} y={base - (b / mx) * H * qb - 14} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={28} fill={T.accent} opacity={qb}>{jo(b)}</text>
+      <text x={x + 75} y={base + 36} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={24} fill={T.ink2}>2025년 12개월</text>
+      <text x={x + 265} y={base + 36} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={24} fill={T.accent}>2026년 상반기 6개월</text>
+      <g opacity={Math.min(qa, qb)}><rect x={x + 90} y={310} width={160} height={56} rx={28} fill={T.ink} />
+        <text x={x + 170} y={349} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={32} fill="#fff">{mult}</text></g>
+    </g>;
+  };
+  return (
+    <P s={s}>
+      <svg width={1920} height={1080} style={{position: 'absolute'}}>
+        <line x1={180} x2={1320} y1={800} y2={800} stroke={T.ink3} strokeWidth={2} />
+        {grp(200, 'DS 매출', d.rev[0], d.rev[1], pa, pb, `${(d.rev[1] / d.rev[0]).toFixed(2)}배`)}
+        {grp(800, 'DS 영업이익', d.op[0], d.op[1], po, po, `${(d.op[1] / d.op[0]).toFixed(2)}배`)}
+      </svg>
+      <Donut cx={1600} cy={500} r={150} v={d.share} p={dn} label="회사 영업이익 중 DS 몫" />
+    </P>
+  );
+};
+
+// ───── 3f. SK하이닉스 해마다 매출 계단 ─────
+const StairsV: React.FC<S> = ({s}) => {
+  const f = useCurrentFrame(); const d = s.data;
+  return (
+    <P s={s}>
+      <Stairs x={300} y={820} w={1300} h={440} rows={d.rows} p={d.rows.map((_: any, i: number) => appear(f, 6 + i * 16, 24))} tag={`반년 만에 작년의 ${d.x}배`} tagP={appear(f, 70)}
+        fmt={(v) => `${Math.floor(v / 10000)}조 ${(v % 10000).toLocaleString()}억`} />
+    </P>
+  );
+};
+
+// ───── 3-1a. 원문 카드 2장(삼성 +220%, SK하이닉스 D램·낸드) ─────
+const Quotes2: React.FC<S> = ({s}) => {
+  const f = useCurrentFrame(); const c = s.data.cards;
+  return (
+    <P s={s}>
+      {c.map(([src, body, big]: string[], i: number) => <QuoteCard key={i} x={200 + i * 800} y={260} w={740} h={470} o={appear(f, A(s, i + 1) === NEVER ? 10 + i * 40 : A(s, i + 1), 18)} src={src} body={body} big={big} />)}
+    </P>
+  );
+};
+
+// ───── 3-1b. 저울 — 파는 쪽 DS vs 사는 쪽 DX ─────
+const Scale: React.FC<S> = ({s}) => {
+  const f = useCurrentFrame(); const d = s.data; const tilt = appear(f, A(s, 2), 36); const mid = appear(f, A(s, 1), 20); const note = appear(f, A(s, 4), 20);
+  const jo = (v: number) => `${Math.floor(v / 10000)}조 ${(v % 10000).toLocaleString()}억원`;
+  return (
+    <P s={s}>
+      <Seesaw cx={960} cy={470} L={['DS(메모리 파는 쪽)', jo(d.op[1])]} R={['DX(메모리 사는 쪽)', jo(d.dx_op[1])]} ratio={1} p={tilt}
+        mid={['메모리 판매가격 +220%', '모바일 메모리 매입가 +211%']} midP={mid} />
+      <div style={{...F, fontWeight: 700, fontSize: 28, color: T.ink2, position: 'absolute', right: 140, top: 236, background: T.surface, borderRadius: 14, padding: '12px 22px', opacity: tilt}}>
+        {`DX 몫 ${d.dx_share}% · 작년 한 해 DX ${jo(d.dx_op[0])}`}</div>
+      <div style={{...F, fontWeight: 700, fontSize: 26, color: T.ink3, position: 'absolute', right: 150, top: 580, opacity: note}}>DX 이익 감소가 메모리 값 때문인지는 보고서로 나눌 수 없음</div>
+    </P>
+  );
+};
+
+// ───── 8a. 마이크론 분기 매출 + 다음 분기 회사 전망(점선·오차 막대) ─────
+const Outlook: React.FC<S> = ({s}) => {
+  const f = useCurrentFrame(); const d = s.data;
+  return (
+    <P s={s}>
+      <BarSeries x={240} y={800} w={1400} h={460} vals={d.rev} labels={d.q} p={appear(f, 4, 30)} color={T.ink} hi={[7]} est={[d.next, d.pm]} estP={appear(f, 40, 30)} estLabel="다음 분기 전망" />
+      <div style={{...F, fontWeight: 700, fontSize: 28, color: T.ink2, position: 'absolute', left: 240, top: 250, background: T.soft, borderRadius: 14, padding: '10px 22px', opacity: appear(f, A(s, 1))}}>
+        다음 실적 발표 날짜: 보도자료에 없음</div>
+    </P>
+  );
+};
+
+// ───── 3d. 세 회사 여덟 분기 매출 — 작은 막대 3폭 ─────
 const Revenue: React.FC<S> = ({s}) => {
   const f = useCurrentFrame(); const cos = s.data.cos; const W = 500, gap = 60, x0 = 200;
   return (
@@ -134,7 +252,7 @@ const Revenue: React.FC<S> = ({s}) => {
           <div key={c.name} style={{position: 'absolute', left: x0 + k * (W + gap), top: 0, width: W, height: 1080, opacity: Math.max(appear(f, 6 + k * 8), 0)}}>
             <div style={{...F, fontWeight: 700, fontSize: 38, color: CO[c.name], position: 'absolute', top: 240}}>{c.name}</div>
             <div style={{...F, fontWeight: 500, fontSize: 22, color: T.ink3, position: 'absolute', top: 290}}>{c.unit}</div>
-            <svg width={W} height={1080} style={{position: 'absolute', left: 0, top: 0}}>
+            <svg width={W} height={1080} style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}}>
               {c.rev.map((v: number, i: number) => { const h = (v / mx) * H * o; const last = i === 7, yago = i === 3;
                 return <g key={i}>
                   <rect x={i * (W / 8)} y={base - h} width={bw} height={h} rx={6} fill={last ? CO[c.name] : T.line} stroke={yago ? T.ink : 'none'} strokeWidth={yago ? 4 : 0} />
@@ -155,27 +273,29 @@ const Revenue: React.FC<S> = ({s}) => {
 
 // ───── 4. 이익률 선 3개(8분기) ─────
 const Margin: React.FC<S> = ({s}) => {
-  const f = useCurrentFrame(); const cos = s.data.cos; const X0 = 240, X1 = 1420, Y0 = 820, Y1 = 250;
-  const x = scaleLinear().domain([0, 7]).range([X0, X1]); const y = scaleLinear().domain([0, 100]).range([Y0, Y1]);
-  const order = [0, 2, 3];
+  const f = useCurrentFrame(); const cos = s.data.cos; const X0 = 240, X1 = 1330, Y0 = 820, Y1 = 250;
+  const x = scaleLinear().domain([0, 8]).range([X0, X1]); const y = scaleLinear().domain([0, 100]).range([Y0, Y1]);
+  const order = [0, 2, 3]; const ser = (c: any) => (c.margin9 || c.margin) as number[];
   const coin = appear(f, A(s, 1), 20); const back = appear(f, A(s, 4), 24);
   return (
     <P s={s}>
       <svg width={1920} height={1080} style={{position: 'absolute'}}>
         {[0, 20, 40, 60, 80, 100].map((g) => <g key={g}><line x1={X0} x2={X1} y1={y(g)} y2={y(g)} stroke={T.line} strokeWidth={2} />
           <text x={X0 - 16} y={y(g) + 9} textAnchor="end" fontFamily="PD" fontWeight={500} fontSize={24} fill={T.ink3}>{g}%</text></g>)}
-        {cos.map((c: any, k: number) => { const st = A(s, order[k]); const p = appear(f, st === NEVER ? 20 + k * 30 : st, 36); const m = Math.max(2, Math.round(8 * p));
-          const d = d3line<number>().x((_, i) => x(i)).y((v) => y(v)).curve(curveMonotoneX)(c.margin.slice(0, m)) || '';
+        {cos.map((c: any, k: number) => { const st = A(s, order[k]); const p = appear(f, st === NEVER ? 20 + k * 30 : st, 36); const M = ser(c); const N = M.length; const m = Math.max(2, Math.round(N * p));
+          const d = d3line<number>().x((_, i) => x(i)).y((v) => y(v)).curve(curveMonotoneX)(M.slice(0, m)) || '';
           return <g key={c.name} opacity={Math.min(1, p * 3)}>
             <path d={d} stroke={CO[c.name]} strokeWidth={c.name === '마이크론' ? 7 : 4.5} fill="none" />
-            {[3, 7].filter((i) => i < m).map((i) => <circle key={i} cx={x(i)} cy={y(c.margin[i])} r={9} fill={CO[c.name]} />)}
-            {m === 8 ? <text x={X1 + 20} y={y(c.margin[7]) + 12 + (c.name === 'SK하이닉스' ? 18 : c.name === '마이크론' ? -14 : 0)} fontFamily="PD" fontWeight={700} fontSize={34} fill={CO[c.name]}>{`${c.name} ${c.margin[7]}%`}</text> : null}
+            {[N - 5, N - 1].filter((i) => i < m).map((i) => <g key={i}><circle cx={x(i)} cy={y(M[i])} r={9} fill={CO[c.name]} />
+              {i === N - 5 ? <text x={x(i)} y={y(M[i]) + (c.name === '마이크론' ? -22 : 44)} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={26} fill={CO[c.name]}>{M[i]}%</text> : null}</g>)}
+            {m === N ? <text x={x(N - 1) + 22} y={y(M[N - 1]) + 12 + (c.name === 'SK하이닉스' ? 20 : c.name === '마이크론' ? -16 : 0)} fontFamily="PD" fontWeight={700} fontSize={32} fill={CO[c.name]}>{`${c.name} ${M[N - 1]}%`}</text> : null}
           </g>; })}
-        {cos[0].q.map((q: string, i: number) => <text key={i} x={x(i)} y={Y0 + 36} textAnchor="middle" fontFamily="PD" fontWeight={500} fontSize={20} fill={T.ink3}>{q}</text>)}
-        <g opacity={back}><HandCircle cx={x(0) + 20} cy={y(cos[0].margin[0])} rx={60} ry={40} p={back} />
-          <text x={X0 + 20} y={Y1 + 60} fontFamily="PD" fontWeight={700} fontSize={32} fill={T.accent}>{`마이크론 ${cos[0].margin[0]}% (${cos[0].q[0]})`}</text></g>
+        {(cos[0].q9 || cos[0].q).map((q: string, i: number) => <text key={i} x={x(i)} y={Y0 + 34} textAnchor="middle" fontFamily="PD" fontWeight={500} fontSize={20} fill={T.ink}>{q}</text>)}
+        {cos[1].q.map((q: string, i: number) => <text key={'k' + i} x={x(i)} y={Y0 + 60} textAnchor="middle" fontFamily="PD" fontWeight={500} fontSize={18} fill={T.ink3}>{q}</text>)}
+        <g opacity={back}><HandCircle cx={x(0)} cy={y(ser(cos[0])[0])} rx={60} ry={40} p={back} />
+          <text x={X0 + 20} y={Y1 + 60} fontFamily="PD" fontWeight={700} fontSize={32} fill={T.accent}>{`마이크론 ${ser(cos[0])[0]}% (${(cos[0].q9 || cos[0].q)[0]}) → ${ser(cos[0]).slice(-1)[0]}%`}</text></g>
       </svg>
-      <Card x={1480} y={560} w={380} h={200} o={coin} bg={T.soft}>
+      <Card x={1540} y={600} w={340} h={200} o={coin} bg={T.soft}>
         <div style={{...F, fontWeight: 700, fontSize: 36, color: T.ink, padding: '34px 30px', lineHeight: 1.4}}>100원 팔면<br /><span style={{color: T.accent, fontSize: 56}}>약 80원</span> 남음</div>
       </Card>
     </P>
@@ -346,7 +466,10 @@ const View: React.FC<S> = ({s}) => {
     case 'open': return <Open s={s} />; case 'logo': return <LogoSting sub={s.data.sub} />; case 'agenda': return <Agenda s={s} />;
     case 'price': return <Price s={s} />; case 'revenue': return <Revenue s={s} />; case 'margin': return <Margin s={s} />; case 'twin': return <Twin s={s} />;
     case 'form4': return <Form4 s={s} />; case 'risk': return <Risk s={s} />; case 'calendar': return <Calendar s={s} />; case 'age': return <Age s={s} />;
-    case 'summary': return <Summary s={s} />; default: return <Bullets s={s} />;
+    case 'summary': return <Summary s={s} />;
+    case 'mu8': return <Mu8 s={s} />; case 'guide': return <Guide s={s} />; case 'seg': return <Seg s={s} />; case 'dsdx': return <DsDx s={s} />;
+    case 'stairs': return <StairsV s={s} />; case 'quotes2': return <Quotes2 s={s} />; case 'scale': return <Scale s={s} />; case 'outlook': return <Outlook s={s} />;
+    default: return <Bullets s={s} />;
   }
 };
 

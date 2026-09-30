@@ -2,6 +2,9 @@
 #   py -3.12 work/lfvoice.py plan  <ep폴더> [--maxreq 9]   # 요청 묶음만 보여 준다(API 안 부름)
 #   py -3.12 work/lfvoice.py make  <ep폴더> [--maxreq 9]   # 없는 문장만 만든다 → 자르기 → 느린 문장 atempo → voice.json
 #   py -3.12 work/lfvoice.py check <ep폴더>                 # 편 전체 말 속도·음높이 일관성 검사(공개 전 필수, 규칙 3)
+#   py -3.12 work/lfvoice.py cutat <ep폴더> <묶음번호> 6.7,19.0,...  # 자르기 실패 묶음을 받아쓰기로 확인한 문장 시작 시각으로 자른다(API 안 부름)
+#   py -3.12 work/lfvoice.py fixcut <ep폴더> <묶음번호> [--dry]  # 조각마다 받아써서 대본 문장에 맞춰 자른다(지시문 읽은 앞머리 버림) — 공개 전 받아쓰기 대조에서 어긋나면
+#   py -3.12 work/lfvoice.py readback <ep폴더> [3:6,12:0]  # 공개 전 필수: 문장마다 받아써 숫자 대조·지시문 앞머리 의심 찾기(lessons 9)
 # 규칙 1: 모델·목소리는 ep/tts.json에 처음 한 번 적고 잠근다. 429여도 다른 모델로 넘어가지 않고 멈춘다(다음 날 같은 모델로 이어서).
 # 규칙 2: 문장별 말 속도(0.6초 넘는 쉼 뺀 초당 음절) 5.6 밑이면 atempo(음높이 유지, 최대 1.25배)로 6.8에 맞춘다. 8.2 넘으면 표시.
 #         편 전체(대본 음절 ÷ 내레이션 길이) 5.5 이상이어야 check 통과. .slow 통과 없음.
@@ -19,6 +22,21 @@ SAY = [('S&P500', '에스앤피 500'), ('JEPQ', '제피큐'), ('JEPI', '제피')
        ('SEC', '에스이씨'), ('8-K', '에잇케이'), ('10-K', '텐케이'), ('Form 4', '폼 포'), ('DART', '다트'), ('AI', '에이아이'),
        ('%포인트', '퍼센트포인트'), ('%p', '퍼센트포인트')]
 syl = lambda t: len(re.findall('[가-힣0-9]', t))
+
+def nkr(n):   # 정수를 한국어로 읽을 때 음절 수(만 단위, '일십·일백·일천'의 '일'은 읽지 않음)
+    if n == 0: return 1
+    c, u = 0, 0
+    while n:
+        g = n % 10000
+        if g:
+            for d, k in ((g // 1000, 1), (g // 100 % 10, 1), (g // 10 % 10, 1), (g % 10, 0)):
+                if d: c += (0 if (d == 1 and k) else 1) + k
+            if u: c += 1
+        n //= 10000; u += 1
+    return c
+def est(t):   # 자르기용 음절 어림: 숫자는 읽는 길이로, %는 '퍼센트'
+    t = re.sub(r'(\d[\d,]*)(?:\.(\d+))?', lambda m: '가' * (nkr(int(m.group(1).replace(',', ''))) + (1 + len(m.group(2)) if m.group(2) else 0)), t)
+    return len(re.findall('[가-힣A-Za-z]', t.replace('%', '가가가')))
 
 def ffmpeg():
     import imageio_ffmpeg; return imageio_ffmpeg.get_ffmpeg_exe()
@@ -100,7 +118,7 @@ def cut(pcm, texts):
         need, tl = len(texts) - 1, len(pcm)
         if need == 0: return [pcm]
         if len(cand) < need: continue
-        s = [syl(t) for t in texts]; ts = sum(s); tgt = [sum(s[:k + 1]) / ts * tl for k in range(need)]
+        s = [est(t) for t in texts]; ts = sum(s); tgt = [sum(s[:k + 1]) / ts * tl for k in range(need)]
         n, INF = len(cand), float('inf')
         cost = lambda k, c: abs(cand[c][0] - tgt[k]) / tl - 0.002 * cand[c][1]
         best = [[INF] * n for _ in range(need)]; prev = [[-1] * n for _ in range(need)]
@@ -117,6 +135,66 @@ def cut(pcm, texts):
         cuts = sorted(cuts); segs = [pcm[a:b] for a, b in zip([0] + cuts, cuts + [tl])]
         if all(0.6 <= (len(g) / tl) / (x / ts) <= 1.6 for g, x in zip(segs, s)): return segs
     return None
+
+ALIGN_MODELS = ['gemini-3.8-flash', 'gemini-3.7-flash', 'gemini-3.6-flash', 'gemini-3.5-flash', 'gemini-flash-latest']   # 받아쓰기·시각 맞추기용(목소리 모델 아님 — 규칙 1과 무관)
+def align(pcm, texts):
+    # cut()이 실패하면(숫자 많은 문장은 음절 비율이 어긋남) 받아쓰기(문장마다 [초] 표시)로 대본 문장 시작 시각을 찾고,
+    # 0.4초 넘는 쉼 가운데 그 시각에 가장 가까운 것들을 순서대로(DP) 고른다. 모델 시각은 1~2초 틀릴 수 있어 '긴 쉼'만 후보로 둔다.
+    # 10/1 E-1: 모델에게 시각만 받아 가장 가까운 무음에 붙였더니 한 문장씩 밀린 파일이 나왔다(받아쓰기 대조로 발견) → 이 방식으로 바꿈.
+    import io, difflib
+    buf = io.BytesIO()
+    with wave.open(buf, 'wb') as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(np.clip(pcm, -32768, 32767).astype(np.int16).tobytes())
+    body = {'contents': [{'parts': [{'inlineData': {'mimeType': 'audio/wav', 'data': base64.b64encode(buf.getvalue()).decode()}},
+             {'text': 'Transcribe this Korean audio verbatim, one sentence per line, each line starting with its start time in seconds like [12.3].'}]}],
+            'generationConfig': {'temperature': 0}}
+    txt = None
+    for tries in range(3):
+        for m in ALIGN_MODELS:
+            try:
+                r = json.load(urllib.request.urlopen(urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={key()}",
+                    data=json.dumps(body).encode(), headers={'Content-Type': 'application/json'}), timeout=300))
+                txt = r['candidates'][0]['content']['parts'][0]['text']; break
+            except Exception as e: print('  받아쓰기 실패', m, str(e)[:40])
+        if txt: break
+        time.sleep(20)
+    if not txt: return None
+    heard = []
+    for ln in txt.splitlines():
+        mm = re.match(r'\s*\[(?:(\d+):)?(\d+(?:\.\d+)?)\]\s*(.*)', ln)
+        if mm: heard.append(((int(mm.group(1)) * 60 if mm.group(1) else 0) + float(mm.group(2)), re.sub('[^가-힣0-9]', '', mm.group(3))))
+    key8 = lambda t: re.sub('[^가-힣0-9]', '', t)[:10]
+    starts, j = [], 0
+    for t in texts[1:]:                       # 대본 문장 첫머리와 가장 닮은 받아쓰기 줄(순서 유지)
+        best = max(range(j, len(heard)), key=lambda k: difflib.SequenceMatcher(None, key8(t), heard[k][1][:10]).ratio(), default=None)
+        if best is None or difflib.SequenceMatcher(None, key8(t), heard[best][1][:10]).ratio() < 0.5: print('  받아쓰기에서 못 찾음:', t[:20]); return None
+        starts.append(heard[best][0] * SR); j = best + 1
+    m, win = loud_mask(pcm, SR); gaps, i = [], 0
+    while i < len(m):
+        if not m[i]:
+            k = i
+            while k < len(m) and not m[k]: k += 1
+            if i > 0 and k < len(m) and (k - i) * win / SR >= 0.4: gaps.append((i + k) // 2 * win)
+            i = k
+        else: i += 1
+    n, need, INF = len(gaps), len(starts), float('inf')
+    if n < need: return None
+    best = [[INF] * n for _ in range(need)]; prev = [[-1] * n for _ in range(need)]
+    for c in range(n): best[0][c] = abs(gaps[c] - starts[0])
+    for k in range(1, need):
+        run, arg = INF, -1
+        for c in range(n):
+            if c > 0 and best[k - 1][c - 1] < run: run, arg = best[k - 1][c - 1], c - 1
+            if arg >= 0: best[k][c] = run + abs(gaps[c] - starts[k]); prev[k][c] = arg
+    c = min(range(n), key=lambda x: best[need - 1][x])
+    if best[need - 1][c] == INF: return None
+    cuts = []
+    for k in range(need - 1, -1, -1): cuts.append(gaps[c]); c = prev[k][c]
+    cuts = sorted(cuts)
+    if max(abs(a - b) for a, b in zip(cuts, starts)) > 2.0 * SR: print('  받아쓰기 시각과 쉼이 2초 넘게 어긋남'); return None
+    segs = [pcm[a:b] for a, b in zip([0] + cuts, cuts + [len(pcm)])]
+    rates = [est(t) / (len(g) / SR) for t, g in zip(texts, segs)]
+    if not all(3.5 <= r <= 9.5 for r in rates): print('  자른 문장 속도 이상', [round(r, 1) for r in rates]); return None
+    return segs
 
 def tempo(fn, rate):
     # 규칙 2: 5.6 밑이면 6.8에 맞춘다(최대 1.25배). 결과 파일로 바꿔 넣고 배수를 돌려준다.
@@ -163,10 +241,11 @@ def make(ep, maxreq, dry=False):
             except urllib.error.HTTPError as e:
                 msg = e.read().decode(errors='ignore'); stopped = f"{e.code} {'하루 할당량' if 'PerDay' in msg else msg[:120]}"
                 print('  멈춤 —', stopped, '(규칙 1: 다른 모델로 넘어가지 않음)'); continue
-        segs = cut(pcm, todo)
+        segs = cut(pcm, todo) or align(pcm, todo)
         if segs is None: print('  자르기 실패(저장본 있음, 다시 요청 안 함):', todo[0][:20]); continue
         for t, sg in zip(todo, segs): write(wav_of(ep, cfg, t)[1], np.concatenate([pad, sg, pad]))
         print('  묶음 완료', len(todo), '문장')
+        if est(todo[0]) / (len(segs[0]) / SR) < 3.6: print('  ⚠ 첫 문장이 대본보다 훨씬 김 — TTS가 지시문을 읽었을 수 있음 → readback 뒤 fixcut')
     build(ep)
 
 def build(ep):
@@ -211,8 +290,147 @@ def check(ep, vj=None):
     ok = whole >= 5.5 and not bad and not d.get('missing')
     print('통과' if ok else '막힘'); return ok
 
+def cutat(ep, gi, times, maxreq=9):
+    # 받아쓰기로 확인한 문장 시작 시각으로 저장본을 자른다: 시각마다 0.3초 넘는 가장 가까운 쉼(0.8초 안)에 붙인다. API 안 부름.
+    cfg = lock(ep); g = pack(sections(ep), maxreq)[gi]
+    texts = [speak(ep, t) for s in g for t in s['lines']]; todo = [t for t in texts if not os.path.exists(wav_of(ep, cfg, t)[1])]
+    rk = hashlib.md5(('|'.join([cfg['model'], cfg['voice']] + todo)).encode()).hexdigest()[:16]
+    pcm = np.fromfile(os.path.join(aud_dir(ep), '_raw', rk + '.pcm'), dtype=np.int16).astype(np.float32)
+    lead = None
+    if len(times) == len(todo): lead, times = times[0], times[1:]      # 시각이 문장 수만큼이면 첫 값은 '여기부터 대본'(앞부분 버림 — TTS가 지시문을 읽은 경우)
+    assert len(times) == len(todo) - 1, (len(times), len(todo))
+    m, win = loud_mask(pcm, SR); gaps, i = [], 0
+    while i < len(m):
+        if not m[i]:
+            k = i
+            while k < len(m) and not m[k]: k += 1
+            if i > 0 and k < len(m) and (k - i) * win / SR >= 0.3: gaps.append((i + k) // 2 * win)
+            i = k
+        else: i += 1
+    cuts = []
+    for t in times:
+        c = min(gaps, key=lambda x: abs(x - t * SR)); assert abs(c - t * SR) <= 0.8 * SR, f'{t}초 근처에 쉼 없음'; cuts.append(c)
+    assert cuts == sorted(set(cuts))
+    pad = np.zeros(int(SR * 0.08), dtype=np.float32)
+    st = min(gaps, key=lambda x: abs(x - lead * SR)) if lead else 0
+    for t, sg in zip(todo, [pcm[a:b] for a, b in zip([st] + cuts, cuts + [len(pcm)])]): write(wav_of(ep, cfg, t)[1], np.concatenate([pad, sg, pad]))
+    print('  시각으로 자름', len(todo), '문장'); build(ep)
+
+def fixcut(ep, gi, maxreq=9, dry=False):
+    # 받아쓰기 맞춤 자르기(10/1 E-1 사고 뒤 추가): 저장본을 모든 쉼(0.25초+)에서 조각내 조각마다 받아쓰고,
+    # 조각을 대본 문장에 차례대로 붙여(DP, 글자 닮음 최대) 문장 파일을 만든다. 앞머리에 TTS가 읽어 버린 지시문(영어)은 버린다.
+    import io, difflib
+    cfg = lock(ep); g = pack(sections(ep), maxreq)[gi]
+    texts = [speak(ep, t) for s in g for t in s['lines']]
+    rk = hashlib.md5(('|'.join([cfg['model'], cfg['voice']] + texts)).encode()).hexdigest()[:16]
+    pcm = np.fromfile(os.path.join(aud_dir(ep), '_raw', rk + '.pcm'), dtype=np.int16).astype(np.float32)
+    m, win = loud_mask(pcm, SR); cuts, i = [], 0
+    while i < len(m):
+        if not m[i]:
+            k = i
+            while k < len(m) and not m[k]: k += 1
+            if i > 0 and k < len(m) and (k - i) * win / SR >= 0.25: cuts.append((i + k) // 2 * win)
+            i = k
+        else: i += 1
+    bounds = list(zip([0] + cuts, cuts + [len(pcm)]))
+    cache = os.path.join(aud_dir(ep), '_raw', rk + '.chunks.json')
+    heard = json.load(open(cache, encoding='utf-8')) if os.path.exists(cache) else {}
+    for a, b in bounds:
+        kk = f'{a}-{b}'
+        if kk in heard: continue
+        buf = io.BytesIO()
+        with wave.open(buf, 'wb') as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm[a:b].astype(np.int16).tobytes())
+        body = {'contents': [{'parts': [{'inlineData': {'mimeType': 'audio/wav', 'data': base64.b64encode(buf.getvalue()).decode()}},
+                 {'text': 'Transcribe this short audio verbatim (Korean or English). Numbers as digits. Output only the transcript.'}]}], 'generationConfig': {'temperature': 0}}
+        for tries in range(4):
+            got = None
+            for mdl in ['gemini-3.5-flash-lite', 'gemini-flash-lite-latest', 'gemini-3.1-flash-lite', 'gemini-3.5-flash']:
+                try:
+                    r = json.load(urllib.request.urlopen(urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{mdl}:generateContent?key={key()}",
+                        data=json.dumps(body).encode(), headers={'Content-Type': 'application/json'}), timeout=120))
+                    got = r['candidates'][0]['content']['parts'][0].get('text', '').strip(); break
+                except Exception: pass
+            if got is not None: break
+            time.sleep(15)
+        if got is None: print('  조각 받아쓰기 실패 — 멈춤'); return None
+        heard[kk] = got; json.dump(heard, open(cache, 'w', encoding='utf-8'), ensure_ascii=False); time.sleep(1)
+    H = [heard[f'{a}-{b}'] for a, b in bounds]
+    norm = lambda t: re.sub('[^가-힣0-9]', '', t)
+    # 한국어 한 글자도 없는 앞머리 조각 = 지시문 → 버림(앞머리만)
+    lead = 0
+    PROMPTISH = re.compile(r'Read these|Keep a quick|Pause briefly|narration|brisk|in order', re.I)
+    while lead < len(H) and (not re.search('[가-힣]', H[lead]) or PROMPTISH.search(H[lead])): lead += 1
+    last_p = max([j for j in range(min(len(H), 6)) if PROMPTISH.search(H[j])], default=-1)
+    lead = max(lead, last_p + 1)                 # 지시문이 보인 조각까지는 무조건 버린다
+    C = [norm(h) for h in H]; n, L = len(C), len(texts); T = [norm(t) for t in texts]
+    def sim(a, b):   # 맞은 글자 − 남는 글자 절반(쓰레기 조각을 붙이면 손해)
+        M = sum(x.size for x in difflib.SequenceMatcher(None, a, b, autojunk=False).get_matching_blocks()); return M - 0.5 * (len(a) - M) - 0.5 * (len(b) - M)
+    NEG = -1e9; best = [[NEG] * (n + 1) for _ in range(L + 1)]; prv = [[-1] * (n + 1) for _ in range(L + 1)]
+    for s0 in range(lead, min(n, lead + 5)): best[0][s0] = -0.5 * (s0 - lead)   # 앞머리 조각 더 버리기 허용(지시문을 한국어로 잘못 받아쓴 경우)
+    for li in range(1, L + 1):
+        for e in range(lead + 1, n + 1):
+            for s0 in range(max(lead, e - 12), e):
+                if best[li - 1][s0] == NEG: continue
+                v = best[li - 1][s0] + sim(''.join(C[s0:e]), T[li - 1])
+                if v > best[li][e]: best[li][e], prv[li][e] = v, s0
+    if best[L][n] == NEG: print('  맞춤 실패'); return None
+    seg, e = [], n
+    for li in range(L, 0, -1): s0 = prv[li][e]; seg.append((s0, e)); e = s0
+    seg.reverse(); ok = True; lead = seg[0][0]
+    for (s0, e), t, tt in zip(seg, texts, T):
+        got = ''.join(C[s0:e]); r = difflib.SequenceMatcher(None, got, tt).ratio()
+        flag = '' if r >= 0.75 else '  <<< 낮음'
+        if r < 0.75: ok = False
+        print(f'  {r:.2f} [{bounds[s0][0] / SR:.1f}-{bounds[e - 1][1] / SR:.1f}s] {t[:24]} | 들림 {"".join(H[s0:e])[:40]}{flag}')
+    if lead: print(f'  앞머리 {bounds[lead - 1][1] / SR:.1f}초 버림(지시문): {" ".join(H[:lead])[:60]}')
+    if dry or not ok: return ok
+    pad = np.zeros(int(SR * 0.08), dtype=np.float32)
+    for (s0, e), t in zip(seg, texts):
+        write(wav_of(ep, cfg, t)[1], np.concatenate([pad, pcm[bounds[s0][0]:bounds[e - 1][1]], pad]))
+    print('  받아쓰기 맞춤으로 자름', L, '문장'); build(ep); return True
+
+def readback(ep, only=None):
+    # 공개 전 필수(lessons 9): 문장마다 받아써서 대본 숫자와 대조하고, 길이가 대본보다 훨씬 긴 문장(지시문을 읽은 앞머리 의심)을 찾는다.
+    # 숫자가 다르게 들리면 다른 받아쓰기 모델 2개로 더 듣고, 셋 중 둘 이상이 대본과 다를 때만 '다시 만들 문장'으로 적는다.
+    import io
+    v = json.load(open(os.path.join(ep, 'voice.json'), encoding='utf-8')); out, bad = [], []
+    num = lambda t: sorted(re.findall(r'\d+(?:\.\d+)?', re.sub(r'(\d+)천', lambda m: str(int(m.group(1)) * 1000), t.replace(',', ''))))   # '9천'='9000'
+    def tx(fn, mdl):
+        a, sr = read(fn); buf = io.BytesIO()
+        with wave.open(buf, 'wb') as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr); w.writeframes(a.astype(np.int16).tobytes())
+        body = {'contents': [{'parts': [{'inlineData': {'mimeType': 'audio/wav', 'data': base64.b64encode(buf.getvalue()).decode()}},
+                 {'text': 'Transcribe this Korean audio verbatim. Write numbers exactly as spoken using digits.'}]}], 'generationConfig': {'temperature': 0}}
+        for tries in range(3):
+            try:
+                r = json.load(urllib.request.urlopen(urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{mdl}:generateContent?key={key()}",
+                    data=json.dumps(body).encode(), headers={'Content-Type': 'application/json'}), timeout=120))
+                return r['candidates'][0]['content']['parts'][0].get('text', '').strip()
+            except Exception: time.sleep(10)
+        return None
+    for si, sec in enumerate(v['sections']):
+        for li, l in enumerate(sec['lines']):
+            if only and f'{si}:{li}' not in only: continue
+            if not l.get('audio'): continue
+            fn = os.path.join(PUB, l['audio'].replace('/', os.sep)); want = num(l['text'])
+            h1 = tx(fn, 'gemini-3.5-flash-lite'); votes = [h1]
+            miss = lambda h: [x for x in want if x not in num(h)]          # 대본 숫자가 다 들렸는가(대본의 '열두 달'이 '12달'로 들리는 건 괜찮다)
+            if h1 is not None and miss(h1):
+                votes += [tx(fn, 'gemini-3.1-flash-lite'), tx(fn, 'gemini-flash-lite-latest')]
+            wrong = sum(1 for h in votes if h is not None and miss(h))
+            slow = est(l['say']) / max(l['sec'] / (l.get('tempo') or 1), 0.1) < 3.6      # 대본보다 훨씬 김 = 지시문 앞머리 의심
+            flag = ('숫자 ' if wrong >= 2 else '') + ('길이 ' if slow else '') + ('받아쓰기 실패' if h1 is None else '')
+            out.append({'at': f'{si}:{li}', 'text': l['text'], 'heard': votes, 'flag': flag.strip()})
+            if flag.strip(): bad.append(f'{si}:{li} {flag.strip()} | {l["text"][:30]} | 들림 {votes[-1] and votes[-1][:40]}')
+            time.sleep(1)
+    json.dump(out, open(os.path.join(ep, 'check', 'voice_readback.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    print(f'받아쓰기 대조 {len(out)}문장 · 걸린 문장 {len(bad)}'); [print('  ' + b) for b in bad]
+    return not bad
+
 if __name__ == '__main__':
     cmd, ep = sys.argv[1], os.path.abspath(sys.argv[2]); mr = int(sys.argv[sys.argv.index('--maxreq') + 1]) if '--maxreq' in sys.argv else 9
-    if cmd == 'plan': make(ep, mr, dry=True)
+    if cmd == 'readback': sys.exit(0 if readback(ep, sys.argv[3].split(',') if len(sys.argv) > 3 and not sys.argv[3].startswith('--') else None) else 1)
+    elif cmd == 'fixcut': fixcut(ep, int(sys.argv[3]), mr, dry='--dry' in sys.argv)
+    elif cmd == 'cutat': cutat(ep, int(sys.argv[3]), [float(x) for x in sys.argv[4].split(',')], mr)
+    elif cmd == 'plan': make(ep, mr, dry=True)
     elif cmd == 'make': make(ep, mr)
     elif cmd == 'check': sys.exit(0 if check(ep, sys.argv[3] if len(sys.argv) > 3 else None) else 1)

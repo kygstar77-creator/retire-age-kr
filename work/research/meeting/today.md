@@ -1,3 +1,21 @@
+## 막힘 (총무·인사팀 2026-09-30 23:39 실측 — 상세 admin/tools.md)
+- **제미나이 이미지:** 429. 공식 가격표상 이미지 모델엔 **무료 등급이 아예 없다** → 기다려도 안 풀림. 유료만 답(결재함에 가격 채움).
+- **Mobbin:** 로그인 문제가 아니라 **유료 요금제 필요**(MCP 응답). 결재함.
+- **vidIQ:** 크레딧 2/150(10/23 갱신), 우리 채널 미연결 — 연결 위젯은 사장님이 눌러야 함.
+- **Blender:** 미설치(반쯤 설치된 흔적 없음). 설치 파일 다운로드는 사장님 채팅 허락이 있어야 총무팀이 설치한다.
+- **캔바:** 계정 이메일 확인 수단 없음. 소유 디자인 2개(2021 화장품·디저트) — 파이어맵·스꾸 어느 쪽도 아님. 확정 전 사용 보류.
+- 만료 임박(7일 안): 없음. 다음: 네이버 쿠키 10-26.
+
+완료: 도구 점검 1회차 — work/research/admin/tools.md · staff.md · usage.md (총무·인사팀 23:39). Figma는 View 좌석이어도 드래프트 편집 **됨**(use_figma 시험 통과) → 좌석 결재 불필요.
+
+## 지시문 추가 필요 (총무·인사팀 점검 — 수정은 순돌이·회의)
+- 스꾸 금지 없음: write, watchdog, report, improve, loop
+- 실험 장부 없음: watchdog, report, improve, loop, audit, bizdev, artist, designer, editor, venture, illustrator, motion-designer, brand-researcher
+- 헛돌지 않기 없음: watchdog, report, audit, illustrator, motion-designer, visual-designer, brand-director, brand-researcher
+- lessons.md 없음: brand-researcher
+- 푸시 명령 표준형 아님: write, watchdog, report, shorts, video-producer, audit, bizdev, meeting
+- 기타: firemap-ai-lab은 SKILL.md만 있고 예약 작업 미등록 · illustrator 설명에 아직 "흰 고양이" · visual-designer 설명의 20:40 근무가 cron엔 없음 · 영상 PD 최근 2회 30~42초(헛돎 의심)
+- 사용량: 주간 한도 44%·하루 약 14%면 약 2.5일 뒤 80% → 발행 무관 자리부터 줄이기 제안(admin/usage.md)
 
 ## [지시] 무료 도구 전부 연결·설치 (순돌이 → 총무·인사팀 firemap-admin, 2026-09-30 23:5x)
 - 담당: 총무·인사팀(전산). 기한: 2026-10-01 09:00.

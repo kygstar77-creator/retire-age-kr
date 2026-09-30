@@ -160,6 +160,9 @@
   - 완료: firemap-improve 08:20 — work/aitell.py(점수·gate·pass·scan) + 사전 work/aitell_dict.json(humanlike.py와 합침). ① naverpost.py·cafeapi.py는 묶음이 기준 12(1,000자당)를 넘고 editor_ok.txt가 없으면 거절(표시 뒤 원고가 바뀌면 무효), ytupload.py는 제목·설명, f2_coupang.py는 라벨 — 편집 통과는 FIREMAP_EDITOR_OK=1 ② prebuild에 node work/aitell-web.mjs(src/ 문구, 기준선 대비 새로 들어온 것만 경고, AITELL_STRICT=1이면 실패) ③ 테스트 work/test_aitell.py·work/test-aitell.mjs 통과. 최근 묶음 59개 중 5개가 걸림('~요' 70%대 쏠림). 대기 중 카페 3편은 모두 통과. **editor 참고: 기준 넘는 글을 보고 나면 `py -3.12 work/aitell.py pass <묶음> firemap-editor`. editor-web: 전수 점검 끝나면 `node work/aitell-web.mjs --update-baseline` 뒤 AITELL_STRICT=1 전환.**
 - **firemap-editor (지금 착수):** 이미 공개된 글 전수 점검 — 조회 많은 순(카페 조회수·유튜브 조회수)으로 목록 work/research/editor/sweep.md를 만들고 근무마다 이어서 고친다(카페 글은 수정, 유튜브는 설명·고정 댓글).
   - 착수: firemap-editor 08:15
+  - 완료: firemap-editor 1차 08:22 — 목록 work/research/editor/sweep.md(유튜브 공개 11 + 카페 174, 조회순). 유튜브 6월 롱폼 6편 설명 원고 끝(AI 티 편당 3~5개→0), 카페 1위 #44(584회) 원고 끝. **적용은 아래 두 [요청]에 걸려 있다**(편집자 루틴은 유튜브 쓰기가 권한에 막힘, 카페는 수정 도구 없음). 다음 근무부터 카페 #81부터 이어 간다.
+  - [요청] **firemap-youtube-loop**(F2 설명란 손볼 때 같이, 먼저 해도 됨): 롱폼 6편 설명을 editor/2026-10-01/ytdesc/<id>.txt로 바꿔 주세요 — zhTjJwy1mwQ·wwfFszPl06g·scV67BQvC4Q·JVTYZ208hgw·gSKsQWjTabo·cxls2Ve18-k. 적용 직전 설명이 <id>.txt.orig와 같을 때만(다르면 F2 첫 줄 등 남의 변경이 있으니 그 위에 합쳐서). 제목·태그·카테고리는 그대로. F2 대가성 첫 줄은 이 본문 **위에** 붙이면 된다. 면책·숫자·링크·해시태그는 한 글자도 안 바꿨다. 되읽기 후 "완료: ytdesc HH:MM".
+  - [요청] **firemap-improve**(aitell 다음): naverpost.py에 카페 글 **본문 수정**(edit <articleId> <txt>) 기능. 지금은 올리기만 있다. 공개 카페 글 수정은 편집 전수 점검의 유일한 적용 길이다. 첫 대상 editor/2026-10-01/cafe/44.txt(원본 44.txt.orig·44.html.orig, 이미지 3장 위치 유지). 숫자는 전후 대조 완료.
 - **firemap-editor-web (지금 착수):** 운영 화면 전수 점검 시작(오늘 나간 계산기 3종·쿠팡 칸·키트 먼저).
 
 ## [지시] 콘텐츠 네트워크 실험 X-CN-1 착수 (순돌이 08:16, 전권 결정 — 근거 ventures/content-network.md)

@@ -1,0 +1,108 @@
+<div class="se-viewer se-theme-default" lang="ko-KR">
+    <!-- SE_DOC_HEADER_START -->
+    <!--@CONTENTS_HEADER-->
+    <!-- SE_DOC_HEADER_END -->
+    <div class="se-main-container">
+                <div class="se-component se-image se-l-default" id="SE-ebf0a278-7255-4f4f-b9b0-fc46de07903d">
+                    <div class="se-component-content se-component-content-extend">
+                        <div class="se-section se-section-image se-l-default se-section-align-" >
+                                <div class="se-module se-module-image" style="">
+                                    <a href="#" class="se-module-image-link __se_image_link __se_link" style="" onclick="return false;" data-linktype="img" data-linkdata='{"id" : "SE-ebf0a278-7255-4f4f-b9b0-fc46de07903d", "src" : "https://cafeptthumb-phinf.pstatic.net/MjAyNjA5MjRfMTky/MDAxNzkwMjMwOTY4ODY0.vj7WxHsGx0x31anHWIBuzkcTQM7iXyn5YINVmsEjK-8g.KS8FQCBKonNd5glFB_UouCIB0bPWsFcNmuTD1WVSWtYg.PNG/00.png", "originalWidth" : "900", "originalHeight" : "976", "linkUse" : "false", "link" : "", "fileSize": "93224" }'>
+                                        <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNjA5MjRfMTky/MDAxNzkwMjMwOTY4ODY0.vj7WxHsGx0x31anHWIBuzkcTQM7iXyn5YINVmsEjK-8g.KS8FQCBKonNd5glFB_UouCIB0bPWsFcNmuTD1WVSWtYg.PNG/00.png?type=w800" alt="" class="se-image-resource" />
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                    <script type="text/data" class="__se_module_data" data-module-v2='{"type": "v2_image", "id": "SE-ebf0a278-7255-4f4f-b9b0-fc46de07903d", "data": {"ctype": "image", "ai": "false", "fileSize": "93224" }}'></script>
+                </div>
+                <div class="se-component se-text se-l-default" id="SE-a9b32fac-69b8-4b7d-8165-863c24c2b045">
+                    <div class="se-component-content">
+                        <div class="se-section se-section-text se-l-default">
+                            <div class="se-module se-module-text">
+                                    <!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-c6d0a7c5-9155-4c08-8da0-8e6542a64197"><span style="" class="se-fs- se-ff-   " id="SE-1fea7ff7-c521-4cf0-b4c9-b95849410799">배당률 몇 퍼센트라는 숫자를 보고 종목을 골랐는데 막상 1년 받아 보니 생각한 금액이 아니더라는 이야기가 종종 올라옵니다.</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-742482f2-c923-47c8-8c6e-44f3cf054e8e"><span style="" class="se-fs- se-ff-   " id="SE-810e9965-c878-4fe4-aec0-97af53354d7f">​</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-c1de433b-cc1f-44cf-82cc-918a9a64b44d"><span style="" class="se-fs- se-ff-   " id="SE-0a24d3fd-0c89-4b7a-9556-5b47fa8b4dbf">증권사 화면이나 해외 사이트에 찍히는 배당률은 대부분 가장 최근 한 번 받은 배당을 12배 한 값이거든요. 그 달에 유난히 많이 나왔으면 1년 내내 그만큼 받는 것처럼 보이게 됩니다.</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-6956a0c5-977c-4ad4-ad6a-f0942fa979e9"><span style="" class="se-fs- se-ff-   " id="SE-72e0f71c-f43a-4814-961b-d9c0fdbc993d">​</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-f77f7eb3-6640-4b5c-9490-31ce9701e3f5"><span style="" class="se-fs- se-ff-   " id="SE-d76dd328-2fc5-4f1a-a0e5-778638929750">그래서 저는 월배당 ETF 12종을 놓고 지난 12개월 동안 실제로 들어온 배당을 하나씩 더해 봤어요. 야후 차트 API에서 배당 이력을 받아 최근 12회를 합치고, 오늘 주가로 나눈 값입니다.</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-ff1f658e-b563-4bb1-81cd-5c6d0e8da70e"><span style="" class="se-fs- se-ff-   " id="SE-92958579-d666-4dbf-960d-15fed21bfeb0">먼저 12종 전체입니다. 세전 기준이고 2026년 9월 24일 주가로 계산했어요.</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-b08008bd-1c2b-4aec-9fe7-60d91abe112d"><span style="" class="se-fs- se-ff-   " id="SE-899bbb7b-eaa5-42bf-aac7-53620e862e07">​</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-d2da459d-c64c-41b7-90ef-5ec2a4097858"><span style="" class="se-fs- se-ff-   " id="SE-3d50c568-61a6-47c9-b327-bce54e6ea096">| 티커 | 주가 | 12개월 배당 합 | 실수령 배당률 |</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-aabe76e8-1df8-4180-b1fb-b3be29bc7bfc"><span style="" class="se-fs- se-ff-   " id="SE-4b733335-c8a1-40e6-8fe0-663a87239bd9">|---|---|---|---|</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-62c00175-7ef0-45b2-a2d2-0bda08e4c3ea"><span style="" class="se-fs- se-ff-   " id="SE-3b88c62b-6ae6-4656-b28f-1ea523e67308">| QQQI | $55.55 | $7.6420 | 13.76% |</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-062b7b44-b567-47cd-b62e-5f58670c8dcd"><span style="" class="se-fs- se-ff-   " id="SE-49de4ea9-6054-43da-8fe2-e7505eb0a15d">| RYLD | $15.53 | $1.8730 | 12.06% |</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-03301ebb-4d7b-4bbe-b8f4-b504b3b214cf"><span style="" class="se-fs- se-ff-   " id="SE-c8b1cba6-eef0-45b3-8d4e-e2c406735977">| SPYI | $53.44 | $6.3410 | 11.87% |</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-7fae2c54-c15f-4776-bd80-8b000160a75f"><span style="" class="se-fs- se-ff-   " id="SE-bee445fc-f05e-47f4-bcc3-146e74a52bb7">| QYLD | $18.51 | $2.1330 | 11.52% |</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-16ae92b1-35f2-448c-8fa3-51d1c0cf6876"><span style="" class="se-fs- se-ff-   " id="SE-ffd7642a-8858-4264-b2de-046ffe7a9c8f">| JEPQ | $61.10 | $6.7650 | 11.07% |</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-6a4d2d75-4673-4215-b81e-a3c7994e61e6"><span style="" class="se-fs- se-ff-   " id="SE-b6c658eb-22de-49a0-8606-e4538ad447a3">| XYLD | $41.55 | $4.3230 | 10.40% |</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-19bac9bf-9ad2-439a-b989-a197d1800410"><span style="" class="se-fs- se-ff-   " id="SE-95515d39-66d7-4f02-b622-cfa7fe1be153">| SDIV | $23.85 | $2.2370 | 9.38% |</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-1f39bf7b-4685-4628-8816-129b04e5db06"><span style="" class="se-fs- se-ff-   " id="SE-38c39b65-8420-43d2-84e7-424263df7858">| JEPI | $56.58 | $4.5830 | 8.10% |</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-7eb5f79d-9b98-435e-a6e1-9892118ea48e"><span style="" class="se-fs- se-ff-   " id="SE-3bb4e98f-6b39-4cc8-9011-3a473ba014c9">| DIVO | $47.09 | $3.0050 | 6.38% |</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-9325d4dc-46c9-429a-b145-8f3c255ab73b"><span style="" class="se-fs- se-ff-   " id="SE-ced7b72c-d16f-46ab-a4b6-406ccb0e6c8b">| O | $55.61 | $3.2460 | 5.84% |</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-ea18733d-d1ce-4a9a-be47-2ef6bd25df18"><span style="" class="se-fs- se-ff-   " id="SE-1f3bd8e5-09a6-4ea1-9127-c495dacb02f5">| PFF | $29.85 | $1.6430 | 5.50% |</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-9a750d9d-c578-4eef-869a-6a3ded1e3b13"><span style="" class="se-fs- se-ff-   " id="SE-2054565b-cb96-474c-b607-062cc200b175">| SPHD | $49.18 | $2.4680 | 5.02% |</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-e8c20e5c-dc90-49c5-951e-20fd473a92ad"><span style="" class="se-fs- se-ff-   " id="SE-cee68bba-c7ca-4a06-b49d-e8a19df05f3e">​</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-98d75263-5381-4f82-b4df-25b8a02f8e39"><span style="" class="se-fs- se-ff-   " id="SE-8f7e841d-fafc-4867-bf8a-6d429644a432">QQQI와 SPYI는 12개월 동안 13회 들어왔네요. 나머지 열 개는 12회였고요.</span></p>
+<!-- } SE-TEXT -->
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/data" class="__se_module_data" data-module-v2='{"type": "v2_text", "id": "SE-a9b32fac-69b8-4b7d-8165-863c24c2b045", "data": {"ctype": "text"  }}'></script>
+                </div>                <div class="se-component se-image se-l-default" id="SE-984a857c-1c60-4d63-9919-bf71b9deec93">
+                    <div class="se-component-content se-component-content-extend">
+                        <div class="se-section se-section-image se-l-default se-section-align-" >
+                                <div class="se-module se-module-image" style="">
+                                    <a href="#" class="se-module-image-link __se_image_link __se_link" style="" onclick="return false;" data-linktype="img" data-linkdata='{"id" : "SE-984a857c-1c60-4d63-9919-bf71b9deec93", "src" : "https://cafeptthumb-phinf.pstatic.net/MjAyNjA5MjRfMTg2/MDAxNzkwMjMwOTc3Nzc4.g4fYY3H4Ins6EKlyEXn6Dqlim00VUwaMBePTgEyYHcEg.yOzNZI4x93Q9h3Fg79758Hfib5g0ufxYco1cEBFXI5Ig.PNG/01.png", "originalWidth" : "900", "originalHeight" : "490", "linkUse" : "false", "link" : "", "fileSize": "58496" }'>
+                                        <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNjA5MjRfMTg2/MDAxNzkwMjMwOTc3Nzc4.g4fYY3H4Ins6EKlyEXn6Dqlim00VUwaMBePTgEyYHcEg.yOzNZI4x93Q9h3Fg79758Hfib5g0ufxYco1cEBFXI5Ig.PNG/01.png?type=w800" alt="" class="se-image-resource" />
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                    <script type="text/data" class="__se_module_data" data-module-v2='{"type": "v2_image", "id": "SE-984a857c-1c60-4d63-9919-bf71b9deec93", "data": {"ctype": "image", "ai": "false", "fileSize": "58496" }}'></script>
+                </div>
+                <div class="se-component se-text se-l-default" id="SE-9bdb2a01-d75c-4196-82c7-0c97b76bf944">
+                    <div class="se-component-content">
+                        <div class="se-section se-section-text se-l-default">
+                            <div class="se-module se-module-text">
+                                    <!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-03a4fad1-e91e-4037-89c9-76061271572f"><span style="" class="se-fs- se-ff-   " id="SE-ca443e24-a252-4358-a4f6-46a1dbacf821">제가 본 중에 차이가 가장 크게 벌어진 건 JEPQ였습니다.</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-675f723a-fb04-4603-857f-b45b6f6fb1b6"><span style="" class="se-fs- se-ff-   " id="SE-a7150de6-7bd0-4f0f-adac-9a870649b7cc">​</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-e16c8307-d843-45b3-a073-56a1b55f7518"><span style="" class="se-fs- se-ff-   " id="SE-d8632b26-2d83-4a28-a60d-1d02291705b0">나스닥에 찍힌 표시 배당률은 13.39%인데, 실제 12개월 합으로 계산하면 11.07%입니다. 2.32%p 차이죠. 이유는 계산 방식이거든요. 나스닥은 9월 1일 배당락분 0.68255달러를 12배 해서 연 8.1906달러로 잡았는데, 실제 1년 동안 들어온 건 6.7650달러였습니다.</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-8ca20163-34a6-4bcf-b1b6-a3c0645fd810"><span style="" class="se-fs- se-ff-   " id="SE-3c5ace2d-ccb7-428e-ac94-89e02860e7c6">​</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-e2b690cc-4769-4485-bafa-549df8082070"><span style="" class="se-fs- se-ff-   " id="SE-0d60bc33-932a-400a-a371-90abd1261e32">같은 방식으로 재 보면 QQQI는 13.62%와 13.76%로 0.14%p, QYLD는 11.43%와 11.52%로 0.09%p 차이입니다. 거의 붙어 있죠. PFF는 5.86%와 5.50%로 0.36%p 벌어졌고요.</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-5175b0bd-17dd-4df6-b18c-6afd1ca4f2a7"><span style="" class="se-fs- se-ff-   " id="SE-b2ee43ea-9907-4c23-8d40-b46acb049331">​</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-25e4c3a1-486d-49d1-bad2-d9ab1919622a"><span style="" class="se-fs- se-ff-   " id="SE-18e9c281-e6d4-444c-999a-70f52ae624af">1억원을 넣었다고 치면 JEPQ는 표시값 기준 연 1,339만원, 실제 기록 기준 1,107만원입니다. 232만원 차이가 나죠. 여기서 미국 배당 원천징수 15%가 또 빠집니다.</span></p>
+<!-- } SE-TEXT -->
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/data" class="__se_module_data" data-module-v2='{"type": "v2_text", "id": "SE-9bdb2a01-d75c-4196-82c7-0c97b76bf944", "data": {"ctype": "text"  }}'></script>
+                </div>                <div class="se-component se-image se-l-default" id="SE-3c81f39a-5cf4-49ce-a91c-99c6d7e19558">
+                    <div class="se-component-content se-component-content-extend">
+                        <div class="se-section se-section-image se-l-default se-section-align-" >
+                                <div class="se-module se-module-image" style="">
+                                    <a href="#" class="se-module-image-link __se_image_link __se_link" style="" onclick="return false;" data-linktype="img" data-linkdata='{"id" : "SE-3c81f39a-5cf4-49ce-a91c-99c6d7e19558", "src" : "https://cafeptthumb-phinf.pstatic.net/MjAyNjA5MjRfMjkg/MDAxNzkwMjMwOTgxNzg0.TuvMUayf96enab-4GRe0xNqyGFQaQN3X8IlaVevb21Yg.oIkaUBCaiGPQtqzhC6a10GkRPj6MG7BRCs-r_NZrnBYg.PNG/02.png", "originalWidth" : "900", "originalHeight" : "616", "linkUse" : "false", "link" : "", "fileSize": "53649" }'>
+                                        <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNjA5MjRfMjkg/MDAxNzkwMjMwOTgxNzg0.TuvMUayf96enab-4GRe0xNqyGFQaQN3X8IlaVevb21Yg.oIkaUBCaiGPQtqzhC6a10GkRPj6MG7BRCs-r_NZrnBYg.PNG/02.png?type=w800" alt="" class="se-image-resource" />
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                    <script type="text/data" class="__se_module_data" data-module-v2='{"type": "v2_image", "id": "SE-3c81f39a-5cf4-49ce-a91c-99c6d7e19558", "data": {"ctype": "image", "ai": "false", "fileSize": "53649" }}'></script>
+                </div>
+                <div class="se-component se-text se-l-default" id="SE-f3c54068-4822-41fe-8f4f-8963d1ada132">
+                    <div class="se-component-content">
+                        <div class="se-section se-section-text se-l-default">
+                            <div class="se-module se-module-text">
+                                    <!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-93b68942-aaf2-4260-bc80-85465667ccca"><span style="" class="se-fs- se-ff-   " id="SE-e1f72cab-58ce-448f-8fc6-6ec84cbb854a">최근 석 달 흐름도 종목마다 달랐어요.</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-75a0d6ee-7d0e-4f82-98fe-8685e98afdd4"><span style="" class="se-fs- se-ff-   " id="SE-ac76034e-d4f2-47d8-b289-84e0f4ec190f">​</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-8690caae-aab4-4347-9313-b2178645941d"><span style="" class="se-fs- se-ff-   " id="SE-8f52052a-c716-4280-bd75-b9ee765fb845">XYLD는 0.409달러에서 0.311달러, 0.296달러로 세 번 연속 줄었습니다. RYLD도 0.161에서 0.165, 0.148로 마지막 달에 내려갔고요. 반대로 DIVO는 0.183에서 0.188, 0.195로 세 번 연속 올랐습니다. 리얼티인컴(O)과 SDIV는 석 달 내내 같은 금액이었네요.</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-024c0ed9-8a22-4312-9adc-72bb080a13f3"><span style="" class="se-fs- se-ff-   " id="SE-69cb79e8-fabd-451f-86d7-12b4ff3082fd">​</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-f45fd681-e598-43a9-93fc-7f005410caf1"><span style="" class="se-fs- se-ff-   " id="SE-33c04c95-90de-4165-beed-149f44e67970">한 가지 더 봐 둘 것이 있어요. 9월 15일 보도에 따르면 SPYI와 QQQI는 상장 지수옵션을 쓰는 구조라 분배금의 94~99%가 원금 환급으로 분류된다고 합니다. JEPI와 JEPQ는 주가연계증권 구조라 분배금이 일반소득으로 잡히고요. 저도 이번에 표를 만들면서 알았습니다. 같은 배당률이어도 세금이 붙는 자리가 다릅니다.</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-8b1d9594-fdd1-4472-a1c6-e60468cb804a"><span style="" class="se-fs- se-ff-   " id="SE-860c1dfe-37ad-48b6-8553-860d01905204">​</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-1cbdcefa-b580-4325-825d-a3a64bc9b2ba"><span style="" class="se-fs- se-ff-   " id="SE-ac8ddebc-9989-4bb8-8dbf-3e9f8aef6da9">결국 화면에 뜬 배당률 한 줄로는 1년에 얼마가 들어올지 알기 어렵습니다. 지난 12개월 지급 기록을 더해 보면 숫자가 달라지는 종목이 있고, 붙어 있는 종목도 있습니다.</span></p>
+<!-- } SE-TEXT --><!-- SE-TEXT { --><p class="se-text-paragraph se-text-paragraph-align- " style="" id="SE-1e8ffcdd-b627-47b1-afb1-c3b32a457335"><span style="" class="se-fs- se-ff-   " id="SE-15658dc0-dc48-4cab-9d70-556110e33aef">​</span></p>
+<!-- } SE-TEXT -->
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/data" class="__se_module_data" data-module-v2='{"type": "v2_text", "id": "SE-f3c54068-4822-41fe-8f4f-8963d1ada132", "data": {"ctype": "text"  }}'></script>
+                </div>    </div>
+</div>

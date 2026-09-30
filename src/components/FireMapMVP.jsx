@@ -56,6 +56,17 @@ function loadInputs() {
   return defaultInputs;
 }
 
+// 처음 열 때만: 검색용 경로(/calc/salary 등)면 주소 끝 해시(#home 등)와 상관없이 그 도구 화면. 해시는 지운다.
+// 재방문 기기에서 /calc/salary#home 같은 주소(옛 방문 기록·로그인 복귀)로 들어와 첫 화면으로 떨어지던 문제(10/1).
+function readInitialScreen() {
+  const tool = toolPageByPath(window.location.pathname);
+  if (tool && window.location.hash && !getSharedInputs() && resolveScreen(window.location.hash) !== 'ops') {
+    try { window.history.replaceState(null, '', window.location.pathname + window.location.search); } catch { /* ignore */ }
+    return tool.screen;
+  }
+  return readScreenFromHash();
+}
+
 function readScreenFromHash() {
   if (getSharedInputs() && !Object.values(screens).some((s) => s.hash === window.location.hash)) return 'result';
   // 운영자 화면(#ops)은 ?ops=1 로 한 번 들어온 기기에서만 열린다. 그 외에는 홈.
@@ -95,7 +106,7 @@ function sessionSourceProps() {
 
 export default function FireMapMVP() {
   const [inputs, setInputs] = useState(loadInputs);
-  const [screen, setScreenState] = useState(readScreenFromHash);
+  const [screen, setScreenState] = useState(readInitialScreen);
   const [step, setStep] = useState(0);
   const referrerRef = useRef({});
   const screenRef = useRef(screen);

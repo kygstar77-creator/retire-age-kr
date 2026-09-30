@@ -184,6 +184,20 @@ test.describe('firemap smoke', () => {
     expect(await page.evaluate(() => window.location.hash)).toBe('#result');
   });
 
+  // 10/1 사장님 기기: 재방문 기기가 /calc/salary#home 같은 주소로 들어와 첫 화면으로 떨어졌다. 도구 경로면 해시와 상관없이 도구 화면.
+  test('tool path wins over a leftover hash on a returning device', async ({ page }) => {
+    await seed(page);
+    for (const path of ['/calc/salary', '/calc/severance', '/calc/unemployment-benefit', '/tax']) {
+      const tool = TOOL_PAGES.find((t) => t.path === path);
+      for (const hash of ['#home', '#result']) {
+        await page.goto('about:blank'); // 같은 문서 안 해시 이동이 아니라 새로 여는 상황
+        await page.goto(`${path}${hash}`);
+        await expect(page.locator('main.fm-screen h1, main.fm-screen h2').first(), `${path}${hash}`).toContainText(tool.title);
+        expect(await page.evaluate(() => window.location.pathname + window.location.hash)).toBe(path);
+      }
+    }
+  });
+
   test('copy rules: no 합니다/하세요, no banned system words', async ({ page }) => {
     await seed(page);
     for (const hash of ['#home', '#result', '#ranking', '#menu', '#settings']) {

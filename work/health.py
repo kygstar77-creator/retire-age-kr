@@ -82,17 +82,27 @@ def main():
     # 2026-09-26 04·05시 두 회차가 정확히 이 경우였는데 '0편 회차 2'로 잡혀 일감표 1번을
     # 차지했다. 회차가 닫을 수 없는 항목이 1번에 앉으면 실제 할 일이 밀린다(위 두 주석과 같은 사고).
     # 상한 자체가 지시서(24편)와 어긋나는 문제는 사람이 볼 일이라 tools-wanted.md에 따로 올라가 있다.
+    # 2026-09-30 12:30 보고 회차: 상한이 카페 5·블로그 1로 내려간 뒤로는 새벽이 아니어도
+    # 두 상한이 모두 차면 그 회차는 0편이 설계다. 07·10시 회차가 '0편 회차 1'로 일감표 1번에 앉았다.
     def 막힌회차(i, r):
         h = r.get('hour')
-        if h is None or not (2 <= h < 8): return False
+        if h is None: return False
         cap = _cafe_cap()
         if cap is None: return False
-        return sum(1 for x in runs[:i] if (x.get('cafe') or {}).get('url')) >= cap
+        cafe_full = sum(1 for x in runs[:i] if (x.get('cafe') or {}).get('url')) >= cap
+        if 2 <= h < 8 and cafe_full: return True
+        try:
+            from naverpost import DAY_CAP
+            bcap = DAY_CAP.get('blog')
+        except Exception:
+            bcap = None
+        if bcap is None: return False
+        return cafe_full and sum(1 for x in runs[:i] if (x.get('blog') or {}).get('url')) >= bcap
     blocked = [i for i, r in enumerate(runs) if i > last_ok and 발행회차(r) and not 냈나(r) and 막힌회차(i, r)]
     zero = sum(1 for i, r in enumerate(runs) if i > last_ok and 발행회차(r) and not 냈나(r) and i not in blocked)
     how_zero = '0편 사유를 없앤다(대기 묶음 3+3 유지가 가장 흔한 원인)'
     if zero_all > zero: how_zero += f' · 오늘 누적 {zero_all}회였으나 마지막 발행 성공 뒤로는 {zero}회(이미 끝난 장애는 빼고 센다)'
-    if blocked: how_zero += f' · 새벽 카페 상한에 막혀 애초에 올릴 수 없던 회차 {len(blocked)}회는 빼고 센다'
+    if blocked: how_zero += f' · 하루 상한에 막혀 애초에 올릴 수 없던 회차 {len(blocked)}회는 빼고 센다'
     # 목표 편수는 naverpost.DAY_CAP(실측으로 건 하루 상한)을 따른다. 두 군데에 숫자를
     # 따로 적어 두면 어긋난다 — 2026-09-26 04시에 실제로 어긋났다. 카페 상한을 4편으로
     # 건 뒤에도 여기 목표가 24편으로 남아 있어, 일감표 1·2번이 영영 못 닫는 항목으로

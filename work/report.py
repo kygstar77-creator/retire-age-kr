@@ -45,7 +45,14 @@ def main():
     # verify today와 RSS로 확인). 편수는 회차가 아니라 서로 다른 주소를 센다.
     nb = len({(r.get('blog') or {}).get('url') for r in runs if (r.get('blog') or {}).get('url')})
     nc = len({(r.get('cafe') or {}).get('url') for r in runs if (r.get('cafe') or {}).get('url')})
-    out.append(f'발행  블로그 {nb}/24 · 카페 {nc}/24')
+    # 목표는 naverpost.DAY_CAP(하루 상한)을 따른다. 2026-09-30 상한이 카페 5·블로그 1로 내려갔는데
+    # 보고는 '/24'로 찍혀 상한을 지킨 날이 크게 모자란 날처럼 보였다.
+    try:
+        sys.path.insert(0, HERE)
+        from naverpost import DAY_CAP
+    except Exception:
+        DAY_CAP = {}
+    out.append(f"발행  블로그 {nb}/{DAY_CAP.get('blog', '?')} · 카페 {nc}/{DAY_CAP.get('cafe', '?')} (하루 상한)")
 
     # 색인 — 하루 지난 글 기준. 당일 글은 색인될 시간이 없어 언제나 낮다.
     perf = load(os.path.join(HERE, 'perf_log.json'), {}) or {}

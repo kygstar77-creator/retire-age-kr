@@ -1,0 +1,39 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1;
+   -webkit-text-stroke:0;paint-order:stroke fill;text-shadow:0 0 0 #000,
+   5px 5px 0 #000,-5px 5px 0 #000,5px -5px 0 #000,-5px -5px 0 #000,0 7px 0 #000,0 -6px 0 #000,7px 0 0 #000,-7px 0 0 #000}
+.y{color:#FFD60A}.w{color:#fff}
+.fine{position:absolute;left:52px;top:596px;font:500 25px PD;color:#9AA3B2}
+</style></head><body><div style='position:absolute;inset:0;background:#F3EEE5'></div>
+
+<div style='position:absolute;left:90px;top:14px;width:380px;text-align:center;font:700 34px PD;color:#15171c'>1년 분배율</div>
+<div style='position:absolute;left:130px;top:118.0px;width:130px;height:150.0px;background:#E8620C;border-radius:10px 10px 0 0'></div>
+<div style='position:absolute;left:300px;top:218.76142131979697px;width:130px;height:49.23857868020304px;background:#1F5FD1;border-radius:10px 10px 0 0'></div>
+<div style='position:absolute;left:85px;top:70.0px;width:220px;text-align:center;font:42px BH;white-space:nowrap;color:#15171c'>12%</div>
+<div style='position:absolute;left:255px;top:170.76142131979697px;width:220px;text-align:center;font:42px BH;white-space:nowrap;color:#15171c'>4%</div>
+<div style='position:absolute;left:90px;top:268px;width:380px;height:4px;background:#15171c'></div>
+<div style='position:absolute;left:130px;top:276px;width:130px;text-align:center;font:30px BH;color:#E8620C'>JEPQ</div>
+<div style='position:absolute;left:300px;top:276px;width:130px;text-align:center;font:30px BH;color:#1F5FD1'>SCHD</div>
+<div style='position:absolute;left:560px;top:120px;width:160px;text-align:center;font:110px BH;color:#15171c'>→</div>
+
+<div style='position:absolute;left:810px;top:14px;width:380px;text-align:center;font:700 34px PD;color:#15171c'>1억이 늘어난 돈</div>
+<div style='position:absolute;left:850px;top:165.7051177904143px;width:130px;height:102.29488220958571px;background:#E8620C;border-radius:10px 10px 0 0'></div>
+<div style='position:absolute;left:1020px;top:118.0px;width:130px;height:150.0px;background:#1F5FD1;border-radius:10px 10px 0 0'></div>
+<div style='position:absolute;left:805px;top:117.7051177904143px;width:220px;text-align:center;font:42px BH;white-space:nowrap;color:#15171c'>+1,679만</div>
+<div style='position:absolute;left:975px;top:70.0px;width:220px;text-align:center;font:42px BH;white-space:nowrap;color:#15171c'>+2,462만</div>
+<div style='position:absolute;left:810px;top:268px;width:380px;height:4px;background:#15171c'></div>
+<div style='position:absolute;left:850px;top:276px;width:130px;text-align:center;font:30px BH;color:#E8620C'>JEPQ</div>
+<div style='position:absolute;left:1020px;top:276px;width:130px;text-align:center;font:30px BH;color:#1F5FD1'>SCHD</div>
+<div style='position:absolute;left:0;top:0;width:1280px;height:720px;background:linear-gradient(180deg,rgba(14,16,22,0) 0%,rgba(14,16,22,0) 42%,rgba(14,16,22,.94) 46%,#0E1016 100%)'></div>
+<div id='b1' class='t y' data-fit='1176' style='left:52px;top:326px;font-size:96px'>JEPQ 12% vs SCHD 4%</div>
+<div id='b2' class='t w' data-fit='1176' style='left:48px;top:428px;font-size:140px'>남은 돈은 거꾸로</div><div class='fine'>1억씩·1년(25.9.26→26.9.28) · 미국 배당세 15%만 · 팔지 않은 평가액 · 환율 제외</div>
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

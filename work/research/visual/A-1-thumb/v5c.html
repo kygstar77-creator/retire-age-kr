@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1;
+   -webkit-text-stroke:0;paint-order:stroke fill;text-shadow:0 0 0 #000,
+   5px 5px 0 #000,-5px 5px 0 #000,5px -5px 0 #000,-5px -5px 0 #000,0 7px 0 #000,0 -6px 0 #000,7px 0 0 #000,-7px 0 0 #000}
+.y{color:#FFD60A}.w{color:#fff}
+.fine{position:absolute;left:52px;top:596px;font:500 25px PD;color:#9AA3B2}
+</style></head><body><div style='position:absolute;inset:0;background:radial-gradient(ellipse at 30% 35%,#1f2a44 0%,#0E1016 70%)'></div>
+<div style='position:absolute;left:52px;top:40px;display:flex;gap:14px;align-items:center'>
+ <span style='background:#E8620C;color:#fff;font:52px BH;padding:10px 22px;border-radius:12px'>JEPQ</span>
+ <span style='color:#fff;font:44px BH'>분배금 12%인데</span></div>
+<div id='c1' class='t y' data-fit='1176' style='left:40px;top:128px;font-size:280px'>783만원</div>
+<div style='position:absolute;left:52px;top:402px;font:44px BH;color:#fff'>1년 뒤 <span style='color:#F6B98C'>JEPQ +1,679만</span> · <span style='color:#9DB9EE'>SCHD +2,462만</span></div>
+<div style='position:absolute;left:52px;top:470px;display:flex;gap:12px;align-items:center'>
+ <span style='background:#1F5FD1;color:#fff;font:60px BH;padding:8px 22px;border-radius:12px'>SCHD</span>
+ <span style='color:#fff;font:80px BH'>보다 덜 남았다</span></div><div class='fine'>1억씩·1년(25.9.26→26.9.28) · 미국 배당세 15%만 · 팔지 않은 평가액 · 환율 제외</div>
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

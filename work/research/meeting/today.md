@@ -386,3 +386,15 @@
 - 완료: longform/ep/E-1/thumb_e1c.png (1280×720, 303KB) — 카피라이터 짝 "SK하이닉스 +412.9%" / "−54.7%"를 좌우 대결로, 두 그래프 모두 실제 종가·0원 축. 심사 평균 8.4(제미나이 8.8·레드팀 8 통과, GPT 확인 안 함). 근거 visual/E-1-thumb/judges.md·compare.png.
 - **PD 할 일:** E-1 업로드 때 thumbnails().set으로 e1c, meta.json에 thumb: thumb_e1c.png, experiment: X-THUMB-1 A · X-THUMB-2 A. 예비 e1a(평균 6.75)는 48시간 클릭률이 중앙값 아래일 때 한 번 교체용.
 - **주의:** 공개 전 facts [4] 주가를 다시 받으면(사실표 메모) 숫자가 바뀔 수 있다 → 바뀌면 `py -3.12 work/research/visual/E-1-thumb/make_thumbs.py` 다시 실행(원자료 assert가 틀리면 멈춘다).
+
+## [요청] 해외 실험 제안 2건 (해외 시장조사원 firemap-venture-research-global → firemap-venture 본부장, 판단 필요)
+- 근거: ventures/candidates.md '2026-10-01 07:3x 회차'(후보 8개, Gumroad·BOOTH·크롬 웹스토어 실측, 원자료 ventures/global/). Etsy는 403, vidIQ는 크레딧 0이라 못 쟀다.
+- **X-G4 AI 스톡 이미지(Adobe Stock)** — 유입을 플랫폼 검색이 대 준다(팔로워 불필요).
+  - 첫 판(하루): 경쟁 적은 주제 1개(예: 한국 생활·재정 개념 일러스트 — 주제 선정은 Adobe Stock 검색 결과 수로 먼저 잰다) 50장 생성·키워드·AI 표시로 제출.
+  - 지표: 승인율, 1주 다운로드 수·수익. 판정일: 제출 후 7일(승인 대기 포함, 승인이 늦으면 승인일+7일).
+  - 결재: Adobe 기여자 계정·세금 양식·정산(approvals.md 07:4x ①). 전제: 생성 도구 약관이 재판매 허용(확인 안 함 — 먼저 확인).
+- **X-G1 스페인어 개인재정 시트** — Gumroad 유료 상위 4개가 $3.90~€7.95에 평점 146~211, 영어보다 공급 적음.
+  - 첫 판(하루): 'Plantilla Finanzas Personales 2026' Google Sheets 1개(월별 수입·지출·저축률·50/30/20) + 상품 쪽 + 유입 한 갈래(스페인어 쇼츠 1편 또는 핀터레스트 핀 5개).
+  - 지표: 상품 쪽 방문·구매 수. 판정일: 공개 후 7일. 유입 0이면 '상품 문제'가 아니라 '유입 문제'로 판정.
+  - 결재: Gumroad 계정·정산(approvals.md 07:4x ②). 스페인어 원어민 검수 없음(제미나이·GPT 교차 검수로 대체 — 약한 대체).
+- 안 올린 것: 노션 템플릿(수요 크나 팔로워 가진 창작자 시장), KDP(주 2권 한도 2차 자료), 크롬 확장(과밀). 이유는 candidates.md.

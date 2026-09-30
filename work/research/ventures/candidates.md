@@ -67,3 +67,58 @@
 - 반론: second_opinion 전략("폐기 후 기존 서비스 흡수" → 받아들임)·법("현재 방식 불가" → 받아들임)·레드팀("고쳐서 보류", 사실 4곳 고침 → 받아들이고 판정은 탈락). 처리표는 decision.md 10장.
 - 흡수: growth(설명란 관련 상품 링크, 10/5)·product-dev(계산기 결과 관련 상품 자리, 10/10)·결재함(쿠팡 인플루언서 신청).
 - 다음 회차: 10/4 첫 사이트(today.md 박차 5번)를 위해 D 운전면허 필기·C 성격 테스트 경쟁 확인부터(점수 매기기 전에 경쟁 목록 — 9/30 교훈).
+
+## 2026-10-01 07:3x 회차 — 해외 시장조사원(firemap-venture-research-global) 첫 회차
+범위: 한국 밖(영어·스페인어·일본어), 계산기 말고 디지털 상품·스톡·전자책·유튜브·확장. 영어권 계산기 전략은 bizdev 몫(today.md 13:00)이라 겹치지 않게 뺐다.
+측정 도구: Gumroad 검색 JSON(`gumroad.com/products/search?query=…&sort=most_reviewed`, 로그인 없음) — 스크립트 global/gumroad_search.py, 원자료 global/gumroad-2026-10-01-0735.txt(+ 아래 추가 조회는 이 회차 화면 값). **평점 수 = 판매 수의 하한**(산 사람만 평점을 단다). 무료 상품 평점은 판매가 아니다.
+못 잰 것: Etsy(웹·curl 모두 403), vidIQ(크레딧 0, "Not enough credits" 07:3x), 구글 트렌드(시도 안 함), 크롬 웹스토어 사용자 수(검색 화면에 없음). → 모두 '확인 안 함'.
+
+### G1. 스페인어 가계부·개인재정 스프레드시트 (Google Sheets/Excel) — **1순위**
+- 수요·돈 [실측 Gumroad 07:3x]: 'finanzas personales' 전체 275개. 유료 상위 — Moneasy "Finanzas Personales" $3.90·평점 211 / Inversor Gymbro "Plantilla Finanzas Personales 2026" €7.95·201 / Inversionitas "Control de ingresos y gastos" €6·176 / Pinky estudio $4·146 / MoneyAcción Wealth Planner $29·32. 'control de gastos' 286개, 'presupuesto' 336개. 영어 'budget spreadsheet'는 1,043개에 유료 1위가 Pawfect Plan $21·66 — **스페인어 쪽이 공급 적고 유료 평점은 더 많다.** 포르투갈어('planilha financeira' 0개, 'controle financeiro' 22개)는 Gumroad가 아닌 Hotmart로 도는 것으로 보임(확인 안 함).
+- 경쟁 상위 3: Moneasy · Inversor Gymbro · Inversionitas(위 값). 셋 다 유튜브·인스타 개인 채널을 가진 판매자로 보임(확인 안 함) → **유입을 어디서 만들지가 핵심 약점.**
+- AI 직원만으로: 시트 제작(수식·대시보드)·스페인어 설명·썸네일은 가능. 스페인어 원어민 검수 없음 → 제미나이·GPT 교차 검수로 대체(약한 대체).
+- 계정·결제: Gumroad 판매자 계정 + 정산 계좌(사장님 결재). Etsy는 계정+본인 확인+게시료(개당 $0.20, 2차·확인 안 함).
+- 약관·법: 템플릿은 우리 저작물. 재정 '권유' 문구 금지(가계부 도구로만). EU 판매는 부가세 — Gumroad가 대신 걷는지 확인 안 함.
+- 하루 첫 판: 가능(시트 1개 + 상품 쪽). 단 유입 0이면 판정 불가 → 첫 판에 유입 한 갈래(핀터레스트 또는 스페인어 쇼츠) 같이 붙여야 함.
+
+### G2. 영어 FIRE·은퇴 스프레드시트 (파이어맵 노하우 재사용)
+- 수요 [실측 Gumroad]: 'fire spreadsheet' 41개 · 'retirement spreadsheet' 56개 · 'net worth tracker' 260개(유료 상위 Rosidssoy $5·190, Eula $5·185 — 둘 다 Notion). FIRE 전용 유료는 WalletBurst "Wealth Planning Toolkit" $20·평점 9 뿐.
+- 판단: 공급은 적지만 Gumroad 안 수요 신호도 약하다(평점 9). Etsy·Reddit(r/financialindependence) 수요는 확인 안 함. bizdev의 영어 FIRE 계산기가 나오면 그 결과 아래 '시트 받기'로 붙이는 부속품이 맞다. 단독 실험 아님.
+
+### G3. 노션 템플릿(학생 OS·재정 트래커) — 수요 큼, 유입은 창작자 몫
+- [실측 Gumroad]: 'notion template' 19,784개. 유료 1위 Sealine "Acadashboard 2026: Notion Student OS" $24.99·평점 4,509. 무료 1위 Easlo 4,880. 스페인어 'plantilla notion' 853개, Mir's Desk 무료 언어학습 플래너 2,361.
+- 판단: 상위는 전부 팔로워를 가진 창작자(Easlo·Pascio 등)의 무료 미끼+유료. 우리에겐 팔로워가 없다 → 새로 들어가면 묻힌다. 일본어는 Gumroad 'notion テンプレート' 120개로 작다(일본은 note·BOOTH로 돈다).
+
+### G4. AI 스톡 이미지(Adobe Stock 기여자)
+- 돈: 로열티 사진·일러스트 33%, 영상 35% [공식 helpx.adobe.com pricing-payment-guidelines, 2026-07-10 갱신]. AI 이미지 다운로드당 평균 약 $0.25, 월 $500~1,500 기여자 사례 [2차: imagetostock.com 블로그, medium 후기 — 광고성 글, 신뢰 낮음].
+- 장점: **플랫폼 자체 검색이 유입** → 팔로워 없어도 된다. AI 생성물 허용(표시 필수). 단점: 1,000장 규모가 돼야 의미 있다는 게 2차 자료의 공통 말. 월 1억 기준으론 천장이 낮다.
+- 계정: Adobe 기여자 계정·세금 양식·정산(PayPal/Skrill) — 사장님 결재. 우리 생성 도구(Canva 생성·Veo 등)의 상업 재판매 허용 여부 **확인 안 함 — 실험 전 필수.**
+
+### G5. 아마존 KDP 저·중간 콘텐츠 책(플래너·워크북)
+- [2차]: AI 생성 글·그림은 공개 신고 의무, 저콘텐츠는 ISBN 무료 제공 없음, 제목 생성 한도가 **책 형식당 주 2권(2026-09-21 시행)**이라는 글과 주 10권이라는 글이 엇갈림(vappingo.com, pubnook.com). KDP 공식 원문 확인 안 함.
+- 수요 신호: Gumroad에서 KDP 제작자용 무료 도구(Paul Marles "KDP Interior Margin Templates" 1,237)가 많다 = 파는 사람이 많다 = 경쟁 과밀.
+- 판단: 주 2권 한도면 AI 대량 생산 이점이 없다. 보류.
+
+### G6. 얼굴 없는 외국어 유튜브(스페인어 재정 등)
+- 정책 [2차, 여러 출처 일치]: 2025-07-15부터 YPP '반복 콘텐츠'가 '비진정성(inauthentic) 콘텐츠'로 바뀜 — 템플릿처럼 찍어 낸 영상·남의 글 낭독·최소 설명 슬라이드쇼는 수익 불가. 원본 대본·일관된 스타일은 허용.
+- 수요·경쟁: vidIQ 크레딧 0으로 **확인 안 함**. 다음 회차에 크레딧 결재 또는 다른 방법으로 잰다.
+- 판단: 우리 한국어 유튜브 루프(youtube-autonomous-loop)를 스페인어로 복제하는 형태면 비용이 작다. G1의 유입 갈래로 묶는 게 낫다.
+
+### G7. 일본어 가계부 템플릿 (BOOTH)
+- [실측 booth.pm 07:4x, 로그인 없음]: '家計簿 スプレッドシート' 162개, 가격 ¥200·350·500·680·780, 'LINEで家計簿' ¥3,980. '資産管理 スプレッドシート' 51개(퇴직 설계 Excel ¥500 있음). 찜 수·판매 수는 화면에서 못 뽑음 — **확인 안 함**.
+- 판단: 가격이 낮다(¥200~780). 일본어 검수 약함. 후보로만 둔다.
+
+### (탈락) G8. 유튜브 자막 추출 크롬 확장
+- [실측 chromewebstore 07:3x]: 'youtube transcript' 검색 1쪽에 Copy Youtube Transcript(4.6, Featured) 등 7개 이상. 무료 경쟁 과밀, 유료화 근거 없음. 탈락.
+
+### 이번 회차 점수(수요 근거 × 유입 자급 × AI 단독 × 첫 판 속도, 각 1~3)
+| 후보 | 수요 근거 | 유입 자급 | AI 단독 | 첫 판 | 합 |
+|---|---|---|---|---|---|
+| G1 스페인어 재정 시트 | 3 | 1 | 2 | 3 | 9 |
+| G4 AI 스톡 | 2 | 3 | 3 | 2 | **10** |
+| G3 노션 템플릿 | 3 | 1 | 3 | 3 | 10(유입 1이 치명) |
+| G2 영어 FIRE 시트 | 1 | 1 | 3 | 3 | 8(부속품) |
+| G6 외국어 유튜브 | 확인 안 함 | 2 | 2 | 2 | — |
+| G7 BOOTH | 2 | 2 | 1 | 2 | 7 |
+| G5 KDP | 1 | 2 | 2 | 1 | 6 |
+**교훈:** 디지털 상품은 만드는 건 쉽고 **사람이 오는 길**이 병목이다. 플랫폼 자체 검색이 유입인 곳(Adobe Stock·Etsy·BOOTH)과 팔로워가 필요한 곳(Gumroad·노션)을 나눠서 본다.

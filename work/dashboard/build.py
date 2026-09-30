@@ -30,7 +30,7 @@ DEPTS = [
                            'firemap-write', 'firemap-copywriter', 'firemap-editor']),
     ('design', '디자인실', ['firemap-visual-designer', 'firemap-motion-designer', 'firemap-illustrator',
                         'firemap-artist', 'firemap-designer-orgchart']),
-    ('product', '제품본부', ['firemap-product-dev', 'firemap-designer', 'firemap-loop']),
+    ('product', '제품본부', ['firemap-planner', 'firemap-product-dev', 'firemap-designer', 'firemap-loop']),
     ('brand', '브랜드팀', ['firemap-brand-director', 'firemap-brand-researcher']),
     ('growth', '성장·수익본부', ['firemap-growth', 'firemap-bizdev']),
     ('venture', '신사업본부', ['firemap-venture', 'firemap-venture-research-global', 'firemap-venture-research-kr', 'firemap-venture-builder']),
@@ -49,7 +49,7 @@ NAME = {
     'firemap-brand-director': '브랜드 디렉터', 'firemap-brand-researcher': '브랜드 리서처',
     'firemap-growth': '성장·유입', 'firemap-bizdev': '사업개발', 'firemap-venture': '신사업본부장',
     'firemap-audit': '감사관', 'firemap-watchdog': '발행 감시', 'firemap-improve': '생산·개선',
-    'firemap-report': '보고 비서', 'firemap-venture-research-global': '해외 시장조사원', 'firemap-venture-research-kr': '국내 시장조사원', 'firemap-venture-builder': '신사업 빌더', 'firemap-dispatcher': '운영실장', 'firemap-dispatcher-2': '운영실장 2', 'firemap-finishline-check': '결승선 점검관', 'firemap-admin': '총무·인사', 'firemap-ai-lab': 'AI 연구소장',
+    'firemap-report': '보고 비서', 'firemap-planner': '기획자', 'firemap-venture-research-global': '해외 시장조사원', 'firemap-venture-research-kr': '국내 시장조사원', 'firemap-venture-builder': '신사업 빌더', 'firemap-dispatcher': '운영실장', 'firemap-dispatcher-2': '운영실장 2', 'firemap-finishline-check': '결승선 점검관', 'firemap-admin': '총무·인사', 'firemap-ai-lab': 'AI 연구소장',
 }
 # 역할 덮어쓰기(근거가 있는 것만)
 ROLE_OVERRIDE = {
@@ -63,7 +63,7 @@ PREFIX = {
     'product-dev': 'firemap-product-dev', 'loop': 'firemap-loop',
     'improve': 'firemap-improve', 'cafeapi.py': 'firemap-improve',
     'audit': 'firemap-audit', 'growth': 'firemap-growth', 'meeting': 'firemap-meeting',
-    'venture': 'firemap-venture', 'ventures': 'firemap-venture', 'research-global': 'firemap-venture-research-global', 'research-kr': 'firemap-venture-research-kr', 'builder': 'firemap-venture-builder', 'dispatch': 'firemap-dispatcher', 'finishline': 'firemap-finishline-check', 'report': 'firemap-report',
+    'plan': 'firemap-planner', 'venture': 'firemap-venture', 'ventures': 'firemap-venture', 'research-global': 'firemap-venture-research-global', 'research-kr': 'firemap-venture-research-kr', 'builder': 'firemap-venture-builder', 'dispatch': 'firemap-dispatcher', 'finishline': 'firemap-finishline-check', 'report': 'firemap-report',
     'beat': 'firemap-watchdog', 'watchdog': 'firemap-watchdog', 'bizdev': 'firemap-bizdev',
     'designer': 'firemap-designer', 'copywriter': 'firemap-copywriter', 'editor': 'firemap-editor',
     'artist': 'firemap-artist', 'admin': 'firemap-admin', 'visual': 'firemap-visual-designer',

@@ -176,6 +176,8 @@ test.describe('firemap smoke', () => {
     const tool = TOOL_PAGES.find((t) => t.path === '/calc/salary');
     const screenText = (await hero.innerText()).replace(/\s+/g, ' ');
     for (const b of tool.body.slice(1)) expect(screenText, `crawler text on screen: ${b.slice(0, 20)}`).toContain(b);
+    // 기본 화면에서 저축 0원이 되면 은퇴 연결이 막힌다(레드팀 10/1) — 기본 생활비 250만원이면 2,935,813 − 2,500,000
+    await expect(hero).toContainText('남는 435,813원을 월 저축으로');
     await page.getByRole('button', { name: '은퇴 나이 계산' }).click();
     await page.waitForTimeout(500);
     expect(bodies.some((b) => b.event === 'salary_to_fire'), 'salary_to_fire 이벤트').toBe(true);

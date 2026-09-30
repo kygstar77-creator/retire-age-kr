@@ -20,11 +20,13 @@ export default function SalaryCalc({ inputs, onApply, onMove }) {
 
   const r = salaryNet({ annual, nontaxMonthly: nontax, family, kids: Math.min(kids, family - 1), ratio });
   const insurance = r.pension + r.health + r.ltc + r.employment;
-  const living = Number(inputs?.monthlyLivingCost) || 0;
+  // 생활비 기본값: 본인이 넣은 값이 있으면 그것, 없으면 질문 화면 예시(Question.jsx EXAMPLE 250만원).
+  // 앱 기본 300만원을 그대로 쓰면 연봉 4,000만원 실수령(약 293만원)에서 저축 0원이 돼 은퇴 연결이 막혔다(레드팀 10/1).
+  const [living, setLiving] = useState(inputsIsReal(inputs) ? (Number(inputs?.monthlyLivingCost) || 2500000) : 2500000);
   const saving = Math.max(0, r.net - living);
 
   const toRetire = () => {
-    onApply({ monthlyInvestment: saving });
+    onApply({ monthlyInvestment: saving, monthlyLivingCost: living });
     try { logEvent('salary_to_fire', { net_bucket: Math.min(20, Math.floor(r.net / 500000)) }); } catch { /* ignore */ }
     toast.good(`월 저축 ${exact(saving)}을 넣었어요`);
     onMove(inputsIsReal(inputs) ? 'result' : 'question');
@@ -72,6 +74,11 @@ export default function SalaryCalc({ inputs, onApply, onMove }) {
         <ListRow title={`소득세 · 간이세액표${ratio !== 100 ? ` ${ratio}%` : ''}`} trail={exact(r.incomeTax)} chevron={false} size="S" />
         <ListRow title="지방소득세 · 소득세의 10%" trail={exact(r.localTax)} chevron={false} size="S" />
       </ListGroup>
+
+      <Card>
+        <SectionHead size="sm" kicker="은퇴 계산" title="한 달 생활비" desc="실수령에서 생활비를 빼고 남는 돈을 월 저축으로 봐요" />
+        <RangeField label="한 달 생활비" value={living} min={500000} max={10000000} step={100000} money format={won} chips={[100000, 500000]} onChange={setLiving} />
+      </Card>
 
       <Card variant="dark">
         <SectionHead size="sm" title="이 돈이면 몇 살에 은퇴?" desc={saving > 0

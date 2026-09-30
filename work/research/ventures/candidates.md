@@ -199,3 +199,57 @@
 | **G1 = X-G1 스페인어 개인재정 시트(Gumroad)** | **대기열 1번(10/3 이후)** | 수요 근거(유료 상위 4개 평점 146~211) 있음. 다만 동시 2개 원칙(구글 스팸: 여러 사이트) 은 '사이트'에 대한 것이라 플랫폼 상품은 세지 않지만, 빌더가 1명이라 X-V1·X-KR-1 뒤로. Gumroad 결재 필요. 원어민 검수 없음은 약한 대체 | research-global: Gumroad 수수료 공식 원문·스페인어 쇼츠/핀터레스트 유입 실측을 10/2까지 |
 | **G4 = X-G4 AI 스톡 이미지(Adobe Stock)** | **보류** | 전제(생성 도구 약관의 상업 재판매 허용, Adobe의 생성형 AI 제출 규정) 확인 안 함. 50장 일괄 제출은 '대량 생성' 인상 — Adobe 거절률 실측 근거 없음 | research-global: 두 약관 원문 확인 후 다시 올림 |
 | 콘텐츠 네트워크(TF, content-network.md) | **판단 보류 — 11:00 보고 뒤** | 문서 ②③④ 칸이 아직 비어 있음(07:46 확인). 새 도메인 콘텐츠 사이트는 '사이트 2개' 칸을 X-V1과 나눠 써야 하고, 대량 생성·애드센스 계정 전파 위험이 크다 | 11:00 뒤 본부장 회차에서 판정 |
+
+## 2026-10-01 08:4x 회차 — 해외 시장조사원 2회차 (지시 ② 후속 + 새 후보 6개)
+원자료: global/terms-2026-10-01-0840.md(약관 원문), global/demand-2026-10-01-0845.txt(유튜브·Workspace·TPT), global/gumroad-2026-10-01-0835.txt(Gumroad 15개 검색어).
+
+### 후속 — G1 스페인어 재정 시트
+- **Gumroad 수수료 [공식 원문 gumroad.com/pricing 08:3x]:** 직접 링크 판매 10%+$0.50, Gumroad 디스커버(마켓 검색)로 온 판매 30%. 2025-01-01부터 판매대리인(MoR)이라 **EU 부가세 포함 세금을 Gumroad가 걷어 낸다** → 지난 회차 'EU 부가세 확인 안 함' 해소. €7.95 판매 1건 순수익 ≈ €6.6(직접)/€5.6(디스커버).
+- **스페인어 유입 실측 [유튜브 검색 1쪽 08:4x]:** 'plantilla excel finanzas personales' 상위 영상 1,674,449회(3년)·216,281(1년)·68,389(8개월 전, 2026판)·60,347·32,601. 'presupuesto 50 30 20' 1,420,689(6년). **Gumroad 유료 1위 Moneasy도 같은 주제 유튜브 영상(6,615회)을 올린다** → 이 시장은 '유튜브 영상 → 설명란 → Gumroad' 구조로 돈다(판매자 1명 사례, 전체는 확인 안 함).
+- 결론: 수요는 유튜브에 확실히 있다. 우리가 이기려면 스페인어 쇼츠/영상 채널이 유입 갈래로 필수 → G6과 한 묶음. 판매자당 판매 수는 여전히 확인 안 함(평점 수 = 하한).
+- 포르투갈어: Gumroad 'planilha' 30개·평점 합 29 → Gumroad에는 시장 없음(Hotmart는 확인 안 함).
+
+### 후속 — G4 AI 스톡 (보류 사유였던 약관 원문 확인 끝)
+- **Adobe Stock [공식, Last updated Jun 11, 2026]:** 생성 도구 약관이 제출 권리를 주는지 기여자가 확인할 책임. 금지 — 프롬프트·제목·키워드에 작가·실존 인물·캐릭터·정부기관·제3자 IP·실제 뉴스 사건. "Created using generative AI tools" 체크 필수, 사람처럼 보이면 "People and Property are fictional". **같은 프롬프트의 변형 여러 장 제출은 스팸**(삭제·정지) → '50장 한 주제'는 프롬프트를 50개 다르게 짜야 한다.
+- **우리 생성 도구:** Gemini API — "Google won't claim ownership over that content"(시행 2026-03-23), 단 무료 등급은 입력·출력을 사람이 검토·학습 가능(비밀 없는 이미지라 문제 없음). Canva — "you own your Output, except ... Licensed Content"(2026-06-26) → **Canva 요소(스톡 사진·그래픽)를 섞으면 제출 불가, 순수 생성물만.**
+- 판정: 전제(생성물 재판매 권리) **충족**. 남은 조건은 운영 규칙(프롬프트 중복 금지·금지어 필터)으로 막을 수 있다 → 재상정.
+- 병행 업로드처 Freepik: 아래 G10.
+
+### G9. TPT(Teachers Pay Teachers) 영어 재정교육 워크시트 — 수요 강함, AI 단독은 위험
+- 수요·돈 [WebFetch 요약 08:4x, 화면 재확인 안 함]: 'financial literacy' 28,000+개. 상위 $2.95~$6에 리뷰 196~341(Teaching with Tiffany $3·341, Teach2Tell $6·319, History Gal $5·310). 교사가 사는 시장, **플랫폼 검색이 유입**. 스페인어 'educacion financiera'는 50+개·리뷰 0~8(수요도 작다).
+- 경쟁 상위 3: Teaching with Tiffany · Teach2Tell · History Gal.
+- AI 단독: 워크시트 PDF 제작은 가능. 그러나 **TPT(IXL) CEO: "algorithmic tools to identify and demote stores associated with low-quality, AI-generated content"**(Chalkbeat 2026-08-03). 공식 AI 정책 문서 확인 안 함. 수수료도 확인 안 함(도움말 403).
+- 계정: TPT 판매자 계정·정산(결재). 하루 첫 판: 가능(급여명세서 읽기·예산 워크시트 1세트).
+- 판단: 3순위. 파이어맵 계산 노하우(월급→실수령·예산)를 교재로 바꾸는 건 맞지만, 강등 위험 때문에 품질 검수(교사 관점 제미나이·레드팀) 없이 올리면 가게째 묻힌다.
+
+### G10. Freepik(→Magnific) 기여자 — G4 병행 업로드처
+- [2차 autokeyworder.com 2026]: AI 도구 제한 없음, AI 표시 필수, 비독점(Adobe와 같은 파일 동시 업로드 가능), 다운로드당 $0.04~0.07(한 기여자 6개월 6,365회 €265.76). 공식 약관 원문 **확인 안 함**(freepik.com 약관 URL이 magnific.com 404로 넘어감 — 브랜드 변경 중).
+- 판단: 단독 사업 아님. G4 파일을 한 번 더 올리는 '공짜 추가분'. 단가가 Adobe의 1/5 수준.
+
+### G11. AI 음원 스톡(Pond5·AudioJungle 등) — 탈락
+- [2차 dynamoi.com 2026, 공식 원문 확인 안 함]: Pond5(셔터스톡 소유)·AudioJungle(Envato, 2023~)·Artlist·Epidemic Sound 모두 AI 음원 제출 금지·반복 시 계정 해지. 탈락.
+
+### G12. Google Workspace 애드온(Forms·Sheets 유틸) — 마이크로 SaaS, 수요 실측 강함
+- 수요 [Workspace Marketplace 'budget' 화면 08:4x]: **예산 전용 애드온은 작다**(AI Budget Forecasting 1천+, This Is How To Budget 459, Budget-Time 25). 대신 같은 검색에 뜬 **Forms 유틸이 크다** — AddonForge "FORMeleon"(선택지 수량 제한) 167만+, 같은 개발사 "CLOSY"(응답 수 제한) 97만+, PerformFlow(승인 흐름) 113만+. 작은 개발사 한 곳이 비슷한 유틸 여러 개로 설치 수백만.
+- 돈: 유료 요금·전환율 확인 안 함(각 애드온 가격 페이지 다음 회차).
+- AI 단독: Apps Script 코드는 AI가 짤 수 있다. **막힘: 민감 범위 OAuth 앱은 구글 검증(제한 범위면 외부 보안 평가 비용) — 확인 안 함.** Google Cloud 프로젝트·결제 프로필·개발자 등록 필요(결재).
+- 하루 첫 판: 코드는 가능, 마켓 공개는 검토 대기 때문에 하루 불가(기간 확인 안 함).
+- 판단: 월 1억 규모로 커질 수 있는 몇 안 되는 갈래(설치 수백만 실측). 다음 회차에 ① 상위 3개 가격 ② OAuth 검증 요건 원문 ③ 틈새(한 가지 기능만 하는 Forms/Sheets 유틸 중 리뷰 불만 많은 것)를 잰다.
+
+### G13. Procreate 브러시·Lightroom 프리셋 — 탈락
+- [Gumroad 08:3x]: 'procreate brushes' 10,899개, 상위가 무료 미끼(Jingsketch 무료 9,709·유료 $14.99 3,402). 'lightroom presets' 4,607개. 둘 다 작가 팔로워 시장이고 **결과물 예시(직접 그린 그림·찍은 사진)가 신뢰의 근거** → AI 단독 불리. 탈락.
+
+### G14. 영어 부채 상환·적립(debt snowball·sinking funds) 시트 — 작음
+- [Gumroad 08:3x]: 'debt snowball spreadsheet' 48개(Pawfect Plan $21·66, easy_budget $16.99·12), 'sinking funds' 116개, 'rental property spreadsheet' 27개, 'small business bookkeeping spreadsheet' 30개·평점 합 3. Gumroad 안 영어 재정 시트 수요는 약하다(G2와 같은 결론). Etsy가 본무대로 보이나 403이라 확인 안 함.
+
+### 이번 회차 점수(수요 근거 × 유입 자급 × AI 단독 × 첫 판 속도, 각 1~3)
+| 후보 | 수요 | 유입 자급 | AI 단독 | 첫 판 | 합 | 변화 |
+|---|---|---|---|---|---|---|
+| G4 AI 스톡(Adobe+Freepik 병행) | 2 | 3 | 3 | 2 | **10** | 약관 확인 → 재상정 |
+| G1 스페인어 재정 시트(+유튜브 유입) | 3 | 2 | 2 | 3 | **10** | 유튜브 수요 실측으로 유입 1→2 |
+| G12 Workspace 애드온 | 3 | 2 | 2 | 1 | 8 | 신규, 천장 높음 |
+| G9 TPT 재정교육 | 3 | 3 | 1 | 2 | 9 | 신규, AI 강등 위험 |
+| G10 Freepik | 1 | 3 | 3 | 3 | (G4 부속) | 신규 |
+| G14 영어 부채 시트 | 1 | 1 | 3 | 3 | 8 | 신규 |
+| G11 AI 음원·G13 브러시 | — | — | — | — | 탈락 | 신규 |
+**교훈:** '만들기 쉬운가'보다 '플랫폼이 AI를 받아 주는가'가 먼저 걸러진다(음원 금지, TPT 강등, Adobe 스팸 규칙). 받아 주는 곳(Adobe·Freepik·Gumroad·Workspace)만 남긴다.

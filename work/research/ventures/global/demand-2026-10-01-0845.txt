@@ -1,0 +1,21 @@
+# 수요 실측 원자료 2026-10-01 08:4x (로그인 없음)
+## YouTube 검색 1쪽 (curl, Accept-Language es-ES, ytInitialData) — 제목 | 조회 | 게시 | 채널
+plantilla excel finanzas personales:
+ Plantilla para Organizar tus FINANZAS PERSONALES en Excel | 1.674.449 | hace 3 a | Mauro Cantú
+ NUEVA Plantilla de Presupuesto Personal 2026 | Excel + Google | 68.389 | hace 8 m | Digitt
+ Plantilla ... FINANZAS PERSONALES en Excel | 216.281 | hace 1 a | Excel Hecho Fácil
+ Plantilla Excel Para Finanzas Personales (Desde Cero) | 32.601 | hace 1 a | Frans Digital
+ Presupuesto Mensual Personal en Excel y Google Sheets | 60.347 | hace 1 a | Recursos de ingresos
+ Cómo Crear una Plantilla de Ingresos vs Egresos en Google Sheets | 29.351 | hace 8 m | MÁS-Arquitectura
+presupuesto 50 30 20:
+ Aprende a gestionar MEJOR tu dinero con LA REGLA 50/30/20 | 1.420.689 | hace 6 a | Aprendiz Financiero
+ La regla 50-30-20: Cómo hacer un presupuesto mensual | 6.615 | hace 1 a | Moneasy  (← Gumroad 유료 1위 판매자)
+ Cómo utilizar la plantilla financiera 50/30/20 | 43.009 | hace 2 a | Angie
+como ahorrar dinero: 상위 8개 43,849~482,645
+## Google Workspace Marketplace 'budget' (내장 브라우저 08:4x, 화면 값)
+ AI Budget Forecasting 1천+ · Budget-Time 25 · Planyard 106 · This Is How To Budget 459 (예산 전용은 작다)
+ AddonForge FORMeleon(Forms 선택지 제한) 167만+ · AddonForge CLOSY(Forms 응답 제한) 97만+ · PerformFlow 113만+ · ProjectSheet 122만+ · ChartExpo 74만+
+## TPT 검색 (WebFetch 요약 모델 — 개수는 화면 재확인 안 함)
+ 'financial literacy' 28,000+개: History Gal $5 리뷰 310 · Teaching with Tiffany $3 341 · Teach2Tell $6 319 · Teaching to the Middle $4.25 255 · Career and Life Skills $2.95 196
+ 'educacion financiera' 50+개: 리뷰 0~8
+## vidIQ 잔액 2크레딧(검색 1회 5크레딧) — 10/23 리셋

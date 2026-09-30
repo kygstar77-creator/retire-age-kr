@@ -59,6 +59,14 @@ a{color:inherit}
 .chip.c-실패,.chip.s-fail{background:var(--bad-soft); color:var(--bad)}
 .chip.c-na{background:transparent; border:1px dashed var(--line); color:var(--ink-3)}
 
+.prods{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr; gap:0}
+.prods li{border-top:1px solid var(--line); min-width:0}
+.prods a{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 2px; color:inherit; text-decoration:none; min-height:44px}
+.prods a:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.prods .nm{font-weight:700}
+.prods .u{font-size:var(--fs-5); color:var(--ink-2); overflow-wrap:anywhere}
+.prods .new{font-size:var(--fs-5); font-weight:700; color:var(--accent); white-space:nowrap}
+.prods .go{color:var(--ink-2); white-space:nowrap}
 /* ① 결재 — 화면의 유일한 다크 카드 */
 .deep{background:var(--deep); color:var(--deep-ink); border-radius:var(--r-card); padding:20px; display:flex; flex-direction:column; gap:14px}
 .deep .head{display:flex; align-items:baseline; justify-content:space-between; gap:12px}
@@ -70,6 +78,13 @@ a{color:inherit}
 .appr .cost{font-size:var(--fs-5); color:var(--deep-ink)}
 .appr .cost b{font-weight:700}
 .appr .cost b.key{color:var(--accent)}
+.appr .acts{display:flex; gap:8px; margin-top:6px; flex-wrap:wrap}
+.appr .acts button{font:inherit; font-size:var(--fs-5); font-weight:700; padding:8px 14px; border-radius:999px; border:1px solid var(--deep-line); background:transparent; color:var(--deep-ink); cursor:pointer; min-height:36px}
+.appr .acts button.yes{background:var(--accent); border-color:var(--accent); color:#fff}
+.appr .acts button:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.appr .acts button[disabled]{opacity:.5; cursor:default}
+.appr .done{font-size:var(--fs-5); color:var(--accent); font-weight:700}
+
 .appr .why{font-size:var(--fs-5); color:var(--deep-ink-2); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
 .appr details{font-size:var(--fs-5); color:var(--deep-ink-2)}
 .appr summary{cursor:pointer; color:var(--deep-ink); min-height:32px; display:flex; align-items:center}
@@ -175,9 +190,27 @@ footer{font-size:var(--fs-6); color:var(--ink-3); display:flex; flex-direction:c
         <h2 id="h-appr">① 결재 대기</h2>
         <div><span class="big num" id="apprN"></span><span class="sub"> 건</span></div>
       </div>
-      <div class="sub">사장님 손이 필요한 것만 모았습니다. 출처 approvals.md</div>
+      <div class="sub">사장님 손이 필요한 것만 모았습니다. 버튼을 누르면 총무팀이 다음 근무에 처리합니다.</div>
       <ul class="appr" id="appr"></ul>
     </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-prod">
+    <h2 id="h-prod">우리 제품 · 채널</h2>
+    <div class="sub">누르면 실제 운영 화면이 열립니다. 새 제품이 나오면 여기 맨 위에 붙습니다.</div>
+    <ul class="prods">
+        <li><a href="https://firemap.kr/calc/salary" target="_blank" rel="noopener"><span><span class="nm">연봉 실수령 계산기</span><br><span class="u">firemap.kr/calc/salary</span></span><span class="new">새로 출시 10/1</span></a></li>
+        <li><a href="https://firemap.kr/calc/severance" target="_blank" rel="noopener"><span><span class="nm">퇴직금 계산기</span><br><span class="u">firemap.kr/calc/severance</span></span><span class="new">새로 출시 9/30</span></a></li>
+        <li><a href="https://firemap.kr/calc/unemployment-benefit" target="_blank" rel="noopener"><span><span class="nm">실업급여 계산기</span><br><span class="u">firemap.kr/calc/unemployment-benefit</span></span><span class="new">새로 출시 9/30</span></a></li>
+        <li><a href="https://firemap.kr/" target="_blank" rel="noopener"><span><span class="nm">파이어 가능 나이 계산기(메인)</span><br><span class="u">firemap.kr/</span></span><span class="go">열기 ↗</span></a></li>
+        <li><a href="https://firemap.kr/health-insurance" target="_blank" rel="noopener"><span><span class="nm">파이어 후 건보료</span><br><span class="u">firemap.kr/health-insurance</span></span><span class="go">열기 ↗</span></a></li>
+        <li><a href="https://firemap.kr/tax" target="_blank" rel="noopener"><span><span class="nm">양도·배당세</span><br><span class="u">firemap.kr/tax</span></span><span class="go">열기 ↗</span></a></li>
+        <li><a href="https://firemap.kr/pension" target="_blank" rel="noopener"><span><span class="nm">국민연금 조기수령</span><br><span class="u">firemap.kr/pension</span></span><span class="go">열기 ↗</span></a></li>
+        <li><a href="https://firemap.kr/dividend" target="_blank" rel="noopener"><span><span class="nm">배당으로 파이어</span><br><span class="u">firemap.kr/dividend</span></span><span class="go">열기 ↗</span></a></li>
+        <li><a href="https://firemap.kr/firetype" target="_blank" rel="noopener"><span><span class="nm">파이어 유형 테스트</span><br><span class="u">firemap.kr/firetype</span></span><span class="go">열기 ↗</span></a></li>
+        <li><a href="https://www.youtube.com/@firemapkr" target="_blank" rel="noopener"><span><span class="nm">유튜브 채널 @firemapkr</span><br><span class="u">www.youtube.com/@firemapkr</span></span><span class="go">열기 ↗</span></a></li>
+        <li><a href="https://cafe.naver.com/firemap" target="_blank" rel="noopener"><span><span class="nm">네이버 카페</span><br><span class="u">cafe.naver.com/firemap</span></span><span class="go">열기 ↗</span></a></li>
+    </ul>
   </section>
 
   <section class="sec" aria-labelledby="h-office">
@@ -326,9 +359,37 @@ function renderAppr(){
       h('div', {class:'t'}, x.title),
       h('div', {class:'cost'}, '비용 ', h('b', {class: s(x.cost).length <= 24 ? 'key' : null}, s(x.cost))),
       x.why ? h('div', {class:'why'}, x.why) : null,
-      h('details', null, h('summary', null, '자세히 · ' + s(x.date)), h('div', null, x.detail), x.status ? h('div', null, '상태: ' + x.status) : null)
+      h('details', null, h('summary', null, '자세히 · ' + s(x.date)), h('div', null, x.detail), x.status ? h('div', null, '상태: ' + x.status) : null),
+      apprActs(x)
     ));
   }
+}
+/* 결재 버튼 — 사장님이 누르면 db approvals/<id>에 기록, 총무팀이 읽고 실행 */
+const APPR = {}; let APPR_DB = null;
+function apprActs(x){
+  const d = APPR[x.id];
+  if (d) return h('div', {class:'done'}, (d.decision === 'approve' ? '승인함' : d.decision === 'reject' ? '반려함' : '보류함') + ' · ' + s(d.at).slice(5, 16).replace('T', ' ') + ' — 총무팀이 다음 근무에 처리');
+  if (!APPR_DB || !x.id) return h('div', {class:'sub'}, '버튼은 실시간 연결 뒤에 나타납니다');
+  const wrap = h('div', {class:'acts'});
+  const go = async (decision, btn) => {
+    for (const b of wrap.querySelectorAll('button')) b.disabled = true;
+    try {
+      await APPR_DB.collection('approvals').doc(x.id).set({decision, title: x.title, cost: s(x.cost), at: new Date().toISOString()});
+    } catch(e) {
+      for (const b of wrap.querySelectorAll('button')) b.disabled = false;
+      btn.textContent = '저장 안 됨 · 다시';
+    }
+  };
+  const mk = (label, decision, cls) => { const b = h('button', {type:'button', class: cls || null}, label); b.addEventListener('click', () => go(decision, b)); return b; };
+  wrap.append(mk('승인', 'approve', 'yes'), mk('반려', 'reject'), mk('보류', 'hold'));
+  return wrap;
+}
+async function startAppr(db){
+  APPR_DB = db;
+  const col = db.collection('approvals');
+  const apply = snap => { for (const k of Object.keys(APPR)) delete APPR[k]; for (const d of snap.docs){ if (d.exists){ const v = d.data(); if (v && typeof v === 'object') APPR[d.id] = v; } } renderAppr(); };
+  renderAppr();
+  col.onSnapshot(apply, () => {});
 }
 function tile(lab, val, unit, opts){
   opts = opts || {};
@@ -436,6 +497,7 @@ async function startLive(){
   let db = null;
   try { db = window.claude && window.claude.use ? await window.claude.use('db') : null; } catch(e) { db = null; }
   if (!db) return;
+  startAppr(db);
   const col = db.collection('status');
   const apply = snap => {
     for (const k of Object.keys(LIVE)) delete LIVE[k];

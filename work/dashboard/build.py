@@ -12,6 +12,7 @@ MCP에서만 나오는 것(예약 작업·회차·사용량)은 Python이 못 �
 원칙: 추측 금지. 못 찾은 값은 '확인 안 함'. 키·토큰·계정 식별자는 가린다.
 스꾸(seukku) 예약 작업은 입력에 있어도 버린다.
 """
+import hashlib
 import sys, os, re, json, subprocess, argparse, datetime as dt
 
 sys.stdout.reconfigure(encoding='utf-8')
@@ -298,6 +299,8 @@ def approvals():
         out.append({'date': date, 'title': clip(title, 70), 'detail': clip(md_plain(req.group(1)) if req else '', 260),
                     'cost': cost, 'why': clip(md_plain(' '.join(l.strip('- ') for l in body.splitlines()[:3])), 220),
                     'status': '결재 대기'})
+    for x in out:
+        x['id'] = hashlib.sha1(x['title'].encode('utf-8')).hexdigest()[:12]
     return out
 
 

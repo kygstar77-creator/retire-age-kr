@@ -310,6 +310,11 @@ html[data-theme="dark"] .ds-card--dark { background: #26272e; color: #f2f3f5; bo
 .ds-hero__tiles { margin-top: var(--ds-sp-5); padding-top: var(--ds-sp-4); border-top: 1px solid var(--ds-line); gap: 0; }
 .ds-card--dark .ds-hero__tiles { border-top-color: rgba(255,255,255,.14); }
 .ds-card--dark .ds-tile { background: transparent; }
+/* 타일 값이 길 때(원 단위 3칸) 375px에서 붙지 않게 — 연봉 결과(F3) */
+.ds-hero--compact-tiles .ds-tile .ds-stat__value { font-size: var(--ds-fs-body-sm); }
+.ds-card--dark .ds-tabs { background: rgba(255,255,255,.1); }
+.ds-card--dark .ds-tabs__item { color: rgba(255,255,255,.7); }
+.ds-card--dark .ds-tabs__item[aria-selected="true"] { background: var(--ds-surface); color: var(--ds-ink); }
 .ds-card--dark .ds-tile .ds-stat__label { color: rgba(255,255,255,.7); }
 .ds-card--dark .ds-stat__delta { color: #ffb38a; }
 .ds-card--dark .ds-stat__delta--up { color: #7ee2b0; } .ds-card--dark .ds-stat__delta--down { color: #ff9a8a; }

@@ -178,7 +178,19 @@ test.describe('firemap smoke', () => {
     for (const b of tool.body.slice(1)) expect(screenText, `crawler text on screen: ${b.slice(0, 20)}`).toContain(b);
     // 기본 화면에서 저축 0원이 되면 은퇴 연결이 막힌다(레드팀 10/1) — 기본 생활비 250만원이면 2,935,813 − 2,500,000
     await expect(hero).toContainText('남는 435,813원을 월 저축으로');
-    await page.getByRole('button', { name: '은퇴 나이 계산' }).click();
+    // F3 A안: 결과 카드 안 80/100/120% 칩(경쟁 5곳에 없음) — 손검산 A의 80%·120%(salaryNet 원식) 그대로 바뀌고 되돌아온다
+    await expect(hero).toContainText('공제 합계');
+    await page.getByRole('tab', { name: '80%' }).click();
+    await expect(hero).toContainText('2,954,443원');
+    await expect(hero).toContainText('67,690원');
+    await page.getByRole('tab', { name: '120%' }).click();
+    await expect(hero).toContainText('2,917,203원');
+    await page.getByRole('tab', { name: '100%' }).click();
+    await expect(hero).toContainText('2,935,813원');
+    // 결과 카드 타일 3칸이 375px 안에서 넘치지 않는다(시안 지적: 값이 붙음)
+    const over = await page.locator('.ds-hero--compact-tiles .ds-tile').evaluateAll((els) => els.filter((e) => e.scrollWidth > e.clientWidth + 1).length);
+    expect(over, '타일 값 넘침').toBe(0);
+    await page.getByRole('button', { name: '이 돈이면 몇 살에 은퇴?' }).click();
     await page.waitForTimeout(500);
     expect(bodies.some((b) => b.event === 'salary_to_fire'), 'salary_to_fire 이벤트').toBe(true);
     expect(await page.evaluate(() => window.location.hash)).toBe('#result');
@@ -190,7 +202,7 @@ test.describe('firemap smoke', () => {
     for (const path of ['/calc/salary', '/calc/severance', '/calc/unemployment-benefit']) {
       await page.goto('about:blank');
       await page.goto(path);
-      await expect(page.locator('main.fm-screen')).toContainText('은퇴 나이 계산');
+      await expect(page.locator('main.fm-screen')).toContainText(path === '/calc/salary' ? '몇 살에 은퇴?' : '은퇴 나이 계산');
       const links = page.locator('main.fm-screen a[href*="coupang.com"]');
       const n = await links.count();
       await expect(page.locator('.fm-coupang-pick'), `${path} slot count`).toHaveCount(n ? 1 : 0);

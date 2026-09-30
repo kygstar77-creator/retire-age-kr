@@ -2,7 +2,7 @@
 // 입력 이름은 국세청 간이세액표 용어(월급여액·비과세·공제대상가족·8세 이상 20세 이하 자녀) 그대로. 식·근거: src/utils/salaryNet.js, work/research/calc-salary/spec.md
 // 간이세액표(41KB)는 이 화면에서만 쓰니 FireMapMVP가 React.lazy로 따로 불러온다.
 import { useState } from 'react';
-import { Card, SectionHead, RangeField, StatHero, Button, Fold, Tabs, Notice, Icon, ListGroup, ListRow, toast } from '../../ui/index.js';
+import { Card, SectionHead, RangeField, StatHero, Button, Tabs, Notice, Icon, ListGroup, ListRow, toast } from '../../ui/index.js';
 import CoupangPick from './CoupangPick.jsx';
 import { salaryNet, SALARY_RULES } from '../../utils/salaryNet.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
@@ -39,17 +39,29 @@ export default function SalaryCalc({ inputs, onApply, onMove }) {
 
   return (
     <>
+      {/* F3 A안(design/salary-result, 10/1): 다크 결과 카드 숫자 하나 → 80/100/120% 칩(경쟁 5곳에 없음) → 주황 버튼 하나. 타일 값은 375px에서 붙지 않게 body-sm */}
       <StatHero
-        tone="light" size="md"
-        label="월 실수령액 · 간이세액표 기준"
+        className="ds-hero--compact-tiles"
+        label="월 실수령액"
         value={exact(r.net)}
-        sub={<>월급 <b className="num">{exact(r.monthly)}</b>에서 <b className="num">{exact(r.deductions)}</b> 공제</>}
+        sub={`연봉 ${won(annual)} · 비과세 월 ${won(nontax)} · 가족 ${family}명 · 자녀 ${Math.min(kids, family - 1)}명`}
         tiles={[
-          { label: '4대보험', value: exact(insurance) },
-          { label: '세금', value: exact(r.incomeTax + r.localTax) },
-          { label: '연 실수령액', value: won(r.netAnnual) }
+          { label: '연 실수령', value: won(r.netAnnual) },
+          { label: '월 공제', value: exact(r.deductions) },
+          { label: '세액표', value: `${ratio}%` }
         ]}
-      />
+      >
+        <Tabs className="ds-mt-4" label="원천징수 비율" value={String(ratio)} onChange={(k) => { setRatio(Number(k)); try { logEvent('salary_ratio', { ratio: Number(k) }); } catch { /* ignore */ } }}
+          items={[{ key: '80', label: '80%' }, { key: '100', label: '100%' }, { key: '120', label: '120%' }]} />
+        <p className="ds-hero__sub ds-mb-0">원천징수 비율 · 기본은 100%예요 · 회사에 신청하면 80% · 120%도 돼요. 매달 떼는 세금은 연말정산으로 다시 맞춰요</p>
+      </StatHero>
+
+      <div>
+        <Button variant="primary" size="lg" full onClick={toRetire}>이 돈이면 몇 살에 은퇴?</Button>
+        <p className="ds-caption ds-mb-0 ds-mt-2">{saving > 0
+          ? `실수령 ${exact(r.net)}에서 생활비 ${exact(living)}을 빼고 남는 ${exact(saving)}을 월 저축으로 넣어 계산해요`
+          : `실수령 ${exact(r.net)}이 생활비 ${exact(living)}보다 적어 월 저축 0원으로 계산해요`} · 생활비는 아래에서 바꿔요</p>
+      </div>
 
       <Card>
         <SectionHead size="sm" kicker="연봉 실수령 계산기" title="연봉 · 비과세액" desc="연봉은 비과세액을 포함한 세전 금액이에요" />
@@ -61,32 +73,23 @@ export default function SalaryCalc({ inputs, onApply, onMove }) {
         <SectionHead size="sm" kicker="소득세" title="공제대상가족" desc="본인과 배우자도 각각 1명으로 세요" />
         <RangeField label="공제대상가족 수 · 본인 포함" value={family} min={1} max={11} step={1} format={(v) => `${Math.round(v)}명`} onChange={(v) => setFamily(Math.round(v))} />
         <RangeField label="8세 이상 20세 이하 자녀 수" value={Math.min(kids, family - 1)} min={0} max={Math.max(1, family - 1)} step={1} format={(v) => `${Math.round(v)}명`} onChange={(v) => setKids(Math.round(v))} hint="공제대상가족 수에 포함된 자녀예요" />
-        <Fold title="원천징수 비율" hint="기본은 100%예요 · 회사에 신청하면 80% · 120%도 돼요">
-          <Tabs label="원천징수 비율" value={String(ratio)} onChange={(k) => setRatio(Number(k))}
-            items={[{ key: '80', label: '80%' }, { key: '100', label: '100%' }, { key: '120', label: '120%' }]} />
-        </Fold>
       </Card>
 
-      <ListGroup label="한 달 공제 내역">
+      <ListGroup label="한 달 공제 6가지">
         <ListRow title="국민연금 · 4.75%" trail={exact(r.pension)} chevron={false} size="S" />
         <ListRow title="건강보험 · 3.595%" trail={exact(r.health)} chevron={false} size="S" />
         <ListRow title="장기요양보험 · 건강보험료의 13.14%" trail={exact(r.ltc)} chevron={false} size="S" />
         <ListRow title="고용보험 · 0.9%" trail={exact(r.employment)} chevron={false} size="S" />
         <ListRow title={`소득세 · 간이세액표${ratio !== 100 ? ` ${ratio}%` : ''}`} trail={exact(r.incomeTax)} chevron={false} size="S" />
         <ListRow title="지방소득세 · 소득세의 10%" trail={exact(r.localTax)} chevron={false} size="S" />
+        <ListRow title={<b>공제 합계</b>} trail={<b>{exact(r.deductions)}</b>} chevron={false} size="S" />
       </ListGroup>
 
       <Card>
-        <SectionHead size="sm" kicker="은퇴 계산" title="한 달 생활비" desc="실수령에서 생활비를 빼고 남는 돈을 월 저축으로 봐요" />
+        <SectionHead size="sm" kicker="은퇴 계산" title="한 달 생활비" desc="실수령에서 생활비를 빼고 남는 돈을 월 저축으로 봐요 · 위 '이 돈이면 몇 살에 은퇴?'에 쓰여요" />
         <RangeField label="한 달 생활비" value={living} min={500000} max={10000000} step={100000} money format={won} chips={[100000, 500000]} onChange={setLiving} />
       </Card>
 
-      <Card variant="dark">
-        <SectionHead size="sm" title="이 돈이면 몇 살에 은퇴?" desc={saving > 0
-          ? `실수령 ${exact(r.net)}에서 생활비 ${exact(living)}을 빼고 남는 ${exact(saving)}을 월 저축으로 넣어 계산해요`
-          : `실수령 ${exact(r.net)}이 생활비 ${exact(living)}보다 적어 월 저축 0원으로 계산해요`} />
-        <Button variant="primary" size="lg" full onClick={toRetire}>은퇴 나이 계산</Button>
-      </Card>
 
       <ListGroup label="다음 계산">
         <ListRow lead={<Icon name="calc" />} title="퇴직금 계산기" desc="입사일·퇴직일·월급으로 예상 퇴직금" size="S" onClick={toNext} />

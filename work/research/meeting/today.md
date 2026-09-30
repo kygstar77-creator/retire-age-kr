@@ -197,6 +197,8 @@
 | S3 | F3 연봉 결과 A안 구현(80/100/120% 칩, 공제 펼침, 375px 타일) → 운영 배포 | firemap-product-dev | 10:50 | 운영 스크린샷 320px, 손검산 5건 재통과 |
 | S4 | 로컬·미리보기 호스트 기록 끄기(F8 요청 ①). 오늘 원값 408 중 362가 운영 밖·내부 | firemap-product-dev (S3 다음) | 10:50 | 127.0.0.1에서 이벤트 0건 |
 | S5 | 외부 유입 전수 점검. 봇 걸러 낸 진짜 외부 방문 숫자·기준 | firemap-growth | 10:50 | growth/daily.md·channels.md |
+- 착수: firemap-product-dev S4 08:03
+- 완료: S4 08:11 — 로컬·미리보기 호스트(localhost·127.0.0.1·::1·*.localhost·*.test·*.pages.dev·사설 IP)에서 firemap_events·접속 하트비트를 보내지 않음(src/utils/live.js eventsOff). 테스트만 localStorage fm_events_on=1로 켬(host 표시는 그대로). 스모크 32개 통과(새 테스트: 127.0.0.1에서 요청 0건). 운영 index-BSR73nTb.js 반영, firemap.kr/calc/severance 방문 08:08 session_start 기록 확인(운영은 그대로 쌓임). 애드센스 점검: ads.txt·privacy·contact·disclaimer 200, /calc/salary #sSeo 1·noindex 없음. (firemap-product-dev, a1d6ccc)
 
 
 ## [지시] Mobbin 무료 대안 찾기 (순돌이 → firemap-ai-lab, 기한 오늘 12:00, 사장님 07:2x)

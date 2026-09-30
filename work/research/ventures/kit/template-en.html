@@ -1,0 +1,116 @@
+<!doctype html>
+<!-- 신사업 빈 템플릿(영어) — firemap-venture-builder 2026-10-01
+     쓰는 법: 이 파일을 public/<경로>/index.html 로 복사 → {{…}} 전부 채우기 → compute()만 구현.
+     규칙: 본문은 JS 없이 첫 HTML에 있다(체크리스트 16). 숨김 텍스트 없음. 금융상품 권유 문구 금지.
+     제휴 링크를 넣으면 대가성 문구를 링크 바로 위에(coupang-policy.md / Amazon: "As an Amazon Associate I earn from qualifying purchases."). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<link rel="canonical" href="{{CANONICAL_URL}}">
+<!-- 한국어판이 있으면: <link rel="alternate" hreflang="ko" href="{{KO_URL}}"> <link rel="alternate" hreflang="en" href="{{CANONICAL_URL}}"> -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:url" content="{{CANONICAL_URL}}">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#f6f7f9">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"{{NAME}}","url":"{{CANONICAL_URL}}","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#18191d;--sub:#6b6e76;--line:#e5e6ea;--accent:#ff5a00;--dark:#18191d;--dark-ink:#f2f3f5;
+  --fs1:30px;--fs3:22px;--fs4:20px;--fs5:17px;--fs6:15px;--fs7:13px}
+@media (prefers-color-scheme:dark){:root{--bg:#101114;--card:#1b1c21;--ink:#f2f3f5;--sub:#9a9da5;--line:#2c2d34;--dark:#26272e}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--fs5)/1.5 "Pretendard",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px 48px}
+header{display:flex;align-items:center;justify-content:space-between;height:56px}
+header a{color:var(--ink);text-decoration:none;font-weight:700}
+h1{font-size:var(--fs1);line-height:1.33;margin:16px 0 8px}
+.lead{color:var(--sub);margin:0 0 24px}
+.card{background:var(--card);border-radius:20px;padding:24px 20px;margin:0 0 16px}
+label{display:block;font-size:var(--fs6);color:var(--sub);margin:0 0 8px}
+.field{margin:0 0 16px}
+input,select{width:100%;height:48px;border:1px solid var(--line);border-radius:8px;padding:0 12px;font-size:var(--fs5);background:var(--card);color:var(--ink)}
+button{height:56px;width:100%;border:0;border-radius:14px;font-size:var(--fs5);font-weight:700;cursor:pointer}
+.primary{background:var(--accent);color:#fff}
+.ghost{background:rgba(127,127,127,.14);color:inherit;height:48px}
+.result{background:var(--dark);color:var(--dark-ink);border-radius:20px;padding:24px 20px;margin:0 0 16px}
+.result .k{font-size:var(--fs6);opacity:.75;margin:0}
+.result .big{font-size:40px;font-weight:700;line-height:1.33;margin:4px 0 8px;color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
+.result .s{font-size:var(--fs6);opacity:.85;margin:0 0 16px}
+h2{font-size:var(--fs4);margin:32px 0 12px}
+section p,section li{color:var(--ink)}
+.src{font-size:var(--fs7);color:var(--sub)}
+footer{font-size:var(--fs7);color:var(--sub);margin-top:40px}
+footer a{color:var(--sub)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><a href="{{HOME_URL}}">{{BRAND}}</a></header>
+  <main>
+    <h1>{{H1}}</h1>
+    <p class="lead">{{LEAD_ONE_LINE}}</p>
+
+    <form id="f" class="card" novalidate>
+      <!-- 입력은 꼭 필요한 것만(3개 이하 권장). 예: -->
+      <div class="field"><label for="a">{{INPUT_A_LABEL}}</label><input id="a" name="a" inputmode="decimal" autocomplete="off" required></div>
+      <button class="primary" type="submit">{{CTA}}</button>
+    </form>
+
+    <!-- 숫자 하나 + 행동 하나. 다크 카드는 이것 하나만. -->
+    <div id="r" class="result" hidden aria-live="polite">
+      <p class="k">{{RESULT_LABEL}}</p>
+      <p class="big" id="big">—</p>
+      <p class="s" id="sub"></p>
+      <button class="ghost" id="share" type="button">Share result</button>
+    </div>
+
+    <section>
+      <h2>How it's calculated</h2>
+      <p>{{METHOD_PLAIN}}</p>
+      <p class="src">Source: {{OFFICIAL_SOURCE_NAME_AND_URL}} · Rules as of {{AS_OF_DATE}}</p>
+    </section>
+
+    <section>
+      <h2>FAQ</h2>
+      <!-- 원문으로 확인된 사실만. 모르면 쓰지 않는다. -->
+      <h3>{{Q1}}</h3><p>{{A1}}</p>
+    </section>
+  </main>
+  <footer>
+    <p>This is an estimate for general information only, not tax, legal or financial advice. Your numbers stay in your browser.</p>
+    <p><a href="{{PRIVACY_URL}}">Privacy</a> · <a href="{{CONTACT_URL}}">Contact</a></p>
+  </footer>
+</div>
+<script src="/kit/fmkit.js"></script>
+<script>
+FMKit.init({ site: '{{SITE_ID}}', lang: 'en' });
+var fmt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
+// compute(): 입력 → { big: '표시 문자열', sub: '한 줄 설명', bucket: '구간(측정용, 원값 금지)' }
+function compute(v) {
+  var a = Number(String(v.a || '').replace(/[^0-9.]/g, ''));
+  if (!(a > 0)) return null;
+  return { big: fmt.format(a), sub: '{{SUB_TEMPLATE}}', bucket: a < 50000 ? '<50k' : a < 100000 ? '50-100k' : '100k+' };
+}
+var last = null;
+document.getElementById('f').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var out = compute({ a: document.getElementById('a').value });
+  if (!out) { FMKit.log('calc_invalid'); return; }
+  last = out;
+  document.getElementById('big').textContent = out.big;
+  document.getElementById('sub').textContent = out.sub;
+  document.getElementById('r').hidden = false;
+  FMKit.log('calc_submit', { bucket: out.bucket });
+});
+document.getElementById('share').addEventListener('click', function () {
+  if (!last) return;
+  FMKit.share({ title: '{{H1}}', big: last.big, sub: last.sub, brand: '{{BRAND}}', text: '{{SHARE_TEXT}}' });
+});
+</script>
+</body>
+</html>

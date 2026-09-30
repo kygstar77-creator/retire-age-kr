@@ -2,5 +2,5 @@
 import { TopBar } from '../../ui/index.js';
 
 export default function Header({ tag, onBack }) {
-  return <TopBar title={tag} onBack={onBack} onHome={() => { window.location.hash = '#home'; }} />;
+  return <TopBar title={tag} onBack={onBack} onHome={() => { window.history.pushState(null, '', '/#home'); window.dispatchEvent(new PopStateEvent('popstate')); }} />;
 }

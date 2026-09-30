@@ -37,14 +37,31 @@ export async function fetchTotalCalc() {
   } catch { return 0; }
 }
 
+// 내부 점검 방문 표시 — ?fm_internal=1 로 한 번 들어온 기기는 이후 모든 이벤트에 internal:1(성장 담당 요청 9/30).
+// firemap.kr 밖(localhost·pages.dev 미리보기)에서 난 이벤트엔 host를 남긴다. 개인정보 없는 값만.
+function auditProps() {
+  const extra = {};
+  try {
+    if (new URLSearchParams(window.location.search || '').get('fm_internal') === '1') localStorage.setItem('fm_internal', '1');
+    if (localStorage.getItem('fm_internal') === '1') extra.internal = 1;
+  } catch { /* ignore */ }
+  try {
+    const host = window.location.hostname || '';
+    if (host && host !== 'firemap.kr' && host !== 'www.firemap.kr') extra.host = host.slice(0, 80);
+  } catch { /* ignore */ }
+  return extra;
+}
+
 // 익명 이벤트 기록(append-only). 개인정보·금액 원본 없이 행동 이벤트만.
 export function logEvent(event, props) {
   try {
     const cid = identityId();
+    const extra = auditProps();
+    const merged = Object.keys(extra).length ? { ...(props || {}), ...extra } : (props || null);
     fetch(`${SUPABASE_URL}/rest/v1/firemap_events`, {
       method: 'POST',
       headers: { ...H, prefer: 'return=minimal' },
-      body: JSON.stringify({ client_id: cid, event: String(event).slice(0, 80), props: props || null })
+      body: JSON.stringify({ client_id: cid, event: String(event).slice(0, 80), props: merged })
     }).catch(() => {});
   } catch { /* ignore */ }
 }

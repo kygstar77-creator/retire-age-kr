@@ -55,3 +55,5 @@
 2026-09-30 16:55 · firemap-youtube-loop · A-1 카페 전체 표 글(C1)을 오늘 대신 10/1 12시 슬롯에 발행 대기 · 오늘 카페가 이미 7편으로 하루 상한 5를 넘어 '영상과 같은 날'보다 상한·기계 패턴 회피를 우선
 2026-09-30 16:55 · firemap-youtube-loop · 카페 글 본문에 유튜브·firemap.kr URL을 넣지 않고 이름만 적음 · readcheck(링크 카드 끼어듦) 규칙 — 그래서 utm 유입은 이 글에서 못 잼
 2026-09-30 16:55 · firemap-youtube-loop · 회의 요청 카페 가입 질문·멤버공개 '이번 주 숫자 한 장'을 BACKLOG C9·C10으로 올림 · 가입 질문은 카페 관리 화면(웨일+computer-use) 필요, 이번 회차는 C1 우선
+2026-09-30 17:40 · firemap-product-dev · 이벤트에 internal:1(?fm_internal=1 기기)·host(firemap.kr 밖) 붙임 · 원값 세션 87 중 약 70이 내부 점검이라 실험 판정이 불가능(성장 담당 실측)
+2026-09-30 17:40 · firemap-product-dev · 도구 화면 주소를 해시로 접지 않고 검색용 경로(/calc/severance 등) 유지 · 복사·공유 주소가 해시로 퍼져 검색 주소에 힘이 안 모임(디자인 리뷰 고칠 점 2)

@@ -28,7 +28,7 @@ import { getLatestRank } from '../firemap-v2/rankHistory.js';
 import { maybeClaimOnLoad, claimDevice, syncAfterAuth, pullInputsIfNewer } from '../utils/firemapStateApi.js';
 import { handleKakaoRedirect } from '../utils/kakaoAuth.js';
 import { handleNaverRedirect } from '../utils/naverAuth.js';
-import { toolPageByPath } from '../firemap-v2/toolPages.js';
+import { TOOL_PAGES, toolPageByPath } from '../firemap-v2/toolPages.js';
 import { track } from '../firemap-v2/dailyData.js';
 import { logEvent } from '../utils/live.js';
 import { decodeInputsFromHash } from '../utils/shareState.js';
@@ -144,11 +144,10 @@ export default function FireMapMVP() {
     const sync = () => setScreenState(readScreenFromHash());
     window.addEventListener('hashchange', sync);
     window.addEventListener('popstate', sync);
-    // 검색용 경로로 들어왔으면 크롤러용 본문(#sSeo)을 지우고 주소를 앱 해시로 바꾼다 — 사람 눈엔 앱 그대로.
+    // 검색용 경로로 들어왔으면 크롤러용 본문(#sSeo)만 지우고 주소는 그대로 둔다 — 복사·공유되는 주소가 검색용 경로(/calc/severance)가 되게.
     const tool = toolPageByPath(window.location.pathname);
     try { const seo = document.getElementById('sSeo'); if (seo) seo.remove(); } catch { /* ignore */ }
-    if (tool && !window.location.hash) window.history.replaceState(null, '', `/${screens[tool.screen].hash}`);
-    else if (!window.location.hash) window.history.replaceState(null, '', '#home');
+    if (!tool && !window.location.hash) window.history.replaceState(null, '', '#home');
     (async () => {
       // 카페 게시용 네이버 로그인에서 돌아온 경우 — 토큰을 받아 두고 인증 카드를 다시 연다.
       const nv = await handleNaverRedirect();
@@ -180,11 +179,13 @@ export default function FireMapMVP() {
     return () => { window.removeEventListener('hashchange', sync); window.removeEventListener('popstate', sync); window.removeEventListener('appinstalled', onInstalled); };
   }, []);
 
+  // 도구 화면은 검색용 경로로, 나머지는 루트 + 해시로. 도구 경로 위에서 해시만 바꾸면 /calc/severance#home 같은 주소가 된다.
   const setScreen = (next) => {
     const id = resolveScreen(next);
     setScreenState(id);
-    const hash = screens[id].hash;
-    if (window.location.hash !== hash) window.history.pushState(null, '', hash);
+    const tool = TOOL_PAGES.find((t) => t.screen === id);
+    const url = tool ? tool.path : `/${screens[id].hash}`;
+    if (`${window.location.pathname}${window.location.hash}` !== url) window.history.pushState(null, '', url);
   };
   const onChange = (key, value) => setInputs((c) => ({ ...c, [key]: cleanNumber(value) }));
   const applyPatch = (patch) => Object.entries(patch).forEach(([k, v]) => onChange(k, v));

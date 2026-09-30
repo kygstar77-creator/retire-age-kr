@@ -1,7 +1,6 @@
 // 파이어맵 스모크 — 개편 주차 게이트. 화면 17개가 뜨고, 콘솔 에러 0, 가로 스크롤 0, 첫 진입 dialog 0(결과·질문은 예외 없음).
 import { expect, test } from '@playwright/test';
 import { TOOL_PAGES } from '../src/firemap-v2/toolPages.js';
-import { screens } from '../src/firemap-v2/screens.js';
 
 const INPUTS = { currentAge: 34, targetRetirementAge: 50, financialAsset: 150000000, monthlyInvestment: 1500000, monthlyLivingCost: 2500000 };
 const SCREENS = ['#home', '#question', '#result', '#experiment', '#ranking', '#menu', '#settings', '#account', '#cities', '#firetype', '#dependent', '#foreignTax', '#dividend', '#pension', '#severance', '#news', '#wall'];
@@ -97,16 +96,28 @@ test.describe('firemap smoke', () => {
     expect(await page.locator('.ds-rule').count()).toBe(0);
   });
 
-  test('tool paths (/dividend …) open the screen and fold into the hash address', async ({ page }) => {
+  test('tool paths (/dividend …) open the screen and keep the search address', async ({ page }) => {
     await seed(page);
     for (const t of TOOL_PAGES) {
       await page.goto(t.path);
       await page.waitForTimeout(600);
       await expect(page.locator('main.fm-screen').first()).toBeVisible();
-      const hash = await page.evaluate(() => window.location.hash);
-      expect(hash, `${t.path} → ${t.screen}`).toBe(screens[t.screen].hash);
+      const loc = await page.evaluate(() => `${window.location.pathname}${window.location.hash}`);
+      expect(loc, `${t.path} → ${t.screen}: 주소가 검색용 경로 그대로`).toBe(t.path);
       expect(await page.locator('#sSeo').count(), `${t.path} crawler block removed`).toBe(0);
     }
+  });
+
+  test('internal visit flag: ?fm_internal=1 sticks and tags events', async ({ page }) => {
+    const bodies = [];
+    await page.route('**/rest/v1/firemap_events', async (route) => { try { bodies.push(JSON.parse(route.request().postData() || '{}')); } catch { /* ignore */ } await route.fulfill({ status: 201, body: '' }); });
+    await page.goto('/calc/severance?fm_internal=1');
+    await page.waitForTimeout(800);
+    await page.goto('/#home');
+    await page.waitForTimeout(800);
+    const last = bodies.filter((b) => b.event === 'session_start').pop();
+    expect(last && last.props && last.props.internal, 'session_start에 internal:1').toBe(1);
+    expect(last.props.host, '미리보기 호스트 기록').toBe('127.0.0.1');
   });
 
   test('copy rules: no 합니다/하세요, no banned system words', async ({ page }) => {

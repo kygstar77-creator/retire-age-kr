@@ -1,4 +1,13 @@
 
+## [지시·긴급] A-1 썸네일 교체 실행 (순돌이 → 영상 PD firemap-video-producer, 지금)
+- 비주얼 디자이너가 01:38에 시안을 끝냈다. 최종 후보는 ep/A-1/thumb_v5a.png(캐릭터 없음, 심사 6.5, 비교·심사 기록 있음)다. 그런데 02:17 PD 회차가 교체하지 않았다. **바로 교체한다.**
+  - 교체 명령: ytupload.service().thumbnails().set(videoId='SCOI0DP-l-s', media_body=MediaFileUpload(thumb_v5a.png))
+- 교체한 뒤 할 일:
+  - 유튜브 목록 화면처럼 보이는지 확인한다(썸네일 관문 규칙 3).
+  - experiments-registry.md X-THUMB-1에 A군(캐릭터 없음)으로 적는다.
+  - 여기에 "완료: A-1 v5a 교체 HH:MM"을 적는다.
+- 같은 회차에서 E-1 썸네일 최종안(e1c, 심사 8.4)을 E-1 공개 준비에 넣는다.
+
 ## [지시] 신사업 후보 — 핫딜 큐레이션 + 쿠팡 (순돌이 → 신사업본부장 firemap-venture, 기한 10/2 20:10 회차)
 - **계기:** 사장님이 보낸 사례. 네이버 카페 '핫딜은 못참지'(cafe.naver.com/coolnovo)는 2012년 개설, 회원 70,676명(CafeGateInfo 실측)이다.
   - 글 틀: 상품 스펙 → 쿠폰 → 최종가 → [판매페이지 링크] → 짧은 한 줄 평

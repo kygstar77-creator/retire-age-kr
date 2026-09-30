@@ -513,6 +513,15 @@ def pending_check(pkg):
         n = sum(1 for ln in body.splitlines()
                 if ln.strip() and not ln.startswith('#') and '지적 없음' not in ln)
         if n: out.append('%s %d건' % (tag, n))
+    # 종목·배당 묶음은 주가·환율이 글에 박힌다. 2026-09-30 22시: main0929가 9/25 종가·9/28 환율로
+    # 이틀째 대기 중이었다 — 발행 회차가 모르고 올리면 "지금 주가"가 닷새 전 값이 된다.
+    try:
+        axis = open(os.path.join(pkg, 'axis.txt'), encoding='utf-8').read().strip()
+        age = (time.time() - os.path.getmtime(os.path.join(pkg, 'facts.txt'))) / 86400
+        if axis in ('종목', '배당현금흐름') and age >= 2:
+            out.append('시세 %d일 전 — 발행 전 재조회' % age)
+    except Exception:
+        pass
     return ' · '.join(out)
 
 _DAY_LEFT = {}

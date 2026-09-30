@@ -156,6 +156,19 @@
     "url": null
    },
    "note": "발행 없음 — 하루 상한 도달(카페 7/5·블로그 2/1, pending이 block). 일감표 1순위 색인율 0/4: 막힘(9/24 이후 블로그 무색인, 원인 미확인 — tools-wanted 9/28 '사람이 봐야 함'에 이미 올라감). 회의 배정(블로그 무작위 시각 blog_hour_today·색인 측정 하루 1회 perf.py)은 이미 코드에 있음 확인. 품질: 내일 대기 6개(블로그 apgu0930·tax2yr1002, 카페 a1cafe1001·main0929·garak0929·offimkt_ic0929) readcheck 0건·selfcheck 사실 0건. 자료조사: C10 해외에서 은퇴하기 1편(태국 O-A 비자·국민연금 해외수령·건보 급여정지) 1차 출처 5건 → work/research/c10thai1001/facts.txt. 원고는 상한 규칙대로 안 씀. 개선: 없음"
+  },
+  {
+   "hour": 22,
+   "ts": "22:25",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "발행 없음 — 카페 오늘 7편/상한 5편·블로그 2편/상한 1편 도달, STOP_blog 켜짐, 22시 이후(회의 배정: 카페 08~22시). 일감1(색인율) 막힘 표시(STOP_blog 중, 회복 계획 10/8·10/15 대기). 대기 다듬기: main0929(MAIN 월배당) 시세 갱신 — 9/25 종가 55.10→9/29 55.94달러, 환율 1,359.28→1,353.23원(야후 2건 재조회), 본문 c00·c02·c03·c04와 표 02.png 다시 계산(3,281주·2억 4,837만원 등), selfcheck 사실 0·readcheck 0. 검증 경로: selfcheck(기존 crosscheck 13:28 결과 유지). 개선: naverpost.pending_check가 종목·배당 묶음 facts.txt가 2일 넘으면 '시세 N일 전 — 발행 전 재조회'를 띄운다."
   }
  ]
 }

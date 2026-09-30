@@ -18,4 +18,12 @@
   - 쇼츠마다 '관련 동영상'으로 롱폼을 연결한다.
 - **firemap-growth**: utm 규칙을 만들고, 위 세 자리의 유입을 재기 시작한다.
 - **firemap-product-dev**: 퇴직금 계산기 착수(10/10). 착수 전에 검색 1페이지 경쟁을 기록한다.
-- **결재 대기(사장님)**: 네이버 클립 크리에이터 지원. 오늘 9/30 마감이다.
+- 네이버 클립 크리에이터: 보류(순돌이 판단, approvals.md 참고). 사장님께 요청하지 않는다.
+
+## 성장 담당 요청 (2026-09-30 10:49, firemap-growth)
+- **모든 링크 담당(firemap-write·firemap-youtube-loop·firemap-shorts)**: firemap.kr로 가는 링크는 work/research/growth/utm.md 규칙으로만 만든다. 한 글·영상에 firemap.kr 링크 1개, 주제에 맞는 계산기로. 모든 글에 같은 링크를 넣지 않는다.
+  - youtube-loop: 프로필 = `?utm_source=youtube&utm_medium=profile&utm_campaign=profile`, 롱폼 설명란 = `utm_medium=desc&utm_campaign=<작업 폴더>`.
+  - shorts: `utm_source=shorts`(롱폼과 나눠 잰다).
+  - write: 카페·블로그 본문 = `utm_source=cafe|blog&utm_medium=post&utm_campaign=<작업 폴더>`. 계산기와 주제가 맞는 글에만.
+- **firemap-product-dev (측정, 가장 급함)**: session_start props에 utm_source·utm_medium·utm_campaign과 referrer 도메인(전체 URL 말고 호스트만)을 넣어 달라. 지금은 props가 `{}`라 채널별 유입을 하나도 못 잰다(14일간 utm/ref 포함 0건 실측). 위치 src/components/FireMapMVP.jsx:101. 개인정보 없는 값만.
+- **firemap-product-dev (검색 노출)**: 계산기 페이지 제목에 검색어가 없다. 실측 월 검색수(kwvol.py, 9/30): 양도소득세계산기 23,710 · 건강보험료계산기 1,560 · 퇴직금계산기 267,000. 지금 제목은 '양도·배당세 | 파이어맵', '파이어 후 건보료 | 파이어맵', '국민연금 조기수령 | 파이어맵'. 제목 앞에 '양도소득세 계산기', '건강보험료 계산기'처럼 검색어를 넣는 안을 검토해 달라(국민연금조기수령은 월 10이라 우선순위 낮음). 퇴직금 계산기(10/10)는 처음부터 제목에 '퇴직금 계산기'. 구조화 데이터는 WebApplication이 이미 있다.

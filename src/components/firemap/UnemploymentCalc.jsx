@@ -72,7 +72,7 @@ export default function UnemploymentCalc({ inputs, onApply, onMove }) {
 
       {ok && r.total > 0 && (
         <Card variant="dark">
-          <SectionHead size="sm" title="이 돈이면 몇 살에 은퇴?" desc={`실업급여 ${exact(r.total)}을 현재 자산에 더해 파이어 나이를 계산해요`} />
+          <SectionHead size="sm" title="재취업 뒤, 몇 살에 은퇴할 수 있을까?" desc={`실업급여는 재취업 활동 기간에 받는 돈이에요. ${exact(r.total)}을 현재 자산에 더해 파이어 나이를 계산해요`} />
           <Button variant="primary" size="lg" full onClick={toRetire}>은퇴 나이 계산</Button>
         </Card>
       )}

@@ -96,3 +96,4 @@
 2026-09-30 22:46 · improve · 카페 공식 API 발행기 work/cafeapi.py 만듦(토큰은 firemap.kr OAuth 경유, 시크릿 로컬 없음) · 회의 배정 C7, 화면 조작 자동화 정책 위험 회피
 2026-09-30 22:46 · improve · 공식 API 시험 글 1편은 improve가 아니라 firemap-write 다음 카페 슬롯에서 올리게 넘김 · improve 루틴은 발행 금지
 2026-09-30 22:46 · improve · 블로그 재고 생산 중단 · STOP_blog 켜짐(회의 배정)
+2026-09-30 22:52 · 사장님·순돌이 · 문장 편집자(firemap-editor)·카피라이터(firemap-copywriter) 채용 · 사장님 '사람이 쓴 것처럼 쓰는 직원', '카피라이터가 중요' — A-1 초반 조회 부진도 제목·클릭률 문제일 수 있음

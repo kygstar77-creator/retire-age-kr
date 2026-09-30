@@ -5,6 +5,8 @@ const cases = [
   [{ hireDate: '2025-03-01', retireDate: '2026-02-28', wages3m: 9_000_000 }, { eligible: false, amount: 0 }],
   [{ hireDate: '2020-05-10', retireDate: '2026-05-10', wages3m: 7_500_000, weeklyHours: 14 }, { eligible: false, amount: 0 }],
   [{ hireDate: '2021-03-02', retireDate: '2026-03-02', wages3m: 6_000_000, dailyOrdinaryWage: 80_000 }, { usedOrdinary: true, periodDays: 90, amount: 12_006_575 }],
+  // 고용노동부 퇴직금 계산 페이지 예시(moel.go.kr/retirementpayCal.do): 재직 1,080일, 92일, 1일 평균임금 88,641원 31전
+  [{ hireDate: '2014-10-02', retireDate: '2017-09-16', wages3m: 7_080_000, annualBonus: 4_000_000, annualLeavePay: 300_000 }, { serviceDays: 1080, periodDays: 92, wagesTotal: 8_155_000, amount: 7_868_433 }],
 ];
 let bad = 0;
 for (const [inp, exp] of cases) {

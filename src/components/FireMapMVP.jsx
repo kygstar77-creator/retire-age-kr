@@ -13,6 +13,7 @@ import BottomTabs from './firemap/BottomTabs.jsx';
 import Header from './firemap/Header.jsx';
 import DependentCheck from './firemap/DependentCheck.jsx';
 import FireTypeTest from './firemap/FireTypeTest.jsx';
+import SeveranceCalc from './firemap/SeveranceCalc.jsx';
 import { ForeignStockTaxCard, DividendCard, PensionEarlyClaimCard } from './firemap/TaxPensionModules.jsx';
 import Leaderboard from './firemap/Leaderboard.jsx';
 import CityExplorer from './firemap/CityExplorer.jsx';
@@ -72,6 +73,23 @@ function readScreenFromHash() {
   return resolveScreen(window.location.hash);
 }
 
+function sessionSourceProps() {
+  const props = {};
+  const clip = (v) => String(v).slice(0, 80);
+  try {
+    const q = new URLSearchParams(window.location.search || '');
+    ['utm_source', 'utm_medium', 'utm_campaign'].forEach((k) => { const v = q.get(k); if (v) props[k] = clip(v); });
+  } catch { /* ignore */ }
+  try {
+    if (document.referrer) {
+      const host = new URL(document.referrer).hostname;
+      if (host && host !== window.location.hostname) props.ref = clip(host);
+    }
+  } catch { /* ignore */ }
+  try { props.path = clip(decodeURIComponent(window.location.pathname || '/')); } catch { /* ignore */ }
+  return props;
+}
+
 export default function FireMapMVP() {
   const [inputs, setInputs] = useState(loadInputs);
   const [screen, setScreenState] = useState(readScreenFromHash);
@@ -98,7 +116,8 @@ export default function FireMapMVP() {
   }, [inputs]);
   useEffect(() => { try { window.scrollTo(0, 0); } catch { /* ignore */ } }, [screen, step]);
   useEffect(() => { try { logEvent('screen_view', { screen }); } catch { /* ignore */ } }, [screen]);
-  useEffect(() => { try { logEvent('session_start', {}); } catch { /* ignore */ } }, []);
+  // 유입 경로: utm 3종 + 들어온 사이트 호스트 + 첫 경로만(개인정보 없는 값). 주소를 해시로 바꾸는 아래 effect보다 먼저 돈다.
+  useEffect(() => { try { logEvent('session_start', sessionSourceProps()); } catch { /* ignore */ } }, []);
   useEffect(() => { try { const q = new URLSearchParams(window.location.search || ''); if (q.get('from') === 'push') logEvent('push_open', {}); } catch { /* ignore */ } }, []);
   useEffect(() => {
     try {
@@ -212,6 +231,7 @@ export default function FireMapMVP() {
     foreignTax: () => tool('foreignTax', <><ForeignStockTaxCard inputs={inputs} onApply={applyPatch} /><DividendCard inputs={inputs} onApply={applyPatch} /></>),
     dividend: () => <DividendLifeCalc inputs={inputs} onChange={onChange} onMove={setScreen} onBack={backOf('dividend')} />,
     pension: () => tool('pension', <PensionEarlyClaimCard inputs={inputs} onApply={applyPatch} />),
+    severance: () => tool('severance', <SeveranceCalc inputs={inputs} onApply={applyPatch} onMove={setScreen} />),
     news: () => <News onBack={backOf('news')} />,
     wall: () => <Community onBack={backOf('wall')} onMove={setScreen} simulation={simulation} />,
     ops: () => <CafePoster onBack={backOf('ops')} />

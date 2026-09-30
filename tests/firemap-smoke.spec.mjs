@@ -4,7 +4,7 @@ import { TOOL_PAGES } from '../src/firemap-v2/toolPages.js';
 import { screens } from '../src/firemap-v2/screens.js';
 
 const INPUTS = { currentAge: 34, targetRetirementAge: 50, financialAsset: 150000000, monthlyInvestment: 1500000, monthlyLivingCost: 2500000 };
-const SCREENS = ['#home', '#question', '#result', '#experiment', '#ranking', '#menu', '#settings', '#account', '#cities', '#firetype', '#dependent', '#foreignTax', '#dividend', '#pension', '#news', '#wall'];
+const SCREENS = ['#home', '#question', '#result', '#experiment', '#ranking', '#menu', '#settings', '#account', '#cities', '#firetype', '#dependent', '#foreignTax', '#dividend', '#pension', '#severance', '#news', '#wall'];
 
 async function seed(page, seeded = true) {
   await page.addInitScript(({ inp, seeded }) => {

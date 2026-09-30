@@ -17,7 +17,8 @@ const BOX = 'style="max-width:640px;margin:24px auto;padding:0 16px;font-family:
 function seoBlock(tool, site) {
   const items = tool.sections.map((s) => `<li>${esc(s)}</li>`).join('');
   const others = TOOL_PAGES.filter((t) => t.path !== tool.path).map((t) => `<a href="${site}${t.path}">${esc(t.title)}</a>`).join(' · ');
-  return `<div id="sSeo" ${BOX}><h1>${esc(tool.title)}</h1><ul>${items}</ul><p><a href="${site}/">1분이면 나도 계산</a></p><p>${others} · <a href="${site}/guide/">파이어 백과</a></p>${footHtml(site)}</div>`;
+  const body = (tool.body || []).map((b) => `<p>${esc(b)}</p>`).join('');
+  return `<div id="sSeo" ${BOX}><h1>${esc(tool.title)}</h1><ul>${items}</ul>${body}<p><a href="${site}/">1분이면 나도 계산</a></p><p>${others} · <a href="${site}/guide/">파이어 백과</a></p>${footHtml(site)}</div>`;
 }
 
 // 첫 화면(/) — 2026-09-30까지는 크롤러가 제목 한 줄(34자)만 받았다. 문구는 index.html의 description·JSON-LD와 도구 화면 라벨 그대로.
@@ -57,8 +58,8 @@ export async function onRequest(context) {
   if (!ct.includes('text/html')) return shell;
   const site = url.origin;
   const pageUrl = `${site}${tool.path}`;
-  const title = `${tool.title} | 파이어맵`;
-  const desc = `${tool.sections.join(' · ')} · 1분이면 나도 계산`;
+  const title = `${tool.seoTitle || tool.title} | 파이어맵`;
+  const desc = tool.desc || `${tool.sections.join(' · ')} · 1분이면 나도 계산`;
   const res = new Response(shell.body, shell);
   res.headers.set('cache-control', 'public, max-age=0, must-revalidate');
   return new HTMLRewriter()

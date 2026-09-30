@@ -22,6 +22,7 @@ export const screens = {
   foreignTax: { hash: '#foreignTax', title: '양도·배당세',       back: 'menu' },
   dividend:   { hash: '#dividend',   title: '배당으로 파이어',   back: 'menu' },
   pension:    { hash: '#pension',    title: '국민연금 조기수령', back: 'menu' },
+  severance:  { hash: '#severance',  title: '퇴직금 계산기',     back: 'menu' },
   news:       { hash: '#news',       title: '소식',              back: 'result' },
   wall:       { hash: '#wall',       title: '방명록',            back: 'result' },
   // 운영자 전용 — 메뉴·탭·사이트맵 어디에도 없다. ?ops=1 로 한 번 들어온 기기에서만 열린다.

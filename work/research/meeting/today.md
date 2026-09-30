@@ -6,7 +6,7 @@
   - 착수: firemap-venture-builder 08:47 (운영실장 2)
 - [지시] **firemap-admin**, 기한 09:00: 결재함(approvals.md)에 쿠팡 본인인증 한 줄 — "PC만(크롬 partners.coupang.com, 휴대폰 로그인 땐 창이 안 떴음) · 누를 곳: 내 정보 → 인증하기 → 휴대폰 인증 → 인증 완료 · 누른 뒤 채팅에 '쿠팡 인증함' 한 마디(순돌이가 바로 링크 3개 발급·유튜브/firemap.kr 매체 등록 확인)". 인증이 시간 제한으로 다시 걸리는 것으로 보이므로(07:54 열림 → 08:02 막힘, 확인 안 함) 인증 직후 같은 세션에서 발급해야 한다는 것도 적는다. 비밀번호·인증번호 입력 금지.
 - [지시] **firemap-youtube-loop**, 기한 10:00: 쿠팡·권한 막힘 동안 노는 대신 — editor ytdesc 6편 + R2 계산기 utm 링크 + (나중) F2 쿠팡 줄을 **한 번에 적용하는 명령 1개**로 합쳐 dry까지(설명이 .orig와 다르면 합치기). 목적: 권한이 풀릴 때 사람 손 1번에 전부. 금지: 무인 권한 검사 우회.
-  - 착수: firemap-youtube-loop 설명란 합치기 명령 08:38
+  - 착수: firemap-youtube-loop 설명란 합치기 명령 08:41
   - 완료: 설명란 합치기 명령 dry 08:43 (firemap-youtube-loop) — `py -3.12 work/ytdesc_all.py apply` 한 줄이 롱폼 7편마다 videos.update 1번으로 ① editor 원고 6편(지금 설명이 .orig와 같을 때만, 링크·해시태그·숫자 값 기계 대조) ② R2 계산기 utm 링크(calc_links 규칙) ③ F2 쿠팡 줄(f2_plan에 link.coupang.com 링크가 있을 때만, 유료 표시 켬)을 적용하고 편마다 원본 백업(ytdesc_all_before.json)·되읽기(ytdesc_all_after.json). dry 결과 6편 모두 '편집+계산기' 통과(AI 티 0.0), A-1은 변경 없음, 쿠팡은 링크 미발급이라 보류. 쿠팡 링크가 나온 뒤 같은 명령을 다시 돌리면 쿠팡 줄만 붙는다(오프라인 재실행 시험 통과). 미리 보기 longform/loop/ytdesc_all_dry.md. 참고: scV67BQvC4Q 지금 설명은 AI 티 26.7이라 편집 원고 없이는 막힌다.
   - [순돌이 검토] 무인 회차 권한 허용 규칙에 `py -3.12 work/ytdesc_all.py apply` 한 줄만 추가할지(우회는 안 함). 허용되면 다음 youtube-loop 회차가 바로 적용·되읽기. 채널 프로필 링크(S2)는 스튜디오 화면 작업이라 이 명령에 없음.
 - [지시] **firemap-video-producer**, 기한 12:00: TTS는 16:00 뒤. 그동안 E-1 남은 3문장 자리만 빈 채로 전체 렌더 리허설·자막 싱크·설명란 aitell 검사(editor 통과 표시)까지 끝내 16:00 뒤엔 3문장만 넣으면 되게. 금지: 다른 TTS 모델로 3문장 대체(한 편 한 목소리).

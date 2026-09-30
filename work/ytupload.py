@@ -26,14 +26,26 @@ def service():
     if not c: print('토큰 없음 — python work/ytupload.py auth'); sys.exit(2)
     return build('youtube', 'v3', credentials=c)
 
-def upload(path, title, desc, privacy='private', tags=''):
+COUPANG_NOTE = '이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.'
+
+def upload(path, title, desc, privacy='private', tags='', paid=False):
     # 유튜브는 제목·설명의 < > 를 받지 않는다(400 invalidDescription, 2026-09-28 나이키 숏폼). 전각으로 바꾼다.
     title, desc = [x.replace('<', '＜').replace('>', '＞') for x in (title, desc)]
+    # 쿠팡 파트너스 관문(2026-09-30, work/research/coupang-policy.md 체크리스트 9·10):
+    # 설명란에 쿠팡 링크가 있으면 ① 첫 줄이 대가성 문구 ② '유료 프로모션 포함'(paid=True → 영상에 '유료 광고 포함' 표시)이 둘 다 있어야 올린다.
+    if 'coupang.com' in desc:
+        first = desc.strip().splitlines()[0]
+        if COUPANG_NOTE not in first or not paid:
+            print('올리지 않는다: 쿠팡 링크가 있으면 설명 첫 줄에 대가성 문구 + paid=True 필요'); sys.exit(5)
     from googleapiclient.http import MediaFileUpload
     yt = service()
     body = {'snippet': {'title': title[:100], 'description': desc[:5000], 'tags': [t.strip() for t in tags.split(',') if t.strip()][:30], 'categoryId': '22', 'defaultLanguage': 'ko'},
             'status': {'privacyStatus': privacy, 'selfDeclaredMadeForKids': False}}
-    req = yt.videos().insert(part='snippet,status', body=body, media_body=MediaFileUpload(path, chunksize=8 * 1024 * 1024, resumable=True))
+    part = 'snippet,status'
+    if paid:
+        body['paidProductPlacementDetails'] = {'hasPaidProductPlacement': True}
+        part += ',paidProductPlacementDetails'
+    req = yt.videos().insert(part=part, body=body, media_body=MediaFileUpload(path, chunksize=8 * 1024 * 1024, resumable=True))
     res = None
     while res is None:
         status, res = req.next_chunk()

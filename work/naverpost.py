@@ -130,6 +130,10 @@ def read_pkg(pkg):
             seq.append(('img', path))
         elif tok.endswith('.txt'):
             seq.append(('text', md_tables_to_lines(open(os.path.join(pkg, tok), encoding='utf-8').read().strip())))
+    # 2026-09-30 쿠팡 파트너스: 네이버 게시물 운영정책(2026.7.7)은 사전 허락 없는 자동화 게시물을 제한하고, 광고 링크 반복은
+    # 저품질 신호다(work/research/coupang-policy.md 체크리스트 6). 이 무인 발행 경로로는 쿠팡 링크 글을 올리지 않는다.
+    if any(k == 'text' and 'coupang' in v.lower() for k, v in seq):
+        raise ValueError('쿠팡 링크 글은 네이버 무인 발행 금지(coupang-policy.md 6) — 링크를 빼고 다시')
     return title, seq, meta
 
 # 원고의 마크다운 표('| 연도 | 잠정실적 |', '|---|---|')는 편집기가 표로 바꾸지 않는다. 그대로 치면
@@ -712,7 +716,16 @@ def published_today(kind):
     except Exception as e:
         print(f'{kind} 오늘 편수 확인 실패:', e); return None
 
+def stop_flag(kind):
+    """감사 담당(firemap-audit)이 문제를 찾으면 research/STOP_naver(또는 STOP_blog·STOP_cafe)를 만든다. 있으면 발행하지 않는다(2026-09-30)."""
+    for n in ('STOP_naver', f'STOP_{kind}'):
+        f = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research', n)
+        if os.path.exists(f): return open(f, encoding='utf-8', errors='ignore').read().strip() or n
+    return ''
+
 def day_guard(kind):
+    sf = stop_flag(kind)
+    if sf: raise RuntimeError('감사 정지 스위치가 켜져 있다 — ' + sf[:200])
     cap = DAY_CAP.get(kind)
     if cap is None or os.environ.get('NAVER_FORCE') == '1': return
     n = published_today(kind)

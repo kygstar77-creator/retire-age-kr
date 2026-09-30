@@ -286,6 +286,13 @@
    "description": "매시 :35 — 두 번째 배차 담당",
    "schedule": "매시 :35",
    "enabled": true
+  },
+  {
+   "taskId": "firemap-planner",
+   "title": "기획자(모든 새 일의 첫 단계)",
+   "description": "하루 4회 + 호출 — 기획서 먼저",
+   "schedule": "매일 08·11·14·17시 :30",
+   "enabled": true
   }
  ],
  "runs": {
@@ -557,6 +564,13 @@
     "last_activity_at": "2026-09-30T22:22:00Z"
    }
   ],
-  "firemap-dispatcher-2": []
+  "firemap-dispatcher-2": [],
+  "firemap-planner": [
+   {
+    "status": "running",
+    "started_at": "2026-09-30T23:02:00Z",
+    "last_activity_at": "2026-09-30T23:02:00Z"
+   }
+  ]
  }
 }

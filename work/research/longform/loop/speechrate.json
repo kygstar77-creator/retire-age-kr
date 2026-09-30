@@ -1,0 +1,95 @@
+{
+ "rows": {
+  "4muqJe1bX-I": {
+   "syl": 10921,
+   "sec": 1606,
+   "gross": 6.8,
+   "speech": 7.72
+  },
+  "DIOzwBPlf_Q": {
+   "syl": 6506,
+   "sec": 1271,
+   "gross": 5.12,
+   "speech": 5.64
+  },
+  "IDwH4f-xA1g": {
+   "syl": 5908,
+   "sec": 949,
+   "gross": 6.23,
+   "speech": 8.18
+  },
+  "J0hc2v8DzRo": {
+   "syl": 7572,
+   "sec": 1458,
+   "gross": 5.19,
+   "speech": 5.66
+  },
+  "N8hjfIoLtV8": {
+   "syl": 7587,
+   "sec": 1140,
+   "gross": 6.66,
+   "speech": 7.61
+  },
+  "NYZf9AMvs3Q": {
+   "syl": 9474,
+   "sec": 1847,
+   "gross": 5.13,
+   "speech": 7.04
+  },
+  "jSP16zTrEHY": {
+   "syl": 6105,
+   "sec": 1035,
+   "gross": 5.9,
+   "speech": 6.76
+  },
+  "mOBsKBLWrN4": {
+   "syl": 4895,
+   "sec": 921,
+   "gross": 5.31,
+   "speech": 6.77
+  },
+  "p0IOehTvopg": {
+   "syl": 6486,
+   "sec": 951,
+   "gross": 6.82,
+   "speech": 7.72
+  },
+  "rui4_d-5DvU": {
+   "syl": 5751,
+   "sec": 991,
+   "gross": 5.8,
+   "speech": 6.62
+  },
+  "wWzZWzS3cKM": {
+   "syl": 4927,
+   "sec": 1091,
+   "gross": 4.51,
+   "speech": 6.48
+  },
+  "wpwKr60Dwi8": {
+   "syl": 8594,
+   "sec": 1617,
+   "gross": 5.32,
+   "speech": 6.79
+  }
+ },
+ "summary": {
+  "n": 12,
+  "gross_median": 5.56,
+  "gross_range": [
+   4.51,
+   6.82
+  ],
+  "speech_median": 6.78,
+  "speech_range": [
+   5.64,
+   8.18
+  ],
+  "ours": {
+   "file": "C:/Users/강영준/AppData/Local/Temp/a1nar.txt",
+   "syl": 3898,
+   "sec": 901.6,
+   "gross": 4.32
+  }
+ }
+}

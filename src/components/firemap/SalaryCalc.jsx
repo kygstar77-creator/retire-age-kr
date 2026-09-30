@@ -53,7 +53,7 @@ export default function SalaryCalc({ inputs, onApply, onMove }) {
       >
         <Tabs className="ds-mt-4" label="원천징수 비율" value={String(ratio)} onChange={(k) => { setRatio(Number(k)); try { logEvent('salary_ratio', { ratio: Number(k) }); } catch { /* ignore */ } }}
           items={[{ key: '80', label: '80%' }, { key: '100', label: '100%' }, { key: '120', label: '120%' }]} />
-        <p className="ds-hero__sub ds-mb-0">원천징수 비율 · 기본은 100%예요 · 회사에 신청하면 80% · 120%도 돼요. 매달 떼는 세금은 연말정산으로 다시 맞춰요</p>
+        <p className="ds-hero__sub ds-mb-0">원천징수 비율 · 기본은 100%예요 · 회사에 신청하면 80% · 120%도 돼요</p>
       </StatHero>
 
       <div>
@@ -86,7 +86,7 @@ export default function SalaryCalc({ inputs, onApply, onMove }) {
       </ListGroup>
 
       <Card>
-        <SectionHead size="sm" kicker="은퇴 계산" title="한 달 생활비" desc="실수령에서 생활비를 빼고 남는 돈을 월 저축으로 봐요 · 위 '이 돈이면 몇 살에 은퇴?'에 쓰여요" />
+        <SectionHead size="sm" kicker="은퇴 계산" title="한 달 생활비" />
         <RangeField label="한 달 생활비" value={living} min={500000} max={10000000} step={100000} money format={won} chips={[100000, 500000]} onChange={setLiving} />
       </Card>
 

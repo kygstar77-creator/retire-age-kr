@@ -1,7 +1,7 @@
 // 퇴직금 계산기(/calc/severance) — 본진 밖 실험. 메뉴에 없고 검색으로만 들어온다(product-principles.md 2).
 // 입력 항목 이름은 고용노동부 퇴직금 계산(moel.go.kr/retirementpayCal.do) 그대로. 식·근거: src/utils/severancePay.js
 import { useState } from 'react';
-import { Card, SectionHead, RangeField, StatHero, Button, Fold, Tabs, Notice, Icon, toast } from '../../ui/index.js';
+import { Card, SectionHead, RangeField, StatHero, Button, Fold, Tabs, Notice, Icon, ListGroup, ListRow, toast } from '../../ui/index.js';
 import { severancePay } from '../../utils/severancePay.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { inputsIsReal } from '../../utils/retirementSimulator.js';
@@ -34,6 +34,12 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
     try { logEvent('severance_to_fire', { amount_bucket: Math.min(10, Math.floor(r.amount / 10000000)) }); } catch { /* ignore */ }
     toast.good(`현재 자산에 퇴직금 ${exact(r.amount)}을 더했어요`);
     onMove(inputsIsReal(inputs) ? 'result' : 'question');
+  };
+
+  // 퇴사자 동선: 퇴직금 다음에 찾는 계산(회의 2026-09-30 배정). 제목은 그 화면 제목 그대로.
+  const toNext = () => {
+    try { logEvent('next_calc_click', { from: 'severance', to: 'unemployment' }); } catch { /* ignore */ }
+    onMove('unemployment');
   };
 
   return (
@@ -76,6 +82,12 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
           <SectionHead size="sm" title="이 돈이면 몇 살에 은퇴?" desc={`퇴직금 ${exact(r.amount)}을 현재 자산에 더해 파이어 나이를 계산해요`} />
           <Button variant="primary" size="lg" full onClick={toRetire}>은퇴 나이 계산</Button>
         </Card>
+      )}
+
+      {r && r.amount > 0 && (
+        <ListGroup label="다음 계산">
+          <ListRow lead={<Icon name="calc" />} title="실업급여 계산기" desc="나이·피보험기간·월급으로 1일 구직급여액·총액" size="S" onClick={toNext} />
+        </ListGroup>
       )}
 
       <Card variant="flat">

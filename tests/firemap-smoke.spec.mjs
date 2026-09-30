@@ -144,6 +144,25 @@ test.describe('firemap smoke', () => {
     expect(await page.evaluate(() => window.location.hash)).toBe('#result');
   });
 
+  test('severance → next calc (unemployment) row counts next_calc_click; /tax·/pension show basis date', async ({ page }) => {
+    const bodies = [];
+    await page.route('**/rest/v1/firemap_events', async (route) => { try { bodies.push(JSON.parse(route.request().postData() || '{}')); } catch { /* ignore */ } await route.fulfill({ status: 201, body: '' }); });
+    await seed(page);
+    await page.goto('/calc/severance');
+    await page.waitForTimeout(700);
+    await page.getByRole('button', { name: /실업급여 계산기/ }).click();
+    await page.waitForTimeout(500);
+    expect(await page.evaluate(() => window.location.pathname)).toBe('/calc/unemployment-benefit');
+    const ev = bodies.find((b) => b.event === 'next_calc_click');
+    expect(ev && ev.props && ev.props.to, 'next_calc_click 이벤트').toBe('unemployment');
+    for (const path of ['/tax', '/pension']) {
+      await page.goto(path);
+      await page.waitForTimeout(600);
+      await expect(page.locator('main.fm-screen'), `${path} 기준일`).toContainText('기준 · 참고용, 실제와 다를 수 있어요');
+      await expect(page.locator('main.fm-screen a[href="/disclaimer"]')).toHaveCount(1);
+    }
+  });
+
   test('copy rules: no 합니다/하세요, no banned system words', async ({ page }) => {
     await seed(page);
     for (const hash of ['#home', '#result', '#ranking', '#menu', '#settings']) {

@@ -6,6 +6,13 @@ import { earlyClaim } from '../../firemap-v2/pension.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 
 const eok = (n) => formatWon(Math.round(n || 0));
+// 사람이 보는 기준일(회의 2026-09-30 배정 · 디자인 리뷰 제안 형식). 이날 확인: 소득세법 제118조의7(250만원 공제)·제104조, 국민연금법 제63조②(조기노령연금 비율).
+const BASIS_DATE = '2026-09-30';
+const BasisNotice = () => (
+  <Notice tone="neutral" icon={<Icon name="alert" />} className="ds-mt-2">
+    {BASIS_DATE} 기준 · 참고용, 실제와 다를 수 있어요 · <a className="ds-link ds-link--muted" href="/disclaimer">면책 안내</a>
+  </Notice>
+);
 
 export function ForeignStockTaxCard({ inputs, onApply }) {
   const [gain, setGain] = useState(50000000);
@@ -33,6 +40,7 @@ export function ForeignStockTaxCard({ inputs, onApply }) {
         {onApply && (hasCG
           ? <Button variant="secondary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next }); toast('해외 양도세 반영을 해제했어요'); }}>반영 중 · 해외 양도세 · 해제</Button>
           : <Button variant="primary" size="md" full className="ds-mt-2" onClick={() => { onApply({ investType: next }); toast.good('해외 양도세를 반영했어요'); }}>해외 양도세 반영</Button>)}
+        <BasisNotice />
       </Card>
     </>
   );
@@ -103,6 +111,7 @@ export function PensionEarlyClaimCard({ inputs, onApply }) {
           : (claimAge < normalAge
             ? <Button variant="primary" size="md" full className="ds-mt-2" onClick={() => { onApply({ pensionClaimAge: claimAge }); toast.good(`${claimAge}세 조기수령을 반영했어요`); }}>{claimAge}세 조기수령 반영</Button>
             : <Button variant="primary" size="md" full className="ds-mt-2" disabled>나이를 {normalAge}세보다 낮추면 반영할 수 있어요</Button>))}
+        <BasisNotice />
         <p className="ds-caption ds-mt-2 ds-mb-0">정상 나이·월액은 질문이나 바꿔보기에서 정해요 · 여기선 시작 나이만 바꿔요</p>
       </Card>
     </>

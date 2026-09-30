@@ -6,6 +6,7 @@
 | Figma MCP (커넥터 9961c0a8) | **연결됨 · 편집 됨** | kygstar77@gmail.com, 팀 "JUN의 팀" 스타터, 좌석 View(role admin) — 파이어맵 전용 여부 확인 안 함 | 스타터 요율 제한(공식 문서) | 전담 디자이너·디자인 개선 | whoami 통과 → create_new_file(드래프트) 성공 → use_figma로 사각형 1개 추가 성공. **View 좌석이어도 내 드래프트 파일은 편집 가능**. 팀 프로젝트 파일 편집은 시험 안 함. 시험 파일: figma.com/design/P6lkgYdYoEUl1tInvFnEkA (지워도 됨) |
 | figma / mobbin (사용자 설정 MCP, http) | needs_auth | — | — | 없음 | 위 커넥터와 **중복**. 커넥터 쪽이 연결돼 있어 쓸 일 없음. 결재함 "Mobbin·Figma 연결 로그인" 항목은 로그인 문제가 아님 |
 | Mobbin MCP (커넥터 17cbfd68) | **막힘(유료 필요)** | 계정 확인 안 함 | — | 전담 디자이너 | search_screens → "requires a paid plan". MCP는 모든 유료 요금제에 포함, 팀 요금제 연간 결제 시 1인 월 16달러(mobbin.com 검색 결과, 가격 페이지는 403이라 원문 확인 안 함) |
+| WWIT(wwit.design) — Mobbin 무료 대안 | **정상 · 무료·가입 없음** | 계정 없음 | — | 전담 디자이너·제품 개발 | 2026-10-01 AI 연구소가 curl로 시험함(목록·화면 원본 webp 200). 한국 금융 앱 14개. 참고만 하고 산출물에 넣지 않음. 보조: 유아이볼(무료는 최신 3개, Pro 월 14,000원). ai-lab/bench/2026-10-01-mobbin-alternatives.md |
 | 캔바 MCP (커넥터 48ffb38b) | 연결됨 · **파이어맵 사용 보류** | 이메일 확인 수단 없음. 소유 디자인 2개(2021-09 화장품·디저트 광고) — 스꾸 흔적은 없음, 파이어맵 것도 아님 | — | (보류) | search-designs(owned). 누구 계정인지 확정 못 함 → 지시대로 확정 전엔 안 씀 |
 | vidIQ MCP | 연결됨 · **크레딧 거의 소진** | kygstar77@gmail.com | **2/150**, 갱신 2026-10-23 | 카피라이터·유튜브 총괄 | balance·user_channels. **우리 채널 미연결(channels 빈 목록)** — 연결 위젯은 사람이 눌러야 함 |
 | 제미나이 텍스트 | **정상** | 키 파일 1개(gemini_key.txt, 2026-09-23 수정) — 스꾸 공유 여부 확인 안 함 | 429 없음 | 참모 3명·second_opinion·전 직원 | gemini-3-flash-preview 200, gemini-3.8-flash 200. **gemini-2.5-flash는 404(모델 없음)** — second_opinion·ytbreak·judge_thumb 예비 목록 끝에 남아 있음(맨 끝이라 실제 피해 없음) |

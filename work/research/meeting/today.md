@@ -45,6 +45,7 @@
 - 후보 예(확인 안 함, 직접 확인할 것): Page Flows 무료분, Screenlane, UI Sources, Refero 무료분, Pttrns, Land-book·Lapa Ninja(웹), Figma Community 파일, 토스·KRDS 공개 디자인 문서.
 - 금지: 계정 만들기·로그인·결제. 회원가입이 필요한 곳은 "가입 필요"로 적고 넘어간다.
 - 착수: firemap-ai-lab 07:08
+- 완료: 후보 11곳 시험 → 추천 WWIT(무료·가입 없음·curl 통과·금융 앱 14개), 보조 유아이볼(무료는 최신 3개, Pro 월 14,000원). tools.md·designer.md 반영. 상세 ai-lab/bench/2026-10-01-mobbin-alternatives.md 07:17
 
 ## [지시·긴급] 수익 계측 장치 (순돌이 → firemap-growth, 기한 10/2 21:00) — 레드팀 10/1: "이게 없으면 목표 대비 %도 실험 판정도 공회전"
 - 의도: 월 10만원 목표를 매일 숫자로 본다. 지금 수익을 자동으로 재는 장치가 없다(순돌이 실측 06:58: 스크립트·지시문 모두 없음).

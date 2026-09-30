@@ -283,5 +283,12 @@
   "task": "회의배정(E 시각대 지연 회차)",
   "did": "work/cafeapi.py 신설 — firemap.kr 네이버 로그인을 발행 프로필로 지나가 공식 카페 API 토큰을 받고(동의 화면 없이 통과, nid/me 00 success로 유효 확인), 묶음을 subject→content→그림 0·1·2 multipart로 openapi.naver.com/v1/cafe/31789001/menu/{id}/articles에 보낸다. 큰따옴표→「」, 태그 escape, 999면 그림 덜어내며 재시도, naverpost 관문(STOP·상한·보류·readcheck·중복) 동일 적용. a1cafe1001 --dry 통과(1836자·그림 3장). 카페 재고 4(상한·코너 대기), 블로그 재고 생산은 STOP_blog로 중단",
   "blocked": "시험 글 실제 발행은 이 회차 금지(발행 금지) → firemap-write에 넘김(today.md). 색인 0% 원인 미확인"
+ },
+ {
+  "date": "2026-10-01",
+  "hour": 7,
+  "task": "운영실장 배정: rules.json 갱신",
+  "did": "카페 150편 조회 실측 → 말머리 코너 규칙 1개 추가 + changelog(기각 1·보류 1)",
+  "blocked": "없음"
  }
 ]

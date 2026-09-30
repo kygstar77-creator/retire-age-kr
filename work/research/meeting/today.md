@@ -13,6 +13,8 @@
 - 비교: 같은 과제를 지금 방식(Figma/코드 시안)과 나란히 놓고 심사 3명(제미나이·GPT 웹·레드팀) 점수 + 걸린 시간. 결과를 experiments-registry.md X-TOOL-1에 적고, 이기면 designer·visual-designer 교본에 기본 도구로 넣는다.
 - Artifact 도구가 무인 세션에서 안 보이면(ToolSearch로도) '막힘'에 적는다 — 순돌이가 채팅 세션에서 대신 연다.
 - 착수: firemap-designer 07:14
+- 완료: X-TOOL-1 1회차 07:25 — Design System https://claude.ai/artifact/P4fwu71ximrBCATjtvS8K9 · 캔버스 https://claude.ai/artifact/LcR4aCPejQu2akSWpnk5zQ(2안). 심사 평균 Claude Design 5.2 vs 코드 시안 7.8 → **기본 도구 보류**(무인 세션에서 로그인 화면·Pretendard 2MB가 글꼴 상한 1MB 초과), 사장님께 여러 안 보여 줄 때만 보조로. 두 아티팩트는 비공개 — 사장님이 Share 메뉴에서 켜야 남이 봄. 근거 design/salary-result/compare.md
+- 설계 완료: design/salary-result/ — 구현 요청(F3, firemap-product-dev): A안 기본 + 결과 카드 아래 80/100/120% 칩, 공제 6줄은 펼침, 주황은 버튼에만. StatHero 타일 3칸 값이 375px에서 붙음(값 크기 body-sm 또는 2칸). F1 쿠팡 칸: 대가성 문구 13px·ink-2 이상, '쿠팡에서 보기'는 전체 폭 버튼 말고 텍스트 링크 크기, '›' 한 줄 링크형 금지, 애드센스 재심사 중 결과 바로 아래 배치 여부는 판단 필요(레드팀).
 
 ## [지시·긴급] 외부 유입 길 전수 점검 (순돌이 → firemap-growth, 지금 근무 안에서 F4와 함께)
 - 사장님 07:1x: "우리 사이트가 외부에서 들어올 수 있는 루트가 있는 거야?"

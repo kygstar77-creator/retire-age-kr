@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>연봉 결과·쿠팡 1칸 — 코드 시안</title>
+<link rel="stylesheet" href="../../../../src/ui/fm-ds.css">
+<link rel="stylesheet" href="../../../../src/fm-base.css">
+<style>
+@font-face { font-family: 'Pretendard Variable'; font-weight: 45 920; src: url('../../../../public/fonts/PretendardVariable.woff2') format('woff2'); }
+body { margin: 0; background: #d9dee5 !important; }
+.boards { display: flex; gap: 40px; padding: 24px; align-items: flex-start; }
+.phone { width: 375px; background: var(--ds-bg); color: var(--ds-ink); font-family: var(--ds-font); }
+.phone h6 { margin: 0; padding: 8px 16px; font-size: var(--ds-fs-caption); background: #fff; color: var(--ds-ink-3); }
+.top { height: 56px; display: flex; align-items: center; gap: 4px; padding: 0 8px; background: var(--ds-surface); }
+.top b { font-size: var(--ds-fs-body); }
+main { display: flex; flex-direction: column; gap: 16px; padding: 16px; }
+.row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--ds-line); font-size: var(--ds-fs-body-sm); }
+.row span:first-child { color: var(--ds-ink-2); } .row small { font-size: var(--ds-fs-micro); color: var(--ds-ink-3); }
+.row span:last-child { font-weight: 700; } .row:last-child { border-bottom: 0; }
+.basis { margin: 0; font-size: var(--ds-fs-caption); color: var(--ds-ink-3); line-height: 1.5; }
+.ad-label { margin: 0; font-size: var(--ds-fs-micro); color: var(--ds-ink-3); line-height: 1.4; } .ad-label b { color: var(--ds-ink-2); }
+.thumb { width: 72px; height: 72px; flex: 0 0 auto; border-radius: var(--ds-r-md); background: var(--ds-surface-2); display: flex; align-items: center; justify-content: center; font-size: var(--ds-fs-micro); color: var(--ds-ink-3); }
+.chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
+.chip { min-height: 44px; border-radius: 999px; border: 1px solid var(--ds-line-strong); background: var(--ds-surface); color: var(--ds-ink-2); font: 700 15px var(--ds-font); }
+.chip[aria-pressed="true"] { background: var(--ds-ink); color: var(--ds-surface); border-color: var(--ds-ink); }
+.field { display: flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 12px; border-radius: var(--ds-r-sm); background: rgba(255,255,255,.08); }
+.field input { flex: 1; min-width: 0; border: 0; background: transparent; color: inherit; font: 400 var(--ds-fs-body) var(--ds-font); }
+details summary { font-size: var(--ds-fs-body-sm); font-weight: 700; min-height: 28px; }
+</style>
+</head>
+<body>
+<div class="boards">
+<!-- A안 -->
+<div class="phone" id="A">
+<h6>A안 · 은퇴 버튼 먼저, 쿠팡은 맨 아래</h6>
+<div class="top"><button class="ds-iconbtn ds-iconbtn--plain" aria-label="뒤로">‹</button><b>연봉 실수령액 계산기</b></div>
+<main>
+<section class="ds-card ds-card--dark ds-hero">
+<div class="ds-stat ds-stat--display"><span class="ds-stat__label">월 실수령액</span><span class="ds-stat__value num">2,935,813<span class="ds-stat__unit">원</span></span></div>
+<p class="ds-hero__sub">연봉 4,000만원 · 비과세 월 20만원 · 가족 1명 · 자녀 0명</p>
+<div class="ds-tiles ds-hero__tiles">
+<div class="ds-tile"><div class="ds-stat ds-stat--sm ds-stat--center"><span class="ds-stat__label">연 실수령</span><span class="ds-stat__value">3,522<span class="ds-stat__unit">만원</span></span></div></div>
+<div class="ds-tile"><div class="ds-stat ds-stat--sm ds-stat--center"><span class="ds-stat__label">월 공제</span><span class="ds-stat__value">397,520<span class="ds-stat__unit">원</span></span></div></div>
+<div class="ds-tile"><div class="ds-stat ds-stat--sm ds-stat--center"><span class="ds-stat__label">세액표</span><span class="ds-stat__value">100%</span></div></div>
+</div>
+</section>
+<a class="ds-btn ds-btn--lg ds-btn--primary ds-btn--full" href="#">이 돈이면 몇 살에 은퇴?</a>
+<section class="ds-card">
+<div class="ds-sh"><h2 class="ds-sh__title">한 달 공제 6가지</h2></div>
+<div class="row"><span>국민연금 <small>4.75%</small></span><span class="num">148,810원</span></div>
+<div class="row"><span>건강보험 <small>3.595%</small></span><span class="num">112,640원</span></div>
+<div class="row"><span>장기요양 <small>건보료의 13.14%</small></span><span class="num">14,800원</span></div>
+<div class="row"><span>고용보험 <small>0.9%</small></span><span class="num">28,190원</span></div>
+<div class="row"><span>소득세 <small>간이세액표</small></span><span class="num">84,620원</span></div>
+<div class="row"><span>지방소득세 <small>소득세의 10%</small></span><span class="num">8,460원</span></div>
+<div class="row"><span style="color:var(--ds-ink);font-weight:700">공제 합계</span><span class="num">397,520원</span></div>
+</section>
+<p class="basis">근로소득 간이세액표(2026. 2. 27. 개정) · 국민연금 4.75% · 건강보험 3.595% · 장기요양 13.14% · 고용보험 0.9% · 기준일 2026-10-01</p>
+<section class="ds-card ds-stack" aria-label="광고">
+<p class="ad-label"><b>광고</b> · 이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+<div class="ds-row"><span class="thumb">[상품 사진]</span><span class="ds-stack" style="gap:2px"><b style="font-size:var(--ds-fs-body-sm)">[상품명 — 파트너스 API]</b><span style="font-size:var(--ds-fs-body-sm);color:var(--ds-ink-2)">[가격]</span></span></div>
+<a class="ds-btn ds-btn--md ds-btn--secondary ds-btn--full" href="#">쿠팡에서 보기</a>
+</section>
+</main>
+</div>
+<!-- B안 -->
+<div class="phone" id="B">
+<h6>B안 · 은퇴 입력 카드, 공제는 접기</h6>
+<div class="top"><button class="ds-iconbtn ds-iconbtn--plain" aria-label="뒤로">‹</button><b>연봉 실수령액 계산기</b></div>
+<main>
+<section class="ds-card">
+<div class="ds-stat ds-stat--display"><span class="ds-stat__label">월 실수령액</span><span class="ds-stat__value num"><b>2,935,813<span class="ds-stat__unit">원</span></b></span></div>
+<p class="ds-hero__sub" style="color:var(--ds-ink-2)">연봉 4,000만원 · 월 공제 397,520원</p>
+<div class="chips" role="group" aria-label="간이세액표 비율"><button class="chip">80%</button><button class="chip" aria-pressed="true">100%</button><button class="chip">120%</button></div>
+<p class="ad-label" style="margin-top:6px">원천징수 비율(소득세법 시행령 제194조) · 연말정산 때 차이가 정산돼요</p>
+</section>
+<section class="ds-card ds-card--dark ds-stack">
+<h2 class="ds-sh__title" style="color:inherit">이 돈이면 몇 살에 은퇴?</h2>
+<label for="spendB" style="font-size:var(--ds-fs-caption);opacity:.75">한 달 생활비</label>
+<div class="field"><input id="spendB" inputmode="numeric" placeholder="예: 200"><span>만원</span></div>
+<a class="ds-btn ds-btn--lg ds-btn--primary ds-btn--full" href="#">은퇴 나이 계산</a>
+</section>
+<details class="ds-card"><summary>공제 6가지 보기</summary></details>
+<p class="basis">근로소득 간이세액표(2026. 2. 27. 개정) · 8세 이상 20세 이하 자녀 공제 반영 · 기준일 2026-10-01</p>
+<section class="ds-card ds-stack" aria-label="광고">
+<p class="ad-label"><b>광고</b> · 이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+<a class="ds-row" href="#" style="text-decoration:none;color:inherit"><span class="thumb">[상품 사진]</span><span class="ds-stack" style="gap:2px;flex:1"><b style="font-size:var(--ds-fs-body-sm)">[상품명 — 파트너스 API]</b><span style="font-size:var(--ds-fs-body-sm);color:var(--ds-ink-2)">[가격] · 쿠팡</span></span><span style="color:var(--ds-ink-3)">›</span></a>
+</section>
+</main>
+</div>
+</div>
+</body>
+</html>

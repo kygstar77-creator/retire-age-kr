@@ -63,3 +63,10 @@
 | copywriter · growth · product-dev · youtube-loop | O | O | O | O | O | O |
 
 푸시 X인 곳 중 일부는 옛 형태 `git push origin ...`(merge 후 push)를 쓴다. 지시문 수정은 순돌이·회의 몫 → today.md '추가 필요'에 올림.
+
+## 2026-10-01 07:5x 대조 (2회차, 바뀐 것만)
+- 최근 회차 실패 0건: write 7/7, video-producer 7/7, youtube-loop 7/7, audit 2/2, dispatcher 3/3(+1 실행 중).
+- 영상 PD 헛돎 의심 해소: 최근 2회 12분·68분(21:16 UTC 회차) — 일감이 생김.
+- 운영실장(dispatcher) 19:46 UTC 회차가 **2시간 47분** 이어짐 → 매시 :05 회차와 겹침. 그래서 운영실장 2(:35)가 생긴 것으로 보임. 운영실장 2는 아직 실행 0회(첫 회차 08:35 예정) → 다음 회차 온보딩 점검.
+- 새 자리(09-30 23:39 이후 등록): firemap-dispatcher-2, firemap-finishline-check(3시간마다 :50, 아직 0회), firemap-venture-builder(5회/일), firemap-venture-research-global·kr(각 2회/일). 첫 회차 결과는 venture-builder만 확인(today.md 07:34 완료 기록 있음).
+- 근무 시각 불일치: venture-researcher-global 설명 08:20 vs cron 20 8,14 일치. artist 설명 "11:40·19:10"인데 cron은 11:40만. brand-director 설명 10:00·제목 10:10 vs cron 0 10.

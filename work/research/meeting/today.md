@@ -238,7 +238,7 @@
 - ✅ 비율 07:38: 2/11 (18%). X-OPS-4 기준선.
 - 수익·세션 07:38: 수익 0원(revenue.md 07:17, 목표 대비 0.0%). 오늘 00:00~07:38 세션: 원값 408, host=firemap.kr·internal 제외 46(기기 40). 봇 거르기 전.
 
-### 다음 3시간 결승선 07:50~10:50 (점검관 07:38 — 운영실장 :05·:35 투입)
+### 지난 결승선 07:50~10:50 (점검관 07:38 작성, 08:52 채점 → 열린 칸은 아래 08:50~11:50 표로)
 | # | 무엇 | 담당 | 마감 | 완료 기준 |
 |---|---|---|---|---|
 | S1 | 쿠팡 본인인증 1번 + 유튜브·firemap.kr 매체 등록 확인. F1·F2 수익 경로 막힘 해소 | 사장님(결재함) → firemap-youtube-loop | 10:50 | approvals.md에 "어디서 무엇을 누르면" 한 줄, 풀리면 비금융 링크 3개 발급 |
@@ -249,6 +249,29 @@
 - 착수: firemap-product-dev S4 08:03
 - 완료: S4 08:11 — 로컬·미리보기 호스트(localhost·127.0.0.1·::1·*.localhost·*.test·*.pages.dev·사설 IP)에서 firemap_events·접속 하트비트를 보내지 않음(src/utils/live.js eventsOff). 테스트만 localStorage fm_events_on=1로 켬(host 표시는 그대로). 스모크 32개 통과(새 테스트: 127.0.0.1에서 요청 0건). 운영 index-BSR73nTb.js 반영, firemap.kr/calc/severance 방문 08:08 session_start 기록 확인(운영은 그대로 쌓임). 애드센스 점검: ads.txt·privacy·contact·disclaimer 200, /calc/salary #sSeo 1·noindex 없음. (firemap-product-dev, a1d6ccc)
 
+
+- **점검 08:52 (스프린트 2회차, 결승선 점검관):**
+  - F1 진행 중 — 막힘. 운영 번들 index-B3Vgrlep.js에 coupang_click 코드는 있으나 link.coupang.com 0개, 오늘 coupang_click 0건. 쿠팡 본인인증(사장님) 대기 + 디자이너 반려(4190d51, design/f1-coupang/fix.patch) 미적용 — **대기 32분**(08:20 반려 → 착수 기록 없음).
+  - F2 진행 중 — 막힘. ytdesc_all.py dry 통과(ab6fbe5)뿐, 설명란 변경 커밋 0. 쿠팡 인증 + 무인 회차 videos.update 권한.
+  - F3 ✅ 운영 /calc/salary 200(index-B3Vgrlep.js), 61c6952 배포·320px 캡처·손검산 기록. A안=디자이너 시안(1e1ec58) 그대로.
+  - F4 진행 중. utm 연결 0/3 — 유튜브 채널 정보 화면(curl)에 firemap.kr/?utm_source=youtube&utm_medium=profile만, /calc/salary 없음. 쇼츠·카페 아직.
+  - F5 진행 전(19:20). F6 진행 중 — 원고 묶음 19a4226(20시 발행 예정), 편집 통과 확인 안 함.
+  - F7 ✅(revenue.md 07:17). F8 진행 전(22:00). F9 ✅(sitemap /calc 3개).
+  - F10 ✅ 운영 가이드 4편 모두 해당 계산기 href 1개(unemployment-benefit-before-fire→/calc/unemployment-benefit, retirement-pension-db-dc→/calc/severance, seed-money-first-job·income-tax-brackets-marginal-rate→/calc/salary) curl 실측. 디자인 통과 4190d51.
+  - F11 진행 전(10/3).
+  - S1 ❌(진행 중) — approvals.md에 쿠팡 본인인증 줄이 없었음. 점검관이 08:5x 결재함에 올림. S2 ❌(진행 중) — 채널 프로필 /calc/salary 없음(위 F4), 무인 회차 쓰기 권한 막힘 → 결재함 같은 줄. S3 ✅(=F3). S4 ✅ 08:05 이후 host=127.0.0.1·localhost session_start 0건(Supabase), 운영 번들에 fm_events_on 있음. S5 진행 중 — channels.md 기준(host·internal·몰림 시간)과 9/30 숫자만, 오늘 숫자·UA 봇 거르기 없음.
+- ✅ 비율 08:52: 6/16 (38%) — F3·F7·F9·F10·S3·S4. X-OPS-4 기준선.
+- 수익·세션 08:52: 수익 0원(revenue.md 07:17 최신, 목표 대비 0.0%). 오늘 00:00~08:33 세션 원값 473 / host≠firemap.kr·internal 기기 뺀 외부 51(기기 43). 봇 거르기 전. coupang_click 0.
+
+### 다음 3시간 결승선 08:50~11:50 (점검관 08:52 — 운영실장 :05·:35 투입)
+| # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 |
+|---|---|---|---|---|---|
+| T1 | F1 쿠팡 칸 디자이너 반려 수정(design/f1-coupang/fix.patch) 적용 → 디자이너 재판정. 인증 풀리는 즉시 링크만 넣고 배포되게 | A | firemap-product-dev → firemap-designer | 10:50 | 반려 항목 수정 커밋 + 디자인 통과 줄. (링크 발급은 사장님 인증 뒤) |
+| T2 | 쿠팡 본인인증 1번(S1 이월) → 풀리면 유튜브·firemap.kr 매체 등록 확인, 비금융 링크 3개 발급 | A | 사장님(결재함) → firemap-youtube-loop | 11:50 | approvals.md 줄(점검관 08:5x 올림) + 링크 3개 |
+| T3 | 유튜브 설명란·채널 프로필 utm 적용(S2 이월): ytdesc_all.py apply는 채팅 세션 또는 권한 허용 규칙 1회 필요 | B | firemap-youtube-loop(권한은 결재함) | 11:50 | 채널 화면 curl에 /calc/salary utm, 설명란 되읽기 파일 |
+| T4 | 오늘 진짜 외부 방문(S5 이월): UA·몰림 봇 거르기 추가, 오늘 00~11시 숫자 | C | firemap-growth | 11:50 | channels.md 표에 10/1 줄 + 기준 한 줄 추가 |
+| T5 | F6 카페 계산기 소개 글 편집 관문 통과 표시(.edit.json)까지 | B | firemap-editor | 11:50 | .edit.json 통과 파일 |
+- 정체 점검 08:52: F10 [요청] 디자이너 08:11 → 08:20 통과(정상). F1 디자인 반려 08:20 → product-dev 착수 없음 32분 = **대기**. F2 쿠팡 인증 07:40 요청 → 결재함 등록 없음 1시간 12분 → 점검관이 등록(아래 approvals).
 
 ## [지시] Mobbin 무료 대안 찾기 (순돌이 → firemap-ai-lab, 기한 오늘 12:00, 사장님 07:2x)
 - 의도: 디자이너·제품 개발이 실제 앱·웹 화면 사례(금융·계산기·결과 화면·온보딩)를 보고 설계하게 한다. Mobbin은 유료라 사장님이 무료 대안을 원한다.

@@ -245,3 +245,5 @@
 2026-10-01 08:45 · firemap-write · 완료: F6 원고·garak0929 출처 날짜 고침 (today.md 같은 줄)
 2026-10-01 08:43 · firemap-youtube-loop · 완료: 설명란 합치기 명령 work/ytdesc_all.py(편집 원고 6편+계산기 utm+쿠팡 줄을 영상마다 update 1번) dry 통과, apply는 권한 허용 대기 · 권한이 풀릴 때 명령 1번으로 끝나게, 남의 변경이 있으면 편집 원고를 덮지 않는다
 2026-10-01 08:43 · firemap-youtube-loop · 편집 원고 사실 대조를 '값 종류'로 판정(같은 숫자 반복 횟수 차이는 사실 변경 아님) · scV67BQvC4Q가 '5억' 14→13회로 막혔는데 지운 건 겹친 문장
+2026-10-01 08:46 · brand-research · persona 첫 판: 창구마다 나이가 다르다(계산기 30~34 중심·유튜브 남81% 35~54·카페 45~49), 나이칸 기본값 35라 '35세' 가정 근거 약함 · work/research/brand/research/persona.md
+2026-10-01 08:46 · brand-research · 완료: persona.md 첫 판(today.md [지시] 처리)

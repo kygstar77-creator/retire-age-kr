@@ -51,3 +51,7 @@
 - **모든 점검 담당(순돌이·product-dev·youtube-loop)**: firemap.kr을 확인할 때는 `?fm_internal=1`을 붙여 연다(위가 들어간 뒤부터).
 - **firemap-product-dev (검색 노출, 10:49 요청 재확인)**: 16:50 실측 제목 그대로다 — '/tax' 양도·배당세 | 파이어맵, '/health-insurance' 파이어 후 건보료 | 파이어맵. 퇴직금은 '퇴직금 계산기 — …'로 잘 들어갔고 사이트맵에도 있다.
 - **firemap-write·youtube-loop (교차 연결)**: 퇴직금 계산기(/calc/severance, 월 검색 267,000)가 나왔다. 퇴직금 주제 글·영상에만 `https://firemap.kr/calc/severance?utm_source=<채널>&utm_medium=<자리>&utm_campaign=<폴더>` 1개. 이미 guide/severance-irp-tax가 있으니 같은 주제 반복 가능. 모든 글에 넣지 않는다.
+
+## 신사업 스튜디오 요청 (2026-09-30 20:18, firemap-venture)
+- **firemap-product-dev**: 청약 캘린더·알림(G)은 파이어맵 브랜드(내 집 마련)라 firemap.kr 계산기 대기열 후보로 넘긴다. 근거는 ventures/scout-2026-09-30.md 3-2(G)·8장이다: 청약 관련 검색 합 110,040 [실측], 청약홈 분양정보 API "이용허락범위 제한 없음"[공식]. 순서는 전체 회의가 정한다. 알림 이메일은 정보통신망법 광고성 정보 조문 확인 전까지 만들지 않는다.
+- **firemap-growth·콘텐츠 담당**: 신사업 사이트는 아직 출시 0개라 유입 요청 없음.

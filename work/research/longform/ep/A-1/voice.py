@@ -1,7 +1,7 @@
 # A-1 목소리 — script.md 말하는 문장을 한 줄씩 제미나이 TTS로 읽혀 video/public/audio/a1/에 두고, 장별 문장·길이를 voice.json에 남긴다.
 #   py -3.12 work/research/longform/ep/A-1/voice.py [--budget 초] [--by-section]   (이미 만든 문장은 건너뛴다 — 429로 끊겨도 다음 회차가 이어서 돈다)
 # 방식은 research/sonpum2/tour_voice.py와 같다(gemini-3.8-flash-tts, 목소리 Charon — 9-1 결정). 화면 자막은 대본 글자 그대로, 읽는 문장만 영문 약어를 한국 유튜버들이 읽는 소리로 바꾼다.
-import json, os, re, sys, time, base64, wave, array, hashlib, urllib.request, urllib.error
+import glob, json, os, re, sys, time, base64, wave, array, hashlib, urllib.request, urllib.error
 sys.stdout.reconfigure(encoding='utf-8')
 EP = os.path.dirname(os.path.abspath(__file__))
 VID = os.path.normpath(os.path.join(EP, '..', '..', '..', '..', 'video'))
@@ -73,7 +73,7 @@ def tts(text):
 # (파일 이름이 문장별 방식과 같아 아래 반복문이 그대로 가져다 쓴다). 자른 조각 길이 비율이 글자 비율과 2배 넘게 어긋나면 버린다.
 # 이 모드에서는 문장별 요청을 하지 않는다(--line-fallback을 붙이면 한다).
 BYSEC = '--by-section' in sys.argv
-def split_section(pcm, texts):
+def split_section(pcm, texts, mingap=8):
     win = 480
     loud = [max((abs(x) for x in pcm[i:i + win]), default=0) > 600 for i in range(0, len(pcm), win)]
     gaps, i = [], 0
@@ -81,7 +81,7 @@ def split_section(pcm, texts):
         if not loud[i]:
             j = i
             while j < len(loud) and not loud[j]: j += 1
-            if i > 0 and j < len(loud) and (j - i) >= 8: gaps.append((j - i, (i + j) // 2 * win))
+            if i > 0 and j < len(loud) and (j - i) >= mingap: gaps.append((j - i, (i + j) // 2 * win))
             i = j
         else: i += 1
     need = len(texts) - 1
@@ -96,28 +96,45 @@ def split_section(pcm, texts):
 
 def wav_of(t): return os.path.join(AUD, hashlib.md5((VOICE + '|' + t).encode()).hexdigest()[:16] + '.wav')
 
+# 2026-09-30 10:30 PD: 자르기 실패 3번이 무료 할당량(하루 모델당 10회)을 그냥 버렸다 → ① 이미 있는 문장은 빼고 없는 문장만 보낸다
+# ② 받은 소리는 _raw/에 먼저 저장해 두고(다시 요청하지 않는다) ③ 무음 기준을 0.16초→0.1초로 한 번 더 낮춰 자른다.
+RAW = os.path.join(AUD, '_raw'); os.makedirs(RAW, exist_ok=True)
+def cut_and_save(pcm, texts):
+    segs = split_section(pcm, texts) or split_section(pcm, texts, 5)
+    if segs is None: return False
+    pad = array.array('h', [0] * 2400)   # 앞뒤 0.1초
+    for t, sg in zip(texts, segs):
+        fn = wav_of(t)
+        if os.path.exists(fn): continue
+        with wave.open(fn, 'wb') as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(24000); w.writeframes((pad + sg + pad).tobytes())
+        if voiced_rate(fn, t) < MIN_RATE: open(fn + '.slow', 'w').close()
+    return True
+
 def tts_section(texts):
-    if all(os.path.exists(wav_of(t)) for t in texts): return True
+    texts = [t for t in texts if not os.path.exists(wav_of(t))]
+    if not texts: return True
+    key = hashlib.md5((VOICE + '|' + '|'.join(texts)).encode()).hexdigest()[:16]
+    for f in glob.glob(os.path.join(RAW, key + '_*.pcm')):   # 전에 받아 둔 소리부터
+        pcm = array.array('h'); pcm.frombytes(open(f, 'rb').read())
+        if cut_and_save(pcm, texts): print('  장 완료(저장본)', len(texts), '문장', texts[0][:20]); return True
     body = {'contents': [{'parts': [{'text': 'Read these Korean lines in order as a calm, clear YouTube narration at a natural pace. Pause about one second between lines:\n' + '\n'.join(texts)}]}],
             'generationConfig': {'responseModalities': ['AUDIO'], 'speechConfig': {'voiceConfig': {'prebuiltVoiceConfig': {'voiceName': VOICE}}}}}
     for m in MODELS:
         if time.time() - T0 > BUDGET: return False
+        if m in DEAD: continue
         try:
             r = json.load(urllib.request.urlopen(urllib.request.Request(f'https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={KEY}',
                 data=json.dumps(body).encode(), headers={'Content-Type': 'application/json'}), timeout=300))
             pcm = array.array('h'); pcm.frombytes(base64.b64decode(r['candidates'][0]['content']['parts'][0]['inlineData']['data']))
-            segs = split_section(pcm, texts)
-            if segs is None: print('  장 자르기 실패', m, texts[0][:20]); continue
-            pad = array.array('h', [0] * 2400)   # 앞뒤 0.1초
-            for t, sg in zip(texts, segs):
-                fn = wav_of(t)
-                if os.path.exists(fn): continue
-                with wave.open(fn, 'wb') as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(24000); w.writeframes((pad + sg + pad).tobytes())
-                if voiced_rate(fn, t) < MIN_RATE: open(fn + '.slow', 'w').close()
+            open(os.path.join(RAW, f'{key}_{m}.pcm'), 'wb').write(pcm.tobytes())
+            if not cut_and_save(pcm, texts): print('  장 자르기 실패', m, texts[0][:20]); continue
             print('  장 완료', m, len(texts), '문장', texts[0][:20]); return True
-        except urllib.error.HTTPError as e: print('  장 실패', m, e.code)
+        except urllib.error.HTTPError as e:
+            print('  장 실패', m, e.code)
+            if e.code == 429 and 'PerDay' in e.read().decode(errors='ignore'): DEAD.add(m)   # 하루치 다 씀 — 오늘은 다시 부르지 않는다
         except Exception as e: print('  장 실패', m, str(e)[:80])
     return False
+DEAD = set()
 
 secs = sections(); done = missing = 0
 if BYSEC:

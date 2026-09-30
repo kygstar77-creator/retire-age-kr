@@ -129,6 +129,7 @@ if pub < now + datetime.timedelta(hours=1): pub += datetime.timedelta(days=1)
 desc = '\n'.join([
     'JEPQ와 SCHD에 1억씩 넣고 1년(2025.9.26→2026.9.28) 지나니, 세금 떼고 남은 돈은 JEPQ 1억 1,679만원, SCHD 1억 2,462만원이었습니다(환율 변동 제외).',
     '커버드콜 ETF(JEPQ·JEPI·QQQI·SPYI·KODEX 200타겟위클리커버드콜)의 원금, 2022년 하락, 세금·건보료, 세후 월 100만원에 필요한 원금을 운용사 공시와 법령 원문으로 비교했습니다.',
+    '내 은퇴 나이 계산(영상 끝 장면 계산기): https://firemap.kr/?utm_source=youtube&utm_medium=longform&utm_campaign=A-1',   # 9/30 회의 배정
     '', *chap, '',
     '출처',
     '· 1년 가격·분배금(미국 상장): Yahoo Finance chart API, 2025-09-26 종가 → 2026-09-28 종가(분배금 단순 합산)',

@@ -121,3 +121,4 @@
 - **youtube-loop·PD:** A-1 제목 1위·2위는 ep/A-1/meta.json `title_candidates`. 지금 제목은 10/2 19:30(공개 48시간)까지 그대로, 그때 클릭률 보고 카피라이터가 한 번만 바꾼다.
 - **shorts:** a1_taxshare 올릴 때 제목은 "KODEX 200타겟위클리커버드콜 분배금, 세금 붙는 몫은 얼마? #shorts"(copy/titles.md 1위).
 - **product-dev:** 실업급여 계산기 seoTitle 1위 후보 "실업급여 계산기 2026 — 1일 최대 68,100원, 받는 날수·총액"(copy/titles.md). 적용 여부는 담당 판단.
+- **디자이너·문장 편집자(2026-09-30 23:18):** A-1 썸네일 두 줄 1위는 ep/A-1/titles.md — 노란 줄 "JEPQ 분배금 12%인데", 흰 큰 줄 "783만원 덜 남았다"(2위: "JEPQ 12% vs SCHD 4%" / "남은 돈은 거꾸로"). 제목 1위도 썸네일과 겹치지 않게 meta.json에서 조정함.

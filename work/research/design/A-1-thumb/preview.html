@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A-1 썸네일 시안</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  :root { --bg:#0f0f0f; --fg:#f1f1f1; --muted:#aaa; }
+  * { box-sizing:border-box; margin:0; }
+  body { background:var(--bg); color:var(--fg); font-family:Pretendard,system-ui,sans-serif; padding:24px 16px; }
+  h2 { font-size:15px; font-weight:600; margin:28px 0 10px; color:var(--muted); }
+  /* ---------- 썸네일 본체 1280×720 ---------- */
+  .thumb { position:relative; width:1280px; height:720px; overflow:hidden; background:linear-gradient(180deg,#F1ECE4 0%,#E4DDD2 100%); }
+  .thumb svg { position:absolute; inset:0; }
+  .thumb .shade { position:absolute; left:0; right:0; top:262px; bottom:0;
+    background:linear-gradient(180deg,rgba(14,14,16,0) 0%,rgba(14,14,16,.88) 28%,rgba(14,14,16,.96) 100%); }
+  .thumb .line { position:absolute; left:0; right:0; text-align:center; font-family:'Black Han Sans',Pretendard,sans-serif; font-weight:400; letter-spacing:-0.01em;
+    -webkit-text-stroke:10px #0b0b0b; paint-order:stroke fill; white-space:nowrap; }
+  .thumb .y { top:312px; font-size:96px; line-height:1; color:#FFD60A; }
+  .thumb .w { top:404px; font-size:162px; line-height:1; color:#fff; }
+  /* 가려짐 검사 표시(내보낼 때 끔) */
+  .thumb.guides .zone { position:absolute; border:3px dashed #ff3b30; }
+  .thumb .zone { display:none; }
+  .thumb.guides .zone { display:block; }
+  .z-dur { right:0; bottom:0; width:25%; height:20%; }
+  .z-bar { left:0; right:0; bottom:0; height:5%; border-color:#ff9f0a !important; }
+  /* ---------- 줄여 보기 ---------- */
+  .scaled { transform-origin:0 0; }
+  .feed { width:375px; background:#0f0f0f; }
+  .card { margin-bottom:14px; }
+  .card .img { position:relative; width:375px; height:211px; overflow:hidden; background:#222; }
+  .card .img img { width:100%; height:100%; object-fit:cover; display:block; }
+  .card .img .dur { position:absolute; right:6px; bottom:6px; background:rgba(0,0,0,.8); color:#fff; font-size:12px; font-weight:600; padding:1px 4px; border-radius:4px; }
+  .card .meta { padding:8px 12px 0; font-size:14px; line-height:1.35; }
+  .card .meta small { display:block; color:var(--muted); font-size:12px; margin-top:2px; }
+  .ours { outline:3px solid #FFD60A; }
+  .row { display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start; }
+  .tile { width:320px; }
+  .tile .img { position:relative; width:320px; height:180px; overflow:hidden; }
+  .tile .img img { width:100%; height:100%; object-fit:cover; display:block; }
+  .tile p { font-size:12px; color:var(--muted); margin-top:4px; }
+  .wrap { overflow-x:auto; }
+</style>
+</head>
+<body>
+
+<h2>① 시안 1280×720 (빨간 점선 = 영상 길이 자리 25%×20%, 주황 = 진행 막대 5%)</h2>
+<div class="wrap"><div id="thumb" class="thumb guides">
+  <svg viewBox="0 0 1280 720" width="1280" height="720" aria-hidden="true">
+    <!-- 저울(레드팀 v1: 들보 굵고 진하게, 기울기 분명히). 받침점 (640,95), 반길이 380, 10° -->
+    <rect x="626" y="95" width="28" height="240" rx="8" fill="#5A4128"/>
+    <g transform="rotate(10 640 95)">
+      <rect x="260" y="81" width="760" height="28" rx="14" fill="#3E2C19"/>
+    </g>
+    <circle cx="640" cy="95" r="24" fill="#3E2C19"/>
+    <circle cx="266" cy="29" r="11" fill="#2A1D10"/><circle cx="1014" cy="161" r="11" fill="#2A1D10"/>
+    <!-- 왼쪽 = JEPQ(가볍다, 올라감). 금액은 facts [9] -->
+    <g>
+      <line x1="266" y1="29" x2="146" y2="79" stroke="#2A1D10" stroke-width="5"/>
+      <line x1="266" y1="29" x2="386" y2="79" stroke="#2A1D10" stroke-width="5"/>
+      <g fill="#F4B400" stroke="#9C7000" stroke-width="3">
+        <ellipse cx="236" cy="74" rx="28" ry="8"/><ellipse cx="298" cy="74" rx="28" ry="8"/>
+      </g>
+      <rect x="120" y="79" width="292" height="104" rx="12" fill="#E8741B" stroke="#A84F0C" stroke-width="6"/>
+      <text x="266" y="139" text-anchor="middle" font-family="Pretendard" font-weight="900" font-size="60" fill="#fff">JEPQ</text>
+      <text x="266" y="172" text-anchor="middle" font-family="Pretendard" font-weight="800" font-size="28" fill="#fff">1년 뒤 1억 1,679만</text>
+    </g>
+    <!-- 오른쪽 = SCHD(무겁다, 내려감) -->
+    <g>
+      <line x1="1014" y1="161" x2="894" y2="206" stroke="#2A1D10" stroke-width="5"/>
+      <line x1="1014" y1="161" x2="1134" y2="206" stroke="#2A1D10" stroke-width="5"/>
+      <g fill="#F4B400" stroke="#9C7000" stroke-width="3">
+        <ellipse cx="946" cy="202" rx="30" ry="9"/><ellipse cx="1010" cy="202" rx="30" ry="9"/><ellipse cx="1074" cy="202" rx="30" ry="9"/>
+        <ellipse cx="978" cy="191" rx="30" ry="9"/><ellipse cx="1042" cy="191" rx="30" ry="9"/>
+        <ellipse cx="978" cy="180" rx="30" ry="9"/><ellipse cx="1042" cy="180" rx="30" ry="9"/>
+        <ellipse cx="1010" cy="169" rx="30" ry="9"/><ellipse cx="1010" cy="158" rx="30" ry="9"/><ellipse cx="1010" cy="147" rx="30" ry="9"/>
+      </g>
+      <rect x="868" y="206" width="292" height="100" rx="12" fill="#1F63D6" stroke="#123F8C" stroke-width="6"/>
+      <text x="1014" y="264" text-anchor="middle" font-family="Pretendard" font-weight="900" font-size="60" fill="#fff">SCHD</text>
+      <text x="1014" y="296" text-anchor="middle" font-family="Pretendard" font-weight="800" font-size="28" fill="#fff">1년 뒤 1억 2,462만</text>
+    </g>
+
+    <!-- 새 고양이(그림 자리 표시용 벡터. 최종은 예술가/제미나이 새 그림) -->
+    <g>
+      <!-- 몸 -->
+      <ellipse cx="640" cy="360" rx="120" ry="80" fill="#FFFFFF" stroke="#D9D2C7" stroke-width="4"/>
+      <!-- 귀 -->
+      <path d="M548 170 L566 92 L618 150 Z" fill="#fff" stroke="#D9D2C7" stroke-width="4"/>
+      <path d="M732 170 L714 92 L662 150 Z" fill="#fff" stroke="#D9D2C7" stroke-width="4"/>
+      <path d="M562 160 L571 112 L600 148 Z" fill="#F7B6C2"/>
+      <path d="M718 160 L709 112 L680 148 Z" fill="#F7B6C2"/>
+      <!-- 머리 -->
+      <ellipse cx="640" cy="232" rx="112" ry="96" fill="#fff" stroke="#D9D2C7" stroke-width="4"/>
+      <!-- 눈: 크게 뜸(놀람) -->
+      <circle cx="598" cy="224" r="26" fill="#fff" stroke="#2B2B2B" stroke-width="5"/>
+      <circle cx="682" cy="224" r="26" fill="#fff" stroke="#2B2B2B" stroke-width="5"/>
+      <circle cx="609" cy="231" r="14" fill="#2F8FD8"/><circle cx="693" cy="231" r="14" fill="#2F8FD8"/>
+      <circle cx="611" cy="233" r="7" fill="#111"/><circle cx="695" cy="233" r="7" fill="#111"/>
+      <circle cx="614" cy="227" r="3.5" fill="#fff"/><circle cx="698" cy="227" r="3.5" fill="#fff"/>
+      <!-- 코·입(동그랗게 벌림) -->
+      <path d="M632 256 L648 256 L640 265 Z" fill="#F08DA0"/>
+      <ellipse cx="640" cy="284" rx="12" ry="14" fill="#6B2A36"/>
+      <!-- 볼 -->
+      <ellipse cx="566" cy="262" rx="16" ry="9" fill="#FBC9D3"/><ellipse cx="714" cy="262" rx="16" ry="9" fill="#FBC9D3"/>
+      <!-- 땀방울 -->
+      <path d="M744 170 Q756 192 744 200 Q732 192 744 170 Z" fill="#7FC8F8" stroke="#3A8CC7" stroke-width="3"/>
+      <!-- 앞발: 양 볼에 -->
+      <ellipse cx="548" cy="300" rx="34" ry="30" fill="#fff" stroke="#D9D2C7" stroke-width="4"/>
+      <ellipse cx="732" cy="300" rx="34" ry="30" fill="#fff" stroke="#D9D2C7" stroke-width="4"/>
+      <circle cx="548" cy="304" r="9" fill="#F7B6C2"/><circle cx="732" cy="304" r="9" fill="#F7B6C2"/>
+    </g>
+  </svg>
+  <div class="shade"></div>
+  <div class="line y">JEPQ 분배금 12%인데</div>
+  <div class="line w">783만원 덜 남았다</div>
+  <div class="zone z-dur"></div><div class="zone z-bar"></div>
+</div></div>
+
+<h2>② 320×180으로 줄였을 때 (규칙 2)</h2>
+<div class="row">
+  <div class="tile"><div class="img" id="small"></div><p>시안(이 페이지가 ①을 복제·축소)</p></div>
+  <div class="tile"><div class="img"><img src="../../longform/ep/A-1/thumb_v3.png" alt="지금 걸린 v3"></div><p>지금 걸린 v3(재탕)</p></div>
+</div>
+
+<h2>③ 휴대폰 목록 375px — 경쟁 상위작 사이에 넣어 보기 (규칙 3)</h2>
+<div class="feed">
+  <div class="card"><div class="img"><img src="bench/z6HQrJZUqOk.jpg" alt=""><span class="dur">17:31</span></div><div class="meta">1억원으로 월배당 300만원 받는법 (고배당주, 금융주, 커버드콜)<small>수페TV · 조회수 27만회</small></div></div>
+  <div class="card"><div class="img ours" id="feedOurs"><span class="dur">14:20</span></div><div class="meta">SCHD·JEPQ에 1억씩 넣고 1년, 세금 떼고 남은 돈 (커버드콜 ETF 비교)<small>파이어맵 · 시안</small></div></div>
+  <div class="card"><div class="img"><img src="bench/CB6ibr4KEcc.jpg" alt=""><span class="dur">—</span></div><div class="meta">배당 ETF에 10억 투자하면 종합소득세·건보료 다 떼고 매달 이만큼 들어옵니다<small>똑재TV · 조회수 38만회</small></div></div>
+  <div class="card"><div class="img"><img src="bench/yRDpbgaZahc.jpg" alt=""><span class="dur">—</span></div><div class="meta">월배당 ETF 10억 투자하면 정말 배당금 얼마?<small>은퇴머니 · 조회수 72만회</small></div></div>
+</div>
+
+<script>
+  // ①을 복제해 ②·③에 축소 배치(가이드선은 뺌)
+  function mini(targetId, w) {
+    const src = document.getElementById('thumb').cloneNode(true);
+    src.removeAttribute('id'); src.classList.remove('guides');
+    src.style.transform = 'scale(' + (w/1280) + ')'; src.style.transformOrigin = '0 0';
+    src.style.position = 'absolute'; src.style.left = '0'; src.style.top = '0';
+    document.getElementById(targetId).prepend(src);
+  }
+  mini('small', 320); mini('feedOurs', 375);
+</script>
+</body>
+</html>

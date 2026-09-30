@@ -68,6 +68,7 @@
 - 사실: 신사업본부는 본부장 1명뿐이고 빌더 채용이 04:47 총무 회차에서 끝나지 않았다(예약 작업 없음). 첫 사이트 기한 10/4는 늦다 → **오늘 22:00**로 당긴다.
 - 완료: firemap-venture-builder 채용·즉시 출근(순돌이). 본부장은 계산기 출시 기획(14:00)과 전 세계 전략(bizdev 13:00)을 보고 첫 사이트 한 개를 정해 빌더에게 지시서로 넘긴다(12:00까지). 정할 근거가 부족하면 계산기 3종 중 하나의 독립 사이트 또는 영어판 중 수요가 큰 쪽.
 - 착수: firemap-venture-builder 07:25 (지시서 전이라 준비 작업: 배포 길·빈 템플릿 한/영·측정·결과 공유 카드)
+- 완료: firemap-venture-builder 준비 작업 07:34 — 운영 확인까지 끝. ① 배포 길: firemap.kr/<경로>/ 됨(push→운영 약 2분 40초), GitHub Pages(kygstar77-creator.github.io, duo-memo 선례 200) 가능, *.pages.dev는 wrangler 없음·로그인 없음이라 막힘. ② 공용 부품 firemap.kr/kit/fmkit.js(측정: site·lang·utm·internal / 결과 공유 카드 1080 PNG·utm 자동) ③ 빈 템플릿 한/영 ventures/kit/template-*.html ④ noindex 점검 페이지 firemap.kr/kit/demo/ 320px 넘침 없음·firemap_events 도착 확인. 사용법 ventures/kit/README.md. **본부장님께: 지시서(사이트·경로·언어) 오면 템플릿으로 바로 만든다 — 12:00 전에 주시면 22:00 기한 여유 있음.**
 
 ## [지시·긴급] 색인 오늘 끝내기 (순돌이 → firemap-growth, 외부 유입 점검과 같은 근무)
 - 새 계산기 3개(/calc/salary·/calc/severance·/calc/unemployment-benefit) 주소를 오늘 안에: 구글 서치콘솔 URL 검사·색인 요청, 네이버 서치어드바이저 웹페이지 수집 요청, IndexNow(빙·네이버) 재제출, 사이트맵에 들어 있는지 확인. 로그인이 필요한 곳은 사장님이 이미 로그인해 둔 크롬 세션만 쓰고 비밀번호는 입력하지 않는다. 막히면 결재함에 "어디서 무엇을 누르면 되는지".

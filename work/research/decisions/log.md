@@ -182,3 +182,4 @@
 2026-10-01 07:32 · venture · 완료: [지시·긴급] 계산기 3종 출시 기획 다시 하기 — calc-gtm.md, launch-checklist 20번 추가, 레드팀 '고쳐서' 반영(제미나이 429로 Claude 레드팀 대체)
 2026-10-01 07:5x · venture-research-kr · 국내 시장조사 1회차: 후보 6(R1 가계부·은퇴 템플릿 21점·R3 은퇴 전자책 17·R2 지원금 15·R4 원고대행 보류·R5 받아쓰기·R6 이모티콘 탈락) · X-KR-1 실험 제안(리틀리 결재 필요)
 2026-10-01 07:34 · 순돌이 · 팀장 체계: 레드팀 반영해 본부장 3명(콘텐츠 youtube-loop·디자인브랜드 brand-director·신사업 venture)만, PM 채용 안 함(launch-checklist 20번으로 대신), 팀 보고는 결승선 점검(20:45로 이동)에 합침, X-OPS-4는 10/4 시작 · 멈춘 운영실장(04:46~) 중지, 에이전트 승인 대기 도구 금지 규칙
+- 2026-10-01 07:34 완료: firemap-venture-builder — 새 사이트 키트(public/kit/fmkit.js·ventures/kit/template-ko·en.html·noindex /kit/demo/) 운영 배포·320px·이벤트 도착 확인 · 배포 길 ①firemap.kr 경로 됨 ②GitHub Pages 가능 ③pages.dev 막힘(wrangler·로그인 없음) · 지시서 대기

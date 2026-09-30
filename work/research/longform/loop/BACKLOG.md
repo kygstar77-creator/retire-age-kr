@@ -31,7 +31,7 @@
 | C6 | Y2 영상마다 그 동네 전체 표 카페 글 | 발행 |
 
 ## 사장님만 할 수 있는 것(모아서 한 번만 보고)
-- **(10/1 F2, 급함)** 쿠팡 파트너스 본인인증 1번 → 내 정보에 youtube.com/@firemapkr 매체 등록 확인·추가 · 그리고 `py -3.12 work/f2_coupang.py auth`(유튜브 설명 수정 권한 구글 동의). 둘 다 되면 루프가 롱폼 7편 설명란 쿠팡 적용
+- **(10/1 F2, 급함)** 쿠팡 파트너스 본인인증 1번 → 내 정보에 youtube.com/@firemapkr 매체 등록 확인·추가 · 그리고 `py -3.12 work/f2_coupang.py auth`(유튜브 설명 수정 권한 구글 동의). 둘 다 되면 루프가 롱폼 7편 설명란 쿠팡 적용 — **10/1 07:51 구글 동의는 끝, 쿠팡 인증만 남음(07:58 확인).** 추가: `py -3.12 work/calc_links.py apply` 한 번(롱폼 6편 계산기 utm 링크, 무인 회차는 권한 검사가 막음) · 채널 프로필 링크 /calc/salary?utm_source=youtube&utm_medium=profile&utm_campaign=salary(스튜디오 맞춤설정)
 - 유튜브 분석(시청 지속·클릭률)용 OAuth 재동의 — ytupload.py SCOPES에 yt-analytics.readonly·youtube(재생목록) 추가 시 브라우저 동의 필요
 - ~~카페 설정 변경~~ → 2026-09-30 사장님 "알아서 바꾸면서 실험해" — 루프가 실험으로 직접(RULES 6-5). 블로그 검색 노출 제보(_blog_index_inquiry.txt)는 대외 제보라 네이버 정책 조사(naver-policy.md) 결과를 보고 판단
 - 쇼츠 고정 댓글(API 권한 없음 → 스튜디오 수동)

@@ -206,3 +206,7 @@
 2026-10-01 07:52 · firemap-audit · STOP_blog 유지, 새 스위치 없음 · 범위 안 블로그 발행 0·심각 0, 재개 조건(공식 경로·회의 판정) 미충족
 2026-10-01 07:52 · firemap-audit · 완료: 배정 3건(STOP_blog 준수 확인·카페 API 실발행 아직 0이라 19:50 재확인·/tax·/pension 문구 운영 확인) 07:52
 2026-10-01 07:57 · research-global · 완료: X-V1 20번 경로 규칙 — Show HN 허용(조건: 가입 없이 체험·추천 부탁 금지), r/UKPersonalFinance 원문 확인 안 함(403·차단)이라 경로 제외, 무계정 연락 2곳 07:57
+2026-10-01 07:59 · firemap-youtube-loop · 쿠팡 줄 보류 유지 · 07:58 크롬 확인에도 쿠팡 '내 정보' 인증 창(사장님 본인인증 전), 미등록 매체 링크는 약관 8조 위험
+2026-10-01 07:59 · firemap-youtube-loop · R2 롱폼 계산기 링크는 6편 모두 '은퇴 나이 계산'(firemap.kr 첫 화면)으로, 위치는 첫 문단(2줄 이하) 뒤 · 연봉·퇴직금·실업급여는 주제 불일치, 둘째 줄 고정은 이어진 두 문장을 갈라서
+2026-10-01 07:59 · firemap-youtube-loop · calc_links.py apply 못 함(무인 권한 검사가 videos.update 거부), 우회 안 함 · S2 채널 링크도 같은 이유로 보류, 사장님·채팅 세션 몫
+2026-10-01 07:59 · firemap-youtube-loop · 완료 아님: F2·R2·S2 준비만(calc_links.py dry 통과), 적용은 막힘 — today.md F2 줄 아래

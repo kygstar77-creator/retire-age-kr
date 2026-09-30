@@ -1,0 +1,107 @@
+diff --git a/src/components/firemap/CoupangPick.jsx b/src/components/firemap/CoupangPick.jsx
+index 0407dfe..53f1cea 100644
+--- a/src/components/firemap/CoupangPick.jsx
++++ b/src/components/firemap/CoupangPick.jsx
+@@ -1,8 +1,9 @@
+ // 계산기 결과 아래 쿠팡 관련 상품 1칸(10/1 결승선 F1). 규칙: work/research/coupang-policy.md 6장 체크리스트 2·3·4·12.
+ // - 링크 바로 위에 대가성 문구(권장 문구 그대로, 조건부 표현 금지, 본문과 다른 색) · 발급받은 link.coupang.com 주소 그대로(리다이렉트·단축기 금지)
+-// - 플로팅·자동 이동 없음, 계산 결과와 '은퇴 나이 계산' 뒤에만 둔다(본문보다 광고가 커지지 않게) · 금융상품은 넣지 않는다
++// - 플로팅·자동 이동 없음, 계산기 화면 맨 끝(계산 방법 뒤)에만 둔다(본문보다 광고가 커지지 않게) · 금융상품은 넣지 않는다
+ // - 가격은 싣지 않는다(실시간 가격과 달라질 수 있어서). 링크가 없는 계산기는 아무것도 그리지 않는다.
+-import { ListGroup, ListRow, Icon, Notice } from '../../ui/index.js';
++// - 디자인 관문(design/f1-coupang/spec.md): 문구와 상품을 한 카드로, 주황·아이콘·› 없음(내부 링크처럼 보이지 않게), 라벨 '광고'.
++import { ListRow } from '../../ui/index.js';
+ import { COUPANG_PICKS } from '../../firemap-v2/coupangPicks.js';
+ import { logEvent } from '../../utils/live.js';
+ 
+@@ -14,12 +15,14 @@ export default function CoupangPick({ from }) {
+   if (!pick || !isIssuedLink(pick.url) || !pick.title) return null;
+   const onClick = () => { try { logEvent('coupang_click', { from, id: pick.id }); } catch { /* ignore */ } };
+   return (
+-    <div className="fm-coupang-pick">
+-      <Notice tone="accent" className="fm-coupang-pick__disclosure">{COUPANG_DISCLOSURE}</Notice>
+-      <ListGroup label="관련 상품 · 쿠팡">
+-        <ListRow lead={<Icon name="book" />} title={pick.title} desc={pick.desc} size="S"
++    <div className="fm-coupang-pick ds-listgroup ds-mt-4">
++      <p className="ds-list__label">광고 · 쿠팡 파트너스</p>
++      <div className="ds-list">
++        <p className="fm-coupang-pick__disclosure ds-mt-0 ds-mb-0" style={{ padding: '14px 16px 12px', fontSize: 'var(--ds-fs-body-sm)', lineHeight: 1.5, color: 'var(--ds-ink-2)', borderBottom: '1px solid var(--ds-line)' }}>{COUPANG_DISCLOSURE}</p>
++        <ListRow title={pick.title} desc={pick.desc} size="S" chevron={false}
++          trail={<span className="ds-caption" style={{ color: 'var(--ds-ink-3)', whiteSpace: 'nowrap' }}>쿠팡 ↗</span>}
+           href={pick.url} target="_blank" rel="sponsored nofollow noopener noreferrer" onClick={onClick} />
+-      </ListGroup>
++      </div>
+     </div>
+   );
+ }
+diff --git a/src/components/firemap/SalaryCalc.jsx b/src/components/firemap/SalaryCalc.jsx
+index cbf9d4f..debb4d9 100644
+--- a/src/components/firemap/SalaryCalc.jsx
++++ b/src/components/firemap/SalaryCalc.jsx
+@@ -90,13 +90,10 @@ export default function SalaryCalc({ inputs, onApply, onMove }) {
+         <RangeField label="한 달 생활비" value={living} min={500000} max={10000000} step={100000} money format={won} chips={[100000, 500000]} onChange={setLiving} />
+       </Card>
+ 
+-
+       <ListGroup label="다음 계산">
+         <ListRow lead={<Icon name="calc" />} title="퇴직금 계산기" desc="입사일·퇴직일·월급으로 예상 퇴직금" size="S" onClick={toNext} />
+       </ListGroup>
+ 
+-      <CoupangPick from="salary" />
+-
+       <Card variant="flat">
+         <SectionHead size="sm" kicker="계산 방법" title="월급 − 4대보험 − 소득세 − 지방소득세" />
+         <p className="ds-caption ds-mb-0">소득세는 근로소득 간이세액표(소득세법 시행령 별표 2, 2026. 2. 27. 개정)의 월급여액(비과세 제외)·공제대상가족 수 해당란 세액이에요. 8세 이상 20세 이하 자녀는 1명 20,830원, 2명 45,830원, 3명부터 1명당 33,330원을 더 빼요. 국민연금은 기준소득월액(41만원~659만원)의 4.75%, 건강보험은 3.595%, 장기요양보험은 건강보험료의 13.14%, 고용보험은 0.9%예요. 10원 미만은 버려요.</p>
+@@ -104,6 +101,8 @@ export default function SalaryCalc({ inputs, onApply, onMove }) {
+           {SALARY_RULES.basisDate} 기준 · 참고용, 실제와 다를 수 있어요. 매달 떼는 세금은 연말정산으로 다시 맞춰요 · <a className="ds-link ds-link--muted" href="/disclaimer">면책 안내</a>
+         </Notice>
+       </Card>
++
++      <CoupangPick from="salary" />
+     </>
+   );
+ }
+diff --git a/src/components/firemap/SeveranceCalc.jsx b/src/components/firemap/SeveranceCalc.jsx
+index 4ea19b6..ceab960 100644
+--- a/src/components/firemap/SeveranceCalc.jsx
++++ b/src/components/firemap/SeveranceCalc.jsx
+@@ -91,8 +91,6 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
+         </ListGroup>
+       )}
+ 
+-      <CoupangPick from="severance" />
+-
+       <Card variant="flat">
+         <SectionHead size="sm" kicker="계산 방법" title="1일 평균임금 × 30일 × (재직일수 ÷ 365)" />
+         <p className="ds-caption ds-mb-0">1일 평균임금 = 퇴직일 이전 3개월 임금총액 ÷ 그 기간의 총일수(근로기준법 제2조). 계속근로기간 1년에 대하여 30일분 이상의 평균임금(근로자퇴직급여 보장법 제8조). 계속근로기간 1년 미만이거나 1주 소정근로시간 15시간 미만이면 대상이 아니에요(같은 법 제4조).</p>
+@@ -100,6 +98,8 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
+           {BASIS_DATE} 기준 · 퇴직소득세를 빼기 전 금액이에요. 육아휴직 등 미산입기간과 통상임금 비교는 반영하지 않았어요. 정확한 금액은 고용노동부 퇴직금 계산에서 확인하세요.
+         </Notice>
+       </Card>
++
++      <CoupangPick from="severance" />
+     </>
+   );
+ }
+diff --git a/src/components/firemap/UnemploymentCalc.jsx b/src/components/firemap/UnemploymentCalc.jsx
+index 6973ad2..5da1239 100644
+--- a/src/components/firemap/UnemploymentCalc.jsx
++++ b/src/components/firemap/UnemploymentCalc.jsx
+@@ -78,8 +78,6 @@ export default function UnemploymentCalc({ inputs, onApply, onMove }) {
+         </Card>
+       )}
+ 
+-      <CoupangPick from="unemployment" />
+-
+       <Card variant="flat">
+         <SectionHead size="sm" kicker="계산 방법" title="1일 구직급여액 × 소정급여일수" />
+         <p className="ds-caption ds-mb-0">1일 구직급여액 = 기초일액(이직 전 3개월 임금총액 ÷ 그 기간의 총일수) × 60%(고용보험법 제45조·제46조). 기초일액 상한은 113,500원이라 1일 최대 68,100원(시행령 제68조). 하한은 이직일 최저임금 10,320원 × 1일 소정근로시간 × 80%, 8시간이면 66,048원. 소정급여일수는 이직일 현재 연령과 피보험기간에 따라 120~270일(제50조 별표 1), 장애인은 50세 이상으로 봐요.</p>
+@@ -88,6 +86,8 @@ export default function UnemploymentCalc({ inputs, onApply, onMove }) {
+           {BASIS_DATE} 기준 · 2026년 이직자 기준이에요. 통상임금 비교와 일용근로자·자영업자·예술인·노무제공자는 반영하지 않았어요. 정확한 금액은 고용24 실업급여 모의계산에서 확인하세요.
+         </Notice>
+       </Card>
++
++      <CoupangPick from="unemployment" />
+     </>
+   );
+ }

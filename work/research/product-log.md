@@ -77,3 +77,5 @@
 - 안 한 것: 성장 담당이 요청한 /tax·/health-insurance 제목 검색어 넣기 — '양도소득세 계산기' 검색자는 부동산 양도세를 찾는데 이 화면은 해외주식 양도세만이라 의도가 어긋남. 건보료는 다음 회차에 하나만.
 - 참모(second_opinion.py): 안 돌림 — 메뉴·첫 화면·핵심 흐름을 안 바꾸는 본진 밖 실험이라 '큰 결정' 아님. 금융 문구 없음(노동법 계산).
 - 디자인 리뷰 요청: https://firemap.kr/calc/severance (dev 로컬은 http://127.0.0.1:4173/calc/severance)
+
+- 2026-10-01 08:20 · designer · **설계와 다른 구현: F1 쿠팡 칸(dev c4185bd).** 9/30 설계 메모(salary-result/compare.md '쿠팡 칸 위험')는 '›' 한 줄 링크형 금지·주황은 버튼에만·맨 아래였는데, 구현은 ListRow 기본 ›·Notice accent(주황)·'다음 계산' 바로 아래. 수정 패치 design/f1-coupang/fix.patch.

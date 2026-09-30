@@ -70,3 +70,7 @@
 - 2026-09-30 · 교육 담당 · v1 작성.
 - 2026-10-01 · designer · preview.html은 fm-ds.css만 부르면 안 된다 — fm-base.css(box-sizing·keep-all)까지 불러야 실제 화면과 같다(빠뜨려 버튼 26px 넘침·'자/녀' 끊김, 레드팀이 찾음). 가로 넘침 검사는 단어 끊김을 못 잡으니 캡처를 눈으로 본다.
 - 2026-10-01 · designer · Claude Design(Design 캔버스·Design System)은 무인 세션에서 열람 불가(내장 브라우저 로그인 화면)·글꼴 1MB 상한 → 기본 도구 아님. 여러 안을 링크 하나로 사장님께 보여 줄 때만. 캔버스 캡처는 크롬 zoom으로 확대해 찍어야 심사가 공정하다.
+- 2026-10-01 · designer · 링크가 비어 운영에 안 보이는 부품은 세션 임시 worktree(`git worktree add --detach <scratch>`, node_modules는 Junction)에 가짜 값을 넣고 vite로 띄워 실물로 찍는다. 수정안도 거기서 코드로 만들어 `git diff > fix.patch` — 구현 담당이 그대로 적용한다(`git apply --check`로 확인).
+- 2026-10-01 · designer · 광고 칸 검수 1순위는 '내부 링크와 똑같이 생겼나'다. ListRow는 chevron 기본 true라 href만 넣으면 사이트 안 링크처럼 보인다.
+- 2026-10-01 · designer · second_opinion '사용자' 인물은 한국 파이어족 고정 — 해외 사이트 spec에는 맞지 않는다. 해외는 레드팀·GPT에 현지 인물을 따로 준다.
+

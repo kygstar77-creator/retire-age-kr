@@ -293,6 +293,27 @@
    "description": "하루 4회 + 호출 — 기획서 먼저",
    "schedule": "매일 08·11·14·17시 :30",
    "enabled": true
+  },
+  {
+   "taskId": "firemap-editor-web",
+   "title": "문장 편집자 2(사이트·화면 문구 전부)",
+   "description": "문장 편집자 2(사이트·화면 문구 전부)",
+   "schedule": "매일 08·13·18시 :10 + 호출",
+   "enabled": true
+  },
+  {
+   "taskId": "firemap-editor-en",
+   "title": "문장 편집자 3(영어 콘텐츠)",
+   "description": "문장 편집자 3(영어 콘텐츠)",
+   "schedule": "매일 10·16시 :10 + 호출",
+   "enabled": true
+  },
+  {
+   "taskId": "firemap-soondol-deputy",
+   "title": "순돌이 대역(사장님 눈 점검·총괄)",
+   "description": "순돌이 대역(사장님 눈 점검·총괄)",
+   "schedule": "2시간마다 :20",
+   "enabled": true
   }
  ],
  "runs": {

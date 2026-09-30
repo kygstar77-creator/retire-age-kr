@@ -25,9 +25,9 @@ NA = '확인 안 함'
 
 # ── 조직 배치(agents.md 본부 기준, 2026-10-01). 사무실 방 순서 = 화면 순서 ──
 DEPTS = [
-    ('exec', '경영', ['soondol', 'firemap-meeting']),
+    ('exec', '경영', ['soondol', 'firemap-soondol-deputy', 'firemap-meeting']),
     ('content', '콘텐츠본부', ['firemap-youtube-loop', 'firemap-video-producer', 'firemap-shorts',
-                           'firemap-write', 'firemap-copywriter', 'firemap-editor']),
+                           'firemap-write', 'firemap-copywriter', 'firemap-editor', 'firemap-editor-web', 'firemap-editor-en']),
     ('design', '디자인실', ['firemap-visual-designer', 'firemap-motion-designer', 'firemap-illustrator',
                         'firemap-artist', 'firemap-designer-orgchart']),
     ('product', '제품본부', ['firemap-planner', 'firemap-product-dev', 'firemap-designer', 'firemap-loop']),
@@ -49,7 +49,7 @@ NAME = {
     'firemap-brand-director': '브랜드 디렉터', 'firemap-brand-researcher': '브랜드 리서처',
     'firemap-growth': '성장·유입', 'firemap-bizdev': '사업개발', 'firemap-venture': '신사업본부장',
     'firemap-audit': '감사관', 'firemap-watchdog': '발행 감시', 'firemap-improve': '생산·개선',
-    'firemap-report': '보고 비서', 'firemap-planner': '기획자', 'firemap-venture-research-global': '해외 시장조사원', 'firemap-venture-research-kr': '국내 시장조사원', 'firemap-venture-builder': '신사업 빌더', 'firemap-dispatcher': '운영실장', 'firemap-dispatcher-2': '운영실장 2', 'firemap-finishline-check': '결승선 점검관', 'firemap-admin': '총무·인사', 'firemap-ai-lab': 'AI 연구소장',
+    'firemap-report': '보고 비서', 'firemap-planner': '기획자', 'firemap-editor-web': '편집자(화면 문구)', 'firemap-editor-en': '편집자(영어)', 'firemap-soondol-deputy': '순돌이 대역', 'firemap-venture-research-global': '해외 시장조사원', 'firemap-venture-research-kr': '국내 시장조사원', 'firemap-venture-builder': '신사업 빌더', 'firemap-dispatcher': '운영실장', 'firemap-dispatcher-2': '운영실장 2', 'firemap-finishline-check': '결승선 점검관', 'firemap-admin': '총무·인사', 'firemap-ai-lab': 'AI 연구소장',
 }
 # 역할 덮어쓰기(근거가 있는 것만)
 ROLE_OVERRIDE = {
@@ -63,7 +63,7 @@ PREFIX = {
     'product-dev': 'firemap-product-dev', 'loop': 'firemap-loop',
     'improve': 'firemap-improve', 'cafeapi.py': 'firemap-improve',
     'audit': 'firemap-audit', 'growth': 'firemap-growth', 'meeting': 'firemap-meeting',
-    'plan': 'firemap-planner', 'venture': 'firemap-venture', 'ventures': 'firemap-venture', 'research-global': 'firemap-venture-research-global', 'research-kr': 'firemap-venture-research-kr', 'builder': 'firemap-venture-builder', 'dispatch': 'firemap-dispatcher', 'finishline': 'firemap-finishline-check', 'report': 'firemap-report',
+    'plan': 'firemap-planner', 'editor-en': 'firemap-editor-en', 'editor-web': 'firemap-editor-web', 'deputy': 'firemap-soondol-deputy', 'venture': 'firemap-venture', 'ventures': 'firemap-venture', 'research-global': 'firemap-venture-research-global', 'research-kr': 'firemap-venture-research-kr', 'builder': 'firemap-venture-builder', 'dispatch': 'firemap-dispatcher', 'finishline': 'firemap-finishline-check', 'report': 'firemap-report',
     'beat': 'firemap-watchdog', 'watchdog': 'firemap-watchdog', 'bizdev': 'firemap-bizdev',
     'designer': 'firemap-designer', 'copywriter': 'firemap-copywriter', 'editor': 'firemap-editor',
     'artist': 'firemap-artist', 'admin': 'firemap-admin', 'visual': 'firemap-visual-designer',

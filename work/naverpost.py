@@ -534,6 +534,28 @@ def day_left(kind):
         _DAY_LEFT[kind] = None if n is None else cap - n
     return _DAY_LEFT[kind]
 
+def blog_hour_today(day=None):
+    """오늘 블로그를 올릴 시각(시). 오늘은 쉬는 날이면 None.
+
+    2026-09-30 전체 회의 배정: 블로그는 하루 0~1편, 발행 시각을 매일 다르게.
+    상한 1편만 두면 자정 넘어 첫 회차(00~01시)가 매일 올린다 — 9/30도 00:35였다.
+    날짜로 씨앗을 잡아 하루 안에서는 모든 회차가 같은 시각을 보게 한다.
+    다섯 날 중 하루꼴은 쉰다. 새벽 2~7시는 블로그를 안 올리므로 8~22시에서 고른다."""
+    import random
+    day = day or datetime.date.today()
+    r = random.Random('blog-' + day.isoformat())
+    if r.random() < 0.2:
+        return None
+    return r.randint(8, 22)
+
+def blog_time_block():
+    """블로그를 지금 올리면 안 되는 이유. 없으면 ''."""
+    if os.environ.get('NAVER_FORCE') == '1': return ''
+    h = blog_hour_today()
+    if h is None: return '보류: 오늘은 블로그 쉬는 날(무작위 시각 규칙)'
+    if datetime.datetime.now().hour < h: return '보류: 오늘 블로그 시각 전(%d시 이후)' % h
+    return ''
+
 def pending_block(kind, pkg, title, check_dup=True):
     """이 묶음을 지금 올리면 거부당할 이유. 없으면 ''.
 
@@ -556,6 +578,8 @@ def pending_block(kind, pkg, title, check_dup=True):
             and datetime.datetime.now() > t + datetime.timedelta(hours=12):
         return '보류: 코너 시효 지남(%s시 코너, 12시간 넘음)' % t.strftime('%m-%d %H')
     left = day_left(kind)
+    if kind == 'blog' and (left is None or left > 0) and blog_time_block():
+        return blog_time_block()
     if left is not None and left <= 0:
         return '하루 상한 도달(오늘 %d편/상한 %d편) — 내일 올린다' % (DAY_CAP[kind] - left, DAY_CAP[kind])
     need = 4 if kind == 'blog' else 3
@@ -726,6 +750,7 @@ def stop_flag(kind):
 def day_guard(kind):
     sf = stop_flag(kind)
     if sf: raise RuntimeError('감사 정지 스위치가 켜져 있다 — ' + sf[:200])
+    if kind == 'blog' and blog_time_block(): raise RuntimeError(blog_time_block())
     cap = DAY_CAP.get(kind)
     if cap is None or os.environ.get('NAVER_FORCE') == '1': return
     n = published_today(kind)
@@ -790,7 +815,8 @@ def with_cafe_tail(seq):
     return list(seq) + [('text', CAFE_TAIL)]
 
 def post_blog(page, pkg, wait=False):
-    jitter('blog'); rate_guard('blog', wait)
+    # 2026-09-30: 카페만 day_guard를 부르고 블로그는 안 불러 상한 1편이 코드로 안 막혀 있었다.
+    day_guard('blog'); jitter('blog'); rate_guard('blog', wait)
     page = alive(page)
     title, seq, meta = read_pkg(pkg)
     seq = with_cafe_tail(seq)

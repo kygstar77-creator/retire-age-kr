@@ -165,6 +165,18 @@ def main():
             print('        우리 수치가 낮은 것은 글 품질이 아니라 카페 규모 때문일 수 있다 —')
             print('        회원이 적으면 무엇을 써도 조회수가 낮다. 그래서 아래 검색 순위를 같이 본다.')
 
+    # 색인 검색은 하루 1회만 한다(2026-09-30 전체 회의 배정). 네이버 검색을 자동으로 여러 번 치면
+    # 그 자체가 기계적 패턴이고, 블로그탭 검색은 금방 막힌다(naver-scrape-limits). 여러 루틴(loop·improve·
+    # audit·report)이 perf.py를 부르므로 여기서 막는다. 카페 조회수(HTTP)는 매번 갱신한다.
+    prev = log.get(TODAY)
+    if prev and prev.get('blog') and os.environ.get('PERF_FORCE') != '1':
+        prev['cafe'] = today['cafe']; prev['cafe_at'] = time.strftime('%Y-%m-%d %H:%M')
+        log[TODAY] = prev
+        json.dump(log, open(p, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        print('\n색인 검색은 오늘 이미 했다(%s) — 하루 1회만 잰다. 카페 조회수만 갱신했다. '
+              '꼭 다시 재려면 PERF_FORCE=1' % prev.get('at'))
+        return
+
     # 색인과 순위를 따로 잰다. 2026-09-21까지는 "제목 검색에 안 나오면 색인 실패"로 판정했는데 틀렸다.
     # 제목 검색에 안 나오던 9/20 글들이 본문 문장을 따옴표로 검색하면 우리 블로그로 잡혔다.
     # 네이버가 글을 알고는 있는데(색인됨) 제목 검색 순위에 안 올린 것이다.

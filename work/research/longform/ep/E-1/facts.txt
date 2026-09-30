@@ -1,0 +1,61 @@
+# E-1 사실표 — 메모리 3사 (2026-09-30 루프 4회차). 대본 숫자는 여기서만 뽑는다. 출처 없는 줄은 없다.
+
+[1] 마이크론 분기 실적(회계 분기 끝 날짜, 10억 달러) — SEC XBRL companyfacts CIK 723125 (raw/mu_facts.json, 9/30 받음)
+  2024-08-29: 매출 7.75B$ · 영업이익 1.52B$ · 영업이익률 19.6% (연간−3개 분기로 계산)
+  2024-11-28: 매출 8.71B$ · 영업이익 2.17B$ · 영업이익률 25.0%
+  2025-02-27: 매출 8.05B$ · 영업이익 1.77B$ · 영업이익률 22.0%
+  2025-05-29: 매출 9.30B$ · 영업이익 2.17B$ · 영업이익률 23.3%
+  2025-08-28: 매출 11.31B$ · 영업이익 3.65B$ · 영업이익률 32.3% (연간−3개 분기로 계산)
+  2025-11-27: 매출 13.64B$ · 영업이익 6.14B$ · 영업이익률 45.0%
+  2026-02-26: 매출 23.86B$ · 영업이익 16.14B$ · 영업이익률 67.6%
+  2026-05-28: 매출 41.46B$ · 영업이익 33.32B$ · 영업이익률 80.4%
+
+[2] SK하이닉스 분기 실적(연결, 조원) — OpenDART fnlttSinglAcnt (raw/dart_*.json)
+  2024Q3: 매출 17.57조 · 영업이익 7.03조 · 영업이익률 40.0%
+  2024Q4: 매출 19.77조 · 영업이익 8.08조 · 영업이익률 40.9% (연간−3개 분기로 계산)
+  2025Q1: 매출 17.64조 · 영업이익 7.44조 · 영업이익률 42.2%
+  2025Q2: 매출 22.23조 · 영업이익 9.21조 · 영업이익률 41.4%
+  2025Q3: 매출 24.45조 · 영업이익 11.38조 · 영업이익률 46.6%
+  2025Q4: 매출 32.83조 · 영업이익 19.17조 · 영업이익률 58.4% (연간−3개 분기로 계산)
+  2026Q1: 매출 52.58조 · 영업이익 37.61조 · 영업이익률 71.5%
+  2026Q2: 매출 79.32조 · 영업이익 60.54조 · 영업이익률 76.3%
+
+[3] 삼성전자 분기 실적(연결, 조원) — OpenDART fnlttSinglAcnt (raw/dart_*.json)
+  2024Q3: 매출 79.10조 · 영업이익 9.18조 · 영업이익률 11.6%
+  2024Q4: 매출 75.79조 · 영업이익 6.49조 · 영업이익률 8.6% (연간−3개 분기로 계산)
+  2025Q1: 매출 79.14조 · 영업이익 6.69조 · 영업이익률 8.4%
+  2025Q2: 매출 74.57조 · 영업이익 4.68조 · 영업이익률 6.3%
+  2025Q3: 매출 86.06조 · 영업이익 12.17조 · 영업이익률 14.1%
+  2025Q4: 매출 93.84조 · 영업이익 20.07조 · 영업이익률 21.4% (연간−3개 분기로 계산)
+  2026Q1: 매출 133.87조 · 영업이익 57.23조 · 영업이익률 42.8%
+  2026Q2: 매출 171.50조 · 영업이익 89.49조 · 영업이익률 52.2%
+  ※ 삼성전자는 전사 숫자(스마트폰·가전 포함). 메모리만의 숫자는 사업보고서 부문 정보 — 확인 안 함
+
+[4] 주가 1년(2025-09-29 종가 → 2026-09-29 종가)과 그 안 최대 낙폭
+  마이크론: $163.90 → $1065.08, +549.8% · 최대 낙폭 -39.1% (20260625 고점 → 20260729 저점) — 나스닥 공식 과거 시세(raw/nasdaq_MU.json), 야후와 271일 모두 일치
+  SK하이닉스: 349,000원 → 1,790,000원, +412.9% · 최대 낙폭 -54.7% (20260622 → 20260730) — 네이버 금융 일별 시세(raw/naver_*.txt). 야후와 261일 중 8일 0.5% 넘게 다름(9/29 포함) → 네이버 값을 쓴다. 금융위 공식 시세(data.go.kr)는 활용신청 없어 확인 안 함 · 공개 전 다시 받는다
+  삼성전자: 84,200원 → 275,000원, +226.6% · 최대 낙폭 -42.9% (20260618 → 20260730) — 네이버 금융 일별 시세(raw/naver_*.txt). 야후와 261일 중 4일 0.5% 넘게 다름(9/29 포함) → 네이버 값을 쓴다. 금융위 공식 시세(data.go.kr)는 활용신청 없어 확인 안 함 · 공개 전 다시 받는다
+
+[5] 마이크론 임원·이사 거래 2026-04-01~2026-08-28 제출분 Form 4 (raw/mu_form4/, form4.json): 공개시장 매도(S) 237건 337,619주 약 $274.6M · 공개시장 매수(P) 0건
+  MEHROTRA SANJAY (President and CEO): 200,000주 $182.29M
+  ARNZEN APRIL S (EVP and Chief People Officer): 80,000주 $57.25M
+  Sadana Sumit (EVP and Chief Business Officer): 39,000주 $24.13M
+  RAY MICHAEL CHARLES (SVP, Chief Legal Officer): 7,601주 $4.06M
+  CORDANO MICHAEL D (EVP, Worldwide Sales): 6,814주 $2.92M
+  GOMO STEVEN J (Director): 2,000주 $1.57M
+  Dugle Lynn A (Director): 1,300주 $1.50M
+  ALLEN SCOTT R. (CVP, Chief Accounting Officer): 879주 $0.88M
+  Bjorlin Alexis (Director): 25주 $0.03M
+  ※ CEO 매도 서류에는 10b5-1(미리 정해 둔 매매 계획) 언급이 있다. 매도 이유는 서류에 없다 — 대본에서 이유를 짐작하지 않는다
+
+[6] 마이크론 FY2025 10-K(2025-10-03 제출, raw/mu_10k.htm) 위험 요인 원문:
+  "We have experienced significant volatility in our average selling prices and may continue to experience such volatility in the future."
+  "In the past five years, annual percentage changes in DRAM average selling prices have ranged from plus low 40% to a minus high 40% range."
+  "In some prior periods, average selling prices for our products have been below our manufacturing costs"
+  "we face the threat of increasing competition and DRAM and NAND oversupply due to significant investment in the semiconductor industry, including by the Chinese government" (CXMT·YMTC 이름 적시)
+  "The trading price of our common stock has been and may continue to be volatile."
+
+[7] 일정: 마이크론 회계 4분기 실적 발표 2026-09-30 오후 2:30(미 산악시간) = 한국 10/1 05:30 — investors.micron.com 보도자료 "Micron Technology to Report Fiscal Fourth Quarter Results on September 30, 2026". 지난 실적 8-K(항목 2.02): 2025-09-23, 2025-12-17, 2026-03-18, 2026-06-24.
+  삼성전자 3분기 잠정실적 날짜 — 확인 안 함(DART 공시 뒤). SK하이닉스 3분기 — 확인 안 함.
+
+[8] 확인 안 함(대본에 쓰지 않음): SK하이닉스·삼성전자 사업보고서 위험 원문, 삼성전자 메모리 부문 매출, 13F, 마이크론 FY2026 4분기 숫자(발표 뒤 [1]에 추가)

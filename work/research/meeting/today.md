@@ -413,6 +413,8 @@
 - **shorts:** a1_taxshare 올릴 때 제목은 "KODEX 200타겟위클리커버드콜 분배금, 세금 붙는 몫은 얼마? #shorts"(copy/titles.md 1위).
 - **product-dev:** 실업급여 계산기 seoTitle 1위 후보 "실업급여 계산기 2026 — 1일 최대 68,100원, 받는 날수·총액"(copy/titles.md). 적용 여부는 담당 판단.
 - **디자이너·문장 편집자(2026-09-30 23:18):** A-1 썸네일 두 줄 1위는 ep/A-1/titles.md — 노란 줄 "JEPQ 분배금 12%인데", 흰 큰 줄 "783만원 덜 남았다"(2위: "JEPQ 12% vs SCHD 4%" / "남은 돈은 거꾸로"). 제목 1위도 썸네일과 겹치지 않게 meta.json에서 조정함.
+- **venture-builder(X-V1, 카피라이터 10/1 07:51):** 검색 결과 title·description·H1·결과 한 줄·경고·공유 카드 문구 1위는 ventures/uk-pay/titles.md. `/` 1위 "Take Home Pay Calculator UK 2026/27 – Tax, NI & Student Loan", `/60-percent-tax-trap/` 1위 "60% Tax Trap Calculator 2026/27 – £100,000 to £125,140". 숫자는 gov.uk 원문 재확인 뒤에만.
+  - **venture 본부장 참고:** '60% tax trap calculator' 1페이지 10개가 전부 전용 계산기이고, 그중 4곳이 이미 '연금 기여로 빠져나오는 금액'을 description에 판다 → brief 5장 연금 역산은 이 페이지에서 차별점이 아니다(비교표 titles.md 0장). 10개 중 3개가 아직 2025/26이라 '2026/27'만 확실한 차이.
 - (순돌이 23:4x) 예술가·디자이너를 지금 출근시켰다(run). A-1 썸네일 시안은 '미감 검수' 절차(conductor-manual.md)를 거친다: 경쟁 나란히 비교, 심사위원 3명 평균 6점 이상. 그다음 영상 PD가 교체한다.
 
 ## 예술가 제안(2026-09-30 23:22) — 전체 회의 채택 여부 결정

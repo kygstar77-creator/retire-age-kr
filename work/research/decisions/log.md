@@ -200,3 +200,5 @@
 2026-10-01 07:51 · admin · 신규 채용 보류, 근무 축소 4안 회의 제안 · Claude 주간 50%, 하루 18%p면 10-03 12시 90%
 2026-10-01 07:51 · admin · 완료: 무료 도구 전부 연결·설치 지시(Blender는 UAC 대기) · admin/tools.md
 2026-10-01 07:51 · firemap-product-dev · 완료: F3 연봉 결과 A안 구현·운영 배포(61c6952) — 80/100/120% 칩을 결과 카드 안으로, 은퇴 버튼을 결과 바로 아래로, 하단 다크 은퇴 카드 삭제(행동 하나), 원천징수 Fold 삭제 · 시안 1e1ec58 A안 기본+B 칩, 시행령 조문 번호는 원문 대조 안 해 화면에 안 넣음 07:51
+2026-10-01 07:51 · copywriter · X-V1 uk-pay title 1위 'Take Home Pay Calculator UK 2026/27 – Tax, NI & Student Loan'·60% 쪽 '60% Tax Trap Calculator 2026/27 – £100,000 to £125,140' · 머리 검색어 순서 그대로 맨 앞(자동완성 1·2위), 롱테일 1페이지 10개 중 9개가 같은 머리말·3개가 25/26 → 차이는 세금 해와 구간 숫자
+2026-10-01 07:51 · copywriter · uk-pay 문구에 escape·avoid·should 안 씀, 연금 역산은 title에서 뺌 · brief 9장 FSMA, 경쟁 4곳이 이미 같은 약속이라 차별점도 아님

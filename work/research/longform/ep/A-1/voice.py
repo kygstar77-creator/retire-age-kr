@@ -7,7 +7,7 @@ EP = os.path.dirname(os.path.abspath(__file__))
 VID = os.path.normpath(os.path.join(EP, '..', '..', '..', '..', 'video'))
 AUD = os.path.join(VID, 'public', 'audio', 'a1'); os.makedirs(AUD, exist_ok=True)
 KEY = [l.split('=', 1)[-1].strip() for l in open(r'C:\Users\강영준\Documents\gemini_key.txt', encoding='utf-8-sig') if l.strip()][0]
-MODELS = ['gemini-3.8-flash-tts', 'gemini-3.1-flash-tts-preview', 'gemini-2.5-flash-preview-tts']; VOICE = 'Charon'; FPS = 30
+MODELS = ['gemini-3.8-flash-tts', 'gemini-3.1-flash-tts-preview', 'gemini-2.5-flash-preview-tts', 'gemini-3.8-flash-lite-tts']; VOICE = 'Charon'; FPS = 30   # lite: 14:20 PD 추가(목록에 있고 할당량 따로)
 BUDGET = int(sys.argv[sys.argv.index('--budget') + 1]) if '--budget' in sys.argv else 1500
 T0 = time.time()
 SAY = [('S&P500', '에스앤피 500'), ('JEPQ', '제피큐'), ('JEPI', '제피'), ('SCHD', '슈드'), ('QQQI', '큐큐큐아이'), ('QQQ', '큐큐큐'),
@@ -94,13 +94,48 @@ def split_section(pcm, texts, mingap=8):
         if r < 0.5 or r > 2.0: return None
     return segs
 
+# 2026-09-30 14:30 PD: lite 모델은 문장 안 쉼표에서도 0.7~0.9초 쉬어서 '가장 긴 무음 N-1개'가 문장 경계가 아니었다(장 11·12).
+# 그래서 마지막 방법으로, 무음 후보 중에서 글자 수 누적 비율에 가장 가까운 자리를 순서대로 고른다(DP, 무음이 길수록 조금 가산).
+def split_dp(pcm, texts, mingap=8):
+    win = 480
+    loud = [max((abs(x) for x in pcm[i:i + win]), default=0) > 600 for i in range(0, len(pcm), win)]
+    cand, i = [], 0
+    while i < len(loud):
+        if not loud[i]:
+            j = i
+            while j < len(loud) and not loud[j]: j += 1
+            if i > 0 and j < len(loud) and (j - i) >= mingap: cand.append(((i + j) // 2 * win, j - i))
+            i = j
+        else: i += 1
+    need = len(texts) - 1; tl = len(pcm)
+    syl = [len(re.findall('[가-힣0-9]', t)) for t in texts]; ts = sum(syl)
+    tgt = [sum(syl[:k + 1]) / ts * tl for k in range(need)]
+    if len(cand) < need: return None
+    INF = float('inf'); n = len(cand)
+    cost = lambda k, c: abs(cand[c][0] - tgt[k]) / tl - 0.002 * cand[c][1]
+    best = [[INF] * n for _ in range(need)]; prev = [[-1] * n for _ in range(need)]
+    for c in range(n): best[0][c] = cost(0, c)
+    for k in range(1, need):
+        run, arg = INF, -1
+        for c in range(n):
+            if c > 0 and best[k - 1][c - 1] < run: run, arg = best[k - 1][c - 1], c - 1
+            if arg >= 0: best[k][c] = run + cost(k, c); prev[k][c] = arg
+    c = min(range(n), key=lambda x: best[need - 1][x]); cuts = []
+    for k in range(need - 1, -1, -1): cuts.append(cand[c][0]); c = prev[k][c]
+    cuts = sorted(cuts)
+    segs = [pcm[a:b] for a, b in zip([0] + cuts, cuts + [tl])]
+    for sg, n_ in zip(segs, syl):
+        r = (len(sg) / tl) / (n_ / ts)
+        if r < 0.6 or r > 1.6: return None
+    return segs
+
 def wav_of(t): return os.path.join(AUD, hashlib.md5((VOICE + '|' + t).encode()).hexdigest()[:16] + '.wav')
 
 # 2026-09-30 10:30 PD: 자르기 실패 3번이 무료 할당량(하루 모델당 10회)을 그냥 버렸다 → ① 이미 있는 문장은 빼고 없는 문장만 보낸다
 # ② 받은 소리는 _raw/에 먼저 저장해 두고(다시 요청하지 않는다) ③ 무음 기준을 0.16초→0.1초로 한 번 더 낮춰 자른다.
 RAW = os.path.join(AUD, '_raw'); os.makedirs(RAW, exist_ok=True)
 def cut_and_save(pcm, texts):
-    segs = split_section(pcm, texts) or split_section(pcm, texts, 5)
+    segs = split_section(pcm, texts) or split_section(pcm, texts, 5) or split_section(pcm, texts, 3) or split_dp(pcm, texts)   # 14:20 PD: 0.06초까지, 그다음 글자 비율 DP
     if segs is None: return False
     pad = array.array('h', [0] * 2400)   # 앞뒤 0.1초
     for t, sg in zip(texts, segs):

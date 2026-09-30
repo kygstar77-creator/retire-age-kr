@@ -108,8 +108,21 @@ test.describe('firemap smoke', () => {
     }
   });
 
+  test('local host: no events unless fm_events_on (S4 — 테스트가 실측을 덮지 않게)', async ({ page }) => {
+    let hits = 0;
+    await page.route('**/rest/v1/firemap_events', async (route) => { hits += 1; await route.fulfill({ status: 201, body: '' }); });
+    await page.route('**/rest/v1/rpc/fm_presence_ping', async (route) => { hits += 1; await route.fulfill({ status: 200, body: '""' }); });
+    await seed(page);
+    await page.goto('/calc/severance');
+    await page.waitForTimeout(800);
+    await page.goto('/#home');
+    await page.waitForTimeout(800);
+    expect(hits, '127.0.0.1에서 이벤트 0건').toBe(0);
+  });
+
   test('internal visit flag: ?fm_internal=1 sticks and tags events', async ({ page }) => {
     const bodies = [];
+    await page.addInitScript(() => { try { localStorage.setItem('fm_events_on', '1'); } catch { /* ignore */ } });
     await page.route('**/rest/v1/firemap_events', async (route) => { try { bodies.push(JSON.parse(route.request().postData() || '{}')); } catch { /* ignore */ } await route.fulfill({ status: 201, body: '' }); });
     await page.goto('/calc/severance?fm_internal=1');
     await page.waitForTimeout(800);
@@ -122,6 +135,7 @@ test.describe('firemap smoke', () => {
 
   test('unemployment benefit: hand-check numbers, crawler text is on screen, next step to fire', async ({ page }) => {
     const bodies = [];
+    await page.addInitScript(() => { try { localStorage.setItem('fm_events_on', '1'); } catch { /* ignore */ } });
     await page.route('**/rest/v1/firemap_events', async (route) => { try { bodies.push(JSON.parse(route.request().postData() || '{}')); } catch { /* ignore */ } await route.fulfill({ status: 201, body: '' }); });
     await seed(page);
     await page.goto('/calc/unemployment-benefit');
@@ -146,6 +160,7 @@ test.describe('firemap smoke', () => {
 
   test('severance → next calc (unemployment) row counts next_calc_click; /tax·/pension show basis date', async ({ page }) => {
     const bodies = [];
+    await page.addInitScript(() => { try { localStorage.setItem('fm_events_on', '1'); } catch { /* ignore */ } });
     await page.route('**/rest/v1/firemap_events', async (route) => { try { bodies.push(JSON.parse(route.request().postData() || '{}')); } catch { /* ignore */ } await route.fulfill({ status: 201, body: '' }); });
     await seed(page);
     await page.goto('/calc/severance');
@@ -165,6 +180,7 @@ test.describe('firemap smoke', () => {
 
   test('salary take-home: hand-check A, crawler text is on screen, next step to fire', async ({ page }) => {
     const bodies = [];
+    await page.addInitScript(() => { try { localStorage.setItem('fm_events_on', '1'); } catch { /* ignore */ } });
     await page.route('**/rest/v1/firemap_events', async (route) => { try { bodies.push(JSON.parse(route.request().postData() || '{}')); } catch { /* ignore */ } await route.fulfill({ status: 201, body: '' }); });
     await seed(page);
     await page.goto('/calc/salary');

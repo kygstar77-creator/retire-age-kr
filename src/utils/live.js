@@ -6,8 +6,22 @@ const H = { apikey: SUPABASE_KEY, authorization: `Bearer ${SUPABASE_KEY}`, 'cont
 
 function nick() { try { return localStorage.getItem('fm_nickname') || ''; } catch { return ''; } }
 
+// 로컬·미리보기 호스트(127.0.0.1·localhost·*.pages.dev 등)에서는 기록하지 않는다 — 9/30 원값 451세션 중 352가 테스트라 실측을 덮음(성장 담당 요청 10/1).
+// 테스트가 이벤트를 봐야 할 때만 localStorage fm_events_on=1로 켠다(그래도 host 표시는 붙는다).
+function localHost() {
+  try {
+    const h = (window.location.hostname || '').toLowerCase();
+    return !h || h === 'localhost' || h === '127.0.0.1' || h === '[::1]' || h === '::1' || h.endsWith('.localhost') || h.endsWith('.test') || h.endsWith('.pages.dev') || /^(10|192\.168|172\.(1[6-9]|2\d|3[01]))\./.test(h);
+  } catch { return false; }
+}
+function eventsOff() {
+  if (!localHost()) return false;
+  try { return localStorage.getItem('fm_events_on') !== '1'; } catch { return true; }
+}
+
 // 접속 중임을 알림(하트비트)
 export function presencePing() {
+  if (eventsOff()) return;
   const cid = identityId();
   if (!cid) return;
   try {
@@ -54,6 +68,7 @@ function auditProps() {
 
 // 익명 이벤트 기록(append-only). 개인정보·금액 원본 없이 행동 이벤트만.
 export function logEvent(event, props) {
+  if (eventsOff()) return;
   try {
     const cid = identityId();
     const extra = auditProps();

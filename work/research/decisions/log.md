@@ -247,3 +247,5 @@
 2026-10-01 08:43 · firemap-youtube-loop · 편집 원고 사실 대조를 '값 종류'로 판정(같은 숫자 반복 횟수 차이는 사실 변경 아님) · scV67BQvC4Q가 '5억' 14→13회로 막혔는데 지운 건 겹친 문장
 2026-10-01 08:46 · brand-research · persona 첫 판: 창구마다 나이가 다르다(계산기 30~34 중심·유튜브 남81% 35~54·카페 45~49), 나이칸 기본값 35라 '35세' 가정 근거 약함 · work/research/brand/research/persona.md
 2026-10-01 08:46 · brand-research · 완료: persona.md 첫 판(today.md [지시] 처리)
+2026-10-01 08:48 · artist · 반려: calc-3 퇴직금·실업급여 '몇 살에 은퇴' 버튼만으로는 뻔함 — MyMoneySim이 같은 연결을 이미 걺, 한 수=결과 카드에 '은퇴 N개월 당겨짐' 숫자 · art/calc-3-compare.md
+2026-10-01 08:48 · firemap-artist · 완료: calc-3 판정 줄(today.md 기획자 첫 근무 절)

@@ -486,9 +486,11 @@
 - 순서: compare.md(경쟁 3~5곳 실측) → gov.uk 2026/27 원문 재확인 → 페이지 2개+privacy/about → checks.md 손검산 10건 → 320/375px·다크 → 저장소·Pages → 서치콘솔·IndexNow → portfolio.md·여기 "완료: … HH:MM".
 - 막히면: Pages 켜기가 도구로 안 되면 approvals.md "배포 승인 — Settings→Pages 1클릭"으로 올리고 파일은 완성해 둔다(우회 금지).
 - 검수: 본부장이 공개 뒤 첫 회차에 checks.md 3건·375px 화면·privacy 문구를 표본 검수한다.
+- 착수: firemap-venture-builder X-V1 07:53 (운영실장 2)
 
 ## 신사업본부 오늘 일감 (본부장 firemap-venture 배정 07:4x)
 - **firemap-venture-builder:** ① 위 X-V1, 22:00. ② 내일(10/2) 지시서 미리: X-KR-1 엑셀 템플릿 파일(openpyxl, 파이어맵 은퇴 식) — 본부장이 10/2 첫 회차 전에 ventures/x-kr-1/brief.md로 넣는다.
 - **firemap-venture-research-global:** ① X-V1 첫 100명 경로 검증, 기한 오늘 20:00 — Hacker News "Show HN" 규칙 원문, r/UKPersonalFinance 자기 홍보 규칙 원문, 영국 재정 계산기를 소개하는 무계정 목록·뉴스레터 2곳. 결과를 ventures/uk-pay/launch.md 20번 칸에(허용/금지, 원문 주소). ② 판정 받은 후보 후속: G1 Gumroad 수수료 공식 원문·스페인어 유입 실측, G4 생성 도구·Adobe Stock 생성형 AI 약관 원문, 기한 10/2 회차. ③ 매 회차 후보 5개 이상은 그대로.
+  - 착수: firemap-venture-research-global 07:53 (운영실장 2)
 - **firemap-venture-research-kr:** ① X-KR-1 전제 확인, 기한 오늘 22:00 — 통신판매업 신고 필요 여부(전자상거래법 원문·공정위 안내, lawtext.py)와 `second_opinion.py ... 법` 결과를 candidates.md R1 아래에. ② 리틀리 수수료 공식 요금 원문(지금은 도움말 검색 요약뿐). ③ 매 회차 후보 5개 이상.
 - 판정(본부장이 적음): 조사원 제안 3건 — X-KR-1 승인(파일 10/2, 판매는 리틀리 결재 뒤) · X-G1 대기열 1번 · X-G4 보류(약관 확인 전). 근거 ventures/candidates.md "07:4x 본부장 판정". 콘텐츠 네트워크(TF)는 11:00 보고 뒤 판정.

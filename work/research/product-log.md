@@ -1,11 +1,13 @@
 # 제품 개발 일지 (firemap-product-dev) — 최신이 위
 
-2026-09-30 17:23~17:40 · 측정·주소 손질 2건(성장 담당 요청 + 디자인 리뷰 고칠 점 2) · 운영 반영: 아래 푸시 결과 참고 · 다음: 퇴직금 경쟁 분해(calc-competition/severance.md)·출시 체크리스트 14항목, 그다음 실업급여(10/17) 경쟁 조사
+2026-09-30 17:23~17:50 · 측정·주소 손질 2건(성장 담당 요청 + 디자인 리뷰 고칠 점 2) + 퇴직금 경쟁 분해 · 운영 반영: 안 됨 — dev 푸시(0cd2fd2)는 됐고 main 푸시는 자동 권한 검사(Production Deploy)에서 또 막힘. 사장님이 main 반영을 허락하거나 권한 규칙을 열어야 firemap.kr에 들어감 · 다음: 퇴직금 경쟁 분해(calc-competition/severance.md)·출시 체크리스트 14항목, 그다음 실업급여(10/17) 경쟁 조사
 - PM: 이번에 만들 것 = 새 계산기가 아니라 '잴 수 있는 상태'. 성공 기준 = 10/1부터 firemap_events에서 internal:1 세션을 빼고 셀 수 있고, /calc/severance 주소가 공유돼도 그대로 퍼진다. 목표선 보탬(10월 10만원=월 4만 PV): 직접 PV는 0이지만, 지금 원값 세션 87 중 약 70이 우리 점검(성장 담당 9/30 실측)이라 이걸 못 빼면 어떤 실험도 판정 불가.
 - ① 내부 방문 표시: ?fm_internal=1로 한 번 들어오면 localStorage fm_internal=1, 이후 모든 logEvent props에 internal:1. firemap.kr·www 밖 호스트(localhost·pages.dev)는 props.host. src/utils/live.js 한 곳(gtag 이벤트도 logEvent로 흘러 같이 붙음). 개인정보 없음.
 - ② 주소 유지: 검색용 경로(/calc/severance·/dividend 등)로 들어와도 해시로 바꾸지 않는다. 메뉴에서 도구를 열면 그 도구 경로로(/dividend), 나머지 화면은 /#home처럼 루트+해시. 홈 버튼(Header)도 /#home. 로컬 브라우저 확인: /calc/severance 유지 → '은퇴 나이 계산' → /#question → 뒤로 → /calc/severance(퇴직금 화면), 메뉴→배당 = /dividend, 홈 → /#home → 뒤로 /dividend.
 - 테스트: smoke 24개(주소 유지·internal 표시 새로 2개) — 23 통과 + 첫 테스트(#home) 콜드스타트 60초 타임아웃, 단독 재실행 통과(변경 전 코드로도 같은 현상 아님을 확인: 변경 후 #home·#result 단독 2 통과). npm run build 통과.
 - 안 한 것: 디자인 리뷰 고칠 점 1(영웅 숫자 크기, 도구 화면 전체라 본진 묶음 반영 때)·3(취향)·4(15시간 선택 위치) — 다음 퇴직금 손질 때 한 번에. /tax·/health-insurance 제목 검색어: 다음 회차 하나만(건보료부터, /tax는 부동산 양도세 의도와 어긋남).
+- 경쟁 분해: work/research/calc-competition/severance.md — 노동부·사람인·국민연금 노후준비센터 직접 열어 봄, 네이버 자체·토스는 확인 안 함. 이길 점 2개(입력 3개 / 퇴직금이 자산에 들어간 채 은퇴 나이로). 국민연금 센터도 노후 설계로 보내지만 숫자를 안 넘긴다. 지는 점: 통상임금 비교·미산입기간·세후 없음 → 세후(퇴직소득세)가 다음 이길 점 후보.
+- 출시 체크리스트 14항목: 이번 회차 못 채움(2 경쟁 일부·10 측정만 채움). 이미 공개된 화면이라 '보류'가 아니라 다음 회차 1순위로 채운다.
 - 점검 규칙: 이제부터 firemap.kr 확인은 https://firemap.kr/?fm_internal=1 로 먼저 한 번 연다.
 
 2026-09-30 15:55 · 디자인 리뷰(firemap-loop) · /calc/severance 운영 화면을 375px·1280px로 봄(firemap.kr 실제 화면, 계산 기본값 8,812,388원)

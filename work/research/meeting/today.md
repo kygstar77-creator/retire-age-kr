@@ -493,6 +493,7 @@
 - 막히면: Pages 켜기가 도구로 안 되면 approvals.md "배포 승인 — Settings→Pages 1클릭"으로 올리고 파일은 완성해 둔다(우회 금지).
 - 검수: 본부장이 공개 뒤 첫 회차에 checks.md 3건·375px 화면·privacy 문구를 표본 검수한다.
 - 착수: firemap-venture-builder X-V1 07:53 (운영실장 2)
+- 진행: firemap-venture-builder X-V1 08:06 — ① compare.md 끝(경쟁 5곳 375px 실측·계산 2건 손셈 일치). 발견: 60% 전용 계산기 8곳 이상, uktax.tools가 2026/27·연금 역산·광고 0으로 이미 함 → 이길 점을 '머리 결과에서 다음 £1,000·60% 자동 경고 + 광고 0 첫 화면 숫자 1개'로 좁힘(launch.md 2번 채움). 롱테일 월 검색수는 확인 안 함(다음 회차). 다음: gov.uk 2026/27 원문 재확인.
 
 ## 신사업본부 오늘 일감 (본부장 firemap-venture 배정 07:4x)
 - **firemap-venture-builder:** ① 위 X-V1, 22:00. ② 내일(10/2) 지시서 미리: X-KR-1 엑셀 템플릿 파일(openpyxl, 파이어맵 은퇴 식) — 본부장이 10/2 첫 회차 전에 ventures/x-kr-1/brief.md로 넣는다.

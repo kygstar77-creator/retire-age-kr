@@ -8,7 +8,8 @@ fs.mkdirSync(outDir, {recursive: true});
 const serveUrl = await bundle({entryPoint: path.resolve('src/index.ts')});
 const comp = await selectComposition({serveUrl, id, inputProps: props});
 let from = 0; const frames = [];
-props.scenes.forEach((s, i) => { frames.push([`${String(i).padStart(2, '0')}_mid`, from + Math.floor(s.frames * 0.45)]); frames.push([`${String(i).padStart(2, '0')}_end`, from + s.frames - 20]); from += s.frames; });
+const extra = (process.env.STILL_AT || "").split(",").filter(Boolean).map(Number);
+props.scenes.forEach((s, i) => { extra.forEach((r) => frames.push([`${String(i).padStart(2, "0")}_${Math.round(r * 100)}`, from + Math.floor(s.frames * r)])); frames.push([`${String(i).padStart(2, '0')}_mid`, from + Math.floor(s.frames * 0.45)]); frames.push([`${String(i).padStart(2, '0')}_end`, from + s.frames - 20]); from += s.frames; });
 for (const [name, frame] of frames) {
   await renderStill({composition: comp, serveUrl, output: path.join(outDir, name + '.png'), frame, inputProps: props, imageFormat: 'png'});
 }

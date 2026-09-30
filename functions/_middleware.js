@@ -13,20 +13,26 @@ function footHtml(site) {
   return `<p>${esc(NOTE)} <a href="${site}/disclaimer">면책</a> · <a href="${site}/privacy">개인정보처리방침</a> · <a href="${site}/contact">문의</a></p>`;
 }
 const BOX = 'style="max-width:640px;margin:24px auto;padding:0 16px;font-family:sans-serif"';
+// 2026-09-30 사장님: "파이어맵 들어갈 때 설명글이 0.5초 보인다." 숨기면(CSS로 가리기) 구글 숨김 텍스트 위반이 된다(스꾸 총무 조언과 같음).
+// 그래서 숨기지 않고 모양을 바꾼다. 앱이 뜨기 전 첫 화면에는 제목과 한 줄 소개만 로딩 화면처럼 가운데 보이고,
+// 나머지 설명은 그 아래(스크롤하면 보이는 자리)에 둔다. 사람과 봇이 같은 글을 받는다.
+const HERO = 'style="min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:8px;color:#1f1f1f"';
+const HERO_H1 = 'style="font-size:22px;font-weight:700;margin:0;color:#ff5a00"';
+const HERO_P = 'style="font-size:14px;margin:0;color:#6b6b6b"';
 
 function seoBlock(tool, site) {
   const items = tool.sections.map((s) => `<li>${esc(s)}</li>`).join('');
   const others = TOOL_PAGES.filter((t) => t.path !== tool.path).map((t) => `<a href="${site}${t.path}">${esc(t.title)}</a>`).join(' · ');
   const body = (tool.body || []).map((b) => `<p>${esc(b)}</p>`).join('');
-  return `<div id="sSeo" ${BOX}><h1>${esc(tool.title)}</h1><ul>${items}</ul>${body}<p><a href="${site}/">1분이면 나도 계산</a></p><p>${others} · <a href="${site}/guide/">파이어 백과</a></p>${footHtml(site)}</div>`;
+  return `<div id="sSeo" ${BOX}><div ${HERO}><h1 ${HERO_H1}>${esc(tool.title)}</h1><p ${HERO_P}>파이어맵 · 1분이면 나도 계산</p></div><ul>${items}</ul>${body}<p><a href="${site}/">1분이면 나도 계산</a></p><p>${others} · <a href="${site}/guide/">파이어 백과</a></p>${footHtml(site)}</div>`;
 }
 
 // 첫 화면(/) — 2026-09-30까지는 크롤러가 제목 한 줄(34자)만 받았다. 문구는 index.html의 description·JSON-LD와 도구 화면 라벨 그대로.
 // 이 블록은 앱 화면에 있는 것만 담는다(스꾸 총무 2026-09-30: 크롤러 블록은 회색 지대 — 앱 화면과 다른 내용을 넣거나 CSS로 숨기면 위반). 글은 /guide 독립 페이지로.
 function homeBlock(site) {
   const tools = TOOL_PAGES.map((t) => `<h3><a href="${site}${t.path}">${esc(t.title)}</a></h3><p>${t.sections.map(esc).join(' · ')}</p>`).join('');
-  return `<div id="sSeo" ${BOX}><h1>파이어맵 — FIRE·조기은퇴 계산기</h1>` +
-    `<p>내 파이어(조기은퇴) 가능 나이와 목표 자산을 1분 만에 계산. 자산·연금·세금 반영. 또래 중 내 등수도.</p>` +
+  return `<div id="sSeo" ${BOX}><div ${HERO}><h1 ${HERO_H1}>파이어맵 — FIRE·조기은퇴 계산기</h1>` +
+    `<p ${HERO_P}>내 파이어(조기은퇴) 가능 나이와 목표 자산을 1분 만에 계산. 자산·연금·세금 반영. 또래 중 내 등수도.</p></div>` +
     `<p>FIRE·조기은퇴 계산기. 내 자산·저축으로 퇴사 가능 나이와 또래 중 내 등수를 계산하는 파이어맵.</p>` +
     `<h2>도구</h2>${tools}` +
     `<p><a href="${site}/guide/">파이어 백과</a> · <a href="${site}/fire-city/">어디서 파이어할까</a></p>${footHtml(site)}</div>`;

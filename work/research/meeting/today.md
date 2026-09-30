@@ -25,6 +25,7 @@
   3. 우리가 거는 모든 링크에 utm 붙이기(네이버 앱이 출처를 지워도 잡히게).
   4. 사장님 손이 필요한 것(검색 등록 소유 확인 등)은 결재함에 "어디서 무엇을 누르면 되는지" 한 줄.
 - 착수: firemap-growth 07:31
+- 완료: 외부 유입 길 전수 점검 07:38 — growth/channels.md(거르는 기준 4개·길 12개 상태표). 9/30 진짜 외부 **세션 40/고유 29**(원값 451 중 352가 로컬 테스트 host=127.0.0.1). 유튜브 utm 유입은 전부 같은 초 몰림이라 사람인지 확인 안 함. 결재함: 다음 검색 등록 1줄. (firemap-growth)
 
 ## [지시·긴급] 계산기 3종 출시 기획 다시 하기 — "사람이 어디서 어떻게 들어오나" (순돌이 → firemap-venture 주관, growth·product-dev 협조, 착수 지금, 기획서 14:00)
 - 사장님 07:2x: "새로 만든 계산기 3개가 외부에서 사용자가 어떻게 들어와야 하냐고. 직원들이 제대로 기획해서 사이트를 새로 만들든 파이어맵에 붙이든 했어야지."
@@ -75,6 +76,7 @@
 - 새 계산기 3개(/calc/salary·/calc/severance·/calc/unemployment-benefit) 주소를 오늘 안에: 구글 서치콘솔 URL 검사·색인 요청, 네이버 서치어드바이저 웹페이지 수집 요청, IndexNow(빙·네이버) 재제출, 사이트맵에 들어 있는지 확인. 로그인이 필요한 곳은 사장님이 이미 로그인해 둔 크롬 세션만 쓰고 비밀번호는 입력하지 않는다. 막히면 결재함에 "어디서 무엇을 누르면 되는지".
 - 매일 한 번: 구글·네이버에 site: 검색으로 색인된 페이지 수를 growth/daily.md에 적는다.
 - 착수: firemap-growth 07:31
+- 완료: 색인 제출 07:38 — 사이트맵 3개 주소 모두 포함 확인 · 구글 서치콘솔: 사이트맵 재제출(6/15 뒤 안 읽혀 28개로 멈춰 있었음)·/calc/salary·severance·unemployment-benefit 색인 생성 요청됨 · 네이버 서치어드바이저: 웹 페이지 수집 요청 3건 내역 확인(07:33~07:3x) · IndexNow 200(07:30). site: 수는 growth/daily.md '색인 일지'. 색인까지 걸리는 시간은 보장 없음 → 매일 site: 재측정. (firemap-growth)
 
 ## [지시] 조회수 많은 모든 장르로 글 확장 — 실험 설계 (순돌이 → 콘텐츠 네트워크 조사 TF(임시 에이전트, 07:3x 착수), 결과 → firemap-venture 판단, 보고 11:00)
 - 사장님 07:3x: "카페를 더 만들든 블로그를 더 파든 웹사이트를 만들어서 글을 발행하든, 조회수가 많은 모든 장르를 다 글을 써야 하는 거 아닌가."
@@ -107,6 +109,27 @@
   - **[요청] firemap-youtube-loop(F2 설명란 손볼 때 같이):** 채널 프로필 링크에 `https://firemap.kr/calc/salary?utm_source=youtube&utm_medium=profile&utm_campaign=salary` 추가. ETF 영상 설명란엔 연봉 링크 넣지 않는다(주제 불일치).
   - **[요청] firemap-product-dev(F8 때):** ① 로컬·미리보기 호스트(127.0.0.1·localhost·*.pages.dev)에서는 firemap_events 기록을 끈다 — 9/30 하루 원값 451세션 중 352가 host=127.0.0.1(테스트)이라 실측을 덮음. ② 구글이 아는 주소가 5개뿐 — 사이트맵 재제출은 했으니, 첫 화면·가이드에서 /calc/* 로 가는 일반 <a href> 링크가 크롤러가 보는 HTML(#sSeo)에 있는지 확인. ③ 퇴직금 설명 블록 소제목 후보 2개(퇴직금 지급 기준 34,110 / 퇴직금 지급일 10,640, 검색수 kwvol) — growth/2026-10-01-search.md 3장, 법 조문 대조는 product-dev.
 - 22:30 결승선 점검(1회 근무)이 각 칸을 실측해 ✅/❌와 이유를 여기 적는다. ❌는 내일 표 1번으로 넘어간다.
+- **점검 07:38 (스프린트 1회차, 결승선 점검관):**
+  - F1 진행 중 — 막힘. dev에 칸(c4185bd)은 있지만 coupangPicks.js 세 칸 모두 null. 운영 번들 index-CRiqTGEj.js에 쿠팡 칸 없음. 오늘 coupang_click 0건. 쿠팡 본인인증(사장님)이 필요.
+  - F2 진행 중 — 막힘. 설명란 변경 0편. 쿠팡 인증과 youtube.force-ssl 권한(f2_coupang.py auth)이 필요. 준비물은 2bfb95b. 유튜브 설명란을 직접 읽지는 않음(확인 안 함). 근거는 변경 커밋 없음.
+  - F3 진행 중. 시안 완료(1e1ec58, design/salary-result/). 구현·운영 배포 전.
+  - F4 진행 중. 서치콘솔 사이트맵 재제출·색인 요청은 growth/2026-10-01-search.md에 기록. utm 연결 0/3(쇼츠·카페·채널 프로필 모두 아직). 네이버 서치어드바이저 확인 안 함.
+  - F5 진행 전(19:20). F6 진행 전(20:10). F8 진행 전(22:00).
+  - F7 ✅. growth/revenue.md 첫 줄 2026-10-01 07:17 실재.
+  - F9 ✅. 운영 sitemap.xml에 /calc 3개(curl 실측). 서치콘솔 3개 색인 요청은 search.md에 기록. daily.md 줄은 없음.
+  - F10 진행 전(10/2). F11 진행 전(10/3).
+  - 계산기 3종 운영 주소 200 확인. 해시 수정은 배포됨(index-CRiqTGEj.js).
+- ✅ 비율 07:38: 2/11 (18%). X-OPS-4 기준선.
+- 수익·세션 07:38: 수익 0원(revenue.md 07:17, 목표 대비 0.0%). 오늘 00:00~07:38 세션: 원값 408, host=firemap.kr·internal 제외 46(기기 40). 봇 거르기 전.
+
+### 다음 3시간 결승선 07:50~10:50 (점검관 07:38 — 운영실장 :05·:35 투입)
+| # | 무엇 | 담당 | 마감 | 완료 기준 |
+|---|---|---|---|---|
+| S1 | 쿠팡 본인인증 1번 + 유튜브·firemap.kr 매체 등록 확인. F1·F2 수익 경로 막힘 해소 | 사장님(결재함) → firemap-youtube-loop | 10:50 | approvals.md에 "어디서 무엇을 누르면" 한 줄, 풀리면 비금융 링크 3개 발급 |
+| S2 | F4 utm 연결 3곳 중 채널 프로필 링크(/calc/salary?utm_source=youtube&utm_medium=profile) | firemap-youtube-loop | 10:50 | 채널 화면 curl로 링크 확인 |
+| S3 | F3 연봉 결과 A안 구현(80/100/120% 칩, 공제 펼침, 375px 타일) → 운영 배포 | firemap-product-dev | 10:50 | 운영 스크린샷 320px, 손검산 5건 재통과 |
+| S4 | 로컬·미리보기 호스트 기록 끄기(F8 요청 ①). 오늘 원값 408 중 362가 운영 밖·내부 | firemap-product-dev (S3 다음) | 10:50 | 127.0.0.1에서 이벤트 0건 |
+| S5 | 외부 유입 전수 점검. 봇 걸러 낸 진짜 외부 방문 숫자·기준 | firemap-growth | 10:50 | growth/daily.md·channels.md |
 
 
 ## [지시] Mobbin 무료 대안 찾기 (순돌이 → firemap-ai-lab, 기한 오늘 12:00, 사장님 07:2x)
@@ -205,6 +228,7 @@
 완료: 도구 점검 1회차 — work/research/admin/tools.md · staff.md · usage.md (총무·인사팀 23:39). Figma는 View 좌석이어도 드래프트 편집 **됨**(use_figma 시험 통과) → 좌석 결재 불필요.
 
 ## 지시문 추가 필요 (총무·인사팀 점검 — 수정은 순돌이·회의)
+- (growth 10/1) 직원 점검·빌드 확인으로 firemap.kr을 열 때 **?fm_internal=1** 필수 — 규칙이 없는 지시문이 많아 9/30 원값 451세션 중 외부는 40뿐이었다. product-dev·designer·audit·watchdog·venture-builder·shorts·youtube-loop 지시문에 한 줄씩.
 - 스꾸 금지 없음: write, watchdog, report, improve, loop
 - 실험 장부 없음: watchdog, report, improve, loop, audit, bizdev, artist, designer, editor, venture, illustrator, motion-designer, brand-researcher
 - 헛돌지 않기 없음: watchdog, report, audit, illustrator, motion-designer, visual-designer, brand-director, brand-researcher

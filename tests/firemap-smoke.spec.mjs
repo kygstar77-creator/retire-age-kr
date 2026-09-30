@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 import { TOOL_PAGES } from '../src/firemap-v2/toolPages.js';
 
 const INPUTS = { currentAge: 34, targetRetirementAge: 50, financialAsset: 150000000, monthlyInvestment: 1500000, monthlyLivingCost: 2500000 };
-const SCREENS = ['#home', '#question', '#result', '#experiment', '#ranking', '#menu', '#settings', '#account', '#cities', '#firetype', '#dependent', '#foreignTax', '#dividend', '#pension', '#severance', '#news', '#wall'];
+const SCREENS = ['#home', '#question', '#result', '#experiment', '#ranking', '#menu', '#settings', '#account', '#cities', '#firetype', '#dependent', '#foreignTax', '#dividend', '#pension', '#severance', '#unemployment', '#news', '#wall'];
 
 async function seed(page, seeded = true) {
   await page.addInitScript(({ inp, seeded }) => {
@@ -118,6 +118,30 @@ test.describe('firemap smoke', () => {
     const last = bodies.filter((b) => b.event === 'session_start').pop();
     expect(last && last.props && last.props.internal, 'session_start에 internal:1').toBe(1);
     expect(last.props.host, '미리보기 호스트 기록').toBe('127.0.0.1');
+  });
+
+  test('unemployment benefit: hand-check numbers, crawler text is on screen, next step to fire', async ({ page }) => {
+    const bodies = [];
+    await page.route('**/rest/v1/firemap_events', async (route) => { try { bodies.push(JSON.parse(route.request().postData() || '{}')); } catch { /* ignore */ } await route.fulfill({ status: 201, body: '' }); });
+    await seed(page);
+    await page.goto('/calc/unemployment-benefit');
+    await page.waitForTimeout(700);
+    await page.locator('#ub-last').fill('2026-09-30');
+    const hero = page.locator('main.fm-screen');
+    // 월 300만·92일 → 97,826원 × 60% = 58,695 < 하한 66,048 → 66,048 × 180일(50세 미만, 피보험기간 3년)
+    await expect(hero).toContainText('11,888,640원');
+    await expect(hero).toContainText('하한 66,048원');
+    await page.getByRole('tab', { name: '50세 이상 · 장애인' }).click();
+    await expect(hero).toContainText('13,870,080원');
+    await expect(hero).toContainText('210일');
+    // 크롤러 블록(#sSeo)에 넣는 문장은 화면에 그대로 있어야 한다(숨김 텍스트·다른 내용 금지).
+    const tool = TOOL_PAGES.find((t) => t.path === '/calc/unemployment-benefit');
+    const screenText = (await hero.innerText()).replace(/\s+/g, ' ');
+    for (const b of tool.body.slice(1)) expect(screenText, `crawler text on screen: ${b.slice(0, 20)}`).toContain(b);
+    await page.getByRole('button', { name: '은퇴 나이 계산' }).click();
+    await page.waitForTimeout(500);
+    expect(bodies.some((b) => b.event === 'unemployment_to_fire'), 'unemployment_to_fire 이벤트').toBe(true);
+    expect(await page.evaluate(() => window.location.hash)).toBe('#result');
   });
 
   test('copy rules: no 합니다/하세요, no banned system words', async ({ page }) => {

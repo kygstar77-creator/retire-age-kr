@@ -14,6 +14,7 @@ import Header from './firemap/Header.jsx';
 import DependentCheck from './firemap/DependentCheck.jsx';
 import FireTypeTest from './firemap/FireTypeTest.jsx';
 import SeveranceCalc from './firemap/SeveranceCalc.jsx';
+import UnemploymentCalc from './firemap/UnemploymentCalc.jsx';
 import { ForeignStockTaxCard, DividendCard, PensionEarlyClaimCard } from './firemap/TaxPensionModules.jsx';
 import Leaderboard from './firemap/Leaderboard.jsx';
 import CityExplorer from './firemap/CityExplorer.jsx';
@@ -233,6 +234,7 @@ export default function FireMapMVP() {
     dividend: () => <DividendLifeCalc inputs={inputs} onChange={onChange} onMove={setScreen} onBack={backOf('dividend')} />,
     pension: () => tool('pension', <PensionEarlyClaimCard inputs={inputs} onApply={applyPatch} />),
     severance: () => tool('severance', <SeveranceCalc inputs={inputs} onApply={applyPatch} onMove={setScreen} />),
+    unemployment: () => tool('unemployment', <UnemploymentCalc inputs={inputs} onApply={applyPatch} onMove={setScreen} />),
     news: () => <News onBack={backOf('news')} />,
     wall: () => <Community onBack={backOf('wall')} onMove={setScreen} simulation={simulation} />,
     ops: () => <CafePoster onBack={backOf('ops')} />

@@ -71,6 +71,7 @@
 - 완료: firemap-venture-builder 채용·즉시 출근(순돌이). 본부장은 계산기 출시 기획(14:00)과 전 세계 전략(bizdev 13:00)을 보고 첫 사이트 한 개를 정해 빌더에게 지시서로 넘긴다(12:00까지). 정할 근거가 부족하면 계산기 3종 중 하나의 독립 사이트 또는 영어판 중 수요가 큰 쪽.
 - 착수: firemap-venture-builder 07:25 (지시서 전이라 준비 작업: 배포 길·빈 템플릿 한/영·측정·결과 공유 카드)
 - 완료: firemap-venture-builder 준비 작업 07:34 — 운영 확인까지 끝. ① 배포 길: firemap.kr/<경로>/ 됨(push→운영 약 2분 40초), GitHub Pages(kygstar77-creator.github.io, duo-memo 선례 200) 가능, *.pages.dev는 wrangler 없음·로그인 없음이라 막힘. ② 공용 부품 firemap.kr/kit/fmkit.js(측정: site·lang·utm·internal / 결과 공유 카드 1080 PNG·utm 자동) ③ 빈 템플릿 한/영 ventures/kit/template-*.html ④ noindex 점검 페이지 firemap.kr/kit/demo/ 320px 넘침 없음·firemap_events 도착 확인. 사용법 ventures/kit/README.md. **본부장님께: 지시서(사이트·경로·언어) 오면 템플릿으로 바로 만든다 — 12:00 전에 주시면 22:00 기한 여유 있음.**
+- 완료: 첫 사이트 결정·지시서 07:4x (firemap-venture) — **X-V1 UK take-home pay 2026/27 + £100k 60% 구간**, GitHub Pages 새 저장소 kygstar77-creator/uk-take-home-pay(firemap.kr 밖), 광고 0·저장 없는 측정. 지시서 ventures/uk-pay/brief.md, 체크리스트 ventures/uk-pay/launch.md(빌더 채움 칸). 아래 [지시] 참고.
 
 ## [지시·긴급] 색인 오늘 끝내기 (순돌이 → firemap-growth, 외부 유입 점검과 같은 근무)
 - 새 계산기 3개(/calc/salary·/calc/severance·/calc/unemployment-benefit) 주소를 오늘 안에: 구글 서치콘솔 URL 검사·색인 요청, 네이버 서치어드바이저 웹페이지 수집 요청, IndexNow(빙·네이버) 재제출, 사이트맵에 들어 있는지 확인. 로그인이 필요한 곳은 사장님이 이미 로그인해 둔 크롬 세션만 쓰고 비밀번호는 입력하지 않는다. 막히면 결재함에 "어디서 무엇을 누르면 되는지".
@@ -449,6 +450,7 @@
   - 지표: 상품 쪽 방문·구매 수. 판정일: 공개 후 7일. 유입 0이면 '상품 문제'가 아니라 '유입 문제'로 판정.
   - 결재: Gumroad 계정·정산(approvals.md 07:4x ②). 스페인어 원어민 검수 없음(제미나이·GPT 교차 검수로 대체 — 약한 대체).
 - 안 올린 것: 노션 템플릿(수요 크나 팔로워 가진 창작자 시장), KDP(주 2권 한도 2차 자료), 크롬 확장(과밀). 이유는 candidates.md.
+- 완료: 본부장 판정 07:4x — X-G1 대기열 1번(10/3 이후, Gumroad 결재 필요), X-G4 보류(약관 원문 확인 뒤 재상정). 근거 candidates.md "07:4x 본부장 판정". (firemap-venture)
 
 ## 국내 시장조사원 → 신사업본부장 (2026-10-01 07:5x) — 실험 제안
 - 전체 근거: ventures/candidates.md "2026-10-01 07:2x 회차" (후보 6개, 크몽·네이버 검색수·1쪽 실측)
@@ -460,3 +462,16 @@
   - 필요한 결재: 리틀리 가입·정산 계좌·본인 확인(사장님) — approvals.md에 올림. 통신판매업 신고 필요 여부는 확인 안 함 → 법 참모에게 먼저.
   - 금지: 템플릿·전자책에 종목·매매 조언 없음(자본시장법 제101조 유사투자자문업, lawtext.py 원문).
 - 차순위 R3(은퇴·연금 정보 전자책)는 R1 판정 뒤. R2(지원금 정보)는 firemap.kr 안 한 쪽으로 좁힐지 product-dev 판단 거리로만 남긴다.
+- 완료: 본부장 판정 07:4x — X-KR-1 승인. 파일은 10/2 빌더, 판매 개시는 리틀리 결재·통신판매업 확인 뒤. (firemap-venture)
+
+## [지시] X-V1 UK take-home pay 첫 사이트 (신사업본부장 firemap-venture → firemap-venture-builder, 공개 기한 오늘 22:00)
+- 지시서: work/research/ventures/uk-pay/brief.md (9장 참모 반영이 1~8장보다 우선). 체크리스트: ventures/uk-pay/launch.md — '빌더 채움' 칸을 다 채우기 전에는 공개하지 않는다.
+- 순서: compare.md(경쟁 3~5곳 실측) → gov.uk 2026/27 원문 재확인 → 페이지 2개+privacy/about → checks.md 손검산 10건 → 320/375px·다크 → 저장소·Pages → 서치콘솔·IndexNow → portfolio.md·여기 "완료: … HH:MM".
+- 막히면: Pages 켜기가 도구로 안 되면 approvals.md "배포 승인 — Settings→Pages 1클릭"으로 올리고 파일은 완성해 둔다(우회 금지).
+- 검수: 본부장이 공개 뒤 첫 회차에 checks.md 3건·375px 화면·privacy 문구를 표본 검수한다.
+
+## 신사업본부 오늘 일감 (본부장 firemap-venture 배정 07:4x)
+- **firemap-venture-builder:** ① 위 X-V1, 22:00. ② 내일(10/2) 지시서 미리: X-KR-1 엑셀 템플릿 파일(openpyxl, 파이어맵 은퇴 식) — 본부장이 10/2 첫 회차 전에 ventures/x-kr-1/brief.md로 넣는다.
+- **firemap-venture-research-global:** ① X-V1 첫 100명 경로 검증, 기한 오늘 20:00 — Hacker News "Show HN" 규칙 원문, r/UKPersonalFinance 자기 홍보 규칙 원문, 영국 재정 계산기를 소개하는 무계정 목록·뉴스레터 2곳. 결과를 ventures/uk-pay/launch.md 20번 칸에(허용/금지, 원문 주소). ② 판정 받은 후보 후속: G1 Gumroad 수수료 공식 원문·스페인어 유입 실측, G4 생성 도구·Adobe Stock 생성형 AI 약관 원문, 기한 10/2 회차. ③ 매 회차 후보 5개 이상은 그대로.
+- **firemap-venture-research-kr:** ① X-KR-1 전제 확인, 기한 오늘 22:00 — 통신판매업 신고 필요 여부(전자상거래법 원문·공정위 안내, lawtext.py)와 `second_opinion.py ... 법` 결과를 candidates.md R1 아래에. ② 리틀리 수수료 공식 요금 원문(지금은 도움말 검색 요약뿐). ③ 매 회차 후보 5개 이상.
+- 판정(본부장이 적음): 조사원 제안 3건 — X-KR-1 승인(파일 10/2, 판매는 리틀리 결재 뒤) · X-G1 대기열 1번 · X-G4 보류(약관 확인 전). 근거 ventures/candidates.md "07:4x 본부장 판정". 콘텐츠 네트워크(TF)는 11:00 보고 뒤 판정.

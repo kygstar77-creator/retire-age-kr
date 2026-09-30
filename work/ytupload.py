@@ -2,7 +2,7 @@
 #   python work/ytupload.py auth                                  # 처음 한 번: 브라우저가 열리고 사장님이 허용
 #   python work/ytupload.py upload <mp4> "<제목>" "<설명>" [공개=private|unlisted|public] [태그,쉼표]
 #   python work/ytupload.py stats                                 # 내 채널 최근 영상 조회수
-import sys, os, json
+import sys, os, json, re
 sys.stdout.reconfigure(encoding='utf-8')
 DOCS = r'C:\Users\강영준\Documents'; CLIENT = os.path.join(DOCS, 'youtube_client.json'); TOKEN = os.path.join(DOCS, 'youtube_token.json')
 SCOPES = ['https://www.googleapis.com/auth/youtube.upload', 'https://www.googleapis.com/auth/youtube.readonly']
@@ -37,6 +37,12 @@ def upload(path, title, desc, privacy='private', tags='', paid=False):
         first = desc.strip().splitlines()[0]
         if COUPANG_NOTE not in first or not paid:
             print('올리지 않는다: 쿠팡 링크가 있으면 설명 첫 줄에 대가성 문구 + paid=True 필요'); sys.exit(5)
+    # AI 티 검사(10/1) — 제목·설명. 편집자가 본 것은 FIREMAP_EDITOR_OK=1 로 통과시킨다.
+    import aitell
+    plain = re.sub(r'https?://\S+', ' ', title + '\n\n' + desc.replace(COUPANG_NOTE, ''))
+    ok_ai, msg_ai, hits_ai = aitell.gate_text(plain, os.environ.get('FIREMAP_EDITOR_OK') == '1')
+    if not ok_ai: aitell.refuse(msg_ai, hits_ai); sys.exit(6)
+    print(msg_ai)
     from googleapiclient.http import MediaFileUpload
     yt = service()
     body = {'snippet': {'title': title[:100], 'description': desc[:5000], 'tags': [t.strip() for t in tags.split(',') if t.strip()][:30], 'categoryId': '22', 'defaultLanguage': 'ko'},

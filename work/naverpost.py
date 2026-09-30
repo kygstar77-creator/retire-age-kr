@@ -1445,6 +1445,11 @@ def main():
                         sys.exit(4)
                 else:
                     print('읽기 검사를 안 돌렸다 — py -3.12 work/readcheck.py ' + pkg); sys.exit(4)
+            # AI 티 검사 — 사장님 10/1 "모든 글을 다 검토해서 사람이 쓴 글로". 기준을 넘으면 편집 통과 표시가 있어야 올린다.
+            import aitell
+            ok_ai, msg_ai, hits_ai = aitell.gate_pkg(pkg)
+            if not ok_ai: aitell.refuse(msg_ai, hits_ai); sys.exit(4)
+            print(msg_ai)
             # 올리기 전에 같은 제목이 이미 올라가 있는지 본다. published.txt가 없어도 글은 올라가 있을 수 있다.
             up = already_up(cmd, title)
             if up:

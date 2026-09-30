@@ -2,7 +2,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node work/test-simulator.mjs && node work/test-severance.mjs && node work/test-unemployment.mjs && node work/test-salary.mjs && eslint src functions work tests --max-warnings=9999",
+    "prebuild": "node work/test-simulator.mjs && node work/test-severance.mjs && node work/test-unemployment.mjs && node work/test-salary.mjs && node work/test-aitell.mjs && node work/aitell-web.mjs && eslint src functions work tests --max-warnings=9999",
     "build": "node work/build-deploy.mjs && node work/fix-ads-txt.mjs && node work/fix-ga.mjs && node work/fix-branding-og.mjs && node work/gen-guides.mjs && node work/gen-combos.mjs && node work/gen-region-plans.mjs && node work/gen-city-fire.mjs && node work/fix-seo-links.mjs && node work/gen-seo.mjs && node work/fix-view-counter.mjs",
     "build:deploy": "node work/test-simulator.mjs && node work/test-severance.mjs && node work/test-unemployment.mjs && node work/test-salary.mjs && node work/build-deploy.mjs && node work/fix-ads-txt.mjs && node work/fix-ga.mjs && node work/fix-branding-og.mjs && node work/gen-guides.mjs && node work/gen-combos.mjs && node work/gen-region-plans.mjs && node work/gen-city-fire.mjs && node work/fix-seo-links.mjs && node work/gen-seo.mjs && node work/fix-view-counter.mjs",
     "preview": "vite preview",

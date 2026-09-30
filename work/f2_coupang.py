@@ -8,7 +8,7 @@ import sys, os, json
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-import ytupload
+import ytupload, aitell
 DOCS = r'C:\Users\강영준\Documents'
 TOKEN = os.path.join(DOCS, 'youtube_manage_token.json')
 SCOPES = ['https://www.googleapis.com/auth/youtube.force-ssl']
@@ -48,6 +48,9 @@ def main(mode):
         if nd is None: print('이미 적용', p['id']); continue
         if len(nd) > 5000: print('5000자 넘음', p['id']); continue
         print('---', p['id'], sn['title'][:40]); print(nd[:220])
+        # AI 티 검사(10/1) — 새로 붙이는 줄(라벨)만 본다. 기존 설명은 ytupload에서 이미 봤다.
+        ok_ai, msg_ai, hits_ai = aitell.gate_text(p['label'], os.environ.get('FIREMAP_EDITOR_OK') == '1')
+        if not ok_ai: aitell.refuse(msg_ai, hits_ai); continue
         if mode != 'apply': continue
         body = {'id': p['id'],
                 'snippet': {'title': sn['title'], 'description': nd, 'categoryId': sn['categoryId'], 'tags': sn.get('tags', []),

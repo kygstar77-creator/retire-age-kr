@@ -190,3 +190,8 @@ Telegram request_access가 두 번(인자 전부/최소) 모두 "can't be approv
 국토부 실거래 API 9월분: 28125 제물포구·28155 영종구·28275 서해구·28290 검단구가 새로 나오고 옛 28110·28140·28260은 0건. work/research/sgg_found.json에 새 코드가 이미 있다.
 
 - **work/cafeapi.py** (2026-09-30) — 네이버 공식 카페 글쓰기 API로 묶음 발행. `token`(토큰만) · `post <pkg> --dry`(내용만) · `post <pkg>`(발행). 토큰은 firemap.kr 네이버 로그인을 발행 프로필로 지나가 받는다(키 로컬 없음). 제약: 본문 태그·큰따옴표 거부, 그림은 맨 앞.
+
+## aitell.py — AI 티 자동 검사(2026-10-01)
+- `py -3.12 work/aitell.py <묶음|파일>` 점수와 걸린 곳 · `gate <묶음>` 발행 관문(종료 4) · `pass <묶음> <편집자>` 편집 통과 표시 · `scan <묶음들>` 분포.
+- 사전은 work/aitell_dict.json 하나(humanlike.py도 여기서 읽는다). naverpost·cafeapi·ytupload·f2_coupang이 올리기 전에 부른다.
+- 화면 문구: `node work/aitell-web.mjs`(prebuild, 새로 들어온 것만 경고) · `--update-baseline` · `AITELL_STRICT=1`.

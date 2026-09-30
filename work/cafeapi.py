@@ -186,6 +186,10 @@ def cmd_post(pkg, dry):
     if not os.path.exists(rp) or any(l.strip() and not l.startswith('지적 없음')
                                      for l in open(rp, encoding='utf-8').read().splitlines()):
         print('읽기 검사 미통과 — py -3.12 work/readcheck.py ' + pkg); sys.exit(4)
+    import aitell   # AI 티 검사(10/1) — naverpost.py와 같은 관문
+    ok_ai, msg_ai, hits_ai = aitell.gate_pkg(pkg)
+    if not ok_ai: aitell.refuse(msg_ai, hits_ai); sys.exit(4)
+    print(msg_ai)
     up = np_.already_up('cafe', title)
     if up: print('이미 올라가 있음', up); return
     token = get_token()

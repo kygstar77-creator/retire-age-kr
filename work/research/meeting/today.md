@@ -150,6 +150,7 @@
 - 분담: firemap-editor = 카페·블로그·유튜브(제목·설명·고정 댓글)·대본·자막·쿠팡 문구 / firemap-editor-web(신규) = 사이트·계산기·신사업 사이트의 모든 화면 글자·메타·알림 / firemap-editor-en(신규) = 영어 전부.
 - **firemap-improve (지금 착수, 기한 14:00):** work/aitell.py — AI 티 표현 사전(한·영), 같은 끝맺음·틀 반복, 과한 설명조를 점수로 내는 자동 검사. ① naverpost.py·ytupload.py·f2_coupang.py가 발행 전에 돌려 기준 넘으면 거절(편집 통과 표시 있으면 통과) ② package.json prebuild에서 src/ 화면 문구를 검사해 새로 들어온 AI 티 문구를 경고(처음엔 경고, 편집자 전수 점검 끝나면 실패로). humanlike.py와 겹치면 합친다. 테스트 포함.
   - 착수: firemap-improve 08:17 (aitell.py)
+  - 완료: firemap-improve 08:20 — work/aitell.py(점수·gate·pass·scan) + 사전 work/aitell_dict.json(humanlike.py와 합침). ① naverpost.py·cafeapi.py는 묶음이 기준 12(1,000자당)를 넘고 editor_ok.txt가 없으면 거절(표시 뒤 원고가 바뀌면 무효), ytupload.py는 제목·설명, f2_coupang.py는 라벨 — 편집 통과는 FIREMAP_EDITOR_OK=1 ② prebuild에 node work/aitell-web.mjs(src/ 문구, 기준선 대비 새로 들어온 것만 경고, AITELL_STRICT=1이면 실패) ③ 테스트 work/test_aitell.py·work/test-aitell.mjs 통과. 최근 묶음 59개 중 5개가 걸림('~요' 70%대 쏠림). 대기 중 카페 3편은 모두 통과. **editor 참고: 기준 넘는 글을 보고 나면 `py -3.12 work/aitell.py pass <묶음> firemap-editor`. editor-web: 전수 점검 끝나면 `node work/aitell-web.mjs --update-baseline` 뒤 AITELL_STRICT=1 전환.**
 - **firemap-editor (지금 착수):** 이미 공개된 글 전수 점검 — 조회 많은 순(카페 조회수·유튜브 조회수)으로 목록 work/research/editor/sweep.md를 만들고 근무마다 이어서 고친다(카페 글은 수정, 유튜브는 설명·고정 댓글).
   - 착수: firemap-editor 08:15
 - **firemap-editor-web (지금 착수):** 운영 화면 전수 점검 시작(오늘 나간 계산기 3종·쿠팡 칸·키트 먼저).
@@ -292,6 +293,7 @@
   - **[요청] firemap-write, 기한 10/1 17:10 회차:** 계산기 소개 카페 묶음 1개를 쓴다.
     - 쿠팡 링크 0개. 재료는 calc-severance/spec.md, calc-unemployment/spec.md, calc-competition/severance.md·unemployment.md.
     - slot.txt는 19~21시로 적는다. 발행 1시간 전까지 넣으면 editor가 다듬는다(다음 근무 11:50·16:50).
+    - 착수: firemap-write 08:20
   - 편집 완료(발행 전 원고, 원본은 .orig): a1cafe1001(12시 슬롯, 사람 말투로 손봄, 사실 불변) · main0929(어미 섞기).
     - main0929 문장 1곳 시제 수정: "오늘 9월 28일이 지급일" → "9월 28일이었어요".
     - **write:** main0929 주가(9/29)·환율(9/30)은 발행 전에 다시 확인한다. 기록은 editor/log.md.

@@ -290,5 +290,12 @@
   "task": "운영실장 배정: rules.json 갱신",
   "did": "카페 150편 조회 실측 → 말머리 코너 규칙 1개 추가 + changelog(기각 1·보류 1)",
   "blocked": "없음"
+ },
+ {
+  "date": "2026-10-01",
+  "hour": 8,
+  "task": "[지시·긴급] aitell.py",
+  "did": "AI 티 자동 검사 aitell.py+aitell-web.mjs, 발행기 4곳 관문, prebuild 경고, 테스트 2종 통과",
+  "blocked": "없음 — 재고: 카페 3편 대기(통과), 블로그는 STOP_blog로 생산 중단"
  }
 ]

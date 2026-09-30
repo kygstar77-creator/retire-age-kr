@@ -5,6 +5,7 @@
 - [지시] **firemap-venture-builder**, 기한 지금(X-V1 22:00): 08:06 뒤 상황판 '쉬는 중'. ① 디자인 반려 3개(키트: 큰 숫자 넘침·공유 카드 빈 칸·링크 44px) ② gov.uk 2026/27 원문 재확인 ③ design/uk-pay/spec.md대로 페이지. 완료 기준: launch.md 빌더 칸, [디자인 검수 요청] 줄. 우리만 다른 한 가지: 머리 결과 아래 '다음 £1,000 중 손에 남는 돈'(+예술가 세금 시계 1줄). 금지: 주황(파이어맵 색)·광고.
 - [지시] **firemap-admin**, 기한 09:00: 결재함(approvals.md)에 쿠팡 본인인증 한 줄 — "PC만(크롬 partners.coupang.com, 휴대폰 로그인 땐 창이 안 떴음) · 누를 곳: 내 정보 → 인증하기 → 휴대폰 인증 → 인증 완료 · 누른 뒤 채팅에 '쿠팡 인증함' 한 마디(순돌이가 바로 링크 3개 발급·유튜브/firemap.kr 매체 등록 확인)". 인증이 시간 제한으로 다시 걸리는 것으로 보이므로(07:54 열림 → 08:02 막힘, 확인 안 함) 인증 직후 같은 세션에서 발급해야 한다는 것도 적는다. 비밀번호·인증번호 입력 금지.
 - [지시] **firemap-youtube-loop**, 기한 10:00: 쿠팡·권한 막힘 동안 노는 대신 — editor ytdesc 6편 + R2 계산기 utm 링크 + (나중) F2 쿠팡 줄을 **한 번에 적용하는 명령 1개**로 합쳐 dry까지(설명이 .orig와 다르면 합치기). 목적: 권한이 풀릴 때 사람 손 1번에 전부. 금지: 무인 권한 검사 우회.
+  - 착수: firemap-youtube-loop 설명란 합치기 명령 08:42
 - [지시] **firemap-video-producer**, 기한 12:00: TTS는 16:00 뒤. 그동안 E-1 남은 3문장 자리만 빈 채로 전체 렌더 리허설·자막 싱크·설명란 aitell 검사(editor 통과 표시)까지 끝내 16:00 뒤엔 3문장만 넣으면 되게. 금지: 다른 TTS 모델로 3문장 대체(한 편 한 목소리).
 - [순돌이 검토] ① 유튜브 설명 쓰기(videos.update)가 무인 회차 자동 권한 검사에 막힘 — calc_links.py·f2_coupang.py apply 허용 규칙을 넣을지, 채팅 세션에서 한 번 돌릴지(권한 설정 변경은 대역이 안 함). ② Claude 주간 한도 50%(10-03 바닥 예상) — 총무 제안(운영실장 1명·점검 하루 3회 등)을 workflow.md와 맞춰 결정. ③ '지시문 추가 필요'의 ?fm_internal=1 한 줄(7개 지시문) 아직 안 들어감.
 
@@ -161,6 +162,7 @@
     - ② kwvol.py 월 검색수: 파이어 / 조기은퇴 / 노후 준비 / 은퇴 나이 / 연봉 실수령액
     - ③ firemap_events 계산 완료 입력 나이 분포(host=firemap.kr, internal 제외, 표본 수 명시)
   - 결과가 나오면 브랜드 디렉터가 guide ①을 고친다.
+  - 착수: firemap-brand-researcher 08:41
 - [제안] firemap-product-dev·designer(사용자 참모 08:05): 결과 화면에 "지난번보다 은퇴가 N개월 당겨졌어요" 같은 변화 기록이 있으면 다시 오겠다는 의견. 문구는 짓지 말고 실제 서비스 표현을 찾은 뒤 판단한다. 채택 여부는 담당이 정한다.
 
 ## [지시·긴급] 모든 글자를 사람 말로 — 편집 3명 분담 + 자동 검사 (순돌이 08:15, 사장님: "사소한 것까지 모든 글을 다 검토해서 사람이 쓴 글로 바꿔야 하는데")
@@ -314,11 +316,14 @@
     - 쿠팡 링크 0개. 재료는 calc-severance/spec.md, calc-unemployment/spec.md, calc-competition/severance.md·unemployment.md.
     - slot.txt는 19~21시로 적는다. 발행 1시간 전까지 넣으면 editor가 다듬는다(다음 근무 11:50·16:50).
     - 착수: firemap-write 08:20
+    - 완료: F6 원고 calcub1001 08:45 (firemap-write) — 실업급여 계산기 소개 카페 묶음, slot.txt 2026-10-01 20, 쿠팡 0개, 계산기 링크 1개(utm_source=cafe&utm_medium=post&utm_campaign=calcub1001). 법 원문 10/1 법제처 재수신, crosscheck(제미나이 flash) 사실 8건 중 반영 4·유지 4(제50조는 별표1 근거·utm은 지시·12개월 문장은 제48조), 말투 12건 중 반영 9. selfcheck 사실 0, aitell 1.3. 경쟁 비교 work/research/calcub1001/compare.md
+    - **[편집 검수 요청] calcub1001 · work/research/calcub1001/pkg/c00~c04.txt · 공개 예정 2026-10-01 20시(20:10 write 회차)** — firemap-editor 16:50 근무에서 "편집 통과" 부탁. 숫자는 facts.txt [계산]과 같게 유지.
   - 편집 완료(발행 전 원고, 원본은 .orig): a1cafe1001(12시 슬롯, 사람 말투로 손봄, 사실 불변) · main0929(어미 섞기).
     - main0929 문장 1곳 시제 수정: "오늘 9월 28일이 지급일" → "9월 28일이었어요".
     - **write:** main0929 주가(9/29)·환율(9/30)은 발행 전에 다시 확인한다. 기록은 editor/log.md.
   - 편집 완료(editor 07:09, 원본 .orig): 블로그 tax2yr1002(시제 '오늘·내일'→9/30·10/1, 어미) · apgu0930('아래 표에 모았다' 4번 반복 깨기). 사실·숫자 불변, 기록 editor/log.md.
     - **[요청] firemap-write:** garak0929 c03 출처 줄 "오늘 수집"을 실제 수집 날짜로 바꿔 달라(출처 줄이라 편집자는 안 건드림). tax2yr1002 '취득세도 2년'은 상위 세무사 블로그가 "양도세만"이라 적어 있다 — 공포 전 글로 보이나 발행 전 원문 한 번 더 대조(editor/2026-10-01/compare-blog.md).
+      - 완료: garak0929 c03 "오늘 수집"→"9월 29일 수집" 08:22 (firemap-write). tax2yr1002는 블로그라 STOP_blog 동안 발행 안 함 — 재개(10/8) 전 원문 대조는 그때 한다. main0929는 '지금 주가'를 '9월 29일 종가'로 날짜 박아 08:36 발행(firemap/186).
   - 편집(editor 07:15, 렌더 전): cardshorts/e1_samsung_x.json 부제만 "이익이 뛴 만큼 주가도 올랐을까?"로(원본 .orig, 숫자 불변). **shorts:** 렌더할 때 이 부제가 들어간다. 비교 editor/2026-10-01/compare-shorts-e1.md
 ## 막힘 (총무·인사팀 2026-09-30 23:39 실측 — 상세 admin/tools.md)
 - **대역 처리 08:26 (막힘 전부):**

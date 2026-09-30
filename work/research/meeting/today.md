@@ -4,6 +4,7 @@
 - 코드상 원인 후보: FireMapMVP.jsx readScreenFromHash — `if (tool && !window.location.hash)`라 주소에 해시(#home 등)가 붙어 있으면 도구 화면을 건너뜀. kakaoAuth.js 59행이 로그인 복귀 때 `pathname + '#home'`을 만든다. 다른 원인(인앱 브라우저·저장 상태)도 확인할 것.
 - 완료 기준: 재방문 기기 상태(localStorage에 firemap-inputs-v3·랭크 기록·카카오 로그인 흔적, 주소 끝 #home)를 재현해 원인 확정 → 도구 경로(/calc/*, /tax 등)로 들어오면 해시와 상관없이 그 도구 화면이 뜨게 수정 → 테스트 추가 → 운영 배포 → 운영에서 재현 상태로 다시 열어 도구 화면 확인(스크린샷) → 여기 "완료: … HH:MM".
 - 착수: firemap-product-dev 07:10
+- 완료: 원인 확정·수정·운영 배포 07:23 — 운영 재현: 주소 끝에 해시가 붙으면(/calc/salary#home·/calc/severance#home) 새 기기·재방문 기기 모두 첫 화면, 해시 없으면 localStorage 상태와 무관하게 정상 → 원인은 해시(저장 상태 아님). 수정: 처음 열 때 도구 경로가 해시를 이기고 해시를 지움(공유 입력·ops 제외, FireMapMVP.jsx readInitialScreen). 스모크 테스트 추가(4경로×#home·#result, 30개 통과). 운영 index-CRiqTGEj.js에서 10가지 상태 전부 도구 화면, 스크린샷 work/research/calc-salary/hashfix-salary.png·hashfix-severance.png. 사장님 기기에 해시가 붙은 경로(방문 기록 자동완성·로그인 복귀 추정)는 확인 안 함 — 어느 쪽이든 이제 도구 화면이 뜸. 카카오톡 인앱 브라우저 실기기는 확인 안 함. (firemap-product-dev, edebf22)
 - 배포: git -C C:/Users/강영준/Documents/GitHub/retire-age-kr push -q origin dev:main (빌드·테스트 통과 뒤)
 
 ## [지시] Claude Design 시험 (순돌이 → firemap-designer, 기한 오늘 16:20 회차 끝, 사장님 07:1x "클로드 디자인은 성능 안 좋나?")
@@ -44,6 +45,7 @@
 ## [지시·긴급] 신사업 빌더 채용·첫 사이트 오늘 출시 (순돌이, 사장님 07:2x "신사업팀은 뭘 꾸물거리고 있는 거야")
 - 사실: 신사업본부는 본부장 1명뿐이고 빌더 채용이 04:47 총무 회차에서 끝나지 않았다(예약 작업 없음). 첫 사이트 기한 10/4는 늦다 → **오늘 22:00**로 당긴다.
 - 완료: firemap-venture-builder 채용·즉시 출근(순돌이). 본부장은 계산기 출시 기획(14:00)과 전 세계 전략(bizdev 13:00)을 보고 첫 사이트 한 개를 정해 빌더에게 지시서로 넘긴다(12:00까지). 정할 근거가 부족하면 계산기 3종 중 하나의 독립 사이트 또는 영어판 중 수요가 큰 쪽.
+- 착수: firemap-venture-builder 07:25 (지시서 전이라 준비 작업: 배포 길·빈 템플릿 한/영·측정·결과 공유 카드)
 
 ## [지시·긴급] 색인 오늘 끝내기 (순돌이 → firemap-growth, 외부 유입 점검과 같은 근무)
 - 새 계산기 3개(/calc/salary·/calc/severance·/calc/unemployment-benefit) 주소를 오늘 안에: 구글 서치콘솔 URL 검사·색인 요청, 네이버 서치어드바이저 웹페이지 수집 요청, IndexNow(빙·네이버) 재제출, 사이트맵에 들어 있는지 확인. 로그인이 필요한 곳은 사장님이 이미 로그인해 둔 크롬 세션만 쓰고 비밀번호는 입력하지 않는다. 막히면 결재함에 "어디서 무엇을 누르면 되는지".

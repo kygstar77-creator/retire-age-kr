@@ -24,3 +24,4 @@
 8. 큰 표는 React.lazy로 따로 불러온다.
 9. (10/1) 구글 1페이지는 Claude_Browser(미리보기 창)로 `google.com/search?q=…&hl=ko&gl=kr`을 열고 javascript로 innerText·cite를 읽으면 받아진다(스크린샷은 시간 초과가 나도 텍스트는 됨). `site:firemap.kr/<경로>`로 색인 여부도 같이 본다.
 10. (10/1) 운영 배포를 남이 했어도 '완료'로 적기 전에 운영 화면에서 손검산 2건(기본값 1건 + 예외 1건: 상한·80% 등)을 줄마다 대조한다.
+- 체크리스트 추가(10/1): 새 도구 경로 출시 전 `경로#home`·`경로#result`로 새로 열어 도구 화면이 뜨는지(스모크 'leftover hash').

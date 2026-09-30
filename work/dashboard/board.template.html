@@ -1,0 +1,458 @@
+<title>파이어맵 상황판</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* 레이아웃: 휴대폰 한 줄 세로 흐름(최대 720px). 결재(다크 카드 1개) → 사무실 평면도 → 숫자 → 직원 카드 → 일감 → 결정 → 실험.
+   색 4개(배경·면·잉크·주황) + 상태색 3개(초록·노랑·빨강). 주황은 핵심 숫자·행동에만. 파이어맵 디자인 정체성 토큰. */
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --surface-2:#eef0f3; --ink:#18191d; --ink-2:#5b606a; --ink-3:#8b9099;
+  --line:#e2e4e8; --accent:#ff5a00; --accent-soft:#fff0e6;
+  --ok:#0f9d58; --ok-soft:#e3f5ea; --warn:#d99100; --warn-soft:#fdf3dc; --bad:#e0342c; --bad-soft:#fde7e6;
+  --deep:#18191d; --deep-ink:#f2f3f5; --deep-ink-2:#a9adb6; --deep-line:#2f3138;
+  --floor:#eceef2; --floor-line:#e1e4ea; --screen-off:#c9cdd4; --desk:#d8dce2;
+  --font:"IBM Plex Sans KR","Pretendard","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
+  --fs-1:26px; --fs-2:20px; --fs-3:17px; --fs-4:15px; --fs-5:13px; --fs-6:11px;
+  --r-card:20px; --r-sm:12px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#101114; --surface:#1b1c21; --surface-2:#26272e; --ink:#f2f3f5; --ink-2:#a6aab3; --ink-3:#7c808a;
+  --line:#2c2e35; --accent:#ff6a1a; --accent-soft:#3a2214;
+  --ok:#34c77b; --ok-soft:#153324; --warn:#f0b429; --warn-soft:#3a2e10; --bad:#ff5b52; --bad-soft:#3d1a18;
+  --deep:#26272e; --deep-ink:#f2f3f5; --deep-ink-2:#a6aab3; --deep-line:#383a43;
+  --floor:#16171b; --floor-line:#1f2026; --screen-off:#3a3c44; --desk:#34363e; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#101114; --surface:#1b1c21; --surface-2:#26272e; --ink:#f2f3f5; --ink-2:#a6aab3; --ink-3:#7c808a;
+  --line:#2c2e35; --accent:#ff6a1a; --accent-soft:#3a2214;
+  --ok:#34c77b; --ok-soft:#153324; --warn:#f0b429; --warn-soft:#3a2e10; --bad:#ff5b52; --bad-soft:#3d1a18;
+  --deep:#26272e; --deep-ink:#f2f3f5; --deep-ink-2:#a6aab3; --deep-line:#383a43;
+  --floor:#16171b; --floor-line:#1f2026; --screen-off:#3a3c44; --desk:#34363e; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--ink); font-family:var(--font); font-size:var(--fs-4); line-height:1.5; -webkit-font-smoothing:antialiased; word-break:keep-all; overflow-wrap:anywhere}
+.wrap{max-width:720px; margin:0 auto; padding-inline:16px; padding-block:20px 48px; display:flex; flex-direction:column; gap:28px}
+.num{font-variant-numeric:tabular-nums}
+h1,h2,h3{margin:0; text-wrap:balance; letter-spacing:0}
+h1{font-size:var(--fs-1); font-weight:700; line-height:1.3}
+h2{font-size:var(--fs-3); font-weight:700; display:flex; align-items:baseline; gap:8px}
+h2 .count{color:var(--ink-3); font-weight:500; font-size:var(--fs-5)}
+.sec{display:flex; flex-direction:column; gap:12px}
+.muted{color:var(--ink-2)} .faint{color:var(--ink-3)}
+.small{font-size:var(--fs-5)} .tiny{font-size:var(--fs-6)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:6px}
+
+/* 머리 */
+.top{display:flex; flex-direction:column; gap:8px}
+.stamp{display:flex; flex-wrap:wrap; gap:6px 12px; font-size:var(--fs-5); color:var(--ink-2)}
+.live{display:inline-flex; align-items:center; gap:6px}
+.live i{width:8px; height:8px; border-radius:50%; background:var(--ink-3); display:inline-block}
+.live[data-mode="live"] i{background:var(--ok)}
+.live[data-mode="error"] i{background:var(--warn)}
+.tally{display:flex; flex-wrap:wrap; gap:6px}
+
+/* 칩 */
+.chip{display:inline-flex; align-items:center; gap:4px; font-size:var(--fs-6); font-weight:700; padding:3px 8px; border-radius:999px; white-space:nowrap; background:var(--surface-2); color:var(--ink-2)}
+.chip.c-일함,.chip.s-work{background:var(--ok-soft); color:var(--ok)}
+.chip.c-헛돎,.chip.s-block{background:var(--warn-soft); color:var(--warn)}
+.chip.c-실패,.chip.s-fail{background:var(--bad-soft); color:var(--bad)}
+.chip.c-na{background:transparent; border:1px dashed var(--line); color:var(--ink-3)}
+
+/* ① 결재 — 화면의 유일한 다크 카드 */
+.deep{background:var(--deep); color:var(--deep-ink); border-radius:var(--r-card); padding:20px; display:flex; flex-direction:column; gap:14px}
+.deep .head{display:flex; align-items:baseline; justify-content:space-between; gap:12px}
+.deep .big{font-size:var(--fs-1); font-weight:700; color:var(--accent)}
+.deep .sub{color:var(--deep-ink-2); font-size:var(--fs-5)}
+.appr{list-style:none; margin:0; padding:0; display:flex; flex-direction:column}
+.appr li{padding:12px 0; border-top:1px solid var(--deep-line); display:flex; flex-direction:column; gap:4px; min-width:0}
+.appr .t{font-weight:700}
+.appr .cost{font-size:var(--fs-5); color:var(--deep-ink)}
+.appr .cost b{font-weight:700}
+.appr .cost b.key{color:var(--accent)}
+.appr .why{font-size:var(--fs-5); color:var(--deep-ink-2); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden}
+.appr details{font-size:var(--fs-5); color:var(--deep-ink-2)}
+.appr summary{cursor:pointer; color:var(--deep-ink); min-height:32px; display:flex; align-items:center}
+
+/* 사무실 평면도 */
+.floor{background:var(--floor); background-image:linear-gradient(var(--floor-line) 1px,transparent 1px),linear-gradient(90deg,var(--floor-line) 1px,transparent 1px); background-size:24px 24px; border-radius:var(--r-card); padding:8px; display:grid; grid-template-columns:1fr 1fr; gap:10px}
+.room{background:var(--surface); border-radius:var(--r-sm); padding:10px 8px 10px; display:flex; flex-direction:column; gap:8px; grid-column:1 / -1; min-width:0}
+.room.half{grid-column:auto}
+.plate{display:flex; justify-content:space-between; align-items:baseline; gap:8px; font-size:var(--fs-6); font-weight:700; color:var(--ink-2); letter-spacing:.04em}
+.plate .n{color:var(--ink-3); font-weight:500; letter-spacing:0}
+.desks{display:grid; grid-template-columns:repeat(auto-fill,minmax(88px,1fr)); gap:6px 4px}
+.room.half .desks{grid-template-columns:1fr}
+.desk{display:flex; flex-direction:column; align-items:center; gap:3px; text-decoration:none; color:inherit; padding:4px 2px; border-radius:10px; min-width:0}
+.desk:hover{background:var(--surface-2)}
+.bubble{position:relative; width:100%; background:var(--surface-2); color:var(--ink-2); border-radius:10px; padding:5px 7px; font-size:var(--fs-6); line-height:1.35}
+.bubble span{display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; min-height:2.7em; word-break:normal; overflow-wrap:anywhere}
+.bubble::after{content:""; position:absolute; left:50%; bottom:-5px; width:10px; height:10px; background:inherit; transform:translateX(-50%) rotate(45deg); border-radius:2px}
+.bubble.empty{background:transparent; color:var(--ink-3)} .bubble.empty::after{display:none}
+.st-work .bubble{background:var(--ok-soft); color:var(--ink)}
+.st-block .bubble{background:var(--warn-soft); color:var(--ink)}
+.st-fail .bubble{background:var(--bad-soft); color:var(--ink)}
+.mon{width:50px; height:39px; display:block; margin-top:4px}
+.mon .scr{fill:var(--screen-off)} .mon .bez{fill:var(--ink-3)} .mon .tbl{fill:var(--desk)} .mon .ln{fill:var(--surface); opacity:.85}
+.mon .glow{fill:var(--ok); opacity:0}
+.st-work .mon .scr{fill:var(--ok)} .st-work .mon .glow{opacity:.25}
+.st-block .mon .scr{fill:var(--warn)}
+.st-fail .mon .scr{fill:var(--bad)}
+.st-idle .mon .ln{opacity:0}
+.st-work .mon .ln{animation:type 1.6s steps(4) infinite}
+.st-work .mon .l2{animation-delay:.4s} .st-work .mon .l3{animation-delay:.8s}
+.st-work .mon .glow{animation:breathe 2.4s ease-in-out infinite}
+@keyframes type{0%{transform:scaleX(.35)}100%{transform:scaleX(1)}}
+@keyframes breathe{0%,100%{opacity:.12}50%{opacity:.35}}
+.mon .ln{transform-box:fill-box; transform-origin:left center}
+@media (prefers-reduced-motion: reduce){ .st-work .mon .ln,.st-work .mon .glow{animation:none} }
+.dname{font-size:var(--fs-5); font-weight:700; text-align:center; line-height:1.25}
+.dstate{font-size:var(--fs-6); color:var(--ink-3); text-align:center}
+.st-work .dstate{color:var(--ok)} .st-block .dstate{color:var(--warn)} .st-fail .dstate{color:var(--bad)}
+.stale .dstate{color:var(--warn)}
+.legend{display:flex; flex-wrap:wrap; gap:6px 14px; font-size:var(--fs-6); color:var(--ink-2)}
+.legend span{display:inline-flex; align-items:center; gap:5px}
+.legend i{width:12px; height:9px; border-radius:2px; display:inline-block; background:var(--screen-off)}
+.legend .w{background:var(--ok)} .legend .b{background:var(--warn)} .legend .f{background:var(--bad)}
+.table-svg{width:100%; height:auto; max-width:140px; align-self:center}
+.table-svg .tb{fill:var(--desk)} .table-svg .ch{fill:var(--screen-off)}
+
+/* ② 숫자 */
+.tiles{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+.tile{background:var(--surface); border-radius:var(--r-sm); padding:14px; display:flex; flex-direction:column; gap:4px; min-width:0}
+.tile .lab{font-size:var(--fs-5); color:var(--ink-2)}
+.tile .val{font-size:var(--fs-2); font-weight:700; line-height:1.33; white-space:nowrap}
+.tile .val.key{color:var(--accent)}
+.tile .unit{font-size:var(--fs-4); font-weight:500; color:var(--ink-2)}
+.bar{height:6px; background:var(--surface-2); border-radius:3px; overflow:hidden; margin-top:4px}
+.bar b{display:block; height:100%; background:var(--ink-2); border-radius:3px; min-width:2px}
+.bar.acc b{background:var(--accent)}
+.tile .note{font-size:var(--fs-6); color:var(--ink-3)}
+
+/* ③ 직원 */
+.filters{display:flex; gap:6px; overflow-x:auto; padding-bottom:2px}
+.filters button{font:inherit; font-size:var(--fs-5); font-weight:500; border:0; background:var(--surface-2); color:var(--ink-2); padding:8px 12px; min-height:36px; border-radius:999px; cursor:pointer; white-space:nowrap}
+.filters button[aria-pressed="true"]{background:var(--ink); color:var(--bg)}
+.dept{display:flex; flex-direction:column; gap:8px}
+.dept h3{font-size:var(--fs-5); font-weight:700; color:var(--ink-3); letter-spacing:.04em}
+.card{background:var(--surface); border-radius:var(--r-sm); padding:14px; display:flex; flex-direction:column; gap:6px; min-width:0; scroll-margin-top:12px}
+.card:target{box-shadow:0 0 0 2px var(--accent)}
+.card .row1{display:flex; justify-content:space-between; align-items:center; gap:8px}
+.card .nm{font-weight:700; font-size:var(--fs-4)}
+.card .role{font-size:var(--fs-5); color:var(--ink-2)}
+.card .meta{font-size:var(--fs-6); color:var(--ink-3); display:flex; flex-wrap:wrap; gap:2px 10px}
+.card .did{font-size:var(--fs-5); overflow-wrap:anywhere}
+.card .did time{color:var(--ink-3); margin-right:6px}
+.card .todo{font-size:var(--fs-5); color:var(--ink-2); border-left:2px solid var(--line); padding-left:8px}
+.card .now{font-size:var(--fs-5); display:flex; gap:6px; align-items:baseline; flex-wrap:wrap}
+
+/* ④⑤⑥ 목록 */
+.panel{background:var(--surface); border-radius:var(--r-sm); padding:14px; display:flex; flex-direction:column; gap:10px; min-width:0}
+.panel h3{font-size:var(--fs-5); color:var(--ink-2); font-weight:700}
+.list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column}
+.list li{padding:10px 0; border-top:1px solid var(--line); display:flex; flex-direction:column; gap:2px; min-width:0; overflow-wrap:anywhere}
+.list li:first-child{border-top:0; padding-top:0}
+.list .k{font-size:var(--fs-6); color:var(--ink-3)}
+.list .w{font-size:var(--fs-5)} .list .y{font-size:var(--fs-6); color:var(--ink-2)}
+.callout{background:var(--accent-soft); border-radius:var(--r-sm); padding:12px 14px; font-size:var(--fs-5)}
+.stops{display:flex; flex-wrap:wrap; gap:6px}
+.dday{font-weight:700; color:var(--ink)}
+footer{font-size:var(--fs-6); color:var(--ink-3); display:flex; flex-direction:column; gap:4px}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>파이어맵 상황판</h1>
+    <div class="stamp">
+      <span>기준 <b class="num" id="gen"></b></span>
+      <span class="live" id="live" data-mode="static"><i></i><span id="liveText">실시간 연결 확인 중</span></span>
+    </div>
+    <div class="tally" id="tally"></div>
+  </header>
+
+  <section class="sec" aria-labelledby="h-appr">
+    <div class="deep">
+      <div class="head">
+        <h2 id="h-appr">① 결재 대기</h2>
+        <div><span class="big num" id="apprN"></span><span class="sub"> 건</span></div>
+      </div>
+      <div class="sub">사장님 손이 필요한 것만 모았습니다. 출처 approvals.md</div>
+      <ul class="appr" id="appr"></ul>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-office">
+    <h2 id="h-office">지금 사무실 <span class="count" id="officeCount"></span></h2>
+    <div class="legend" aria-label="모니터 색 뜻">
+      <span><i class="w"></i>일하는 중</span><span><i></i>쉬는 중</span><span><i class="b"></i>막힘</span><span><i class="f"></i>실패</span>
+    </div>
+    <div class="floor" id="floor"></div>
+    <div class="tiny faint" id="officeNote"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-num">
+    <h2 id="h-num">② 오늘 숫자</h2>
+    <div class="tiles" id="tiles"></div>
+    <div class="tiny faint" id="numNote"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-staff">
+    <h2 id="h-staff">③ 직원 현황 <span class="count" id="staffCount"></span></h2>
+    <div class="filters" id="filters" role="group" aria-label="상태로 거르기"></div>
+    <div class="tiny faint">칩은 예약 작업 기록 기준: 일함(마지막 근무에 결과 남김) · 헛돎(마지막 기록이 "할 일 없음") · 실패 · 대기(첫 근무 전)</div>
+    <div id="staff" class="sec"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-queue">
+    <h2 id="h-queue">④ 일감 대기열 &amp; 막힘</h2>
+    <div id="queue" class="sec"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-dec">
+    <h2 id="h-dec">⑤ 최근 결정 10개</h2>
+    <div class="panel"><ul class="list" id="dec"></ul></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-exp">
+    <h2 id="h-exp">⑥ 진행 중 실험 <span class="count" id="expCount"></span></h2>
+    <div class="panel"><ul class="list" id="exp"></ul></div>
+  </section>
+
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const NA = '확인 안 함';
+const $ = id => document.getElementById(id);
+function h(tag, attrs, ...kids){
+  const el = document.createElement(tag);
+  if (attrs) for (const [k,v] of Object.entries(attrs)){
+    if (v == null || v === false) continue;
+    if (k === 'class') el.className = v; else el.setAttribute(k, v === true ? '' : v);
+  }
+  for (const k of kids.flat()){ if (k == null || k === false) continue; el.append(k.nodeType ? k : String(k)); }
+  return el;
+}
+const s = v => (v == null || v === '') ? NA : String(v);
+const won = n => n == null ? NA : n.toLocaleString('ko-KR') + '원';
+function ago(iso){
+  if (!iso) return '';
+  const t = Date.parse(iso); if (isNaN(t)) return '';
+  const m = Math.round((Date.now() - t) / 60000);
+  if (m < 1) return '방금'; if (m < 60) return m + '분 전';
+  const hr = Math.floor(m / 60); if (hr < 48) return hr + '시간 전';
+  return Math.floor(hr / 24) + '일 전';
+}
+function hm(iso){ const t = Date.parse(iso); if (isNaN(t)) return ''; const d = new Date(t + 9*3600e3); return String(d.getUTCMonth()+1).padStart(2,'0')+'-'+String(d.getUTCDate()).padStart(2,'0')+' '+String(d.getUTCHours()).padStart(2,'0')+':'+String(d.getUTCMinutes()).padStart(2,'0'); }
+
+/* ── 실시간 상태(db: status 컬렉션) ── */
+const LIVE = {};
+const STATES = {'일하는 중':'work','쉬는 중':'idle','막힘':'block','실패':'fail'};
+const txt = (v, n) => typeof v === 'string' ? v.slice(0, n || 200) : '';
+function liveOf(m){
+  const d = LIVE[m.id];
+  if (d && STATES[d.state]) return {state:d.state, task:txt(d.task,160), started:txt(d.started_at,40), finished:txt(d.finished_at,40), out:txt(d.last_output,200), src:'live'};
+  // 정적 자료로 대신
+  if (m.run_status === 'running') return {state:'일하는 중', task:m.summary, started:m.last_run_iso, src:'static'};
+  if (m.chip === '실패') return {state:'실패', out:m.summary, finished:m.last_end_iso, src:'static'};
+  if (m.chip === '대기' && m.last_run === '첫 근무 전') return {state:'쉬는 중', out:'첫 근무 전 · 다음 ' + m.next_run, src:'static', never:true};
+  return {state:'쉬는 중', out:m.summary, finished:m.last_end_iso || null, src:'static'};
+}
+function isStale(L){ return L.state === '일하는 중' && L.started && (Date.now() - Date.parse(L.started)) > 2*3600e3; }
+
+function monitor(){
+  const ns = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(ns, 'svg'); svg.setAttribute('viewBox','0 0 56 44'); svg.setAttribute('class','mon'); svg.setAttribute('aria-hidden','true');
+  const r = (c,x,y,w,hh,rx) => { const e = document.createElementNS(ns,'rect'); e.setAttribute('class',c); e.setAttribute('x',x); e.setAttribute('y',y); e.setAttribute('width',w); e.setAttribute('height',hh); if (rx) e.setAttribute('rx',rx); svg.append(e); };
+  r('glow',2,0,52,34,8); r('bez',8,3,40,27,4); r('scr',10,5,36,23,2);
+  r('ln',14,10,22,2.5,1); r('ln l2',14,15,26,2.5,1); r('ln l3',14,20,16,2.5,1);
+  r('bez',25,30,6,6,0); r('tbl',0,37,56,5,2);
+  return svg;
+}
+function deskEl(m){
+  const L = liveOf(m); const cls = STATES[L.state] || 'idle';
+  const stale = isStale(L);
+  const bubbleText = (cls === 'idle') ? (L.out || '') : (L.task || L.out || '');
+  const when = cls === 'work' ? (L.started ? ago(L.started) + ' 시작' : '') : (L.finished ? ago(L.finished) : '');
+  return h('a', {class:'desk st-' + cls + (stale ? ' stale' : ''), href:'#c-' + m.id, title: m.name + ' — ' + L.state},
+    h('div', {class:'bubble' + (bubbleText ? '' : ' empty')}, h('span', null, bubbleText || '—')),
+    monitor(),
+    h('div', {class:'dname'}, m.name),
+    h('div', {class:'dstate num'}, stale ? '일하는 중? 2시간째 갱신 없음' : (L.state + (when ? ' · ' + when : '')))
+  );
+}
+function renderOffice(){
+  const floor = $('floor'); floor.replaceChildren();
+  const byId = Object.fromEntries(DATA.staff.map(m => [m.id, m]));
+  let working = 0, total = 0;
+  for (const m of DATA.staff){ total++; if (liveOf(m).state === '일하는 중') working++; }
+  for (const d of DATA.depts){
+    const members = d.ids.map(id => byId[id]).filter(Boolean);
+    if (!members.length) continue;
+    if (d.key === 'exec'){
+      const ceo = members.find(m => m.id === 'soondol');
+      const chair = members.find(m => m.id === 'firemap-meeting');
+      if (ceo) floor.append(h('div', {class:'room half'}, h('div', {class:'plate'}, h('span', null, '대표실'), h('span', {class:'n'}, '공동대표')), h('div', {class:'desks'}, deskEl(ceo))));
+      if (chair){
+        const ns='http://www.w3.org/2000/svg'; const t=document.createElementNS(ns,'svg'); t.setAttribute('viewBox','0 0 140 30'); t.setAttribute('class','table-svg'); t.setAttribute('aria-hidden','true');
+        const rr=(c,x,y,w,hh,rx)=>{const e=document.createElementNS(ns,'rect');e.setAttribute('class',c);e.setAttribute('x',x);e.setAttribute('y',y);e.setAttribute('width',w);e.setAttribute('height',hh);e.setAttribute('rx',rx);t.append(e);};
+        [14,42,70,98].forEach(x=>{rr('ch',x,0,20,6,3); rr('ch',x,24,20,6,3);}); rr('tb',4,8,132,14,7);
+        floor.append(h('div', {class:'room half'}, h('div', {class:'plate'}, h('span', null, '회의실'), h('span', {class:'n'}, '매일 21시대')), t, h('div', {class:'desks'}, deskEl(chair))));
+      }
+      continue;
+    }
+    const w = members.filter(m => liveOf(m).state === '일하는 중').length;
+    floor.append(h('div', {class:'room'},
+      h('div', {class:'plate'}, h('span', null, d.name), h('span', {class:'n num'}, w + '/' + members.length + ' 일하는 중')),
+      h('div', {class:'desks'}, members.map(deskEl))));
+  }
+  $('officeCount').textContent = working + '/' + total + '명 일하는 중';
+}
+
+/* ── 정적 부분 ── */
+function renderTop(){
+  $('gen').textContent = DATA.generated_label;
+  const order = ['일함','헛돎','실패','대기',NA];
+  $('tally').replaceChildren(...order.filter(k => DATA.chips[k]).map(k => h('span', {class:'chip ' + (k === NA ? 'c-na' : 'c-' + k)}, k + ' ' + DATA.chips[k])));
+}
+function renderAppr(){
+  const a = DATA.approvals;
+  const ul = $('appr'); ul.replaceChildren();
+  if (!a){ $('apprN').textContent = '?'; ul.append(h('li', null, '결재함 파일을 못 읽음 — ' + NA)); return; }
+  $('apprN').textContent = a.length;
+  if (!a.length) ul.append(h('li', null, '지금 결재할 것 없음'));
+  for (const x of a){
+    ul.append(h('li', null,
+      h('div', {class:'t'}, x.title),
+      h('div', {class:'cost'}, '비용 ', h('b', {class: s(x.cost).length <= 24 ? 'key' : null}, s(x.cost))),
+      x.why ? h('div', {class:'why'}, x.why) : null,
+      h('details', null, h('summary', null, '자세히 · ' + s(x.date)), h('div', null, x.detail), x.status ? h('div', null, '상태: ' + x.status) : null)
+    ));
+  }
+}
+function tile(lab, val, unit, opts){
+  opts = opts || {};
+  return h('div', {class:'tile'},
+    h('div', {class:'lab'}, lab),
+    h('div', {class:'val num' + (opts.key ? ' key' : '')}, val, unit ? h('span', {class:'unit'}, ' ' + unit) : null),
+    opts.pct != null ? h('div', {class:'bar' + (opts.key ? ' acc' : ''), role:'img', 'aria-label': Math.round(opts.pct) + '%'}, h('b', {style:'width:' + Math.max(0, Math.min(100, opts.pct)) + '%'})) : null,
+    opts.note ? h('div', {class:'note'}, opts.note) : null);
+}
+function renderNumbers(){
+  const n = DATA.numbers, r = n.revenue, v = n.visitors, o = n.outputs, u = n.usage;
+  const tiles = [];
+  const revPct = (r.actual_krw != null && r.target_krw) ? r.actual_krw / r.target_krw * 100 : null;
+  tiles.push(tile((r.month !== NA ? Number(r.month.slice(5)) + '월' : '이번 달') + ' 수익', r.actual_krw == null ? NA : r.actual_krw.toLocaleString('ko-KR'), r.actual_krw == null ? '' : '원',
+    {key:true, pct:revPct, note:'목표 ' + s(r.target) + (revPct != null ? ' · ' + revPct.toFixed(0) + '%' : '')}));
+  if (v) tiles.push(tile('방문 화면(하루)', v.views.toLocaleString('ko-KR'), '', {pct: v.target_views ? v.views / v.target_views * 100 : null,
+    note:'목표 ' + (v.target_views ? v.target_views.toLocaleString('ko-KR') : NA) + ' · 세션 ' + v.sessions + ' · ' + v.date + (v.note ? ' · ' + v.note : '')}));
+  else tiles.push(tile('방문 화면(하루)', NA));
+  const parts = [['카페',o.cafe],['블로그',o.blog],['쇼츠',o.shorts],['롱폼',o.longform]];
+  const known = parts.filter(p => p[1] != null);
+  const sum = known.reduce((a,p) => a + p[1], 0);
+  tiles.push(tile('오늘 발행', known.length ? String(sum) : NA, known.length ? '편' : '', {note: parts.map(p => p[0] + ' ' + (p[1] == null ? '?' : p[1])).join(' · ')}));
+  tiles.push(tile('주간 사용량', u.weekly_pct == null ? NA : String(u.weekly_pct), u.weekly_pct == null ? '' : '%', {pct:u.weekly_pct,
+    note:'리셋 ' + s(u.weekly_reset) + (u.five_hour_pct != null ? ' · 5시간 창 ' + u.five_hour_pct + '%' : '')}));
+  $('tiles').replaceChildren(...tiles);
+  $('numNote').textContent = '24시간 커밋 ' + (n.commits24 == null ? NA : n.commits24 + '건') + (n.commits24_unmapped ? ' (담당 표시 없는 커밋 ' + n.commits24_unmapped + '건)' : '') + ' · 발행 수는 runs_today·쇼츠 log·롱폼 uploads 기준';
+}
+let FILTER = '전체';
+function renderFilters(){
+  const opts = ['전체','일함','헛돎','실패','대기'];
+  $('filters').replaceChildren(...opts.map(k => {
+    const b = h('button', {type:'button', 'aria-pressed': String(FILTER === k)}, k + (k === '전체' ? '' : ' ' + (DATA.chips[k] || 0)));
+    b.addEventListener('click', () => { FILTER = k; try{ localStorage.setItem('fm-board-filter', k); }catch(e){} renderFilters(); renderStaff(); });
+    return b;
+  }));
+}
+function renderStaff(){
+  const box = $('staff'); box.replaceChildren();
+  const byId = Object.fromEntries(DATA.staff.map(m => [m.id, m]));
+  $('staffCount').textContent = DATA.staff.length + '명';
+  for (const d of DATA.depts){
+    const ms = d.ids.map(id => byId[id]).filter(m => m && (FILTER === '전체' || m.chip === FILTER));
+    if (!ms.length) continue;
+    box.append(h('div', {class:'dept'}, h('h3', null, d.name),
+      ms.map(m => {
+        const L = liveOf(m);
+        return h('article', {class:'card', id:'c-' + m.id},
+          h('div', {class:'row1'}, h('span', {class:'nm'}, m.name), h('span', {class:'chip ' + (m.chip === NA ? 'c-na' : 'c-' + m.chip), title:m.chip_why}, m.chip)),
+          h('div', {class:'role'}, m.role),
+          h('div', {class:'meta num'}, h('span', null, (m.id === 'soondol' ? '마지막 기록 ' : '마지막 근무 ') + m.last_run), h('span', null, '다음 ' + m.next_run), h('span', null, '24시간 기록 ' + m.commits24 + '건')),
+          h('div', {class:'did'}, m.summary_at ? h('time', {class:'num'}, m.summary_at) : null, m.summary),
+          L.src === 'live' ? h('div', {class:'now'}, h('span', {class:'chip s-' + (STATES[L.state] || 'idle')}, '실시간 ' + L.state), (L.task || L.out || '')) : null,
+          m.today && m.today.length ? h('div', {class:'todo'}, '오늘 할 일: ' + m.today[0]) : null
+        );
+      })));
+  }
+  if (!box.children.length) box.append(h('div', {class:'panel muted small'}, '이 상태인 직원이 없습니다'));
+}
+function renderQueue(){
+  const q = DATA.queue, box = $('queue'); box.replaceChildren();
+  if (!q){ box.append(h('div', {class:'panel'}, 'today.md를 못 읽음 — ' + NA)); return; }
+  if (q.headline) box.append(h('div', {class:'callout'}, q.headline));
+  const list = (title, items, fn) => h('div', {class:'panel'}, h('h3', null, title), items.length ? h('ul', {class:'list'}, items.map(fn)) : h('div', {class:'small faint'}, '없음'));
+  box.append(list('지시 ' + q.orders.length + '건', q.orders, o => h('li', null, h('span', {class:'w'}, o.title), h('span', {class:'y'}, '담당 ' + s(o.owner) + ' · 기한 ' + s(o.due)))));
+  box.append(list('최우선 ' + q.priorities.length + '개', q.priorities, p => h('li', null, h('span', {class:'w'}, p))));
+  if (q.urgent.length) box.append(list('긴급', q.urgent, p => h('li', null, h('span', {class:'w'}, p))));
+  const bl = [];
+  for (const sct of q.blocked_section) for (const it of sct.items) bl.push(it);
+  box.append(h('div', {class:'panel'}, h('h3', null, '막힘'),
+    q.stop_switches.length ? h('div', {class:'stops'}, q.stop_switches.map(f => h('span', {class:'chip s-block'}, '정지 스위치 ' + f))) : null,
+    bl.length ? h('ul', {class:'list'}, bl.map(t => h('li', null, h('span', {class:'w'}, t)))) : h('div', {class:'small faint'}, "today.md에 '막힘' 칸 없음"),
+    q.blocked_commits.length ? h('h3', null, '커밋에 적힌 막힘·만료(24시간)') : null,
+    q.blocked_commits.length ? h('ul', {class:'list'}, q.blocked_commits.map(b => h('li', null, h('span', {class:'k num'}, b.at + ' · ' + b.who), h('span', {class:'w'}, b.text)))) : null));
+  box.append(list('완료 보고 ' + q.done.length + '건', q.done, p => h('li', null, h('span', {class:'w'}, p))));
+}
+function renderDecisions(){
+  const d = DATA.decisions, ul = $('dec'); ul.replaceChildren();
+  if (!d){ ul.append(h('li', null, NA)); return; }
+  for (const x of d) ul.append(h('li', null, h('span', {class:'k num'}, x.at + ' · ' + x.who), h('span', {class:'w'}, x.what), x.why ? h('span', {class:'y'}, x.why) : null));
+}
+function renderExperiments(){
+  const e = DATA.experiments, ul = $('exp'); ul.replaceChildren();
+  if (!e){ ul.append(h('li', null, NA)); return; }
+  $('expCount').textContent = e.length + '개';
+  const base = Date.parse(DATA.generated_at);
+  for (const x of e){
+    const due = Date.parse(x.due + 'T00:00:00+09:00');
+    const dd = isNaN(due) ? '' : 'D-' + Math.max(0, Math.ceil((due - base) / 86400e3));
+    ul.append(h('li', null, h('span', {class:'k num'}, x.id + ' · 판정 ' + x.due + ' ', h('span', {class:'dday'}, dd)), h('span', {class:'w'}, x.what), h('span', {class:'y'}, x.ab + ' · ' + x.metric)));
+  }
+}
+function renderFoot(){
+  $('foot').replaceChildren(
+    h('div', null, '예약 작업·사용량 스냅샷 ' + DATA.mcp_captured_at + ' · 파일 자료 ' + DATA.generated_label),
+    h('div', null, '출처: 예약 작업 회차 · agents.md · meeting/today.md · approvals.md · decisions/log.md · experiments-registry.md · roadmap.md · growth/daily.md · git log(24시간)'),
+    h('div', null, '없는 값은 "확인 안 함"으로 적습니다. 키·토큰·계정 식별자는 가립니다.'));
+}
+function setLive(mode){
+  const el = $('live'); el.dataset.mode = mode;
+  $('liveText').textContent = mode === 'live' ? '실시간 연결됨 · 30초마다 갱신' : mode === 'error' ? '실시간 끊김 · 정적 자료로 표시' : '정적 자료(빌드 시각 기준)';
+  $('officeNote').textContent = mode === 'live' ? '책상 상태는 직원이 근무 시작·끝에 직접 적습니다. 적은 기록이 없는 직원은 예약 작업 기록으로 대신 보여 줍니다.' : '실시간 기록을 못 받아 예약 작업 기록(빌드 시각 기준)으로 보여 줍니다.';
+}
+async function startLive(){
+  setLive('static');
+  let db = null;
+  try { db = window.claude && window.claude.use ? await window.claude.use('db') : null; } catch(e) { db = null; }
+  if (!db) return;
+  const col = db.collection('status');
+  const apply = snap => {
+    for (const k of Object.keys(LIVE)) delete LIVE[k];
+    for (const d of snap.docs){ if (d.exists){ const v = d.data(); if (v && typeof v === 'object') LIVE[d.id] = v; } }
+    setLive('live'); renderOffice(); renderStaff();
+  };
+  col.onSnapshot(apply, () => setLive('error'));
+  setInterval(async () => { try { apply(await col.get()); } catch(e) {} }, 30000);
+}
+
+if (DATA){
+  try { const f = localStorage.getItem('fm-board-filter'); if (f) FILTER = f; } catch(e) {}
+  renderTop(); renderAppr(); renderOffice(); renderNumbers(); renderFilters(); renderStaff(); renderQueue(); renderDecisions(); renderExperiments(); renderFoot();
+  setLive('static');
+  setInterval(renderOffice, 30000);
+  startLive();
+} else {
+  document.querySelector('.wrap').append(h('div', {class:'panel'}, '자료가 비어 있습니다. build.py를 돌려 board.html을 다시 만드세요.'));
+}
+</script>

@@ -1,0 +1,107 @@
+{
+  "captured_at": "2026-09-30T14:39:00Z",
+  "note": "MCP 스냅샷. firemap-* 예약 작업만 넣는다(스꾸 제외). list_scheduled_tasks + list_task_runs(limit 3) + get_usage.",
+  "manual": {
+    "revenue_krw": 0,
+    "revenue_month": "2026-10",
+    "revenue_source": "사장님 2026-10-01 · meeting/today.md '오늘 수익은 0원'"
+  },
+  "usage": {
+    "weekly_all": {"percentUsed": 45, "resetsAt": "2026-10-04T11:59:59.925Z"},
+    "five_hour": {"percentUsed": 7, "resetsAt": "2026-09-30T18:29:59.925Z"}
+  },
+  "tasks": [
+    {"taskId": "firemap-write", "description": "하루 5회(08·11·14·17·20시 :10) — 카페 5편을 08~22시에 3시간 간격으로 분산 발행(블로그는 회복 계획대로), 한도 찬 헛회차 제거(2026-09-30 사용량 재배분)", "schedule": "At 08:10 AM, 11:10 AM, 02:10 PM, 05:10 PM and 08:10 PM, every day", "enabled": true, "nextRunAt": "2026-09-30T23:19:44.000Z", "lastRunAt": "2026-09-30T13:20:43.566Z"},
+    {"taskId": "firemap-report", "description": "매일 12:30, 지난 24시간 발행 결과를 재고 현황판 갱신·텔레그램 보고·어뷰징 브레이크 점검", "schedule": "At 12:33 PM, every day", "enabled": true, "nextRunAt": "2026-10-01T03:33:02.000Z", "lastRunAt": "2026-09-30T03:33:58.986Z"},
+    {"taskId": "firemap-improve", "description": "매일 13·15·17·19·21·23시 — 발행 없이 자료조사 선행·도구 개선·품질 소급 검증·새 도구 조사(자가발전 루틴)", "schedule": "At 02:30 PM and 10:30 PM, every day", "enabled": true, "nextRunAt": "2026-10-01T05:35:03.000Z", "lastRunAt": "2026-09-30T13:36:02.239Z"},
+    {"taskId": "firemap-loop", "description": "2시간마다 :45 — 경쟁 측정·우리 측정·차이 조정·성과 판정(자가개선 루프). 사장님이 묻지 않아도 계속 발전", "schedule": "At 09:45 AM, 03:45 PM and 09:45 PM, every day", "enabled": true, "nextRunAt": "2026-10-01T00:51:41.000Z", "lastRunAt": "2026-09-30T12:52:40.727Z"},
+    {"taskId": "firemap-watchdog", "title": "발행 감시 (3시간마다 :45)", "description": "하루 4회(09·13·17·21시 :45) — 발행 누락·로그인 만료 감시(2026-09-30 발행 5회로 줄여 감시도 줄임)", "schedule": "At 09:45 AM, 01:45 PM, 05:45 PM and 09:45 PM, every day", "enabled": true, "nextRunAt": "2026-10-01T00:51:32.000Z", "lastRunAt": "2026-09-30T11:52:30.880Z"},
+    {"taskId": "firemap-shorts", "title": "【하루 1번】파이어맵 쇼츠 발행", "description": "매일 19:20 — 쇼츠 1편(정책 조사 뒤 하루 1편, shortsdaily.py 정책 관문 C1~C4·C7·C13 통과해야 공개)", "schedule": "At 07:25 PM, every day", "enabled": true, "nextRunAt": "2026-10-01T10:25:11.000Z", "lastRunAt": "2026-09-30T11:59:26.351Z"},
+    {"taskId": "firemap-youtube-loop", "title": "파이어맵 유튜브·카페 자율 루프", "description": "2시간마다 — 사장님이 채팅으로 시킨 유튜브·카페 일(BACKLOG.md)을 하나씩 끝까지: 경쟁 분석→규칙 갱신→제작→검증→업로드→카페 글", "schedule": "At 35 minutes past the hour, every 4 hours", "enabled": true, "nextRunAt": "2026-09-30T15:42:39.000Z", "lastRunAt": "2026-09-30T11:43:37.398Z"},
+    {"taskId": "firemap-bizdev", "title": "파이어맵 사업개발 담당", "description": "매주 월요일 10:15 — 수익 전략 재계산(월 100만원→월 1억), 새 사업·채널 확장 기회 조사, 상위 기회 무료 시제품·4주 시험", "schedule": "At 10:21 AM, only on Monday", "enabled": true, "nextRunAt": "2026-10-05T01:21:05.000Z", "lastRunAt": "2026-09-29T22:47:45.976Z"},
+    {"taskId": "firemap-video-producer", "title": "파이어맵 영상 제작 PD", "description": "3시간마다 — 루프가 기획·대본까지 끝낸 롱폼(ep/<편>/)을 화면·목소리·렌더·검사·예약 공개까지 만든다", "schedule": "At 5 minutes past the hour, every 4 hours, between 02:00 AM and 10:59 PM", "enabled": true, "nextRunAt": "2026-09-30T17:16:17.000Z", "lastRunAt": "2026-09-30T13:17:16.049Z"},
+    {"taskId": "firemap-audit", "title": "파이어맵 품질·정책 감사관", "description": "하루 2번(07:40·19:50) — 지난 12시간 유튜브·카페·블로그·쇼츠 결과물을 정책·사실·저품질 기준으로 독립 감사, 위험하면 정지 스위치", "schedule": "At 07:40 AM and 07:40 PM, every day", "enabled": true, "nextRunAt": "2026-09-30T22:49:27.000Z", "lastRunAt": "2026-09-30T10:50:25.223Z"},
+    {"taskId": "firemap-product-dev", "title": "파이어맵 제품 개발 담당", "description": "매일 11:10·17:10 — 파이어맵 사이트·앱을 수익이 나는 제품으로: 생활 돈 계산기, 앱(Capacitor+애드몹) 준비, 밀린 개편 마무리, 측정", "schedule": "At 11:10 AM and 05:10 PM, every day", "enabled": true, "nextRunAt": "2026-10-01T02:22:36.000Z", "lastRunAt": "2026-09-30T08:23:33.733Z"},
+    {"taskId": "firemap-meeting", "title": "파이어맵 전체 회의(의장)", "description": "매일 21:15 — 전체 직원 회의: 오늘 결정 전부를 참모 3명에게 한 번에 검토받고, 로드맵 대비 점검, 내일 직원별 할 일 배정", "schedule": "At 09:28 PM, every day", "enabled": true, "nextRunAt": "2026-10-01T12:27:54.000Z", "lastRunAt": "2026-09-30T12:28:52.751Z"},
+    {"taskId": "firemap-growth", "title": "파이어맵 성장·유입 담당", "description": "매일 10:40·16:40 — 방문자 10배: 채널→사이트 유입 측정(utm), 교차 연결, 검색 노출(SEO) 점검, 유입 실험", "schedule": "At 10:40 AM and 04:40 PM, every day", "enabled": true, "nextRunAt": "2026-10-01T01:44:03.000Z", "lastRunAt": "2026-09-30T07:45:00.737Z"},
+    {"taskId": "firemap-venture", "title": "신사업본부장", "description": "매일 13:10·20:10 — 신사업본부(승격, 2026-10-01): 후보 발굴·점수·출시 결정·포트폴리오 4주 판정, 본부 인원 배정(빌더·리서처 요청)", "schedule": "At 01:10 PM and 08:10 PM, every day", "enabled": true, "nextRunAt": "2026-10-01T04:13:56.000Z", "lastRunAt": "2026-09-30T11:14:54.317Z"},
+    {"taskId": "firemap-designer", "title": "프로덕트 디자이너(전담)", "description": "매일 10:20·18:20 — 새 제품 만들기 전 화면 설계(첫 30초·이길 점), 공유 카드·퍼지는 장치, 신사업 사이트 디자인 시안", "schedule": "At 10:20 AM and 06:20 PM, every day", "enabled": true, "nextRunAt": "2026-10-01T01:31:30.000Z", "lastRunAt": "2026-09-30T14:18:13.942Z"},
+    {"taskId": "firemap-editor", "title": "문장 편집자(사람 글처럼)", "description": "매일 06:50·12:50·17:50 — 발행 전 대본·카페 글·웹 문구를 사람이 쓴 말투로 다듬고, AI 티 검사 기준과 말투 가이드를 계속 키운다", "schedule": "At 06:50 AM, 12:50 PM and 05:50 PM, every day", "enabled": true, "nextRunAt": "2026-09-30T22:03:48.000Z"},
+    {"taskId": "firemap-copywriter", "title": "카피라이터(제목·썸네일·첫 3초)", "description": "매일 07:20·15:20 — 발행 예정 롱폼·쇼츠·카페·계산기의 제목·썸네일 문구·첫 3초·공유 문구 후보를 만들고 데이터로 고르며, 올라간 뒤 클릭률로 배운다", "schedule": "At 07:20 AM and 03:20 PM, every day", "enabled": true, "nextRunAt": "2026-09-30T22:28:34.000Z", "lastRunAt": "2026-09-30T14:10:41.150Z"},
+    {"taskId": "firemap-artist", "title": "예술가(다른 각도)", "description": "매일 11:40·19:10 — 뻔한 기획을 다른 각도로 뒤집는 크리에이티브 디렉터: 오늘 기획의 뻔함 점검, 낯선 아이디어 3개와 작은 시험안", "schedule": "At 11:43 AM, every day", "enabled": true, "nextRunAt": "2026-10-01T02:42:50.000Z", "lastRunAt": "2026-09-30T14:18:13.297Z"},
+    {"taskId": "firemap-designer-orgchart", "title": "디자이너 추가 근무: 조직도 그림", "description": "1회 — 전담 디자이너가 순돌이 지시서대로 조직도·업무 구조 PNG를 만든다", "schedule": "One-time: 2026-09-30 23:45", "enabled": true, "nextRunAt": "2026-09-30T14:45:00.000Z"},
+    {"taskId": "firemap-visual-designer", "title": "비주얼 디자이너(썸네일·그래픽)", "description": "매일 09:10·14:10·20:40 — 썸네일·인포그래픽·공유 이미지·채널 브랜딩 등 눈에 보이는 이미지 전담, 매주 경쟁 썸네일 벤치마크", "schedule": "At 09:10 AM and 02:10 PM, every day", "enabled": true, "nextRunAt": "2026-10-01T00:13:03.000Z"},
+    {"taskId": "firemap-motion-designer", "title": "모션 디자이너(영상 그래픽)", "description": "매일 11:20·23:20 — 롱폼·쇼츠 영상 안의 움직이는 그래픽(차트 애니메이션·3D·전환) 전담, 수페TV급 영상미", "schedule": "At 11:20 AM and 11:20 PM, every day", "enabled": true, "nextRunAt": "2026-10-01T02:25:38.000Z"},
+    {"taskId": "firemap-illustrator", "title": "일러스트레이터(캐릭터·브랜드)", "description": "매일 13:40 — 파이어맵 마스코트(흰 고양이) 새 포즈·일러스트·채널 브랜딩 자산 전담", "schedule": "At 01:53 PM, every day", "enabled": true, "nextRunAt": "2026-10-01T04:52:42.000Z"},
+    {"taskId": "firemap-brand-director", "title": "브랜드 디렉터(브랜드팀장)", "description": "매일 10:00 — 파이어맵 브랜드(포지셔닝·톤·비주얼 시스템·캐릭터 여부·채널 얼굴)를 근거와 실험으로 정하고 전 채널에 적용 감독", "schedule": "At 10:10 AM, every day", "enabled": true, "nextRunAt": "2026-10-01T01:09:42.000Z"},
+    {"taskId": "firemap-brand-researcher", "title": "브랜드 리서처(시청자·회원 조사)", "description": "매일 08:30 — 우리 시청자·회원·검색자가 누구고 무엇에 반응하는지 조사(댓글·검색어·경쟁 채널 반응·카페), 브랜드 디렉터에게 근거 제공", "schedule": "At 08:41 AM, every day", "enabled": true, "nextRunAt": "2026-09-30T23:41:22.000Z"},
+    {"taskId": "firemap-admin", "title": "총무·인사팀(도구·연결·직원 관리)", "description": "매일 07:00·19:00 — 도구·커넥터·API·토큰 상태 점검과 연결, 한도·크레딧·비용 관리, 직원 지시문·근무표·조직도 관리, 신규 직원 온보딩", "schedule": "At 07:00 AM and 07:00 PM, every day", "enabled": true, "nextRunAt": "2026-09-30T22:03:01.000Z", "lastRunAt": "2026-09-30T14:31:22.884Z"},
+    {"taskId": "firemap-ai-lab", "title": "AI 연구소", "description": "호출 시 + 매주 월·목 09:30 — 새 AI 모델·도구·기법을 조사·시험해 직원 능력 업그레이드(이미지·영상·목소리·에이전트 운영), 도입안 결재", "schedule": "At 09:30 AM, only on Monday and Thursday", "enabled": true, "nextRunAt": "2026-10-01T00:43:10.000Z"},
+    {"taskId": "firemap-titletest-followup", "title": "제목 수정 SEO 실험 판정(끝난 1회성)", "description": "9/23 카페 59번 제목 실험 판정", "enabled": false}
+  ],
+  "runs": {
+    "firemap-write": [
+      {"status": "succeeded", "started_at": "2026-09-30T13:20:43.566Z", "last_activity_at": "2026-09-30T13:26:11.308Z"},
+      {"status": "succeeded", "started_at": "2026-09-30T10:20:42.186Z", "last_activity_at": "2026-09-30T10:26:12.919Z"},
+      {"status": "succeeded", "started_at": "2026-09-30T07:20:41.237Z", "last_activity_at": "2026-09-30T07:27:01.445Z"}],
+    "firemap-report": [
+      {"status": "succeeded", "started_at": "2026-09-30T03:33:58.984Z", "last_activity_at": "2026-09-30T03:41:38.051Z"},
+      {"status": "succeeded", "started_at": "2026-09-29T03:34:05.492Z", "last_activity_at": "2026-09-29T03:48:51.775Z"},
+      {"status": "succeeded", "started_at": "2026-09-28T03:33:13.781Z", "last_activity_at": "2026-09-28T03:44:39.093Z"}],
+    "firemap-improve": [
+      {"status": "succeeded", "started_at": "2026-09-30T13:36:02.237Z", "last_activity_at": "2026-09-30T13:44:05.332Z"},
+      {"status": "succeeded", "started_at": "2026-09-30T05:36:00.943Z", "last_activity_at": "2026-09-30T05:50:00.536Z"},
+      {"status": "succeeded", "started_at": "2026-09-29T14:35:47.964Z", "last_activity_at": "2026-09-29T15:01:16.535Z"}],
+    "firemap-loop": [
+      {"status": "succeeded", "started_at": "2026-09-30T12:52:40.725Z", "last_activity_at": "2026-09-30T13:04:51.415Z"},
+      {"status": "succeeded", "started_at": "2026-09-30T06:52:38.424Z", "last_activity_at": "2026-09-30T07:16:14.109Z"},
+      {"status": "succeeded", "started_at": "2026-09-30T00:52:28.324Z", "last_activity_at": "2026-09-30T00:56:17.058Z"}],
+    "firemap-watchdog": [
+      {"status": "succeeded", "started_at": "2026-09-30T11:52:30.880Z", "last_activity_at": "2026-09-30T11:53:25.395Z"},
+      {"status": "succeeded", "started_at": "2026-09-30T08:52:29.852Z", "last_activity_at": "2026-09-30T08:53:22.472Z"},
+      {"status": "succeeded", "started_at": "2026-09-30T05:52:28.770Z", "last_activity_at": "2026-09-30T05:54:00.632Z"}],
+    "firemap-shorts": [
+      {"status": "succeeded", "started_at": "2026-09-30T11:59:26.351Z", "last_activity_at": "2026-09-30T12:02:20.248Z"},
+      {"status": "succeeded", "started_at": "2026-09-30T10:26:09.279Z", "last_activity_at": "2026-09-30T10:31:15.865Z"},
+      {"status": "succeeded", "started_at": "2026-09-29T11:25:53.383Z", "last_activity_at": "2026-09-29T11:26:08.967Z"}],
+    "firemap-youtube-loop": [
+      {"status": "succeeded", "started_at": "2026-09-30T11:43:37.398Z", "last_activity_at": "2026-09-30T12:24:28.755Z"},
+      {"status": "succeeded", "started_at": "2026-09-30T07:43:36.410Z", "last_activity_at": "2026-09-30T07:51:58.292Z"},
+      {"status": "succeeded", "started_at": "2026-09-30T03:43:34.628Z", "last_activity_at": "2026-09-30T03:52:51.452Z"}],
+    "firemap-bizdev": [
+      {"status": "succeeded", "started_at": "2026-09-29T22:47:45.975Z", "last_activity_at": "2026-09-29T22:53:11.650Z"}],
+    "firemap-video-producer": [
+      {"status": "succeeded", "started_at": "2026-09-30T13:17:16.047Z", "last_activity_at": "2026-09-30T13:17:45.534Z"},
+      {"status": "succeeded", "started_at": "2026-09-30T09:17:15.037Z", "last_activity_at": "2026-09-30T09:17:57.203Z"},
+      {"status": "succeeded", "started_at": "2026-09-30T05:17:14.954Z", "last_activity_at": "2026-09-30T06:05:51.418Z"}],
+    "firemap-audit": [
+      {"status": "succeeded", "started_at": "2026-09-30T10:50:25.221Z", "last_activity_at": "2026-09-30T10:54:05.788Z"},
+      {"status": "succeeded", "started_at": "2026-09-29T22:50:13.401Z", "last_activity_at": "2026-09-29T22:54:11.751Z"}],
+    "firemap-product-dev": [
+      {"status": "succeeded", "started_at": "2026-09-30T08:23:33.732Z", "last_activity_at": "2026-09-30T08:39:38.980Z"},
+      {"status": "succeeded", "started_at": "2026-09-30T02:23:23.779Z", "last_activity_at": "2026-09-30T02:41:13.888Z"}],
+    "firemap-meeting": [
+      {"status": "succeeded", "started_at": "2026-09-30T12:28:52.749Z", "last_activity_at": "2026-09-30T12:45:47.243Z"}],
+    "firemap-growth": [
+      {"status": "succeeded", "started_at": "2026-09-30T07:45:00.737Z", "last_activity_at": "2026-09-30T07:47:07.222Z"},
+      {"status": "succeeded", "started_at": "2026-09-30T01:44:50.254Z", "last_activity_at": "2026-09-30T01:51:19.703Z"}],
+    "firemap-venture": [
+      {"status": "succeeded", "started_at": "2026-09-30T11:14:54.317Z", "last_activity_at": "2026-09-30T11:19:01.805Z"}],
+    "firemap-designer": [
+      {"status": "succeeded", "started_at": "2026-09-30T14:18:13.942Z", "last_activity_at": "2026-09-30T14:34:30.790Z"}],
+    "firemap-editor": [],
+    "firemap-copywriter": [
+      {"status": "succeeded", "started_at": "2026-09-30T14:10:41.148Z", "last_activity_at": "2026-09-30T14:18:25.373Z"}],
+    "firemap-artist": [
+      {"status": "succeeded", "started_at": "2026-09-30T14:18:13.297Z", "last_activity_at": "2026-09-30T14:22:33.996Z"}],
+    "firemap-designer-orgchart": [],
+    "firemap-visual-designer": [],
+    "firemap-motion-designer": [],
+    "firemap-illustrator": [],
+    "firemap-brand-director": [],
+    "firemap-brand-researcher": [],
+    "firemap-admin": [
+      {"status": "running", "started_at": "2026-09-30T14:31:22.882Z", "last_activity_at": "2026-09-30T14:39:07.159Z"}],
+    "firemap-ai-lab": []
+  }
+}

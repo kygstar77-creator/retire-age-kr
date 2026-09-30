@@ -3,6 +3,7 @@
 // 간이세액표(41KB)는 이 화면에서만 쓰니 FireMapMVP가 React.lazy로 따로 불러온다.
 import { useState } from 'react';
 import { Card, SectionHead, RangeField, StatHero, Button, Fold, Tabs, Notice, Icon, ListGroup, ListRow, toast } from '../../ui/index.js';
+import CoupangPick from './CoupangPick.jsx';
 import { salaryNet, SALARY_RULES } from '../../utils/salaryNet.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { inputsIsReal } from '../../utils/retirementSimulator.js';
@@ -90,6 +91,8 @@ export default function SalaryCalc({ inputs, onApply, onMove }) {
       <ListGroup label="다음 계산">
         <ListRow lead={<Icon name="calc" />} title="퇴직금 계산기" desc="입사일·퇴직일·월급으로 예상 퇴직금" size="S" onClick={toNext} />
       </ListGroup>
+
+      <CoupangPick from="salary" />
 
       <Card variant="flat">
         <SectionHead size="sm" kicker="계산 방법" title="월급 − 4대보험 − 소득세 − 지방소득세" />

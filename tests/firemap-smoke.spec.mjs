@@ -184,6 +184,25 @@ test.describe('firemap smoke', () => {
     expect(await page.evaluate(() => window.location.hash)).toBe('#result');
   });
 
+  // F1 쿠팡 1칸: 링크가 있으면 바로 위에 대가성 문구, sponsored rel, 발급 주소 그대로. 링크가 없으면 칸 자체가 없어야 한다.
+  test('coupang slot: disclosure above every link, nothing without an issued link', async ({ page }) => {
+    await seed(page);
+    for (const path of ['/calc/salary', '/calc/severance', '/calc/unemployment-benefit']) {
+      await page.goto('about:blank');
+      await page.goto(path);
+      await expect(page.locator('main.fm-screen')).toContainText('은퇴 나이 계산');
+      const links = page.locator('main.fm-screen a[href*="coupang.com"]');
+      const n = await links.count();
+      await expect(page.locator('.fm-coupang-pick'), `${path} slot count`).toHaveCount(n ? 1 : 0);
+      for (let i = 0; i < n; i += 1) {
+        const a = links.nth(i);
+        expect(await a.getAttribute('href')).toMatch(/^https:\/\/link\.coupang\.com\/a\/[A-Za-z0-9]+$/);
+        expect(await a.getAttribute('rel')).toContain('sponsored');
+        await expect(page.locator('.fm-coupang-pick__disclosure')).toContainText('쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.');
+      }
+    }
+  });
+
   // 10/1 사장님 기기: 재방문 기기가 /calc/salary#home 같은 주소로 들어와 첫 화면으로 떨어졌다. 도구 경로면 해시와 상관없이 도구 화면.
   test('tool path wins over a leftover hash on a returning device', async ({ page }) => {
     await seed(page);

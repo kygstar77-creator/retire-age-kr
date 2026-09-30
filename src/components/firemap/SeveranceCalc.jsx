@@ -2,6 +2,7 @@
 // 입력 항목 이름은 고용노동부 퇴직금 계산(moel.go.kr/retirementpayCal.do) 그대로. 식·근거: src/utils/severancePay.js
 import { useState } from 'react';
 import { Card, SectionHead, RangeField, StatHero, Button, Fold, Tabs, Notice, Icon, ListGroup, ListRow, toast } from '../../ui/index.js';
+import CoupangPick from './CoupangPick.jsx';
 import { severancePay } from '../../utils/severancePay.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { inputsIsReal } from '../../utils/retirementSimulator.js';
@@ -89,6 +90,8 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
           <ListRow lead={<Icon name="calc" />} title="실업급여 계산기" desc="나이·피보험기간·월급으로 1일 구직급여액·총액" size="S" onClick={toNext} />
         </ListGroup>
       )}
+
+      <CoupangPick from="severance" />
 
       <Card variant="flat">
         <SectionHead size="sm" kicker="계산 방법" title="1일 평균임금 × 30일 × (재직일수 ÷ 365)" />

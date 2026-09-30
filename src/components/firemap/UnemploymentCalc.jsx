@@ -2,6 +2,7 @@
 // 입력 이름은 고용24 실업급여 모의계산(간편·상용)과 고용보험법 용어 그대로. 식·근거: src/utils/unemploymentBenefit.js, work/research/calc-unemployment/spec.md
 import { useState } from 'react';
 import { Card, SectionHead, RangeField, StatHero, Button, Fold, Tabs, Notice, Icon, toast } from '../../ui/index.js';
+import CoupangPick from './CoupangPick.jsx';
 import { unemploymentBenefit, UB_2026 } from '../../utils/unemploymentBenefit.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { inputsIsReal } from '../../utils/retirementSimulator.js';
@@ -76,6 +77,8 @@ export default function UnemploymentCalc({ inputs, onApply, onMove }) {
           <Button variant="primary" size="lg" full onClick={toRetire}>은퇴 나이 계산</Button>
         </Card>
       )}
+
+      <CoupangPick from="unemployment" />
 
       <Card variant="flat">
         <SectionHead size="sm" kicker="계산 방법" title="1일 구직급여액 × 소정급여일수" />

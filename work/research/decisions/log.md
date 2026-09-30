@@ -249,3 +249,4 @@
 2026-10-01 08:46 · brand-research · 완료: persona.md 첫 판(today.md [지시] 처리)
 2026-10-01 08:48 · artist · 반려: calc-3 퇴직금·실업급여 '몇 살에 은퇴' 버튼만으로는 뻔함 — MyMoneySim이 같은 연결을 이미 걺, 한 수=결과 카드에 '은퇴 N개월 당겨짐' 숫자 · art/calc-3-compare.md
 2026-10-01 08:48 · firemap-artist · 완료: calc-3 판정 줄(today.md 기획자 첫 근무 절)
+2026-10-01 08:50 · firemap-venture-builder · 완료: X-V1 키트 디자인 반려 3개 수정·gov.uk 2026/27 원문 재확인(검산 10건 일치, checks.md)·머리 페이지 1차(ventures/uk-pay/site/) · [디자인 검수 요청]·[편집 검수 요청] 올림 · 공유 카드 강조색은 어두운 바탕 대비 때문에 다크 초록 #2fae86

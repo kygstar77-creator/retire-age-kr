@@ -4,25 +4,25 @@
 
 | # | 항목 | 답 | 상태 |
 |---|---|---|---|
-| 1 | 수요 | take home pay calculator 30.1만 · salary calculator uk 9.05만 · take home pay calculator uk 4.05만 [2차 Semrush, strategy.md]. 롱테일(60% trap) 수요 | 머리말 [2차] / 롱테일 **빌더 채움** |
+| 1 | 수요 | take home pay calculator 30.1만 · salary calculator uk 9.05만 · take home pay calculator uk 4.05만 [2차 Semrush, strategy.md]. 롱테일(60% trap) 수요 | 머리말 [2차] / 롱테일 **확인 안 함**(빌더 08:50 — 다음 회차 kwvol·자동완성으로 잰다, 공개 전 필수) |
 | 2 | 경쟁 | compare.md 실측(10/1 08:05): 머리 3곳 모두 광고가 결과 앞·한계 실수령·60% 경고 없음. 60% 전용 계산기는 8곳 이상, uktax.tools가 2026/27·연금 역산·광고 0으로 이미 함 → 이길 점은 ①광고 0·첫 화면 숫자 1개 ②머리 결과의 다음 £1,000·60% 자동 경고 | 채움(빌더 08:05) — 롱테일 수요 숫자는 1번에서 아직 확인 안 함 |
-| 3 | 사용자 | 30초: 연봉 입력 → 월 실수령 확인 → 60% 구간이면 경고 클릭. 공유 이유: 연봉 협상·이직 비교. `second_opinion.py brief.md 사용자` | **빌더 채움**(결과 한 줄) |
+| 3 | 사용자 | 30초: 연봉 입력 → 월 실수령 확인 → 60% 구간이면 경고 클릭. 공유 이유: 연봉 협상·이직 비교. `second_opinion.py brief.md 사용자` | 채움(빌더 08:50): 결과 한 줄 = "£3,780 a month · Of your next £1,000, you keep £580"(£60,000). 캡처 design/uk-pay/build/375-60000-light.png |
 | 4 | 돈 | 첫 1주 광고 0 → 수익 0원(의도). 판정 목적은 색인·유입 시험. 키우기 시 애드센스(RPM 약 $2 [2차 약한 근거]) — 로드맵 10월 기여 0원, '시험 중 엔진' | 답함 |
 | 5 | AI 시대 가치 | AI 채팅도 실수령을 대략 알려 준다. 우리만: 원문 링크·기준일 달린 정확 계산, 60% 구간 연금 기여액 역산, 결과 카드 | 답함 |
 | 6 | 정책 | 광고 없음 → 애드센스 영향 없음. 페이지 4개·찍어낸 페이지 0(scaled content 해당 없음). 유튜브·네이버·쿠팡 무관 | 답함 |
 | 7 | 법 | 영국 FSMA s21: 금융상품 홍보 없음(연금 기여는 계산만, 상품명 없음). UK GDPR: 입력값 브라우저 계산·서버 전송 없음, 측정은 구간만 → 개인정보 최소. 광고·CMP는 켜지 않음(결재 대기). gov.uk OGL 출처 표시. 사칭 금지(이름·로고) | 답함(법 참모 strategy_법.md) |
 | 8 | 사람 손 | 고객 응대 없음(문의 메일만, 응답 의무 없음 문구). 세금 해 바뀔 때 갱신은 AI 직원(다음 해 4/6 전, 담당 venture-builder) | 답함 |
 | 9 | 발행 패턴 | 페이지 4개 1회 공개. 반복 발행 없음 | 답함 |
-| 10 | 측정 | fmkit site=uk-pay, calc_submit{bucket}·trap_view·share, utm 자동 | 운영 도착 확인 **빌더 채움** |
+| 10 | 측정 | fmkit site=uk-pay, calc_submit{bucket}·trap_view·share, utm 자동 | 붙임(빌더 08:50): site/fmkit.js noStore 복사본(저장소·쿠키 0), calc_submit{bucket}·trap_view·trap_click·details_open·share_open{clock:1}. 운영 도착 확인은 **공개 뒤**(아직 안 함) |
 | 11 | 판정 | brief 8장(1주 10/8, 키우기면 4주 10/29) | 답함 |
 | 12 | 되돌리기 | 저장소 Pages 끄기 또는 robots noindex 커밋 1개. 담당 venture-builder | 답함 |
 | 13 | 격리 | kygstar77-creator 계정·새 저장소만. 스꾸(whenuwere-cmd) 저장소·Cloudflare·Supabase d7ff3fad 닿지 않음. 측정은 파이어맵 Supabase c7cd8a90 | 답함 |
 | 14 | 놓친 것 | 레드팀(strategy_레드팀.md): 머리 검색어 비현실 → 롱테일, CMP, 4주 기준 롱테일. 추가 확인: 세금 해 표기 오류 시 신뢰 손상 → 기준일 크게 | 답함 |
-| 15 | 검색 위젯 | 구글이 결과 화면에서 영국 실수령을 바로 계산해 주는지 | **빌더 채움**(구글 검색 1회 캡처) |
-| 16 | 색인 제출 | 사이트맵·서치콘솔·IndexNow, JS 없이 본문 | **빌더 채움** |
+| 15 | 검색 위젯 | 구글이 결과 화면에서 영국 실수령을 바로 계산해 주는지 | **확인 안 함**(빌더 08:50 기준 — 다음 회차) |
+| 16 | 색인 제출 | 사이트맵·서치콘솔·IndexNow, JS 없이 본문 | 일부(빌더 08:50): 설명 본문·세율표·원문 링크가 JS 없이 첫 HTML에 있음. 사이트맵·서치콘솔·IndexNow는 공개 뒤 |
 | 17 | 법 개정 감시 | 영국 세금 해 4/6 시작. 매년 3월 Budget·Spring Statement 뒤 확인, 담당 venture-builder, 달력 2027-03-20 | 답함 |
-| 18 | 공개 설정 되읽기 | 공개 후 curl로 robots·sitemap·noindex 없음 확인 | **빌더 채움** |
-| 19 | 내부 방문 제외 | 점검은 ?fm_internal=1 | **빌더 채움**(internal:1 확인) |
+| 18 | 공개 설정 되읽기 | 공개 후 curl로 robots·sitemap·noindex 없음 확인 | 공개 뒤(빌더) |
+| 19 | 내부 방문 제외 | 점검은 ?fm_internal=1 | 붙임(빌더 08:50): noStore라 ?fm_internal=1은 그 페이지 열기에만 붙는다(저장 안 함). 운영 확인은 공개 뒤 |
 | 20 | 첫 100명 경로 | ① 결과 공유 카드(fmkit.share, utm_source=share) — 빌더, 오늘 ② Hacker News "Show HN" 1회 — 규칙 확인 research-global 10/1 20:00, 게시는 계정이 필요해 approvals.md(사장님 계정 1회) ③ r/UKPersonalFinance — 자기 홍보 규칙 확인 research-global 10/1 20:00, 금지면 뺀다 ④ Bing 웹마스터·IndexNow(검색이지만 구글보다 빠름) — 빌더 공개 직후. utm_source=hn / reddit / share | ② Show HN **허용**(조건부, 원문 확인) · ③ r/UKPF **확인 안 함**(레딧이 도구 전부 차단 → 경로로 세지 않음) · 무계정 연락 2곳 확인(목록 게재 여부는 확인 안 함). 근거는 아래 '20번 규칙 원문' — research-global 10/1 07:57 |
 
 ## 본부장 메모
@@ -53,3 +53,10 @@
 - 못 찾은 것: "UK 계산기 제출" 창구가 있는 무계정 목록(검색 1회, GitHub 저장소 검색 0건). 계산기 모음 사이트(calctool.co.uk·onlinecalculator.co.uk)는 모두 자체 계산기라 소개 경로 아님.
 
 **본부장 판단용 한 줄:** 경로 3개 중 확인된 것은 ① 공유 카드(빌더) · ② Show HN(허용, 사장님 계정 1회 필요) · ④ Bing/IndexNow. ③ 레딧은 확인 안 함이라 뺀다. 메일 2곳은 게재 보장이 없어 '경로'가 아니라 '시도'로만 센다.
+
+## 빌더 진행 (firemap-venture-builder, 2026-10-01 08:50)
+- 세율 원문 재확인·검산 10건·외부 대조 3건: **checks.md** (10건 £1 안 일치).
+- 머리 페이지 `/` 1차 완성: `ventures/uk-pay/site/index.html` + `site/fmkit.js`(noStore). 60% 페이지·privacy·about·robots·sitemap은 **아직**(다음 회차).
+- 디자인 통과 조건 실측(Playwright, 측정 요청 차단): 가로 넘침 0(375·320, £9,999,999 입력도 0) · '다음 £1,000' 줄 아래끝 y=484px(375×667)·510px(320×568) 모두 첫 화면 안 · 머리·바닥 링크 44px 이상(본문 속 출처 링크 2개만 37px, 글 속 링크).
+- 캡처 4장+α: design/uk-pay/build/375-60000-light.png · 375-60000-dark.png · 320-60000-light.png · 375-110000-light.png(60% 경고) · 320-9999999-light.png(넘침 점검) · card-60000.png · card-110000.png(공유 카드, 세금 시계 1줄)
+- 공개 조건 남은 것: 디자인 통과 · 편집 통과(editor-en) · 60% 페이지 · 롱테일 수요(1번) · 15번 · 새 저장소·Pages.

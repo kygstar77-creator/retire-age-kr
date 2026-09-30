@@ -19,7 +19,7 @@
 <meta name="theme-color" content="#f6f7f9">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"{{NAME}}","url":"{{CANONICAL_URL}}","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <style>
-:root{--bg:#f6f7f9;--card:#fff;--ink:#18191d;--sub:#6b6e76;--line:#e5e6ea;--accent:#ff5a00;--dark:#18191d;--dark-ink:#f2f3f5;
+:root{--bg:#f6f7f9;--card:#fff;--ink:#18191d;--sub:#6b6e76;--line:#e5e6ea;--accent:{{ACCENT}};--dark:#18191d;--dark-ink:#f2f3f5;
   --fs1:30px;--fs3:22px;--fs4:20px;--fs5:17px;--fs6:15px;--fs7:13px}
 @media (prefers-color-scheme:dark){:root{--bg:#101114;--card:#1b1c21;--ink:#f2f3f5;--sub:#9a9da5;--line:#2c2d34;--dark:#26272e}}
 *{box-sizing:border-box}
@@ -27,6 +27,9 @@ body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--fs5)/1.5 "Pre
 .wrap{max-width:640px;margin:0 auto;padding:0 16px 48px}
 header{display:flex;align-items:center;justify-content:space-between;height:56px}
 header a{color:var(--ink);text-decoration:none;font-weight:700}
+header a,footer a{display:inline-block;padding:12px 4px;min-height:44px}
+footer a+a{margin-left:8px}
+h3{font-size:var(--fs5);font-weight:700}
 h1{font-size:var(--fs1);line-height:1.33;margin:16px 0 8px}
 .lead{color:var(--sub);margin:0 0 24px}
 .card{background:var(--card);border-radius:20px;padding:24px 20px;margin:0 0 16px}
@@ -38,7 +41,7 @@ button{height:56px;width:100%;border:0;border-radius:14px;font-size:var(--fs5);f
 .ghost{background:rgba(127,127,127,.14);color:inherit;height:48px}
 .result{background:var(--dark);color:var(--dark-ink);border-radius:20px;padding:24px 20px;margin:0 0 16px}
 .result .k{font-size:var(--fs6);opacity:.75;margin:0}
-.result .big{font-size:40px;font-weight:700;line-height:1.33;margin:4px 0 8px;color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
+.result .big{font-size:40px;font-weight:700;line-height:1.33;margin:4px 0 8px;color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;font-size:clamp(28px,10vw,40px)}
 .result .s{font-size:var(--fs6);opacity:.85;margin:0 0 16px}
 h2{font-size:var(--fs4);margin:32px 0 12px}
 section p,section li{color:var(--ink)}
@@ -105,11 +108,12 @@ document.getElementById('f').addEventListener('submit', function (e) {
   document.getElementById('big').textContent = out.big;
   document.getElementById('sub').textContent = out.sub;
   document.getElementById('r').hidden = false;
+  FMKit.fitText(document.getElementById('big'));
   FMKit.log('calc_submit', { bucket: out.bucket });
 });
 document.getElementById('share').addEventListener('click', function () {
   if (!last) return;
-  FMKit.share({ title: '{{H1}}', big: last.big, sub: last.sub, brand: '{{BRAND}}', text: '{{SHARE_TEXT}}' });
+  FMKit.share({ title: '{{H1}}', big: last.big, sub: last.sub, brand: '{{BRAND}}', accent: '{{ACCENT}}', text: '{{SHARE_TEXT}}' });
 });
 </script>
 </body>

@@ -1,4 +1,5 @@
-/* fmkit.js — 신사업 새 사이트 공용 부품 (firemap-venture-builder, 2026-10-01)
+/* fmkit.js (uk-pay 복사본, noStore) — 브라우저 저장소·쿠키 0, 페이지 열 때마다 임시 id. brief 9장 1(영국 PECR).
+ * 원본: retire-age-kr public/kit/fmkit.js (firemap-venture-builder, 2026-10-01)
  * 빌드 없이 <script src="/kit/fmkit.js" defer></script> 한 줄로 쓴다. 의존성 0.
  *
  * 1) 측정: 파이어맵과 같은 firemap_events 표(파이어맵 Supabase)에 익명 이벤트를 남긴다.
@@ -16,27 +17,16 @@
   'use strict';
   var SB_URL = ['https://cvhskxdwqubmshdgkzhj', 'supabase', 'co'].join('.');
   var SB_KEY = ['sb', 'publishable', 'uhbAVqCA8JrJNXqaAcft9g', 'yYtwgct9'].join('_');
-  var CID = 'fm_cid';
   var ctx = { site: 'unknown', lang: document.documentElement.lang || 'ko' };
   var started = false;
 
-  function ls(k, v) {
-    try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { /* 사생활 모드 */ }
-    return null;
-  }
-  function cid() {
-    var id = ls(CID);
-    if (!id) {
-      id = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : Date.now() + '-' + Math.random().toString(16).slice(2);
-      ls(CID, id);
-    }
-    return id || 'anon';
-  }
+  // noStore: 저장소를 전혀 쓰지 않는다.
+  var tmpId = (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : Date.now() + '-' + Math.random().toString(16).slice(2);
+  function cid() { return tmpId; }
   function qs() { try { return new URLSearchParams(location.search || ''); } catch (e) { return { get: function () { return null; } }; } }
   function audit() {
     var x = {};
-    if (qs().get('fm_internal') === '1') ls('fm_internal', '1');
-    if (ls('fm_internal') === '1') x.internal = 1;
+    if (qs().get('fm_internal') === '1') x.internal = 1;
     var h = location.hostname || '';
     if (h && h !== 'firemap.kr' && h !== 'www.firemap.kr') x.host = h.slice(0, 80);
     return x;
@@ -137,7 +127,7 @@
     var url = o.url || (location.origin + location.pathname);
     var sep = url.indexOf('?') < 0 ? '?' : '&';
     var shareUrl = url + sep + 'utm_source=share&utm_medium=' + encodeURIComponent(ctx.site);
-    log('share_open', { kind: o.kind || 'result' });
+    log('share_open', o.clock ? { kind: o.kind || 'result', clock: 1 } : { kind: o.kind || 'result' });
     var done = function (method) { log('share_done', { method: method, kind: o.kind || 'result' }); return method; };
     return toBlob(card(o)).then(function (blob) {
       var file = null;

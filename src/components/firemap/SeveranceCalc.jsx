@@ -58,6 +58,8 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
         <input id="sev-hire" className="ds-input ds-mb-2" type="date" value={hireDate} max={retireDate} onChange={(e) => setHireDate(e.target.value)} />
         <label className="ds-range__label" htmlFor="sev-retire">퇴직일자</label>
         <input id="sev-retire" className="ds-input" type="date" value={retireDate} min={hireDate} onChange={(e) => setRetireDate(e.target.value)} />
+        <Tabs className="ds-mt-2" label="1주 소정근로시간" value={under15 ? 'u' : 'o'} onChange={(k) => setUnder15(k === 'u')}
+          items={[{ key: 'o', label: '1주 15시간 이상' }, { key: 'u', label: '1주 15시간 미만' }]} />
       </Card>
 
       <Card>
@@ -67,8 +69,6 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
           <RangeField label="연간상여금 총액" value={bonus} min={0} max={30000000} step={500000} money format={won} chips={[1000000, 5000000]} onChange={setBonus} />
           <RangeField label="연차수당" value={leave} min={0} max={5000000} step={50000} money format={won} chips={[100000, 500000]} onChange={setLeave} />
         </Fold>
-        <Tabs className="ds-mt-2" label="1주 소정근로시간" value={under15 ? 'u' : 'o'} onChange={(k) => setUnder15(k === 'u')}
-          items={[{ key: 'o', label: '1주 15시간 이상' }, { key: 'u', label: '1주 15시간 미만' }]} />
       </Card>
 
       {r && r.amount > 0 && (

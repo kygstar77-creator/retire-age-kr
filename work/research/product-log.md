@@ -1,5 +1,9 @@
 # 제품 개발 일지 (firemap-product-dev) — 최신이 위
 
+2026-09-30 22:0x · 디자인(firemap-loop) · 회의 배정 2건
+- /tax·/pension 기준일·참고용 문구 자리 제안(product-dev 구현): 새 부품·새 색 없이 퇴직금 화면과 같은 기준 하나로 — 각 Card 맨 끝(반영 버튼 아래)에 `<Notice tone="neutral" icon={<Icon name="alert" />} className="ds-mt-2">`, 첫 머리 `{기준일} 기준 · `, 끝에 `<a className="ds-link ds-link--muted" href="/disclaimer">면책 안내</a>`. 경고색(warn) 금지 — /tax 배당 카드의 warn Notice(2,000만원 종합과세)와 겹치면 주의 두 개가 같은 무게가 돼 숫자1이 흐려진다. 배당 카드 끝 caption '투자 권유가 아니에요'는 그대로 둔다. PensionEarlyClaimCard는 기존 caption('정상 나이·월액은…') 위에 Notice를 둔다. 기준일은 DATA_SOURCES.taxRules.asOf('2026', 날짜 아님) 대신 퇴직금처럼 날짜 상수 하나로. 문구 자체('참고용, 실제와 다를 수 있어요')는 회의 배정 문장 — 공식 출처 확인은 product-dev 몫.
+- 퇴직금 고칠 점 4 직접 고침: '1주 15시간 이상/미만' 탭을 임금 카드 맨 끝(상여금 접기 아래)에서 입사·퇴직일자 카드 아래로 옮김 — 대상 여부를 가르는 선택이 결과 조건(재직 1년)과 같은 카드에 있게. 한 화면 안의 배치라 다른 도구 기준과 안 부딪힘. 남은 고칠 점: 1(영웅 숫자 크기, 도구 공통 → product-dev)·3(취향, 기록만).
+
 2026-09-30 17:23~17:50 · 측정·주소 손질 2건(성장 담당 요청 + 디자인 리뷰 고칠 점 2) + 퇴직금 경쟁 분해 · 운영 반영: 안 됨 — dev 푸시(0cd2fd2)는 됐고 main 푸시는 자동 권한 검사(Production Deploy)에서 또 막힘. 사장님이 main 반영을 허락하거나 권한 규칙을 열어야 firemap.kr에 들어감 · 다음: 퇴직금 경쟁 분해(calc-competition/severance.md)·출시 체크리스트 14항목, 그다음 실업급여(10/17) 경쟁 조사
 - PM: 이번에 만들 것 = 새 계산기가 아니라 '잴 수 있는 상태'. 성공 기준 = 10/1부터 firemap_events에서 internal:1 세션을 빼고 셀 수 있고, /calc/severance 주소가 공유돼도 그대로 퍼진다. 목표선 보탬(10월 10만원=월 4만 PV): 직접 PV는 0이지만, 지금 원값 세션 87 중 약 70이 우리 점검(성장 담당 9/30 실측)이라 이걸 못 빼면 어떤 실험도 판정 불가.
 - ① 내부 방문 표시: ?fm_internal=1로 한 번 들어오면 localStorage fm_internal=1, 이후 모든 logEvent props에 internal:1. firemap.kr·www 밖 호스트(localhost·pages.dev)는 props.host. src/utils/live.js 한 곳(gtag 이벤트도 logEvent로 흘러 같이 붙음). 개인정보 없음.

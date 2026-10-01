@@ -56,6 +56,7 @@ def gate(ep):
     if len(secs) < 3 or secs[0] != 0 or any(b - a < 10 for a, b in zip(secs, secs[1:])): bad.append('C9 챕터(00:00 시작·3개 이상·10초 이상)')
     if 'AI 음성' not in d: bad.append('AI 음성 내레이션 명시 없음')
     for u in uploads():
+        if u.get('replaced') or u.get('ep') == m.get('ep', os.path.basename(os.path.normpath(ep))): continue  # 같은 편 교체본·자기 자신은 비교 안 함
         a, b = set(d.split()), set(u.get('desc', '').split())
         if a and len(a & b) / len(a) > 0.8: bad.append('C9 설명이 이전 편과 80% 넘게 같다')
     # C11 · 목소리 빠짐 · 5문항

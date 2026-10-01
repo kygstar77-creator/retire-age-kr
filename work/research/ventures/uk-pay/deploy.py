@@ -23,7 +23,7 @@ def pages():
 
 
 def sha(p):
-    return hashlib.sha256(open(p, 'rb').read()).hexdigest()[:16]
+    return hashlib.sha256(open(p, 'rb').read().replace(b'\r\n', b'\n')).hexdigest()[:16]  # 줄끝(CRLF) 변환에 흔들리지 않게
 
 
 def visible(p):

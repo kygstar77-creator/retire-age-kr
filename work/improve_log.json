@@ -297,5 +297,12 @@
   "task": "[지시·긴급] aitell.py",
   "did": "AI 티 자동 검사 aitell.py+aitell-web.mjs, 발행기 4곳 관문, prebuild 경고, 테스트 2종 통과",
   "blocked": "없음 — 재고: 카페 3편 대기(통과), 블로그는 STOP_blog로 생산 중단"
+ },
+ {
+  "date": "2026-10-01",
+  "hour": 14,
+  "task": "A",
+  "did": "[지시] 카페 #44 말투 수정 적용·사후대조 통과 · aitell --skip-list(기본 꺼짐, 80묶음 재측정) · 블로그 재고 jamwon1001(잠원동 실거래, 자체·읽기 0·aitell 1.0) · perf 카페 중앙 4·최고 60 기록, rules '근거 없음' · offitable 2026-10-01 저장 · fire-cases ESI 478",
+  "blocked": "일감표 1번 카페 발행 빵꾸는 발행 금지 회차라 막힘(15시 write가 couplegap1001) · 지시문의 'crosscheck selfcheck'는 없는 모드 — selfcheck.py가 맞음 · 블로그는 STOP_blog(10/8)"
  }
 ]

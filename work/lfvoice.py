@@ -389,22 +389,51 @@ def fixcut(ep, gi, maxreq=9, dry=False):
         write(wav_of(ep, cfg, t)[1], np.concatenate([pad, pcm[bounds[s0][0]:bounds[e - 1][1]], pad]))
     print('  받아쓰기 맞춤으로 자름', L, '문장'); build(ep); return True
 
+_ONES = {'하나': 1, '한': 1, '둘': 2, '두': 2, '셋': 3, '세': 3, '넷': 4, '네': 4, '다섯': 5, '여섯': 6, '일곱': 7, '여덟': 8, '아홉': 9}
+_TENS = {'열': 10, '스무': 20, '스물': 20, '서른': 30, '마흔': 40, '쉰': 50}
+_SINO = {c: i for i, c in enumerate('영일이삼사오육칠팔구')}
+def _sino(w):   # '사백구십' → 490 (만 아래만 — 만·억·조는 아래 단위 정규화가 맡는다)
+    tot, cur = 0, 0
+    for c in w:
+        if c in _SINO: cur = _SINO[c]
+        else: tot += (cur or 1) * {'십': 10, '백': 100, '천': 1000}[c]; cur = 0
+    return tot + cur
+def readback_num(t, words=False):
+    # 대본·받아쓰기 숫자를 같은 꼴로: 쉼표 빼기, '5천7백'→5700, '8만 4,200'→84200·'27만 5천'→275000('만' 정규화, 2026-10-01 ai-lab 요청 — 거짓 경보였다).
+    # words=True(받아쓰기 쪽만): 한글 숫자→아라비아. 받아쓰기 전용 모델은 '여덟 분기'처럼 들리는 대로 쓴다. 대본 쪽엔 쓰지 않는다
+    # (대본 '세 회사'를 3으로 바꾸면 lite가 '새 회사'로 들은 걸 숫자 틀림으로 잡는다 — 대본에 아라비아로 쓴 숫자만 대조한다).
+    t = t.replace(',', '')
+    if words:
+        t = re.sub(r'(?<![가-힣0-9])(?=[열스서마쉰한하두둘세셋네넷다여일아])(열|스무|스물|서른|마흔|쉰)?(하나|한|둘|두|셋|세|넷|네|다섯|여섯|일곱|여덟|아홉)?(?=\s?(?:분기|달|개|명|번|배|해|살|가지|곳|주|차례))',
+                   lambda m: str(_TENS.get(m.group(1), 0) + _ONES.get(m.group(2), 0)) if (m.group(1) or m.group(2)) else m.group(0), t)
+        t = re.sub(r'(?<![가-힣0-9])([일이삼사오육칠팔구]?[십백천](?:[일이삼사오육칠팔구]?[십백천])*[일이삼사오육칠팔구]?)(?=\s?(?:만|억|조|원|배|%|퍼센트|분기|달|년|월|일|주))',
+                   lambda m: str(_sino(m.group(1))), t)
+    t = re.sub(r'(\d+)\s?천\s?(\d+)\s?백', lambda m: str(int(m.group(1)) * 1000 + int(m.group(2)) * 100), t)
+    t = re.sub(r'(\d+)\s?천', lambda m: str(int(m.group(1)) * 1000), t)          # '9천'='9000'
+    t = re.sub(r'(\d+)\s?백', lambda m: str(int(m.group(1)) * 100), t)
+    t = re.sub(r'(\d+)만\s?(\d{1,4})(?!\d|\.\d|\s?[만억조%배년월일])', lambda m: str(int(m.group(1)) * 10000 + int(m.group(2))), t)
+    t = re.sub(r'(\d+)만(?!\s?\d)', lambda m: str(int(m.group(1)) * 10000), t)
+    return sorted(re.findall(r'\d+(?:\.\d+)?', t))
+
 def readback(ep, only=None):
     # 공개 전 필수(lessons 9): 문장마다 받아써서 대본 숫자와 대조하고, 길이가 대본보다 훨씬 긴 문장(지시문을 읽은 앞머리 의심)을 찾는다.
     # 숫자가 다르게 들리면 다른 받아쓰기 모델 2개로 더 듣고, 셋 중 둘 이상이 대본과 다를 때만 '다시 만들 문장'으로 적는다.
     import io
     v = json.load(open(os.path.join(ep, 'voice.json'), encoding='utf-8')); out, bad = [], []
-    num = lambda t: sorted(re.findall(r'\d+(?:\.\d+)?', re.sub(r'(\d+)천', lambda m: str(int(m.group(1)) * 1000), t.replace(',', ''))))   # '9천'='9000'
+    num = readback_num
     def tx(fn, mdl):
         a, sr = read(fn); buf = io.BytesIO()
         with wave.open(buf, 'wb') as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr); w.writeframes(a.astype(np.int16).tobytes())
-        body = {'contents': [{'parts': [{'inlineData': {'mimeType': 'audio/wav', 'data': base64.b64encode(buf.getvalue()).decode()}},
-                 {'text': 'Transcribe this Korean audio verbatim. Write numbers exactly as spoken using digits.'}]}], 'generationConfig': {'temperature': 0}}
-        for tries in range(3):
+        parts = [{'inlineData': {'mimeType': 'audio/wav', 'data': base64.b64encode(buf.getvalue()).decode()}}]
+        if 'transcribe' not in mdl: parts.append({'text': 'Transcribe this Korean audio verbatim. Write numbers exactly as spoken using digits.'})
+        body = {'contents': [{'parts': parts}], 'generationConfig': {'temperature': 0}}     # 받아쓰기 전용 모델은 지시문 없이 오디오만
+        for tries in range(2 if 'transcribe' in mdl else 3):
+            if 'transcribe' in mdl: time.sleep(21)      # 전용 모델 무료 한도가 작다(ai-lab 10-01 실측 429)
             try:
                 r = json.load(urllib.request.urlopen(urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{mdl}:generateContent?key={key()}",
                     data=json.dumps(body).encode(), headers={'Content-Type': 'application/json'}), timeout=120))
-                return r['candidates'][0]['content']['parts'][0].get('text', '').strip()
+                p0 = r['candidates'][0]['content']['parts'][0]          # 전용 모델은 text가 아니라 audioTranscription.text로 준다
+                return (p0.get('text') or p0.get('audioTranscription', {}).get('text', '')).strip()
             except Exception: time.sleep(10)
         return None
     for si, sec in enumerate(v['sections']):
@@ -412,14 +441,17 @@ def readback(ep, only=None):
             if only and f'{si}:{li}' not in only: continue
             if not l.get('audio'): continue
             fn = os.path.join(PUB, l['audio'].replace('/', os.sep)); want = num(l['text'])
-            h1 = tx(fn, 'gemini-3.5-flash-lite'); votes = [h1]
-            miss = lambda h: [x for x in want if x not in num(h)]          # 대본 숫자가 다 들렸는가(대본의 '열두 달'이 '12달'로 들리는 건 괜찮다)
+            h1 = tx(fn, 'gemini-3.5-flash-lite'); votes = [h1]; models = ['gemini-3.5-flash-lite']
+            miss = lambda h: [x for x in want if x not in num(h, words=True)]          # 대본 숫자가 다 들렸는가(대본의 '열두 달'이 '12달'로 들리는 건 괜찮다)
             if h1 is not None and miss(h1):
-                votes += [tx(fn, 'gemini-3.1-flash-lite'), tx(fn, 'gemini-flash-lite-latest')]
+                # 추가 표 2개 중 하나는 받아쓰기 전용 모델(lite 계열은 같이 흔들린다 — ai-lab/bench/2026-10-01-transcribe.md). 429면 지금처럼 lite 표.
+                h2, m2 = tx(fn, 'gemini-3.5-transcribe'), 'gemini-3.5-transcribe'
+                if h2 is None: h2, m2 = tx(fn, 'gemini-flash-lite-latest'), 'gemini-flash-lite-latest'
+                votes += [h2, tx(fn, 'gemini-3.1-flash-lite')]; models += [m2, 'gemini-3.1-flash-lite']
             wrong = sum(1 for h in votes if h is not None and miss(h))
             slow = est(l['say']) / max(l['sec'] / (l.get('tempo') or 1), 0.1) < 3.6      # 대본보다 훨씬 김 = 지시문 앞머리 의심
             flag = ('숫자 ' if wrong >= 2 else '') + ('길이 ' if slow else '') + ('받아쓰기 실패' if h1 is None else '')
-            out.append({'at': f'{si}:{li}', 'text': l['text'], 'heard': votes, 'flag': flag.strip()})
+            out.append({'at': f'{si}:{li}', 'text': l['text'], 'heard': votes, 'models': models, 'flag': flag.strip()})
             if flag.strip(): bad.append(f'{si}:{li} {flag.strip()} | {l["text"][:30]} | 들림 {votes[-1] and votes[-1][:40]}')
             time.sleep(1)
     json.dump(out, open(os.path.join(ep, 'check', 'voice_readback.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

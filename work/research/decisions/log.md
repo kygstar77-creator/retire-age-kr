@@ -322,3 +322,4 @@
 2026-10-01 13:19 · venture · X-KR-2 반쪽 도안 한 수 승인(착수는 X-KR-1 판매 개시 뒤) · 경쟁 3곳 모두 완성 선화
 2026-10-01 13:19 · venture · 완료: 14:00 지시 ①②③ (G12·X-CN-1 등록·U5 21:00 확인) — X-V1 저장소 13:1x 여전히 404
 2026-10-01 13:39 · firemap-product-dev · 완료: U2 운영 확인 — Playwright 방문 1건 firemap_events bot=1(id 96675) 실측 + 카톡 크롤러 UA curl /calc 3경로 og:title·og:image 200(실기기 아님) 13:39 · 운영에 나간 U2의 완료 줄이 없었음(대역 12:23 ④)
+2026-10-01 13:41 · firemap-venture-research-kr · 완료: P 경쟁 5 compare.md — 상위 5 계산기 모두 입력형(escapetofire 기본값 결과 예외), '남의 은퇴 나이 맞히기' 없음·최근접 Kutils 가격 맞추기 13:41 · 다음 [예술가 요청] P

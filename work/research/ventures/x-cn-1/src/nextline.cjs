@@ -31,7 +31,9 @@
   // 반환: {state, main, after, stamp, sub}
   //  state: open | missed | upcoming | done | stale
   function nextLine(F, verifiedAt, now) {
-    var stamp = md(now) + ' 기준 · ' + F.org + ' 원문 ' + (verifiedAt ? hm(Date.parse(verifiedAt)) : '--:--') + ' 대조';
+    // 대조가 어제였으면 날짜를 붙인다(안 붙이면 다음 날 아침에 '원문 15:45 대조'가 아직 안 온 오늘 오후로 읽힌다).
+    var v = verifiedAt ? Date.parse(verifiedAt) : 0, vk = kst(v);
+    var stamp = md(now) + ' 기준 · ' + F.org + ' 원문 ' + (!v ? '--:--' : (dayNo(v) === dayNo(now) ? '' : vk.m + '/' + vk.d + ' ') + hm(v)) + ' 대조';
     if (!verifiedAt || now - Date.parse(verifiedAt) > DAY) {
       return { state: 'stale', main: '공식 일정 확인하기', after: '', stamp: '', sub: '', href: F.source_url };
     }
@@ -57,7 +59,7 @@
       r.main = '다음: ' + nextTxt + (rel(next.s, now) ? '(' + rel(next.s, now) + ')' : '');
     } else {
       r.state = 'done';
-      r.main = '2026년 접수 일정은 모두 끝났습니다';
+      r.main = '2026년 접수 일정 모두 마감됨';
       r.after = '다음 해 일정은 ' + F.org + ' 공지를 확인하세요';
     }
     return r;

@@ -292,3 +292,4 @@
 2026-10-01 11:39 · designer · 계산기 3개 og c안 적용(9808f52) 디자인 통과 · c안 원본과 바이트 동일·meta만 바뀜·화면 변경 0, 실기기 카톡 확인은 운영 뒤
 2026-10-01 11:42 · planner · calc-3 예술가 반려 수용→'N년 앞당겨져요' 숫자 채택(개월은 코드상 불가), G12 기획서 완성(본부장 승인 전 제작 금지), P 기획 초안+법 참모 · 근거 plans/calc-3.md·g12-workspace-addon.md·guess-retire-age.md
 2026-10-01 11:47 · improve · '[auto] guide' 경로 = 클라우드 루틴 Firemap daily growth(trig_01KmYx7HNYMGjHLy371XGxyc, 09:00, 커넥터로 main 직행) 확인 → 저장소 관문 work/guidegate.py(check·pass·ci)+.github/workflows/guide-gate.yml, 루틴 지시문 문장은 [순돌이 검토] ⑤ · 저장소 밖 루틴이라 저장소에서 발행 직전에 못 물림, 시험 원고 524.2·car-cost 25.1 막힘 확인, 09:14 원본은 5.2라 기준 12로는 안 막힘(빈틈 명시)
+- 2026-10-01 12:08 · firemap-write · 12시 코너 a1cafe1001 발행(firemap/187, verify OK) · couplegap1001 15시 슬롯 작성(세금연금/형식2, 금융소득종합과세 각도) · axisname 별칭 '파이어·자산' 추가 · textrule 1위 갈래·상위 5편 미다룬 차별점

@@ -1,0 +1,6 @@
+# 자체 검증 (제미나이 할당량 없을 때 쓰는 대체 검증)
+# 묶음: couplegap1001 · 종류: cafe · 문장 33개 · 기준 출처: cafe_style/benchmark_2026-09-23.md
+
+[중복] 전체 — "부부" 이미 씀 ← 기초연금 선정기준액 247만원, 해마다 이렇게 오르는 이유 https://cafe.naver.com/ca-fe/cafes/31789001/articles/122 (제목·첫 조각에 있음) — 각도가 다른지 보고, 같으면 hold.txt
+[중복] 전체 — "부부" 이미 씀 ← 배당으로 금융소득 2천만원 넘으려면 원금이 얼마나 있어야 할까? https://cafe.naver.com/ca-fe/cafes/31789001/articles/120 (제목·첫 조각에 있음) — 각도가 다른지 보고, 같으면 hold.txt
+[중복] 전체 — "부부" 이미 씀 ← 정년 뒤 국민연금까지 비는 5년, 헐어 쓸 때와 배당으로 메울 때의 차이 https://cafe.naver.com/ca-fe/cafes/31789001/articles/94 (본문에 3번) — 각도가 다른지 보고, 같으면 hold.txt

@@ -29,7 +29,8 @@ def gate(ep):
     pa = datetime.datetime.fromisoformat(m['publishAt'])
     me = m.get('ep', os.path.basename(os.path.normpath(ep)))   # 같은 편 교체 업로드(옛 판은 비공개로 둠)는 편 수로 세지 않는다
     prev = [datetime.datetime.fromisoformat(u['publishAt']) for u in uploads() if u.get('publishAt') and not u.get('replaced') and u.get('ep') != me]
-    if sum(1 for p in prev if abs((pa - p).total_seconds()) < 7 * 86400) >= 2: bad.append('C1 롱폼 주 2편 넘음')
+    # 2026-10-02 사장님 지시로 '주 2편' 제한 해제 → 하루 1편만(X-YT-FREQ). 주 7편 넘으면 막는다.
+    if sum(1 for p in prev if abs((pa - p).total_seconds()) < 7 * 86400) >= 7: bad.append('C1 롱폼 주 7편 넘음')
     if any(p.astimezone(KST).date() == pa.astimezone(KST).date() for p in prev): bad.append('C1 같은 날 롱폼 2편')
     if not (19 <= pa.astimezone(KST).hour < 21): bad.append('예약 시각이 한국 19~21시 밖')
     if pa < datetime.datetime.now(KST) + datetime.timedelta(minutes=20): bad.append('예약 시각이 너무 가깝거나 지났다')

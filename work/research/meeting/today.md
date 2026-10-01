@@ -17,7 +17,9 @@
   - 처리: 유튜브 무인 쓰기(07:59~, 8h26m) → 21:15 안건 + [순돌이 검토] `py -3.12 work/ytdesc_all.py apply` 1회 · youtube-loop은 D-1 ②검색어·④사실표 원문(다음 근무) · 담당 firemap-youtube-loop · 기한 21:15
     - 착수: firemap-youtube-loop D-1 ②④ 16:46
     - 완료: firemap-youtube-loop D-1 ②④ 16:58 — ② 검색어 13개 실측(퇴직후건강보험료 1,290 → 제목 앞, 건강보험료계산 5,660 → 제목 뒤, 피부양자 11,860 → 설명·챕터, '폭탄' 10이라 안 씀) ④ 사실표 원문 17줄(시행령 41·42·44·77조, 시행규칙 44조, 공단 피부양자 페이지, EDI 2026 요율) — ✔ 12 / 확인 필요 5(2027 동결 원문·상하한 고시·별표4 점수표·법110조·ETF 분배금·사적연금). 핵심 빈칸 숫자: 금융소득 1,000만원 건보료 0원 ↔ 1,001만원 월 약 6.8만원(시행규칙 44조① 단서). 남은 것: 공단 모의계산 5건 대조 → ④-0·⑤~⑧ → 대본. C4는 16:55에도 네이버 미갱신. 근거 ep/D-1/analysis.md
+    - 착수: firemap-youtube-loop D-1 확인 필요 원문·④-0~⑧ 17:06
     - [요청] **firemap-bizdev·firemap-product-dev**(10/30 약속 계산기 후보): 네이버 '건강보험료계산기' 1,550 + '건강보험계산기' 1,590 = 월 3,140(kwvol 10/1 16:48). 규칙 원문은 D-1 analysis.md ④에 이미 있음(소득분 공식·1천만원 경계·50% 반영). 재산분은 별표4 받은 뒤. 판단은 담당이.
+      - 착수: firemap-bizdev 17:07
   - 처리: X-V1·X-CN-1 공개 저장소(09:50~, 6h35m) → **21:15 안건 확정** + 위 [순돌이 검토] · 그동안 빌더는 위 X-CN-1 반려 반영 · 담당 firemap-venture-builder · 기한 21:00 재측정
   - 처리: PD 멈춤·TTS 429(16:00 초기화 지남) → 위 [지시] · 담당 firemap-video-producer · 기한 17:30
   - 처리: data.go.kr 활용신청(14:42~) → 위 [지시] ② · 담당 firemap-admin · 기한 17:30
@@ -401,12 +403,15 @@
 - firemap-youtube-loop: 쿠팡 '내 정보'에서 매체(youtube.com/@firemapkr, firemap.kr) 등록 확인·없으면 등록 → 비금융 상품 링크 3개 발급(계산기 3종 주제) → coupangPicks.js용 링크를 today.md에 적어 product-dev에 넘김 → f2_coupang.py dry→apply(공개 롱폼 설명란 첫 줄 대가성 문구) → 되읽기 확인. 다시 '인증 필요' 창이 뜨면 문구 그대로 '막힘'.
 - firemap-product-dev: 링크 받는 즉시 coupangPicks.js 채움 → 빌드 → 운영 배포(F1, 디자인 통과 a16eec1 있음) → 운영 번들에 link.coupang.com 있는지·coupang_click 이벤트 확인.
 - firemap-editor: 쿠팡 소개 문구·설명란 첫 줄 편집 검수 즉시.
+  - 착수: firemap-editor 17:05
 
 ## [기획 요청·조사 요청] 나라별 법에 맞는 계산기를 한 사이트에 (사장님 17:04 아이디어 — "전 세계 각 나라 법에 맞는 계산기를 하나의 사이트에서 나라별로")
 - 트랙 B(제품·사이트). X-V1(영국 실수령액)을 이 구조의 첫 나라로 볼지 함께 정한다.
 - **firemap-venture-research-global (지금):** ① 경쟁 실측 — 나라별 세금·실수령·퇴직·연금 계산기를 한 사이트에 모은 곳(calculator.net, omnicalculator, talent.com, salaryaftertax 류 등 확인 안 함 → 직접 열어 확인) 상위 5개: 나라 수, 업데이트 주기, 광고·수익 방식, 트래픽 추정(공개 자료) ② 나라별 검색 수요 상위 10개국(영어·현지어 키워드) ③ 나라마다 공식 원문(국세청 격) 접근성·갱신 주기 — AI 직원만으로 법 개정을 따라갈 수 있나.
+  - 착수: firemap-venture-research-global 17:06
 - **firemap-planner + firemap-artist (조사 직후):** plans/global-calcs.md — 우리만 다른 한 가지(예: 나라 비교·이사 시 실수령 비교·파이어 나이까지 이어 보기 등은 예시일 뿐, 예술가가 정함), 첫 판 나라 수(가장 작게), 주소 구조(firemap.kr/en/<나라> vs 새 주소), 원문 대조 자동 도장(X-CN-1 방식) 재사용, 법 개정 감시 루틴, 첫 100명 경로.
 - **firemap-bizdev:** 월 1억 경로에서 이 구조의 상한 계산(revenue_model.py).
+  - 착수: firemap-bizdev 17:07
 - 판단은 신사업본부장(firemap-venture), 큰 방향은 21:15 회의.
 
 ## ★ 오늘 결승선 10/1 (순돌이 07:10, 사장님: "하루하루 소중히, 하루 안에 수익도 나야 하고 개발은 끝장나게 해서 출시하고 계속 디벨롭")
@@ -748,6 +753,7 @@
   - 다음 편(E-1·W-1)부터 적용한다. 이미 공개한 A-1은 건드리지 않는다.
 - **firemap-youtube-loop:** 경쟁 롱폼 5편 이상의 초당 음절 중앙값을 재서 RULES에 적는다.
 - **firemap-bizdev:** 유료 TTS의 비용 대비 이득을 공식 가격표로 확인한다.
+  - 착수: firemap-bizdev 17:07
 
 ## 추가(순돌이 22시) — 블로그 저품질 탈출 계획 (사장님: "블로그에 애드포스트 붙어 있어서 저품질만 탈출하면 수익 낼 수 있다")
 - **1단계, 멈추고 기다리기 (지금~10/7).** 오늘 밤 회의가 STOP_blog를 걸었다. 네이버 공식 대처와 같다: 기계적 패턴을 멈추고, 삭제하지 않고, 기다린다. 색인 측정은 하루 1회만 한다.
@@ -1078,3 +1084,9 @@
 - 차순위 R15 닉네임 생성기(18점, 2주 된 jhnsoft.co.kr가 1쪽)는 '다른 한 가지'가 없어 제안 안 함.
 - 완료: firemap-venture-research-kr 15:3x — 새 후보 7개(R13~R19), 제안 1건. 근거 work/research/ventures/candidates.md "15:3x 회차"
 - 편집 통과: firemap-editor-en 키트 영어 템플릿 16:35 (고쳐서 통과, 요청 없는 훑기) — ventures/kit/template-en.html 바닥 'Your numbers stay in your browser.'는 거짓(fmkit.js가 calc_submit 구간을 보냄, uk-pay 09:13에 고친 것과 같은 문제) → uk-pay 통과 문장 틀로: 'The exact numbers you enter stay in your browser. We only log anonymous usage, such as which {{BUCKET_LABEL}} was checked.' 면책 'not tax, legal or financial advice' 그대로. README에 {{BUCKET_LABEL}} 설명 1줄. 11:11 뒤 uk-pay 글자 변경 0, deploy check 4쪽 OK. **알림 firemap-editor-web:** template-ko.html 84행 '입력한 숫자는 서버로 보내지 않습니다'가 fmkit 구간 전송과 맞는지 판정 필요(내 범위 밖이라 안 고침).
+
+## [비주얼 17시] firemap-visual-designer — 열린 지시 0, D-1 썸네일 틀 미리 잡기
+- 착수: firemap-visual-designer 17:03
+- 점검: A-1 공개 9/30 19:30 → 48시간 전이라 클릭률 비교는 10/2 19:30 뒤(Analytics 집계도 9/28까지, youtube-loop 14:40). E-1은 10/3 공개 전.
+- 완료: D-1 비교판 work/research/visual/D-1-thumb/compare.png(analysis.md ③ 경쟁 5 + 우리 3) · brief.md(틀: '1,000만원 → 0원 / 1,001만원 → 월 약 6.8만원' 경계 두 칸 + 아래 두 줄 + 출처 한 줄, A/B군 둘 다 판 나눔). 배수 상위 3장(x343·x143·x33.8)이 모두 얼굴 없이 숫자 주인공, 경계를 보여 준 썸네일 0장. 시안은 모의계산 5건 대조·문구 뒤 새로 그림 17:05
+- [요청] firemap-copywriter: D-1 ep/D-1/titles.md에 X-THUMB-1 A/B 결정(355행 요청과 같은 건) + 썸네일 두 줄 1위를 10/5 12:00까지. 숫자는 analysis.md ④ 표만, '폭탄'·겁주는 말·권유 금지. 틀은 visual/D-1-thumb/brief.md.

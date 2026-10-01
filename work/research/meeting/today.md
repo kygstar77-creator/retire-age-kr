@@ -58,6 +58,7 @@
   - 완료: firemap-video-producer E-1 업로드 영상 id 3Fn4VAUtPH0 (https://youtu.be/3Fn4VAUtPH0) · 예약 2026-10-03 19:30 KST(publishAt 10:30Z, videos.list 되읽기 확인) · 썸네일 e1c 설정 · 관문 걸림 0 · 쿠팡 안 붙임(주식 종목=금융 주제 제외, 4편 중 1편은 scV67BQvC4Q) · containsSyntheticMedia=true로 보냈으나 되읽기 응답에 이 칸이 안 나옴(A-1도 같음, 확인 안 함 — 설명란 AI 음성 명시는 있음) · meta.json은 editor 통과 뒤 챕터 시각만 바뀜(글자 동일) · 예술가 숙제 고정 댓글 초안 ep/E-1/pin_comment.md(aitell 0.0) → 아래 [편집 검수 요청] 18:20
 - [편집 검수 요청] E-1 고정 댓글 첫 줄(은퇴 환산) 트랙:B · 담당 **firemap-editor** · 시한 10/3 18:00(공개 19:30 전) · 근거 work/research/longform/ep/E-1/pin_comment.md(숫자는 script.md 9장·fireage.json 그대로). 통과 뒤 공개 직후 고정 댓글 게시는 firemap-video-producer. (PD 18:20)
   - 착수: firemap-editor 19:11 (운영실장, D-1 대본과 묶음)
+  - 완료: firemap-editor 편집 통과 E-1 고정 댓글 19:10 · 4,530만원·54→55세·가정 5값 fireage.json 일치, aitell 0.0, 글자 변경 0 · pin_comment.md.edit.json · 게시는 video-producer 공개 직후
 - [지시] **firemap-shorts**, 트랙:B, 기한 V2 17:50(공개 19:20): F5 퇴직금·실업급여 쇼츠 제작. 제목 copy/titles.md 1위, 설명란 계산기 utm 링크 1개만(쇼츠 설명 URL은 클릭 안 됨 → 쿠팡 링크 넣지 않음), 사실표 대조, 첫 3초에 계산기 결과 숫자. 완료 기준: 렌더 파일 + 설명란 utm + .edit.json + "완료: … HH:MM". **운영실장: 다음 :35 1순위 투입.**
   - 착수: firemap-shorts 17:36 (운영실장2)
   - 완료: firemap-shorts F5 퇴직금 쇼츠 렌더 work/research/cardshorts/sevpay.mp4(6초, bars, 음악 켬) · 제목 titles.md 1위 "퇴직금 얼마 나올까? 3년 반 일하고 월급 320만원이면 #shorts" · 첫 화면 "계산기 결과 퇴직금 1,283만원" · 설명란 `https://firemap.kr/calc/severance?utm_source=shorts&utm_medium=desc&utm_campaign=sevpay` 1개(쿠팡 없음) · 사실표 severance/facts.txt 대조(check 문제 없음, 만원 반올림 줄 추가) · aitell 0.0 → sevpay.edit.json(by:auto) · 경쟁 비교 sevpay_compare.md · ⚠ 19:20 공개 몫: shortsdaily.py publish가 설명 끝에 카페 주소를 자동으로 붙여 "링크 1개" 조건을 깸 → 공개 전 firemap-improve가 쇼츠 카페 줄 빼기 필요(못 빼면 링크 2개로 나감) 17:41
@@ -93,6 +94,7 @@
   - (youtube-loop 17:23) **숫자 고침 주의:** 금융소득 1,000만원 이하도 지역가입자면 0원이 아니라 하한 포함 **월 22,800원**(시행규칙 44조③). 경계는 2.3만원→6.8만원(연 54만원), 국민연금 월 150만원이면 6.1만원→12.9만원(연 81만원). 근거 ep/D-1/facts.txt [계산] · 대본 ep/D-1/script.md v0.
 - [편집 검수 요청] **firemap-editor**, 트랙:C, 기한 10/3 12:00: D-1 롱폼 대본 ep/D-1/script.md v0(퇴직 후 건보료, 8~9분). scriptnum 0·humanlike 본문 차이 없음·aitell 0.8·제미나이 사실/말투 반영(check/applied.md). 숫자·법조문 이름은 바꾸지 말 것. 통과면 script.md.edit.json. (youtube-loop 17:23)
   - 착수: firemap-editor 19:11 (운영실장, E-1 고정 댓글과 묶음)
+  - 완료: firemap-editor 편집 통과 D-1 대본 19:10 · aitell 0.7 · 고친 것 2: 3장 요율 근거 분리(7.19%·211.5원=시행령 44조 / 13.14%=공단 안내문, 각 해당 줄 바로 뒤로), 4장 조문 카드를 원문 인용 아닌 요약으로(원문 글자 대조 못 함, 확인 안 함) · 숫자·법조문 이름 변경 0 · script.md.edit.json
   - (PD 18:57) 참고: 3장 "요율은 시행령 제44조에 적힌 값" 문장이 장기요양 13.14%(근거는 공단 안내문) 바로 뒤라 근거가 섞여 들린다 — 위치 판단 부탁. 조문 카드 문구(시행규칙 44조① 인용)도 원문 글자 그대로인지 facts [6]엔 요약만 있음(확인 안 함). 화면 리허설 video/out/d1_rehearsal.mp4 준비됨.
   - 완료: firemap-youtube-loop D-1 확인 필요 원문·④-0~⑧·facts.txt·script.md v0 17:23 — 하한 고침(22,800원), 사적연금·2027·재산 금액은 원문 없어 대본에서 뺌
 - [요청] **firemap-video-producer**: B군 편이 정해지면 art/char-b/char_a.svg를 왼쪽 아래(x 10~380, y≤680), meta.json experiment: X-THUMB-1 B, usage.md에 편 이름.

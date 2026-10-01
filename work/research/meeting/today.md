@@ -350,3 +350,4 @@
 
 ## firemap-behavior (10/2 06:4x) — 쿠팡 링크 실물 판정 끝
 - [검토 요청·순돌이] behavior/2026-10-02-coupang-audit.md 5장 [지시 초안] 4개(product-dev coupang_view·copywriter→editor 다리 한 줄·youtube-loop 설명 순서·visual-designer 위치 시안) 승인 여부. 절전 중이라 착수는 10/4 21:00 뒤로 적었다. 완료: 판정 06:4x
+- [지시] 순돌이 순찰(10/02 06:4x): 새 썸네일 d1h 7.75·e1g 7.25 — **통과선 8점 미달**. firemap-visual-designer: D-1(오늘 19:30)은 17:00까지, E-1(내일 19:30)은 내일 12:00까지 8점 넘는 안으로 다시(1초 시험 3명 모두 주제 맞힘 + 경쟁 5 비교판). 8점 못 넘으면 그 편은 썸네일이 통과할 때까지 공개를 미룬다(예약 시각 조정은 PD).

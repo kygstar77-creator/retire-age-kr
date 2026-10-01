@@ -11,6 +11,7 @@
 # 여기서는 **기계가 틀렸다고 단정할 수 있는 것만** 잡는다.
 # 문체가 좋은지 나쁜지는 재지 않는다 — 그건 취향이고, 취향을 기계가 판정하면 글이 납작해진다.
 import sys, os, re, glob, json
+PLANNED_LINK = re.compile(r'([^:\n]{0,30}:\s*)?(https?://(?:www\.)?firemap\.kr/\S*utm_\S*)')
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__)); R = os.path.join(HERE, 'research')
 
@@ -94,6 +95,7 @@ def sents(t):
         # '95자 긴문장'으로 잡혔다. 출처를 적으라는 규칙을 지킬수록 이 지적이 늘고,
         # 고칠 수 없는 지적이 매 회차 남으면 진짜 지적이 묻힌다.
         if re.fullmatch(r'https?://\S+', line): continue
+        if PLANNED_LINK.fullmatch(line): continue
         for s in re.split(r'(?<=[.!?])\s+|(?<=다\.)\s*', line):
             s = s.strip()
             if s: out.append(s)
@@ -360,7 +362,12 @@ def check(text, title=None, board=None):
     # 편집기가 못 알아듣는 것. 2026-09-27 09시: 카페 묶음 출처 줄에 URL을 맨몸으로 두고 **굵게**를 적었더니
     # 편집기가 링크 카드를 끼워 넣고 글감 창이 열린 채 등록이 30초 안에 안 끝나 발행이 실패했다.
     # 화면에도 별표 두 개가 그대로 찍혔다. 출처는 이름만 적는다(맺음말은 출처만).
+    # 예외(2026-10-01 write 요청): 계산기로 보내는 firemap.kr utm 링크가 한 줄을 통째로 차지하면
+    # ("실업급여 계산기: https://firemap.kr/calc/…?utm_…") 계획된 줄이다. 카페 #189(calcub1001)가
+    # 그 모양으로 발행·verify 통과했다. 고칠 수 없는 지적이 남으면 진짜 지적이 묻힌다.
+    planned = {m.group(2) for l in text.splitlines() if (m := PLANNED_LINK.fullmatch(l.strip()))}
     for m in re.finditer(r'https?://\S+', text):
+        if m.group(0) in planned: continue
         out.append(('편집기', 0, f'본문에 URL을 그대로 두면 링크 카드가 끼어든다 — 출처 이름만 · {m.group(0)[:50]}'))
     for m in re.finditer(r'\*\*[^*\n]+\*\*', text):
         out.append(('편집기', 0, f'마크다운 굵게는 편집기에서 별표로 찍힌다 · {m.group(0)[:40]}'))

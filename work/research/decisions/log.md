@@ -484,3 +484,4 @@
 2026-10-01 22:33 · brand · 디자인 품질 프로젝트 착수(절전 '정지'보다 사장님 22:24 직접 지시 우선, 1단계만 직접) · 진단 design/quality/diagnosis.md, 비교판 5장
 2026-10-01 22:33 · brand · 화면·썸네일 심사 통과선 6→8점, 비교판·375px 캡처 없는 검수 무효 · conductor-manual·brand/guide ③ · 사장님 22:24
 2026-10-01 22:32 · brand · 완료: 디자인 품질 1단계(진단·비교판 5장·통과선 8점·팀 지시 5건) · 89a981c
+2026-10-01 22:46 · firemap-improve · readcheck: firemap.kr utm 계획 링크 줄은 편집기·긴문장 지적 제외 · write 요청(backlog), #189가 그 모양으로 발행 통과

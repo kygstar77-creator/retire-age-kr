@@ -5,7 +5,7 @@
 
 | 직원 | 다음 일 1 | 다음 일 2 | 다음 일 3 |
 |---|---|---|---|
-| firemap-write | 10/2 18·21시 카페 슬롯 묶음(K18 ISA·IRP·연금저축 새 각도, K21) — 15시 nps1002까지 대기 3개 | calcub1001(#189) 계산기 utm 유입 10/2 저녁 재기 → 계산기 소개 카페 글 2편째(퇴직금) 여부 판단 | readcheck가 계획된 utm 링크 줄을 지적하지 않게 예외 규칙(firemap.kr utm 줄만) — improve에 요청 |
+| firemap-write | 10/2 18·21시 카페 슬롯 묶음(K18 ISA·IRP·연금저축 새 각도, K21) — 15시 nps1002까지 대기 3개 | calcub1001(#189) 계산기 utm 유입 10/2 저녁 재기 → 계산기 소개 카페 글 2편째(퇴직금) 여부 판단 | readcheck utm 예외 완료(improve 22:46) |
 | firemap-editor | 이미 공개된 카페 글 조회 많은 순 편집(editor/sweep.md 이어서) | 유튜브 공개 영상 설명·고정 댓글 편집 | 대기 카페 묶음 편집 |
 | firemap-brand-director | 디자인 품질: 10/2 visual-designer 기준선 점수·designer ds-v2.md를 8점 기준으로 대리 판정(디자이너 시안은 디자이너가, 본부장은 비교판 유무·375 캡처만) | 10/3 첫 화면 다시 그리기 시안 vs 토스·뱅크샐러드 비교판 심사 3명 → 8점 미만 반려 | 비교 대상 보강: 같은 일 하는 공개 계산기(카카오페이·KB·국세청 모의계산) 375 캡처 추가해 compare 판 갱신 |
 | firemap-editor-web | 계산기 3종(연봉·퇴직금·실업급여) 메타 설명·검색용 본문(_middleware.js) — 검색 1위 화면과 비교 | 전수 점검 16번(공유·계정·설정·동의)부터, 오류·알림 문구 '잠시 후 다시 해봐요' 기준 | 퇴사 영수증(design/resign-receipt) 그림·시트 글자 확정(10/10) |
@@ -25,7 +25,7 @@
 | firemap-motion-designer | D-1 motion.md(script.md 장면마다 '무엇이 움직이나') + 우선 장면 3개 Remotion 부품·motion_preview — 렌더 전 PD에 넘김 | 재사용 부품 video/src/motion/ 첫 2개(숫자 카운트업·두 종목 대결) + README, 편마다 색·배치 변수 | 경쟁 영상미 분해 motion-bench.md(수페TV·소수몽키 롱폼 2편, 10초당 전환 수·차트 모양·숫자 강조) — ytbreak 한도 안 |
 | firemap-video-producer | D-1 남은 목소리 27문장+0:2 다시(10/2 16시 뒤, 같은 모델) → readback → 렌더 → deess.py → 점수표 → 예약(10/8 이후, 쿠팡 대상) | E-1 교체 [순돌이 검토] 결과 따라 e1_ds.mp4 재업로드 또는 10/3 공개 직후 고정 댓글·앱 화면 썸네일 확인 | 쉿소리 경쟁 비교: 경쟁 롱폼 자동 자막 구간으로 쉿소리/모음 비 실측(받아쓰기 도구 한도 안) → deess 기준 -12dB 근거 보강 |
 | firemap-youtube-loop | 10/2 저녁 A-1 판정(노출·CTR·시청 비율, v3 vs v5a) | E-2 테슬라 script.md v0(facts.txt 11줄·⑤ 9장 표 그대로, 제미나이 두 초안·scriptnum·humanlike → [편집 검수 요청]) + 카피라이터 [요청] 제목 | 10/5 week_2026-10-12.md 주 2편 고르기(E-2 vs 검색 급등 주제, second_opinion 전략) |
-| firemap-improve | guidegate 로컬 관문(today 대역 20:23, 10/2 09:00) | aitell 발행 관문 연결(카페·쇼츠 발행 스크립트 안) | 카페 공식 API 발행 안정화 |
+| firemap-improve | 10/2 09:14 [auto] Cloudflare 빌드 로그에서 guidegate 관문 실행(python3 유무) 확인 | aitell 발행 관문 연결(카페·쇼츠 발행 스크립트 안) | 카페 공식 API 발행 안정화 |
 | firemap-admin | **상황판 제품 2줄(X-V1·X-CN-1) 넣고 다시 게시**(19:2x 템플릿 수정이 권한 검사에 막힘 — 10/2 07:00 재시도) + 10/2 07:00 Claude 주간 % 재측정, 80% 넘으면 비필수 직원 일시정지 목록 회의에 | **토큰 절약 1: 직원 지시문 다이어트** — 공통 규칙을 work/research/common-rules.md 하나로, 각 지시문엔 한 줄 참조(write 53KB·youtube-loop 39KB부터 절반 이하), 원본 백업 | **토큰 절약 2:** decisions/log.md·lessons.md 최근 7일만 남기고 archive + 하루 토큰 상위 직원 5명 표 → 근무 횟수 줄이기 제안 |
 | firemap-ai-lab | **Sonnet 허용 목록 넓히기:** 사실 대조·디자인 심사·코드 수정 3종을 Opus/Sonnet 같은 일감으로 비교(bench/2026-10-01-model-tiers.md 방식) | 클라우드 세션 크레딧($250, 11/5까지) 쓰는 길 — 무인 근무를 원격 에이전트·트리거로 넘기는 방법 시험, 스꾸 저장소 절대 제외 | 3.8-flash-lite-tts vs 3.8-flash-tts 쇼츠 한 단락 나란히 듣기(radar 후보) |
 | firemap-watchdog | 보류 묶음 8개(시효·중복) 정리 제안: 재고 숫자를 부풀려 진짜 재고 부족을 가린다 | garak0929(slot 없음)가 언제 슬롯을 받는지 — 9/29 시세라 발행 전 재조회 필요 여부 표시 | 블로그 STOP 해제 조건(9/23 무색인) 진척을 회차마다 한 줄로 보고 |

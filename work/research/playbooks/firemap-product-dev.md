@@ -27,3 +27,4 @@
 - 체크리스트 추가(10/1): 새 도구 경로 출시 전 `경로#home`·`경로#result`로 새로 열어 도구 화면이 뜨는지(스모크 'leftover hash').
 - (10/1 F3) 다크 카드 안에 segmented Tabs를 넣으면 기본 배경(surface-2)이 떠 보인다 → .ds-card--dark .ds-tabs 보정 추가. 시안의 법 조문 번호는 원문 대조 전엔 화면에 넣지 않는다. 운영 확인은 PLAYWRIGHT_BASE_URL=https://firemap.kr 로 임시 spec을 돌리면 320px 넘침·값 대조가 한 번에 된다.
 - 2026-10-01: 기록을 끄는 가드는 '테스트가 켜는 스위치'(fm_events_on)와 같이 넣는다 — 안 그러면 이벤트 테스트가 전부 깨지거나 가드를 못 넣는다. 운영 반영 뒤 DB에서 운영 기록이 계속 쌓이는지 한 줄 조회로 확인.
+- 2026-10-01: 계산기별 미리보기 그림은 index.html이 아니라 functions/_middleware.js에서 경로별로 바꾼다(빌드 fix-branding-og가 공통 og를 박음) — 로컬 확인은 `npx wrangler@3 pages dev outputs/deploy`로 curl.

@@ -133,6 +133,17 @@ test.describe('firemap smoke', () => {
     expect(last.props.host, '미리보기 호스트 기록').toBe('127.0.0.1');
   });
 
+  test('bot flag: automated visit tags session_start bot:1, no UA stored', async ({ page }) => {
+    const bodies = [];
+    await page.addInitScript(() => { try { localStorage.setItem('fm_events_on', '1'); } catch { /* ignore */ } });
+    await page.route('**/rest/v1/firemap_events', async (route) => { try { bodies.push(JSON.parse(route.request().postData() || '{}')); } catch { /* ignore */ } await route.fulfill({ status: 201, body: '' }); });
+    await page.goto('/calc/salary');
+    await page.waitForTimeout(800);
+    const s = bodies.find((b) => b.event === 'session_start');
+    expect(s && s.props && s.props.bot, 'Playwright(navigator.webdriver) 방문은 bot:1').toBe(1);
+    expect(JSON.stringify(bodies), 'UA 원문 저장 금지').not.toMatch(/Mozilla|AppleWebKit/);
+  });
+
   test('unemployment benefit: hand-check numbers, crawler text is on screen, next step to fire', async ({ page }) => {
     const bodies = [];
     await page.addInitScript(() => { try { localStorage.setItem('fm_events_on', '1'); } catch { /* ignore */ } });

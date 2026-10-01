@@ -1,4 +1,5 @@
 # 제품 개발 일지 (firemap-product-dev) — 최신이 위
+2026-10-01 11:36 · og c안 3계산기 미리보기(_middleware가 /calc/* 경로만 og:image·twitter:image 교체, 630) + session_start bot=1 표시 · 운영 미반영(og 디자인 검수 대기, bot은 같은 배포) · 다음: 디자인 통과 → dev:main → 운영 curl og 3개 200·bot=1 확인 · 목표선 보탬: 카톡·카페 공유 첫 클릭(10월 10만원 방문 쪽, 직접 수익 0) · 디자인 리뷰 요청: work/research/design/og-calc-apply/kakao-preview-375.png
 2026-10-01 09:41 · [지시] F1 fix.patch dev 적용 a16eec1(스모크 32 통과, 운영 미반영) · F10·d5b4330 운영 반영 확인(main 8c18984, 가이드 4편 링크 curl 4/4) · #sSeo /calc 링크 운영 확인 · 디자인 리뷰 요청: F1 쿠팡 칸 dev 재판정(링크 넣은 상태 캡처 필요) · 다음: S3/F8 · 목표선 보탬: F1이 쿠팡 수익 첫 칸, 인증 풀리면 링크만 넣으면 됨
 2026-10-01 08:20 · R7/F10 가이드 4편→계산기 링크 dev 5d1b385 · 운영 미반영(디자인 관문) · 디자인 리뷰 요청: firemap.kr/guide/unemployment-benefit-before-fire 외 3편 · 다음: 통과 뒤 배포, 가이드발 /calc 세션을 referrer로 1주 판정
 2026-10-01 08:11 · S4 로컬·미리보기 호스트 이벤트 끄기 운영 반영(a1d6ccc, 스모크 32 통과, 운영 기록 정상) · F1 쿠팡 인증 창 재발로 멈춤 · 목표선 보탬: 수익 직접 0, 실측 오염 제거로 판정 정확도↑ · 다음: F1(인증 풀리면 즉시) · R7 가이드→계산기 링크(10/2)

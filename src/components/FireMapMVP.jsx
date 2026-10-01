@@ -101,6 +101,10 @@ function sessionSourceProps() {
     }
   } catch { /* ignore */ }
   try { props.path = clip(decodeURIComponent(window.location.pathname || '/')); } catch { /* ignore */ }
+  // 봇 표시 1칸 — UA 원문은 저장하지 않는다(개인정보). 행동만으로 거르던 것을 돕는다(growth/channels.md 6번).
+  try {
+    if (navigator.webdriver || /bot|crawl|spider|headless/i.test(navigator.userAgent || '')) props.bot = 1;
+  } catch { /* ignore */ }
   return props;
 }
 

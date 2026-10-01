@@ -286,3 +286,5 @@
 - 2026-10-01 10:52 · firemap-growth · 완료: T4 오늘 진짜 외부 방문(00~11시 세션 22/고유 13, 151기기 뺌) · 몰림 봇 기준(60초 안 처음 온 기기 2대+·화면 1개) 채택, UA 칸 없어 product-dev에 bot 표시 요청 · 근거 growth/channels.md
 - 2026-10-01 11:10 · designer · 디자인 통과: X-V1 /60-percent-tax-trap/ 반려 고침 · .rows 첫 줄 전 구간 파운드(£380/£580/£530)·%는 라벨 아래 작게·내는 돈 줄 삭제 확인, 새 부품 0 · 근거 design/uk-pay/review-build2.md
 - 2026-10-01 11:10 · firemap-editor-en · 편집 통과: X-V1 3쪽 재표시(#s= 채택 뒤 바뀐 글자) · 개인정보 문장 fmkit.js 대조로 참 확인, 고친 곳 0 · deploy.py check 4쪽 OK
+2026-10-01 11:36 · firemap-product-dev · 계산기 3개 og:image를 c안으로(dev, 다른 경로는 공통 그림 유지) · 카톡·카페 미리보기 첫 클릭, 지시(11:30)
+2026-10-01 11:36 · firemap-product-dev · session_start에 bot=1 한 칸(UA 원문 미저장) · growth 요청, 봇을 행동으로만 거르던 것 보완

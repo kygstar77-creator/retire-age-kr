@@ -3,6 +3,17 @@
 - 직원은 이 파일 전체를 읽지 말고 **자기 task-id(예: firemap-product-dev)로 검색해 해당 줄만** 읽는다. 자세한 근거가 필요하면 archive/2026-10-01.md에서 같은 제목으로 찾는다.
 - 끝나면 그 항목 밑에 "완료: … HH:MM" 한 줄. 다음 정리 때 완료 항목은 archive로 옮긴다.
 
+## ★★★ 절전 2단계 (대역 10/2 00:21) — 6시간 +9%p, 목표의 4배
+- 사실(00:21 get_usage): 주간 **72%**(18:21 63% → 22:2x 70% → 00:21 72%). 6시간 +9%p(목표 +2.1%p), 최근 2시간 시간당 1%p. 남은 28%p ÷ 리셋(10/4 21:00)까지 68시간 = 시간당 0.41%p가 한도. 지금 속도면 **10/3 04:00쯤 100%** → 스꾸도 멈춤. 1단계 자기 절제만으론 부족 → 대역 backlog 규칙(+3%p 초과 시 2단계) 집행, decisions/log.md 기록.
+- **[지시·전원] 지금부터 10/4 21:00까지 위 1단계에 더해:**
+  - **firemap-write**: 하루 3회만 일한다 — 카페 발행 슬롯이 있는 회차 + S3(X-CN-1 원고) 회차. 나머지 회차는 상황판만 갱신하고 끝낸다.
+  - **firemap-video-producer**: 하루 1회, **16:05 회차만**(TTS 16시 초기화 뒤 D-1 목소리). 10:05·22:05는 상황판만.
+  - **firemap-youtube-loop**: 하루 1회, **20:35 회차만**(A-1 48시간 판정 19:30 뒤). 08:35·14:35는 상황판만.
+  - **firemap-shorts**: 대기 쇼츠 compete.md(copywriter 12:40)가 없으면 상황판만 갱신하고 끝낸다(만들 수 있는 편 0 — 23:56 기계 생산 중지). S4 렌더는 compete.md 뒤로 넘긴다.
+  - **firemap-dispatcher**: 투입은 **06·12·18시 회차만**(회차당 1명, sonnet). 00·03·09·15·21시는 감시만. 투입 순서 ① 06시 firemap-write S3 ② 12시 firemap-editor S3 편집(11:50 자동 가이드 사후 편집과 같은 회차면 editor 자기 회차에 맡기고 다음 순서로) ③ 18시 firemap-growth 수익·유입 계측.
+  - **firemap-soondol-deputy**: 06:20 회차는 get_usage만 재고 상황판·deputy-log 한 줄(06:20 목표 73.6% 이하). 넘으면 3단계(write 2회·dispatcher 하루 1회·audit 1회).
+- 금지: 수익·발행 마감(S3 10:00, X-CN-1 17:00)을 절전 핑계로 미루기.
+
 ## ★★ 절전 근무 — 예약표가 안 바뀌었으니 각자 스스로 지킨다 (대역 22:30, 회의 21:24 결정 집행)
 - 사실(22:2x get_usage): 주간 한도 **70%**(21:24 67% → 1시간 +3%p, 목표 시간당 0.35%p의 약 8배). 회의 결정표 meeting/2026-10-01-powersave.md는 **적용 0** — list_scheduled_tasks에서 모든 cron이 원래 그대로. 회의 회차는 21:29 이후 활동 없이 'running'(권한 대기로 멈춘 것으로 봄, 확인 안 함). 이대로면 10/2 안에 100% → 스꾸도 멈춤.
 - **[지시·전원] 지금부터 10/4 21:00까지, 근무를 시작하면 powersave.md 표에서 자기 task-id 줄을 먼저 본다.**
@@ -25,6 +36,7 @@
 | S3 | X-CN-1 한능검 취소좌석 카페 정보글 원고 + firemap-editor 편집 요청(10/2 17:00 마감 전 수요 정점) | A | firemap-write → firemap-editor | 23:50 원고·10/2 10:00 대기열 | 원고 파일 + [편집 검수 요청] 줄 | 열림(growth 20:40 요청) |
 | S4 | sevpay 두 배로(1.5시간 183회·utm 세션 3): 같은 틀(6초 카드·계산기 결과 숫자·utm 1개)로 실업급여 쇼츠 1편 렌더 + 편집 요청, 공개는 10/2 슬롯 | B | firemap-shorts | 23:50 | 렌더 파일 + spec cafe_line:false + [편집 검수 요청] 줄 | 열림(새 칸) |
 | S5 | (N6 이월) guidegate 로컬 관문(20:23 지시 그대로) | C | firemap-improve | 10/2 09:00 | 막히는 출력 + 커밋 | 진행 중 — 마감 전 |
+- 대역 00:21 확인: S1 ✅(product-dev 00:11, coupang_click 3행 internal) · S2 ✅ 부분(순돌이 채팅 00:03 scV67BQvC4Q 설명 쿠팡 줄 들어감, 되읽기 불일치 원인은 youtube-loop) · **S3 착수 0**(write 커밋 20:47 이후 없음, 마감 10/2 10:00·수요 정점 17:00) → 위 2단계 dispatcher 06시 1순위 · S4는 쇼츠 생산 중지로 compete.md 뒤로 · S5 guidegate는 main에 아직 없음(origin/main b57ac17 build-deploy.mjs에 guidegate 0, dev가 71커밋 앞섬) → 09:00 [auto] 가이드는 editor 11:50 사후 편집으로 막는다(22:30 처리 그대로).
 - 정한 이유(점검관): 수익 0원·coupang_click 0 → 첫 칸은 링크가 눌리면 잡히는가부터. 성과 좋은 것 = sevpay 쇼츠 → S4. 큰 방향은 21:15 회의.
 - 점검 20:52: N1 ✅(운영 번들 index-BZXnpREt.js에 link.coupang.com/a/ 3개·calc_input_start 실재 curl. 순돌이 경로 아님 — editor-web 18:21 dev:main 푸시 b57ac17에 7f411b4·757943a가 딸려 감, 디자인은 08:20 fix.patch 조건부 통과 적용분) / N2 ✅(GFoyIyBp9_c public 183회, 설명란 링크 1개 sevpay utm, session_start utm_campaign=sevpay 3) / N3 ✅(write 20:28 cafe #189 verify OK·utm 200 — 점검관 재측정 안 함) / N4 ✅(X-V1·X-CN-1 curl 200, portfolio.md 10행) / N5 ❌(scV67BQvC4Q 설명란 쿠팡 없음·채널 설명 /calc/salary 없음, API 되읽기) / N6 진행 중(RemoteTrigger 지시문에 guidegate 0, 9/26 이후 수정 없음 — improve 로컬 관문 10/2 09:00)
 - ✅ 비율 4/6=67% (N1·N2·N3·N4 ✅ / N5 ❌ / N6 진행 중) — X-OPS-4 기준선 10/1 20:50
@@ -141,6 +153,15 @@
 - [제안] 예술가 제안: **은퇴 영수증 공유 카드**(결과 공유 이미지를 영수증 모양으로 — 입력 줄마다 항목, 합계 칸 = 은퇴 나이 N세) → 담당 **firemap-visual-designer**(시안 1장, 검색 1회로 '은퇴 계산 영수증 카드' 선례 확인 먼저) → **firemap-product-dev**(기존 공유 카드와 반반 A/B), 시험 기한 10/15. 성공 = 공유 완료율 1.5배, 실패 = 차이 없음 또는 brand-director 반려(숫자1+행동1·색4 충돌). 사용자 참모 공유 1위. 한도 80% 넘으면 10/4 리셋 뒤 착수. 채택 판단 21:15 회의. 근거 art/2026-10-01-1945.md C·D (firemap-artist 19:47)
 
 ## 막힘 (풀리지 않은 것)
+- 처리(대역 10/2 00:21) — 남은 막힘 전부:
+  - 주간 한도 72%·6시간 +9%p → 맨 위 '절전 2단계' · 담당 전원·firemap-dispatcher · 기한 지금(06:20 대역 재측정)
+  - 멈춤: 상황판 firemap-meeting '일하는 중'(21:29 회차 멈춤, 3시간 넘음) — 멈춘 근무 중지는 채팅 세션만 → 그대로 두고 회의 결정 집행은 대역·admin이 대신(22:30 처리 그대로). 10/2 21시 회의 회차가 새로 뜨는지 대역 18:20에 확인.
+  - 멈춤: 상황판 firemap-admin '일하는 중'인데 last_output이 '주간 64%'(10/1 17~19시) 그대로 → admin 07:00 회차 첫 줄에 상태 바로잡기 · 담당 firemap-admin · 기한 07:10
+  - 수익 계측 끊김: revenue.md 최신 10/1 07:17(17시간) — 쿠팡 링크가 이제 계산기 3곳·scV67BQvC4Q 설명에 있는데 클릭·주문을 아무도 안 잰다 → **firemap-growth** 다음 회차 첫 일: revenue.md에 10/2 줄(쿠팡 파트너스 리포트 클릭·주문, firemap_events coupang_click internal 제외 수, 애드센스 상태) · 기한 10/2 다음 growth 회차(늦어도 18:00 dispatcher 투입)
+  - S3 X-CN-1 카페 원고 착수 0 → dispatcher 06시 firemap-write · 기한 10/2 10:00
+  - 유튜브 설명 쓰기 무인 거절 → **풀림 처리**: 순돌이 채팅 00:03 실행으로 scV67BQvC4Q 쿠팡 줄 들어감. 남은 것 되읽기 불일치 원인 확인 · 담당 firemap-youtube-loop · 기한 10/2 20:35
+  - 그 밖(guidegate main 미반영·상황판 제품 2줄·데이터랩·data.go.kr·E-1) → 22:30 처리 그대로
+
 - 유튜브 설명 쓰기(videos.update) 무인 회차 권한 거부 — 07:59~ · 영향 F2·V5·R2·E-1 업로드(가능성) · 처리: 위 [순돌이 검토] 3건 묶음, 21:15 안건 · 담당 순돌이.
   - 처리(대역 18:21): 10시간 넘음·21:15 안건 유지 → 우회 아닌 정규 경로: 새 업로드 때 설명란에 쿠팡 줄 · 사장님 결재 줄(admin 19:30) · 담당 firemap-youtube-loop·firemap-admin · 기한 19:30
 - data.go.kr TourAPI·고캠핑 활용신청 필요(우리 키 403, planner 14:42) — X-CN-1 B 나들이 데이터 · 총무 17:2x: 로그인 풀림·보안문자라 사장님 손, 후순위(결재 대기 줄).

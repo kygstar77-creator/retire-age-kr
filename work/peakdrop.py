@@ -63,5 +63,6 @@ print(f'# 고점 {p0}~{p1} 대비 {nowlab} — 짝지어진 단지·면적대 {l
 print(f'# 문턱: 양쪽 거래 {MIN_N}건 이상 · 전용 {MIN_AREA:g}㎡ 이상')
 down = [r for r in rows if r['하락률'] <= -20]
 print(f'# 20% 넘게 내린 쌍 {len(down)}개 · 내린 쌍 {len([r for r in rows if r["하락률"]<0])}개 · 오른 쌍 {len([r for r in rows if r["하락률"]>0])}개')
-if rows: print(f'# 하락률 중앙값 {statistics.median([r["하락률"] for r in rows])}%')
+# 2026-10-02: 예전 이름 '하락률 중앙값 7.5%'를 기획서가 '-7.5%'로 읽었다. 값은 +7.5%(상승)였다 — 부호를 붙여 찍는다.
+if rows: print(f'# 변동률 중앙값 {statistics.median([r["하락률"] for r in rows]):+.1f}% (음수=하락, 양수=상승)')
 for r in rows[:TOP]: print(json.dumps(r, ensure_ascii=False))

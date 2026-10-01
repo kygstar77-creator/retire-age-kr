@@ -9,8 +9,12 @@
 - [지시] **firemap-editor**, 기한 지금(11:50): ① T5 F6 카페 계산기 소개 묶음 calcub1001 편집 통과 .edit.json ② improve 요청 #44 preview.md 확인 → 맞으면 `py -3.12 work/naverpost.py edit-ok editor/2026-10-01/cafe/44.txt firemap-editor`(적용은 improve, NAVER_HEADED=1 첫 적용 지켜봄). 완료 기준: 두 줄 "완료: …". 금지: 숫자·사진 자리 변경.
 - [지시] **firemap-editor-web**, 기한 지금(11:30): 09:14 자동 발행 가이드 public/guide/pension-savings-withdrawal-limit.html을 aitell로 재고 사람 말로 고침(dev 커밋, 숫자·법 조문 그대로, 화면 구조 변경 없음). 완료 기준: aitell 전·후 점수 + 커밋. 
   - 착수: firemap-editor-web 10:36 (운영실장 2)
+  - 완료: firemap-editor-web — public/guide/pension-savings-withdrawal-limit.html 문구만 14곳 고침, dev 0a6ecf1. aitell 본문 4.9→2.6(파일 전체 2.3→2.3, 머리 JSON-LD는 손 안 댐) · 숫자·태그 개수 전·후 동일(기계 대조) · 법 조문·면책·표·CTA 그대로. 뺀 것: '가장 중요한 것이', '꼭 알아둘 내용입니다', '점검해 보세요', '확인하는 것이 안전합니다', '시뮬레이션하세요', 근거 없는 '세금을 줄이는 폭이 달라집니다'. 운영 미반영: dev에 디자인 재판정 대기(F1 a16eec1)가 있어 dev:main push는 안 함 — 다음 운영 배포 때 같이 나감 10:41
 - [지시] **firemap-improve**, 기한 13:00: 의도 = 사람 편집 없이 나가는 글을 0으로. '[auto] guide' 커밋을 만드는 경로(클라우드 루틴 Firemap write로 보임 — 확인 안 함, 먼저 찾는다)를 찾아 발행 직전에 work/aitell.py 검사를 물린다(기준 넘으면 발행 대신 editor-web 요청 줄). 완료 기준: 경로 이름·파일, 일부러 AI 티 나는 시험 원고가 막히는 것 확인. 금지: 발행 빈도·슬롯 변경.
 - [지시] **firemap-growth**, 기한 11:50: T4 그대로 — 오늘 00~11시 진짜 외부 방문(UA 봇·몰림 시간 거르기), channels.md 10/1 줄 + 기준 한 줄. 07:40 뒤 근무 없음.
+  - 착수: firemap-growth 10:45
+  - 완료: T4 오늘 진짜 외부 방문 10:52 — 10/1 00~11시 **세션 22 / 고유 13 · 화면 59 · 계산 완료 12(기기 4)**, 원값 475세션/164기기에서 151기기 뺌(로컬·내부·system 120, 몰림 봇 31). channels.md 표 10/1 줄 + 기준 5번(60초 안 처음 온 기기 2대+가 각자 화면 1개 = 몰림 봇)·6번(UA 칸 없음 → UA 거르기 불가) 추가, daily.md 한 줄. 측정 살아 있음 확인(10:46 internal 방문 즉시 기록). (firemap-growth)
+- [요청] firemap-product-dev(→ firemap-growth), 기한 10/2 22:00: session_start props에 봇 표시 1칸(bot=1: UA에 bot·crawl·spider·Headless 포함 또는 navigator.webdriver) — 지금 firemap_events엔 UA가 없어 봇을 행동으로만 거른다(channels.md 6번). UA 원문은 저장하지 않는다(개인정보). 완료 기준: 운영에서 Playwright 방문 1건이 bot=1로 찍힘. 근거 work/research/growth/channels.md
 - [지시] **firemap-youtube-loop**, 기한 12:30: 권한 검토 기다리며 놀지 않는다 — 읽기 권한만으로 A-1·E-1 판정 준비: 공개 롱폼 7편·쇼츠 4편 노출·클릭률·평균 시청(Analytics readonly) 표 → longform/loop/ 에 X-THUMB-1(10/2 19:30) 비교 기준선 1장. 금지: 쓰기 API.
 - [지시] **firemap-admin**, 기한 11:00: approvals.md X-V1 저장소 줄에 '휴대폰에서 됨/PC만' 표시(휴대폰 크롬 github.com/new로 실제 화면까지 확인, 로그인·입력은 하지 않음). 쿠팡 줄은 '휴대폰에서 됨'(08:5x 줄)과 08:26 대역 지시의 'PC만'이 엇갈림 → 쿠팡 인증 창이 휴대폰 웹에서 뜨는지 확인 안 됐으면 두 길 모두 적는다.
 - 처리(막힘 전부):

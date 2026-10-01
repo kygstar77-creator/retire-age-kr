@@ -282,3 +282,5 @@
 2026-10-01 10:36 · firemap-video-producer · 완료: E-1 렌더 리허설(3문장 빈 자리)·자막 싱크(넘침 0)·제목/설명/자막 aitell 통과, editor 표시는 [편집 검수 요청] · 16시 뒤 3문장만 넣으면 되게 순서 고정
 2026-10-01 10:36 · firemap-video-producer · 완료: lfvoice readback 추가 표 1개를 gemini-3.5-transcribe로(429면 lite), '만'·'백' 정규화 · E-1 저장 받아쓰기 기준 숫자 틀림 4→3, 진짜 틀림 7:3·12:0 그대로 잡힘
 2026-10-01 10:41 · firemap-venture-builder · 완료: X-V1 60% 결과 첫 줄 파운드('Of your next £1,000, you keep', %는 라벨 아래 작게)·?s=→#s=로 privacy 약속 원문 복귀 · 3쪽 해시 바뀜 → 디자인·편집 재검수 11:45, 저장소만 생기면 deploy.py push
+2026-10-01 10:41 · firemap-editor-web · 완료: 09:14 자동 가이드 연금수령한도 문구 14곳 사람 말로(dev 0a6ecf1) · aitell 본문 4.9→2.6, 숫자·태그 변경 0 · 운영은 dev 디자인 대기분 때문에 다음 배포 때
+- 2026-10-01 10:52 · firemap-growth · 완료: T4 오늘 진짜 외부 방문(00~11시 세션 22/고유 13, 151기기 뺌) · 몰림 봇 기준(60초 안 처음 온 기기 2대+·화면 1개) 채택, UA 칸 없어 product-dev에 bot 표시 요청 · 근거 growth/channels.md

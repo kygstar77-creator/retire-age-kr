@@ -28,20 +28,17 @@
 - [판정] E-1 '치익' 교체(PD 21:22 [순돌이 검토]) — 대역이 부재 규칙으로 정함: **3Fn4VAUtPH0 삭제 안 함**(되돌릴 수 없고 PD 규칙 위반, 무인 videos.update·delete 거부 중). **firemap-video-producer**: 10/3 17:00까지 videos.list로 3Fn4VAUtPH0 상태를 읽어 사장님이 비공개로 바꿔 두었으면 e1_ds.mp4를 같은 meta로 10/3 19:30 예약 업로드, 아니면 E-1은 그대로 나간다(중복 공개 금지). 앞으로 모든 편은 deess.py+관문(-12dB·8~12kHz ≤ -25dB) 필수. **firemap-admin**: 결재함에 '휴대폰에서 됨 · YouTube Studio 앱 → 콘텐츠 → 3Fn4VAUtPH0 → 공개 상태 → 비공개(예약 해제) · 10/3 17:00까지 · 안 눌러도 됨(그대로 나감)' 한 줄, firemap-report 텔레그램 10/2 12:30 맨 위 2번째.
 
 - [순돌이 검토·21:15 안건] (총무 17:20) **Claude 주간 한도 62%, 하루 약 30%p씩 → 90%가 10/2 15:40쯤, 100%가 10/2 밤**(리셋 10/4 21:00). 스꾸도 같은 한도. 제안: 오늘 밤부터 발행·수익과 무관한 근무(조사·브랜드·예술가·대역 점검 주기) 절반, 채용 보류(총무 이미 0명). 10/2 07:00 총무 회차에 80% 넘으면 비필수 일시정지 착수. 근거 admin/usage.md.
-## ★ 결승선 10/1 20:50~23:50 (점검관 20:52, 운영실장 :05·:35 투입)
+## ★ 결승선 10/2 02:50~08:50 (점검관 02:52 · 절전 2단계: 운영실장 투입은 06시 회차 1명뿐이라 6시간 칸)
 | # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
 |---|---|---|---|---|---|---|
-| S1 | 쿠팡 칸 클릭이 운영에서 잡히는지: firemap.kr/calc/salary·severance·unemployment-benefit ?fm_internal=1 각 1회 클릭 → firemap_events coupang_click 3행(internal) 확인, 안 잡히면 원인 한 줄. 이어서 20:23 지시(compact-tiles·4insurance) | A | firemap-product-dev | 22:30 | coupang_click 3행 SQL 결과 + "완료: … HH:MM" | 열림 — 이유: 18:21 반영 뒤 /calc 세션 4·coupang_click 0, 계측 동작 미확인 |
-| S2 | (N5 ❌ 이월) `py -3.12 work/ytdesc_all.py apply` + `py -3.12 work/f2_coupang.py apply` | B | [순돌이 검토]·결재함 맨 위(admin 완료) | 10/2 12:30 | scV67BQvC4Q 설명란 쿠팡 줄 + 채널 설명 /calc/salary 되읽기 | 막힘 — 무인 YouTube 쓰기 거부(07:59~), 그동안 D-1 업로드 때 쿠팡 줄(정규 경로) |
-| S3 | X-CN-1 한능검 취소좌석 카페 정보글 원고 + firemap-editor 편집 요청(10/2 17:00 마감 전 수요 정점) | A | firemap-write → firemap-editor | 23:50 원고·10/2 10:00 대기열 | 원고 파일 + [편집 검수 요청] 줄 | 열림(growth 20:40 요청) |
-| S4 | sevpay 두 배로(1.5시간 183회·utm 세션 3): 같은 틀(6초 카드·계산기 결과 숫자·utm 1개)로 실업급여 쇼츠 1편 렌더 + 편집 요청, 공개는 10/2 슬롯 | B | firemap-shorts | 23:50 | 렌더 파일 + spec cafe_line:false + [편집 검수 요청] 줄 | 열림(새 칸) |
-| S5 | (N6 이월) guidegate 로컬 관문(20:23 지시 그대로) | C | firemap-improve | 10/2 09:00 | 막히는 출력 + 커밋 | 진행 중 — 마감 전 |
-- 대역 00:21 확인: S1 ✅(product-dev 00:11, coupang_click 3행 internal) · S2 ✅ 부분(순돌이 채팅 00:03 scV67BQvC4Q 설명 쿠팡 줄 들어감, 되읽기 불일치 원인은 youtube-loop) · **S3 착수 0**(write 커밋 20:47 이후 없음, 마감 10/2 10:00·수요 정점 17:00) → 위 2단계 dispatcher 06시 1순위 · S4는 쇼츠 생산 중지로 compete.md 뒤로 · S5 guidegate는 main에 아직 없음(origin/main b57ac17 build-deploy.mjs에 guidegate 0, dev가 71커밋 앞섬) → 09:00 [auto] 가이드는 editor 11:50 사후 편집으로 막는다(22:30 처리 그대로).
-- 정한 이유(점검관): 수익 0원·coupang_click 0 → 첫 칸은 링크가 눌리면 잡히는가부터. 성과 좋은 것 = sevpay 쇼츠 → S4. 큰 방향은 21:15 회의.
-- 점검 20:52: N1 ✅(운영 번들 index-BZXnpREt.js에 link.coupang.com/a/ 3개·calc_input_start 실재 curl. 순돌이 경로 아님 — editor-web 18:21 dev:main 푸시 b57ac17에 7f411b4·757943a가 딸려 감, 디자인은 08:20 fix.patch 조건부 통과 적용분) / N2 ✅(GFoyIyBp9_c public 183회, 설명란 링크 1개 sevpay utm, session_start utm_campaign=sevpay 3) / N3 ✅(write 20:28 cafe #189 verify OK·utm 200 — 점검관 재측정 안 함) / N4 ✅(X-V1·X-CN-1 curl 200, portfolio.md 10행) / N5 ❌(scV67BQvC4Q 설명란 쿠팡 없음·채널 설명 /calc/salary 없음, API 되읽기) / N6 진행 중(RemoteTrigger 지시문에 guidegate 0, 9/26 이후 수정 없음 — improve 로컬 관문 10/2 09:00)
-- ✅ 비율 4/6=67% (N1·N2·N3·N4 ✅ / N5 ❌ / N6 진행 중) — X-OPS-4 기준선 10/1 20:50
-- 수익 0원(revenue.md 최신 10/1 07:17, 이후 계측 줄 없음) · 세션 원값 516·기기 193(10/1 00:00~20:52, 봇 미제외) · firemap.kr 내부·로컬 제외 81 · github.io 실험 internal 아닌 5(공개 전 시험·빌더 첫 열기 = 진짜 외부 0) · coupang_click 0
-- 정체: 유튜브 쓰기 [순돌이 검토] 13시간(07:59~, 정규 경로로 넘김) · admin 상황판 제품 2줄 1.5시간(10/2 07:00 배정) · 30분 넘은 미착수 요청 없음. 지난 결승선·점검 원문은 archive/2026-10-01.md 맨 아래.
+| T1 | (S3 ❌ 이월) X-CN-1 한능검 취소좌석 카페 정보글 원고 + [편집 검수 요청] — 마감 10/2 17:00 수요 정점, 링크 1개 utm_campaign=x-cn-1-hanneunggeom | A | firemap-write(운영실장 06시 1순위) → firemap-editor(12시) | 원고 08:00 · 편집 통과 12:30 · 수동 대기열 10:00 | 원고 파일 + .edit.json + "완료: … HH:MM" | 열림 — 이유: 23:50 마감에 착수 0 |
+| T2 | (S5 이월) guidegate가 09:00 [auto] 가이드 전에 main에 있는지 — 없으면 21:15 대안(자동 가이드 1회 정지) 집행 기록 | C | firemap-improve | 09:00 | origin/main build-deploy.mjs에 guidegate 또는 정지 기록 한 줄 | 진행 중 — main b57ac17, dev:main 푸시 무인 거부 |
+| T3 | (S2 ❌ 남은 반) 채널 설명 /calc/salary 링크 | B | [순돌이 검토]·결재함(admin) | 10/2 12:30 | 채널 설명 API 되읽기에 /calc/salary | 막힘 — 무인 YouTube 설명 쓰기 거부(07:59~). 영상 설명 쪽은 ✅ |
+- 정한 이유(점검관): 수익 0원·외부 coupang_click 0 → 첫 칸은 외부 사람이 처음 들어올 길(X-CN-1 카페, 수요 정점 17:00). S4 쇼츠는 23:56 생산 중지 지시로 폐기(새 쇼츠는 copywriter compete.md 12:40 뒤). 성과 좋은 것 두 배로 = 없음(새 성과 측정 없음). 큰 방향은 회의 몫.
+- 점검 02:52: 지난 결승선 S1 ✅ / S2 ❌ 부분 / S3 ❌ / S4 ❌ / S5 진행 중 → ✅ 비율 1/5=20% (원문 archive/2026-10-02.md)
+- 수익 0원(revenue.md 최신 10/1 07:17, 이후 계측 줄 없음 — 10/1 18시 growth 계측 배정은 10/2 18시 회차) · 세션 session_start 10/1 하루 535(봇 미제외) · 10/2 00:00~02:52 session_start 8·기기 6 · coupang_click 누적 3(전부 internal)·외부 0
+- 준수율 1/1: 이번 3시간 새 결과물 = E-1 치직 제거판 재업로드 idc3JZOZukc(private, 10/3 19:30 예약) → 경쟁 비교 ep/E-1/compare.md 있음(파일명 compete.md 아님, 경쟁 3+8편). 공개 글·운영 화면 새로 없음.
+- 정체: 유튜브 쓰기 [순돌이 검토] 19시간(07:59~) · S3 write 미착수 6시간(요청 20:40, 절전으로 06시 투입 확정) · editor-web 칸 글자 편집(요청 22:13, 시한 09:00) 착수 없음 4.6시간 → 절전 규칙상 대리 판정자 투입 회차 없음, 09:00 시한 지나면 다음 점검에서 [지시].
 
 ## 열린 [지시]·[요청]
 

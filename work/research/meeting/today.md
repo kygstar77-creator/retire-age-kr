@@ -16,6 +16,8 @@
   - 착수: firemap-designer 11:38 (운영실장 2)
   - 완료: **디자인 통과: 계산기 3개 카톡 미리보기 og c안 11:39** (firemap-designer) — public/og_*_c.png 3장이 visual/og-calc c안과 바이트 동일(cmp), 1200×630. 9808f52 변경은 toolPages.js og 필드 3개 + middleware가 og:image·secure_url·width·height·twitter:image만 바꿈(화면 0·새 부품 0). 모사 375에서 숫자 자리 다크 카드·주황 '몇 살' 1곳이 그림 안에 보임(우리만 다른 한 수 유지). 막지 않는 메모 1: 카드 제목·설명은 실기기에서 잘림 위치 확인 안 함 — 운영 배포 뒤 카톡 실기기 1장 확인 권함. product-dev 운영 진행 가능.
 - [지시] **firemap-editor**, 기한 지금(11:50): ① T5 F6 카페 계산기 소개 묶음 calcub1001 편집 통과 .edit.json ② improve 요청 #44 preview.md 확인 → 맞으면 `py -3.12 work/naverpost.py edit-ok editor/2026-10-01/cafe/44.txt firemap-editor`(적용은 improve, NAVER_HEADED=1 첫 적용 지켜봄). 완료 기준: 두 줄 "완료: …". 금지: 숫자·사진 자리 변경.
+  - 착수: firemap-editor 12:05
+  - 완료: firemap-editor ① **편집 통과: calcub1001 12:09** — c00~c04 aitell 전부 0.0, humanlike 차이 없음. c01·c02 어미 2곳만 손봄('불과하지만…달라집니다'→'차이뿐인데…벌어지죠', '달라집니다'→'달라지죠', 원본 .orig, 숫자 목록 전후 동일). 표시 pkg/.edit.json(c00~c04 sha). 20시 write 회차 그대로 발행 가능 ② #44 preview.md 확인 — 사진 3장 자리·숫자 99개 동일, 말투만(AI 티 52.6→0.0) → `edit-ok` 통과 표시 c2a6c5466ada 찍음. **[요청] firemap-improve:** 적용(NAVER_HEADED=1 첫 적용). 12:09
 - [지시] **firemap-editor-web**, 기한 지금(11:30): 09:14 자동 발행 가이드 public/guide/pension-savings-withdrawal-limit.html을 aitell로 재고 사람 말로 고침(dev 커밋, 숫자·법 조문 그대로, 화면 구조 변경 없음). 완료 기준: aitell 전·후 점수 + 커밋. 
   - 착수: firemap-editor-web 10:36 (운영실장 2)
   - 완료: firemap-editor-web — public/guide/pension-savings-withdrawal-limit.html 문구만 14곳 고침, dev 0a6ecf1. aitell 본문 4.9→2.6(파일 전체 2.3→2.3, 머리 JSON-LD는 손 안 댐) · 숫자·태그 개수 전·후 동일(기계 대조) · 법 조문·면책·표·CTA 그대로. 뺀 것: '가장 중요한 것이', '꼭 알아둘 내용입니다', '점검해 보세요', '확인하는 것이 안전합니다', '시뮬레이션하세요', 근거 없는 '세금을 줄이는 폭이 달라집니다'. 운영 미반영: dev에 디자인 재판정 대기(F1 a16eec1)가 있어 dev:main push는 안 함 — 다음 운영 배포 때 같이 나감 10:41
@@ -73,6 +75,8 @@
   - 착수: firemap-video-producer 10:12 (운영실장)
   - 완료: E-1 렌더 리허설(3문장 빈 자리, 5.5음절/초 어림 길이) work/video/out/e1_rehearsal.mp4 9:40.5·1920x1080·yuv420p — 무음은 빈 3곳(1:30.4·5:51.0·9:08.7)과 로고(0:37.8)뿐, 빈 자리에도 자막은 뜬다 · 자막 싱크: 목소리 85문장 모두 자막 칸 안에 들어감(넘침 0, 문장 뒤 여유 8.0~8.8프레임, 자막·소리 시작 같은 lineStarts) · 프레임 6장 눈 검사 이상 없음 · aitell: 제목 0.0·설명 5.6(기준 12)·자막 전문 2.8 통과 → editor 통과 표시는 아래 요청 · 16시 뒤 순서: lfvoice make → readback 3:7,7:3,12:0 → e1props → render(out/e1.mp4) → check → e1meta → ytlong up 10:36 (firemap-video-producer)
   - [편집 검수 요청] firemap-editor · 기한 16:00 · E-1 script.md·meta.json desc — aitell 통과(설명 5.6, 자막 2.8)지만 script.md에 편집 통과 표시(.edit.json)가 없어 남은 3문장 목소리를 못 만든다. 85문장은 목소리가 이미 있으니 문구 변경은 3:7·7:3·12:0 세 문장 안에서만(숫자 그대로).
+    - 착수: firemap-editor 12:05
+    - 완료: **편집 통과: E-1 script.md·meta.json desc 12:09** (firemap-editor) — 3:7·7:3 그대로 통과, 12:0만 '정리하면,' 뺀 한 문장으로('영업이익은 1년 전 같은 분기보다 세 회사 모두 6배에서 19배 늘었고, 주가는 3배에서 6.5배 올랐습니다.' 숫자 동일, 원본 script.md.orig). aitell 1.2(전 1.2), 85문장 변경 0. 표시 script.md.edit.json·meta.json.edit.json. video-producer 16:00 뒤 lfvoice make 진행 가능.
 - [순돌이 검토] ① 유튜브 설명 쓰기(videos.update)가 무인 회차 자동 권한 검사에 막힘 — calc_links.py·f2_coupang.py apply 허용 규칙을 넣을지, 채팅 세션에서 한 번 돌릴지(권한 설정 변경은 대역이 안 함). ② Claude 주간 한도 50%(10-03 바닥 예상) — 총무 제안(운영실장 1명·점검 하루 3회 등)을 workflow.md와 맞춰 결정. ③ '지시문 추가 필요'의 ?fm_internal=1 한 줄(7개 지시문) 아직 안 들어감.
 
 ## [지시·긴급] 새 계산기 주소가 휴대폰에서 파이어맵 첫 화면으로 떨어짐 (순돌이 → firemap-product-dev, 지금, F1보다 먼저)

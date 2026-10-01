@@ -323,5 +323,9 @@
 ## [지시·긴급] 썸네일 후킹·한눈에 (사장님 10/02 06:17)
 - firemap-visual-designer + firemap-copywriter, 지금: ① 오늘 나갈 롱폼(D-1 또는 E-2)·쇼츠 2편·내일 E-1 썸네일을 '1초 시험'(지시문 새 규칙)으로 다시 판정 → 떨어지면 새로 만든다 ② 공개 중 영상 썸네일 전부 1초 시험 → 클릭률 낮은 순으로 교체 후보 3개. 결과 work/research/visual/onesec-2026-10-02.md(비교판 경로·심사 문장·점수).
   - 착수: firemap-visual-designer 06:18
+  - 완료(1차·통과 못 함): firemap-visual-designer 06:30 — visual/onesec-2026-10-02.md. **D-1 d1d·E-1 e1c 둘 다 1초 시험 탈락**(글자 과밀·큰 숫자 2개). 새 1위 **ep/D-1/thumb_d1h.png 평균 7.75**(제미나이 lite 8·레드팀 7.5) · **ep/E-1/thumb_e1g.png 7.25** — 8 미달·GPT 심사 안 함. 09:00 회차에 남은 지적 고쳐 재심사(GPT 포함) → 결과 줄 이 아래.
+  - [넘김] **firemap-video-producer** 16:05: D-1 업로드 썸네일 = 09:00 회차 결과 줄의 최종본, 그 줄이 없으면 **thumb_d1h.png**(현 d1d보다 높음). meta experiment X-THUMB-2 B(한 줄 큰 숫자).
+  - [요청] **firemap-copywriter** 기한 10/2 17:00: E-1 제목이 새 썸네일(e1g '분기 영업이익 19배 / 주가 3.3배')과 같은 말 반복 → titles.md 3번 '삼성전자·SK하이닉스 주가, 이익만큼 올랐을까? 8분기 공시로 확인'으로 바꿀지 결정(레드팀 추천). 못 바꾸면 E-1 썸네일은 e1a. 결정을 ep/E-1/titles.md 맨 위에.
+  - [요청] **firemap-shorts**: 오늘 쇼츠 2편 첫 화면 PNG를 cardshorts/<편>/cover.png로 남겨 주면 17:00 회차에 1초 시험. 공개 중 쇼츠 교체 후보 3(XzMCiAwQhAo·KiHLbeioWNg·P8Papm8Yxpw, 168px에서 순위표 글자 안 읽힘) — 표지 바꾸기가 무인으로 되는지 확인 한 줄.
 - [지시] 대본·카피 심사 관문 추가(사장님 10/02 06:18): 롱폼 대본·쇼츠 원고·제목·썸네일 문구·설명 첫 줄·카페 제목 모두 심사 3명 평균 8점(경쟁 5 비교) 뒤 공개. 편 폴더 review.md. 담당 지시문 6개에 반영(youtube-loop·video-producer·copywriter·shorts·editor·write). firemap-improve: ytlong·shortsdaily·naverpost가 review.md(8점 이상) 없으면 거절하는 코드 관문(10/3).
 - [추가 근거 → 콘텐츠 회고(12:00)] 사장님 10/02 06:24 카페 화면 캡처: 회원 2명, 10/1 글 조회 0·6·16·1, 댓글 전부 0. 순돌이가 본 문제 ① 글 제목이 전부 '~할까?' 질문 한 틀(실업급여 '왜 비슷할까?'·국민연금 '얼마 있어야 할까?'·커버드콜 '왜 적었을까?'·메인스트리트 '몇 주 필요할까?') ② 목록 썸네일이 작은 표 캡처라 목록 크기에서 아무것도 안 읽힘(1초 시험 탈락) ③ 같은 날 비슷한 금융 계산 글 연속. → firemap-write·firemap-editor·firemap-visual-designer: 카페 제목도 대본·카피 심사(8점·경쟁 카페 상위 5 비교)와 '같은 틀 3번 넘게 반복 금지' 적용, 카페 대표 이미지도 썸네일 1초 시험 적용(표 캡처 금지, 숫자 1개 크게). firemap-growth: 카페 글 조회가 어디서 오는지(네이버 검색·카페 홈·외부) 실측.

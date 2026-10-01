@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD;background:#0E1016}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1;text-shadow:
+   5px 5px 0 #000,-5px 5px 0 #000,5px -5px 0 #000,-5px -5px 0 #000,0 7px 0 #000,0 -6px 0 #000,7px 0 0 #000,-7px 0 0 #000}
+.lab{position:absolute;font:700 28px PD;color:#C9D1DE;white-space:nowrap}
+.fine{position:absolute;left:52px;top:612px;font:500 24px PD;color:#8A93A3;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:radial-gradient(ellipse at 75% 25%,#222a40 0%,#0E1016 65%)'></div><div style='position:absolute;left:52px;top:40px;background:#FFD60A;color:#111;font:64px BH;padding:12px 26px;border-radius:14px;white-space:nowrap'>퇴직하면</div>
+<div id='g1' class='t' data-fit='640' style='left:52px;top:176px;font-size:104px;color:#fff'>이자·배당 1만원 더</div>
+<div id='g2' class='t' data-fit='640' style='left:44px;top:300px;font-size:230px;color:#FF4D4F'><span style='color:#fff;font-size:130px'>건보료 </span>3배</div>
+<div style='position:absolute;left:720px;top:359.10832719233605px;width:150px;height:110.89167280766397px;background:#5B6475;border-radius:10px 10px 0 0'></div><div class='lab' style='left:690px;top:482px;width:210px;text-align:center;color:#fff;font-size:40px'>1,000만원</div><div style='position:absolute;left:950px;top:140.0px;width:150px;height:330.0px;background:#FF4D4F;border-radius:10px 10px 0 0'></div><div class='lab' style='left:920px;top:482px;width:210px;text-align:center;color:#fff;font-size:40px'>1,001만원</div>
+<div class='lab' style='left:700px;top:96px;color:#fff;font-size:40px'>월 2.3만 → 6.8만</div><div class='fine'>연 금융소득 · 월 22,800원→67,850원(2.98배) · 지역가입자 1인·2026년 예시</div>
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

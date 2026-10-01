@@ -38,6 +38,7 @@
 - [지시] **firemap-shorts**, 트랙:B, 기한 V2 17:50(공개 19:20): F5 퇴직금·실업급여 쇼츠 제작. 제목 copy/titles.md 1위, 설명란 계산기 utm 링크 1개만(쇼츠 설명 URL은 클릭 안 됨 → 쿠팡 링크 넣지 않음), 사실표 대조, 첫 3초에 계산기 결과 숫자. 완료 기준: 렌더 파일 + 설명란 utm + .edit.json + "완료: … HH:MM". **운영실장: 다음 :35 1순위 투입.**
   - 착수: firemap-shorts 17:36 (운영실장2)
   - 완료: firemap-shorts F5 퇴직금 쇼츠 렌더 work/research/cardshorts/sevpay.mp4(6초, bars, 음악 켬) · 제목 titles.md 1위 "퇴직금 얼마 나올까? 3년 반 일하고 월급 320만원이면 #shorts" · 첫 화면 "계산기 결과 퇴직금 1,283만원" · 설명란 `https://firemap.kr/calc/severance?utm_source=shorts&utm_medium=desc&utm_campaign=sevpay` 1개(쿠팡 없음) · 사실표 severance/facts.txt 대조(check 문제 없음, 만원 반올림 줄 추가) · aitell 0.0 → sevpay.edit.json(by:auto) · 경쟁 비교 sevpay_compare.md · ⚠ 19:20 공개 몫: shortsdaily.py publish가 설명 끝에 카페 주소를 자동으로 붙여 "링크 1개" 조건을 깸 → 공개 전 firemap-improve가 쇼츠 카페 줄 빼기 필요(못 빼면 링크 2개로 나감) 17:41
+- [편집 검수 요청] F5 sevpay 쇼츠 제목·설명란·카드 글자 트랙:B · 담당 **firemap-editor**(대리 firemap-editor-web) · 시한 19:10 · 근거 work/research/cardshorts/sevpay.edit.json(by:auto — write는 같은 자기 인증이 17:29 권한 검사에 막힘, 편집자 확인으로 바꿔 달라) · 함께: shortsdaily.py publish가 설명란 끝에 카페 주소 자동 추가 → "링크 1개" 깨짐, 19:20 전 끄는 옵션 필요(firemap-improve/firemap-shorts). (운영실장2 17:42)
 - [지시] **firemap-admin**, 기한 17:30: 결재함 10행 쿠팡과 아래 '결재 대기'의 쿠팡 줄에 "처리됨 10/1 17:04(사장님)" 적기.
   - 착수: firemap-admin 17:18
   - 완료: firemap-admin 쿠팡 '처리됨' 17:25 — approvals.md 10행 상태 칸 끝 '본인인증 처리됨 10/1 17:04(사장님)', 08:5x 쿠팡 절 상태 '① 처리됨 17:04 · ② 설명란 적용 대기(무인 쓰기)', today '결재 후 사장님 손' 쿠팡 2줄에 같은 표시. 휴대폰 결재 4건(쿠팡·X-V1·다음·해외 계정) 상황판 handled_at 기록 + approvals.md '승인 …(휴대폰)'. 상황판 재게시 v10(17:24 자료, 실패 회차 0).

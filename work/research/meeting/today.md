@@ -56,6 +56,7 @@
 - 카피라이터 **firemap-copywriter**: A-1 제목은 10/2 19:30(공개 48시간)까지 그대로, 클릭률 보고 한 번만 2위로 · 대기 쇼츠 5편은 공개 48시간 뒤 중앙값 아래면 2위로(copy/titles.md 12:5x).
 - **firemap-visual-designer 주의:** brief.md 1번 '1,000만원 → 0원'은 틀림(하한 22,800원, facts [9][10]) — 시안은 titles.md 3장 글자로. **firemap-video-producer·youtube-loop:** 업로드 제목·썸네일은 titles.md 1위, meta.json experiment X-THUMB-1 A · X-THUMB-2 B.
 - (youtube-loop 17:23) **숫자 고침 주의:** 금융소득 1,000만원 이하도 지역가입자면 0원이 아니라 하한 포함 **월 22,800원**(시행규칙 44조③). 경계는 2.3만원→6.8만원(연 54만원), 국민연금 월 150만원이면 6.1만원→12.9만원(연 81만원). 근거 ep/D-1/facts.txt [계산] · 대본 ep/D-1/script.md v0.
+- [넘김] **firemap-video-producer**·**firemap-youtube-loop**: D-1 썸네일 업로드본 = ep/D-1/thumb_d1d.png(막대+'건보료 1년 54만원 차이', X-THUMB-2 B, 심사 평균 8.0 = 제미나이 9·레드팀 7, GPT 확인 안 함), 48시간 교체용 = thumb_d1c.png(X-THUMB-2 A). 근거 visual/D-1-thumb/judges.md·ep/D-1/thumb_meta.json. 레드팀: 영상 앞부분에 '지역가입자로 바뀐 경우(임의계속가입 아님)' 한 줄 필요. 숫자 바뀌면 `py -3.12 work/research/visual/D-1-thumb/make_thumbs.py` (firemap-visual-designer 21:09)
 - [요청] **firemap-copywriter**: W-1(공개 10/11) 썸네일 두 줄 후보·1위, 기한 10/8 12:00, ep/W-1/titles.md. 숫자는 그 주 사실표만. 틀 visual/W-1-thumb/brief.md.
 - E-1 썸네일 주의(PD): 공개 전 facts [4] 주가를 다시 받아 숫자가 바뀌면 `py -3.12 work/research/visual/E-1-thumb/make_thumbs.py` 다시.
 - 9/30 회의 배정 중 완료 줄 없음(확인 안 함): **firemap-shorts** ytupload.py `status.containsSyntheticMedia=true` + videos.list 되읽기 기록 · **firemap-youtube-loop** 경쟁 롱폼 5편 초당 음절 중앙값 → RULES(→ 완료 확인: RULES "목소리 고정·말 속도" 규칙 2 실측 12편, 진행 5.56·말 6.78음절/초, loop/speechrate.json — youtube-loop 20:47) · **firemap-video-producer** voice.py 목소리 고정·atempo 규칙(E-1은 같은 모델 88/88로 렌더됨).
@@ -148,6 +149,8 @@
 
 ## [지시·긴급] 영상 효과음 '치익~' 교체 (사장님 10/01 21:08: "두 번째 유튜브 영상에서 치익~ 하는 소리 너무 거슬린다, 다른 소리로 하지")
 - 담당: firemap-motion-designer(효과음 선택) + firemap-video-producer(적용). 지금 착수.
+  - 착수: firemap-video-producer 21:09
+  - 착수: firemap-motion-designer 21:08
 1. 어느 영상인지 찾는다: 채널 공개 영상 업로드 순서로 두 번째(그리고 최근 두 번째) 영상의 효과음 트랙을 확인해 '치익'(지글·쉭·화이트노이즈 계열) 소리가 어디서 나는지 특정. 같은 효과음을 쓰는 렌더 틀(Remotion 등)·쇼츠 생성기(shortsdaily 등) 전부 찾는다.
 2. 대체 효과음: 경쟁 상위 채널 5개(수페TV·소수몽키 등)의 전환·강조 효과음을 들어 보고, 귀에 거슬리지 않는 짧은 소리(부드러운 클릭·팝·낮은 우드블록 등, 저작권 무료 출처 명시) 후보 3개 → 심사 3명 평균 6점 이상 → 틀에 기본값으로 교체. 효과음 음량은 목소리보다 충분히 낮게(경쟁 실측).
 3. 이미 공개된 영상: 유튜브는 공개 뒤 오디오만 바꿀 수 없다(API) — 조회수가 적은 영상이면 다시 렌더해 교체 업로드할지, 그대로 둘지 판단 근거(조회·노출)와 함께 decisions/log.md에. 앞으로 나갈 영상(E-1 등)은 새 소리로.

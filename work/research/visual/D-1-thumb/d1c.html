@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD;background:#0E1016}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1;text-shadow:
+   5px 5px 0 #000,-5px 5px 0 #000,5px -5px 0 #000,-5px -5px 0 #000,0 7px 0 #000,0 -6px 0 #000,7px 0 0 #000,-7px 0 0 #000}
+.lab{position:absolute;font:700 30px PD;color:#C9D1DE;white-space:nowrap}
+.tag{position:absolute;background:#FFD60A;color:#111;font:50px BH;padding:10px 22px 12px;border-radius:12px;white-space:nowrap}
+.fine{position:absolute;left:52px;top:632px;font:500 24px PD;color:#8A93A3;white-space:nowrap}
+.card{position:absolute;border-radius:22px;background:#171B26}
+</style></head><body><div style='position:absolute;inset:0;background:radial-gradient(ellipse at 70% 15%,#1d2438 0%,#0E1016 65%)'></div>
+<div class='t' style='left:836px;top:240px;font-size:52px;color:#fff'>2.3만원</div>
+<div class='t' style='left:1046px;top:30px;font-size:52px;color:#FF4D4F'>6.8만원</div>
+<div class='tag' style='left:48px;top:34px'>퇴직 후 건보료</div>
+<div id='c0' class='t' data-fit='640' style='left:48px;top:150px;font-size:96px;color:#FFD60A'>배당·이자</div>
+<div id='c1' class='t' data-fit='640' style='left:48px;top:262px;font-size:140px;color:#FFD60A'>+1만원</div>
+<div id='c2' class='t' data-fit='890' style='left:44px;top:476px;font-size:118px;color:#FFFFFF'>건보료 월 2.3만 → <span style='color:#FF4D4F'>6.8만</span></div>
+<div style='position:absolute;left:800px;top:410px;width:430px;height:4px;background:#5a6378'></div>
+<div style='position:absolute;left:840px;top:304px;width:150px;height:106px;background:#C9D1DE;border-radius:10px 10px 0 0'></div>
+<div style='position:absolute;left:1050px;top:94px;width:150px;height:316px;background:#FF4D4F;border-radius:10px 10px 0 0'></div>
+<div class='lab' style='left:848px;top:420px;font-size:34px'>1,000만원</div>
+<div class='lab' style='left:1058px;top:420px;font-size:34px;color:#fff'>1,001만원</div>
+<div class='fine'>예시: 지역가입자·재산 0·다른 소득 0·2026년 · 건강보험법 시행규칙 44조</div>
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

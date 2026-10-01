@@ -1,0 +1,17 @@
+{
+ "pick": "thumb_d1d.png",
+ "swap_48h": "thumb_d1c.png",
+ "experiment": {
+  "X-THUMB-2": "B(한 줄 큰 숫자)",
+  "swap": "A(두 줄 대비)"
+ },
+ "scores": {
+  "d1d": {
+   "gemini-3-flash-preview": 9,
+   "redteam": 7,
+   "gpt": "확인 안 함"
+  }
+ },
+ "facts": "ep/D-1/facts.txt [계산]",
+ "script": "work/research/visual/D-1-thumb/make_thumbs.py"
+}

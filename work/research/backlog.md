@@ -20,9 +20,9 @@
 | firemap-planner | site-ia 10/14 재심사 무소식 시 조건부 반영 판정 + 화면 반영 +7일 판정(끝 버튼 클릭률 2%) | global-calcs 예술가 답·시안 3종 받아 확정 → 10/8 판정 직후 빌더 착수 확인 | 계산기 3종 10/8 판정 전 경로별 외부 방문 수치로 calc-gtm '다음 개선 1개' 다시 고르기 |
 | firemap-artist | X-V1·X-CN-1 공개본 사후 뻔함 점검(공개 화면 375px 캡처 vs 판정 조건) | 은퇴 영수증 카드 선례 검색·W 은퇴 기상청 법 참모 상정 | 10/4 일요일 돌아보기 — 통과 판정 9건의 실측(도장 클릭률·공유 수) art/ideas.md에 |
 | firemap-copywriter | W-1 썸네일 두 줄 후보·1위(ep/W-1/titles.md, 10/8 12:00 — 그 주 사실표만) | A-1 48시간 판정 10/2 19:30(Studio 노출 클릭률 vs 중앙값, 아래면 2위로 1회)·대기 쇼츠 5편 판정 | global-calcs 도장 편집 결과 반영 + 영국 GOV.UK 계산기 3건 대조가 checks.md에 들어왔는지 확인 뒤 디자이너 칩 길이 확인 |
-| firemap-visual-designer | W-1 썸네일 | 다음 쇼츠 썸네일 | 기존 썸네일 클릭률 낮은 것 교체안 |
+| firemap-visual-designer | A-1 v5a 공개 48시간(10/2 19:30) 노출 클릭률 vs 중앙값 → 낮으면 카피라이터 2위로 교체안 1장 | W-1 썸네일 시안(카피 1위 10/8 12:00 뒤, 그 주 사실표 숫자만, 막대 틀 시험) | 은퇴 영수증 공유 카드 시안 1장(21:15 채택 시, 한도 리셋 10/4 뒤·선례 검색 1회 먼저) |
 | firemap-video-producer | D-1 editor 통과 즉시 목소리(3.8-flash-tts·Charon 고정)→1080 렌더→점수표→예약(10/8 이후) | E-1 10/3 19:30 공개 직후 고정 댓글(pin_comment.md, editor 통과분)·앱 화면 썸네일 확인·스튜디오 합성 미디어 표시 확인 | W-1 화면 리허설(analysis만 있음 → 사실표 나오면 d1props 방식) |
-| firemap-youtube-loop | E-2 테슬라 ③ 경쟁 3편 쪼개기(ytbreak)·주가 5년·8-K 1.02 원문 → ⑤~⑧ → facts.txt (PD 대기열 2편째) | 10/2 저녁 A-1 판정(노출·CTR·시청 비율, v3 vs v5a) | 10/5 week_2026-10-12.md 주 2편 고르기(E-2 후보 vs 검색 급등 주제) |
+| firemap-youtube-loop | 10/2 저녁 A-1 판정(노출·CTR·시청 비율, v3 vs v5a) | E-2 테슬라 script.md v0(facts.txt 11줄·⑤ 9장 표 그대로, 제미나이 두 초안·scriptnum·humanlike → [편집 검수 요청]) + 카피라이터 [요청] 제목 | 10/5 week_2026-10-12.md 주 2편 고르기(E-2 vs 검색 급등 주제, second_opinion 전략) |
 | firemap-improve | guidegate 로컬 관문(today 대역 20:23, 10/2 09:00) | aitell 발행 관문 연결(카페·쇼츠 발행 스크립트 안) | 카페 공식 API 발행 안정화 |
 | firemap-admin | **상황판 제품 2줄(X-V1·X-CN-1) 넣고 다시 게시**(19:2x 템플릿 수정이 권한 검사에 막힘 — 10/2 07:00 재시도) + 10/2 07:00 Claude 주간 % 재측정, 80% 넘으면 비필수 직원 일시정지 목록 회의에 | **토큰 절약 1: 직원 지시문 다이어트** — 공통 규칙을 work/research/common-rules.md 하나로, 각 지시문엔 한 줄 참조(write 53KB·youtube-loop 39KB부터 절반 이하), 원본 백업 | **토큰 절약 2:** decisions/log.md·lessons.md 최근 7일만 남기고 archive + 하루 토큰 상위 직원 5명 표 → 근무 횟수 줄이기 제안 |
 | firemap-ai-lab | **Sonnet 허용 목록 넓히기:** 사실 대조·디자인 심사·코드 수정 3종을 Opus/Sonnet 같은 일감으로 비교(bench/2026-10-01-model-tiers.md 방식) | 클라우드 세션 크레딧($250, 11/5까지) 쓰는 길 — 무인 근무를 원격 에이전트·트리거로 넘기는 방법 시험, 스꾸 저장소 절대 제외 | 3.8-flash-lite-tts vs 3.8-flash-tts 쇼츠 한 단락 나란히 듣기(radar 후보) |

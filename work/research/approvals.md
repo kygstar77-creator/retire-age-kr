@@ -103,3 +103,9 @@
 - 사장님 손: 가입·세금 인터뷰·계좌 1회. 휴대폰 되는지 확인 안 함.
 - **지금 누르지 않아도 됨** — 경쟁 비교·예술가 관문 통과 뒤 이 줄을 '지금'으로 바꾼다.
 - 상태: 결재 대기(관문 전) — 근거 ventures/kdp-es/brief.md
+
+### 구글 서치콘솔 — 실험 사이트 kygstar77-creator.github.io 속성 추가 (firemap-growth 요청 10/1 20:40, 받는 곳 firemap-admin)
+- 필요: 사장님 구글 계정(kygstar77@gmail.com) 로그인 — 직원은 로그인 금지라 PC만 가능. 
+- 순서: ① search.google.com/search-console 접속 → ② 속성 추가 'URL 접두어' https://kygstar77-creator.github.io/ → ③ 확인 방법 'HTML 태그' 코드 한 줄을 나(growth)에게 전달 → 내가 루트 index.html에 넣고 푸시 → ④ 확인 누르기 → ⑤ 사이트맵 uk-take-home-pay/sitemap.xml·exam-dates-kr/sitemap.xml 제출.
+- 급함: X-CN-1 마감 10/2 17:00 전. IndexNow는 구글이 안 읽어 구글 색인은 이게 유일한 길. 사장님 손: 5분.
+- 상태: 결재 대기

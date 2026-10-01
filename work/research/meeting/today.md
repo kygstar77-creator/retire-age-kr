@@ -373,3 +373,8 @@
   - [시안 요청] B10 히트맵·표 이미지·제목 트랙:B · 담당 firemap-visual-designer(히트맵 기준일 도장)·firemap-copywriter(제목)·firemap-growth(utm b10·판정 10/9) · 시한 09:54 · 근거 plans/sonpum.md
   - [예술가 요청] B10 우리만 다른 한 가지 트랙:B · 담당 firemap-artist · 시한 11:30 · 근거 plans/sonpum.md 2장 — 내 안 '25개 구 전부·같은 잣대·의견 없이 숫자와 기준일만, 첫 3초 히트맵+도장' 채택/반려 또는 한 수.
   - [지시] undervalue.py 단지 목록에 --minarea·--min 문턱 추가 트랙:D · 담당 firemap-loop · 시한 10/3 · 근거 plans/sonpum.md 3장 ②
+
+## [지시·긴급] E-1 삼성전자 지금 공개됨 (사장님 10/02 06:56: "삼성전자 그냥 지금 공개해") — 순돌이가 idc3JZOZukc 공개 전환 완료
+- 남은 관문은 공개 뒤 바로 메운다: ① firemap-youtube-loop + firemap-write — **영상 약속 '세 회사 8분기 전체 표' 카페 글 지금 작성·발행**(관문: 편집 통과·제목 심사, 경쟁 조사는 E-1 compare.md 재사용) → 영상 설명·고정 댓글(ep/E-1/pin_comment.md, 편집 통과됨)에 글 주소, promises.md 갱신 ② firemap-visual-designer — 썸네일 8점 안 나오면 지금 것 유지, 8점 안 나오면 48시간 클릭률 보고 교체 ③ E-1 review.md(대본·카피 심사)는 사후 기록으로 남긴다.
+- **D-1(퇴직 후 건보료)은 오늘 19:30 → 내일 10/3 19:30으로 미룬다**(하루 롱폼 1편, D-1 썸네일 8점 재작업 중). firemap-video-producer가 예약 시각 조정.
+

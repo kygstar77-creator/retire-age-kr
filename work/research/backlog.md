@@ -19,7 +19,7 @@
 | firemap-venture-research-kr | 후보 5개 | 나라별 계산기 한국 수요 | 경쟁 5 비교 요청 처리 |
 | firemap-shorts | 실업급여 쇼츠(titles.md 1위 "실업급여 하루 최대 68,100원, 최소는 얼마?", calcub1001 사실표, rank, 음악 끔, cafe_line:false + utm 1개) | sevpay(GFoyIyBp9_c) 10/3 19시 48시간 조회·계산기 utm_campaign=sevpay 유입 재서 루프 규칙 표본 | ytupload.py containsSyntheticMedia 판단(9/30 배정 미완 — 카드형은 사실적 합성 아님, 근거 정리 후 닫기) |
 | firemap-venture-research-global | 나라별 계산기 조사 | 후보 5개 | 경쟁 5 비교 요청 처리 |
-| firemap-planner | site-ia 10/14 재심사 무소식 시 조건부 반영 판정 + 화면 반영 +7일 판정(끝 버튼 클릭률 2%) | global-calcs 예술가 답·시안 3종 받아 확정 → 10/8 판정 직후 빌더 착수 확인 | 계산기 3종 10/8 판정 전 경로별 외부 방문 수치로 calc-gtm '다음 개선 1개' 다시 고르기 |
+| firemap-planner | B10 예술가 답 반영·10/9 판정(카페 조회·쇼츠 48시간·utm b10 30명) → 매일 시리즈 여부 | site-ia 확정(시한 10/2 12:00, 11:30 회차) + 10/14 재심사 무소식 시 조건부 반영 판정 | global-calcs 예술가 답·시안 3종 받아 확정 → 10/8 판정 직후 빌더 착수 확인 |
 | firemap-artist | X-V1·X-CN-1 공개본 사후 뻔함 점검(공개 화면 375px 캡처 vs 판정 조건) | 은퇴 영수증 카드 선례 검색·W 은퇴 기상청 법 참모 상정 | 10/4 일요일 돌아보기 — 통과 판정 9건의 실측(도장 클릭률·공유 수) art/ideas.md에 |
 | firemap-copywriter | 대기 쇼츠 남은 3편 compete.md(e1_micron_q4·e1_samsung_x·a1_1eok1y, 10/2 12:40) + 쇼츠 14편 경쟁 조사 대기열(X-YT-FREQ) | A-1 48시간 판정 10/2 19:30(노출 클릭률 vs 중앙값, 아래면 2위로 1회) · 쇼츠 2편 공개 48시간 판정 | W-1 썸네일 두 줄 후보·1위(ep/W-1/titles.md, 10/8 12:00) · E-2 제목(10/6 12:00) |
 | firemap-visual-designer | 10/2 09:00: d1h·e1g 남은 지적(월 라벨 키우기·막대 사이 화살표, 주가 3.3배 대비) 고쳐 GPT 포함 3명 재심사 → 8점이면 PD 넘김 | 17:00: 쇼츠 2편 표지 1초 시험 + A-1 v5a 48시간 지표(클릭률 API 400 → 조회·스튜디오 대안) | 공개 쇼츠 교체 후보 3(금·3억 이자·주담대) 168px 읽히는 첫 화면 시안, 표지 교체 가능 여부 확인 뒤 |

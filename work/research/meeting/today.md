@@ -367,3 +367,9 @@
 - [지시] 카페 오늘부터 하루 8편 (사장님 10/02 06:48: "카페 글 쓰는 것도 오늘부터 8편 정도로 늘려 퀄리티도 높이고") — 순돌이가 naverpost.py DAY_CAP 카페 5→8(간격은 상한에서 자동 계산), firemap-write 근무 08~22시 짝수 시 :10 하루 8회로 바꿈. 관문 그대로(경쟁 조사·제목 심사 8점·대표 이미지 1초 시험·편집 통과·같은 틀 3번 금지). 관문 못 넘은 글은 안 낸다 — 8편은 상한이지 할당이 아니다. firemap-write·firemap-copywriter·firemap-editor·firemap-visual-designer: 대기 묶음을 하루 8편 속도로 미리 2일치 준비.
 
 - [지시·긴급] 부동산 B10 앞당김 (사장님 10/02 06:49: "부동산은 왜 10/4로 미룬 거야? 자료조사하는 데 시간이 걸려?") — 10/4는 순돌이가 근거 없이 잡은 기한이었다. 도구(undervalue.py·peakdrop.py·heatmap_re.py)와 실거래 자료(work/research/rt/)가 이미 있다. **오늘:** firemap-planner 기획서(11:30까지, 원안 B10) → firemap-write 카페 B10 첫 글 오늘 슬롯(서울 25개 구 전세가율 낮은·높은 곳 + 고점 대비 하락 상위, 실거래 최신 월 기준·출처·기준일, 관문 통과 뒤) → firemap-copywriter·firemap-shorts 쇼츠 1편 내일(10/3) 슬롯 → 롱폼은 10/4(10/2 D-1, 10/3 E-1 예약이라). 멈췄던 부산·창동 쇼츠가 왜 비공개였는지 기획서에 한 줄.
+  - 착수: firemap-planner 06:52 (절전 예외 — 시한 11:30·오늘 카페 슬롯이 이 기획서에 달려 있음)
+  - 완료: firemap-planner 06:54 — plans/sonpum.md(B10 동네별 실거래). 숫자 규칙: 단지 순위는 양쪽 2건 이상·전용 40㎡ 이상(peakdrop.py --min 2 --minarea 40 --nowto 202609 → 377쌍 중 -20% 넘게 내린 쌍 20개, 중앙값 -7.5%). undervalue.py '전세가율 높은 단지 10'은 초소형 1~2건뿐이라 글에 쓰지 않음(구 표만). 부산·창동 쇼츠 = 루틴이 private로 올리고 공개 전환을 '사장님 판단'으로 남겨 둔 채 방치(perf-notes 73줄), 결함 기록은 못 찾음.
+  - [지시] B10 카페 첫 글 트랙:B · 담당 **firemap-write** · 시한 오늘 슬롯 · 근거 plans/sonpum.md 3·8·9장 — 25개 구 전세가율 표 + 히트맵 + 하락 상위 10, 제목에 '저평가' 금지, 관문 그대로.
+  - [시안 요청] B10 히트맵·표 이미지·제목 트랙:B · 담당 firemap-visual-designer(히트맵 기준일 도장)·firemap-copywriter(제목)·firemap-growth(utm b10·판정 10/9) · 시한 09:54 · 근거 plans/sonpum.md
+  - [예술가 요청] B10 우리만 다른 한 가지 트랙:B · 담당 firemap-artist · 시한 11:30 · 근거 plans/sonpum.md 2장 — 내 안 '25개 구 전부·같은 잣대·의견 없이 숫자와 기준일만, 첫 3초 히트맵+도장' 채택/반려 또는 한 수.
+  - [지시] undervalue.py 단지 목록에 --minarea·--min 문턱 추가 트랙:D · 담당 firemap-loop · 시한 10/3 · 근거 plans/sonpum.md 3장 ②

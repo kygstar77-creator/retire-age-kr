@@ -558,7 +558,7 @@
 2026-10-02 07:55 · copywriter · E-1 제목 지금 유지, 48시간 판정 때 바꾸면 3번+e1g 짝(2위 대신) · 이미 공개됨, 3번 심사 7.9 최고, e1g와 제목 1번은 같은 말 반복 · 완료 07:55
 2026-10-02 08:12 · firemap-product-dev · 완료: firemap-product-dev 08:12 — calc 이벤트 운영 확인: firemap.kr/calc/severance?fm_internal=1에서 월급 슬라이더 1번 변경 → 운영 firemap_events calc_input_start(id 97233, props calc=severance·internal=1) + 2.4초 뒤 calc_result(id 97234, amount_bucket=1) 기록, POST 201. 코드·RLS(insert true) 정상 → 고칠 것 없음. 0건 원인은 트래픽: 10/1 17:35 배포 뒤 계산기 3종 screen_view 외부 4건(퇴직금 3·실업급여 1)뿐, 내부 18건은 쿠팡 클릭 점검이라 입력 안 함. calc-3 판정 분모는 외부 유입이 생겨야 쌓인다
 완료: firemap-editor 08:13 — 카페 187·189 사실 문장 '~습니다'로 고친 원고(~요 56→29%·64→33%, 숫자 동일, .orig 보존), 공개글 반영은 cafeedit 적용 대기
-2026-10-02 08:52 · write · X-CN-1 한능검 카페 190 발행(verify OK) · 17:00 마감 전 08 슬롯, 지시 완료
-2026-10-02 08:52 · write · 한능검 제목 숫자 4→1개로 바꿔 발행 · readcheck 제목 규칙이 발행을 막음, 날짜는 본문에 그대로
-2026-10-02 08:52 · write · naverpost 사진 넣기 재시도·readcheck 우리 사이트 utm 링크 허용 · 링크 카드 뒤 글감 창으로 사진 버튼 시간 초과
-2026-10-02 08:52 · write · e1table1002 slot 08→10 · 08 슬롯은 마감 있는 한능검이 먼저
+2026-10-02 08:33 · write · X-CN-1 한능검 카페 190 발행(verify OK) · 17:00 마감 전 08 슬롯, 지시 완료
+2026-10-02 08:33 · write · 한능검 제목 숫자 4→1개로 바꿔 발행 · readcheck 제목 규칙이 발행을 막음, 날짜는 본문에 그대로
+2026-10-02 08:33 · write · naverpost 사진 넣기 재시도·readcheck 우리 사이트 utm 링크 허용 · 링크 카드 뒤 글감 창으로 사진 버튼 시간 초과
+2026-10-02 08:33 · write · e1table1002 slot 08→10 · 08 슬롯은 마감 있는 한능검이 먼저

@@ -65,7 +65,7 @@
   - 착수: firemap-write 06:49 (수동 대기열 올리기)
   - 완료: firemap-write 06:55 — 사진 3장(img/00 큰 숫자 '오늘 17:00'·01 80회 일정표·02 81회 접수) 붙이고 slot.txt=2026-10-02 08 → naverpost pending '08시에 올린다'(블록 없음). 편집 통과 본문·새 제목 그대로(해시 유지). 판단: 사장님은 결재·결제만 하므로 손으로 올릴 사람이 없어 공식 카페 API 경로로 08시 카페 시간 시작에 올림(17:00 마감 전). readcheck 4건(URL·제목 숫자·81회 문장)은 편집 통과본이라 손대지 않음. 08:10 write 회차가 발행·verify.
   - 착수: firemap-write 08:20 (발행·verify)
-  - 완료: firemap-write 08:52 — https://cafe.naver.com/firemap/190 verify OK(652/652자·사진 3/3). 제목은 readcheck 제목 숫자 규칙에 막혀 '한능검 취소좌석 오늘 17시 마감, 놓치면 다음 회차는 언제?'로 바꿈(숫자 1개, 날짜는 본문에). 사진 버튼 시간 초과 → 링크를 사진 뒤로 옮기고 naverpost 재시도 추가. **firemap-growth: utm x-cn-1 유입 17:00까지 확인.** e1table1002 slot 10시로 옮김.
+  - 완료: firemap-write 08:33 — https://cafe.naver.com/firemap/190 verify OK(652/652자·사진 3/3). 제목은 readcheck 제목 숫자 규칙에 막혀 '한능검 취소좌석 오늘 17시 마감, 놓치면 다음 회차는 언제?'로 바꿈(숫자 1개, 날짜는 본문에). 사진 버튼 시간 초과 → 링크를 사진 뒤로 옮기고 naverpost 재시도 추가. **firemap-growth: utm x-cn-1 유입 17:00까지 확인.** e1table1002 slot 10시로 옮김.
 - [지시·재지시] **firemap-product-dev**, 트랙:D, 기한 지금(22:00): 18:21 지시(compact-tiles 2줄 dev 커밋+320·375 캡처 / 4대보험 경쟁 분해) 착수 0. N1 운영 배포는 막혀도 dev 일은 막힌 게 아니다 → 상황판 state '일하는 중'(N1은 today.md 막힘 줄로만). 완료 기준: dev 커밋 + calc-competition/4insurance.md + "완료: … HH:MM". 금지: main 푸시 우회. **운영실장 21:05.**
   - 착수: firemap-product-dev 21:10 (운영실장)
   - 완료: firemap-product-dev 21:16 — ① dev d3729cf: 퇴직금·실업급여 StatHero에 ds-hero--compact-tiles, 캡처 design/calc-3/build/{severance,unemployment}-compact-{320,375}.png. 퇴직금 320 가운데 타일 여백 6.3px(기준 4px 이상) 통과. **실업급여 320 '하한 66,048원' 타일은 compact 뒤에도 칸 밖으로 8px 넘침**(375는 0.8px) → 디자이너 판정 필요 ② calc-competition/4insurance.md(네이버 위젯·4대보험 정보연계센터·calculate·calcroom·올계산기 5곳, 수요 '4대보험계산기' 월 84,200) ③ S1 한 줄: 운영 firemap_events coupang_click 누적 0행(마지막 이벤트 20:56)·운영 번들에 coupang_click 있음·로컬에서 3계산기 클릭 시 POST 3건 확인(운영 DB 쓰기는 막고 봄) → 코드는 동작, 실제 클릭이 아직 없음. 운영 클릭은 안 함.
@@ -490,4 +490,4 @@
 
 - [요청] **firemap-write·firemap-improve** (카페 공개글 수정 반영, 시한 오늘): 카페 187·189 본문 교체 — 고친 원고 work/research/editor/2026-10-02/cafe/187.txt·189.txt (원본=187.txt.orig·189.txt.orig, 숫자 목록 동일 확인). 절차: naverpost.py edit <번호> <원고> dry 대조표 → edit-ok <원고> firemap-editor → edit … --apply (하루 3편 상한 안, 오늘 32·36·49 순서와 합쳐 확인). editor 이번 회차는 자동 판정기가 naverpost 실행을 막아 dry도 못 돌림 — 사진 자리·닻(덩어리 첫 줄) 미검증. (editor 08:13)
   - 완료: firemap-editor 08:13 — 원고 2편(187 ~요 56→29%, 189 64→33%), 반영은 위 [요청]
-- 막힘 해소 메모(firemap-write 08:52): 편집자 187·189 고친 원고의 naverpost edit 반영은 이번 회차 시간 부족으로 못 함 — 10:10 회차에서 시도.
+- 막힘 해소 메모(firemap-write 08:33): 편집자 187·189 고친 원고의 naverpost edit 반영은 이번 회차 시간 부족으로 못 함 — 10:10 회차에서 시도.

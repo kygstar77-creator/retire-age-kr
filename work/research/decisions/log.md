@@ -468,3 +468,4 @@
 2026-10-01 21:25 · firemap-youtube-loop · E-2 썸네일 X-THUMB-2 B 배정 · A-1·E-1 A, D-1 B → 2:2 균형
 2026-10-01 21:25 · firemap-youtube-loop · 제미나이 사실 지적 '사이버캡 생산 시작은 짐작' 기각 · 10-Q 원문 "we began production of Cybercab" 실재, facts [6]에 원문 줄 추가
 2026-10-01 21:25 · firemap-youtube-loop · E-2 끝 장면을 E-1 예고대로 '은퇴 가까운 사람(50세·5억)' 추가 · 같은 낙폭 73.6%에 35세 +2년 vs 50세 +8년(fireage.json) — 경쟁 0편인 칸
+2026-10-01 21:42 · firemap-improve · 자동 가이드 AI 티 관문을 배포 빌드(work/build-deploy.mjs)에 건다 — 기준 넘는 새 가이드는 배포 폴더에서 뺌 · 원격 지시문 못 고쳐도 Cloudflare Pages가 main 커밋마다 이 빌드를 반드시 돈다

@@ -3,6 +3,13 @@
 #   py -3.12 work/guidegate.py check <html> --request  → 막히면 그 요청 줄을 work/research/meeting/today.md 맨 아래에 붙인다
 #   py -3.12 work/guidegate.py pass <html> <편집자>     → 편집 통과 표시(work/guide_editor_ok.json, 파일 sha 고정)
 #   py -3.12 work/guidegate.py ci <base> <head>         → 두 커밋 사이 새로 생긴·바뀐 가이드만 검사(GitHub Actions)
+#   py -3.12 work/guidegate.py ci @base HEAD --drop outputs/deploy → 배포 빌드 관문(work/build-deploy.mjs가 부름):
+#       @base = work/guidegate_base.txt 첫 줄 커밋(관문 건 날 main, 그 전 가이드는 그대로). 걸린 가이드는 배포 폴더에서 뺀다
+#       (사이트맵·링크 치환 전이라 사이트맵에도 안 들어감). base가 얕은 클론에 없으면 base 파일 둘째 줄부터의
+#       '그 전부터 기준을 넘던 가이드' 이름만 빼고 전 가이드를 잰다.
+# 10/1 21:4x: 원격 지시문(RemoteTrigger)은 사장님 부재로 못 고쳐 → [auto] guide가 운영에 나가기 전 반드시 지나는 곳은
+#   Cloudflare Pages가 main 커밋마다 도는 빌드(8c18984 check-run 'Cloudflare Pages · Deploy successful')이고,
+#   배포 폴더 outputs/deploy(wrangler.jsonc)는 build-deploy.mjs만 만든다 → 거기에 건다.
 # 왜: '[auto] guide' 커밋은 클라우드 루틴 'Firemap daily growth'(trig_01KmYx7HNYMGjHLy371XGxyc, 매일 09:00 KST)가
 #     GitHub 커넥터 create_or_update_file로 main에 바로 올린다 — 저장소 안 발행기가 아니라서 aitell gate가 안 걸렸다
 #     (10/1 09:14 8c18984 연금수령한도, editor-web이 10:41에 사후 수정). 루틴이 커밋 직전에 이 check를 부른다.
@@ -15,6 +22,7 @@ from aitell import score, LIMIT, LIMIT_SHORT  # noqa: E402
 
 OK_DB = os.path.join(HERE, 'guide_editor_ok.json')
 TODAY = os.path.join(HERE, 'research', 'meeting', 'today.md')
+BASE_FILE = os.path.join(HERE, 'guidegate_base.txt')
 
 
 def body_text(raw):
@@ -87,8 +95,20 @@ def main(a):
         print('편집 통과 표시', key(a[1]), val); return 0
     if a[0] == 'ci':
         base, head = a[1], a[2]
-        out = subprocess.run(['git', 'diff', '--name-only', '--diff-filter=AM', base, head, '--', 'public/guide/'],
-                             cwd=ROOT, capture_output=True, text=True, encoding='utf-8').stdout.split()
+        drop = a[a.index('--drop') + 1] if '--drop' in a else None
+        if base == '@base':
+            lines = [l.strip() for l in open(BASE_FILE, encoding='utf-8') if l.strip() and not l.startswith('#')]
+            base, old_bad = lines[0], set(lines[1:])
+        else:
+            old_bad = set()
+        r = subprocess.run(['git', 'diff', '--name-only', '--diff-filter=AM', base, head, '--', 'public/guide/'],
+                           cwd=ROOT, capture_output=True, text=True, encoding='utf-8')
+        if r.returncode == 0:
+            out = r.stdout.split()
+        else:  # 얕은 클론 등으로 base가 없다 — 그 전부터 넘던 가이드만 빼고 전부 잰다
+            print(f'base {base[:7]} 없음({r.stderr.strip()[:80]}) → 전 가이드 검사(기존 {len(old_bad)}개 제외)')
+            out = sorted('public/guide/' + n for n in os.listdir(os.path.join(ROOT, 'public', 'guide'))
+                         if n.endswith('.html') and n not in old_bad)
         bad = 0
         for f in out:
             if not f.endswith('.html') or f.endswith('index.html'): continue
@@ -98,8 +118,11 @@ def main(a):
                 bad += 1
                 for h in hits[:6]: print('    ', h)
                 print('  ', request_line(f, val, hits))
-        print(f'가이드 {len(out)}개 검사, 막힘 {bad}')
-        return 4 if bad else 0
+                if drop:
+                    t = os.path.join(ROOT, drop, 'guide', os.path.basename(f))
+                    if os.path.exists(t): os.remove(t); print('   배포에서 뺐다:', os.path.relpath(t, ROOT).replace(os.sep, '/'))
+        print(f'가이드 {len(out)}개 검사, 막힘 {bad}' + (' (배포에서 뺌)' if drop and bad else ''))
+        return 4 if bad and not drop else 0
     print('모르는 명령:', a[0]); return 2
 
 

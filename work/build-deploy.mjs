@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { build } from 'vite';
+import { spawnSync } from 'node:child_process';
 
 const root = process.cwd();
 const deploy = join(root, 'outputs', 'deploy');
@@ -16,6 +17,23 @@ await build({
 });
 
 await mkdir(deploy, { recursive: true });
+
+// 자동 가이드 AI 티 관문(2026-10-01). '[auto] guide'는 클라우드 루틴이 main에 바로 커밋 → Cloudflare Pages가 이 빌드를 돈다.
+// 관문 건 뒤 새로 생긴·바뀐 public/guide/*.html 중 기준을 넘고 편집 통과 표시가 없는 것은 배포 폴더에서 뺀다
+// (아래 사이트맵·링크 치환보다 먼저라 사이트맵에도 안 들어감). 파이썬이 없으면 경고만 하고 넘어간다.
+{
+  const tries = process.platform === 'win32' ? [['py', ['-3.12']], ['python', []]] : [['python3', []], ['python', []]];
+  let ran = false;
+  for (const [cmd, pre] of tries) {
+    const r = spawnSync(cmd, [...pre, 'work/guidegate.py', 'ci', '@base', 'HEAD', '--drop', 'outputs/deploy'],
+      { cwd: root, stdio: 'inherit', env: { ...process.env, PYTHONIOENCODING: 'utf-8' } });
+    if (r.error) continue;
+    ran = true;
+    if (r.status !== 0) { console.error(`guidegate 관문 오류(종료코드 ${r.status}) — 빌드를 멈춘다`); process.exit(1); }
+    break;
+  }
+  if (!ran) console.warn('경고: 파이썬이 없어 guidegate 관문을 못 돌렸다 — 자동 가이드 AI 티 검사 안 됨');
+}
 
 const adsenseHeadScript = `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClientId}"
      crossorigin="anonymous"></script>`;

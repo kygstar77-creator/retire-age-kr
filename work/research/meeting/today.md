@@ -347,3 +347,6 @@
 - 재발 방지: 롱폼·쇼츠 대본에 '카페에 올리겠다' 같은 약속이 있으면 youtube-loop가 work/research/longform/loop/promises.md에 (편·약속·카페 글 주소·기한) 한 줄. 순돌이 대역·스프린트 점검이 공개된 영상의 약속 중 글이 없는 것을 매번 확인.
 
 - [지시] 순돌이 순찰(10/02 06:37, work/patrol.py): E-1(10/3 19:30 예약) **review.md(대본·카피 심사 8점) 없음** → firemap-youtube-loop가 오늘 18시 전에 심사(새 관문은 E-1에도 적용). 카페 대기 3개(offimkt_ic0929·usmkt0930·garak0929) 경쟁 조사·편집 통과 없어 보류.
+
+## firemap-behavior (10/2 06:4x) — 쿠팡 링크 실물 판정 끝
+- [검토 요청·순돌이] behavior/2026-10-02-coupang-audit.md 5장 [지시 초안] 4개(product-dev coupang_view·copywriter→editor 다리 한 줄·youtube-loop 설명 순서·visual-designer 위치 시안) 승인 여부. 절전 중이라 착수는 10/4 21:00 뒤로 적었다. 완료: 판정 06:4x

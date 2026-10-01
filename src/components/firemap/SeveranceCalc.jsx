@@ -7,6 +7,7 @@ import { severancePay } from '../../utils/severancePay.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { buildSimulation, inputsIsReal } from '../../utils/retirementSimulator.js';
 import { logEvent } from '../../utils/live.js';
+import useCalcEvents from './useCalcEvents.js';
 
 const BASIS_DATE = '2026-09-30';
 const won = (n) => formatWon(Math.round(n || 0));
@@ -28,6 +29,7 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
   const r = ok ? severancePay({ hireDate, retireDate, wages3m: monthly * 3, weeklyHours: under15 ? 14 : 40, annualBonus: bonus, annualLeavePay: leave }) : null;
   const years = r ? Math.floor(r.serviceDays / 365) : 0;
   const amount = r && r.eligible ? r.amount : 0;
+  useCalcEvents('severance', [hireDate, retireDate, monthly, bonus, leave, under15], amount ? Math.min(10, Math.floor(amount / 10000000)) : null);
 
   // calc-3 숫자 줄(design/calc-3/spec.md 3): 저장된 내 입력이 있고 1년 이상 앞당겨질 때만. 기본값으로 낸 숫자는 남의 숫자라 그리지 않는다.
   const gainYears = useMemo(() => {

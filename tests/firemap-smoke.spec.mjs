@@ -144,6 +144,27 @@ test.describe('firemap smoke', () => {
     expect(JSON.stringify(bodies), 'UA 원문 저장 금지').not.toMatch(/Mozilla|AppleWebKit/);
   });
 
+  test('calc events (V4): default view sends no calc_input_start; first edit sends it once, settled result sends calc_result once', async ({ page }) => {
+    const bodies = [];
+    await page.addInitScript(() => { try { localStorage.setItem('fm_events_on', '1'); } catch { /* ignore */ } });
+    await page.route('**/rest/v1/firemap_events', async (route) => { try { bodies.push(JSON.parse(route.request().postData() || '{}')); } catch { /* ignore */ } await route.fulfill({ status: 201, body: '' }); });
+    await seed(page);
+    await page.goto('/calc/unemployment-benefit');
+    await page.waitForTimeout(2600);
+    const count = (e) => bodies.filter((b) => b.event === e).length;
+    expect(count('calc_input_start') + count('calc_result'), '기본값 그대로는 0건').toBe(0);
+    await page.locator('#ub-last').fill('2026-09-30');
+    await page.getByRole('tab', { name: '50세 이상 · 장애인' }).click();
+    await page.waitForTimeout(2600);
+    expect(count('calc_input_start'), 'calc_input_start 1회').toBe(1);
+    const res = bodies.filter((b) => b.event === 'calc_result');
+    expect(res.length, 'calc_result 1회').toBe(1);
+    // 13,870,080원 → 100만원 구간 13. 원 단위 금액은 보내지 않는다.
+    expect(res[0].props.calc).toBe('unemployment');
+    expect(res[0].props.amount_bucket).toBe(13);
+    expect(JSON.stringify(bodies), '금액 원값 저장 금지').not.toContain('13870080');
+  });
+
   test('unemployment benefit: hand-check numbers, crawler text is on screen, next step to fire', async ({ page }) => {
     const bodies = [];
     await page.addInitScript(() => { try { localStorage.setItem('fm_events_on', '1'); } catch { /* ignore */ } });
@@ -229,7 +250,7 @@ test.describe('firemap smoke', () => {
     for (const path of ['/calc/salary', '/calc/severance', '/calc/unemployment-benefit']) {
       await page.goto('about:blank');
       await page.goto(path);
-      await expect(page.locator('main.fm-screen')).toContainText(path === '/calc/salary' ? '몇 살에 은퇴?' : '은퇴 나이 계산');
+      await expect(page.locator('main.fm-screen')).toContainText(path === '/calc/unemployment-benefit' ? '은퇴 나이 계산' : '몇 살에 은퇴?');
       const links = page.locator('main.fm-screen a[href*="coupang.com"]');
       const n = await links.count();
       await expect(page.locator('.fm-coupang-pick'), `${path} slot count`).toHaveCount(n ? 1 : 0);

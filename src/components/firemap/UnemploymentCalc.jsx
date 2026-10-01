@@ -7,6 +7,7 @@ import { unemploymentBenefit, UB_2026 } from '../../utils/unemploymentBenefit.js
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { inputsIsReal } from '../../utils/retirementSimulator.js';
 import { logEvent } from '../../utils/live.js';
+import useCalcEvents from './useCalcEvents.js';
 
 const BASIS_DATE = '2026-09-30';
 const won = (n) => formatWon(Math.round(n || 0));
@@ -24,6 +25,7 @@ export default function UnemploymentCalc({ inputs, onApply, onMove }) {
 
   const r = unemploymentBenefit({ lastWorkDay, monthlyWage: monthly, insuredMonths, over50, dailyHours: hours });
   const ok = r.supported;
+  useCalcEvents('unemployment', [lastWorkDay, over50, insuredMonths, monthly, hours], ok && r.total ? Math.min(20, Math.floor(r.total / 1000000)) : null);
   const limit = !ok ? '—' : r.capped ? `상한 ${exact(r.capDaily)}` : r.floored ? `하한 ${exact(r.floorDaily)}` : '평균임금의 60%';
 
   const toRetire = () => {

@@ -8,6 +8,7 @@ import { salaryNet, SALARY_RULES } from '../../utils/salaryNet.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
 import { inputsIsReal } from '../../utils/retirementSimulator.js';
 import { logEvent } from '../../utils/live.js';
+import useCalcEvents from './useCalcEvents.js';
 
 const won = (n) => formatWon(Math.round(n || 0));
 const exact = (n) => `${Math.floor(n || 0).toLocaleString('ko-KR')}원`;
@@ -25,6 +26,7 @@ export default function SalaryCalc({ inputs, onApply, onMove }) {
   // 앱 기본 300만원을 그대로 쓰면 연봉 4,000만원 실수령(약 293만원)에서 저축 0원이 돼 은퇴 연결이 막혔다(레드팀 10/1).
   const [living, setLiving] = useState(inputsIsReal(inputs) ? (Number(inputs?.monthlyLivingCost) || 2500000) : 2500000);
   const saving = Math.max(0, r.net - living);
+  useCalcEvents('salary', [annual, nontax, family, kids, ratio, living], Math.min(20, Math.floor(r.net / 500000)));
 
   const toRetire = () => {
     onApply({ monthlyInvestment: saving, monthlyLivingCost: living });

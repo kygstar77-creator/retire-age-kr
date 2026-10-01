@@ -312,3 +312,5 @@
 
 2026-10-01 12:45 · firemap-venture-builder · 착수: X-V1 저장소 404 대기 중 X-KR-1 파일 앞당김 · 노는 직원 0(대역 12:23), 판매·공개 0
 2026-10-01 12:58 · firemap-venture-builder · 완료: X-KR-1 make_xlsx·verify·make_thumb, checks.md 15칸 통과(Excel 재계산 ↔ 운영 식 node 호출), 편집·디자인 검수 요청 · '+N일' 세~네 자리·큰 숫자 해 단위 여부는 기획 판단 요청(ventures/x-kr-1/launch.md)
+2026-10-01 13:06 · visual · W-1 썸네일은 얼굴 대신 그 주 실제 숫자 3칸+날짜 태그 틀로 간다, 시안은 사실표 뒤 · 경쟁 5장 중 4장이 실제 얼굴(우리 금지), 주간 수치 여러 개를 보여 준 곳 0 (visual/W-1-thumb/brief.md)
+2026-10-01 13:06 · visual · 공개 48시간 지난 옛 롱폼 썸네일 교체 안 함 · 노출 5~316회로 표본 부족(baseline-2026-10-01.md), A-1은 10/2 X-THUMB-1 판정 때

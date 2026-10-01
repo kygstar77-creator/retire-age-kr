@@ -22,5 +22,5 @@
 | firemap-youtube-loop | F2 쿠팡 설명란 | 다음 롱폼 대본 | 경쟁 분석 |
 | firemap-improve | aitell 발행 관문 연결 | 카페 공식 API 발행 안정화 | 도구 개선 |
 | firemap-admin | **토큰 절약 1(17:17): 직원 지시문 다이어트** — 33개 SKILL.md의 공통 규칙(스꾸 금지·상황판·git·편집/디자인/뻔함 관문·스스로 다음 일)을 work/research/common-rules.md 하나로 모으고 각 지시문엔 한 줄 참조만. 지시문마다 고유 업무만 남겨 write(53KB)·youtube-loop(39KB)부터 절반 이하로. 원본은 백업. | **토큰 절약 2:** decisions/log.md(89KB)·lessons.md를 '최근 7일'만 남기고 나머지 archive, 직원은 grep으로 필요한 줄만 읽게 | 하루 토큰 사용 상위 직원 5명 표(list_task_runs 시간·횟수 기준) → 근무 횟수 줄이기 제안 |
-| firemap-ai-lab | **토큰 절약 3(17:17):** 직원별로 가벼운 모델(sonnet·haiku)로 돌려도 품질이 같은 역할 찾기 — 같은 일감 2개를 모델별로 돌려 비교, 결과를 운영실장 투입 규칙에 반영 | 클라우드 세션 크레딧($250, 11/5까지) 쓰는 길 — 이 PC의 무인 근무에서 클라우드로 넘기는 방법(원격 에이전트·트리거) 시험, 스꾸 저장소 절대 제외 | 프롬프트 캐시 효과 측정 |
+| firemap-ai-lab | **Sonnet 허용 목록 넓히기:** 사실 대조·디자인 심사·코드 수정 3종을 Opus/Sonnet 같은 일감으로 비교(bench/2026-10-01-model-tiers.md 방식) | 클라우드 세션 크레딧($250, 11/5까지) 쓰는 길 — 무인 근무를 원격 에이전트·트리거로 넘기는 방법 시험, 스꾸 저장소 절대 제외 | 3.8-flash-lite-tts vs 3.8-flash-tts 쇼츠 한 단락 나란히 듣기(radar 후보) |
 

@@ -12,3 +12,4 @@
 | 2026-10-01 | Veo 3.1 lite 영상 | 영상 PD 분위기 컷 | 무료 등급 없음. 720p 초당 $0.05 | 기존 Veo와 같음 | 보류. 5초 컷 하나가 $0.25라 필요해지면 결재 |
 | 2026-10-01 | Nano Banana 2 Lite(gemini-3.1-flash-lite-image) | 비주얼·일러스트 | 무료 등급 없음. 1K 이미지 장당 $0.0336 | 같은 키의 이미지 무료 한도는 0(2.5-flash-image 429) | 보류. 제미나이 이미지 결재 '보류' 상태(admin tools.md)라 그 결정을 따름 |
 | 2026-10-01 | 남의 회사 새 모델: Claude Opus 5.5(9/22)·Sonnet 5.5(9/28), GPT-6 Luna(9/22), GPT Image 2.5(9/8) | 순돌이·전 직원 | 우리는 이미 Claude 구독 안에서 씀. OpenAI는 키 없음 | GPT 이미지는 스꾸와 계정 공유 위험 → **시험 금지** | 기록만. 출처는 llmgateway.io 연표(2차 자료) |
+| 2026-10-01 | 모델 등급 나눠 쓰기(Opus/Sonnet/Haiku, Agent 도구 model 값) | 운영실장·전 직원 | 구독 안(단가 차이만) | 없음 | **Sonnet 1주 시험 요청**, Haiku 탈락. bench/2026-10-01-model-tiers.md |

@@ -11,7 +11,7 @@
 # 여기서는 **기계가 틀렸다고 단정할 수 있는 것만** 잡는다.
 # 문체가 좋은지 나쁜지는 재지 않는다 — 그건 취향이고, 취향을 기계가 판정하면 글이 납작해진다.
 import sys, os, re, glob, json
-PLANNED_LINK = re.compile(r'([^:\n]{0,30}:\s*)?(https?://(?:www\.)?firemap\.kr/\S*utm_\S*)')
+PLANNED_LINK = re.compile(r'([^:\n]{0,30}:\s*)?(https?://(?:(?:www\.)?firemap\.kr|kygstar77-creator\.github\.io)/\S*utm_\S*)')  # 우리 사이트 utm 링크 한 줄은 계획된 링크(10/2 X-CN-1 exam-dates-kr)
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__)); R = os.path.join(HERE, 'research')
 

@@ -221,8 +221,23 @@ def insert_image(frame, path, photo_button):
     page = frame.page
     click_last_paragraph(frame)
     before = frame.locator('.se-component.se-image').count()
-    with page.expect_file_chooser(timeout=15000) as fc:
-        photo_button.click()
+    # 10/2 08:30 xcn1: 본문 끝 URL이 링크 카드가 된 뒤 '글감' 검색창이 떠서 사진 버튼 클릭이 안 먹었다(15초 시간 초과).
+    # 한 번 실패하면 창을 닫고 맨 끝 문단을 다시 잡은 뒤 한 번 더 누른다.
+    for attempt in range(2):
+        try:
+            with page.expect_file_chooser(timeout=15000) as fc:
+                photo_button.click()
+            break
+        except Exception:
+            if attempt: raise
+            print('사진 버튼이 안 먹었다 — 떠 있는 창을 닫고 다시 누른다')
+            close_popups(frame)
+            try:
+                x = frame.locator('button[class*="close"]:visible').last
+                if x.count(): x.click(); page.wait_for_timeout(400)
+            except Exception: pass
+            page.keyboard.press('Escape'); page.wait_for_timeout(300)
+            click_last_paragraph(frame); page.keyboard.press('Control+End'); page.wait_for_timeout(400)
     fc.value.set_files(path)
     for _ in range(40):                    # 이미지 컴포넌트가 하나 늘 때까지 기다린다(최대 20초)
         page.wait_for_timeout(500)

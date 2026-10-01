@@ -5,3 +5,4 @@ img/00.png
 c00.txt
 img/01.png
 img/02.png
+c01.txt

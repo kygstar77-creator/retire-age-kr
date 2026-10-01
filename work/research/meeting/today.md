@@ -301,7 +301,9 @@
 ## [지시·긴급] 오늘부터 롱폼 하루 1·쇼츠 하루 2 + 영상미·조사 발전 + 이슈 콘텐츠 발굴 (사장님 10/02 06:15)
 - X-YT-FREQ 시작일을 10/5 → **오늘 10/2**로 당김(순돌이). ytlong.py C1: 주 2편 제한 해제(하루 1편·주 7편 상한) — 순돌이 10/02 06:15 수정. 관문(경쟁 조사·우리만 다른 한 가지·편집·썸네일 디자인·치직/쉿소리)은 그대로.
 - 오늘 롱폼: 준비가 가장 많이 된 편(D-1 또는 E-2, 대본·사실표·경쟁 비교 있음)을 firemap-youtube-loop가 고르고 firemap-video-producer가 19:30 예약. E-1(10/3 19:30)과 날짜 겹치지 않게.
+  - 완료: 오늘 롱폼 = **D-1(퇴직하면 건보료)** 10/2 19:30 KST 예약 — 06:20 (firemap-youtube-loop). 근거: D-1은 편집 통과(10/1 19:10)·목소리 43/70·무음 리허설·스틸 64장·썸네일 thumb_d1d(48시간 교체 d1c)·compare.md·점수표 다 있음, E-2는 편집 검수 대기·화면 0. PD 16:05: `lfvoice.py make ep/D-1`(남은 27문장, 16시 TTS 초기화 뒤) → 렌더 → deess → check → ytlong up. **쿠팡 대상 편**이라 업로드 때 설명란 첫 줄 대가성 문구+퇴사 준비 책 link.coupang.com/a/hutlDDyiDQ, paid=True(ep/D-1/coupang.md). 레드팀 지적 '지역가입자로 바뀐 경우(임의계속가입 아님)' 한 줄이 대본 앞부분에 있는지 PD가 확인. 19:30을 못 맞추면 10/3은 E-1이라 **10/4 19:30**으로 미룬다(하루 1편). 이슈 레이더(issue-radar.md)는 절전 규칙상 20:35 회차에 한다.
 - 오늘 쇼츠 2편: firemap-copywriter 경쟁 조사(compete.md) 2편 먼저(지금 착수, 12:40 기다리지 말 것) → firemap-shorts 19:20·다음 슬롯.
+  - 착수: firemap-copywriter 06:20 — a1_need100·e1_hynix_dd 2편 compete.md
 - **이슈 레이더(매일, firemap-youtube-loop + firemap-brand-researcher):** vidiq_trending_videos·vidiq_outliers·유튜브 검색(최근 48시간 조회 급상승)·네이버 검색어 급상승·뉴스 원문에서 '조회 높고 지금 이슈되는' 돈·부동산·주식·정책 주제 10개 → 우리 각도('내 돈에 대입')로 바꾼 후보 3개를 롱폼·쇼츠 대기열 맨 위에. 매일 work/research/longform/loop/issue-radar.md 한 쪽.
 - **영상미:** firemap-motion-designer + firemap-visual-designer — 경쟁 상위 롱폼 3편과 우리 E-1을 장면 단위로 비교(화면 전환 간격·그래프 움직임·자막 위치·색)해 고칠 점 5개를 렌더 틀에 반영, 썸네일 통과선 8점.
 - 사용량 안전장치: 주간 사용량 85%를 넘으면 발행(롱폼 1·쇼츠 2)과 감사·보고만 남기고 나머지 근무는 다음 초기화(10/4 21시)까지 멈춘다 — 스꾸와 같은 한도라 100%면 스꾸도 멈춘다.

@@ -426,3 +426,5 @@
 - 2026-10-01 18:40 · firemap-improve · shortsdaily.py 설명란 카페 줄을 spec `cafe_line`(기본 true)로 끌 수 있게 하고 sevpay만 false · 쇼츠 설명란 계산기 utm 링크 1개 원칙(N2), 다른 쇼츠 동작은 그대로
 - 착수: firemap-venture-builder 18:42 — X-CN-1 매일 빌드 GitHub Actions cron (today.md 대역 18:21 지시)
 - 완료: firemap-venture-builder 18:49 — X-CN-1 매일 빌드 GitHub Actions(kygstar77-creator.github.io/.github/workflows/x-cn-1-daily.yml, 06:00 KST). 수동 run 36844731426 성공, 도장 17:07→18:45 운영 반영. 원문 표 변경·원문 못 받음·편집 해시 불일치·파일 목록 변경 시 실패(이메일), 푸시 없음. 10/30 제80회 발표 뒤 첫 빌드는 exit 4 예정 → 편집 재검수.
+2026-10-01 18:51 · copywriter · global-calcs 도장 문구 1위 '3 of 3 test salaries match GOV.UK's own calculator · <날짜>' (2위 Within £1, 3위 원안 Checked against) · 경쟁 4곳이 'checked against HMRC'=세율 대조라 원안은 차별 안 됨, 결과 일치 건수를 앞에. 영국 도장은 GOV.UK 계산기 대조 3건 생길 때까지 'Not yet checked'(checks.md 대조는 민간 계산기)
+2026-10-01 18:53 · copywriter · D-1 X-THUMB-1 A·X-THUMB-2 B, 제목 1위 '퇴직 후 건강보험료, 배당·이자 1만원 차이에 1년 54만원?' 썸네일 '1년에 54만원 차이'+경계 두 칸 · 검색 1,290(퇴직)>310(퇴사), 경쟁 배수 상위 3편이 구체 금액+통념 반박, B 표본 0이라 B 배정, brief의 '0원'은 하한 22,800원으로 바로잡음

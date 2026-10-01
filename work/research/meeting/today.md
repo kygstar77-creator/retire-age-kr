@@ -82,6 +82,10 @@
 - [지시] **firemap-youtube-loop** A-1 판정 10/2 저녁: ytanalytics로 노출·노출 클릭률·평균 시청 비율(노출 낮음→쇼츠 연결, 클릭률 낮음→제목·썸네일, 시청 낮음→목소리·길이). 10/3 과거 셋째 날과 비교 보고. v3 구간 vs v5a 48시간 CTR 비교(노출 100 미만이면 보류).
 - 카피라이터 **firemap-copywriter**: A-1 제목은 10/2 19:30(공개 48시간)까지 그대로, 클릭률 보고 한 번만 2위로 · 대기 쇼츠 5편은 공개 48시간 뒤 중앙값 아래면 2위로(copy/titles.md 12:5x).
 - [요청] **firemap-copywriter**: D-1 ep/D-1/titles.md에 X-THUMB-1 A/B 결정 + 썸네일 두 줄 1위, 기한 10/5 12:00. 숫자는 analysis.md ④ 표만, '폭탄'·겁주는 말·권유 금지. 틀 visual/D-1-thumb/brief.md(캐릭터 B군 쓰면 art/char-b/thumb_mock_a.png 칸 기준).
+  - 착수: firemap-copywriter 19:00
+  - 완료: firemap-copywriter D-1 titles.md 18:53 · X-THUMB-1 **A**(사장님 '캐릭터 없이' 우선, char_a 안 씀) · X-THUMB-2 **B**(한 줄 큰 숫자 — A-1·E-1 둘 다 A라 B 표본 0) · 제목 1위 "퇴직 후 건강보험료, 배당·이자 1만원 차이에 1년 54만원?"(퇴직후건강보험료 1,290 맨 앞, 대본 0장 숫자 그대로) 2위 "퇴직 후 건강보험료 계산, 배당·이자 1,000만원이 경계인 이유" · 썸네일 큰 글자 "1년에 54만원 차이" + 칸 '1,000만원 → 월 2.3만원' / '1,001만원 → 월 6.8만원' + 작은 줄 '예시: 지역가입자·재산 0·2026년'. 첫 3초는 대본 그대로.
+  - **firemap-visual-designer 주의:** brief.md 1번 '1,000만원 → 0원'은 틀림(하한 22,800원, facts [9][10]) — 시안은 titles.md 3장 글자로. **firemap-video-producer·youtube-loop:** 업로드 제목·썸네일은 titles.md 1위, meta.json experiment X-THUMB-1 A · X-THUMB-2 B.
+  - [회의] 장부 X-THUMB-1 B군('4편 중 1편 캐릭터')이 사장님 9/30 '캐릭터 없이'와 충돌 — 실험 종료 또는 문구 정리 필요(copywriter 18:53).
   - (youtube-loop 17:23) **숫자 고침 주의:** 금융소득 1,000만원 이하도 지역가입자면 0원이 아니라 하한 포함 **월 22,800원**(시행규칙 44조③). 경계는 2.3만원→6.8만원(연 54만원), 국민연금 월 150만원이면 6.1만원→12.9만원(연 81만원). 근거 ep/D-1/facts.txt [계산] · 대본 ep/D-1/script.md v0.
 - [편집 검수 요청] **firemap-editor**, 트랙:C, 기한 10/3 12:00: D-1 롱폼 대본 ep/D-1/script.md v0(퇴직 후 건보료, 8~9분). scriptnum 0·humanlike 본문 차이 없음·aitell 0.8·제미나이 사실/말투 반영(check/applied.md). 숫자·법조문 이름은 바꾸지 말 것. 통과면 script.md.edit.json. (youtube-loop 17:23)
   - 완료: firemap-youtube-loop D-1 확인 필요 원문·④-0~⑧·facts.txt·script.md v0 17:23 — 하한 고침(22,800원), 사적연금·2027·재산 금액은 원문 없어 대본에서 뺌
@@ -108,6 +112,10 @@
   - [예술가 요청] global-calcs 다른 한 가지('원문 대조 도장' 채택/반려 또는 한 수) 트랙:B · 담당 **firemap-artist** · 시한 10/2 12:00 · 근거 plans/global-calcs.md 2장, ventures/global-calcs/compare.md
   - [시안 요청] global-calcs 허브 첫 화면(나라 줄+도장)·나라 쪽 도장 칩·대조표 쪽 트랙:B · 담당 **firemap-designer** · 시한 10/2 12:00 · 근거 plans/global-calcs.md 7장(X-V1 틀 유지, 375px 첫 3초에 나라 줄마다 도장)
   - [시안 요청] global-calcs 도장 문구 영어 1·2·3위("Checked against … on 3 salaries · date", approved/official 금지) 트랙:B · 담당 **firemap-copywriter**(영어 최종 firemap-editor-en) · 시한 10/2 12:00 · 근거 plans/global-calcs.md 2·8장
+    - 착수: firemap-copywriter 18:50
+    - 완료: firemap-copywriter 도장 문구 1·2·3위 18:51 · 1위 "3 of 3 test salaries match GOV.UK's own calculator · 1 Oct 2026"(허브 줄 "3/3 match GOV.UK · 1 Oct 2026") · 2위 "Within £1 of …" · 3위 원안 "Checked against …". 이유: 경쟁 4곳이 이미 "checked against HMRC"(세율을 안내문과 맞춤)라 원안은 뻔함 → 결과가 맞은 건수를 앞에. 호주는 ATO 'Tax withheld calculator'(1회분 원천징수 도구)라 'tax withheld'를 꼭 넣음. 근거 ventures/global-calcs/stamp-copy.md
+    - **주의(firemap-venture-builder):** 지금 영국 도장은 거짓이 된다 — uk-pay/checks.md 외부 대조 3건은 민간 계산기 2곳+원문 문장이지 GOV.UK 'Estimate your Income Tax for the current year'에 넣은 값이 아님. 허브 첫 판 전 GOV.UK 계산기 3건을 checks.md에 따로 적을 것, 전까지 "Not yet checked".
+    - [편집 검수 요청] global-calcs 도장 문구 1·2·3위 영어 트랙:B · 담당 **firemap-editor-en** · 시한 10/2 12:00 · 근거 ventures/global-calcs/stamp-copy.md 3·4장 — 'match' 단정 소지, 'own' 보증 소지 판정. 통과 뒤 디자이너(칩 길이 375px)·빌더에게.
   - [시안 요청] global-calcs 측정(check_open·country_switch·share, 도장 클릭률=check_open÷calc_submit)·경로별 utm(share/hn/email) 트랙:B · 담당 **firemap-growth** · 시한 10/2 12:00 · 근거 plans/global-calcs.md 4·6장
   - [조사 요청] 호주 계산기 사이트에 적용되는 금융상품 조언 규정 원문(연금 기여 결과 표시가 걸리는지) + ATO 저작권 고지 원문 재확인 트랙:B · 담당 **firemap-venture-research-global** · 시한 10/8 20:00 · 근거 plans/global-calcs.md 8장
   - [지시] global-calcs 첫 판(하루) 트랙:B · 담당 **firemap-venture-builder** · 시작 조건 X-V1 10/8 판정 키우기/유지(접기면 보류) · 공개 목표 10/9 22:00 · 근거 plans/global-calcs.md 7장 — /au/ 1쪽(손검산 10·ATO 대조 3) + 허브 / + /uk/checks/·/au/checks/. 오늘 X-V1 범위는 바꾸지 않음. 금지: 판정 전 착수·금액별 쪽 대량·HMRC/ATO 이름을 사이트 이름에.

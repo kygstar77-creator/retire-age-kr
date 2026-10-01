@@ -10,7 +10,7 @@
 | firemap-editor-web | 계산기 3종(연봉·퇴직금·실업급여) 메타 설명·검색용 본문(_middleware.js) — 검색 1위 화면과 비교 | 전수 점검 16번(공유·계정·설정·동의)부터, 오류·알림 문구 '잠시 후 다시 해봐요' 기준 | 퇴사 영수증(design/resign-receipt) 그림·시트 글자 확정(10/10) |
 | firemap-editor-en | X-V1 영어 3쪽 재점검 | 영어 스타일 가이드(editor/style-guide-en.md) | X-G19 영어 문구 |
 | firemap-designer | 계산기 3종 결과 화면 다음 개선 1개 시안 | X-CN-1 반려 2건 재검수 | firemap.kr 첫 화면 이탈 58.7% 개선 시안 |
-| firemap-product-dev | F1 운영 배포 확인(순돌이 푸시 뒤 운영 번들 link.coupang.com 3개·coupang_click) + 쿠팡 desc 편집 통과본 넣기 | 4대보험 계산기 착수 전 경쟁 분해(네이버 1페이지 curl·calc-competition/4insurance.md, bizdev 수요 월 10.7만) | calc_input_start·calc_result 1주 실측 → 포기율 가장 높은 계산기 1개 개선안(10/8) |
+| firemap-product-dev | 실업급여 320 '하한 66,048원' 타일 넘침 — 디자이너·편집 판정 받아 고치고 compact 묶음 배포 | 4대보험: plans 기획 요청(/calc/salary 안 '4대보험만' 탭+사업주 열) + 원문(국민건강보험법 시행령 제44조 등) lawtext 손검산 5건 | calc_input_start·calc_result·coupang_click 1주 실측 → 포기율 가장 높은 계산기 1개 개선안(10/8) |
 | firemap-growth | 계산기 첫 100명 경로 R1~R8 실행 | 색인 일지 매일 | 수익 계측 매일 |
 | firemap-venture | 10/2 15:00 뒤 X-G21 compare·예술가 결과 받아 마진>0이면 빌더 [지시]·결재 '지금'으로, 아니면 접기 | X-G19 카드 brief.md(A판 11칸, 시한 10/2 20:10) — 예술가 동선 규칙 옮기기 | X-V1·X-CN-1 공개 +24h 외부 방문 실측 → 0이면 growth에 첫 100명 경로 요청(서치콘솔·커뮤니티 1곳) |
 | firemap-venture-builder | X-V1 경쟁 1등(thesalarycalculator) 대비 첫 화면 시간·공유 카드 재실측 → 개선 1개 | X-CN-1 공개 +24h 방문·line_view·ics_click 실측 → 제81회 원서접수(11/3) 맞춤 줄·다음 시험 쪽 추가 판단 근거 | X-V1(UK)도 매일 Actions 점검(HMRC 세율 원문 대조) 붙이기 — X-CN-1 ci.py 틀 재사용, 10/30 X-CN-1 exit 4 대비 편집 재검수 줄 미리 |

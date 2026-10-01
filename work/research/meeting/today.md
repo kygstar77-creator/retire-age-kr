@@ -396,31 +396,7 @@
 - ✅ 비율 07:38: 2/11 (18%). X-OPS-4 기준선.
 - 수익·세션 07:38: 수익 0원(revenue.md 07:17, 목표 대비 0.0%). 오늘 00:00~07:38 세션: 원값 408, host=firemap.kr·internal 제외 46(기기 40). 봇 거르기 전.
 
-### 지난 결승선 08:50~11:50 (점검관 08:52 작성, 11:52 채점 → 열린 칸은 아래 11:50~14:50 표로)
-| # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 |
-|---|---|---|---|---|---|
-| T1 | F1 쿠팡 칸 디자이너 반려 수정(design/f1-coupang/fix.patch) 적용 → 디자이너 재판정. 인증 풀리는 즉시 링크만 넣고 배포되게 | A | firemap-product-dev → firemap-designer | 10:50 | 반려 항목 수정 커밋 + 디자인 통과 줄. (링크 발급은 사장님 인증 뒤) |
-| T2 | 쿠팡 본인인증 1번(S1 이월) → 풀리면 유튜브·firemap.kr 매체 등록 확인, 비금융 링크 3개 발급 | A | 사장님(결재함) → firemap-youtube-loop | 11:50 | approvals.md 줄(점검관 08:5x 올림) + 링크 3개 |
-| T3 | 유튜브 설명란·채널 프로필 utm 적용(S2 이월): ytdesc_all.py apply는 채팅 세션 또는 권한 허용 규칙 1회 필요 | B | firemap-youtube-loop(권한은 결재함) | 11:50 | 채널 화면 curl에 /calc/salary utm, 설명란 되읽기 파일 |
-| T4 | 오늘 진짜 외부 방문(S5 이월): UA·몰림 봇 거르기 추가, 오늘 00~11시 숫자 | C | firemap-growth | 11:50 | channels.md 표에 10/1 줄 + 기준 한 줄 추가 |
-| T5 | F6 카페 계산기 소개 글 편집 관문 통과 표시(.edit.json)까지 | B | firemap-editor | 11:50 | .edit.json 통과 파일 |
-- 착수: firemap-designer T1 F1 재판정 10:24
-- 완료: **디자인 통과: F1 쿠팡 칸 수정안(a16eec1) 10:24** (firemap-designer) — 커밋 변경이 design/f1-coupang/fix.patch와 한 줄도 다르지 않음(diff 0). 링크 3개만 넣으면 추가 검수 없이 배포 가능. T1 ✅
-- 정체 점검 08:52: F10 [요청] 디자이너 08:11 → 08:20 통과(정상). F1 디자인 반려 08:20 → product-dev 착수 없음 32분 = **대기**. F2 쿠팡 인증 07:40 요청 → 결재함 등록 없음 1시간 12분 → 점검관이 등록(아래 approvals).
-
-- **점검 11:52 (스프린트 3회차, 결승선 점검관):**
-  - T1 ✅ a16eec1에 디자이너 fix.patch 그대로(diff 0) + '디자인 통과 10:24' 줄.
-  - T2 ❌ 쿠팡 링크 0개 — dev coupangPicks.js 세 칸 null, 운영 index-DyjLrOyq.js에 link.coupang.com 0, 오늘 coupang_click 0(Supabase). 결재함 줄(approvals.md 75행)은 있음. 인증 대기 4시간 12분.
-  - T3 ❌ 유튜브 채널 정보 화면(curl)에 firemap.kr/?utm_source=youtube&utm_medium=profile만, /calc/salary 없음. 공개 11편 설명란 API로 읽음: 쿠팡 0편·/calc/ 0편. 무인 쓰기 권한 막힘.
-  - T4 ✅ channels.md 표 10/1 00~11시 줄(세션 22/고유 13) + 기준 5·6번 실재(101bc06).
-  - T5 ❌ work/research/calcub1001/에 .edit.json 없음(c00~c04·check_gemini만, 08:40 이후 변경 0). 10:30 [지시] 뒤 firemap-editor 착수 기록 없음 = **대기 1시간 22분**.
-  - F1 ❌(진행 중, 17:30) 위 T2. F2 ❌(진행 중, 14:00) 설명란 0/11. F3 ✅. F4 진행 중 utm 0/3. F5 진행 전(19:20). F6 진행 중 = T5. F7 ✅. F8 진행 전(22:00). F9 ✅. F10 ✅. F11 진행 전(10/3).
-  - 표 밖: og c안 디자인 통과 11:39인데 운영 /calc/salary og:image는 아직 공통 og-image.png(curl) — 정체 13분, 정상. bot=1(8a75781)도 dev만. X-V1 저장소 결재 09:50~ 2시간 정체. [auto] guide 관문은 저장소 쪽 완성(3a5ca6f), 루틴 문장은 순돌이 검토.
-- ✅ 비율 11:52: 8/21 (38%) — F3·F7·F9·F10·S3·S4·T1·T4. X-OPS-4 기준선.
-- 수익·세션 11:52: 수익 0원(revenue.md 07:17이 최신, 목표 대비 0.0%) · 오늘 00:00~11:52 운영 세션 원값 479 중 로컬·내부 뺀 56(기기 47, 봇 거르기 전) · growth 봇 거른 값 00~11시 22/고유 13 · 마지막 외부 세션 11:38(측정 살아 있음) · coupang_click 0.
-- 정체 점검 11:52: 쿠팡 인증 07:40~ **정체 결재 4시간 12분**(13:40 넘으면 21:15 안건 — 대역 지시대로). 유튜브 무인 쓰기 07:59~ **정체 권한 3시간 53분** → 순돌이 검토. T5·#44 편집 10:30 지시 → 착수 0 **대기 82분** → 대리 판정자 firemap-editor-web에 [지시](아래 U3). og c안 운영 11:39 통과 → 착수 대기 13분(정상). X-V1 저장소 09:50~ 정체 결재 2시간.
-
-### 다음 3시간 결승선 11:50~14:50 (점검관 11:52 — 운영실장 :05·:35 투입)
+### 지난 결승선 11:50~14:50 (점검관 11:52 작성, 14:54 채점 → 열린 칸은 아래 14:50~17:50 표로)
 | # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 |
 |---|---|---|---|---|---|
 | U1 | 쿠팡 본인인증(T2 이월) → 풀리면 즉시 비금융 링크 3개 발급 → coupangPicks.js에 넣어 F1 운영 배포(디자인 추가 검수 없음, a16eec1) + f2_coupang apply | A | 사장님(결재함 75행) → firemap-youtube-loop(링크) → firemap-product-dev(배포) | 14:50 | 운영 번들 link.coupang.com 3개 + 설명란 되읽기 파일 |
@@ -430,6 +406,31 @@
 | U5 | X-V1 공개 저장소 생성 → `deploy.py push` → 운영 4쪽 200 | A | 사장님(결재함 17행) 또는 순돌이 채팅 → firemap-venture-builder | 14:50(공개 기한 22:00) | github.io 4쪽 curl 200 |
 | U6 | 'Firemap daily growth' 루틴 3)항에 guidegate 문장 넣기(improve 11:47 제안 그대로) — 내일 09:00 [auto] 가이드부터 관문 통과 | C | 순돌이(루틴 수정 권한) | 14:50 | 루틴 지시문에 guidegate.py check 문장 실재 |
 - 지난 결승선 07:50~10:50 표·08:52 점검 줄은 done-2026-10-01.md로 옮김(점검관 11:52).
+
+- **점검 14:54 (스프린트 4회차, 결승선 점검관):**
+  - U1 ❌ 쿠팡 링크 0개 — dev coupangPicks.js salary·severance·unemployment 모두 null, 운영 index-uQgW-jMI.js에 link.coupang.com 0, 오늘 coupang_click 0(Supabase). 결재함 75행 그대로.
+  - U2 ✅ 운영 curl /calc/salary·severance·unemployment-benefit og:image = og_*_c.png?v=c1-20261001(점검관 직접), bot=1 방문 2건 firemap_events 실재(마지막 04:59Z). 완료 줄 0c65510.
+  - U3 ✅ calcub1001/pkg/.edit.json 실재(by firemap-editor 12:08, aitell 0.0) — 대리 아닌 원 편집자가 처리.
+  - U4 ❌ 유튜브 채널 정보 화면(curl)에 firemap.kr/?utm_source=youtube&utm_medium=profile만, /calc/salary 없음. 기준선 표는 있음(longform/loop/baseline-2026-10-01.md 4fc3eff) — 반쪽.
+  - U5 ❌ kygstar77-creator.github.io/uk-take-home-pay/ 404, api.github.com 저장소 404.
+  - U6 ❌ 원격 루틴 'Firemap daily growth' 지시문에 guidegate 0회(RemoteTrigger 조회, 마지막 수정 9/26). 10/2 09:00 실행 전 마지막 기회.
+  - F1 ❌(진행 중, 17:30) = U1. F2 ❌ **마감 14:00 넘김 확정** — 설명란 쿠팡 0/11. F3 ✅. F4 진행 중 utm 0/3(채널 프로필 없음, 쇼츠·카페는 오늘 저녁 편). F5 진행 전(19:20). F6 진행 중 — 편집 통과(.edit.json 12:08), 발행 20:10. F7 ✅. F8 진행 전(22:00). F9 ✅. F10 ✅. F11 진행 전(10/3).
+  - 표 밖: calc-3 퇴직금 숫자 줄('N년 앞당겨져요')이 운영 번들에 있음(curl). 디자인 통과 14:12(e016904)·글자 편집 통과 14:14(2dd1c0e) 줄은 둘 다 실재. 운영 반영 시각이 통과 이전이었는지는 확인 안 함(main=dev 같은 머리 93df365). X-CN-1 기획서 1f512c1 14:42 나옴(대역 지적 ① 해소).
+- ✅ 비율 14:54: 이번 표 2/6 (33%) — U2·U3. 오늘 누계 10/27 (37%) — F3·F7·F9·F10·S3·S4·T1·T4·U2·U3. X-OPS-4 기준선.
+- 수익·세션 14:54: 수익 0원(growth/revenue.md 07:17이 최신, 목표 대비 0.0%) · coupang_click 0 · 오늘 00:00~14:54 session_start 원값 490 중 로컬(127.0.0.1·localhost)·internal·bot 뺀 65(고유 기기 53), 11:50 이후 9 · 마지막 외부 세션 13:45.
+- 정체 점검 14:54: 쿠팡 인증 07:40~ **정체 결재 7시간 14분**(21:15 안건 확정). 유튜브 무인 쓰기 07:59~ **정체 권한 6시간 55분**([순돌이 검토]). X-V1 저장소 09:50~ **정체 결재 5시간 4분**(21:00 빌더 재측정·본부장 처리 줄 있음). U6 루틴 문장 11:47~ **정체 3시간 7분**([순돌이 검토], 안 되면 21:15에서 '[auto] 가이드 1회 정지'). 편집·디자인 검수 대기 0건(calc-3·calcub1001·X-KR-1 모두 통과 줄 있음).
+
+### 다음 3시간 결승선 14:50~17:50 (점검관 14:54 — 운영실장 :05·:35 투입)
+| # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 |
+|---|---|---|---|---|---|
+| V1 | 쿠팡 본인인증(U1 이월, 결재함 75행) → 풀리면 즉시 비금융 링크 3개 → coupangPicks.js → F1 운영 배포(a16eec1 디자인 통과, 추가 검수 없음). 안 풀리면 17:30 F1 ❌ 확정, 21:15 안건 | A | 사장님 → firemap-youtube-loop(링크) → firemap-product-dev(배포) | 17:30 | 운영 번들 link.coupang.com 3개 |
+| V2 | F5 퇴직금·실업급여 쇼츠 — 제작 착수, 설명란에 `/calc/severance?utm_source=shorts&utm_medium=desc&utm_campaign=<작업폴더>` 1개(F4 utm 1/3) | B | firemap-shorts | 17:50(공개 19:20) | 렌더 파일 + 설명란 초안에 utm 링크, 편집 통과 .edit.json |
+| V3 | F6 카페 계산기 소개 글(calcub1001, 편집 통과) — 발행 슬롯 20:10 확정·본문 `/calc/unemployment-benefit?utm_source=cafe…` 링크 실재 확인(F4 utm 2/3) | B | firemap-write | 17:50 | slot.txt 20:10 + 본문 utm 줄 grep |
+| V4 | F8 디벨롭 사전 측정: 연봉·퇴직금·실업급여 계산기 오늘 이벤트(입력 시작·결과·포기율·calc-3 숫자 줄 클릭) 고치기 '전' 수치 → 고칠 것 1개 정하기 | D | firemap-product-dev (+ firemap-growth 수치) | 17:50 | decisions/log.md '전' 수치 줄 + 고칠 것 1개 |
+| V5 | 유튜브 설명란 utm·채널 프로필 /calc/salary(U4 이월) — 순돌이 채팅 `py -3.12 work/ytdesc_all.py apply` 1회 | B | [순돌이 검토] | 17:50 | 채널 정보 curl에 /calc/salary + 설명란 되읽기 |
+| V6 | 루틴 'Firemap daily growth' 3)항 guidegate 문장(U6 이월) | C | [순돌이 검토] | 10/2 09:00 전 | RemoteTrigger 지시문에 guidegate.py check 실재 |
+- X-V1 저장소(U5)는 표에서 뺌 — 본부장 처리 줄대로 21:00 빌더 재측정·404면 [순돌이 검토](13:19 firemap-venture).
+- 지난 결승선 08:50~11:50 표·11:52 점검 줄은 done-2026-10-01.md로 옮김(점검관 14:54).
 
 ## [지시] Mobbin 무료 대안 찾기 (순돌이 → firemap-ai-lab, 기한 오늘 12:00, 사장님 07:2x)
 - 의도: 디자이너·제품 개발이 실제 앱·웹 화면 사례(금융·계산기·결과 화면·온보딩)를 보고 설계하게 한다. Mobbin은 유료라 사장님이 무료 대안을 원한다.

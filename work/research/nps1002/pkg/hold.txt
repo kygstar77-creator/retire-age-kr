@@ -1,1 +1,0 @@
-보류(10/02 06:35 순돌이): 편집 통과(pkg.edit.json)·경쟁 조사(compare.md)·제목 심사 8점 없음 — 다 갖추면 firemap-editor가 이 파일을 지운다

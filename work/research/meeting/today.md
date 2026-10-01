@@ -57,6 +57,9 @@
   - 착수: firemap-write 06:10 (운영실장, 절전 06시 회차 sonnet)
   - 완료: firemap-write 06:12 — work/research/xcn1_cafe1002/pkg/c00.txt (제목 title.txt, 공식 사이트 직접 확인, 링크 1개, aitell 10.4 통과)
   - [편집 검수 요청] 담당 firemap-editor, 기한 12:30, work/research/xcn1_cafe1002/pkg/c00.txt (수동 대기열·마감 오늘 17:00, '~요' 72%라 말투 점검 부탁)
+    - 착수: firemap-editor 06:38
+    - 편집 통과: xcn1_cafe1002 06:41 — 본문 '~요' 75→53%·'지금이 마지막 기회예요' 뺌(숫자·링크·출처 그대로, 원본 .orig). 제목 → '한능검 취소좌석 오늘 17시까지, 놓치면 81회는 11월 3일 접수'(제미나이 9.6·레드팀 8.4, 원제목 7.3 미달). review.md·compare.md·pkg/.edit.json, hold.txt 지움. **firemap-write: 수동 대기열 제목 바뀜 — title.txt 다시 읽을 것.**
+    - 완료: firemap-editor 06:41
 - [지시·재지시] **firemap-product-dev**, 트랙:D, 기한 지금(22:00): 18:21 지시(compact-tiles 2줄 dev 커밋+320·375 캡처 / 4대보험 경쟁 분해) 착수 0. N1 운영 배포는 막혀도 dev 일은 막힌 게 아니다 → 상황판 state '일하는 중'(N1은 today.md 막힘 줄로만). 완료 기준: dev 커밋 + calc-competition/4insurance.md + "완료: … HH:MM". 금지: main 푸시 우회. **운영실장 21:05.**
   - 착수: firemap-product-dev 21:10 (운영실장)
   - 완료: firemap-product-dev 21:16 — ① dev d3729cf: 퇴직금·실업급여 StatHero에 ds-hero--compact-tiles, 캡처 design/calc-3/build/{severance,unemployment}-compact-{320,375}.png. 퇴직금 320 가운데 타일 여백 6.3px(기준 4px 이상) 통과. **실업급여 320 '하한 66,048원' 타일은 compact 뒤에도 칸 밖으로 8px 넘침**(375는 0.8px) → 디자이너 판정 필요 ② calc-competition/4insurance.md(네이버 위젯·4대보험 정보연계센터·calculate·calcroom·올계산기 5곳, 수요 '4대보험계산기' 월 84,200) ③ S1 한 줄: 운영 firemap_events coupang_click 누적 0행(마지막 이벤트 20:56)·운영 번들에 coupang_click 있음·로컬에서 3계산기 클릭 시 POST 3건 확인(운영 DB 쓰기는 막고 봄) → 코드는 동작, 실제 클릭이 아직 없음. 운영 클릭은 안 함.
@@ -343,6 +346,7 @@
 
 ## [지시·긴급] 카페 글 검수 보류 + 영상에서 약속한 카페 글 (사장님 10/02 06:35: "카페 자료조사도 잘 하고 있는 거야? 문장 편집자도 계속 검수하고 있고?", "유튜브 대본에서 말하는 카페에 올리겠다는 것도 올리고 있고?")
 - 순돌이 실측: 대기 카페 묶음 중 wht1002만 compare.md+편집 통과(pkg.edit.json). **nps1002(10/2 15시)·xcn1_cafe1002·gongjae1002는 편집 통과가 없어 순돌이가 hold.txt로 보류**(nps1002·xcn1은 경쟁 조사도 없음). firemap-write(경쟁 조사·제목 심사) → firemap-editor(편집 통과, 통과하면 hold.txt 삭제). 편집자는 어제 22건 통과 기록이 있지만 대기 묶음을 다 못 따라갔다.
+  - 완료: firemap-editor 06:41 — 3묶음 편집 통과 + 제목 카피 심사(제미나이+레드팀, GPT는 절전으로 안 함) + compare.md(nps1002·xcn1 카페 탭 상위 5) → **hold.txt 3개 지움.** 제목 '~할까?' 3개 모두 교체: gongjae1002(09시) '공공재개발 이주비 대출이자 지원, 금리 3.8% 밑이면 덜 받아요'(8.5) · nps1002(15시) '국민연금 미적립부채 1,450조 보도, 내 연금 계산식엔 기금 잔액이 없다'(8.7) · xcn1(9.0). 대표 이미지 1초 시험은 visual-designer 몫(확인 안 함). 각 폴더 review.md.
 - 영상 속 약속: A-1 "ETF별 전체 표는 카페에" → 10/1 12:08 firemap/187 발행됨 ✅. **E-1 "세 회사 8분기 전체 표는 카페에 올려 두겠습니다" → 아직 글 없음.** firemap-youtube-loop + firemap-write: E-1 공개(10/3 19:30) 전까지 표 글 작성·관문(경쟁 조사·제목 심사·대표 이미지 1초 시험·편집 통과) 후 E-1 공개 시각 직전 발행, 영상 설명·고정 댓글에 글 주소.
 - 재발 방지: 롱폼·쇼츠 대본에 '카페에 올리겠다' 같은 약속이 있으면 youtube-loop가 work/research/longform/loop/promises.md에 (편·약속·카페 글 주소·기한) 한 줄. 순돌이 대역·스프린트 점검이 공개된 영상의 약속 중 글이 없는 것을 매번 확인.
 

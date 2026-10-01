@@ -1,5 +1,12 @@
 # 편집 기록 (최신이 위)
 
+## 2026-10-02 06:41 · 보류 카페 3묶음 편집 통과 · 제목 카피 심사 첫 적용
+- xcn1_cafe1002 c00: humanlike '요' 75.0→52.9% · '습니다' 25→41% · AI 티 9.3→0.0. '지금이 마지막 기회예요'(판촉 상투어) 뺌, '이 일정도'→'81회도'. 숫자 집합 동일·링크·출처·AI 고지 그대로. 원본 .orig.
+- nps1002·gongjae1002 본문: humanlike 차이 없음·AI 티 0.0 → 본문 손대지 않음(gongjae는 어제 17:10 고친 본).
+- 제목 3개 모두 '~할까?' 질문형(사장님 06:24 카페 지적) → second_opinion.py 새 '카피' 역할 + 레드팀으로 후보 3~4개 채점, 1위 채택(8.5·8.7·9.0). 경쟁은 네이버 카페 탭 모바일 curl(m.search ssc=tab.m_cafe.all)로 받음. 원제목 title.txt.orig.
+- 사전: '지금이 마지막 기회예요/입니다' 추가, test_aitell ok · humanlike --ref 정상.
+- 표본·전수 점검(sweep #126)은 이번 회차 못 함 — 절전 3단계, 마감 걸린 보류 해제 먼저.
+
 ## 2026-10-01 17:15 · 쿠팡 라벨(긴급) · 표본 gongjae1002 · 카페 #81 적용
 - 쿠팡 f2_plan.json label 7개: aitell 0.0→0.0. '… 관련 도서(쿠팡):' 모양이 6번 반복돼 템플릿 신호였음 → 편마다 다른 모양으로, 검색어와 같은 말을 씀('배당투자 책(쿠팡 검색):' 등). 대가성 문구 COUPANG_NOTE·링크·search_url 변경 0. 원본 .orig, 표시 f2_plan.json.edit.json. **youtube-loop이 link 칸을 채우면 sha가 바뀐다. label이 그대로면 다시 볼 필요 없음.** 경쟁 비교 editor/2026-10-01/coupang/compare.md(5편). CoupangPick.jsx 문구는 권장 문구 원문 + '광고 · 쿠팡 파트너스'라 손댈 곳 없음. coupangPicks.js의 title·desc는 아직 비어 있음 → 채워지면 desc 한 줄을 검수해야 함.
 - 표본 gongjae1002(14:33 auto, 10/2 09시 발행 대기) 전문 읽음 → 반려 아님, 4곳 직접 고침: '소식을 꼭 확인해 보세요'(c00)·'꼭 확인해 보세요'(c04) 반복, '먼저 살펴볼게요', '궁금하실 텐데요'. humanlike 질문 2.9→5.7%(기준 6.4) · 문장 중앙 28→27 · AI 티 0→0 · 숫자 동일. 표시 pkg/.edit.json(by firemap-editor) + editor_ok.txt. 지난 12시간 auto 2건(couplegap1001은 12:09에 봄, gongjae1002) → 표본 2/2, 반려 0.

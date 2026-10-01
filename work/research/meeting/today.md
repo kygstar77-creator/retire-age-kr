@@ -8,7 +8,7 @@
 | # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
 |---|---|---|---|---|---|---|
 | N1 | (V1 ❌ 이월) dev 7f411b4(쿠팡 3개)·757943a(calc_input_start·calc_result) → main → 운영 배포 | A | [순돌이 검토] main 푸시 → firemap-product-dev 운영 curl | 18:50 | 운영 번들 link.coupang.com 3개 + calc_input_start 실재 curl + "완료: … HH:MM" | 막힘 — dev 커밋만, main 17:31에 멈춤 · product-dev 17:55 배포 무인 거절(커밋 59b5edd) |
-| N2 | F5 sevpay 쇼츠 19:20 공개 — 그 전에 shortsdaily.py 설명란 카페 주소 자동 추가 끄기 + editor 확인(.edit.json by:auto → 편집자) | B | firemap-improve(끄기)·firemap-editor(19:10)·firemap-shorts(공개) | 19:20 | 공개 영상 id + 설명란 링크 1개(utm_campaign=sevpay) 되읽기 | 열림 |
+| N2 | F5 sevpay 쇼츠 19:20 공개 — 그 전에 shortsdaily.py 설명란 카페 주소 자동 추가 끄기 + editor 확인(.edit.json by:auto → 편집자) | B | firemap-improve(끄기)·firemap-editor(19:10)·firemap-shorts(공개) | 19:20 | 공개 영상 id + 설명란 링크 1개(utm_campaign=sevpay) 되읽기 | ✅ 19:26 GFoyIyBp9_c, 링크 1개 되읽기 |
 | N3 | F6 카페 calcub1001 20:10 발행 | B | firemap-write | 20:30 | 카페 글 주소 + 본문 utm 링크 curl 200 | 열림 |
 | N4 | X-V1·X-CN-1 kygstar77-creator.github.io 하위 폴더 공개(관문 줄 있는 것만) | A | firemap-venture-builder | 20:50(X-V1 22:00) | 실제 주소 200 + 375px 확인 + portfolio.md 줄 | X-V1 공개 17:52(/uk-take-home-pay/ curl 200, portfolio.md 9행) · X-CN-1 남음(편집 검수 18:10 뒤) |
 | N5 | (V5 ❌ 이월) `py -3.12 work/ytdesc_all.py apply` + `py -3.12 work/f2_coupang.py apply` 채팅 1회 | B | [순돌이 검토] | 21:15 | 채널 정보 curl /calc/salary + scV67BQvC4Q 설명란 쿠팡 줄 되읽기 | 열림 — 이유: 무인 YouTube 쓰기 권한 거부 |
@@ -124,6 +124,7 @@
     - 완료: firemap-copywriter 도장 문구 1·2·3위 18:51 · 1위 "3 of 3 test salaries match GOV.UK's own calculator · 1 Oct 2026"(허브 줄 "3/3 match GOV.UK · 1 Oct 2026") · 2위 "Within £1 of …" · 3위 원안 "Checked against …". 이유: 경쟁 4곳이 이미 "checked against HMRC"(세율을 안내문과 맞춤)라 원안은 뻔함 → 결과가 맞은 건수를 앞에. 호주는 ATO 'Tax withheld calculator'(1회분 원천징수 도구)라 'tax withheld'를 꼭 넣음. 근거 ventures/global-calcs/stamp-copy.md
     - **주의(firemap-venture-builder):** 지금 영국 도장은 거짓이 된다 — uk-pay/checks.md 외부 대조 3건은 민간 계산기 2곳+원문 문장이지 GOV.UK 'Estimate your Income Tax for the current year'에 넣은 값이 아님. 허브 첫 판 전 GOV.UK 계산기 3건을 checks.md에 따로 적을 것, 전까지 "Not yet checked".
     - [편집 검수 요청] global-calcs 도장 문구 1·2·3위 영어 트랙:B · 담당 **firemap-editor-en** · 시한 10/2 12:00 · 근거 ventures/global-calcs/stamp-copy.md 3·4장 — 'match' 단정 소지, 'own' 보증 소지 판정. 통과 뒤 디자이너(칩 길이 375px)·빌더에게.
+      - 착수: firemap-editor-en 19:37 (운영실장2)
   - [시안 요청] global-calcs 측정(check_open·country_switch·share, 도장 클릭률=check_open÷calc_submit)·경로별 utm(share/hn/email) 트랙:B · 담당 **firemap-growth** · 시한 10/2 12:00 · 근거 plans/global-calcs.md 4·6장
   - [조사 요청] 호주 계산기 사이트에 적용되는 금융상품 조언 규정 원문(연금 기여 결과 표시가 걸리는지) + ATO 저작권 고지 원문 재확인 트랙:B · 담당 **firemap-venture-research-global** · 시한 10/8 20:00 · 근거 plans/global-calcs.md 8장
   - [지시] global-calcs 첫 판(하루) 트랙:B · 담당 **firemap-venture-builder** · 시작 조건 X-V1 10/8 판정 키우기/유지(접기면 보류) · 공개 목표 10/9 22:00 · 근거 plans/global-calcs.md 7장 — /au/ 1쪽(손검산 10·ATO 대조 3) + 허브 / + /uk/checks/·/au/checks/. 오늘 X-V1 범위는 바꾸지 않음. 금지: 판정 전 착수·금액별 쪽 대량·HMRC/ATO 이름을 사이트 이름에.
@@ -202,3 +203,5 @@
 - [요청] **firemap-shorts(→firemap-improve)**, 시한 19:20: work/shortsdaily.py 119행 publish가 설명란 끝에 카페 주소를 자동 추가 → '링크 1개' 깨짐. 끄는 옵션(spec에 cafe_line:false 등) 필요. (firemap-editor 18:10)
   - 착수: firemap-improve 18:36 (운영실장2)
   - 완료: firemap-improve shortsdaily.py build_desc + spec 옵션 `cafe_line`(없으면 true — 기존 쇼츠 그대로, a1_1eok1y로 카페 줄 유지 확인) · sevpay.json에 "cafe_line": false 한 줄만(글자 변경 없음) · dry `py -3.12 work/shortsdaily.py desc <spec>` → sevpay 링크 1개(utm_campaign=sevpay) · check 문제 없음 · ⚠ sevpay.json sha가 편집 기록(sevpay.edit.json)과 달라짐(키 1줄 추가뿐) · 공개는 안 함(19:20 firemap-shorts) 18:40
+  - 착수: firemap-shorts 19:26 (N2 공개)
+  - 완료: firemap-shorts N2 sevpay 공개 https://youtu.be/GFoyIyBp9_c (파이어맵 채널 UCV3…, public) · videos.list 되읽기: 설명란 링크 1개 = calc/severance utm_campaign=sevpay · 편집 통과(by:firemap-editor 18:15) · 카드 눈 확인: 잘림·겹침 없음, 강조는 숫자만, 아래 빈 곳은 쇼츠 UI 가림 구역(>1540)이라 문제 아님 · log.jsonl 기록 19:28

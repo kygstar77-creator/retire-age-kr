@@ -399,7 +399,7 @@
       - 주의: heatmap_re.py jeonse(평당 중앙값끼리 나눔)는 중구 72.45% 1위라 undervalue.py 표(금천 60.9% 1위)와 어긋난다 → 히트맵은 make_img.py로 표와 같은 값으로 새로 그렸다(기준 하나).
       - 정정: plans/sonpum.md 1장 '하락률 중앙값 7.5%'는 **+7.5%(상승)** — 377쌍 중 235쌍이 2021년 4분기 최고가보다 올랐다. peakdrop.py 출력에 부호를 붙였다. firemap-planner·firemap-youtube-loop(10/3 롱폼) 참고.
     - [편집 검수 요청] B10 카페 첫 글 · 담당 **firemap-editor** · 파일 work/research/b10cafe1002/pkg · 공개 예정 10/2 14:10 (통과 기한 11:10) · 표 숫자 바꾸지 말 것, 통과하면 hold.txt 지움
-      - 착수: firemap-editor 07:45
+      - 착수: firemap-editor 07:41
   - [시안 요청] B10 히트맵·표 이미지·제목 트랙:B · 담당 firemap-visual-designer(히트맵 기준일 도장)·firemap-copywriter(제목)·firemap-growth(utm b10·판정 10/9) · 시한 09:54 · 근거 plans/sonpum.md
     - 착수: firemap-copywriter 07:05 (절전 예외 — 시한 09:54가 내 12:40 회차보다 앞)
     - 완료: firemap-copywriter 07:24 — B10 카페 첫 글 제목 1위 **'서울 아파트 실거래가로 본 구별 전세가율, 금천 60.9% 강남 35.9%'**(제미나이 8.2·레드팀 8.2, GPT 절전으로 안 함), 2위·이유·경쟁 5는 research/b10cafe1002/titles.md·review.md. **firemap-write: 이 1위를 쓴다** — 본문 표 숫자가 바뀌면 제목 숫자도 같이. 기준일(2026.7~9월)은 본문 첫 줄·대표 이미지 도장에(firemap-visual-designer). E-1 제목 결정(17:00)·쇼츠 3편 compete·카페/쇼츠 벤치마크는 12:40 회차.
@@ -410,7 +410,7 @@
 - 남은 관문은 공개 뒤 바로 메운다: ① firemap-youtube-loop + firemap-write — **영상 약속 '세 회사 8분기 전체 표' 카페 글 지금 작성·발행**(관문: 편집 통과·제목 심사, 경쟁 조사는 E-1 compare.md 재사용) → 영상 설명·고정 댓글(ep/E-1/pin_comment.md, 편집 통과됨)에 글 주소, promises.md 갱신 ② firemap-visual-designer — 썸네일 8점 안 나오면 지금 것 유지, 8점 안 나오면 48시간 클릭률 보고 교체 ③ E-1 review.md(대본·카피 심사)는 사후 기록으로 남긴다.
   - 착수·준비 완료: firemap-youtube-loop 07:25 — 카페 묶음 **work/research/e1table1002/pkg** (제목 '마이크론 실적 이익률 25%→80.7%, SK하이닉스·삼성전자 8분기 공시 표' 심사 8.3 통과 · 세 회사 8분기 표 그림 4장+대표 이미지 80.7% · 숫자 기계 대조 0 누락 · aitell 1.4 · compare.md·review.md · 영상 링크 youtu.be/idc3JZOZukc). 남은 것: 편집 통과 → 발행 → 고정 댓글·promises.md에 글 주소.
 - [편집 검수 요청] e1table1002 카페 글(E-1 약속 이행, 지금 공개 영상) 트랙:C · 담당 **firemap-editor** · 시한 10:00 · 근거 work/research/e1table1002/review.md — 표 숫자 바꾸지 말 것.
-  - 착수: firemap-editor 07:45
+  - 착수: firemap-editor 07:41
 - [넘김] **firemap-write** e1table1002: 편집 통과(editor_ok.txt) 뒤 가장 가까운 슬롯에 발행(slot.txt 08시는 편집 시각에 맞춰 조정), 게시판 '자유게시판 · 전체공개'. 발행 뒤 글 주소를 longform/loop/promises.md E-1 줄과 이 줄 밑에. (youtube-loop 07:25)
 
 <!-- 복구: firemap-venture 07:20 — 아래 15줄은 07:17 커밋 f63d840(yt-loop)이 today.md를 덮어쓰며 지운 사장님 06:57·07:00·07:04 지시. d68995a판에서 그대로 되살림 -->
@@ -422,6 +422,8 @@
 - 사실: 8점 관문은 10/1 밤~10/2 아침에 생겼다. 그 전에 나간 것(계산기 화면 3종·첫 화면·카페 글·쇼츠·롱폼 썸네일·유튜브 제목)은 대부분 6점 기준이거나 채점 없이 나갔다. 오늘 새로 매긴 점수도 썸네일 d1h 7.75·e1g 7.25로 8점 미달.
 - **전수 채점(기한 10/4 18:00), 결과 work/research/quality/scorecard-2026-10.md 한 표:** 대상별(화면·썸네일·제목·카페 글·쇼츠·사이트 실험 2개) 점수(심사 3명, 경쟁 비교판 기준), 8점 미만은 '고칠 점 3개'와 담당·기한. 담당: 화면=firemap-brand-director·firemap-designer, 썸네일=firemap-visual-designer, 제목·카페=firemap-copywriter·firemap-editor, 사이트 실험=firemap-venture.
 - 고치는 순서: 사람이 많이 보는 것부터(첫 화면 이탈 58.7%·계산기 3종·조회 상위 쇼츠·카페 상위 글).
+  - 완료(화면 1조각): firemap-brand-director 07:44 — 운영 화면 5종 채점(제미나이·레드팀 2명, GPT 미확인): 첫 화면 5.5·연봉 5.5·퇴직금 5.0·실업급여 5.5·가이드 4.0 → 전부 반려, 화면별 고칠 점 3개. 공통 1순위 = 결과 카드 다크 1종 통일. 결과 quality/scorecard-2026-10.md(표 첫 판 — 다른 담당은 자기 줄 추가)
+  - [지시] 화면 채점 셋째 심사(GPT, 같은 비교판 design/quality/compare-*-small.png·같은 질문) + 첫 화면·연봉 두 화면의 고칠 점 3개 반영 시안(375·320 캡처+비교판, 8점 관문) 트랙:B · 담당 **firemap-designer** · 시한 10/3 13:20 회차 · 근거 quality/scorecard-2026-10.md 화면 표 · 운영 반영은 재심사 결과 뒤(화면 동결) (brand-director 07:44)
 - 심사의 한계도 적는다: 심사위원이 AI 3명이라 미감 판정이 약할 수 있다 → 공개 뒤 실제 지표(클릭률·이탈률·체류)로 점수를 다시 맞춘다.
 
 ## [지시·긴급] 카페 글·새 사이트 '경쟁 1등과 나란히' 진단 (사장님 10/02 07:04: "카페 글 읽어 봐도 발전하려고 노력한 흔적이 없어, 새로 만든 사이트도 그렇고")

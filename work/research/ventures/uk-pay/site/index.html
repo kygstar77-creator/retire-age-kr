@@ -62,6 +62,8 @@ summary{padding:12px 16px;font-weight:600;cursor:pointer;min-height:48px;display
 select{width:100%;height:48px;border:1.5px solid var(--line);border-radius:12px;padding:0 12px;font-family:inherit;font-size:var(--fs3);color:var(--ink);background:var(--card)}
 table{width:100%;border-collapse:collapse;font-size:var(--fs4);font-variant-numeric:tabular-nums}
 td,th{padding:10px 16px;border-top:1px solid var(--line);text-align:left;font-weight:400} td:last-child,th:last-child{text-align:right}
+#tbl td,#tbl th{padding:10px 8px;text-align:right}#tbl td:first-child,#tbl th:first-child{padding-left:16px;text-align:left}#tbl td:last-child,#tbl th:last-child{padding-right:16px}#tbl tr:first-child th{color:var(--sub);font-size:var(--fs5);border-top:0;padding-top:4px;padding-bottom:4px}#tbl tr:last-child th{font-weight:700}
+@media (max-width:360px){#tbl td,#tbl th{padding-left:4px;padding-right:4px}#tbl td:first-child,#tbl th:first-child{padding-left:12px}#tbl td:last-child,#tbl th:last-child{padding-right:12px}}
 .empty .big,.empty .next b{color:var(--dark-sub)}
 h2{font-size:var(--fs2);margin:32px 0 8px}
 h3{font-size:var(--fs3);margin:20px 0 4px}
@@ -90,7 +92,7 @@ footer a+a{margin-left:8px}
         <button type="button" data-p="12" aria-pressed="false">Month</button>
       </div>
     </div>
-    <p class="note" id="scope">England, Wales &amp; Northern Ireland · Scotland not supported yet</p>
+    <p class="note" id="scope">England, Wales &amp; Northern Ireland · Scotland not supported yet · rates from GOV.UK, checked 1&nbsp;October&nbsp;2026</p>
   </div>
 
   <section class="result empty" id="res" aria-live="polite">
@@ -117,6 +119,7 @@ footer a+a{margin-left:8px}
       <select id="pg"><option value="">No</option><option value="1">Yes</option></select>
     </div>
     <table id="tbl"></table>
+    <p class="note" id="tblNote" style="padding:0 16px 16px" hidden>Month is the yearly amount divided by 12 and rounded to the nearest pound, so the rows may not add up exactly.</p>
   </details>
   </main>
 
@@ -198,7 +201,7 @@ footer a+a{margin-left:8px}
     if (!(v > 0) || v > 10000000) {
       last = null; r.classList.add('empty');
       el('big').textContent = '£—'; el('sub').textContent = 'Type your salary to see it'; el('nx').textContent = '£—';
-      el('trap').hidden = true; el('shareBtn').hidden = true; el('tbl').innerHTML = ''; return;
+      el('trap').hidden = true; el('shareBtn').hidden = true; el('tbl').innerHTML = ''; el('tblNote').hidden = true; return;
     }
     var plan = el('plan').value, pg = el('pg').value === '1';
     var a = calc(v, plan, pg), b = calc(v + 1000, plan, pg);
@@ -213,11 +216,17 @@ footer a+a{margin-left:8px}
     el('trapLink').href = '60-percent-tax-trap/#s=' + Math.round(v);
     if (inTrap && !trapSeen) { trapSeen = true; FMKit.log('trap_view'); }
     el('shareBtn').hidden = false;
-    var rows = [['Salary', f(v)], ['Personal Allowance', f(a.pa)], ['Income Tax', '−' + f(a.tax)], ['National Insurance', '−' + f(a.ni)]];
-    if (a.sl) rows.push(['Student loan (Plan ' + plan + ')', '−' + f(a.sl)]);
-    if (a.pgl) rows.push(['Postgraduate loan', '−' + f(a.pgl)]);
-    rows.push(['Take home (year)', f(a.net)]);
-    el('tbl').innerHTML = rows.map(function (x) { return '<tr><td>' + x[0] + '</td><td>' + x[1] + '</td></tr>'; }).join('');
+    // 연·월 두 칸(월 = 연 ÷ 12). 개인공제는 연 한도라 월 칸 비움
+    var rows = [['Salary', v, ''], ['Personal Allowance', a.pa, 'pa'], ['Income Tax', a.tax, '−'], ['National Insurance', a.ni, '−']];
+    if (a.sl) rows.push(['Student loan (Plan ' + plan + ')', a.sl, '−']);
+    if (a.pgl) rows.push(['Postgraduate loan', a.pgl, '−']);
+    rows.push(['Take home', a.net, 'net']);
+    el('tbl').innerHTML = '<tr><th></th><th>Year</th><th>Month</th></tr>' + rows.map(function (x) {
+      var s = x[2] === '−' ? '−' : '', y = s + f(x[1]), m = x[2] === 'pa' ? '' : s + f(x[1] / 12);
+      return x[2] === 'net' ? '<tr><th>' + x[0] + '</th><th>' + y + '</th><th>' + m + '</th></tr>'
+                            : '<tr><td>' + x[0] + '</td><td>' + y + '</td><td>' + m + '</td></tr>';
+    }).join('');
+    el('tblNote').hidden = false;
     clearTimeout(timer);
     timer = setTimeout(function () { var bk = band(v); if (bk !== lastBand) { lastBand = bk; FMKit.log('calc_submit', { bucket: bk }); } }, 1000);
   }

@@ -1,0 +1,10 @@
+[모델 gemini-3-flash-preview]
+Score: 6/10
+
+**The Biggest Problem:**
+**Information Congestion.** The dark card, which is your primary differentiator, functions as a text-heavy paragraph rather than a dashboard. By placing the "cross-check" stamp, the current status, and the deadline all in the same font size and weight within a single block, you force the user to "read" rather than "scan." Your differentiator (real-time trust) is currently noise, not a signal.
+
+**Two Fixes:**
+
+1.  **Deconstruct the Paragraph:** Move the "cross-check stamp" (trust signal) to the very top or bottom of the card in a smaller, low-contrast gray font (e.g., 11-12px). Elevate the **one key fact** (the deadline/status) to a hero size (e.g., 20px+). Use vertical spacing to separate the "current test" info from the "next test" info.
+2.  **State-Proof the Card Height:** In the "stale" state (Image 4), the card becomes an empty box with a single link, which looks like a loading error. Maintain the visual structure even when data is stale; keep the "Add to Calendar" button visible but perhaps disabled or secondary, and ensure the fallback link occupies the same optical center as the deadline did to prevent layout shifts.

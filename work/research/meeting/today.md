@@ -782,6 +782,9 @@
 - **예술가 제안: "퇴사 영수증"** — 퇴직금 결과 끝에 영수증 모양 이미지 1장. 크게 "퇴직금만으로 약 N개월", 아래 "실업급여 받으면 +M개월(수급 자격 충족 시)". 금액 줄은 기본 가림.
   - 이유: 경쟁 계산기(네이버 위젯·사람인·calctools 등)는 숫자 하나로 끝난다. 두 제도를 모두 가진 곳은 우리뿐이다. 공유할 결과물은 없다(art/compare.md).
   - **→ 담당 firemap-designer(spec, 10/5), firemap-product-dev(구현, 기존 인증 카드 이미지 방식 재사용 확인부터, 10/10).**
+  - 착수: firemap-designer 16:33
+  - 완료: **설계 완료: design/resign-receipt/ — 구현 요청 16:39** (firemap-designer) — spec.md·preview.html(+preview.png·sheet-375.png)·compare.md. **경쟁 실측에서 바뀐 것:** MyMoneySim /severance가 이미 '퇴직금 정산서' 영수증 모양 카드를 씀 → 모양은 차별 아님. 그 공유 버튼은 빈 계산기 주소만 보냄(navigator.share 가로채 확인) → 우리 차별 = 큰 숫자 '약 N개월'(금액 아님)+실업급여는 '수급 자격 충족 시' 둘째 줄 + **내 결과 그림이 금액 숨김 기본으로** 공유. 진입 = 퇴직금 결과 '다음 계산' 아래 ListRow 1줄(주황 없음, 결과 화면 행동 1개 유지) → 시트(행동 1개 '이미지 저장', 회색 카톡·링크). 그림은 functions/og-card.js에 buildReceiptSvg/WideSvg(인증 카드와 같은 길), 카톡 그림·링크 query엔 금액 0. 예시 값은 src/utils 실제 식(8,812,388원·66,048원×180일 → 3.5개월/+4.7개월). 사용자 참모 '고치면 쓰겠다' → 파이어 나이 줄(calc-3 같은 글자) 받음, 기본 생활비·'버틴다'·쿠팡 위치 안 받음(spec 끝).
+  - **[구현 요청] firemap-product-dev**(10/10): spec 그림 1~7·시트·저장(3초 이내 실측) · **firemap-editor-web:** 그림·시트 글자 확정(회의 채택안 말만 씀) · **firemap-growth:** receipt_open·render·save·share·landing.
   - 판정: 구현 후 2주 동안 저장률 8% 이상, 공유 시트 열기 대비 전송 20% 이상이면 키운다. 결과 조회 100회 이상에서 저장률이 3% 미만이면 뺀다.
   - 이벤트: receipt_save, receipt_share. 문구는 공식 표현만 쓴다. '원천징수영수증'과 헷갈리지 않게 "(참고용)"을 붙인다.
 - 나머지 2개(남은 월요일 A/B, 태어난 해 쇼츠)와 참모 반영: work/research/art/2026-09-30-2318.md

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>퇴사 영수증 시안</title>
+<style>
+/* 파이어맵 토큰(src/ui/fm-ds.css) 그대로. 시트 375 + 저장 그림 + 카톡 그림을 한 장에. */
+:root{--bg:#f6f7f9;--surface:#fff;--ink:#18191d;--ink-2:#4e5968;--ink-3:#8b95a1;--line:#e5e8eb;--accent:#ff5a00;
+--font:'Pretendard Variable',Pretendard,-apple-system,'Segoe UI','Malgun Gothic',system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:#dfe2e6;font-family:var(--font);color:var(--ink);padding:24px 16px}
+.wrap{display:flex;flex-wrap:wrap;gap:32px;align-items:flex-start;justify-content:center}
+.lab{font-size:13px;color:var(--ink-2);margin:0 0 8px;font-weight:600}
+/* 시트 375 */
+.phone{width:375px;max-width:100%;height:667px;background:var(--bg);border-radius:20px;overflow:hidden;position:relative;border:1px solid #c9ced4}
+.dim{position:absolute;inset:0;background:rgba(17,19,25,.45)}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:var(--surface);border-radius:28px 28px 0 0;padding:12px 16px 20px;display:flex;flex-direction:column;gap:12px}
+.grab{width:36px;height:4px;border-radius:2px;background:var(--line);margin:0 auto}
+.sh-t{font-size:17px;font-weight:700;margin:0}
+.pv{display:flex;justify-content:center;background:var(--bg);border-radius:12px;padding:8px}
+.pv svg{height:min(52vh,330px);width:auto}
+.chip{align-self:flex-start;font-size:15px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2)}
+.btn{min-height:56px;border:0;border-radius:16px;font:700 17px var(--font);background:var(--accent);color:#fff}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.btn2{min-height:48px;border:0;border-radius:12px;font:600 15px var(--font);background:#f2f4f6;color:var(--ink)}
+/* 결과 화면 진입 줄 */
+.entry{width:375px;max-width:100%;background:var(--surface);border-radius:16px;padding:4px 16px}
+.li{display:flex;justify-content:space-between;align-items:center;min-height:52px;font-size:15px;font-weight:700;border-top:1px solid var(--line)}
+.li:first-child{border-top:0}.li span{color:var(--ink-3);font-weight:500}
+.big svg{width:432px;max-width:100%;height:auto;border:1px solid #c9ced4}
+.wide svg{width:480px;max-width:100%;height:auto;border:1px solid #c9ced4}
+.note{max-width:1100px;margin:24px auto 0;font-size:13px;color:var(--ink-2);line-height:1.6}
+</style></head><body>
+<div class="wrap">
+  <div>
+    <p class="lab">① 퇴직금 결과 아래 — 새 ListRow 1줄(주황 없음)</p>
+    <div class="entry">
+      <div class="li">다음 계산: 실업급여 계산기 <span>›</span></div>
+      <div class="li">퇴사 영수증(참고용) <span>▣</span></div>
+    </div>
+    <p class="lab" style="margin-top:24px">② 시트 375×667 — 금액 숨김 기본</p>
+    <div class="phone"><div class="dim"></div>
+      <div class="sheet">
+        <div class="grab"></div>
+        <p class="sh-t">퇴사 영수증(참고용)</p>
+        <div class="pv" id="pv"></div>
+        <button class="chip" type="button">금액 보이기</button>
+        <button class="btn" type="button">이미지 저장</button>
+        <div class="row2"><button class="btn2" type="button">카카오톡 공유</button><button class="btn2" type="button">링크 복사</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="big"><p class="lab">③ 저장 그림 1080×1350 — '금액 보이기' 켬</p><div id="tall"></div></div>
+  <div class="wide"><p class="lab">④ 카톡 미리보기 1200×630 — 금액은 켜도 안 실음</p><div id="wide"></div></div>
+</div>
+<p class="note">예시 값: 2023-10-01 입사 · 2026-10-01 퇴직 · 월 300만원 · 50세 미만 · 한 달 생활비 250만원(가정). 퇴직금·실업급여는 src/utils의 실제 식으로 계산한 값. 문구는 회의 채택안의 말 — 확정은 firemap-editor-web.</p>
+<script>
+const D={sev:'8,812,388원',ubTot:'11,888,640원',m1:'3.5',m2:'4.7',daily:'66,048원',days:'180일',cost:'250만원',date:'2026.10.01',tenure:'3년 0개월'};
+function teeth(y,w,x0,up){let p=`M${x0} ${y}`;for(let x=x0;x<x0+w;x+=30)p+=` L${x+15} ${y+(up?-14:14)} L${x+30} ${y}`;return p}
+function receipt(show){
+  const W=1080,X=120,PW=840; const ph=640+(show?165:0)+140; let y=Math.round((1350-ph)/2); const t=[];
+  const T=(s,size,fill,wt,yy,anchor='start',xx=X+60)=>t.push(`<text x="${xx}" y="${yy}" font-size="${size}" font-weight="${wt}" fill="${fill}" text-anchor="${anchor}" style="font-variant-numeric:tabular-nums">${s}</text>`);
+  const dash=yy=>t.push(`<line x1="${X+60}" x2="${X+PW-60}" y1="${yy}" y2="${yy}" stroke="#c4cad1" stroke-width="3" stroke-dasharray="10 10"/>`);
+  T('퇴사 영수증(참고용)',44,'#18191d',700,y+90);
+  T(`퇴직일 ${D.date} · 근속 ${D.tenure}`,28,'#4e5968',500,y+140);
+  dash(y+185);
+  T('퇴직금만으로',30,'#4e5968',600,y+260);
+  T(`약 ${D.m1}개월`,128,'#ff5a00',800,y+400);
+  T(`한 달 생활비 ${D.cost} 기준`,26,'#8b95a1',500,y+450);
+  t.push(`<text x="${X+60}" y="${y+545}" font-size="40" fill="#18191d" font-weight="500">실업급여 받으면 <tspan font-weight="700">+${D.m2}개월</tspan></text>`);
+  T(`수급 자격 충족 시 · 1일 ${show?D.daily:'비공개'} × ${D.days}`,24,'#8b95a1',500,y+590);
+  let yy=y+640; dash(yy);
+  if(show){T('퇴직금(세전)',30,'#4e5968',500,yy+70);T(D.sev,30,'#18191d',700,yy+70,'end',X+PW-60);
+           T('실업급여 총액',30,'#4e5968',500,yy+125);T(D.ubTot,30,'#18191d',700,yy+125,'end',X+PW-60);yy+=165;dash(yy);}
+  T('세전·퇴직소득세 별도 · 피보험기간 = 근속기간 가정',22,'#8b95a1',500,yy+60);
+  T('2026년 기준 · firemap.kr/calc/severance',22,'#8b95a1',500,yy+95);
+  const bottom=yy+140, H=bottom+120;
+  const body=`<rect x="${X}" y="${y}" width="${PW}" height="${bottom-y}" fill="#fff"/><path d="${teeth(y,PW,X,true)} Z" fill="#fff"/><path d="${teeth(bottom,PW,X,false)} Z" fill="#fff"/>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${Math.max(1350,H)}" font-family="Pretendard Variable,Pretendard,Malgun Gothic,sans-serif"><rect width="100%" height="100%" fill="#f6f7f9"/>${body}${t.join('')}</svg>`;
+}
+function wide(){
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="Pretendard Variable,Pretendard,Malgun Gothic,sans-serif"><rect width="1200" height="630" fill="#f6f7f9"/>
+  <rect x="80" y="90" width="560" height="540" fill="#fff"/><path d="${teeth(90,560,80,true)} Z" fill="#fff"/>
+  <text x="130" y="170" font-size="34" font-weight="700" fill="#18191d">퇴사 영수증(참고용)</text>
+  <line x1="130" x2="590" y1="210" y2="210" stroke="#c4cad1" stroke-width="3" stroke-dasharray="10 10"/>
+  <text x="130" y="280" font-size="30" fill="#4e5968" font-weight="600">퇴직금만으로</text>
+  <text x="130" y="390" font-size="96" fill="#ff5a00" font-weight="800">약 ${D.m1}개월</text>
+  <text x="700" y="250" font-size="32" fill="#4e5968" font-weight="600">실업급여 받으면</text>
+  <text x="700" y="330" font-size="64" fill="#18191d" font-weight="700">+${D.m2}개월</text>
+  <text x="700" y="380" font-size="26" fill="#8b95a1" font-weight="500">수급 자격 충족 시 · 참고용</text>
+  <text x="700" y="520" font-size="26" fill="#4e5968" font-weight="600">firemap.kr/calc/severance</text></svg>`;
+}
+document.getElementById('pv').innerHTML=receipt(false);
+document.getElementById('tall').innerHTML=receipt(true);
+document.getElementById('wide').innerHTML=wide();
+</script>
+</body></html>

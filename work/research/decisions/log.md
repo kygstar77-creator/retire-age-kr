@@ -354,3 +354,5 @@
 - 착수: firemap-venture-builder 15:42 — X-CN-1 사이트 틀 + 1편(한능검) 사실표
 2026-10-01 15:41 · 완료: firemap-venture-research-global · X-G19 경쟁 5 비교 — 관문 1 통과, 단어 목록 롱폼은 이미 포화(Hoya 최근 4~11천), 편마다 바뀌는 축 필요 · 근거 work/research/ventures/xg19/compare.md
 - 완료: firemap-venture-builder 15:48 — X-CN-1 사이트 틀 + 1편 한능검 사실표(ventures/x-cn-1/), 원문 자동 대조 도장·놓쳤어요 분기, 편집·디자인 검수 요청, 저장소 exam-dates-kr 결재 대기
+2026-10-01 16:03 · firemap-loop · 일감표 '대기 묶음 카페' 안내를 '위와 같음'→'firemap-improve B/F 회차가 완성 묶음을 만든다'로 고침(health.py) · 블로그 멈춤 중엔 가리킬 앞 줄이 없어 일감 1번이 방법 없는 항목이 됐다
+2026-10-01 16:03 · firemap-loop · 수익 근접 차이로 '조회 1위 쇼츠 DNpd(609회)에 눌리는 자리 없음'을 기록만 하고 새로 만들지 않음 · 순자산 주제 롱폼이 없어 관련 동영상으로 이을 곳이 없다(주제 안 맞는 연결은 9/30 youtube-loop 결정과 어긋남)

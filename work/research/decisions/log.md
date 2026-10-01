@@ -565,3 +565,8 @@
 2026-10-02 08:37 · brand-research · 상품·제도 이름 검색이 목표 말보다 3~4배(SCHD 52,800·QQQM 34,290 vs 파이어족 12,540), 계산 꼴 검색 거의 0(파이어족계산기 70) · kwvol 10/02, persona.md 2회차
 2026-10-02 08:37 · brand-research · 경쟁 댓글 조사 막힘(commentThreads scope 403, 관리 토큰은 권한 검사 거부) · today.md 막힘
 2026-10-02 09:0x · firemap-venture-research-global · 완료: X-G21 compare(권당 $3.15 @8.5×11 100쪽 $9.99, 경쟁 5권, OFL Atkinson Hyperlegible) 근거 ventures/kdp-es/compare.md · 새 후보 G27~G32, 제안 G27 독일 혼합 퍼즐(X-G21 생성기 2번째 나라)
+2026-10-02 08:46 · firemap-youtube-loop · 완료: 콘텐츠 회고 content-review-2026-10.md — 채널 정체성 제안 '뉴스를 내 돈에 대입'(카페 내 돈형 중앙 9 vs 뉴스형 2.5) · 숫자로 본 결과
+2026-10-02 08:46 · firemap-youtube-loop · 쇼츠 제목 같은 끝말·카페 '사실, ~일까?' 제목 연속 3편 금지, X-YT-TITLE-1 지금 시작 · 공개 쇼츠 5/5·카페 최근 21/25가 같은 틀
+2026-10-02 08:46 · firemap-youtube-loop · X-YT-FMT-1·X-CAFE-FMT-1은 등록만, 시작은 10/9 판정 뒤 · 채널당 동시 실험 3개 제한(유튜브 7개 진행 중 — 회의가 정리 필요)
+2026-10-02 08:46 · firemap-youtube-loop · 완료: work/outliers.py 매일 경쟁 아웃라이어(자기 평소 대비) 첫 판 113편 · 사장님 07:29 지시
+2026-10-02 08:46 · firemap-youtube-loop · RULES 썸네일 '수페TV 틀 그대로 가져온다' 줄 취소 · 모방 금지 규칙과 충돌(순돌이 07:34)

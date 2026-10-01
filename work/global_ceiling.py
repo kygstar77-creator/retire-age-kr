@@ -47,3 +47,30 @@ if __name__ == '__main__':
     for name, m in MARKETS.items():
         need = 100_000_000 / (m['searches'] * m['engine_mult'] * m['pv_per_visit'] * m['rpm_krw'] / 1000)
         print(f'{name}: 월 1억에 필요한 클릭 비율 {need*100:,.0f}% (100% 넘으면 이 시장 광고만으로 불가)')
+
+# ─────────────────────────────────────────────────────────────
+# 나라별 법에 맞는 계산기를 한 사이트에(사장님 10/1 17:04 아이디어) — 이 구조 하나의 상한 (bizdev 10/1 17:2x)
+#   py -3.12 work/global_ceiling.py hub
+# 근거 [2차]: salaryaftertax.com 약 15개국·월 50.2만~55.5만 방문(Semrush 2026-06·Similarweb 2026-04),
+#   thesalarycalculator.co.uk 영국 1위 월 230만(research-raw.md), countrytaxcalc.com 111개국·화면 광고 없음(10/1 직접 열어 봄),
+#   talent.com 78개국(구인 사이트에 계산기를 붙인 구조, 월 1,463만 방문은 구인 포함이라 계산기 몫 아님).
+# 단가: EPMV $3(애드센스만, research-raw 레드팀 계산) / $16(Ezoic 공개값 미국, 프리미엄 광고망 수준). 비영어권 단가는 확인 안 함.
+HUB = {
+    # 이름: (나라 수, 나라당 월 방문, 근거)
+    '현실선: salaryaftertax 규모(15개국)': (15, 525_000 / 15, '[2차] 실존 다국가 허브 1곳 규모 그대로'),
+    '잘됨: 나라마다 1위 사이트의 10%(15개국)': (15, 230_000, '가정: 영국 1위 230만의 10%를 15개국 모두에서'),
+    '최상: 나라마다 1위 사이트의 10%(30개국)': (30, 230_000, '가정: 단가 높은 나라 30개 전부. 비영어권 언어·원문 갱신 포함'),
+}
+
+def hub():
+    print('\n== 나라별 세금·실수령 계산기 허브 — 월 수익(원), 환율 1,400 가정')
+    print('경우 | 월 방문 | EPMV $3(애드센스만) | EPMV $16(프리미엄 광고망)')
+    for k, (n, per, why) in HUB.items():
+        v = n * per
+        print(f'{k} | {v:,.0f} | {global_month(v, 3):,.0f} | {global_month(v, 16):,.0f}  ({why})')
+    for e in (3, 16):
+        need = 100_000_000 / (e / 1000 * USD_KRW)
+        print(f'EPMV ${e}: 월 1억 = 월 방문 {need:,.0f} = salaryaftertax의 {need/525_000:.0f}배 = 영국 1위의 {need/2_300_000:.1f}배')
+
+if __name__ == '__main__' and len(sys.argv) > 1 and sys.argv[1] == 'hub':
+    hub()

@@ -74,6 +74,9 @@ def wav_of(ep, cfg, say):
 def read(fn):
     with wave.open(fn) as w: return np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(np.float32), w.getframerate()
 def write(fn, a, sr=SR):
+    # 10/02 사장님 "말 끝나고 치직": TTS 응답 끝에 붙는 0.12초 잡음을 지우고 DC 제거·앞뒤 페이드(work/video/clickscan.py)
+    sys.path.insert(0, os.path.join(HERE, 'video')); import clickscan
+    a = clickscan.clean(np.asarray(a, dtype=np.float32), sr)
     with wave.open(fn, 'wb') as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(sr); w.writeframes(np.clip(a, -32768, 32767).astype(np.int16).tobytes())
 
 def loud_mask(a, sr, win_s=0.02, th=600):

@@ -27,7 +27,8 @@ def gate(ep):
     m = json.load(open(os.path.join(ep, 'meta.json'), encoding='utf-8')); bad = []
     # C1 롱폼 주 2편·하루 1편(uploads.jsonl 기준, 예약 시각으로 센다)
     pa = datetime.datetime.fromisoformat(m['publishAt'])
-    prev = [datetime.datetime.fromisoformat(u['publishAt']) for u in uploads() if u.get('publishAt')]
+    me = m.get('ep', os.path.basename(os.path.normpath(ep)))   # 같은 편 교체 업로드(옛 판은 비공개로 둠)는 편 수로 세지 않는다
+    prev = [datetime.datetime.fromisoformat(u['publishAt']) for u in uploads() if u.get('publishAt') and not u.get('replaced') and u.get('ep') != me]
     if sum(1 for p in prev if abs((pa - p).total_seconds()) < 7 * 86400) >= 2: bad.append('C1 롱폼 주 2편 넘음')
     if any(p.astimezone(KST).date() == pa.astimezone(KST).date() for p in prev): bad.append('C1 같은 날 롱폼 2편')
     if not (19 <= pa.astimezone(KST).hour < 21): bad.append('예약 시각이 한국 19~21시 밖')
@@ -36,7 +37,7 @@ def gate(ep):
     mine = body_sentences(os.path.join(ep, 'script.md'))[1:-1]
     others = set()
     for s in glob.glob(os.path.join(EPS, '*', 'script.md')):
-        if os.path.dirname(s) != os.path.normpath(ep): others |= set(body_sentences(s))
+        if os.path.abspath(os.path.dirname(s)) != os.path.abspath(ep): others |= set(body_sentences(s))
     same = sum(1 for s in mine if s in others)
     if mine and same / len(mine) > 0.2: bad.append(f'C5 이전 편과 같은 문장 {same}/{len(mine)}')
     # C7 금지 표현(제목·설명·대본)
@@ -72,6 +73,15 @@ def gate(ep):
         sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'video')); import deess
         r = deess.measure(vp)
         if r and r['sib_vs_voiced_db'] > deess.LIMIT_DB: bad.append(f'쉿소리 {r["sib_vs_voiced_db"]}dB > {deess.LIMIT_DB}dB — py -3.12 work/video/deess.py <영상>')
+    # 말 끝난 직후 '치직' — 10/02 사장님 "유튜브 말 끝나고 치직 했는데". TTS 응답 끝 잡음이 문장 wav에 남았는지(렌더 전 원천 검사, work/video/clickscan.py)
+    import glob as _g
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'video')); import clickscan
+    ad = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'video', 'public', 'audio', os.path.basename(os.path.normpath(ep)).lower())
+    n = mute = 0
+    for f in _g.glob(os.path.join(ad, '*.wav')):
+        a_, sr_ = clickscan.load(f); n += len(clickscan.bursts(a_, sr_)); mute += int(abs(a_).max() < 1000)
+    if mute: bad.append(f'문장 wav 무음 {mute}개')
+    if n: bad.append(f'문장 wav 치직 {n}곳 — py -3.12 work/video/clickscan.py fix {ad} 뒤 다시 렌더')
     return m, bad
 
 def up(ep):

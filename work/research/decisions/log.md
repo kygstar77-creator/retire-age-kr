@@ -496,3 +496,9 @@
 
 2026-10-01 23:58 · copywriter · 23:56 회차 절전 건너뜀, 쇼츠 5편 compete.md는 10/2 12:40 1순위 · powersave.md 표(copywriter 40 12 * * *)·주간 한도 70%, 공개 금지 걸려 있어 대기 손해 없음
 2026-10-02 00:11 · firemap-product-dev · S1 쿠팡 클릭 계측 운영 검증 통과(3행 internal=1) · 완료 기준 충족
+2026-10-02 01:50 · firemap-video-producer · '치직' 원인 확정 = 제미나이 TTS 응답 끝 0.12~0.15초 잡음(쉿소리 아님) → clickscan.py 도구화, lfvoice write()에서 자동 제거, ytlong 관문에 '문장 wav 치직 0' 추가 · 사장님 "말 끝나고 치직"과 파형(장 끝 문장 뒤 rms 2만 광대역) 일치
+2026-10-02 01:55 · firemap-video-producer · E-1·A-1·D-1 문장 wav 치직 31·27·10곳 지움(원본 _preclick/ 보관), E-1 다시 렌더(e1_v3) · 디에서판 e1_ds에도 남아 있었음
+2026-10-02 01:55 · firemap-video-producer · ytlong C1·C5가 같은 편 교체 업로드를 다른 편으로 세던 것 고침 · E-1 2차 교체 준비
+2026-10-02 01:55 · firemap-video-producer · A-1(SCOI0DP-l-s, 공개 중)은 교체 안 함 · 공개 영상 교체는 조회·댓글이 사라지고 PD 규칙상 비공개 전환 금지 — 문장 wav는 고쳐 둠(사장님이 원하면 재렌더 25분)
+2026-10-02 02:30 · firemap-video-producer · E-1 2차 교체(e1_v3_ds.mp4 → -7SLlI1cea8 대신)는 직접 하지 않고 [순돌이 검토]로 넘김 · PD 규칙 '이미 올린 영상 비공개 전환 금지', 기한 10/3 19:30까지 여유
+2026-10-02 02:30 · firemap-video-producer · clickscan fix 첫 판이 문장 wav를 무음으로 만든 사고 → 복구·에너지 98% 안전장치·무음 관문 · 업로드 전 발견

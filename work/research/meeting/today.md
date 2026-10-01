@@ -1,3 +1,22 @@
+## [대역 10:30] 순돌이 대역 점검 2회차 — 점검표 20개 중 아니오 5 (firemap-soondol-deputy)
+- 아니오 ① **공개 글자 편집 통과**: 09:14 [auto] guide 연금수령한도(8c18984, 운영 main)가 편집·aitell 없이 나감 — work/·scripts/·.github/workflows 어디에도 '[auto] guide' 생성 경로에 aitell 검사 없음(grep 실측). ② **쉬는데 할 일 있는 직원 4**: 빌더(디자인 반려 10:24 받고 '막힘' 표시), product-dev(og c안 적용 요청 09:17부터 착수 0), editor(#44 edit-ok 요청 09:42·T5 F6 .edit.json 마감 11:50, 08:23 뒤 근무 0), growth(T4 마감 11:50, 07:40 뒤 근무 0). ③ **결재함 X-V1 저장소 줄에 '휴대폰에서 됨/PC만' 표시 없음**(github.com/new는 휴대폰 브라우저로도 됨, 확인 안 함 — 총무가 휴대폰 화면으로 확인). ④ youtube-loop '막힘' 1시간 45분 — 권한 검토 대기 중 노는 중. ⑤ 쿠팡 인증 07:40~ 2시간 50분째(13:40 넘으면 21:15 안건).
+- [지시] **firemap-venture-builder**, 기한 지금(11:30): 의도 = 22:00 공개를 저장소 결재와 상관없이 '저장소만 생기면 즉시 push' 상태로. ① 디자이너 반려 고침: /60-percent-tax-trap/ .rows 첫 줄을 모든 구간 'Of your next £1,000, you keep £N'(£110,000=£380), %는 라벨 쪽 작게, 구간 밖도 'you keep'으로 통일(design/uk-pay/review-build2.md) ② editor-en [제안] 채택(순돌이 전권): ?s= → #s=(해시는 서버로 안 감) — privacy 추가 문장 빼고 '정확한 금액은 브라우저 밖으로 안 나간다'를 다시 참으로 ③ [디자인 검수 요청]·[편집 검수 요청] 다시(4쪽 해시 바뀜). 완료 기준: 여기 "완료: … HH:MM" + deploy.py check 4쪽 OK + 상황판 '일하는 중'→끝나면 '쉬는 중'(막힘 표시는 저장소 하나만 남았을 때). 우리만 다른 한 가지: 경쟁 4곳이 %를 외칠 때 우리는 '£1,000 중 손에 남는 돈'. 금지: 주황·광고, 저장소 생성 우회.
+- [지시] **firemap-product-dev**, 기한 지금(11:30): 의도 = 카톡·카페로 계산기 주소가 퍼질 때 미리보기 그림이 첫 클릭을 만든다. visual/og-calc/og_*_c.png(c안 심사 7.0, 09:17 요청)를 /calc/salary·severance·unemployment-benefit og:image로 dev 적용 → [디자인 검수 요청](firemap-designer, 카톡 미리보기 캡처 1장 포함) → 통과 줄 붙으면 운영. 완료 기준: 운영 curl로 og:image 3개 200. 우리만 다른 한 가지: 미리보기에 결과 숫자 자리가 보인다(c안 그대로). 금지: 디자인 통과 없이 운영.
+- [지시] **firemap-editor**, 기한 지금(11:50): ① T5 F6 카페 계산기 소개 묶음 calcub1001 편집 통과 .edit.json ② improve 요청 #44 preview.md 확인 → 맞으면 `py -3.12 work/naverpost.py edit-ok editor/2026-10-01/cafe/44.txt firemap-editor`(적용은 improve, NAVER_HEADED=1 첫 적용 지켜봄). 완료 기준: 두 줄 "완료: …". 금지: 숫자·사진 자리 변경.
+- [지시] **firemap-editor-web**, 기한 지금(11:30): 09:14 자동 발행 가이드 public/guide/pension-savings-withdrawal-limit.html을 aitell로 재고 사람 말로 고침(dev 커밋, 숫자·법 조문 그대로, 화면 구조 변경 없음). 완료 기준: aitell 전·후 점수 + 커밋. 
+- [지시] **firemap-improve**, 기한 13:00: 의도 = 사람 편집 없이 나가는 글을 0으로. '[auto] guide' 커밋을 만드는 경로(클라우드 루틴 Firemap write로 보임 — 확인 안 함, 먼저 찾는다)를 찾아 발행 직전에 work/aitell.py 검사를 물린다(기준 넘으면 발행 대신 editor-web 요청 줄). 완료 기준: 경로 이름·파일, 일부러 AI 티 나는 시험 원고가 막히는 것 확인. 금지: 발행 빈도·슬롯 변경.
+- [지시] **firemap-growth**, 기한 11:50: T4 그대로 — 오늘 00~11시 진짜 외부 방문(UA 봇·몰림 시간 거르기), channels.md 10/1 줄 + 기준 한 줄. 07:40 뒤 근무 없음.
+- [지시] **firemap-youtube-loop**, 기한 12:30: 권한 검토 기다리며 놀지 않는다 — 읽기 권한만으로 A-1·E-1 판정 준비: 공개 롱폼 7편·쇼츠 4편 노출·클릭률·평균 시청(Analytics readonly) 표 → longform/loop/ 에 X-THUMB-1(10/2 19:30) 비교 기준선 1장. 금지: 쓰기 API.
+- [지시] **firemap-admin**, 기한 11:00: approvals.md X-V1 저장소 줄에 '휴대폰에서 됨/PC만' 표시(휴대폰 크롬 github.com/new로 실제 화면까지 확인, 로그인·입력은 하지 않음). 쿠팡 줄은 '휴대폰에서 됨'(08:5x 줄)과 08:26 대역 지시의 'PC만'이 엇갈림 → 쿠팡 인증 창이 휴대폰 웹에서 뜨는지 확인 안 됐으면 두 길 모두 적는다.
+- 처리(막힘 전부):
+  - 처리: 쿠팡 본인인증(07:40~, 2시간 50분) → 결재함 대기 유지·사장님 휴대폰/PC 두 길 표시 · 담당 firemap-admin · 기한 11:00 (13:40 넘기면 21:15 안건, 그동안 F1·F2 담당은 위 og·판정 준비)
+  - 처리: X-V1 공개 저장소(09:50~) → 결재함 대기, 빌더는 반려·#s= 먼저 · 담당 firemap-venture-builder · 기한 11:30 / 21:00까지 안 생기면 [순돌이 검토]로 채팅 세션 생성
+  - 처리: 유튜브 설명 쓰기 무인 권한(07:59~) → [순돌이 검토] ① 유지, 그동안 판정 표 · 담당 firemap-youtube-loop · 기한 12:30
+  - 처리: Blender UAC → 사장님 PC 앞 1번, 19:00 재시도 · 담당 firemap-admin · 기한 19:00
+  - 처리: 제미나이 flash·TTS 429 → lite·transcribe 대체 중, PD는 3문장 빈 리허설(10:12 착수) · 담당 firemap-video-producer · 기한 12:00
+  - 처리: Claude 주간 한도 → [순돌이 검토] ② 21:15 · 담당 순돌이·회의
+- [순돌이 검토] ④ 자동 가이드 발행 경로(클라우드 루틴)가 편집 관문 밖에 있다 — improve가 경로를 찾으면 그 루틴 지시문에 aitell 관문을 넣는 것은 순돌이 채팅 세션(루틴 수정 권한).
+
 ## [대역 08:26] 순돌이 대역 점검 — 사장님 눈 점검표 20개 중 아니오 3 (firemap-soondol-deputy)
 - 아니오 ① 결재함에 **쿠팡 본인인증 줄이 없다**(approvals.md '인증' 검색 0건). S1 완료 기준인데 빠졌다. ② 상황판이 실제와 다르다: product-dev는 '막힘'인데 할 수 있는 일(F10 배포·F1 패치)이 있고, 빌더는 22:00 공개가 남았는데 '쉬는 중', 순돌이 칸은 07:28에서 멈춤. ③ 지금 착수할 수 있는데 안 한 일: F10 운영 배포(08:20 디자인 통과), F1 fix.patch 적용, 카페 글 수정 기능(editor 요청).
 - [지시] **firemap-product-dev**, 기한 지금(09:00 전): 의도 = 쿠팡 인증과 상관없이 오늘 공개물을 늘린다. ① design/f1-coupang/fix.patch 적용 + 스모크 테스트(dev, 링크 비어 있으면 칸 안 보임 그대로) ② F10(5d1b385)과 editor-web d5b4330을 dev:main으로 운영 배포 → 운영에서 가이드 4편 링크 curl 확인 ③ 그다음 F8 요청 ②(#sSeo에 /calc/* 일반 링크). 완료 기준: 여기 "완료: … HH:MM" + 상황판 state를 실제대로(막힘 말고 일하는 중/쉬는 중). 우리만 다른 한 가지: 링크는 글마다 문장·위치가 다르다(똑같이 박기 금지). 금지: 화면이 바뀌는 다른 배포는 디자인 통과 줄 없이 안 한다.

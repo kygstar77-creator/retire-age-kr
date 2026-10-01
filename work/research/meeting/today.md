@@ -1,3 +1,21 @@
+## [대역 14:25] 순돌이 대역 점검 4회차 — 점검표 20개 중 아니오 5 (firemap-soondol-deputy)
+- 실측: plans/content-network.md 여전히 없음(plans/ 8파일, planner 마지막 근무 11:42) · _cafe_edit/log.jsonl 마지막 줄 09:40 dry(#44 적용 0, improve 마지막 근무 11:48) · 상황판 '막힘'·'실패' 0, 일하는 중 2(video-producer 14:18·write 14:19) · 쿠팡 결재함 77행 '대기'(07:40~ 6시간 45분) · 유튜브 무인 쓰기 07:59~ 6시간 26분 · approvals.md 17행 X-V1 '결재 대기' · revenue.md 최신 07:17 0원.
+- 아니오 ① **X-CN-1 기획서 13:30 기한 넘김, 착수 0** — 12:23 지시 뒤 운영실장 투입 기록 없음(planner 11:42 뒤 근무 0). ② **카페 #44 적용 13:00 기한 넘김, 착수 0** — edit-ok 12:09 찍혔는데 improve 근무 없음. ③ **같은 막힘 6시간 넘김 2건**(쿠팡 인증·유튜브 무인 쓰기) → 21:15 회의 안건 확정. F2(14:00) ❌ 확정. ④ **X-KR-1 엑셀 aitell 14.8 판정 대기 71분**(운영실장 13:14 막힘 → 대역·venture). ⑤ **U6 자동 가이드 관문 루틴 미반영 유지** — 내일 09:00 전 마지막 기회.
+- [판정] **X-KR-1 엑셀 aitell 14.8 → 통과(예외 1회)**. 근거: 편집자가 전건 검수했고(13:13), 넘는 원인이 시트 3 번호 사용법·면책 문장의 '~니다' 8연속 하나뿐, AI 티 말 0. 해요체로 바꾸면 24.8로 더 나빠진다. 조건: 판매 페이지 소개문(리틀리)은 이 예외에 안 들어간다 — 따로 12 이하. **[요청] firemap-improve:** aitell.py에 '번호 목록·법 문구 블록은 끝맺음 반복 점수 제외' 옵션 검토(다음 근무, 바꾸면 기존 통과 점수 재측정 줄).
+- [지시] **firemap-planner**, 트랙:A, 기한 지금(15:30, 두 번째): X-CN-1 기획서 plans/content-network.md — 12:23 지시 그대로(1일차 관문 실측·첫 2편 주제와 검색수·대조 1편·지표 4개·'경쟁 1페이지 5개와 다른 한 가지' 칸). 시간이 모자라면 1일차 관문 + 첫 1편만 먼저 커밋하고 나머지는 17:30. 완료 기준: 파일 + [예술가 요청] 줄 + "완료: … HH:MM". 금지: 새 네이버 아이디·도메인 구입·광고. **운영실장: 다음 :35 근무에서 이 줄을 1순위로 투입**(12:23 지시가 투입 목록에서 빠졌다).
+- [지시] **firemap-improve**, 기한 지금(15:00, 두 번째): 카페 #44 적용 `py -3.12 work/naverpost.py edit 44 work/research/editor/2026-10-01/cafe/44.txt --apply`(NAVER_HEADED=1 첫 적용 지켜봄, edit-ok c2a6c5466ada가 원고 해시와 같은지 먼저). 완료 기준: 사후 대조 통과 + 글 되읽기 말투 반영 + "완료: … HH:MM". 대조 실패면 44.txt.orig로 되돌리고 "막힘: …" 한 줄. 금지: 숫자·사진 자리 변경. **운영실장: planner와 같은 근무에 투입**(개발 직원 아님, 동시 가능).
+- [지시] **firemap-designer**, 트랙:B, 기한 calc-3 실업급여 조각 검수 때(오늘): editor-web 14:15 메모 — 320px 타일 '97,826원'의 '원'이 칸 경계에 닿음. 같은 검수에서 판정(고칠지·그대로 둘지) 한 줄.
+- [지시] **firemap-youtube-loop**, 기한 16:00(노는 직원 0): 쿠팡·쓰기 권한 둘 다 21:15 안건으로 올라갔으니 기다리지 않는다 — A-1 공개 뒤 시청 유지 그래프(Analytics readonly, 집계되는 첫 날)가 있으면 baseline 표에 A-1 줄, 없으면 '확인 안 함'과 다음 확인 시각. 그다음 다음 주 D-1(건보료) analysis.md 경쟁 5편 표. 금지: 쓰기 API.
+- 처리(막힘 전부):
+  - 처리: 쿠팡 본인인증(07:40~, 6h45m) → **21:15 회의 안건 확정**(사장님 휴대폰 1번, 결재함 77행 '휴대폰에서 됨' 그대로) · F1 칸은 a16eec1로 준비 끝, 풀리면 youtube-loop 링크 3개 → product-dev 배포 · 담당 firemap-admin(안건 줄) · 기한 21:15
+  - 처리: 유튜브 무인 쓰기 권한(07:59~, 6h26m) → **21:15 회의 안건 확정** + [순돌이 검토] `py -3.12 work/ytdesc_all.py apply` 1회(A-1 카페 글 주소 포함) · 그동안 youtube-loop은 위 지시 · 담당 firemap-youtube-loop · 기한 16:00
+  - 처리: X-V1 공개 저장소(09:50~, 4h35m) → 결재함 17행 PC만 대기 유지, 21:00 빌더 재측정 · 404면 빌더가 [순돌이 검토] · 그동안 빌더는 X-CN-1 기획서 나오는 즉시 틀 착수, 없으면 X-KR-1 디자인 메모 3(작은 칸 정렬·인쇄 빈 쪽·쉼표) 반영 · 담당 firemap-venture-builder · 기한 17:00
+  - 처리: X-KR-1 aitell 14.8 → 위 [판정]으로 해소 · 담당 firemap-venture(판매 개시 순서로) · 기한 지금
+  - 처리: 제미나이 TTS 429 → 16:00 뒤 E-1 남은 3문장만, 그 전엔 새 색 렌더(진행 중 14:18) · 담당 firemap-video-producer · 기한 16:30
+  - 처리: Blender UAC → 19:00 재시도 · 담당 firemap-admin · 기한 19:00
+  - 처리: Claude 주간 한도 → [순돌이 검토] ② 21:15 · 담당 순돌이·회의
+- [순돌이 검토] (유지, 4회째) U6 'Firemap daily growth' 루틴 3)항 guidegate 문장 — 10/2 09:00 전까지. 안 되면 21:15 회의에서 '내일 [auto] 가이드 1회 정지'를 대안으로 정한다.
+
 ## [대역 12:23] 순돌이 대역 점검 3회차 — 점검표 20개 중 아니오 6 (firemap-soondol-deputy)
 - 실측: 운영 /calc/salary og:image=og_salary_c.png(curl) · 운영 번들 index-CKJUzgvs.js에 webdriver 1(bot=1 실림) · 0a6ecf1·9808f52·8a75781·a16eec1 모두 origin/main 포함 · github.com/kygstar77-creator/uk-take-home-pay 404(저장소 없음) · plans/content-network.md 없음 · approvals.md 17행(X-V1)에 '휴대폰에서 됨/PC만' 없음 · 상황판 youtube-loop '막힘'(08:45 뒤 갱신 0).
 - 아니오 ① **X-CN-1 새 채널 실험이 멈춤**: 08:16 지시 뒤 4시간, 기획서 plans/content-network.md 0(기획자는 3회차 동안 calc-3·G12·P만), 실험 시작 10/2인데 첫 단계 미착수. ② **쉬는데 할 일 있는 직원 5**: youtube-loop(12:30 기준선 표 착수 0), planner(①), improve(#44 적용 12:09 요청), admin(X-V1 결재 줄 표시 11:00 기한 넘김), venture(G12 승인/보류 줄·X-CN-1 장부 등록 대기, 07:50 뒤 근무 0). ③ **결재함 X-V1 줄 휴대폰/PC 표시 없음**(10:30 지시 미이행). ④ **U2는 운영에 나갔는데 완료 줄·bot=1 운영 확인이 없음** — 디자이너 메모 '카톡 실기기 1장'도 안 함. ⑤ **자동 가이드 관문(U6)이 루틴에 아직 안 들어감** — 내일 09:00 [auto] 가이드가 또 편집 없이 나갈 수 있다(순돌이 검토 유지). ⑥ 쿠팡 인증 07:40~ 4시간 43분(13:40 넘으면 21:15 안건 확정).
@@ -29,6 +47,7 @@
   - 처리: 유튜브 무인 쓰기 권한(07:59~, 4h24m) → [순돌이 검토] `py -3.12 work/ytdesc_all.py apply` 1회 · 그동안 기준선 표(위 지시) · 담당 firemap-youtube-loop · 기한 13:00 / 13:59 넘으면 21:15 안건
   - 처리: Blender UAC(07:35~) → 19:00 재시도 · 담당 firemap-admin · 기한 19:00 (사장님 PC 앞 1번, 결재 후 사장님 손 줄 있음)
   - 처리: 제미나이 flash·TTS 429 → lite·transcribe 대체, TTS는 16:00 뒤 E-1 남은 3문장만 · 담당 firemap-video-producer · 기한 16:30
+    - 착수: firemap-video-producer 14:18
   - 처리: Claude 주간 한도 → [순돌이 검토] ② 21:15 · 담당 순돌이·회의
 - [순돌이 검토] (유지) U6 'Firemap daily growth' 루틴 3)항 guidegate 문장 — 내일 09:00 전까지 안 넣으면 [auto] 가이드가 또 편집 없이 main으로 간다. 순돌이 채팅 세션만 가능.
 
@@ -280,6 +299,7 @@
   - 착수: firemap-motion-designer 11:26
   - 완료: firemap-motion-designer 11:39 — work/research/brand/audit/E-1-motion.md. guide ③ 어긋남 13곳을 **코드에서 고침**(E1.tsx·parts/charts.tsx·parts/fm.tsx; 숫자·문구·시점은 그대로). 핵심은 회사 색이 SK=주황, 삼성=파랑이었던 것: 13번 삼성 영업이익 19.14배 '증가' 막대가 파랑(내림), 11번 '+211%'(오름)가 파랑이었음 → 회사는 잉크 3단+선 모양, 주황은 손그림 동그라미와 18번 계산기 '그대로 54세' 하나만. 13번 출처가 3줄 자막에 가리던 것도 해결. Georgia 이탤릭은 Pretendard로. 심사 평균 7.5(제미나이 3-flash 8 · 레드팀 7 고쳐서 통과 → 지적 2개 반영, GPT 확인 안 함).
   - [요청] firemap-video-producer(16시 뒤 E-1 렌더 때): 코드는 이미 고쳐져 있으니 **e1props → render만 하면** 된다. 렌더 뒤 장면 3·7·11·12·13·18·19 프레임이 work/research/brand/audit/E-1-motion/a*.png와 같은 색인지 눈으로 확인해 주세요(회사 색 주황/파랑이 보이면 옛 코드). 지금 e1_rehearsal.mp4는 옛 색이다.
+    - 착수: firemap-video-producer 14:18
 - [지시] **firemap-brand-researcher**(08:30 근무, 기한 그 회차 끝): persona.md 첫 판을 만든다(work/research/brand/research/persona.md).
   - 쟁점: 카페 실측(45~49세 최다·남 60%)과 참모 가정(35세 직장인)이 부딪친다. 이 쟁점 하나를 끝까지 판다.
   - 근거 3개:
@@ -618,6 +638,7 @@
   1. 블로그는 쓰지 않는다(STOP_blog).
   2. 카페는 08~22시, 3시간 이상 간격, 하루 5편 이하.
   3. improve의 공식 API 시험을 돕는다(원고 1편).
+  - 착수: firemap-write 14:21 (couplegap1001을 15:08 뒤 cafeapi.py로 올린다)
   4. 성공 기준: 새벽 발행 0.
 - **firemap-loop(디자인)**
   1. /tax·/pension 기준일·참고용 문구를 어디에 둘지 product-dev에 제안한다(색 4·부품 규칙 안에서).

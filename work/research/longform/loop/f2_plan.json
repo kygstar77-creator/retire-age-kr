@@ -1,14 +1,77 @@
-{"note": "F2 2026-10-01. link는 쿠팡 '간편 링크 만들기'에 search_url을 넣어 발급한 link.coupang.com 주소. 영상마다 다른 검색(같은 링크 반복 금지, 체크리스트 5·11). 비금융 상품만, 대출·코인 주제 제외(체크리스트 12). 쇼츠는 설명 링크가 클릭되지 않아(YouTube 13748639) 이번엔 넣지 않음 — decisions/log 10/1 참고.",
+{
+ "note": "F2 2026-10-01. link는 쿠팡 '간편 링크 만들기'에 search_url을 넣어 발급한 link.coupang.com 주소. 영상마다 다른 검색(같은 링크 반복 금지, 체크리스트 5·11). 비금융 상품만, 대출·코인 주제 제외(체크리스트 12). 쇼츠는 설명 링크가 클릭되지 않아(YouTube 13748639) 이번엔 넣지 않음 — decisions/log 10/1 참고. | 10/1 17:2x: 시험 단계 규칙(4편 중 1편 이하)으로 scV67BQvC4Q 한 편만 링크, 나머지 skip.",
  "videos": [
-  {"id": "SCOI0DP-l-s", "title": "A-1 JEPQ·SCHD", "label": "배당투자 책(쿠팡 검색):", "search_url": "https://www.coupang.com/np/search?q=%EB%B0%B0%EB%8B%B9%ED%88%AC%EC%9E%90+%EC%B1%85", "link": ""},
-  {"id": "zhTjJwy1mwQ", "title": "QQQM·SCHD 파이어 시뮬레이션", "label": "파이어족 책 쿠팡 검색:", "search_url": "https://www.coupang.com/np/search?q=%ED%8C%8C%EC%9D%B4%EC%96%B4%EC%A1%B1+%EC%B1%85", "link": ""},
-  {"id": "wwfFszPl06g", "title": "QQQM 하나로 파이어", "label": "ETF 투자 책들(쿠팡):", "search_url": "https://www.coupang.com/np/search?q=ETF+%ED%88%AC%EC%9E%90+%EC%B1%85", "link": ""},
-  {"id": "JVTYZ208hgw", "title": "투자 재능 없는 사람 QQQM", "label": "쿠팡에서 '인덱스펀드 책' 검색:", "search_url": "https://www.coupang.com/np/search?q=%EC%9D%B8%EB%8D%B1%EC%8A%A4%ED%8E%80%EB%93%9C+%EC%B1%85", "link": ""},
-  {"id": "scV67BQvC4Q", "title": "5억이면 충분합니다", "label": "가계부(쿠팡):", "search_url": "https://www.coupang.com/np/search?q=%EA%B0%80%EA%B3%84%EB%B6%80", "link": ""},
-  {"id": "cxls2Ve18-k", "title": "배당금만으로 사는 삶", "label": "배당금 책(쿠팡):", "search_url": "https://www.coupang.com/np/search?q=%EB%B0%B0%EB%8B%B9%EA%B8%88+%EC%B1%85", "link": ""},
-  {"id": "gSKsQWjTabo", "title": "파이어 같은 건 결국 환상이었어", "label": "조기 은퇴 책, 쿠팡 검색 결과:", "search_url": "https://www.coupang.com/np/search?q=%EC%A1%B0%EA%B8%B0%EC%9D%80%ED%87%B4+%EC%B1%85", "link": ""},
-  {"id": "DNpdFtZyfE8", "skip": "쇼츠 — 설명 URL 클릭 불가"},
-  {"id": "XzMCiAwQhAo", "skip": "쇼츠 — 설명 URL 클릭 불가, 금 투자 주제"},
-  {"id": "KiHLbeioWNg", "skip": "쇼츠 — 설명 URL 클릭 불가, 예금 상품 주제"},
-  {"id": "P8Papm8Yxpw", "skip": "쇼츠 — 대출 주제(체크리스트 12)"}
- ]}
+  {
+   "id": "SCOI0DP-l-s",
+   "title": "A-1 JEPQ·SCHD",
+   "label": "배당투자 책(쿠팡 검색):",
+   "search_url": "https://www.coupang.com/np/search?q=%EB%B0%B0%EB%8B%B9%ED%88%AC%EC%9E%90+%EC%B1%85",
+   "link": "",
+   "skip": "A-1은 안 붙인 기준선(experiments.md 9/30)"
+  },
+  {
+   "id": "zhTjJwy1mwQ",
+   "title": "QQQM·SCHD 파이어 시뮬레이션",
+   "label": "파이어족 책 쿠팡 검색:",
+   "search_url": "https://www.coupang.com/np/search?q=%ED%8C%8C%EC%9D%B4%EC%96%B4%EC%A1%B1+%EC%B1%85",
+   "link": "",
+   "skip": "시험 단계 4편 중 1편 이하(루틴 쿠팡 규칙) — 10/1 youtube-loop: 7편 중 scV67만"
+  },
+  {
+   "id": "wwfFszPl06g",
+   "title": "QQQM 하나로 파이어",
+   "label": "ETF 투자 책들(쿠팡):",
+   "search_url": "https://www.coupang.com/np/search?q=ETF+%ED%88%AC%EC%9E%90+%EC%B1%85",
+   "link": "",
+   "skip": "시험 단계 4편 중 1편 이하(루틴 쿠팡 규칙) — 10/1 youtube-loop: 7편 중 scV67만"
+  },
+  {
+   "id": "JVTYZ208hgw",
+   "title": "투자 재능 없는 사람 QQQM",
+   "label": "쿠팡에서 '인덱스펀드 책' 검색:",
+   "search_url": "https://www.coupang.com/np/search?q=%EC%9D%B8%EB%8D%B1%EC%8A%A4%ED%8E%80%EB%93%9C+%EC%B1%85",
+   "link": "",
+   "skip": "시험 단계 4편 중 1편 이하(루틴 쿠팡 규칙) — 10/1 youtube-loop: 7편 중 scV67만"
+  },
+  {
+   "id": "scV67BQvC4Q",
+   "title": "5억이면 충분합니다",
+   "label": "가계부(쿠팡):",
+   "search_url": "https://www.coupang.com/np/search?q=%EA%B0%80%EA%B3%84%EB%B6%80",
+   "link": "https://link.coupang.com/a/hutbIQImpE",
+   "product": "아이코닉 잘 쓰는 습관 가계부, 05Custard, 1개"
+  },
+  {
+   "id": "cxls2Ve18-k",
+   "title": "배당금만으로 사는 삶",
+   "label": "배당금 책(쿠팡):",
+   "search_url": "https://www.coupang.com/np/search?q=%EB%B0%B0%EB%8B%B9%EA%B8%88+%EC%B1%85",
+   "link": "",
+   "skip": "시험 단계 4편 중 1편 이하(루틴 쿠팡 규칙) — 10/1 youtube-loop: 7편 중 scV67만"
+  },
+  {
+   "id": "gSKsQWjTabo",
+   "title": "파이어 같은 건 결국 환상이었어",
+   "label": "조기 은퇴 책, 쿠팡 검색 결과:",
+   "search_url": "https://www.coupang.com/np/search?q=%EC%A1%B0%EA%B8%B0%EC%9D%80%ED%87%B4+%EC%B1%85",
+   "link": "",
+   "skip": "시험 단계 4편 중 1편 이하(루틴 쿠팡 규칙) — 10/1 youtube-loop: 7편 중 scV67만"
+  },
+  {
+   "id": "DNpdFtZyfE8",
+   "skip": "쇼츠 — 설명 URL 클릭 불가"
+  },
+  {
+   "id": "XzMCiAwQhAo",
+   "skip": "쇼츠 — 설명 URL 클릭 불가, 금 투자 주제"
+  },
+  {
+   "id": "KiHLbeioWNg",
+   "skip": "쇼츠 — 설명 URL 클릭 불가, 예금 상품 주제"
+  },
+  {
+   "id": "P8Papm8Yxpw",
+   "skip": "쇼츠 — 대출 주제(체크리스트 12)"
+  }
+ ]
+}

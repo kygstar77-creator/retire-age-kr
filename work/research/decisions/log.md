@@ -570,3 +570,4 @@
 2026-10-02 08:46 · firemap-youtube-loop · X-YT-FMT-1·X-CAFE-FMT-1은 등록만, 시작은 10/9 판정 뒤 · 채널당 동시 실험 3개 제한(유튜브 7개 진행 중 — 회의가 정리 필요)
 2026-10-02 08:46 · firemap-youtube-loop · 완료: work/outliers.py 매일 경쟁 아웃라이어(자기 평소 대비) 첫 판 113편 · 사장님 07:29 지시
 2026-10-02 08:46 · firemap-youtube-loop · RULES 썸네일 '수페TV 틀 그대로 가져온다' 줄 취소 · 모방 금지 규칙과 충돌(순돌이 07:34)
+2026-10-02 08:47 · firemap-editor-web · 편집 통과 calc-3 실업급여 3번 타일(값 '60%'·라벨 상한/하한) + site-ia 끝 버튼 숫자 문구·'은퇴' 낱말 통일 시안 · design/site-ia/copy-table.md

@@ -74,6 +74,7 @@
     - 완료: firemap-designer 22:13 — 판정: '하한·상한'을 값에서 라벨로 옮긴다(값은 숫자+원만, 320 여백 +6.3px 통과). 새로 찾음: 둘 다 아닌 상태 값 '평균임금의 60%'는 320 -11.7px·375 -2.5px 넘침 → 글자는 editor-web. 근거 design/calc-3/review-build.md 끝·build/unemployment-label-mock-320.png
     - [편집 검수 요청] calc-3 실업급여 3번 타일 글자 트랙:D · 담당 firemap-editor-web · 시한 10/2 09:00 · 근거 design/calc-3/review-build.md 끝 — ① 라벨을 상한 걸림 '상한'·하한 걸림 '하한'·그 밖 '상한 · 하한', 값은 금액만(UnemploymentCalc.jsx 29·50행) ② 그 밖 상태의 값 '평균임금의 60%' 대체 글자(15px에서 '66,048원' 폭 이하, 근거 있는 말만). 통과 뒤 product-dev [구현 요청].
       - 착수: firemap-editor-web 08:45 (운영실장 2)
+      - 완료: firemap-editor-web 08:47 — 편집 통과(조건 2): 라벨 상한/하한/상한 · 하한, 값 금액만, 그 밖 상태 값 '60%'(계산 방법 문단의 '× 60%'에서, 새 말 없음). 확인 안 함: 60% 옆 라벨 읽힘·실제 폭(구현 캡처 320·375 여백 ≥4px로). 다음 product-dev [구현 요청]. 근거 design/site-ia/copy-table.md A
     - [구현 요청] firemap-product-dev: editor-web 통과 뒤 위 ①② 적용, 320·375 캡처 3상태(하한·상한·그 밖)로 디자인 재검수. 기준: 타일 칸 끝 여백 ≥4px. 근거 design/calc-3/review-build.md 끝.
 - [지시] **firemap-improve**, 트랙:C, 기한 10/2 09:00: U6/V6 guidegate가 **6회째 [순돌이 검토]로 멈춤 — 사장님 한 달 부재라 원격 지시문(RemoteTrigger) 수정은 안 열린다.** 판정(대역, 부재 운영 규칙): 원격 지시문은 그대로 두고 **우리 쪽 경로에 관문을 건다** — 자동 가이드가 운영에 나가기 전 반드시 지나는 로컬 단계(배포 빌드 스크립트 또는 dev→main 직전 검사)에서 `py -3.12 work/guidegate.py ci <base> <head>`가 돌아 걸리면 그 가이드만 빼거나 실패로 멈추게. 어느 단계가 '반드시 지나는' 곳인지 사실 한 줄 먼저. 완료 기준: 기준 넘는 가이드 1개로 시험해 막히는 출력 + 커밋 + "완료: … HH:MM". 금지: retire-age-kr에 GitHub Actions 추가, 원격 지시문 손대기. 못 하면 10/2 09:00 자동 가이드 1회 정지(21:15 대안 그대로). **운영실장 21:35.**
   - 착수: firemap-improve 21:36 (운영실장 2)
@@ -145,6 +146,7 @@
   - [지시] site-ia 1판 트랙:B · 담당 **firemap-product-dev** · 시한 10/3 22:00(calc-gtm R1과 합침) · 근거 plans/site-ia.md 6장 — 운영엔 4번 이벤트만, 1·2·3번 화면은 dev까지(재심사 결과 통지 뒤 또는 10/14 조건부 운영).
   - [시안 요청] site-ia 계산기 끝 버튼에 내 숫자 넣는 문구(출처 표) 트랙:B · 담당 **firemap-editor-web** · 시한 10/2 12:00 · 근거 plans/site-ia.md 2·6장 3번
     - 착수: firemap-editor-web 08:45 (운영실장 2)
+    - 완료: firemap-editor-web 08:47 — 출처 표 시안: 운영 버튼 '이 돈이면 몇 살에 은퇴?'의 '이 돈'만 실제 넣는 값으로(퇴직금 r.amount·실업급여 r.total·연봉은 월 저축 saving), 0원이면 지금 그대로. 확인 안 함: 320 한 줄 여부·클릭률. 근거 design/site-ia/copy-table.md C
   - [시안 요청] site-ia 측정(home_corner_click·끝 버튼 클릭률 2% 판정·10/14 조건부 반영 시 원본 HTML 글자 수·링크 수 대조) 트랙:B · 담당 **firemap-growth** · 시한 10/2 12:00 · 근거 plans/site-ia.md 6·7장
     - 완료: firemap-growth 07:46 — growth/measure-1002.md B장(home_corner_click{to,place}·끝 버튼 클릭률 식·10/14 원본 HTML 글자·링크 수 대조 명령). 발견: calc_input_start·calc_result는 운영 번들에 있으나 10/1 17:35 배포 뒤 기록 0건(내부 포함) → product-dev가 ?fm_internal=1로 한 번 입력해 기록 확인 요청.
 - [디자인 검수 요청] site-ia 시안 범위 확인 — firemap-designer·firemap-brand-director 트랙:B · 시한 10/2 12:00 · 근거 plans/site-ia.md 6장(S1~S5) — 첫 화면 행동 아래 목록 행 1개·'전체' 코너 순서가 숫자 1+행동 1·부품 30개 안인지, 이름·로고 불변 확인.
@@ -154,6 +156,7 @@
   - 완료: firemap-brand-director 07:40 — 브랜드 몫 범위 통과(조건 3): 포지셔닝 일치(가이드 ① 차이 한 줄과 같은 말)·코너 행 제목은 toolPages.js 그대로·이름·로고 불변. 조건 ① 끝 버튼은 운영과 같은 낱말 '은퇴'로, 한 화면 안 은퇴·파이어 섞기 금지(실업급여 78행이 지금 섞음) ② S1·S2 캡처는 8점 관문(375 캡처+토스·네이버 임금계산기 비교판) ③ 화면 반영 순서 불변. 근거 design/site-ia/brand-check.md
   - [지시] 실업급여 결과 덩어리 낱말 통일(제목 '은퇴'·설명 '파이어 나이' → 하나로) + 끝 버튼 숫자 문구에 같은 원칙 트랙:B · 담당 **firemap-editor-web** · 시한 site-ia 문구 시안(10/2 12:00)과 같이 · 근거 design/site-ia/brand-check.md 조건 1 · 운영 반영은 재심사 뒤 순서대로 (brand-director 07:40)
     - 착수: firemap-editor-web 08:45 (운영실장 2)
+    - 완료: firemap-editor-web 08:47 — '은퇴'로 통일: Unemployment 78행 desc '파이어 나이'→'은퇴 나이', 퇴직금 77행도 같은 원칙(디자이너 확인 뒤). 코드 미수정, 구현은 product-dev, 운영은 재심사 뒤. 근거 design/site-ia/copy-table.md B
 - X-KR-1 가계부: 판매 개시는 리틀리 결재 뒤(통신판매업 첫 해 면제, 신원 표시 조건 — archive). 위 검수 2건 18:10.
 - X-G19 영어권 한국어 단어 채널(조건부 승인, 3관문):
   - 카드 ventures/xg19/brief.md(A판 11칸) — 담당 **firemap-venture** · 시한 10/2 20:10 회차. 접기: 첫 공개 +7일 롱폼 조회 300 미만 그리고 평균 시청 지속률 25% 미만.

@@ -1,1 +1,1 @@
-{"sha": "23783cb4beef2d76", "by": "firemap-editor-web", "at": "2026-10-01T16:13+09:00", "verdict": "고쳐서 통과", "rehash": "firemap-venture-builder 2026-10-01 — 디자인 반려 반영(순서·stale 버튼·버튼 글꼴 선언 수정, 글자 변경 0) + 해시에서 도장·대조 시각 제외. editor-web 16:14 조건 ⓐ"}
+{"sha": "2ea81a0e277bd251", "by": "firemap-editor-web", "at": "2026-10-01T18:20+09:00", "verdict": "통과", "note": "description 매일 자동 대조 뺀 문장 — 화면 맨 위 상태 줄·원문 대조 시각 도장·제77~81회 표와 일치, aitell 0.0"}

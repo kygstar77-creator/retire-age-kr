@@ -1,11 +1,11 @@
 // 퇴직금 계산기(/calc/severance) — 본진 밖 실험. 메뉴에 없고 검색으로만 들어온다(product-principles.md 2).
 // 입력 항목 이름은 고용노동부 퇴직금 계산(moel.go.kr/retirementpayCal.do) 그대로. 식·근거: src/utils/severancePay.js
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Card, SectionHead, RangeField, StatHero, Button, Fold, Tabs, Notice, Icon, ListGroup, ListRow, toast } from '../../ui/index.js';
 import CoupangPick from './CoupangPick.jsx';
 import { severancePay } from '../../utils/severancePay.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
-import { inputsIsReal } from '../../utils/retirementSimulator.js';
+import { buildSimulation, inputsIsReal } from '../../utils/retirementSimulator.js';
 import { logEvent } from '../../utils/live.js';
 
 const BASIS_DATE = '2026-09-30';
@@ -27,12 +27,23 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
   const ok = validDate(hireDate) && validDate(retireDate) && retireDate > hireDate;
   const r = ok ? severancePay({ hireDate, retireDate, wages3m: monthly * 3, weeklyHours: under15 ? 14 : 40, annualBonus: bonus, annualLeavePay: leave }) : null;
   const years = r ? Math.floor(r.serviceDays / 365) : 0;
+  const amount = r && r.eligible ? r.amount : 0;
+
+  // calc-3 숫자 줄(design/calc-3/spec.md 3): 저장된 내 입력이 있고 1년 이상 앞당겨질 때만. 기본값으로 낸 숫자는 남의 숫자라 그리지 않는다.
+  const gainYears = useMemo(() => {
+    if (!amount || !inputsIsReal(inputs)) return 0;
+    try {
+      const before = buildSimulation(inputs).earliestRetirementAge;
+      const after = buildSimulation({ ...inputs, financialAsset: (Number(inputs?.financialAsset) || 0) + amount }).earliestRetirementAge;
+      return before && after ? Math.max(0, before - after) : 0;
+    } catch { return 0; }
+  }, [inputs, amount]);
 
   const toRetire = () => {
     if (!r || !r.amount) return;
     const base = Number(inputs?.financialAsset) || 0;
     onApply({ financialAsset: base + r.amount });
-    try { logEvent('severance_to_fire', { amount_bucket: Math.min(10, Math.floor(r.amount / 10000000)) }); } catch { /* ignore */ }
+    try { logEvent('severance_to_fire', { amount_bucket: Math.min(10, Math.floor(r.amount / 10000000)), gain_shown: gainYears >= 1 }); } catch { /* ignore */ }
     toast.good(`현재 자산에 퇴직금 ${exact(r.amount)}을 더했어요`);
     onMove(inputsIsReal(inputs) ? 'result' : 'question');
   };
@@ -57,7 +68,21 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
           { label: '1일 평균임금', value: exact(r.dailyWage) },
           { label: '3개월 총일수', value: `${r.periodDays}일` }
         ] : undefined}
-      />
+      >
+        {gainYears >= 1 && (
+          <p className="fm-gain">
+            <span className="fm-gain__lead">퇴직금 {exact(r.amount)}을 더하면</span>
+            <span className="fm-gain__line">파이어 나이가 <span className="num">{gainYears}년</span> 앞당겨져요</span>
+          </p>
+        )}
+      </StatHero>
+
+      {r && r.amount > 0 && (
+        <div>
+          <Button variant="primary" size="lg" full onClick={toRetire}>이 돈이면 몇 살에 은퇴?</Button>
+          <p className="ds-caption ds-mb-0 ds-mt-2">퇴직금 {exact(r.amount)}을 현재 자산에 더해 파이어 나이를 계산해요</p>
+        </div>
+      )}
 
       <Card>
         <SectionHead size="sm" kicker="퇴직금 계산기" title="입사일자 · 퇴직일자" desc="퇴직일자는 마지막으로 근무한 날의 다음 날이에요" />
@@ -77,13 +102,6 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
           <RangeField label="연차수당" value={leave} min={0} max={5000000} step={50000} money format={won} chips={[100000, 500000]} onChange={setLeave} />
         </Fold>
       </Card>
-
-      {r && r.amount > 0 && (
-        <Card variant="dark">
-          <SectionHead size="sm" title="이 돈이면 몇 살에 은퇴?" desc={`퇴직금 ${exact(r.amount)}을 현재 자산에 더해 파이어 나이를 계산해요`} />
-          <Button variant="primary" size="lg" full onClick={toRetire}>은퇴 나이 계산</Button>
-        </Card>
-      )}
 
       {r && r.amount > 0 && (
         <ListGroup label="다음 계산">

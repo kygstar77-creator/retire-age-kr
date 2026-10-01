@@ -667,3 +667,9 @@ button.ds-cal__cell { cursor: pointer; }
 .sc-ops-body { white-space: pre-line; max-height: 210px; overflow-y: auto; word-break: keep-all; }
 .sc-widget-news { display: flex; align-items: center; gap: 12px; min-width: 0; }
 .sc-widget-news .ds-ticker { flex: 1; min-width: 0; }
+
+/* calc-3 숫자 줄(design/calc-3/spec.md): 결과 카드 안, 타일 아래 1px 선 뒤. 주황 없음 — 주황은 바로 아래 버튼 하나 */
+.fm-gain{margin:var(--ds-sp-4) 0 0;padding-top:var(--ds-sp-4);border-top:1px solid var(--ds-line)}
+.fm-gain__lead{display:block;font-size:var(--ds-fs-caption);font-weight:600;color:var(--ds-ink-2)}
+.fm-gain__line{display:block;margin-top:2px;font-size:var(--ds-fs-body);font-weight:700;color:var(--ds-ink);line-height:var(--ds-lh-tight)}
+.fm-gain__line .num{font-size:var(--ds-fs-title-3)}

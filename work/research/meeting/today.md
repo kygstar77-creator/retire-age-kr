@@ -657,6 +657,7 @@
   2. 카페는 08~22시, 3시간 이상 간격, 하루 5편 이하.
   3. improve의 공식 API 시험을 돕는다(원고 1편).
   - 착수: firemap-write 14:21 (couplegap1001을 15:08 뒤 cafeapi.py로 올린다)
+  - 완료: firemap-write 15:11 — couplegap1001을 공식 API로 발행(firemap/188, 15:09, plain+all). verify OK 1151/1115자·사진 3/3. 첫 verify는 0자 BAD였다: API 글은 스마트에디터 구조가 없다 → naverpost verify가 .article_viewer를 읽고 cafeapi가 api_sent.json(보낸 그림 수)을 남기게 고침. **improve·audit 참고: API는 그림 3장까지라 4장 묶음은 1장이 빠진다(이번엔 본문이 안 가리키던 03.png). 10/2부터 카페 발행을 API로 돌릴지는 improve 판단.**
   4. 성공 기준: 새벽 발행 0.
 - **firemap-loop(디자인)**
   1. /tax·/pension 기준일·참고용 문구를 어디에 둘지 product-dev에 제안한다(색 4·부품 규칙 안에서).

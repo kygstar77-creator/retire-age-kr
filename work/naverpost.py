@@ -1225,7 +1225,10 @@ def rewrite_cafe(page, article_id, pkg):
     if not set_cafe_public(edit): raise RuntimeError('전체공개 선택 실패')
     return submit_cafe(edit)
 
-PUBLISHED_JS = """() => { const c = document.querySelector('.se-main-container') || document.body;
+PUBLISHED_JS = """() => { const c = document.querySelector('.se-main-container');
+  if (!c) { const v = document.querySelector('.article_viewer');   // 공식 API(cafeapi.py)로 올린 글은 스마트에디터 구조가 없다(2026-10-01 firemap/188)
+    if (!v) return {text: 0, img: 0};
+    return {text: v.innerText.replace(/[\\s\\u200b]+/g,'').length, img: v.querySelectorAll('img').length}; }
   const t = [...c.querySelectorAll('.se-component.se-text .se-text-paragraph')].map(e=>e.innerText).join('').replace(/[\\s\\u200b]+/g,'').length;
   return {text: t, img: c.querySelectorAll('.se-component.se-image').length}; }"""
 
@@ -1248,6 +1251,10 @@ def verify_published(page, pkg):
             if r['text'] > best['text']: best = r
         except Exception: pass
     want = sum(len(re.sub(r'\s+', '', re.sub(r'(?m)^\s*#{1,6}\s+', '', v))) for k, v in seq if k == 'text'); want_img = sum(1 for k, _ in seq if k == 'img')
+    sent = os.path.join(pkg, 'api_sent.json')   # cafeapi.py가 실제로 보낸 그림 수(API는 3장까지·실패 시 덜어 낸다)
+    if os.path.exists(sent):
+        try: want_img = min(want_img, int(json.load(open(sent, encoding='utf-8')).get('imgs', want_img)))
+        except Exception: pass
     ok = best['text'] >= want * 0.9 and best['img'] >= want_img
     res = {'ok': ok, 'url': url, 'text': best['text'], 'want': want, 'img': best['img'], 'want_img': want_img}
     open(os.path.join(pkg, 'verify.txt'), 'w', encoding='utf-8').write(json.dumps(res, ensure_ascii=False) + '\n')

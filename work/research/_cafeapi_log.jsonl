@@ -1,0 +1,7 @@
+{"step": "dry", "pkg": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\a1cafe1001\\pkg", "chars": 1836, "imgs": 3, "menu": 1, "at": "2026-09-30T22:41:32"}
+{"step": "token", "ok": true, "expires_in": "3600", "at": "2026-09-30T22:41:44"}
+{"step": "dry", "pkg": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\a1cafe1001\\pkg", "chars": 1880, "imgs": 3, "menu": 1, "at": "2026-10-01T08:20:00"}
+{"step": "dry", "pkg": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\couplegap1001\\pkg", "chars": 1495, "imgs": 3, "menu": 1, "at": "2026-10-01T14:20:54"}
+{"step": "token", "ok": true, "expires_in": "3600", "at": "2026-10-01T15:09:27"}
+{"step": "post", "pkg": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\couplegap1001\\pkg", "ok": true, "url": "https://cafe.naver.com/firemap/188", "via": "plain+all", "tried": [], "at": "2026-10-01T15:09:32"}
+{"step": "verify", "pkg": "couplegap1001", "ok": true, "text": 1151, "want": 1115, "img": 3, "want_img": 3, "url": "https://cafe.naver.com/firemap/188", "note": "첫 실발행. 첫 verify는 0자 BAD(스마트에디터 구조 없음) → verify 고친 뒤 OK", "at": "2026-10-01T15:11"}

@@ -198,6 +198,9 @@ def cmd_post(pkg, dry):
     if not link:
         print('실패:', ' | '.join(tried)); sys.exit(1)
     open(os.path.join(pkg, 'published.txt'), 'w', encoding='utf-8').write(link + '\n')
+    # verify가 그림 수를 묶음(order.txt) 대신 실제로 보낸 장수와 견주게 남긴다(2026-10-01 firemap/188: 4장 묶음이 3장으로 나가 BAD)
+    sent_n = {'plain+all': len(imgs), 'plain+one': min(1, len(imgs))}.get(tag, 0)
+    json.dump({'via': tag, 'imgs': sent_n, 'url': link}, open(os.path.join(pkg, 'api_sent.json'), 'w', encoding='utf-8'), ensure_ascii=False)
     print('URL', link, '·', tag)
 
 

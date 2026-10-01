@@ -20,6 +20,19 @@
     "url": "https://cafe.naver.com/firemap/187"
    },
    "note": "12시 코너 a1cafe1001 제 시각 발행(12:07) verify OK 1437/1437자·사진 4/4. 발행 전 aitell 0.0·readcheck 0건. 블로그 0(STOP_blog). 다음 슬롯 couplegap1001(부부 국민연금 부족분을 예금 이자로 채우려면, slot 15시, 세금연금/형식2 — textrule 1위 갈래 파이어·자산) 작성: 자료조사 6건(아시아경제·SBS 부부 수급 통계, 국민노후보장패널 10차 보도, 금감원 finlife 9월 예금 38개, 법제처 소득세법 제14조, 상위 블로그 5편 compare.md). 교차검증 crosscheck(제미나이 flash 사실 대행): 사실 3건 중 반영 2·유지 1(조문은 출처 줄 한 번), 말투 15건 중 반영 10. selfcheck 사실 0·말투 0, readcheck 0, aitell 0.0(.edit.json by auto). 검증 경로: crosscheck. 개선: axisname.ALIAS에 '파이어·자산'→세금연금(textrule 권고 이름이 selfcheck [축]에 걸리던 것)"
+  },
+  {
+   "hour": 14,
+   "ts": "15:11",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "부부 국민연금으로 모자란 생활비, 예금으로 채우려면 얼마 있어야 할까?",
+    "url": "https://cafe.naver.com/firemap/188"
+   },
+   "note": "15시 코너 couplegap1001을 공식 카페 API(cafeapi.py, plain+all)로 첫 실발행 15:09 → firemap/188. verify OK 1151/1115자·사진 3/3 (처음엔 BAD 0자 — API 글은 스마트에디터 구조가 없어 verify가 못 읽음. 페이지 직접 열어 본문·그림 정상 확인 후 verify 고침). 그림 4장 묶음이 API 상한 3장으로 나감(03.png 빠짐, 본문에서 가리키지 않던 그림). 블로그 0(STOP_blog). 대기 보충: gongjae1002(공공재개발 이주비 대출이자 지원, slot 10/2 09시 K09 대출 금리, 부동산/형식2) 작성 — 자료조사 오늘 6건(연합·파이낸셜·머투·뉴스핌·아시아경제, 금감원 finlife 9월 주담대; 국토부 누리집은 리다이렉트 반복으로 못 엶 → 두 매체 대조 숫자만), 교차검증 crosscheck(제미나이 flash 사실 대행): 사실 3건 중 반영 2·유지 1(출처 접속 확인 불가 지적), 말투 12건 중 반영 10. selfcheck 사실 0·readcheck 0·aitell 0.0(.edit.json by auto). 경쟁 비교 gongjae1002/compare.md. 검증 경로: crosscheck. 개선: naverpost.py verify가 공식 API 글(.article_viewer)도 읽고, cafeapi.py가 실제 보낸 그림 수를 api_sent.json에 남겨 verify가 그 수와 견줌"
   }
  ]
 }

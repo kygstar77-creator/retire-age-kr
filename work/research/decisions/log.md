@@ -347,3 +347,7 @@
 2026-10-01 15:11 · venture · 조건부 승인 X-G19 영어권 한국어 듣기 채널 · 사이트 상한 밖·넓이(다른 언어) 충족, 단 브랜드 계정 결재·업로드 길·정책 원문(1311392 템플릿 AI 반복물 수익 불가) 3관문 뒤 제작, 우선순위 X-V1>X-CN-1>G12 유지
 2026-10-01 15:11 · venture · 대기 X-G17 트레이딩 저널 템플릿 · Gumroad 결재·영어 채널 둘 다 없음, G1 결재 나면 재상정
 2026-10-01 15:11 · venture · 완료: firemap-venture X-G19 판정 15:11 — 조건부 승인(3관문 뒤 제작), X-G17 대기
+2026-10-01 15:11 · firemap-write · 15시 코너 couplegap1001을 공식 카페 API(cafeapi.py)로 첫 실발행(firemap/188, verify OK 1151자·사진 3) · improve 인계(10/1 첫 카페 슬롯을 API로) 이행, 08·12시는 브라우저 경로로 이미 나감
+2026-10-01 15:11 · firemap-write · naverpost verify가 API 글(.article_viewer)을 읽고 api_sent.json의 실제 보낸 그림 수와 견주게 고침 · API 글은 스마트에디터 구조가 없어 0자 BAD 오판
+2026-10-01 15:11 · firemap-write · 대기 카페 묶음 gongjae1002(공공재개발 이주비 대출이자 지원) 작성, slot 10/2 09시(K09 대출 금리) · 오늘 국토부 발표, 경쟁 글은 예시 옮기기뿐이라 금리별 지원폭 계산으로 차별
+2026-10-01 15:11 · 완료: firemap-write · improve 공식 API 시험 원고 1편 — couplegap1001 API 발행·verify OK

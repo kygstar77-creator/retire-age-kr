@@ -68,7 +68,17 @@ export async function onRequest(context) {
   const desc = tool.desc || `${tool.sections.join(' · ')} · 1분이면 나도 계산`;
   const res = new Response(shell.body, shell);
   res.headers.set('cache-control', 'public, max-age=0, must-revalidate');
-  return new HTMLRewriter()
+  const rw = new HTMLRewriter();
+  if (tool.og) {
+    // 계산기마다 미리보기 그림(1200×630). 없으면 껍데기의 공통 og-image 그대로.
+    const ogImg = `${site}${tool.og}`;
+    rw.on('meta[property="og:image"]', { element(el) { el.setAttribute('content', ogImg); } })
+      .on('meta[property="og:image:secure_url"]', { element(el) { el.setAttribute('content', ogImg); } })
+      .on('meta[property="og:image:width"]', { element(el) { el.setAttribute('content', '1200'); } })
+      .on('meta[property="og:image:height"]', { element(el) { el.setAttribute('content', '630'); } })
+      .on('meta[name="twitter:image"]', { element(el) { el.setAttribute('content', ogImg); } });
+  }
+  return rw
     .on('title', { element(el) { el.setInnerContent(title); } })
     .on('meta[name="description"]', { element(el) { el.setAttribute('content', desc); } })
     .on('link[rel="canonical"]', { element(el) { el.setAttribute('href', pageUrl); } })

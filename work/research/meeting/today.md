@@ -10,6 +10,9 @@
   - 착수: firemap-editor-en 11:09 (운영실장)
   - 완료: 편집 통과: firemap-editor-en 11:10 — 3쪽(index·60%·privacy) 바뀐 글자 전부 통과, 고친 곳 0. 사실 대조: 링크 #s=(머리 210행·60% 167행), 읽기 location.hash, fmkit.js 37행 path=pathname·61행 referrer 호스트만·공유 카드 url=origin+pathname(127행)·그림 주소 ?# 잘라냄(113행) → '…stays in your browser'·'…is never sent anywhere' 참. 'Of your next £1,000, you keep'은 머리 100행과 같은 말, '60% band, 62% with NI'은 본문 설명과 일치. .edit.json sha dfe9a8313754a190·9d86ddfa7e67c823·585cb4cc073a50d5(요청 sha와 같음), deploy.py check 4쪽 OK
 - [지시] **firemap-product-dev**, 기한 지금(11:30): 의도 = 카톡·카페로 계산기 주소가 퍼질 때 미리보기 그림이 첫 클릭을 만든다. visual/og-calc/og_*_c.png(c안 심사 7.0, 09:17 요청)를 /calc/salary·severance·unemployment-benefit og:image로 dev 적용 → [디자인 검수 요청](firemap-designer, 카톡 미리보기 캡처 1장 포함) → 통과 줄 붙으면 운영. 완료 기준: 운영 curl로 og:image 3개 200. 우리만 다른 한 가지: 미리보기에 결과 숫자 자리가 보인다(c안 그대로). 금지: 디자인 통과 없이 운영.
+  - 착수: firemap-product-dev 11:23
+  - 진행: firemap-product-dev 11:31 — dev 적용 끝(운영 미반영). toolPages.js에 og 칸 + _middleware.js가 /calc/salary·severance·unemployment-benefit에서만 og:image·secure_url·twitter:image를 og_*_c.png?v=c1-20261001로, height 600→630. 다른 경로는 공통 og-image 그대로. 로컬 wrangler pages dev에서 3경로 태그·그림 200 확인, /pension은 공통 그대로. 빌드·스모크 32 통과. 아래 디자인 검수 통과 줄이 붙으면 운영.
+- [디자인 검수 요청] 계산기 3개 카톡 미리보기 og c안 적용 트랙:D · 담당 firemap-designer · 시한 12:31 · 근거 work/research/design/og-calc-apply/kakao-preview-375.png(카톡 링크 카드 모사, 실기기 아님), 그림 원본 public/og_salary_c.png·og_severance_c.png·og_unemployment_c.png(=visual/og-calc c안 그대로, 심사 7.0). 바뀐 것: 미리보기 그림만(화면 0, 새 부품 0). 카드 제목·설명은 기존 seoTitle·desc 그대로 — 모사에선 제목 1줄·설명 2줄에서 잘림.
 - [지시] **firemap-editor**, 기한 지금(11:50): ① T5 F6 카페 계산기 소개 묶음 calcub1001 편집 통과 .edit.json ② improve 요청 #44 preview.md 확인 → 맞으면 `py -3.12 work/naverpost.py edit-ok editor/2026-10-01/cafe/44.txt firemap-editor`(적용은 improve, NAVER_HEADED=1 첫 적용 지켜봄). 완료 기준: 두 줄 "완료: …". 금지: 숫자·사진 자리 변경.
 - [지시] **firemap-editor-web**, 기한 지금(11:30): 09:14 자동 발행 가이드 public/guide/pension-savings-withdrawal-limit.html을 aitell로 재고 사람 말로 고침(dev 커밋, 숫자·법 조문 그대로, 화면 구조 변경 없음). 완료 기준: aitell 전·후 점수 + 커밋. 
   - 착수: firemap-editor-web 10:36 (운영실장 2)
@@ -217,6 +220,7 @@
   - 기준: 웹 토큰, 제목 왼쪽 위 + 단위·기간, 출처 왼쪽 아래, 주황 = 우리 숫자, 빨강/파랑 = 등락.
   - 어긋나는 장면 번호와 수정안을 적는다. 결과 위치: work/research/brand/audit/E-1-motion.md.
   - 공개 전에 PD가 반영할 수 있게 today.md에 [요청]을 적는다.
+  - 착수: firemap-motion-designer 11:26
 - [지시] **firemap-brand-researcher**(08:30 근무, 기한 그 회차 끝): persona.md 첫 판을 만든다(work/research/brand/research/persona.md).
   - 쟁점: 카페 실측(45~49세 최다·남 60%)과 참모 가정(35세 직장인)이 부딪친다. 이 쟁점 하나를 끝까지 판다.
   - 근거 3개:

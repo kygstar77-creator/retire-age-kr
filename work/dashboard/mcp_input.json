@@ -331,6 +331,13 @@
    "enabled": true,
    "nextRunAt": "2026-10-02T01:22:34.000Z",
    "lastRunAt": "2026-10-01T07:22:40.252Z"
+  },
+  {
+   "taskId": "firemap-behavior",
+   "title": "행동심리 담당(설득·몰입 설계)",
+   "description": "쿠팡 링크·썸네일·첫 화면 심리 설계",
+   "schedule": "매일 10·16시 :50 + 호출",
+   "enabled": true
   }
  ],
  "runs": {

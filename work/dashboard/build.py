@@ -32,7 +32,7 @@ DEPTS = [
                         'firemap-artist', 'firemap-designer-orgchart']),
     ('product', '제품본부', ['firemap-planner', 'firemap-product-dev', 'firemap-designer', 'firemap-loop']),
     ('brand', '브랜드팀', ['firemap-brand-director', 'firemap-brand-researcher']),
-    ('growth', '성장·수익본부', ['firemap-growth', 'firemap-bizdev']),
+    ('growth', '성장·수익본부', ['firemap-growth', 'firemap-bizdev', 'firemap-behavior']),
     ('venture', '신사업본부', ['firemap-venture', 'firemap-venture-research-global', 'firemap-venture-research-kr', 'firemap-venture-builder']),
     ('ops', '운영·품질본부', ['firemap-dispatcher', 'firemap-dispatcher-2', 'firemap-finishline-check', 'firemap-audit', 'firemap-watchdog', 'firemap-improve', 'firemap-report']),
     ('admin', '총무·인사팀', ['firemap-admin']),
@@ -49,7 +49,7 @@ NAME = {
     'firemap-brand-director': '브랜드 디렉터', 'firemap-brand-researcher': '브랜드 리서처',
     'firemap-growth': '성장·유입', 'firemap-bizdev': '사업개발', 'firemap-venture': '신사업본부장',
     'firemap-audit': '감사관', 'firemap-watchdog': '발행 감시', 'firemap-improve': '생산·개선',
-    'firemap-report': '보고 비서', 'firemap-planner': '기획자', 'firemap-editor-web': '편집자(화면 문구)', 'firemap-editor-en': '편집자(영어)', 'firemap-soondol-deputy': '순돌이 대역', 'firemap-venture-research-global': '해외 시장조사원', 'firemap-venture-research-kr': '국내 시장조사원', 'firemap-venture-builder': '신사업 빌더', 'firemap-dispatcher': '운영실장', 'firemap-dispatcher-2': '운영실장 2', 'firemap-finishline-check': '결승선 점검관', 'firemap-admin': '총무·인사', 'firemap-ai-lab': 'AI 연구소장',
+    'firemap-report': '보고 비서', 'firemap-planner': '기획자', 'firemap-behavior': '행동심리', 'firemap-editor-web': '편집자(화면 문구)', 'firemap-editor-en': '편집자(영어)', 'firemap-soondol-deputy': '순돌이 대역', 'firemap-venture-research-global': '해외 시장조사원', 'firemap-venture-research-kr': '국내 시장조사원', 'firemap-venture-builder': '신사업 빌더', 'firemap-dispatcher': '운영실장', 'firemap-dispatcher-2': '운영실장 2', 'firemap-finishline-check': '결승선 점검관', 'firemap-admin': '총무·인사', 'firemap-ai-lab': 'AI 연구소장',
 }
 # 역할 덮어쓰기(근거가 있는 것만)
 ROLE_OVERRIDE = {

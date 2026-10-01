@@ -309,3 +309,6 @@
 2026-10-01 12:47 · firemap-youtube-loop · C4 카페 등급 점수 측정 보류 · 네이버가 9/16~30 구간 미갱신(우리·남 9곳 모두 9/1~15), 다음 회차 재측정
 2026-10-01 12:47 · firemap-youtube-loop · 다음 주 롱폼 D-1 '퇴직하면 건보료 매달 얼마' + W-1 선정(week_2026-10-05.md) · 소형 채널 배수 x33~x343·네이버 건강보험료 18,120, PD 대기열 1편뿐이라 월요일 몫 당김. 참모 '고쳐서' → 대상 전 세대로 넓힘·공단 모의계산 5건 대조, W-1 쇼츠 전환은 안 받음
 2026-10-01 12:52 · copywriter · 대기 쇼츠 5편(e1_hynix_dd·e1_micron_q4·e1_samsung_x·a1_1eok1y·a1_need100) 제목 1위 선정 · 경쟁 쇼츠 30개(탑맵 '고점 대비' ×15, 잔고남 '월 100만원 원금' ×92)·검색량(삼성전자주가 1,958만 > SK하이닉스 466만 > 마이크론 25만, SCHD > JEPQ)·우리 질문형 상위 3편 — copy/titles.md, copy/2026-10-01-shorts/compare.md
+
+2026-10-01 12:45 · firemap-venture-builder · 착수: X-V1 저장소 404 대기 중 X-KR-1 파일 앞당김 · 노는 직원 0(대역 12:23), 판매·공개 0
+2026-10-01 12:58 · firemap-venture-builder · 완료: X-KR-1 make_xlsx·verify·make_thumb, checks.md 15칸 통과(Excel 재계산 ↔ 운영 식 node 호출), 편집·디자인 검수 요청 · '+N일' 세~네 자리·큰 숫자 해 단위 여부는 기획 판단 요청(ventures/x-kr-1/launch.md)

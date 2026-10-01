@@ -108,7 +108,7 @@ export default function Experiment({ inputs, onChange, onBack, onMove, draft: dr
         {money('financialAsset', '현재 자산', '저축·투자 등 금융자산 합계')}
       </Fold>
 
-      <Fold icon={<Icon name="settings" />} title="고급 가정" hint={`저축 ${savingYearsValue}년 · 연봉 ${draft.salaryGrowthRate}% · 물가 ${draft.inflationRate}% · 수익 ${draft.annualReturnRate}%`}>
+      <Fold icon={<Icon name="settings" />} title="고급 가정" hint={`저축 ${savingYearsValue}년 · 임금 ${draft.salaryGrowthRate}% · 물가 ${draft.inflationRate}% · 수익 ${draft.annualReturnRate}%`}>
         <RangeField label="저축 기간" value={savingYearsValue} min={1} max={yearsToRetire} step={1} format={(v) => `${v}년`} hint={`기본은 파이어까지 ${yearsToRetire}년 매달 저축이에요 · 줄이면 이후엔 모은 돈을 굴리기만 해요`} onChange={(v) => editDraft('savingYears', v >= yearsToRetire ? 0 : v)} />
         <RangeField label="임금상승률" value={cleanNumber(draft.salaryGrowthRate)} min={R.salaryGrowthRate[0]} max={R.salaryGrowthRate[1]} step={1} format={pctFmt} onChange={(v) => editDraft('salaryGrowthRate', v)} />
         <RangeField label="물가 상승률" value={cleanNumber(draft.inflationRate)} min={R.inflationRate[0]} max={R.inflationRate[1]} step={1} format={pctFmt} onChange={(v) => editDraft('inflationRate', v)} />

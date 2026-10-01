@@ -11,7 +11,7 @@
    - 버튼 글자: 연봉과 같은 `이 돈이면 몇 살에 은퇴?`(새로 짓지 않음). 아래 caption은 지금 쓰는 desc 문장 그대로(`퇴직금 N원을 현재 자산에 더해 파이어 나이를 계산해요`, 실업급여도 같은 형식).
    - 지금의 다크 은퇴 카드(`Card variant="dark"` + SectionHead + '은퇴 나이 계산')는 **없앤다** — 같은 행동이 두 번 나오면 행동 2개가 된다. 실업급여 다크 카드 제목('재취업 뒤, 몇 살에 은퇴할 수 있을까?')·'실업급여는 재취업 활동 기간에 받는 돈이에요' 문장을 caption에 남길지는 editor-web 판정.
 3. **보이는 조건(기획 그대로):** `inputsIsReal(inputs)` 참 **그리고** 차이 ≥1년일 때만 숫자 줄. 아니면 숫자 줄 자체를 그리지 않는다(B안) — 자리 비움·'0년'·'—' 표시 금지. 버튼과 caption은 항상 같은 자리.
-   - 차이 = `buildSimulation(inputs).retirementAge − buildSimulation({...inputs, financialAsset: base + amount}).retirementAge`(정수 년). 입력이 바뀔 때마다 두 번 계산하므로 `useMemo([inputs, amount])` 권장.
+   - 차이 = `buildSimulation(inputs).earliestRetirementAge − buildSimulation({...inputs, financialAsset: base + amount}).earliestRetirementAge`(정수 년, 둘 다 있을 때만). ※ 처음엔 retirementAge로 썼으나 파이어 불가 때 목표 나이로 떨어져 가짜 차이가 나서 구현 때 바꿈(product-dev 13:43, 디자인 검수 14:1x 받음). 입력이 바뀔 때마다 두 번 계산하므로 `useMemo([inputs, amount])` 권장.
 4. **375px 실측(preview, Pretendard 미로딩 대체 글꼴):** 버튼 아래 끝 A 456px · B 361px · C 495px (812px 첫 화면 안) · 가로 넘침 0 · 버튼 높이 56px. 실제 화면은 상단바·탭바 높이가 달라 **구현 캡처로 다시 잰다**(식 검증≠화면 검증).
 5. **다크:** D안(다크 토큰) 숫자 줄 #f2f3f5 / 리드 #c3c6cd on #1b1c21 — 읽힘. 버튼 #ff7a33.
 

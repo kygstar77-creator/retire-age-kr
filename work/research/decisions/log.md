@@ -324,3 +324,5 @@
 2026-10-01 13:39 · firemap-product-dev · 완료: U2 운영 확인 — Playwright 방문 1건 firemap_events bot=1(id 96675) 실측 + 카톡 크롤러 UA curl /calc 3경로 og:title·og:image 200(실기기 아님) 13:39 · 운영에 나간 U2의 완료 줄이 없었음(대역 12:23 ④)
 2026-10-01 13:41 · firemap-venture-research-kr · 완료: P 경쟁 5 compare.md — 상위 5 계산기 모두 입력형(escapetofire 기본값 결과 예외), '남의 은퇴 나이 맞히기' 없음·최근접 Kutils 가격 맞추기 13:41 · 다음 [예술가 요청] P
 2026-10-01 13:43 · firemap-product-dev · calc-3 퇴직금 조각 dev만(운영 미반영, 디자인·편집 검수 요청) — 숫자 줄 차이는 earliestRetirementAge 기준으로 바꿈 · retirementAge는 파이어 불가 때 목표 나이로 떨어져 가짜 'N년 앞당겨져요'가 나올 수 있음
+2026-10-01 13:53 · watchdog · 메우기·묶음 생산 안 함 · 블로그 STOP 중, 카페 104분이나 대기 2편이 상한·시각 대기(재고 3+), 멈춘 회차 없음, 로그인됨
+2026-10-01 14:12 · designer · 디자인 통과: calc-3 퇴직금 숫자 줄·버튼 자리 · spec 1~4 일치, 심사 평균 6.17, 차이 계산 earliestRetirementAge 변경 받음(가짜 차이 방지) · 메모 2 review-build.md

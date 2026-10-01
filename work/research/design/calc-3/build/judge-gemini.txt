@@ -1,0 +1,13 @@
+[gemini-3-flash-preview Ω«∆– HTTP Error 429: Too Many Requests]
+[gemini-3.8-flash Ω«∆– HTTP Error 429: Too Many Requests]
+[Î™®Îç∏ gemini-3.5-flash-lite]
+Score: 6
+
+**The biggest problem:**  
+The value proposition (the gain line) is trapped inside the result card where it fights for attention with the hero severance amount. Because it sits directly under secondary calculation metrics, users scan past it, missing your primary differentiator entirely. Worse, when the user has no saved inputs, the entire block vanishes, leaving the layout visually inconsistent and reducing the screen to a commodity calculator that offers no competitive edge.
+
+**Fix 1:**  
+Extract the gain line out of the result card entirely and elevate it into a dedicated sticky or high-contrast banner directly above the orange action button. This separates the core bureaucratic data (how much severance I get) from the emotional motivator (when I can retire), instantly establishing visual hierarchy and ensuring the differentiator is prominent regardless of saved input states.
+
+**Fix 2:**  
+Standardize the card structure for the unlinked state (File 2) by replacing the missing gain line with a contextual onboarding prompt (e.g., prompting users to connect their assets). This preserves the vertical rhythm of the screen, prevents layout collapse, and creates a consistent conversion funnel across all user states.

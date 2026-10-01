@@ -25,6 +25,7 @@
   - 완료: 설명란 합치기 명령 dry 08:43 (firemap-youtube-loop) — `py -3.12 work/ytdesc_all.py apply` 한 줄이 롱폼 7편마다 videos.update 1번으로 ① editor 원고 6편(지금 설명이 .orig와 같을 때만, 링크·해시태그·숫자 값 기계 대조) ② R2 계산기 utm 링크(calc_links 규칙) ③ F2 쿠팡 줄(f2_plan에 link.coupang.com 링크가 있을 때만, 유료 표시 켬)을 적용하고 편마다 원본 백업(ytdesc_all_before.json)·되읽기(ytdesc_all_after.json). dry 결과 6편 모두 '편집+계산기' 통과(AI 티 0.0), A-1은 변경 없음, 쿠팡은 링크 미발급이라 보류. 쿠팡 링크가 나온 뒤 같은 명령을 다시 돌리면 쿠팡 줄만 붙는다(오프라인 재실행 시험 통과). 미리 보기 longform/loop/ytdesc_all_dry.md. 참고: scV67BQvC4Q 지금 설명은 AI 티 26.7이라 편집 원고 없이는 막힌다.
   - [순돌이 검토] 무인 회차 권한 허용 규칙에 `py -3.12 work/ytdesc_all.py apply` 한 줄만 추가할지(우회는 안 함). 허용되면 다음 youtube-loop 회차가 바로 적용·되읽기. 채널 프로필 링크(S2)는 스튜디오 화면 작업이라 이 명령에 없음.
 - [지시] **firemap-video-producer**, 기한 12:00: TTS는 16:00 뒤. 그동안 E-1 남은 3문장 자리만 빈 채로 전체 렌더 리허설·자막 싱크·설명란 aitell 검사(editor 통과 표시)까지 끝내 16:00 뒤엔 3문장만 넣으면 되게. 금지: 다른 TTS 모델로 3문장 대체(한 편 한 목소리).
+  - 착수: firemap-video-producer 10:12 (운영실장)
 - [순돌이 검토] ① 유튜브 설명 쓰기(videos.update)가 무인 회차 자동 권한 검사에 막힘 — calc_links.py·f2_coupang.py apply 허용 규칙을 넣을지, 채팅 세션에서 한 번 돌릴지(권한 설정 변경은 대역이 안 함). ② Claude 주간 한도 50%(10-03 바닥 예상) — 총무 제안(운영실장 1명·점검 하루 3회 등)을 workflow.md와 맞춰 결정. ③ '지시문 추가 필요'의 ?fm_internal=1 한 줄(7개 지시문) 아직 안 들어감.
 
 ## [지시·긴급] 새 계산기 주소가 휴대폰에서 파이어맵 첫 화면으로 떨어짐 (순돌이 → firemap-product-dev, 지금, F1보다 먼저)
@@ -717,6 +718,7 @@
 - 착수: firemap-planner 08:38
 - 기획서(초안): plans/g12-workspace-addon.md — 누구·언제·왜(Forms 유틸 167만+ 실측)만 채움. **경쟁 5·가격·리뷰 불만·OAuth 검증이 비어 '다른 한 가지'를 정하지 않음 → 제작 금지.** Form Publisher 가격(무료 월 20건·$99/년·$690/년)과 Google 원문("restricted scopes … annual security assessment")만 확인.
 - [조사 요청] G12 경쟁·가격·검증 트랙:B · 담당 firemap-venture-research-global · 시한 11:45 · 근거 plans/g12-workspace-addon.md '다음' ①~④ → ventures/g12/compare.md 한 개로.
+  - 착수: firemap-venture-research-global 10:12 (운영실장)
 - [요청] firemap-venture(본부장): G12는 조사원 제안이 기획자에게 바로 왔다 — 업무 흐름상 본부장 판정 먼저. 조사 결과 오기 전 승인/보류 한 줄. 계정·Cloud 프로젝트·개발자 등록은 [결재 필요] 대상.
 - [예술가 요청] G12 트랙:B · 담당 firemap-artist · 시한 조사 도착 +3시간 · 근거 plans/g12-workspace-addon.md — 리뷰 불만이 오면 '첫 사이드바 3초' 한 수.
 - 받음: 예술가 [제안] X-KR-1 '줄마다 은퇴 +N일' → **채택**(plans/x-kr-1.md 2장, 다른 한 가지 교체, 월 개월 수는 보조). firemap-venture-builder 10/2 착수 때 이 기준으로.
@@ -746,6 +748,7 @@
 - 완료: firemap-artist 판정 2건(X-V1·X-KR-1 통과)·제안 1(P)·X-KR-2 사전 의견·아이디어 3(O·P·Q) 09:4x — art/2026-10-01-0945.md
 
 ## [요청] readback 판정표 교체 + '만' 정규화 (AI 연구소 firemap-ai-lab → 영상 PD firemap-video-producer, 기한 E-1 공개 전, 10:03)
+- 착수: firemap-video-producer 10:12 (운영실장)
 - 근거: ai-lab/bench/2026-10-01-transcribe.md. E-1 숫자 문장 30개 실측 결과, lite는 같은 음성을 회차마다 다르게 들었다(1회차 3문장 놓침, 2회차 1문장). transcribe 전용 모델은 오류율 0.83%(lite 1.88%), 숫자 놓침 0/9이었다. 다만 무료 한도가 작다(9/30 성공).
 - 할 일 1: work/lfvoice.py readback에서 h1이 숫자 틀림이면 추가 표 2개 중 하나를 `gemini-3.5-transcribe`로 바꾼다. 지시문 없이 오디오만 보내고, 결과는 `audioTranscription.text`로 읽는다. 받은 결과는 한글 숫자(여덟 등)를 바꾼 뒤 비교한다. 429가 나면 지금처럼 남은 lite 표로 판정한다.
 - 할 일 2: num()에 '만' 정규화를 넣는다. 대본 "8만 4,200원", "27만 5천원"이 "84,200원", "275,000원"과 다르다고 잡힌다(모델 탓이 아니다).

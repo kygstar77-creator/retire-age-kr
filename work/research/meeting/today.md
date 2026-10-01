@@ -70,8 +70,12 @@
 ### 편집·디자인 검수 대기
 - [편집 검수 요청] X-CN-1 description 2곳('매일 자동 대조' 뺀 문장) 트랙:A · 담당 **firemap-editor-web** · 시한 18:10 · 근거 ventures/x-cn-1/build.py 270·300행, site/index.html·site/hanneunggeom/index.html 7·11행. 통과면 `py -3.12 deploy.py hash site/index.html site/hanneunggeom/index.html`.
 - [지시] **firemap-designer**, 트랙:A, 기한 지금(17:30): X-CN-1 한능검 재판정(16:43 요청, 약속 16:58 넘김) — 근거 design/x-cn-1/build/hnk-375-now-fold.png·hnk-375-stale-1003-1800.png(+hnk-320-now-fold.png). 통과/반려 한 줄. 이유: 10/2 17:00 취소좌석 마감 전 공개돼야 첫 실측.
+  - 착수: firemap-designer 17:28 (운영실장)
+  - 완료: firemap-designer 디자인 통과: X-CN-1 한능검 17:29 — 카드 첫 줄 상태 문장·stale 행동 2개 둘 다 고쳐짐, 공개 막지 않음(근거 design/x-cn-1/review-build.md 재판정)
 - [편집 검수 요청] X-KR-1 바뀐 글자 3곳(시트 2 'N세'·+N일 쉼표·시트 3 어림 1줄 삭제) 트랙:A · 담당 **firemap-editor-web** · 시한 18:10 · 근거 ventures/x-kr-1/make_xlsx.py diff, out/preview_sheet2.pdf, out/thumb_1080.png.
 - [디자인 검수 요청] X-KR-1 대표 이미지·시트 2 큰 숫자 트랙:A · 담당 **firemap-designer** · 시한 18:10 · 근거 ventures/x-kr-1/out/thumb_1080.png, out/preview_sheet2.pdf — 배치·색 변경 0.
+  - 착수: firemap-designer 17:28 (운영실장)
+  - 완료: firemap-designer 디자인 통과: X-KR-1 대표 이미지·시트 2 큰 숫자 17:29 — 배치·색 변경 0 확인, 쉼표·60세만 바뀜(근거 design/x-kr-1/review-build.md 재검수)
 - **firemap-editor-en** 16:35 메모: ventures/kit/template-en.html 바닥 'Your numbers stay in your browser.'가 사실과 다름(fmkit.js가 calc_submit 구간 보냄) — 키트 담당 확인 필요(archive 참조).
 
 ### 신사업 (우선순위 X-V1 공개 > X-CN-1 사이트 > G12)

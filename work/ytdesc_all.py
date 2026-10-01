@@ -3,6 +3,8 @@
 #      다르면(남이 먼저 고쳤으면) 지금 설명을 그대로 두고 ②③만 얹는다.
 #   ② R2 계산기 utm 링크(calc_links.new_desc 그대로 — 첫 문단 뒤 '▶ 내 은퇴 나이 계산하기', 아래 맨 주소도 같은 utm)
 #   ③ F2 쿠팡 줄(f2_plan.json에 link.coupang.com 링크가 있을 때만) — 맨 위 대가성 문구 + 링크, '유료 프로모션 포함' 켬
+#   ④ 카페 표 글 주소(CAFE_POST) — 설명란의 카페 대문 주소(https://cafe.naver.com/firemap 줄 끝)를 그 편의 표 글 주소로 바꾼다
+#      (A-1 표 글 #187, 2026-10-01 12:08 발행, 회의 지시 '12시 A-1 카페 글 → 설명란 카페 링크를 글 주소로')
 #   py -3.12 work/ytdesc_all.py dry     # 아무것도 안 바꿈. 미리 보기 research/longform/loop/ytdesc_all_dry.md
 #   py -3.12 work/ytdesc_all.py apply   # 적용 전 원본 ytdesc_all_before.json, 되읽기 ytdesc_all_after.json
 # 쓰기 권한 토큰은 f2_coupang.py(youtube.force-ssl)를 쓴다. 쿠팡 링크가 비어 있으면 ③만 건너뛰고 ①②는 적용한다
@@ -17,6 +19,7 @@ LOOP = os.path.join(HERE, 'research', 'longform', 'loop')
 DRY, BEFORE, AFTER = [os.path.join(LOOP, f'ytdesc_all_{x}') for x in ('dry.md', 'before.json', 'after.json')]
 CALC_IDS = set(calc_links.IDS)
 PLAN = {p['id']: p for p in json.load(open(f2_coupang.PLAN, encoding='utf-8'))['videos'] if not p.get('skip')}
+CAFE_POST = {'SCOI0DP-l-s': 'https://cafe.naver.com/firemap/187'}
 IDS = list(PLAN)  # 롱폼 7편(A-1 + 6편). 쇼츠는 f2_plan에서 skip.
 
 def norm(s): return '\n'.join(l.rstrip() for l in s.replace('\r\n', '\n').strip().split('\n'))
@@ -47,6 +50,11 @@ def build(vid, cur):
         c = calc_links.new_desc(d, vid)
         if c is None: notes.append('계산기 링크 이미 있음')
         else: d = c; notes.append('계산기 링크 추가')
+    if vid in CAFE_POST:
+        c = re.sub(r'https://cafe\.naver\.com/firemap/?$', CAFE_POST[vid], d, flags=re.M)
+        if CAFE_POST[vid] in d: notes.append('카페 글 주소 이미 있음')
+        elif c != d: d = c; notes.append('카페 글 주소로 바꿈')
+        else: notes.append('카페 대문 주소 줄 없음 — 카페 글 주소 보류')
     p = PLAN.get(vid, {}); link = p.get('link', ''); paid = False
     if link.startswith('https://link.coupang.com/'):
         c = f2_coupang.new_desc(d, link, p['label'])

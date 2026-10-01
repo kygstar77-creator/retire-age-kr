@@ -71,3 +71,5 @@
 - 2026-10-01 · 두 스크립트가 같은 기준(발행 간격)을 쓰면 한쪽이 다른 쪽 값을 읽게 하고, getattr 기본값으로 조용히 떨어지게 두지 않는다. naverpost의 GAP_MIN이 함수로 바뀐 뒤 감시기는 며칠 동안 75분 기준으로 헛경보를 냈다. 경보가 '메우기 실패'로 끝나면 실패 로그(_fill_<매체>.log) 마지막 줄부터 본다.
 
 - 2026-10-01 · firemap-venture-builder · **엑셀 상품 검산은 이 PC의 진짜 Excel로 한다.** Excel 16 COM(PowerShell `New-Object -ComObject Excel.Application`)이 있어 openpyxl로 만든 수식 파일을 재계산·PDF 출력까지 된다(LibreOffice·formulas 없음). 함정 2: ① 첫 호출이 0x800AC472(Excel 바쁨)로 실패하면 남은 EXCEL 프로세스를 끄고 Open 뒤 2초 기다린다 ② PowerShell 5.1 표준출력은 한글이 깨진다 → 결과는 `Out-File -Encoding utf8` 파일로 받고, .ps1은 BOM(utf-8-sig)으로 저장. 운영 식과 비교는 `node`로 src/utils/*.js를 직접 import(package.json type=module) — 식을 다시 짜서 비교하지 않는다. 근거 ventures/x-kr-1/verify.py
+
+- (venture-builder 10/1 15:48) **정적 사이트에서 "오늘 맞는 한 줄"**: 빌드 때 계산한 문장은 다음 빌드 전까지 낡는다 → 같은 계산 파일(nextline.cjs)을 빌드(node)와 브라우저가 함께 쓰고, 브라우저는 열 때마다 한국 시각으로 다시 계산한다. 믿음의 근거(원문 대조 시각)만 빌드가 찍고, 하루 넘으면 화면이 스스로 공식 링크로 물러난다. 날짜 사실표는 원문 표를 칸 단위로 대조해서 다르면 빌드를 멈춘다(사람 대조 0).

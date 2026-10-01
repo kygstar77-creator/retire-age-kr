@@ -372,6 +372,8 @@
   - 완료: firemap-planner 06:54 — plans/sonpum.md(B10 동네별 실거래). 숫자 규칙: 단지 순위는 양쪽 2건 이상·전용 40㎡ 이상(peakdrop.py --min 2 --minarea 40 --nowto 202609 → 377쌍 중 -20% 넘게 내린 쌍 20개, 중앙값 -7.5%). undervalue.py '전세가율 높은 단지 10'은 초소형 1~2건뿐이라 글에 쓰지 않음(구 표만). 부산·창동 쇼츠 = 루틴이 private로 올리고 공개 전환을 '사장님 판단'으로 남겨 둔 채 방치(perf-notes 73줄), 결함 기록은 못 찾음.
   - [지시] B10 카페 첫 글 트랙:B · 담당 **firemap-write** · 시한 오늘 슬롯 · 근거 plans/sonpum.md 3·8·9장 — 25개 구 전세가율 표 + 히트맵 + 하락 상위 10, 제목에 '저평가' 금지, 관문 그대로.
   - [시안 요청] B10 히트맵·표 이미지·제목 트랙:B · 담당 firemap-visual-designer(히트맵 기준일 도장)·firemap-copywriter(제목)·firemap-growth(utm b10·판정 10/9) · 시한 09:54 · 근거 plans/sonpum.md
+    - 착수: firemap-copywriter 07:05 (절전 예외 — 시한 09:54가 내 12:40 회차보다 앞)
+    - 완료: firemap-copywriter 07:24 — B10 카페 첫 글 제목 1위 **'서울 아파트 실거래가로 본 구별 전세가율, 금천 60.9% 강남 35.9%'**(제미나이 8.2·레드팀 8.2, GPT 절전으로 안 함), 2위·이유·경쟁 5는 research/b10cafe1002/titles.md·review.md. **firemap-write: 이 1위를 쓴다** — 본문 표 숫자가 바뀌면 제목 숫자도 같이. 기준일(2026.7~9월)은 본문 첫 줄·대표 이미지 도장에(firemap-visual-designer). E-1 제목 결정(17:00)·쇼츠 3편 compete·카페/쇼츠 벤치마크는 12:40 회차.
   - [예술가 요청] B10 우리만 다른 한 가지 트랙:B · 담당 firemap-artist · 시한 11:30 · 근거 plans/sonpum.md 2장 — 내 안 '25개 구 전부·같은 잣대·의견 없이 숫자와 기준일만, 첫 3초 히트맵+도장' 채택/반려 또는 한 수.
   - [지시] undervalue.py 단지 목록에 --minarea·--min 문턱 추가 트랙:D · 담당 firemap-loop · 시한 10/3 · 근거 plans/sonpum.md 3장 ②
 
@@ -390,5 +392,6 @@
 ## [지시·긴급] 카페 글·새 사이트 '경쟁 1등과 나란히' 진단 (사장님 10/02 07:04: "카페 글 읽어 봐도 발전하려고 노력한 흔적이 없어, 새로 만든 사이트도 그렇고")
 - 카페: firemap-copywriter + firemap-editor + firemap-brand-director, 기한 오늘 14:00 — 우리 최근 카페 글 5편(firemap/184~189)을 같은 주제 네이버 카페·블로그 상위 1등 글과 나란히 놓고, 1등이 하는 것 중 우리가 안 하는 것 목록(구성·첫 화면·사진·표·말투·사례·댓글 유도·제목) → 다음 글부터 반영할 '카페 글 틀 v2'(형식 3개 이상, 같은 틀 반복 금지). 결과 work/research/cafe/benchmark-2026-10-02.md.
 - 새 사이트: firemap-venture + firemap-designer + firemap-editor-en, 기한 오늘 18:00 — X-V1(영국 실수령액)을 영국 검색 1페이지 1등(예: salaryaftertax·thesalarycalculator 등 실제 1등 확인), X-CN-1(한능검 일정)을 한국 1등과 나란히 → 1등보다 나은 점 2개가 없으면 그 2개를 만들 때까지 고친다(디자인 8점·편집 통과). 결과 ventures/<실험>/beat-1st.md.
+  - 착수: firemap-venture 07:05 (X-V1·X-CN-1 beat-1st)
 - 모든 공개물 규칙 추가(지시문 6개): review.md에 ① 경쟁 1등보다 나은 점 2개 ② 우리 지난 것보다 나아진 점 1개 ③ 1등이 더 나은 점 1개와 따라잡을 방법 — 비면 공개 금지.- [추가] 쇼츠도 같은 진단 (사장님 10/02 07:04: "쇼츠도 그렇고") — firemap-copywriter + firemap-shorts + firemap-visual-designer, 기한 오늘 16:00: 우리 공개 쇼츠 5편(순자산 609·주담대 372·퇴직금 183·예금 179·금값 22)을 같은 주제 쇼츠 1등(최근 30일 조회 최고)과 초 단위로 나란히 — 첫 1초 화면·첫 문장·자막 크기·전환 속도·길이·끝맺음·음악 → 1등이 하는 것 중 우리가 안 하는 것 목록과 '쇼츠 틀 v2'(카드 한 장 넘기기 틀 탈피, 형식 3개 이상). 오늘 19:20 쇼츠부터 적용. 결과 cardshorts/benchmark-2026-10-02.md.
 

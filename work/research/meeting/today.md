@@ -397,6 +397,11 @@
 - 원칙 확정: 새 네이버 아이디·블로그·카페는 만들지 않는다(네이버 약관 자동 게시 금지).
 - 순서(트랙 A 작은 실험): firemap-planner 기획서(plans/content-network.md, 1일차 관문 = 식약처 레시피 DB에 인기 요리가 있나, 없으면 '시험 일정'으로 교체) + firemap-artist '우리만 다른 한 가지' → firemap-venture-builder 사이트·첫 2편 → firemap-editor(한국어 편집) + 디자인 통과 → 공개. 지표: 색인율·노출·글당 토큰·편집 통과율. experiments-registry.md에 X-CN-1 등록은 firemap-venture.
 
+## [지시·긴급] 쿠팡 인증 완료 → 지금 수익 경로 연다 (순돌이 17:04, 사장님 "쿠팡 인증했다")
+- firemap-youtube-loop: 쿠팡 '내 정보'에서 매체(youtube.com/@firemapkr, firemap.kr) 등록 확인·없으면 등록 → 비금융 상품 링크 3개 발급(계산기 3종 주제) → coupangPicks.js용 링크를 today.md에 적어 product-dev에 넘김 → f2_coupang.py dry→apply(공개 롱폼 설명란 첫 줄 대가성 문구) → 되읽기 확인. 다시 '인증 필요' 창이 뜨면 문구 그대로 '막힘'.
+- firemap-product-dev: 링크 받는 즉시 coupangPicks.js 채움 → 빌드 → 운영 배포(F1, 디자인 통과 a16eec1 있음) → 운영 번들에 link.coupang.com 있는지·coupang_click 이벤트 확인.
+- firemap-editor: 쿠팡 소개 문구·설명란 첫 줄 편집 검수 즉시.
+
 ## ★ 오늘 결승선 10/1 (순돌이 07:10, 사장님: "하루하루 소중히, 하루 안에 수익도 나야 하고 개발은 끝장나게 해서 출시하고 계속 디벨롭")
 실측 출발점: 사이트 하루 세션 약 30(9/29 32), 월 목표선까지 약 23배 부족 · 수익 0원 · 공개 쇼츠 조회 수백 회 수준. **하루 안 첫 수익의 유일한 현실 경로는 쿠팡 클릭→구매**다. 그래서 오늘은 (1) 사람이 오는 모든 자리에 합법적인 쿠팡 자리를 켜고 (2) 검색량 큰 계산기를 경쟁 1등 수준으로 올려 사람을 늘린다.
 운영실장: 아래 표의 미완료 담당을 매시 우선 투입한다(개발 직원은 한 번에 한 명).

@@ -257,3 +257,11 @@
   - 완료: firemap-improve shortsdaily.py build_desc + spec 옵션 `cafe_line`(없으면 true — 기존 쇼츠 그대로, a1_1eok1y로 카페 줄 유지 확인) · sevpay.json에 "cafe_line": false 한 줄만(글자 변경 없음) · dry `py -3.12 work/shortsdaily.py desc <spec>` → sevpay 링크 1개(utm_campaign=sevpay) · check 문제 없음 · ⚠ sevpay.json sha가 편집 기록(sevpay.edit.json)과 달라짐(키 1줄 추가뿐) · 공개는 안 함(19:20 firemap-shorts) 18:40
   - 착수: firemap-shorts 19:26 (N2 공개)
   - 완료: firemap-shorts N2 sevpay 공개 https://youtu.be/GFoyIyBp9_c (파이어맵 채널 UCV3…, public) · videos.list 되읽기: 설명란 링크 1개 = calc/severance utm_campaign=sevpay · 편집 통과(by:firemap-editor 18:15) · 카드 눈 확인: 잘림·겹침 없음, 강조는 숫자만, 아래 빈 곳은 쇼츠 UI 가림 구역(>1540)이라 문제 아님 · log.jsonl 기록 19:28
+
+## [기획 요청·조사 요청] 미국 단기채·장기채(TLT 등) 글·영상 (사장님 10/01 20:55: "TLT 배당이 5프로야, 미국 단기채 장기채 투자 관련 글 써도 되겠어")
+- 트랙 C(정기 발행) 새 주제 → 첫 편만 기획 확인. 담당: firemap-youtube-loop(롱폼·쇼츠 기획) + firemap-write(카페 정보글).
+- **사실 먼저(추측 금지):** 'TLT 배당 5%'는 확인 안 함. iShares 공식 페이지의 분배금 수익률(12개월 trailing·30일 SEC yield 구분), 기준일, SHV·SGOV·BIL·IEF·TLT 등 만기별 비교, 미국 국채 금리(재무부 원문), 환율·세금(국내 투자자 해외 ETF 분배금 15% 원천징수·양도세) — 원문 링크와 날짜. 배당률 숫자는 '과거 분배 기준이며 앞으로를 보장하지 않음'.
+- **법·정책:** 권유 금지(사라·팔라·추천 없음, 자본시장법·금소법), 금리·가격 위험(듀레이션: 금리 1%p 오를 때 TLT 가격이 대략 얼마 움직였는지 과거 실측)을 같은 비중으로. 유튜브 금융 정책·AI 표시 규칙, 쿠팡 링크는 금융 주제 글에 붙이지 않는다(coupang-policy).
+- **우리만 다른 한 가지(예술가):** 예) 파이어맵 계산기로 '채권 분배금으로 생활비 얼마가 되나·은퇴 나이 몇 살' 이어 보기 — 예술가가 정한다.
+- 편집 통과·디자인(썸네일) 통과 뒤 공개.
+

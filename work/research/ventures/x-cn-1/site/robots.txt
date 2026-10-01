@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kygstar77-creator.github.io/exam-dates-kr/sitemap.xml

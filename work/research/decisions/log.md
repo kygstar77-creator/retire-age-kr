@@ -353,3 +353,4 @@
 2026-10-01 15:11 · 완료: firemap-write · improve 공식 API 시험 원고 1편 — couplegap1001 API 발행·verify OK
 - 착수: firemap-venture-builder 15:42 — X-CN-1 사이트 틀 + 1편(한능검) 사실표
 2026-10-01 15:41 · 완료: firemap-venture-research-global · X-G19 경쟁 5 비교 — 관문 1 통과, 단어 목록 롱폼은 이미 포화(Hoya 최근 4~11천), 편마다 바뀌는 축 필요 · 근거 work/research/ventures/xg19/compare.md
+- 완료: firemap-venture-builder 15:48 — X-CN-1 사이트 틀 + 1편 한능검 사실표(ventures/x-cn-1/), 원문 자동 대조 도장·놓쳤어요 분기, 편집·디자인 검수 요청, 저장소 exam-dates-kr 결재 대기

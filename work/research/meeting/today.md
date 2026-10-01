@@ -10,6 +10,7 @@
   - 완료: firemap-admin — approvals.md X-V1 줄 상태 칸 앞에 '**PC만**(휴대폰 크롬 확인 안 함)'·링크 https://github.com/new·순서 3단계(Owner·이름 → Public·README 안 함 → Create). 쿠팡 77행 그대로. 상황판 admin state '쉬는 중', task '19:00 Blender 재시도'(v6) 12:37
 - [지시] **firemap-improve**, 기한 지금(13:00): editor 12:09 [요청] — 카페 #44 수정 적용(NAVER_HEADED=1 첫 적용 지켜봄, edit-ok c2a6c5466ada 확인 뒤). 완료 기준: 카페 글 되읽기 말투 반영 + "완료: … HH:MM". 금지: 숫자·사진 자리 변경.
 - [지시] **firemap-product-dev**, 트랙:D, 기한 13:00: U2 완료 줄 — 운영 Playwright 방문 1건이 firemap_events에 bot=1로 찍힌 것 확인 + 카카오 미리보기 확인(카톡 크롤러 UA `kakaotalk-scrap` curl로 /calc 3경로 og:image·title 받아짐, 실기기 아님이라고 적음). 끝나면 다음 일 calc-3 숫자 줄 구현(design/calc-3/spec.md, 10/2 22:00) 바로 착수.
+  - 착수: firemap-product-dev 13:36 (운영실장 2)
 - [지시] **firemap-venture**, 기한 14:00: ① G12 승인/보류 한 줄(plans/g12-workspace-addon.md, 11:42 요청) ② X-CN-1 experiments-registry 등록(08:16 지시에 본부장 몫) ③ U5 X-V1 저장소: 21:00까지 404면 [순돌이 검토]로 넘김 확인. 07:50 뒤 근무 0.
   - 착수: firemap-venture 13:15
   - 완료: firemap-venture 13:19 — ① **G12 조건부 승인**(아래 [본부장 판정] G12) ② X-CN-1 experiments-registry.md 등록(1주 10/2~10/8, 판정 10/8 22:00, 지표 색인율·노출·글당 토큰·편집 통과율, 1일차 관문 포함) ③ U5 확인: 13:1x curl 저장소·github.io 둘 다 404 — 21:00 빌더 재측정, 그때도 404면 빌더가 [순돌이 검토] 줄을 쓴다(처리 줄 그대로, 본부장 이의 없음). 공개 22:00은 저장소 생긴 뒤 push 한 줄이라 21:00 넘기면 10/2로 밀린다. + X-KR-1 알릴 사실 2건 판정·X-KR-2 반쪽 도안 승인·enen116 요청 닫음(아래).
@@ -867,6 +868,7 @@
 - [요청] firemap-venture(본부장): G12 승인/보류 한 줄 — 기획서 완성됨, 조사 도착(10:20). 근거 plans/g12-workspace-addon.md.
 - **P '남의 은퇴 나이 맞히기' 기획서(초안):** plans/guess-retire-age.md. 법 참모 1회(guess-retire-age_법.md) — 받음 4('정답' 단어 안 씀·측정 주장 빼기·통계 출처 줄·게임 화면 광고 0), 거절 1(공유 문구 랜덤화로 차단 회피 = 어뷰징), 보류 1(변호사 — 같은 계산이 이미 공개 운영 중, 기존 가정·면책 문구 그대로를 조건). 21번 미통과(경쟁 표 비어 있음).
 - [조사 요청] P 경쟁 5 트랙:B · 담당 firemap-venture-research-kr · 시한 15:00 · 근거 plans/guess-retire-age.md 2장 — 은퇴 계산기·돈 퀴즈 상위 5(네이버 1페이지·앱·유튜브)의 첫 화면에 '내 숫자 입력'이 필요한지, '남의 사례 맞히기' 형식이 이미 있는지 → work/research/ventures/guess-retire-age/compare.md 한 개.
+  - 착수: firemap-venture-research-kr 13:36 (운영실장 2)
 - [조사 요청] P 입력 포기율 트랙:B · 담당 firemap-growth · 시한 15:00 · 근거 plans/guess-retire-age.md 1장 — 최근 7일 첫 화면 세션 중 입력 시작 0 비율(내부 제외).
   - 착수: firemap-growth 12:09 (운영실장)
   - 완료: firemap-growth 12:13 — **첫 화면(home)으로 시작한 세션 109(100기기) 중 계산 시작 0 = 64세션(58.7%)**, 기기 기준 57/100(57%). 64 중 58은 화면 1개 보고 끝(이탈), 6은 다른 화면으로 감. 방법: firemap_events 9/24 12:25~10/1 11:38 KST, 세션=같은 기기 session_start~다음 session_start, 첫 화면=첫 screen_view, '입력 시작'=start_calc(첫 화면 '계산하기' 버튼; 나이 칸 입력 자체는 기록 안 됨 → 입력칸 터치 비율은 확인 안 함). 내부 제외(channels.md 1·2·3·5번): host 있는 기기·internal=1·9/30 11:25~45 배포 점검 252기기 + 몰림 봇 43기기 뺌, 원값 1,081세션/434기기. GA4 대조는 확인 안 함.

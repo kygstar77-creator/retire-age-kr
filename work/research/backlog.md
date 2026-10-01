@@ -9,7 +9,7 @@
 | firemap-editor-web | 운영 화면 전수 점검(editor-web/sweep.md 이어서) | 계산기 3종 메타 설명 | 오류·알림 문구 |
 | firemap-editor-en | X-V1 영어 3쪽 재점검 | 영어 스타일 가이드(editor/style-guide-en.md) | X-G19 영어 문구 |
 | firemap-designer | 계산기 3종 결과 화면 다음 개선 1개 시안 | X-CN-1 반려 2건 재검수 | firemap.kr 첫 화면 이탈 58.7% 개선 시안 |
-| firemap-product-dev | 첫 화면 이탈 58.7% 개선(growth 실측) | 계산기 결과 공유 카드 | 쿠팡 칸 클릭 측정 |
+| firemap-product-dev | F1 운영 배포 확인(순돌이 푸시 뒤 운영 번들 link.coupang.com 3개·coupang_click) + 쿠팡 desc 편집 통과본 넣기 | 4대보험 계산기 착수 전 경쟁 분해(네이버 1페이지 curl·calc-competition/4insurance.md, bizdev 수요 월 10.7만) | calc_input_start·calc_result 1주 실측 → 포기율 가장 높은 계산기 1개 개선안(10/8) |
 | firemap-growth | 계산기 첫 100명 경로 R1~R8 실행 | 색인 일지 매일 | 수익 계측 매일 |
 | firemap-venture-builder | X-CN-1 공개 준비 | X-V1 공개 준비(저장소 결재 대기 중엔 dev) | 다음 실험 틀 |
 | firemap-venture-research-kr | 후보 5개 | 나라별 계산기 한국 수요 | 경쟁 5 비교 요청 처리 |
@@ -24,4 +24,5 @@
 | firemap-improve | aitell 발행 관문 연결 | 카페 공식 API 발행 안정화 | 도구 개선 |
 | firemap-admin | **토큰 절약 1(17:17): 직원 지시문 다이어트** — 33개 SKILL.md의 공통 규칙(스꾸 금지·상황판·git·편집/디자인/뻔함 관문·스스로 다음 일)을 work/research/common-rules.md 하나로 모으고 각 지시문엔 한 줄 참조만. 지시문마다 고유 업무만 남겨 write(53KB)·youtube-loop(39KB)부터 절반 이하로. 원본은 백업. | **토큰 절약 2:** decisions/log.md(89KB)·lessons.md를 '최근 7일'만 남기고 나머지 archive, 직원은 grep으로 필요한 줄만 읽게 | 하루 토큰 사용 상위 직원 5명 표(list_task_runs 시간·횟수 기준) → 근무 횟수 줄이기 제안 |
 | firemap-ai-lab | **Sonnet 허용 목록 넓히기:** 사실 대조·디자인 심사·코드 수정 3종을 Opus/Sonnet 같은 일감으로 비교(bench/2026-10-01-model-tiers.md 방식) | 클라우드 세션 크레딧($250, 11/5까지) 쓰는 길 — 무인 근무를 원격 에이전트·트리거로 넘기는 방법 시험, 스꾸 저장소 절대 제외 | 3.8-flash-lite-tts vs 3.8-flash-tts 쇼츠 한 단락 나란히 듣기(radar 후보) |
+| firemap-watchdog | 카페 묶음 garak0929(막힘 없음·자체 3건)가 왜 재고로만 남는지 확인 — 상한인지 코너 슬롯 없음인지 | 보류 묶음 8개(시효·중복) 정리 제안: 재고 숫자를 부풀려 진짜 재고 부족을 가린다 | 블로그 STOP 해제 조건(9/23 무색인) 진척을 회차마다 한 줄로 보고 |
 

@@ -29,3 +29,4 @@
 - 2026-10-01: 기록을 끄는 가드는 '테스트가 켜는 스위치'(fm_events_on)와 같이 넣는다 — 안 그러면 이벤트 테스트가 전부 깨지거나 가드를 못 넣는다. 운영 반영 뒤 DB에서 운영 기록이 계속 쌓이는지 한 줄 조회로 확인.
 - 2026-10-01: 계산기별 미리보기 그림은 index.html이 아니라 functions/_middleware.js에서 경로별로 바꾼다(빌드 fix-branding-og가 공통 og를 박음) — 로컬 확인은 `npx wrangler@3 pages dev outputs/deploy`로 curl.
 - (10/01) 운영 bot 표시 확인은 Playwright로 utm 표식 붙여 1회 방문 → 요청 본문에서 client_id 뽑아 SQL로 그 행만 본다(firemap_events 시각 칸은 ts). 숫자 줄 차이는 retirementAge 말고 earliestRetirementAge — 파이어 불가면 retirementAge가 목표 나이로 떨어져 가짜 차이가 난다.
+- (10/01 17:53) 운영 반영 시각은 커밋 시각이 아니라 GitHub events API(main PushEvent created_at)와 그 head 커밋 check-run(Branch Preview 칸 없음 = 운영) 완료 시각으로 잰다 — 인증 없이 curl로 된다. 부품에 인라인 style을 넣으면 스모크 '인라인 상한'(6)이 화면마다 터진다 → 디자인 패치의 인라인 값은 같은 값 클래스로 옮기고 getComputedStyle로 같음을 잰다. dev:main은 '&&'로 다른 명령과 묶지 말 것(무인 권한 검사가 통째로 거절).

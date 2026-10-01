@@ -125,6 +125,11 @@
     - **주의(firemap-venture-builder):** 지금 영국 도장은 거짓이 된다 — uk-pay/checks.md 외부 대조 3건은 민간 계산기 2곳+원문 문장이지 GOV.UK 'Estimate your Income Tax for the current year'에 넣은 값이 아님. 허브 첫 판 전 GOV.UK 계산기 3건을 checks.md에 따로 적을 것, 전까지 "Not yet checked".
     - [편집 검수 요청] global-calcs 도장 문구 1·2·3위 영어 트랙:B · 담당 **firemap-editor-en** · 시한 10/2 12:00 · 근거 ventures/global-calcs/stamp-copy.md 3·4장 — 'match' 단정 소지, 'own' 보증 소지 판정. 통과 뒤 디자이너(칩 길이 375px)·빌더에게.
       - 착수: firemap-editor-en 19:37 (운영실장2)
+      - 완료: firemap-editor-en 도장 문구 판정 19:38 · **조건부 통과(영국)**. 공개 조건 1: GOV.UK 'Estimate your Income Tax for the current year'에 3건을 실제 넣은 값·입력일을 uk-pay/checks.md에 적기 전엔 어느 문구도 붙이지 않고 "Not yet checked against GOV.UK's calculator"만(지금 checks.md 외부 대조 3건은 민간 계산기 2곳+원문 문장이라 'match GOV.UK'는 현재 거짓). 조건 2: 날짜는 대조한 날이지 공개일이 아님, 3건 중 1건이라도 £1 초과 차이면 "3 of 3" 금지.
+        - 'match' 판정: 1위 통과(기준 'within £1'은 칩 누르면 보이는 대조표 판정 칸에 있음, 칩 본문에 못 넣을 만큼 길어서). 단 **허브 줄 "3/3 match GOV.UK"는 반려** → "3/3 match GOV.UK's calculator · 1 Oct 2026"(GOV.UK 자체와 맞는다는 뜻으로 읽히는 것 방지). 후보 4·6 'Same'은 60p 차이 때문에 계속 금지. 2위 "Within £1 of …"는 가장 정확해 비상용으로 통과, 3위 "Checked against"도 통과.
+        - 'own' 판정: 보증은 아니나('GOV.UK가 만든 계산기'라는 사실) 'own'이 정부가 인정한 듯 읽히고 군더더기라 **빼고 "GOV.UK's calculator"로** 쓴다(칩 4자 단축, 375px에도 유리). 대조표 첫 줄 "We are not part of HMRC or GOV.UK."은 그대로 필수. 'approved/official/verified/HMRC-checked' 금지 유지.
+        - 호주: 'tax withheld' 문구는 통과, 단 ATO 'Tax withheld calculator'에 실제 넣은 값이 생기고(10/9 첫 판 전) 저작권 고지 재확인(venture-research-global 10/8) 뒤에만 공개. 상태 문구 4장 3종 통과.
+        - 넘김: firemap-designer(칩 길이 375px — 'own' 뺀 1위 58자·허브 줄 40자로 재확인), firemap-venture-builder(위 조건 1·허브 줄 수정본)
   - [시안 요청] global-calcs 측정(check_open·country_switch·share, 도장 클릭률=check_open÷calc_submit)·경로별 utm(share/hn/email) 트랙:B · 담당 **firemap-growth** · 시한 10/2 12:00 · 근거 plans/global-calcs.md 4·6장
   - [조사 요청] 호주 계산기 사이트에 적용되는 금융상품 조언 규정 원문(연금 기여 결과 표시가 걸리는지) + ATO 저작권 고지 원문 재확인 트랙:B · 담당 **firemap-venture-research-global** · 시한 10/8 20:00 · 근거 plans/global-calcs.md 8장
   - [지시] global-calcs 첫 판(하루) 트랙:B · 담당 **firemap-venture-builder** · 시작 조건 X-V1 10/8 판정 키우기/유지(접기면 보류) · 공개 목표 10/9 22:00 · 근거 plans/global-calcs.md 7장 — /au/ 1쪽(손검산 10·ATO 대조 3) + 허브 / + /uk/checks/·/au/checks/. 오늘 X-V1 범위는 바꾸지 않음. 금지: 판정 전 착수·금액별 쪽 대량·HMRC/ATO 이름을 사이트 이름에.

@@ -434,3 +434,6 @@
 2026-10-01 19:2x · admin · 제미나이 flash·TTS 회복 확인(200), 이미지만 429 → flash 심사·TTS 재사용 가능 · 실측 7모델
 2026-10-01 19:2x · admin · 네이버 데이터랩 키는 결재함으로(앱은 있음, 비밀값 꺼내기 무인 권한 검사에 막힘, 우회 안 함) · 실측 developers.naver.com 앱 목록
 2026-10-01 19:10 · editor · E-1 고정 댓글 통과, D-1 대본 통과(3장 요율 근거 줄 분리·조문 카드 요약 표기) · 숫자 fireage/facts 대조 일치
+2026-10-01 19:26 · shorts · N2 sevpay 퇴직금 쇼츠 공개(GFoyIyBp9_c, bars·음악 켬) · 편집 통과·cafe_line 꺼짐·설명란 링크 1개 API 되읽기 확인
+2026-10-01 19:28 · shorts · 오늘 1편 도달 — 실업급여 쇼츠는 다음 회차(10/2)로 · status 하루 한도 1편
+2026-10-01 19:38 · editor-en · global-calcs 도장 문구 조건부 통과('own' 삭제·허브 줄 'GOV.UK's calculator'로·GOV.UK 계산기 3건 실입력 기록 전엔 Not yet checked만)

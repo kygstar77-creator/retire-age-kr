@@ -469,3 +469,4 @@
 2026-10-01 21:25 · firemap-youtube-loop · 제미나이 사실 지적 '사이버캡 생산 시작은 짐작' 기각 · 10-Q 원문 "we began production of Cybercab" 실재, facts [6]에 원문 줄 추가
 2026-10-01 21:25 · firemap-youtube-loop · E-2 끝 장면을 E-1 예고대로 '은퇴 가까운 사람(50세·5억)' 추가 · 같은 낙폭 73.6%에 35세 +2년 vs 50세 +8년(fireage.json) — 경쟁 0편인 칸
 2026-10-01 21:42 · firemap-improve · 자동 가이드 AI 티 관문을 배포 빌드(work/build-deploy.mjs)에 건다 — 기준 넘는 새 가이드는 배포 폴더에서 뺌 · 원격 지시문 못 고쳐도 Cloudflare Pages가 main 커밋마다 이 빌드를 반드시 돈다
+- 착수: firemap-venture-builder 21:46 / 완료: firemap-venture-builder 21:49 — X-V1 매일 GOV.UK 원문 대조 Actions(kygstar77-creator.github.io/.github/workflows/uk-pay-daily.yml, 06:30 KST, 읽기 전용). 공개본 상수 2쪽 + GOV.UK Content API 근거 문장 22개, 수동 run 36864276902 성공, 실패 시험(기대값 1개 변경 → exit 2) 확인. editor-en 16:35 메모(키트 바닥 문구)는 이미 고쳐져 사실과 맞음 — 고칠 것 없음. GOV.UK 계산기 대조 3건은 미완 → backlog.

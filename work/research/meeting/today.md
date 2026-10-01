@@ -71,12 +71,14 @@
 
 ### 편집·디자인 검수 대기
 - **firemap-editor-en** 16:35 메모: ventures/kit/template-en.html 바닥 'Your numbers stay in your browser.'가 사실과 다름(fmkit.js가 calc_submit 구간 보냄) — 키트 담당 확인 필요(archive 참조).
+  - 완료: firemap-venture-builder 21:49 — 확인만: template-en.html 바닥은 이미 'The exact numbers you enter stay in your browser. We only log anonymous usage, such as which … was checked.'로 고쳐져 있음. 공개 X-V1 두 쪽도 같은 뜻('Your exact salary stays in your browser… salary band')이고 공개 fmkit.js(md5 같음)는 구간값만 보냄·저장소 0 → 사실과 맞음. 고칠 것 없음.
 
 ### 신사업 (우선순위 X-V1 공개 > X-CN-1 사이트 > G12)
 - X-CN-1 시험 일정 사이트(한능검 1편) — **firemap-venture-builder**: 공개 목표 10/2 17:00(취소좌석 마감) 전. 남은 것: 위 디자인 재판정·편집 검수 → 저장소 exam-dates-kr(아래 [순돌이 검토]). 실험 1주 10/2~10/8, 판정 10/8 22:00.
 - [기획 요청·조사 요청] 나라별 법에 맞는 계산기를 한 사이트에(사장님 17:04) 트랙:B: **firemap-venture-research-global**(착수 17:06) ① 다국가 계산기 사이트 경쟁 상위 5 ② 나라별 검색 수요 상위 10개국 ③ 나라별 공식 원문 접근성·갱신 주기 → **firemap-planner + firemap-artist**(조사 직후) plans/global-calcs.md(다른 한 가지·첫 판 나라 수·주소 구조·원문 대조 도장·법 개정 감시·첫 100명 경로). bizdev 상한 계산은 완료(17:09). 판단 firemap-venture, 큰 방향 21:15 회의.
   - [시안 요청] global-calcs 허브 첫 화면(나라 줄+도장)·나라 쪽 도장 칩·대조표 쪽 트랙:B · 담당 **firemap-designer** · 시한 10/2 12:00 · 근거 plans/global-calcs.md 7장(X-V1 틀 유지, 375px 첫 3초에 나라 줄마다 도장)
   - **주의(firemap-venture-builder):** 지금 영국 도장은 거짓이 된다 — uk-pay/checks.md 외부 대조 3건은 민간 계산기 2곳+원문 문장이지 GOV.UK 'Estimate your Income Tax for the current year'에 넣은 값이 아님. 허브 첫 판 전 GOV.UK 계산기 3건을 checks.md에 따로 적을 것, 전까지 "Not yet checked".
+    - 착수: firemap-venture-builder 21:46 / 완료: firemap-venture-builder 21:49 — 공개본엔 도장 없음(바닥 'Checked 1 October 2026'은 원문 쪽을 읽은 날짜라 사실). 대신 **매일 06:30 KST GOV.UK 원문 대조 Actions** 붙임: uk-pay/ci.py·uk-pay-daily.yml(공개본 상수 2쪽 + Content API 근거 문장 22개, 읽기 전용, 실패=이메일), 수동 run 36864276902 성공, retire-age-kr eb179a8. GOV.UK 계산기 대조 3건은 아직 → backlog 1순위로, 그 전까지 허브 도장 'Not yet checked'.
   - [시안 요청] global-calcs 측정(check_open·country_switch·share, 도장 클릭률=check_open÷calc_submit)·경로별 utm(share/hn/email) 트랙:B · 담당 **firemap-growth** · 시한 10/2 12:00 · 근거 plans/global-calcs.md 4·6장
   - [조사 요청] 호주 계산기 사이트에 적용되는 금융상품 조언 규정 원문(연금 기여 결과 표시가 걸리는지) + ATO 저작권 고지 원문 재확인 트랙:B · 담당 **firemap-venture-research-global** · 시한 10/8 20:00 · 근거 plans/global-calcs.md 8장
   - [지시] global-calcs 첫 판(하루) 트랙:B · 담당 **firemap-venture-builder** · 시작 조건 X-V1 10/8 판정 키우기/유지(접기면 보류) · 공개 목표 10/9 22:00 · 근거 plans/global-calcs.md 7장 — /au/ 1쪽(손검산 10·ATO 대조 3) + 허브 / + /uk/checks/·/au/checks/. 오늘 X-V1 범위는 바꾸지 않음. 금지: 판정 전 착수·금액별 쪽 대량·HMRC/ATO 이름을 사이트 이름에.

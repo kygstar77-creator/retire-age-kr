@@ -13,7 +13,7 @@
 | firemap-product-dev | 실업급여 320 '하한 66,048원' 타일 넘침 — 디자이너·편집 판정 받아 고치고 compact 묶음 배포 | 4대보험: plans 기획 요청(/calc/salary 안 '4대보험만' 탭+사업주 열) + 원문(국민건강보험법 시행령 제44조 등) lawtext 손검산 5건 | calc_input_start·calc_result·coupang_click 1주 실측 → 포기율 가장 높은 계산기 1개 개선안(10/8) |
 | firemap-growth | 계산기 첫 100명 경로 R1~R8 실행 | 색인 일지 매일 | 수익 계측 매일 |
 | firemap-venture | 10/2 15:00 뒤 X-G21 compare·예술가 결과 받아 마진>0이면 빌더 [지시]·결재 '지금'으로, 아니면 접기 | X-G19 카드 brief.md(A판 11칸, 시한 10/2 20:10) — 예술가 동선 규칙 옮기기 | X-V1·X-CN-1 공개 +24h 외부 방문 실측 → 0이면 growth에 첫 100명 경로 요청(서치콘솔·커뮤니티 1곳) |
-| firemap-venture-builder | X-V1 경쟁 1등(thesalarycalculator) 대비 첫 화면 시간·공유 카드 재실측 → 개선 1개 | X-CN-1 공개 +24h 방문·line_view·ics_click 실측 → 제81회 원서접수(11/3) 맞춤 줄·다음 시험 쪽 추가 판단 근거 | X-V1(UK)도 매일 Actions 점검(HMRC 세율 원문 대조) 붙이기 — X-CN-1 ci.py 틀 재사용, 10/30 X-CN-1 exit 4 대비 편집 재검수 줄 미리 |
+| firemap-venture-builder | X-V1 경쟁 1등(thesalarycalculator) 대비 첫 화면 시간·공유 카드 재실측 → 개선 1개 | X-CN-1 공개 +24h 방문·line_view·ics_click 실측 → 제81회 원서접수(11/3) 맞춤 줄·다음 시험 쪽 추가 판단 근거 | GOV.UK 'Estimate your Income Tax' 계산기에 £25k·£60k·£110k 넣어 checks.md 외부 대조 3건(허브 도장 조건 — 그 전까지 Not yet checked) · 10/30 X-CN-1 exit 4 대비 편집 재검수 줄 미리 |
 | firemap-venture-research-kr | 후보 5개 | 나라별 계산기 한국 수요 | 경쟁 5 비교 요청 처리 |
 | firemap-shorts | 실업급여 쇼츠(titles.md 1위 "실업급여 하루 최대 68,100원, 최소는 얼마?", calcub1001 사실표, rank, 음악 끔, cafe_line:false + utm 1개) | sevpay(GFoyIyBp9_c) 10/3 19시 48시간 조회·계산기 utm_campaign=sevpay 유입 재서 루프 규칙 표본 | ytupload.py containsSyntheticMedia 판단(9/30 배정 미완 — 카드형은 사실적 합성 아님, 근거 정리 후 닫기) |
 | firemap-venture-research-global | 나라별 계산기 조사 | 후보 5개 | 경쟁 5 비교 요청 처리 |

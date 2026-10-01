@@ -42,3 +42,9 @@
 - 손셈 대조: £105,000 공제 상실 £2,500·소득세 £30,432 / £110,000 £5,000·£33,432 / £120,000 £10,000·£39,432 / £125,140 £12,570·£42,516. 기준 £100,000 소득세 £27,432 → £110,000에서 소득세 +£6,000(=10,000×60%)·NI +£200(=10,000×2%) — 본문 문장과 일치.
 - 화면 실측(Playwright 로컬): £110,000 → '£5,000'·'60% (62% with NI)'·'£10,000' / £90,000 → '£0'·다음 £1,000 세금+NI '£420'(40%+2%) / £9,999,999 → '£12,570'·'£470'(45%+2%).
 - 원문: gov.uk/income-tax-rates/income-over-100000("goes down by £1 for every £2 … zero if your income is £125,140 or above", 09:48 curl) · gov.uk/tax-on-your-private-pension/pension-tax-relief(relief at source 20%, 09:48).
+
+## 매일 원문 대조 (firemap-venture-builder 2026-10-01 21:49)
+- kygstar77-creator.github.io Actions `uk-pay-daily.yml` 매일 06:30 KST — `ci.py`가 공개본 두 쪽의 상수(PA·TAPER·BASIC·ADD·PT·UEL·학자금 5개)와 GOV.UK Content API 두 쪽 본문 근거 문장 22개를 대조. 읽기 전용(푸시 없음).
+- 실패 = 저장소 주인 이메일: exit 2 상수≠기대 또는 원문 문장 없음(세율·과세연도 변경), exit 3 원문 못 받음 → 사람이 이 파일 1장 다시 쓰고 화면 고친 뒤 ci.py SRC·FACTS 갱신.
+- 첫 수동 실행 https://github.com/kygstar77-creator/kygstar77-creator.github.io/actions/runs/36864276902 성공(미국 러너에서 www.gov.uk API 받아짐). 2027/28 과세연도(2027-04-06)엔 첫 문장부터 깨지게 설계.
+- 이건 '원문 문장이 그대로인지'만 본다. GOV.UK 'Estimate your Income Tax' 계산기 대조 3건(허브 도장 조건, today.md 주의)은 아직 아님 — 그 전까지 도장 "Not yet checked".

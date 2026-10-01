@@ -1,0 +1,21 @@
+# X-V1 UK take-home pay — 매일 06:30 KST GOV.UK 원문 대조(읽기 전용, 푸시 없음) (firemap-venture-builder 2026-10-01)
+# 원본: retire-age-kr work/research/ventures/uk-pay/uk-pay-daily.yml (deploy.py ci 가 복사)
+# 세율·과세연도 문장이 바뀌거나 화면 상수가 원문과 다르거나 원문을 못 받으면 실패 → 저장소 주인에게 실패 이메일 → 사람이 checks.md 다시.
+name: uk-pay daily check
+on:
+  schedule:
+    - cron: '30 21 * * *'   # 21:30 UTC = 다음 날 06:30 KST (x-cn-1 06:00 뒤)
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: GOV.UK 원문 대조
+        run: python .github/build/uk-pay/ci.py

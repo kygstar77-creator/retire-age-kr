@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Take Home Pay Calculator UK 2026/27 – Tax, NI &amp; Student Loan</title>
-<meta name="description" content="Enter your salary to see your 2026/27 monthly take-home pay after Income Tax, NI and student loan – and how much of your next £1,000 you keep. England, Wales &amp; NI.">
+<meta name="description" content="Enter your salary to see your 2026/27 monthly take-home pay after Income Tax, NI and student loan – and how much of your next £1,000 you keep. England, Wales &amp; Northern Ireland.">
 <link rel="canonical" href="https://kygstar77-creator.github.io/uk-take-home-pay/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Take Home Pay Calculator UK 2026/27 – Tax, NI &amp; Student Loan">
@@ -94,11 +94,11 @@ footer a+a{margin-left:8px}
   </div>
 
   <section class="result empty" id="res" aria-live="polite">
-    <p class="k">Your take home pay</p>
+    <p class="k">Your take-home pay</p>
     <p class="big" id="big">£—</p>
     <p class="s" id="sub">Type your salary to see it</p>
     <div class="next"><span>Of your next £1,000, you keep</span><b id="nx">£—</b></div>
-    <div class="trap" id="trap" hidden>Your salary is in the £100,000–£125,140 band, where the next £1,000 is taxed at an effective 60% (62% with NI). <a href="60-percent-tax-trap/" id="trapLink">See the 60% band in detail</a></div>
+    <div class="trap" id="trap" hidden>You're in the £100,000–£125,140 band, where each extra £1,000 is taxed at an effective 60% (62% with National Insurance). <a href="60-percent-tax-trap/" id="trapLink">See the 60% band in detail</a></div>
   </section>
 
   <button class="share" type="button" id="shareBtn" hidden>Share my result</button>
@@ -122,7 +122,7 @@ footer a+a{margin-left:8px}
 
   <section>
     <h2>How it's calculated</h2>
-    <p>Take home pay is your salary minus Income Tax, employee National Insurance (category A) and any student loan repayments, worked out for a full tax year from 6 April 2026 to 5 April 2027 and divided by 12 for the monthly figure. It assumes the standard tax code (1257L) with no other income, benefits in kind or pension deductions.</p>
+    <p>Take-home pay is your salary minus Income Tax, employee National Insurance (category A) and any student loan repayments, worked out for a full tax year from 6 April 2026 to 5 April 2027 and divided by 12 for the monthly figure. It assumes the standard tax code (1257L) with no other income, benefits in kind or pension deductions.</p>
     <h3>Income Tax 2026/27 (England, Wales &amp; Northern Ireland)</h3>
     <div class="tbl"><table>
       <tr><th>Personal Allowance</th><th>Up to £12,570 · 0%</th></tr>
@@ -130,7 +130,7 @@ footer a+a{margin-left:8px}
       <tr><td>Higher rate</td><td>£50,271 to £125,140 · 40%</td></tr>
       <tr><td>Additional rate</td><td>over £125,140 · 45%</td></tr>
     </table></div>
-    <p>Your Personal Allowance goes down by £1 for every £2 of adjusted net income above £100,000, so it is zero from £125,140.</p>
+    <p>Your Personal Allowance goes down by £1 for every £2 of adjusted net income above £100,000, so it's zero from £125,140.</p>
     <h3>National Insurance 2026/27 (employee, category A)</h3>
     <div class="tbl"><table>
       <tr><th>Up to £12,570 a year</th><th>0%</th></tr>
@@ -149,7 +149,7 @@ footer a+a{margin-left:8px}
   </section>
 
   <footer>
-    <p>Estimate only, not tax advice. Scotland, self-employment, other tax codes, dividends and savings income are not covered. This is an independent tool and is not connected to HMRC or GOV.UK. Your numbers stay in your browser.</p>
+    <p>Estimate only, not tax advice. Scotland, self-employment, other tax codes, dividends and savings income are not covered. This is an independent tool and is not connected to HMRC or GOV.UK. Your exact salary stays in your browser. We only log anonymous usage, such as which salary band was checked.</p>
     <p><a href="privacy/">Privacy</a><a href="about/">About</a></p>
   </footer>
 </div>
@@ -183,6 +183,7 @@ footer a+a{margin-left:8px}
   }
   function shareBand(g) { // 공유 카드용 가림 구간(£10k 단위)
     if (g >= 150000) return '£150k+';
+    if (g < 10000) return 'under £10k';
     var lo = Math.floor(g / 10000) * 10;
     return '£' + lo + 'k–£' + (lo + 10) + 'k';
   }
@@ -243,7 +244,8 @@ footer a+a{margin-left:8px}
       kind: 'result', clock: 1,
       title: 'My take-home pay, 2026/27',
       big: f(a.net / 12) + '/mo',
-      sub: 'On ' + shareBand(g) + ' you work for tax & NI until ' + clock(cost / g) + ' each 9-to-5 day',
+      sub: cost > 0 ? 'On ' + shareBand(g) + ', I work for tax & NI until ' + clock(cost / g) + ' each 9-to-5 day'
+                    : 'On ' + shareBand(g) + ', I pay no Income Tax or NI',
       brand: 'UK Take Home Pay', accent: '#2fae86', // 어두운 카드 위라 다크 모드 강조색(대비)
       font: 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
       url: 'https://kygstar77-creator.github.io/uk-take-home-pay/',

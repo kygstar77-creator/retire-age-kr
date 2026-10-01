@@ -118,6 +118,9 @@
   - 착수: firemap-planner global-calcs 기획서 17:35
   - 기획서 plans/global-calcs.md(17:5x): **새 사이트 따로 안 세움 — X-V1 영국을 첫 나라로, 10/8 판정 '키우기/유지'면 10/9 호주 붙여 허브로.** 다른 한 가지(기획자 안) = '원문 대조 도장'(나라마다 공식 계산기와 3건 대조·날짜, 경쟁 0/5). 첫 판 2개국(영·호), 주소 /<나라>/, 월 1회 원문 해시 감시, 금액별 쪽 대량 생성 금지. 판정 허브 공개 +7일(10/16).
   - [예술가 요청] global-calcs 다른 한 가지('원문 대조 도장' 채택/반려 또는 한 수) 트랙:B · 담당 **firemap-artist** · 시한 10/2 12:00 · 근거 plans/global-calcs.md 2장, ventures/global-calcs/compare.md
+    - 착수: firemap-artist 19:45
+    - 통과: [예술가 요청] global-calcs — 공식 계산기 결과 건수 도장('3 of 3 … GOV.UK's calculator') + 차이까지 공개하는 대조표 19:47 (firemap-artist) · 조건 ① GOV.UK 실입력 3건 전 도장 0 ② 차이·이유 숨기지 않음 ③ 375px 나라 줄마다 도장 ④ 나라당 대조 작업 4시간↑면 나라 추가 멈춤. 경쟁 성적표(경로 ③)는 첫 판 밖. 근거 art/2026-10-01-1945.md A1
+    - 완료: firemap-artist global-calcs 판정 19:47
   - [시안 요청] global-calcs 허브 첫 화면(나라 줄+도장)·나라 쪽 도장 칩·대조표 쪽 트랙:B · 담당 **firemap-designer** · 시한 10/2 12:00 · 근거 plans/global-calcs.md 7장(X-V1 틀 유지, 375px 첫 3초에 나라 줄마다 도장)
   - [시안 요청] global-calcs 도장 문구 영어 1·2·3위("Checked against … on 3 salaries · date", approved/official 금지) 트랙:B · 담당 **firemap-copywriter**(영어 최종 firemap-editor-en) · 시한 10/2 12:00 · 근거 plans/global-calcs.md 2·8장
     - 착수: firemap-copywriter 18:50
@@ -136,11 +139,17 @@
   - [결재 필요](10/8 키우기일 때) 허브 중립 도메인 1개 · Show HN 게시 사장님 계정 1회 — firemap-venture 판정 뒤 firemap-admin이 approvals.md에.
 - [기획 요청] site-ia 기획서 확정 — firemap-planner 트랙:B · 담당 **firemap-planner** · 시한 10/2 12:00 · 근거 plans/site-ia.md(초안), meeting/ia-workshop-2026-10-01.md — 사장님 17:3x '파이어맵을 한 코너로, 전 세계를?' 워크숍 추천 D(집은 둘·firemap.kr 안은 코너·1판=calc-gtm R1과 합침). 확정 때 레드팀 1문 '재심사 중 메뉴·내부 링크 변경 운영 반영 가능?' 답 반영. (워크숍 17:49)
 - [예술가 요청] site-ia 한 수 트랙:B · 담당 **firemap-artist** · 시한 10/2 12:00 · 근거 plans/site-ia.md 2·9장, meeting/ia-workshop-2026-10-01.md 4장 — 1판 '어느 계산기든 끝은 몇 살에 은퇴?' / 2판 '같은 내 숫자, 사는 곳만 바꾸면' / 두 집 공통 '원문 대조 도장' 중 채택·반려.
+  - 착수: firemap-artist 19:45
+  - 통과: [예술가 요청] site-ia — 1판 '어느 계산기든 끝은 몇 살에 은퇴?' 채택(조건: 끝 버튼에 방금 나온 내 숫자, 예 '퇴직금 3,240만원 → 은퇴 나이에 넣어 보기', 문구 최종 editor-web; +7일 클릭률 2% 미만이면 규칙을 첫 화면 코너로만 축소) · 2판 '같은 내 숫자, 사는 곳만 바꾸면' 채택 · 공통 원문 대조 도장 보류(허브 10/16 판정 뒤). 목록 행은 네이버·사람인과 같은 모양이라 차이가 아님 19:47 (firemap-artist) · 근거 art/2026-10-01-1945.md A2
+  - 완료: firemap-artist site-ia 판정 19:47
 - [디자인 검수 요청] site-ia 시안 범위 확인 — firemap-designer·firemap-brand-director 트랙:B · 시한 10/2 12:00 · 근거 plans/site-ia.md 6장(S1~S5) — 첫 화면 행동 아래 목록 행 1개·'전체' 코너 순서가 숫자 1+행동 1·부품 30개 안인지, 이름·로고 불변 확인.
   - 완료: firemap-planner global-calcs 기획서 17:55
 - X-KR-1 가계부: 판매 개시는 리틀리 결재 뒤(통신판매업 첫 해 면제, 신원 표시 조건 — archive). 위 검수 2건 18:10.
 - X-G19 영어권 한국어 단어 채널(조건부 승인, 3관문):
   - [예술가 요청] X-G19 '우리만 다른 한 가지' 트랙:A · 담당 **firemap-artist** · 시한 10/2 15:00 · 근거 ventures/xg19/compare.md — 편마다 구성이 달라지는 규칙 1개.
+    - 착수: firemap-artist 19:45
+    - 통과: [예술가 요청] X-G19 — 편마다 구성이 바뀌는 규칙 = **단어 순서가 한국에서 실제로 지나가는 장면 동선 순서**(편마다 동선 1개: 공항→교통카드→환승→편의점…, 가짜 간판·영수증 화면, 상호·로고 0), 2편부터 앞 편 고정 댓글 퀴즈 오답 단어를 겹침. 제목엔 TOPIK 유지, 한 편 단어 60~100개로 경쟁 밀도 맞춤. 사람 닮은 진행자 0·AI 음성/이미지 고지 19:47 (firemap-artist) · brief.md 없어 카드 '예술가' 칸은 venture가 10/2 20:10에 이 줄을 옮김 · 근거 art/2026-10-01-1945.md A3
+    - 완료: firemap-artist X-G19 판정 19:47
   - 카드 ventures/xg19/brief.md(A판 11칸) — 담당 **firemap-venture** · 시한 10/2 20:10 회차. 접기: 첫 공개 +7일 롱폼 조회 300 미만 그리고 평균 시청 지속률 25% 미만.
   - 제작 [지시]는 결재(새 브랜드 계정) + X-CN-1 첫 판 공개 뒤에만 firemap-venture-builder에게.
 - [요청] X-G4 AI 스톡 이미지 재상정(research-global 08:4x) → **firemap-venture** 판정 줄 없음. 결재 Adobe 기여자 계정(approvals 07:4x ①). 근거 ventures/global/terms-2026-10-01-0840.md.
@@ -166,6 +175,8 @@
 - **firemap-bizdev**(10/5): growth 10월 세 경우 계산을 revenue.md에 반영 · 유료 상품 착수 문서에 '자본시장법 제101조 조문 확인·전문가 확인 여부' 칸 필수.
 - 모든 점검 담당: firemap.kr은 `?fm_internal=1`을 붙여 연다.
 - 지시문 추가 필요(수정은 순돌이·회의): ?fm_internal=1 규칙(product-dev·designer·audit·watchdog·venture-builder·shorts·youtube-loop), 스꾸 금지·실험 장부·헛돌지 않기·lessons.md·푸시 표준형 빠진 지시문 목록 — archive/2026-10-01.md '지시문 추가 필요'.
+
+- [제안] 예술가 제안: **은퇴 영수증 공유 카드**(결과 공유 이미지를 영수증 모양으로 — 입력 줄마다 항목, 합계 칸 = 은퇴 나이 N세) → 담당 **firemap-visual-designer**(시안 1장, 검색 1회로 '은퇴 계산 영수증 카드' 선례 확인 먼저) → **firemap-product-dev**(기존 공유 카드와 반반 A/B), 시험 기한 10/15. 성공 = 공유 완료율 1.5배, 실패 = 차이 없음 또는 brand-director 반려(숫자1+행동1·색4 충돌). 사용자 참모 공유 1위. 한도 80% 넘으면 10/4 리셋 뒤 착수. 채택 판단 21:15 회의. 근거 art/2026-10-01-1945.md C·D (firemap-artist 19:47)
 
 ## 막힘 (풀리지 않은 것)
 - 유튜브 설명 쓰기(videos.update) 무인 회차 권한 거부 — 07:59~ · 영향 F2·V5·R2·E-1 업로드(가능성) · 처리: 위 [순돌이 검토] 3건 묶음, 21:15 안건 · 담당 순돌이.

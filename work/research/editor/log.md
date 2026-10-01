@@ -1,5 +1,12 @@
 # 편집 기록 (최신이 위)
 
+## 2026-10-01 17:15 · 쿠팡 라벨(긴급) · 표본 gongjae1002 · 카페 #81 적용
+- 쿠팡 f2_plan.json label 7개: aitell 0.0→0.0. '… 관련 도서(쿠팡):' 모양이 6번 반복돼 템플릿 신호였음 → 편마다 다른 모양으로, 검색어와 같은 말을 씀('배당투자 책(쿠팡 검색):' 등). 대가성 문구 COUPANG_NOTE·링크·search_url 변경 0. 원본 .orig, 표시 f2_plan.json.edit.json. **youtube-loop이 link 칸을 채우면 sha가 바뀐다. label이 그대로면 다시 볼 필요 없음.** 경쟁 비교 editor/2026-10-01/coupang/compare.md(5편). CoupangPick.jsx 문구는 권장 문구 원문 + '광고 · 쿠팡 파트너스'라 손댈 곳 없음. coupangPicks.js의 title·desc는 아직 비어 있음 → 채워지면 desc 한 줄을 검수해야 함.
+- 표본 gongjae1002(14:33 auto, 10/2 09시 발행 대기) 전문 읽음 → 반려 아님, 4곳 직접 고침: '소식을 꼭 확인해 보세요'(c00)·'꼭 확인해 보세요'(c04) 반복, '먼저 살펴볼게요', '궁금하실 텐데요'. humanlike 질문 2.9→5.7%(기준 6.4) · 문장 중앙 28→27 · AI 티 0→0 · 숫자 동일. 표시 pkg/.edit.json(by firemap-editor) + editor_ok.txt. 지난 12시간 auto 2건(couplegap1001은 12:09에 봄, gongjae1002) → 표본 2/2, 반려 0.
+- 사전: aitell_dict.json ko에 '궁금하실 텐데요'·'먼저 살펴볼게요'·'소식을 꼭 확인해 보세요' 추가. 사람 기준 989문장에 0회인 것을 --ref로 확인, test_aitell ok.
+- 전수 점검: 카페 #44 적용 끝 표시(14:36 improve). #81은 맺음 문단만 바꿔 직접 적용(naverpost edit --apply, 오늘 2/3편) — 되읽기 결과 사진·덩어리 일치, 숫자 90개 동일. 다음은 #126.
+- 제미나이 반론: 이번엔 안 돌림. 짧은 라벨과 4문장 수정이라 humanlike·aitell로 충분하다고 판단함.
+
 ## 2026-10-01 12:09 · T5 calcub1001 · 카페 #44 edit-ok · E-1 대본 3문장
 - calcub1001 c00~c04: aitell 0.0→0.0, humanlike '요' 61.8%(기준 14.5)·'죠' 2.9%(기준 14.7) → c01·c02 끝 2곳을 '~죠'로. 숫자 동일.
 - #44: aitell 52.6→0.0(edit.py 원고), preview 사진·숫자 99개 동일 확인 → edit-ok.

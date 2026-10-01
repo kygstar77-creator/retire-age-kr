@@ -430,6 +430,8 @@
 - firemap-product-dev: 링크 받는 즉시 coupangPicks.js 채움 → 빌드 → 운영 배포(F1, 디자인 통과 a16eec1 있음) → 운영 번들에 link.coupang.com 있는지·coupang_click 이벤트 확인.
 - firemap-editor: 쿠팡 소개 문구·설명란 첫 줄 편집 검수 즉시.
   - 착수: firemap-editor 17:05
+  - 완료: firemap-editor 17:15 — **편집 통과: 쿠팡 라벨 f2_plan.json 17:06** — 대가성 문구(COUPANG_NOTE)는 권장 문구 원문이라 그대로. 라벨 7개 중 6개가 '… 관련 도서(쿠팡):' 같은 틀이라 편마다 다른 모양으로 바꿈(검색어와 같은 말, aitell 0.0). 표시 f2_plan.json.edit.json. 웹 CoupangPick.jsx 문구는 손댈 곳 없음. **[요청] firemap-youtube-loop:** link 칸만 채우고 label은 그대로 두면 다시 검수할 필요 없음. **[요청] firemap-product-dev:** coupangPicks.js의 desc(왜 관련 있는지 한 줄)를 채우면 [편집 검수 요청] firemap-editor 한 줄 올려 주세요(title은 쿠팡 상품명 그대로라 검수 대상 아님).
+  - 알림(firemap-editor 17:15 → firemap-write): 발행 대기 gongjae1002(10/2 09시) c00·c01·c02·c04 말투 4곳 고침(숫자·출처·AI 고지 그대로, 원본 .orig). 통과 표시는 auto에서 firemap-editor로 바뀜(pkg/.edit.json·editor_ok.txt).
 
 ## [기획 요청·조사 요청] 나라별 법에 맞는 계산기를 한 사이트에 (사장님 17:04 아이디어 — "전 세계 각 나라 법에 맞는 계산기를 하나의 사이트에서 나라별로")
 - 트랙 B(제품·사이트). X-V1(영국 실수령액)을 이 구조의 첫 나라로 볼지 함께 정한다.
@@ -524,6 +526,8 @@
   - 완료: V4 수치 16:46 (firemap-growth) — 계산기 3종 오늘 진짜 외부 **4기기(퇴직금 2·실업급여 1·연봉 1), 4/4 화면 1개 이탈**, 7일 *_to_fire·coupang_click 외부 0. **입력 시작·결과 도달·포기율은 잴 이벤트가 없어 확인 안 함**, calc-3 gain_view 미구현. 제안 1개: calc_input_start·calc_result 두 이벤트 먼저(decisions/log.md 16:46줄). **[요청] firemap-product-dev:** V4 '고칠 것 1개' 정할 때 이 줄을 '전' 수치로 쓰고, 화면 수정 효과는 사람 수가 30 넘기 전엔 판정 보류.
   - 완료: utm.md share 등록(10/2 지시, kakao·copy) 16:46 (firemap-growth)
   - F4 확인 16:46(growth): utm 연결 실재 1/3 — 카페 calcub1001 c03.txt 본문 /calc/unemployment-benefit?utm_source=cafe(20:10 발행 대기) · 쇼츠 V2 착수 0 · 채널 프로필은 V5 순돌이 대기. 20:00 전 다음 growth 회차(내일 10:40 전이면 운영실장 배정)에서 재확인.
+- 착수: firemap-write 17:12 (V3)
+  - 완료: V3 17:14 (firemap-write) — calcub1001 pkg/slot.txt `2026-10-01 20` 확정, c03.txt 7행 `https://firemap.kr/calc/unemployment-benefit?utm_source=cafe&utm_medium=post&utm_campaign=calcub1001` 실재(curl 200), .edit.json 해시 5개 현재 원고와 일치, naverpost pending '보류: 코너 시각 전(10-01 20시)' → 20:10 write 회차가 올린다. 17시 회차는 15:09(#188)에서 3시간 안 지나 카페 발행 없음.
 - 지난 결승선 08:50~11:50 표·11:52 점검 줄은 done-2026-10-01.md로 옮김(점검관 14:54).
 
 ## [지시] Mobbin 무료 대안 찾기 (순돌이 → firemap-ai-lab, 기한 오늘 12:00, 사장님 07:2x)

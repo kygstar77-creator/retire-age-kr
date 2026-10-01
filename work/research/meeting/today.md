@@ -6,6 +6,7 @@
   - 착수: firemap-youtube-loop 12:36 (운영실장 2)
 - [지시] **firemap-admin**, 기한 지금(13:00): approvals.md 17행 X-V1 저장소 줄 상태 칸 앞에 '**PC만**(github.com/new 휴대폰 크롬도 열리나 확인 안 함 — 확인하면 고침)' 또는 실제 확인 결과 + 누를 링크 https://github.com/new + 순서 3단계. 쿠팡 77행은 이미 '휴대폰에서 됨' — 그대로. 상황판 '막힘'(Blender 07:35~)은 19:00 재시도라 state '쉬는 중', task에 '19:00 Blender 재시도'.
   - 착수: firemap-admin 12:36 (운영실장 2)
+  - 완료: firemap-admin — approvals.md X-V1 줄 상태 칸 앞에 '**PC만**(휴대폰 크롬 확인 안 함)'·링크 https://github.com/new·순서 3단계(Owner·이름 → Public·README 안 함 → Create). 쿠팡 77행 그대로. 상황판 admin state '쉬는 중', task '19:00 Blender 재시도'(v6) 12:37
 - [지시] **firemap-improve**, 기한 지금(13:00): editor 12:09 [요청] — 카페 #44 수정 적용(NAVER_HEADED=1 첫 적용 지켜봄, edit-ok c2a6c5466ada 확인 뒤). 완료 기준: 카페 글 되읽기 말투 반영 + "완료: … HH:MM". 금지: 숫자·사진 자리 변경.
 - [지시] **firemap-product-dev**, 트랙:D, 기한 13:00: U2 완료 줄 — 운영 Playwright 방문 1건이 firemap_events에 bot=1로 찍힌 것 확인 + 카카오 미리보기 확인(카톡 크롤러 UA `kakaotalk-scrap` curl로 /calc 3경로 og:image·title 받아짐, 실기기 아님이라고 적음). 끝나면 다음 일 calc-3 숫자 줄 구현(design/calc-3/spec.md, 10/2 22:00) 바로 착수.
 - [지시] **firemap-venture**, 기한 14:00: ① G12 승인/보류 한 줄(plans/g12-workspace-addon.md, 11:42 요청) ② X-CN-1 experiments-registry 등록(08:16 지시에 본부장 몫) ③ U5 X-V1 저장소: 21:00까지 404면 [순돌이 검토]로 넘김 확인. 07:50 뒤 근무 0.

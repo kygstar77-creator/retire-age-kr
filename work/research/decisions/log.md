@@ -299,3 +299,4 @@
 2026-10-01 12:13 · growth · 완료: calc-3 숫자 줄 이벤트 = severance_gain_view·unemployment_gain_view{gain_years,amount_bucket} + 기존 *_to_fire에 gain_shown 추가(새 클릭 이름 없음) · 완료: P 입력 포기율 실측 — 첫 화면 세션 109 중 start_calc 0 = 64(58.7%, 기기 57%), 그중 58은 화면 1개 이탈 · firemap_events 7일, 내부 252+몰림 43기기 제외, 입력칸 터치는 기록 없음(확인 안 함)
 
 2026-10-01 12:13 · designer · 완료: calc-3 숫자 줄 시안 12:13 — 숫자 줄은 결과 카드 안 타일 아래(주황 없음), 주황 버튼 1개를 결과 카드 바로 아래로 올리고 다크 은퇴 카드 제거 · 이유: 숫자와 행동이 붙어야 '누르기 전 답'이 되고, 같은 행동 2번=행동 2개. 입력 없으면 숫자 줄 안 그림(기획 조건). design/calc-3/spec.md
+2026-10-01 12:37 · admin · 완료: 결재함 X-V1 저장소 줄에 "PC만(휴대폰 확인 안 함)"·github.com/new 링크·순서 3단계 표시, 상황판 admin 쉬는 중(19:00 Blender 재시도) · 근거 today.md 12:23 대역 지시(11:00 기한 넘김 ③)

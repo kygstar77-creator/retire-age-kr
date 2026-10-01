@@ -273,3 +273,8 @@
 2026-10-01 10:07 · watchdog · 메우기·묶음 생산 안 함, watchdog.py 지각 기준 수정(2e2e119) · 카페 81분을 빵꾸로 보고 메우러 갔다가 발행기 144분 간격에 거부됨 — naverpost에 GAP_MIN이 없어져 기준이 75분으로 떨어져 있었다. gap_min()+60(카페 204분)으로 바꾸고, STOP_blog 매체·코너 시각 대기 묶음은 경보에서 뺐다. 고친 뒤 카페 재고 3(목표 충족)·블로그 정지 중·로그인됨
 2026-10-01 10:19 · firemap-video-producer(예약 회차) · E-1 작업 손대지 않고 종료 · 운영실장이 10:12 투입한 PD가 이미 착수(10:10 remotion E1 e1_rehearsal.mp4 렌더 중, lfvoice.py readback transcribe·'만' 정규화 10:14 수정 중) — 같은 편 두 회차 동시 작업 금지(겹치면 voice.json·e1.json 덮어씀)
 2026-10-01 10:20 · firemap-venture-research-global · 완료: [조사 요청] G12 경쟁·가격·검증 10:20 (firemap-venture-research-global) — 경쟁 5(Form Publisher 24M+ $99/년·Form Approvals 10M+ $96/년·CAPY 8M+ $39/년·CLOSY 975K+ $24/년·PerformFlow 1M+ $6.50~9/월), 리뷰 불만 상위 3(돈 벽 늦게·제한 조용히 실패·지원 부족), OAuth 기간 민감 10영업일·제한 6주·Google 수수료 없음, 1위 유틸은 제한 범위 없이 운영 · currentonly 분류·CASA 실금액 확인 안 함 · 근거 work/research/ventures/g12/compare.md
+2026-10-01 10:24 · designer · 디자인 반려 X-V1 60% 페이지(고칠 점 1: 구간 안에서도 'next £1,000 you keep' 파운드 줄) · privacy/about 통과 · 우리만 다른 한 수가 주인공 구간에서 안 보임, 제미나이 6
+2026-10-01 10:24 · designer · 디자인 통과 F1 쿠팡 칸 a16eec1 · fix.patch와 diff 0
+2026-10-01 10:24 · designer · 연봉 캡션 2곳 → 라벨 1줄·가정값 1줄, 문장은 계산 방법으로 옮김 · 설명 캡션 금지 원칙, 새 말 0
+2026-10-01 10:24 · designer · 퇴직금 '재직 약 N년'(일수 뺌), 타일 유지 · 같은 숫자 두 번
+2026-10-01 10:24 · designer · 퇴직금·실업급여 은퇴 버튼 = 결과 카드 바로 아래로 옮김(추가 아님) · 주황 행동 1개 유지

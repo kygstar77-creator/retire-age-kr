@@ -21,6 +21,7 @@
   - 완료: **편집 통과: X-V1 나머지 3쪽 + 머리 10:31** (firemap-editor-en) — 4쪽 .edit.json 기록, deploy.py check 4쪽 OK(aitell 0.0). 글자만 5곳 고침: ① 머리·60% 바닥 'Your exact salary/income stays in your browser' → 'We never log your exact salary/income, only anonymous usage such as which … band was checked.' — 이번에 생긴 ?s=<금액> 링크로 정확한 금액이 주소에 실려 GitHub 서버로 가므로 '브라우저에만 남는다'는 거짓이 됨 ② privacy 첫 줄 '…never sent anywhere' → '…we never log the exact figure' + Hosting에 '계산기끼리 링크를 누르면 입력값이 주소(?s=110000)에 실려 GitHub 서버가 받는다' 한 문장 추가 ③ 60% 결과 'Above £125,140' → 'From £125,140'(정확히 £125,140도 그 문장이 뜨고 그때 공제가 0). 예시표 4줄(£100k 27,432·£105k 30,432·£110k 33,432·£120k 39,432)·£6,000/£200 직접 검산 일치. about은 변경 0. 경쟁 4곳(taxradar·taxtrap.uk·calcsmith·moneymeister)은 'escape·secret tax band·optimizer' 같은 과장 — 우리 쪽 GOV.UK식 담백함 유지, 권유 동사 없음. **[제안] firemap-venture-builder:** ?s= 대신 #s= (해시는 서버로 안 감)로 바꾸면 privacy 추가 문장을 빼고 더 강한 약속을 쓸 수 있다 — 바꾸면 해시가 달라지니 편집 재검수 요청.
 - [디자인 검수 요청] X-V1 /60-percent-tax-trap/·/privacy/·/about/ 트랙:A · 담당 firemap-designer · 시한 10:55 · 근거 work/research/design/uk-pay/build/trap-375-110000-light·dark.png, trap-320-110000-light.png, trap-375-90000-light.png(구간 밖), trap-320-9999999-light.png(넘침 점검), trap-1280-110000-light.png, privacy-375-light.png, about-375-light·dark.png. 머리 페이지 토큰·부품 그대로 + 새 것 2개: 결과 카드 안 2줄 표(.rows) · 머리로 돌아가는 테두리 링크 버튼(.go, 48px, 행동 1개). 실측: 가로 넘침 0(320·375·1280) · 375×667에서 결과 3줄 아래끝 y=582(첫 화면 안), 면책 줄은 y=678로 첫 화면 바로 아래 · 44px 미만 누르는 곳 0(본문 속 출처 링크 제외).
   - 착수: firemap-designer 10:24
+  - 완료: **디자인 반려: X-V1 /60-percent-tax-trap/ 10:24** (firemap-designer) — 고칠 점 1: £110,000 구간 결과 둘째 줄이 '60% (62% with NI)'뿐이라 1페이지 10곳과 같다(예술가 조건 '%는 보조' 어긋남) → .rows 첫 줄을 모든 구간에서 머리 페이지와 같은 'Of your next £1,000, you keep £N'(£110,000이면 £380), %는 라벨 쪽 작게. 구간 밖 'Tax and NI on your next £1,000'(내는 돈)도 'you keep'으로 통일. 글자는 editor-en. 나머지(토큰·.rows·.go 부품·넘침 0·다크)는 통과. **디자인 통과: X-V1 /privacy/·/about/ 10:24.** 심사 제미나이 6·내 6.5. 근거 design/uk-pay/review-build2.md
 - [지시] **firemap-admin**, 기한 09:00: 결재함(approvals.md)에 쿠팡 본인인증 한 줄 — "PC만(크롬 partners.coupang.com, 휴대폰 로그인 땐 창이 안 떴음) · 누를 곳: 내 정보 → 인증하기 → 휴대폰 인증 → 인증 완료 · 누른 뒤 채팅에 '쿠팡 인증함' 한 마디(순돌이가 바로 링크 3개 발급·유튜브/firemap.kr 매체 등록 확인)". 인증이 시간 제한으로 다시 걸리는 것으로 보이므로(07:54 열림 → 08:02 막힘, 확인 안 함) 인증 직후 같은 세션에서 발급해야 한다는 것도 적는다. 비밀번호·인증번호 입력 금지.
 - [지시] **firemap-youtube-loop**, 기한 10:00: 쿠팡·권한 막힘 동안 노는 대신 — editor ytdesc 6편 + R2 계산기 utm 링크 + (나중) F2 쿠팡 줄을 **한 번에 적용하는 명령 1개**로 합쳐 dry까지(설명이 .orig와 다르면 합치기). 목적: 권한이 풀릴 때 사람 손 1번에 전부. 금지: 무인 권한 검사 우회.
   - 착수: firemap-youtube-loop 설명란 합치기 명령 08:41
@@ -169,6 +170,7 @@
   - 대상: 다크 카드 안 4줄 "원천징수 비율 · 기본은 100%예요 …", 주황 버튼 아래 회색 3줄 "실수령 …에서 생활비 …를 빼고 …".
   - 기준: guide ③·메모리 design-identity '설명 캡션 금지(라벨·숫자·버튼·가정값만)'. 사용자 참모도 "깨알 같은 회색 글씨 → 이탈"이라고 했다.
   - 할 일: 줄이거나 접는 안 1개에 "디자인 통과/반려"를 적는다. 통과하면 product-dev가 F8 때 적용한다. 퇴직금·실업급여 결과도 같은 눈으로 본다.
+  - 완료: **디자인 통과(안대로 적용 시): 연봉 결과 캡션 2곳 10:24** (firemap-designer) — ① 칩 아래 3줄 → 라벨 '원천징수 비율' 1줄, 문장은 '계산 방법' 카드로 옮김 ② 버튼 아래 회색 3줄 → 가정값 1줄 '생활비 N원 · 월 저축 N원', 문장은 '계산 방법'으로. 새 말 0(기존 단어만). 타일 '세액표'는 칩과 같은 값이라 빼도 됨(재량). 퇴직금·실업급여도 같은 눈: 버튼 아래 가정값 1줄. **[구현 요청] firemap-product-dev(F8 22:00):** design/calc-captions/review.md 1~3장. 글자 확정 firemap-editor-web.
 - [지시] **firemap-illustrator**(14:40 근무, 기한 그 회차 끝): X-THUMB-1 B군(캐릭터 있음) 후보를 준비한다.
   - 사실: 지금 B군은 0편이다. 판정일(10/28)까지 4편 중 1편이 필요하다.
   - 할 일: 다음 롱폼(E-1 다음 편)용 캐릭터 1종 시안 2개를 제미나이 이미지로 만든다. ChatGPT 이미지는 금지(스꾸 한도).
@@ -294,6 +296,7 @@
 | T4 | 오늘 진짜 외부 방문(S5 이월): UA·몰림 봇 거르기 추가, 오늘 00~11시 숫자 | C | firemap-growth | 11:50 | channels.md 표에 10/1 줄 + 기준 한 줄 추가 |
 | T5 | F6 카페 계산기 소개 글 편집 관문 통과 표시(.edit.json)까지 | B | firemap-editor | 11:50 | .edit.json 통과 파일 |
 - 착수: firemap-designer T1 F1 재판정 10:24
+- 완료: **디자인 통과: F1 쿠팡 칸 수정안(a16eec1) 10:24** (firemap-designer) — 커밋 변경이 design/f1-coupang/fix.patch와 한 줄도 다르지 않음(diff 0). 링크 3개만 넣으면 추가 검수 없이 배포 가능. T1 ✅
 - 정체 점검 08:52: F10 [요청] 디자이너 08:11 → 08:20 통과(정상). F1 디자인 반려 08:20 → product-dev 착수 없음 32분 = **대기**. F2 쿠팡 인증 07:40 요청 → 결재함 등록 없음 1시간 12분 → 점검관이 등록(아래 approvals).
 
 ## [지시] Mobbin 무료 대안 찾기 (순돌이 → firemap-ai-lab, 기한 오늘 12:00, 사장님 07:2x)
@@ -688,6 +691,8 @@
 - 기획서: plans/calc-3.md(계산기 3종 보강, calc-gtm 9장) · plans/x-kr-1.md · plans/x-v1-uk-pay.md — 각각 launch-checklist 20·21 칸 채움.
 - **[지시] firemap-product-dev(다음 개선 1개, 10/2 22:00, F8 자리):** 퇴직금·실업급여 결과 카드 바로 아래에 연봉 A안과 같은 주황 버튼 '이 돈이면 몇 살에 은퇴?' 1개. 실측 08:1x: 두 계산기 첫 화면(375×812)에 은퇴 연결이 없어 21번 뻔함 관문 반려 상태. 설명 한 줄은 실제 계산 동작 그대로. **디자이너 통과 줄 뒤에만 배포.** 전후 7일 severance_to_fire·unemployment_to_fire를 decisions/log.md에.
 - **[요청] firemap-designer:** ① 위 버튼 — 연봉 A안 패턴 재사용 확인(짧게) ② X-KR-1 화면 3개(판매 대표 이미지 1080·시트2 '은퇴 나이' 배치·firemap 결과 아래 링크 1줄 자리) 10/2 빌더 착수 전 ③ X-V1 '디자인 통과' 조건에 첫 3초 기준(375px에서 월 실수령 숫자 + '다음 £1,000 → £N' 한 줄이 스크롤 없이) 추가.
+  - 착수: firemap-designer 10:24
+  - 완료: ① 10:24 기준 확정 — 결과 카드 바로 아래 주황 Button 1개+가정값 1줄, 퇴직금·실업급여의 기존 다크 카드 버튼은 **옮김**(새로 더하지 않음), 캡처 오면 검수만. 근거 design/calc-captions/review.md 3장 ③ 이미 08:20 spec에 넣음(375×667·320×568 숫자+'다음 £1,000' 줄 스크롤 없이) ② X-KR-1 화면 3개는 이번 회차 이어서(아래 줄).
 - **[예술가 요청] calc-3** — 다른 한 가지 = '몇 살에 은퇴' 연결. 퇴직금·실업급여에 올리는 게 충분히 다른가, 판정 줄.
   - 착수: firemap-artist 08:47 (운영실장 2)
   - 반려: [예술가 요청] calc-3 퇴직금·실업급여 '이 돈이면 몇 살에 은퇴?' 버튼 08:48 (firemap-artist) — **버튼만으로는 뻔함 반려.** 똑같은 점: MyMoneySim(mymoneysim.com/severance·/unemployment)이 이미 결과 아래 "지금 자산에 퇴직금을 더해 은퇴 시점을 다시 계산해 보세요 · 파이어족 시뮬 →", "지금 자산으로 몇 살에 은퇴할 수 있는지 확인하세요"를 건다(08:46 curl, JS에서 href "/fire" 고정 — 숫자는 안 넘김). 우리 차이(금액을 자산에 더해 넘김)는 누르기 전엔 안 보인다. 사람인·인크루트·노동부·고용24·CalcTools 퇴직금/실업급여 페이지는 은퇴 연결 0건, 네이버 위젯·잡코리아 확인 안 함. 비교 art/calc-3-compare.md.
@@ -706,6 +711,7 @@
 - **[요청] firemap-venture(본부장):** X-KR-1 brief의 "은퇴 나이 나오는 가계부가 이미 있으면 멈춘다" 조건 — 네이버 1페이지 블로그(m.blog.naver.com/enen116/224419091623)가 "은퇴 시점·물가 상승률 입력 → 노후 자금 계산·준비 수준 진단" 구글시트 가계부를 소개(요약 문장만 확인, 상품 자체 확인 안 함). 금액 대 나이 차이로 계속할지 판단 부탁. 빌더 compare.md에서 그 상품 먼저 열어 볼 것.
 - 완료: firemap-planner 08:06 — 기획서 3개, 다음 개선 1개 지시, 예술가 요청 3건(답 대기).
 - [보고] firemap-editor-web 08:35: 첫 근무. 계산기 3종·쿠팡 칸 점검, 연봉 계산기 중복 문장 2곳 삭제(d5b4330, 새 말 없음). dev만 푸시 — dev:main은 디자인 리뷰 대기 중인 5d1b385(F10)가 같이 나가서 보류. F10 통과 때 함께 나간다. 퇴직금 결과 카드 '재직 N일'이 타일 '재직일수'와 같은 숫자 두 번 → firemap-designer 판단 요청. 목록 work/research/editor-web/sweep.md(23칸, 다음=홈).
+  - 완료: firemap-designer 10:24 — '재직 N일' 중복 판정: 큰 숫자 아래 줄을 '재직 약 N년'으로(일수 뺌), 타일 '재직일수'는 계산식 재료라 유지. 근거 design/calc-captions/review.md 2장
 
 ## [요청] X-G4 재상정 — AI 스톡 이미지 (해외 시장조사원 firemap-venture-research-global → firemap-venture 본부장, 08:4x)
 - 보류 사유였던 약관 원문 확인 끝(ventures/global/terms-2026-10-01-0840.md): Adobe는 생성 도구 약관 확인을 기여자 책임으로 둠 → Gemini API "Google won't claim ownership", Canva "you own your Output"(단 Canva 라이선스 요소 섞으면 불가). **전제 충족.**

@@ -71,7 +71,7 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
       >
         {gainYears >= 1 && (
           <p className="fm-gain">
-            <span className="fm-gain__lead">퇴직금 {exact(r.amount)}을 더하면</span>
+            <span className="fm-gain__lead">퇴직금을 더하면</span>
             <span className="fm-gain__line">파이어 나이가 <span className="num">{gainYears}년</span> 앞당겨져요</span>
           </p>
         )}
@@ -80,7 +80,7 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
       {r && r.amount > 0 && (
         <div>
           <Button variant="primary" size="lg" full onClick={toRetire}>이 돈이면 몇 살에 은퇴?</Button>
-          <p className="ds-caption ds-mb-0 ds-mt-2">퇴직금 {exact(r.amount)}을 현재 자산에 더해 파이어 나이를 계산해요</p>
+          <p className="ds-caption ds-mb-0 ds-mt-2">현재 자산 + 퇴직금 {exact(r.amount)}</p>
         </div>
       )}
 

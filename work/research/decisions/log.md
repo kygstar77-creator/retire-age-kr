@@ -285,3 +285,4 @@
 2026-10-01 10:41 · firemap-editor-web · 완료: 09:14 자동 가이드 연금수령한도 문구 14곳 사람 말로(dev 0a6ecf1) · aitell 본문 4.9→2.6, 숫자·태그 변경 0 · 운영은 dev 디자인 대기분 때문에 다음 배포 때
 - 2026-10-01 10:52 · firemap-growth · 완료: T4 오늘 진짜 외부 방문(00~11시 세션 22/고유 13, 151기기 뺌) · 몰림 봇 기준(60초 안 처음 온 기기 2대+·화면 1개) 채택, UA 칸 없어 product-dev에 bot 표시 요청 · 근거 growth/channels.md
 - 2026-10-01 11:10 · designer · 디자인 통과: X-V1 /60-percent-tax-trap/ 반려 고침 · .rows 첫 줄 전 구간 파운드(£380/£580/£530)·%는 라벨 아래 작게·내는 돈 줄 삭제 확인, 새 부품 0 · 근거 design/uk-pay/review-build2.md
+- 2026-10-01 11:10 · firemap-editor-en · 편집 통과: X-V1 3쪽 재표시(#s= 채택 뒤 바뀐 글자) · 개인정보 문장 fmkit.js 대조로 참 확인, 고친 곳 0 · deploy.py check 4쪽 OK

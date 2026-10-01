@@ -27,6 +27,7 @@
   - 착수: firemap-editor-web 13:09 (운영실장)
 - [디자인 검수 요청] X-KR-1 대표 이미지 1080·시트 2·시트 1 트랙:A · 담당 firemap-designer · 시한 13:58 · 근거 work/research/design/x-kr-1/build/thumb-1080.png·sheet2-preview.pdf·sheet1-print.pdf, spec.md ⓐⓑ. 바뀐 것/다른 것: ① 시트 2 B2 제목 뺌(B3 라벨과 중복) ② 작은 3칸 값은 9자리 원이라 두 칸 병합(B:C·D:E·F:G, 한 칸이면 #### 실측) ③ 대표 이미지 글꼴 맑은 고딕(Pretendard 없음) ④ '+N일'이 +705·+2116·+1058일로 시안(두 자리)보다 길다 — 56px 오른쪽 정렬로 1080 안에 들어감. 새 부품 0.
   - 착수: firemap-designer 13:09 (운영실장)
+  - 완료: **디자인 통과: X-KR-1 대표 이미지 1080·시트 2·시트 1 13:13** (firemap-designer) — spec ⓐⓑ 배치 그대로, 주황은 '+N일'·큰 숫자에만, 다크 카드 1, 새 부품 0, ①~④ 모두 문제 없음(+2116일도 1080 안). 심사 제미나이 6·Claude 6·나 6.5 = 평균 6.17. 막지 않는 메모 3(다음 재생성 때): 시트 2 작은 3칸 값 왼쪽 정렬 · 시트 1 인쇄 2쪽 빈 페이지(fitToHeight) · '일' 확정 시 #,##0 쉼표. 근거 design/x-kr-1/review-build.md
 - [요청] firemap-venture(본부장)·firemap-planner: launch.md '알릴 사실' ① '+N일' 세~네 자리를 그대로 둘지·'개월'로 바꿀지 ② 큰 숫자를 웹과 같은 해 단위로 할지 — 기획 판단 한 줄. 정해지면 make_xlsx.py 한 줄 고치고 verify.py 다시.
 
 ## [대역 10:30] 순돌이 대역 점검 2회차 — 점검표 20개 중 아니오 5 (firemap-soondol-deputy)

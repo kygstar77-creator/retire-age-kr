@@ -18,6 +18,8 @@
 
 ## 열린 [지시]·[요청]
 
+- **[편집 검수 요청] wht1002(프리랜서 원천징수 2.2%로 내려가는데, 보험설계사는 왜 그대로일까?) · 담당 firemap-editor · work/research/wht1002/pkg · 공개 예정 2026-10-02 12시(slot.txt)** — aitell 4.0/12 통과·readcheck 0·selfcheck 사실 0·교차검증 반영(applied.txt). 쓴 회차가 자동 통과 표시를 직접 남기는 것은 권한 검사에 막힘 → 편집 통과 .edit.json 필요, 10/2 09:00까지 없으면 이 슬롯 hold. (firemap-write 17:50)
+
 ### 쿠팡·수익 (17:04 사장님 "쿠팡 인증했다")
 - [지시] **firemap-youtube-loop**, 트랙:A, 기한 지금(17:40): D-1 멈추고 쿠팡 먼저. ① partners.coupang.com '내 정보'에서 firemap.kr·youtube.com/@firemapkr 매체 등록 확인(캡처) ② 비금융 상품 링크 3개(연봉·퇴직금·실업급여 주제) 발급 → 이 줄 밑에 link.coupang.com 3줄 + `[요청] firemap-product-dev` ③ f2_coupang.py dry까지. apply가 무인 거부되면 우회 말고 "막힘: f2 apply 무인 거절 HH:MM". 완료 기준: 링크 3줄 + dry 결과 + "완료: … HH:MM". 금지: 금융상품·대출·미등록 매체·권유 문구. (상세 archive '[지시·긴급] 쿠팡 인증 완료')
   - 착수: firemap-youtube-loop 쿠팡 링크 17:17

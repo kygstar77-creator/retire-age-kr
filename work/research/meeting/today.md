@@ -5,6 +5,7 @@
 - [지시] **firemap-shorts**, 트랙:B, 기한 지금(V2 17:50, 공개 19:20): F5 퇴직금·실업급여 쇼츠 1편 제작 착수 — 제목은 copy/titles.md 1위, 설명란 `https://firemap.kr/calc/severance?utm_source=shorts&utm_medium=desc&utm_campaign=<작업폴더>` 1개, 사실표 대조. 쿠팡 링크는 인증 막힘이라 넣지 않는다(풀리면 뒤에). 완료 기준: 렌더 파일 + 설명란 초안 utm 줄 + 편집 통과 .edit.json(editor 대리 editor-web) + "완료: … HH:MM". 우리만 다른 한 가지: 첫 3초에 계산기 결과 숫자 화면. 금지: 미등록 매체 쿠팡 링크·권유 문구. **운영실장: 다음 :35 1순위.**
 - [지시] **firemap-product-dev**, 트랙:D, 기한 지금(V4 17:50): ① F8 사전 측정 — 연봉·퇴직금·실업급여 오늘 이벤트(입력 시작·결과·포기율·calc-3 숫자 줄 클릭) '전' 수치를 decisions/log.md에, 고칠 것 1개 ② **운영 반영 경로 사실 확인 한 줄**: dev 커밋이 main에 들어가면 바로 운영인가? calc-3 52c4180이 운영 번들에 처음 실린 시각(배포 로그·Pages 빌드 기록)을 재서 디자인 통과 14:12보다 앞이었는지. 완료 기준: log.md 줄 + 사실 한 줄 + "완료: … HH:MM". 금지: 측정 전에 화면 바꾸기.
 - [지시] **firemap-venture-builder**, 트랙:A, 기한 지금(17:30, 10/2 15:00에서 당김): 16:16 [요청] ①②를 지금 — 맨 위 줄 상태 문장 먼저·도장 끝 / stale 흰 버튼 '공식 일정 확인하기'·캘린더 숨김, 그리고 .edit.json 해시에서 도장·대조 시각 빼기. 375 접힘·stale 캡처 2장으로 [디자인 검수 요청] 다시(디자이너 15분 재판정 약속). 이유: 10/2 17:00 취소좌석 마감 전에 공개돼야 '놓쳤다면' 줄 첫 실측이 된다. ③ '매일 자동 대조' 문구는 매일 빌드 예약이 서기 전엔 빼고 공개. 완료 기준: 커밋 + 캡처 2장 + 재검수 요청 줄.
+  - 착수: firemap-venture-builder 16:36 (운영실장 2)
 - [지시] **firemap-admin**, 기한 지금(17:30): ① 결재함 14행(쿠팡 인플루언서)·15행(리틀리)·X-G19 브랜드 계정 줄에 '휴대폰에서 됨/PC만·누를 링크·순서' 채움 — 모르면 직접 휴대폰 화면 여부를 확인하고 적되, 확인 못 하면 '확인 안 함'. X-G19 줄에는 "3관문 통과 전엔 누르지 않아도 됨(firemap-venture)" 한 줄. ② planner 14:42 막힘 data.go.kr TourAPI·고캠핑 '활용신청' — 크롬에 data.go.kr 로그인이 살아 있으면 총무가 직접 신청(무료 API는 묻지 않음 원칙), 로그인이 없으면 비밀번호 입력 금지 → 결재함 줄(휴대폰/PC 표시). 완료 기준: approvals.md 줄 + "완료: … HH:MM".
 - [순돌이 검토] 공개 저장소 2개(uk-take-home-pay·exam-dates-kr) — 결재함 17·18행에 '채팅에서 순돌이에게 한 마디'로 된다고 적혀 있다. 사장님 손 없이 순돌이 채팅 세션이 만들면 X-V1 22:00·X-CN-1 10/2 17:00 둘 다 산다. 21:15 전에.
 - [순돌이 검토] dev→main 구조 — 위 ④. product-dev 사실 줄이 '바로 운영'이면 workflow.md D·B 트랙 '배포 전 검수'를 지킬 장치(검수 대기 커밋은 다른 브랜치·또는 deploy 게이트에서 .design.json 확인)를 레드팀과 정한다.
@@ -48,6 +49,8 @@
   - 착수: firemap-improve 14:37
   - 완료: firemap-improve 카페 #44 적용 — edit-ok sha c2a6c546…가 44.txt sha256과 일치 확인 뒤 NAVER_HEADED=1 `edit 44 … --apply`. 사후 대조 통과(사진 주소·자리 그대로, 글 덩어리 6개 새 원고와 일치, 숫자 99개 동일, 글자 1043→1039). 되읽기: 다시 받은 공개 글이 1039자=새 원고, 바뀐 문장 '궁금해지죠'가 적용 전 0회→적용 뒤 1회. 원본 백업 _cafe_edit/44/20261001-143600_before.html. 로그 '확인 창 처리 실패(계속할까요 8초 시간초과)'는 새 글 등록용 전체공개 확인 상자를 수정에서도 기다린 것 — 수정엔 그 상자가 안 떠서 생긴 소음, 결과 영향 없음. 하루 상한 3편 중 1편 사용. 14:39
 - [지시] **firemap-designer**, 트랙:B, 기한 calc-3 실업급여 조각 검수 때(오늘): editor-web 14:15 메모 — 320px 타일 '97,826원'의 '원'이 칸 경계에 닿음. 같은 검수에서 판정(고칠지·그대로 둘지) 한 줄.
+  - 착수: firemap-designer 16:33
+  - 완료: **판정 = 고친다 16:33** (firemap-designer) — 320 캡처(severance-editor-320.png)에서 '원'이 오른쪽 칸 선에 붙음. 새 부품 없이 연봉과 같은 기준: SeveranceCalc StatHero에 기존 `ds-hero--compact-tiles`(fm-ds.css 314행, 타일 값 20→15px) 붙임 — 실업급여도 같은 클래스(review-build.md 메모 1). **[구현 요청] firemap-product-dev:** 실업급여 조각과 같은 배포에 className 1줄씩, 320·375 캡처를 검수 근거에 함께. 근거 design/calc-3/review-build.md 끝
 - [지시] **firemap-youtube-loop**, 기한 16:00(노는 직원 0): 쿠팡·쓰기 권한 둘 다 21:15 안건으로 올라갔으니 기다리지 않는다 — A-1 공개 뒤 시청 유지 그래프(Analytics readonly, 집계되는 첫 날)가 있으면 baseline 표에 A-1 줄, 없으면 '확인 안 함'과 다음 확인 시각. 그다음 다음 주 D-1(건보료) analysis.md 경쟁 5편 표. 금지: 쓰기 API.
   - 착수: firemap-youtube-loop 14:36 (운영실장 2)
   - 완료: firemap-youtube-loop 14:40 — ① A-1 시청 유지 그래프 **확인 안 함**: Analytics 일별 마지막 집계일이 아직 9/28(A-1 공개 9/30 행 없음, video 0·curve 빈 결과), Reporting 보고서도 9/28까지 → baseline-2026-10-01.md 끝에 재측정 표·다음 확인 **10/2 09:00**(안 쌓였으면 10/2 19:30 X-THUMB-1 판정 때). ② ep/D-1/analysis.md 경쟁 5편 표(단희TV·리클래스 x33.8·국민지갑 x143.7·지혜로운 x343·부자손자, 공개 자막 tx/ 근거) — 5편 모두 60대 연금 수령자·퇴직 직후 기준, 연금 없는 조기 은퇴·ETF 분배금·금융소득 금액별 표는 빈칸. 쓰기 API 0.
@@ -95,6 +98,7 @@
     - 착수: firemap-video-producer 14:18
     - 완료: E-1 목소리 88/88(같은 모델 gemini-3.8-flash-tts·Charon만) · 남은 3문장 + 음높이 튀던 7문장 다시 만듦, 앞머리 지시문 6곳 cutat로 잘라냄 · readback 20문장 걸린 0(19.14배·6.5배 맞게 읽음) · 편 전체 5.65음절/초 · 최종 렌더 work/video/out/e1.mp4 9:39.7 yuv420p, 무음은 로고뿐 · 관문(ytlong gate) 걸림 0. **업로드는 보류** — E 시리즈 첫 편인데 '뻔함 통과' 기록이 없어 아래 [뻔함 검수 요청] 16:32 (firemap-video-producer)
     - [뻔함 검수 요청] firemap-artist · 기한 17:35(1시간) · E-1(새 시리즈 E 첫 편, workflow.md 140행 '새 시리즈 첫 편만') — 영상 work/video/out/e1.mp4(9:40), 대표 프레임 work/video/out/e1_final/sheet.jpg, 경쟁 비교 ep/E-1/compare.md·scorecard.md(36 vs 경쟁 중앙 28), 썸네일 ep/E-1/thumb_e1c.png, 제목 '삼성전자 이익 19배, 주가는 3배… SK하이닉스·마이크론은?'. 판정 줄에 '뻔함 통과' 또는 고칠 것 1개. 통과면 다음 PD 회차가 `py -3.12 work/ytlong.py up work/research/longform/ep/E-1`(예약 10/3 19:30 그대로).
+      - 착수: firemap-artist 16:36 (운영실장 2)
   - 처리: Claude 주간 한도 → [순돌이 검토] ② 21:15 · 담당 순돌이·회의
 - [순돌이 검토] (유지) U6 'Firemap daily growth' 루틴 3)항 guidegate 문장 — 내일 09:00 전까지 안 넣으면 [auto] 가이드가 또 편집 없이 main으로 간다. 순돌이 채팅 세션만 가능.
 

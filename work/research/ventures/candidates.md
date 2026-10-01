@@ -340,3 +340,66 @@
 - 받아들임: 경쟁 화면 확인(관문 1), 권한 민감도 테스트 배포로 실측(관문 2성격), 처리방침 영·국문, 기능 사실 문구만·경쟁 언급 금지, 유료 판매 전 통신판매 적용 여부 법 참모(X-KR-1과 같이).
 - 받아들이지 않음: 기존 앱 인수(사람 협상 필요 = 탈락 기준), 독자 SaaS 전환(수요는 Forms 부가기능 검색 안에 있음), '시장 근거 0'(설치 수 실측이 근거, 결제 의향은 판정 지표로 잼).
 - 판정: 조건부 승인. 점수 8 유지. 테스트 배포 10/3, Marketplace·Cloud 프로젝트는 테스트 3회 통과 뒤 결재함.
+
+## 2026-10-01 14:3x 회차 — 해외 시장조사원 4회차 (G12 관문 1 + 새 후보 6개)
+원자료: global/gumroad-2026-10-01-1440.txt(Gumroad 16개 검색어), 아래 각 칸의 화면 값(로그인 없음). 관문 1 결과는 g12/compare.md ⑤.
+
+### G12 관문 1 결과(요약)
+- CAPY 사이드바에 **Choice·Responses·Limit 표 + 꽉 찬 선택지 취소선 + "All changes saved" + Turn off + 라이선스 남은 일수가 이미 있다**(Marketplace 스크린샷 2026-09-25 갱신본·공식 영상 V8fBzage6ho 2:21~3:35). 없는 것은 첫 줄 '작동 중 ✓' 문구와 공개 폼 대조 ✓·✕뿐. → 관문 1 멈춤 조건 해당으로 본다, 다른 한 수는 예술가 재판정. 근거 g12/compare.md ⑤.
+
+### G15. 워드프레스 금융 계산기 플러그인(프리미엄 판매) — 작다
+- 수요 [api.wordpress.org 14:4x, 활성 설치 원값]: 'loan calculator' 104개 — Loan Calculator WP 2,000·Responsive Mortgage Calculator 7,000·Cost Calculator Builder 20,000. 'mortgage calculator' 98개, 상위 단독 4,000·3,000·1,000. 'retirement calculator' 14개, 단독 최대 200. 'calculator' 949개지만 1~4위는 폼 빌더(WPForms Lite 5,000,000·Forminator 600,000).
+- 돈 [stylemixthemes.com/cost-calculator-plugin/pricing 14:4x]: Cost Calculator Builder Pro 1사이트 연 $59·평생 $149 / 10사이트 $119·$299 / 무제한 $299·$749(정가 표기 $89~$1129 옆 할인가).
+- 경쟁 상위 3: Cost Calculator Builder(20K) · Responsive Mortgage Calculator(7K) · Mortgage Calculator(4K).
+- AI 단독: PHP 플러그인 코드·문서는 가능. 심사 원문 "anywhere between 1 and 10 days … within 5 business days" [wordpress.org/plugins/developers/add].
+- 계정: wordpress.org 계정 + 유료판 판매처(Freemius 등, 확인 안 함) → 결재.
+- 판단: 단독 금융 계산기 플러그인은 수천 설치가 천장. 돈은 '계산기 빌더'(범용)에 있고 그건 폼 빌더 거인들과 겹친다. 하위.
+
+### G16. 크롬 확장 — 구글 시트·폼 작은 불편 하나 해결(ExtensionPay 구독)
+- 수요 [chromewebstore.google.com 상세 화면 14:4x, 사용자 원값]: 'google sheets' — Tabs on Top 30,000(4.5, 24평)·Dark Mode 10,000(**2.9**, 88평)·Downloader 10,000(3.2)·Focus Cell 6,000(5.0). 'google forms' — AI Form Builder 50,000(3.2)·Auto Filler 40,000(3.2)·Form Solver 20,000(2.7, 퀴즈 풀기 = 부정행위 도구라 제외). 'youtube summary' — NoteGPT 400,000(4.9, 8.5K평), 100,000급 2개(포화).
+- 돈 [extensionpay.com 14:4x]: "Developers have now made over $500,000 with ExtensionPay!"(누적, 전체 개발자 합) + 후기 1개 "pass $4,000 in annual subscriptions". → 확장 하나당 연 수천 달러 규모가 보이는 사례, 큰 돈 증거는 없음.
+- 경쟁 상위 3(시트 유틸): Tabs on Top · Google Sheets Dark Mode · Google Sheets Downloader.
+- AI 단독: 확장 코드는 가능. OAuth 없이 페이지 DOM만 만지면 G12의 구글 검증이 없다(장점). 심사 원문 "most extensions … within a few days, but it can take up to a few weeks" [developer.chrome.com/docs/webstore/review-process]. 등록비 "one-time registration fee"(금액은 문서 본문에 없음 → 확인 안 함).
+- 계정: 크롬 웹스토어 개발자 등록(결제 = 결재) + Stripe(ExtensionPay) 결재.
+- 하루 첫 판: 가능(평점 2.9 다크모드처럼 '평점 낮은 1만 명 확장'의 불만 하나를 고친 판).
+- 판단: G12의 쌍둥이(같은 사용자층, 검증 부담 없음). 돈 천장은 G12보다 낮다.
+
+### G17. 영어 트레이딩 저널 템플릿(노션·구글 시트) — 판매 증거 강함
+- 수요·돈 [Gumroad 14:4x, 평점 수 = 판매 하한]: 'trading journal' 361개 — Rosidssoy 노션 $5 **641평**, SOAMJENA 노션+엑셀 $29 **216평**, Enable $100 76평, Tom 무료 대시보드 978평. 'trading journal spreadsheet' 상위 유료 $20~$88(평 2개). 'forex journal' 94개.
+- 유입 [유튜브 검색 1쪽 14:4x, US]: "How To Make An Advanced Trading Journal (Notion Tutorial)" 420,258회(2년) · **Rosidssoy 본인 영상 246,834회(3년) → 위 641평 상품** · Ryan Trades 302,218 · Jumpstart Trading 시트 82,014 · SpreadsheetsHub 27,549(1년) · Trader Aeon 6,777(7개월). → G1과 같은 '유튜브 튜토리얼 → 설명란 → Gumroad' 구조, 판매 1위가 직접 증명.
+- 경쟁 상위 3: Rosidssoy · SOAMJENA · Enable.
+- AI 단독: 시트·노션 템플릿은 가능. 유튜브 튜토리얼 영상은 화면 녹화+AI 목소리 → 아래 G19 정책 위험 같이 받음.
+- 법: 기록 도구라 투자 권유 아님. 단 "make more profits" 같은 수익 약속 문구 금지(경쟁 영상 제목에 있음 — 우리는 안 씀). 파이어맵 계열 금융 권유 금지 원칙 그대로.
+- 계정: Gumroad(결재함 07:4x ② 그대로) + 영어 유튜브 채널(새로 = 결재).
+- 하루 첫 판: 가능(구글 시트 1장: 매매 기록 → 승률·평균 손익·R배수 자동).
+- 판단: 2위. G1(스페인어 재정 시트)과 같은 판매처·같은 구조라 G1 결재가 나면 같은 줄로 붙일 수 있다.
+
+### G18. 피그마 UI 키트·아이콘 — 탈락
+- [Gumroad 14:4x] 'figma ui kit' 1,427개: Untitled UI $129 **1,558평**, 아이콘 $59 470평 — 돈은 확실. 그러나 상위 2~5위가 전부 무료이고 1위는 디자이너 브랜드. 'framer template' 상위도 무료. 품질 = 디자이너 눈이 근거라 AI 단독 불리(G13 브러시와 같은 이유). 탈락.
+
+### G19. 영어권 대상 한국어 듣기·단어 채널(얼굴 없음) + TOPIK 단어 자료 — 우리만의 것이 있는 갈래
+- 수요 [유튜브 검색 1쪽 14:4x, US·영어]: 'korean vocabulary' 1쪽 8개 중 **7개가 한 채널 'Learn Korean with Hoya'**(구독 16만, 검색 결과 화면) — "600 Must-know Korean Words for Beginners" 118,242회(2년), "2-Hour Master Korean Sentence Patterns" 92,884(3개월), TOPIK 1·2 단어 50,822·43,066·36,134. 최신 영상 "One-minute Korean Speaking Practice #13" 4,067회(2026-09-27). 'learn korean for beginners' 상위는 거대 채널(KoreanClass101 11.2M·TTMIK 1.0M~1.9M)이지만 Daily Korean with Jaerim 2~6개월 전 영상 77K~315K → 새 채널도 뜬다.
+- 돈: 유튜브 광고(교육 RPM 확인 안 함). Gumroad 한국어 상품은 작다 — 'korean vocabulary' 70개·평 합 101, 'hangul worksheet' 9개, 상위 거의 무료 → **판매가 아니라 광고·유입 사업**.
+- 경쟁 상위 3: Learn Korean with Hoya · Talk To Me In Korean · Daily Korean with Jaerim.
+- 우리만 다른 것 후보(정하지 않음, 예술가 몫): 한국어 원어민이 검수한 예문·발음 — 경쟁 Hoya도 한국인 목소리라 '원어민'만으로는 차별 아님.
+- AI 단독: 대본·예문·자막·영상 조립 가능. **정책 위험: 유튜브 '진정성 없는 콘텐츠'(2025-07-15 이름 변경) — TTS·템플릿 대량 생산은 수익 불가.** [2차 출처: techcrunch 2025-07-09, socialmediatoday; YouTube 정책 원문 미열람 → 확인 안 함]. 단어 목록 읽기 영상은 정확히 '템플릿 반복' 모양이라 편마다 구성이 달라야 함.
+- 계정: 새 유튜브 채널(브랜드 계정 = 결재). 파이어맵 채널(@firemapkr)과 섞지 않는다.
+- 하루 첫 판: 가능(TOPIK I 단어 50개 듣기 1편 + 쇼츠 3편).
+- 판단: 1위. 해외 무대 + 한국어라는 우리 고유 재료 + 플랫폼 자체가 유입. 위험은 수익 정책 하나.
+
+### G20. LINE 크리에이터스 스탬프(일본, AI 생성) — 보류
+- [2차 출처 WebSearch 요약 14:4x]: 2025-06부터 AI 생성 스탬프에 'AI生成' 라벨, 제출 때 'AI 이미지 생성 도구 사용' 체크, 완전 자동 생성물은 심사 불리. [creator.line.me/ja/review_guideline WebFetch]: 심사 가이드라인 본문에 AI 문구 **없음** → 공식 확인 안 함.
+- 판매량·분배율: 확인 안 함(스토어 랭킹에 판매 수 없음). 일본어 문구 품질 검수자 없음.
+- 판단: 수요 근거 0이라 보류. 다음 회차에 랭킹 상위 AI 라벨 비율을 재면 다시 본다.
+
+### 이번 회차 점수(수요 근거 × 유입 자급 × AI 단독 × 첫 판 속도, 각 1~3)
+| 후보 | 수요 | 유입 자급 | AI 단독 | 첫 판 | 합 | 비고 |
+|---|---|---|---|---|---|---|
+| G19 한국어 듣기 채널(영어권) | 3 | 3 | 2 | 2 | **10** | 신규, 정책 위험 1개 |
+| G17 트레이딩 저널 템플릿 | 3 | 1 | 2 | 3 | **9** | 신규, G1과 같은 판매처 |
+| G16 시트·폼 크롬 확장 | 2 | 2 | 3 | 2 | 9 | 신규, G12 쌍둥이 |
+| G15 WP 금융 계산기 플러그인 | 1 | 2 | 3 | 2 | 8 | 신규, 천장 수천 설치 |
+| G18 피그마 키트 | 3 | 1 | 1 | 1 | 탈락 | 신규 |
+| G20 LINE 스탬프 | 확인 안 함 | 2 | 2 | 2 | 보류 | 신규 |
+| G12 Workspace 애드온 | — | — | — | — | 관문 1 멈춤 조건 | 다른 한 수 재판정 |
+**교훈:** 유튜브 검색 1쪽을 **한 채널이 7/8 차지**하면(Hoya) 그 주제는 수요는 있는데 공급자가 적다는 신호다. 판매 수가 없는 갈래(한국어)는 Gumroad가 아니라 광고로 돈다 — 판매처를 수요가 있는 곳에 맞춘다.

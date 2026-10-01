@@ -65,6 +65,12 @@ def gate(ep):
     if len(ans) < 5 or any(not str(v).strip() for v in ans.values()): bad.append('§5.2 판단 5문항 답 없음')
     for f in ('video', 'thumb'):
         if not os.path.exists(os.path.join(ep, m[f]) if not os.path.isabs(m[f]) else m[f]): bad.append(f'{f} 파일 없음')
+    # 목소리 '치익'(ㅅ·ㅊ 쉿소리) — 2026-10-01 사장님 "치익~ 하는 소리 너무 거슬린다". 렌더 뒤 video/deess.py 거친 파일만(RULES 4. 소리)
+    vp = os.path.join(ep, m['video']) if not os.path.isabs(m['video']) else m['video']
+    if os.path.exists(vp):
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'video')); import deess
+        r = deess.measure(vp)
+        if r and r['sib_vs_voiced_db'] > deess.LIMIT_DB: bad.append(f'쉿소리 {r["sib_vs_voiced_db"]}dB > {deess.LIMIT_DB}dB — py -3.12 work/video/deess.py <영상>')
     return m, bad
 
 def up(ep):

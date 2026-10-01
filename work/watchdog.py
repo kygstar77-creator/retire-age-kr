@@ -29,8 +29,11 @@ def late_min(kind):
     75분 고정이던 때: 카페는 하루 4편 상한이라 다섯 시간 간격이 정상인데도
     감시기가 두 시간만 비면 "회차를 놓쳤다"며 메우러 들었다. 그렇게 메운 네 편이
     새벽 세 시간 안에 다 나가 하루 상한을 새벽에 소진시켰다."""
+    # 2026-10-01: naverpost 에 GAP_MIN 이 없어져(gap_min() 함수로 바뀜) 늘 75분으로 떨어졌다.
+    # 카페 81분에 "빵꾸"로 판정해 메우러 갔다가 발행기가 144분 간격으로 거부 — 헛경보·헛메우기.
     import naverpost as _n
-    g = getattr(_n, 'GAP_MIN', {}).get(kind)
+    try: g = _n.gap_min(kind)
+    except Exception: g = getattr(_n, 'GAP_MIN', {}).get(kind)
     return LATE_MIN if g is None else g + 60
 STOCK_WANT = 3         # 매체별로 이만큼은 미리 써 둬야 회차가 안 밀린다
 
@@ -102,6 +105,13 @@ def main():
             capped[kind] = (n, cap)
             print(f'{kind} 오늘 {n}편 — 상한 {cap}편을 채웠다. 빵꾸로 보지 않고 메우지도 않는다.')
     rec['capped'] = {k: v[0] for k, v in capped.items()}
+    # 회의가 멈춘 매체(research/STOP_<종류>)는 빵꾸·재고로 알리지 않고 메우지도 않는다.
+    # 2026-10-01 09:56: 9/30 회의가 블로그를 멈췄는데 감시기가 "32.7시간 전 — 회차를 놓쳤다"·
+    # "대기 0개(목표 3)"로 경보를 띄웠다. 계기판(health.py)은 같은 날 같은 스위치를 읽게 고쳤다.
+    stopped = {k for k in ('blog', 'cafe') if os.path.exists(os.path.join(HERE, 'research', f'STOP_{k}'))}
+    for k in sorted(stopped):
+        rec['note'].append(f'{k} 정지 중(research/STOP_{k}) — 빵꾸·재고로 보지 않는다')
+        capped.setdefault(k, (0, 0))
 
     # 1) 언제 마지막으로 올라갔나 — 실제 네이버에서 잰다(우리 기록이 아니라)
     for kind in ('blog', 'cafe'):
@@ -123,7 +133,10 @@ def main():
         # 하루 상한 때문에 막힌 것은 '오늘만' 못 올리는 것이라 재고로 센다.
         # 2026-09-26 10:52 실측: 카페 묶음 3개가 전부 상한(4/4)으로 막혔는데
         # 재고 0으로 세어 "재고 부족" 거짓 경보가 났다. 실제로는 내일 올릴 3편이 있었다.
-        capblk = [x for x in mine if x['block'] and x['block'].startswith('하루 상한 도달')]
+        # 시각을 기다리는 묶음(코너 시각 전·오늘 블로그 시각 전)도 오늘 나갈 재고다(2026-10-01:
+        # 12시·20시 코너 카페 2편을 '막힘'으로 세어 재고 3을 1로 알렸다).
+        capblk = [x for x in mine if x['block'] and (x['block'].startswith('하루 상한 도달')
+                  or re.match(r'보류: (코너 시각 전|오늘 블로그 시각 전)', x['block']))]
         realblk = [x for x in mine if x['block'] and x not in capblk]
         n = len(mine) - len(realblk)
         blocked = len(realblk)
@@ -134,8 +147,8 @@ def main():
             why = '; '.join(sorted({x['block'] for x in realblk}))
             rec['alert'].append(f'{kind} 막힌 묶음 {blocked}개 — 올릴 수 없다({why}). 재고에서 뺐다')
         if capblk:
-            rec['note'].append(f'{kind} 묶음 {len(capblk)}개는 하루 상한으로 대기 — 내일 올린다(재고로 셈)')
-        if n < STOCK_WANT: rec['alert'].append(f'{kind} 대기 묶음 {n}개 (목표 {STOCK_WANT}) — 회차가 처음부터 쓰느라 밀린다')
+            rec['note'].append(f'{kind} 묶음 {len(capblk)}개는 상한·시각 대기 — 때가 되면 올린다(재고로 셈)')
+        if n < STOCK_WANT and kind not in stopped: rec['alert'].append(f'{kind} 대기 묶음 {n}개 (목표 {STOCK_WANT}) — 회차가 처음부터 쓰느라 밀린다')
 
     # 2-b) 로그인이 살아 있나. 2026-09-25: 쿠키가 만료됐는데 아무도 못 알려
     # 카페가 10시간, 어제는 블로그가 2시간 멈췄다. 사장님이 물어서야 알았다.

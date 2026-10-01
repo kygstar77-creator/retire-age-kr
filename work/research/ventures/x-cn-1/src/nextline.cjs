@@ -66,12 +66,20 @@
   }
 
   // 이미 접수한 사람용 보조 줄: 시험이 아직 안 지난 가장 가까운 회차
+  // beat-1st 10/2: 접수 취소 환불 구간(공식 표 '접수 취소 기간 및 취소시 환불안내')을 맨 앞에 — 100% 환불이 끝나는 시각을 놓치지 않게.
   function sub(F, now) {
     for (var i = 0; i < F.rounds.length; i++) {
       var r = F.rounds[i], ex = t(r.exam);
       if (ex + DAY <= now) continue;
       if (t(r.apply[0]) > now) return '';
       var parts = [];
+      if (r.refund100 && now < t(r.refund100[1])) {
+        var rr = rel(t(r.refund100[1]), now);
+        parts.push('접수 취소 시 100% 환불 ' + md(t(r.refund100[1])) + ' ' + hm(t(r.refund100[1])) + '까지' + (rr ? '(' + rr + ')' : ''));
+      } else if (r.refund50 && now < t(r.refund50[1])) {
+        parts.push('접수 취소 시 50% 환불 ' + (now < t(r.refund50[0]) ? md(t(r.refund50[0])) + ' ' + hm(t(r.refund50[0])) + ' ~ ' : '')
+          + md(t(r.refund50[1])) + ' ' + hm(t(r.refund50[1])) + (now < t(r.refund50[0]) ? '' : '까지'));
+      }
       if (t(r.ticket) > now) parts.push('수험표 출력 ' + md(t(r.ticket)) + ' ' + hm(t(r.ticket)) + '부터');
       parts.push('시험 ' + md(ex));
       return '제' + r.no + '회 접수했다면: ' + parts.join(' · ');

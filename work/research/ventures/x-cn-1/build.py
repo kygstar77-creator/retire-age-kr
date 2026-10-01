@@ -209,6 +209,13 @@ def build_hnk(F, verified_at, now):
 <dt>접수 취소 50% 환불</dt><dd>{span(r["refund50"])}</dd>
 </dl>
 </section>''')
+    # beat-1st 10/2: 지역별 접수 시각(공식 제80회 안내) — 표의 '10:00'이 모든 지역 시작이 아닐 수 있다. 확인 시각을 같이 적는다.
+    rn = F.get('region_note')
+    region = ''
+    if rn:
+        ck = datetime.datetime.fromisoformat(rn['checked_at'])
+        region = (f'<p class="note">{esc(rn["text"])} '
+                  f'<span class="nowrap">출처: <a href="{esc(rn["source_url"])}" rel="nofollow">공식 제80회 안내</a> · 공지사항 {ck.month}/{ck.day} {ck:%H:%M} 확인</span></p>')
     notes = ''.join(f'<li>{esc(n)}</li>' for n in F['notes_official'])
     read = datetime.datetime.fromisoformat(F['read_at'])
     ver = datetime.datetime.fromisoformat(verified_at) if verified_at else None
@@ -235,6 +242,7 @@ def build_hnk(F, verified_at, now):
 
 <h2>남은 회차 자세히</h2>
 {"".join(detail)}
+{region}
 
 <h2>공식 안내</h2>
 <ul class="notes">{notes}</ul>

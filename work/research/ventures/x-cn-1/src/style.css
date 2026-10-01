@@ -34,6 +34,8 @@ tr.past{color:var(--sub)}
 dl{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:0;font-size:var(--fs4)}
 dt{color:var(--sub)}
 dd{margin:0;font-variant-numeric:tabular-nums}
+.note{font-size:var(--fs4);color:var(--sub);margin:4px 0 0}
+.note a{color:var(--sub)}
 .notes{padding-left:20px;font-size:var(--fs4)}
 .notes li{margin:0 0 6px}
 .list a{display:inline-block;padding:12px 0}

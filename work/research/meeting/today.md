@@ -374,6 +374,7 @@
   - 완료: firemap-youtube-loop 07:25 — 대본·카피 심사(제미나이 lite·레드팀, GPT 안 함) **E-1 review.md(사후, 06:56 공개됨)**: 대본 6.6·제목 7.6(48시간 교체는 제목 2 'SK하이닉스 5배 오른 1년…' — 썸네일·첫 3초와 일치). **D-1 review.md**: 대본 5회 고침(레드팀 7.0→8.2, 제미나이 lite 5.6~7.8로 흔들림, 지금 평균 7.6 미달) · 제목 1번 8.4 통과. 경쟁 자막 4편 새로 받음(ytbreak, JvrkY 실패). second_opinion.py에 '대본' 역할·SO_NOLITE 추가.
 - [넘김] **firemap-video-producer** 16:05 D-1 (youtube-loop 07:25): ① script.md 바뀜 — 0~5장 녹음분 중 8문장 다시 녹음 + 6~9장(review.md '다시 녹음할 문장') ② 녹음 전 `SO_NOLITE=1 py -3.12 work/second_opinion.py work/research/longform/ep/D-1/review_in_script.md 대본` 한 번(flash) → 레드팀 8.2와 평균 8 이상이면 19:30 공개, 미달·429면 렌더·관문까지만 하고 공개 보류 + [순돌이 검토] ③ 제목 = titles.md 1위 '퇴직 후 건강보험료, 배당·이자 1만원 차이에 1년 54만원?'(8.4), 48시간 교체 1순위 3번 ④ 설명 = 쿠팡 두 줄(coupang.md) + ep/D-1/desc_head.md ⑤ 화면에 출처 꼬리표 3개 새로(시행령 44조·공단 안내문·시행령 26조의2·하한 법제처) — script.md (화면: …) 줄. 편집 재통과는 아래 요청.
 - [편집 검수 요청] D-1 script.md 바뀐 13문장(script.v1pre_review.md와 diff) 트랙:C · 담당 **firemap-editor** · 시한 15:30 · 근거 ep/D-1/review.md — 숫자 바꾸지 말 것(scriptnum 0 누락), 출처는 화면 꼬리표로 옮긴 것이라 말에 조문 번호 되살리지 말 것.
+  - 완료: firemap-editor 07:49 — 편집 통과(script.md.edit.json 갱신). 13문장 중 2곳 고침(45행 '규칙에 단서'→'여기에 단서', 119행 '넣어…넣은' 겹말). 둘 다 이미 다시 녹음할 13문장 안이라 **video-producer 녹음 분량 그대로**. 숫자·조문 그대로.
 - [요청] **firemap-visual-designer** D-1 썸네일 d1h '건보료 3배' → **'약 3배'**(본문 2.98배, 레드팀) · 시한 17:00 · 근거 ep/D-1/review.md.
 
 ## firemap-behavior (10/2 06:4x) — 쿠팡 링크 실물 판정 끝
@@ -405,6 +406,8 @@
       - 정정: plans/sonpum.md 1장 '하락률 중앙값 7.5%'는 **+7.5%(상승)** — 377쌍 중 235쌍이 2021년 4분기 최고가보다 올랐다. peakdrop.py 출력에 부호를 붙였다. firemap-planner·firemap-youtube-loop(10/3 롱폼) 참고.
     - [편집 검수 요청] B10 카페 첫 글 · 담당 **firemap-editor** · 파일 work/research/b10cafe1002/pkg · 공개 예정 10/2 14:10 (통과 기한 11:10) · 표 숫자 바꾸지 말 것, 통과하면 hold.txt 지움
       - 착수: firemap-editor 07:41
+      - 완료: firemap-editor 07:49 — 편집 통과(b10cafe1002/pkg.edit.json), aitell 5.4→0.0, '~요' 60→43%. c05 "전세가율 높은 구와 하락 구가 일치"는 과장(노원 8위)이라 "노원·도봉·금천은 전세가율도 8위·2위·1위"로 맞춤(undervalue_out 대조). **hold.txt 지움.** 원본 *.edorig.
+  - 완료: firemap-editor 07:49 — 편집 통과(e1table1002/pkg.edit.json, aitell pass). 표 숫자 그대로, 고친 곳 4(c00 "숫자는 전부 공시"→"실적 숫자는 전부 공시" — 주가는 나스닥·네이버 시세라 사실 맞춤, 질문 한 줄·~죠). **hold.txt 지움 → firemap-write 다음 슬롯 발행 가능.** 제미나이 429로 반론 못 받음.
   - [시안 요청] B10 히트맵·표 이미지·제목 트랙:B · 담당 firemap-visual-designer(히트맵 기준일 도장)·firemap-copywriter(제목)·firemap-growth(utm b10·판정 10/9) · 시한 09:54 · 근거 plans/sonpum.md
     - 완료(growth utm): firemap-growth 07:46 — 카페 `utm_source=cafe&utm_medium=post&utm_campaign=b10`, 쇼츠 `utm_source=shorts&utm_medium=desc&utm_campaign=b10`(sonpum.md의 yt_shorts를 규칙대로 고침). 판정 10/9 숫자는 growth가 냄.
     - 착수: firemap-copywriter 07:05 (절전 예외 — 시한 09:54가 내 12:40 회차보다 앞)
@@ -434,6 +437,7 @@
 
 ## [지시·긴급] 카페 글·새 사이트 '경쟁 1등과 나란히' 진단 (사장님 10/02 07:04: "카페 글 읽어 봐도 발전하려고 노력한 흔적이 없어, 새로 만든 사이트도 그렇고")
 - 카페: firemap-copywriter + firemap-editor + firemap-brand-director, 기한 오늘 14:00 — 우리 최근 카페 글 5편(firemap/184~189)을 같은 주제 네이버 카페·블로그 상위 1등 글과 나란히 놓고, 1등이 하는 것 중 우리가 안 하는 것 목록(구성·첫 화면·사진·표·말투·사례·댓글 유도·제목) → 다음 글부터 반영할 '카페 글 틀 v2'(형식 3개 이상, 같은 틀 반복 금지). 결과 work/research/cafe/benchmark-2026-10-02.md.
+  - 완료(편집자 몫): firemap-editor 07:49 — brand-director 비교표 밑에 '말투 숫자' 덧붙임: 우리 5편 '~요' 46~63%(1등 2~11%), 질문 3.8%(1등 9.6%), AI 티는 우리가 낮음. 틀 v2 말투 규칙 3줄. copywriter 12:40에 제목 칸 합칠 것.
   - 착수: firemap-brand-director 07:40 (절전 해제 07:36 뒤. 카페 5편 vs 1등 비교·틀 v2 초안을 내가 먼저 깔고 copywriter·editor는 각자 회차에 보강)
   - 완료(1판): firemap-brand-director 07:48 — 5쌍(185·186·187·188·189 vs 모바일 통합검색 1등 블로그) 비교·틀 v2 4형식(결론 숫자+표·한 사람 따라가기·질문 체크리스트·데이터 지도 순위). 1등이 하는데 우리가 안 하는 것: 소제목(1등 5/5, 우리 1/5)·길이(1,950~3,254자 vs 973~1,638자)·끝 FAQ·정리(4/5)·제목에 기준 조건·시점 숫자·사진 5~6장. **브랜드 위반 발견: 우리 제목 5개 전부 '~일까?' 의문형 — 가이드 ②·titlerule.md '명사로 끝냄'(조회 중앙값 1.3 vs 0.5)과 어긋남.** 우리가 앞서는 것: 첫 문단 결론 숫자·출처·계산기 연결·댓글 유도. 결과 cafe/benchmark-2026-10-02.md (f9b4527)
   - [지시] 카페 틀 v2 보강·확정 트랙:A · 담당 **firemap-copywriter**(제목 틀: 명사 끝+기준 조건·시점 숫자, 의문형 금지 근거 titlerule.md) + **firemap-editor**(편집 관문에 소제목 3~5개·끝 FAQ/정리·제목 명사 끝 3줄 추가) · 시한 오늘 14:00 · 근거 cafe/benchmark-2026-10-02.md '한계'(카페 1등 본문 2편 못 받음 → 로그인 브라우저로 divclub/48595·49994 본문 확인해 채울 것, 184 빠짐) · 다음 카페 발행분부터 적용 (brand-director 07:48)

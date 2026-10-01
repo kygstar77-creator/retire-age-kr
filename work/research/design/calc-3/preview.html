@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>calc-3 숫자 줄 시안</title>
+<link rel="stylesheet" href="../../../../src/ui/fm-ds.css">
+<style>
+/* 시안 전용 틀. 화면 안쪽은 fm-ds.css 부품(.ds-*)만 쓴다. 새 클래스는 .fm-gain 하나(구현 때 fm-ds.css로). */
+body{margin:0;background:#dfe3e8;font-family:var(--ds-font);display:flex;flex-wrap:wrap;gap:24px;padding:24px;align-items:flex-start}
+.ph{width:375px;height:812px;overflow:hidden;background:var(--ds-bg);position:relative;outline:1px solid #c5cad3}
+.ph h6{position:absolute;top:0;left:0;right:0;margin:0;padding:6px 16px;font-size:11px;background:#18191d;color:#fff;z-index:2}
+.top{height:56px;margin-top:26px;display:flex;align-items:center;padding:0 16px;font-weight:700;font-size:17px;color:var(--ds-ink)}
+.body{padding:0 16px;display:flex;flex-direction:column;gap:16px}
+.fold{position:absolute;left:0;right:0;top:812px}
+/* 숫자 줄: 결과 카드(StatHero) 안, 타일 아래 1px 선 뒤 한 줄. 주황 없음 — 주황은 바로 아래 버튼 하나 */
+.fm-gain{margin-top:var(--ds-sp-4);padding-top:var(--ds-sp-4);border-top:1px solid var(--ds-line)}
+.fm-gain__lead{display:block;font-size:var(--ds-fs-caption);font-weight:600;color:var(--ds-ink-2)}
+.fm-gain__line{display:block;margin-top:2px;font-size:var(--ds-fs-body);font-weight:700;color:var(--ds-ink);line-height:var(--ds-lh-tight)}
+.fm-gain__line .num{font-size:var(--ds-fs-title-3)}
+.cut{position:absolute;left:0;right:0;border-top:2px dashed #e5484d;font-size:10px;color:#e5484d;padding-left:4px}
+</style></head><body>
+
+<!-- A. 퇴직금 · 숫자 줄 있음(inputsIsReal 참, 차이 ≥1년) -->
+<div class="ph" id="A"><h6>A 퇴직금 · 저장된 입력 있음 · 차이 3년</h6>
+ <div class="top">퇴직금 계산기</div>
+ <div class="body">
+  <section class="ds-card ds-card--hero ds-hero">
+   <div class="ds-stat ds-stat--md"><span class="ds-stat__label">예상 퇴직금 · 세전</span><span class="ds-stat__value">27,123,287원</span></div>
+   <p class="ds-hero__sub">재직 <b class="num">1,096</b>일 · 약 3년</p>
+   <div class="ds-tiles ds-hero__tiles">
+    <div class="ds-tile"><div class="ds-stat ds-stat--sm ds-stat--center"><span class="ds-stat__label">재직일수</span><span class="ds-stat__value">1,096일</span></div></div>
+    <div class="ds-tile"><div class="ds-stat ds-stat--sm ds-stat--center"><span class="ds-stat__label">1일 평균임금</span><span class="ds-stat__value">98,901원</span></div></div>
+    <div class="ds-tile"><div class="ds-stat ds-stat--sm ds-stat--center"><span class="ds-stat__label">3개월 총일수</span><span class="ds-stat__value">91일</span></div></div>
+   </div>
+   <p class="fm-gain"><span class="fm-gain__lead">퇴직금 27,123,287원을 더하면</span><span class="fm-gain__line">파이어 나이가 <span class="num">3년</span> 앞당겨져요</span></p>
+  </section>
+  <div>
+   <button class="ds-btn ds-btn--primary ds-btn--lg" style="width:100%">이 돈이면 몇 살에 은퇴?</button>
+   <p class="ds-caption" style="margin:8px 0 0">퇴직금 27,123,287원을 현재 자산에 더해 파이어 나이를 계산해요</p>
+  </div>
+  <section class="ds-card"><div class="ds-sh"><span class="ds-sh__kicker">퇴직금 계산기</span><h3 class="ds-sh__title">입사일자 · 퇴직일자</h3></div></section>
+ </div>
+</div>
+
+<!-- B. 퇴직금 · 입력 없음(또는 차이 0년) → 숫자 줄 없음, 버튼만 -->
+<div class="ph" id="B"><h6>B 퇴직금 · 처음 온 사람(입력 없음) · 숫자 줄 없음</h6>
+ <div class="top">퇴직금 계산기</div>
+ <div class="body">
+  <section class="ds-card ds-card--hero ds-hero">
+   <div class="ds-stat ds-stat--md"><span class="ds-stat__label">예상 퇴직금 · 세전</span><span class="ds-stat__value">9,041,095원</span></div>
+   <p class="ds-hero__sub">재직 <b class="num">1,096</b>일 · 약 3년</p>
+   <div class="ds-tiles ds-hero__tiles">
+    <div class="ds-tile"><div class="ds-stat ds-stat--sm ds-stat--center"><span class="ds-stat__label">재직일수</span><span class="ds-stat__value">1,096일</span></div></div>
+    <div class="ds-tile"><div class="ds-stat ds-stat--sm ds-stat--center"><span class="ds-stat__label">1일 평균임금</span><span class="ds-stat__value">98,901원</span></div></div>
+    <div class="ds-tile"><div class="ds-stat ds-stat--sm ds-stat--center"><span class="ds-stat__label">3개월 총일수</span><span class="ds-stat__value">91일</span></div></div>
+   </div>
+  </section>
+  <div>
+   <button class="ds-btn ds-btn--primary ds-btn--lg" style="width:100%">이 돈이면 몇 살에 은퇴?</button>
+   <p class="ds-caption" style="margin:8px 0 0">퇴직금 9,041,095원을 현재 자산에 더해 파이어 나이를 계산해요</p>
+  </div>
+  <section class="ds-card"><div class="ds-sh"><span class="ds-sh__kicker">퇴직금 계산기</span><h3 class="ds-sh__title">입사일자 · 퇴직일자</h3></div></section>
+ </div>
+</div>
+
+<!-- C. 실업급여 · 숫자 줄 있음 -->
+<div class="ph" id="C"><h6>C 실업급여 · 저장된 입력 있음 · 차이 1년</h6>
+ <div class="top">실업급여 계산기</div>
+ <div class="body">
+  <section class="ds-card ds-card--hero ds-hero">
+   <div class="ds-stat ds-stat--md"><span class="ds-stat__label">예상 실업급여 총액 · 구직급여</span><span class="ds-stat__value">12,870,000원</span></div>
+   <p class="ds-hero__sub">고용보험법 제45조·제46조·제50조 · 2026-09-30 기준</p>
+   <div class="ds-tiles ds-hero__tiles">
+    <div class="ds-tile"><div class="ds-stat ds-stat--sm ds-stat--center"><span class="ds-stat__label">1일 구직급여액</span><span class="ds-stat__value">66,000원</span></div></div>
+    <div class="ds-tile"><div class="ds-stat ds-stat--sm ds-stat--center"><span class="ds-stat__label">소정급여일수</span><span class="ds-stat__value">195일</span></div></div>
+    <div class="ds-tile"><div class="ds-stat ds-stat--sm ds-stat--center"><span class="ds-stat__label">상한 · 하한</span><span class="ds-stat__value">상한 66,000원</span></div></div>
+   </div>
+   <p class="fm-gain"><span class="fm-gain__lead">실업급여 12,870,000원을 더하면</span><span class="fm-gain__line">파이어 나이가 <span class="num">1년</span> 앞당겨져요</span></p>
+  </section>
+  <div>
+   <button class="ds-btn ds-btn--primary ds-btn--lg" style="width:100%">이 돈이면 몇 살에 은퇴?</button>
+   <p class="ds-caption" style="margin:8px 0 0">실업급여 12,870,000원을 현재 자산에 더해 파이어 나이를 계산해요</p>
+  </div>
+  <section class="ds-card"><div class="ds-sh"><span class="ds-sh__kicker">실업급여 계산기</span><h3 class="ds-sh__title">이직일 · 나이</h3></div></section>
+ </div>
+</div>
+
+<!-- D. A의 다크 테마 -->
+<div class="ph" id="D" data-dark><h6>D 퇴직금 · 다크(html[data-theme=dark] 토큰)</h6>
+ <div class="top">퇴직금 계산기</div>
+ <div class="body">
+  <section class="ds-card ds-card--hero ds-hero">
+   <div class="ds-stat ds-stat--md"><span class="ds-stat__label">예상 퇴직금 · 세전</span><span class="ds-stat__value">27,123,287원</span></div>
+   <p class="ds-hero__sub">재직 <b class="num">1,096</b>일 · 약 3년</p>
+   <div class="ds-tiles ds-hero__tiles">
+    <div class="ds-tile"><div class="ds-stat ds-stat--sm ds-stat--center"><span class="ds-stat__label">재직일수</span><span class="ds-stat__value">1,096일</span></div></div>
+    <div class="ds-tile"><div class="ds-stat ds-stat--sm ds-stat--center"><span class="ds-stat__label">1일 평균임금</span><span class="ds-stat__value">98,901원</span></div></div>
+    <div class="ds-tile"><div class="ds-stat ds-stat--sm ds-stat--center"><span class="ds-stat__label">3개월 총일수</span><span class="ds-stat__value">91일</span></div></div>
+   </div>
+   <p class="fm-gain"><span class="fm-gain__lead">퇴직금 27,123,287원을 더하면</span><span class="fm-gain__line">파이어 나이가 <span class="num">3년</span> 앞당겨져요</span></p>
+  </section>
+  <div>
+   <button class="ds-btn ds-btn--primary ds-btn--lg" style="width:100%">이 돈이면 몇 살에 은퇴?</button>
+   <p class="ds-caption" style="margin:8px 0 0">퇴직금 27,123,287원을 현재 자산에 더해 파이어 나이를 계산해요</p>
+  </div>
+ </div>
+</div>
+<script>
+// D만 다크 토큰: fm-ds.css의 html[data-theme=dark] 값을 그 칸에만 복사
+(function(){var d=document.getElementById('D');var v={'--ds-bg':'#101114','--ds-surface':'#1b1c21','--ds-surface-2':'#26272e','--ds-line':'#30323a','--ds-ink':'#f2f3f5','--ds-ink-2':'#c3c6cd','--ds-ink-3':'#8b8f98','--ds-accent':'#ff7a33','--ds-accent-strong':'#ff8d52'};for(var k in v)d.style.setProperty(k,v[k]);d.style.color='#f2f3f5';})();
+</script>
+</body></html>

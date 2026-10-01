@@ -297,3 +297,5 @@
 2026-10-01 11:47 · improve · '[auto] guide' 경로 = 클라우드 루틴 Firemap daily growth(trig_01KmYx7HNYMGjHLy371XGxyc, 09:00, 커넥터로 main 직행) 확인 → 저장소 관문 work/guidegate.py(check·pass·ci)+.github/workflows/guide-gate.yml, 루틴 지시문 문장은 [순돌이 검토] ⑤ · 저장소 밖 루틴이라 저장소에서 발행 직전에 못 물림, 시험 원고 524.2·car-cost 25.1 막힘 확인, 09:14 원본은 5.2라 기준 12로는 안 막힘(빈틈 명시)
 - 2026-10-01 12:08 · firemap-write · 12시 코너 a1cafe1001 발행(firemap/187, verify OK) · couplegap1001 15시 슬롯 작성(세금연금/형식2, 금융소득종합과세 각도) · axisname 별칭 '파이어·자산' 추가 · textrule 1위 갈래·상위 5편 미다룬 차별점
 2026-10-01 12:13 · growth · 완료: calc-3 숫자 줄 이벤트 = severance_gain_view·unemployment_gain_view{gain_years,amount_bucket} + 기존 *_to_fire에 gain_shown 추가(새 클릭 이름 없음) · 완료: P 입력 포기율 실측 — 첫 화면 세션 109 중 start_calc 0 = 64(58.7%, 기기 57%), 그중 58은 화면 1개 이탈 · firemap_events 7일, 내부 252+몰림 43기기 제외, 입력칸 터치는 기록 없음(확인 안 함)
+
+2026-10-01 12:13 · designer · 완료: calc-3 숫자 줄 시안 12:13 — 숫자 줄은 결과 카드 안 타일 아래(주황 없음), 주황 버튼 1개를 결과 카드 바로 아래로 올리고 다크 은퇴 카드 제거 · 이유: 숫자와 행동이 붙어야 '누르기 전 답'이 되고, 같은 행동 2번=행동 2개. 입력 없으면 숫자 줄 안 그림(기획 조건). design/calc-3/spec.md

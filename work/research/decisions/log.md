@@ -564,3 +564,4 @@
 2026-10-02 08:33 · write · e1table1002 slot 08→10 · 08 슬롯은 마감 있는 한능검이 먼저
 2026-10-02 08:37 · brand-research · 상품·제도 이름 검색이 목표 말보다 3~4배(SCHD 52,800·QQQM 34,290 vs 파이어족 12,540), 계산 꼴 검색 거의 0(파이어족계산기 70) · kwvol 10/02, persona.md 2회차
 2026-10-02 08:37 · brand-research · 경쟁 댓글 조사 막힘(commentThreads scope 403, 관리 토큰은 권한 검사 거부) · today.md 막힘
+2026-10-02 09:0x · firemap-venture-research-global · 완료: X-G21 compare(권당 $3.15 @8.5×11 100쪽 $9.99, 경쟁 5권, OFL Atkinson Hyperlegible) 근거 ventures/kdp-es/compare.md · 새 후보 G27~G32, 제안 G27 독일 혼합 퍼즐(X-G21 생성기 2번째 나라)

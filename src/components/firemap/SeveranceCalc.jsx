@@ -59,7 +59,7 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
   return (
     <>
       <StatHero
-        tone="light" size="md"
+        tone="light" size="md" className="ds-hero--compact-tiles"
         label="예상 퇴직금 · 세전"
         value={r ? exact(r.amount) : '—'}
         sub={!ok ? '퇴직일자가 입사일자보다 뒤여야 해요'

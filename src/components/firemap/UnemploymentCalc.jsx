@@ -40,7 +40,7 @@ export default function UnemploymentCalc({ inputs, onApply, onMove }) {
   return (
     <>
       <StatHero
-        tone="light" size="md"
+        tone="light" size="md" className="ds-hero--compact-tiles"
         label="예상 실업급여 총액 · 구직급여"
         value={ok ? exact(r.total) : '—'}
         sub={ok ? `고용보험법 제45조·제46조·제50조 · ${BASIS_DATE} 기준` : '2026년 1월 1일 ~ 12월 31일에 이직한 경우만 계산해요'}

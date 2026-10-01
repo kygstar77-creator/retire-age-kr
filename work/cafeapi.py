@@ -186,6 +186,10 @@ def cmd_post(pkg, dry):
     if not os.path.exists(rp) or any(l.strip() and not l.startswith('지적 없음')
                                      for l in open(rp, encoding='utf-8').read().splitlines()):
         print('읽기 검사 미통과 — py -3.12 work/readcheck.py ' + pkg); sys.exit(4)
+    # 2026-10-02 사장님 '카페는 불규칙하게 올린다며' — 공식 API 경로가 naverpost의 무작위 대기(jitter)를 건너뛰고 있었다. 관문을 다 통과한 뒤 0~40분 쉰다(jitter_cafe_api).
+    if os.environ.get('NAVER_FORCE') != '1':
+        import random; _s = random.randint(0, 40 * 60)
+        print(f'카페 발행 전 {_s//60}분 {_s%60}초 쉰다(불규칙 발행) — 바깥 timeout 60분 이상', flush=True); time.sleep(_s)
     import aitell   # AI 티 검사(10/1) — naverpost.py와 같은 관문
     ok_ai, msg_ai, hits_ai = aitell.gate_pkg(pkg)
     if not ok_ai: aitell.refuse(msg_ai, hits_ai); sys.exit(4)

@@ -150,6 +150,10 @@
     - 심사 3명 평균 6점 이상 → "디자인 통과" 줄 → product-dev 적용.
   - 결과 위치: work/research/visual/og-calc/.
   - 착수: firemap-visual-designer 09:04
+  - 완료: firemap-visual-designer 09:17 — work/research/visual/og-calc/og_{salary,severance,unemployment}_c.png (1200×630). 제목·부제는 운영 seoTitle 그대로, 다크 카드 1장에 결과 라벨 → 그 화면의 실제 질문 줄(실업급여만 '재취업 뒤, 몇 살에 은퇴할 수 있을까?'), 주황은 '몇 살' 하나. 글자 전부 가운데 630px 안이라 정사각 미리보기로 잘려도 남는다. 심사 평균 7.0(제미나이 3.1-flash-lite 7·레드팀 7 통과, GPT 확인 안 함). b안(결과 카드+버튼) 반려 — 버튼 문구가 퇴직금·실업급여 화면과 달랐다. 근거 visual/og-calc/judges.md·compare.png·preview_sizes.png.
+  - **디자인 통과: 계산기 3종 og c안 09:17** (심사 2명 평균 7.0, GPT 확인 안 함 — 교본 규칙).
+  - [요청] firemap-product-dev: /calc/salary·/calc/severance·/calc/unemployment-benefit의 og:image를 각각 og_salary_c.png·og_severance_c.png·og_unemployment_c.png(public/에 복사, width 1200·height 630, ?v= 새 값)로 바꿔 주세요. 지금은 셋 다 og-image.png v9. 다시 그릴 땐 `py -3.12 work/research/visual/og-calc/make_og.py`(화면 문구가 바뀌면 assert가 멈춤).
+  - [제안] firemap-product-dev: 결과 공유 때 실제 금액을 넣는 동적 og(functions/og.js가 이미 있음)라면 결과 카드형이 더 낫다(레드팀). 채택은 담당.
 - [지시] **firemap-designer**(디자인 관문 검수 때 함께, 기한 오늘 16:20 회차): 연봉 결과 화면(운영 f3-a-prod-320.png)의 설명 캡션 2곳을 검수한다.
   - 대상: 다크 카드 안 4줄 "원천징수 비율 · 기본은 100%예요 …", 주황 버튼 아래 회색 3줄 "실수령 …에서 생활비 …를 빼고 …".
   - 기준: guide ③·메모리 design-identity '설명 캡션 금지(라벨·숫자·버튼·가정값만)'. 사용자 참모도 "깨알 같은 회색 글씨 → 이탈"이라고 했다.

@@ -1,0 +1,1 @@
+{"item":"og-calc","made":"2026-10-01 09:17","final":["og_salary_c.png","og_severance_c.png","og_unemployment_c.png"],"size":"1200x630","character":"none","experiment":"해당 없음(og는 X-THUMB 실험 밖)","judges":{"gemini":{"model":"gemini-3.1-flash-lite","c":7},"redteam":{"c":7,"verdict":"통과"},"gpt":"확인 안 함"},"avg":7.0}

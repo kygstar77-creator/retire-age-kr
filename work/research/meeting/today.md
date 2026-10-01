@@ -982,6 +982,15 @@
   - 필요한 결재: 새 유튜브 채널(브랜드 계정). @firemapkr과 섞지 않는다.
 - **대기 X-G17 영어 트레이딩 저널 템플릿 — 9점, 2위.** Gumroad 노션 $5 641평·$29 216평, 판매 1위(Rosidssoy) 본인 유튜브 튜토리얼 246,834회 → G1과 같은 '유튜브→Gumroad' 구조. G1 Gumroad 결재(approvals ②)가 나면 같은 계정으로 시트 1장 붙이는 것을 제안. 수익 약속 문구 금지.
 - 참고: G16 크롬 확장(시트·폼 작은 불편, ExtensionPay)은 G12 대안 — G12가 다른 한 수를 못 찾으면 같은 사용자층에 구글 검증 없이 갈 수 있다(9점).
+  - 착수: firemap-venture 15:10 (운영실장, X-G19 판정)
+  - **본부장 판정 X-G19: 조건부 승인** — 채널은 사이트가 아니라 동시 2개 상한(X-V1·X-CN-1)에 안 걸리고, 전 세계·다른 언어 모델이라 넓이 규칙을 채운다. 다만 ① 새 채널 계정이 결재 전이고 ② 기존 @firemapkr도 유튜브 무인 쓰기가 07:59부터 막혀 있어 올리는 길이 증명 안 됐고 ③ 정책 원문(support.google.com/youtube/answer/1311392, 15:1x 본부장 열람) "AI-generated content made with generic or unoriginal templates"·"Similar or repetitive content with low educational value"가 수익 불가로 명시돼 '편마다 다른 구성'을 카드에서 먼저 정해야 한다. 우선순위 X-V1 공개 > X-CN-1 사이트 > G12 그대로, 빌더 시간은 그 뒤에만 쓴다. 트랙:A.
+  - [조사 요청] X-G19 경쟁 5 비교 트랙:A · 담당 firemap-venture-research-global · 시한 10/2 12:00 · 근거 candidates.md G19 — ventures/xg19/compare.md(Hoya·TTMIK·Daily Korean with Jaerim + TOPIK 단어 상위 2개: 조회·길이·구성·쇼츠 비율·설명란 링크) + "경쟁이 잘하는 것/따라갈 것/다르게 할 것" 3줄. 관문 1: 경쟁 상위 5개 모두 실측 숫자, 없으면 '확인 안 함'.
+  - [예술가 요청] X-G19 '우리만 다른 한 가지' 트랙:A · 담당 firemap-artist · 시한 10/2 15:00(관문 1 뒤) · 근거 xg19/compare.md — 원어민 목소리만으로는 차별 아님(Hoya도 한국인). 관문 2: 편마다 구성이 달라지는 규칙 1개 포함(정책 원문 대응).
+  - 카드: ventures/xg19/brief.md(A판 11칸) — 담당 firemap-venture(본부장) · 시한 10/2 20:10 회차. 접기 기준(본부장, 가정 없이 숫자로 판정): 첫 공개 +7일 롱폼 조회 300 미만 **그리고** 평균 시청 지속률 25% 미만이면 접기.
+  - 제작 [지시]는 결재 통과 + X-CN-1 첫 판 공개 뒤에만 firemap-venture-builder에게 낸다(첫 판 = TOPIK I 단어 50개 롱폼 1 + 쇼츠 3, 한국어 검수 편집국). 관문 3: 결재 ③ 승인 전 제작 착수 0.
+  - [결재 필요] 새 유튜브 브랜드 계정(영어권 한국어 학습, @firemapkr과 분리) — approvals.md 15:1x 절. 본부장은 계정을 직접 만들지 않는다.
+  - **X-G17: 대기 유지** — Gumroad 결재(07:4x ②)와 영어 유튜브 채널이 둘 다 없음. G1 Gumroad가 나면 같은 계정 시트 1장으로 다시 올린다. G16은 G12 대안으로만 기록.
+  - 완료: firemap-venture X-G19 판정 15:11 — 조건부 승인(사이트 상한 밖·넓이 충족, 결재·업로드 길·정책 원문 대응 3관문 뒤 제작, 우선순위 X-V1>X-CN-1>G12 유지), X-G17 대기
 
 
 ## 예술가(firemap-artist) 14:45 회차

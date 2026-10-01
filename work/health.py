@@ -129,8 +129,16 @@ def main():
         due = sum(1 for x in slots if x < h)
         return min(due, cap) if cap else due
     blog_due = 지금까지목표(BLOG_SLOTS, 목표('blog', 18))
+    # 정지 파일(work/research/STOP_<종류>)이 있으면 그 매체는 목표 0이다(2026-10-01 loop).
+    # 9/30 21:5x 전체 회의가 STOP_blog로 블로그를 멈췄는데, 계기판은 블로그 편수·대기 묶음·빵꾸를
+    # 그대로 재 10/1 아침 일감표 1~3번을 '블로그 올려라'가 차지했다. 회의 결정과 계기판이 거꾸로 섰다.
+    STOPPED = {k for k in ('blog', 'cafe') if os.path.exists(os.path.join(HERE, 'research', f'STOP_{k}'))}
+    if 'blog' in STOPPED: blog_due = 0
+    # 카페는 08~22시·3시간 이상 간격·하루 5편(9/30 회의, firemap-write 지시). 24시간 기준으로 세면
+    # 10/1 09:50에 '1/5 부족'이 떠 규정을 지킨 발행을 재촉했다. 지나간 슬롯만 센다.
+    CAFE_SLOTS = [8, 11, 14, 17, 20]
     M += [('발행', '오늘 블로그 편수', nb, blog_due, 3, f'지금 시각까지 나갔어야 할 {blog_due}편 기준(새벽 2~7시는 쉼) · 모자라면 회차 note에서 0편 사유 확인 → 대기 묶음·가드·시간초과'),
-          ('발행', '오늘 카페 편수', nc, 지금까지목표(list(range(24)), 목표('cafe', 24)), 3, '지금 시각까지 나갔어야 할 편수 기준(카페는 24시간) · 위와 같음'),
+          ('발행', '오늘 카페 편수', nc, 0 if 'cafe' in STOPPED else 지금까지목표(CAFE_SLOTS, 목표('cafe', 24)), 3, '지금 시각까지 나갔어야 할 편수 기준(카페는 08~22시 3시간 간격) · 위와 같음'),
           ('발행', '0편 회차 수', zero, 0, 3, how_zero)]
     pend = sh(os.path.join(HERE, 'naverpost.py'), 'pending')
     # 보류 묶음은 발행기가 건너뛴다 — 대기로 세면 쓸 묶음 0개인데 '블로그 1'로 보인다(2026-09-28 확인).
@@ -143,7 +151,7 @@ def main():
                 n += 0 if held else 1
         return n
     pb, pc = _ready('blog'), _ready('cafe')
-    M += [('발행', '대기 묶음 블로그', pb, 3, 3, 'firemap-improve B/F 회차가 완성 묶음을 만든다'),
+    M += [('발행', '대기 묶음 블로그', pb, 0 if 'blog' in STOPPED else 3, 3, 'firemap-improve B/F 회차가 완성 묶음을 만든다'),
           ('발행', '대기 묶음 카페', pc, 3, 3, '위와 같음')]
 
     # 빵꾸 감시 — 2026-09-23 오후 내내 0편이었는데 아무도 몰랐다(예약이 오전까지만 있었다).
@@ -154,6 +162,9 @@ def main():
         # 여기서는 안 봐서, 새벽마다 "블로그 빵꾸"가 일감표 1순위로 올라왔다. 쉬는 걸 빵꾸로 세지 않는다.
         _quiet = 2 <= time.localtime().tm_hour < 8
         for kind, ko in (('blog', '블로그'), ('cafe', '카페')):
+            if kind in STOPPED:
+                M.append(('발행', f'{ko} 발행 빵꾸', 0, 0, 3, f'STOP_{kind} 정지 중 — 안 올리는 게 회의 결정이다'))
+                continue
             if _quiet and kind == 'blog':
                 M.append(('발행', f'{ko} 발행 빵꾸', 0, 0, 3, '새벽 2~7시는 블로그를 쉬는 시간대라 빵꾸로 세지 않는다'))
                 continue

@@ -502,3 +502,4 @@
 2026-10-02 01:55 · firemap-video-producer · A-1(SCOI0DP-l-s, 공개 중)은 교체 안 함 · 공개 영상 교체는 조회·댓글이 사라지고 PD 규칙상 비공개 전환 금지 — 문장 wav는 고쳐 둠(사장님이 원하면 재렌더 25분)
 2026-10-02 02:30 · firemap-video-producer · E-1 2차 교체(e1_v3_ds.mp4 → -7SLlI1cea8 대신)는 직접 하지 않고 [순돌이 검토]로 넘김 · PD 규칙 '이미 올린 영상 비공개 전환 금지', 기한 10/3 19:30까지 여유
 2026-10-02 02:30 · firemap-video-producer · clickscan fix 첫 판이 문장 wav를 무음으로 만든 사고 → 복구·에너지 98% 안전장치·무음 관문 · 업로드 전 발견
+2026-10-02 06:12 · firemap-write · 완료: firemap-write 06:12 — work/research/xcn1_cafe1002/pkg/c00.txt (X-CN-1 한능검 취소좌석 카페 원고, 편집 검수 요청 12:30) · 결승선 T1 원고 마감 08:00 안

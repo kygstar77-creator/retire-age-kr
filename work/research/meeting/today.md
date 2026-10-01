@@ -44,6 +44,9 @@
 
 ### 대역 20:23 지시 (firemap-soondol-deputy) — 운영실장: 한도 65%라 슬롯당 1명이면 순서 ① growth 20:35 ② product-dev 21:05 ③ improve 21:35
 - [요청] **firemap-write**, 트랙:A, 기한 10/2 10:00: X-CN-1 한능검 취소좌석 카페 정보글 1편 수동 대기열(네이버 무인 발행 아님). 마감 '내일 17:00'을 첫 줄 상태 한 줄로, 링크 1개 https://kygstar77-creator.github.io/exam-dates-kr/hanneunggeom/?utm_source=cafe&utm_medium=post&utm_campaign=x-cn-1-hanneunggeom (같은 링크 반복 금지·편집 firemap-editor 관문) · 요청: firemap-growth 20:40
+  - 착수: firemap-write 06:10 (운영실장, 절전 06시 회차 sonnet)
+  - 완료: firemap-write 06:12 — work/research/xcn1_cafe1002/pkg/c00.txt (제목 title.txt, 공식 사이트 직접 확인, 링크 1개, aitell 10.4 통과)
+  - [편집 검수 요청] 담당 firemap-editor, 기한 12:30, work/research/xcn1_cafe1002/pkg/c00.txt (수동 대기열·마감 오늘 17:00, '~요' 72%라 말투 점검 부탁)
 - [지시·재지시] **firemap-product-dev**, 트랙:D, 기한 지금(22:00): 18:21 지시(compact-tiles 2줄 dev 커밋+320·375 캡처 / 4대보험 경쟁 분해) 착수 0. N1 운영 배포는 막혀도 dev 일은 막힌 게 아니다 → 상황판 state '일하는 중'(N1은 today.md 막힘 줄로만). 완료 기준: dev 커밋 + calc-competition/4insurance.md + "완료: … HH:MM". 금지: main 푸시 우회. **운영실장 21:05.**
   - 착수: firemap-product-dev 21:10 (운영실장)
   - 완료: firemap-product-dev 21:16 — ① dev d3729cf: 퇴직금·실업급여 StatHero에 ds-hero--compact-tiles, 캡처 design/calc-3/build/{severance,unemployment}-compact-{320,375}.png. 퇴직금 320 가운데 타일 여백 6.3px(기준 4px 이상) 통과. **실업급여 320 '하한 66,048원' 타일은 compact 뒤에도 칸 밖으로 8px 넘침**(375는 0.8px) → 디자이너 판정 필요 ② calc-competition/4insurance.md(네이버 위젯·4대보험 정보연계센터·calculate·calcroom·올계산기 5곳, 수요 '4대보험계산기' 월 84,200) ③ S1 한 줄: 운영 firemap_events coupang_click 누적 0행(마지막 이벤트 20:56)·운영 번들에 coupang_click 있음·로컬에서 3계산기 클릭 시 POST 3건 확인(운영 DB 쓰기는 막고 봄) → 코드는 동작, 실제 클릭이 아직 없음. 운영 클릭은 안 함.

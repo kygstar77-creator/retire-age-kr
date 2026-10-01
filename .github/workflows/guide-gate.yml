@@ -1,0 +1,29 @@
+name: Guide AI-tell gate
+
+# 자동 가이드('[auto] guide', 클라우드 루틴 Firemap daily growth)가 main에 바로 올라와도
+# 새로 생긴·바뀐 public/guide/*.html의 AI 티 점수를 잰다. 기준(work/aitell.py LIMIT)을 넘고
+# 편집 통과 표시(work/guide_editor_ok.json)가 없으면 빨간 X + editor-web 요청 줄을 로그에 남긴다.
+# 배포(pages.yml·Cloudflare)를 막지는 않는다 — 발행 직전 관문은 루틴이 커밋 전에 부르는 guidegate.py check.
+on:
+  push:
+    branches: [main, dev]
+    paths: ['public/guide/**']
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: AI-tell check on changed guides
+        run: |
+          BASE="${{ github.event.before }}"
+          if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ]; then BASE="${{ github.sha }}~1"; fi
+          python work/guidegate.py ci "$BASE" "${{ github.sha }}"

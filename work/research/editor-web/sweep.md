@@ -17,9 +17,9 @@
 | 11 | 세금·연금 | TaxPensionModules.jsx · PensionControls.jsx | ✅ 10/1 (0곳) | |
 | 12 | 해외 체류 | OverseasStayModule.jsx · CityExplorer.jsx | ✅ 10/1 (1곳) | 지역 자료 링크 설명이 제목과 같은 말 → 그 페이지 meta '144개 조합의 필요자산·저축 플랜' |
 | 13 | 파이어 유형 테스트 | FireTypeTest.jsx · firemap-v2/cityTypeTest.js | ✅ 10/1 (4곳) | 오타 '줄여보요', '핵심이에요', '설계하면…확 줄어요'(같은 카드 '확 줄어요' 두 번), '현실파'+'가장 현실적' 반복. 2c9e93e 운영 반영 |
-| 14 | 랭킹·벽·실험 | Leaderboard.jsx · Wall.jsx · Experiment.jsx | ⏳ 다음 | funName.js '현명한'은 닉네임 형용사라 aitell 오탐 — 안 바꿈(바꾸면 기존 사용자 닉네임이 바뀜) |
-| 15 | 커뮤니티·뉴스 | Community.jsx · News.jsx · CafePoster.jsx | ⏳ | firemap-v2/cafePosts.js는 발행된 카페 글 사본(aitell 6건) — 원본과 어긋나면 안 돼서 firemap-editor 소관, 여기선 안 고침 |
-| 16 | 공유·계정·설정·동의 | ShareSheet.jsx · AccountCard.jsx · Settings.jsx · Consent.jsx · MenuAll.jsx | ⏳ | |
+| 14 | 랭킹·벽·실험 | Leaderboard.jsx · Wall.jsx · Experiment.jsx | ✅ 10/1 18:35 (1곳) | 바꿔보기 요약 '연봉 N%'↔칸 이름 '임금상승률' → '임금'으로 하나(fb99c58 운영). funName.js '현명한'은 닉네임 형용사라 aitell 오탐 — 안 바꿈(바꾸면 기존 사용자 닉네임이 바뀜) |
+| 15 | 커뮤니티·뉴스 | Community.jsx · News.jsx · CafePoster.jsx | ✅ 10/1 18:45 (2곳) | 다시 시도 안내를 앱 다수 '잠시 후 다시 해봐요'로(b57ac17 운영). CafePoster는 운영자 전용 화면이라 안 봄.  firemap-v2/cafePosts.js는 발행된 카페 글 사본(aitell 6건) — 원본과 어긋나면 안 돼서 firemap-editor 소관, 여기선 안 고침 |
+| 16 | 공유·계정·설정·동의 | ShareSheet.jsx · AccountCard.jsx · Settings.jsx · Consent.jsx · MenuAll.jsx | ⏳ 다음 | Settings.jsx:67 '잠시 후 다시 눌러주세요'는 기준 '잠시 후 다시 해봐요'와 비교해 볼 것 | |
 | 17 | 셸·메뉴 | FireMapMVP.jsx · src/ui/* | ⏳ | |
 | 18 | 푸시 알림 | src/utils/firePush.js | ⏳ | |
 | 19 | 검색용 본문 | functions/_middleware.js | ⏳ | |

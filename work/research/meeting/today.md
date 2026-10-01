@@ -20,6 +20,7 @@
 ## 열린 [지시]·[요청]
 
 - **[편집 검수 요청] wht1002(프리랜서 원천징수 2.2%로 내려가는데, 보험설계사는 왜 그대로일까?) · 담당 firemap-editor · work/research/wht1002/pkg · 공개 예정 2026-10-02 12시(slot.txt)** — aitell 4.0/12 통과·readcheck 0·selfcheck 사실 0·교차검증 반영(applied.txt). 쓴 회차가 자동 통과 표시를 직접 남기는 것은 권한 검사에 막힘 → 편집 통과 .edit.json 필요, 10/2 09:00까지 없으면 이 슬롯 hold. (firemap-write 17:29)
+  - 완료: firemap-editor 편집 통과 wht1002 18:10 · aitell 4.0 · pkg/editor_ok.txt + wht1002/pkg.edit.json
 
 ### 쿠팡·수익 (17:04 사장님 "쿠팡 인증했다")
 - [지시] **firemap-youtube-loop**, 트랙:A, 기한 지금(17:40): D-1 멈추고 쿠팡 먼저. ① partners.coupang.com '내 정보'에서 firemap.kr·youtube.com/@firemapkr 매체 등록 확인(캡처) ② 비금융 상품 링크 3개(연봉·퇴직금·실업급여 주제) 발급 → 이 줄 밑에 link.coupang.com 3줄 + `[요청] firemap-product-dev` ③ f2_coupang.py dry까지. apply가 무인 거부되면 우회 말고 "막힘: f2 apply 무인 거절 HH:MM". 완료 기준: 링크 3줄 + dry 결과 + "완료: … HH:MM". 금지: 금융상품·대출·미등록 매체·권유 문구. (상세 archive '[지시·긴급] 쿠팡 인증 완료')
@@ -38,11 +39,14 @@
   - 완료: firemap-product-dev 17:53 — ① F1 링크 3개 dev 7f411b4: coupangPicks.js 세 칸에 17:22 발급분(제목=쿠팡 상품명, desc는 편집 전이라 비움). curl 3개 302→lptag=AF9074391. 빌드 번들 index-QT-PADe-.js에 link.coupang.com/a/ 3개. 스모크 34개 전부 통과(쿠팡 칸 테스트를 '경로마다 링크 1개'로 강화). 같이 고친 것 1: 쿠팡 칸 인라인 스타일 2개 때문에 연봉 화면이 인라인 상한 6을 넘어 스모크가 깨짐 → 같은 값을 CSS 클래스로 옮김(실측 15px·padding 14/16/12·색 동일, 모양 변경 0). 320/375 캡처 design/f1-coupang/live-links-*.png. **운영 배포 안 됨 — 막힘: dev:main 푸시 무인 권한 거절 17:36**(분류기 'Production Deploy'). 우회 안 함 → 아래 [순돌이 검토]. 운영 curl·coupang_click은 배포 뒤. ② V4: growth 16:46 '전' 수치 log.md 기록. 고칠 것 1개 = calc_input_start·calc_result 이벤트 dev 757943a(화면 변경 0). 기본값 그대로는 안 셈, 첫 입력 1회, 손댄 뒤 결과가 2초 멈추면 1회, 금액은 구간 번호만. 스모크로 0건/1회/1회·원값 미전송 확인. 운영은 ①과 같은 배포. ③ 사실: **main 푸시 = 곧 운영**(Cloudflare Pages GitHub 연동. main 커밋 check run엔 Branch Preview가 없음 = 운영). calc-3 52c4180은 13:43 dev 푸시(dev 미리보기만). **main에 처음 들어간 건 14:42:41 푸시(1f512c1, 다른 직원 기획서 커밋에 딸려 감), 운영 빌드 완료 14:45:12** → 디자인 통과 14:12보다 **뒤**. 16:25 '통과 29분 전 main'은 커밋 시각 기준이라 틀림. 구조 위험은 그대로: 누구든 dev:main을 밀면 dev의 검수 대기 커밋이 같이 운영에 간다(근거 GitHub events API·check-runs).
 - [순돌이 검토] **F1 운영 배포 1회**(product-dev 17:53): `git -C C:/Users/강영준/Documents/GitHub/retire-age-kr merge origin/main` → `git -C C:/Users/강영준/Documents/GitHub/retire-age-kr push -q origin dev:main`. 대상 dev 7f411b4(쿠팡 링크 3개)·757943a(계산기 이벤트), 스모크 34 통과. 무인 회차 17:36 'Production Deploy'로 거절. 배포 뒤 product-dev가 운영 번들 link.coupang.com 3개 curl·coupang_click 확인. 10/30 약속의 첫 수익 경로라 21:15 전.
 - [편집 검수 요청] F1 쿠팡 칸 desc 3줄(youtube-loop 초안) 트랙:D · 담당 firemap-editor · 시한 10/2 12:00 · 근거 today.md 쿠팡 ② 3줄 — 통과본이 오면 coupangPicks.js desc 칸에 넣음(지금은 비움, 제목만으로 배포 가능).
+  - 완료: firemap-editor 편집 통과 F1 desc 3줄 그대로(18:10) · aitell 각 0.0 · 사실 주장 없음
 - [지시] **firemap-video-producer**, 트랙:B, 기한 지금(18:20 근무 안): E-1 업로드 `py -3.12 work/ytlong.py up work/research/longform/ep/E-1`(예약 10/3 19:30). 설명 첫 줄 예술가 숙제는 editor 통과 뒤 붙이고 업로드를 막지 않음. 쿠팡 줄은 F2 규칙대로 링크 나오면 같이. 무인 거부되면 "막힘: E-1 업로드 무인 거절 HH:MM". 완료 기준: 영상 id + 예약 시각 + "완료: … HH:MM".
 - [지시] **firemap-shorts**, 트랙:B, 기한 V2 17:50(공개 19:20): F5 퇴직금·실업급여 쇼츠 제작. 제목 copy/titles.md 1위, 설명란 계산기 utm 링크 1개만(쇼츠 설명 URL은 클릭 안 됨 → 쿠팡 링크 넣지 않음), 사실표 대조, 첫 3초에 계산기 결과 숫자. 완료 기준: 렌더 파일 + 설명란 utm + .edit.json + "완료: … HH:MM". **운영실장: 다음 :35 1순위 투입.**
   - 착수: firemap-shorts 17:36 (운영실장2)
   - 완료: firemap-shorts F5 퇴직금 쇼츠 렌더 work/research/cardshorts/sevpay.mp4(6초, bars, 음악 켬) · 제목 titles.md 1위 "퇴직금 얼마 나올까? 3년 반 일하고 월급 320만원이면 #shorts" · 첫 화면 "계산기 결과 퇴직금 1,283만원" · 설명란 `https://firemap.kr/calc/severance?utm_source=shorts&utm_medium=desc&utm_campaign=sevpay` 1개(쿠팡 없음) · 사실표 severance/facts.txt 대조(check 문제 없음, 만원 반올림 줄 추가) · aitell 0.0 → sevpay.edit.json(by:auto) · 경쟁 비교 sevpay_compare.md · ⚠ 19:20 공개 몫: shortsdaily.py publish가 설명 끝에 카페 주소를 자동으로 붙여 "링크 1개" 조건을 깸 → 공개 전 firemap-improve가 쇼츠 카페 줄 빼기 필요(못 빼면 링크 2개로 나감) 17:41
 - [편집 검수 요청] F5 sevpay 쇼츠 제목·설명란·카드 글자 트랙:B · 담당 **firemap-editor**(대리 firemap-editor-web) · 시한 19:10 · 근거 work/research/cardshorts/sevpay.edit.json(by:auto — write는 같은 자기 인증이 17:29 권한 검사에 막힘, 편집자 확인으로 바꿔 달라) · 함께: shortsdaily.py publish가 설명란 끝에 카페 주소 자동 추가 → "링크 1개" 깨짐, 19:20 전 끄는 옵션 필요(firemap-improve/firemap-shorts). (운영실장2 17:42)
+  - 착수: firemap-editor 18:10 (운영실장, wht1002·F1 desc 묶음)
+  - 완료: firemap-editor 편집 통과 sevpay 쇼츠 제목·설명·카드 글자 18:10 · aitell 0.0·숫자 4개 facts.txt 대조 일치·sevpay.edit.json by:firemap-editor로 교체. ⚠ 남음: shortsdaily.py publish 119행이 설명란 끝에 카페 주소를 자동으로 붙임(링크 2개) — 19:20 전 끌 옵션 필요
 - [지시] (계속) **firemap-product-dev** 애드센스 재심사 대비 — 결과 날 때까지 매 회차 1번: ads.txt 응답, 개인정보처리방침·문의 페이지, #sSeo와 사용자 화면 일치, noindex 템플릿 제외. 이상 있으면 '막힘'.
 - [요청] **firemap-growth(→ shorts·write)**, 기한 10/5: 쇼츠·롱폼 설명란·수동 발행 카페 정보글에 대가성 문구 붙인 관련 상품 링크 1개(네이버 무인 발행 글엔 넣지 않음), 10월 파트너스 클릭·판매액 growth/daily.md 매일. (핫딜 탈락 판정에서 흡수)
 
@@ -148,3 +152,4 @@
 - [요청] **firemap-venture**: X-V1 공개 뒤 표본 검수(checks.md 3건·375px·privacy) — 지시 87행 (firemap-venture-builder 17:58)
 - firemap-growth: 공개되면 서치콘솔 속성 추가는 사장님 손이 필요한지 확인(필요하면 결재함에 PC만·링크·순서), 사이트맵·IndexNow.
 
+- [요청] **firemap-shorts(→firemap-improve)**, 시한 19:20: work/shortsdaily.py 119행 publish가 설명란 끝에 카페 주소를 자동 추가 → '링크 1개' 깨짐. 끄는 옵션(spec에 cafe_line:false 등) 필요. (firemap-editor 18:10)

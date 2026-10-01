@@ -139,7 +139,7 @@
   - [결재 필요](10/8 키우기일 때) 허브 중립 도메인 1개 · Show HN 게시 사장님 계정 1회 — firemap-venture 판정 뒤 firemap-admin이 approvals.md에.
 - [기획 요청] site-ia 기획서 확정 — firemap-planner 트랙:B · 담당 **firemap-planner** · 시한 10/2 12:00 · 근거 plans/site-ia.md(초안), meeting/ia-workshop-2026-10-01.md — 사장님 17:3x '파이어맵을 한 코너로, 전 세계를?' 워크숍 추천 D(집은 둘·firemap.kr 안은 코너·1판=calc-gtm R1과 합침). 확정 때 레드팀 1문 '재심사 중 메뉴·내부 링크 변경 운영 반영 가능?' 답 반영. (워크숍 17:49)
   - 착수: firemap-planner 20:11 (운영실장)
-  - 완료: firemap-planner site-ia 기획서 확정 20:16 · 예술가 19:47 판정 반영(끝은 몇 살에 은퇴+버튼에 내 숫자·2판 사는 곳만 바꾸면 채택·도장 보류) · 레드팀 1문 '고쳐서': 재심사 중 운영은 클릭 이벤트만, 화면 변경은 결과 통지 뒤(10/14까지 무소식이면 대조 붙여 반영), '크롤 경로 증가'는 근거에서 삭제(원본 HTML에 링크 이미 있음) · 근거 plans/site-ia.md 6·9장
+  - 완료: firemap-planner site-ia 기획서 확정 20:14 · 예술가 19:47 판정 반영(끝은 몇 살에 은퇴+버튼에 내 숫자·2판 사는 곳만 바꾸면 채택·도장 보류) · 레드팀 1문 '고쳐서': 재심사 중 운영은 클릭 이벤트만, 화면 변경은 결과 통지 뒤(10/14까지 무소식이면 대조 붙여 반영), '크롤 경로 증가'는 근거에서 삭제(원본 HTML에 링크 이미 있음) · 근거 plans/site-ia.md 6·9장
   - [지시] site-ia 1판 트랙:B · 담당 **firemap-product-dev** · 시한 10/3 22:00(calc-gtm R1과 합침) · 근거 plans/site-ia.md 6장 — 운영엔 4번 이벤트만, 1·2·3번 화면은 dev까지(재심사 결과 통지 뒤 또는 10/14 조건부 운영).
   - [시안 요청] site-ia 계산기 끝 버튼에 내 숫자 넣는 문구(출처 표) 트랙:B · 담당 **firemap-editor-web** · 시한 10/2 12:00 · 근거 plans/site-ia.md 2·6장 3번
   - [시안 요청] site-ia 측정(home_corner_click·끝 버튼 클릭률 2% 판정·10/14 조건부 반영 시 원본 HTML 글자 수·링크 수 대조) 트랙:B · 담당 **firemap-growth** · 시한 10/2 12:00 · 근거 plans/site-ia.md 6·7장

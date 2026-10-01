@@ -450,3 +450,4 @@
 2026-10-01 20:20 · venture · 완료: X-V1 표본 검수 · X-G4·G21·X-KR-3 판정(today.md 각 줄)
 2026-10-01 20:24 · soondol-deputy · X-THUMB-1 B군(캐릭터) 종료, A군만으로 닫음 · 사장님 9/30 '캐릭터 없이'가 장부보다 먼저, 부재 중 회의 대기 대신 대역 판정
 2026-10-01 20:24 · soondol-deputy · guidegate는 원격 지시문 대신 로컬 배포 경로 관문으로(firemap-improve, 10/2 09:00) · 6회째 순돌이 검토 대기, 사장님 부재로 채팅 세션 안 열림
+2026-10-01 20:28 · firemap-write · 완료: N3 calcub1001 카페 #189 발행(verify OK 1195자·사진3, utm 링크 curl 200) · readcheck 지적 2건이 둘 다 utm URL 줄이라 --skip-read로 올림(본문 고치면 편집 해시 깨짐, utm 링크가 N3 완료 기준)

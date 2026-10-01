@@ -9,7 +9,7 @@
 |---|---|---|---|---|---|---|
 | N1 | (V1 ❌ 이월) dev 7f411b4(쿠팡 3개)·757943a(calc_input_start·calc_result) → main → 운영 배포 | A | [순돌이 검토] main 푸시 → firemap-product-dev 운영 curl | 18:50 | 운영 번들 link.coupang.com 3개 + calc_input_start 실재 curl + "완료: … HH:MM" | 막힘 — dev 커밋만, main 17:31에 멈춤 · product-dev 17:55 배포 무인 거절(커밋 59b5edd) |
 | N2 | F5 sevpay 쇼츠 19:20 공개 — 그 전에 shortsdaily.py 설명란 카페 주소 자동 추가 끄기 + editor 확인(.edit.json by:auto → 편집자) | B | firemap-improve(끄기)·firemap-editor(19:10)·firemap-shorts(공개) | 19:20 | 공개 영상 id + 설명란 링크 1개(utm_campaign=sevpay) 되읽기 | ✅ 19:26 GFoyIyBp9_c, 링크 1개 되읽기 |
-| N3 | F6 카페 calcub1001 20:10 발행 | B | firemap-write | 20:30 | 카페 글 주소 + 본문 utm 링크 curl 200 | 열림 |
+| N3 | F6 카페 calcub1001 20:10 발행 | B | firemap-write | 20:30 | 카페 글 주소 + 본문 utm 링크 curl 200 | ✅ 착수 20:21 · 완료: firemap-write 20:28 https://cafe.naver.com/firemap/189 · verify OK 1195/1195자 사진 3/3 · utm 링크 curl 200 |
 | N4 | X-V1·X-CN-1 kygstar77-creator.github.io 하위 폴더 공개(관문 줄 있는 것만) | A | firemap-venture-builder | 20:50(X-V1 22:00) | 실제 주소 200 + 375px 확인 + portfolio.md 줄 | X-V1 공개 17:52(/uk-take-home-pay/ curl 200, portfolio.md 9행) · X-CN-1 남음(편집 검수 18:10 뒤) |
 | N5 | (V5 ❌ 이월) `py -3.12 work/ytdesc_all.py apply` + `py -3.12 work/f2_coupang.py apply` 채팅 1회 | B | [순돌이 검토] | 21:15 | 채널 정보 curl /calc/salary + scV67BQvC4Q 설명란 쿠팡 줄 되읽기 | 열림 — 이유: 무인 YouTube 쓰기 권한 거부 |
 | N6 | (V6) 'Firemap daily growth' 3)항 guidegate 문장 | C | [순돌이 검토] | 10/2 09:00 | RemoteTrigger 지시문에 guidegate.py check 실재 | 열림 |

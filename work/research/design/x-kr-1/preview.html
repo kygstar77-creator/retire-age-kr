@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>X-KR-1 화면 3개 시안</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
+<style>
+:root{--bg:#f6f7f9;--ink:#18191d;--ink2:#4e5968;--line:#e5e8eb;--or:#ff5a00;--card:#fff}
+*{box-sizing:border-box}body{margin:0;background:#dfe2e6;font-family:Pretendard,system-ui,sans-serif;color:var(--ink);padding:24px 16px}
+h2{font-size:15px;color:#333;margin:28px 0 8px}.note{font-size:13px;color:#555;margin:0 0 10px}
+/* ⓐ 1080 → 화면 540 (0.5배) */
+.thumb{width:540px;max-width:100%;aspect-ratio:1/1;background:var(--bg);padding:40px;display:flex;flex-direction:column}
+.thumb .lab{font-size:14px;color:var(--ink2)}.thumb h1{font-size:32px;font-weight:800;margin:10px 0 20px;line-height:1.25}
+.tbl{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px 20px}
+.tbl .hd,.tbl .r{display:grid;grid-template-columns:1fr auto 120px;align-items:center;gap:12px}
+.tbl .hd{font-size:12px;color:var(--ink2);padding:10px 0;border-bottom:1px solid var(--line)}.tbl .hd small{display:block;font-size:10px}
+.tbl .r{height:60px;border-bottom:1px solid var(--line);font-size:20px}.tbl .r:last-child{border:0}
+.tbl .n{color:var(--or);font-weight:800;font-size:28px;text-align:right}.tbl .hd span:last-child{text-align:right}
+.dk{margin-top:16px;background:var(--ink);color:#fff;border-radius:16px;padding:14px 20px;font-size:22px;font-weight:700}
+.thumb .ft{margin-top:auto;font-size:11px;color:var(--ink2)}
+/* ⓑ 엑셀 */
+.xl{background:#fff;width:640px;max-width:100%;border:1px solid #c8c8c8;font-family:"Malgun Gothic",sans-serif}
+.xl .bar{background:#f3f3f3;border-bottom:1px solid #c8c8c8;font-size:11px;color:#666;padding:4px 8px}
+.xl .in{padding:16px 24px 20px}.xl .t{font-size:15px;font-weight:700}.xl .k{font-size:12px;color:#8b95a1;margin-top:14px}
+.xl .big{font-size:40px;font-weight:700;color:var(--or)}.xl .sub{font-size:12px;color:#8b95a1}
+.xl .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:16px 0;border-bottom:1px solid var(--line);padding-bottom:8px}
+.xl .tiles b{display:block;font-size:15px;color:var(--ink)}.xl .tiles span{font-size:11px;color:#8b95a1}
+.xl .inp{display:grid;grid-template-columns:110px 160px 30px;gap:6px 8px;font-size:12px;align-items:center}
+.xl .inp i{font-style:normal;background:var(--bg);border:1px solid #c8c8c8;padding:3px 6px;text-align:right}
+.xl .lk{margin-top:14px;font-size:11px;color:#8b95a1}.xl .lk u{color:#0b57d0}
+/* ⓒ 375 */
+.ph{width:375px;max-width:100%;background:var(--bg);padding:16px;border-radius:20px}
+.blk{background:var(--card);border-radius:16px;padding:14px 16px;margin-bottom:10px;font-size:14px;color:var(--ink2)}
+.row{background:var(--card);border-radius:16px;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:56px;margin-bottom:10px;border:2px dashed var(--or)}
+.row b{font-size:15px;color:var(--ink);display:block}.row small{font-size:12px;color:var(--ink2)}.row .p{font-size:14px;color:var(--ink2);white-space:nowrap}
+.btn{background:var(--or);color:#fff;text-align:center;font-weight:700;border-radius:14px;padding:14px;margin-bottom:10px}
+</style></head><body>
+<p class="note"><b>숫자는 모두 자리 채움(실제 식 아님).</b> 빌더가 make_xlsx.py 검산 값으로 바꿉니다. 글자 확정은 editor·editor-web. 근거 spec.md</p>
+
+<h2>ⓐ 판매 대표 이미지 1080×1080 (0.5배)</h2>
+<div class="thumb">
+  <div class="lab">가계부 엑셀 · 2026</div>
+  <h1>줄마다<br>은퇴 +N일</h1>
+  <div class="tbl">
+    <div class="hd"><span>항목</span><span>월 금액</span><span>은퇴 +N일<small>매달 반복된다고 가정할 때</small></span></div>
+    <div class="r"><span>배달</span><span>180,000</span><span class="n">+00일</span></div>
+    <div class="r"><span>구독 4개</span><span>52,000</span><span class="n">+00일</span></div>
+    <div class="r"><span>택시</span><span>90,000</span><span class="n">+00일</span></div>
+  </div>
+  <div class="dk">은퇴 나이 00세 0개월</div>
+  <div class="ft">예시 값 · 파이어맵 계산기와 같은 식 · 투자 조언 아님</div>
+</div>
+
+<h2>ⓑ 시트 2 '은퇴 나이' (엑셀 100%)</h2>
+<div class="xl"><div class="bar">월 가계부 | <b>은퇴 나이</b> | 설명</div><div class="in">
+  <div class="t">은퇴 나이</div>
+  <div class="k">은퇴 나이</div><div class="big">00세 0개월</div><div class="sub">지난달보다 −0개월</div>
+  <div class="tiles"><div><span>연 지출</span><b>00,000,000원</b></div><div><span>필요 자산</span><b>000,000,000원</b></div><div><span>지금 자산</span><b>00,000,000원</b></div></div>
+  <div class="inp"><span>나이</span><i>00</i><span>세</span><span>현재 자산</span><i>00,000,000</i><span>원</span><span>기대수익률</span><i>0.0</i><span>%</span><span>물가</span><i>0.0</i><span>%</span></div>
+  <div class="lk">파이어맵 계산기와 같은 식 · <u>firemap.kr</u></div>
+</div></div>
+
+<h2>ⓒ firemap.kr 은퇴 결과 아래 줄 (375px, 점선이 새 자리)</h2>
+<div class="ph">
+  <div class="blk" style="background:var(--ink);color:#fff">결과 카드</div>
+  <div class="btn">주황 행동 1개(지금 그대로)</div>
+  <div class="blk">공유 · 다음 계산</div>
+  <div class="row"><div><b>가계부로 매달 은퇴 나이 보기</b><small>파이어맵 유료 엑셀(문구 editor-web)</small></div><span class="p">9,900원</span></div>
+  <div class="blk">계산 방법</div>
+  <div class="blk">(쿠팡 칸 — 생기면 맨 끝)</div>
+</div>
+</body></html>

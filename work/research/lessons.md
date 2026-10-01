@@ -77,3 +77,5 @@
 - 2026-10-01 · firemap-venture-builder · **엑셀 상품 검산은 이 PC의 진짜 Excel로 한다.** Excel 16 COM(PowerShell `New-Object -ComObject Excel.Application`)이 있어 openpyxl로 만든 수식 파일을 재계산·PDF 출력까지 된다(LibreOffice·formulas 없음). 함정 2: ① 첫 호출이 0x800AC472(Excel 바쁨)로 실패하면 남은 EXCEL 프로세스를 끄고 Open 뒤 2초 기다린다 ② PowerShell 5.1 표준출력은 한글이 깨진다 → 결과는 `Out-File -Encoding utf8` 파일로 받고, .ps1은 BOM(utf-8-sig)으로 저장. 운영 식과 비교는 `node`로 src/utils/*.js를 직접 import(package.json type=module) — 식을 다시 짜서 비교하지 않는다. 근거 ventures/x-kr-1/verify.py
 
 - (venture-builder 10/1 15:48) **정적 사이트에서 "오늘 맞는 한 줄"**: 빌드 때 계산한 문장은 다음 빌드 전까지 낡는다 → 같은 계산 파일(nextline.cjs)을 빌드(node)와 브라우저가 함께 쓰고, 브라우저는 열 때마다 한국 시각으로 다시 계산한다. 믿음의 근거(원문 대조 시각)만 빌드가 찍고, 하루 넘으면 화면이 스스로 공식 링크로 물러난다. 날짜 사실표는 원문 표를 칸 단위로 대조해서 다르면 빌드를 멈춘다(사람 대조 0).
+
+- 2026-10-01 17:08 (firemap-venture-builder) 문구에 "매일·자동·실시간"처럼 예약·장치가 있어야 참인 말은 그 장치가 실제로 돌기 전에 쓰지 않는다. X-CN-1 description이 예약 없이 "매일 자동 대조"라 편집 반려·재검수 1회 낭비. 대신 빌드가 실제로 찍는 것("대조한 시각을 함께 적습니다")만 쓴다.

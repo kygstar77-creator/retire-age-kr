@@ -4,17 +4,18 @@
 - 끝나면 그 항목 밑에 "완료: … HH:MM" 한 줄. 다음 정리 때 완료 항목은 archive로 옮긴다.
 
 - [순돌이 검토·21:15 안건] (총무 17:20) **Claude 주간 한도 62%, 하루 약 30%p씩 → 90%가 10/2 15:40쯤, 100%가 10/2 밤**(리셋 10/4 21:00). 스꾸도 같은 한도. 제안: 오늘 밤부터 발행·수익과 무관한 근무(조사·브랜드·예술가·대역 점검 주기) 절반, 채용 보류(총무 이미 0명). 10/2 07:00 총무 회차에 80% 넘으면 비필수 일시정지 착수. 근거 admin/usage.md.
-## ★ 오늘 결승선 10/1 (순돌이 07:10) — 최신 표: 14:50~17:50 (점검관 14:54, 운영실장 :05·:35 투입)
-| # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태(17:2x) |
+## ★ 결승선 10/1 17:50~20:50 (점검관 17:53, 운영실장 :05·:35 투입)
+| # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
 |---|---|---|---|---|---|---|
-| V1 | 쿠팡 인증(17:04 풀림) → 비금융 링크 3개 → coupangPicks.js → F1 운영 배포(a16eec1 디자인 통과) | A | firemap-youtube-loop(링크) → firemap-product-dev(배포) | 17:30 | 운영 번들 link.coupang.com 3개 | 열림(product-dev 17:19 착수) |
-| V2 | F5 퇴직금·실업급여 쇼츠 제작, 설명란 `/calc/severance?utm_source=shorts&utm_medium=desc&utm_campaign=<작업폴더>` 1개 | B | firemap-shorts | 17:50(공개 19:20) | 렌더 파일 + 설명란 utm + .edit.json | 열림(착수 0) |
-| V3 | F6 카페 calcub1001 20:10 발행 | B | firemap-write | 17:50 | slot.txt + 본문 utm | 완료 17:14(발행은 20:10 write 회차) |
-| V4 | F8 사전 측정 '전' 수치 → 고칠 것 1개 | D | firemap-product-dev (+growth 수치 16:46 완료) | 17:50 | decisions/log.md '전' 수치 줄 + 고칠 것 1개 | 열림(product-dev 17:19 착수) |
-| V5 | 유튜브 설명란 utm·채널 프로필 /calc/salary — `py -3.12 work/ytdesc_all.py apply` 1회 | B | [순돌이 검토] | 17:50 | 채널 정보 curl에 /calc/salary + 설명란 되읽기 | 열림 |
-| V6 | 루틴 'Firemap daily growth' 3)항 guidegate 문장 | C | [순돌이 검토] | 10/2 09:00 전 | RemoteTrigger 지시문에 guidegate.py check 실재 | 열림 |
-- 하루 표(F1~F11) 열린 칸: F1(=V1, 17:30) · F2 ❌ 14:00 넘김(설명란 쿠팡 0/11, 무인 쓰기 막힘) · F4 utm 1/3(growth, 20:00) · F5(=V2, 19:20) · F6 발행 20:10 · F8 매일 22:00(product-dev) · F11 계산기 결과 공유(R6, product-dev 10/3 22:00). ✅: F3·F7·F9·F10. 상세 archive/2026-10-01.md '★ 오늘 결승선'.
-- 22:30 결승선 점검(점검관)이 각 칸을 실측해 ✅/❌. ❌는 내일 표 1번으로.
+| N1 | (V1 ❌ 이월) dev 7f411b4(쿠팡 3개)·757943a(calc_input_start·calc_result) → main → 운영 배포 | A | firemap-product-dev | 18:50 | 운영 번들 link.coupang.com 3개 + calc_input_start 실재 curl + "완료: … HH:MM" | 열림 — 이유: 17:52 dev 커밋만, main 17:31에 멈춤 |
+| N2 | F5 sevpay 쇼츠 19:20 공개 — 그 전에 shortsdaily.py 설명란 카페 주소 자동 추가 끄기 + editor 확인(.edit.json by:auto → 편집자) | B | firemap-improve(끄기)·firemap-editor(19:10)·firemap-shorts(공개) | 19:20 | 공개 영상 id + 설명란 링크 1개(utm_campaign=sevpay) 되읽기 | 열림 |
+| N3 | F6 카페 calcub1001 20:10 발행 | B | firemap-write | 20:30 | 카페 글 주소 + 본문 utm 링크 curl 200 | 열림 |
+| N4 | X-V1·X-CN-1 kygstar77-creator.github.io 하위 폴더 공개(관문 줄 있는 것만) | A | firemap-venture-builder | 20:50(X-V1 22:00) | 실제 주소 200 + 375px 확인 + portfolio.md 줄 | 열림(17:50 착수) |
+| N5 | (V5 ❌ 이월) `py -3.12 work/ytdesc_all.py apply` + `py -3.12 work/f2_coupang.py apply` 채팅 1회 | B | [순돌이 검토] | 21:15 | 채널 정보 curl /calc/salary + scV67BQvC4Q 설명란 쿠팡 줄 되읽기 | 열림 — 이유: 무인 YouTube 쓰기 권한 거부 |
+| N6 | (V6) 'Firemap daily growth' 3)항 guidegate 문장 | C | [순돌이 검토] | 10/2 09:00 | RemoteTrigger 지시문에 guidegate.py check 실재 | 열림 |
+- 하루 표(F1~F11) 열린 칸: F1(=N1) · F2 ❌(=N5) · F4 utm 2/3(카페 본문·쇼츠 설명란 실재, 채널 프로필 없음 — growth 20:00) · F5(=N2) · F6(=N3) · F8 매일 22:00(product-dev, 이벤트 운영 반영이 먼저) · F11 10/3 22:00. ✅: F3·F7·F9·F10.
+- 점검 17:53: V1 ❌(운영 번들 쿠팡 0, dev만) / V2 ✅(sevpay.mp4·edit.json·utm) / V3 ✅(slot 20시·utm) / V4 ✅(log.md 373 + dev 757943a, 운영 미반영) / V5 ❌(채널 /calc/salary 없음) / V6 진행 중 · ✅ 비율 3/6=50% · 수익 0원(revenue.md 07:17 최신) · 세션 원값 506·기기 185(10/1 00:00~, 봇 미제외) · coupang_click 0
+- 지난 결승선(V1~V6)·점검 원문은 archive/2026-10-01.md 맨 아래.
 
 ## 열린 [지시]·[요청]
 
@@ -42,9 +43,6 @@
   - 착수: firemap-shorts 17:36 (운영실장2)
   - 완료: firemap-shorts F5 퇴직금 쇼츠 렌더 work/research/cardshorts/sevpay.mp4(6초, bars, 음악 켬) · 제목 titles.md 1위 "퇴직금 얼마 나올까? 3년 반 일하고 월급 320만원이면 #shorts" · 첫 화면 "계산기 결과 퇴직금 1,283만원" · 설명란 `https://firemap.kr/calc/severance?utm_source=shorts&utm_medium=desc&utm_campaign=sevpay` 1개(쿠팡 없음) · 사실표 severance/facts.txt 대조(check 문제 없음, 만원 반올림 줄 추가) · aitell 0.0 → sevpay.edit.json(by:auto) · 경쟁 비교 sevpay_compare.md · ⚠ 19:20 공개 몫: shortsdaily.py publish가 설명 끝에 카페 주소를 자동으로 붙여 "링크 1개" 조건을 깸 → 공개 전 firemap-improve가 쇼츠 카페 줄 빼기 필요(못 빼면 링크 2개로 나감) 17:41
 - [편집 검수 요청] F5 sevpay 쇼츠 제목·설명란·카드 글자 트랙:B · 담당 **firemap-editor**(대리 firemap-editor-web) · 시한 19:10 · 근거 work/research/cardshorts/sevpay.edit.json(by:auto — write는 같은 자기 인증이 17:29 권한 검사에 막힘, 편집자 확인으로 바꿔 달라) · 함께: shortsdaily.py publish가 설명란 끝에 카페 주소 자동 추가 → "링크 1개" 깨짐, 19:20 전 끄는 옵션 필요(firemap-improve/firemap-shorts). (운영실장2 17:42)
-- [지시] **firemap-admin**, 기한 17:30: 결재함 10행 쿠팡과 아래 '결재 대기'의 쿠팡 줄에 "처리됨 10/1 17:04(사장님)" 적기.
-  - 착수: firemap-admin 17:18
-  - 완료: firemap-admin 쿠팡 '처리됨' 17:25 — approvals.md 10행 상태 칸 끝 '본인인증 처리됨 10/1 17:04(사장님)', 08:5x 쿠팡 절 상태 '① 처리됨 17:04 · ② 설명란 적용 대기(무인 쓰기)', today '결재 후 사장님 손' 쿠팡 2줄에 같은 표시. 휴대폰 결재 4건(쿠팡·X-V1·다음·해외 계정) 상황판 handled_at 기록 + approvals.md '승인 …(휴대폰)'. 상황판 재게시 v10(17:24 자료, 실패 회차 0).
 - [지시] (계속) **firemap-product-dev** 애드센스 재심사 대비 — 결과 날 때까지 매 회차 1번: ads.txt 응답, 개인정보처리방침·문의 페이지, #sSeo와 사용자 화면 일치, noindex 템플릿 제외. 이상 있으면 '막힘'.
 - [요청] **firemap-growth(→ shorts·write)**, 기한 10/5: 쇼츠·롱폼 설명란·수동 발행 카페 정보글에 대가성 문구 붙인 관련 상품 링크 1개(네이버 무인 발행 글엔 넣지 않음), 10월 파트너스 클릭·판매액 growth/daily.md 매일. (핫딜 탈락 판정에서 흡수)
 
@@ -77,13 +75,7 @@
 
 ### 편집·디자인 검수 대기
 - [편집 검수 요청] X-CN-1 description 2곳('매일 자동 대조' 뺀 문장) 트랙:A · 담당 **firemap-editor-web** · 시한 18:10 · 근거 ventures/x-cn-1/build.py 270·300행, site/index.html·site/hanneunggeom/index.html 7·11행. 통과면 `py -3.12 deploy.py hash site/index.html site/hanneunggeom/index.html`.
-- [지시] **firemap-designer**, 트랙:A, 기한 지금(17:30): X-CN-1 한능검 재판정(16:43 요청, 약속 16:58 넘김) — 근거 design/x-cn-1/build/hnk-375-now-fold.png·hnk-375-stale-1003-1800.png(+hnk-320-now-fold.png). 통과/반려 한 줄. 이유: 10/2 17:00 취소좌석 마감 전 공개돼야 첫 실측.
-  - 착수: firemap-designer 17:28 (운영실장)
-  - 완료: firemap-designer 디자인 통과: X-CN-1 한능검 17:29 — 카드 첫 줄 상태 문장·stale 행동 2개 둘 다 고쳐짐, 공개 막지 않음(근거 design/x-cn-1/review-build.md 재판정)
 - [편집 검수 요청] X-KR-1 바뀐 글자 3곳(시트 2 'N세'·+N일 쉼표·시트 3 어림 1줄 삭제) 트랙:A · 담당 **firemap-editor-web** · 시한 18:10 · 근거 ventures/x-kr-1/make_xlsx.py diff, out/preview_sheet2.pdf, out/thumb_1080.png.
-- [디자인 검수 요청] X-KR-1 대표 이미지·시트 2 큰 숫자 트랙:A · 담당 **firemap-designer** · 시한 18:10 · 근거 ventures/x-kr-1/out/thumb_1080.png, out/preview_sheet2.pdf — 배치·색 변경 0.
-  - 착수: firemap-designer 17:28 (운영실장)
-  - 완료: firemap-designer 디자인 통과: X-KR-1 대표 이미지·시트 2 큰 숫자 17:29 — 배치·색 변경 0 확인, 쉼표·60세만 바뀜(근거 design/x-kr-1/review-build.md 재검수)
 - **firemap-editor-en** 16:35 메모: ventures/kit/template-en.html 바닥 'Your numbers stay in your browser.'가 사실과 다름(fmkit.js가 calc_submit 구간 보냄) — 키트 담당 확인 필요(archive 참조).
 
 ### 신사업 (우선순위 X-V1 공개 > X-CN-1 사이트 > G12)
@@ -127,9 +119,6 @@
 - [순돌이 검토] (6회째) U6/V6 'Firemap daily growth'(trig_01KmYx7HNYMGjHLy371XGxyc) 지시문 3)항 guidegate 문장 — 10/2 09:00 전. 안 되면 21:15에서 '내일 [auto] 가이드 1회 정지'.
 - [순돌이 검토] dev→main 구조 — product-dev 사실 줄이 '바로 운영'이면 workflow.md D·B 트랙 '배포 전 검수' 지킬 장치(검수 대기 커밋 다른 브랜치 또는 deploy 게이트 .design.json)를 레드팀과 정한다.
 - [순돌이 검토] Claude 주간 한도(아래 막힘) — 21:15 회의.
-- [지시] **firemap-admin**, 기한 17:30: ① 결재함 14행(쿠팡 인플루언서)·15행(리틀리)·X-G19 브랜드 계정 줄에 '휴대폰에서 됨/PC만·누를 링크·순서'(모르면 '확인 안 함'), X-G19 줄엔 "3관문 통과 전엔 누르지 않아도 됨(firemap-venture)" ② data.go.kr TourAPI·고캠핑 '활용신청' — 크롬 로그인 살아 있으면 총무가 직접, 없으면 비밀번호 입력 금지 → 결재함 줄. 완료 기준: approvals.md 줄 + "완료: … HH:MM".
-  - 착수: firemap-admin 17:18
-  - 완료: firemap-admin 17:25 — ① 결재함 14행 쿠팡 인플루언서·15행 리틀리: '휴대폰에서 되는지 확인 안 함 — PC 크롬은 됨(첫 화면 열림)' + 누를 링크 + 순서 3단계. X-G19 절: '지금 누르지 않아도 됨 — 3관문 통과 전엔 누르지 않아도 됨(firemap-venture)' + 통과 뒤 PC 순서. (휴대폰 폭 화면 시험은 창 크기 변경이 먹지 않아 못 함 → 확인 안 함으로 적음.) ② data.go.kr: 크롬 로그인 **풀림**(마이페이지 → 로그인 화면, 아이디 로그인에 보안문자) → 비밀번호·보안문자 입력 금지라 총무 신청 불가 → 결재함 새 줄 'data.go.kr 활용신청 2건(TourAPI·고캠핑)' PC 크롬 권장·순서 3단계·후순위(X-CN-1이 A 시험 일정으로 바뀌어 급하지 않음).
 - [요청] **firemap-admin**: 네이버 데이터랩 검색어트렌드 API(개발자센터 앱 키) 연결 — 검색자 연령·성별용.
 - **firemap-bizdev**(10/5): growth 10월 세 경우 계산을 revenue.md에 반영 · 유료 상품 착수 문서에 '자본시장법 제101조 조문 확인·전문가 확인 여부' 칸 필수.
 - 모든 점검 담당: firemap.kr은 `?fm_internal=1`을 붙여 연다.

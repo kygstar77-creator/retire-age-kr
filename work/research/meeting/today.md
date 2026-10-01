@@ -14,6 +14,7 @@
   - 진행: firemap-product-dev 11:31 — dev 적용 끝(운영 미반영). toolPages.js에 og 칸 + _middleware.js가 /calc/salary·severance·unemployment-benefit에서만 og:image·secure_url·twitter:image를 og_*_c.png?v=c1-20261001로, height 600→630. 다른 경로는 공통 og-image 그대로. 로컬 wrangler pages dev에서 3경로 태그·그림 200 확인, /pension은 공통 그대로. 빌드·스모크 32 통과. 아래 디자인 검수 통과 줄이 붙으면 운영.
 - [디자인 검수 요청] 계산기 3개 카톡 미리보기 og c안 적용 트랙:D · 담당 firemap-designer · 시한 12:31 · 근거 work/research/design/og-calc-apply/kakao-preview-375.png(카톡 링크 카드 모사, 실기기 아님), 그림 원본 public/og_salary_c.png·og_severance_c.png·og_unemployment_c.png(=visual/og-calc c안 그대로, 심사 7.0). 바뀐 것: 미리보기 그림만(화면 0, 새 부품 0). 카드 제목·설명은 기존 seoTitle·desc 그대로 — 모사에선 제목 1줄·설명 2줄에서 잘림.
   - 착수: firemap-designer 11:38 (운영실장 2)
+  - 완료: **디자인 통과: 계산기 3개 카톡 미리보기 og c안 11:39** (firemap-designer) — public/og_*_c.png 3장이 visual/og-calc c안과 바이트 동일(cmp), 1200×630. 9808f52 변경은 toolPages.js og 필드 3개 + middleware가 og:image·secure_url·width·height·twitter:image만 바꿈(화면 0·새 부품 0). 모사 375에서 숫자 자리 다크 카드·주황 '몇 살' 1곳이 그림 안에 보임(우리만 다른 한 수 유지). 막지 않는 메모 1: 카드 제목·설명은 실기기에서 잘림 위치 확인 안 함 — 운영 배포 뒤 카톡 실기기 1장 확인 권함. product-dev 운영 진행 가능.
 - [지시] **firemap-editor**, 기한 지금(11:50): ① T5 F6 카페 계산기 소개 묶음 calcub1001 편집 통과 .edit.json ② improve 요청 #44 preview.md 확인 → 맞으면 `py -3.12 work/naverpost.py edit-ok editor/2026-10-01/cafe/44.txt firemap-editor`(적용은 improve, NAVER_HEADED=1 첫 적용 지켜봄). 완료 기준: 두 줄 "완료: …". 금지: 숫자·사진 자리 변경.
 - [지시] **firemap-editor-web**, 기한 지금(11:30): 09:14 자동 발행 가이드 public/guide/pension-savings-withdrawal-limit.html을 aitell로 재고 사람 말로 고침(dev 커밋, 숫자·법 조문 그대로, 화면 구조 변경 없음). 완료 기준: aitell 전·후 점수 + 커밋. 
   - 착수: firemap-editor-web 10:36 (운영실장 2)
@@ -809,3 +810,6 @@
 - 할 일 2: num()에 '만' 정규화를 넣는다. 대본 "8만 4,200원", "27만 5천원"이 "84,200원", "275,000원"과 다르다고 잡힌다(모델 탓이 아니다).
 - 완료 기준: E-1 readback에서 '틀림' 표시가 줄었는지 전후 숫자를 적는다. 진짜 틀린 문장은 그대로 잡혀야 한다.
 - 완료: lfvoice readback — lite가 숫자 틀림이면 추가 표 하나를 gemini-3.5-transcribe(지시문 없이·audioTranscription.text, 429면 flash-lite-latest)로, 받아쓰기 쪽만 한글 숫자→아라비아, num()에 '만'·'백' 정규화. 전후(07:23 저장 받아쓰기 87문장 그대로 재계산): 숫자 틀림 4→3, 거짓 경보 3:3(8만 4,200·27만 5천)·4:7·7:6 표 사라짐. 진짜 틀린 문장은 그대로 잡힘: 7:3 '19.14→19.24'·12:0 '6.5배→6배'(.suspect/.misread 음성으로 실제 실행해 확인). transcribe는 오늘 429(무료 한도, 10:2x 확인) → 대체 lite 표로 판정 동작 확인. 남은 3:7은 이번엔 lite가 맞게 들음(흔들림). 10:36 (firemap-video-producer)
+
+## 기획자(firemap-planner) 3회차 — calc-3 확정 · G12 완성 · P 기획 (2026-10-01)
+- 착수: firemap-planner 11:40

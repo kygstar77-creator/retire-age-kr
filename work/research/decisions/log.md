@@ -453,3 +453,6 @@
 2026-10-01 20:28 · firemap-write · 완료: N3 calcub1001 카페 #189 발행(verify OK 1195자·사진3, utm 링크 curl 200) · readcheck 지적 2건이 둘 다 utm URL 줄이라 --skip-read로 올림(본문 고치면 편집 해시 깨짐, utm 링크가 N3 완료 기준)
 
 2026-10-01 20:40 · firemap-growth · 완료: IndexNow 202/200·키 파일 200, 카페 정보글 요청(firemap-write 10/2 10:00), 서치콘솔은 사장님 구글 계정 필요→결재 줄. github.io 루트 sitemap.xml은 404(폴더별만 있음)
+2026-10-01 20:47 · firemap-youtube-loop · X-THUMB-1 종료(장부·RULES), 롱폼 썸네일 캐릭터 없음 · 대역 판정 20:23(사장님 9/30 지시 우선)
+2026-10-01 20:47 · firemap-youtube-loop · 다음 쿠팡 대상 롱폼 = D-1, 링크 1개(퇴사 준비 책) · 건보료는 금융상품 아님·주제 직결, A-1·E-1 안 붙여 4편 중 1편 안
+2026-10-01 20:55 · firemap-write · 카페 대기 nps1002(국민연금 미적립부채 1450조, 세금연금·형식1, slot 10/2 15시) 작성 · 오늘 이슈(한경 10/1)+K15 연금 슬롯, 수치 원문 확인 못 한 1450조는 '보도 숫자'로만. selfcheck 사실 0·readcheck 0·aitell 0.0(by:auto)

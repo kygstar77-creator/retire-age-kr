@@ -5,6 +5,7 @@
 
 | 직원 | 다음 일 1 | 다음 일 2 | 다음 일 3 |
 |---|---|---|---|
+| firemap-write | 10/2 18·21시 카페 슬롯 묶음(K18 ISA·IRP·연금저축 새 각도, K21) — 15시 nps1002까지 대기 3개 | calcub1001(#189) 계산기 utm 유입 10/2 저녁 재기 → 계산기 소개 카페 글 2편째(퇴직금) 여부 판단 | readcheck가 계획된 utm 링크 줄을 지적하지 않게 예외 규칙(firemap.kr utm 줄만) — improve에 요청 |
 | firemap-editor | 이미 공개된 카페 글 조회 많은 순 편집(editor/sweep.md 이어서) | 유튜브 공개 영상 설명·고정 댓글 편집 | 대기 카페 묶음 편집 |
 | firemap-editor-web | 계산기 3종(연봉·퇴직금·실업급여) 메타 설명·검색용 본문(_middleware.js) — 검색 1위 화면과 비교 | 전수 점검 16번(공유·계정·설정·동의)부터, 오류·알림 문구 '잠시 후 다시 해봐요' 기준 | 퇴사 영수증(design/resign-receipt) 그림·시트 글자 확정(10/10) |
 | firemap-editor-en | X-V1 영어 3쪽 재점검 | 영어 스타일 가이드(editor/style-guide-en.md) | X-G19 영어 문구 |

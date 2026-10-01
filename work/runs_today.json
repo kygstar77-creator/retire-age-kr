@@ -49,7 +49,7 @@
     "title": "실업급여 계산, 월급 차이가 커도 하루 금액은 왜 비슷할까?",
     "url": "https://cafe.naver.com/firemap/189"
    },
-   "note": "N3 calcub1001(20시 슬롯, F6) 발행. verify OK 1195/1195자·사진 3/3. 본문 utm 링크 curl 200. 블로그 STOP_blog로 0편. readcheck 지적 2건(긴문장·편집기)은 모두 utm 링크 줄 — N3 완료 기준이 그 링크라 --skip-read, 편집 통과본 해시 유지. 사전 검증: selfcheck 사실 0·crosscheck·editor 통과(12:09)·aitell 1.7. 카페 오늘 3/5. 개선: 없음."
+   "note": "N3 calcub1001(20시 슬롯, F6) 발행. verify OK 1195/1195자·사진 3/3. 본문 utm 링크 curl 200. 블로그 STOP_blog로 0편. readcheck 지적 2건(긴문장·편집기)은 모두 utm 링크 줄 — N3 완료 기준이 그 링크라 --skip-read, 편집 통과본 해시 유지. 사전 검증: selfcheck 사실 0·crosscheck·editor 통과(12:09)·aitell 1.7. 카페 오늘 3/5. 개선: 없음. 새 카페 대기 nps1002(국민연금 미적립부채, slot 10/2 15시): 자료조사 [오늘 찾은 것] 7건·출처 19(1차 4: 법제처 국민연금법·복지부 3/20·3/21·공단). 교차검증(crosscheck gemini 2회): 사실 3건 중 facts 보강 2·반영 1, 원자료 미확보 1은 본문에 밝힘; 말투 약 10곳 반영. 최종본 selfcheck 사실 0·readcheck 0·aitell 0.0. 경쟁 비교는 미작성(compare.md 없음)."
   }
  ]
 }

@@ -15,6 +15,7 @@
 - 처리(막힘 전부):
   - 처리: 쿠팡 본인인증(07:40~, 8h45m) → 21:15 회의 안건 유지(사장님 휴대폰 1번) · 그동안 F1 칸 준비 끝 상태 유지, V1 17:30 ❌ 확정 예정 · 담당 firemap-admin(안건 줄) · 기한 21:15
   - 처리: 유튜브 무인 쓰기(07:59~, 8h26m) → 21:15 안건 + [순돌이 검토] `py -3.12 work/ytdesc_all.py apply` 1회 · youtube-loop은 D-1 ②검색어·④사실표 원문(다음 근무) · 담당 firemap-youtube-loop · 기한 21:15
+    - 착수: firemap-youtube-loop D-1 ②④ 16:46
   - 처리: X-V1·X-CN-1 공개 저장소(09:50~, 6h35m) → **21:15 안건 확정** + 위 [순돌이 검토] · 그동안 빌더는 위 X-CN-1 반려 반영 · 담당 firemap-venture-builder · 기한 21:00 재측정
   - 처리: PD 멈춤·TTS 429(16:00 초기화 지남) → 위 [지시] · 담당 firemap-video-producer · 기한 17:30
   - 처리: data.go.kr 활용신청(14:42~) → 위 [지시] ② · 담당 firemap-admin · 기한 17:30
@@ -473,6 +474,10 @@
 | V5 | 유튜브 설명란 utm·채널 프로필 /calc/salary(U4 이월) — 순돌이 채팅 `py -3.12 work/ytdesc_all.py apply` 1회 | B | [순돌이 검토] | 17:50 | 채널 정보 curl에 /calc/salary + 설명란 되읽기 |
 | V6 | 루틴 'Firemap daily growth' 3)항 guidegate 문장(U6 이월) | C | [순돌이 검토] | 10/2 09:00 전 | RemoteTrigger 지시문에 guidegate.py check 실재 |
 - X-V1 저장소(U5)는 표에서 뺌 — 본부장 처리 줄대로 21:00 빌더 재측정·404면 [순돌이 검토](13:19 firemap-venture).
+- V4 수치(growth): 착수: firemap-growth 16:45 — 계산기 3종 오늘 이벤트 실측을 product-dev에 넘김
+  - 완료: V4 수치 16:46 (firemap-growth) — 계산기 3종 오늘 진짜 외부 **4기기(퇴직금 2·실업급여 1·연봉 1), 4/4 화면 1개 이탈**, 7일 *_to_fire·coupang_click 외부 0. **입력 시작·결과 도달·포기율은 잴 이벤트가 없어 확인 안 함**, calc-3 gain_view 미구현. 제안 1개: calc_input_start·calc_result 두 이벤트 먼저(decisions/log.md 16:46줄). **[요청] firemap-product-dev:** V4 '고칠 것 1개' 정할 때 이 줄을 '전' 수치로 쓰고, 화면 수정 효과는 사람 수가 30 넘기 전엔 판정 보류.
+  - 완료: utm.md share 등록(10/2 지시, kakao·copy) 16:46 (firemap-growth)
+  - F4 확인 16:46(growth): utm 연결 실재 1/3 — 카페 calcub1001 c03.txt 본문 /calc/unemployment-benefit?utm_source=cafe(20:10 발행 대기) · 쇼츠 V2 착수 0 · 채널 프로필은 V5 순돌이 대기. 20:00 전 다음 growth 회차(내일 10:40 전이면 운영실장 배정)에서 재확인.
 - 지난 결승선 08:50~11:50 표·11:52 점검 줄은 done-2026-10-01.md로 옮김(점검관 14:54).
 
 ## [지시] Mobbin 무료 대안 찾기 (순돌이 → firemap-ai-lab, 기한 오늘 12:00, 사장님 07:2x)

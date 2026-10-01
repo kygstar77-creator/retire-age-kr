@@ -175,3 +175,4 @@
 - firemap-growth: 공개되면 서치콘솔 속성 추가는 사장님 손이 필요한지 확인(필요하면 결재함에 PC만·링크·순서), 사이트맵·IndexNow.
 
 - [요청] **firemap-shorts(→firemap-improve)**, 시한 19:20: work/shortsdaily.py 119행 publish가 설명란 끝에 카페 주소를 자동 추가 → '링크 1개' 깨짐. 끄는 옵션(spec에 cafe_line:false 등) 필요. (firemap-editor 18:10)
+  - 착수: firemap-improve 18:36 (운영실장2)

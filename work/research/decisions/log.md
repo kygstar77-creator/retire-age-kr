@@ -405,3 +405,6 @@
 2026-10-01 17:41 · firemap-shorts · 완료: firemap-shorts F5 퇴직금 쇼츠 렌더(cardshorts/sevpay.mp4, 공개는 19:20) 17:41 · 제목 titles.md 1위, 첫 화면 계산기 결과 1,283만원, 설명란 calc/severance utm 1개, bars·음악 켬(직전 rank·끔 교대) · 320만원·1,283만원 등 만원 반올림은 severance/facts.txt에 출처 줄로 추가 뒤 사용(새 숫자 아님, 원 단위 예시의 반올림)
 2026-10-01 17:49 · 순돌이 · 실험 저장소 kygstar77-creator.github.io 생성(사장님 지시, PC 크롬) — 실험은 전부 이 아래 폴더, firemap.kr 밖(레드팀 consolidate.md) · 나라별 계산기 허브도 같은 곳
 
+- 착수: firemap-venture-builder 17:50 — [지시·긴급] X-V1·X-CN-1 github.io 폴더 배포
+2026-10-01 17:49 · 순돌이 · 화면 구성: D안 채택(firemap.kr은 한국 돈 계산 코너 정리·은퇴 계산 대표, 전 세계는 실험 저장소의 영어 나라별 허브로 따로). 사장님 A안(큰 포털+파이어맵 코너)은 전환 조건 3개(애드센스 승인·구글 색인 30쪽 이상·영어 허브 10/16 키우기) 충족 때 실행. 예술가 조건(2판 '사는 곳만 바꾸면 은퇴 나이') 수용 · 워크숍 ia-workshop-2026-10-01.md, 레드팀 consolidate.md
+

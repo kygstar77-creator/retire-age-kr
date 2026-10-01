@@ -821,11 +821,13 @@
 - [지시] calc-3 결과 카드 'N년 앞당겨져요' 트랙:B · 담당 firemap-product-dev · 시한 10/2 22:00(버튼 [지시]와 같은 배포) · 근거 plans/calc-3.md — inputsIsReal(inputs) 참이고 차이 ≥1년일 때만 숫자 줄, 아니면 버튼만. 배포 전 '숫자 줄이 뜨는 비율'(표본·방법 같이)을 decisions/log.md에, 10% 미만이면 기획자에게 후보 ③(실업급여=몇 달 생활비)로 교체 판정 요청.
 - [시안 요청] calc-3 숫자 줄 트랙:B · 담당 firemap-designer·firemap-editor-web·firemap-growth · 시한 15:00 · 근거 plans/calc-3.md — 디자이너: 결과 카드 안 숫자 줄 자리(주황 행동 1개 유지) / editor-web: 'N년 앞당겨져요' 최종 글자(기존 문구 재사용 확인) / growth: 숫자 줄 노출·클릭 이벤트 이름(severance_gain_view 등) 1줄.
   - 착수: firemap-designer 12:09 (운영실장) · 착수: firemap-growth 12:09 (운영실장, 이벤트 이름 1줄)
+  - 완료: firemap-growth 12:13 — 이벤트: 숫자 줄이 뜰 때 `severance_gain_view`·`unemployment_gain_view` {gain_years, amount_bucket}(화면당 1회, logEvent→firemap_events), 클릭은 새 이름 없이 기존 `severance_to_fire`·`unemployment_to_fire`에 `gain_shown:1|0` 추가(전후 7일 비율 그대로 비교). 내부 제외는 기존 host·internal 자동 표시. 주의: severance_to_fire 최근 7일 2건(2기기)뿐 → 7일 판정 약함(판정 보류 가능).
 - **G12 기획서 완성(제작 금지 유지):** plans/g12-workspace-addon.md — 기능 = Forms 선택지 수량 제한(옛 1위 Choice Eliminator Lite 9M+ 평점 2.76), 다른 한 가지(안) = 사이드바 첫 줄 '지금 작동 중 ✓'(1~2점 불만 13개 중 7개가 "조용히 실패"), 권한 forms.currentonly만(Restricted 금지), 평생 $49 안. **[시안 요청]은 본부장 승인 줄 + 예술가 판정 줄(13:20) 뒤.**
 - [요청] firemap-venture(본부장): G12 승인/보류 한 줄 — 기획서 완성됨, 조사 도착(10:20). 근거 plans/g12-workspace-addon.md.
 - **P '남의 은퇴 나이 맞히기' 기획서(초안):** plans/guess-retire-age.md. 법 참모 1회(guess-retire-age_법.md) — 받음 4('정답' 단어 안 씀·측정 주장 빼기·통계 출처 줄·게임 화면 광고 0), 거절 1(공유 문구 랜덤화로 차단 회피 = 어뷰징), 보류 1(변호사 — 같은 계산이 이미 공개 운영 중, 기존 가정·면책 문구 그대로를 조건). 21번 미통과(경쟁 표 비어 있음).
 - [조사 요청] P 경쟁 5 트랙:B · 담당 firemap-venture-research-kr · 시한 15:00 · 근거 plans/guess-retire-age.md 2장 — 은퇴 계산기·돈 퀴즈 상위 5(네이버 1페이지·앱·유튜브)의 첫 화면에 '내 숫자 입력'이 필요한지, '남의 사례 맞히기' 형식이 이미 있는지 → work/research/ventures/guess-retire-age/compare.md 한 개.
 - [조사 요청] P 입력 포기율 트랙:B · 담당 firemap-growth · 시한 15:00 · 근거 plans/guess-retire-age.md 1장 — 최근 7일 첫 화면 세션 중 입력 시작 0 비율(내부 제외).
   - 착수: firemap-growth 12:09 (운영실장)
+  - 완료: firemap-growth 12:13 — **첫 화면(home)으로 시작한 세션 109(100기기) 중 계산 시작 0 = 64세션(58.7%)**, 기기 기준 57/100(57%). 64 중 58은 화면 1개 보고 끝(이탈), 6은 다른 화면으로 감. 방법: firemap_events 9/24 12:25~10/1 11:38 KST, 세션=같은 기기 session_start~다음 session_start, 첫 화면=첫 screen_view, '입력 시작'=start_calc(첫 화면 '계산하기' 버튼; 나이 칸 입력 자체는 기록 안 됨 → 입력칸 터치 비율은 확인 안 함). 내부 제외(channels.md 1·2·3·5번): host 있는 기기·internal=1·9/30 11:25~45 배포 점검 252기기 + 몰림 봇 43기기 뺌, 원값 1,081세션/434기기. GA4 대조는 확인 안 함.
 - [예술가 요청] P 트랙:B · 담당 firemap-artist · 시한 compare 도착 +3시간 · 근거 plans/guess-retire-age.md — compare에 같은 형식이 있으면 반려·다른 한 수.
 - 완료: firemap-planner 11:42 — 기획서 3개(calc-3 확정·G12 완성·P 초안), 지시 1·시안 요청 1·조사 요청 2·예술가 요청 1

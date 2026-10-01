@@ -54,6 +54,49 @@ if os.path.exists(td):
     lines = open(td, encoding='utf-8').read().count('\n')
     if lines > 200: bad.append(f'today.md {lines}줄 — 150줄 넘음(스프린트가 archive로 옮겨야)')
 
+
+# 7. 약속 점검표(research/commitments.json — 사장님과 정한 것마다 증거 파일·기한). 기한 지났는데 증거 없으면 위반.
+try:
+    C = json.load(open(os.path.join(R, 'commitments.json'), encoding='utf-8'))
+except Exception as e:
+    C = []; bad.append(f'commitments.json 못 읽음: {e}')
+done = 0
+for c in C:
+    due = datetime.datetime.strptime(c['due'], '%Y-%m-%d %H:%M')
+    ok = False
+    if c.get('evidence'):
+        f = os.path.join(R, c['evidence']); ok = os.path.exists(f)
+        if ok and c.get('fresh_hours'): ok = (now.timestamp() - os.path.getmtime(f)) < c['fresh_hours'] * 3600
+    elif c.get('evidence_glob'):
+        ok = bool(glob.glob(os.path.join(R, c['evidence_glob'])))
+    elif c.get('evidence_grep'):
+        f, pat = c['evidence_grep']; f = os.path.join(R, f)
+        ok = os.path.exists(f) and re.search(pat, open(f, encoding='utf-8', errors='ignore').read()) is not None
+    if ok: done += 1
+    elif now > due: bad.append(f'약속 기한 넘김: {c["what"]} (기한 {c["due"]}, 담당 {c["owner"]})')
+print(f'약속 점검표 {done}/{len(C)} 끝남')
+
+
+# 8. 발전하고 있나 — 증명 기준 4개(10/15 목표) 지금 값
+def last_line(f, pat):
+    f = os.path.join(R, f)
+    if not os.path.exists(f): return '파일 없음'
+    L = [l for l in open(f, encoding='utf-8', errors='ignore').read().splitlines() if re.search(pat, l)]
+    return L[-1][:140] if L else '줄 없음'
+print('지표 · 방문:', last_line('growth/daily.md', r'^20\d\d-\d\d-\d\d'))
+print('지표 · 수익·쿠팡:', last_line('growth/revenue.md', r'^20\d\d-\d\d-\d\d'))
+try:
+    sys.path.insert(0, HERE); import ytupload
+    y = ytupload.service()
+    up = y.channels().list(part='contentDetails,statistics', mine=True).execute()['items'][0]
+    ids = [i['contentDetails']['videoId'] for i in y.playlistItems().list(part='contentDetails', playlistId=up['contentDetails']['relatedPlaylists']['uploads'], maxResults=15).execute()['items']]
+    vs = y.videos().list(part='snippet,statistics,status,contentDetails', id=','.join(ids)).execute()['items']
+    pub = [v for v in vs if v['status']['privacyStatus'] == 'public']
+    sh = [int(v['statistics'].get('viewCount', 0)) for v in pub if 'PT1M' not in v['contentDetails']['duration'] and re.match(r'PT\d+S$', v['contentDetails']['duration'])]
+    print(f"지표 · 유튜브 구독 {up['statistics']['subscriberCount']} · 공개 쇼츠 {len(sh)}편 평균 조회 {sum(sh)//max(1,len(sh))}(목표 460)")
+except Exception as e:
+    print('지표 · 유튜브 확인 안 됨:', str(e)[:80])
+
 # 6. 최근 2시간 커밋 수(회사가 도는가)
 try:
     c = subprocess.run(['git', '-C', os.path.dirname(HERE), 'log', '--since=2 hours ago', '--oneline'], capture_output=True, text=True, encoding='utf-8').stdout.count('\n')

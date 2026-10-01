@@ -4,6 +4,8 @@
 #   py -3.12 work/aitell.py gate <묶음>                      → 기준 넘고 편집 통과 표시 없으면 종료코드 4
 #   py -3.12 work/aitell.py pass <묶음> <편집자>             → 편집 통과 표시(editor_ok.txt)를 남긴다
 #   py -3.12 work/aitell.py scan <묶음 폴더 여러 개>         → 기준 조정용 분포
+#   --skip-list (아무 자리)  → 번호·글머리 목록 줄과 법 문구·면책 줄을 끝맺음 반복(연속·'~요'·머리·꼬리)에서 뺀다.
+#                              사전(AI 말·설명조) 검사는 그대로. 기본은 꺼짐 — 기존 통과 점수가 안 바뀐다(10/1 대역 X-KR-1 요청).
 # 사장님 10/1 "사소한 것까지 모든 글을 다 검토해서 사람이 쓴 글로 바꿔야 하는데" — 순돌이 지시 [지시·긴급].
 # 재는 것: ① 사전(work/aitell_dict.json — 한·영 AI 티 말, 과한 설명조, 맺음 틀) ② 같은 끝맺음 연속
 #          ③ 같은 틀 반복(문장 머리 두 어절·문장 꼬리 두 어절이 세 번 넘게) ④ 문단 맺음 틀 반복.
@@ -31,9 +33,28 @@ def end_kind(s):
 
 
 
-def score(text):
-    """점수와 걸린 곳 목록. 점수는 1,000자당(짧은 글은 원점수)."""
-    sents = sentences(text)
+LIST_LINE = re.compile(r'^\s*(\d{1,2}[.)]\s|\(\d{1,2}\)\s|[①-⑳]|[-*•·▪]\s|[가-하][.)]\s)')
+LEGAL_LINE = re.compile(r'제\s?\d+\s?조|면책|투자\s?권유|책임지지|책임을 지지|법적 효력|참고용')
+SKIP = False
+SKIP_MARK = 'BLOCKSKIP'   # 한글 없음 → 끝맺음 '기타'로 잡혀 연속을 끊고, 어절이 하나라 머리·꼬리에도 안 들어간다
+
+
+def skip_blocks(text):
+    """번호 목록·법 문구 줄을 표시 줄로 바꾼다(끝맺음 반복 계산용). 바뀐 줄 수도 돌려준다."""
+    out, k = [], 0
+    for ln in text.splitlines():
+        if ln.strip() and (LIST_LINE.search(ln) or LEGAL_LINE.search(ln)): out.append(SKIP_MARK); k += 1
+        else: out.append(ln)
+    return '\n'.join(out), k
+
+
+def score(text, skip_list=False):
+    """점수와 걸린 곳 목록. 점수는 1,000자당(짧은 글은 원점수). skip_list면 목록·법 문구 줄은 끝맺음 반복에서 뺀다."""
+    if skip_list:
+        rtext, k = skip_blocks(text)
+        sents = sentences(rtext)
+    else:
+        sents, k = sentences(text), 0
     hits, pts = [], 0.0
     low = text.lower()
     for w in KO_TELLS:
@@ -79,6 +100,7 @@ def score(text):
         for k, c in cnt.items():
             if c >= 3 and re.search(r'[가-힣A-Za-z]', k):
                 pts += 2 * (c - 2); hits.append(f'같은 문장 {label} "{k}" ×{c}')
+    if k: hits.append(f'목록·법 문구 {k}줄은 끝맺음 반복에서 뺌(--skip-list)')
     n = len(re.sub(r'[\s\W_]', '', text))
     val = pts if n < 300 else pts / (n / 1000)
     return round(val, 1), hits, n
@@ -138,9 +160,12 @@ def refuse(msg, hits):
 
 
 def main(a):
+    global SKIP
+    SKIP = '--skip-list' in a
+    a = [x for x in a if x != '--skip-list']
     if not a: print(__doc__ or open(__file__, encoding='utf-8').read().split('import')[0]); return 0
     if a[0] == 'text':
-        val, hits, n = score(' '.join(a[1:])); print(f'AI 티 {val} ({n}자)'); [print('  ', h) for h in hits]; return 0
+        val, hits, n = score(' '.join(a[1:]), SKIP); print(f'AI 티 {val} ({n}자)'); [print('  ', h) for h in hits]; return 0
     if a[0] == 'gate':
         ok, msg, hits = gate_pkg(a[1])
         if ok: print(msg); return 0
@@ -156,7 +181,7 @@ def main(a):
         rows = []
         for p in a[1:]:
             if os.path.isdir(p) and os.path.exists(os.path.join(p, 'order.txt')):
-                val, hits, n = score(pkg_text(p)[0]); rows.append((val, n, p, hits))
+                val, hits, n = score(pkg_text(p)[0], SKIP); rows.append((val, n, p, hits))
         rows.sort(reverse=True)
         for val, n, p, hits in rows: print(f'{val:6} {n:5}자 {os.path.basename(os.path.dirname(p))}  {"; ".join(hits[:3])[:110]}')
         if rows:
@@ -168,7 +193,7 @@ def main(a):
         text, files = pkg_text(p)
     else:
         text = open(p, encoding='utf-8').read()
-    val, hits, n = score(text)
+    val, hits, n = score(text, SKIP)
     lim = LIMIT if n >= 300 else LIMIT_SHORT
     print(f'AI 티 {val} (기준 {lim}, {n}자) — {"넘음" if val > lim else "통과"}')
     for h in hits: print('  ', h)

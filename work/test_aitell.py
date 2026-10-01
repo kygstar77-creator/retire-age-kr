@@ -35,4 +35,11 @@ assert aitell.main(['gate', d]) == 4
 assert aitell.gate_text('은퇴까지 몇 년 남았을까?')[0]
 assert not aitell.gate_text('결론적으로 다양한 측면에서 핵심은 현명한 투자')[0]
 assert aitell.gate_text('결론적으로 다양한 측면에서 핵심은 현명한 투자', ok_flag=True)[0]
+# 7) --skip-list: 번호 목록·법 문구 줄은 끝맺음 반복에서 빠진다(사전 검사는 그대로), 기본은 꺼짐
+lst = '\n'.join(f'{i}. 셀 {i}에 금액을 넣습니다.' for i in range(1, 9)) + '\n본 자료는 투자 권유가 아니며 책임지지 않습니다.'
+v0 = aitell.score(lst)[0]; v1, h1, _ = aitell.score(lst, skip_list=True)
+assert v0 > v1 and any('--skip-list' in h for h in h1), (v0, v1)
+assert aitell.score('1. 결론적으로 다양한 측면에서 핵심은 현명한 투자', skip_list=True)[0] > 0   # 사전은 목록 줄도 잰다
+prose = '첫 문장입니다. 둘째 문장입니다. 셋째 문장입니다. 넷째 문장입니다.'
+assert aitell.score(prose)[0] == aitell.score(prose, skip_list=True)[0]   # 목록 없는 글은 같다
 print('test_aitell: ok')

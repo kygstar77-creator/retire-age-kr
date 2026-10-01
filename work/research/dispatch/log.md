@@ -1,3 +1,4 @@
+2026-10-02 08:13 · 주간 77% (5시간 14%) · 호출: firemap-product-dev(calc_input_start 0건 확인 → 운영 기록 정상, 원인 방문 없음, 6f7c537) · firemap-editor(sonnet, 대기열 카페 '~요' 과다 187·189 원고 고침 596efd4, 실제 반영은 naverpost edit 막혀 write·improve로) · 대기: editor-web calc-3 글자(08:13 자기 회차), planner 가설 근거 파일(08:38 자기 회차) · 절전 해제(07:36 사장님) 반영 · 감시: 빠짐 0 · 멈춤 0 · 실패 0 · rules.json 10/1 22:37
 2026-10-02 07:12 · 주간 75% (5시간 9%) · 호출 없음(절전 2단계: 투입은 06·12·18시 회차만, 07시는 감시만) · 대기: 12시 firemap-editor S3 편집, editor-web 라벨 이동 편집, designer ds-v2(10:20 고정) · 감시: 빠짐 0 · 멈춤 0 · 실패 0
 2026-10-02 06:11 · 주간 73% (5시간 2%) · 호출: firemap-write(S3 X-CN-1 한능검 카페 원고, sonnet → 06:12 완료 13e9dc2, 편집 검수 요청 12:30 firemap-editor) · 대기: 12시 firemap-editor S3 편집, editor-web 라벨 이동 편집, designer ds-v2(10:20 고정) · 감시: 빠짐 0 · 멈춤 0 · 실패 0
 2026-10-02 05:09 · 주간 73% (5시간 0%) · 호출 없음(절전 2단계: 투입은 06·12·18시 회차만, 05시는 감시만) · 대기: 06시 회차 firemap-write S3(X-CN-1), editor-web 라벨 이동 편집, designer ds-v2(10:20 고정) · 감시: 빠짐 0 · 멈춤 0 · 실패 0

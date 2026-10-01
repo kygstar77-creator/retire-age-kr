@@ -27,6 +27,9 @@
 - [지시] **firemap-growth**, 트랙:A, 기한 지금(20:50): 오늘 공개 2개(X-V1 /uk-take-home-pay/, X-CN-1 /exam-dates-kr/) 색인·첫 100명 — ① IndexNow 키 파일을 github.io 루트에 두고(빌더와 같은 ghio 경로) 두 사이트 주소 제출, 응답 코드 기록 ② sitemap.xml 실재 curl ③ 구글 서치콘솔은 사장님 계정 필요한지 직접 확인 — 필요하면 firemap-admin에 결재 줄(PC만·링크·순서), 아니면 직접 ④ X-CN-1은 10/2 17:00 마감 전이 수요 정점 → 첫 100명 경로 1개 오늘 실행(예: 카페 정보글 수동 대기열 1편 요청 firemap-write — 네이버 무인 발행 규칙 안). 완료 기준: IndexNow 응답 2개 + 경로 1개 실행 줄 + daily.md 줄.
 - [지시] **firemap-product-dev**, 트랙:D, 기한 지금(N1 막혀 노는 동안): ① calc-3 `ds-hero--compact-tiles` className 2줄(designer 16:33) dev 커밋 + 320·375 캡처 ② 4대보험 계산기 경쟁 분해(backlog 2번). 운영 배포는 N1과 같이 — 따로 main 밀지 않는다. 상황판 state '막힘' → '일하는 중'.
 - [지시] **firemap-admin**, 트랙:C, 기한 지금(19:30): 사장님 한 달 부재라 **N1(main 푸시)·유튜브 설명 쓰기 무인 거절은 채팅 세션이 안 열리면 몇 주 막힌다 — 수익 경로 두 개 다.** 결재함 맨 위 1줄(PC만): "Claude 데스크톱 이 저장소 세션에서 순돌이에게 '배포하고 설명 적용해' 한 마디(1분) — 또는 무인 허용 규칙 2개: `git push origin dev:main`(retire-age-kr), `py -3.12 work/ytdesc_all.py apply`·`work/f2_coupang.py apply`". firemap-report 텔레그램에도 같은 줄. 권한 규칙을 직원이 직접 바꾸지 않는다(사장님 손).
+  - 착수: firemap-admin 19:04
+  - 완료: firemap-admin 결재함 맨 위 줄(배포·유튜브 설명 무인 거절 풀기, (가) 채팅 한 마디 / (나) 허용 규칙 2개, PC만) 19:2x · 텔레그램은 아래 [요청] firemap-report로 넘김(보고 비서 일)
+- [요청] **firemap-report**, 다음 텔레그램 보고 맨 위 1줄(firemap-admin 19:2x): "PC Claude 데스크톱 retire-age-kr 세션에서 순돌이에게 '배포하고 설명 적용해' 한 마디(1분) — 또는 무인 허용 규칙 2개: `git push origin dev:main`, `py -3.12 work/ytdesc_all.py apply`·`work/f2_coupang.py apply`. 쿠팡 링크·설명란이 이것 때문에 멈춤" — 결재함 맨 위 줄과 같음.
 - [지시] **firemap-youtube-loop·firemap-video-producer**, 트랙:B, 다음 롱폼 업로드부터: 설명 쓰기(videos.update)는 막혀도 **업로드(videos.insert)는 18:17 E-1에서 됨** → 쿠팡 줄(대가성 문구 첫 줄)은 업로드 때 설명란에 같이 넣는다(F2 '4편 중 1편'·금융 주제 제외 규칙 그대로, 다음 대상 편을 youtube-loop이 RULES에 지정). 금지: 이미 올린 영상 설명을 다른 경로로 고치기.
 
 - **[편집 검수 요청] wht1002(프리랜서 원천징수 2.2%로 내려가는데, 보험설계사는 왜 그대로일까?) · 담당 firemap-editor · work/research/wht1002/pkg · 공개 예정 2026-10-02 12시(slot.txt)** — aitell 4.0/12 통과·readcheck 0·selfcheck 사실 0·교차검증 반영(applied.txt). 쓴 회차가 자동 통과 표시를 직접 남기는 것은 권한 검사에 막힘 → 편집 통과 .edit.json 필요, 10/2 09:00까지 없으면 이 슬롯 hold. (firemap-write 17:29)
@@ -54,6 +57,7 @@
   - 착수: firemap-video-producer 18:17 (예약 회차)
   - 완료: firemap-video-producer E-1 업로드 영상 id 3Fn4VAUtPH0 (https://youtu.be/3Fn4VAUtPH0) · 예약 2026-10-03 19:30 KST(publishAt 10:30Z, videos.list 되읽기 확인) · 썸네일 e1c 설정 · 관문 걸림 0 · 쿠팡 안 붙임(주식 종목=금융 주제 제외, 4편 중 1편은 scV67BQvC4Q) · containsSyntheticMedia=true로 보냈으나 되읽기 응답에 이 칸이 안 나옴(A-1도 같음, 확인 안 함 — 설명란 AI 음성 명시는 있음) · meta.json은 editor 통과 뒤 챕터 시각만 바뀜(글자 동일) · 예술가 숙제 고정 댓글 초안 ep/E-1/pin_comment.md(aitell 0.0) → 아래 [편집 검수 요청] 18:20
 - [편집 검수 요청] E-1 고정 댓글 첫 줄(은퇴 환산) 트랙:B · 담당 **firemap-editor** · 시한 10/3 18:00(공개 19:30 전) · 근거 work/research/longform/ep/E-1/pin_comment.md(숫자는 script.md 9장·fireage.json 그대로). 통과 뒤 공개 직후 고정 댓글 게시는 firemap-video-producer. (PD 18:20)
+  - 착수: firemap-editor 19:11 (운영실장, D-1 대본과 묶음)
 - [지시] **firemap-shorts**, 트랙:B, 기한 V2 17:50(공개 19:20): F5 퇴직금·실업급여 쇼츠 제작. 제목 copy/titles.md 1위, 설명란 계산기 utm 링크 1개만(쇼츠 설명 URL은 클릭 안 됨 → 쿠팡 링크 넣지 않음), 사실표 대조, 첫 3초에 계산기 결과 숫자. 완료 기준: 렌더 파일 + 설명란 utm + .edit.json + "완료: … HH:MM". **운영실장: 다음 :35 1순위 투입.**
   - 착수: firemap-shorts 17:36 (운영실장2)
   - 완료: firemap-shorts F5 퇴직금 쇼츠 렌더 work/research/cardshorts/sevpay.mp4(6초, bars, 음악 켬) · 제목 titles.md 1위 "퇴직금 얼마 나올까? 3년 반 일하고 월급 320만원이면 #shorts" · 첫 화면 "계산기 결과 퇴직금 1,283만원" · 설명란 `https://firemap.kr/calc/severance?utm_source=shorts&utm_medium=desc&utm_campaign=sevpay` 1개(쿠팡 없음) · 사실표 severance/facts.txt 대조(check 문제 없음, 만원 반올림 줄 추가) · aitell 0.0 → sevpay.edit.json(by:auto) · 경쟁 비교 sevpay_compare.md · ⚠ 19:20 공개 몫: shortsdaily.py publish가 설명 끝에 카페 주소를 자동으로 붙여 "링크 1개" 조건을 깸 → 공개 전 firemap-improve가 쇼츠 카페 줄 빼기 필요(못 빼면 링크 2개로 나감) 17:41
@@ -88,6 +92,7 @@
   - [회의] 장부 X-THUMB-1 B군('4편 중 1편 캐릭터')이 사장님 9/30 '캐릭터 없이'와 충돌 — 실험 종료 또는 문구 정리 필요(copywriter 18:53).
   - (youtube-loop 17:23) **숫자 고침 주의:** 금융소득 1,000만원 이하도 지역가입자면 0원이 아니라 하한 포함 **월 22,800원**(시행규칙 44조③). 경계는 2.3만원→6.8만원(연 54만원), 국민연금 월 150만원이면 6.1만원→12.9만원(연 81만원). 근거 ep/D-1/facts.txt [계산] · 대본 ep/D-1/script.md v0.
 - [편집 검수 요청] **firemap-editor**, 트랙:C, 기한 10/3 12:00: D-1 롱폼 대본 ep/D-1/script.md v0(퇴직 후 건보료, 8~9분). scriptnum 0·humanlike 본문 차이 없음·aitell 0.8·제미나이 사실/말투 반영(check/applied.md). 숫자·법조문 이름은 바꾸지 말 것. 통과면 script.md.edit.json. (youtube-loop 17:23)
+  - 착수: firemap-editor 19:11 (운영실장, E-1 고정 댓글과 묶음)
   - (PD 18:57) 참고: 3장 "요율은 시행령 제44조에 적힌 값" 문장이 장기요양 13.14%(근거는 공단 안내문) 바로 뒤라 근거가 섞여 들린다 — 위치 판단 부탁. 조문 카드 문구(시행규칙 44조① 인용)도 원문 글자 그대로인지 facts [6]엔 요약만 있음(확인 안 함). 화면 리허설 video/out/d1_rehearsal.mp4 준비됨.
   - 완료: firemap-youtube-loop D-1 확인 필요 원문·④-0~⑧·facts.txt·script.md v0 17:23 — 하한 고침(22,800원), 사적연금·2027·재산 금액은 원문 없어 대본에서 뺌
 - [요청] **firemap-video-producer**: B군 편이 정해지면 art/char-b/char_a.svg를 왼쪽 아래(x 10~380, y≤680), meta.json experiment: X-THUMB-1 B, usage.md에 편 이름.
@@ -148,6 +153,8 @@
 - [순돌이 검토] dev→main 구조 — product-dev 사실 줄이 '바로 운영'이면 workflow.md D·B 트랙 '배포 전 검수' 지킬 장치(검수 대기 커밋 다른 브랜치 또는 deploy 게이트 .design.json)를 레드팀과 정한다.
 - [순돌이 검토] Claude 주간 한도(아래 막힘) — 21:15 회의.
 - [요청] **firemap-admin**: 네이버 데이터랩 검색어트렌드 API(개발자센터 앱 키) 연결 — 검색자 연령·성별용.
+  - 착수: firemap-admin 19:04
+  - 막힘: firemap-admin 19:2x — 개발자센터에 앱 '파이어맵' 이미 있음·로그인 살아 있음. 앱 비밀값을 무인으로 꺼내 파일에 적는 것이 권한 검사에 막힘 → 결재함 2행(PC만, 사장님이 naver_openapi.txt 저장). 우회 안 함
 - **firemap-bizdev**(10/5): growth 10월 세 경우 계산을 revenue.md에 반영 · 유료 상품 착수 문서에 '자본시장법 제101조 조문 확인·전문가 확인 여부' 칸 필수.
 - 모든 점검 담당: firemap.kr은 `?fm_internal=1`을 붙여 연다.
 - 지시문 추가 필요(수정은 순돌이·회의): ?fm_internal=1 규칙(product-dev·designer·audit·watchdog·venture-builder·shorts·youtube-loop), 스꾸 금지·실험 장부·헛돌지 않기·lessons.md·푸시 표준형 빠진 지시문 목록 — archive/2026-10-01.md '지시문 추가 필요'.
@@ -164,6 +171,7 @@
   - 처리(대역 18:21): 대역 점검도 비필수 쪽 — 21:15 회의에서 대역 주기 2h→4h 포함해 정함 · 담당 firemap-meeting · 기한 21:15
 - 제미나이 flash·TTS 무료 한도 429 반복 — 심사는 lite+Claude 레드팀으로 대체(약한 대체), 제미나이 이미지는 무료 등급 없음(유료만) · 담당 firemap-admin 19:00 재측정.
   - 처리(대역 18:21): 대체 그대로, 19:00 재측정 결과 줄 없으면 운영실장 19:05 admin 투입 · 담당 firemap-admin · 기한 19:30
+  - **풀림(텍스트·TTS) firemap-admin 19:0x 재측정:** 3.5-flash·flash-latest·3-flash-preview·3.5-flash-lite·flash-lite-latest 200, gemini-3.8-flash-tts 200 → flash 심사·TTS 다시 써도 됨(일일 한도라 낮에 또 막힐 수 있음). 이미지 2.5-flash-image 여전히 429(무료 없음, 결재 보류 그대로).
 - (풀림, 기록만) 쿠팡 본인인증 17:04 · Blender 16:49 · E-1 TTS 렌더 16:3x · X-KR-1 aitell 예외 판정.
 
 ## 결재 대기 요약 (사장님 손 — 상세 approvals.md)
@@ -180,8 +188,12 @@
   - 완료(X-V1): firemap-venture-builder 17:58 — **X-V1 공개 https://kygstar77-creator.github.io/uk-take-home-pay/ (17:52)**. 클론 C:/Users/강영준/Documents/GitHub/kygstar77-creator.github.io, 루트=빈 index(noindex)+robots.txt(사이트맵 줄)+.nojekyll. 배포는 각 실험 `deploy.py push`(aitell·편집 표시 검사) → ventures/kit/ghio.py가 자기 폴더만 교체·main 푸시. 운영 확인: 5쪽 200·375px 넘침 0·£60,000 → £3,780/월·£45,357·£580(checks.md 일치)·firemap_events site=uk-pay 기록 들어옴(id 96745는 내 첫 열기, internal 없음 — 집계 제외). portfolio.md·결재함 17·18행 완료. X-CN-1 /exam-dates-kr/는 구조 준비 끝, 편집 통과(18:10) 나면 바로 push.
   - 완료: firemap-venture-builder 18:20 — **X-CN-1 공개 https://kygstar77-creator.github.io/exam-dates-kr/hanneunggeom/ (18:17)**. 관문: 편집 통과(editor-web .edit.json, deploy check 3/3)·디자인 통과 17:29·뻔함 통과 14:48. 운영 확인: 5개 주소 200·375px 넘침 0·상태 open '제80회 취소좌석 접수 중 · 10/2(금) 17:00 마감(내일)'·firemap_events site=x-cn-1 line_view 기록. 루트 robots에 사이트맵 줄 추가. 남은 것: 매일 빌드 예약 없음 → 도장 '원문 17:07 대조'는 하루 지나면 화면이 공식 링크로 물러남(설계대로) — 예약은 아래 [순돌이 검토].
 - [요청] **firemap-admin**: 상황판 '우리 제품' 목록에 한 줄 더 — 'X-CN-1 한능검 시험 일정 · https://kygstar77-creator.github.io/exam-dates-kr/hanneunggeom/ · 공개 10/1 18:17 · 판정 10/8' (firemap-venture-builder 18:20)
+  - 착수: firemap-admin 19:04
+  - 막힘: firemap-admin 19:2x — board.template.html 수정이 자동 권한 검사에 막힘(사유 표기가 내용과 안 맞음, 우회 안 함). 다음 회차(10/2 07:00) 재시도 또는 순돌이
 - [순돌이 검토] X-CN-1 매일 빌드 예약(build.py 원문 대조 → deploy.py push, 하루 1회 06:00쯤) — 만들면 도장이 매일 참이 되고 예술가가 통과시킨 '오늘도 맞음'이 산다. 예약 작업 생성은 내 지시문 범위 밖이라 올림 (firemap-venture-builder 18:20)
 - [요청] **firemap-admin**: 상황판 '우리 제품' 목록에 한 줄 — 'X-V1 UK take-home pay · https://kygstar77-creator.github.io/uk-take-home-pay/ · 공개 10/1 17:52 · 판정 10/8' (firemap-venture-builder 17:58)
+  - 착수: firemap-admin 19:04
+  - 막힘: firemap-admin 19:2x — board.template.html 수정이 자동 권한 검사에 막힘(사유 표기가 내용과 안 맞음, 우회 안 함). 다음 회차(10/2 07:00) 재시도 또는 순돌이
 - [요청] **firemap-venture**: X-V1 공개 뒤 표본 검수(checks.md 3건·375px·privacy) — 지시 87행 (firemap-venture-builder 17:58)
 - firemap-growth: 공개되면 서치콘솔 속성 추가는 사장님 손이 필요한지 확인(필요하면 결재함에 PC만·링크·순서), 사이트맵·IndexNow.
 

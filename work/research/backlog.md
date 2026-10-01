@@ -22,7 +22,7 @@
 | firemap-video-producer | D-1 editor 통과 즉시 목소리(3.8-flash-tts·Charon 고정)→1080 렌더→점수표→예약(10/8 이후) | E-1 10/3 19:30 공개 직후 고정 댓글(pin_comment.md, editor 통과분)·앱 화면 썸네일 확인·스튜디오 합성 미디어 표시 확인 | W-1 화면 리허설(analysis만 있음 → 사실표 나오면 d1props 방식) |
 | firemap-youtube-loop | F2 쿠팡 설명란 | 다음 롱폼 대본 | 경쟁 분석 |
 | firemap-improve | shortsdaily.py cafe_line 옵션(19:05, N2) | aitell 발행 관문 연결 | 카페 공식 API 발행 안정화 |
-| firemap-admin | **토큰 절약 1(17:17): 직원 지시문 다이어트** — 33개 SKILL.md의 공통 규칙(스꾸 금지·상황판·git·편집/디자인/뻔함 관문·스스로 다음 일)을 work/research/common-rules.md 하나로 모으고 각 지시문엔 한 줄 참조만. 지시문마다 고유 업무만 남겨 write(53KB)·youtube-loop(39KB)부터 절반 이하로. 원본은 백업. | **토큰 절약 2:** decisions/log.md(89KB)·lessons.md를 '최근 7일'만 남기고 나머지 archive, 직원은 grep으로 필요한 줄만 읽게 | 하루 토큰 사용 상위 직원 5명 표(list_task_runs 시간·횟수 기준) → 근무 횟수 줄이기 제안 |
+| firemap-admin | **상황판 제품 2줄(X-V1·X-CN-1) 넣고 다시 게시**(19:2x 템플릿 수정이 권한 검사에 막힘 — 10/2 07:00 재시도) + 10/2 07:00 Claude 주간 % 재측정, 80% 넘으면 비필수 직원 일시정지 목록 회의에 | **토큰 절약 1: 직원 지시문 다이어트** — 공통 규칙을 work/research/common-rules.md 하나로, 각 지시문엔 한 줄 참조(write 53KB·youtube-loop 39KB부터 절반 이하), 원본 백업 | **토큰 절약 2:** decisions/log.md·lessons.md 최근 7일만 남기고 archive + 하루 토큰 상위 직원 5명 표 → 근무 횟수 줄이기 제안 |
 | firemap-ai-lab | **Sonnet 허용 목록 넓히기:** 사실 대조·디자인 심사·코드 수정 3종을 Opus/Sonnet 같은 일감으로 비교(bench/2026-10-01-model-tiers.md 방식) | 클라우드 세션 크레딧($250, 11/5까지) 쓰는 길 — 무인 근무를 원격 에이전트·트리거로 넘기는 방법 시험, 스꾸 저장소 절대 제외 | 3.8-flash-lite-tts vs 3.8-flash-tts 쇼츠 한 단락 나란히 듣기(radar 후보) |
 | firemap-watchdog | 카페 묶음 garak0929(막힘 없음·자체 3건)가 왜 재고로만 남는지 확인 — 상한인지 코너 슬롯 없음인지 | 보류 묶음 8개(시효·중복) 정리 제안: 재고 숫자를 부풀려 진짜 재고 부족을 가린다 | 블로그 STOP 해제 조건(9/23 무색인) 진척을 회차마다 한 줄로 보고 |
 | firemap-soondol-deputy | 21:15 회의에 대역 주기 2h→4h 안건(한도 63%) | 10/19부터 10/26 네이버 쿠키 재로그인 결재·텔레그램 7일 전 알림 확인 | N1·유튜브 쓰기 결재 줄 뜬 뒤 수익 경로 재개 확인(운영 번들 link.coupang.com) |

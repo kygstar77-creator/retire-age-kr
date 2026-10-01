@@ -90,12 +90,9 @@ export default function SalaryCalc({ inputs, onApply, onMove }) {
         <RangeField label="한 달 생활비" value={living} min={500000} max={10000000} step={100000} money format={won} chips={[100000, 500000]} onChange={setLiving} />
       </Card>
 
-
       <ListGroup label="다음 계산">
         <ListRow lead={<Icon name="calc" />} title="퇴직금 계산기" desc="입사일·퇴직일·월급으로 예상 퇴직금" size="S" onClick={toNext} />
       </ListGroup>
-
-      <CoupangPick from="salary" />
 
       <Card variant="flat">
         <SectionHead size="sm" kicker="계산 방법" title="월급 − 4대보험 − 소득세 − 지방소득세" />
@@ -104,6 +101,8 @@ export default function SalaryCalc({ inputs, onApply, onMove }) {
           {SALARY_RULES.basisDate} 기준 · 참고용, 실제와 다를 수 있어요. 매달 떼는 세금은 연말정산으로 다시 맞춰요 · <a className="ds-link ds-link--muted" href="/disclaimer">면책 안내</a>
         </Notice>
       </Card>
+
+      <CoupangPick from="salary" />
     </>
   );
 }

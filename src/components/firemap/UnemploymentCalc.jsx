@@ -78,8 +78,6 @@ export default function UnemploymentCalc({ inputs, onApply, onMove }) {
         </Card>
       )}
 
-      <CoupangPick from="unemployment" />
-
       <Card variant="flat">
         <SectionHead size="sm" kicker="계산 방법" title="1일 구직급여액 × 소정급여일수" />
         <p className="ds-caption ds-mb-0">1일 구직급여액 = 기초일액(이직 전 3개월 임금총액 ÷ 그 기간의 총일수) × 60%(고용보험법 제45조·제46조). 기초일액 상한은 113,500원이라 1일 최대 68,100원(시행령 제68조). 하한은 이직일 최저임금 10,320원 × 1일 소정근로시간 × 80%, 8시간이면 66,048원. 소정급여일수는 이직일 현재 연령과 피보험기간에 따라 120~270일(제50조 별표 1), 장애인은 50세 이상으로 봐요.</p>
@@ -88,6 +86,8 @@ export default function UnemploymentCalc({ inputs, onApply, onMove }) {
           {BASIS_DATE} 기준 · 2026년 이직자 기준이에요. 통상임금 비교와 일용근로자·자영업자·예술인·노무제공자는 반영하지 않았어요. 정확한 금액은 고용24 실업급여 모의계산에서 확인하세요.
         </Notice>
       </Card>
+
+      <CoupangPick from="unemployment" />
     </>
   );
 }

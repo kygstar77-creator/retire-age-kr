@@ -91,8 +91,6 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
         </ListGroup>
       )}
 
-      <CoupangPick from="severance" />
-
       <Card variant="flat">
         <SectionHead size="sm" kicker="계산 방법" title="1일 평균임금 × 30일 × (재직일수 ÷ 365)" />
         <p className="ds-caption ds-mb-0">1일 평균임금 = 퇴직일 이전 3개월 임금총액 ÷ 그 기간의 총일수(근로기준법 제2조). 계속근로기간 1년에 대하여 30일분 이상의 평균임금(근로자퇴직급여 보장법 제8조). 계속근로기간 1년 미만이거나 1주 소정근로시간 15시간 미만이면 대상이 아니에요(같은 법 제4조).</p>
@@ -100,6 +98,8 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
           {BASIS_DATE} 기준 · 퇴직소득세를 빼기 전 금액이에요. 육아휴직 등 미산입기간과 통상임금 비교는 반영하지 않았어요. 정확한 금액은 고용노동부 퇴직금 계산에서 확인하세요.
         </Notice>
       </Card>
+
+      <CoupangPick from="severance" />
     </>
   );
 }

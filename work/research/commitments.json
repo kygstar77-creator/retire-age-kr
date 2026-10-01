@@ -1,17 +1,118 @@
 [
- {"what": "콘텐츠 회고(유튜브·카페 틀 깨기·채널 정체성)", "evidence": "content-review-2026-10.md", "due": "2026-10-02 12:00", "owner": "firemap-youtube-loop"},
- {"what": "이슈 레이더 오늘 판", "evidence": "longform/loop/issue-radar.md", "due": "2026-10-02 12:00", "owner": "firemap-youtube-loop", "fresh_hours": 24},
- {"what": "유료 도구 전수 비교", "evidence": "admin/paid-tools-2026-10.md", "due": "2026-10-02 18:00", "owner": "firemap-ai-lab"},
- {"what": "행동심리 첫 판정(쿠팡 링크 녹이기)", "evidence_glob": "behavior/*.md", "due": "2026-10-02 12:00", "owner": "firemap-behavior"},
- {"what": "디자인 품질 1단계 진단 비교판", "evidence_glob": "design/quality/*", "due": "2026-10-02 00:00", "owner": "firemap-brand-director"},
- {"what": "디자인 시스템 v2(PC·모바일)", "evidence_glob": "design/system-v2*", "due": "2026-10-02 23:00", "owner": "firemap-designer"},
- {"what": "세계 계산기 기획서", "evidence": "plans/global-calcs.md", "due": "2026-10-02 12:00", "owner": "firemap-planner"},
- {"what": "부동산 손품 기획서", "evidence": "plans/sonpum.md", "due": "2026-10-02 18:00", "owner": "firemap-planner"},
- {"what": "E-1 카페 표 글(영상 약속)", "evidence_grep": ["longform/loop/promises.md", "E-1.*(firemap/[0-9]+|cafe[.]naver)"], "due": "2026-10-03 19:00", "owner": "firemap-write"},
- {"what": "E-1 대본·카피 심사", "evidence": "longform/ep/E-1/review.md", "due": "2026-10-02 18:00", "owner": "firemap-youtube-loop"},
- {"what": "D-1 대본·카피 심사(오늘 19:30)", "evidence": "longform/ep/D-1/review.md", "due": "2026-10-02 17:00", "owner": "firemap-youtube-loop"},
- {"what": "aitell 발행 관문 연결", "evidence_glob": "../aitell.py", "due": "2026-10-02 14:00", "owner": "firemap-improve"},
- {"what": "경쟁 조사·review 코드 관문", "evidence_grep": ["../ytlong.py", "review[.]md"], "due": "2026-10-03 12:00", "owner": "firemap-improve"},
- {"what": "수익 계측 매일", "evidence": "growth/revenue.md", "due": "2026-10-02 23:00", "owner": "firemap-growth", "fresh_hours": 26},
- {"what": "증명 기준 표 갱신(스프린트)", "evidence_grep": ["meeting/today.md", "증명 기준"], "due": "2026-10-02 09:00", "owner": "firemap-finishline-check"}
+ {
+  "what": "콘텐츠 회고(유튜브·카페 틀 깨기·채널 정체성)",
+  "evidence": "content-review-2026-10.md",
+  "due": "2026-10-02 12:00",
+  "owner": "firemap-youtube-loop"
+ },
+ {
+  "what": "이슈 레이더 오늘 판",
+  "evidence": "longform/loop/issue-radar.md",
+  "due": "2026-10-02 12:00",
+  "owner": "firemap-youtube-loop",
+  "fresh_hours": 24
+ },
+ {
+  "what": "유료 도구 전수 비교",
+  "evidence": "admin/paid-tools-2026-10.md",
+  "due": "2026-10-02 18:00",
+  "owner": "firemap-ai-lab"
+ },
+ {
+  "what": "행동심리 첫 판정(쿠팡 링크 녹이기)",
+  "evidence_glob": "behavior/*.md",
+  "due": "2026-10-02 12:00",
+  "owner": "firemap-behavior"
+ },
+ {
+  "what": "디자인 품질 1단계 진단 비교판",
+  "evidence_glob": "design/quality/*",
+  "due": "2026-10-02 00:00",
+  "owner": "firemap-brand-director"
+ },
+ {
+  "what": "디자인 시스템 v2(PC·모바일)",
+  "evidence_glob": "design/system-v2*",
+  "due": "2026-10-02 23:00",
+  "owner": "firemap-designer"
+ },
+ {
+  "what": "세계 계산기 기획서",
+  "evidence": "plans/global-calcs.md",
+  "due": "2026-10-02 12:00",
+  "owner": "firemap-planner"
+ },
+ {
+  "what": "부동산 손품 기획서",
+  "evidence": "plans/sonpum.md",
+  "due": "2026-10-02 18:00",
+  "owner": "firemap-planner"
+ },
+ {
+  "what": "E-1 카페 표 글(영상 약속)",
+  "evidence_grep": [
+   "longform/loop/promises.md",
+   "E-1.*(firemap/[0-9]+|cafe[.]naver)"
+  ],
+  "due": "2026-10-03 19:00",
+  "owner": "firemap-write"
+ },
+ {
+  "what": "E-1 대본·카피 심사",
+  "evidence": "longform/ep/E-1/review.md",
+  "due": "2026-10-02 18:00",
+  "owner": "firemap-youtube-loop"
+ },
+ {
+  "what": "D-1 대본·카피 심사(오늘 19:30)",
+  "evidence": "longform/ep/D-1/review.md",
+  "due": "2026-10-02 17:00",
+  "owner": "firemap-youtube-loop"
+ },
+ {
+  "what": "aitell 발행 관문 연결",
+  "evidence_glob": "../aitell.py",
+  "due": "2026-10-02 14:00",
+  "owner": "firemap-improve"
+ },
+ {
+  "what": "경쟁 조사·review 코드 관문",
+  "evidence_grep": [
+   "../ytlong.py",
+   "review[.]md"
+  ],
+  "due": "2026-10-03 12:00",
+  "owner": "firemap-improve"
+ },
+ {
+  "what": "수익 계측 매일",
+  "evidence": "growth/revenue.md",
+  "due": "2026-10-02 23:00",
+  "owner": "firemap-growth",
+  "fresh_hours": 26
+ },
+ {
+  "what": "증명 기준 표 갱신(스프린트)",
+  "evidence_grep": [
+   "meeting/today.md",
+   "증명 기준"
+  ],
+  "due": "2026-10-02 09:00",
+  "owner": "firemap-finishline-check"
+ },
+ {
+  "what": "부동산 B10 동네별 실거래 기획서 다시",
+  "evidence_grep": [
+   "plans/sonpum.md",
+   "B10|전세가율"
+  ],
+  "due": "2026-10-02 18:00",
+  "owner": "firemap-planner"
+ },
+ {
+  "what": "카페↔유튜브 서로 홍보 설계",
+  "evidence_glob": "behavior/*cross*",
+  "due": "2026-10-03 18:00",
+  "owner": "firemap-behavior"
+ }
 ]

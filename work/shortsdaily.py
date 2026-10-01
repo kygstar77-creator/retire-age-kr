@@ -14,7 +14,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 OUT = os.path.join(HERE, 'research', 'cardshorts'); os.makedirs(OUT, exist_ok=True)
 LOG = os.path.join(OUT, 'log.jsonl')
-DAY_CAP, MIN_GAP_H = min(2, int(os.environ.get('SHORTS_DAY_CAP', '1'))), 6   # 기본 하루 1편(환경변수로 2편까지)   # 2026-09-30 정책 조사 뒤 3편→2편: 유튜브 "frequently sharing content that doesn't resonate ... affect your channel's overall performance", 업로드 빈도는 성장과 "not correlated" (research/longform/yt-policy-algorithm.md)
+DAY_CAP, MIN_GAP_H = min(2, int(os.environ.get('SHORTS_DAY_CAP', '2'))), 6   # 기본 하루 2편(10/2 사장님 지시 X-YT-FREQ, 12:20·19:20), 간격 6시간   # 2026-09-30 정책 조사 뒤 3편→2편: 유튜브 "frequently sharing content that doesn't resonate ... affect your channel's overall performance", 업로드 빈도는 성장과 "not correlated" (research/longform/yt-policy-algorithm.md)
 CAFE = 'https://cafe.naver.com/firemap'
 
 def log_rows():

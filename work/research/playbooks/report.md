@@ -61,3 +61,4 @@
 
 ## 6. 배운 것 (회차마다 1줄 이상)
 - 2026-09-30 · 교육 담당 · v1 작성.
+- 2026-10-01 · 카페 글 목록 API(ArticleListV2dot1)에 imageAttachCount·readCount·openArticle이 다 있다 — 남의 카페 사진 수·조회 비교와 우리 멤버공개 점검을 로그인 없이 한 번에 잰다. rules.json은 통째로 json.dump하지 말 것(서식 700줄 바뀜) — 해당 항목만 문자열로 고친다.

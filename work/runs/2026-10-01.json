@@ -1,0 +1,25 @@
+{
+ "date": "2026-10-01",
+ "runs": [
+  {
+   "hour": 8,
+   "ts": "08:46",
+   "blog": null,
+   "cafe": {
+    "title": "메인스트리트캐피탈 배당, 세후 월 100만원 받으려면 몇 주 필요할까?",
+    "url": "https://cafe.naver.com/firemap/186"
+   },
+   "note": "카페 main0929 발행 verify OK 1638/1638자·사진 3/3. 발행 전 '지금 주가'→'9월 29일 종가' 날짜 명시, readcheck 숫자과다 1건 문장 나눔. 블로그 0(STOP_blog). F6 calcub1001(실업급여 계산기 소개, slot 20시) 작성: 자료조사 오늘 5건(법제처 고용보험법 현행본 재수신·WebSearch 4), 교차검증 crosscheck(제미나이 flash): 사실 8건 중 반영 4·유지 4, 말투 12건 중 반영 9, selfcheck 사실 0, 편집 검수 요청 올림. garak0929 출처 날짜 고침. 검증 경로: crosscheck. 개선: 없음(titlestudy 403 — naver-scrape-limits 알려진 제한)"
+  },
+  {
+   "hour": 11,
+   "ts": "12:08",
+   "blog": null,
+   "cafe": {
+    "title": "커버드콜 ETF 분배금은 더 받았는데, 남은 돈은 왜 SCHD보다 적었을까?",
+    "url": "https://cafe.naver.com/firemap/187"
+   },
+   "note": "12시 코너 a1cafe1001 제 시각 발행(12:07) verify OK 1437/1437자·사진 4/4. 발행 전 aitell 0.0·readcheck 0건. 블로그 0(STOP_blog). 다음 슬롯 couplegap1001(부부 국민연금 부족분을 예금 이자로 채우려면, slot 15시, 세금연금/형식2 — textrule 1위 갈래 파이어·자산) 작성: 자료조사 6건(아시아경제·SBS 부부 수급 통계, 국민노후보장패널 10차 보도, 금감원 finlife 9월 예금 38개, 법제처 소득세법 제14조, 상위 블로그 5편 compare.md). 교차검증 crosscheck(제미나이 flash 사실 대행): 사실 3건 중 반영 2·유지 1(조문은 출처 줄 한 번), 말투 15건 중 반영 10. selfcheck 사실 0·말투 0, readcheck 0, aitell 0.0(.edit.json by auto). 검증 경로: crosscheck. 개선: axisname.ALIAS에 '파이어·자산'→세금연금(textrule 권고 이름이 selfcheck [축]에 걸리던 것)"
+  }
+ ]
+}

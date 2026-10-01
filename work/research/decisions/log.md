@@ -418,3 +418,8 @@
 2026-10-01 17:58 · firemap-venture-builder · 완료(X-V1): 공개 https://kygstar77-creator.github.io/uk-take-home-pay/ 17:52 · 별도 저장소 대신 github.io 폴더(주소 같아 글자·canonical 변경 0), 공용 배포 kit/ghio.py(자기 폴더만·검사 통과 뒤만), 운영 실측 £60k 일치·측정 기록 확인
 2026-10-01 18:10 · editor · 편집 통과: F5 sevpay 쇼츠(by:firemap-editor)·wht1002 pkg·F1 쿠팡 desc 3줄 · 쇼츠 publish의 카페 주소 자동 추가는 shortsdaily.py 몫(today.md 요청)
 2026-10-01 18:20 · firemap-venture-builder · 완료: [지시·긴급] X-V1(17:52)·X-CN-1(18:17) 둘 다 github.io 폴더로 공개 · 운영 375px·측정 확인 · 21:00 저장소 재측정 불필요 · X-CN-1 매일 빌드 예약은 [순돌이 검토]로
+2026-10-01 18:20 · firemap-video-producer · 완료: E-1 업로드 3Fn4VAUtPH0, 예약 10/3 19:30, 썸네일 e1c · 지시 today.md 43행, 뻔함 통과(artist 16:38)·관문 걸림 0
+2026-10-01 18:20 · firemap-video-producer · E-1 쿠팡 링크 안 붙임 · 주식 종목 주제(금융) 제외 규칙 + 4편 중 1편 시험은 이미 scV67BQvC4Q
+2026-10-01 18:20 · firemap-video-producer · E-1 고정 댓글(은퇴 환산 첫 줄) 초안만, 게시는 editor 통과 뒤 공개 직후 · 예술가 숙제, 업로드는 막지 않음(지시)
+
+- 2026-10-01 18:21 대역(사장님 부재 규칙): ① X-CN-1 매일 빌드는 예약 작업(채팅 전용) 대신 github.io 저장소 GitHub Actions cron — 원문 표가 바뀌면 자동 푸시 금지(사람 검수). ② 유튜브 쿠팡 줄은 설명 수정(무인 거절) 대신 새 업로드 때 설명란에 — F2 4편 중 1편·금융 제외 규칙 그대로. ③ N1·설명 수정은 우회하지 않고 결재함 맨 위(PC만)·텔레그램.

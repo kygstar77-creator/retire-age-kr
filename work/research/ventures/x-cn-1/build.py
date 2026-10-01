@@ -267,7 +267,7 @@ def build_hnk(F, verified_at, now):
 }})();
 </script>'''
     title = '한능검 시험일정 2026 — 제80회 취소좌석 접수·제81회 원서접수'
-    desc = '한국사능력검정시험 2026년 제77~81회 원서접수·취소좌석 접수·시험일·합격자발표. 지금 할 일과 마감 시각을 맨 위에 두고, 국사편찬위원회 원문과 매일 자동 대조합니다.'
+    desc = '한국사능력검정시험 2026년 제77~81회 원서접수·취소좌석 접수·시험일·합격자발표. 지금 할 일과 마감 시각을 맨 위에 두고, 국사편찬위원회 원문과 대조한 시각을 함께 적습니다.'
     return page(title, desc, '/hanneunggeom/', body), L
 
 
@@ -297,7 +297,7 @@ def main():
     doc, L = build_hnk(F, v, now)
     open(os.path.join(SITE, 'hanneunggeom', 'index.html'), 'w', encoding='utf-8', newline='\n').write(doc)
     open(os.path.join(SITE, 'hanneunggeom', 'hanneunggeom-2026.ics'), 'w', encoding='utf-8', newline='').write(ics(F, now))
-    root = page('시험 일정', '공식 원문과 매일 대조하는 시험 일정 모음.', '/',
+    root = page('시험 일정', '공식 원문과 대조한 시험 일정 모음.', '/',
                 '<h1>시험 일정</h1>\n<ul class="list"><li><a href="hanneunggeom/">한능검 시험일정 2026</a></li></ul>', noindex=True)
     open(os.path.join(SITE, 'index.html'), 'w', encoding='utf-8', newline='\n').write(root)
     shutil.copy(os.path.join(HERE, 'src', 'privacy.html'), os.path.join(SITE, 'privacy', 'index.html'))

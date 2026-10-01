@@ -50,10 +50,9 @@ def main():
         good = abs(diff) <= max(1000, w['required'] * 1e-6)
         ok &= good
         rows.append(f'| {n} | 필요 자산 | {e["B32"]:,.0f}원 | {w["required"]:,.0f}원 | {diff:+,.0f}원 | {"통과" if good else "다름"} |')
-        frac = e['C37']
-        good = w['earliest'] - 1 <= frac <= w['earliest']
+        good = e['B30'] == f'{w["earliest"]}세'  # 큰 숫자 = 웹과 같은 해 단위(본부장 판정 10/1)
         ok &= good
-        rows.append(f'| {n} | 엑셀 큰 숫자 \'{e["B30"]}\' | {frac:.2f}세 | {w["earliest"]}세 | {frac - w["earliest"]:+.2f}년 | {"통과(1년 안)" if good else "다름"} |')
+        rows.append(f'| {n} | 엑셀 큰 숫자(해 단위) | {e["B30"]} | {w["earliest"]}세 | {"0" if good else "다름"} | {"통과" if good else "다름"} |')
     ex = xl['가계부_은퇴나이_2026']
     md = [
         '# X-KR-1 검산 — 엑셀 ↔ 파이어맵 운영 식 (firemap-venture-builder, verify.py 자동 생성)',

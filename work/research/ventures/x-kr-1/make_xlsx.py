@@ -10,7 +10,7 @@
 #     - 현금흐름 뒤 자산이 0보다 클 때만 수익률을 곱한다. 은퇴 뒤 자산이 0 이하가 되면 실패.
 #     - 은퇴 나이 = 현재 나이~70세 중 90세까지 자산이 안 마르는 가장 이른 R (findEarliestRetirementAge).
 #     - 필요 자산 = 지금 그만둬도 90세까지 안 마르는 최소 자산(findRequiredAssetNow, 이분 탐색 대신 닫힌 식).
-#   웹은 해 단위(R세)로 보여 준다. 엑셀의 'N세 M개월'은 R-1세와 R세의 90세 자산 사이를 직선으로 나눈 어림이다.
+#   큰 숫자는 웹과 같은 해 단위(R세)다(본부장 판정 2026-10-01, 기준 하나). 'N세 M개월' 어림은 '지난달보다 ±k개월' 줄에만 쓴다.
 import sys, os, datetime
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
@@ -84,7 +84,7 @@ def build(case=None):
         s1.cell(r, 1).number_format = 'yyyy-mm-dd'
         s1.cell(r, 3).number_format = '#,##0'
         e = s1.cell(r, 5, f'=IF(OR(C{r}="",D{r}="",D{r}="{INCOME}",계산!$B$20=""),"",ROUND(C{r}*계산!$B$20,0))')
-        e.number_format = '"+"0"일";"−"0"일";"0일"'
+        e.number_format = '"+"#,##0"일";"−"#,##0"일";"0일"'
         e.font = f(11, True, ORANGE)
     for k, (d, n, a, cat) in enumerate(ledger_rows(case)):
         r = FIRST + k
@@ -169,7 +169,6 @@ def build(case=None):
         ('계산 가정', True),
         ('· 최근 달 (수입 − 지출)을 은퇴할 때까지 매달 모으고, 은퇴 뒤에는 그달 지출을 매년 물가만큼 늘려 꺼내 씁니다.', False),
         ('· 90세까지 자산이 남는 가장 이른 나이를 찾습니다(70세까지). 국민연금·퇴직금·부동산·세금은 넣지 않았습니다.', False),
-        ('· 식은 firemap.kr 은퇴 계산기와 같습니다. 계산기는 해 단위로 보여 주고, 이 파일의 「개월」은 앞뒤 두 해 결과 사이를 나눠 어림한 값입니다.', False),
         ('· 「은퇴 +N일」은 월 지출이 10만원 늘 때 바뀌는 날 수에 비례해 어림한 값입니다.', False),
         ('', False),
         ('알림', True),
@@ -238,7 +237,7 @@ def build(case=None):
     c['A21'] = '웹과 같은 해 단위 나이'; c['B21'] = f'=IF(B{h0}=999,"",B{h0})'
     c['A30'] = '큰 숫자'
     c['B30'] = (f'=IF(B5="","가계부를 넣어 주세요",IF(D{h0}="","70세 넘음",IF(B{h0}=$B$1,"지금",'
-                f'INT(D{h0}/12)&"세 "&MOD(D{h0},12)&"개월")))')
+                f'B{h0}&"세")))')
     c['A31'] = '지난달 대비'
     c['B31'] = (f'=IF(OR(B8=0,D{h0}="",D{h2}=""),"",IF(D{h0}=D{h2},"지난달과 같음",'
                 f'"지난달보다 "&IF(D{h0}<D{h2},"−","+")&ABS(D{h0}-D{h2})&"개월"))')

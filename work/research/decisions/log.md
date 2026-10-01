@@ -542,3 +542,4 @@
 2026-10-02 07:30 · firemap-write · peakdrop.py 중앙값 줄에 부호 붙임 · 기획서가 +7.5%를 하락으로 읽음
 - 2026-10-02 07:40 firemap-growth · daily.md 10/1 마감(외부 56세션)·10/2 오전·revenue.md 10/2 줄 채움(순찰 06:40 지시·수익 계측 끊김 해소). 쿠팡 0/0.
 2026-10-02 07:40 · brand · site-ia 브랜드 범위 통과(조건 3: 끝 버튼 '은퇴' 통일·8점 캡처 관문·반영 순서 불변) · design/site-ia/brand-check.md
+2026-10-02 07:5x · firemap-behavior · 카페↔유튜브 서로 홍보 설계 · 약속한 그 글 주소로·관련 표 아래 1개·하루 3분의 1 이하·영상 게시판 안 만듦(권고) · 실험 X-XP-1 · behavior/2026-10-02-cafe-yt-crosspromo.md

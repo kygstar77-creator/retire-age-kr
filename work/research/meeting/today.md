@@ -383,6 +383,11 @@
 - 순돌이 실측: 카페 묶음 305개 중 유튜브 링크가 들어간 건 3개뿐, 지시문·카페 기획에 '서로 홍보' 규칙이 없다 — 기획 누락.
 - firemap-behavior(설계) + firemap-write + firemap-youtube-loop, 기한 10/3: ① 카페 글 주제와 맞는 우리 영상이 있으면 본문 중간에 영상 넣기(네이버 카페 동영상 첨부·링크, 한 글에 1개) ② 새 롱폼 공개 때 카페 '영상' 게시판 글 1편(요약·표·영상) — 영상 속 카페 약속 글과 합침 ③ 카페 대문·공지에 유튜브 채널 ④ 유튜브 설명·고정 댓글에 카페 글 주소(이미 일부). 도배 금지, 같은 영상을 하루 여러 글에 반복하지 않는다. 효과는 유튜브 외부 유입(카페)·카페 검색 유입으로 잰다.
   - 착수: firemap-behavior 07:40 (설계안 behavior/2026-10-02-cafe-yt-crosspromo.md)
+  - 완료: firemap-behavior 07:5x — 설계안 behavior/2026-10-02-cafe-yt-crosspromo.md. 실측: 유튜브 외부 유입 28일 **0**, 영상 설명 카페 링크 3편 모두 **카페 첫 화면**(A-1이 약속한 표 글은 firemap/187로 이미 있음), 카페 게시판에 '영상' 없음(4개), readcheck가 본문 유튜브 주소를 지적함. 실험 X-XP-1(판정 10/16) + 근거 파일 experiments/X-CP-1~3·X-YT-DESC-1·X-XP-1.
+    - [지시] firemap-youtube-loop (사실 고침, 오늘): A-1(SCOI0DP-l-s) 설명·고정 댓글의 카페 주소를 첫 화면 → **https://cafe.naver.com/firemap/187**. E-1(idc3JZOZukc)은 e1table1002 발행 직후 그 글 번호로. 주소만 바꿈(편집 관문 없음), 쿠팡 대가성 첫 줄 순서 유지.
+    - [지시 초안·순돌이 승인] firemap-improve 10/3: readcheck PLANNED_LINK 예외에 우리 채널 영상 주소 한 줄(영상 ID 대조) + naverpost cafe가 영상 링크 카드 붙을 때까지 기다림(9/27 시간 초과 재발 테스트). 그 전까지 e1table1002/c05의 youtu.be 줄은 지적된다.
+    - [지시 초안·순돌이 승인] firemap-write 10/3: 묶음에 video.txt(영상 ID/없음) — 관련 표 바로 아래 1개, 같은 영상 하루 1글, 영상 넣은 글은 하루 글의 3분의 1 이하, 부탁·재촉 문구 금지, 다리 문장은 copywriter→editor.
+    - [순돌이 결정 요청] 카페 '영상' 게시판은 만들지 않기를 권함(회원 2명에 빈 게시판 = 사람 없는 카페 신호). 영상 짝 글은 자유게시판, 공지사항에 '유튜브 영상 — 카페 글 짝' 목록 글 1개를 두고 새 롱폼마다 고침(대문은 브라우저 차단).
 - [지시] 카페 오늘부터 하루 8편 (사장님 10/02 06:48: "카페 글 쓰는 것도 오늘부터 8편 정도로 늘려 퀄리티도 높이고") — 순돌이가 naverpost.py DAY_CAP 카페 5→8(간격은 상한에서 자동 계산), firemap-write 근무 08~22시 짝수 시 :10 하루 8회로 바꿈. 관문 그대로(경쟁 조사·제목 심사 8점·대표 이미지 1초 시험·편집 통과·같은 틀 3번 금지). 관문 못 넘은 글은 안 낸다 — 8편은 상한이지 할당이 아니다. firemap-write·firemap-copywriter·firemap-editor·firemap-visual-designer: 대기 묶음을 하루 8편 속도로 미리 2일치 준비.
 
 - [지시·긴급] 부동산 B10 앞당김 (사장님 10/02 06:49: "부동산은 왜 10/4로 미룬 거야? 자료조사하는 데 시간이 걸려?") — 10/4는 순돌이가 근거 없이 잡은 기한이었다. 도구(undervalue.py·peakdrop.py·heatmap_re.py)와 실거래 자료(work/research/rt/)가 이미 있다. **오늘:** firemap-planner 기획서(11:30까지, 원안 B10) → firemap-write 카페 B10 첫 글 오늘 슬롯(서울 25개 구 전세가율 낮은·높은 곳 + 고점 대비 하락 상위, 실거래 최신 월 기준·출처·기준일, 관문 통과 뒤) → firemap-copywriter·firemap-shorts 쇼츠 1편 내일(10/3) 슬롯 → 롱폼은 10/4(10/2 D-1, 10/3 E-1 예약이라). 멈췄던 부산·창동 쇼츠가 왜 비공개였는지 기획서에 한 줄.
@@ -394,6 +399,7 @@
       - 주의: heatmap_re.py jeonse(평당 중앙값끼리 나눔)는 중구 72.45% 1위라 undervalue.py 표(금천 60.9% 1위)와 어긋난다 → 히트맵은 make_img.py로 표와 같은 값으로 새로 그렸다(기준 하나).
       - 정정: plans/sonpum.md 1장 '하락률 중앙값 7.5%'는 **+7.5%(상승)** — 377쌍 중 235쌍이 2021년 4분기 최고가보다 올랐다. peakdrop.py 출력에 부호를 붙였다. firemap-planner·firemap-youtube-loop(10/3 롱폼) 참고.
     - [편집 검수 요청] B10 카페 첫 글 · 담당 **firemap-editor** · 파일 work/research/b10cafe1002/pkg · 공개 예정 10/2 14:10 (통과 기한 11:10) · 표 숫자 바꾸지 말 것, 통과하면 hold.txt 지움
+      - 착수: firemap-editor 07:45
   - [시안 요청] B10 히트맵·표 이미지·제목 트랙:B · 담당 firemap-visual-designer(히트맵 기준일 도장)·firemap-copywriter(제목)·firemap-growth(utm b10·판정 10/9) · 시한 09:54 · 근거 plans/sonpum.md
     - 착수: firemap-copywriter 07:05 (절전 예외 — 시한 09:54가 내 12:40 회차보다 앞)
     - 완료: firemap-copywriter 07:24 — B10 카페 첫 글 제목 1위 **'서울 아파트 실거래가로 본 구별 전세가율, 금천 60.9% 강남 35.9%'**(제미나이 8.2·레드팀 8.2, GPT 절전으로 안 함), 2위·이유·경쟁 5는 research/b10cafe1002/titles.md·review.md. **firemap-write: 이 1위를 쓴다** — 본문 표 숫자가 바뀌면 제목 숫자도 같이. 기준일(2026.7~9월)은 본문 첫 줄·대표 이미지 도장에(firemap-visual-designer). E-1 제목 결정(17:00)·쇼츠 3편 compete·카페/쇼츠 벤치마크는 12:40 회차.
@@ -404,6 +410,7 @@
 - 남은 관문은 공개 뒤 바로 메운다: ① firemap-youtube-loop + firemap-write — **영상 약속 '세 회사 8분기 전체 표' 카페 글 지금 작성·발행**(관문: 편집 통과·제목 심사, 경쟁 조사는 E-1 compare.md 재사용) → 영상 설명·고정 댓글(ep/E-1/pin_comment.md, 편집 통과됨)에 글 주소, promises.md 갱신 ② firemap-visual-designer — 썸네일 8점 안 나오면 지금 것 유지, 8점 안 나오면 48시간 클릭률 보고 교체 ③ E-1 review.md(대본·카피 심사)는 사후 기록으로 남긴다.
   - 착수·준비 완료: firemap-youtube-loop 07:25 — 카페 묶음 **work/research/e1table1002/pkg** (제목 '마이크론 실적 이익률 25%→80.7%, SK하이닉스·삼성전자 8분기 공시 표' 심사 8.3 통과 · 세 회사 8분기 표 그림 4장+대표 이미지 80.7% · 숫자 기계 대조 0 누락 · aitell 1.4 · compare.md·review.md · 영상 링크 youtu.be/idc3JZOZukc). 남은 것: 편집 통과 → 발행 → 고정 댓글·promises.md에 글 주소.
 - [편집 검수 요청] e1table1002 카페 글(E-1 약속 이행, 지금 공개 영상) 트랙:C · 담당 **firemap-editor** · 시한 10:00 · 근거 work/research/e1table1002/review.md — 표 숫자 바꾸지 말 것.
+  - 착수: firemap-editor 07:45
 - [넘김] **firemap-write** e1table1002: 편집 통과(editor_ok.txt) 뒤 가장 가까운 슬롯에 발행(slot.txt 08시는 편집 시각에 맞춰 조정), 게시판 '자유게시판 · 전체공개'. 발행 뒤 글 주소를 longform/loop/promises.md E-1 줄과 이 줄 밑에. (youtube-loop 07:25)
 
 <!-- 복구: firemap-venture 07:20 — 아래 15줄은 07:17 커밋 f63d840(yt-loop)이 today.md를 덮어쓰며 지운 사장님 06:57·07:00·07:04 지시. d68995a판에서 그대로 되살림 -->

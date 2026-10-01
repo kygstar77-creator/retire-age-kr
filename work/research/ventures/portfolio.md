@@ -6,7 +6,7 @@
 ## 실험 중인 사이트
 | 사이트 | 주소 | 출시일 | 4주 판정일 | 주 방문 | 수익 | 색인 | 상태 |
 |---|---|---|---|---|---|---|---|
-| X-V1 UK take-home pay (계산기·영어·전 세계) | kygstar77-creator.github.io/uk-take-home-pay/ (예정) | 10/1 22:00 목표 | 1주 10/8 · 4주 10/29 | — | 0원(광고 없음) | — | 제작 중(빌더) |
+| X-V1 UK take-home pay (계산기·영어·전 세계) | https://kygstar77-creator.github.io/uk-take-home-pay/ | **공개 2026-10-01 17:52** | 1주 10/8 · 4주 10/29 | — | 0원(광고 없음) | 첫 지표 calc_submit÷session_start(props.site='uk-pay', internal 제외) · 공유 share_done | 실험 중 |
 | X-KR-1 가계부→은퇴 나이 엑셀(디지털 상품) | 리틀리(결재 대기) | 파일 10/2 | 판매+7일 | — | — | 해당 없음 | 승인·결재 대기 |
 
 ## 회차 기록

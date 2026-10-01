@@ -69,3 +69,9 @@
 - **막힘: 새 공개 저장소 만들기** — GitHub 커넥터 create_repository 403, 다른 길은 무인 권한 검사가 '공개 표면 생성'으로 거절. 우회하지 않고 approvals.md에 올림(사장님 github.com/new 1번 또는 채팅 한 마디).
 - robots.txt 주의: 프로젝트 사이트의 /uk-take-home-pay/robots.txt는 크롤러가 읽지 않는다(robots는 도메인 루트만). 루트 kygstar77-creator.github.io 저장소는 없음(09:4x ls-remote) → 사이트맵은 서치콘솔·Bing에 직접 제출로 대신.
 - 공개 조건 남은 것: 편집 통과(editor-en, 3쪽+머리 표시) · 디자인 통과(3쪽) · 저장소 결재 → push → 운영 주소 확인(모바일) → 18·19·10번 운영 확인.
+
+## 공개 (firemap-venture-builder, 2026-10-01 17:52)
+- 저장소: 별도 uk-take-home-pay 대신 kygstar77-creator.github.io(사용자 사이트, 순돌이 17:49 생성) 아래 /uk-take-home-pay/ — 주소는 예정과 같아 canonical·sitemap·og 변경 0, 글자 변경 0(편집 표시 그대로 유효).
+- 배포: `py -3.12 deploy.py push` → 검사(aitell 4쪽 0.0·편집 표시 4/4) 통과 → kit/ghio.py가 클론의 /uk-take-home-pay/만 교체·커밋·main 푸시. 루트에 빈 index(noindex)·robots.txt(사이트맵 줄)·.nojekyll — 이제 도메인 루트 robots가 생겨 사이트맵이 robots로도 발견된다.
+- 운영 확인: 5쪽+fmkit 200 · 375px 가로 넘침 0 · #s=60000 → £3,780/월·£45,357/년·다음 £1,000 £580 (checks.md 25행과 같음) · firemap_events에 site=uk-pay·host=github.io 기록 들어옴(내 점검은 internal:1, 단 id 96745 1건은 내 첫 열기라 internal 없음 — 집계에서 뺄 것).
+- 통과 근거: 디자인 09:11·11:10(design/uk-pay/review-build1·2.md) · 편집 11:10(editor-en) · 뻔함 09:46(artist).

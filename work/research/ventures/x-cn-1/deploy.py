@@ -2,7 +2,7 @@
 #  ① work/aitell.py 점수: 각 HTML의 화면 글자가 기준 이하
 #  ② 편집 통과 표시: site/<경로>.edit.json 의 sha가 지금 파일 해시와 같다(통과 뒤 바뀌면 무효 — 매일 바뀌는 도장·대조 시각은 빼고 잰다)
 # 사용: py -3.12 deploy.py check          검사만
-#       py -3.12 deploy.py push           검사 통과 시 site/ 를 kygstar77-creator/exam-dates-kr 의 gh-pages 로 push
+#       py -3.12 deploy.py push           검사 통과 시 site/ 를 kygstar77-creator.github.io 저장소 /exam-dates-kr/ 로 push(main = 공개, kit/ghio.py)
 #       py -3.12 deploy.py hash <파일>    편집자가 .edit.json 에 넣을 sha
 import sys, os, re, json, hashlib, html, subprocess, tempfile, shutil
 sys.stdout.reconfigure(encoding='utf-8')
@@ -12,7 +12,9 @@ ROOT = os.path.abspath(os.path.join(HERE, '..', '..', '..', '..'))
 sys.path.insert(0, os.path.join(ROOT, 'work'))
 import aitell  # noqa: E402
 
-REPO = 'https://github.com/kygstar77-creator/exam-dates-kr.git'
+sys.path.insert(0, os.path.join(HERE, '..', 'kit'))
+import ghio  # noqa: E402
+FOLDER = 'exam-dates-kr'
 
 
 def pages():
@@ -57,17 +59,7 @@ def check():
 def push():
     if not check():
         sys.exit('검사 실패 — push 안 함')
-    tmp = tempfile.mkdtemp()
-    try:
-        shutil.copytree(SITE, os.path.join(tmp, 's'), ignore=shutil.ignore_patterns('*.edit.json', '_*'))
-        w = os.path.join(tmp, 's')
-        for c in (['init', '-q', '-b', 'gh-pages'], ['add', '-A'],
-                  ['-c', 'user.name=kygstar77-creator', '-c', 'user.email=kygstar77@gmail.com', 'commit', '-q', '-m', 'deploy'],
-                  ['push', '-q', '-f', REPO, 'gh-pages']):
-            subprocess.run(['git'] + c, cwd=w, check=True)
-        print('push 완료 → https://kygstar77-creator.github.io/exam-dates-kr/')
-    finally:
-        shutil.rmtree(tmp, ignore_errors=True)
+    ghio.sync(SITE, FOLDER, ignore=('*.edit.json', '_*'))
 
 
 if __name__ == '__main__':

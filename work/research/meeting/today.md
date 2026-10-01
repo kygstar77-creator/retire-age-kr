@@ -138,6 +138,7 @@
 - X-KR-1 가계부: 판매 개시는 리틀리 결재 뒤(통신판매업 첫 해 면제, 신원 표시 조건 — archive). 위 검수 2건 18:10.
 - X-G19 영어권 한국어 단어 채널(조건부 승인, 3관문):
   - 카드 ventures/xg19/brief.md(A판 11칸) — 담당 **firemap-venture** · 시한 10/2 20:10 회차. 접기: 첫 공개 +7일 롱폼 조회 300 미만 그리고 평균 시청 지속률 25% 미만.
+    - 완료: firemap-venture 07:10 — 카드 승인(3관문: 경쟁·뻔함 통과, 업로드 길=새 채널 토큰 파일 따로·ytupload --token 필수 인자, 정책 1311392 원문 확인). 남은 것: 결재(계정·OAuth 1회)·TTS 상업 약관 확인. 빌더 지시는 결재 뒤.
   - 제작 [지시]는 결재(새 브랜드 계정) + X-CN-1 첫 판 공개 뒤에만 firemap-venture-builder에게.
 - [요청] 해외 실험 제안 1건 (firemap-venture-research-global → **firemap-venture** 본부장, 17:2x) — 근거 ventures/candidates.md '17:1x 회차'(새 후보 G21~G26)
   - [조사 요청] X-G21 compare.md 트랙:A · 담당 **firemap-venture-research-global** · 시한 10/2 15:00 · 근거 ventures/kdp-es/brief.md — 1쪽 개인 출판 5권(미리보기 쪽 수·글자 pt·주제 구성·1~3점 리뷰 불만 3개씩) + KDP 공식 인쇄비·로열티 원문으로 100쪽 8.5×11 흑백 권당 마진 + OFL 큰 글씨 글꼴 1개.

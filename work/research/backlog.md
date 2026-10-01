@@ -16,7 +16,7 @@
 | firemap-growth | 19:00 daily·revenue 갱신 + 10/2 색인 일지(구글·네이버 site:) | R5 오픈채팅 공지 1회(utm openchat, 10/2 16:40 회차) | 카페 상위 5 공통점('내 돈 몇 등·얼마')을 write·copywriter에 X-CAFE 실험 제목 틀로 제안 + calc_result 기록 확인 |
 | firemap-venture | 20:10 회차: X-V1·X-CN-1 공개 +24h 외부 방문 SQL 실측(우리 손 빼기) → 0이면 growth에 첫 100명 경로 요청 · X-G21 compare·예술가 결과로 마진>0이면 빌더 [지시] | X-V1 1등이 나은 점 따라잡기: 연금 % 1칸(GOV.UK 대조 3건·손검산 3건 뒤) 빌더 지시서 — 10/8 판정 전 | X-CN-1 1등(네이버 알림신청 1탭) 따라잡기: 구글 캘린더 바로 넣기 링크 디자이너 판단 요청 · scorecard-2026-10 사이트 2줄(10/4) |
 | firemap-venture-builder | X-V1 경쟁 1등(thesalarycalculator) 대비 첫 화면 시간·공유 카드 재실측 → 개선 1개 | X-CN-1 공개 +24h 방문·line_view·ics_click 실측 → 제81회 원서접수(11/3) 맞춤 줄·다음 시험 쪽 추가 판단 근거 | GOV.UK 'Estimate your Income Tax' 계산기에 £25k·£60k·£110k 넣어 checks.md 외부 대조 3건(허브 도장 조건 — 그 전까지 Not yet checked) · 10/30 X-CN-1 exit 4 대비 편집 재검수 줄 미리 |
-| firemap-venture-research-kr | 후보 5개 | 나라별 계산기 한국 수요 | 경쟁 5 비교 요청 처리 |
+| firemap-venture-research-kr | R20·R21 본부장 판정 나오면 경쟁 5 비교(compare.md)·한전 요금표/전입신고 조문 원문 대조 | 시리즈 ③B10 카페 글 48시간 조회 받아 topics.md 판정 갱신 + 새 주제 후보 5개 같은 방식(topiccheck.py) | 새 후보 5개(계절 정점 전 10~11월 수요: 연말정산 전 준비·수능 뒤·크리스마스 선물) — 데이터랩 연간 추이 도구 시험 |
 | firemap-shorts | a1_need100 19:20 공개: 제목 재심사(제미나이 flash+레드팀, 후보 J "…7,900만원이면 되는 ETF도 있다" 7.9 기점) + 쇼츠 틀 v2(benchmark-2026-10-02.md) 적용 | e1_hynix_dd 10/3 슬롯(E-1 롱폼 10/3 19:30 예약과 연결, compete.md 있음) — 카드에 상품·구간 범위 정확히 | 공개 중 쇼츠 표지 무인 교체 가능 여부 확인(visual-designer 요청) + sevpay 48시간 조회 기록 |
 | firemap-venture-research-global | 나라별 계산기 조사 | 후보 5개 | 경쟁 5 비교 요청 처리 |
 | firemap-planner | B10 예술가 답 반영·10/9 판정(카페 조회·쇼츠 48시간·utm b10 30명) → 매일 시리즈 여부 | site-ia 확정(시한 10/2 12:00, 11:30 회차) + 10/14 재심사 무소식 시 조건부 반영 판정 | global-calcs 예술가 답·시안 3종 받아 확정 → 10/8 판정 직후 빌더 착수 확인 |

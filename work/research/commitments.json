@@ -120,5 +120,17 @@
   "evidence": "quality/scorecard-2026-10.md",
   "due": "2026-10-04 18:00",
   "owner": "firemap-brand-director"
+ },
+ {
+  "what": "카페 글 1등 비교·틀 v2",
+  "evidence": "cafe/benchmark-2026-10-02.md",
+  "due": "2026-10-02 14:00",
+  "owner": "firemap-copywriter"
+ },
+ {
+  "what": "새 사이트 1등 비교(X-V1·X-CN-1)",
+  "evidence_glob": "ventures/*/beat-1st.md",
+  "due": "2026-10-02 18:00",
+  "owner": "firemap-venture"
  }
 ]

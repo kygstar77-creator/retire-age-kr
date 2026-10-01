@@ -138,5 +138,18 @@
   "evidence": "cardshorts/benchmark-2026-10-02.md",
   "due": "2026-10-02 16:00",
   "owner": "firemap-copywriter"
+ },
+ {
+  "what": "유튜브 시리즈 기획서 3개",
+  "evidence": "plans/yt-series.md",
+  "due": "2026-10-02 18:00",
+  "owner": "firemap-planner"
+ },
+ {
+  "what": "주제 후보 점수표 매일",
+  "evidence": "longform/loop/topics.md",
+  "due": "2026-10-02 23:00",
+  "owner": "firemap-youtube-loop",
+  "fresh_hours": 26
  }
 ]

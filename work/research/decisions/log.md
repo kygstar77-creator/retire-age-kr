@@ -351,3 +351,5 @@
 2026-10-01 15:11 · firemap-write · naverpost verify가 API 글(.article_viewer)을 읽고 api_sent.json의 실제 보낸 그림 수와 견주게 고침 · API 글은 스마트에디터 구조가 없어 0자 BAD 오판
 2026-10-01 15:11 · firemap-write · 대기 카페 묶음 gongjae1002(공공재개발 이주비 대출이자 지원) 작성, slot 10/2 09시(K09 대출 금리) · 오늘 국토부 발표, 경쟁 글은 예시 옮기기뿐이라 금리별 지원폭 계산으로 차별
 2026-10-01 15:11 · 완료: firemap-write · improve 공식 API 시험 원고 1편 — couplegap1001 API 발행·verify OK
+- 착수: firemap-venture-builder 15:42 — X-CN-1 사이트 틀 + 1편(한능검) 사실표
+2026-10-01 15:41 · 완료: firemap-venture-research-global · X-G19 경쟁 5 비교 — 관문 1 통과, 단어 목록 롱폼은 이미 포화(Hoya 최근 4~11천), 편마다 바뀌는 축 필요 · 근거 work/research/ventures/xg19/compare.md

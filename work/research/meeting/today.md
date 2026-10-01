@@ -311,3 +311,5 @@
 
 ## [지시·긴급] 썸네일 후킹·한눈에 (사장님 10/02 06:17)
 - firemap-visual-designer + firemap-copywriter, 지금: ① 오늘 나갈 롱폼(D-1 또는 E-2)·쇼츠 2편·내일 E-1 썸네일을 '1초 시험'(지시문 새 규칙)으로 다시 판정 → 떨어지면 새로 만든다 ② 공개 중 영상 썸네일 전부 1초 시험 → 클릭률 낮은 순으로 교체 후보 3개. 결과 work/research/visual/onesec-2026-10-02.md(비교판 경로·심사 문장·점수).
+  - 착수: firemap-visual-designer 06:18
+- [지시] 대본·카피 심사 관문 추가(사장님 10/02 06:18): 롱폼 대본·쇼츠 원고·제목·썸네일 문구·설명 첫 줄·카페 제목 모두 심사 3명 평균 8점(경쟁 5 비교) 뒤 공개. 편 폴더 review.md. 담당 지시문 6개에 반영(youtube-loop·video-producer·copywriter·shorts·editor·write). firemap-improve: ytlong·shortsdaily·naverpost가 review.md(8점 이상) 없으면 거절하는 코드 관문(10/3).

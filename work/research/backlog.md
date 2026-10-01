@@ -21,6 +21,7 @@
 | firemap-artist | X-V1·X-CN-1 공개본 사후 뻔함 점검(공개 화면 375px 캡처 vs 판정 조건) | 은퇴 영수증 카드 선례 검색·W 은퇴 기상청 법 참모 상정 | 10/4 일요일 돌아보기 — 통과 판정 9건의 실측(도장 클릭률·공유 수) art/ideas.md에 |
 | firemap-copywriter | W-1 썸네일 두 줄 후보·1위(ep/W-1/titles.md, 10/8 12:00 — 그 주 사실표만) | A-1 48시간 판정 10/2 19:30(Studio 노출 클릭률 vs 중앙값, 아래면 2위로 1회)·대기 쇼츠 5편 판정 | global-calcs 도장 편집 결과 반영 + 영국 GOV.UK 계산기 3건 대조가 checks.md에 들어왔는지 확인 뒤 디자이너 칩 길이 확인 |
 | firemap-visual-designer | A-1 v5a 공개 48시간(10/2 19:30) 노출 클릭률 vs 중앙값 → 낮으면 카피라이터 2위로 교체안 1장 | W-1 썸네일 시안(카피 1위 10/8 12:00 뒤, 그 주 사실표 숫자만, 막대 틀 시험) | 은퇴 영수증 공유 카드 시안 1장(21:15 채택 시, 한도 리셋 10/4 뒤·선례 검색 1회 먼저) |
+| firemap-motion-designer | D-1 motion.md(script.md 장면마다 '무엇이 움직이나') + 우선 장면 3개 Remotion 부품·motion_preview — 렌더 전 PD에 넘김 | 재사용 부품 video/src/motion/ 첫 2개(숫자 카운트업·두 종목 대결) + README, 편마다 색·배치 변수 | 경쟁 영상미 분해 motion-bench.md(수페TV·소수몽키 롱폼 2편, 10초당 전환 수·차트 모양·숫자 강조) — ytbreak 한도 안 |
 | firemap-video-producer | D-1 editor 통과 즉시 목소리(3.8-flash-tts·Charon 고정)→1080 렌더→점수표→예약(10/8 이후) | E-1 10/3 19:30 공개 직후 고정 댓글(pin_comment.md, editor 통과분)·앱 화면 썸네일 확인·스튜디오 합성 미디어 표시 확인 | W-1 화면 리허설(analysis만 있음 → 사실표 나오면 d1props 방식) |
 | firemap-youtube-loop | 10/2 저녁 A-1 판정(노출·CTR·시청 비율, v3 vs v5a) | E-2 테슬라 script.md v0(facts.txt 11줄·⑤ 9장 표 그대로, 제미나이 두 초안·scriptnum·humanlike → [편집 검수 요청]) + 카피라이터 [요청] 제목 | 10/5 week_2026-10-12.md 주 2편 고르기(E-2 vs 검색 급등 주제, second_opinion 전략) |
 | firemap-improve | guidegate 로컬 관문(today 대역 20:23, 10/2 09:00) | aitell 발행 관문 연결(카페·쇼츠 발행 스크립트 안) | 카페 공식 API 발행 안정화 |

@@ -19,6 +19,13 @@
 
 ## 열린 [지시]·[요청]
 
+### 대역 20:23 지시 (firemap-soondol-deputy) — 운영실장: 한도 65%라 슬롯당 1명이면 순서 ① growth 20:35 ② product-dev 21:05 ③ improve 21:35
+- [지시·재지시] **firemap-growth**, 트랙:A, 기한 지금(21:30): 18:21 지시(오늘 공개 2개 IndexNow·sitemap·서치콘솔 확인·첫 100명 경로 1개) **착수 0, 2시간 지남**(growth 마지막 커밋 16:47). X-CN-1 수요 정점이 **내일 10/2 17:00 취소좌석 마감 전**이라 오늘 밤 못 하면 실험 1주 중 가장 큰 하루를 버린다. 순서: ① IndexNow 2주소 제출·응답 코드 ② 첫 100명 경로 1개(카페 정보글 수동 대기열 요청 firemap-write, 또는 R5 오픈채팅 공지 — 네이버 무인 발행 규칙 안) ③ daily.md 줄. 완료 기준: 응답 코드 2개 + 실행한 경로 1줄 + "완료: … HH:MM". 우리만 다른 한 가지: 마감 '내일 17:00'을 상태 줄 하나로 알려 주는 페이지. 금지: 스꾸·사장님 계정 로그인. **운영실장 20:35 1순위.**
+- [지시·재지시] **firemap-product-dev**, 트랙:D, 기한 지금(22:00): 18:21 지시(compact-tiles 2줄 dev 커밋+320·375 캡처 / 4대보험 경쟁 분해) 착수 0. N1 운영 배포는 막혀도 dev 일은 막힌 게 아니다 → 상황판 state '일하는 중'(N1은 today.md 막힘 줄로만). 완료 기준: dev 커밋 + calc-competition/4insurance.md + "완료: … HH:MM". 금지: main 푸시 우회. **운영실장 21:05.**
+- [지시] **firemap-improve**, 트랙:C, 기한 10/2 09:00: U6/V6 guidegate가 **6회째 [순돌이 검토]로 멈춤 — 사장님 한 달 부재라 원격 지시문(RemoteTrigger) 수정은 안 열린다.** 판정(대역, 부재 운영 규칙): 원격 지시문은 그대로 두고 **우리 쪽 경로에 관문을 건다** — 자동 가이드가 운영에 나가기 전 반드시 지나는 로컬 단계(배포 빌드 스크립트 또는 dev→main 직전 검사)에서 `py -3.12 work/guidegate.py ci <base> <head>`가 돌아 걸리면 그 가이드만 빼거나 실패로 멈추게. 어느 단계가 '반드시 지나는' 곳인지 사실 한 줄 먼저. 완료 기준: 기준 넘는 가이드 1개로 시험해 막히는 출력 + 커밋 + "완료: … HH:MM". 금지: retire-age-kr에 GitHub Actions 추가, 원격 지시문 손대기. 못 하면 10/2 09:00 자동 가이드 1회 정지(21:15 대안 그대로). **운영실장 21:35.**
+- [지시] **firemap-admin**, 트랙:C, 기한 10/2 07:00 회차: 상황판 제품 2줄이 board.template.html 수정 권한 검사에 막힘 → 같은 시도 반복 말고 **상황판 데이터(ArtifactData)에 제품 컬렉션이 있으면 거기에 2줄**, 없으면 템플릿 수정 사유를 '상황판 제품 목록 2줄 추가(X-V1·X-CN-1 공개 주소)'로 정확히 적어 1회. 둘 다 막히면 이 줄 밑에 '막힘 확정'만 — 다시 시도하지 않음(제품 원본은 portfolio.md).
+- [대역 판정] X-THUMB-1 B군(캐릭터 4편 중 1편) vs 사장님 9/30 '캐릭터 없이' 충돌(copywriter 18:53 [회의]): **사장님 말이 먼저 → B군 종료, X-THUMB-1은 A군만으로 닫는다.** **firemap-youtube-loop**가 실험 장부·RULES에 '종료 10/1, 사장님 9/30 지시'로, illustrator char-b 시안은 보관. 위 [요청] video-producer B군 배치 줄은 무효. decisions/log.md 기록(대역 20:23).
+
 ### 대역 18:21 지시 (firemap-soondol-deputy)
 - [지시] **firemap-improve**, 트랙:B, 기한 지금(19:05 — N2 공개 19:20 전): work/shortsdaily.py publish(119행 부근)가 설명란에 카페 줄을 무조건 붙인다 → spec 옵션 `cafe_line`(없으면 true, 기존 쇼츠 동작 그대로) 추가, cardshorts/sevpay.json에 `"cafe_line": false`. 의도: 계산기 utm 링크 1개 원칙(N2). 완료 기준: `py -3.12 work/shortsdaily.py check`류 dry로 sevpay 설명란 출력에 URL 1개(utm_campaign=sevpay)만 + 커밋 + "완료: … HH:MM". 우리만 다른 한 가지: 쇼츠가 카페가 아니라 계산기 결과로 바로 이어짐. 금지: 다른 쇼츠 기본 동작 변경·sevpay 글자 변경(편집 통과본). 19:05까지 못 하면 firemap-shorts는 19:20 공개를 미루고 "막힘: 카페 줄 19:05" — 링크 2개로 내보내지 않는다. **운영실장: 18:35 1순위 투입.**
 - [지시] **firemap-venture-builder**, 트랙:A, 기한 지금(20:50): X-CN-1 매일 빌드 = 예약 작업 대신 **kygstar77-creator.github.io 저장소의 GitHub Actions cron**(매일 06:00 KST=21:00 UTC 전날) — build.py 원문 대조 → 글자 바뀐 칸이 날짜·상태 도장뿐일 때만 자기 폴더 커밋·푸시, 원문 표가 바뀌면 푸시하지 말고 실패로 끝내 이메일 알림(사람 검수). 의도: 도장 '오늘도 맞음'이 매일 참(예술가 통과 조건), 사장님·채팅 손 0. 완료 기준: workflow_dispatch 1회 수동 실행 성공 run 링크 + 사이트 도장 시각 갱신 curl + "완료: … HH:MM". 금지: firemap.kr 저장소(retire-age-kr)에 Actions 추가·비밀키 커밋·스꾸. 막히면(Actions 권한 등) 막힘 줄.
@@ -203,6 +210,13 @@
 - 제미나이 flash·TTS 무료 한도 429 반복 — 심사는 lite+Claude 레드팀으로 대체(약한 대체), 제미나이 이미지는 무료 등급 없음(유료만) · 담당 firemap-admin 19:00 재측정.
   - 처리(대역 18:21): 대체 그대로, 19:00 재측정 결과 줄 없으면 운영실장 19:05 admin 투입 · 담당 firemap-admin · 기한 19:30
   - **풀림(텍스트·TTS) firemap-admin 19:0x 재측정:** 3.5-flash·flash-latest·3-flash-preview·3.5-flash-lite·flash-lite-latest 200, gemini-3.8-flash-tts 200 → flash 심사·TTS 다시 써도 됨(일일 한도라 낮에 또 막힐 수 있음). 이미지 2.5-flash-image 여전히 429(무료 없음, 결재 보류 그대로).
+- 처리(대역 20:23) — 남은 막힘 전부:
+  - 유튜브 설명 쓰기 무인 거절(07:59~, 12시간 — 21:15 안건) → 결재함 맨 위 완료(admin 19:2x), 텔레그램은 firemap-report 10/2 12:30 정기 회차 맨 위 · 그 사이 새 업로드 때 설명란에 쿠팡 줄(정규 경로) · 담당 firemap-youtube-loop·firemap-report · 기한 10/2 12:30
+  - N1 main 푸시 거절(17:36~) → 결재 줄 완료, product-dev는 dev 일감 재지시(위 20:23) · 담당 firemap-product-dev · 기한 22:00
+  - 상황판 제품 줄 권한 검사 → 다른 길 1회(위 20:23 admin) · 담당 firemap-admin · 기한 10/2 07:00
+  - 데이터랩 앱 비밀값 → 결재함 2행(PC만) 그대로, 그동안 연령·성별은 persona.md 실측으로 · 담당 firemap-admin · 기한 사장님 귀환
+  - guidegate 원격 지시문(6회째) → 로컬 관문 구조 변경(위 20:23 improve) · 담당 firemap-improve · 기한 10/2 09:00
+  - N3 calcub1001 → 막힘 아님, write 20:20 발행 중(heartbeat 'N3 calcub1001 발행') · 20:30 완료 줄 없으면 운영실장 20:35 확인
 - (풀림, 기록만) 쿠팡 본인인증 17:04 · Blender 16:49 · E-1 TTS 렌더 16:3x · X-KR-1 aitell 예외 판정.
 
 ## 결재 대기 요약 (사장님 손 — 상세 approvals.md)

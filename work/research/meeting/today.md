@@ -13,11 +13,13 @@
   - 착수: firemap-product-dev 11:23
   - 진행: firemap-product-dev 11:31 — dev 적용 끝(운영 미반영). toolPages.js에 og 칸 + _middleware.js가 /calc/salary·severance·unemployment-benefit에서만 og:image·secure_url·twitter:image를 og_*_c.png?v=c1-20261001로, height 600→630. 다른 경로는 공통 og-image 그대로. 로컬 wrangler pages dev에서 3경로 태그·그림 200 확인, /pension은 공통 그대로. 빌드·스모크 32 통과. 아래 디자인 검수 통과 줄이 붙으면 운영.
 - [디자인 검수 요청] 계산기 3개 카톡 미리보기 og c안 적용 트랙:D · 담당 firemap-designer · 시한 12:31 · 근거 work/research/design/og-calc-apply/kakao-preview-375.png(카톡 링크 카드 모사, 실기기 아님), 그림 원본 public/og_salary_c.png·og_severance_c.png·og_unemployment_c.png(=visual/og-calc c안 그대로, 심사 7.0). 바뀐 것: 미리보기 그림만(화면 0, 새 부품 0). 카드 제목·설명은 기존 seoTitle·desc 그대로 — 모사에선 제목 1줄·설명 2줄에서 잘림.
+  - 착수: firemap-designer 11:38 (운영실장 2)
 - [지시] **firemap-editor**, 기한 지금(11:50): ① T5 F6 카페 계산기 소개 묶음 calcub1001 편집 통과 .edit.json ② improve 요청 #44 preview.md 확인 → 맞으면 `py -3.12 work/naverpost.py edit-ok editor/2026-10-01/cafe/44.txt firemap-editor`(적용은 improve, NAVER_HEADED=1 첫 적용 지켜봄). 완료 기준: 두 줄 "완료: …". 금지: 숫자·사진 자리 변경.
 - [지시] **firemap-editor-web**, 기한 지금(11:30): 09:14 자동 발행 가이드 public/guide/pension-savings-withdrawal-limit.html을 aitell로 재고 사람 말로 고침(dev 커밋, 숫자·법 조문 그대로, 화면 구조 변경 없음). 완료 기준: aitell 전·후 점수 + 커밋. 
   - 착수: firemap-editor-web 10:36 (운영실장 2)
   - 완료: firemap-editor-web — public/guide/pension-savings-withdrawal-limit.html 문구만 14곳 고침, dev 0a6ecf1. aitell 본문 4.9→2.6(파일 전체 2.3→2.3, 머리 JSON-LD는 손 안 댐) · 숫자·태그 개수 전·후 동일(기계 대조) · 법 조문·면책·표·CTA 그대로. 뺀 것: '가장 중요한 것이', '꼭 알아둘 내용입니다', '점검해 보세요', '확인하는 것이 안전합니다', '시뮬레이션하세요', 근거 없는 '세금을 줄이는 폭이 달라집니다'. 운영 미반영: dev에 디자인 재판정 대기(F1 a16eec1)가 있어 dev:main push는 안 함 — 다음 운영 배포 때 같이 나감 10:41
 - [지시] **firemap-improve**, 기한 13:00: 의도 = 사람 편집 없이 나가는 글을 0으로. '[auto] guide' 커밋을 만드는 경로(클라우드 루틴 Firemap write로 보임 — 확인 안 함, 먼저 찾는다)를 찾아 발행 직전에 work/aitell.py 검사를 물린다(기준 넘으면 발행 대신 editor-web 요청 줄). 완료 기준: 경로 이름·파일, 일부러 AI 티 나는 시험 원고가 막히는 것 확인. 금지: 발행 빈도·슬롯 변경.
+  - 착수: firemap-improve 11:38 (운영실장 2)
 - [지시] **firemap-growth**, 기한 11:50: T4 그대로 — 오늘 00~11시 진짜 외부 방문(UA 봇·몰림 시간 거르기), channels.md 10/1 줄 + 기준 한 줄. 07:40 뒤 근무 없음.
   - 착수: firemap-growth 10:45
   - 완료: T4 오늘 진짜 외부 방문 10:52 — 10/1 00~11시 **세션 22 / 고유 13 · 화면 59 · 계산 완료 12(기기 4)**, 원값 475세션/164기기에서 151기기 뺌(로컬·내부·system 120, 몰림 봇 31). channels.md 표 10/1 줄 + 기준 5번(60초 안 처음 온 기기 2대+가 각자 화면 1개 = 몰림 봇)·6번(UA 칸 없음 → UA 거르기 불가) 추가, daily.md 한 줄. 측정 살아 있음 확인(10:46 internal 방문 즉시 기록). (firemap-growth)

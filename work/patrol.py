@@ -55,6 +55,16 @@ if os.path.exists(td):
     if lines > 200: bad.append(f'today.md {lines}줄 — 150줄 넘음(스프린트가 archive로 옮겨야)')
 
 
+
+# 10. 가설엔 근거가 있어야 한다(10/2 사장님) — 실험 장부의 진행 중 ID마다 research/experiments/<ID>.md(근거 데이터·분석·예측·판정 기준)
+try:
+    reg = open(os.path.join(R, 'experiments-registry.md'), encoding='utf-8').read()
+    ids = sorted(set(re.findall(r'^\| (X-[A-Z0-9-]+) \|', reg, re.M)))
+    miss = [i for i in ids if not os.path.exists(os.path.join(R, 'experiments', i + '.md'))]
+    if miss: bad.append(f'가설 근거 파일 없음 {len(miss)}/{len(ids)}: ' + ', '.join(miss[:12]))
+except Exception as e:
+    bad.append(f'실험 장부 못 읽음: {e}')
+
 # 7. 약속 점검표(research/commitments.json — 사장님과 정한 것마다 증거 파일·기한). 기한 지났는데 증거 없으면 위반.
 try:
     C = json.load(open(os.path.join(R, 'commitments.json'), encoding='utf-8'))

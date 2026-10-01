@@ -135,8 +135,7 @@ def main():
         # 재고 0으로 세어 "재고 부족" 거짓 경보가 났다. 실제로는 내일 올릴 3편이 있었다.
         # 시각을 기다리는 묶음(코너 시각 전·오늘 블로그 시각 전)도 오늘 나갈 재고다(2026-10-01:
         # 12시·20시 코너 카페 2편을 '막힘'으로 세어 재고 3을 1로 알렸다).
-        capblk = [x for x in mine if x['block'] and (x['block'].startswith('하루 상한 도달')
-                  or re.match(r'보류: (코너 시각 전|오늘 블로그 시각 전)', x['block']))]
+        capblk = [x for x in mine if x['block'] and N.is_stock_block(x['block'])]
         realblk = [x for x in mine if x['block'] and x not in capblk]
         n = len(mine) - len(realblk)
         blocked = len(realblk)

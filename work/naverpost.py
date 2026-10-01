@@ -453,6 +453,13 @@ def slot_state(pkg, now=None):
     if now < t + datetime.timedelta(hours=1): return 'now'
     return 'late'
 
+def is_stock_block(block):
+    """막혀 있어도 재고로 세는 묶음인가 — 하루 상한·코너 시각 전·오늘 블로그 시각 전은 '오늘/내일 나갈' 재고다.
+    감시기와 계기판이 각자 판정하다 어긋났다(2026-10-01 21:5x: 감시기 카페 4, 계기판 1 → 일감표 2번 거짓 알림).
+    기준을 여기 하나로 둔다."""
+    b = str(block or '')
+    return b.startswith('하루 상한 도달') or bool(re.match(r'보류: (코너 시각 전|오늘 블로그 시각 전)', b))
+
 def list_pending():
     """work/research/*/pkg 중 아직 안 올라간 묶음. order.txt 첫 줄로 블로그/카페를 가른다."""
     base = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research')

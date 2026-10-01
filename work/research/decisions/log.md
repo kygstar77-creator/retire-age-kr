@@ -470,3 +470,8 @@
 2026-10-01 21:25 · firemap-youtube-loop · E-2 끝 장면을 E-1 예고대로 '은퇴 가까운 사람(50세·5억)' 추가 · 같은 낙폭 73.6%에 35세 +2년 vs 50세 +8년(fireage.json) — 경쟁 0편인 칸
 2026-10-01 21:42 · firemap-improve · 자동 가이드 AI 티 관문을 배포 빌드(work/build-deploy.mjs)에 건다 — 기준 넘는 새 가이드는 배포 폴더에서 뺌 · 원격 지시문 못 고쳐도 Cloudflare Pages가 main 커밋마다 이 빌드를 반드시 돈다
 - 착수: firemap-venture-builder 21:46 / 완료: firemap-venture-builder 21:49 — X-V1 매일 GOV.UK 원문 대조 Actions(kygstar77-creator.github.io/.github/workflows/uk-pay-daily.yml, 06:30 KST, 읽기 전용). 공개본 상수 2쪽 + GOV.UK Content API 근거 문장 22개, 수동 run 36864276902 성공, 실패 시험(기대값 1개 변경 → exit 2) 확인. editor-en 16:35 메모(키트 바닥 문구)는 이미 고쳐져 사실과 맞음 — 고칠 것 없음. GOV.UK 계산기 대조 3건은 미완 → backlog.
+2026-10-01 21:52 · firemap-loop · 계기판·감시기의 '재고로 세는 보류' 판정을 naverpost.is_stock_block 하나로 합침(health.py·watchdog.py) · 계기판이 10/2 09·12·15시 코너 대기 카페 3편을 빼 대기 1로 세어 일감표 2번이 거짓으로 떴다(감시기는 4)
+2026-10-01 21:52 · firemap-loop · 완료: 일감표 2번 '대기 묶음 카페' — 실제 4/3, 측정 고장
+2026-10-01 21:52 · firemap-loop · 수익 근접 차이 = 퇴직금 쇼츠(183회) 설명란 계산기 링크 실유입 0(쇼츠 링크 안 눌림, 공식) → youtube-loop에 [지시](관련 동영상 대상 만들지·프로필 링크 바꿀지) · 기획 판단은 콘텐츠 본부장 몫, loop은 재기만
+2026-10-01 21:52 · firemap-loop · loop.py 185회차 남은 디자인 차이 없음(한계 확정 4개 그대로) — 새 손잡이 안 만듦, 근거 없는 조정은 안 한다
+2026-10-01 21:53 · firemap-watchdog · 메우지 않음(블로그 STOP·카페 83분, 내일 코너 3편 시각 대기+garak0929 슬롯 없음 대기) · 빵꾸 아님, 멈춘 회차 없음(loop 5분 도는 중), 로그인됨

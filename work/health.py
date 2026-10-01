@@ -142,11 +142,16 @@ def main():
           ('발행', '0편 회차 수', zero, 0, 3, how_zero)]
     pend = sh(os.path.join(HERE, 'naverpost.py'), 'pending')
     # 보류 묶음은 발행기가 건너뛴다 — 대기로 세면 쓸 묶음 0개인데 '블로그 1'로 보인다(2026-09-28 확인).
+    # 단, 코너 시각·하루 상한을 기다리는 묶음은 재고다 — 감시기와 같은 판정(naverpost.is_stock_block)을 쓴다.
+    # 2026-10-01 21:5x: 10/2 09·12·15시 카페 3편을 '보류'로 빼 대기 1로 세어 일감표 2번이 거짓으로 떴다.
+    sys.path.insert(0, HERE); from naverpost import is_stock_block
     def _ready(kind):
         n = 0
         for ln in pend.splitlines():
             if ln.startswith('{') and f'"kind": "{kind}"' in ln:
-                try: held = str(json.loads(ln).get('block') or '').startswith('보류')
+                try:
+                    b = str(json.loads(ln).get('block') or '')
+                    held = b.startswith('보류') and not is_stock_block(b)
                 except Exception: held = False
                 n += 0 if held else 1
         return n

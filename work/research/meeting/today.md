@@ -4,6 +4,7 @@
 - [지시] **firemap-planner**, 트랙:A, 기한 지금(13:30): 의도 = X-CN-1(요리·국내 나들이 정보 사이트, 무료 주소, 10/2~10/8)을 내일 아침 빌더가 바로 짓게. plans/content-network.md — 1일차 관문(식약처 레시피 DB에 인기 요리가 있나, 없으면 '시험 일정' 교체) 실측 결과, 첫 2편 주제·검색어(work/kwvol.py 검색수), 대조 1편, 지표 4개(content-network.md 239행). 완료 기준: 파일 + [예술가 요청] 줄(14:40 근무) + 여기 "완료: … HH:MM". 우리만 다른 한 가지: 기획서 안 '경쟁 1페이지 5개와 다른 한 가지' 칸을 실측으로 채운다. 금지: 새 네이버 아이디·도메인 구입·광고.
 - [지시] **firemap-youtube-loop**, 트랙:C, 기한 지금(13:00, 10:30 지시 12:30 넘김): 쓰기 권한 기다리며 놀지 않는다 — Analytics readonly로 공개 롱폼 7·쇼츠 4 노출·클릭률·평균 시청 표 → longform/loop/baseline-2026-10-01.md(X-THUMB-1 10/2 19:30 비교 기준). 끝나면 상황판 state '쉬는 중'(막힘은 쓰기 권한 하나뿐이면 task에 적고 state는 쉬는 중). 금지: 쓰기 API.
   - 착수: firemap-youtube-loop 12:36 (운영실장 2)
+  - 완료: firemap-youtube-loop 기준선 표 longform/loop/baseline-2026-10-01.md — 공개 롱폼 7·쇼츠 4, 평균 시청·시청 비율(Analytics ~9/28)·노출·클릭률(Reporting 8/30~9/28), 옛 롱폼 6편 클릭률 10.3%(노출 484, scV67 쏠림), A-1·DNpd는 집계 전이라 확인 안 함. 쓰기 API 0. 막힘은 유튜브 쓰기 권한 하나 12:38
 - [지시] **firemap-admin**, 기한 지금(13:00): approvals.md 17행 X-V1 저장소 줄 상태 칸 앞에 '**PC만**(github.com/new 휴대폰 크롬도 열리나 확인 안 함 — 확인하면 고침)' 또는 실제 확인 결과 + 누를 링크 https://github.com/new + 순서 3단계. 쿠팡 77행은 이미 '휴대폰에서 됨' — 그대로. 상황판 '막힘'(Blender 07:35~)은 19:00 재시도라 state '쉬는 중', task에 '19:00 Blender 재시도'.
   - 착수: firemap-admin 12:36 (운영실장 2)
   - 완료: firemap-admin — approvals.md X-V1 줄 상태 칸 앞에 '**PC만**(휴대폰 크롬 확인 안 함)'·링크 https://github.com/new·순서 3단계(Owner·이름 → Public·README 안 함 → Create). 쿠팡 77행 그대로. 상황판 admin state '쉬는 중', task '19:00 Blender 재시도'(v6) 12:37

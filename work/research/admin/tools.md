@@ -19,7 +19,7 @@
 | ChatGPT 웹 | 확인 안 함(로그인 여부) | **스꾸와 한도 공유**(결재함 기록) | 오늘 3건 기록(실사용 2, 0건 1) | 순돌이·디자이너 | gpt-usage.jsonl 기준. 이미지 생성 금지 유지 |
 | Supabase 파이어맵 (c7cd8a90) | **정상** | 파이어맵 전용 | — | 제품·성장·보고 | firemap_events 24시간: screen_view 450, session_start 380, calc_complete 42 — 최신 23:22 |
 | Cloudflare Pages retire-age-kr | **정상** | 파이어맵 | — | 제품 | retire-age-kr.pages.dev → firemap.kr 200, dev.retire-age-kr.pages.dev 200. origin/main 22:43, origin/dev 23:34 |
-| Blender | **설치 중 — 관리자 승인 창에서 멈춤** | — | — | 모션·일러스트 | 휴대폰 결재 **승인**(07:02) → 07:38 winget BlenderFoundation.Blender 5.2.1(게시자 Blender Foundation) 설치 시작. 사용자 범위 설치 파일은 없음 → 기본(전체) 범위는 Windows 관리자 승인(UAC) 창(consent.exe) 대기. **사장님이 PC에서 "예" 한 번** 누르면 끝남. 총무는 UAC를 누르지 않는다 |
+| Blender | **설치됨 · 시험 통과** | — | — | 모션·일러스트 | 10-01 16:49 확인: winget BlenderFoundation.Blender 5.2.1 LTS 설치 성공(관리자 승인 통과). 경로 `C:\Program Files\Blender Foundation\Blender 5.2lender.exe`. `blender -b --factory-startup -P 스크립트`로 320×180 렌더 1장 저장 성공(17초) |
 | 스케줄 앱 예약 작업 | 정상 | — | — | 전원 | 최근 7회 실패 0건(전 직원). 상세는 staff.md |
 | Metricool·Gmail·GitHub·Claude Docs 커넥터 | 연결됨 | 확인 안 함 | — | 확인 안 함 | 연결 상태만 봄(session_connectors_status) |
 

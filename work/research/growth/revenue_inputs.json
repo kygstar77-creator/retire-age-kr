@@ -4,13 +4,15 @@
  "adfit_status": "제휴제안등록9/30-회신없음",
  "adfit_status_at": "2026-10-01 07:16",
  "coupang_clicks": 0,
- "coupang_clicks_at": "2026-10-01 07:16",
+ "coupang_clicks_at": "2026-10-02 07:39",
  "coupang_orders": 0,
- "coupang_orders_at": "2026-10-01 07:16",
+ "coupang_orders_at": "2026-10-02 07:39",
  "coupang_gmv": 0,
- "coupang_gmv_at": "2026-10-01 07:16",
+ "coupang_gmv_at": "2026-10-02 07:39",
  "coupang_rev": 0,
- "coupang_rev_at": "2026-10-01 07:16",
- "coupang_asof": "2026-09-30",
- "coupang_asof_at": "2026-10-01 07:16"
+ "coupang_rev_at": "2026-10-02 07:39",
+ "coupang_asof": "화면에 업데이트일 없음(이번달 집계 0)",
+ "coupang_asof_at": "2026-10-02 07:39",
+ "fm_coupang_out": 0,
+ "fm_coupang_out_at": "2026-10-02 07:39"
 }

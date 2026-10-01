@@ -34,8 +34,8 @@ firemap-planner · 2026-10-02 07:1x · 근거: series-plan.md B10 · yt/re_crite
 - 그 쇼츠들은 루틴이 **전부 비공개(private)로 올렸고, 공개 전환은 '사장님 판단'으로 남겨 둔 채 아무도 안 바꿨다**(perf-notes.md 72~73줄 "공개 전환은 사장님 판단이 필요하다(routine이 공개로 바꾸지 않는다)"). 내용 결함으로 내린 기록은 못 찾음(확인 안 함). 그 뒤 쇼츠 기계 생산은 10/1 23:56에 중지. → 이번 편부터는 PD 예약 공개 흐름(롱폼과 같은 관문)으로 낸다. 옛 비공개 편 공개 여부는 firemap-youtube-loop 판단(사장님께 묻지 않음, 숫자가 지금과 다르면 공개하지 않는다).
 
 ## 5. 첫 100명 경로(검색 말고)
-1. **카페 B10 글** → 카페 홈피드·회원 알림 · firemap-write · 10/2 · 글 끝 '우리 구 계산은 firemap.kr' 링크 `?utm_source=cafe&utm_campaign=b10`
-2. **쇼츠** → 쇼츠 피드, 설명·고정 댓글에 카페 글 주소 · firemap-shorts · 10/3 · `utm_source=yt_shorts&utm_campaign=b10`
+1. **카페 B10 글** → 카페 홈피드·회원 알림 · firemap-write · 10/2 · 글 끝 '우리 구 계산은 firemap.kr' 링크 `?utm_source=cafe&utm_medium=post&utm_campaign=b10`
+2. **쇼츠** → 쇼츠 피드, 설명·고정 댓글에 카페 글 주소 · firemap-shorts · 10/3 · `utm_source=shorts&utm_medium=desc&utm_campaign=b10` (growth 10/2: 규칙 utm.md는 shorts — yt_shorts 아님)
 3. **카카오톡 오픈채팅방 공지 1줄**(표 이미지 + 카페 주소, 하루 1회 이내) · firemap-growth · 10/3
 4. 롱폼 설명란 → 카페 표 글 · firemap-youtube-loop · 10/4 (카페↔유튜브 서로 홍보 지시와 합침)
 - 결과 공유 장치: 25개 구 히트맵 이미지 1장(저장·공유용). 남의 커뮤니티 홍보글은 쓰지 않는다.

@@ -97,6 +97,7 @@
   - **firemap-growth**: R5 오픈채팅 공지 1회(utm_source=openchat) 10/2 · daily.md '계산기 3종 외부 방문(경로별)' 매일, 첫 줄 10/2.
   - **firemap-youtube-loop**: R2 주제 맞는 롱폼 설명 둘째 줄 계산기 링크 1개(utm_campaign=영상id) — 권한 풀린 첫 회차.
   - 10/8까지 /calc가 어디서도 색인 안 되면 계획 보류·재설계.
+- [요청] **firemap-product-dev**, 트랙:A, 기한 10/3 12:00: calc_input_start·calc_result가 운영 번들(index-AN2WX9Tr.js)에 있는데 10/1 17:35 배포 뒤 firemap_events 기록 0건(내부 포함). `firemap.kr/calc/severance?fm_internal=1`에서 입력 1번 바꾸고 2초 뒤 기록되는지 확인 — 안 되면 고침. site-ia 끝 버튼 클릭률·calc-3 판정 분모가 이 이벤트다 · 요청: firemap-growth 07:47 · 근거 growth/measure-1002.md B장
 - [요청] **firemap-product-dev**(F8 때): ① 127.0.0.1·localhost·*.pages.dev에서 firemap_events 기록 끄기 ② 첫 화면·가이드에서 /calc/*로 가는 일반 `<a href>` 링크.
 - [요청] **firemap-product-dev**(F1·F3 뒤 다음 계산기 후보): 4대보험 계산기 — bizdev 17:09 판단(단독 건보료 계산기는 1순위 아님). 사업주 요율 공단·근로복지공단 원문 대조, 손검산 5건.
 - [구현 요청] **firemap-product-dev**(10/10): '퇴사 영수증' design/resign-receipt/ spec 1~7·시트·저장(3초 이내) · **firemap-editor-web**: 그림·시트 글자 확정 · **firemap-growth**: receipt_open·render·save·share·landing 이벤트. 판정 구현 후 2주(저장률 8%↑ 키움, 100회 이상 3% 미만 뺌).
@@ -129,6 +130,7 @@
   - **주의(firemap-venture-builder):** 지금 영국 도장은 거짓이 된다 — uk-pay/checks.md 외부 대조 3건은 민간 계산기 2곳+원문 문장이지 GOV.UK 'Estimate your Income Tax for the current year'에 넣은 값이 아님. 허브 첫 판 전 GOV.UK 계산기 3건을 checks.md에 따로 적을 것, 전까지 "Not yet checked".
     - 착수: firemap-venture-builder 21:46 / 완료: firemap-venture-builder 21:49 — 공개본엔 도장 없음(바닥 'Checked 1 October 2026'은 원문 쪽을 읽은 날짜라 사실). 대신 **매일 06:30 KST GOV.UK 원문 대조 Actions** 붙임: uk-pay/ci.py·uk-pay-daily.yml(공개본 상수 2쪽 + Content API 근거 문장 22개, 읽기 전용, 실패=이메일), 수동 run 36864276902 성공, retire-age-kr eb179a8. GOV.UK 계산기 대조 3건은 아직 → backlog 1순위로, 그 전까지 허브 도장 'Not yet checked'.
   - [시안 요청] global-calcs 측정(check_open·country_switch·share, 도장 클릭률=check_open÷calc_submit)·경로별 utm(share/hn/email) 트랙:B · 담당 **firemap-growth** · 시한 10/2 12:00 · 근거 plans/global-calcs.md 4·6장
+    - 완료: firemap-growth 07:46 — growth/measure-1002.md A장(이벤트 5종 표·check_open·country_switch 새로·도장 클릭률 식·utm hn/email·공개 전 점검 SQL). 주의: fmkit은 저장소 0이라 기기 id가 매번 새로 → 판정은 session_start 수로. 구현 firemap-venture-builder.
   - [조사 요청] 호주 계산기 사이트에 적용되는 금융상품 조언 규정 원문(연금 기여 결과 표시가 걸리는지) + ATO 저작권 고지 원문 재확인 트랙:B · 담당 **firemap-venture-research-global** · 시한 10/8 20:00 · 근거 plans/global-calcs.md 8장
   - [지시] global-calcs 첫 판(하루) 트랙:B · 담당 **firemap-venture-builder** · 시작 조건 X-V1 10/8 판정 키우기/유지(접기면 보류) · 공개 목표 10/9 22:00 · 근거 plans/global-calcs.md 7장 — /au/ 1쪽(손검산 10·ATO 대조 3) + 허브 / + /uk/checks/·/au/checks/. 오늘 X-V1 범위는 바꾸지 않음. 금지: 판정 전 착수·금액별 쪽 대량·HMRC/ATO 이름을 사이트 이름에.
   - [결재 필요](10/8 키우기일 때) 허브 중립 도메인 1개 · Show HN 게시 사장님 계정 1회 — firemap-venture 판정 뒤 firemap-admin이 approvals.md에.
@@ -136,6 +138,7 @@
   - [지시] site-ia 1판 트랙:B · 담당 **firemap-product-dev** · 시한 10/3 22:00(calc-gtm R1과 합침) · 근거 plans/site-ia.md 6장 — 운영엔 4번 이벤트만, 1·2·3번 화면은 dev까지(재심사 결과 통지 뒤 또는 10/14 조건부 운영).
   - [시안 요청] site-ia 계산기 끝 버튼에 내 숫자 넣는 문구(출처 표) 트랙:B · 담당 **firemap-editor-web** · 시한 10/2 12:00 · 근거 plans/site-ia.md 2·6장 3번
   - [시안 요청] site-ia 측정(home_corner_click·끝 버튼 클릭률 2% 판정·10/14 조건부 반영 시 원본 HTML 글자 수·링크 수 대조) 트랙:B · 담당 **firemap-growth** · 시한 10/2 12:00 · 근거 plans/site-ia.md 6·7장
+    - 완료: firemap-growth 07:46 — growth/measure-1002.md B장(home_corner_click{to,place}·끝 버튼 클릭률 식·10/14 원본 HTML 글자·링크 수 대조 명령). 발견: calc_input_start·calc_result는 운영 번들에 있으나 10/1 17:35 배포 뒤 기록 0건(내부 포함) → product-dev가 ?fm_internal=1로 한 번 입력해 기록 확인 요청.
 - [디자인 검수 요청] site-ia 시안 범위 확인 — firemap-designer·firemap-brand-director 트랙:B · 시한 10/2 12:00 · 근거 plans/site-ia.md 6장(S1~S5) — 첫 화면 행동 아래 목록 행 1개·'전체' 코너 순서가 숫자 1+행동 1·부품 30개 안인지, 이름·로고 불변 확인.
   - 착수: firemap-designer 22:10 (운영실장)
   - 완료: firemap-designer 22:16 — 범위 통과(조건 3): 새 부품 0(ListGroup·ListRow), 이름·로고·주소 불변 확인, 코너 행은 size S·accent·아이콘 없이 4행 1묶음, 375·320 첫 화면에 버튼+첫 행 스크롤 없이는 S1 캡처로 잼. 브랜드 디렉터 몫은 별도. 근거 design/site-ia/review-scope.md
@@ -313,6 +316,7 @@
   - 완료: firemap-video-producer 02:30 — **원인 확정: 제미나이 TTS 응답 맨 끝에 붙어 오는 0.12~0.15초 광대역 잡음**(rms 약 2만, 4kHz 위 38%). 장 마지막 문장 바로 뒤에서 남(E-1 원본 응답 17개 중 13개, A-1·D-1도). 어제 진단(쉿소리)은 다른 소리였고, 디에서판 e1_ds(-7SLlI1cea8에 올라간 파일)에도 55.98초·96.00초 등에 그대로 남아 있음. ① 도구 work/video/clickscan.py(scan/fix) — 문장 wav 치직: E-1 31·A-1 27·D-1 10곳 → 전부 0(원본 _preclick/ 보관). 경쟁 3편(DIOzwBPlf_Q·IDwH4f-xA1g·J0hc2v8DzRo) 같은 검사로 21~24분에 0~4곳(사람 목소리 오탐 수준), E-1 옛 렌더는 9.7분에 37곳. ② lfvoice write()가 자동으로 지움(DC 제거·앞 8ms/뒤 25ms 페이드 포함), ytlong 관문에 '문장 wav 치직 0·무음 0' 추가, 같은 편 교체 업로드를 C1·C5에서 다른 편으로 세던 것 고침. ③ **E-1 새 판 video/out/e1_v3_ds.mp4** 렌더(길이 579.71초 같음, 치직 0, 쉿소리 -13.6dB, 관문 통과, meta.json video 바꿔 둠). 중간 사고: 첫 fix가 문장 wav를 전부 무음으로 만듦 → 업로드 전에 잡아 복구, 안전장치 넣음(lessons). ④ A-1(공개 중)은 교체 안 함(decisions). ⑤ **-7SLlI1cea8 교체는 [순돌이 검토]로 넘김** — PD 규칙상 무인 '이미 올린 영상 비공개 전환' 금지. 10/3 19:30 전에 해야 함: -7SLlI1cea8 예약 취소·비공개(삭제 말고) → uploads.jsonl 그 줄 replaced 표시 → `py -3.12 work/ytlong.py up work/research/longform/ep/E-1`(10/3 19:30 예약, 관문 지금 통과). 안 하면 치직 있는 판이 나간다.
 - 완료: [순돌이 검토] E-1 치직 제거판 교체 10/02 02:32 — 새 업로드 **idc3JZOZukc**(e1_v3_ds, 10/3 19:30 KST 예약, 썸네일 설정). 옛 판 -7SLlI1cea8·3Fn4VAUtPH0 모두 예약 취소·비공개(삭제 안 함) 되읽기 확인. youtube-loop: 카페·쇼츠 링크가 옛 ID면 idc3JZOZukc로. 교훈: 첫 videos.update는 publishAt을 지우지 않는다 — publishAt:None을 한 번 더 보내고 되읽어 확인할 것.
 - [추가 질문 → 콘텐츠 회고(10/2 12:00 보고)에 포함] 사장님 10/02 06:08: "우리는 부동산·주식·경제·정책·시사를 뉴스로 정리해 주는 유튜브가 제일 어울리지? 근데 연봉·자산 관련 카페 글이 조회수가 제일 높은 것 같지?" → 담당 firemap-youtube-loop·firemap-growth: ① 카페 글 전부 주제별(연봉·자산·부동산·주식·정책·시사) 조회수 실측 표 ② 유튜브도 같은 분류로 ③ '뉴스 정리형' vs '내 돈 얼마형(내 연봉·내 자산에 대입)' 성과 비교 → 채널 정체성 제안 1개. 추측 금지, 숫자로.
+  - 완료(growth 몫 ①카페): firemap-growth 07:46 — growth/cafe-views-1002.md: 178편 주제별 조회. 자산 합 1위지만 #44 한 편(586) 덕, 중앙값은 주제 상관없이 4~6.5. 상위 5는 전부 '내 돈 몇 등·얼마' 숫자형. ②유튜브 분류는 youtube-loop 몫.
 
 ## [지시] 발행량 실험 X-YT-FREQ — 10/5부터 롱폼 하루 1편·쇼츠 하루 2편 (순돌이 10/02 06:11, 사장님 "롱폼 하루 1편, 숏폼 하루 2편은?")
 - 시작 10/5(주간 사용량이 10/4 21시 초기화된 다음 날). 그 전엔 지금 속도.
@@ -345,6 +349,7 @@
   - [요청] **firemap-shorts**: 오늘 쇼츠 2편 첫 화면 PNG를 cardshorts/<편>/cover.png로 남겨 주면 17:00 회차에 1초 시험. 공개 중 쇼츠 교체 후보 3(XzMCiAwQhAo·KiHLbeioWNg·P8Papm8Yxpw, 168px에서 순위표 글자 안 읽힘) — 표지 바꾸기가 무인으로 되는지 확인 한 줄.
 - [지시] 대본·카피 심사 관문 추가(사장님 10/02 06:18): 롱폼 대본·쇼츠 원고·제목·썸네일 문구·설명 첫 줄·카페 제목 모두 심사 3명 평균 8점(경쟁 5 비교) 뒤 공개. 편 폴더 review.md. 담당 지시문 6개에 반영(youtube-loop·video-producer·copywriter·shorts·editor·write). firemap-improve: ytlong·shortsdaily·naverpost가 review.md(8점 이상) 없으면 거절하는 코드 관문(10/3).
 - [추가 근거 → 콘텐츠 회고(12:00)] 사장님 10/02 06:24 카페 화면 캡처: 회원 2명, 10/1 글 조회 0·6·16·1, 댓글 전부 0. 순돌이가 본 문제 ① 글 제목이 전부 '~할까?' 질문 한 틀(실업급여 '왜 비슷할까?'·국민연금 '얼마 있어야 할까?'·커버드콜 '왜 적었을까?'·메인스트리트 '몇 주 필요할까?') ② 목록 썸네일이 작은 표 캡처라 목록 크기에서 아무것도 안 읽힘(1초 시험 탈락) ③ 같은 날 비슷한 금융 계산 글 연속. → firemap-write·firemap-editor·firemap-visual-designer: 카페 제목도 대본·카피 심사(8점·경쟁 카페 상위 5 비교)와 '같은 틀 3번 넘게 반복 금지' 적용, 카페 대표 이미지도 썸네일 1초 시험 적용(표 캡처 금지, 숫자 1개 크게). firemap-growth: 카페 글 조회가 어디서 오는지(네이버 검색·카페 홈·외부) 실측.
+  - 완료(growth 몫 조회 출처): firemap-growth 07:46 — 카페 랭킹 API 9/16~9/30 검색으로 읽음 105·검색 유입(모바일) 511·방문자 평균 22(9/1~15는 2·1). 카페 홈·외부 유입 칸은 API에 없음 → 확인 안 함. growth/cafe-views-1002.md 2장.
 
 ## [지시] 카페 하루 12편 단계적 확대 + 카페도 썸네일·자료조사 관문 (사장님 10/02 06:31: "카페도 후킹되는 썸네일, 자료조사 등등 해야겠지, 글을 12개 정도로 늘리는 건 어때")
 - 실험 X-CAFE-VOL: 오늘 5편 → **10/3부터 8편 → 10/6부터 12편**(중간 판정 10/5). 공식 카페 글쓰기 API 경로만(firemap/188부터 사용 중), 08~23시 고르게, 같은 틀 3번 넘게 금지, 주제 섞기.
@@ -401,6 +406,7 @@
     - [편집 검수 요청] B10 카페 첫 글 · 담당 **firemap-editor** · 파일 work/research/b10cafe1002/pkg · 공개 예정 10/2 14:10 (통과 기한 11:10) · 표 숫자 바꾸지 말 것, 통과하면 hold.txt 지움
       - 착수: firemap-editor 07:41
   - [시안 요청] B10 히트맵·표 이미지·제목 트랙:B · 담당 firemap-visual-designer(히트맵 기준일 도장)·firemap-copywriter(제목)·firemap-growth(utm b10·판정 10/9) · 시한 09:54 · 근거 plans/sonpum.md
+    - 완료(growth utm): firemap-growth 07:46 — 카페 `utm_source=cafe&utm_medium=post&utm_campaign=b10`, 쇼츠 `utm_source=shorts&utm_medium=desc&utm_campaign=b10`(sonpum.md의 yt_shorts를 규칙대로 고침). 판정 10/9 숫자는 growth가 냄.
     - 착수: firemap-copywriter 07:05 (절전 예외 — 시한 09:54가 내 12:40 회차보다 앞)
     - 완료: firemap-copywriter 07:24 — B10 카페 첫 글 제목 1위 **'서울 아파트 실거래가로 본 구별 전세가율, 금천 60.9% 강남 35.9%'**(제미나이 8.2·레드팀 8.2, GPT 절전으로 안 함), 2위·이유·경쟁 5는 research/b10cafe1002/titles.md·review.md. **firemap-write: 이 1위를 쓴다** — 본문 표 숫자가 바뀌면 제목 숫자도 같이. 기준일(2026.7~9월)은 본문 첫 줄·대표 이미지 도장에(firemap-visual-designer). E-1 제목 결정(17:00)·쇼츠 3편 compete·카페/쇼츠 벤치마크는 12:40 회차.
   - [예술가 요청] B10 우리만 다른 한 가지 트랙:B · 담당 firemap-artist · 시한 11:30 · 근거 plans/sonpum.md 2장 — 내 안 '25개 구 전부·같은 잣대·의견 없이 숫자와 기준일만, 첫 3초 히트맵+도장' 채택/반려 또는 한 수.

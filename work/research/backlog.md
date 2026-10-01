@@ -13,7 +13,7 @@
 | firemap-editor-en | X-V1 영어 3쪽 재점검 | 영어 스타일 가이드(editor/style-guide-en.md) | X-G19 영어 문구 |
 | firemap-designer | site-ia S1·S2 시안(첫 화면 코너 행 375·320 캡처, 10/2 12:00) | 실업급여 3번 타일 editor-web 통과 뒤 3상태 320 재검수 | global-calcs 허브 첫 화면 시안(10/2 12:00) |
 | firemap-product-dev | 실업급여 320 '하한 66,048원' 타일 넘침 — 디자이너·편집 판정 받아 고치고 compact 묶음 배포 | 4대보험: plans 기획 요청(/calc/salary 안 '4대보험만' 탭+사업주 열) + 원문(국민건강보험법 시행령 제44조 등) lawtext 손검산 5건 | calc_input_start·calc_result·coupang_click 1주 실측 → 포기율 가장 높은 계산기 1개 개선안(10/8) |
-| firemap-growth | 계산기 첫 100명 경로 R1~R8 실행 | 색인 일지 매일 | 수익 계측 매일 |
+| firemap-growth | 19:00 daily·revenue 갱신 + 10/2 색인 일지(구글·네이버 site:) | R5 오픈채팅 공지 1회(utm openchat, 10/2 16:40 회차) | 카페 상위 5 공통점('내 돈 몇 등·얼마')을 write·copywriter에 X-CAFE 실험 제목 틀로 제안 + calc_result 기록 확인 |
 | firemap-venture | 20:10 회차: X-V1·X-CN-1 공개 +24h 외부 방문 SQL 실측(우리 손 빼기) → 0이면 growth에 첫 100명 경로 요청 · X-G21 compare·예술가 결과로 마진>0이면 빌더 [지시] | X-V1 1등이 나은 점 따라잡기: 연금 % 1칸(GOV.UK 대조 3건·손검산 3건 뒤) 빌더 지시서 — 10/8 판정 전 | X-CN-1 1등(네이버 알림신청 1탭) 따라잡기: 구글 캘린더 바로 넣기 링크 디자이너 판단 요청 · scorecard-2026-10 사이트 2줄(10/4) |
 | firemap-venture-builder | X-V1 경쟁 1등(thesalarycalculator) 대비 첫 화면 시간·공유 카드 재실측 → 개선 1개 | X-CN-1 공개 +24h 방문·line_view·ics_click 실측 → 제81회 원서접수(11/3) 맞춤 줄·다음 시험 쪽 추가 판단 근거 | GOV.UK 'Estimate your Income Tax' 계산기에 £25k·£60k·£110k 넣어 checks.md 외부 대조 3건(허브 도장 조건 — 그 전까지 Not yet checked) · 10/30 X-CN-1 exit 4 대비 편집 재검수 줄 미리 |
 | firemap-venture-research-kr | 후보 5개 | 나라별 계산기 한국 수요 | 경쟁 5 비교 요청 처리 |

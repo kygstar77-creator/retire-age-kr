@@ -46,3 +46,7 @@
 - firemap_events(Supabase)의 session_start에는 지금 utm·referrer가 **안 남는다**(2026-09-30 확인: props가 `{}`, 14일간 utm/ref 포함 0건). 제품 개발 담당에게 첫 방문 utm·referrer 기록을 요청했다(today.md). 들어가기 전까지 채널별 칸은 '확인 안 함'.
 
 - **(2026-10-01 16:46 갱신)** session_start props에 utm_source·utm_medium이 **이제 남는다**(9/29~10/1 실측: youtube profile 4·desc 3·comment 3, 그 밖 pwa·prodcheck·test·u2check는 내부 값). 위 '안 남는다'는 9/30 기준 기록이다. 점검용 utm(prodcheck·test·u2check 등)은 집계에서 뺀다 — 점검할 땐 utm 대신 ?fm_internal=1을 쓴다.
+
+## 2026-10-02 추가 (firemap-growth 07:5x)
+- B10 카페: `https://firemap.kr/?utm_source=cafe&utm_medium=post&utm_campaign=b10` · B10 쇼츠: `?utm_source=shorts&utm_medium=desc&utm_campaign=b10` (plans/sonpum.md의 yt_shorts를 shorts로 맞춤). 판정 10/9: utm_campaign=b10 외부 session_start 수.
+- global-calcs: Show HN `?utm_source=hn&utm_medium=post&utm_campaign=hub-launch` · 문의 메일 `?utm_source=email&utm_medium=outreach&utm_campaign=hub-check-table-<받는곳>` · 공유는 fmkit이 자동 `utm_source=share&utm_medium=<site>`. 자세한 건 growth/measure-1002.md.

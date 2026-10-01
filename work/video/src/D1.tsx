@@ -233,7 +233,8 @@ const Pension: React.FC<S> = ({s, rail}) => {
         <div style={{...F, position: 'absolute', left: 30, top: 70, fontWeight: 700, fontSize: 70, color: T.ink}}><CountUp to={d.p0} p={pr} />원</div>
       </Card>
       <svg width={1920} height={1080} style={{position: 'absolute', left: 0, top: 0}}>
-        <line x1={440} x2={1080} y1={base} y2={base} stroke={T.ink3} strokeWidth={2} opacity={L} />
+        <line x1={440} x2={1080} y1={base} y2={base} stroke={T.ink3} strokeWidth={2} opacity={Math.max(L, b0 * 0.6)} />
+        {[480, 820].map((gx, i) => <rect key={gx} x={gx} y={base - hh(d.half) - hh(d.fin[i])} width={220} height={hh(d.half) + hh(d.fin[i])} rx={6} fill={T.line} opacity={0.45 * b0 * (1 - Math.min(1, (i ? R : L) * 3))} />)}
         {bar(480, d.fin[0], false, L, d.p0, `+ 금융 ${d.fin[0].toLocaleString()}만원`)}
         {bar(820, d.fin[1], true, R, d.p1, `+ 금융 ${d.fin[1].toLocaleString()}만원`)}
       </svg>

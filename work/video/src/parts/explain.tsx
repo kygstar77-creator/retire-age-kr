@@ -55,13 +55,14 @@ export const Tokens: React.FC<{x: number; y: number; toks: Tok[]; size?: number;
 
 // 절벽 막대: 범주 막대 + 하한 점선 + 두 막대 사이 점프 괄호(꼬리표)
 export const CliffBars: React.FC<{x: number; y: number; w: number; h: number; rows: [string, number][]; p: number[]; jumpAt: number; jumpP: number; jumpLabel: string;
-  floor?: number; floorP?: number; floorLabel?: string; fmt: (v: number) => string; xTitle?: string}> =
-  ({x, y, w, h, rows, p, jumpAt, jumpP, jumpLabel, floor, floorP = 0, floorLabel = '', fmt, xTitle}) => {
+  floor?: number; floorP?: number; floorLabel?: string; fmt: (v: number) => string; xTitle?: string; ghost?: boolean}> =
+  ({x, y, w, h, rows, p, jumpAt, jumpP, jumpLabel, floor, floorP = 0, floorLabel = '', fmt, xTitle, ghost = true}) => {
   const mx = Math.max(...rows.map((r) => r[1])) * 1.08; const slot = w / rows.length; const bw = slot * 0.6; const sy = (v: number) => (v / mx) * h;
   const a = rows[jumpAt], b = rows[jumpAt + 1]; const jx = x + (jumpAt + 1) * slot - (slot - bw) / 2 - 4;
   return (
     <svg width={1920} height={1080} style={{position: 'absolute', left: 0, top: 0}}>
       <line x1={x - 10} x2={x + w} y1={y} y2={y} stroke={T.ink3} strokeWidth={2} />
+      {ghost ? rows.map(([n], i) => <rect key={'g' + n} x={x + i * slot} y={y - h} width={bw} height={h} rx={8} fill={T.line} opacity={0.45 * (1 - Math.min(1, (p[i] ?? 0) * 3))} />) : null}
       {floor ? <g opacity={floorP}><line x1={x - 10} x2={x - 10 + (w + 10) * floorP} y1={y - sy(floor)} y2={y - sy(floor)} stroke={T.fall} strokeWidth={3} strokeDasharray="10 8" />
         {floorLabel.split(' + ').map((t, i) => <text key={i} x={x + 20} y={y - sy(floor) - 140 + i * 34} fontFamily="PD" fontWeight={700} fontSize={26} fill={T.fall}>{i ? '+ ' + t : t}</text>)}</g> : null}
       {rows.map(([n, v], i) => { const o = p[i] ?? 0; const bh = sy(v) * appear(o * 30, 0, 30); const after = i > jumpAt;
@@ -130,7 +131,7 @@ export const StepCards: React.FC<{x: number; y: number; w: number; h: number; ga
         <div style={{position: 'absolute', left: 36, top: 36, width: 76, height: 76, borderRadius: 38, background: T.ink, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
           <span style={{...F, fontWeight: 700, fontSize: 42, color: '#fff'}}>{i + 1}</span></div>
         <div style={{...F, position: 'absolute', left: 36, right: 30, top: 150, fontWeight: 700, fontSize: 44, color: T.ink, lineHeight: 1.25, wordBreak: 'keep-all'}}>{t}</div>
-        <div style={{...F, position: 'absolute', left: 36, right: 30, top: 270, fontWeight: 500, fontSize: 30, color: T.ink2, lineHeight: 1.35, wordBreak: 'keep-all'}}>{sub}</div>
+        <div style={{...F, position: 'absolute', left: 36, right: 30, top: 270, fontWeight: 500, fontSize: 30, color: T.ink2, lineHeight: 1.35, wordBreak: 'keep-all', whiteSpace: 'pre-line'}}>{sub}</div>
         {i < steps.length - 1 ? <div style={{...F, position: 'absolute', right: -gap / 2 - 18, top: h / 2 - 30, fontWeight: 700, fontSize: 48, color: T.ink3, opacity: o[i + 1] ?? 0}}>→</div> : null}
       </div>; })}
   </>

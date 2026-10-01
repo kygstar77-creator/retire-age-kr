@@ -80,6 +80,8 @@
 - [요청] **firemap-report**, 다음 텔레그램 보고 맨 위 1줄(firemap-admin 19:2x): "PC Claude 데스크톱 retire-age-kr 세션에서 순돌이에게 '배포하고 설명 적용해' 한 마디(1분) — 또는 무인 허용 규칙 2개: `git push origin dev:main`, `py -3.12 work/ytdesc_all.py apply`·`work/f2_coupang.py apply`. 쿠팡 링크·설명란이 이것 때문에 멈춤" — 결재함 맨 위 줄과 같음.
 - [지시] **firemap-youtube-loop·firemap-video-producer**, 트랙:B, 다음 롱폼 업로드부터: 설명 쓰기(videos.update)는 막혀도 **업로드(videos.insert)는 18:17 E-1에서 됨** → 쿠팡 줄(대가성 문구 첫 줄)은 업로드 때 설명란에 같이 넣는다(F2 '4편 중 1편'·금융 주제 제외 규칙 그대로, 다음 대상 편을 youtube-loop이 RULES에 지정). 금지: 이미 올린 영상 설명을 다른 경로로 고치기.
 - [편집 검수 요청] D-1 설명란 쿠팡 둘째 줄 안내 문구 트랙:C · 담당 firemap-editor · 시한 10/5 12:00 · 근거 work/research/longform/ep/D-1/coupang.md — 통과 전엔 사실 표기만 씀 (youtube-loop 20:47)
+  - 착수: firemap-editor 06:53
+  - 완료: firemap-editor 07:10 — 편집 통과(ep/D-1/coupang.md.edit.json). 둘째 줄 = "『퇴사를 준비하는 나에게』 이슬기 지음, 위즈덤하우스 → 링크"(지은 분류명 '퇴사 준비 책' → 쿠팡 상품명의 실제 제목). 대가성 첫 줄·링크 그대로, 06:53 curl 302. **firemap-video-producer·youtube-loop: 오늘 19:30 D-1 업로드 설명란에 이 두 줄.**
 
 
 ### 쿠팡·수익 (17:04 사장님 "쿠팡 인증했다")
@@ -109,6 +111,8 @@
 - (youtube-loop 17:23) **숫자 고침 주의:** 금융소득 1,000만원 이하도 지역가입자면 0원이 아니라 하한 포함 **월 22,800원**(시행규칙 44조③). 경계는 2.3만원→6.8만원(연 54만원), 국민연금 월 150만원이면 6.1만원→12.9만원(연 81만원). 근거 ep/D-1/facts.txt [계산] · 대본 ep/D-1/script.md v0.
 - [넘김] **firemap-video-producer**·**firemap-youtube-loop**: D-1 썸네일 업로드본 = ep/D-1/thumb_d1d.png(막대+'건보료 1년 54만원 차이', X-THUMB-2 B, 심사 평균 8.0 = 제미나이 9·레드팀 7, GPT 확인 안 함), 48시간 교체용 = thumb_d1c.png(X-THUMB-2 A). 근거 visual/D-1-thumb/judges.md·ep/D-1/thumb_meta.json. 레드팀: 영상 앞부분에 '지역가입자로 바뀐 경우(임의계속가입 아님)' 한 줄 필요. 숫자 바뀌면 `py -3.12 work/research/visual/D-1-thumb/make_thumbs.py` (firemap-visual-designer 21:09)
 - [편집 검수 요청] E-2 테슬라 롱폼 대본 ep/E-2/script.md v0(약 9분) 트랙:C · 담당 **firemap-editor** · 시한 10/6 12:00 · 근거 ep/E-2/facts.txt [1]~[13]·check/applied.md — scriptnum 0·aitell 2.7·humanlike 차이 없음·제미나이 반영. 숫자·공시 이름(10-Q·8-K)·'정기대출 한도' 표현은 바꾸지 말 것(미인출 한도라 '대출'로만 쓰면 틀림). 통과면 script.md.edit.json. (youtube-loop 21:25)
+  - 착수: firemap-editor 06:55
+  - 완료: firemap-editor 07:10 — 편집 통과(ep/E-2/script.md.edit.json, 원본 .orig). aitell 1.8→0.0, 끝맺음 8곳 섞음, 숫자 163개 사실표 없음 0·공시 이름·'정기대출 한도' 그대로. **youtube-loop 참고:** 제미나이(flash-lite) 반론은 말투가 아니라 구조 — "은퇴 계산(9장)이 끝에만 있어 30초 안에 '내 얘기'가 안 보인다". 대본·카피 심사(review.md, 3명 8점)는 아직 — 다음 근무에 editor가 하거나 youtube-loop이 걸 때 같이.
 - [요청] **firemap-copywriter**: E-2 ep/E-2/titles.md 제목 1위·2위 + 썸네일 **X-THUMB-2 B(한 줄 큰 숫자)** 문구, 기한 10/6 12:00. 숫자는 facts.txt만, '테슬라' 맨 앞(91.7만)·'테슬라 주가'(49.1만), 예측·권유('오를까·사야 할까') 금지. 후보 근거 analysis.md ②·compare.md. (youtube-loop 21:25)
 - [요청] **firemap-copywriter**: W-1(공개 10/11) 썸네일 두 줄 후보·1위, 기한 10/8 12:00, ep/W-1/titles.md. 숫자는 그 주 사실표만. 틀 visual/W-1-thumb/brief.md.
 - E-1 썸네일 주의(PD): 공개 전 facts [4] 주가를 다시 받아 숫자가 바뀌면 `py -3.12 work/research/visual/E-1-thumb/make_thumbs.py` 다시.
@@ -350,6 +354,7 @@
 ## [지시·긴급] 카페 글 검수 보류 + 영상에서 약속한 카페 글 (사장님 10/02 06:35: "카페 자료조사도 잘 하고 있는 거야? 문장 편집자도 계속 검수하고 있고?", "유튜브 대본에서 말하는 카페에 올리겠다는 것도 올리고 있고?")
 - 순돌이 실측: 대기 카페 묶음 중 wht1002만 compare.md+편집 통과(pkg.edit.json). **nps1002(10/2 15시)·xcn1_cafe1002·gongjae1002는 편집 통과가 없어 순돌이가 hold.txt로 보류**(nps1002·xcn1은 경쟁 조사도 없음). firemap-write(경쟁 조사·제목 심사) → firemap-editor(편집 통과, 통과하면 hold.txt 삭제). 편집자는 어제 22건 통과 기록이 있지만 대기 묶음을 다 못 따라갔다.
   - 완료: firemap-editor 06:41 — 3묶음 편집 통과 + 제목 카피 심사(제미나이+레드팀, GPT는 절전으로 안 함) + compare.md(nps1002·xcn1 카페 탭 상위 5) → **hold.txt 3개 지움.** 제목 '~할까?' 3개 모두 교체: gongjae1002(09시) '공공재개발 이주비 대출이자 지원, 금리 3.8% 밑이면 덜 받아요'(8.5) · nps1002(15시) '국민연금 미적립부채 1,450조 보도, 내 연금 계산식엔 기금 잔액이 없다'(8.7) · xcn1(9.0). 대표 이미지 1초 시험은 visual-designer 몫(확인 안 함). 각 폴더 review.md.
+  - 완료: firemap-editor 07:10 — garak0929(헬리오시티) compare.md·카피 심사(제미나이 8.2·레드팀 8.2)·편집 통과 → hold.txt 지움, 제목 '헬리오시티 84㎡ 1년 새 3.9%, 옆 가락1차쌍용 84㎡는 22.5% 올랐다'. offimkt_ic0929·usmkt0930은 '[…시황]' 코너라 9/30 슬롯에서 12시간 지나 naverpost가 시효로 버림 → 편집 안 함, **firemap-write**가 시황 틀 빼고 새로 쓸지 판단.
 - 영상 속 약속: A-1 "ETF별 전체 표는 카페에" → 10/1 12:08 firemap/187 발행됨 ✅. **E-1 "세 회사 8분기 전체 표는 카페에 올려 두겠습니다" → 아직 글 없음.** firemap-youtube-loop + firemap-write: E-1 공개(10/3 19:30) 전까지 표 글 작성·관문(경쟁 조사·제목 심사·대표 이미지 1초 시험·편집 통과) 후 E-1 공개 시각 직전 발행, 영상 설명·고정 댓글에 글 주소.
 - 재발 방지: 롱폼·쇼츠 대본에 '카페에 올리겠다' 같은 약속이 있으면 youtube-loop가 work/research/longform/loop/promises.md에 (편·약속·카페 글 주소·기한) 한 줄. 순돌이 대역·스프린트 점검이 공개된 영상의 약속 중 글이 없는 것을 매번 확인.
 
@@ -396,3 +401,5 @@
   - 착수: firemap-venture 07:05 (X-V1·X-CN-1 beat-1st)
 - 모든 공개물 규칙 추가(지시문 6개): review.md에 ① 경쟁 1등보다 나은 점 2개 ② 우리 지난 것보다 나아진 점 1개 ③ 1등이 더 나은 점 1개와 따라잡을 방법 — 비면 공개 금지.- [추가] 쇼츠도 같은 진단 (사장님 10/02 07:04: "쇼츠도 그렇고") — firemap-copywriter + firemap-shorts + firemap-visual-designer, 기한 오늘 16:00: 우리 공개 쇼츠 5편(순자산 609·주담대 372·퇴직금 183·예금 179·금값 22)을 같은 주제 쇼츠 1등(최근 30일 조회 최고)과 초 단위로 나란히 — 첫 1초 화면·첫 문장·자막 크기·전환 속도·길이·끝맺음·음악 → 1등이 하는 것 중 우리가 안 하는 것 목록과 '쇼츠 틀 v2'(카드 한 장 넘기기 틀 탈피, 형식 3개 이상). 오늘 19:20 쇼츠부터 적용. 결과 cardshorts/benchmark-2026-10-02.md.
 
+
+- [요청] **cafeedit 담당(순돌이)**, 기한 10/6: 공개 카페 #32(청년미래적금 갈아타기, 10/7 가입 시작)를 편집 원고 editor/2026-10-02/cafe/32.txt(AI 티 31.3→17.9)로 바꾸려다 2번 실패 — 1차 저장 뒤 대조 불일치(라이브는 원본 그대로), 2차 덩어리 4 편집기 안 대조 500/588자. 마지막 덩어리의 주소 줄(www.fsc.go.kr…)이 다시 칠 때 링크로 바뀌는 것으로 추정(확인 안 함). 주소 줄을 넣는 방법을 고치면 editor가 다시 적용. (firemap-editor 07:10)

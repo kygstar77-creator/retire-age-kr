@@ -104,6 +104,12 @@ def gate():
         if gap < MIN_GAP_H: return f'마지막 발행 {gap:.1f}시간 전 — {MIN_GAP_H}시간 간격'
     return ''
 
+def build_desc(spec):
+    """설명란 글. spec "cafe_line": false면 카페 주소 줄을 뺀다(없으면 true — 기존 쇼츠 그대로).
+    2026-10-01 F5 sevpay: 계산기 utm 링크 1개 원칙인데 publish가 카페 주소를 자동으로 붙여 링크가 2개가 됐다."""
+    cafe = ('금리·예금·연금·부동산 숫자를 매일 정리하는 곳 — 파이어맵 카페\n' + CAFE + '\n\n') if spec.get('cafe_line', True) else ''
+    return spec['yt_desc'].strip() + '\n\n' + '출처: ' + spec['source'] + '\n\n' + cafe + ' '.join('#' + h for h in spec['hashtags'])
+
 def publish(sp):
     spec = json.load(open(sp, encoding='utf-8'))
     bad = check(spec)
@@ -115,8 +121,7 @@ def publish(sp):
     import cardshort, ytupload
     mp4 = os.path.splitext(sp)[0] + '.mp4'
     cardshort.build(spec, mp4)
-    desc = spec['yt_desc'].strip() + '\n\n' + '출처: ' + spec['source'] + '\n\n' + \
-        '금리·예금·연금·부동산 숫자를 매일 정리하는 곳 — 파이어맵 카페\n' + CAFE + '\n\n' + ' '.join('#' + h for h in spec['hashtags'])
+    desc = build_desc(spec)
     vid = ytupload.upload(mp4, spec['yt_title'], desc, privacy='public', tags=','.join(spec.get('tags', spec['hashtags'])))
     import hashlib
     row = {'at': datetime.datetime.now().isoformat(timespec='seconds'), 'id': vid, 'title': spec['yt_title'],
@@ -151,4 +156,7 @@ if __name__ == '__main__':
     elif cmd == 'check':
         b = check(json.load(open(sys.argv[2], encoding='utf-8'))); print('\n'.join(b) if b else '문제 없음')
     elif cmd == 'publish': publish(sys.argv[2])
+    elif cmd == 'desc':   # 올리지 않고 설명란만 찍는다(링크 수 확인용)
+        d = build_desc(json.load(open(sys.argv[2], encoding='utf-8'))); links = re.findall(r'https?://\S+', d)
+        print(d); print('---\n링크', len(links), '개:', links)
     elif cmd == 'd7': d7()

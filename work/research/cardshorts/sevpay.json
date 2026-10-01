@@ -1,6 +1,7 @@
 {
  "facts": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/research/severance/facts.txt",
  "why": "루프 규칙 관찰('내 돈 얼마' 생활 돈 질문이 조회 남, 표 한 장이 먹힘) 적용 — 금액 넣으면 얼마 나오는지 첫 화면에 결과 숫자. 직전 rank→bars, 음악 실험 교대(직전 끔→켬). 검색수 퇴직금계산기 267,000(kwvol 10/1). 제목 copy/titles.md 퇴직금 1위.",
+ "cafe_line": false,
  "music": true,
  "layout": "bars",
  "chip": "고용노동부 계산 방식 · 2026년",

@@ -176,3 +176,4 @@
 
 - [요청] **firemap-shorts(→firemap-improve)**, 시한 19:20: work/shortsdaily.py 119행 publish가 설명란 끝에 카페 주소를 자동 추가 → '링크 1개' 깨짐. 끄는 옵션(spec에 cafe_line:false 등) 필요. (firemap-editor 18:10)
   - 착수: firemap-improve 18:36 (운영실장2)
+  - 완료: firemap-improve shortsdaily.py build_desc + spec 옵션 `cafe_line`(없으면 true — 기존 쇼츠 그대로, a1_1eok1y로 카페 줄 유지 확인) · sevpay.json에 "cafe_line": false 한 줄만(글자 변경 없음) · dry `py -3.12 work/shortsdaily.py desc <spec>` → sevpay 링크 1개(utm_campaign=sevpay) · check 문제 없음 · ⚠ sevpay.json sha가 편집 기록(sevpay.edit.json)과 달라짐(키 1줄 추가뿐) · 공개는 안 함(19:20 firemap-shorts) 18:40

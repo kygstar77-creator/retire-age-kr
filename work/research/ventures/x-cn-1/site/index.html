@@ -28,11 +28,12 @@ a{color:var(--accent)}
 .line .stamp{color:var(--dark-sub)}
 .line strong{color:#fff;font-weight:700}
 .line .after{color:var(--dark-ink)}
-.line a.official{color:#fff;font-weight:700}
+/* 하루 넘김(stale): 줄은 비우고 흰 버튼 = 공식 일정 확인하기, 캘린더 숨김(디자인 반려 16:14 ②) */
+.next:not([data-state=stale]) #offbtn,.next[data-state=stale] #ics,.next[data-state=stale] .line{display:none}
 .sub{font-size:var(--fs4);color:var(--dark-sub);margin:0 0 16px}
 .sub:empty{display:none}
 .acts{display:flex;gap:8px;flex-wrap:wrap}
-.btn{flex:1 1 140px;display:inline-flex;align-items:center;justify-content:center;min-height:48px;border:0;border-radius:12px;font:700 var(--fs4) inherit;font-family:inherit;text-decoration:none;cursor:pointer;padding:0 12px}
+.btn{flex:1 1 140px;display:inline-flex;align-items:center;justify-content:center;min-height:48px;border:0;border-radius:12px;font-weight:700;font-size:var(--fs4);font-family:inherit;line-height:1.3;text-align:center;white-space:nowrap;text-decoration:none;cursor:pointer;padding:0 12px}
 .primary{background:#fff;color:var(--dark)}
 .ghost{background:rgba(255,255,255,.12);color:var(--dark-ink)}
 .src{font-size:var(--fs5);color:var(--sub);margin:8px 0 0}

@@ -89,12 +89,19 @@ def esc(s):
     return html.escape(s or '', quote=True)
 
 
-def line_html(L):
+# 디자인 반려 16:14 반영: 상태 문장(main·after)이 먼저, 도장은 같은 문단 끝·같은 크기(--dark-sub).
+# 하루 넘김(stale)은 줄을 비우고 흰 버튼이 '공식 일정 확인하기'가 된다(.next[data-state=stale] CSS). 글자 변경 0.
+def line_inner(L):
     if L['state'] == 'stale':
-        return f'<p class="line"><a class="official" href="{esc(L["href"])}" rel="nofollow">{esc(L["main"])}</a></p>'
+        return ''
     after = f' · <span class="after">{esc(L["after"])}</span>' if L['after'] else ''
-    return (f'<p class="line" data-state="{L["state"]}"><span class="stamp">{esc(L["stamp"])}</span> — '
-            f'<strong>{esc(L["main"])}</strong>{after}</p>')
+    return f'<strong>{esc(L["main"])}</strong>{after} — <span class="stamp">{esc(L["stamp"])}</span>'
+
+
+# 편집 표시(.edit.json) 해시에서 빼는 자리: 매일 바뀌는 도장·대조 시각·맨 위 줄 계산값(<!--dyn-->…<!--/dyn-->, /*dyn*/…/*/dyn*/)과
+# data-state 값. 그 글자를 만드는 nextline.cjs는 쪽 안에 그대로 실려 해시에 들어간다 → 문장이 바뀌면 여전히 무효.
+def dyn(s):
+    return f'<!--dyn-->{s}<!--/dyn-->'
 
 
 DOW = '월화수목금토일'
@@ -204,14 +211,16 @@ def build_hnk(F, verified_at, now):
     notes = ''.join(f'<li>{esc(n)}</li>' for n in F['notes_official'])
     read = datetime.datetime.fromisoformat(F['read_at'])
     ver = datetime.datetime.fromisoformat(verified_at) if verified_at else None
-    data = json.dumps({'F': F, 'V': verified_at}, ensure_ascii=False).replace('</', '<\\/')
+    vjs = json.dumps(verified_at)
+    data = json.dumps({'F': F}, ensure_ascii=False).replace('</', '<\\/')
     nl = open(os.path.join(HERE, 'src', 'nextline.cjs'), encoding='utf-8').read()
     body = f'''<h1>한능검 시험일정 2026 — 제80·81회 남은 일정</h1>
-<div class="next" id="next">
-{line_html(L)}
-<p class="sub" id="sub">{esc(L.get("sub", ""))}</p>
+<div class="next" id="next" data-state="{L["state"]}">
+<p class="line" id="line">{dyn(line_inner(L))}</p>
+<p class="sub" id="sub">{dyn(esc(L.get("sub", "")))}</p>
 <div class="acts">
 <a class="btn primary" id="ics" href="hanneunggeom-2026.ics" download>캘린더에 넣기</a>
+<a class="btn primary official" id="offbtn" href="{esc(F["source_url"])}" rel="nofollow">공식 일정 확인하기</a>
 <button class="btn ghost" id="copy" type="button">링크 복사</button>
 </div>
 </div>
@@ -229,18 +238,19 @@ def build_hnk(F, verified_at, now):
 <h2>공식 안내</h2>
 <ul class="notes">{notes}</ul>
 
-<p class="src">원문을 사람이 읽은 시각 {read.month}/{read.day} {read:%H:%M} · 원문과 자동 대조한 시각 {f"{ver.month}/{ver.day} {ver:%H:%M}" if ver else "없음"}. 대조가 하루를 넘기면 맨 위 줄은 공식 일정 링크로 바뀝니다.</p>
+<p class="src">원문을 사람이 읽은 시각 {read.month}/{read.day} {read:%H:%M} · 원문과 자동 대조한 시각 {dyn(f"{ver.month}/{ver.day} {ver:%H:%M}" if ver else "없음")}. 대조가 하루를 넘기면 맨 위 줄은 공식 일정 링크로 바뀝니다.</p>
 <script>{nl}</script>
 <script src="../fmkit.js"></script>
 <script>
 (function () {{
   var D = {data};
+  D.V = /*dyn*/{vjs}/*/dyn*/;
   var L = NextLine.nextLine(D.F, D.V, Date.now());
-  var box = document.getElementById('next'), p = box.querySelector('.line');
+  var box = document.getElementById('next'), p = document.getElementById('line');
   function e(s) {{ return String(s).replace(/[&<>"]/g, function (c) {{ return {{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c]; }}); }}
-  p.outerHTML = L.state === 'stale'
-    ? '<p class="line"><a class="official" href="' + e(L.href) + '" rel="nofollow">' + e(L.main) + '</a></p>'
-    : '<p class="line" data-state="' + L.state + '"><span class="stamp">' + e(L.stamp) + '</span> — <strong>' + e(L.main) + '</strong>' + (L.after ? ' · <span class="after">' + e(L.after) + '</span>' : '') + '</p>';
+  box.setAttribute('data-state', L.state);
+  p.innerHTML = L.state === 'stale' ? ''
+    : '<strong>' + e(L.main) + '</strong>' + (L.after ? ' · <span class="after">' + e(L.after) + '</span>' : '') + ' — <span class="stamp">' + e(L.stamp) + '</span>';
   document.getElementById('sub').textContent = L.sub || '';
   var log = window.FMKit ? FMKit.log : function () {{}};
   if (window.FMKit) FMKit.init({{ site: 'x-cn-1', lang: 'ko', accent: '{ACCENT}' }});

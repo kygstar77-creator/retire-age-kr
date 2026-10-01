@@ -138,6 +138,11 @@
   - [지시] global-calcs 첫 판(하루) 트랙:B · 담당 **firemap-venture-builder** · 시작 조건 X-V1 10/8 판정 키우기/유지(접기면 보류) · 공개 목표 10/9 22:00 · 근거 plans/global-calcs.md 7장 — /au/ 1쪽(손검산 10·ATO 대조 3) + 허브 / + /uk/checks/·/au/checks/. 오늘 X-V1 범위는 바꾸지 않음. 금지: 판정 전 착수·금액별 쪽 대량·HMRC/ATO 이름을 사이트 이름에.
   - [결재 필요](10/8 키우기일 때) 허브 중립 도메인 1개 · Show HN 게시 사장님 계정 1회 — firemap-venture 판정 뒤 firemap-admin이 approvals.md에.
 - [기획 요청] site-ia 기획서 확정 — firemap-planner 트랙:B · 담당 **firemap-planner** · 시한 10/2 12:00 · 근거 plans/site-ia.md(초안), meeting/ia-workshop-2026-10-01.md — 사장님 17:3x '파이어맵을 한 코너로, 전 세계를?' 워크숍 추천 D(집은 둘·firemap.kr 안은 코너·1판=calc-gtm R1과 합침). 확정 때 레드팀 1문 '재심사 중 메뉴·내부 링크 변경 운영 반영 가능?' 답 반영. (워크숍 17:49)
+  - 착수: firemap-planner 20:11 (운영실장)
+  - 완료: firemap-planner site-ia 기획서 확정 20:16 · 예술가 19:47 판정 반영(끝은 몇 살에 은퇴+버튼에 내 숫자·2판 사는 곳만 바꾸면 채택·도장 보류) · 레드팀 1문 '고쳐서': 재심사 중 운영은 클릭 이벤트만, 화면 변경은 결과 통지 뒤(10/14까지 무소식이면 대조 붙여 반영), '크롤 경로 증가'는 근거에서 삭제(원본 HTML에 링크 이미 있음) · 근거 plans/site-ia.md 6·9장
+  - [지시] site-ia 1판 트랙:B · 담당 **firemap-product-dev** · 시한 10/3 22:00(calc-gtm R1과 합침) · 근거 plans/site-ia.md 6장 — 운영엔 4번 이벤트만, 1·2·3번 화면은 dev까지(재심사 결과 통지 뒤 또는 10/14 조건부 운영).
+  - [시안 요청] site-ia 계산기 끝 버튼에 내 숫자 넣는 문구(출처 표) 트랙:B · 담당 **firemap-editor-web** · 시한 10/2 12:00 · 근거 plans/site-ia.md 2·6장 3번
+  - [시안 요청] site-ia 측정(home_corner_click·끝 버튼 클릭률 2% 판정·10/14 조건부 반영 시 원본 HTML 글자 수·링크 수 대조) 트랙:B · 담당 **firemap-growth** · 시한 10/2 12:00 · 근거 plans/site-ia.md 6·7장
 - [예술가 요청] site-ia 한 수 트랙:B · 담당 **firemap-artist** · 시한 10/2 12:00 · 근거 plans/site-ia.md 2·9장, meeting/ia-workshop-2026-10-01.md 4장 — 1판 '어느 계산기든 끝은 몇 살에 은퇴?' / 2판 '같은 내 숫자, 사는 곳만 바꾸면' / 두 집 공통 '원문 대조 도장' 중 채택·반려.
   - 착수: firemap-artist 19:45
   - 통과: [예술가 요청] site-ia — 1판 '어느 계산기든 끝은 몇 살에 은퇴?' 채택(조건: 끝 버튼에 방금 나온 내 숫자, 예 '퇴직금 3,240만원 → 은퇴 나이에 넣어 보기', 문구 최종 editor-web; +7일 클릭률 2% 미만이면 규칙을 첫 화면 코너로만 축소) · 2판 '같은 내 숫자, 사는 곳만 바꾸면' 채택 · 공통 원문 대조 도장 보류(허브 10/16 판정 뒤). 목록 행은 네이버·사람인과 같은 모양이라 차이가 아님 19:47 (firemap-artist) · 근거 art/2026-10-01-1945.md A2

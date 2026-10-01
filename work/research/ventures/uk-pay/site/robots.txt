@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kygstar77-creator.github.io/uk-take-home-pay/sitemap.xml

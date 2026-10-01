@@ -210,6 +210,7 @@ footer a+a{margin-left:8px}
     el('nx').textContent = f(b.net - a.net);
     var inTrap = v >= 100000 && v < 125140;
     el('trap').hidden = !inTrap;
+    el('trapLink').href = '60-percent-tax-trap/?s=' + Math.round(v);
     if (inTrap && !trapSeen) { trapSeen = true; FMKit.log('trap_view'); }
     el('shareBtn').hidden = false;
     var rows = [['Salary', f(v)], ['Personal Allowance', f(a.pa)], ['Income Tax', '−' + f(a.tax)], ['National Insurance', '−' + f(a.ni)]];

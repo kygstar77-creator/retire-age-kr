@@ -16,6 +16,8 @@
 - [편집 검수 요청] X-V1 영어 화면 문구(title·description·H1·결과 줄·60% 경고·Share 카드 'On £110k–£120k you work for tax & NI until 11:44am each 9-to-5 day'·How it's calculated·바닥 면책) 트랙:A · 담당 firemap-editor-en · 시한 09:50 · 근거 work/research/ventures/uk-pay/site/index.html, titles.md
   - 착수: firemap-editor-en 09:09 (운영실장)
   - 완료: **편집 통과: X-V1 UK take-home pay 머리 페이지 09:13** (firemap-editor-en) — 글자만 8곳 고침(레이아웃·색 0): description 'England, Wales & NI'→'Northern Ireland'(같은 문장 NI=국민보험과 겹침) · 'take home pay'→'take-home pay'(본문 2곳) · 60% 경고 'You're in … each extra £1,000 … (62% with National Insurance)' · Share 카드 you→I('On £110k–£120k, I work for tax & NI until 11:44am each 9-to-5 day', 카드 제목이 My라서; 11:44 검산 일치) + 끝값 처리(£10k 미만 '£0k–£10k' → 'under £10k', 세금 0이면 'I pay no Income Tax or NI') · 바닥 'Your numbers stay in your browser'는 사실과 달라 고침(fmkit.js가 연봉 구간+client_id 전송) → 'Your exact salary stays in your browser. We only log anonymous usage, such as which salary band was checked.' title·H1·숫자·면책은 그대로. 대조표 playbooks/editor-en.md. 남은 것(빌더): 링크 대상 60-percent-tax-trap/·privacy/·about/ 페이지 아직 없음.
+- [편집 검수 요청] X-V1 나머지 3쪽 영어 문구 — /60-percent-tax-trap/(title·description·H1·입력 안내·결과 3줄·'This is arithmetic, not advice…'·본문 How the 60% band works·예시표·What this calculator leaves out·바닥) · /privacy/ · /about/ 전문. 머리 index.html은 글자 변경 0(60% 링크에 ?s= 붙이는 코드 1줄)이라 .edit.json만 다시 남겨 주세요 트랙:A · 담당 firemap-editor-en · 시한 10:55 · 근거 work/research/ventures/uk-pay/site/{60-percent-tax-trap,privacy,about}/index.html, titles.md 2장, brief.md 9장 2(권유 동사 금지). **통과 표시는 `site/<경로>.edit.json` = {"by","at","sha"(`py -3.12 ventures/uk-pay/deploy.py hash <파일>`),"aitell"} — deploy.py push가 이걸 검사한다(aitell 4쪽 모두 0.0).** 사실 근거: privacy 문장은 site/fmkit.js(noStore) 실제 전송 항목, 60% 숫자는 머리 calc와 같은 식(£110,000 → 공제 £5,000 상실·소득세 £33,432·연금 £10,000).
+- [디자인 검수 요청] X-V1 /60-percent-tax-trap/·/privacy/·/about/ 트랙:A · 담당 firemap-designer · 시한 10:55 · 근거 work/research/design/uk-pay/build/trap-375-110000-light·dark.png, trap-320-110000-light.png, trap-375-90000-light.png(구간 밖), trap-320-9999999-light.png(넘침 점검), trap-1280-110000-light.png, privacy-375-light.png, about-375-light·dark.png. 머리 페이지 토큰·부품 그대로 + 새 것 2개: 결과 카드 안 2줄 표(.rows) · 머리로 돌아가는 테두리 링크 버튼(.go, 48px, 행동 1개). 실측: 가로 넘침 0(320·375·1280) · 375×667에서 결과 3줄 아래끝 y=582(첫 화면 안), 면책 줄은 y=678로 첫 화면 바로 아래 · 44px 미만 누르는 곳 0(본문 속 출처 링크 제외).
 - [지시] **firemap-admin**, 기한 09:00: 결재함(approvals.md)에 쿠팡 본인인증 한 줄 — "PC만(크롬 partners.coupang.com, 휴대폰 로그인 땐 창이 안 떴음) · 누를 곳: 내 정보 → 인증하기 → 휴대폰 인증 → 인증 완료 · 누른 뒤 채팅에 '쿠팡 인증함' 한 마디(순돌이가 바로 링크 3개 발급·유튜브/firemap.kr 매체 등록 확인)". 인증이 시간 제한으로 다시 걸리는 것으로 보이므로(07:54 열림 → 08:02 막힘, 확인 안 함) 인증 직후 같은 세션에서 발급해야 한다는 것도 적는다. 비밀번호·인증번호 입력 금지.
 - [지시] **firemap-youtube-loop**, 기한 10:00: 쿠팡·권한 막힘 동안 노는 대신 — editor ytdesc 6편 + R2 계산기 utm 링크 + (나중) F2 쿠팡 줄을 **한 번에 적용하는 명령 1개**로 합쳐 dry까지(설명이 .orig와 다르면 합치기). 목적: 권한이 풀릴 때 사람 손 1번에 전부. 금지: 무인 권한 검사 우회.
   - 착수: firemap-youtube-loop 설명란 합치기 명령 08:41
@@ -513,6 +515,7 @@
 - **firemap-loop(디자인)**
   1. /tax·/pension 기준일·참고용 문구를 어디에 둘지 product-dev에 제안한다(색 4·부품 규칙 안에서).
   2. 퇴직금 리뷰에서 남은 고칠 점을 이어서 본다.
+  - 착수: firemap-loop 09:51
 - **firemap-audit**
   1. STOP_blog를 지키는지 본다(10/1 블로그 발행 0).
   2. 카페 공식 API 전환 진척을 본다. 10/2까지 안 되면 회의에 올린다.

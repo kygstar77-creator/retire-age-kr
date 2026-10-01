@@ -1,0 +1,187 @@
+<!doctype html>
+<!-- X-V1 /60-percent-tax-trap/ — firemap-venture-builder 2026-10-01 09:5x.
+     문구: titles.md 2장(카피라이터) + brief 9장 2(FSMA: 계산만, 권유 동사 금지). 세율: gov.uk 2026/27(checks.md).
+     공개 전 '디자인 통과'·'편집 통과(editor-en)' 둘 다 필요. -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>60% Tax Trap Calculator 2026/27 – £100,000 to £125,140</title>
+<meta name="description" content="Earning £100,000–£125,140? See the Personal Allowance you lose, your marginal rate (60%, or 62% with NI) and the pension contribution that brings income to £100,000.">
+<link rel="canonical" href="https://kygstar77-creator.github.io/uk-take-home-pay/60-percent-tax-trap/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="60% Tax Trap Calculator 2026/27 – £100,000 to £125,140">
+<meta property="og:description" content="See the Personal Allowance you lose and your marginal rate between £100,000 and £125,140.">
+<meta property="og:url" content="https://kygstar77-creator.github.io/uk-take-home-pay/60-percent-tax-trap/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#f5f6f4">
+<style>
+:root{
+  --bg:#f5f6f4;--card:#ffffff;--ink:#15191c;--sub:#5b636a;--line:#dfe3e1;
+  --accent:#0a6b52;--accent-ink:#ffffff;--accent-soft:#e3f1ec;
+  --dark:#12211c;--dark-ink:#f1f5f3;--dark-sub:#a9bdb5;
+  --warn:#8a5a00;--warn-soft:#fff4dc;
+  --fs1:28px;--fs2:20px;--fs3:17px;--fs4:15px;--fs5:13px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e1211;--card:#171c1a;--ink:#eef2f0;--sub:#9aa6a1;--line:#2a322f;
+  --accent:#2fae86;--accent-ink:#06140f;--accent-soft:#16302a;--dark:#1d2a25;--warn:#f0c060;--warn-soft:#2c2410}}
+:root[data-theme="dark"]{--bg:#0e1211;--card:#171c1a;--ink:#eef2f0;--sub:#9aa6a1;--line:#2a322f;--accent:#2fae86;--accent-ink:#06140f;--accent-soft:#16302a;--dark:#1d2a25;--warn:#f0c060;--warn-soft:#2c2410}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--fs3)/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px 40px}
+header{display:flex;justify-content:space-between;align-items:center;height:48px}
+header a{color:var(--ink);text-decoration:none;font-weight:700;font-size:var(--fs4);display:inline-block;padding:12px 4px 12px 0;min-height:44px}
+.year{font-size:var(--fs5);font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:4px 10px}
+h1{font-size:var(--fs1);line-height:1.2;margin:8px 0 16px;letter-spacing:-.01em}
+.card{background:var(--card);border-radius:16px;padding:16px;margin:0 0 12px}
+label{display:block;font-size:var(--fs4);color:var(--sub);margin:0 0 8px}
+.row{display:flex;gap:8px}
+.money{flex:1;min-width:0;position:relative}
+.money span{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:700;color:var(--sub)}
+input{width:100%;height:56px;border:1.5px solid var(--line);border-radius:12px;padding:0 12px 0 34px;font-family:inherit;font-size:22px;font-weight:700;color:var(--ink);background:var(--card);font-variant-numeric:tabular-nums}
+input:focus{outline:none;border-color:var(--accent)}
+.seg{display:flex;background:var(--bg);border-radius:12px;padding:4px;flex:0 0 auto}
+.seg button{height:48px;min-width:52px;border:0;border-radius:9px;background:transparent;font-family:inherit;font-size:var(--fs4);font-weight:600;color:var(--sub);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--card);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.note{font-size:var(--fs5);color:var(--sub);margin:8px 0 0}
+.result{background:var(--dark);color:var(--dark-ink);border-radius:16px;padding:18px 16px 16px;margin:0 0 12px}
+.k{font-size:var(--fs4);color:var(--dark-sub);margin:0}
+.big{font-size:clamp(34px,11vw,44px);font-weight:800;line-height:1.15;margin:2px 0 4px;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden}
+.big small{font-size:var(--fs3);font-weight:600;color:var(--dark-sub)}
+.s{font-size:var(--fs4);color:var(--dark-sub);margin:0 0 12px}
+.next{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px solid rgba(255,255,255,.14);padding-top:12px;font-size:var(--fs4)}
+.next b{font-size:var(--fs3);font-variant-numeric:tabular-nums}
+.trap{margin:12px 0 0;background:var(--warn-soft);color:var(--warn);border-radius:12px;padding:12px;font-size:var(--fs4)}
+.trap a{color:inherit;font-weight:700;display:inline-block;padding:12px 0 4px;min-height:44px}
+.share{width:100%;height:48px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;font-family:inherit;font-size:var(--fs4);font-weight:600;cursor:pointer;margin:0 0 12px}
+details{background:var(--card);border-radius:16px;margin:0 0 12px}
+summary{padding:12px 16px;font-weight:600;cursor:pointer;min-height:48px;display:flex;align-items:center}
+.opt{padding:0 16px 16px}
+select{width:100%;height:48px;border:1.5px solid var(--line);border-radius:12px;padding:0 12px;font-family:inherit;font-size:var(--fs3);color:var(--ink);background:var(--card)}
+table{width:100%;border-collapse:collapse;font-size:var(--fs4);font-variant-numeric:tabular-nums}
+td,th{padding:10px 16px;border-top:1px solid var(--line);text-align:left;font-weight:400} td:last-child,th:last-child{text-align:right}
+.empty .big,.empty .next b{color:var(--dark-sub)}
+h2{font-size:var(--fs2);margin:32px 0 8px}
+h3{font-size:var(--fs3);margin:20px 0 4px}
+section p,section li{font-size:var(--fs4)}
+.tbl{background:var(--card);border-radius:16px;overflow:hidden;margin:8px 0}
+.src{font-size:var(--fs5);color:var(--sub)}
+.src a,section a{color:var(--accent)}
+footer{font-size:var(--fs5);color:var(--sub);margin-top:24px}
+footer a{color:var(--sub);display:inline-block;padding:12px 4px;min-height:44px}
+footer a+a{margin-left:8px}
+[hidden]{display:none!important}
+</style>
+<style>
+.rows{margin:12px 0 0;border-top:1px solid rgba(255,255,255,.14)}
+.rows div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0 0;font-size:var(--fs4);color:var(--dark-sub)}
+.rows b{color:var(--dark-ink);font-size:var(--fs3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.fine{font-size:var(--fs5);color:var(--dark-sub);margin:12px 0 0}
+.go{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;font-size:var(--fs4);font-weight:600;text-decoration:none;margin:0 0 12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><a href="../">UK Take Home Pay</a><span class="year">2026/27</span></header>
+  <main>
+  <h1>60% tax trap calculator 2026/27</h1>
+
+  <div class="card">
+    <label for="sal">Your adjusted net income</label>
+    <div class="money"><span>£</span><input id="sal" inputmode="numeric" autocomplete="off" placeholder="110,000" aria-describedby="scope"></div>
+    <p class="note" id="scope">If you have no other income, this is usually your salary minus pension contributions. <a href="https://www.gov.uk/guidance/adjusted-net-income" style="color:var(--accent)">How HMRC defines it</a> · England, Wales &amp; Northern Ireland</p>
+  </div>
+
+  <section class="result empty" id="res" aria-live="polite">
+    <p class="k">Personal Allowance lost</p>
+    <p class="big" id="big">£—</p>
+    <p class="s" id="sub">Type your income to see it</p>
+    <div class="rows">
+      <div><span id="rateK">Effective marginal rate in this band</span><b id="rate">60% (62% with NI)</b></div>
+      <div><span>Pension contributions that would reduce adjusted net income to £100,000</span><b id="pen">£—</b></div>
+    </div>
+    <p class="fine">This is arithmetic, not advice. Speak to a regulated adviser before changing contributions.</p>
+  </section>
+
+  <a class="go" id="home" href="../" hidden>See full take-home pay for this salary</a>
+  </main>
+
+  <section>
+    <h2>How the 60% band works</h2>
+    <p>For 2026/27 the standard Personal Allowance is £12,570. It goes down by £1 for every £2 of adjusted net income above £100,000, so it's zero from £125,140.</p>
+    <p>Between £100,000 and £125,140, each extra £1 is taxed at the 40% higher rate and also removes 50p of tax-free allowance, which is then taxed at 40% too. That adds up to 60p in Income Tax for each £1. Employee National Insurance of 2% on earnings above £50,270 takes it to 62%.</p>
+    <h3>Examples, 2026/27</h3>
+    <div class="tbl"><table>
+      <tr><th>Adjusted net income</th><th>Allowance lost · Income Tax</th></tr>
+      <tr><td>£105,000</td><td>£2,500 · £30,432</td></tr>
+      <tr><td>£110,000</td><td>£5,000 · £33,432</td></tr>
+      <tr><td>£120,000</td><td>£10,000 · £39,432</td></tr>
+    </table></div>
+    <p>Income Tax at £100,000 is £27,432. So at £110,000, the extra £10,000 of income costs £6,000 in Income Tax and £200 in National Insurance.</p>
+    <h3>What this calculator leaves out</h3>
+    <p>Student loan repayments, Scotland's tax bands, the High Income Child Benefit Charge and childcare support are not included. Pension amounts shown are gross. In a relief at source scheme, your pension provider claims tax relief at the basic 20% rate and adds it to your pension pot.</p>
+    <p class="src">Sources: <a href="https://www.gov.uk/income-tax-rates/income-over-100000">GOV.UK Income Tax rates: income over £100,000</a> · <a href="https://www.gov.uk/guidance/adjusted-net-income">GOV.UK Adjusted net income</a> · <a href="https://www.gov.uk/tax-on-your-private-pension/pension-tax-relief">GOV.UK Pension tax relief</a>. Checked 1 October 2026. Contains public sector information licensed under the Open Government Licence v3.0.</p>
+  </section>
+
+  <footer>
+    <p>Estimate only, not tax or financial advice. This is an independent tool and is not connected to HMRC or GOV.UK. Your exact income stays in your browser. We only log anonymous usage, such as which income band was checked.</p>
+    <p><a href="../">Take-home pay</a><a href="../privacy/">Privacy</a><a href="../about/">About</a></p>
+  </footer>
+</div>
+<script src="../fmkit.js"></script>
+<script>
+(function () {
+  FMKit.init({ site: 'uk-pay', lang: 'en', accent: '#0a6b52' });
+  // 2026/27 rUK (gov.uk 원문, checks.md) — 머리 페이지 calc와 같은 식
+  var PA = 12570, TAPER = 100000, BASIC = 37700, ADD = 125140, PT = 12570, UEL = 50270;
+  function calc(g) {
+    var pa = g > TAPER ? Math.max(0, PA - Math.floor((g - TAPER) / 2)) : PA;
+    var t = Math.max(0, g - pa), tax;
+    if (t <= BASIC) tax = t * 0.2;
+    else if (t <= ADD) tax = BASIC * 0.2 + (t - BASIC) * 0.4;
+    else tax = BASIC * 0.2 + (ADD - BASIC) * 0.4 + (t - ADD) * 0.45;
+    var ni = Math.max(0, Math.min(g, UEL) - PT) * 0.08 + Math.max(0, g - UEL) * 0.02;
+    return { pa: pa, tax: tax, ni: ni, net: g - tax - ni };
+  }
+  window.ukTrap = calc; // checks.md 검산용
+  var el = function (i) { return document.getElementById(i); };
+  var f = function (n) { return '£' + Math.round(n).toLocaleString('en-GB'); };
+  function band(g) { if (g < 100000) return '<100k'; if (g < 125140) return '100-125k'; return '125k+'; }
+  var lastBand = null, timer = null;
+  function run() {
+    var g = +String(el('sal').value).replace(/[^0-9]/g, ''), r = el('res');
+    if (!(g > 0) || g > 10000000) {
+      r.classList.add('empty'); el('big').textContent = '£—'; el('sub').textContent = 'Type your income to see it';
+      el('pen').textContent = '£—'; el('rateK').textContent = 'Effective marginal rate in this band'; el('rate').textContent = '60% (62% with NI)';
+      el('home').hidden = true; return;
+    }
+    var a = calc(g), keep = calc(g + 1000).net - a.net, lost = PA - a.pa;
+    r.classList.remove('empty');
+    el('big').textContent = f(lost);
+    FMKit.fitText(el('big'), 24);
+    if (g >= 100000 && g < 125140) {
+      el('sub').textContent = 'Your income is in the £100,000–£125,140 band';
+      el('rateK').textContent = 'Effective marginal rate in this band'; el('rate').textContent = '60% (62% with NI)';
+    } else {
+      el('sub').textContent = g < 100000 ? 'Your income is below £100,000, so you keep the full allowance'
+                                         : 'Above £125,140 the allowance is fully gone';
+      el('rateK').textContent = 'Tax and NI on your next £1,000'; el('rate').textContent = f(1000 - keep);
+    }
+    el('pen').textContent = f(Math.max(0, g - TAPER));
+    el('home').href = '../?s=' + g; el('home').hidden = false;
+    clearTimeout(timer);
+    timer = setTimeout(function () { var bk = band(g); if (bk !== lastBand) { lastBand = bk; FMKit.log('trap_calc', { bucket: bk }); } }, 1000);
+  }
+  el('sal').addEventListener('input', function () {
+    var raw = this.value.replace(/[^0-9]/g, '');
+    this.value = raw ? Number(raw).toLocaleString('en-GB') : '';
+    run();
+  });
+  el('home').addEventListener('click', function () { FMKit.log('trap_to_home'); });
+  var q = new URLSearchParams(location.search).get('s');
+  if (q) { el('sal').value = q; el('sal').dispatchEvent(new Event('input')); }
+})();
+</script>
+</body>
+</html>

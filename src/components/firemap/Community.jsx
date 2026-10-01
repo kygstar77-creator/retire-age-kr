@@ -109,7 +109,7 @@ export default function Community({ onBack, onMove, simulation }) {
     if (composer.mode === 'new') {
       const created = await sendCommunity(text, null, composer.cat, myStage || null);
       setSending(false);
-      if (!created) { toast.bad('올리지 못했어요 · 잠시 뒤 다시 해보세요'); return; }
+      if (!created) { toast.bad('올리지 못했어요 · 잠시 후 다시 해봐요'); return; }
       setRows((r) => [...(r || []), { ...created, parent_id: null, likes: 0, category: composer.cat, stage: myStage || null }]);
       remember(created.id);
       setTab(tabOf({ category: composer.cat }));

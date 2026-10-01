@@ -98,7 +98,7 @@ export default function News({ onBack }) {
       <Card>
         <SectionHead kicker="지표" title="오늘의 참고 지표" size="sm" />
         {ind.loading && <Skeleton lines={4} />}
-        {!ind.loading && ind.rows.length === 0 && <p className="ds-p">지표를 아직 못 불러왔어요 · 잠시 뒤 다시 열어보세요</p>}
+        {!ind.loading && ind.rows.length === 0 && <p className="ds-p">지표를 아직 못 불러왔어요 · 잠시 후 다시 열어봐요</p>}
         {!ind.loading && ind.rows.length > 0 && (
           <div className="ds-idx-list">
             {ind.rows.map((r) => { const { key, ...rest } = r; return <IndexRow key={key} {...rest} />; })}

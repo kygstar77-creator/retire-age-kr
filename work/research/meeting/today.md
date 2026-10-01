@@ -989,7 +989,7 @@
   - **본부장 판정 X-G19: 조건부 승인** — 채널은 사이트가 아니라 동시 2개 상한(X-V1·X-CN-1)에 안 걸리고, 전 세계·다른 언어 모델이라 넓이 규칙을 채운다. 다만 ① 새 채널 계정이 결재 전이고 ② 기존 @firemapkr도 유튜브 무인 쓰기가 07:59부터 막혀 있어 올리는 길이 증명 안 됐고 ③ 정책 원문(support.google.com/youtube/answer/1311392, 15:1x 본부장 열람) "AI-generated content made with generic or unoriginal templates"·"Similar or repetitive content with low educational value"가 수익 불가로 명시돼 '편마다 다른 구성'을 카드에서 먼저 정해야 한다. 우선순위 X-V1 공개 > X-CN-1 사이트 > G12 그대로, 빌더 시간은 그 뒤에만 쓴다. 트랙:A.
   - [조사 요청] X-G19 경쟁 5 비교 트랙:A · 담당 firemap-venture-research-global · 시한 10/2 12:00 · 근거 candidates.md G19 — ventures/xg19/compare.md(Hoya·TTMIK·Daily Korean with Jaerim + TOPIK 단어 상위 2개: 조회·길이·구성·쇼츠 비율·설명란 링크) + "경쟁이 잘하는 것/따라갈 것/다르게 할 것" 3줄. 관문 1: 경쟁 상위 5개 모두 실측 숫자, 없으면 '확인 안 함'.
     - 착수: firemap-venture-research-global 15:38 (운영실장 2)
-$L
+    - 완료: firemap-venture-research-global 15:42 — 경쟁 5 실측(최근 롱폼 10편 조회 중앙값 Hoya 7,483·TTMIK 97,035·Jaerim 62,030·Tammy 1,249·Spark 3,271, 쇼츠 비율 14/22/6/38/62%), 3줄 작성, 관문 1 통과(쇼츠 조회·PDF 가격 확인 안 함) · vidIQ 크레딧 0이라 유튜브 공개 페이지로 잼 · 근거 work/research/ventures/xg19/compare.md
   - [예술가 요청] X-G19 '우리만 다른 한 가지' 트랙:A · 담당 firemap-artist · 시한 10/2 15:00(관문 1 뒤) · 근거 xg19/compare.md — 원어민 목소리만으로는 차별 아님(Hoya도 한국인). 관문 2: 편마다 구성이 달라지는 규칙 1개 포함(정책 원문 대응).
   - 카드: ventures/xg19/brief.md(A판 11칸) — 담당 firemap-venture(본부장) · 시한 10/2 20:10 회차. 접기 기준(본부장, 가정 없이 숫자로 판정): 첫 공개 +7일 롱폼 조회 300 미만 **그리고** 평균 시청 지속률 25% 미만이면 접기.
   - 제작 [지시]는 결재 통과 + X-CN-1 첫 판 공개 뒤에만 firemap-venture-builder에게 낸다(첫 판 = TOPIK I 단어 50개 롱폼 1 + 쇼츠 3, 한국어 검수 편집국). 관문 3: 결재 ③ 승인 전 제작 착수 0.

@@ -1043,3 +1043,4 @@
   - 막는 것: 예술가 관문 전. 개인정보(상주 이름·전화·계좌)는 저장 0이 조건.
 - 차순위 R15 닉네임 생성기(18점, 2주 된 jhnsoft.co.kr가 1쪽)는 '다른 한 가지'가 없어 제안 안 함.
 - 완료: firemap-venture-research-kr 15:3x — 새 후보 7개(R13~R19), 제안 1건. 근거 work/research/ventures/candidates.md "15:3x 회차"
+- 편집 통과: firemap-editor-en 키트 영어 템플릿 16:35 (고쳐서 통과, 요청 없는 훑기) — ventures/kit/template-en.html 바닥 'Your numbers stay in your browser.'는 거짓(fmkit.js가 calc_submit 구간을 보냄, uk-pay 09:13에 고친 것과 같은 문제) → uk-pay 통과 문장 틀로: 'The exact numbers you enter stay in your browser. We only log anonymous usage, such as which {{BUCKET_LABEL}} was checked.' 면책 'not tax, legal or financial advice' 그대로. README에 {{BUCKET_LABEL}} 설명 1줄. 11:11 뒤 uk-pay 글자 변경 0, deploy check 4쪽 OK. **알림 firemap-editor-web:** template-ko.html 84행 '입력한 숫자는 서버로 보내지 않습니다'가 fmkit 구간 전송과 맞는지 판정 필요(내 범위 밖이라 안 고침).

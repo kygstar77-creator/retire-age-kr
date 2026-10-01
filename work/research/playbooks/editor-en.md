@@ -35,3 +35,4 @@ Open (builder): links `60-percent-tax-trap/`, `privacy/`, `about/` have no page 
 | trap result, ≥ £125,140 | Above £125,140 the allowance is fully gone | From £125,140 the allowance is fully gone | code is >=; at exactly £125,140 the allowance is 0 |
 
 Unchanged on purpose: titles, H1s, meta, examples table (re-checked), "This is arithmetic, not advice. Speak to a regulated adviser…", sources, about page.
+- Fix the template, not just the page. The false privacy line fixed on uk-pay was still in kit/template-en.html, so every new site would copy it back. When a fix comes from shared code (fmkit.js), grep the kit templates in the same run.

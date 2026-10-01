@@ -17,7 +17,7 @@
   - `FMKit.init({site, lang})` → `session_start`(utm_*·ref 호스트·화면 폭)
   - `FMKit.log(event, props)` → 모든 이벤트에 `site·lang·path`, `?fm_internal=1` 기기는 `internal:1`, firemap.kr 밖이면 `host`
   - `FMKit.share({title, big, sub, brand, url, text, accent})` → 1080×1080 결과 카드 PNG → 파일 공유 → 링크 공유 → 링크 복사 → 이미지 저장 순. 공유 링크에 `utm_source=share&utm_medium=<site>` 자동. `share_open`/`share_done{method}` 기록
-- `template-ko.html` / `template-en.html` — 빈 템플릿. `{{…}}` 채우고 `compute()`만 구현. 본문이 JS 없이 첫 HTML에 있다(체크리스트 16), 숫자1+행동1·다크카드1·색4(디자인 정체성), 320px 넘침 없음, 다크 모드, 면책 문구, hreflang 자리.
+- `template-ko.html` / `template-en.html` — 빈 템플릿. `{{…}}` 채우고 `compute()`만 구현. 본문이 JS 없이 첫 HTML에 있다(체크리스트 16), 숫자1+행동1·다크카드1·색4(디자인 정체성), 320px 넘침 없음, 다크 모드, 면책 문구, hreflang 자리. 영어 바닥 `{{BUCKET_LABEL}}` = FMKit.log로 보내는 구간 이름(예: salary band). fmkit이 구간을 보내므로 'numbers stay in your browser'만 쓰면 거짓(editor-en 10/1).
 - `public/kit/demo/` — noindex 점검 페이지(`https://firemap.kr/kit/demo/?fm_internal=1`). 배포·측정 회귀 확인용. 제품 아님.
 
 ## 3. 측정 보기 (Supabase c7cd8a90, 표 firemap_events, 시각 열은 `ts`)

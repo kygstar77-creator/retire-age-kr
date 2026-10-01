@@ -473,3 +473,50 @@
 | — | R18 자격증 CBT | 5 | 3 | — | — | — | 보류 | 저작권 법 참모 |
 
 **교훈:** 부고장 1쪽의 복제 사이트 3개(한 사업자, 개설 1주) — '새 사이트가 1쪽에 오른다'는 신호는 같은 운영자가 칸을 여럿 먹는 패턴일 수도 있다. 우리는 복제 사이트로 칸을 먹지 않는다(어뷰징 규칙). 대신 그들이 다 똑같이 하는 것(링크 보내기)의 반대를 찾는다.
+
+## 2026-10-01 17:1x 회차 — 해외 시장조사원 5회차 (새 후보 6개, G21~G26)
+조사 17:06~17:20 KST, 로그인 없음(curl 데스크톱 UA·WebFetch). Etsy(403)·Shopify 앱스토어(JS) 판매 수는 확인 안 함. 같은 회차 나라별 계산기 조사는 ventures/global-calcs/.
+
+### G21. 아마존 KDP 스페인어 큰 글씨 단어찾기 퍼즐북("sopa de letras letra grande") — 10점, 1위
+- 수요 [amazon.com 검색 17:12]: totalResultCount 7,627 · amazon.es "…adultos" 6,767. 1쪽 평점 수 485·144·138·127·59·110·6·72·158·89·117·9.
+- 돈 [상품 화면, 셋 다 "Independently published"]: B0DZ2439GN Books BSR #3,774(#24 Word Search Games), 4.8(485), 2025-02-28 · B0DJK13HQ2 BSR #8,820, 4.9(144) · B0F5HND1MC BSR #19,315, 4.8(158). 판매 부수 환산 확인 안 함. 가격은 한국 IP라 KRW 8,103으로 표시.
+- 일본어 대조: amazon.co.jp '大きな文字 ナンプレ 高齢者' 30개, 개인 출판 평점 0~2 → 약함.
+- AI 단독: 퍼즐 생성·정답·PDF 조판은 코드 100%. 표지·스페인어 단어 목록은 AI+검수. 사람: KDP 계정·세금 인터뷰·정산 계좌(결재).
+- 약관: AI 생성 텍스트·이미지 공개 의무(kdp.amazon.com/en_US/help/topic/G200672390). **새 제한 "2 per book format each week"**(help/topic/G202172740, 2026-09-21 시행 — 시행일은 note.com 2차 출처) → 찍어내기 불가, 주 2권 품질 경쟁.
+- 하루 첫 판: 원고·표지 파일 가능, 출간 심사 시간 확인 안 함.
+
+### G22. TPT 미국 스페인어 교사용 대체수업(sub plans)·읽기 자료 — 9점
+- 수요·돈 [teacherspayteachers.com 'spanish sub plans' 1쪽 17:15]: Zombies sub plans $5.00 리뷰 763 · Storyboards $5.00 435 · Hispanic Heritage $5.00 228 · world-language-cafe $3.99 192.
+- 경쟁 상위 3(상점 화면): Martina Bex 69,236 리뷰(4.93) · La Profe Plotts 23,417 · Mis Clases Locas 15,697.
+- 위험: TPT CEO "demote stores associated with low-quality, AI-generated content"(chalkbeat.org 2026-08-03). 수수료 Basic 가입 $29·55% / Premium 연 $59.95·80%(도움말 검색 요약, 원문 확인 안 함).
+- AI 단독: 일부(지문·PDF 가능, 오류 검수 필수). 하루 첫 판: 묶음 3~5종 가능.
+
+### G23. itch.io 게임 효과음 팩(신시사이저 코드 합성, 생성형 AI 아님) — 9점
+- 수요 [itch.io/game-assets/top-sellers/tag-sound-effects 17:18]: Cute & Cozy UI SFX £4.99 평 25(전체 에셋 Top sellers 9위) · Farming SFX £9.99(출간 16일 만에 19위) · Weapon SFX £12.99. 판매 수 비표시 → 확인 안 함.
+- 약관: 생성형 AI 공개 의무, 미표시 시 목록 제외(itch.io/t/4309690, itch.io/docs/creators/quality-guidelines). 상위 다수가 "No AI" 태그 → 코드 합성으로만.
+- AI 단독: 일부(귀로 듣는 품질 검수 미검증). 계정: itch + PayPal·세금 양식(결재). 하루 첫 판 가능.
+
+### G24. CrazyGames HTML5 웹게임(광고 수익 배분) — 9점
+- 수요 [게임 페이지 JSON 17:16]: Words of Wonders ratingCount 54,008(2023-05) · Word Search 323 · 신작 59. 플레이 수 확인 안 함.
+- 돈: "primary monetization … advertisement revenue share"(docs.crazygames.com/requirements/intro/). 배분율 60/70%는 2차 출처, 게임당 수익 확인 안 함.
+- AI 단독: 예(AI 금지 조항 못 찾음). 계정: 개발자+Tipalti 정산(결재). QA 기간 확인 안 함.
+
+### G25. 워드프레스 llms.txt 플러그인(무료+Pro) — 9점, 돈 근거 없음
+- [api.wordpress.org 17:13] 'llms.txt' 549개: website-llms-txt 활성 40,000 · thinkrank 10,000(Pro 있음) · llms-full-txt-generator 5,000 · 2026 신규는 100~400. Yoast·AIOSEO가 같은 검색에 있음. Pro 가격·매출 확인 안 함. G15와 같은 판단(천장 낮음).
+
+### G26. 일본 note.com 유료 기사(AI 1인 회사 운영기) — 8점, 정산 막힘
+- [note.com API 'Claude Code' 인기순 17:14]: "【380部突破】Claude Codeで1人会社…" 9,580엔 좋아요 378(380부는 저자 주장) · 100,000엔 글 좋아요 868 · 1,280엔 318. 우리 자체가 1차 소재.
+- 막힘: "売上のお受け取りには、日本国内の銀行口座が必要"(help-note.com, 검색 요약·원문 미열람) → 한국 계좌로 정산 불가.
+
+### 제외: 스톡 음악 — Pond5·AudioJungle 모두 AI 생성 음악 제출 금지(contributor.pond5.com legal-guidelines, help.author.envato.com 13313674070681 — 검색 요약, 원문 미열람).
+
+### 이번 회차 점수(수요 근거 × 유입 자급 × AI 단독 × 첫 판 속도, 각 1~3)
+| 후보 | 수요 | 유입 자급 | AI 단독 | 첫 판 | 합 | 비고 |
+|---|---|---|---|---|---|---|
+| G21 KDP 스페인어 큰 글씨 퍼즐 | 3 | 3 | 2 | 2 | **10** | 아마존 검색이 유입, 주 2권 제한 |
+| G22 TPT 스페인어 교사 자료 | 3 | 2 | 2 | 2 | 9 | AI 저품질 강등 |
+| G23 itch.io 코드 합성 SFX | 2 | 2 | 2 | 3 | 9 | 판매 수 비공개 |
+| G24 CrazyGames 웹게임 | 2 | 2 | 3 | 2 | 9 | 게임당 수익 근거 없음 |
+| G25 WP llms.txt 플러그인 | 2 | 2 | 3 | 2 | 9 | 돈 근거 없음 |
+| G26 note.com 유료 기사 | 3 | 2 | 1 | 2 | 8 | 일본 계좌 필요 |
+**교훈:** 플랫폼들이 2026년에 일제히 AI 대량 생산을 막는다(KDP 주 2권·TPT 강등·itch 공개 의무·유튜브 진정성 정책). 우리 길은 "코드로 만드는 것(퍼즐·소리·게임·계산)" — 생성형 AI 산출물이 아니라 프로그램 산출물이라 공개 의무·품질 강등에서 자유롭다.

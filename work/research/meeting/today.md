@@ -19,6 +19,16 @@
 
 ### 쿠팡·수익 (17:04 사장님 "쿠팡 인증했다")
 - [지시] **firemap-youtube-loop**, 트랙:A, 기한 지금(17:40): D-1 멈추고 쿠팡 먼저. ① partners.coupang.com '내 정보'에서 firemap.kr·youtube.com/@firemapkr 매체 등록 확인(캡처) ② 비금융 상품 링크 3개(연봉·퇴직금·실업급여 주제) 발급 → 이 줄 밑에 link.coupang.com 3줄 + `[요청] firemap-product-dev` ③ f2_coupang.py dry까지. apply가 무인 거부되면 우회 말고 "막힘: f2 apply 무인 거절 HH:MM". 완료 기준: 링크 3줄 + dry 결과 + "완료: … HH:MM". 금지: 금융상품·대출·미등록 매체·권유 문구. (상세 archive '[지시·긴급] 쿠팡 인증 완료')
+  - 착수: firemap-youtube-loop 쿠팡 링크 17:17
+  - ① 매체 등록 실재: partners.coupang.com 내 정보 '웹사이트 목록' 추가완료 4 — cafe.naver.com/firemap · **firemap.kr** · blog.naver.com/kygstar7777 · **youtube.com/@firemapkr** (캡처 work/research/coupang/myinfo_1001.jpg, 17:18). 인증 창 안 뜸.
+  - ② 링크 3개(상품 링크, 채널 아이디 기본값, curl 302 → 상품 페이지 lptag=AF9074391 확인):
+    - salary(연봉 실수령): https://link.coupang.com/a/hutbIQImpE — 아이코닉 잘 쓰는 습관 가계부, 05Custard, 1개 · desc 초안: "실수령액을 알았다면 한 달 쓰는 돈도 적어 보기"
+    - severance(퇴직금): https://link.coupang.com/a/hutlDDyiDQ — 퇴사를 준비하는 나에게:어쩌다 말고 제대로 퇴사를 위한 일대일 맞춤 상담실, 위즈덤하우스, 이슬기 저 · desc 초안: "퇴직금 계산 다음 단계, 퇴사 준비 책"
+    - unemployment(실업급여): https://link.coupang.com/a/huthTl2Aqy — 2026 시나공 컴퓨터활용능력 2급 필기 기출문제집, 길벗 · desc 초안: "실업급여 받는 동안 따 두는 자격증 수험서"
+    - 금융상품·대출 주제 0, 권유 문구 0. 상품명(title)은 쿠팡 상품명 그대로, desc는 editor/aitell 통과 전 초안.
+  - [요청] **firemap-product-dev**: 위 3줄을 src/firemap-v2/coupangPicks.js salary·severance·unemployment에 넣고 빌드 → 운영 배포 → 운영 번들 link.coupang.com 3개 curl. desc는 aitell.py 통과분 또는 [편집 검수 요청] firemap-editor 통과본.
+  - ③ f2_coupang.py dry 통과 17:22: **루틴 규칙 '시험 단계 4편 중 1편 이하'** 때문에 공개 롱폼 7편 중 scV67BQvC4Q(5억이면 충분 → 가계부 링크) 1편만, 나머지 6편 skip(A-1은 안 붙인 기준선), 쇼츠 4편 기존 skip. 첫 줄 대가성 문구·둘째 줄 링크 미리 보기 정상. apply는 YouTube 쓰기라 이번 회차에서 안 함 → [순돌이 검토] 묶음에 `py -3.12 work/f2_coupang.py apply` 1회 추가(되읽기 longform/loop/f2_after.json).
+  - 완료: firemap-youtube-loop 쿠팡 링크 3개·매체 확인·f2 dry 17:22
 - [지시] **firemap-product-dev**, 트랙:D, 기한 지금(17:10 근무): ① 링크 3줄 오면 즉시 coupangPicks.js → 빌드 → 운영 배포(F1) → 운영 번들 link.coupang.com 3개 curl·coupang_click 확인 ② 링크 전엔 V4: growth 16:46 '전' 수치를 decisions/log.md에, 고칠 것 1개 = calc_input_start·calc_result 이벤트 ③ dev→main 운영 반영 경로 사실 한 줄(calc-3 52c4180 운영 반영 시각 vs 디자인 통과 14:12). 완료 기준: 운영 curl + log.md 줄 + "완료: … HH:MM". 금지: 측정 전 화면 바꾸기, 가짜 링크 배포.
   - 착수: firemap-product-dev 17:19
 - [지시] **firemap-video-producer**, 트랙:B, 기한 지금(18:20 근무 안): E-1 업로드 `py -3.12 work/ytlong.py up work/research/longform/ep/E-1`(예약 10/3 19:30). 설명 첫 줄 예술가 숙제는 editor 통과 뒤 붙이고 업로드를 막지 않음. 쿠팡 줄은 F2 규칙대로 링크 나오면 같이. 무인 거부되면 "막힘: E-1 업로드 무인 거절 HH:MM". 완료 기준: 영상 id + 예약 시각 + "완료: … HH:MM".
@@ -47,6 +57,9 @@
 - [지시] **firemap-youtube-loop** A-1 판정 10/2 저녁: ytanalytics로 노출·노출 클릭률·평균 시청 비율(노출 낮음→쇼츠 연결, 클릭률 낮음→제목·썸네일, 시청 낮음→목소리·길이). 10/3 과거 셋째 날과 비교 보고. v3 구간 vs v5a 48시간 CTR 비교(노출 100 미만이면 보류).
 - 카피라이터 **firemap-copywriter**: A-1 제목은 10/2 19:30(공개 48시간)까지 그대로, 클릭률 보고 한 번만 2위로 · 대기 쇼츠 5편은 공개 48시간 뒤 중앙값 아래면 2위로(copy/titles.md 12:5x).
 - [요청] **firemap-copywriter**: D-1 ep/D-1/titles.md에 X-THUMB-1 A/B 결정 + 썸네일 두 줄 1위, 기한 10/5 12:00. 숫자는 analysis.md ④ 표만, '폭탄'·겁주는 말·권유 금지. 틀 visual/D-1-thumb/brief.md(캐릭터 B군 쓰면 art/char-b/thumb_mock_a.png 칸 기준).
+  - (youtube-loop 17:23) **숫자 고침 주의:** 금융소득 1,000만원 이하도 지역가입자면 0원이 아니라 하한 포함 **월 22,800원**(시행규칙 44조③). 경계는 2.3만원→6.8만원(연 54만원), 국민연금 월 150만원이면 6.1만원→12.9만원(연 81만원). 근거 ep/D-1/facts.txt [계산] · 대본 ep/D-1/script.md v0.
+- [편집 검수 요청] **firemap-editor**, 트랙:C, 기한 10/3 12:00: D-1 롱폼 대본 ep/D-1/script.md v0(퇴직 후 건보료, 8~9분). scriptnum 0·humanlike 본문 차이 없음·aitell 0.8·제미나이 사실/말투 반영(check/applied.md). 숫자·법조문 이름은 바꾸지 말 것. 통과면 script.md.edit.json. (youtube-loop 17:23)
+  - 완료: firemap-youtube-loop D-1 확인 필요 원문·④-0~⑧·facts.txt·script.md v0 17:23 — 하한 고침(22,800원), 사적연금·2027·재산 금액은 원문 없어 대본에서 뺌
 - [요청] **firemap-video-producer**: B군 편이 정해지면 art/char-b/char_a.svg를 왼쪽 아래(x 10~380, y≤680), meta.json experiment: X-THUMB-1 B, usage.md에 편 이름.
 - [요청] **firemap-copywriter**: W-1(공개 10/11) 썸네일 두 줄 후보·1위, 기한 10/8 12:00, ep/W-1/titles.md. 숫자는 그 주 사실표만. 틀 visual/W-1-thumb/brief.md.
 - E-1 썸네일 주의(PD): 공개 전 facts [4] 주가를 다시 받아 숫자가 바뀌면 `py -3.12 work/research/visual/E-1-thumb/make_thumbs.py` 다시.
@@ -64,12 +77,19 @@
 - X-CN-1 시험 일정 사이트(한능검 1편) — **firemap-venture-builder**: 공개 목표 10/2 17:00(취소좌석 마감) 전. 남은 것: 위 디자인 재판정·편집 검수 → 저장소 exam-dates-kr(아래 [순돌이 검토]). 실험 1주 10/2~10/8, 판정 10/8 22:00.
 - [순돌이 검토] 공개 저장소 2개(uk-take-home-pay·exam-dates-kr) — 결재함 17·18행 '채팅에서 순돌이에게 한 마디'. 순돌이 채팅 세션이 만들면 X-V1 22:00·X-CN-1 10/2 17:00 둘 다 산다. 21:15 전.
 - [기획 요청·조사 요청] 나라별 법에 맞는 계산기를 한 사이트에(사장님 17:04) 트랙:B: **firemap-venture-research-global**(착수 17:06) ① 다국가 계산기 사이트 경쟁 상위 5 ② 나라별 검색 수요 상위 10개국 ③ 나라별 공식 원문 접근성·갱신 주기 → **firemap-planner + firemap-artist**(조사 직후) plans/global-calcs.md(다른 한 가지·첫 판 나라 수·주소 구조·원문 대조 도장·법 개정 감시·첫 100명 경로). bizdev 상한 계산은 완료(17:09). 판단 firemap-venture, 큰 방향 21:15 회의.
+  - 완료: firemap-venture-research-global 17:2x — ① 경쟁 5: talent.com 65+개국(9.3M 도메인 전체)·numbeo 107(2.1M)·salaryaftertax.com 19(487.5K, 쪽마다 갱신일, 이사 견적 리드)·worldsalaries 12(93.9K)·icalculator 207(측정 중 다운). **여러 나라 은퇴·연금 계산기 0/5, 쪽마다 갱신일 1/5.** ② 수요: 독일어권 brutto netto rechner 1.8M(ET de)이 압도지만 CPC $0.02 · 프랑스어 550K · 미국 paycheck calculator 550K(CPC $1.82~3.35) · 폴란드·네덜란드 · 호주 368K($2.68) · 영국 301K · 브라질 · 스페인 · 루마니아/튀르키예(프·스·브·네는 언어권 합, 나라 단위 확인 안 함). ③ 12개국 공식 원문 모두 무로그인 — 쉬움 영국·호주·네덜란드 / 중간 독일(XML+대조 인터페이스)·스페인(2026 연중 2판)·캐나다(연 2판, 상업 재배포 서면 허가 필요)·일본·브라질 / 어려움 미국(주세)·프랑스·인도(2026-04 법 교체)·멕시코. 연 1회 갱신으론 부족 → 월 1회 원문 비교. 근거 work/research/ventures/global-calcs/compare.md · demand.md · sources.md
 - X-KR-1 가계부: 판매 개시는 리틀리 결재 뒤(통신판매업 첫 해 면제, 신원 표시 조건 — archive). 위 검수 2건 18:10.
 - X-G19 영어권 한국어 단어 채널(조건부 승인, 3관문):
   - [예술가 요청] X-G19 '우리만 다른 한 가지' 트랙:A · 담당 **firemap-artist** · 시한 10/2 15:00 · 근거 ventures/xg19/compare.md — 편마다 구성이 달라지는 규칙 1개.
   - 카드 ventures/xg19/brief.md(A판 11칸) — 담당 **firemap-venture** · 시한 10/2 20:10 회차. 접기: 첫 공개 +7일 롱폼 조회 300 미만 그리고 평균 시청 지속률 25% 미만.
   - 제작 [지시]는 결재(새 브랜드 계정) + X-CN-1 첫 판 공개 뒤에만 firemap-venture-builder에게.
 - [요청] X-G4 AI 스톡 이미지 재상정(research-global 08:4x) → **firemap-venture** 판정 줄 없음. 결재 Adobe 기여자 계정(approvals 07:4x ①). 근거 ventures/global/terms-2026-10-01-0840.md.
+- [요청] 해외 실험 제안 1건 (firemap-venture-research-global → **firemap-venture** 본부장, 17:2x) — 근거 ventures/candidates.md '17:1x 회차'(새 후보 G21~G26)
+  - **X-G21 아마존 KDP 스페인어 큰 글씨 단어찾기 퍼즐북(10점, 1위).** 'sopa de letras letra grande' amazon.com 7,627개, 1쪽 개인 출판 BSR #3,774(평 485)·#8,820(144)·#19,315(158). 퍼즐·정답·PDF가 **코드 산출물**이라 생성형 AI 공개·강등 규칙에서 자유롭고, 유입은 아마존 검색이 자급. 위험: KDP "2 per book format each week"(2026-09-21~) — 주 2권 품질 경쟁.
+  - 첫 판(하루): 100문제 큰 글씨(8.5×11) 페이퍼백 원고 PDF + 표지 1권. 스페인어 단어 목록은 원어민 기준 검수(편집국 스페인어 담당 없으면 '확인 안 함'으로 표시).
+  - 지표: 출간 +7일 BSR·판매 수(KDP 보고서). 판정일: 출간 +7일.
+  - 필요한 결재: KDP 계정·세금 인터뷰·정산 계좌(비용 0, 인쇄비는 판매가에서 차감).
+  - 차순위 기록만: G23 itch.io 코드 합성 효과음(9) · G24 CrazyGames 웹게임(9). G26 note.com은 일본 계좌 필요로 막힘.
 - G12 Forms 애드온: 관문 1에서 CAPY에 이미 있음 + 예술가 반려(14:47) → 멈춤. 다른 한 수를 못 찾으면 G16 크롬 확장이 대안(기록만).
 - 대기열: X-G1 스페인어 시트 1번(10/3 이후, Gumroad 결재) · X-G17(Gumroad·영어 채널 뒤) · X-KR-2 색칠 도안 '반쪽 도안' 승인(X-KR-1 판매 개시 뒤) · X-KR-3 링크 없는 부고 문자 → **firemap-venture** 판정 대기(research-kr 15:3x, 예술가 관문 전) · 선물 큐레이션 R8 차순위 · P '남의 은퇴 나이 맞히기' 예술가 통과(14:47), 기획서 plans/guess-retire-age.md.
 

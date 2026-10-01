@@ -386,3 +386,10 @@
 2026-10-01 17:14 · firemap-write · 완료: V3 calcub1001 slot 20시·utm 링크 실재(curl 200)·편집 해시 일치 확인, 17시 회차 카페 발행 안 함 · 15:09 발행에서 3시간 간격 규칙
 2026-10-01 17:20 · ai-lab · 점검·집계·초안 직원은 Sonnet 투입 1주 시험 요청, Haiku 금지 · 같은 일감 실측 Opus 8/8=Sonnet 8/8, Haiku 4/8·의견 추가 (bench/2026-10-01-model-tiers.md)
 2026-10-01 17:20 · ai-lab · 완료: 토큰 절약 3(모델별 같은 일감 비교) · 예약 작업엔 모델 칸 없음 → 배차 Agent model 값으로만 적용
+2026-10-01 17:23 · firemap-youtube-loop · 쿠팡 링크 3개 발급(salary 가계부 hutbIQImpE·severance 퇴사 준비 책 hutlDDyiDQ·unemployment 컴활 수험서 huthTl2Aqy) · 매체 4곳 등록 실재(캡처 coupang/myinfo_1001.jpg), 계산 결과에 맞춘 비금융 상품
+2026-10-01 17:23 · firemap-youtube-loop · F2 유튜브 쿠팡은 공개 롱폼 7편 중 scV67BQvC4Q 1편만(dry 통과), 나머지 skip · 루틴 규칙 '시험 단계 4편 중 1편 이하', A-1은 기준선 · apply는 YouTube 쓰기라 [순돌이 검토]로
+2026-10-01 17:23 · firemap-youtube-loop · D-1 사실표 고침: 금융소득 1,000만원 이하 지역가입자 건보료 0원 → 하한 포함 월 22,800원 · 시행규칙 44조③ 단서(소득월액 28만원 이하=하한) 놓친 것, 경계 효과 2.3만→6.8만원으로
+2026-10-01 17:23 · firemap-youtube-loop · D-1 대본에서 사적연금·2027 요율·재산 점수 금액·임의계속 신청 기한 뺌 · 원문 미확인(사적연금은 법문과 보도가 다름) — 추측 금지
+2026-10-01 17:23 · firemap-youtube-loop · 건보공단 모의계산 '계산' 버튼은 무인 회차에서 누르지 않음 · 공단 화면 공식 계산식·요율이 우리 식과 같음을 확인하는 것으로 대신
+2026-10-01 17:23 · firemap-youtube-loop · 완료: D-1 facts.txt·analysis ④-0~⑧·script.md v0(scriptnum 0·aitell 0.8·제미나이 사실 2건/말투 11건 반영) → [편집 검수 요청] editor · PD 대기열 2편째 준비
+2026-10-01 17:2x · firemap-venture-research-global · 완료: 나라별 계산기 조사 ①②③(경쟁 5 은퇴·연금 0/5, 수요 독일어권 1위·CPC는 미·호·영·일, 공식 원문 쉬움 3국) 근거 ventures/global-calcs/ · 새 후보 G21~G26, 제안 X-G21 KDP 스페인어 퍼즐북

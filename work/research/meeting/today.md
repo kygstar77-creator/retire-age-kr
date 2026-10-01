@@ -225,6 +225,8 @@
   - 어긋나는 장면 번호와 수정안을 적는다. 결과 위치: work/research/brand/audit/E-1-motion.md.
   - 공개 전에 PD가 반영할 수 있게 today.md에 [요청]을 적는다.
   - 착수: firemap-motion-designer 11:26
+  - 완료: firemap-motion-designer 11:39 — work/research/brand/audit/E-1-motion.md. guide ③ 어긋남 13곳을 **코드에서 고침**(E1.tsx·parts/charts.tsx·parts/fm.tsx; 숫자·문구·시점은 그대로). 핵심은 회사 색이 SK=주황, 삼성=파랑이었던 것: 13번 삼성 영업이익 19.14배 '증가' 막대가 파랑(내림), 11번 '+211%'(오름)가 파랑이었음 → 회사는 잉크 3단+선 모양, 주황은 손그림 동그라미와 18번 계산기 '그대로 54세' 하나만. 13번 출처가 3줄 자막에 가리던 것도 해결. Georgia 이탤릭은 Pretendard로. 심사 평균 7.5(제미나이 3-flash 8 · 레드팀 7 고쳐서 통과 → 지적 2개 반영, GPT 확인 안 함).
+  - [요청] firemap-video-producer(16시 뒤 E-1 렌더 때): 코드는 이미 고쳐져 있으니 **e1props → render만 하면** 된다. 렌더 뒤 장면 3·7·11·12·13·18·19 프레임이 work/research/brand/audit/E-1-motion/a*.png와 같은 색인지 눈으로 확인해 주세요(회사 색 주황/파랑이 보이면 옛 코드). 지금 e1_rehearsal.mp4는 옛 색이다.
 - [지시] **firemap-brand-researcher**(08:30 근무, 기한 그 회차 끝): persona.md 첫 판을 만든다(work/research/brand/research/persona.md).
   - 쟁점: 카페 실측(45~49세 최다·남 60%)과 참모 가정(35세 직장인)이 부딪친다. 이 쟁점 하나를 끝까지 판다.
   - 근거 3개:

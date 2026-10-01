@@ -13,14 +13,16 @@ export const e1Frames = (p: E1Props) => p.scenes.reduce((a, s) => a + s.frames, 
 type S = {s: VScene};
 const NEVER = 1e9;
 const A = (s: VScene, k: number) => (s.data.at?.[k] ?? -1) < 0 ? NEVER : at(s, s.data.at[k]);
-const CO: Record<string, string> = {'마이크론': T.ink, 'SK하이닉스': T.accent, '삼성전자': T.fall};
+// 회사는 색이 아니라 이름표·선 모양으로 가른다(guide ③: 주황=파이어맵 숫자, 빨강/파랑=등락만) — 2026-10-01 motion 감사
+const CO: Record<string, string> = {'마이크론': T.ink, 'SK하이닉스': T.ink2, '삼성전자': T.ink3};
+const DASH: Record<string, string | undefined> = {'SK하이닉스': '14 9', '삼성전자': '3 9'};
 const RAIL = ['1년 주가·낙폭', '여덟 분기 매출', '이익률', '주가 vs 이익', '회사가 적은 위험'];
 const md = (d: string) => `${+d.slice(4, 6)}/${+d.slice(6, 8)}`;
 const Card: React.FC<{x: number; y: number; w: number; h: number; o?: number; bg?: string; children?: React.ReactNode}> = ({x, y, w, h, o = 1, bg = T.surface, children}) => (
   <div style={{position: 'absolute', left: x, top: y + (1 - o) * 24, width: w, height: h, background: bg, borderRadius: 20, opacity: o}}>{children}</div>
 );
 const P: React.FC<S & {children: React.ReactNode}> = ({s, children}) => (
-  <Page s={{...s, rail: 0}}>{s.rail ? <ProgressRail n={5} cur={s.rail} labels={RAIL} /> : null}{children}</Page>
+  <Page s={{...s, rail: 0}}>{s.rail ? <ProgressRail n={5} cur={s.rail} labels={RAIL} on={T.ink} /> : null}{children}</Page>
 );
 
 // ───── 0. 여는 장면: SK하이닉스 1년 선 + 고점→저점 음영 + 두 숫자 ─────
@@ -38,9 +40,9 @@ const Open: React.FC<S> = ({s}) => {
         <line x1={X0} x2={X1} y1={y(100)} y2={y(100)} stroke={T.dink3} strokeWidth={2} strokeDasharray="8 8" />
         <text x={X0} y={y(100) + 36} fontFamily="PD" fontWeight={500} fontSize={24} fill={T.dink3}>{`${md(p.first[0])} 출발 = 100`}</text>
         <rect x={x(ip)} y={Y1 - 20} width={(x(it) - x(ip)) * dn} height={Y0 - Y1 + 20} fill={T.fall} opacity={0.28} />
-        <path d={path} stroke={T.daccent} strokeWidth={6} fill="none" strokeLinejoin="round" />
+        <path d={path} stroke={T.dink} strokeWidth={6} fill="none" strokeLinejoin="round" />
         <text x={X1} y={Y0 + 44} textAnchor="end" fontFamily="PD" fontWeight={500} fontSize={24} fill={T.dink3}>{md(p.last[0])}</text>
-        <g opacity={dn}><text x={(x(ip) + x(it)) / 2} y={Y1 - 34} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={28} fill="#9dbcf2">{`${md(p.peak)} → ${md(p.trough)}`}</text></g>
+        <g opacity={dn}><text x={(x(ip) + x(it)) / 2} y={Y1 - 34} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={28} fill={T.dfall}>{`${md(p.peak)} → ${md(p.trough)}`}</text></g>
       </svg>
       <div style={{position: 'absolute', left: 1230, top: 230, opacity: up}}>
         <div style={{...F, fontWeight: 700, fontSize: 44, color: T.dink3}}>{s.data.name} 1년</div>
@@ -48,7 +50,7 @@ const Open: React.FC<S> = ({s}) => {
       </div>
       <div style={{position: 'absolute', left: 1230, top: 500, opacity: dn}}>
         <div style={{...F, fontWeight: 700, fontSize: 44, color: T.dink3}}>그 안의 최대 낙폭</div>
-        <div style={{...F, fontWeight: 700, fontSize: 128, color: '#6f9cf0', lineHeight: 1.1}}><CountUp to={p.dd} p={dn} digits={1} />%</div>
+        <div style={{...F, fontWeight: 700, fontSize: 128, color: T.dfall, lineHeight: 1.1}}><CountUp to={p.dd} p={dn} digits={1} />%</div>
       </div>
       <div style={{...F, fontWeight: 700, fontSize: 30, color: T.dink, position: 'absolute', left: 1230, top: 740, opacity: Math.max(q4, qs), background: T.dsurface, borderRadius: 16, padding: '14px 24px', whiteSpace: 'nowrap'}}>
         {qs > q4 ? '이익은 주가만큼 늘었을까?' : (s.data.q4 || '+ 마이크론 회계 4분기 실적')}</div>
@@ -66,7 +68,7 @@ const Agenda: React.FC<S> = ({s}) => {
       {items.map((t, i) => { const o = appear(f, (b === NEVER ? 30 : b) + i * 22);
         return (
           <div key={t} style={{position: 'absolute', left: 200, top: 240 + i * 112, display: 'flex', alignItems: 'center', gap: 34, opacity: o, transform: `translateX(${(1 - o) * -30}px)`}}>
-            <div style={{width: 84, height: 84, borderRadius: 20, background: T.accent, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <div style={{width: 84, height: 84, borderRadius: 20, background: T.ink, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
               <span style={{...F, fontWeight: 700, fontSize: 48, color: '#fff'}}>{i + 1}</span></div>
             <span style={{...F, fontWeight: 700, fontSize: 58, color: T.ink}}>{t}</span>
           </div>); })}
@@ -92,8 +94,8 @@ const Price: React.FC<S> = ({s}) => {
           const d = d3line<number>().x((_, j) => x(j)).y((v) => y(v)).curve(curveMonotoneX)(c.v.slice(0, m)) || '';
           const end = c.v[m - 1];
           return <g key={c.name} opacity={Math.min(1, p * 3)}>
-            <path d={d} stroke={CO[c.name]} strokeWidth={c.name === 'SK하이닉스' ? 6 : 4.5} fill="none" strokeLinejoin="round" />
-            <text x={x(m - 1) + 14} y={y(end) + 10} fontFamily="PD" fontWeight={700} fontSize={32} fill={CO[c.name]}>{`${c.name} ${end}`}</text></g>;
+            <path d={d} stroke={CO[c.name]} strokeWidth={5} strokeDasharray={DASH[c.name]} fill="none" strokeLinejoin="round" />
+            <text x={x(m - 1) + 14} y={y(end) + 10} fontFamily="PD" fontWeight={700} fontSize={32} fill={c.name === '마이크론' ? T.ink : T.ink2}>{`${c.name} ${end}`}</text></g>;
         })}
         <text x={X0} y={Y0 + 42} fontFamily="PD" fontWeight={500} fontSize={24} fill={T.ink3}>{md(cos[0].d[0])}</text>
         <text x={X1} y={Y0 + 42} textAnchor="end" fontFamily="PD" fontWeight={500} fontSize={24} fill={T.ink3}>{md(cos[0].d[n - 1])}</text>
@@ -102,7 +104,7 @@ const Price: React.FC<S> = ({s}) => {
         {[4, 5, 6].map((k, i) => { const c = cos[[0, 2, 1][i]]; const o = appear(f, A(s, k) === NEVER ? sw + 20 + i * 30 : A(s, k), 20); const W = 900 * Math.abs(c.dd) / 60;
           return <div key={c.name} style={{position: 'absolute', left: 200, top: 250 + i * 150, opacity: Math.min(1, o * 2)}}>
             <div style={{...F, fontWeight: 700, fontSize: 36, color: T.ink, width: 260, position: 'absolute', top: 18}}>{c.name}</div>
-            <div style={{position: 'absolute', left: 270, top: 6, width: W * o, height: 76, borderRadius: 12, background: c.name === 'SK하이닉스' ? T.fall : '#9dbcf2'}} />
+            <div style={{position: 'absolute', left: 270, top: 6, width: W * o, height: 76, borderRadius: 12, background: T.fall, opacity: c.name === 'SK하이닉스' ? 1 : 0.45}} />
             <div style={{...F, fontWeight: 700, fontSize: 48, color: T.fall, position: 'absolute', left: 290 + W, top: 14, whiteSpace: 'nowrap'}}>{c.dd}%</div>
           </div>; })}
         <DateBand s={s} cos={cos} start={A(s, 7)} />
@@ -131,7 +133,7 @@ const Mu8: React.FC<S> = ({s}) => {
       <BarSeries x={240} y={800} w={1180} h={470} vals={d.rev} labels={d.q} p={p} color={T.ink} hi={[7]} ring={[3]} />
       <div style={{...F, position: 'absolute', left: 1480, top: 300, opacity: b}}>
         <div style={{fontWeight: 700, fontSize: 34, color: T.ink3}}>1년 전 같은 분기의</div>
-        <div style={{fontWeight: 700, fontSize: 120, color: T.accent, lineHeight: 1.1}}><CountUp to={d.revx} p={b} digits={2} />배</div></div>
+        <div style={{fontWeight: 700, fontSize: 120, color: T.ink, lineHeight: 1.1}}><CountUp to={d.revx} p={b} digits={2} />배</div></div>
       <div style={{...F, position: 'absolute', left: 1480, top: 560, opacity: w, background: T.surface, borderRadius: 16, padding: '20px 26px', width: 400}}>
         <div style={{fontWeight: 700, fontSize: 34, color: T.ink}}>{`이번 분기 ${d.weeks[0]}주`}</div>
         <div style={{fontWeight: 500, fontSize: 28, color: T.ink2, marginTop: 6}}>{`1년 전 분기 ${d.weeks[1]}주 — 한 주 더`}</div>
@@ -171,11 +173,11 @@ const DsDx: React.FC<S> = ({s}) => {
     return <g>
       <text x={x + 170} y={290} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={38} fill={T.ink}>{title}</text>
       <rect x={x} y={base - (a / mx) * H * qa} width={150} height={(a / mx) * H * qa} rx={8} fill={T.line} stroke={T.ink3} strokeWidth={2} />
-      <rect x={x + 190} y={base - (b / mx) * H * qb} width={150} height={(b / mx) * H * qb} rx={8} fill={T.accent} />
+      <rect x={x + 190} y={base - (b / mx) * H * qb} width={150} height={(b / mx) * H * qb} rx={8} fill={T.ink} />
       <text x={x + 75} y={base - (a / mx) * H * qa - 14} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={26} fill={T.ink} opacity={qa}>{jo(a)}</text>
-      <text x={x + 265} y={base - (b / mx) * H * qb - 14} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={28} fill={T.accent} opacity={qb}>{jo(b)}</text>
+      <text x={x + 265} y={base - (b / mx) * H * qb - 14} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={28} fill={T.ink} opacity={qb}>{jo(b)}</text>
       <text x={x + 75} y={base + 36} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={24} fill={T.ink2}>2025년 12개월</text>
-      <text x={x + 265} y={base + 36} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={24} fill={T.accent}>2026년 상반기 6개월</text>
+      <text x={x + 265} y={base + 36} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={24} fill={T.ink}>2026년 상반기 6개월</text>
       <g opacity={Math.min(qa, qb)}><rect x={x + 90} y={310} width={160} height={56} rx={28} fill={T.ink} />
         <text x={x + 170} y={349} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={32} fill="#fff">{mult}</text></g>
     </g>;
@@ -234,7 +236,7 @@ const Outlook: React.FC<S> = ({s}) => {
   return (
     <P s={s}>
       <BarSeries x={240} y={800} w={1400} h={460} vals={d.rev} labels={d.q} p={appear(f, 4, 30)} color={T.ink} hi={[7]} est={[d.next, d.pm]} estP={appear(f, 40, 30)} estLabel="다음 분기 전망" />
-      <div style={{...F, fontWeight: 700, fontSize: 28, color: T.ink2, position: 'absolute', left: 240, top: 250, background: T.soft, borderRadius: 14, padding: '10px 22px', opacity: appear(f, A(s, 1))}}>
+      <div style={{...F, fontWeight: 700, fontSize: 28, color: T.ink2, position: 'absolute', left: 240, top: 250, background: T.line, borderRadius: 14, padding: '10px 22px', opacity: appear(f, A(s, 1))}}>
         다음 실적 발표 날짜: 보도자료에 없음</div>
     </P>
   );
@@ -250,22 +252,22 @@ const Revenue: React.FC<S> = ({s}) => {
         const bw = W / 8 - 12; const H = 380, base = 800;
         return (
           <div key={c.name} style={{position: 'absolute', left: x0 + k * (W + gap), top: 0, width: W, height: 1080, opacity: Math.max(appear(f, 6 + k * 8), 0)}}>
-            <div style={{...F, fontWeight: 700, fontSize: 38, color: CO[c.name], position: 'absolute', top: 240}}>{c.name}</div>
+            <div style={{...F, fontWeight: 700, fontSize: 38, color: T.ink, position: 'absolute', top: 240}}>{c.name}</div>
             <div style={{...F, fontWeight: 500, fontSize: 22, color: T.ink3, position: 'absolute', top: 290}}>{c.unit}</div>
             <svg width={W} height={1080} style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}}>
               {c.rev.map((v: number, i: number) => { const h = (v / mx) * H * o; const last = i === 7, yago = i === 3;
                 return <g key={i}>
-                  <rect x={i * (W / 8)} y={base - h} width={bw} height={h} rx={6} fill={last ? CO[c.name] : T.line} stroke={yago ? T.ink : 'none'} strokeWidth={yago ? 4 : 0} />
+                  <rect x={i * (W / 8)} y={base - h} width={bw} height={h} rx={6} fill={last ? T.ink : T.line} stroke={yago ? T.ink : 'none'} strokeWidth={yago ? 4 : 0} />
                   <text x={i * (W / 8) + bw / 2} y={base + 30} textAnchor="middle" fontFamily="PD" fontWeight={500} fontSize={18} fill={T.ink3}>{c.q[i]}</text>
-                  {last || yago ? <text opacity={o} x={i * (W / 8) + bw / 2} y={base - h - 14} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={last ? 30 : 24} fill={last ? CO[c.name] : T.ink}>{v.toLocaleString()}</text> : null}
+                  {last || yago ? <text opacity={o} x={i * (W / 8) + bw / 2} y={base - h - 14} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={last ? 30 : 24} fill={T.ink}>{v.toLocaleString()}</text> : null}
                 </g>; })}
             </svg>
-            <div style={{...F, fontWeight: 700, fontSize: 32, color: '#fff', background: T.accent, borderRadius: 30, padding: '4px 20px', position: 'absolute', top: 325, opacity: appear(f, (st === NEVER ? 20 : st) + 40)}}>
+            <div style={{...F, fontWeight: 700, fontSize: 32, color: '#fff', background: T.ink, borderRadius: 30, padding: '4px 20px', position: 'absolute', top: 325, opacity: appear(f, (st === NEVER ? 20 : st) + 40)}}>
               1년 전의 {c.revx.toFixed(2)}배</div>
           </div>
         );
       })}
-      <div style={{...F, fontWeight: 700, fontSize: 26, color: T.ink2, position: 'absolute', left: 1320 + 110, top: 284, background: T.soft, borderRadius: 12, padding: '4px 14px', opacity: appear(f, A(s, 4))}}>
+      <div style={{...F, fontWeight: 700, fontSize: 26, color: T.ink2, position: 'absolute', left: 1320 + 110, top: 284, background: T.line, borderRadius: 12, padding: '4px 14px', opacity: appear(f, A(s, 4))}}>
         회사 전체(스마트폰·가전 포함)</div>
     </P>
   );
@@ -285,18 +287,18 @@ const Margin: React.FC<S> = ({s}) => {
         {cos.map((c: any, k: number) => { const st = A(s, order[k]); const p = appear(f, st === NEVER ? 20 + k * 30 : st, 36); const M = ser(c); const N = M.length; const m = Math.max(2, Math.round(N * p));
           const d = d3line<number>().x((_, i) => x(i)).y((v) => y(v)).curve(curveMonotoneX)(M.slice(0, m)) || '';
           return <g key={c.name} opacity={Math.min(1, p * 3)}>
-            <path d={d} stroke={CO[c.name]} strokeWidth={c.name === '마이크론' ? 7 : 4.5} fill="none" />
+            <path d={d} stroke={CO[c.name]} strokeWidth={c.name === '마이크론' ? 7 : 5} strokeDasharray={DASH[c.name]} fill="none" />
             {[N - 5, N - 1].filter((i) => i < m).map((i) => <g key={i}><circle cx={x(i)} cy={y(M[i])} r={9} fill={CO[c.name]} />
-              {i === N - 5 ? <text x={x(i)} y={y(M[i]) + (c.name === '마이크론' ? -22 : 44)} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={26} fill={CO[c.name]}>{M[i]}%</text> : null}</g>)}
-            {m === N ? <text x={x(N - 1) + 22} y={y(M[N - 1]) + 12 + (c.name === 'SK하이닉스' ? 20 : c.name === '마이크론' ? -16 : 0)} fontFamily="PD" fontWeight={700} fontSize={32} fill={CO[c.name]}>{`${c.name} ${M[N - 1]}%`}</text> : null}
+              {i === N - 5 ? <text x={x(i)} y={y(M[i]) + (c.name === '마이크론' ? -22 : 44)} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={26} fill={c.name === '마이크론' ? T.ink : T.ink2}>{M[i]}%</text> : null}</g>)}
+            {m === N ? <text x={x(N - 1) + 22} y={y(M[N - 1]) + 12 + (c.name === 'SK하이닉스' ? 20 : c.name === '마이크론' ? -16 : 0)} fontFamily="PD" fontWeight={700} fontSize={32} fill={c.name === '마이크론' ? T.ink : T.ink2}>{`${c.name} ${M[N - 1]}%`}</text> : null}
           </g>; })}
         {(cos[0].q9 || cos[0].q).map((q: string, i: number) => <text key={i} x={x(i)} y={Y0 + 34} textAnchor="middle" fontFamily="PD" fontWeight={500} fontSize={20} fill={T.ink}>{q}</text>)}
         {cos[1].q.map((q: string, i: number) => <text key={'k' + i} x={x(i)} y={Y0 + 60} textAnchor="middle" fontFamily="PD" fontWeight={500} fontSize={18} fill={T.ink3}>{q}</text>)}
         <g opacity={back}><HandCircle cx={x(0)} cy={y(ser(cos[0])[0])} rx={60} ry={40} p={back} />
-          <text x={X0 + 20} y={Y1 + 60} fontFamily="PD" fontWeight={700} fontSize={32} fill={T.accent}>{`마이크론 ${ser(cos[0])[0]}% (${(cos[0].q9 || cos[0].q)[0]}) → ${ser(cos[0]).slice(-1)[0]}%`}</text></g>
+          <text x={X0 + 20} y={Y1 + 60} fontFamily="PD" fontWeight={700} fontSize={32} fill={T.ink}>{`마이크론 ${ser(cos[0])[0]}% (${(cos[0].q9 || cos[0].q)[0]}) → ${ser(cos[0]).slice(-1)[0]}%`}</text></g>
       </svg>
-      <Card x={1540} y={600} w={340} h={200} o={coin} bg={T.soft}>
-        <div style={{...F, fontWeight: 700, fontSize: 36, color: T.ink, padding: '34px 30px', lineHeight: 1.4}}>100원 팔면<br /><span style={{color: T.accent, fontSize: 56}}>약 80원</span> 남음</div>
+      <Card x={1540} y={600} w={340} h={200} o={coin}>
+        <div style={{...F, fontWeight: 700, fontSize: 36, color: T.ink, padding: '34px 30px', lineHeight: 1.4}}>100원 팔면<br /><span style={{fontSize: 56}}>약 80원</span> 남음</div>
       </Card>
     </P>
   );
@@ -314,8 +316,8 @@ const Twin: React.FC<S> = ({s}) => {
           const cx = 360 + i * 500; const o1 = appear(f, A(s, i) === NEVER ? 20 + i * 30 : A(s, i), 24); const o2 = appear(f, pb === NEVER ? 200 : pb + i * 10, 24);
           const h1 = (opx / mx) * H * o1, h2 = (px / mx) * H * o2;
           return <g key={name}>
-            <rect x={cx} y={base - h1} width={140} height={h1} rx={8} fill={CO[name]} opacity={Math.min(1, o1 * 3)} />
-            <text x={cx + 70} y={base - h1 - 16} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={44} fill={CO[name]} opacity={o1}>{opx.toFixed(2)}배</text>
+            <rect x={cx} y={base - h1} width={140} height={h1} rx={8} fill={T.ink} opacity={Math.min(1, o1 * 3)} />
+            <text x={cx + 70} y={base - h1 - 16} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={44} fill={T.ink} opacity={o1}>{opx.toFixed(2)}배</text>
             <rect x={cx + 160} y={base - h2} width={140} height={h2} rx={8} fill={T.line} stroke={T.ink2} strokeWidth={3} opacity={Math.min(1, o2 * 3)} />
             <text x={cx + 230} y={base - h2 - 16} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={40} fill={T.ink2} opacity={o2}>{px.toFixed(2)}배</text>
             <text x={cx + 150} y={base + 50} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={36} fill={T.ink}>{name}</text>
@@ -324,7 +326,7 @@ const Twin: React.FC<S> = ({s}) => {
           </g>; })}
         <g opacity={gapN}><HandCircle cx={1360 + 150} cy={base - 230} rx={250} ry={290} p={gapN} /></g>
       </svg>
-      <div style={{...F, fontWeight: 700, fontSize: 26, color: T.ink2, position: 'absolute', left: 1180, top: 150, background: T.soft, borderRadius: 14, padding: '10px 20px', opacity: appear(f, A(s, 5))}}>
+      <div style={{...F, fontWeight: 700, fontSize: 26, color: T.ink2, position: 'absolute', left: 1180, top: 150, background: T.line, borderRadius: 14, padding: '10px 20px', opacity: appear(f, A(s, 5))}}>
         이익은 분기, 주가는 1년 — 같은 구간 아님</div>
     </P>
   );
@@ -337,7 +339,7 @@ const Form4: React.FC<S> = ({s}) => {
     <P s={s}>
       <Card x={200} y={250} w={700} h={260} o={c1}>
         <div style={{...F, fontWeight: 700, fontSize: 32, color: T.ink3, padding: '26px 40px 0'}}>공개시장 매도</div>
-        <div style={{...F, fontWeight: 700, fontSize: 110, color: T.fall, padding: '0 40px', lineHeight: 1.1}}><CountUp to={d.n} p={c1} />건</div>
+        <div style={{...F, fontWeight: 700, fontSize: 110, color: T.ink, padding: '0 40px', lineHeight: 1.1}}><CountUp to={d.n} p={c1} />건</div>
         <div style={{...F, fontWeight: 500, fontSize: 30, color: T.ink2, padding: '0 40px'}}>{d.sh.toLocaleString()}주 · 약 ${d.usd}M</div>
       </Card>
       <Card x={960} y={250} w={460} h={260} o={c2}>
@@ -346,11 +348,11 @@ const Form4: React.FC<S> = ({s}) => {
       </Card>
       <div style={{position: 'absolute', left: 200, top: 560, width: 1220, opacity: tb}}>
         {d.rows.map(([n, t, sh, usd]: [string, string, number, number], i: number) => (
-          <div key={n} style={{display: 'flex', alignItems: 'center', height: 70, borderBottom: `2px solid ${T.line}`, background: i === 0 ? T.soft : 'transparent', padding: '0 20px', borderRadius: i === 0 ? 10 : 0}}>
+          <div key={n} style={{display: 'flex', alignItems: 'center', height: 70, borderBottom: `2px solid ${T.line}`, background: i === 0 ? T.line : 'transparent', padding: '0 20px', borderRadius: i === 0 ? 10 : 0}}>
             <span style={{...F, fontWeight: 700, fontSize: 30, color: T.ink, width: 360}}>{n}</span>
             <span style={{...F, fontWeight: 500, fontSize: 24, color: T.ink2, width: 420}}>{t}</span>
             <span style={{...F, fontWeight: 700, fontSize: 30, color: T.ink, width: 200, textAlign: 'right'}}>{sh.toLocaleString()}주</span>
-            <span style={{...F, fontWeight: 700, fontSize: 30, color: i === 0 ? T.accent : T.ink, width: 200, textAlign: 'right'}}>${usd}M</span>
+            <span style={{...F, fontWeight: 700, fontSize: 30, color: T.ink, width: 200, textAlign: 'right'}}>${usd}M</span>
           </div>))}
       </div>
       <div style={{...F, fontWeight: 700, fontSize: 30, color: T.ink2, position: 'absolute', left: 1480, top: 600, width: 380, lineHeight: 1.4, background: T.surface, borderRadius: 16, padding: '22px 26px', opacity: plan}}>
@@ -368,8 +370,8 @@ const Risk: React.FC<S> = ({s}) => {
   return (
     <P s={s}>
       <Card x={200} y={260} w={1520} h={440} o={qo}>
-        <div style={{position: 'absolute', left: 60, top: 30, fontFamily: 'Georgia, serif', fontSize: 120, color: T.accent, lineHeight: 1}}>“</div>
-        <div style={{position: 'absolute', left: 130, right: 70, top: 70, fontFamily: 'Georgia, serif', fontSize: 40, color: T.ink2, lineHeight: 1.4, fontStyle: 'italic'}}>{q[0]}</div>
+        <div style={{position: 'absolute', left: 60, top: 30, fontFamily: 'PD', fontWeight: 700, fontSize: 120, color: T.line, lineHeight: 1}}>“</div>
+        <div style={{position: 'absolute', left: 130, right: 70, top: 70, fontFamily: 'PD', fontWeight: 500, fontSize: 38, color: T.ink2, lineHeight: 1.4}}>{q[0]}</div>
         <div style={{...F, position: 'absolute', left: 130, right: 70, bottom: 50, fontWeight: 700, fontSize: 48, color: T.ink, lineHeight: 1.35, wordBreak: 'keep-all'}}>{q[1]}</div>
         <div style={{...F, position: 'absolute', right: 40, top: 26, fontWeight: 700, fontSize: 26, color: T.ink3}}>{cur + 1} / {qs.length}</div>
       </Card>
@@ -395,9 +397,9 @@ const Calendar: React.FC<S> = ({s}) => {
     <P s={s}>
       {it.map(([n, d, ok]: [string, string, boolean], i: number) => { const o = appear(f, (i === 0 ? 6 : A(s, 1)) + (i > 1 ? 16 : 0));
         return <Card key={n} x={200} y={260 + i * 190} w={1300} h={160} o={o}>
-          <div style={{position: 'absolute', left: 36, top: 40, width: 80, height: 80, borderRadius: 16, background: ok ? T.accent : T.line}} />
+          <div style={{position: 'absolute', left: 36, top: 40, width: 80, height: 80, borderRadius: 16, background: ok ? T.ink : T.line}} />
           <div style={{...F, fontWeight: 700, fontSize: 42, color: T.ink, position: 'absolute', left: 150, top: 30}}>{n}</div>
-          <div style={{...F, fontWeight: 500, fontSize: 32, color: ok ? T.accent : T.ink3, position: 'absolute', left: 150, top: 88}}>{d}</div>
+          <div style={{...F, fontWeight: 500, fontSize: 32, color: ok ? T.ink : T.ink3, position: 'absolute', left: 150, top: 88}}>{d}</div>
         </Card>; })}
     </P>
   );
@@ -419,13 +421,13 @@ const Age: React.FC<S> = ({s}) => {
         {d.bars.map(([n, dd, asset, age]: [string, number, number, number], i: number) => {
           const o = appear(f, i === 0 || i === 3 ? bars : A(s, 3) + (i - 1) * 8, 20); const h = y(age) * o; const key = i === 0 || i === 3;
           return <g key={n} opacity={Math.min(1, o * 2)}>
-            <rect x={x0 + i * cw} y={base - h} width={cw - 40} height={h} rx={8} fill={i === 0 ? T.ink3 : key ? T.accent : '#ffb48a'} />
-            <text x={x0 + i * cw + (cw - 40) / 2} y={base - h - 16} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={44} fill={key ? T.accent : T.ink}>{age}세</text>
+            <rect x={x0 + i * cw} y={base - h} width={cw - 40} height={h} rx={8} fill={i === 0 ? T.accent : key ? T.ink : T.line} />
+            <text x={x0 + i * cw + (cw - 40) / 2} y={base - h - 16} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={44} fill={i === 0 ? T.accent : T.ink}>{age}세</text>
             <text x={x0 + i * cw + (cw - 40) / 2} y={base + 38} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={24} fill={T.ink2}>{n}</text>
             <text x={x0 + i * cw + (cw - 40) / 2} y={base + 72} textAnchor="middle" fontFamily="PD" fontWeight={500} fontSize={22} fill={T.ink3}>{dd ? `1억→${asset.toLocaleString()}만` : '1억'}</text>
           </g>; })}
       </svg>
-      <div style={{...F, fontWeight: 700, fontSize: 32, color: '#fff', background: T.accent, borderRadius: 30, padding: '8px 26px', position: 'absolute', left: 900, top: 240, opacity: appear(f, A(s, 4))}}>
+      <div style={{...F, fontWeight: 700, fontSize: 32, color: '#fff', background: T.ink, borderRadius: 30, padding: '8px 26px', position: 'absolute', left: 900, top: 240, opacity: appear(f, A(s, 4))}}>
         지금 가진 돈보다 매달 넣는 300만원이 더 크다</div>
     </P>
   );
@@ -442,7 +444,7 @@ const Summary: React.FC<S> = ({s}) => {
           {d.head.map((h: string, i: number) => <div key={i} style={{...F, fontWeight: 700, fontSize: 28, color: T.ink2, width: cw[i], textAlign: i ? 'right' : 'left'}}>{h}</div>)}</div>
         {d.rows.map((r: string[], j: number) => <div key={r[0]} style={{display: 'flex', height: 110, alignItems: 'center', borderBottom: `2px solid ${T.line}`, opacity: appear(f, 6 + j * 10)}}>
           {r.map((c, i) => <div key={i} style={{...F, fontWeight: 700, fontSize: i ? 40 : 38, width: cw[i], textAlign: i ? 'right' : 'left',
-            color: i === 0 ? CO[r[0]] : hi[i] > 0.5 ? (i === 2 ? T.fall : i === 1 ? T.rise : T.accent) : T.ink}}>{c}</div>)}</div>)}
+            color: i === 0 ? T.ink : hi[i] > 0.5 ? (i === 2 ? T.fall : i === 1 ? T.rise : T.ink) : T.ink}}>{c}</div>)}</div>)}
       </div>
       <div style={{...F, fontWeight: 700, fontSize: 30, color: T.ink2, position: 'absolute', left: x0, top: 690, opacity: appear(f, A(s, 3))}}>
         앞으로 오를지는 말하지 않습니다 · 지난 숫자는 앞으로를 보장하지 않습니다 · 8분기 전체 표는 카페에</div>

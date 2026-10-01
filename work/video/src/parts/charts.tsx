@@ -1,3 +1,4 @@
+// 강조는 잉크, 주황은 손그림 동그라미·파이어맵 숫자에만(guide ③, 2026-10-01 motion 감사)
 // 범용 그림 부품(RULES 6-3 — E-1에서 처음 씀, research/longform/loop/parts.md에 기록). 숫자는 전부 props로 받는다.
 // 세로 막대 계열(강조·테두리·점선 추정 막대) · 범위 띠+실제 점 · 전후 가로 막대(배수 꼬리표) · 도넛 · 저울 · 원문 카드 · 계단 막대
 import React from 'react';
@@ -8,7 +9,7 @@ import {T, F, CL, appear, CountUp} from './fm';
 // 세로 막대 계열: vals 막대, hi=강조 칸(색), ring=테두리 칸, est=[값, ±]이면 오른쪽에 점선 추정 막대+오차 막대
 export const BarSeries: React.FC<{x: number; y: number; w: number; h: number; vals: number[]; labels: string[]; p: number; color?: string;
   hi?: number[]; ring?: number[]; show?: number[]; est?: [number, number] | null; estP?: number; estLabel?: string; fmt?: (v: number) => string; max?: number}> =
-  ({x, y, w, h, vals, labels, p, color = T.accent, hi = [], ring = [], show = [], est = null, estP = 0, estLabel = '', fmt = (v) => v.toLocaleString(), max}) => {
+  ({x, y, w, h, vals, labels, p, color = T.ink, hi = [], ring = [], show = [], est = null, estP = 0, estLabel = '', fmt = (v) => v.toLocaleString(), max}) => {
   const n = vals.length + (est ? 1 : 0); const slot = w / n; const bw = slot * 0.68;
   const mx = max ?? Math.max(...vals, est ? est[0] + est[1] : 0) * 1.1; const sy = scaleLinear().domain([0, mx]).range([0, h]);
   return (
@@ -46,10 +47,10 @@ export const RangeDot: React.FC<{x0: number; x1: number; y: number; dom: [number
         <text x={(sx(lo) + sx(hi)) / 2} y={y - 80} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={34} fill={T.ink2}>{bandLabel}</text>
         <text x={(sx(lo) + sx(hi)) / 2} y={y + 100} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={30} fill={T.ink2}>{`${lo}~${hi}${unit}`}</text></g>
       <g opacity={pDot}>
-        <line x1={sx(hi)} x2={ax} y1={y - 130} y2={y - 130} stroke={T.accent} strokeWidth={4} strokeDasharray="8 6" />
-        <circle cx={ax} cy={y} r={26} fill={T.accent} />
-        <text x={ax} y={y - 150} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={48} fill={T.accent}>{actLabel}</text>
-        <text x={(sx(hi) + ax) / 2} y={y - 100} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={28} fill={T.accent}>{`상단보다 +${(act - hi).toFixed(1)}${unit}`}</text>
+        <line x1={sx(hi)} x2={ax} y1={y - 130} y2={y - 130} stroke={T.ink} strokeWidth={4} strokeDasharray="8 6" />
+        <circle cx={ax} cy={y} r={26} fill={T.ink} />
+        <text x={ax} y={y - 150} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={48} fill={T.ink}>{actLabel}</text>
+        <text x={(sx(hi) + ax) / 2} y={y - 100} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={28} fill={T.ink2}>{`상단보다 +${(act - hi).toFixed(1)}${unit}`}</text>
       </g>
     </svg>
   );
@@ -57,7 +58,7 @@ export const RangeDot: React.FC<{x0: number; x1: number; y: number; dom: [number
 
 // 전후 가로 막대: 행마다 1년 전(회색) vs 지금(색) + 배수 꼬리표
 export const PairBars: React.FC<{x: number; y: number; w: number; rows: [string, number, number][]; p: number[]; hi?: number; color?: string; tags: [string, string]}> =
-  ({x, y, w, rows, p, hi = 0, color = T.accent, tags}) => {
+  ({x, y, w, rows, p, hi = 0, color = T.ink, tags}) => {
   const mx = Math.max(...rows.map((r) => r[2])) * 1.05; const sx = scaleLinear().domain([0, mx]).range([0, w]);
   return (
     <div style={{position: 'absolute', left: 0, top: 0}}>
@@ -69,16 +70,16 @@ export const PairBars: React.FC<{x: number; y: number; w: number; rows: [string,
           <div style={{...F, fontWeight: 700, fontSize: 32, color: on ? T.ink : T.ink2, width: 360, position: 'absolute', top: 24, wordBreak: 'keep-all', lineHeight: 1.2}}>{n}</div>
           <div style={{position: 'absolute', left: 380, top: 6, width: sx(a) * o, height: 44, borderRadius: 8, background: T.ink3, opacity: 0.55}} />
           <div style={{...F, position: 'absolute', left: 390 + sx(a) * o, top: 10, fontWeight: 500, fontSize: 26, color: T.ink2}}>{a.toLocaleString()}</div>
-          <div style={{position: 'absolute', left: 380, top: 58, width: sx(b) * o, height: 60, borderRadius: 8, background: on ? color : '#ffb48a'}} />
+          <div style={{position: 'absolute', left: 380, top: 58, width: sx(b) * o, height: 60, borderRadius: 8, background: on ? color : T.ink2, opacity: on ? 1 : 0.55}} />
           <div style={{...F, position: 'absolute', left: 396 + sx(b) * o, top: 62, fontWeight: 700, fontSize: 36, color: on ? color : T.ink, whiteSpace: 'nowrap'}}>
-            {b.toLocaleString()} <span style={{fontSize: 30, background: on ? color : T.soft, color: on ? '#fff' : T.accent, borderRadius: 20, padding: '2px 14px', marginLeft: 8}}>{(b / a).toFixed(1)}배</span></div>
+            {b.toLocaleString()} <span style={{fontSize: 30, background: on ? color : T.line, color: on ? '#fff' : T.ink, borderRadius: 20, padding: '2px 14px', marginLeft: 8}}>{(b / a).toFixed(1)}배</span></div>
         </div>; })}
     </div>
   );
 };
 
 // 도넛: 비중 v%(0~100), 가운데 숫자
-export const Donut: React.FC<{cx: number; cy: number; r: number; v: number; p: number; color?: string; label: string}> = ({cx, cy, r, v, p, color = T.accent, label}) => {
+export const Donut: React.FC<{cx: number; cy: number; r: number; v: number; p: number; color?: string; label: string}> = ({cx, cy, r, v, p, color = T.ink, label}) => {
   const C = 2 * Math.PI * r; const dash = (C * v / 100) * p;
   return (
     <svg width={1920} height={1080} style={{position: 'absolute', left: 0, top: 0, opacity: Math.min(1, p * 3)}}>
@@ -97,7 +98,7 @@ export const Seesaw: React.FC<{cx: number; cy: number; L: [string, string]; R: [
   const lx = cx - arm * Math.cos(rad), ly = cy - arm * Math.sin(rad), rx = cx + arm * Math.cos(rad), ry = cy + arm * Math.sin(rad);
   const pan = (x: number, y: number, t: [string, string], big: boolean) => (
     <g><line x1={x} x2={x} y1={y} y2={y + 60} stroke={T.ink2} strokeWidth={4} />
-      <rect x={x - 240} y={y + 60} width={480} height={big ? 170 : 130} rx={16} fill={big ? T.accent : T.surface} stroke={big ? 'none' : T.line} strokeWidth={3} />
+      <rect x={x - 240} y={y + 60} width={480} height={big ? 170 : 130} rx={16} fill={big ? T.ink : T.surface} stroke={big ? 'none' : T.line} strokeWidth={3} />
       <text x={x} y={y + 108} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={28} fill={big ? '#fff' : T.ink2}>{t[0]}</text>
       <text x={x} y={y + (big ? 180 : 162)} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={big ? 52 : 44} fill={big ? '#fff' : T.ink}>{t[1]}</text></g>);
   return (
@@ -105,16 +106,16 @@ export const Seesaw: React.FC<{cx: number; cy: number; L: [string, string]; R: [
       <polygon points={`${cx},${cy} ${cx - 60},${cy + 200} ${cx + 60},${cy + 200}`} fill={T.ink2} />
       <line x1={lx} y1={ly} x2={rx} y2={ry} stroke={T.ink} strokeWidth={12} strokeLinecap="round" />
       {pan(lx, ly, L, true)}{pan(rx, ry, R, false)}
-      <g opacity={midP}>{mid.map((m, i) => <text key={i} x={cx} y={cy - 160 + i * 56} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={40} fill={i ? T.fall : T.rise}>{m}</text>)}</g>
+      <g opacity={midP}>{mid.map((m, i) => <text key={i} x={cx} y={cy - 160 + i * 56} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={40} fill={T.rise}>{m}</text>)}</g>
     </svg>
   );
 };
 
 // 원문 카드(한글 공시 인용): 위 출처 줄, 가운데 문장, 아래 큰 숫자
 export const QuoteCard: React.FC<{x: number; y: number; w: number; h: number; o: number; src: string; body: string; big: string}> = ({x, y, w, h, o, src, body, big}) => (
-  <div style={{position: 'absolute', left: x, top: y + (1 - o) * 24, width: w, height: h, background: T.surface, borderRadius: 20, opacity: o, borderTop: `8px solid ${T.accent}`}}>
+  <div style={{position: 'absolute', left: x, top: y + (1 - o) * 24, width: w, height: h, background: T.surface, borderRadius: 20, opacity: o, borderTop: `8px solid ${T.ink}`}}>
     <div style={{...F, fontWeight: 700, fontSize: 26, color: T.ink3, padding: '28px 40px 0'}}>{src}</div>
-    <div style={{position: 'absolute', left: 30, top: 70, fontFamily: 'Georgia, serif', fontSize: 110, color: T.soft, lineHeight: 1}}>“</div>
+    <div style={{position: 'absolute', left: 30, top: 70, fontFamily: 'PD', fontWeight: 700, fontSize: 110, color: T.line, lineHeight: 1}}>“</div>
     <div style={{...F, fontWeight: 500, fontSize: 36, color: T.ink2, padding: '40px 40px 0 90px', lineHeight: 1.45, wordBreak: 'keep-all'}}>{body}</div>
     <div style={{...F, fontWeight: 700, fontSize: 76, color: T.rise, position: 'absolute', left: 90, bottom: 36}}>{big}</div>
   </div>
@@ -129,8 +130,8 @@ export const Stairs: React.FC<{x: number; y: number; w: number; h: number; rows:
       <line x1={x - 10} x2={x + w} y1={y} y2={y} stroke={T.ink3} strokeWidth={2} />
       {rows.map(([n, v], i) => { const o = p[i] ?? 0; const bh = (v / mx) * h * o; const last = i === rows.length - 1;
         return <g key={n} opacity={Math.min(1, o * 2)}>
-          <rect x={x + i * slot} y={y - bh} width={bw} height={bh} rx={10} fill={last ? T.accent : T.line} stroke={last ? 'none' : T.ink3} strokeWidth={2} />
-          <text x={x + i * slot + bw / 2} y={y - bh - 18} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={last ? 44 : 36} fill={last ? T.accent : T.ink}>{fmt(v)}</text>
+          <rect x={x + i * slot} y={y - bh} width={bw} height={bh} rx={10} fill={last ? T.ink : T.line} stroke={last ? 'none' : T.ink3} strokeWidth={2} />
+          <text x={x + i * slot + bw / 2} y={y - bh - 18} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={last ? 44 : 36} fill={T.ink}>{fmt(v)}</text>
           <text x={x + i * slot + bw / 2} y={y + 42} textAnchor="middle" fontFamily="PD" fontWeight={700} fontSize={30} fill={T.ink2}>{n}</text>
         </g>; })}
       <g opacity={tagP}><rect x={x + (rows.length - 1) * slot + bw / 2 - 230} y={y - h / 1.1 - 150} width={460} height={64} rx={32} fill={T.ink} />

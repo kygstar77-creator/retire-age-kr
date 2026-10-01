@@ -4,7 +4,7 @@ import React from 'react';
 import {AbsoluteFill, interpolate, staticFile, useCurrentFrame, useVideoConfig, spring, Easing} from 'remotion';
 
 export const T = {bg: '#f6f7f9', surface: '#ffffff', line: '#e6e9ee', ink: '#18191d', ink2: '#4b515c', ink3: '#8a909b', soft: '#ffe3d1',
-  accent: '#ff5a00', rise: '#e5484d', fall: '#2f6fde', dbg: '#101114', dsurface: '#1b1c21', dink: '#f2f3f5', dink3: '#8b8f98', daccent: '#ff7a33'};
+  accent: '#ff5a00', rise: '#e5484d', fall: '#2f6fde', dbg: '#101114', dsurface: '#1b1c21', dink: '#f2f3f5', dink3: '#8b8f98', daccent: '#ff7a33', dfall: '#6f9cf0'};
 export const FONT_CSS = `
 @font-face{font-family:'PD';font-weight:700;src:url('${staticFile('fonts/pd700.ttf')}')}
 @font-face{font-family:'PD';font-weight:500;src:url('${staticFile('fonts/pd500.ttf')}')}`;
@@ -59,7 +59,7 @@ export const Caption: React.FC<{s: VScene; dark?: boolean}> = ({s, dark}) => {
 };
 
 // 진행 막대 — 왼쪽 세로 5칸(오늘 확인할 다섯 가지), 지금 칸만 주황. 똑재TV 목록 복귀 방식을 파이어맵 모양으로(2026-09-30 study)
-export const ProgressRail: React.FC<{n: number; cur: number; labels: string[]}> = ({n, cur, labels}) => {
+export const ProgressRail: React.FC<{n: number; cur: number; labels: string[]; on?: string}> = ({n, cur, labels, on: onC = T.accent}) => {
   const f = useCurrentFrame(); const o = appear(f, 0, 12);
   const top = 250, h = 600, gap = 10, cell = (h - gap * (n - 1)) / n;
   return (
@@ -68,9 +68,9 @@ export const ProgressRail: React.FC<{n: number; cur: number; labels: string[]}> 
         const on = i + 1 === cur, done = i + 1 < cur;
         return (
           <div key={i} style={{position: 'absolute', top: i * (cell + gap), width: on ? 58 : 44, height: cell, borderRadius: 10,
-            background: on ? T.accent : done ? T.ink2 : T.line, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            background: on ? onC : done ? T.ink2 : T.line, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
             <span style={{...F, fontWeight: 700, fontSize: on ? 30 : 24, color: on || done ? '#fff' : T.ink3}}>{i + 1}</span>
-            {on ? <div style={{...F, fontWeight: 700, fontSize: 22, color: T.accent, position: 'absolute', left: 70, top: cell / 2 - 16, whiteSpace: 'nowrap',
+            {on ? <div style={{...F, fontWeight: 700, fontSize: 22, color: onC, position: 'absolute', left: 70, top: cell / 2 - 16, whiteSpace: 'nowrap',
               opacity: interpolate(f, [8, 24, 70, 90], [0, 1, 1, 0], CL)}}>{labels[i]}</div> : null}
           </div>
         );
@@ -96,7 +96,7 @@ export const Page: React.FC<{s: VScene; sub?: string | null; children: React.Rea
       </div>
       {s.rail ? <ProgressRail n={5} cur={s.rail} labels={RAIL_LABELS} /> : null}
       {children}
-      {s.source ? <div style={{...F, fontWeight: 500, fontSize: 22, color: T.ink3, position: 'absolute', left: 120, bottom: 20}}>출처 {s.source}</div> : null}
+      {s.source ? <div style={{...F, fontWeight: 500, fontSize: s.source.length > 150 ? 16 : s.source.length > 110 ? 18 : 22, color: T.ink3, position: 'absolute', left: 120, right: 110, bottom: 20}}>출처 {s.source}</div> : null}
       <Caption s={s} />
     </AbsoluteFill>
   );

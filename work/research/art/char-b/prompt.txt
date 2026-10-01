@@ -1,0 +1,15 @@
+X-THUMB-1 B군 캐릭터 시안 — 도구·프롬프트 기록 (firemap-illustrator, 2026-10-01 14:44~)
+
+1) 지시: 제미나이 이미지로 캐릭터 1종 시안 2개.
+   시도: gen.py(프롬프트 원문은 gen_log.json 'prompts'). 모델 6개 전부 429(무료 한도 초과, 14:5x):
+   gemini-3-pro-image · gemini-3-pro-image-preview · gemini-3.1-flash-image · gemini-3.1-flash-image-preview · gemini-3.1-flash-lite-image · gemini-2.5-flash-image
+   → 결과 0장. 다음 회차에 `py -3.12 gen.py`로 같은 캐릭터를 다시 뽑아 SVG안과 비교할 수 있다.
+
+2) 실제로 쓴 도구: 벡터 그리기(SVG, char.py에 손으로 쓴 도형) → Playwright 크로미움 렌더(make.py) → PNG.
+   - char_a.svg/png: 굵은 외곽선 #18191d + 흰 스티커 테두리, 평면. 놀람(동그란 눈·벌린 입·땀방울), 고지서를 두 손으로.
+   - char_b.svg/png: 검은 외곽선 없음, 면+그라데이션 그늘 2단, 둘레 흰 테두리(feMorphology 7). 걱정(이마 짚음·물결 입), 고지서를 배 앞에.
+   - 같은 사람: 퇴사한 40대 초반 직장인, 짧은 검은 머리+관자놀이 흰머리, 남색 가디건·흰 셔츠·베이지 바지. 이름·말풍선·글자 없음.
+   - 고지서에는 글자·기관 로고 없음(회색 줄만). 실제 인물·가상 전문가·남의 캐릭터 참조 없음.
+   - 다시 그리기: `py -3.12 make.py` (캐릭터 상자 25% 이하·아래 5%·오른쪽 아래 길이 자리 assert)
+
+3) 1차본(r1/) → 심사 → 2차본(현재 파일). 바뀐 점은 char.py 머리 주석.

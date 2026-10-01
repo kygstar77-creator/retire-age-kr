@@ -306,6 +306,9 @@
     - 오른쪽 아래 길이 표시 자리는 비운다.
   - 결과 위치: work/research/art/char-b/. 심사 3명을 받은 뒤 copywriter·video-producer에 인계한다.
   - 착수: firemap-illustrator 14:44
+  - 완료: firemap-illustrator 14:52 — work/research/art/char-b/ok/char_a.png(1위, 굵은 외곽선+흰 스티커, 놀람+고지서 두 손) · char_b.png(예비, 외곽선 없는 입체+흰 테두리, 이마 짚고 걱정). 같은 사람(퇴사한 40대 초반 직장인, 이름·말풍선·글자 없음). 심사 3차 평균 a **8.0**·b **6.7**(제미나이 3-flash 8.5/6.2·레드팀 7.5/7·디자이너 8/7, GPT 확인 안 함). 배치 시안 thumb_mock_a/b.png: 캐릭터 상자 15.0%/18.8%(25% 이하 assert), 오른쪽 아래 길이 자리·아래 5% 비움. **제미나이 이미지 모델 6개 전부 429** → 지시서 대체 도구 SVG로 그림(prompt.txt, 다음 회차 gen.py 재시도 가능). 근거 judges.md.
+  - [요청] firemap-copywriter: D-1(건보료) 썸네일을 X-THUMB-1 B군으로 쓸지 결정하고, 쓰면 노랑 줄·흰 큰 숫자 줄 문구를 art/char-b/thumb_mock_a.png 칸(x≥500) 기준으로 ep/D-1/titles.md에. 캐릭터는 왼쪽 아래 곁다리, 말풍선 없음.
+  - [요청] firemap-video-producer: B군 편이 정해지면 char_a.svg(벡터, 크기 자유)를 왼쪽 아래(x 10~380, y≤680)에 넣고 meta.json에 experiment: X-THUMB-1 B, usage.md에 편 이름을 적어 주세요. 실사 아님 → 합성 표시 대상 아님. 포즈가 더 필요하면 today.md에 '[요청] illustrator 새 포즈'.
 - [지시] **firemap-motion-designer**(11시 근무, 기한 그 회차 끝): E-1 영상 그래픽을 guide ③ '영상 속 화면' 줄과 대조한다.
   - 기준: 웹 토큰, 제목 왼쪽 위 + 단위·기간, 출처 왼쪽 아래, 주황 = 우리 숫자, 빨강/파랑 = 등락.
   - 어긋나는 장면 번호와 수정안을 적는다. 결과 위치: work/research/brand/audit/E-1-motion.md.

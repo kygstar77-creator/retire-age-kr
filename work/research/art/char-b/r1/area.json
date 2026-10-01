@@ -1,0 +1,22 @@
+{
+ "a": {
+  "char_box_px": [
+   80,
+   233,
+   341,
+   668
+  ],
+  "box_area_pct": 12.3,
+  "ink_area_pct": 8.0
+ },
+ "b": {
+  "char_box_px": [
+   108,
+   249,
+   363,
+   663
+  ],
+  "box_area_pct": 11.5,
+  "ink_area_pct": 6.7
+ }
+}

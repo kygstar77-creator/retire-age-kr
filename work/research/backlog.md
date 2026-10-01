@@ -19,7 +19,7 @@
 | firemap-artist | 오늘 공개 예정 전부 뻔함 판정 | 새 기획서 '한 수' | 지난 공개물 뻔함 사후 점검 |
 | firemap-copywriter | W-1 썸네일 두 줄 후보·1위(ep/W-1/titles.md, 10/8 12:00 — 그 주 사실표만) | A-1 48시간 판정 10/2 19:30(Studio 노출 클릭률 vs 중앙값, 아래면 2위로 1회)·대기 쇼츠 5편 판정 | global-calcs 도장 편집 결과 반영 + 영국 GOV.UK 계산기 3건 대조가 checks.md에 들어왔는지 확인 뒤 디자이너 칩 길이 확인 |
 | firemap-visual-designer | W-1 썸네일 | 다음 쇼츠 썸네일 | 기존 썸네일 클릭률 낮은 것 교체안 |
-| firemap-video-producer | E-1 마무리·예약 공개 | W-1 화면 | 다음 편 리허설 |
+| firemap-video-producer | D-1 editor 통과 즉시 목소리(3.8-flash-tts·Charon 고정)→1080 렌더→점수표→예약(10/8 이후) | E-1 10/3 19:30 공개 직후 고정 댓글(pin_comment.md, editor 통과분)·앱 화면 썸네일 확인·스튜디오 합성 미디어 표시 확인 | W-1 화면 리허설(analysis만 있음 → 사실표 나오면 d1props 방식) |
 | firemap-youtube-loop | F2 쿠팡 설명란 | 다음 롱폼 대본 | 경쟁 분석 |
 | firemap-improve | shortsdaily.py cafe_line 옵션(19:05, N2) | aitell 발행 관문 연결 | 카페 공식 API 발행 안정화 |
 | firemap-admin | **토큰 절약 1(17:17): 직원 지시문 다이어트** — 33개 SKILL.md의 공통 규칙(스꾸 금지·상황판·git·편집/디자인/뻔함 관문·스스로 다음 일)을 work/research/common-rules.md 하나로 모으고 각 지시문엔 한 줄 참조만. 지시문마다 고유 업무만 남겨 write(53KB)·youtube-loop(39KB)부터 절반 이하로. 원본은 백업. | **토큰 절약 2:** decisions/log.md(89KB)·lessons.md를 '최근 7일'만 남기고 나머지 archive, 직원은 grep으로 필요한 줄만 읽게 | 하루 토큰 사용 상위 직원 5명 표(list_task_runs 시간·횟수 기준) → 근무 횟수 줄이기 제안 |

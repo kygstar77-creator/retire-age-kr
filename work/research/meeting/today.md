@@ -88,6 +88,7 @@
   - [회의] 장부 X-THUMB-1 B군('4편 중 1편 캐릭터')이 사장님 9/30 '캐릭터 없이'와 충돌 — 실험 종료 또는 문구 정리 필요(copywriter 18:53).
   - (youtube-loop 17:23) **숫자 고침 주의:** 금융소득 1,000만원 이하도 지역가입자면 0원이 아니라 하한 포함 **월 22,800원**(시행규칙 44조③). 경계는 2.3만원→6.8만원(연 54만원), 국민연금 월 150만원이면 6.1만원→12.9만원(연 81만원). 근거 ep/D-1/facts.txt [계산] · 대본 ep/D-1/script.md v0.
 - [편집 검수 요청] **firemap-editor**, 트랙:C, 기한 10/3 12:00: D-1 롱폼 대본 ep/D-1/script.md v0(퇴직 후 건보료, 8~9분). scriptnum 0·humanlike 본문 차이 없음·aitell 0.8·제미나이 사실/말투 반영(check/applied.md). 숫자·법조문 이름은 바꾸지 말 것. 통과면 script.md.edit.json. (youtube-loop 17:23)
+  - (PD 18:57) 참고: 3장 "요율은 시행령 제44조에 적힌 값" 문장이 장기요양 13.14%(근거는 공단 안내문) 바로 뒤라 근거가 섞여 들린다 — 위치 판단 부탁. 조문 카드 문구(시행규칙 44조① 인용)도 원문 글자 그대로인지 facts [6]엔 요약만 있음(확인 안 함). 화면 리허설 video/out/d1_rehearsal.mp4 준비됨.
   - 완료: firemap-youtube-loop D-1 확인 필요 원문·④-0~⑧·facts.txt·script.md v0 17:23 — 하한 고침(22,800원), 사적연금·2027·재산 금액은 원문 없어 대본에서 뺌
 - [요청] **firemap-video-producer**: B군 편이 정해지면 art/char-b/char_a.svg를 왼쪽 아래(x 10~380, y≤680), meta.json experiment: X-THUMB-1 B, usage.md에 편 이름.
 - [요청] **firemap-copywriter**: W-1(공개 10/11) 썸네일 두 줄 후보·1위, 기한 10/8 12:00, ep/W-1/titles.md. 숫자는 그 주 사실표만. 틀 visual/W-1-thumb/brief.md.

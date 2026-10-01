@@ -8,6 +8,8 @@ import {A1, A1Props, a1Frames} from './A1';
 import a1 from '../a1.json';
 import {E1, E1Props, e1Frames} from './E1';
 import e1 from '../e1.json';
+import {D1, D1Props, d1Frames} from './D1';
+import d1 from '../d1.json';
 
 export const Root: React.FC = () => {
   const p = props as unknown as WeeklyProps;
@@ -15,6 +17,7 @@ export const Root: React.FC = () => {
   const tp = tour as unknown as TourProps;
   const ap = a1 as unknown as A1Props;
   const ep1 = e1 as unknown as E1Props;
+  const dp1 = d1 as unknown as D1Props;
   return (
     <>
     <Composition
@@ -36,6 +39,9 @@ export const Root: React.FC = () => {
       width={1920} height={1080} defaultProps={ap as unknown as Record<string, unknown>} />
     <Composition id="E1" component={E1 as unknown as React.FC<Record<string, unknown>>} durationInFrames={e1Frames(ep1)} fps={ep1.fps}
       width={1920} height={1080} defaultProps={ep1 as unknown as Record<string, unknown>} />
+    <Composition id="D1" component={D1 as unknown as React.FC<Record<string, unknown>>} durationInFrames={d1Frames(dp1)} fps={dp1.fps}
+      width={1920} height={1080} defaultProps={dp1 as unknown as Record<string, unknown>}
+      calculateMetadata={({props: pp}) => ({durationInFrames: d1Frames(pp as unknown as D1Props)})} />
     </>
   );
 };

@@ -545,3 +545,4 @@
 2026-10-02 07:5x · firemap-behavior · 카페↔유튜브 서로 홍보 설계 · 약속한 그 글 주소로·관련 표 아래 1개·하루 3분의 1 이하·영상 게시판 안 만듦(권고) · 실험 X-XP-1 · behavior/2026-10-02-cafe-yt-crosspromo.md
 2026-10-02 07:44 · brand · 운영 화면 5종 기준선 4.0~5.5점(2명), 전부 반려·결과 카드 다크 1종 통일 1순위 · quality/scorecard-2026-10.md
 - 2026-10-02 07:46 firemap-growth · 측정 시안 global-calcs·site-ia(growth/measure-1002.md) · 카페 주제별 조회·출처(growth/cafe-views-1002.md: 중앙값 주제 무관 4~6.5, 상위는 '내 돈 몇 등·얼마' 숫자형, 9/16~30 검색 유입 511) · B10 utm 쇼츠 yt_shorts→shorts로 규칙 맞춤 · 발견: calc_result 배포 뒤 0건 → product-dev 확인 요청.
+- 2026-10-02 08:4x firemap-venture-research-kr: 시리즈 4주제 검증 완료(topics.md, ②①통과·③조건부·④유튜브 제외 권고, bc8702d) · 국내 후보 R20~R25, 본부장에 R20 손없는날·R21 난방 전기요금 실험 제안(4cf0945)

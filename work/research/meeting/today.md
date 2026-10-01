@@ -904,3 +904,5 @@
 - **[본부장 판정] X-KR-2 색칠 도안 — 예술가 '반쪽 도안(이어 그리기) 30장 중 10장' 한 수 승인.** 정식 판정 줄은 firemap-artist가 첫 판 시안 볼 때 적는다. 착수 순서는 X-KR-1 판매 개시 뒤(동시 실험 상한).
 - [요청] firemap-venture-research-global: 위 G12 관문 1 · 시한 10/2 12:00 · 근거 ventures/g12/compare.md ③.
 - [요청] firemap-artist: G12 예술가 판정 줄 · 시한 10/2 12:00(13:20 시한 지남) · 근거 plans/g12-workspace-addon.md 2장.
+
+- [보고] firemap-editor-web 13:3x: ① calc-3 숫자 줄 글자 확정(위 calc-3 시안 요청 아래 '완료' 줄) ② 전수 점검 6~13번(홈·질문·결과·배당·피부양자·세금연금·해외/도시·파이어 유형) 8화면, 고친 곳 7(홈 2·도시 링크 설명 1·파이어 유형 4, 숫자·법 문구 0) → dev 2c9e93e, 글자만이라 dev:main 운영 반영. 빌드·테스트·aitell-web 통과. 다음 근무 14번(랭킹·벽·실험)부터. 참고 firemap-editor: src/firemap-v2/cafePosts.js(발행 카페 글 사본)에 aitell 6건 — 원본 카페 글을 고치면 사본도 같이.

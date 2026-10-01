@@ -9,16 +9,16 @@
 | 3 | 실업급여 /calc/unemployment-benefit | src/components/firemap/UnemploymentCalc.jsx | ✅ 10/1 (0곳) | 은퇴 연결 제목·설명은 bc7b7e5에서 법(제40조) 근거로 일부러 바꾼 것 — 되돌리지 않음 |
 | 4 | 쿠팡 칸 | CoupangPick.jsx · firemap-v2/coupangPicks.js | ✅ 10/1 (0곳) | 대가성 문구는 법정 권장 문구 그대로. 상품 3개 모두 null(아직 안 보임) → 상품 들어오면 title·desc 다시 본다 |
 | 5 | 키트 /kit/demo | public/kit/demo/index.html | — | 영어 내부 테스트(noindex) → firemap-editor-en |
-| 6 | 홈 | Home.jsx | ⏳ 다음 | |
-| 7 | 질문 | Question.jsx | ⏳ | |
-| 8 | 결과 | Result.jsx | ⏳ | |
-| 9 | 배당 생활 계산 | DividendLifeCalc.jsx | ⏳ | |
-| 10 | 건보 피부양자 | DependentCheck.jsx | ⏳ | |
-| 11 | 세금·연금 | TaxPensionModules.jsx · PensionControls.jsx | ⏳ | |
-| 12 | 해외 체류 | OverseasStayModule.jsx · CityExplorer.jsx | ⏳ | |
-| 13 | 파이어 유형 테스트 | FireTypeTest.jsx · firemap-v2/cityTypeTest.js | ⏳ | |
-| 14 | 랭킹·벽·실험 | Leaderboard.jsx · Wall.jsx · Experiment.jsx | ⏳ | |
-| 15 | 커뮤니티·뉴스 | Community.jsx · News.jsx · CafePoster.jsx | ⏳ | |
+| 6 | 홈 | Home.jsx | ✅ 10/1 13:30 (2곳) | 근거 없는 꾸밈말 '현실적인' 삭제, 번역투 '당신은'→히어로 제목과 같은 '나는 …할까?' |
+| 7 | 질문 | Question.jsx · firemap-v2/data.js questions | ✅ 10/1 (0곳) | |
+| 8 | 결과 | Result.jsx | ✅ 10/1 (0곳) | |
+| 9 | 배당 생활 계산 | DividendLifeCalc.jsx | ✅ 10/1 (0곳) | |
+| 10 | 건보 피부양자 | DependentCheck.jsx | ✅ 10/1 (0곳) | 법정 기준 문장 그대로 |
+| 11 | 세금·연금 | TaxPensionModules.jsx · PensionControls.jsx | ✅ 10/1 (0곳) | |
+| 12 | 해외 체류 | OverseasStayModule.jsx · CityExplorer.jsx | ✅ 10/1 (1곳) | 지역 자료 링크 설명이 제목과 같은 말 → 그 페이지 meta '144개 조합의 필요자산·저축 플랜' |
+| 13 | 파이어 유형 테스트 | FireTypeTest.jsx · firemap-v2/cityTypeTest.js | ✅ 10/1 (4곳) | 오타 '줄여보요', '핵심이에요', '설계하면…확 줄어요'(같은 카드 '확 줄어요' 두 번), '현실파'+'가장 현실적' 반복. 2c9e93e 운영 반영 |
+| 14 | 랭킹·벽·실험 | Leaderboard.jsx · Wall.jsx · Experiment.jsx | ⏳ 다음 | funName.js '현명한'은 닉네임 형용사라 aitell 오탐 — 안 바꿈(바꾸면 기존 사용자 닉네임이 바뀜) |
+| 15 | 커뮤니티·뉴스 | Community.jsx · News.jsx · CafePoster.jsx | ⏳ | firemap-v2/cafePosts.js는 발행된 카페 글 사본(aitell 6건) — 원본과 어긋나면 안 돼서 firemap-editor 소관, 여기선 안 고침 |
 | 16 | 공유·계정·설정·동의 | ShareSheet.jsx · AccountCard.jsx · Settings.jsx · Consent.jsx · MenuAll.jsx | ⏳ | |
 | 17 | 셸·메뉴 | FireMapMVP.jsx · src/ui/* | ⏳ | |
 | 18 | 푸시 알림 | src/utils/firePush.js | ⏳ | |

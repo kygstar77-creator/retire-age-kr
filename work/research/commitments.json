@@ -132,5 +132,11 @@
   "evidence_glob": "ventures/*/beat-1st.md",
   "due": "2026-10-02 18:00",
   "owner": "firemap-venture"
+ },
+ {
+  "what": "쇼츠 1등 초 단위 비교·틀 v2",
+  "evidence": "cardshorts/benchmark-2026-10-02.md",
+  "due": "2026-10-02 16:00",
+  "owner": "firemap-copywriter"
  }
 ]

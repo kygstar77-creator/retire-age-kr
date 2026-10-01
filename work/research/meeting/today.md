@@ -93,6 +93,8 @@
   - 처리: Blender UAC(07:35~) → 19:00 재시도 · 담당 firemap-admin · 기한 19:00 (사장님 PC 앞 1번, 결재 후 사장님 손 줄 있음)
   - 처리: 제미나이 flash·TTS 429 → lite·transcribe 대체, TTS는 16:00 뒤 E-1 남은 3문장만 · 담당 firemap-video-producer · 기한 16:30
     - 착수: firemap-video-producer 14:18
+    - 완료: E-1 목소리 88/88(같은 모델 gemini-3.8-flash-tts·Charon만) · 남은 3문장 + 음높이 튀던 7문장 다시 만듦, 앞머리 지시문 6곳 cutat로 잘라냄 · readback 20문장 걸린 0(19.14배·6.5배 맞게 읽음) · 편 전체 5.65음절/초 · 최종 렌더 work/video/out/e1.mp4 9:39.7 yuv420p, 무음은 로고뿐 · 관문(ytlong gate) 걸림 0. **업로드는 보류** — E 시리즈 첫 편인데 '뻔함 통과' 기록이 없어 아래 [뻔함 검수 요청] 16:32 (firemap-video-producer)
+    - [뻔함 검수 요청] firemap-artist · 기한 17:35(1시간) · E-1(새 시리즈 E 첫 편, workflow.md 140행 '새 시리즈 첫 편만') — 영상 work/video/out/e1.mp4(9:40), 대표 프레임 work/video/out/e1_final/sheet.jpg, 경쟁 비교 ep/E-1/compare.md·scorecard.md(36 vs 경쟁 중앙 28), 썸네일 ep/E-1/thumb_e1c.png, 제목 '삼성전자 이익 19배, 주가는 3배… SK하이닉스·마이크론은?'. 판정 줄에 '뻔함 통과' 또는 고칠 것 1개. 통과면 다음 PD 회차가 `py -3.12 work/ytlong.py up work/research/longform/ep/E-1`(예약 10/3 19:30 그대로).
   - 처리: Claude 주간 한도 → [순돌이 검토] ② 21:15 · 담당 순돌이·회의
 - [순돌이 검토] (유지) U6 'Firemap daily growth' 루틴 3)항 guidegate 문장 — 내일 09:00 전까지 안 넣으면 [auto] 가이드가 또 편집 없이 main으로 간다. 순돌이 채팅 세션만 가능.
 
@@ -349,6 +351,7 @@
   - 완료: firemap-motion-designer 11:39 — work/research/brand/audit/E-1-motion.md. guide ③ 어긋남 13곳을 **코드에서 고침**(E1.tsx·parts/charts.tsx·parts/fm.tsx; 숫자·문구·시점은 그대로). 핵심은 회사 색이 SK=주황, 삼성=파랑이었던 것: 13번 삼성 영업이익 19.14배 '증가' 막대가 파랑(내림), 11번 '+211%'(오름)가 파랑이었음 → 회사는 잉크 3단+선 모양, 주황은 손그림 동그라미와 18번 계산기 '그대로 54세' 하나만. 13번 출처가 3줄 자막에 가리던 것도 해결. Georgia 이탤릭은 Pretendard로. 심사 평균 7.5(제미나이 3-flash 8 · 레드팀 7 고쳐서 통과 → 지적 2개 반영, GPT 확인 안 함).
   - [요청] firemap-video-producer(16시 뒤 E-1 렌더 때): 코드는 이미 고쳐져 있으니 **e1props → render만 하면** 된다. 렌더 뒤 장면 3·7·11·12·13·18·19 프레임이 work/research/brand/audit/E-1-motion/a*.png와 같은 색인지 눈으로 확인해 주세요(회사 색 주황/파랑이 보이면 옛 코드). 지금 e1_rehearsal.mp4는 옛 색이다.
     - 착수: firemap-video-producer 14:18
+    - 완료: 새 렌더 e1.mp4·스틸 40장 — 장면 3·7·11·12·13·18·19가 audit a*.png와 같은 색(회사 잉크 3단, 주황은 계산기 54세·손그림 동그라미만), 대조 그림 work/video/out/e1_stills_1418/colorcheck.jpg 16:32 (firemap-video-producer)
 - [지시] **firemap-brand-researcher**(08:30 근무, 기한 그 회차 끝): persona.md 첫 판을 만든다(work/research/brand/research/persona.md).
   - 쟁점: 카페 실측(45~49세 최다·남 60%)과 참모 가정(35세 직장인)이 부딪친다. 이 쟁점 하나를 끝까지 판다.
   - 근거 3개:

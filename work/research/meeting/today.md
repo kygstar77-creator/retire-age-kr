@@ -6,7 +6,10 @@
   - 착수: firemap-venture-builder 08:47 (운영실장 2)
   - 완료: firemap-venture-builder 08:50 — ① 키트 디자인 반려 3개 고침(public/kit/fmkit.js: 공유 카드 묶음 세로 가운데·숫자 최대 180px·accent 기본 주황 제거+fitText / template-ko·en: 큰 숫자 clamp+fit, 머리·바닥 링크 padding 12px·44px, h3 17px) — 운영(main) 배포는 디자인 통과 뒤. ② gov.uk 2026/27 원문 재확인(income-tax-rates·rates-and-thresholds-for-employers-2026-to-2027, 08:45) + 검산 10건 £1 안 일치·외부 대조 3건 → ventures/uk-pay/checks.md. ③ 머리 페이지 ventures/uk-pay/site/index.html(spec.md 배치·초록 #0a6b52·광고 0·주황 0, '다음 £1,000' 줄·60% 노란 경고·Share 카드에만 세금 시계, 연봉은 카드에서 구간으로 가림) + site/fmkit.js noStore. 실측: 넘침 0(320·375), '다음 £1,000' 줄 y=484(375×667)·510(320×568) 첫 화면 안. launch.md 빌더 칸 채움(1번 롱테일 수요·15번은 '확인 안 함'으로 남김). 남은 것: 60% 페이지·privacy·about·robots·sitemap·새 저장소.
 - [디자인 검수 요청] X-V1 UK take-home pay 머리 페이지 + 키트 반려 3개 수정 트랙:A · 담당 firemap-designer · 시한 09:50 · 근거 work/research/design/uk-pay/build/(375 라이트·다크, 320, £110,000 경고, £9,999,999 넘침 점검, 공유 카드 2장), ventures/uk-pay/site/index.html, public/kit/fmkit.js, ventures/kit/template-*.html, launch.md '빌더 진행'
+  - 착수: firemap-designer 09:09 (운영실장)
+  - 완료: **디자인 통과: X-V1 UK take-home pay 머리 페이지 + 키트 반려 3개 09:11** (firemap-designer) — 반려 3개 모두 고침(넘침 0·카드 세로 가운데·링크 44px), 첫 화면 숫자+'다음 £1,000' 줄 375·320 스크롤 없이, 공유 카드 강조색 #2fae86 승인(바탕 #18191d 대비 6.29, #0a6b52는 2.71 미달, 사이트 다크 토큰과 같음). 막지 않는 메모 1: 320px 7자리 이상 입력 시 입력칸 글자 잘림. 근거 design/uk-pay/review-build1.md
 - [편집 검수 요청] X-V1 영어 화면 문구(title·description·H1·결과 줄·60% 경고·Share 카드 'On £110k–£120k you work for tax & NI until 11:44am each 9-to-5 day'·How it's calculated·바닥 면책) 트랙:A · 담당 firemap-editor-en · 시한 09:50 · 근거 work/research/ventures/uk-pay/site/index.html, titles.md
+  - 착수: firemap-editor-en 09:09 (운영실장)
 - [지시] **firemap-admin**, 기한 09:00: 결재함(approvals.md)에 쿠팡 본인인증 한 줄 — "PC만(크롬 partners.coupang.com, 휴대폰 로그인 땐 창이 안 떴음) · 누를 곳: 내 정보 → 인증하기 → 휴대폰 인증 → 인증 완료 · 누른 뒤 채팅에 '쿠팡 인증함' 한 마디(순돌이가 바로 링크 3개 발급·유튜브/firemap.kr 매체 등록 확인)". 인증이 시간 제한으로 다시 걸리는 것으로 보이므로(07:54 열림 → 08:02 막힘, 확인 안 함) 인증 직후 같은 세션에서 발급해야 한다는 것도 적는다. 비밀번호·인증번호 입력 금지.
 - [지시] **firemap-youtube-loop**, 기한 10:00: 쿠팡·권한 막힘 동안 노는 대신 — editor ytdesc 6편 + R2 계산기 utm 링크 + (나중) F2 쿠팡 줄을 **한 번에 적용하는 명령 1개**로 합쳐 dry까지(설명이 .orig와 다르면 합치기). 목적: 권한이 풀릴 때 사람 손 1번에 전부. 금지: 무인 권한 검사 우회.
   - 착수: firemap-youtube-loop 설명란 합치기 명령 08:41
@@ -145,6 +148,7 @@
     - 카톡·네이버 미리보기 크기에서 읽힌다.
     - 심사 3명 평균 6점 이상 → "디자인 통과" 줄 → product-dev 적용.
   - 결과 위치: work/research/visual/og-calc/.
+  - 착수: firemap-visual-designer 09:04
 - [지시] **firemap-designer**(디자인 관문 검수 때 함께, 기한 오늘 16:20 회차): 연봉 결과 화면(운영 f3-a-prod-320.png)의 설명 캡션 2곳을 검수한다.
   - 대상: 다크 카드 안 4줄 "원천징수 비율 · 기본은 100%예요 …", 주황 버튼 아래 회색 3줄 "실수령 …에서 생활비 …를 빼고 …".
   - 기준: guide ③·메모리 design-identity '설명 캡션 금지(라벨·숫자·버튼·가정값만)'. 사용자 참모도 "깨알 같은 회색 글씨 → 이탈"이라고 했다.

@@ -149,7 +149,7 @@ footer a+a{margin-left:8px}
   </section>
 
   <footer>
-    <p>Estimate only, not tax advice. Scotland, self-employment, other tax codes, dividends and savings income are not covered. This is an independent tool and is not connected to HMRC or GOV.UK. We never log your exact salary, only anonymous usage such as which salary band was checked.</p>
+    <p>Estimate only, not tax advice. Scotland, self-employment, other tax codes, dividends and savings income are not covered. This is an independent tool and is not connected to HMRC or GOV.UK. Your exact salary stays in your browser. We only log anonymous usage, such as which salary band was checked.</p>
     <p><a href="privacy/">Privacy</a><a href="about/">About</a></p>
   </footer>
 </div>
@@ -210,7 +210,7 @@ footer a+a{margin-left:8px}
     el('nx').textContent = f(b.net - a.net);
     var inTrap = v >= 100000 && v < 125140;
     el('trap').hidden = !inTrap;
-    el('trapLink').href = '60-percent-tax-trap/?s=' + Math.round(v);
+    el('trapLink').href = '60-percent-tax-trap/#s=' + Math.round(v);
     if (inTrap && !trapSeen) { trapSeen = true; FMKit.log('trap_view'); }
     el('shareBtn').hidden = false;
     var rows = [['Salary', f(v)], ['Personal Allowance', f(a.pa)], ['Income Tax', '−' + f(a.tax)], ['National Insurance', '−' + f(a.ni)]];
@@ -253,7 +253,7 @@ footer a+a{margin-left:8px}
       text: 'My 2026/27 take-home pay'
     });
   });
-  var q = new URLSearchParams(location.search).get('s');
+  var q = new URLSearchParams(location.hash.slice(1)).get('s');
   if (q) { el('sal').value = q; el('sal').dispatchEvent(new Event('input')); }
 })();
 </script>

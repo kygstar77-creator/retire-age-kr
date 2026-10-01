@@ -76,6 +76,7 @@ footer a+a{margin-left:8px}
 <style>
 .rows{margin:12px 0 0;border-top:1px solid rgba(255,255,255,.14)}
 .rows div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 0 0;font-size:var(--fs4);color:var(--dark-sub)}
+.rows small{display:block;font-size:var(--fs5);color:var(--dark-sub)}
 .rows b{color:var(--dark-ink);font-size:var(--fs3);font-variant-numeric:tabular-nums;white-space:nowrap}
 .fine{font-size:var(--fs5);color:var(--dark-sub);margin:12px 0 0}
 .go{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;font-size:var(--fs4);font-weight:600;text-decoration:none;margin:0 0 12px}
@@ -98,7 +99,7 @@ footer a+a{margin-left:8px}
     <p class="big" id="big">£—</p>
     <p class="s" id="sub">Type your income to see it</p>
     <div class="rows">
-      <div><span id="rateK">Effective marginal rate in this band</span><b id="rate">60% (62% with NI)</b></div>
+      <div><span>Of your next £1,000, you keep<small id="rateNote">60% band, 62% with NI</small></span><b id="rate">£—</b></div>
       <div><span>Pension contributions that would reduce adjusted net income to £100,000</span><b id="pen">£—</b></div>
     </div>
     <p class="fine">This is arithmetic, not advice. Speak to a regulated adviser before changing contributions.</p>
@@ -125,7 +126,7 @@ footer a+a{margin-left:8px}
   </section>
 
   <footer>
-    <p>Estimate only, not tax or financial advice. This is an independent tool and is not connected to HMRC or GOV.UK. We never log your exact income, only anonymous usage such as which income band was checked.</p>
+    <p>Estimate only, not tax or financial advice. This is an independent tool and is not connected to HMRC or GOV.UK. Your exact income stays in your browser. We only log anonymous usage, such as which income band was checked.</p>
     <p><a href="../">Take-home pay</a><a href="../privacy/">Privacy</a><a href="../about/">About</a></p>
   </footer>
 </div>
@@ -153,7 +154,7 @@ footer a+a{margin-left:8px}
     var g = +String(el('sal').value).replace(/[^0-9]/g, ''), r = el('res');
     if (!(g > 0) || g > 10000000) {
       r.classList.add('empty'); el('big').textContent = '£—'; el('sub').textContent = 'Type your income to see it';
-      el('pen').textContent = '£—'; el('rateK').textContent = 'Effective marginal rate in this band'; el('rate').textContent = '60% (62% with NI)';
+      el('pen').textContent = '£—'; el('rateNote').hidden = false; el('rate').textContent = '£—';
       el('home').hidden = true; return;
     }
     var a = calc(g), keep = calc(g + 1000).net - a.net, lost = PA - a.pa;
@@ -162,14 +163,15 @@ footer a+a{margin-left:8px}
     FMKit.fitText(el('big'), 24);
     if (g >= 100000 && g < 125140) {
       el('sub').textContent = 'Your income is in the £100,000–£125,140 band';
-      el('rateK').textContent = 'Effective marginal rate in this band'; el('rate').textContent = '60% (62% with NI)';
+      el('rateNote').hidden = false;
     } else {
       el('sub').textContent = g < 100000 ? 'Your income is below £100,000, so you keep the full allowance'
                                          : 'From £125,140 the allowance is fully gone';
-      el('rateK').textContent = 'Tax and NI on your next £1,000'; el('rate').textContent = f(1000 - keep);
+      el('rateNote').hidden = true;
     }
+    el('rate').textContent = f(keep);
     el('pen').textContent = f(Math.max(0, g - TAPER));
-    el('home').href = '../?s=' + g; el('home').hidden = false;
+    el('home').href = '../#s=' + g; el('home').hidden = false;
     clearTimeout(timer);
     timer = setTimeout(function () { var bk = band(g); if (bk !== lastBand) { lastBand = bk; FMKit.log('trap_calc', { bucket: bk }); } }, 1000);
   }
@@ -179,7 +181,7 @@ footer a+a{margin-left:8px}
     run();
   });
   el('home').addEventListener('click', function () { FMKit.log('trap_to_home'); });
-  var q = new URLSearchParams(location.search).get('s');
+  var q = new URLSearchParams(location.hash.slice(1)).get('s');
   if (q) { el('sal').value = q; el('sal').dispatchEvent(new Event('input')); }
 })();
 </script>

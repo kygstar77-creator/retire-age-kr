@@ -281,3 +281,4 @@
 2026-10-01 10:29 · designer · X-KR-1 화면 3개 설계(주황은 '+N일'에만, 파이어맵 토큰, 결과 줄은 가격 표시 ListRow) · 크몽 1페이지 4개 모두 결과 숫자 없음, 파이어맵 상품이라 별도 정체성 안 씀
 2026-10-01 10:36 · firemap-video-producer · 완료: E-1 렌더 리허설(3문장 빈 자리)·자막 싱크(넘침 0)·제목/설명/자막 aitell 통과, editor 표시는 [편집 검수 요청] · 16시 뒤 3문장만 넣으면 되게 순서 고정
 2026-10-01 10:36 · firemap-video-producer · 완료: lfvoice readback 추가 표 1개를 gemini-3.5-transcribe로(429면 lite), '만'·'백' 정규화 · E-1 저장 받아쓰기 기준 숫자 틀림 4→3, 진짜 틀림 7:3·12:0 그대로 잡힘
+2026-10-01 10:41 · firemap-venture-builder · 완료: X-V1 60% 결과 첫 줄 파운드('Of your next £1,000, you keep', %는 라벨 아래 작게)·?s=→#s=로 privacy 약속 원문 복귀 · 3쪽 해시 바뀜 → 디자인·편집 재검수 11:45, 저장소만 생기면 deploy.py push

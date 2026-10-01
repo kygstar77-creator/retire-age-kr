@@ -18,7 +18,7 @@ for x in pend:
     if x.get('kind') not in (None, 'cafe') and 'cafe' not in str(x.get('kind')): continue
     if os.path.exists(os.path.join(pkg, 'hold.txt')): continue
     miss = [f for f, ok in [('compare.md', os.path.exists(os.path.join(d, 'compare.md')) or os.path.exists(os.path.join(d, 'compete.md'))),
-                            ('편집 통과', os.path.exists(pkg + '.edit.json'))] if not ok]
+                            ('편집 통과', any(os.path.exists(x) for x in [pkg + '.edit.json', os.path.join(pkg, '.edit.json'), os.path.join(pkg, 'editor_ok.txt')]))] if not ok]
     if miss: bad.append(f'카페 대기 {name}({x.get("kind")}): {"·".join(miss)} 없음 (보류 안 걸림)')
 
 # 2. 롱폼: 예약 대기 편은 경쟁 비교·심사 기록이 있어야 한다
@@ -83,8 +83,9 @@ def last_line(f, pat):
     if not os.path.exists(f): return '파일 없음'
     L = [l for l in open(f, encoding='utf-8', errors='ignore').read().splitlines() if re.search(pat, l)]
     return L[-1][:140] if L else '줄 없음'
-print('지표 · 방문:', last_line('growth/daily.md', r'^20\d\d-\d\d-\d\d'))
-print('지표 · 수익·쿠팡:', last_line('growth/revenue.md', r'^20\d\d-\d\d-\d\d'))
+M = {}
+M['visits'] = last_line('growth/daily.md', r'^20\d\d-\d\d-\d\d'); print('지표 · 방문:', M['visits'])
+M['revenue'] = last_line('growth/revenue.md', r'^20\d\d-\d\d-\d\d'); print('지표 · 수익·쿠팡:', M['revenue'])
 try:
     sys.path.insert(0, HERE); import ytupload
     y = ytupload.service()
@@ -93,7 +94,8 @@ try:
     vs = y.videos().list(part='snippet,statistics,status,contentDetails', id=','.join(ids)).execute()['items']
     pub = [v for v in vs if v['status']['privacyStatus'] == 'public']
     sh = [int(v['statistics'].get('viewCount', 0)) for v in pub if 'PT1M' not in v['contentDetails']['duration'] and re.match(r'PT\d+S$', v['contentDetails']['duration'])]
-    print(f"지표 · 유튜브 구독 {up['statistics']['subscriberCount']} · 공개 쇼츠 {len(sh)}편 평균 조회 {sum(sh)//max(1,len(sh))}(목표 460)")
+    M['subs'] = int(up['statistics']['subscriberCount']); M['shorts_avg'] = sum(sh)//max(1,len(sh)); M['shorts_n'] = len(sh)
+    print(f"지표 · 유튜브 구독 {M['subs']} · 공개 쇼츠 {len(sh)}편 평균 조회 {M['shorts_avg']}(목표 460)")
 except Exception as e:
     print('지표 · 유튜브 확인 안 됨:', str(e)[:80])
 
@@ -103,3 +105,29 @@ try:
 except Exception: c = -1
 print(f'순찰 {now:%m/%d %H:%M} · 최근 2시간 커밋 {c} · 규칙 위반 {len(bad)}')
 for b in bad: print(' -', b)
+
+# 9. 사장님 요약 → work/dashboard/summary.json (순돌이가 상황판 db board/summary에 그대로 올린다 — 페이지 재게시 없이 토큰 최소)
+today = now.strftime('%Y-%m-%d')
+cafe_today = 0
+try:
+    rt = json.load(open(os.path.join(HERE, 'runs_today.json'), encoding='utf-8'))
+    if rt.get('date') == today: cafe_today = sum(1 for r in rt.get('runs', []) if r.get('cafe'))
+except Exception: pass
+long_sched = []
+try:
+    for l in open(os.path.join(R, 'longform', 'loop', 'uploads.jsonl'), encoding='utf-8'):
+        u = json.loads(l)
+        if u.get('publishAt') and u['publishAt'][:10] >= today: long_sched.append(u['publishAt'][5:16].replace('T', ' ') + ' ' + u.get('ep', ''))
+except Exception: pass
+overdue = [b.replace('약속 기한 넘김: ', '') for b in bad if b.startswith('약속 기한 넘김')]
+summ = {
+    'at': now.strftime('%m/%d %H:%M'),
+    'proof': {'visits_target': '하루 100세션', 'visits_now': M.get('visits', '확인 안 함')[:90] if 'M' in dir() else '확인 안 함',
+              'shorts_avg': M.get('shorts_avg') if 'M' in dir() else None, 'shorts_target': 460,
+              'coupang': (M.get('revenue', '') if 'M' in dir() else '')[:120], 'subs': M.get('subs') if 'M' in dir() else None},
+    'publish_today': {'cafe': cafe_today, 'cafe_cap': 8, 'long_scheduled': long_sched[:3]},
+    'commitments': {'done': done, 'total': len(C), 'overdue': overdue[:6]},
+    'violations': {'count': len(bad), 'top': [b for b in bad if not b.startswith('약속 기한 넘김')][:6]},
+}
+json.dump(summ, open(os.path.join(HERE, 'dashboard', 'summary.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+print('요약 저장: work/dashboard/summary.json')

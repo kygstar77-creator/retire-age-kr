@@ -67,6 +67,11 @@ a{color:inherit}
 .prods .u{font-size:var(--fs-5); color:var(--ink-2); overflow-wrap:anywhere}
 .prods .new{font-size:var(--fs-5); font-weight:700; color:var(--accent); white-space:nowrap}
 .prods .go{color:var(--ink-2); white-space:nowrap}
+.sumgrid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px}
+.sumgrid .k{font-size:var(--fs-5); color:var(--ink-2)}
+.sumgrid .v{font-weight:700; font-size:var(--fs-3); font-variant-numeric:tabular-nums}
+.sumlist{margin:6px 0 0; padding-left:18px; font-size:var(--fs-5)}
+.sumlist li{margin:2px 0}
 /* ① 결재 — 화면의 유일한 다크 카드 */
 .deep{background:var(--deep); color:var(--deep-ink); border-radius:var(--r-card); padding:20px; display:flex; flex-direction:column; gap:14px}
 .deep .head{display:flex; align-items:baseline; justify-content:space-between; gap:12px}
@@ -183,6 +188,13 @@ footer{font-size:var(--fs-6); color:var(--ink-3); display:flex; flex-direction:c
     </div>
     <div class="tally" id="tally"></div>
   </header>
+
+  <section class="sec" aria-labelledby="h-sum">
+    <h2 id="h-sum">한눈에 — 순돌이 순찰 요약 <span class="count" id="sumAt"></span></h2>
+    <div class="sub">순찰 때마다 실제 파일·숫자로 잰 값입니다. 페이지를 새로 고치지 않아도 바뀝니다.</div>
+    <div class="sumgrid" id="sumGrid"><div class="sub">순찰 요약을 기다리는 중…</div></div>
+    <ul class="sumlist" id="sumList"></ul>
+  </section>
 
   <section class="sec" aria-labelledby="h-appr">
     <div class="deep">
@@ -391,6 +403,29 @@ async function startAppr(db){
   renderAppr();
   col.onSnapshot(apply, () => {});
 }
+/* 순찰 요약 — db board/summary(순돌이가 순찰마다 씀) */
+function renderSum(v){
+  if (!v) return;
+  $('sumAt').textContent = s(v.at);
+  const p = v.proof || {}, pt = v.publish_today || {}, c = v.commitments || {}, vi = v.violations || {};
+  const cell = (k, val) => h('div', {class:'tile'}, h('div', {class:'k'}, k), h('div', {class:'v'}, val));
+  $('sumGrid').replaceChildren(
+    cell('쇼츠 평균 조회 (목표 ' + s(p.shorts_target) + ')', p.shorts_avg == null ? NA : String(p.shorts_avg)),
+    cell('유튜브 구독', p.subs == null ? NA : String(p.subs)),
+    cell('오늘 카페 발행', s(pt.cafe) + ' / ' + s(pt.cafe_cap)),
+    cell('약속 진행', s(c.done) + ' / ' + s(c.total) + (c.overdue && c.overdue.length ? ' · 넘김 ' + c.overdue.length : '')),
+  );
+  const items = [];
+  items.push('방문: ' + s(p.visits_now));
+  items.push('수익·쿠팡: ' + s(p.coupang));
+  if (pt.long_scheduled && pt.long_scheduled.length) items.push('롱폼 예약: ' + pt.long_scheduled.join(', '));
+  for (const o of (c.overdue || [])) items.push('⏰ 기한 넘김: ' + o);
+  for (const t of (vi.top || [])) items.push('⚠ ' + t);
+  $('sumList').replaceChildren(...items.map(t => h('li', null, t)));
+}
+async function startSum(db){
+  try { const d = db.doc('board/summary'); d.onSnapshot(x => { if (x.exists) renderSum(x.data()); }, () => {}); } catch(e) {}
+}
 function tile(lab, val, unit, opts){
   opts = opts || {};
   return h('div', {class:'tile'},
@@ -498,6 +533,7 @@ async function startLive(){
   try { db = window.claude && window.claude.use ? await window.claude.use('db') : null; } catch(e) { db = null; }
   if (!db) return;
   startAppr(db);
+  startSum(db);
   const col = db.collection('status');
   const apply = snap => {
     for (const k of Object.keys(LIVE)) delete LIVE[k];

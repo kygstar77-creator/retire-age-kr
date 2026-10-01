@@ -1,0 +1,18 @@
+{
+ "ep": "E-2",
+ "series": "E 성장주 종목 심층",
+ "topic": "테슬라 — 10분기 장부(매출 최대·영업이익률 최저)·규제 크레딧·비용·설비투자·9/29 신용 한도 300억 달러·주가 5년·은퇴 나이",
+ "status": "대본 v0 (2026-10-01 루프 16회차) — 제미나이 검증·편집 검수·카피 제목 대기",
+ "publish": "미정 — week_2026-10-12.md가 정한다(C1 주 2편, 10/5 주는 D-1·W-1)",
+ "experiment": {
+  "X-LEN-1": "A (8~10분)",
+  "X-THUMB-1": "종료(캐릭터 없음)",
+  "X-THUMB-2": "B (한 줄 큰 숫자) — A-1·E-1 A, D-1 B → 2:2 균형",
+  "E2-HOOK": "첫 30초 역설 한 줄(영업이익 < 이자수익)"
+ },
+ "coupang": "안 붙임 — 개별 종목 = 금융 주제(F2 규칙), 다음 대상은 D-1 뒤 3편 건너뜀",
+ "calc_link": "R2: 설명 둘째 줄 https://firemap.kr/?utm_source=youtube&utm_medium=desc&utm_campaign=<videoId> (은퇴 나이 장과 맞음) — 설명 쓰기 권한과 무관, 업로드 때 함께",
+ "synthetic_media": false,
+ "ai_voice_note": "설명란에 'AI 음성 내레이션' 명시",
+ "sources": ["SEC 10-Q 2026-07-23 0001628280-26-049270", "SEC 8-K 2026-09-29 0001628280-26-063820", "SEC XBRL companyfacts CIK0001318605", "Nasdaq historical TSLA"]
+}

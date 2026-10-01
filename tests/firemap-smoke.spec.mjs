@@ -253,6 +253,7 @@ test.describe('firemap smoke', () => {
       await expect(page.locator('main.fm-screen')).toContainText(path === '/calc/unemployment-benefit' ? '은퇴 나이 계산' : '몇 살에 은퇴?');
       const links = page.locator('main.fm-screen a[href*="coupang.com"]');
       const n = await links.count();
+      expect(n, `${path} 발급 링크 1개(10/1 17:22 발급분)`).toBe(1);
       await expect(page.locator('.fm-coupang-pick'), `${path} slot count`).toHaveCount(n ? 1 : 0);
       for (let i = 0; i < n; i += 1) {
         const a = links.nth(i);

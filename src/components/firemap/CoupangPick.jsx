@@ -18,9 +18,9 @@ export default function CoupangPick({ from }) {
     <div className="fm-coupang-pick ds-listgroup ds-mt-4">
       <p className="ds-list__label">광고 · 쿠팡 파트너스</p>
       <div className="ds-list">
-        <p className="fm-coupang-pick__disclosure ds-mt-0 ds-mb-0" style={{ padding: '14px 16px 12px', fontSize: 'var(--ds-fs-body-sm)', lineHeight: 1.5, color: 'var(--ds-ink-2)', borderBottom: '1px solid var(--ds-line)' }}>{COUPANG_DISCLOSURE}</p>
+        <p className="fm-coupang-pick__disclosure ds-mt-0 ds-mb-0">{COUPANG_DISCLOSURE}</p>
         <ListRow title={pick.title} desc={pick.desc} size="S" chevron={false}
-          trail={<span className="ds-caption" style={{ color: 'var(--ds-ink-3)', whiteSpace: 'nowrap' }}>쿠팡 ↗</span>}
+          trail={<span className="ds-caption fm-coupang-pick__trail">쿠팡 ↗</span>}
           href={pick.url} target="_blank" rel="sponsored nofollow noopener noreferrer" onClick={onClick} />
       </div>
     </div>

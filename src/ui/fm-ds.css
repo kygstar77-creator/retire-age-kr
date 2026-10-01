@@ -673,3 +673,6 @@ button.ds-cal__cell { cursor: pointer; }
 .fm-gain__lead{display:block;font-size:var(--ds-fs-caption);font-weight:600;color:var(--ds-ink-2)}
 .fm-gain__line{display:block;margin-top:2px;font-size:var(--ds-fs-body);font-weight:700;color:var(--ds-ink);line-height:var(--ds-lh-tight)}
 .fm-gain__line .num{font-size:var(--ds-fs-title-3)}
+/* F1 쿠팡 칸(design/f1-coupang/fix.patch의 인라인 값 그대로 옮김 — 모양 변경 0) */
+.fm-coupang-pick .fm-coupang-pick__disclosure{padding:14px 16px 12px;font-size:var(--ds-fs-body-sm);line-height:1.5;color:var(--ds-ink-2);border-bottom:1px solid var(--ds-line)}
+.fm-coupang-pick .fm-coupang-pick__trail{color:var(--ds-ink-3);white-space:nowrap}

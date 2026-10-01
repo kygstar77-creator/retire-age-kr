@@ -3,6 +3,17 @@
 - 직원은 이 파일 전체를 읽지 말고 **자기 task-id(예: firemap-product-dev)로 검색해 해당 줄만** 읽는다. 자세한 근거가 필요하면 archive/2026-10-01.md에서 같은 제목으로 찾는다.
 - 끝나면 그 항목 밑에 "완료: … HH:MM" 한 줄. 다음 정리 때 완료 항목은 archive로 옮긴다.
 
+## ★★ 절전 근무 — 예약표가 안 바뀌었으니 각자 스스로 지킨다 (대역 22:30, 회의 21:24 결정 집행)
+- 사실(22:2x get_usage): 주간 한도 **70%**(21:24 67% → 1시간 +3%p, 목표 시간당 0.35%p의 약 8배). 회의 결정표 meeting/2026-10-01-powersave.md는 **적용 0** — list_scheduled_tasks에서 모든 cron이 원래 그대로. 회의 회차는 21:29 이후 활동 없이 'running'(권한 대기로 멈춘 것으로 봄, 확인 안 함). 이대로면 10/2 안에 100% → 스꾸도 멈춤.
+- **[지시·전원] 지금부터 10/4 21:00까지, 근무를 시작하면 powersave.md 표에서 자기 task-id 줄을 먼저 본다.**
+  - **정지 대상** firemap-dispatcher-2 · firemap-brand-researcher · firemap-brand-director · firemap-illustrator · firemap-motion-designer · firemap-venture-research-global · firemap-venture-research-kr · firemap-editor-en: 상황판 state '쉬는 중', last_output '절전 정지(10/4 21:00까지)'만 쓰고 **바로 끝낸다.**
+  - **횟수 축소 대상** firemap-soondol-deputy(00·06·12·18시만) · firemap-finishline-check(02·08·14·20시만) · firemap-artist · firemap-planner · firemap-copywriter · firemap-editor-web · firemap-designer · firemap-loop · firemap-improve · firemap-venture · firemap-venture-builder · firemap-visual-designer · firemap-watchdog · firemap-youtube-loop · firemap-video-producer: 지금 시각이 표의 절전 cron 시각(±20분)이 아니면 상황판만 갱신하고 끝낸다.
+  - **firemap-dispatcher**: 00·03·06·09·12·15·18·21시 회차만 투입, 회차당 1명, Agent model "sonnet". 그 밖 회차는 투입 0. 투입 1순위 = 아래 S1(쿠팡 계측).
+- [지시] **firemap-admin** 10/2 07:00 회차 첫 일: powersave.md 표대로 update_scheduled_task 적용 → list_scheduled_tasks로 되읽기 → 이 줄 밑에 "적용: … HH:MM". 권한 검사에 막히면 '막힘 확정' 한 줄만(재시도 금지) — 위 자기 절제 규칙이 계속 대신한다. get_usage 실측을 powersave.md 맨 아래에.
+- 막힘: 회의 회차(local_1cb54325) 21:29부터 멈춤 — 멈춘 근무 중지는 채팅 세션만 가능. 영향은 회의 결과 커밋 0뿐(결정 문서 2026-10-01-decisions.md·powersave.md는 있음) → 위 지시로 우회.
+- [지시·재지시] **firemap-product-dev**, 트랙:A, 기한 10/2 11:10 회차 첫 일(결정 D: 내일도 1번): S1 완료 기준은 '로컬 POST'가 아니라 **운영 firemap.kr/calc/salary·severance·unemployment-benefit ?fm_internal=1 에서 쿠팡 칸 각 1회 클릭 → 운영 firemap_events coupang_click 3행(internal) SQL**. 21:16엔 운영 클릭을 안 해서 계측이 미확인 그대로다. 클릭은 내부 표시라 수익·정책 문제 없음. 0행이면 원인 한 줄(번들·RLS·sendBeacon 등). 완료 줄 "완료: … HH:MM".
+- [판정] E-1 '치익' 교체(PD 21:22 [순돌이 검토]) — 대역이 부재 규칙으로 정함: **3Fn4VAUtPH0 삭제 안 함**(되돌릴 수 없고 PD 규칙 위반, 무인 videos.update·delete 거부 중). **firemap-video-producer**: 10/3 17:00까지 videos.list로 3Fn4VAUtPH0 상태를 읽어 사장님이 비공개로 바꿔 두었으면 e1_ds.mp4를 같은 meta로 10/3 19:30 예약 업로드, 아니면 E-1은 그대로 나간다(중복 공개 금지). 앞으로 모든 편은 deess.py+관문(-12dB·8~12kHz ≤ -25dB) 필수. **firemap-admin**: 결재함에 '휴대폰에서 됨 · YouTube Studio 앱 → 콘텐츠 → 3Fn4VAUtPH0 → 공개 상태 → 비공개(예약 해제) · 10/3 17:00까지 · 안 눌러도 됨(그대로 나감)' 한 줄, firemap-report 텔레그램 10/2 12:30 맨 위 2번째.
+
 - [순돌이 검토·21:15 안건] (총무 17:20) **Claude 주간 한도 62%, 하루 약 30%p씩 → 90%가 10/2 15:40쯤, 100%가 10/2 밤**(리셋 10/4 21:00). 스꾸도 같은 한도. 제안: 오늘 밤부터 발행·수익과 무관한 근무(조사·브랜드·예술가·대역 점검 주기) 절반, 채용 보류(총무 이미 0명). 10/2 07:00 총무 회차에 80% 넘으면 비필수 일시정지 착수. 근거 admin/usage.md.
 ## ★ 결승선 10/1 20:50~23:50 (점검관 20:52, 운영실장 :05·:35 투입)
 | # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
@@ -139,6 +150,12 @@
   - 상황판 제품 줄 권한 검사 → 다른 길 1회(위 20:23 admin) · 담당 firemap-admin · 기한 10/2 07:00
   - 데이터랩 앱 비밀값 → 결재함 2행(PC만) 그대로, 그동안 연령·성별은 persona.md 실측으로 · 담당 firemap-admin · 기한 사장님 귀환
   - guidegate 원격 지시문(6회째) → 로컬 관문 구조 변경(위 20:23 improve) · 담당 firemap-improve · 기한 10/2 09:00
+- 처리(대역 22:30) — 남은 막힘 전부:
+  - 절전 미적용·회의 회차 멈춤 → 맨 위 '절전 근무' 자기 절제 지시 + admin 07:00 적용 · 담당 전원·firemap-admin · 기한 10/2 07:00
+  - 유튜브 설명 쓰기 무인 거절(07:59~, 14시간) → 21:15 안건이었으나 회의 멈춤, 결재함 맨 위·텔레그램 그대로 · 새 업로드 때 설명란 쿠팡 줄 · 담당 firemap-report·firemap-youtube-loop · 기한 10/2 12:30
+  - guidegate가 dev에만 있음(dev→main 푸시 권한 거절, loop 21:54) → 10/2 09:00 [auto] 가이드는 관문 없이 나갈 수 있음. 원격 지시문 정지도 채팅 전용 → **firemap-editor 10/2 11:50 회차**: 09:00 [auto] 가이드 1편을 사후 aitell·편집, 기준 넘으면 고친 본을 dev에 · 담당 firemap-editor · 기한 10/2 12:30
+  - E-1 교체 → 위 [판정](삭제 안 함·사장님 휴대폰 선택) · 담당 firemap-video-producer·firemap-admin · 기한 10/3 17:00
+  - 상황판 제품 2줄 · 데이터랩 비밀값 · data.go.kr → 18:21·20:23 처리 그대로(admin 10/2 07:00 / 사장님 귀환 / 10/19 알림)
 - (풀림, 기록만) 쿠팡 본인인증 17:04 · Blender 16:49 · E-1 TTS 렌더 16:3x · X-KR-1 aitell 예외 판정.
 
 ## 결재 대기 요약 (사장님 손 — 상세 approvals.md)
@@ -175,4 +192,13 @@
 2. 대체 효과음: 경쟁 상위 채널 5개(수페TV·소수몽키 등)의 전환·강조 효과음을 들어 보고, 귀에 거슬리지 않는 짧은 소리(부드러운 클릭·팝·낮은 우드블록 등, 저작권 무료 출처 명시) 후보 3개 → 심사 3명 평균 6점 이상 → 틀에 기본값으로 교체. 효과음 음량은 목소리보다 충분히 낮게(경쟁 실측).
 3. 이미 공개된 영상: 유튜브는 공개 뒤 오디오만 바꿀 수 없다(API) — 조회수가 적은 영상이면 다시 렌더해 교체 업로드할지, 그대로 둘지 판단 근거(조회·노출)와 함께 decisions/log.md에. 앞으로 나갈 영상(E-1 등)은 새 소리로.
 4. 교훈: RULES.md(롱폼)·쇼츠 규칙에 '효과음 금지 목록·기본값' 추가.
+
+## [지시·긴급] 디자인 품질 프로젝트 — "토스 옆에 놓아도 안 부끄러운 화면" (사장님 10/01 22:24: "우리 개발한 페이지들 진짜 너무 못생겼다, 이 퀄리티는 어떻게 높일 거야")
+- 총괄: firemap-brand-director(디자인·브랜드 본부장). 팀: firemap-designer, firemap-visual-designer, firemap-editor-web, firemap-product-dev. 지금 착수.
+- **왜 못생겼나(가설, 1단계에서 실측으로 확인):** ① 심사 기준이 낮았다(AI 심사 3명 평균 6점이면 통과) ② 실제 잘 만든 서비스 화면과 나란히 놓고 비교하지 않았다 ③ 디자인 시스템이 코드 곳곳에 흩어져 개발자가 그때그때 만들었다 ④ 시안 없이 코드부터 만든 화면이 많다.
+1. **오늘 — 현실 진단:** 운영 화면 전부(첫 화면, 계산기 3종, 결과 화면, 도구 6개)를 375px·데스크톱으로 캡처하고, 같은 일을 하는 최고 화면(토스·카카오뱅크·뱅크샐러드·네이버 계산기·calculator.net 등, 공개 화면만) 옆에 나란히 놓은 비교판 work/research/design/quality/compare-*.png. 화면마다 '못생긴 이유' 5개(여백·글자 크기·위계·색·정렬·밀도·아이콘·숫자 표기). 무료 레퍼런스: WWIT(연구소 채택), Figma Community, 토스·KRDS 공개 디자인 문서.
+2. **10/2 — 디자인 시스템 v2:** Figma(연결·편집 됨)에 토큰(색 4·글자 6단계·여백 8배수·모서리·그림자)과 부품 15개(숫자 카드·입력·슬라이더·버튼·결과 문장·표·탭 등)를 먼저 그리고, src/ui에 같은 이름으로 옮긴다. 메모리 firemap-design-identity.md(숫자 1+행동 1·색 4·다크카드 1·TDS·KRDS·HIG·M3 출처)를 기준으로 하되 더 다듬는다.
+3. **10/3~ — 화면 다시 그리기:** 수익·이탈에 가까운 순(첫 화면 이탈 58.7% → 계산기 결과 → 쿠팡 칸). 시안은 Figma로 먼저, 코드는 그다음.
+4. **기준을 올린다(오늘부터 모든 화면 검수에 적용):** 심사 통과선 평균 6점 → **8점**, 질문은 "토스·뱅크샐러드 화면 옆에 놓았을 때 같은 회사가 만든 것처럼 보이나(1~10)". 비교판 없는 검수는 무효. 375px 실제 캡처 필수.
+5. **사람 눈 선택지(결재함에 올림, 비용은 실측해서):** 크몽·숨고 등에서 사람 UI 디자이너에게 핵심 화면 3개 검수·시안을 맡기는 안 — 가격·기간·저작권 조건을 조사해 결재함(휴대폰에서 됨·링크)에. 사장님 결재 전엔 쓰지 않는다.
 

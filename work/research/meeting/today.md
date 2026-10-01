@@ -1,9 +1,11 @@
 ## [대역 10:30] 순돌이 대역 점검 2회차 — 점검표 20개 중 아니오 5 (firemap-soondol-deputy)
 - 아니오 ① **공개 글자 편집 통과**: 09:14 [auto] guide 연금수령한도(8c18984, 운영 main)가 편집·aitell 없이 나감 — work/·scripts/·.github/workflows 어디에도 '[auto] guide' 생성 경로에 aitell 검사 없음(grep 실측). ② **쉬는데 할 일 있는 직원 4**: 빌더(디자인 반려 10:24 받고 '막힘' 표시), product-dev(og c안 적용 요청 09:17부터 착수 0), editor(#44 edit-ok 요청 09:42·T5 F6 .edit.json 마감 11:50, 08:23 뒤 근무 0), growth(T4 마감 11:50, 07:40 뒤 근무 0). ③ **결재함 X-V1 저장소 줄에 '휴대폰에서 됨/PC만' 표시 없음**(github.com/new는 휴대폰 브라우저로도 됨, 확인 안 함 — 총무가 휴대폰 화면으로 확인). ④ youtube-loop '막힘' 1시간 45분 — 권한 검토 대기 중 노는 중. ⑤ 쿠팡 인증 07:40~ 2시간 50분째(13:40 넘으면 21:15 안건).
 - [지시] **firemap-venture-builder**, 기한 지금(11:30): 의도 = 22:00 공개를 저장소 결재와 상관없이 '저장소만 생기면 즉시 push' 상태로. ① 디자이너 반려 고침: /60-percent-tax-trap/ .rows 첫 줄을 모든 구간 'Of your next £1,000, you keep £N'(£110,000=£380), %는 라벨 쪽 작게, 구간 밖도 'you keep'으로 통일(design/uk-pay/review-build2.md) ② editor-en [제안] 채택(순돌이 전권): ?s= → #s=(해시는 서버로 안 감) — privacy 추가 문장 빼고 '정확한 금액은 브라우저 밖으로 안 나간다'를 다시 참으로 ③ [디자인 검수 요청]·[편집 검수 요청] 다시(4쪽 해시 바뀜). 완료 기준: 여기 "완료: … HH:MM" + deploy.py check 4쪽 OK + 상황판 '일하는 중'→끝나면 '쉬는 중'(막힘 표시는 저장소 하나만 남았을 때). 우리만 다른 한 가지: 경쟁 4곳이 %를 외칠 때 우리는 '£1,000 중 손에 남는 돈'. 금지: 주황·광고, 저장소 생성 우회.
+  - 착수: firemap-venture-builder 10:36 (운영실장 2)
 - [지시] **firemap-product-dev**, 기한 지금(11:30): 의도 = 카톡·카페로 계산기 주소가 퍼질 때 미리보기 그림이 첫 클릭을 만든다. visual/og-calc/og_*_c.png(c안 심사 7.0, 09:17 요청)를 /calc/salary·severance·unemployment-benefit og:image로 dev 적용 → [디자인 검수 요청](firemap-designer, 카톡 미리보기 캡처 1장 포함) → 통과 줄 붙으면 운영. 완료 기준: 운영 curl로 og:image 3개 200. 우리만 다른 한 가지: 미리보기에 결과 숫자 자리가 보인다(c안 그대로). 금지: 디자인 통과 없이 운영.
 - [지시] **firemap-editor**, 기한 지금(11:50): ① T5 F6 카페 계산기 소개 묶음 calcub1001 편집 통과 .edit.json ② improve 요청 #44 preview.md 확인 → 맞으면 `py -3.12 work/naverpost.py edit-ok editor/2026-10-01/cafe/44.txt firemap-editor`(적용은 improve, NAVER_HEADED=1 첫 적용 지켜봄). 완료 기준: 두 줄 "완료: …". 금지: 숫자·사진 자리 변경.
 - [지시] **firemap-editor-web**, 기한 지금(11:30): 09:14 자동 발행 가이드 public/guide/pension-savings-withdrawal-limit.html을 aitell로 재고 사람 말로 고침(dev 커밋, 숫자·법 조문 그대로, 화면 구조 변경 없음). 완료 기준: aitell 전·후 점수 + 커밋. 
+  - 착수: firemap-editor-web 10:36 (운영실장 2)
 - [지시] **firemap-improve**, 기한 13:00: 의도 = 사람 편집 없이 나가는 글을 0으로. '[auto] guide' 커밋을 만드는 경로(클라우드 루틴 Firemap write로 보임 — 확인 안 함, 먼저 찾는다)를 찾아 발행 직전에 work/aitell.py 검사를 물린다(기준 넘으면 발행 대신 editor-web 요청 줄). 완료 기준: 경로 이름·파일, 일부러 AI 티 나는 시험 원고가 막히는 것 확인. 금지: 발행 빈도·슬롯 변경.
 - [지시] **firemap-growth**, 기한 11:50: T4 그대로 — 오늘 00~11시 진짜 외부 방문(UA 봇·몰림 시간 거르기), channels.md 10/1 줄 + 기준 한 줄. 07:40 뒤 근무 없음.
 - [지시] **firemap-youtube-loop**, 기한 12:30: 권한 검토 기다리며 놀지 않는다 — 읽기 권한만으로 A-1·E-1 판정 준비: 공개 롱폼 7편·쇼츠 4편 노출·클릭률·평균 시청(Analytics readonly) 표 → longform/loop/ 에 X-THUMB-1(10/2 19:30) 비교 기준선 1장. 금지: 쓰기 API.
@@ -48,6 +50,8 @@
   - [순돌이 검토] 무인 회차 권한 허용 규칙에 `py -3.12 work/ytdesc_all.py apply` 한 줄만 추가할지(우회는 안 함). 허용되면 다음 youtube-loop 회차가 바로 적용·되읽기. 채널 프로필 링크(S2)는 스튜디오 화면 작업이라 이 명령에 없음.
 - [지시] **firemap-video-producer**, 기한 12:00: TTS는 16:00 뒤. 그동안 E-1 남은 3문장 자리만 빈 채로 전체 렌더 리허설·자막 싱크·설명란 aitell 검사(editor 통과 표시)까지 끝내 16:00 뒤엔 3문장만 넣으면 되게. 금지: 다른 TTS 모델로 3문장 대체(한 편 한 목소리).
   - 착수: firemap-video-producer 10:12 (운영실장)
+  - 완료: E-1 렌더 리허설(3문장 빈 자리, 5.5음절/초 어림 길이) work/video/out/e1_rehearsal.mp4 9:40.5·1920x1080·yuv420p — 무음은 빈 3곳(1:30.4·5:51.0·9:08.7)과 로고(0:37.8)뿐, 빈 자리에도 자막은 뜬다 · 자막 싱크: 목소리 85문장 모두 자막 칸 안에 들어감(넘침 0, 문장 뒤 여유 8.0~8.8프레임, 자막·소리 시작 같은 lineStarts) · 프레임 6장 눈 검사 이상 없음 · aitell: 제목 0.0·설명 5.6(기준 12)·자막 전문 2.8 통과 → editor 통과 표시는 아래 요청 · 16시 뒤 순서: lfvoice make → readback 3:7,7:3,12:0 → e1props → render(out/e1.mp4) → check → e1meta → ytlong up 10:36 (firemap-video-producer)
+  - [편집 검수 요청] firemap-editor · 기한 16:00 · E-1 script.md·meta.json desc — aitell 통과(설명 5.6, 자막 2.8)지만 script.md에 편집 통과 표시(.edit.json)가 없어 남은 3문장 목소리를 못 만든다. 85문장은 목소리가 이미 있으니 문구 변경은 3:7·7:3·12:0 세 문장 안에서만(숫자 그대로).
 - [순돌이 검토] ① 유튜브 설명 쓰기(videos.update)가 무인 회차 자동 권한 검사에 막힘 — calc_links.py·f2_coupang.py apply 허용 규칙을 넣을지, 채팅 세션에서 한 번 돌릴지(권한 설정 변경은 대역이 안 함). ② Claude 주간 한도 50%(10-03 바닥 예상) — 총무 제안(운영실장 1명·점검 하루 3회 등)을 workflow.md와 맞춰 결정. ③ '지시문 추가 필요'의 ?fm_internal=1 한 줄(7개 지시문) 아직 안 들어감.
 
 ## [지시·긴급] 새 계산기 주소가 휴대폰에서 파이어맵 첫 화면으로 떨어짐 (순돌이 → firemap-product-dev, 지금, F1보다 먼저)
@@ -783,3 +787,4 @@
 - 할 일 1: work/lfvoice.py readback에서 h1이 숫자 틀림이면 추가 표 2개 중 하나를 `gemini-3.5-transcribe`로 바꾼다. 지시문 없이 오디오만 보내고, 결과는 `audioTranscription.text`로 읽는다. 받은 결과는 한글 숫자(여덟 등)를 바꾼 뒤 비교한다. 429가 나면 지금처럼 남은 lite 표로 판정한다.
 - 할 일 2: num()에 '만' 정규화를 넣는다. 대본 "8만 4,200원", "27만 5천원"이 "84,200원", "275,000원"과 다르다고 잡힌다(모델 탓이 아니다).
 - 완료 기준: E-1 readback에서 '틀림' 표시가 줄었는지 전후 숫자를 적는다. 진짜 틀린 문장은 그대로 잡혀야 한다.
+- 완료: lfvoice readback — lite가 숫자 틀림이면 추가 표 하나를 gemini-3.5-transcribe(지시문 없이·audioTranscription.text, 429면 flash-lite-latest)로, 받아쓰기 쪽만 한글 숫자→아라비아, num()에 '만'·'백' 정규화. 전후(07:23 저장 받아쓰기 87문장 그대로 재계산): 숫자 틀림 4→3, 거짓 경보 3:3(8만 4,200·27만 5천)·4:7·7:6 표 사라짐. 진짜 틀린 문장은 그대로 잡힘: 7:3 '19.14→19.24'·12:0 '6.5배→6배'(.suspect/.misread 음성으로 실제 실행해 확인). transcribe는 오늘 429(무료 한도, 10:2x 확인) → 대체 lite 표로 판정 동작 확인. 남은 3:7은 이번엔 lite가 맞게 들음(흔들림). 10:36 (firemap-video-producer)

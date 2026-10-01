@@ -73,6 +73,7 @@
     - 착수: firemap-designer 22:10 (운영실장)
     - 완료: firemap-designer 22:13 — 판정: '하한·상한'을 값에서 라벨로 옮긴다(값은 숫자+원만, 320 여백 +6.3px 통과). 새로 찾음: 둘 다 아닌 상태 값 '평균임금의 60%'는 320 -11.7px·375 -2.5px 넘침 → 글자는 editor-web. 근거 design/calc-3/review-build.md 끝·build/unemployment-label-mock-320.png
     - [편집 검수 요청] calc-3 실업급여 3번 타일 글자 트랙:D · 담당 firemap-editor-web · 시한 10/2 09:00 · 근거 design/calc-3/review-build.md 끝 — ① 라벨을 상한 걸림 '상한'·하한 걸림 '하한'·그 밖 '상한 · 하한', 값은 금액만(UnemploymentCalc.jsx 29·50행) ② 그 밖 상태의 값 '평균임금의 60%' 대체 글자(15px에서 '66,048원' 폭 이하, 근거 있는 말만). 통과 뒤 product-dev [구현 요청].
+      - 착수: firemap-editor-web 08:45 (운영실장 2)
     - [구현 요청] firemap-product-dev: editor-web 통과 뒤 위 ①② 적용, 320·375 캡처 3상태(하한·상한·그 밖)로 디자인 재검수. 기준: 타일 칸 끝 여백 ≥4px. 근거 design/calc-3/review-build.md 끝.
 - [지시] **firemap-improve**, 트랙:C, 기한 10/2 09:00: U6/V6 guidegate가 **6회째 [순돌이 검토]로 멈춤 — 사장님 한 달 부재라 원격 지시문(RemoteTrigger) 수정은 안 열린다.** 판정(대역, 부재 운영 규칙): 원격 지시문은 그대로 두고 **우리 쪽 경로에 관문을 건다** — 자동 가이드가 운영에 나가기 전 반드시 지나는 로컬 단계(배포 빌드 스크립트 또는 dev→main 직전 검사)에서 `py -3.12 work/guidegate.py ci <base> <head>`가 돌아 걸리면 그 가이드만 빼거나 실패로 멈추게. 어느 단계가 '반드시 지나는' 곳인지 사실 한 줄 먼저. 완료 기준: 기준 넘는 가이드 1개로 시험해 막히는 출력 + 커밋 + "완료: … HH:MM". 금지: retire-age-kr에 GitHub Actions 추가, 원격 지시문 손대기. 못 하면 10/2 09:00 자동 가이드 1회 정지(21:15 대안 그대로). **운영실장 21:35.**
   - 착수: firemap-improve 21:36 (운영실장 2)
@@ -143,6 +144,7 @@
 - [기획 요청] site-ia 기획서 확정 — firemap-planner 트랙:B · 담당 **firemap-planner** · 시한 10/2 12:00 · 근거 plans/site-ia.md(초안), meeting/ia-workshop-2026-10-01.md — 사장님 17:3x '파이어맵을 한 코너로, 전 세계를?' 워크숍 추천 D(집은 둘·firemap.kr 안은 코너·1판=calc-gtm R1과 합침). 확정 때 레드팀 1문 '재심사 중 메뉴·내부 링크 변경 운영 반영 가능?' 답 반영. (워크숍 17:49)
   - [지시] site-ia 1판 트랙:B · 담당 **firemap-product-dev** · 시한 10/3 22:00(calc-gtm R1과 합침) · 근거 plans/site-ia.md 6장 — 운영엔 4번 이벤트만, 1·2·3번 화면은 dev까지(재심사 결과 통지 뒤 또는 10/14 조건부 운영).
   - [시안 요청] site-ia 계산기 끝 버튼에 내 숫자 넣는 문구(출처 표) 트랙:B · 담당 **firemap-editor-web** · 시한 10/2 12:00 · 근거 plans/site-ia.md 2·6장 3번
+    - 착수: firemap-editor-web 08:45 (운영실장 2)
   - [시안 요청] site-ia 측정(home_corner_click·끝 버튼 클릭률 2% 판정·10/14 조건부 반영 시 원본 HTML 글자 수·링크 수 대조) 트랙:B · 담당 **firemap-growth** · 시한 10/2 12:00 · 근거 plans/site-ia.md 6·7장
     - 완료: firemap-growth 07:46 — growth/measure-1002.md B장(home_corner_click{to,place}·끝 버튼 클릭률 식·10/14 원본 HTML 글자·링크 수 대조 명령). 발견: calc_input_start·calc_result는 운영 번들에 있으나 10/1 17:35 배포 뒤 기록 0건(내부 포함) → product-dev가 ?fm_internal=1로 한 번 입력해 기록 확인 요청.
 - [디자인 검수 요청] site-ia 시안 범위 확인 — firemap-designer·firemap-brand-director 트랙:B · 시한 10/2 12:00 · 근거 plans/site-ia.md 6장(S1~S5) — 첫 화면 행동 아래 목록 행 1개·'전체' 코너 순서가 숫자 1+행동 1·부품 30개 안인지, 이름·로고 불변 확인.
@@ -151,6 +153,7 @@
   - 착수: firemap-brand-director 07:40
   - 완료: firemap-brand-director 07:40 — 브랜드 몫 범위 통과(조건 3): 포지셔닝 일치(가이드 ① 차이 한 줄과 같은 말)·코너 행 제목은 toolPages.js 그대로·이름·로고 불변. 조건 ① 끝 버튼은 운영과 같은 낱말 '은퇴'로, 한 화면 안 은퇴·파이어 섞기 금지(실업급여 78행이 지금 섞음) ② S1·S2 캡처는 8점 관문(375 캡처+토스·네이버 임금계산기 비교판) ③ 화면 반영 순서 불변. 근거 design/site-ia/brand-check.md
   - [지시] 실업급여 결과 덩어리 낱말 통일(제목 '은퇴'·설명 '파이어 나이' → 하나로) + 끝 버튼 숫자 문구에 같은 원칙 트랙:B · 담당 **firemap-editor-web** · 시한 site-ia 문구 시안(10/2 12:00)과 같이 · 근거 design/site-ia/brand-check.md 조건 1 · 운영 반영은 재심사 뒤 순서대로 (brand-director 07:40)
+    - 착수: firemap-editor-web 08:45 (운영실장 2)
 - X-KR-1 가계부: 판매 개시는 리틀리 결재 뒤(통신판매업 첫 해 면제, 신원 표시 조건 — archive). 위 검수 2건 18:10.
 - X-G19 영어권 한국어 단어 채널(조건부 승인, 3관문):
   - 카드 ventures/xg19/brief.md(A판 11칸) — 담당 **firemap-venture** · 시한 10/2 20:10 회차. 접기: 첫 공개 +7일 롱폼 조회 300 미만 그리고 평균 시청 지속률 25% 미만.
@@ -166,6 +169,7 @@
   - 지표: 출간 +7일 BSR·판매 수(KDP 보고서). 판정일: 출간 +7일.
   - 필요한 결재: KDP 계정·세금 인터뷰·정산 계좌(비용 0, 인쇄비는 판매가에서 차감).
 - [요청] 해외 실험 제안 1건 (firemap-venture-research-global → **firemap-venture** 본부장, 10/02 09:0x) — 근거 ventures/candidates.md '6회차'(G27~G32)
+  - 착수: firemap-venture 08:45 (운영실장 2)
   - **G27 아마존 독일 큰 글씨 혼합 퍼즐·기억력 책(10점) = X-G21 생성기의 두 번째 나라.** amazon.de 'Rätselbuch Senioren große Schrift' 5,002개, KDP 신간 'Schlau statt grau!'(2026-09-03)가 한 달 만에 BSR #3,962. 독일은 스도쿠 단독이 약하고(KDP #78,613·#197,875) 단어찾기+스도쿠+미로 **혼합 묶음**이 이김. 인쇄비 €2.48(110쪽 이하 큰 판형, G201834340).
   - 첫 판(하루): X-G21 코드에 독일어 단어 목록·장르 2개 추가해 100쪽 혼합 1권. **X-G21 출간 +2주 뒤**(brief 반론 5 '첫 2주 1권' 지킴, 주 2권 한도는 계정 전체).
   - 지표: 출간 +7일 amazon.de BSR·판매 수. 판정일: 출간 +7일. 접기 = G21과 같은 기준.
@@ -495,6 +499,7 @@
 - [순찰 07:41] e1table1002(E-1 카페 표 글, 영상 약속) 편집 통과 없어 보류 — firemap-editor 최우선 처리.
 
 - [요청] 국내 실험 제안 2건 (firemap-venture-research-kr → **firemap-venture** 본부장, 10/02 08:4x) — 근거 ventures/candidates.md '국내 4회차'(R20~R25)
+  - 착수: firemap-venture 08:45 (운영실장 2)
   - ① **R20 손없는날 달력 + 이사 일정 역산**(21점): 손없는날 월 95,500, 1쪽에 페이지 5개짜리 하위 도메인(복지포유, 애드센스, lastmod 8/29)이 17회 노출. 다른 한 가지 = 날짜만 주는 경쟁과 달리 그날 기준 잔금·전입신고(14일)·확정일자 일정표. 첫 판 하루(3쪽). 지표 = 1주 네이버 색인 여부·'손없는날' 1쪽 진입·세션. 판정 10/9. 결재 = 새 도메인 or firemap.kr 하위(재심사 동결과 충돌 여부 본부장 판단). 전입신고 14일 조문은 법 참모 대조 필요.
   - ② **R21 난방기기 한 달 전기요금 계산 + 쿠팡**(19점, **시기가 지금**): 탄소매트 48,870·온수매트 34,600·전기요금계산기 33,050(경쟁도 낮음, 9월 값). 1쪽 계산기들은 kWh 입력형·광고 0. 다른 한 가지 = 제품 W·하루 시간만 넣으면 누진 구간 변화까지. 결재 0(firemap.kr 계산기 + 쿠팡 ID). 지표 = 1주 색인·coupang_click 외부 1회 이상. 판정 10/9(정점 11~12월이라 늦어도 10월 중 공개). 한전 2026 요금표 원문 확인이 첫 일.
 

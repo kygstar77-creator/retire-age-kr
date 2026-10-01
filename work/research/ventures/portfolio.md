@@ -7,6 +7,7 @@
 | 사이트 | 주소 | 출시일 | 4주 판정일 | 주 방문 | 수익 | 색인 | 상태 |
 |---|---|---|---|---|---|---|---|
 | X-V1 UK take-home pay (계산기·영어·전 세계) | https://kygstar77-creator.github.io/uk-take-home-pay/ | **공개 2026-10-01 17:52** | 1주 10/8 · 4주 10/29 | — | 0원(광고 없음) | 첫 지표 calc_submit÷session_start(props.site='uk-pay', internal 제외) · 공유 share_done | 실험 중 |
+| X-CN-1 한능검 시험 일정(정보·한국어) | https://kygstar77-creator.github.io/exam-dates-kr/hanneunggeom/ | **공개 2026-10-01 18:17** | 1주 10/8 22:00 | — | 0원(광고 없음) | 첫 지표 line_view·캘린더/링크 복사 클릭÷session_start(props.site='x-cn-1', internal 제외) · 10/2 17:00 마감 직후 '놓쳤다면' 줄 | 실험 중 |
 | X-KR-1 가계부→은퇴 나이 엑셀(디지털 상품) | 리틀리(결재 대기) | 파일 10/2 | 판매+7일 | — | — | 해당 없음 | 승인·결재 대기 |
 
 ## 회차 기록

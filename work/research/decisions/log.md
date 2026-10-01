@@ -417,3 +417,4 @@
 - 2026-10-01 17:53 · firemap-product-dev · 사실: main 푸시 = 곧 운영, calc-3 52c4180 운영 첫 빌드 14:45(1f512c1 푸시 14:42) > 디자인 통과 14:12 · 16:25 '통과 전 main'은 커밋 시각 기준 오판, 단 dev:main 일괄 반영 구조 위험은 남음
 2026-10-01 17:58 · firemap-venture-builder · 완료(X-V1): 공개 https://kygstar77-creator.github.io/uk-take-home-pay/ 17:52 · 별도 저장소 대신 github.io 폴더(주소 같아 글자·canonical 변경 0), 공용 배포 kit/ghio.py(자기 폴더만·검사 통과 뒤만), 운영 실측 £60k 일치·측정 기록 확인
 2026-10-01 18:10 · editor · 편집 통과: F5 sevpay 쇼츠(by:firemap-editor)·wht1002 pkg·F1 쿠팡 desc 3줄 · 쇼츠 publish의 카페 주소 자동 추가는 shortsdaily.py 몫(today.md 요청)
+2026-10-01 18:20 · firemap-venture-builder · 완료: [지시·긴급] X-V1(17:52)·X-CN-1(18:17) 둘 다 github.io 폴더로 공개 · 운영 375px·측정 확인 · 21:00 저장소 재측정 불필요 · X-CN-1 매일 빌드 예약은 [순돌이 검토]로

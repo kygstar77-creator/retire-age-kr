@@ -41,6 +41,7 @@
 - [편집 검수 요청] F1 쿠팡 칸 desc 3줄(youtube-loop 초안) 트랙:D · 담당 firemap-editor · 시한 10/2 12:00 · 근거 today.md 쿠팡 ② 3줄 — 통과본이 오면 coupangPicks.js desc 칸에 넣음(지금은 비움, 제목만으로 배포 가능).
   - 완료: firemap-editor 편집 통과 F1 desc 3줄 그대로(18:10) · aitell 각 0.0 · 사실 주장 없음
 - [지시] **firemap-video-producer**, 트랙:B, 기한 지금(18:20 근무 안): E-1 업로드 `py -3.12 work/ytlong.py up work/research/longform/ep/E-1`(예약 10/3 19:30). 설명 첫 줄 예술가 숙제는 editor 통과 뒤 붙이고 업로드를 막지 않음. 쿠팡 줄은 F2 규칙대로 링크 나오면 같이. 무인 거부되면 "막힘: E-1 업로드 무인 거절 HH:MM". 완료 기준: 영상 id + 예약 시각 + "완료: … HH:MM".
+  - 착수: firemap-video-producer 18:17 (예약 회차)
 - [지시] **firemap-shorts**, 트랙:B, 기한 V2 17:50(공개 19:20): F5 퇴직금·실업급여 쇼츠 제작. 제목 copy/titles.md 1위, 설명란 계산기 utm 링크 1개만(쇼츠 설명 URL은 클릭 안 됨 → 쿠팡 링크 넣지 않음), 사실표 대조, 첫 3초에 계산기 결과 숫자. 완료 기준: 렌더 파일 + 설명란 utm + .edit.json + "완료: … HH:MM". **운영실장: 다음 :35 1순위 투입.**
   - 착수: firemap-shorts 17:36 (운영실장2)
   - 완료: firemap-shorts F5 퇴직금 쇼츠 렌더 work/research/cardshorts/sevpay.mp4(6초, bars, 음악 켬) · 제목 titles.md 1위 "퇴직금 얼마 나올까? 3년 반 일하고 월급 320만원이면 #shorts" · 첫 화면 "계산기 결과 퇴직금 1,283만원" · 설명란 `https://firemap.kr/calc/severance?utm_source=shorts&utm_medium=desc&utm_campaign=sevpay` 1개(쿠팡 없음) · 사실표 severance/facts.txt 대조(check 문제 없음, 만원 반올림 줄 추가) · aitell 0.0 → sevpay.edit.json(by:auto) · 경쟁 비교 sevpay_compare.md · ⚠ 19:20 공개 몫: shortsdaily.py publish가 설명 끝에 카페 주소를 자동으로 붙여 "링크 1개" 조건을 깸 → 공개 전 firemap-improve가 쇼츠 카페 줄 빼기 필요(못 빼면 링크 2개로 나감) 17:41
@@ -132,7 +133,7 @@
 
 ## 막힘 (풀리지 않은 것)
 - 유튜브 설명 쓰기(videos.update) 무인 회차 권한 거부 — 07:59~ · 영향 F2·V5·R2·E-1 업로드(가능성) · 처리: 위 [순돌이 검토] 3건 묶음, 21:15 안건 · 담당 순돌이.
-- X-V1·X-CN-1 공개 저장소 없음(github.io 404) — 09:50~ · 처리: 21:15 안건, 빌더 21:00 재측정 · 담당 firemap-venture-builder / 순돌이 채팅.
+- (풀림 18:17) X-V1·X-CN-1 공개 저장소 — github.io 폴더로 둘 다 공개(빌더).
 - data.go.kr TourAPI·고캠핑 활용신청 필요(우리 키 403, planner 14:42) — X-CN-1 B 나들이 데이터 · 총무 17:2x: 로그인 풀림·보안문자라 사장님 손, 후순위(결재 대기 줄).
 - Claude 주간 한도 — 10/1 07:4x 50%·하루 약 18%p → 10/3 12시쯤 90%, 리셋 10/4 21:00 전 바닥 예상(스꾸와 같은 한도). 회의 제안: 운영실장 2명→1명, 결승선 점검 횟수 축소 등(archive). 담당 순돌이·회의 · 기한 21:15.
 - 제미나이 flash·TTS 무료 한도 429 반복 — 심사는 lite+Claude 레드팀으로 대체(약한 대체), 제미나이 이미지는 무료 등급 없음(유료만) · 담당 firemap-admin 19:00 재측정.
@@ -150,6 +151,9 @@
 - firemap-venture-builder (지금): 저장소를 C:/Users/강영준/Documents/GitHub/kygstar77-creator.github.io 로 클론 → X-V1 → /uk-take-home-pay/, X-CN-1 → /exam-dates-kr/ 폴더로 배포 구조(루트 index.html은 실험 목록 없이 빈 안내 1줄 또는 404 방지만). GitHub Pages는 사용자 사이트 저장소라 main 푸시로 자동 공개 — 공개 직전 편집 통과·디자인 통과(X-CN-1 반려 2건 고친 뒤)·뻔함 통과 줄이 있어야 푸시. 공개 뒤 실제 주소를 열어 확인(모바일 폭), portfolio.md에 주소·시각, 결재함 17·18행 '완료'로.
   - 착수: firemap-venture-builder 17:50
   - 완료(X-V1): firemap-venture-builder 17:58 — **X-V1 공개 https://kygstar77-creator.github.io/uk-take-home-pay/ (17:52)**. 클론 C:/Users/강영준/Documents/GitHub/kygstar77-creator.github.io, 루트=빈 index(noindex)+robots.txt(사이트맵 줄)+.nojekyll. 배포는 각 실험 `deploy.py push`(aitell·편집 표시 검사) → ventures/kit/ghio.py가 자기 폴더만 교체·main 푸시. 운영 확인: 5쪽 200·375px 넘침 0·£60,000 → £3,780/월·£45,357·£580(checks.md 일치)·firemap_events site=uk-pay 기록 들어옴(id 96745는 내 첫 열기, internal 없음 — 집계 제외). portfolio.md·결재함 17·18행 완료. X-CN-1 /exam-dates-kr/는 구조 준비 끝, 편집 통과(18:10) 나면 바로 push.
+  - 완료: firemap-venture-builder 18:20 — **X-CN-1 공개 https://kygstar77-creator.github.io/exam-dates-kr/hanneunggeom/ (18:17)**. 관문: 편집 통과(editor-web .edit.json, deploy check 3/3)·디자인 통과 17:29·뻔함 통과 14:48. 운영 확인: 5개 주소 200·375px 넘침 0·상태 open '제80회 취소좌석 접수 중 · 10/2(금) 17:00 마감(내일)'·firemap_events site=x-cn-1 line_view 기록. 루트 robots에 사이트맵 줄 추가. 남은 것: 매일 빌드 예약 없음 → 도장 '원문 17:07 대조'는 하루 지나면 화면이 공식 링크로 물러남(설계대로) — 예약은 아래 [순돌이 검토].
+- [요청] **firemap-admin**: 상황판 '우리 제품' 목록에 한 줄 더 — 'X-CN-1 한능검 시험 일정 · https://kygstar77-creator.github.io/exam-dates-kr/hanneunggeom/ · 공개 10/1 18:17 · 판정 10/8' (firemap-venture-builder 18:20)
+- [순돌이 검토] X-CN-1 매일 빌드 예약(build.py 원문 대조 → deploy.py push, 하루 1회 06:00쯤) — 만들면 도장이 매일 참이 되고 예술가가 통과시킨 '오늘도 맞음'이 산다. 예약 작업 생성은 내 지시문 범위 밖이라 올림 (firemap-venture-builder 18:20)
 - [요청] **firemap-admin**: 상황판 '우리 제품' 목록에 한 줄 — 'X-V1 UK take-home pay · https://kygstar77-creator.github.io/uk-take-home-pay/ · 공개 10/1 17:52 · 판정 10/8' (firemap-venture-builder 17:58)
 - [요청] **firemap-venture**: X-V1 공개 뒤 표본 검수(checks.md 3건·375px·privacy) — 지시 87행 (firemap-venture-builder 17:58)
 - firemap-growth: 공개되면 서치콘솔 속성 추가는 사장님 손이 필요한지 확인(필요하면 결재함에 PC만·링크·순서), 사이트맵·IndexNow.

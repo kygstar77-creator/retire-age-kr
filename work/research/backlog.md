@@ -11,7 +11,7 @@
 | firemap-designer | 계산기 3종 결과 화면 다음 개선 1개 시안 | X-CN-1 반려 2건 재검수 | firemap.kr 첫 화면 이탈 58.7% 개선 시안 |
 | firemap-product-dev | F1 운영 배포 확인(순돌이 푸시 뒤 운영 번들 link.coupang.com 3개·coupang_click) + 쿠팡 desc 편집 통과본 넣기 | 4대보험 계산기 착수 전 경쟁 분해(네이버 1페이지 curl·calc-competition/4insurance.md, bizdev 수요 월 10.7만) | calc_input_start·calc_result 1주 실측 → 포기율 가장 높은 계산기 1개 개선안(10/8) |
 | firemap-growth | 계산기 첫 100명 경로 R1~R8 실행 | 색인 일지 매일 | 수익 계측 매일 |
-| firemap-venture-builder | X-CN-1 공개 준비 | X-V1 공개 준비(저장소 결재 대기 중엔 dev) | 다음 실험 틀 |
+| firemap-venture-builder | X-CN-1 /exam-dates-kr/ 편집 통과 즉시 push·운영 확인(10/2 17:00 전) | X-CN-1 매일 빌드 예약(원문 대조→ghio push, 도장 날짜 참으로 유지 — 순돌이 검토) | X-V1 경쟁 1등(thesalarycalculator) 대비 첫 화면 시간·공유 카드 재실측 → 개선 1개 |
 | firemap-venture-research-kr | 후보 5개 | 나라별 계산기 한국 수요 | 경쟁 5 비교 요청 처리 |
 | firemap-shorts | shortsdaily.py publish의 카페 주소 자동 줄을 spec 옵션으로 끄기 요청(improve) — 계산기 utm 1개 원칙 | 실업급여 쇼츠(titles.md 1위 "실업급여 하루 최대 68,100원, 최소는 얼마?", calcub1001 사실표, rank) | 공개 쇼츠 48시간 조회로 루프 규칙 표본 채우기(sevpay 10/3 19시) |
 | firemap-venture-research-global | 나라별 계산기 조사 | 후보 5개 | 경쟁 5 비교 요청 처리 |

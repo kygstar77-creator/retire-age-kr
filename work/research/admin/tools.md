@@ -1,5 +1,5 @@
 # 도구 장부 — 총무·인사팀(firemap-admin)
-마지막 실측: **2026-10-01 07:49** (2회차, 바뀐 줄만 고침 — 나머지는 1회차 23:39 값). 값은 전부 이 회차에 직접 호출해서 잰 것. 키·토큰 값은 적지 않는다.
+마지막 실측: **2026-10-01 17:2x**(운영실장 투입 회차 — 쿠팡·data.go.kr·Claude 한도 줄만) / **07:49** (2회차, 바뀐 줄만 고침 — 나머지는 1회차 23:39 값). 값은 전부 이 회차에 직접 호출해서 잰 것. 키·토큰 값은 적지 않는다.
 
 | 도구 | 상태 | 계정(전용/공유) | 남은 한도·만료 | 누가 쓰나 | 확인 방법 · 비고 |
 |---|---|---|---|---|---|
@@ -15,7 +15,9 @@
 | 유튜브 업로드 토큰 (youtube_token.json) | **정상** | 파이어맵 채널(구독 39) | refresh token 있음, 갱신 성공(액세스 만료 00:35 → 자동 갱신) | 영상 PD·쇼츠 | ytupload.creds() + channels.list(mine) |
 | 유튜브 분석 토큰 (youtube_analytics_token.json) | **정상** | 파이어맵 채널 | refresh token 있음, 갱신 성공 | 유튜브 총괄·카피라이터 | ytanalytics.creds() |
 | 네이버 로그인 (naver_profile) | 쿠키 살아 있음 | 파이어맵 ID | NID_AUT·NID_SES 만료 **2026-10-26 23:34** (27일 남음) | 글쓰기·감시 | storage_state.json 쿠키 만료만 봄(가벼운 확인). **글쓰기 권한(logged_in deep)은 발행 잠금과 겹쳐 이번엔 안 봄** — 쿠키가 살아도 글쓰기만 401인 사례 있음(naver-write-ip-block). 블로그는 STOP_blog로 정지 중 |
-| 쿠팡 파트너스 | 확인 안 함 | kygstar77@naver.com, ID AF9074391 | — | 작가·유튜브 | 크롬 로그인 유지 여부는 이번 회차에 못 봄(Chrome 확장 미사용). 다음 회차 |
+| 쿠팡 파트너스 | **본인인증 완료(10/1 17:04 사장님)** | kygstar77@naver.com, ID AF9074391 | — | 유튜브 루프·제품 개발 | 링크 발급은 youtube-loop 17:40 지시. 쿠팡 인플루언서(influencers.coupang.com) 첫 화면 PC 크롬 열림 17:2x, 신청은 결재함 14행 |
+| data.go.kr(공공데이터포털) | **크롬 로그인 풀림** | 계정 있음(키 1개), 로그인 방식 확인 안 함 | — | 기획자·신사업 | 10/1 17:2x 마이페이지 → 로그인 화면, 아이디 로그인에 보안문자 → 무인 불가. TourAPI·고캠핑 활용신청은 결재함 줄(사장님 손) |
+| Claude 주간 한도 | **62%** (10/1 17:20) | 스꾸와 공유 | 리셋 10/4 21:00 KST · 하루 약 30%p → 90% ≈ 10/2 15:40 | 전 직원 | get_usage. 추가 사용량 꺼짐. admin/usage.md |
 | ChatGPT 웹 | 확인 안 함(로그인 여부) | **스꾸와 한도 공유**(결재함 기록) | 오늘 3건 기록(실사용 2, 0건 1) | 순돌이·디자이너 | gpt-usage.jsonl 기준. 이미지 생성 금지 유지 |
 | Supabase 파이어맵 (c7cd8a90) | **정상** | 파이어맵 전용 | — | 제품·성장·보고 | firemap_events 24시간: screen_view 450, session_start 380, calc_complete 42 — 최신 23:22 |
 | Cloudflare Pages retire-age-kr | **정상** | 파이어맵 | — | 제품 | retire-age-kr.pages.dev → firemap.kr 200, dev.retire-age-kr.pages.dev 200. origin/main 22:43, origin/dev 23:34 |

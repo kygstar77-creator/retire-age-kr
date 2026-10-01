@@ -36,12 +36,12 @@ export default function Home({ onStart, onMove, simulation }) {
 
       {challenge && (
         <Notice tone="accent" icon={<Icon name="fire" />} title={challenge.ea ? `친구는 ${challenge.ea}세에 파이어 가능` : '친구가 파이어 등수를 보냈어요'}>
-          {challenge.pct != null ? `또래 상위 ${challenge.pct}% · ` : ''}당신은 몇 살에 가능할까요? 1분이면 나와요.
+          {challenge.pct != null ? `또래 상위 ${challenge.pct}% · ` : ''}나는 몇 살에 가능할까? 1분이면 나와요.
         </Notice>
       )}
 
       <Card variant="hero" padding="lg">
-        <SectionHead kicker="1분 계산 · 가입 없음" title={<>나는 몇 살에<br />파이어할 수 있을까?</>} desc="자산·저축·생활비만 넣으면 물가·국민연금까지 반영한 현실적인 파이어 나이가 나와요." />
+        <SectionHead kicker="1분 계산 · 가입 없음" title={<>나는 몇 살에<br />파이어할 수 있을까?</>} desc="자산·저축·생활비만 넣으면 물가·국민연금까지 반영한 파이어 나이가 나와요." />
         <div className="ds-row sc-home-agebox">
           <span className="ds-body-sm ds-bold">현재 나이</span>
           <div className="ds-row">

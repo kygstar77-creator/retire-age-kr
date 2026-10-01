@@ -139,7 +139,7 @@ export default function CityExplorer({ inputs, simulation, onChange, onMove, onB
 
       <Card padding="md">
         <SectionHead size="sm" kicker="더 깊이 보기" title="지역 자료" />
-        <ListRow lead={<Icon name="home" />} title="지역·가구별 필요 자산 사례" desc="지역·가구·유형별 필요 자산" href="/guide/region-plan/" size="S" />
+        <ListRow lead={<Icon name="home" />} title="지역·가구별 필요 자산 사례" desc="144개 조합의 필요자산·저축 플랜" href="/guide/region-plan/" size="S" />
         <ListRow lead={<Icon name="buildings" />} title="도시별 생활비·집값" desc="생활비·실거래가·물가" href="/guide/regions/" size="S" />
       </Card>
     </main>

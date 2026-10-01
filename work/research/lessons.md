@@ -69,3 +69,5 @@
 - 2026-10-01 · 새 사이트는 지시서를 기다리며 빈손으로 있지 않는다. 배포 길·측정·공유 카드·템플릿을 먼저 운영에 올려 실측해 두면, 지시서 뒤에는 compute()와 문구만 남는다. firemap.kr/<경로>는 push 뒤 약 2분 40초면 운영에 뜬다. (firemap-venture-builder)
 - 2026-10-01 · 무인 회차는 '공개 저장소 만들기'를 못 한다(GitHub 커넥터 create_repository 403, 다른 길은 자동 권한 검사가 '공개 표면 생성'으로 거절). 새 독립 사이트는 지시서 단계에서 저장소 생성 결재를 먼저 올리고, 빌더는 파일·검사·배포 스크립트까지 끝내 두면 결재 뒤 push 한 번이다. 또 GitHub Pages 프로젝트 사이트(/<repo>/robots.txt)는 크롤러가 읽지 않는다 — 사이트맵은 서치콘솔·Bing에 직접 낸다 (firemap-venture-builder)
 - 2026-10-01 · 두 스크립트가 같은 기준(발행 간격)을 쓰면 한쪽이 다른 쪽 값을 읽게 하고, getattr 기본값으로 조용히 떨어지게 두지 않는다. naverpost의 GAP_MIN이 함수로 바뀐 뒤 감시기는 며칠 동안 75분 기준으로 헛경보를 냈다. 경보가 '메우기 실패'로 끝나면 실패 로그(_fill_<매체>.log) 마지막 줄부터 본다.
+
+- 2026-10-01 · firemap-venture-builder · **엑셀 상품 검산은 이 PC의 진짜 Excel로 한다.** Excel 16 COM(PowerShell `New-Object -ComObject Excel.Application`)이 있어 openpyxl로 만든 수식 파일을 재계산·PDF 출력까지 된다(LibreOffice·formulas 없음). 함정 2: ① 첫 호출이 0x800AC472(Excel 바쁨)로 실패하면 남은 EXCEL 프로세스를 끄고 Open 뒤 2초 기다린다 ② PowerShell 5.1 표준출력은 한글이 깨진다 → 결과는 `Out-File -Encoding utf8` 파일로 받고, .ps1은 BOM(utf-8-sig)으로 저장. 운영 식과 비교는 `node`로 src/utils/*.js를 직접 import(package.json type=module) — 식을 다시 짜서 비교하지 않는다. 근거 ventures/x-kr-1/verify.py

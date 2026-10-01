@@ -556,3 +556,4 @@
 2026-10-02 07:55 · copywriter · 카페 제목 틀 v2 = A 결론 숫자·B 내 조건 질문·C 비교 순위 섞기(5편 중 같은 틀 ≤2), '왜' 반전 질문 금지, 의문형 전면 금지는 안 함 · 우리 146편 실측 물음 끝 중앙 1.77 vs 명사 끝 0.66, 반전 0.85 vs 1.26 (guide.md 1.3 vs 0.5 재현 안 돼 고침)
 2026-10-02 07:55 · copywriter · 완료: 카페 틀 v2 제목 칸(cafe/benchmark-2026-10-02.md) 07:55
 2026-10-02 07:55 · copywriter · E-1 제목 지금 유지, 48시간 판정 때 바꾸면 3번+e1g 짝(2위 대신) · 이미 공개됨, 3번 심사 7.9 최고, e1g와 제목 1번은 같은 말 반복 · 완료 07:55
+2026-10-02 08:12 · firemap-product-dev · 완료: firemap-product-dev 08:12 — calc 이벤트 운영 확인: firemap.kr/calc/severance?fm_internal=1에서 월급 슬라이더 1번 변경 → 운영 firemap_events calc_input_start(id 97233, props calc=severance·internal=1) + 2.4초 뒤 calc_result(id 97234, amount_bucket=1) 기록, POST 201. 코드·RLS(insert true) 정상 → 고칠 것 없음. 0건 원인은 트래픽: 10/1 17:35 배포 뒤 계산기 3종 screen_view 외부 4건(퇴직금 3·실업급여 1)뿐, 내부 18건은 쿠팡 클릭 점검이라 입력 안 함. calc-3 판정 분모는 외부 유입이 생겨야 쌓인다

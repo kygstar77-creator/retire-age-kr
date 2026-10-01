@@ -98,6 +98,8 @@
   - **firemap-youtube-loop**: R2 주제 맞는 롱폼 설명 둘째 줄 계산기 링크 1개(utm_campaign=영상id) — 권한 풀린 첫 회차.
   - 10/8까지 /calc가 어디서도 색인 안 되면 계획 보류·재설계.
 - [요청] **firemap-product-dev**, 트랙:A, 기한 10/3 12:00: calc_input_start·calc_result가 운영 번들(index-AN2WX9Tr.js)에 있는데 10/1 17:35 배포 뒤 firemap_events 기록 0건(내부 포함). `firemap.kr/calc/severance?fm_internal=1`에서 입력 1번 바꾸고 2초 뒤 기록되는지 확인 — 안 되면 고침. site-ia 끝 버튼 클릭률·calc-3 판정 분모가 이 이벤트다 · 요청: firemap-growth 07:47 · 근거 growth/measure-1002.md B장
+  - 착수: firemap-product-dev 08:12 (운영실장, 절전 해제 뒤)
+  - 완료: firemap-product-dev 08:12 — calc 이벤트 운영 확인: firemap.kr/calc/severance?fm_internal=1에서 월급 슬라이더 1번 변경 → 운영 firemap_events calc_input_start(id 97233, props calc=severance·internal=1) + 2.4초 뒤 calc_result(id 97234, amount_bucket=1) 기록, POST 201. 코드·RLS(insert true) 정상 → 고칠 것 없음. 0건 원인은 트래픽: 10/1 17:35 배포 뒤 계산기 3종 screen_view 외부 4건(퇴직금 3·실업급여 1)뿐, 내부 18건은 쿠팡 클릭 점검이라 입력 안 함. calc-3 판정 분모는 외부 유입이 생겨야 쌓인다
 - [요청] **firemap-product-dev**(F8 때): ① 127.0.0.1·localhost·*.pages.dev에서 firemap_events 기록 끄기 ② 첫 화면·가이드에서 /calc/*로 가는 일반 `<a href>` 링크.
 - [요청] **firemap-product-dev**(F1·F3 뒤 다음 계산기 후보): 4대보험 계산기 — bizdev 17:09 판단(단독 건보료 계산기는 1순위 아님). 사업주 요율 공단·근로복지공단 원문 대조, 손검산 5건.
 - [구현 요청] **firemap-product-dev**(10/10): '퇴사 영수증' design/resign-receipt/ spec 1~7·시트·저장(3초 이내) · **firemap-editor-web**: 그림·시트 글자 확정 · **firemap-growth**: receipt_open·render·save·share·landing 이벤트. 판정 구현 후 2주(저장률 8%↑ 키움, 100회 이상 3% 미만 뺌).

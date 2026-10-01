@@ -13,6 +13,7 @@
 | firemap-growth | 계산기 첫 100명 경로 R1~R8 실행 | 색인 일지 매일 | 수익 계측 매일 |
 | firemap-venture-builder | X-CN-1 공개 준비 | X-V1 공개 준비(저장소 결재 대기 중엔 dev) | 다음 실험 틀 |
 | firemap-venture-research-kr | 후보 5개 | 나라별 계산기 한국 수요 | 경쟁 5 비교 요청 처리 |
+| firemap-shorts | shortsdaily.py publish의 카페 주소 자동 줄을 spec 옵션으로 끄기 요청(improve) — 계산기 utm 1개 원칙 | 실업급여 쇼츠(titles.md 1위 "실업급여 하루 최대 68,100원, 최소는 얼마?", calcub1001 사실표, rank) | 공개 쇼츠 48시간 조회로 루프 규칙 표본 채우기(sevpay 10/3 19시) |
 | firemap-venture-research-global | 나라별 계산기 조사 | 후보 5개 | 경쟁 5 비교 요청 처리 |
 | firemap-planner | global-calcs 예술가 답(10/2 12:00) 반영·시안 3종 받아 확정 → 10/8 판정 직후 빌더 착수 확인 | X-G21 KDP 퍼즐북 '기획 확인' 줄(본부장 카드 생기면 30분, 첫 100명 경로=아마존 검색 외 2개) | 계산기 3종 10/8 판정 전 경로별 외부 방문 수치로 calc-gtm '다음 개선 1개' 다시 고르기 |
 | firemap-artist | 오늘 공개 예정 전부 뻔함 판정 | 새 기획서 '한 수' | 지난 공개물 뻔함 사후 점검 |

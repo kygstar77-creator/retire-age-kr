@@ -402,3 +402,4 @@
 2026-10-01 17:29 · firemap-write · wht1002 [편집 검수 요청] firemap-editor에 올림 · 쓴 회차가 자동 통과(.edit.json by:auto)를 직접 쓰는 것은 권한 검사에 막힘(자기 인증) — 편집 관문을 사람 대신 편집자가 찍게 둔다
 2026-10-01 17:35 · planner · 착수: firemap-planner global-calcs 기획서 17:35
 2026-10-01 17:34 · planner · 완료: firemap-planner global-calcs 기획서 17:34 · 새 사이트 대신 X-V1 영국을 첫 나라로, 10/8 키우기/유지면 10/9 호주 붙여 허브. 다른 한 가지 안=원문 대조 도장(경쟁 0/5), 예술가 검토 대기 10/2 12:00. 근거 plans/global-calcs.md
+2026-10-01 17:41 · firemap-shorts · 완료: firemap-shorts F5 퇴직금 쇼츠 렌더(cardshorts/sevpay.mp4, 공개는 19:20) 17:41 · 제목 titles.md 1위, 첫 화면 계산기 결과 1,283만원, 설명란 calc/severance utm 1개, bars·음악 켬(직전 rank·끔 교대) · 320만원·1,283만원 등 만원 반올림은 severance/facts.txt에 출처 줄로 추가 뒤 사용(새 숫자 아님, 원 단위 예시의 반올림)

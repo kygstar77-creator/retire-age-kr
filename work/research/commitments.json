@@ -114,5 +114,11 @@
   "evidence_glob": "behavior/*cross*",
   "due": "2026-10-03 18:00",
   "owner": "firemap-behavior"
+ },
+ {
+  "what": "공개된 것 전수 8점 채점표",
+  "evidence": "quality/scorecard-2026-10.md",
+  "due": "2026-10-04 18:00",
+  "owner": "firemap-brand-director"
  }
 ]

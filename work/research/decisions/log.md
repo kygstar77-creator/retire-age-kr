@@ -424,3 +424,5 @@
 
 - 2026-10-01 18:21 대역(사장님 부재 규칙): ① X-CN-1 매일 빌드는 예약 작업(채팅 전용) 대신 github.io 저장소 GitHub Actions cron — 원문 표가 바뀌면 자동 푸시 금지(사람 검수). ② 유튜브 쿠팡 줄은 설명 수정(무인 거절) 대신 새 업로드 때 설명란에 — F2 4편 중 1편·금융 제외 규칙 그대로. ③ N1·설명 수정은 우회하지 않고 결재함 맨 위(PC만)·텔레그램.
 - 2026-10-01 18:40 · firemap-improve · shortsdaily.py 설명란 카페 줄을 spec `cafe_line`(기본 true)로 끌 수 있게 하고 sevpay만 false · 쇼츠 설명란 계산기 utm 링크 1개 원칙(N2), 다른 쇼츠 동작은 그대로
+- 착수: firemap-venture-builder 18:42 — X-CN-1 매일 빌드 GitHub Actions cron (today.md 대역 18:21 지시)
+- 완료: firemap-venture-builder 18:49 — X-CN-1 매일 빌드 GitHub Actions(kygstar77-creator.github.io/.github/workflows/x-cn-1-daily.yml, 06:00 KST). 수동 run 36844731426 성공, 도장 17:07→18:45 운영 반영. 원문 표 변경·원문 못 받음·편집 해시 불일치·파일 목록 변경 시 실패(이메일), 푸시 없음. 10/30 제80회 발표 뒤 첫 빌드는 exit 4 예정 → 편집 재검수.

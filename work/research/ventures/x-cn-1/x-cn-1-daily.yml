@@ -1,0 +1,35 @@
+# X-CN-1 한능검 시험 일정 — 매일 06:00 KST 원문 대조·도장 갱신 (firemap-venture-builder 2026-10-01)
+# 원본: retire-age-kr work/research/ventures/x-cn-1/x-cn-1-daily.yml (deploy.py ci 가 복사)
+# 원문 표가 바뀌거나 못 받거나 화면 글자가 도장 밖에서 바뀌면 ci.py가 실패로 끝난다 → 푸시 없음, 저장소 주인에게 실패 이메일.
+name: x-cn-1 daily build
+on:
+  schedule:
+    - cron: '0 21 * * *'   # 21:00 UTC = 다음 날 06:00 KST
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ghio-main
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: verify and build
+        run: python .github/build/x-cn-1/ci.py
+      - name: commit and push
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898231+github-actions[bot]@users.noreply.github.com'
+          git add -A -- exam-dates-kr .github/build/x-cn-1/facts/_verified.json
+          if git diff --cached --quiet; then echo 'no change'; exit 0; fi
+          git commit -q -m "x-cn-1 daily: 원문 대조 $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') KST"
+          git push -q origin HEAD:main

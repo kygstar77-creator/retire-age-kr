@@ -4,6 +4,7 @@
 # 사용: py -3.12 deploy.py check          검사만
 #       py -3.12 deploy.py push           검사 통과 시 site/ 를 kygstar77-creator.github.io 저장소 /exam-dates-kr/ 로 push(main = 공개, kit/ghio.py)
 #       py -3.12 deploy.py hash <파일>    편집자가 .edit.json 에 넣을 sha
+#       py -3.12 deploy.py ci             매일 빌드 재료(build.py·ci.py·facts·src·편집 표시)와 워크플로를 github.io 저장소로 복사·push
 import sys, os, re, json, hashlib, html, subprocess, tempfile, shutil
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -62,11 +63,40 @@ def push():
     ghio.sync(SITE, FOLDER, ignore=('*.edit.json', '_*'))
 
 
+def ci():
+    # 매일 빌드는 github.io 저장소 Actions가 돈다(retire-age-kr엔 Actions 금지). 원본은 여기, 저 쪽은 복사본.
+    dst = os.path.join(ghio.CLONE, '.github', 'build', 'x-cn-1')
+    if ghio.git('rev-parse', '--verify', 'HEAD', check=False).returncode == 0:
+        ghio.git('pull', '-q', '--rebase', 'origin', 'main')
+    shutil.rmtree(dst, ignore_errors=True)
+    os.makedirs(os.path.join(dst, 'site', 'hanneunggeom'))
+    for f in ('build.py', 'ci.py'):
+        shutil.copy(os.path.join(HERE, f), dst)
+    shutil.copytree(os.path.join(HERE, 'facts'), os.path.join(dst, 'facts'))
+    shutil.copytree(os.path.join(HERE, 'src'), os.path.join(dst, 'src'))
+    for p in pages():
+        rel = os.path.relpath(p, SITE)
+        os.makedirs(os.path.dirname(os.path.join(dst, 'site', rel)), exist_ok=True)
+        shutil.copy(p + '.edit.json', os.path.join(dst, 'site', rel + '.edit.json'))
+    wf = os.path.join(ghio.CLONE, '.github', 'workflows')
+    os.makedirs(wf, exist_ok=True)
+    shutil.copy(os.path.join(HERE, 'x-cn-1-daily.yml'), wf)
+    ghio.git('add', '-A', '--', '.github')
+    if ghio.git('diff', '--cached', '--quiet', '--', '.github', check=False).returncode == 0:
+        print('바뀐 것 없음')
+        return
+    ghio.git(*ghio.ID, 'commit', '-q', '-m', 'x-cn-1: daily build (Actions)', '--', '.github')
+    ghio.git('push', '-q', 'origin', 'HEAD:main')
+    print('push 완료 — .github/workflows/x-cn-1-daily.yml')
+
+
 if __name__ == '__main__':
     a = sys.argv[1:] or ['check']
     if a[0] == 'hash':
         print(sha(a[1]))
     elif a[0] == 'push':
         push()
+    elif a[0] == 'ci':
+        sys.exit('검사 실패 — ci 복사 안 함') if not check() else ci()
     else:
         sys.exit(0 if check() else 1)

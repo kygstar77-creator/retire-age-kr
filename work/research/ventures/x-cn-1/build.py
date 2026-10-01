@@ -5,6 +5,7 @@
 #  3) site/ 에 쪽·캘린더(.ics)·sitemap·robots를 쓴다. '다음 할 일 한 줄'은 src/nextline.cjs 하나로 빌드(node)와 브라우저가 같이 계산.
 # 사용: py -3.12 build.py            대조 + 빌드
 #       py -3.12 build.py --offline  대조 없이 빌드(도장은 지난 값 그대로, 점검용)
+# 매일 06:00 KST 빌드는 kygstar77-creator.github.io 저장소 GitHub Actions(x-cn-1-daily.yml)가 ci.py로 돌린다 — 이 파일이 원본, deploy.py ci 가 복사.
 import sys, os, re, json, html, subprocess, datetime, urllib.request, shutil
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -282,6 +283,8 @@ def main():
         except Exception as ex:  # 원문을 못 받으면 도장은 그대로(하루 넘으면 화면이 물러남)
             diffs = None
             print('원문 받기 실패 — 도장 그대로:', ex)
+            if os.environ.get('XCN1_CI'):  # 매일 빌드(GitHub Actions)는 여기서 실패로 끝내 이메일을 받는다
+                sys.exit(3)
         if diffs:
             print('대조 불일치 — 빌드 중지:')
             for d in diffs:
@@ -301,7 +304,7 @@ def main():
                 '<h1>시험 일정</h1>\n<ul class="list"><li><a href="hanneunggeom/">한능검 시험일정 2026</a></li></ul>', noindex=True)
     open(os.path.join(SITE, 'index.html'), 'w', encoding='utf-8', newline='\n').write(root)
     shutil.copy(os.path.join(HERE, 'src', 'privacy.html'), os.path.join(SITE, 'privacy', 'index.html'))
-    shutil.copy(os.path.join(HERE, '..', 'uk-pay', 'site', 'fmkit.js'), os.path.join(SITE, 'fmkit.js'))
+    shutil.copy(os.environ.get('FMKIT') or os.path.join(HERE, '..', 'uk-pay', 'site', 'fmkit.js'), os.path.join(SITE, 'fmkit.js'))
     open(os.path.join(SITE, 'robots.txt'), 'w', newline='\n').write(f'User-agent: *\nAllow: /\nSitemap: {BASE}/sitemap.xml\n')
     open(os.path.join(SITE, 'sitemap.xml'), 'w', newline='\n').write(
         f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'

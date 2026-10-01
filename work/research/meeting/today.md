@@ -86,6 +86,16 @@
 - [순돌이 검토] 공개 저장소 2개(uk-take-home-pay·exam-dates-kr) — 결재함 17·18행 '채팅에서 순돌이에게 한 마디'. 순돌이 채팅 세션이 만들면 X-V1 22:00·X-CN-1 10/2 17:00 둘 다 산다. 21:15 전.
 - [기획 요청·조사 요청] 나라별 법에 맞는 계산기를 한 사이트에(사장님 17:04) 트랙:B: **firemap-venture-research-global**(착수 17:06) ① 다국가 계산기 사이트 경쟁 상위 5 ② 나라별 검색 수요 상위 10개국 ③ 나라별 공식 원문 접근성·갱신 주기 → **firemap-planner + firemap-artist**(조사 직후) plans/global-calcs.md(다른 한 가지·첫 판 나라 수·주소 구조·원문 대조 도장·법 개정 감시·첫 100명 경로). bizdev 상한 계산은 완료(17:09). 판단 firemap-venture, 큰 방향 21:15 회의.
   - 완료: firemap-venture-research-global 17:2x — ① 경쟁 5: talent.com 65+개국(9.3M 도메인 전체)·numbeo 107(2.1M)·salaryaftertax.com 19(487.5K, 쪽마다 갱신일, 이사 견적 리드)·worldsalaries 12(93.9K)·icalculator 207(측정 중 다운). **여러 나라 은퇴·연금 계산기 0/5, 쪽마다 갱신일 1/5.** ② 수요: 독일어권 brutto netto rechner 1.8M(ET de)이 압도지만 CPC $0.02 · 프랑스어 550K · 미국 paycheck calculator 550K(CPC $1.82~3.35) · 폴란드·네덜란드 · 호주 368K($2.68) · 영국 301K · 브라질 · 스페인 · 루마니아/튀르키예(프·스·브·네는 언어권 합, 나라 단위 확인 안 함). ③ 12개국 공식 원문 모두 무로그인 — 쉬움 영국·호주·네덜란드 / 중간 독일(XML+대조 인터페이스)·스페인(2026 연중 2판)·캐나다(연 2판, 상업 재배포 서면 허가 필요)·일본·브라질 / 어려움 미국(주세)·프랑스·인도(2026-04 법 교체)·멕시코. 연 1회 갱신으론 부족 → 월 1회 원문 비교. 근거 work/research/ventures/global-calcs/compare.md · demand.md · sources.md
+  - 착수: firemap-planner global-calcs 기획서 17:35
+  - 기획서 plans/global-calcs.md(17:5x): **새 사이트 따로 안 세움 — X-V1 영국을 첫 나라로, 10/8 판정 '키우기/유지'면 10/9 호주 붙여 허브로.** 다른 한 가지(기획자 안) = '원문 대조 도장'(나라마다 공식 계산기와 3건 대조·날짜, 경쟁 0/5). 첫 판 2개국(영·호), 주소 /<나라>/, 월 1회 원문 해시 감시, 금액별 쪽 대량 생성 금지. 판정 허브 공개 +7일(10/16).
+  - [예술가 요청] global-calcs 다른 한 가지('원문 대조 도장' 채택/반려 또는 한 수) 트랙:B · 담당 **firemap-artist** · 시한 10/2 12:00 · 근거 plans/global-calcs.md 2장, ventures/global-calcs/compare.md
+  - [시안 요청] global-calcs 허브 첫 화면(나라 줄+도장)·나라 쪽 도장 칩·대조표 쪽 트랙:B · 담당 **firemap-designer** · 시한 10/2 12:00 · 근거 plans/global-calcs.md 7장(X-V1 틀 유지, 375px 첫 3초에 나라 줄마다 도장)
+  - [시안 요청] global-calcs 도장 문구 영어 1·2·3위("Checked against … on 3 salaries · date", approved/official 금지) 트랙:B · 담당 **firemap-copywriter**(영어 최종 firemap-editor-en) · 시한 10/2 12:00 · 근거 plans/global-calcs.md 2·8장
+  - [시안 요청] global-calcs 측정(check_open·country_switch·share, 도장 클릭률=check_open÷calc_submit)·경로별 utm(share/hn/email) 트랙:B · 담당 **firemap-growth** · 시한 10/2 12:00 · 근거 plans/global-calcs.md 4·6장
+  - [조사 요청] 호주 계산기 사이트에 적용되는 금융상품 조언 규정 원문(연금 기여 결과 표시가 걸리는지) + ATO 저작권 고지 원문 재확인 트랙:B · 담당 **firemap-venture-research-global** · 시한 10/8 20:00 · 근거 plans/global-calcs.md 8장
+  - [지시] global-calcs 첫 판(하루) 트랙:B · 담당 **firemap-venture-builder** · 시작 조건 X-V1 10/8 판정 키우기/유지(접기면 보류) · 공개 목표 10/9 22:00 · 근거 plans/global-calcs.md 7장 — /au/ 1쪽(손검산 10·ATO 대조 3) + 허브 / + /uk/checks/·/au/checks/. 오늘 X-V1 범위는 바꾸지 않음. 금지: 판정 전 착수·금액별 쪽 대량·HMRC/ATO 이름을 사이트 이름에.
+  - [결재 필요](10/8 키우기일 때) 허브 중립 도메인 1개 · Show HN 게시 사장님 계정 1회 — firemap-venture 판정 뒤 firemap-admin이 approvals.md에.
+  - 완료: firemap-planner global-calcs 기획서 17:55
 - X-KR-1 가계부: 판매 개시는 리틀리 결재 뒤(통신판매업 첫 해 면제, 신원 표시 조건 — archive). 위 검수 2건 18:10.
 - X-G19 영어권 한국어 단어 채널(조건부 승인, 3관문):
   - [예술가 요청] X-G19 '우리만 다른 한 가지' 트랙:A · 담당 **firemap-artist** · 시한 10/2 15:00 · 근거 ventures/xg19/compare.md — 편마다 구성이 달라지는 규칙 1개.

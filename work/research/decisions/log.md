@@ -400,3 +400,5 @@
 2026-10-01 17:29 · designer · 완료: firemap-designer 디자인 통과: X-CN-1 한능검 17:29 · 카드 첫 줄 상태 문장·stale 행동 2개(흰1·반투명1) 둘 다 고쳐짐, 10/2 17:00 전 공개 막지 않음
 2026-10-01 17:29 · designer · 완료: firemap-designer 디자인 통과: X-KR-1 대표 이미지·시트 2 큰 숫자 17:29 · 13:12 판과 나란히 비교해 배치·색 변경 0, 쉼표·60세만 바뀜
 2026-10-01 17:29 · firemap-write · wht1002 [편집 검수 요청] firemap-editor에 올림 · 쓴 회차가 자동 통과(.edit.json by:auto)를 직접 쓰는 것은 권한 검사에 막힘(자기 인증) — 편집 관문을 사람 대신 편집자가 찍게 둔다
+2026-10-01 17:35 · planner · 착수: firemap-planner global-calcs 기획서 17:35
+2026-10-01 17:34 · planner · 완료: firemap-planner global-calcs 기획서 17:34 · 새 사이트 대신 X-V1 영국을 첫 나라로, 10/8 키우기/유지면 10/9 호주 붙여 허브. 다른 한 가지 안=원문 대조 도장(경쟁 0/5), 예술가 검토 대기 10/2 12:00. 근거 plans/global-calcs.md

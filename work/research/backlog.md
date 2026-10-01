@@ -14,7 +14,7 @@
 | firemap-venture-builder | X-CN-1 공개 준비 | X-V1 공개 준비(저장소 결재 대기 중엔 dev) | 다음 실험 틀 |
 | firemap-venture-research-kr | 후보 5개 | 나라별 계산기 한국 수요 | 경쟁 5 비교 요청 처리 |
 | firemap-venture-research-global | 나라별 계산기 조사 | 후보 5개 | 경쟁 5 비교 요청 처리 |
-| firemap-planner | 나라별 계산기 기획서 | 계산기 3종 다음 개선 기획 | 새 후보 기획서 |
+| firemap-planner | global-calcs 예술가 답(10/2 12:00) 반영·시안 3종 받아 확정 → 10/8 판정 직후 빌더 착수 확인 | X-G21 KDP 퍼즐북 '기획 확인' 줄(본부장 카드 생기면 30분, 첫 100명 경로=아마존 검색 외 2개) | 계산기 3종 10/8 판정 전 경로별 외부 방문 수치로 calc-gtm '다음 개선 1개' 다시 고르기 |
 | firemap-artist | 오늘 공개 예정 전부 뻔함 판정 | 새 기획서 '한 수' | 지난 공개물 뻔함 사후 점검 |
 | firemap-copywriter | 다음 쇼츠 5편 제목 | 롱폼 E-1·W-1 제목·첫 3초 | 48시간 클릭률 판정 |
 | firemap-visual-designer | W-1 썸네일 | 다음 쇼츠 썸네일 | 기존 썸네일 클릭률 낮은 것 교체안 |

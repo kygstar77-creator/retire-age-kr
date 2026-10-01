@@ -20,7 +20,7 @@
 | firemap-venture-research-global | 나라별 계산기 조사 | 후보 5개 | 경쟁 5 비교 요청 처리 |
 | firemap-planner | site-ia 10/14 재심사 무소식 시 조건부 반영 판정 + 화면 반영 +7일 판정(끝 버튼 클릭률 2%) | global-calcs 예술가 답·시안 3종 받아 확정 → 10/8 판정 직후 빌더 착수 확인 | 계산기 3종 10/8 판정 전 경로별 외부 방문 수치로 calc-gtm '다음 개선 1개' 다시 고르기 |
 | firemap-artist | X-V1·X-CN-1 공개본 사후 뻔함 점검(공개 화면 375px 캡처 vs 판정 조건) | 은퇴 영수증 카드 선례 검색·W 은퇴 기상청 법 참모 상정 | 10/4 일요일 돌아보기 — 통과 판정 9건의 실측(도장 클릭률·공유 수) art/ideas.md에 |
-| firemap-copywriter | W-1 썸네일 두 줄 후보·1위(ep/W-1/titles.md, 10/8 12:00 — 그 주 사실표만) | A-1 48시간 판정 10/2 19:30(Studio 노출 클릭률 vs 중앙값, 아래면 2위로 1회)·대기 쇼츠 5편 판정 | global-calcs 도장 편집 결과 반영 + 영국 GOV.UK 계산기 3건 대조가 checks.md에 들어왔는지 확인 뒤 디자이너 칩 길이 확인 |
+| firemap-copywriter | 대기 쇼츠 남은 3편 compete.md(e1_micron_q4·e1_samsung_x·a1_1eok1y, 10/2 12:40) + 쇼츠 14편 경쟁 조사 대기열(X-YT-FREQ) | A-1 48시간 판정 10/2 19:30(노출 클릭률 vs 중앙값, 아래면 2위로 1회) · 쇼츠 2편 공개 48시간 판정 | W-1 썸네일 두 줄 후보·1위(ep/W-1/titles.md, 10/8 12:00) · E-2 제목(10/6 12:00) |
 | firemap-visual-designer | A-1 v5a 공개 48시간(10/2 19:30) 노출 클릭률 vs 중앙값 → 낮으면 카피라이터 2위로 교체안 1장 | W-1 썸네일 시안(카피 1위 10/8 12:00 뒤, 그 주 사실표 숫자만, 막대 틀 시험) | 은퇴 영수증 공유 카드 시안 1장(21:15 채택 시, 한도 리셋 10/4 뒤·선례 검색 1회 먼저) |
 | firemap-motion-designer | D-1 motion.md(script.md 장면마다 '무엇이 움직이나') + 우선 장면 3개 Remotion 부품·motion_preview — 렌더 전 PD에 넘김 | 재사용 부품 video/src/motion/ 첫 2개(숫자 카운트업·두 종목 대결) + README, 편마다 색·배치 변수 | 경쟁 영상미 분해 motion-bench.md(수페TV·소수몽키 롱폼 2편, 10초당 전환 수·차트 모양·숫자 강조) — ytbreak 한도 안 |
 | firemap-video-producer | D-1 남은 목소리 27문장+0:2 다시(10/2 16:05, 같은 모델 — lfvoice가 치직 자동 제거) → readback → d1props → 렌더 → deess → clickscan scan 0 → 점수표 확정 → 예약(10/8 이후, 쿠팡 대상) | E-1 교체([순돌이 검토] e1_v3_ds.mp4, 10/3 19:30 전) 결과 확인 → 공개 직후 앱 화면 썸네일·고정 댓글 확인 | 렌더본 치직 검사(clickscan 규칙 B) 오탐 줄이기 — 경쟁 5편으로 기준 조정, 결과를 ytlong 관문 2차 검사로 |

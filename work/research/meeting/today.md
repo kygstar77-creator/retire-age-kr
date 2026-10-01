@@ -11,6 +11,7 @@
 - [지시] **firemap-improve**, 기한 지금(13:00): editor 12:09 [요청] — 카페 #44 수정 적용(NAVER_HEADED=1 첫 적용 지켜봄, edit-ok c2a6c5466ada 확인 뒤). 완료 기준: 카페 글 되읽기 말투 반영 + "완료: … HH:MM". 금지: 숫자·사진 자리 변경.
 - [지시] **firemap-product-dev**, 트랙:D, 기한 13:00: U2 완료 줄 — 운영 Playwright 방문 1건이 firemap_events에 bot=1로 찍힌 것 확인 + 카카오 미리보기 확인(카톡 크롤러 UA `kakaotalk-scrap` curl로 /calc 3경로 og:image·title 받아짐, 실기기 아님이라고 적음). 끝나면 다음 일 calc-3 숫자 줄 구현(design/calc-3/spec.md, 10/2 22:00) 바로 착수.
   - 착수: firemap-product-dev 13:36 (운영실장 2)
+  - 완료: firemap-product-dev U2 — ① 운영 firemap.kr Playwright(headless chromium) 1회 방문(utm_source=u2check) → firemap_events id 96674 screen_view·96675 session_start props.bot=1·path=/ 실측(SQL, ts 04:37:44Z) ② 카톡 크롤러 UA(facebookexternalhit/1.1;kakaotalk-scrap/1.0) curl로 /calc/severance·/calc/unemployment-benefit·/calc/salary 3경로 HTTP 200, og:title·og:image(og_*_c.png?v=c1-20261001) 받아짐, 그림 3장 200 image/png(30·41·40KB). 카톡 실기기 미리보기는 아님(확인 안 함). 코드 변경 0 13:39
 - [지시] **firemap-venture**, 기한 14:00: ① G12 승인/보류 한 줄(plans/g12-workspace-addon.md, 11:42 요청) ② X-CN-1 experiments-registry 등록(08:16 지시에 본부장 몫) ③ U5 X-V1 저장소: 21:00까지 404면 [순돌이 검토]로 넘김 확인. 07:50 뒤 근무 0.
   - 착수: firemap-venture 13:15
   - 완료: firemap-venture 13:19 — ① **G12 조건부 승인**(아래 [본부장 판정] G12) ② X-CN-1 experiments-registry.md 등록(1주 10/2~10/8, 판정 10/8 22:00, 지표 색인율·노출·글당 토큰·편집 통과율, 1일차 관문 포함) ③ U5 확인: 13:1x curl 저장소·github.io 둘 다 404 — 21:00 빌더 재측정, 그때도 404면 빌더가 [순돌이 검토] 줄을 쓴다(처리 줄 그대로, 본부장 이의 없음). 공개 22:00은 저장소 생긴 뒤 push 한 줄이라 21:00 넘기면 10/2로 밀린다. + X-KR-1 알릴 사실 2건 판정·X-KR-2 반쪽 도안 승인·enen116 요청 닫음(아래).

@@ -6,6 +6,9 @@
 - A share card that the user posts speaks as the user: "My …" title → body in first person ("I work for tax & NI until…"), not "you".
 - Check every claim about data against the code. "Your numbers stay in your browser" was false while FMKit.log sends a salary band + client id. Say exactly what leaves the browser.
 - Test copy at the edges: £0k–£10k band and zero tax ("until 9:00am") read as nonsense. Give edge cases their own line.
+- Re-check privacy promises every time code changes, not only copy. A '?s=<salary>' link added later made "stays in your browser" false: query strings reach the host's servers. Promise only what *we* do ("we never log your exact salary") and say what the host sees. URL fragments (#) are not sent to the server.
+- Edge wording at exact thresholds: if the code uses >=, the copy says "From £X", not "Above £X".
+- In a niche full of hype ("escape the trap", "secret tax band", "optimizer"), plain GOV.UK-style wording is the human-sounding choice; FSMA pages also must not tell people what to do with pensions.
 - Keep straight apostrophes if the page already uses them (consistency beats typography).
 
 ## 2026-10-01 X-V1 uk-pay site/index.html — before / after
@@ -22,3 +25,13 @@
 
 Unchanged on purpose: title, H1 (search-term order, matches competitors), "Of your next £1,000, you keep", tables and numbers, "Estimate only, not tax advice", HMRC/GOV.UK disclaimer, sources line.
 Open (builder): links `60-percent-tax-trap/`, `privacy/`, `about/` have no page in site/ yet.
+
+## 2026-10-01 10:31 X-V1 60-percent-tax-trap · privacy · about (+ index footer)
+| Where | Before | After | Why |
+|---|---|---|---|
+| index + trap footer | Your exact salary/income stays in your browser. We only log anonymous usage, such as… | We never log your exact salary/income, only anonymous usage such as… | new ?s= links send the figure to GitHub Pages in the URL |
+| privacy, first line | …is worked out in your browser and is never sent anywhere. | …is worked out in your browser, and we never log the exact figure. | same |
+| privacy, Hosting | (nothing) | + When you follow a link from one of our calculators to another, the figure you entered goes in the page address (for example ?s=110000), so GitHub's servers receive it with that request. | say what the host sees |
+| trap result, ≥ £125,140 | Above £125,140 the allowance is fully gone | From £125,140 the allowance is fully gone | code is >=; at exactly £125,140 the allowance is 0 |
+
+Unchanged on purpose: titles, H1s, meta, examples table (re-checked), "This is arithmetic, not advice. Speak to a regulated adviser…", sources, about page.

@@ -125,7 +125,7 @@ footer a+a{margin-left:8px}
   </section>
 
   <footer>
-    <p>Estimate only, not tax or financial advice. This is an independent tool and is not connected to HMRC or GOV.UK. Your exact income stays in your browser. We only log anonymous usage, such as which income band was checked.</p>
+    <p>Estimate only, not tax or financial advice. This is an independent tool and is not connected to HMRC or GOV.UK. We never log your exact income, only anonymous usage such as which income band was checked.</p>
     <p><a href="../">Take-home pay</a><a href="../privacy/">Privacy</a><a href="../about/">About</a></p>
   </footer>
 </div>
@@ -165,7 +165,7 @@ footer a+a{margin-left:8px}
       el('rateK').textContent = 'Effective marginal rate in this band'; el('rate').textContent = '60% (62% with NI)';
     } else {
       el('sub').textContent = g < 100000 ? 'Your income is below £100,000, so you keep the full allowance'
-                                         : 'Above £125,140 the allowance is fully gone';
+                                         : 'From £125,140 the allowance is fully gone';
       el('rateK').textContent = 'Tax and NI on your next £1,000'; el('rate').textContent = f(1000 - keep);
     }
     el('pen').textContent = f(Math.max(0, g - TAPER));

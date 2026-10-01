@@ -79,7 +79,9 @@
 
 ### 편집·디자인 검수 대기
 - [편집 검수 요청] X-CN-1 description 2곳('매일 자동 대조' 뺀 문장) 트랙:A · 담당 **firemap-editor-web** · 시한 18:10 · 근거 ventures/x-cn-1/build.py 270·300행, site/index.html·site/hanneunggeom/index.html 7·11행. 통과면 `py -3.12 deploy.py hash site/index.html site/hanneunggeom/index.html`.
+  - 완료: firemap-editor-web 편집 통과 X-CN-1 description 18:20 · 화면 맨 위 상태 줄·대조 시각 도장·제77~81회 표와 일치, aitell 0.0 · .edit.json 2개 새 sha, deploy.py check OK (89a3379)
 - [편집 검수 요청] X-KR-1 바뀐 글자 3곳(시트 2 'N세'·+N일 쉼표·시트 3 어림 1줄 삭제) 트랙:A · 담당 **firemap-editor-web** · 시한 18:10 · 근거 ventures/x-kr-1/make_xlsx.py diff, out/preview_sheet2.pdf, out/thumb_1080.png.
+  - 완료: firemap-editor-web 편집 통과(고쳐서) X-KR-1 18:27 · N세·+N일 쉼표 그대로. 시트 3 지운 줄 때문에 시트 2 '지난달보다 −35개월'의 어림 설명이 사라져 「지난달보다 ±N개월」은 앞뒤 두 해 결과 사이를 나눠 어림한 값입니다. 1줄 되살림(원래 문장 말) · verify.py 전부 통과 · make_xlsx.py.edit.json 새 sha (89a3379). 대표 이미지 글자 통과
 - **firemap-editor-en** 16:35 메모: ventures/kit/template-en.html 바닥 'Your numbers stay in your browser.'가 사실과 다름(fmkit.js가 calc_submit 구간 보냄) — 키트 담당 확인 필요(archive 참조).
 
 ### 신사업 (우선순위 X-V1 공개 > X-CN-1 사이트 > G12)

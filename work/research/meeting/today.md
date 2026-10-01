@@ -98,6 +98,9 @@
   - [조사 요청] 호주 계산기 사이트에 적용되는 금융상품 조언 규정 원문(연금 기여 결과 표시가 걸리는지) + ATO 저작권 고지 원문 재확인 트랙:B · 담당 **firemap-venture-research-global** · 시한 10/8 20:00 · 근거 plans/global-calcs.md 8장
   - [지시] global-calcs 첫 판(하루) 트랙:B · 담당 **firemap-venture-builder** · 시작 조건 X-V1 10/8 판정 키우기/유지(접기면 보류) · 공개 목표 10/9 22:00 · 근거 plans/global-calcs.md 7장 — /au/ 1쪽(손검산 10·ATO 대조 3) + 허브 / + /uk/checks/·/au/checks/. 오늘 X-V1 범위는 바꾸지 않음. 금지: 판정 전 착수·금액별 쪽 대량·HMRC/ATO 이름을 사이트 이름에.
   - [결재 필요](10/8 키우기일 때) 허브 중립 도메인 1개 · Show HN 게시 사장님 계정 1회 — firemap-venture 판정 뒤 firemap-admin이 approvals.md에.
+- [기획 요청] site-ia 기획서 확정 — firemap-planner 트랙:B · 담당 **firemap-planner** · 시한 10/2 12:00 · 근거 plans/site-ia.md(초안), meeting/ia-workshop-2026-10-01.md — 사장님 17:3x '파이어맵을 한 코너로, 전 세계를?' 워크숍 추천 D(집은 둘·firemap.kr 안은 코너·1판=calc-gtm R1과 합침). 확정 때 레드팀 1문 '재심사 중 메뉴·내부 링크 변경 운영 반영 가능?' 답 반영. (워크숍 17:49)
+- [예술가 요청] site-ia 한 수 트랙:B · 담당 **firemap-artist** · 시한 10/2 12:00 · 근거 plans/site-ia.md 2·9장, meeting/ia-workshop-2026-10-01.md 4장 — 1판 '어느 계산기든 끝은 몇 살에 은퇴?' / 2판 '같은 내 숫자, 사는 곳만 바꾸면' / 두 집 공통 '원문 대조 도장' 중 채택·반려.
+- [디자인 검수 요청] site-ia 시안 범위 확인 — firemap-designer·firemap-brand-director 트랙:B · 시한 10/2 12:00 · 근거 plans/site-ia.md 6장(S1~S5) — 첫 화면 행동 아래 목록 행 1개·'전체' 코너 순서가 숫자 1+행동 1·부품 30개 안인지, 이름·로고 불변 확인.
   - 완료: firemap-planner global-calcs 기획서 17:55
 - X-KR-1 가계부: 판매 개시는 리틀리 결재 뒤(통신판매업 첫 해 면제, 신원 표시 조건 — archive). 위 검수 2건 18:10.
 - X-G19 영어권 한국어 단어 채널(조건부 승인, 3관문):
@@ -143,3 +146,9 @@
 - (총무 17:2x, 휴대폰 승인 처리분) **다음 검색 등록(승인 07:42):** PC 크롬 webmaster.daum.net → 카카오 로그인 → 사이트 등록 https://firemap.kr → PIN 채팅. **해외 판매 계정 2개(승인 07:42):** Adobe Stock 기여자·Gumroad 가입·정산(approvals.md 해외 판매 절). **X-V1 저장소(승인 17:01):** PC 크롬 github.com/new(결재함 17행 3단계) — 또는 순돌이 채팅 세션. **data.go.kr 활용신청 2건(새 줄):** 로그인 풀림·보안문자라 사장님 손, 후순위.
 - 결재 대기: X-CN-1 저장소 exam-dates-kr(18행, 순돌이 채팅으로도 가능) · 쿠팡 인플루언서(14행) · 리틀리 가입·정산(15행, X-KR-1) · 새 유튜브 브랜드 계정(15:1x, X-G19) · 새 도메인(X-KR-2·X-KR-3, 제안 단계).
 - 반려: vidIQ 유료. 보류: 제미나이 이미지 유료. vidIQ 채널 연결 위젯은 사장님이 눌러야 함.
+
+## [지시·긴급] 실험 저장소 생김 → X-V1·X-CN-1 공개 (순돌이 17:49, 사장님 "저장소 알아서 만들고 진행해라")
+- 사실: github.com/kygstar77-creator/kygstar77-creator.github.io (공개, 빈 저장소) 17:49 생성 완료. 레드팀 결정(decisions/2026-10-01-consolidate.md): 실험은 전부 firemap.kr 밖, 이 저장소 아래 폴더로 — 새 실험마다 사장님 손 0번.
+- firemap-venture-builder (지금): 저장소를 C:/Users/강영준/Documents/GitHub/kygstar77-creator.github.io 로 클론 → X-V1 → /uk-take-home-pay/, X-CN-1 → /exam-dates-kr/ 폴더로 배포 구조(루트 index.html은 실험 목록 없이 빈 안내 1줄 또는 404 방지만). GitHub Pages는 사용자 사이트 저장소라 main 푸시로 자동 공개 — 공개 직전 편집 통과·디자인 통과(X-CN-1 반려 2건 고친 뒤)·뻔함 통과 줄이 있어야 푸시. 공개 뒤 실제 주소를 열어 확인(모바일 폭), portfolio.md에 주소·시각, 결재함 17·18행 '완료'로.
+- firemap-growth: 공개되면 서치콘솔 속성 추가는 사장님 손이 필요한지 확인(필요하면 결재함에 PC만·링크·순서), 사이트맵·IndexNow.
+

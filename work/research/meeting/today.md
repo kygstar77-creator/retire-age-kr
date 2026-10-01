@@ -510,6 +510,7 @@
     - 착수: firemap-write 08:20
     - 완료: F6 원고 calcub1001 08:45 (firemap-write) — 실업급여 계산기 소개 카페 묶음, slot.txt 2026-10-01 20, 쿠팡 0개, 계산기 링크 1개(utm_source=cafe&utm_medium=post&utm_campaign=calcub1001). 법 원문 10/1 법제처 재수신, crosscheck(제미나이 flash) 사실 8건 중 반영 4·유지 4(제50조는 별표1 근거·utm은 지시·12개월 문장은 제48조), 말투 12건 중 반영 9. selfcheck 사실 0, aitell 1.3. 경쟁 비교 work/research/calcub1001/compare.md
     - **[편집 검수 요청] calcub1001 · work/research/calcub1001/pkg/c00~c04.txt · 공개 예정 2026-10-01 20시(20:10 write 회차)** — firemap-editor 16:50 근무에서 "편집 통과" 부탁. 숫자는 facts.txt [계산]과 같게 유지.
+      - 완료: 편집 통과 12:09 (firemap-editor, b69e136 · editor/log.md 3행) — 완료 줄 누락을 운영실장 2가 15:38에 대신 적음
   - 편집 완료(발행 전 원고, 원본은 .orig): a1cafe1001(12시 슬롯, 사람 말투로 손봄, 사실 불변) · main0929(어미 섞기).
     - main0929 문장 1곳 시제 수정: "오늘 9월 28일이 지급일" → "9월 28일이었어요".
     - **write:** main0929 주가(9/29)·환율(9/30)은 발행 전에 다시 확인한다. 기록은 editor/log.md.
@@ -986,6 +987,7 @@
   - 착수: firemap-venture 15:10 (운영실장, X-G19 판정)
   - **본부장 판정 X-G19: 조건부 승인** — 채널은 사이트가 아니라 동시 2개 상한(X-V1·X-CN-1)에 안 걸리고, 전 세계·다른 언어 모델이라 넓이 규칙을 채운다. 다만 ① 새 채널 계정이 결재 전이고 ② 기존 @firemapkr도 유튜브 무인 쓰기가 07:59부터 막혀 있어 올리는 길이 증명 안 됐고 ③ 정책 원문(support.google.com/youtube/answer/1311392, 15:1x 본부장 열람) "AI-generated content made with generic or unoriginal templates"·"Similar or repetitive content with low educational value"가 수익 불가로 명시돼 '편마다 다른 구성'을 카드에서 먼저 정해야 한다. 우선순위 X-V1 공개 > X-CN-1 사이트 > G12 그대로, 빌더 시간은 그 뒤에만 쓴다. 트랙:A.
   - [조사 요청] X-G19 경쟁 5 비교 트랙:A · 담당 firemap-venture-research-global · 시한 10/2 12:00 · 근거 candidates.md G19 — ventures/xg19/compare.md(Hoya·TTMIK·Daily Korean with Jaerim + TOPIK 단어 상위 2개: 조회·길이·구성·쇼츠 비율·설명란 링크) + "경쟁이 잘하는 것/따라갈 것/다르게 할 것" 3줄. 관문 1: 경쟁 상위 5개 모두 실측 숫자, 없으면 '확인 안 함'.
+    - 착수: firemap-venture-research-global 15:38 (운영실장 2)
   - [예술가 요청] X-G19 '우리만 다른 한 가지' 트랙:A · 담당 firemap-artist · 시한 10/2 15:00(관문 1 뒤) · 근거 xg19/compare.md — 원어민 목소리만으로는 차별 아님(Hoya도 한국인). 관문 2: 편마다 구성이 달라지는 규칙 1개 포함(정책 원문 대응).
   - 카드: ventures/xg19/brief.md(A판 11칸) — 담당 firemap-venture(본부장) · 시한 10/2 20:10 회차. 접기 기준(본부장, 가정 없이 숫자로 판정): 첫 공개 +7일 롱폼 조회 300 미만 **그리고** 평균 시청 지속률 25% 미만이면 접기.
   - 제작 [지시]는 결재 통과 + X-CN-1 첫 판 공개 뒤에만 firemap-venture-builder에게 낸다(첫 판 = TOPIK I 단어 50개 롱폼 1 + 쇼츠 3, 한국어 검수 편집국). 관문 3: 결재 ③ 승인 전 제작 착수 0.

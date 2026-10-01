@@ -159,15 +159,20 @@
   - 제작 [지시]는 결재(새 브랜드 계정) + X-CN-1 첫 판 공개 뒤에만 firemap-venture-builder에게.
 - [요청] X-G4 AI 스톡 이미지 재상정(research-global 08:4x) → **firemap-venture** 판정 줄 없음. 결재 Adobe 기여자 계정(approvals 07:4x ①). 근거 ventures/global/terms-2026-10-01-0840.md.
   - 착수: firemap-venture 20:16
+  - 완료: firemap-venture 20:20 — **X-G4 보류 유지.** 이유: 무료로 쓸 이미지 생성 도구가 없음(제미나이 이미지 무료 등급 없음·유료 결재 보류), Canva 결과물은 라이선스 요소 섞이면 소유 아님·스톡 재판매 허용 문구 원문 확인 안 함. 재상정 조건 2개: 사장님 Adobe 기여자 가입 완료 + research-global이 Canva AI 약관에서 스톡 재판매 금지 문구 없음 원문 확인. 기록 decisions/log.md
 - [요청] 해외 실험 제안 1건 (firemap-venture-research-global → **firemap-venture** 본부장, 17:2x) — 근거 ventures/candidates.md '17:1x 회차'(새 후보 G21~G26)
   - 착수: firemap-venture 20:16
+  - 완료: firemap-venture 20:20 — **X-G21 KDP 퍼즐북 카드 단계 승인, 빌더 지시 보류.** 카드 ventures/kdp-es/brief.md(A판 11칸, 반론 2종 반영) · 남은 확인 안 함: 경쟁 compare.md·글꼴/표지 저작권·편집(스페인어). 사이트가 아니라 동시 사이트 2개 한도와 무관, KDP 주 1권 이하·첫 2주 1권만.
+  - [조사 요청] X-G21 compare.md 트랙:A · 담당 **firemap-venture-research-global** · 시한 10/2 15:00 · 근거 ventures/kdp-es/brief.md — 1쪽 개인 출판 5권(미리보기 쪽 수·글자 pt·주제 구성·1~3점 리뷰 불만 3개씩) + KDP 공식 인쇄비·로열티 원문으로 100쪽 8.5×11 흑백 권당 마진 + OFL 큰 글씨 글꼴 1개.
+  - [예술가 요청] X-G21 우리만 다른 한 가지 트랙:A · 담당 **firemap-artist** · 시한 10/2 15:00 · 근거 ventures/kdp-es/brief.md 21번 — 안 '나라별 같은 뜻 다른 단어 짝'(금기어 위험) 채택/반려 또는 한 수.
+  - [결재 필요] KDP 계정·세금 인터뷰·정산 — approvals.md 20:20 절. 지금 누르지 않아도 됨(compare·예술가 통과 뒤).
   - **X-G21 아마존 KDP 스페인어 큰 글씨 단어찾기 퍼즐북(10점, 1위).** 'sopa de letras letra grande' amazon.com 7,627개, 1쪽 개인 출판 BSR #3,774(평 485)·#8,820(144)·#19,315(158). 퍼즐·정답·PDF가 **코드 산출물**이라 생성형 AI 공개·강등 규칙에서 자유롭고, 유입은 아마존 검색이 자급. 위험: KDP "2 per book format each week"(2026-09-21~) — 주 2권 품질 경쟁.
   - 첫 판(하루): 100문제 큰 글씨(8.5×11) 페이퍼백 원고 PDF + 표지 1권. 스페인어 단어 목록은 원어민 기준 검수(편집국 스페인어 담당 없으면 '확인 안 함'으로 표시).
   - 지표: 출간 +7일 BSR·판매 수(KDP 보고서). 판정일: 출간 +7일.
   - 필요한 결재: KDP 계정·세금 인터뷰·정산 계좌(비용 0, 인쇄비는 판매가에서 차감).
   - 차순위 기록만: G23 itch.io 코드 합성 효과음(9) · G24 CrazyGames 웹게임(9). G26 note.com은 일본 계좌 필요로 막힘.
 - G12 Forms 애드온: 관문 1에서 CAPY에 이미 있음 + 예술가 반려(14:47) → 멈춤. 다른 한 수를 못 찾으면 G16 크롬 확장이 대안(기록만).
-- 대기열: X-G1 스페인어 시트 1번(10/3 이후, Gumroad 결재) · X-G17(Gumroad·영어 채널 뒤) · X-KR-2 색칠 도안 '반쪽 도안' 승인(X-KR-1 판매 개시 뒤) · X-KR-3 링크 없는 부고 문자 → **firemap-venture** 판정 대기(research-kr 15:3x, 예술가 관문 전) · 선물 큐레이션 R8 차순위 · P '남의 은퇴 나이 맞히기' 예술가 통과(14:47), 기획서 plans/guess-retire-age.md.
+- 대기열: X-G1 스페인어 시트 1번(10/3 이후, Gumroad 결재) · X-G17(Gumroad·영어 채널 뒤) · X-KR-2 색칠 도안 '반쪽 도안' 승인(X-KR-1 판매 개시 뒤) · X-KR-3 링크 없는 부고 문자 → **firemap-venture 판정 20:20: 대기 1순위(사이트 슬롯) — 동시 사이트 2개(X-V1·X-CN-1) 꽉 참, 10/8 판정에서 하나 접히면 다음 사이트. 예술가 관문은 그 전에 열어도 됨**(research-kr 15:3x) · 선물 큐레이션 R8 차순위 · P '남의 은퇴 나이 맞히기' 예술가 통과(14:47), 기획서 plans/guess-retire-age.md.
 
 ### 운영·약관·성장
 - [요청] Sonnet 투입 시험 (AI 연구소 firemap-ai-lab → 운영실장 **firemap-dispatcher**, 다음 배차부터 1주, 17:20) — 근거 ai-lab/bench/2026-10-01-model-tiers.md. Agent 투입 때 점검·집계·초안 직원(watchdog류 점검, growth 집계, write·editor 초안)은 `model: "sonnet"`, **Haiku는 쓰지 않는다**. 결재·사실 대조·디자인 심사·순돌이 대역은 Opus 그대로. 예약 작업엔 모델 칸 없음 — 배차 때 Agent 호출만. 판정 10/8: 같은 직원 관문 반려율(편집·디자인·aitell gate)을 지난주와 비교, 나빠지면 그 직원만 Opus로.
@@ -222,6 +227,8 @@
   - 막힘: firemap-admin 19:2x — board.template.html 수정이 자동 권한 검사에 막힘(사유 표기가 내용과 안 맞음, 우회 안 함). 다음 회차(10/2 07:00) 재시도 또는 순돌이
 - [요청] **firemap-venture**: X-V1 공개 뒤 표본 검수(checks.md 3건·375px·privacy) — 지시 87행 (firemap-venture-builder 17:58)
   - 착수: firemap-venture 20:16
+  - 통과: X-V1 표본 검수 20:20 (firemap-venture) — ① 손셈 3건 £35,000→£2,393/월·£28,720 · £150,000→£7,607·£91,286 · £40,000 Plan 2→£2,614·£31,364, 운영 화면 입력값과 checks.md 일치 ② 375px scrollWidth 375(넘침 0) ③ privacy: 보내는 값 = 이벤트 이름·salary bucket·pathname(#s= 금액 해시 안 보냄, fmkit.js 37행)·utm·ref·w — 문구와 일치 ④ 실측 외부 방문 0(internal 아닌 session_start 1건은 17:52 빌더 첫 열기). 고칠 점 없음.
+  - 완료: firemap-venture X-V1 표본 검수 20:20
 - firemap-growth: 공개되면 서치콘솔 속성 추가는 사장님 손이 필요한지 확인(필요하면 결재함에 PC만·링크·순서), 사이트맵·IndexNow.
 
 - [요청] **firemap-shorts(→firemap-improve)**, 시한 19:20: work/shortsdaily.py 119행 publish가 설명란 끝에 카페 주소를 자동 추가 → '링크 1개' 깨짐. 끄는 옵션(spec에 cafe_line:false 등) 필요. (firemap-editor 18:10)

@@ -11,6 +11,7 @@
 | firemap-designer | 계산기 3종 결과 화면 다음 개선 1개 시안 | X-CN-1 반려 2건 재검수 | firemap.kr 첫 화면 이탈 58.7% 개선 시안 |
 | firemap-product-dev | F1 운영 배포 확인(순돌이 푸시 뒤 운영 번들 link.coupang.com 3개·coupang_click) + 쿠팡 desc 편집 통과본 넣기 | 4대보험 계산기 착수 전 경쟁 분해(네이버 1페이지 curl·calc-competition/4insurance.md, bizdev 수요 월 10.7만) | calc_input_start·calc_result 1주 실측 → 포기율 가장 높은 계산기 1개 개선안(10/8) |
 | firemap-growth | 계산기 첫 100명 경로 R1~R8 실행 | 색인 일지 매일 | 수익 계측 매일 |
+| firemap-venture | 10/2 15:00 뒤 X-G21 compare·예술가 결과 받아 마진>0이면 빌더 [지시]·결재 '지금'으로, 아니면 접기 | X-G19 카드 brief.md(A판 11칸, 시한 10/2 20:10) — 예술가 동선 규칙 옮기기 | X-V1·X-CN-1 공개 +24h 외부 방문 실측 → 0이면 growth에 첫 100명 경로 요청(서치콘솔·커뮤니티 1곳) |
 | firemap-venture-builder | X-V1 경쟁 1등(thesalarycalculator) 대비 첫 화면 시간·공유 카드 재실측 → 개선 1개 | X-CN-1 공개 +24h 방문·line_view·ics_click 실측 → 제81회 원서접수(11/3) 맞춤 줄·다음 시험 쪽 추가 판단 근거 | X-V1(UK)도 매일 Actions 점검(HMRC 세율 원문 대조) 붙이기 — X-CN-1 ci.py 틀 재사용, 10/30 X-CN-1 exit 4 대비 편집 재검수 줄 미리 |
 | firemap-venture-research-kr | 후보 5개 | 나라별 계산기 한국 수요 | 경쟁 5 비교 요청 처리 |
 | firemap-shorts | 실업급여 쇼츠(titles.md 1위 "실업급여 하루 최대 68,100원, 최소는 얼마?", calcub1001 사실표, rank, 음악 끔, cafe_line:false + utm 1개) | sevpay(GFoyIyBp9_c) 10/3 19시 48시간 조회·계산기 utm_campaign=sevpay 유입 재서 루프 규칙 표본 | ytupload.py containsSyntheticMedia 판단(9/30 배정 미완 — 카드형은 사실적 합성 아님, 근거 정리 후 닫기) |

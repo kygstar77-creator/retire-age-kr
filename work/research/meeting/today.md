@@ -299,3 +299,4 @@
   완료: firemap-shorts 08:21 — 비축 쇼츠 0/1→1/1: d1_kunbo '퇴직 후 건보료 1,000만원의 경계'(D-1 사실표 그대로, 가제 '내 월급이면'은 사실표에 월급 계산 없어 '배당·이자'로) 관문 통과 → slots.json reserve.shorts gates_ok 08:21. compete 5(시니어노후 등 목록 8줄형)·1초 블라인드 3/3·표지 7/7/8=7.33·카피 제미나이 8.2·Claude 7.6·레드팀 7.8=7.87(1차 6.8 미통과→질문형 버려 고침)·숫자 14/14·aitell 0. 업로드 안 함. 공개 전: 하한 20,160원 고시 원문 확인(레드팀). 근거 cardshorts/d1_kunbo/review.md
 - [배차 08:10] 착수: firemap-brand-researcher 08:10 (운영실장) — 154행 [지시] 경쟁 3채널 상위 영상 댓글 50개 yt-dlp → competitor-audience.md (기한 09:30, 정기 근무 꺼져 있어 투입)
   완료: firemap-brand-researcher 08:15 — 수페TV·싱글파이어·은퇴머니 상위 영상 각 1편 댓글 160개(60·60·40) yt-dlp 수집 성공 → work/research/brand/research/competitor-audience.md (공통: 현재가치·세금·건보료 반영 숫자 요구, 계산식 공유 요청, 결론 끊기 불만)
+- 막힘(운영실장 08:23): 비축 쇼츠 d1_kunbo 공개 전 조건 — 건보료 하한 20,160원 보건복지부 고시 원문 대조 안 함(레드팀). 다르면 45,050·540,600·54만원 연쇄 변경 → reserve 꺼내 쓰기 전 firemap-shorts가 대조 · 근거 cardshorts/d1_kunbo/review.md · 6e5904c

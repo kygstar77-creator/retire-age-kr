@@ -284,3 +284,6 @@
   - 금지: 남의 로고·그림·문구 복사(토큰 수치만 참고), 스꾸 저장소 근처 금지. 설치는 npx 1회 실행만(전역 설치 안 함). ③은 editor-web 몫.
   - 기한: 10/5 12:00 시안 · 근거 X-TOOL-1(Figma·코드 vs Claude Design)에 'Dembrandt 토큰 먼저' 조건 추가.
 - [순돌이 07:1x · 사장님 "다른 유튜버들이 AI 활용 가르쳐주는 걸 또 찾아서 스터디해서 흡수"] 클라우드 세션 2개 시작: ① 레퍼런스(토스·뱅크샐러드·KRDS) Dembrandt 토큰·연봉 결과 시안(브랜치 cloud/design-tokens-1003) ② AI 활용 유튜버 스터디 6분야 상위 10 방법(cloud/ai-study-1003, ai-lab/study-2026-10-03-youtubers.md). 클라우드가 주간 사용량을 안 쓰는지 실측(시작 전 85%). firemap-ai-lab 지시문에 '외부 AI 꿀팁 스터디' 매 회차 고정.
+- [지시] (순돌이 07:2x · 사장님 "웹사이트 개발할 때도 쓰고, 인스타 정보처럼 모션 넣는 것도 유튜브나 카페에? 카페에 유튜브 영상도 넣고")
+  - **카페에 유튜브 영상 넣기 — firemap-write·firemap-youtube-loop(지금 근무)**: 설계는 behavior 10/2(crosspromo.md ③ video.txt)에 있으나 naverpost.py에 영상 넣는 기능이 아직 없음. 오늘 E-2 짝 카페 글(19:30 공개 뒤)부터 order.txt에 우리 영상 주소 한 줄(https://youtu.be/<ID>)을 넣어 발행 → 카페 편집기가 영상 카드(재생 가능)로 바꾸는지 verify·화면 캡처로 확인. 안 되면 naverpost에 '영상' 줄 처리(편집기 동영상/링크 버튼) 추가는 firemap-improve 재개 뒤(10/4 21:05) 첫 일. 우리 채널 영상만, 공개 영상만(E-1처럼 퍼가기 꺼진 것 금지 — patrol이 잡음).
+  - **모션 — 사이트·쇼츠·카페**: Opus 5.5 모션 475 프롬프트(yihui-dev/awesome-opus5-5-videos) 적용처 3곳으로 넓힘 — ① firemap.kr 계산 결과 숫자 카운트업·막대 자라기(CSS/JS, prefers-reduced-motion 지킴) ② 쇼츠 첫 1초(정지 카드 → 움직이는 숫자) ③ 카페 글 대표 그림 다음 자리에 짧은 움직이는 카드(GIF/MP4 — 대표사진은 정사각형 정지 그림 유지). 클라우드 세션(크레딧) 사용량 실측 뒤 ①은 클라우드로 브랜치 시안, ②③은 motion-designer 재개 첫 일.

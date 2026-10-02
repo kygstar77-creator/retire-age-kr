@@ -48,6 +48,8 @@
 - [예술가 요청] **firemap-artist**: B10 '우리만 다른 한 가지' 11:30(채택/반려/한 수) · X-G21 '나라별 같은 뜻 다른 단어 짝' 15:00 · yt-series 15:40. [지시] **firemap-loop** 10/3: undervalue.py 단지 목록에 --minarea·--min 문턱.
 - [지시] **firemap-video-producer·firemap-youtube-loop** 오늘: B10 쇼츠 1편 10/3(copywriter·shorts), B10 롱폼은 10/4 카페 조회 조건부. 카페↔유튜브: 카페 대문·공지에 채널, 공지에 '유튜브 영상 — 카페 글 짝' 목록 글 1개(대문은 브라우저 차단). [순돌이 결정 요청] 카페 '영상' 게시판은 만들지 않기 권함.
 - [검수 요청] X-V1·X-CN-1 beat-1st 사후 심사: designer(두 화면 8점)·editor-web(X-CN-1 새 줄)·editor-en은 10/4 21:00 뒤 X-V1. [지시] **firemap-venture-builder** 10/3 15:40: X-CN-1·X-V1 06:00 Actions 안 돎 → 10/3 06:30 뒤 실행 목록 확인·고치기(안 고치면 X-CN-1 맨 위 줄 10/3 07:13 공식 링크로 물러남). 허브 도장은 GOV.UK 계산기 3건 대조(checks.md) 전까지 'Not yet checked'.
+  - 착수: firemap-venture-builder 09:41
+  - 완료: firemap-venture-builder 09:52 — 원인: 안 돈 게 아니라 **GitHub 예약 지연**. 공개 API 실측: x-cn-1 06:00 예약이 09:27 KST에 schedule로 돌아 성공·push(화면 도장 2026-10-02T09:27:40, 10/3 09:27까지 유효), uk-pay 06:30 예약은 09:44까지 미실행. 고침: 정각 피해 x-cn-1 05:17+예비 11:43, uk-pay 05:41+예비 12:13 KST(두 cron) → deploy.py ci로 push, raw 파일 확인. 10/3 첫 예약 실행 시각은 다음 회차에 확인.
 - 모든 공개물 review.md 규칙(지시문 6개): ① 경쟁 1등보다 나은 점 2개 ② 우리 지난 것보다 나아진 점 1개 ③ 1등이 더 나은 점 1개와 따라잡을 방법 — 비면 공개 금지. 쇼츠도 같은 진단 benchmark 16:00(copywriter·shorts·visual-designer, 쇼츠 틀 v2, cardshorts/benchmark-2026-10-02.md).
 - [지시] **firemap-motion-designer + firemap-visual-designer** 영상미: 경쟁 상위 롱폼 3편과 E-1 장면 비교 → 고칠 점 5개 렌더 틀 반영, 썸네일 통과선 8점. 대본·카피·제목·썸네일·설명 첫 줄·카페 제목 모두 심사 3명 평균 8점(경쟁 5 비교) 뒤 공개, 편 폴더 review.md.
 - [지시] **firemap-ai-lab·firemap-admin** 10/2 18:00: 유료 도구 전수 비교 → work/research/admin/paid-tools-2026-10.md(분야별·무인 사용 가능·월 가격·약관·무료 체험 결과·기대 효과), 결재는 위 증명 기준 3개 달성 뒤(무료 체험 A/B로 증명된 것만 예외), '꼭 필요한 것' 3~5개·안 삼 이유. 계정·결제는 사장님 몫. ai-lab 착수 09:15(admin 멈춤이라 가격·약관 칸까지).

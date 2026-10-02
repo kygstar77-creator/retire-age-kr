@@ -4,7 +4,9 @@
 name: uk-pay daily check
 on:
   schedule:
-    - cron: '30 21 * * *'   # 21:30 UTC = 다음 날 06:30 KST (x-cn-1 06:00 뒤)
+    # 정각·30분 예약은 GitHub이 몇 시간씩 미룬다(10/2 06:30 예약 → 09:44까지 미실행). 예비 1회를 둔다.
+    - cron: '41 20 * * *'  # 20:41 UTC = 다음 날 05:41 KST (x-cn-1 05:17 뒤)
+    - cron: '13 3 * * *'   # 03:13 UTC = 12:13 KST 예비
   workflow_dispatch:
 permissions:
   contents: read

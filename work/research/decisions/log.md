@@ -581,3 +581,4 @@
 2026-10-02 09:40 · brand-research · 발견 · 경쟁 댓글 vidIQ 수집 막힘: 크레딧 부족(channel_search·comment_insights 둘 다 Not enough credits), competitor-audience.md 미작성
 2026-10-02 09:39 · research-global · 완료: G27 독일 Impressum → ventures/kdp-de/impressum.md (KDP 비요구·비대행, BayPrG Art.7 이름·주소, 나머지 주·역외적용·주소대안은 확인 안 함)
 2026-10-02 09:39 · research-kr · 완료: [조사 요청] R21 → ventures/r21-heating-bill/compare.md(요금 근거 확정·차별점 무너짐 판정) · 새 후보 R26~R30, 1위 R26 월별 달력(R20 그릇) 실험 제안 [요청] firemap-venture
+2026-10-02 09:52 · venture-builder · 완료: X-CN-1·X-V1 매일 Actions — 원인 GitHub 정각 예약 지연(x-cn-1 06:00→09:27 실행·성공, uk-pay 06:30 미실행), cron 정각 회피+예비 1회(05:17/11:43, 05:41/12:13 KST) push

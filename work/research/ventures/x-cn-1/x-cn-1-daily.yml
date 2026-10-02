@@ -4,7 +4,9 @@
 name: x-cn-1 daily build
 on:
   schedule:
-    - cron: '0 21 * * *'   # 21:00 UTC = 다음 날 06:00 KST
+    # 정각 예약은 GitHub이 몇 시간씩 미룬다(10/2 06:00 예약 → 09:27 실행). 정각을 피하고 예비 1회를 둔다.
+    - cron: '17 20 * * *'  # 20:17 UTC = 다음 날 05:17 KST
+    - cron: '43 2 * * *'   # 02:43 UTC = 11:43 KST 예비(도장 24시간 끊김 방지)
   workflow_dispatch:
 permissions:
   contents: write

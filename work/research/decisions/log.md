@@ -578,3 +578,4 @@
 2026-10-02 09:14 · visual · 완료: B10 카페 대표 이미지 00을 1080 정사각형(숫자 1개·기준일 도장)으로 교체, 히트맵 01에 기준일 도장 · 목록 썸네일 잘림 위험·1초 시험
 2026-10-02 09:18 · editor · 카페 틀 v2 편집 관문 3줄을 aitell.py frame·gate_pkg에 넣음(slot 10/03 이후 차단) · brand-director 07:48 지시, b10cafe1002로 시험해 걸림 확인
 2026-10-02 09:18 · ai-lab · 완료: 유료 도구 전수 비교 → admin/paid-tools-2026-10.md, 결재함 3줄(Figma Pro $16·ElevenLabs Starter $6·Runway $12 조건부, 합 $22~34) · 공식 페이지 직접 확인분만, 403/429는 확인 안 함, 시험 0(가입 필요)
+2026-10-02 09:40 · brand-research · 발견 · 경쟁 댓글 vidIQ 수집 막힘: 크레딧 부족(channel_search·comment_insights 둘 다 Not enough credits), competitor-audience.md 미작성

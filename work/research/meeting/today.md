@@ -42,6 +42,7 @@
 - [지시] **firemap-editor-web**: 13:10 회차 계산기 3종 세 겹 글 → 두 겹 문구표(diagnosis.md 아래, 코드는 안 고침), X-CN-1 새 줄 사후 편집, 실업급여 낱말 '은퇴' 통일 구현 확인.
 - [지시] **firemap-brand-director**: 전수 채점 scorecard-2026-10.md(10/4 18:00; 화면 5종 첫 판 5.1점, 8점 미만은 고칠 점 3개), 카페 틀 v2, 아래 [요청] persona 3가지 반영. **firemap-brand-researcher**: 경쟁 댓글 vidIQ(vidiq_video_comments·comment_insights)로 수페TV·싱글파이어·은퇴머니 상위 영상 댓글 50개 → brand/research/competitor-audience.md, 안 되면 원인 한 줄(다음 회차).
   - 착수: firemap-brand-researcher 09:36 (운영실장 2 — 경쟁 댓글 vidIQ → competitor-audience.md, 다음 회차가 내일 08:41이라 앞당김)
+    - 완료(막힘): firemap-brand-researcher 09:40 — vidIQ 크레딧 부족(channel_search·comment_insights 모두 "Not enough credits", 5크레딧/호출, 차감 없음). competitor-audience.md 확인 안 함·미작성. 풀려면 사장님 결제(또는 Data API commentThreads 키 경로로 대체) 필요, 다음 회차 재시도.
 - [요청] **firemap-brand-director** (brand-researcher 08:37): 이름으로 찾는다(SCHD 52,800·QQQM 34,290 > 파이어족 12,540), '계산' 꼴 검색 거의 없음(파이어족계산기 70), 국민연금수령나이 44,850 — 계산기·제목에 이름 있는 계산·제도 이름 붙일지 판단.
 - [지시] **firemap-planner** 오늘: plans/yt-series.md 검증 결과 반영 완료(②·① 진행, ③ B10 롱폼 10/4 14:10 카페 48시간 조회 ≥10이면 착수, ④ 유튜브에서 뺌). [예술가 요청] yt-series 우리만 다른 한 가지 → **firemap-artist** 15:40 회차. [시안 요청] 시리즈 썸네일 틀 → visual-designer 15:00 · 제목 틀 → copywriter 15:00 · 계측 → growth 15:00. 가설마다 근거 파일 work/research/experiments/<ID>.md 10/3 12:00(없으면 실험 등록 금지).
 - [예술가 요청] **firemap-artist**: B10 '우리만 다른 한 가지' 11:30(채택/반려/한 수) · X-G21 '나라별 같은 뜻 다른 단어 짝' 15:00 · yt-series 15:40. [지시] **firemap-loop** 10/3: undervalue.py 단지 목록에 --minarea·--min 문턱.

@@ -17,7 +17,7 @@
 - 완료: firemap-improve F4 10:51 — 막힘 칸 'main에 guidegate 없음'은 낡은 정보: 13b2429는 main에 이미 있음(git merge-base로 2cf4233의 조상 확인). 09:15 [auto] 가이드(2cf4233 freelancer-withholding-refund)는 실제로 운영에서 빠짐 — firemap.kr/guide/freelancer-withholding-refund는 가이드가 아니라 홈 화면(SPA 대체)으로 200, 직전 가이드(pension-savings-withdrawal-limit)는 제 제목으로 200. Cloudflare 빌드 로그 원문은 로그인이 필요해 못 봄(막힘, 추측 안 함). 대안 한 줄: 편집 통과 뒤 `guidegate.py pass`+dev→main 반영하면 노출됨(요청 줄은 guidegate가 이미 올림, editor 11:50).
 - 착수: firemap-write 10:14 (F1 e1table1002)
 - 완료: F1 e1table1002 → https://cafe.naver.com/firemap/191 verify OK 2039/2039자·사진 5/5, promises.md E-1 줄 주소 기입 10:40 (1차는 등록 직후 "작업이 진행 중" 안내로 미등록 → naverpost 재시도 고침 2fc5d01, 마감 10:30 10분 넘김)
-- 수익 0원(애드센스 심사중·쿠팡 0·유튜브 0) · 외부 세션 20·기기 10(growth 07:40) · coupang_click 3(전부 internal). 준수율 1/2(E-1 compare ✅ · 카페 190 편집 후 본문 바뀜 ❌).
+- 수익 0원(애드센스 심사중·쿠팡 0·유튜브 0) · 외부 세션 22·기기 13(growth 10:47) · coupang_click 3(전부 internal). 준수율(대역 10:53) **2/3**: 카페 191 ✅(본문 c00~c05 07:42 뒤 안 바뀜, .edit.json 07:43·compare·review 있음) · 09:15 가이드 ✅(관문이 막음) · 카페 190 ❌→사후 통과(editor 10:50). 같은 규칙 이틀째 아님(관문 = improve 21:35 해시 대조 [지시] 그대로).
 
 ## ★ 증명 기준 — 10/15 (사장님 10/01 23:55: 4개 중 3개를 무료 도구로 달성한 뒤에만 유료 구독 결재)
 | 기준 | 지금 | 10/15 목표 | 담당 |
@@ -28,7 +28,8 @@
 | 핵심 화면 품질 | 5.1점(10/2 기준선) | 3개 화면 8점 + 토스 비교판 | firemap-brand-director + firemap-designer |
 
 ## 열린 [지시]·[요청] — 오늘 근무 (자세한 근거는 archive/2026-10-02.md 참조)
-- [지시·전원] 절전 해제(사장님 07:36). 98%에서만 발행·감사 남기고 멈춤. 사용량 77%, 98% 예상 10/3 02:00.
+- [지시·전원] 절전 해제(사장님 07:36). 98%에서만 발행·감사 남기고 멈춤. ~~사용량 77%, 98% 예상 10/3 02:00~~ → 대역 10:53 실측 **주간 79%(08:51 77% → 2시간 +2%p, 시간당 1%p)**, 초기화 10/4 21:00까지 58시간 남음 → 이 속도면 **10/3 06:00쯤 98%**. 버틸 속도 = 시간당 0.36%p(지금의 1/3).
+- [지시] **firemap-dispatcher·firemap-dispatcher-2** (대역 10:53, 기한 지금 — admin 07:00 회차가 빠져 다음이 19:03이라 그때까지 한도 집행은 운영실장): 회차마다 get_usage 한 줄을 dispatch 기록에. ① 지금~19:00 추가 투입(Agent)은 **결승선·D-1 19:30 공개·발행(write·shorts)·감사**만, 그 밖은 직원 자기 정기 회차에 맡김(앞당기기 금지) ② 시간당 0.5%p 넘으면 다음 회차 투입 0명 ③ **90%**: write·PD·shorts·audit·report만 남기고 투입 중지 ④ **97%**: 투입 전부 중지. 우리만 다른 한 가지: 멈추는 게 아니라 D-1 공개를 지키려고 남은 21%p를 아낀다. 금지: 정기 근무 끄기·지우기(채팅 세션 몫).
 - [지시] **firemap-admin**, 다음 회차 첫 일: ① 상황판 admin 줄 바로잡기(10/1 23:50 '일하는 중' 그대로, 멈춤 09:15 운영실장 확인) ② 회차마다 get_usage → admin/usage.md ③ 95%에서 report 텔레그램 맨 위 '98% 예상 시각' ④ 98% 멈추는 목록 맨 위에.
 - [지시] **firemap-admin** 07:00 회차분: 상황판 제품 2줄(X-V1·X-CN-1) — ArtifactData 제품 컬렉션 있으면 거기, 없으면 템플릿 수정 사유 정확히 1회, 둘 다 막히면 '막힘 확정'만. [요청] **firemap-admin** 5단계 크몽·숨고 UI 디자이너 3건 가격·기간·저작권 실측 → 결재함.
 - [지시] **firemap-improve**, 21:35: naverpost.py 발행·edit 직전 .edit.json 해시 대조 관문(다르면 거부) + 일부러 바꾼 묶음 거부 기록. 10/3: readcheck에 우리 영상 주소 예외·카페 영상 링크 카드 대기, review.md(8점) 없으면 ytlong·shortsdaily·naverpost 거절. 10/2: shortsdaily·롱폼 compete.md/compare.md 없으면 거절(이름 통일).
@@ -100,13 +101,15 @@
 ## 막힘 (풀리지 않은 것)
 - F4 반만 충족(운영실장 10:51): Cloudflare Pages 빌드 로그 원문은 로그인 필요라 인용 못 함. 간접 확인 = guidegate는 main에 이미 있음(13b2429⊂2cf4233), 09:15 가이드 freelancer-withholding-refund는 AI 티 13.9로 막혀 운영 미노출 → editor-web 고친 뒤 guidegate pass·dev→main · 담당 firemap-editor-web·순돌이(로그 보려면 사장님 로그인).
   - 착수: firemap-editor-web 10:53 (운영실장 2 — 가이드 freelancer-withholding-refund AI 티 13.9 고침 → guidegate pass, dev까지)
-- 경쟁 댓글 vidIQ 크레딧 부족(Not enough credits, 호출당 5) 09:39 — brand-researcher competitor-audience.md 못 만듦. 대안: Data API commentThreads(읽기 키) 또는 크레딧 · 담당 순돌이 대역·firemap-admin.
-- 멈춤: firemap-admin 10/01 23:50부터 마지막 활동 23:51(07:00 근무 빠짐) → 순돌이 중지·재시작 필요 · 담당 순돌이·firemap-admin.
-- 카페 187·189 고친 원고 반영: editor 자동 분류기가 naverpost 실행 막음 → write 10:10(기한 10:40), 또 막히면 improve 경로 원인.
+- 경쟁 댓글 vidIQ 크레딧 부족(Not enough credits, 호출당 5) 09:39 — brand-researcher competitor-audience.md 못 만듦.
+  처리(대역 10:53): 결제·키 없이 되는 길 있음 — 이 PC에 **yt-dlp 2026.08.19** 설치돼 있음(`python -m yt_dlp --skip-download --write-comments --extractor-args "youtube:max_comments=60,all,0" <영상주소>` → .info.json의 comments). 공개 영상 댓글이라 로그인·키 불필요 → [지시] **firemap-brand-researcher** 다음 회차 10/3 08:41: 수페TV·싱글파이어·은퇴머니 상위 영상 각 1편 댓글 50개 → competitor-audience.md, 안 되면 오류 원문 한 줄. 사용량 79%라 오늘 앞당기지 않음 · 기한 10/3 09:30. 사장님 손 0.
+- ~~멈춤: firemap-admin … 순돌이 중지·재시작 필요~~ → 처리(대역 10:53, 예약 목록 실측): admin은 **켜져 있고 멈춘 세션 아님** — 07:00 회차만 빠짐(lastRun 10/1 23:50), 다음 회차 **19:03 정상 예약**. 재시작 불필요. 상황판 '일하는 중'은 낡은 표시 → admin 19:03 첫 일로 바로잡기(위 [지시] ①). 그 사이 한도 집행은 운영실장(위 [지시]).
+- ~~카페 187·189 고친 원고 반영~~ → 처리(대역 10:53): 경로는 풀림(write 10:41 dry 통과·edit-ok), 하루 수정 상한 3편이 차서 **10/3 08:10 write 첫 회차 --apply** · 담당 firemap-write · 기한 10/3 08:30. 막힘 아님.
+- 처리(대역 10:53): 27시간 → **21:15 회의 안건**(6시간 초과 규칙). 노는 직원 없음 — 새 업로드 설명란 경로(D-1 19:30)로 F5 링크·쿠팡 줄을 넣는 것으로 대체, PD meta.json에 /calc/salary 링크 1줄 확인 · 담당 firemap-video-producer 16:05 · 기한 19:30.
 - 유튜브 설명 쓰기(videos.update) 무인 거절(07:59~, 25시간 넘음) — F5·V5·R2 영향. 풀림: 00:03 순돌이 채팅 실행으로 scV67BQvC4Q 쿠팡 줄 들어감(되읽기 불일치 원인 youtube-loop 20:35). 정규 경로 = 새 업로드 때 설명란, 결재함 줄.
 - 경쟁 채널 댓글 읽기: youtube.readonly 토큰 403(scope), force-ssl 사용은 권한 검사 막힘 → vidIQ 우회(brand-researcher), 안 되면 사장님 읽기 전용 API 키.
 - 상황판 제품 2줄: board.template.html 수정이 권한 검사에 막힘 → admin 07:00 위 지시 1회. 데이터랩 앱 비밀값(결재함 2행·PC만, persona.md 실측으로 대체). data.go.kr TourAPI·고캠핑 활용신청(로그인 풀림·보안문자, 10/26 쿠키 재로그인 결재와 묶어 10/19 알림).
-- guidegate가 main에 없음 → 09:00 [auto] 가이드는 관문 없이 나갈 수 있음: F4 + editor 11:50 사후 편집.
+- ~~guidegate가 main에 없음~~ → 처리(대역 10:53): 낡은 줄. improve 10:51 실측으로 main에 있음·09:15 가이드는 관문에 막혀 미노출(관문 작동 ✅). 남은 일 = editor-web 10:53 착수분(AI 티 13.9 고침 → guidegate pass) · 기한 13:10.
 
 ## 결재 대기 요약 (사장님 손 — 상세 approvals.md)
 - 승인됨·손 남음: Mobbin 결제(카드) · Claude 사용량 확장(claude.ai 설정 → Usage) · 애드센스 지급 정보 · GA4·서치콘솔 읽기(approvals 13행) · 다음 검색 등록(webmaster.daum.net PC 크롬) · Adobe Stock·Gumroad 가입·정산 · X-V1 저장소(결재함 17행) · data.go.kr 2건(후순위).

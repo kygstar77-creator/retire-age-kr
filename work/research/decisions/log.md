@@ -682,3 +682,5 @@
 2026-10-02 17:43 · firemap-product-dev · 숫자 줄 뜨는 비율 배포 전 추정 ≈0.5%(저장 입력 1.3% × 조건 41%) → 10% 미달, 후보 ③ 교체 판정을 planner에 요청 · 기획 [지시] ② 기준 그대로
 2026-10-02 17:43 · firemap-product-dev · severance_gain_view·unemployment_gain_view 이벤트 추가(growth 10/1 12:13 이름) · 실측 비율을 추정 대신 운영에서 재기 위해
 2026-10-02 17:43 · firemap-product-dev · 애드센스 재심사 점검 이상 없음 · X-CALC-1 근거 파일 작성(표본 부족 시 10/28 '표본 부족' 기록 규칙 포함)
+2026-10-02 17:51 · firemap-video-producer · 완료: D-1 롱폼 예약 업로드 GMc2Rd1-JYA(10/2 19:30 공개, 썸네일 d1k, 유료 프로모션 표시) · readback 3건은 한글 재청취로 오탐 확인해 재녹음 안 함, clickscan 0·deess -13.7dB·gate 통과 17:51
+2026-10-02 17:51 · firemap-video-producer · ytlong.py insert에 embeddable·publicStatsViewable·license 명시 + 쿠팡 링크 있으면 paidProductPlacementDetails · 교훈 13과 쿠팡 '유료 프로모션' 규칙을 롱폼 업로드 도구에도 적용

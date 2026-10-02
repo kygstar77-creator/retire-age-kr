@@ -101,9 +101,12 @@ def up(ep):
     title, desc = [x.replace('<', '＜').replace('>', '＞') for x in (m['title'], m['desc'])]
     body = {'snippet': {'title': title[:100], 'description': desc[:5000], 'tags': m['tags'], 'categoryId': '27', 'defaultLanguage': 'ko', 'defaultAudioLanguage': 'ko'},
             'status': {'privacyStatus': 'private', 'publishAt': datetime.datetime.fromisoformat(m['publishAt']).astimezone(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
-                       'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': bool(m.get('synthetic'))}}
-    notes = []
-    req = yt.videos().insert(part='snippet,status', body=body, media_body=MediaFileUpload(p('video'), chunksize=8 * 1024 * 1024, resumable=True))
+                       'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': bool(m.get('synthetic')),
+                       'embeddable': True, 'publicStatsViewable': True, 'license': 'youtube'}}   # 교훈 13: status 칸 전부 명시
+    notes = []; part = 'snippet,status'
+    if m.get('paid') or 'link.coupang.com' in desc:     # 쿠팡 링크 = '유료 프로모션 포함' 표시(ytupload.py와 같은 규칙)
+        body['paidProductPlacementDetails'] = {'hasPaidProductPlacement': True}; part += ',paidProductPlacementDetails'
+    req = yt.videos().insert(part=part, body=body, media_body=MediaFileUpload(p('video'), chunksize=8 * 1024 * 1024, resumable=True))
     res = None
     while res is None:
         st, res = req.next_chunk()

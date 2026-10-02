@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hub stamp preview</title>
+<!-- global-calcs 허브 첫 화면·나라 쪽 도장 칩·대조표 쪽 시안 (firemap-designer 2026-10-02).
+     문구 = ventures/global-calcs/stamp-copy.md 1위(카피라이터) 그대로. 토큰 = X-V1(design/uk-pay/spec.md 6장) 그대로.
+     기본 상태는 '대조 전'(지금 사실). ?state=checked 는 GOV.UK 3건 대조가 checks.md에 적힌 뒤의 모습 — 표 값은 자리값. -->
+<style>
+:root{--bg:#f5f6f4;--surface:#fff;--ink:#15191c;--ink2:#5b636a;--line:#e3e6e3;--accent:#0a6b52;--accent-soft:#e3f1ec;--warn:#8a5a00;--warn-soft:#fff4dc;--result:#12211c}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f1312;--surface:#18201d;--ink:#eef2f0;--ink2:#a9b3ae;--line:#26302c;--accent:#2fae86;--accent-soft:#14302a;--warn:#f0bd57;--warn-soft:#2d2415;--result:#0b1714}}
+:root[data-theme=dark]{--bg:#0f1312;--surface:#18201d;--ink:#eef2f0;--ink2:#a9b3ae;--line:#26302c;--accent:#2fae86;--accent-soft:#14302a;--warn:#f0bd57;--warn-soft:#2d2415;--result:#0b1714}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:17px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.num{font-variant-numeric:tabular-nums}
+.frames{display:flex;flex-wrap:wrap;gap:32px;justify-content:center;padding:0 0 48px}
+.frame{width:100%;max-width:375px}
+.cap{display:none}
+@media (min-width:800px){.frames{padding:32px}.frame{background:var(--bg);outline:1px solid var(--line)}.cap{display:block;font:600 13px system-ui;color:var(--ink2);padding:8px 16px;background:var(--surface)}}
+.brand{height:48px;display:flex;align-items:center;padding:0 16px;font-size:15px;font-weight:700}
+.pad{padding:0 16px 32px}
+h1{font-size:24px;line-height:1.3;font-weight:700;margin:8px 0}
+.lede{font-size:15px;color:var(--ink2)}
+.list{margin-top:24px;background:var(--surface);border-radius:16px;overflow:hidden}
+.c{display:flex;gap:16px;padding:16px;text-decoration:none;color:inherit;border-bottom:1px solid var(--line);min-height:88px}
+.c:last-child{border-bottom:0}
+.code{flex:0 0 40px;height:40px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-weight:700;font-size:15px}
+.body{flex:1;min-width:0}
+.name{font-size:17px;font-weight:700}
+.sub{font-size:13px;color:var(--ink2)}
+.go{align-self:center;color:var(--ink2);font-size:22px}
+/* 도장 칩 */
+.stamp{display:inline-flex;align-items:center;gap:6px;margin-top:8px;min-height:32px;padding:4px 10px;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none;line-height:1.3}
+.stamp svg{flex:0 0 14px}
+.stamp.ok{background:var(--accent-soft);color:var(--accent)}
+.stamp.no{background:var(--warn-soft);color:var(--warn)}
+.note{margin-top:16px;font-size:13px;color:var(--ink2)}
+/* 나라 쪽 */
+.yr{display:inline-block;font-size:13px;font-weight:700;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:2px 10px}
+.in{margin-top:16px;background:var(--surface);border-radius:16px;padding:16px}
+.in label{font-size:15px;color:var(--ink2)}
+.box{margin-top:8px;height:56px;border-radius:12px;border:1px solid var(--line);display:flex;align-items:center;padding:0 16px;font-size:20px;font-weight:600}
+.res{margin-top:16px;background:var(--result);color:#fff;border-radius:16px;padding:20px}
+.res .q{font-size:15px;opacity:.72}
+.res .n{font-size:40px;font-weight:700;line-height:1.2;margin-top:4px}
+.res .k{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.15);font-size:15px}
+.res .stamp{margin:0 0 12px}
+.res .stamp.ok{background:rgba(47,174,134,.18);color:#9fe3c8}
+.res .stamp.no{background:rgba(240,189,87,.16);color:#f6d48e}
+/* 대조표 */
+.first{font-size:15px;color:var(--ink2);margin-top:8px}
+table{width:100%;border-collapse:collapse;margin-top:16px;background:var(--surface);border-radius:16px;overflow:hidden;font-size:15px}
+th,td{padding:12px 8px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left;padding-left:16px}
+th:last-child,td:last-child{padding-right:16px}
+th{font-size:13px;color:var(--ink2);font-weight:600}
+td.v{font-weight:700;color:var(--accent)}
+td.p{color:var(--ink2);font-weight:600}
+</style>
+</head>
+<body>
+<div class="frames">
+  <!-- ① 허브 첫 화면 -->
+  <section class="frame" id="hub">
+    <div class="cap">① Hub / — 375px first screen</div>
+    <div class="brand">[site name TBD]</div>
+    <div class="pad">
+      <h1>Take-home pay calculators, checked against each government's own calculator</h1>
+      <p class="lede">Pick a country.</p>
+      <div class="list">
+        <a class="c" href="#uk"><span class="code">UK</span><span class="body"><span class="name">United Kingdom</span><br><span class="sub">2026/27 · England, Wales &amp; NI</span><br>
+          <span class="stamp" data-uk></span></span><span class="go">›</span></a>
+        <a class="c" href="#au"><span class="code">AU</span><span class="body"><span class="name">Australia</span><br><span class="sub">2026–27 · tax withheld per pay</span><br>
+          <span class="stamp" data-au></span></span><span class="go">›</span></a>
+      </div>
+      <p class="note">We are not part of HMRC, GOV.UK or the ATO.</p>
+    </div>
+  </section>
+
+  <!-- ② 나라 쪽: 결과 카드 위 칩 -->
+  <section class="frame" id="uk">
+    <div class="cap">② /uk/ — stamp chip on the result card</div>
+    <div class="brand">[site name TBD] · UK</div>
+    <div class="pad">
+      <span class="yr">2026/27</span>
+      <h1 style="font-size:24px">UK take-home pay</h1>
+      <div class="in"><label>Salary per year</label><div class="box num">£60,000</div></div>
+      <div class="res">
+        <a class="stamp" data-ukchip href="#checks"></a>
+        <div class="q">Take-home per month</div>
+        <div class="n num">£—</div>
+        <div class="k">Of your next £1,000 you keep £—</div>
+      </div>
+      <p class="note">Result values come from the builder's compute(); this frame only places the chip.</p>
+    </div>
+  </section>
+
+  <!-- ③ 대조표 쪽 -->
+  <section class="frame" id="checks">
+    <div class="cap">③ /uk/checks/ — comparison table</div>
+    <div class="brand">[site name TBD] · UK checks</div>
+    <div class="pad">
+      <h1 style="font-size:24px">How our UK numbers compare</h1>
+      <p class="first">We typed the same 3 salaries into GOV.UK's "Estimate your Income Tax for the current year" and compared every line. We are not part of HMRC or GOV.UK.</p>
+      <table class="num">
+        <thead><tr><th>Salary</th><th>Ours</th><th>GOV.UK</th><th>Result</th></tr></thead>
+        <tbody data-rows></tbody>
+      </table>
+      <p class="note" data-checkdate></p>
+    </div>
+  </section>
+</div>
+<script>
+// 기본 = 지금 사실(대조 전). ?state=checked 는 checks.md에 GOV.UK 3건이 적힌 뒤의 모습(자리값).
+const checked = new URLSearchParams(location.search).get('state') === 'checked';
+const tick = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7.5l2.5 2.5L11 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const dash = '<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.6" stroke-dasharray="2.5 2"/></svg>';
+const set = (sel, ok, text) => document.querySelectorAll(sel).forEach(el => { el.classList.add(ok ? 'ok' : 'no'); el.innerHTML = (ok ? tick : dash) + '<span>' + text + '</span>'; });
+if (checked) {
+  set('[data-uk]', true, '3/3 match GOV.UK · 1 Oct 2026');
+  set('[data-ukchip]', true, "3 of 3 test salaries match GOV.UK's own calculator · 1 Oct 2026");
+} else {
+  set('[data-uk]', false, "Not yet checked against GOV.UK's calculator");
+  set('[data-ukchip]', false, "Not yet checked against GOV.UK's calculator");
+}
+set('[data-au]', false, "Not yet checked against the ATO's tax withheld calculator");
+const rows = checked
+  ? [['£25,000','£—','£—','Match (within £1)'],['£60,000','£—','£—','Match (within £1)'],['£110,000','£—','£—','Differs by £—']]
+  : [['£25,000','—','not entered','—'],['£60,000','—','not entered','—'],['£110,000','—','not entered','—']];
+document.querySelector('[data-rows]').innerHTML = rows.map(r => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td class="${r[3].startsWith('Match')?'v':'p'}">${r[3]}</td></tr>`).join('');
+document.querySelector('[data-checkdate]').textContent = checked ? 'Typed into GOV.UK on <date> · next re-check on the 1st of each month' : 'Not yet checked — values appear after 3 salaries are typed into GOV.UK\'s calculator.';
+</script>
+</body>
+</html>

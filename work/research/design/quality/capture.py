@@ -10,7 +10,15 @@ OURS = {
  "severance": "https://firemap.kr/calc/severance?fm_internal=1",
  "unemp": "https://firemap.kr/calc/unemployment-benefit?fm_internal=1",
  "guide": "https://firemap.kr/guide/?fm_internal=1",
+ # 10/2 designer: 빠진 도구 6개(sitemap.xml 기준)
+ "dividend": "https://firemap.kr/dividend?fm_internal=1",
+ "pension": "https://firemap.kr/pension?fm_internal=1",
+ "health": "https://firemap.kr/health-insurance?fm_internal=1",
+ "tax": "https://firemap.kr/tax?fm_internal=1",
+ "firetype": "https://firemap.kr/firetype?fm_internal=1",
+ "ranking": "https://firemap.kr/ranking?fm_internal=1",
 }
+ONLY = set(sys.argv[1:])
 REF = {
  "naver-salary": "https://m.search.naver.com/search.naver?query=" + quote("연봉계산기"),
  "naver-severance": "https://m.search.naver.com/search.naver?query=" + quote("퇴직금계산기"),
@@ -25,6 +33,7 @@ async def main():
         b = await p.chromium.launch()
         for group in (OURS, REF):
             for k, u in group.items():
+                if ONLY and k not in ONLY: continue
                 for name, vp, ua, mob in (("m", {"width":375,"height":812}, UA, True), ("d", {"width":1440,"height":900}, None, False)):
                     ctx = await b.new_context(viewport=vp, user_agent=ua, is_mobile=mob, device_scale_factor=2 if mob else 1, locale="ko-KR")
                     pg = await ctx.new_page()

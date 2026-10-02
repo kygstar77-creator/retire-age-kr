@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>연봉 실수령 ds-v2</title>
+<!-- v2f: 공제 펼침을 카드 밖 목록으로·버튼 48·데스크톱 7:5 격자·메뉴 밑줄·다크 표면 3단+결과 테두리·보조 글 ink-2 (레드팀 v2e 7점 지적)
+     v2e: 다크 바탕 #101114·주황 한 값·토글 선택 밝게 / 공제 펼침을 버튼 아래로·펼침 모양 1종 / 데스크톱 아래 전체 폭 계산 방법·바닥글·머리 메뉴 (레드팀 7점 지적)
+     v2d: 88.1% 주황 뺌(주황은 버튼 1곳)·로고 실제 아이콘·빈 광고 칸 렌더 안 함 (레드팀 6점 지적)
+     v2c: 다음 단계를 결과 카드 안 마지막 줄로 합침·입력 높이 52·여백 줄임 (lite 2회 지적)
+     v2b 10:5x: 제미나이 lite 6점 지적 중 규칙 안의 것만 반영 — 결과 먼저·입력 상자 겹 제거·칩 제거·숫자 44 (ds-v2.md 6장) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* ds-v2 토큰 (ds-v2.md 1장) */
+:root{
+  --ds-bg:#f6f7f9; --ds-surface:#fff; --ds-surface-2:#f2f4f6; --ds-line:#e6e9ee;
+  --ds-ink:#18191d; --ds-ink-2:#4b515c; --ds-ink-3:#6b7280;
+  --ds-accent:#ff5a00; --ds-accent-strong:#e64f00; --ds-result:#18191d;
+  --ds-fs-hero:40px; --ds-fs-title:24px; --ds-fs-head:19px; --ds-fs-body:17px; --ds-fs-label:15px; --ds-fs-caption:13px;
+  --ds-sp-half:4px; --ds-sp-1:8px; --ds-sp-2:16px; --ds-sp-3:24px; --ds-sp-4:32px; --ds-sp-6:48px;
+  --ds-page:#fff; --ds-r-input:12px; --ds-r-btn:14px; --ds-r-card:20px;
+  --ds-font:'Pretendard Variable',Pretendard,-apple-system,system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --ds-bg:#101114; --ds-surface:#1b1c21; --ds-surface-2:#1b1c21; --ds-line:#30323a;
+  --ds-ink:#f2f3f5; --ds-ink-2:#c3c6cd; --ds-ink-3:#9a9ea7; --ds-accent:#ff5a00; --ds-result:#2a2c34; --ds-result-line:#3d404a; --ds-page:#101114; --ds-seg-on:#4a4d58;}}
+:root[data-theme=dark]{--ds-bg:#101114; --ds-surface:#1b1c21; --ds-surface-2:#1b1c21; --ds-line:#30323a;
+  --ds-ink:#f2f3f5; --ds-ink-2:#c3c6cd; --ds-ink-3:#9a9ea7; --ds-accent:#ff5a00; --ds-result:#2a2c34; --ds-result-line:#3d404a; --ds-page:#101114; --ds-seg-on:#4a4d58;}
+*{box-sizing:border-box;margin:0}
+body{background:var(--ds-page);color:var(--ds-ink);font-family:var(--ds-font);font-size:var(--ds-fs-body);line-height:1.5;-webkit-font-smoothing:antialiased}
+.num{font-variant-numeric:tabular-nums;font-feature-settings:'tnum'}
+/* TopBar (v1 그대로) */
+.top{height:56px;display:flex;align-items:center;gap:var(--ds-sp-1);padding:0 var(--ds-sp-2);max-width:1080px;margin:0 auto}
+.top b{font-size:var(--ds-fs-label);font-weight:700}
+.top .dot{width:20px;height:20px;border-radius:6px;background:var(--ds-accent)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--ds-sp-2) var(--ds-sp-6)}
+/* TitleBlock: 2겹 */
+.tb{padding:var(--ds-sp-1) 0 var(--ds-sp-3)}
+.tb h1{font-size:var(--ds-fs-title);font-weight:700;line-height:1.33}
+.tb p{margin-top:var(--ds-sp-half);font-size:var(--ds-fs-label);color:var(--ds-ink-2)}
+.card{padding:var(--ds-sp-3) 0 0}
+.card .f{border-top:0;padding-top:0}
+/* Segmented */
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--ds-surface-2);border-radius:var(--ds-r-input);padding:4px;margin-bottom:var(--ds-sp-3)}
+.seg button{all:unset;text-align:center;height:40px;line-height:40px;border-radius:9px;font-size:var(--ds-fs-label);font-weight:600;color:var(--ds-ink-3);cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--ds-seg-on,#fff);color:var(--ds-ink);font-weight:700;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+/* MoneyField */
+.f+.f{margin-top:var(--ds-sp-2)}
+.f label{display:block;font-size:var(--ds-fs-label);font-weight:500;color:var(--ds-ink-2);margin-bottom:var(--ds-sp-1)}
+.box{display:flex;align-items:center;height:52px;padding:0 var(--ds-sp-2);background:var(--ds-surface-2);border-radius:var(--ds-r-input)}
+.box input{all:unset;flex:1;min-width:0;font-size:var(--ds-fs-body);font-weight:600}
+.box span{font-size:var(--ds-fs-body);color:var(--ds-ink-2)}
+.read{margin-top:var(--ds-sp-half);font-size:var(--ds-fs-caption);color:var(--ds-ink-2)}
+.chips{display:flex;gap:var(--ds-sp-1);margin-top:var(--ds-sp-1)}
+.chips button{all:unset;height:32px;padding:0 12px;border-radius:999px;background:var(--ds-surface-2);font-size:var(--ds-fs-caption);font-weight:600;color:var(--ds-ink-2);cursor:pointer}
+.more{margin-top:var(--ds-sp-3);font-size:var(--ds-fs-label);color:var(--ds-ink-2);display:flex;justify-content:space-between}
+/* ResultCard: 다크 1장 */
+.res{background:var(--ds-result);color:#fff;border:1px solid var(--ds-result-line,var(--ds-result));border-radius:var(--ds-r-card);padding:var(--ds-sp-3);margin-top:var(--ds-sp-2)}
+.res .q{font-size:var(--ds-fs-label);color:rgba(255,255,255,.72)}
+.res .n{margin-top:var(--ds-sp-1);font-size:44px;font-weight:700;line-height:1.2;letter-spacing:0}
+.res .n small{font-size:20px;font-weight:600;margin-left:2px}
+.res .cmp{margin-top:var(--ds-sp-1);font-size:var(--ds-fs-label);color:rgba(255,255,255,.72)}
+.res .cmp em{font-style:normal;color:#fff;font-weight:600}
+details.row{margin-top:var(--ds-sp-2);border-top:1px solid var(--ds-line);padding-top:var(--ds-sp-2)}
+.row summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;font-size:var(--ds-fs-label);font-weight:600}
+.row summary::-webkit-details-marker{display:none}
+.row summary::after{content:'펼치기 ›';color:var(--ds-ink-2);font-weight:500}
+.row[open] summary::after{content:'접기 ›'}
+/* BreakdownList */
+.bl{margin-top:var(--ds-sp-1)}
+.bl div{display:flex;justify-content:space-between;align-items:center;min-height:40px;font-size:var(--ds-fs-label)}
+.bl div span:first-child{color:var(--ds-ink-2)}
+.bl div span:last-child{font-weight:600}
+.bl .sum{border-top:1px solid var(--ds-line);margin-top:var(--ds-sp-half);padding-top:var(--ds-sp-half)}
+.bl .sum span{color:var(--ds-ink)!important;font-weight:700}
+/* NextStepRow */
+.next{display:flex;align-items:center;justify-content:space-between;gap:var(--ds-sp-2);background:var(--ds-surface-2);border-radius:var(--ds-r-card);padding:var(--ds-sp-2) var(--ds-sp-3);margin-top:var(--ds-sp-2);text-decoration:none;color:inherit;min-height:72px}
+.next b{display:block;font-size:var(--ds-fs-body);font-weight:600}
+.next small{display:block;font-size:var(--ds-fs-caption);color:var(--ds-ink-3);margin-top:2px}
+.next i{font-style:normal;width:40px;height:40px;border-radius:999px;background:var(--ds-accent);color:#fff;display:grid;place-items:center;font-size:20px;flex:0 0 auto}
+.res .go{display:flex;align-items:center;justify-content:space-between;margin:var(--ds-sp-3) 0 0;padding:0 var(--ds-sp-1) 0 var(--ds-sp-2);height:48px;border-radius:var(--ds-r-btn);background:var(--ds-accent);color:#fff;text-decoration:none;font-size:var(--ds-fs-body);font-weight:700}
+.res .go i{font-style:normal;font-size:22px;width:36px;text-align:center}
+.menu{margin-left:auto;display:none;gap:var(--ds-sp-3)}
+.menu a{font-size:var(--ds-fs-label);color:var(--ds-ink-3);font-weight:600}
+.menu a[aria-current]{color:var(--ds-ink);box-shadow:inset 0 -2px 0 var(--ds-ink);padding-bottom:4px}
+.after{margin-top:var(--ds-sp-3)}
+.foot{max-width:1080px;margin:0 auto;padding:var(--ds-sp-3) var(--ds-sp-2) var(--ds-sp-4);border-top:1px solid var(--ds-line);display:flex;justify-content:space-between;gap:var(--ds-sp-2);flex-wrap:wrap;font-size:var(--ds-fs-caption);color:var(--ds-ink-3)}
+/* AdSlot */
+.ad{margin-top:var(--ds-sp-4);background:var(--ds-surface-2);border-radius:var(--ds-r-card);padding:var(--ds-sp-2) var(--ds-sp-3);display:flex;gap:var(--ds-sp-2);align-items:center}
+.ad .tag{font-size:var(--ds-fs-caption);color:var(--ds-ink-3)}
+.ad .thumb{width:56px;height:56px;border-radius:12px;background:var(--ds-surface-2);flex:0 0 auto}
+.ad b{display:block;font-size:var(--ds-fs-label);font-weight:600}
+/* Fold + SourceLine */
+.fold{margin-top:0;border-top:1px solid var(--ds-line);padding:var(--ds-sp-2) 0;font-size:var(--ds-fs-label);font-weight:600;display:flex;justify-content:space-between}
+.fold span{color:var(--ds-ink-2);font-weight:500}
+.src{margin-top:var(--ds-sp-3);font-size:var(--ds-fs-caption);color:var(--ds-ink-3)}
+@media (max-width:1023px){.grid{display:flex;flex-direction:column}.side{display:contents}.res{order:-2;margin-top:0}.card{order:-1}.card .seg+.f{border-top:0;padding-top:0}}
+/* 데스크톱 2단 (ds-v2.md 1장) */
+@media (min-width:1024px){
+  .grid{display:grid;grid-template-columns:7fr 5fr;gap:var(--ds-sp-4);align-items:start}
+  .side{position:sticky;top:24px}
+  .side .res{margin-top:0}
+  .card{background:var(--ds-bg);border-radius:var(--ds-r-card);padding:var(--ds-sp-3)}
+  .card .box{background:var(--ds-surface)}
+  .menu{display:flex}
+  .after{margin-top:var(--ds-sp-4);width:calc((100% - var(--ds-sp-4)) * 7 / 12)}
+  .side details.row{margin-top:var(--ds-sp-2)}
+  .foot{padding-left:var(--ds-sp-3);padding-right:var(--ds-sp-3);margin-top:var(--ds-sp-6)}
+  .card .f:first-of-type{border-top:0;padding-top:0}
+  .res .n{font-size:48px}
+  .tb{padding-top:var(--ds-sp-4)}
+  .tb h1{font-size:28px}
+  .wrap,.top{padding-left:var(--ds-sp-3);padding-right:var(--ds-sp-3)}
+}
+</style>
+</head>
+<body>
+<header class="top"><img src="icon-192.png" width="24" height="24" alt="" style="border-radius:6px"><b>파이어맵</b><nav class="menu"><a aria-current="page">연봉</a><a>퇴직금</a><a>실업급여</a></nav></header>
+<main class="wrap">
+  <div class="tb">
+    <h1>연봉 실수령액</h1>
+    <p>연봉을 넣으면 한 달에 손에 쥐는 돈이 나와요</p>
+  </div>
+  <div class="grid">
+    <section class="card" aria-label="입력">
+      <div class="seg" role="group" aria-label="입력 단위"><button aria-pressed="true">연봉</button><button aria-pressed="false">월급</button></div>
+      <div class="f">
+        <label for="a">연봉</label>
+        <div class="box"><input id="a" class="num" inputmode="numeric" value="40,000,000"><span>원</span></div>
+        <div class="read num">4,000만 원</div>
+              </div>
+      <div class="f">
+        <label for="b">비과세액 (월)</label>
+        <div class="box"><input id="b" class="num" inputmode="numeric" value="200,000"><span>원</span></div>
+        <div class="read num">20만 원 · 식대 기본값</div>
+      </div>
+      <div class="more"><span>부양가족 1명 · 자녀 0명</span><span style="color:var(--ds-ink-2)">바꾸기 ›</span></div>
+    </section>
+    <aside class="side">
+      <section class="res" aria-live="polite">
+        <div class="q">한 달에 받는 돈</div>
+        <div class="n num">2,935,813<small>원</small></div>
+        <div class="cmp num">세전 월급의 <em>88.1%</em> · 공제 397,520원</div>
+        <a class="go" href="#"><span>이 돈이면 몇 살에 은퇴?</span><i aria-hidden="true">›</i></a>
+      </section>
+      <!-- AdSlot: 상품이 실제로 들어올 때만 렌더(빈 칸 금지, 레드팀 10/2) -->
+      <details class="row">
+          <summary>공제 6가지</summary>
+          <div class="bl num">
+            <div><span>국민연금</span><span>148,810원</span></div>
+            <div><span>건강보험</span><span>112,640원</span></div>
+            <div><span>장기요양</span><span>14,800원</span></div>
+            <div><span>고용보험</span><span>28,190원</span></div>
+            <div><span>소득세</span><span>84,620원</span></div>
+            <div><span>지방소득세</span><span>8,460원</span></div>
+            <div class="sum"><span>합계</span><span>397,520원</span></div>
+          </div>
+      </details>
+    </aside>
+  </div>
+  <section class="after">
+    <div class="fold">계산 방법<span>펼치기 ›</span></div>
+    <p class="src">참고용 · 2026. 2. 27. 개정 근로소득 간이세액표 · 국민연금 4.75% 등 2026년 요율</p>
+  </section>
+</main>
+<footer class="foot"><span>파이어맵</span><span>문의 · 개인정보처리방침 · 면책 안내</span></footer>
+</body>
+</html>

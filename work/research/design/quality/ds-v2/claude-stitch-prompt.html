@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>연봉 결과 Claude 시안</title>
+<!--
+  Stitch 비교용 Claude HTML 시안 (firemap-designer 2026-10-02).
+  프롬프트(ai-lab/bench/2026-10-01-design-ai.md 2장, 원문 그대로):
+  "한국 연봉 실수령액 계산기의 결과 화면(모바일 375px). 맨 위 큰 숫자 하나: 월 실수령액 3,621,410원.
+   그 아래 공제 내역 표(국민연금·건강보험·장기요양·고용보험·소득세·지방소득세, 각 금액).
+   행동 버튼 하나: '퇴직금도 계산하기'. 토스 앱 같은 깔끔한 금융 UI, 흰 배경, 색은 파랑 하나만 강조,
+   글꼴 Pretendard." (+ 같은 문장의 PC 1280px 2단판)
+  공제 금액은 프롬프트에 없어서 운영 식 salaryNet({annual:50780000}) 값(실수령 3,621,456원, 프롬프트 숫자와 46원 차)을 썼다.
+  프롬프트가 '파랑'을 지정해서 파이어맵 주황이 아니다 — 도구 비교 전용, 운영에 쓰지 않는다.
+-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{--bg:#fff;--ink:#191f28;--ink2:#4e5968;--ink3:#6b7684;--line:#f2f4f6;--blue:#3182f6;--soft:#f9fafb}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#17171c;--ink:#f2f3f5;--ink2:#c3c6cd;--ink3:#9a9ea7;--line:#2a2b31;--blue:#5a9bf8;--soft:#202027}}
+:root[data-theme=dark]{--bg:#17171c;--ink:#f2f3f5;--ink2:#c3c6cd;--ink3:#9a9ea7;--line:#2a2b31;--blue:#5a9bf8;--soft:#202027}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font-family:'Pretendard Variable',Pretendard,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.num{font-variant-numeric:tabular-nums}
+.bar{height:56px;display:flex;align-items:center;padding:0 16px;font-size:17px;font-weight:600;max-width:1280px;margin:0 auto}
+.bar span{color:var(--ink3);margin-right:8px;font-size:22px;line-height:1}
+.wrap{max-width:1280px;margin:0 auto;padding:8px 24px 120px}
+.hero .q{font-size:15px;color:var(--ink2)}
+.hero .n{margin-top:8px;font-size:40px;font-weight:700;line-height:1.2}
+.hero .n small{font-size:22px;font-weight:600;margin-left:2px}
+.hero .s{margin-top:8px;font-size:15px;color:var(--ink3)}
+.gap{height:12px;background:var(--line);margin:32px -24px}
+h2{font-size:17px;font-weight:700;margin-bottom:8px}
+.row{display:flex;justify-content:space-between;align-items:center;height:48px;font-size:17px}
+.row span:first-child{color:var(--ink2)}
+.row span:last-child{font-weight:600}
+.row.t{border-top:1px solid var(--line);margin-top:8px;padding-top:4px}
+.row.t span{color:var(--ink);font-weight:700}
+.cta{position:fixed;left:0;right:0;bottom:0;padding:12px 24px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--bg) 30%)}
+.cta a{display:flex;align-items:center;justify-content:center;height:56px;border-radius:16px;background:var(--blue);color:#fff;font-size:17px;font-weight:600;text-decoration:none;max-width:1280px;margin:0 auto}
+@media (min-width:1024px){
+  .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;padding-top:48px}
+  .hero{padding:40px;background:var(--soft);border-radius:24px;align-self:start}
+  .hero .n{font-size:56px}
+  .gap{display:none}
+  .cta{position:static;padding:24px 0 0;background:none}
+  .cta a{max-width:none}
+}
+</style>
+</head>
+<body>
+<div class="bar"><span>‹</span>연봉 실수령액</div>
+<main class="wrap">
+  <section class="hero">
+    <div class="q">월 실수령액</div>
+    <div class="n num">3,621,410<small>원</small></div>
+    <div class="s">연봉 5,078만 원 · 비과세 월 20만 원 · 부양가족 1명</div>
+    <div class="cta"><a href="#">퇴직금도 계산하기</a></div>
+  </section>
+  <div class="gap"></div>
+  <section>
+    <h2>공제 내역</h2>
+    <div class="row num"><span>국민연금</span><span>191,470원</span></div>
+    <div class="row num"><span>건강보험</span><span>144,930원</span></div>
+    <div class="row num"><span>장기요양</span><span>19,040원</span></div>
+    <div class="row num"><span>고용보험</span><span>36,280원</span></div>
+    <div class="row num"><span>소득세</span><span>198,630원</span></div>
+    <div class="row num"><span>지방소득세</span><span>19,860원</span></div>
+    <div class="row t num"><span>합계</span><span>610,210원</span></div>
+  </section>
+</main>
+</body>
+</html>

@@ -23,6 +23,8 @@
   착수: firemap-editor 14:56 (운영실장 2) — F3 D-1 meta.json 링크 줄 .edit.json + offimkt1002 editgate 재찍기
   완료: firemap-editor 14:58 — F3 ep/D-1/meta.json.edit.json 실재(새 링크 줄 편집 통과, 고칠 곳 0) · offimkt1002 editgate check 일치(재찍기). 단 offimkt1002 제목은 평균 7.6(<8)이라 제목 관문 미통과, hold.txt 유지·18시 이후 대타
 - [대역 15:00 판정 ①] **offimkt1002 제목 심사 멈춤**: 9차까지 평균 7.6→7.5로 내려감, copywriter 원인 확정('HUG 90%'를 넣으면 단정, 빼면 궁금증 0 — 각도 문제). 같은 각도 10차 금지. hold.txt 유지 = **18시 대타도 8 미만이면 안 나감**. [지시] **firemap-copywriter** 18:40 회차 마지막 1회: HUG 빼고 '9월 실거래 n건·투룸 전세 중간값' 각도로 새 후보 3개를 심사 3명 한 표에서, 평균 8↑면 editor stamp→20·22시 빈 칸, 미달이면 write가 묶음을 접고(facts.txt만 10/9 시황 재료로) log 한 줄. 우리만 다른 한 가지: 단지 하나의 실거래 분포. 금지: 점수 낮추기·HUG 수치를 한도처럼 쓰기. F3의 offimkt 재찍기는 editor 14:58 완료로 끝(통과선과 무관).
+  착수: firemap-copywriter 18:49 — offimkt1002 마지막 1회(9월 실거래 n건·투룸 전세 중간값 각도 3안)
+  완료: firemap-copywriter 18:52 — 이미 15:4x 해제·#194 공개라 심사 생략, 새 각도 3안은 10/9 시황 재료(offimkt1002/titles-angle2.md). 접기 불필요. **deputy: 접기/공개 집행 할 것 없음** · A-1 48h 판정: 공개 조회 666(롱폼 최고) → 제목 유지, CTR은 API 불가로 확인 안 함
 - [대역 15:00 판정 ②] **R26+R20 접기 집행**(예술가 14:51 반려 + 기획자 14:58 접기 권고 + 경쟁 taekil·토스·자리톡 실측, 10/8까지 기다리면 조사 2건이 헛돎). 남길 것 = .ics 내보내기 부품(아이디어 Q, X-CN-1 재사용). 취소: research-kr R20 법 근거·민법 157/161 조사(10/4 12:00) · venture R26 카드(10/4 20:10). [지시] **firemap-venture-research-kr** 다음 회차: 그 칸으로 backlog 3번(새 후보 5개 — 1쪽 경쟁 기능 대조를 점수 전에) · **firemap-venture** 10/4: R26 대신 X-V1·X-CN-1 재채점에 집중, 10/8 판정 목록에서 R26 삭제. decisions/log.md 기록.
   - 완료: research-kr 15:4x backlog 3번 — 새 후보 5개 R31~R35(점수 전 1쪽 기능 대조), 1위 R31 대형폐기물·버리는 법 실험 제안 · 근거 ventures/candidates.md 10/2 6회차
 - 사용량(대역 15:00 실측): 주간 81%(10:53 79% → 4시간 +2%p = 시간당 0.5%p, 내려옴) · 초기화 10/4 21:00(54시간) · 이 속도면 10/4 01:00쯤 98% → 버틸 속도 0.31%p. 한도 지시 그대로(결승선·D-1·발행·감사만 추가 투입).

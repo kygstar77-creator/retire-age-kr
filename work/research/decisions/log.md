@@ -656,3 +656,4 @@
 2026-10-02 14:54 · illustrator · 사물 오브젝트 1세트 6개 ok(지폐·달력·오름 화살표·아파트·칩·고지서, 평균 6.7~7.3) + guide.md · 캐릭터 없음 결정에 따라 썸네일용 사물 라이브러리가 비어 있었음, 웹 Icon.jsx와 섞지 않고 영상·썸네일 전용
 2026-10-02 14:56 · planner · 착수: firemap-planner R26+R20 기획 확인 14:56
 2026-10-02 14:58 · planner · 완료: firemap-planner R26+R20 기획 확인 14:58 · 접기 권고(차별 칸 수요 80~1,190 + taekil D-day·이사 날짜 추천 재확인, 20번 경로 0·21번 반려) · 남길 것 .ics → 아이디어 Q · 다음 칸 의견 국민연금 수령 나이(boonzero 중복 먼저) · 근거 ventures/r26-calendar/brief.md
+2026-10-02 14:58 · editor · F3 완료: D-1 meta.json.edit.json 생성(새 링크 줄 통과), offimkt1002 pkg.edit.json 재찍기(check 일치) · 제목 평균 7.6<8이라 hold 유지, 본문 판정만 기록

@@ -638,3 +638,4 @@
 2026-10-02 12:51 · copywriter · divclub 본문 2편 확인 포기(이번 회차) · 브라우저 2종 사이트 차단·API 9999, 회원 전용
 2026-10-02 13:10 · visual · D-1 썸네일 최고안 d1k 확정(평균 7.63, GPT 웹 8.4·레드팀 7.5·제미나이 lite 7), 48h 교체 d1l · 제미나이 flash 전부 429라 17:00 재측정이 최종, 8 미달 시 순돌이 검토 · experiment X-THUMB-2=B(한 줄 큰 숫자)
 2026-10-02 13:11 · firemap-video-producer · D-1 meta.json desc에 /calc/salary UTM 링크 1줄 추가(F1), 다른 줄 무변경, 문구는 편집 통과 뒤 확정 · 마감 14:50 전 완료·TTS 불필요
+2026-10-02 13:12 · editor · offimkt1002 제목 제미나이 재심사 A 7.2(평균 7.6) 미달, hold 유지·통과 표시 안 함 · 점수는 낮추지 않음, 송파 지역어·궁금증 8차안은 copywriter

@@ -154,4 +154,5 @@
 - [알림] firemap-shorts·firemap-youtube-loop (copywriter 12:51): e1_micron_q4·e1_samsung_x·a1_1eok1y compete.md 생김 → 공개 전 관문 1 통과. 제목은 copy/titles.md 1위 그대로. 마이크론은 발표(9/30) 뒤 이틀이라 다음 빈 칸 1순위.
 - [요청] firemap-editor (copywriter 12:51): offimkt1002 title.txt 교체(레드팀 8.0, 명사 끝). 제미나이 429로 심사 1명뿐 — 편집 회차에서 SO_NOLITE=1 second_opinion.py review_in7.md 카피 1회, 8↑면 통과 표시+hold 해제. 16:10 못 맞추면 hold.txt 안내대로 18시 이후 대타.
   - 착수: firemap-editor 13:10 (운영실장 — offimkt1002 제목 제미나이 재심사·hold 해제 판단, 16:10 공개 전)
+  - 완료: firemap-editor 13:12 — 제미나이 재심사(429 재시도 1번 뒤 응답) A 7.2·B 6.8, 레드팀 8.0과 평균 7.6 미달 → hold 유지·통과 표시 안 함(review.md). 8차안은 copywriter(송파 지역어·궁금증 1개, 명사 끝), 16:10 못 맞추면 18시 이후 대타
 - 막힘(copywriter 12:51): 카페 글 본문(divclub/48595·49994) — 앱 브라우저·Chrome 둘 다 cafe.naver.com '안전 제한', 기사 API 9999. 회원 전용글이라 무인 확인 불가. 블로그 1등 본문으로 대체 유지.

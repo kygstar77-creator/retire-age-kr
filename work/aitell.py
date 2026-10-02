@@ -4,6 +4,7 @@
 #   py -3.12 work/aitell.py gate <묶음>                      → 기준 넘고 편집 통과 표시 없으면 종료코드 4
 #   py -3.12 work/aitell.py pass <묶음> <편집자>             → 편집 통과 표시(editor_ok.txt)를 남긴다
 #   py -3.12 work/aitell.py scan <묶음 폴더 여러 개>         → 기준 조정용 분포
+#   py -3.12 work/aitell.py frame <묶음>                     → 카페 틀 v2 3줄 점검(소제목 3~5개·끝 FAQ/정리·제목 명사 끝). 어기면 종료코드 5
 #   --skip-list (아무 자리)  → 번호·글머리 목록 줄과 법 문구·면책 줄을 끝맺음 반복(연속·'~요'·머리·꼬리)에서 뺀다.
 #                              사전(AI 말·설명조) 검사는 그대로. 기본은 꺼짐 — 기존 통과 점수가 안 바뀐다(10/1 대역 X-KR-1 요청).
 # 사장님 10/1 "사소한 것까지 모든 글을 다 검토해서 사람이 쓴 글로 바꿔야 하는데" — 순돌이 지시 [지시·긴급].
@@ -134,9 +135,40 @@ def editor_ok(pkg, files=None):
     return True, open(p, encoding='utf-8').read().strip()[:80]
 
 
+FRAME_FROM = '2026-10-03'   # 카페 틀 v2는 '다음 카페 발행분부터'(10/02 지시) — slot 날짜가 이 날 이후면 gate가 막고, 그 전은 경고만 낸다.
+FRAME_END = re.compile(r'FAQ|자주\s*묻|정리|요약|한눈에|체크')
+
+
+def is_cafe_pkg(pkg):
+    op = os.path.join(pkg, 'order.txt')
+    return os.path.exists(op) and open(op, encoding='utf-8').read().lstrip().startswith('카페 발행 순서')
+
+
+def frame_check(pkg):
+    """카페 틀 v2 3줄(10/02 brand-director): ① 소제목 3~5개 ② 끝 FAQ/정리 소제목 ③ 제목 명사 끝(?·~까·~요 아님). 어긴 곳 목록."""
+    text, files = pkg_text(pkg)
+    bad = []
+    heads = [ln.strip() for ln in text.splitlines() if re.match(r'\s*(##\s|■)', ln)]
+    if not 3 <= len(heads) <= 5: bad.append(f'소제목 {len(heads)}개 — 3~5개로(##·■ 줄 기준)')
+    if not any(FRAME_END.search(h) for h in heads[-2:]): bad.append('끝 FAQ·정리 소제목이 없다 — 마지막 두 소제목 안에 FAQ/자주 묻는/정리/요약')
+    tp = os.path.join(pkg, 'title.txt')
+    if os.path.exists(tp):
+        t = open(tp, encoding='utf-8').read().strip()
+        core = re.sub(r"[\s\)\]\.!·~…\"']+$", '', t)
+        if t.endswith('?') or re.search(r'(까|나요|가요|죠|요|니다)$', core): bad.append(f'제목이 명사로 안 끝난다 — "…{t[-14:]}"')
+    return bad
+
+
 def gate_pkg(pkg):
     """발행기용. (올려도 되나, 한 줄 사유, 걸린 곳)."""
     text, files = pkg_text(pkg)
+    if is_cafe_pkg(pkg):
+        fb = frame_check(pkg)
+        if fb:
+            sp = os.path.join(pkg, 'slot.txt')
+            slot = open(sp, encoding='utf-8').read().strip()[:10] if os.path.exists(sp) else '9999'
+            if slot >= FRAME_FROM: return False, '카페 틀 v2 어김 — ' + '; '.join(fb), fb
+            print('[경고] 카페 틀 v2 어김(이 슬롯은 경고만):', '; '.join(fb))
     val, hits, n = score(text)
     lim = LIMIT if n >= 300 else LIMIT_SHORT
     if val <= lim: return True, f'AI 티 {val}(기준 {lim})', hits
@@ -170,6 +202,10 @@ def main(a):
         ok, msg, hits = gate_pkg(a[1])
         if ok: print(msg); return 0
         refuse(msg, hits); return 4
+    if a[0] == 'frame':
+        bad = frame_check(a[1])
+        if not bad: print('카페 틀 v2 통과', a[1]); return 0
+        print('카페 틀 v2 어김', a[1]); [print('  ', b) for b in bad]; return 5
     if a[0] == 'pass':
         who = a[2] if len(a) > 2 else 'editor'
         import datetime

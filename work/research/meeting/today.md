@@ -70,6 +70,8 @@
   완료: firemap-youtube-loop 05:06 — ⑥ 롱폼 비축 R-1 "1억의 1년 영수증"(X-SERIES-1 ① 첫 편): analysis·compare(5)·facts(ECOS 4종·finlife 359상품·법령 원문 8조)·대본 v4(약 8분, scriptnum 173/0·aitell 2.8) · 심사 3명 v3 평균 7.4 통과(lite 6.0·Claude 8.0·레드팀 8.2) → slots reserve.long 1. **주의: 이 회차 ytdemand 경로 실수로 ep/N-1/yt_top.json(검색 결과 파일)이 R-1 검색 결과로 덮임 — 커밋 안 함, 되돌리기(git checkout)는 권한에 막힘. 영상·대본 영향 없음, 순돌이나 다음 회차가 `git checkout -- work/research/longform/ep/N-1/yt_top.json`**
 - [편집 검수 요청] R-1 대본 트랙:C · 담당 firemap-editor · 시한 10/4 12:00 · 근거 longform/ep/R-1/script.md(숫자 바꾸지 않음, facts.txt [말하는 단위])
 - [카피 요청] R-1 제목·썸네일 문구 트랙:C · 담당 firemap-copywriter · 시한 10/4 18:00 · 근거 longform/ep/R-1/meta.json title_candidates_draft·compare.md(경쟁 '1억이 생긴다면' 틀 그대로 쓰지 말 것)
+  착수: firemap-copywriter 07:50 — R-1 제목·썸네일 문구 후보·심사(비축 롱폼)
+  완료: firemap-copywriter 07:53 — R-1 제목 후보 12, 심사 3명 · **1위 T9 '정기예금 금리 2.58%로 1년, 1억은 얼마 됐나 | S&P500·SCHD·금과 세후 비교'**(평균 8.70: 제미나이 8.6·Claude 8.5·레드팀 9) · 2위 T4(8.53, 48h 교체용) · ep/R-1/meta.json title·title_candidates·thumb_text, review.md 표. T12는 '세금·환율이 줄인 251만' 사실 오류로 탈락(251만은 세금 몫). **→ firemap-video-producer·youtube-loop: R-1 업로드 제목 = meta.json title · → firemap-visual-designer: R-1 썸네일 글씨 = S4 '같은 1억, 1년 뒤 1,435만 차이'(대안 S3)** — 제목(금리·질문)과 겹치지 않음
 - [지시] R-1 썸네일(숫자1+말1, 막대 4개 영수증) 트랙:C · 담당 firemap-visual-designer · 시한 10/4 18:00 · 근거 longform/ep/R-1/meta.json
 - [알림] firemap-video-producer: 롱폼 비축 R-1 대본 준비됨(편집 통과 뒤 목소리). 화면 재료: calc2_out.txt·facts.txt [영수증]·raw/collect_20261003.json(6년 금리선·finlife 점 그림)
 - [지시] **firemap-video-producer**: D-1 19:30 업로드 — script 바뀐 13문장(0~5장 8문장+6~9장) 재녹음 전 SO_NOLITE second_opinion '대본' 1회, 평균 8 미만·429면 렌더·관문까지만 하고 공개 보류 + [순돌이 검토]. 썸네일 = 17:00까지 8점 안, 없으면 최고안. 설명 desc_head.md + 쿠팡 두 줄, 화면 출처 꼬리표 3개. 모든 편 deess+치직·쉿소리 관문 필수.

@@ -15,7 +15,43 @@
   "AI 음성 내레이션 · 투자 권유 아님 · firemap.kr 링크 utm_source=youtube&utm_campaign=<영상ID>",
   "쿠팡 링크 없음(금융 주제 — 규칙)"
  ],
- "experiment": {"X-SERIES-1": "① 첫 편(실제 1년 영수증 틀)"},
+ "experiment": {
+  "X-SERIES-1": "① 첫 편(실제 1년 영수증 틀)"
+ },
  "made_by": "firemap-youtube-loop",
- "made_at": "2026-10-03 05:06"
+ "made_at": "2026-10-03 05:06",
+ "title": "정기예금 금리 2.58%로 1년, 1억은 얼마 됐나 | S&P500·SCHD·금과 세후 비교",
+ "title_candidates": [
+  {
+   "rank": 1,
+   "id": "T9",
+   "title": "정기예금 금리 2.58%로 1년, 1억은 얼마 됐나 | S&P500·SCHD·금과 세후 비교",
+   "avg": 8.7,
+   "judges": {
+    "gemini-3-flash": 8.6,
+    "claude_judge": 8.5,
+    "redteam": 9.0
+   }
+  },
+  {
+   "rank": 2,
+   "id": "T4",
+   "title": "1억 예금 1년 뒤 통장엔 1억 218만원 | S&P500·SCHD·금은 세금·환율 떼고 얼마",
+   "avg": 8.53,
+   "judges": {
+    "gemini-3-flash": 9.6,
+    "claude_judge": 8.0,
+    "redteam": 8.0
+   },
+   "use": "48시간 CTR이 채널 중앙값 아래면 교체(한 번만)"
+  }
+ ],
+ "title_why": "T9: 심사 3명 평균 1위(8.70) + 검색어 '정기예금 금리'(네이버 월 98,800, 후보 검색어 중 S&P500 다음) 맨 앞 + 숫자 2.58%·1억 218만 facts.txt [계산] 대조 일치",
+ "thumb_text": {
+  "pick": "S4 '같은 1억, 1년 뒤 1,435만 차이'",
+  "alt": "S3 '세금이 줄인 차이 251만'",
+  "why": "제목=예금 금리·질문, 썸네일=답 쪽 간격 숫자(겹침 없음). S1 '1등?'은 실제 1등이라 낚시 소지, S2 물음표는 과장 소지(레드팀)"
+ },
+ "first3s": "F1 '1년 전 1억을 예금에 넣은 사람, 지금 통장엔 1억 218만원이 있어요. 다른 셋은요?' (대본 v4 첫 줄과 바꿀지는 youtube-loop 판단)",
+ "title_by": "firemap-copywriter 2026-10-03 07:53"
 }

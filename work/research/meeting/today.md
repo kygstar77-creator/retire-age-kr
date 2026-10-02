@@ -57,12 +57,15 @@
 - [조사 요청] **firemap-venture-research-global** 10/3 15:00: G27 독일 Impressum(주 언론법·KDP 도움말 2곳+second_opinion 법 반론, ventures/kdp-de/impressum.md). **firemap-venture-research-kr** 10/3 12:00: R21 난방 전기요금 근거(한전 주택용 2026 요금표 원문·경쟁 5·쿠팡 상위 5 W·파트너스 사이트 등록 요구) / 10/4 12:00: R20 전입신고 14일 등 법 근거. **firemap-venture** 10/3 13:10: R21 brief.md + [예술가 요청]·기획 확인, 10/8 판정에서 칸 비면 빌더 [지시].
   - 착수: firemap-venture-research-global 09:36 (운영실장 2 — G27 독일 Impressum, 기한 10/3 15:00 앞당김)
   - 완료: firemap-venture-research-global 09:39 — G27 독일 Impressum, 근거 work/research/ventures/kdp-de/impressum.md (KDP 도움말 2곳·바이에른 Art.7 원문·second_opinion 법 1회, 베를린 등은 확인 안 함)
+  - 완료: firemap-venture-research-kr 09:39 — R21 난방 전기요금(한전 표 2023-11-09분이 10/2 현재 최신·4분기 연료비 +5원 동결·기후 9원·기금 2.7% → 한 칸 단가 151/258/362원, 경쟁 5, 다나와 인기 6종 정격 W, firemap.kr 쿠팡 등록 이미 됨). **판정: R21 차별점(W+누진)은 경쟁 4곳이 이미 함 → (가) 모델명→정격 W 또는 (나) 400kWh 문턱 거꾸로 계산 중 택1.** 쿠팡 상위 5는 403으로 확인 안 함(다나와 대체). 근거 work/research/ventures/r21-heating-bill/compare.md
 - [기획·조사 요청] 미국 단기채·장기채(TLT 등) 글·영상(사장님 10/01 20:55) — **firemap-youtube-loop·firemap-write** 첫 편만 기획 확인: 'TLT 배당 5%'는 확인 안 함, iShares 공식 분배금·SEC yield 구분, 권유 금지, 금리 위험 같은 비중, 쿠팡 링크 금융 글 금지, 편집·디자인 통과 뒤 공개.
 - [요청] **firemap-dispatcher** 1주(~10/9): 점검·집계·초안 직원은 Agent model "sonnet"(Haiku 금지), 결재·사실 대조·디자인 심사·대역은 Opus. 판정 10/8 관문 반려율 비교. [지시] 네이버 자동 게시 약관 위험 대안 비교표(3개+, 브랜드 항목; 결재 없이 카페 중단·전환 금지) — 전체 회의·법 참모·브랜드 디렉터, 10/2 회의. 블로그 STOP_blog 유지(10/7까지, 10/8~ 하루 0~1편, 10/15 판정).
 - [순돌이 검토] dev→main 구조 — product-dev 사실 줄이 '바로 운영'이면 D·B 트랙 '배포 전 검수' 지킬 장치(검수 대기 커밋 다른 브랜치 또는 deploy 게이트 .design.json)를 레드팀과 정한다. 지시문 추가 필요: ?fm_internal=1 규칙·스꾸 금지·실험 장부·헛돌지 않기·lessons.md·푸시 표준형(archive/2026-10-02.md '지시문 추가 필요').
+- [요청] **firemap-venture** (research-kr 09:39) 실험 제안 — ① **R26 월별 달력 묶음 + R20 이사 역산을 한 실험으로**: 10월달력 818,300·음력달력 554,600(9월 값), 1쪽에 datedb·daysaround·calcstool 같은 작은 애드센스 사이트, 공휴일·절기는 천문연 특일 API(이용허락 제한 없음). 단 datedb가 손없는날 달력까지 이미 함 → R20 단독은 정면 경쟁, 차별은 '이사 일정 역산'. 첫 판: 2026-10~2027-12 월 페이지 15개+인쇄 CSS+각 페이지 '이사·손없는날 역산' 칸 1개. 지표: 색인 페이지 수·외부 방문·역산 칸 사용. 1주 판정 10/9(색인 0이면 위젯에 먹힌 것 — 접기). 결재: firemap.kr 안이면 0(브랜드 판단 본부장), 새 도메인이면 1. ② R30 크리스마스 큐레이션+쿠팡(18점, 11월 초 착수 마지노선, 링크 생성은 로그인 화면 = 결재함). 근거 ventures/candidates.md 10/2 5회차
 - 모든 점검 담당: firemap.kr은 `?fm_internal=1`을 붙여 연다. firemap-report: 텔레그램 10/2 12:30 맨 위 — "PC Claude 데스크톱 retire-age-kr 세션에서 순돌이에게 '배포하고 설명 적용해'(1분) 또는 무인 허용 규칙 2개(git push origin dev:main · ytdesc_all.py/f2_coupang.py apply)" + 휴대폰 승인 줄(결재함 맨 위와 같음).
 
 ## 막힘 (풀리지 않은 것)
+- 경쟁 댓글 vidIQ 크레딧 부족(Not enough credits, 호출당 5) 09:39 — brand-researcher competitor-audience.md 못 만듦. 대안: Data API commentThreads(읽기 키) 또는 크레딧 · 담당 순돌이 대역·firemap-admin.
 - 멈춤: firemap-admin 10/01 23:50부터 마지막 활동 23:51(07:00 근무 빠짐) → 순돌이 중지·재시작 필요 · 담당 순돌이·firemap-admin.
 - 카페 187·189 고친 원고 반영: editor 자동 분류기가 naverpost 실행 막음 → write 10:10(기한 10:40), 또 막히면 improve 경로 원인.
 - 유튜브 설명 쓰기(videos.update) 무인 거절(07:59~, 25시간 넘음) — F5·V5·R2 영향. 풀림: 00:03 순돌이 채팅 실행으로 scV67BQvC4Q 쿠팡 줄 들어감(되읽기 불일치 원인 youtube-loop 20:35). 정규 경로 = 새 업로드 때 설명란, 결재함 줄.

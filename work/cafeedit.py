@@ -56,7 +56,8 @@ def components(html):
 def plan(aid, txt_path, subject, html):
     comps = components(html)
     texts = [c[1] for c in comps if c[0] == 'text']
-    others = [c[0] for c in comps if c[0] not in ('text', 'image')]
+    # 링크 카드(oglink)는 사진처럼 제자리에 둔다 — 글 덩어리만 nth로 갈아 끼우므로 건드리지 않는다(2026-10-02 write, 카페 189).
+    others = [c[0] for c in comps if c[0] not in ('text', 'image', 'oglink')]
     if others: raise ValueError(f'글/사진 말고 다른 덩어리({others})가 있다 — 이 도구는 글·사진만 다룬다')
     if not texts: raise ValueError('글 덩어리가 없다')
     raw = open(txt_path, encoding='utf-8').read()
@@ -68,6 +69,12 @@ def plan(aid, txt_path, subject, html):
     for i, paras in enumerate(texts[1:], 1):
         head = next((p for p in paras if norm(p)), '')
         hit = [j for j, l in enumerate(lines) if j > cuts[-1] and norm(l) == norm(head)]
+        if head and not hit:
+            # 첫 문단이 소제목이 아니라 본문 문장이면 editor가 어미만 고친다(카페 187, 2026-10-02).
+            # 앞 15글자가 같은 줄이 남은 원고에 하나뿐이면 그 줄을 닻으로 쓴다.
+            k = norm(head)[:15]
+            pre = [j for j, l in enumerate(lines) if j > cuts[-1] and len(k) >= 10 and norm(l).startswith(k)]
+            if len(pre) == 1: hit = pre
         if not head or not hit:
             raise ValueError(f'{i + 1}번째 글 덩어리 첫 줄 "{head[:30]}"이 새 원고에 그대로 없다 — 사진 자리를 못 정한다(소제목은 바꾸지 않는다)')
         cuts.append(hit[0])
@@ -102,6 +109,7 @@ def preview(p):
     for k in p['layout']:
         if k == 'image':
             ii += 1; L.append(f'[사진 {ii} 그대로: {p["images"][ii - 1].rsplit("/", 1)[-1]}]'); L.append(''); continue
+        if k != 'text': L.append(f'[{k} 그대로]'); L.append(''); continue
         L.append(f'## 글 덩어리 {ti + 1}'); L.append('**지금**'); L += ['> ' + x for x in p['old'][ti] if x.strip()]
         L.append('**바꿀 글**'); L += ['> ' + x for x in p['blocks'][ti] if x.strip()]; L.append(''); ti += 1
     return '\n'.join(L)

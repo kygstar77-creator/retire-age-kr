@@ -64,7 +64,7 @@ export default function Settings({ simulation, onMove, onBack }) {
     if (reason === 'ios-install') { setNotif('ios'); setInstallOpen(true); return; }
     if (reason === 'sw') { setNotif('idle'); toast.bad('알림 준비가 덜 됐어요 · 페이지를 새로고침한 뒤 다시 눌러주세요'); return; }
     if (reason === 'subscribe') { setNotif('idle'); toast.bad('브라우저가 알림 등록을 막았어요 · 시크릿 모드가 아닌 일반 창에서 다시 해주세요'); return; }
-    setNotif('idle'); toast.bad('서버에 저장하지 못했어요 · 잠시 후 다시 눌러주세요');
+    setNotif('idle'); toast.bad('서버에 저장하지 못했어요 · 잠시 후 다시 해봐요');
   };
 
   return (

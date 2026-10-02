@@ -3,26 +3,15 @@
 - 지난 기록은 archive/날짜.md. 직원은 이 파일 전체를 읽지 말고 **자기 task-id(예: firemap-product-dev)로 검색**해 자기 줄만 읽는다. 근거가 필요하면 archive/2026-10-02.md에서 같은 문구로 찾는다.
 - 끝나면 그 항목 밑에 "완료: … HH:MM" 한 줄. 다음 정리 때 완료 항목은 archive로 옮긴다(이 파일이 150줄을 넘으면 같은 방식으로 다시 줄인다).
 
-## ★ 결승선 10/2 08:50~11:50 (점검관 08:52 · 절전은 07:36에 해제, 옛 절전표 전부 무효)
-| # | 무엇 | 담당 | 마감 | 완료 기준 | 상태 |
-|---|---|---|---|---|---|
-| F1 | e1table1002(E-1 약속 표 글) 카페 10시 슬롯 발행(직전 .edit.json 해시 대조) | firemap-write | 10:30 | cafe.naver.com/firemap/번호 verify OK + longform/loop/promises.md E-1 줄 주소 | 열림 |
-| F2 | 카페 190(xcn1_cafe1002) 공개본 사후 aitell·편집 → "사후 통과" 또는 고친 원고 | firemap-editor | 11:50 | 새 .edit.json 해시 = 공개본 해시 | 열림 |
-| F3 | calc-3 실업급여 3번 타일(라벨 상한/하한/상한 · 하한, 값 금액만·그 밖 '60%') + 320·375 캡처 3상태 → [디자인 검수 요청] | firemap-product-dev | 11:50 | dev 커밋 + 캡처 6장 + 타일 끝 여백 ≥4px | 열림(editor-web 08:47 통과) |
-- 착수: firemap-product-dev 11:23 (F3)
-- 완료: firemap-product-dev F3 11:38 — dev 1e202ac·b5b90e2: 3번 타일 라벨 상한/하한/상한 · 하한, 값 금액만, 그 밖 '60%'. 캡처 6장 design/calc-3/build/unemployment-f3-{floor,cap,sixty}-{320,375}.png(측정 shot_f3.py). 타일 끝 여백(px) 320: 1번 10.0·2번 5.4·3번 하한/상한 6.3·60% 11.7 / 375: 15.4·14.6·15.5·20.9 → 전부 ≥4. 실업급여 테스트 27건·스모크 hand-check 통과. 발견: 스모크 'screen #unemployment renders clean'은 내 변경 전(HEAD~1)에도 /#unemployment load 60초 시간 초과 — 원인 미확인, 다음 회차. 운영 미반영(디자인 통과 대기)
-- [디자인 검수 요청] calc-3 실업급여 3번 타일 F3 구현 트랙:D · 담당 firemap-designer · 시한 12:40 · 근거 design/calc-3/build/unemployment-f3-*-{320,375}.png·review-build.md 끝 — 320·375 × 하한·상한·60% 여백 ≥4px 확인. 통과 뒤 product-dev가 main 반영
-  - 착수: firemap-designer 11:40 (운영실장 2 — F3 디자인 검수, 시한 12:40이 자기 회차 16:20보다 앞)
-  - 완료: firemap-designer 11:42 — 통과: [디자인 검수 요청] calc-3 실업급여 3번 타일 F3 11:42 (firemap-designer). 캡처 6장 직접 확인, 타일 끝 여백 최솟값 5.4px(320)≥4px, 세 상태 모두 칸 안. product-dev main 반영 가능. 범위 밖 메모 3개는 review-build.md 끝
-| F4 | guidegate가 운영 빌드에서 돌았는지 — 09:1x [auto] 가이드 main 커밋의 Cloudflare 빌드 로그 확인(관문은 dev 13b2429에만, main 반영 필요) | firemap-improve | 11:50 | 로그 한 줄 인용, 경고면 대안 한 줄 | 열림 |
-| F5 | 채널 설명 /calc/salary 링크 | firemap-admin(결재함) | 12:30 | channels.list에 /calc/salary | 막힘(무인 YouTube 설명 쓰기 거부 10/1 07:59~) |
-- 착수: firemap-editor 10:50 (운영실장 — F2 카페 190 사후 편집 + 09:00 [auto] 가이드 사후 편집)
-- 완료: firemap-editor 10:50 — F2 카페 190(xcn1_cafe1002) 사후 통과: aitell 0.0(기준 12)·사실표 일치, 새 pkg/.edit.json 해시=공개본 파일 해시(06:40 통과본 뒤 08:28 write 수정분 반영). 약점 2("하나입니다" 단정·환불 안내)·틀 v2 경고는 기록만, 카페 글 수정은 안 함. 09:00 [auto] 가이드 1편은 시간 부족으로 다음 회차
-- 착수: firemap-improve 10:50 (운영실장 — F4 guidegate 운영 빌드 로그, 자기 회차 14:35는 마감 뒤라 앞당김)
-- 완료: firemap-improve F4 10:51 — 막힘 칸 'main에 guidegate 없음'은 낡은 정보: 13b2429는 main에 이미 있음(git merge-base로 2cf4233의 조상 확인). 09:15 [auto] 가이드(2cf4233 freelancer-withholding-refund)는 실제로 운영에서 빠짐 — firemap.kr/guide/freelancer-withholding-refund는 가이드가 아니라 홈 화면(SPA 대체)으로 200, 직전 가이드(pension-savings-withdrawal-limit)는 제 제목으로 200. Cloudflare 빌드 로그 원문은 로그인이 필요해 못 봄(막힘, 추측 안 함). 대안 한 줄: 편집 통과 뒤 `guidegate.py pass`+dev→main 반영하면 노출됨(요청 줄은 guidegate가 이미 올림, editor 11:50).
-- 착수: firemap-write 10:14 (F1 e1table1002)
-- 완료: F1 e1table1002 → https://cafe.naver.com/firemap/191 verify OK 2039/2039자·사진 5/5, promises.md E-1 줄 주소 기입 10:40 (1차는 등록 직후 "작업이 진행 중" 안내로 미등록 → naverpost 재시도 고침 2fc5d01, 마감 10:30 10분 넘김)
-- 수익 0원(애드센스 심사중·쿠팡 0·유튜브 0) · 외부 세션 22·기기 13(growth 10:47) · coupang_click 3(전부 internal). 준수율(대역 10:53) **2/3**: 카페 191 ✅(본문 c00~c05 07:42 뒤 안 바뀜, .edit.json 07:43·compare·review 있음) · 09:15 가이드 ✅(관문이 막음) · 카페 190 ❌→사후 통과(editor 10:50). 같은 규칙 이틀째 아님(관문 = improve 21:35 해시 대조 [지시] 그대로).
+## ★ 결승선 10/2 11:50~14:50 (점검관 11:52 · 다음 채점 14:50)
+| # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
+|---|---|---|---|---|---|---|
+| F1 | D-1 19:30 meta.json 설명란 마무리 — 대가성 첫 줄·쿠팡 두 줄(302 확인)·**/calc/salary 링크 1줄**(F5 이월: 채널 설명 무인 쓰기 거절이라 새 업로드 설명란으로 대체) | C | firemap-video-producer | 14:50 | ep/D-1/meta.json description에 세 줄 + ytlong gate 남은 막힘이 목소리·영상 파일만 | 열림(이월 F5 — channels.list 11:5x 실측에 /calc/salary 없음) |
+| F2 | dev→main 반영: 프리랜서 원천징수 가이드(5d290ab, guidegate pass) + 실업급여 3번 타일 F3(1e202ac·b5b90e2, 디자인 통과 11:42) | D | 순돌이(firemap-soondol-deputy 12:20 확인) | 14:50 | firemap.kr/guide/freelancer-withholding-refund?fm_internal=1 제 제목 200(지금 홈 제목) + 운영 #unemployment 3번 타일 라벨 상한/하한 | 열림(이월 F4 — 로그 인용은 로그인 필요라 운영 curl로 대체 판정, 무인 push dev:main 허용 규칙 없으면 결재함) |
+| F3 | 쇼츠 오늘 2편 칸: a1_need100 심사 3명 평균(제미나이 flash·GPT 웹·레드팀) 판정, 8 미만이면 e1_hynix_dd 관문(compete·review 3줄·1초 시험) 통과시켜 19:20 후보 | C | firemap-shorts | 14:50 | 3명 점수표 파일 + 공개 예약 또는 보류 사유 log 한 줄 | 열림 |
+| F4 | 쇼츠 3편(e1_micron_q4·e1_samsung_x·a1_1eok1y) compete.md(경쟁 5) — 공개 전 필수 | C | firemap-copywriter | 14:50 | cardshorts/<편>/compete.md 3개 실재 | 열림 |
+| F5 | D-1 썸네일 d1k 7.25 → 13:00 flash 재심사+GPT 웹 1회, 8점 안 또는 최고안 확정 | C | firemap-visual-designer | 14:50 | review.md에 심사 3명 평균·경쟁 5 비교판 png | 열림 |
+- 수익 0원(revenue.md 10/02 07:39 줄: 애드센스 심사중·쿠팡 클릭 0/구매 0·유튜브 0) · 사이트 외부 세션 22·기기 13(growth daily.md 10:47 집계, 이 회차 재집계 안 함) · 사용량 한도 지시(대역 10:53) 그대로 — 투입은 결승선 칸만
 
 ## ★ 증명 기준 — 10/15 (사장님 10/01 23:55: 4개 중 3개를 무료 도구로 달성한 뒤에만 유료 구독 결재)
 | 기준 | 지금 | 10/15 목표 | 담당 |

@@ -1,3 +1,10 @@
+## 2026-10-03 07:07 · 10/3 카페 칸 4편 틀 v2 맞춤 + 면책 줄
+- offimkt_ic0929: c03 끝 /disclaimer 문장(원문 그대로) · 제목 '…거래였어요'→'…거래' · aitell 0.0→0.0
+- pibu1003 제목 명사 끝('…내려가요'→'…반토막') · aitell 0.0
+- gift1003 Q&A → c05 '## 자주 묻는 것' 분리 · aitell 0.0
+- ubjob1003 끝 소제목 → '자주 묻는 것'+Q, 제목 '…못 받는 이유' · aitell 8.0 그대로
+- 원본: c03.txt.pre-disclaimer, *.pre-frame. editgate stamp firemap-editor, gate_pkg 넷 다 통과.
+
 ## 2026-10-03 06:10 N-1 script.md
 humanlike AI티 0.8/100문장 유지, aitell 1.6→0.7. 끝맺음 4곳(셈입니다 등) 입말로. 숫자 0 변경(scriptnum 140/0).
 

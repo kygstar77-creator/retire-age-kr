@@ -65,6 +65,35 @@ try:
 except Exception as e:
     bad.append(f'실험 장부 못 읽음: {e}')
 
+# 12. 미리 통과(10/2 15:1x 사장님: "관문 못 넘어서 발행 안 할 게 아니라 미리미리 8점 넘겨서 계획한 시간에 발행해야지")
+#     research/slots.json — 칸마다 편·관문 통과 시각. 기한 = 발행 시각 - lead. 기한 넘도록 편이 없거나 통과 못 했으면 위반.
+#     다음 36시간 안 칸이 아예 장부에 없어도 위반(회의가 배정 안 한 것). 비축분이 reserve_min보다 적으면 위반.
+SLOT_SOON = []
+try:
+    S = json.load(open(os.path.join(R, 'slots.json'), encoding='utf-8'))
+    lead = S['lead_hours']; have = set()
+    for x in S['slots']:
+        at = datetime.datetime.strptime(x['at'], '%Y-%m-%d %H:%M'); have.add((x['kind'], x['at']))
+        if at < now: continue
+        dl = at - datetime.timedelta(hours=lead[x['kind']])
+        if x.get('gates_ok'): continue
+        what = f"{x['at'][5:]} {x['kind']} {x.get('item') or '편 없음'}({x.get('owner','')})"
+        if now >= dl: bad.append(f'미리 통과 못 함: {what} — 관문 기한 {dl:%m/%d %H:%M} 지남, 비축분으로 바꾸거나 오늘 안에 통과')
+        elif now >= dl - datetime.timedelta(hours=lead[x['kind']]): SLOT_SOON.append(f'{what} 관문 기한 {dl:%m/%d %H:%M}')
+    cad = {'cafe': ['08:10','10:10','12:10','14:10','16:10','18:10','20:10','22:10'], 'shorts': ['12:20','19:20'], 'long': ['19:30']}
+    for k, ts in cad.items():
+        for d in range(0, 3):
+            day = (now + datetime.timedelta(days=d)).strftime('%Y-%m-%d')
+            for t in ts:
+                at = datetime.datetime.strptime(f'{day} {t}', '%Y-%m-%d %H:%M')
+                if now < at <= now + datetime.timedelta(hours=36) and (k, f'{day} {t}') not in have:
+                    bad.append(f'칸 배정 없음: {day[5:]} {t} {k} — slots.json에 편·담당을 적어야 함')
+    for k, n in S.get('reserve_min', {}).items():
+        if len(S.get('reserve', {}).get(k, [])) < n: bad.append(f'비축분 부족: {k} {len(S["reserve"].get(k, []))}/{n} — 관문 통과한 예비 편')
+    for l in SLOT_SOON: print('곧 관문 기한:', l)
+except Exception as e:
+    bad.append(f'slots.json 못 읽음: {e}')
+
 # 7. 약속 점검표(research/commitments.json — 사장님과 정한 것마다 증거 파일·기한). 기한 지났는데 증거 없으면 위반.
 try:
     C = json.load(open(os.path.join(R, 'commitments.json'), encoding='utf-8'))

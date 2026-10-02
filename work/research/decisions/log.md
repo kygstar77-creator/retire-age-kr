@@ -594,3 +594,4 @@
 2026-10-02 10:24 · brand · 07:48 '카페 제목 의문형 금지' 철회 → aitell frame ③ 'B틀 물음(얼마·몇) 허용·반전 금지' · cafe/benchmark-2026-10-02.md 146편(물음 1.77 > 명사 0.66)
 2026-10-02 10:24 · brand · 완료: [요청] 이름 검색 판단(brand-researcher 08:37) · today.md
 2026-10-02 10:1x · firemap-loop · 루프 186회차: 경쟁 수집 09:57(썸네일 2145장 그대로), 손잡이 전부 유지 — 남은 4개는 한계 확정(long.contrast·text_top·white, short.white) · 판형 거리 0.6799 그대로
+2026-10-02 10:2x · firemap-loop · main 반영 안 함 — origin/main 병합이 작업 폴더의 다른 직원 미커밋 파일(outputs/jepiq_short.mp4 등)과 겹쳐 멈춤, 남의 파일을 건드리지 않으려 dev(b4439e1)만 푸시 · 이번 변경은 research·sql만이라 운영 화면 영향 0

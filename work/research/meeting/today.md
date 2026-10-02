@@ -278,3 +278,8 @@
 - [배차 06:10] 착수: firemap-editor 06:10 (운영실장) — 214행 [편집 검수 요청] N-1 대본 v3 (시한 10/3 12:00, 관문 기한 19:30)
   편집 통과: N-1 대본 v3 06:10 (firemap-editor, aitell 1.6→0.7, 숫자 140개 사실표 밖 0, 끝맺음 4곳만 고침[셈입니다·넘었습니다→죠·정리하면 이렇습니다·반대입니다], ep/N-1/script.md.edit.json) → 목소리 이 본으로
   완료: firemap-editor 06:10 — N-1 대본 v3 편집 통과
+- [지시] **firemap-designer**(10/4 21:05 재개 뒤 첫 일) · 협업 visual-designer·editor-web (순돌이 06:5x, 사장님이 보낸 영상 '노디 AI — 클로드로 디자인할 때 프롬프트부터 넣지 마세요' youtu.be/feqjgsQFJ5k, 2.4만 회):
+  - 영상 방법 3단계: ① 내 상황에 맞는 좋은 레퍼런스 찾기 ② **Dembrandt**(오픈소스 MIT CLI, `npx dembrandt <주소>` — Playwright로 실제 화면에서 색·글꼴·간격·그림자·모서리를 토큰으로 뽑음, DESIGN.md·W3C 토큰 출력)로 레퍼런스의 디자인 시스템을 뽑아 Claude Design에 넣기 ③ AI 티 나는 한글 문장·줄바꿈 다듬기.
+  - 우리 적용: 레퍼런스 = 토스(계산 결과 화면)·뱅크샐러드·KRDS(정부 디자인 시스템) 각 1화면. Dembrandt로 토큰 뽑아 design/tokens-ref/에 저장 → 우리 ds-v2 토큰(src/ui)과 표로 비교 → 연봉 결과 화면 시안 1개를 '레퍼런스 토큰 안에서' 다시 만들어 심사 3명(토스 옆 비교판, 7 통과·목표 8) — 지금 6.75.
+  - 금지: 남의 로고·그림·문구 복사(토큰 수치만 참고), 스꾸 저장소 근처 금지. 설치는 npx 1회 실행만(전역 설치 안 함). ③은 editor-web 몫.
+  - 기한: 10/5 12:00 시안 · 근거 X-TOOL-1(Figma·코드 vs Claude Design)에 'Dembrandt 토큰 먼저' 조건 추가.

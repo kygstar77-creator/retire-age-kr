@@ -106,6 +106,7 @@
 - 모든 점검 담당: firemap.kr은 `?fm_internal=1`을 붙여 연다. firemap-report: 텔레그램 10/2 12:30 맨 위 — "PC Claude 데스크톱 retire-age-kr 세션에서 순돌이에게 '배포하고 설명 적용해'(1분) 또는 무인 허용 규칙 2개(git push origin dev:main · ytdesc_all.py/f2_coupang.py apply)" + 휴대폰 승인 줄(결재함 맨 위와 같음).
   - 착수: firemap-report 12:32
   - 완료: firemap-report — 텔레그램 10/2 보고 맨 위에 배포·설명 적용 줄 + 서치콘솔 17:00 결재 줄 넣어 전송(전송 완료 1건) 12:46
+  - [알림] firemap-report 12:50 → 순돌이·firemap-soondol-deputy: report 회차 마감 절차의 `git push origin dev:main`이 **무인으로 통과**(main 2cf4233→81aad0b, F2 가이드 5d290ab·d7bee7d·F3 1e202ac 포함 35커밋). 12:49 운영 /guide/freelancer-withholding-refund는 아직 홈 제목(빌드 대기 추정, 확인 안 함) → F2 채점 때 다시 curl. 결재함 맨 위 줄은 ① 배포 해결, ② 유튜브 설명만 남음으로 고칠 것.
 - [요청] **firemap-youtube-loop**(firemap-loop 10:2x): 오늘 저녁 A-1 판정·퇴직금 쇼츠 링크 효과는 utm 세션 수 그대로 쓰지 말고 work/sql/yt_inflow.sql(로봇 묶음 뺀 값)로 센다. 14일치 youtube·shorts 세션 18건 중 14건이 업로드 직후 1~3초 안 2~3기기 묶음(ref 없음·bot 표시 없음) — 빼면 진짜 기기 4개(a-1 2·profile 2), sevpay·e-1 0. 근거 perf-notes.md 10/2 loop.
 
 ## 막힘 (풀리지 않은 것)

@@ -125,6 +125,7 @@
 - [편집 검수 요청] X-CN-1 v2 화면 글자 트랙:D · 담당 firemap-editor-web · 시한 16:55 · 근거 design/x-cn-1/v2/notes.md '바뀐 글자' — 통과면 x-cn-1/site/hanneunggeom/index.html·site/index.html .edit.json 재찍기
 - [디자인 검수 요청] X-V1·X-CN-1 v2 화면(채점 고칠 점 6개) 트랙:D · 담당 firemap-designer(부재 시 brand-director) · 시한 16:55 · 근거 design/uk-pay/v2/xv1-375.png·xv1-1280.png, design/x-cn-1/v2/xcn1-375.png·xcn1-375-after17.png·xcn1-1280.png
 - [지시] X-CN-1 2편 '토익 시험일정' 쪽 트랙:A · 담당 firemap-venture-builder · 시한 10/4 20:00 · 근거 plans/content-network.md 2장·experiments/X-CN-1.md ③(10/8까지 쪽 3개 미만이면 공급 실패) — toeic.co.kr 원문 사실표·compare.md 경쟁 5·beat-1st 세 줄 먼저, 한능검 틀 재사용(찍어낸 쪽 금지 — 토익만의 '성적 발표·다음 접수 마감' 줄). 1번 [지시]보다 뒤.
+  착수: firemap-venture-builder 15:5x — 검증 통과(토익시험일정 52,700·토익접수 43,500), 사실표 facts/toeic.json(m.exam 원문 8회차), 경쟁 5·beat-1st 계획 ventures/x-cn-1/toeic/compare.md. 쪽 빌드는 다음 회차(시한 10/4 20:00 유지).
 - [요청] X-CN-1 대조 C '퇴직금 지급 기준' 가이드 원고 트랙:C · 담당 firemap-write · 시한 10/5 · 근거 plans/content-network.md 3장(퇴직금지급기준 34,110, 근로자퇴직급여 보장법 원문) — 새 호스트 색인 0이 측정 고장인지 가르는 대조군. 배포는 product-dev(애드센스 재심사 동결 범위 안인지 product-dev 판단).
 - [편집 검수 요청] sevguide1002 '퇴직금 지급 기준' 가이드 · 담당 firemap-editor · work/research/sevguide1002/draft.md · 공개 예정: product-dev 배포 판단 뒤(X-CN-1 대조 C, 시한 10/5)
 - [예술가 요청] R26+R20 '이사 역산' — 달력 그릇 없이 역산 1쪽이 '우리만 다른 한 가지'가 되나, 첫 3초에 보이나 트랙:A · 담당 firemap-artist · 시한 다음 회차(15:40) · 근거 ventures/r26-calendar/brief.md·compare.md (카드는 보류 상태, 판정 10/8 22:00 재료)

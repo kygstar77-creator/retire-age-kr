@@ -184,6 +184,7 @@
   - **firemap-write**: 16:10·18:10 회차에 카페 비축 2편 관문 통과(편집·compare·제목 8) → slots.json reserve.cafe. 오늘 18:10·22:10 빈 칸 편 배정.
     착수: firemap-write 16:11 — 카페 비축 2편(nps1002 대기 확인 + 새 1편) 관문, 18:10·22:10 칸 배정
     완료: firemap-write 16:32 — b10danji1003 '서울 전세가율 높은 아파트, 매매가와 6600만원 차이 나는 곳도'(B10 단지 높은/낮은 10, loop 15:57 요청) 관문 전부(제목 7.8·표지 8·editgate auto 해시·compare/review 세 줄·틀 v2) → slots 10/3 08:10 gates_ok 16:31. 오늘 20:10 칸(8번째)은 18:10 회차가 배정, 22:10은 8편 상한이라 비움. 비축 reserve.cafe 아직 0 → 18:10 회차 첫 일.
+    착수: firemap-write 18:18 — nps1002(18:10 칸) 발행·verify, 카페 비축 2편 관문, 20:10 칸 배정
 
 - [알림] firemap-write 15:18: nps1002(15시 코너) 15:00 시도가 naverpost 90분 간격 규칙에 거부됨 — 14:41에 b10cafe1002(#193)가 먼저 나감. **16:11 이후 write 회차가 nps1002를 올린다**(16시 offimkt1002는 hold라 칸이 빔). 관문은 전부 통과 상태.
 - [순돌이 15:3x · 사장님 "그럼 7점으로 낮춰"] **발행 관문 통과선 8→7점**(목표 8 유지). 지시문 12개·매뉴얼·심사 질문 '8=통과'→'7=통과' 바꿈. 바로 바뀌는 것: D-1 썸네일 d1k 7.63 → **통과**(19:30 공개는 목소리 끝나면 진행, 18:30 썸네일 판정 취소 — visual 17:00은 E-2 썸네일로) · offimkt1002 제목 7.5·7.6 → 통과(hold는 편집이 판단해 해제).
@@ -198,3 +199,4 @@
   - 완료 기준: 475편 중 돈·숫자·차트 주제에 맞는 프롬프트 5개 골라 motion-bench.md에 표(조회·스타일·우리 쓸 곳), 그중 2개를 우리 Remotion 부품(video/src/motion/)으로 옮겨 e1_hynix_dd 또는 다음 쇼츠 1편에 적용 → 1초 시험·심사 3명 평균 7 이상이면 공개.
   - 금지: 남의 영상·음악·글꼴 그대로 쓰기, 수페TV 따라 하기, 숫자 짓기(facts.txt 원문만). 기한: 시안 10/3 12:00, 첫 적용 쇼츠 10/3 19:20 칸.
 - [순돌이 16:4x · 사장님 결정 "발행에 필요한 것만 전부 살리고 멈춤"] 주간 사용량 84%(시간당 ~2%p, 이대로면 23시쯤 98% 정지 → 10/4 21:00까지 46시간 전원 멈춤). **10/4 21:00까지 발행 사슬만 근무**: write·shorts·video-producer·youtube-loop·editor·copywriter·visual-designer·audit·watchdog·report·meeting·dispatcher(:05). **끔(24개)**: improve·loop·product-dev·venture 4종·designer·illustrator·brand 2종·admin·behavior·editor-web·editor-en·planner·artist·motion-designer·deputy·finishline·dispatcher-2·growth·ai-lab·bizdev. 10/4 21:05 firemap-usage-restore-1004가 다시 켬. 끈 담당 일 중 발행에 걸린 것(예: 가설 근거 파일, growth 저품질 측정 10/3 09:40, 모션 475 시안)은 **미룸** — 저품질 측정은 순돌이 순찰이 대신. 운영실장(:05)은 slots.json '곧 관문 기한' 칸과 D-1만 투입.
+- 순돌이 18:3x 사용량 실측: 16:36 84% → 18:29 85% (시간당 ~0.5%p, 끄기 전 ~2%p). 초기화(10/4 21:00)까지 남은 13%p ÷ 50시간 = 0.26%p/h가 버틸 속도 → 아직 2배. 운영실장 매시→**2시간마다(:05)**, 순찰 90분. 10/4 21:05 restore 작업이 운영실장도 '5 * * * *'로 되돌림(아래).

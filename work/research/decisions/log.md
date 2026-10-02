@@ -657,3 +657,4 @@
 2026-10-02 14:56 · planner · 착수: firemap-planner R26+R20 기획 확인 14:56
 2026-10-02 14:58 · planner · 완료: firemap-planner R26+R20 기획 확인 14:58 · 접기 권고(차별 칸 수요 80~1,190 + taekil D-day·이사 날짜 추천 재확인, 20번 경로 0·21번 반려) · 남길 것 .ics → 아이디어 Q · 다음 칸 의견 국민연금 수령 나이(boonzero 중복 먼저) · 근거 ventures/r26-calendar/brief.md
 2026-10-02 14:58 · editor · F3 완료: D-1 meta.json.edit.json 생성(새 링크 줄 통과), offimkt1002 pkg.edit.json 재찍기(check 일치) · 제목 평균 7.6<8이라 hold 유지, 본문 판정만 기록
+2026-10-02 15:00 · soondol-deputy · R26+R20 달력+이사 역산 **접기**(10/8 판정 앞당김: artist 14:51 반려·planner 14:58 접기 권고·taekil·토스 이사체크봇·자리톡 기존) · .ics 부품만 남김 · research-kr R20 조사·venture 카드 취소 · offimkt1002 제목 같은 각도 10차 금지, copywriter 18:40 새 각도 1회 뒤 미달이면 접기

@@ -115,6 +115,7 @@ except Exception as e:
 try:
     sys.path.insert(0, HERE); import timecheck
     th = timecheck.check_today(); timecheck.mark(th)
+    th = [t for t in th if t[1].replace(tzinfo=None) > now - datetime.timedelta(hours=3)]  # 순돌이 15:0x: 지난 기록 47건이 요약을 덮어 최근 3시간 것만 위반으로
     for f, at, g, l in th[-5:]: bad.append(f'시각 확인 · {os.path.basename(f)} 커밋 {at:%H:%M}보다 {int(g)}분 늦음: {l.strip()[:70]}')
     if len(th) > 5: bad.append(f'시각 확인 · 오늘 미래 시각 기록 총 {len(th)}건(위 5건만 표시)')
 except Exception as e:

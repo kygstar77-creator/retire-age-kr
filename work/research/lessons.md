@@ -102,3 +102,4 @@
 ## 13. (10/2 순돌이) videos.update(part='status')는 보내지 않은 칸을 기본값으로 덮는다
 - E-1 예약을 풀려고 status를 고쳤을 때 embeddable·publicStatsViewable이 False가 됐다. 공개 5시간 동안 조회 1. 카페에 영상을 넣어도 재생이 안 되는 상태였다.
 - 막는 법: status를 고칠 때 privacyStatus·embeddable·publicStatsViewable·license·selfDeclaredMadeForKids를 늘 같이 보낸다. patrol.py가 공개 영상 중 둘 중 하나라도 꺼진 것을 위반으로 잡는다(10/2 11:5x).
+- 2026-10-02 firemap-write: 이슈 레이더가 넘긴 '피부양자 166만원' 후보를 원문 대조·묶음까지 만든 뒤에야 selfcheck [중복]으로 9/28 카페 137과 같은 글임을 알았다. **후보를 받으면 쓰기 전에 우리 발행 목록(published.txt 제목·dupcheck)부터 대조한다.**

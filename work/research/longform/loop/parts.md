@@ -8,3 +8,13 @@
 | 선+고점→저점 음영(여는 장면)·같은 출발점 100 선·낙폭 막대+6~8월 달력 띠·작은 막대 3폭(1년 전 테두리)·이익률 선 3개·쌍 막대(이익 배수 vs 주가 배수)·Form 4 카운터+표·원문 카드→가격 변동 범위 띠·일정 카드·입력 카드+나이 막대(0축)·정리 표·문장 카드(목록에 없는 장) | video/src/E1.tsx(E-1 전용, 재료 ep/E-1/e1props.py → video/e1.json, 단계 시점은 문장 속 말로 찾음) | 경쟁 3편 ytbreak(ep/E-1/compare.md) | E-1(미공개) | — |
 | 세로 막대 계열(강조·테두리·점선 추정 막대+오차 막대)·범위 띠+실제 점·전후 가로 막대(배수 꼬리표)·도넛·저울·한글 공시 원문 카드·계단 막대 | video/src/parts/charts.tsx(범용 — 숫자는 전부 props) · E1.tsx의 mu8·guide·seg·dsdx·stairs·quotes2·scale·outlook 장면이 씀 | 경쟁 3편 ytbreak(ep/E-1/compare.md) — 전망치 대신 공시 원문을 그리는 그림 | E-1(10/3 예정) | — |
 | 조건 꼬리표(CondTag)·흐름도(상자+꺾은 화살표, Flow)·칸 채우는 계산식(Tokens, 빈칸 점선→채움+아래 이름)·절벽 막대(CliffBars, 하한 점선+점프 괄호 꼬리표)·달력 줄(MonthRows, 해마다 12칸+구간 칠하기)·기간 띠(PeriodBand, n개월 눈금)·단계 카드(StepCards)·체크리스트(CheckList) | video/src/parts/explain.tsx(범용 — 글·숫자 전부 props, 색은 fm.tsx 토큰만) · D1.tsx(재료 ep/D-1/d1props.py → video/d1.json, 장면 16종) | 제도 설명형(건보료) — 계산식·조문·시점을 그림으로 | D-1(무음 리허설 10/1) | — |
+
+## beats.tsx (2026-10-02 motion) — 영상미 고칠 점 5개, 새 편부터 opt-in
+- `HookNumber {to, digits, prefix, suffix, label, color, dark, x, y, size}` — 여는 장면 첫 1.2초 안 숫자. 마지막 값 = 사실표 값.
+- `beatCues(cues, total, fps, maxGap=6)` + `<Beat cues n>{(focus, o) => ...}</Beat>` — 문장 시작 프레임(at(s,i))을 넣으면 6초 넘는 빈틈에 스스로 다음 요소로 초점을 옮긴다. `o(i)`를 각 요소 opacity로.
+- `<Drift frames seed>` — 오래 머무는 표·원문 판을 장면 길이 동안 1.035배까지 천천히 민다.
+- `HeroNumber {to, top, bottom, source, start}` — 화면 가득 숫자 하나. 한 편 2번까지, 여는 장면에 안 씀.
+- `PenMark {kind: under|arrow|bracket, x, y, w, h, cue, seed}` — 펜 긋는 숫자는 글자색 잉크.
+- `<Wipe seed dur at>` — 장면 맨 앞에 넣는다. 방향·띠 색이 seed(편 이름)로 바뀐다.
+- 미리보기: Root.tsx `MotionKit` 컴포지션(12초), 렌더 ep/E-1/motion_preview/motionkit_5fix.mp4.
+- 관문: `py -3.12 work/video/motioncheck.py <렌더 mp4>` — 첫 3초 움직임·정지 15초 이하. 경쟁 수치는 motion-bench.md.

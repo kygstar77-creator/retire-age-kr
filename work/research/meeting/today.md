@@ -89,6 +89,8 @@
 - 모든 공개물 review.md 규칙(지시문 6개): ① 경쟁 1등보다 나은 점 2개 ② 우리 지난 것보다 나아진 점 1개 ③ 1등이 더 나은 점 1개와 따라잡을 방법 — 비면 공개 금지. 쇼츠도 같은 진단 benchmark 16:00(copywriter·shorts·visual-designer, 쇼츠 틀 v2, cardshorts/benchmark-2026-10-02.md).
 - [지시] **firemap-motion-designer + firemap-visual-designer** 영상미: 경쟁 상위 롱폼 3편과 E-1 장면 비교 → 고칠 점 5개 렌더 틀 반영, 썸네일 통과선 8점. 대본·카피·제목·썸네일·설명 첫 줄·카페 제목 모두 심사 3명 평균 8점(경쟁 5 비교) 뒤 공개, 편 폴더 review.md.
   착수: firemap-motion-designer 11:28 (경쟁 롱폼 3편↔E-1 장면 비교 → 고칠 점 5개 렌더 틀 반영, 모션 몫)
+  완료: firemap-motion-designer 11:41 — 모션 몫(썸네일 8점은 visual-designer 몫 그대로 열림). 경쟁 3편 실측(같은 방법·90초): 그래픽 움직이는 시간 매경 88%·수페TV 12%·신과대 8% vs E-1 14%·최장 정지 26.2초(15초 넘는 곳 8). 고칠 점 5개 → work/video/src/parts/beats.tsx(HookNumber·Beat/Drift·HeroNumber·PenMark·Wipe, 새 편부터 opt-in) + 관문 work/video/motioncheck.py(첫 3초·정지 15초). 미리보기 ep/E-1/motion_preview/motionkit_5fix.mp4·compare_e1_vs_5fix.png, 심사 3명(제미나이 lite 세 역할) 평균 7.0. 근거 longform/motion-bench.md
+  [요청] **firemap-video-producer** (motion 11:41): D-1 리허설 motioncheck 실패 — 정지 30.8초(5:17~)·24.8초(2:26~). 오늘 19:30 공개는 그대로(재렌더 요구 아님, 사용량 절약). 다음 편(E-2~)부터 렌더 뒤 `py -3.12 work/video/motioncheck.py <mp4>` 통과를 관문에 넣어 주세요.
 - [지시] **firemap-ai-lab·firemap-admin** 10/2 18:00: 유료 도구 전수 비교 → work/research/admin/paid-tools-2026-10.md(분야별·무인 사용 가능·월 가격·약관·무료 체험 결과·기대 효과), 결재는 위 증명 기준 3개 달성 뒤(무료 체험 A/B로 증명된 것만 예외), '꼭 필요한 것' 3~5개·안 삼 이유. 계정·결제는 사장님 몫. ai-lab 착수 09:15(admin 멈춤이라 가격·약관 칸까지).
   - 착수: firemap-ai-lab 09:15 (운영실장 — admin 멈춤이라 가격·약관 칸까지)
   - 완료: firemap-ai-lab 09:25 — 결과 admin/paid-tools-2026-10.md, 결재함(work/research/approvals.md) 3줄: Figma Professional $16·ElevenLabs Starter $6·Runway Standard $12(조건부). 시험은 가입 필요로 0건, Mobbin·Midjourney·vidIQ 등은 페이지 403/429라 확인 안 함

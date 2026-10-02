@@ -10,6 +10,7 @@ import {E1, E1Props, e1Frames} from './E1';
 import e1 from '../e1.json';
 import {D1, D1Props, d1Frames} from './D1';
 import d1 from '../d1.json';
+import {MotionKit} from './MotionKit';
 
 export const Root: React.FC = () => {
   const p = props as unknown as WeeklyProps;
@@ -42,6 +43,7 @@ export const Root: React.FC = () => {
     <Composition id="D1" component={D1 as unknown as React.FC<Record<string, unknown>>} durationInFrames={d1Frames(dp1)} fps={dp1.fps}
       width={1920} height={1080} defaultProps={dp1 as unknown as Record<string, unknown>}
       calculateMetadata={({props: pp}) => ({durationInFrames: d1Frames(pp as unknown as D1Props)})} />
+    <Composition id="MotionKit" component={MotionKit} durationInFrames={360} fps={30} width={1920} height={1080} />
     </>
   );
 };

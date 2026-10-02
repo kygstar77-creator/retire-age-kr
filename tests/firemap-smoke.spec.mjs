@@ -185,7 +185,7 @@ test.describe('firemap smoke', () => {
     const tool = TOOL_PAGES.find((t) => t.path === '/calc/unemployment-benefit');
     const screenText = (await hero.innerText()).replace(/\s+/g, ' ');
     for (const b of tool.body.slice(1)) expect(screenText, `crawler text on screen: ${b.slice(0, 20)}`).toContain(b);
-    await page.getByRole('button', { name: '은퇴 나이 계산' }).click();
+    await page.getByRole('button', { name: '이 돈이면 몇 살에 은퇴?' }).click();
     await page.waitForTimeout(500);
     expect(bodies.some((b) => b.event === 'unemployment_to_fire'), 'unemployment_to_fire 이벤트').toBe(true);
     expect(await page.evaluate(() => window.location.hash)).toBe('#result');
@@ -251,7 +251,7 @@ test.describe('firemap smoke', () => {
     for (const path of ['/calc/salary', '/calc/severance', '/calc/unemployment-benefit']) {
       await page.goto('about:blank');
       await page.goto(path);
-      await expect(page.locator('main.fm-screen')).toContainText(path === '/calc/unemployment-benefit' ? '은퇴 나이 계산' : '몇 살에 은퇴?');
+      await expect(page.locator('main.fm-screen')).toContainText('몇 살에 은퇴?');
       const links = page.locator('main.fm-screen a[href*="coupang.com"]');
       const n = await links.count();
       expect(n, `${path} 발급 링크 1개(10/1 17:22 발급분)`).toBe(1);

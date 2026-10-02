@@ -1,11 +1,11 @@
 // 실업급여(구직급여) 계산기(/calc/unemployment-benefit) — 퇴직금 계산기와 같은 본진 밖 실험. 메뉴에 없고 검색으로만 들어온다.
 // 입력 이름은 고용24 실업급여 모의계산(간편·상용)과 고용보험법 용어 그대로. 식·근거: src/utils/unemploymentBenefit.js, work/research/calc-unemployment/spec.md
-import { useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Card, SectionHead, RangeField, StatHero, Button, Fold, Tabs, Notice, Icon, toast } from '../../ui/index.js';
 import CoupangPick from './CoupangPick.jsx';
 import { unemploymentBenefit, UB_2026 } from '../../utils/unemploymentBenefit.js';
 import { formatWon } from '../../firemap-v2/formatters.js';
-import { inputsIsReal } from '../../utils/retirementSimulator.js';
+import { buildSimulation, inputsIsReal } from '../../utils/retirementSimulator.js';
 import { logEvent } from '../../utils/live.js';
 import useCalcEvents from './useCalcEvents.js';
 
@@ -30,11 +30,30 @@ export default function UnemploymentCalc({ inputs, onApply, onMove }) {
   const limitLabel = ok && r.capped ? '상한' : ok && r.floored ? '하한' : '상한 · 하한';
   const limit = !ok ? '—' : r.capped ? exact(r.capDaily) : r.floored ? exact(r.floorDaily) : '60%';
 
+  // calc-3 숫자 줄(design/calc-3/spec.md 3, 퇴직금과 같은 조각): 저장된 내 입력이 있고 1년 이상 앞당겨질 때만.
+  const total = ok ? r.total : 0;
+  const gainYears = useMemo(() => {
+    if (!total || !inputsIsReal(inputs)) return 0;
+    try {
+      const before = buildSimulation(inputs).earliestRetirementAge;
+      const after = buildSimulation({ ...inputs, financialAsset: (Number(inputs?.financialAsset) || 0) + total }).earliestRetirementAge;
+      return before && after ? Math.max(0, before - after) : 0;
+    } catch { return 0; }
+  }, [inputs, total]);
+
+  // 숫자 줄이 뜨는 비율(기획 calc-3 [지시] ②) — 처음 보인 순간 1회. 이름은 growth 10/1 12:13 정의 그대로.
+  const gainLogged = useRef(false);
+  useEffect(() => {
+    if (gainLogged.current || gainYears < 1) return;
+    gainLogged.current = true;
+    try { logEvent('unemployment_gain_view', { gain_years: gainYears, amount_bucket: Math.min(20, Math.floor(total / 1000000)) }); } catch { /* ignore */ }
+  }, [gainYears, total]);
+
   const toRetire = () => {
     if (!ok || !r.total) return;
     const base = Number(inputs?.financialAsset) || 0;
     onApply({ financialAsset: base + r.total });
-    try { logEvent('unemployment_to_fire', { amount_bucket: Math.min(20, Math.floor(r.total / 1000000)) }); } catch { /* ignore */ }
+    try { logEvent('unemployment_to_fire', { amount_bucket: Math.min(20, Math.floor(r.total / 1000000)), gain_shown: gainYears >= 1 }); } catch { /* ignore */ }
     toast.good(`현재 자산에 실업급여 ${exact(r.total)}을 더했어요`);
     onMove(inputsIsReal(inputs) ? 'result' : 'question');
   };
@@ -51,7 +70,21 @@ export default function UnemploymentCalc({ inputs, onApply, onMove }) {
           { label: '소정급여일수', value: `${r.days}일` },
           { label: limitLabel, value: limit }
         ] : undefined}
-      />
+      >
+        {gainYears >= 1 && (
+          <p className="fm-gain">
+            <span className="fm-gain__lead">실업급여를 더하면</span>
+            <span className="fm-gain__line">파이어 나이가 <span className="num">{gainYears}년</span> 앞당겨져요</span>
+          </p>
+        )}
+      </StatHero>
+
+      {ok && r.total > 0 && (
+        <div>
+          <Button variant="primary" size="lg" full onClick={toRetire}>이 돈이면 몇 살에 은퇴?</Button>
+          <p className="ds-caption ds-mb-0 ds-mt-2">현재 자산 + 실업급여 {exact(r.total)}</p>
+        </div>
+      )}
 
       <Card>
         <SectionHead size="sm" kicker="실업급여 계산기" title="이직일 · 나이" desc="이직일 현재 나이로 소정급여일수가 정해져요" />
@@ -74,13 +107,6 @@ export default function UnemploymentCalc({ inputs, onApply, onMove }) {
           <RangeField label="1일 소정근로시간" value={hours} min={1} max={8} step={1} format={(h) => `${h}시간`} onChange={setHours} />
         </Fold>
       </Card>
-
-      {ok && r.total > 0 && (
-        <Card variant="dark">
-          <SectionHead size="sm" title="재취업 뒤, 몇 살에 은퇴할 수 있을까?" desc={`실업급여는 재취업 활동 기간에 받는 돈이에요. ${exact(r.total)}을 현재 자산에 더해 파이어 나이를 계산해요`} />
-          <Button variant="primary" size="lg" full onClick={toRetire}>은퇴 나이 계산</Button>
-        </Card>
-      )}
 
       <Card variant="flat">
         <SectionHead size="sm" kicker="계산 방법" title="1일 구직급여액 × 소정급여일수" />

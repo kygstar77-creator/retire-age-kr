@@ -1,6 +1,6 @@
 // 퇴직금 계산기(/calc/severance) — 본진 밖 실험. 메뉴에 없고 검색으로만 들어온다(product-principles.md 2).
 // 입력 항목 이름은 고용노동부 퇴직금 계산(moel.go.kr/retirementpayCal.do) 그대로. 식·근거: src/utils/severancePay.js
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Card, SectionHead, RangeField, StatHero, Button, Fold, Tabs, Notice, Icon, ListGroup, ListRow, toast } from '../../ui/index.js';
 import CoupangPick from './CoupangPick.jsx';
 import { severancePay } from '../../utils/severancePay.js';
@@ -40,6 +40,14 @@ export default function SeveranceCalc({ inputs, onApply, onMove }) {
       return before && after ? Math.max(0, before - after) : 0;
     } catch { return 0; }
   }, [inputs, amount]);
+
+  // 숫자 줄이 뜨는 비율(기획 calc-3 [지시] ②) — 처음 보인 순간 1회. 이름은 growth 10/1 12:13 정의 그대로.
+  const gainLogged = useRef(false);
+  useEffect(() => {
+    if (gainLogged.current || gainYears < 1) return;
+    gainLogged.current = true;
+    try { logEvent('severance_gain_view', { gain_years: gainYears, amount_bucket: Math.min(10, Math.floor(amount / 10000000)) }); } catch { /* ignore */ }
+  }, [gainYears, amount]);
 
   const toRetire = () => {
     if (!r || !r.amount) return;

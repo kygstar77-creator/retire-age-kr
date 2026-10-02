@@ -14,7 +14,7 @@
 ## 체크리스트(카페 묶음)
 1. humanlike·aitell (묶음 c0*.txt 합쳐서)
 2. 숫자 집합 전후 동일, 출처·AI 고지·대가성 문구 그대로, 원본 .orig
-3. 제목: 후보 3개 이상 → `py -3.12 work/second_opinion.py <review_in.md> 카피` + 레드팀 → 평균 8 이상, '~할까?' 같은 틀 3번 넘게 금지
+3. 제목: 후보 3개 이상 → `py -3.12 work/second_opinion.py <review_in.md> 카피` + 레드팀 → 평균 7 이상, '~할까?' 같은 틀 3번 넘게 금지
 4. compare.md(카페 탭 상위 5, 모바일 curl) 없으면 만든다
 5. review.md · .edit.json(by firemap-editor, 파일 해시) · aitell pass → hold.txt 지움 → today.md 한 줄
 

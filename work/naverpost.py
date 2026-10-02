@@ -1476,6 +1476,26 @@ def main():
                 print(f'  PYTHONPATH=work py -3.12 work/blogimg.py 로 그림을 만들고 order.txt에 img/ 줄을 넣은 뒤 다시 올린다.')
                 print('  그림 없이 올려야 할 이유가 있으면 --noimg-ok 를 붙인다.')
                 sys.exit(4)
+            # 대표사진 관문 — 사장님 10/2 15:3x "네이버 대표사진 이렇게 긴 거 넣으면 잘리는 거 알아 몰라", "대표사진은 이게 8점이야?"
+            # 첫 사진이 목록·검색 썸네일(정사각형으로 잘림)이 된다. 오늘 #190~192는 900x402(2.2:1)라 양옆 숫자가 잘렸다.
+            # ① 첫 사진은 정사각형(가로/세로 0.9~1.1)·짧은 변 800px 이상이어야 올린다(지금부터).
+            # ② 첫 사진 심사 cover_review.md(경쟁 상위 썸네일 옆 비교판, 심사 3명 평균 7점 이상 — "평균: N" 줄)가 있어야 올린다(10/3 슬롯부터, 그 전은 경고).
+            if cmd == 'cafe' and '--cover-ok' not in sys.argv:
+                from PIL import Image as _Im
+                _first = next((ln.strip() for ln in open(os.path.join(pkg, 'order.txt'), encoding='utf-8') if ln.strip().startswith('img/')), None)
+                _w, _h = _Im.open(os.path.join(pkg, _first)).size
+                if not (0.9 <= _w / _h <= 1.1 and min(_w, _h) >= 800):
+                    print(f'대표사진(첫 사진 {_first}) {_w}x{_h} — 정사각형 아님·작음. 네이버 목록에서 잘린다. 1080x1080 표지를 첫 사진으로 넣고 다시 올린다.')
+                    sys.exit(4)
+                _cr = os.path.join(pkg, 'cover_review.md'); _avg = None
+                if os.path.exists(_cr):
+                    _m = re.findall(r'평균\s*[:：]\s*([0-9.]+)', open(_cr, encoding='utf-8').read())
+                    _avg = float(_m[-1]) if _m else None
+                _slot = open(os.path.join(pkg, 'slot.txt'), encoding='utf-8').read()[:10] if os.path.exists(os.path.join(pkg, 'slot.txt')) else time.strftime('%Y-%m-%d')
+                if _avg is None or _avg < 7:
+                    _msg = f'대표사진 심사 {"없음" if _avg is None else _avg} — cover_review.md에 경쟁 썸네일 옆 3명 평균 7점 이상("평균: N")이 있어야 한다.'
+                    if _slot >= '2026-10-03': print(_msg); sys.exit(4)
+                    print('[경고] ' + _msg)
             title = open(os.path.join(pkg, 'title.txt'), encoding='utf-8').read().strip()
             # 읽기 검사에서 지적이 남아 있으면 올리지 않는다.
             # 2026-09-26: check_read.txt에 지적이 다 적혀 있는데도 글이 그대로 나갔다.

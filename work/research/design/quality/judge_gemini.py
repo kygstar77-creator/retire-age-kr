@@ -1,4 +1,4 @@
-# 운영 화면 5종 미감 심사(제미나이 이미지 읽기) — 8점 관문 기준선. py -3.12 judge_gemini.py > judge_gemini.md
+# 운영 화면 5종 미감 심사(제미나이 이미지 읽기) — 7점 관문 기준선. py -3.12 judge_gemini.py > judge_gemini.md
 import sys, os, json, base64, urllib.request
 sys.stdout.reconfigure(encoding='utf-8')
 H = os.path.dirname(os.path.abspath(__file__))
@@ -10,7 +10,7 @@ ASK = """당신은 한국 핀테크 앱(토스·뱅크샐러드) 수준을 아�
 냉정하게 한국어로:
 1) 첫 줄은 반드시 '점수: N' (1~10, 질문: 토스·뱅크샐러드 화면 옆에 놓았을 때 같은 수준의 회사가 만든 것처럼 보이나. 6 = 국내 개인 사이트 평균, 8 = 토스 옆에 놓아도 어색하지 않음)
 2) 점수를 깎은 이유 3개(화면에서 보이는 것만, 위치를 들어서)
-3) 8점으로 올릴 고칠 점 3개(구체적: 무엇을 빼거나 합치거나 키울지)"""
+3) 7점 넘게 올릴 고칠 점 3개(구체적: 무엇을 빼거나 합치거나 키울지)"""
 BOARDS = [('home', '첫 화면 /'), ('salary', '연봉 실수령 계산기 /calc/salary'), ('severance', '퇴직금 계산기 /calc/severance'), ('unemp', '실업급여 계산기 /calc/unemployment-benefit'), ('guide', '가이드 목록 /guide/')]
 for key, name in BOARDS:
     img = base64.b64encode(open(os.path.join(H, f'compare-{key}-small.png'), 'rb').read()).decode()

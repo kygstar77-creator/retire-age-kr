@@ -36,3 +36,11 @@ Open (builder): links `60-percent-tax-trap/`, `privacy/`, `about/` have no page 
 
 Unchanged on purpose: titles, H1s, meta, examples table (re-checked), "This is arithmetic, not advice. Speak to a regulated adviser…", sources, about page.
 - Fix the template, not just the page. The false privacy line fixed on uk-pay was still in kit/template-en.html, so every new site would copy it back. When a fix comes from shared code (fmkit.js), grep the kit templates in the same run.
+
+## 2026-10-02 11:05 X-V1 re-check after beat-1st (07d853f)
+| Where | Before | After | Why |
+|---|---|---|---|
+| result table, last row | Take home | Take-home pay | noun label in body = GOV.UK style; "Take home" alone reads clipped |
+
+Checked, unchanged: scope line "rates from GOV.UK, checked 1 October 2026" (true), table note "Month is the yearly amount divided by 12 and rounded to the nearest pound…" (matches f() = Math.round), Year/Month headers. deploy.py check 4 pages OK. Not deployed by me — builder's next push carries it.
+- Builders now stamp .edit.json "editor-en 역할" themselves. Shared rules for them: work/research/editor/style-guide-en.md.

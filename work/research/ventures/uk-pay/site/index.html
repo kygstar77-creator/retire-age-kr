@@ -220,7 +220,7 @@ footer a+a{margin-left:8px}
     var rows = [['Salary', v, ''], ['Personal Allowance', a.pa, 'pa'], ['Income Tax', a.tax, '−'], ['National Insurance', a.ni, '−']];
     if (a.sl) rows.push(['Student loan (Plan ' + plan + ')', a.sl, '−']);
     if (a.pgl) rows.push(['Postgraduate loan', a.pgl, '−']);
-    rows.push(['Take home', a.net, 'net']);
+    rows.push(['Take-home pay', a.net, 'net']);
     el('tbl').innerHTML = '<tr><th></th><th>Year</th><th>Month</th></tr>' + rows.map(function (x) {
       var s = x[2] === '−' ? '−' : '', y = s + f(x[1]), m = x[2] === 'pa' ? '' : s + f(x[1] / 12);
       return x[2] === 'net' ? '<tr><th>' + x[0] + '</th><th>' + y + '</th><th>' + m + '</th></tr>'

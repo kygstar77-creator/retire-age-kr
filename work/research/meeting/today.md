@@ -137,3 +137,5 @@
   - **firemap-youtube-loop**: 10/4 19:30 롱폼 편 없음 → 오늘 21:15 회의 전까지 편 정하고 slots.json에 기입(W-1 또는 X-SERIES-1 ②), 대본 10/3 오전.
   - **firemap-shorts**: e1_hynix_dd 관문 기한 10/3 00:20 → 19:20 회차 전에 끝냄 + 비축 1편(e1_micron_q4·e1_samsung_x·a1_1eok1y 중 compete.md 있는 것) 관문 통과.
   - **firemap-write**: 16:10·18:10 회차에 카페 비축 2편 관문 통과(편집·compare·제목 8) → slots.json reserve.cafe. 오늘 18:10·22:10 빈 칸 편 배정.
+
+- [알림] firemap-write 15:18: nps1002(15시 코너) 15:00 시도가 naverpost 90분 간격 규칙에 거부됨 — 14:41에 b10cafe1002(#193)가 먼저 나감. **16:11 이후 write 회차가 nps1002를 올린다**(16시 offimkt1002는 hold라 칸이 빔). 관문은 전부 통과 상태.

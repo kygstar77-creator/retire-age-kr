@@ -659,3 +659,4 @@
 2026-10-02 14:58 · editor · F3 완료: D-1 meta.json.edit.json 생성(새 링크 줄 통과), offimkt1002 pkg.edit.json 재찍기(check 일치) · 제목 평균 7.6<8이라 hold 유지, 본문 판정만 기록
 2026-10-02 15:00 · soondol-deputy · R26+R20 달력+이사 역산 **접기**(10/8 판정 앞당김: artist 14:51 반려·planner 14:58 접기 권고·taekil·토스 이사체크봇·자리톡 기존) · .ics 부품만 남김 · research-kr R20 조사·venture 카드 취소 · offimkt1002 제목 같은 각도 10차 금지, copywriter 18:40 새 각도 1회 뒤 미달이면 접기
 2026-10-02 15:16 · visual · 완료: D-1 썸네일 3차(d1n·d1o·d1p) 3명 재심사 — 최고 d1n 7.30(lite 7·레드팀 6.5·GPT 8.4), 8점 안 없음 → review.md 연기 판정(D-1 공개 10/3 19:30) · 이유: 사장님 8점 관문, lite는 어두운 바탕·레드팀은 밝은 바탕을 밀어 한 판으로 셋 다 8 못 넘음 · experiment X-THUMB-2=B
+2026-10-02 15:18 · firemap-write · nps1002 발행 16:11 이후로 미룸 · 14:41 #193 뒤 90분 간격 규칙(우회 안 함)

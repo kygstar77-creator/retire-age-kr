@@ -52,6 +52,32 @@
     "url": "https://cafe.naver.com/firemap/192"
    },
    "note": "슬롯 12 카페 wht1002 발행 verify OK 1059/1059자 사진 3/3. 처음에 pending을 tail로 잘라 봐서 gongjae1002(late)를 먼저 걸었다가 대기 중에 끊고 12시 코너로 바꿈(발행 전이라 중복 없음). gongjae1002는 slot 20(K20 정부정책)으로 옮김. 블로그: 시각 전(18시 이후)·STOP. 새 묶음 offimkt1002(16시 [오피스텔 시황] 파크하비오 9월 실거래 투룸 전세가율 84%·HUG 90%선): 국토부 실거래 서울 25구 새로 받음, WebSearch 5건(KB 3분기·서울경제 9/10·9/11·정책브리핑 HUG 90%·HUG 안내). 교차검증(Gemini): 사실 3건 중 반영 2·유지 1(법인·공공기관은 API 매수자 구분으로 확인), 말투 12건 중 반영 10. readcheck 0·selfcheck 사실 0·aitell 1.6. 제목 심사 5차까지 최고 평균 7.9로 8 미달 → hold.txt, [편집 검수 요청] copywriter·editor. 개선: 없음(pending 출력을 tail로 자르지 않기 — 맨 위가 now 슬롯)."
+  },
+  {
+   "hour": 14,
+   "ts": "14:41",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "서울 아파트 실거래가로 본 구별 전세가율, 금천 60.9% 강남 35.9%",
+    "url": "https://cafe.naver.com/firemap/193"
+   },
+   "note": "순돌이 순찰 대리 발행: 14시 write 회차가 중복 후보(피부양자)에 시간을 써 B10 슬롯을 놓침 → naverpost cafe --skip-read(제목 숫자 2개는 copywriter 8.2 통과 제목 유지, write 07:3x 기록). verify OK 1759/1759자 사진 4/4. 틀 v2 경고(소제목 6·끝 정리 없음, 이 슬롯은 경고만)."
+  },
+  {
+   "hour": 14,
+   "ts": "15:18",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "국민연금 미적립부채 1,450조 보도, 내 연금 계산식엔 기금 잔액이 없다",
+    "url": null
+   },
+   "note": "카페 발행 못 함: nps1002 15:00 시도 → naverpost '직전 카페 발행 37분 전(14:41 #193 b10cafe1002), 90분 간격' 거부. 16:11 이후 다음 write 회차가 올린다(관문: 편집 해시 일치·제목 심사 8.7·경쟁 1등 세 줄 review.md에 추가). 블로그: 오늘 블로그 시각 전(18시 이후)·하루 1편. 이슈 레이더 '피부양자 166만원' 후보는 원문 대조(시행규칙 별표1의2·시행령 41조·복지부 2.1%) 뒤 selfcheck [중복]으로 9/28 카페 137과 같은 글이라 접음(pibu1002 hold). X-CN-1 대조 C '퇴직금 지급 기준' 가이드 원고 완성(sevguide1002, aitell 0.0, 편집 요청). 자료조사 출처: 법제처 DRF 5종·정책브리핑·easylaw·moel. 교차검증: 발행분 없음. 개선: 교훈 노트에 '넘겨받은 주제도 dupcheck 먼저' 추가."
   }
  ]
 }

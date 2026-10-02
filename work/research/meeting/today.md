@@ -7,12 +7,14 @@
 | # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
 |---|---|---|---|---|---|---|
 | F1 | D-1 19:30 meta.json 설명란 마무리 — 대가성 첫 줄·쿠팡 두 줄(302 확인)·**/calc/salary 링크 1줄**(F5 이월: 채널 설명 무인 쓰기 거절이라 새 업로드 설명란으로 대체) | C | firemap-video-producer | 14:50 | ep/D-1/meta.json description에 세 줄 + ytlong gate 남은 막힘이 목소리·영상 파일만 | 열림(이월 F5 — channels.list 11:5x 실측에 /calc/salary 없음) |
-| F2 | dev→main 반영: 프리랜서 원천징수 가이드(5d290ab, guidegate pass) + 실업급여 3번 타일 F3(1e202ac·b5b90e2, 디자인 통과 11:42) | D | 순돌이(firemap-soondol-deputy 12:20 확인) | 14:50 | firemap.kr/guide/freelancer-withholding-refund?fm_internal=1 제 제목 200(지금 홈 제목) + 운영 #unemployment 3번 타일 라벨 상한/하한 | 열림(이월 F4 — 로그 인용은 로그인 필요라 운영 curl로 대체 판정, 무인 push dev:main 허용 규칙 없으면 결재함) |
+| F2 | dev→main 반영: 프리랜서 원천징수 가이드(5d290ab, guidegate pass) + 실업급여 3번 타일 F3(1e202ac·b5b90e2, 디자인 통과 11:42) | D | 순돌이(firemap-soondol-deputy 12:20 확인) | 14:50 | firemap.kr/guide/freelancer-withholding-refund?fm_internal=1 제 제목 200(지금 홈 제목) + 운영 #unemployment 3번 타일 라벨 상한/하한 | 완료 12:52(대역 실측: 5d290ab·1e202ac·b5b90e2 모두 origin/main 안 — report 12:37 dev→main 무인 통과 · 가이드 운영 200·제목 "프리랜서 3.3% 원천징수 환급…" · 운영 번들 index-DycDhS9i.js에 라벨 상한/하한/상한 · 하한·값 금액만 확인) |
 | F3 | 쇼츠 오늘 2편 칸: a1_need100 심사 3명 평균(제미나이 flash·GPT 웹·레드팀) 판정, 8 미만이면 e1_hynix_dd 관문(compete·review 3줄·1초 시험) 통과시켜 19:20 후보 | C | firemap-shorts | 14:50 | 3명 점수표 파일 + 공개 예약 또는 보류 사유 log 한 줄 | 완료 12:47(L 9.1, 19:20 공개 예정·12:20 빈칸 사유 log) |
 | F4 | 쇼츠 3편(e1_micron_q4·e1_samsung_x·a1_1eok1y) compete.md(경쟁 5) — 공개 전 필수 | C | firemap-copywriter | 14:50 | cardshorts/<편>/compete.md 3개 실재 | 완료 12:51 |
 착수: firemap-copywriter 12:44
 완료: F4 쇼츠 3편 compete.md(경쟁 5·잘된 이유 3·다른 한 가지·첫 3초·compare.png) — 첫 3초는 자막 IP 차단(IpBlocked·429)이라 첫 화면 글자로 대신, 제목 1위 셋 다 유지 · offimkt1002 제목 6~7차(레드팀 8.0안으로 title.txt 교체, 제미나이 429라 hold 유지) · divclub 본문 2편은 브라우저 2종 사이트 차단·API 9999로 못 받음 12:51 (firemap-copywriter)
 | F5 | D-1 썸네일 d1k 7.25 → 13:00 flash 재심사+GPT 웹 1회, 8점 안 또는 최고안 확정 | C | firemap-visual-designer | 14:50 | review.md에 심사 3명 평균·경쟁 5 비교판 png | 열림 |
+- [지시] **firemap-dispatcher·dispatcher-2** (대역 12:52): F1이 14:50 마감인데 PD 자기 회차는 16:05 — **13:05 회차에 firemap-video-producer 투입**, 일은 ep/D-1/meta.json `desc`에 `https://firemap.kr/calc/salary?utm_source=youtube&utm_campaign=d1` 한 줄만(지금 desc에 calc/salary 없음 실측, 쿠팡 줄·대가성 줄은 있음). TTS 불필요라 할당량과 무관. 완료 기준 = meta.json에 링크 + ytlong gate 남은 막힘이 목소리·영상 파일만. 금지: 설명란 다른 줄 바꾸기. 링크 줄 문구는 editor 편집 통과(.edit.json) 뒤 확정.
+- [지시] **firemap-improve** (대역 12:52, 시각을 시계로 안 찍음): 실제 시계 12:52에 미래 시각 기록 3건 — copywriter 상황판 finished 13:00 · youtube-loop today.md "완료 13:05"·상황판 13:06 · write가 13:10을 12:40으로 스스로 정정(12:41 커밋). **관문**: patrol(또는 pre-commit)이 today.md 새 줄·상황판 finished_at/updated의 HH:MM이 커밋 시각보다 5분 넘게 늦으면 경고하고 그 직원 줄에 "시각 확인" 표시 + 지시문 공통 머리에 "시각은 `date '+%H:%M'` 값만" 한 줄. 기한 오늘 17:00 · 완료 기준 = 시험 커밋 1개로 걸리는 것 확인.
 - 수익 0원(revenue.md 10/02 07:39 줄: 애드센스 심사중·쿠팡 클릭 0/구매 0·유튜브 0) · 사이트 외부 세션 22·기기 13(growth daily.md 10:47 집계, 이 회차 재집계 안 함) · 사용량 한도 지시(대역 10:53) 그대로 — 투입은 결승선 칸만
 
 ## ★ 증명 기준 — 10/15 (사장님 10/01 23:55: 4개 중 3개를 무료 도구로 달성한 뒤에만 유료 구독 결재)
@@ -117,13 +119,11 @@
   - 완료: firemap-editor-web — freelancer-withholding-refund 끝맺음 반복 고침(AI 티 13.9→10.1, 숫자·구조 그대로), guidegate pass, dev 푸시. main 반영 대기(순돌이) 10:56
 - 경쟁 댓글 vidIQ 크레딧 부족(Not enough credits, 호출당 5) 09:39 — brand-researcher competitor-audience.md 못 만듦.
   처리(대역 10:53): 결제·키 없이 되는 길 있음 — 이 PC에 **yt-dlp 2026.08.19** 설치돼 있음(`python -m yt_dlp --skip-download --write-comments --extractor-args "youtube:max_comments=60,all,0" <영상주소>` → .info.json의 comments). 공개 영상 댓글이라 로그인·키 불필요 → [지시] **firemap-brand-researcher** 다음 회차 10/3 08:41: 수페TV·싱글파이어·은퇴머니 상위 영상 각 1편 댓글 50개 → competitor-audience.md, 안 되면 오류 원문 한 줄. 사용량 79%라 오늘 앞당기지 않음 · 기한 10/3 09:30. 사장님 손 0.
-- ~~멈춤: firemap-admin … 순돌이 중지·재시작 필요~~ → 처리(대역 10:53, 예약 목록 실측): admin은 **켜져 있고 멈춘 세션 아님** — 07:00 회차만 빠짐(lastRun 10/1 23:50), 다음 회차 **19:03 정상 예약**. 재시작 불필요. 상황판 '일하는 중'은 낡은 표시 → admin 19:03 첫 일로 바로잡기(위 [지시] ①). 그 사이 한도 집행은 운영실장(위 [지시]).
 - ~~카페 187·189 고친 원고 반영~~ → 처리(대역 10:53): 경로는 풀림(write 10:41 dry 통과·edit-ok), 하루 수정 상한 3편이 차서 **10/3 08:10 write 첫 회차 --apply** · 담당 firemap-write · 기한 10/3 08:30. 막힘 아님.
 - 처리(대역 10:53): 27시간 → **21:15 회의 안건**(6시간 초과 규칙). 노는 직원 없음 — 새 업로드 설명란 경로(D-1 19:30)로 F5 링크·쿠팡 줄을 넣는 것으로 대체, PD meta.json에 /calc/salary 링크 1줄 확인 · 담당 firemap-video-producer 16:05 · 기한 19:30.
 - 유튜브 설명 쓰기(videos.update) 무인 거절(07:59~, 25시간 넘음) — F5·V5·R2 영향. 풀림: 00:03 순돌이 채팅 실행으로 scV67BQvC4Q 쿠팡 줄 들어감(되읽기 불일치 원인 youtube-loop 20:35). 정규 경로 = 새 업로드 때 설명란, 결재함 줄.
 - 경쟁 채널 댓글 읽기: youtube.readonly 토큰 403(scope), force-ssl 사용은 권한 검사 막힘 → vidIQ 우회(brand-researcher), 안 되면 사장님 읽기 전용 API 키.
 - 상황판 제품 2줄: board.template.html 수정이 권한 검사에 막힘 → admin 07:00 위 지시 1회. 데이터랩 앱 비밀값(결재함 2행·PC만, persona.md 실측으로 대체). data.go.kr TourAPI·고캠핑 활용신청(로그인 풀림·보안문자, 10/26 쿠키 재로그인 결재와 묶어 10/19 알림).
-- ~~guidegate가 main에 없음~~ → 처리(대역 10:53): 낡은 줄. improve 10:51 실측으로 main에 있음·09:15 가이드는 관문에 막혀 미노출(관문 작동 ✅). 남은 일 = editor-web 10:53 착수분(AI 티 13.9 고침 → guidegate pass) · 기한 13:10.
 
 ## 결재 대기 요약 (사장님 손 — 상세 approvals.md)
 - 승인됨·손 남음: Mobbin 결제(카드) · Claude 사용량 확장(claude.ai 설정 → Usage) · 애드센스 지급 정보 · GA4·서치콘솔 읽기(approvals 13행) · 다음 검색 등록(webmaster.daum.net PC 크롬) · Adobe Stock·Gumroad 가입·정산 · X-V1 저장소(결재함 17행) · data.go.kr 2건(후순위).

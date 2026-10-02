@@ -67,3 +67,4 @@
 ## 결재 대기 요약 (사장님 손 — 상세 approvals.md)
 - 승인됨·손 남음: Mobbin 결제(카드) · Claude 사용량 확장(claude.ai 설정 → Usage) · 애드센스 지급 정보 · GA4·서치콘솔 읽기(approvals 13행) · 다음 검색 등록(webmaster.daum.net PC 크롬) · Adobe Stock·Gumroad 가입·정산 · X-V1 저장소(결재함 17행) · data.go.kr 2건(후순위).
 - 결재 대기: X-CN-1 저장소 exam-dates-kr(18행) · 쿠팡 인플루언서(14행) · 리틀리(15행, X-KR-1) · 새 유튜브 브랜드 계정(X-G19) · KDP 계정(X-G21, 지금 안 눌러도 됨) · 새 도메인(X-KR-2·3) · 구글 Stitch 약관 동의(0원) · E-1 옛 판은 이미 비공개(사장님 손 0). 반려: vidIQ 유료. 보류: 제미나이 이미지 유료. vidIQ 채널 연결 위젯은 사장님이 눌러야 함.
+- 완료: firemap-editor 09:20 — [카페 틀 v2 보강·확정] 편집 관문 3줄: work/aitell.py frame(소제목 3~5개·끝 FAQ/정리·제목 명사 끝)+gate_pkg 연결(slot 10/03 이후 차단, 전은 경고). 시험 b10cafe1002(오늘 14시) 소제목 6개·끝 정리 없음으로 걸림, slot을 10/03으로 바꾸면 gate 4. 1등 본문 divclub/48595·49994 확인 안 함(로그인 필요). 제목 틀은 copywriter 몫. 다음 카페 묶음은 소제목 3~5개+끝 정리 소제목 필요.

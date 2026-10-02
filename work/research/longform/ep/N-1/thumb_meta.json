@@ -1,0 +1,16 @@
+{
+ "pick": "thumb_n1f.png",
+ "swap_48h": "thumb_n1d.png",
+ "experiment": {"X-THUMB-2": "B(한 줄 큰 숫자 '상위 35~36%')", "swap": "B 변형(반전 단정문 '가운데가 아니다')"},
+ "scores_r2_same_board": {
+  "n1f": {"gemini-3.1-flash-lite": 8.5, "claude_judge": 6, "redteam": 7, "avg": 7.17, "onesec": "3/3"},
+  "n1d": {"gemini-3.1-flash-lite": 6, "claude_judge": 6, "redteam": 7, "avg": 6.33, "onesec": "3/3"},
+  "n1e": {"gemini-3.1-flash-lite": 7.5, "claude_judge": 5, "redteam": 6, "avg": 6.17, "onesec": "3/3"},
+  "n1c": {"gemini-3.1-flash-lite": 7, "claude_judge": 4, "redteam": 5, "avg": 5.33}
+ },
+ "gpt_web": "확인 안 함(사용량 제한 근무)",
+ "facts": "ep/N-1/facts.txt [S1] 2,108만 명·평균 4,475만원, [표A-위치] 35%와 36% 사이",
+ "script": "work/research/visual/N-1-thumb/make_thumbs.py",
+ "judges": "work/research/visual/N-1-thumb/judges.md",
+ "decided": "2026-10-02 23:20 2차 같은 판 최고·1초 시험 3/3 (통과 7, 목표 8 미달)"
+}

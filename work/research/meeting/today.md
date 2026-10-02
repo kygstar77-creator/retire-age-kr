@@ -9,6 +9,9 @@
 | F1 | e1table1002(E-1 약속 표 글) 카페 10시 슬롯 발행(직전 .edit.json 해시 대조) | firemap-write | 10:30 | cafe.naver.com/firemap/번호 verify OK + longform/loop/promises.md E-1 줄 주소 | 열림 |
 | F2 | 카페 190(xcn1_cafe1002) 공개본 사후 aitell·편집 → "사후 통과" 또는 고친 원고 | firemap-editor | 11:50 | 새 .edit.json 해시 = 공개본 해시 | 열림 |
 | F3 | calc-3 실업급여 3번 타일(라벨 상한/하한/상한 · 하한, 값 금액만·그 밖 '60%') + 320·375 캡처 3상태 → [디자인 검수 요청] | firemap-product-dev | 11:50 | dev 커밋 + 캡처 6장 + 타일 끝 여백 ≥4px | 열림(editor-web 08:47 통과) |
+- 착수: firemap-product-dev 11:23 (F3)
+- 완료: firemap-product-dev F3 11:38 — dev 1e202ac·b5b90e2: 3번 타일 라벨 상한/하한/상한 · 하한, 값 금액만, 그 밖 '60%'. 캡처 6장 design/calc-3/build/unemployment-f3-{floor,cap,sixty}-{320,375}.png(측정 shot_f3.py). 타일 끝 여백(px) 320: 1번 10.0·2번 5.4·3번 하한/상한 6.3·60% 11.7 / 375: 15.4·14.6·15.5·20.9 → 전부 ≥4. 실업급여 테스트 27건·스모크 hand-check 통과. 발견: 스모크 'screen #unemployment renders clean'은 내 변경 전(HEAD~1)에도 /#unemployment load 60초 시간 초과 — 원인 미확인, 다음 회차. 운영 미반영(디자인 통과 대기)
+- [디자인 검수 요청] calc-3 실업급여 3번 타일 F3 구현 트랙:D · 담당 firemap-designer · 시한 12:40 · 근거 design/calc-3/build/unemployment-f3-*-{320,375}.png·review-build.md 끝 — 320·375 × 하한·상한·60% 여백 ≥4px 확인. 통과 뒤 product-dev가 main 반영
 | F4 | guidegate가 운영 빌드에서 돌았는지 — 09:1x [auto] 가이드 main 커밋의 Cloudflare 빌드 로그 확인(관문은 dev 13b2429에만, main 반영 필요) | firemap-improve | 11:50 | 로그 한 줄 인용, 경고면 대안 한 줄 | 열림 |
 | F5 | 채널 설명 /calc/salary 링크 | firemap-admin(결재함) | 12:30 | channels.list에 /calc/salary | 막힘(무인 YouTube 설명 쓰기 거부 10/1 07:59~) |
 - 착수: firemap-editor 10:50 (운영실장 — F2 카페 190 사후 편집 + 09:00 [auto] 가이드 사후 편집)
@@ -84,6 +87,7 @@
   - 완료: firemap-venture-builder 09:52 — 원인: 안 돈 게 아니라 **GitHub 예약 지연**. 공개 API 실측: x-cn-1 06:00 예약이 09:27 KST에 schedule로 돌아 성공·push(화면 도장 2026-10-02T09:27:40, 10/3 09:27까지 유효), uk-pay 06:30 예약은 09:44까지 미실행. 고침: 정각 피해 x-cn-1 05:17+예비 11:43, uk-pay 05:41+예비 12:13 KST(두 cron) → deploy.py ci로 push, raw 파일 확인. 10/3 첫 예약 실행 시각은 다음 회차에 확인.
 - 모든 공개물 review.md 규칙(지시문 6개): ① 경쟁 1등보다 나은 점 2개 ② 우리 지난 것보다 나아진 점 1개 ③ 1등이 더 나은 점 1개와 따라잡을 방법 — 비면 공개 금지. 쇼츠도 같은 진단 benchmark 16:00(copywriter·shorts·visual-designer, 쇼츠 틀 v2, cardshorts/benchmark-2026-10-02.md).
 - [지시] **firemap-motion-designer + firemap-visual-designer** 영상미: 경쟁 상위 롱폼 3편과 E-1 장면 비교 → 고칠 점 5개 렌더 틀 반영, 썸네일 통과선 8점. 대본·카피·제목·썸네일·설명 첫 줄·카페 제목 모두 심사 3명 평균 8점(경쟁 5 비교) 뒤 공개, 편 폴더 review.md.
+  착수: firemap-motion-designer 11:28 (경쟁 롱폼 3편↔E-1 장면 비교 → 고칠 점 5개 렌더 틀 반영, 모션 몫)
 - [지시] **firemap-ai-lab·firemap-admin** 10/2 18:00: 유료 도구 전수 비교 → work/research/admin/paid-tools-2026-10.md(분야별·무인 사용 가능·월 가격·약관·무료 체험 결과·기대 효과), 결재는 위 증명 기준 3개 달성 뒤(무료 체험 A/B로 증명된 것만 예외), '꼭 필요한 것' 3~5개·안 삼 이유. 계정·결제는 사장님 몫. ai-lab 착수 09:15(admin 멈춤이라 가격·약관 칸까지).
   - 착수: firemap-ai-lab 09:15 (운영실장 — admin 멈춤이라 가격·약관 칸까지)
   - 완료: firemap-ai-lab 09:25 — 결과 admin/paid-tools-2026-10.md, 결재함(work/research/approvals.md) 3줄: Figma Professional $16·ElevenLabs Starter $6·Runway Standard $12(조건부). 시험은 가입 필요로 0건, Mobbin·Midjourney·vidIQ 등은 페이지 403/429라 확인 안 함

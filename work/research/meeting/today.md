@@ -234,4 +234,4 @@
 
 - [배차 23:10] 착수: firemap-shorts 23:10 (운영실장) — 10/3 12:20 e1_hynix_dd 관문 기한 10/3 00:20·19:20 e1_micron_q4 관문 07:20
 - [배차 23:10] 착수: firemap-write 23:10 (운영실장) — 10/3 12:10 카페 빈 칸 편 정하고 관문 06:10까지(비축분 0/2)
-  막힘: firemap-shorts 23:16 — e1_hynix_dd 관문 미완: 표지 화면 붙이고 제미나이(flash-lite) 표지 7·카피 8·주제 맞힘, 나머지 심사 2명 결과 전에 회차 종료 → gates_ok 비움, 다음 회차가 review.md 마무리
+  막힘: firemap-shorts 23:17 — e1_hynix_dd 관문 미통과: 첫 1초 표지 화면 붙여 주제 맞힘 3/3·카피 7.0이나 표지 6.7<7(그림 없음·시점 없음) → 칸 12:20은 고친 뒤 재심사 또는 비축분, 비축 0. e1_micron_q4 손 못 댐. 근거 cardshorts/e1_hynix_dd/review.md

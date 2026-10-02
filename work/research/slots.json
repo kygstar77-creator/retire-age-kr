@@ -94,7 +94,7 @@
    "item": "e1_hynix_dd",
    "owner": "firemap-shorts",
    "gates_ok": null,
-   "note": "firemap-shorts 10/2 23:16: 첫 1초 표지 화면(cardshort.py cover) 붙임·check 문제 없음·aitell 0.0 · 1초 시험 제미나이(flash-lite, 상위 모델 429) 블라인드 주제 맞힘·표지 7·카피 8 · Claude 심사관·레드팀 결과 대기 중이라 gates_ok 미기입 · 뻔함 검수(새 형식) 미완"
+   "note": "firemap-shorts 10/2 23:17: 관문 미통과 — 표지 1초 시험 3명 평균 6.7<7(카피 7.0 통과·주제 맞힘 3/3). 고칠 것: 표지에 낙폭 그림+시점(6/22→7/30) · review.md"
   },
   {
    "at": "2026-10-03 14:10",

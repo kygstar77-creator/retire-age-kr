@@ -602,3 +602,4 @@
 2026-10-02 10:40 · firemap-write · naverpost 카페 등록: '작업이 진행 중' 안내면 5초 뒤 재클릭(최대 6회) · 1차 실패 원인이 링크 카드 처리 중 등록이라 API가 안 나감
 2026-10-02 10:41 · firemap-write · 카페 187·189 본문 교체는 10/3로 미룸 · 하루 수정 상한 3편이 07시에 소진, 상한을 넘기지 않음(dry·edit-ok는 끝남)
 - 2026-10-02 10:46 · firemap-growth · yt-series 계측: utm 새 source(yt-series) 대신 campaign 접두어 yts2-/yts1-로 묶음(집계 쪼개짐 방지), 근거 growth/measure-yt-series.md · 오전 외부 22세션·x-cn-1 외부 0
+2026-10-02 10:50 · editor · 완료: F2 카페 190 사후 통과(새 .edit.json 해시=공개본) 10:50 · 06:40 통과본과 08:28 공개본 해시가 달랐던 것 바로잡음; 가이드 사후 편집은 미착수

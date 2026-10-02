@@ -7,6 +7,7 @@
 - **막힘**: 주간 사용량 85%(22:4x), 정기 근무 24개 10/4 21:05까지 꺼짐(사장님) → 아래는 켜진 발행 사슬만 · 수익 0원·쿠팡 외부 클릭 0 · TTS 하루 할당량(E-2 41/67) · 쇼츠 비축 0·카페 비축 0(10:10 칸에 끼움) · 경쟁 댓글 조사(403·vidIQ 0)
 - 로드맵 **뒤처짐**(10월 일할 6,452원 대비 0원). 원칙: 오늘 배정 1번은 늘 수익에 가장 가까운 일 = **사이트 링크 목적지를 쿠팡 칸이 있는 /calc/*로 + utm**.
 - [지시] **firemap-write** (10/3 08:10 회차부터, 의도: 어느 글이 방문·쿠팡 클릭을 만드는지 재고 매출에 가깝게) — ① 새 카페 글의 firemap 링크는 글 주제 계산기(/calc/severance·unemployment·salary 등, 없으면 첫 화면) + utm_source=cafe&utm_campaign=<묶음명> ② 시황·부동산·종목 글은 끝에 firemap.kr/disclaimer 문장 한 줄 그대로(새 말 금지) ③ slots.json 10/3 칸 item 채우기, 못 채우면 note에 '생산 부족' 사유(질 낮은 글로 메우기 금지) · 완료 기준: 10/3 공개 글 전부 utm 링크·해당 글 면책 줄 있음 · 금지: 90분 간격 우회·하루 상한 우회 · 보고: decisions/log.md 한 줄
+  착수: firemap-write 08:20 — b10danji1003(08:10 칸) utm·면책 확인 후 발행
 - [지시] **firemap-editor** 06:50 회차 첫 일: offimkt_ic0929(10/3 10:10 칸)에 /disclaimer 한 줄 붙이고 editgate stamp 다시 · 편집 관문 체크리스트에 '금융성 글 면책 줄' 1줄 추가 · 완료 기준: editgate check 일치
   착수: firemap-editor 07:04 — offimkt_ic0929 면책 줄·editgate 재찍기·체크리스트 1줄
   완료: firemap-editor 07:07 — offimkt_ic0929 c03 끝에 /disclaimer 원문 한 줄(투자·세무… 자문 아님 + firemap.kr/disclaimer) · 제목 틀 v2 ③ 어김(…거래였어요)→"…셋 중 하나는 한 건물 거래" · editgate check 일치 · 체크리스트(playbooks/firemap-editor.md 5·6번) 면책 줄·frame 추가
@@ -153,6 +154,7 @@
 - 경쟁 댓글 vidIQ 크레딧 부족(Not enough credits, 호출당 5) 09:39 — brand-researcher competitor-audience.md 못 만듦.
   처리(대역 10:53): 결제·키 없이 되는 길 있음 — 이 PC에 **yt-dlp 2026.08.19** 설치돼 있음(`python -m yt_dlp --skip-download --write-comments --extractor-args "youtube:max_comments=60,all,0" <영상주소>` → .info.json의 comments). 공개 영상 댓글이라 로그인·키 불필요 → [지시] **firemap-brand-researcher** 다음 회차 10/3 08:41: 수페TV·싱글파이어·은퇴머니 상위 영상 각 1편 댓글 50개 → competitor-audience.md, 안 되면 오류 원문 한 줄. 사용량 79%라 오늘 앞당기지 않음 · 기한 10/3 09:30. 사장님 손 0.
 - ~~카페 187·189 고친 원고 반영~~ → 처리(대역 10:53): 경로는 풀림(write 10:41 dry 통과·edit-ok), 하루 수정 상한 3편이 차서 **10/3 08:10 write 첫 회차 --apply** · 담당 firemap-write · 기한 10/3 08:30. 막힘 아님.
+  착수: firemap-write 08:20 — 187·189 cafeedit --apply
 - 처리(대역 10:53): 27시간 → **21:15 회의 안건**(6시간 초과 규칙). 노는 직원 없음 — 새 업로드 설명란 경로(D-1 19:30)로 F5 링크·쿠팡 줄을 넣는 것으로 대체, PD meta.json에 /calc/salary 링크 1줄 확인 · 담당 firemap-video-producer 16:05 · 기한 19:30.
 - 유튜브 설명 쓰기(videos.update) 무인 거절(07:59~, 25시간 넘음) — F5·V5·R2 영향. 풀림: 00:03 순돌이 채팅 실행으로 scV67BQvC4Q 쿠팡 줄 들어감(되읽기 불일치 원인 youtube-loop 20:35). 정규 경로 = 새 업로드 때 설명란, 결재함 줄.
 - 경쟁 채널 댓글 읽기: youtube.readonly 토큰 403(scope), force-ssl 사용은 권한 검사 막힘 → vidIQ 우회(brand-researcher), 안 되면 사장님 읽기 전용 API 키.
@@ -294,5 +296,6 @@
   - **모션 — 사이트·쇼츠·카페**: Opus 5.5 모션 475 프롬프트(yihui-dev/awesome-opus5-5-videos) 적용처 3곳으로 넓힘 — ① firemap.kr 계산 결과 숫자 카운트업·막대 자라기(CSS/JS, prefers-reduced-motion 지킴) ② 쇼츠 첫 1초(정지 카드 → 움직이는 숫자) ③ 카페 글 대표 그림 다음 자리에 짧은 움직이는 카드(GIF/MP4 — 대표사진은 정사각형 정지 그림 유지). 클라우드 세션(크레딧) 사용량 실측 뒤 ①은 클라우드로 브랜치 시안, ②③은 motion-designer 재개 첫 일.
 - 정정(순돌이 07:4x): 07:1x '클라우드 세션 2개'는 실제로 이 PC 로컬에서 돌아 주간 사용량 85→90%. 둘 다 중지. 디자인 토큰 일부(banksalad 등) tokens-ref/로 건짐. AI 스터디는 미완 — ai-lab 재개(10/4 21:05) 뒤. 교훈 15.
 - [배차 08:10] 착수: firemap-shorts 08:10 (운영실장) — 비축 쇼츠 0/1: 171행 [지시] 이슈 레이더 '퇴직하면 건보료, 내 월급이면 얼마?' compete 5·카피 심사·1초 시험 → 통과면 reserve.shorts
+  완료: firemap-shorts 08:21 — 비축 쇼츠 0/1→1/1: d1_kunbo '퇴직 후 건보료 1,000만원의 경계'(D-1 사실표 그대로, 가제 '내 월급이면'은 사실표에 월급 계산 없어 '배당·이자'로) 관문 통과 → slots.json reserve.shorts gates_ok 08:21. compete 5(시니어노후 등 목록 8줄형)·1초 블라인드 3/3·표지 7/7/8=7.33·카피 제미나이 8.2·Claude 7.6·레드팀 7.8=7.87(1차 6.8 미통과→질문형 버려 고침)·숫자 14/14·aitell 0. 업로드 안 함. 공개 전: 하한 20,160원 고시 원문 확인(레드팀). 근거 cardshorts/d1_kunbo/review.md
 - [배차 08:10] 착수: firemap-brand-researcher 08:10 (운영실장) — 154행 [지시] 경쟁 3채널 상위 영상 댓글 50개 yt-dlp → competitor-audience.md (기한 09:30, 정기 근무 꺼져 있어 투입)
   완료: firemap-brand-researcher 08:15 — 수페TV·싱글파이어·은퇴머니 상위 영상 각 1편 댓글 160개(60·60·40) yt-dlp 수집 성공 → work/research/brand/research/competitor-audience.md (공통: 현재가치·세금·건보료 반영 숫자 요구, 계산식 공유 요청, 결론 끊기 불만)

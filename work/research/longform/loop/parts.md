@@ -21,3 +21,6 @@
 
 ## parts/ledger.tsx (2026-10-02 23:07, PD · E-2 테슬라에서 처음)
 - ComboBarLine(10분기 매출 막대+이익률 선, 최고·최저 꼬리표) · Waterfall(총이익→비용→영업이익) · SlopeRows(전→후 기울기 줄, 값 글자 46px 벌림) · AreaCircles(넓이 비교 원 2개) · FillBar(계획 테두리 안 실적 채움+남은 칸+비교 막대). 다른 종목 장부 편에 그대로 쓴다.
+
+## parts/rank.tsx (2026-10-03 02:31, PD · N-1 나 vs 남들에서 처음)
+- PctStrip(100칸 띠 + 역삼각 자리 표시, 왼쪽=상위) · HundredBars(100칸 막대, cap 넘는 칸 ≈ 표시) · PctRuler(P10~P90 눈금자, 값 두 줄, 핀) · DivergeRows(0 기준 좌우 증감 막대, 음수 파랑 왼쪽). 나 vs 남들 다음 편에 그대로 쓴다.

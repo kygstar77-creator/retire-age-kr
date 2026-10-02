@@ -10,6 +10,7 @@ P = 100_000_000; S, E = '2025-10-02', '2026-10-02'
 print(f'[환율] 매매기준율 2025-10-02 {f0} → 2026-10-02 {f1} ({(f1/f0-1)*100:+.2f}%)')
 fmp = {x['date']: x['price'] for x in c2['SPY_px']}
 print(f'[교차] SPY 2026-10-02 FMP {fmp.get(E)} vs 야후 {round(y["SPY"]["px"][E],2)} · 2025-10-02 FMP {fmp.get(S)} vs 야후 {round(y["SPY"]["px"][S],2)}')
+SCHWAB = {'2025-12-10': 0.2782, '2026-03-25': 0.2569, '2026-06-24': 0.2525, '2026-09-23': 0.2665}
 rows = []
 dep = {t: float(v) for t, v in c1['정기예금1년_신규_M']}; r = dep['202510']
 g = round(P * r / 100); tax = math.floor(g * 0.14 / 10) * 10; tax += math.floor(tax * 0.1 / 10) * 10
@@ -17,6 +18,8 @@ rows.append(('정기예금(2025-10 신규 평균 %.2f%%)' % r, P + g, g, 0, tax,
 for s in ['SPY', 'SCHD', 'GLD']:
     p0, p1 = y[s]['px'][S], y[s]['px'][E]; usd = P / f0; sh = usd / p0
     divs = {k: v for k, v in y[s]['div'].items() if S < k <= E}; dv = sh * sum(divs.values()) * f1
+    if s == 'SCHD': divs = SCHWAB  # 운용사 원문(슈왑 분배금 표, research/schd1003/schwab_dist.txt) — 야후 3자리 반올림 대신
+    dv = sh * sum(divs.values()) * f1
     sale = sh * p1 * f1; gain = sale - P
     cg = max(0, gain - 2_500_000); cgt = math.floor(cg * 0.20) + math.floor(cg * 0.02)
     px_only = sh * p0 * f1  # 가격 그대로, 환율만 바뀐 경우

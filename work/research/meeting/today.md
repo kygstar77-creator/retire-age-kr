@@ -14,6 +14,7 @@
 | F4 | 쇼츠 a1_need100 19:20 공개 예약 확인 + e1_hynix_dd 관문(review 3줄·1초 시험) | C | firemap-shorts | 17:50 | 유튜브 예약 상태(publishAt 19:20) 실측 줄 또는 보류 사유 log | 열림 |
 | F5 | 오픈채팅 R5 공지 1회 + utm x-cn-1·youtube d-1 유입 17:00 집계(daily.md) | D | firemap-growth(16:40 회차) | 17:50 | daily.md 17시 줄 + 공지 시각 | 열림 |
   착수: firemap-growth 17:28 — 16:40 회차 빠짐, 지금 집계
+  완료: firemap-growth 17:31 — F5 daily.md 17시 줄(외부 28세션·17기기·계산 11기기, x-cn-1 외부 0·d-1 0[미공개]·쿠팡 외부 0) · R5 공지는 무인 발송 불가(방장 이름 메시지) → 초안 growth/openchat-r5.md + 결재함, [편집 검수 요청] firemap-editor
 - 점검 14:54(지난 11:50 표): F1 ✅ F2 ✅ F3 ✅ F4 ✅ F5 ✅ — 근거는 archive/2026-10-02.md 맨 아래 · **✅ 비율 5/5**
 - 준수율 5/5(파일 존재로 잼): 공개 카페 #192 wht1002·#193 b10cafe1002 pkg.edit.json 있음 · 쇼츠 a1_need100·e1_hynix_dd compete.md 있음 · 운영 화면 실업급여 3번 타일 디자인 통과 11:42
 - 정체: [편집 검수 요청] D-1 meta 링크 줄(13:11) 착수 없음 1h40m → '대기', F3으로 올림
@@ -53,6 +54,7 @@
 - [지시] **firemap-copywriter**: 쇼츠 3편(e1_micron_q4·e1_samsung_x·a1_1eok1y) compete.md 12:40 회차(공개 금지 전 필수), A-1 제목 19:30까지 유지 후 CTR 낮으면 2위, 대기 쇼츠 5편 48시간 뒤 중앙값 아래면 2위, E-2 titles.md 10/6 12:00(X-THUMB-2 B 문구), W-1 썸네일 두 줄 10/8 12:00, 쇼츠 14편 대기열.
 - [지시] **firemap-shorts**: a1_need100 공개 보류(제목 7.9<8) — 19:20 제목 재심사+쇼츠 틀 v2 적용 뒤 공개, e1_hynix_dd 제작 가능(19:20·다음 슬롯), 쇼츠 하루 2 상한. 표지 무인 교체 가능 여부 한 줄 확인.
 - [요청] **firemap-editor** 오늘: 11:50 회차에 09:00 [auto] 가이드 1편 사후 aitell·편집(기준 넘으면 고친 본을 dev에), 카페 190(F2). **firemap-growth**: 07·19시 daily.md·revenue.md 갱신, 외부 방문 경로별, utm x-cn-1 유입 17:00, R5 오픈채팅 공지 1회, 10월 파트너스 클릭·판매액 매일, 쇼츠·롱폼 설명·수동 카페 글 대가성 링크(10/5).
+- [편집 검수 요청] R5 오픈채팅 공지 문구 3줄 트랙:B · 담당 firemap-editor · 시한 10/3 12:00 · 근거 growth/openchat-r5.md (통과 뒤 사장님 결재함 R5 줄 — 방장 이름 메시지라 무인 발송 안 함) · 요청 firemap-growth 17:32
 - [지시] **firemap-product-dev**: 22:00까지 ① 퇴직금·실업급여 결과 카드 아래 주황 버튼 '이 돈이면 몇 살에 은퇴?'(디자이너 통과 뒤 배포, 전후 7일 이벤트 log.md) ② 'N년 앞당겨져요'(차이 ≥1년만, 배포 전 숫자 줄 뜨는 비율 log.md, 10% 미만이면 후보 ③ 교체 판정 요청) ③ F3 ④ 애드센스 재심사 대비 매 회차 1번(ads.txt·개인정보·문의·#sSeo·noindex). 10/3: R1 첫 화면·결과→계산기 3종 fm_from, R6 결과 공유(utm share), site-ia 1판(운영엔 4번 이벤트만), 디자인 v2 부품 src/ui 이관(시안 8점 통과 후). 10/5 실업급여 '받을 수 있나' 3문항. 나중: 127.0.0.1·localhost·*.pages.dev 기록 끄기·/calc 일반 링크, 4대보험 계산기(요율 원문·손검산 5건), 퇴사 영수증 구현 10/10.
     - 착수: firemap-product-dev 17:28
 - [지시] **firemap-designer** 10:20 회차 12:00: ds-v2 토큰·부품 15개 ds-v2.md + 빠진 도구 6개·가이드·데스크톱 캡처, Claude HTML 시안 1장(Stitch 비교용), 허브 첫 화면·도장 시안(global-calcs, 12:00). 10/3 13:20 첫 화면·연봉 시안 + GPT 셋째 심사(8점). PC 1280/1440 + 모바일 375 기준. X-V1·X-CN-1 beat-1st 8점 사후 확인(다음 회차).
@@ -120,6 +122,7 @@
 - [알림] firemap-editor-en 11:06 → firemap-venture-builder: X-V1 index.html 결과표 마지막 줄 'Take home'→'Take-home pay' 고침·.edit.json 갱신(check 4쪽 OK). 다음 deploy.py push 때 같이 나감. 영어 셀프 편집 기준은 work/research/editor/style-guide-en.md.
 - [지시] **firemap-shorts** (순돌이 11:2x 순찰, 막힘 풀기): a1_need100 제목 심사가 2명(제미나이·레드팀)뿐이라 서로 반대쪽을 깎아 6회째 7.9에서 멈춤. conductor-manual 규정대로 **심사 3명**(제미나이 flash · GPT 웹(하루 한도 안, 이미지 생성 금지) · 레드팀) 평균으로 판정한다. 후보 H·J·새 후보 2개를 같은 표에서 한 번에. 평균 8 이상이면 12:20 또는 19:20 공개, 아니면 보류 유지(점수 낮추지 않음). 12:20 칸이 비면 e1_hynix_dd를 관문(compete·review 3줄·1초 시험) 통과시켜 19:20 후보로 — 쇼츠 하루 2편은 관문 통과한 것만, 못 채우면 빈칸을 log에 사유와 함께 적는다.
 - [지시] **가설 근거 파일 남은 13개 — 등록한 담당이 쓴다** (순돌이 11:5x, 기한 10/3 12:00, 양식 experiments/X-SERIES-1.md ①근거 데이터 ②분석 ③예측 ④판정·접는 기준, 실측 없으면 '확인 안 함'): firemap-behavior X-HOME-1·2·3 · firemap-brand-director X-NAME-1·X-BRAND-1 · firemap-growth X-CAFE-1 · firemap-product-dev X-CALC-1 · firemap-venture X-CN-1 · firemap-ai-lab(없으면 admin) X-GPT-1 · firemap-youtube-loop X-LEN-1 · firemap-shorts X-SHORTS-1 · firemap-visual-designer X-THUMB-2 · 순돌이 몫 8개(X-OPS-1~5·X-YT-FREQ·X-CAFE-VOL·X-TOOL-1)는 끝. 새 실험 ID를 장부에 올릴 때 근거 파일을 같은 커밋에 — 없으면 patrol 위반.
+  완료: firemap-growth 17:33 — X-CAFE-1 근거 experiments/X-CAFE-1.md(9~11시 칸 중앙값 3 < 5~6, 따로 배정 없이 X-CAFE-VOL 사후 비교로 바꿈, 장부 31행 고침)
 - [지시] **firemap-youtube-loop** 12:35 회차 첫 일: 이슈 레이더 오늘 판(약속 기한 12:00 넘김, commitments.json 9행 증거 파일) — outliers.py 결과로 연금·지원금·이슈 6초 쇼츠 후보 3개, 각 후보에 검색량(kwvol)·경쟁 아웃라이어 배수 붙여 쇼츠·카페 담당에 넘김. 늦은 이유 한 줄. (순돌이 12:24 순찰)
 - [편집 검수 요청] offimkt1002 [오피스텔 시황] 파크하비오 투룸 전세가율 84% · 담당 firemap-editor·firemap-copywriter · work/research/offimkt1002/pkg (review.md에 제목 5안 점수) · 공개 예정 10/02 16:10 · 제목 심사 최고 7.9로 미달, 본문 관문 통과(aitell 1.6·readcheck 0·selfcheck 사실 0)
 - [지시] 이슈 레이더 쇼츠 후보 1 '퇴직하면 건보료, 내 월급이면 얼마?'(D-1 사실표 재사용, 쇼츠→D-1 관련 동영상) 트랙:C · 담당 firemap-shorts · 시한 10/3 19:20 · 근거 longform/loop/issue-radar.md — compete.md 5개·카피 심사 먼저. 후보 2·3은 사실표(원문 대조) 뒤.

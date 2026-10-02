@@ -113,3 +113,9 @@
 | 2026-10-02 | **[유료 도구 비교 결론 1/3] Figma Professional 풀 좌석 1개** — 팀 "JUN의 팀"(kygstar77@gmail.com, 스꾸 계정 아님)을 Starter → Professional로. 디자이너 MCP가 Starter는 월 20회뿐(공식 figma.com/pricing 10/02 확인), Professional은 하루 200회 | **월 $16**(풀 좌석, 월/연간 구분은 페이지에 안 나옴 — 확인 안 함) | 못생긴 화면 개선 속도(디자인 v2 10/2~3). 숫자 효과는 확인 안 함. 무료 대안: Starter 월 20회 — 한계는 시안 편집 몇 번에 소진. 해지 기준: 디자인 8점 통과 후 한 달 편집 호출이 월 20회 미만이면 해지 | **PC만**(휴대폰 확인 안 함) · figma.com → 팀 설정 → Billing → Upgrade → Professional(풀 좌석 1) · 결제 후 디자이너가 MCP로 재개 · 근거 admin/paid-tools-2026-10.md |
 | 2026-10-02 | **[유료 도구 비교 결론 2/3] ElevenLabs Starter** — 효과음('치익' 대체)·목소리. API 있음(무인 가능), 유료만 상업 이용(공식 terms) | **월 $6**(연간 월 $5) [elevenlabs.io/pricing 10/02] | 효과음 약 750초분(30,000 크레딧, 초당 40). 한국어 목소리 품질은 확인 안 함(가입 필요) — 결제 후 제미나이 TTS와 나란히 듣고 진 쪽 버림. 무료 대안: 제미나이 TTS(지금 정상)+효과음 직접 합성 — 한계는 효과음 품질. 해지 기준: 첫 달 쇼츠에 안 쓰이거나 제미나이보다 못하면 해지 | **PC만**(휴대폰 확인 안 함) · elevenlabs.io → Sign up(kygstar77@gmail.com) → Pricing → Starter · API 키는 `C:/Users/강영준/Documents/elevenlabs_key.txt`에 `KEY=…` 저장(채팅에 붙이지 않음) · 결제 후 ai-lab이 시험·영상 PD 교본 반영 |
 | 2026-10-02 | **[유료 도구 비교 결론 3/3 · 조건부] Runway Standard** — 1·2 결과 본 뒤. 영상 분위기 컷. 약관상 상업 사용 제한 없음, 입력·출력은 모델 학습에 쓰일 수 있음 [runway.com/terms-of-use] | **월 $12**(연간 결제 기준 표기, 월 결제 가격 확인 안 함) · API는 크레딧당 $0.01 [공식 pricing·docs] | Gen-4.5 5초 60크레딧($0.60 API) vs Veo 3.1 lite 5초 $0.25 — Runway가 품질로 이기는지 시험 전(가입 필요) → **지금은 안 눌러도 됨** | **보류(순번 3)** · PC만 · 요금 합계: 1+2 = 월 $22, 3까지 $34 |
+
+### R5 오픈채팅 공지 1회 (firemap-growth 10/2 17:31)
+- 무엇: 파이어맵 오픈채팅방 공지에 퇴직금 계산기 링크 1개(utm openchat/notice/r5-1002). 문구·근거 growth/openchat-r5.md.
+- 왜 사장님 손: 방장 이름으로 나가는 메시지라 무인 회차가 보내지 않는다. 휴대폰 카카오톡 → 방 → 공지 → 문구 붙여넣기, 1분. 비용 0원.
+- 순서: firemap-editor 문구 통과 줄이 생긴 뒤 누른다.
+- 상태: 결재 대기(편집 관문 전)

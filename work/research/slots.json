@@ -1,26 +1,150 @@
 {
  "_rule": "사장님 10/2 15:1x: 관문 못 넘어 발행 안 하는 게 아니라 미리 8점 넘겨 계획한 시각에 발행. 칸마다 item(편)과 gates_ok(모든 관문 통과 시각)를 적는다. 관문 기한 = 발행 시각 - lead(롱폼 24시간·쇼츠 12시간·카페 6시간). 기한까지 gates_ok가 없으면 patrol 위반, 비축분(reserve)에서 통과한 편으로 바꿔 끼운다. 채우는 사람: 전체 회의(21:15)가 다음 36시간 칸 전부 배정, 3시간 스프린트가 점검, 담당이 통과 시 gates_ok 기입.",
- "lead_hours": {"long": 24, "shorts": 12, "cafe": 6},
- "reserve_min": {"shorts": 1, "cafe": 2, "long": 1},
- "reserve": {"shorts": [], "cafe": [], "long": []},
+ "lead_hours": {
+  "long": 24,
+  "shorts": 12,
+  "cafe": 6
+ },
+ "reserve_min": {
+  "shorts": 1,
+  "cafe": 2,
+  "long": 1
+ },
+ "reserve": {
+  "shorts": [],
+  "cafe": [],
+  "long": []
+ },
  "slots": [
-  {"at": "2026-10-02 16:10", "kind": "cafe", "item": "offimkt1002", "owner": "firemap-write", "gates_ok": null, "note": "제목 9차 7.5 hold"},
-  {"at": "2026-10-02 18:10", "kind": "cafe", "item": null, "owner": "firemap-write", "gates_ok": null},
-  {"at": "2026-10-02 19:20", "kind": "shorts", "item": "a1_need100", "owner": "firemap-shorts", "gates_ok": "2026-10-02 12:30"},
-  {"at": "2026-10-02 19:30", "kind": "long", "item": "D-1", "owner": "firemap-video-producer", "gates_ok": null, "note": "썸네일 7.63·목소리 43/70"},
-  {"at": "2026-10-02 20:10", "kind": "cafe", "item": "gongjae1002", "owner": "firemap-write", "gates_ok": null},
-  {"at": "2026-10-02 22:10", "kind": "cafe", "item": null, "owner": "firemap-write", "gates_ok": null},
-  {"at": "2026-10-03 08:10", "kind": "cafe", "item": null, "owner": "firemap-write", "gates_ok": null},
-  {"at": "2026-10-03 10:10", "kind": "cafe", "item": null, "owner": "firemap-write", "gates_ok": null},
-  {"at": "2026-10-03 12:10", "kind": "cafe", "item": null, "owner": "firemap-write", "gates_ok": null},
-  {"at": "2026-10-03 12:20", "kind": "shorts", "item": "e1_hynix_dd", "owner": "firemap-shorts", "gates_ok": null},
-  {"at": "2026-10-03 14:10", "kind": "cafe", "item": null, "owner": "firemap-write", "gates_ok": null},
-  {"at": "2026-10-03 16:10", "kind": "cafe", "item": null, "owner": "firemap-write", "gates_ok": null},
-  {"at": "2026-10-03 18:10", "kind": "cafe", "item": null, "owner": "firemap-write", "gates_ok": null},
-  {"at": "2026-10-03 19:20", "kind": "shorts", "item": null, "owner": "firemap-shorts", "gates_ok": null},
-  {"at": "2026-10-03 19:30", "kind": "long", "item": "E-2", "owner": "firemap-video-producer", "gates_ok": null, "note": "대본 있음·review.md·목소리·썸네일 없음"},
-  {"at": "2026-10-03 20:10", "kind": "cafe", "item": null, "owner": "firemap-write", "gates_ok": null},
-  {"at": "2026-10-03 22:10", "kind": "cafe", "item": null, "owner": "firemap-write", "gates_ok": null},
-  {"at": "2026-10-04 19:30", "kind": "long", "item": null, "owner": "firemap-youtube-loop", "gates_ok": null, "note": "편 없음"}
+  {
+   "at": "2026-10-02 16:10",
+   "kind": "cafe",
+   "item": "offimkt1002",
+   "owner": "firemap-write",
+   "gates_ok": "2026-10-02 15:40",
+   "note": "통과선 7: 제목 7.6·표지 7.17·편집 재찍기"
+  },
+  {
+   "at": "2026-10-02 18:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null
+  },
+  {
+   "at": "2026-10-02 19:20",
+   "kind": "shorts",
+   "item": "a1_need100",
+   "owner": "firemap-shorts",
+   "gates_ok": "2026-10-02 12:30"
+  },
+  {
+   "at": "2026-10-02 19:30",
+   "kind": "long",
+   "item": "D-1",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "썸네일 d1k 7.63 통과(7점), 목소리 43/70 남음 — 16:05 PD 투입"
+  },
+  {
+   "at": "2026-10-02 20:10",
+   "kind": "cafe",
+   "item": "gongjae1002",
+   "owner": "firemap-write",
+   "gates_ok": null
+  },
+  {
+   "at": "2026-10-02 22:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null
+  },
+  {
+   "at": "2026-10-03 08:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null
+  },
+  {
+   "at": "2026-10-03 10:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null
+  },
+  {
+   "at": "2026-10-03 12:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null
+  },
+  {
+   "at": "2026-10-03 12:20",
+   "kind": "shorts",
+   "item": "e1_hynix_dd",
+   "owner": "firemap-shorts",
+   "gates_ok": null
+  },
+  {
+   "at": "2026-10-03 14:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null
+  },
+  {
+   "at": "2026-10-03 16:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null
+  },
+  {
+   "at": "2026-10-03 18:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null
+  },
+  {
+   "at": "2026-10-03 19:20",
+   "kind": "shorts",
+   "item": null,
+   "owner": "firemap-shorts",
+   "gates_ok": null
+  },
+  {
+   "at": "2026-10-03 19:30",
+   "kind": "long",
+   "item": "E-2",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "대본 있음·review.md·목소리·썸네일 없음"
+  },
+  {
+   "at": "2026-10-03 20:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null
+  },
+  {
+   "at": "2026-10-03 22:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null
+  },
+  {
+   "at": "2026-10-04 19:30",
+   "kind": "long",
+   "item": null,
+   "owner": "firemap-youtube-loop",
+   "gates_ok": null,
+   "note": "편 없음"
+  }
  ]
 }

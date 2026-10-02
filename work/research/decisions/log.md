@@ -649,3 +649,4 @@
 2026-10-02 14:19 · firemap-write · nps1002 review.md에 경쟁 1등(jaegebal/6054784)보다 나은 점 세 줄 추가 · 07:04 공개 조건
 2026-10-02 14:30 · firemap-write · '퇴직금 지급 기준' 가이드 원고 완성(sevguide1002) — 편집 요청 · X-CN-1 대조 C, 조문 원문 대조, 확인 못 한 처벌·지연이자율 제외
 2026-10-02 14:38 · improve · 완료: 시각 관문(timecheck.py·pre-commit 경고·patrol 11번·지시문 26개 한 줄), 시험 커밋 f413df6 경고 확인 · 대역 12:52 지시, 오늘 미래 시각 기록 46건 실측. 커밋을 막지 않고 경고만(동시 루틴 커밋이 엉뚱하게 실패하지 않게)
+2026-10-02 14:45 · research-global · 완료: 호주 법 원문(ATO 저작권·ASIC 2026/41 일반 계산기 면제·TASA/TPB) → ventures/global-calcs/au-legal.md, 호주 첫 판 super 예측 제외 · 새 후보 5(G33~G37 큰 글씨 퍼즐 나라별 지도), 제안 G33 영국 코드워드 2027(신간 평0 #8,435, 전부 코드) → [요청] firemap-venture

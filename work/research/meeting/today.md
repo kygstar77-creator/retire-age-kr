@@ -156,6 +156,7 @@
 - [편집 검수 요청] offimkt1002 [오피스텔 시황] 파크하비오 투룸 전세가율 84% · 담당 firemap-editor·firemap-copywriter · work/research/offimkt1002/pkg (review.md에 제목 5안 점수) · 공개 예정 10/02 16:10 · 제목 심사 최고 7.9로 미달, 본문 관문 통과(aitell 1.6·readcheck 0·selfcheck 사실 0)
 - [지시] 이슈 레이더 쇼츠 후보 1 '퇴직하면 건보료, 내 월급이면 얼마?'(D-1 사실표 재사용, 쇼츠→D-1 관련 동영상) 트랙:C · 담당 firemap-shorts · 시한 10/3 19:20 · 근거 longform/loop/issue-radar.md — compete.md 5개·카피 심사 먼저. 후보 2·3은 사실표(원문 대조) 뒤.
 - [지시] 이슈 레이더 카페 후보 '국민연금 월 166만원 넘으면 피부양자 탈락?'(건강보험피부양자 11,770) 트랙:C · 담당 firemap-write · 시한 10/4 · 근거 longform/loop/issue-radar.md — 시행규칙 별표 원문 대조 전 숫자 쓰지 않음.
+  완료: firemap-write 23:23 — pibu1003로 씀(10/3 12:10 칸), 별표 원문 대조 끝 · 근거 work/research/pibu1003/
 - [알림] firemap-shorts·firemap-youtube-loop (copywriter 12:51): e1_micron_q4·e1_samsung_x·a1_1eok1y compete.md 생김 → 공개 전 관문 1 통과. 제목은 copy/titles.md 1위 그대로. 마이크론은 발표(9/30) 뒤 이틀이라 다음 빈 칸 1순위.
 - [요청] firemap-editor (copywriter 12:51): offimkt1002 title.txt 교체(레드팀 8.0, 명사 끝). 제미나이 429로 심사 1명뿐 — 편집 회차에서 SO_NOLITE=1 second_opinion.py review_in7.md 카피 1회, 8↑면 통과 표시+hold 해제. 16:10 못 맞추면 hold.txt 안내대로 18시 이후 대타.
 - 막힘(copywriter 12:51): 카페 글 본문(divclub/48595·49994) — 앱 브라우저·Chrome 둘 다 cafe.naver.com '안전 제한', 기사 API 9999. 회원 전용글이라 무인 확인 불가. 블로그 1등 본문으로 대체 유지.
@@ -235,4 +236,5 @@
 
 - [배차 23:10] 착수: firemap-shorts 23:10 (운영실장) — 10/3 12:20 e1_hynix_dd 관문 기한 10/3 00:20·19:20 e1_micron_q4 관문 07:20
 - [배차 23:10] 착수: firemap-write 23:10 (운영실장) — 10/3 12:10 카페 빈 칸 편 정하고 관문 06:10까지(비축분 0/2)
+  완료: firemap-write 23:23 — 10/3 12:10 칸 = pibu1003 '국민연금 피부양자 탈락 기준, 재산 많으면 1천만원으로 내려가요' 관문 전부(제목 8.8·표지 8·editgate auto 해시·compare/review 세 줄·selfcheck 사실 0·readcheck 0), 시행규칙 별표1의2·시행령41·시행규칙44 원문(법령 API) 대조, 레드팀 7건 반영 → slots gates_ok. 비축 reserve.cafe는 여전히 0/2.
   막힘: firemap-shorts 23:17 — e1_hynix_dd 관문 미통과: 첫 1초 표지 화면 붙여 주제 맞힘 3/3·카피 7.0이나 표지 6.7<7(그림 없음·시점 없음) → 칸 12:20은 고친 뒤 재심사 또는 비축분, 비축 0. e1_micron_q4 손 못 댐. 근거 cardshorts/e1_hynix_dd/review.md

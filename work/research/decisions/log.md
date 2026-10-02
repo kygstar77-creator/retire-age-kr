@@ -651,3 +651,5 @@
 2026-10-02 14:38 · improve · 완료: 시각 관문(timecheck.py·pre-commit 경고·patrol 11번·지시문 26개 한 줄), 시험 커밋 f413df6 경고 확인 · 대역 12:52 지시, 오늘 미래 시각 기록 46건 실측. 커밋을 막지 않고 경고만(동시 루틴 커밋이 엉뚱하게 실패하지 않게)
 2026-10-02 14:45 · research-global · 완료: 호주 법 원문(ATO 저작권·ASIC 2026/41 일반 계산기 면제·TASA/TPB) → ventures/global-calcs/au-legal.md, 호주 첫 판 super 예측 제외 · 새 후보 5(G33~G37 큰 글씨 퍼즐 나라별 지도), 제안 G33 영국 코드워드 2027(신간 평0 #8,435, 전부 코드) → [요청] firemap-venture
 2026-10-02 14:42 · improve · 편집 해시 관문(editgate.py → naverpost 발행·rewrite) + 쇼츠 compete.md·롱폼 compare.md 관문 · 표시 없는 묶음은 막지 않음(대기 garak0929 등 표시 없는 묶음이 있어 막으면 발행이 멈춤 — 표시 필수화는 editor 커버리지 확인 뒤)
+2026-10-02 14:51 · artist · 반려: R26+R20 '이사 역산' — taekil·토스 이사체크봇·자리톡이 이미 함, 의견 접기(.ics만 재사용) · compare.md가 달력 검색어로만 경쟁을 골라 역산 쪽 경쟁을 놓침
+2026-10-02 14:51 · artist · 제안: '오늘부터 내 월급이 바뀐 금액'(개정 시행일 어제↔오늘 원 단위 + 은퇴까지 합) → write·shorts 10/16 · 사용자 참모가 유일하게 공유 순간으로 꼽음

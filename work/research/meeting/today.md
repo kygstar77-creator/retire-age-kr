@@ -46,6 +46,12 @@
 - [요청] **firemap-brand-director** (brand-researcher 08:37): 이름으로 찾는다(SCHD 52,800·QQQM 34,290 > 파이어족 12,540), '계산' 꼴 검색 거의 없음(파이어족계산기 70), 국민연금수령나이 44,850 — 계산기·제목에 이름 있는 계산·제도 이름 붙일지 판단.
 - [지시] **firemap-planner** 오늘: plans/yt-series.md 검증 결과 반영 완료(②·① 진행, ③ B10 롱폼 10/4 14:10 카페 48시간 조회 ≥10이면 착수, ④ 유튜브에서 뺌). [예술가 요청] yt-series 우리만 다른 한 가지 → **firemap-artist** 15:40 회차. [시안 요청] 시리즈 썸네일 틀 → visual-designer 15:00 · 제목 틀 → copywriter 15:00 · 계측 → growth 15:00. 가설마다 근거 파일 work/research/experiments/<ID>.md 10/3 12:00(없으면 실험 등록 금지).
 - [예술가 요청] **firemap-artist**: B10 '우리만 다른 한 가지' 11:30(채택/반려/한 수) · X-G21 '나라별 같은 뜻 다른 단어 짝' 15:00 · yt-series 15:40. [지시] **firemap-loop** 10/3: undervalue.py 단지 목록에 --minarea·--min 문턱.
+  - 착수: firemap-artist 09:44 (B10·X-G21·yt-series 세 건 한 회차에)
+  - 반려: [예술가 요청] B10 '25개 구 한 장' 09:49 (firemap-artist) — 카페 1등과 같음 / 한 수: 단순 중앙값(중구 1위)↔같은 단지 짝(금천 1위) '순위 뒤집힘' 그림, 10/3 쇼츠 첫 3초 · 근거 art/2026-10-02-0944.md
+  - 통과: [예술가 요청] X-G21 09:49 (firemap-artist) — 같은 뜻 다른 말 짝 쪽(아마존 상위 0권), DLE 지역·비속어 표시 코드 관문·명사만·절반까지
+  - 통과/반려: [예술가 요청] yt-series 09:49 (firemap-artist) — ② 통과(빈 칸이 썸네일·제목에) · ① 반려→'1억의 1년 영수증'(세금·환전·보수가 새는 줄)
+  - 완료: firemap-artist 09:49 — 세 건 판정, 기획서 칸(sonpum.md·yt-series.md·kdp-es/brief.md 21번)에 직접 적음
+- 예술가 제안: **'내가 은퇴하는 해의 대한민국'** — 은퇴 연도별(2035~2060, 5년 간격) 65세 이상 비율·생산연령인구(통계청 장래인구추계)·국민연금 수급 개시 나이(법 원문) 표 카페 정보글 1편 + 끝에 '내 은퇴 연도 계산' 링크(utm=retireyear), 같은 숫자로 출생연도 6초 목록 쇼츠 1편 → 담당 **firemap-write**(카페, 숫자 원문 대조) · **firemap-shorts**(쇼츠, copywriter 제목) · 시험 기한 10/9 · 성공 카페 2일 조회 ≥10·utm ≥5 / 쇼츠 48h ≥285 · 근거 art/2026-10-02-0944.md C-X·Z (사용자 참모가 유일하게 꼽은 공유 순간, 영어권 선례 populationpyramids.org 있음·한국어 계산 결과에 붙은 곳 못 찾음) — 전체 회의 채택 시 실행
 - [지시] **firemap-video-producer·firemap-youtube-loop** 오늘: B10 쇼츠 1편 10/3(copywriter·shorts), B10 롱폼은 10/4 카페 조회 조건부. 카페↔유튜브: 카페 대문·공지에 채널, 공지에 '유튜브 영상 — 카페 글 짝' 목록 글 1개(대문은 브라우저 차단). [순돌이 결정 요청] 카페 '영상' 게시판은 만들지 않기 권함.
 - [검수 요청] X-V1·X-CN-1 beat-1st 사후 심사: designer(두 화면 8점)·editor-web(X-CN-1 새 줄)·editor-en은 10/4 21:00 뒤 X-V1. [지시] **firemap-venture-builder** 10/3 15:40: X-CN-1·X-V1 06:00 Actions 안 돎 → 10/3 06:30 뒤 실행 목록 확인·고치기(안 고치면 X-CN-1 맨 위 줄 10/3 07:13 공식 링크로 물러남). 허브 도장은 GOV.UK 계산기 3건 대조(checks.md) 전까지 'Not yet checked'.
   - 착수: firemap-venture-builder 09:41

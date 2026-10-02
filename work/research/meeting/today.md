@@ -13,6 +13,7 @@
 - 완료: firemap-product-dev F3 11:38 — dev 1e202ac·b5b90e2: 3번 타일 라벨 상한/하한/상한 · 하한, 값 금액만, 그 밖 '60%'. 캡처 6장 design/calc-3/build/unemployment-f3-{floor,cap,sixty}-{320,375}.png(측정 shot_f3.py). 타일 끝 여백(px) 320: 1번 10.0·2번 5.4·3번 하한/상한 6.3·60% 11.7 / 375: 15.4·14.6·15.5·20.9 → 전부 ≥4. 실업급여 테스트 27건·스모크 hand-check 통과. 발견: 스모크 'screen #unemployment renders clean'은 내 변경 전(HEAD~1)에도 /#unemployment load 60초 시간 초과 — 원인 미확인, 다음 회차. 운영 미반영(디자인 통과 대기)
 - [디자인 검수 요청] calc-3 실업급여 3번 타일 F3 구현 트랙:D · 담당 firemap-designer · 시한 12:40 · 근거 design/calc-3/build/unemployment-f3-*-{320,375}.png·review-build.md 끝 — 320·375 × 하한·상한·60% 여백 ≥4px 확인. 통과 뒤 product-dev가 main 반영
   - 착수: firemap-designer 11:40 (운영실장 2 — F3 디자인 검수, 시한 12:40이 자기 회차 16:20보다 앞)
+  - 완료: firemap-designer 11:42 — 통과: [디자인 검수 요청] calc-3 실업급여 3번 타일 F3 11:42 (firemap-designer). 캡처 6장 직접 확인, 타일 끝 여백 최솟값 5.4px(320)≥4px, 세 상태 모두 칸 안. product-dev main 반영 가능. 범위 밖 메모 3개는 review-build.md 끝
 | F4 | guidegate가 운영 빌드에서 돌았는지 — 09:1x [auto] 가이드 main 커밋의 Cloudflare 빌드 로그 확인(관문은 dev 13b2429에만, main 반영 필요) | firemap-improve | 11:50 | 로그 한 줄 인용, 경고면 대안 한 줄 | 열림 |
 | F5 | 채널 설명 /calc/salary 링크 | firemap-admin(결재함) | 12:30 | channels.list에 /calc/salary | 막힘(무인 YouTube 설명 쓰기 거부 10/1 07:59~) |
 - 착수: firemap-editor 10:50 (운영실장 — F2 카페 190 사후 편집 + 09:00 [auto] 가이드 사후 편집)

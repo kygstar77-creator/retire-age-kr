@@ -179,6 +179,8 @@
     착수: firemap-visual-designer 17:44 — E-2 썸네일(경쟁 5 비교판·시안 2~3·1초 시험·심사 3명, 관문 기한 오늘 19:30)
     완료: firemap-visual-designer 17:54 — E-2 썸네일 **thumb_e2f.png 확정**(3차 같은 비교판 평균 7.00: 제미나이 3-flash 7.5·Claude 심사관 7.5·레드팀 6.0, 1초 시험 주제 3/3, 경쟁 겹침 0~1) · 48시간 교체 e2d · 목표 8 미달. 시안 6개(e2a~e2f) 3회 심사, 표 visual/E-2-thumb/judges.md·review.md 3줄·thumb_meta.json. **→ firemap-video-producer: E-2 업로드 썸네일 = ep/E-2/thumb_e2f.png** · copywriter 18:40 제목은 썸네일(매출↑·이익률 1.4%)과 겹치지 않게 '이자수익 > 영업이익' 반전 쪽 권장.
     착수: firemap-video-producer 18:10 (운영실장) — E-2 목소리·렌더(관문 기한 오늘 19:30, 썸네일 e2f 확정·대본 편집 통과)
+    완료: firemap-video-producer 18:38 — E-2 목소리 **41/67문장**(3.8-flash-tts·Charon 6묶음) 뒤 18:13 TTS 하루 할당량 429, 18:28 재시도도 429(하루 한도라 15분 재시도 중단) → **남은 26문장(요청 3회)은 10/3 16:05 회차**, 모델 안 바꿈. clickscan 41개 치직 0. readback 41문장 중 **걸린 8문장**(4:1~4:5·5:2·6:1~6:3) — 문장 파일이 한 칸씩 밀림(묶음 2 앞머리 지시문 7.1초 읽음) + 묶음 2에서 '205억→250억'·'31억→30억'으로 들림 → fixcut 2 --dry 맞춤 낮아 적용 안 함, 묶음 2~4는 10/3 16:05에 fixcut 재확인·틀린 숫자 문장 재녹음. **렌더 못 함**: E-2 Remotion 화면(E2.tsx·e2props) 아직 없음 — 목소리 끝나야 길이 배치 가능. 제목 아직 없음. 관문 기한(10/2 19:30) 넘김 = TTS 한도 탓, 결재함 'TTS 유료' 올림. gates_ok 비움
+    막힘: firemap-video-producer 18:38 — E-2 10/3 19:30 칸: 목소리 26문장(10/3 16:00 초기화 뒤)+화면 제작+렌더가 10/3 16:05~19:30 3시간 반 안에 다 들어가야 함. 못 맞추면 비축분(롱폼 reserve)으로 칸 채우기 판단 필요 → 운영실장·순돌이
   - **firemap-youtube-loop**: 10/4 19:30 롱폼 편 없음 → 오늘 21:15 회의 전까지 편 정하고 slots.json에 기입(W-1 또는 X-SERIES-1 ②), 대본 10/3 오전.
     착수: firemap-youtube-loop 16:42 — ② 나 vs 남들 편 폴더 N-1: 분석 관문·compare·사실표·대본(관문 기한 10/3 19:30), 롱폼 48시간 기준선·A-1 판정 같이
   - **firemap-shorts**: e1_hynix_dd 관문 기한 10/3 00:20 → 19:20 회차 전에 끝냄 + 비축 1편(e1_micron_q4·e1_samsung_x·a1_1eok1y 중 compete.md 있는 것) 관문 통과.

@@ -1071,6 +1071,15 @@ def submit_cafe(page, title=None):
     page.on('response', _watch)
     page.get_by_role('button', name=re.compile(r'^\s*등록\s*$')).first.click()   # '임시등록'이 아니라 '등록'만
     page.wait_for_timeout(1500); shot(page, 'cafe_just_after_submit')   # 눌린 직후 화면(진단용)
+    # 2026-10-02 10:3x: 마지막 사진·링크 처리 중에 등록을 누르면 "요청하신 작업이 진행 중입니다. 완료 후 다시
+    # 시도해주세요." 안내만 뜨고 등록 API가 아예 안 나간다(e1table1002 1차). 안내가 보이면 기다렸다 다시 누른다.
+    for _ in range(6):
+        busy = page.get_by_text('작업이 진행 중입니다', exact=False)
+        if not (busy.count() and busy.first.is_visible()): break
+        print('편집기 처리 중 안내 — 5초 뒤 등록 다시 누름')
+        page.wait_for_timeout(5000)
+        page.get_by_role('button', name=re.compile(r'^\s*등록\s*$')).first.click()
+        page.wait_for_timeout(1500)
     # 전체공개면 "이 글은 전체공개로 설정되어 있어요 ... 계속할까요?" 확인 창이 뜬다(2026-09-22 실측) → 확인
     # 2026-09-25: 예전에는 is_visible(timeout=3000)으로 봤다. Playwright의 is_visible은 즉시 판정이라
     # 창이 뜨기 전에 False가 나오고, 인자를 넘기면 예외가 나 except로 통째로 넘어갔다.

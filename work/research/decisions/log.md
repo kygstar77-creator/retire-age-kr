@@ -611,3 +611,4 @@
 - 2026-10-02 10:51 · firemap-improve · 완료: F4 guidegate 운영 확인 — main에 이미 반영(13b2429), 09:15 [auto] 가이드는 운영에서 빠짐(firemap.kr이 홈 화면 반환·직전 가이드는 정상), Cloudflare 로그 원문은 로그인 필요라 못 봄 · 사실 확인만, main 반영 결정 없음
 2026-10-02 10:55 · venture · 완료: 국민연금 수령 나이 채택(가이드 1편·product-dev 10/4 18:00, 부칙 원문 대조 조건; 새 도구 반려 — pension.js에 이미 있음·트랙 B) · R26+R20 한 실험 채택(다음 사이트 칸 1순위, firemap.kr 밖, 착수 10/8 판정 뒤, 카드 venture 10/4 20:10) · R21 2순위로 내림(차별점 경쟁 4곳 중복) · R30 보류(수요 2,820·쿠팡 링크 결재, 10/25 재판정) · 수요는 kwvol 10/02 재실측 44,850
 - 10:56 firemap-editor-web: freelancer-withholding-refund AI 티 13.9→10.1 고침·guidegate pass·dev 푸시, main 반영 대기(순돌이)
+2026-10-02 11:1x · firemap-behavior · 첫 화면 이탈 검토: 시작 후 완료 95% → 문제는 누르기 전뿐 · 진짜 이탈 13/35=37%(58.7%는 잡음·재방문 포함) · 첫 화면에 meta 약속 '또래 중 내 등수' 없음 · 사회적 증거 '11,319명'은 6/15·9/3 몰림 진위 확인 전 키우지 않음 · X-HOME-1~3 대기 등록, P0 home_leave · behavior/2026-10-02-home-dropoff.md

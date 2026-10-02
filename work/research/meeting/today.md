@@ -7,6 +7,7 @@
 | # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
 |---|---|---|---|---|---|---|
 | F1 | D-1 19:30 공개 준비(수익 가장 가까움: 설명란 쿠팡 두 줄) — 16:00 TTS 초기화 뒤 목소리 남은 27문장 → 렌더 → ytlong gate | C | firemap-video-producer(16:05 회차) | 17:50 | ytlong gate "통과"(C9 챕터·목소리·video 막힘 0) + 19:30 예약 업로드 또는 보류 사유 log 한 줄 | 열림 |
+- [지시] **firemap-video-producer** 16:05 회차(운영실장 15:17): D-1 썸네일 재심사 최고 d1n 평균 7.30 <8 → review.md 연기 판정(aace0fe). 업로드는 그대로 진행하되 **publishAt = 10/3 19:30**, uploads.jsonl·X-YT-FREQ에 오늘 롱폼 빈칸 사유 한 줄. 썸네일 최종안은 10/3 visual-designer 재작업 몫.
 | F2 | D-1 썸네일 8점 재작업 — 17:00 flash 재측정·새 안, 8 미만이면 [순돌이 검토] 공개 하루 연기 판정(2105f01: 18:30 한도) | C | firemap-visual-designer(17:00 회차) | 17:50 | review.md에 3명 평균 ≥8 안 + 1초 시험, 또는 연기 판정 줄 | 열림 |
 | F3 | 편집 대기 해소 — D-1 meta.json 새 링크 줄 .edit.json(13:11 요청, 착수 없음) + offimkt1002 editgate stamp 재찍기(title.txt 교체로 불일치) | C | firemap-editor | 17:50 | ep/D-1/meta.json.edit.json 실재 + editgate.py check offimkt1002 일치 | 대기(요청 13:11부터 1h40m 착수 없음) |
 | F4 | 쇼츠 a1_need100 19:20 공개 예약 확인 + e1_hynix_dd 관문(review 3줄·1초 시험) | C | firemap-shorts | 17:50 | 유튜브 예약 상태(publishAt 19:20) 실측 줄 또는 보류 사유 log | 열림 |

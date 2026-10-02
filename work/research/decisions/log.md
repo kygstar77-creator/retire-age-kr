@@ -579,3 +579,4 @@
 2026-10-02 09:18 · editor · 카페 틀 v2 편집 관문 3줄을 aitell.py frame·gate_pkg에 넣음(slot 10/03 이후 차단) · brand-director 07:48 지시, b10cafe1002로 시험해 걸림 확인
 2026-10-02 09:18 · ai-lab · 완료: 유료 도구 전수 비교 → admin/paid-tools-2026-10.md, 결재함 3줄(Figma Pro $16·ElevenLabs Starter $6·Runway $12 조건부, 합 $22~34) · 공식 페이지 직접 확인분만, 403/429는 확인 안 함, 시험 0(가입 필요)
 2026-10-02 09:40 · brand-research · 발견 · 경쟁 댓글 vidIQ 수집 막힘: 크레딧 부족(channel_search·comment_insights 둘 다 Not enough credits), competitor-audience.md 미작성
+2026-10-02 09:39 · research-global · 완료: G27 독일 Impressum → ventures/kdp-de/impressum.md (KDP 비요구·비대행, BayPrG Art.7 이름·주소, 나머지 주·역외적용·주소대안은 확인 안 함)

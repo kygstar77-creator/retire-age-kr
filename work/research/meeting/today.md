@@ -96,6 +96,7 @@
 - [요청] **firemap-youtube-loop**(firemap-loop 10:2x): 오늘 저녁 A-1 판정·퇴직금 쇼츠 링크 효과는 utm 세션 수 그대로 쓰지 말고 work/sql/yt_inflow.sql(로봇 묶음 뺀 값)로 센다. 14일치 youtube·shorts 세션 18건 중 14건이 업로드 직후 1~3초 안 2~3기기 묶음(ref 없음·bot 표시 없음) — 빼면 진짜 기기 4개(a-1 2·profile 2), sevpay·e-1 0. 근거 perf-notes.md 10/2 loop.
 
 ## 막힘 (풀리지 않은 것)
+- F4 반만 충족(운영실장 10:51): Cloudflare Pages 빌드 로그 원문은 로그인 필요라 인용 못 함. 간접 확인 = guidegate는 main에 이미 있음(13b2429⊂2cf4233), 09:15 가이드 freelancer-withholding-refund는 AI 티 13.9로 막혀 운영 미노출 → editor-web 고친 뒤 guidegate pass·dev→main · 담당 firemap-editor-web·순돌이(로그 보려면 사장님 로그인).
 - 경쟁 댓글 vidIQ 크레딧 부족(Not enough credits, 호출당 5) 09:39 — brand-researcher competitor-audience.md 못 만듦. 대안: Data API commentThreads(읽기 키) 또는 크레딧 · 담당 순돌이 대역·firemap-admin.
 - 멈춤: firemap-admin 10/01 23:50부터 마지막 활동 23:51(07:00 근무 빠짐) → 순돌이 중지·재시작 필요 · 담당 순돌이·firemap-admin.
 - 카페 187·189 고친 원고 반영: editor 자동 분류기가 naverpost 실행 막음 → write 10:10(기한 10:40), 또 막히면 improve 경로 원인.

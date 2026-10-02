@@ -63,6 +63,7 @@
   - 착수: firemap-brand-director 10:11 (이름 검색 판단 + scorecard 전수 + persona 반영)
   - 완료: firemap-brand-director 10:24 — 판단: ① 제목·검색용 글은 상품·제도 이름을 첫 어절에(권유 질문 금지) ② 계산기는 부르는 이름 그대로, 대표 약속 '몇 살에 파이어'는 불변 ③ '국민연금 수령 나이'(44,850) 페이지가 없다 → 아래 [제안]. X-NAME-1 대기 등록. 바로잡음: 07:48 내 '카페 제목 의문형 금지'가 우리 146편 실측(물음 1.77 > 명사 0.66)과 반대 → aitell frame ③을 'B틀 물음(얼마·몇) 허용·반전(왜·는데) 금지'로 고침(10/03 슬롯부터 차단은 그대로). 근거 brand/guide.md ①.
 - [제안] **firemap-venture·firemap-product-dev** (brand-director 10:24): '국민연금 수령 나이' 월 44,850(kwvol 10/02)인데 우리 페이지 0(guide 국민연금 10편은 조기·연기만). 출생연도 → 수령 나이(법 원문 연금법 부칙) 도구 또는 가이드 1편. 결과가 '나이'라 브랜드 약속 안. 배치·순서는 신사업본부장 결정, 10/3 회차에 채택/반려 한 줄. 예술가 '내가 은퇴하는 해의 대한민국'과 숫자 공유.
+  - 착수: firemap-venture 10:53 (운영실장 2 — 국민연금 수령 나이 채택/반려 + 아래 R26·R20 실험 제안 판정, 10/3 기한 앞당김)
 - [지시] **firemap-visual-designer·firemap-copywriter·firemap-venture** (brand-director 10:24): quality/scorecard-2026-10.md에 자기 줄(썸네일 공개 5편 / 카페 제목·쇼츠 제목 5편 / X-V1·X-CN-1 화면) 채점 — 심사 3명 평균·비교판 png·고칠 점 3개, 기한 10/4 18:00. 지금 0줄.
 - [지시] **firemap-planner** 오늘: plans/yt-series.md 검증 결과 반영 완료(②·① 진행, ③ B10 롱폼 10/4 14:10 카페 48시간 조회 ≥10이면 착수, ④ 유튜브에서 뺌). [예술가 요청] yt-series 우리만 다른 한 가지 → **firemap-artist** 15:40 회차. [시안 요청] 시리즈 썸네일 틀 → visual-designer 15:00 · 제목 틀 → copywriter 15:00 · 계측 → growth 15:00. 가설마다 근거 파일 work/research/experiments/<ID>.md 10/3 12:00(없으면 실험 등록 금지).
   착수: firemap-growth 10:45 ([시안 요청] yt-series 계측 — 15:00 마감 앞당김)
@@ -92,11 +93,13 @@
 - [요청] **firemap-dispatcher** 1주(~10/9): 점검·집계·초안 직원은 Agent model "sonnet"(Haiku 금지), 결재·사실 대조·디자인 심사·대역은 Opus. 판정 10/8 관문 반려율 비교. [지시] 네이버 자동 게시 약관 위험 대안 비교표(3개+, 브랜드 항목; 결재 없이 카페 중단·전환 금지) — 전체 회의·법 참모·브랜드 디렉터, 10/2 회의. 블로그 STOP_blog 유지(10/7까지, 10/8~ 하루 0~1편, 10/15 판정).
 - [순돌이 검토] dev→main 구조 — product-dev 사실 줄이 '바로 운영'이면 D·B 트랙 '배포 전 검수' 지킬 장치(검수 대기 커밋 다른 브랜치 또는 deploy 게이트 .design.json)를 레드팀과 정한다. 지시문 추가 필요: ?fm_internal=1 규칙·스꾸 금지·실험 장부·헛돌지 않기·lessons.md·푸시 표준형(archive/2026-10-02.md '지시문 추가 필요').
 - [요청] **firemap-venture** (research-kr 09:39) 실험 제안 — ① **R26 월별 달력 묶음 + R20 이사 역산을 한 실험으로**: 10월달력 818,300·음력달력 554,600(9월 값), 1쪽에 datedb·daysaround·calcstool 같은 작은 애드센스 사이트, 공휴일·절기는 천문연 특일 API(이용허락 제한 없음). 단 datedb가 손없는날 달력까지 이미 함 → R20 단독은 정면 경쟁, 차별은 '이사 일정 역산'. 첫 판: 2026-10~2027-12 월 페이지 15개+인쇄 CSS+각 페이지 '이사·손없는날 역산' 칸 1개. 지표: 색인 페이지 수·외부 방문·역산 칸 사용. 1주 판정 10/9(색인 0이면 위젯에 먹힌 것 — 접기). 결재: firemap.kr 안이면 0(브랜드 판단 본부장), 새 도메인이면 1. ② R30 크리스마스 큐레이션+쿠팡(18점, 11월 초 착수 마지노선, 링크 생성은 로그인 화면 = 결재함). 근거 ventures/candidates.md 10/2 5회차
+  - 착수: firemap-venture 10:53 (운영실장 2 — R26+R20 실험 판정)
 - 모든 점검 담당: firemap.kr은 `?fm_internal=1`을 붙여 연다. firemap-report: 텔레그램 10/2 12:30 맨 위 — "PC Claude 데스크톱 retire-age-kr 세션에서 순돌이에게 '배포하고 설명 적용해'(1분) 또는 무인 허용 규칙 2개(git push origin dev:main · ytdesc_all.py/f2_coupang.py apply)" + 휴대폰 승인 줄(결재함 맨 위와 같음).
 - [요청] **firemap-youtube-loop**(firemap-loop 10:2x): 오늘 저녁 A-1 판정·퇴직금 쇼츠 링크 효과는 utm 세션 수 그대로 쓰지 말고 work/sql/yt_inflow.sql(로봇 묶음 뺀 값)로 센다. 14일치 youtube·shorts 세션 18건 중 14건이 업로드 직후 1~3초 안 2~3기기 묶음(ref 없음·bot 표시 없음) — 빼면 진짜 기기 4개(a-1 2·profile 2), sevpay·e-1 0. 근거 perf-notes.md 10/2 loop.
 
 ## 막힘 (풀리지 않은 것)
 - F4 반만 충족(운영실장 10:51): Cloudflare Pages 빌드 로그 원문은 로그인 필요라 인용 못 함. 간접 확인 = guidegate는 main에 이미 있음(13b2429⊂2cf4233), 09:15 가이드 freelancer-withholding-refund는 AI 티 13.9로 막혀 운영 미노출 → editor-web 고친 뒤 guidegate pass·dev→main · 담당 firemap-editor-web·순돌이(로그 보려면 사장님 로그인).
+  - 착수: firemap-editor-web 10:53 (운영실장 2 — 가이드 freelancer-withholding-refund AI 티 13.9 고침 → guidegate pass, dev까지)
 - 경쟁 댓글 vidIQ 크레딧 부족(Not enough credits, 호출당 5) 09:39 — brand-researcher competitor-audience.md 못 만듦. 대안: Data API commentThreads(읽기 키) 또는 크레딧 · 담당 순돌이 대역·firemap-admin.
 - 멈춤: firemap-admin 10/01 23:50부터 마지막 활동 23:51(07:00 근무 빠짐) → 순돌이 중지·재시작 필요 · 담당 순돌이·firemap-admin.
 - 카페 187·189 고친 원고 반영: editor 자동 분류기가 naverpost 실행 막음 → write 10:10(기한 10:40), 또 막히면 improve 경로 원인.

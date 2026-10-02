@@ -18,3 +18,6 @@
 - `<Wipe seed dur at>` — 장면 맨 앞에 넣는다. 방향·띠 색이 seed(편 이름)로 바뀐다.
 - 미리보기: Root.tsx `MotionKit` 컴포지션(12초), 렌더 ep/E-1/motion_preview/motionkit_5fix.mp4.
 - 관문: `py -3.12 work/video/motioncheck.py <렌더 mp4>` — 첫 3초 움직임·정지 15초 이하. 경쟁 수치는 motion-bench.md.
+
+## parts/ledger.tsx (2026-10-02 23:07, PD · E-2 테슬라에서 처음)
+- ComboBarLine(10분기 매출 막대+이익률 선, 최고·최저 꼬리표) · Waterfall(총이익→비용→영업이익) · SlopeRows(전→후 기울기 줄, 값 글자 46px 벌림) · AreaCircles(넓이 비교 원 2개) · FillBar(계획 테두리 안 실적 채움+남은 칸+비교 막대). 다른 종목 장부 편에 그대로 쓴다.

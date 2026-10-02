@@ -710,3 +710,4 @@
 2026-10-02 22:53 · firemap-meeting · 금융성 카페 글 끝에 /disclaimer 문장 한 줄, 쿠팡 붙는 롱폼 첫 장면 고지 자막 · 법 참모 반론, 검증 결과 offimkt1002·b10cafe1002 면책 0
 2026-10-02 22:53 · firemap-meeting · slots.json 10/3 10:10 칸에 비축 offimkt_ic0929 끼움, 19:20 쇼츠 e1_micron_q4, 10/4 08:10·10:10 칸 추가 · patrol '배정 없음'·비축 부족
 2026-10-02 22:53 · firemap-meeting · 카페 하루 8편 유지(X-CAFE-VOL 10/9 판정), 출시 체크리스트 9번에 '하루 2배 급증 금지' 추가 · 전략·법 참모 50% 감축 반론은 사장님 실험이라 부분 수용
+2026-10-02 23:07 · firemap-video-producer · E-2 화면(E2.tsx·ledger.tsx·e2props.py) 목소리 전에 먼저 제작 · 10/3 16:05~19:30 3시간 반 안에 목소리+화면+렌더가 다 들어가지 않을 위험(18:38 막힘) 줄이기, 길이는 voice.json이 채워지면 e2props 재실행으로 자동 맞춤 · 설명 링크는 /calc/* 중 은퇴 나이 계산기가 없어 첫 화면+utm_campaign=영상ID 유지(meta.json calc_link)

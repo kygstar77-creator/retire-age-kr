@@ -176,7 +176,8 @@ test.describe('firemap smoke', () => {
     const hero = page.locator('main.fm-screen');
     // 월 300만·92일 → 97,826원 × 60% = 58,695 < 하한 66,048 → 66,048 × 180일(50세 미만, 피보험기간 3년)
     await expect(hero).toContainText('11,888,640원');
-    await expect(hero).toContainText('하한 66,048원');
+    // 한도는 라벨로, 값은 금액만(F3 10/2)
+    await expect(hero.locator('.ds-hero__tiles')).toContainText(/하한\s*66,048원/);
     await page.getByRole('tab', { name: '50세 이상 · 장애인' }).click();
     await expect(hero).toContainText('13,870,080원');
     await expect(hero).toContainText('210일');

@@ -146,6 +146,7 @@ def cover_frame(spec):
     spec "cover": ["줄1", "{강조}줄2", ...] 2~4줄, 큰 글자만. 기본 꺼짐 — "cover"가 없으면 예전과 같다."""
     im = Image.new('RGB', (W, H), BG); d = ImageDraw.Draw(im); M = 64
     d.rounded_rectangle((M, 150, M + 190, 208), 12, fill=(255, 107, 0)); d.text((M + 22, 158), '파이어맵', font=PD7(36), fill=WHITE)
+    if spec.get('cover_chart'): return cover_chart_frame(spec, im, d, M)
     lines = spec['cover']; maxw = SAFE_R - M
     fs = []
     for ln in lines:
@@ -155,6 +156,45 @@ def cover_frame(spec):
     total = sum(int(s * 1.18) for s in fs); y = max(300, (SAFE_B + 150) // 2 - total // 2)
     for ln, s in zip(lines, fs):
         draw_runs(d, M, y, runs(ln), BHS(s)); y += int(s * 1.18)
+    return im
+
+def cover_chart_frame(spec, im, d, M):
+    """표지 + 종가선 낙폭 그림(2026-10-03 firemap-shorts, e1_hynix_dd 표지 6.7 → '글자만·시점 없음' 지적).
+    spec "cover_chart": {"prices": 네이버 일별 시세 txt, "from","to","peak","trough": YYYYMMDD, "big": "{-54.7%}", "span": "6/22 → 7/30 · 종가"}
+    가격 숫자는 그리지 않는다(선 모양만) — 화면에 나오는 숫자는 spec 글자뿐이라 check가 그대로 잡는다."""
+    import re
+    c = spec['cover_chart']
+    rows = re.findall(r'\["(\d{8})",\s*[\d.]+,\s*[\d.]+,\s*[\d.]+,\s*([\d.]+)', open(c['prices'], encoding='utf-8').read())
+    s = sorted({dt: float(v) for dt, v in rows if c['from'] <= dt <= c['to']}.items())
+    maxw = SAFE_R - M; y = 250
+    for ln in spec['cover']:
+        txt = ln.replace('{', '').replace('}', ''); sz = 130
+        while sz > 60 and d.textlength(txt, font=BHS(sz)) > maxw: sz -= 4
+        draw_runs(d, M, y, runs(ln), BHS(sz)); y += int(sz * 1.18)
+    x0, x1, y0, y1 = M + 6, SAFE_R - 10, y + 90, y + 560
+    lo, hi = min(v for _, v in s), max(v for _, v in s)
+    px = lambda i: x0 + (x1 - x0) * i / (len(s) - 1)
+    py = lambda v: y1 - (y1 - y0) * (v - lo) / (hi - lo)
+    ip = [k for k, (dt, _) in enumerate(s) if dt == c['peak']][0]; it = [k for k, (dt, _) in enumerate(s) if dt == c['trough']][0]
+    RED = (255, 84, 84)
+    d.polygon([(px(ip), y1 + 20)] + [(px(k), py(s[k][1])) for k in range(ip, it + 1)] + [(px(it), y1 + 20)], fill=(70, 26, 30))
+    pts = [(px(k), py(v)) for k, (_, v) in enumerate(s)]
+    d.line(pts[:ip + 1], fill=GREY, width=8, joint='curve')
+    d.line(pts[it:], fill=WHITE, width=10, joint='curve')          # 저점 뒤 회복 구간 — '지금 폭락 중' 오해 막기(10/3 심사 지적)
+    d.line(pts[ip:it + 1], fill=RED, width=12, joint='curve')
+    md = lambda dt: dt[4:6].lstrip('0') + '/' + dt[6:].lstrip('0')
+    for k, lab, dy in ((ip, md(c['peak']), -80), (it, md(c['trough']), 24)):
+        X, Y = pts[k]; d.ellipse((X - 18, Y - 18, X + 18, Y + 18), fill=WHITE, outline=RED, width=8)
+        f = PD7(56); tw = d.textlength(lab, font=f); d.text((min(max(X - tw / 2, M), x1 - tw), Y + dy), lab, font=f, fill=WHITE)
+    if c.get('end'):
+        X, Y = pts[-1]; d.ellipse((X - 16, Y - 16, X + 16, Y + 16), fill=YELLOW)
+        f = PD7(52); tw = d.textlength(c['end'], font=f); d.text((X - tw, Y - 90), c['end'], font=f, fill=YELLOW)
+    y = y1 + 60
+    if c.get('big_label'): d.text((M, y), c['big_label'], font=PD7(66), fill=RED); y += 84
+    big = c['big'].replace('{', '').replace('}', '')
+    d.text((M, y), big, font=BHS(190), fill=RED if c.get('big_red') else YELLOW); y += int(190 * 1.12)
+    d.text((M, y), c['span'], font=PD7(58), fill=WHITE)
+    if y + 70 > SAFE_B: print(f'경고: 표지 그림이 가려지는 자리까지(y={y + 70})')
     return im
 
 def build(spec, out):

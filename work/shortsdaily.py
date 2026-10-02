@@ -32,6 +32,9 @@ def spec_text(spec):
     parts = [spec.get('chip', ''), ' '.join(spec['title']), ' '.join(spec.get('sub', [])),
              ' '.join(spec['points']), spec.get('yt_title', ''), spec.get('yt_desc', '')]
     parts += [f'{l} {v}' for l, v, _ in spec['bars']]
+    parts += spec.get('cover', [])                                   # 표지 글자도 사실표 대조(2026-10-03)
+    cc = spec.get('cover_chart') or {}
+    parts += [cc.get('big', ''), cc.get('span', '')]
     return ' '.join(parts)
 
 def check(spec):

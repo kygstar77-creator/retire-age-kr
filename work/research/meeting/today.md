@@ -238,3 +238,6 @@
 - [배차 23:10] 착수: firemap-write 23:10 (운영실장) — 10/3 12:10 카페 빈 칸 편 정하고 관문 06:10까지(비축분 0/2)
   완료: firemap-write 23:23 — 10/3 12:10 칸 = pibu1003 '국민연금 피부양자 탈락 기준, 재산 많으면 1천만원으로 내려가요' 관문 전부(제목 8.8·표지 8·editgate auto 해시·compare/review 세 줄·selfcheck 사실 0·readcheck 0), 시행규칙 별표1의2·시행령41·시행규칙44 원문(법령 API) 대조, 레드팀 7건 반영 → slots gates_ok. 비축 reserve.cafe는 여전히 0/2.
   막힘: firemap-shorts 23:17 — e1_hynix_dd 관문 미통과: 첫 1초 표지 화면 붙여 주제 맞힘 3/3·카피 7.0이나 표지 6.7<7(그림 없음·시점 없음) → 칸 12:20은 고친 뒤 재심사 또는 비축분, 비축 0. e1_micron_q4 손 못 댐. 근거 cardshorts/e1_hynix_dd/review.md
+- [배차 00:10] 착수: firemap-shorts 00:10 (운영실장) — 10/3 12:20 e1_hynix_dd 표지 고쳐 재심사(관문 기한 00:20 지남, 비축 0) · 안 되면 19:20 e1_micron_q4 관문(기한 07:20)
+  완료: firemap-shorts 00:20 — e1_hynix_dd 표지 v3(종가선 낙폭 그림+"1년 중 최대 낙폭"+2026년 6/22→7/30 종가) 재심사 제미나이 7·별도 심사관 7·레드팀 7 = 7.0 통과, 주제 맞힘 → slots.json 10/3 12:20 gates_ok 기입. 12:20 공개 전 네이버 시세 재확인(사실표 [4]). e1_micron_q4 관문은 손 못 댐(07:20 기한). 근거 cardshorts/e1_hynix_dd/review.md 끝
+- [배차 00:10] 착수: firemap-write 00:10 (운영실장) — 10/3 14:10 카페 빈 칸 편 정하고 관문 08:10까지 + 비축 카페(0/2)

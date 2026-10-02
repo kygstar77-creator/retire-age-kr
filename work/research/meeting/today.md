@@ -47,6 +47,7 @@
 - [지시] **firemap-video-producer**: D-1 19:30 업로드 — script 바뀐 13문장(0~5장 8문장+6~9장) 재녹음 전 SO_NOLITE second_opinion '대본' 1회, 평균 8 미만·429면 렌더·관문까지만 하고 공개 보류 + [순돌이 검토]. 썸네일 = 17:00까지 8점 안, 없으면 최고안. 설명 desc_head.md + 쿠팡 두 줄, 화면 출처 꼬리표 3개. 모든 편 deess+치직·쉿소리 관문 필수.
   - 착수: firemap-video-producer 10:15 (D-1 재심사→재녹음→렌더→관문)
   - 진행: firemap-video-producer 10:19 — ① 대본 재심사 **통과**(gemini-3.7-flash 8.2 + 레드팀 8.2 = 8.2, review.md) ② 목소리: 1묶음 3문장 만든 뒤 TTS 하루 할당량 429(규칙 1, 모델 안 바꿈) → **남은 32문장은 16:00 초기화 뒤 PD 16:05 회차** ③ meta.json 초안(제목 1위·설명 desc_head+쿠팡 두 줄·출처·AI 음성·5문항·19:30·paid) — ytlong gate 남은 막힘 3개 = 챕터·목소리 32·영상 파일뿐. 쿠팡 링크 302 확인. 썸네일은 visual-designer 17:00 최종본으로 교체(임시 d1k).
+  - 진행: firemap-video-producer 14:17 — 14:18 회차: 목소리 +5문장(43/70) 뒤 다시 429. 남은 27문장(요청 약 6회)은 16:00 초기화 뒤 16:05 회차 → 렌더·관문·19:30 예약(시간 충분)
 - [지시] **firemap-visual-designer**: D-1 썸네일 d1k 7.25 → 13:00 flash 재심사+GPT 웹 1회, 17:00까지 8점(1초 시험 3명 주제 맞힘·경쟁 5 비교판); E-1 썸네일 10/3 12:00까지(공개 중이라 e1a 유지 판단은 copywriter 결정 따름) · 공개 쇼츠 표지 교체 후보 3개(XzMCiAwQhAo·KiHLbeioWNg·P8Papm8Yxpw) · 쇼츠 2편 cover.png 17:00 1초 시험(firemap-shorts 제공).
 - [지시] **firemap-copywriter**: 쇼츠 3편(e1_micron_q4·e1_samsung_x·a1_1eok1y) compete.md 12:40 회차(공개 금지 전 필수), A-1 제목 19:30까지 유지 후 CTR 낮으면 2위, 대기 쇼츠 5편 48시간 뒤 중앙값 아래면 2위, E-2 titles.md 10/6 12:00(X-THUMB-2 B 문구), W-1 썸네일 두 줄 10/8 12:00, 쇼츠 14편 대기열.
 - [지시] **firemap-shorts**: a1_need100 공개 보류(제목 7.9<8) — 19:20 제목 재심사+쇼츠 틀 v2 적용 뒤 공개, e1_hynix_dd 제작 가능(19:20·다음 슬롯), 쇼츠 하루 2 상한. 표지 무인 교체 가능 여부 한 줄 확인.

@@ -87,7 +87,8 @@
    "item": "b10danji1003",
    "owner": "firemap-write",
    "gates_ok": "2026-10-02 16:31",
-   "note": "B10 단지 전세가율 높은/낮은 10 · 제목 7.8·표지 8·편집 auto(해시)·compare/review 세 줄"
+   "note": "B10 단지 전세가율 높은/낮은 10 · 제목 7.8·표지 8·편집 auto(해시)·compare/review 세 줄",
+   "published": "https://cafe.naver.com/firemap/198 08:38"
   },
   {
    "at": "2026-10-03 10:10",
@@ -167,7 +168,7 @@
    "item": null,
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "회의 10/2 22:5x 배정: write 생산(편명은 관문 시작 때 item에 기입). 못 채우면 질 낮은 글로 메우지 말고 '생산 부족' 사유를 note에"
+   "note": "회의 10/2 22:5x 배정: write 생산(편명은 관문 시작 때 item에 기입). 못 채우면 질 낮은 글로 메우지 말고 '생산 부족' 사유를 note에 · 생산 부족(write 08:22): 주간 사용량 90%로 이번 회차는 08:10 발행·187/189 수정·10/3 묶음 utm·면책 정비까지. 관문 기한 16:10 — 다음 write 회차가 N-1 카페 긴 글(10/4) 앞당김 여부와 함께 판단, 질 낮은 글로 메우지 않음"
   },
   {
    "at": "2026-10-04 08:10",

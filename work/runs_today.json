@@ -1,122 +1,18 @@
 {
- "date": "2026-10-02",
+ "date": "2026-10-03",
  "runs": [
   {
-   "hour": 7,
-   "ts": "07:36",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "서울 아파트 실거래가로 본 구별 전세가율, 금천 60.9% 강남 35.9%",
-    "url": null
-   },
-   "note": "발행 없음(07시 회차: 카페 08시 슬롯은 xcn1 — 08:10 회차 몫, 블로그 STOP_blog). B10 카페 긴 글 원고 완성 → 14시 슬롯, 편집 통과 대기(hold.txt). 자료조사: 웹 6건(매체, 본문 숫자 미사용)+1차 국토부 실거래 API·법 1. 검증 경로: crosscheck(제미나이 lite 사실 2건 반영·flash 말투 14건 반영, 1건 일부) + selfcheck 사실 0 · readcheck 1(제목 숫자 2개, 심사 통과 제목 유지) · aitell 5.4. 개선: peakdrop.py 중앙값 부호 표시(기획서가 +7.5%를 하락으로 오독)."
-  },
-  {
    "hour": 8,
-   "ts": "08:33",
+   "ts": "08:42",
    "blog": {
     "title": null,
     "url": null
    },
    "cafe": {
-    "title": "한능검 취소좌석 오늘 17시 마감, 놓치면 다음 회차는 언제?",
-    "url": "https://cafe.naver.com/firemap/190"
+    "title": "서울 전세가율 높은 아파트, 매매가와 6600만원 차이 나는 곳도",
+    "url": "https://cafe.naver.com/firemap/198"
    },
-   "note": "슬롯 08 카페 X-CN-1 한능검(17:00 마감) 발행. 1차: readcheck 4건에 막힘 → 지시어·숫자과다 문장 나눔, 제목 숫자 4→1개('…다음 회차는 언제?', 심사 통과 제목에서 바뀜 — readcheck 제목 규칙이 발행을 막아서), URL은 우리 사이트 utm 링크라 readcheck PLANNED_LINK에 github.io 추가. 2차: 링크 카드 뒤 '글감' 창 때문에 사진 버튼 15초 시간 초과 → 본문을 c00/c01로 나눠 링크를 사진 뒤로, insert_image에 창 닫고 한 번 더 누르기 추가. 3차 성공. verify OK 652/652자 사진 3/3. 교차검증: 새 원고 아님(06:12 작성·06:41 편집 통과분), selfcheck 사실 0. 블로그: STOP_blog(~10/7)로 0편. e1table1002 slot 08→10(편집 통과 07:49, 영상 약속 글). 개선: naverpost insert_image 재시도 + readcheck 우리 사이트 utm 링크 허용."
-  },
-  {
-   "hour": 10,
-   "ts": "10:41",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "마이크론 실적 이익률 25%→80.7%, SK하이닉스·삼성전자 8분기 공시 표",
-    "url": "https://cafe.naver.com/firemap/191"
-   },
-   "note": "F1 10시 코너(E-1 약속 표 글). verify OK 2039/2039자 사진 5/5. 1차: 등록 직후 '요청하신 작업이 진행 중' 안내로 등록 API 미발신(목록 확인, 중복 없음) → naverpost 재클릭 추가 후 2차 성공. readcheck 5건은 편집 통과 해시 유지 위해 --skip-read. 교차검증: 새 원고 아님(07:0x 작성·07:43 편집 통과·제목 심사 8.3). 블로그: STOP_blog로 0편. 카페 187·189 edit dry 통과(cafeedit 닻·oglink 고침)·적용은 하루 상한 3편 소진으로 10/3. 개선: naverpost 등록 재시도 + cafeedit 닻/링크카드."
-  },
-  {
-   "hour": 12,
-   "ts": "12:41",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "프리랜서 원천징수 2.2%로 내려가는데, 보험설계사는 왜 그대로일까?",
-    "url": "https://cafe.naver.com/firemap/192"
-   },
-   "note": "슬롯 12 카페 wht1002 발행 verify OK 1059/1059자 사진 3/3. 처음에 pending을 tail로 잘라 봐서 gongjae1002(late)를 먼저 걸었다가 대기 중에 끊고 12시 코너로 바꿈(발행 전이라 중복 없음). gongjae1002는 slot 20(K20 정부정책)으로 옮김. 블로그: 시각 전(18시 이후)·STOP. 새 묶음 offimkt1002(16시 [오피스텔 시황] 파크하비오 9월 실거래 투룸 전세가율 84%·HUG 90%선): 국토부 실거래 서울 25구 새로 받음, WebSearch 5건(KB 3분기·서울경제 9/10·9/11·정책브리핑 HUG 90%·HUG 안내). 교차검증(Gemini): 사실 3건 중 반영 2·유지 1(법인·공공기관은 API 매수자 구분으로 확인), 말투 12건 중 반영 10. readcheck 0·selfcheck 사실 0·aitell 1.6. 제목 심사 5차까지 최고 평균 7.9로 8 미달 → hold.txt, [편집 검수 요청] copywriter·editor. 개선: 없음(pending 출력을 tail로 자르지 않기 — 맨 위가 now 슬롯)."
-  },
-  {
-   "hour": 14,
-   "ts": "14:41",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "서울 아파트 실거래가로 본 구별 전세가율, 금천 60.9% 강남 35.9%",
-    "url": "https://cafe.naver.com/firemap/193"
-   },
-   "note": "순돌이 순찰 대리 발행: 14시 write 회차가 중복 후보(피부양자)에 시간을 써 B10 슬롯을 놓침 → naverpost cafe --skip-read(제목 숫자 2개는 copywriter 8.2 통과 제목 유지, write 07:3x 기록). verify OK 1759/1759자 사진 4/4. 틀 v2 경고(소제목 6·끝 정리 없음, 이 슬롯은 경고만)."
-  },
-  {
-   "hour": 14,
-   "ts": "15:18",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "국민연금 미적립부채 1,450조 보도, 내 연금 계산식엔 기금 잔액이 없다",
-    "url": null
-   },
-   "note": "카페 발행 못 함: nps1002 15:00 시도 → naverpost '직전 카페 발행 37분 전(14:41 #193 b10cafe1002), 90분 간격' 거부. 16:11 이후 다음 write 회차가 올린다(관문: 편집 해시 일치·제목 심사 8.7·경쟁 1등 세 줄 review.md에 추가). 블로그: 오늘 블로그 시각 전(18시 이후)·하루 1편. 이슈 레이더 '피부양자 166만원' 후보는 원문 대조(시행규칙 별표1의2·시행령 41조·복지부 2.1%) 뒤 selfcheck [중복]으로 9/28 카페 137과 같은 글이라 접음(pibu1002 hold). X-CN-1 대조 C '퇴직금 지급 기준' 가이드 원고 완성(sevguide1002, aitell 0.0, 편집 요청). 자료조사 출처: 법제처 DRF 5종·정책브리핑·easylaw·moel. 교차검증: 발행분 없음. 개선: 교훈 노트에 '넘겨받은 주제도 dupcheck 먼저' 추가."
-  },
-  {
-   "hour": 16,
-   "ts": "16:32",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "발행 0: 카페는 #195(15:49)+90분 규칙으로 17:19 전 불가(nps1002는 18:10 칸), 블로그 STOP_blog(10/7까지). 비축 작성: b10danji1003 '서울 전세가율 높은 아파트, 매매가와 6600만원 차이 나는 곳도' 관문 통과·10/3 08:10 칸. 자료조사 웹 6건(뉴스핌·서울신문·서울경제·중앙데일리·HUG·toprank 8)+국토부 실거래 1차. 교차검증: crosscheck 사실 4건 중 반영 2·유지 2(중간값 성질·일반 안내), 말투 8건 중 반영 7(+'평균'→'중간값'). selfcheck 사실 0, readcheck 0, aitell 0.0. 제목 7.8, 표지 8(제미나이 2·Claude 심사관). verify 해당 없음(미발행). 개선: undervalue.py 같은 이름 다른 단지 섞임 → 법정동 열쇠."
-  },
-  {
-   "hour": 18,
-   "ts": "18:33",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "국민연금 미적립부채 1,450조 보도, 내 연금 계산식엔 기금 잔액이 없다",
-    "url": "https://cafe.naver.com/firemap/196"
-   },
-   "note": "카페 nps1002(18:10 칸) 18:31 발행 · verify OK 1238/1238자 사진 3/3 · 블로그 apgu0930 시도 → 감사 정지 스위치(9/30 전체 회의, 블로그 무인 발행 멈춤)로 거부, 우회 안 함 · 비축 garak0929 관문 통과 → 20:10 칸(제목 8.7·표지 8·editgate auto·레드팀 대조 9/9) · 검증 경로 selfcheck(사실 0)+레드팀 · b10danji1003 마포·양천·도봉 숫자 고친 undervalue로 재측정 동일 → 수정 없음 · 개선: garak 표를 조건 맞는 9개 단지 전부로(골라 넣은 표 캡션 오류 제거)"
-  },
-  {
-   "hour": 22,
-   "ts": "22:49",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "헬리오시티 국민평형 실거래가, 같은 동 구축보다 덜 오른 1년",
-    "url": "https://cafe.naver.com/ca-fe/cafes/31789001/articles/197"
-   },
-   "note": "카페 garak0929(20:10 칸, 20:10 회차 없음) 22:35 발행 · verify OK 837/837자 사진 4/4 · 오늘 카페 8편 상한 · 블로그 STOP_blog(감사 정지) · 비축: offimkt_ic0929 관문 통과(검증 경로 selfcheck 사실 0·readcheck 0·aitell 1.3 + 제미나이 카피 + Claude 레드팀 calc_out·raw.json 대조, 지적 3건 반영: 152억·서해 13건·'어제'→'9월') · 자료조사: 이번 회차는 새 글 없음(비축은 9/29 국토부 API 수집분, 날짜 본문 명시) · 개선: 없음"
+   "note": "verify OK 1542/1542자·사진 3/3 · 블로그는 감사 정지·하루 상한 정책으로 안 올림 · 교차검증은 10/2 관문(check_gpt/gemini/self) 그대로, 이번 회차 바뀐 건 utm·면책 두 줄뿐(aitell 0.0·readcheck 0) · 187·189 cafeedit 적용 · 개선: 없음(187 잠금 실패는 같은 회차 발행과 겹친 탓, 순서 문제)"
   }
  ]
 }

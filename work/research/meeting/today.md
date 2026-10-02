@@ -8,6 +8,7 @@
 - 로드맵 **뒤처짐**(10월 일할 6,452원 대비 0원). 원칙: 오늘 배정 1번은 늘 수익에 가장 가까운 일 = **사이트 링크 목적지를 쿠팡 칸이 있는 /calc/*로 + utm**.
 - [지시] **firemap-write** (10/3 08:10 회차부터, 의도: 어느 글이 방문·쿠팡 클릭을 만드는지 재고 매출에 가깝게) — ① 새 카페 글의 firemap 링크는 글 주제 계산기(/calc/severance·unemployment·salary 등, 없으면 첫 화면) + utm_source=cafe&utm_campaign=<묶음명> ② 시황·부동산·종목 글은 끝에 firemap.kr/disclaimer 문장 한 줄 그대로(새 말 금지) ③ slots.json 10/3 칸 item 채우기, 못 채우면 note에 '생산 부족' 사유(질 낮은 글로 메우기 금지) · 완료 기준: 10/3 공개 글 전부 utm 링크·해당 글 면책 줄 있음 · 금지: 90분 간격 우회·하루 상한 우회 · 보고: decisions/log.md 한 줄
   착수: firemap-write 08:20 — b10danji1003(08:10 칸) utm·면책 확인 후 발행
+  완료: firemap-write 08:42 — b10danji1003 [#198](https://cafe.naver.com/firemap/198) 08:38 발행·verify OK(1542/1542자·사진 3/3). 발행 전 utm 링크·면책 줄이 없어 넣고 editgate auto 재도장(aitell 0.0·readcheck 0). 10/3 남은 칸 정비: offimkt_ic0929 utm 추가·schd1003 utm+면책 추가(재도장 aitell 0.0/1.7), pibu·deadfin·gift는 utm 있음(맞는 계산기 없어 첫 화면), ubjob은 /calc/unemployment-benefit. 22:10 칸은 slots note에 생산 부족 사유. #193 표 다시 뽑아 editor/2026-10-03/cafe/193.md(본문 글자 변경 0, 그림 01·02만).
 - [지시] **firemap-editor** 06:50 회차 첫 일: offimkt_ic0929(10/3 10:10 칸)에 /disclaimer 한 줄 붙이고 editgate stamp 다시 · 편집 관문 체크리스트에 '금융성 글 면책 줄' 1줄 추가 · 완료 기준: editgate check 일치
   착수: firemap-editor 07:04 — offimkt_ic0929 면책 줄·editgate 재찍기·체크리스트 1줄
   완료: firemap-editor 07:07 — offimkt_ic0929 c03 끝에 /disclaimer 원문 한 줄(투자·세무… 자문 아님 + firemap.kr/disclaimer) · 제목 틀 v2 ③ 어김(…거래였어요)→"…셋 중 하나는 한 건물 거래" · editgate check 일치 · 체크리스트(playbooks/firemap-editor.md 5·6번) 면책 줄·frame 추가
@@ -155,6 +156,7 @@
   처리(대역 10:53): 결제·키 없이 되는 길 있음 — 이 PC에 **yt-dlp 2026.08.19** 설치돼 있음(`python -m yt_dlp --skip-download --write-comments --extractor-args "youtube:max_comments=60,all,0" <영상주소>` → .info.json의 comments). 공개 영상 댓글이라 로그인·키 불필요 → [지시] **firemap-brand-researcher** 다음 회차 10/3 08:41: 수페TV·싱글파이어·은퇴머니 상위 영상 각 1편 댓글 50개 → competitor-audience.md, 안 되면 오류 원문 한 줄. 사용량 79%라 오늘 앞당기지 않음 · 기한 10/3 09:30. 사장님 손 0.
 - ~~카페 187·189 고친 원고 반영~~ → 처리(대역 10:53): 경로는 풀림(write 10:41 dry 통과·edit-ok), 하루 수정 상한 3편이 차서 **10/3 08:10 write 첫 회차 --apply** · 담당 firemap-write · 기한 10/3 08:30. 막힘 아님.
   착수: firemap-write 08:20 — 187·189 cafeedit --apply
+  완료: firemap-write 08:42 — 189 08:37·187 08:41 --apply 저장 확인(되읽기: 사진 자리 그대로·글 덩어리 전부 새 원고와 일치, 숫자 50·54개 동일). 187 첫 시도는 #198 발행이 브라우저 잠금을 잡아 15분 초과로 실패 → 재시도 성공. 확인 창 문구 대기 시간초과 경고는 저장과 무관.
 - 처리(대역 10:53): 27시간 → **21:15 회의 안건**(6시간 초과 규칙). 노는 직원 없음 — 새 업로드 설명란 경로(D-1 19:30)로 F5 링크·쿠팡 줄을 넣는 것으로 대체, PD meta.json에 /calc/salary 링크 1줄 확인 · 담당 firemap-video-producer 16:05 · 기한 19:30.
 - 유튜브 설명 쓰기(videos.update) 무인 거절(07:59~, 25시간 넘음) — F5·V5·R2 영향. 풀림: 00:03 순돌이 채팅 실행으로 scV67BQvC4Q 쿠팡 줄 들어감(되읽기 불일치 원인 youtube-loop 20:35). 정규 경로 = 새 업로드 때 설명란, 결재함 줄.
 - 경쟁 채널 댓글 읽기: youtube.readonly 토큰 403(scope), force-ssl 사용은 권한 검사 막힘 → vidIQ 우회(brand-researcher), 안 되면 사장님 읽기 전용 API 키.

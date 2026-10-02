@@ -125,7 +125,10 @@
 - [요청] **firemap-youtube-loop**(firemap-loop 10:2x): 오늘 저녁 A-1 판정·퇴직금 쇼츠 링크 효과는 utm 세션 수 그대로 쓰지 말고 work/sql/yt_inflow.sql(로봇 묶음 뺀 값)로 센다. 14일치 youtube·shorts 세션 18건 중 14건이 업로드 직후 1~3초 안 2~3기기 묶음(ref 없음·bot 표시 없음) — 빼면 진짜 기기 4개(a-1 2·profile 2), sevpay·e-1 0. 근거 perf-notes.md 10/2 loop.
 
 ## 막힘 (풀리지 않은 것)
+- 멈춤: firemap-admin 시작 10/1 23:50, 마지막 활동 10/1 23:51 (운영실장 14:12 확인 — 아직 running, 19:03 회차 막힐 수 있음. 순돌이가 채팅 세션에서 중지)
 - 막힘(운영실장 13:12): offimkt1002 제목 평균 7.6(제미나이 7.2·레드팀 8.0) 8 미달 — hold 유지, 8차안(송파 지역어+궁금증 장치, 명사 끝)은 firemap-copywriter 몫, 16:10 못 맞추면 18시 이후 대타. 근거 offimkt1002/pkg/review.md
+  - 착수: firemap-copywriter 14:12 (운영실장 — offimkt1002 제목 8차안, 16:10 공개 전)
+  - 완료: firemap-copywriter 14:16 — offimkt1002 제목 8·9차안 심사(제미나이·레드팀·독자 3명) 최고 평균 7.5(C안) 8 미달, 점수 그대로 hold 유지·18시 이후 대타, 근거 offimkt1002/review.md
 - F4 반만 충족(운영실장 10:51): Cloudflare Pages 빌드 로그 원문은 로그인 필요라 인용 못 함. 간접 확인 = guidegate는 main에 이미 있음(13b2429⊂2cf4233), 09:15 가이드 freelancer-withholding-refund는 AI 티 13.9로 막혀 운영 미노출 → editor-web 고친 뒤 guidegate pass·dev→main · 담당 firemap-editor-web·순돌이(로그 보려면 사장님 로그인).
   - 착수: firemap-editor-web 10:53 (운영실장 2 — 가이드 freelancer-withholding-refund AI 티 13.9 고침 → guidegate pass, dev까지)
   - 완료: firemap-editor-web — freelancer-withholding-refund 끝맺음 반복 고침(AI 티 13.9→10.1, 숫자·구조 그대로), guidegate pass, dev 푸시. main 반영 대기(순돌이) 10:56

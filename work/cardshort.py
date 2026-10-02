@@ -203,9 +203,11 @@ def build(spec, out):
     _, bottom = frame(base, spec, top, 2)
     if bottom > SAFE_B: print(f'경고: 글이 가려지는 자리까지 내려갔다(y={bottom} > {SAFE_B}) — 글을 줄인다')
     tmp = out + '_frames'; os.makedirs(tmp, exist_ok=True)
-    csec = spec.get('cover_sec', 1) if spec.get('cover') else 0
+    csec = spec.get('cover_sec', 1) if (spec.get('cover') or spec.get('cover_png')) else 0
     if csec:
-        cov = cover_frame(spec); cov.save(out.replace('.mp4', '_cover.png'))
+        # cover_png: 비주얼 디자이너가 심사 통과시킨 표지 그림을 그대로 첫 화면에(2026-10-03 visual, 기본 꺼짐). 표지 숫자는 그림 안이라 check가 못 잡는다 → 사실 대조는 표지 review에서.
+        cov = Image.open(spec['cover_png']).convert('RGB').resize((W, H)) if spec.get('cover_png') else cover_frame(spec)
+        cov.save(out.replace('.mp4', '_cover.png'))
         for i in range(int(csec * FPS)): cov.save(os.path.join(tmp, f'{i:04d}.png'))
     off = int(csec * FPS)
     for i in range(int(sec * FPS)):

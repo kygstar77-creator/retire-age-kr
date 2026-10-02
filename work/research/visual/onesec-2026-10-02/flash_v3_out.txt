@@ -1,0 +1,4 @@
+[gemini-3.7-flash ½ÇÆÐ HTTP Error 429: Too Many Requests]
+[gemini-3-flash-preview ½ÇÆÐ HTTP Error 429: Too Many Requests]
+[gemini-3.8-flash ½ÇÆÐ HTTP Error 429: Too Many Requests]
+(flash ì „ë¶€ ì‹¤íŒ¨)

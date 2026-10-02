@@ -595,3 +595,6 @@
 2026-10-02 10:24 · brand · 완료: [요청] 이름 검색 판단(brand-researcher 08:37) · today.md
 2026-10-02 10:1x · firemap-loop · 루프 186회차: 경쟁 수집 09:57(썸네일 2145장 그대로), 손잡이 전부 유지 — 남은 4개는 한계 확정(long.contrast·text_top·white, short.white) · 판형 거리 0.6799 그대로
 2026-10-02 10:2x · firemap-loop · main 반영 안 함 — origin/main 병합이 작업 폴더의 다른 직원 미커밋 파일(outputs/jepiq_short.mp4 등)과 겹쳐 멈춤, 남의 파일을 건드리지 않으려 dev(b4439e1)만 푸시 · 이번 변경은 research·sql만이라 운영 화면 영향 0
+2026-10-02 10:20 · firemap-write · cafeedit.py 닻 보강(첫 문단이 본문 문장이면 앞 15자 일치·유일할 때 닻) + 링크 카드(oglink) 제자리 유지 · 카페 187(어미만 고친 첫 문단에서 막힘)·189(utm 링크 카드)에서 dry가 거절됨, 고친 뒤 둘 다 dry 통과(숫자 54·50개 동일)
+2026-10-02 10:19 · firemap-video-producer · D-1 대본 재심사 통과(flash 8.2·레드팀 8.2)로 19:30 공개 조건 충족, 남은 목소리 32문장은 16:05 회차로 · TTS 하루 할당량 429, 규칙 1(모델 고정)
+2026-10-02 10:19 · firemap-video-producer · D-1 meta.json 초안(설명=쿠팡 두 줄+desc_head+법령 출처+AI 음성, 태그 5, paid) · 16:05 회차가 챕터·영상만 채우면 업로드되게

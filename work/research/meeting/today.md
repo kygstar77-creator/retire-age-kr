@@ -11,6 +11,7 @@
 | F3 | calc-3 실업급여 3번 타일(라벨 상한/하한/상한 · 하한, 값 금액만·그 밖 '60%') + 320·375 캡처 3상태 → [디자인 검수 요청] | firemap-product-dev | 11:50 | dev 커밋 + 캡처 6장 + 타일 끝 여백 ≥4px | 열림(editor-web 08:47 통과) |
 | F4 | guidegate가 운영 빌드에서 돌았는지 — 09:1x [auto] 가이드 main 커밋의 Cloudflare 빌드 로그 확인(관문은 dev 13b2429에만, main 반영 필요) | firemap-improve | 11:50 | 로그 한 줄 인용, 경고면 대안 한 줄 | 열림 |
 | F5 | 채널 설명 /calc/salary 링크 | firemap-admin(결재함) | 12:30 | channels.list에 /calc/salary | 막힘(무인 YouTube 설명 쓰기 거부 10/1 07:59~) |
+- 착수: firemap-write 10:14 (F1 e1table1002)
 - 수익 0원(애드센스 심사중·쿠팡 0·유튜브 0) · 외부 세션 20·기기 10(growth 07:40) · coupang_click 3(전부 internal). 준수율 1/2(E-1 compare ✅ · 카페 190 편집 후 본문 바뀜 ❌).
 
 ## ★ 증명 기준 — 10/15 (사장님 10/01 23:55: 4개 중 3개를 무료 도구로 달성한 뒤에만 유료 구독 결재)
@@ -28,11 +29,14 @@
 - [지시] **firemap-improve**, 21:35: naverpost.py 발행·edit 직전 .edit.json 해시 대조 관문(다르면 거부) + 일부러 바꾼 묶음 거부 기록. 10/3: readcheck에 우리 영상 주소 예외·카페 영상 링크 카드 대기, review.md(8점) 없으면 ytlong·shortsdaily·naverpost 거절. 10/2: shortsdaily·롱폼 compete.md/compare.md 없으면 거절(이름 통일).
 - [지시] **firemap-improve**·**firemap-youtube-loop**: 롱폼 관문 = compare.md(경쟁 5+), 쇼츠 = cardshorts/<편>/compete.md. ytlong C1 하루 1편·쇼츠 하루 2 상한(X-YT-FREQ 오늘 시작, 관문은 그대로).
 - [요청] **firemap-write·firemap-improve** 오늘: 카페 187·189 본문 교체(고친 원고 editor/2026-10-02/cafe/187.txt·189.txt) — naverpost edit dry → edit-ok → --apply(하루 3편 상한). write 10:10 회차 재시도, 또 막히면 improve가 경로 원인 한 줄(기한 10:40).
+  착수: firemap-write 10:14
 - [지시] **firemap-write**: 카페 하루 8편(상한이지 할당 아님, 08~22시 짝수 시 :10), 발행은 naverpost.py cafe(cafeapi 중지), 제목 틀 A/B/C 섞기·직전 4편 같은 틀 3번째면 2위, 대기 묶음 2일치 미리, X-CAFE-VOL을 experiments-registry에 등록. 10/3: 묶음에 video.txt(영상 1개·같은 영상 하루 1글·영상 글은 하루의 1/3 이하·부탁 문구 금지).
 - [지시] **firemap-write·firemap-copywriter·firemap-editor·firemap-visual-designer**: 모든 카페 글 경쟁 5 조사·제목 8점·대표 이미지 1초 시험(표 캡처 금지·숫자 1개)·편집 통과·같은 틀 3번 금지. 카페 틀 v2 14:00(copywriter 제목 칸 완료, editor 편집 관문에 소제목 3~5·끝 FAQ·제목 칸 3줄 — editor 착수 09:15; divclub 1등 본문 2편 확인은 copywriter 12:40).
 - [지시] **firemap-youtube-loop·firemap-write**: 롱폼 1편 = 카페 긴 글 1편(롱폼 공개일에 소제목·표·그래프·출처·영상). 영상 약속은 promises.md에 (편·약속·글 주소·기한) 한 줄. A-1(SCOI0DP-l-s) 설명·고정 댓글 카페 주소를 firemap/187로 오늘 고침, E-1은 e1table1002 번호로 발행 직후.
 - [지시] **firemap-youtube-loop**: ① D-1 오늘 19:30 예약 유지(하루 롱폼 1편, 쿠팡 두 줄·대가성 첫 줄 설명, 새 업로드마다 설명란 쿠팡 줄·F2/금융 제외 규칙) ② A-1 판정 저녁(노출·CTR·시청 비율, v3 vs v5a 비교, 10/3 셋째 날 비교) ③ 퇴직금 쇼츠 GFoyIyBp9_c 계산기 유입 0 → 관련 동영상 대상 영상 or 프로필 링크 결정 decisions/log.md(10/3 21:00) ④ 매일 outliers·이슈 레이더(issue-radar.md)·topics.md ⑤ R2 롱폼 설명 계산기 링크 1개 ⑥ 롱폼 7편 주제 대기열·대본 2편.
 - [지시] **firemap-video-producer**: D-1 19:30 업로드 — script 바뀐 13문장(0~5장 8문장+6~9장) 재녹음 전 SO_NOLITE second_opinion '대본' 1회, 평균 8 미만·429면 렌더·관문까지만 하고 공개 보류 + [순돌이 검토]. 썸네일 = 17:00까지 8점 안, 없으면 최고안. 설명 desc_head.md + 쿠팡 두 줄, 화면 출처 꼬리표 3개. 모든 편 deess+치직·쉿소리 관문 필수.
+  - 착수: firemap-video-producer 10:15 (D-1 재심사→재녹음→렌더→관문)
+  - 진행: firemap-video-producer 10:19 — ① 대본 재심사 **통과**(gemini-3.7-flash 8.2 + 레드팀 8.2 = 8.2, review.md) ② 목소리: 1묶음 3문장 만든 뒤 TTS 하루 할당량 429(규칙 1, 모델 안 바꿈) → **남은 32문장은 16:00 초기화 뒤 PD 16:05 회차** ③ meta.json 초안(제목 1위·설명 desc_head+쿠팡 두 줄·출처·AI 음성·5문항·19:30·paid) — ytlong gate 남은 막힘 3개 = 챕터·목소리 32·영상 파일뿐. 쿠팡 링크 302 확인. 썸네일은 visual-designer 17:00 최종본으로 교체(임시 d1k).
 - [지시] **firemap-visual-designer**: D-1 썸네일 d1k 7.25 → 13:00 flash 재심사+GPT 웹 1회, 17:00까지 8점(1초 시험 3명 주제 맞힘·경쟁 5 비교판); E-1 썸네일 10/3 12:00까지(공개 중이라 e1a 유지 판단은 copywriter 결정 따름) · 공개 쇼츠 표지 교체 후보 3개(XzMCiAwQhAo·KiHLbeioWNg·P8Papm8Yxpw) · 쇼츠 2편 cover.png 17:00 1초 시험(firemap-shorts 제공).
 - [지시] **firemap-copywriter**: 쇼츠 3편(e1_micron_q4·e1_samsung_x·a1_1eok1y) compete.md 12:40 회차(공개 금지 전 필수), A-1 제목 19:30까지 유지 후 CTR 낮으면 2위, 대기 쇼츠 5편 48시간 뒤 중앙값 아래면 2위, E-2 titles.md 10/6 12:00(X-THUMB-2 B 문구), W-1 썸네일 두 줄 10/8 12:00, 쇼츠 14편 대기열.
 - [지시] **firemap-shorts**: a1_need100 공개 보류(제목 7.9<8) — 19:20 제목 재심사+쇼츠 틀 v2 적용 뒤 공개, e1_hynix_dd 제작 가능(19:20·다음 슬롯), 쇼츠 하루 2 상한. 표지 무인 교체 가능 여부 한 줄 확인.

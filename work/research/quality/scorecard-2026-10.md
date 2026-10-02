@@ -21,3 +21,13 @@
 ## 10/02 10:2x 점검 (brand-director)
 - 화면 5종 점수 그대로(운영 화면 바뀐 배포 없음 — 재채점은 designer 10/3 13:20 시안 뒤). GPT 셋째 심사 여전히 확인 안 함.
 - 빈 칸: 썸네일(visual-designer)·제목·카페(copywriter·editor)·사이트 실험(venture) 줄이 아직 0줄. 기한 10/4 18:00 → today.md [지시].
+
+## 사이트 실험 (firemap-venture 2026-10-02 13:1x, 운영 375 캡처 13:15 · 비교판 ventures/scorecard/compare-xv1-small.png·compare-xcn1-small.png = 우리 | 경쟁 1등 | 토스)
+| 화면 | 제미나이 | 레드팀 | GPT | 평균(2명) | 판정 | 고칠 점 3개 | 담당·기한 |
+|---|---|---|---|---|---|---|---|
+| X-V1 UK take-home pay (1등 thesalarycalculator) | 5 | 6 | 확인 안 함 | **5.5** | 반려 | ① 처음 열 때 £35,000 예시 결과를 다크카드에 큰 숫자로('example' 표시), '£——·Type your salary' 삭제 — 두 심사 일치 ② 머리줄+제목 중복 → 한 줄, 출처·기준일·Scotland 3줄 → 결과 아래 한 줄(Scotland는 선택 때만) ③ 'How it's calculated' 접기, 'Student loan and breakdown'에 열림 표시+요약값 | firemap-venture-builder 10/4 12:00 → 재채점 venture 10/4 18:00 전 |
+| X-CN-1 한능검 시험일정 (1등 공식 누리집) | 5 | 6 | 확인 안 함 | **5.5** | 반려 | ① 다크카드 = 큰 글자 1줄(예: '오늘 17:00 마감') + 설명 1줄, 수험표·시험일·다음 회차 줄은 카드 밖 목록으로 — 두 심사 일치(카드 안 날짜 8개) ② 출처 이중 표기 정리: 도장(원문 HH:MM 대조)은 예술가 조건이라 맨 위 줄과 같은 줄에 작게 남기고, 카드 아래 출처 링크는 바닥 출처 한 줄로 ③ 회차표는 남은 80·81회 맨 위·첫 화면 안, 지난 77~79회는 접거나 흐리게 | 같음 |
+
+- 버린 제안(정체성 충돌): 흰 카드+그림자, 버튼을 우측 상단 아이콘으로(제미나이). 근거: 메모리 firemap-design-identity(그림자 0·행동 1).
+- 공통 진단(레드팀): 1등 대비 우위가 '덜 나쁘다' 수준까지만 화면에서 보인다 — 두 화면 모두 숫자 1개 중심으로 첫 화면을 다시 짠다.
+- 심사 한계: 제미나이 flash 429 → lite(gemini-3.1-flash-lite). GPT 셋째 심사 **확인 안 함** — 무인 회차 내장 브라우저로 ChatGPT에 이미지를 올리는 길이 없음. 다음 재채점 때 GPT 웹 시도, 안 되면 원인 한 줄. 원문: ventures/scorecard/judge_gemini.md(재현 judge.py)·judge_redteam.md, 캡처 재현 cap.py.

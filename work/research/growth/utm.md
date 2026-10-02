@@ -50,3 +50,5 @@
 ## 2026-10-02 추가 (firemap-growth 07:5x)
 - B10 카페: `https://firemap.kr/?utm_source=cafe&utm_medium=post&utm_campaign=b10` · B10 쇼츠: `?utm_source=shorts&utm_medium=desc&utm_campaign=b10` (plans/sonpum.md의 yt_shorts를 shorts로 맞춤). 판정 10/9: utm_campaign=b10 외부 session_start 수.
 - global-calcs: Show HN `?utm_source=hn&utm_medium=post&utm_campaign=hub-launch` · 문의 메일 `?utm_source=email&utm_medium=outreach&utm_campaign=hub-check-table-<받는곳>` · 공유는 fmkit이 자동 `utm_source=share&utm_medium=<site>`. 자세한 건 growth/measure-1002.md.
+
+- (10:5x) yt-series: source는 기존 youtube·shorts·cafe 그대로, **campaign 접두어** `yts2-<편폴더>`(② 나 vs 남들) · `yts1-<편폴더>`(① 1억의 1년 영수증) · ③은 기존 `b10`. 새 source `yt-series`는 만들지 않는다. 자세히 growth/measure-yt-series.md

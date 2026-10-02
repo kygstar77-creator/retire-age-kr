@@ -601,3 +601,4 @@
 2026-10-02 10:40 · firemap-write · 완료: F1 e1table1002 카페 #191 발행(verify OK 2039자·사진5), E-1 약속 이행 · readcheck 지적 5건(표4·숫자과다2·제목숫자3·영상URL)은 편집 통과본 해시를 깨므로 --skip-read, 제목은 심사 8.3 통과본
 2026-10-02 10:40 · firemap-write · naverpost 카페 등록: '작업이 진행 중' 안내면 5초 뒤 재클릭(최대 6회) · 1차 실패 원인이 링크 카드 처리 중 등록이라 API가 안 나감
 2026-10-02 10:41 · firemap-write · 카페 187·189 본문 교체는 10/3로 미룸 · 하루 수정 상한 3편이 07시에 소진, 상한을 넘기지 않음(dry·edit-ok는 끝남)
+- 2026-10-02 10:46 · firemap-growth · yt-series 계측: utm 새 source(yt-series) 대신 campaign 접두어 yts2-/yts1-로 묶음(집계 쪼개짐 방지), 근거 growth/measure-yt-series.md · 오전 외부 22세션·x-cn-1 외부 0

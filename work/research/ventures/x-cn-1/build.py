@@ -95,8 +95,10 @@ def esc(s):
 def line_inner(L):
     if L['state'] == 'stale':
         return ''
-    after = f' · <span class="after">{esc(L["after"])}</span>' if L['after'] else ''
-    return f'<strong>{esc(L["main"])}</strong>{after} — <span class="stamp">{esc(L["stamp"])}</span>'
+    # 채점 10/2 고칠 점 ①②: 도장은 맨 위 작게, 큰 글자 1줄(main) + 설명 1줄(after)
+    k = f'<span class="kick">{esc(L["k"])}</span>' if L.get('k') else ''
+    d = f'<span class="after">{esc(L["d"])}</span>' if L.get('d') else ''
+    return f'<span class="stamp">{esc(L["stamp"])}</span>{k}<strong>{esc(L["b"])}</strong>{d}'
 
 
 # 편집 표시(.edit.json) 해시에서 빼는 자리: 매일 바뀌는 도장·대조 시각·맨 위 줄 계산값(<!--dyn-->…<!--/dyn-->, /*dyn*/…/*/dyn*/)과
@@ -184,12 +186,16 @@ def page(title, desc, path, body, extra_head='', noindex=False):
 
 def build_hnk(F, verified_at, now):
     L = node_line(F, verified_at, int(now.timestamp() * 1000))
-    rows = []
+    rows, past_rows = [], []   # 채점 10/2 고칠 점 ③: 남은 회차 위, 지난 회차는 접기 — 날짜 따라 행이 옮겨 가므로 dyn 자리(매일 빌드가 편집 해시를 깨지 않게)
     for r in F['rounds']:
         past = datetime.datetime.fromisoformat(r['result']).replace(tzinfo=KST) < now
-        rows.append(f'<tr{" class=past" if past else ""}><th scope="row">제{r["no"]}회</th>'
+        (past_rows if past else rows).append(f'<tr{" class=past" if past else ""}><th scope="row">제{r["no"]}회</th>'
                     f'<td>{mdd(r["apply"][0])}~{mdd(r["apply"][1])}</td>'
                     f'<td>{d_txt(r["exam"])}</td><td>{d_txt(r["result"])}</td></tr>')
+    thead = '<thead><tr><th scope="col">회차</th><th scope="col">원서접수</th><th scope="col">시험일</th><th scope="col">합격자발표</th></tr></thead>'
+    past_no = [r['no'] for r in F['rounds'] if datetime.datetime.fromisoformat(r['result']).replace(tzinfo=KST) < now]
+    past_box = (f'<details class="past"><summary>지난 회차(제{past_no[0]}~{past_no[-1]}회)</summary>'
+                f'<div class="tbl"><table>{thead}<tbody>{"".join(past_rows)}</tbody></table></div></details>') if past_no else ''
     detail = []
     for r in F['rounds']:
         if datetime.datetime.fromisoformat(r['result']).replace(tzinfo=KST) < now:
@@ -225,20 +231,20 @@ def build_hnk(F, verified_at, now):
     body = f'''<h1>한능검 시험일정 2026 — 제80·81회 남은 일정</h1>
 <div class="next" id="next" data-state="{L["state"]}">
 <p class="line" id="line">{dyn(line_inner(L))}</p>
-<p class="sub" id="sub">{dyn(esc(L.get("sub", "")))}</p>
 <div class="acts">
 <a class="btn primary" id="ics" href="hanneunggeom-2026.ics" download>캘린더에 넣기</a>
 <a class="btn primary official" id="offbtn" href="{esc(F["source_url"])}" rel="nofollow">공식 일정 확인하기</a>
 <button class="btn ghost" id="copy" type="button">링크 복사</button>
 </div>
 </div>
-<p class="src">출처: <a id="official" href="{esc(F["source_url"])}" rel="nofollow">{esc(F["org"])} 한국사능력검정시험 누리집 · 시험 일정</a></p>
+<p class="sub" id="sub">{dyn(esc(L.get("sub", "")))}</p>
 
 <h2>2026년 회차별 일정</h2>
 <div class="tbl"><table>
-<thead><tr><th scope="col">회차</th><th scope="col">원서접수</th><th scope="col">시험일</th><th scope="col">합격자발표</th></tr></thead>
-<tbody>{"".join(rows)}</tbody>
+{thead}
+<tbody>{dyn("".join(rows))}</tbody>
 </table></div>
+{dyn(past_box)}
 
 <h2>남은 회차 자세히</h2>
 {"".join(detail)}
@@ -247,7 +253,7 @@ def build_hnk(F, verified_at, now):
 <h2>공식 안내</h2>
 <ul class="notes">{notes}</ul>
 
-<p class="src">원문을 사람이 읽은 시각 {read.month}/{read.day} {read:%H:%M} · 원문과 자동 대조한 시각 {dyn(f"{ver.month}/{ver.day} {ver:%H:%M}" if ver else "없음")}. 대조가 하루를 넘기면 맨 위 줄은 공식 일정 링크로 바뀝니다.</p>
+<p class="src">출처: <a id="official" href="{esc(F["source_url"])}" rel="nofollow">{esc(F["org"])} 한국사능력검정시험 누리집 · 시험 일정</a> · 원문을 사람이 읽은 시각 {read.month}/{read.day} {read:%H:%M} · 원문과 자동 대조한 시각 {dyn(f"{ver.month}/{ver.day} {ver:%H:%M}" if ver else "없음")}. 대조가 하루를 넘기면 맨 위 줄은 공식 일정 링크로 바뀝니다.</p>
 <script>{nl}</script>
 <script src="../fmkit.js"></script>
 <script>
@@ -259,7 +265,7 @@ def build_hnk(F, verified_at, now):
   function e(s) {{ return String(s).replace(/[&<>"]/g, function (c) {{ return {{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c]; }}); }}
   box.setAttribute('data-state', L.state);
   p.innerHTML = L.state === 'stale' ? ''
-    : '<strong>' + e(L.main) + '</strong>' + (L.after ? ' · <span class="after">' + e(L.after) + '</span>' : '') + ' — <span class="stamp">' + e(L.stamp) + '</span>';
+    : '<span class="stamp">' + e(L.stamp) + '</span>' + (L.k ? '<span class="kick">' + e(L.k) + '</span>' : '') + '<strong>' + e(L.b) + '</strong>' + (L.d ? '<span class="after">' + e(L.d) + '</span>' : '');
   document.getElementById('sub').textContent = L.sub || '';
   var log = window.FMKit ? FMKit.log : function () {{}};
   if (window.FMKit) FMKit.init({{ site: 'x-cn-1', lang: 'ko', accent: '{ACCENT}' }});

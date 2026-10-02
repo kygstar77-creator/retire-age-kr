@@ -44,23 +44,29 @@
       else last = x;
     });
     var nextTxt = next ? '제' + next.no + '회 ' + next.kind + ' ' + md(next.s) + ' ' + hm(next.s) : '';
+    // 채점 10/2: 카드는 작은 머리(k) + 큰 글자 1줄(b) + 설명 1줄(d). 글자는 main·after와 같은 조각(새 문장 0)
+    var nk = next ? '제' + next.no + '회 ' + next.kind : '', nb = next ? md(next.s) + ' ' + hm(next.s) + (rel(next.s, now) ? '(' + rel(next.s, now) + ')' : '') : '';
     var r = { state: '', main: '', after: '', stamp: stamp, sub: sub(F, now) };
     if (open) {
       var rr = rel(open.e, now);
       r.state = 'open';
       r.main = '제' + open.no + '회 ' + open.kind + ' 중 · ' + md(open.e) + ' ' + hm(open.e) + ' 마감' + (rr ? '(' + rr + ')' : '');
       r.after = nextTxt ? '놓치면 다음: ' + nextTxt : '';
+      r.k = '제' + open.no + '회 ' + open.kind + ' 중'; r.b = md(open.e) + ' ' + hm(open.e) + ' 마감' + (rr ? '(' + rr + ')' : ''); r.d = r.after;
     } else if (last && next) {
       r.state = 'missed';
       r.main = '제' + last.no + '회 ' + last.kind + ' ' + md(last.e) + ' ' + hm(last.e) + ' 마감됨';
       r.after = '다음: ' + nextTxt + (rel(next.s, now) ? '(' + rel(next.s, now) + ')' : '');
+      r.k = '다음: ' + nk; r.b = nb; r.d = r.main;
     } else if (next) {
       r.state = 'upcoming';
       r.main = '다음: ' + nextTxt + (rel(next.s, now) ? '(' + rel(next.s, now) + ')' : '');
+      r.k = '다음: ' + nk; r.b = nb; r.d = '';
     } else {
       r.state = 'done';
       r.main = '2026년 접수 일정 모두 마감됨';
       r.after = '다음 해 일정은 ' + F.org + ' 공지를 확인하세요';
+      r.k = ''; r.b = r.main; r.d = r.after;
     }
     return r;
   }

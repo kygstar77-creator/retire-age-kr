@@ -31,10 +31,8 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--fs3)/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
 .wrap{max-width:560px;margin:0 auto;padding:0 16px 40px}
-header{display:flex;justify-content:space-between;align-items:center;height:48px}
-header a{color:var(--ink);text-decoration:none;font-weight:700;font-size:var(--fs4);display:inline-block;padding:12px 4px 12px 0;min-height:44px}
-.year{font-size:var(--fs5);font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:4px 10px}
-h1{font-size:var(--fs1);line-height:1.2;margin:8px 0 16px;letter-spacing:-.01em}
+h1{font-size:var(--fs2);line-height:1.25;margin:16px 0 12px;letter-spacing:-.01em}
+h1 a{color:inherit;text-decoration:none}
 .card{background:var(--card);border-radius:16px;padding:16px;margin:0 0 12px}
 label{display:block;font-size:var(--fs4);color:var(--sub);margin:0 0 8px}
 .row{display:flex;gap:8px}
@@ -64,7 +62,12 @@ table{width:100%;border-collapse:collapse;font-size:var(--fs4);font-variant-nume
 td,th{padding:10px 16px;border-top:1px solid var(--line);text-align:left;font-weight:400} td:last-child,th:last-child{text-align:right}
 #tbl td,#tbl th{padding:10px 8px;text-align:right}#tbl td:first-child,#tbl th:first-child{padding-left:16px;text-align:left}#tbl td:last-child,#tbl th:last-child{padding-right:16px}#tbl tr:first-child th{color:var(--sub);font-size:var(--fs5);border-top:0;padding-top:4px;padding-bottom:4px}#tbl tr:last-child th{font-weight:700}
 @media (max-width:360px){#tbl td,#tbl th{padding-left:4px;padding-right:4px}#tbl td:first-child,#tbl th:first-child{padding-left:12px}#tbl td:last-child,#tbl th:last-child{padding-right:12px}}
-.empty .big,.empty .next b{color:var(--dark-sub)}
+.ex{display:inline-block;font-size:var(--fs5);font-weight:700;color:var(--dark);background:var(--dark-sub);border-radius:999px;padding:1px 8px;margin-right:6px;vertical-align:1px}
+.scope{font-size:var(--fs5);color:var(--sub);margin:-4px 0 12px}
+summary{list-style:none;justify-content:space-between;gap:8px}summary::-webkit-details-marker{display:none}
+summary::after{content:'';flex:0 0 auto;width:8px;height:8px;border-right:2px solid var(--sub);border-bottom:2px solid var(--sub);transform:rotate(45deg);margin:-4px 4px 0 0;transition:transform .15s}
+details[open]>summary::after{transform:rotate(-135deg);margin-top:4px}
+.how{margin-top:20px}.how h2{font-size:var(--fs3);margin:0}.how>.opt h3:first-child{margin-top:4px}
 h2{font-size:var(--fs2);margin:32px 0 8px}
 h3{font-size:var(--fs3);margin:20px 0 4px}
 section p,section li{font-size:var(--fs4)}
@@ -79,9 +82,8 @@ footer a+a{margin-left:8px}
 </head>
 <body>
 <div class="wrap">
-  <header><a href="./">UK Take Home Pay</a><span class="year">2026/27</span></header>
   <main>
-  <h1>Take home pay calculator UK 2026/27</h1>
+  <h1><a href="./">Take home pay calculator UK 2026/27</a></h1>
 
   <div class="card">
     <label for="sal">Your salary</label>
@@ -92,16 +94,17 @@ footer a+a{margin-left:8px}
         <button type="button" data-p="12" aria-pressed="false">Month</button>
       </div>
     </div>
-    <p class="note" id="scope">England, Wales &amp; Northern Ireland · Scotland not supported yet · rates from GOV.UK, checked 1&nbsp;October&nbsp;2026</p>
   </div>
 
-  <section class="result empty" id="res" aria-live="polite">
-    <p class="k">Your take-home pay</p>
+  <section class="result" id="res" aria-live="polite">
+    <p class="k" id="kk"><span class="ex">Example</span>Take-home pay on £35,000</p>
     <p class="big" id="big">£—</p>
-    <p class="s" id="sub">Type your salary to see it</p>
+    <p class="s" id="sub">Type your salary to see yours</p>
     <div class="next"><span>Of your next £1,000, you keep</span><b id="nx">£—</b></div>
     <div class="trap" id="trap" hidden>You're in the £100,000–£125,140 band, where each extra £1,000 is taxed at an effective 60% (62% with National Insurance). <a href="60-percent-tax-trap/" id="trapLink">See the 60% band in detail</a></div>
   </section>
+
+  <p class="scope" id="scope">England, Wales &amp; NI only · GOV.UK rates, checked 1&nbsp;Oct&nbsp;2026</p>
 
   <button class="share" type="button" id="shareBtn" hidden>Share my result</button>
 
@@ -123,8 +126,7 @@ footer a+a{margin-left:8px}
   </details>
   </main>
 
-  <section>
-    <h2>How it's calculated</h2>
+  <details class="how" id="how"><summary><h2>How it's calculated</h2></summary><section class="opt">
     <p>Take-home pay is your salary minus Income Tax, employee National Insurance (category A) and any student loan repayments, worked out for a full tax year from 6 April 2026 to 5 April 2027 and divided by 12 for the monthly figure. It assumes the standard tax code (1257L) with no other income, benefits in kind or pension deductions.</p>
     <h3>Income Tax 2026/27 (England, Wales &amp; Northern Ireland)</h3>
     <div class="tbl"><table>
@@ -149,7 +151,7 @@ footer a+a{margin-left:8px}
       <tr><td>Postgraduate loan</td><td>£21,000 · 6%</td></tr>
     </table></div>
     <p class="src">Sources: <a href="https://www.gov.uk/income-tax-rates">GOV.UK Income Tax rates and Personal Allowances</a> · <a href="https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2026-to-2027">GOV.UK Rates and thresholds for employers 2026 to 2027</a>. Checked 1 October 2026. Contains public sector information licensed under the Open Government Licence v3.0.</p>
-  </section>
+  </section></details>
 
   <footer>
     <p>Estimate only, not tax advice. Scotland, self-employment, other tax codes, dividends and savings income are not covered. This is an independent tool and is not connected to HMRC or GOV.UK. Your exact salary stays in your browser. We only log anonymous usage, such as which salary band was checked.</p>
@@ -199,14 +201,17 @@ footer a+a{margin-left:8px}
   function run() {
     var v = +String(el('sal').value).replace(/[^0-9.]/g, '') * per, r = el('res');
     if (!(v > 0) || v > 10000000) {
-      last = null; r.classList.add('empty');
-      el('big').textContent = '£—'; el('sub').textContent = 'Type your salary to see it'; el('nx').textContent = '£—';
+      // 빈 칸이면 £35,000 예시를 다크카드에(공유·측정 없음) — 채점 10/2 고칠 점 ①
+      last = null; var e = calc(35000, el('plan').value, el('pg').value === '1'), e2 = calc(36000, el('plan').value, el('pg').value === '1');
+      el('kk').innerHTML = '<span class="ex">Example</span>Take-home pay on £35,000';
+      el('big').innerHTML = f(e.net / 12) + ' <small>a month</small>'; FMKit.fitText(el('big'), 24);
+      el('sub').textContent = 'Type your salary to see yours'; el('nx').textContent = f(e2.net - e.net);
       el('trap').hidden = true; el('shareBtn').hidden = true; el('tbl').innerHTML = ''; el('tblNote').hidden = true; return;
     }
     var plan = el('plan').value, pg = el('pg').value === '1';
     var a = calc(v, plan, pg), b = calc(v + 1000, plan, pg);
     last = { g: v, a: a };
-    r.classList.remove('empty');
+    el('kk').textContent = 'Your take-home pay';
     el('big').innerHTML = f(a.net / 12) + ' <small>a month</small>';
     FMKit.fitText(el('big'), 24);
     el('sub').textContent = f(a.net) + ' a year after tax';
@@ -246,6 +251,7 @@ footer a+a{margin-left:8px}
   });
   el('trapLink').addEventListener('click', function () { FMKit.log('trap_click'); });
   el('more').addEventListener('toggle', function () { if (this.open) FMKit.log('details_open'); });
+  el('how').addEventListener('toggle', function () { if (this.open) FMKit.log('how_open'); });
   el('shareBtn').addEventListener('click', function () {
     if (!last) return;
     var a = last.a, g = last.g, cost = a.tax + a.ni;
@@ -263,7 +269,7 @@ footer a+a{margin-left:8px}
     });
   });
   var q = new URLSearchParams(location.hash.slice(1)).get('s');
-  if (q) { el('sal').value = q; el('sal').dispatchEvent(new Event('input')); }
+  if (q) { el('sal').value = q; el('sal').dispatchEvent(new Event('input')); } else run();
 })();
 </script>
 </body>

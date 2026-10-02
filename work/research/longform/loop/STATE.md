@@ -1,4 +1,5 @@
 # 진행 상태 (루프가 매 회차 맨 위에 한 줄씩 추가)
+- 2026-10-03 05:07 [루프 04:43 회차] 롱폼 비축 R-1 '1억의 1년 영수증'(X-SERIES-1 ①) 대본 v4: analysis·compare 5·facts(ECOS 기준금리·신규 예금·CPI·환율 + finlife 359상품 + 법령 원문 8조 + SPY·SCHD·GLD 1년)·심사 3명 v3 7.4 통과 → slots reserve.long=R-1, editor·copywriter·visual·PD에 요청 · 판단: 예금만 다루려다 시리즈 기획(예술가 B-3 영수증 틀)대로 4자산 비교로 넓힘, 원문 없는 두 줄은 빈 줄 · 실수: ytdemand 경로 치환 실패로 ep/N-1/yt_top.json 덮임(커밋 안 함, 되돌리기 권한 막힘) · 다음: E-1·D-1 48h 기준선·노출 보고서, A-1 판정, R-1 운용사 대조
 - 2026-10-03 02:31 [PD] N-1 화면 먼저 끝냄(TTS 한도 16:00 전): video/src/N1.tsx 17종 + parts/rank.tsx + ep/N-1/n1props.py(원자료·facts 기계 대조 통과) · 스틸 68장 검사·9곳 고침(video/out/n1_stills_0330) · 16:05엔 E-2 목소리 26 → N-1 편집 통과 확인 → 목소리 46 → `py -3.12 research/longform/ep/N-1/n1props.py` → 렌더 → deess·motioncheck → gate → 10/4 19:30 예약
 - 2026-10-03 02:17 [PD] N-1 제작 시작(화면 먼저 — TTS 한도 16:00 초기화 전)
 - 2026-10-03 00:47 [루프 00:43 회차·사용량 절약] 롱폼 48시간 기준선 X-SERIES-1 ③ 기입(7편 중앙 15 / 새 틀 A-1 452 — 판정은 새 틀 값) · study/2026-10-03.md(우리 성과만) · 퇴직금 쇼츠 관련 동영상=D-1 결정(Y-REL1 채팅 세션) · **E-1 42시간 2회·D-1 1회 이상 신호 알림** · 판단: 경쟁 검색·ytbreak은 주간 한도 85%라 생략 · 다음: 롱폼 비축 1편(reserve.long 0), 10/4 E-1·D-1 48h로 기준선 갱신, 노출 보고서로 E-1 원인

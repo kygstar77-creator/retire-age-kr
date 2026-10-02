@@ -1,0 +1,4042 @@
+{
+ "SPY_px": [
+  {
+   "symbol": "SPY",
+   "date": "2026-10-02",
+   "price": 769.56,
+   "volume": 36521171
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-10-01",
+   "price": 763.99,
+   "volume": 47708058
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-30",
+   "price": 762.63,
+   "volume": 62110041
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-29",
+   "price": 764.2,
+   "volume": 36910546
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-28",
+   "price": 765.61,
+   "volume": 42694500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-25",
+   "price": 771.35,
+   "volume": 36666734
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-24",
+   "price": 767.18,
+   "volume": 43983700
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-23",
+   "price": 767.81,
+   "volume": 54931700
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-22",
+   "price": 773.38,
+   "volume": 34802336
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-21",
+   "price": 773.5,
+   "volume": 50484700
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-18",
+   "price": 761.69,
+   "volume": 65395148
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-17",
+   "price": 762.6,
+   "volume": 49652800
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-16",
+   "price": 754.05,
+   "volume": 59217700
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-15",
+   "price": 757.39,
+   "volume": 46195000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-14",
+   "price": 760.88,
+   "volume": 43992428
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-11",
+   "price": 764.29,
+   "volume": 45512741
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-10",
+   "price": 757.83,
+   "volume": 42740400
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-09",
+   "price": 762.4,
+   "volume": 32812411
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-08",
+   "price": 765.96,
+   "volume": 44746100
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-04",
+   "price": 770.19,
+   "volume": 34054200
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-03",
+   "price": 773.17,
+   "volume": 43531600
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-02",
+   "price": 765.16,
+   "volume": 29566216
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-09-01",
+   "price": 761.78,
+   "volume": 41126315
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-31",
+   "price": 767.05,
+   "volume": 38810800
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-28",
+   "price": 769.35,
+   "volume": 36744344
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-27",
+   "price": 771.1,
+   "volume": 34557100
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-26",
+   "price": 766.08,
+   "volume": 28751600
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-25",
+   "price": 765.91,
+   "volume": 27422300
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-24",
+   "price": 763.47,
+   "volume": 32430900
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-21",
+   "price": 765.72,
+   "volume": 39188700
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-20",
+   "price": 762.6,
+   "volume": 45520302
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-19",
+   "price": 769.06,
+   "volume": 40306023
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-18",
+   "price": 767.45,
+   "volume": 43920908
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-17",
+   "price": 772.67,
+   "volume": 34356600
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-14",
+   "price": 776.34,
+   "volume": 31367913
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-13",
+   "price": 777.88,
+   "volume": 35634500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-12",
+   "price": 772.49,
+   "volume": 33179126
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-11",
+   "price": 770.56,
+   "volume": 36740600
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-10",
+   "price": 773.03,
+   "volume": 39249500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-07",
+   "price": 773.26,
+   "volume": 43586333
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-06",
+   "price": 768.56,
+   "volume": 38416900
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-05",
+   "price": 769.79,
+   "volume": 44689100
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-04",
+   "price": 771.33,
+   "volume": 69154800
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-08-03",
+   "price": 757.67,
+   "volume": 59927538
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-31",
+   "price": 747.03,
+   "volume": 62445900
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-30",
+   "price": 741.69,
+   "volume": 66811300
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-29",
+   "price": 729.46,
+   "volume": 70697215
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-28",
+   "price": 740.86,
+   "volume": 47322247
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-27",
+   "price": 739.09,
+   "volume": 41461200
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-24",
+   "price": 738.93,
+   "volume": 44782000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-23",
+   "price": 738.18,
+   "volume": 55437332
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-22",
+   "price": 747.41,
+   "volume": 32836200
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-21",
+   "price": 748.28,
+   "volume": 34324300
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-20",
+   "price": 742.09,
+   "volume": 50422324
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-17",
+   "price": 743.29,
+   "volume": 62651000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-16",
+   "price": 750.72,
+   "volume": 46409814
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-15",
+   "price": 754.81,
+   "volume": 43844800
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-14",
+   "price": 751.83,
+   "volume": 35143138
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-13",
+   "price": 749.17,
+   "volume": 44013628
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-10",
+   "price": 754.95,
+   "volume": 42191313
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-09",
+   "price": 751.71,
+   "volume": 41441718
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-08",
+   "price": 745.4,
+   "volume": 43767400
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-07",
+   "price": 747.71,
+   "volume": 43721500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-06",
+   "price": 751.28,
+   "volume": 50673310
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-02",
+   "price": 744.78,
+   "volume": 57505953
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-07-01",
+   "price": 745.76,
+   "volume": 47100900
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-30",
+   "price": 746.77,
+   "volume": 55626035
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-29",
+   "price": 741,
+   "volume": 58035228
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-26",
+   "price": 728.99,
+   "volume": 71034000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-25",
+   "price": 734.3,
+   "volume": 54128100
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-24",
+   "price": 733.24,
+   "volume": 57439507
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-23",
+   "price": 733.58,
+   "volume": 66846800
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-22",
+   "price": 744.39,
+   "volume": 46628100
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-18",
+   "price": 746.74,
+   "volume": 80875700
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-17",
+   "price": 740.96,
+   "volume": 85945227
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-16",
+   "price": 750.33,
+   "volume": 67093142
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-15",
+   "price": 754.83,
+   "volume": 60176425
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-12",
+   "price": 741.75,
+   "volume": 57079533
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-11",
+   "price": 737.76,
+   "volume": 86330522
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-10",
+   "price": 725.43,
+   "volume": 60341349
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-09",
+   "price": 737.05,
+   "volume": 87683517
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-08",
+   "price": 739.22,
+   "volume": 49319144
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-05",
+   "price": 737.55,
+   "volume": 93989416
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-04",
+   "price": 757.09,
+   "volume": 49923036
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-03",
+   "price": 754.24,
+   "volume": 51402518
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-02",
+   "price": 759.57,
+   "volume": 31581900
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-01",
+   "price": 758.54,
+   "volume": 43634933
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-29",
+   "price": 756.48,
+   "volume": 55075739
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-28",
+   "price": 754.6,
+   "volume": 41562600
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-27",
+   "price": 750.46,
+   "volume": 42106300
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-26",
+   "price": 750.59,
+   "volume": 41123621
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-22",
+   "price": 745.64,
+   "volume": 41762006
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-21",
+   "price": 742.72,
+   "volume": 43332225
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-20",
+   "price": 741.25,
+   "volume": 45768035
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-19",
+   "price": 733.73,
+   "volume": 54255913
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-18",
+   "price": 738.65,
+   "volume": 47843900
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-15",
+   "price": 739.17,
+   "volume": 60410800
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-14",
+   "price": 748.17,
+   "volume": 45307603
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-13",
+   "price": 742.31,
+   "volume": 44200203
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-12",
+   "price": 738.18,
+   "volume": 54185300
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-11",
+   "price": 739.3,
+   "volume": 44024000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-08",
+   "price": 737.62,
+   "volume": 47227100
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-07",
+   "price": 731.58,
+   "volume": 51724642
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-06",
+   "price": 733.83,
+   "volume": 53288940
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-05",
+   "price": 723.77,
+   "volume": 36933226
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-04",
+   "price": 718.01,
+   "volume": 51950600
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-05-01",
+   "price": 720.65,
+   "volume": 43049849
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-30",
+   "price": 718.66,
+   "volume": 67240949
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-29",
+   "price": 711.58,
+   "volume": 41859227
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-28",
+   "price": 711.69,
+   "volume": 43117436
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-27",
+   "price": 715.17,
+   "volume": 33135943
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-24",
+   "price": 713.94,
+   "volume": 45182000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-23",
+   "price": 708.45,
+   "volume": 56174000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-22",
+   "price": 711.21,
+   "volume": 42518500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-21",
+   "price": 704.08,
+   "volume": 58941400
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-20",
+   "price": 708.72,
+   "volume": 43546812
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-17",
+   "price": 710.14,
+   "volume": 70661926
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-16",
+   "price": 701.66,
+   "volume": 49972400
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-15",
+   "price": 699.94,
+   "volume": 58240400
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-14",
+   "price": 694.46,
+   "volume": 63480529
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-13",
+   "price": 686.1,
+   "volume": 54185819
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-10",
+   "price": 679.46,
+   "volume": 42253500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-09",
+   "price": 679.91,
+   "volume": 57134445
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-08",
+   "price": 676.01,
+   "volume": 93606114
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-07",
+   "price": 659.22,
+   "volume": 69980400
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-06",
+   "price": 658.93,
+   "volume": 39105800
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-02",
+   "price": 655.83,
+   "volume": 68358713
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-04-01",
+   "price": 655.24,
+   "volume": 97841500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-31",
+   "price": 650.34,
+   "volume": 152534103
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-30",
+   "price": 631.97,
+   "volume": 99275900
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-27",
+   "price": 634.09,
+   "volume": 103649400
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-26",
+   "price": 645.09,
+   "volume": 96494400
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-25",
+   "price": 656.82,
+   "volume": 90653800
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-24",
+   "price": 653.18,
+   "volume": 96457500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-23",
+   "price": 655.38,
+   "volume": 134802732
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-20",
+   "price": 648.57,
+   "volume": 163617523
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-19",
+   "price": 659.8,
+   "volume": 111272539
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-18",
+   "price": 661.43,
+   "volume": 82062600
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-17",
+   "price": 670.79,
+   "volume": 87128044
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-16",
+   "price": 669.03,
+   "volume": 82023130
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-13",
+   "price": 662.29,
+   "volume": 97200242
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-12",
+   "price": 666.06,
+   "volume": 108882246
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-11",
+   "price": 676.33,
+   "volume": 68441700
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-10",
+   "price": 677.18,
+   "volume": 81505315
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-09",
+   "price": 678.27,
+   "volume": 102667711
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-06",
+   "price": 672.38,
+   "volume": 100687000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-05",
+   "price": 681.31,
+   "volume": 106606500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-04",
+   "price": 685.13,
+   "volume": 79182244
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-03",
+   "price": 680.33,
+   "volume": 105003113
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-02",
+   "price": 686.38,
+   "volume": 87477200
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-27",
+   "price": 685.99,
+   "volume": 83308900
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-26",
+   "price": 689.3,
+   "volume": 71671000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-25",
+   "price": 693.15,
+   "volume": 56369500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-24",
+   "price": 687.35,
+   "volume": 73798727
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-23",
+   "price": 682.39,
+   "volume": 90558100
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-20",
+   "price": 689.43,
+   "volume": 100034000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-19",
+   "price": 684.48,
+   "volume": 58649400
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-18",
+   "price": 686.29,
+   "volume": 73570341
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-17",
+   "price": 682.85,
+   "volume": 81354700
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-13",
+   "price": 681.75,
+   "volume": 96267500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-12",
+   "price": 681.27,
+   "volume": 118829000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-11",
+   "price": 691.96,
+   "volume": 76353900
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-10",
+   "price": 692.12,
+   "volume": 65185725
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-09",
+   "price": 693.95,
+   "volume": 73885200
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-06",
+   "price": 690.62,
+   "volume": 89127600
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-05",
+   "price": 677.62,
+   "volume": 113610812
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-04",
+   "price": 686.19,
+   "volume": 105204600
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-03",
+   "price": 689.53,
+   "volume": 107904611
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-02-02",
+   "price": 695.41,
+   "volume": 79286521
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-30",
+   "price": 691.97,
+   "volume": 101835131
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-29",
+   "price": 694.04,
+   "volume": 97486200
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-28",
+   "price": 695.42,
+   "volume": 61172200
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-27",
+   "price": 695.49,
+   "volume": 55506147
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-26",
+   "price": 692.73,
+   "volume": 60473813
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-23",
+   "price": 689.23,
+   "volume": 63059600
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-22",
+   "price": 688.98,
+   "volume": 77112243
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-21",
+   "price": 685.4,
+   "volume": 127844500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-20",
+   "price": 677.58,
+   "volume": 111623300
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-16",
+   "price": 691.66,
+   "volume": 79289200
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-15",
+   "price": 692.24,
+   "volume": 77862000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-14",
+   "price": 690.36,
+   "volume": 94676700
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-13",
+   "price": 693.77,
+   "volume": 78309726
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-12",
+   "price": 695.16,
+   "volume": 63976002
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-09",
+   "price": 694.07,
+   "volume": 80125500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-08",
+   "price": 689.51,
+   "volume": 64019200
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-07",
+   "price": 689.58,
+   "volume": 75588337
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-06",
+   "price": 691.81,
+   "volume": 69273827
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-05",
+   "price": 687.72,
+   "volume": 71927200
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-01-02",
+   "price": 683.17,
+   "volume": 89377203
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-31",
+   "price": 681.92,
+   "volume": 74144801
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-30",
+   "price": 687.01,
+   "volume": 47160700
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-29",
+   "price": 687.85,
+   "volume": 62559503
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-26",
+   "price": 690.31,
+   "volume": 41613347
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-24",
+   "price": 690.38,
+   "volume": 39445600
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-23",
+   "price": 687.96,
+   "volume": 64840000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-22",
+   "price": 684.83,
+   "volume": 69556733
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-19",
+   "price": 680.59,
+   "volume": 103599543
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-18",
+   "price": 676.47,
+   "volume": 108650128
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-17",
+   "price": 671.4,
+   "volume": 110625200
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-16",
+   "price": 678.87,
+   "volume": 122030631
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-15",
+   "price": 680.73,
+   "volume": 90811000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-12",
+   "price": 681.76,
+   "volume": 113160347
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-11",
+   "price": 689.17,
+   "volume": 86173700
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-10",
+   "price": 687.57,
+   "volume": 85671334
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-09",
+   "price": 683.04,
+   "volume": 58310100
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-08",
+   "price": 683.63,
+   "volume": 55231500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-05",
+   "price": 685.69,
+   "volume": 79241045
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-04",
+   "price": 684.39,
+   "volume": 61970336
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-03",
+   "price": 683.89,
+   "volume": 57238500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-02",
+   "price": 681.53,
+   "volume": 62953844
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-01",
+   "price": 680.27,
+   "volume": 61201200
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-28",
+   "price": 683.39,
+   "volume": 49212030
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-26",
+   "price": 679.68,
+   "volume": 71879600
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-25",
+   "price": 675.02,
+   "volume": 81077100
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-24",
+   "price": 668.73,
+   "volume": 80437940
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-21",
+   "price": 659.03,
+   "volume": 123956203
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-20",
+   "price": 652.53,
+   "volume": 165293521
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-19",
+   "price": 662.63,
+   "volume": 94703000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-18",
+   "price": 660.08,
+   "volume": 114467500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-17",
+   "price": 665.67,
+   "volume": 90456105
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-14",
+   "price": 671.93,
+   "volume": 96846700
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-13",
+   "price": 672.04,
+   "volume": 103457800
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-12",
+   "price": 683.38,
+   "volume": 62312500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-11",
+   "price": 683,
+   "volume": 58953400
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-10",
+   "price": 681.44,
+   "volume": 75842900
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-07",
+   "price": 670.97,
+   "volume": 100592443
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-06",
+   "price": 670.31,
+   "volume": 85035300
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-05",
+   "price": 677.58,
+   "volume": 74402400
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-04",
+   "price": 675.24,
+   "volume": 78427000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-11-03",
+   "price": 683.34,
+   "volume": 57315025
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-31",
+   "price": 682.06,
+   "volume": 87164122
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-30",
+   "price": 679.83,
+   "volume": 76335800
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-29",
+   "price": 687.39,
+   "volume": 85657100
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-28",
+   "price": 687.06,
+   "volume": 61738100
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-27",
+   "price": 685.24,
+   "volume": 63339800
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-24",
+   "price": 677.25,
+   "volume": 74356527
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-23",
+   "price": 671.76,
+   "volume": 65604500
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-22",
+   "price": 667.8,
+   "volume": 80564006
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-21",
+   "price": 671.29,
+   "volume": 56249034
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-20",
+   "price": 671.3,
+   "volume": 60493400
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-17",
+   "price": 664.39,
+   "volume": 96500900
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-16",
+   "price": 660.64,
+   "volume": 110563346
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-15",
+   "price": 665.17,
+   "volume": 81702600
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-14",
+   "price": 662.23,
+   "volume": 88779600
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-13",
+   "price": 663.04,
+   "volume": 79560517
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-10",
+   "price": 653.02,
+   "volume": 159422600
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-09",
+   "price": 671.16,
+   "volume": 66501941
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-08",
+   "price": 673.11,
+   "volume": 60702241
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-07",
+   "price": 669.12,
+   "volume": 72020100
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-06",
+   "price": 671.61,
+   "volume": 54623300
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-03",
+   "price": 669.21,
+   "volume": 70494400
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-02",
+   "price": 669.22,
+   "volume": 56896000
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-10-01",
+   "price": 668.45,
+   "volume": 72545400
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-09-30",
+   "price": 666.18,
+   "volume": 94151106
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-09-29",
+   "price": 663.68,
+   "volume": 73499015
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-09-26",
+   "price": 661.82,
+   "volume": 69179209
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-09-25",
+   "price": 658.05,
+   "volume": 89622100
+  }
+ ],
+ "SPY_div": [
+  {
+   "symbol": "SPY",
+   "date": "2026-09-18",
+   "recordDate": "2026-09-18",
+   "paymentDate": "2026-10-30",
+   "declarationDate": "2026-01-02",
+   "adjDividend": 1.88883,
+   "dividend": 1.88883,
+   "yield": 0.9955126101169767,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-06-18",
+   "recordDate": "2026-06-18",
+   "paymentDate": "2026-07-31",
+   "declarationDate": "2026-01-02",
+   "adjDividend": 1.90352,
+   "dividend": 1.90352,
+   "yield": 1.0077135281356295,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2026-03-20",
+   "recordDate": "2026-03-20",
+   "paymentDate": "2026-04-30",
+   "declarationDate": "2026-01-02",
+   "adjDividend": 1.797,
+   "dividend": 1.797,
+   "yield": 1.1382888508564997,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-12-19",
+   "recordDate": "2025-12-19",
+   "paymentDate": "2026-01-30",
+   "declarationDate": "2025-01-09",
+   "adjDividend": 1.99337,
+   "dividend": 1.99337,
+   "yield": 1.0698261802259805,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-09-19",
+   "recordDate": "2025-09-19",
+   "paymentDate": "2025-10-31",
+   "declarationDate": "2025-01-09",
+   "adjDividend": 1.83111,
+   "dividend": 1.83111,
+   "yield": 1.0928597257797195,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-06-20",
+   "recordDate": "2025-06-20",
+   "paymentDate": "2025-07-31",
+   "declarationDate": "2025-01-09",
+   "adjDividend": 1.76112,
+   "dividend": 1.76112,
+   "yield": 1.2061200107693344,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2025-03-21",
+   "recordDate": "2025-03-21",
+   "paymentDate": "2025-04-30",
+   "declarationDate": "2025-01-09",
+   "adjDividend": 1.69553,
+   "dividend": 1.69553,
+   "yield": 1.2705468279016985,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2024-12-20",
+   "recordDate": "2024-12-20",
+   "paymentDate": "2025-01-31",
+   "declarationDate": "2024-01-05",
+   "adjDividend": 1.96555,
+   "dividend": 1.96555,
+   "yield": 1.1951349065381038,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2024-09-20",
+   "recordDate": "2024-09-20",
+   "paymentDate": "2024-10-31",
+   "declarationDate": "2024-01-05",
+   "adjDividend": 1.74553,
+   "dividend": 1.74553,
+   "yield": 1.232830620325561,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2024-06-21",
+   "recordDate": "2024-06-21",
+   "paymentDate": "2024-07-31",
+   "declarationDate": "2024-01-05",
+   "adjDividend": 1.75902,
+   "dividend": 1.75902,
+   "yield": 1.2567629611944682,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2024-03-15",
+   "recordDate": "2024-03-18",
+   "paymentDate": "2024-04-30",
+   "declarationDate": "2024-01-05",
+   "adjDividend": 1.59494,
+   "dividend": 1.59494,
+   "yield": 1.3185865876860916,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2023-12-15",
+   "recordDate": "2023-12-18",
+   "paymentDate": "2024-01-31",
+   "declarationDate": "2023-01-19",
+   "adjDividend": 1.90607,
+   "dividend": 1.90607,
+   "yield": 1.4134638740331962,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2023-09-15",
+   "recordDate": "2023-09-18",
+   "paymentDate": "2023-10-31",
+   "declarationDate": "2023-01-19",
+   "adjDividend": 1.58317,
+   "dividend": 1.58317,
+   "yield": 1.468105645397749,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2023-06-16",
+   "recordDate": "2023-06-20",
+   "paymentDate": "2023-07-31",
+   "declarationDate": "2023-01-19",
+   "adjDividend": 1.63837,
+   "dividend": 1.63837,
+   "yield": 1.4841783097437764,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2023-03-17",
+   "recordDate": "2023-03-20",
+   "paymentDate": "2023-04-28",
+   "declarationDate": "2023-01-19",
+   "adjDividend": 1.5062,
+   "dividend": 1.5062,
+   "yield": 1.6566758122003127,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2022-12-16",
+   "recordDate": "2022-12-19",
+   "paymentDate": "2023-01-31",
+   "declarationDate": "2022-01-24",
+   "adjDividend": 1.7814,
+   "dividend": 1.781,
+   "yield": 1.6491455109974695,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2022-09-16",
+   "recordDate": "2022-09-19",
+   "paymentDate": "2022-10-31",
+   "declarationDate": "2022-01-24",
+   "adjDividend": 1.5964,
+   "dividend": 1.596,
+   "yield": 1.6008610851748106,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2022-06-17",
+   "recordDate": "2022-06-21",
+   "paymentDate": "2022-07-29",
+   "declarationDate": "2022-01-24",
+   "adjDividend": 1.57687,
+   "dividend": 1.577,
+   "yield": 1.6410648882086043,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2022-03-18",
+   "recordDate": "2022-03-21",
+   "paymentDate": "2022-04-29",
+   "declarationDate": "2022-01-24",
+   "adjDividend": 1.36601,
+   "dividend": 1.366,
+   "yield": 1.3054553225951588,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2021-12-17",
+   "recordDate": "2021-12-20",
+   "paymentDate": "2022-01-31",
+   "declarationDate": "2021-01-22",
+   "adjDividend": 1.633,
+   "dividend": 1.636,
+   "yield": 1.2426968491095307,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2021-09-17",
+   "recordDate": "2021-09-20",
+   "paymentDate": "2021-10-29",
+   "declarationDate": "2021-09-16",
+   "adjDividend": 1.42812,
+   "dividend": 1.428,
+   "yield": 1.2826891708201178,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2021-06-18",
+   "recordDate": "2021-06-21",
+   "paymentDate": "2021-07-30",
+   "declarationDate": "2021-01-22",
+   "adjDividend": 1.37588,
+   "dividend": 1.376,
+   "yield": 1.3431239757061602,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2021-03-19",
+   "recordDate": "2021-03-22",
+   "paymentDate": "2021-04-30",
+   "declarationDate": "2021-01-22",
+   "adjDividend": 1.27779,
+   "dividend": 1.278,
+   "yield": 1.4283788641265276,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2020-12-18",
+   "recordDate": "2020-12-21",
+   "paymentDate": "2021-01-29",
+   "declarationDate": "2020-01-16",
+   "adjDividend": 1.58,
+   "dividend": 1.58,
+   "yield": 1.5415298770247574,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2020-09-18",
+   "recordDate": "2020-09-21",
+   "paymentDate": "2020-10-30",
+   "declarationDate": "2020-01-16",
+   "adjDividend": 1.33922,
+   "dividend": 1.339,
+   "yield": 1.7181339785271434,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2020-06-19",
+   "recordDate": "2020-06-22",
+   "paymentDate": "2020-07-31",
+   "declarationDate": "2020-01-16",
+   "adjDividend": 1.36624,
+   "dividend": 1.366,
+   "yield": 1.8550447122861586,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2020-03-20",
+   "recordDate": "2020-03-23",
+   "paymentDate": "2020-04-30",
+   "declarationDate": "2020-01-16",
+   "adjDividend": 1.40556,
+   "dividend": 1.406,
+   "yield": 2.530948426573427,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2019-12-20",
+   "recordDate": "2019-12-23",
+   "paymentDate": "2020-01-31",
+   "declarationDate": "2019-01-10",
+   "adjDividend": 1.56999,
+   "dividend": 1.57,
+   "yield": 1.7517444579552894,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2019-09-20",
+   "recordDate": "2019-09-23",
+   "paymentDate": "2019-10-31",
+   "declarationDate": "2019-01-10",
+   "adjDividend": 1.38362,
+   "dividend": 1.384,
+   "yield": 1.838477269679496,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2019-06-21",
+   "recordDate": "2019-06-24",
+   "paymentDate": "2019-07-31",
+   "declarationDate": "2019-01-10",
+   "adjDividend": 1.43164,
+   "dividend": 1.432,
+   "yield": 1.8444897959183675,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2019-03-15",
+   "recordDate": "2019-03-18",
+   "paymentDate": "2019-04-30",
+   "declarationDate": "2019-01-10",
+   "adjDividend": 1.23312,
+   "dividend": 1.233,
+   "yield": 1.861551313497565,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2018-12-21",
+   "recordDate": "2018-12-24",
+   "paymentDate": "2019-01-31",
+   "declarationDate": "2018-01-10",
+   "adjDividend": 1.43543,
+   "dividend": 1.435,
+   "yield": 2.1189821354383054,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2018-09-21",
+   "recordDate": "2018-09-24",
+   "paymentDate": "2018-10-31",
+   "declarationDate": "2018-01-10",
+   "adjDividend": 1.32261,
+   "dividend": 1.323,
+   "yield": 1.717966368711257,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2018-06-15",
+   "recordDate": "2018-06-18",
+   "paymentDate": "2018-07-31",
+   "declarationDate": "2018-06-14",
+   "adjDividend": 1.24557,
+   "dividend": 1.246,
+   "yield": 1.778317035326381,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2018-03-16",
+   "recordDate": "2018-03-19",
+   "paymentDate": "2018-04-30",
+   "declarationDate": "2018-01-10",
+   "adjDividend": 1.09678,
+   "dividend": 1.097,
+   "yield": 1.7745404814004377,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2017-12-15",
+   "recordDate": "2017-12-18",
+   "paymentDate": "2018-01-31",
+   "declarationDate": "2017-12-14",
+   "adjDividend": 1.35133,
+   "dividend": 1.351,
+   "yield": 1.8018573411879482,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2017-09-15",
+   "recordDate": "2017-09-18",
+   "paymentDate": "2017-10-31",
+   "declarationDate": "2017-09-14",
+   "adjDividend": 1.23457,
+   "dividend": 1.235,
+   "yield": 1.9181347566114209,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2017-06-16",
+   "recordDate": "2017-06-20",
+   "paymentDate": "2017-07-31",
+   "declarationDate": "2017-06-16",
+   "adjDividend": 1.18311,
+   "dividend": 1.183,
+   "yield": 1.9070351137487638,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2017-03-17",
+   "recordDate": "2017-03-21",
+   "paymentDate": "2017-04-28",
+   "declarationDate": "",
+   "adjDividend": 1.03312,
+   "dividend": 1.033,
+   "yield": 1.9078260135847784,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2016-12-16",
+   "recordDate": "2016-12-20",
+   "paymentDate": "2017-01-31",
+   "declarationDate": "",
+   "adjDividend": 1.329,
+   "dividend": 1.329,
+   "yield": 2.016974760042659,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2016-09-16",
+   "recordDate": "2016-09-20",
+   "paymentDate": "2016-10-31",
+   "declarationDate": "",
+   "adjDividend": 1.082,
+   "dividend": 1.082,
+   "yield": 2.072456296574026,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2016-06-17",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 1.078,
+   "dividend": 1.078,
+   "yield": 2.1174704629091607,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2016-03-18",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 1.05,
+   "dividend": 1.05,
+   "yield": 2.1161561796653294,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2015-12-18",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 1.212,
+   "dividend": 1.212,
+   "yield": 2.102789721027897,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2015-09-18",
+   "recordDate": "2015-09-22",
+   "paymentDate": "2015-10-30",
+   "declarationDate": "",
+   "adjDividend": 1.033,
+   "dividend": 1.033,
+   "yield": 2.112560757226912,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2015-06-19",
+   "recordDate": "2015-06-23",
+   "paymentDate": "2015-07-31",
+   "declarationDate": "2015-06-19",
+   "adjDividend": 1.03,
+   "dividend": 1.03,
+   "yield": 1.9140458232531663,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2015-03-20",
+   "recordDate": "2015-03-24",
+   "paymentDate": "2015-04-30",
+   "declarationDate": "2015-03-20",
+   "adjDividend": 0.931,
+   "dividend": 0.931,
+   "yield": 1.8734851005180364,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2014-12-19",
+   "recordDate": "2014-12-23",
+   "paymentDate": "2015-01-30",
+   "declarationDate": "2014-12-19",
+   "adjDividend": 1.135,
+   "dividend": 1.135,
+   "yield": 1.8574472206081736,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2014-09-19",
+   "recordDate": "2014-09-23",
+   "paymentDate": "2014-10-31",
+   "declarationDate": "",
+   "adjDividend": 0.939,
+   "dividend": 0.939,
+   "yield": 1.8340807174887892,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2014-06-20",
+   "recordDate": "2014-06-24",
+   "paymentDate": "2014-07-31",
+   "declarationDate": "2014-06-20",
+   "adjDividend": 0.937,
+   "dividend": 0.937,
+   "yield": 1.8270899254873942,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2014-03-21",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.825,
+   "dividend": 0.825,
+   "yield": 1.870032223415682,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2013-12-20",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.98,
+   "dividend": 0.98,
+   "yield": 1.8456708526107073,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2013-09-20",
+   "recordDate": "2013-09-24",
+   "paymentDate": "2013-10-31",
+   "declarationDate": "",
+   "adjDividend": 0.838,
+   "dividend": 0.838,
+   "yield": 1.987464854732896,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2013-06-21",
+   "recordDate": "2013-06-25",
+   "paymentDate": "2013-07-31",
+   "declarationDate": "2013-06-21",
+   "adjDividend": 0.839,
+   "dividend": 0.839,
+   "yield": 2.0959326082856604,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2013-03-15",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.694,
+   "dividend": 0.694,
+   "yield": 2.0426105371237884,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2012-12-21",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 1.022,
+   "dividend": 1.022,
+   "yield": 2.17312136704251,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2012-09-21",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.779,
+   "dividend": 0.779,
+   "yield": 1.954480016453006,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2012-06-15",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.688,
+   "dividend": 0.688,
+   "yield": 2.0105859549724174,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2012-03-16",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.614,
+   "dividend": 0.614,
+   "yield": 1.8795438346400568,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2011-12-16",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.77,
+   "dividend": 0.77,
+   "yield": 2.118595279217041,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2011-09-16",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.625,
+   "dividend": 0.625,
+   "yield": 2.023535220539829,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2011-06-17",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.628,
+   "dividend": 0.628,
+   "yield": 1.9173553719008265,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2011-03-18",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.553,
+   "dividend": 0.553,
+   "yield": 1.8307764558547275,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2010-12-17",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.653,
+   "dividend": 0.653,
+   "yield": 1.823008849557522,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2010-09-17",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.602,
+   "dividend": 0.602,
+   "yield": 1.9583963018935016,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2010-06-18",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.531,
+   "dividend": 0.531,
+   "yield": 1.8875861451713951,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2010-03-19",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.48,
+   "dividend": 0.48,
+   "yield": 1.8073639734414073,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2009-12-18",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.59,
+   "dividend": 0.59,
+   "yield": 1.9753198439343076,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2009-09-18",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.508,
+   "dividend": 0.508,
+   "yield": 2.1607946026986506,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2009-06-19",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.518,
+   "dividend": 0.518,
+   "yield": 2.7042590178183397,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2009-03-20",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.561,
+   "dividend": 0.561,
+   "yield": 3.441533046538913,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2008-12-19",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.719,
+   "dividend": 0.719,
+   "yield": 3.0853838303662546,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2008-09-19",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.691,
+   "dividend": 0.691,
+   "yield": 2.2373509506928775,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2008-06-20",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.669,
+   "dividend": 0.669,
+   "yield": 2.131782945736434,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2008-03-20",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.642,
+   "dividend": 0.642,
+   "yield": 2.113870381586917,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2007-12-21",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.775,
+   "dividend": 0.775,
+   "yield": 1.8233983662998716,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2007-09-21",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.719,
+   "dividend": 0.719,
+   "yield": 1.7891689149174181,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2007-06-15",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.656,
+   "dividend": 0.656,
+   "yield": 1.684850068596067,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2007-03-16",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.551,
+   "dividend": 0.551,
+   "yield": 1.7887822132390097,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2006-12-15",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.793,
+   "dividend": 0.793,
+   "yield": 1.7184206828719968,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2006-09-15",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.579,
+   "dividend": 0.579,
+   "yield": 1.7618975447105185,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2006-06-16",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.555,
+   "dividend": 0.555,
+   "yield": 1.819494584837545,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2006-03-17",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.519,
+   "dividend": 0.519,
+   "yield": 1.685040575715817,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2005-12-16",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.672,
+   "dividend": 0.672,
+   "yield": 1.700696422918645,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2005-09-16",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.522,
+   "dividend": 0.522,
+   "yield": 1.9400809716599192,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2005-06-17",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.488,
+   "dividend": 0.488,
+   "yield": 1.930619644034278,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2005-03-18",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.467,
+   "dividend": 0.467,
+   "yield": 1.914121815420955,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2004-12-17",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.568,
+   "dividend": 0.568,
+   "yield": 1.8394172806430007,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2004-11-15",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.351,
+   "dividend": 0.351,
+   "yield": 1.3720205508296133,
+   "frequency": "Special"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2004-09-17",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.469,
+   "dividend": 0.469,
+   "yield": 1.5855059655324788,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2004-06-18",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.414,
+   "dividend": 0.414,
+   "yield": 1.5180850127607148,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2004-03-19",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.395,
+   "dividend": 0.395,
+   "yield": 1.5045921123716908,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2003-12-19",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.516,
+   "dividend": 0.516,
+   "yield": 1.4967860422405876,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2003-09-19",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.4,
+   "dividend": 0.4,
+   "yield": 1.495128773994405,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2003-06-20",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.36,
+   "dividend": 0.36,
+   "yield": 1.5366049879324215,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2003-03-21",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.354,
+   "dividend": 0.354,
+   "yield": 1.6962194713951155,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2002-12-20",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.436,
+   "dividend": 0.436,
+   "yield": 1.6646294032670297,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2002-09-20",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.378,
+   "dividend": 0.378,
+   "yield": 1.7249555423829284,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2002-06-21",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.353,
+   "dividend": 0.353,
+   "yield": 1.4564867042707492,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2002-03-15",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.331,
+   "dividend": 0.331,
+   "yield": 1.2336048006858122,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2001-12-21",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.393,
+   "dividend": 0.393,
+   "yield": 1.2387994780339278,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2001-09-21",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.369,
+   "dividend": 0.369,
+   "yield": 1.4823190789473684,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2001-06-15",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.346,
+   "dividend": 0.346,
+   "yield": 1.188346327451785,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2001-03-16",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.316,
+   "dividend": 0.316,
+   "yield": 1.2607599339187894,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2000-12-15",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.411,
+   "dividend": 0.411,
+   "yield": 1.1491181186531265,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2000-09-15",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.375,
+   "dividend": 0.375,
+   "yield": 0.9870627695256348,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2000-06-16",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.348,
+   "dividend": 0.348,
+   "yield": 0.9816494986015417,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "2000-03-17",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.371,
+   "dividend": 0.371,
+   "yield": 1.0181026269225533,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1999-12-17",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.348,
+   "dividend": 0.348,
+   "yield": 1.0126848412642793,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1999-09-17",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.372,
+   "dividend": 0.372,
+   "yield": 1.113271028037383,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1999-06-18",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.405,
+   "dividend": 0.405,
+   "yield": 1.0989501898592806,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1999-03-19",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.32,
+   "dividend": 0.32,
+   "yield": 1.0972318605906393,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1998-12-18",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.392,
+   "dividend": 0.392,
+   "yield": 1.1949367088607594,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1998-09-18",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.359,
+   "dividend": 0.359,
+   "yield": 1.3752571260652364,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1998-06-19",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.352,
+   "dividend": 0.352,
+   "yield": 1.2656732691259311,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1998-03-20",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.313,
+   "dividend": 0.313,
+   "yield": 1.2659264652348017,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1997-12-19",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.38,
+   "dividend": 0.38,
+   "yield": 1.4528381515087567,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1997-09-19",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.348,
+   "dividend": 0.348,
+   "yield": 1.4353362096180151,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1997-06-20",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.35,
+   "dividend": 0.35,
+   "yield": 1.5271265907568654,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1997-03-21",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.299,
+   "dividend": 0.299,
+   "yield": 1.7452830188679243,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1996-12-20",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.367,
+   "dividend": 0.367,
+   "yield": 1.8105291288081236,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1996-09-20",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.352,
+   "dividend": 0.352,
+   "yield": 1.995920745920746,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1996-06-21",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.351,
+   "dividend": 0.351,
+   "yield": 1.9907199521029781,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1996-03-15",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.285,
+   "dividend": 0.285,
+   "yield": 2.0193357243099954,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1995-12-15",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.382,
+   "dividend": 0.382,
+   "yield": 2.067626597637923,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1995-09-15",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.312,
+   "dividend": 0.312,
+   "yield": 2.154346338124572,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1995-06-16",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.316,
+   "dividend": 0.316,
+   "yield": 2.2883083194367244,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1995-03-13",
+   "recordDate": "1995-03-17",
+   "paymentDate": "1995-04-28",
+   "declarationDate": "",
+   "adjDividend": 0.26822,
+   "dividend": 0.26822,
+   "yield": 2.4870174725721252,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1994-12-16",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.363,
+   "dividend": 0.363,
+   "yield": 2.6819672131147536,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1994-09-16",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.288,
+   "dividend": 0.288,
+   "yield": 2.5116971501488727,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1994-06-17",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.305,
+   "dividend": 0.305,
+   "yield": 2.56974716652136,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1994-03-18",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.271,
+   "dividend": 0.271,
+   "yield": 2.5377900787736856,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1993-12-17",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.317,
+   "dividend": 0.317,
+   "yield": 2.4355670103092786,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1993-09-17",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.286,
+   "dividend": 0.286,
+   "yield": 1.7834533944553588,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1993-06-18",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.318,
+   "dividend": 0.318,
+   "yield": 1.1932584269662923,
+   "frequency": "Quarterly"
+  },
+  {
+   "symbol": "SPY",
+   "date": "1993-03-19",
+   "recordDate": "",
+   "paymentDate": "",
+   "declarationDate": "",
+   "adjDividend": 0.213,
+   "dividend": 0.213,
+   "yield": 0.47301798800799466,
+   "frequency": "Quarterly"
+  }
+ ],
+ "SCHD_px": "HTTP Error 402: Payment Required",
+ "SCHD_div": "HTTP Error 402: Payment Required",
+ "GLD_px": "HTTP Error 402: Payment Required",
+ "GLD_div": "HTTP Error 402: Payment Required",
+ "USDKRW_D": [
+  [
+   "20250925",
+   "1394.9"
+  ],
+  [
+   "20250926",
+   "1400.4"
+  ],
+  [
+   "20250929",
+   "1411.6"
+  ],
+  [
+   "20250930",
+   "1402.2"
+  ],
+  [
+   "20251001",
+   "1403.2"
+  ],
+  [
+   "20251002",
+   "1406"
+  ],
+  [
+   "20251010",
+   "1401.9"
+  ],
+  [
+   "20251013",
+   "1420.5"
+  ],
+  [
+   "20251014",
+   "1427.7"
+  ],
+  [
+   "20251015",
+   "1428.4"
+  ],
+  [
+   "20251016",
+   "1424.4"
+  ],
+  [
+   "20251017",
+   "1419.1"
+  ],
+  [
+   "20251020",
+   "1419.5"
+  ],
+  [
+   "20251021",
+   "1420.2"
+  ],
+  [
+   "20251022",
+   "1423.7"
+  ],
+  [
+   "20251023",
+   "1430.1"
+  ],
+  [
+   "20251024",
+   "1436.6"
+  ],
+  [
+   "20251027",
+   "1436.1"
+  ],
+  [
+   "20251028",
+   "1432.5"
+  ],
+  [
+   "20251029",
+   "1434.3"
+  ],
+  [
+   "20251030",
+   "1433"
+  ],
+  [
+   "20251031",
+   "1423.2"
+  ],
+  [
+   "20251103",
+   "1427.4"
+  ],
+  [
+   "20251104",
+   "1429"
+  ],
+  [
+   "20251105",
+   "1437.7"
+  ],
+  [
+   "20251106",
+   "1447"
+  ],
+  [
+   "20251107",
+   "1445.6"
+  ],
+  [
+   "20251110",
+   "1454"
+  ],
+  [
+   "20251111",
+   "1453.7"
+  ],
+  [
+   "20251112",
+   "1463.2"
+  ],
+  [
+   "20251113",
+   "1466.4"
+  ],
+  [
+   "20251114",
+   "1469.5"
+  ],
+  [
+   "20251117",
+   "1458.5"
+  ],
+  [
+   "20251118",
+   "1458.3"
+  ],
+  [
+   "20251119",
+   "1465.2"
+  ],
+  [
+   "20251120",
+   "1465"
+  ],
+  [
+   "20251121",
+   "1468.4"
+  ],
+  [
+   "20251124",
+   "1472"
+  ],
+  [
+   "20251125",
+   "1473.5"
+  ],
+  [
+   "20251126",
+   "1473.5"
+  ],
+  [
+   "20251127",
+   "1462.7"
+  ],
+  [
+   "20251128",
+   "1464.8"
+  ],
+  [
+   "20251201",
+   "1465.9"
+  ],
+  [
+   "20251202",
+   "1469.1"
+  ],
+  [
+   "20251203",
+   "1469.6"
+  ],
+  [
+   "20251204",
+   "1468.7"
+  ],
+  [
+   "20251205",
+   "1471.5"
+  ],
+  [
+   "20251208",
+   "1472.1"
+  ],
+  [
+   "20251209",
+   "1469"
+  ],
+  [
+   "20251210",
+   "1470.4"
+  ],
+  [
+   "20251211",
+   "1470.4"
+  ],
+  [
+   "20251212",
+   "1469.5"
+  ],
+  [
+   "20251215",
+   "1472.5"
+  ],
+  [
+   "20251216",
+   "1474.1"
+  ],
+  [
+   "20251217",
+   "1472.4"
+  ],
+  [
+   "20251218",
+   "1478.6"
+  ],
+  [
+   "20251219",
+   "1477.2"
+  ],
+  [
+   "20251222",
+   "1477.8"
+  ],
+  [
+   "20251223",
+   "1478.9"
+  ],
+  [
+   "20251224",
+   "1483.4"
+  ],
+  [
+   "20251226",
+   "1460.6"
+  ],
+  [
+   "20251229",
+   "1442.3"
+  ],
+  [
+   "20251230",
+   "1433.9"
+  ],
+  [
+   "20251231",
+   "1434.9"
+  ],
+  [
+   "20260102",
+   "1434.9"
+  ],
+  [
+   "20260105",
+   "1442.1"
+  ],
+  [
+   "20260106",
+   "1446.8"
+  ],
+  [
+   "20260107",
+   "1445.7"
+  ],
+  [
+   "20260108",
+   "1448.3"
+  ],
+  [
+   "20260109",
+   "1449.4"
+  ],
+  [
+   "20260112",
+   "1455.7"
+  ],
+  [
+   "20260113",
+   "1464.1"
+  ],
+  [
+   "20260114",
+   "1472.8"
+  ],
+  [
+   "20260115",
+   "1477.5"
+  ],
+  [
+   "20260116",
+   "1469.7"
+  ],
+  [
+   "20260119",
+   "1473.5"
+  ],
+  [
+   "20260120",
+   "1473.6"
+  ],
+  [
+   "20260121",
+   "1477"
+  ],
+  [
+   "20260122",
+   "1472.8"
+  ],
+  [
+   "20260123",
+   "1468.4"
+  ],
+  [
+   "20260126",
+   "1467.2"
+  ],
+  [
+   "20260127",
+   "1442.8"
+  ],
+  [
+   "20260128",
+   "1448.8"
+  ],
+  [
+   "20260129",
+   "1428.6"
+  ],
+  [
+   "20260130",
+   "1427"
+  ],
+  [
+   "20260202",
+   "1436.7"
+  ],
+  [
+   "20260203",
+   "1457.3"
+  ],
+  [
+   "20260204",
+   "1449"
+  ],
+  [
+   "20260205",
+   "1451.2"
+  ],
+  [
+   "20260206",
+   "1464.1"
+  ],
+  [
+   "20260209",
+   "1470.3"
+  ],
+  [
+   "20260210",
+   "1464.3"
+  ],
+  [
+   "20260211",
+   "1457.7"
+  ],
+  [
+   "20260212",
+   "1454.4"
+  ],
+  [
+   "20260213",
+   "1443.4"
+  ],
+  [
+   "20260219",
+   "1443.1"
+  ],
+  [
+   "20260220",
+   "1450.7"
+  ],
+  [
+   "20260223",
+   "1448.7"
+  ],
+  [
+   "20260224",
+   "1442"
+  ],
+  [
+   "20260225",
+   "1445.8"
+  ],
+  [
+   "20260226",
+   "1435.3"
+  ],
+  [
+   "20260227",
+   "1424.5"
+  ],
+  [
+   "20260303",
+   "1435.4"
+  ],
+  [
+   "20260304",
+   "1464.5"
+  ],
+  [
+   "20260305",
+   "1478.8"
+  ],
+  [
+   "20260306",
+   "1464.3"
+  ],
+  [
+   "20260309",
+   "1474.5"
+  ],
+  [
+   "20260310",
+   "1493.1"
+  ],
+  [
+   "20260311",
+   "1472.8"
+  ],
+  [
+   "20260312",
+   "1467.3"
+  ],
+  [
+   "20260313",
+   "1479.8"
+  ],
+  [
+   "20260316",
+   "1489.5"
+  ],
+  [
+   "20260317",
+   "1496"
+  ],
+  [
+   "20260318",
+   "1491.6"
+  ],
+  [
+   "20260319",
+   "1486"
+  ],
+  [
+   "20260320",
+   "1499.7"
+  ],
+  [
+   "20260323",
+   "1494.9"
+  ],
+  [
+   "20260324",
+   "1509.6"
+  ],
+  [
+   "20260325",
+   "1498.3"
+  ],
+  [
+   "20260326",
+   "1495.6"
+  ],
+  [
+   "20260327",
+   "1506.2"
+  ],
+  [
+   "20260330",
+   "1508.1"
+  ],
+  [
+   "20260331",
+   "1513.4"
+  ],
+  [
+   "20260401",
+   "1530.5"
+  ],
+  [
+   "20260402",
+   "1507.8"
+  ],
+  [
+   "20260403",
+   "1518.8"
+  ],
+  [
+   "20260406",
+   "1507.6"
+  ],
+  [
+   "20260407",
+   "1507.2"
+  ],
+  [
+   "20260408",
+   "1506.8"
+  ],
+  [
+   "20260409",
+   "1476.1"
+  ],
+  [
+   "20260410",
+   "1481.1"
+  ],
+  [
+   "20260413",
+   "1479.8"
+  ],
+  [
+   "20260414",
+   "1489.8"
+  ],
+  [
+   "20260415",
+   "1481.4"
+  ],
+  [
+   "20260416",
+   "1473.1"
+  ],
+  [
+   "20260417",
+   "1472.6"
+  ],
+  [
+   "20260420",
+   "1480"
+  ],
+  [
+   "20260421",
+   "1475.6"
+  ],
+  [
+   "20260422",
+   "1470.8"
+  ],
+  [
+   "20260423",
+   "1477.6"
+  ],
+  [
+   "20260424",
+   "1480.6"
+  ],
+  [
+   "20260427",
+   "1482.9"
+  ],
+  [
+   "20260428",
+   "1473.1"
+  ],
+  [
+   "20260429",
+   "1473.3"
+  ],
+  [
+   "20260430",
+   "1476.1"
+  ],
+  [
+   "20260504",
+   "1484.8"
+  ],
+  [
+   "20260506",
+   "1470.5"
+  ],
+  [
+   "20260507",
+   "1456.8"
+  ],
+  [
+   "20260508",
+   "1450.8"
+  ],
+  [
+   "20260511",
+   "1466"
+  ],
+  [
+   "20260512",
+   "1473"
+  ],
+  [
+   "20260513",
+   "1484.3"
+  ],
+  [
+   "20260514",
+   "1495.1"
+  ],
+  [
+   "20260515",
+   "1491.8"
+  ],
+  [
+   "20260518",
+   "1499.8"
+  ],
+  [
+   "20260519",
+   "1503.4"
+  ],
+  [
+   "20260520",
+   "1503.8"
+  ],
+  [
+   "20260521",
+   "1509.7"
+  ],
+  [
+   "20260522",
+   "1503.5"
+  ],
+  [
+   "20260526",
+   "1513.3"
+  ],
+  [
+   "20260527",
+   "1507.9"
+  ],
+  [
+   "20260528",
+   "1501.6"
+  ],
+  [
+   "20260529",
+   "1505.8"
+  ],
+  [
+   "20260601",
+   "1503.2"
+  ],
+  [
+   "20260602",
+   "1511.3"
+  ],
+  [
+   "20260604",
+   "1515.6"
+  ],
+  [
+   "20260605",
+   "1528.6"
+  ],
+  [
+   "20260608",
+   "1543"
+  ],
+  [
+   "20260609",
+   "1546.5"
+  ],
+  [
+   "20260610",
+   "1518.4"
+  ],
+  [
+   "20260611",
+   "1522.4"
+  ],
+  [
+   "20260612",
+   "1527"
+  ],
+  [
+   "20260615",
+   "1520.4"
+  ],
+  [
+   "20260616",
+   "1510"
+  ],
+  [
+   "20260617",
+   "1513.5"
+  ],
+  [
+   "20260618",
+   "1512.8"
+  ],
+  [
+   "20260619",
+   "1523.4"
+  ],
+  [
+   "20260622",
+   "1535"
+  ],
+  [
+   "20260623",
+   "1535.7"
+  ],
+  [
+   "20260624",
+   "1537.2"
+  ],
+  [
+   "20260625",
+   "1538.3"
+  ],
+  [
+   "20260626",
+   "1545.3"
+  ],
+  [
+   "20260629",
+   "1544.2"
+  ],
+  [
+   "20260630",
+   "1541.5"
+  ],
+  [
+   "20260701",
+   "1548.4"
+  ],
+  [
+   "20260702",
+   "1554.4"
+  ],
+  [
+   "20260703",
+   "1554.1"
+  ],
+  [
+   "20260706",
+   "1539.7"
+  ],
+  [
+   "20260707",
+   "1531.8"
+  ],
+  [
+   "20260708",
+   "1526.6"
+  ],
+  [
+   "20260709",
+   "1509.9"
+  ],
+  [
+   "20260710",
+   "1504.2"
+  ],
+  [
+   "20260713",
+   "1507.1"
+  ],
+  [
+   "20260714",
+   "1504.9"
+  ],
+  [
+   "20260715",
+   "1492.2"
+  ],
+  [
+   "20260716",
+   "1488.8"
+  ],
+  [
+   "20260720",
+   "1484.3"
+  ],
+  [
+   "20260721",
+   "1482"
+  ],
+  [
+   "20260722",
+   "1475.6"
+  ],
+  [
+   "20260723",
+   "1480.9"
+  ],
+  [
+   "20260724",
+   "1469.4"
+  ],
+  [
+   "20260727",
+   "1466.3"
+  ],
+  [
+   "20260728",
+   "1465.4"
+  ],
+  [
+   "20260729",
+   "1466.2"
+  ],
+  [
+   "20260730",
+   "1450.1"
+  ],
+  [
+   "20260731",
+   "1441.1"
+  ],
+  [
+   "20260803",
+   "1433.6"
+  ],
+  [
+   "20260804",
+   "1429.9"
+  ],
+  [
+   "20260805",
+   "1428.2"
+  ],
+  [
+   "20260806",
+   "1424.8"
+  ],
+  [
+   "20260807",
+   "1418.8"
+  ],
+  [
+   "20260810",
+   "1420.1"
+  ],
+  [
+   "20260811",
+   "1415.3"
+  ],
+  [
+   "20260812",
+   "1415"
+  ],
+  [
+   "20260813",
+   "1415"
+  ],
+  [
+   "20260814",
+   "1414.9"
+  ],
+  [
+   "20260818",
+   "1415.2"
+  ],
+  [
+   "20260819",
+   "1411"
+  ],
+  [
+   "20260820",
+   "1402.5"
+  ],
+  [
+   "20260821",
+   "1393"
+  ],
+  [
+   "20260824",
+   "1383.6"
+  ],
+  [
+   "20260825",
+   "1380.6"
+  ],
+  [
+   "20260826",
+   "1383.1"
+  ],
+  [
+   "20260827",
+   "1384.6"
+  ],
+  [
+   "20260828",
+   "1380.3"
+  ],
+  [
+   "20260831",
+   "1376.5"
+  ],
+  [
+   "20260901",
+   "1373.6"
+  ],
+  [
+   "20260902",
+   "1370.3"
+  ],
+  [
+   "20260903",
+   "1369.4"
+  ],
+  [
+   "20260904",
+   "1359.5"
+  ],
+  [
+   "20260907",
+   "1355.2"
+  ],
+  [
+   "20260908",
+   "1342.6"
+  ],
+  [
+   "20260909",
+   "1341.1"
+  ],
+  [
+   "20260910",
+   "1337.9"
+  ],
+  [
+   "20260911",
+   "1338.2"
+  ],
+  [
+   "20260914",
+   "1346.4"
+  ],
+  [
+   "20260915",
+   "1345.3"
+  ],
+  [
+   "20260916",
+   "1353.3"
+  ],
+  [
+   "20260917",
+   "1368.3"
+  ],
+  [
+   "20260918",
+   "1380.3"
+  ],
+  [
+   "20260921",
+   "1383.8"
+  ],
+  [
+   "20260922",
+   "1384.3"
+  ],
+  [
+   "20260923",
+   "1360"
+  ],
+  [
+   "20260928",
+   "1352"
+  ],
+  [
+   "20260929",
+   "1360"
+  ],
+  [
+   "20260930",
+   "1358.4"
+  ],
+  [
+   "20261001",
+   "1355.7"
+  ],
+  [
+   "20261002",
+   "1359.6"
+  ]
+ ]
+}

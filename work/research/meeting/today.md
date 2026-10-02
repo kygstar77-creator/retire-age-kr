@@ -8,6 +8,7 @@
 |---|---|---|---|---|---|---|
 | F1 | D-1 19:30 공개 준비(수익 가장 가까움: 설명란 쿠팡 두 줄) — 16:00 TTS 초기화 뒤 목소리 남은 27문장 → 렌더 → ytlong gate | C | firemap-video-producer(16:05 회차) | 17:50 | ytlong gate "통과"(C9 챕터·목소리·video 막힘 0) + 19:30 예약 업로드 또는 보류 사유 log 한 줄 | 열림 |
 - [지시] **firemap-video-producer** 16:05 회차(운영실장 15:17): D-1 썸네일 재심사 최고 d1n 평균 7.30 <8 → review.md 연기 판정(aace0fe). 업로드는 그대로 진행하되 **publishAt = 10/3 19:30**, uploads.jsonl·X-YT-FREQ에 오늘 롱폼 빈칸 사유 한 줄. 썸네일 최종안은 10/3 visual-designer 재작업 몫.
+  착수: firemap-video-producer 15:37 (운영실장 2) — PD 정기 회차는 18:05(4시간 간격, 16:05 회차 없음)라 지금 투입. 15:3x 통과선 7점 → d1k 7.63 통과, publishAt 10/2 19:30 유지(15:15 연기 판정은 취소됨), 16:00 TTS 초기화 뒤 남은 목소리→렌더→ytlong gate→예약 업로드
 | F2 | D-1 썸네일 8점 재작업 — 17:00 flash 재측정·새 안, 8 미만이면 [순돌이 검토] 공개 하루 연기 판정(2105f01: 18:30 한도) | C | firemap-visual-designer(17:00 회차) | 17:50 | review.md에 3명 평균 ≥8 안 + 1초 시험, 또는 연기 판정 줄 | 열림 |
 | F3 | 편집 대기 해소 — D-1 meta.json 새 링크 줄 .edit.json(13:11 요청, 착수 없음) + offimkt1002 editgate stamp 재찍기(title.txt 교체로 불일치) | C | firemap-editor | 17:50 | ep/D-1/meta.json.edit.json 실재 + editgate.py check offimkt1002 일치 | 대기(요청 13:11부터 1h40m 착수 없음) |
 | F4 | 쇼츠 a1_need100 19:20 공개 예약 확인 + e1_hynix_dd 관문(review 3줄·1초 시험) | C | firemap-shorts | 17:50 | 유튜브 예약 상태(publishAt 19:20) 실측 줄 또는 보류 사유 log | 열림 |
@@ -137,6 +138,7 @@
   - (13:58 순돌이) 13:36 운영실장이 사용량 규칙 ②(시간당 0.5%p)로 투입 0명 → D-1 재작업이 안 들어감. 정리: **규칙 ②는 ①의 허용 목록(결승선·D-1 공개·발행·감사)에는 걸지 않는다.** 투입이 안 되면 visual-designer **17:00 정기 회차의 첫 일 = 위 D-1 재작업 전체**(flash 재측정만이 아님), 18:30 판정은 그대로.
 - [순돌이 15:2x · 사장님 "관문을 못 넘어서 발행을 안 할 게 아니라 미리미리 관문 전에 8점 넘겨서 계획한 시간에 발행해야지!"] 칸 장부 **slots.json** 시작(기한: 롱폼 24h·쇼츠 12h·카페 6h 전, 비축분 쇼츠1·카페2·롱폼1, patrol 위반). 따라잡기 지시:
   - **firemap-video-producer·firemap-youtube-loop**: 10/3 19:30 = **E-2**. 관문 기한 **오늘 19:30** — review.md 8점(youtube-loop 대본 심사 3명, 지금), 썸네일(visual 17:00 D-1 다음 순서)·제목(copywriter 18:40) 오늘 안. 목소리는 D-1 끝난 뒤 남은 무료 한도로 시작, 모자라면 10/3 16:05 — 이 늦음은 TTS 한도 탓으로 결재함 'TTS 유료' 올림.
+    착수: firemap-youtube-loop 15:37 (운영실장 2) — E-2 대본 심사 3명 review.md(관문 기한 오늘 19:30, 정기 회차 16:35보다 앞당김: 칸 기한 우선 규칙)
   - **firemap-youtube-loop**: 10/4 19:30 롱폼 편 없음 → 오늘 21:15 회의 전까지 편 정하고 slots.json에 기입(W-1 또는 X-SERIES-1 ②), 대본 10/3 오전.
   - **firemap-shorts**: e1_hynix_dd 관문 기한 10/3 00:20 → 19:20 회차 전에 끝냄 + 비축 1편(e1_micron_q4·e1_samsung_x·a1_1eok1y 중 compete.md 있는 것) 관문 통과.
   - **firemap-write**: 16:10·18:10 회차에 카페 비축 2편 관문 통과(편집·compare·제목 8) → slots.json reserve.cafe. 오늘 18:10·22:10 빈 칸 편 배정.

@@ -200,6 +200,13 @@
   - **firemap-youtube-loop**: 10/4 19:30 롱폼 편 없음 → 오늘 21:15 회의 전까지 편 정하고 slots.json에 기입(W-1 또는 X-SERIES-1 ②), 대본 10/3 오전.
     착수: firemap-youtube-loop 16:42 — ② 나 vs 남들 편 폴더 N-1: 분석 관문·compare·사실표·대본(관문 기한 10/3 19:30), 롱폼 48시간 기준선·A-1 판정 같이
     착수: firemap-youtube-loop 22:37 — 16:42 회차 산출물 없음(N-1 폴더 없음) → 다시: N-1 분석 관문·compare·사실표·대본(관문 기한 10/3 19:30)
+    완료: firemap-youtube-loop 23:08 — N-1 '나 vs 남들 ① 연봉·순자산 줄'(10/4 19:30): analysis.md(수요·경쟁 3편 쪼갬·⑧) · compare.md(경쟁 5·세 줄) · facts.txt(국세청 근로소득 천분위 2024 귀속 CSV 새 출처 + 가계금융복지조사 2025 표12) · script.md v3(약 9분, scriptnum 0·aitell 1.6) · 제미나이 사실 지적 3건 반영 · 심사 3명 v2 평균 7.30(lite 7.4·Claude 7.7·레드팀 6.8) 통과, 지적 6곳 v3 반영(review.md). slots 10/4 19:30 item=N-1. 목표 8 미달 → flash 되살아나면 재심사
+- [편집 검수 요청] N-1 대본 v3 트랙:C · 담당 firemap-editor · 시한 10/3 12:00 · 근거 work/research/longform/ep/N-1/script.md(숫자 바꾸지 말 것 — facts.txt, review.md '남은 약점')
+- [지시] N-1 제목 후보 5·1위 트랙:C · 담당 firemap-copywriter · 시한 10/3 12:00 · 근거 ep/N-1/analysis.md ②·plans/yt-series.md 36행 — 앞부분 '나 vs 남들 |' 고정, **빈칸 '연봉 ___' 필수**, '상위 몇 %'·'연봉'·'순자산' 앞쪽, '중앙값' 단어 쓰지 않음(검색 25), 경쟁 제목 틀('내 연봉은 상위 몇%일까?') 그대로 금지
+- [지시] N-1 썸네일 트랙:C · 담당 firemap-visual-designer · 시한 10/3 15:00 · 근거 ep/N-1/compare.md(경쟁 5 주소) — 큰 글자 빈칸 '연봉 ___ → 상위 ?%' + 숫자 1(예: 4,475 → 36%), 층·건물 그림 금지(송현영 겹침), 1초 시험·심사 3명 7+
+- [지시] N-1 목소리·화면·렌더·예약 업로드 트랙:C · 담당 firemap-video-producer · 시한 관문 10/3 19:30·공개 10/4 19:30 · 근거 ep/N-1/script.md 화면 지시 — E-2(10/3 19:30)가 먼저. 설명란: 첫 줄 firemap.kr/calc/salary?utm_source=youtube&utm_campaign=yts2-n1, 출처 2줄(국세청 근로소득 백분위 data.go.kr 15082063 · 2025 가계금융복지조사 표12), 'AI 음성 내레이션', 쿠팡 없음(4편 중 1편 규칙·금융 통계 편)
+- [요청] N-1 카페 긴 글(롱폼 1편=카페 1편, 10/4 공개일) 트랙:C · 담당 firemap-write · 시한 10/4 13:30(카페 6시간 전) · 근거 ep/N-1/facts.txt 표A 100칸 전체·표C — 소제목 4~6·자리표·경계값 표·영상 넣기, 대본 그대로 붙이기 금지
+- [알림] firemap-video-producer·순돌이 (23:08 youtube-loop videos.list): E-1 idc3JZOZukc가 이미 **public**(uploads.jsonl publishAt 10/3 19:30인데 status public, 조회 2) — 의도된 앞당김인지 기록 없음(today·log·STATE에 idc3 없음). D-1 GMc2Rd1-JYA 공개 3시간 반 조회 0(집계 지연인지 확인 안 함). 내가 상태를 바꾸지는 않음
   - **firemap-shorts**: e1_hynix_dd 관문 기한 10/3 00:20 → 19:20 회차 전에 끝냄 + 비축 1편(e1_micron_q4·e1_samsung_x·a1_1eok1y 중 compete.md 있는 것) 관문 통과.
   - **firemap-write**: 16:10·18:10 회차에 카페 비축 2편 관문 통과(편집·compare·제목 8) → slots.json reserve.cafe. 오늘 18:10·22:10 빈 칸 편 배정.
     착수: firemap-write 16:11 — 카페 비축 2편(nps1002 대기 확인 + 새 1편) 관문, 18:10·22:10 칸 배정

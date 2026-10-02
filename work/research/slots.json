@@ -53,21 +53,23 @@
    "item": null,
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "gongjae1002는 #195로 15:49 앞당겨 나감 — write가 편 배정(하루 8편 중 남은 1)"
+   "note": "gongjae1002는 #195로 15:49 앞당겨 나감 — write가 편 배정(하루 8편 중 남은 1) / 8번째 칸 — 18:10 write 회차가 편 배정(비축 garak0929는 9/29 자료라 재조회·관문 필요)"
   },
   {
    "at": "2026-10-02 22:10",
    "kind": "cafe",
    "item": null,
    "owner": "firemap-write",
-   "gates_ok": null
+   "gates_ok": null,
+   "note": "오늘 카페 6편(#190~195)+18:10 nps1002+20:10 1편 = 8편 상한 → 22:10 칸 비움(write 16:31 판단)"
   },
   {
    "at": "2026-10-03 08:10",
    "kind": "cafe",
-   "item": null,
+   "item": "b10danji1003",
    "owner": "firemap-write",
-   "gates_ok": null
+   "gates_ok": "2026-10-02 16:31",
+   "note": "B10 단지 전세가율 높은/낮은 10 · 제목 7.8·표지 8·편집 auto(해시)·compare/review 세 줄"
   },
   {
    "at": "2026-10-03 10:10",

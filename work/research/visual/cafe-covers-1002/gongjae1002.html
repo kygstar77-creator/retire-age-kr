@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1080px;background:#F7F8FA;font-family:PD;position:relative;overflow:hidden}
+.stamp{position:absolute;left:80px;top:72px;border:6px solid #1F2937;color:#1F2937;font:700 44px PD;padding:10px 26px;border-radius:14px;transform:rotate(-3deg);white-space:nowrap}
+#col{position:absolute;left:80px;top:196px;bottom:118px;width:920px;display:flex;flex-direction:column;justify-content:space-between}
+.k{font-family:BH;line-height:1.08;white-space:nowrap;align-self:flex-start}
+.num{letter-spacing:-10px;line-height:0.9}
+.unit{font-size:0.6em;letter-spacing:0;margin-left:12px}
+.src{position:absolute;left:80px;bottom:52px;font:700 27px PD;color:#6B7280;white-space:nowrap}
+</style></head><body>
+<div class='stamp'>10월 1일 국토부 발표</div>
+<div id='col'><div class='k fit' id='r0' style='font-size:84px;color:#111827'>공공재개발 이주비 이자 지원</div><div class='k fit' id='r1' style='font-size:118px;color:#1D4ED8'>대출금리</div><div class='k fit num' id='r2' style='font-size:470px;color:#1D4ED8'>3.8%</div><div class='k fit' id='r3' style='font-size:118px;color:#111827'>밑이면 덜 받아요</div></div>
+<div class='src fit'>국토교통부 10-01 발표 · 연 1.8% 넘는 부분 최대 2%p 지원 · 1주택자</div>
+<script>
+document.fonts.ready.then(()=>{
+  for(const e of document.querySelectorAll('.fit')){let s=parseFloat(getComputedStyle(e).fontSize);
+    while(e.getBoundingClientRect().right>1000&&s>20){s-=2;e.style.fontSize=s+'px';}}
+  // 칸 넘치면(세로) 큰 숫자를 줄인다
+  const col=document.getElementById('col'),n=document.querySelector('.num');
+  let s=parseFloat(n.style.fontSize);while(col.scrollHeight>col.clientHeight+1&&s>120){s-=6;n.style.fontSize=s+'px';}
+  document.body.dataset.ready=1});
+</script></body></html>

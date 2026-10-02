@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1080px;background:#F7F8FA;font-family:PD;position:relative;overflow:hidden}
+.stamp{position:absolute;left:80px;top:72px;border:6px solid #1F2937;color:#1F2937;font:700 44px PD;padding:10px 26px;border-radius:14px;transform:rotate(-3deg);white-space:nowrap}
+#col{position:absolute;left:80px;top:196px;bottom:118px;width:920px;display:flex;flex-direction:column;justify-content:space-between}
+.k{font-family:BH;line-height:1.08;white-space:nowrap;align-self:flex-start}
+.num{letter-spacing:-10px;line-height:0.9}
+.unit{font-size:0.6em;letter-spacing:0;margin-left:12px}
+.src{position:absolute;left:80px;bottom:52px;font:700 27px PD;color:#6B7280;white-space:nowrap}
+</style></head><body>
+<div class='stamp'>한국경제 10월 1일 보도</div>
+<div id='col'><div class='k fit' id='r0' style='font-size:100px;color:#111827'>국민연금 미적립부채</div><div class='k fit num' id='r1' style='font-size:330px;color:#1D4ED8'>1,450<span class='unit'>조</span></div><div class='k fit' id='r2' style='font-size:90px;color:#111827'>내 연금 계산식엔<br>기금 잔액이 없다</div></div>
+<div class='src fit'>한국경제 2026-10-01 보도 · 국민연금법 기본연금액 계산식(법제처)</div>
+<script>
+document.fonts.ready.then(()=>{
+  for(const e of document.querySelectorAll('.fit')){let s=parseFloat(getComputedStyle(e).fontSize);
+    while(e.getBoundingClientRect().right>1000&&s>20){s-=2;e.style.fontSize=s+'px';}}
+  // 칸 넘치면(세로) 큰 숫자를 줄인다
+  const col=document.getElementById('col'),n=document.querySelector('.num');
+  let s=parseFloat(n.style.fontSize);while(col.scrollHeight>col.clientHeight+1&&s>120){s-=6;n.style.fontSize=s+'px';}
+  document.body.dataset.ready=1});
+</script></body></html>

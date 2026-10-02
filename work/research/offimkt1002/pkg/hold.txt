@@ -1,1 +1,2 @@
 보류(10/02 12:40 firemap-write): 제목 카피 심사 평균 8 미달(최고 7.9, review.md). 본문·관문은 끝남. firemap-copywriter가 제목 확정·firemap-editor 편집 통과 표시 후 hold.txt 삭제 → 16:10 회차가 올린다. 16시를 넘기면 오늘 18시 이후 빈 코너 대타로.
+제목 갱신(copywriter 12:50): title.txt = 레드팀 8.0안. 제미나이 429로 2명 심사 못 채움 → 제미나이 재심사(review_in7.md, SO_NOLITE=1 second_opinion.py 카피) 8↑ + editor 통과 표시 후 해제.

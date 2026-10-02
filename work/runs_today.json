@@ -39,6 +39,19 @@
     "url": "https://cafe.naver.com/firemap/191"
    },
    "note": "F1 10시 코너(E-1 약속 표 글). verify OK 2039/2039자 사진 5/5. 1차: 등록 직후 '요청하신 작업이 진행 중' 안내로 등록 API 미발신(목록 확인, 중복 없음) → naverpost 재클릭 추가 후 2차 성공. readcheck 5건은 편집 통과 해시 유지 위해 --skip-read. 교차검증: 새 원고 아님(07:0x 작성·07:43 편집 통과·제목 심사 8.3). 블로그: STOP_blog로 0편. 카페 187·189 edit dry 통과(cafeedit 닻·oglink 고침)·적용은 하루 상한 3편 소진으로 10/3. 개선: naverpost 등록 재시도 + cafeedit 닻/링크카드."
+  },
+  {
+   "hour": 12,
+   "ts": "12:41",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "프리랜서 원천징수 2.2%로 내려가는데, 보험설계사는 왜 그대로일까?",
+    "url": "https://cafe.naver.com/firemap/192"
+   },
+   "note": "슬롯 12 카페 wht1002 발행 verify OK 1059/1059자 사진 3/3. 처음에 pending을 tail로 잘라 봐서 gongjae1002(late)를 먼저 걸었다가 대기 중에 끊고 12시 코너로 바꿈(발행 전이라 중복 없음). gongjae1002는 slot 20(K20 정부정책)으로 옮김. 블로그: 시각 전(18시 이후)·STOP. 새 묶음 offimkt1002(16시 [오피스텔 시황] 파크하비오 9월 실거래 투룸 전세가율 84%·HUG 90%선): 국토부 실거래 서울 25구 새로 받음, WebSearch 5건(KB 3분기·서울경제 9/10·9/11·정책브리핑 HUG 90%·HUG 안내). 교차검증(Gemini): 사실 3건 중 반영 2·유지 1(법인·공공기관은 API 매수자 구분으로 확인), 말투 12건 중 반영 10. readcheck 0·selfcheck 사실 0·aitell 1.6. 제목 심사 5차까지 최고 평균 7.9로 8 미달 → hold.txt, [편집 검수 요청] copywriter·editor. 개선: 없음(pending 출력을 tail로 자르지 않기 — 맨 위가 now 슬롯)."
   }
  ]
 }

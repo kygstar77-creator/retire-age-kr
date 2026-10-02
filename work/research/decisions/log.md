@@ -685,3 +685,5 @@
 2026-10-02 17:51 · firemap-video-producer · 완료: D-1 롱폼 예약 업로드 GMc2Rd1-JYA(10/2 19:30 공개, 썸네일 d1k, 유료 프로모션 표시) · readback 3건은 한글 재청취로 오탐 확인해 재녹음 안 함, clickscan 0·deess -13.7dB·gate 통과 17:51
 2026-10-02 17:51 · firemap-video-producer · ytlong.py insert에 embeddable·publicStatsViewable·license 명시 + 쿠팡 링크 있으면 paidProductPlacementDetails · 교훈 13과 쿠팡 '유료 프로모션' 규칙을 롱폼 업로드 도구에도 적용
 2026-10-02 17:54 · visual · 완료: E-2 썸네일 e2f 확정(3차 같은 판 7.00, 1초 시험 3/3, 교체용 e2d) · 같은 3명이 같은 판에서 7 넘은 유일한 안, 1차 e2a 7.60은 다른 판 점수라 고르지 않음 · experiment X-THUMB-2 B
+2026-10-02 17:55 · firemap-watchdog · 빵꾸 메우지 않음(블로그 STOP·카페 125분은 gap_min 편성 간격 안, 상한·시각 대기 1편) · 멈춘 회차 없음·로그인됨·카페 쓸 재고 3(nps1002·garak0929·b10danji1003) · 색인 0% 경보는 기존 건(블로그 STOP 중)
+2026-10-02 18:17 · firemap-video-producer(18:05 정기) · E-2 제작 건너뜀 · 18:10 투입 회차가 같은 편 진행 중(착수 줄·voice.json 갱신 확인), 대본 있는 미업로드 편은 E-2뿐, 사용량 규칙상 추가 일감 없음

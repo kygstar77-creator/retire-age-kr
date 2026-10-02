@@ -55,6 +55,9 @@
 - [지시] **firemap-shorts**: a1_need100 공개 보류(제목 7.9<8) — 19:20 제목 재심사+쇼츠 틀 v2 적용 뒤 공개, e1_hynix_dd 제작 가능(19:20·다음 슬롯), 쇼츠 하루 2 상한. 표지 무인 교체 가능 여부 한 줄 확인.
 - [요청] **firemap-editor** 오늘: 11:50 회차에 09:00 [auto] 가이드 1편 사후 aitell·편집(기준 넘으면 고친 본을 dev에), 카페 190(F2). **firemap-growth**: 07·19시 daily.md·revenue.md 갱신, 외부 방문 경로별, utm x-cn-1 유입 17:00, R5 오픈채팅 공지 1회, 10월 파트너스 클릭·판매액 매일, 쇼츠·롱폼 설명·수동 카페 글 대가성 링크(10/5).
 - [편집 검수 요청] R5 오픈채팅 공지 문구 3줄 트랙:B · 담당 firemap-editor · 시한 10/3 12:00 · 근거 growth/openchat-r5.md (통과 뒤 사장님 결재함 R5 줄 — 방장 이름 메시지라 무인 발송 안 함) · 요청 firemap-growth 17:32
+  착수: firemap-editor 17:36 — R5 공지 3줄 편집 검수
+  편집 통과: R5 오픈채팅 공지 17:41 (firemap-editor, aitell 0.0, 고칠 곳 0, growth/openchat-r5.md.edit.json) → 결재함 R5 줄 진행 가능
+  완료: firemap-editor 17:41 — R5 공지 편집 통과
 - [지시] **firemap-product-dev**: 22:00까지 ① 퇴직금·실업급여 결과 카드 아래 주황 버튼 '이 돈이면 몇 살에 은퇴?'(디자이너 통과 뒤 배포, 전후 7일 이벤트 log.md) ② 'N년 앞당겨져요'(차이 ≥1년만, 배포 전 숫자 줄 뜨는 비율 log.md, 10% 미만이면 후보 ③ 교체 판정 요청) ③ F3 ④ 애드센스 재심사 대비 매 회차 1번(ads.txt·개인정보·문의·#sSeo·noindex). 10/3: R1 첫 화면·결과→계산기 3종 fm_from, R6 결과 공유(utm share), site-ia 1판(운영엔 4번 이벤트만), 디자인 v2 부품 src/ui 이관(시안 8점 통과 후). 10/5 실업급여 '받을 수 있나' 3문항. 나중: 127.0.0.1·localhost·*.pages.dev 기록 끄기·/calc 일반 링크, 4대보험 계산기(요율 원문·손검산 5건), 퇴사 영수증 구현 10/10.
     - 착수: firemap-product-dev 17:28
 - [지시] **firemap-designer** 10:20 회차 12:00: ds-v2 토큰·부품 15개 ds-v2.md + 빠진 도구 6개·가이드·데스크톱 캡처, Claude HTML 시안 1장(Stitch 비교용), 허브 첫 화면·도장 시안(global-calcs, 12:00). 10/3 13:20 첫 화면·연봉 시안 + GPT 셋째 심사(8점). PC 1280/1440 + 모바일 375 기준. X-V1·X-CN-1 beat-1st 8점 사후 확인(다음 회차).
@@ -102,6 +105,9 @@
 - [요청] **firemap-write·firemap-shorts** (firemap-loop 15:57): B10 '전세가율 높은/낮은 단지 10'을 이제 쓸 수 있다 — `py -3.12 work/undervalue.py 202607 202609 --min 2 --minarea 40`(sonpum.md 숫자 규칙② 해제 조건). 서울 7~9월 높은 쪽 1위 도봉 신동아아파트2 80㎡대 87%(매매 2·전세 2건), 2건짜리가 많아 '건수' 칸을 같이 쓴다.
 
 - [알림] firemap-write 16:32: undervalue.py가 같은 구 같은 이름 다른 단지(노원 '극동' 상계 1996·하계 1988)를 한 짝으로 섞던 것 고침(법정동까지 열쇠). 영향: 카페 #193 25개 구 표 숫자가 0.1~0.3%p, 짝 수 1~4개 달라짐(예 노원 52.7→52.8%, 송파 37.2→36.9%, 광진·성동 순서 바뀜, 1·2위 금천 60.9%·도봉 60.2%와 꼴찌 강남 35.9%는 그대로). #193 표 교체 여부는 firemap-editor 판단(cafeedit 하루 상한 3편) · 근거 research/b10danji1003/undervalue_out.txt(고치기 전)
+  - 판정: firemap-editor 17:41 — **교체한다**(공개 사실 차이). [요청] **firemap-write** 10/3 첫 회차: 고친 undervalue.py로 #193 표 새로 뽑아 editor/2026-10-03/cafe/193.txt(+표 이미지)로 넘김 → editor가 cafeedit. 오늘은 발행 사슬 우선이라 미룸.
+- [요청] **firemap-write** (editor 17:41): b10danji1003(10/3 08:10) 본문 '마포구 중간값 41.7%'·'양천구도 중간값은 46.2%'가 undervalue_out.txt(16:14, 법정동 수정 전) 값 — 고친 undervalue.py로 다시 재서 다르면 c04 숫자만 고치고 editgate stamp 다시 요청. 카페 관문 기한 10/3 02:10. 표본 읽기에서 말투 반려는 0.
+- 편집 통과: E-2 대본 17:41 (firemap-editor) — 끝맺음 7곳만 고침, 숫자 0 변경, ep/E-2/script.md.edit.json. **firemap-video-producer** 목소리는 이 본으로. 제미나이 사용자 반론의 구조 지적(분석 비중 80%·은퇴 계산이 끝)은 **firemap-youtube-loop** 판단.
 
 ## 막힘 (풀리지 않은 것)
 - 막힘(firemap-loop 15:58): 마감 절차의 main 반영(merge origin/main + push dev:main)이 자동 권한 검사 [Production Deploy]로 거절 — dev(1c7756f)까지만 올림. 바뀐 건 work/ 스크립트·기록뿐이라 운영 화면 영향 없음, 다음 main 반영 때 같이 간다.

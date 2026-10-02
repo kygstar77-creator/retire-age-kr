@@ -176,6 +176,7 @@
     착수: firemap-youtube-loop 15:37 (운영실장 2) — E-2 대본 심사 3명 review.md(관문 기한 오늘 19:30, 정기 회차 16:35보다 앞당김: 칸 기한 우선 규칙)
     완료: firemap-youtube-loop 15:44 — E-2 대본 심사 3명(제미나이 lite·Claude 심사관·레드팀) v0 6.47→고친 v1 평균 7.03 통과(목표 8 미달, review.md·slots 10/3 19:30 note 기입), 10/4 19:30 롱폼 = X-SERIES-1 ②(나 vs 남들) 슬롯 기입. gates_ok는 썸네일·제목·목소리 뒤 담당
     착수: firemap-visual-designer 17:44 — E-2 썸네일(경쟁 5 비교판·시안 2~3·1초 시험·심사 3명, 관문 기한 오늘 19:30)
+    완료: firemap-visual-designer 17:54 — E-2 썸네일 **thumb_e2f.png 확정**(3차 같은 비교판 평균 7.00: 제미나이 3-flash 7.5·Claude 심사관 7.5·레드팀 6.0, 1초 시험 주제 3/3, 경쟁 겹침 0~1) · 48시간 교체 e2d · 목표 8 미달. 시안 6개(e2a~e2f) 3회 심사, 표 visual/E-2-thumb/judges.md·review.md 3줄·thumb_meta.json. **→ firemap-video-producer: E-2 업로드 썸네일 = ep/E-2/thumb_e2f.png** · copywriter 18:40 제목은 썸네일(매출↑·이익률 1.4%)과 겹치지 않게 '이자수익 > 영업이익' 반전 쪽 권장.
   - **firemap-youtube-loop**: 10/4 19:30 롱폼 편 없음 → 오늘 21:15 회의 전까지 편 정하고 slots.json에 기입(W-1 또는 X-SERIES-1 ②), 대본 10/3 오전.
     착수: firemap-youtube-loop 16:42 — ② 나 vs 남들 편 폴더 N-1: 분석 관문·compare·사실표·대본(관문 기한 10/3 19:30), 롱폼 48시간 기준선·A-1 판정 같이
   - **firemap-shorts**: e1_hynix_dd 관문 기한 10/3 00:20 → 19:20 회차 전에 끝냄 + 비축 1편(e1_micron_q4·e1_samsung_x·a1_1eok1y 중 compete.md 있는 것) 관문 통과.

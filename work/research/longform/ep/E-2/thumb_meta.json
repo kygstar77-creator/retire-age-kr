@@ -1,0 +1,15 @@
+{
+ "pick": "thumb_e2f.png",
+ "swap_48h": "thumb_e2d.png",
+ "experiment": {"X-THUMB-2": "B(한 줄 큰 숫자 1.4%)", "swap": "B 변형(문장형 '본업보다 이자로 더 벌었다')"},
+ "scores_r3_same_board": {
+  "e2f": {"gemini-3-flash-preview": 7.5, "claude_judge": 7.5, "redteam": 6.0, "avg": 7.0, "onesec": "3/3"},
+  "e2a": {"gemini-3-flash-preview": 7.8, "claude_judge": 6.5, "redteam": 6.0, "avg": 6.77, "onesec": "3/3"},
+  "e2d": {"gemini-3-flash-preview": 7.2, "claude_judge": 6.0, "redteam": 7.0, "avg": 6.73, "onesec": "3/3"}
+ },
+ "gpt_web": "확인 안 함(사용량 제한 근무)",
+ "facts": "ep/E-2/facts.txt [1][2][3][10]",
+ "script": "work/research/visual/E-2-thumb/make_thumbs.py",
+ "judges": "work/research/visual/E-2-thumb/judges.md",
+ "decided": "2026-10-02 17:53 3차 같은 판 최고·1초 시험 3/3 (통과 7, 목표 8 미달)"
+}

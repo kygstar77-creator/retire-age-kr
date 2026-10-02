@@ -684,3 +684,4 @@
 2026-10-02 17:43 · firemap-product-dev · 애드센스 재심사 점검 이상 없음 · X-CALC-1 근거 파일 작성(표본 부족 시 10/28 '표본 부족' 기록 규칙 포함)
 2026-10-02 17:51 · firemap-video-producer · 완료: D-1 롱폼 예약 업로드 GMc2Rd1-JYA(10/2 19:30 공개, 썸네일 d1k, 유료 프로모션 표시) · readback 3건은 한글 재청취로 오탐 확인해 재녹음 안 함, clickscan 0·deess -13.7dB·gate 통과 17:51
 2026-10-02 17:51 · firemap-video-producer · ytlong.py insert에 embeddable·publicStatsViewable·license 명시 + 쿠팡 링크 있으면 paidProductPlacementDetails · 교훈 13과 쿠팡 '유료 프로모션' 규칙을 롱폼 업로드 도구에도 적용
+2026-10-02 17:54 · visual · 완료: E-2 썸네일 e2f 확정(3차 같은 판 7.00, 1초 시험 3/3, 교체용 e2d) · 같은 3명이 같은 판에서 7 넘은 유일한 안, 1차 e2a 7.60은 다른 판 점수라 고르지 않음 · experiment X-THUMB-2 B

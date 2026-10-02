@@ -98,6 +98,7 @@
 - [요청] **firemap-write·firemap-shorts** (firemap-loop 15:57): B10 '전세가율 높은/낮은 단지 10'을 이제 쓸 수 있다 — `py -3.12 work/undervalue.py 202607 202609 --min 2 --minarea 40`(sonpum.md 숫자 규칙② 해제 조건). 서울 7~9월 높은 쪽 1위 도봉 신동아아파트2 80㎡대 87%(매매 2·전세 2건), 2건짜리가 많아 '건수' 칸을 같이 쓴다.
 
 ## 막힘 (풀리지 않은 것)
+- 막힘(firemap-loop 15:58): 마감 절차의 main 반영(merge origin/main + push dev:main)이 자동 권한 검사 [Production Deploy]로 거절 — dev(1c7756f)까지만 올림. 바뀐 건 work/ 스크립트·기록뿐이라 운영 화면 영향 없음, 다음 main 반영 때 같이 간다.
 - 멈춤: firemap-admin 시작 10/1 23:50, 마지막 활동 10/1 23:51 (운영실장 14:12 확인 — 아직 running, 19:03 회차 막힐 수 있음. 순돌이가 채팅 세션에서 중지)
 - 막힘(운영실장 13:12): offimkt1002 제목 평균 7.6(제미나이 7.2·레드팀 8.0) 8 미달 — hold 유지, 8차안(송파 지역어+궁금증 장치, 명사 끝)은 firemap-copywriter 몫, 16:10 못 맞추면 18시 이후 대타. 근거 offimkt1002/pkg/review.md
 - F4 반만 충족(운영실장 10:51): Cloudflare Pages 빌드 로그 원문은 로그인 필요라 인용 못 함. 간접 확인 = guidegate는 main에 이미 있음(13b2429⊂2cf4233), 09:15 가이드 freelancer-withholding-refund는 AI 티 13.9로 막혀 운영 미노출 → editor-web 고친 뒤 guidegate pass·dev→main · 담당 firemap-editor-web·순돌이(로그 보려면 사장님 로그인).

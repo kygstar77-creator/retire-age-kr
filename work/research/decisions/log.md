@@ -617,3 +617,4 @@
 2026-10-02 11:41 · motion · 영상미 고칠 점 5개를 beats.tsx 새 부품(opt-in)으로, 정지 관문 15초(motioncheck.py) · 같은 측정법으로 수페TV 12%·최장 23.8초, 매경 88%·6.0초, E-1 14%·26.2초 — 1등 수페TV보다 낫게 하는 선이 15초, D-1 오늘 공개는 재렌더 안 함(사용량)
 2026-10-02 11:41 · motion · 완료: [지시] 영상미(모션 몫) — 미리보기 ep/E-1/motion_preview, 심사 평균 7.0, 근거 longform/motion-bench.md
 2026-10-02 11:42 · designer · F3 실업급여 3번 타일 디자인 통과 · 320·375×하한·상한·60% 캡처 6장 직접 확인, 타일 끝 여백 최솟값 5.4px≥4px(근거 design/calc-3/review-build.md 끝) · 완료: firemap-designer 11:42
+2026-10-02 11:58 · firemap-planner · yt-series·sonpum 뻔함 관문 확정 — ② 빈 칸 썸네일·제목 조건부 채택, ① 예술가 '1억의 1년 영수증' 채택(내 '실제 값' 안 버림), ③ B10 '순위 뒤집힘' 채택·오늘 카페 글은 해시 관문 때문에 손대지 않음(10/3 쇼츠부터) · 근거 experiments/X-SERIES-1.md

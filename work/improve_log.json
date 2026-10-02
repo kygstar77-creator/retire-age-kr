@@ -311,5 +311,12 @@
   "task": "F(절전 22:30 회차)",
   "did": "재고 블로그 3·카페 4(보류 제외) 충족 · 로그인됨 · readcheck에 firemap.kr utm 계획 링크 줄 예외(write 요청, calcub1001 지적 2→0, 남의 URL은 그대로 지적) · rules 근거 없음 기록",
   "blocked": "절전(한도 70%)으로 유튜브 90일 수집·planner 개선 생략"
+ },
+ {
+  "date": "2026-10-02",
+  "hour": 14,
+  "task": "today.md 지시 우선(A 생략)",
+  "did": "시각 관문(timecheck.py·pre-commit·patrol 11·지시문 26개) + 편집 해시 관문(editgate.py→naverpost) + 쇼츠 compete.md·롱폼 compare.md 관문, 재고 블로그3·카페3 확인",
+  "blocked": "사용량 79%+ 지시로 A(성과 재기)·selfloop·rules.json 카페 성과 비교 미실행(잰 것 없음)"
  }
 ]

@@ -25,6 +25,13 @@ def body_sentences(md):
 
 def gate(ep):
     m = json.load(open(os.path.join(ep, 'meta.json'), encoding='utf-8')); bad = []
+    # 경쟁 비교 관문(10/2 대역): ep/<편>/compare.md에 3줄(경쟁이 잘하는 것·우리가 따라갈 것·우리가 다르게 할 것)이 있어야 올린다. 이름은 compare.md 하나로 통일
+    cp = os.path.join(ep, 'compare.md')
+    if not os.path.exists(cp): bad.append('경쟁 비교 compare.md 없음(경쟁 5+ 실측 · 잘하는 것/따라갈 것/다르게 할 것)')
+    else:
+        ct = open(cp, encoding='utf-8').read()
+        miss = [w for w in ('잘하는', '따라갈', '다르게') if w not in ct]
+        if miss: bad.append('compare.md 3줄 중 빠짐: ' + '·'.join(miss))
     # C1 롱폼 주 2편·하루 1편(uploads.jsonl 기준, 예약 시각으로 센다)
     pa = datetime.datetime.fromisoformat(m['publishAt'])
     me = m.get('ep', os.path.basename(os.path.normpath(ep)))   # 같은 편 교체 업로드(옛 판은 비공개로 둠)는 편 수로 세지 않는다

@@ -1427,6 +1427,10 @@ def main():
                 sys.exit(1 if bad else 0)
             if cmd == 'rewrite':                      # python work/naverpost.py rewrite 45 work/research/sidejob/pkg
                 aid, pkg = int(sys.argv[2]), os.path.abspath(sys.argv[3])
+                import editgate   # 편집 통과 해시 관문(10/2): 통과 뒤 바뀐 원고로 공개 글을 덮지 않는다
+                ok_ed, why_ed = editgate.check(pkg)
+                if ok_ed is False: editgate.refuse(pkg, why_ed, 'rewrite'); sys.exit(4)
+                print(why_ed)
                 print(rewrite_cafe(page, aid, pkg))
                 # 저장됐는지 실제 글을 다시 읽어 본다. 2026-09-27: 105·106을 같은 방식으로 고쳤는데
                 # 둘 다 주소를 찍고 성공처럼 끝났고, 실제로는 106만 저장되고 105는 옛 본문 그대로였다.
@@ -1494,6 +1498,11 @@ def main():
             ok_ai, msg_ai, hits_ai = aitell.gate_pkg(pkg)
             if not ok_ai: aitell.refuse(msg_ai, hits_ai); sys.exit(4)
             print(msg_ai)
+            # 편집 통과 해시 관문(10/2) — 통과 표시(.edit.json) 뒤 제목·조각이 바뀌었으면 올리지 않는다. 표시가 없으면 대조만 못 한다고 적는다.
+            import editgate
+            ok_ed, why_ed = editgate.check(pkg)
+            if ok_ed is False: editgate.refuse(pkg, why_ed, cmd); sys.exit(4)
+            print(why_ed)
             # 올리기 전에 같은 제목이 이미 올라가 있는지 본다. published.txt가 없어도 글은 올라가 있을 수 있다.
             up = already_up(cmd, title)
             if up:

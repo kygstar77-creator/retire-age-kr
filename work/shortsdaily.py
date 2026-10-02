@@ -113,6 +113,10 @@ def build_desc(spec):
 def publish(sp):
     spec = json.load(open(sp, encoding='utf-8'))
     bad = check(spec)
+    # 경쟁 비교 관문(10/2 대역): cardshorts/<편>/compete.md에 경쟁 5편 표(| 1 | … | 5 |)가 없으면 공개하지 않는다. 이름은 compete.md 하나로 통일
+    cp = os.path.join(os.path.splitext(sp)[0], 'compete.md')
+    if not os.path.exists(cp): bad.append('경쟁 비교 없음: ' + os.path.relpath(cp, HERE) + ' (경쟁 5편 표 + 잘된 이유·다른 한 가지)')
+    elif len(re.findall(r'^\|\s*\d+\s*\|', open(cp, encoding='utf-8').read(), re.M)) < 5: bad.append('compete.md 경쟁 표가 5편 미만')
     if bad: print('올리지 않는다:'); [print('  -', b) for b in bad]; sys.exit(2)
     g = gate()
     if g and os.environ.get('SHORTS_FORCE') != '1': print('올리지 않는다:', g); sys.exit(3)

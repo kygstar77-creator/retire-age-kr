@@ -59,7 +59,7 @@ if os.path.exists(td):
 # 10. 가설엔 근거가 있어야 한다(10/2 사장님) — 실험 장부의 진행 중 ID마다 research/experiments/<ID>.md(근거 데이터·분석·예측·판정 기준)
 try:
     reg = open(os.path.join(R, 'experiments-registry.md'), encoding='utf-8').read()
-    ids = sorted(set(re.findall(r'^\| (X-[A-Z0-9-]+) \|', reg, re.M)))
+    ids = sorted(set(m.group(1) for m in re.finditer(r'^\| (X-[A-Z0-9-]+) \|.*$', reg, re.M) if '종료' not in m.group(0)))  # 종료된 실험은 뺀다
     miss = [i for i in ids if not os.path.exists(os.path.join(R, 'experiments', i + '.md'))]
     if miss: bad.append(f'가설 근거 파일 없음 {len(miss)}/{len(ids)}: ' + ', '.join(miss[:12]))
 except Exception as e:

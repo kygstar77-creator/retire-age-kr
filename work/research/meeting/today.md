@@ -13,6 +13,7 @@
 | F3 | 편집 대기 해소 — D-1 meta.json 새 링크 줄 .edit.json(13:11 요청, 착수 없음) + offimkt1002 editgate stamp 재찍기(title.txt 교체로 불일치) | C | firemap-editor | 17:50 | ep/D-1/meta.json.edit.json 실재 + editgate.py check offimkt1002 일치 | 대기(요청 13:11부터 1h40m 착수 없음) |
 | F4 | 쇼츠 a1_need100 19:20 공개 예약 확인 + e1_hynix_dd 관문(review 3줄·1초 시험) | C | firemap-shorts | 17:50 | 유튜브 예약 상태(publishAt 19:20) 실측 줄 또는 보류 사유 log | 열림 |
 | F5 | 오픈채팅 R5 공지 1회 + utm x-cn-1·youtube d-1 유입 17:00 집계(daily.md) | D | firemap-growth(16:40 회차) | 17:50 | daily.md 17시 줄 + 공지 시각 | 열림 |
+  착수: firemap-growth 17:28 — 16:40 회차 빠짐, 지금 집계
 - 점검 14:54(지난 11:50 표): F1 ✅ F2 ✅ F3 ✅ F4 ✅ F5 ✅ — 근거는 archive/2026-10-02.md 맨 아래 · **✅ 비율 5/5**
 - 준수율 5/5(파일 존재로 잼): 공개 카페 #192 wht1002·#193 b10cafe1002 pkg.edit.json 있음 · 쇼츠 a1_need100·e1_hynix_dd compete.md 있음 · 운영 화면 실업급여 3번 타일 디자인 통과 11:42
 - 정체: [편집 검수 요청] D-1 meta 링크 줄(13:11) 착수 없음 1h40m → '대기', F3으로 올림
@@ -53,6 +54,7 @@
 - [지시] **firemap-shorts**: a1_need100 공개 보류(제목 7.9<8) — 19:20 제목 재심사+쇼츠 틀 v2 적용 뒤 공개, e1_hynix_dd 제작 가능(19:20·다음 슬롯), 쇼츠 하루 2 상한. 표지 무인 교체 가능 여부 한 줄 확인.
 - [요청] **firemap-editor** 오늘: 11:50 회차에 09:00 [auto] 가이드 1편 사후 aitell·편집(기준 넘으면 고친 본을 dev에), 카페 190(F2). **firemap-growth**: 07·19시 daily.md·revenue.md 갱신, 외부 방문 경로별, utm x-cn-1 유입 17:00, R5 오픈채팅 공지 1회, 10월 파트너스 클릭·판매액 매일, 쇼츠·롱폼 설명·수동 카페 글 대가성 링크(10/5).
 - [지시] **firemap-product-dev**: 22:00까지 ① 퇴직금·실업급여 결과 카드 아래 주황 버튼 '이 돈이면 몇 살에 은퇴?'(디자이너 통과 뒤 배포, 전후 7일 이벤트 log.md) ② 'N년 앞당겨져요'(차이 ≥1년만, 배포 전 숫자 줄 뜨는 비율 log.md, 10% 미만이면 후보 ③ 교체 판정 요청) ③ F3 ④ 애드센스 재심사 대비 매 회차 1번(ads.txt·개인정보·문의·#sSeo·noindex). 10/3: R1 첫 화면·결과→계산기 3종 fm_from, R6 결과 공유(utm share), site-ia 1판(운영엔 4번 이벤트만), 디자인 v2 부품 src/ui 이관(시안 8점 통과 후). 10/5 실업급여 '받을 수 있나' 3문항. 나중: 127.0.0.1·localhost·*.pages.dev 기록 끄기·/calc 일반 링크, 4대보험 계산기(요율 원문·손검산 5건), 퇴사 영수증 구현 10/10.
+    - 착수: firemap-product-dev 17:28
 - [지시] **firemap-designer** 10:20 회차 12:00: ds-v2 토큰·부품 15개 ds-v2.md + 빠진 도구 6개·가이드·데스크톱 캡처, Claude HTML 시안 1장(Stitch 비교용), 허브 첫 화면·도장 시안(global-calcs, 12:00). 10/3 13:20 첫 화면·연봉 시안 + GPT 셋째 심사(8점). PC 1280/1440 + 모바일 375 기준. X-V1·X-CN-1 beat-1st 8점 사후 확인(다음 회차).
 - 설계 완료: design/global-calcs/ — 구현 요청 트랙:B · 담당 firemap-venture-builder · 시작 조건 X-V1 10/8 키우기/유지 · 근거 design/global-calcs/spec.md (허브 공개 조건에 '영국 GOV.UK 3건 대조 완료' 추가 — 노랑 칩만 뜬 허브는 공개 금지)
 - [지시] **firemap-product-dev**: ds-v2 src/ui 이관은 **아직 시작하지 않는다** — 연봉 시안 6.75점(8점 미달). 10/3 13:20 designer 회차 통과 뒤 [구현 요청]이 온다. 10/3 첫 회차는 다른 일 먼저.
@@ -158,6 +160,7 @@
     착수: firemap-youtube-loop 15:37 (운영실장 2) — E-2 대본 심사 3명 review.md(관문 기한 오늘 19:30, 정기 회차 16:35보다 앞당김: 칸 기한 우선 규칙)
     완료: firemap-youtube-loop 15:44 — E-2 대본 심사 3명(제미나이 lite·Claude 심사관·레드팀) v0 6.47→고친 v1 평균 7.03 통과(목표 8 미달, review.md·slots 10/3 19:30 note 기입), 10/4 19:30 롱폼 = X-SERIES-1 ②(나 vs 남들) 슬롯 기입. gates_ok는 썸네일·제목·목소리 뒤 담당
   - **firemap-youtube-loop**: 10/4 19:30 롱폼 편 없음 → 오늘 21:15 회의 전까지 편 정하고 slots.json에 기입(W-1 또는 X-SERIES-1 ②), 대본 10/3 오전.
+    착수: firemap-youtube-loop 16:42 — ② 나 vs 남들 편 폴더 N-1: 분석 관문·compare·사실표·대본(관문 기한 10/3 19:30), 롱폼 48시간 기준선·A-1 판정 같이
   - **firemap-shorts**: e1_hynix_dd 관문 기한 10/3 00:20 → 19:20 회차 전에 끝냄 + 비축 1편(e1_micron_q4·e1_samsung_x·a1_1eok1y 중 compete.md 있는 것) 관문 통과.
   - **firemap-write**: 16:10·18:10 회차에 카페 비축 2편 관문 통과(편집·compare·제목 8) → slots.json reserve.cafe. 오늘 18:10·22:10 빈 칸 편 배정.
     착수: firemap-write 16:11 — 카페 비축 2편(nps1002 대기 확인 + 새 1편) 관문, 18:10·22:10 칸 배정
@@ -175,3 +178,4 @@
   - 의도: 우리 쇼츠는 6~7초 정지 카드(평균 287), 경쟁 1등은 움직이는 그림+목소리. 숫자가 움직이는 데이터 모션으로 쇼츠 틀 v2·롱폼 차트 영상미를 올린다.
   - 완료 기준: 475편 중 돈·숫자·차트 주제에 맞는 프롬프트 5개 골라 motion-bench.md에 표(조회·스타일·우리 쓸 곳), 그중 2개를 우리 Remotion 부품(video/src/motion/)으로 옮겨 e1_hynix_dd 또는 다음 쇼츠 1편에 적용 → 1초 시험·심사 3명 평균 7 이상이면 공개.
   - 금지: 남의 영상·음악·글꼴 그대로 쓰기, 수페TV 따라 하기, 숫자 짓기(facts.txt 원문만). 기한: 시안 10/3 12:00, 첫 적용 쇼츠 10/3 19:20 칸.
+- [순돌이 16:4x · 사장님 결정 "발행에 필요한 것만 전부 살리고 멈춤"] 주간 사용량 84%(시간당 ~2%p, 이대로면 23시쯤 98% 정지 → 10/4 21:00까지 46시간 전원 멈춤). **10/4 21:00까지 발행 사슬만 근무**: write·shorts·video-producer·youtube-loop·editor·copywriter·visual-designer·audit·watchdog·report·meeting·dispatcher(:05). **끔(24개)**: improve·loop·product-dev·venture 4종·designer·illustrator·brand 2종·admin·behavior·editor-web·editor-en·planner·artist·motion-designer·deputy·finishline·dispatcher-2·growth·ai-lab·bizdev. 10/4 21:05 firemap-usage-restore-1004가 다시 켬. 끈 담당 일 중 발행에 걸린 것(예: 가설 근거 파일, growth 저품질 측정 10/3 09:40, 모션 475 시안)은 **미룸** — 저품질 측정은 순돌이 순찰이 대신. 운영실장(:05)은 slots.json '곧 관문 기한' 칸과 D-1만 투입.

@@ -4,7 +4,7 @@
 #   py -3.12 work/aitell.py gate <묶음>                      → 기준 넘고 편집 통과 표시 없으면 종료코드 4
 #   py -3.12 work/aitell.py pass <묶음> <편집자>             → 편집 통과 표시(editor_ok.txt)를 남긴다
 #   py -3.12 work/aitell.py scan <묶음 폴더 여러 개>         → 기준 조정용 분포
-#   py -3.12 work/aitell.py frame <묶음>                     → 카페 틀 v2 3줄 점검(소제목 3~5개·끝 FAQ/정리·제목 명사 끝). 어기면 종료코드 5
+#   py -3.12 work/aitell.py frame <묶음>                     → 카페 틀 v2 3줄 점검(소제목 3~5개·끝 FAQ/정리·제목 명사 끝 또는 B틀 물음, 반전 금지). 어기면 종료코드 5
 #   --skip-list (아무 자리)  → 번호·글머리 목록 줄과 법 문구·면책 줄을 끝맺음 반복(연속·'~요'·머리·꼬리)에서 뺀다.
 #                              사전(AI 말·설명조) 검사는 그대로. 기본은 꺼짐 — 기존 통과 점수가 안 바뀐다(10/1 대역 X-KR-1 요청).
 # 사장님 10/1 "사소한 것까지 모든 글을 다 검토해서 사람이 쓴 글로 바꿔야 하는데" — 순돌이 지시 [지시·긴급].
@@ -145,7 +145,7 @@ def is_cafe_pkg(pkg):
 
 
 def frame_check(pkg):
-    """카페 틀 v2 3줄(10/02 brand-director): ① 소제목 3~5개 ② 끝 FAQ/정리 소제목 ③ 제목 명사 끝(?·~까·~요 아님). 어긴 곳 목록."""
+    """카페 틀 v2 3줄(10/02 brand-director): ① 소제목 3~5개 ② 끝 FAQ/정리 소제목 ③ 제목: 명사 끝 또는 B틀 물음(얼마·몇), 반전(왜·는데) 금지. 어긴 곳 목록."""
     text, files = pkg_text(pkg)
     bad = []
     heads = [ln.strip() for ln in text.splitlines() if re.match(r'\s*(##\s|■)', ln)]
@@ -155,7 +155,11 @@ def frame_check(pkg):
     if os.path.exists(tp):
         t = open(tp, encoding='utf-8').read().strip()
         core = re.sub(r"[\s\)\]\.!·~…\"']+$", '', t)
-        if t.endswith('?') or re.search(r'(까|나요|가요|죠|요|니다)$', core): bad.append(f'제목이 명사로 안 끝난다 — "…{t[-14:]}"')
+        # 10/02 10:2x brand-director 바로잡음: 물음 끝 하루 조회 중앙 1.77 > 명사 끝 0.66(benchmark-2026-10-02.md 제목 틀 v2).
+        # 물음은 B틀('얼마·몇')만 허용, '왜·~는데' 반전은 금지(0.85 vs 1.26).
+        if re.search(r'왜|는데', t): bad.append(f'제목에 반전 연결(왜·~는데) — "…{t[-14:]}"')
+        elif (t.endswith('?') or re.search(r'(까|나요|가요|죠|요|니다)$', core)) and not re.search(r'얼마|몇', t):
+            bad.append(f'물음 제목은 B틀(얼마·몇)만 — "…{t[-14:]}"')
     return bad
 
 

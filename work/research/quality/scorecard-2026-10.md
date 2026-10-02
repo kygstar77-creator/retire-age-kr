@@ -17,3 +17,7 @@
 - 버린 제안(정체성 충돌, 브랜드 디렉터): 그라데이션·그림자 버튼, 다크카드를 흰 카드로, 하단 시트 입력(제미나이). 근거: 메모리 firemap-design-identity(색 4·다크카드 1·부품 30개).
 - 심사 한계: 제미나이는 한도(429)로 lite 모델(gemini-3.1-flash-lite) 판독. GPT 심사는 이번 회차 **확인 안 함** → 디자이너 13:20 회차에 셋째 심사(같은 비교판). 비교판의 토스·뱅크샐러드는 계산기가 아니라 첫 화면.
 - 원문: design/quality/judge_gemini.md(재현 judge_gemini.py), judge_redteam.md.
+
+## 10/02 10:2x 점검 (brand-director)
+- 화면 5종 점수 그대로(운영 화면 바뀐 배포 없음 — 재채점은 designer 10/3 13:20 시안 뒤). GPT 셋째 심사 여전히 확인 안 함.
+- 빈 칸: 썸네일(visual-designer)·제목·카페(copywriter·editor)·사이트 실험(venture) 줄이 아직 0줄. 기한 10/4 18:00 → today.md [지시].

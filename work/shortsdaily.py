@@ -65,7 +65,10 @@ def check(spec):
     rows = log_rows()
     if rows and spec.get('layout', 'bars') == rows[-1].get('layout'): bad.append('직전 편과 같은 틀(layout) — 바꿔야 함')   # C3
     last10 = [r.get('layout') for r in rows[-10:]] + [spec.get('layout', 'bars')]
-    if len(last10) >= 6 and max(last10.count(x) for x in set(last10)) / len(last10) > 0.5: bad.append('최근 10편 중 한 틀이 절반 넘음')
+    # 틀이 bars·rank 둘뿐이라 편 수가 홀수면 번갈아 써도 한쪽이 절반을 넘는다(2026-10-03 e1_micron_q4: 7편 중 4 = 어느 쪽을 골라도 위반).
+    # → 한 틀이 다른 틀보다 2편 이상 많을 때만 위반.
+    mx = max(last10.count(x) for x in set(last10))
+    if len(last10) >= 6 and mx / len(last10) > 0.5 and mx - (len(last10) - mx) > 1: bad.append('최근 10편 중 한 틀이 절반 넘음')
     def g3(x): x = re.sub(r'\s|#\S+', '', x); return {x[i:i + 3] for i in range(len(x) - 2)}           # C4
     me = g3(t)
     for r in rows[-30:]:

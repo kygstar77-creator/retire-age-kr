@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD;background:#0E1016}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1;text-shadow:
+   5px 5px 0 #000,-5px 5px 0 #000,5px -5px 0 #000,-5px -5px 0 #000,0 7px 0 #000,0 -6px 0 #000,7px 0 0 #000,-7px 0 0 #000}
+.lab{position:absolute;font:700 28px PD;color:#C9D1DE;white-space:nowrap}
+.fine{position:absolute;left:52px;top:612px;font:500 24px PD;color:#8A93A3;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:radial-gradient(ellipse at 75% 25%,#222a40 0%,#0E1016 65%)'></div>
+<div id='k1' class='t' data-fit='620' style='left:52px;top:70px;font-size:96px;color:#fff'>이자·배당</div>
+<div id='k2' class='t' data-fit='620' style='left:52px;top:180px;font-size:120px;color:#FFD60A'>1만원 차이</div>
+<div id='k3' class='t' style='left:52px;top:310px;font-size:110px;color:#fff'>건보료</div>
+<div id='k4' class='t' data-fit='620' style='left:44px;top:390px;font-size:215px;color:#FF4D4F'><span style='color:#fff;font-size:120px'>약 </span>3배</div>
+<div class='lab' style='left:700px;top:58px;color:#FFD60A;font-size:46px'>월 건보료</div><div style='position:absolute;left:700px;top:362.4686809137804px;width:200px;height:107.5313190862196px;background:#5B6475;border-radius:12px 12px 0 0'></div><div class='t' style='left:680px;top:266.4686809137804px;width:240px;text-align:center;font-size:76px;color:#fff'>2.3만</div><div class='t' style='left:660px;top:478px;width:280px;text-align:center;color:#fff;font-size:56px'>1,000만</div><div style='position:absolute;left:970px;top:150.0px;width:200px;height:320.0px;background:#FF4D4F;border-radius:12px 12px 0 0'></div><div class='t' style='left:950px;top:54.0px;width:240px;text-align:center;font-size:76px;color:#FFD60A'>6.8만</div><div class='t' style='left:930px;top:478px;width:280px;text-align:center;color:#fff;font-size:56px'>1,001만</div>
+<div class='fine'>연 이자·배당 · 월 22,800원→67,850원(2.98배) · 지역가입자 1인·2026년</div>
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

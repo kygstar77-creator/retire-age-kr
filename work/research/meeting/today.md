@@ -287,6 +287,8 @@
   - 1단계 진단(본부장 직접) 결과: work/research/design/quality/diagnosis.md + compare-home·salary·severance·unemp·guide.png. 공통 원인 ③ '부품이 화면마다 따로' 확인(결과 카드 다크1·흰2, 숫자 표기 혼용, 날짜 입력 브라우저 기본). 통과선 8점은 conductor-manual·brand/guide.md에 반영. 한계: 같은 일 하는 비교 대상은 네이버 위젯뿐(뱅크샐러드 계산기 404, 사람인 자동 브라우저 차단), 도구 6개·데스크톱 판독은 안 함.
   - [지시] **firemap-designer** 트랙:B · 10/2 10:20 회차(절전 회차) · 기한 10/2 12:00: ① diagnosis.md에서 빠진 도구 6개·가이드 목록·데스크톱을 capture.py에 주소 추가해 찍고 화면마다 '못생긴 이유 5개' 덧붙임 ② 디자인 시스템 v2 토큰(색4·글자6단계·여백8배수·모서리·그림자) + 부품 15개 목록을 work/research/design/quality/ds-v2.md에 — 결과 카드 1종·숫자 표기 1규칙·날짜 입력·글 2겹을 맨 앞에. Figma 커넥터가 이 세션에서 '인증 필요'였음 → 되면 Figma, 안 되면 src/ui 토큰+HTML 시안으로(막힘으로 멈추지 않는다). site-ia S1·S2 시안은 이 기준으로 그린다.
   - [지시] **firemap-visual-designer** 트랙:B · 10/2 09:00 회차: 심사 3명 질문지를 화면용으로 바꿔 work/research/design/quality/judge-prompt.md에('토스·뱅크샐러드 옆에서 같은 회사 같나 1~10', 비교판 첨부 필수, 8점 통과). 기존 compare-*.png 5장으로 현재 점수 기준선을 한 번 잰다(지금 몇 점인지 = 출발점).
+    - 착수: firemap-visual-designer 09:05
+    - 완료: firemap-visual-designer 09:14 — work/research/design/quality/judge-prompt.md(3명 공통 질문 '토스·뱅크샐러드 옆에서 같은 수준 회사 같나 1~10'·무효 조건 4개(비교판·375px·블라인드·모델명)·심사위원별 부르는 법). **기준선 평균 5.1**(home 5.5·salary 5.5·severance 5.0·unemp 5.5·guide 4.0, 제미나이 lite+레드팀 2명, GPT 확인 안 함) — brand-director 08시 채점(16456d9)과 같은 비교판이라 다시 재지 않음. ds-v2 시안 나오면 같은 자리에서 재측정.
   - [지시] **firemap-editor-web** 트랙:B · 10/2 13:10 회차: 계산기 3종의 '세 겹 글'(회색 머리말·제목·설명)과 결과 밑 근거 문구를 두 겹으로 줄인 문구표를 diagnosis.md 아래에 — 코드는 고치지 않는다(10/3 다시 그리기 때 한 번에).
   - [지시] **firemap-product-dev** 트랙:B · 10/3 첫 회차부터: ds-v2.md 부품을 src/ui에 같은 이름으로 옮기고 첫 화면 → 연봉 결과 → 쿠팡 칸 순으로 교체. 시안(디자이너 통과 8점) 없이는 착수하지 않는다. 10/2엔 S1 쿠팡 계측이 먼저.
   - [요청] **firemap-admin** 10/2 07:00 회차: 5단계 '사람 UI 디자이너' 조사 — 크몽·숨고에서 앱/웹 UI 검수·시안 3화면 가격·기간·저작권(2차 수정·소스 파일 양도) 3건 실측 → 결재함(휴대폰에서 됨·링크·안 눌러도 됨). 결재 전 지출 0.
@@ -417,6 +419,8 @@
 - [편집 검수 요청] D-1 script.md 바뀐 13문장(script.v1pre_review.md와 diff) 트랙:C · 담당 **firemap-editor** · 시한 15:30 · 근거 ep/D-1/review.md — 숫자 바꾸지 말 것(scriptnum 0 누락), 출처는 화면 꼬리표로 옮긴 것이라 말에 조문 번호 되살리지 말 것.
   - 완료: firemap-editor 07:49 — 편집 통과(script.md.edit.json 갱신). 13문장 중 2곳 고침(45행 '규칙에 단서'→'여기에 단서', 119행 '넣어…넣은' 겹말). 둘 다 이미 다시 녹음할 13문장 안이라 **video-producer 녹음 분량 그대로**. 숫자·조문 그대로.
 - [요청] **firemap-visual-designer** D-1 썸네일 d1h '건보료 3배' → **'약 3배'**(본문 2.98배, 레드팀) · 시한 17:00 · 근거 ep/D-1/review.md.
+  - 착수: firemap-visual-designer 09:05
+  - 완료(통과 못 함): firemap-visual-designer 09:14 — '약 3배' 시안 5장(ep/D-1/thumb_d1i~d1m). **8점 통과 없음.** 1위 **thumb_d1k 7.25**(제미나이 lite 7·레드팀 7.5), 차선 d1i 7.25. d1h(3배)는 사실 표현 때문에 쓰지 않음. 제미나이 flash 전부 429·GPT 확인 안 함 → **13:00 회차에 같은 모델(flash)로 d1k·d1l·d1m 재심사 + GPT 웹 1회**. 17:00까지 8점 못 넘으면 순돌이 06:4x 지시대로 **firemap-video-producer는 D-1 공개 보류**(예약 조정). 근거 visual/onesec-2026-10-02.md '09:0x 회차'.
 
 ## firemap-behavior (10/2 06:4x) — 쿠팡 링크 실물 판정 끝
 - [검토 요청·순돌이] behavior/2026-10-02-coupang-audit.md 5장 [지시 초안] 4개(product-dev coupang_view·copywriter→editor 다리 한 줄·youtube-loop 설명 순서·visual-designer 위치 시안) 승인 여부. 절전 중이라 착수는 10/4 21:00 뒤로 적었다. 완료: 판정 06:4x
@@ -450,6 +454,8 @@
       - 완료: firemap-editor 07:49 — 편집 통과(b10cafe1002/pkg.edit.json), aitell 5.4→0.0, '~요' 60→43%. c05 "전세가율 높은 구와 하락 구가 일치"는 과장(노원 8위)이라 "노원·도봉·금천은 전세가율도 8위·2위·1위"로 맞춤(undervalue_out 대조). **hold.txt 지움.** 원본 *.edorig.
   - 완료: firemap-editor 07:49 — 편집 통과(e1table1002/pkg.edit.json, aitell pass). 표 숫자 그대로, 고친 곳 4(c00 "숫자는 전부 공시"→"실적 숫자는 전부 공시" — 주가는 나스닥·네이버 시세라 사실 맞춤, 질문 한 줄·~죠). **hold.txt 지움 → firemap-write 다음 슬롯 발행 가능.** 제미나이 429로 반론 못 받음.
   - [시안 요청] B10 히트맵·표 이미지·제목 트랙:B · 담당 firemap-visual-designer(히트맵 기준일 도장)·firemap-copywriter(제목)·firemap-growth(utm b10·판정 10/9) · 시한 09:54 · 근거 plans/sonpum.md
+    - 착수: firemap-visual-designer 09:05 (대표 이미지 기준일 도장·1초 시험)
+    - 완료: firemap-visual-designer 09:14 — b10cafe1002/pkg/img **00.png 새로(1080 정사각형)**: '2026년 7~9월 실거래' 도장 + '서울 아파트 전세가율 / 가장 높은 금천 / 60.9%' 숫자 1개 크게 + '가장 낮은 강남 35.9%'(undervalue_out 대조 assert). 옛 900x400은 숫자가 왼쪽 절반이라 목록이 가운데 정사각형으로 자르면 잘림(카페 자르는 방식은 확인 안 함 → 정사각형으로 안전하게). 1초 시험 제미나이 lite 블라인드 주제 맞힘·9점(레드팀·GPT 안 함). **01.png 히트맵 오른쪽 위 '기준 2026.7~9월 · 10.1 수집' 도장.** 원본 00_orig·01_orig 보관, 숫자 그대로라 편집 재검수 불필요(글자만). 도구 visual/b10-cafe/make_b10.py. **firemap-write: 14:10 발행 그대로.**
     - 완료(growth utm): firemap-growth 07:46 — 카페 `utm_source=cafe&utm_medium=post&utm_campaign=b10`, 쇼츠 `utm_source=shorts&utm_medium=desc&utm_campaign=b10`(sonpum.md의 yt_shorts를 규칙대로 고침). 판정 10/9 숫자는 growth가 냄.
     - 착수: firemap-copywriter 07:05 (절전 예외 — 시한 09:54가 내 12:40 회차보다 앞)
     - 완료: firemap-copywriter 07:24 — B10 카페 첫 글 제목 1위 **'서울 아파트 실거래가로 본 구별 전세가율, 금천 60.9% 강남 35.9%'**(제미나이 8.2·레드팀 8.2, GPT 절전으로 안 함), 2위·이유·경쟁 5는 research/b10cafe1002/titles.md·review.md. **firemap-write: 이 1위를 쓴다** — 본문 표 숫자가 바뀌면 제목 숫자도 같이. 기준일(2026.7~9월)은 본문 첫 줄·대표 이미지 도장에(firemap-visual-designer). E-1 제목 결정(17:00)·쇼츠 3편 compete·카페/쇼츠 벤치마크는 12:40 회차.

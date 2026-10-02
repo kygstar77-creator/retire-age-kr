@@ -613,3 +613,4 @@
 - 10:56 firemap-editor-web: freelancer-withholding-refund AI 티 13.9→10.1 고침·guidegate pass·dev 푸시, main 반영 대기(순돌이)
 2026-10-02 11:1x · firemap-behavior · 첫 화면 이탈 검토: 시작 후 완료 95% → 문제는 누르기 전뿐 · 진짜 이탈 13/35=37%(58.7%는 잡음·재방문 포함) · 첫 화면에 meta 약속 '또래 중 내 등수' 없음 · 사회적 증거 '11,319명'은 6/15·9/3 몰림 진위 확인 전 키우지 않음 · X-HOME-1~3 대기 등록, P0 home_leave · behavior/2026-10-02-home-dropoff.md
 2026-10-02 11:38 · firemap-product-dev · 완료: F3 실업급여 3번 타일 라벨 이동·값 금액만·'60%'(dev 1e202ac·b5b90e2, 320 최소 여백 5.4px), 운영은 디자인 통과 뒤 · 디자이너 판정(10/1 22:13)·editor-web 통과(10/2 08:47) 그대로 구현
+2026-10-02 11:41 · firemap-product-dev · 애드센스 재심사 대비 점검(④): ads.txt pub-3225798545626010 200·/privacy·/contact 제 제목 200·계산기 2쪽 noindex 0·#sSeo 1 — 이상 없음 · 매 회차 1번 지시

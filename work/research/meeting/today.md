@@ -204,6 +204,7 @@
 - [편집 검수 요청] N-1 대본 v3 트랙:C · 담당 firemap-editor · 시한 10/3 12:00 · 근거 work/research/longform/ep/N-1/script.md(숫자 바꾸지 말 것 — facts.txt, review.md '남은 약점')
 - [지시] N-1 제목 후보 5·1위 트랙:C · 담당 firemap-copywriter · 시한 10/3 12:00 · 근거 ep/N-1/analysis.md ②·plans/yt-series.md 36행 — 앞부분 '나 vs 남들 |' 고정, **빈칸 '연봉 ___' 필수**, '상위 몇 %'·'연봉'·'순자산' 앞쪽, '중앙값' 단어 쓰지 않음(검색 25), 경쟁 제목 틀('내 연봉은 상위 몇%일까?') 그대로 금지
 - [지시] N-1 썸네일 트랙:C · 담당 firemap-visual-designer · 시한 10/3 15:00 · 근거 ep/N-1/compare.md(경쟁 5 주소) — 큰 글자 빈칸 '연봉 ___ → 상위 ?%' + 숫자 1(예: 4,475 → 36%), 층·건물 그림 금지(송현영 겹침), 1초 시험·심사 3명 7+
+    착수: firemap-visual-designer 23:10 — N-1 썸네일(경쟁 5 비교판·시안 2~3·1초 시험·심사 3명)
 - [지시] N-1 목소리·화면·렌더·예약 업로드 트랙:C · 담당 firemap-video-producer · 시한 관문 10/3 19:30·공개 10/4 19:30 · 근거 ep/N-1/script.md 화면 지시 — E-2(10/3 19:30)가 먼저. 설명란: 첫 줄 firemap.kr/calc/salary?utm_source=youtube&utm_campaign=yts2-n1, 출처 2줄(국세청 근로소득 백분위 data.go.kr 15082063 · 2025 가계금융복지조사 표12), 'AI 음성 내레이션', 쿠팡 없음(4편 중 1편 규칙·금융 통계 편)
 - [요청] N-1 카페 긴 글(롱폼 1편=카페 1편, 10/4 공개일) 트랙:C · 담당 firemap-write · 시한 10/4 13:30(카페 6시간 전) · 근거 ep/N-1/facts.txt 표A 100칸 전체·표C — 소제목 4~6·자리표·경계값 표·영상 넣기, 대본 그대로 붙이기 금지
 - [알림] firemap-video-producer·순돌이 (23:08 youtube-loop videos.list): E-1 idc3JZOZukc가 이미 **public**(uploads.jsonl publishAt 10/3 19:30인데 status public, 조회 2) — 의도된 앞당김인지 기록 없음(today·log·STATE에 idc3 없음). D-1 GMc2Rd1-JYA 공개 3시간 반 조회 0(집계 지연인지 확인 안 함). 내가 상태를 바꾸지는 않음
@@ -230,3 +231,7 @@
   - 금지: 남의 영상·음악·글꼴 그대로 쓰기, 수페TV 따라 하기, 숫자 짓기(facts.txt 원문만). 기한: 시안 10/3 12:00, 첫 적용 쇼츠 10/3 19:20 칸.
 - [순돌이 16:4x · 사장님 결정 "발행에 필요한 것만 전부 살리고 멈춤"] 주간 사용량 84%(시간당 ~2%p, 이대로면 23시쯤 98% 정지 → 10/4 21:00까지 46시간 전원 멈춤). **10/4 21:00까지 발행 사슬만 근무**: write·shorts·video-producer·youtube-loop·editor·copywriter·visual-designer·audit·watchdog·report·meeting·dispatcher(:05). **끔(24개)**: improve·loop·product-dev·venture 4종·designer·illustrator·brand 2종·admin·behavior·editor-web·editor-en·planner·artist·motion-designer·deputy·finishline·dispatcher-2·growth·ai-lab·bizdev. 10/4 21:05 firemap-usage-restore-1004가 다시 켬. 끈 담당 일 중 발행에 걸린 것(예: 가설 근거 파일, growth 저품질 측정 10/3 09:40, 모션 475 시안)은 **미룸** — 저품질 측정은 순돌이 순찰이 대신. 운영실장(:05)은 slots.json '곧 관문 기한' 칸과 D-1만 투입.
 - 순돌이 18:3x 사용량 실측: 16:36 84% → 18:29 85% (시간당 ~0.5%p, 끄기 전 ~2%p). 초기화(10/4 21:00)까지 남은 13%p ÷ 50시간 = 0.26%p/h가 버틸 속도 → 아직 2배. 운영실장 매시→**2시간마다(:05)**, 순찰 90분. 10/4 21:05 restore 작업이 운영실장도 '5 * * * *'로 되돌림(아래).
+
+- [배차 23:10] 착수: firemap-shorts 23:10 (운영실장) — 10/3 12:20 e1_hynix_dd 관문 기한 10/3 00:20·19:20 e1_micron_q4 관문 07:20
+- [배차 23:10] 착수: firemap-write 23:10 (운영실장) — 10/3 12:10 카페 빈 칸 편 정하고 관문 06:10까지(비축분 0/2)
+  막힘: firemap-shorts 23:16 — e1_hynix_dd 관문 미완: 표지 화면 붙이고 제미나이(flash-lite) 표지 7·카피 8·주제 맞힘, 나머지 심사 2명 결과 전에 회차 종료 → gates_ok 비움, 다음 회차가 review.md 마무리

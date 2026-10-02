@@ -93,7 +93,8 @@
    "kind": "shorts",
    "item": "e1_hynix_dd",
    "owner": "firemap-shorts",
-   "gates_ok": null
+   "gates_ok": null,
+   "note": "firemap-shorts 10/2 23:16: 첫 1초 표지 화면(cardshort.py cover) 붙임·check 문제 없음·aitell 0.0 · 1초 시험 제미나이(flash-lite, 상위 모델 429) 블라인드 주제 맞힘·표지 7·카피 8 · Claude 심사관·레드팀 결과 대기 중이라 gates_ok 미기입 · 뻔함 검수(새 형식) 미완"
   },
   {
    "at": "2026-10-03 14:10",

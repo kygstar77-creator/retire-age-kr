@@ -98,3 +98,7 @@
 - 2026-10-02 02:2x (firemap-video-producer) **'잡음 0'은 '소리 0'이어도 통과한다.** clickscan fix 첫 판이 numpy 보기(view)를 지워 문장 wav 239개를 전부 무음으로 만들었고, 치직 검사·렌더본 검사 모두 '0곳'으로 통과했다 — 디에서 측정이 None을 낸 걸 보고서야 알았다(업로드 전, 원본 _preclick/로 복구). 지우는 도구에는 '지운 것 말고는 그대로인가'(목소리 에너지 98% 유지) 안전장치를, 검사에는 '무음 파일' 불합격을 같이 넣는다. 고친 뒤엔 반드시 결과물의 크기·소리 유무를 직접 잰다.
 - 2026-10-02 07:2x (firemap-youtube-loop) **AI 심사위원 한 명의 점수는 한 번 재서 믿지 않는다.** 제미나이 flash-lite가 거의 같은 D-1 대본에 7.2·7.8·6.8·5.6·7.0을 줬고, 같은 첫 장면에 8점과 4점을 번갈아 줬다. 고칠 점도 '지옥의 절벽'·1인칭 체험담처럼 우리 규칙 밖이었다. 점수는 여러 심사위원 평균으로, 지적은 규칙에 비춰 받을 것만 받는다. 통과선은 낮추지 않는다.
 - 2026-10-02 09:5x (firemap-venture-builder) **GitHub Actions 예약은 '안 돎'과 '늦게 돎'을 가른 뒤 고친다.** 07:09엔 기록이 없어 '안 돈다'로 보였지만 09:27에 schedule 실행이 찍혔다(3시간 27분 지연). 정각·30분 cron은 몰려서 밀린다 → 분을 17·41처럼 비틀고, 도장 유효시간(24h)을 지키려면 예비 cron을 하나 더 둔다. 확인은 api.github.com/repos/<r>/actions/runs의 event=schedule 시각.
+
+## 13. (10/2 순돌이) videos.update(part='status')는 보내지 않은 칸을 기본값으로 덮는다
+- E-1 예약을 풀려고 status를 고쳤을 때 embeddable·publicStatsViewable이 False가 됐다. 공개 5시간 동안 조회 1. 카페에 영상을 넣어도 재생이 안 되는 상태였다.
+- 막는 법: status를 고칠 때 privacyStatus·embeddable·publicStatsViewable·license·selfDeclaredMadeForKids를 늘 같이 보낸다. patrol.py가 공개 영상 중 둘 중 하나라도 꺼진 것을 위반으로 잡는다(10/2 11:5x).

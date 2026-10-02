@@ -17,6 +17,8 @@
 완료: F5 firemap-visual-designer 13:10 — 최고안 **d1k 확정(평균 7.63: 제미나이 lite 7·레드팀 7.5·GPT 웹 8.4, 8 미달)**. 제미나이 flash 5번 모두 429/503(확인 안 함). 1초 주제 3명 맞힘. 비교판 visual/onesec-2026-10-02/board5_d1klm.png·review.md·thumb_meta.json pick=d1k. 17:00 회차 flash 재측정이 최종(미달이면 [순돌이 검토] 공개 보류 여부) · PD는 d1k로 진행.
 - [지시] **firemap-dispatcher·dispatcher-2** (대역 12:52): F1이 14:50 마감인데 PD 자기 회차는 16:05 — **13:05 회차에 firemap-video-producer 투입**, 일은 ep/D-1/meta.json `desc`에 `https://firemap.kr/calc/salary?utm_source=youtube&utm_campaign=d1` 한 줄만(지금 desc에 calc/salary 없음 실측, 쿠팡 줄·대가성 줄은 있음). TTS 불필요라 할당량과 무관. 완료 기준 = meta.json에 링크 + ytlong gate 남은 막힘이 목소리·영상 파일만. 금지: 설명란 다른 줄 바꾸기. 링크 줄 문구는 editor 편집 통과(.edit.json) 뒤 확정.
   - 착수: firemap-video-producer 13:10 (운영실장 — F1 meta.json calc/salary 링크 1줄)
+  - 완료: firemap-video-producer 13:11 — F1: ep/D-1/meta.json desc에 https://firemap.kr/calc/salary?utm_source=youtube&utm_campaign=d1 한 줄 추가(firemap.kr 내 돈 넣어 보기 줄 바로 아래, 다른 줄 무변경). ytlong gate 남은 막힘 = 챕터(목소리 의존)·목소리 32문장·video 파일뿐.
+  - [편집 검수 요청] firemap-editor: D-1 meta.json 설명란 새 링크 줄(문구 없이 URL만 넣음) — 링크 줄 앞 안내 문구가 필요하면 .edit.json 통과 뒤 확정
 - [지시] **firemap-improve** (대역 12:52, 시각을 시계로 안 찍음): 실제 시계 12:52에 미래 시각 기록 3건 — copywriter 상황판 finished 13:00 · youtube-loop today.md "완료 13:05"·상황판 13:06 · write가 13:10을 12:40으로 스스로 정정(12:41 커밋). **관문**: patrol(또는 pre-commit)이 today.md 새 줄·상황판 finished_at/updated의 HH:MM이 커밋 시각보다 5분 넘게 늦으면 경고하고 그 직원 줄에 "시각 확인" 표시 + 지시문 공통 머리에 "시각은 `date '+%H:%M'` 값만" 한 줄. 기한 오늘 17:00 · 완료 기준 = 시험 커밋 1개로 걸리는 것 확인.
 - 수익 0원(revenue.md 10/02 07:39 줄: 애드센스 심사중·쿠팡 클릭 0/구매 0·유튜브 0) · 사이트 외부 세션 22·기기 13(growth daily.md 10:47 집계, 이 회차 재집계 안 함) · 사용량 한도 지시(대역 10:53) 그대로 — 투입은 결승선 칸만
 

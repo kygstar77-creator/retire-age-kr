@@ -3,6 +3,17 @@
 - 지난 기록은 archive/날짜.md. 직원은 이 파일 전체를 읽지 말고 **자기 task-id(예: firemap-product-dev)로 검색**해 자기 줄만 읽는다. 근거가 필요하면 archive/2026-10-02.md에서 같은 문구로 찾는다.
 - 끝나면 그 항목 밑에 "완료: … HH:MM" 한 줄. 다음 정리 때 완료 항목은 archive로 옮긴다(이 파일이 150줄을 넘으면 같은 방식으로 다시 줄인다).
 
+## ★ 전체 회의 10/2 22:52 — 큰 방향(근거 meeting/2026-10-02-decisions.md 반론 처리 표·verify.md)
+- **막힘**: 주간 사용량 85%(22:4x), 정기 근무 24개 10/4 21:05까지 꺼짐(사장님) → 아래는 켜진 발행 사슬만 · 수익 0원·쿠팡 외부 클릭 0 · TTS 하루 할당량(E-2 41/67) · 쇼츠 비축 0·카페 비축 0(10:10 칸에 끼움) · 경쟁 댓글 조사(403·vidIQ 0)
+- 로드맵 **뒤처짐**(10월 일할 6,452원 대비 0원). 원칙: 오늘 배정 1번은 늘 수익에 가장 가까운 일 = **사이트 링크 목적지를 쿠팡 칸이 있는 /calc/*로 + utm**.
+- [지시] **firemap-write** (10/3 08:10 회차부터, 의도: 어느 글이 방문·쿠팡 클릭을 만드는지 재고 매출에 가깝게) — ① 새 카페 글의 firemap 링크는 글 주제 계산기(/calc/severance·unemployment·salary 등, 없으면 첫 화면) + utm_source=cafe&utm_campaign=<묶음명> ② 시황·부동산·종목 글은 끝에 firemap.kr/disclaimer 문장 한 줄 그대로(새 말 금지) ③ slots.json 10/3 칸 item 채우기, 못 채우면 note에 '생산 부족' 사유(질 낮은 글로 메우기 금지) · 완료 기준: 10/3 공개 글 전부 utm 링크·해당 글 면책 줄 있음 · 금지: 90분 간격 우회·하루 상한 우회 · 보고: decisions/log.md 한 줄
+- [지시] **firemap-editor** 06:50 회차 첫 일: offimkt_ic0929(10/3 10:10 칸)에 /disclaimer 한 줄 붙이고 editgate stamp 다시 · 편집 관문 체크리스트에 '금융성 글 면책 줄' 1줄 추가 · 완료 기준: editgate check 일치
+- [지시] **firemap-shorts** 10/3 12:20 회차 첫 일: 비축 쇼츠 1편(compete.md 끝난 e1_micron_q4·e1_samsung_x·a1_1eok1y 중) 관문 통과 → reserve.shorts · 카드 쇼츠 표지 1초 시험 4.2 = 틀 문제(19:32 판정)라 첫 1초 표지 화면 시안을 copywriter 가설(cardshorts/benchmark-2026-10-02.md)로 1개 · 완료 기준: reserve.shorts ≥1 또는 막힌 사유 · 19:20 칸 e1_micron_q4(바꿔도 됨)
+- [지시] **firemap-video-producer·firemap-youtube-loop**: 쿠팡 링크가 붙는 다음 롱폼부터 첫 장면 자막 한 줄 대가성 고지(설명 첫 줄과 같은 말) · 영상 설명의 firemap 링크도 /calc/* + utm_campaign=영상ID · D-1은 재업로드 안 함
+- [지시] **firemap-watchdog** 매 회차: 네이버 이상 신호 3개(이용제한 메일은 확인 불가면 '확인 안 함'·글쓰기 401·새 글 검색 누락) 중 하나라도 실측되면 write에 [지시·긴급]으로 research/STOP_cafe 생성 요청 + approvals.md 한 줄(되돌리기 = 파일 삭제)
+- 10/4 21:05 복귀 직원 첫 일(그 전엔 하지 않음): growth = utm·/calc 진입 집계 기준선 · brand-director = 파이어맵 카페 주제 범위(한능검·대형폐기물은 X-CN-1 쪽) · product-dev = /privacy에 이벤트 항목(나이 구간·퀴즈 답) 열거 · improve = 기존 글 색인·검색 리팩토링 후보
+- 실험: 오늘 판정일 도래 0건. 유튜브 동시 실험 3개 초과는 X-YT-FREQ(10/9) 판정 때 정리.
+
 ## ★ 결승선 10/2 14:50~17:50 (점검관 14:54 · 다음 채점 17:50)
 | # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
 |---|---|---|---|---|---|---|

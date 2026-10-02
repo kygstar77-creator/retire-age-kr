@@ -12,13 +12,7 @@
  },
  "reserve": {
   "shorts": [],
-  "cafe": [
-   {
-    "item": "offimkt_ic0929",
-    "gates_ok": "2026-10-02 22:49",
-    "note": "인천 오피스텔 9월 매매(9/28 계약분까지) · 제목 8.9·표지 8·editgate auto 해시·compare/review 세 줄·틀 v2 · 815자(짧음) · 시황이라 10/9 넘으면 숫자 낡음"
-   }
-  ],
+  "cafe": [],
   "long": []
  },
  "slots": [
@@ -81,16 +75,18 @@
   {
    "at": "2026-10-03 10:10",
    "kind": "cafe",
-   "item": null,
+   "item": "offimkt_ic0929",
    "owner": "firemap-write",
-   "gates_ok": null
+   "gates_ok": "2026-10-02 22:49",
+   "note": "회의 22:5x: 비축분에서 끼움(시황, 10/9 넘으면 낡음) · 금융 면책 한 줄(/disclaimer 문장 그대로)은 editor 06:50 회차가 붙이고 editgate stamp 다시 → 해시 바뀌므로 그 전엔 발행 금지(반론 1)"
   },
   {
    "at": "2026-10-03 12:10",
    "kind": "cafe",
    "item": null,
    "owner": "firemap-write",
-   "gates_ok": null
+   "gates_ok": null,
+   "note": "회의 10/2 22:5x 배정: write 생산(편명은 관문 시작 때 item에 기입). 못 채우면 질 낮은 글로 메우지 말고 '생산 부족' 사유를 note에"
   },
   {
    "at": "2026-10-03 12:20",
@@ -104,28 +100,32 @@
    "kind": "cafe",
    "item": null,
    "owner": "firemap-write",
-   "gates_ok": null
+   "gates_ok": null,
+   "note": "회의 10/2 22:5x 배정: write 생산(편명은 관문 시작 때 item에 기입). 못 채우면 질 낮은 글로 메우지 말고 '생산 부족' 사유를 note에"
   },
   {
    "at": "2026-10-03 16:10",
    "kind": "cafe",
    "item": null,
    "owner": "firemap-write",
-   "gates_ok": null
+   "gates_ok": null,
+   "note": "회의 10/2 22:5x 배정: write 생산(편명은 관문 시작 때 item에 기입). 못 채우면 질 낮은 글로 메우지 말고 '생산 부족' 사유를 note에"
   },
   {
    "at": "2026-10-03 18:10",
    "kind": "cafe",
    "item": null,
    "owner": "firemap-write",
-   "gates_ok": null
+   "gates_ok": null,
+   "note": "회의 10/2 22:5x 배정: write 생산(편명은 관문 시작 때 item에 기입). 못 채우면 질 낮은 글로 메우지 말고 '생산 부족' 사유를 note에"
   },
   {
    "at": "2026-10-03 19:20",
    "kind": "shorts",
-   "item": null,
+   "item": "e1_micron_q4",
    "owner": "firemap-shorts",
-   "gates_ok": null
+   "gates_ok": null,
+   "note": "회의 22:5x 배정: compete.md 끝난 3편(e1_micron_q4·e1_samsung_x·a1_1eok1y) 중 준비도 높은 편으로 shorts가 바꿔도 됨 · 표지 1초 시험 7↑"
   },
   {
    "at": "2026-10-03 19:30",
@@ -140,14 +140,32 @@
    "kind": "cafe",
    "item": null,
    "owner": "firemap-write",
-   "gates_ok": null
+   "gates_ok": null,
+   "note": "회의 10/2 22:5x 배정: write 생산(편명은 관문 시작 때 item에 기입). 못 채우면 질 낮은 글로 메우지 말고 '생산 부족' 사유를 note에"
   },
   {
    "at": "2026-10-03 22:10",
    "kind": "cafe",
    "item": null,
    "owner": "firemap-write",
-   "gates_ok": null
+   "gates_ok": null,
+   "note": "회의 10/2 22:5x 배정: write 생산(편명은 관문 시작 때 item에 기입). 못 채우면 질 낮은 글로 메우지 말고 '생산 부족' 사유를 note에"
+  },
+  {
+   "at": "2026-10-04 08:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "회의 10/2 22:5x 배정: write 생산(편명은 관문 시작 때 item에 기입). 못 채우면 질 낮은 글로 메우지 말고 '생산 부족' 사유를 note에"
+  },
+  {
+   "at": "2026-10-04 10:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "회의 10/2 22:5x 배정: write 생산(편명은 관문 시작 때 item에 기입). 못 채우면 질 낮은 글로 메우지 말고 '생산 부족' 사유를 note에"
   },
   {
    "at": "2026-10-04 19:30",

@@ -44,6 +44,8 @@
 - [요청] **firemap-editor** 오늘: 11:50 회차에 09:00 [auto] 가이드 1편 사후 aitell·편집(기준 넘으면 고친 본을 dev에), 카페 190(F2). **firemap-growth**: 07·19시 daily.md·revenue.md 갱신, 외부 방문 경로별, utm x-cn-1 유입 17:00, R5 오픈채팅 공지 1회, 10월 파트너스 클릭·판매액 매일, 쇼츠·롱폼 설명·수동 카페 글 대가성 링크(10/5).
   착수: firemap-growth 10:45 (오전 경로별 외부 방문 집계·파트너스 클릭·utm x-cn-1 중간값)
   완료: firemap-growth 오전 집계 — 외부 22세션·13기기·계산 9기기, utm x-cn-1 외부 0·cafe utm 0·쿠팡 외부 0(daily.md). 19시 daily·revenue, R5 오픈채팅 공지는 16:40 회차 10:46
+  착수: firemap-editor 12:05 (09:00 [auto] 가이드 사후 aitell·편집 + 카페 190)
+  완료: firemap-editor — [auto] 가이드 freelancer-withholding-refund 2차 편집(guidegate 10.1→8.3, 숫자·면책 0 변경, guidegate pass 갱신, dev). 운영 노출은 F2 dev→main 그대로(순돌이) · 카페 190은 10:50 사후 통과로 끝 12:06
 - [지시] **firemap-product-dev**: 22:00까지 ① 퇴직금·실업급여 결과 카드 아래 주황 버튼 '이 돈이면 몇 살에 은퇴?'(디자이너 통과 뒤 배포, 전후 7일 이벤트 log.md) ② 'N년 앞당겨져요'(차이 ≥1년만, 배포 전 숫자 줄 뜨는 비율 log.md, 10% 미만이면 후보 ③ 교체 판정 요청) ③ F3 ④ 애드센스 재심사 대비 매 회차 1번(ads.txt·개인정보·문의·#sSeo·noindex). 10/3: R1 첫 화면·결과→계산기 3종 fm_from, R6 결과 공유(utm share), site-ia 1판(운영엔 4번 이벤트만), 디자인 v2 부품 src/ui 이관(시안 8점 통과 후). 10/5 실업급여 '받을 수 있나' 3문항. 나중: 127.0.0.1·localhost·*.pages.dev 기록 끄기·/calc 일반 링크, 4대보험 계산기(요율 원문·손검산 5건), 퇴사 영수증 구현 10/10.
 - [지시] **firemap-designer** 10:20 회차 12:00: ds-v2 토큰·부품 15개 ds-v2.md + 빠진 도구 6개·가이드·데스크톱 캡처, Claude HTML 시안 1장(Stitch 비교용), 허브 첫 화면·도장 시안(global-calcs, 12:00). 10/3 13:20 첫 화면·연봉 시안 + GPT 셋째 심사(8점). PC 1280/1440 + 모바일 375 기준. X-V1·X-CN-1 beat-1st 8점 사후 확인(다음 회차).
   - 착수: firemap-designer 10:32 (ds-v2.md·빠진 도구 캡처·Claude HTML 시안·허브 도장 시안)

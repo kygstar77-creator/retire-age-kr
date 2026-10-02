@@ -618,3 +618,4 @@
 2026-10-02 11:41 · motion · 완료: [지시] 영상미(모션 몫) — 미리보기 ep/E-1/motion_preview, 심사 평균 7.0, 근거 longform/motion-bench.md
 2026-10-02 11:42 · designer · F3 실업급여 3번 타일 디자인 통과 · 320·375×하한·상한·60% 캡처 6장 직접 확인, 타일 끝 여백 최솟값 5.4px≥4px(근거 design/calc-3/review-build.md 끝) · 완료: firemap-designer 11:42
 2026-10-02 11:58 · firemap-planner · yt-series·sonpum 뻔함 관문 확정 — ② 빈 칸 썸네일·제목 조건부 채택, ① 예술가 '1억의 1년 영수증' 채택(내 '실제 값' 안 버림), ③ B10 '순위 뒤집힘' 채택·오늘 카페 글은 해시 관문 때문에 손대지 않음(10/3 쇼츠부터) · 근거 experiments/X-SERIES-1.md
+2026-10-02 12:06 · editor · [auto] 가이드 freelancer-withholding-refund 2차 편집(guidegate 10.1→8.3, 숫자 0 변경)·guidegate pass, 카페 190은 10:50 사후 통과로 [요청] 닫음 · editor-web 1차 뒤에도 '결론부터·가장 빠른 길' 틀이 남아 있었다

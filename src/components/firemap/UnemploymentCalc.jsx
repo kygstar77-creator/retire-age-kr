@@ -26,7 +26,9 @@ export default function UnemploymentCalc({ inputs, onApply, onMove }) {
   const r = unemploymentBenefit({ lastWorkDay, monthlyWage: monthly, insuredMonths, over50, dailyHours: hours });
   const ok = r.supported;
   useCalcEvents('unemployment', [lastWorkDay, over50, insuredMonths, monthly, hours], ok && r.total ? Math.min(20, Math.floor(r.total / 1000000)) : null);
-  const limit = !ok ? '—' : r.capped ? `상한 ${exact(r.capDaily)}` : r.floored ? `하한 ${exact(r.floorDaily)}` : '평균임금의 60%';
+  // 값은 금액만, 어느 한도가 걸렸는지는 라벨로(디자인 10/1 22:13 · 편집 10/2 08:47) — 320px 타일 넘침 막기
+  const limitLabel = ok && r.capped ? '상한' : ok && r.floored ? '하한' : '상한 · 하한';
+  const limit = !ok ? '—' : r.capped ? exact(r.capDaily) : r.floored ? exact(r.floorDaily) : '60%';
 
   const toRetire = () => {
     if (!ok || !r.total) return;
@@ -47,7 +49,7 @@ export default function UnemploymentCalc({ inputs, onApply, onMove }) {
         tiles={ok ? [
           { label: '1일 구직급여액', value: exact(r.daily) },
           { label: '소정급여일수', value: `${r.days}일` },
-          { label: '상한 · 하한', value: limit }
+          { label: limitLabel, value: limit }
         ] : undefined}
       />
 

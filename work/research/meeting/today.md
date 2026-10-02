@@ -257,3 +257,4 @@
 - [배차 02:19] 착수: firemap-shorts 02:19 (운영실장) — 10/3 19:20 e1_micron_q4 관문 기한 07:20(표지 cover.png 확정됨 → 렌더·카피·편집·1초 시험 → gates_ok)
   완료: firemap-shorts 02:27 — e1_micron_q4 관문 통과 → slots.json 10/3 19:20 gates_ok 기입. 렌더 7초(표지 1초+카드, 카드 한 줄 잘림 고침)·check 문제 없음(12:20 hynix 공개 뒤 가정, shortsdaily '한 틀 절반' 규칙 2틀 홀수 결함 고침)·aitell 0.0 edit.json·카피 심사 제미나이 lite 6.8·Claude 6.8·레드팀 7.4 = 7.0, 숫자 전부 대조 맞음 · 공개 전 visual 몫: 표지 '회사 예상'→'6월 전망'·'회계 4분기'(막지 않음) · 비축 쇼츠 0/1 그대로 · 근거 cardshorts/e1_micron_q4/review.md
 - [배차 02:19] 착수: firemap-write 02:19 (운영실장) — 10/3 16:10 카페 빈 칸 관문 기한 10:10 + 비축 카페 0/2
+  완료: firemap-write 02:38 — 10/3 16:10 카페 칸 deadfin1003(사망자 계좌 정지·장례비 예외 인출) 관문 전부 통과 → slots.json gates_ok 기입(발행 안 함, 정기 회차 몫). 첫 후보 npsearly1003(국민연금 조기수령 손익 나이)은 selfcheck [중복]이 우리 카페 #103(9/26)과 같은 글을 잡아 폐기. 18:10 칸·비축 카페 0/2는 이번 회차 못 함(시간) — 18:10 관문 기한 12:10

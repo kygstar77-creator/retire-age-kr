@@ -9,6 +9,7 @@
 | F1 | D-1 19:30 공개 준비(수익 가장 가까움: 설명란 쿠팡 두 줄) — 16:00 TTS 초기화 뒤 목소리 남은 27문장 → 렌더 → ytlong gate | C | firemap-video-producer(16:05 회차) | 17:50 | ytlong gate "통과"(C9 챕터·목소리·video 막힘 0) + 19:30 예약 업로드 또는 보류 사유 log 한 줄 | 열림 |
 - [지시] **firemap-video-producer** 16:05 회차(운영실장 15:17): D-1 썸네일 재심사 최고 d1n 평균 7.30 <8 → review.md 연기 판정(aace0fe). 업로드는 그대로 진행하되 **publishAt = 10/3 19:30**, uploads.jsonl·X-YT-FREQ에 오늘 롱폼 빈칸 사유 한 줄. 썸네일 최종안은 10/3 visual-designer 재작업 몫.
   착수: firemap-video-producer 15:37 (운영실장 2) — PD 정기 회차는 18:05(4시간 간격, 16:05 회차 없음)라 지금 투입. 15:3x 통과선 7점 → d1k 7.63 통과, publishAt 10/2 19:30 유지(15:15 연기 판정은 취소됨), 16:00 TTS 초기화 뒤 남은 목소리→렌더→ytlong gate→예약 업로드
+  착수: firemap-video-producer 17:45 (운영실장) — 15:37 투입분은 운영실장 2 회차가 16:50 ENOTFOUND로 실패해 끊김(voice.json 16:25까지만, 커밋·렌더 없음) → 재투입. 18:05 정기 회차는 이 착수 줄을 보고 D-1을 건너뛴다. 19:00까지 업로드 못 하면 10/3 19:30 연기·사유 기록
 | F2 | D-1 썸네일 8점 재작업 — 17:00 flash 재측정·새 안, 8 미만이면 [순돌이 검토] 공개 하루 연기 판정(2105f01: 18:30 한도) | C | firemap-visual-designer(17:00 회차) | 17:50 | review.md에 3명 평균 ≥8 안 + 1초 시험, 또는 연기 판정 줄 | 열림 |
 | F3 | 편집 대기 해소 — D-1 meta.json 새 링크 줄 .edit.json(13:11 요청, 착수 없음) + offimkt1002 editgate stamp 재찍기(title.txt 교체로 불일치) | C | firemap-editor | 17:50 | ep/D-1/meta.json.edit.json 실재 + editgate.py check offimkt1002 일치 | 대기(요청 13:11부터 1h40m 착수 없음) |
 | F4 | 쇼츠 a1_need100 19:20 공개 예약 확인 + e1_hynix_dd 관문(review 3줄·1초 시험) | C | firemap-shorts | 17:50 | 유튜브 예약 상태(publishAt 19:20) 실측 줄 또는 보류 사유 log | 열림 |
@@ -115,6 +116,7 @@
 
 ## 막힘 (풀리지 않은 것)
 - 막힘(firemap-loop 15:58): 마감 절차의 main 반영(merge origin/main + push dev:main)이 자동 권한 검사 [Production Deploy]로 거절 — dev(1c7756f)까지만 올림. 바뀐 건 work/ 스크립트·기록뿐이라 운영 화면 영향 없음, 다음 main 반영 때 같이 간다.
+- 실패(운영실장 17:45): firemap-dispatcher-2 15:35 회차·firemap-youtube-loop 16:40 회차 ENOTFOUND(16:50쯤 망 끊김). D-1 PD 재투입, E-2는 대본·편집 통과 상태라 재투입 안 함
 - 멈춤: firemap-admin 시작 10/1 23:50, 마지막 활동 10/1 23:51 (운영실장 14:12 확인 — 아직 running, 19:03 회차 막힐 수 있음. 순돌이가 채팅 세션에서 중지)
 - 막힘(운영실장 13:12): offimkt1002 제목 평균 7.6(제미나이 7.2·레드팀 8.0) 8 미달 — hold 유지, 8차안(송파 지역어+궁금증 장치, 명사 끝)은 firemap-copywriter 몫, 16:10 못 맞추면 18시 이후 대타. 근거 offimkt1002/pkg/review.md
 - F4 반만 충족(운영실장 10:51): Cloudflare Pages 빌드 로그 원문은 로그인 필요라 인용 못 함. 간접 확인 = guidegate는 main에 이미 있음(13b2429⊂2cf4233), 09:15 가이드 freelancer-withholding-refund는 AI 티 13.9로 막혀 운영 미노출 → editor-web 고친 뒤 guidegate pass·dev→main · 담당 firemap-editor-web·순돌이(로그 보려면 사장님 로그인).
@@ -172,6 +174,7 @@
   - **firemap-video-producer·firemap-youtube-loop**: 10/3 19:30 = **E-2**. 관문 기한 **오늘 19:30** — review.md 8점(youtube-loop 대본 심사 3명, 지금), 썸네일(visual 17:00 D-1 다음 순서)·제목(copywriter 18:40) 오늘 안. 목소리는 D-1 끝난 뒤 남은 무료 한도로 시작, 모자라면 10/3 16:05 — 이 늦음은 TTS 한도 탓으로 결재함 'TTS 유료' 올림.
     착수: firemap-youtube-loop 15:37 (운영실장 2) — E-2 대본 심사 3명 review.md(관문 기한 오늘 19:30, 정기 회차 16:35보다 앞당김: 칸 기한 우선 규칙)
     완료: firemap-youtube-loop 15:44 — E-2 대본 심사 3명(제미나이 lite·Claude 심사관·레드팀) v0 6.47→고친 v1 평균 7.03 통과(목표 8 미달, review.md·slots 10/3 19:30 note 기입), 10/4 19:30 롱폼 = X-SERIES-1 ②(나 vs 남들) 슬롯 기입. gates_ok는 썸네일·제목·목소리 뒤 담당
+    착수: firemap-visual-designer 17:44 — E-2 썸네일(경쟁 5 비교판·시안 2~3·1초 시험·심사 3명, 관문 기한 오늘 19:30)
   - **firemap-youtube-loop**: 10/4 19:30 롱폼 편 없음 → 오늘 21:15 회의 전까지 편 정하고 slots.json에 기입(W-1 또는 X-SERIES-1 ②), 대본 10/3 오전.
     착수: firemap-youtube-loop 16:42 — ② 나 vs 남들 편 폴더 N-1: 분석 관문·compare·사실표·대본(관문 기한 10/3 19:30), 롱폼 48시간 기준선·A-1 판정 같이
   - **firemap-shorts**: e1_hynix_dd 관문 기한 10/3 00:20 → 19:20 회차 전에 끝냄 + 비축 1편(e1_micron_q4·e1_samsung_x·a1_1eok1y 중 compete.md 있는 것) 관문 통과.

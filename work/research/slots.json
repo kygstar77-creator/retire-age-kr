@@ -122,7 +122,7 @@
    "item": "E-2",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "대본 있음·review.md·목소리·썸네일 없음"
+   "note": "대본 심사 통과 평균 7.0 ($T) · 썸네일·제목·목소리·편집 통과 남음"
   },
   {
    "at": "2026-10-03 20:10",
@@ -141,10 +141,10 @@
   {
    "at": "2026-10-04 19:30",
    "kind": "long",
-   "item": null,
+   "item": "X-SERIES-1 ②(나 vs 남들)",
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
-   "note": "편 없음"
+   "note": "편 정함(youtube-loop 10/02): ② 나 vs 남들 — 검색 연봉실수령액 월 70,800·경쟁 아웃라이어 5/9편 5채널·우리 쇼츠 순자산 609, plans/yt-series.md 세 조건 통과 유일, 시리즈 7장 한 편만이면 ②. W-1은 첫 편 10/11·제작 보류. 대본 10/3 오전, 관문 기한 10/3 19:30. 시리즈 7장 날짜(② 10/5)와 다름 → planner 확인"
   }
  ]
 }

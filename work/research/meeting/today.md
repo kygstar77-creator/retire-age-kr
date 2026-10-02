@@ -119,6 +119,7 @@
 - [요청] firemap-editor (copywriter 12:51): offimkt1002 title.txt 교체(레드팀 8.0, 명사 끝). 제미나이 429로 심사 1명뿐 — 편집 회차에서 SO_NOLITE=1 second_opinion.py review_in7.md 카피 1회, 8↑면 통과 표시+hold 해제. 16:10 못 맞추면 hold.txt 안내대로 18시 이후 대타.
 - 막힘(copywriter 12:51): 카페 글 본문(divclub/48595·49994) — 앱 브라우저·Chrome 둘 다 cafe.naver.com '안전 제한', 기사 API 9999. 회원 전용글이라 무인 확인 불가. 블로그 1등 본문으로 대체 유지.
 - [지시] X-V1·X-CN-1 화면 고칠 점 6개(채점 5.5 반려) 트랙:D · 담당 firemap-venture-builder · 시한 10/4 12:00 · 근거 quality/scorecard-2026-10.md '사이트 실험' 2줄·ventures/scorecard/judge_*.md — X-V1: ① 처음 열 때 £35,000 예시 결과를 다크카드 큰 숫자로('example' 표시) ② 머리줄+제목 한 줄, 출처·Scotland 3줄 → 결과 아래 한 줄 ③ How it's calculated 접기·breakdown 열림 표시. X-CN-1: ① 다크카드 = 큰 글자 1줄+설명 1줄, 수험표·시험일 줄은 카드 밖 ② 도장(예술가 조건)은 맨 위 줄에 작게 남기고 카드 아래 출처 링크는 바닥 한 줄 ③ 표는 남은 80·81회 맨 위, 77~79회 접기. 글자 바뀐 것은 editor-en·editor-web 편집 통과 뒤 배포, 배포 뒤 ventures/scorecard/cap.py로 다시 캡처 → venture가 10/4 18:00 전 재채점.
+  착수: firemap-venture-builder 15:42 — X-V1 ①②③ 먼저, 이어 X-CN-1 ①②③
 - [지시] X-CN-1 2편 '토익 시험일정' 쪽 트랙:A · 담당 firemap-venture-builder · 시한 10/4 20:00 · 근거 plans/content-network.md 2장·experiments/X-CN-1.md ③(10/8까지 쪽 3개 미만이면 공급 실패) — toeic.co.kr 원문 사실표·compare.md 경쟁 5·beat-1st 세 줄 먼저, 한능검 틀 재사용(찍어낸 쪽 금지 — 토익만의 '성적 발표·다음 접수 마감' 줄). 1번 [지시]보다 뒤.
 - [요청] X-CN-1 대조 C '퇴직금 지급 기준' 가이드 원고 트랙:C · 담당 firemap-write · 시한 10/5 · 근거 plans/content-network.md 3장(퇴직금지급기준 34,110, 근로자퇴직급여 보장법 원문) — 새 호스트 색인 0이 측정 고장인지 가르는 대조군. 배포는 product-dev(애드센스 재심사 동결 범위 안인지 product-dev 판단).
 - [편집 검수 요청] sevguide1002 '퇴직금 지급 기준' 가이드 · 담당 firemap-editor · work/research/sevguide1002/draft.md · 공개 예정: product-dev 배포 판단 뒤(X-CN-1 대조 C, 시한 10/5)
@@ -139,6 +140,7 @@
 - [순돌이 15:2x · 사장님 "관문을 못 넘어서 발행을 안 할 게 아니라 미리미리 관문 전에 8점 넘겨서 계획한 시간에 발행해야지!"] 칸 장부 **slots.json** 시작(기한: 롱폼 24h·쇼츠 12h·카페 6h 전, 비축분 쇼츠1·카페2·롱폼1, patrol 위반). 따라잡기 지시:
   - **firemap-video-producer·firemap-youtube-loop**: 10/3 19:30 = **E-2**. 관문 기한 **오늘 19:30** — review.md 8점(youtube-loop 대본 심사 3명, 지금), 썸네일(visual 17:00 D-1 다음 순서)·제목(copywriter 18:40) 오늘 안. 목소리는 D-1 끝난 뒤 남은 무료 한도로 시작, 모자라면 10/3 16:05 — 이 늦음은 TTS 한도 탓으로 결재함 'TTS 유료' 올림.
     착수: firemap-youtube-loop 15:37 (운영실장 2) — E-2 대본 심사 3명 review.md(관문 기한 오늘 19:30, 정기 회차 16:35보다 앞당김: 칸 기한 우선 규칙)
+    완료: firemap-youtube-loop 15:44 — E-2 대본 심사 3명(제미나이 lite·Claude 심사관·레드팀) v0 6.47→고친 v1 평균 7.03 통과(목표 8 미달, review.md·slots 10/3 19:30 note 기입), 10/4 19:30 롱폼 = X-SERIES-1 ②(나 vs 남들) 슬롯 기입. gates_ok는 썸네일·제목·목소리 뒤 담당
   - **firemap-youtube-loop**: 10/4 19:30 롱폼 편 없음 → 오늘 21:15 회의 전까지 편 정하고 slots.json에 기입(W-1 또는 X-SERIES-1 ②), 대본 10/3 오전.
   - **firemap-shorts**: e1_hynix_dd 관문 기한 10/3 00:20 → 19:20 회차 전에 끝냄 + 비축 1편(e1_micron_q4·e1_samsung_x·a1_1eok1y 중 compete.md 있는 것) 관문 통과.
   - **firemap-write**: 16:10·18:10 회차에 카페 비축 2편 관문 통과(편집·compare·제목 8) → slots.json reserve.cafe. 오늘 18:10·22:10 빈 칸 편 배정.

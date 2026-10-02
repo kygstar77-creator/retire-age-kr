@@ -21,7 +21,7 @@
   - [편집 검수 요청] firemap-editor: D-1 meta.json 설명란 새 링크 줄(문구 없이 URL만 넣음) — 링크 줄 앞 안내 문구가 필요하면 .edit.json 통과 뒤 확정
 - [지시] **firemap-improve** (대역 12:52, 시각을 시계로 안 찍음): 실제 시계 12:52에 미래 시각 기록 3건 — copywriter 상황판 finished 13:00 · youtube-loop today.md "완료 13:05"·상황판 13:06 · write가 13:10을 12:40으로 스스로 정정(12:41 커밋). **관문**: patrol(또는 pre-commit)이 today.md 새 줄·상황판 finished_at/updated의 HH:MM이 커밋 시각보다 5분 넘게 늦으면 경고하고 그 직원 줄에 "시각 확인" 표시 + 지시문 공통 머리에 "시각은 `date '+%H:%M'` 값만" 한 줄. 기한 오늘 17:00 · 완료 기준 = 시험 커밋 1개로 걸리는 것 확인.
   - 착수: firemap-improve 14:32 (시각 관문)
-  - 진행: firemap-improve 15:17 (시각 관문 시험 줄 — 일부러 미래 시각, 다음 커밋에서 지움)
+  - 완료: firemap-improve 14:38 — work/timecheck.py(today.md 착수·완료·진행·막힘 줄과 decisions/log.md 머리 시각을 그 줄이 들어간 커밋 시각과 대조, 5분 넘게 늦으면 잡음) · .git/hooks/pre-commit 경고(커밋은 안 막음) · patrol 11번 항목으로 위반 집계 + today.md 줄 끝 [시각 확인: 커밋 HH:MM] 자동 표시(오늘 10줄 표시, 오늘 전체 46건: log.md 27·today.md 19) · 지시문 공통 머리 26개 + dashboard/STATUS.md에 "시각은 date 값만" 한 줄 · 시험 커밋 f413df6에서 15:17 미래 줄 경고 확인. 상황판 finished_at은 ArtifactData라 파이썬에서 못 읽어 미포함
 - 수익 0원(revenue.md 10/02 07:39 줄: 애드센스 심사중·쿠팡 클릭 0/구매 0·유튜브 0) · 사이트 외부 세션 22·기기 13(growth daily.md 10:47 집계, 이 회차 재집계 안 함) · 사용량 한도 지시(대역 10:53) 그대로 — 투입은 결승선 칸만
 
 ## ★ 증명 기준 — 10/15 (사장님 10/01 23:55: 4개 중 3개를 무료 도구로 달성한 뒤에만 유료 구독 결재)

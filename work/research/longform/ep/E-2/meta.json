@@ -14,5 +14,17 @@
  "calc_link": "R2: 설명 둘째 줄 https://firemap.kr/?utm_source=youtube&utm_medium=desc&utm_campaign=<videoId> (은퇴 나이 장과 맞음) — 설명 쓰기 권한과 무관, 업로드 때 함께",
  "synthetic_media": false,
  "ai_voice_note": "설명란에 'AI 음성 내레이션' 명시",
- "sources": ["SEC 10-Q 2026-07-23 0001628280-26-049270", "SEC 8-K 2026-09-29 0001628280-26-063820", "SEC XBRL companyfacts CIK0001318605", "Nasdaq historical TSLA"]
+ "sources": [
+  "SEC 10-Q 2026-07-23 0001628280-26-049270",
+  "SEC 8-K 2026-09-29 0001628280-26-063820",
+  "SEC XBRL companyfacts CIK0001318605",
+  "Nasdaq historical TSLA"
+ ],
+ "title": "테슬라 주가 뒤의 장부, 영업이익보다 이자수익이 컸던 2분기",
+ "title_candidates": [
+  "테슬라 주가 뒤의 장부, 영업이익보다 이자수익이 컸던 2분기",
+  "테슬라 2분기, 이자수익 4억 2,200만 달러가 영업이익 3억 9,800만 달러를 넘었다"
+ ],
+ "title_reason": "심사 3명 평균 8.07(제미나이 3-flash 8.0·레드팀 7.8·Claude 별도 심사관 8.4) — 9개 중 유일한 8+. '테슬라 주가'(49.1만) 맨 앞, 31자라 모바일에서 안 잘림, 썸네일(1.4% 10분기 최저)과 겹치지 않는 이자수익>영업이익 반전(사실표 [3] 422>398). 2위 T3(평균 7.53)는 같은 반전을 숫자로 — 48h 교체용. 같은 틀 어미만 바꾼 T2b '…2분기엔 이자수익이 영업이익보다 컸다'(Claude 8.6, 2명만 심사)는 기록만. firemap-copywriter 2026-10-03 01:59",
+ "thumb": "thumb_e2f.png"
 }

@@ -822,7 +822,8 @@ def alive(page):
         return page.context.new_page()
 
 def rate_guard(kind, wait=False):
-    if os.environ.get('NAVER_FORCE') == '1': return
+    # 카페 간격은 NAVER_FORCE로도 못 끈다 — 10/2 15:48·15:49 순돌이가 강제로 2편을 1분 간격에 올림, 사장님 "카페는 몇 분 간격으로 내지 마!"
+    if os.environ.get('NAVER_FORCE') == '1' and kind != 'cafe': return
     gap = gap_min(kind)
     m = last_published_minutes(kind)
     if m is None or m >= gap: return

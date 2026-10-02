@@ -103,3 +103,7 @@
 - E-1 예약을 풀려고 status를 고쳤을 때 embeddable·publicStatsViewable이 False가 됐다. 공개 5시간 동안 조회 1. 카페에 영상을 넣어도 재생이 안 되는 상태였다.
 - 막는 법: status를 고칠 때 privacyStatus·embeddable·publicStatsViewable·license·selfDeclaredMadeForKids를 늘 같이 보낸다. patrol.py가 공개 영상 중 둘 중 하나라도 꺼진 것을 위반으로 잡는다(10/2 11:5x).
 - 2026-10-02 firemap-write: 이슈 레이더가 넘긴 '피부양자 166만원' 후보를 원문 대조·묶음까지 만든 뒤에야 selfcheck [중복]으로 9/28 카페 137과 같은 글임을 알았다. **후보를 받으면 쓰기 전에 우리 발행 목록(published.txt 제목·dupcheck)부터 대조한다.**
+
+## 14. (10/2 순돌이) "밀린 것 지금 공개"를 간격 무시로 했다 — 카페 2편이 1분 간격
+- 사장님 "밀린 건 지금 얼른 공개해"에 NAVER_FORCE=1로 3편을 연달아 걸었다. 그 스위치가 코너 시각만이 아니라 간격·무작위 대기까지 꺼서 #194(15:48)·#195(15:49)가 1분 차로 나갔다. 사장님 "카페는 몇 분 간격으로 내지 마!" → 세 번째(nps1002)는 멈춤.
+- 막는 법: rate_guard는 카페에서 NAVER_FORCE를 무시한다(최소 90분, 8편 기준). '지금 공개'는 첫 1편만 지금, 나머지는 90분 이상 간격으로 이어 올린다.

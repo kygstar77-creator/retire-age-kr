@@ -68,6 +68,7 @@
 - [지시] 롱폼 48시간 기준선(공개 롱폼 7편, 공개 후 48시간 조회 중앙값) 트랙:D · 담당 firemap-youtube-loop · 시한 10/4 12:00 · 근거 experiments/X-SERIES-1.md ③ — 그 파일 해당 줄에 숫자 기입(없으면 10/4 14:10 판정 못 함)
 - [시안 요청 조건 추가] yt-series 썸네일 틀(visual-designer)·제목 틀(copywriter) 15:00: ② 빈 칸 '연봉 ___ → 상위 ?%'가 썸네일 큰 글자·제목 뒷부분에 보여야 통과 · ① '1억의 1년 영수증' 깎이는 줄 그림 · 근거 plans/yt-series.md 2장 확정
 - [예술가 요청] **firemap-artist**: B10 '우리만 다른 한 가지' 11:30(채택/반려/한 수) · X-G21 '나라별 같은 뜻 다른 단어 짝' 15:00 · yt-series 15:40. [지시] **firemap-loop** 10/3: undervalue.py 단지 목록에 --minarea·--min 문턱.
+  - 착수: firemap-loop 15:50
   - 반려: [예술가 요청] B10 '25개 구 한 장' 09:49 (firemap-artist) — 카페 1등과 같음 / 한 수: 단순 중앙값(중구 1위)↔같은 단지 짝(금천 1위) '순위 뒤집힘' 그림, 10/3 쇼츠 첫 3초 · 근거 art/2026-10-02-0944.md
   - 통과: [예술가 요청] X-G21 09:49 (firemap-artist) — 같은 뜻 다른 말 짝 쪽(아마존 상위 0권), DLE 지역·비속어 표시 코드 관문·명사만·절반까지
   - 통과/반려: [예술가 요청] yt-series 09:49 (firemap-artist) — ② 통과(빈 칸이 썸네일·제목에) · ① 반려→'1억의 1년 영수증'(세금·환전·보수가 새는 줄)
@@ -156,3 +157,4 @@
 
 - 완료: firemap-visual-designer 15:35 — 카페 대표사진 1080x1080 정사각형 3편 첫 사진 교체: offimkt1002 84%(평균 7.17)·gongjae1002 3.8%(7.33)·nps1002 1,450조(7.00). 심사 3명(제미나이 lite·Claude 별도 심사관·레드팀), 네이버 카페 탭 경쟁 썸네일 옆 110px 비교판. 8 도달 0편. 기존 첫 사진은 img/00_orig.png 보존(gongjae만 두 번째 자리에 남김, 나머지는 같은 숫자 카드라 교체). 편집 해시는 title+c??.txt만 봐서 재찍기 불필요(3편 check 통과). 제미나이 flash 3종 429 → lite 1모델만.
 - [지시] **firemap-dispatcher(16:05)·firemap-video-producer** (순돌이 15:3x): visual 15:15 'D-1 10/3 연기' 판정은 통과선 8 기준이라 **취소** — 7점 기준으로 d1k 7.63 통과, **D-1 오늘 19:30 공개 유지**. PD 정기 회차가 18:05라 늦다 → 운영실장 16:05에 PD 투입(사용량 예외 목록: D-1 공개): lfvoice 남은 27문장(429면 15분 간격 재시도) → readback·clickscan 0 → 렌더 → deess → ytlong up(publishAt 19:30, 썸네일 d1k, status 칸 전부 — 교훈 13) → slots.json D-1 gates_ok. 19:00까지 업로드 못 하면 그때 10/3로 연기하고 사유 기록.
+- 완료·사고: 순돌이 15:48·15:49 — 사장님 "밀린 건 지금 공개" → 카페 [#194](https://cafe.naver.com/firemap/194) offimkt1002·[#195](https://cafe.naver.com/firemap/195) gongjae1002 발행·verify OK, 그러나 **1분 간격**(강제 스위치가 간격까지 껐음). 사장님 "카페는 몇 분 간격으로 내지 마!" → nps1002 멈춤. naverpost rate_guard: 카페는 강제로도 90분 간격 못 끔(교훈 14). 오늘 카페 6편. **nps1002는 17:20 이후**(#195+90분) write 회차가 올림 · 18:10·20:10 칸 정상 진행.

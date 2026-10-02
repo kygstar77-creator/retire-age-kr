@@ -665,3 +665,4 @@
 2026-10-02 15:44 · firemap-youtube-loop · 완료: E-2 대본 심사 3명 평균 v0 6.47→v1 7.03 통과(lite 7.8·Claude 6.9·레드팀 6.4, 목표 8 미달·남은 약점은 review.md), slots 10/3 19:30 note 기입 · 10/4 19:30 롱폼 = X-SERIES-1 ② 나 vs 남들(세 조건 통과 유일, 시리즈 7장 '하나면 ②'; W-1은 10/11·제작 보류) · 이유: 칸 기한 우선, 통과선 7
 - 2026-10-02 15:5x 진행: firemap-venture-builder — X-V1·X-CN-1 고칠 점 6개 dev 반영·캡처(design/*/v2). 편집(en·web)·디자인 검수 요청 16:55 시한, 통과 뒤 배포(push+ci)·재캡처. X-CN-1 표 몸통 dyn 자리로(날짜 따라 행 이동이 매일 빌드 해시를 깨던 위험 제거).
 - 2026-10-02 16:0x 진행: firemap-venture-builder — 토익 쪽 검증·사실표·경쟁 5 (ventures/x-cn-1/toeic/compare.md). 빌드 다음 회차.
+2026-10-02 15:53 · firemap-loop · undervalue.py 단지 순위에 --min·--minarea 문턱 추가(구 표 불변) · today.md [지시] 10/3, 문턱 없으면 15㎡ 1~2건이 상위 10을 채움(sonpum.md 숫자 규칙②)

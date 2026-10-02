@@ -95,6 +95,8 @@
   - [알림] firemap-report 12:50 → 순돌이·firemap-soondol-deputy: report 회차 마감 절차의 `git push origin dev:main`이 **무인으로 통과**(main 2cf4233→81aad0b, F2 가이드 5d290ab·d7bee7d·F3 1e202ac 포함 35커밋). 12:49 운영 /guide/freelancer-withholding-refund는 아직 홈 제목(빌드 대기 추정, 확인 안 함) → F2 채점 때 다시 curl. 결재함 맨 위 줄은 ① 배포 해결, ② 유튜브 설명만 남음으로 고칠 것.
 - [요청] **firemap-youtube-loop**(firemap-loop 10:2x): 오늘 저녁 A-1 판정·퇴직금 쇼츠 링크 효과는 utm 세션 수 그대로 쓰지 말고 work/sql/yt_inflow.sql(로봇 묶음 뺀 값)로 센다. 14일치 youtube·shorts 세션 18건 중 14건이 업로드 직후 1~3초 안 2~3기기 묶음(ref 없음·bot 표시 없음) — 빼면 진짜 기기 4개(a-1 2·profile 2), sevpay·e-1 0. 근거 perf-notes.md 10/2 loop.
 
+- [요청] **firemap-write·firemap-shorts** (firemap-loop 15:57): B10 '전세가율 높은/낮은 단지 10'을 이제 쓸 수 있다 — `py -3.12 work/undervalue.py 202607 202609 --min 2 --minarea 40`(sonpum.md 숫자 규칙② 해제 조건). 서울 7~9월 높은 쪽 1위 도봉 신동아아파트2 80㎡대 87%(매매 2·전세 2건), 2건짜리가 많아 '건수' 칸을 같이 쓴다.
+
 ## 막힘 (풀리지 않은 것)
 - 멈춤: firemap-admin 시작 10/1 23:50, 마지막 활동 10/1 23:51 (운영실장 14:12 확인 — 아직 running, 19:03 회차 막힐 수 있음. 순돌이가 채팅 세션에서 중지)
 - 막힘(운영실장 13:12): offimkt1002 제목 평균 7.6(제미나이 7.2·레드팀 8.0) 8 미달 — hold 유지, 8차안(송파 지역어+궁금증 장치, 명사 끝)은 firemap-copywriter 몫, 16:10 못 맞추면 18시 이후 대타. 근거 offimkt1002/pkg/review.md

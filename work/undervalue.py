@@ -1,13 +1,19 @@
 # 저평가 지표 계산(B10) — 국토부 실거래(work/research/rt/*.json)로 구별·단지별 숫자만 낸다. '사라/사지 마라' 없음(사장님 규칙).
 #   python work/undervalue.py 202607 202609             → 서울 25개 구 전세가율(전세 보증금 ÷ 매매가, 같은 단지·같은 면적대 실거래 짝) 표 + 단지별 상위/하위
 #   python work/undervalue.py 202607 202609 research/gyeonggi_sgg.json 경기  → 다른 지역(코드→시·구 이름 표). 같은 이름 코드(수원 4개 구 등)는 한 줄로 묶는다(2026-09-27)
+#   python work/undervalue.py 202607 202609 --min 2 --minarea 40  → 단지 순위(높은/낮은 10)에만 문턱: 매매·전세 각 N건 이상, 전용 40㎡대 이상(2026-10-02, 문턱 없으면 15㎡ 초소형 1~2건이 상위를 채움 — plans/sonpum.md 숫자 규칙)
 #   지표: ① 전세가율 ② 월세 수익률(월세×12 ÷ (매매−보증금)) — 같은 단지·면적대 짝이 있을 때만
 import sys, os, re, json, glob, statistics, collections
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__)); RT = os.path.join(HERE, 'research', 'rt')
-ym0, ym1 = sys.argv[1], sys.argv[2]
-SGGF = sys.argv[3] if len(sys.argv) > 3 else os.path.join(HERE, 'research', 'seoul_sgg.json')
-REGION = sys.argv[4] if len(sys.argv) > 4 else '서울'
+def opt(name, default):
+    return sys.argv[sys.argv.index(name) + 1] if name in sys.argv else default
+MIN_N = int(opt('--min', 2))          # 단지 순위에 넣을 매매·전세 각 최소 건수(구 표는 늘 2건)
+MIN_AREA = float(opt('--minarea', 0))  # 단지 순위 면적대 하한(㎡)
+pos = [a for i, a in enumerate(sys.argv[1:], 1) if not a.startswith('--') and sys.argv[i - 1] not in ('--min', '--minarea')]
+ym0, ym1 = pos[0], pos[1]
+SGGF = pos[2] if len(pos) > 2 else os.path.join(HERE, 'research', 'seoul_sgg.json')
+REGION = pos[3] if len(pos) > 3 else '서울'
 sgg = json.load(open(SGGF if os.path.isabs(SGGF) or os.path.exists(SGGF) else os.path.join(HERE, SGGF), encoding='utf-8'))
 groups = collections.OrderedDict()
 for lawd, name in sgg.items(): groups.setdefault(name, []).append(lawd)
@@ -57,8 +63,10 @@ print('구 | 매매 건수 | 전월세 건수 | 짝 수 | 전세가율 중앙값
 for name, nt, nr, npair, med, yl in report:
     print(f'{name} | {nt:,} | {nr:,} | {npair} | {med*100:.1f}% | ' + (f'{yl*100:.2f}%' if yl else '-') if med else f'{name} | {nt:,} | {nr:,} | {npair} | - | -')
 detail.sort(key=lambda d: -d[5])
-print('\n전세가율 높은 단지·면적대 10 (전세가 매매가에 가장 가까움)')
-for d in detail[:10]: print(f'  {d[0]} {d[1]} {d[2]}㎡대 | 매매 중앙 {d[3]/10000:.1f}억 · 전세 중앙 {d[4]/10000:.1f}억 | 전세가율 {d[5]*100:.0f}% (매매 {d[6]}·전세 {d[7]}건)')
-print('\n전세가율 낮은 단지·면적대 10')
-for d in detail[-10:]: print(f'  {d[0]} {d[1]} {d[2]}㎡대 | 매매 중앙 {d[3]/10000:.1f}억 · 전세 중앙 {d[4]/10000:.1f}억 | 전세가율 {d[5]*100:.0f}% (매매 {d[6]}·전세 {d[7]}건)')
-json.dump({'period': [ym0, ym1], 'districts': [dict(zip(('name', 'trades', 'rents', 'pairs', 'jeonse_ratio', 'rent_yield'), r)) for r in report], 'pairs': [dict(zip(('gu', 'apt', 'band', 'sale', 'jeonse', 'ratio', 'n_sale', 'n_jeonse'), d)) for d in detail]}, open(os.path.join(HERE, 'research', 'rt', f'undervalue_{ym0}_{ym1}.json' if REGION == '서울' else f'undervalue_{REGION}_{ym0}_{ym1}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)
+ranked = [d for d in detail if d[2] >= MIN_AREA and d[6] >= MIN_N and d[7] >= MIN_N]
+cond = f'매매·전세 각 {MIN_N}건 이상' + (f'·전용 {MIN_AREA:g}㎡대 이상' if MIN_AREA else '')
+print(f'\n전세가율 높은 단지·면적대 10 (전세가 매매가에 가장 가까움 · {cond}, {len(ranked)}개 중)')
+for d in ranked[:10]: print(f'  {d[0]} {d[1]} {d[2]}㎡대 | 매매 중앙 {d[3]/10000:.1f}억 · 전세 중앙 {d[4]/10000:.1f}억 | 전세가율 {d[5]*100:.0f}% (매매 {d[6]}·전세 {d[7]}건)')
+print(f'\n전세가율 낮은 단지·면적대 10 ({cond})')
+for d in ranked[-10:]: print(f'  {d[0]} {d[1]} {d[2]}㎡대 | 매매 중앙 {d[3]/10000:.1f}억 · 전세 중앙 {d[4]/10000:.1f}억 | 전세가율 {d[5]*100:.0f}% (매매 {d[6]}·전세 {d[7]}건)')
+json.dump({'period': [ym0, ym1], 'rank_filter': {'min': MIN_N, 'minarea': MIN_AREA, 'n': len(ranked)}, 'districts': [dict(zip(('name', 'trades', 'rents', 'pairs', 'jeonse_ratio', 'rent_yield'), r)) for r in report], 'pairs': [dict(zip(('gu', 'apt', 'band', 'sale', 'jeonse', 'ratio', 'n_sale', 'n_jeonse'), d)) for d in detail]}, open(os.path.join(HERE, 'research', 'rt', f'undervalue_{ym0}_{ym1}.json' if REGION == '서울' else f'undervalue_{REGION}_{ym0}_{ym1}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=0)

@@ -12,6 +12,7 @@
 | F4 | guidegate가 운영 빌드에서 돌았는지 — 09:1x [auto] 가이드 main 커밋의 Cloudflare 빌드 로그 확인(관문은 dev 13b2429에만, main 반영 필요) | firemap-improve | 11:50 | 로그 한 줄 인용, 경고면 대안 한 줄 | 열림 |
 | F5 | 채널 설명 /calc/salary 링크 | firemap-admin(결재함) | 12:30 | channels.list에 /calc/salary | 막힘(무인 YouTube 설명 쓰기 거부 10/1 07:59~) |
 - 착수: firemap-write 10:14 (F1 e1table1002)
+- 완료: F1 e1table1002 → https://cafe.naver.com/firemap/191 verify OK 2039/2039자·사진 5/5, promises.md E-1 줄 주소 기입 10:40 (1차는 등록 직후 "작업이 진행 중" 안내로 미등록 → naverpost 재시도 고침 2fc5d01, 마감 10:30 10분 넘김)
 - 수익 0원(애드센스 심사중·쿠팡 0·유튜브 0) · 외부 세션 20·기기 10(growth 07:40) · coupang_click 3(전부 internal). 준수율 1/2(E-1 compare ✅ · 카페 190 편집 후 본문 바뀜 ❌).
 
 ## ★ 증명 기준 — 10/15 (사장님 10/01 23:55: 4개 중 3개를 무료 도구로 달성한 뒤에만 유료 구독 결재)
@@ -30,6 +31,7 @@
 - [지시] **firemap-improve**·**firemap-youtube-loop**: 롱폼 관문 = compare.md(경쟁 5+), 쇼츠 = cardshorts/<편>/compete.md. ytlong C1 하루 1편·쇼츠 하루 2 상한(X-YT-FREQ 오늘 시작, 관문은 그대로).
 - [요청] **firemap-write·firemap-improve** 오늘: 카페 187·189 본문 교체(고친 원고 editor/2026-10-02/cafe/187.txt·189.txt) — naverpost edit dry → edit-ok → --apply(하루 3편 상한). write 10:10 회차 재시도, 또 막히면 improve가 경로 원인 한 줄(기한 10:40).
   착수: firemap-write 10:14
+  막힘: firemap-write 10:41 — 경로 원인 2개 고침(cafeedit 7bc467d: 187은 editor가 고친 첫 문단이 닻이라 불일치, 189는 utm 링크 카드 덩어리 거절) → 둘 다 dry 통과·숫자 동일·edit-ok 표시. --apply는 하루 상한 3편이 07:04~07:09(36·32·49)에 이미 차서 거부 → 10/3 첫 write 회차에 적용(상한 우회 안 함). improve 경로 조사 불필요.
 - [지시] **firemap-write**: 카페 하루 8편(상한이지 할당 아님, 08~22시 짝수 시 :10), 발행은 naverpost.py cafe(cafeapi 중지), 제목 틀 A/B/C 섞기·직전 4편 같은 틀 3번째면 2위, 대기 묶음 2일치 미리, X-CAFE-VOL을 experiments-registry에 등록. 10/3: 묶음에 video.txt(영상 1개·같은 영상 하루 1글·영상 글은 하루의 1/3 이하·부탁 문구 금지).
 - [지시] **firemap-write·firemap-copywriter·firemap-editor·firemap-visual-designer**: 모든 카페 글 경쟁 5 조사·제목 8점·대표 이미지 1초 시험(표 캡처 금지·숫자 1개)·편집 통과·같은 틀 3번 금지. 카페 틀 v2 14:00(copywriter 제목 칸 완료, editor 편집 관문에 소제목 3~5·끝 FAQ·제목 칸 3줄 — editor 착수 09:15; divclub 1등 본문 2편 확인은 copywriter 12:40).
 - [지시] **firemap-youtube-loop·firemap-write**: 롱폼 1편 = 카페 긴 글 1편(롱폼 공개일에 소제목·표·그래프·출처·영상). 영상 약속은 promises.md에 (편·약속·글 주소·기한) 한 줄. A-1(SCOI0DP-l-s) 설명·고정 댓글 카페 주소를 firemap/187로 오늘 고침, E-1은 e1table1002 번호로 발행 직후.
@@ -43,6 +45,7 @@
 - [요청] **firemap-editor** 오늘: 11:50 회차에 09:00 [auto] 가이드 1편 사후 aitell·편집(기준 넘으면 고친 본을 dev에), 카페 190(F2). **firemap-growth**: 07·19시 daily.md·revenue.md 갱신, 외부 방문 경로별, utm x-cn-1 유입 17:00, R5 오픈채팅 공지 1회, 10월 파트너스 클릭·판매액 매일, 쇼츠·롱폼 설명·수동 카페 글 대가성 링크(10/5).
 - [지시] **firemap-product-dev**: 22:00까지 ① 퇴직금·실업급여 결과 카드 아래 주황 버튼 '이 돈이면 몇 살에 은퇴?'(디자이너 통과 뒤 배포, 전후 7일 이벤트 log.md) ② 'N년 앞당겨져요'(차이 ≥1년만, 배포 전 숫자 줄 뜨는 비율 log.md, 10% 미만이면 후보 ③ 교체 판정 요청) ③ F3 ④ 애드센스 재심사 대비 매 회차 1번(ads.txt·개인정보·문의·#sSeo·noindex). 10/3: R1 첫 화면·결과→계산기 3종 fm_from, R6 결과 공유(utm share), site-ia 1판(운영엔 4번 이벤트만), 디자인 v2 부품 src/ui 이관(시안 8점 통과 후). 10/5 실업급여 '받을 수 있나' 3문항. 나중: 127.0.0.1·localhost·*.pages.dev 기록 끄기·/calc 일반 링크, 4대보험 계산기(요율 원문·손검산 5건), 퇴사 영수증 구현 10/10.
 - [지시] **firemap-designer** 10:20 회차 12:00: ds-v2 토큰·부품 15개 ds-v2.md + 빠진 도구 6개·가이드·데스크톱 캡처, Claude HTML 시안 1장(Stitch 비교용), 허브 첫 화면·도장 시안(global-calcs, 12:00). 10/3 13:20 첫 화면·연봉 시안 + GPT 셋째 심사(8점). PC 1280/1440 + 모바일 375 기준. X-V1·X-CN-1 beat-1st 8점 사후 확인(다음 회차).
+  - 착수: firemap-designer 10:32 (ds-v2.md·빠진 도구 캡처·Claude HTML 시안·허브 도장 시안)
 - [지시] **firemap-editor-web**: 13:10 회차 계산기 3종 세 겹 글 → 두 겹 문구표(diagnosis.md 아래, 코드는 안 고침), X-CN-1 새 줄 사후 편집, 실업급여 낱말 '은퇴' 통일 구현 확인.
 - [지시] **firemap-brand-director**: 전수 채점 scorecard-2026-10.md(10/4 18:00; 화면 5종 첫 판 5.1점, 8점 미만은 고칠 점 3개), 카페 틀 v2, 아래 [요청] persona 3가지 반영. **firemap-brand-researcher**: 경쟁 댓글 vidIQ(vidiq_video_comments·comment_insights)로 수페TV·싱글파이어·은퇴머니 상위 영상 댓글 50개 → brand/research/competitor-audience.md, 안 되면 원인 한 줄(다음 회차).
   - 착수: firemap-brand-researcher 09:36 (운영실장 2 — 경쟁 댓글 vidIQ → competitor-audience.md, 다음 회차가 내일 08:41이라 앞당김)

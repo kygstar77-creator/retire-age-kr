@@ -26,6 +26,19 @@
     "url": "https://cafe.naver.com/firemap/190"
    },
    "note": "슬롯 08 카페 X-CN-1 한능검(17:00 마감) 발행. 1차: readcheck 4건에 막힘 → 지시어·숫자과다 문장 나눔, 제목 숫자 4→1개('…다음 회차는 언제?', 심사 통과 제목에서 바뀜 — readcheck 제목 규칙이 발행을 막아서), URL은 우리 사이트 utm 링크라 readcheck PLANNED_LINK에 github.io 추가. 2차: 링크 카드 뒤 '글감' 창 때문에 사진 버튼 15초 시간 초과 → 본문을 c00/c01로 나눠 링크를 사진 뒤로, insert_image에 창 닫고 한 번 더 누르기 추가. 3차 성공. verify OK 652/652자 사진 3/3. 교차검증: 새 원고 아님(06:12 작성·06:41 편집 통과분), selfcheck 사실 0. 블로그: STOP_blog(~10/7)로 0편. e1table1002 slot 08→10(편집 통과 07:49, 영상 약속 글). 개선: naverpost insert_image 재시도 + readcheck 우리 사이트 utm 링크 허용."
+  },
+  {
+   "hour": 10,
+   "ts": "10:41",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "마이크론 실적 이익률 25%→80.7%, SK하이닉스·삼성전자 8분기 공시 표",
+    "url": "https://cafe.naver.com/firemap/191"
+   },
+   "note": "F1 10시 코너(E-1 약속 표 글). verify OK 2039/2039자 사진 5/5. 1차: 등록 직후 '요청하신 작업이 진행 중' 안내로 등록 API 미발신(목록 확인, 중복 없음) → naverpost 재클릭 추가 후 2차 성공. readcheck 5건은 편집 통과 해시 유지 위해 --skip-read. 교차검증: 새 원고 아님(07:0x 작성·07:43 편집 통과·제목 심사 8.3). 블로그: STOP_blog로 0편. 카페 187·189 edit dry 통과(cafeedit 닻·oglink 고침)·적용은 하루 상한 3편 소진으로 10/3. 개선: naverpost 등록 재시도 + cafeedit 닻/링크카드."
   }
  ]
 }

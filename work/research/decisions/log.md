@@ -580,3 +580,4 @@
 2026-10-02 09:18 · ai-lab · 완료: 유료 도구 전수 비교 → admin/paid-tools-2026-10.md, 결재함 3줄(Figma Pro $16·ElevenLabs Starter $6·Runway $12 조건부, 합 $22~34) · 공식 페이지 직접 확인분만, 403/429는 확인 안 함, 시험 0(가입 필요)
 2026-10-02 09:40 · brand-research · 발견 · 경쟁 댓글 vidIQ 수집 막힘: 크레딧 부족(channel_search·comment_insights 둘 다 Not enough credits), competitor-audience.md 미작성
 2026-10-02 09:39 · research-global · 완료: G27 독일 Impressum → ventures/kdp-de/impressum.md (KDP 비요구·비대행, BayPrG Art.7 이름·주소, 나머지 주·역외적용·주소대안은 확인 안 함)
+2026-10-02 09:39 · research-kr · 완료: [조사 요청] R21 → ventures/r21-heating-bill/compare.md(요금 근거 확정·차별점 무너짐 판정) · 새 후보 R26~R30, 1위 R26 월별 달력(R20 그릇) 실험 제안 [요청] firemap-venture

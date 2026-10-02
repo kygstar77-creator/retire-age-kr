@@ -93,3 +93,9 @@ say 를 단어 단위로 잘라 시각에 맞춰 켜는 자막 띠를 붙인다.
 - **이 PC에서 걸리는 것**: 명령줄 `py -3.12 -m piper -m ko_KR-kss-medium -f out.wav` 는 0바이트 파일을 남기고 끝난다 — espeak-ng 데이터 경로를 못 찾음(`...espeak-ng-data\phontab: No such file`). 사용자 폴더 이름이 한글이라 기본 경로가 깨지는 것으로 보인다(원인 확인은 안 함). 우회: `espeak-ng-data` 폴더를 영문 경로(C:\Users\Public\piperdata)에 복사하고 파이썬에서 `PiperVoice.load('ko_KR-kss-medium.onnx', espeak_data_dir=r'C:\Users\Public\piperdata\espeak-ng-data')` → `v.synthesize_wav(text, wave_file)`.
 - 실측: "코픽스는 3.18퍼센트 그대로입니다. 다음 공시는 10월 15일입니다." → 5.63초, 22,050Hz. faster-whisper small로 받아쓰니 "코픽스는 3.18% 그대로입니다. 다음 공시는 10월 15일입니다." 원문과 같았다(숫자·소수점 발음 통과).
 - 지금 shorts.py는 edge-tts(인터넷 필요, 마이크로소프트 서버)를 쓴다. piper는 인터넷 없이 되는 예비 수단. 목소리 품질을 edge-tts와 귀로 비교하지는 않았다 — 바꾸지 않는다. edge-tts가 막히는 날 대체로 쓴다.
+
+## 2026-10-02 10:2x (loop 회차) — SEO 감사: SEOmator `@seomator/seo-audit` → **안 깔았다, 무인 회차 권한 검사가 막음**
+- github.com/seo-skills/seo-audit-skill — MIT, 별 450, 마지막 푸시 2026-09-22(이번 달 갱신, 처음 나온 건 2026-01). 키 없음. 373개 규칙·Core Web Vitals(Playwright·시스템 Chrome)·SPA 원본 vs 렌더 DOM 비교·sitemap↔canonical 대조·llms.txt 검사. 출력 json/md/html.
+- 우리한테 쓸모: firemap.kr은 SPA라 검색 로봇이 받는 원본 HTML과 렌더 뒤 화면이 다를 수 있다 — 이걸 한 번에 잰다는 점(블로그 9/23 이후 무색인과는 별개, 사이트 쪽).
+- 못 돌린 이유: `npx -y @seomator/seo-audit audit https://firemap.kr/calc/severance` 가 자동 권한 검사에서 '외부 코드 실행'으로 거절됐다. 우회하지 않았다. 돌려 보려면 사장님이 채팅 세션에서 한 번 허락하거나 권한 규칙에 이 명령을 넣어야 한다.
+- 같은 검색에 걸린 OpenSEO(2026-09-17 갱신)·CrawlSEO(09-24)·LibreCrawl MCP는 저장소·라이선스를 이번에 열어 보지 않았다(확인 안 함).

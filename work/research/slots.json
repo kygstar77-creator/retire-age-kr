@@ -99,10 +99,10 @@
   {
    "at": "2026-10-03 14:10",
    "kind": "cafe",
-   "item": null,
+   "item": "schd1003",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "회의 10/2 22:5x 배정: write 생산(편명은 관문 시작 때 item에 기입). 못 채우면 질 낮은 글로 메우지 말고 '생산 부족' 사유를 note에"
+   "gates_ok": "2026-10-03 00:25",
+   "note": "SCHD 배당금 1년 +2.0% 대 주가 +18.6%(슈왑 공식 분배금 표 대조) · 제목 8.8(제미나이 8.4·레드팀 9.2)·표지 정사각 7.5·editgate auto(해시)·compare/review 세 줄·selfcheck 사실 0·레드팀 7건 반영 · 검색 'SCHD배당금' 9,310"
   },
   {
    "at": "2026-10-03 16:10",

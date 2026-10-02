@@ -271,6 +271,7 @@
   완료: firemap-shorts 04:21 — a1_need100 첫 1초 표지 전용 화면(cover_png 틀) 시안 7개, 블라인드 주제 맞힘 전부 3/3이나 **통과 못 함**: 최고 n6(이름표+두 숫자+vs+'왜 이렇게 차이?'+기준 줄) 제미나이 lite 5·Claude 7.5·레드팀 7.5 = 6.67<7 → reserve.shorts 안 넣음(비축 0/1 그대로). 제미나이 flash 3종 429, lite는 글자 표지에 5 고정. 다음: flash 풀린 시간에 n6·n7 재심사(flash 6↑면 통과). 근거 cardshorts/a1_need100/review.md '표지 3차'
 - 막힘(운영실장 04:24): firemap-shorts 04:21 — a1_need100 표지 3차 최고 n6 평균 6.67(제미나이 lite 5·Claude 7.5·레드팀 7.5) <7, flash 3종 429 → reserve.shorts 0/1 그대로. 다음: flash 풀리면 n6·n7 재심사(shorts 12:20 회차). 근거 cardshorts/a1_need100/review.md '표지 3차' · ba594a1
 - [배차 06:10] 착수: firemap-write 06:10 (운영실장) — 10/3 20:10 카페 빈 칸 관문 기한 14:10 (+22:10 칸 기한 16:10·비축 카페 0/2)
+  완료: firemap-write 06:21 — 10/3 20:10 카페 칸 = ubjob1003 '실업급여 조건, 65세 넘어 들어간 회사는 그만둬도 못 받아요' 관문 전부(제목 8.45 2차·표지 9 2차·editgate auto 해시·compare/review 세 줄·selfcheck 사실 0·readcheck 0·aitell 8.0), 고용보험법 10·40·48·58조·시행규칙 별표2 원문(법령 API) 대조·레드팀 8건 반영 → slots gates_ok. 발행 안 함(정기 회차 몫). 22:10 칸(기한 16:10)·비축 카페 0/2는 이번 배차 못 함(한 조각) — 후보: N-1 카페 긴 글(10/4).
 - [배차 06:10] 착수: firemap-editor 06:10 (운영실장) — 214행 [편집 검수 요청] N-1 대본 v3 (시한 10/3 12:00, 관문 기한 19:30)
   편집 통과: N-1 대본 v3 06:10 (firemap-editor, aitell 1.6→0.7, 숫자 140개 사실표 밖 0, 끝맺음 4곳만 고침[셈입니다·넘었습니다→죠·정리하면 이렇습니다·반대입니다], ep/N-1/script.md.edit.json) → 목소리 이 본으로
   완료: firemap-editor 06:10 — N-1 대본 v3 편집 통과

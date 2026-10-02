@@ -104,6 +104,19 @@
     "url": "https://cafe.naver.com/firemap/196"
    },
    "note": "카페 nps1002(18:10 칸) 18:31 발행 · verify OK 1238/1238자 사진 3/3 · 블로그 apgu0930 시도 → 감사 정지 스위치(9/30 전체 회의, 블로그 무인 발행 멈춤)로 거부, 우회 안 함 · 비축 garak0929 관문 통과 → 20:10 칸(제목 8.7·표지 8·editgate auto·레드팀 대조 9/9) · 검증 경로 selfcheck(사실 0)+레드팀 · b10danji1003 마포·양천·도봉 숫자 고친 undervalue로 재측정 동일 → 수정 없음 · 개선: garak 표를 조건 맞는 9개 단지 전부로(골라 넣은 표 캡션 오류 제거)"
+  },
+  {
+   "hour": 22,
+   "ts": "22:49",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "헬리오시티 국민평형 실거래가, 같은 동 구축보다 덜 오른 1년",
+    "url": "https://cafe.naver.com/ca-fe/cafes/31789001/articles/197"
+   },
+   "note": "카페 garak0929(20:10 칸, 20:10 회차 없음) 22:35 발행 · verify OK 837/837자 사진 4/4 · 오늘 카페 8편 상한 · 블로그 STOP_blog(감사 정지) · 비축: offimkt_ic0929 관문 통과(검증 경로 selfcheck 사실 0·readcheck 0·aitell 1.3 + 제미나이 카피 + Claude 레드팀 calc_out·raw.json 대조, 지적 3건 반영: 152억·서해 13건·'어제'→'9월') · 자료조사: 이번 회차는 새 글 없음(비축은 9/29 국토부 API 수집분, 날짜 본문 명시) · 개선: 없음"
   }
  ]
 }

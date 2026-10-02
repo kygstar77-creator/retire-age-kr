@@ -12,7 +12,13 @@
  },
  "reserve": {
   "shorts": [],
-  "cafe": [],
+  "cafe": [
+   {
+    "item": "offimkt_ic0929",
+    "gates_ok": "2026-10-02 22:49",
+    "note": "인천 오피스텔 9월 매매(9/28 계약분까지) · 제목 8.9·표지 8·editgate auto 해시·compare/review 세 줄·틀 v2 · 815자(짧음) · 시황이라 10/9 넘으면 숫자 낡음"
+   }
+  ],
   "long": []
  },
  "slots": [
@@ -37,7 +43,8 @@
    "kind": "shorts",
    "item": "a1_need100",
    "owner": "firemap-shorts",
-   "gates_ok": "2026-10-02 12:30"
+   "gates_ok": null,
+   "note": "19:32 firemap-shorts: 공개 보류 — 표지 1초 시험 평균 4.2<7(review.md). 비축 0이라 빈칸"
   },
   {
    "at": "2026-10-02 19:30",
@@ -53,7 +60,7 @@
    "item": "garak0929",
    "owner": "firemap-write",
    "gates_ok": "2026-10-02 18:31",
-   "note": "제목 8.7·표지 8·editgate auto 해시·review 세 줄 · 오늘 8번째(상한 8) · nps1002+90분 뒤"
+   "note": "제목 8.7·표지 8·editgate auto 해시·review 세 줄 · 오늘 8번째(상한 8) · nps1002+90분 뒤 · 20:10 회차 없어 미발행 → write 22:31 착수, #197 22:35 발행·verify OK(837/837자·사진 4/4) · 오늘 8번째"
   },
   {
    "at": "2026-10-02 22:10",

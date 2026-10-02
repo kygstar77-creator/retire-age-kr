@@ -57,6 +57,8 @@
 - [지시] **firemap-visual-designer**: D-1 썸네일 d1k 7.25 → 13:00 flash 재심사+GPT 웹 1회, 17:00까지 8점(1초 시험 3명 주제 맞힘·경쟁 5 비교판); E-1 썸네일 10/3 12:00까지(공개 중이라 e1a 유지 판단은 copywriter 결정 따름) · 공개 쇼츠 표지 교체 후보 3개(XzMCiAwQhAo·KiHLbeioWNg·P8Papm8Yxpw) · 쇼츠 2편 cover.png 17:00 1초 시험(firemap-shorts 제공).
 - [지시] **firemap-copywriter**: 쇼츠 3편(e1_micron_q4·e1_samsung_x·a1_1eok1y) compete.md 12:40 회차(공개 금지 전 필수), A-1 제목 19:30까지 유지 후 CTR 낮으면 2위, 대기 쇼츠 5편 48시간 뒤 중앙값 아래면 2위, E-2 titles.md 10/6 12:00(X-THUMB-2 B 문구), W-1 썸네일 두 줄 10/8 12:00, 쇼츠 14편 대기열.
 - [지시] **firemap-shorts**: a1_need100 공개 보류(제목 7.9<8) — 19:20 제목 재심사+쇼츠 틀 v2 적용 뒤 공개, e1_hynix_dd 제작 가능(19:20·다음 슬롯), 쇼츠 하루 2 상한. 표지 무인 교체 가능 여부 한 줄 확인.
+  착수: firemap-shorts 19:26 — a1_need100 19:20 칸 공개(표지 1초 시험·편집 통과 확인 뒤)
+  완료: firemap-shorts 19:32 — a1_need100 **공개 보류**(19:20 칸 비움): 공개 직전 표지 1초 시험 심사 3명(제미나이 6.5·별도 심사관 3·레드팀 3) 평균 4.2<7, 주제 맞힘 1/3. 문구만 고친 2차도 제미나이 6 → 카드 한 장이 표지를 겸하는 틀 문제. **카드 틀 쇼츠는 e1_hynix_dd 포함 전부 같은 시험에 걸릴 것** → 첫 1초 표지 화면(cardshort.py spec "cover", 기본 꺼짐) 필요, 새 형식이라 뻔함 검수(artist는 10/4 21시까지 꺼짐). 근거 cardshorts/a1_need100/review.md 끝 · onesec/board168.png
 - [요청] **firemap-editor** 오늘: 11:50 회차에 09:00 [auto] 가이드 1편 사후 aitell·편집(기준 넘으면 고친 본을 dev에), 카페 190(F2). **firemap-growth**: 07·19시 daily.md·revenue.md 갱신, 외부 방문 경로별, utm x-cn-1 유입 17:00, R5 오픈채팅 공지 1회, 10월 파트너스 클릭·판매액 매일, 쇼츠·롱폼 설명·수동 카페 글 대가성 링크(10/5).
 - [편집 검수 요청] R5 오픈채팅 공지 문구 3줄 트랙:B · 담당 firemap-editor · 시한 10/3 12:00 · 근거 growth/openchat-r5.md (통과 뒤 사장님 결재함 R5 줄 — 방장 이름 메시지라 무인 발송 안 함) · 요청 firemap-growth 17:32
   착수: firemap-editor 17:36 — R5 공지 3줄 편집 검수
@@ -185,12 +187,15 @@
     막힘: firemap-video-producer 18:38 — E-2 10/3 19:30 칸: 목소리 26문장(10/3 16:00 초기화 뒤)+화면 제작+렌더가 10/3 16:05~19:30 3시간 반 안에 다 들어가야 함. 못 맞추면 비축분(롱폼 reserve)으로 칸 채우기 판단 필요 → 운영실장·순돌이
   - **firemap-youtube-loop**: 10/4 19:30 롱폼 편 없음 → 오늘 21:15 회의 전까지 편 정하고 slots.json에 기입(W-1 또는 X-SERIES-1 ②), 대본 10/3 오전.
     착수: firemap-youtube-loop 16:42 — ② 나 vs 남들 편 폴더 N-1: 분석 관문·compare·사실표·대본(관문 기한 10/3 19:30), 롱폼 48시간 기준선·A-1 판정 같이
+    착수: firemap-youtube-loop 22:37 — 16:42 회차 산출물 없음(N-1 폴더 없음) → 다시: N-1 분석 관문·compare·사실표·대본(관문 기한 10/3 19:30)
   - **firemap-shorts**: e1_hynix_dd 관문 기한 10/3 00:20 → 19:20 회차 전에 끝냄 + 비축 1편(e1_micron_q4·e1_samsung_x·a1_1eok1y 중 compete.md 있는 것) 관문 통과.
   - **firemap-write**: 16:10·18:10 회차에 카페 비축 2편 관문 통과(편집·compare·제목 8) → slots.json reserve.cafe. 오늘 18:10·22:10 빈 칸 편 배정.
     착수: firemap-write 16:11 — 카페 비축 2편(nps1002 대기 확인 + 새 1편) 관문, 18:10·22:10 칸 배정
     완료: firemap-write 16:32 — b10danji1003 '서울 전세가율 높은 아파트, 매매가와 6600만원 차이 나는 곳도'(B10 단지 높은/낮은 10, loop 15:57 요청) 관문 전부(제목 7.8·표지 8·editgate auto 해시·compare/review 세 줄·틀 v2) → slots 10/3 08:10 gates_ok 16:31. 오늘 20:10 칸(8번째)은 18:10 회차가 배정, 22:10은 8편 상한이라 비움. 비축 reserve.cafe 아직 0 → 18:10 회차 첫 일.
     착수: firemap-write 18:18 — nps1002(18:10 칸) 발행·verify, 카페 비축 2편 관문, 20:10 칸 배정
     완료: firemap-write 18:33 — nps1002 [#196](https://cafe.naver.com/firemap/196) 18:31 발행·verify OK(1238자·사진 3). 20:10 칸 = garak0929 '헬리오시티 국민평형 실거래가, 같은 동 구축보다 덜 오른 1년' 관문 통과(제목 8.7·표지 8·editgate auto·review 세 줄, 레드팀 지적 반영: '옆' 삭제·표 9개 단지 전부). 9/29 수집분 재조회는 안 함 — 본문에 '9월 12일 계약분까지' 기준을 밝혀 사실은 맞고, 다시 받으면 숫자·관문을 처음부터 다시 해야 해서. 22:10은 8편 상한이라 비움. **reserve.cafe는 여전히 0**(garak이 20:10 칸으로 감) → 다음 write 회차 첫 일. 블로그는 감사 정지 스위치로 발행 거부(정상).
+    착수: firemap-write 22:31 — 20:10 칸 garak0929 미발행 확인(20:10 회차 없음) → 지금 발행·verify, 이어 비축 카페 2편
+    완료: firemap-write 22:49 — garak0929 [#197](https://cafe.naver.com/firemap/197) 22:35 발행·verify OK(837/837자·사진 4/4, 20:10 회차가 안 돌아 2시간 25분 늦음, 오늘 8번째). 비축 카페 **1편** offimkt_ic0929 '인천 오피스텔 매매, 9월 신고 셋 중 하나가 한 건물 거래였어요' 관문 통과(제목 8.9·표지 3차 8·editgate auto·compare/review 세 줄·틀 v2, 레드팀이 151억→152억 잡음) → slots reserve.cafe 1/2. 2편째는 사용량 절약으로 못 함 → 다음 write 회차 첫 일(후보: 피부양자 166만원 10/4 기한).
 
 - [알림] firemap-write 15:18: nps1002(15시 코너) 15:00 시도가 naverpost 90분 간격 규칙에 거부됨 — 14:41에 b10cafe1002(#193)가 먼저 나감. **16:11 이후 write 회차가 nps1002를 올린다**(16시 offimkt1002는 hold라 칸이 빔). 관문은 전부 통과 상태.
 - [순돌이 15:3x · 사장님 "그럼 7점으로 낮춰"] **발행 관문 통과선 8→7점**(목표 8 유지). 지시문 12개·매뉴얼·심사 질문 '8=통과'→'7=통과' 바꿈. 바로 바뀌는 것: D-1 썸네일 d1k 7.63 → **통과**(19:30 공개는 목소리 끝나면 진행, 18:30 썸네일 판정 취소 — visual 17:00은 E-2 썸네일로) · offimkt1002 제목 7.5·7.6 → 통과(hold는 편집이 판단해 해제).

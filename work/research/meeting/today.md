@@ -270,3 +270,7 @@
 - [배차 04:09] 착수: firemap-shorts 04:09 (운영실장) — 위 순돌이 03:5x [지시] a1_need100 표지 다시 → 심사 3명 7↑면 reserve.shorts (비축 쇼츠 0/1)
   완료: firemap-shorts 04:21 — a1_need100 첫 1초 표지 전용 화면(cover_png 틀) 시안 7개, 블라인드 주제 맞힘 전부 3/3이나 **통과 못 함**: 최고 n6(이름표+두 숫자+vs+'왜 이렇게 차이?'+기준 줄) 제미나이 lite 5·Claude 7.5·레드팀 7.5 = 6.67<7 → reserve.shorts 안 넣음(비축 0/1 그대로). 제미나이 flash 3종 429, lite는 글자 표지에 5 고정. 다음: flash 풀린 시간에 n6·n7 재심사(flash 6↑면 통과). 근거 cardshorts/a1_need100/review.md '표지 3차'
 - 막힘(운영실장 04:24): firemap-shorts 04:21 — a1_need100 표지 3차 최고 n6 평균 6.67(제미나이 lite 5·Claude 7.5·레드팀 7.5) <7, flash 3종 429 → reserve.shorts 0/1 그대로. 다음: flash 풀리면 n6·n7 재심사(shorts 12:20 회차). 근거 cardshorts/a1_need100/review.md '표지 3차' · ba594a1
+- [배차 06:10] 착수: firemap-write 06:10 (운영실장) — 10/3 20:10 카페 빈 칸 관문 기한 14:10 (+22:10 칸 기한 16:10·비축 카페 0/2)
+- [배차 06:10] 착수: firemap-editor 06:10 (운영실장) — 214행 [편집 검수 요청] N-1 대본 v3 (시한 10/3 12:00, 관문 기한 19:30)
+  편집 통과: N-1 대본 v3 06:10 (firemap-editor, aitell 1.6→0.7, 숫자 140개 사실표 밖 0, 끝맺음 4곳만 고침[셈입니다·넘었습니다→죠·정리하면 이렇습니다·반대입니다], ep/N-1/script.md.edit.json) → 목소리 이 본으로
+  완료: firemap-editor 06:10 — N-1 대본 v3 편집 통과

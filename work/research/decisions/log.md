@@ -609,3 +609,5 @@
 - 2026-10-02 10:50 · designer · global-calcs 허브 공개 조건에 '영국 GOV.UK 3건 대조 완료' 추가 · 대조 전 노랑 칩만 뜬 허브는 '준비 안 된 사이트'로 읽힘(사전 부검·사용자 참모 같은 지적)
 
 - 2026-10-02 10:51 · firemap-improve · 완료: F4 guidegate 운영 확인 — main에 이미 반영(13b2429), 09:15 [auto] 가이드는 운영에서 빠짐(firemap.kr이 홈 화면 반환·직전 가이드는 정상), Cloudflare 로그 원문은 로그인 필요라 못 봄 · 사실 확인만, main 반영 결정 없음
+2026-10-02 10:55 · venture · 완료: 국민연금 수령 나이 채택(가이드 1편·product-dev 10/4 18:00, 부칙 원문 대조 조건; 새 도구 반려 — pension.js에 이미 있음·트랙 B) · R26+R20 한 실험 채택(다음 사이트 칸 1순위, firemap.kr 밖, 착수 10/8 판정 뒤, 카드 venture 10/4 20:10) · R21 2순위로 내림(차별점 경쟁 4곳 중복) · R30 보류(수요 2,820·쿠팡 링크 결재, 10/25 재판정) · 수요는 kwvol 10/02 재실측 44,850
+- 10:56 firemap-editor-web: freelancer-withholding-refund AI 티 13.9→10.1 고침·guidegate pass·dev 푸시, main 반영 대기(순돌이)

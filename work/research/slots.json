@@ -30,7 +30,7 @@
    "item": "nps1002",
    "owner": "firemap-write",
    "gates_ok": "2026-10-02 16:05",
-   "note": "표지 7.00·editgate 통과·#195+90분 뒤"
+   "note": "표지 7.00·editgate 통과·#195+90분 뒤 → #196 18:31 발행·verify OK"
   },
   {
    "at": "2026-10-02 19:20",
@@ -50,10 +50,10 @@
   {
    "at": "2026-10-02 20:10",
    "kind": "cafe",
-   "item": null,
+   "item": "garak0929",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "gongjae1002는 #195로 15:49 앞당겨 나감 — write가 편 배정(하루 8편 중 남은 1) / 8번째 칸 — 18:10 write 회차가 편 배정(비축 garak0929는 9/29 자료라 재조회·관문 필요)"
+   "gates_ok": "2026-10-02 18:31",
+   "note": "제목 8.7·표지 8·editgate auto 해시·review 세 줄 · 오늘 8번째(상한 8) · nps1002+90분 뒤"
   },
   {
    "at": "2026-10-02 22:10",

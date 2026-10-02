@@ -47,3 +47,5 @@ ArtifactData 도구는 ToolSearch `select:ArtifactData`로 불러 쓴다.
 - 스꾸(seukku) 작업·내용을 적지 않는다.
 - 남의 문서(다른 작업 ID)를 고치지 않는다. 순돌이만 예외.
 - 짐작으로 적지 않는다. 모르면 "확인 안 함".
+
+- 시각은 시계 값만(2026-10-02): finished_at·updated는 그 순간 `date '+%H:%M'` 값. 예정 시각을 미리 적지 않는다.

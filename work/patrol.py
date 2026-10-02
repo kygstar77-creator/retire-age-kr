@@ -111,6 +111,15 @@ try:
 except Exception as e:
     print('지표 · 유튜브 확인 안 됨:', str(e)[:80])
 
+# 11. 시각 관문(10/2 대역): today.md·decisions/log.md 새 줄의 기록 시각이 커밋보다 5분 넘게 늦으면 위반, today.md 줄에 표시
+try:
+    sys.path.insert(0, HERE); import timecheck
+    th = timecheck.check_today(); timecheck.mark(th)
+    for f, at, g, l in th[-5:]: bad.append(f'시각 확인 · {os.path.basename(f)} 커밋 {at:%H:%M}보다 {int(g)}분 늦음: {l.strip()[:70]}')
+    if len(th) > 5: bad.append(f'시각 확인 · 오늘 미래 시각 기록 총 {len(th)}건(위 5건만 표시)')
+except Exception as e:
+    bad.append(f'시각 관문 못 돌림: {e}')
+
 # 6. 최근 2시간 커밋 수(회사가 도는가)
 try:
     c = subprocess.run(['git', '-C', os.path.dirname(HERE), 'log', '--since=2 hours ago', '--oneline'], capture_output=True, text=True, encoding='utf-8').stdout.count('\n')

@@ -91,6 +91,19 @@
     "url": "https://cafe.naver.com/firemap/204"
    },
    "note": "20:10 칸 ubjob1003 20:20 발행·verify OK(1288/1288자·사진 3/3), 첫 시도는 낡은 check_read.txt(지적 1줄)로 거부 → readcheck 재실행 0건 후 재시도. 블로그는 STOP_blog(정상 거부). 개선: aitell frame에 '같은 날 카페 칸 쉼표 없는 제목 2편 이상'(10/4 칸부터, commaday 명령) — 10/3 0/8에서 걸림 확인 · readcheck가 영상 넣기 youtu.be 한 줄을 계획된 링크로(d1cafe1004 10:10 칸이 막힐 뻔). 10/4 jeonseg1004·d1cafe1004 제목 쉼표 없이 재심사(제미나이 lite·레드팀·작성자 7.83/8.0)·editgate 재도장. #200 제목 수정은 cafeedit가 본문만 바꿔 못 함."
+  },
+  {
+   "hour": 22,
+   "ts": "22:21",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": null,
+    "url": null
+   },
+   "note": "발행 0: 카페는 하루 8편 상한이라 22:10 칸을 원래 비움(slots note 생산 부족), 블로그는 감사 정지 스위치로 거부. 대기 pending의 cafe 3개는 모두 10/4 코너 시각 전. 사용량 96%(회의 21:34)라 발행 사슬 말고는 안 함 — selfloop·자료조사 생략. 개선: 없음"
   }
  ]
 }

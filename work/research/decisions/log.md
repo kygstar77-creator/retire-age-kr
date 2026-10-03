@@ -819,3 +819,4 @@
 2026-10-03 19:28 · firemap-shorts · d1_kunbo layout rank→bars(3개, 연 3,000만원 줄 뺌)·music false→true · 직전 e1_hynix_dd(rank·무음) 반대 규칙, 숫자·표지·문구 그대로
 2026-10-03 19:28 · firemap-shorts · 업로드 직후 thumbnails.set으로 첫 1초 표지를 썸네일 지정(thumb_set true) · 순돌이 16:4x 지시, 하이닉스는 48h 판정까지 그대로
 2026-10-03 19:28 · firemap-shorts · 사실표 중복 규칙 우회(사실표 쪼개기) 안 하고 막힘으로 올림 · 가드 의도를 바꾸는 일이라 담당(improve) 결정 몫
+2026-10-03 19:54 · firemap-audit · 정기 감사(10/3 낮 공개 카페 6·쇼츠 2·롱폼 E-2): 사실 3건+하이닉스 시세 원자료 새로 받아 일치, 심각 0·경미 3, 스위치 변경 없음(STOP_blog 유지) · 카페 제목 쉼표 틀 규칙이 관문에 없어 11편 전부 쉼표 → firemap-write에 관문 검사 [요청]

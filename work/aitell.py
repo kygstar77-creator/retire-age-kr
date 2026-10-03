@@ -6,6 +6,8 @@
 #   py -3.12 work/aitell.py scan <묶음 폴더 여러 개>         → 기준 조정용 분포
 #   py -3.12 work/aitell.py frame <묶음>                     → 카페 틀 v2 3줄 점검(소제목 3~5개·끝 FAQ/정리·제목 명사 끝 또는 B틀 물음, 반전 금지). 어기면 종료코드 5
 #   py -3.12 work/aitell.py commaday 2026-10-04               → 그 날 카페 칸 쉼표 없는 제목 수(하루 2편 이상, 10/4 칸부터 frame이 쉼표 제목을 막는다)
+#   py -3.12 work/aitell.py --script <voice.json|script.md|txt>  → 롱폼 대본 말투(숫자 밀도·숫자 2개 이상 문장). 넘으면 종료코드 6
+#        근거: research/editor/script-gate.md (경쟁 사람 자막 12편 vs 우리 대본 4편, 10/3 클라우드 ①)
 #   --skip-list (아무 자리)  → 번호·글머리 목록 줄과 법 문구·면책 줄을 끝맺음 반복(연속·'~요'·머리·꼬리)에서 뺀다.
 #                              사전(AI 말·설명조) 검사는 그대로. 기본은 꺼짐 — 기존 통과 점수가 안 바뀐다(10/1 대역 X-KR-1 요청).
 # 사장님 10/1 "사소한 것까지 모든 글을 다 검토해서 사람이 쓴 글로 바꿔야 하는데" — 순돌이 지시 [지시·긴급].
@@ -229,8 +231,69 @@ def refuse(msg, hits):
     print('  고친 뒤 다시 올리거나, 편집자가 보고 py -3.12 work/aitell.py pass <묶음> <편집자> 를 남긴다.')
 
 
+# ---- 대본 모드(10/3 클라우드 ① — research/editor/script-gate.md) ----
+# 기존 score()는 경쟁 사람 자막과 우리 대본을 못 가렸다(6편 모두 0~3.5, 기준 12).
+# 실측: 경쟁 롱폼 사람 자막 12편 숫자/1000단어 중앙 52·최대 91, 숫자 2개 이상 문장 중앙 11%·최대 20%
+#       우리 대본 4편(E-1·D-1·E-2·N-1) 148~197, 33~44% — 두 지표 모두 각각 하나만으로도 16편을 다 가른다.
+# 기준 = 경쟁 최대값(반올림 전 범위까지: 91 → 91.5 미만, 20 → 20.5 미만). 둘 다 지켜야 통과.
+# research/editor/script_gate.json(speechcompare.py --loo --write가 자막 원본으로 다시 맞춘 값)이 있으면 그 값을 쓴다.
+SCRIPT_RULES = [{'metric': '숫자/1000단어', 'op': 'le', 'value': 91.4},
+                {'metric': '숫자 2개 이상 문장 %', 'op': 'le', 'value': 20.4}]
+SCRIPT_GATE_JSON = os.path.join(HERE, 'research', 'editor', 'script_gate.json')
+SPEECH_PY = os.path.join(HERE, 'research', 'longform', 'loop', 'speechcompare.py')
+
+
+def _speech():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('speechcompare', SPEECH_PY)
+    mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+    return mod
+
+
+def script_rules():
+    try:
+        r = json.load(open(SCRIPT_GATE_JSON, encoding='utf-8')).get('rules')
+        if r: return r
+    except (OSError, ValueError):
+        pass
+    return SCRIPT_RULES
+
+
+def script_say(path):
+    """읽는 말만 뽑는다. voice.json → say, .md → '- ' 줄(화면·[자막] 표시 뺌), 그 밖 → 글 전체(표시만 뺌)."""
+    if path.endswith('.json'):
+        v = json.load(open(path, encoding='utf-8'))
+        return ' '.join(l['say'] for sec in v['sections'] for l in sec['lines'])
+    raw = open(path, encoding='utf-8').read()
+    if path.endswith('.md'):
+        raw = '\n'.join(ln.strip()[2:] for ln in raw.splitlines() if ln.strip().startswith('- '))
+    raw = re.sub(r'\[자막[^\]]*\]', ' ', raw)
+    raw = re.sub(r'\(화면[^)]*\)', ' ', raw)
+    return re.sub(r'\s+', ' ', raw).strip()
+
+
+def script_score(text, rules=None):
+    """(통과?, 지표 dict, 걸린 기준 목록)."""
+    m = _speech().metrics(text)
+    bad = []
+    for r in rules or script_rules():
+        v = m[r['metric']]
+        ok = v <= r['value'] if r['op'] == 'le' else v >= r['value']
+        if not ok: bad.append(f"{r['metric']} {v} — 기준 {'≤' if r['op'] == 'le' else '≥'} {r['value']}")
+    return not bad, m, bad
+
+
 def main(a):
     global SKIP
+    if '--script' in a:
+        i = a.index('--script')
+        if i + 1 >= len(a): print('사용: aitell.py --script <voice.json|script.md|txt>'); return 2
+        ok, m, bad = script_score(script_say(a[i + 1]))
+        print(f"대본 말투 {'통과' if ok else '걸림'} — 숫자/1000단어 {m['숫자/1000단어']} · 숫자 2개 이상 문장 {m['숫자 2개 이상 문장 %']}% "
+              f"· 숫자 하나 이하 문장 {m['숫자 하나 이하 문장 %']}% · 문장 {m['문장수']}")
+        for b in bad: print('  ', b)
+        if not ok: print('   말에는 반올림한 숫자 하나만, 정확한 값은 [자막: …]으로(research/editor/script-gate.md)')
+        return 0 if ok else 6
     SKIP = '--skip-list' in a
     a = [x for x in a if x != '--skip-list']
     if not a: print(__doc__ or open(__file__, encoding='utf-8').read().split('import')[0]); return 0

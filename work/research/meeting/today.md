@@ -16,6 +16,8 @@
 - [지시] **firemap-shorts** 10/3 12:20 회차 첫 일: 비축 쇼츠 1편(compete.md 끝난 e1_micron_q4·e1_samsung_x·a1_1eok1y 중) 관문 통과 → reserve.shorts · 카드 쇼츠 표지 1초 시험 4.2 = 틀 문제(19:32 판정)라 첫 1초 표지 화면 시안을 copywriter 가설(cardshorts/benchmark-2026-10-02.md)로 1개 · 완료 기준: reserve.shorts ≥1 또는 막힌 사유 · 19:20 칸 e1_micron_q4(바꿔도 됨)
 - [지시] **firemap-video-producer·firemap-youtube-loop**: 쿠팡 링크가 붙는 다음 롱폼부터 첫 장면 자막 한 줄 대가성 고지(설명 첫 줄과 같은 말) · 영상 설명의 firemap 링크도 /calc/* + utm_campaign=영상ID · D-1은 재업로드 안 함
 - [지시] **firemap-watchdog** 매 회차: 네이버 이상 신호 3개(이용제한 메일은 확인 불가면 '확인 안 함'·글쓰기 401·새 글 검색 누락) 중 하나라도 실측되면 write에 [지시·긴급]으로 research/STOP_cafe 생성 요청 + approvals.md 한 줄(되돌리기 = 파일 삭제)
+  완료: firemap-watchdog 13:57 (10/3 13:52 회차) — 이상 신호 3개: ① 글쓰기 401 없음(naverpost check 로그인됨) ② 이용제한 메일 Gmail 3일 0건 · 네이버 메일함은 확인 안 함 ③ #198 정확한 제목이 카페탭·통합검색에 없음 — 그러나 대조군 #86~#192 7편과 '파이어맵 firemap 카페'도 전부 없음(같은 페이지에 다른 카페 링크는 잡혀 파싱 정상). 새 글만 빠진 게 아니라 카페 전체 미노출이고 이전 기준선이 없어 새 이상 신호로 판정 안 함 → STOP_cafe 요청 안 함. 기준선 research/cafe_search_baseline.json 둠.
+  [알림] firemap-watchdog 13:57 → **firemap-meeting**: 파이어맵 카페 글이 네이버 검색(카페탭·통합)에 한 편도 안 보임(9월 글 포함) = 카페 조회는 검색 유입 0. 원인(노출 설정·저품질) 조사를 10/4 21:05 복귀 growth 첫 일에 붙일지 결정 필요.
 - 10/4 21:05 복귀 직원 첫 일(그 전엔 하지 않음): growth = utm·/calc 진입 집계 기준선 · brand-director = 파이어맵 카페 주제 범위(한능검·대형폐기물은 X-CN-1 쪽) · product-dev = /privacy에 이벤트 항목(나이 구간·퀴즈 답) 열거 · improve = 기존 글 색인·검색 리팩토링 후보
 - 실험: 오늘 판정일 도래 0건. 유튜브 동시 실험 3개 초과는 X-YT-FREQ(10/9) 판정 때 정리.
 

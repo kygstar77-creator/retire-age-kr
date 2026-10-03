@@ -100,115 +100,199 @@ SAYNET = {'SCHD': '1억 1,599만원', 'SPY': '1억 1,023만원', 'GLD': '1억 33
 need(*SAYNET.values())
 NAME = {'DEP': '예금', 'SPY': 'S&P500', 'SCHD': 'SCHD', 'GLD': '금'}
 
-# 장면 = (키, 장 번호, 시작 문장 조각 — None이면 장 처음부터)
-CUTS = [('open', '0.', None), ('road', '0.', '오늘 순서는'), ('logo', '로고', None), ('dep', '1.', None), ('fx', '2.', None),
+# ── additions-1003 확인(facts.txt [add-1003 …] 줄과 원자료) ──
+need('[add-1003 B1]', '최고 1,554.4원(2026-07-02), 최저 1,337.9원(2026-09-10)', '2026-07-02 123,037,245원(최고 구간) → 2026-09-10 107,755,946원',
+     '2026-01-28 143,638,454원(가장 높은 날) → 2026-09-28 102,425,567원(−28.69%)', 'SPY 최저 2025-10-10 97,294,730원(−2.71%)',
+     '1.0339달러 → +1.95%', '905,832원(12/15, 1,472.5원) · 856,702원(3/30, 1,508.1원) · 862,184원(6/29, 1,544.2원) · 796,727원(9/28, 1,352.0원), 합 3,421,445원',
+     '252,402원 더 많다', '지급일이 2026-10-30', '세전 272,929원',
+     'GLD>SPY>SCHD 153일 · GLD>SCHD>SPY 34일 · SCHD>GLD>SPY 34일 · SCHD>SPY>GLD 25일 · SPY>GLD>SCHD 4일 · SPY>SCHD>GLD 1일', '251일 중 25일(10.0%), 금이 1위인 날이 187일(74.5%)',
+     '월 285,120원꼴', '월 68,930원', '하한 22,800원 → 월 46,130원, 1년 553,560원 더', '19.3%가 건보료 증가분', '2,574만원 폭', '1,528만원이 환율로 빠진 구간')
+assert 153 + 34 + 34 + 25 + 4 + 1 == 251 and round(25 / 251 * 100, 1) == 10.0 and round(187 / 251 * 100, 1) == 74.5 and 153 + 34 == 187
+assert 905832 + 856702 + 862184 + 796727 == 3421445 and 3421445 - 3169043 == 252402 and round(3421445 / 12) == 285120
+assert 68930 - 22800 == 46130 and 46130 * 12 == 553560 and 123037245 - 97294730 == 25742515 and 123037245 - 107755946 == 15281299
+
+# 1년 원화 평가액(분배금 빼고 세전) — raw/yahoo 종가 × ECOS 매매기준율(그날 또는 직전 한국 영업일), 1억 ÷ 1,406원 ÷ 시작 종가 주수 [add-1003 B2~B5]
+import bisect
+YH = json.load(open(os.path.join(EP, 'raw', 'yahoo_20261003.json'), encoding='utf-8'))
+C2R = json.load(open(os.path.join(EP, 'raw', 'collect2_20261003.json'), encoding='utf-8'))
+FXD = [(d, float(v)) for d, v in C2R['USDKRW_D']]; FXK = [d for d, _ in FXD]
+def won_series(t):
+    res = []
+    for d, p in sorted(YH[t]['px'].items()):
+        k = d.replace('-', '')
+        if '20251002' <= k <= '20261002':
+            res.append((k, 1e8 / FX[0] / USD[t][0] * p * FXD[bisect.bisect_right(FXK, k) - 1][1]))
+    return res
+SW = {t: won_series(t) for t in ['SPY', 'SCHD', 'GLD']}
+for t, d, v in [('SPY', '20260702', 123037245), ('SPY', '20260910', 107755946), ('SPY', '20251010', 97294730), ('GLD', '20260128', 143638454), ('GLD', '20260928', 102425567)]:
+    assert abs(dict(SW[t])[d] - v) < 20, (t, d, dict(SW[t])[d])     # 주수 반올림 차이 몇 원
+SWI = {t: {d: i for i, (d, _) in enumerate(SW[t])} for t in SW}
+
+# 장면 = (키, 장 번호, 시작 문장 조각 — None이면 장 처음부터). 장면마다 20~40초, 그 안에서 문장마다 표시가 하나씩 더해진다.
+CUTS = [('open', '0.', None), ('promise', '0.', '파이어맵은 매번'), ('road', '0.', '오늘 순서는'), ('logo', '로고', None),
+        ('dep', '1.', None), ('fx', '2.', None), ('swing', '2.', '그런데 시작과 끝만'),
         ('spy', '3.', None), ('spytax', '3.', '자, 이제 세금이에요'), ('spycal', '3.', '그런데 이 세금은 좀 특이해요'),
-        ('schd', '4.', None), ('gold', '5.', None), ('rank', '6.', None), ('gap', '6.', '그럼 세금은 아무것도'), ('mine', '6-1.', None),
-        ('rate', '7.', None), ('now', '7.', '그럼 지금 평균 금리로'), ('posted', '7.', '이번엔 은행들이 내건'),
-        ('cpi', '8.', None), ('case', '8-1.', None), ('thresh', '9.', None), ('sum', '10.', None), ('end', '10.', '이제 여러분 차례예요')]
+        ('schd', '4.', None), ('schdfx', '4.', '그런데 분배금은 받는 날'), ('gold', '5.', None),
+        ('rank', '6.', None), ('gap', '6.', '그럼 세금은 아무것도'), ('start', '6.', '그런데 여기서 반론'),
+        ('caseA', '7.', None), ('caseB', '7.', '두 번째는 은퇴 뒤'),
+        ('rate', '8.', None), ('now', '8.', '지금 평균 금리로 1억을'), ('posted', '8.', '은행들이 내건 금리도'),
+        ('cpi', '9.', None), ('when', '9.', '같은 예금도 언제'),
+        ('thresh', '10.', None), ('caseC', '10.', '실제로 이 문턱을'),
+        ('sum', '11.', None), ('act', '11.', '그래서 오늘 해 볼 일은'), ('end', '11.', '이제 여러분 차례예요')]
 END_MIN = 20 * FPS   # 끝 화면(엔드 스크린) 자리는 마지막 20초 이상 — YouTube 도움말 '동영상 마지막 5~20초에 추가'(검색 요약만 봄)
+SRC_ADD = '[add-1003] 야후 종가 × ECOS 731Y001 매매기준율(본인 계산)'
+
+
+def R(rows):   # [label, value, tone, at]
+    return rows
 
 
 def spec(key, L, A):
-    """L(조각) = 장면 안 문장 번호, A(조각, 더할 프레임) = 그 문장 시작 프레임(장면 안 기준)"""
     if key == 'open':
-        return dict(kind='open', title='1억, 어디에 두면 1년 뒤 얼마가 남을까', sub='2025년 10월 2일에 넣고 2026년 10월 2일에 뺐다면 · 세금·환율 뗀 뒤',
-                    source='한국은행·금융감독원·법제처 원문, 거래소 종가 · ' + PAST,
-                    data={'bars': [[NAME[k], A('통장에 1억', 8 + 7 * i)] for i, k in enumerate(['DEP', 'SPY', 'SCHD', 'GLD'])], 'q': A('네 군데에', 0)})
+        return dict(kind='open', title='1억, 1년 뒤 얼마가 남을까', sub='2025.10.2에 넣고 2026.10.2에 뺐다면 — 세금·환율 뗀 뒤', source='한국은행·금융감독원·법제처 원문, 거래소 종가 · ' + PAST,
+                    data={'bars': [[NAME[k], A('통장에 1억', 8 + 7 * i)] for i, k in enumerate(['DEP', 'SPY', 'SCHD', 'GLD'])], 'q': A('예금에 넣으시겠어요', 0),
+                          'gap': A('결과부터', 0), 'gapText': '세금이 줄인 간격 ' + won(GAP[0] - GAP[1]) + '원'})
+    if key == 'promise':
+        return dict(kind='promise', title='1억의 1년 영수증', sub='공식 원문 숫자로, 내 돈에 실제로 남는 금액만', source='한국은행 ECOS · 금융감독원 · 법제처 · 거래소 종가',
+                    data={'stamp': A('오늘은', 0), 'rows': [['원문 숫자', '한국은행·금감원·법령', 'in', A('파이어맵은', 10)], ['세금', '이자·분배금·판 이익', 'in', A('파이어맵은', 22)],
+                                                             ['환율', '산 날·판 날 매매기준율', 'in', A('파이어맵은', 34)], ['남는 돈', '통장에 찍히는 금액', 'net', A('파이어맵은', 46)]],
+                          'q': A('그럼 순위까지', 0)})
     if key == 'road':
-        items = ['예금 영수증', '달러로 바꿀 때 생기는 줄', '미국 ETF 영수증 세 장', '순위는 바뀌었을까', '지금 예금은 얼마를 줄까']
-        return dict(kind='road', title='오늘 확인할 다섯 가지', sub=None, source=None,
+        items = ['예금 영수증', '달러로 바꿀 때 생기는 줄', '미국 ETF 영수증 세 장', '순위 · 반론', '사람마다 · 지금 예금']
+        return dict(kind='road', title='오늘 확인할 다섯 가지', sub='영수증 순서대로', source=None,
                     data={'rows': [[f'{"①②③④⑤"[i]}  {t}', A('예금 영수증,' if i < 4 else '마지막으로', 10 + (i if i < 4 else 0) * 16)] for i, t in enumerate(items)]})
     if key == 'logo':
-        return dict(kind='logo', title='', data={'sub': '1억의 1년 영수증 · 2025.10.2 → 2026.10.2'})
+        return dict(kind='logo', title='', data={'sub': '1억의 1년 영수증 · 1편 · 2025.10.2 → 2026.10.2'})
     if key == 'dep':
-        return dict(kind='receipt', title='예금 영수증', sub='2025년 10월 새로 가입한 1년 정기예금 평균 금리로 1억', source=SRC_DEP,
-                    data={'head': '정기예금 1년 · 연 2.58% · 단위 원',
-                          'rows': [['넣은 돈', won(100_000_000), 'in', 0], ['이자', '+' + won(RC['DEP']['gain']), 'in', A('258만원', 0)],
-                                   ['세금 15.4%', '−' + won(RC['DEP']['tax']), 'tax', A('40만원', 0)], ['1년 뒤 통장', won(RC['DEP']['net']), 'net', A('2.18%', 0)]],
-                          'side': [PCT['DEP'], A('2.18%', 10), '넣은 돈보다 늘어난 비율']})
+        return dict(kind='receipt', title='예금 영수증', sub='2025년 10월 새로 가입한 1년 정기예금 평균 연 2.58%', source=SRC_DEP,
+                    data={'head': '정기예금 1년 · 1억 · 단위 원', 'rows': R([['넣은 돈', won(100_000_000), 'in', 0], ['이자 연 2.58%', '+' + won(RC['DEP']['gain']), 'in', A('258만원', 0)],
+                                                                    ['세금 15.4%', '−' + won(RC['DEP']['tax']), 'tax', A('40만원', 0)], ['1년 뒤 통장', won(RC['DEP']['net']), 'net', A('2.18%', 0)]]),
+                          'side': [PCT['DEP'], A('2.18%', 10), '넣은 돈보다 늘어난 비율'], 'callout': ['받을 돈이 처음부터 정해짐', A('줄이 몇 개 없죠', 0)]})
     if key == 'fx':
-        return dict(kind='fx', title='달러로 바꿀 때 생기는 줄', sub='1달러를 사는 데 드는 원화 · 작년 그날과 올해 같은 날', source=SRC_FX,
+        return dict(kind='fx', title='달러로 바꿀 때 생기는 줄', sub='1달러를 사는 데 드는 원화 — 작년 그날과 올해 같은 날', source=SRC_FX,
                     data={'a': '1,406.0원', 'b': '1,359.6원', 'av': FX[0], 'bv': FX[1], 'start': A('올해 같은 날', 0), 'aAt': A('1,406원', 0), 'pct': '달러 값 −3.30%',
-                          'loss': '−' + won(FXLOSS) + '원', 'lossAt': A('330만원', 0), 'blankAt': A('환전 수수료', 0)})
+                          'loss': '−' + won(FXLOSS) + '원', 'lossAt': A('330만원', 0), 'meanAt': A('꼼짝도 안 했어도', 0)})
+    if key == 'swing':
+        step = 2
+        pts = {t: [round(v / 1e4) for _, v in SW[t][::step]] for t in SW}
+        n = len(pts['SPY']); idx = lambda t, d: SWI[t][d] / step
+        months = [(i // step, f'{int(d[4:6])}월') for i, (d, _) in enumerate(SW['SPY']) if d[6:8] <= '07' and (i == 0 or SW['SPY'][i - 1][0][4:6] != d[4:6])][::2]
+        return dict(kind='swing', title='1년 안에서는 훨씬 크게 흔들렸다', sub='1억을 넣었다면 매일의 원화 평가액(분배금 빼고 세금 전) · 만원', source=SRC_ADD,
+                    data={'series': [['S&P500', 'ink', pts['SPY']], ['SCHD', 'ink3', pts['SCHD']], ['금', 'accent', pts['GLD']]], 'n': n, 'min': 9000, 'max': 15000,
+                          'draw': A('그런데 시작과 끝만', 0), 'xlabels': months,
+                          'tags': [['SPY', idx('SPY', '20260702'), 12304, '7.2 · 123,037,245원', A('석 달 만에', 0), 'up', False],
+                                   ['SPY', idx('SPY', '20260910'), 10776, '9.10 · 107,755,946원', A('석 달 만에', 14), 'left', False],
+                                   ['GLD', idx('GLD', '20260128'), 14364, '1.28 · 143,638,454원', A('금은 더 컸어요', 0), 'up', True],
+                                   ['GLD', idx('GLD', '20260928'), 10243, '9.28 · 102,425,567원 (−28.69%)', A('금은 더 컸어요', 16), 'down', True]],
+                          'fxAt': A('가장 높았던 날은', 0), 'fx': ['환율 최고 1,554.4원', '최저 1,337.9원']})
     if key == 'spy':
-        return dict(kind='receipt', title='S&P500 영수증', sub='SPY · 달러로 사서 1년 뒤 원화로 판 값 · 1억', source=SRC_ETF,
+        return dict(kind='receipt', title='S&P500 영수증', sub='SPY · 달러로 사서 1년 뒤 원화로 판 값', source=SRC_ETF,
                     data={'head': 'S&P500 ETF(SPY) · 1억 · 단위 원', 'side': ['+15.01%', A('약 15%', 10), '달러로 1년 동안 오른 폭'],
-                          'rows': [['달러로 오른 폭', '+15.01%', 'in', A('약 15%', 0)], ['원화로 판 돈', won(RC['SPY']['sell']), 'in', A('1,121만원', 0)],
-                                   ['그중 이익', won(RC['SPY']['gain']), 'hi', A('1,121만원', 18)], ['분배금 4번(세금 전)', '+' + won(RC['SPY']['dist']), 'in', A('110만원', 0)]]})
+                          'rows': R([['달러로 오른 폭', '+15.01%', 'in', A('약 15%', 0)], ['원화로 판 돈', won(RC['SPY']['sell']), 'in', A('1,121만원', 0)],
+                                     ['그중 이익', won(RC['SPY']['gain']), 'hi', A('1,121만원', 18)], ['분배금 4번(세금 전)', '+' + won(RC['SPY']['dist']), 'in', A('110만원', 0)],
+                                     ['그중 네 번째(10.30 입금)', '272,929', 'dim', A('재밌는 건', 0)]]),
+                          'callout': ['판 날보다 4주 늦게 들어오는 분배금', A('재밌는 건', 10)]})
     if key == 'spytax':
-        return dict(kind='receipt', title='세금은 두 군데서 뗀다', sub='분배금은 미국에서 15% · 판 이익은 공제 250만원 넘는 부분에 22%', source=SRC_TAX,
+        return dict(kind='receipt', title='세금은 두 군데서 뗀다', sub='분배금은 미국에서 15% · 판 이익은 250만원 넘는 부분에 22%', source=SRC_TAX,
                     data={'head': 'SPY 세금 계산 · 단위 원', 'side': ['22%', A('22%를', 10), '공제 250만원 넘는 이익에 붙는 세율'],
-                          'rows': [['분배금에서 (미국 15%)', '−' + won(RC['SPY']['wht']), 'tax', A('16만원', 0)], ['판 이익', won(RC['SPY']['gain']), 'in', A('판 이익에 붙는', 0)],
-                                   ['빼 주는 돈(공제)', '−2,500,000', 'dim', A('250만원까지는', 0)], ['곱하는 세율', '× 22%', 'in', A('22%를', 0)],
-                                   ['판 이익 세금', '−' + won(RC['SPY']['cgt']), 'tax', A('192만원', 0)]]})
+                          'rows': R([['분배금에서 (미국 15%)', '−' + won(RC['SPY']['wht']), 'tax', A('16만원', 0)], ['판 이익', won(RC['SPY']['gain']), 'in', A('다음은 판 이익', 0)],
+                                     ['빼 주는 돈(공제)', '−2,500,000', 'dim', A('다음은 판 이익', 14)], ['곱하는 세율', '× 22%', 'in', A('22%를', 0)],
+                                     ['판 이익 세금', '−' + won(RC['SPY']['cgt']), 'tax', A('192만원', 0)]]),
+                          'callout': ['넣은 돈이 작을수록 세금 비중 ↓', A('공제가 금액과', 0)]})
     if key == 'spycal':
-        return dict(kind='zoom', title='판 이익 세금은 나중에 낸다', sub='팔 때 바로 빠지지 않는다 — 직접 신고하고 낸다', source=SRC_TAX,
-                    data={'text': '다음 해 5월', 'label': '판 이익 세금 내는 때', 'note': '확정신고 기간 5월 1일~31일', 'start': A('다음 해 5월', 0),
-                          'after': ['세금 뒤 통장', won(RC['SPY']['net']) + '원', PCT['SPY'], A('10% 조금', 0)]})
+        return dict(kind='zoom', title='판 이익 세금은 나중에 낸다', sub='팔 때 바로 빠지지 않는다 — 다음 해 5월 직접 신고', source=SRC_TAX,
+                    data={'text': '다음 해 5월', 'label': '판 이익 세금 내는 때', 'note': '확정신고 5월 1일~31일', 'start': A('그런데 이 세금은', 8),
+                          'after': ['세금 두 가지 뗀 뒤 통장', won(RC['SPY']['net']) + '원', PCT['SPY'], A('10% 조금', 0)]})
     if key == 'schd':
-        return dict(kind='receipt', title='SCHD 영수증', sub='배당 ETF · 계산 방법은 S&P500과 같다 · 1억', source=SRC_ETF,
+        return dict(kind='receipt', title='SCHD 영수증', sub='배당 ETF · 계산 방법은 S&P500과 같다', source=SRC_ETF,
                     data={'head': 'SCHD · 1억 · 단위 원', 'side': ['+15.99%', A('16% 가까이', 10), '세금 뗀 뒤, 넣은 돈보다 늘어난 비율'],
-                          'rows': [['달러로 오른 폭', '+19.68%', 'in', A('약 20%', 0)], ['원화로 판 돈', won(RC['SCHD']['sell']), 'in', A('약 20%', 30)],
-                                   ['분배금 4번(세금 전)', '+' + won(RC['SCHD']['dist']), 'in', A('373만원', 0)], ['미국이 뗀 세금 15%', '−' + won(RC['SCHD']['wht']), 'tax', A('56만원', 0)],
-                                   ['판 이익 세금', '−' + won(RC['SCHD']['cgt']), 'tax', A('291만원', 0)], ['세금 뒤 통장', won(RC['SCHD']['net']), 'net', A('16% 가까이', 0)]]})
+                          'rows': R([['달러로 오른 폭', '+19.68%', 'in', A('약 20%', 0)], ['원화로 판 돈', won(RC['SCHD']['sell']), 'in', A('약 20%', 30)],
+                                     ['분배금 4번(세금 전)', '+' + won(RC['SCHD']['dist']), 'in', A('373만원', 0)], ['미국이 뗀 세금 15%', '−' + won(RC['SCHD']['wht']), 'tax', A('56만원', 0)],
+                                     ['판 이익 세금', '−' + won(RC['SCHD']['cgt']), 'tax', A('291만원', 0)], ['세금 뒤 통장', won(RC['SCHD']['net']), 'net', A('16% 가까이', 0)]]),
+                          'callout': ['1주당 분배금 1.0339 → 1.0541달러 (+1.95%)', A('1주당 분배금', 0)]})
+    if key == 'schdfx':
+        days = [['12/15', 1472.5], ['3/30', 1508.1], ['6/29', 1544.2], ['9/28', 1352.0]]
+        return dict(kind='bars', title='분배금은 받는 날 환율로 들어온다', sub='SCHD 분배금 네 번이 들어온 날의 원/달러 환율 · 원', source='[add-1003 A5] 슈왑 분배금 표 × ECOS 731Y001(본인 계산)',
+                    data={'dir': 'v', 'min': 1200, 'max': 1600, 'tags': True, 'hline': [FX[1], '끝날 환율 1,359.6원', A('그런데 분배금은', 0)],
+                          'bars': [[d, v, f'{v:,.1f}원', A('그런데 분배금은', 14 + 10 * i), 'ink'] for i, (d, v) in enumerate(days)],
+                          'note': ['받은 날 환율이면 +252,402원', A('25만원쯤', 0)]})
     if key == 'gold':
         return dict(kind='bars', title='금은 환율이 주인공', sub='GLD · 같은 1년을 두 가지로 잰 늘어난 비율', source=SRC_ETF,
-                    data={'dir': 'v', 'max': 8, 'bars': [['달러로 잰 오른 폭', 7.15, '+7.15%', A('약 7%', 0), 'ink'], ['원화로, 세금 뗀 뒤', 3.37, '+3.37%', A('3% 조금', 0), 'accent']],
-                          'note': ['환율 −3.30%가 깎아 먹음', A('361만원', 0)]})
+                    data={'dir': 'v', 'max': 8, 'tags': True, 'bars': [['달러로 잰 오른 폭', 7.15, '+7.15%', A('약 7%', 0), 'ink'], ['원화로, 세금 뗀 뒤', 3.37, '+3.37%', A('3% 조금', 0), 'accent']],
+                          'note': ['환율 −3.30%가 깎아 먹음', A('361만원', 0)], 'circle': [1, A('3% 조금', 20)]})
     if key == 'rank':
-        bars = [[NAME[k], RC[k]['net'] - 100_000_000, SAYNET[k], A('맨 위' if k == 'SCHD' else '그다음이', 0 if k == 'SCHD' else 14 * i),
-                 'accent' if k == 'SCHD' else 'ink', PCT[k]] for i, k in enumerate(ORD)]
-        return dict(kind='bars', title='세금·환율 뗀 뒤 순위', sub='2025년 10월 2일 하루에 넣은 경우 · 막대 = 넣은 돈 1억보다 늘어난 만큼', source=SRC_ETF + ' · ' + PAST,
-                    data={'dir': 'v', 'max': 17_000_000, 'bars': bars, 'note': ['세금 떼기 전에도 같은 순서', A('맨 위', 0)]})
+        bars = [[NAME[k], RC[k]['net'] - 100_000_000, SAYNET[k], A('맨 위' if k == 'SCHD' else '그다음이', 0 if k == 'SCHD' else 14 * i), 'accent' if k == 'SCHD' else 'ink', PCT[k]] for i, k in enumerate(ORD)]
+        return dict(kind='bars', title='세금·환율 뗀 뒤 순위', sub='막대 = 넣은 돈 1억보다 늘어난 만큼 · 2025.10.2 하루에 넣은 경우', source=SRC_ETF + ' · ' + PAST,
+                    data={'dir': 'v', 'max': 17_000_000, 'tags': True, 'bars': bars, 'note': ['세금 떼기 전에도 같은 순서', A('그다음이', 30)], 'circle': [0, A('맨 위', 20)]})
     if key == 'gap':
         return dict(kind='count', title='달라진 건 간격', sub='SCHD와 예금, 통장에 남은 돈의 차이', source=SRC_ETF + ' · ' + SRC_TAX.split(' · ')[0],
                     data={'from': GAP[0], 'to': GAP[1], 'text': won(GAP[1]) + '원', 'label': 'SCHD − 예금, 세금 뗀 뒤', 'start': A('세금을 떼고 나니', 0),
-                          'pre': '세금 떼기 전 ' + won(GAP[0]) + '원', 'preAt': A('1,688만원', 0), 'cut': '세금이 줄인 간격 ' + won(GAP[0] - GAP[1]) + '원', 'cutAt': A('307만원', 0)})
-    if key == 'mine':
-        return dict(kind='receipt', title='내 돈에 옮겨 보려면', sub='넣은 돈에 비례하는 줄과, 비례하지 않는 줄', source=None,
-                    data={'head': '영수증 줄 나눠 보기', 'side': ['두 줄만 조심', A('다만 비례하지', 10), '나머지 줄은 돈에 비례'],
-                          'rows': [['이자 · 분배금', '돈에 비례', 'dim', A('대부분의 줄', 0)], ['환율로 빠지는 돈', '돈에 비례', 'dim', A('대부분의 줄', 16)],
-                                   ['판 이익 공제 250만원', '금액 고정', 'hi', A('하나는 판 이익', 0)], ['문턱 세 개', '넘으면 걸림', 'hi', A('다른 하나는', 0)]]})
+                          'pre': '세금 떼기 전 ' + won(GAP[0]) + '원', 'preAt': A('1,688만원', 0), 'cut': '세금이 줄인 간격 ' + won(GAP[0] - GAP[1]) + '원', 'cutAt': A('307만원', 0),
+                          'callout': ['많이 번 쪽이 세금도 많이 낸다', A('많이 번 쪽이', 0)]})
+    if key == 'start':
+        order = [['금>S&P>SCHD', 153], ['금>SCHD>S&P', 34], ['SCHD>금>S&P', 34], ['SCHD>S&P>금', 25], ['S&P>금>SCHD', 4], ['S&P>SCHD>금', 1]]
+        return dict(kind='bars', title='넣는 날을 바꾸면 순위도 바뀐다', sub='시작일 251개(2024.10.2~2025.10.2)마다 1년 들고 판 결과 · 세 ETF 순서별 날 수', source='[add-1003 C1] 야후 종가·분배금, 달러 기준·세금 전(본인 계산)',
+                    data={'dir': 'v', 'max': 175, 'tags': True, 'bars': [[o, v, f'{v}일', A('그래서 넣는 날을', 10 + 8 * i), 'accent' if o.startswith('SCHD>S&P') else ('ink' if not o.startswith('금') else 'ink'), None] for i, (o, v) in enumerate(order)],
+                          'circle': [3, A('오늘 영수증과 같은', 0)], 'note': ['오늘 순서: 251일 중 25일(10.0%)', A('오늘 영수증과 같은', 10)],
+                          'note2': ['금이 1위: 187일(74.5%)', A('오히려 금이', 0)]})
+    if key == 'caseA':
+        return dict(kind='person', title='30대 · 1년 안에 꺼낼 돈', sub='예: 집 계약금 — 꺼내는 날이 정해진 돈', source=SRC_ADD + ' · facts [영수증]',
+                    data={'who': '30대', 'what': '1년 안에 꺼낼 돈', 'dir': 'h', 'min': 7000, 'max': 14200, 'tags': False,
+                          'bars': [['예금', 10218, '102,182,680원', A('예금이면', 0), 'ink', '처음부터 정해짐', 10000, '1억'],
+                                   ['S&P500', 12304, '123,037,245원', A('S&P500이었다면', 0), 'accent', '꺼내는 날에 따라', 9729, '97,294,730원']],
+                          'callout': ['폭 2,574만원', A('S&P500이었다면', 24)]})
+    if key == 'caseB':
+        return dict(kind='person', title='55세 · 은퇴 뒤 생활비 보탬', sub='한 달로 나눈 몫 — 예금은 만기에 한 번, SCHD는 석 달에 한 번', source='facts [계산] B · [add-1003 A5·S-B]',
+                    data={'who': '55세', 'what': '생활비 보탬', 'dir': 'v', 'max': 340000, 'tags': True,
+                          'bars': [['예금 3.39% 한 달 몫', 238995, '238,995원', A('지금 예금 평균', 0), 'ink'], ['SCHD 지난 1년 한 달 몫', 285120, '285,120원', A('SCHD는 지난 1년', 0), 'accent']],
+                          'callout': ['분기마다 796,727~905,832원', A('다만 석 달에', 0)]})
     if key == 'rate':
-        bars = [[y if y != '2026' else '2026(1~8월)', v, f'{v:.2f}%', A('한 해 평균으로', 12 + 12 * i), 'accent' if y == '2026' else 'ink'] for i, (y, v) in enumerate(YEARLY)]
-        return dict(kind='bars', title='은행 1년 예금 금리, 한 해 평균', sub='% · 새로 가입한 예금 기준(실제 가입 금리) · 2026년은 1~8월', source=SRC_RATE,
-                    data={'dir': 'v', 'max': 4.5, 'bars': bars, 'note': ['지금(2026년 8월) 3.39% · 기준금리 3.0%', A('기준금리가', 0)]})
+        bars = [[y if y != '2026' else '2026(1~8월)', v, f'{v:.2f}%', A('한 해 평균으로', 12 * i), 'accent' if y == '2026' else 'ink'] for i, (y, v) in enumerate(YEARLY)]
+        return dict(kind='bars', title='은행 1년 예금 금리, 한 해 평균', sub='% · 새로 가입한 예금 기준(실제 가입 금리)', source=SRC_RATE,
+                    data={'dir': 'v', 'max': 4.5, 'tags': True, 'bars': bars, 'note': ['지금(2026.8) 3.39% · 기준금리 3.0%', A('기준금리가', 0)], 'circle': [0, A('바닥이던 해', 0)]})
     if key == 'now':
         return dict(kind='receipt', title='지금 1억을 1년 넣으면', sub='2026년 8월 새로 가입한 1년 예금 평균 3.39% 기준', source=SRC_DEP,
                     data={'head': '정기예금 1년 · 연 3.39% · 단위 원',
-                          'rows': [['이자', '+' + won(NOW['int']), 'in', A('339만원', 0)], ['세금 15.4%', '−' + won(NOW['tax']), 'tax', A('52만원', 0)],
-                                   ['세금 뒤 이자', won(NOW['net']), 'net', A('287만원', 0)], ['한 달로 나누면', won(NOW['mon']), 'hi', A('24만원', 0)]],
-                          'side': ['작년 금리(2.51%)였다면', A('212만원', 0), '세금 뒤 이자 2,123,460원']})
+                          'rows': R([['이자', '+' + won(NOW['int']), 'in', A('339만원', 0)], ['세금 15.4%', '−' + won(NOW['tax']), 'tax', A('52만원', 0)],
+                                     ['세금 뒤 이자', won(NOW['net']), 'net', A('52만원', 30)], ['한 달로 나누면', won(NOW['mon']), 'hi', A('52만원', 60)]]),
+                          'side': ['+2,867,940원', A('52만원', 40), '1년 뒤 손에 쥐는 이자']})
     if key == 'posted':
-        return dict(kind='bars', title='은행들이 내건 금리', sub='1년 예금 상품마다 내건 기본금리 · 가장 낮은 곳 ~ 가장 높은 곳', source=SRC_FL,
+        return dict(kind='bars', title='은행들이 내건 금리', sub='1년 예금 상품마다 내건 기본금리 — 가장 낮은 곳 ~ 가장 높은 곳', source=SRC_FL,
                     data={'dir': 'h', 'min': 1.5, 'max': 4.5,
-                          'bars': [['은행', 3.92, '3.92%', A('은행 상품은', 0), 'ink', '상품 39개', 1.90, '1.90%'],
-                                   ['저축은행', 4.10, '4.10%', A('저축은행은', 0), 'ink', '상품 320개', 2.45, '2.45%']],
-                          'marker': [3.39, '실제 가입 평균 3.39%', A('공시 금리는', 0)]})
+                          'bars': [['은행', 3.92, '3.92%', A('은행들이 내건', 0), 'ink', '상품 39개', 1.90, '1.90%'], ['저축은행', 4.10, '4.10%', A('저축은행은', 0), 'ink', '상품 320개', 2.45, '2.45%']],
+                          'marker': [3.39, '실제 가입 평균 3.39%', A('내건 금리는', 0)]})
     if key == 'cpi':
-        return dict(kind='bars', title='이자가 물가를 따라갔을까', sub='1억 기준 · 지난 1년(2025년 8월 → 2026년 8월) 물가 +3.09%', source=SRC_CPI,
-                    data={'dir': 'v', 'max': 3_400_000,
+        return dict(kind='bars', title='이자가 물가를 따라갔을까', sub='1억 기준 · 지난 1년(2025.8 → 2026.8) 물가 +3.09%', source=SRC_CPI,
+                    data={'dir': 'v', 'max': 3_400_000, 'tags': True,
                           'bars': [['세금 뗀 이자', NOW['net'], won(NOW['net']) + '원', A('287만원', 0), 'ink'], ['물가만큼 필요한 돈', 3_090_000, '3,090,000원', A('309만원', 0), 'rise']],
                           'note': ['모자란 돈 −222,060원', A('22만원', 0)]})
-    if key == 'thresh':
-        return dict(kind='bars', title='금액이 커지면 만나는 문턱 세 개', sub='넣은 돈(원금) 기준 · 금리 3.39% · 다른 금융소득은 없다고 가정', source=SRC_TH,
-                    data={'dir': 'h', 'min': 0, 'max': 72000,
-                          'bars': [['예금자보호 한도', 10000, '1억원', A('첫 번째 문턱', 0), 'ink', '한 사람 기준'],
-                                   ['건보료에 이자 합산', 29499, '약 2억 9,499만원', A('두 번째 문턱', 0), 'ink', '이자 1천만원 넘으면'],
-                                   ['종합과세·피부양자', 58997, '약 5억 8,997만원', A('세 번째 문턱', 0), 'ink', '이자 2천만원 넘으면']]})
-    if key == 'sum':
-        return dict(kind='receipt', title='정리 — 1억의 1년 영수증', sub='2025.10.2 → 2026.10.2 · 세금(이자·분배금·판 이익)과 환율을 다 뗀 뒤', source=SRC_ETF + ' · ' + PAST,
-                    data={'head': '세금 뒤 통장', 'side': ['순위 그대로', A('순위는 그대로', 10), '세금은 간격만 줄였다'],
-                          'rows': [[f'{NAME[k]}  {PCT[k]}', SAYNET[k], 'net' if k == 'SCHD' else 'in', A(['SCHD는', 'SPY는', '금은', '예금은'][i], 0)] for i, k in enumerate(ORD)]})
-    if key == 'case':
+    if key == 'when':
         need('A 1년 전 은행 평균 2.51% → 세전 2,510,000 · 세금 386,540 · 세후 2,123,460', 'C 은행 공시 최고 3.92% → 세전 3,920,000 · 세금 603,680 · 세후 3,316,320',
              'E 2022-11 고점 4.95% → 세전 4,950,000 · 세금 762,300 · 세후 4,187,700', 'A -966,540 · B -222,060 · C +226,320')
-        return dict(kind='bars', title='같은 예금, 넣은 때와 고른 금리에 따라', sub='1억 · 1년 · 세금 뗀 이자 · 점선 = 지난 1년 물가만큼 필요한 돈 3,090,000원', source=SRC_RATE + ' · ' + SRC_FL + ' · 901Y009',
-                    data={'dir': 'v', 'max': 4_600_000, 'hline': [3_090_000, '물가만큼 3,090,000원', A('첫째는', 0)],
-                          'bars': [['작년 8월 평균 2.51%', 2_123_460, '2,123,460원', A('212만원', 0), 'ink'], ['지금 평균 3.39%', NOW['net'], won(NOW['net']) + '원', A('둘째는', 0), 'ink'],
-                                   ['은행 공시 최고 3.92%', 3_316_320, '3,316,320원', A('332만원', 0), 'ink'], ['가장 높던 달 4.95%', 4_187_700, '4,187,700원', A('419만원', 0), 'accent']],
-                          'note': ['넣은 때의 금리가 1년 결과를 정한다', A('발견이 하나', 0)]})
+        return dict(kind='bars', title='같은 예금, 넣은 때와 금리에 따라', sub='1억 · 1년 · 세금 뗀 이자 · 점선 = 물가만큼 필요한 돈', source=SRC_RATE + ' · ' + SRC_FL,
+                    data={'dir': 'v', 'max': 4_600_000, 'tags': True, 'hline': [3_090_000, '물가만큼 3,090,000원', A('같은 예금도', 0)],
+                          'bars': [['작년 8월 평균 2.51%', 2_123_460, '2,123,460원', A('작년 8월', 0), 'ink'], ['지금 평균 3.39%', NOW['net'], won(NOW['net']) + '원', A('같은 예금도', 16), 'ink'],
+                                   ['은행 공시 최고 3.92%', 3_316_320, '3,316,320원', A('은행이 내건', 0), 'ink'], ['가장 높던 달 4.95%', 4_187_700, '4,187,700원', A('금리가 가장 높았던', 0), 'accent']],
+                          'note': ['넣는 날의 금리가 1년 결과를 정한다', A('예금은 값이', 0)]})
+    if key == 'thresh':
+        return dict(kind='bars', title='금액이 커지면 만나는 문턱 세 개', sub='넣은 돈(원금) 기준 · 금리 3.39% · 다른 금융소득 없다고 가정', source=SRC_TH,
+                    data={'dir': 'h', 'min': 0, 'max': 72000,
+                          'bars': [['예금자보호 한도', 10000, '1억원', A('첫 번째는', 0), 'ink', '한 사람 기준'], ['건보료에 이자 합산', 29499, '약 2억 9,499만원', A('두 번째는', 0), 'ink', '이자 1천만원 넘으면'],
+                                   ['종합과세·피부양자', 58997, '약 5억 8,997만원', A('세 번째는', 0), 'ink', '이자 2천만원 넘으면']]})
+    if key == 'caseC':
+        return dict(kind='person', title='60세 · 예금 2억 + 퇴직금 1억', sub='지역가입자 1인 · 재산 0 · 다른 소득 0 가정 · 건보료+장기요양 월액', source='[add-1003 S-C] D-1 facts 식(본인 계산) · 이자 귀속 연도·실제 고지액 확인 안 함',
+                    data={'who': '60세', 'what': '퇴직금 1억 더 예금', 'dir': 'v', 'max': 80000, 'tags': True,
+                          'bars': [['예금 2억 · 이자 6,780,000원', 22800, '월 22,800원', A('예금 2억이', 0), 'ink'], ['예금 3억 · 이자 10,170,000원', 68930, '월 68,930원', A('원금이 3억이', 0), 'rise']],
+                          'callout': ['1년 +553,560원', A('1년에 55만원', 0)]})
+    if key == 'sum':
+        return dict(kind='receipt', title='정리 — 1억의 1년 영수증', sub='2025.10.2 → 2026.10.2 · 세금과 환율을 다 뗀 뒤', source=SRC_ETF + ' · ' + PAST,
+                    data={'head': '세금 뒤 통장', 'side': ['순위 그대로', A('순위는 그대로', 0), '하지만 넣는 날이 바뀌면 순위도 바뀜'],
+                          'rows': R([[f'{NAME[k]}  {PCT[k]}', SAYNET[k], 'net' if k == 'SCHD' else 'in', A(['SCHD는', 'SCHD는', '금은', '금은'][i], [0, 24, 0, 24][i])] for i, k in enumerate(ORD)])})
+    if key == 'act':
+        return dict(kind='act', title='오늘 해 볼 일 하나', sub='내 통장에서 — 작년 이자·배당 합계 확인', source='facts [7][8] · [add-1003 ACT]',
+                    data={'head': '내 작년 금융소득', 'rows': R([['① 작년 이자·배당 합계 찾기', '은행·증권사 앱', 'in', A('은행이나 증권사', 0)],
+                                                            ['② 1천만원까지 남은 돈', '지역 건보 합산 경계', 'hi', A('그리고 1천만원과', 0)],
+                                                            ['③ 2천만원까지 남은 돈', '종합과세·피부양자', 'hi', A('그리고 1천만원과', 18)]])})
     if key == 'end':
         return dict(kind='end', title='다음 영수증은 2편에서', sub='1억의 1년 영수증 시리즈 · 재생목록에 차례대로', source=PAST,
                     data={'text': '다음 편', 'label': '1억의 1년 영수증', 'note': '같은 규칙으로, 실제 그날 넣었다면', 'start': A('다음 편에서도', 0)})

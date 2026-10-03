@@ -3,13 +3,13 @@
 // 값 글자(valueText)는 다 자란 뒤 나타나고, facts.txt 문구 그대로 넘겨받는다(코드에서 숫자를 만들지 않음).
 import React from 'react';
 import {interpolate, useCurrentFrame, Easing} from 'remotion';
-import {T, F, CL} from '../parts/fm';
+import {T, F, CL, HandCircle} from '../parts/fm';
 
 export type TallyBar = {label: string; value: number; lo?: number; valueText: string; start: number; color?: string; sub?: string; loText?: string};
 
 export const TallyBars: React.FC<{bars: TallyBar[]; x: number; y: number; w: number; h: number; max: number; min?: number; dir?: 'v' | 'h';
-  grow?: number; labelSize?: number; valueSize?: number; gap?: number; marker?: {value: number; text: string; start: number}}> =
-  ({bars, x, y, w, h, max, min = 0, dir = 'v', grow = 22, labelSize = 32, valueSize = 40, gap, marker}) => {
+  grow?: number; labelSize?: number; valueSize?: number; gap?: number; marker?: {value: number; text: string; start: number}; tags?: boolean; circle?: {i: number; start: number}}> =
+  ({bars, x, y, w, h, max, min = 0, dir = 'v', grow = 22, labelSize = 32, valueSize = 40, gap, marker, tags, circle}) => {
   const f = useCurrentFrame();
   const n = bars.length;
   const sc = (v: number) => (v - min) / (max - min);
@@ -27,12 +27,18 @@ export const TallyBars: React.FC<{bars: TallyBar[]; x: number; y: number; w: num
           return (
             <div key={i}>
               <div style={{position: 'absolute', left: i * (bw + g), width: bw, bottom: 0, top: h - bottom - bh, height: bh, background: b.color ?? T.ink2, borderRadius: '10px 10px 0 0'}} />
-              <div style={{...F, position: 'absolute', left: i * (bw + g) - 30, width: bw + 60, top: h - bottom - bh - valueSize - 16, textAlign: 'center', fontWeight: 700, fontSize: valueSize, color: b.color ?? T.ink, opacity: vo, whiteSpace: 'nowrap'}}>{b.valueText}</div>
+              {tags ? (
+                <div style={{position: 'absolute', left: i * (bw + g) + bw / 2, top: h - bottom - bh - 14, transform: `translate(-50%, -100%) scale(${0.7 + 0.3 * vo})`, opacity: vo,
+                  ...F, fontWeight: 700, fontSize: valueSize * 0.78, color: '#fff', background: b.color === T.accent || b.color === T.rise ? b.color : T.ink, borderRadius: 8, padding: '4px 12px', whiteSpace: 'nowrap'}}>{b.valueText}</div>
+              ) : (
+              <div style={{...F, position: 'absolute', left: i * (bw + g) - 30, width: bw + 60, top: h - bottom - bh - valueSize - 16, textAlign: 'center', fontWeight: 700, fontSize: valueSize, color: b.color ?? T.ink, opacity: vo, whiteSpace: 'nowrap'}}>{b.valueText}</div>)}
               <div style={{...F, position: 'absolute', left: i * (bw + g) - 20, width: bw + 40, top: h + 14, textAlign: 'center', fontWeight: 700, fontSize: labelSize, color: T.ink, opacity: lo2, lineHeight: 1.2, wordBreak: 'keep-all'}}>{b.label}</div>
               {b.sub ? <div style={{...F, position: 'absolute', left: i * (bw + g) - 20, width: bw + 40, top: h + 14 + labelSize * 1.3, textAlign: 'center', fontWeight: 500, fontSize: labelSize * 0.72, color: T.ink3, opacity: lo2}}>{b.sub}</div> : null}
             </div>
           );
         })}
+        {circle && f >= circle.start ? (() => { const b = bars[circle.i]; const top = h - ((b.value - min) / (max - min)) * h; const cx = circle.i * (bw + g) + bw / 2;
+          return <svg width={w} height={h + 120} style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}}><HandCircle cx={cx} cy={top - valueSize * 0.6} rx={bw * 0.75} ry={valueSize * 1.15} p={interpolate(f, [circle.start, circle.start + 16], [0, 1], CL)} /></svg>; })() : null}
       </div>
     );
   }

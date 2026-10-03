@@ -9,7 +9,7 @@ import speechcompare_script as sc  # noqa: E402
 R1 = json.load(open(os.path.join(WORK, 'video', 'r1.json'), encoding='utf-8'))
 FACTS = open(os.path.join(EP, 'facts.txt'), encoding='utf-8').read()
 STILLS = sorted(glob.glob(os.path.join(EP, 'preview', 'stills', '*.png')))
-MOTION = {'open': 'bars', 'road': 'receipt', 'receipt': 'receipt', 'fx': 'count', 'bars': 'bars', 'count': 'count', 'zoom': 'zoom', 'logo': 'zoom', 'end': 'zoom'}
+MOTION = {'open': 'bars', 'road': 'receipt', 'receipt': 'receipt', 'fx': 'count', 'bars': 'bars', 'count': 'count', 'zoom': 'zoom', 'logo': 'zoom', 'end': 'zoom', 'promise': 'receipt', 'swing': 'line', 'person': 'bars', 'act': 'receipt'}
 
 def test_props_built_from_v6_and_durations_from_chars():
     assert R1['script'] == 'script.v6.md' and R1['rate'] == 5.65

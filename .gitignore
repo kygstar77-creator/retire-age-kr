@@ -7,3 +7,6 @@ outputs/*.zip
 work/research/_boss_*.txt
 .wrangler/
 outputs/deploy/
+
+.claude/settings.local.json
+.claude/worktrees/

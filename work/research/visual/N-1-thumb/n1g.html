@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;left:52px;top:636px;font:500 24px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#121418'></div>
+<div class='t' style='left:40px;top:28px;font-size:92px;color:#fff'>연봉 줄 세우면</div>
+<div style='position:absolute;left:40px;top:170px;width:560px;height:410px;background:#F4F1E8;border-radius:12px'></div>
+<div class='lab' style='left:72px;top:196px;font-size:54px;color:#16181D'>평균 4,475만원</div>
+<div class='t' style='left:68px;top:300px;font-size:120px;color:#16181D'>상위</div>
+<div id='g1' class='t' data-fit='500' style='left:68px;top:430px;font-size:132px;color:#D11F1A'>35~36%</div>
+<div class='t' style='left:640px;top:170px;font-size:80px;color:#FF3B30'>내 연봉은?</div>
+<div style='position:absolute;left:640px;top:268px;width:600px;height:88px;background:#2A2D34;border-radius:12px;border-left:12px solid #FF3B30'></div><div class='lab' style='left:676px;top:280px;font-size:58px;color:#fff'>3천만원</div><div class='t' style='left:1090px;top:264px;font-size:96px;color:#FF3B30'>?%</div>
+<div style='position:absolute;left:640px;top:366px;width:600px;height:88px;background:#2A2D34;border-radius:12px;border-left:12px solid #FF3B30'></div><div class='lab' style='left:676px;top:378px;font-size:58px;color:#fff'>1억원</div><div class='t' style='left:1090px;top:362px;font-size:96px;color:#FF3B30'>?%</div>
+<div style='position:absolute;left:640px;top:464px;width:600px;height:88px;background:#2A2D34;border-radius:12px;border-left:12px solid #FF3B30'></div><div class='lab' style='left:676px;top:476px;font-size:58px;color:#fff'>내 연봉</div><div class='t' style='left:1090px;top:460px;font-size:96px;color:#FF3B30'>?%</div>
+<div class='fine' style='color:#8A93A3;top:648px;font-size:22px'>국세청 근로소득 백분위 · 2024년 귀속 · 직장인 2,108만 명</div>
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

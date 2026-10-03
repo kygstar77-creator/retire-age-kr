@@ -123,6 +123,93 @@ FINE2 = "<div class='fine' style='color:%s;top:648px;font-size:22px'>국세청 �
 VARIANTS.update({'n1d': n1d + FINE2 % '#C9D6FF', 'n1e': n1e + FINE2 % '#8A93A3', 'n1f': n1f + FINE2 % '#8A93A3'})
 
 
+# ── 3차(10/3 17:1x) — 8점 재도전. 2차 남은 고칠 점 ① '평균' 다시 ② 핀 라벨·핀~가운데 띠 ③ '1억' 보조 시험
+#    + R-1 r1v 형식(아는 값 크게 밝은 면 + 모르는 값 '?' 상자) — r1v는 초록 상자 3개 가로, N-1은 빨강·세로 줄 목록으로 바꿔 재탕 피함.
+#    숫자: 4,475 → 상위 35~36% · 3,000만원 → 57~58% · 1억원 → 7~8% (facts [표A-위치]·80행). 답은 '?'로 숨김(영상이 답).
+QBOX = lambda x, y, w, h, lab: (f"<div style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;background:#2A2D34;border-radius:12px;border-left:12px solid #FF3B30'></div>"
+    f"<div class='lab' style='left:{x + 36}px;top:{y + (h - 64) // 2}px;font-size:58px;color:#fff'>{lab}</div>"
+    f"<div class='t' style='left:{x + w - 150}px;top:{y + (h - 96) // 2}px;font-size:96px;color:#FF3B30'>?%</div>")
+assert '3,000만원(57~58%)' in facts and '1억원 → 상위 7%(10,456)와 8%(9,925) 사이' in facts
+
+# n1g — r1v 형식: 왼쪽 밝은 면 = 평균 연봉의 답(상위 35~36%), 오른쪽 = '?' 줄 셋(3천만·1억·내 연봉) → 내 돈 대입
+n1g = f"""<div style='position:absolute;inset:0;background:#121418'></div>
+<div class='t' style='left:40px;top:28px;font-size:92px;color:#fff'>연봉 줄 세우면</div>
+<div style='position:absolute;left:40px;top:170px;width:560px;height:410px;background:#F4F1E8;border-radius:12px'></div>
+<div class='lab' style='left:72px;top:196px;font-size:54px;color:{INK}'>평균 4,475만원</div>
+<div class='t' style='left:68px;top:300px;font-size:120px;color:{INK}'>상위</div>
+<div id='g1' class='t' data-fit='500' style='left:68px;top:430px;font-size:132px;color:#D11F1A'>35~36%</div>
+<div class='t' style='left:640px;top:170px;font-size:80px;color:#FF3B30'>내 연봉은?</div>
+{QBOX(640, 268, 600, 88, '3천만원')}
+{QBOX(640, 366, 600, 88, '1억원')}
+{QBOX(640, 464, 600, 88, '내 연봉')}
+"""
+
+# n1h — r1v 형식 단순판: '?' 상자 하나로 합침(백로그 'R-1 8점용 1안'을 N-1에서 먼저 시험)
+n1h = f"""<div style='position:absolute;inset:0;background:#121418'></div>
+<div class='t' style='left:40px;top:28px;font-size:92px;color:#fff'>직장인 2,108만 명 중</div>
+<div style='position:absolute;left:40px;top:170px;width:600px;height:410px;background:#F4F1E8;border-radius:12px'></div>
+<div class='lab' style='left:72px;top:196px;font-size:54px;color:{INK}'>평균 연봉 4,475만원</div>
+<div class='t' style='left:68px;top:300px;font-size:120px;color:{INK}'>상위</div>
+<div id='h1' class='t' data-fit='540' style='left:68px;top:430px;font-size:140px;color:#D11F1A'>35~36%</div>
+<div style='position:absolute;left:680px;top:170px;width:560px;height:404px;background:#FF3B30;border-radius:12px'></div>
+<div class='lab' style='left:716px;top:196px;font-size:58px;color:#fff'>내 연봉이면?</div>
+<div class='t' style='left:790px;top:290px;font-size:240px;color:#fff'>?%</div>
+"""
+
+# n1i — n1f 고침(2차 남은 점 ①②): '평균' 넣기, 핀 라벨 '평균', 핀~가운데 밝은 띠 + '가운데 아님'
+si, mxi, pxi = big_strip(486, 76, 35.5, '#3A404C', '#fff', '#FF3B30', band='#FFB3AE')
+n1i = f"""<div style='position:absolute;inset:0;background:#121418'></div>
+<div class='t' style='left:52px;top:58px;font-size:104px;color:#fff'>평균</div>
+<div style='position:absolute;left:252px;top:36px;width:356px;height:150px;background:#fff;border-radius:16px;border-bottom:10px solid #FF3B30'></div>
+<div class='t' style='left:280px;top:52px;font-size:120px;color:{INK}'>4,475</div>
+<div class='t' style='left:634px;top:58px;font-size:104px;color:#fff'>만원 연봉</div>
+<div id='i1' class='t' data-fit='1170' style='left:46px;top:226px;font-size:200px;color:#FF3B30'>상위 35~36%</div>
+{si}
+<div class='lab' style='left:{pxi - 54:.0f}px;top:582px;font-size:44px;color:#FF3B30'>평균</div>
+<div class='lab' style='left:{mxi - 56:.0f}px;top:582px;font-size:44px;color:#fff'>가운데</div>
+<div class='lab' style='left:58px;top:582px;font-size:34px;color:#8A93A3'>상위 1%</div>
+"""
+VARIANTS.update({'n1g': n1g + FINE2 % '#8A93A3', 'n1h': n1h + FINE2 % '#8A93A3', 'n1i': n1i + FINE2 % '#8A93A3'})
+
+
+# ── 4차(10/3 17:3x) — 3차 공통 지적: 답만 보여 주면 누를 이유 약함·'평균≠가운데'가 168px 막대 라벨에만 있음·'상위 1%' 라벨 틀림(끝은 맨 위)
+#    → n1j: 반전을 글자로('평균 연봉인데' → '상위 35~36%'), 막대 라벨 3배·띠 진하게, 왼쪽 끝 '맨 위'
+#    → n1k: n1h 고침 — 왼쪽 '평균인데 상위 35~36%' 크게, 오른쪽 '?' 상자 짧게(길이 표시 자리에서 떨어지게)
+sj, mxj, pxj = big_strip(470, 92, 35.5, '#3A404C', '#fff', '#FF3B30', band='#FF8A80')
+n1j = f"""<div style='position:absolute;inset:0;background:#121418'></div>
+<div class='t' style='left:50px;top:40px;font-size:118px;color:#fff'>평균 연봉인데</div>
+<div id='j1' class='t' data-fit='1170' style='left:46px;top:196px;font-size:210px;color:#FF3B30'>상위 35~36%</div>
+{sj}
+<div class='lab' style='left:{pxj - 64:.0f}px;top:574px;font-size:54px;color:#FF3B30'>평균</div>
+<div class='lab' style='left:{mxj - 70:.0f}px;top:574px;font-size:54px;color:#fff'>가운데</div>
+<div class='lab' style='left:58px;top:578px;font-size:40px;color:#8A93A3'>맨 위</div>
+"""
+n1k = f"""<div style='position:absolute;inset:0;background:#121418'></div>
+<div style='position:absolute;left:40px;top:40px;width:700px;height:520px;background:#F4F1E8;border-radius:12px'></div>
+<div class='t' style='left:76px;top:76px;font-size:120px;color:{INK}'>평균 연봉인데</div>
+<div class='t' style='left:76px;top:236px;font-size:120px;color:{INK}'>상위</div>
+<div id='k1' class='t' data-fit='630' style='left:72px;top:372px;font-size:150px;color:#D11F1A'>35~36%</div>
+<div style='position:absolute;left:780px;top:40px;width:460px;height:420px;background:#FF3B30;border-radius:12px'></div>
+<div class='lab' style='left:814px;top:66px;font-size:60px;color:#fff'>내 연봉은?</div>
+<div class='t' style='left:850px;top:170px;font-size:230px;color:#fff'>?%</div>
+"""
+FINE3 = "<div class='fine' style='color:%s;top:648px;font-size:22px'>국세청 근로소득 백분위(총급여) · 2024년 귀속 · 2,108만 명</div>"
+VARIANTS.update({'n1j': n1j + FINE3 % '#8A93A3', 'n1k': n1k + FINE3 % '#8A93A3'})
+
+
+# ── 5차(10/3 17:4x) — 4차 n1j 7.00(통과): 공통 지적 '막대 라벨이 168px에서 안 읽힘' → 라벨 1.6배, 막대 얇게 위로
+sl, mxl, pxl = big_strip(438, 72, 35.5, '#3A404C', '#fff', '#FF3B30', band='#FF8A80')
+n1l = f"""<div style='position:absolute;inset:0;background:#121418'></div>
+<div class='t' style='left:50px;top:30px;font-size:118px;color:#fff'>평균 연봉인데</div>
+<div id='l1' class='t' data-fit='1170' style='left:46px;top:180px;font-size:210px;color:#FF3B30'>상위 35~36%</div>
+{sl}
+<div class='t' style='left:{pxl - 120:.0f}px;top:528px;font-size:84px;color:#FF3B30'>평균</div>
+<div class='t' style='left:{mxl + 20:.0f}px;top:528px;font-size:84px;color:#fff'>가운데</div>
+<div class='lab' style='left:58px;top:534px;font-size:40px;color:#8A93A3'>맨 위</div>
+"""
+VARIANTS.update({'n1l': n1l + FINE3 % '#8A93A3'})
+
+
 def check_zones(page):
     return page.evaluate("""()=>{const bad=[];document.querySelectorAll('body *').forEach(e=>{
       if(e.tagName==='SCRIPT'||!e.textContent.trim())return;

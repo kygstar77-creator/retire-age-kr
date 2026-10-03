@@ -1,0 +1,271 @@
+# R-1 '1억의 1년 영수증' 썸네일 시안(2026-10-03 visual) — py -3.12 make_thumbs.py [r1a,r1b,...]
+# 숫자 출처: ep/R-1/facts.txt [영수증] 세후 통장 — 예금 102,182,680 · 금 103,241,818 · S&P500 110,394,170 · SCHD 116,525,333
+#   예금 vs SCHD 차이 14,342,653 → '1,434만'(facts [말하는 단위] 오차 0.03%). 기간 2025-10-02 → 2026-10-02, 과거 값.
+# 문구: copywriter S4 '같은 1억, 1년 뒤 1,434만 차이'(제목 = 예금 금리 2.58%·질문 → 썸네일은 답 쪽 간격, 겹침 없음)
+# 막대는 0원부터(늘어난 돈 = 세후 통장 - 1억) — 1억부터 자른 막대로 차이를 부풀리지 않는다.
+# 경쟁(compare.png) = 2D 일러스트·진행자 얼굴·상품 표. 우리 = 사진·인물 0, '영수증' 한 장(시리즈 정체성), 큰 숫자 1개.
+# 실험: X-THUMB-2 — r1a·r1c = B(한 줄 큰 숫자), r1b = A(영수증 + 숫자)
+import os, json, sys
+from playwright.sync_api import sync_playwright
+from PIL import Image
+sys.stdout.reconfigure(encoding='utf-8')
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.abspath(os.path.join(HERE, '..', '..', '..', '..'))
+EP = os.path.join(ROOT, 'work', 'research', 'longform', 'ep', 'R-1')
+facts = open(os.path.join(EP, 'facts.txt'), encoding='utf-8').read()
+for s in ('통장 102,182,680', '통장 103,241,818', '통장 110,394,170', '통장 116,525,333', '14,342,653'):
+    assert s in facts, s
+GAIN = {'예금': 2182680, '금': 3241818, 'S&P500': 10394170, 'SCHD': 16525333}
+assert GAIN['SCHD'] - GAIN['예금'] == 14342653
+FONT = 'file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/'
+HEAD = f"""<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{{font-family:BH;src:url('{FONT}BlackHanSans.ttf')}}
+@font-face{{font-family:PD;src:url('{FONT}pd700.ttf');font-weight:700}}
+@font-face{{font-family:PD;src:url('{FONT}pd500.ttf');font-weight:500}}
+*{{margin:0;padding:0;box-sizing:border-box}}
+body{{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}}
+.t{{position:absolute;font-family:BH;white-space:nowrap;line-height:1}}
+.lab{{position:absolute;font:700 30px PD;white-space:nowrap}}
+.fine{{position:absolute;font:500 22px PD;white-space:nowrap}}
+</style></head><body>"""
+TAIL = """<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>"""
+YEL, RED, INK, MUTE = '#FFD43B', '#FF4D47', '#0F1720', '#8A93A3'
+FINE = "<div class='fine' style='left:52px;top:640px;color:%s'>세금 뗀 통장 기준 · 2025.10 → 2026.10 실제 값(과거, 미래 보장 아님)</div>"
+
+
+def hbars(x, y, wmax, h, gap, names, dark=True, hi='SCHD', lo='예금', labw=190, fs=40):
+    top = max(GAIN.values()); s = ''
+    for i, n in enumerate(names):
+        w = max(8, wmax * GAIN[n] / top); yy = y + i * (h + gap)
+        c = YEL if n == hi else ('#E6E8EC' if n == lo else ('#3C4656' if dark else '#C9CDD4'))
+        s += f"<div class='lab' style='left:{x}px;top:{yy + (h - fs) / 2 - 4:.0f}px;font-size:{fs}px;color:{'#fff' if dark else INK}'>{n}</div>"
+        s += f"<div style='position:absolute;left:{x + labw}px;top:{yy}px;width:{w:.0f}px;height:{h}px;background:{c};border-radius:0 8px 8px 0'></div>"
+    return s
+
+
+# r1a — 큰 숫자 한 줄 + 0부터 막대 4개(이름만, 숫자 없음)
+r1a = f"""<div style='position:absolute;inset:0;background:{INK}'></div>
+<div class='t' style='left:52px;top:44px;font-size:92px;color:#fff'>같은 1억, 1년 뒤</div>
+<div id='a1' class='t' data-fit='1180' style='left:46px;top:152px;font-size:196px;color:{YEL}'>1,434만 차이</div>
+{hbars(56, 388, 640, 46, 14, ['예금', '금', 'S&P500', 'SCHD'])}
+""" + FINE % MUTE
+
+
+# r1b — 영수증 한 장(왼쪽, 깎이는 줄) + 오른쪽 큰 숫자
+def receipt():
+    rows = [('예금', '+218만'), ('금', '+324만'), ('S&P500', '+1,039만'), ('SCHD', '+1,653만')]
+    s = "<div style='position:absolute;left:60px;top:40px;width:480px;height:580px;background:#FBFAF6;transform:rotate(-3deg);box-shadow:0 18px 40px rgba(0,0,0,.45)'>"
+    s += f"<div class='t' style='left:34px;top:34px;font-size:52px;color:{INK}'>1억의 1년 영수증</div>"
+    s += "<div style='position:absolute;left:34px;right:34px;top:108px;border-top:4px dashed #9AA0A8'></div>"
+    for i, (n, v) in enumerate(rows):
+        y = 132 + i * 86; hi = n == 'SCHD'; lo = n == '예금'
+        col = '#9A6B00' if hi else INK
+        if hi: s += f"<div style='position:absolute;left:24px;right:24px;top:{y - 10}px;height:70px;background:rgba(255,212,59,.55);border-radius:10px'></div>"
+        if lo: s += f"<div style='position:absolute;left:24px;right:24px;top:{y - 10}px;height:70px;border:4px solid {RED};border-radius:10px'></div>"
+        s += f"<div class='lab' style='left:34px;top:{y}px;font-size:44px;color:{col}'>{n}</div>"
+        s += f"<div class='lab' style='right:34px;top:{y}px;font-size:44px;color:{col}'>{v}</div>"
+    s += "<div style='position:absolute;left:34px;right:34px;top:486px;border-top:4px dashed #9AA0A8'></div>"
+    s += "<div class='lab' style='left:34px;top:506px;font-size:28px;color:#5A6170'>세금 뗀 뒤 늘어난 돈</div></div>"
+    return s
+
+
+r1b = f"""<div style='position:absolute;inset:0;background:#123B33'></div>
+{receipt()}
+<div class='t' style='left:620px;top:120px;font-size:84px;color:#fff'>같은 1억인데</div>
+<div class='t' style='left:614px;top:232px;font-size:76px;color:#CFE3DC'>1년 뒤 차이</div>
+<div id='b1' class='t' data-fit='640' style='left:608px;top:336px;font-size:200px;color:{YEL}'>1,434만</div>
+<div class='fine' style='left:620px;top:540px;color:#9FC2B7'>2025.10 → 2026.10 실제 값 · 과거 기준</div>
+"""
+
+# r1c — 두 막대만(예금 vs SCHD), 높이 = 세후 늘어난 돈(0부터)
+H0, HMAX = 560, 460
+hd = round(HMAX * GAIN['예금'] / GAIN['SCHD'])
+r1c = f"""<div style='position:absolute;inset:0;background:#F4F1E8'></div>
+<div style='position:absolute;left:0;top:0;width:1280px;height:16px;background:{INK}'></div>
+<div class='t' style='left:52px;top:70px;font-size:104px;color:{INK}'>같은 1억</div>
+<div class='t' style='left:52px;top:196px;font-size:104px;color:{INK}'>1년 뒤</div>
+<div id='c1' class='t' data-fit='640' style='left:46px;top:330px;font-size:150px;color:#D11F1A'>1,434만</div>
+<div class='t' style='left:52px;top:494px;font-size:84px;color:{INK}'>차이</div>
+<div style='position:absolute;left:740px;top:{H0}px;width:340px;height:4px;background:{INK}'></div>
+<div style='position:absolute;left:760px;top:{H0 - hd}px;width:120px;height:{hd}px;background:#9AA0A8'></div>
+<div class='lab' style='left:778px;top:{H0 + 8}px;font-size:40px;color:{INK}'>예금</div>
+<div style='position:absolute;left:920px;top:{H0 - HMAX}px;width:120px;height:{HMAX}px;background:{INK}'></div>
+<div class='lab' style='left:922px;top:{H0 - HMAX - 52}px;font-size:40px;color:{INK}'>SCHD</div>
+<div style='position:absolute;left:890px;top:{H0 - HMAX}px;width:22px;height:{HMAX - hd}px;border:6px solid #D11F1A;border-left:none'></div>
+<div class='fine' style='left:52px;top:640px;color:#6B7280'>세금 뗀 뒤 늘어난 돈 · 2025.10 → 2026.10 실제 값(과거)</div>
+"""
+VARIANTS = {'r1a': r1a, 'r1b': r1b, 'r1c': r1c}
+
+# ── 2차(10/3) — 1차 평균 r1a 6.33·r1c 6.00·r1b 5.67(제미나이 lite 8/6/7 · Claude 6/7/5 · 레드팀 5/5/5) 공통 지적:
+#   ① '1,434만 차이'가 무엇과 무엇인지 안 보임 → '예금 vs SCHD'를 숫자 바로 위에 ② 168px에서 막대 이름 안 읽힘 → 이름 2배
+#   ③ 막대 2개만 = 골라 보여 주기(레드팀) → 4개 다 두고 금·S&P500은 회색 ④ 남색+노랑 = 경쟁 겹침 → 흰 바탕+먹색+빨강
+#   ⑤ 사실(레드팀): SCHD 통장은 분배금을 세전으로 넣은 값(facts 50·52행 '분배금 세금 줄 확인 안 함') → '세금 뗀' 문구 뺌
+FINE2 = "<div class='fine' style='left:52px;top:640px;color:%s'>1년 뒤 통장 기준 · 2025.10.2 → 2026.10.2 실제 값(과거)</div>"
+MAN = {'예금': '+218만', 'SCHD': '+1,653만'}
+
+
+def hbars2(x, y, wmax, h, gap, labw=230, fs=56, dark=False):
+    top = GAIN['SCHD']; s = ''
+    for i, n in enumerate(['예금', '금', 'S&P500', 'SCHD']):
+        w = max(10, wmax * GAIN[n] / top); yy = y + i * (h + gap); key = n in MAN
+        c = '#E5322D' if n == 'SCHD' else (INK if n == '예금' and not dark else ('#fff' if n == '예금' else ('#4A5262' if dark else '#C4C8CF')))
+        tc = ('#fff' if dark else INK) if key else ('#7C8494' if dark else '#9AA0A8')
+        s += f"<div class='lab' style='left:{x}px;top:{yy + (h - fs) / 2 - 6:.0f}px;font-size:{fs}px;color:{tc}'>{n}</div>"
+        s += f"<div style='position:absolute;left:{x + labw}px;top:{yy}px;width:{w:.0f}px;height:{h}px;background:{c};border-radius:0 8px 8px 0'></div>"
+        if key: s += f"<div class='lab' style='left:{x + labw + w + 16:.0f}px;top:{yy + (h - 48) / 2 - 6:.0f}px;font-size:48px;color:{c if n == 'SCHD' else tc}'>{MAN[n]}</div>"
+    return s
+
+
+# r1d — 흰 바탕: '예금 vs SCHD' 꼬리표 + 큰 '1,434만 차이' + 가로 막대 4개(이름 크게, 두 끝값만)
+r1d = f"""<div style='position:absolute;inset:0;background:#FFFFFF'></div>
+<div style='position:absolute;left:0;top:0;width:1280px;height:18px;background:{INK}'></div>
+<div class='t' style='left:52px;top:52px;font-size:72px;color:{INK}'>같은 1억, 1년 뒤</div>
+<div class='lab' style='left:640px;top:58px;font-size:58px;color:#fff;background:{INK};padding:4px 22px;border-radius:12px'>예금 vs SCHD</div>
+<div id='d1' class='t' data-fit='1180' style='left:46px;top:150px;font-size:178px;color:#E5322D'>1,434만 차이</div>
+{hbars2(56, 340, 500, 46, 14)}
+""" + FINE2 % '#6B7280'
+
+# r1e — 세로 막대 4개(0부터, 오른쪽) + 왼쪽 글자 세 줄. 괄호 = 예금~SCHD 차이 구간
+BX, BW, BG_, HMAX2, BASE = 640, 88, 46, 400, 560
+def vbars():
+    s = f"<div style='position:absolute;left:{BX - 20}px;top:{BASE}px;width:{4 * (BW + BG_) + 20}px;height:5px;background:{INK}'></div>"
+    for i, n in enumerate(['예금', '금', 'S&P500', 'SCHD']):
+        hh = max(10, round(HMAX2 * GAIN[n] / GAIN['SCHD'])); x = BX + i * (BW + BG_)
+        c = '#E5322D' if n == 'SCHD' else (INK if n == '예금' else '#C4C8CF')
+        s += f"<div style='position:absolute;left:{x}px;top:{BASE - hh}px;width:{BW}px;height:{hh}px;background:{c}'></div>"
+        if n in MAN: s += f"<div class='lab' style='left:{x - 6}px;top:{BASE - hh - 56}px;font-size:40px;color:{c}'>{MAN[n]}</div>"
+        else: s += f"<div class='lab' style='left:{x}px;top:{BASE - hh - 40}px;font-size:28px;color:#8A909C'>{n}</div>"
+    return s
+r1e = f"""<div style='position:absolute;inset:0;background:#FFFFFF'></div>
+<div style='position:absolute;left:0;top:0;width:1280px;height:18px;background:{INK}'></div>
+<div class='t' style='left:52px;top:70px;font-size:84px;color:{INK}'>같은 1억</div>
+<div class='lab' style='left:52px;top:182px;font-size:60px;color:#fff;background:{INK};padding:4px 22px;border-radius:12px'>예금 vs SCHD</div>
+<div id='e1' class='t' data-fit='560' style='left:46px;top:300px;font-size:170px;color:#E5322D'>1,434만</div>
+<div class='t' style='left:52px;top:486px;font-size:84px;color:{INK}'>1년 뒤 차이</div>
+{vbars()}
+<div class='lab' style='left:{BX - 10}px;top:{BASE + 10}px;font-size:40px;color:{INK}'>예금</div>
+<div class='lab' style='left:{BX + 3 * (BW + BG_) - 8}px;top:{BASE - HMAX2 - 112}px;font-size:46px;color:#E5322D'>SCHD</div>
+""" + FINE2 % '#6B7280'
+VARIANTS.update({'r1d': r1d, 'r1e': r1e})
+
+
+# ── 3차(10/3) — 2차 r1d 7(Claude)·7(제미나이 lite) 1위, 고칠 점: 꼬리표 1.5배·숫자 바로 위 왼쪽 / 끝값 2배·SCHD 막대 굵게 / 아래 빈칸
+def hbars3(x, y, wmax, h, gap, labw=210, fs=50, vfs=62):
+    top = GAIN['SCHD']; s = ''
+    for i, n in enumerate(['예금', '금', 'S&P500', 'SCHD']):
+        w = max(12, wmax * GAIN[n] / top); yy = y + i * (h + gap); key = n in MAN
+        c = '#E5322D' if n == 'SCHD' else (INK if n == '예금' else '#C9CDD4')
+        tc = INK if key else '#A0A6B0'
+        s += f"<div class='lab' style='left:{x}px;top:{yy + (h - fs) / 2 - 6:.0f}px;font-size:{fs}px;color:{tc}'>{n}</div>"
+        s += f"<div style='position:absolute;left:{x + labw}px;top:{yy}px;width:{w:.0f}px;height:{h}px;background:{c};border-radius:0 8px 8px 0'></div>"
+        if key: s += f"<div class='t' style='left:{x + labw + w + 18:.0f}px;top:{yy + (h - vfs) / 2:.0f}px;font-size:{vfs}px;color:{c}'>{MAN[n]}</div>"
+    return s
+
+
+r1f = f"""<div style='position:absolute;inset:0;background:#FFFFFF'></div>
+<div style='position:absolute;left:0;top:0;width:1280px;height:18px;background:{INK}'></div>
+<div class='t' style='left:52px;top:46px;font-size:64px;color:{INK}'>같은 1억, 1년 뒤</div>
+<div class='lab' style='left:52px;top:128px;font-size:78px;color:#fff;background:{INK};padding:2px 26px 8px;border-radius:14px'>예금 vs SCHD</div>
+<div id='f1' class='t' data-fit='1180' style='left:46px;top:246px;font-size:168px;color:#E5322D'>1,434만 차이</div>
+{hbars3(56, 428, 420, 44, 12)}
+<div class='fine' style='left:52px;top:650px;color:#6B7280'>1년 뒤 통장 기준 · 2025.10.2 → 2026.10.2 실제 값(과거)</div>
+"""
+VARIANTS['r1f'] = r1f
+
+
+# ── 4차(10/3) — 2차 r1d 6.67(lite 7·Claude 7·레드팀 6). 레드팀 사실 지적 2개:
+#   ① 끝값 +1,653만 − +218만 = 1,435만 ≠ 1,434만(반올림 엇갈림) → 끝값 빼고 숫자 1개만(차이 14,342,653 → 1,434만)
+#   ② SCHD 통장은 분배금 세전(facts 50·52행) → '통장 기준'도 세후 약속으로 읽힘 → 꼬리말에 '분배금은 세전' 그대로 밝힘
+#   + 금·S&P500 이름 진하게(168px 읽힘), 흰 바탕 테두리(밝은 화면에서 묻힘 방지)
+def hbars4(x, y, wmax, h, gap, labw=230, fs=50):
+    top = GAIN['SCHD']; s = ''
+    for i, n in enumerate(['예금', '금', 'S&P500', 'SCHD']):
+        w = max(12, wmax * GAIN[n] / top); yy = y + i * (h + gap)
+        c = '#E5322D' if n == 'SCHD' else (INK if n == '예금' else '#B3B8C1')
+        tc = '#E5322D' if n == 'SCHD' else (INK if n == '예금' else '#5A6170')
+        s += f"<div class='lab' style='left:{x}px;top:{yy + (h - fs) / 2 - 6:.0f}px;font-size:{fs}px;color:{tc}'>{n}</div>"
+        s += f"<div style='position:absolute;left:{x + labw}px;top:{yy}px;width:{w:.0f}px;height:{h}px;background:{c};border-radius:0 8px 8px 0'></div>"
+    return s
+
+
+r1g = f"""<div style='position:absolute;inset:0;background:#FFFFFF;border:12px solid {INK}'></div>
+<div class='t' style='left:52px;top:46px;font-size:64px;color:{INK}'>같은 1억, 1년 뒤</div>
+<div class='lab' style='left:52px;top:128px;font-size:78px;color:#fff;background:{INK};padding:2px 26px 8px;border-radius:14px'>예금 vs SCHD</div>
+<div id='g1' class='t' data-fit='1170' style='left:46px;top:246px;font-size:168px;color:#E5322D'>1,434만 차이</div>
+{hbars4(56, 412, 640, 42, 12)}
+<div class='fine' style='left:52px;top:648px;color:#6B7280'>2025.10.2 → 2026.10.2 실제 값(과거) · 이자·양도세 뗀 통장, 분배금은 세전</div>
+"""
+VARIANTS['r1g'] = r1g
+
+
+# ── 5차(10/3) — 3차 r1g 7.07(제미나이 3-flash 8.2·Claude 7·레드팀 6) 통과선 7, 목표 8 미달. 고칠 점:
+#   ① 굵은 먹색 테두리 = 나두시니어 굵은 테두리와 겹침 3(레드팀) → 4px 회색 ② 숫자가 가로 60% → 85%+(Claude)
+#   ③ 첫 줄 168px 겨우 읽힘 → 꼬리표급 ④ 막대 굵게·아래 빈칸 없앰 ⑤ '양도세 뗀 통장'은 10/2 기준 문자 그대로는 아님(양도세는 다음 해 5월 신고, facts [15]) → '세금 계산 기준' 문구
+r1h = f"""<div style='position:absolute;inset:0;background:#FFFFFF;border:4px solid #C9CDD4'></div>
+<div class='t' style='left:52px;top:40px;font-size:80px;color:{INK}'>같은 1억, 1년 뒤</div>
+<div class='lab' style='left:52px;top:138px;font-size:72px;color:#fff;background:{INK};padding:0 24px 8px;border-radius:14px'>예금 vs SCHD</div>
+<div id='h1' class='t' data-fit='1180' style='left:44px;top:244px;font-size:200px;color:#E5322D'>1,434만 차이</div>
+{hbars4(56, 452, 680, 40, 6, labw=200, fs=42)}
+<div class='fine' style='left:52px;top:652px;color:#6B7280'>2025.10.2 → 2026.10.2 실제 값(과거) · 이자세·양도세 계산, 분배금은 세전</div>
+"""
+VARIANTS['r1h'] = r1h
+
+
+# ── 6차(10/3) — 4차 r1h 6.73(lite 7.2·Claude 7·레드팀 6), r1g는 레드팀 겹침 3(굵은 먹색 틀)으로 반려.
+#   r1h 남은 지적: 4px 회색 틀이 168px에서 사라져 흰 페이지에 녹음(Claude) → 바탕을 연한 미색으로 갈라놓고 틀은 3px 중간 회색
+#   막대 40→48px·이름 42→예금/SCHD 56·금/S&P500 46(레드팀 '뒷걸음' 지적), 숫자는 85% 유지
+def hbars6(x, y, wmax, h, gap, labw=210):
+    top = GAIN['SCHD']; s = ''
+    for i, n in enumerate(['예금', '금', 'S&P500', 'SCHD']):
+        w = max(14, wmax * GAIN[n] / top); yy = y + i * (h + gap); key = n in ('예금', 'SCHD')
+        c = '#E5322D' if n == 'SCHD' else (INK if n == '예금' else '#B3B8C1')
+        tc = '#E5322D' if n == 'SCHD' else (INK if n == '예금' else '#5A6170')
+        fs = 56 if key else 46
+        s += f"<div class='lab' style='left:{x}px;top:{yy + (h - fs) / 2 - 6:.0f}px;font-size:{fs}px;color:{tc}'>{n}</div>"
+        s += f"<div style='position:absolute;left:{x + labw}px;top:{yy}px;width:{w:.0f}px;height:{h}px;background:{c};border-radius:0 8px 8px 0'></div>"
+    return s
+
+
+r1i = f"""<div style='position:absolute;inset:0;background:#F3EFE6;border:3px solid #8A909C'></div>
+<div class='t' style='left:52px;top:34px;font-size:78px;color:{INK}'>같은 1억, 1년 뒤</div>
+<div class='lab' style='left:52px;top:126px;font-size:68px;color:#fff;background:{INK};padding:0 24px 8px;border-radius:14px'>예금 vs SCHD</div>
+<div id='i1' class='t' data-fit='1180' style='left:44px;top:222px;font-size:190px;color:#E5322D'>1,434만 차이</div>
+{hbars6(56, 428, 680, 48, 8)}
+<div class='fine' style='left:52px;top:654px;color:#6B7280'>2025.10.2 → 2026.10.2 실제 값(과거) · 이자세·양도세 계산, 분배금은 세전</div>
+"""
+VARIANTS['r1i'] = r1i
+
+
+def check_zones(page):
+    return page.evaluate("""()=>{const bad=[];document.querySelectorAll('body *').forEach(e=>{
+      if(e.tagName==='SCRIPT'||!e.textContent.trim())return;
+      if(e.children.length&&[...e.children].some(c=>c.textContent.trim()&&c.tagName!=='SPAN'))return;
+      const r=document.createRange();r.selectNodeContents(e);const b=r.getBoundingClientRect();
+      if((b.right>960&&b.bottom>576)||b.bottom>684||b.right>1280||b.left<0)bad.push(e.textContent.trim().slice(0,20)+' '+Math.round(b.left)+'-'+Math.round(b.right)+','+Math.round(b.bottom));});return bad}""")
+
+
+def main(keys):
+    zp = os.path.join(HERE, 'zones.json')
+    report = json.load(open(zp, encoding='utf-8')) if os.path.exists(zp) else {}
+    with sync_playwright() as p:
+        b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1280, 'height': 720})
+        for k in keys:
+            html = os.path.join(HERE, f'{k}.html')
+            open(html, 'w', encoding='utf-8').write(HEAD + VARIANTS[k] + '\n' + TAIL)
+            pg.goto('file:///' + html.replace('\\', '/')); pg.wait_for_selector('body[data-ready]')
+            out = os.path.join(EP, f'thumb_{k}.png'); pg.screenshot(path=out)
+            report[k] = check_zones(pg)
+            im = Image.open(out)
+            im.resize((320, 180), Image.LANCZOS).save(os.path.join(HERE, f'{k}_320.png'))
+            im.resize((168, 94), Image.LANCZOS).save(os.path.join(HERE, f'{k}_168.png'))
+            print(k, os.path.getsize(out) // 1024, 'KB', '가려짐 위반:', report[k] or '없음')
+        b.close()
+    json.dump(report, open(zp, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+
+
+if __name__ == '__main__':
+    main(sys.argv[1].split(',') if len(sys.argv) > 1 else list(VARIANTS))

@@ -120,3 +120,15 @@ def m6():
     d.text((M, 1430), 'SEC 8-K 원문', font=PD7(50), fill=GREY)
     return im
 im = m6(); im.save(os.path.join(H, 'cover_m6.png'))
+
+# ---- 4차(10/3 visual): 레드팀 사실 정확도 지적 반영(review.md 17행) — '회사 예상'→'회사 6월 전망', '4분기'→'회계 4분기', 'SEC 8-K 원문' 줄 뺌. 배치·크기는 m6 그대로
+def m7():
+    im, d = base()
+    d.text((M, 250), '마이크론 회계 4분기 매출', font=BHS(fit(d, '마이크론 회계 4분기 매출', 124)), fill=WHITE)
+    for y, lab, num, col in ((460, '회사 6월 전망 최대', '510억$', LG), (820, '실제', '542억$', YELLOW)):
+        d.text((M, y), lab, font=BHS(fit(d, '회사 6월 전망 최대', 96)), fill=col)
+        d.text((M, y + 100), num, font=BHS(fit(d, '510억$', 250)), fill=col)
+    d.rounded_rectangle((M, 1230, M + 720, 1390), 24, fill=YELLOW); d.text((M + 36, 1246), '+32억$ 더', font=BHS(124), fill=BG)
+    return im
+if __name__ == '__main__' and 'm7' in sys.argv:
+    im = m7(); im.save(os.path.join(H, 'cover_m7.png')); im.resize((168, round(168 * im.height / im.width))).save(os.path.join(H, 'cover_m7_168.png'))

@@ -1,0 +1,14 @@
+{
+ "ep": "R-1",
+ "pick": "thumb_r1i.png",
+ "status": "임시(관문 미통과, 최고 6.73·5차 6.33)",
+ "at": "2026-10-03 09:15",
+ "text": "같은 1억, 1년 뒤 / 예금 vs SCHD / 1,434만 차이",
+ "number_source": "facts.txt [영수증] 14,342,653",
+ "footer": "이자세·양도세 계산, 분배금은 세전",
+ "experiment": {
+  "X-THUMB-2": "B(한 줄 큰 숫자 1,434만)"
+ },
+ "judges": "visual/R-1-thumb/judges.md",
+ "pending": "사실표 분배금 세금 결정(youtube-loop 10/4 12:00) — 숫자 바뀌면 다시 렌더"
+}

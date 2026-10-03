@@ -1,0 +1,21 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;font:500 22px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#FFFFFF;border:12px solid #0F1720'></div>
+<div class='t' style='left:52px;top:46px;font-size:64px;color:#0F1720'>같은 1억, 1년 뒤</div>
+<div class='lab' style='left:52px;top:128px;font-size:78px;color:#fff;background:#0F1720;padding:2px 26px 8px;border-radius:14px'>예금 vs SCHD</div>
+<div id='g1' class='t' data-fit='1170' style='left:46px;top:246px;font-size:168px;color:#E5322D'>1,434만 차이</div>
+<div class='lab' style='left:56px;top:402px;font-size:50px;color:#0F1720'>예금</div><div style='position:absolute;left:286px;top:412px;width:85px;height:42px;background:#0F1720;border-radius:0 8px 8px 0'></div><div class='lab' style='left:56px;top:456px;font-size:50px;color:#5A6170'>금</div><div style='position:absolute;left:286px;top:466px;width:126px;height:42px;background:#B3B8C1;border-radius:0 8px 8px 0'></div><div class='lab' style='left:56px;top:510px;font-size:50px;color:#5A6170'>S&P500</div><div style='position:absolute;left:286px;top:520px;width:403px;height:42px;background:#B3B8C1;border-radius:0 8px 8px 0'></div><div class='lab' style='left:56px;top:564px;font-size:50px;color:#E5322D'>SCHD</div><div style='position:absolute;left:286px;top:574px;width:640px;height:42px;background:#E5322D;border-radius:0 8px 8px 0'></div>
+<div class='fine' style='left:52px;top:648px;color:#6B7280'>2025.10.2 → 2026.10.2 실제 값(과거) · 이자·양도세 뗀 통장, 분배금은 세전</div>
+
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

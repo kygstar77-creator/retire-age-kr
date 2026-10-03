@@ -1,0 +1,21 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;font:500 22px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#123B33'></div>
+<div style='position:absolute;left:60px;top:40px;width:480px;height:580px;background:#FBFAF6;transform:rotate(-3deg);box-shadow:0 18px 40px rgba(0,0,0,.45)'><div class='t' style='left:34px;top:34px;font-size:52px;color:#0F1720'>1억의 1년 영수증</div><div style='position:absolute;left:34px;right:34px;top:108px;border-top:4px dashed #9AA0A8'></div><div style='position:absolute;left:24px;right:24px;top:122px;height:70px;border:4px solid #FF4D47;border-radius:10px'></div><div class='lab' style='left:34px;top:132px;font-size:44px;color:#0F1720'>예금</div><div class='lab' style='right:34px;top:132px;font-size:44px;color:#0F1720'>+218만</div><div class='lab' style='left:34px;top:218px;font-size:44px;color:#0F1720'>금</div><div class='lab' style='right:34px;top:218px;font-size:44px;color:#0F1720'>+324만</div><div class='lab' style='left:34px;top:304px;font-size:44px;color:#0F1720'>S&P500</div><div class='lab' style='right:34px;top:304px;font-size:44px;color:#0F1720'>+1,039만</div><div style='position:absolute;left:24px;right:24px;top:380px;height:70px;background:rgba(255,212,59,.55);border-radius:10px'></div><div class='lab' style='left:34px;top:390px;font-size:44px;color:#9A6B00'>SCHD</div><div class='lab' style='right:34px;top:390px;font-size:44px;color:#9A6B00'>+1,653만</div><div style='position:absolute;left:34px;right:34px;top:486px;border-top:4px dashed #9AA0A8'></div><div class='lab' style='left:34px;top:506px;font-size:28px;color:#5A6170'>세금 뗀 뒤 늘어난 돈</div></div>
+<div class='t' style='left:620px;top:120px;font-size:84px;color:#fff'>같은 1억인데</div>
+<div class='t' style='left:614px;top:232px;font-size:76px;color:#CFE3DC'>1년 뒤 차이</div>
+<div id='b1' class='t' data-fit='640' style='left:608px;top:336px;font-size:200px;color:#FFD43B'>1,434만</div>
+<div class='fine' style='left:620px;top:540px;color:#9FC2B7'>2025.10 → 2026.10 실제 값 · 과거 기준</div>
+
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

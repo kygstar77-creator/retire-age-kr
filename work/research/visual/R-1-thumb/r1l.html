@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;font:500 22px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#14213D'></div>
+<div class='t' style='left:48px;top:30px;font-size:100px;color:#fff'>1억 넣고 1년 뒤 통장</div>
+<div style='position:absolute;left:48px;top:214px;width:340px;height:330px;background:#5B6578;border-radius:24px;transform:rotate(0deg);box-shadow:0 22px 50px rgba(0,0,0,.5);overflow:hidden'><div style='position:absolute;left:0;right:0;top:0;height:99px;background:rgba(0,0,0,.18)'></div><div class='lab' style='left:24px;top:20px;font-size:64px;color:#fff'>예금</div><div class='t' style='left:17px;top:148px;font-size:90px;color:#fff'>+218만</div></div>
+<div style='position:absolute;left:414px;top:168px;width:548px;height:400px;background:#FFD43B;border-radius:24px;transform:rotate(-2deg);box-shadow:0 22px 50px rgba(0,0,0,.5);overflow:hidden'><div style='position:absolute;left:0;right:0;top:0;height:120px;background:rgba(0,0,0,.18)'></div><div class='lab' style='left:38px;top:24px;font-size:80px;color:#14213D'>SCHD</div><div class='t' style='left:27px;top:180px;font-size:128px;color:#14213D'>+1,653만</div></div>
+<div class='lab' style='left:52px;top:596px;font-size:34px;color:#AEB6C4'>금 +324만 · S&P500 +1,039만</div>
+<div class='fine' style='left:52px;top:654px;color:#8E97A8'>2025.10.2 → 2026.10.2 실제 값(과거) · 이자세·양도세 계산, 분배금은 세전</div>
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

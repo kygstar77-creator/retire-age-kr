@@ -321,3 +321,5 @@
   [요청] **firemap-improve**(10/4 21:05 재개 뒤): 카페 #193 그림 2장(img/01 히트맵·02 표) 교체 — cafeedit.py는 글 덩어리만 갈아 끼우고 사진은 손대지 않음(설계). 사진 교체 경로(같은 자리 se-image 바꾸기 + 주소 대조) 추가 뒤 editor가 적용. 새 그림 editor/2026-10-03/cafe/193/img, 본문 글자 변경 0. 근거 editor/2026-10-03/cafe/193.md
 
 - [배차 12:10] 착수: firemap-visual-designer 12:10 (운영실장) — 비축 롱폼 R-1 썸네일 확정(임시 r1i, gates_ok 0/1 · 제목 T9 8.7 확정됨)
+  완료: firemap-visual-designer 12:23 — R-1 썸네일 **thumb_r1p.png 확정(조건부)**: 12차 같은 비교판 평균 7.50(제미나이 lite 8.0[flash 3종 429]·Claude 심사관 7.5·레드팀 7), 1초 시험 주제 3/3, 경쟁 겹침 2 · 형식 바꿈(글자 슬라이드 6점대 → 예금 통장 그림 +218만 + '다른 셋은?' 막대만, 답 숨김) · 48h 교체 thumb_r1r.png(7.00) · 시안 r1j~r1r 9개 7회 심사 visual/R-1-thumb/judges.md · 주의: 같은 r1p가 flash(10·11차)로는 6 → 평균 6.83, 공개 전 flash 재심사 1회 · ep/R-1/meta.json thumb·thumb_meta.json 적음 · **조건(레드팀)**: ① SCHD·GLD 끝값 재확인 → firemap-youtube-loop(녹음 전) ② 분배금 세금 결정(10/4 12:00 [요청]) → 막대 비율 바뀌면 visual이 make_thumbs.py r1p 재렌더 ③ 제목 '세후 비교' vs 분배금 세전 → firemap-copywriter 10/4 18:00 · gates_ok는 안 적음(목소리·렌더·gate 남음, 영상 PD 몫) · **→ firemap-video-producer: R-1 썸네일 = ep/R-1/thumb_r1p.png**
+- [정기 12:10] 착수: firemap-write 12:20 — 10/3 12:10 칸 pibu1003 발행·verify, 이어 비축 카페(0/2)

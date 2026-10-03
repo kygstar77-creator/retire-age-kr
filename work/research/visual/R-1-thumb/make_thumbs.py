@@ -239,6 +239,227 @@ r1i = f"""<div style='position:absolute;inset:0;background:#F3EFE6;border:3px so
 """
 VARIANTS['r1i'] = r1i
 
+# 6차(10/3 12:1x) 형식 바꾸기 — 글자 슬라이드 정체(6점대) 탈출: 통장 두 장 크기 대비(레드팀 제안, 사실에서 온 그림 장치·돈더미 사진 아님)
+# 숫자는 facts [영수증] 늘어난 돈 예금 2,182,680 → '+218만' · SCHD 16,525,333 → '+1,653만'(끝값 2개, 차이 숫자는 안 씀 → 반올림 엇갈림 없음)
+FOOT6 = "<div class='fine' style='left:52px;top:654px;color:%s'>2025.10.2 → 2026.10.2 실제 값(과거) · 이자세·양도세 계산, 분배금은 세전</div>"
+
+
+def book(x, y, w, h, name, val, bg, fg, sub, vfs, nfs, rot=0):
+    s = f"<div style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;background:{bg};border-radius:22px;transform:rotate({rot}deg);box-shadow:0 22px 50px rgba(0,0,0,.45);overflow:hidden'>"
+    s += f"<div style='position:absolute;left:0;right:0;top:0;height:{round(h * .26)}px;background:rgba(0,0,0,.18)'></div>"
+    s += f"<div class='lab' style='left:{round(w * .07)}px;top:{round(h * .05)}px;font-size:{nfs}px;color:{fg}'>{name}</div>"
+    s += f"<div class='lab' style='left:{round(w * .07)}px;top:{round(h * .34)}px;font-size:{round(nfs * .62)}px;color:{sub}'>1년 동안 늘어난 돈</div>"
+    s += f"<div class='t' style='left:{round(w * .06)}px;top:{round(h * .52)}px;font-size:{vfs}px;color:{fg}'>{val}</div></div>"
+    return s
+
+
+# r1j — 남색 바탕, 통장 두 장(예금 작게·회색 / SCHD 크게·노랑, 살짝 기울임)
+r1j = f"""<div style='position:absolute;inset:0;background:#14213D'></div>
+<div class='t' style='left:52px;top:36px;font-size:84px;color:#fff'>1억 넣고 1년 뒤 통장</div>
+{book(52, 210, 330, 290, '예금', '+218만', '#5B6578', '#fff', '#D3D8E0', 92, 52)}
+{book(430, 160, 520, 410, 'SCHD', '+1,653만', '#FFD43B', '#14213D', '#5B4A00', 112, 68, rot=-2)}
+<div class='lab' style='left:56px;top:594px;font-size:34px;color:#AEB6C4'>금 +324만 · S&P500 +1,039만</div>
+""" + FOOT6 % '#AEB6C4'
+VARIANTS['r1j'] = r1j
+
+# r1k — 흰 바탕, 숫자 크기 대비만(그림 없음): 작은 +218만 vs 아주 큰 +1,653만
+r1k = f"""<div style='position:absolute;inset:0;background:#FFFFFF;border:3px solid #C9CDD4'></div>
+<div class='t' style='left:52px;top:40px;font-size:80px;color:{INK}'>같은 1억, 1년 뒤 통장</div>
+<div class='lab' style='left:56px;top:196px;font-size:54px;color:#5A6170'>예금</div>
+<div class='t' style='left:56px;top:270px;font-size:100px;color:#8A909C'>+218만</div>
+<div class='lab' style='left:470px;top:196px;font-size:54px;color:#E5322D'>SCHD</div>
+<div id='k1' class='t' data-fit='790' style='left:462px;top:262px;font-size:240px;color:#E5322D'>+1,653만</div>
+<div class='lab' style='left:56px;top:500px;font-size:44px;color:#8A909C'>금 +324만 · S&P500 +1,039만</div>
+""" + FOOT6 % '#6B7280'
+VARIANTS['r1k'] = r1k
+
+
+# r1l — r1j 고침(6차 Claude 심사관: 카드·숫자 키우고 카드 안 작은 글씨 빼기, 제목 더 크게) · 금·S&P500 줄은 유지(골라 보여 주기 방지)
+def book2(x, y, w, h, name, val, bg, fg, vfs, nfs, rot=0):
+    s = f"<div style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;background:{bg};border-radius:24px;transform:rotate({rot}deg);box-shadow:0 22px 50px rgba(0,0,0,.5);overflow:hidden'>"
+    s += f"<div style='position:absolute;left:0;right:0;top:0;height:{round(h * .30)}px;background:rgba(0,0,0,.18)'></div>"
+    s += f"<div class='lab' style='left:{round(w * .07)}px;top:{round(h * .06)}px;font-size:{nfs}px;color:{fg}'>{name}</div>"
+    s += f"<div class='t' style='left:{round(w * .05)}px;top:{round(h * .45)}px;font-size:{vfs}px;color:{fg}'>{val}</div></div>"
+    return s
+
+
+r1l = f"""<div style='position:absolute;inset:0;background:#14213D'></div>
+<div class='t' style='left:48px;top:30px;font-size:100px;color:#fff'>1억 넣고 1년 뒤 통장</div>
+{book2(48, 214, 340, 330, '예금', '+218만', '#5B6578', '#fff', 90, 64)}
+{book2(414, 168, 548, 400, 'SCHD', '+1,653만', '#FFD43B', '#14213D', 128, 80, rot=-2)}
+<div class='lab' style='left:52px;top:596px;font-size:34px;color:#AEB6C4'>금 +324만 · S&P500 +1,039만</div>
+""" + FOOT6 % '#8E97A8'
+VARIANTS['r1l'] = r1l
+
+
+# r1m — 6차 3명 지적 합침: 어두운 고대비(Claude) + 남색·노랑·기울인 카드 뺌(레드팀 겹침 3) + '통장' 말 뺌(양도세 다음 해 5월·분배금 세전)
+#   + 크기 대비 = 실제 값 비율(막대 0부터, SCHD 기준) + 4종 모두(골라 보여 주기 방지)
+def mbars(x, y, wmax):
+    rows = [('예금', 96, '#FFFFFF', '#FFFFFF', 64, 78), ('금', 50, '#5C6068', '#A9AEB6', 44, 44),
+            ('S&P500', 50, '#5C6068', '#A9AEB6', 44, 44), ('SCHD', 96, '#2BD98C', '#2BD98C', 64, 84)]
+    val = {'예금': '+218만', '금': '+324만', 'S&P500': '+1,039만', 'SCHD': '+1,653만'}
+    s = ''; yy = y
+    for n, h, bc, tc, fs, vfs in rows:
+        w = wmax * GAIN[n] / GAIN['SCHD']
+        s += f"<div class='lab' style='left:{x}px;top:{yy + (h - fs) / 2 - 6:.0f}px;font-size:{fs}px;color:{tc}'>{n}</div>"
+        s += f"<div style='position:absolute;left:{x + 230}px;top:{yy}px;width:{w:.0f}px;height:{h}px;background:{bc};border-radius:0 10px 10px 0'></div>"
+        if n == 'SCHD':
+            s += f"<div class='t' style='right:{1280 - (x + 230 + w) + 22:.0f}px;top:{yy + (h - vfs) / 2:.0f}px;font-size:{vfs}px;color:#0E1A14'>{val[n]}</div>"
+        else:
+            s += f"<div class='t' style='left:{x + 230 + w + 20:.0f}px;top:{yy + (h - vfs) / 2:.0f}px;font-size:{vfs}px;color:{tc}'>{val[n]}</div>"
+        yy += h + 16
+    return s
+
+
+r1m = f"""<div style='position:absolute;inset:0;background:#1E1F22'></div>
+<div class='t' style='left:52px;top:40px;font-size:104px;color:#fff'>같은 1억, 1년 뒤</div>
+{mbars(52, 196, 900)}
+<div class='fine' style='left:52px;top:654px;color:#8E939C'>2025.10.2 → 2026.10.2 실제 값(과거) · 늘어난 돈, 이자세·양도세 계산 · 분배금은 세전</div>
+"""
+VARIANTS['r1m'] = r1m
+
+
+# r1n — r1m 고침(7차 레드팀: 막대 두께 같게·예금 흰 막대→테두리 / Claude: 숫자 키우기)
+def nbars(x, y, wmax, h=84, gap=14):
+    rows = [('예금', 'out', '#FFFFFF', 60, 88), ('금', '#4A4E56', '#A9AEB6', 48, 64),
+            ('S&P500', '#4A4E56', '#A9AEB6', 48, 64), ('SCHD', '#2BD98C', '#2BD98C', 60, 78)]
+    val = {'예금': '+218만', '금': '+324만', 'S&P500': '+1,039만', 'SCHD': '+1,653만'}
+    s = ''; yy = y
+    for n, bc, tc, fs, vfs in rows:
+        w = wmax * GAIN[n] / GAIN['SCHD']
+        bg = 'transparent;border:5px solid #FFFFFF;border-left:none' if bc == 'out' else bc
+        s += f"<div class='lab' style='left:{x}px;top:{yy + (h - fs) / 2 - 6:.0f}px;font-size:{fs}px;color:{tc}'>{n}</div>"
+        s += f"<div style='position:absolute;left:{x + 220}px;top:{yy}px;width:{w:.0f}px;height:{h}px;background:{bg};border-radius:0 10px 10px 0'></div>"
+        if n == 'SCHD':
+            s += f"<div class='t' style='right:{1280 - (x + 220 + w) + 22:.0f}px;top:{yy + (h - vfs) / 2:.0f}px;font-size:{vfs}px;color:#0E1A14'>{val[n]}</div>"
+        else:
+            s += f"<div class='t' style='left:{x + 220 + w + 20:.0f}px;top:{yy + (h - vfs) / 2:.0f}px;font-size:{vfs}px;color:{tc}'>{val[n]}</div>"
+        yy += h + gap
+    return s
+
+
+r1n = f"""<div style='position:absolute;inset:0;background:#1E1F22'></div>
+<div class='t' style='left:52px;top:36px;font-size:108px;color:#fff'>같은 1억, 1년 뒤</div>
+{nbars(52, 186, 900)}
+<div class='fine' style='left:52px;top:654px;color:#8E939C'>2025.10.2 → 2026.10.2 실제 값(과거) · 늘어난 돈, 이자세·양도세 계산 · 분배금은 세전</div>
+"""
+VARIANTS['r1n'] = r1n
+
+
+# r1o — 8차 지적 합침: 내 돈 대입 제목(레드팀 궁금증 장치·우리 정체성) + 숫자 1.3배·막대 굵게(Claude) + 예금 흰 채움(두께 같아 면적 왜곡 없음)
+def obars(x, y, wmax, h=92, gap=6):
+    rows = [('예금', '#FFFFFF', '#FFFFFF', 62, 104), ('금', '#4A4E56', '#A9AEB6', 50, 72),
+            ('S&P500', '#4A4E56', '#A9AEB6', 50, 72), ('SCHD', '#2BD98C', '#2BD98C', 62, 84)]
+    val = {'예금': '+218만', '금': '+324만', 'S&P500': '+1,039만', 'SCHD': '+1,653만'}
+    s = ''; yy = y
+    for n, bc, tc, fs, vfs in rows:
+        w = wmax * GAIN[n] / GAIN['SCHD']
+        s += f"<div class='lab' style='left:{x}px;top:{yy + (h - fs) / 2 - 6:.0f}px;font-size:{fs}px;color:{tc}'>{n}</div>"
+        s += f"<div style='position:absolute;left:{x + 220}px;top:{yy}px;width:{w:.0f}px;height:{h}px;background:{bc};border-radius:0 10px 10px 0'></div>"
+        if n == 'SCHD':
+            s += f"<div class='t' style='right:{1280 - (x + 220 + w) + 22:.0f}px;top:{yy + (h - vfs) / 2 + 4:.0f}px;font-size:{vfs}px;color:#0E1A14'>{val[n]}</div>"
+        else:
+            s += f"<div class='t' style='left:{x + 220 + w + 18:.0f}px;top:{yy + (h - vfs) / 2 + 2:.0f}px;font-size:{vfs}px;color:{tc}'>{val[n]}</div>"
+        yy += h + gap
+    return s
+
+
+r1o = f"""<div style='position:absolute;inset:0;background:#1E1F22'></div>
+<div class='t' style='left:48px;top:30px;font-size:100px;color:#fff'>1년 전 내 1억이었다면</div>
+{obars(52, 180, 880)}
+<div class='fine' style='left:52px;top:654px;color:#8E939C'>2025.10.2 → 2026.10.2 실제 값(과거) · 늘어난 돈, 이자세·양도세 계산 · 분배금은 세전</div>
+"""
+VARIANTS['r1o'] = r1o
+
+
+# r1p — 9차 레드팀 '진짜 궁금증 장치 + 실물 그림' 시험: 예금 통장 한 장(그림, 사진 아님)에 +218만만 크게,
+#   나머지 셋은 숫자 없이 실제 비율 막대만('다른 셋은?') → 답 하나 숨김. '내 1억이었다면' 후회 말투 뺌(레드팀 9차 ②)
+def pbars(x, y, wmax, h=50, gap=12):
+    rows = [('예금', '#FFFFFF', '#FFFFFF'), ('금', '#6A6F78', '#A9AEB6'), ('S&P500', '#6A6F78', '#A9AEB6'), ('SCHD', '#2BD98C', '#2BD98C')]
+    s = ''; yy = y
+    for n, bc, tc in rows:
+        w = wmax * GAIN[n] / GAIN['SCHD']
+        s += f"<div class='lab' style='left:{x}px;top:{yy + 2}px;font-size:40px;color:{tc}'>{n}</div>"
+        s += f"<div style='position:absolute;left:{x + 180}px;top:{yy}px;width:{w:.0f}px;height:{h}px;background:{bc};border-radius:0 8px 8px 0'></div>"
+        yy += h + gap
+    return s
+
+
+r1p = f"""<div style='position:absolute;inset:0;background:#1E1F22'></div>
+<div class='t' style='left:48px;top:30px;font-size:100px;color:#fff'>같은 1억, 1년 뒤</div>
+<div style='position:absolute;left:48px;top:178px;width:520px;height:400px;background:#F4F1E8;border-radius:18px;box-shadow:0 18px 40px rgba(0,0,0,.5);overflow:hidden'>
+ <div style='position:absolute;left:0;right:0;top:0;height:92px;background:#5C6068'></div>
+ <div class='lab' style='left:34px;top:18px;font-size:52px;color:#fff'>예금 통장</div>
+ <div style='position:absolute;left:34px;right:34px;top:150px;border-top:3px solid #D5D0C4'></div>
+ <div style='position:absolute;left:34px;right:34px;top:330px;border-top:3px solid #D5D0C4'></div>
+ <div class='lab' style='left:34px;top:110px;font-size:34px;color:#5A6170'>1년 이자(세후)</div>
+ <div class='t' style='left:26px;top:180px;font-size:136px;color:{INK}'>+218만</div>
+</div>
+<div class='t' style='left:640px;top:190px;font-size:88px;color:#2BD98C'>다른 셋은?</div>
+{pbars(640, 318, 400)}
+<div class='fine' style='left:52px;top:654px;color:#8E939C'>2025.10.2 → 2026.10.2 실제 값(과거) · 막대 = 늘어난 돈 비율 · 분배금은 세전</div>
+"""
+VARIANTS['r1p'] = r1p
+
+
+# r1q — r1p 고침(10차 세 명 공통: 오른쪽 막대 키우기 / 레드팀·Claude: 통장으로 알아볼 장치·카드 빈 공간 줄이기)
+def qbars(x, y, wmax, h=60, gap=8):
+    rows = [('예금', '#FFFFFF', '#FFFFFF'), ('금', '#6A6F78', '#A9AEB6'), ('S&P500', '#6A6F78', '#A9AEB6'), ('SCHD', '#2BD98C', '#2BD98C')]
+    s = ''; yy = y
+    for n, bc, tc in rows:
+        w = wmax * GAIN[n] / GAIN['SCHD']
+        s += f"<div class='lab' style='left:{x}px;top:{yy + 6}px;font-size:44px;color:{tc}'>{n}</div>"
+        s += f"<div style='position:absolute;left:{x + 190}px;top:{yy}px;width:{w:.0f}px;height:{h}px;background:{bc};border-radius:0 8px 8px 0'></div>"
+        yy += h + gap
+    return s
+
+
+lines = ''.join(f"<div style='position:absolute;left:30px;right:30px;top:{t}px;border-top:2px solid #D5D0C4'></div>" for t in (150, 300, 336))
+r1q = f"""<div style='position:absolute;inset:0;background:#1E1F22'></div>
+<div class='t' style='left:48px;top:30px;font-size:108px;color:#fff'>같은 1억, 1년 뒤</div>
+<div style='position:absolute;left:48px;top:186px;width:480px;height:372px;background:#F4F1E8;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.5);overflow:hidden'>
+ <div style='position:absolute;left:0;right:0;top:0;height:86px;background:#5C6068'></div>
+ <div style='position:absolute;left:0;top:0;bottom:0;width:14px;background:repeating-linear-gradient(#C9C3B4 0 10px,#F4F1E8 10px 20px)'></div>
+ <div class='lab' style='left:34px;top:16px;font-size:50px;color:#fff'>예금 통장</div>
+ <div style='position:absolute;right:26px;top:14px;width:58px;height:58px;border:4px solid #E5322D;border-radius:50%'></div>
+ <div class='lab' style='left:34px;top:100px;font-size:34px;color:#5A6170'>1년 이자(세후)</div>
+ {lines}
+ <div class='t' style='left:28px;top:168px;font-size:128px;color:{INK}'>+218만</div>
+</div>
+<div class='t' style='left:572px;top:186px;font-size:96px;color:#2BD98C'>다른 셋은?</div>
+{qbars(572, 300, 460)}
+<div class='fine' style='left:52px;top:654px;color:#8E939C'>2025.10.2 → 2026.10.2 실제 값(과거) · 막대 = 늘어난 돈 비율 · 분배금은 세전</div>
+"""
+VARIANTS['r1q'] = r1q
+
+
+# r1r — 11차 지적: 아래 빈 띠 메우기·카드 숫자 키우기(Claude), 막대 라벨 줄이고 막대 길게(레드팀), 좌우 시인성(제미나이)
+def rbars(x, y, wmax, h=62, gap=6):
+    rows = [('예금', '#FFFFFF', '#FFFFFF'), ('금', '#6A6F78', '#A9AEB6'), ('S&P500', '#6A6F78', '#A9AEB6'), ('SCHD', '#2BD98C', '#2BD98C')]
+    s = ''; yy = y
+    for n, bc, tc in rows:
+        w = wmax * GAIN[n] / GAIN['SCHD']
+        s += f"<div class='lab' style='left:{x}px;top:{yy + 12}px;font-size:36px;color:{tc}'>{n}</div>"
+        s += f"<div style='position:absolute;left:{x + 164}px;top:{yy}px;width:{w:.0f}px;height:{h}px;background:{bc};border-radius:0 8px 8px 0'></div>"
+        yy += h + gap
+    return s
+
+
+r1r = f"""<div style='position:absolute;inset:0;background:#1E1F22'></div>
+<div class='t' style='left:44px;top:26px;font-size:112px;color:#fff'>같은 1억, 1년 뒤</div>
+<div style='position:absolute;left:44px;top:168px;width:500px;height:452px;background:#F4F1E8;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.5);overflow:hidden'>
+ <div style='position:absolute;left:0;right:0;top:0;height:104px;background:#4B5563'></div>
+ <div class='lab' style='left:30px;top:20px;font-size:62px;color:#fff'>예금 통장</div>
+ <div class='lab' style='left:30px;top:124px;font-size:48px;color:{INK}'>1년 이자(세후)</div>
+ <div style='position:absolute;left:24px;right:24px;top:196px;border-top:3px solid #CFC9BA'></div>
+ <div class='t' style='left:18px;top:236px;font-size:138px;color:{INK}'>+218만</div>
+</div>
+<div class='t' style='left:584px;top:172px;font-size:104px;color:#2BD98C'>다른 셋은?</div>
+{rbars(584, 298, 460)}
+<div class='fine' style='left:52px;top:654px;color:#8E939C'>2025.10.2 → 2026.10.2 실제 값(과거) · 막대 = 늘어난 돈 비율 · 분배금은 세전</div>
+"""
+VARIANTS['r1r'] = r1r
+
 
 def check_zones(page):
     return page.evaluate("""()=>{const bad=[];document.querySelectorAll('body *').forEach(e=>{

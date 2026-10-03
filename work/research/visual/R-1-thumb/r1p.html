@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;font:500 22px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#1E1F22'></div>
+<div class='t' style='left:48px;top:30px;font-size:100px;color:#fff'>같은 1억, 1년 뒤</div>
+<div style='position:absolute;left:48px;top:178px;width:520px;height:400px;background:#F4F1E8;border-radius:18px;box-shadow:0 18px 40px rgba(0,0,0,.5);overflow:hidden'>
+ <div style='position:absolute;left:0;right:0;top:0;height:92px;background:#5C6068'></div>
+ <div class='lab' style='left:34px;top:18px;font-size:52px;color:#fff'>예금 통장</div>
+ <div style='position:absolute;left:34px;right:34px;top:150px;border-top:3px solid #D5D0C4'></div>
+ <div style='position:absolute;left:34px;right:34px;top:330px;border-top:3px solid #D5D0C4'></div>
+ <div class='lab' style='left:34px;top:110px;font-size:34px;color:#5A6170'>1년 이자(세후)</div>
+ <div class='t' style='left:26px;top:180px;font-size:136px;color:#0F1720'>+218만</div>
+</div>
+<div class='t' style='left:640px;top:190px;font-size:88px;color:#2BD98C'>다른 셋은?</div>
+<div class='lab' style='left:640px;top:320px;font-size:40px;color:#FFFFFF'>예금</div><div style='position:absolute;left:820px;top:318px;width:53px;height:50px;background:#FFFFFF;border-radius:0 8px 8px 0'></div><div class='lab' style='left:640px;top:382px;font-size:40px;color:#A9AEB6'>금</div><div style='position:absolute;left:820px;top:380px;width:78px;height:50px;background:#6A6F78;border-radius:0 8px 8px 0'></div><div class='lab' style='left:640px;top:444px;font-size:40px;color:#A9AEB6'>S&P500</div><div style='position:absolute;left:820px;top:442px;width:252px;height:50px;background:#6A6F78;border-radius:0 8px 8px 0'></div><div class='lab' style='left:640px;top:506px;font-size:40px;color:#2BD98C'>SCHD</div><div style='position:absolute;left:820px;top:504px;width:400px;height:50px;background:#2BD98C;border-radius:0 8px 8px 0'></div>
+<div class='fine' style='left:52px;top:654px;color:#8E939C'>2025.10.2 → 2026.10.2 실제 값(과거) · 막대 = 늘어난 돈 비율 · 분배금은 세전</div>
+
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

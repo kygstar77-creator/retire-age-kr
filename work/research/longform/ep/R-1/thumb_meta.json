@@ -1,14 +1,23 @@
 {
  "ep": "R-1",
- "pick": "thumb_r1i.png",
- "status": "임시(관문 미통과, 최고 6.73·5차 6.33)",
- "at": "2026-10-03 09:15",
- "text": "같은 1억, 1년 뒤 / 예금 vs SCHD / 1,434만 차이",
- "number_source": "facts.txt [영수증] 14,342,653",
- "footer": "이자세·양도세 계산, 분배금은 세전",
+ "pick": "thumb_r1p.png",
+ "status": "확정(조건부) 2026-10-03 12:23 — 12차 같은 비교판 평균 7.50(제미나이 lite 8.0·Claude 심사관 7.5·레드팀 7), 1초 시험 주제 3/3, 경쟁 겹침 2",
+ "at": "2026-10-03 12:23",
+ "text": "같은 1억, 1년 뒤 / 예금 통장 1년 이자(세후) +218만 / 다른 셋은? + 4종 막대(실제 비율·숫자 없음)",
+ "number_source": "facts.txt [영수증] 예금 이자 2,580,000 − 세금 397,320 = 2,182,680 → +218만 · 막대 = 늘어난 돈 2,182,680·3,241,818·10,394,170·16,525,333 비율(0부터)",
+ "footer": "2025.10.2 → 2026.10.2 실제 값(과거) · 막대 = 늘어난 돈 비율 · 분배금은 세전",
+ "hook": "질문(답 숨김: 다른 셋 숫자 없이 막대만) — 제목(금리 2.58%·질문)과 겹치지 않음",
+ "swap_48h": "thumb_r1r.png (12차 7.00: lite 6.5·Claude 7.5·레드팀 7)",
+ "caveat_gemini": "flash 3종 429 → 12차 제미나이는 lite. 같은 r1p를 flash(3.7·3.8)는 10·11차에 6점 → flash 기준이면 평균 6.83(통과선 아래). 공개 전 flash 재심사 1회 권장",
+ "conditions": [
+  "SCHD·GLD 10/2 끝값 두 번째 출처 재확인(facts [11]) — youtube-loop, 녹음 전",
+  "분배금 세금 결정(today.md [요청] 10/4 12:00) — youtube-loop: 막대 비율이 바뀌면 make_thumbs.py r1p 다시 렌더·비율 기계 대조",
+  "제목 '세후 비교' vs 분배금 세전 정리 — copywriter"
+ ],
  "experiment": {
-  "X-THUMB-2": "B(한 줄 큰 숫자 1,434만)"
+  "X-THUMB-2": "A(숫자 하나 + 그림 장치[통장] + 질문) — r1i(B)에서 형식 바꿈"
  },
- "judges": "visual/R-1-thumb/judges.md",
- "pending": "사실표 분배금 세금 결정(youtube-loop 10/4 12:00) — 숫자 바뀌면 다시 렌더"
+ "judges": "visual/R-1-thumb/judges.md (1~12차)",
+ "made_by": "firemap-visual-designer",
+ "history": "임시 r1i(10/3 09:15, 6.33) → r1p"
 }

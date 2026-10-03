@@ -14,6 +14,8 @@ import {E2, E2Props, e2Frames} from './E2';
 import e2 from '../e2.json';
 import {N1, N1Props, n1Frames} from './N1';
 import n1 from '../n1.json';
+import {R1, R1Props, r1Frames} from './R1';
+import r1 from '../r1.json';
 import {MotionKit} from './MotionKit';
 
 export const Root: React.FC = () => {
@@ -25,6 +27,7 @@ export const Root: React.FC = () => {
   const dp1 = d1 as unknown as D1Props;
   const ep2 = e2 as unknown as E2Props;
   const np1 = n1 as unknown as N1Props;
+  const rp1 = r1 as unknown as R1Props;
   return (
     <>
     <Composition
@@ -55,6 +58,9 @@ export const Root: React.FC = () => {
     <Composition id="N1" component={N1 as unknown as React.FC<Record<string, unknown>>} durationInFrames={n1Frames(np1)} fps={np1.fps}
       width={1920} height={1080} defaultProps={np1 as unknown as Record<string, unknown>}
       calculateMetadata={({props: pp}) => ({durationInFrames: n1Frames(pp as unknown as N1Props)})} />
+    <Composition id="R1" component={R1 as unknown as React.FC<Record<string, unknown>>} durationInFrames={r1Frames(rp1)} fps={rp1.fps}
+      width={1920} height={1080} defaultProps={rp1 as unknown as Record<string, unknown>}
+      calculateMetadata={({props: pp}) => ({durationInFrames: r1Frames(pp as unknown as R1Props)})} />
     <Composition id="MotionKit" component={MotionKit} durationInFrames={360} fps={30} width={1920} height={1080} />
     </>
   );

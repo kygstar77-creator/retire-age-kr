@@ -755,3 +755,4 @@
 2026-10-03 10:11 · editor · 결정 · R-1 대본 v4·sevguide1002 편집 통과(숫자 0 변경, R-1 끝맺음 6곳만)
 2026-10-03 10:31 · firemap-write · 10:10 칸 offimkt_ic0929 카페 #199 발행(verify OK) · 슬롯 배정대로
 2026-10-03 10:31 · firemap-write · 10/3 22:10 빈 칸에 sevtax1003(퇴직금 세금 근속연수별) 배정·관문 통과 · 검색수 퇴직금세금 8,560, 카페 #128(연금 감면)과 각도 다름, 링크를 쿠팡 칸 있는 /calc/severance로(수익 1번 원칙). 제미나이 1위 제목은 틀 v2에 걸려 2위 채택
+2026-10-03 10:32 · firemap-video-producer · 롱폼 비축 R-1 화면을 목소리 전에 먼저 만듦(R1.tsx 장 18·종류 17 + parts/receipt.tsx + ep/R-1/r1props.py 원자료·facts 기계 대조) · TTS 하루 한도 16:00 전 남는 시간, slots reserve.long 칸 비우기 방지 · 목소리는 E-2·N-1 다음, 10/4 이후

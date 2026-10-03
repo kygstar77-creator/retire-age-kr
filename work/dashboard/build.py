@@ -299,6 +299,19 @@ def approvals():
         out.append({'date': date, 'title': clip(title, 70), 'detail': clip(md_plain(req.group(1)) if req else '', 260),
                     'cost': cost, 'why': clip(md_plain(' '.join(l.strip('- ') for l in body.splitlines()[:3])), 220),
                     'status': '결재 대기'})
+    # '### 제목' 절 + '- 상태: 결재 대기' 줄(10/3 순돌이: TTS 유료·R5가 이 꼴로 적혀 결재함에 안 떴다)
+    for m in re.finditer(r'^### (.+)$\n((?:(?!^#{2,3} ).*\n?)*)', txt, re.M):
+        title, body = md_plain(m.group(1)), m.group(2)
+        st = re.search(r'^- 상태:\s*(.+)$', body, re.M)
+        if not st or not WAIT.search(st.group(1)):
+            continue
+        field = lambda k: (re.search(r'^- ' + k + r':\s*(.+)$', body, re.M) or [None, ''])[1]
+        d = re.search(r'\d{4}-\d{2}-\d{2}(?: \d{2}:\d{2})?', title)
+        out.append({'date': d.group(0) if d else NA, 'title': clip(re.sub(r'\s*\(.*?\)', '', title).strip(' —-'), 70),
+                    'detail': clip(md_plain(field('무엇')), 260),
+                    'cost': clip(md_plain(field('비용')), 90) or ('확인 안 함' if '확인 안 함' in body else NA),
+                    'why': clip(md_plain(field('왜 지금') or field('왜 사장님 손') or field('왜')), 220),
+                    'status': clip(md_plain(st.group(1)), 120)})
     for x in out:
         x['id'] = hashlib.sha1(x['title'].encode('utf-8')).hexdigest()[:12]
     return out

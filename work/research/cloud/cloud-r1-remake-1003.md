@@ -86,4 +86,5 @@ PC는 **v6로 목소리만 녹음해서 공개**하면 된다(맨 아래 '담당
 2. `py -3.12 work/research/longform/ep/R-1/r1props.py --script script.md` → r1.json이 목소리 길이로 바뀐다(missing 0 확인).
 3. 렌더는 원래 `src/index.ts`(Root.tsx의 R1)로 해도 되고 `src/motion/TallyRoot.tsx`로 해도 된다. Root.tsx는 고치지 않았다(R1·R1Props·r1Frames 이름 그대로).
 4. `work/video/package.json`·`public/fonts`는 **커밋하지 않았다**(PC에 이미 있는 추적 안 된 파일과 부딪혀 cloudmerge가 멈추지 않게). 클라우드에서 쓴 판: remotion·@remotion/cli·bundler·renderer 4.0.532, react 18.3.1, d3-scale 4.0.2, d3-shape 3.2.0, 폰트 = npm pretendard 1.3.9의 Pretendard-Bold/Medium.ttf를 pd700/pd500.ttf로.
+6. **push 상태:** 커밋은 로컬 브랜치 `cloud/r1-remake-1003`에만 있다. `git push`가 권한 거부(HTTP 403, 이 조직에서 Claude GitHub 앱 접근 없음)로 실패했다. 네트워크 오류가 아니라서 재시도하지 않았다. GitHub 연결(https://claude.ai/connect-github, 저장소에 Claude GitHub 앱 설치)을 고친 뒤 다시 push해야 한다.
 5. 새 부품(Tally*)은 RULES 6-3대로 `loop/parts.md`에 한 줄 적어 주면 된다(공용 문서라 이 브랜치에서는 안 건드림).

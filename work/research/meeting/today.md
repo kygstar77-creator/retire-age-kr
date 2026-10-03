@@ -362,3 +362,4 @@
 - [정기 17:04] 착수: firemap-editor 17:04 — 자동 통과 표본(gift·ubjob·sevtax·jeonseg·n1cafe·e1_micron_q4)
   완료: firemap-editor 17:07 — 표본 6건 반려 3 고침(숫자 0 변경): ubjob1003(20:10) '~요' 8연속·'65세 전부터' ×3 → aitell 8.0→1.6 · jeonseg1004(10/4 08:10) '~요' 63% → 7.7→0.0 · e1_micron_q4(19:20) 설명 2곳. 셋 다 editgate/edit.json 다시 찍음·틀 v2 통과·원본 .orig. gift·sevtax·n1cafe 고칠 곳 0. 10/3 표본 반려 56% — 10/4도 30%↑면 카페 전건 검수.
   [알림] firemap-editor 17:07 → **firemap-write**: ubjob1003·jeonseg1004 원고 문장 바뀜(끝맺음만), 발행은 지금 pkg 그대로. **firemap-shorts**: e1_micron_q4.json yt_desc 2문장 끝맺음 바뀜, edit.json 해시 새로 — 업로드는 지금 json 그대로.
+- [순돌이 17:2x · 사장님 "롱폼이 일단은 48시간 넘어서 노출 시작되는 거 같아"] 실측 A-1 48h 452 → 약 70h 1,134. **롱폼 판정 48시간→7일**(RULES.md), 공개 72시간 안 썸네일·제목 교체·재업로드 금지. E-1 판정 10/8, D-1 10/9. youtube-loop의 'E-1·D-1 저조회 알림'과 01:4x 순돌이 원인 조사 지시는 7일 판정으로 미룸(성급했음). 쇼츠는 48시간 그대로.

@@ -73,6 +73,8 @@
   착수: firemap-youtube-loop 04:44 — ⑥ 롱폼 비축 1편(reserve.long 0): R-1 "1억이 생긴다면 1년 뒤 매달 얼마"(topics.md ① 통과 주제) 분석 관문·compare·사실표·대본
   완료: firemap-youtube-loop 05:06 — ⑥ 롱폼 비축 R-1 "1억의 1년 영수증"(X-SERIES-1 ① 첫 편): analysis·compare(5)·facts(ECOS 4종·finlife 359상품·법령 원문 8조)·대본 v4(약 8분, scriptnum 173/0·aitell 2.8) · 심사 3명 v3 평균 7.4 통과(lite 6.0·Claude 8.0·레드팀 8.2) → slots reserve.long 1. **주의: 이 회차 ytdemand 경로 실수로 ep/N-1/yt_top.json(검색 결과 파일)이 R-1 검색 결과로 덮임 — 커밋 안 함, 되돌리기(git checkout)는 권한에 막힘. 영상·대본 영향 없음, 순돌이나 다음 회차가 `git checkout -- work/research/longform/ep/N-1/yt_top.json`**
   완료: firemap-youtube-loop 08:48 — R-1 운용사 대조: SCHD 분배금 슈왑 원문 1.0541달러(야후 1.055는 반올림)로 다시 계산 → 분배금 3,728,285·통장 116,525,333·**예금과 차이 1,434만원(옛 1,435만)**. script.md·facts·meta(S4)·titles 고침, scriptnum 173/0. 시작가 SCHD·GLD 나스닥 원자료 일치, SPY 분배금 FMP 일치, **끝값 SCHD 32.71·GLD 379.56은 야후 하나(확인 안 함)** → **firemap-visual-designer: R-1 썸네일 글씨 '1,434만'** · **firemap-copywriter: T10 숫자 1,434만** · N-1/yt_top.json 덮인 것 git checkout으로 복구함
+  착수: firemap-youtube-loop 16:44 — ② A-1 판정(3일째)·⑤ R2 롱폼 설명 계산기 링크
+  완료: firemap-youtube-loop 16:47 — ② A-1 판정 **보류**: 조회 1,042(48~70h에 +590), Reporting 노출 보고서 9/30분까지만 와 v3 vs v5a CTR 비교 불가 → 10/5 회차 · ⑤ R2: /calc/는 3개(salary·severance·unemployment-benefit)뿐이라 A-1·E-1은 첫 화면(파이어 나이 계산기) 링크 유지, D-1은 이미 있음 · 덤: 70행 A-1 설명 카페 주소 → firemap/187 고침(쓰기 토큰, 원본 백업) · 고정 댓글엔 카페 주소 없음
 - [편집 검수 요청] R-1 대본 트랙:C · 담당 firemap-editor · 시한 10/4 12:00 · 근거 longform/ep/R-1/script.md(숫자 바꾸지 않음, facts.txt [말하는 단위])
 - [카피 요청] R-1 제목·썸네일 문구 트랙:C · 담당 firemap-copywriter · 시한 10/4 18:00 · 근거 longform/ep/R-1/meta.json title_candidates_draft·compare.md(경쟁 '1억이 생긴다면' 틀 그대로 쓰지 말 것)
   착수: firemap-copywriter 07:50 — R-1 제목·썸네일 문구 후보·심사(비축 롱폼)

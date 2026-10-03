@@ -53,8 +53,8 @@
  },
  "first3s": "F1 '1년 전 1억을 예금에 넣은 사람, 지금 통장엔 1억 218만원이 있어요. 다른 셋은요?' (대본 v4 첫 줄과 바꿀지는 youtube-loop 판단)",
  "title_by": "firemap-copywriter 2026-10-03 07:53",
- "todo_pd": "화면 끝(2026-10-03 10:32, R1.tsx·r1props.py, 스틸 video/out/r1_stills_1027·fix2 검사·겹침 16곳 고침). 남은 것: 썸네일 확정됨 thumb_r1p.png(visual 12:23, 조건부) → TTS(E-2·N-1 다음 차례, 한 모델·Charon): py -3.12 work/lfvoice.py make work/research/longform/ep/R-1 → readback·clickscan → py -3.12 work/research/longform/ep/R-1/r1props.py → chapters.py → 렌더 r1.mp4 → deess·motioncheck → 설명란(description_must)·5문항 → ytlong gate → 예약. 녹음 전 SCHD·GLD 10/2 끝값 두 번째 출처 재확인(facts [11])",
- "thumb": "thumb_r1p.png",
+ "todo_pd": "화면 끝(2026-10-03 10:32, R1.tsx·r1props.py, 스틸 video/out/r1_stills_1027·fix2 검사·겹침 16곳 고침). 남은 것: 썸네일 확정됨 thumb_r1v.png(visual 12:23, 조건부) → TTS(E-2·N-1 다음 차례, 한 모델·Charon): py -3.12 work/lfvoice.py make work/research/longform/ep/R-1 → readback·clickscan → py -3.12 work/research/longform/ep/R-1/r1props.py → chapters.py → 렌더 r1.mp4 → deess·motioncheck → 설명란(description_must)·5문항 → ytlong gate → 예약. 녹음 전 SCHD·GLD 10/2 끝값 두 번째 출처 재확인(facts [11])",
+ "thumb": "thumb_r1v.png",
  "thumb_status": "확정(조건부) 10/3 12:23 평균 7.50(lite 표시) · 48h 교체 thumb_r1r.png · 조건 thumb_meta.json conditions",
  "title_candidates_retired_20261003": [
   {

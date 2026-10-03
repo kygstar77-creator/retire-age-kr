@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;font:500 22px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#111214'></div>
+<div class='t' style='left:40px;top:28px;font-size:92px;color:#fff'>같은 1억, 1년 뒤</div>
+<div style='position:absolute;left:40px;top:186px;width:10px;height:400px;background:#fff'></div>
+<div class='lab' style='left:72px;top:190px;font-size:58px;color:#C9CDD3'>예금 이자(세후)</div>
+<div class='t' style='left:64px;top:312px;font-size:172px;color:#fff'>+218만</div>
+<div class='t' style='left:690px;top:186px;font-size:92px;color:#2BD98C'>다른 셋은?</div>
+<div style='position:absolute;left:690px;top:312px;width:182px;height:262px;background:#1B2A23;border:5px solid #2BD98C;border-radius:16px'></div><div class='t' style='left:690px;width:182px;text-align:center;top:338px;font-size:150px;color:#2BD98C'>?</div><div class='t' style='left:690px;width:182px;text-align:center;top:506px;font-size:52px;color:#fff'>금</div><div style='position:absolute;left:886px;top:312px;width:182px;height:262px;background:#1B2A23;border:5px solid #2BD98C;border-radius:16px'></div><div class='t' style='left:886px;width:182px;text-align:center;top:338px;font-size:150px;color:#2BD98C'>?</div><div class='t' style='left:886px;width:182px;text-align:center;top:506px;font-size:40px;color:#fff'>S&P500</div><div style='position:absolute;left:1082px;top:312px;width:182px;height:262px;background:#1B2A23;border:5px solid #2BD98C;border-radius:16px'></div><div class='t' style='left:1082px;width:182px;text-align:center;top:338px;font-size:150px;color:#2BD98C'>?</div><div class='t' style='left:1082px;width:182px;text-align:center;top:506px;font-size:40px;color:#fff'>SCHD</div>
+<div class='fine' style='left:44px;top:654px;color:#8E939C'>2025.10→2026.10 과거 값 · 세금 뗀 뒤 · 미래 보장 아님</div>
+
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

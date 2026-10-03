@@ -20,28 +20,29 @@ num = lambda s: int(s.replace(',', ''))
 RC = {}
 for m in re.finditer(r'^\s+(SCHD|SPY|GLD|정기예금\(2025-10 신규 평균 2\.58%\)) \| ([\d,]+) \| ([\d,]+) \| ([\d,]+) \| ([\d,]+) \| ([\d,]+) \(\+([\d.]+)%\)', C2, re.M):
     k = 'DEP' if m[1].startswith('정기') else m[1]
-    RC[k] = dict(sell=num(m[2]), gain=num(m[3]), dist=num(m[4]), tax=num(m[5]), net=num(m[6]), pct=float(m[7]))
+    RC[k] = dict(sell=num(m[2]), gain=num(m[3]), dist=num(m[4]), tax=num(m[5]), net=num(m[6]), pct=float(m[7]))   # tax = 양도세 + 분배금 원천징수 15% [15]
+    RC[k]['wht'] = int(RC[k]['dist'] * 0.15); RC[k]['cgt'] = RC[k]['tax'] - RC[k]['wht']
 assert sorted(RC) == ['DEP', 'GLD', 'SCHD', 'SPY'], RC
 need('예금(2025-10 신규 평균 2.58%): 이자 2,580,000 · 세금 397,320 · 통장 102,182,680 (+2.18%)',
-     '금(GLD): 매도 103,451,047(차익 3,451,047) · 분배 0 · 양도세 209,229 · 통장 103,241,818 (+3.24%)',
-     'S&P500(SPY): 매도 111,215,966(차익 11,215,966) · 분배(세전) 1,095,716 · 양도세 1,917,512 · 통장 110,394,170 (+10.39%)',
-     'SCHD: 매도 115,701,341(차익 15,701,341) · 분배(세전) 3,728,285 · 양도세 2,904,294 · 통장 116,525,333 (+16.53%)')
-for k, line in [('DEP', (2580000, 397320, 102182680)), ('GLD', (3451047, 209229, 103241818)), ('SPY', (11215966, 1917512, 110394170)), ('SCHD', (15701341, 2904294, 116525333))]:
-    assert (RC[k]['gain'], RC[k]['tax'], RC[k]['net']) == line, k
+     '금(GLD): 매도 103,609,129(차익 3,609,129) · 분배 0 · 양도세 244,007 · 통장 103,365,122 (+3.37%)',
+     'S&P500(SPY): 매도 111,210,188(차익 11,210,188) · 분배(세전) 1,095,716 · 분배 원천징수 15% 164,357 · 양도세 1,916,240 · 통장 110,225,307 (+10.23%)',
+     'SCHD: 매도 115,728,578(차익 15,728,578) · 분배(세전) 3,728,285 · 분배 원천징수 15% 559,242(세후 3,169,043) · 양도세 2,910,286 · 통장 115,987,335 (+15.99%)')
+for k, line in [('DEP', (2580000, 0, 397320, 102182680)), ('GLD', (3609129, 0, 244007, 103365122)), ('SPY', (11210188, 164357, 1916240, 110225307)), ('SCHD', (15728578, 559242, 2910286, 115987335))]:
+    assert (RC[k]['gain'], RC[k]['wht'], RC[k]['cgt'], RC[k]['net']) == line, k
     assert abs(RC[k]['net'] - (100_000_000 + RC[k]['gain'] + RC[k]['dist'] - RC[k]['tax'])) <= 1, k     # 통장 = 원금 + 차익 + 분배 − 세금
 # 해외 양도세 = (차익 − 250만) × 22%, 원 미만 버림 [13]
-for k in ['SPY', 'SCHD', 'GLD']: cg = max(0, RC[k]['gain'] - 2_500_000); assert abs(RC[k]['tax'] - (int(cg * 0.20) + int(cg * 0.02))) <= 1, k
+for k in ['SPY', 'SCHD', 'GLD']: cg = max(0, RC[k]['gain'] - 2_500_000); assert abs(RC[k]['cgt'] - (int(cg * 0.20) + int(cg * 0.02))) <= 1, k
 assert RC['DEP']['tax'] == 397320 and int(2580000 * 0.14 / 10) * 10 + int(2580000 * 0.014 / 10) * 10 == 397320
 FX = (1406.0, 1359.6); need('2025-10-02 1,406.0원 → 2026-10-02 1,359.6원 (-3.30%)', '약 -330만원(3,300,142)')
 assert '환율 효과만 -3,300,142원' in C2; FXLOSS = 3300142
-USD = {'SPY': (669.22, 769.68, 15.01), 'SCHD': (27.34, 32.71, 19.65), 'GLD': (354.79, 379.56, 6.98)}
-need('SPY 669.22 → 769.68(+15.01%', 'SCHD 27.34 → 32.71(+19.65%)', 'GLD 354.79 → 379.56(+6.98%)')
+USD = {'SPY': (669.22, 769.64, 15.01), 'SCHD': (27.34, 32.72, 19.68), 'GLD': (354.79, 380.14, 7.15)}
+need('SPY 669.22 → 769.64(+15.01%)', 'SCHD 27.34 → 32.72(+19.68%)', 'GLD 354.79 → 380.14(+7.15%)')
 for k, (a, b, p) in USD.items(): assert abs((b / a - 1) * 100 - p) < 0.015, k   # 종가 표시는 소수 2자리라 0.01%p 차 허용
 PRE = {k: RC[k]['sell'] + RC[k]['dist'] for k in RC}; PRE['DEP'] = 102_580_000          # 세전(분배 포함)
 ORD = ['SCHD', 'SPY', 'GLD', 'DEP']
 assert sorted(PRE, key=lambda k: -PRE[k]) == ORD and sorted(RC, key=lambda k: -RC[k]['net']) == ORD
 GAP = (PRE['SCHD'] - PRE['DEP'], RC['SCHD']['net'] - RC['DEP']['net'])
-need('예금 vs SCHD 차이: 세전 16,849,626', '→ 통장 14,342,653'); assert GAP == (16849626, 14342653)
+need('예금 vs SCHD 차이: 세전 16,876,863', '→ 통장 13,804,655', '약 307만원 줄였다(3,072,208)'); assert GAP == (16876863, 13804655) and GAP[0] - GAP[1] == 3072208
 NAME = {'DEP': '예금', 'SPY': 'S&P500', 'SCHD': 'SCHD', 'GLD': '금'}
 
 # ── 금리선·공시 점(raw/collect_20261003.json) ──
@@ -71,6 +72,7 @@ assert round(1e7 / 0.0339 / 1e4) == 29499 and round(2e7 / 0.0339 / 1e4) == 58997
 
 SRC_ECOS = '한국은행 ECOS(121Y002 신규 정기예금 1년 · 731Y001 매매기준율 · 901Y009 소비자물가 · 722Y001 기준금리)'
 SRC_ETF = '거래소 종가·분배금(야후 파이낸스 집계, SPY는 FMP 교차 · SCHD 분배금 찰스슈왑 원문) · 원/달러 ECOS 731Y001'
+SRC_TREATY = '한미 조세조약 제12조(IRS Tax Treaty Table 1)'
 SRC_TAX = '소득세법 제94조·제103조·제104조·제129조 · 지방세법 제103조의3·제103조의13 (법제처 원문)'
 SRC_FL = '금융감독원 금융상품통합비교공시(2026-09 공시, 12개월 정기예금 기본금리)'
 SRC_TH = '예금자보호법 제32조·시행령 제18조 · 소득세법 제14조 · 국민건강보험법 시행규칙 제44조 (법제처 원문)'
@@ -90,23 +92,23 @@ SPEC = [
                             data={'a': FX[0], 'b': FX[1], 'pct': -3.30, 'loss': FXLOSS, 'names': ['S&P500', 'SCHD', '금'],
                                   'at': [0, L('1,406원'), L('제자리였어도'), L('환전 수수료')]})),
     ('sp:receipt', lambda L: dict(kind='receipt2', rail=3, title='S&P500 영수증', sub='SPY · 달러 기준 +15.01% · 원화로 계산', source=SRC_ETF,
-                                  data={'head': 'S&P500 ETF(SPY) · 1억', 'usd': USD['SPY'], 'sell': RC['SPY']['sell'], 'gain': RC['SPY']['gain'], 'dist': RC['SPY']['dist'], 'n': 4,
-                                        'at': [0, L('1억 1,122만원')]})),
+                                  data={'head': 'S&P500 ETF(SPY) · 1억', 'usd': USD['SPY'], 'sell': RC['SPY']['sell'], 'gain': RC['SPY']['gain'], 'dist': RC['SPY']['dist'], 'wht': RC['SPY']['wht'], 'n': 4,
+                                        'at': [0, L('1억 1,121만원')]})),
     ('sp:tax', lambda L: dict(kind='taxcalc', rail=3, title='해외 ETF 차익에 붙는 세금', sub='원 · 다른 양도차익이 없다고 가정', source=SRC_TAX,
-                              data={'gain': RC['SPY']['gain'], 'ded': 2500000, 'rate': 22, 'tax': RC['SPY']['tax'], 'at': [0, L('소득세 20%'), L('다른 데서')]})),
-    ('sp:cal', lambda L: dict(kind='calendar', rail=3, title='이 세금은 다음 해 5월에', sub='양도소득세 확정신고 · 분배금 세금 줄은 비움', source=SRC_TAX + ' · ' + SRC_ETF.split(' · ')[0],
-                              data={'net': RC['SPY']['net'], 'pct': RC['SPY']['pct'], 'tax': RC['SPY']['tax'], 'at': [0, L('그래서 팔고'), L('분배금에 붙는'), L('운용 보수')]})),
-    ('sg:duo', lambda L: dict(kind='duo', rail=3, title='SCHD와 금 — 같은 계산', sub='원 · 세금 뒤 = 매도 + 분배금(세전) − 양도세', source=SRC_ETF,
-                              data={'L': ['SCHD · 1억', [['매도', RC['SCHD']['sell']], ['분배금(세전)', RC['SCHD']['dist']], ['양도세', -RC['SCHD']['tax']]], RC['SCHD']['net'], RC['SCHD']['pct']],
-                                    'R': ['금 ETF(GLD) · 1억', [['매도', RC['GLD']['sell']], ['분배금', 0], ['양도세', -RC['GLD']['tax']]], RC['GLD']['net'], RC['GLD']['pct']],
-                                    'at': [0, L('1억 1,570만원')]})),
+                              data={'gain': RC['SPY']['gain'], 'ded': 2500000, 'rate': 22, 'tax': RC['SPY']['cgt'], 'at': [0, L('소득세 20%'), L('다른 데서')]})),
+    ('sp:cal', lambda L: dict(kind='calendar', rail=3, title='이 세금은 다음 해 5월에', sub='양도소득세 확정신고 · 분배금은 미국에서 15% 원천징수', source=SRC_TAX + ' · ' + SRC_TREATY,
+                              data={'net': RC['SPY']['net'], 'pct': RC['SPY']['pct'], 'tax': RC['SPY']['cgt'], 'wht': RC['SPY']['wht'], 'at': [0, L('그래서 팔고'), L('분배금에는 세금이'), L('운용 보수')]})),
+    ('sg:duo', lambda L: dict(kind='duo', rail=3, title='SCHD와 금 — 같은 계산', sub='원 · 세금 뒤 = 매도 + 분배금 − 미국 원천징수 15% − 양도세', source=SRC_ETF + ' · ' + SRC_TREATY,
+                              data={'L': ['SCHD · 1억', [['매도', RC['SCHD']['sell']], ['분배금', RC['SCHD']['dist']], ['원천징수 15%', -RC['SCHD']['wht']], ['양도세', -RC['SCHD']['cgt']]], RC['SCHD']['net'], RC['SCHD']['pct']],
+                                    'R': ['금 ETF(GLD) · 1억', [['매도', RC['GLD']['sell']], ['분배금', 0], ['양도세', -RC['GLD']['cgt']]], RC['GLD']['net'], RC['GLD']['pct']],
+                                    'at': [0, L('1억 1,573만원')]})),
     ('sg:gold', lambda L: dict(kind='goldfx', rail=3, title='금은 환율이 주인공', sub='1억을 금 ETF(GLD)에 넣었다면 · 원', source=SRC_ETF,
                                data={'usdpct': USD['GLD'][2], 'fxpct': -3.30, 'gain': RC['GLD']['gain'],
-                                     'net': RC['GLD']['net'], 'tax': RC['GLD']['tax'], 'at': [0, L('원화로 바꾸면'), L('이 기간 GLD')]})),
+                                     'net': RC['GLD']['net'], 'tax': RC['GLD']['cgt'], 'at': [0, L('원화로 바꾸면'), L('이 기간 GLD')]})),
     ('rk:ranks', lambda L: dict(kind='ranks', rail=4, title='세금·환율을 떼면 순위가 바뀔까', sub='세전(분배금 포함) → 세금 뒤 통장 · 2025.10.2 하루에 넣은 경우', source=SRC_ETF + ' · ' + PAST,
                                 data={'L': [[NAME[k], PRE[k]] for k in ORD], 'R': [[NAME[k], RC[k]['net']] for k in ORD], 'at': [0, L('안 뒤집혔어요'), L('다만 이건')]})),
     ('rk:gap', lambda L: dict(kind='gapbars', rail=4, title='달라진 건 간격', sub='원 · 예금 vs SCHD', source=SRC_ETF + ' · ' + SRC_TAX.split(' · ')[0],
-                              data={'pre': [PRE['DEP'], PRE['SCHD']], 'net': [RC['DEP']['net'], RC['SCHD']['net']], 'gap': list(GAP), 'at': [0, L('세금 뒤에는'), L('251만원이')]})),
+                              data={'pre': [PRE['DEP'], PRE['SCHD']], 'net': [RC['DEP']['net'], RC['SCHD']['net']], 'gap': list(GAP), 'at': [0, L('세금 뒤에는'), L('307만원이')]})),
     ('now:line', lambda L: dict(kind='rateline', rail=5, title='은행 1년 정기예금 신규 금리', sub='% · 월 · 신규취급액 가중평균 · 2020.1~2026.8', source=SRC_ECOS,
                                 data={'s': DEPM, 'base': BASE, 'dots': [['202211', 4.95], ['202508', 2.51], ['202608', 3.39]], 'at': [0, L('기준금리가'), L('2022년 11월')]})),
     ('now:receipt', lambda L: dict(kind='receipt', rail=5, title='지금 1억을 1년 넣으면', sub='은행 1년 예금 2026년 8월 신규 평균 3.39%', source=SRC_ECOS.split(' · ')[0] + ') · ' + SRC_TAX.split(' · ')[0],

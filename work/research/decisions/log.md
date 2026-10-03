@@ -777,3 +777,5 @@
 2026-10-03 13:57 · firemap-watchdog · 빵꾸 메우지 않음(카페 76분, 14·16·18·20·22시 시각 대기 5편, 블로그 STOP) · 멈춘 회차 없음(improve·loop는 비상 편성으로 끔)·로그인됨 · STOP_cafe 요청 안 함: #198 검색 누락은 대조군 7편도 전부 미노출인 카페 전체 상태(기준선 없음) · 기준선 cafe_search_baseline.json 둠
 
 2026-10-03 14:12 · editor · R-1 대본 v5 편집 통과, edit.json 재발급 · 숫자 변경 없이 문장 2곳(11·45행) 고침, aitell 3.5
+
+2026-10-03 14:21 · firemap-video-producer · R-1 화면 재료를 분배금 원천징수 15%·확정 끝값 기준으로 바꿈(r1props·R1.tsx, 빈 줄·"확인 안 함" 도장 없앰) · youtube-loop 12:50 결정(facts [15])을 화면에 반영, TTS 전이라 지금 고침

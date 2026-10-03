@@ -35,7 +35,7 @@ const Txt: React.FC<{x: number; y: number; o?: number; size?: number; color?: st
   <div style={{...F, position: 'absolute', left: x, top: y, width: w, textAlign: align, opacity: o, fontWeight: weight, fontSize: size, color, whiteSpace: 'nowrap'}}>{children}</div>
 );
 
-// ───── 0. 여는 장면: 같은 높이 막대 4개 '1억' + 기준일 도장 → 물음표 → '세금이 간격 251만원 줄임' ─────
+// ───── 0. 여는 장면: 같은 높이 막대 4개 '1억' + 기준일 도장 → 물음표 → '세금이 간격 307만원 줄임' ─────
 const Open4: React.FC<S> = ({s}) => {
   const f = useCurrentFrame(); const d = s.data; const q = appear(f, A(s, 1)); const g = appear(f, A(s, 2)); const r = appear(f, A(s, 3));
   const X = 180, W = 180, GAP = 100, BASE = 800, H = 400;
@@ -52,7 +52,7 @@ const Open4: React.FC<S> = ({s}) => {
       })}
       <Stamp x={1330} y={210} o={appear(f, 18)} text="2025.10.2 → 2026.10.2" color={T.accent} size={34} />
       <Card x={1290} y={430} w={500} h={250} o={g} bg={T.ink}>
-        <div style={{...F, fontWeight: 700, fontSize: 28, color: T.dink3, padding: '26px 34px 0'}}>세금 하나가 줄인 간격</div>
+        <div style={{...F, fontWeight: 700, fontSize: 28, color: T.dink3, padding: '26px 34px 0'}}>세금이 줄인 간격</div>
         <div style={{...F, fontWeight: 700, fontSize: 74, color: T.daccent, padding: '6px 34px'}}>−{man(d.gap)}</div>
         <div style={{...F, fontWeight: 700, fontSize: 28, color: T.dink, padding: '0 34px'}}>예금 ↔ 1등 · 순위는?</div>
       </Card>
@@ -129,6 +129,7 @@ const Receipt2: React.FC<S> = ({s}) => {
       <ReceiptPaper x={330} y={230} w={860} head={d.head} lines={lines} o={appear(f, 6, 22)} size={38} />
       <Coins x={1340} y={640} n={d.n} f={f} start={c1 + 40} label={`분배금 ${d.n}번 +${n0(d.dist)}`} />
       <Txt x={1340} y={700} size={26} color={T.ink3} o={appear(f, c1 + 80)}>세전 · 분기마다 · 끝날 환율로 원화</Txt>
+      <Txt x={1340} y={750} size={34} color={T.rise} o={appear(f, c1 + 100)}>미국 원천징수 15% −{n0(d.wht)}</Txt>
     </P>
   );
 };
@@ -159,13 +160,13 @@ const TaxCalc: React.FC<S> = ({s}) => {
   );
 };
 
-// ───── 3c. 12달 달력(5월 확정신고) + 남는 돈 영수증, 분배금 세금 빈 줄, 보수 메모 ─────
+// ───── 3c. 12달 달력(5월 확정신고) + 남는 돈 영수증(양도세·분배금 원천징수), 보수 메모 ─────
 const Calendar: React.FC<S> = ({s}) => {
   const f = useCurrentFrame(); const d = s.data; const c1 = cue(s, 1), c2 = cue(s, 2), c3 = cue(s, 3);
   const may = appear(f, 30);
   const lines: RLine[] = [
     {label: '양도소득세(5월에 냄)', v: -d.tax, tone: 'tax', o: appear(f, c1)},
-    {label: '분배금 세금', text: '비워 둠', tone: 'blank', o: appear(f, c2)},
+    {label: '분배금 원천징수 15%', v: -d.wht, tone: 'tax', o: appear(f, c2)},
     {label: '세금 뒤', v: d.net, tone: 'net', o: appear(f, c2 + 40)},
   ];
   return (
@@ -180,8 +181,7 @@ const Calendar: React.FC<S> = ({s}) => {
       </Card>
       <Chip x={200} y={735} o={may} text="5월 · 직접 확정신고" color={T.accent} size={30} />
       <ReceiptPaper x={900} y={240} w={840} head="S&P500 · 세금 뒤" lines={lines} o={appear(f, c1 - 8, 18)} size={36} />
-      <Stamp x={1230} y={240 + 110 + 68 + 14} o={appear(f, c2 + 14)} text="확인 안 함" />
-      <Chip x={900} y={690} o={appear(f, c2 + 50)} text={`+${d.pct.toFixed(2)}% · 분배금 세금 뺀 채`} color={T.accent} size={30} />
+      <Chip x={900} y={690} o={appear(f, c2 + 50)} text={`+${d.pct.toFixed(2)}% · 세금 둘 다 뺀 뒤`} color={T.accent} size={30} />
       <Chip x={900} y={770} o={appear(f, c3)} text="운용 보수는 이미 가격에 들어가 있음" dark={false} size={28} />
     </P>
   );
@@ -192,18 +192,18 @@ const Duo: React.FC<S> = ({s}) => {
   const f = useCurrentFrame(); const d = s.data; const c1 = cue(s, 1, 60);
   const mk = (side: any, o0: number, step: number): RLine[] => [
     ...side[1].map((r: [string, number], i: number) => ({label: r[0], v: r[1], tone: r[1] < 0 ? 'tax' : 'in', o: appear(f, o0 + i * step)}) as RLine),
-    {label: '세금 뒤', v: side[2], tone: 'net', o: appear(f, o0 + 3 * step)}];
+    {label: '세금 뒤', v: side[2], tone: 'net', o: appear(f, o0 + side[1].length * step)}];
   return (
     <P s={s}>
-      <ReceiptPaper x={200} y={230} w={720} head={d.L[0]} lines={mk(d.L, 30, (c1 - 30) / 3)} o={appear(f, 6, 22)} size={34} />
-      <Chip x={220} y={720} o={appear(f, c1 + 30)} text={`+${d.L[3].toFixed(2)}% · 분배금 세금 빈 줄`} color={T.accent} size={30} />
+      <ReceiptPaper x={200} y={230} w={720} head={d.L[0]} lines={mk(d.L, 30, (c1 - 30) / d.L[1].length)} o={appear(f, 6, 22)} size={34} />
+      <Chip x={220} y={720} o={appear(f, c1 + 30)} text={`+${d.L[3].toFixed(2)}% · 세금 다 뺀 뒤`} color={T.accent} size={30} />
       <ReceiptPaper x={1020} y={230} w={720} head={d.R[0]} lines={mk(d.R, NEVER, 1)} o={appear(f, 16, 22)} dim={0.45} size={34} />
       <Txt x={1020} y={720} size={30} color={T.ink3} o={appear(f, 30)}>금 — 다음에 같은 계산</Txt>
     </P>
   );
 };
 
-// ───── 4b. 금: 달러로 +6.98% 올랐다 → 환율에 눌려 원화 차익 → 양도세 → 통장 ─────
+// ───── 4b. 금: 달러로 +7.15% 올랐다 → 환율에 눌려 원화 차익 → 양도세 → 통장 ─────
 const GoldFx: React.FC<S> = ({s}) => {
   const f = useCurrentFrame(); const d = s.data; const c1 = cue(s, 1, 40), c2 = cue(s, 2, 60);
   const BASE = 720, X = 360, W = 240, sc = 380 / d.usdpct;   // 높이 = %

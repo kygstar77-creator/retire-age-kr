@@ -1,5 +1,5 @@
 # 클라우드 세션 지시문 (사장님이 claude.ai/code 또는 앱 Code 탭에서 '클라우드'로 새 세션 → 저장소 kygstar77-creator/retire-age-kr → 아래 하나씩 붙여 넣기)
-크레딧 $250(11/5 16:59까지)에서 빠지고 PC 주간 사용량은 안 쓴다. 각 세션은 결과를 새 브랜치에 push하고 dev·main에는 직접 push하지 않는다. 스꾸(seukku)는 건드리지 않는다.
+크레딧 $250(11/5 16:59까지)에서 빠지고 PC 주간 사용량은 안 쓴다. 각 세션은 결과를 새 브랜치 `cloud/…`에 push하고 dev·main에는 직접 push하지 않는다. PC 쪽 work/cloudmerge.py가 발행 감시·카페 회차마다(하루 12번) 안전 검사 뒤 자동으로 dev에 합친다. 그러니 코드를 고쳤으면 work/tests/test_*.py에 테스트를 꼭 함께 넣는다. 스꾸(seukku)는 건드리지 않는다.
 
 ---
 

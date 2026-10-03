@@ -68,14 +68,15 @@ def main():
         # 후보 이름만으로 제목 흉내를 내 같은 판단 함수에 넣는다
         hits = np.same_subject_today(kind, cand + ' 기록')
         local = local_hits(kind, cand)
-        if hits:
-            raw, url, keys = hits[0]
-            print(f'  씀   {cand}  ← {raw[:52]}')
-            print(f'       {url}  (겹친 것: {", ".join(keys)})')
-        elif local:
-            title, url, why = local[0]
-            print(f'  씀   {cand}  ← {title[:52]}')
-            print(f'       {url}  ({why})')
+        # 2026-10-03 16시 write: 첫 겹침 하나만 찍어서 '정기예금 금리'가 애플 글(#77, 비교로 한 번 스침)로만 나왔고
+        # 같은 공시·같은 각도의 #139(9/28 "정기예금 금리, 길게 묶으면 더 줄까?")를 못 봤다 — 겹친 글을 전부(최대 6) 찍는다.
+        if hits or local:
+            print(f'  씀   {cand}  — 겹친 글 {len(hits) + len(local)}개')
+            for raw, url, keys in hits[:3]:
+                print(f'       ← {raw[:52]}  {url}  (겹친 것: {", ".join(keys)})')
+            seen = {h[1] for h in hits}
+            for title, url, why in [x for x in local if x[1] not in seen][:6]:
+                print(f'       ← {title[:52]}  {url}  ({why})')
         else:
             print(f'  새것 {cand}')
             fresh.append(cand)

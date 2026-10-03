@@ -1,109 +1,18 @@
 {
- "date": "2026-10-03",
+ "date": "2026-10-04",
  "runs": [
   {
    "hour": 8,
-   "ts": "08:42",
+   "ts": "08:29",
    "blog": {
     "title": null,
     "url": null
    },
    "cafe": {
-    "title": "서울 전세가율 높은 아파트, 매매가와 6600만원 차이 나는 곳도",
-    "url": "https://cafe.naver.com/firemap/198"
+    "title": "전세보증보험 가입조건 따져 보면 공시가격 2억 빌라는 전세 얼마까지?",
+    "url": "https://cafe.naver.com/firemap/205"
    },
-   "note": "verify OK 1542/1542자·사진 3/3 · 블로그는 감사 정지·하루 상한 정책으로 안 올림 · 교차검증은 10/2 관문(check_gpt/gemini/self) 그대로, 이번 회차 바뀐 건 utm·면책 두 줄뿐(aitell 0.0·readcheck 0) · 187·189 cafeedit 적용 · 개선: 없음(187 잠금 실패는 같은 회차 발행과 겹친 탓, 순서 문제)"
-  },
-  {
-   "hour": 10,
-   "ts": "10:31",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "인천 오피스텔 매매, 9월 신고 셋 중 하나는 한 건물 거래",
-    "url": "https://cafe.naver.com/firemap/199"
-   },
-   "note": "10:10 칸 offimkt_ic0929 발행 10:31·verify OK(1023/1023자·사진 4/4). 블로그는 감사 정지(STOP_blog). 22:10 칸 sevtax1003(퇴직금 세금 근속연수별) 관문 통과: 자료 소득세법 14·48·55·129조 원문(법령 API)+DB생명 계산 사례 검산+검색 3건, 교차검증: 제미나이 카피(flash 429→lite)·레드팀 사실 지적 8건 전부 반영, selfcheck 사실 0, readcheck 0, aitell 1.6. 개선: 플레이북에 '제목 후보는 aitell frame 먼저' 추가"
-  },
-  {
-   "hour": 12,
-   "ts": "12:36",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "국민연금 피부양자 탈락 기준, 재산 많으면 1천만원으로 반토막",
-    "url": "https://cafe.naver.com/firemap/200"
-   },
-   "note": "12:10 칸 pibu1003 발행 verify OK 1134/1134자 사진 3/3. 블로그는 감사 정지(발행 안 함). 자료조사·교차검증은 10/2 23:23 관문 회차에서 끝남(시행규칙 별표1의2 원문, selfcheck 사실 0). 발행 전 사진 1/3·표지 심사 없음으로 막혀 표 2장·3명 심사 추가. 개선: aitell frame에 사진 3장·표지 평균 검사."
-  },
-  {
-   "hour": 14,
-   "ts": "14:29",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "SCHD 배당금, 주가 크게 오른 1년 새 배당은 얼마나 늘었을까?",
-    "url": "https://cafe.naver.com/firemap/201"
-   },
-   "note": "14:10 칸 schd1003 발행 14:28·verify OK(1302/1302자·사진 3/3, 관문은 00:25·12:08 통과분). 블로그는 감사 정지·하루 상한으로 안 함. 새로 쓴 것: n1cafe1004(N-1 카페 긴 글, 10/4 20:10 칸) — 사실표 longform/ep/N-1/facts.txt(국세청 백분위 2024 귀속·가계금융복지조사 2025), 검증 경로 selfcheck(사실 0)·readcheck(제목 숫자 2개 유지)·aitell 1.5·레드팀 본문 대조 8건 반영, 제목 4차 심사 8.57(제미나이 lite 9.2·레드팀 8.5·작성자 8.0, flash 3종 429)·표지 3차 7.5. 이슈 레이더 후보 코카콜라 세후 배당은 카페 #87 중복이라 접음. #200 제목 수정은 cafeedit가 제목을 안 바꿔 보류(improve 몫). 개선: 없음(제목 바꾸기 경로는 improve 재개 뒤 요청)."
-  },
-  {
-   "hour": 16,
-   "ts": "16:25",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "사망자 계좌 정지 뒤 장례비, 유가족 통장 아닌 장례식장으로",
-    "url": "https://cafe.naver.com/firemap/202"
-   },
-   "note": "16:10 칸 deadfin1003 발행 16:2x·verify OK(1145/1145자·사진 3/3), 편집 통과 해시 일치(editor 12:07)·aitell 0.0·readcheck 0. 블로그는 발행 중지(STOP_blog). 10/4 08:10 칸: deposit1004(정기예금 금리) 쓰다가 카페 #139(9/28)와 같은 각도라 hold — dupcheck가 첫 겹침만 보여 줘 놓침. 대신 jeonseg1004(전세보증보험 가입조건, HUG 상품개요 원문 10/3 조회·검색 5,930) 작성. 자료조사: HUG 원문·파이낸셜뉴스·글로벌이코노믹 9/18 LH 반환보증·쿠키뉴스·네이트 5건. 개선: dupcheck.py가 겹친 글을 전부(최대 6) 찍게 고침."
-  },
-  {
-   "hour": 18,
-   "ts": "18:38",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "증여세 면제한도, 엄마가 먼저 쓰면 할머니가 준 1억 세금이 두 배",
-    "url": "https://cafe.naver.com/firemap/203"
-   },
-   "note": "18:10 칸 gift1003 18:30 발행·verify OK(1125/1125자·사진 3/3), 편집 통과 해시 일치. 블로그는 발행 중지 스위치(정상). 새로 씀: d1cafe1004(10/4 10:10 칸, D-1 롱폼 카페판) — 자료조사 웹검색 5건+법령 API(국민건강보험법 110조)+D-1 사실표, 검증 경로 selfcheck(사실 0)+제미나이 카피 2회+레드팀(사실 지적 8건 전부 반영), 제목 8.6·표지 8.33. 개선: 없음(관문 도구 그대로 썼음)."
-  },
-  {
-   "hour": 20,
-   "ts": "20:21",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "실업급여 조건, 65세 넘어 들어간 회사는 그만둬도 못 받는 이유",
-    "url": "https://cafe.naver.com/firemap/204"
-   },
-   "note": "20:10 칸 ubjob1003 20:20 발행·verify OK(1288/1288자·사진 3/3), 첫 시도는 낡은 check_read.txt(지적 1줄)로 거부 → readcheck 재실행 0건 후 재시도. 블로그는 STOP_blog(정상 거부). 개선: aitell frame에 '같은 날 카페 칸 쉼표 없는 제목 2편 이상'(10/4 칸부터, commaday 명령) — 10/3 0/8에서 걸림 확인 · readcheck가 영상 넣기 youtu.be 한 줄을 계획된 링크로(d1cafe1004 10:10 칸이 막힐 뻔). 10/4 jeonseg1004·d1cafe1004 제목 쉼표 없이 재심사(제미나이 lite·레드팀·작성자 7.83/8.0)·editgate 재도장. #200 제목 수정은 cafeedit가 본문만 바꿔 못 함."
-  },
-  {
-   "hour": 22,
-   "ts": "22:21",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "발행 0: 카페는 하루 8편 상한이라 22:10 칸을 원래 비움(slots note 생산 부족), 블로그는 감사 정지 스위치로 거부. 대기 pending의 cafe 3개는 모두 10/4 코너 시각 전. 사용량 96%(회의 21:34)라 발행 사슬 말고는 안 함 — selfloop·자료조사 생략. 개선: 없음"
+   "note": "08:10 칸 jeonseg1004 발행 08:28(jitter 6분), verify OK 1320/1320자·사진 3/3. 관문은 10/3에 통과(제목 7.83·editgate auto·aitell 0.0·utm·면책 있음). 블로그 0 — 하루 1편·15시 이후 시각 규칙, 색인 0 경보 유지. 새 글 0 — 주간 사용량 96%+(21:00 초기화)라 비축 카페 0/2는 생산 부족. 개선: 없음"
   }
  ]
 }

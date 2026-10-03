@@ -191,6 +191,14 @@
    "note": "회의 10/2 22:5x 배정: write 생산(편명은 관문 시작 때 item에 기입). 못 채우면 질 낮은 글로 메우지 말고 '생산 부족' 사유를 note에"
   },
   {
+   "at": "2026-10-04 12:20",
+   "kind": "shorts",
+   "item": "a1_spyi",
+   "owner": "firemap-shorts",
+   "gates_ok": null,
+   "note": "firemap-shorts 10/3 18:19: spec·compete 5·숫자 대조·카피 7↑ 끝, 표지 1초 시험 미통과(제미나이 6.5·A 6·B 5=5.83<7) → 고칠 것 cardshorts/a1_spyi/review.md · 기한 10/4 00:20 안에 재심사, 못 넘으면 reserve d1_kunbo로 대체"
+  },
+  {
    "at": "2026-10-04 19:30",
    "kind": "long",
    "item": "N-1",

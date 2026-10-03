@@ -13,6 +13,19 @@
     "url": "https://cafe.naver.com/firemap/198"
    },
    "note": "verify OK 1542/1542자·사진 3/3 · 블로그는 감사 정지·하루 상한 정책으로 안 올림 · 교차검증은 10/2 관문(check_gpt/gemini/self) 그대로, 이번 회차 바뀐 건 utm·면책 두 줄뿐(aitell 0.0·readcheck 0) · 187·189 cafeedit 적용 · 개선: 없음(187 잠금 실패는 같은 회차 발행과 겹친 탓, 순서 문제)"
+  },
+  {
+   "hour": 10,
+   "ts": "10:31",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "인천 오피스텔 매매, 9월 신고 셋 중 하나는 한 건물 거래",
+    "url": "https://cafe.naver.com/firemap/199"
+   },
+   "note": "10:10 칸 offimkt_ic0929 발행 10:31·verify OK(1023/1023자·사진 4/4). 블로그는 감사 정지(STOP_blog). 22:10 칸 sevtax1003(퇴직금 세금 근속연수별) 관문 통과: 자료 소득세법 14·48·55·129조 원문(법령 API)+DB생명 계산 사례 검산+검색 3건, 교차검증: 제미나이 카피(flash 429→lite)·레드팀 사실 지적 8건 전부 반영, selfcheck 사실 0, readcheck 0, aitell 1.6. 개선: 플레이북에 '제목 후보는 aitell frame 먼저' 추가"
   }
  ]
 }

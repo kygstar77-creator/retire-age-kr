@@ -9,7 +9,7 @@ import speechcompare_script as sc  # noqa: E402
 R1 = json.load(open(os.path.join(WORK, 'video', 'r1.json'), encoding='utf-8'))
 FACTS = open(os.path.join(EP, 'facts.txt'), encoding='utf-8').read()
 STILLS = sorted(glob.glob(os.path.join(EP, 'preview', 'stills', '*.png')))
-MOTION = {'open': 'bars', 'road': 'receipt', 'receipt': 'receipt', 'fx': 'count', 'bars': 'bars', 'count': 'count', 'zoom': 'zoom', 'logo': 'zoom'}
+MOTION = {'open': 'bars', 'road': 'receipt', 'receipt': 'receipt', 'fx': 'count', 'bars': 'bars', 'count': 'count', 'zoom': 'zoom', 'logo': 'zoom', 'end': 'zoom'}
 
 def test_props_built_from_v6_and_durations_from_chars():
     assert R1['script'] == 'script.v6.md' and R1['rate'] == 5.65
@@ -25,6 +25,13 @@ def test_props_built_from_v6_and_durations_from_chars():
 def test_every_scene_has_exactly_one_motion_kind():
     for s in R1['scenes']:
         assert s['kind'] in MOTION, s['kind']
+
+def test_no_calculator_scene_x_calc_vid():
+    """RULES '영상 본문에 계산기 장면 넣지 않기'(X-CALC-VID): 본문에 계산기 장면·'계산기에서 해 보세요' 말 없음"""
+    assert all('계산기' not in json.dumps([s['title'], s.get('sub'), s['data'], [l['text'] for l in s['lines']]], ensure_ascii=False) for s in R1['scenes'])
+
+def test_end_screen_slot_at_least_20s_and_last():
+    assert R1['scenes'][-1]['kind'] == 'end' and R1['scenes'][-1]['frames'] >= 20 * R1['fps']
 
 def test_no_cumulative_groups_in_bar_labels():
     for s in R1['scenes']:

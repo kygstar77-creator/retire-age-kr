@@ -91,7 +91,30 @@ const Bars: React.FC<{s: RScene}> = ({s}) => {
   return (
     <>
       <TallyBars bars={bars} x={x} y={400} w={w} h={330} max={d.max} labelSize={n > 4 ? 26 : 32} valueSize={n > 4 ? 30 : 38} />
+      {d.hline ? <HLine x={x} w={w} y={400 + 330 * (1 - d.hline[0] / d.max)} text={d.hline[1]} at={d.hline[2]} /> : null}
       {note ? <Note text={note[0]} at={note[1]} x={120} y={n > 4 ? 400 : 560} size={n > 4 ? 30 : 36} color={T.ink2} /> : null}
+    </>
+  );
+};
+
+// 막대 위 가로 점선(기준값) — 이름은 막대 묶음 왼쪽에
+const HLine: React.FC<{x: number; w: number; y: number; text: string; at: number}> = ({x, w, y, text, at}) => {
+  const f = useCurrentFrame(); const o = fade(f, at);
+  return (
+    <>
+      <div style={{position: 'absolute', left: x - 20, width: w + 40, top: y, borderTop: `4px dashed ${T.rise}`, opacity: o}} />
+      <div style={{...F, position: 'absolute', left: 120, top: y - 22, fontWeight: 700, fontSize: 30, color: T.rise, opacity: o, whiteSpace: 'nowrap'}}>{text}</div>
+    </>
+  );
+};
+
+// 끝 화면: 마지막 20초 이상. 오른쪽 위·가운데에 유튜브 끝 화면 요소(다음 영상·구독) 자리를 비워 둔다(글자 없음, 오른쪽 아래 금지 구역 밖)
+const End: React.FC<{s: RScene}> = ({s}) => {
+  const d = s.data; const f = useCurrentFrame(); const o = fade(f, 0, 14);
+  return (
+    <>
+      <TallyZoom text={d.text} start={d.start} x={120} y={430} size={150} label={d.label} note={d.note} />
+      <div style={{position: 'absolute', left: 1000, top: 340, width: 800, height: 450, borderRadius: 20, border: `3px dashed ${T.line}`, opacity: o}} />
     </>
   );
 };
@@ -145,6 +168,7 @@ const Body: React.FC<{s: RScene}> = ({s}) => {
     case 'bars': return <Bars s={s} />;
     case 'count': return <Count s={s} />;
     case 'zoom': return <Zoom s={s} />;
+    case 'end': return <End s={s} />;
     default: return null;
   }
 };

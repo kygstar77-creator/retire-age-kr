@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 EP = os.path.dirname(os.path.abspath(__file__))
 R = os.path.normpath(os.path.join(EP, '..', '..', '..'))          # work/research
 FONT = os.path.normpath(os.path.join(R, '..', 'video', 'node_modules', 'pretendard', 'dist', 'public', 'static', 'alternative', 'Pretendard-Bold.ttf'))
-OUR = ['00_open', '03_dep', '06_spytax', '10_rank', '15_posted', '17_thresh']
+OUR = ['00_open', '03_dep', '06_spytax', '10_rank', '17_case', '20_end']
 TOP3 = [('jSP16zTrEHY', '수페TV', 403909), ('IDwH4f-xA1g', '싱글파이어', 355077), ('rui4_d-5DvU', '수페TV', 325247)]   # study/2026-10-01.json views
 
 def font(n):

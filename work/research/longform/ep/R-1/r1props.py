@@ -105,7 +105,8 @@ CUTS = [('open', '0.', None), ('road', '0.', '오늘 순서는'), ('logo', '로�
         ('spy', '3.', None), ('spytax', '3.', '자, 이제 세금이에요'), ('spycal', '3.', '그런데 이 세금은 좀 특이해요'),
         ('schd', '4.', None), ('gold', '5.', None), ('rank', '6.', None), ('gap', '6.', '그럼 세금은 아무것도'), ('mine', '6-1.', None),
         ('rate', '7.', None), ('now', '7.', '그럼 지금 평균 금리로'), ('posted', '7.', '이번엔 은행들이 내건'),
-        ('cpi', '8.', None), ('thresh', '9.', None), ('sum', '10.', None), ('cta', '10.', '이제 여러분 차례예요')]
+        ('cpi', '8.', None), ('case', '8-1.', None), ('thresh', '9.', None), ('sum', '10.', None), ('end', '10.', '이제 여러분 차례예요')]
+END_MIN = 20 * FPS   # 끝 화면(엔드 스크린) 자리는 마지막 20초 이상 — YouTube 도움말 '동영상 마지막 5~20초에 추가'(검색 요약만 봄)
 
 
 def spec(key, L, A):
@@ -200,9 +201,17 @@ def spec(key, L, A):
         return dict(kind='receipt', title='정리 — 1억의 1년 영수증', sub='2025.10.2 → 2026.10.2 · 세금(이자·분배금·판 이익)과 환율을 다 뗀 뒤', source=SRC_ETF + ' · ' + PAST,
                     data={'head': '세금 뒤 통장', 'side': ['순위 그대로', A('순위는 그대로', 10), '세금은 간격만 줄였다'],
                           'rows': [[f'{NAME[k]}  {PCT[k]}', SAYNET[k], 'net' if k == 'SCHD' else 'in', A(['SCHD는', 'SPY는', '금은', '예금은'][i], 0)] for i, k in enumerate(ORD)]})
-    if key == 'cta':
-        return dict(kind='zoom', title='이 돈이면 은퇴가 몇 년 당겨질까', sub='설명란 링크 · firemap.kr 은퇴 나이 계산기', source='파이어맵 은퇴 나이 계산기',
-                    data={'text': '1억', 'card': '파이어맵 은퇴 나이 계산기', 'label': '계산기 자산 칸에 넣어 보기', 'note': '내 은퇴 나이가 바로 나온다', 'start': A('궁금하시면', 0)})
+    if key == 'case':
+        need('A 1년 전 은행 평균 2.51% → 세전 2,510,000 · 세금 386,540 · 세후 2,123,460', 'C 은행 공시 최고 3.92% → 세전 3,920,000 · 세금 603,680 · 세후 3,316,320',
+             'E 2022-11 고점 4.95% → 세전 4,950,000 · 세금 762,300 · 세후 4,187,700', 'A -966,540 · B -222,060 · C +226,320')
+        return dict(kind='bars', title='같은 예금, 넣은 때와 고른 금리에 따라', sub='1억 · 1년 · 세금 뗀 이자 · 점선 = 지난 1년 물가만큼 필요한 돈 3,090,000원', source=SRC_RATE + ' · ' + SRC_FL + ' · 901Y009',
+                    data={'dir': 'v', 'max': 4_600_000, 'hline': [3_090_000, '물가만큼 3,090,000원', A('첫째는', 0)],
+                          'bars': [['작년 8월 평균 2.51%', 2_123_460, '2,123,460원', A('212만원', 0), 'ink'], ['지금 평균 3.39%', NOW['net'], won(NOW['net']) + '원', A('둘째는', 0), 'ink'],
+                                   ['은행 공시 최고 3.92%', 3_316_320, '3,316,320원', A('332만원', 0), 'ink'], ['가장 높던 달 4.95%', 4_187_700, '4,187,700원', A('419만원', 0), 'accent']],
+                          'note': ['넣은 때의 금리가 1년 결과를 정한다', A('발견이 하나', 0)]})
+    if key == 'end':
+        return dict(kind='end', title='다음 영수증은 2편에서', sub='1억의 1년 영수증 시리즈 · 재생목록에 차례대로', source=PAST,
+                    data={'text': '다음 편', 'label': '1억의 1년 영수증', 'note': '같은 규칙으로, 실제 그날 넣었다면', 'start': A('다음 편에서도', 0)})
     raise KeyError(key)
 
 
@@ -249,8 +258,9 @@ def main(script):
             return sum(x['frames'] for x in _o[:j]) + plus
         d = spec(key, L, A)
         frames = sum(x['frames'] for x in out) if out else 72
+        if key == 'end': frames = max(frames, END_MIN)
         scenes.append({'key': key, 'kind': d['kind'], 'title': d['title'], 'sub': d.get('sub'), 'source': d.get('source'),
-                       'chapter': None if ch in ('0.', '로고') else ('6장 · 덧붙임' if ch == '6-1.' else ch.rstrip('.') + '장'),
+                       'chapter': None if ch in ('0.', '로고') else (ch.replace('-1.', '장 · 덧붙임') if ch.endswith('-1.') else ch.rstrip('.') + '장'),
                        'data': d['data'], 'lines': out, 'frames': frames})
     missing = sum(1 for s in scenes for l in s['lines'] if not l['audio'])
     res = {'fps': FPS, 'scenes': scenes, 'missing': missing, 'script': script, 'rate': RATE}

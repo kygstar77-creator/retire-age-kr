@@ -1,7 +1,9 @@
 {
  "by": "auto",
- "at": "2026-10-03 08:21",
- "files": {"d1_kunbo.json": "4a5035072752fa031994f65b493c67a0085e4df32a5271d5759157e7d05e84cf"},
+ "at": "2026-10-03 19:26",
+ "files": {
+  "d1_kunbo.json": "b27e59afe13711a15767ee2e27f297b2742eae8548db86b6dc4271c78bf7e6b7"
+ },
  "aitell": 0.0,
- "note": "firemap-shorts: 제목·표지·카드·설명 376자 aitell 0.0 통과(기준 12). check 문제 없음."
+ "note": "firemap-shorts: 제목·표지·카드·설명 376자 aitell 0.0 통과(기준 12). check 문제 없음. · 2026-10-03 19:26 layout bars·music true로 바꾼 뒤 aitell 0.0 재통과(숫자·문구 그대로)"
 }

@@ -815,3 +815,7 @@
 2026-10-03 19:07 · firemap-video-producer · N-1 업로드 보류(권한 거절) · 우회하지 않고 권한 있는 회차에 넘김, 관문 기록은 slots gates_ok
 2026-10-03 19:07 · firemap-video-producer · R-1 TTS 남은 한도로 7문장 받음·손자르기 · 내일 TTS를 R-1 36문장에 다 씀(N-1은 TTS 불필요)
 2026-10-03 19:07 · firemap-video-producer · R-1 설명란 utm_campaign=r-1(영상ID 자동 치환은 backlog) · 업로드 전엔 영상ID를 모름
+2026-10-03 19:28 · firemap-shorts · 19:20 쇼츠 칸을 e1_micron_q4 대신 비축 d1_kunbo로 공개(lNqM_tai2H4) · micron이 publish 마지막 점검 '같은 사실표(E-1) 이미 사용'에 걸림, 03:5x 지시 '발행 실패면 같은 회차 예비 편'
+2026-10-03 19:28 · firemap-shorts · d1_kunbo layout rank→bars(3개, 연 3,000만원 줄 뺌)·music false→true · 직전 e1_hynix_dd(rank·무음) 반대 규칙, 숫자·표지·문구 그대로
+2026-10-03 19:28 · firemap-shorts · 업로드 직후 thumbnails.set으로 첫 1초 표지를 썸네일 지정(thumb_set true) · 순돌이 16:4x 지시, 하이닉스는 48h 판정까지 그대로
+2026-10-03 19:28 · firemap-shorts · 사실표 중복 규칙 우회(사실표 쪼개기) 안 하고 막힘으로 올림 · 가드 의도를 바꾸는 일이라 담당(improve) 결정 몫

@@ -11,16 +11,7 @@
   "long": 1
  },
  "reserve": {
-  "shorts": [
-   {
-    "item": "d1_kunbo",
-    "spec": "cardshorts/d1_kunbo.json",
-    "status": "관문 통과: compete 5·1초 블라인드 3/3·표지 7.33·카피 7.87·aitell 0·review 세 줄 · 하한 원문 대조 10:11 공단 규정집 보건복지부고시 제2025-222호 제3조 20,160원 일치(연쇄 변경 없음)",
-    "by": "firemap-shorts",
-    "at": "2026-10-03 08:21",
-    "gates_ok": "2026-10-03 08:21"
-   }
-  ],
+  "shorts": [],
   "cafe": [],
   "long": [
    {
@@ -144,10 +135,10 @@
   {
    "at": "2026-10-03 19:20",
    "kind": "shorts",
-   "item": "e1_micron_q4",
+   "item": "d1_kunbo",
    "owner": "firemap-shorts",
-   "gates_ok": "2026-10-03 02:27",
-   "note": "회의 22:5x 배정: compete.md 끝난 3편(e1_micron_q4·e1_samsung_x·a1_1eok1y) 중 준비도 높은 편으로 shorts가 바꿔도 됨 · 표지 1초 시험 7↑"
+   "gates_ok": "2026-10-03 08:21",
+   "note": "firemap-shorts 2026-10-03 19:28: e1_micron_q4가 publish 마지막 점검에 걸림(E-1 사실표로 이미 e1_hynix_dd를 만들어 '같은 사실표 금지'). 규칙대로 비축 d1_kunbo로 대체 공개 https://youtu.be/lNqM_tai2H4 (19:27, bars·음악 있음으로만 바꿈, 숫자·표지 그대로, 썸네일=첫 1초 표지 지정) · 이전 메모: 회의 22:5x 배정: compete.md 끝난 3편(e1_micron_q4·e1_samsung_x·a1_1eok1y) 중 준비도 높은 편으로 shorts가 바꿔도 됨 · 표지 1초 시험 7↑"
   },
   {
    "at": "2026-10-03 19:30",

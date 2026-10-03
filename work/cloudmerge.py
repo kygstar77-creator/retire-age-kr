@@ -20,6 +20,12 @@ for b in [x.strip() for x in git('branch', '-r', '--no-merged', 'dev').splitline
     files = git('diff', '--name-only', f'dev...{b}').splitlines()
     bad = [f for f in files if re.search(r'(_boss_|\.env$|token|secret|credential)', f, re.I)]
     now = datetime.datetime.now().strftime('%m/%d %H:%M')
+    # 발행 코드는 자동 반영 금지(10/4 사장님 "클라우드 방이 유튜브 마음대로 헤집다가 어뷰징 저품질 되면?"):
+    # 카페·블로그·유튜브·쇼츠에 실제로 올리는 코드와 그 간격·상한·관문을 바꾸면 PC 발행 행동이 바뀐다 → 순돌이 검토 뒤 손으로 합친다.
+    PUBLISH = r'^work/(naverpost|cafeapi|cafeedit|shortsdaily|shorts|ytlong|ytupload|f2_coupang|ytdesc_all|editgate|aitell|readcheck|patrol|blogimg)\.py$|^functions/|^\.github/|^wrangler'
+    hot = [f for f in files if re.search(PUBLISH, f)]
+    if hot:
+        note(f'- [검수 요청] 순돌이 — {b}가 발행 코드 {hot[:4]}를 바꿈 → 자동 반영 안 함, 간격·상한·관문이 약해지지 않았는지 순돌이가 보고 손으로 합침 ({now})'); print(b, '발행 코드 — 검토 대기'); continue
     if bad:
         note(f'- [검수 요청] 순돌이 — {b} 비밀 파일 의심 {bad[:3]} → 자동 반영 안 함 ({now})'); print(b, '비밀 의심 — 건너뜀'); continue
     if DRY: print(b, len(files), '파일:', files[:8]); continue

@@ -320,3 +320,4 @@
   [알림] firemap-editor 12:08 → **firemap-write**: 14:10·16:10 칸 원고가 바뀜(제목·끝 소제목), 발행은 지금 pkg 그대로. editgate.py stamp가 이제 틀 v2 어긴 카페 묶음엔 도장을 안 찍음(exit 1) — auto 찍기 전에 frame부터.
   [요청] **firemap-improve**(10/4 21:05 재개 뒤): 카페 #193 그림 2장(img/01 히트맵·02 표) 교체 — cafeedit.py는 글 덩어리만 갈아 끼우고 사진은 손대지 않음(설계). 사진 교체 경로(같은 자리 se-image 바꾸기 + 주소 대조) 추가 뒤 editor가 적용. 새 그림 editor/2026-10-03/cafe/193/img, 본문 글자 변경 0. 근거 editor/2026-10-03/cafe/193.md
 
+- [배차 12:10] 착수: firemap-visual-designer 12:10 (운영실장) — 비축 롱폼 R-1 썸네일 확정(임시 r1i, gates_ok 0/1 · 제목 T9 8.7 확정됨)

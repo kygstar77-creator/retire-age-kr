@@ -126,8 +126,12 @@ def publish(sp):
     if bad: print('올리지 않는다:'); [print('  -', b) for b in bad]; sys.exit(2)
     g = gate()
     if g and os.environ.get('SHORTS_FORCE') != '1': print('올리지 않는다:', g); sys.exit(3)
-    if spec.get('facts') in {r.get('facts') for r in log_rows()}:
-        print('올리지 않는다: 이 사실표로 이미 만든 쇼츠가 있다 —', spec['facts']); sys.exit(4)
+    # 같은 사실표라도 주인공(제목 첫 어절 — 종목·제도 이름)이 다르면 다른 편이다(10/3 순돌이 결정: 롱폼 E-1 사실표로 하이닉스·마이크론 각각).
+    # 같은 사실표 + 같은 주인공이거나, 한 사실표로 3편째면 막는다(재탕 방지는 그대로).
+    subj = lambda t: re.sub(r'[^\w가-힣]', '', (t or '').split()[0]) if t else ''
+    same = [r for r in log_rows() if r.get('facts') and r.get('facts') == spec.get('facts')]
+    if any(subj(r.get('title')) == subj(spec.get('yt_title')) for r in same) or len(same) >= 2:
+        print('올리지 않는다: 이 사실표로 같은 주인공 쇼츠가 있거나 이미 2편 —', spec['facts']); sys.exit(4)
     import cardshort, ytupload
     mp4 = os.path.splitext(sp)[0] + '.mp4'
     cardshort.build(spec, mp4)

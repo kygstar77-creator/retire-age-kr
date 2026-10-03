@@ -4,7 +4,9 @@
 c00.txt
 img/00.png
 c01.txt
+img/01.png
 c02.txt
 c03.txt
+img/02.png
 c04.txt
 c05.txt

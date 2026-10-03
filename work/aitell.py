@@ -151,6 +151,15 @@ def frame_check(pkg):
     heads = [ln.strip() for ln in text.splitlines() if re.match(r'\s*(##\s|■)', ln)]
     if not 3 <= len(heads) <= 5: bad.append(f'소제목 {len(heads)}개 — 3~5개로(##·■ 줄 기준)')
     if not any(FRAME_END.search(h) for h in heads[-2:]): bad.append('끝 FAQ·정리 소제목이 없다 — 마지막 두 소제목 안에 FAQ/자주 묻는/정리/요약')
+    # 10/03 12:2x write: 10/3 카페 칸 6개 중 5개가 사진 1~2장·표지 '평균:' 줄 없이 gates_ok를 받았다.
+    # naverpost는 발행 순간에야 막아(사진 3장·cover_review 평균 7) 12:10 칸이 그 자리에서 걸렸다 — 도장 찍을 때 미리 잡는다.
+    op = os.path.join(pkg, 'order.txt')
+    if os.path.exists(op):
+        n_img = sum(1 for ln in open(op, encoding='utf-8') if ln.strip().startswith('img/'))
+        if n_img < 3: bad.append(f'사진 {n_img}/3장 — naverpost가 발행을 막는다')
+    cr = os.path.join(pkg, 'cover_review.md')
+    avg = re.findall(r'평균\s*[:：]\s*([0-9.]+)', open(cr, encoding='utf-8').read()) if os.path.exists(cr) else []
+    if not avg or float(avg[-1]) < 7: bad.append('cover_review.md에 "평균: N"(3명, 7 이상) 줄이 없다 — naverpost가 발행을 막는다')
     tp = os.path.join(pkg, 'title.txt')
     if os.path.exists(tp):
         t = open(tp, encoding='utf-8').read().strip()

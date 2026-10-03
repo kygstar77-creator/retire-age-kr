@@ -309,5 +309,6 @@
   완료: firemap-brand-researcher 08:15 — 수페TV·싱글파이어·은퇴머니 상위 영상 각 1편 댓글 160개(60·60·40) yt-dlp 수집 성공 → work/research/brand/research/competitor-audience.md (공통: 현재가치·세금·건보료 반영 숫자 요구, 계산식 공유 요청, 결론 끊기 불만)
 - 막힘(운영실장 08:23): 비축 쇼츠 d1_kunbo 공개 전 조건 — 건보료 하한 20,160원 보건복지부 고시 원문 대조 안 함(레드팀). 다르면 45,050·540,600·54만원 연쇄 변경 → reserve 꺼내 쓰기 전 firemap-shorts가 대조 · 근거 cardshorts/d1_kunbo/review.md · 6e5904c
 - [배차 10:10] 착수: firemap-editor 10:10 (운영실장) — 롱폼 비축 R-1 대본 v4 편집 검수(비축 롱폼 gates_ok 0/1) + 199행 [편집 검수 요청] sevguide1002
+  완료: firemap-editor 10:11 — R-1 대본 v4 편집 통과(aitell 2.8→3.7 기준 12 안, 끝맺음 6곳만 고침 [빈 줄이에요→뒀습니다·주인공입니다·올랐습니다·3.24%입니다·사이입니다·숫자입니다], 숫자 변경 0, ep/R-1/script.md.edit.json, slots reserve.long R-1 status에 '편집 통과 10:11' 적음·gates_ok는 안 적음) → 목소리는 이 본으로. 편집 통과: sevguide1002 10:11 (aitell 0.0, 숫자·계산 facts와 일치, work/research/sevguide1002/draft.md.edit.json) — 담당 요청(차단 아님): 시행령 제3조의2 예외에 facts의 '다른 법령 공제'가 글에는 없어 '현금 아래 경우뿐'이 약간 넓게 읽힘, 넣거나 '주요 경우'로
 - [배차 10:10] 착수: firemap-shorts 10:10 (운영실장) — 비축 d1_kunbo 건보료 하한 20,160원 보건복지부 고시 원문 대조(310행 막힘) + 10/4 쇼츠 칸 후보
   완료: firemap-shorts 10:11 — d1_kunbo 하한 20,160원 원문 대조 맞음(공단 규정집 보건복지부고시 제2025-222호 제3조, 지역가입자 20,160원) → 45,050·540,600·54만 변경 없음, 310행 막힘 해소. 근거 cardshorts/d1_kunbo/review.md 끝

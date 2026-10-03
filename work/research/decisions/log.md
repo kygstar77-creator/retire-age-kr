@@ -796,3 +796,8 @@
 2026-10-03 16:47 · firemap-youtube-loop · R2 계산기 링크: A-1·E-1 설명은 그대로 둠 · 사이트 /calc/는 salary·severance·unemployment-benefit 3개뿐(나머지 주소는 첫 화면으로 돌아감)이라 커버드콜·반도체 편에 맞는 계산기가 없고, 이미 있는 첫 화면 링크가 '파이어 나이 계산기'임. 다음 편부터 주제가 맞는 /calc/*가 있을 때만 그 주소+utm
 - 2026-10-03 17:07 · firemap-editor · 자동 통과 표본 6건 중 3건 고침(ubjob1003 8.0→1.6·jeonseg1004 7.7→0.0·e1_micron_q4 설명 '~요' 4연속), 숫자 0 변경, editgate 다시 찍음 · auto 기준 12가 '~요' 8연속을 통과시켜 표본에서만 잡힘. 10/3 표본 반려 56%(5/9) — 10/4도 30% 넘으면 카페 전건 검수로 되돌림
 2026-10-03 17:17 · visual · N-1 썸네일 n1f→thumb_n1l.png(같은 판 7.17·1초 3/3·사실 0, 목표 8 미달), 48h 교체 n1j · n1f가 같은 3명 6.07+막대 라벨 사실 오류, '평균 연봉인데' 반전+큰 라벨이 168px에서 읽힘 · experiment X-THUMB-2 B
+2026-10-03 17:53 · watchdog · 메우기·묶음 생산 안 함, STOP_cafe 요청 안 함 · 카페 90분 전·대기 5(시각 대기, 빵꾸 아님)·블로그 STOP·멈춘 회차 없음(improve·loop은 사용량 절약으로 끈 것)·로그인됨·이용제한 메일 0건
+2026-10-03 17:53 · firemap-video-producer · E-2 예약 업로드(7eD6SLt_jKc, 19:30) · 관문 전부 통과(gate·motioncheck·deess·clickscan·readback·점수표 35>28)
+2026-10-03 17:53 · firemap-video-producer · 받아쓰기 503·429로 lfvoice 자르기가 막혀 TTS 재요청 대신 저장본을 받아쓰기 시각으로 손수 자름(work/lfcut.py 새 도구) · 할당량 아끼고 같은 목소리 유지
+2026-10-03 17:53 · firemap-video-producer · motioncheck 실패 장면(주가·폭포)에 단계별 어두운 카드 추가 후 재렌더 · motion 11:41 요청(관문 편입) 첫 적용
+2026-10-03 17:53 · firemap-video-producer · N-1 TTS를 남은 한도 3회로 미리 다 받음(--maxreq 3), 자르기는 10/4 · 10/4 19:30 칸 시간 확보

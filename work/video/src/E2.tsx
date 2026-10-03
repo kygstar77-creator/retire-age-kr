@@ -211,6 +211,7 @@ const WaterfallV: React.FC<S> = ({s}) => {
     <P s={s}>
       <Waterfall x={300} y={790} w={1200} h={480} steps={d.steps} p={o} tags={d.yoy} tagP={appear(f, A(s, 4))} />
       <Chip x={110} y={250} right o={appear(f, A(s, 3))} text={`영업비용 ${n0(d.opex[0])} → ${n0(d.opex[1])}`} size={34} />
+      {[1, 2].map((k) => <Chip key={k} x={300 + (k - 1) * 460} y={232} o={o[k]} text={`${d.steps[k][0]} ${n0(d.steps[k][1]).replace("-", "−")} · ${d.yoy[k]}`} size={30} />)}
     </P>
   );
 };
@@ -333,20 +334,18 @@ const Price5: React.FC<S> = ({s}) => {
         {dot(0, p.y5[1], `5년 전 $${p.y5[1].toFixed(2)}`, k2, T.ink2, 56, 'start')}
         {dot(p.i.peak, p.peak[1], `최고 $${p.peak[1]}`, k3, T.rise, -30)}
       </svg>
-      <Card x={1530} y={300} w={330} h={190} o={k3}>
-        <div style={{...F, fontWeight: 700, fontSize: 26, color: T.ink3, padding: '26px 30px 0'}}>최고 종가 대비 지금</div>
-        <div style={{...F, fontWeight: 700, fontSize: 76, color: T.fall, padding: '0 30px'}}>{p.from_peak}%</div></Card>
-      <Card x={1530} y={520} w={330} h={220} o={k4}>
-        <div style={{...F, fontWeight: 700, fontSize: 26, color: T.ink3, padding: '26px 30px 0'}}>5년 중 최대 낙폭</div>
-        <div style={{...F, fontWeight: 700, fontSize: 76, color: T.fall, padding: '0 30px'}}>{p.mdd.pct}%</div>
-        <div style={{...F, fontWeight: 500, fontSize: 22, color: T.ink2, padding: '0 30px'}}>{`${md(p.mdd.from)} → ${md(p.mdd.to)}`}</div></Card>
+      {[[k1, '9월 30일 종가', `$${p.last[1]}`, T.daccent, ''], [k2, '5년 전(분할 반영)', `$${p.y5[1].toFixed(2)}`, T.dink, ''],
+        [k3, '최고 종가 대비 지금', `${p.from_peak}%`, T.dfall, ''], [k4, '5년 중 최대 낙폭', `${p.mdd.pct}%`, T.dfall, `${md(p.mdd.from)} → ${md(p.mdd.to)}`]].map(([o, lab, val, c, sub]: any, i: number) =>
+        <Card key={i} x={1530} y={250 + i * 150} w={340} h={140} o={o} bg={T.ink}>
+          <div style={{...F, fontWeight: 700, fontSize: 22, color: T.dink3, padding: '18px 26px 0'}}>{lab}</div>
+          <div style={{...F, fontWeight: 700, fontSize: 52, color: c, padding: '0 26px', lineHeight: 1.15}}>{val}</div>{sub ? <div style={{...F, fontWeight: 500, fontSize: 20, color: T.dink3, padding: '0 26px'}}>{sub}</div> : null}</Card>)}
     </P>
   );
 };
 
 // ───── 9. 은퇴 나이 — 가정 카드 → 35세 막대 3 → 50세 막대 3 ─────
 const Age2: React.FC<S> = ({s}) => {
-  const f = useCurrentFrame(); const d = s.data; const base = 800; const y = scaleLinear().domain([0, 70]).range([0, 380]);
+  const f = useCurrentFrame(); const d = s.data; const base = 750; const y = scaleLinear().domain([0, 70]).range([0, 330]);
   const asm = appear(f, A(s, 1)) * (1 - appear(f, A(s, 2)));
   const g = (k: number) => ({first: appear(f, A(s, 2 + k * 2)), rest: appear(f, A(s, 3 + k * 2))});
   return (

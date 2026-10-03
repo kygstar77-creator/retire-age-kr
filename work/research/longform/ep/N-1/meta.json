@@ -71,5 +71,5 @@
   "q4_조언으로들리나": "아니오 — 상품·투자 권유 없음, 통계 위치만 보여 주고 끝 행동은 계산기에 내 연봉 넣기. 가구·개인 기준 차이와 중앙값 오차 단서를 말한다. 쿠팡 없음.",
   "q5_사람의몫": "예 — 경쟁 5편이 중앙값 하나로 말할 때 원자료 합계를 인원으로 나눠 100칸 평균을 다시 만든 계산, 연봉 줄과 순자산 줄에서 같은 사람 자리가 다르다는 관점, 1년 사이 위쪽 문턱만 움직였다는 비교."
  },
- "todo_pd": "E-2 다음, 오늘 남은 TTS 5회: py -3.12 work/lfvoice.py make work/research/longform/ep/N-1 --maxreq 5 (46문장, v3 편집본) → readback → clickscan → py -3.12 work/research/longform/ep/N-1/n1props.py → py -3.12 work/video/chapters.py work/video/n1.json work/research/longform/ep/N-1 → 렌더 n1.mp4 → deess n1_ds.mp4 → motioncheck → ytlong gate → up(10/4 19:30). 429로 남으면 10/4 16:05에 이어서(모델 안 바꿈)"
+ "todo_pd": "10/4 16:05 뒤(받아쓰기 한도 초기화): 목소리 46문장 TTS는 10/3 17:33에 --maxreq 3으로 다 받음(저장본 _raw 2개, 재요청 금지). 묶음 1(13문장)만 잘림 — 묶음 0(19)·2(14)는 `py -3.12 work/lfcut.py hear work/research/longform/ep/N-1 0 --maxreq 3` → 받아쓰기 시각·쉼 목록 보고 `lfcut.py cut … 0 <시작들> --maxreq 3` 확인 → --apply (묶음 2도 같게). 앞머리 영어 지시문(약 7~8초) 버림. 그다음 readback 전체(밀림 확인, 묶음 1 포함) → clickscan → n1props.py → chapters.py → 렌더 → deess → motioncheck(15초 정지 0) → 프레임 눈 검사 → compete.md·scorecard.md → ytlong gate → up(10/4 19:30)"
 }

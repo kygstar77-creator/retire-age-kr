@@ -1,9 +1,9 @@
 {
- "by": "auto",
- "at": "2026-10-03 02:27",
+ "by": "firemap-editor",
+ "at": "2026-10-03 17:07",
  "files": {
-  "e1_micron_q4.json": "432b6d10adfde72ec27795786e4d96369472fc3e9b8e4e4215fe56133cc1d1f8"
+  "e1_micron_q4.json": "63da5e7306ae81e7a8d1bac3a8f417c42e5b9840b7420eb7caf4c5803e58bd21"
  },
  "aitell": 0.0,
- "note": "firemap-shorts: 제목·카드·설명 250자 aitell 0.0 통과(기준 6). check 문제 없음(hynix 공개 뒤 가정)."
+ "note": "firemap-shorts: 제목·카드·설명 250자 aitell 0.0 통과(기준 6). check 문제 없음(hynix 공개 뒤 가정). · editor 17:07 표본: 설명 '~요' 4연속 중 2곳 습니다로(숫자 0 변경), 원본 .orig"
 }

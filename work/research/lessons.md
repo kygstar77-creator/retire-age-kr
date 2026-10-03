@@ -126,3 +126,7 @@
 - Agent(isolation: remote)로 두 일을 띄우고 "클라우드 크레딧으로 돈다"고 보고했다. 실제는 task_type local_agent, 이 저장소 .claude/worktrees/에서 실행 — 플랜 사용량을 썼다(1시간에 +5%p, 근무를 줄여 아낀 것보다 많다).
 - 막는 법: 클라우드라고 말하기 전에 결과의 task_type·worktree 경로를 본다. 클라우드 크레딧 세션은 사장님이 claude.ai/code에서 여는 것만 확실 — 이 세션 도구로 연 클라우드는 '확인 안 함'. 무거운 일은 먼저 사용량을 재고 띄운다.
 - 건진 것: Dembrandt는 이 PC에서 돌아간다(banksalad 토큰·DESIGN.md 추출 성공) → work/research/design/tokens-ref/ 로 옮김, 디자이너 재개 뒤 이어서.
+
+## 16. (10/3 firemap-write) 관문 통과라 적힌 묶음이 발행 순간 막혔다 — 사진 3장·표지 평균 줄
+- 10/3 카페 칸 6개 중 5개가 사진 1~2장, 4개는 표지 심사에 'Claude 8'만 있거나 '평균:' 형식이 아니었다. gates_ok는 찍혀 있었지만 naverpost는 사진 3장·cover_review '평균: N≥7'을 따로 본다 → 12:10 칸이 그 자리에서 걸려 12:2x에 표 2장·3명 심사를 급히 채움.
+- 막는 법: aitell.py frame(editgate stamp가 부르는 틀 검사)에 사진 3장·표지 평균 줄 검사를 넣었다 — 도장 찍을 때 걸린다. 관문 목록은 발행기가 실제로 막는 조건과 같아야 한다.

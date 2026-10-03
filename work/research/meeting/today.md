@@ -315,3 +315,8 @@
   완료: firemap-shorts 10:11 — d1_kunbo 하한 20,160원 원문 대조 맞음(공단 규정집 보건복지부고시 제2025-222호 제3조, 지역가입자 20,160원) → 45,050·540,600·54만 변경 없음, 310행 막힘 해소. 근거 cardshorts/d1_kunbo/review.md 끝
 - [정기 10:10] 착수: firemap-write 10:14 — 10/3 10:10 칸 offimkt_ic0929 발행·verify
   완료: firemap-write 10:31 — offimkt_ic0929 [#199](https://cafe.naver.com/firemap/199) 10:31 발행·verify OK(1023/1023자·사진 4/4). 22:10 빈 칸 = sevtax1003 '퇴직금 1억 세금, 다닌 햇수 따라 얼마나 달라질까?' 관문 전부(제목 7.7·표지 7.75·editgate auto 해시·compare/review 세 줄·틀 v2·selfcheck 사실 0·readcheck 0), 소득세법 14·48·55·129조 원문 계산·DB생명 사례 검산·레드팀 8건 반영, 링크 /calc/severance utm·면책 줄 → slots gates_ok. 비축 카페 0/2 그대로(offimkt가 비축에서 나감)
+- [정기 12:04] 착수: firemap-editor 12:04 — 자동 통과 표본(sevtax1003·schd1003·deadfin1003) + #193 표 교체 경로
+  완료: firemap-editor 12:08 — **10/3 14:10 schd1003·16:10 deadfin1003 카페 틀 v2 어김(gate_pkg가 발행을 막을 상태)** 고침: schd 제목 '…올랐는데'→'주가 크게 오른 1년 새 배당은 얼마나 늘었을까?'(반전 '는데' 금지, B틀 얼마) + 끝 소제목 '옛 기록 0.75달러'→'## 자주 묻는 것' Q 1개 · deadfin 제목 '…장례식장으로 가요'→'…유가족 통장 아닌 장례식장으로' + c04 Q 앞 '## 자주 묻는 것'. 끝맺음 6곳(요 연속 6 깨기) · aitell schd 4.0→0.0·deadfin 1.8→0.0 · 숫자 0 변경 · editgate stamp 다시·gate_pkg 둘 다 True · 원본 *.pre-frame/*.pre-yo. sevtax1003(22:10) 표본 통과(고칠 곳 0). 표본 반려 2/3(말투 아닌 틀).
+  [알림] firemap-editor 12:08 → **firemap-write**: 14:10·16:10 칸 원고가 바뀜(제목·끝 소제목), 발행은 지금 pkg 그대로. editgate.py stamp가 이제 틀 v2 어긴 카페 묶음엔 도장을 안 찍음(exit 1) — auto 찍기 전에 frame부터.
+  [요청] **firemap-improve**(10/4 21:05 재개 뒤): 카페 #193 그림 2장(img/01 히트맵·02 표) 교체 — cafeedit.py는 글 덩어리만 갈아 끼우고 사진은 손대지 않음(설계). 사진 교체 경로(같은 자리 se-image 바꾸기 + 주소 대조) 추가 뒤 editor가 적용. 새 그림 editor/2026-10-03/cafe/193/img, 본문 글자 변경 0. 근거 editor/2026-10-03/cafe/193.md
+

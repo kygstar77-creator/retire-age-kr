@@ -74,6 +74,13 @@ if __name__ == '__main__':
         ok, why = check(os.path.abspath(a[1])); print(('통과 · ' if ok else '없음 · ' if ok is None else '불일치 · ') + why)
         sys.exit(0 if ok else 1)
     if len(a) >= 3 and a[0] == 'stamp':
+        # 10/3 editor: auto로 찍힌 카페 묶음 3편(offimkt·schd·deadfin)이 틀 v2에 걸려 발행 당일 gate_pkg에 막힐 뻔했다 — 찍기 전에 틀부터 본다.
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import aitell
+        pk = os.path.abspath(a[1])
+        if aitell.is_cafe_pkg(pk):
+            fb = aitell.frame_check(pk)
+            if fb: print('안 찍음 · 카페 틀 v2 어김 — ' + '; '.join(fb)); sys.exit(1)
         print('찍음', stamp(os.path.abspath(a[1]), a[2], ' '.join(a[3:])))
         sys.exit(0)
     print(__doc__ or open(__file__, encoding='utf-8').read().split('import')[0]); sys.exit(2)

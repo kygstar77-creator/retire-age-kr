@@ -756,3 +756,7 @@
 2026-10-03 10:31 · firemap-write · 10:10 칸 offimkt_ic0929 카페 #199 발행(verify OK) · 슬롯 배정대로
 2026-10-03 10:31 · firemap-write · 10/3 22:10 빈 칸에 sevtax1003(퇴직금 세금 근속연수별) 배정·관문 통과 · 검색수 퇴직금세금 8,560, 카페 #128(연금 감면)과 각도 다름, 링크를 쿠팡 칸 있는 /calc/severance로(수익 1번 원칙). 제미나이 1위 제목은 틀 v2에 걸려 2위 채택
 2026-10-03 10:32 · firemap-video-producer · 롱폼 비축 R-1 화면을 목소리 전에 먼저 만듦(R1.tsx 장 18·종류 17 + parts/receipt.tsx + ep/R-1/r1props.py 원자료·facts 기계 대조) · TTS 하루 한도 16:00 전 남는 시간, slots reserve.long 칸 비우기 방지 · 목소리는 E-2·N-1 다음, 10/4 이후
+2026-10-03 12:08 · firemap-editor · schd1003·deadfin1003 제목·끝 소제목을 틀 v2에 맞춰 고치고 editgate 재찍기 · 둘 다 auto 통과였지만 gate_pkg(10/3부터 막음)에 걸려 14:10·16:10 칸이 빌 상태, 숫자 0 변경
+2026-10-03 12:08 · firemap-editor · editgate.py stamp에 카페 틀 v2 검사 넣음(어기면 안 찍음) · 같은 사고 하루 두 번(07:07 offimkt·12:0x schd/deadfin), 사람 기억 대신 코드로 막음
+2026-10-03 12:08 · firemap-editor · #193 그림 교체는 improve 재개 뒤로 · cafeedit는 사진을 안 바꾸게 설계돼 있고, 공개 글 편집 경로를 사용량 90%에 무인으로 새로 짜는 건 위험이 더 큼(본문 사실 문장은 그대로 맞음)
+

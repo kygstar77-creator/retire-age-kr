@@ -260,10 +260,12 @@ def build(ep):
             if os.path.exists(fn):
                 a, sr = read(fn); sp = speech_sec(a, sr); r = syl(say) / max(sp, 0.1)
                 meta = fn + '.json'; info = json.load(open(meta)) if os.path.exists(meta) else {}
-                if 'tempo' not in info: info = {'tempo': tempo(fn, r), 'rate_raw': round(r, 2)}; json.dump(info, open(meta, 'w'))
+                # 10/3 '목소리 한결같음' ③: 처음 build(= make 직후)에 녹음 날짜를 남긴다. 예전 파일은 날짜를 지어내지 않는다(lfrender 관문이 '확인 안 함'으로 적음).
+                if 'tempo' not in info: info = {'tempo': tempo(fn, r), 'rate_raw': round(r, 2), 'date': time.strftime('%Y-%m-%d')}; json.dump(info, open(meta, 'w'))
                 a, sr = read(fn); sec = len(a) / sr; sp = speech_sec(a, sr)
                 rec.update({'audio': f"audio/{os.path.basename(aud_dir(ep))}/{h}.wav", 'sec': round(sec, 2), 'frames': int(sec * FPS + 0.999) + GAP_F,
                             'rate': round(syl(say) / max(sp, 0.1), 2), 'tempo': info['tempo'], 'f0': round(f0(a, sr), 1)}); done += 1
+                if info.get('date'): rec['date'] = info['date']
             else: miss += 1
             out.append(rec)
         s['lines'] = out; s['frames'] = sum(l.get('frames', 0) for l in out) + (SEC_F if out else 0)
@@ -290,7 +292,10 @@ def check(ep, vj=None):
     whole = tsyl / max(tot, 0.1); rates = [r[2] for r in rows]
     print(f'문장 {len(rows)} · 음높이 중앙 {fm:.0f}Hz · 문장 속도 중앙 {np.median(rates):.2f}(최저 {min(rates):.2f}) · 편 전체 {whole:.2f}음절/초(목표 5.5 이상)')
     print('튀는 문장', len(bad), *bad[:40], sep='\n  ')
-    ok = whole >= 5.5 and not bad and not d.get('missing')
+    # 10/3 '목소리 한결같음': f0 ±12%·tempo 1.0·한 날 녹음(voice.json 기록 기준) — work/lfrender.py voice_check
+    import lfrender
+    v_ok, vres = lfrender.voice_check(d); lfrender.print_voice(vres, v_ok)
+    ok = whole >= 5.5 and not bad and not d.get('missing') and v_ok
     print('통과' if ok else '막힘'); return ok
 
 def cutat(ep, gi, times, maxreq=9):

@@ -34,8 +34,10 @@ def hear(pcm):
     body = {'contents': [{'parts': [{'inlineData': {'mimeType': 'audio/wav', 'data': base64.b64encode(buf.getvalue()).decode()}},
             {'text': 'Transcribe this audio verbatim (it may begin with English words), one sentence per line, each line starting with its start time in seconds like [12.3].'}]}],
             'generationConfig': {'temperature': 0}}
-    for t in range(6):
-        for m in V.ALIGN_MODELS:
+    # LFCUT_MODELS=모델1,모델2 — flash 받아쓰기 하루 한도 429일 때 lite로 시각만 받는다(목소리 모델 아님, 규칙 1과 무관). 10/3 PD
+    ms = [x for x in os.environ.get('LFCUT_MODELS', '').split(',') if x] or V.ALIGN_MODELS
+    for t in range(6 if ms is V.ALIGN_MODELS else 2):
+        for m in ms:
             try:
                 r = json.load(urllib.request.urlopen(urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={V.key()}",
                     data=json.dumps(body).encode(), headers={'Content-Type': 'application/json'}), timeout=180))

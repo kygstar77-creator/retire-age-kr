@@ -453,11 +453,16 @@ def readback(ep, only=None):
                 votes += [h2, tx(fn, 'gemini-3.1-flash-lite')]; models += [m2, 'gemini-3.1-flash-lite']
             wrong = sum(1 for h in votes if h is not None and miss(h))
             slow = est(l['say']) / max(l['sec'] / (l.get('tempo') or 1), 0.1) < 3.6      # 대본보다 훨씬 김 = 지시문 앞머리 의심
-            flag = ('숫자 ' if wrong >= 2 else '') + ('길이 ' if slow else '') + ('받아쓰기 실패' if h1 is None else '')
-            out.append({'at': f'{si}:{li}', 'text': l['text'], 'heard': votes, 'models': models, 'flag': flag.strip()})
+            # 글자 일치율(한글만, 숫자·띄어쓰기 뺌) — 숫자만 보면 앞뒤 문장이 한 칸 밀려도 못 잡는다(10/3 PD N-1 손자르기에서 발견)
+            import difflib
+            hg = lambda x: re.sub(r'[^가-힣]', '', x or '')
+            sim = max((difflib.SequenceMatcher(None, hg(l['say']), hg(h)).ratio() for h in votes if h), default=0)
+            shift = h1 is not None and sim < 0.75
+            flag = ('숫자 ' if wrong >= 2 else '') + ('길이 ' if slow else '') + (f'밀림의심({sim:.2f}) ' if shift else '') + ('받아쓰기 실패' if h1 is None else '')
+            out.append({'at': f'{si}:{li}', 'text': l['text'], 'heard': votes, 'models': models, 'sim': round(sim, 2), 'flag': flag.strip()})
             if flag.strip(): bad.append(f'{si}:{li} {flag.strip()} | {l["text"][:30]} | 들림 {votes[-1] and votes[-1][:40]}')
             time.sleep(1)
-    json.dump(out, open(os.path.join(ep, 'check', 'voice_readback.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    json.dump(out, open(os.path.join(ep, 'check', 'voice_readback' + ('_part' if only else '') + '.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(f'받아쓰기 대조 {len(out)}문장 · 걸린 문장 {len(bad)}'); [print('  ' + b) for b in bad]
     return not bad
 

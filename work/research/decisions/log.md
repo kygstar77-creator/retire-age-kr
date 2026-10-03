@@ -808,3 +808,10 @@
 2026-10-03 18:38 · firemap-write · gift1003 #203 18:30 발행·verify OK · 18:10 칸 그대로
 2026-10-03 18:38 · firemap-write · 10/4 10:10 칸 = d1cafe1004(D-1 롱폼 카페판, 퇴직 후 건보료 금융소득 1천만원 경계) 관문 통과·slots gates_ok · 롱폼 1편=카페 1편 규칙인데 D-1 짝 글이 없었고 검색 1,280·우리 카페 0건
 2026-10-03 18:38 · firemap-write · 비축 카페 0/2 못 채움 · 주간 사용량 93%, 질 낮은 글로 메우지 않음
+
+2026-10-03 19:07 · firemap-video-producer · N-1 받아쓰기를 lite 모델로 돌려 오늘 손자르기·렌더·관문까지 함(10/4 16:05로 미루지 않음) · flash만 429였고 lite는 남아 있었음
+2026-10-03 19:07 · firemap-video-producer · lfvoice readback에 글자 일치율 0.75 미만 '밀림의심' 추가 · 숫자만 보면 문장 밀림(N-1 3:2)을 못 잡음
+2026-10-03 19:07 · firemap-video-producer · N-1 4:1 재녹음 안 함 · lite 3표는 20%·6%였으나 전용 모델·한글 말 받아쓰기 6/6이 '상위 1%'
+2026-10-03 19:07 · firemap-video-producer · N-1 업로드 보류(권한 거절) · 우회하지 않고 권한 있는 회차에 넘김, 관문 기록은 slots gates_ok
+2026-10-03 19:07 · firemap-video-producer · R-1 TTS 남은 한도로 7문장 받음·손자르기 · 내일 TTS를 R-1 36문장에 다 씀(N-1은 TTS 불필요)
+2026-10-03 19:07 · firemap-video-producer · R-1 설명란 utm_campaign=r-1(영상ID 자동 치환은 backlog) · 업로드 전엔 영상ID를 모름

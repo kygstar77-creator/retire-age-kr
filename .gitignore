@@ -10,3 +10,4 @@ outputs/deploy/
 
 .claude/settings.local.json
 .claude/worktrees/
+work/research/owner-words.md

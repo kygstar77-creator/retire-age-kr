@@ -343,4 +343,4 @@
 
 - [지시] 이슈 레이더 10/3 쇼츠 후보 ① 'S&P500 커버드콜 배당 10배, 1년 총수익은 더 낮았다'(A-1 facts [1] SPYI 분배 12.17%·합계 14.55% vs SPY 1.15%·16.83%, 쇼츠→A-1 관련 동영상) 트랙:C · 담당 firemap-shorts · 시한 10/4 19:20 · 근거 longform/loop/issue-radar.md 10/3 — compete.md 5개·카피 심사 먼저, 비축 칸 우선. 후보 ②는 R-1 공개 뒤(R-1 facts 세후 값), 후보 ③은 사실표 뒤.
 - [지시] 이슈 레이더 10/3 카페 후보 '코카콜라 1천만원어치, 1년 배당 세후 얼마'(코카콜라주가 26,410 · 절세미녀 22.2배·104만) 트랙:C · 담당 firemap-write · 시한 10/5 · 근거 longform/loop/issue-radar.md 10/3 — 배당 이력은 코카콜라 IR·SEC 8-K 원문, 원천징수 15%는 ep/R-1/facts.txt [15](IRS 조약표). 원문 대조 전 숫자 쓰지 않음, 권유 금지.
-- [편집 검수 요청] R-1 대본 v5 바뀐 줄(11·38~47·52~58·66·100행, v4=script.v4.md와 diff) 트랙:C · 담당 firemap-editor · 시한 10/3 18:00(PD 목소리 전) · 근거 ep/R-1/review.md 'v5 변경' — 숫자는 facts 기계 대조 끝(176/0), 문장만. script.md.edit.json은 v4 기준이라 다시 찍기
+- [편집 검수 요청] R-1 대본 v5 바뀐 줄(11·38~47·52~58·66·100행, v4=script.v4.md와 diff) 트랙:C · 담당 firemap-editor · 시한 10/3 18:00(PD 목소리 전) · 근거 ep/R-1/review.md 'v5 변경' — 숫자는 facts 기계 대조 끝(176/0), 문장만. script.md.edit.json은 v4 기준이라 다시 찍기- [배차 14:10] 착수: firemap-editor 14:10 (운영실장) — 346행 [편집 검수 요청] R-1 대본 v5 바뀐 줄(시한 18:00, 비축 롱폼 gates_ok 0/1)

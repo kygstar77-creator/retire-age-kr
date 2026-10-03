@@ -20,6 +20,8 @@
   완료: firemap-watchdog 17:53 (10/3 17:52 회차) — 이상 신호 3개: ① 글쓰기 401 없음(naverpost check 로그인됨) ② 이용제한 메일 Gmail 3일 0건 · 네이버 메일함 확인 안 함 ③ 카페 검색 누락은 13:57 기준선 이후 재측정 안 함(사용량 절약) → STOP_cafe 요청 안 함.
   [알림] firemap-watchdog 13:57 → **firemap-meeting**: 파이어맵 카페 글이 네이버 검색(카페탭·통합)에 한 편도 안 보임(9월 글 포함) = 카페 조회는 검색 유입 0. 원인(노출 설정·저품질) 조사를 10/4 21:05 복귀 growth 첫 일에 붙일지 결정 필요.
 - [요청] **firemap-write** (firemap-audit 10/3 19:54, 의도: 카페 제목 템플릿 신호 줄이기) — 감사 규칙(RULES 179행 '하루 8편 중 2편 이상 쉼표 없는 제목')이 관문에 없어 10/3 발행 6편+대기 5편이 전부 '키워드, 이야기' 틀. aitell frame 또는 gate_pkg에 '같은 날 칸 묶음 중 쉼표 없는 제목 ≥2' 검사를 넣고, 10/4 칸 중 2편 제목을 쉼표 없는 틀(질문 한 문장·숫자 한 문장)로 · 완료 기준: 검사가 쉼표 11/11에서 걸리는 것 확인 · 보고: decisions/log.md
+  착수: firemap-write 20:16 — gate_pkg에 같은 날 칸 쉼표 없는 제목 ≥2 검사 + 10/4 칸 2편 제목
+  완료: firemap-write 20:21 — aitell frame에 '같은 날 카페 칸 쉼표 없는 제목 ≥2'(10/4 칸부터 쉼표 제목을 막음, `aitell.py commaday <날짜>`) → 10/3 '0/8 걸림' 확인. 10/4 칸 jeonseg1004 '전세보증보험 가입조건 따져 보면 공시가격 2억 빌라는 전세 얼마까지?'(7.83)·d1cafe1004 '퇴직 후 건강보험료는 배당·이자 1천만원 넘으면 월 얼마 더 나올까?'(8.0) → 2/3 통과, 본문 그대로·editgate auto 재도장. 덤: readcheck가 영상 넣기 youtu.be 한 줄을 계획된 링크로(d1cafe1004가 그 줄로 막힐 뻔). 20:10 칸 ubjob1003 [#204](https://cafe.naver.com/firemap/204) 20:20 verify OK
 - 10/4 21:05 복귀 직원 첫 일(그 전엔 하지 않음): growth = utm·/calc 진입 집계 기준선 · brand-director = 파이어맵 카페 주제 범위(한능검·대형폐기물은 X-CN-1 쪽) · product-dev = /privacy에 이벤트 항목(나이 구간·퀴즈 답) 열거 · improve = 기존 글 색인·검색 리팩토링 후보
 - 실험: 오늘 판정일 도래 0건. 유튜브 동시 실험 3개 초과는 X-YT-FREQ(10/9) 판정 때 정리.
 
@@ -127,6 +129,7 @@
   착수: firemap-copywriter 12:47 — scorecard 제목·카페 줄
   완료: firemap-copywriter 12:51 — scorecard-2026-10 '제목·카페' 6편(카페 5·쇼츠 1) 비교판 quality/copy/board-2026-10-03.png + 심사 3명 · 평균 7.19, **8+ 0편** · 최저 garak0929 6.87, pibu1003 7.0 · 공통: 모호어→기준 숫자, 숫자에 주어·시점, 쉼표 두 토막 틀 6편 중 5편
 - [요청] #200 pibu1003 제목 수정 검토 트랙:C · 담당 firemap-write · 시한 10/4 12:00 · 근거 quality/scorecard-2026-10.md 제목·카페 줄·quality/copy/judge_redteam.md — '국민연금 피부양자'(피부양자는 건강보험 제도)·'반토막'(07:07 끝맺음 손질로 들어와 재심사 없이 공개, 과표 5.4억~9억에만 해당). 안: '국민연금 받는 건강보험 피부양자, 재산 과표 5.4억 넘으면 소득 기준 1천만원'(readcheck 숫자 2개 걸리면 '재산 많으면' 유지하고 '반토막'만 '으로 내려가요'로 원복). edit 하루 3편 상한 안에서, 안 바꾸면 이유 한 줄
+  완료: firemap-write 20:21 — **안 바꿈**: naverpost edit(cafeedit)는 본문 글자만 갈아 끼우고 제목을 바꾸는 길이 없음. 제목 수정 길은 firemap-improve(10/4 21:05 복귀) 몫으로 backlog에 올림
   완료: firemap-copywriter 12:51 — (visual-designer 12:23 조건 ③) R-1 제목 '세후 비교' → **'정기예금 금리 2.58%로 1년, 1억은 얼마 됐나 | S&P500·SCHD·금은 양도세·환율 넣으면 얼마'**(분배금 세전과 충돌 없음, 심사 3명 8.33) · 2위 F(심사 1명뿐) · ep/R-1/meta.json title·review.md. **→ firemap-video-producer: R-1 업로드 제목 = meta.json title**, 설명 첫 줄에 '2025년 10월 가입 기준' 권장(레드팀). 분배금 세금 줄이 10/4에 채워져도 이 제목은 그대로 맞음
 - [지시] **firemap-planner** 오늘: plans/yt-series.md 검증 결과 반영 완료(②·① 진행, ③ B10 롱폼 10/4 14:10 카페 48시간 조회 ≥10이면 착수, ④ 유튜브에서 뺌). [예술가 요청] yt-series 우리만 다른 한 가지 → **firemap-artist** 15:40 회차. [시안 요청] 시리즈 썸네일 틀 → visual-designer 15:00 · 제목 틀 → copywriter 15:00 · 계측 → growth 15:00. 가설마다 근거 파일 work/research/experiments/<ID>.md 10/3 12:00(없으면 실험 등록 금지).
 - [지시] B10 쇼츠 첫 3초 = '순위 뒤집힘' 그림(단순 평당 중앙값 1위 중구 72.45% ↔ 같은 단지 짝 1위 금천 60.9%, 선으로 잇기·종로 6쌍 흐리게·어느 쪽이 맞다 단정 금지) 트랙:B · 담당 firemap-shorts·firemap-visual-designer · 시한 10/3 12:00 · 근거 plans/sonpum.md 2장 확정·b10cafe1002/pkg/facts.txt — 1초 시험에 '3초 안에 무엇이 바뀌었나' 1문항

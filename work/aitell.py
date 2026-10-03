@@ -5,6 +5,7 @@
 #   py -3.12 work/aitell.py pass <묶음> <편집자>             → 편집 통과 표시(editor_ok.txt)를 남긴다
 #   py -3.12 work/aitell.py scan <묶음 폴더 여러 개>         → 기준 조정용 분포
 #   py -3.12 work/aitell.py frame <묶음>                     → 카페 틀 v2 3줄 점검(소제목 3~5개·끝 FAQ/정리·제목 명사 끝 또는 B틀 물음, 반전 금지). 어기면 종료코드 5
+#   py -3.12 work/aitell.py commaday 2026-10-04               → 그 날 카페 칸 쉼표 없는 제목 수(하루 2편 이상, 10/4 칸부터 frame이 쉼표 제목을 막는다)
 #   --skip-list (아무 자리)  → 번호·글머리 목록 줄과 법 문구·면책 줄을 끝맺음 반복(연속·'~요'·머리·꼬리)에서 뺀다.
 #                              사전(AI 말·설명조) 검사는 그대로. 기본은 꺼짐 — 기존 통과 점수가 안 바뀐다(10/1 대역 X-KR-1 요청).
 # 사장님 10/1 "사소한 것까지 모든 글을 다 검토해서 사람이 쓴 글로 바꿔야 하는데" — 순돌이 지시 [지시·긴급].
@@ -169,7 +170,31 @@ def frame_check(pkg):
         if re.search(r'왜|는데', t): bad.append(f'제목에 반전 연결(왜·~는데) — "…{t[-14:]}"')
         elif (t.endswith('?') or re.search(r'(까|나요|가요|죠|요|니다)$', core)) and not re.search(r'얼마|몇', t):
             bad.append(f'물음 제목은 B틀(얼마·몇)만 — "…{t[-14:]}"')
+        # 10/03 19:54 audit: RULES 179행 '하루 2편 이상 쉼표 없는 제목'이 관문에 없어 10/3 칸 11편이 전부 '키워드, 이야기' 틀.
+        # 같은 날 카페 칸 중 쉼표 없는 제목이 2편 안 되면, 쉼표 제목은 막는다(쉼표 없는 쪽은 통과).
+        sp = os.path.join(pkg, 'slot.txt')
+        day = open(sp, encoding='utf-8').read().strip()[:10] if os.path.exists(sp) else ''
+        if day >= COMMA_FROM and ',' in t:
+            n, tot = comma_day(day, pkg, t)
+            if n < 2: bad.append(f'{day} 카페 칸 쉼표 없는 제목 {n}/{tot}편 — 하루 2편 이상 필요, 이 제목을 쉼표 없이(질문 한 문장·숫자 한 문장)')
     return bad
+
+
+COMMA_FROM = '2026-10-04'
+
+
+def comma_day(day, pkg=None, title=None):
+    """slots.json에서 그 날 카페 칸 제목을 모아 (쉼표 없는 편수, 전체 편수). pkg가 칸에 없으면 그 제목도 센다."""
+    root = os.path.dirname(os.path.abspath(__file__))
+    sl = json.load(open(os.path.join(root, 'research', 'slots.json'), encoding='utf-8'))
+    titles, seen = [], set()
+    for s in sl.get('slots', []):
+        if s.get('kind') != 'cafe' or not str(s.get('at', '')).startswith(day) or not s.get('item'): continue
+        tp = os.path.join(root, 'research', s['item'], 'pkg', 'title.txt')
+        if os.path.exists(tp):
+            titles.append(open(tp, encoding='utf-8').read().strip()); seen.add(os.path.normcase(os.path.abspath(os.path.dirname(tp))))
+    if pkg and os.path.normcase(os.path.abspath(pkg)) not in seen and title: titles.append(title)
+    return sum(',' not in x for x in titles), len(titles)
 
 
 def gate_pkg(pkg):
@@ -215,6 +240,9 @@ def main(a):
         ok, msg, hits = gate_pkg(a[1])
         if ok: print(msg); return 0
         refuse(msg, hits); return 4
+    if a[0] == 'commaday':
+        n, tot = comma_day(a[1])
+        print(f'{a[1]} 카페 칸 쉼표 없는 제목 {n}/{tot}편 — ' + ('통과' if n >= 2 else '걸림(하루 2편 이상)')); return 0 if n >= 2 else 5
     if a[0] == 'frame':
         bad = frame_check(a[1])
         if not bad: print('카페 틀 v2 통과', a[1]); return 0

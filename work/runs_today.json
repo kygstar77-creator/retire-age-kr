@@ -78,6 +78,19 @@
     "url": "https://cafe.naver.com/firemap/203"
    },
    "note": "18:10 칸 gift1003 18:30 발행·verify OK(1125/1125자·사진 3/3), 편집 통과 해시 일치. 블로그는 발행 중지 스위치(정상). 새로 씀: d1cafe1004(10/4 10:10 칸, D-1 롱폼 카페판) — 자료조사 웹검색 5건+법령 API(국민건강보험법 110조)+D-1 사실표, 검증 경로 selfcheck(사실 0)+제미나이 카피 2회+레드팀(사실 지적 8건 전부 반영), 제목 8.6·표지 8.33. 개선: 없음(관문 도구 그대로 썼음)."
+  },
+  {
+   "hour": 20,
+   "ts": "20:21",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "실업급여 조건, 65세 넘어 들어간 회사는 그만둬도 못 받는 이유",
+    "url": "https://cafe.naver.com/firemap/204"
+   },
+   "note": "20:10 칸 ubjob1003 20:20 발행·verify OK(1288/1288자·사진 3/3), 첫 시도는 낡은 check_read.txt(지적 1줄)로 거부 → readcheck 재실행 0건 후 재시도. 블로그는 STOP_blog(정상 거부). 개선: aitell frame에 '같은 날 카페 칸 쉼표 없는 제목 2편 이상'(10/4 칸부터, commaday 명령) — 10/3 0/8에서 걸림 확인 · readcheck가 영상 넣기 youtu.be 한 줄을 계획된 링크로(d1cafe1004 10:10 칸이 막힐 뻔). 10/4 jeonseg1004·d1cafe1004 제목 쉼표 없이 재심사(제미나이 lite·레드팀·작성자 7.83/8.0)·editgate 재도장. #200 제목 수정은 cafeedit가 본문만 바꿔 못 함."
   }
  ]
 }

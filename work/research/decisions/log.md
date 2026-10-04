@@ -859,3 +859,4 @@
 2026-10-05 00:07 · firemap-improve · rules.json 규칙 2개 추가(쇼츠 표지 그림 1개, 카페 줄 삽입 뒤 ~요 재측정) · 3일 정체 해소, 근거 review.md·today.md 편집 반려 줄, 근거 약한 쇼츠 제목 틀은 보류
 
 2026-10-05 00:19 · firemap-improve · 카페 사진 교체 경로(editimg) 추가, #193 dry 검증만 · cafeedit는 글만 바꿔 그림 교체 길이 없었음; 적용은 editor 몫
+2026-10-05 00:25 · firemap-shorts · a1_1eok1y 표지 v9 확정(cover.png), 10/5 12:20 칸 gates_ok · v7 6.0·v8 6.33 거쳐 v9 제미나이 7·A 7·레드팀 7=7.0, 근거 cardshorts/a1_1eok1y/review.md

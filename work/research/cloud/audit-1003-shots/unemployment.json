@@ -1,0 +1,1453 @@
+{
+ "vw": 375,
+ "docScrollWidth": 375,
+ "bodyScrollWidth": 375,
+ "docHeight": 2127,
+ "texts": [
+  {
+   "sel": "main.fm-screen.fm-scroll>header.ds-topbar.ds-topbar--sticky>div.ds-topbar__side>button.ds-iconbtn.ds-iconbtn--plain",
+   "text": "‹",
+   "x": 14,
+   "y": 10,
+   "w": 36,
+   "h": 36,
+   "font": 26,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 246,
+    "g": 247,
+    "b": 249,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>header.ds-topbar.ds-topbar--sticky>div.ds-topbar__side>h1.ds-topbar__title",
+   "text": "실업급여 계산기",
+   "x": 56,
+   "y": 13,
+   "w": 125.625,
+   "h": 30,
+   "font": 20,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 246,
+    "g": 247,
+    "b": 249,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card.ds-card--hero>div.ds-stat.ds-stat--md>span.ds-stat__label",
+   "text": "예상 실업급여 총액 · 구직급여",
+   "x": 40,
+   "y": 95,
+   "w": 295,
+   "h": 19.5,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card.ds-card--hero>div.ds-stat.ds-stat--md>span.ds-stat__value",
+   "text": "11,888,640원",
+   "x": 40,
+   "y": 116.5,
+   "w": 295,
+   "h": 29.25,
+   "font": 22,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>section.ds-card.ds-card--hero>p.ds-hero__sub",
+   "text": "고용보험법 제45조·제46조·제50조 · 2026-09-30 기준",
+   "x": 40,
+   "y": 151.75,
+   "w": 295,
+   "h": 45,
+   "font": 15,
+   "weight": 400,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-tiles.ds-hero__tiles>div.ds-tile>div.ds-stat.ds-stat--sm>span.ds-stat__label",
+   "text": "1일 구직급여액",
+   "x": 45.375,
+   "y": 235.75,
+   "w": 77.5625,
+   "h": 19.5,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-tiles.ds-hero__tiles>div.ds-tile>div.ds-stat.ds-stat--sm>span.ds-stat__value",
+   "text": "66,048원",
+   "x": 51,
+   "y": 257.25,
+   "w": 66.3125,
+   "h": 19.9375,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-tiles.ds-hero__tiles>div.ds-tile>div.ds-stat.ds-stat--sm>span.ds-stat__label",
+   "text": "소정급여일수",
+   "x": 153.890625,
+   "y": 235.75,
+   "w": 68.203125,
+   "h": 19.5,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-tiles.ds-hero__tiles>div.ds-tile>div.ds-stat.ds-stat--sm>span.ds-stat__value",
+   "text": "180일",
+   "x": 166.765625,
+   "y": 257.25,
+   "w": 42.4375,
+   "h": 19.9375,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-tiles.ds-hero__tiles>div.ds-tile>div.ds-stat.ds-stat--sm>span.ds-stat__label",
+   "text": "하한",
+   "x": 274.953125,
+   "y": 235.75,
+   "w": 22.734375,
+   "h": 19.5,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-tiles.ds-hero__tiles>div.ds-tile>div.ds-stat.ds-stat--sm>span.ds-stat__value",
+   "text": "66,048원",
+   "x": 253.171875,
+   "y": 257.25,
+   "w": 66.3125,
+   "h": 19.9375,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>div>button.ds-btn.ds-btn--primary",
+   "text": "이 돈이면 몇 살에 은퇴?",
+   "x": 16,
+   "y": 315.1875,
+   "w": 343,
+   "h": 56,
+   "font": 17,
+   "weight": 700,
+   "color": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 90,
+    "b": 0,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>div>p.ds-caption.ds-mb-0",
+   "text": "현재 자산 + 실업급여 11,888,640원",
+   "x": 16,
+   "y": 379.1875,
+   "w": 343,
+   "h": 19.5,
+   "font": 13,
+   "weight": 400,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 246,
+    "g": 247,
+    "b": 249,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-sh.ds-sh--sm>div.ds-sh__main>span.ds-sh__kicker",
+   "text": "실업급여 계산기",
+   "x": 36,
+   "y": 434.6875,
+   "w": 303,
+   "h": 19.5,
+   "font": 13,
+   "weight": 600,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-sh.ds-sh--sm>div.ds-sh__main>h2.ds-sh__title",
+   "text": "이직일 · 나이",
+   "x": 36,
+   "y": 458.1875,
+   "w": 303,
+   "h": 22.609375,
+   "font": 17,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-sh.ds-sh--sm>div.ds-sh__main>p.ds-sh__desc",
+   "text": "이직일 현재 나이로 소정급여일수가 정해져요",
+   "x": 36,
+   "y": 486.796875,
+   "w": 303,
+   "h": 23.25,
+   "font": 15,
+   "weight": 400,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>section.ds-card>label.ds-range__label",
+   "text": "이직일",
+   "x": 36,
+   "y": 525.046875,
+   "w": 38.90625,
+   "h": 18,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card>div.ds-tabs.ds-mt-2>button.ds-tabs__item",
+   "text": "50세 미만",
+   "x": 40,
+   "y": 604.546875,
+   "w": 145.5,
+   "h": 36,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card>div.ds-tabs.ds-mt-2>button.ds-tabs__item",
+   "text": "50세 이상 · 장애인",
+   "x": 189.5,
+   "y": 604.546875,
+   "w": 145.5,
+   "h": 36,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-sh.ds-sh--sm>div.ds-sh__main>span.ds-sh__kicker",
+   "text": "고용보험",
+   "x": 36,
+   "y": 700.546875,
+   "w": 303,
+   "h": 19.5,
+   "font": 13,
+   "weight": 600,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-sh.ds-sh--sm>div.ds-sh__main>h2.ds-sh__title",
+   "text": "피보험기간",
+   "x": 36,
+   "y": 724.046875,
+   "w": 303,
+   "h": 22.609375,
+   "font": 17,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-sh.ds-sh--sm>div.ds-sh__main>p.ds-sh__desc",
+   "text": "고용보험에 가입한 기간",
+   "x": 36,
+   "y": 752.65625,
+   "w": 303,
+   "h": 23.25,
+   "font": 15,
+   "weight": 400,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-range__head>span.ds-range__label",
+   "text": "피보험기간",
+   "x": 36,
+   "y": 809.40625,
+   "w": 64.828125,
+   "h": 22.5,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-range__head>button.ds-range__value.num",
+   "text": "3년 0개월",
+   "x": 228,
+   "y": 799.90625,
+   "w": 111,
+   "h": 41.5,
+   "font": 17,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-range>div.ds-range__head>button.ds-range__value.num>span.ds-range__edit",
+   "text": "✎",
+   "x": 316.09375,
+   "y": 810.90625,
+   "w": 10.90625,
+   "h": 19.5,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-range__scale.num>span",
+   "text": "0년 0개월",
+   "x": 36,
+   "y": 881.40625,
+   "w": 45.46875,
+   "h": 16.5,
+   "font": 11,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-range__scale.num>span",
+   "text": "20년 0개월",
+   "x": 286.328125,
+   "y": 881.40625,
+   "w": 52.671875,
+   "h": 16.5,
+   "font": 11,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card>div.ds-range>p.ds-range__hint",
+   "text": "이직한 회사에서 가입한 기간이에요. 그 전 회사를 그만두고 3년 안에 옮겼다면 합쳐요(그때 구직급여를 받았으",
+   "x": 36,
+   "y": 905.90625,
+   "w": 303,
+   "h": 39,
+   "font": 13,
+   "weight": 400,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-sh.ds-sh--sm>div.ds-sh__main>span.ds-sh__kicker",
+   "text": "이직 전 3개월 임금",
+   "x": 36,
+   "y": 1012.90625,
+   "w": 303,
+   "h": 19.5,
+   "font": 13,
+   "weight": 600,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-sh.ds-sh--sm>div.ds-sh__main>h2.ds-sh__title",
+   "text": "월평균 임금 · 세전",
+   "x": 36,
+   "y": 1036.40625,
+   "w": 303,
+   "h": 22.609375,
+   "font": 17,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-sh.ds-sh--sm>div.ds-sh__main>p.ds-sh__desc",
+   "text": "기본급 + 기타수당",
+   "x": 36,
+   "y": 1065.015625,
+   "w": 303,
+   "h": 23.25,
+   "font": 15,
+   "weight": 400,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-range__head>span.ds-range__label",
+   "text": "월평균 임금",
+   "x": 36,
+   "y": 1121.765625,
+   "w": 68.296875,
+   "h": 22.5,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-range__head>button.ds-range__value.num",
+   "text": "300만",
+   "x": 250.078125,
+   "y": 1112.265625,
+   "w": 88.921875,
+   "h": 41.5,
+   "font": 17,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-range>div.ds-range__head>button.ds-range__value.num>span.ds-range__edit",
+   "text": "✎",
+   "x": 316.09375,
+   "y": 1123.265625,
+   "w": 10.90625,
+   "h": 19.5,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-range__scale.num>span",
+   "text": "0원",
+   "x": 36,
+   "y": 1193.765625,
+   "w": 16.71875,
+   "h": 16.5,
+   "font": 11,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-range__scale.num>span",
+   "text": "1,000만",
+   "x": 297.578125,
+   "y": 1193.765625,
+   "w": 41.421875,
+   "h": 16.5,
+   "font": 11,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-chips.ds-range__chips>button.ds-chip",
+   "text": "+10만",
+   "x": 36,
+   "y": 1218.265625,
+   "w": 56.40625,
+   "h": 30,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-chips.ds-range__chips>button.ds-chip",
+   "text": "+50만",
+   "x": 98.40625,
+   "y": 1218.265625,
+   "w": 58.46875,
+   "h": 30,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-chips.ds-range__chips>button.ds-chip",
+   "text": "+100만",
+   "x": 162.875,
+   "y": 1218.265625,
+   "w": 65,
+   "h": 30,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card>div.ds-range>p.ds-range__hint",
+   "text": "이직 전 3개월 동안 매달 같게 받았다고 보고 계산해요",
+   "x": 36,
+   "y": 1256.265625,
+   "w": 303,
+   "h": 19.5,
+   "font": 13,
+   "weight": 400,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-fold>button.ds-fold__head>span.ds-fold__text>span.ds-fold__title",
+   "text": "1일 소정근로시간",
+   "x": 50,
+   "y": 1300.765625,
+   "w": 258.46875,
+   "h": 22.5,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-fold>button.ds-fold__head>span.ds-fold__text>span.ds-fold__hint",
+   "text": "8시간보다 짧으면 하한액이 낮아져요",
+   "x": 50,
+   "y": 1325.265625,
+   "w": 258.46875,
+   "h": 16.5,
+   "font": 11,
+   "weight": 600,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>section.ds-fold>button.ds-fold__head>span.ds-fold__chev",
+   "text": "▾",
+   "x": 318.46875,
+   "y": 1311.515625,
+   "w": 6.53125,
+   "h": 19.5,
+   "font": 13,
+   "weight": 400,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card.ds-card--flat>div.ds-sh.ds-sh--sm>div.ds-sh__main>span.ds-sh__kicker",
+   "text": "계산 방법",
+   "x": 36,
+   "y": 1410.765625,
+   "w": 303,
+   "h": 19.5,
+   "font": 13,
+   "weight": 600,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card.ds-card--flat>div.ds-sh.ds-sh--sm>div.ds-sh__main>h2.ds-sh__title",
+   "text": "1일 구직급여액 × 소정급여일수",
+   "x": 36,
+   "y": 1434.265625,
+   "w": 303,
+   "h": 22.609375,
+   "font": 17,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>section.ds-card.ds-card--flat>p.ds-caption.ds-mb-0",
+   "text": "1일 구직급여액 = 기초일액(이직 전 3개월 임금총액 ÷ 그 기간의 총일수) × 60%(고용보험법 제45조·",
+   "x": 36,
+   "y": 1469.875,
+   "w": 303,
+   "h": 136.5,
+   "font": 13,
+   "weight": 400,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>section.ds-card.ds-card--flat>p.ds-caption.ds-mt-2",
+   "text": "받으려면 이직일 이전 18개월 동안 피보험 단위기간이 합산 180일 이상이어야 해요(제40조). 전직·자영업",
+   "x": 36,
+   "y": 1614.375,
+   "w": 303,
+   "h": 78,
+   "font": 13,
+   "weight": 400,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card.ds-card--flat>div.ds-notice.ds-mt-2>div.ds-notice__body",
+   "text": "2026-09-30 기준 · 2026년 이직자 기준이에요. 통상임금 비교와 일용근로자·자영업자·예술인·노무제",
+   "x": 78,
+   "y": 1712.375,
+   "w": 247,
+   "h": 112.5,
+   "font": 15,
+   "weight": 400,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>div.fm-coupang-pick.ds-listgroup>p.ds-list__label",
+   "text": "광고 · 쿠팡 파트너스",
+   "x": 20,
+   "y": 1872.875,
+   "w": 339,
+   "h": 19.5,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 246,
+    "g": 247,
+    "b": 249,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>div.fm-coupang-pick.ds-listgroup>div.ds-list>p.fm-coupang-pick__disclosure.ds-mt-0",
+   "text": "이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+   "x": 16,
+   "y": 1900.375,
+   "w": 343,
+   "h": 72,
+   "font": 15,
+   "weight": 400,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-list>a.ds-row-item.ds-row-item--S>span.ds-row-item__body>span.ds-row-item__title",
+   "text": "2026 시나공 컴퓨터활용능력 2급 필기 기출문제집, 길벗",
+   "x": 32,
+   "y": 1982.375,
+   "w": 261.546875,
+   "h": 39,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-list>a.ds-row-item.ds-row-item--S>span.ds-row-item__trail>span.ds-caption.fm-coupang-pick__trail",
+   "text": "쿠팡 ↗",
+   "x": 305.546875,
+   "y": 1992.125,
+   "w": 37.453125,
+   "h": 19.5,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  }
+ ],
+ "targets": [
+  {
+   "sel": "main.fm-screen.fm-scroll>header.ds-topbar.ds-topbar--sticky>div.ds-topbar__side>button.ds-iconbtn.ds-iconbtn--plain",
+   "text": "‹",
+   "x": 14,
+   "y": 10,
+   "w": 36,
+   "h": 36,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>div>button.ds-btn.ds-btn--primary",
+   "text": "이 돈이면 몇 살에 은퇴?",
+   "x": 16,
+   "y": 315.1875,
+   "w": 343,
+   "h": 56,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>section.ds-card>input#ub-last",
+   "text": "2026-10-03",
+   "x": 36,
+   "y": 546.046875,
+   "w": 303,
+   "h": 46.5,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card>div.ds-tabs.ds-mt-2>button.ds-tabs__item",
+   "text": "50세 미만",
+   "x": 40,
+   "y": 604.546875,
+   "w": 145.5,
+   "h": 36,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card>div.ds-tabs.ds-mt-2>button.ds-tabs__item",
+   "text": "50세 이상 · 장애인",
+   "x": 189.5,
+   "y": 604.546875,
+   "w": 145.5,
+   "h": 36,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-range__head>button.ds-range__value.num",
+   "text": "3년 0개월\n✎",
+   "x": 228,
+   "y": 799.90625,
+   "w": 111,
+   "h": 41.5,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card>div.ds-range>input",
+   "text": "36",
+   "x": 36,
+   "y": 849.40625,
+   "w": 303,
+   "h": 28,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-range__head>button.ds-range__value.num",
+   "text": "300만\n✎",
+   "x": 250.078125,
+   "y": 1112.265625,
+   "w": 88.921875,
+   "h": 41.5,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card>div.ds-range>input",
+   "text": "3000000",
+   "x": 36,
+   "y": 1161.765625,
+   "w": 303,
+   "h": 28,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-chips.ds-range__chips>button.ds-chip",
+   "text": "+10만",
+   "x": 36,
+   "y": 1218.265625,
+   "w": 56.40625,
+   "h": 30,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-chips.ds-range__chips>button.ds-chip",
+   "text": "+50만",
+   "x": 98.40625,
+   "y": 1218.265625,
+   "w": 58.46875,
+   "h": 30,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-chips.ds-range__chips>button.ds-chip",
+   "text": "+100만",
+   "x": 162.875,
+   "y": 1218.265625,
+   "w": 65,
+   "h": 30,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card>section.ds-fold>button.ds-fold__head",
+   "text": "1일 소정근로시간\n8시간보다 짧으면 하한액이 낮아져요\n▾",
+   "x": 36,
+   "y": 1287.765625,
+   "w": 303,
+   "h": 67,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>div.fm-coupang-pick.ds-listgroup>div.ds-list>a.ds-row-item.ds-row-item--S",
+   "text": "2026 시나공 컴퓨터활용능력 2급 필기 기출문제집, 길벗\n쿠팡 ↗",
+   "x": 16,
+   "y": 1972.375,
+   "w": 343,
+   "h": 59,
+   "inline": false,
+   "inScroller": false
+  }
+ ],
+ "url": "http://127.0.0.1:4173/calc/unemployment-benefit",
+ "width": 375,
+ "at": "2026-10-03T14:25:12.144Z"
+}

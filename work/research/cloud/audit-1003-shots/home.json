@@ -1,0 +1,563 @@
+{
+ "vw": 375,
+ "docScrollWidth": 375,
+ "bodyScrollWidth": 375,
+ "docHeight": 812,
+ "texts": [
+  {
+   "sel": "header.ds-topbar.ds-topbar--sticky>div.ds-topbar__side>button.ds-topbar__logo>span",
+   "text": "파이어맵",
+   "x": 45,
+   "y": 14,
+   "w": 69.140625,
+   "h": 30,
+   "font": 20,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 246,
+    "g": 247,
+    "b": 249,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card.ds-card--hero>div.ds-sh>div.ds-sh__main>span.ds-sh__kicker",
+   "text": "1분 계산 · 가입 없음",
+   "x": 36,
+   "y": 93,
+   "w": 303,
+   "h": 19.5,
+   "font": 13,
+   "weight": 600,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card.ds-card--hero>div.ds-sh>div.ds-sh__main>h2.ds-sh__title",
+   "text": "나는 몇 살에파이어할 수 있을까?",
+   "x": 36,
+   "y": 116.5,
+   "w": 303,
+   "h": 53.1875,
+   "font": 20,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card.ds-card--hero>div.ds-sh>div.ds-sh__main>p.ds-sh__desc",
+   "text": "자산·저축·생활비만 넣으면 물가·국민연금까지 반영한 파이어 나이가 나와요.",
+   "x": 36,
+   "y": 175.6875,
+   "w": 303,
+   "h": 46.5,
+   "font": 15,
+   "weight": 400,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card.ds-card--hero>div.ds-row.sc-home-agebox>span.ds-body-sm.ds-bold",
+   "text": "현재 나이",
+   "x": 48,
+   "y": 253.0625,
+   "w": 55.328125,
+   "h": 23.25,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card.ds-card--hero>div.ds-row.sc-home-agebox>div.ds-row>button.ds-iconbtn.ds-iconbtn--sm",
+   "text": "−",
+   "x": 162.03125,
+   "y": 248.6875,
+   "w": 32,
+   "h": 32,
+   "font": 15,
+   "weight": 400,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card.ds-card--hero>div.ds-row.sc-home-agebox>div.ds-row>span.ds-body-sm",
+   "text": "세",
+   "x": 274.03125,
+   "y": 253.0625,
+   "w": 12.96875,
+   "h": 23.25,
+   "font": 15,
+   "weight": 400,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card.ds-card--hero>div.ds-row.sc-home-agebox>div.ds-row>button.ds-iconbtn.ds-iconbtn--sm",
+   "text": "+",
+   "x": 295,
+   "y": 248.6875,
+   "w": 32,
+   "h": 32,
+   "font": 15,
+   "weight": 400,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>section.ds-card.ds-card--hero>button.ds-btn.ds-btn--primary",
+   "text": "내 파이어 나이 계산하기 →",
+   "x": 36,
+   "y": 307.1875,
+   "w": 303,
+   "h": 56,
+   "font": 17,
+   "weight": 700,
+   "color": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 90,
+    "b": 0,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-sh.ds-sh--sm>div.ds-sh__main>h2.ds-sh__title",
+   "text": "카페 · 오픈채팅",
+   "x": 36,
+   "y": 419.1875,
+   "w": 303,
+   "h": 22.609375,
+   "font": 17,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-list>a.ds-row-item.ds-row-item--M>span.ds-row-item__body>span.ds-row-item__title",
+   "text": "파이어맵 네이버 카페",
+   "x": 100,
+   "y": 476.046875,
+   "w": 204.265625,
+   "h": 19.5,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-list>a.ds-row-item.ds-row-item--M>span.ds-row-item__trail>span.ds-row-item__chev",
+   "text": "›",
+   "x": 316.265625,
+   "y": 472.296875,
+   "w": 6.734375,
+   "h": 27,
+   "font": 18,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-list>a.ds-row-item.ds-row-item--M>span.ds-row-item__body>span.ds-row-item__title",
+   "text": "카카오톡 오픈채팅",
+   "x": 100,
+   "y": 541.046875,
+   "w": 204.265625,
+   "h": 19.5,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-list>a.ds-row-item.ds-row-item--M>span.ds-row-item__trail>span.ds-row-item__chev",
+   "text": "›",
+   "x": 316.265625,
+   "y": 537.296875,
+   "w": 6.734375,
+   "h": 27,
+   "font": 18,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "body>div#root>main.fm-screen.fm-scroll>p.ds-caption.ds-textcenter",
+   "text": "·  ·",
+   "x": 16,
+   "y": 618.796875,
+   "w": 343,
+   "h": 19.5,
+   "font": 13,
+   "weight": 400,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 246,
+    "g": 247,
+    "b": 249,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>p.ds-caption.ds-textcenter>a.ds-link.ds-link--muted",
+   "text": "개인정보처리방침",
+   "x": 110.234375,
+   "y": 620.796875,
+   "w": 89.890625,
+   "h": 15,
+   "font": 13,
+   "weight": 600,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 246,
+    "g": 247,
+    "b": 249,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>p.ds-caption.ds-textcenter>a.ds-link.ds-link--muted",
+   "text": "면책",
+   "x": 209.953125,
+   "y": 620.796875,
+   "w": 22.484375,
+   "h": 15,
+   "font": 13,
+   "weight": 600,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 246,
+    "g": 247,
+    "b": 249,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>p.ds-caption.ds-textcenter>a.ds-link.ds-link--muted",
+   "text": "문의",
+   "x": 242.265625,
+   "y": 620.796875,
+   "w": 22.484375,
+   "h": 15,
+   "font": 13,
+   "weight": 600,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 246,
+    "g": 247,
+    "b": 249,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  }
+ ],
+ "targets": [
+  {
+   "sel": "main.fm-screen.fm-scroll>header.ds-topbar.ds-topbar--sticky>div.ds-topbar__side>button.ds-topbar__logo",
+   "text": "파이어맵",
+   "x": 14,
+   "y": 10,
+   "w": 102.140625,
+   "h": 38,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "section.ds-card.ds-card--hero>div.ds-row.sc-home-agebox>div.ds-row>button.ds-iconbtn.ds-iconbtn--sm",
+   "text": "−",
+   "x": 162.03125,
+   "y": 248.6875,
+   "w": 32,
+   "h": 32,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "section.ds-card.ds-card--hero>div.ds-row.sc-home-agebox>div.ds-row>input.ds-input.num",
+   "text": "35",
+   "x": 202.03125,
+   "y": 244.1875,
+   "w": 64,
+   "h": 41,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "section.ds-card.ds-card--hero>div.ds-row.sc-home-agebox>div.ds-row>button.ds-iconbtn.ds-iconbtn--sm",
+   "text": "+",
+   "x": 295,
+   "y": 248.6875,
+   "w": 32,
+   "h": 32,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>section.ds-card.ds-card--hero>button.ds-btn.ds-btn--primary",
+   "text": "내 파이어 나이 계산하기 →",
+   "x": 36,
+   "y": 307.1875,
+   "w": 303,
+   "h": 56,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-listgroup>div.ds-list>a.ds-row-item.ds-row-item--M",
+   "text": "파이어맵 네이버 카페\n›",
+   "x": 36,
+   "y": 453.796875,
+   "w": 303,
+   "h": 65,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-listgroup>div.ds-list>a.ds-row-item.ds-row-item--M",
+   "text": "카카오톡 오픈채팅\n›",
+   "x": 36,
+   "y": 518.796875,
+   "w": 303,
+   "h": 64,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>p.ds-caption.ds-textcenter>a.ds-link.ds-link--muted",
+   "text": "개인정보처리방침",
+   "x": 110.234375,
+   "y": 620.796875,
+   "w": 89.890625,
+   "h": 15,
+   "inline": true,
+   "inScroller": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>p.ds-caption.ds-textcenter>a.ds-link.ds-link--muted",
+   "text": "면책",
+   "x": 209.953125,
+   "y": 620.796875,
+   "w": 22.484375,
+   "h": 15,
+   "inline": true,
+   "inScroller": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>p.ds-caption.ds-textcenter>a.ds-link.ds-link--muted",
+   "text": "문의",
+   "x": 242.265625,
+   "y": 620.796875,
+   "w": 22.484375,
+   "h": 15,
+   "inline": true,
+   "inScroller": false
+  }
+ ],
+ "url": "http://127.0.0.1:4173/",
+ "width": 375,
+ "at": "2026-10-03T14:24:59.643Z"
+}

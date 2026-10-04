@@ -1,0 +1,1353 @@
+{
+ "vw": 375,
+ "docScrollWidth": 375,
+ "bodyScrollWidth": 375,
+ "docHeight": 1866,
+ "texts": [
+  {
+   "sel": "main.fm-screen.fm-scroll>header.ds-topbar.ds-topbar--sticky>div.ds-topbar__side>button.ds-iconbtn.ds-iconbtn--plain",
+   "text": "‹",
+   "x": 14,
+   "y": 10,
+   "w": 36,
+   "h": 36,
+   "font": 26,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 246,
+    "g": 247,
+    "b": 249,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>header.ds-topbar.ds-topbar--sticky>div.ds-topbar__side>h1.ds-topbar__title",
+   "text": "퇴직금 계산기",
+   "x": 56,
+   "y": 13,
+   "w": 108.34375,
+   "h": 30,
+   "font": 20,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 246,
+    "g": 247,
+    "b": 249,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card.ds-card--hero>div.ds-stat.ds-stat--md>span.ds-stat__label",
+   "text": "예상 퇴직금 · 세전",
+   "x": 40,
+   "y": 95,
+   "w": 295,
+   "h": 19.5,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card.ds-card--hero>div.ds-stat.ds-stat--md>span.ds-stat__value",
+   "text": "8,812,388원",
+   "x": 40,
+   "y": 116.5,
+   "w": 295,
+   "h": 29.25,
+   "font": 22,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>section.ds-card.ds-card--hero>p.ds-hero__sub",
+   "text": "재직 일 · 약 3년",
+   "x": 40,
+   "y": 151.75,
+   "w": 295,
+   "h": 22.5,
+   "font": 15,
+   "weight": 400,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card.ds-card--hero>p.ds-hero__sub>b.num",
+   "text": "1,096",
+   "x": 69.703125,
+   "y": 153.75,
+   "w": 43.53125,
+   "h": 18,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-tiles.ds-hero__tiles>div.ds-tile>div.ds-stat.ds-stat--sm>span.ds-stat__label",
+   "text": "재직일수",
+   "x": 61.421875,
+   "y": 213.25,
+   "w": 45.46875,
+   "h": 19.5,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-tiles.ds-hero__tiles>div.ds-tile>div.ds-stat.ds-stat--sm>span.ds-stat__value",
+   "text": "1,096일",
+   "x": 55.921875,
+   "y": 234.75,
+   "w": 56.484375,
+   "h": 19.9375,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-tiles.ds-hero__tiles>div.ds-tile>div.ds-stat.ds-stat--sm>span.ds-stat__label",
+   "text": "1일 평균임금",
+   "x": 154.890625,
+   "y": 213.25,
+   "w": 66.1875,
+   "h": 19.5,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-tiles.ds-hero__tiles>div.ds-tile>div.ds-stat.ds-stat--sm>span.ds-stat__value",
+   "text": "97,826원",
+   "x": 154.828125,
+   "y": 234.75,
+   "w": 66.3125,
+   "h": 19.9375,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-tiles.ds-hero__tiles>div.ds-tile>div.ds-stat.ds-stat--sm>span.ds-stat__label",
+   "text": "3개월 총일수",
+   "x": 252.125,
+   "y": 213.25,
+   "w": 68.40625,
+   "h": 19.5,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-tiles.ds-hero__tiles>div.ds-tile>div.ds-stat.ds-stat--sm>span.ds-stat__value",
+   "text": "92일",
+   "x": 270.015625,
+   "y": 234.75,
+   "w": 32.609375,
+   "h": 19.9375,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>div>button.ds-btn.ds-btn--primary",
+   "text": "이 돈이면 몇 살에 은퇴?",
+   "x": 16,
+   "y": 292.6875,
+   "w": 343,
+   "h": 56,
+   "font": 17,
+   "weight": 700,
+   "color": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 90,
+    "b": 0,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>div>p.ds-caption.ds-mb-0",
+   "text": "현재 자산 + 퇴직금 8,812,388원",
+   "x": 16,
+   "y": 356.6875,
+   "w": 343,
+   "h": 19.5,
+   "font": 13,
+   "weight": 400,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 246,
+    "g": 247,
+    "b": 249,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-sh.ds-sh--sm>div.ds-sh__main>span.ds-sh__kicker",
+   "text": "퇴직금 계산기",
+   "x": 36,
+   "y": 412.1875,
+   "w": 303,
+   "h": 19.5,
+   "font": 13,
+   "weight": 600,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-sh.ds-sh--sm>div.ds-sh__main>h2.ds-sh__title",
+   "text": "입사일자 · 퇴직일자",
+   "x": 36,
+   "y": 435.6875,
+   "w": 303,
+   "h": 22.609375,
+   "font": 17,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-sh.ds-sh--sm>div.ds-sh__main>p.ds-sh__desc",
+   "text": "퇴직일자는 마지막으로 근무한 날의 다음 날이에요",
+   "x": 36,
+   "y": 464.296875,
+   "w": 303,
+   "h": 23.25,
+   "font": 15,
+   "weight": 400,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>section.ds-card>label.ds-range__label",
+   "text": "입사일자",
+   "x": 36,
+   "y": 502.546875,
+   "w": 51.859375,
+   "h": 18,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>section.ds-card>label.ds-range__label",
+   "text": "퇴직일자",
+   "x": 36,
+   "y": 581.046875,
+   "w": 51.859375,
+   "h": 18,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card>div.ds-tabs.ds-mt-2>button.ds-tabs__item",
+   "text": "1주 15시간 이상",
+   "x": 40,
+   "y": 660.546875,
+   "w": 145.5,
+   "h": 36,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card>div.ds-tabs.ds-mt-2>button.ds-tabs__item",
+   "text": "1주 15시간 미만",
+   "x": 189.5,
+   "y": 660.546875,
+   "w": 145.5,
+   "h": 36,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-sh.ds-sh--sm>div.ds-sh__main>span.ds-sh__kicker",
+   "text": "퇴직 전 3개월 임금",
+   "x": 36,
+   "y": 756.546875,
+   "w": 303,
+   "h": 19.5,
+   "font": 13,
+   "weight": 600,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-sh.ds-sh--sm>div.ds-sh__main>h2.ds-sh__title",
+   "text": "한 달 임금 · 세전",
+   "x": 36,
+   "y": 780.046875,
+   "w": 303,
+   "h": 22.609375,
+   "font": 17,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-sh.ds-sh--sm>div.ds-sh__main>p.ds-sh__desc",
+   "text": "기본급 + 기타수당",
+   "x": 36,
+   "y": 808.65625,
+   "w": 303,
+   "h": 23.25,
+   "font": 15,
+   "weight": 400,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-range__head>span.ds-range__label",
+   "text": "월 기본급 + 기타수당",
+   "x": 36,
+   "y": 865.40625,
+   "w": 123.90625,
+   "h": 22.5,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-range__head>button.ds-range__value.num",
+   "text": "300만",
+   "x": 250.078125,
+   "y": 855.90625,
+   "w": 88.921875,
+   "h": 41.5,
+   "font": 17,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-range>div.ds-range__head>button.ds-range__value.num>span.ds-range__edit",
+   "text": "✎",
+   "x": 316.09375,
+   "y": 866.90625,
+   "w": 10.90625,
+   "h": 19.5,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-range__scale.num>span",
+   "text": "0원",
+   "x": 36,
+   "y": 937.40625,
+   "w": 16.71875,
+   "h": 16.5,
+   "font": 11,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-range__scale.num>span",
+   "text": "1,000만",
+   "x": 297.578125,
+   "y": 937.40625,
+   "w": 41.421875,
+   "h": 16.5,
+   "font": 11,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-chips.ds-range__chips>button.ds-chip",
+   "text": "+10만",
+   "x": 36,
+   "y": 961.90625,
+   "w": 56.40625,
+   "h": 30,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-chips.ds-range__chips>button.ds-chip",
+   "text": "+50만",
+   "x": 98.40625,
+   "y": 961.90625,
+   "w": 58.46875,
+   "h": 30,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-chips.ds-range__chips>button.ds-chip",
+   "text": "+100만",
+   "x": 162.875,
+   "y": 961.90625,
+   "w": 65,
+   "h": 30,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card>div.ds-range>p.ds-range__hint",
+   "text": "퇴직 전 3개월 동안 매달 같게 받았다고 보고 계산해요",
+   "x": 36,
+   "y": 999.90625,
+   "w": 303,
+   "h": 19.5,
+   "font": 13,
+   "weight": 400,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-fold>button.ds-fold__head>span.ds-fold__text>span.ds-fold__title",
+   "text": "상여금 · 연차수당",
+   "x": 50,
+   "y": 1044.40625,
+   "w": 258.46875,
+   "h": 22.5,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-fold>button.ds-fold__head>span.ds-fold__text>span.ds-fold__hint",
+   "text": "있으면 3개월치(3/12)를 더해요",
+   "x": 50,
+   "y": 1068.90625,
+   "w": 258.46875,
+   "h": 16.5,
+   "font": 11,
+   "weight": 600,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card>section.ds-fold>button.ds-fold__head>span.ds-fold__chev",
+   "text": "▾",
+   "x": 318.46875,
+   "y": 1055.15625,
+   "w": 6.53125,
+   "h": 19.5,
+   "font": 13,
+   "weight": 400,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>div.ds-listgroup>p.ds-list__label",
+   "text": "다음 계산",
+   "x": 20,
+   "y": 1134.40625,
+   "w": 339,
+   "h": 19.5,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 246,
+    "g": 247,
+    "b": 249,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-list>button.ds-row-item.ds-row-item--S>span.ds-row-item__body>span.ds-row-item__title",
+   "text": "실업급여 계산기",
+   "x": 80,
+   "y": 1171.90625,
+   "w": 244.265625,
+   "h": 19.5,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-list>button.ds-row-item.ds-row-item--S>span.ds-row-item__body>span.ds-row-item__desc",
+   "text": "나이·피보험기간·월급으로 1일 구직급여액·총액",
+   "x": 80,
+   "y": 1193.40625,
+   "w": 244.265625,
+   "h": 15.390625,
+   "font": 11,
+   "weight": 500,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-list>button.ds-row-item.ds-row-item--S>span.ds-row-item__trail>span.ds-row-item__chev",
+   "text": "›",
+   "x": 336.265625,
+   "y": 1176.84375,
+   "w": 6.734375,
+   "h": 27,
+   "font": 18,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card.ds-card--flat>div.ds-sh.ds-sh--sm>div.ds-sh__main>span.ds-sh__kicker",
+   "text": "계산 방법",
+   "x": 36,
+   "y": 1254.796875,
+   "w": 303,
+   "h": 19.5,
+   "font": 13,
+   "weight": 600,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "section.ds-card.ds-card--flat>div.ds-sh.ds-sh--sm>div.ds-sh__main>h2.ds-sh__title",
+   "text": "1일 평균임금 × 30일 × (재직일수 ÷ 365)",
+   "x": 36,
+   "y": 1278.296875,
+   "w": 303,
+   "h": 22.609375,
+   "font": 17,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>section.ds-card.ds-card--flat>p.ds-caption.ds-mb-0",
+   "text": "1일 평균임금 = 퇴직일 이전 3개월 임금총액 ÷ 그 기간의 총일수(근로기준법 제2조). 계속근로기간 1년에",
+   "x": 36,
+   "y": 1313.90625,
+   "w": 303,
+   "h": 97.5,
+   "font": 13,
+   "weight": 400,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card.ds-card--flat>div.ds-notice.ds-mt-2>div.ds-notice__body",
+   "text": "2026-09-30 기준 · 퇴직소득세를 빼기 전 금액이에요. 육아휴직 등 미산입기간과 통상임금 비교는 반영",
+   "x": 78,
+   "y": 1431.40625,
+   "w": 247,
+   "h": 112.5,
+   "font": 15,
+   "weight": 400,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 242,
+    "g": 244,
+    "b": 246,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>div.fm-coupang-pick.ds-listgroup>p.ds-list__label",
+   "text": "광고 · 쿠팡 파트너스",
+   "x": 20,
+   "y": 1591.90625,
+   "w": 339,
+   "h": 19.5,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 246,
+    "g": 247,
+    "b": 249,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>div.fm-coupang-pick.ds-listgroup>div.ds-list>p.fm-coupang-pick__disclosure.ds-mt-0",
+   "text": "이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.",
+   "x": 16,
+   "y": 1619.40625,
+   "w": 343,
+   "h": 72,
+   "font": 15,
+   "weight": 400,
+   "color": {
+    "r": 75,
+    "g": 81,
+    "b": 92,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-list>a.ds-row-item.ds-row-item--S>span.ds-row-item__body>span.ds-row-item__title",
+   "text": "퇴사를 준비하는 나에게:어쩌다 말고 제대로 퇴사를 위한 일대일 맞춤 상담실, 위즈덤하우스, 이슬기 저",
+   "x": 32,
+   "y": 1701.40625,
+   "w": 261.546875,
+   "h": 58.5,
+   "font": 15,
+   "weight": 700,
+   "color": {
+    "r": 24,
+    "g": 25,
+    "b": 29,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  },
+  {
+   "sel": "div.ds-list>a.ds-row-item.ds-row-item--S>span.ds-row-item__trail>span.ds-caption.fm-coupang-pick__trail",
+   "text": "쿠팡 ↗",
+   "x": 305.546875,
+   "y": 1720.90625,
+   "w": 37.453125,
+   "h": 19.5,
+   "font": 13,
+   "weight": 700,
+   "color": {
+    "r": 138,
+    "g": 144,
+    "b": 155,
+    "a": 1
+   },
+   "bg": {
+    "r": 255,
+    "g": 255,
+    "b": 255,
+    "a": 1
+   },
+   "bgImage": false,
+   "inScroller": false,
+   "clipped": false
+  }
+ ],
+ "targets": [
+  {
+   "sel": "main.fm-screen.fm-scroll>header.ds-topbar.ds-topbar--sticky>div.ds-topbar__side>button.ds-iconbtn.ds-iconbtn--plain",
+   "text": "‹",
+   "x": 14,
+   "y": 10,
+   "w": 36,
+   "h": 36,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>div>button.ds-btn.ds-btn--primary",
+   "text": "이 돈이면 몇 살에 은퇴?",
+   "x": 16,
+   "y": 292.6875,
+   "w": 343,
+   "h": 56,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>section.ds-card>input#sev-hire",
+   "text": "2023-10-03",
+   "x": 36,
+   "y": 523.546875,
+   "w": 303,
+   "h": 46.5,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "div#root>main.fm-screen.fm-scroll>section.ds-card>input#sev-retire",
+   "text": "2026-10-03",
+   "x": 36,
+   "y": 602.046875,
+   "w": 303,
+   "h": 46.5,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card>div.ds-tabs.ds-mt-2>button.ds-tabs__item",
+   "text": "1주 15시간 이상",
+   "x": 40,
+   "y": 660.546875,
+   "w": 145.5,
+   "h": 36,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card>div.ds-tabs.ds-mt-2>button.ds-tabs__item",
+   "text": "1주 15시간 미만",
+   "x": 189.5,
+   "y": 660.546875,
+   "w": 145.5,
+   "h": 36,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-range__head>button.ds-range__value.num",
+   "text": "300만\n✎",
+   "x": 250.078125,
+   "y": 855.90625,
+   "w": 88.921875,
+   "h": 41.5,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card>div.ds-range>input",
+   "text": "3000000",
+   "x": 36,
+   "y": 905.40625,
+   "w": 303,
+   "h": 28,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-chips.ds-range__chips>button.ds-chip",
+   "text": "+10만",
+   "x": 36,
+   "y": 961.90625,
+   "w": 56.40625,
+   "h": 30,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-chips.ds-range__chips>button.ds-chip",
+   "text": "+50만",
+   "x": 98.40625,
+   "y": 961.90625,
+   "w": 58.46875,
+   "h": 30,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "section.ds-card>div.ds-range>div.ds-chips.ds-range__chips>button.ds-chip",
+   "text": "+100만",
+   "x": 162.875,
+   "y": 961.90625,
+   "w": 65,
+   "h": 30,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>section.ds-card>section.ds-fold>button.ds-fold__head",
+   "text": "상여금 · 연차수당\n있으면 3개월치(3/12)를 더해요\n▾",
+   "x": 36,
+   "y": 1031.40625,
+   "w": 303,
+   "h": 67,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>div.ds-listgroup>div.ds-list>button.ds-row-item.ds-row-item--S",
+   "text": "실업급여 계산기\n나이·피보험기간·월급으로 1일 구직급여액·총액\n›",
+   "x": 16,
+   "y": 1161.90625,
+   "w": 343,
+   "h": 56.890625,
+   "inline": false,
+   "inScroller": false
+  },
+  {
+   "sel": "main.fm-screen.fm-scroll>div.fm-coupang-pick.ds-listgroup>div.ds-list>a.ds-row-item.ds-row-item--S",
+   "text": "퇴사를 준비하는 나에게:어쩌다 말고 제대로 퇴사를 위한 일대일 맞춤 상담",
+   "x": 16,
+   "y": 1691.40625,
+   "w": 343,
+   "h": 78.5,
+   "inline": false,
+   "inScroller": false
+  }
+ ],
+ "url": "http://127.0.0.1:4173/calc/severance",
+ "width": 375,
+ "at": "2026-10-03T14:25:07.826Z"
+}

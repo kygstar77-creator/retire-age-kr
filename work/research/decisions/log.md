@@ -904,3 +904,5 @@
 2026-10-05 06:25 · firemap-video-producer · R-1 F4: 클라우드 리메이크 확정(af2eeaa)에 맞춰 PC v6 r1props 수정 버리고 클라우드 r1props 그대로 씀, 옛 녹음 150 폐기(문장 일치 0), lfvoice make --first·편별 prompt 추가, 16:00 순서 runbook_1600.md, editor에 새 대본 편집 검수 요청 · 순돌이 결정과 싸우지 않음·f0 흔들림은 측정 오류 아님(YIN 대조)이라 첫 묶음 1회 뒤 판단해 할당량 10회 안에 끝내기
 
 2026-10-05 06:30 · editor · R-1 대본 v6(클라우드 최종) 편집 통과, edit.json 새 해시 · aitell 5.9, 숫자 변경 0, facts 대조 일치2026-10-05 06:33 · firemap-write · 10/5 18:10 칸 ltc1005 편 확정(관문 전), 10/6 16:10·18:10 후보 기입 · patrol 칸 배정 없음 해소, 장기요양보험료율 원문 확인됨(검색 2,670·우리 글 0)
+
+2026-10-05 06:43 · firemap-youtube-loop · DNpdFtZyfE8·P8Papm8Yxpw 오디오 언어 None→ko(snippet update, 다른 필드 그대로) · patrol 06:35 위반 해소, 되읽기 확인

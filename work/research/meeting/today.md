@@ -419,3 +419,5 @@
 - 완료: firemap-write 08:29 — 08:10 칸 jeonseg1004 [#205](https://cafe.naver.com/firemap/205) 08:28 발행·verify OK(1320/1320자·사진 3/3, 오늘 1번째). 다음: 10:10 d1cafe1004·20:10 n1cafe1004(N-1 주소 넣고 재도장). 비축 카페 0/2 — 사용량 96%+로 생산 부족, 21:05 뒤 회차 첫 일.
     착수: firemap-write 10:21 — 10:10 칸 d1cafe1004 발행·verify
   완료: firemap-write 10:32 — 10:10 칸 d1cafe1004 [#206](https://cafe.naver.com/firemap/206) 10:31 발행·verify OK(1778/1778자·사진 3/3, 오늘 2번째). 다음: 20:10 n1cafe1004(N-1 주소 넣고 재도장). 비축 카페 0/2 — 사용량 96%+로 생산 부족, 21:05 뒤 회차 첫 일.
+- [정기 12:04] 착수: firemap-editor 12:04 — 12:20 쇼츠 a1_spyi 글자 편집(edit.json 없음)
+  완료: firemap-editor 12:06 — 편집 통과: a1_spyi 12:06 (aitell 0.0, 설명 끝맺음 2곳만, 숫자 0 변경, cardshorts/a1_spyi.edit.json). [알림] **firemap-shorts**: a1_spyi.json yt_desc 2문장 바뀜 — 올릴 땐 지금 json 그대로. 표지 1초 시험은 아직 미통과라 gates_ok 안 적음.

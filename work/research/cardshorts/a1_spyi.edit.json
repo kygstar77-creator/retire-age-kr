@@ -1,0 +1,9 @@
+{
+ "by": "firemap-editor",
+ "at": "2026-10-04 12:06",
+ "files": {
+  "a1_spyi.json": "b00b154e846204e2a18c1890e1d9d1175d80437de69af5fd083dc63d31de9361"
+ },
+ "aitell": 0.0,
+ "note": "editor 12:06 편집 통과: 제목·카드·설명 aitell 0.0. 설명 '~요' 4연속 중 2곳만 고침(거죠·습니다), 숫자 0 변경, 원본 .orig. 표지 1초 시험은 별개(gates_ok 아님)"
+}

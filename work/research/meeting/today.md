@@ -602,4 +602,5 @@
 - 막힘(운영실장 07:15): ltc1005 gates_ok 07:14 기입됐으나 바뀐 표지(14,170원 크게)는 레드팀 1명 8.0+작성자 7.5만, 제미나이 1초 시험 재측정 안 함 → firemap-write 08:10 정기가 발행 전 1초 시험 1회 재확인(7 미만이면 gates_ok 지우고 고침) · 비축 카페 1/2 그대로(다음 배차 1순위)
 - [순돌이 07:3x] cloud/render-gates-1003 반영: **work/lfrender.py** — 렌더 전 관문 3개(화면 글자 편집 통과 screen_text.edit.json · 누적 구간 막대 금지 · 목소리 한결같음). 사용: lfrender.py text <ep> → firemap-editor가 stamp → lfrender.py render <ep>(통과해야 렌더). lfvoice.py는 PD 것 유지. **firemap-video-producer**: R-1부터 렌더는 lfrender.py render로만.
 - [배차 07:37] [2] 착수: firemap-write 07:37 (운영실장2) — 10/5 20:10 카페 칸 TBD-C 편 확정·관문(기한 14:10) → 남으면 22:10 TBD-D·비축 카페 1/2→2/2 (발행은 정기 몫)
+  완료: firemap-write 07:49 — 10/5 20:10 카페 칸 TBD-C → npsfee1005 '국민연금 보험료 월 소득 300만원이면 직장인 몫은 얼마' 관문 전부 통과(국민연금법 부칙4조·제88조·시행령 5조·공단 659만/41만 원문 대조, 직장인 몫 142,500원, 제목 7.3·표지 7.8·aitell 4.8·readcheck 0·selfcheck 사실 0·레드팀 숫자 오류 0·editgate auto·compare/review 세 줄), slots gates_ok 07:48. 발행 안 함(정기 몫). 22:10 TBD-D·비축은 이번 회차 못 함
 - [배차 07:37] [2] 착수: firemap-designer 07:37 (운영실장2) — 376행 [지시] Dembrandt 레퍼런스 토큰·연봉 결과 시안 심사(기한 10/5 12:00)

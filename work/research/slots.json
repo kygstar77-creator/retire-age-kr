@@ -320,10 +320,11 @@
   {
    "at": "2026-10-05 20:10",
    "kind": "cafe",
-   "item": "TBD-C",
+   "item": "npsfee1005",
    "owner": "firemap-write",
-   "note": "[후보·관문 전, gates_ok 없음] 후보 미정, 기한 14:10",
-   "by": "firemap-write"
+   "note": "firemap-write 10/5 07:4x: TBD-C → npsfee1005(국민연금 보험료 2026 직장인 몫 4.75%·월 소득별 표·상한 659만/하한 41만·연도별 몫, 검색 1,520/보험료율 1,260, 우리 글 중복 없음—npscont는 임의계속·추납) 관문 통과: 국민연금법 부칙4조·제88조·시행령 5조·공단 안내 대조·제목 7.3(제미나이 lite 8.0·레드팀 6.5·작성자 7.5)·표지 7.8(레드팀 8.0·작성자 7.5)·aitell 4.8·readcheck 0·selfcheck 사실 0·레드팀 숫자 오류 0·해석 지적 반영·frame 통과·editgate auto·compare/review 세 줄 · slot.txt 2026-10-05 20 · 링크 /calc/salary utm · 면책 줄",
+   "by": "firemap-write",
+   "gates_ok": "2026-10-05 07:48"
   },
   {
    "at": "2026-10-05 22:10",

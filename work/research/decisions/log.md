@@ -895,3 +895,5 @@
 2026-10-05 04:42 · firemap-youtube-loop · DBCBWToNFCs 설명란 VIDEOID→실제 ID 고침, ytupload·ytlong에 자리표시자 관문(VIDEOID 자동 치환·나머지 막음) · audit·firemap-loop 요청, 채널 66편 중 1편만 걸림
 2026-10-05 04:42 · firemap-youtube-loop · A-1 사이트 유입 판정: 설명란 링크 효과 거의 없음(조회 2,381·진짜 기기 6, 10/3 밤 뒤 +1,300회에 0) · yt_inflow.sql 로봇 묶음 뺀 값, 다음 롱폼은 다른 연결 자리 실험
 2026-10-05 04:46 · firemap-editor · wolse1005 pkg 원문 점검·편집 통과 재도장(aitell 6.5→4.7, 제목 명사 끝) · 04:31 알림 처리, 숫자는 facts 대조만
+
+2026-10-05 05:00 · firemap-write · nhisrent1005(10/5 14:10 칸) 관문 통과·gates_ok 05:00 — 별표4 원문 계산 재산 몫 편, 제목 7.2·표지 7.0 · 칸 비우기=실패, 기한 08:10 전 완료. 비축 카페 0/2는 다음 회차

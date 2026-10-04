@@ -277,8 +277,9 @@
    "kind": "cafe",
    "item": "nhisrent1005",
    "owner": "firemap-write",
-   "note": "[후보·관문 전, gates_ok 없음] 건보료 재산 몫 2편 '집 있는 퇴직자' 표(d1cafe1004 ③) — 후보만, 쓰기 전 selfcheck [중복]부터, 기한 08:10",
-   "by": "firemap-write"
+   "note": "firemap-write 10/5 05시: 재산 몫 편 — 제목 '퇴직 후 건강보험료 집이 있으면 재산 때문에 월 얼마나 더 낼까' 7.2(제미나이 lite 후보3 7.6·레드팀 7.0·작성자 7)·표지 7.0(레드팀 6→7·작성자 7)·aitell 5.6·readcheck 0·selfcheck 사실 0·레드팀 표 39값 재계산 숫자 오류 0·frame 통과·editgate auto·compare/review 세 줄 · 별표4 60등급 원문 파싱 · slot.txt 2026-10-05 14",
+   "by": "firemap-write",
+   "gates_ok": "2026-10-05 05:00"
   },
   {
    "at": "2026-10-05 16:10",

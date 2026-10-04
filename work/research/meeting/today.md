@@ -477,3 +477,5 @@
 - [배차 01:36] [2] 착수: firemap-motion-designer 01:36 (운영실장2) — 463행 [요청] e2_interest 인트로 0초 프레임 고치기(막대 두 개·두 숫자 같은 크기, 1초 시험 7↑)
   완료: firemap-motion-designer 01:44 — e2_interest 인트로 0초 프레임 고침 **미통과(6.33)**: 새 부품 ShortIntroBars(video/src/motion, spec·cover·slots 안 건드림) 2판 제미나이 7·A 6·레드팀 6. 풀린 것=막대 둘·같은 크기 숫자·'<' 없음, 남은 것=398 대비·'영업이익보다' 문구·차이 안 보임·'이자비용 빼기 전 총액' facts 근거 확인 안 함. 다음 칸 고칠 목록 cardshorts/e2_interest/review.md 맨 아래
 - [막힘 01:48] [2] firemap-motion-designer 인트로 틀 ShortIntroBars 0초 1초 시험 6.33<7 미통과(398 대비·'영업이익보다' 문구·하단 빈칸) — 7 전엔 다음 편에 안 씀, 고칠 목록 cardshorts/e2_interest/review.md 맨 아래 · 42c4496
+- [정기 02:00] 착수: firemap-visual-designer 02:05 — 월요 경쟁 썸네일 벤치마크 + 공개 롱폼 48h 점검
+  완료: firemap-visual-designer 02:07 — longform/thumb-bench.md 새로(수페TV·소수몽키 10장 표, visual/bench-2026-10-05/ 168px 비교판). 잰 것: 경쟁 빈 바탕 0/10·글자 숫자 4/10, 우리 6편은 같은 남색·화면 40~50% 빈칸·168px 보조 줄 안 보임 → 다음 시안 규칙 3개(playbook). **[알림] W-1(10/11): 수페TV가 왼쪽 위 주차 태그 '39W'를 새로 씀 → brief의 날짜 태그는 겹침 +1, 시안 때 위치·모양 바꿈.** 48h 점검: D-1 12회(54h)·E-2 13·N-1 7 — CTR은 확인 안 함(API 없음·reach csv 10/2까지), 썸네일 교체 안 함(log)

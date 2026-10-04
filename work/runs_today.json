@@ -1,106 +1,15 @@
 {
- "date": "2026-10-04",
+ "date": "2026-10-05",
  "runs": [
   {
    "hour": 8,
-   "ts": "08:29",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "전세보증보험 가입조건 따져 보면 공시가격 2억 빌라는 전세 얼마까지?",
-    "url": "https://cafe.naver.com/firemap/205"
-   },
-   "note": "08:10 칸 jeonseg1004 발행 08:28(jitter 6분), verify OK 1320/1320자·사진 3/3. 관문은 10/3에 통과(제목 7.83·editgate auto·aitell 0.0·utm·면책 있음). 블로그 0 — 하루 1편·15시 이후 시각 규칙, 색인 0 경보 유지. 새 글 0 — 주간 사용량 96%+(21:00 초기화)라 비축 카페 0/2는 생산 부족. 개선: 없음"
-  },
-  {
-   "hour": 10,
-   "ts": "10:32",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "퇴직 후 건강보험료는 배당·이자 1천만원 넘으면 월 얼마 더 나올까?",
-    "url": "https://cafe.naver.com/firemap/206"
-   },
-   "note": "10:10 칸 d1cafe1004 발행 10:31, verify OK 1778/1778자·사진 3/3. 관문은 10/3에 통과(제목 8.0·editgate 해시 일치 editor 07:06·aitell 0.0). 블로그 0 — 15시 이후 규칙·색인 0 경보. 새 글 0 — 주간 사용량 96%+(21:00 초기화)라 발행 사슬만, 비축 카페 0/2 생산 부족. 개선: 없음"
-  },
-  {
-   "hour": 12,
-   "ts": "12:25",
+   "ts": "08:25",
    "blog": null,
    "cafe": {
-    "title": "퇴직금 1억 세금, 다닌 햇수 따라 얼마나 달라질까?",
-    "url": "https://cafe.naver.com/firemap/207"
+    "title": "건강보험료 재산 점수 과세표준 3억이면 월 얼마나 붙을까",
+    "url": "https://cafe.naver.com/firemap/209"
    },
-   "note": "12:10 칸 비어 있어 10/3 22:10 칸에서 못 나간 sevtax1003(관문 10/3 10:31 통과: 제목 7.7·표지 7.75·editgate auto·compare/review·selfcheck 사실 0) 발행 12:24(jitter 2분), verify OK 1363/1363자·사진 3/3. 블로그 0 — 15시 이후 규칙·색인 0 경보(12편 중 0). 새 글 0 — 주간 사용량 96%+(21:00 초기화)라 발행 사슬만, 비축 카페 0/2 생산 부족. 교차검증: 새 원고 없음(10/3 selfcheck·레드팀 끝). 일감표 맨 위 담당 improve·2번 완료 → 3번(블로그 방문)은 색인 문제라 이번 회차에 못 닫음. 개선: 없음(사용량 규칙상 새 코드 금지)"
-  },
-  {
-   "hour": 14,
-   "ts": "14:21",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "14시 카페 칸 없음(다음 20:10 n1cafe1004), 블로그 15시 이후 규칙, 사용량 96%+로 비축 생산 안 함(생산 부족). 교차검증 해당 없음. 개선: 없음"
-  },
-  {
-   "hour": 16,
-   "ts": "16:22",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "16시 카페 칸 없음(10/4 칸 08·10·20시), 블로그는 감사 정지 스위치. n1cafe1004에 N-1 영상 주소 추가·editgate 재도장. 비축 카페 0/2 — 주간 사용량 97%라 생산 미룸. 개선: 없음"
-  },
-  {
-   "hour": 18,
-   "ts": "18:22",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": null,
-    "url": null
-   },
-   "note": "18시 카페 칸 없음(10/4 칸 08·10·20시, 다음 20:10 n1cafe1004 관문 통과 상태). 블로그는 STOP_blog 정지. slots.json 08:10 칸 published(#205) 빠진 것 채움. 비축 카페 0/2 — 주간 사용량 97%(21:00 초기화)라 생산 미룸(생산 부족). 교차검증 해당 없음. 개선: 없음"
-  },
-  {
-   "hour": 20,
-   "ts": "20:23",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "연봉 순위, 2천만원 더 받을 때와 1억 더 받을 때 얼마나 오를까",
-    "url": null
-   },
-   "note": "20:10 칸 n1cafe1004 발행 안 됨: naverpost readcheck 관문이 제목 숫자 2개 지적으로 거부(exit 4). 이 제목은 10/3 심사 평균 8.57로 숫자 지적을 일부러 유지한 것. 무인 세션 권한 분류기가 --skip-read 실행과 그 뒤 제목 손질 시도를 막아 사람 판단 필요. 블로그는 STOP_blog로 정지. 검증 경로: 관문 단계에서 멈춤(verify 없음). 개선: 없음"
-  },
-  {
-   "hour": 22,
-   "ts": "22:30",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "연봉 순위, 위로 갈수록 한 칸 오르기 어려워지는 이유",
-    "url": "https://cafe.naver.com/firemap/208"
-   },
-   "note": "20:10 칸 n1cafe1004 늦은 발행 22:29(jitter 4분), verify OK 1613/1613자·사진 3/3. 20시 거부 원인(readcheck 제목 숫자 2개)을 --skip-read 우회 대신 5차 제목 심사로 해결: 숫자 0 제목(본문 c03 문장), 제미나이 9.8·레드팀 8.4(같은 뼈대)·작성자 8.0, readcheck 0건, aitell 0.0·editgate auto 재도장(본문 그대로). 블로그 0 — STOP_blog·색인 0 경보. 교차검증: 본문 변경 없음(10/3 selfcheck 사실 0 유지). 개선: 없음(제목만 바뀜)"
+   "note": "08:10 칸 nhisprop1005 발행 verify OK 1790/1790자 사진3/3 · 관문(제목 7.8·표지 7.43·editgate·selfcheck 사실 0) 01:10 통과분 · 블로그 없음(_ALERT 색인 0%·블로그 시각 전)"
   }
  ]
 }

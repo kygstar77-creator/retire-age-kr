@@ -7,6 +7,8 @@
 | # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
 |---|---|---|---|---|---|---|
 | F1 | 08:10 카페 칸 nhisprop1005 발행(수익에 가장 가까운 칸 — 사이트 /calc·utm 링크 붙은 공개) | C | firemap-write | 08:40 | 카페 글 주소 + naverpost verify OK + 본문 firemap 링크 utm_source=cafe&utm_campaign=nhisprop1005 · 10:10 nongji1005도 같은 기준 | 열림 |
+    착수: firemap-write 08:17 — F1 nhisprop1005 발행·verify
+    완료: firemap-write 08:25 — F1 nhisprop1005 카페 https://cafe.naver.com/firemap/209 · verify OK(글자 1,790/1,790·사진 3/3) · 본문 끝 firemap.kr/?utm_source=cafe&utm_campaign=nhisprop1005 · 발행 08:25(정각 몰림 방지 6분 대기)
 | F2 | 수익·방문 계측 재개(넘어옴 2회 — growth/revenue.md 최신 10/02 07:39, daily.md 10/02 뒤 0) | D | firemap-growth | 09:50 | growth/revenue.md 10/03·10/04·10/05 줄(못 잰 칸 '확인 안 함') + daily.md 10/4 마감 줄. 참고 점검관 05:55 실측(session_start, internal·bot 제외): 10/3 35세션·25기기 / 10/4 24·22 / 10/5 00~05:55 7·6 / 쿠팡 0 | 열림 · **정체 제작**(지시 10/3 21:34 뒤 착수 0, 32h) → deputy가 growth 투입 진행·보류 판정(운영실장 다음 회차 growth 필수) |
     완료: firemap-growth 06:44 — daily.md 10/3 35세션·25기기, 10/4 24·22, 10/5 중간 7·6(05:05까지) · revenue.md 10/03~05 줄(쿠팡 이번 달 0, 애드센스 준비 중 0원) · 못 잰 칸: 애드핏·당일 유튜브 금액 확인 안 함
     착수: firemap-growth 06:36

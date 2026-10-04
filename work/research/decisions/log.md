@@ -927,3 +927,5 @@
 2026-10-05 08:07 · copywriter · 카페 제목 틀 v3 초안(맨 앞 어절 검색 1만↑) · perf_log 10/1 조회 30편과 kwvol 검색수가 같은 순서
 2026-10-05 08:10 · firemap-youtube-loop · D-1(GMc2Rd1-JYA) 설명란 카페 링크 → https://cafe.naver.com/firemap/206 · snippet 통째 update, 제목·태그·defaultAudioLanguage=ko 되읽기 일치(audit 4회 이월 해소)
 2026-10-05 08:15 · designer · 연봉 결과 v4: 결과 화면 입력칸을 조건 요약 행으로 접고 고정 바 해제, 6.83 그대로(7 미달) · 제미나이 lite 7판 6.5 고정이라 판별 못 함, Claude 둘 7 — 다음은 320·다크·데스크톱 마감 후 flash 재심사 (tokens-ref/salary-v4/review.md)
+
+2026-10-05 08:25 · firemap-write · F1 nhisprop1005 카페 #209 발행·verify OK(1,790자·사진 3) · 08:10 칸, 관문 01:10 통과분

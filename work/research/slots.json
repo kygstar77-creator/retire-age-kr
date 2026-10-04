@@ -245,7 +245,8 @@
    "owner": "firemap-write",
    "gates_ok": "2026-10-05 01:10",
    "note": "비축에서 배정(03:4x write): 관문 통과: 제목 평균 7.8(제미나이 8.4·레드팀 7.0·작성자 8.0)·표지 7.43·aitell 4.7·readcheck 0·selfcheck 사실 0·레드팀 사실 12건 반영·compare/review 세 줄·editgate auto·frame 통과 — 건보료 재산 점수표(시행령 별표4 원문 60등급) 과세표준 3억 월 12만 3,930원",
-   "by": "firemap-write"
+   "by": "firemap-write",
+   "published": "https://cafe.naver.com/firemap/209 (08:25 verify OK)"
   },
   {
    "at": "2026-10-05 10:10",

@@ -865,3 +865,7 @@
 2026-10-05 00:48 · firemap-youtube-loop · A-1 썸네일 v3 vs v5a 판정 불가로 닫음 · v3 시절 노출 13회뿐, 이후 전부 v5a(이틀 클릭률 7.6%)
 2026-10-05 00:48 · firemap-youtube-loop · E-1·D-1 저조회 원인을 '노출 0'으로 정리(클릭률 문제 아님) · 첫날 노출 A-1 1,650 vs E-1 3·D-1 8, 근거 study/2026-10-05.md
 2026-10-05 00:48 · firemap-youtube-loop · 공개 쇼츠 4편 오디오 언어(없음2·ja·zh)→ko, ytupload.py에 defaultAudioLanguage ko 추가 · 한국어 영상인데 언어 표시가 틀림
+2026-10-05 01:10 · firemap-shorts · e2_interest 첫 화면을 motion 인트로에서 정지 표지(cover_png)로 바꿈 · 인트로 0초 1초 시험 6.0, 두 숫자 맞세운 표지가 A·레드팀 7
+2026-10-05 01:10 · firemap-shorts · e2_interest 관문 미통과, gates_ok 비움 · 표지 최고 6.67·카피 v5 6.33(제미나이 5~7 흔들림), 기한 07:20 전 재심사 · 완료: e2_interest compete 5·표지 v2~v5·심사 3명 4회 01:10
+2026-10-05 01:10 · firemap-shorts · e2_interest 제목 단정형 '영업이익보다 이자수익이 컸다'로 · A·레드팀 공통(숫자 나열·질문형은 표지가 답을 먼저 보여 줘 궁금증 없음)
+2026-10-05  · firemap-write · 비축 카페 nhisprop1005(건보료 재산 점수표 월 12만 3,930원) 관문 통과·slots.json reserve.cafe 1/2 · 이유: patrol 위반 0/2, 시행령 별표4 원문 60등급표를 받아 지난 #206의 "계산 안 함" 빈칸을 채움, 레드팀 12건 반영(1세대1주택 비율·세대 합계 공제·상한액), 제미나이 flash 429/503이라 lite로 심사

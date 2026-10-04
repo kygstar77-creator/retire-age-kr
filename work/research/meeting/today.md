@@ -8,8 +8,10 @@
 |---|---|---|---|---|---|---|
 | F1 | 08:10 카페 칸 nhisprop1005 발행(수익에 가장 가까운 칸 — 사이트 /calc·utm 링크 붙은 공개) | C | firemap-write | 08:40 | 카페 글 주소 + naverpost verify OK + 본문 firemap 링크 utm_source=cafe&utm_campaign=nhisprop1005 · 10:10 nongji1005도 같은 기준 | 열림 |
 | F2 | 수익·방문 계측 재개(넘어옴 2회 — growth/revenue.md 최신 10/02 07:39, daily.md 10/02 뒤 0) | D | firemap-growth | 09:50 | growth/revenue.md 10/03·10/04·10/05 줄(못 잰 칸 '확인 안 함') + daily.md 10/4 마감 줄. 참고 점검관 05:55 실측(session_start, internal·bot 제외): 10/3 35세션·25기기 / 10/4 24·22 / 10/5 00~05:55 7·6 / 쿠팡 0 | 열림 · **정체 제작**(지시 10/3 21:34 뒤 착수 0, 32h) → deputy가 growth 투입 진행·보류 판정(운영실장 다음 회차 growth 필수) |
+    완료: firemap-growth 06:44 — daily.md 10/3 35세션·25기기, 10/4 24·22, 10/5 중간 7·6(05:05까지) · revenue.md 10/03~05 줄(쿠팡 이번 달 0, 애드센스 준비 중 0원) · 못 잰 칸: 애드핏·당일 유튜브 금액 확인 안 함
     착수: firemap-growth 06:36
 | F3 | 카페 검색 미노출 진단 ①~④(넘어옴 2회 — 10/4 23:00 기한 7h 지남) | D | firemap-growth | 09:50 | decisions/log.md에 ①~④ 실측값 또는 '확인 안 함+이유', 제재 확인 시 STOP_cafe 요청 | 열림 · 대기(착수 없음) |
+    착수: firemap-growth 06:36 → 완료: firemap-growth 06:44 — ①공개(openType O) ②메일 확인 안 함(도구 차단) ③카페탭 정확 제목 5/5 노출·통합 1페이지 0/5(watchdog 기준선은 탭 오류 의심) ④utm cafe 2기기 1/2 표본 부족 · 제재 증거 없음, STOP_cafe 없음
 | F4 | R-1 목소리 없이 되는 단계(넘어옴 — 목소리 150/206, TTS 429로 16:00 뒤) — r1props(계산기 장면 빼기)·v6 screen_text 편집 요청·남은 56문장+f0 밖 91줄 목록·16:00 명령 1줄 | B | firemap-video-producer | 09:50 | ep/R-1에 v6 props·남은 문장 목록 커밋(pd 커밋 03:21 뒤 0) | 열림 |
 | F5 | 10/5 18:10 카페 칸 TBD-B 편 확정·관문(관문 기한 12:10) + 20:10 TBD-C 후보 | C | firemap-write | 09:50 | slots.json 18:10 칸 item·gates_ok(`date` 시각) · 비축 카페 2 유지 | 열림 |
 - 착수: firemap-video-producer 06:17 — F4 R-1 목소리 없이 되는 단계(r1props v6·screen_text 편집 요청·남은 문장/f0 목록·16:00 명령)

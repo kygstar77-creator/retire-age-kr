@@ -906,3 +906,9 @@
 2026-10-05 06:30 · editor · R-1 대본 v6(클라우드 최종) 편집 통과, edit.json 새 해시 · aitell 5.9, 숫자 변경 0, facts 대조 일치2026-10-05 06:33 · firemap-write · 10/5 18:10 칸 ltc1005 편 확정(관문 전), 10/6 16:10·18:10 후보 기입 · patrol 칸 배정 없음 해소, 장기요양보험료율 원문 확인됨(검색 2,670·우리 글 0)
 
 2026-10-05 06:43 · firemap-youtube-loop · DNpdFtZyfE8·P8Papm8Yxpw 오디오 언어 None→ko(snippet update, 다른 필드 그대로) · patrol 06:35 위반 해소, 되읽기 확인
+
+2026-10-05 06:44 · firemap-growth · F3 카페 미노출 진단 ① 공개 설정: 로그인 없이 받은 카페 API(apis.naver.com/cafe-web/cafe-articleapi/v2.1/cafes/31789001/articles/N)에서 cafe.openType=O(공개)·memberCount 2, #198·#204·#110 모두 isOpen=true·isEnableExternal=true·isBlind=false 실측. 관리화면의 검색노출 라디오는 로그인 필요라 이번엔 다시 못 봄(9/27 캡처엔 '검색, 카페 주소 등을 통해 방문' 문구만 있고 선택 상태는 글자로 안 남음 — 확인 안 함)
+2026-10-05 06:44 · firemap-growth · F3 ② 네이버 메일함 이용제한·경고: 확인 안 함 — Chrome 도구가 mail.naver.com을 '안전 제한'으로 막음, 네이버 메일은 API·커넥터 없음. 카페 API 응답에 제재 표시 없음(위 ①)
+2026-10-05 06:44 · firemap-growth · F3 ③ 정확한 제목 검색(curl 모바일 UA, 3초 간격): **카페탭(m.search.naver.com ssc=tab.m_cafe.all)에서 5/5 노출** — #198·#204·#110(9/27)·#190·#86 모두 해당 번호 cafe.naver.com/firemap/N 링크가 결과에 있음. **통합검색 1페이지(ssc 없음)는 5/5 0건**. 10/3 13:55 watchdog 기준선(cafe_search_baseline.json)은 where=m_article/m 이라 카페탭이 아니었음 → '9월 글까지 전부 미노출' 결론은 탭을 잘못 본 결과로 보임(내 재측정 1회, 시점 차이 가능성은 배제 못 함). 통합검색 첫 페이지 0은 카페글이 원래 카페탭에서만 잡히는 건지 확인 안 함
+2026-10-05 06:44 · firemap-growth · F3 ④ 카페 utm 진입 기기 계산 완료율: utm_source=cafe 전 기간 2기기뿐 — 3b2b33bf(10/3 18:08 b10danji1003, 이벤트 2건·계산 0 → 0/1) · f63b89a2(10/1 20:56, 계산 18회 — 직원·사장님 점검 의심으로 표시 없이 남은 기기, 확인 안 함). 완료율 1/2이지만 표본 2라 기준선 아님(10/4~10/5 cafe utm 0). 카페 클릭 이벤트 10/4 1건
+2026-10-05 06:44 · firemap-growth · F3 결론: 제재 증거 없음 → STOP_cafe 만들지 않음, approvals.md 줄 없음. 원인 단정 안 함 — 카페탭 노출은 됨, 병목은 카페 안 조회·유입(#198 readCount 7, 멤버 2명). F2 계측 재개: daily.md 10/3·10/4·10/5 줄, revenue.md 10/03~10/05 줄(쿠팡 이번 달 0/0/0원 2026.10.04 업데이트 · 애드센스 준비 중·ads.txt 승인됨 · 유튜브 구독 46) 추가

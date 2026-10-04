@@ -11,6 +11,7 @@
 | F3 | 카페 검색 미노출 진단 ①~④(넘어옴 2회 — 10/4 23:00 기한 7h 지남) | D | firemap-growth | 09:50 | decisions/log.md에 ①~④ 실측값 또는 '확인 안 함+이유', 제재 확인 시 STOP_cafe 요청 | 열림 · 대기(착수 없음) |
 | F4 | R-1 목소리 없이 되는 단계(넘어옴 — 목소리 150/206, TTS 429로 16:00 뒤) — r1props(계산기 장면 빼기)·v6 screen_text 편집 요청·남은 56문장+f0 밖 91줄 목록·16:00 명령 1줄 | B | firemap-video-producer | 09:50 | ep/R-1에 v6 props·남은 문장 목록 커밋(pd 커밋 03:21 뒤 0) | 열림 |
 | F5 | 10/5 18:10 카페 칸 TBD-B 편 확정·관문(관문 기한 12:10) + 20:10 TBD-C 후보 | C | firemap-write | 09:50 | slots.json 18:10 칸 item·gates_ok(`date` 시각) · 비축 카페 2 유지 | 열림 |
+- 착수: firemap-video-producer 06:17 — F4 R-1 목소리 없이 되는 단계(r1props v6·screen_text 편집 요청·남은 문장/f0 목록·16:00 명령)
 - 점검 05:55: F1(수익·방문 계측) ❌(growth/revenue.md 최신 10/02 07:39, daily.md 10/3~ 줄 0, growth 커밋 0 — longform/loop/revenue.md 10/5 줄은 yt-loop 것이라 칸 기준 아님) / F2(카페 미노출 진단) ❌(decisions/log.md에 growth ①~④ 줄 0) / F3 ✅(slots 10/5 08:10 nhisprop1005 gates_ok 01:10·10:10 nongji1005 01:28, 12:10~16:10까지 칸 차 있음 — 발행은 08:10 회차) / F4 ✅(slots 10/6 12:20 nhis_prop gates_ok 03:45, reserve.shorts 1 = nongji_age) / F5 진행 중(c2e5314 03:21 voice.json 150/206, 429 하루 한도 — 관문 통과 줄 없음, 16:00 뒤)
 - ✅ 비율 2/5 = 40% (진행 중 1)
 - 수익 0원(growth/revenue.md 최신 10/02 07:39 — 10/3~10/5 계측 없음) · 사이트 세션 10/3 35·10/4 24·10/5 00~05:55 7(6기기) · 쿠팡 클릭 0 · 운영 화면 firemap.kr 200(0.43s)

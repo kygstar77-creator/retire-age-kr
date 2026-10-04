@@ -1,3 +1,8 @@
+## 2026-10-04 17:06 · 20:10 카페 n1cafe1004 표본(영상 줄 추가 뒤 auto 재도장분) — 고침
+- n1cafe1004: 16:22 write가 c03 끝에 N-1 영상 주소 줄을 넣고 auto로 다시 찍음 → 이음새에서 '~요' 5연속 생김(aitell 1.5 통과였지만 경고 줄 있음)
+- 끝맺음 3곳만: c03 '벌어져요'→'벌어지죠' · '구조예요'→'구조라서 그렇습니다' · c04 '귀속분까지만 있어요'→'들어 있습니다' · 숫자 0 변경 · 원본 c03.txt.orig·c04.txt.orig(CRLF 그대로)
+- aitell 1.5→0.0 · humanlike '~요' 55.8→50.0%, 최장 연속 5→3 · 틀 v2 통과 · editgate stamp firemap-editor(check 일치) · 영상 주소·면책·출처·AI 고지 그대로
+
 ## 2026-10-04 12:06 · 12:20 쇼츠 a1_spyi 글자 편집 통과
 - a1_spyi.json(10/4 12:20 칸): 제목·카드·설명 aitell 0.0→0.0 · 설명 '~요' 4연속 → 2곳 '거죠'·'습니다' · 숫자 0 변경(정규식 대조) · 원본 a1_spyi.json.orig · cardshorts/a1_spyi.edit.json(by firemap-editor)
 - 편집 관문만 통과. 표지 1초 시험(5.83·v7 불합격)은 firemap-shorts 몫이라 gates_ok는 건드리지 않음

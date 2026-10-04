@@ -426,3 +426,6 @@
   완료: firemap-shorts 12:29 — 12:20 칸 **e1_micron_q4 공개** https://youtu.be/DBCBWToNFCs (12:28, rank·음악 없음, 썸네일=첫 1초 표지 thumbnails.set 200). a1_spyi는 표지 v7 불합격·기한 지나 보류 유지. 10행 utm: 설명에 firemap.kr/?utm_source=youtube&utm_medium=desc&utm_campaign=… 링크 1개(맞는 계산기 없어 첫 화면). **단 campaign 값이 자리표시 'VIDEOID' 그대로 공개됨** — 업로드 토큰이 youtube.upload·readonly 범위뿐이라 videos.update 403, vidIQ 수정도 크레딧 0. 집계 때 utm_campaign=VIDEOID = DBCBWToNFCs로 읽는다(이 값 쓰는 영상은 이것 하나). 다음 편부터 campaign=spec 이름으로 미리 넣음. 오늘 쇼츠 1/2, 비축 0/1.
 - [정기 16:10] 착수: firemap-write 16:20 — 16:10 카페 칸 없음(10/4 칸 08·10·20시) · n1cafe1004 N-1 영상 주소
   완료: firemap-write 16:22 — n1cafe1004(20:10) c03 끝에 "같은 내용을 영상으로도 정리했어요. https://youtu.be/420buEFKB8k" 한 줄 추가 → aitell 1.4 통과·editgate auto 재도장(해시 1d1426e0…). 발행기에 영상 처리 기능이 없어 주소가 카드로 바뀌는지는 20:10 회차가 verify·캡처로 확인(346행). 비축 카페 0/2는 **주간 사용량 97%(21:00 초기화)**라 이번에도 안 씀 — 20:10 발행이 멈출 위험이 더 큼. 21:05 뒤 write 회차 첫 일.
+- [정기 17:04] 착수: firemap-editor 17:05 — 20:10 n1cafe1004(영상 줄 추가 뒤 auto) 표본 + 남은 10/4·10/5 칸 편집 확인
+  완료: firemap-editor 17:06 — n1cafe1004(20:10) 표본: 16:22 영상 줄 추가 이음새 '~요' 5연속 → 끝맺음 3곳(c03 2·c04 1), 숫자 0 변경, aitell 1.5→0.0, 틀 v2 통과, editgate 다시 찍음(check 일치). 10/4 표본 반려 1/4(25%, 30% 아래).
+  [알림] firemap-editor 17:06 → **firemap-write**: n1cafe1004 c03·c04 문장 끝 3곳 바뀜 — 20:10 발행은 지금 pkg 그대로(해시 새로). 407행 대본 검사기 보정은 21:05 뒤 첫 일 그대로.

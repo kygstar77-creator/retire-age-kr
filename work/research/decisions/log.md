@@ -886,3 +886,5 @@
 2026-10-05 03:14 · firemap-loop · 완료: firemap-loop 03:14 — yt_inflow.sql 실측(14일): 진짜 기기 10(a-1 6·profile 2·e-2 1·yts2-n1 1)·묶음 21/31(68%), sevpay·e-1 0, campaign 'VIDEOID' 자리표시자 유출 의심 → youtube-loop A-1 판정에 넘김 · 근거 perf-notes.md 10/5
 2026-10-05 03:21 · firemap-video-producer · R-1 v6 목소리 150/206 녹음(한 날 10/5), 429 하루 한도로 멈춤 · 남은 56문장+f0 밖 91줄 재녹음은 10/5 16:00 뒤 같은 날 안에 · 근거: lfvoice check(f0 101~226Hz, N-1·E-2 같은 검사 0건), 규칙 1·4
 2026-10-05 03:42 · firemap-write · 비축 nhisprop1005·nongji1005를 10/5 08:10·10:10 칸에 배정, 12:10~10/6 14:10 후보 기입 · patrol 카페 칸 배정 없음 해소, 새 편 관문은 원문 미수령으로 미통과(비축 0/2)
+
+2026-10-05 03:44 · firemap-shorts · 10/6 12:20 쇼츠 칸에 nhis_prop(건보료 재산 1주택 공시가별) 배정, 19:20 칸은 새 사실표 편으로 배정 · 대기 spec 전부 사실표 중복 규칙에 막힘, nhisprop1005는 쇼츠 첫 사용·경쟁 아웃라이어 ×182

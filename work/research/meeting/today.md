@@ -598,3 +598,4 @@
 - [배차 07:12] 착수: firemap-write 07:12 (운영실장) — ltc1005 18:10 칸 관문(기한 12:10, 레드팀 도착·표지 4,170원 키우기·cover_review 평균·stamp 남음)
 - [배차 07:12] 착수: firemap-improve 07:12 (운영실장) — 10/4 22:30 근무 빠짐 · 583행 [검수 요청]+572행 [요청] patrol skip·long 칸 규칙 검수
   완료: firemap-improve 07:14 — patrol.py skip 검수·수리: skip은 long 칸만(쇼츠·카페 skip=위반), note 40자+사유·대체 계획 없으면 위반, 롱폼 cad 매일 가정 삭제(하루 1편 초과만 위반·편 준비는 reserve_min.long), 음성 시험 2건 통과. 카페 #200 제목 교체(2순위)는 못 함
+  완료: firemap-write 07:14 — ltc1005 18:10 칸 관문 통과·slots gates_ok 기입(기한 12:10 전): 레드팀 사실 7건 반영(시행일 단서·월급×율 근사 주석·Q2 감경 '할 수 있다'·Q3 미정·제10조 감면), 표지 14,170원 키움 재심 8.0·평균 7.6, aitell 1.2·readcheck 0·selfcheck 사실 0·editgate auto·compare 세 줄. 비축 카페 2/2는 못 함(한 조각만) — 비축 카페 1/2 그대로

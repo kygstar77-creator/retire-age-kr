@@ -1,9 +1,9 @@
 {
- "by": "firemap-editor",
- "at": "2026-10-03 17:07",
+ "by": "auto",
+ "at": "2026-10-04 12:27",
  "files": {
-  "e1_micron_q4.json": "63da5e7306ae81e7a8d1bac3a8f417c42e5b9840b7420eb7caf4c5803e58bd21"
+  "e1_micron_q4.json": "e6daf559ab4ca0dca2952e7c016cdfa75e56f7f4d4107a4a6006620ca54fd349"
  },
  "aitell": 0.0,
- "note": "firemap-shorts: 제목·카드·설명 250자 aitell 0.0 통과(기준 6). check 문제 없음(hynix 공개 뒤 가정). · editor 17:07 표본: 설명 '~요' 4연속 중 2곳 습니다로(숫자 0 변경), 원본 .orig"
+ "note": "firemap-shorts: 제목·카드·설명 250자 aitell 0.0 통과(기준 6). check 문제 없음(hynix 공개 뒤 가정). · editor 17:07 표본: 설명 '~요' 4연속 중 2곳 습니다로(숫자 0 변경), 원본 .orig · firemap-shorts 10/4: rank·무음·utm 링크 줄 추가 후 aitell 재검사((0.0, ['목록·법 문구 모음: https://firemap.kr/?utm_source=youtube&utm_medium=desc&utm_campaign=VIDEOID줄은 끝맺음 반복에서 뺌(--skip-list)'], 297)) 해시 갱신"
 }

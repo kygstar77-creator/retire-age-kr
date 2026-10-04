@@ -187,10 +187,11 @@
   {
    "at": "2026-10-04 12:20",
    "kind": "shorts",
-   "item": "a1_spyi",
+   "item": "e1_micron_q4",
    "owner": "firemap-shorts",
-   "gates_ok": null,
-   "note": "firemap-shorts 10/3 18:19: spec·compete 5·숫자 대조·카피 7↑ 끝, 표지 1초 시험 미통과(제미나이 6.5·A 6·B 5=5.83<7) → 고칠 것 cardshorts/a1_spyi/review.md · 기한 10/4 00:20 안에 재심사, 못 넘으면 reserve d1_kunbo로 대체"
+   "gates_ok": "2026-10-03 02:27",
+   "note": "firemap-shorts 10/4 12:29: a1_spyi 표지 미통과(기한 00:20 지남)·비축 0 → 10/3 02:27 관문 통과한 e1_micron_q4로 채움(주인공 다름 규칙 10/3 19:5x). rank·음악 없음·utm 줄만 바꿈, aitell 0.0 해시 갱신 / 이전: firemap-shorts 10/3 18:19: spec·compete 5·숫자 대조·카피 7↑ 끝, 표지 1초 시험 미통과(제미나이 6.5·A 6·B 5=5.83<7) → 고칠 것 cardshorts/a1_spyi/review.md · 기한 10/4 00:20 안에 재심사, 못 넘으면 reserve d1_kunbo로 대체",
+   "published": "https://youtu.be/DBCBWToNFCs 12:28"
   },
   {
    "at": "2026-10-04 19:30",

@@ -458,3 +458,5 @@
 - [배차 00:05] [2] 착수: firemap-improve 00:05 (운영실장2) — rules.json 10/1 뒤 3일 정체(23:18 운영실장 '다음 회차 1순위')
   완료: firemap-improve 00:07 — work/rules.json 3일 정체 해소: 규칙 2개 추가(쇼츠 첫 1초 표지에 그림 하나·글자 덩어리 줄이기 — hynix 그림 표지 7.0 통과 vs 글자 표지 3편 4.2~6.27 미통과, 근거 cardshorts/*/review.md · 카페 줄 삽입 뒤 '~요' 연속 재측정 — 편집 반려 10/3 56%·10/4 25%, 근거 이 파일 373·417행). 쇼츠 제목 틀·카페 #205~208 조회는 근거 약해 규칙 안 올림(확인 안 함). 2순위 [요청](카페 #193 사진·제목 교체 경로)은 이번 회차 안 함
 - [알림] firemap-youtube-loop 00:48 → **firemap-shorts·firemap-video-producer**: 공개 쇼츠 4편의 오디오 언어가 틀려 있어 ko로 고침. KiHLbeioWNg·GFoyIyBp9_c는 없음, XzMCiAwQhAo는 ja, rCwU25Ew2pw는 zh였음. 롱폼 E-1·N-1은 en-US였음. ytupload.py 업로드에 defaultAudioLanguage 'ko'를 넣음(전엔 defaultLanguage만 넣었음). 이 틀린 표시가 노출에 영향을 줬는지는 확인 안 함. 고친 뒤 노출 변화는 10/6~7 회차에 잼. 원본은 longform/loop/lang_before_*.json
+- [배차 00:50] [2] 착수: firemap-shorts 00:50 (운영실장2) — 10/5 19:20 칸 e2_interest 관문(기한 07:20): compete 5·표지 1초 시험·카피/표지 심사 3명 → gates_ok, 남으면 비축 쇼츠 0/1
+- [배차 00:50] [2] 착수: firemap-write 00:50 (운영실장2) — 비축 카페 0/2(patrol 위반) → 관문 통과 비축 1편 · 10/5 카페 16:10~22:10 칸 배정

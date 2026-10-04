@@ -6,7 +6,8 @@
 #   py -3.12 work/lfvoice.py fixcut <ep폴더> <묶음번호> [--dry]  # 조각마다 받아써서 대본 문장에 맞춰 자른다(지시문 읽은 앞머리 버림) — 공개 전 받아쓰기 대조에서 어긋나면
 #   py -3.12 work/lfvoice.py readback <ep폴더> [3:6,12:0]  # 공개 전 필수: 문장마다 받아써 숫자 대조·지시문 앞머리 의심 찾기(lessons 9)
 # 규칙 1: 모델·목소리는 ep/tts.json에 처음 한 번 적고 잠근다. 429여도 다른 모델로 넘어가지 않고 멈춘다(다음 날 같은 모델로 이어서).
-# 규칙 2: 문장별 말 속도(0.6초 넘는 쉼 뺀 초당 음절) 5.6 밑이면 atempo(음높이 유지, 최대 1.25배)로 6.8에 맞춘다. 8.2 넘으면 표시.
+# 규칙 2(10/3 22시 사장님 "목소리 속도는 일정하게"로 바뀜): 빠르기는 늘 1.0 — atempo로 늘이거나 줄이지 않는다. 장면 길이가 목소리 길이를 따라간다.
+# 규칙 4(10/3 22시 '목소리 한결같음'): 문장 f0가 편 중앙값 ±12% 밖이면 다시 녹음 · 한 편은 한 날에 녹음(문장마다 rec 날짜, 날짜 둘 이상이면 check 막힘 — 이어 붙이기 금지).
 #         편 전체(대본 음절 ÷ 내레이션 길이) 5.5 이상이어야 check 통과. .slow 통과 없음.
 # 무료 등급은 모델당 하루 10회라 장 여러 개를 한 요청에 묶는다(기본 9회 이하). 받은 소리는 _raw/에 먼저 저장해 다시 요청하지 않는다.
 import sys, os, re, json, glob, time, base64, wave, hashlib, subprocess, urllib.request, urllib.error
@@ -200,8 +201,8 @@ def align(pcm, texts):
     return segs
 
 def tempo(fn, rate):
-    # 규칙 2: 5.6 밑이면 6.8에 맞춘다(최대 1.25배). 결과 파일로 바꿔 넣고 배수를 돌려준다.
-    if rate >= 5.6: return 1.0
+    # 규칙 2(10/3 22시부터): 빠르기 고정 — 늘 1.0. 아래 atempo는 옛 편 기록용으로만 남김.
+    if True or rate >= 5.6: return 1.0
     f = min(1.25, 6.8 / max(rate, 0.1)); tmp = fn + '.tmp.wav'
     subprocess.run([ffmpeg(), '-y', '-loglevel', 'error', '-i', fn, '-filter:a', f'atempo={f:.3f}', '-ar', str(SR), '-ac', '1', tmp], check=True)
     os.replace(tmp, fn); return round(f, 3)
@@ -260,10 +261,12 @@ def build(ep):
             if os.path.exists(fn):
                 a, sr = read(fn); sp = speech_sec(a, sr); r = syl(say) / max(sp, 0.1)
                 meta = fn + '.json'; info = json.load(open(meta)) if os.path.exists(meta) else {}
-                if 'tempo' not in info: info = {'tempo': tempo(fn, r), 'rate_raw': round(r, 2)}; json.dump(info, open(meta, 'w'))
+                if 'tempo' not in info: info = {'tempo': tempo(fn, r), 'rate_raw': round(r, 2)}
+                if 'rec' not in info: info['rec'] = time.strftime('%Y-%m-%d', time.localtime(os.path.getmtime(fn)))   # 녹음 날(규칙 4)
+                json.dump(info, open(meta, 'w'))
                 a, sr = read(fn); sec = len(a) / sr; sp = speech_sec(a, sr)
                 rec.update({'audio': f"audio/{os.path.basename(aud_dir(ep))}/{h}.wav", 'sec': round(sec, 2), 'frames': int(sec * FPS + 0.999) + GAP_F,
-                            'rate': round(syl(say) / max(sp, 0.1), 2), 'tempo': info['tempo'], 'f0': round(f0(a, sr), 1)}); done += 1
+                            'rate': round(syl(say) / max(sp, 0.1), 2), 'tempo': info['tempo'], 'rec': info['rec'], 'f0': round(f0(a, sr), 1)}); done += 1
             else: miss += 1
             out.append(rec)
         s['lines'] = out; s['frames'] = sum(l.get('frames', 0) for l in out) + (SEC_F if out else 0)
@@ -274,23 +277,25 @@ def build(ep):
     print(f"문장 {done} 완료 · 남음 {miss} · 길이 {tot/60:.1f}분 · 편 전체 {res['rate_total']} 음절/초")
 
 def check(ep, vj=None):
-    # 규칙 3: 문장별 음높이·속도가 편 중앙값에서 튀는지. 음높이 ±20%(E-1 첫 한 모델 편으로 다시 맞출 값) 또는 속도 5.6 미만·8.2 초과면 다시 만들 목록.
+    # 규칙 3·4: 문장별 음높이 ±12%(10/3 22시, 전엔 ±20%)·속도 4.8 미만·8.2 초과(빠르기 고정이라 하한을 낮춤, 편 전체 5.5는 그대로)·빠르기 1.0 아님·녹음 날 둘 이상이면 막힘.
     d = json.load(open(vj or os.path.join(ep, 'voice.json'), encoding='utf-8')); rows = []
     for s in d['sections']:
         for l in s['lines']:
             if not l.get('audio'): continue
             a, sr = read(os.path.join(PUB, l['audio'])); sp = speech_sec(a, sr)
-            rows.append((s['title'][:12], l['text'][:24], syl(l.get('say', l['text'])) / max(sp, 0.1), f0(a, sr), len(a) / sr))
+            rows.append((s['title'][:12], l['text'][:24], syl(l.get('say', l['text'])) / max(sp, 0.1), f0(a, sr), len(a) / sr, l.get('tempo') or 1.0))
     if not rows: sys.exit('소리 없음')
     fm = float(np.median([r[3] for r in rows if r[3]])); bad = []
-    for t, x, r, p, _ in rows:
-        why = [w for w, c in (('음높이', p and abs(p / fm - 1) > 0.2), ('느림', r < 5.6), ('빠름', r > 8.2)) if c]
+    for t, x, r, p, _, tp in rows:
+        why = [w for w, c in (('음높이', p and abs(p / fm - 1) > 0.12), ('느림', r < 4.8), ('빠름', r > 8.2), (f'빠르기{tp}', tp != 1.0)) if c]
         if why: bad.append(f'{t} | {x} | {r:.2f}음절/초 · {p:.0f}Hz | ' + '·'.join(why))
     tot = sum(s.get('frames', 0) for s in d['sections']) / d.get('fps', FPS); tsyl = sum(syl(l.get('say', l['text'])) for s in d['sections'] for l in s['lines'])
     whole = tsyl / max(tot, 0.1); rates = [r[2] for r in rows]
     print(f'문장 {len(rows)} · 음높이 중앙 {fm:.0f}Hz · 문장 속도 중앙 {np.median(rates):.2f}(최저 {min(rates):.2f}) · 편 전체 {whole:.2f}음절/초(목표 5.5 이상)')
     print('튀는 문장', len(bad), *bad[:40], sep='\n  ')
-    ok = whole >= 5.5 and not bad and not d.get('missing')
+    recs = sorted({l.get('rec') or '?' for s in d['sections'] for l in s['lines'] if l.get('audio')})
+    print('녹음 날', recs, '(한 날이어야 통과 — 규칙 4)')
+    ok = whole >= 5.5 and not bad and not d.get('missing') and len(recs) == 1 and '?' not in recs
     print('통과' if ok else '막힘'); return ok
 
 def cutat(ep, gi, times, maxreq=9):

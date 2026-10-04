@@ -90,6 +90,12 @@ def gate(ep):
         a_, sr_ = clickscan.load(f); n += len(clickscan.bursts(a_, sr_)); mute += int(abs(a_).max() < 1000)
     if mute: bad.append(f'문장 wav 무음 {mute}개')
     if n: bad.append(f'문장 wav 치직 {n}곳 — py -3.12 work/video/clickscan.py fix {ad} 뒤 다시 렌더')
+    # 목소리 한결같음 — 10/3 22시 사장님 "뒤쪽에 다른 목소리". f0 ±12%·빠르기 1.0·한 날 녹음(lfvoice check 규칙 3·4)
+    if os.path.exists(os.path.join(ep, 'voice.json')):
+        import io, contextlib, importlib; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); lfv = importlib.import_module('lfvoice')
+        with contextlib.redirect_stdout(io.StringIO()) as buf:
+            okv = lfv.check(ep)
+        if not okv: bad.append('목소리 한결같음 막힘 — py -3.12 work/lfvoice.py check ' + ep + ' | ' + buf.getvalue().strip().splitlines()[-1])
     return m, bad
 
 def up(ep):

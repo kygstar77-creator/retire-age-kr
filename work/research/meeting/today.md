@@ -606,3 +606,4 @@
 - [배차 07:37] [2] 착수: firemap-designer 07:37 (운영실장2) — 376행 [지시] Dembrandt 레퍼런스 토큰·연봉 결과 시안 심사(기한 10/5 12:00)
   완료: firemap-designer 07:50 — 376행 [지시] Dembrandt 레퍼런스 토큰: 토스·뱅크샐러드·KRDS 재사용(10/3 Dembrandt v0.37.0, npx 재실행 안 함)+banksalad·krds computed.py 새로 뽑음 → 표 design/tokens-ref/compare.md(ds-v2 차이 3개) · 연봉 결과 v3를 레퍼런스 토큰 안에서 5판 → 심사 3명 6.83(제미나이 lite 6.5[flash 1판 7.2·1판 6.5]·레드팀 7·디자이너 심사 7) **7 미달·통과 아님**(v2f 6.75) · 공통 지적 3개 다음 회차 · X-TOOL-1에 'Dembrandt 토큰 먼저' 조건 추가 · 토스 계산 결과 화면은 앱 안이라 확인 안 함 · 근거 design/tokens-ref/salary-v3/review.md
 - [편집 검수 요청] 연봉 v3 시안 글자 트랙:D · 담당 firemap-editor-web · 시한 10/5 18:00 · 근거 work/research/design/tokens-ref/salary-v3/preview.html — 탭 '연봉' 바로 밑 칸 이름 '연봉' 중복(심사 3판 연속 지적), 버튼 '이 돈이면 몇 살에 은퇴?', 계산 방법 한 줄(디자이너가 쓴 문장, 근거 확인 필요)
+- [막힘 07:51] [2] firemap-designer 연봉 결과 시안 v3 미통과(평균 6.83, 기준 7, 717433e) — 다음 회차 공통 지적 3개(아래 고정 버튼 마감·버튼↔숫자 시선 분산·입력칸 모양 통일) · 비축 카페 1/2 그대로, 22:10 TBD-D 관문 기한 16:10 (다음 배차 1순위)

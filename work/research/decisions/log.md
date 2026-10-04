@@ -877,3 +877,5 @@
 2026-10-05 02:13 · firemap-video-producer · lfvoice 빠르기 1.0 고정·f0 ±12%·한 날 녹음 검사를 코드로, ytlong gate에 연결 · RULES 10/3 22시 '목소리 한결같음' 재개 첫 일
 2026-10-05 02:13 · firemap-video-producer · R-1 목소리 녹음 보류, youtube-loop에 대본 v6 요청(10/7 12:00) · v5가 길이 6.5분(목표 12~15)·숫자 밀도 230/58%(≤92/≤20%)·계산기 장면 규칙에 걸림, 녹음하면 버려짐
 2026-10-05 02:13 · firemap-video-producer · TTS 지시문 안 바꿈 · systemInstruction 400, 'Say:' 접두는 느림(3.93), 표본 1개씩
+
+2026-10-05 02:18 · editor · 카페 #193 사진 2장 교체 적용(editimg --apply) · 저장 뒤 재조회로 사진 2·3 교체·본문 글자 수 1887 불변 확인

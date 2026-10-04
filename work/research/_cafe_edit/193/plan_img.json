@@ -1,0 +1,129 @@
+{
+ "aid": 193,
+ "layout": [
+  "text",
+  "image",
+  "text",
+  "image",
+  "text",
+  "image",
+  "text",
+  "image",
+  "text",
+  "oglink",
+  "text"
+ ],
+ "images": [
+  "https://cafeptthumb-phinf.pstatic.net/MjAyNjEwMDJfMTIg/MDAxNzkwOTE5NjIxNzcw.jErdn3ZzE04o2_5kJYd5Gcc0nA-NIal9NHSgUoAMs74g.6pYAtRv5i9NuDZ0RQT6s6kky7P2KkCONKqP9NQVnkVIg.PNG/00.png",
+  "https://cafeptthumb-phinf.pstatic.net/MjAyNjEwMDVfMjc4/MDAxNzkxMTM0Mjc0Njk0.u4RXSgP4m6HyW6f_jgC2Dy_l8WQVzedMInZXUtOXpFcg.wW8VNDqZoeXjpY3YVQ6SZjQWeH6ujfTXNGOK9Ucqtfog.PNG/01.png",
+  "https://cafeptthumb-phinf.pstatic.net/MjAyNjEwMDVfMTAz/MDAxNzkxMTM0MjcyMzcw.kyhoKBOvwvdK8dx8nmOeVXXfQ1w5XIjtTMiowAgv9lQg.xGhlA2SchTK7rTJ7UYAIla94EysFOKVrelpmHMoPJJcg.PNG/02.png",
+  "https://cafeptthumb-phinf.pstatic.net/MjAyNjEwMDJfMTc3/MDAxNzkwOTE5NjM3MjQz.zkrfxQtE2K7BaPKXfvYmNkDU68vU7ARWMRptF-ai38Mg.5jXnzNqq6JGQxJqdaY-ZUkLH1f1rBhTA0fCEMNhWibgg.PNG/03.png"
+ ],
+ "texts": [
+  [
+   "2026년 7~9월 국토교통부 실거래 데이터를 바탕으로 서울 25개 구의 전세가율 위치를 정리했습니다.",
+   "",
+   "서울 25개 구 중 전세가율이 가장 높은 곳은 금천구 60.9%, 가장 낮은 곳은 강남구 35.9%였어요.",
+   "매매가 10억 원짜리 집을 예로 들면 금천구는 전세가 6억 원 남짓이고 강남구는 3억 6천만 원 정도라는 거죠.",
+   "",
+   "전세 재계약을 앞두셨나요? 첫 집을 알아보는 중이어도 마찬가지예요. 우리 구가 25개 구 중 어디쯤인지부터 보시면 됩니다.",
+   "'낮다·높다'는 숫자의 위치일 뿐이고, 좋다 나쁘다를 뜻하지는 않아요."
+  ],
+  [
+   "전세가율은 이렇게 쟀습니다",
+   "",
+   "전세가율은 전세 보증금을 매매가로 나눈 값이에요.",
+   "",
+   "처음에는 구별 평당 매매가 중앙값과 전세가 중앙값을 단순 비교해 봤더니 중구가 72%대로 가장 높게 나왔는데요.",
+   "매매와 전세가 이뤄진 집이 서로 다르면 단지 구성 차이 때문에 비율이 크게 왜곡되더라고요.",
+   "",
+   "그래서 같은 단지와 면적대에서 매매와 전세 거래가 2건 이상 발생한 경우만 짝을 맞추고, 그 전세가율의 중간값을 해당 구의 대표 수치로 정했습니다.",
+   "계약이 해제된 거래와 공공기관이 한꺼번에 사들인 거래는 뺐습니다.",
+   "",
+   "아래 그림에서 네모 크기는 구별 매매 건수를 나타내고, 색상은 서울 중간값인 47.1%보다 높으면 초록색, 낮으면 빨간색으로 표시했어요."
+  ],
+  [
+   "25개 구 순위",
+   "",
+   "전세가율 상위 지역은 금천·도봉·강북·중랑·관악 순이었고, 하위 지역은 강남·서초·송파·용산·강동 순이었어요.",
+   "외곽은 50~60%대, 강남 3구와 용산은 30%대입니다. 금천과 강남 사이가 25%포인트나 벌어져 있죠.",
+   "",
+   "월세 수익률도 순서가 비슷합니다. 매매가에서 보증금을 뺀 순투자금 대비 1년 치 월세를 계산해 보니 금천구가 2.40%로 가장 높았어요.",
+   "짝이 6개뿐인 종로구를 빼면 강남구가 1.03%로 가장 낮았고요.",
+   "",
+   "표 맨 오른쪽 '짝 수'를 같이 봐 주세요. 종로(6개), 광진(12개), 중구(14개)는 짝이 15개도 안 돼서 거래 몇 건에 순위가 바뀔 수 있습니다."
+  ],
+  [
+   "전세가율이 높다는 건",
+   "",
+   "매매가와 전세 보증금 차이가 작다는 뜻이죠.",
+   "세입자 입장에서는 집값이 떨어질 때 보증금을 제때 돌려받지 못할 위험이 커진다는 뜻이기도 해요.",
+   "그래서 전세가율이 높은 구에서 전세를 구한다면, 그 집의 최근 매매 실거래와 보증금 차이를 따로 한 번 더 확인해 보시는 게 좋아요.",
+   "2021년 최고가와 비교하면",
+   "",
+   "같은 단지·같은 면적대를 기준으로 2021년 10~12월 최고 거래가와 올해 7~9월 거래의 중간값을 비교했어요.",
+   "전용 40㎡ 이상, 양쪽 모두 거래가 2건 이상인 곳만 남기니 377쌍이었습니다.",
+   "",
+   "그중 235쌍은 2021년 최고가보다 올랐고, 141쌍은 내렸어요. 가운데값은 7.5% 상승이었습니다.",
+   "20% 넘게 내린 곳은 20쌍인데, 상위 10곳이 전부 노원·도봉·금천에 몰려 있었어요."
+  ],
+  [
+   "눈에 띄는 부분이 하나 더 있어요. 하락 상위 10곳이 있는 노원·도봉·금천은 전세가율도 25개 구 중 8위·2위·1위거든요.",
+   "매매가가 많이 빠진 만큼 전세 보증금과의 차이가 좁아졌을 수 있는데요, 이 숫자만으로 원인까지 단정하긴 어렵습니다.",
+   "",
+   "맨 위는 노원구 주공2 전용 44.52㎡입니다. 그때 최고 거래가는 5억 7천만원이었죠.",
+   "올해 7~9월 거래 29건의 가운데값은 3억 7,900만원이었습니다.",
+   "",
+   "다만 이 비교는 2021년 최고가 거래 한 건과 올해 중간값을 비교한 수치라 실제 평균 하락 폭보다 크게 느껴질 수 있어요.",
+   "알고 보셔야 할 한계",
+   "",
+   "9월 거래는 아직 덜 찼어요. 실거래 신고 기한이 계약 후 30일이거든요.",
+   "지금 받은 자료로는 서울 아파트 매매가 7월 5,992건, 9월 1,553건입니다. 10월 말이면 9월분이 더 늘어나요.",
+   "",
+   "층과 향, 수리 상태는 공개 실거래 자료에 없어서 반영하지 못했어요. 같은 단지 같은 면적이어도 층에 따라 값이 꽤 다르니, 단지 하나를 볼 때는 감안해 주세요.",
+   "우리 동네 단지를 직접 보려면",
+   "",
+   "관심 있는 단지의 실거래 현황은 국토교통부 실거래가 공개시스템(rt.molit.go.kr)에서 단지명으로 바로 찾아볼 수 있어요.",
+   "노후 준비 숫자를 우리 집 기준으로 계산해 보고 싶다면 파이어맵 계산기도 있습니다.",
+   "https://firemap.kr/?utm_source=cafe&utm_medium=post&utm_campaign=b10",
+   "다음 편은 같은 잣대로 경기·인천을 봅니다.",
+   "",
+   "출처: 국토교통부 아파트 매매·전월세 실거래가(공공데이터포털 오픈API), 2026년 7~9월 계약분, 2026년 10월 1일 수집. 2021년 10~12월 계약분은 같은 API로 받은 자료입니다.",
+   "이 글의 계산과 문장 정리에는 AI(Claude)를 썼습니다."
+  ],
+  [
+   ""
+  ]
+ ],
+ "swaps": [
+  {
+   "file": "01.png",
+   "comp": 3,
+   "img_no": 1,
+   "old_url": "https://cafeptthumb-phinf.pstatic.net/MjAyNjEwMDVfMjc4/MDAxNzkxMTM0Mjc0Njk0.u4RXSgP4m6HyW6f_jgC2Dy_l8WQVzedMInZXUtOXpFcg.wW8VNDqZoeXjpY3YVQ6SZjQWeH6ujfTXNGOK9Ucqtfog.PNG/01.png",
+   "new_w": 1600,
+   "new_h": 1000,
+   "new_sha": "6e5bbe0c52655dda2621f2a8701fae1bb18f16afe644bc662471684269647f55",
+   "new_bytes": 96710,
+   "old_w": 1600,
+   "old_h": 1000,
+   "old_sha": "6e5bbe0c52655dda2621f2a8701fae1bb18f16afe644bc662471684269647f55",
+   "same_as_live": true
+  },
+  {
+   "file": "02.png",
+   "comp": 5,
+   "img_no": 2,
+   "old_url": "https://cafeptthumb-phinf.pstatic.net/MjAyNjEwMDVfMTAz/MDAxNzkxMTM0MjcyMzcw.kyhoKBOvwvdK8dx8nmOeVXXfQ1w5XIjtTMiowAgv9lQg.xGhlA2SchTK7rTJ7UYAIla94EysFOKVrelpmHMoPJJcg.PNG/02.png",
+   "new_w": 900,
+   "new_h": 1782,
+   "new_sha": "41c2deb005738dce0e57b9353f97790fcf6d3c914230c87b2ab85ea8d522ba79",
+   "new_bytes": 187320,
+   "old_w": 900,
+   "old_h": 1782,
+   "old_sha": "41c2deb005738dce0e57b9353f97790fcf6d3c914230c87b2ab85ea8d522ba79",
+   "same_as_live": true
+  }
+ ],
+ "sha_live": "9fd54169587e056ca166969f954495cfd7e73f180b675b86907b79de1f23a213"
+}

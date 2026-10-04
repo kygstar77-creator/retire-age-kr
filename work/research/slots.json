@@ -219,6 +219,22 @@
    "gates_ok": "2026-10-04 19:29",
    "note": "firemap-shorts 10/4 19:3x: 배정 없던 칸·비축 0 → a1_spyi 표지 v8 재심사 7.0 통과 뒤 같은 회차 공개(12시간 전 관문 기한은 못 지킴)",
    "published": "https://youtu.be/rCwU25Ew2pw 19:31"
+  },
+  {
+   "at": "2026-10-05 12:20",
+   "kind": "shorts",
+   "item": "a1_1eok1y",
+   "owner": "firemap-shorts",
+   "gates_ok": null,
+   "note": "firemap-shorts 10/4 23:17: spec·check·aitell 0.0·숫자 [9] 대조·compete 5 끝, 제목 '세금 떼고' 고침. 표지 v2 1초 시험 제미나이 6.8·A 6·레드팀 6=6.27<7 미통과(주제 맞힘 3/3) → 글자 덩어리 줄이기·SCHD 숫자 묻힘·'미국 세금 15%'·그림 하나(cardshorts/a1_1eok1y/review.md). 기한 00:20 못 넘으면 12:20 정기 회차 전 재심사, 안 되면 e2_interest 당겨 씀"
+  },
+  {
+   "at": "2026-10-05 19:20",
+   "kind": "shorts",
+   "item": "e2_interest",
+   "owner": "firemap-shorts",
+   "gates_ok": null,
+   "note": "firemap-shorts 10/4 23:17 배정: 테슬라 2분기 이자수익 422 > 영업이익 398(E-2 사실표 미사용). 남은 것: compete.md 5·첫 1초 표지·카피/표지 심사 3명·12:20 rank 뒤라 bars·음악 있음·chip '2026.9' 숫자 allow. X-SHORTS-LEN 첫 짝은 a1_1eok1y로 못 함(A-1 3번째 막힘) → E-2로 A(7초)·B(30~45초 TTS) 짝 권장"
   }
  ]
 }

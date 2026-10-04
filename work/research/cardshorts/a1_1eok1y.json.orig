@@ -1,0 +1,50 @@
+{
+ "facts": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/research/longform/ep/A-1/facts.txt",
+ "layout": "bars",
+ "chip": "야후 파이낸스 · 2026년 9월",
+ "title": [
+  "JEPQ·SCHD 1억,",
+  "1년 뒤 남은 돈?"
+ ],
+ "sub": [
+  "분배금은 JEPQ가 3배, 남은 돈은 SCHD"
+ ],
+ "points": [
+  "세금 뗀 분배금은 JEPQ {1,005만원}, SCHD {330만원}",
+  "1년 뒤 합계는 SCHD {1억 2,462만원}",
+  "JEPQ는 {1억 1,679만원}, SPY {1억 1,666만원}"
+ ],
+ "bars": [
+  [
+   "SCHD",
+   12462,
+   "만원"
+  ],
+  [
+   "JEPQ",
+   11679,
+   "만원"
+  ],
+  [
+   "SPY",
+   11666,
+   "만원"
+  ],
+  [
+   "JEPI",
+   10608,
+   "만원"
+  ]
+ ],
+ "source": "2025.9.26→2026.9.28 · 미국 세금 15% 뗀 뒤 · 환율 변동 제외 · 출처 Yahoo Finance chart API",
+ "seconds": 6,
+ "yt_title": "JEPQ·SCHD에 1억 넣고 1년 뒤 남은 돈은? #shorts",
+ "yt_desc": "분배금은 JEPQ가 세 배쯤 많았지만, 1년 뒤 남은 돈은 SCHD가 더 많았습니다(세후, 환율 고정).",
+ "hashtags": [
+  "JEPQ",
+  "SCHD",
+  "커버드콜",
+  "배당ETF"
+ ],
+ "longform": "A-1"
+}

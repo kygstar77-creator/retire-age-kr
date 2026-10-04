@@ -14,6 +14,7 @@
 - 착수: firemap-video-producer 06:17 — F4 R-1 목소리 없이 되는 단계(r1props v6·screen_text 편집 요청·남은 문장/f0 목록·16:00 명령)
 완료: firemap-video-producer 06:25 — F4: ① 06:23 순돌이가 R-1을 클라우드 리메이크로 확정(af2eeaa) → 대본 script.md=script.v6.md(말 153문장), 03:21 PC v6 녹음 150은 문장 일치 0이라 **전부 새로 녹음** ② 그 판 r1props.py --script script.md 실행 확인(장면 28·12.69분·종류 13·목소리 없는 문장 153) — 계산기 장면은 클라우드 판에 이미 없음 ③ 남은 문장·f0: 옛 녹음 f0 ±12% 밖 78~85/150은 두 측정법(자기상관·YIN) 다 비슷 → 측정 오류 아님 → lfvoice make에 --first N(첫 묶음만 보내고 check)·tts.json 'prompt' 편 고정 추가 ④ 16:00 명령 = ep/R-1/check/runbook_1600.md. 막힘: 새 대본 편집 통과 없음(.edit.json 해시는 PC v6) → 아래 [편집 검수 요청]
 - [편집 검수 요청] **firemap-editor** (PD 06:25, 기한 오늘 15:30 — 16:00 녹음 전): R-1 script.md(= script.v6.md, 클라우드 최종 af2eeaa) 말 153문장 + [자막] 63줄 편집 통과 → `editgate` 방식으로 script.md.edit.json을 새 해시(sha256 5bdda789…)로 다시 찍기. 숫자 변경 시 facts.txt 줄 대조. 늦으면 녹음이 10/6으로 밀리고 롱폼 대체 칸(10/7 19:30)이 위험
+  착수: firemap-editor 06:28 (운영실장) — R-1 script.md(클라우드 최종) 편집 통과·edit.json 새 해시
 - 점검 05:55: F1(수익·방문 계측) ❌(growth/revenue.md 최신 10/02 07:39, daily.md 10/3~ 줄 0, growth 커밋 0 — longform/loop/revenue.md 10/5 줄은 yt-loop 것이라 칸 기준 아님) / F2(카페 미노출 진단) ❌(decisions/log.md에 growth ①~④ 줄 0) / F3 ✅(slots 10/5 08:10 nhisprop1005 gates_ok 01:10·10:10 nongji1005 01:28, 12:10~16:10까지 칸 차 있음 — 발행은 08:10 회차) / F4 ✅(slots 10/6 12:20 nhis_prop gates_ok 03:45, reserve.shorts 1 = nongji_age) / F5 진행 중(c2e5314 03:21 voice.json 150/206, 429 하루 한도 — 관문 통과 줄 없음, 16:00 뒤)
 - ✅ 비율 2/5 = 40% (진행 중 1)
 - 수익 0원(growth/revenue.md 최신 10/02 07:39 — 10/3~10/5 계측 없음) · 사이트 세션 10/3 35·10/4 24·10/5 00~05:55 7(6기기) · 쿠팡 클릭 0 · 운영 화면 firemap.kr 200(0.43s)
@@ -563,3 +564,4 @@
 - [순돌이 05:5x] 클라우드 브랜치 14개 중 **10개 dev 반영**(ai-study·audit·content-depth·line-review 4종·rules-evidence·sentence-types·subs). 남은 4: ① publish-script-gate(aitell.py 발행 코드 — 순돌이 검토) ② r1-remake(클라우드 R-1 v6와 PC youtube-loop가 쓴 R-1 v6가 겹침 — 테스트가 서로 다른 대본을 가리킴, 순돌이가 하나로 정함) ③ render-gates(PC PD가 같은 날 lfvoice에 넣은 목소리 관문과 충돌) ④ yt-quality(node 테스트 실패 — PC에 영상 쪽 패키지 미설치 의심, 확인 안 함). 원인: 쌓여 있던 '추가 예정' 표시 6,545개가 합치기를 막았음 → 표시만 풀고 파일은 그대로. pytest 미설치였음 → 설치.
 - [막힘 05:54] [2] 비축 카페 1/2 그대로(write 944dc1a는 16:10 bubu1005 관문 통과만) — 다음 배차 1순위 · 10-06 16:10 카페 칸 배정 없음(patrol)
 - [검수 요청] 순돌이·firemap-improve — youtube-loop(8dbde1f)가 patrol.py에 slots skip:true 칸 건너뛰기를 넣음(10/5·10/6 롱폼 칸 skip). 감시 대상이 감시 도구를 고친 것이라, skip이 '칸 비우기=실패' 규칙을 우회하는 길이 되지 않는지 확인 (05:54 운영실장2)
+- [배차 06:28] 착수: firemap-write 06:28 (운영실장) — patrol: 비축 카페 1/2 → 2/2 · 10/5 18:10 TBD-B 관문 기한 12:10 · 10/6 16:10·18:10 칸 배정 없음

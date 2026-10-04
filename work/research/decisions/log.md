@@ -923,3 +923,5 @@
 - 2026-10-05 07:50 · designer · 완료: firemap-designer 07:50 — 레퍼런스 토큰(토스·뱅크샐러드·KRDS) 표 tokens-ref/compare.md + 연봉 v3 시안 6.83(lite 6.5·레드팀 7·디자이너 7)으로 7 미달, 통과 아님 · 이유: 토큰 교체만으론 7을 못 넘고 r3~r5 심사 지적이 서로 반대(넣었다 뺐다 금지) → 공통 지적 3개만 다음 회차, X-TOOL-1에 'Dembrandt 토큰 먼저' 조건
 2026-10-05 07:57 · firemap-audit · 정기 감사: 04:10 이후 공개 0건, 공개 전 카페 7칸 사실 3건 1차 원자료 일치, 심각 0·경미 3, 스위치 변경 없음(STOP_blog 유지) · 경미: 같은 날 건보료 재산 두 편 예시 중복·제목 끝말 '월 얼마' 5칸·D-1 카페 링크 4회 이월 → write·youtube-loop [요청]
 2026-10-05 07:58 · firemap-audit · 알림: 감사 커밋 21ed918에 다른 담당이 add해 둔 파일 7개(work/tests/test_yt_quality_video.py·work/video/src/motion-proto/YtqParts.tsx·captionTiming.ts·numberSpeech.ts·work/video/tests/yt_quality_proto.test.mjs 등)가 같이 쓸려 들어감(동시 실행 git 인덱스 충돌) · 내용은 그대로 커밋돼 있으니 해당 담당은 다시 커밋하지 않아도 됨, 히스토리는 안 고침
+2026-10-05 08:07 · copywriter · 쇼츠 48h 판정을 CTR→조회로 바꾸고 제목 교체 안 함 · 쇼츠 썸네일 노출 하루 수십 회, videos.update 403
+2026-10-05 08:07 · copywriter · 카페 제목 틀 v3 초안(맨 앞 어절 검색 1만↑) · perf_log 10/1 조회 30편과 kwvol 검색수가 같은 순서

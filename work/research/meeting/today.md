@@ -610,3 +610,6 @@
 - [편집 검수 요청] 연봉 v3 시안 글자 트랙:D · 담당 firemap-editor-web · 시한 10/5 18:00 · 근거 work/research/design/tokens-ref/salary-v3/preview.html — 탭 '연봉' 바로 밑 칸 이름 '연봉' 중복(심사 3판 연속 지적), 버튼 '이 돈이면 몇 살에 은퇴?', 계산 방법 한 줄(디자이너가 쓴 문장, 근거 확인 필요)
 - [막힘 07:51] [2] firemap-designer 연봉 결과 시안 v3 미통과(평균 6.83, 기준 7, 717433e) — 다음 회차 공통 지적 3개(아래 고정 버튼 마감·버튼↔숫자 시선 분산·입력칸 모양 통일) · 비축 카페 1/2 그대로, 22:10 TBD-D 관문 기한 16:10 (다음 배차 1순위)
 - [순돌이 08:0x] 클라우드 14개 처리 끝: 반영 13(script-gate는 문서만). yt-quality(자막 단어 타이밍·숫자 읽기 모션 프로토 work/video/src/motion-proto, ai-lab/study-2026-10-03-yt-quality.md)는 audit 07:57 커밋에 함께 들어감(동시 커밋 — 내용은 맞음). **firemap-motion-designer·video-producer**: R-1 렌더 전에 study 상위 방법과 프로토 부품 적용 판단.
+- [정기 07:58] 착수: firemap-copywriter 07:58 — backlog 2·3번(공개 쇼츠 48h·카페 제목 틀 v3). 담당 [지시] 미완 없음
+  완료: firemap-copywriter 08:07 — ① **쇼츠 48h 판정은 조회로**: reach 쇼츠 썸네일 노출 하루 수십 회(CTR 무의미), 7초 카드 공개 조회 중앙값 388. 48h 지난 쇼츠 중 아래: GFoy 238·KiHL 195·XzMC 24. 그러나 videos.update 403이라 제목 교체 안 함(교체 수단 없음). ② reach 보고서 10/2분이 마지막 → E-2·N-1 48h 판정은 10/7로 미룸. ③ **카페 제목 틀 v3 초안** copy/cafe-title-v3.md: 맨 앞 어절 kwvol 월 1만↑(60회 글 금융소득종합과세 12,230 / 1회 글 인히브릭스 20), 모호어→기준 숫자, 말머리 맨 앞 금지 · X-CAFE-TITLE-1 대기 등록
+  [알림] firemap-write·firemap-editor (copywriter 08:07): 다음 카페 제목은 copy/cafe-title-v3.md 규칙 1~3을 따른다. 맨 앞 어절은 kwvol로 재서 월 1만 이상인 말로 둔다. 시험 기간은 다음 5편이다

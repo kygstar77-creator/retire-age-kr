@@ -526,3 +526,21 @@
 - [배차 04:44] [2] 착수: firemap-editor 04:44 (운영실장2) — 04:31 [알림] wolse1005(10/5 12:10 공개, auto 도장·제목 7.0) 원문 문장 편집 점검
   완료: firemap-editor 04:46 — wolse1005 pkg 원문 점검: 제목 '~까'→명사 끝('월세 세액공제 정부안, 월세 100만원이면 공제액 170만→204만원', 표지와 같은 숫자), c01 긴 문장 쪼갬, c02·c03 끝맺음 섞음. aitell 6.5→4.7·틀 v2 통과·숫자 사실표 대조 변경 0·editgate stamp 새로(check 일치). [알림] **firemap-write**: 12:10 발행은 지금 pkg(제목 바뀜) 그대로. 제목 재심사 점수는 미측정.
 - [막힘 05:00] [2] 비축 카페 0/2 그대로(write 05:00 회차는 14:10 칸만 통과, 42abf67) — 다음 배차 1순위 · 16:10 칸 TBD-A 편 미정(기한 10:10) · wolse1005 새 제목 재심사 점수 안 잼(editor 6da8178)
+- [배차 05:10] 착수: firemap-write 05:10 (운영실장) — 비축 카페 0/2 → 관문 통과 비축 1~2편 + 16:10 칸 TBD-A 편 정하기(기한 10:10)
+- [배차 05:10] 착수: firemap-copywriter 05:10 (운영실장) — wolse1005(10/5 12:10 공개) editor가 바꾼 새 제목 재심사(7점 미달이면 고침), slots 기록
+  완료: firemap-copywriter 05:14 — wolse1005 새 제목 재심사 평균 7.07(lite 6.6·레드팀 7.2·작성자 7.4) 통과선 7 넘음 → 제목·숫자 그대로, review.md·slots.json 기록. 약점: '정부안' 단어 하나로 확정처럼 읽힐 여지(레드팀 ③ 5.0), 보완 후보는 review.md
+- [검수 요청] 순돌이 — origin/cloud/publish-script-gate-1003가 발행 코드 ['work/aitell.py']를 바꿈 → 자동 반영 안 함, 간격·상한·관문이 약해지지 않았는지 순돌이가 보고 손으로 합침 (10/05 05:12)
+- [검수 요청] 순돌이 — origin/cloud/ai-study-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:12)
+- [검수 요청] 순돌이 — origin/cloud/audit-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:12)
+- [검수 요청] 순돌이 — origin/cloud/content-depth-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:12)
+- [검수 요청] 순돌이 — origin/cloud/line-review-cafe-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:12)
+- [검수 요청] 순돌이 — origin/cloud/line-review-lf1-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:12)
+- [검수 요청] 순돌이 — origin/cloud/line-review-lf2-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:13)
+- [검수 요청] 순돌이 — origin/cloud/line-review-sc-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:13)
+- [검수 요청] 순돌이 — origin/cloud/publish-script-gate-1003가 발행 코드 ['work/aitell.py']를 바꿈 → 자동 반영 안 함, 간격·상한·관문이 약해지지 않았는지 순돌이가 보고 손으로 합침 (10/05 05:13)
+- [검수 요청] 순돌이 — origin/cloud/r1-remake-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:13)
+- [검수 요청] 순돌이 — origin/cloud/render-gates-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:13)
+- [검수 요청] 순돌이 — origin/cloud/rules-evidence-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:13)
+- [검수 요청] 순돌이 — origin/cloud/sentence-types-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:13)
+- [검수 요청] 순돌이 — origin/cloud/subs-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:13)
+- [검수 요청] 순돌이 — origin/cloud/yt-quality-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:13)

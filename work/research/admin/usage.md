@@ -29,5 +29,11 @@
 - Claude 주간(전체) **64%** · 리셋 10/4 21:00 KST · 5시간 4%. 17:20 62% → 2시간 +2%p(저녁 느림). 하루 20~30%p 가정 시 80%는 10/2 낮~저녁, 90%는 10/2 밤~10/3 오전. → 10/2 07:00 회차에서 다시 재고 80% 넘으면 비필수 정지 착수(17:20 제안 유지).
 - 제미나이: flash·TTS 19:0x 회복(200), 이미지 429.
 
+### 2026-10-05 07:07 (get_usage · admin 07:00 회차)
+- Claude 주간(전체) **7%** · 리셋 **10/11 21:00 KST**(6일 13시간 남음) · 5시간 14% · Fable 주간 2%. 10/4 21:00 초기화 뒤 약 10시간에 7%p = 시간당 약 0.7%p → 이대로면 리셋까지 +110%p로 **넘친다**(98% 예상 ≈ 10/10 17시쯤). 버틸 속도 = 시간당 0.58%p 이하(지금의 약 83%).
+- 기준: 80% 넘을 조짐(하루 소비 22%p 초과)이면 발행과 무관한 직원부터 근무 축소 제안, 90% 비필수 일시정지, 95% report 텔레그램 맨 위 '98% 예상 시각', 98%에서 멈출 목록은 아래 맨 위.
+- **98% 멈춤 목록(맨 위부터 끈다):** artist·illustrator·brand-researcher·brand-director·behavior·bizdev·ai-lab·venture-research-kr·venture-research-global·planner·loop·designer·editor-en·editor-web·motion-designer·improve·venture·venture-builder·growth·product-dev → 남기는 것: write·shorts·video-producer·youtube-loop·editor·copywriter·visual-designer·audit·watchdog·report·dispatcher(:05)·admin(07:00만).
+- 제미나이: 텍스트 3.5-flash 200, TTS 3.8-flash-tts 200, 이미지 2.5-flash-image 429. vidIQ 2/150(10/23 갱신).
+
 ## 빈칸(측정 수단 없음)
 - 제미나이 호출 건수: 공용 로그가 없다. second_opinion.py 등에 jsonl 한 줄 기록을 붙이면 잴 수 있음 → 생산·개선에 요청 후보.

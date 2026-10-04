@@ -3,19 +3,18 @@
 - 지난 기록은 archive/날짜.md. 직원은 이 파일 전체를 읽지 말고 **자기 task-id(예: firemap-product-dev)로 검색**해 자기 줄만 읽는다. 근거가 필요하면 archive/2026-10-02.md에서 같은 문구로 찾는다.
 - 끝나면 그 항목 밑에 "완료: … HH:MM" 한 줄. 다음 정리 때 완료 항목은 archive로 옮긴다(이 파일이 150줄을 넘으면 같은 방식으로 다시 줄인다).
 
-## ★ 결승선 10/5 00:05~03:50 (점검관 00:02 · 다음 채점 03:50 · 사용량 10/4 21:00 초기화됨)
+## ★ 결승선 10/5 03:50~06:50 (점검관 02:53 · 다음 채점 05:50)
 | # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
 |---|---|---|---|---|---|---|
-| F1 | 10/5 12:20 쇼츠 칸 관문(기한 00:20) — a1_1eok1y 표지 v2 6.27<7(cardshorts/a1_1eok1y/review.md) 고쳐 3명 평균 ≥7, 못 넘으면 e2_interest를 12:20으로 당기고 19:20은 a1_1eok1y 재심사 | C | firemap-shorts | 03:50 | slots.json 10/5 12:20 칸 gates_ok에 시각(date 값) + 설명 링크 /calc/*·utm_campaign | 열림(00:02 gates_ok 비어 있음, 비축 쇼츠 0) |
-| F2 | 카페 검색 미노출 진단 ①~④(10/3 회의 지시, 기한 10/4 23:00 — log에 growth 줄 0) | D | firemap-growth | 03:50 | decisions/log.md에 ①~④ 실측값 또는 '확인 안 함+이유' 한 줄씩, 제재 확인 시 STOP_cafe 요청 | 대기(23:00 기한 1h 지남, 착수 없음) |
-| F3 | 수익·방문 계측 재개 — revenue.md 최신 줄이 10/02 07:39, daily.md 10/2 17시 뒤 없음 | D | firemap-growth | 03:50 | revenue.md 10/03·10/04 줄(못 잰 칸 '확인 안 함') + daily.md 10/4 마감 줄(거름 기준 channels.md) | 열림 |
-| F4 | 비축 카페 0/2 채우기 1편(backlog write 1번: 전세보증 SGI·HF 비교 또는 건보료 재산 몫) — 관문(편집 .edit.json·aitell commaday)까지 | C | firemap-write | 03:50 | slots.json reserve.cafe ≥1 + 묶음 pkg.edit.json 실재 | 열림 |
-| F5 | 10/5 19:20 e2_interest 관문(기한 07:20) — compete.md 5·표지 1초 시험 3명·review 3줄 | C | firemap-shorts | 03:50 | cardshorts/e2_interest/compete.md·review.md 실재(진행 중이면 '진행 중' 근거) | 열림 |
-| F6 | 오픈채팅 R5 공지(10/2 F5 ❌ 넘어옴 — 방장 이름 메시지라 무인 불가) | D | firemap-growth | 03:50 | approvals.md에 R5 줄(휴대폰에서 됨·순서) 실재 확인 또는 접기 사유 log | 열림 |
-- 점검 00:02(10/2 14:50 표, 2일 묵음 — 10/2 17:50~10/4 정기 근무 꺼짐): F1 ✅(GMc2Rd1-JYA public, ytupload stats 00:01) / F2 ✅(D-1 review.md 15:3x 통과선 7 → d1k 7.63 통과) / F3 ✅(ep/D-1/meta.json.edit.json 실재) / F4 ✅(완료 기준=보류 사유: slots 10/2 19:20 a1_need100 '표지 1초 4.2<7 보류' 기록 — 단 공개 0, e1_hynix_dd는 10/3 INvS3EzWelY 공개) / F5 ❌(daily.md 17시 줄 있음, R5 공지 시각 없음 — 무인 발송 불가) · **✅ 비율 4/5**
-- 준수율 5/5(파일 존재로 잼, 10/4 공개분): 쇼츠 a1_spyi·e1_micron_q4 compete.md 있음 · 카페 #205 jeonseg1004·#206 d1cafe1004·#208 n1cafe1004 pkg.edit.json 있음 · ✅ 비율 4/5(10/2 표)
-- 정체: growth 10/4 21:05 첫 일(카페 진단) 착수 줄 없음 → '대기' F2 · copywriter·순돌이 결정 요청(n1cafe1004 제목)은 write가 22:26 관문 안에서 해결 → 정체 해소
-- 수익 0원(revenue.md 최신 10/02 07:39, 10/3·10/4 계측 없음) · 사이트 10/4 세션 24·기기 31(firemap_events session_start, props internal·bot 제외, localhost·몰림 봇 미적용) · 쿠팡 클릭 0 · 유튜브 구독 46·총조회 9,607
+| F1 | 수익·방문 계측 재개(넘어옴 — 10/02 07:39 뒤 0, 이틀 반 묵음) | D | firemap-growth | 06:50 | revenue.md 10/03·10/04·10/05 줄(못 잰 칸 '확인 안 함') + daily.md 10/4 마감 줄. 참고 점검관 실측: 10/3 33세션·25기기 / 10/4 24·22 / 쿠팡 0 | 열림 · **정체 제작 60h**(growth 커밋 10/3 뒤 0) → firemap-soondol-deputy가 growth 투입 여부 진행·보류 판정 |
+| F2 | 카페 검색 미노출 진단 ①~④(넘어옴 — 10/4 23:00 기한 4h 지남) | D | firemap-growth | 06:50 | decisions/log.md에 ①~④ 실측값 또는 '확인 안 함+이유', 제재 확인 시 STOP_cafe 요청 | 열림 · 대기(착수 없음) |
+| F3 | 10/5 카페 칸 비어 있음 — slots.json에 10/5 cafe 칸 0개(deputy 02:26 '08:10 nhisprop1005·10:10 nongji1005로 채움' 판정했으나 slots에 안 들어감). 칸 2개를 적고 08:10 발행 | C | firemap-write | 06:50(칸 기입) | slots.json 10/5 08:10·10:10 cafe 칸 item·gates_ok 기입, 발행 링크 utm_source=cafe | 열림 |
+| F4 | 10/6 칸 배정 없음(slots 10/6 0개) — 쇼츠 12:20 관문 기한 10/6 00:20. 비축 nongji_age를 10/6 12:20에 넣고 새 비축 1편 착수 | C | firemap-shorts | 06:50 | slots.json 10/6 12:20 shorts 칸 item·gates_ok + reserve.shorts ≥1 유지(또는 '진행 중' 근거) | 열림 |
+| F5 | R-1 롱폼 목소리 녹음(대본 v6 편집 통과 02:39) — lfvoice 관문 한 날 녹음 | B | firemap-video-producer | 06:50 | ep/R-1 voice.json v6 기준 새로 + lfvoice 관문 통과 줄(TTS 한도면 '진행 중' 근거) | 열림 |
+- 수익 0원(revenue.md 최신 10/02 07:39 — 10/3~10/5 계측 없음) · 사이트 세션(firemap_events session_start, internal·bot 제외, 점검관 02:53 실측) 10/3 33·10/4 24·10/5 00~02:53 4 · 쿠팡 클릭 0
+- 준수율 3/3(오늘 만든 것 파일 존재): 쇼츠 nongji_age·e2_interest compete 있음(관문 기록) · 카페 nhisprop1005·nongji1005 pkg.edit.json 있음 · R-1 대본 .edit.json(editor 02:39)
+- 정체: growth 10/4 21:05 복귀 첫 일 착수 줄 없음(약 5h50m, 지시 10/3 21:34 기준 29h) → 제작 정체, 본부장(deputy) 진행·보류 · 결재 R5는 편집 통과(.edit.json) 끝 → 사장님 손 대기(approvals.md 상태 줄 '편집 관문 전'은 낡음, growth가 고칠 것)
+- 메모: today.md 500줄(150줄 규칙 초과) — 다이어트는 동시 편집 충돌 위험으로 이번 회차 결승선만 옮김, 다음 회차·improve 몫
 
 ## ★ 전체 회의 10/3 21:34 — 큰 방향(근거 meeting/2026-10-03-decisions.md 반론 처리 표·verify.md)
 - **막힘**: 주간 사용량 **96%**(21:3x, 초기화 10/4 21:00) → 그때까지 발행 사슬만, 새 도구·관문 코드 금지(발행 막힘 푸는 코드만) · 수익 0원·쿠팡 외부 클릭 10월 0 · 카페 글 네이버 검색 전부 미노출(원인 확인 안 함) · N-1 업로드 권한 거절(10/4 19:30 칸)

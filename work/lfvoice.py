@@ -1,6 +1,7 @@
 # 롱폼 목소리 — RULES.md '목소리 고정·말 속도' 규칙 1~3을 코드로 지킨다(ep/A-1/voice.py의 후속, A-1에서 난 사고 세 가지를 막는다).
 #   py -3.12 work/lfvoice.py plan  <ep폴더> [--maxreq 9]   # 요청 묶음만 보여 준다(API 안 부름)
-#   py -3.12 work/lfvoice.py make  <ep폴더> [--maxreq 9]   # 없는 문장만 만든다 → 자르기 → 느린 문장 atempo → voice.json
+#   py -3.12 work/lfvoice.py make  <ep폴더> [--maxreq 9] [--first 1]   # 없는 문장만 만든다 → 자르기 → voice.json · --first N = 새 요청 N회만 보내고 멈춤(첫 묶음 뒤 check로 높낮이 먼저 보기, lessons R-1 v6)
+#   ep/tts.json에 'prompt'가 있으면 그 편은 그 지시문으로 고정(편 안에서 바꾸면 전부 다시 녹음 — 한 날·한 목소리 규칙)
 #   py -3.12 work/lfvoice.py check <ep폴더>                 # 편 전체 말 속도·음높이 일관성 검사(공개 전 필수, 규칙 3)
 #   py -3.12 work/lfvoice.py cutat <ep폴더> <묶음번호> 6.7,19.0,...  # 자르기 실패 묶음을 받아쓰기로 확인한 문장 시작 시각으로 자른다(API 안 부름)
 #   py -3.12 work/lfvoice.py fixcut <ep폴더> <묶음번호> [--dry]  # 조각마다 받아써서 대본 문장에 맞춰 자른다(지시문 읽은 앞머리 버림) — 공개 전 받아쓰기 대조에서 어긋나면
@@ -219,14 +220,14 @@ def pack(secs, maxreq):
     return groups
 
 def request(cfg, texts):
-    body = {'contents': [{'parts': [{'text': PROMPT + '\n'.join(texts)}]}],
+    body = {'contents': [{'parts': [{'text': cfg.get('prompt', PROMPT) + '\n'.join(texts)}]}],
             'generationConfig': {'responseModalities': ['AUDIO'], 'speechConfig': {'voiceConfig': {'prebuiltVoiceConfig': {'voiceName': cfg['voice']}}}}}
     r = json.load(urllib.request.urlopen(urllib.request.Request(
         f"https://generativelanguage.googleapis.com/v1beta/models/{cfg['model']}:generateContent?key={key()}",
         data=json.dumps(body).encode(), headers={'Content-Type': 'application/json'}), timeout=600))
     return np.frombuffer(base64.b64decode(r['candidates'][0]['content']['parts'][0]['inlineData']['data']), dtype=np.int16).astype(np.float32)
 
-def make(ep, maxreq, dry=False):
+def make(ep, maxreq, dry=False, first=0):
     secs = sections(ep); holes = [t for s in secs for t in s['lines'] if '{{' in t or '○' in t]
     if holes: print(f'대본 빈자리 {len(holes)}곳(예: {holes[0][:30]})')
     if holes and not dry: sys.exit('빈자리를 채운 뒤 만든다')
@@ -234,14 +235,15 @@ def make(ep, maxreq, dry=False):
     print(f"모델 {cfg['model']} · 목소리 {cfg['voice']} · 장 {sum(1 for s in secs if s['lines'])}개 → 요청 {len(groups)}회")
     for g in groups: print('  ', ' + '.join(s['title'][:14] for s in g), sum(syl(t) for s in g for t in s['lines']), '음절')
     if dry: return
-    pad = np.zeros(int(SR * 0.08), dtype=np.float32); stopped = None
+    pad = np.zeros(int(SR * 0.08), dtype=np.float32); stopped = None; sent = 0
     for g in groups:
         texts = [speak(ep, t) for s in g for t in s['lines']]; todo = [t for t in texts if not os.path.exists(wav_of(ep, cfg, t)[1])]
         if not todo or stopped: continue
         rk = hashlib.md5(('|'.join([cfg['model'], cfg['voice']] + todo)).encode()).hexdigest()[:16]; raw = os.path.join(aud_dir(ep), '_raw', rk + '.pcm')
         if os.path.exists(raw): pcm = np.fromfile(raw, dtype=np.int16).astype(np.float32)
         else:
-            try: pcm = request(cfg, todo); pcm.astype(np.int16).tofile(raw)
+            if first and sent >= first: stopped = f'--first {first}'; print(f'  --first {first}: 요청 {sent}회 뒤 멈춤 — check로 높낮이 본 뒤 이어서 make'); continue
+            try: sent += 1; pcm = request(cfg, todo); pcm.astype(np.int16).tofile(raw)
             except urllib.error.HTTPError as e:
                 msg = e.read().decode(errors='ignore'); stopped = f"{e.code} {'하루 할당량' if 'PerDay' in msg else msg[:120]}"
                 print('  멈춤 —', stopped, '(규칙 1: 다른 모델로 넘어가지 않음)'); continue
@@ -477,5 +479,5 @@ if __name__ == '__main__':
     elif cmd == 'fixcut': fixcut(ep, int(sys.argv[3]), mr, dry='--dry' in sys.argv)
     elif cmd == 'cutat': cutat(ep, int(sys.argv[3]), [float(x) for x in sys.argv[4].split(',')], mr)
     elif cmd == 'plan': make(ep, mr, dry=True)
-    elif cmd == 'make': make(ep, mr)
+    elif cmd == 'make': make(ep, mr, first=int(sys.argv[sys.argv.index('--first') + 1]) if '--first' in sys.argv else 0)
     elif cmd == 'check': sys.exit(0 if check(ep, sys.argv[3] if len(sys.argv) > 3 else None) else 1)

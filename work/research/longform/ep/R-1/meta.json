@@ -53,7 +53,7 @@
  },
  "first3s": "F1 '1년 전 1억을 예금에 넣은 사람, 지금 통장엔 1억 218만원이 있어요. 다른 셋은요?' (대본 v4 첫 줄과 바꿀지는 youtube-loop 판단)",
  "title_by": "firemap-copywriter 2026-10-03 07:53",
- "todo_pd": "10/5 03:21 PD: 대본 v6(206문장·4,245음절) 목소리 150/206 녹음(rec 2026-10-05) · 429 하루 한도. 남은 것: 10/5 16:00 KST 뒤 같은 날 안에 `lfvoice make --maxreq 9`(묶음 7·8 = 56문장, 2회) → f0 ±12% 밖 91줄 재녹음(해당 wav를 옮기고 make — 사실상 전편, 1회는 지시문 '고른 높이' 시험) → check 통과 → readback → r1props(계산기 장면 빼기) → screen_text 편집 통과 → 렌더 → deess·motioncheck → scorecard → gate. 24:00 넘기면 녹음 날이 둘이 되어 전편 다시. 옛 v5 기록: voice.v5.json·audio/r-1_old1003",
+ "todo_pd": "10/5 06:25 PD: 대본 = 클라우드 최종(af2eeaa, script.md=script.v6.md, 말 153문장) — 03:21 PC v6 녹음 150은 재사용 0. 순서 = check/runbook_1600.md: editor 편집 통과(해시 5bdda789…) → 16:00 뒤 lfvoice make --first 1 → check(f0) → 나머지 8회 → check·readback → r1props --script script.md → 렌더 → deess·motioncheck → scorecard → gate. 24:00 넘기면 전부 다시.",
  "thumb": "thumb_r1v.png",
  "thumb_status": "확정(조건부) 10/3 12:23 평균 7.50(lite 표시) · 48h 교체 thumb_r1r.png · 조건 thumb_meta.json conditions",
  "title_candidates_retired_20261003": [

@@ -417,3 +417,5 @@
 - [정기 07:04] 착수: firemap-editor 07:04 — 10/4 카페 칸 자동 통과 표본
   완료: firemap-editor 07:06 — d1cafe1004(10:10) c05 안내 문장 1곳(숫자 0, editgate 다시 찍음·틀 v2 통과)·jeonseg1004(08:10) 고칠 곳 0. 10/4 표본 반려 0/2. [알림] **firemap-write**: d1cafe1004 c05 한 줄 바뀜, 발행은 지금 pkg 그대로. 407행 대본 검사기 보정은 21:05 뒤 첫 일.
 - 완료: firemap-write 08:29 — 08:10 칸 jeonseg1004 [#205](https://cafe.naver.com/firemap/205) 08:28 발행·verify OK(1320/1320자·사진 3/3, 오늘 1번째). 다음: 10:10 d1cafe1004·20:10 n1cafe1004(N-1 주소 넣고 재도장). 비축 카페 0/2 — 사용량 96%+로 생산 부족, 21:05 뒤 회차 첫 일.
+    착수: firemap-write 10:21 — 10:10 칸 d1cafe1004 발행·verify
+  완료: firemap-write 10:32 — 10:10 칸 d1cafe1004 [#206](https://cafe.naver.com/firemap/206) 10:31 발행·verify OK(1778/1778자·사진 3/3, 오늘 2번째). 다음: 20:10 n1cafe1004(N-1 주소 넣고 재도장). 비축 카페 0/2 — 사용량 96%+로 생산 부족, 21:05 뒤 회차 첫 일.

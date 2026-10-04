@@ -74,13 +74,20 @@ try:
     lead = S['lead_hours']; have = set()
     for x in S['slots']:
         at = datetime.datetime.strptime(x['at'], '%Y-%m-%d %H:%M'); have.add((x['kind'], x['at']))
-        if at < now or x.get('skip'): continue
+        if x.get('skip'):
+            # skip은 롱폼 칸만, 사유·대체 계획(note)이 있어야 인정. 아니면 칸 비우기=실패 규칙 위반.
+            note = x.get('note') or ''
+            if x['kind'] != 'long': bad.append(f"skip 불가: {x['at'][5:]} {x['kind']} — 쇼츠·카페 칸은 건너뛰지 못함(비축분으로 채움)")
+            elif at >= now and (len(note) < 40 or not re.search(r'빨라야|늦어도|지우고|대체|비축|\d+/\d+', note)): bad.append(f"skip 근거 부족: {x['at'][5:]} long — note에 사유와 대체 계획(다음 편·날짜) 필요")
+            if x['kind'] != 'long' and at >= now: pass
+            else: continue
+        if at < now: continue
         dl = at - datetime.timedelta(hours=lead[x['kind']])
         if x.get('gates_ok'): continue
         what = f"{x['at'][5:]} {x['kind']} {x.get('item') or '편 없음'}({x.get('owner','')})"
         if now >= dl: bad.append(f'미리 통과 못 함: {what} — 관문 기한 {dl:%m/%d %H:%M} 지남, 비축분으로 바꾸거나 오늘 안에 통과')
         elif now >= dl - datetime.timedelta(hours=lead[x['kind']]): SLOT_SOON.append(f'{what} 관문 기한 {dl:%m/%d %H:%M}')
-    cad = {'cafe': ['08:10','10:10','12:10','14:10','16:10','18:10','20:10','22:10'], 'shorts': ['12:20','19:20'], 'long': ['19:30']}
+    cad = {'cafe': ['08:10','10:10','12:10','14:10','16:10','18:10','20:10','22:10'], 'shorts': ['12:20','19:20']}  # 롱폼은 하루 1편 이하 '상한'이지 매일 칸이 아님(10/5) — 칸이 있으면 위 관문 검사, 편 준비는 reserve_min.long이 지킴
     for k, ts in cad.items():
         for d in range(0, 3):
             day = (now + datetime.timedelta(days=d)).strftime('%Y-%m-%d')
@@ -88,6 +95,11 @@ try:
                 at = datetime.datetime.strptime(f'{day} {t}', '%Y-%m-%d %H:%M')
                 if now < at <= now + datetime.timedelta(hours=36) and (k, f'{day} {t}') not in have:
                     bad.append(f'칸 배정 없음: {day[5:]} {t} {k} — slots.json에 편·담당을 적어야 함')
+    _ld = {}
+    for x in S['slots']:
+        if x['kind'] == 'long' and not x.get('skip'): _ld[x['at'][:10]] = _ld.get(x['at'][:10], 0) + 1
+    for d_, n_ in _ld.items():
+        if n_ > 1: bad.append(f'롱폼 하루 1편 초과: {d_} {n_}칸')
     for k, n in S.get('reserve_min', {}).items():
         if len(S.get('reserve', {}).get(k, [])) < n: bad.append(f'비축분 부족: {k} {len(S["reserve"].get(k, []))}/{n} — 관문 통과한 예비 편')
     for l in SLOT_SOON: print('곧 관문 기한:', l)

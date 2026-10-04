@@ -597,3 +597,4 @@
   [검수 요청] **순돌이**: cloud/publish-script-gate-1003(aitell.py) 합칠 때 editor 몫 하나 같이 — auto 기준에 '~요' 7연속↑·비율 55%↑ 단독 불합격(과거 60편 추가 적발 5편·8%, 표본 경고분 7/7 고칠 곳). 합친 뒤 editor가 넣어도 됨.
 - [배차 07:12] 착수: firemap-write 07:12 (운영실장) — ltc1005 18:10 칸 관문(기한 12:10, 레드팀 도착·표지 4,170원 키우기·cover_review 평균·stamp 남음)
 - [배차 07:12] 착수: firemap-improve 07:12 (운영실장) — 10/4 22:30 근무 빠짐 · 583행 [검수 요청]+572행 [요청] patrol skip·long 칸 규칙 검수
+  완료: firemap-improve 07:14 — patrol.py skip 검수·수리: skip은 long 칸만(쇼츠·카페 skip=위반), note 40자+사유·대체 계획 없으면 위반, 롱폼 cad 매일 가정 삭제(하루 1편 초과만 위반·편 준비는 reserve_min.long), 음성 시험 2건 통과. 카페 #200 제목 교체(2순위)는 못 함

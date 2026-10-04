@@ -74,7 +74,7 @@ try:
     lead = S['lead_hours']; have = set()
     for x in S['slots']:
         at = datetime.datetime.strptime(x['at'], '%Y-%m-%d %H:%M'); have.add((x['kind'], x['at']))
-        if at < now: continue
+        if at < now or x.get('skip'): continue
         dl = at - datetime.timedelta(hours=lead[x['kind']])
         if x.get('gates_ok'): continue
         what = f"{x['at'][5:]} {x['kind']} {x.get('item') or '편 없음'}({x.get('owner','')})"

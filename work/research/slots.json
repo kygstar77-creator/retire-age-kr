@@ -1,5 +1,5 @@
 {
- "_rule": "사장님 10/2 15:1x: 관문 못 넘어 발행 안 하는 게 아니라 미리 8점 넘겨 계획한 시각에 발행. 칸마다 item(편)과 gates_ok(모든 관문 통과 시각)를 적는다. 관문 기한 = 발행 시각 - lead(롱폼 24시간·쇼츠 12시간·카페 6시간). 기한까지 gates_ok가 없으면 patrol 위반, 비축분(reserve)에서 통과한 편으로 바꿔 끼운다. 채우는 사람: 전체 회의(21:15)가 다음 36시간 칸 전부 배정, 3시간 스프린트가 점검, 담당이 통과 시 gates_ok 기입.",
+ "_rule": "사장님 10/2 15:1x: 관문 못 넘어 발행 안 하는 게 아니라 미리 8점 넘겨 계획한 시각에 발행. 칸마다 item(편)과 gates_ok(모든 관문 통과 시각)를 적는다. 관문 기한 = 발행 시각 - lead(롱폼 24시간·쇼츠 12시간·카페 6시간). 기한까지 gates_ok가 없으면 patrol 위반, 비축분(reserve)에서 통과한 편으로 바꿔 끼운다. 채우는 사람: 전체 회의(21:15)가 다음 36시간 칸 전부 배정, 3시간 스프린트가 점검, 담당이 통과 시 gates_ok 기입. | 롱폼 칸 규칙(10/5 youtube-loop): 롱폼은 하루 1편 이하 상한일 뿐 매일 칸이 아니다. 공개할 편이 없는 날은 칸에 \"skip\":true와 사유·대체 날짜를 적는다(patrol은 skip 칸을 건너뜀).",
  "lead_hours": {
   "long": 24,
   "shorts": 12,
@@ -213,6 +213,15 @@
    "published": "https://youtu.be/DBCBWToNFCs 12:28"
   },
   {
+   "at": "2026-10-04 19:20",
+   "kind": "shorts",
+   "item": "a1_spyi",
+   "owner": "firemap-shorts",
+   "gates_ok": "2026-10-04 19:29",
+   "note": "firemap-shorts 10/4 19:3x: 배정 없던 칸·비축 0 → a1_spyi 표지 v8 재심사 7.0 통과 뒤 같은 회차 공개(12시간 전 관문 기한은 못 지킴)",
+   "published": "https://youtu.be/rCwU25Ew2pw 19:31"
+  },
+  {
    "at": "2026-10-04 19:30",
    "kind": "long",
    "item": "N-1",
@@ -228,31 +237,6 @@
    "gates_ok": "2026-10-03 14:27",
    "note": "롱폼 N-1(10/4 19:30) 카페 긴 글 — 국세청 근로소득 백분위 2024 귀속 연봉 자리표·세금 몫, 순자산은 Q 한 문단(카페 44 연결). 제목 8.57(제미나이 9.2·레드팀 8.5·작성자 8.0)·표지 7.5·editgate auto 해시·compare/review 세 줄·틀 v2·selfcheck 사실 0. 발행 전 할 일: N-1 공개 주소를 c05 링크 아래 한 줄로 넣고(영상 넣기) editgate 다시 찍기 — 영상이 늦으면 영상 줄 없이 발행.",
    "published": "2026-10-04 22:29 https://cafe.naver.com/firemap/208 (늦음 — 20시 readcheck 거부, 제목 교체)"
-  },
-  {
-   "at": "2026-10-04 19:20",
-   "kind": "shorts",
-   "item": "a1_spyi",
-   "owner": "firemap-shorts",
-   "gates_ok": "2026-10-04 19:29",
-   "note": "firemap-shorts 10/4 19:3x: 배정 없던 칸·비축 0 → a1_spyi 표지 v8 재심사 7.0 통과 뒤 같은 회차 공개(12시간 전 관문 기한은 못 지킴)",
-   "published": "https://youtu.be/rCwU25Ew2pw 19:31"
-  },
-  {
-   "at": "2026-10-05 12:20",
-   "kind": "shorts",
-   "item": "a1_1eok1y",
-   "owner": "firemap-shorts",
-   "gates_ok": "2026-10-05 00:24",
-   "note": "firemap-shorts 10/4 23:17: spec·check·aitell 0.0·숫자 [9] 대조·compete 5 끝, 제목 '세금 떼고' 고침. 표지 v2 1초 시험 제미나이 6.8·A 6·레드팀 6=6.27<7 미통과(주제 맞힘 3/3) → 글자 덩어리 줄이기·SCHD 숫자 묻힘·'미국 세금 15%'·그림 하나(cardshorts/a1_1eok1y/review.md). 기한 00:20 못 넘으면 12:20 정기 회차 전 재심사, 안 되면 e2_interest 당겨 씀 | 운영실장2 10/5 00:14: v6 제미나이 7·A 6.8·레드팀 7=6.93<7 미통과. 고칠 것 today.md(분배금 숫자 키우기·? 칸 채운 막대·회색 작은 글씨 빼기). 12:20 정기가 v7 재심사, 실패면 대체 편. | firemap-shorts 10/5 00:24: v7 6.0(5·7·6)·v8 6.33(5·7·7) 거쳐 **v9 통과 제미나이 7·A 7·레드팀 7=7.0**(블라인드 주제 맞힘, 숫자 [9]·막대 비율 대조 맞음). cover.png=v9(mkcover_v9.py)."
-  },
-  {
-   "at": "2026-10-05 19:20",
-   "kind": "shorts",
-   "item": "e2_interest",
-   "owner": "firemap-shorts",
-   "gates_ok": "2026-10-05 01:19",
-   "note": "firemap-shorts 10/4 23:17 배정: 테슬라 2분기 이자수익 422 > 영업이익 398(E-2 사실표 미사용). 남은 것: compete.md 5·첫 1초 표지·카피/표지 심사 3명·12:20 rank 뒤라 bars·음악 있음·chip '2026.9' 숫자 allow. X-SHORTS-LEN 첫 짝은 a1_1eok1y로 못 함(A-1 3번째 막힘) → E-2로 A(7초)·B(30~45초 TTS) 짝 권장 | firemap-shorts 10/5 01:10: compete 5 끝(이자 각도 0/7)·check 문제 없음·aitell 0.0·숫자 대조 맞음. 인트로 0초 1초 시험 6.0 → 정지 표지 cover_png v2~v5, 최고 표지 6.67·카피 7.33(v3)/6.33(v5) — 같은 판에 3명 모두 7 이상 못 맞춤(제미나이 5~7 흔들림). 미통과. 다음: 제목 단정형(넣음, 미심사)+카드 중복 줄 빼고 435억 키우기 → 재심사 3명(기한 07:20) · cardshorts/e2_interest/review.md | firemap-shorts 10/5 01:19: 표지 v8(cover_v8.png, 결론 맨 위·막대 안 숫자) 제미나이 7·A 7·레드팀 7=7.0, 카피 8·7·7=7.33 통과. 카드 레드팀·A 지적대로 정리. 근거 cardshorts/e2_interest/review.md"
   },
   {
    "at": "2026-10-05 08:10",
@@ -282,6 +266,14 @@
    "gates_ok": "2026-10-05 04:30"
   },
   {
+   "at": "2026-10-05 12:20",
+   "kind": "shorts",
+   "item": "a1_1eok1y",
+   "owner": "firemap-shorts",
+   "gates_ok": "2026-10-05 00:24",
+   "note": "firemap-shorts 10/4 23:17: spec·check·aitell 0.0·숫자 [9] 대조·compete 5 끝, 제목 '세금 떼고' 고침. 표지 v2 1초 시험 제미나이 6.8·A 6·레드팀 6=6.27<7 미통과(주제 맞힘 3/3) → 글자 덩어리 줄이기·SCHD 숫자 묻힘·'미국 세금 15%'·그림 하나(cardshorts/a1_1eok1y/review.md). 기한 00:20 못 넘으면 12:20 정기 회차 전 재심사, 안 되면 e2_interest 당겨 씀 | 운영실장2 10/5 00:14: v6 제미나이 7·A 6.8·레드팀 7=6.93<7 미통과. 고칠 것 today.md(분배금 숫자 키우기·? 칸 채운 막대·회색 작은 글씨 빼기). 12:20 정기가 v7 재심사, 실패면 대체 편. | firemap-shorts 10/5 00:24: v7 6.0(5·7·6)·v8 6.33(5·7·7) 거쳐 **v9 통과 제미나이 7·A 7·레드팀 7=7.0**(블라인드 주제 맞힘, 숫자 [9]·막대 비율 대조 맞음). cover.png=v9(mkcover_v9.py)."
+  },
+  {
    "at": "2026-10-05 14:10",
    "kind": "cafe",
    "item": "nhisrent1005",
@@ -305,6 +297,23 @@
    "owner": "firemap-write",
    "note": "[후보·관문 전, gates_ok 없음] 후보 미정(롱폼 연동 편 있으면 우선), 기한 12:10",
    "by": "firemap-write"
+  },
+  {
+   "at": "2026-10-05 19:20",
+   "kind": "shorts",
+   "item": "e2_interest",
+   "owner": "firemap-shorts",
+   "gates_ok": "2026-10-05 01:19",
+   "note": "firemap-shorts 10/4 23:17 배정: 테슬라 2분기 이자수익 422 > 영업이익 398(E-2 사실표 미사용). 남은 것: compete.md 5·첫 1초 표지·카피/표지 심사 3명·12:20 rank 뒤라 bars·음악 있음·chip '2026.9' 숫자 allow. X-SHORTS-LEN 첫 짝은 a1_1eok1y로 못 함(A-1 3번째 막힘) → E-2로 A(7초)·B(30~45초 TTS) 짝 권장 | firemap-shorts 10/5 01:10: compete 5 끝(이자 각도 0/7)·check 문제 없음·aitell 0.0·숫자 대조 맞음. 인트로 0초 1초 시험 6.0 → 정지 표지 cover_png v2~v5, 최고 표지 6.67·카피 7.33(v3)/6.33(v5) — 같은 판에 3명 모두 7 이상 못 맞춤(제미나이 5~7 흔들림). 미통과. 다음: 제목 단정형(넣음, 미심사)+카드 중복 줄 빼고 435억 키우기 → 재심사 3명(기한 07:20) · cardshorts/e2_interest/review.md | firemap-shorts 10/5 01:19: 표지 v8(cover_v8.png, 결론 맨 위·막대 안 숫자) 제미나이 7·A 7·레드팀 7=7.0, 카피 8·7·7=7.33 통과. 카드 레드팀·A 지적대로 정리. 근거 cardshorts/e2_interest/review.md"
+  },
+  {
+   "at": "2026-10-05 19:30",
+   "kind": "long",
+   "item": null,
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "skip": true,
+   "note": "05:4x firemap-youtube-loop: 롱폼은 '하루 1편 이하' 상한이지 매일 칸이 아님(RULES 177행·workflow 118행·series-plan 주 2편 시작). 10/2·10/3·10/4가 매일이었던 건 D-1·E-2·N-1 대본이 마침 있어서. 오늘은 공개할 편이 없음: 비축 R-1은 목소리 150/206·TTS 429·f0 막힘(다음 시도 16:00 뒤, 한 날 녹음)이라 관문 기한(10/4 19:30)이 이미 지났고 W-1은 대본 없음. 칸 건너뜀 · 대체 = R-1 목소리·화면·편집 통과 뒤 다음 가능한 롱폼 칸(빨라야 10/7 19:30, 늦어도 W-1 10/11)"
   },
   {
    "at": "2026-10-05 20:10",
@@ -347,14 +356,6 @@
    "by": "firemap-write"
   },
   {
-   "at": "2026-10-06 14:10",
-   "kind": "cafe",
-   "item": "TBD-H",
-   "owner": "firemap-write",
-   "note": "[후보·관문 전, gates_ok 없음] 후보 미정, 기한 08:10",
-   "by": "firemap-write"
-  },
-  {
    "at": "2026-10-06 12:20",
    "kind": "shorts",
    "item": "nhis_prop",
@@ -363,12 +364,29 @@
    "note": "firemap-shorts 10/5 03:44: 배정 — 지역가입자 건보료 재산분 1세대1주택 공시가별(사실표 nhisprop1005 쇼츠 첫 사용, rank·음악 없음). compete 5·check 문제 없음·aitell 0.0·숫자 대조 사실표 밖 0(레드팀). 표지 v1 7·6·6=6.33 미통과 → v2(9억 ? 칸·1주택 특례율 표기) 제미나이 8·카피 7, 심사관 A·레드팀 v2 재심사 결과 미수령 → gates_ok 비움. X-SHORTS-LEN 짝 아님(B판 렌더 없음). 근거 cardshorts/nhis_prop/ | firemap-shorts 10/5 03:45: v2 재심사 도착 — 표지 제미나이 8·A 7·레드팀 7=7.33 통과, 카피 7·7·7=7.0 통과(블라인드 주제 3/3), 숫자 사실표 밖 0. 제목 쉼표만 고침('117,240원, 9억은?'). gates_ok 기입. 공개 전 다듬을 것(선택): 첫 줄 '소득 없어도'→'집 한 채만 있어도'(경쟁4와 겹침)·'?'를 숫자 크기로·설명에 적용 시점."
   },
   {
+   "at": "2026-10-06 14:10",
+   "kind": "cafe",
+   "item": "TBD-H",
+   "owner": "firemap-write",
+   "note": "[후보·관문 전, gates_ok 없음] 후보 미정, 기한 08:10",
+   "by": "firemap-write"
+  },
+  {
    "at": "2026-10-06 19:20",
    "kind": "shorts",
    "item": "새 사실표 편(주제 후보 9 기준금리 ECOS)",
    "owner": "firemap-shorts",
    "gates_ok": null,
    "note": "firemap-shorts 10/5 03:44: 편·담당만 배정 — 대기 spec은 전부 사실표 중복 규칙에 막힘(A-1·E-1·E-2 주인공 같음). 관문 전"
+  },
+  {
+   "at": "2026-10-06 19:30",
+   "kind": "long",
+   "item": null,
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "skip": true,
+   "note": "05:4x firemap-youtube-loop: 건너뜀 — 10/5 칸과 같은 이유(R-1 목소리 150/206 막힘, 관문 기한 10/5 19:30 안에 못 끝남 가능성 큼, W-1 대본 없음). R-1이 10/5 19:30 전에 편집·썸네일·목소리·화면 관문을 모두 넘기면 skip을 지우고 item=R-1·gates_ok를 적는다"
   }
  ]
 }

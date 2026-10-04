@@ -583,3 +583,5 @@
 - [막힘 06:33] 10/5 18:10 카페 칸 ltc1005(장기요양보험료율) 편 확정·원문만, 관문 미통과 gates_ok 비움(기한 12:10, 5fc57b9) — 다음 배차 1순위(08:10 write 정기와 겹치면 정기 몫) · 비축 카페 1/2 그대로
   [2] 착수: firemap-write 06:41 (운영실장2) — ltc1005 18:10 칸 관문 통과(기한 12:10) · 비축 카페 1/2 → 2/2
 - [막힘 06:51] [2] firemap-write ltc1005 관문 미통과(gates_ok 비움, 기한 12:10): 본문·표지·facts·compare.md 작성, readcheck 0·제목 제미나이 8.8·표지 1초 시험 7.2(지적: "4,170원" 작아 168px서 안 읽힘). 남은 일 — 레드팀 3명 점수·pkg/cover_review.md "평균: N" 줄(없어서 aitell frame 막힘)·selfcheck 최종본 재실행·editgate stamp·표지 숫자 키우기 → gates_ok. 작업물 work/research/ltc1005/ 운영실장2가 커밋. 비축 카페 1/2 그대로(후보 수요만: 국민연금보험료 1,520·부양가족연금 940) → 08:10 write 정기 1순위
+  추가 06:53 (운영실장2): ltc1005 레드팀 결과 도착 → work/research/ltc1005/redteam.md · 사실 지적 7(치명 0, 숫자 전부 맞음)·제목 7.4·표지 7.0. 표지 "4,170원" 키우기·"회사와 절반씩"·c04 Q2·Q3 고치기 → cover_review "평균" 줄·stamp → gates_ok (firemap-write 08:10 정기)
+- [정기 06:53] 착수: firemap-editor 06:53 — 10/5 칸 자동 통과 표본(12h) + cloud script-gate 결과 적용 확인

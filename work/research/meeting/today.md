@@ -499,3 +499,4 @@
 
 - [배차 02:37] [2] 착수: firemap-brand-researcher 02:37 (운영실장2) — backlog 1: 서치어드바이저·GA4 실제 유입 검색어 상위 30 → 이름 vs 계산 꼴 비율 실측
   완료: firemap-brand-researcher 02:41 — 유입 검색어 상위 30 못 잼(서치어드바이저·GA4 읽는 길 없음, 이벤트에 검색어 칸 없음). 대신 30일 세션 5,289 중 direct 99.5%·검색 ref 약 10건 실측. 근거 work/research/brand/research/search-entry.md
+- 막힘: firemap-brand-researcher 02:42 (운영실장2 확인) — 유입 검색어 상위 30 실측 불가: 서치어드바이저·GA4 읽는 스크립트·키 없음, firemap_events에 검색어 칸 없음(30일 5,289세션 중 direct 99.5%·검색 ref 약 10). 풀려면 서치어드바이저·GA4 CSV를 work/data/에 두거나 서치콘솔 API 승인 — 순돌이 대역 몫. 근거 work/research/brand/research/search-entry.md

@@ -69,6 +69,8 @@
 ## 열린 [지시]·[요청] — 오늘 근무 (자세한 근거는 archive/2026-10-02.md 참조)
 - [요청] **firemap-write** (firemap-audit 10/5 07:57, 기한 14:10 칸 전) 의도: 같은 날 같은 주제 반복 신호 줄이기. nhisprop1005(08:10)와 nhisrent1005(14:10)가 같은 설명·같은 예시(과표 3억→24등급 586점)를 쓴다 → nhisrent1005를 다른 날로 옮기거나(비축과 바꿈) 예시·도입을 바꾸고, gate_pkg에 '같은 날 칸끼리 facts 핵심 숫자·예시 겹침' 검사. 덤: 오늘 7칸 중 5칸이 '…월 얼마'로 끝남 → commaday 옆에 '같은 날 같은 끝말 ≥3' 검사 · 완료 기준: 검사가 오늘 칸 묶음에서 걸리는 것 확인 · 보고: decisions/log.md
 - [요청] **firemap-youtube-loop** (firemap-audit 10/5 07:57, 4회째 이월) D-1(GMc2Rd1-JYA) 설명란 카페 링크 cafe.naver.com/firemap → 짝 글 https://cafe.naver.com/firemap/206 로. snippet 통째로 받아 바꿀 칸만(교훈 18 — defaultAudioLanguage 유지) · 보고: decisions/log.md
+  착수: firemap-youtube-loop 08:09 (운영실장) — D-1 설명란 카페 링크 → /206
+  완료: firemap-youtube-loop 08:10 — D-1 설명란 카페 링크 → /206, 되읽기 OK(제목·태그·audio ko 그대로, work/yt_desc_cafelink.py)
 - [지시] **firemap-dispatcher·firemap-dispatcher-2** (대역 06:38, 기한 지금 — 07:05·07:35 회차부터) 의도: 결승선 칸이 32시간 '정체'로 남은 원인이 배차 순서라서 고친다. ① 일감 모으기는 '★ 결승선' 표가 먼저 — 상태가 열림·정체·❌인 칸의 담당(고정 근무 running 아닐 때)이 호출 2명 중 1명 ② 막힘 '처리' 줄의 "담당 firemap-dispatcher → <task-id>"는 **<task-id>를 투입**하라는 뜻 ③ 투입 안 한 결승선 담당은 배차 기록 '대기' 줄에 이름·이유 필수 ④ 이번엔 growth를 대역이 06:4x 직접 투입했으니 growth에 '착수' 줄 있으면 중복 투입 금지 — 07:05 회차 2명 = **write(18:10 ltc1005 관문, 기한 12:10)** + **write 또는 다른 담당으로 비축 카페 2편째(1/2, patrol 위반)** · 완료 기준: 07:05~09:35 배차 기록에 결승선 담당이 매 회차 호출 또는 대기 이유로 보임 · 우리만 다른 한 가지: 칸 채우기보다 결승선 ❌를 먼저 지운다 · 금지: 정기 근무 끄기·예약 작업 수정
 - [지시] **firemap-youtube-loop** (대역 06:38, 기한 다음 회차 첫 일) 의도: 오디오 언어가 비면 한국어 시청자 노출이 깎인다(10/5 E-1·N-1 en-US 사고와 같은 꼴). patrol 06:35 실측 DNpdFtZyfE8·P8Papm8Yxpw defaultAudioLanguage None → snippet update로 'ko'(제목·설명은 원문 그대로 같이 보냄, 되읽기 확인) · 완료 기준: patrol 오디오 언어 위반 0 · 금지: 다른 필드 바꾸기 · 쓰기가 권한에 막히면 오류 원문 한 줄을 막힘에
   [2] 착수: firemap-youtube-loop 06:41 (운영실장2) — DNpdFtZyfE8·P8Papm8Yxpw defaultAudioLanguage → ko
@@ -376,6 +378,7 @@
   편집 통과: N-1 대본 v3 06:10 (firemap-editor, aitell 1.6→0.7, 숫자 140개 사실표 밖 0, 끝맺음 4곳만 고침[셈입니다·넘었습니다→죠·정리하면 이렇습니다·반대입니다], ep/N-1/script.md.edit.json) → 목소리 이 본으로
   완료: firemap-editor 06:10 — N-1 대본 v3 편집 통과
 - [지시] **firemap-designer**(10/4 21:05 재개 뒤 첫 일) · 협업 visual-designer·editor-web (순돌이 06:5x, 사장님이 보낸 영상 '노디 AI — 클로드로 디자인할 때 프롬프트부터 넣지 마세요' youtu.be/feqjgsQFJ5k, 2.4만 회):
+  착수: firemap-designer 08:09 (운영실장) — 연봉 결과 시안 v3 6.83 → 재수정(기한 12:00)
   - 영상 방법 3단계: ① 내 상황에 맞는 좋은 레퍼런스 찾기 ② **Dembrandt**(오픈소스 MIT CLI, `npx dembrandt <주소>` — Playwright로 실제 화면에서 색·글꼴·간격·그림자·모서리를 토큰으로 뽑음, DESIGN.md·W3C 토큰 출력)로 레퍼런스의 디자인 시스템을 뽑아 Claude Design에 넣기 ③ AI 티 나는 한글 문장·줄바꿈 다듬기.
   - 우리 적용: 레퍼런스 = 토스(계산 결과 화면)·뱅크샐러드·KRDS(정부 디자인 시스템) 각 1화면. Dembrandt로 토큰 뽑아 design/tokens-ref/에 저장 → 우리 ds-v2 토큰(src/ui)과 표로 비교 → 연봉 결과 화면 시안 1개를 '레퍼런스 토큰 안에서' 다시 만들어 심사 3명(토스 옆 비교판, 7 통과·목표 8) — 지금 6.75.
   - 금지: 남의 로고·그림·문구 복사(토큰 수치만 참고), 스꾸 저장소 근처 금지. 설치는 npx 1회 실행만(전역 설치 안 함). ③은 editor-web 몫.

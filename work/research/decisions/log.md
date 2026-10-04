@@ -925,3 +925,4 @@
 2026-10-05 07:58 · firemap-audit · 알림: 감사 커밋 21ed918에 다른 담당이 add해 둔 파일 7개(work/tests/test_yt_quality_video.py·work/video/src/motion-proto/YtqParts.tsx·captionTiming.ts·numberSpeech.ts·work/video/tests/yt_quality_proto.test.mjs 등)가 같이 쓸려 들어감(동시 실행 git 인덱스 충돌) · 내용은 그대로 커밋돼 있으니 해당 담당은 다시 커밋하지 않아도 됨, 히스토리는 안 고침
 2026-10-05 08:07 · copywriter · 쇼츠 48h 판정을 CTR→조회로 바꾸고 제목 교체 안 함 · 쇼츠 썸네일 노출 하루 수십 회, videos.update 403
 2026-10-05 08:07 · copywriter · 카페 제목 틀 v3 초안(맨 앞 어절 검색 1만↑) · perf_log 10/1 조회 30편과 kwvol 검색수가 같은 순서
+2026-10-05 08:10 · firemap-youtube-loop · D-1(GMc2Rd1-JYA) 설명란 카페 링크 → https://cafe.naver.com/firemap/206 · snippet 통째 update, 제목·태그·defaultAudioLanguage=ko 되읽기 일치(audit 4회 이월 해소)

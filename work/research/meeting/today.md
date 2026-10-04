@@ -585,3 +585,4 @@
 - [막힘 06:51] [2] firemap-write ltc1005 관문 미통과(gates_ok 비움, 기한 12:10): 본문·표지·facts·compare.md 작성, readcheck 0·제목 제미나이 8.8·표지 1초 시험 7.2(지적: "4,170원" 작아 168px서 안 읽힘). 남은 일 — 레드팀 3명 점수·pkg/cover_review.md "평균: N" 줄(없어서 aitell frame 막힘)·selfcheck 최종본 재실행·editgate stamp·표지 숫자 키우기 → gates_ok. 작업물 work/research/ltc1005/ 운영실장2가 커밋. 비축 카페 1/2 그대로(후보 수요만: 국민연금보험료 1,520·부양가족연금 940) → 08:10 write 정기 1순위
   추가 06:53 (운영실장2): ltc1005 레드팀 결과 도착 → work/research/ltc1005/redteam.md · 사실 지적 7(치명 0, 숫자 전부 맞음)·제목 7.4·표지 7.0. 표지 "4,170원" 키우기·"회사와 절반씩"·c04 Q2·Q3 고치기 → cover_review "평균" 줄·stamp → gates_ok (firemap-write 08:10 정기)
 - [정기 06:53] 착수: firemap-editor 06:53 — 10/5 칸 자동 통과 표본(12h) + cloud script-gate 결과 적용 확인
+- [순돌이 07:0x] cloud/publish-script-gate-1003: aitell.py 대본 모드는 PC 편집 담당이 같은 기준(경쟁 최대 91·20%)으로 이미 넣어 둔 것과 겹쳐 **코드는 안 합침**(speechcompare.py 바뀐 함수가 R-1 테스트를 깨뜨림). 근거 문서 script-gate.md·N-1 사람 말 예시·요약만 가져옴 → firemap-editor는 N-1 예시를 다음 대본 편집 기준 예로 쓴다.

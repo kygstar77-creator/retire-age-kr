@@ -3,6 +3,20 @@
 - 지난 기록은 archive/날짜.md. 직원은 이 파일 전체를 읽지 말고 **자기 task-id(예: firemap-product-dev)로 검색**해 자기 줄만 읽는다. 근거가 필요하면 archive/2026-10-02.md에서 같은 문구로 찾는다.
 - 끝나면 그 항목 밑에 "완료: … HH:MM" 한 줄. 다음 정리 때 완료 항목은 archive로 옮긴다(이 파일이 150줄을 넘으면 같은 방식으로 다시 줄인다).
 
+## ★ 결승선 10/5 00:05~03:50 (점검관 00:02 · 다음 채점 03:50 · 사용량 10/4 21:00 초기화됨)
+| # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
+|---|---|---|---|---|---|---|
+| F1 | 10/5 12:20 쇼츠 칸 관문(기한 00:20) — a1_1eok1y 표지 v2 6.27<7(cardshorts/a1_1eok1y/review.md) 고쳐 3명 평균 ≥7, 못 넘으면 e2_interest를 12:20으로 당기고 19:20은 a1_1eok1y 재심사 | C | firemap-shorts | 03:50 | slots.json 10/5 12:20 칸 gates_ok에 시각(date 값) + 설명 링크 /calc/*·utm_campaign | 열림(00:02 gates_ok 비어 있음, 비축 쇼츠 0) |
+| F2 | 카페 검색 미노출 진단 ①~④(10/3 회의 지시, 기한 10/4 23:00 — log에 growth 줄 0) | D | firemap-growth | 03:50 | decisions/log.md에 ①~④ 실측값 또는 '확인 안 함+이유' 한 줄씩, 제재 확인 시 STOP_cafe 요청 | 대기(23:00 기한 1h 지남, 착수 없음) |
+| F3 | 수익·방문 계측 재개 — revenue.md 최신 줄이 10/02 07:39, daily.md 10/2 17시 뒤 없음 | D | firemap-growth | 03:50 | revenue.md 10/03·10/04 줄(못 잰 칸 '확인 안 함') + daily.md 10/4 마감 줄(거름 기준 channels.md) | 열림 |
+| F4 | 비축 카페 0/2 채우기 1편(backlog write 1번: 전세보증 SGI·HF 비교 또는 건보료 재산 몫) — 관문(편집 .edit.json·aitell commaday)까지 | C | firemap-write | 03:50 | slots.json reserve.cafe ≥1 + 묶음 pkg.edit.json 실재 | 열림 |
+| F5 | 10/5 19:20 e2_interest 관문(기한 07:20) — compete.md 5·표지 1초 시험 3명·review 3줄 | C | firemap-shorts | 03:50 | cardshorts/e2_interest/compete.md·review.md 실재(진행 중이면 '진행 중' 근거) | 열림 |
+| F6 | 오픈채팅 R5 공지(10/2 F5 ❌ 넘어옴 — 방장 이름 메시지라 무인 불가) | D | firemap-growth | 03:50 | approvals.md에 R5 줄(휴대폰에서 됨·순서) 실재 확인 또는 접기 사유 log | 열림 |
+- 점검 00:02(10/2 14:50 표, 2일 묵음 — 10/2 17:50~10/4 정기 근무 꺼짐): F1 ✅(GMc2Rd1-JYA public, ytupload stats 00:01) / F2 ✅(D-1 review.md 15:3x 통과선 7 → d1k 7.63 통과) / F3 ✅(ep/D-1/meta.json.edit.json 실재) / F4 ✅(완료 기준=보류 사유: slots 10/2 19:20 a1_need100 '표지 1초 4.2<7 보류' 기록 — 단 공개 0, e1_hynix_dd는 10/3 INvS3EzWelY 공개) / F5 ❌(daily.md 17시 줄 있음, R5 공지 시각 없음 — 무인 발송 불가) · **✅ 비율 4/5**
+- 준수율 5/5(파일 존재로 잼, 10/4 공개분): 쇼츠 a1_spyi·e1_micron_q4 compete.md 있음 · 카페 #205 jeonseg1004·#206 d1cafe1004·#208 n1cafe1004 pkg.edit.json 있음 · ✅ 비율 4/5(10/2 표)
+- 정체: growth 10/4 21:05 첫 일(카페 진단) 착수 줄 없음 → '대기' F2 · copywriter·순돌이 결정 요청(n1cafe1004 제목)은 write가 22:26 관문 안에서 해결 → 정체 해소
+- 수익 0원(revenue.md 최신 10/02 07:39, 10/3·10/4 계측 없음) · 사이트 10/4 세션 24·기기 31(firemap_events session_start, props internal·bot 제외, localhost·몰림 봇 미적용) · 쿠팡 클릭 0 · 유튜브 구독 46·총조회 9,607
+
 ## ★ 전체 회의 10/3 21:34 — 큰 방향(근거 meeting/2026-10-03-decisions.md 반론 처리 표·verify.md)
 - **막힘**: 주간 사용량 **96%**(21:3x, 초기화 10/4 21:00) → 그때까지 발행 사슬만, 새 도구·관문 코드 금지(발행 막힘 푸는 코드만) · 수익 0원·쿠팡 외부 클릭 10월 0 · 카페 글 네이버 검색 전부 미노출(원인 확인 안 함) · N-1 업로드 권한 거절(10/4 19:30 칸)
 - 로드맵 **뒤처짐**(10/3 일할 9,677원 대비 0원). 결승선 첫 칸 원칙 그대로 = 쿠팡 칸 있는 /calc/* + utm 링크가 붙은 공개.
@@ -26,12 +40,6 @@
 - [지시] **firemap-shorts** 10/3 12:20 회차 첫 일: 비축 쇼츠 1편(compete.md 끝난 e1_micron_q4·e1_samsung_x·a1_1eok1y 중) 관문 통과 → reserve.shorts · 카드 쇼츠 표지 1초 시험 4.2 = 틀 문제(19:32 판정)라 첫 1초 표지 화면 시안을 copywriter 가설(cardshorts/benchmark-2026-10-02.md)로 1개 · 완료 기준: reserve.shorts ≥1 또는 막힌 사유 · 19:20 칸 e1_micron_q4(바꿔도 됨)
 - [지시] **firemap-video-producer·firemap-youtube-loop**: 쿠팡 링크가 붙는 다음 롱폼부터 첫 장면 자막 한 줄 대가성 고지(설명 첫 줄과 같은 말) · 영상 설명의 firemap 링크도 /calc/* + utm_campaign=영상ID · D-1은 재업로드 안 함
 - [지시] **firemap-watchdog** 매 회차: 네이버 이상 신호 3개(이용제한 메일은 확인 불가면 '확인 안 함'·글쓰기 401·새 글 검색 누락) 중 하나라도 실측되면 write에 [지시·긴급]으로 research/STOP_cafe 생성 요청 + approvals.md 한 줄(되돌리기 = 파일 삭제)
-  완료: firemap-watchdog 13:57 (10/3 13:52 회차) — 이상 신호 3개: ① 글쓰기 401 없음(naverpost check 로그인됨) ② 이용제한 메일 Gmail 3일 0건 · 네이버 메일함은 확인 안 함 ③ #198 정확한 제목이 카페탭·통합검색에 없음 — 그러나 대조군 #86~#192 7편과 '파이어맵 firemap 카페'도 전부 없음(같은 페이지에 다른 카페 링크는 잡혀 파싱 정상). 새 글만 빠진 게 아니라 카페 전체 미노출이고 이전 기준선이 없어 새 이상 신호로 판정 안 함 → STOP_cafe 요청 안 함. 기준선 research/cafe_search_baseline.json 둠.
-  완료: firemap-watchdog 17:53 (10/3 17:52 회차) — 이상 신호 3개: ① 글쓰기 401 없음(naverpost check 로그인됨) ② 이용제한 메일 Gmail 3일 0건 · 네이버 메일함 확인 안 함 ③ 카페 검색 누락은 13:57 기준선 이후 재측정 안 함(사용량 절약) → STOP_cafe 요청 안 함.
-  완료: firemap-watchdog 21:52 (10/3 21:52 회차) — 이상 신호 3개: ① 글쓰기 401 없음(naverpost check 로그인됨) ② 이용제한 메일 Gmail 3일 0건 · 네이버 메일함 확인 안 함 ③ 카페 검색 누락 재측정 안 함(사용량 절약) → STOP_cafe 요청 안 함.
-  완료: firemap-watchdog 09:53 (10/4 09:52 회차) — 이상 신호 3개: ① 글쓰기 401 없음(naverpost check 로그인됨) ② 이용제한 메일 Gmail 3일 0건 · 네이버 메일함 확인 안 함 ③ 카페 검색 누락 재측정 안 함(사용량 절약) → STOP_cafe 요청 안 함.
-  완료: firemap-watchdog 13:53 (10/4 13:52 회차) — 이상 신호 3개: ① 글쓰기 401 없음(naverpost check 로그인됨) ② 이용제한 메일 Gmail 3일 0건 · 네이버 메일함 확인 안 함 ③ 카페 검색 누락 재측정 안 함(사용량 절약) → STOP_cafe 요청 안 함.
-  완료: firemap-watchdog 17:53 (10/4 17:52 회차) — 이상 신호 3개: ① 글쓰기 401 없음(naverpost check 로그인됨) ② 이용제한 메일 Gmail 3일 0건 · 네이버 메일함 확인 안 함 ③ 카페 검색 누락 재측정 안 함(사용량 절약) → STOP_cafe 요청 안 함.
   [알림] firemap-watchdog 13:57 → **firemap-meeting**: 파이어맵 카페 글이 네이버 검색(카페탭·통합)에 한 편도 안 보임(9월 글 포함) = 카페 조회는 검색 유입 0. 원인(노출 설정·저품질) 조사를 10/4 21:05 복귀 growth 첫 일에 붙일지 결정 필요.
   착수: firemap-meeting 21:29 — 카페 검색 미노출 조사 배정 결정
   완료: firemap-meeting 21:34 — 붙임. growth 10/4 21:05 첫 일로 배정(아래 회의 10/3 칸), X-CAFE-VOL 12편 확대는 진단까지 얼림
@@ -40,33 +48,6 @@
   완료: firemap-write 20:21 — aitell frame에 '같은 날 카페 칸 쉼표 없는 제목 ≥2'(10/4 칸부터 쉼표 제목을 막음, `aitell.py commaday <날짜>`) → 10/3 '0/8 걸림' 확인. 10/4 칸 jeonseg1004 '전세보증보험 가입조건 따져 보면 공시가격 2억 빌라는 전세 얼마까지?'(7.83)·d1cafe1004 '퇴직 후 건강보험료는 배당·이자 1천만원 넘으면 월 얼마 더 나올까?'(8.0) → 2/3 통과, 본문 그대로·editgate auto 재도장. 덤: readcheck가 영상 넣기 youtu.be 한 줄을 계획된 링크로(d1cafe1004가 그 줄로 막힐 뻔). 20:10 칸 ubjob1003 [#204](https://cafe.naver.com/firemap/204) 20:20 verify OK
 - 10/4 21:05 복귀 직원 첫 일(그 전엔 하지 않음): growth = utm·/calc 진입 집계 기준선 · brand-director = 파이어맵 카페 주제 범위(한능검·대형폐기물은 X-CN-1 쪽) · product-dev = /privacy에 이벤트 항목(나이 구간·퀴즈 답) 열거 · improve = 기존 글 색인·검색 리팩토링 후보
 - 실험: 오늘 판정일 도래 0건. 유튜브 동시 실험 3개 초과는 X-YT-FREQ(10/9) 판정 때 정리.
-
-## ★ 결승선 10/2 14:50~17:50 (점검관 14:54 · 다음 채점 17:50)
-| # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
-|---|---|---|---|---|---|---|
-| F1 | D-1 19:30 공개 준비(수익 가장 가까움: 설명란 쿠팡 두 줄) — 16:00 TTS 초기화 뒤 목소리 남은 27문장 → 렌더 → ytlong gate | C | firemap-video-producer(16:05 회차) | 17:50 | ytlong gate "통과"(C9 챕터·목소리·video 막힘 0) + 19:30 예약 업로드 또는 보류 사유 log 한 줄 | 열림 |
-- [지시] **firemap-video-producer** 16:05 회차(운영실장 15:17): D-1 썸네일 재심사 최고 d1n 평균 7.30 <8 → review.md 연기 판정(aace0fe). 업로드는 그대로 진행하되 **publishAt = 10/3 19:30**, uploads.jsonl·X-YT-FREQ에 오늘 롱폼 빈칸 사유 한 줄. 썸네일 최종안은 10/3 visual-designer 재작업 몫.
-  착수: firemap-video-producer 15:37 (운영실장 2) — PD 정기 회차는 18:05(4시간 간격, 16:05 회차 없음)라 지금 투입. 15:3x 통과선 7점 → d1k 7.63 통과, publishAt 10/2 19:30 유지(15:15 연기 판정은 취소됨), 16:00 TTS 초기화 뒤 남은 목소리→렌더→ytlong gate→예약 업로드
-  착수: firemap-video-producer 17:45 (운영실장) — 15:37 투입분은 운영실장 2 회차가 16:50 ENOTFOUND로 실패해 끊김(voice.json 16:25까지만, 커밋·렌더 없음) → 재투입. 18:05 정기 회차는 이 착수 줄을 보고 D-1을 건너뛴다. 19:00까지 업로드 못 하면 10/3 19:30 연기·사유 기록
-  완료: firemap-video-producer 17:51 — D-1 예약 업로드 https://youtu.be/GMc2Rd1-JYA (publishAt 10/2 19:30, 썸네일 d1k, status 칸 전부 embeddable·publicStatsViewable True 확인, 유료 프로모션 표시 켬). 목소리 70/70(16:25분 그대로) · readback 걸린 3문장(5:5·5:6·9:0) 한글 받아쓰기 재청취로 대본과 같음 확인=재녹음 0 · clickscan 문장 77·렌더본 0 · deess 쉿소리 -8.6→-13.7dB · ytlong gate 통과 · slots.json D-1 gates_ok 17:51. ytlong.py: status 칸 명시·쿠팡 링크 시 paidProductPlacementDetails 추가
-| F2 | D-1 썸네일 8점 재작업 — 17:00 flash 재측정·새 안, 8 미만이면 [순돌이 검토] 공개 하루 연기 판정(2105f01: 18:30 한도) | C | firemap-visual-designer(17:00 회차) | 17:50 | review.md에 3명 평균 ≥8 안 + 1초 시험, 또는 연기 판정 줄 | 열림 |
-| F3 | 편집 대기 해소 — D-1 meta.json 새 링크 줄 .edit.json(13:11 요청, 착수 없음) + offimkt1002 editgate stamp 재찍기(title.txt 교체로 불일치) | C | firemap-editor | 17:50 | ep/D-1/meta.json.edit.json 실재 + editgate.py check offimkt1002 일치 | 대기(요청 13:11부터 1h40m 착수 없음) |
-| F4 | 쇼츠 a1_need100 19:20 공개 예약 확인 + e1_hynix_dd 관문(review 3줄·1초 시험) | C | firemap-shorts | 17:50 | 유튜브 예약 상태(publishAt 19:20) 실측 줄 또는 보류 사유 log | 열림 |
-| F5 | 오픈채팅 R5 공지 1회 + utm x-cn-1·youtube d-1 유입 17:00 집계(daily.md) | D | firemap-growth(16:40 회차) | 17:50 | daily.md 17시 줄 + 공지 시각 | 열림 |
-  착수: firemap-growth 17:28 — 16:40 회차 빠짐, 지금 집계
-  완료: firemap-growth 17:31 — F5 daily.md 17시 줄(외부 28세션·17기기·계산 11기기, x-cn-1 외부 0·d-1 0[미공개]·쿠팡 외부 0) · R5 공지는 무인 발송 불가(방장 이름 메시지) → 초안 growth/openchat-r5.md + 결재함, [편집 검수 요청] firemap-editor
-- 점검 14:54(지난 11:50 표): F1 ✅ F2 ✅ F3 ✅ F4 ✅ F5 ✅ — 근거는 archive/2026-10-02.md 맨 아래 · **✅ 비율 5/5**
-- 준수율 5/5(파일 존재로 잼): 공개 카페 #192 wht1002·#193 b10cafe1002 pkg.edit.json 있음 · 쇼츠 a1_need100·e1_hynix_dd compete.md 있음 · 운영 화면 실업급여 3번 타일 디자인 통과 11:42
-- 정체: [편집 검수 요청] D-1 meta 링크 줄(13:11) 착수 없음 1h40m → '대기', F3으로 올림
-  착수: firemap-editor 14:56 (운영실장 2) — F3 D-1 meta.json 링크 줄 .edit.json + offimkt1002 editgate 재찍기
-  완료: firemap-editor 14:58 — F3 ep/D-1/meta.json.edit.json 실재(새 링크 줄 편집 통과, 고칠 곳 0) · offimkt1002 editgate check 일치(재찍기). 단 offimkt1002 제목은 평균 7.6(<8)이라 제목 관문 미통과, hold.txt 유지·18시 이후 대타
-- [대역 15:00 판정 ①] **offimkt1002 제목 심사 멈춤**: 9차까지 평균 7.6→7.5로 내려감, copywriter 원인 확정('HUG 90%'를 넣으면 단정, 빼면 궁금증 0 — 각도 문제). 같은 각도 10차 금지. hold.txt 유지 = **18시 대타도 8 미만이면 안 나감**. [지시] **firemap-copywriter** 18:40 회차 마지막 1회: HUG 빼고 '9월 실거래 n건·투룸 전세 중간값' 각도로 새 후보 3개를 심사 3명 한 표에서, 평균 8↑면 editor stamp→20·22시 빈 칸, 미달이면 write가 묶음을 접고(facts.txt만 10/9 시황 재료로) log 한 줄. 우리만 다른 한 가지: 단지 하나의 실거래 분포. 금지: 점수 낮추기·HUG 수치를 한도처럼 쓰기. F3의 offimkt 재찍기는 editor 14:58 완료로 끝(통과선과 무관).
-  착수: firemap-copywriter 18:49 — offimkt1002 마지막 1회(9월 실거래 n건·투룸 전세 중간값 각도 3안)
-  완료: firemap-copywriter 18:52 — 이미 15:4x 해제·#194 공개라 심사 생략, 새 각도 3안은 10/9 시황 재료(offimkt1002/titles-angle2.md). 접기 불필요. **deputy: 접기/공개 집행 할 것 없음** · A-1 48h 판정: 공개 조회 666(롱폼 최고) → 제목 유지, CTR은 API 불가로 확인 안 함
-- [대역 15:00 판정 ②] **R26+R20 접기 집행**(예술가 14:51 반려 + 기획자 14:58 접기 권고 + 경쟁 taekil·토스·자리톡 실측, 10/8까지 기다리면 조사 2건이 헛돎). 남길 것 = .ics 내보내기 부품(아이디어 Q, X-CN-1 재사용). 취소: research-kr R20 법 근거·민법 157/161 조사(10/4 12:00) · venture R26 카드(10/4 20:10). [지시] **firemap-venture-research-kr** 다음 회차: 그 칸으로 backlog 3번(새 후보 5개 — 1쪽 경쟁 기능 대조를 점수 전에) · **firemap-venture** 10/4: R26 대신 X-V1·X-CN-1 재채점에 집중, 10/8 판정 목록에서 R26 삭제. decisions/log.md 기록.
-  - 완료: research-kr 15:4x backlog 3번 — 새 후보 5개 R31~R35(점수 전 1쪽 기능 대조), 1위 R31 대형폐기물·버리는 법 실험 제안 · 근거 ventures/candidates.md 10/2 6회차
-- 사용량(대역 15:00 실측): 주간 81%(10:53 79% → 4시간 +2%p = 시간당 0.5%p, 내려옴) · 초기화 10/4 21:00(54시간) · 이 속도면 10/4 01:00쯤 98% → 버틸 속도 0.31%p. 한도 지시 그대로(결승선·D-1·발행·감사만 추가 투입).
-- 수익 0원(revenue.md 최신 10/02 07:39: 애드센스 심사중·쿠팡 클릭 0/구매 0·유튜브 0) · 사이트 오늘 00:00~14:54 세션 36·기기 24(firemap_events 원값, 내부·localhost만 제외, 몰림 봇 필터 미적용 — growth 집계와 다름) · 쿠팡 클릭 0 · 사용량 한도 지시(대역 10:53) 그대로 — 투입은 결승선 칸만
 
 ## ★ 증명 기준 — 10/15 (사장님 10/01 23:55: 4개 중 3개를 무료 도구로 달성한 뒤에만 유료 구독 결재)
 | 기준 | 지금 | 10/15 목표 | 담당 |

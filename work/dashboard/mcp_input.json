@@ -1,5 +1,5 @@
 {
- "captured_at": "2026-10-01T08:24:09.875991+00:00",
+ "captured_at": "2026-10-04T22:11:07.080298+00:00",
  "note": "MCP 스냅샷. firemap-* 예약 작업만 넣는다(스꾸 제외). list_scheduled_tasks + list_task_runs(limit 3) + get_usage. | 10-01 07:5x admin: usage·6개 작업 runs만 새로 잼, 나머지 runs·tasks는 07:01 값",
  "manual": {
   "revenue_krw": 0,
@@ -8,23 +8,23 @@
  },
  "usage": {
   "weekly_all": {
-   "percentUsed": 62,
-   "resetsAt": "2026-10-04T12:00:00.423Z"
+   "percentUsed": 7,
+   "resetsAt": "2026-10-11T12:00:00.124Z"
   },
   "five_hour": {
-   "percentUsed": 19,
-   "resetsAt": "2026-10-01T09:30:00.423Z"
+   "percentUsed": 14,
+   "resetsAt": "2026-10-04T22:20:00.124Z"
   }
  },
  "tasks": [
   {
    "taskId": "firemap-write",
    "title": "",
-   "description": "하루 5회(08·11·14·17·20시 :10) — 카페 5편을 08~22시에 3시간 간격으로 분산 발행(블로그는 회복 계획대로), 한도 찬 헛회차 제거(2026-09-30 사용량 재배분)",
-   "schedule": "At 08:10 AM, 11:10 AM, 02:10 PM, 05:10 PM and 08:10 PM, every day",
+   "description": "하루 8회(08~22시 짝수시 :10) — 카페 8편(10/2 사장님 지시, 관문 통과 글만), 블로그는 회복 계획대로",
+   "schedule": "At 08:10 AM, 10:10 AM, 12:10 PM, 02:10 PM, 04:10 PM, 06:10 PM, 08:10 PM and 10:10 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T11:19:44.000Z",
-   "lastRunAt": "2026-10-01T08:11:06.526Z"
+   "nextRunAt": "2026-10-04T23:19:44.000Z",
+   "lastRunAt": "2026-10-04T13:20:26.610Z"
   },
   {
    "taskId": "firemap-report",
@@ -32,8 +32,8 @@
    "description": "매일 12:30, 지난 24시간 발행 결과를 재고 현황판 갱신·텔레그램 보고·어뷰징 브레이크 점검",
    "schedule": "At 12:33 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-02T03:33:02.000Z",
-   "lastRunAt": "2026-10-01T03:33:06.630Z"
+   "nextRunAt": "2026-10-05T03:33:02.000Z",
+   "lastRunAt": "2026-10-03T03:33:25.221Z"
   },
   {
    "taskId": "firemap-improve",
@@ -41,8 +41,8 @@
    "description": "매일 13·15·17·19·21·23시 — 발행 없이 자료조사 선행·도구 개선·품질 소급 검증·새 도구 조사(자가발전 루틴)",
    "schedule": "At 02:30 PM and 10:30 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T13:35:03.000Z",
-   "lastRunAt": "2026-10-01T05:35:08.229Z"
+   "nextRunAt": "2026-10-05T05:35:03.000Z",
+   "lastRunAt": "2026-10-02T05:32:14.585Z"
   },
   {
    "taskId": "firemap-loop",
@@ -50,8 +50,8 @@
    "description": "2시간마다 :45 — 경쟁 측정·우리 측정·차이 조정·성과 판정(자가개선 루프). 사장님이 묻지 않아도 계속 발전",
    "schedule": "At 09:45 AM, 03:45 PM and 09:45 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T12:51:41.000Z",
-   "lastRunAt": "2026-10-01T06:51:47.251Z"
+   "nextRunAt": "2026-10-05T00:51:41.000Z",
+   "lastRunAt": "2026-10-02T06:50:15.775Z"
   },
   {
    "taskId": "firemap-watchdog",
@@ -59,26 +59,35 @@
    "description": "하루 4회(09·13·17·21시 :45) — 발행 누락·로그인 만료 감시(2026-09-30 발행 5회로 줄여 감시도 줄임)",
    "schedule": "At 09:45 AM, 01:45 PM, 05:45 PM and 09:45 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T08:51:32.000Z",
-   "lastRunAt": "2026-10-01T04:51:36.795Z"
+   "nextRunAt": "2026-10-05T00:51:32.000Z",
+   "lastRunAt": "2026-10-04T12:52:15.827Z"
+  },
+  {
+   "taskId": "firemap-titletest-followup",
+   "title": "【내일 09:30】제목 수정 SEO 실험 판정",
+   "description": "9/23 20:04 카페 59번 제목만 바꾼 실험 — 하루 뒤 색인이 새 제목으로 갱신됐는지, 검색에서 빠지지 않았는지 판정",
+   "schedule": "At 09:30 AM, on day 24 of the month, only in September",
+   "enabled": false,
+   "nextRunAt": null,
+   "lastRunAt": "2026-09-24T00:38:11.301Z"
   },
   {
    "taskId": "firemap-shorts",
    "title": "【하루 1번】파이어맵 쇼츠 발행",
-   "description": "매일 19:20 — 쇼츠 1편(정책 조사 뒤 하루 1편, shortsdaily.py 정책 관문 C1~C4·C7·C13 통과해야 공개)",
-   "schedule": "At 07:25 PM, every day",
+   "description": "하루 2번(12:20·19:20) — 쇼츠 하루 2편(10/2 사장님 지시, X-YT-FREQ). 경쟁 조사·심사·1초 시험 통과한 편만",
+   "schedule": "At 12:20 PM and 07:20 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T10:25:11.000Z",
-   "lastRunAt": "2026-09-30T11:59:26.351Z"
+   "nextRunAt": "2026-10-05T03:25:11.000Z",
+   "lastRunAt": "2026-10-04T10:25:52.534Z"
   },
   {
    "taskId": "firemap-youtube-loop",
    "title": "파이어맵 유튜브·카페 자율 루프",
    "description": "2시간마다 — 사장님이 채팅으로 시킨 유튜브·카페 일(BACKLOG.md)을 하나씩 끝까지: 경쟁 분석→규칙 갱신→제작→검증→업로드→카페 글",
-   "schedule": "At 35 minutes past the hour, every 4 hours",
+   "schedule": "At 35 minutes past the hour, every 4 hours, between 12:00 AM and 11:59 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T11:42:39.000Z",
-   "lastRunAt": "2026-10-01T08:04:12.046Z"
+   "nextRunAt": "2026-10-04T23:42:39.000Z",
+   "lastRunAt": "2026-10-04T19:37:45.293Z"
   },
   {
    "taskId": "firemap-bizdev",
@@ -93,10 +102,10 @@
    "taskId": "firemap-video-producer",
    "title": "파이어맵 영상 제작 PD",
    "description": "3시간마다 — 루프가 기획·대본까지 끝낸 롱폼(ep/<편>/)을 화면·목소리·렌더·검사·예약 공개까지 만든다",
-   "schedule": "At 5 minutes past the hour, every 4 hours, between 02:00 AM and 10:59 PM",
+   "schedule": "At 5 minutes past the hour, every 4 hours, between 02:00 AM and 10:59 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T09:16:17.000Z",
-   "lastRunAt": "2026-10-01T05:16:22.114Z"
+   "nextRunAt": "2026-10-05T01:16:17.000Z",
+   "lastRunAt": "2026-10-04T21:17:02.561Z"
   },
   {
    "taskId": "firemap-audit",
@@ -104,8 +113,8 @@
    "description": "하루 2번(07:40·19:50) — 지난 12시간 유튜브·카페·블로그·쇼츠 결과물을 정책·사실·저품질 기준으로 독립 감사, 위험하면 정지 스위치",
    "schedule": "At 07:40 AM and 07:40 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T10:49:27.000Z",
-   "lastRunAt": "2026-09-30T22:49:29.477Z"
+   "nextRunAt": "2026-10-04T22:49:27.000Z",
+   "lastRunAt": "2026-10-03T10:49:53.411Z"
   },
   {
    "taskId": "firemap-product-dev",
@@ -113,8 +122,8 @@
    "description": "매일 11:10·17:10 — 파이어맵 사이트·앱을 수익이 나는 제품으로: 생활 돈 계산기, 앱(Capacitor+애드몹) 준비, 밀린 개편 마무리, 측정",
    "schedule": "At 11:10 AM and 05:10 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-02T02:22:36.000Z",
-   "lastRunAt": "2026-10-01T08:17:07.072Z"
+   "nextRunAt": "2026-10-05T02:22:36.000Z",
+   "lastRunAt": "2026-10-02T08:27:17.151Z"
   },
   {
    "taskId": "firemap-meeting",
@@ -122,8 +131,8 @@
    "description": "매일 21:15 — 전체 직원 회의: 오늘 결정 전부를 참모 3명에게 한 번에 검토받고, 로드맵 대비 점검, 내일 직원별 할 일 배정",
    "schedule": "At 09:28 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T12:27:54.000Z",
-   "lastRunAt": "2026-09-30T12:28:52.751Z"
+   "nextRunAt": "2026-10-05T12:27:54.000Z",
+   "lastRunAt": "2026-10-04T12:28:36.636Z"
   },
   {
    "taskId": "firemap-growth",
@@ -131,8 +140,8 @@
    "description": "매일 10:40·16:40 — 방문자 10배: 채널→사이트 유입 측정(utm), 교차 연결, 검색 노출(SEO) 점검, 유입 실험",
    "schedule": "At 10:40 AM and 04:40 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-02T01:44:03.000Z",
-   "lastRunAt": "2026-10-01T07:44:09.606Z"
+   "nextRunAt": "2026-10-05T01:44:03.000Z",
+   "lastRunAt": "2026-10-02T08:27:17.522Z"
   },
   {
    "taskId": "firemap-venture",
@@ -140,71 +149,71 @@
    "description": "매일 13:10·20:10 — 신사업본부(승격, 2026-10-01): 후보 발굴·점수·출시 결정·포트폴리오 4주 판정, 본부 인원 배정(빌더·리서처 요청)",
    "schedule": "At 01:10 PM and 08:10 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T11:13:56.000Z",
-   "lastRunAt": "2026-10-01T04:14:00.754Z"
+   "nextRunAt": "2026-10-05T04:13:56.000Z",
+   "lastRunAt": "2026-10-02T04:12:13.899Z"
   },
   {
    "taskId": "firemap-designer",
    "title": "프로덕트 디자이너(전담)",
-   "description": "매일 10:20·18:20 — 새 제품 만들기 전 화면 설계(첫 30초·이길 점), 공유 카드·퍼지는 장치, 신사업 사이트 디자인 시안",
+   "description": "하루 2회(10·16시) — 웹 화면 설계·공유 장치",
    "schedule": "At 10:20 AM and 04:20 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-02T01:31:30.000Z",
-   "lastRunAt": "2026-10-01T07:31:36.078Z"
+   "nextRunAt": "2026-10-05T01:31:30.000Z",
+   "lastRunAt": "2026-10-02T07:34:15.827Z"
   },
   {
    "taskId": "firemap-editor",
    "title": "문장 편집자(사람 글처럼)",
-   "description": "매일 06:50·12:50·17:50 — 발행 전 대본·카페 글·웹 문구를 사람이 쓴 말투로 다듬고, AI 티 검사 기준과 말투 가이드를 계속 키운다",
+   "description": "하루 3회(06·11·16시 :50) + [편집 검수 요청] 때 즉시 — 공개되는 모든 글(카페·유튜브·대본·자막·사이트 문구·영어·쿠팡 소개)의 AI 티 관문",
    "schedule": "At 06:50 AM, 11:50 AM and 04:50 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T22:03:48.000Z",
-   "lastRunAt": "2026-10-01T08:03:54.670Z"
+   "nextRunAt": "2026-10-05T03:03:48.000Z",
+   "lastRunAt": "2026-10-04T21:52:46.122Z"
   },
   {
    "taskId": "firemap-copywriter",
    "title": "카피라이터(제목·썸네일·첫 3초)",
-   "description": "매일 07:20·15:20 — 발행 예정 롱폼·쇼츠·카페·계산기의 제목·썸네일 문구·첫 3초·공유 문구 후보를 만들고 데이터로 고르며, 올라간 뒤 클릭률로 배운다",
+   "description": "하루 4회(01·07·12·18시 :40) — 제목·썸네일 문구·첫 3초·48시간 클릭률 판정",
    "schedule": "At 01:40 AM, 07:40 AM, 12:40 PM and 06:40 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T09:48:34.000Z",
-   "lastRunAt": "2026-10-01T03:48:38.506Z"
+   "nextRunAt": "2026-10-04T22:48:34.000Z",
+   "lastRunAt": "2026-10-04T16:48:44.090Z"
   },
   {
    "taskId": "firemap-artist",
    "title": "예술가(다른 각도)",
-   "description": "매일 11:40·19:10 — 뻔한 기획을 다른 각도로 뒤집는 크리에이티브 디렉터: 오늘 기획의 뻔함 점검, 낯선 아이디어 3개와 작은 시험안",
+   "description": "하루 3회(09·14·19시 :40) + 호출 — 새로 나가는 모든 것의 '뻔함' 관문: 경쟁과 똑같은 점·다르게 만들 한 수, 출시 체크리스트 21번 판정",
    "schedule": "At 09:40 AM, 02:40 PM and 07:40 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T10:42:50.000Z",
-   "lastRunAt": "2026-10-01T05:42:55.939Z"
+   "nextRunAt": "2026-10-05T00:42:50.000Z",
+   "lastRunAt": "2026-10-02T05:43:14.592Z"
   },
   {
    "taskId": "firemap-visual-designer",
    "title": "비주얼 디자이너(썸네일·그래픽)",
-   "description": "매일 09:10·14:10·20:40 — 썸네일·인포그래픽·공유 이미지·채널 브랜딩 등 눈에 보이는 이미지 전담, 매주 경쟁 썸네일 벤치마크",
+   "description": "하루 5회(02·09·13·17·21시) — 썸네일·그래픽·공유 이미지(호출 기능이 무인 세션에서 막혀 고정 근무로 복귀)",
    "schedule": "At 02:00 AM, 09:00 AM, 01:00 PM, 05:00 PM and 09:00 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T12:03:03.000Z",
-   "lastRunAt": "2026-10-01T08:03:10.125Z"
+   "nextRunAt": "2026-10-05T00:03:03.000Z",
+   "lastRunAt": "2026-10-04T17:03:47.757Z"
   },
   {
    "taskId": "firemap-motion-designer",
    "title": "모션 디자이너(영상 그래픽)",
-   "description": "매일 11:20·23:20 — 롱폼·쇼츠 영상 안의 움직이는 그래픽(차트 애니메이션·3D·전환) 전담, 수페TV급 영상미",
+   "description": "하루 2회(11·23시) — 영상 그래픽·경쟁 영상미 분해",
    "schedule": "At 11:20 AM and 11:20 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T14:25:38.000Z",
-   "lastRunAt": "2026-10-01T02:25:42.217Z"
+   "nextRunAt": "2026-10-05T02:25:38.000Z",
+   "lastRunAt": "2026-10-04T14:26:46.868Z"
   },
   {
    "taskId": "firemap-illustrator",
    "title": "일러스트레이터(캐릭터·브랜드)",
-   "description": "매일 13:40 — 파이어맵 마스코트(흰 고양이) 새 포즈·일러스트·채널 브랜딩 자산 전담",
+   "description": "매일 14:40 — 사물·아이콘 일러스트(캐릭터 없음)",
    "schedule": "At 02:53 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-02T05:52:42.000Z",
-   "lastRunAt": "2026-10-01T05:44:05.374Z"
+   "nextRunAt": "2026-10-05T05:52:42.000Z",
+   "lastRunAt": "2026-10-02T05:44:14.408Z"
   },
   {
    "taskId": "firemap-brand-director",
@@ -212,8 +221,8 @@
    "description": "매일 10:00 — 파이어맵 브랜드(포지셔닝·톤·비주얼 시스템·캐릭터 여부·채널 얼굴)를 근거와 실험으로 정하고 전 채널에 적용 감독",
    "schedule": "At 10:10 AM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-02T01:09:42.000Z",
-   "lastRunAt": "2026-10-01T01:06:03.812Z"
+   "nextRunAt": "2026-10-05T01:09:42.000Z",
+   "lastRunAt": "2026-10-02T01:09:54.767Z"
   },
   {
    "taskId": "firemap-brand-researcher",
@@ -221,8 +230,8 @@
    "description": "매일 08:30 — 우리 시청자·회원·검색자가 누구고 무엇에 반응하는지 조사(댓글·검색어·경쟁 채널 반응·카페), 브랜드 디렉터에게 근거 제공",
    "schedule": "At 08:41 AM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T23:41:22.000Z",
-   "lastRunAt": "2026-09-30T23:41:24.823Z"
+   "nextRunAt": "2026-10-04T23:41:22.000Z",
+   "lastRunAt": "2026-10-01T23:34:12.006Z"
   },
   {
    "taskId": "firemap-admin",
@@ -230,8 +239,8 @@
    "description": "매일 07:00·19:00 — 도구·커넥터·API·토큰 상태 점검과 연결, 한도·크레딧·비용 관리, 직원 지시문·근무표·조직도 관리, 신규 직원 온보딩",
    "schedule": "At 07:00 AM and 07:00 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T10:03:01.000Z",
-   "lastRunAt": "2026-10-01T08:17:22.443Z"
+   "nextRunAt": "2026-10-05T10:03:01.000Z",
+   "lastRunAt": "2026-10-04T22:03:47.168Z"
   },
   {
    "taskId": "firemap-ai-lab",
@@ -240,115 +249,146 @@
    "schedule": "At 09:30 AM, only on Monday and Thursday",
    "enabled": true,
    "nextRunAt": "2026-10-05T00:43:10.000Z",
-   "lastRunAt": "2026-10-01T08:17:22.963Z"
+   "lastRunAt": "2026-10-01T14:48:19.948Z"
   },
   {
    "taskId": "firemap-dispatcher",
    "title": "운영실장(호출 배차)",
-   "description": "매시 :05 — 일감 보고 필요한 직원을 에이전트로 즉시 투입",
-   "schedule": "At 9 minutes past the hour, every hour",
+   "description": "2시간마다 :05(10/4 21:00까지 사용량 절약, 원래 매시) — slots.json 곧 관문 기한 칸·발행만 투입",
+   "schedule": "At 9 minutes past the hour, every hour, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T09:08:53.000Z",
-   "lastRunAt": "2026-10-01T07:08:59.762Z"
+   "nextRunAt": "2026-10-04T23:08:53.000Z",
+   "lastRunAt": "2026-10-04T21:26:45.467Z"
   },
   {
    "taskId": "firemap-finishline-check",
-   "title": "결승선 점검(매일 22:30)",
-   "description": "매일 22:30 — 오늘 결승선 표를 실측해 ✅/❌",
-   "schedule": "At :50 every 3 hours",
+   "title": "스프린트 점검·재배정(3시간마다)",
+   "description": "3시간마다(:50) — 결승선 표를 실측 채점하고, 결과를 보고 우선순위를 다시 짜 다음 3시간 일감을 배정(운영실장이 바로 투입)",
+   "schedule": "At 02:50 AM, 05:50 AM, 08:50 AM, 11:50 AM, 02:50 PM, 05:50 PM, 08:50 PM and 11:50 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T08:52:09.000Z",
-   "lastRunAt": "2026-10-01T05:52:14.506Z"
+   "nextRunAt": "2026-10-04T23:52:09.000Z",
+   "lastRunAt": "2026-10-04T20:55:45.597Z"
   },
   {
    "taskId": "firemap-dispatcher-2",
    "title": "운영실장 2(매시 :35)",
-   "description": "매시 :35 — 두 번째 배차 담당",
-   "schedule": "At 36 minutes past the hour, every hour",
+   "description": "매시 :35 — 운영실장(:05) 회차가 길어져 막혀도 30분마다 직원 투입이 끊기지 않게 하는 두 번째 배차 담당",
+   "schedule": "At 36 minutes past the hour, every hour, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T08:35:31.000Z",
-   "lastRunAt": "2026-10-01T07:35:36.960Z"
+   "nextRunAt": "2026-10-04T22:35:31.000Z",
+   "lastRunAt": "2026-10-04T21:39:46.017Z"
   },
   {
    "taskId": "firemap-venture-builder",
    "title": "신사업 빌더(사이트 개발·배포)",
-   "description": "하루 5회 + 호출 — 신사업 지시서대로 만들고 배포",
+   "description": "하루 5회(09·12·15·18·21시 :40) + 운영실장 호출 — 신사업본부장 지시서대로 새 사이트·새 판을 만들고 배포·측정까지",
    "schedule": "At 09:40 AM, 12:40 PM, 03:40 PM, 06:40 PM and 09:40 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T09:40:15.000Z",
-   "lastRunAt": "2026-10-01T08:04:12.753Z"
+   "nextRunAt": "2026-10-05T00:40:15.000Z",
+   "lastRunAt": "2026-10-02T06:40:29.910Z"
   },
   {
    "taskId": "firemap-venture-research-global",
    "title": "신사업 시장조사원(해외·전 세계)",
-   "description": "하루 2회(08·14시 :20) + 호출 — 전 세계 사업 후보 발굴",
+   "description": "하루 2회(08·14시 :20) + 호출 — 전 세계 시장에서 AI 직원만으로 돈 되는 사업 후보를 실측 근거로 매일 발굴",
    "schedule": "At 08:20 AM and 02:20 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T23:27:10.000Z",
-   "lastRunAt": "2026-10-01T08:04:37.043Z"
+   "nextRunAt": "2026-10-04T23:27:10.000Z",
+   "lastRunAt": "2026-10-02T05:27:24.286Z"
   },
   {
    "taskId": "firemap-venture-research-kr",
    "title": "신사업 시장조사원(국내)",
-   "description": "하루 2회(09·15시 :20) + 호출 — 국내 사업 후보 발굴(계산기 밖까지)",
+   "description": "하루 2회(09·15시 :20) + 호출 — 한국 시장에서 AI 직원만으로 돈 되는 사업 후보를 계산기 밖까지 실측 근거로 매일 발굴",
    "schedule": "At 09:20 AM and 03:20 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-02T00:26:35.000Z",
-   "lastRunAt": "2026-10-01T06:26:40.511Z"
+   "nextRunAt": "2026-10-05T00:26:35.000Z",
+   "lastRunAt": "2026-10-02T06:26:49.702Z"
   },
   {
    "taskId": "firemap-planner",
    "title": "기획자(모든 새 일의 첫 단계)",
-   "description": "하루 4회 + 호출 — 기획서 먼저",
+   "description": "하루 4회(08·11·14·17시 :30) + 호출 — 새 제품·사이트·콘텐츠 시리즈는 기획자가 예술가와 먼저 기획서를 쓰고 나서 디자인·개발로 넘긴다",
    "schedule": "At 08:30 AM, 11:30 AM, 02:30 PM and 05:30 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T08:38:01.000Z",
-   "lastRunAt": "2026-10-01T05:32:05.218Z"
+   "nextRunAt": "2026-10-04T23:38:01.000Z",
+   "lastRunAt": "2026-10-02T05:56:14.510Z"
   },
   {
    "taskId": "firemap-soondol-deputy",
    "title": "순돌이 대역(사장님 눈 점검·총괄)",
-   "description": "순돌이 대역(사장님 눈 점검·총괄)",
-   "schedule": "At 20 minutes past the hour, every 2 hours",
+   "description": "2시간마다(:20) — 사장님이 채팅하지 않을 때 순돌이 대신 사장님 눈 점검표로 회사 전체를 따지고, 문제를 사장님보다 먼저 찾아 지시·막힘 해소",
+   "schedule": "At 20 minutes past the hour, every 2 hours, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T09:21:17.000Z",
-   "lastRunAt": "2026-10-01T08:04:12.332Z"
+   "nextRunAt": "2026-10-04T23:21:17.000Z",
+   "lastRunAt": "2026-10-04T21:34:45.618Z"
   },
   {
    "taskId": "firemap-editor-web",
    "title": "문장 편집자 2(사이트·화면 문구 전부)",
-   "description": "문장 편집자 2(사이트·화면 문구 전부)",
+   "description": "하루 3회(08·13·18시 :10) + 호출 — firemap.kr·계산기·신사업 사이트의 모든 화면 글자(버튼·안내·오류·메타·이미지 속 글자)를 사람 말로, 기존 운영 화면 전수 점검",
    "schedule": "At 08:10 AM, 01:10 PM and 06:10 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-01T09:13:26.000Z",
-   "lastRunAt": "2026-10-01T04:13:30.728Z"
+   "nextRunAt": "2026-10-04T23:13:26.000Z",
+   "lastRunAt": "2026-10-02T04:13:13.821Z"
   },
   {
    "taskId": "firemap-editor-en",
    "title": "문장 편집자 3(영어 콘텐츠)",
-   "description": "문장 편집자 3(영어 콘텐츠)",
+   "description": "하루 2회(10·16시 :10) + 호출 — 영어 사이트·계산기·디지털 상품·영상 문구를 영어권 사람이 쓴 말로",
    "schedule": "At 10:10 AM and 04:10 PM, every day",
    "enabled": true,
-   "nextRunAt": "2026-10-02T01:22:34.000Z",
-   "lastRunAt": "2026-10-01T07:22:40.252Z"
+   "nextRunAt": "2026-10-05T01:22:34.000Z",
+   "lastRunAt": "2026-10-02T01:56:13.150Z"
+  },
+  {
+   "taskId": "firemap-monthly-report",
+   "title": "사장님 복귀 월간 보고(10/31)",
+   "description": "2026-10-31 21:00 1회 — 사장님이 한 달 뒤 돌아왔을 때 볼 10월 결산 보고를 상황판 맨 위와 파일로 준비",
+   "schedule": "One-time: 2026. 10. 31. 오후 9:00:00",
+   "enabled": true,
+   "nextRunAt": "2026-10-31T12:00:00.000Z",
+   "lastRunAt": null
   },
   {
    "taskId": "firemap-behavior",
    "title": "행동심리 담당(설득·몰입 설계)",
-   "description": "쿠팡 링크·썸네일·첫 화면 심리 설계",
-   "schedule": "매일 10·16시 :50 + 호출",
-   "enabled": true
+   "description": "하루 2회(10·16시 :50) + 호출 — 쿠팡 링크·썸네일·첫 화면·카페 글을 사람 심리에 맞게(약관·윤리 안) 설계하고 클릭률·이탈률로 검증",
+   "schedule": "At 10:50 AM and 04:50 PM, every day",
+   "enabled": true,
+   "nextRunAt": "2026-10-05T02:01:33.000Z",
+   "lastRunAt": "2026-10-02T01:58:12.962Z"
   }
  ],
  "runs": {
   "firemap-write": [
    {
-    "status": "running",
-    "started_at": "2026-10-01T08:11:06.525Z",
-    "last_activity_at": "2026-10-01T08:22:53.666Z"
+    "status": "succeeded",
+    "started_at": "2026-10-04T13:20:26.607Z",
+    "last_activity_at": "2026-10-04T13:31:27.907Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T11:20:25.759Z",
+    "last_activity_at": "2026-10-04T11:23:45.286Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T09:20:24.938Z",
+    "last_activity_at": "2026-10-04T09:25:33.607Z"
    }
   ],
   "firemap-report": [
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-03T03:33:25.221Z",
+    "last_activity_at": "2026-10-03T03:41:38.415Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-02T03:31:13.537Z",
+    "last_activity_at": "2026-10-02T03:37:32.390Z"
+   },
    {
     "status": "succeeded",
     "started_at": "2026-10-01T03:33:06.629Z",
@@ -358,6 +398,16 @@
   "firemap-improve": [
    {
     "status": "succeeded",
+    "started_at": "2026-10-02T05:32:14.585Z",
+    "last_activity_at": "2026-10-02T05:43:14.133Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T13:34:08.535Z",
+    "last_activity_at": "2026-10-01T13:38:05.627Z"
+   },
+   {
+    "status": "succeeded",
     "started_at": "2026-10-01T05:35:08.229Z",
     "last_activity_at": "2026-10-01T05:46:35.175Z"
    }
@@ -365,29 +415,69 @@
   "firemap-loop": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T06:51:47.250Z",
-    "last_activity_at": "2026-10-01T07:06:33.094Z"
+    "started_at": "2026-10-02T06:50:15.774Z",
+    "last_activity_at": "2026-10-02T06:59:02.883Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-02T00:51:53.635Z",
+    "last_activity_at": "2026-10-02T01:15:09.101Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T12:46:08.357Z",
+    "last_activity_at": "2026-10-01T12:53:50.491Z"
    }
   ],
   "firemap-watchdog": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T04:51:36.795Z",
-    "last_activity_at": "2026-10-01T04:52:42.044Z"
+    "started_at": "2026-10-04T12:52:15.824Z",
+    "last_activity_at": "2026-10-04T12:57:38.126Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T08:52:12.539Z",
+    "last_activity_at": "2026-10-04T08:53:49.637Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T04:52:11.709Z",
+    "last_activity_at": "2026-10-04T04:54:01.116Z"
    }
   ],
   "firemap-shorts": [
    {
     "status": "succeeded",
-    "started_at": "2026-09-30T11:59:26.351Z",
-    "last_activity_at": "2026-09-30T12:02:20.248Z"
+    "started_at": "2026-10-04T10:25:52.530Z",
+    "last_activity_at": "2026-10-04T10:33:02.928Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T03:25:50.567Z",
+    "last_activity_at": "2026-10-04T03:30:25.273Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-03T10:25:37.463Z",
+    "last_activity_at": "2026-10-03T10:30:30.324Z"
    }
   ],
   "firemap-youtube-loop": [
    {
-    "status": "running",
-    "started_at": "2026-10-01T08:04:12.045Z",
-    "last_activity_at": "2026-10-01T08:23:19.188Z"
+    "status": "succeeded",
+    "started_at": "2026-10-04T19:37:45.290Z",
+    "last_activity_at": "2026-10-04T19:43:20.409Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T15:43:22.551Z",
+    "last_activity_at": "2026-10-04T15:49:17.055Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-03T07:43:04.194Z",
+    "last_activity_at": "2026-10-03T07:48:00.019Z"
    }
   ],
   "firemap-bizdev": [
@@ -395,93 +485,228 @@
     "status": "succeeded",
     "started_at": "2026-10-01T08:04:37.715Z",
     "last_activity_at": "2026-10-01T08:10:29.278Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-09-30T22:21:29.843Z",
+    "last_activity_at": "2026-09-30T22:36:15.096Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-09-29T22:47:45.975Z",
+    "last_activity_at": "2026-09-29T22:53:11.650Z"
    }
   ],
   "firemap-video-producer": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T05:16:22.114Z",
-    "last_activity_at": "2026-10-01T07:33:24.627Z"
+    "started_at": "2026-10-04T21:17:02.559Z",
+    "last_activity_at": "2026-10-04T21:26:16.879Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T17:08:44.046Z",
+    "last_activity_at": "2026-10-04T17:14:55.646Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-03T09:16:42.970Z",
+    "last_activity_at": "2026-10-03T10:08:42.186Z"
    }
   ],
   "firemap-audit": [
    {
     "status": "succeeded",
-    "started_at": "2026-09-30T22:49:29.476Z",
-    "last_activity_at": "2026-09-30T22:53:13.341Z"
+    "started_at": "2026-10-03T10:49:53.411Z",
+    "last_activity_at": "2026-10-03T10:55:22.195Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-02T22:49:48.573Z",
+    "last_activity_at": "2026-10-02T22:53:31.584Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-02T13:38:35.796Z",
+    "last_activity_at": "2026-10-02T13:42:00.744Z"
    }
   ],
   "firemap-product-dev": [
    {
-    "status": "running",
+    "status": "succeeded",
+    "started_at": "2026-10-02T08:27:17.150Z",
+    "last_activity_at": "2026-10-02T08:44:13.910Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-02T02:22:49.066Z",
+    "last_activity_at": "2026-10-02T02:39:01.691Z"
+   },
+   {
+    "status": "succeeded",
     "started_at": "2026-10-01T08:17:07.072Z",
-    "last_activity_at": "2026-10-01T08:22:57.971Z"
+    "last_activity_at": "2026-10-01T08:56:11.741Z"
    }
   ],
   "firemap-meeting": [
    {
+    "status": "running",
+    "started_at": "2026-10-04T12:28:36.632Z",
+    "last_activity_at": "2026-10-04T12:42:25.625Z"
+   },
+   {
     "status": "succeeded",
-    "started_at": "2026-09-30T12:28:52.749Z",
-    "last_activity_at": "2026-09-30T12:45:47.243Z"
+    "started_at": "2026-10-03T12:28:21.574Z",
+    "last_activity_at": "2026-10-03T12:35:51.948Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-02T13:38:35.256Z",
+    "last_activity_at": "2026-10-02T13:54:12.216Z"
    }
   ],
   "firemap-growth": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T07:44:09.606Z",
-    "last_activity_at": "2026-10-01T07:47:31.949Z"
+    "started_at": "2026-10-02T08:27:17.522Z",
+    "last_activity_at": "2026-10-02T08:34:41.526Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-02T01:44:13.273Z",
+    "last_activity_at": "2026-10-02T01:47:25.219Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T22:38:05.195Z",
+    "last_activity_at": "2026-10-01T22:47:27.166Z"
    }
   ],
   "firemap-venture": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T04:14:00.754Z",
-    "last_activity_at": "2026-10-01T04:20:02.075Z"
+    "started_at": "2026-10-02T04:12:13.899Z",
+    "last_activity_at": "2026-10-02T04:25:36.622Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T22:04:37.484Z",
+    "last_activity_at": "2026-10-01T22:21:15.351Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T11:14:03.966Z",
+    "last_activity_at": "2026-10-01T11:21:21.802Z"
    }
   ],
   "firemap-designer": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T07:31:36.077Z",
-    "last_activity_at": "2026-10-01T07:39:57.255Z"
+    "started_at": "2026-10-02T07:34:15.820Z",
+    "last_activity_at": "2026-10-02T07:39:27.956Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-02T01:31:43.152Z",
+    "last_activity_at": "2026-10-02T01:51:25.200Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T13:24:39.743Z",
+    "last_activity_at": "2026-10-01T13:25:24.212Z"
    }
   ],
   "firemap-editor": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T08:03:54.670Z",
-    "last_activity_at": "2026-10-01T08:17:01.707Z"
+    "started_at": "2026-10-04T21:52:46.120Z",
+    "last_activity_at": "2026-10-04T21:57:21.615Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T08:04:28.337Z",
+    "last_activity_at": "2026-10-04T08:07:50.383Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T03:04:27.223Z",
+    "last_activity_at": "2026-10-04T03:08:02.212Z"
    }
   ],
   "firemap-copywriter": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T03:48:38.506Z",
-    "last_activity_at": "2026-10-01T03:53:26.510Z"
+    "started_at": "2026-10-04T16:48:44.087Z",
+    "last_activity_at": "2026-10-04T16:56:08.774Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-03T09:49:00.229Z",
+    "last_activity_at": "2026-10-03T10:28:08.714Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-03T03:43:23.278Z",
+    "last_activity_at": "2026-10-03T03:52:23.752Z"
    }
   ],
   "firemap-artist": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T05:42:55.939Z",
-    "last_activity_at": "2026-10-01T05:48:53.831Z"
+    "started_at": "2026-10-02T05:43:14.592Z",
+    "last_activity_at": "2026-10-02T05:52:07.809Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-02T00:43:02.466Z",
+    "last_activity_at": "2026-10-02T00:49:56.506Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T10:42:57.430Z",
+    "last_activity_at": "2026-10-01T10:48:19.600Z"
    }
   ],
   "firemap-visual-designer": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T08:03:10.124Z",
-    "last_activity_at": "2026-10-01T08:06:22.754Z"
+    "started_at": "2026-10-04T17:03:47.755Z",
+    "last_activity_at": "2026-10-04T17:08:17.306Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-03T08:09:26.163Z",
+    "last_activity_at": "2026-10-03T08:18:21.198Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-03T04:03:26.524Z",
+    "last_activity_at": "2026-10-03T04:13:10.361Z"
    }
   ],
   "firemap-motion-designer": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T02:25:42.217Z",
-    "last_activity_at": "2026-10-01T02:39:18.905Z"
+    "started_at": "2026-10-04T14:26:46.864Z",
+    "last_activity_at": "2026-10-04T14:59:52.568Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-02T02:25:51.738Z",
+    "last_activity_at": "2026-10-02T02:42:06.039Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T14:25:46.598Z",
+    "last_activity_at": "2026-10-01T14:26:17.700Z"
    }
   ],
   "firemap-illustrator": [
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-02T05:44:14.408Z",
+    "last_activity_at": "2026-10-02T05:55:12.556Z"
+   },
    {
     "status": "succeeded",
     "started_at": "2026-10-01T05:44:05.374Z",
@@ -491,11 +716,26 @@
   "firemap-brand-director": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T01:06:03.811Z",
-    "last_activity_at": "2026-10-01T01:07:56.890Z"
+    "started_at": "2026-10-02T01:09:54.767Z",
+    "last_activity_at": "2026-10-02T01:13:18.903Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T22:38:06.231Z",
+    "last_activity_at": "2026-10-01T22:49:38.112Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T13:24:38.914Z",
+    "last_activity_at": "2026-10-01T13:33:26.213Z"
    }
   ],
   "firemap-brand-researcher": [
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T23:34:12.006Z",
+    "last_activity_at": "2026-10-01T23:37:48.418Z"
+   },
    {
     "status": "succeeded",
     "started_at": "2026-09-30T23:41:24.823Z",
@@ -505,85 +745,223 @@
   "firemap-admin": [
    {
     "status": "running",
-    "started_at": "2026-10-01T08:17:22.443Z",
-    "last_activity_at": "2026-10-01T08:23:31.723Z"
+    "started_at": "2026-10-04T22:03:47.166Z",
+    "last_activity_at": "2026-10-04T22:07:56.439Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T14:50:22.066Z",
+    "last_activity_at": "2026-10-01T14:51:42.963Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T10:03:08.012Z",
+    "last_activity_at": "2026-10-01T10:11:42.742Z"
    }
   ],
   "firemap-ai-lab": [
    {
     "status": "succeeded",
+    "started_at": "2026-10-01T14:48:19.948Z",
+    "last_activity_at": "2026-10-01T14:52:29.336Z"
+   },
+   {
+    "status": "succeeded",
     "started_at": "2026-10-01T08:17:22.963Z",
     "last_activity_at": "2026-10-01T08:21:42.990Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T00:43:13.440Z",
+    "last_activity_at": "2026-10-01T01:04:23.887Z"
    }
   ],
   "firemap-dispatcher": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T07:08:59.762Z",
-    "last_activity_at": "2026-10-01T07:16:29.611Z"
+    "started_at": "2026-10-04T21:26:45.465Z",
+    "last_activity_at": "2026-10-04T21:33:44.809Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T20:09:38.557Z",
+    "last_activity_at": "2026-10-04T20:36:20.530Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T19:09:38.222Z",
+    "last_activity_at": "2026-10-04T19:32:55.725Z"
    }
   ],
   "firemap-finishline-check": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T05:52:14.505Z",
-    "last_activity_at": "2026-10-01T05:55:35.036Z"
+    "started_at": "2026-10-04T20:55:45.595Z",
+    "last_activity_at": "2026-10-04T20:58:12.836Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T17:52:53.669Z",
+    "last_activity_at": "2026-10-04T17:55:42.989Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T15:00:43.534Z",
+    "last_activity_at": "2026-10-04T15:04:07.186Z"
    }
   ],
   "firemap-dispatcher-2": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T07:35:36.960Z",
-    "last_activity_at": "2026-10-01T07:44:29.490Z"
+    "started_at": "2026-10-04T21:39:46.015Z",
+    "last_activity_at": "2026-10-04T21:53:28.169Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T20:36:45.626Z",
+    "last_activity_at": "2026-10-04T20:55:10.720Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T19:43:45.334Z",
+    "last_activity_at": "2026-10-04T20:01:32.733Z"
    }
   ],
   "firemap-venture-builder": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T08:04:12.753Z",
-    "last_activity_at": "2026-10-01T08:08:50.018Z"
+    "started_at": "2026-10-02T06:40:29.910Z",
+    "last_activity_at": "2026-10-02T06:49:50.330Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-02T03:47:14.098Z",
+    "last_activity_at": "2026-10-02T03:50:57.050Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-02T00:41:12.444Z",
+    "last_activity_at": "2026-10-02T00:43:49.462Z"
    }
   ],
   "firemap-venture-research-global": [
    {
-    "status": "running",
-    "started_at": "2026-10-01T08:04:37.042Z",
-    "last_activity_at": "2026-10-01T08:23:34.512Z"
+    "status": "succeeded",
+    "started_at": "2026-10-02T05:27:24.286Z",
+    "last_activity_at": "2026-10-02T05:42:26.076Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T23:27:21.912Z",
+    "last_activity_at": "2026-10-01T23:43:29.738Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T14:47:53.834Z",
+    "last_activity_at": "2026-10-01T14:48:25.256Z"
    }
   ],
   "firemap-venture-research-kr": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T06:26:40.511Z",
-    "last_activity_at": "2026-10-01T06:32:49.319Z"
+    "started_at": "2026-10-02T06:26:49.702Z",
+    "last_activity_at": "2026-10-02T06:35:15.467Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-02T00:26:47.412Z",
+    "last_activity_at": "2026-10-02T00:40:46.918Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T22:38:06.004Z",
+    "last_activity_at": "2026-10-01T22:47:47.497Z"
    }
   ],
   "firemap-planner": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T05:32:05.217Z",
-    "last_activity_at": "2026-10-01T05:33:40.164Z"
+    "started_at": "2026-10-02T05:56:14.510Z",
+    "last_activity_at": "2026-10-02T05:58:10.552Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-02T02:42:13.421Z",
+    "last_activity_at": "2026-10-02T02:45:04.801Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T23:47:12.087Z",
+    "last_activity_at": "2026-10-01T23:49:54.363Z"
    }
   ],
   "firemap-soondol-deputy": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T08:04:12.332Z",
-    "last_activity_at": "2026-10-01T08:07:19.292Z"
+    "started_at": "2026-10-04T21:34:45.616Z",
+    "last_activity_at": "2026-10-04T21:45:21.660Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T19:33:45.690Z",
+    "last_activity_at": "2026-10-04T19:37:05.140Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-04T17:26:44.140Z",
+    "last_activity_at": "2026-10-04T17:30:34.641Z"
    }
   ],
   "firemap-editor-web": [
    {
     "status": "succeeded",
-    "started_at": "2026-10-01T04:13:30.728Z",
-    "last_activity_at": "2026-10-01T04:25:14.552Z"
+    "started_at": "2026-10-02T04:13:13.821Z",
+    "last_activity_at": "2026-10-02T04:28:18.057Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T23:14:12.181Z",
+    "last_activity_at": "2026-10-01T23:14:58.795Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T09:13:34.277Z",
+    "last_activity_at": "2026-10-01T09:22:53.921Z"
    }
   ],
   "firemap-editor-en": [
    {
     "status": "succeeded",
+    "started_at": "2026-10-02T01:56:13.150Z",
+    "last_activity_at": "2026-10-02T01:58:22.777Z"
+   },
+   {
+    "status": "succeeded",
     "started_at": "2026-10-01T07:22:40.252Z",
     "last_activity_at": "2026-10-01T07:25:57.829Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T01:22:37.861Z",
+    "last_activity_at": "2026-10-01T01:25:39.481Z"
+   }
+  ],
+  "firemap-monthly-report": [],
+  "firemap-behavior": [
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-02T01:58:12.962Z",
+    "last_activity_at": "2026-10-02T02:12:06.464Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T22:38:05.800Z",
+    "last_activity_at": "2026-10-01T22:43:57.300Z"
+   },
+   {
+    "status": "succeeded",
+    "started_at": "2026-10-01T21:34:19.998Z",
+    "last_activity_at": "2026-10-01T21:39:52.839Z"
    }
   ]
  }

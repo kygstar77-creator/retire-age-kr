@@ -1,3 +1,5 @@
+# v7(01:3x): 제미나이 v6 5 '글자 많다' → 출처·파이어맵 줄 빼고(출처는 카드·설명란) 요소 6개→5개. 총액 줄 84px 유지(레드팀 오해 위험 막음).
+# v6(01:2x): 제미나이 v5 5점 '168px에서 작은 글씨 안 읽힘' → 총액 줄 64→84px, 출처 줄 '테슬라 10-Q' 60px(SEC XBRL은 카드·설명란). 나머지 v5 그대로.
 # v5(01:0x): v4 6.67(제미나이 6·A 7·레드팀 7) — 레드팀 '번 돈'은 사실표 말 아님 → '이자수익이', 총액 줄 64px·'총액' 노랑. 제목·카드도 단정형으로 맞춤(A).
 # v4(01:0x firemap-shorts): v3 6.67(제미나이 7·A 6·레드팀 7) 공통 지적 — ① 화면에 답(422>398)이 다 보이는데 '더 컸다?'로 물어 충돌 → 아래 문구를 단정형+'(이자비용 빼기 전 총액)'으로
 # ② 아래 20% 빈칸 → 출처 줄(테슬라 10-Q·SEC XBRL)과 파이어맵 표시 ③ 본 카드와 색 맞춤(이자 노랑·영업 회색 막대) ④ '영업이익보다'(경쟁3 틀) 문구 뺌.
@@ -19,8 +21,6 @@ for k, (lab, v, col, tcol) in enumerate([('이자수익', 422, C.YELLOW, C.YELLO
 d.line((M, 580, M, 1120), fill=LG, width=6)   # 0 기준선
 d.text((M, 1210), '이자수익이', font=C.BHS(130), fill=C.WHITE)
 d.text((M, 1360), '더 컸어요', font=C.BHS(130), fill=C.YELLOW)
-f64 = C.BHS(64); a = '이자비용 빼기 전 '; d.text((M, 1515), a, font=f64, fill=LG); d.text((M + d.textlength(a, font=f64), 1515), '총액', font=f64, fill=C.YELLOW)
-d.text((M, 1592), '출처 테슬라 10-Q, SEC XBRL', font=C.BHS(48), fill=GR)
-d.text((W - M - d.textlength('파이어맵', font=C.BHS(48)), 1592), '파이어맵', font=C.BHS(48), fill=(255, 140, 60))
-im.save(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cover.png'))
+f64 = C.BHS(84); a = '이자비용 빼기 전 '; d.text((M, 1515), a, font=f64, fill=LG); d.text((M + d.textlength(a, font=f64), 1515), '총액', font=f64, fill=C.YELLOW)
+im.save(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cover_v7.png'))
 print('ok')

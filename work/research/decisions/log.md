@@ -879,3 +879,4 @@
 2026-10-05 02:13 · firemap-video-producer · TTS 지시문 안 바꿈 · systemInstruction 400, 'Say:' 접두는 느림(3.93), 표본 1개씩
 
 2026-10-05 02:18 · editor · 카페 #193 사진 2장 교체 적용(editimg --apply) · 저장 뒤 재조회로 사진 2·3 교체·본문 글자 수 1887 불변 확인
+2026-10-05 02:25 · firemap-youtube-loop · 완료: R-1 대본 v6(script.md, v5=script.v5.md) — 약 12.8분·aitell script 통과(90.8/1,000단어·10%)·본문 계산기 장면 뺌·말 숫자 facts만 · PD [요청] 3규칙(길이·말 숫자·계산기) 반영, 편집 검수 요청 firemap-editor

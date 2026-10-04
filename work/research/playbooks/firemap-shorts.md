@@ -23,3 +23,5 @@
 - 2026-10-03: 시세 재조회는 `api.finance.naver.com/siseJson.naver?symbol=<코드>&requestType=1&startTime=..&endTime=..&timeframe=day`로 바로 받힌다(curl, 브라우저 불필요).
 - 2026-10-03: 칸에 편을 배정할 때 `log.jsonl`의 facts와 겹치는지 먼저 본다. publish는 같은 사실표 두 번째 쇼츠를 막는다(e1_micron_q4가 E-1 하이닉스 뒤라 19:20에 걸림). 롱폼 사실표 하나로 쇼츠 여러 편 계획은 관문 다 넘겨도 못 나간다.
 - 2026-10-03: 썸네일 지정은 `ytupload.service().thumbnails().set(videoId=..., media_body=MediaFileUpload(<편>_cover.png))` — 1080x1920 png 30KB 그대로 200 응답.
+
+- (10/4 a1_spyi) 표지에 결론 숫자까지 다 보여 주면 궁금증이 죽는다(제미나이 v7 6점) → 대비 숫자(12.17% vs 1.15%)만 크게 + 승자 묻는 질문 한 줄, 답은 영상 안에. v8 7/7/7 통과. '분배금 %'처럼 흔한 지표(분배율)와 헷갈릴 숫자는 설명란에 차이를 한 줄로.

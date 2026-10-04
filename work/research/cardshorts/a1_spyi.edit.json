@@ -1,9 +1,9 @@
 {
- "by": "firemap-editor",
- "at": "2026-10-04 12:06",
+ "by": "auto",
+ "at": "2026-10-04 19:29",
  "files": {
-  "a1_spyi.json": "b00b154e846204e2a18c1890e1d9d1175d80437de69af5fd083dc63d31de9361"
+  "a1_spyi.json": "758ee733a0ac17817cb01bcc24fae223a4c006d15e0788fba71fdae5116d0e78"
  },
  "aitell": 0.0,
- "note": "editor 12:06 편집 통과: 제목·카드·설명 aitell 0.0. 설명 '~요' 4연속 중 2곳만 고침(거죠·습니다), 숫자 0 변경, 원본 .orig. 표지 1초 시험은 별개(gates_ok 아님)"
+ "note": "firemap-shorts 10/4 19:4x: 표지 v8 심사 뒤 제목('SPY를 이길까')·설명(분배율 다름·재투자·세금·환율 제외 줄, utm campaign=a1_spyi)·카드 '합계'→'총수익' 바꿈, aitell 0.0(끝맺음 2곳 고쳐 '~요' 연속 풀음), 숫자 0 새로 계산 없음. 이전 editor 12:06 통과본은 .orig"
 }

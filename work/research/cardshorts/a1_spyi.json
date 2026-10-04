@@ -1,9 +1,9 @@
 {
  "facts": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/research/longform/ep/A-1/facts.txt",
- "layout": "rank",
- "music": false,
+ "layout": "bars",
+ "music": true,
  "chip": "Yahoo Finance · 2026년 9월",
- "cover_png": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/research/cardshorts/a1_spyi/cover.png",
+ "cover_png": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/research/cardshorts/a1_spyi/cover3.png",
  "cover_sec": 1,
  "title": [
   "SPYI vs SPY",
@@ -15,20 +15,43 @@
  "points": [
   "SPYI 분배 {12.17%}, SPY {1.15%}",
   "SPYI 주가 {2.38%}, SPY {15.68%}",
-  "1년 합계 SPYI {14.55%}, SPY {16.83%}"
+  "1년 총수익 SPYI {14.55%}, SPY {16.83%}"
  ],
  "bars": [
-  ["SPYI 분배", 12.17, "%"],
-  ["SPYI 합계", 14.55, "%"],
-  ["SPY 합계", 16.83, "%"]
+  [
+   "SPYI 분배금",
+   12.17,
+   "%"
+  ],
+  [
+   "SPYI 총수익",
+   14.55,
+   "%"
+  ],
+  [
+   "SPY 총수익",
+   16.83,
+   "%"
+  ]
  ],
  "source": "2025-09-26 종가 → 2026-09-28 종가 · 분배금은 그 사이 배당락 합계, 재투자 없이 단순 합산 · 출처 Yahoo Finance",
  "seconds": 6,
- "yt_title": "SPYI vs SPY 1년 총수익, 분배금 12.17% 받으면 더 높을까? #shorts",
- "yt_desc": "SPYI와 SPY의 1년 총수익 비교: 분배금은 SPYI 12.17%, SPY 1.15%였지만 합계는 SPYI 14.55%, SPY 16.83%였어요.\n주가는 SPYI가 2.38%, SPY가 15.68% 올랐어요(2025년 9월 26일 종가에서 2026년 9월 28일 종가까지, 분배금은 재투자 없이 단순 합산).\n분배금을 많이 받았다고 총수익까지 높은 건 아니었던 거죠.\n배당 ETF와 커버드콜 ETF 비교는 관련 동영상에 있습니다.",
- "hashtags": ["SPYI", "SPY", "커버드콜", "배당ETF"],
+ "yt_title": "SPYI vs SPY 1년 총수익, 분배금 12.17%면 SPY를 이길까? #shorts",
+ "yt_desc": "SPYI vs SPY 1년 총수익 비교: 분배금은 SPYI 12.17%, SPY 1.15%였지만 총수익(단순 합산)은 SPYI 14.55%, SPY 16.83%였어요.\n주가는 SPYI가 2.38%, SPY가 15.68% 올랐습니다.\n분배금은 시작가 대비 1년 합계라 분배율(SPYI 11.89%)과 달라요. 2025년 9월 26일 종가에서 2026년 9월 28일 종가까지, 재투자·세금·환율은 빼고 셌어요.\n배당 ETF와 커버드콜 ETF 비교는 관련 동영상에서 이어집니다.\n파이어맵 계산기 모음: https://firemap.kr/?utm_source=youtube&utm_medium=desc&utm_campaign=a1_spyi",
+ "hashtags": [
+  "SPYI",
+  "SPY",
+  "커버드콜",
+  "배당ETF"
+ ],
  "longform": "A-1",
- "allow": ["2025", "2026", "26", "28", "9"],
- "why": "루프 규칙: 하이닉스 성공 틀(이름 + 대비 + 첫 1초 그림 표지) 유지, 내용만 교체 · 표지 cover_png(주가·분배금 누적 막대) · 직전 e1_micron_q4(bars·음악 있음) 반대로 rank·음악 없음 · 이슈 레이더 10/3 후보 1, '10배'는 사실표에 없는 계산이라 쓰지 않고 12.17% vs 1.15% 그대로",
- "experiment": "X-SHORTS 음악 A/B: music=false"
+ "allow": [
+  "2025",
+  "2026",
+  "26",
+  "28",
+  "9"
+ ],
+ "why": "루프 규칙: 하이닉스 성공 틀(종목 이름 + 대비 + 첫 1초 표지) 유지, 내용만 교체 · 표지 v8 cover3.png(분배금 12.17% vs 1.15% + '총수익은 누가 이겼을까?', 결론 숫자는 영상 안에) 심사 7/7/7 · 직전 micron(rank·음악 없음) 반대로 bars·음악 있음 · utm campaign=a1_spyi",
+ "experiment": "X-SHORTS 음악 A/B: music=true"
 }

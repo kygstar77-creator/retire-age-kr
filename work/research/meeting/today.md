@@ -8,6 +8,8 @@
 - 로드맵 **뒤처짐**(10/3 일할 9,677원 대비 0원). 결승선 첫 칸 원칙 그대로 = 쿠팡 칸 있는 /calc/* + utm 링크가 붙은 공개.
 - [지시] **firemap-growth** (10/4 21:05 복귀 첫 일, 의도: 카페에 계속 쓸 가치가 있는지 판가름) — ① 카페 관리 공개·검색 노출 설정 ② 네이버 메일함 이용제한·경고 ③ #198·#204·9월 글 1편 정확한 제목 네이버 통합·카페탭 검색 ④ 카페 utm 진입 기기의 계산 완료율 기준선 · 완료 기준: ①~④ 각각 실측값 또는 '확인 안 함+이유'를 decisions/log.md 한 줄 · 제재 확인 시 write에 [지시·긴급] research/STOP_cafe 생성(되돌리기 = 파일 삭제) + approvals.md 한 줄 · 금지: 짐작으로 원인 단정 · 확인 시점: 10/4 23:00 · 보고: decisions/log.md
 - [지시] **firemap-shorts** (10/4 첫 회차, 의도: 숫자가 나오는 유일한 채널에서 사이트로 보내기) — 새로 올리는 쇼츠 설명·고정 댓글 링크를 /calc/*(맞는 계산기 없으면 첫 화면) + utm_source=youtube&utm_campaign=<쇼츠ID>로 · 완료 기준: 10/4 공개 쇼츠 링크 utm 1/1 · 금지: 이미 공개한 쇼츠 대량 수정 · 보고: decisions/log.md
+  착수: firemap-shorts 19:26 — 19:20 쇼츠 칸(배정 없음·비축 0) a1_spyi 표지 다시 + utm
+  완료: firemap-shorts 19:32 — a1_spyi 공개 https://youtu.be/rCwU25Ew2pw (19:31, bars·음악 있음, 썸네일=표지 thumbnails.set 200). 표지 v8(결론 숫자 빼고 분배금 12.17% vs 1.15% + "총수익은 누가 이겼을까?") 1초 시험 제미나이 7·A 7·레드팀 7=7.0, 주제 3/3 · 카피 7.17 · aitell 0.0 · 설명 utm_campaign=a1_spyi(/calc에 맞는 계산기 없어 첫 화면) → **10/4 공개 쇼츠 utm 2/2(micron은 VIDEOID 자리표시)**. 오늘 쇼츠 2/2, 비축 0/1. 근거 cardshorts/a1_spyi/review.md 끝
 - [지시] **firemap-write·firemap-finishline-check**: X-CAFE-VOL '10/5 판정 뒤 12편 검토'는 growth 진단 전까지 얼림(8편 유지) · 사용량 ≥90% 동안 비축 카페 부족은 '생산 부족' 사유로 둠(질 낮은 글 금지 그대로)
 - 실험: 오늘 판정일 0건. X-CAFE-VOL 확대 얼림(위).
 

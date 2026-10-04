@@ -1,0 +1,454 @@
+[
+ {
+  "url": "https://www.krds.go.kr/html/site/index.html",
+  "title": "KRDS",
+  "bodyBg": "rgb(255, 255, 255)",
+  "bodyColor": "rgb(30, 33, 36)",
+  "bodyFont": "\"Pretendard GOV\"",
+  "text": [
+   [
+    "rgb(70, 76, 83)",
+    684
+   ],
+   [
+    "rgb(30, 33, 36)",
+    415
+   ],
+   [
+    "rgb(255, 255, 255)",
+    159
+   ],
+   [
+    "rgb(11, 80, 208)",
+    24
+   ],
+   [
+    "rgb(5, 43, 87)",
+    7
+   ]
+  ],
+  "size": [
+   [
+    "17px",
+    665
+   ],
+   [
+    "19px",
+    237
+   ],
+   [
+    "15px",
+    236
+   ],
+   [
+    "22px",
+    60
+   ],
+   [
+    "25.5px",
+    26
+   ],
+   [
+    "13px",
+    25
+   ],
+   [
+    "28px",
+    18
+   ],
+   [
+    "32px",
+    17
+   ],
+   [
+    "34px",
+    5
+   ]
+  ],
+  "weight": [
+   [
+    "400",
+    1024
+   ],
+   [
+    "700",
+    265
+   ]
+  ],
+  "family": [
+   [
+    "Pretendard GOV",
+    1289
+   ]
+  ],
+  "lineHeight": [
+   [
+    "17px / 1.50",
+    665
+   ],
+   [
+    "19px / 1.50",
+    237
+   ],
+   [
+    "15px / 1.50",
+    212
+   ],
+   [
+    "22px / 1.50",
+    60
+   ],
+   [
+    "25.5px / 1.50",
+    26
+   ],
+   [
+    "13px / 1.50",
+    25
+   ],
+   [
+    "15px / 1.60",
+    24
+   ],
+   [
+    "28px / 1.50",
+    18
+   ],
+   [
+    "32px / 1.50",
+    17
+   ],
+   [
+    "34px / 1.50",
+    5
+   ]
+  ],
+  "letterSpacing": [
+   [
+    "normal",
+    1289
+   ]
+  ],
+  "bg": [
+   [
+    "rgb(255, 255, 255)",
+    12203
+   ],
+   [
+    "rgb(244, 245, 246)",
+    2126
+   ],
+   [
+    "rgba(255, 255, 255, 0)",
+    335
+   ],
+   [
+    "rgb(238, 242, 247)",
+    120
+   ],
+   [
+    "rgb(37, 110, 244)",
+    74
+   ],
+   [
+    "rgb(236, 242, 254)",
+    39
+   ],
+   [
+    "rgb(30, 33, 36)",
+    25
+   ]
+  ],
+  "radius": [
+   [
+    "6px",
+    13
+   ],
+   [
+    "12px",
+    13
+   ],
+   [
+    "4px",
+    5
+   ],
+   [
+    "8px",
+    2
+   ],
+   [
+    "10px",
+    2
+   ]
+  ],
+  "padding": [
+   [
+    "24px",
+    27
+   ],
+   [
+    "16px",
+    11
+   ],
+   [
+    "8px",
+    7
+   ],
+   [
+    "2px",
+    7
+   ],
+   [
+    "4px",
+    5
+   ],
+   [
+    "12px",
+    2
+   ]
+  ],
+  "gap": [
+   [
+    "2px",
+    9
+   ],
+   [
+    "24px",
+    8
+   ],
+   [
+    "4px",
+    7
+   ],
+   [
+    "8px",
+    6
+   ],
+   [
+    "16px",
+    4
+   ],
+   [
+    "12px",
+    3
+   ],
+   [
+    "32px",
+    1
+   ],
+   [
+    "20px",
+    1
+   ]
+  ],
+  "shadow": [
+   [
+    "rgba(0, 0, 0, 0.05) 0px 0px 2px 0px, rgba(0, 0, 0, 0.08) 0px 4px 8px 0px",
+    1
+   ]
+  ],
+  "buttons": [
+   {
+    "t": "통합검색",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(30, 33, 36)",
+    "fs": "15px",
+    "fw": "700",
+    "r": "6px",
+    "h": 51,
+    "pad": "4px 12px 0px"
+   },
+   {
+    "t": "전체메뉴",
+    "bg": "rgba(0, 0, 0, 0)",
+    "color": "rgb(30, 33, 36)",
+    "fs": "15px",
+    "fw": "700",
+    "r": "6px",
+    "h": 51,
+    "pad": "4px 12px 0px"
+   },
+   {
+    "t": "시작하기",
+    "bg": "rgb(37, 110, 244)",
+    "color": "rgb(255, 255, 255)",
+    "fs": "19px",
+    "fw": "400",
+    "r": "8px",
+    "h": 64,
+    "pad": "0px 24px"
+   },
+   {
+    "t": "디자이너\n선택됨",
+    "bg": "rgba(255, 255, 255, 0)",
+    "color": "rgb(5, 43, 87)",
+    "fs": "17px",
+    "fw": "700",
+    "r": "0px",
+    "h": 48,
+    "pad": "0px 4px"
+   },
+   {
+    "t": "개발자",
+    "bg": "rgba(255, 255, 255, 0)",
+    "color": "rgb(70, 76, 83)",
+    "fs": "17px",
+    "fw": "700",
+    "r": "0px",
+    "h": 48,
+    "pad": "0px 4px"
+   },
+   {
+    "t": "정부 관계자",
+    "bg": "rgba(255, 255, 255, 0)",
+    "color": "rgb(70, 76, 83)",
+    "fs": "17px",
+    "fw": "700",
+    "r": "0px",
+    "h": 48,
+    "pad": "0px 4px"
+   },
+   {
+    "t": "튜토리얼\n디자인 프로세스를 쉽게 배우",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(30, 33, 36)",
+    "fs": "17px",
+    "fw": "400",
+    "r": "12px",
+    "h": 178,
+    "pad": "24px"
+   },
+   {
+    "t": "리소스\n다양한 자료를 활용하세요\n\n디",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(30, 33, 36)",
+    "fs": "17px",
+    "fw": "400",
+    "r": "12px",
+    "h": 178,
+    "pad": "24px"
+   },
+   {
+    "t": "디자인 토큰\n일관성 있는 디자인을 위",
+    "bg": "rgb(255, 255, 255)",
+    "color": "rgb(30, 33, 36)",
+    "fs": "17px",
+    "fw": "400",
+    "r": "12px",
+    "h": 206,
+    "pad": "24px"
+   },
+   {
+    "t": "디자인 적용 사례\n더보기",
+    "bg": "rgba(255, 255, 255, 0)",
+    "color": "rgb(30, 33, 36)",
+    "fs": "17px",
+    "fw": "400",
+    "r": "6px",
+    "h": 32,
+    "pad": "2px"
+   },
+   {
+    "t": "지금 참여하기",
+    "bg": "rgba(255, 255, 255, 0)",
+    "color": "rgb(255, 255, 255)",
+    "fs": "17px",
+    "fw": "400",
+    "r": "6px",
+    "h": 48,
+    "pad": "0px 16px"
+   },
+   {
+    "t": "문의 및 건의",
+    "bg": "rgba(255, 255, 255, 0)",
+    "color": "rgb(30, 33, 36)",
+    "fs": "15px",
+    "fw": "400",
+    "r": "6px",
+    "h": 25,
+    "pad": "0px"
+   },
+   {
+    "t": "Git",
+    "bg": "rgba(255, 255, 255, 0)",
+    "color": "rgb(30, 33, 36)",
+    "fs": "15px",
+    "fw": "400",
+    "r": "6px",
+    "h": 25,
+    "pad": "0px"
+   },
+   {
+    "t": "Figma",
+    "bg": "rgba(255, 255, 255, 0)",
+    "color": "rgb(30, 33, 36)",
+    "fs": "15px",
+    "fw": "400",
+    "r": "6px",
+    "h": 25,
+    "pad": "0px"
+   },
+   {
+    "t": "KRDS 소개",
+    "bg": "rgba(255, 255, 255, 0)",
+    "color": "rgb(30, 33, 36)",
+    "fs": "15px",
+    "fw": "400",
+    "r": "6px",
+    "h": 25,
+    "pad": "0px 2px"
+   },
+   {
+    "t": "이용 안내",
+    "bg": "rgba(255, 255, 255, 0)",
+    "color": "rgb(30, 33, 36)",
+    "fs": "15px",
+    "fw": "400",
+    "r": "6px",
+    "h": 25,
+    "pad": "0px 2px"
+   },
+   {
+    "t": "저작권정책",
+    "bg": "rgba(255, 255, 255, 0)",
+    "color": "rgb(30, 33, 36)",
+    "fs": "15px",
+    "fw": "400",
+    "r": "6px",
+    "h": 25,
+    "pad": "0px 2px"
+   }
+  ],
+  "rootVarCount": 28,
+  "rootVars": {
+   "--krds-font-family-base": "var(--krds-typo-font-type)",
+   "--krds-font-size-base": "62.5%",
+   "--krds-line-height-none": "1",
+   "--krds-line-height-base": "1.5",
+   "--krds-letter-spacing-none": "var(--krds-typo-letter-spacing-0)",
+   "--krds-letter-spacing-wide": "var(--krds-typo-letter-spacing-1)",
+   "--krds-font-weight-regular": "400",
+   "--krds-font-weight-bold": "700",
+   "--krds-transition-base": "0.4s ease-in-out",
+   "--krds-transition-fade": "opacity 0.4s linear",
+   "--krds-transition-collapse": "max-height 0.4s ease",
+   "--krds-transition-collapse-width": "width 0.4s ease",
+   "--krds-contents-size": "1200px",
+   "--krds-contents-padding-x": "24px",
+   "--krds-contents-wrap-size": "1248px",
+   "--krds-box-shadow-outline": "0 0 0 0.4rem var(--krds-light-color-border-primary)",
+   "--krds-box-shadow-outline-inset": "inset 0 0 0 0.2rem var(--krds-light-color-border-primary)",
+   "--krds-zoom-small": "0.9",
+   "--krds-zoom-medium": "1",
+   "--krds-zoom-large": "1.1",
+   "--krds-zoom-xlarge": "1.3",
+   "--krds-zoom-xxlarge": "1.5",
+   "--krds-font-underline-offset": "0.3rem",
+   "--krds-icon--size-xsmall": "var(--krds-size-height-2)",
+   "--krds-icon--size-small": "var(--krds-size-height-2)",
+   "--krds-icon--size-medium": "var(--krds-size-height-3)",
+   "--krds-icon--size-large": "var(--krds-size-height-4)",
+   "--krds-icon--size-xlarge": "var(--krds-size-height-4)"
+  }
+ }
+]

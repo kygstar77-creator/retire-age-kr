@@ -1,0 +1,1878 @@
+{
+  "url": "https://toss.im/tossfeed",
+  "extractedAt": "2026-10-02T21:59:48.451Z",
+  "meta": {
+    "snapshotId": "d2c84952-cc20-4122-bda1-f4384302617f",
+    "httpStatus": 200,
+    "dembrandtVersion": "0.37.0",
+    "schemaVersion": "1.17.0",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "fontsReady": true,
+    "requestedUrl": "https://toss.im/tossfeed",
+    "contentLength": 572056,
+    "flags": {
+      "mobile": true,
+      "locale": "ko-KR"
+    }
+  },
+  "siteName": "금융이 알고 싶을 때, 토스피드",
+  "logo": null,
+  "logoInstances": [],
+  "favicons": [
+    {
+      "type": "shortcut icon",
+      "url": "https://static.toss.im/tds/favicon/favicon.ico",
+      "sizes": null
+    },
+    {
+      "type": "icon",
+      "url": "https://static.toss.im/tds/favicon/favicon-16x16.png",
+      "sizes": "16x16",
+      "dataUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEVHcEwAdPYAT/8Alv8AXP4Ak/8Agv8Adf8AjPkAif0AfP8Ah/4AUP8Adv8Alf8AeP8AS/8Afv8AUf4AnP8Ac/4AcvwAVf4AUP8AYv8Aiv8Acf8Al/8Aqf8AZPQATf8AVPcAWOsAbP4AdP8ATv8AQv4Ahf8Ae/8AVv8Ai/8ASP8Akv8Amv8APvQAoP8AqP8ARe8AS/QAVu4Ae/uIRzRbAAAAIXRSTlMAfoWh/ob/DhcEtXSfPfPc8+ZKS+cia+ed6GK51v64m9S+9jsiAAAArElEQVQY002P5xKDIBCEzwbYYk9vQgTUYMn7P1xgnET33363M7cLsMgnBDbChXP1VusXl50arPXs7bpeKYsQf/GOlF0/dGWWBGes855sDEC10RFDfEKokf1QC+Fq7cFrOOeoU27LmBAiAgdxSjmS0/tlkA2hAZR+Rg1adoiBBBrUtNZAR2z9mYRBUmY3k2ARXppUVTiPbZva+N/Wmqf0nvvrHOv5yPF27m8HwBc22hGe+czfGQAAAABJRU5ErkJggg=="
+    },
+    {
+      "type": "icon",
+      "url": "https://static.toss.im/tds/favicon/favicon-32x32.png",
+      "sizes": "32x32",
+      "dataUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJcEhZcwAACxMAAAsTAQCanBgAAACuUExURUdwTCFR9Clg9Cpj9Uif9yFR7Uuj/Chi9UGR+DyL80CR+Cdd8CZc6h9N9TF190id9zBw8y5t9DyG9kKW90ad+CNV9y5r6ixp8x5N8UCS9yJS9UWc+EGS9yNX7U2p9jR49hxI9TJz9i9u9hc/6jqF9yJV9h5L9Stn9iBQ9RxI5jiB9zZ99xtE9T2J9xlB8yZc9kWa+E2q+EGR+EKU+CFR6D+O90qk+Eef+Dh/9ytm63LLs7AAAAAfdFJOUwDCQJZNfxsivQ1//fnfx2m+Mo3l7Vdl467R5qrf54+48HAHAAABZklEQVQ4y62Ty3qCMBBGEUQQPq23atW2gEYgxFgIAeL7v1gn4SILdOXZ/ieTySTRtHczHf+uXqX2pszI09jZpGlVZrsn+Xid5yBk2WgwntiMMSVUX8PLi6IAAXag5kD+wShthWBhAyt92s8LisCQQpa5XkKIBxhWV58hQAllVnIvCE6K3WfT3zdKEiRLSCHlUYe7VMKRJkKAAgK0gPjfg4NsZMKQEAQURJnsMb4olHDRZYcUmgLAKGAL1w/DGKg1eWQbCdW0RwTNy4qfb37tQB4bSlB5IBVUMXw+366tEpudECg8RkB4GLE8hiOFoDl7flJCa8zUGKjohCh1G+GqhHpSTkKa4UVRyvsV2nt1RFMhCijGGPJamHWXYc2bEsTDuNnBDw9W7z6trbGYzxf7u6oAsd9b3+PIIfcl4Wgo1/YgYBnH5vDDRSCEwPByGInHMQ/jkf7sZyzvnP8Y+oufZW6tt39m7R+TN0x+XsLxogAAAABJRU5ErkJggg=="
+    },
+    {
+      "type": "icon",
+      "url": "https://static.toss.im/tds/favicon/favicon-48x48.png",
+      "sizes": "48x48",
+      "dataUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAGoGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4yLWMwMDAgNzkuNTY2ZWJjNWI0LCAyMDIyLzA1LzA5LTA4OjI1OjU1ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjMuNCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjItMDktMDJUMTA6NDA6MTErMDk6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIyLTA5LTA1VDEwOjUwOjI1KzA5OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIyLTA5LTA1VDEwOjUwOjI1KzA5OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowYzNlMDdjNS04Mjc4LTQxYmEtYjcxMC05YWU1OTlkMWU0YTYiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDoyMzNiM2I0Yi03YWExLWNhNGItODQwNy0wZmE3YzY0NmYxZTkiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxZDJhZTM5Yi05ODY1LTQxNTEtOGNhYi1iZTFjZmEwMjhhODMiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjFkMmFlMzliLTk4NjUtNDE1MS04Y2FiLWJlMWNmYTAyOGE4MyIgc3RFdnQ6d2hlbj0iMjAyMi0wOS0wMlQxMDo0MDoxMSswOTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIzLjQgKE1hY2ludG9zaCkiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjg2YjExZGJmLThiMzYtNDljYS05YjE2LWJiNzA1NjE5OTIwYyIgc3RFdnQ6d2hlbj0iMjAyMi0wOS0wNVQxMDo0OToyNiswOTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIzLjQgKE1hY2ludG9zaCkiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjBjM2UwN2M1LTgyNzgtNDFiYS1iNzEwLTlhZTU5OWQxZTRhNiIgc3RFdnQ6d2hlbj0iMjAyMi0wOS0wNVQxMDo1MDoyNSswOTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIzLjQgKE1hY2ludG9zaCkiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+2mWoUAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAKtQTFRFR3BMNnrvNnbtQJbzLGjvRZf2JVjwPoTyPITxQJD2H032RZn1JFf0M3T1LmXuQ5b1H0/sTKX4KmDvQ5X1KWPvQpz2MXT1OoH2RaP5Rp35FjvoHUv1IVH2NXr3M3X2Lmz3GUL1HEb1OID4OYP4MHH2GULlRpz5FjzpQJH4SaL5Jl72Q5b4PYv4JFf2P474KmX2TKj5O4f4HUriGD/uVLn6HUrrT6/6JFfvI1XdY9A9agAAABt0Uk5TAAwaSHyLlCs5n+hp17pXv7fhadfL/fjV2vLnPe+VNAAAAoFJREFUSMfVltd24jAQhgPBjo0hhGySLZZtuTfhggu8/5PtaCRh2JMTvJf5uf0/T9FIw8PDN9KTpT3Ndz+a+6ZvVnO/rf3O87zpq3mAsUu4AHBf53x9V4IAaJq+fr5rX5hllmUCGMeTcbfU94xJADLKh+Udv1myqqouAPvztX25z1oJgJ/X/PJ1c0rWMsYU0Iz96cUyQZplLD5LP2lB18DY1Qlr2zAIAmf7/Ik/VACUwDNK0ogFDpfrutHH7Zk8vbdhKAkE4BTC1AVrJOR53ua6Z79YGCKBQIJAlLrcd1FdTLOoZUGoCJ4TlnAavPpGxVrFMJKQl4ZQyyTQDENd3Kg+qD7vWCA1AX2Zng5CxUEAh4IY8gQCCODATxACCAAgKEGB/0B0LEOreKtRSFQIRKlNLpKxyBtvrvEDDsdRAoRlSQ41p9QWmhiy1gGwShUA+s6RkJU5jGqcUt+/RgBCQMswgCuFRNJXXZymHZUMusnB3rxeAHdCXCeoeicF4JYgxNZ5m6yMZ4ROOQduFPZeLIFrwscZhKJlSmpqvLodT/EVIRF7LQejkhGU3yvKZhAAvQDEJlQ+O0uekwTEnBV5GSPQdXRKyl6ri2SxQKXkcaSuR0cCdAph0+kWma0EpD8a61uAB6D61X1YhTInkVGANceXjDhAN7dX7qczVV1kcM5HDkwZ+et/XwJj+6GqLpKK+yWAfrr+5FFbPK7M7fZtu9X3LgLyELh/s/jyjdoXABy7zhd2n77cecHz4QhSfurf2xOPWQz+YcDu+HRzd3NZAQI22smMNaRFGADsvq0vZmwh8yQC+ERfztpyu/MZApDNajFziwJwflv9z5LWn5ff6S/IX9zon0RR9wDDAAAAAElFTkSuQmCC"
+    },
+    {
+      "type": "icon",
+      "url": "https://static.toss.im/tds/favicon/favicon-196x196.png",
+      "sizes": "196x196",
+      "dataUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMQAAADECAMAAAD3eH5ZAAAF0WlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4yLWMwMDAgNzkuNTY2ZWJjNWI0LCAyMDIyLzA1LzA5LTA4OjI1OjU1ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjMuNCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjItMDktMDJUMTA6NDA6MTErMDk6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIyLTA5LTA1VDEwOjQ5OjI2KzA5OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIyLTA5LTA1VDEwOjQ5OjI2KzA5OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4NmIxMWRiZi04YjM2LTQ5Y2EtOWIxNi1iYjcwNTYxOTkyMGMiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rv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"
+    },
+    {
+      "type": "apple-touch-icon",
+      "url": "https://static.toss.im/tds/favicon/apple-touch-icon-57x57.png",
+      "sizes": "57x57",
+      "dataUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAA5CAMAAAC7xnO3AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJcEhZcwAACxMAAAsTAQCanBgAAACTUExURUdwTCZb7zyG9kmj+DyJ+Eee+CRX9jd88zZ89CZb8EWa+ESZ+CNU9DZ89z2K90KU9x9N60ad+CFS9SBP8EWZ+EOZ9zN29h1J9S5s9iBQ9TZ790yp+DFx9jqE9ziA9x5M9T6N9yJV9RtF9RlB9DyI90ad+EGS+B5M50SX+CVa9ixo9htG5kmj+BhA6Chg9hc97CNU45OdW58AAAAWdFJOUwCKUrQOZec+IWnN8cPTf5G736bS39/8GlBIAAAC2klEQVRIx+3WaZOiMBAGYATl0JG5djlEICgQrmH5/79uu3MRHHcLvk9rWWWVj28nJAHD+Clj7/iW5W9nB2sYkiR52egc61RVKIe3TXHmsaoaLust8vDeYIGEZi/rpXNs6rpWstutbdRCh7LisvBWNnqqiZI4zIY6awMJIUpCJOndFdB9R8eplEG/AponQkodohw/Xcc8HEzH/d8QSQnFqZRDMcL3skyhzq/O/ilsSJkKOjfb0AhUBnW5XILgvPsebSJMU02yZtP+igYQr6v9eHndE0lZPciov+LvRUVRdI1sdzmrLBEgoyDlBFH2e15dB++us/Ur/ErYaDjGUDHMqqCdqpF/jqOWajZiGhCzUOwW1wEtRqx21Kudt+w7ETDNeKjMzGjRqlKwVWv5UMtEkcoGyieo4NVq/wAlQ49EXrGZMjm0FFQMJbyoIuYjdWGUzLFCKmVT0DxWpTT8mcmbJRpkFinKkvb3MGelY5B8oJaUQYBvQRuQAf36c7/dwjCUdimP0Ky+wtCmZV3BSQLyz/2JFfIXl4FWEFs2SdX2X0C/2TjO+TL6XWazZOuT2TKpC5TQ8AON5dzybjXIcQbrACQPfaDiJPWJlGpP4EeWXLkUoToVa8hRMhBbiVU6jEyySRJUSFsu2yMOVGXKLVU3bd/LKVr0m6sjWIUqidupIpTJrweZ5/a8Pf1SGyiT8EoudAlFu3m82NlptpAQGiQRFd3e7/oU5cuTyJ+pkFk16vKm5MfjHeycXRahdV0IqUWC/Hxy4J4XtCoRCnm7Sfn59Kx3/PNMh4AyqsM8f9n/+67kmJ7nmaYzdEyybSYCw29jfJoPE8QytU7zVbdvv564lHlhbq+6Bxuv2USnnvahrPzDXXfbt67TRHtKpbPNtU8oxxEkVM4GaO/2q59tThPrlm2OYudueAojE8vEzbghDy9rOiEtihdv4wOjG6B889ztj6i7nefsjZ8yjL9Ck8R7GURoJQAAAABJRU5ErkJggg=="
+    },
+    {
+      "type": "apple-touch-icon",
+      "url": "https://static.toss.im/tds/favicon/apple-touch-icon-72x72.png",
+      "sizes": "72x72"
+    },
+    {
+      "type": "apple-touch-icon",
+      "url": "https://static.toss.im/tds/favicon/apple-touch-icon-114x114.png",
+      "sizes": "114x114"
+    },
+    {
+      "type": "apple-touch-icon",
+      "url": "https://static.toss.im/tds/favicon/apple-touch-icon-120x120.png",
+      "sizes": "120x120"
+    },
+    {
+      "type": "apple-touch-icon",
+      "url": "https://static.toss.im/tds/favicon/apple-touch-icon-144x144.png",
+      "sizes": "144x144"
+    },
+    {
+      "type": "apple-touch-icon",
+      "url": "https://static.toss.im/tds/favicon/apple-touch-icon-152x152.png",
+      "sizes": "152x152"
+    },
+    {
+      "type": "shortcut icon",
+      "url": "https://static.toss.im/tds/favicon/favicon.ico",
+      "sizes": null
+    },
+    {
+      "type": "icon",
+      "url": "https://static.toss.im/tds/favicon/favicon-16x16.png",
+      "sizes": "16x16",
+      "dataUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEVHcEwAdPYAT/8Alv8AXP4Ak/8Agv8Adf8AjPkAif0AfP8Ah/4AUP8Adv8Alf8AeP8AS/8Afv8AUf4AnP8Ac/4AcvwAVf4AUP8AYv8Aiv8Acf8Al/8Aqf8AZPQATf8AVPcAWOsAbP4AdP8ATv8AQv4Ahf8Ae/8AVv8Ai/8ASP8Akv8Amv8APvQAoP8AqP8ARe8AS/QAVu4Ae/uIRzRbAAAAIXRSTlMAfoWh/ob/DhcEtXSfPfPc8+ZKS+cia+ed6GK51v64m9S+9jsiAAAArElEQVQY002P5xKDIBCEzwbYYk9vQgTUYMn7P1xgnET33363M7cLsMgnBDbChXP1VusXl50arPXs7bpeKYsQf/GOlF0/dGWWBGes855sDEC10RFDfEKokf1QC+Fq7cFrOOeoU27LmBAiAgdxSjmS0/tlkA2hAZR+Rg1adoiBBBrUtNZAR2z9mYRBUmY3k2ARXppUVTiPbZva+N/Wmqf0nvvrHOv5yPF27m8HwBc22hGe+czfGQAAAABJRU5ErkJggg=="
+    },
+    {
+      "type": "icon",
+      "url": "https://static.toss.im/tds/favicon/favicon-32x32.png",
+      "sizes": "32x32",
+      "dataUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJcEhZcwAACxMAAAsTAQCanBgAAACuUExURUdwTCFR9Clg9Cpj9Uif9yFR7Uuj/Chi9UGR+DyL80CR+Cdd8CZc6h9N9TF190id9zBw8y5t9DyG9kKW90ad+CNV9y5r6ixp8x5N8UCS9yJS9UWc+EGS9yNX7U2p9jR49hxI9TJz9i9u9hc/6jqF9yJV9h5L9Stn9iBQ9RxI5jiB9zZ99xtE9T2J9xlB8yZc9kWa+E2q+EGR+EKU+CFR6D+O90qk+Eef+Dh/9ytm63LLs7AAAAAfdFJOUwDCQJZNfxsivQ1//fnfx2m+Mo3l7Vdl467R5qrf54+48HAHAAABZklEQVQ4y62Ty3qCMBBGEUQQPq23atW2gEYgxFgIAeL7v1gn4SILdOXZ/ieTySTRtHczHf+uXqX2pszI09jZpGlVZrsn+Xid5yBk2WgwntiMMSVUX8PLi6IAAXag5kD+wShthWBhAyt92s8LisCQQpa5XkKIBxhWV58hQAllVnIvCE6K3WfT3zdKEiRLSCHlUYe7VMKRJkKAAgK0gPjfg4NsZMKQEAQURJnsMb4olHDRZYcUmgLAKGAL1w/DGKg1eWQbCdW0RwTNy4qfb37tQB4bSlB5IBVUMXw+366tEpudECg8RkB4GLE8hiOFoDl7flJCa8zUGKjohCh1G+GqhHpSTkKa4UVRyvsV2nt1RFMhCijGGPJamHWXYc2bEsTDuNnBDw9W7z6trbGYzxf7u6oAsd9b3+PIIfcl4Wgo1/YgYBnH5vDDRSCEwPByGInHMQ/jkf7sZyzvnP8Y+oufZW6tt39m7R+TN0x+XsLxogAAAABJRU5ErkJggg=="
+    },
+    {
+      "type": "icon",
+      "url": "https://static.toss.im/tds/favicon/favicon-48x48.png",
+      "sizes": "48x48",
+      "dataUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAGoGlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4yLWMwMDAgNzkuNTY2ZWJjNWI0LCAyMDIyLzA1LzA5LTA4OjI1OjU1ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjMuNCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjItMDktMDJUMTA6NDA6MTErMDk6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIyLTA5LTA1VDEwOjUwOjI1KzA5OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIyLTA5LTA1VDEwOjUwOjI1KzA5OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDowYzNlMDdjNS04Mjc4LTQxYmEtYjcxMC05YWU1OTlkMWU0YTYiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDoyMzNiM2I0Yi03YWExLWNhNGItODQwNy0wZmE3YzY0NmYxZTkiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxZDJhZTM5Yi05ODY1LTQxNTEtOGNhYi1iZTFjZmEwMjhhODMiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjFkMmFlMzliLTk4NjUtNDE1MS04Y2FiLWJlMWNmYTAyOGE4MyIgc3RFdnQ6d2hlbj0iMjAyMi0wOS0wMlQxMDo0MDoxMSswOTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIzLjQgKE1hY2ludG9zaCkiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjg2YjExZGJmLThiMzYtNDljYS05YjE2LWJiNzA1NjE5OTIwYyIgc3RFdnQ6d2hlbj0iMjAyMi0wOS0wNVQxMDo0OToyNiswOTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIzLjQgKE1hY2ludG9zaCkiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjBjM2UwN2M1LTgyNzgtNDFiYS1iNzEwLTlhZTU5OWQxZTRhNiIgc3RFdnQ6d2hlbj0iMjAyMi0wOS0wNVQxMDo1MDoyNSswOTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIzLjQgKE1hY2ludG9zaCkiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+2mWoUAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAKtQTFRFR3BMNnrvNnbtQJbzLGjvRZf2JVjwPoTyPITxQJD2H032RZn1JFf0M3T1LmXuQ5b1H0/sTKX4KmDvQ5X1KWPvQpz2MXT1OoH2RaP5Rp35FjvoHUv1IVH2NXr3M3X2Lmz3GUL1HEb1OID4OYP4MHH2GULlRpz5FjzpQJH4SaL5Jl72Q5b4PYv4JFf2P474KmX2TKj5O4f4HUriGD/uVLn6HUrrT6/6JFfvI1XdY9A9agAAABt0Uk5TAAwaSHyLlCs5n+hp17pXv7fhadfL/fjV2vLnPe+VNAAAAoFJREFUSMfVltd24jAQhgPBjo0hhGySLZZtuTfhggu8/5PtaCRh2JMTvJf5uf0/T9FIw8PDN9KTpT3Ndz+a+6ZvVnO/rf3O87zpq3mAsUu4AHBf53x9V4IAaJq+fr5rX5hllmUCGMeTcbfU94xJADLKh+Udv1myqqouAPvztX25z1oJgJ/X/PJ1c0rWMsYU0Iz96cUyQZplLD5LP2lB18DY1Qlr2zAIAmf7/Ik/VACUwDNK0ogFDpfrutHH7Zk8vbdhKAkE4BTC1AVrJOR53ua6Z79YGCKBQIJAlLrcd1FdTLOoZUGoCJ4TlnAavPpGxVrFMJKQl4ZQyyTQDENd3Kg+qD7vWCA1AX2Zng5CxUEAh4IY8gQCCODATxACCAAgKEGB/0B0LEOreKtRSFQIRKlNLpKxyBtvrvEDDsdRAoRlSQ41p9QWmhiy1gGwShUA+s6RkJU5jGqcUt+/RgBCQMswgCuFRNJXXZymHZUMusnB3rxeAHdCXCeoeicF4JYgxNZ5m6yMZ4ROOQduFPZeLIFrwscZhKJlSmpqvLodT/EVIRF7LQejkhGU3yvKZhAAvQDEJlQ+O0uekwTEnBV5GSPQdXRKyl6ri2SxQKXkcaSuR0cCdAph0+kWma0EpD8a61uAB6D61X1YhTInkVGANceXjDhAN7dX7qczVV1kcM5HDkwZ+et/XwJj+6GqLpKK+yWAfrr+5FFbPK7M7fZtu9X3LgLyELh/s/jyjdoXABy7zhd2n77cecHz4QhSfurf2xOPWQz+YcDu+HRzd3NZAQI22smMNaRFGADsvq0vZmwh8yQC+ERfztpyu/MZApDNajFziwJwflv9z5LWn5ff6S/IX9zon0RR9wDDAAAAAElFTkSuQmCC"
+    },
+    {
+      "type": "icon",
+      "url": "https://static.toss.im/tds/favicon/favicon-196x196.png",
+      "sizes": "196x196",
+      "dataUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMQAAADECAMAAAD3eH5ZAAAF0WlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNy4yLWMwMDAgNzkuNTY2ZWJjNWI0LCAyMDIyLzA1LzA5LTA4OjI1OjU1ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjMuNCAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMjItMDktMDJUMTA6NDA6MTErMDk6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIyLTA5LTA1VDEwOjQ5OjI2KzA5OjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIyLTA5LTA1VDEwOjQ5OjI2KzA5OjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4NmIxMWRiZi04YjM2LTQ5Y2EtOWIxNi1iYjcwNTYxOTkyMGMiIHhtcE1NOkRvY3VtZW50SUQ9ImFkb2JlOmRvY2lkOnBob3Rvc2hvcDo2ZWM0Zjc2NC1iOTNiLWQ2NDktOTNjOC05YTNmMzYyZjU4YTAiIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDoxZDJhZTM5Yi05ODY1LTQxNTEtOGNhYi1iZTFjZmEwMjhhODMiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjFkMmFlMzliLTk4NjUtNDE1MS04Y2FiLWJlMWNmYTAyOGE4MyIgc3RFdnQ6d2hlbj0iMjAyMi0wOS0wMlQxMDo0MDoxMSswOTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIzLjQgKE1hY2ludG9zaCkiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjg2YjExZGJmLThiMzYtNDljYS05YjE2LWJiNzA1NjE5OTIwYyIgc3RFdnQ6d2hlbj0iMjAyMi0wOS0wNVQxMDo0OToyNiswOTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIzLjQgKE1hY2ludG9zaCkiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPC9yZGY6U2VxPiA8L3htcE1NOkhpc3Rvcnk+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+avoxBAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAFFQTFRFR3BMSaH4Rp72HUn1PIDsK2nwKWPxOHzxOn/tOoLwNHj2IE/1LWv2OoX3MXH2Tav5GUL0G0bmN3/3I1b2QZL4Poz3J1/3RJn4SKH5Fz7qIFDjxn1ivgAAAAp0Uk5TANqu/xiv2Yc7YAyskYYAABDaSURBVHja7JyJdts4DEUbU4llbdEuWf//ocOdAAhKaiYzUc4x7cRu0/bw6uEBIEX3z5/XeI3XeI3XeI3XeI3XeI3X2BlZ/rjf7vkvnv/99vapR//+SwHs/PWo21+nBQZQo3g+fpUEDx1Cq374Uf0mCE2w2hEoluHXQOSQAEGM5e+AyJQP1mVZ10U+MMNnL575bwgjTbCYr9VgBEs0z8tDKBFWi7AuXokgxVJdHSK/rVoEPQIB8vX87K4M8XgLBE4LAwIsMQ1XhiAIlsKHk/d1+eyyq5Y1jTDqBxAissTaiKtCKDcjAiwEiKZV+nq7aiCNZhAtIiE+R+nrj+siLCOjhat1yNeXa8VzjbCMY5BiV4mivBxEflNeGHEsjYHAmiIwaF/fr1WdIUIkhO06kK/Hqu26x7XMQBBG3tbAEsrXF6p1KpLMxKdAYLWIfO0xeunr65QJF0nTsRBwVad8vWWXyUmLV2ECJPJ34+wEur9KXKZMmEiSk58QAZICWgK0sG33fL+QDHr6lmE6J8RnrSDu13DDaBkAxxRSbLyY+ES+flxGBhVLiCLKTkxuWhvp65/fJnh4GTTBZN9wlmD2CLSvf7xMaEe7yXsEZO8ltB3xbo20RLddJpRcMCFDjLBzYoSQvpZCfFwglCY4xinKs3u1rpC+/tkMe/fFIWZwYiwLUAIyrN7XP9nDZi6U6FAUKJ7SVWJUvv7BMpEnGKJgMhh+4w9ZYlK+/rnkxNgBgniOZQQZNkpOvfL1dg2GOpo/Z+somD5X5Wu9Ns2yLM8fj7sZj8cjz7Ps/7F0QKghyAQjaomUgC2sqtcft7c31L6bVCH/ybf3u6T5zyqcs4OefM1NfzpEcL6uVte/B2VrO/QbiZL9NwxBhto/grenKS52bocAt7BdVyzQXDUdvXz2/fs33ycODPZqUSlMhp2gJ7iWQ7WwCqIeE/Pv0Sg+3r9PkLfAQB44qFDfBIrE6iqdLHXK15u1ALz2vQGAGIV8FsV7/r06gLAlCK4fR0Iwy2vt624bKQEWQM1dDvvSfHyDHIhhqr0FQ4IacW4a8X4TskQlZDTNIw9QGIC+8ByGomnu2bcxACliJUiCZauELHXKEtVIDVCkRiMR5LP6dxhRLCVjCvt64fYIZKnTyWkCBPqi40uPAfSoqur+L2qcYag5Bq7psEpw932VJZSvu6LGwR/N3UwdM1TVx+MbGWxgGSmYgm2FQMY2KJPxNRdBDZq8f28Q1EOO+T37Ur+U0MFihCbKmyK0sM4RaFWnfD3Ucdj4Ad87BMsgKaq/FyPTq2lkaczBWiJIYfdqwKpOQ1Q1yjzJUXkJ/Jjn+5cZUgP2HcQTwRLgXl2jfV316elX5qmHIQAcs4SYP7K/TEzHDMQWyBNM96cs0dGQIVfbzb+BvwxaDHP+V6beZ3CuQMFkV9h8cpK+lgxbgDCza9ykmyo86eSdEPJrOE+RY1P3psGJMRJKcOHUG1/DvMnJkBizecpRnrY3NoRmqCmFqRY1MoWvE/FGh/L11m1FxV7o3fnP9ruR4qwW2BD9Dga1NlACJ9jF+Hrmr/4cLnZ4ugd4r8ZQ5ucqhF7IYQTVrWEMZO20EM7Xul6jbOMubphu+mkJDEV2Lrs6HXrX7xtT9JHBsRKIgqzqShlNHbjIAMO8OCL3BAKEb9oWH2eDCa5YIAV0eHAFZ2zSwipfb1gA/wJ/AbDs7/o/ZISQUtzPtBtTCCY3exdQrCtGJp5IqdO+LsPc0ajAl/uhfR9+VAGK/DgzQVPbptlQWBbSklMlVnigY3UtrPL1QGefGNVMaNDfG4ZyO1PmwOLXrYHtV02yVFwo3H4NlGKqBhlM3TCfHdWM9JhROM2DuO+7ekGGIGvgKEm5BGWNHZoOnGH7WdfrMBH6PDsGG09tdsrVPWKow25EFFNACth2QEuYUteZGehrCd4N7u0hzWCFGIb2/aQQnqGOlehjb0NT0F3YZlDJqZz9hM2Y7XcCZCATGJZCZGfSK7jwPQmpHmmBKEDBxpbQyWn2Uw8kAQSQ+OkCGvcT8zfa+zlHxPMHejDxhCDQgkhDyORkr2JiBAwfXAOECT+S39MVDwlRJyEMCcXwUkSnSNde1+uNzrpkQTyqve7gxQeT/LvicSjEPoD1ucUwGQo0HnRpupqlaQdmbx7uhcXA8YWywbBjbV0jQKFGu4tqj46GFBNQLp4+V3gP3tRrc/FLMP3wSMYXfEAvpQre2wodAebv9xn7BAhIsqh1WqGvOxtCcs4KRL+UiIlRJJgeqqMuhcj59Zx1BC1yVoeij/XAWowRhSl1sl5LBnvRw7N0OOWOJtAlUIlEfpK29o0fnn8B3gQMawyfZ50Sy0I3MFW9luFUIg3KQDEcYwBPm2gqBWsKZWt8y6Bw4aQ3rO1NAyBG3YNyEfITOdErW1i9mBBu1twAHAzIHL2R6YnbwMk/mdRUhE3fvrAE2OU0nrwSXopRV4ntKYQodxBQVCXNDiC4hvzOQLggKhBKX2BvQHPDgPI3JrSvn60QgEPEHAhl2KeQf6R9JBYSqHkFAH0BtCiQGC5HAWvTe/A6mp6toZAc+uFeCYr1/m7uNRmO6cczZwlQIrAM4DZUOqRgQK3B1wpCUjgMg2KVEWx8OYIyrUQM8VhxbkIXn0pBOFzp9hAwmpbGQQCKMmiiMUTsEGt1jqJMKXFbI0uEmdM7CtAkQAwohS/ZrtQ9DQUUA8riOXzWxWU9wJRpJXy5RgToXiah6YtIDEOBpahNqTMQLEbJuQNZw0/cOl6TijSEt0SIotRwsRZpYSg+iSWeTguJwYBgjgGTAI87hRglsjWUOmKJokiTADW8Fi5BYQhL0fIYnkFgc/snaLBc+xUrkWNLMLm12FGkJxTGFKbUNUgJLwYvR5Rxy1AzQrpKKfGAVSLcHD8x+sChMSwF52unxTOJwTmDNIiuljDF7uH3zNL3mBt/o1O/p0EVfAEheuBrwKERKIapgRiEJCj3ruTaDtd09CCcenKjE0zd8sRBBSg4S1AtFEUbSyHSQviet40bwHvwBHezvAHfmsYzBBCtG6JYcalDUmCKOFFRMWDGdUow69MbKhOw38AXvwGvTFwFisWt6mIlMEWMETciwAoWga1198jYRSyFnjQgcG9BZFkMSbG6UmeVSEgROaN0CTdqbwe3gNJNB9PE4nCCCwhyeMGA+FMM+j2Uw1MsyNdUCRRQpIpbjKhmhA5X9/JZEiI0TpAA5KXoCIZHghzyX9IQi12aPiNXkIBi1GBXTr7+tczu2QMbm82uwAv0TIbTKKjRj9DXEQJksEq0aXcPYTvB0XD7Tjnp/3rGD3Ty8QAcxeJ8raPpAEO0LVe7BbPyswbh/i+ZDIUTLRI28JtjjBBVi7VEUKLbkyKuGMySfPAsgt2LfVtS2cle3+PpB4uooTfPCnOLqIvTE/U2q4UgWoTB72Le3Oo0Wk3AxNTEJ0zMuR7zDnoEWcIEU6psJ+wdiTHsR1NUshFCkbKDn3xlz1eFn9SwhbWuOAgotujx2zyC34l1zu5BKw67JJBg0bGwcELJnZcxP5xMqQNKEGsrhCfWIcqzgl1+s224WxVNE9c7Nc4W7PGw8A0+JNGob0x4S3DWpkLQgHIEsRgidbdLdU9kYYfPSHJChKNK/qiYVWZxvkZCdAemEIfrJOOI1M0uG0+9bzzicg0oqgYxNPC8lX6Pfc1Vipii5So3I4VI33ZcULmj0USFMEHTJI4uzQVqYb0U3V40mWZwpxfcz68mPy20GQf5NbIEsAADMvfO1xvQAcVTS9OTcN0HXe3RkNoR4k+22HhicmzDSBEMEHPMk/P1RiigEEfRFHezR0KoehekiDvYhnV14hzcvJgWdkDRRPMTE02Jfhai7AlBpOAKNnZ2hTMTPg+3RqWOKpHwdWJ7EARTu3/cyboCV4rQOOHcBOMpHr6F3TwCwWi5eKJKlK71EP62hhgODjuZ/qmPAqrhfF3RU8Tg/GeBVnUJTzyTBC3ZxgFSiMP/zzHnpMAfCmhIQLFHcY2vCwDxjDoPrtiZXjZSApqiPf4UsQwoK4VHsCsJSKGnHxJsQ4+HWl838yCjKWEKLpRsA8WUbP9syzOf5hontB3rl6ZF6mB9wx3H1b7WVWILQhwpkV5w+3ji9jjYDBVcgWMJS9EwKhgZ5EvjSx3wxDkl4s3yUC3EmWDStohc0fiCd/QRB69EYUvdhj1xJIRrx/mNTRVMw59zI/fNLLAFUQJXiUiLwfka6tARBjaWWsHsB5osqzDE6UP7QQuYn/AHfUD/xymxmFInfY1tHTDaVNdBMMpwe/KwzMUUPdCiCb0s6WH5KqEhJtz9RUq0XNfBrbJ9tWv/6v9oMBSMt1NlgiRYnZykr7cOKQGdncywQvA7s4Ld89vNUbcJbxg0JKTgopRfTGBfEyHadOfEZKjSWvuvP6R2r7EWTgmytvNbBMgStW1hN9R04PTU8kuilnG1OXcgvvCR4PyNbWYdhkHgpdDJSbWwSomNk0LN+Zkqc2yCFeJrn3m8oRTVFNEqO9XEal+TUodKdpve6UgdOGi/+vFTJ0a6B2R7j7kyLey8pT3B9xvJswZfZ1Ab/lKMAuaoqPdgxDC+VqVOQ2xxdmqfyT3M2BUnW9d9DBxRuOKxtjC+VqUOMgAluLxk9zn44xL/tHd1zbGCMHQtCiLdFtrt3iv//4dewjcIzrTXjjhD+tR98szJSULEBP33EB+KP2rn7df4ePSWNAkeRhJJl8DDKGY6VLvxgfgRg4joFB/zdho3FsTDproiE6IMwHvTVhX8oGFKM5k+0hZ55aiq7a9Odc9tgNUw8kSHeDUqmRsGBw6EmimOKsFlQ4XnQh8mrK5TGOsqyq+IXKYu9TrQwUOtZjrhpcBEWpvr4PTIj6Zxvs7emyaPz3MifmMc1Kg8Cy9FZ3L5GjqYX5CvZeZQOsKWX9VxVKk4fm+kFawlmaYJYwcH+gbqP/UboTNMqb87ScgNE5yLPEkXW/ro57XGd+HApCaYzjTGd85NCSu3MMCZ0Bq6M8XqO9R8n+eNDByghLX5WubHUwHuhLKYtI2tIAeOz5vJOroStiAJpQi0Ih9Xd4o+CEsnzpWdXapz3pTIAgSB9ktWy8Spw0xpKGFzZzK+tEb9gCoN7NwxoMSlOg0j62NygSItV28rc3zyFNAh6sKmVBhXSivuQmg6Pkv/CITStZSWilAEcqGJ8AxUyyV2+kTZMdd1RAcS+45kaMDnzx2ffaqTIcgaHErSwjsSr9HQwohl6nUdmHB0wIMKVDe4xtTE+HeSS8J7EwDYgaBpaGQhwovuwgZv8mcKJvZIaEUNHsTdg9CZwngTAxg1Jkyrsp2VDkPQtTCdfceEcidW0wJ4UkOLfwYoYWXEhNU2AyKqLKBnS0spRp2vU2eSwjpTwZvM68RP0tTWHxrrOi5kFQZW/uSjLU+yIO4+1XkYTGy9yb7VRQw3twWLgq4LRGgmBPPfbAYIDW7oI4mubYBVT88ES1+amEs/uMklgyTk64gJSHQAI723xDC5NWkvia5tiNXPL/JrcLjZVY/DNl8zDSO/j4gb3lYJJazcMAE0JBeNp5YXbo65rgEGk9m3A43vNJ6VrlMQAMHAsJNHMBlvbRt9/8pBaAzuO7/ndIWdp+/3txSCyt7+c+r2SXAgciKeCgdgwJfZ7k1N0bEEBPrvQgg0iCVm4VVCzsDkUguxb/SPl4RBgyd6vb3kj8ib8HTRJffEPz+9JgDDBSwomcdbt27dunXr1q1bt27d9uwfq1dpGz6/SrIAAAAASUVORK5CYII="
+    },
+    {
+      "type": "apple-touch-icon",
+      "url": "https://static.toss.im/tds/favicon/apple-touch-icon-57x57.png",
+      "sizes": "57x57",
+      "dataUri": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAA5CAMAAAC7xnO3AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJcEhZcwAACxMAAAsTAQCanBgAAACTUExURUdwTCZb7zyG9kmj+DyJ+Eee+CRX9jd88zZ89CZb8EWa+ESZ+CNU9DZ89z2K90KU9x9N60ad+CFS9SBP8EWZ+EOZ9zN29h1J9S5s9iBQ9TZ790yp+DFx9jqE9ziA9x5M9T6N9yJV9RtF9RlB9DyI90ad+EGS+B5M50SX+CVa9ixo9htG5kmj+BhA6Chg9hc97CNU45OdW58AAAAWdFJOUwCKUrQOZec+IWnN8cPTf5G736bS39/8GlBIAAAC2klEQVRIx+3WaZOiMBAGYATl0JG5djlEICgQrmH5/79uu3MRHHcLvk9rWWWVj28nJAHD+Clj7/iW5W9nB2sYkiR52egc61RVKIe3TXHmsaoaLust8vDeYIGEZi/rpXNs6rpWstutbdRCh7LisvBWNnqqiZI4zIY6awMJIUpCJOndFdB9R8eplEG/AponQkodohw/Xcc8HEzH/d8QSQnFqZRDMcL3skyhzq/O/ilsSJkKOjfb0AhUBnW5XILgvPsebSJMU02yZtP+igYQr6v9eHndE0lZPciov+LvRUVRdI1sdzmrLBEgoyDlBFH2e15dB++us/Ur/ErYaDjGUDHMqqCdqpF/jqOWajZiGhCzUOwW1wEtRqx21Kudt+w7ETDNeKjMzGjRqlKwVWv5UMtEkcoGyieo4NVq/wAlQ49EXrGZMjm0FFQMJbyoIuYjdWGUzLFCKmVT0DxWpTT8mcmbJRpkFinKkvb3MGelY5B8oJaUQYBvQRuQAf36c7/dwjCUdimP0Ky+wtCmZV3BSQLyz/2JFfIXl4FWEFs2SdX2X0C/2TjO+TL6XWazZOuT2TKpC5TQ8AON5dzybjXIcQbrACQPfaDiJPWJlGpP4EeWXLkUoToVa8hRMhBbiVU6jEyySRJUSFsu2yMOVGXKLVU3bd/LKVr0m6sjWIUqidupIpTJrweZ5/a8Pf1SGyiT8EoudAlFu3m82NlptpAQGiQRFd3e7/oU5cuTyJ+pkFk16vKm5MfjHeycXRahdV0IqUWC/Hxy4J4XtCoRCnm7Sfn59Kx3/PNMh4AyqsM8f9n/+67kmJ7nmaYzdEyybSYCw29jfJoPE8QytU7zVbdvv564lHlhbq+6Bxuv2USnnvahrPzDXXfbt67TRHtKpbPNtU8oxxEkVM4GaO/2q59tThPrlm2OYudueAojE8vEzbghDy9rOiEtihdv4wOjG6B889ztj6i7nefsjZ8yjL9Ck8R7GURoJQAAAABJRU5ErkJggg=="
+    },
+    {
+      "type": "apple-touch-icon",
+      "url": "https://static.toss.im/tds/favicon/apple-touch-icon-72x72.png",
+      "sizes": "72x72"
+    },
+    {
+      "type": "apple-touch-icon",
+      "url": "https://static.toss.im/tds/favicon/apple-touch-icon-114x114.png",
+      "sizes": "114x114"
+    },
+    {
+      "type": "apple-touch-icon",
+      "url": "https://static.toss.im/tds/favicon/apple-touch-icon-120x120.png",
+      "sizes": "120x120"
+    },
+    {
+      "type": "apple-touch-icon",
+      "url": "https://static.toss.im/tds/favicon/apple-touch-icon-144x144.png",
+      "sizes": "144x144"
+    },
+    {
+      "type": "apple-touch-icon",
+      "url": "https://static.toss.im/tds/favicon/apple-touch-icon-152x152.png",
+      "sizes": "152x152"
+    },
+    {
+      "type": "og:image",
+      "url": "https://static.toss.im/illusts/img-og-tossfeed-1.jpg",
+      "sizes": null
+    },
+    {
+      "type": "twitter:image",
+      "url": "https://static.toss.im/illusts/img-og-tossfeed-1.jpg",
+      "sizes": null
+    },
+    {
+      "type": "pwa",
+      "url": "https://static.toss.im/assets/homepage/tossfeed/tossfeed_pwa_icon/s512.png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "type": "pwa",
+      "url": "https://static.toss.im/assets/homepage/tossfeed/tossfeed_pwa_icon/s192.png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    }
+  ],
+  "manifest": {
+    "backgroundColor": "#ffffff",
+    "name": "토스피드",
+    "shortName": "토스피드"
+  },
+  "colors": {
+    "semantic": {
+      "background": "rgb(255, 255, 255)",
+      "text": "rgb(0, 0, 0)",
+      "primary": "rgb(69, 147, 252)"
+    },
+    "palette": [
+      {
+        "color": "rgb(51, 61, 75)",
+        "normalized": "#333d4b",
+        "count": 96,
+        "confidence": "high",
+        "sources": [],
+        "tokens": [
+          "--adaptiveGrey800"
+        ],
+        "lch": "lch(25.286% 10.11 262.22)",
+        "oklch": "oklch(35.6776% 0.02783 256.823)",
+        "role": "accent",
+        "onColor": "#ffffff",
+        "hover": "#3d495a",
+        "variantOf": "primary"
+      },
+      {
+        "color": "rgb(107, 118, 132)",
+        "normalized": "#6b7684",
+        "count": 84,
+        "confidence": "high",
+        "sources": [
+          "css-he84hn"
+        ],
+        "tokens": [
+          "--feedArticleMenuIconColor",
+          "--adaptiveGrey600"
+        ],
+        "lch": "lch(49.078% 9.341 258.559)",
+        "oklch": "oklch(56.1559% 0.02543 254.49)",
+        "role": "accent",
+        "onColor": "#ffffff",
+        "hover": "#808e9e",
+        "variantOf": "primary"
+      },
+      {
+        "color": "rgb(242, 244, 246)",
+        "normalized": "#f2f4f6",
+        "count": 17,
+        "confidence": "high",
+        "sources": [],
+        "tokens": [
+          "--tDarkWeakButtonBackground",
+          "--adaptiveGrey100",
+          "--adaptiveBackgroundLevelB01",
+          "--adaptiveGreyBackground"
+        ],
+        "lch": "lch(96.078% 1.256 251.16)",
+        "oklch": "oklch(96.6197% 0.00343 247.858)",
+        "role": "surface",
+        "onColor": "#000000",
+        "hover": "#cecfd1"
+      },
+      {
+        "color": "rgb(69, 147, 252)",
+        "normalized": "#4593fc",
+        "count": 5,
+        "confidence": "medium",
+        "sources": [],
+        "tokens": [
+          "--adaptiveBlue400"
+        ],
+        "lch": "lch(60.015% 60.466 272.363)",
+        "oklch": "oklch(66.5953% 0.17393 256.798)",
+        "role": "accent",
+        "onColor": "#000000",
+        "hover": "#3b7dd6",
+        "variantOf": "primary"
+      },
+      {
+        "color": "rgba(3, 18, 40, 0.7)",
+        "normalized": "#031228",
+        "count": 3,
+        "confidence": "high",
+        "sources": [
+          "_3u0hjw0"
+        ],
+        "tokens": [
+          "--adaptiveOpacity700",
+          "--adaptiveGreyOpacity700"
+        ],
+        "lch": "lch(5.262% 16.799 272.006)",
+        "oklch": "oklch(18.3057% 0.05051 256.01)",
+        "role": "accent",
+        "onColor": "#ffffff",
+        "hover": "#041630",
+        "variantOf": "primary"
+      },
+      {
+        "color": "rgb(0, 0, 0)",
+        "normalized": "#000000",
+        "count": 2,
+        "confidence": "medium",
+        "sources": [],
+        "tokens": [
+          "--adaptiveDimmedBackground",
+          "--adaptiveBackgroundDimmed"
+        ],
+        "lch": "lch(0% 0 0)",
+        "oklch": "oklch(0% 0 0)",
+        "role": "surface",
+        "onColor": "#ffffff",
+        "hover": "#000000"
+      },
+      {
+        "color": "rgb(27, 100, 218)",
+        "normalized": "#1b64da",
+        "count": 1,
+        "confidence": "low",
+        "sources": [],
+        "tokens": [
+          "--tBlueBadgeColor",
+          "--adaptiveBlue700"
+        ],
+        "lch": "lch(43.695% 69.219 281.72)",
+        "oklch": "oklch(53.2051% 0.19424 260.157)",
+        "role": "accent",
+        "onColor": "#ffffff",
+        "hover": "#2078ff",
+        "variantOf": "primary"
+      },
+      {
+        "color": "#ffffff",
+        "normalized": "#ffffff",
+        "count": 10,
+        "confidence": "high",
+        "sources": [
+          "manifest:background_color"
+        ]
+      },
+      {
+        "color": "rgb(16, 16, 16)",
+        "normalized": "#101010",
+        "count": 1,
+        "confidence": "medium",
+        "sources": [
+          "hover/focus"
+        ]
+      },
+      {
+        "color": "rgba(222, 222, 255, 0.19)",
+        "normalized": "#dedeff",
+        "count": 1,
+        "confidence": "medium",
+        "sources": [
+          "hover/focus"
+        ]
+      },
+      {
+        "color": "rgb(0, 0, 238)",
+        "normalized": "#0000ee",
+        "count": 40,
+        "confidence": "high",
+        "sources": [
+          "css-m6pthu"
+        ],
+        "lch": "lch(27.246% 124.513 301.369)",
+        "oklch": "oklch(42.9015% 0.29728 264.052)",
+        "role": "accent",
+        "onColor": "#ffffff",
+        "hover": "#0000ff",
+        "variantOf": "primary",
+        "source": "mobile"
+      },
+      {
+        "color": "rgb(228, 228, 229)",
+        "normalized": "#e4e4e5",
+        "count": 93,
+        "confidence": "medium",
+        "sources": [],
+        "tokens": [
+          "--adaptiveGrey800"
+        ],
+        "lch": "lch(90.61% 0.491 287.666)",
+        "oklch": "oklch(91.9155% 0.00134 286.374)",
+        "role": "neutral",
+        "onColor": "#000000",
+        "hover": "#c2c2c3",
+        "source": "menu"
+      },
+      {
+        "color": "rgb(126, 126, 135)",
+        "normalized": "#7e7e87",
+        "count": 12,
+        "confidence": "medium",
+        "sources": [],
+        "tokens": [
+          "--adaptiveGrey500"
+        ],
+        "lch": "lch(53.023% 5.075 285.931)",
+        "oklch": "oklch(59.607% 0.01354 285.982)",
+        "role": "neutral",
+        "onColor": "#000000",
+        "hover": "#6b6b73",
+        "source": "menu"
+      },
+      {
+        "color": "rgb(158, 158, 164)",
+        "normalized": "#9e9ea4",
+        "count": 26,
+        "confidence": "medium",
+        "sources": [],
+        "tokens": [
+          "--adaptiveGrey600"
+        ],
+        "lch": "lch(65.255% 3.242 285.813)",
+        "oklch": "oklch(70.1125% 0.00865 286.175)",
+        "role": "neutral",
+        "onColor": "#000000",
+        "hover": "#86868b",
+        "source": "menu"
+      },
+      {
+        "color": "rgb(44, 44, 53)",
+        "normalized": "#2c2c35",
+        "count": 8,
+        "confidence": "medium",
+        "sources": [],
+        "tokens": [
+          "--adaptiveFloatBackground",
+          "--feedGlassyModalBackground",
+          "--adaptiveBackgroundLevel02",
+          "--adaptiveGrey100",
+          "--feedFloatingBackground"
+        ],
+        "lch": "lch(18.285% 6.052 286.591)",
+        "oklch": "oklch(29.6861% 0.01619 285.372)",
+        "role": "accent",
+        "onColor": "#ffffff",
+        "hover": "#353540",
+        "source": "menu"
+      },
+      {
+        "color": "rgb(41, 112, 217)",
+        "normalized": "#2970d9",
+        "count": 5,
+        "confidence": "medium",
+        "sources": [],
+        "tokens": [
+          "--adaptiveBlue400"
+        ],
+        "lch": "lch(47.384% 61.74 277.342)",
+        "oklch": "oklch(55.9738% 0.17587 258.669)",
+        "role": "accent",
+        "onColor": "#ffffff",
+        "hover": "#3186ff",
+        "variantOf": "primary",
+        "source": "menu"
+      }
+    ],
+    "cssVariables": {
+      "--adaptiveYellowOpacity100": {
+        "value": "rgba(255,195,66,0.35)",
+        "hex": "#ffc342",
+        "lch": "lch(82.756% 70.752 78.867 / 0.35)",
+        "oklch": "oklch(85.0228% 0.15391 82.465 / 0.35)"
+      },
+      "--adaptiveTeal400": {
+        "value": "#30b6b6",
+        "hex": "#30b6b6",
+        "lch": "lch(67.297% 37.612 196.686)",
+        "oklch": "oklch(70.8028% 0.11013 194.953)"
+      },
+      "--adaptivePurple200": {
+        "value": "#da9bef",
+        "hex": "#da9bef",
+        "lch": "lch(72.449% 47.918 316.565)",
+        "oklch": "oklch(77.9014% 0.1338 317.441)"
+      },
+      "--adaptivePurple300": {
+        "value": "#c770e4",
+        "hex": "#c770e4",
+        "lch": "lch(60.805% 66.413 317.169)",
+        "oklch": "oklch(68.6396% 0.18428 317.119)"
+      },
+      "--adaptiveCardBgGrey": {
+        "value": "rgba(0,23,51,0.02)",
+        "hex": "#001733",
+        "lch": "lch(7.361% 21.636 271.908 / 0.02)",
+        "oklch": "oklch(20.512% 0.06367 253.214 / 0.02)"
+      },
+      "--tGreenBadgeBackground": {
+        "value": "rgba(3,178,108,0.21)",
+        "hex": "#03b26c",
+        "lch": "lch(64.035% 57.841 154.804 / 0.21)",
+        "oklch": "oklch(67.2021% 0.16014 156.782 / 0.21)"
+      },
+      "--adaptiveTeal800": {
+        "value": "#097575",
+        "hex": "#097575",
+        "lch": "lch(44.076% 29.094 196.497)",
+        "oklch": "oklch(51.0121% 0.08516 194.814)"
+      },
+      "--adaptiveGreen200": {
+        "value": "#76e4b8",
+        "hex": "#76e4b8",
+        "lch": "lch(83.207% 42.372 164.451)",
+        "oklch": "oklch(84.141% 0.12043 165.377)"
+      },
+      "--tYellowBadgeColor": {
+        "value": "#dd7d02",
+        "hex": "#dd7d02",
+        "lch": "lch(62.334% 76.262 63.93)",
+        "oklch": "oklch(68.1119% 0.1584 60.576)"
+      },
+      "--adaptivePurple700": {
+        "value": "#8222a2",
+        "hex": "#8222a2",
+        "lch": "lch(34.608% 73 317.529)",
+        "oklch": "oklch(46.5635% 0.19829 315.787)"
+      },
+      "--adaptiveOrange600": {
+        "value": "#fb8800",
+        "hex": "#fb8800",
+        "lch": "lch(68.836% 85.074 61.838)",
+        "oklch": "oklch(73.887% 0.17784 57.484)"
+      },
+      "--adaptiveRed200": {
+        "value": "#feafb4",
+        "hex": "#feafb4",
+        "lch": "lch(79.358% 31.758 17.967)",
+        "oklch": "oklch(83.0752% 0.09289 15.098)"
+      },
+      "--adaptiveRedOpacity200": {
+        "value": "rgba(251,136,144,0.7)",
+        "hex": "#fb8890",
+        "lch": "lch(70.04% 48.086 20.06 / 0.7)",
+        "oklch": "oklch(75.4689% 0.1397 16.584 / 0.7)"
+      },
+      "--tTealBadgeBackground": {
+        "value": "rgba(16,149,149,0.29)",
+        "hex": "#109595",
+        "lch": "lch(55.565% 34.563 196.505 / 0.29)",
+        "oklch": "oklch(60.77% 0.10117 194.82 / 0.29)"
+      },
+      "--adaptiveGreenOpacity50": {
+        "value": "rgba(21,196,126,0.15)",
+        "hex": "#15c47e",
+        "lch": "lch(70.178% 59.251 156.801 / 0.15)",
+        "oklch": "oklch(72.4349% 0.16454 158.478 / 0.15)"
+      },
+      "--tDangerWeakButtonPressedBackground": {
+        "value": "rgba(244,67,54,0.26)",
+        "hex": "#f44336",
+        "lch": "lch(56.465% 83.355 36.383 / 0.26)",
+        "oklch": "oklch(64.265% 0.21531 28.806 / 0.26)"
+      },
+      "--adaptiveRed600": {
+        "value": "#e42939",
+        "hex": "#e42939",
+        "lch": "lch(50.806% 80.802 30.464)",
+        "oklch": "oklch(59.5393% 0.21868 23.467)"
+      },
+      "--tTealBadgeColor": {
+        "value": "#0c8585",
+        "hex": "#0c8585",
+        "lch": "lch(49.879% 31.889 196.498)",
+        "oklch": "oklch(55.9396% 0.09334 194.815)"
+      },
+      "--adaptiveBlue900": {
+        "value": "#194aa6",
+        "hex": "#194aa6",
+        "lch": "lch(32.78% 56.606 282.661)",
+        "oklch": "oklch(43.511% 0.15764 261.523)"
+      },
+      "--adaptiveOrange900": {
+        "value": "#e45600",
+        "hex": "#e45600",
+        "lch": "lch(56.023% 85.797 50.766)",
+        "oklch": "oklch(63.3841% 0.19114 42.036)"
+      },
+      "--adaptivePurple900": {
+        "value": "#65237b",
+        "hex": "#65237b",
+        "lch": "lch(27.576% 54.598 317.549)",
+        "oklch": "oklch(39.6965% 0.1496 316.407)"
+      },
+      "--adaptiveGrey400": {
+        "value": "#b0b8c1",
+        "hex": "#b0b8c1",
+        "lch": "lch(74.352% 5.781 254.516)",
+        "oklch": "oklch(77.9068% 0.01561 251.193)"
+      },
+      "--adaptiveRed400": {
+        "value": "#f66570",
+        "hex": "#f66570",
+        "lch": "lch(62.354% 62.078 22.819)",
+        "oklch": "oklch(69.1791% 0.1779 18.501)"
+      },
+      "--adaptiveYellow700": {
+        "value": "#faa131",
+        "hex": "#faa131",
+        "lch": "lch(74.195% 73.277 67.5)",
+        "oklch": "oklch(78.1264% 0.15754 66.681)"
+      },
+      "--adaptiveYellow200": {
+        "value": "#ffe69b",
+        "hex": "#ffe69b",
+        "lch": "lch(92.116% 39.868 87.975)",
+        "oklch": "oklch(92.8685% 0.09759 91.743)"
+      },
+      "--adaptivePurple400": {
+        "value": "#b44bd7",
+        "hex": "#b44bd7",
+        "lch": "lch(51.058% 79.11 317.513)",
+        "oklch": "oklch(60.8597% 0.21738 316.584)"
+      },
+      "--adaptiveRed500": {
+        "value": "#f04452",
+        "hex": "#f04452",
+        "lch": "lch(56.134% 74.265 26.614)",
+        "oklch": "oklch(64.0597% 0.20752 21.045)"
+      },
+      "--adaptivePurple500": {
+        "value": "#a234c7",
+        "hex": "#a234c7",
+        "lch": "lch(44.18% 82.047 317.501)",
+        "oklch": "oklch(55.1381% 0.22365 315.995)"
+      },
+      "--adaptiveGreen100": {
+        "value": "#aeefd5",
+        "hex": "#aeefd5",
+        "lch": "lch(89.547% 25.838 167.187)",
+        "oklch": "oklch(90.1324% 0.07462 167.98)"
+      },
+      "--adaptivePurple800": {
+        "value": "#73228e",
+        "hex": "#73228e",
+        "lch": "lch(30.881% 64.094 317.561)",
+        "oklch": "oklch(42.9623% 0.17475 316.068)"
+      },
+      "--adaptiveYellow600": {
+        "value": "#ffb331",
+        "hex": "#ffb331",
+        "lch": "lch(78.9% 74.937 73.608)",
+        "oklch": "oklch(81.9334% 0.1593 75.19)"
+      },
+      "--tGreenBadgeColor": {
+        "value": "#029359",
+        "hex": "#029359",
+        "lch": "lch(53.53% 49.986 155.129)",
+        "oklch": "oklch(58.3876% 0.13844 157.055)"
+      },
+      "--adaptiveOrange500": {
+        "value": "#fe9800",
+        "hex": "#fe9800",
+        "lch": "lch(72.604% 84.293 66.544)",
+        "oklch": "oklch(76.9014% 0.17342 64.362)"
+      },
+      "--adaptiveTeal100": {
+        "value": "#bce9e9",
+        "hex": "#bce9e9",
+        "lch": "lch(89.178% 15.83 198.56)",
+        "oklch": "oklch(90.2517% 0.0464 196.359)"
+      },
+      "--adaptiveGreen300": {
+        "value": "#3fd599",
+        "hex": "#3fd599",
+        "lch": "lch(76.519% 54.396 160.742)",
+        "oklch": "oklch(78.0186% 0.15239 161.954)"
+      },
+      "--adaptiveOrange700": {
+        "value": "#f57800",
+        "hex": "#f57800",
+        "lch": "lch(64.79% 85.426 57.876)",
+        "oklch": "oklch(70.5953% 0.18199 51.817)"
+      },
+      "--adaptiveDisabledBlue500": {
+        "value": "#c9e2ff",
+        "hex": "#c9e2ff",
+        "lch": "lch(88.723% 17.513 256.75)",
+        "oklch": "oklch(90.363% 0.04801 252.214)"
+      },
+      "--adaptiveGreen600": {
+        "value": "#02a262",
+        "hex": "#02a262",
+        "lch": "lch(58.653% 53.91 154.889)",
+        "oklch": "oklch(62.6843% 0.14926 156.853)"
+      },
+      "--adaptiveTeal300": {
+        "value": "#58c7c7",
+        "hex": "#58c7c7",
+        "lch": "lch(73.917% 34.397 197.093)",
+        "oklch": "oklch(76.5972% 0.10078 195.255)"
+      },
+      "--adaptiveGreen900": {
+        "value": "#027648",
+        "hex": "#027648",
+        "lch": "lch(43.35% 42.011 155.982)",
+        "oklch": "oklch(49.8539% 0.11647 157.777)"
+      },
+      "--adaptiveTeal500": {
+        "value": "#18a5a5",
+        "hex": "#18a5a5",
+        "lch": "lch(61.183% 36.899 196.533)",
+        "oklch": "oklch(65.5502% 0.10801 194.84)"
+      },
+      "--adaptiveOrange300": {
+        "value": "#ffbd51",
+        "hex": "#ffbd51",
+        "lch": "lch(81.419% 64.504 74.602)",
+        "oklch": "oklch(84.015% 0.14345 76.657)"
+      },
+      "--adaptiveYellow300": {
+        "value": "#ffdd78",
+        "hex": "#ffdd78",
+        "lch": "lch(89.498% 53.627 86.419)",
+        "oklch": "oklch(90.5832% 0.12621 91.163)"
+      },
+      "--adaptiveBlue200": {
+        "value": "#90c2ff",
+        "hex": "#90c2ff",
+        "lch": "lch(76.643% 36.091 261.813)",
+        "oklch": "oklch(80.1915% 0.1019 253.854)"
+      },
+      "--adaptiveTeal900": {
+        "value": "#076565",
+        "hex": "#076565",
+        "lch": "lch(38.137% 26.181 196.501)",
+        "oklch": "oklch(45.9699% 0.07663 194.817)"
+      },
+      "--tLightWeakButtonBackground": {
+        "value": "rgba(222,222,255,0.19)",
+        "hex": "#dedeff",
+        "lch": "lch(89.243% 16.765 286.473 / 0.19)",
+        "oklch": "oklch(91.0847% 0.04484 285.476 / 0.19)"
+      },
+      "--adaptiveOrange200": {
+        "value": "#ffcd80",
+        "hex": "#ffcd80",
+        "lch": "lch(85.668% 46.629 75.583)",
+        "oklch": "oklch(87.5976% 0.11055 77.324)"
+      },
+      "--adaptiveOrange400": {
+        "value": "#ffa927",
+        "hex": "#ffa927",
+        "lch": "lch(76.569% 77.494 70.456)",
+        "oklch": "oklch(80.0775% 0.16322 70.619)"
+      },
+      "--adaptivePurple100": {
+        "value": "#edccf8",
+        "hex": "#edccf8",
+        "lch": "lch(85.917% 24.673 315.818)",
+        "oklch": "oklch(88.6621% 0.06903 317.635)"
+      },
+      "--adaptiveYellow100": {
+        "value": "#ffefbf",
+        "hex": "#ffefbf",
+        "lch": "lch(94.86% 25.395 89.379)",
+        "oklch": "oklch(95.3154% 0.06415 91.805)"
+      },
+      "--adaptiveRed700": {
+        "value": "#d22030",
+        "hex": "#d22030",
+        "lch": "lch(46.387% 77.663 31.205)",
+        "oklch": "oklch(55.6368% 0.20872 23.88)"
+      },
+      "--adaptiveYellow800": {
+        "value": "#ee8f11",
+        "hex": "#ee8f11",
+        "lch": "lch(68.57% 78.041 66.113)",
+        "oklch": "oklch(73.395% 0.16261 64.018)"
+      },
+      "--adaptiveYellow400": {
+        "value": "#ffd158",
+        "hex": "#ffd158",
+        "lch": "lch(86.282% 64.646 83.269)",
+        "oklch": "oklch(87.8888% 0.14551 88.02)"
+      },
+      "--adaptiveTeal200": {
+        "value": "#89d8d8",
+        "hex": "#89d8d8",
+        "lch": "lch(81.267% 26.517 197.77)",
+        "oklch": "oklch(83.1454% 0.07773 195.76)"
+      },
+      "--adaptiveOrange800": {
+        "value": "#ed6700",
+        "hex": "#ed6700",
+        "lch": "lch(60.399% 85.653 54.128)",
+        "oklch": "oklch(66.9933% 0.18654 46.593)"
+      },
+      "--adaptiveRed100": {
+        "value": "#ffd4d6",
+        "hex": "#ffd4d6",
+        "lch": "lch(88.698% 16.537 17.518)",
+        "oklch": "oklch(90.7076% 0.04837 14.924)"
+      },
+      "--adaptiveRed900": {
+        "value": "#a51926",
+        "hex": "#a51926",
+        "lch": "lch(36.342% 63.887 30.418)",
+        "oklch": "oklch(46.6655% 0.17291 23.372)"
+      },
+      "--adaptivePurple600": {
+        "value": "#9128b4",
+        "hex": "#9128b4",
+        "lch": "lch(38.878% 78.514 317.536)",
+        "oklch": "oklch(50.4605% 0.2134 315.835)"
+      },
+      "--adaptiveGreen800": {
+        "value": "#028450",
+        "hex": "#028450",
+        "lch": "lch(48.311% 45.981 155.418)",
+        "oklch": "oklch(54.0109% 0.12739 157.299)"
+      },
+      "--adaptiveOrange100": {
+        "value": "#ffe0b0",
+        "hex": "#ffe0b0",
+        "lch": "lch(90.926% 28.394 77.69)",
+        "oklch": "oklch(92.0863% 0.07079 78.525)"
+      },
+      "--adaptiveRed800": {
+        "value": "#bc1b2a",
+        "hex": "#bc1b2a",
+        "lch": "lch(41.401% 71.539 31.104)",
+        "oklch": "oklch(51.1956% 0.19241 23.79)"
+      }
+    },
+    "detected": [
+      {
+        "color": "rgb(51, 61, 75)",
+        "normalized": "#333d4b",
+        "count": 96,
+        "usageFrac": 0.34408602150537637,
+        "areaFrac": 0,
+        "confidence": "high",
+        "sources": [],
+        "isToken": true
+      },
+      {
+        "color": "rgb(107, 118, 132)",
+        "normalized": "#6b7684",
+        "count": 84,
+        "usageFrac": 0.3010752688172043,
+        "areaFrac": 0,
+        "confidence": "high",
+        "sources": [
+          "css-he84hn"
+        ],
+        "isToken": true
+      },
+      {
+        "color": "rgb(78, 89, 104)",
+        "normalized": "#4e5968",
+        "count": 25,
+        "usageFrac": 0.08960573476702509,
+        "areaFrac": 0,
+        "confidence": "high",
+        "sources": [],
+        "isToken": true
+      },
+      {
+        "color": "rgb(25, 31, 40)",
+        "normalized": "#191f28",
+        "count": 24,
+        "usageFrac": 0.08602150537634409,
+        "areaFrac": 0,
+        "confidence": "high",
+        "sources": [],
+        "isToken": true
+      },
+      {
+        "color": "rgb(242, 244, 246)",
+        "normalized": "#f2f4f6",
+        "count": 17,
+        "usageFrac": 0.06093189964157706,
+        "areaFrac": 0.1822101010208739,
+        "confidence": "high",
+        "sources": [],
+        "isToken": true
+      },
+      {
+        "color": "rgb(139, 149, 161)",
+        "normalized": "#8b95a1",
+        "count": 13,
+        "usageFrac": 0.04659498207885305,
+        "areaFrac": 0,
+        "confidence": "high",
+        "sources": [],
+        "isToken": true
+      },
+      {
+        "color": "rgb(255, 255, 255)",
+        "normalized": "#ffffff",
+        "count": 5,
+        "usageFrac": 0.017921146953405017,
+        "areaFrac": 0.696865407077497,
+        "confidence": "medium",
+        "sources": [],
+        "isToken": true
+      },
+      {
+        "color": "rgb(69, 147, 252)",
+        "normalized": "#4593fc",
+        "count": 5,
+        "usageFrac": 0.017921146953405017,
+        "areaFrac": 0,
+        "confidence": "medium",
+        "sources": [],
+        "isToken": true
+      },
+      {
+        "color": "rgba(3, 18, 40, 0.7)",
+        "normalized": "#031228",
+        "count": 3,
+        "usageFrac": 0.010752688172043012,
+        "areaFrac": 0,
+        "confidence": "high",
+        "sources": [
+          "_3u0hjw0"
+        ],
+        "isToken": true
+      },
+      {
+        "color": "rgb(0, 0, 0)",
+        "normalized": "#000000",
+        "count": 2,
+        "usageFrac": 0.007168458781362007,
+        "areaFrac": 0,
+        "confidence": "medium",
+        "sources": [],
+        "isToken": true
+      },
+      {
+        "color": "rgb(249, 250, 251)",
+        "normalized": "#f9fafb",
+        "count": 2,
+        "usageFrac": 0.007168458781362007,
+        "areaFrac": 0.12057826447024746,
+        "confidence": "medium",
+        "sources": [
+          "plzy3g0"
+        ],
+        "isToken": true
+      },
+      {
+        "color": "rgba(0, 12, 30, 0.8)",
+        "normalized": "#000c1e",
+        "count": 1,
+        "usageFrac": 0.0035842293906810036,
+        "areaFrac": 0.0003462274313816259,
+        "confidence": "medium",
+        "sources": [],
+        "isToken": true
+      },
+      {
+        "color": "rgb(27, 100, 218)",
+        "normalized": "#1b64da",
+        "count": 1,
+        "usageFrac": 0.0035842293906810036,
+        "areaFrac": 0,
+        "confidence": "medium",
+        "sources": [],
+        "isToken": true
+      },
+      {
+        "color": "rgb(49, 130, 246)",
+        "normalized": "#3182f6",
+        "count": 1,
+        "usageFrac": 0.0035842293906810036,
+        "areaFrac": 0,
+        "confidence": "medium",
+        "sources": [],
+        "isToken": true
+      }
+    ]
+  },
+  "typography": {
+    "styles": [
+      {
+        "context": "heading-2",
+        "count": 2,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "40px (2.50rem)",
+        "weight": 700,
+        "lineHeight": "1.35",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "heading-2",
+        "count": 6,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "32px (2.00rem)",
+        "weight": 600,
+        "lineHeight": "1.45",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "heading-3",
+        "count": 34,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "24px (1.50rem)",
+        "weight": 700,
+        "lineHeight": "1.60",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "body",
+        "count": 102,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "24px (1.50rem)",
+        "weight": 700,
+        "lineHeight": "0.00",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "heading-3",
+        "count": 4,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "22px (1.38rem)",
+        "weight": 700,
+        "lineHeight": "1.50",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "body",
+        "count": 8,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "20px (1.25rem)",
+        "weight": 500,
+        "lineHeight": "1.50",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "body",
+        "count": 5,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "20px (1.25rem)",
+        "weight": 700,
+        "lineHeight": "1.47",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "heading-4",
+        "count": 8,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "20px (1.25rem)",
+        "weight": 600,
+        "lineHeight": "1.50",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "heading-4",
+        "count": 16,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "19px (1.19rem)",
+        "weight": 400,
+        "lineHeight": "1.60",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "body",
+        "count": 36,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "19px (1.19rem)",
+        "weight": 400,
+        "lineHeight": "0.00",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "body",
+        "count": 2,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "19px (1.19rem)",
+        "weight": 700,
+        "lineHeight": "1.60",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "body",
+        "count": 5,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "18px (1.13rem)",
+        "weight": 500,
+        "lineHeight": "1.20",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "body",
+        "count": 550,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "17px (1.06rem)",
+        "weight": 400,
+        "lineHeight": "1.60",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "body",
+        "count": 12,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "17px (1.06rem)",
+        "weight": 700,
+        "lineHeight": "1.60",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "body",
+        "count": 3,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "17px (1.06rem)",
+        "weight": 600,
+        "lineHeight": "1.50",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "body",
+        "count": 1,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "17px (1.06rem)",
+        "weight": 800,
+        "lineHeight": "1.50",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "link",
+        "count": 32,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "16px (1.00rem)",
+        "weight": 400,
+        "lineHeight": "1.00",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "ui",
+        "count": 5,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "16px (1.00rem)",
+        "weight": 600,
+        "lineHeight": "0.00",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "body",
+        "count": 6,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "16px (1.00rem)",
+        "weight": 600,
+        "lineHeight": "0.00",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "ui",
+        "count": 2,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "16px (1.00rem)",
+        "weight": 400,
+        "lineHeight": "1.00",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "body",
+        "count": 2,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "16px (1.00rem)",
+        "weight": 400,
+        "lineHeight": "0.00",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "link",
+        "count": 1,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "16px (1.00rem)",
+        "weight": 600,
+        "lineHeight": "1.60",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "link",
+        "count": 11,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "15px (0.94rem)",
+        "weight": 600,
+        "lineHeight": "1.47",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "body",
+        "count": 26,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "15px (0.94rem)",
+        "weight": 400,
+        "lineHeight": "1.43",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "ui",
+        "count": 1,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "15px (0.94rem)",
+        "weight": 600,
+        "lineHeight": "1.47",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "link",
+        "count": 37,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "15px (0.94rem)",
+        "weight": 400,
+        "lineHeight": "2.00",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "body",
+        "count": 4,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "14px (0.88rem)",
+        "weight": 400,
+        "lineHeight": "1.60",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "body",
+        "count": 14,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "13px (0.81rem)",
+        "weight": 700,
+        "lineHeight": "1.70",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "body",
+        "count": 2,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "13px (0.81rem)",
+        "weight": 400,
+        "lineHeight": "1.70",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "link",
+        "count": 21,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "13px (0.81rem)",
+        "weight": 400,
+        "lineHeight": "1.60",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "caption",
+        "count": 1,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "12px (0.75rem)",
+        "weight": 700,
+        "lineHeight": "1.83",
+        "spacing": null,
+        "transform": null
+      },
+      {
+        "context": "caption",
+        "count": 4,
+        "family": "Toss Product Sans",
+        "fallbacks": "Tossface, SF Pro KR, SF Pro Display, SF Pro Icons, -apple-system, BlinkMacSystemFont, Basier Square, Apple SD Gothic Neo, Roboto, Noto Sans KR, Noto Sans, Helvetica Neue, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji",
+        "size": "10px (0.63rem)",
+        "weight": 700,
+        "lineHeight": "1.80",
+        "spacing": null,
+        "transform": null
+      }
+    ],
+    "sources": {
+      "googleFonts": [],
+      "adobeFonts": false,
+      "variableFonts": false,
+      "customFonts": [
+        "Toss Product Sans"
+      ],
+      "urls": [],
+      "selfHostedFonts": [
+        "100.woff2",
+        "101.woff2",
+        "102.woff2",
+        "103.woff2",
+        "104.woff2",
+        "105.woff2",
+        "106.woff2",
+        "107.woff2",
+        "108.woff2",
+        "109.woff2",
+        "110.woff2",
+        "111.woff2",
+        "112.woff2",
+        "113.woff2",
+        "114.woff2",
+        "115.woff2",
+        "116.woff2",
+        "117.woff2",
+        "118.woff2",
+        "119.woff2",
+        "123.woff2",
+        "20.woff2",
+        "99.woff2"
+      ]
+    }
+  },
+  "spacing": {
+    "scaleType": "8px",
+    "commonValues": [
+      {
+        "px": "0.78125px",
+        "display": "0.78125px",
+        "rem": "0.05rem",
+        "count": 2,
+        "numericValue": 0.78125
+      },
+      {
+        "px": "3px",
+        "display": "3px",
+        "rem": "0.19rem",
+        "count": 4,
+        "numericValue": 3
+      },
+      {
+        "px": "4px",
+        "display": "4px",
+        "rem": "0.25rem",
+        "count": 50,
+        "numericValue": 4
+      },
+      {
+        "px": "5px",
+        "display": "5px",
+        "rem": "0.31rem",
+        "count": 13,
+        "numericValue": 5
+      },
+      {
+        "px": "6px",
+        "display": "6px",
+        "rem": "0.38rem",
+        "count": 6,
+        "numericValue": 6
+      },
+      {
+        "px": "8px",
+        "display": "8px",
+        "rem": "0.50rem",
+        "count": 178,
+        "numericValue": 8
+      },
+      {
+        "px": "9px",
+        "display": "9px",
+        "rem": "0.56rem",
+        "count": 8,
+        "numericValue": 9
+      },
+      {
+        "px": "10px",
+        "display": "10px",
+        "rem": "0.63rem",
+        "count": 2,
+        "numericValue": 10
+      },
+      {
+        "px": "12px",
+        "display": "12px",
+        "rem": "0.75rem",
+        "count": 14,
+        "numericValue": 12
+      },
+      {
+        "px": "16px",
+        "display": "16px",
+        "rem": "1.00rem",
+        "count": 17,
+        "numericValue": 16
+      },
+      {
+        "px": "18px",
+        "display": "18px",
+        "rem": "1.13rem",
+        "count": 28,
+        "numericValue": 18
+      },
+      {
+        "px": "20px",
+        "display": "20px",
+        "rem": "1.25rem",
+        "count": 10,
+        "numericValue": 20
+      },
+      {
+        "px": "24px",
+        "display": "24px",
+        "rem": "1.50rem",
+        "count": 214,
+        "numericValue": 24
+      },
+      {
+        "px": "32px",
+        "display": "32px",
+        "rem": "2.00rem",
+        "count": 17,
+        "numericValue": 32
+      },
+      {
+        "px": "36px",
+        "display": "36px",
+        "rem": "2.25rem",
+        "count": 4,
+        "numericValue": 36
+      },
+      {
+        "px": "40px",
+        "display": "40px",
+        "rem": "2.50rem",
+        "count": 9,
+        "numericValue": 40
+      },
+      {
+        "px": "47px",
+        "display": "47px",
+        "rem": "2.94rem",
+        "count": 4,
+        "numericValue": 47
+      },
+      {
+        "px": "48px",
+        "display": "48px",
+        "rem": "3.00rem",
+        "count": 2,
+        "numericValue": 48
+      },
+      {
+        "px": "100px",
+        "display": "100px",
+        "rem": "6.25rem",
+        "count": 2,
+        "numericValue": 100
+      },
+      {
+        "px": "293px",
+        "display": "293px",
+        "rem": "18.31rem",
+        "count": 4,
+        "numericValue": 293
+      }
+    ]
+  },
+  "borderRadius": {
+    "values": [
+      {
+        "value": "0px 0px 16px 16px",
+        "count": 4,
+        "elements": [
+          "div"
+        ],
+        "confidence": "medium",
+        "numericValue": 0
+      },
+      {
+        "value": "4px",
+        "count": 2,
+        "elements": [
+          "메뉴",
+          "div"
+        ],
+        "confidence": "low",
+        "numericValue": 4
+      },
+      {
+        "value": "10px",
+        "count": 48,
+        "elements": [
+          "li",
+          "div",
+          "a",
+          "검색",
+          "시스템모드"
+        ],
+        "confidence": "high",
+        "numericValue": 10
+      },
+      {
+        "value": "12px",
+        "count": 1,
+        "elements": [
+          "div"
+        ],
+        "confidence": "low",
+        "numericValue": 12
+      },
+      {
+        "value": "16px",
+        "count": 30,
+        "elements": [
+          "aside",
+          "div"
+        ],
+        "confidence": "high",
+        "numericValue": 16
+      },
+      {
+        "value": "18px",
+        "count": 2,
+        "elements": [
+          "div"
+        ],
+        "confidence": "low",
+        "numericValue": 18
+      },
+      {
+        "value": "30px",
+        "count": 1,
+        "elements": [
+          "div"
+        ],
+        "confidence": "low",
+        "numericValue": 30
+      },
+      {
+        "value": "100px",
+        "count": 5,
+        "elements": [
+          "span"
+        ],
+        "confidence": "medium",
+        "numericValue": 100
+      },
+      {
+        "value": "999px",
+        "count": 2,
+        "elements": [
+          "p",
+          "“불안할 때 나는 맑고 산뜻한 걸 찾지 않는다” 아티클 보기"
+        ],
+        "confidence": "low",
+        "numericValue": 999
+      },
+      {
+        "value": "50%",
+        "count": 8,
+        "elements": [
+          "div",
+          "Toss Blog",
+          "Toss Naver Post",
+          "Toss X",
+          "Toss Instagram"
+        ],
+        "confidence": "medium",
+        "numericValue": 50
+      }
+    ]
+  },
+  "borders": {
+    "combinations": [
+      {
+        "width": "1px",
+        "style": "solid",
+        "color": "rgba(0, 29, 58, 0.18)",
+        "count": 8,
+        "elements": [
+          "div"
+        ],
+        "confidence": "medium"
+      },
+      {
+        "width": "1px",
+        "style": "solid",
+        "color": "rgba(2, 32, 71, 0.05)",
+        "count": 2,
+        "elements": [
+          "div"
+        ],
+        "confidence": "low"
+      },
+      {
+        "width": "0px 0px 1px",
+        "style": "none none solid",
+        "color": "rgb(0, 0, 0)",
+        "count": 1,
+        "elements": [
+          "nav"
+        ],
+        "confidence": "low"
+      }
+    ]
+  },
+  "shadows": [
+    {
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 1px inset",
+      "count": 8,
+      "confidence": "high"
+    }
+  ],
+  "gradients": [
+    {
+      "gradient": "linear-gradient(rgb(242, 244, 246) 0%, rgb(255, 255, 255) 100%)",
+      "type": "linear",
+      "stopColors": [
+        "rgb(242, 244, 246)",
+        "rgb(255, 255, 255)"
+      ],
+      "count": 1
+    },
+    {
+      "gradient": "linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.282) 8.77%, rgba(0, 0, 0, 0.267) 16.15%, rgba(0, 0, 0, 0.25) 22.37%, rgba(0, 0, 0, 0.235) 27.71%, rgba(0, 0, 0, 0.22) 32.4%, rgba(0, 0, 0, 0.204) 36.7%, rgba(0, 0, 0, 0.184) 40.88%, rgba(0, 0, 0, 0.17) 45.17%, rgba(0, 0, 0, 0.15) 49.85%, rgba(0, 0, 0, 0.13) 55.15%, rgba(0, 0, 0, 0.106) 61.34%, rgba(0, 0, 0, 0.082) 68.66%, rgba(0, 0, 0, 0.06) 77.38%, rgba(0, 0, 0, 0.03) 87.74%, rgba(0, 0, 0, 0) 100%)",
+      "type": "linear",
+      "stopColors": [
+        "rgba(0, 0, 0, 0.3)",
+        "rgba(0, 0, 0, 0.282)",
+        "rgba(0, 0, 0, 0.267)",
+        "rgba(0, 0, 0, 0.25)",
+        "rgba(0, 0, 0, 0.235)",
+        "rgba(0, 0, 0, 0.22)",
+        "rgba(0, 0, 0, 0.204)",
+        "rgba(0, 0, 0, 0.184)",
+        "rgba(0, 0, 0, 0.17)",
+        "rgba(0, 0, 0, 0.15)",
+        "rgba(0, 0, 0, 0.13)",
+        "rgba(0, 0, 0, 0.106)",
+        "rgba(0, 0, 0, 0.082)",
+        "rgba(0, 0, 0, 0.06)",
+        "rgba(0, 0, 0, 0.03)",
+        "rgba(0, 0, 0, 0)"
+      ],
+      "count": 1
+    },
+    {
+      "gradient": "linear-gradient(rgba(0, 0, 0, 0) 0%, rgb(255, 255, 255) 91.35%)",
+      "type": "linear",
+      "stopColors": [
+        "rgba(0, 0, 0, 0)",
+        "rgb(255, 255, 255)"
+      ],
+      "count": 1
+    }
+  ],
+  "motion": {
+    "durations": [
+      {
+        "value": "0.15s",
+        "ms": 150,
+        "count": 8
+      },
+      {
+        "value": "0.2s",
+        "ms": 200,
+        "count": 137
+      },
+      {
+        "value": "0.5s",
+        "ms": 500,
+        "count": 4
+      }
+    ],
+    "easings": [
+      {
+        "value": "ease",
+        "type": "ease",
+        "count": 141
+      },
+      {
+        "value": "ease-in-out",
+        "type": "ease-in-out",
+        "count": 8
+      }
+    ],
+    "animations": [],
+    "contexts": {
+      "link": {
+        "count": 15,
+        "durations": [
+          "0.2s",
+          "0.15s"
+        ],
+        "easing": "ease",
+        "easingType": "ease",
+        "props": [
+          "color",
+          "background",
+          "box-shadow",
+          "background-color"
+        ]
+      },
+      "button": {
+        "count": 3,
+        "durations": [
+          "0.2s",
+          "0.15s"
+        ],
+        "easing": "ease-in-out",
+        "easingType": "ease-in-out",
+        "props": [
+          "background-color",
+          "color",
+          "background",
+          "box-shadow"
+        ]
+      }
+    },
+    "interactiveDeltas": [
+      {
+        "tag": "button",
+        "text": "",
+        "pattern": "color-shift",
+        "delta": {
+          "background": {
+            "from": "rgba(0, 0, 0, 0)",
+            "to": "rgba(2, 32, 71, 0.04)"
+          }
+        }
+      },
+      {
+        "tag": "button",
+        "text": "",
+        "pattern": "color-shift",
+        "delta": {
+          "background": {
+            "from": "rgba(0, 0, 0, 0)",
+            "to": "rgba(2, 32, 71, 0.03)"
+          }
+        }
+      }
+    ]
+  },
+  "components": {
+    "buttons": [
+      {
+        "states": {
+          "default": {
+            "backgroundColor": "rgba(2, 32, 71, 0.05)",
+            "color": "rgba(3, 18, 40, 0.7)",
+            "padding": "9px 12px",
+            "borderRadius": "10px",
+            "border": "0px none rgba(3, 18, 40, 0.7)",
+            "boxShadow": "rgba(0, 0, 0, 0) 0px 0px 0px 1px inset",
+            "fontSize": "15px",
+            "fontWeight": "600"
+          }
+        },
+        "fontWeight": "600",
+        "fontSize": "15px",
+        "text": "더 펼쳐보기",
+        "confidence": "high"
+      }
+    ],
+    "inputs": {
+      "text": [],
+      "checkbox": [],
+      "radio": [],
+      "select": []
+    },
+    "links": [
+      {
+        "color": "rgb(0, 0, 238)",
+        "textDecoration": "none",
+        "fontWeight": "400",
+        "states": {
+          "default": {
+            "color": "rgb(0, 0, 238)",
+            "textDecoration": "none"
+          },
+          "hover": {
+            "textDecoration": "none",
+            "color": "rgb(0, 86, 179)"
+          }
+        }
+      },
+      {
+        "color": "rgba(0, 12, 30, 0.8)",
+        "textDecoration": "none",
+        "fontWeight": "600",
+        "states": {
+          "default": {
+            "color": "rgba(0, 12, 30, 0.8)",
+            "textDecoration": "none"
+          },
+          "hover": {
+            "textDecoration": "none",
+            "color": "rgb(0, 86, 179)"
+          }
+        }
+      },
+      {
+        "color": "rgba(3, 18, 40, 0.7)",
+        "textDecoration": "none",
+        "fontWeight": "600",
+        "states": {
+          "default": {
+            "color": "rgba(3, 18, 40, 0.7)",
+            "textDecoration": "none"
+          },
+          "hover": {
+            "textDecoration": "none",
+            "color": "rgb(0, 86, 179)"
+          }
+        }
+      },
+      {
+        "color": "rgb(107, 118, 132)",
+        "textDecoration": "none",
+        "fontWeight": "400",
+        "states": {
+          "default": {
+            "color": "rgb(107, 118, 132)",
+            "textDecoration": "none"
+          },
+          "hover": {
+            "textDecoration": "none",
+            "color": "rgb(0, 86, 179)"
+          }
+        }
+      }
+    ],
+    "badges": {
+      "all": [],
+      "byVariant": {
+        "error": [],
+        "warning": [],
+        "success": [],
+        "info": [],
+        "neutral": []
+      }
+    }
+  },
+  "breakpoints": [
+    {
+      "px": "639px"
+    },
+    {
+      "px": "767px"
+    },
+    {
+      "px": "780px"
+    },
+    {
+      "px": "1199px"
+    },
+    {
+      "px": "1200px"
+    }
+  ],
+  "iconSystem": [],
+  "frameworks": []
+}

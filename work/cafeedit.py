@@ -5,6 +5,14 @@
 #   py -3.12 work/naverpost.py edit-ok work/research/editor/2026-10-01/cafe/44.txt firemap-editor   # editor가 대조표를 보고 통과 표시
 #   py -3.12 work/naverpost.py edit 44 work/research/editor/2026-10-01/cafe/44.txt --apply  # 적용(통과 표시 + 하루 상한 + STOP 확인)
 #
+# 사진 교체(2026-10-05 추가): 글은 그대로 두고 그림만 같은 자리에서 바꾼다.
+#   py -3.12 work/naverpost.py editimg 193 work/research/editor/2026-10-03/cafe/193/img          # dry: 어느 사진이 어느 파일로 바뀌는지 대조표(브라우저·카페 수정 없음)
+#   py -3.12 work/naverpost.py edit-ok work/research/editor/2026-10-03/cafe/193/img/01.png firemap-editor   # (파일마다) 통과 표시 - 사진 파일 해시로 도장
+#   py -3.12 work/naverpost.py editimg 193 <img폴더> --apply                                    # 적용(통과 표시 + 하루 상한 + STOP 확인)
+# - 짝 맞추기: 폴더의 파일 이름(01.png)이 카페 글 속 사진 주소 끝 이름과 같은 것끼리. 짝 없는 파일/같은 이름 사진이 둘이면 거절.
+# - 글·사진 순서·사진 수는 안 바뀐다. 적용 뒤 글 API를 다시 읽어 바뀐 자리 주소만 달라졌는지, 나머지 사진·글 전부 그대로인지 대조한다.
+# - 적용 길(편집기에서 새 사진을 앞 글 덩어리 끝에 넣고 옛 사진 덩어리 지우기)은 2026-10-05 현재 실제 편집기에서 시험 못 했다(dry만 검증).
+#
 # 원칙
 # - 사진은 손대지 않는다. 글 덩어리(se-text)만 갈아 끼우고, 사진(se-image)은 원래 자리·원래 파일 그대로 둔다.
 #   새 원고의 어느 줄이 어느 글 덩어리로 가는지는 '각 덩어리 첫 줄(소제목)'을 닻으로 찾는다. 닻이 없으면 거절.
@@ -205,11 +213,162 @@ def apply_browser(p):
             try: ctx.close()
             except Exception: pass
 
+# ---------- 사진 교체(2026-10-05) ----------
+PNG = b'\x89PNG\r\n\x1a\n'
+
+def img_info(data):
+    if data[:8] == PNG: return 'png', int.from_bytes(data[16:20], 'big'), int.from_bytes(data[20:24], 'big')
+    if data[:2] == b'\xff\xd8':
+        i = 2
+        while i + 9 < len(data):
+            if data[i] != 0xFF: i += 1; continue
+            m = data[i + 1]
+            if m in (0xC0, 0xC1, 0xC2): return 'jpg', int.from_bytes(data[i + 7:i + 9], 'big'), int.from_bytes(data[i + 5:i + 7], 'big')
+            i += 2 + int.from_bytes(data[i + 2:i + 4], 'big')
+    raise ValueError('png/jpg가 아니다')
+
+def fetch_bytes(url):
+    return urllib.request.urlopen(urllib.request.Request(url.split('?')[0], headers=UA), timeout=20).read()
+
+def plan_img(aid, imgdir, html, fetch_old=True):
+    comps = components(html)
+    live = [(i, c[1]) for i, c in enumerate(comps) if c[0] == 'image']
+    files = sorted(f for f in os.listdir(imgdir) if re.search(r'\.(png|jpe?g)$', f, re.I))
+    if not files: raise ValueError(f'{imgdir}에 사진 파일이 없다')
+    swaps = []
+    for f in files:
+        hit = [(i, u) for i, u in live if u.rsplit('/', 1)[-1] == f]
+        if len(hit) != 1: raise ValueError(f'사진 파일 {f}: 카페 글에서 같은 이름 사진이 {len(hit)}개다 - 자리를 못 정한다')
+        i, u = hit[0]
+        data = open(os.path.join(imgdir, f), 'rb').read()
+        kind, w, h = img_info(data)
+        if w < 600: raise ValueError(f'{f}: 가로 {w}px - 600px 미만은 거절')
+        row = {'file': f, 'comp': i, 'img_no': [x for x, _ in live].index(i), 'old_url': u, 'new_w': w, 'new_h': h,
+               'new_sha': hashlib.sha256(data).hexdigest(), 'new_bytes': len(data)}
+        if fetch_old:
+            try:
+                od = fetch_bytes(u); _, ow, oh = img_info(od)
+                row.update(old_w=ow, old_h=oh, old_sha=hashlib.sha256(od).hexdigest())
+                if row['old_sha'] == row['new_sha']: row['same_as_live'] = True
+                if abs(w / h - ow / oh) > 0.35 * (ow / oh): row['ratio_warn'] = f'가로세로 비 {ow / oh:.2f}→{w / h:.2f}'
+            except Exception as e: row['old_note'] = '옛 사진 못 읽음 ' + repr(e)[:60]
+        swaps.append(row)
+    return {'aid': int(aid), 'layout': [c[0] for c in comps], 'images': [u for _, u in live],
+            'texts': [c[1] for c in comps if c[0] == 'text'], 'swaps': swaps,
+            'sha_live': hashlib.sha256(html.encode('utf-8')).hexdigest()}
+
+def preview_img(subject, p):
+    L = [f'# 카페 {p["aid"]} 사진 교체 대조 (dry)', '', f'- 제목·본문 글자: 안 바꿈 ({subject})',
+         f'- 덩어리: {" · ".join(p["layout"])} - 사진 {len(p["images"])}장 중 {len(p["swaps"])}장만 교체', '']
+    for r in p['swaps']:
+        L.append(f'- 사진 {r["img_no"]} (덩어리 {r["comp"]}) {r["file"]}: {r.get("old_w", "?")}x{r.get("old_h", "?")} → {r["new_w"]}x{r["new_h"]} · {r["new_bytes"]}B'
+                 + (' · **지금과 같은 그림(바꿀 것 없음)**' if r.get('same_as_live') else '') + (f' · 경고 {r["ratio_warn"]}' if r.get('ratio_warn') else '')
+                 + (f' · {r["old_note"]}' if r.get('old_note') else ''))
+    return '\n'.join(L)
+
+def ok_img(imgdir, files):
+    miss = []
+    for f in files:
+        path = os.path.join(imgdir, f)
+        sha = hashlib.sha256(open(path, 'rb').read()).hexdigest()
+        try: d = json.load(open(ok_path(path), encoding='utf-8'))
+        except FileNotFoundError: miss.append(f'{f} 통과 표시 없음'); continue
+        if d.get('sha') != sha: miss.append(f'{f} 통과 뒤 파일이 바뀜')
+    return (not miss), '; '.join(miss) or '통과'
+
+def mark_ok_img(path, who):
+    sha = hashlib.sha256(open(path, 'rb').read()).hexdigest()
+    json.dump({'sha': sha, 'by': who, 'at': datetime.datetime.now().isoformat(timespec='seconds')}, open(ok_path(path), 'w', encoding='utf-8'), ensure_ascii=False)
+    return sha
+
+def compare_after_img(p, html_after):
+    comps = components(html_after)
+    imgs = [c[1] for c in comps if c[0] == 'image']; texts = [c[1] for c in comps if c[0] == 'text']
+    bad = []
+    if [c[0] for c in comps] != p['layout']: bad.append('덩어리 순서·수 달라짐')
+    if len(imgs) != len(p['images']): return bad + ['사진 수 달라짐']
+    swapped = {r['img_no'] for r in p['swaps']}
+    for i, (new, old) in enumerate(zip(imgs, p['images'])):
+        if i in swapped and new == old: bad.append(f'사진 {i} 안 바뀜')
+        if i not in swapped and new != old: bad.append(f'사진 {i} 바뀌면 안 되는데 바뀜')
+        if new.rsplit('/', 1)[-1] != old.rsplit('/', 1)[-1]: bad.append(f'사진 {i} 파일 이름 달라짐')
+    if [norm(''.join(t)) for t in texts] != [norm(''.join(t)) for t in p['texts']]: bad.append('글 덩어리가 달라짐')
+    return bad
+
+def apply_browser_img(p, imgdir):
+    # 시험 못 한 길(2026-10-05): 옛 사진 바로 앞 글 덩어리 끝에 새 사진을 넣고, 옛 사진 덩어리를 지운다.
+    import naverpost as N
+    from playwright.sync_api import sync_playwright
+    with sync_playwright() as pw:
+        ctx = N.launch(pw, headless=os.environ.get('NAVER_HEADED') != '1'); page = ctx.new_page()
+        try:
+            if not N.logged_in(page): raise RuntimeError('로그인 안 됨 - py -3.12 work/naverpost.py login')
+            edit = N.open_cafe_edit(page, p['aid']); frame = edit.main_frame
+            if frame.locator('.se-component').count() != len(p['layout']): raise RuntimeError('편집기 덩어리 수가 글과 다르다')
+            photo = frame.locator('button[data-name="image"]').first
+            for r in sorted(p['swaps'], key=lambda r: -r['comp']):          # 뒤에서부터(앞 번호가 안 밀리게)
+                before = frame.locator('.se-component.se-image').count()
+                prev = frame.locator('.se-component').nth(r['comp'] - 1)
+                if 'se-text' not in (prev.get_attribute('class') or ''): raise RuntimeError('옛 사진 바로 앞이 글 덩어리가 아님 - 자리를 못 정한다')
+                last = prev.locator('.se-text-paragraph').last
+                last.evaluate("e => e.scrollIntoView({block: 'center'})"); edit.wait_for_timeout(200)
+                b = last.bounding_box(); edit.mouse.click(b['x'] + b['width'] - 2, b['y'] + b['height'] - 3); edit.keyboard.press('End')
+                with edit.expect_file_chooser(timeout=15000) as fc: photo.click()
+                fc.value.set_files(os.path.join(imgdir, r['file']))
+                for _ in range(40):
+                    edit.wait_for_timeout(500)
+                    if frame.locator('.se-component.se-image').count() > before: break
+                else: raise RuntimeError(f'{r["file"]} 새 사진이 안 들어감')
+                edit.wait_for_timeout(800)
+                old = frame.locator('.se-component').nth(r['comp'] + 1)            # 새 사진이 앞에 끼었으니 옛 사진은 한 칸 뒤
+                if 'se-image' not in (old.get_attribute('class') or ''): raise RuntimeError('옛 사진 자리를 못 찾음 - 등록하지 않는다')
+                old.click(); edit.keyboard.press('Delete'); edit.wait_for_timeout(600)
+                if frame.locator('.se-component.se-image').count() != before: raise RuntimeError(f'{r["file"]} 교체 뒤 사진 수가 다르다 - 등록하지 않는다')
+            N.shot(edit, f'cafe_editimg_{p["aid"]}')
+            if not N.set_cafe_public(edit): raise RuntimeError('전체공개 선택 실패')
+            return N.submit_cafe(edit)
+        finally:
+            try: ctx.close()
+            except Exception: pass
+
+def cli_img(args):
+    aid, imgdir = int(args[0]), os.path.abspath(args[1]); apply = '--apply' in args
+    subject, html = fetch_live(aid)
+    bk = backup(aid, subject, html)
+    p = plan_img(aid, imgdir, html)
+    d = os.path.dirname(bk)
+    json.dump(p, open(os.path.join(d, 'plan_img.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    pv = os.path.join(d, 'preview_img.md'); open(pv, 'w', encoding='utf-8').write(preview_img(subject, p))
+    print(f'원본 백업 {bk}\n대조표 {pv}\n' + preview_img(subject, p))
+    if not apply:
+        log({'at': datetime.datetime.now().isoformat(timespec='seconds'), 'aid': aid, 'imgdir': imgdir, 'applied': False, 'dry': True, 'kind': 'img'})
+        print('dry - 적용하지 않았다. editor가 사진 파일마다 edit-ok 한 뒤 --apply'); return 0
+    import naverpost as N
+    sf = N.stop_flag('cafe')
+    if sf: print('감사 정지 스위치 -', sf[:120]); return 2
+    if any(r.get('same_as_live') for r in p['swaps']): print('지금과 같은 그림이 있다 - 적용 안 함'); return 6
+    ok, why = ok_img(imgdir, [r['file'] for r in p['swaps']])
+    if not ok: print('적용 안 함:', why); return 4
+    n = edits_today()
+    if n >= EDIT_CAP: print(f'오늘 이미 {n}편 고쳤다 - 하루 {EDIT_CAP}편까지'); return 5
+    url = apply_browser_img(p, imgdir)
+    bad = ['읽기 실패']
+    for _ in range(4):
+        time.sleep(8)
+        try: bad = compare_after_img(p, fetch_live(aid)[1])
+        except Exception as e: bad = [repr(e)[:80]]
+        if not bad: break
+    log({'at': datetime.datetime.now().isoformat(timespec='seconds'), 'aid': aid, 'imgdir': imgdir, 'kind': 'img', 'applied': True, 'ok': not bad, 'bad': bad, 'backup': bk, 'url': url})
+    if bad: print('저장 뒤 대조 실패:', bad, '- 원본', bk); return 3
+    print('저장 확인: 바뀐 자리만 새 사진, 글·나머지 사진 그대로', url); return 0
+
 # ---------- 명령 ----------
 def cli(args):
     if args and args[0] == 'ok':                      # edit-ok <txt> <who>
         txt, who = os.path.abspath(args[1]), (args[2] if len(args) > 2 else 'firemap-editor')
+        if re.search(r'\.(png|jpe?g)$', txt, re.I): print('사진 통과 표시:', mark_ok_img(txt, who)[:12], who); return 0
         print('통과 표시:', mark_ok(txt, who)[:12], who); return 0
+    if args and args[0] == 'img': return cli_img(args[1:])
     aid, txt = int(args[0]), os.path.abspath(args[1])
     apply = '--apply' in args
     subject, html = fetch_live(aid)

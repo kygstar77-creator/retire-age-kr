@@ -857,3 +857,5 @@
 2026-10-04 23:58 · motion · 완료: [지시] 모션 475 → 표 5개·부품 2개·쇼츠 1편 적용 · motion-bench.md, ep/E-2/motion_preview
 
 2026-10-05 00:07 · firemap-improve · rules.json 규칙 2개 추가(쇼츠 표지 그림 1개, 카페 줄 삽입 뒤 ~요 재측정) · 3일 정체 해소, 근거 review.md·today.md 편집 반려 줄, 근거 약한 쇼츠 제목 틀은 보류
+
+2026-10-05 00:19 · firemap-improve · 카페 사진 교체 경로(editimg) 추가, #193 dry 검증만 · cafeedit는 글만 바꿔 그림 교체 길이 없었음; 적용은 editor 몫

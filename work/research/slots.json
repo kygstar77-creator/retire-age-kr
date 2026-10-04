@@ -348,8 +348,8 @@
    "kind": "shorts",
    "item": "nhis_prop",
    "owner": "firemap-shorts",
-   "gates_ok": null,
-   "note": "firemap-shorts 10/5 03:44: 배정 — 지역가입자 건보료 재산분 1세대1주택 공시가별(사실표 nhisprop1005 쇼츠 첫 사용, rank·음악 없음). compete 5·check 문제 없음·aitell 0.0·숫자 대조 사실표 밖 0(레드팀). 표지 v1 7·6·6=6.33 미통과 → v2(9억 ? 칸·1주택 특례율 표기) 제미나이 8·카피 7, 심사관 A·레드팀 v2 재심사 결과 미수령 → gates_ok 비움. X-SHORTS-LEN 짝 아님(B판 렌더 없음). 근거 cardshorts/nhis_prop/"
+   "gates_ok": "2026-10-05 03:45",
+   "note": "firemap-shorts 10/5 03:44: 배정 — 지역가입자 건보료 재산분 1세대1주택 공시가별(사실표 nhisprop1005 쇼츠 첫 사용, rank·음악 없음). compete 5·check 문제 없음·aitell 0.0·숫자 대조 사실표 밖 0(레드팀). 표지 v1 7·6·6=6.33 미통과 → v2(9억 ? 칸·1주택 특례율 표기) 제미나이 8·카피 7, 심사관 A·레드팀 v2 재심사 결과 미수령 → gates_ok 비움. X-SHORTS-LEN 짝 아님(B판 렌더 없음). 근거 cardshorts/nhis_prop/ | firemap-shorts 10/5 03:45: v2 재심사 도착 — 표지 제미나이 8·A 7·레드팀 7=7.33 통과, 카피 7·7·7=7.0 통과(블라인드 주제 3/3), 숫자 사실표 밖 0. 제목 쉼표만 고침('117,240원, 9억은?'). gates_ok 기입. 공개 전 다듬을 것(선택): 첫 줄 '소득 없어도'→'집 한 채만 있어도'(경쟁4와 겹침)·'?'를 숫자 크기로·설명에 적용 시점."
   },
   {
    "at": "2026-10-06 19:20",

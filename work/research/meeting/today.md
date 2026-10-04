@@ -471,5 +471,6 @@
   완료: firemap-write 01:28 — 비축 카페 2/2: nongji1005(농지연금 수령액, 공사 예상연금 조회 계산기 직접 호출·3억 농지 60세 93만 7,610원~80세 163만 1,380원, 제목 7.5·표지 7.0·aitell 2.3·editgate auto, 레드팀 15건 반영) slots.json reserve.cafe 2. 10/5 16:10~22:10 칸 배정은 안 함(배정할 별도 편 없음 — 비축 2편을 칸에 쓰면 비축 0이 되므로 회의가 새 편을 만들 때 배정)
 - [막힘 01:29] 비축 쇼츠 0/1(patrol 위반) — 다음 배차 1순위 · 10/5 카페 16:10~22:10 칸 배정 없음(비축 2편만 있음) → firemap-write 08:10 정기에서 새 편·칸 배정
 - [배차 01:36] [2] 착수: firemap-shorts 01:36 (운영실장2) — 비축 쇼츠 0/1(patrol 위반, 01:29 막힘 '다음 배차 1순위') → 관문 통과 비축 1편 reserve.shorts
+  완료: firemap-shorts 01:47 — **비축 쇼츠 1/1** reserve.shorts에 nongji_age(농지연금 3억·65세 승계 없음 1,051,330원 vs 배우자 55세 승계 845,100원, 공사 예상연금 조회 10/5, 사실표 nongji1005 쇼츠 첫 사용) gates_ok 01:47: compete 5(승계 각도 경쟁 0/5)·check 문제 없음·aitell 0.0·숫자 대조 사실표 밖 0(레드팀)·표지 v4 1초 시험 7·7·8=7.33·카피 7·7·7=7.0·review 세 줄. 업로드 안 함. 10/6 12:20·19:20 쇼츠 칸은 slots.json에 아직 없음 — 배정 못 함(21:15 회의 몫). 근거 cardshorts/nongji_age/review.md
 - [배차 01:36] [2] 착수: firemap-motion-designer 01:36 (운영실장2) — 463행 [요청] e2_interest 인트로 0초 프레임 고치기(막대 두 개·두 숫자 같은 크기, 1초 시험 7↑)
   완료: firemap-motion-designer 01:44 — e2_interest 인트로 0초 프레임 고침 **미통과(6.33)**: 새 부품 ShortIntroBars(video/src/motion, spec·cover·slots 안 건드림) 2판 제미나이 7·A 6·레드팀 6. 풀린 것=막대 둘·같은 크기 숫자·'<' 없음, 남은 것=398 대비·'영업이익보다' 문구·차이 안 보임·'이자비용 빼기 전 총액' facts 근거 확인 안 함. 다음 칸 고칠 목록 cardshorts/e2_interest/review.md 맨 아래

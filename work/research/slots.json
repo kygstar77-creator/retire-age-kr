@@ -11,7 +11,16 @@
     "long": 1
   },
   "reserve": {
-    "shorts": [],
+    "shorts": [
+      {
+        "item": "nongji_age",
+        "ep": "work/research/cardshorts/nongji_age.json",
+        "status": "관문 통과: compete 5(배우자 승계 각도 경쟁 0/5)·check 문제 없음·aitell 0.0·숫자 대조 사실표 밖 0(레드팀)·표지 v4 1초 시험 7·7·8=7.33·카피 7·7·7=7.0·review 세 줄 — 농지연금 3억·65세 승계 없음 1,051,330원 vs 배우자 55세 승계 845,100원(공사 예상연금 조회 10/5), rank·음악 없음. 사실표 nongji1005(쇼츠 첫 사용). publish 전 직전 편 layout만 다시 볼 것(rank 연속이면 bars로)",
+        "by": "firemap-shorts",
+        "at": "2026-10-05 01:47",
+        "gates_ok": "2026-10-05 01:47"
+      }
+    ],
     "cafe": [
       {
         "item": "nhisprop1005",

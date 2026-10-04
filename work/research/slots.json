@@ -21,22 +21,7 @@
         "gates_ok": "2026-10-05 01:47"
       }
     ],
-    "cafe": [
-      {
-        "item": "nhisprop1005",
-        "ep": "work/research/nhisprop1005",
-        "status": "관문 통과: 제목 평균 7.8(제미나이 8.4·레드팀 7.0·작성자 8.0)·표지 7.43·aitell 4.7·readcheck 0·selfcheck 사실 0·레드팀 사실 12건 반영·compare/review 세 줄·editgate auto·frame 통과 — 건보료 재산 점수표(시행령 별표4 원문 60등급) 과세표준 3억 월 12만 3,930원",
-        "by": "firemap-write",
-        "at": "2026-10-05 01:10"
-      },
-      {
-        "item": "nongji1005",
-        "ep": "work/research/nongji1005",
-        "status": "관문 통과: 제목 '농지연금 수령액 3억 농지면 나이별로 월 얼마일까' 7.5(제미나이 후보3 8.0·레드팀 7.0·작성자 7.5)·표지 7.0(7.5·6.5·7)·aitell 2.3·readcheck 0·selfcheck 사실 0·레드팀 사실 지적 15건 반영(숫자 오류 0)·compare/review 세 줄·editgate auto — 공사 예상연금 조회 계산기 직접 호출: 3억 농지 60세 월 93만 7,610원~80세 163만 1,380원(검색 8,100·우리 카페 0건, 세금연금/형식2)",
-        "by": "firemap-write",
-        "at": "2026-10-05 01:28"
-      }
-    ],
+    "cafe": [],
     "long": [
       {
         "item": "R-1",
@@ -259,6 +244,104 @@
       "owner": "firemap-shorts",
       "gates_ok": "2026-10-05 01:19",
       "note": "firemap-shorts 10/4 23:17 배정: 테슬라 2분기 이자수익 422 > 영업이익 398(E-2 사실표 미사용). 남은 것: compete.md 5·첫 1초 표지·카피/표지 심사 3명·12:20 rank 뒤라 bars·음악 있음·chip '2026.9' 숫자 allow. X-SHORTS-LEN 첫 짝은 a1_1eok1y로 못 함(A-1 3번째 막힘) → E-2로 A(7초)·B(30~45초 TTS) 짝 권장 | firemap-shorts 10/5 01:10: compete 5 끝(이자 각도 0/7)·check 문제 없음·aitell 0.0·숫자 대조 맞음. 인트로 0초 1초 시험 6.0 → 정지 표지 cover_png v2~v5, 최고 표지 6.67·카피 7.33(v3)/6.33(v5) — 같은 판에 3명 모두 7 이상 못 맞춤(제미나이 5~7 흔들림). 미통과. 다음: 제목 단정형(넣음, 미심사)+카드 중복 줄 빼고 435억 키우기 → 재심사 3명(기한 07:20) · cardshorts/e2_interest/review.md | firemap-shorts 10/5 01:19: 표지 v8(cover_v8.png, 결론 맨 위·막대 안 숫자) 제미나이 7·A 7·레드팀 7=7.0, 카피 8·7·7=7.33 통과. 카드 레드팀·A 지적대로 정리. 근거 cardshorts/e2_interest/review.md"
+    },
+    {
+      "at": "2026-10-05 08:10",
+      "kind": "cafe",
+      "item": "nhisprop1005",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-05 01:10",
+      "note": "비축에서 배정(03:4x write): 관문 통과: 제목 평균 7.8(제미나이 8.4·레드팀 7.0·작성자 8.0)·표지 7.43·aitell 4.7·readcheck 0·selfcheck 사실 0·레드팀 사실 12건 반영·compare/review 세 줄·editgate auto·frame 통과 — 건보료 재산 점수표(시행령 별표4 원문 60등급) 과세표준 3억 월 12만 3,930원",
+      "by": "firemap-write"
+    },
+    {
+      "at": "2026-10-05 10:10",
+      "kind": "cafe",
+      "item": "nongji1005",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-05 01:28",
+      "note": "비축에서 배정(03:4x write): 관문 통과: 제목 '농지연금 수령액 3억 농지면 나이별로 월 얼마일까' 7.5(제미나이 후보3 8.0·레드팀 7.0·작성자 7.5)·표지 7.0(7.5·6.5·7)·aitell 2.3·readcheck 0·selfcheck 사실 0·레드팀 사실 지적 15건 반영(숫자 오류 0)·compare/review 세 줄·editgate auto — 공사 예상연금 조",
+      "by": "firemap-write"
+    },
+    {
+      "at": "2026-10-05 12:10",
+      "kind": "cafe",
+      "item": "jeonseg2_1005",
+      "owner": "firemap-write",
+      "note": "[후보·관문 전, gates_ok 없음] 전세보증 SGI·HF 비교(jeonseg1004 경쟁 1등 따라잡기) — 후보만, 원문(HF·SGI 상품 안내) 미수령, 관문 기한 06:10",
+      "by": "firemap-write"
+    },
+    {
+      "at": "2026-10-05 14:10",
+      "kind": "cafe",
+      "item": "nhisrent1005",
+      "owner": "firemap-write",
+      "note": "[후보·관문 전, gates_ok 없음] 건보료 재산 몫 2편 '집 있는 퇴직자' 표(d1cafe1004 ③) — 후보만, 쓰기 전 selfcheck [중복]부터, 기한 08:10",
+      "by": "firemap-write"
+    },
+    {
+      "at": "2026-10-05 16:10",
+      "kind": "cafe",
+      "item": "TBD-A",
+      "owner": "firemap-write",
+      "note": "[후보·관문 전, gates_ok 없음] 회의(21:15)가 수요 검증한 편으로 확정 — 후보 미정, 기한 10:10",
+      "by": "firemap-write"
+    },
+    {
+      "at": "2026-10-05 18:10",
+      "kind": "cafe",
+      "item": "TBD-B",
+      "owner": "firemap-write",
+      "note": "[후보·관문 전, gates_ok 없음] 후보 미정(롱폼 연동 편 있으면 우선), 기한 12:10",
+      "by": "firemap-write"
+    },
+    {
+      "at": "2026-10-05 20:10",
+      "kind": "cafe",
+      "item": "TBD-C",
+      "owner": "firemap-write",
+      "note": "[후보·관문 전, gates_ok 없음] 후보 미정, 기한 14:10",
+      "by": "firemap-write"
+    },
+    {
+      "at": "2026-10-05 22:10",
+      "kind": "cafe",
+      "item": "TBD-D",
+      "owner": "firemap-write",
+      "note": "[후보·관문 전, gates_ok 없음] 후보 미정, 기한 16:10",
+      "by": "firemap-write"
+    },
+    {
+      "at": "2026-10-06 08:10",
+      "kind": "cafe",
+      "item": "TBD-E",
+      "owner": "firemap-write",
+      "note": "[후보·관문 전, gates_ok 없음] 후보 미정, 기한 02:10",
+      "by": "firemap-write"
+    },
+    {
+      "at": "2026-10-06 10:10",
+      "kind": "cafe",
+      "item": "TBD-F",
+      "owner": "firemap-write",
+      "note": "[후보·관문 전, gates_ok 없음] 후보 미정, 기한 04:10",
+      "by": "firemap-write"
+    },
+    {
+      "at": "2026-10-06 12:10",
+      "kind": "cafe",
+      "item": "TBD-G",
+      "owner": "firemap-write",
+      "note": "[후보·관문 전, gates_ok 없음] 후보 미정, 기한 06:10",
+      "by": "firemap-write"
+    },
+    {
+      "at": "2026-10-06 14:10",
+      "kind": "cafe",
+      "item": "TBD-H",
+      "owner": "firemap-write",
+      "note": "[후보·관문 전, gates_ok 없음] 후보 미정, 기한 08:10",
+      "by": "firemap-write"
     }
   ]
 }

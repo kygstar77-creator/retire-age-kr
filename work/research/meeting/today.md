@@ -472,3 +472,4 @@
 - [막힘 01:29] 비축 쇼츠 0/1(patrol 위반) — 다음 배차 1순위 · 10/5 카페 16:10~22:10 칸 배정 없음(비축 2편만 있음) → firemap-write 08:10 정기에서 새 편·칸 배정
 - [배차 01:36] [2] 착수: firemap-shorts 01:36 (운영실장2) — 비축 쇼츠 0/1(patrol 위반, 01:29 막힘 '다음 배차 1순위') → 관문 통과 비축 1편 reserve.shorts
 - [배차 01:36] [2] 착수: firemap-motion-designer 01:36 (운영실장2) — 463행 [요청] e2_interest 인트로 0초 프레임 고치기(막대 두 개·두 숫자 같은 크기, 1초 시험 7↑)
+  완료: firemap-motion-designer 01:44 — e2_interest 인트로 0초 프레임 고침 **미통과(6.33)**: 새 부품 ShortIntroBars(video/src/motion, spec·cover·slots 안 건드림) 2판 제미나이 7·A 6·레드팀 6. 풀린 것=막대 둘·같은 크기 숫자·'<' 없음, 남은 것=398 대비·'영업이익보다' 문구·차이 안 보임·'이자비용 빼기 전 총액' facts 근거 확인 안 함. 다음 칸 고칠 목록 cardshorts/e2_interest/review.md 맨 아래

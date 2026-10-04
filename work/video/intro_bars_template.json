@@ -1,0 +1,11 @@
+{
+ "seed": "template_bars",
+ "head": "테슬라 2분기 실적",
+ "verdict": ["이자수익이", "더 컸다"],
+ "a": {"label": "이자수익", "value": 422, "text": "422"},
+ "b": {"label": "영업이익", "value": 398, "text": "398"},
+ "unit": "단위 백만 달러",
+ "note": "이자비용 빼기 전 ",
+ "noteAccent": "총액",
+ "frames": 60
+}

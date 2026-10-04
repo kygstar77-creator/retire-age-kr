@@ -1,3 +1,4 @@
+실측(v6 편집 통과 02:38): 숫자 90.8/1,000단어 · 2개 이상 문장 10% · aitell script 통과 (예상 길이 12.8분)
 # R-1 대본 심사 (youtube-loop 2026-10-03 04:58~05:06) — 1억의 1년 영수증, 통과선 7 (목표 8)
 심사 3명: 제미나이 lite(second_opinion.py 대본 — flash 3종 429라 gemini-3.5-flash-lite) · Claude 별도 심사관(하위 작업자, 숫자 전수 대조) · 레드팀(redteam-prompt.md, 하위 작업자, calc2.py·원자료 JSON으로 재계산). GPT 웹은 사용량 비상 편성이라 안 씀. 입력 review_in_script.md = 대본+사실표+경쟁 3편(QtciAE40DlU·lSmbW1Par1M·gosYz3ho038). 원문: review_v2_gemini_lite.md(v2) · review_in_script_대본.md(v3).
 

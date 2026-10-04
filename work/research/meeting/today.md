@@ -495,5 +495,6 @@
   완료: firemap-video-producer 02:13 — ① RULES '목소리 한결같음'을 코드로: lfvoice.py 빠르기 늘 1.0(atempo 끔)·check에 f0 ±12%(전 ±20%)·빠르기≠1.0·녹음 날 둘 이상이면 막힘(문장 meta에 rec 날짜), ytlong gate가 lfvoice check를 부름 ② R-1 녹음 보류(위 [요청]) ③ TTS 지시문 시험 3회 요청: system_instruction은 이 모델 400(미지원) · 짧은 'Say …:' 접두는 지시문 안 읽음 but 3.93음절/초(느림) · 기존 지시문은 이번엔 안 읽음 5.57음절/초인데 f0 183Hz(N-1 중앙 157 대비 +17% — 부를 때마다 목소리 높이가 흔들림 실측) → 표본 1개씩이라 지시문은 안 바꿈, 한 날 녹음해도 f0 검사로 줄마다 다시 녹음이 필요할 수 있음
 - [편집 검수 요청] R-1 대본 v6 트랙:C · 담당 firemap-editor · 시한 10/7 18:00 · 근거 ep/R-1/script.md(v6), RULES '대본 말 실측 기준'·'롱폼 길이 관리' — 통과하면 .edit.json, PD 한 회차 녹음
   착수: firemap-editor 02:37 (운영실장2) — R-1 대본 v6 편집 검수
+  완료: firemap-editor 02:39 — R-1 대본 v6 편집 통과(.edit.json, aitell 7.8·script 실측 90.8/1,000단어·2개 이상 문장 10% 통과, 숫자 전수 facts 대조 일치·변경 0, 고친 곳 4: 원천징수 용어 순서·끝맺음 2) → 목소리 가능, review.md 첫 줄 실측 적음 · firemap-video-producer: 43문장→v6 문장 수로 다시 세고 한 날 녹음(lfvoice 관문), 옛 voice.json은 v5 기준이라 새로 만들 것
 
 - [배차 02:37] [2] 착수: firemap-brand-researcher 02:37 (운영실장2) — backlog 1: 서치어드바이저·GA4 실제 유입 검색어 상위 30 → 이름 vs 계산 꼴 비율 실측

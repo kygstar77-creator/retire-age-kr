@@ -203,15 +203,24 @@ def build(spec, out):
     _, bottom = frame(base, spec, top, 2)
     if bottom > SAFE_B: print(f'경고: 글이 가려지는 자리까지 내려갔다(y={bottom} > {SAFE_B}) — 글을 줄인다')
     tmp = out + '_frames'; os.makedirs(tmp, exist_ok=True)
+    for x in os.listdir(tmp): os.remove(os.path.join(tmp, x))   # 앞 실행이 죽어 남은 프레임이 섞이지 않게(레드팀 10/4)
     csec = spec.get('cover_sec', 1) if (spec.get('cover') or spec.get('cover_png')) else 0
-    if csec:
+    if spec.get('intro_mp4'):
+        if spec.get('cover') or spec.get('cover_png'): print('경고: intro_mp4가 있어 cover/cover_png는 쓰지 않는다(움직이는 첫 화면이 표지 자리)')
+        # intro_mp4: 모션 디자이너의 움직이는 첫 화면(Remotion ShortIntro, 1080x1920·30fps)을 표지 대신 맨 앞에(2026-10-04 motion, 기본 꺼짐). 숫자는 intro props(facts 원문) — 사실 대조는 motion review에서.
+        subprocess.run([FF, '-v', 'error', '-y', '-i', spec['intro_mp4'], '-vf', f'fps={FPS},scale={W}:{H}', os.path.join(tmp, '%04d.png')], check=True)
+        n = len([x for x in os.listdir(tmp) if x.endswith('.png')])
+        for i in range(1, n + 1): os.replace(os.path.join(tmp, f'{i:04d}.png'), os.path.join(tmp, f'{i - 1:04d}.png'))  # ffmpeg는 1부터 센다
+        csec = n / FPS
+    elif csec:
         # cover_png: 비주얼 디자이너가 심사 통과시킨 표지 그림을 그대로 첫 화면에(2026-10-03 visual, 기본 꺼짐). 표지 숫자는 그림 안이라 check가 못 잡는다 → 사실 대조는 표지 review에서.
         cov = Image.open(spec['cover_png']).convert('RGB').resize((W, H)) if spec.get('cover_png') else cover_frame(spec)
         cov.save(out.replace('.mp4', '_cover.png'))
         for i in range(int(csec * FPS)): cov.save(os.path.join(tmp, f'{i:04d}.png'))
     off = int(csec * FPS)
+    t0 = 2 if spec.get('intro_mp4') else 0   # 움직이는 첫 화면이 이미 최종값 막대를 보여 줬다 → 카드는 다 자란 상태(t=2, _card.png와 같음)로 시작. 다시 자라면 87.0 같은 중간값이 찍힌다(레드팀 10/4)
     for i in range(int(sec * FPS)):
-        frame(base, spec, top, i / FPS)[0].save(os.path.join(tmp, f'{i + off:04d}.png'))
+        frame(base, spec, top, t0 + i / FPS)[0].save(os.path.join(tmp, f'{i + off:04d}.png'))
     sec = sec + csec
     wav = out + '.wav'
     if spec.get('music', True):   # 2026-09-30 사장님 "배경음악을 안 깔면 되는 거 아니야?" → 음악 있음/없음을 실험(experiments.md)으로 가린다

@@ -1,0 +1,26 @@
+{
+ "seed": "e2_interest",
+ "chip": "SEC 10-Q · 2026년 2분기",
+ "hook": {
+  "label": "테슬라 2분기 이자수익",
+  "text": "422",
+  "unit": "백만 달러"
+ },
+ "a": {
+  "label": "이자수익",
+  "value": 422,
+  "text": "422"
+ },
+ "b": {
+  "label": "영업이익",
+  "value": 398,
+  "text": "398"
+ },
+ "unit": "백만 달러",
+ "source": "출처 테슬라 10-Q(2026-07-23 제출)·SEC XBRL · 이자수익은 총액",
+ "morphAt": 34,
+ "frames": 60,
+ "title": "테슬라 2분기,\n본업 이익 < 이자?",
+ "numW": 436,
+ "aFirst": true
+}

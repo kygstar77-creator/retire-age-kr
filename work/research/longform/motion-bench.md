@@ -34,3 +34,22 @@
 
 ## 다음 측정
 - 수페TV·소수몽키 최근 롱폼 2편 전체 길이로(주 1회). 이번은 90초 구간이라 편 전체 대표값 아님.
+
+## 2026-10-04 23:3x · 모션 475 프롬프트 → 돈·숫자·차트에 맞는 5개 (today.md [지시] 순돌이 10/2 16:1x)
+- 읽은 곳(웹 글만, 영상·코드 내려받기·실행 없음): github.com/yihui-dev/awesome-opus5-5-videos `data/videos.json` 475편(motion 288·interactive 70·explainer 62·3d 55) · HiAPIAI/awesome-opus-5-5-video-styles 12갈래(우리 쪽은 '설명·데이터'(38)·'키네틱 타이포'(52)) · 0xpratzyy/specimen-and-signal 200편(어두운 '과학 계기' 모션).
+- **조회수: 확인 안 함** — videos.json에 조회 칸이 없다(slug·author·post_url·category·tech_tags·prompt·added만). 인스타 '207만 회'는 모음 소개 영상 수치라 개별 편과 무관.
+- 돈·숫자·차트를 직접 다룬 프롬프트는 적다(키워드 192건 중 대부분 'graph'·'stock footage' 같은 다른 뜻). 아래 5개는 '방법'이 우리 숫자 영상에 옮겨지는 것만 골랐다.
+
+| # | 프롬프트(slug·글쓴이) | 갈래·스타일 | 옮길 방법 | 우리 쓸 곳 |
+|---|---|---|---|---|
+| 1 | gdgtify-929495 'BUILD THE FLOOR' | motion · 키네틱 타이포 | 글자가 구조(바닥) 위에 내려앉는다, 임계 감쇠로 튀지 않게, 400ms 완전 정지 1번, 문장 단위 큐시트 | **쇼츠 첫 1초**(RollNumber — 적용함) |
+| 2 | daniel-haida-636937 'Taxtello' 금융앱 필름(Remotion) | motion · 제품 필름 | 한 컷=한 생각, 물체로 넘어가는 전환(카드가 다음 카드·차트 선이 된다), 돈 숫자는 고정폭, 강조색은 귀한 한 점 | **카드→막대 전환**(CardToBar — 적용함), 롱폼 장면 전환 |
+| 3 | astrothewizard-618782 광자 설명 60초 | explainer · 데이터 설명 | 그린 척 말고 실제로 계산해서 움직인다(무작위 걸음은 진짜 무작위), 추정의 불확실성도 화면에, 장면 스틸 검수 루프 | 롱폼 복리·인출 곡선을 계산식으로 그리기(배당 재투자 편) |
+| 4 | stokebuilder-356793 팟캐스트 애니 50개 | explainer · 키네틱 데이터 | 스타일 바이블+부품 키트 먼저, 화면 글은 말 그대로·숫자 짓기 금지, 그래픽은 말 박자에 맞춤, 심사는 한 번(나쁜 것만 다시) | video/src/motion/README.md(부품 키트), 롱폼 at(s,i) 박자 |
+| 5 | dale-vaz-879074 트레이딩 터미널 | motion · UI | 점 하나에서 시작해 창이 열리고, 여러 배율로 들어갔다 나온다 | 롱폼 첫 장면: 숫자 하나 → 줌아웃해 전체 차트(다음 후보) |
+
+### 적용 1편: 쇼츠 e2_interest(10/5 19:20 칸) 움직이는 첫 2초
+- 부품: `video/src/motion/RollNumber.tsx`(①) · `CardToBar.tsx`(②) · 합친 화면 `ShortIntro.tsx`(Root 'ShortIntro', props `video/intro_e2_interest.json`) · 붙이기 `cardshort.py` spec `"intro_mp4"`(기본 꺼짐).
+- 장면: 0프레임부터 제목 '테슬라 2분기, 본업 이익 < 이자?' + 422가 자리마다 올라와 섬 → 노란 바닥 선 → 정지 → 바닥 선이 내려가 0 기준선이 되고 422가 제 막대 이름표로 날아감, 398 막대가 옆에 자람 → 기존 카드(다 자란 상태)로 이어짐.
+- 미리보기: `longform/ep/E-2/motion_preview/e2_interest_intro.mp4`(2초) · `e2_interest_with_intro.mp4`(8초, 쇼츠 전체) · `intro_strip.png` · `board168.png`(168px 1초 시험판, 경쟁 = e1_hynix_dd/onesec 5장).
+- motioncheck: 8.0초 · 움직임 25% · 최장 정지 5.0초 · 통과.

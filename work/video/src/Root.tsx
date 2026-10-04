@@ -17,6 +17,8 @@ import n1 from '../n1.json';
 import {R1, R1Props, r1Frames} from './R1';
 import r1 from '../r1.json';
 import {MotionKit} from './MotionKit';
+import {ShortIntro, ShortIntroProps, introFrames} from './motion/ShortIntro';
+import introE2 from '../intro_e2_interest.json';
 
 export const Root: React.FC = () => {
   const p = props as unknown as WeeklyProps;
@@ -61,6 +63,9 @@ export const Root: React.FC = () => {
     <Composition id="R1" component={R1 as unknown as React.FC<Record<string, unknown>>} durationInFrames={r1Frames(rp1)} fps={rp1.fps}
       width={1920} height={1080} defaultProps={rp1 as unknown as Record<string, unknown>}
       calculateMetadata={({props: pp}) => ({durationInFrames: r1Frames(pp as unknown as R1Props)})} />
+    <Composition id="ShortIntro" component={ShortIntro as unknown as React.FC<Record<string, unknown>>} durationInFrames={introFrames(introE2 as ShortIntroProps)} fps={30}
+      width={1080} height={1920} defaultProps={introE2 as unknown as Record<string, unknown>}
+      calculateMetadata={({props: pp}) => ({durationInFrames: introFrames(pp as unknown as ShortIntroProps)})} />
     <Composition id="MotionKit" component={MotionKit} durationInFrames={360} fps={30} width={1920} height={1080} />
     </>
   );

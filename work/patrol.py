@@ -134,6 +134,7 @@ try:
     pub = [v for v in vs if v['status']['privacyStatus'] == 'public']
     for v in pub:  # 10/2 E-1: status만 update하면 embeddable·publicStatsViewable이 False로 초기화됐다(순돌이 실수) — 공개 영상은 둘 다 켜져 있어야
         if not (v['status'].get('embeddable') and v['status'].get('publicStatsViewable')): bad.append(f"유튜브 {v['id']}: 퍼가기·조회수 공개 꺼짐 — status update 때 두 값을 같이 보내야 함")
+        if v['snippet'].get('defaultAudioLanguage') != 'ko': bad.append(f"유튜브 {v['id']}: 오디오 언어 {v['snippet'].get('defaultAudioLanguage')} — 한국어(ko)여야 함, snippet update 때 defaultAudioLanguage를 같이 보낼 것(10/5 E-1·N-1 en-US 사고)")
     sh = [int(v['statistics'].get('viewCount', 0)) for v in pub if 'PT1M' not in v['contentDetails']['duration'] and re.match(r'PT\d+S$', v['contentDetails']['duration'])]
     M['subs'] = int(up['statistics']['subscriberCount']); M['shorts_avg'] = sum(sh)//max(1,len(sh)); M['shorts_n'] = len(sh)
     print(f"지표 · 유튜브 구독 {M['subs']} · 공개 쇼츠 {len(sh)}편 평균 조회 {M['shorts_avg']}(목표 460)")

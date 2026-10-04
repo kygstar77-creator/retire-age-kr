@@ -53,7 +53,7 @@
  },
  "first3s": "F1 '1년 전 1억을 예금에 넣은 사람, 지금 통장엔 1억 218만원이 있어요. 다른 셋은요?' (대본 v4 첫 줄과 바꿀지는 youtube-loop 판단)",
  "title_by": "firemap-copywriter 2026-10-03 07:53",
- "todo_pd": "10/5 02:13 PD: 목소리 보류 — 대본 v5가 10/3 22시 뒤 규칙 셋에 걸림: ①길이 약 6.5분(2,214음절÷5.65) vs R-1부터 12~15분 목표(RULES '롱폼 길이 관리') ②aitell script 숫자 229.9/1,000단어(≤92)·숫자 2개 이상 문장 58%(≤20%) ③102~103행 계산기 장면(RULES '영상 본문에 계산기 장면 넣지 않기'). → youtube-loop 대본 v6 + editor 편집 통과(.edit.json) 뒤 PD가 43+문장 전부 **한 회차에 새로 녹음**(10/3 녹음 7문장은 규칙 4 '한 날 녹음'으로 버림 — 녹음 전 video/public/audio/r-1을 r-1_old1003로 옮김) → lfvoice check(f0 ±12%·빠르기 1.0·한 날) → readback → r1props(계산기 장면 빼기) → 화면 글자 screen_text.txt 편집 통과 → 렌더 → deess·motioncheck → scorecard → gate. 무료 TTS 하루 약 10회: 12~15분이면 --maxreq 9 묶음당 ~500음절.",
+ "todo_pd": "10/5 03:21 PD: 대본 v6(206문장·4,245음절) 목소리 150/206 녹음(rec 2026-10-05) · 429 하루 한도. 남은 것: 10/5 16:00 KST 뒤 같은 날 안에 `lfvoice make --maxreq 9`(묶음 7·8 = 56문장, 2회) → f0 ±12% 밖 91줄 재녹음(해당 wav를 옮기고 make — 사실상 전편, 1회는 지시문 '고른 높이' 시험) → check 통과 → readback → r1props(계산기 장면 빼기) → screen_text 편집 통과 → 렌더 → deess·motioncheck → scorecard → gate. 24:00 넘기면 녹음 날이 둘이 되어 전편 다시. 옛 v5 기록: voice.v5.json·audio/r-1_old1003",
  "thumb": "thumb_r1v.png",
  "thumb_status": "확정(조건부) 10/3 12:23 평균 7.50(lite 표시) · 48h 교체 thumb_r1r.png · 조건 thumb_meta.json conditions",
  "title_candidates_retired_20261003": [

@@ -6,6 +6,7 @@
 #   py -3.12 work/aitell.py scan <묶음 폴더 여러 개>         → 기준 조정용 분포
 #   py -3.12 work/aitell.py frame <묶음>                     → 카페 틀 v2 3줄 점검(소제목 3~5개·끝 FAQ/정리·제목 명사 끝 또는 B틀 물음, 반전 금지). 어기면 종료코드 5
 #   py -3.12 work/aitell.py commaday 2026-10-04               → 그 날 카페 칸 쉼표 없는 제목 수(하루 2편 이상, 10/4 칸부터 frame이 쉼표 제목을 막는다)
+#   py -3.12 work/aitell.py script <편 폴더|voice.json|자막 .json3|대본 텍스트>  → 롱폼 대본 실측 기준 2개(10/4 speechcompare 경쟁 자막 12편 vs 우리 4편): 숫자 1,000단어당 ≤92(경쟁 최대 91.4) · 숫자 2개 이상 문장 ≤20%. 넘으면 종료코드 6
 #   --skip-list (아무 자리)  → 번호·글머리 목록 줄과 법 문구·면책 줄을 끝맺음 반복(연속·'~요'·머리·꼬리)에서 뺀다.
 #                              사전(AI 말·설명조) 검사는 그대로. 기본은 꺼짐 — 기존 통과 점수가 안 바뀐다(10/1 대역 X-KR-1 요청).
 # 사장님 10/1 "사소한 것까지 모든 글을 다 검토해서 사람이 쓴 글로 바꿔야 하는데" — 순돌이 지시 [지시·긴급].
@@ -215,6 +216,34 @@ def gate_pkg(pkg):
     return False, f'AI 티 {val}이 기준 {lim}을 넘는다' + (f' ({who})' if who else ''), hits
 
 
+SCRIPT_NUM_PER_1000 = 92   # 지시는 ≤90이나 경쟁 자막 mOBsKBLWrN4가 91.4라 표본이 걸림 → 경쟁 최대(91.4)를 올림해 92. 경쟁 12편 중앙값 52 / 우리 중앙값 187 (longform/loop/speechcompare.py, 2026-10-04)
+SCRIPT_MULTI_NUM_PCT = 20  # 숫자 2개 이상 문장 비율: 경쟁 중앙값 11%·최대 20% / 우리 40%
+
+
+def script_text(p):
+    """편 폴더(voice.json)·voice.json·자막 json3·일반 텍스트에서 말하는 글만 뽑는다."""
+    if os.path.isdir(p): p = os.path.join(p, 'voice.json')
+    if p.endswith('.json3'):
+        d = json.load(open(p, encoding='utf-8'))
+        return ' '.join(''.join(s.get('utf8', '') for s in e.get('segs', [])) for e in d.get('events', []) if e.get('segs')).replace(chr(10), ' ')
+    if p.endswith('.json'):
+        v = json.load(open(p, encoding='utf-8'))
+        return ' '.join(l['say'] for s in v['sections'] for l in s['lines'])
+    return open(p, encoding='utf-8').read()
+
+
+def script_check(text):
+    """(통과 여부, 숫자/1000단어, 숫자 2개 이상 문장 %, 문장 수, 메시지 목록). speechcompare.py와 같은 식."""
+    sents = [x.strip() for x in re.split(r'(?<=[.?!])\s+', text) if len(x.strip()) > 3]
+    W = max(1, len(text.split()))
+    per = len(re.findall(r'\d[\d,.]*', text)) * 1000 / W
+    multi = 100 * sum(len(re.findall(r'\d[\d,.]*', s)) >= 2 for s in sents) / max(1, len(sents))
+    bad = []
+    if per > SCRIPT_NUM_PER_1000: bad.append(f'숫자 {per:.1f}/1,000단어 > {SCRIPT_NUM_PER_1000}(경쟁 최대 91·중앙 52)')
+    if multi > SCRIPT_MULTI_NUM_PCT: bad.append(f'숫자 2개 이상 문장 {multi:.0f}% > {SCRIPT_MULTI_NUM_PCT}%(경쟁 최대 20%·중앙 11%)')
+    return not bad, per, multi, len(sents), bad
+
+
 def gate_text(text, ok_flag=False):
     """유튜브 제목·설명, 쿠팡 문구 같은 짧은 글용."""
     val, hits, n = score(text)
@@ -236,6 +265,12 @@ def main(a):
     if not a: print(__doc__ or open(__file__, encoding='utf-8').read().split('import')[0]); return 0
     if a[0] == 'text':
         val, hits, n = score(' '.join(a[1:]), SKIP); print(f'AI 티 {val} ({n}자)'); [print('  ', h) for h in hits]; return 0
+    if a[0] == 'script':
+        ok, per, multi, n, bad = script_check(script_text(a[1]))
+        print(f'대본 실측 숫자 {per:.1f}/1,000단어(기준 ≤{SCRIPT_NUM_PER_1000}) · 숫자 2개 이상 문장 {multi:.0f}%(기준 ≤{SCRIPT_MULTI_NUM_PCT}%) · 문장 {n} — ' + ('통과' if ok else '실패'))
+        for b in bad: print('  ', b)
+        if not ok: print('  숫자·사실 문장은 바꾸지 않는다: 말에는 숫자 하나·반올림, 정확한 값은 화면 자막으로 옮긴다.')
+        return 0 if ok else 6
     if a[0] == 'gate':
         ok, msg, hits = gate_pkg(a[1])
         if ok: print(msg); return 0

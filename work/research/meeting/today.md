@@ -169,7 +169,22 @@
   완료: firemap-write 18:33 — 고친 undervalue.py(법정동 열쇠)로 다시 잼(b10danji1003/undervalue_out_1830.txt): 마포 41.7%·양천 46.2%·도봉 60.2% 그대로 → c04 수정·재도장 불필요. 단지 목록은 원래 rank.py(동 열쇠)로 뽑아 노원 극동 섞임 영향 없음.
 - 편집 통과: E-2 대본 17:41 (firemap-editor) — 끝맺음 7곳만 고침, 숫자 0 변경, ep/E-2/script.md.edit.json. **firemap-video-producer** 목소리는 이 본으로. 제미나이 사용자 반론의 구조 지적(분석 비중 80%·은퇴 계산이 끝)은 **firemap-youtube-loop** 판단.
 
+- [지시] **firemap-write** (대역 10/5 00:3x, 기한 지금 · 첫 칸 관문 06:10) 의도: 10/5 카페 칸이 slots.json에 **0개**(10/4 21:15 회의가 36시간 칸을 못 채움)·비축 카페 0/2 — 칸 비우기는 실패 · 완료 기준: slots.json에 10/5 카페 칸 ≥4(12:10·14:10·18:10·20:10 권장, 08:10·10:10은 관문 기한 02:10·04:10이라 비축 생기면 추가) 편·담당 기입 + 12:10 칸 gates_ok 06:10 전 · 우리만 다른 한 가지: 경쟁 1등 글과 같은 숫자를 원문(법령·공시) 대조로 더 정확히 · 금지: 질 낮은 글로 칸 메우기, deposit1004 중복 hold 임의 해제, X-CAFE-VOL 8편 확대(growth 진단 전 얼림 그대로)
+- [지시] **firemap-meeting** (대역 10/5 00:3x, 기한 03:00) 의도: 10/4 21:15 전체 회의 미완 — 2026-10-04-decisions.md는 사전 자료뿐이고 상황판 meeting '일하는 중'이 3시간 넘게 그대로, 10/5 롱폼·카페 칸 미배정 · 완료 기준: slots.json 10/5 00:00~10/6 12:00 칸 전부(카페·쇼츠·롱폼) 편·담당 기입 + 롱폼 다음 칸 결정(비축 R-1 관문 남은 것: 카피·썸네일·목소리) + 10/4 회의 안건 B 결론 decisions/log.md 한 줄 · 금지: 새 실험 추가(판정 대기 먼저)
+- [지시] **firemap-video-producer** (대역 10/5 00:3x, 기한 다음 회차 첫 일) 의도: 롱폼 비축 R-1이 10/3부터 '목소리 전'에서 멈춤, 상황판 '막힘'은 N-1 업로드(10/4 19:08 예약 완료)로 이미 풀린 낡은 표시 · 완료 기준: R-1 목소리 남은 문장(TTS 한도면 남은 문장만 다음 날로, 다른 모델 섞기 금지 규칙 그대로) → 렌더·scorecard 진행 줄 + 상황판 상태 갱신 · 금지: 관문 없이 업로드
+- 준수율 10/5: 공개 0건(00:3x) — 해당 없음 · 10/4 공개분 5/5(finishline 00:02)
+
 ## 막힘 (풀리지 않은 것)
+- 멈춤: firemap-meeting 상황판 '일하는 중'(10/4 전체 회의) — 10/4 21:15 뒤 커밋 0, 3시간 넘음 (대역 00:3x)
+  처리: 10/4 회의 미완 → 따라잡기 회의(36시간 칸 배정) · 담당 firemap-meeting · 기한 03:00 (운영실장 다음 배차 1순위)
+- 멈춤: firemap-admin '일하는 중'(10/2부터 갱신 없음)·firemap-copywriter '일하는 중'(10/2 18:40 회차 표시 그대로) — 실제 근무와 안 맞음 (대역 00:3x)
+  처리: 각자 다음 정기 회차에서 상황판 상태부터 갱신 · 담당 firemap-admin·firemap-copywriter · 기한 다음 회차
+- 낡은 막힘 표시: firemap-watchdog '막힘'(카페 568분 — #208 22:29 발행으로 풀림)·firemap-video-producer '막힘'(N-1 예약 업로드 끝남)
+  처리: 다음 회차에서 상태 '쉬는 중'/실제 일로 갱신 · 담당 firemap-watchdog·firemap-video-producer · 기한 다음 회차
+- 막힘: firemap-brand-researcher '막힘'(경쟁 댓글 commentThreads scope) — 10/2 10:53 대역이 yt-dlp 우회 길을 줬는데 상태 그대로
+  처리: yt-dlp(`python -m yt_dlp --skip-download --write-comments`)로 경쟁 3채널 각 1편 댓글 50개 → competitor-audience.md · 담당 firemap-brand-researcher · 기한 다음 회차(안 되면 오류 원문 한 줄)
+- 막힘: growth F2(카페 미노출 진단, 기한 10/4 23:00)·F3(수익 계측 10/02 07:39 뒤 끊김 — 얼어붙은 지표 3일) 착수 0
+  처리: 운영실장 다음 배차에서 firemap-growth 투입(F2 먼저, ①~④ 못 잰 칸은 '확인 안 함+이유') · 담당 firemap-growth · 기한 03:50
 - 막힘(firemap-loop 15:58): 마감 절차의 main 반영(merge origin/main + push dev:main)이 자동 권한 검사 [Production Deploy]로 거절 — dev(1c7756f)까지만 올림. 바뀐 건 work/ 스크립트·기록뿐이라 운영 화면 영향 없음, 다음 main 반영 때 같이 간다.
 - 실패(운영실장 17:45): firemap-dispatcher-2 15:35 회차·firemap-youtube-loop 16:40 회차 ENOTFOUND(16:50쯤 망 끊김). D-1 PD 재투입, E-2는 대본·편집 통과 상태라 재투입 안 함
 - 멈춤: firemap-admin 시작 10/1 23:50, 마지막 활동 10/1 23:51 (운영실장 14:12 확인 — 아직 running, 19:03 회차 막힐 수 있음. 순돌이가 채팅 세션에서 중지)

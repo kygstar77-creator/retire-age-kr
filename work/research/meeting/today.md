@@ -549,3 +549,12 @@
 - [배차 05:38] [2] 착수: firemap-write 05:38 (운영실장2) — 548행 막힘: 10/5 16:10 카페 칸 TBD-A 편 확정·관문 통과(기한 10:10) · 비축 카페 1/2 → 2/2
 - [배차 05:38] [2] 착수: firemap-youtube-loop 05:38 (운영실장2) — patrol '칸 배정 없음: 10-05 19:30 long'(slots.json에 칸 자체 없음, 비축 롱폼 R-1 녹음 막힘) → 오늘 19:30 롱폼 칸 편·담당 정하기(비축 없으면 칸 처리 결정 기록)
   완료: firemap-youtube-loop 05:41 — patrol '칸 배정 없음 10-05 19:30 long' 처리: ① 판정 = 롱폼 칸은 매일이 아님(하루 1편 이하 상한) → 오늘은 공개할 편 없음(R-1 목소리 150/206·429·f0 막힘, 관문 기한 10/4 19:30 지남, W-1 대본 없음) ② slots.json에 10/5·10/6 19:30 long 칸을 skip:true+사유·대체(R-1 통과 뒤 빨라야 10/7, 늦어도 W-1 10/11)로 적고 _rule에 롱폼 칸 규칙 명시 ③ patrol.py가 skip 칸을 건너뛰도록 한 줄 고침. [요청] firemap-improve: patrol.py cad의 'long': ['19:30']를 매일로 가정하지 않게(롱폼 일정이 편 준비 기준이면 long 칸 자동 요구 제거) 검토
+- [검수 요청] 순돌이 — origin/cloud/yt-quality-1003 합친 뒤 검사 실패 ['pytest: '] → 되돌림 (10/05 05:48)
+- 완료: cloudmerge 10/05 05:50 — origin/cloud/audit-1003 자동 반영(19파일). 담당은 결과 문서를 읽고 상위 방법·규칙을 자기 일에 적용(ai-study → firemap-ai-lab, script-gate → firemap-editor, render-gates → firemap-video-producer)
+- 완료: cloudmerge 10/05 05:50 — origin/cloud/content-depth-1003 자동 반영(5파일). 담당은 결과 문서를 읽고 상위 방법·규칙을 자기 일에 적용(ai-study → firemap-ai-lab, script-gate → firemap-editor, render-gates → firemap-video-producer)
+- [검수 요청] 순돌이 — origin/cloud/publish-script-gate-1003가 발행 코드 ['work/aitell.py']를 바꿈 → 자동 반영 안 함, 간격·상한·관문이 약해지지 않았는지 순돌이가 보고 손으로 합침 (10/05 05:50)
+- [검수 요청] 순돌이 — origin/cloud/r1-remake-1003 합친 뒤 검사 실패 ["pytest:  2�� �̻� ���� %']\nE       assert (73.9 < 75.7 and 10 < 5)\n\nwork\\tests\\test_r1_script_v6.py:33: AssertionError\n======================== → 되돌림 (10/05 05:50)
+- [검수 요청] 순돌이 — origin/cloud/render-gates-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:50)
+- 완료: cloudmerge 10/05 05:51 — origin/cloud/sentence-types-1003 자동 반영(7파일). 담당은 결과 문서를 읽고 상위 방법·규칙을 자기 일에 적용(ai-study → firemap-ai-lab, script-gate → firemap-editor, render-gates → firemap-video-producer)
+- [검수 요청] 순돌이 — origin/cloud/yt-quality-1003 합친 뒤 검사 실패 ["pytest: o.test.mjs (300.3074ms)\nE         'test failed'\n\nwork\\tests\\test_yt_quality_video.py:33: AssertionError\n=========================== sh → 되돌림 (10/05 05:51)
+- [순돌이 05:5x] 클라우드 브랜치 14개 중 **10개 dev 반영**(ai-study·audit·content-depth·line-review 4종·rules-evidence·sentence-types·subs). 남은 4: ① publish-script-gate(aitell.py 발행 코드 — 순돌이 검토) ② r1-remake(클라우드 R-1 v6와 PC youtube-loop가 쓴 R-1 v6가 겹침 — 테스트가 서로 다른 대본을 가리킴, 순돌이가 하나로 정함) ③ render-gates(PC PD가 같은 날 lfvoice에 넣은 목소리 관문과 충돌) ④ yt-quality(node 테스트 실패 — PC에 영상 쪽 패키지 미설치 의심, 확인 안 함). 원인: 쌓여 있던 '추가 예정' 표시 6,545개가 합치기를 막았음 → 표시만 풀고 파일은 그대로. pytest 미설치였음 → 설치.

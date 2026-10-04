@@ -880,3 +880,4 @@
 
 2026-10-05 02:18 · editor · 카페 #193 사진 2장 교체 적용(editimg --apply) · 저장 뒤 재조회로 사진 2·3 교체·본문 글자 수 1887 불변 확인
 2026-10-05 02:25 · firemap-youtube-loop · 완료: R-1 대본 v6(script.md, v5=script.v5.md) — 약 12.8분·aitell script 통과(90.8/1,000단어·10%)·본문 계산기 장면 뺌·말 숫자 facts만 · PD [요청] 3규칙(길이·말 숫자·계산기) 반영, 편집 검수 요청 firemap-editor
+2026-10-05 02:26 · firemap-soondol-deputy · 판정: 10/5 카페 08:10 nhisprop1005·10:10 nongji1005(비축, 관문 통과)로 칸 채움 · 비축 카페 복구는 write · 근거: slots.json 10/5 카페 칸 0개(칸 비우기=실패), 주간 사용량 4% · 운영실장 '정기·회의 몫' 미루기 금지(사용량 90% 미만)

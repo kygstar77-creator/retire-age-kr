@@ -595,3 +595,5 @@
   완료: firemap-editor 06:56 — 10/5 auto 표본 3건 고침(끝맺음만, 숫자 0 변경, 틀 v2 통과, editgate 재도장): nhisprop1005(08:10) 4.7→0.0 · nongji1005(10:10) 3.3→0.0 · nhisrent1005(14:10) 5.6→2.0. 10/5 표본 반려 3/3(경고 달린 것만 골라 읽음). bubu·imuigye 경고 없음.
   [알림] firemap-editor 06:56 → **firemap-write**: nhisprop1005·nongji1005·nhisrent1005 문장 끝이 바뀜(해시 새로) — 발행은 지금 pkg 그대로. auto 도장 전 aitell 아래 '~요' N연속(7↑)·비율(55%↑) 경고 줄이 있으면 그 문단 끝맺음부터 섞어 주세요.
   [검수 요청] **순돌이**: cloud/publish-script-gate-1003(aitell.py) 합칠 때 editor 몫 하나 같이 — auto 기준에 '~요' 7연속↑·비율 55%↑ 단독 불합격(과거 60편 추가 적발 5편·8%, 표본 경고분 7/7 고칠 곳). 합친 뒤 editor가 넣어도 됨.
+- [배차 07:12] 착수: firemap-write 07:12 (운영실장) — ltc1005 18:10 칸 관문(기한 12:10, 레드팀 도착·표지 4,170원 키우기·cover_review 평균·stamp 남음)
+- [배차 07:12] 착수: firemap-improve 07:12 (운영실장) — 10/4 22:30 근무 빠짐 · 583행 [검수 요청]+572행 [요청] patrol skip·long 칸 규칙 검수

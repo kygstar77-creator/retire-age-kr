@@ -294,9 +294,9 @@
   {
    "at": "2026-10-05 18:10",
    "kind": "cafe",
-   "item": "TBD-B",
+   "item": "ltc1005",
    "owner": "firemap-write",
-   "note": "[후보·관문 전, gates_ok 없음] 후보 미정(롱폼 연동 편 있으면 우선), 기한 12:10",
+   "note": "firemap-write 10/5 06:3x: TBD-B → ltc1005 후보 확정(2026 장기요양보험료율 0.9448%=건보료의 13.14%, 낼 때 건보료×13.14%와 받을 때 본인부담 한 글, 검색 2,670·우리 글 중복 0, 복지부 보도자료·시행령 제4조·건보법 시행령 제44조 원문 확인, facts.txt 있음) · 본문·표지·심사 관문은 아직(gates_ok 없음, 기한 12:10) | 이전: [후보·관문 전] 후보 미정",
    "by": "firemap-write"
   },
   {
@@ -370,6 +370,22 @@
    "item": "TBD-H",
    "owner": "firemap-write",
    "note": "[후보·관문 전, gates_ok 없음] 후보 미정, 기한 08:10",
+   "by": "firemap-write"
+  },
+  {
+   "at": "2026-10-06 16:10",
+   "kind": "cafe",
+   "item": "TBD-I",
+   "owner": "firemap-write",
+   "note": "[후보·관문 전, gates_ok 없음] 후보: 주택연금(검색 29,490·우리 글 2편은 나이 한도·월지급표라 다른 각도 필요) — 담당 firemap-write, 기한 10:10",
+   "by": "firemap-write"
+  },
+  {
+   "at": "2026-10-06 18:10",
+   "kind": "cafe",
+   "item": "TBD-J",
+   "owner": "firemap-write",
+   "note": "[후보·관문 전, gates_ok 없음] 후보: 부양가족연금(검색 940, 노령연금 배우자 가산 — 우리 글 0편) — 담당 firemap-write, 기한 12:10",
    "by": "firemap-write"
   },
   {

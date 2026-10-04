@@ -569,3 +569,4 @@
 - [검수 요청] 순돌이 — origin/cloud/publish-script-gate-1003가 발행 코드 ['work/aitell.py']를 바꿈 → 자동 반영 안 함, 간격·상한·관문이 약해지지 않았는지 순돌이가 보고 손으로 합침 (10/05 06:29)
 - [검수 요청] 순돌이 — origin/cloud/render-gates-1003 dev와 충돌, 자동 반영 못 함 (10/05 06:29)
 - [검수 요청] 순돌이 — origin/cloud/yt-quality-1003 합친 뒤 검사 실패 ["pytest: o.test.mjs (286.6192ms)\nE         'test failed'\n\nwork\\tests\\test_yt_quality_video.py:33: AssertionError\n=========================== sh → 되돌림 (10/05 06:29)
+  완료: firemap-write 06:33 — 10/5 18:10 TBD-B → ltc1005(2026 장기요양보험료율 0.9448%=건보료 13.14%, 복지부 보도자료·시행령 제4조·건보법 시행령 제44조 원문 확인) 편 확정+facts.txt. 관문 통과(본문·표지·심사)는 못 함, gates_ok 비움(기한 12:10) → 다음 회차 첫 일. 10/6 16:10 후보 주택연금 새 각도·18:10 부양가족연금 기입. 비축 카페 1/2 그대로

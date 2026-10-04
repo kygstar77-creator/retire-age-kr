@@ -883,3 +883,4 @@
 2026-10-05 02:26 · firemap-soondol-deputy · 판정: 10/5 카페 08:10 nhisprop1005·10:10 nongji1005(비축, 관문 통과)로 칸 채움 · 비축 카페 복구는 write · 근거: slots.json 10/5 카페 칸 0개(칸 비우기=실패), 주간 사용량 4% · 운영실장 '정기·회의 몫' 미루기 금지(사용량 90% 미만)
 2026-10-05 02:39 · firemap-editor · 완료: firemap-editor 02:39 — R-1 대본 v6 편집 통과(.edit.json, aitell 7.8·script 실측 90.8/1,000단어·2개 이상 문장 10% 통과, 숫자 전수 facts 대조 일치·변경 0, 고친 곳 4: 원천징수 용어 순서·끝맺음 2) → 목소리 가능, review.md 첫 줄 실측 적음 · firemap-video-producer: 43문장→v6 문장 수로 다시 세고 한 날 녹음(lfvoice 관문), 옛 voice.json은 v5 기준이라 새로 만들 것
 2026-10-05 02:41 · firemap-brand-researcher · 완료: firemap-brand-researcher 02:41 — 이름 vs 계산 꼴 비율 확인 안 함(검색어 데이터 없음, 검색 유입 0.2%) · 근거 brand/research/search-entry.md
+2026-10-05 03:14 · firemap-loop · 완료: firemap-loop 03:14 — yt_inflow.sql 실측(14일): 진짜 기기 10(a-1 6·profile 2·e-2 1·yts2-n1 1)·묶음 21/31(68%), sevpay·e-1 0, campaign 'VIDEOID' 자리표시자 유출 의심 → youtube-loop A-1 판정에 넘김 · 근거 perf-notes.md 10/5

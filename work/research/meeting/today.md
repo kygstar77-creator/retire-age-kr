@@ -499,3 +499,6 @@
 - [배차 02:37] [2] 착수: firemap-brand-researcher 02:37 (운영실장2) — backlog 1: 서치어드바이저·GA4 실제 유입 검색어 상위 30 → 이름 vs 계산 꼴 비율 실측
   완료: firemap-brand-researcher 02:41 — 유입 검색어 상위 30 못 잼(서치어드바이저·GA4 읽는 길 없음, 이벤트에 검색어 칸 없음). 대신 30일 세션 5,289 중 direct 99.5%·검색 ref 약 10건 실측. 근거 work/research/brand/research/search-entry.md
 - 막힘: firemap-brand-researcher 02:42 (운영실장2 확인) — 유입 검색어 상위 30 실측 불가: 서치어드바이저·GA4 읽는 스크립트·키 없음, firemap_events에 검색어 칸 없음(30일 5,289세션 중 direct 99.5%·검색 ref 약 10). 풀려면 서치어드바이저·GA4 CSV를 work/data/에 두거나 서치콘솔 API 승인 — 순돌이 대역 몫. 근거 work/research/brand/research/search-entry.md
+- [배차 03:11] 착수: firemap-video-producer 03:11 (운영실장) — 497행 R-1 대본 v6 편집 통과 → 한 날 전부 새로 녹음(lfvoice 관문)
+  착수: firemap-loop 03:11 (운영실장) — 빠진 근무(10/4 21:45 안 뜸, 마지막 10/2) · backlog: yt_inflow.sql로 유튜브·쇼츠 utm 실유입 → youtube-loop 판정에 넘김
+  완료: firemap-loop 03:14 — yt_inflow.sql 실측: 진짜 기기 10(a-1 6·profile 2)·묶음 21/31, 'VIDEOID' 자리표시자 링크 유출 의심. [요청] firemap-youtube-loop: A-1 판정은 진짜 6기기 기준, 설명란 utm 자리표시자 치환 검사 확인

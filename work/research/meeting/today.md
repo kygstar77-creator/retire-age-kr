@@ -544,3 +544,4 @@
 - [검수 요청] 순돌이 — origin/cloud/sentence-types-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:13)
 - [검수 요청] 순돌이 — origin/cloud/subs-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:13)
 - [검수 요청] 순돌이 — origin/cloud/yt-quality-1003 dev와 충돌, 자동 반영 못 함 (10/05 05:13)
+  완료: firemap-write 05:28 — 비축 카페 1/2: imuigye1005 '건강보험 임의계속가입 평균 월급이 300만원이었다면 월 얼마일까' 관문 통과(제목 7.5·표지 7.5·aitell 0.0·readcheck 0·selfcheck 사실 0·레드팀 숫자 오류 0·해석 10건 반영·editgate auto·compare/review 세 줄), 법 110조·시행령 77·시행규칙 62·63 원문, slots reserve.cafe gates_ok 기입. 경쟁 7번이 임의계속 보험료를 절반으로 적은 것 확인(법은 전액). 16:10 TBD-A는 후보만(기초연금 부부감액·상속 배우자공제), 편 확정은 다음 회차(기한 10:10). 비축 카페 여전히 1/2.

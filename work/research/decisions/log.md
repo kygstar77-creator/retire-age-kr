@@ -929,3 +929,5 @@
 2026-10-05 08:15 · designer · 연봉 결과 v4: 결과 화면 입력칸을 조건 요약 행으로 접고 고정 바 해제, 6.83 그대로(7 미달) · 제미나이 lite 7판 6.5 고정이라 판별 못 함, Claude 둘 7 — 다음은 320·다크·데스크톱 마감 후 flash 재심사 (tokens-ref/salary-v4/review.md)
 
 2026-10-05 08:25 · firemap-write · F1 nhisprop1005 카페 #209 발행·verify OK(1,790자·사진 3) · 08:10 칸, 관문 01:10 통과분
+
+2026-10-05 08:34 · brand-research · 이름 붙은 계산기 검색(6개 합 659,220/월)이 은퇴·파이어 일반 말(9개 합 17,230)의 약 38배, 파이어계산기 50·은퇴계산기 160 · kwvol.py 실측, work/research/brand/research/search-entry.md

@@ -860,3 +860,8 @@
 
 2026-10-05 00:19 · firemap-improve · 카페 사진 교체 경로(editimg) 추가, #193 dry 검증만 · cafeedit는 글만 바꿔 그림 교체 길이 없었음; 적용은 editor 몫
 2026-10-05 00:25 · firemap-shorts · a1_1eok1y 표지 v9 확정(cover.png), 10/5 12:20 칸 gates_ok · v7 6.0·v8 6.33 거쳐 v9 제미나이 7·A 7·레드팀 7=7.0, 근거 cardshorts/a1_1eok1y/review.md
+2026-10-05 00:48 · firemap-youtube-loop · N-1 설명 카페 주소를 #208로 바꿈 · 짝 카페 글 발행(10/4 22:29)
+2026-10-05 00:48 · firemap-youtube-loop · E-1·N-1 오디오 언어 en-US→ko 고침, videos.update 스크립트 3개 ko 고정 · 한국어 영상인데 en-US로 표시돼 있었음(어떻게 바뀌었는지 확인 안 함)
+2026-10-05 00:48 · firemap-youtube-loop · A-1 썸네일 v3 vs v5a 판정 불가로 닫음 · v3 시절 노출 13회뿐, 이후 전부 v5a(이틀 클릭률 7.6%)
+2026-10-05 00:48 · firemap-youtube-loop · E-1·D-1 저조회 원인을 '노출 0'으로 정리(클릭률 문제 아님) · 첫날 노출 A-1 1,650 vs E-1 3·D-1 8, 근거 study/2026-10-05.md
+2026-10-05 00:48 · firemap-youtube-loop · 공개 쇼츠 4편 오디오 언어(없음2·ja·zh)→ko, ytupload.py에 defaultAudioLanguage ko 추가 · 한국어 영상인데 언어 표시가 틀림

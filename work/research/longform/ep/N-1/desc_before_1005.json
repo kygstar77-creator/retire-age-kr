@@ -1,0 +1,54 @@
+{
+ "kind": "youtube#video",
+ "etag": "JPhfdi50BZKyXZKhbSvmlzOR5IU",
+ "id": "420buEFKB8k",
+ "snippet": {
+  "publishedAt": "2026-10-04T10:30:29Z",
+  "channelId": "UCV3ZcSho5Z1i8k_FAiKPlVg",
+  "title": "나 vs 남들 | 연봉 ___이면 상위 몇 %? 우리 집 순자산, 위쪽 문턱만 올랐다",
+  "description": "※ 상위 10%에는 상위 1%가 들어 있어요. 세금 71.7% 중 30.3%는 상위 1%, 나머지 41.4%는 상위 2~10%가 냈어요.\n내 연봉 실수령액 계산(세금·4대보험 뗀 월급): https://firemap.kr/calc/salary?utm_source=youtube&utm_campaign=yts2-n1\n평균 연봉 4,475만원은 직장인 한가운데가 아니라 위에서 35~36% 자리입니다(국세청 2024년 귀속 근로소득 백분위, 2,107만 8,535명).\n가구 순자산은 1년 새 중앙값이 2억 4,000만원 → 2억 3,860만원으로 거의 그대로였는데, 상위 10% 문턱은 10억 4,592만원 → 11억 20만원으로 5,428만원 올랐습니다(2025년 가계금융복지조사).\n\n0:00 평균 연봉 4,475만원은 한가운데일까\n0:33 2,108만 명을 100칸으로\n1:22 내 연봉 자리 찾기\n2:25 세금은 누가 내나\n3:01 우리 집 순자산은 어디쯤\n4:09 1년 새 위쪽 문턱만 움직였다\n5:05 정리 · 내 숫자 넣기\n\n출처\n· 국세청 「근로소득 백분위(천분위) 자료」 공공데이터포털 15082063(2026-05-08 수정, 2024년 귀속) — 칸 평균은 구간 총급여 합계 ÷ 인원\n· 국가데이터처·금융감독원·한국은행 「2025년 가계금융복지조사」 통계표 12(순자산 분위별 평균·점유율·경계값, 2025년 3월 31일 기준·가구 단위)\n\n내레이션은 AI 음성 내레이션(Gemini TTS)이고, 숫자는 모두 위 원문 표에서 가져왔습니다.\n파이어맵 카페: https://cafe.naver.com/firemap",
+  "thumbnails": {
+   "default": {
+    "url": "https://i.ytimg.com/vi/420buEFKB8k/default.jpg",
+    "width": 120,
+    "height": 90
+   },
+   "medium": {
+    "url": "https://i.ytimg.com/vi/420buEFKB8k/mqdefault.jpg",
+    "width": 320,
+    "height": 180
+   },
+   "high": {
+    "url": "https://i.ytimg.com/vi/420buEFKB8k/hqdefault.jpg",
+    "width": 480,
+    "height": 360
+   },
+   "standard": {
+    "url": "https://i.ytimg.com/vi/420buEFKB8k/sddefault.jpg",
+    "width": 640,
+    "height": 480
+   },
+   "maxres": {
+    "url": "https://i.ytimg.com/vi/420buEFKB8k/maxresdefault.jpg",
+    "width": 1280,
+    "height": 720
+   }
+  },
+  "channelTitle": "파이어맵",
+  "tags": [
+   "가구 순자산",
+   "순자산 상위",
+   "연봉 백분위",
+   "연봉 상위",
+   "평균 연봉"
+  ],
+  "categoryId": "27",
+  "liveBroadcastContent": "none",
+  "defaultLanguage": "ko",
+  "localized": {
+   "title": "나 vs 남들 | 연봉 ___이면 상위 몇 %? 우리 집 순자산, 위쪽 문턱만 올랐다",
+   "description": "※ 상위 10%에는 상위 1%가 들어 있어요. 세금 71.7% 중 30.3%는 상위 1%, 나머지 41.4%는 상위 2~10%가 냈어요.\n내 연봉 실수령액 계산(세금·4대보험 뗀 월급): https://firemap.kr/calc/salary?utm_source=youtube&utm_campaign=yts2-n1\n평균 연봉 4,475만원은 직장인 한가운데가 아니라 위에서 35~36% 자리입니다(국세청 2024년 귀속 근로소득 백분위, 2,107만 8,535명).\n가구 순자산은 1년 새 중앙값이 2억 4,000만원 → 2억 3,860만원으로 거의 그대로였는데, 상위 10% 문턱은 10억 4,592만원 → 11억 20만원으로 5,428만원 올랐습니다(2025년 가계금융복지조사).\n\n0:00 평균 연봉 4,475만원은 한가운데일까\n0:33 2,108만 명을 100칸으로\n1:22 내 연봉 자리 찾기\n2:25 세금은 누가 내나\n3:01 우리 집 순자산은 어디쯤\n4:09 1년 새 위쪽 문턱만 움직였다\n5:05 정리 · 내 숫자 넣기\n\n출처\n· 국세청 「근로소득 백분위(천분위) 자료」 공공데이터포털 15082063(2026-05-08 수정, 2024년 귀속) — 칸 평균은 구간 총급여 합계 ÷ 인원\n· 국가데이터처·금융감독원·한국은행 「2025년 가계금융복지조사」 통계표 12(순자산 분위별 평균·점유율·경계값, 2025년 3월 31일 기준·가구 단위)\n\n내레이션은 AI 음성 내레이션(Gemini TTS)이고, 숫자는 모두 위 원문 표에서 가져왔습니다.\n파이어맵 카페: https://cafe.naver.com/firemap"
+  },
+  "defaultAudioLanguage": "en-US"
+ }
+}

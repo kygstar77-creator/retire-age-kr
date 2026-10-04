@@ -45,7 +45,7 @@ def upload(path, title, desc, privacy='private', tags='', paid=False):
     print(msg_ai)
     from googleapiclient.http import MediaFileUpload
     yt = service()
-    body = {'snippet': {'title': title[:100], 'description': desc[:5000], 'tags': [t.strip() for t in tags.split(',') if t.strip()][:30], 'categoryId': '22', 'defaultLanguage': 'ko'},
+    body = {'snippet': {'title': title[:100], 'description': desc[:5000], 'tags': [t.strip() for t in tags.split(',') if t.strip()][:30], 'categoryId': '22', 'defaultLanguage': 'ko', 'defaultAudioLanguage': 'ko'},
             'status': {'privacyStatus': privacy, 'selfDeclaredMadeForKids': False}}
     part = 'snippet,status'
     if paid:

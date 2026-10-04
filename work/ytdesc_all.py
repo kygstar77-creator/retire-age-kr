@@ -19,7 +19,8 @@ LOOP = os.path.join(HERE, 'research', 'longform', 'loop')
 DRY, BEFORE, AFTER = [os.path.join(LOOP, f'ytdesc_all_{x}') for x in ('dry.md', 'before.json', 'after.json')]
 CALC_IDS = set(calc_links.IDS)
 PLAN = {p['id']: p for p in json.load(open(f2_coupang.PLAN, encoding='utf-8'))['videos'] if not p.get('skip')}
-CAFE_POST = {'SCOI0DP-l-s': 'https://cafe.naver.com/firemap/187'}
+CAFE_POST = {'SCOI0DP-l-s': 'https://cafe.naver.com/firemap/187',
+             '420buEFKB8k': 'https://cafe.naver.com/firemap/208'}  # N-1 짝 글 #208(10/4 22:29), 10/5 00:4x 적용함
 IDS = list(PLAN)  # 롱폼 7편(A-1 + 6편). 쇼츠는 f2_plan에서 skip.
 
 def norm(s): return '\n'.join(l.rstrip() for l in s.replace('\r\n', '\n').strip().split('\n'))
@@ -92,7 +93,7 @@ def main(mode):
         json.dump(before, open(BEFORE, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)  # 한 편마다 먼저 저장
         body = {'id': vid, 'snippet': {'title': sn['title'], 'description': new, 'categoryId': sn['categoryId'],
                                        'tags': sn.get('tags', []), 'defaultLanguage': sn.get('defaultLanguage', 'ko')}}
-        if sn.get('defaultAudioLanguage'): body['snippet']['defaultAudioLanguage'] = sn['defaultAudioLanguage']
+        body['snippet']['defaultAudioLanguage'] = 'ko'  # 빼면 en-US로 바뀐 적 있음(E-1·N-1, 10/5 발견) — 우리 영상은 전부 한국어
         part = 'snippet'
         if paid: body['paidProductPlacementDetails'] = {'hasPaidProductPlacement': True}; part += ',paidProductPlacementDetails'
         yt.videos().update(part=part, body=body).execute()

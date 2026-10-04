@@ -39,7 +39,7 @@ def main(mode):
         if mode != 'apply': continue
         body = {'id': vid, 'snippet': {'title': sn['title'], 'description': nd, 'categoryId': sn['categoryId'],
                                        'tags': sn.get('tags', []), 'defaultLanguage': sn.get('defaultLanguage', 'ko')}}
-        if sn.get('defaultAudioLanguage'): body['snippet']['defaultAudioLanguage'] = sn['defaultAudioLanguage']
+        body['snippet']['defaultAudioLanguage'] = 'ko'  # 빼면 en-US로 바뀐 적 있음(E-1·N-1, 10/5 발견) — 우리 영상은 전부 한국어
         yt.videos().update(part='snippet', body=body).execute()
         chk = yt.videos().list(part='snippet', id=vid).execute()['items'][0]['snippet']
         ok = f'{LABEL} {url(vid)}' in chk['description'].split('\n')[:4] and chk['title'] == sn['title'] and chk.get('tags', []) == sn.get('tags', [])

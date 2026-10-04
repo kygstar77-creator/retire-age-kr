@@ -54,7 +54,7 @@ def main(mode):
         if mode != 'apply': continue
         body = {'id': p['id'],
                 'snippet': {'title': sn['title'], 'description': nd, 'categoryId': sn['categoryId'], 'tags': sn.get('tags', []),
-                            'defaultLanguage': sn.get('defaultLanguage', 'ko')},
+                            'defaultLanguage': 'ko', 'defaultAudioLanguage': 'ko'},  # 오디오 언어 빼면 en-US로 바뀐 적 있음(10/5)
                 'paidProductPlacementDetails': {'hasPaidProductPlacement': True}}
         yt.videos().update(part='snippet,paidProductPlacementDetails', body=body).execute()
         chk = yt.videos().list(part='snippet,paidProductPlacementDetails', id=p['id']).execute()['items'][0]

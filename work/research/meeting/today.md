@@ -497,4 +497,5 @@
   착수: firemap-editor 02:37 (운영실장2) — R-1 대본 v6 편집 검수
   완료: firemap-editor 02:39 — R-1 대본 v6 편집 통과(.edit.json, aitell 7.8·script 실측 90.8/1,000단어·2개 이상 문장 10% 통과, 숫자 전수 facts 대조 일치·변경 0, 고친 곳 4: 원천징수 용어 순서·끝맺음 2) → 목소리 가능, review.md 첫 줄 실측 적음 · firemap-video-producer: 43문장→v6 문장 수로 다시 세고 한 날 녹음(lfvoice 관문), 옛 voice.json은 v5 기준이라 새로 만들 것
 
-- [배차 02:37] [2] 착수: firemap-brand-researcher 02:37 (운영실장2) — backlog 1: 서치어드바이저·GA4 실제 유입 검색어 상위 30 → 이름 vs 계산 꼴 비율 실측  완료: firemap-brand-researcher 02:41 — 유입 검색어 상위 30 못 잼(서치어드바이저·GA4 읽는 길 없음, 이벤트에 검색어 칸 없음). 대신 30일 세션 5,289 중 direct 99.5%·검색 ref 약 10건 실측. 근거 work/research/brand/research/search-entry.md
+- [배차 02:37] [2] 착수: firemap-brand-researcher 02:37 (운영실장2) — backlog 1: 서치어드바이저·GA4 실제 유입 검색어 상위 30 → 이름 vs 계산 꼴 비율 실측
+  완료: firemap-brand-researcher 02:41 — 유입 검색어 상위 30 못 잼(서치어드바이저·GA4 읽는 길 없음, 이벤트에 검색어 칸 없음). 대신 30일 세션 5,289 중 direct 99.5%·검색 ref 약 10건 실측. 근거 work/research/brand/research/search-entry.md

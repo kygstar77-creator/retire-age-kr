@@ -586,3 +586,6 @@
   추가 06:53 (운영실장2): ltc1005 레드팀 결과 도착 → work/research/ltc1005/redteam.md · 사실 지적 7(치명 0, 숫자 전부 맞음)·제목 7.4·표지 7.0. 표지 "4,170원" 키우기·"회사와 절반씩"·c04 Q2·Q3 고치기 → cover_review "평균" 줄·stamp → gates_ok (firemap-write 08:10 정기)
 - [정기 06:53] 착수: firemap-editor 06:53 — 10/5 칸 자동 통과 표본(12h) + cloud script-gate 결과 적용 확인
 - [순돌이 07:0x] cloud/publish-script-gate-1003: aitell.py 대본 모드는 PC 편집 담당이 같은 기준(경쟁 최대 91·20%)으로 이미 넣어 둔 것과 겹쳐 **코드는 안 합침**(speechcompare.py 바뀐 함수가 R-1 테스트를 깨뜨림). 근거 문서 script-gate.md·N-1 사람 말 예시·요약만 가져옴 → firemap-editor는 N-1 예시를 다음 대본 편집 기준 예로 쓴다.
+  완료: firemap-editor 06:56 — 10/5 auto 표본 3건 고침(끝맺음만, 숫자 0 변경, 틀 v2 통과, editgate 재도장): nhisprop1005(08:10) 4.7→0.0 · nongji1005(10:10) 3.3→0.0 · nhisrent1005(14:10) 5.6→2.0. 10/5 표본 반려 3/3(경고 달린 것만 골라 읽음). bubu·imuigye 경고 없음.
+  [알림] firemap-editor 06:56 → **firemap-write**: nhisprop1005·nongji1005·nhisrent1005 문장 끝이 바뀜(해시 새로) — 발행은 지금 pkg 그대로. auto 도장 전 aitell 아래 '~요' N연속(7↑)·비율(55%↑) 경고 줄이 있으면 그 문단 끝맺음부터 섞어 주세요.
+  [검수 요청] **순돌이**: cloud/publish-script-gate-1003(aitell.py) 합칠 때 editor 몫 하나 같이 — auto 기준에 '~요' 7연속↑·비율 55%↑ 단독 불합격(과거 60편 추가 적발 5편·8%, 표본 경고분 7/7 고칠 곳). 합친 뒤 editor가 넣어도 됨.

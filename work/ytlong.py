@@ -109,6 +109,9 @@ def up(ep):
             'status': {'privacyStatus': 'private', 'publishAt': datetime.datetime.fromisoformat(m['publishAt']).astimezone(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
                        'selfDeclaredMadeForKids': False, 'containsSyntheticMedia': bool(m.get('synthetic')),
                        'embeddable': True, 'publicStatsViewable': True, 'license': 'youtube'}}   # 교훈 13: status 칸 전부 명시
+    import ytplaceholder   # 자리표시자 관문(10/5): VIDEOID는 올린 뒤 실제 ID로, 나머지는 막음
+    other = [x for x in ytplaceholder.find(title + '\n' + desc) if x != 'VIDEOID']
+    if other: print('관문 막힘: 자리표시자', other); sys.exit(3)
     notes = []; part = 'snippet,status'
     if m.get('paid') or 'link.coupang.com' in desc:     # 쿠팡 링크 = '유료 프로모션 포함' 표시(ytupload.py와 같은 규칙)
         body['paidProductPlacementDetails'] = {'hasPaidProductPlacement': True}; part += ',paidProductPlacementDetails'
@@ -118,6 +121,8 @@ def up(ep):
         st, res = req.next_chunk()
         if st: print(f'업로드 {int(st.progress() * 100)}%', flush=True)
     vid = res['id']; print('완료 https://youtu.be/' + vid)
+    try: import ytupload; ytupload.fill_videoid(yt, vid, body['snippet'])
+    except Exception as e: notes.append('VIDEOID 치환 실패 ' + str(e)[:120])
     try: yt.thumbnails().set(videoId=vid, media_body=MediaFileUpload(p('thumb'))).execute(); notes.append('썸네일 설정')
     except Exception as e: notes.append('썸네일 실패 ' + str(e)[:120])
     v = yt.videos().list(part='status,snippet', id=vid).execute()['items'][0]['status']

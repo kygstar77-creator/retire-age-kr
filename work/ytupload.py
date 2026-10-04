@@ -43,6 +43,10 @@ def upload(path, title, desc, privacy='private', tags='', paid=False):
     ok_ai, msg_ai, hits_ai = aitell.gate_text(plain, os.environ.get('FIREMAP_EDITOR_OK') == '1')
     if not ok_ai: aitell.refuse(msg_ai, hits_ai); sys.exit(6)
     print(msg_ai)
+    # 자리표시자 관문(10/5, DBCBWToNFCs가 utm_campaign=VIDEOID로 공개됨). VIDEOID는 올린 뒤 실제 ID로 바꾸고, 나머지는 막는다.
+    import ytplaceholder
+    other = [x for x in ytplaceholder.find(title + '\n' + desc) if x != 'VIDEOID']
+    if other: print('올리지 않는다: 자리표시자', other); sys.exit(7)
     from googleapiclient.http import MediaFileUpload
     yt = service()
     body = {'snippet': {'title': title[:100], 'description': desc[:5000], 'tags': [t.strip() for t in tags.split(',') if t.strip()][:30], 'categoryId': '22', 'defaultLanguage': 'ko', 'defaultAudioLanguage': 'ko'},
@@ -56,7 +60,18 @@ def upload(path, title, desc, privacy='private', tags='', paid=False):
     while res is None:
         status, res = req.next_chunk()
         if status: print(f'업로드 {int(status.progress() * 100)}%', flush=True)
-    print('완료 https://youtu.be/' + res['id']); return res['id']
+    print('완료 https://youtu.be/' + res['id'])
+    fill_videoid(yt, res['id'], body['snippet'])
+    return res['id']
+
+def fill_videoid(yt, vid, snippet):
+    """설명란 VIDEOID를 올린 뒤 실제 ID로(10/5). 설명 수정은 youtube.force-ssl 토큰(f2_coupang)."""
+    if 'VIDEOID' not in snippet['description']: return
+    import f2_coupang
+    snippet = dict(snippet, description=snippet['description'].replace('VIDEOID', vid))
+    f2_coupang.service().videos().update(part='snippet', body={'id': vid, 'snippet': snippet}).execute()
+    back = yt.videos().list(part='snippet', id=vid).execute()['items'][0]['snippet']['description']
+    print('VIDEOID → 실제 ID', '바꿈' if 'VIDEOID' not in back else '실패 — 설명란 직접 고칠 것')
 
 def stats():
     yt = service()

@@ -892,3 +892,5 @@
 2026-10-05 04:15 · firemap-audit · 빠진 근무 대신 감사(10/3 19:50~10/5 04:10, 9건: 카페 #204~208·쇼츠 2·롱폼 N-1) 심각 0·경미 4, 스위치 변경 없음(STOP_blog 유지) · 사실 3건 1차 원자료(SEC 8-K·Yahoo·국세청 csv) 일치, 경미=micron 설명란 VIDEOID·같은 사실표 규칙 뒤집힘·D-1 카페 링크 3회 이월·정기 감사 32시간 공백
   완료: firemap-audit 04:15 — 배차 04:10 빠진 근무 감사(audit.md 맨 위)
 2026-10-05 04:31 · firemap-write · 12:10 칸 jeonseg2_1005 → wolse1005(월세 세액공제 정부안)로 교체·관문 통과 · HF 502/SGI 원문 못 받음, 월세 공제 수요 9,590·정부 세제개편안 소식·카페 0건
+2026-10-05 04:42 · firemap-youtube-loop · DBCBWToNFCs 설명란 VIDEOID→실제 ID 고침, ytupload·ytlong에 자리표시자 관문(VIDEOID 자동 치환·나머지 막음) · audit·firemap-loop 요청, 채널 66편 중 1편만 걸림
+2026-10-05 04:42 · firemap-youtube-loop · A-1 사이트 유입 판정: 설명란 링크 효과 거의 없음(조회 2,381·진짜 기기 6, 10/3 밤 뒤 +1,300회에 0) · yt_inflow.sql 로봇 묶음 뺀 값, 다음 롱폼은 다른 연결 자리 실험

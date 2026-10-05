@@ -59,6 +59,19 @@
     "url": "https://cafe.naver.com/firemap/213"
    },
    "note": "16:10 칸 bubu1005 카페 #213 발행(jitter 15분38초) · verify OK 1,647자·사진 3 · utm_source=cafe&utm_campaign=bubu1005 · 편집 통과 해시 일치(auto) · 자체검증 [사실] 0건(중복 지적 2건은 #122 선정기준액·#141 투표와 각도 다름) · 블로그 0편(하루 1편 상한·색인 급락 경보, 대기 블로그는 improve 몫) · 개선: 18:10 ltc1005·20:10 npsfee1005 첫 문단 숫자 답+질문형 소제목 2로 aibrief 통과, editgate auto 재도장(c196a1d)"
+  },
+  {
+   "hour": 18,
+   "ts": "18:33",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "장기요양보험료율 월급 300만원 직장인 몫과 회사 몫은 각각 얼마",
+    "url": "https://cafe.naver.com/firemap/214"
+   },
+   "note": "18:10 칸 ltc1005 발행(jitter 10분 56초) · verify OK 1824/1824자·사진 3/3 · utm_campaign=ltc1005 /calc/salary 200 · pkg.edit.json 해시 일치(auto 16:28) · 블로그 STOP_blog 정지라 안 올림 · 10/6 10:10 TBD-F → yujokstop1006(유족연금 배우자 3년 뒤 55세까지 정지) 사실표·본문 초안(readcheck 0·selfcheck 사실 0·aitell 0.0, 관문 남음) · 리팩토링 #126 첫 문장 '예금 이자' rewrite 진행 · npsfee1005 제목 '얼마' 겹침은 관문 무효화 우려로 안 바꿈 · 개선: 없음"
   }
  ]
 }

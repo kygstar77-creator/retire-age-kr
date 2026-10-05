@@ -1,0 +1,1003 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+
+
+	<!DOCTYPE html>
+	<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<!--Head-->
+<head>
+<title>예금자보호제도 안내 | 금융거래안내 | 고객센터 | MG새마을금고</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+<link rel="shortcut icon" href="/images/kfcc.Ico">
+<link type="text/css" rel="stylesheet" href="/inc/css/jquery-ui.min.css"> 
+<link type="text/css" rel="stylesheet" href="/inc/css/common.css?v=202606251700"> 
+<link type="text/css" rel="stylesheet" href="/inc/css/style.css">
+<link type="text/css" rel="stylesheet" href="/inc/css/customer.css?v=202512171700">
+<!--[if lt IE 9]>
+	<link type="text/css" rel="stylesheet" href="/gov/koneps/vn/css/ie8.css">
+<![endif]-->
+
+
+<script type="text/javascript" src="/inc/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/inc/js/jquery-ui-1.11.3.min.js"></script>
+<script type="text/javascript" src="/inc/js/jquery.mCustomScrollbar.js"></script>
+<script type="text/javascript" src="/inc/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/inc/js/ui.js"></script>
+<script type="text/javascript" src="/inc/javascript/tools.js"></script>
+<script type="text/javascript">
+	function openLayer(uri, param, container, wrap) {
+		M4Ajax.asyncCall(uri, param, {
+			onSuccess : function(data) {
+				jQuery(container).html(data);
+				jQuery(wrap).show();
+				app.resetLayerBox();
+			}
+		});
+	}
+
+	function closeLayer() {
+		jQuery(".layerWrap").hide();
+		jQuery(".layerContainer").html("&nbsp;");
+	}
+
+	function openLocationSearch() {
+		//var win = window.open('/map/mapmain.do', 'win_staff', 'width=912,height=800,top=20,left=20,scrollbars=yes');
+		//win.focus();
+		window.open("/map/main.do", "mapMain", "width=1200,height=800");
+		return false;		
+	}
+	
+	function openLoanGuideSearch() {
+		var win = window.open('/gumgo/loanSelfService/loan01.do', 'win_staff', 'width=1002,height=800,top=20,left=20,scrollbars=yes');
+		win.focus();
+	}
+
+	function ipinProxy() {
+		var param = {};
+		M4Ajax.actionForm("/ipin/proxy.do", param, {
+			method : "post",
+			windowName : "ipin_proxy",
+			windowWidth : "1000",
+			windowHeight : "800",
+			windowFeature : "top=20,left=20,scrollbars=yes"
+		});
+	}
+
+	function ipinCallback(ipinCode, name, birthday,sex) {
+		location.reload();
+	}
+
+	function NewWindow(mypage, myname, w, h, scroll) {
+		var winl = (screen.width - w) / 2;
+		var wint = (screen.height - h) / 4;
+		winprops = 'height=' + h + ',width=' + w + ',top=' + wint + ',left=' + winl + ',scrollbars=' + scroll + ',resizable'
+		win = window.open(mypage, myname, winprops)
+		if (parseInt(navigator.appVersion) >= 4) {
+			win.window.focus();
+		}
+	}
+
+	function openZipCode() {
+		$("#layerWrap3").attr('tabindex', '0').show().focus();
+		app.resetLayerBox();
+	}
+
+	function gugunList() {
+		var code = jQuery("#sido").val();
+		if (code == "") {
+			alert("시/도 를 선택해주세요.");
+			return;
+		}
+		jQuery("#loading_bar_sec1").show();
+		M4Ajax.asyncCall("/address/gugunList.do?sido=" + code, {}, {
+			onSuccess : function(data) {
+				var $obj = $("#sec_gugunDiv");
+				$obj.html(data);
+				$obj.removeClass('ui_complete');
+				window.UI.init();
+				jQuery("#loading_bar_sec1").hide();
+			}
+		});
+	}
+
+	function doroList() {
+		var code1 = jQuery("#sido").val();
+		var code2 = jQuery("#gugun").val();
+		var code3 = jQuery("#doro").val();
+		var code4 = jQuery("#gunmul").val();
+		if (code1 == "") {
+			alert("시/도를 선택해주세요.");
+			return false;
+		}
+		if (code2 == "") {
+			alert("시/군/구을 선택해주세요.");
+			return false;
+		}
+		if (code3 == "") {
+			alert("도로명을 입력해주세요.");
+			return false;
+		}
+		jQuery("#loading_zip").show();
+		M4Ajax.asyncCall("/address/doroList.do", {
+			sido : code1,
+			gugun : code2,
+			doro : code3,
+			gunmul : code4
+		}, {
+			onSuccess : function(data) {
+				var $obj = $("#tb_doroList");
+				$obj.html(data);
+				jQuery("#loading_zip").hide();
+				//$obj.removeClass('ui_complete');
+				//window.UI.init();
+			}
+		});
+	}
+
+	function changeSido() {
+		gugunList();
+	}
+
+	function setLayerAddr(zip, add) {
+		$("#layerZipcode").val(zip);
+		$("#layerAddress1").val(add);
+		$("#layerAddress2").focus();
+	}
+
+	function setOpenerAddr() {
+		$("[name='zipcode']").val($("#layerZipcode").val());
+		$("[name='address1']").val($("#layerAddress1").val());
+		$("[name='address2']").val($("#layerAddress2").val());
+		$("#zipclose").focus();
+		$("#layerWrap3").hide();
+	}
+
+	function layClose() {
+		$("#zipclose").focus();
+		$("#layerWrap3").hide();
+	}
+</script>
+
+
+
+		<script type="text/javascript">
+			
+		</script>
+	
+</head>
+<script>
+$(document).ready(function() {
+	//20240627 개인(신용)정보 유출 관련 개발
+	M4Ajax.asyncCall("/customer/listPesnInfoDsclData.do" , {}, {
+		onSuccess : function(data) {
+			if(data == 0){
+				$("#cus1601Gnb").hide();
+				$("#cus1601All").hide();
+				$("#\\/customer\\/cus1601\\.do").hide();
+			}else{
+				$("#cus1601Gnb").show();
+				$("#cus1601All").show();
+				$("#\\/customer\\/cus1601\\.do").show();
+			}
+		}
+	});
+	
+});
+</script>
+<!--Head Ends-->
+<!--Body-->
+<body>
+	
+<div id="skipNavi">
+	<a href="#contents"><span>본문내용 바로가기</span></a>
+	<a href="#gnb"><span>메인메뉴 바로가기</span></a>
+	<a href="#footer"><span>하단내용 바로가기</span></a>
+</div>
+	<!-- WRAP -->
+	<div id="wrap">
+		
+
+<!-- HEADER -->
+<input type="hidden" id="serverId" value="mgap01p"/>
+<div id="header">
+	
+<div class="globalWrap">
+	<div class="inner">
+		<div class="site">
+			<ul>
+				<li><a href="/index.do">새마을금고</a></li>
+				<li><a href="/financialProduct/financialMain.do">금융상품몰</a></li>
+				<li><a href="https://ibs.kfcc.co.kr" target="_blank" title="새 창 열림">개인뱅킹</a></li>
+				<li><a href="https://biz.kfcc.co.kr" target="_blank" title="새 창 열림">기업뱅킹</a></li>
+				<li><a href="https://mgcheck.kfcc.co.kr/" target="_blank" title="새 창 열림">체크카드</a></li>
+				<li><a href="https://insure.kfcc.co.kr" target="_blank" title="새 창 열림">공제</a></li>
+			</ul>
+		</div>
+		<div class="util"> 
+			<div class="menu"><a href="/customer/customerservice.do">고객센터</a><a href="javascript:openLocationSearch();" title="새 창 열림">금고위치(금리)안내</a></div>
+		</div>
+	</div>
+</div>
+	<div class="headWrap">
+		<div class="inner">
+			<div class="tit">
+				<h1><a href="/customer/customerservice.do"><img src="../../images/layout/h_logo_cust.png" alt="MG새마을금고 고객센터"></a></h1>
+			</div>
+			<div class="customer">
+				
+<div id="gnb">
+	<h2 class="blind">메인메뉴</h2>
+	<div class="gnbMenu">
+		<ul>
+			<li class="m1">
+				<span><a href="/customer/cus0101.do">고객상담&middot;지원</a></span>
+				<div class="nav2Dep" >
+					<div class="inner">
+						<ul>
+							<li>
+								<a href="/customer/cus0101.do">자주하는 질문(FAQ)</a>												
+							</li>
+							<li>
+								<a href="/customer/cus0201.do">e-mail 상담</a>
+								<a href="/customer/minwon/min1011.do">e-mail 상담 진행현황</a>
+								<a href="/customer/cus1002.do">e-mail 상담 비밀번호 재설정</a>
+								<a href="#" onclick="javascript:window.open('https://chat.kfcc.co.kr:9443/sharedfront/jsp/view/chatIntro.jsp?domainId=KFCC&channelId=SCN_KFCC_PC','viewer','width=400, height=600');return false;">채팅상담</a>
+								
+							</li>
+							<li>
+								<a href="/customer/cus0701_01.do">약관자료실</a>
+								<a href="/customer/cus0702_01.do">서식자료실</a>
+								<a href="/customer/cus0703_01.do">설명서자료실</a>												
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="m2">
+				<span><a href="/customer/cus0306.do">전자민원</a></span>
+				<div class="nav2Dep">
+					<div class="inner">										
+						<ul>
+							<li>
+								<a href="/customer/cus0306.do">금융소비자보호헌장</a>
+							</li>
+							<li>
+								<a href="/customer/cus0304.do">민원접수안내 </a>
+								<a href="/customer/minwon/min03.do">전자민원접수</a>
+								<a href="/customer/cus0901_write.do">칭찬합니다</a>
+							</li>
+							<li>
+								<a href="/customer/minwon/min1001.do">전자민원 조회/취하</a>
+															
+							</li>											
+						</ul>										
+					</div>	
+				</div>
+			</li>
+			<li class="m3">
+				<span><a href="/customer/cus0401_01.do">전자금융안내</a></span>
+				<div class="nav2Dep">
+					<div class="inner">
+						<ul>
+							<li>
+								<a href="/customer/cus0401_01.do">개인인터넷뱅킹</a>		
+								<a href="/customer/cus0402_01.do">기업인터넷뱅킹</a>	
+								<a href="/customer/cus0403_01.do">MG더뱅킹</a>
+								<a href="/customer/cus0414_01.do">MG더뱅킹기업</a>
+								<a href="/customer/cus0405_01.do">텔레뱅킹</a>	
+							</li>
+							<li>
+								<a href="/customer/cus0406_01.do">OTP서비스</a>
+								<a href="/customer/cus0407.do">자동화기기</a>
+							</li>
+							<li>
+								<a href="/customer/cus0408.do">금융알림SMS</a>
+								<a href="/customer/cus0410.do">MG스마트알림서비스</a>
+								<a href="/customer/cus0411.do">MG간편출금서비스</a>
+								<a href="/customer/cus0412.do">MG삼성페이서비스</a>
+							</li>
+							<li>
+								<a href="/customer/cus0409_01.do">기타전자금융</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="m4">
+				<span><a href="/customer/cus0801.do">금융거래안내</a></span>
+				<div class="nav2Dep">
+					<div class="inner">										
+						<ul>
+							<li>
+								<a href="/customer/cus0801.do">금융실명거래 유의사항</a>
+								<a href="/customer/cus0501_01.do">전자금융 유의사항</a>
+								<a href="/customer/cus0803.do">어음/수표거래 유의사항</a>	
+							</li>
+							<li>
+								<a href="/customer/cus1202.do">고객확인제도 안내</a>
+								<a href="/customer/cus1203.do">금융소득종합과세 안내</a>	
+							</li>
+							<li>
+								<a href="/customer/cus0502_01.do">금융사기예방 안내</a>
+								<a href="/customer/cus0804.do">통장/비밀번호분실처리안내</a>
+								<a href="/customer/cus0503_01.do">전자금융분쟁처리안내</a>	
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="m5">
+				<span><a href="/customer/cus1103_01.do">조회서비스</a></span>
+				<div class="nav2Dep">
+					<div class="inner">										
+						<ul>
+							<li>
+								<a href="/customer/cus1103_01.do">예금잔액증명서조회</a>
+								<a href="/customer/cus1301.do">소득공제용 납입증명서</a>
+								<a href="/customer/cus1102.do">상속인금융거래결과조회</a>
+							</li>
+							<li>
+								<a href="/customer/cus1302.do">휴면예금 공제금조회</a>
+								<a href="/customer/cus1109.do">미수령 출자금·배당금 조회 </a>
+								<a href="/customer/factInquiry/factInquiryAgree.do">통신사기 정보공유 사실조회 접수</a>
+							</li>
+							<li>
+								<a href="/customer/cus1104_03.do">대출모집인정보검색</a>
+								<a href="/customer/cus1108.do">지급정지 사실 공지</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="m6">
+				<span><a href="/customer/cus1701.do">정보공개</a></span>
+				<div class="nav2Dep">
+					<div class="inner">										
+						<ul>
+							<li>
+								<a href="/customer/cus1701.do">정보공개개요</a>
+								<a href="/customer/cus1702.do">정보공개업무처리절차</a>
+								<a href="/customer/cus1703.do">정보공개방법</a>
+								
+								<!-- 20251027 : 업무추진비 추가 -->
+								<a href="/customer/cus1707.do">업무추진비</a>
+							</li>
+							<li>
+								<a href="/customer/cus1704.do">불복구제절차</a>
+								<a href="/customer/cus1705.do">관계법률 및 서식</a>
+								<a href="/customer/cus1706.do">정보공개공표목록</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+			<li class="m7">
+				<span><a href="/etc/etc0301.do">보안센터</a></span>
+				<div class="nav2Dep">
+					<div class="inner">										
+						<ul>
+							<li>
+								<a href="/etc/etc0301.do">신용정보활용체제</a>
+								<a href="/customer/cus0805.do">신용정보 안내</a>
+								<a href="/customer/cus0504.do">신용정보제공활용 고객권리안내</a>
+							</li>
+							<li>
+								<a href="/etc/etc0101.do">개인정보처리방침</a>
+								<a href="https://ibs.kfcc.co.kr/MYMG/02/PIBMYMG020701">개인신용정보 이용제공 사실 조회</a>
+								<a href="https://ibs.kfcc.co.kr/MYMG/02/PIBMYMG020802">개인신용정보 이용제공 사실 통지 관리</a>
+							</li>
+							<li>
+								<a href="/etc/etc0103.do">영상정보처리기기운영&middot;관리방침</a>
+								<a href="/customer/cus1501.do">(국제/국내)정보보호 인증</a>
+								<a href="/customer/cus1601.do" id="cus1601Gnb">개인(신용)정보 유출 등 안내</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<a href="javascript:void(0);" class="btnAllMenu">전체메뉴</a>
+</div>
+			</div>
+		</div>
+	</div>
+	
+<div class="allMenuWrap" >
+	<div class="inner">
+		<h2>전체메뉴</h2>
+		<div class="allMenu">
+			<div class="allMenuPrice mCustomScrollbar">
+			<!-- allMenu -->
+				<ul class="rowArea">
+					<li>
+						<h3><a href="/customer/cus0101.do">고객상담·지원</a></h3>
+						<ul>
+							<li>
+								<h4><a href="/customer/cus0101.do">자주하는질문 (FAQ)</a></h4>
+								<h4><a href="/customer/cus0201.do">e-mail 상담 </a></h4>
+								<h4><a href="/customer/cus0701_01.do">약관자료실 </a></h4>
+								<h4><a href="/customer/cus0702_01.do">서식자료실  </a></h4>
+								<h4><a href="/customer/cus0703_01.do">설명서자료실   </a></h4>
+							</li>									
+						</ul>
+					</li>
+					<li>
+						<h3><a href="/customer/cus0306.do">전자민원 </a></h3>
+						<ul>
+							<li>
+								<h4><a href="/customer/cus0306.do">금융소비자보호헌장</a></h4>
+								<h4><a href="/customer/cus0304.do">민원접수안내 </a></h4>
+								<h4><a href="/customer/cus0101.do">전자민원접수 </a></h4>
+								<h4><a href="/customer/cus0303.do">대출모집인 민원 </a></h4>
+								<h4><a href="/customer/cus0901.do">칭찬합니다 </a></h4>
+								<h4><a href="/customer/minwon/min1001.do">전자민원 조회/취하 </a></h4>
+								<h4><a href="/customer/cus1002.do">고객상담 비밀번호 재설정   </a></h4>
+							</li>									
+						</ul>
+					</li>
+					<li>
+						<h3><a href="/customer/cus0401_01.do">전자금융이용안내 </a></h3>
+						<ul>
+							<li>
+								<h4><a href="/customer/cus0401_01.do">개인인터넷뱅킹  </a></h4>
+								<h4><a href="/customer/cus0402_01.do">기업인터넷뱅킹   </a></h4>
+								<h4><a href="/customer/cus0403_01.do">MG더뱅킹   </a></h4>
+								<h4><a href="/customer/cus0414_01.do">MG더뱅킹기업   </a></h4>
+								<h4><a href="/customer/cus0405_01.do">텔레뱅킹   </a></h4>
+								<h4><a href="/customer/cus0406_01.do">OTP서비스   </a></h4>
+								<h4><a href="/customer/cus0407.do">자동화기기   </a></h4>
+								<h4><a href="/customer/cus0408.do">금융알림SMS   </a></h4>
+								<h4><a href="/customer/cus0410.do">MG스마트알림서비스   </a></h4>
+								<h4><a href="/customer/cus0411.do">MG간편출금서비스   </a></h4>
+								<h4><a href="/customer/cus0412.do">MG삼성페이서비스   </a></h4>
+								<h4><a href="/customer/cus0409_01.do">기타전자금융   </a></h4>
+							</li>									
+						</ul>
+					</li>
+					<li>
+						<h3><a href="/customer/cus0801.do">금융거래안내</a></h3>
+						<ul>
+							<li>
+								<h4><a href="/customer/cus0801.do">금융실명거래 유의사항  </a></h4>
+								<h4><a href="/customer/cus0501_01.do">전자금융 유의사항  </a></h4>
+								<h4><a href="/customer/cus0803.do">어음/수표거래 유의사항  </a></h4>
+								<h4><a href="/customer/cus1202.do">고객확인제도 안내 </a></h4>
+								<h4><a href="/customer/cus1203.do">금융소득종합과세 안내 </a></h4>
+								<h4><a href="/customer/cus0502_01.do">금융사기예방안내  </a></h4>
+								<h4><a href="/customer/cus0804.do">통장/비밀번호분실 처리안내  </a></h4>
+								<h4><a href="/customer/cus0503_01.do">전자금융 분쟁처리 안내  </a></h4>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<h3><a href="/customer/cus1103_01.do">조회서비스 </a></h3>
+						<ul>
+							<li>
+								<h4><a href="/customer/cus1103_01.do">ⓟ예금잔액증명서조회 </a></h4>
+								<h4><a href="/customer/cus1301.do">소득공제용 납입증명서  </a></h4>
+								<h4><a href="/customer/cus1102.do">상속인금융거래결과조회  </a></h4>
+								<h4><a href="/customer/cus1302.do">ⓟ휴면예금 공제금조회  </a></h4>
+								<h4><a href="/customer/cus1104_03.do">대출모집인정보검색  </a></h4>
+								<h4><a href="/customer/cus1108.do">ⓟ지급정지 사실 공시  </a></h4>
+								<h4><a href="/customer/cus1109.do">미수령 출자금·배당금 조회 </a></h4>
+								<h4><a href="/customer/factInquiry/factInquiryAgree.do">통신사기 정보공유 사실조회 접수</a></h4>
+							</li>									
+						</ul>
+					</li>
+					<li>
+						<h3><a href="/customer/cus1701.do">정보공개</a></h3>
+						<ul>
+							<li>
+								<h4><a href="/customer/cus1701.do">정보공개개요</a></h4>
+								<h4><a href="/customer/cus1702.do">정보공개업무처리절차</a></h4>
+								<h4><a href="/customer/cus1703.do">정보공개방법</a></h4>
+								<h4><a href="/customer/cus1704.do">불복구제절차</a></h4>
+								<h4><a href="/customer/cus1705.do">관계법률 및 서식</a></h4>
+								<h4><a href="/customer/cus1706.do">정보공개공표목록</a></h4>
+								
+								<!-- 20251027 : 업무추진비 추가 -->
+								<h4><a href="/customer/cus1707.do">업무추진비</a></h4>
+							</li>									
+						</ul>
+					</li>
+					<li>
+						<h3><a href="/etc/etc0301.do">보안센터</a></h3>
+						<ul>
+							<li>
+								<h4><a href="/etc/etc0301.do">신용정보활용체제</a></h4>
+								<h4><a href="/customer/cus0805.do">신용정보 안내</a></h4>
+								<h4><a href="/customer/cus0504.do">신용정보제공활용 고객권리안내</a></h4>
+								<h4><a href="https://ibs.kfcc.co.kr/MYMG/02/PIBMYMG020701">개인신용정보 이용제공 사실 조회</a></h4>
+								<h4><a href="https://ibs.kfcc.co.kr/MYMG/02/PIBMYMG020802">개인신용정보 이용제공 사실 통지 관리</a></h4>
+								<h4><a href="/etc/etc0101.do">개인정보처리방침</a></h4>
+								<h4><a href="/etc/etc0103.do">영상정보처리기기운영&middot;관리방침</a></h4>
+								<h4><a href="/customer/cus1501.do">(국제/국내)정보보호 인증</a></h4>
+								<h4><a href="/customer/cus1601.do" id="cus1601All">개인(신용)정보 유출 등 안내</a></h4>
+							</li>									
+						</ul>
+					</li>
+				</ul>
+			</div>
+		<!-- //allMenu -->
+		</div>
+		<a href="javascript:void(0);" class="btnClose">닫기</a>
+	</div>
+</div>
+</div>
+<!-- //HEADER -->
+		
+		<!-- CONTAINER -->
+		<div id="container">
+			<!-- CONTENTS -->
+			<div id="contents">
+				<div id="path">	<div class="inner">		<div class="pathMenu">			<ul>				<li>																																																			<a href="javascript:void(0);" title="depth1 금융거래안내">금융거래안내</a>																																																								<ul>													<li>								<a href="/customer/cus0101.do" title="depth1 고객상담ㆍ지원">고객상담ㆍ지원</a>							</li>													<li>								<a href="/customer/cus0306.do" title="depth1 전자민원">전자민원</a>							</li>													<li>								<a href="/customer/cus0401_01.do" title="depth1 전자금융안내">전자금융안내</a>							</li>													<li>								<a href="/customer/cus0801.do" title="depth1 금융거래안내">금융거래안내</a>							</li>													<li>								<a href="/customer/cus1103_01.do" title="depth1 조회서비스">조회서비스</a>							</li>													<li>								<a href="/customer/cus1701.do" title="depth1 정보공개">정보공개</a>							</li>													<li>								<a href="/etc/etc0301.do" title="depth1 보안센터">보안센터</a>							</li>											</ul>				</li>									<li>																																																																																																																				<ul>															<li>									<a href="/customer/cus0801.do" onclick="location.href='/customer/cus0801.do';" id="/customer/cus0801.do" title="depth2 금융실명거래 유의사항">금융실명거래 유의사항</a>								</li>															<li>									<a href="/customer/cus0501_01.do" onclick="location.href='/customer/cus0501_01.do';" id="/customer/cus0501_01.do" title="depth2 전자금융 유의사항">전자금융 유의사항</a>								</li>															<li>									<a href="/customer/cus0803.do" onclick="location.href='/customer/cus0803.do';" id="/customer/cus0803.do" title="depth2 어음/수표거래 유의사항">어음/수표거래 유의사항</a>								</li>															<li>									<a href="/customer/cus1202.do" onclick="location.href='/customer/cus1202.do';" id="/customer/cus1202.do" title="depth2 고객확인제도 안내">고객확인제도 안내</a>								</li>															<li>									<a href="/customer/cus1203.do" onclick="location.href='/customer/cus1203.do';" id="/customer/cus1203.do" title="depth2 금융소득종합과세 안내">금융소득종합과세 안내</a>								</li>															<li>									<a href="/customer/cus0502_01.do" onclick="location.href='/customer/cus0502_01.do';" id="/customer/cus0502_01.do" title="depth2 금융사기예방 안내">금융사기예방 안내</a>								</li>															<li>									<a href="/customer/cus0804.do" onclick="location.href='/customer/cus0804.do';" id="/customer/cus0804.do" title="depth2 통장/비밀번호분실처리안내">통장/비밀번호분실처리안내</a>								</li>															<li>									<a href="/customer/cus0503_01.do" onclick="location.href='/customer/cus0503_01.do';" id="/customer/cus0503_01.do" title="depth2 전자금융분쟁처리안내">전자금융분쟁처리안내</a>								</li>													</ul>					</li>															</ul>		</div>	</div></div>
+				<!-- body content -->
+				<div id="cus1201_01" class="conPage">
+		<div class="contHead_Area">
+			<div class="contHead_img customerTimg"></div>
+		</div>
+		<div class="conHead">
+			<h1>예금자보호제도 안내</h1>
+		</div>
+		<div class="conBody">
+			<!-- body content start -->
+			<div class="tabType01">
+				<ul>
+					<!-- 활성화시 li태그내 on 클래스 처리 -->
+					<li class="on">
+						<a href="/customer/cus1201_01.do">예금자보호제도</a>
+					</li>
+					<li>
+						<a href="/customer/cus1201_02.do">예금자 보호준비금 제도 Q&amp;A</a>
+					</li>
+					<li>
+						<a href="/customer/cus1201_03.do">목표준비금제 안내</a>
+					</li>
+				</ul>
+			</div>
+			<h2>새마을금고 예금자보호제도란?</h2>
+			<ul class="noBuList">
+				<li>해산등기를 마친 새마을금고가 고객의 예금을 지급하지 못하게 될 경우 고객의 예금보호를 위해 새마을금고중앙회에 예금자보호준비금을 설치하여 운영하는 제도 입니다.</li>
+			</ul>
+			<h3>예금자보호제도를 새마을금고법으로 명문화</h3>
+			<ul class="noBuList">
+				<li>새마을금고는 지난 1983년부터 새마을금고법 제71조에 의해 예금자보호준비금을 금융권 최초로 새마을금고중앙회에 설치·운영하고 있으며, 동법 제72조에 의해 조성된 새마을금고 예금자보호준비금으로 고객 예·적금의 환급을
+					보장해주고 있습니다.</li>
+			</ul>
+			<h3>새마을금고 예금자보호 대상 및 한도</h3>
+			<ul class="noBuList">
+				<li>「새마을금고법」에 의해 설립된 전국의 새마을금고로서, 새마을금고법 시행령 제46조에 의거 2025년 9월 1일부터는
+				일반금융기관과 마찬가지로 예금주 1인당 원금과 소정의 이자를 합하여 1억원까지 보장해 드리고 있습니다.</li>
+			</ul>
+			<div class="pointDoc">
+				※ 소정의 이자란? <br /> 해당 예금에 소정의 이율을 곱한 이자로 소정의 이율은 예금자보호준비금관리위원회에서 정한 이율과 당해 새마을금고에서 약관상 적용되는 이율 중 낮은 이율을 말합니다.
+			</div>
+			<div class="pointDoc">
+				※ 보호한도는? <br /> 1인당(개인,법인,임의단체 등) 보호한도는 각 새마을금고가 별도로 적용되며, 동일한 새마을금고의 본점 및 지점의 예금은 합산됩니다. 출자금은 새마을금고의 자본금으로 예적금과 달리 예금자보호 대상이 아닙니다.
+			</div>
+			<p class="img mgt20">
+				<strong class="fontB">보호한도 예시</strong>
+				<img src="/images/content/customer/MG-HK-0729.png" alt="보호한도 예시" class=" mgt10" />
+			</p>
+			<h3>새마을금고 예금지급 절차</h3>
+			<ul class="noBuList">
+				<li>새마을금고가 경영부실 등으로 해산을 하게 되면 민법의 규정에 따라 2개월 이상 채권 신고 및 접수 후 새마을금고중앙회에서 채권·채무를 확정하여 예금자보호준비금관리위원회의 심의 의결을 거쳐 예금을 지급하는 것을 원칙으로
+					하고 있습니다.</li>
+			</ul>
+			<div class="pointDoc">
+				※ 예금지급 시기는? <br /> 새마을금고 업무정지일로부터 예금지급시 까지 일정기간이 소요되기 때문에 새마을금고 고객의 피해를 최소화하기 위해 1인당 2천만원까지 긴급생활지급을 신속하게 선지급하고 예금 원리금 1억원 이내에서 예금자보호관리위원회 의결 후 지급하고 있습니다.
+			</div>
+			<!--// body content end -->
+		</div>
+	</div>
+				<!-- //body content -->
+			</div>
+			<!-- //CONTENTS -->
+		</div>
+		<!-- //CONTAINER -->
+		
+		
+<!-- FOOTER -->
+<div id="footer" style="margin-top:170px">
+	<div class="inner">
+		<button type="button" class="btn_up_layer">컨텐츠위로</button> 
+		<div class="logo"><img src="/images/layout/f_logo.png" alt="MG새마을금고"></div>
+		<div class="company">
+			<div class="menu">
+				<ul>
+					<li><a href="/customer/cus0401_01.do"><strong>이용시간</strong></a></li>
+					<li><a href="/customer/cus0701_01.do">이용약관</a></li>
+					<li><a href="/etc/etc0101.do"><em>개인정보처리방침</em></a></li>
+					<li><a href="/customer/cus0306.do">전자민원</a></li>
+					<li><a href="/eng/index.do" class="eng">English</a></li>
+				</ul>
+			</div>
+			<div class="info">
+
+				<div class="customer">
+					<dl>
+						<dt>금융문의</dt>
+						<dd><span>1599-9000,</span><span>1588-8801</span></dd>
+						<dt>공제문의</dt>
+						<dd><span>1599-9010,</span></dd>
+						<dt>보이스피싱 금융사고</dt>
+						<dd><span>080-890-0201(수신자 부담)</span></dd>
+					</dl>
+				</div>
+				<p class="copyright">COPYRIGHT 2016 &copy; KFCC. ALL RIGHTS RESERVED.</p>
+			</div>
+		</div>
+		<!--============================================================-->
+		
+<div class="family">
+	<a href="javascript:void(0);">FAMILY MAP</a>
+	<div class="familyLayer">
+		<div class="dimmed"></div>
+		<div class="inner">
+			<div class="familyCon">
+				<div class="group01">
+					<h4>새마을금고 중앙회 사이트</h4>
+					<ul>
+						<li><a href="javascript:void(0);" class="on">새마을금고</a></li>
+						<li><a href="javascript:void(0);">MG인재개발원</a></li>
+						<li><a href="javascript:void(0);">제주연수원</a></li>
+						<li><a href="javascript:void(0);">새마을금고 복지회</a></li>
+<!-- 						<li><a href="javascript:void(0);">MG새마을금고 배드민턴단</a></li> -->
+						<li><a href="javascript:void(0);">MG새마을금고 지역희망나눔재단</a></li>
+						<li><a href="javascript:void(0);">MG신용정보</a></li>
+						<li><a href="javascript:void(0);">MG자산관리</a></li>
+						<li><a href="javascript:void(0);">MG새마을금고역사관</a></li>
+					</ul>
+					<h4>금융 사이트</h4>
+					<ul>
+						<li><a href="javascript:void(0);">개인 인터넷뱅킹</a></li>
+						<li><a href="javascript:void(0);">기업 인터넷뱅킹</a></li>
+						<li><a href="javascript:void(0);">MG카드</a></li>
+						<li><a href="javascript:void(0);">새마을금고 공제</a></li>
+					</ul>
+				</div>
+				<div class="group02">
+					<div class="list01 on">
+						<div class="tit">
+							<p>좋은이웃 새마을금고</p>
+							<h5>새마을금고</h5>
+						</div>
+						<div class="con">
+							<p>언제나 곁에서 힘이 되어주는 든든한 이웃처럼, 믿음과 신뢰를 바탕으로 행복한 사회를 만들어 갑니다.</p>
+							<a href="https://www.kfcc.co.kr/">홈페이지 바로가기</a>
+						</div>
+					</div>
+					<div class="list02">
+						<div class="tit">
+							<p>21세기를 이끌어 갈 인재양성의 터</p>
+							<h5>MG인재개발원</h5>
+						</div>
+						<div class="con">
+							<p>지식 기반 사회에 적응하기 위한 창조적 새마을금고 人을 양성하여 경영혁신을 선도하고 회원만족을 실현하기 위한 “최고의 교육서비스＂를 지원합니다.</p>
+							<a href="https://www.kfcc.co.kr/edu/index.do" target="_blank" title="새 창 열림">홈페이지 바로가기</a>
+						</div>
+					</div>
+					<div class="list03">
+						<div class="tit">
+							<p>연수와 휴식을 즐길 수 있는</p>
+							<h5>제주연수원</h5>
+						</div>
+						<div class="con">
+							<p>제주시 애월읍 평화로 경마공원 맞은편 4만9천587m2의 휴양 및 레포츠, 세미나 등 다양한 시설이 있는 새로운 개념의 휴양형 연수원 입니다.</p>
+							<a href="https://mgjejuti.kfcc.co.kr" target="_blank" title="새 창 열림">홈페이지 바로가기</a>
+						</div>
+					</div>
+					<div class="list04">
+						<div class="tit">
+							<p>풍요로운 미래를 가꾸어 가는</p>
+							<h5>
+								새마을금고<br>복지회
+							</h5>
+						</div>
+						<div class="con">
+							<p>복지회는 재직 중에는 물론 퇴직 후에도 보다 여유롭고 안정된 삶을 누릴 수 있도록 도와드리는 회원복지 프로그램을 확대하고 있습니다.</p>
+							<a href="http://www.kccwf.or.kr/" target="_blank" title="새 창 열림">홈페이지 바로가기</a>
+						</div>
+					</div>
+<!-- 					<div class="list05"> -->
+<!-- 						<div class="tit"> -->
+<!-- 							<p> -->
+<!-- 								생활 스포츠의 확장과<br>배드민턴 활성화 -->
+<!-- 							</p> -->
+<!-- 							<h5> -->
+<!-- 								MG새마을금고<br>배드민턴단 -->
+<!-- 							</h5> -->
+<!-- 						</div> -->
+<!-- 						<div class="con"> -->
+<!-- 							<p>생활 스포츠로 자리매김한 배드민턴의 경기력 향상과 저변확대를 통한 배드민턴 스포츠의 중흥에 앞장서겠습니다.</p> -->
+<!-- 							<a href="https://www.kfcc.co.kr/sports/main.do" target="_blank" title="새 창 열림">홈페이지 바로가기</a> -->
+<!-- 						</div> -->
+<!-- 					</div> -->
+					<div class="list10">
+						<div class="tit">
+							<p>
+								나눔을 전하는 따뜻한 손길.
+							</p>
+							<h5>
+								MG새마을금고 지역희망나눔재단
+							</h5>
+						</div>
+						<div class="con">
+							<p>MG새마을금고 지역희망나눔재단이 함께합니다.</p>
+							<a href="http://www.kfccf.or.kr" target="_blank" title="새 창 열림">홈페이지 바로가기</a>
+						</div>
+					</div>
+					<div class="list11">
+						<div class="tit">
+							<p>
+							
+							</p>
+							<h5>
+								MG신용정보
+							</h5>
+						</div>
+						<div class="con">
+							<p>새마을금고중앙회 100% 자회사로 재출범한 MG신용정보는 1996년 채권추심업무를 시작한 이래<br />약 20여년간 신용정보업계를 선도해온
+							국내최고의 채권추심 및 자산관리 전문 회사입니다.</p>
+							<a href="http://www.mginfo.co.kr" target="_blank" title="새 창 열림">홈페이지 바로가기</a>
+						</div>
+					</div>
+					<div class="list12">
+						<div class="tit">
+							<p>
+							
+							</p>
+							<h5>
+								MG자산관리
+							</h5>
+						</div>
+						<div class="con">
+							<p>㈜MG자산관리는 사업다각화를 통한 신규 수익원을 발굴하고, 
+							       새마을금고 및 새마을금고중앙회의 체계적인 자산관리를 지원함으로써 인력구조의 유연성과 통일된 이미지 제고를 목적으로 새마을금고중앙회가 전액 출자한 자회사입니다.
+							</p>
+							<a href="http://mgasset.co.kr/main/index.asp" target="_blank" title="새 창 열림">홈페이지 바로가기</a>
+						</div>
+					</div>									
+                    <div class="list14">
+                        <div class="tit">
+                            <p>
+                            
+                            </p>
+                            <h5>
+                                MG새마을금고<br>역사관
+                            </h5>
+                        </div>
+                        <div class="con">
+                            <p>과거와 현재, 개인과 공동체를 잇는 KFCC HISTORY MUSEUM</p>
+                            <a href="https://mgmuseum.kfcc.co.kr" target="_blank" title="새 창 열림">홈페이지 바로가기</a>
+                        </div>
+                    </div>              
+					<div class="list06">
+						<div class="tit">
+							<p>
+								정직과 신용을 바탕으로 안전한 <br />인터넷 금융서비스
+							</p>
+							<h5>개인 인터넷뱅킹</h5>
+						</div>
+						<div class="con">
+							<p>
+								인터넷이 가능한 PC를 통하여 <br />새마을금고 인터넷뱅킹 사이트에서 각종 조회, 계좌이체, 예적금 가입, 대출, 공제 등 금융업무를 편리하게 처리할 수 있는 서비스 입니다.
+							</p>
+							<a href="https://ibs.kfcc.co.kr" target="_blank" title="새 창 열림">홈페이지 바로가기</a>
+						</div>
+					</div>
+					<div class="list07">
+						<div class="tit">
+							<p>
+								기업고객에게 보다 안전하고 <br />차별화된 금융서비스
+							</p>
+							<h5>기업 인터넷뱅킹</h5>
+						</div>
+						<div class="con">
+							<p>개인사업자, 법인, 임의단체에서 각종 금융업무를 인터넷으로 편리하게 처리할 수 있는 서비스 입니다.</p>
+							<a href="https://biz.kfcc.co.kr" target="_blank" title="새 창 열림">홈페이지 바로가기</a>
+						</div>
+					</div>
+					<div class="list08">
+						<div class="tit">
+							<p>똑똑한 소비를 위한 현명한 선택</p>
+							<h5>MG카드</h5>
+						</div>
+						<div class="con">
+							<p>새마을금고 계좌를 보유하신 카드 회원이면 카드 이용 정보를 온라인으로 빠르고 간편하게 이용하실 수 있습니다.</p>
+							<a href="https://mgcheck.kfcc.co.kr/" target="_blank" title="새 창 열림">홈페이지 바로가기</a>
+						</div>
+					</div>
+					<div class="list09">
+						<div class="tit">
+							<p>미래를 도와드리는 든든한 동반자</p>
+							<h5>새마을금고공제</h5>
+						</div>
+						<div class="con">
+							<p>
+								“1인은 만인을 위하여, 만인은 <br />1인을 위하여＂라는 협동정신을 바탕으로 회원들의 안정된 경제생활을 위한 협동조합보험입니다.
+							</p>
+							<a href="https://insure.kfcc.co.kr" target="_blank" title="새 창 열림">홈페이지 바로가기</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<a href="javascript:void(0);" class="btnClose">닫기</a>
+		</div>
+	</div>
+</div>
+		<!--============================================================-->
+		<div class="f_waLogo">
+			<a href="/customer/cus1501.do" target="_blank" title="ISMS인증 안내 새 창 열림"><img src="/images/layout/f_isms_logo.png" alt="ISMS인증로고"></a>
+			<a href="/customer/cus1501.do" target="_blank" title="ISO인증 안내 새 창 열림"><img src="/images/layout/f_iso_logo.png" alt="ISO인증로고"></a>
+			<a href="/customer/cus1501.do" target="_blank" title="BS인증 안내 새 창 열림"><img src="/images/layout/f_bs_logo.png" alt="BS인증로고"></a>
+			<a href="http://www.webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110" target="_blank" title="국가 공인 인증기관 : 웹와치  새 창 열림"><img src="/images/layout/f_wa_logo.png" alt="미래창조과학부 WEB ACCESSIBILITY 마크(웹 접근성 품질인증 마크)" title="국가 공인 인증기관 : 웹와치"/></a>
+			<a href="/newsCenter/newsCenterDetail.do?no=2063&schCategoryId=" target="_blank" title="Business Continuity Management System Certification 재해경감우수기업 안내 새 창 열림"><img src="/static/images/common/bcmsc_mark.png" alt="Business Continuity Management System Certification 재해경감우수기업" height="40"></a>
+			<img src="/images/layout/f_ns_logo.png" alt="VerSign Secured">
+		</div>
+	</div>
+</div>
+<!-- //FOOTER -->
+		
+		<!-- 마크업 위치 : warp내 최하단 -->
+		<!-- layer 1 -->
+		<div class="layerWrap" id="layerWrap2" style="display:none; opacity: 1;">
+			<div class="dimmed"></div>
+			<div class="layerContainer" style="width: 396px; margin-left: -198px; margin-top: -127px;">
+				<h2>웹 페이지 메시지</h2>
+				<div class="layerContent">
+					<!--cont-->
+					<div class="layerCon_resend size01">
+
+						<div class="message" id="layermessage">
+							<!-- 고객의견이 접수되었습니다. -->
+						</div>
+						<div class="btnArea ac">	
+							<a href="javascript:void(0);" onclick="javascript:laypopOk();" class="btnBs">확인</a>
+						</div>	
+
+					</div>
+					<!--//cont-->
+				</div>
+				<!-- <button type="button" class="layerClose">닫기</button>  -->
+			</div> 
+		</div>
+		<!-- //layer 1 -->
+		<!-- layer 우편번호 -->
+		<div class="layerWrap" id="layerWrap3" style="display:none;">
+			<div class="dimmed"></div>
+			<div class="layerContainer">
+				<h2>주소찾기</h2>
+				<div class="layerCon_address size03">
+						<div class="inner">
+							
+							<div class="addrSearch">
+								<fieldset>
+									<legend>주소검색</legend>
+									<div class="input">
+										<div>
+											<div class="selectbox_wrap" style="width:205px;" onChange="javascript:gugunList();">
+												<select title="시/도" id="sido" name="sido">
+													<option value="" selected="selected">시/도 선택</option>
+													<option value="Seoul">서울</option>
+													<option value="Busan">부산</option>
+													<option value="Daegu">대구</option>
+													<option value="Incheon">인천</option>
+													<option value="Gwangju">광주</option>
+													<option value="Daejeon">대전</option>
+													<option value="Ulsan">울산</option>
+													<option value="Sejong">세종</option>
+													<option value="Gyeonggi">경기</option>
+													<option value="Gangwon">강원</option>
+													<option value="Chungcheongbuk">충북</option>
+													<option value="Chungcheongnam">충남</option>
+													<option value="Jeollabuk">전북</option>
+													<option value="Jeollanam">전남</option>
+													<option value="Gyeongsangbuk">경북</option>
+													<option value="Gyeongsangnam">경남</option>
+													<option value="Jeju">제주</option>
+												</select>
+											</div>
+											<div class="selectbox_wrap" style="width:205px;" id="sec_gugunDiv">
+												<select title="시/군/구" id="gugun" name="gugun">
+													<option value="" selected="selected">시/군/구 선택</option>
+												</select>
+											</div>
+										</div>
+										<div>
+											<input type="text" name="doro" id="doro" value="" placeholder="도로명 입력(예:봉은사로)" title="도로명 입력" style="width:205px;">
+											<input type="text" name="gunmul" id="gunmul" value="" placeholder="건물번호 입력(예: 20)" title="건물번호 입력" style="width:205px;">
+										</div>
+										<button type="button" onclick="javascript:doroList();">검색</button>
+									</div>
+									<div class="exList">
+										<ul>
+											<li>도로명 입력<span>(예:봉은사로)</span></li>
+											<li>건물번호 입력<span>(예:20)</span></li>
+										</ul>
+									</div>
+								</fieldset>
+							</div>
+							<div class="addrView mCustomScrollbar">
+								<!-- table -->
+								<div class="tableArea">
+									<div class="tblType01">
+										<table>
+											<caption>주소찾기에 관한 우편번호,주소 항목을 나타낸 표</caption>
+											<colgroup>
+												<col style="width:22%">
+												<col style="width:auto">
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col">우편번호</th>
+													<th scope="col">주소</th>
+												</tr>
+											</thead>
+											<tbody id="tb_doroList">
+												<tr class="ac">
+													<td colspan="2" class="nodata">해당 내역이 없습니다.</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!-- //table -->
+							</div>
+							<div class="addrResult">
+								<dl>
+									<dt>도로명주소</dt>
+									<dd>
+										<div><div class="post"><input type="text" name="layerZipcode" id="layerZipcode" value="" readonly="readonly" title="우편번호"></div><input type="text" name="layerAddress1" id="layerAddress1" value="" readonly="readonly" title="도로명 주소"></div>
+										<div><input type="text" name="layerAddress2" id="layerAddress2" value="" placeholder="상세주소 입력" title="상세 주소"></div>
+									</dd>
+								</dl>
+							</div>
+		
+							<!-- btn -->
+							<div class="btnArea ac">
+								<a href="javascript:void(0);" onclick="javascript:setOpenerAddr();" class="btnBs">도로명주소 확인</a>
+							</div>
+							<!-- //btn -->
+						</div>
+					</div>
+					<div class="dim dimPopup" id="loading_zip" style="display: none;">
+						<div class="process">
+							<div class="proImg"><img src="/images/content/loading.gif" alt=""></div>
+							<span>처리중입니다</span>
+						</div>
+					</div>
+				<button type="button" onclick="javascript:layClose();" class="layerClose">닫기</button>
+			</div>
+		</div>
+		<!-- //layer -->
+		
+	</div>
+	<!-- //WRAP -->
+</body>
+<!--Body Ends-->
+</html>
+

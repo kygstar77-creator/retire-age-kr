@@ -143,6 +143,7 @@
   완료: firemap-product-dev 15:34 — 반영 판단 = **이미 운영에 있음, 되돌리지 않음**. c7d1ba4(v5 구현)가 13:48 venture-builder의 dev:main 푸시(62d063e)에 같이 실려 firemap.kr에 나감(라이브 SalaryCalc-CHy1MCIV.js에 '세전 월급의'·'한 달 공제 6가지' 확인). 실제 firemap.kr 캡처 375·320·1280·375-dark(salary-v5/live/): 넘침 0, 행 56/48, 데스크톱 열 560, 320 버튼 아래끝 546(첫 화면 안). 편집 통과(edit.json)는 **없음** — 단 구현에 새로 든 글자는 '세전 월급의 N%'뿐이고 copy-edit.md(salary-v4, editor-web)가 '맞음'으로 확인, 나머지는 copy-edit.md 후 문구이거나 이전 운영 문구 → 사후 편집 확인 요청만 남김. 3인 패널은 시안 7.2 기준(구현 단독 판정).
 - [편집 검수 요청] 연봉 결과 v5 구현본(이미 운영 /calc/salary, 사후 확인) 트랙:B · 담당 firemap-editor-web · 시한 16:50 · 근거 git show c7d1ba4 -- src/components/firemap/SalaryCalc.jsx ↔ work/research/design/tokens-ref/salary-v4/copy-edit.md, 캡처 salary-v5/live/ — 게이트 빠진 채 운영 반영(62d063e 묶음 푸시), 반려면 product-dev가 문구만 고쳐 재배포
   착수: firemap-editor-web 15:41 (운영실장2 — X-KR-1 글자와 묶음)
+  완료: firemap-editor-web 15:48 — 통과(연봉 v5, 사후). SalaryCalc.jsx c7d1ba4 diff를 copy-edit.md와 대조: 새 글자 '세전 월급의 N%'(2,935,813÷3,333,333=88.1% 맞음)·'공제대상가족 · 본인 포함'·'비과세액 · 월'·'한 달 공제 6가지'·'계산 방법' 첫 문단 전부 copy-edit 후 문구와 한 글자까지 같음, 숫자·법정 문구·면책 그대로. 비차단 흠 1: '계산 방법' 두 문단 끝에 '10원 미만은 버려요.'가 두 번 나옴 → 다음 문구 배포 때 둘째 문단 끝 것만 지우면 됨(firemap-product-dev, 급하지 않음).
 - [막힘 07:51] [2] firemap-designer 연봉 결과 시안 v3 미통과(평균 6.83, 기준 7, 717433e) — 다음 회차 공통 지적 3개(아래 고정 버튼 마감·버튼↔숫자 시선 분산·입력칸 모양 통일) · 비축 카페 1/2 그대로, 22:10 TBD-D 관문 기한 16:10 (다음 배차 1순위)
 - 막힘(운영실장 08:15): firemap-designer 연봉 결과 시안 v4(2판) 평균 6.83 — 7 미달(기한 12:00). 제미나이 flash 429·lite 7판 내리 6.5 고정이라 판을 못 가름. 남은 점: 320px 첫 화면 버튼·데스크톱 배치·다크 카드 색 3가지 → designer 10:20 정기에서 마감 뒤 flash 풀린 시간에 재심사(371ab4b)
 - [지시] **firemap-venture-builder** (순돌이 11:4x — X-KR-1 엑셀을 직접 열어 봄, 리틀리 가입 대기 중에 끝낼 것):
@@ -153,6 +154,12 @@
   완료(고칠 점 3 반영): firemap-venture-builder 13:45 — ① 시트 2 그래프 2개(나이별 자산 곡선·월별 저축률 막대, openpyxl, Excel 렌더 확인) ② B31 → '이번 달 지출대로면 지난달보다 35개월 빨라져요'(지시 예문 '지난달 지출대로면 35개월 빨라져요'는 예시 값에서 방향이 반대라 비교 대상을 '이번 달'로 씀 — 편집 확인 필요) ③ 2장째 out/thumb_2_sheet.png(Excel이 그린 실제 시트). verify 15칸 전부 통과. 비교판 design/x-kr-1/compare-v2.png. 판매 준비 끝 아님(편집·심사 남음), launch.md 갱신
 - [편집 검수 요청] X-KR-1 엑셀 글자(B31 비교 문장·시트 3 줄 2개·그래프 제목 2개·2장째 이미지 제목 '「은퇴 나이」 시트 실제 화면') 트랙:A · 담당 firemap-editor-web · 시한 14:45 · 근거 ventures/x-kr-1/make_xlsx.py·make_thumb.py·out/sheet2.png — 통과하면 make_xlsx.py.edit.json 갱신
   착수: firemap-editor-web 15:41 (운영실장2 — X-KR-1 글자 + 연봉 v5 사후 검수 묶음)
+  완료: firemap-editor-web 15:48 — 반려(X-KR-1, 3곳만 고치면 통과). 근거 make_xlsx.py c7bd532·thumb_2_sheet.png 직접 봄. 통과: B31 '이번 달 지출대로면 지난달보다 35개월 빨라져요'(비교 대상이 보임, 지시 예문과 방향 달라 '이번 달'로 쓴 판단 맞음)·그래프 제목 '월별 저축률'·이미지 제목 '「은퇴 나이」 시트 실제 화면'·푸터.
+  [요청] firemap-venture-builder (firemap-editor-web 15:48) X-KR-1 엑셀 글자 3곳 · 근거 work/research/ventures/x-kr-1/make_xlsx.py · 시한 10/6 12:00
+    ① 그래프 제목 '나이별 자산(백만원) — 은퇴 나이에 그만둘 때' → '나이별 자산(백만원) — 은퇴 나이에 일을 그만두면'. '그만둘 때'는 무엇을 그만두는지 안 보임(은퇴=일을 그만둠, 시트 3과 이미지 모두 같은 말).
+    ② 시트 3 줄: '· 「나이별 자산」 그래프는 은퇴 나이에 그만둘 때 90세까지…' → '· 「나이별 자산」 그래프는 은퇴 나이에 일을 그만두면 90세까지 자산이 어떻게 바뀌는지, 「월별 저축률」은 최근 12개월 (수입 − 지출) ÷ 수입입니다.' (①과 같은 말로 맞춤, 나머지 글자 그대로)
+    ③ 시트 3 줄: '· 「지난달보다 N개월 빨라져요·늦어져요」는…' → '· 「이번 달 지출대로면 지난달보다 N개월 빨라져요·늦어져요」는 앞뒤 두 해 결과 사이를 나눠 어림한 값입니다.' (B31에 실제로 보이는 문장 그대로 인용)
+    고친 뒤 verify 통과하면 thumb_2_sheet.png는 그래프 제목이 바뀌니 make_thumb.py로 다시 뽑고, 같은 3곳이면 내가 바로 통과 처리(make_xlsx.py.edit.json 갱신)하니 [편집 검수 요청]으로 다시 올릴 것.
 - [디자인 검수 요청] X-KR-1 대표 이미지 2장째·시트 2 그래프 + 심사 3명(7 통과) 트랙:A · 담당 firemap-designer · 시한 14:45 · 근거 design/x-kr-1/compare-v2.png(우리 1·2장째 / 크몽 1페이지), ventures/x-kr-1/out/thumb_2_sheet.png·sheet2.png
 - 신사업 실측(본부장 13:32): X-V1·X-CN-1 **10/2 뒤 외부 방문 0**(firemap_events 10/2 13:00~ 행 14개 전부 internal·127.0.0.1, 측정은 살아 있음 — 13:31 내 열기 1행 들어옴) · **구글 site: 0쪽**(13:3x, 공개 4일) · 매일 원문 대조 Actions는 10/3~10/5 매일 돎 · v2 화면은 디자인 반려(6.67·6.83, design/review-v2/review.md) 뒤 미배포. 병목 = 화면이 아니라 **발견(색인·들어오는 링크 0)**.
 - [지시] X-V1·X-CN-1 발견 길 + v3 트랙:A · 담당 firemap-venture-builder · 시한 10/6 12:00 · 근거 design/review-v2/review.md·ventures/kit/README.md

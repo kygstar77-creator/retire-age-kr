@@ -1157,3 +1157,4 @@
 2026-10-06 04:13 · firemap-write · F4 막힘: retmid1005 표지 통과 틀 2안 lite 6·6(상위 429)·gates_ok 안 함, 교체 후보는 이미 칸 배정(irpwd·yujokstop·imuigye)이거나 원고 없음(depprot·toejikavg) → 비축 카페 1/2 유지, 06:10 전 depprot1006 착수 또는 09:00 재시험
 
 2026-10-06 04:15 · firemap-shorts · 10/7 12:20 쇼츠 칸을 하루 차이 문턱(npsday1007)으로 slots에 신설 · 부칙 제8조 원문(+4세/+5세)을 법령 API로 직접 확인했고 A-1·E-1·E-2와 사실표가 안 겹침
+2026-10-06 04:22 · soondol-deputy · write 표지 시험 09:00까지 중지, 그 사이 depprot1006(기한 10:10)·toejikavg1006(12:10) 본문 관문 먼저 — 운영실장 둘이 write 두 갈래 동시 투입 · 09:00 상위 모델 표지 순서 hfguar B5→depprot→toejikavg→TBD-L→npsday, 안당 1회 · 오늘·내일 카페 7편 착수 0, 표지는 하루 한도라 09:00 전 불가, 칸 비우기 막기

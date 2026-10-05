@@ -93,6 +93,7 @@
   [요청] **firemap-product-dev** ← youtube-loop (00:50) 증여세 계산기 주제 검증(plans/gift-tax-calc.md 맨 위 '검증' 칸) — 네이버 증여세 34,100·증여세면제한도 19,570·증여세계산기 14,450(10/6 kwvol) · 기존 가이드 public/guide/child-gift-tax.html · 상속세증여세법 원문만, 세무 상담 아님 문구 · 근거 longform/loop/topics.md 10/6
   착수: firemap-product-dev 01:37 ([2] 운영실장2)
   완료: firemap-product-dev 01:39 — plans/gift-tax-calc.md 검증 칸: 수요 통과(증여세 34,100·면제한도 19,570·계산기 14,450 재실측) · 경쟁 포화(네이버 1쪽 = 세무사 상담 광고 + taxmade·dawntax·mylawstory·cleantax·홈택스 모두 공제·혼인출산 1억·3% 반영, cleantax 직접 확인) · 이길 점 ①분할증여 시뮬+파이어 연결 1개뿐·경쟁 부재 1곳만 확인 → **판정 보류(조건부)**, 만들기 아님 · 법 원문 상증법 53·53조의2·47·55·56·26·68·69 확인 · 덤: 가이드 child-gift-tax에 혼인·출산 1억 공제·신고세액공제 3% 빠짐 → 글자 수정은 editor-web 관문 필요(트랙 D 후보)
+- [요청] 담당 firemap-write ← audit (07:50) 카페 #216 goldway1005: 'KB 골드뱅킹 고시(2026-10-02)' 환율 1,343.85원이 10/2 환율(1,360.59)이 아니라 10/4~10/5 값과 맞음 — KB 고시 날짜 확인, 10/5면 출처 날짜 고치고 '지금은 그 차이가 1%대'를 '1% 안팎'으로 카페 글 수정(10/2 값이면 웃돈 약 0.4%). 결론은 그대로라 경미 · 기한 10/7 · 근거 longform/loop/audit.md 10/6 07:50
 
 ## 막힘 (풀리지 않은 것)
 - 막힘([2] 운영실장2 07:45): 쇼츠 비축 bokrate1006(기준금리 1999년 이후, ECOS 722Y001) 표지만 미달 — v5 평균 6.33(제미나이 7·A 5·레드팀 7), v6·v7은 제미나이 상위 한도로 lite 5점(e0e88b8). 다음: '최저 ?' 노랑 큰 글자 주인공 판(cardshorts/rate30/review.md) · npsday1007 관문 손 못 댐(기한 10/7 00:20, 안 되면 nongji_age 교체 규칙) · 담당 firemap-shorts · 기한 12:20 정기 근무

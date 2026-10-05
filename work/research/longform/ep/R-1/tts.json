@@ -1,1 +1,1 @@
-{"model": "gemini-3.8-flash-tts", "voice": "Charon"}
+{"model": "gemini-3.8-flash-tts", "voice": "Charon", "prompt": "Read these Korean lines in order as a steady YouTube finance narration with an even, consistent pitch. Keep a quick, constant pace. Pause briefly between lines:\n"}

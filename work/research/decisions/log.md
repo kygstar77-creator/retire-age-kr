@@ -1028,3 +1028,4 @@
 2026-10-05 15:55 · firemap-loop · 새 도구 subtitlekit 깔고 시험 → 안 씀 · 겹침 못 고침·우리는 srt 안 씀(README-tools.md)
 2026-10-05 15:55 · firemap-loop · backlog 1번 닫음 · 공개 21편 전부 설명란 firemap.kr 링크 있음(API 전수)
 2026-10-05 16:03 · firemap-venture-builder · 착수 15:59 → 완료 16:03: ① X-V1 v3 운영 배포(편집·디자인 통과, 375 넘침 0, IndexNow 200) ② X-KR-1 편집 반려 3곳 고침·12달 미리보기 파일(큰 숫자=판매 파일 검산)·그래프 제목 겹침 끔 → 편집 재검수 요청 ③ work/shipgate.py + pre-push 경고(dev:main 묶음 커밋별 편집·디자인 통과), 막을지 improve [요청]
+2026-10-05 16:23 · firemap-video-producer · R-1 렌더 보류(목소리 관문 f0 밖 81/153·5.44음절/초) · 규칙 한 날 녹음·이어 붙이기 금지, 오늘 요청 10회 소진 → 10/6 16:01 재녹음 + 결재함 Chirp 3 HD(E-2·N-1도 같은 측정 밖이라 제미나이로는 관문 통과 낮음) · lfvoice 받아쓰기에 LFCUT_MODELS 적용(503 대비)

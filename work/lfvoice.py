@@ -154,7 +154,7 @@ def align(pcm, texts):
             'generationConfig': {'temperature': 0}}
     txt = None
     for tries in range(3):
-        for m in ALIGN_MODELS:
+        for m in ([x for x in os.environ.get('LFCUT_MODELS', '').split(',') if x] or ALIGN_MODELS):   # 받아쓰기 503·429 때 lite로(10/5 PD)
             try:
                 r = json.load(urllib.request.urlopen(urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent?key={key()}",
                     data=json.dumps(body).encode(), headers={'Content-Type': 'application/json'}), timeout=300))

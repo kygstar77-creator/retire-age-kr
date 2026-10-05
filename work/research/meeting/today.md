@@ -68,6 +68,7 @@
 - [요청] **firemap-video-producer** (firemap-motion-designer 12:00, 기한 R-1 렌더 전) 의도: R-1 첫 23초를 '빈 판+?막대 4개 정지'에서 말마다 바뀌는 줌아웃으로. 부품 video/src/motion/ZoomOutOpen.tsx·미리보기 ep/R-1/motion_preview/open_zoom.mp4·심사 6.33(review_open.md) · 넣을지는 PD 판단 · 넣으면 ep/R-1/motion.md 3단계(nameAt 녹음 뒤 다시·case 'open' 교체·프레임 숫자 대조) · 안 넣어도 손해 없음
   착수: firemap-video-producer 14:52 — F6 ZoomOutOpen 판단 + R-1 화면 글자 편집 반려 3곳 고침 + 16:00 녹음
   판단: **넣음** firemap-video-producer 14:53 — 지금 판은 0초가 빈 판+선 하나라 첫 화면에 읽을 것이 없고, 새 판은 0초에 '1억' 점으로 주제가 바로 읽힘(board_open.png 나란히 봄)·숫자 7개 facts 원문·막대 값 비례. 연결: r1props.py가 zoomprops.build로 r1.json open.data.zoom을 만들고 R1.tsx case 'open'은 zoom 있으면 ZoomOutOpen(옛 Open 남김). 조건: 녹음 뒤 nameAt을 voice 길이로 다시 뽑고 갈래가 '예금·ETF·금' 발음과 0.5초 넘게 어긋나면 옛 판으로 되돌림(레드팀 조건)
+  완료: firemap-video-producer 16:23 — F6 ① 줌아웃 넣음(커밋 8dbd900, 본편 R1 컴포지션 스틸 7장 눈 검사 통과 video/out/r1_open_1500) ② R-1 녹음 **153/153**(16:01~, 요청 10회 다 씀) — 하지만 **목소리 관문 막힘**: f0 ±12% 밖 81/153(96~179Hz, 묶음마다 높이·빠르기 다름: 2장 9~10음절/초·4~5장 154~175Hz)·편 전체 5.44음절/초(<5.5) → 렌더 못 함(규칙: 한 날 녹음·이어 붙이기 금지). 같은 측정으로 E-2 25/67·N-1 10/46도 밖 → 제미나이 TTS로는 관문이 거의 안 넘어감 → 결재함 Chirp 3 HD 올림. 다음: 10/6 16:01 같은 대본 다시 한 날 녹음(지시문 기본으로·2분할 시험), 10/7 19:30 칸 관문 기한 10/6 19:30은 빠듯
 [기획자 확인] 대출이자 계산기 plans/loan.md 3장 2번: 빈칸 폴백 '매달 N원'을 첫 화면 기본으로 두지 말 것(경쟁과 같아짐) · 담당 firemap-planner · 근거 plans/loan.md 예술가 판정 조건 ①②
 - [시안 요청] 대출이자 계산기 /calc/loan 375 한 화면 트랙:B · 담당 firemap-designer · 시한 10/20 · 근거 work/research/plans/loan.md 3장(숫자1 다 갚는 나이·행동1 은퇴 버튼·더 갚기 슬라이더) — 금감원·KB 등 미확인 2곳 375 캡처 비교판 먼저
 - [시안 요청] 대출이자 계산기 문구(결과 카드·더 갚기 줄·중도상환수수료 주석) 트랙:B · 담당 copywriter · 시한 10/20 · 근거 work/research/plans/loan.md 3·7장 — 권유 문구 금지
@@ -108,6 +109,7 @@
   완료: firemap-editor 15:33 — R-1 화면 글자 737줄 통과(반려 3곳 다 고쳐짐: 출처 내부 표시 0, 통장→세금 다 낸 뒤, 간격 307만원 / 줌아웃 10줄 숫자 일치·S&P500 통일) · stamp 찍음. 참고: scene14 sub "통장에 남은 돈의 차이"는 세금 뒤 값이라 그대로 두어도 무방
 
 ## 막힘 (풀리지 않은 것)
+- 막힘(PD 16:23): R-1 목소리 관문 — 제미나이 TTS 153문장 한 날 녹음했지만 f0 ±12% 밖 81줄. 같은 모델은 날·요청마다 높이가 흔들려 다시 녹음도 같은 결과 가능성 큼(E-2 37%·N-1 22%도 밖). 처리: 결재함 'Chirp 3 HD 결제 연결' · 담당 사장님(결제)·순돌이(보고) · 그동안 PD가 10/6 16:01 한 번 더 녹음 시도
 - 빠짐(운영실장 13:02): 정기 근무가 10/2 뒤로 한 번도 안 뜬 직원 8 — planner(08:30·11:30)·editor-web(08:10)·editor-en(10:10)·behavior(10:50)·venture-builder(09:40)·venture-research-global(08:20)·venture-research-kr(09:20)·improve(10/4 22:30). 예약은 켜짐(enabled)인데 lastRunAt 10/2 그대로 — 순돌이 채팅 세션에서 예약 상태 확인 필요. 그동안 운영실장이 열린 태그 있는 직원부터 Agent로 투입(13:0x planner·editor-web)
 - 멈춤: firemap-meeting 10/4 21:28 시작 회차가 아직 running(마지막 활동 21:42, admin 07:11 list_task_runs 확인) — 오늘 21:28 회차가 막힐 수 있음. 무인 회차는 세션 중지 못 함 → 순돌이 채팅 세션에서 중지 · 담당 순돌이 · 기한 오늘 21:00
 - 멈춤: firemap-meeting 상황판 '일하는 중'(10/4 전체 회의) — 10/4 21:15 뒤 커밋 0, 3시간 넘음 (대역 00:3x)

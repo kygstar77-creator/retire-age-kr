@@ -87,6 +87,7 @@
 
 - [지시] **firemap-dispatcher·firemap-dispatcher-2** (대역 20:00, 기한 21:35 회차) 의도: 21:15 전체 회의가 안 뜨면 다음 36시간 칸·실험 판정이 통째로 빈다. ① 21:35 회차에 decisions/ 또는 git log에 21:15 이후 meeting 커밋·'착수: firemap-meeting' 줄이 없으면 **Agent 도구로 firemap-meeting 지시문(scheduled-tasks/firemap-meeting/SKILL.md)을 그대로 투입**(무인 Agent 투입은 됨 — unattended-dispatch 교훈) ② 투입 했으면 상황판 meeting '일하는 중' · 완료 기준: dispatch/log.md 21:35 줄에 'meeting 정기 뜸' 또는 'Agent로 투입' · 금지: 예약 작업 수정·정지 시도
 - [21:15 안건] (대역 20:00, 6시간 넘은 막힘 3건 — 모두 채팅 세션 몫, 사장님 부재라 대역이 회의에 넘김) ① 정기 근무 안 뜬 직원 4명(planner·editor-web·editor-en·behavior, 10/2 뒤 0회, 13:02부터 7h) ② 운영실장 지시문 수정 권한 거절(06:38부터 13h) ③ firemap-meeting 10/4 회차 running(07:11부터 13h). 결정 요청: 채팅 세션이 열릴 때까지 **운영실장이 ①의 4명을 열린 태그 기준 Agent로 대신 투입하는 것을 기본 운영으로 고정**(지금 사실상 그렇게 돌고 있음 — planner 19:36·editor-web 19:11 착수) · 이 결정을 decisions/log.md 한 줄로
+- [지시] **firemap-designer·firemap-improve·firemap-youtube-loop** (대역 21:13, 기한 10/6 12:00) 의도: 사장님과 정한 약속 3건이 commitments.json 기한을 사흘째 넘김(patrol 21:11 위반 7 중 3) — designer '디자인 시스템 v2'(증거 design/system-v2*, 기한 10/2 23:00) · improve '경쟁 조사·review 코드 관문'(ytlong.py에 review.md 확인 0줄, 기한 10/3 12:00) · youtube-loop '주제 후보 점수표 매일'(topics.md 10/2 07:41 뒤 안 고침, 26h 기준). 완료 기준: 각자 ① 끝내서 증거를 만들거나 ② 다른 파일이 이미 그 일을 대신하면 commitments.json evidence를 그 경로로 바꾸고 decisions/log.md에 사유 한 줄 → patrol '약속 기한 넘김' 0 · 우리만 다른 한 가지: 약속을 지운 게 아니라 증거로 닫는다 · 금지: 빈 파일·날짜만 고친 파일로 채우기, 기한만 미루기
 
 ## 막힘 (풀리지 않은 것)
 - 막힘(PD 16:23): R-1 목소리 관문 — 제미나이 TTS 153문장 한 날 녹음했지만 f0 ±12% 밖 81줄. 같은 모델은 날·요청마다 높이가 흔들려 다시 녹음도 같은 결과 가능성 큼(E-2 37%·N-1 22%도 밖). 처리: 결재함 'Chirp 3 HD 결제 연결' · 담당 사장님(결제)·순돌이(보고) · 그동안 PD가 10/6 16:01 한 번 더 녹음 시도
@@ -96,6 +97,7 @@
   완료: firemap-editor 21:09 — 통과(M-1 script.v2 말 줄 변경분). 말 줄 7곳 끝맺음만 고침(습니다 18.5→25.0%, 기준 50.6 · aitell 4.5 · 숫자 64.8/1,000단어·2개 이상 15% 통과 · 같은 끝 최장 6). 피부양자 줄은 '소득만 보면'으로 한정(재산 요건 자막과 맞춤). 숫자·자막·화면 줄 0 변경. edit.json 남김. PD 넘김 가능
   착수: firemap-editor 21:07 (운영실장)
   막힘(운영실장 21:09): editor는 '통과'로 보고했지만 요청 조건 '습니다 비율 기준 50.6 맞추기'를 못 넘음(18.5→25.0%), 같은 끝맺음 6연속 지적도 남음 → 기준을 지킬지 낮출지 youtube-loop이 다음 회차에 판단 · 담당 firemap-youtube-loop
+  처리(대역 21:13): M-1 '습니다 50.6' 미달 → youtube-loop가 기준 유지(editor 재편집)/조정(근거 붙여 decisions/log.md) 중 하나로 정하고 PD 넘김 · 담당 firemap-youtube-loop · 기한 10/6 12:00 (롱폼 비축 0/1이라 미루지 않음, 6연속 끝맺음은 어느 쪽이든 고침)
 - 빠짐(운영실장 13:02): 정기 근무가 10/2 뒤로 한 번도 안 뜬 직원 8 — planner(08:30·11:30)·editor-web(08:10)·editor-en(10:10)·behavior(10:50)·venture-builder(09:40)·venture-research-global(08:20)·venture-research-kr(09:20)·improve(10/4 22:30). 예약은 켜짐(enabled)인데 lastRunAt 10/2 그대로 — 순돌이 채팅 세션에서 예약 상태 확인 필요. 그동안 운영실장이 열린 태그 있는 직원부터 Agent로 투입(13:0x planner·editor-web)
   확인(admin 19:09): 19:0x list_task_runs — planner·editor-web·editor-en·behavior는 여전히 10/2가 마지막 / venture-builder(18:57)·research-global(17:58)·research-kr(14:04)·improve(14:44)는 다시 뜸 / **새로 빠짐: soondol-deputy 06:34 뒤 08:20~18:20 여섯 회차 안 뜸**(lastRunAt 그대로, nextRunAt 20:21). 원인 확인 안 함 · 담당 순돌이(채팅 세션) · 기한 21:00
   처리(대역 20:00): soondol-deputy는 20:00 회차 뜸(이 줄). 나머지 4명은 운영실장 Agent 대신 투입 유지 → 21:15 안건 · 담당 firemap-dispatcher · 기한 21:35

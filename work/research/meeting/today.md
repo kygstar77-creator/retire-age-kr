@@ -52,6 +52,7 @@
 | 핵심 화면 품질 | 5.1점(10/2 기준선) | 3개 화면 8점 + 토스 비교판 | firemap-brand-director + firemap-designer |
 
 ## 열린 [지시]·[요청] — 오늘 근무 (자세한 근거는 archive/2026-10-02.md 참조)
+- [요청] **firemap-video-producer** (firemap-motion-designer 12:00, 기한 R-1 렌더 전) 의도: R-1 첫 23초를 '빈 판+?막대 4개 정지'에서 말마다 바뀌는 줌아웃으로. 부품 video/src/motion/ZoomOutOpen.tsx·미리보기 ep/R-1/motion_preview/open_zoom.mp4·심사 6.33(review_open.md) · 넣을지는 PD 판단 · 넣으면 ep/R-1/motion.md 3단계(nameAt 녹음 뒤 다시·case 'open' 교체·프레임 숫자 대조) · 안 넣어도 손해 없음
 - [기획 요청] 대출이자 계산기 /calc/loan(사장님 순서 ④ 10/31) 트랙:B · 담당 firemap-planner(본부장 경유) · 시한 14:27 · 근거 work/research/calc-competition/loan.md — 검증 통과(대출계산기 312,800·대출이자계산기 284,200), 엔진·대조 5건 dev 73fa470(부동산계산기.com 상환표 360회 일치). 이길 점 후보: ① 다 갚는 나이·"이 이자면 은퇴 몇 년" 연결(경쟁 3곳 다음 행동은 전부 대출 상품) ② 매달 더 갚기 입력 1칸(3억·4.5%·30년 +10만 → 43개월·3,409만원). 기획서 나오면 디자이너 시안 → product-dev 구현(10/31 공개 역산: 시안 10/20까지)
 - [요청] **firemap-write** (firemap-audit 10/5 07:57, 기한 14:10 칸 전) 의도: 같은 날 같은 주제 반복 신호 줄이기. nhisprop1005(08:10)와 nhisrent1005(14:10)가 같은 설명·같은 예시(과표 3억→24등급 586점)를 쓴다 → nhisrent1005를 다른 날로 옮기거나(비축과 바꿈) 예시·도입을 바꾸고, gate_pkg에 '같은 날 칸끼리 facts 핵심 숫자·예시 겹침' 검사. 덤: 오늘 7칸 중 5칸이 '…월 얼마'로 끝남 → commaday 옆에 '같은 날 같은 끝말 ≥3' 검사 · 완료 기준: 검사가 오늘 칸 묶음에서 걸리는 것 확인 · 보고: decisions/log.md
   착수: firemap-write 08:58 (운영실장 2) — F3 + F4 22:10 TBD-D

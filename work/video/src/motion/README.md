@@ -7,6 +7,7 @@
 | `RollNumber` | 숫자 자리마다 **제 숫자만** 아래(또는 위)에서 올라와 임계 감쇠로 선다. 0프레임에도 숫자 70%가 보인다. 가짜 중간 숫자 없음 | 모션 475 'BUILD THE FLOOR' |
 | `settle(frame,fps,stiffness)` | 튀지 않는 스프링(damping=2√k) | 같음 |
 | `CardToBar` | 숫자 밑 바닥 선 → 차트 0 기준선, 숫자 → 제 막대 이름표, 비교 막대가 옆에 자람. 막대는 기준선에서만 자란다, 높이는 값 비례 | 모션 475 'Taxtello' 물체 전환 + dataviz |
+| `ZoomOutOpen` | 롱폼 첫 장면(1920x1080, TallyFrame 안). 점 하나 확대 → 줌아웃하며 갈래 N개 '?' → 날짜 축·같은 금액이 갈래를 따라감 → 갈래 빠지고 간격 막대(세금 전→뒤, 값 비례). 갈래는 대본 순서 고정(순위 암시 금지) | 모션 475 #5 · R-1 10/5 |
 | `ShortIntro` | 위 둘을 묶은 쇼츠 첫 2초(1080x1920). Root id `ShortIntro` | — |
 
 ## 쇼츠에 붙이는 법
@@ -18,3 +19,9 @@
 ## 편마다 바꿀 것(반복 방지 체크)
 - seed 바꾸기(자동), 막대 좌우(aFirst), 비교 상대(값 2개가 아닌 경우 다른 부품), 강조색은 spec 카드 색 안에서.
 - 매 편 '숫자→막대'만 쓰지 않는다: 다음 후보는 줌아웃(모션 475 #5), 계산 곡선(#3).
+
+## 롱폼 첫 장면 줌아웃(ZoomOutOpen) 쓰는 법
+1. 재료 JSON: `seed·dot·names·nameAt·from·to·q·travel·gap·gapHead·pre[글자,값]·post[글자,값]·cut`. q·travel·gap = 말 2·3·4 시작 프레임. 예: `research/longform/ep/R-1/motion_preview/zoomprops.py`가 r1.json·facts.txt 대조로 만든다.
+2. 미리보기(본편 Root와 따로): `npx remotion render src/motion/preview/entry.ts OpenZoom <out>.mp4 --props=<json> --codec=h264 --pixel-format=yuv420p`
+3. 본편: 장면 컴포넌트에서 `<ZoomOutOpen {...zoom} />` (TallyFrame 자식으로).
+4. 편마다 바뀜: seed로 점 높이·부채 폭. 갈래 순서는 바꾸지 않는다(순위처럼 읽힘). 비교할 값이 둘이 아니면 막대 단계는 다른 부품으로.

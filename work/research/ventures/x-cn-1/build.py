@@ -78,10 +78,10 @@ def verify(F):
 
 
 # ---------- 2) 쪽 만들기 ----------
-def node_line(F, verified_at, at_ms):
+def node_line(F, verified_at, at_ms, mod='nextline.cjs'):
     js = ("const N=require(%s);const F=JSON.parse(require('fs').readFileSync(0,'utf8'));"
           "process.stdout.write(JSON.stringify(N.nextLine(F,%s,%d)))") % (
-        json.dumps(os.path.join(HERE, 'src', 'nextline.cjs')), json.dumps(verified_at), at_ms)
+        json.dumps(os.path.join(HERE, 'src', mod)), json.dumps(verified_at), at_ms)
     out = subprocess.run(['node', '-e', js], input=json.dumps(F, ensure_ascii=False), capture_output=True, text=True, encoding='utf-8', check=True)
     return json.loads(out.stdout)
 
@@ -157,7 +157,7 @@ def ics(F, now):
 CSS = open(os.path.join(HERE, 'src', 'style.css'), encoding='utf-8').read()
 
 
-def page(title, desc, path, body, extra_head='', noindex=False):
+def page(title, desc, path, body, extra_head='', noindex=False, org='국사편찬위원회', foot='원서접수·변경·환불은 공식 누리집에서 합니다.'):
     url = BASE + path
     robots = '<meta name="robots" content="noindex">' if noindex else ''
     return f'''<!doctype html>
@@ -182,7 +182,7 @@ def page(title, desc, path, body, extra_head='', noindex=False):
 {body}
 </main>
 <footer>
-<p>이 사이트는 {esc('국사편찬위원회')}가 만든 곳이 아닙니다. 원서접수·변경·환불은 공식 누리집에서 합니다.</p>
+<p>이 사이트는 {esc(org)}{'이' if org.endswith('M') else '가'} 만든 곳이 아닙니다. {esc(foot)}</p>
 <p><a href="{BASE}/privacy/">개인정보처리방침</a></p>
 </footer>
 </div>
@@ -293,45 +293,202 @@ def build_hnk(F, verified_at, now):
     return page(title, desc, '/hanneunggeom/', body), L
 
 
+# ---------- 토익(X-CN-1 2편, 2026-10-05) ----------
+# 원문 m.exam.toeic.co.kr 시험일정 텍스트: '2026.10.11 (일) 09:20 정기접수 : 26.08.24 (월) 10:00~26.09.28 (월) 10:00
+#  특별추가 : 26.09.30 (수) 10:00~26.10.07 (수) 13:00 성적발표 : 2026.10.20 (화) 12:00'
+_D = r'(\d{2,4})\.(\d\d)\.(\d\d)\s*\([^)]*\)\s*(\d\d:\d\d)'
+T_ROW = re.compile(_D + r'\s*정기접수\s*:\s*' + _D + r'\s*~\s*' + _D + r'\s*특별추가\s*:\s*' + _D + r'\s*~\s*' + _D
+                   + r'\s*성적발표\s*:\s*' + _D)
+
+
+def parse_toeic(raw):
+    raw = re.sub(r'(?s)<(script|style)[^>]*>.*?</\1>', ' ', raw)
+    text = re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', raw)))
+    got = {}
+    for g in T_ROW.findall(text):
+        f = lambda y, m, d, h: f'{y if len(y) == 4 else "20" + y}-{m}-{d}T{h}'
+        exam = f(*g[0:4])
+        got[exam] = {'exam': exam, 'apply': [f(*g[4:8]), f(*g[8:12])], 'extra': [f(*g[12:16]), f(*g[16:20])], 'result': f(*g[20:24])}
+    return got, text
+
+
+def verify_toeic(F):
+    req = urllib.request.Request(F['source_url'], headers={'User-Agent': 'Mozilla/5.0 (Linux; Android 13) Mobile'})
+    raw = urllib.request.urlopen(req, timeout=20).read().decode('utf-8', 'replace')
+    got, text = parse_toeic(raw)
+    diffs = []
+    if not got:
+        return ['원문에서 회차를 하나도 못 읽음 — 쪽 구조 바뀜']
+    for r in F['rounds']:
+        g = got.get(r['exam'])
+        if not g:
+            # 지난 회차는 원문에서 빠질 수 있다 — 성적발표가 지난 회차만 봐준다
+            if datetime.datetime.fromisoformat(r['result']).replace(tzinfo=KST) > now_kst():
+                diffs.append(f"{r['exam']} 시험: 원문에 없음")
+            continue
+        for k in ('apply', 'extra', 'result'):
+            if g[k] != r[k]:
+                diffs.append(f"{r['exam']} {k}: 사실표 {r[k]} ≠ 원문 {g[k]}")
+    extra = sorted(set(got) - {r['exam'] for r in F['rounds']})
+    if extra:
+        diffs.append(f'원문에 새 회차 {extra} — 사실표에 넣어야 함')
+    for key in F['notes_official']:
+        if key not in text:
+            diffs.append(f'원문 안내 문구 바뀜: "{key}" 없음')
+    return diffs
+
+
+def ics_toeic(F, now):
+    ev = []
+    for r in F['rounds']:
+        x = d_txt(r['exam'], False)
+        items = [(f'{x} 시험 정기접수 마감', r['apply'][1]), (f'{x} 시험 특별추가 시작', r['extra'][0]),
+                 (f'{x} 시험 특별추가 마감', r['extra'][1]), (f'{x} 시험', r['exam']), (f'{x} 시험 성적발표', r['result'])]
+        for i, (name, v) in enumerate(items):
+            d = datetime.datetime.fromisoformat(v).replace(tzinfo=KST)
+            if d < now - datetime.timedelta(days=1):
+                continue
+            u = d.astimezone(datetime.timezone.utc)
+            ev.append(f'BEGIN:VEVENT\r\nUID:toeic-{r["exam"][:10]}-{i}@exam-dates-kr\r\nDTSTAMP:{now.astimezone(datetime.timezone.utc):%Y%m%dT%H%M%SZ}\r\n'
+                      f'DTSTART:{u:%Y%m%dT%H%M%SZ}\r\nDTEND:{(u + datetime.timedelta(minutes=30)):%Y%m%dT%H%M%SZ}\r\n'
+                      f'SUMMARY:토익 {name}\r\nDESCRIPTION:출처 {F["org"]} {F["source_url"]}\r\nEND:VEVENT')
+    return 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//exam-dates-kr//KO\r\nCALSCALE:GREGORIAN\r\n' + '\r\n'.join(ev) + '\r\nEND:VCALENDAR\r\n'
+
+
+# 375px에서 표가 옆으로 밀리지 않게 표 칸은 날짜·시각 두 줄(한능검 표의 '~<br>'과 같은 방식)
+def d2(v):
+    return d_txt(v, False) + '<br>' + v[11:16]
+
+
+def build_toeic(F, verified_at, now):
+    L = node_line(F, verified_at, int(now.timestamp() * 1000), 'toeic.cjs')
+    past = lambda r: datetime.datetime.fromisoformat(r['result']).replace(tzinfo=KST) < now
+    row = lambda r: (f'<tr{" class=past" if past(r) else ""}><th scope="row">{d_txt(r["exam"], False)}</th>'
+                     f'<td>{d2(r["apply"][1])}</td><td>{d2(r["extra"][1])}</td><td>{d2(r["result"])}</td></tr>')
+    rows = [row(r) for r in F['rounds'] if not past(r)]
+    past_rows = [row(r) for r in F['rounds'] if past(r)]
+    thead = '<thead><tr><th scope="col">시험일</th><th scope="col">정기접수<br>마감</th><th scope="col">특별추가<br>마감</th><th scope="col">성적발표</th></tr></thead>'
+    past_box = (f'<details class="past"><summary>지난 회차({len(past_rows)}개)</summary>'
+                f'<div class="tbl"><table>{thead}<tbody>{"".join(past_rows)}</tbody></table></div></details>') if past_rows else ''
+    detail = []
+    for r in F['rounds']:
+        if past(r):
+            continue
+        detail.append(f'''<section class="card">
+<h3>{d_txt(r["exam"], False)} 시험</h3>
+<dl>
+<dt>정기접수</dt><dd>{span(r["apply"])}</dd>
+<dt>특별추가</dt><dd>{span(r["extra"])}</dd>
+<dt>시험일</dt><dd>{d_txt(r["exam"])}</dd>
+<dt>성적발표</dt><dd>{d_txt(r["result"])}</dd>
+</dl>
+</section>''')
+    notes = ''.join(f'<li>{esc(n)}</li>' for n in F['notes_official'])
+    read = datetime.datetime.fromisoformat(F['read_at'])
+    ver = datetime.datetime.fromisoformat(verified_at) if verified_at else None
+    data = json.dumps({'F': F}, ensure_ascii=False).replace('</', '<\\/')
+    nl = open(os.path.join(HERE, 'src', 'toeic.cjs'), encoding='utf-8').read()
+    body = f'''<h1>토익 시험일정 2026 — 남은 접수 마감·성적발표</h1>
+<div class="next" id="next" data-state="{L["state"]}">
+<p class="line" id="line">{dyn(line_inner(L))}</p>
+<div class="acts">
+<a class="btn primary" id="ics" href="toeic-2026.ics" download>캘린더에 넣기</a>
+<a class="btn primary official" id="offbtn" href="{esc(F["source_url"])}" rel="nofollow">공식 일정 확인하기</a>
+<button class="linkbtn" id="copy" type="button">링크 복사</button>
+</div>
+</div>
+<div class="sub" id="sub">{dyn(sub_html(L))}</div>
+
+<h2>2026년 시험별 일정</h2>
+<div class="tbl"><table>
+{thead}
+<tbody>{dyn("".join(rows))}</tbody>
+</table></div>
+{dyn(past_box)}
+
+<h2>남은 시험 자세히</h2>
+{dyn("".join(detail))}
+
+<h2>공식 안내</h2>
+<ul class="notes">{notes}</ul>
+
+<p class="src">출처: <a id="official" href="{esc(F["source_url"])}" rel="nofollow">{esc(F["org"])} TOEIC 공식 사이트 · 시험일정</a> · 원문을 사람이 읽은 시각 {read.month}/{read.day} {read:%H:%M} · 원문과 자동 대조한 시각 {dyn(f"{ver.month}/{ver.day} {ver:%H:%M}" if ver else "없음")}. 대조가 하루를 넘기면 맨 위 줄은 공식 일정 링크로 바뀝니다.</p>
+<script>{nl}</script>
+<script src="../fmkit.js"></script>
+<script>
+(function () {{
+  var D = {data};
+  D.V = /*dyn*/{json.dumps(verified_at)}/*/dyn*/;
+  var L = NextLine.nextLine(D.F, D.V, Date.now());
+  var box = document.getElementById('next'), p = document.getElementById('line');
+  function e(s) {{ return String(s).replace(/[&<>"]/g, function (c) {{ return {{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[c]; }}); }}
+  box.setAttribute('data-state', L.state);
+  p.innerHTML = L.state === 'stale' ? ''
+    : '<span class="stamp">' + e(L.stamp) + '</span>' + (L.k ? '<span class="kick">' + e(L.k) + '</span>' : '') + '<strong>' + e(L.b) + '</strong>' + (L.d ? '<span class="after">' + e(L.d) + '</span>' : '');
+  document.getElementById('sub').innerHTML = L.subh ? '<p class="subh">' + e(L.subh) + '</p><ul>' + L.subs.map(function (x) {{ return '<li>' + e(x) + '</li>'; }}).join('') + '</ul>' : '';
+  var log = window.FMKit ? FMKit.log : function () {{}};
+  if (window.FMKit) FMKit.init({{ site: 'x-cn-1', lang: 'ko', accent: '{ACCENT}' }});
+  log('line_view', {{ state: L.state, page: 'toeic' }});
+  document.getElementById('ics').addEventListener('click', function () {{ log('ics_click', {{ state: L.state, page: 'toeic' }}); }});
+  document.getElementById('official').addEventListener('click', function () {{ log('official_click', {{ state: L.state, page: 'toeic' }}); }});
+  document.addEventListener('click', function (ev) {{ if (ev.target.closest && ev.target.closest('a.official')) log('official_click', {{ state: 'stale', page: 'toeic' }}); }});
+  document.getElementById('copy').addEventListener('click', function () {{
+    var u = location.origin + location.pathname + '?utm_source=share&utm_medium=x-cn-1', b = this;
+    (navigator.clipboard ? navigator.clipboard.writeText(u) : Promise.reject()).then(function () {{
+      b.textContent = '복사됨'; log('link_copy', {{ ok: 1, page: 'toeic' }});
+    }}, function () {{ window.prompt('링크', u); log('link_copy', {{ ok: 0, page: 'toeic' }}); }});
+  }});
+}})();
+</script>'''
+    title = '토익 시험일정 2026 — 정기접수·특별추가 마감, 성적발표'
+    desc = 'TOEIC 정기시험 2026년 10~12월 정기접수·특별추가 마감과 성적발표. 지금 가장 먼저 닫히는 접수와, 성적발표 전에 마감되는 다음 시험 정기접수를 맨 위에 두고 YBM 원문과 대조한 시각을 함께 적습니다.'
+    return page(title, desc, '/toeic/', body, org=F['org'], foot='접수·변경·취소는 공식 사이트에서 합니다.'), L
+
+
 def main():
     offline = '--offline' in sys.argv
-    F = json.load(open(os.path.join(HERE, 'facts', 'hanneunggeom.json'), encoding='utf-8'))
+    EX = [('hanneunggeom', verify), ('toeic', verify_toeic)]
+    FS = {k: json.load(open(os.path.join(HERE, 'facts', k + '.json'), encoding='utf-8')) for k, _ in EX}
     st = json.load(open(STATE, encoding='utf-8')) if os.path.exists(STATE) else {}
     now = now_kst()
     if not offline:
-        try:
-            diffs = verify(F)
-        except Exception as ex:  # 원문을 못 받으면 도장은 그대로(하루 넘으면 화면이 물러남)
-            diffs = None
-            print('원문 받기 실패 — 도장 그대로:', ex)
-            if os.environ.get('XCN1_CI'):  # 매일 빌드(GitHub Actions)는 여기서 실패로 끝내 이메일을 받는다
-                sys.exit(3)
-        if diffs:
-            print('대조 불일치 — 빌드 중지:')
-            for d in diffs:
-                print('  ', d)
-            sys.exit(2)
-        if diffs == []:
-            st['hanneunggeom'] = now.isoformat()
-            json.dump(st, open(STATE, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-            print('대조 일치 →', st['hanneunggeom'])
-    v = st.get('hanneunggeom')
-    os.makedirs(os.path.join(SITE, 'hanneunggeom'), exist_ok=True)
-    os.makedirs(os.path.join(SITE, 'privacy'), exist_ok=True)
-    doc, L = build_hnk(F, v, now)
+        for key, fn in EX:
+            try:
+                diffs = fn(FS[key])
+            except Exception as ex:  # 원문을 못 받으면 도장은 그대로(하루 넘으면 화면이 물러남)
+                diffs = None
+                print(key, '원문 받기 실패 — 도장 그대로:', ex)
+                if os.environ.get('XCN1_CI'):  # 매일 빌드(GitHub Actions)는 여기서 실패로 끝내 이메일을 받는다
+                    sys.exit(3)
+            if diffs:
+                print(key, '대조 불일치 — 빌드 중지:')
+                for d in diffs:
+                    print('  ', d)
+                sys.exit(2)
+            if diffs == []:
+                st[key] = now.isoformat()
+                print(key, '대조 일치 →', st[key])
+        json.dump(st, open(STATE, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    for d in ('hanneunggeom', 'toeic', 'privacy'):
+        os.makedirs(os.path.join(SITE, d), exist_ok=True)
+    doc, L = build_hnk(FS['hanneunggeom'], st.get('hanneunggeom'), now)
     open(os.path.join(SITE, 'hanneunggeom', 'index.html'), 'w', encoding='utf-8', newline='\n').write(doc)
-    open(os.path.join(SITE, 'hanneunggeom', 'hanneunggeom-2026.ics'), 'w', encoding='utf-8', newline='').write(ics(F, now))
+    open(os.path.join(SITE, 'hanneunggeom', 'hanneunggeom-2026.ics'), 'w', encoding='utf-8', newline='').write(ics(FS['hanneunggeom'], now))
+    doc, LT = build_toeic(FS['toeic'], st.get('toeic'), now)
+    open(os.path.join(SITE, 'toeic', 'index.html'), 'w', encoding='utf-8', newline='\n').write(doc)
+    open(os.path.join(SITE, 'toeic', 'toeic-2026.ics'), 'w', encoding='utf-8', newline='').write(ics_toeic(FS['toeic'], now))
     root = page('시험 일정', '공식 원문과 대조한 시험 일정 모음.', '/',
-                '<h1>시험 일정</h1>\n<ul class="list"><li><a href="hanneunggeom/">한능검 시험일정 2026</a></li></ul>', noindex=True)
+                '<h1>시험 일정</h1>\n<ul class="list"><li><a href="hanneunggeom/">한능검 시험일정 2026</a></li>'
+                '<li><a href="toeic/">토익 시험일정 2026</a></li></ul>', noindex=True, org='국사편찬위원회·YBM', foot='접수는 각 공식 누리집에서 합니다.')
     open(os.path.join(SITE, 'index.html'), 'w', encoding='utf-8', newline='\n').write(root)
     shutil.copy(os.path.join(HERE, 'src', 'privacy.html'), os.path.join(SITE, 'privacy', 'index.html'))
     shutil.copy(os.environ.get('FMKIT') or os.path.join(HERE, '..', 'uk-pay', 'site', 'fmkit.js'), os.path.join(SITE, 'fmkit.js'))
     open(os.path.join(SITE, 'robots.txt'), 'w', newline='\n').write(f'User-agent: *\nAllow: /\nSitemap: {BASE}/sitemap.xml\n')
     open(os.path.join(SITE, 'sitemap.xml'), 'w', newline='\n').write(
         f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-        f'<url><loc>{BASE}/hanneunggeom/</loc><lastmod>{now:%Y-%m-%d}</lastmod></url>\n</urlset>\n')
-    print('빌드 완료', now.isoformat(), '| 맨 위 줄:', L.get('stamp'), '—', L['main'], '·', L.get('after'))
-
+        f'<url><loc>{BASE}/hanneunggeom/</loc><lastmod>{now:%Y-%m-%d}</lastmod></url>\n'
+        f'<url><loc>{BASE}/toeic/</loc><lastmod>{now:%Y-%m-%d}</lastmod></url>\n</urlset>\n')
+    print('빌드 완료', now.isoformat(), '| 한능검:', L.get('stamp'), '—', L['main'], '| 토익:', LT['main'], '·', LT.get('after'))
 
 if __name__ == '__main__':
     main()

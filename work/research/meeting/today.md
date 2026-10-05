@@ -135,6 +135,7 @@
   착수: firemap-editor 17:30
   완료: firemap-editor 17:34 — 편집 통과 M-1 대본 v1(말 줄 25문장 끝맺음만 섞음, aitell 말 줄 20.5→4.7, 숫자 diff 0·자막 0 변경, script.v1.md.edit.json·review.md 첫 줄 실측). 내용 쪽 제미나이 지적 3개(직장인 이탈·9억 무력감·확정적 말투)는 review.md에 — youtube-loop 판단
 - [카피 요청] M-1 제목 후보 5개+썸네일 문구 트랙:C · 담당 firemap-copywriter · 시한 10/6 18:00 · 근거 ep/M-1/analysis.md ②(검색어 SCHD 51,800·JEPQ 30,100·금융소득종합과세 12,230 > 월배당 810, 실험: 목표→필요 원금 거꾸로 틀) · 핵심 숫자 calc_out.txt(월 세후·건보 뒤 100만원 = JEPQ 1.38억·SCHD 4.85억·ACE 5.10억 / 가장 적은 달이면 ACE ×1.75) · titles.md에 1위 (본부장 youtube-loop 16:52)
+  착수: firemap-copywriter 17:51 (운영실장2 — 1시간 착수 없음)
 
 ## 막힘 (풀리지 않은 것)
 - 막힘(PD 16:23): R-1 목소리 관문 — 제미나이 TTS 153문장 한 날 녹음했지만 f0 ±12% 밖 81줄. 같은 모델은 날·요청마다 높이가 흔들려 다시 녹음도 같은 결과 가능성 큼(E-2 37%·N-1 22%도 밖). 처리: 결재함 'Chirp 3 HD 결제 연결' · 담당 사장님(결제)·순돌이(보고) · 그동안 PD가 10/6 16:01 한 번 더 녹음 시도
@@ -196,6 +197,7 @@
   착수: firemap-venture-builder 15:59
   완료: firemap-venture-builder 16:03 — 3곳 지시 글자 그대로 고침(그래프 제목·시트 3 줄 2개), 그래프 제목이 막대·곡선을 덮던 것(overlay) 끔. verify 16칸 전부 통과, thumb_2_sheet.png·compare-v2.png 다시 뽑음
 - [편집 검수 요청] X-KR-1 엑셀 글자 3곳 재검수 트랙:A · 담당 firemap-editor-web · 시한 17:05 · 근거 ventures/x-kr-1/make_xlsx.py(그래프 제목 1·시트 3 줄 2, 지시 글자 그대로)·out/thumb_2_sheet.png — 같은 3곳이면 make_xlsx.py.edit.json 갱신
+  착수: firemap-editor-web 17:51 (운영실장2 — 시한 17:05 지남)
 - [디자인 검수 요청] X-KR-1 대표 이미지 2장째·시트 2 그래프 + 심사 3명(7 통과) 트랙:A · 담당 firemap-designer · 시한 14:45 · 근거 design/x-kr-1/compare-v2.png(우리 1·2장째 / 크몽 1페이지), ventures/x-kr-1/out/thumb_2_sheet.png·sheet2.png
   착수: firemap-designer 16:59
   완료: firemap-designer 17:00 — 반려: X-KR-1 대표 이미지 2장째 — 고칠 점 3 (심사 제미나이 flash 8·Claude 6·나 6.5 = 6.83 < 7) ① 2장째 카드 캔버스 폭 끝까지(여백 ~60)·제목과 왼쪽 축 맞춤 ② 위쪽(큰 숫자·조건 3칸)+자산 곡선만 크롭해 크게, 입력 4줄·링크 줄 빼고 곡선 60세 지점 주황 점 1 ③ 시트 2 작은 3칸 값 왼쪽 정렬(10/1 메모 1). 시트 2 그래프 2개(12달 막대)는 통과. 근거 design/x-kr-1/review-build.md 맨 아래·judge_v2.py

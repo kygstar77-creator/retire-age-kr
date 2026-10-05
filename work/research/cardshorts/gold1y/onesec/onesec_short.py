@@ -5,7 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 sys.stdout.reconfigure(encoding='utf-8')
 H = os.path.dirname(os.path.abspath(__file__))
 KEY = [l.split('=', 1)[-1].strip() for l in open(r'C:\Users\강영준\Documents\gemini_key.txt', encoding='utf-8-sig') if l.strip()][0]
-MODELS = ['gemini-3-flash-preview', 'gemini-3.8-flash', 'gemini-3.7-flash', 'gemini-3.5-flash-lite']
+MODELS = os.environ.get('MODELS','gemini-3.6-flash').split(',')  # v6: 3.6-flash 단독(flash-lite 폴백 금지)
 COMP = ['bQpiQ03IAAw','lSDSWxesWn4','odPWRROqagY','Zqo5Bc9QyPs','oREWFHns4Fg']  # gold1y compete.md 1~5위
 W, HH = 168, 299
 def small(im):

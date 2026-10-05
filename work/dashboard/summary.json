@@ -1,31 +1,34 @@
 {
- "at": "10/02 06:53",
+ "at": "10/05 13:35",
  "proof": {
   "visits_target": "하루 100세션",
   "visits_now": "2026-10-01(00:00~11:00, 10:46 집계) · 세션 22 / 고유 13 · 화면 59 · 채널별: 직접·기록없음 10기기, pwa 1, toss",
-  "shorts_avg": 285,
+  "shorts_avg": 393,
   "shorts_target": 460,
-  "coupang": "2026-10-01 07:17 · 애드센스 준비중-심사중·0원 · 애드핏 제휴제안등록9/30-회신없음·0원 · 쿠팡 클릭 0/구매 0/합산 0원/수익 0원, 리포트 2026-09-30(지난달 집계, 합계 제외) · ",
-  "subs": 40
+  "coupang": "2026-10-05 06:43 · 애드센스 준비중-ads.txt승인됨·사이트목록·0원 · 애드핏 제휴제안등록9/30-회신없음·0원 (2026-10-01 값) · 쿠팡 클릭 0/구매 0/합산 0원/수익 0원, 리포트 ",
+  "subs": 47
  },
  "publish_today": {
-  "cafe": 0,
+  "cafe": 3,
   "cafe_cap": 8,
-  "long_scheduled": [
-   "10-03 19:30 E-1"
-  ]
+  "long_scheduled": []
  },
  "commitments": {
-  "done": 6,
-  "total": 17,
-  "overdue": []
+  "done": 20,
+  "total": 23,
+  "overdue": [
+   "디자인 시스템 v2(PC·모바일) (기한 2026-10-02 23:00, 담당 firemap-designer)",
+   "경쟁 조사·review 코드 관문 (기한 2026-10-03 12:00, 담당 firemap-improve)",
+   "주제 후보 점수표 매일 (기한 2026-10-02 23:00, 담당 firemap-youtube-loop)"
+  ]
  },
  "violations": {
-  "count": 3,
+  "count": 7,
   "top": [
-   "롱폼 E-1(2026-10-03T19:30): review.md 없음",
-   "약속: E-1 대본 \"카페에 올려\" → promises.md에 글 주소 없음",
-   "today.md 369줄 — 150줄 넘음(스프린트가 archive로 옮겨야)"
+   "쇼츠 gold1y: compete.md 없음",
+   "가설 근거 파일 없음 8/31: X-BRAND-1, X-CAFE-TITLE-1, X-GPT-1, X-HOME-1, X-HOME-2, X-HOME-3, X-NAME-1, X-SHORTS-1",
+   "칸 배정 없음: 10-06 20:10 cafe — slots.json에 편·담당을 적어야 함",
+   "칸 배정 없음: 10-06 22:10 cafe — slots.json에 편·담당을 적어야 함"
   ]
  }
 }

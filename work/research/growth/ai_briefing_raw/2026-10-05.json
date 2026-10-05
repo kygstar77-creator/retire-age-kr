@@ -1,0 +1,347 @@
+{
+ "at": "2026-10-05 11:08",
+ "results": [
+  {
+   "q": "연봉 5000 실수령액",
+   "ok": true,
+   "aib": false,
+   "ours_page": false
+  },
+  {
+   "q": "퇴직금 계산 방법",
+   "ok": true,
+   "aib": false,
+   "ours_page": false
+  },
+  {
+   "q": "국민연금 수령 나이",
+   "ok": true,
+   "aib": true,
+   "refs": [
+    {
+     "n": 1,
+     "name": "김천시청",
+     "url": "https://www.gc.go.kr/district/gaeryeong/bbs/view.do?bIdx=4535024&ptIdx=1984&mId=0603000000",
+     "kind": "공공"
+    },
+    {
+     "n": 2,
+     "name": "국민연금공단",
+     "url": "https://www.nps.or.kr/pnsinfo/ntpsklg/getOHAF0056M0.do",
+     "kind": "공공"
+    },
+    {
+     "n": 3,
+     "name": "보건복지부",
+     "url": "https://www.mohw.go.kr/menu.es?mid=a10714010200",
+     "kind": "공공"
+    },
+    {
+     "n": 4,
+     "name": "네이버 인플루언서",
+     "url": "https://in.naver.com/oh_koon/topic/977990577310240",
+     "kind": "인플루언서"
+    },
+    {
+     "n": 5,
+     "name": "주간조선",
+     "url": "https://n.news.naver.com/mnews/article/053/0000061897?sid=101",
+     "kind": "언론"
+    },
+    {
+     "n": 6,
+     "name": "매일경제",
+     "url": "https://n.news.naver.com/mnews/article/009/0005743581?sid=110",
+     "kind": "언론"
+    },
+    {
+     "n": 7,
+     "name": "나무위키",
+     "url": "https://namu.wiki/w/%EA%B5%AD%EB%AF%BC%EC%97%B0%EA%B8%88",
+     "kind": "개인·기업 웹"
+    }
+   ],
+   "ours": false,
+   "ours_page": false
+  },
+  {
+   "q": "건강보험료 재산 점수 계산",
+   "ok": true,
+   "aib": true,
+   "refs": [
+    {
+     "n": 1,
+     "name": "건강보험 EDI",
+     "url": "https://edi.nhis.or.kr/portal/images/popup/20251204_pop01longdesc.html",
+     "kind": "공공"
+    },
+    {
+     "n": 2,
+     "name": "60story sbt",
+     "url": "https://blog.naver.com/bigtiger001/222965363074",
+     "kind": "네이버블로그"
+    },
+    {
+     "n": 3,
+     "name": "60story sbt",
+     "url": "https://blog.naver.com/bigtiger001/224380823289",
+     "kind": "네이버블로그"
+    },
+    {
+     "n": 4,
+     "name": "sakurakdh.com",
+     "url": "https://pension.sakurakdh.com/health-premium-house/",
+     "kind": "개인·기업 웹"
+    },
+    {
+     "n": 5,
+     "name": "제이퍼 계산기",
+     "url": "https://www.jptcalc.kr/calc/tax/regional-health-insurance/",
+     "kind": "개인·기업 웹"
+    },
+    {
+     "n": 6,
+     "name": "cleantax.co.kr",
+     "url": "https://cleantax.co.kr/health-insurance-local/",
+     "kind": "개인·기업 웹"
+    }
+   ],
+   "ours": false,
+   "ours_page": false
+  },
+  {
+   "q": "농지연금 수령액",
+   "ok": true,
+   "aib": true,
+   "refs": [
+    {
+     "n": 1,
+     "name": "농업e지",
+     "url": "https://www.nongupez.go.kr/nsm/bizAply/wholeBiz/wholeBizDtls?afbzCd=AB000025&bizYr=2026",
+     "kind": "공공"
+    },
+    {
+     "n": 2,
+     "name": "케이꾸",
+     "url": "https://blog.naver.com/kuration/224405710941",
+     "kind": "네이버블로그"
+    },
+    {
+     "n": 3,
+     "name": "다크네이비야",
+     "url": "https://cafe.naver.com/cjyeonsu/590733",
+     "kind": "네이버카페"
+    },
+    {
+     "n": 4,
+     "name": "팁아카이브",
+     "url": "https://blog.naver.com/tiparchive_/224421107252",
+     "kind": "네이버블로그"
+    },
+    {
+     "n": 5,
+     "name": "Lumiere",
+     "url": "https://blog.naver.com/i2kjin/224412861298",
+     "kind": "네이버블로그"
+    },
+    {
+     "n": 6,
+     "name": "여성포털 이지데이",
+     "url": "https://www.ezday.co.kr/bbs/view_board.html?q_sq_board=9107269",
+     "kind": "개인·기업 웹"
+    }
+   ],
+   "ours": false,
+   "ours_page": false
+  },
+  {
+   "q": "월세 세액공제 조건",
+   "ok": true,
+   "aib": true,
+   "refs": [
+    {
+     "n": 1,
+     "name": "국세청",
+     "url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=239025&mi=40634",
+     "kind": "공공"
+    },
+    {
+     "n": 2,
+     "name": "국세청",
+     "url": "https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=239025&mi=40613",
+     "kind": "공공"
+    },
+    {
+     "n": 3,
+     "name": "국가법령정보센터",
+     "url": "https://www.law.go.kr/lsLinkCommonInfo.do?lsJoLnkSeq=1000027472",
+     "kind": "공공"
+    },
+    {
+     "n": 4,
+     "name": "국가법령정보센터",
+     "url": "https://www.law.go.kr/LSW/lsLinkCommonInfo.do?lspttninfSeq=164089",
+     "kind": "공공"
+    },
+    {
+     "n": 5,
+     "name": "켠지",
+     "url": "https://blog.naver.com/hjpark227/224425254581",
+     "kind": "네이버블로그"
+    }
+   ],
+   "ours": false,
+   "ours_page": false
+  },
+  {
+   "q": "장기요양등급 본인부담금",
+   "ok": true,
+   "aib": true,
+   "refs": [
+    {
+     "n": 1,
+     "name": "복지뱅크",
+     "url": "https://www.bokjibank.or.kr/bokji/view.php?zipEncode==iZnZ0tB152x3vwA2zspSfMvWLME",
+     "kind": "공공"
+    },
+    {
+     "n": 2,
+     "name": "찾기쉬운 생활법령정보",
+     "url": "https://www.easylaw.go.kr/CSP/CnpClsMain.laf?csmSeq=2038&ccfNo=3&cciNo=3&cnpClsNo=1",
+     "kind": "공공"
+    },
+    {
+     "n": 3,
+     "name": "찾기쉬운 생활법령정보",
+     "url": "https://www.easylaw.go.kr/CSP/CnpClsMainBtr.laf?csmSeq=2038&ccfNo=3&cciNo=3&cnpClsNo=1",
+     "kind": "공공"
+    },
+    {
+     "n": 4,
+     "name": "부산연제구청",
+     "url": "https://www.yeonje.go.kr/welfare/contents.do?mId=0501030000",
+     "kind": "공공"
+    },
+    {
+     "n": 5,
+     "name": "한국보훈복지의료공단",
+     "url": "https://www.bohun.or.kr/nyjcare/cm/cntnts/cntntsView.do?cntntsId=2579&mi=34187",
+     "kind": "공공"
+    },
+    {
+     "n": 6,
+     "name": "보건복지부",
+     "url": "https://www.mohw.go.kr/menu.es?mid=a10712030100",
+     "kind": "공공"
+    },
+    {
+     "n": 7,
+     "name": "여성포털 이지데이",
+     "url": "https://www.ezday.co.kr/bbs/view_board.html?q_sq_board=9266575",
+     "kind": "개인·기업 웹"
+    }
+   ],
+   "ours": false,
+   "ours_page": false
+  },
+  {
+   "q": "국민연금 임의가입 보험료",
+   "ok": true,
+   "aib": true,
+   "refs": [
+    {
+     "n": 1,
+     "name": "q-bot.kr",
+     "url": "https://q-bot.kr/articles/economy-market/national-pension-voluntary-enrollment-guide/",
+     "kind": "개인·기업 웹"
+    },
+    {
+     "n": 2,
+     "name": "정보장",
+     "url": "https://blog.naver.com/adsenseus/224394833944",
+     "kind": "네이버블로그"
+    },
+    {
+     "n": 3,
+     "name": "linkfactory70",
+     "url": "https://blog.naver.com/linkfactory70/224415738192",
+     "kind": "네이버블로그"
+    }
+   ],
+   "ours": false,
+   "ours_page": false
+  },
+  {
+   "q": "은퇴 자금 얼마나 필요할까",
+   "ok": true,
+   "aib": true,
+   "refs": [
+    {
+     "n": 1,
+     "name": "국민건강보험",
+     "url": "https://www.nhis.or.kr/static/alim/paper/oldpaper/202306/sub/section3_3.html",
+     "kind": "공공"
+    },
+    {
+     "n": 2,
+     "name": "etfsaver.org",
+     "url": "https://etfsaver.org/blog/retirement-fund-calculation-guide/",
+     "kind": "개인·기업 웹"
+    },
+    {
+     "n": 3,
+     "name": "주인장",
+     "url": "https://blog.naver.com/yhkakankvzont/224358224732",
+     "kind": "네이버블로그"
+    },
+    {
+     "n": 4,
+     "name": "moneymentor.kr",
+     "url": "https://moneymentor.kr/65-retirement-fund/",
+     "kind": "개인·기업 웹"
+    },
+    {
+     "n": 5,
+     "name": "행복한 백수",
+     "url": "https://blog.naver.com/real_history/224423352448",
+     "kind": "네이버블로그"
+    },
+    {
+     "n": 6,
+     "name": "머니인사이트",
+     "url": "https://blog.naver.com/dogani45/224338292833",
+     "kind": "네이버블로그"
+    }
+   ],
+   "ours": false,
+   "ours_page": false
+  },
+  {
+   "q": "금 투자 세금",
+   "ok": true,
+   "aib": true,
+   "refs": [
+    {
+     "n": 1,
+     "name": "Market",
+     "url": "https://open.krx.co.kr/contents/OPN/01/01050206/OPN01050206.jsp",
+     "kind": "공공"
+    },
+    {
+     "n": 2,
+     "name": "블룸앤아이유",
+     "url": "https://blog.naver.com/ishiseido77/224243974729",
+     "kind": "네이버블로그"
+    },
+    {
+     "n": 3,
+     "name": "신한투자증권",
+     "url": "https://kin.naver.com/qna/detail.naver?dirId=40102&docId=492763646&answerNo=4",
+     "kind": "지식iN"
+    }
+   ],
+   "ours": false,
+   "ours_page": false
+  }
+ ]
+}

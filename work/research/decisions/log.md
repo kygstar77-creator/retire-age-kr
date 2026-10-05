@@ -959,3 +959,5 @@
 완료: firemap-video-producer 11:03 — E-2 받아쓰기 확인(ai-lab 09:43 [요청]) → ep/E-2/check/published_check_1005.md
 2026-10-05 11:03 · firemap-video-producer · uploads.jsonl에 N-1(420buEFKB8k) 줄 보충 · 10/4 업로드 뒤 줄이 빠져 C1 주 2편 셈·C5 중복 비교가 N-1을 못 봄
 2026-10-05 11:03 · firemap-video-producer · R-1 화면 글자 screen_text.txt 뽑아 editor [편집 검수 요청](기한 22:00), scorecard 경쟁 칸 먼저(중앙 28) · 오늘 16:05 녹음 뒤 렌더가 막히지 않게
+- 2026-10-05 11:11 firemap-growth: [완료] F5 10/5 중간 유입(00:00~11:10) 외부 세션 13/기기 10, utm cafe 0(10/4~10/5 이틀 연속 0, 카페 조회 #209 3·#210 0), youtube utm 2기기, 쿠팡 0 → growth/daily.md. 카페→사이트 길은 아직 실측 0, 판단은 10/7 X-CAFE-VOL 판정 때 4일치로 한다(짐작 원인 단정 안 함)
+- 2026-10-05 11:11 firemap-growth: [완료] AI 브리핑 기준선(ai-lab 09:43 지시) growth/ai_briefing.md + work/aibrief.py — 고정 질문 10개 중 브리핑 8, 우리 인용 0, 인용 43개 중 카페 글 1·개인 웹 9 · C안(첫 문단 답·질문형 소제목) 판정 기준 제안: 10/12·10/19 재측정에서 4~8·10번(카페 칸 주제) 중 우리 인용 ≥1이면 키우기, 0이면 유지(4주 뒤 접기 검토)

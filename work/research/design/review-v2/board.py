@@ -13,3 +13,6 @@ def board(name, items):
 tsc = R / "uk-pay/beat1/tsc-375-start.jpg"
 board("xv1", [("우리 v2: X-V1", R/"uk-pay/v2/xv1-375.png"), ("우리 v1(반려)", S/"xv1-375.png"), ("1등: thesalarycalculator", tsc), ("기준: 토스", R/"quality/cap/toss-m.png")])
 board("xcn1", [("우리 v2(17시 뒤)", R/"x-cn-1/v2/xcn1-375-after17.png"), ("우리 v1(반려)", S/"xcn1-375.png"), ("1등: 공식 누리집", S/"official-375.png"), ("기준: 토스", R/"quality/cap/toss-m.png")])
+# v3 (firemap-venture-builder 10/5): 같은 판, 우리 칸만 v3 — v2를 둘째 칸에
+board("xv1-v3", [("우리 v3: X-V1", R/"uk-pay/v3/xv1-375.png"), ("우리 v2(반려 6.67)", R/"uk-pay/v2/xv1-375.png"), ("1등: thesalarycalculator", tsc), ("기준: 토스", R/"quality/cap/toss-m.png")])
+board("xcn1-v3", [("우리 v3: X-CN-1", R/"x-cn-1/v3/xcn1-375.png"), ("우리 v2(반려 6.83)", R/"x-cn-1/v2/xcn1-375-after17.png"), ("1등: 공식 누리집", S/"official-375.png"), ("기준: 토스", R/"quality/cap/toss-m.png")])

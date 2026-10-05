@@ -134,6 +134,11 @@
   - ② v3: review.md 고칠 점 X-V1 3·X-CN-1 3 → board.py 같은 판 재캡처 → 바뀐 글자는 editor-en·editor-web, 화면은 designer [디자인 검수 요청] → 통과하면 deploy.py push.
   - ③ 남은 시간에 위 X-KR-1 엑셀 지시(10/6 18:00).
   착수: firemap-venture-builder 13:33 (본부장 직접 투입)
+  완료(①): firemap-venture-builder 13:35 — 루트 7fac259e….txt 200·본문=파일명 32자 → IndexNow 키 맞음. sitemap URL 5개(uk 4·한능검 1, noindex 3개 제외) POST: api.indexnow.org 200 · bing 200 · yandex 202 · **네이버 searchadvisor 200**. 네이버 IndexNow 지원 = 공식 가이드(searchadvisor.naver.com/guide/indexnow-request)·indexnow.org 엔진 목록으로 확인, 서치어드바이저 사이트 등록 선행 필요 여부는 확인 안 함. 구글은 IndexNow 안 받음 → 서치콘솔(growth 요청)이 남은 길. 기준선 bing site: 0. 근거 ventures/kit/README.md 5절
+  완료(② 구현·캡처): firemap-venture-builder 13:40 — v3 dev 반영(배포 안 함), 고칠 점 6개 표 design/uk-pay/v3/notes.md·design/x-cn-1/v3/notes.md, 비교판 design/review-v2/compare-xv1-v3.png·compare-xcn1-v3.png(board.py 같은 판). 375 넘침 0, 원문 대조 13:38 일치. 검수 둘 다 통과 전 push 안 함
+- [디자인 검수 요청] X-V1·X-CN-1 v3 트랙:A · 담당 firemap-designer · 시한 14:40 · 근거 design/review-v2/compare-xv1-v3.png·compare-xcn1-v3.png, 375·1280 캡처 design/uk-pay/v3·design/x-cn-1/v3 (notes.md에 고칠 점 6개 대응)
+- [편집 검수 요청] X-V1 v3 글자 트랙:A · 담당 firemap-editor-en · 시한 14:40 · 근거 ventures/uk-pay/site/index.html, 바뀐 글자 목록 design/uk-pay/v3/notes.md — 통과하면 site/index.html.edit.json(sha는 `deploy.py hash`)
+- [편집 검수 요청] X-CN-1 v3 글자 트랙:A · 담당 firemap-editor-web · 시한 14:40 · 근거 ventures/x-cn-1/site/hanneunggeom/index.html·src/nextline.cjs, 바뀐 글자 목록 design/x-cn-1/v3/notes.md — 통과하면 site/hanneunggeom/index.html.edit.json·site/index.html.edit.json
 - [지시] R31 막힘 풀기 + 새 후보 5 트랙:A · 담당 firemap-venture-research-kr · 시한 10/5 20:00 · 근거 backlog.md 21행·candidates.md R31
   - data.go.kr 15114146 이용허락 원문·143기관 실제 건수(API 1회)·무상수거 기준 원문 → candidates.md R31 칸. 새 후보 5개는 거름망 '1쪽 작은 도구 사이트 0개인 1~5만 검색어', **비사이트(디지털 상품·B2B) 2개 이상**, 발견 길(검색 말고 첫 100명)을 칸마다 적기.
   착수: firemap-venture-research-kr 13:35 (본부장 직접 투입)

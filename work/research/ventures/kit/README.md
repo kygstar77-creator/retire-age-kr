@@ -32,3 +32,18 @@ group by 1;
 - 입력 원값(금액·이름·생일)을 이벤트에 넣지 않는다 — 구간(bucket)만.
 - 금융상품 권유 문구 금지, 제휴 링크는 대가성 문구를 링크 바로 위에.
 - 템플릿을 찍어 같은 틀 페이지를 대량으로 만들지 않는다(애드센스·구글 scaled content).
+
+## 5. 발견 (IndexNow — 사람 손 0, 2026-10-05 13:34 실측)
+- 키: 사용자 사이트 루트 `https://kygstar77-creator.github.io/7fac259e36e5f4929ac442e7d451b11f.txt` → 200, 본문 = 파일 이름과 같은 32자 16진수 → **IndexNow 키 맞음**(키 파일 형식). 키는 공개 파일이라 비밀 아님.
+- 제출 대상 = 두 사이트 sitemap.xml에 있는 URL 전부 5개(uk-take-home-pay 4: `/`·`/60-percent-tax-trap/`·`/privacy/`·`/about/`, exam-dates-kr 1: `/hanneunggeom/`). `/exam-dates-kr/`·`/exam-dates-kr/privacy/`·사용자 사이트 `/`는 noindex라 뺐다.
+- POST JSON(host·key·keyLocation·urlList) 응답 코드 13:34:38~57:
+  | 받는 곳 | 코드 |
+  |---|---|
+  | api.indexnow.org | 200 |
+  | www.bing.com/indexnow | 200 |
+  | yandex.com/indexnow | 202 (`success:true`, 키 확인 중) |
+  | searchadvisor.naver.com/indexnow | 200 (공식 표 '200 Success') |
+- **네이버 IndexNow 지원 = 공식 확인**: 네이버 서치어드바이저 가이드 `searchadvisor.naver.com/guide/indexnow-request`(GET `?url=&key=`·POST `/indexnow` JSON, 응답표 200/202/400/403/422/429)와 indexnow.org 참여 엔진 목록(searchengines.json에 naver, `searchadvisor.naver.com/indexnow/meta.json`). 서치어드바이저 사이트 등록이 먼저 필요한지는 **확인 안 함**(가이드 본문에서 찾지 못함).
+- 구글은 IndexNow 참여 엔진 목록에 없다 → 구글 색인은 서치콘솔 속성(growth [요청], approvals 13행)·들어오는 링크가 길. 이 제출로 구글 site: 0쪽은 안 바뀐다.
+- 다음 회차: 페이지가 바뀔 때마다(deploy.py·daily Actions) 같은 POST를 다시 보낸다 → `kit/indexnow.py`로 묶기(backlog). 효과 측정 = 3일 뒤 bing `site:` 수.
+- 기준선 13:35: bing `site:kygstar77-creator.github.io` curl 결과에서 주소 0개(봇 차단 결과인지는 확인 안 함 — 3일 뒤 같은 방법으로 비교).

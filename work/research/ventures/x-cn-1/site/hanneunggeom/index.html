@@ -20,24 +20,27 @@ body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--fs3)/1.55 "Pr
 header{height:52px;display:flex;align-items:center}
 header a{color:var(--ink);text-decoration:none;font-weight:700;font-size:var(--fs4);display:inline-block;padding:12px 4px 12px 0;min-height:44px}
 h1{font-size:var(--fs1);line-height:1.3;margin:8px 0 16px;letter-spacing:-.01em}
-h2{font-size:var(--fs2);margin:36px 0 12px}
+h2{font-size:var(--fs2);margin:24px 0 12px}
 h3{font-size:var(--fs3);margin:0 0 12px}
 a{color:var(--accent)}
 .next{background:var(--dark);color:var(--dark-ink);border-radius:20px;padding:20px;margin:0 0 8px}
 .line{margin:0 0 16px}
 .line>*{display:block}
 .line .stamp{font-size:var(--fs5);color:var(--dark-sub);margin:0 0 8px}
-.line .kick{font-size:var(--fs4);color:var(--dark-ink);font-weight:600;margin:0 0 2px}
-.line strong{color:#fff;font-weight:800;font-size:clamp(20px,6vw,30px);line-height:1.35;letter-spacing:-.01em}
+.line .kick{font-size:var(--fs4);color:var(--dark-ink);font-weight:600;margin:0 0 4px}
+.line strong{color:#fff;font-weight:800;font-size:clamp(30px,9vw,40px);line-height:1.2;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
 .line .after{font-size:var(--fs4);color:var(--dark-sub);margin-top:6px}
 /* 하루 넘김(stale): 줄은 비우고 흰 버튼 = 공식 일정 확인하기, 캘린더 숨김(디자인 반려 16:14 ②) */
 .next:not([data-state=stale]) #offbtn,.next[data-state=stale] #ics,.next[data-state=stale] .line{display:none}
 .sub{font-size:var(--fs4);color:var(--ink);background:var(--card);border-radius:12px;padding:12px 16px;margin:0 0 8px}
 .sub:empty{display:none}
-.acts{display:flex;gap:8px;flex-wrap:wrap}
-.btn{flex:1 1 140px;display:inline-flex;align-items:center;justify-content:center;min-height:48px;border:0;border-radius:12px;font-weight:700;font-size:var(--fs4);font-family:inherit;line-height:1.3;text-align:center;white-space:nowrap;text-decoration:none;cursor:pointer;padding:0 12px}
+.subh{margin:0 0 4px;font-weight:700}
+.sub ul{margin:0;padding:0;list-style:none}
+.sub li{padding:2px 0;color:var(--sub)}
+.acts{display:flex;flex-direction:column;align-items:center;gap:4px}
+.btn{width:100%;max-width:360px;display:inline-flex;align-items:center;justify-content:center;min-height:48px;border:0;border-radius:12px;font-weight:700;font-size:var(--fs4);font-family:inherit;line-height:1.3;text-align:center;white-space:nowrap;text-decoration:none;cursor:pointer;padding:0 12px}
 .primary{background:#fff;color:var(--dark)}
-.ghost{background:rgba(255,255,255,.12);color:var(--dark-ink)}
+.linkbtn{background:none;border:0;color:var(--dark-sub);font:inherit;font-size:var(--fs5);text-decoration:underline;padding:12px;min-height:44px;cursor:pointer}
 .src{font-size:var(--fs5);color:var(--sub);margin:24px 0 0}
 details.past{margin:8px 0 0}
 details.past summary{font-size:var(--fs4);color:var(--sub);padding:12px 0;min-height:44px;cursor:pointer}
@@ -66,22 +69,22 @@ footer a{color:var(--sub);display:inline-block;padding:12px 0}
 <header><a href="https://kygstar77-creator.github.io/exam-dates-kr/">시험 일정</a></header>
 <main>
 <h1>한능검 시험일정 2026 — 제80·81회 남은 일정</h1>
-<div class="next" id="next" data-state="open">
-<p class="line" id="line"><!--dyn--><span class="stamp">10/2(금) 기준 · 국사편찬위원회 원문 07:13 대조</span><span class="kick">제80회 취소좌석 접수 중</span><strong>10/2(금) 17:00 마감(오늘)</strong><span class="after">놓치면 다음: 제81회 원서접수 11/3(화) 10:00</span><!--/dyn--></p>
+<div class="next" id="next" data-state="missed">
+<p class="line" id="line"><!--dyn--><span class="stamp">10/5(월) 기준 · 국사편찬위원회 원문 13:38 대조</span><span class="kick">다음: 제81회 원서접수 · 29일 뒤</span><strong>11/3(화) 10:00</strong><!--/dyn--></p>
 <div class="acts">
 <a class="btn primary" id="ics" href="hanneunggeom-2026.ics" download>캘린더에 넣기</a>
 <a class="btn primary official" id="offbtn" href="https://www.historyexam.go.kr/pageLink.do?link=examSchedule" rel="nofollow">공식 일정 확인하기</a>
-<button class="btn ghost" id="copy" type="button">링크 복사</button>
+<button class="linkbtn" id="copy" type="button">링크 복사</button>
 </div>
 </div>
-<p class="sub" id="sub"><!--dyn-->제80회 접수했다면: 접수 취소 시 100% 환불 10/2(금) 17:00까지(오늘) · 수험표 출력 10/13(화) 10:00부터 · 시험 10/17(토)<!--/dyn--></p>
+<div class="sub" id="sub"><!--dyn--><p class="subh">제80회 접수했다면</p><ul><li>접수 취소 시 50% 환불 10/9(금) 17:00까지</li><li>수험표 출력 10/13(화) 10:00부터</li><li>시험 10/17(토)</li></ul><!--/dyn--></div>
 
 <h2>2026년 회차별 일정</h2>
 <div class="tbl"><table>
 <thead><tr><th scope="col">회차</th><th scope="col">원서접수</th><th scope="col">시험일</th><th scope="col">합격자발표</th></tr></thead>
-<tbody><!--dyn--><tr><th scope="row">제80회</th><td>9/15~9/22</td><td>10/17(토)</td><td>10/30(금)</td></tr><tr><th scope="row">제81회</th><td>11/3~11/10</td><td>11/28(토)</td><td>12/11(금)</td></tr><!--/dyn--></tbody>
+<tbody><!--dyn--><tr><th scope="row">제80회</th><td>9/15(화)~<br>9/22(화)</td><td>10/17(토)</td><td>10/30(금)</td></tr><tr><th scope="row">제81회</th><td>11/3(화)~<br>11/10(화)</td><td>11/28(토)</td><td>12/11(금)</td></tr><!--/dyn--></tbody>
 </table></div>
-<!--dyn--><details class="past"><summary>지난 회차(제77~79회)</summary><div class="tbl"><table><thead><tr><th scope="col">회차</th><th scope="col">원서접수</th><th scope="col">시험일</th><th scope="col">합격자발표</th></tr></thead><tbody><tr class=past><th scope="row">제77회</th><td>1/6~1/13</td><td>2/7(토)</td><td>2/20(금)</td></tr><tr class=past><th scope="row">제78회</th><td>4/21~4/28</td><td>5/23(토)</td><td>6/5(금)</td></tr><tr class=past><th scope="row">제79회</th><td>7/7~7/14</td><td>8/9(일)</td><td>8/21(금)</td></tr></tbody></table></div></details><!--/dyn-->
+<!--dyn--><details class="past"><summary>지난 회차(제77~79회)</summary><div class="tbl"><table><thead><tr><th scope="col">회차</th><th scope="col">원서접수</th><th scope="col">시험일</th><th scope="col">합격자발표</th></tr></thead><tbody><tr class=past><th scope="row">제77회</th><td>1/6(화)~<br>1/13(화)</td><td>2/7(토)</td><td>2/20(금)</td></tr><tr class=past><th scope="row">제78회</th><td>4/21(화)~<br>4/28(화)</td><td>5/23(토)</td><td>6/5(금)</td></tr><tr class=past><th scope="row">제79회</th><td>7/7(화)~<br>7/14(화)</td><td>8/9(일)</td><td>8/21(금)</td></tr></tbody></table></div></details><!--/dyn-->
 
 <h2>남은 회차 자세히</h2>
 <section class="card" id="r80">
@@ -116,7 +119,7 @@ footer a{color:var(--sub);display:inline-block;padding:12px 0}
 <h2>공식 안내</h2>
 <ul class="notes"><li>제79회 시험은 토요근무자 등의 편의를 위해 일요일에 실시</li><li>&#x27;27년 9급 공무원 공채 시험 한국사 과목의 한국사능력검정시험 대체 예정에 따른 응시자 수 증가 대응을 위해, &#x27;26년에 한하여 1회 증회 편성·운영</li><li>2026년 제78회(5.23 토), 제80회(10.17 토), 제81회(11.28 토) 시험은 심화만 시행</li><li>취소좌석 접수는 접수 잔여석에 한함</li><li>합격자발표 방법: 응시자가 홈페이지에 직접 접속하여 성적 조회 및 인증서 출력(정부24 가능)</li><li>입금 및 환불은 은행 마감 시간 전까지 가능(은행별로 다를 수 있음)</li></ul>
 
-<p class="src">출처: <a id="official" href="https://www.historyexam.go.kr/pageLink.do?link=examSchedule" rel="nofollow">국사편찬위원회 한국사능력검정시험 누리집 · 시험 일정</a> · 원문을 사람이 읽은 시각 10/1 15:41 · 원문과 자동 대조한 시각 <!--dyn-->10/2 07:13<!--/dyn-->. 대조가 하루를 넘기면 맨 위 줄은 공식 일정 링크로 바뀝니다.</p>
+<p class="src">출처: <a id="official" href="https://www.historyexam.go.kr/pageLink.do?link=examSchedule" rel="nofollow">국사편찬위원회 한국사능력검정시험 누리집 · 시험 일정</a> · 원문을 사람이 읽은 시각 10/1 15:41 · 원문과 자동 대조한 시각 <!--dyn-->10/5 13:38<!--/dyn-->. 대조가 하루를 넘기면 맨 위 줄은 공식 일정 링크로 바뀝니다.</p>
 <script>/* X-CN-1 '오늘 기준 다음 할 일 한 줄' — 브라우저와 빌드(node)가 같은 파일을 쓴다(기준 하나).
  * 예술가 통과 조건(art/2026-10-01-1445.md 0-1): ① 기준일·원문 대조 시각 도장은 같은 줄·같은 크기
  * ② 대조 시각은 빌드 스크립트가 원문과 사실표를 비교한 시각(사람 0) ③ 24시간 넘으면 그 줄만 '공식 일정 확인하기' 링크로 물러난다.
@@ -164,19 +167,21 @@ footer a{color:var(--sub);display:inline-block;padding:12px 0}
     });
     var nextTxt = next ? '제' + next.no + '회 ' + next.kind + ' ' + md(next.s) + ' ' + hm(next.s) : '';
     // 채점 10/2: 카드는 작은 머리(k) + 큰 글자 1줄(b) + 설명 1줄(d). 글자는 main·after와 같은 조각(새 문장 0)
-    var nk = next ? '제' + next.no + '회 ' + next.kind : '', nb = next ? md(next.s) + ' ' + hm(next.s) + (rel(next.s, now) ? '(' + rel(next.s, now) + ')' : '') : '';
-    var r = { state: '', main: '', after: '', stamp: stamp, sub: sub(F, now) };
+    // 채점 10/2 v3: 큰 줄은 날짜·시각 하나만, 'n일 뒤'는 머리(k) 줄로, 이미 마감된 일은 카드에서 뺀다
+    var nk = next ? '제' + next.no + '회 ' + next.kind + (rel(next.s, now) ? ' · ' + rel(next.s, now) : '') : '', nb = next ? md(next.s) + ' ' + hm(next.s) : '';
+    var sp = subParts(F, now);
+    var r = { state: '', main: '', after: '', stamp: stamp, sub: sp ? sp.h + ': ' + sp.items.join(' · ') : '', subh: sp ? sp.h : '', subs: sp ? sp.items : [] };
     if (open) {
       var rr = rel(open.e, now);
       r.state = 'open';
       r.main = '제' + open.no + '회 ' + open.kind + ' 중 · ' + md(open.e) + ' ' + hm(open.e) + ' 마감' + (rr ? '(' + rr + ')' : '');
       r.after = nextTxt ? '놓치면 다음: ' + nextTxt : '';
-      r.k = '제' + open.no + '회 ' + open.kind + ' 중'; r.b = md(open.e) + ' ' + hm(open.e) + ' 마감' + (rr ? '(' + rr + ')' : ''); r.d = r.after;
+      r.k = '제' + open.no + '회 ' + open.kind + ' 중 · 마감' + (rr ? ' ' + rr : ''); r.b = md(open.e) + ' ' + hm(open.e); r.d = r.after;
     } else if (last && next) {
       r.state = 'missed';
       r.main = '제' + last.no + '회 ' + last.kind + ' ' + md(last.e) + ' ' + hm(last.e) + ' 마감됨';
       r.after = '다음: ' + nextTxt + (rel(next.s, now) ? '(' + rel(next.s, now) + ')' : '');
-      r.k = '다음: ' + nk; r.b = nb; r.d = r.main;
+      r.k = '다음: ' + nk; r.b = nb; r.d = '';
     } else if (next) {
       r.state = 'upcoming';
       r.main = '다음: ' + nextTxt + (rel(next.s, now) ? '(' + rel(next.s, now) + ')' : '');
@@ -192,11 +197,11 @@ footer a{color:var(--sub);display:inline-block;padding:12px 0}
 
   // 이미 접수한 사람용 보조 줄: 시험이 아직 안 지난 가장 가까운 회차
   // beat-1st 10/2: 접수 취소 환불 구간(공식 표 '접수 취소 기간 및 취소시 환불안내')을 맨 앞에 — 100% 환불이 끝나는 시각을 놓치지 않게.
-  function sub(F, now) {
+  function subParts(F, now) {
     for (var i = 0; i < F.rounds.length; i++) {
       var r = F.rounds[i], ex = t(r.exam);
       if (ex + DAY <= now) continue;
-      if (t(r.apply[0]) > now) return '';
+      if (t(r.apply[0]) > now) return null;
       var parts = [];
       if (r.refund100 && now < t(r.refund100[1])) {
         var rr = rel(t(r.refund100[1]), now);
@@ -207,9 +212,9 @@ footer a{color:var(--sub);display:inline-block;padding:12px 0}
       }
       if (t(r.ticket) > now) parts.push('수험표 출력 ' + md(t(r.ticket)) + ' ' + hm(t(r.ticket)) + '부터');
       parts.push('시험 ' + md(ex));
-      return '제' + r.no + '회 접수했다면: ' + parts.join(' · ');
+      return { h: '제' + r.no + '회 접수했다면', items: parts };
     }
-    return '';
+    return null;
   }
 
   var api = { nextLine: nextLine, md: md, hm: hm, t: t };
@@ -221,14 +226,14 @@ footer a{color:var(--sub);display:inline-block;padding:12px 0}
 <script>
 (function () {
   var D = {"F": {"_note": "사실표 — 한국사능력검정시험 2026 시험일정. 값은 공식 원문 그대로(KST). build.py가 빌드 때마다 원문을 받아 이 표와 한 칸씩 대조하고, 하나라도 다르면 빌드를 멈춘다. 사람이 고칠 때는 원문을 다시 읽고 read_at을 바꾼다.", "exam": "한국사능력검정시험", "short": "한능검", "org": "국사편찬위원회", "source_url": "https://www.historyexam.go.kr/pageLink.do?link=examSchedule", "read_at": "2026-10-01T15:41:00+09:00", "read_by": "firemap-venture-builder", "notes_official": ["제79회 시험은 토요근무자 등의 편의를 위해 일요일에 실시", "'27년 9급 공무원 공채 시험 한국사 과목의 한국사능력검정시험 대체 예정에 따른 응시자 수 증가 대응을 위해, '26년에 한하여 1회 증회 편성·운영", "2026년 제78회(5.23 토), 제80회(10.17 토), 제81회(11.28 토) 시험은 심화만 시행", "취소좌석 접수는 접수 잔여석에 한함", "합격자발표 방법: 응시자가 홈페이지에 직접 접속하여 성적 조회 및 인증서 출력(정부24 가능)", "입금 및 환불은 은행 마감 시간 전까지 가능(은행별로 다를 수 있음)"], "region_note": {"text": "원서접수는 지역마다 여는 시각이 다를 수 있습니다. 제80회는 9/15(화) 10:00 인천·경기부터 지역을 나눠 차례로 열었고, 9/18(금) 13:00부터 전지역 접수였습니다. 제81회 지역별 시각은 아직 공지사항에 없으니 11/3 전에 공식 공지를 확인하세요.", "source_url": "https://m.historyexam.go.kr/main/examSchedule.do", "checked_at": "2026-10-02T07:10:00+09:00", "_how": "제80회 지역별 시각은 위 주소(모바일 시험 일정) 화면 글자 그대로 읽음. 제81회 안내는 공지사항(pst/list.do?bbs=noti) 첫 쪽에 없음(맨 위 공지 = 제80회 시험장 현황 안내 2026-08-31). 제81회 안내가 올라오면 이 문장을 바꾼다."}, "rounds": [{"no": 77, "apply": ["2026-01-06T10:00", "2026-01-13T17:00"], "cancel_seat": ["2026-01-20T10:00", "2026-01-23T17:00"], "exam": "2026-02-07", "result": "2026-02-20", "change_site": ["2026-01-14T10:00", "2026-01-30T17:00"], "photo": ["2026-01-14T10:00", "2026-02-07T10:00"], "ticket": "2026-02-03T10:00", "refund100": ["2026-01-06T10:00", "2026-01-23T17:00"], "refund50": ["2026-01-24T10:00", "2026-01-30T17:00"]}, {"no": 78, "apply": ["2026-04-21T10:00", "2026-04-28T17:00"], "cancel_seat": ["2026-05-05T10:00", "2026-05-08T17:00"], "exam": "2026-05-23", "result": "2026-06-05", "change_site": ["2026-04-29T10:00", "2026-05-15T17:00"], "photo": ["2026-04-29T10:00", "2026-05-23T10:00"], "ticket": "2026-05-19T10:00", "refund100": ["2026-04-21T10:00", "2026-05-08T17:00"], "refund50": ["2026-05-09T10:00", "2026-05-15T17:00"], "advanced_only": true}, {"no": 79, "apply": ["2026-07-07T10:00", "2026-07-14T17:00"], "cancel_seat": ["2026-07-21T10:00", "2026-07-24T17:00"], "exam": "2026-08-09", "result": "2026-08-21", "change_site": ["2026-07-15T10:00", "2026-07-31T17:00"], "photo": ["2026-07-15T10:00", "2026-08-09T10:00"], "ticket": "2026-08-04T10:00", "refund100": ["2026-07-07T10:00", "2026-07-24T17:00"], "refund50": ["2026-07-25T10:00", "2026-07-31T17:00"]}, {"no": 80, "apply": ["2026-09-15T10:00", "2026-09-22T17:00"], "cancel_seat": ["2026-09-29T10:00", "2026-10-02T17:00"], "exam": "2026-10-17", "result": "2026-10-30", "change_site": ["2026-09-23T10:00", "2026-10-09T17:00"], "photo": ["2026-09-23T10:00", "2026-10-17T10:00"], "ticket": "2026-10-13T10:00", "refund100": ["2026-09-15T10:00", "2026-10-02T17:00"], "refund50": ["2026-10-03T10:00", "2026-10-09T17:00"], "advanced_only": true}, {"no": 81, "apply": ["2026-11-03T10:00", "2026-11-10T17:00"], "cancel_seat": ["2026-11-11T13:00", "2026-11-13T17:00"], "exam": "2026-11-28", "result": "2026-12-11", "change_site": ["2026-11-11T10:00", "2026-11-20T17:00"], "photo": ["2026-11-11T10:00", "2026-11-28T10:00"], "ticket": "2026-11-24T10:00", "refund100": ["2026-11-03T10:00", "2026-11-17T17:00"], "refund50": ["2026-11-18T10:00", "2026-11-20T17:00"], "advanced_only": true}]}};
-  D.V = /*dyn*/"2026-10-02T07:13:52+09:00"/*/dyn*/;
+  D.V = /*dyn*/"2026-10-05T13:38:08+09:00"/*/dyn*/;
   var L = NextLine.nextLine(D.F, D.V, Date.now());
   var box = document.getElementById('next'), p = document.getElementById('line');
   function e(s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
   box.setAttribute('data-state', L.state);
   p.innerHTML = L.state === 'stale' ? ''
     : '<span class="stamp">' + e(L.stamp) + '</span>' + (L.k ? '<span class="kick">' + e(L.k) + '</span>' : '') + '<strong>' + e(L.b) + '</strong>' + (L.d ? '<span class="after">' + e(L.d) + '</span>' : '');
-  document.getElementById('sub').textContent = L.sub || '';
+  document.getElementById('sub').innerHTML = L.subh ? '<p class="subh">' + e(L.subh) + '</p><ul>' + L.subs.map(function (x) { return '<li>' + e(x) + '</li>'; }).join('') + '</ul>' : '';
   var log = window.FMKit ? FMKit.log : function () {};
   if (window.FMKit) FMKit.init({ site: 'x-cn-1', lang: 'ko', accent: '#24508f' });
   log('line_view', { state: L.state, page: 'hanneunggeom' });

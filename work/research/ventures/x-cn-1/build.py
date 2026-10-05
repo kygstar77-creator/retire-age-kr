@@ -110,6 +110,13 @@ def dyn(s):
 DOW = '월화수목금토일'
 
 
+# 채점 10/2 v3 ③: '접수했다면' 상자는 · 이어 붙인 줄 → 항목별 한 줄 목록
+def sub_html(L):
+    if not L.get('subh'):
+        return ''
+    return f'<p class="subh">{esc(L["subh"])}</p><ul>' + ''.join(f'<li>{esc(x)}</li>' for x in L.get('subs', [])) + '</ul>'
+
+
 def d_txt(s, with_time=True):
     d = datetime.datetime.fromisoformat(s)
     t = f'{d.month}/{d.day}({DOW[d.weekday()]})'
@@ -190,7 +197,7 @@ def build_hnk(F, verified_at, now):
     for r in F['rounds']:
         past = datetime.datetime.fromisoformat(r['result']).replace(tzinfo=KST) < now
         (past_rows if past else rows).append(f'<tr{" class=past" if past else ""}><th scope="row">제{r["no"]}회</th>'
-                    f'<td>{mdd(r["apply"][0])}~{mdd(r["apply"][1])}</td>'
+                    f'<td>{d_txt(r["apply"][0], False)}~<br>{d_txt(r["apply"][1], False)}</td>'
                     f'<td>{d_txt(r["exam"])}</td><td>{d_txt(r["result"])}</td></tr>')
     thead = '<thead><tr><th scope="col">회차</th><th scope="col">원서접수</th><th scope="col">시험일</th><th scope="col">합격자발표</th></tr></thead>'
     past_no = [r['no'] for r in F['rounds'] if datetime.datetime.fromisoformat(r['result']).replace(tzinfo=KST) < now]
@@ -234,10 +241,10 @@ def build_hnk(F, verified_at, now):
 <div class="acts">
 <a class="btn primary" id="ics" href="hanneunggeom-2026.ics" download>캘린더에 넣기</a>
 <a class="btn primary official" id="offbtn" href="{esc(F["source_url"])}" rel="nofollow">공식 일정 확인하기</a>
-<button class="btn ghost" id="copy" type="button">링크 복사</button>
+<button class="linkbtn" id="copy" type="button">링크 복사</button>
 </div>
 </div>
-<p class="sub" id="sub">{dyn(esc(L.get("sub", "")))}</p>
+<div class="sub" id="sub">{dyn(sub_html(L))}</div>
 
 <h2>2026년 회차별 일정</h2>
 <div class="tbl"><table>
@@ -266,7 +273,7 @@ def build_hnk(F, verified_at, now):
   box.setAttribute('data-state', L.state);
   p.innerHTML = L.state === 'stale' ? ''
     : '<span class="stamp">' + e(L.stamp) + '</span>' + (L.k ? '<span class="kick">' + e(L.k) + '</span>' : '') + '<strong>' + e(L.b) + '</strong>' + (L.d ? '<span class="after">' + e(L.d) + '</span>' : '');
-  document.getElementById('sub').textContent = L.sub || '';
+  document.getElementById('sub').innerHTML = L.subh ? '<p class="subh">' + e(L.subh) + '</p><ul>' + L.subs.map(function (x) {{ return '<li>' + e(x) + '</li>'; }}).join('') + '</ul>' : '';
   var log = window.FMKit ? FMKit.log : function () {{}};
   if (window.FMKit) FMKit.init({{ site: 'x-cn-1', lang: 'ko', accent: '{ACCENT}' }});
   log('line_view', {{ state: L.state, page: 'hanneunggeom' }});

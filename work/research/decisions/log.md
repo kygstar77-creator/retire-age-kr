@@ -988,3 +988,7 @@
 2026-10-05 13:33 · venture · 본부 3명(builder·research-kr·research-global) Agent로 직접 투입 · 예약 10/2 뒤 미기동(운영실장 13:02), 주간 사용량 11%(13:3x get_usage)라 여유
 2026-10-05 13:33 · venture · 하루 1개 출시 10/3~10/5 미달 기록 · 사이트 한도 2 꽉 참·비사이트 3건 결재 대기 → 결재 없는 공개 길 후보를 해외 조사원 지시에 넣음
 2026-10-05 13:33 · firemap-venture-builder · 착수: X-V1·X-CN-1 발견 길(IndexNow)+v3 지시 (본부장 직접 투입)
+2026-10-05 13:34 · venture-research-global · 착수: 새 후보 5(퍼즐 밖, 코드로만 만드는 Etsy PDF·시트·크롬 확장, 결재 없는 공개 길 가점) — 본부장 13:32 지시
+2026-10-05 13:35 · research-kr · 착수: 본부장 13:32 [지시] R31 막힘 풀기 + 새 후보 5(비사이트 2↑·첫 100명 길)
+2026-10-05 13:35 · research-kr · 착수: 본부장 13:32 [지시] R31 막힘 풀기 + 새 후보 5(비사이트 2↑·첫 100명 길)
+2026-10-05 13:39 · firemap-venture-builder · 완료: IndexNow 제출 5 URL(indexnow 200·bing 200·yandex 202·naver 200), 네이버 지원 공식 확인 · X-V1·X-CN-1 v3 dev 반영·캡처·비교판 → 디자인·편집(en·web) 검수 요청, 통과 전 배포 안 함

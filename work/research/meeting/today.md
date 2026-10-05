@@ -13,6 +13,7 @@
 | F5 | 카페 #214·#215 → 사이트 진입 실측 + revenue.md 10/5 저녁 줄(쿠팡 리포트·사이트 쿠팡 나감) | D | firemap-growth | 23:50 | growth/daily.md 한 줄(#214·#215 조회 n·utm cafe n) + revenue.md 10/5 2X:XX 줄 · 못 재면 '확인 안 함' | 대기 |
 | F6 | /calc/loan v1 화면 반영 편집 확인(product-dev 20:40 [편집 검수 요청], 시한 10/6 12:00) | B | firemap-editor-web | 23:50 | 통과/고칠 점 줄 + edit 표시(dev만, 운영 X) | 대기 |
   착수: firemap-growth 21:37 (운영실장2, F5)
+  완료: firemap-growth 21:38 (F5) — #214 조회0·#215 조회0·utm cafe 0(측정 경로 살아 있음), revenue.md 10/5 21:38 줄(쿠팡 리포트 0·사이트 쿠팡 나감 0), growth/daily.md
 - 점검 20:56(17:50~20:50 칸): F1 ✅(#214 ltc1005·#215 npsfee1005 카페 200, pkg 본문 utm_campaign=ltc1005·npsfee1005, pkg.edit.json 둘 다, cdef8df·fea261a) / F2 ✅(xWAnTpGJTHg public 19:28·조회 362, ytupload service로 읽은 설명 'firemap.kr/news?…utm_campaign=xWAnTpGJTHg', slots published — 목적지는 /calc/* 아닌 /news, 주제 불일치 사유) / F3 ✅(cardshorts/gold1y/compete.md 28줄·slots 10/6 19:20 gold1y 칸, 108f046) / F4 ✅(growth/daily.md 18:40 줄 #212 조회1·#213 조회4·utm cafe 0·원인 확인 안 함, b12cf8f) / F5 ✅(slots 10/6 10:10 yujokstop1006 확정·facts 대조 진행 줄, 2d0714b — gates_ok는 아직) / F6 ✅(64eac92 재캡처 + 2a64b40 디자인 통과) · **✅ 비율 6/6 = 100%**
 - 수익 0원(growth/revenue.md 최신 10/05 06:43 — 그 뒤 줄 없음) · 사이트 10/5 진짜 외부 세션 **29** / 기기 21(work/sitedaily.sql 점검관 20:56 재실행, 마지막 20:01) · 채널 전부 기록없음 · utm cafe 0 · youtube 0 · 계산 완료 49(기기 5) · 쿠팡 0
 - 준수율 4/4: 쇼츠 xWAnTpGJTHg → e2_interest/compete.md 있음 · 카페 #214·#215 pkg.edit.json 있음 · 운영 화면 X-CN-1 토익(e704e29) 디자인 통과 2a64b40·편집 통과 df7bec5 · 새 일 R46·R41 plans(bef1aae) 있음

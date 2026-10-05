@@ -102,6 +102,8 @@
   착수: firemap-editor 12:02
   편집 반려: R-1 화면 글자 — 고칠 곳 3 ① 출처 줄 내부 표시 6곳([add-1003]·facts [..]·본인 계산 → 원문 이름·파이어맵 계산) ② "세금 뒤 통장" 3곳 → "세금 다 낸 뒤"(판 이익 세금은 다음 해 5월이라 앞 장면과 부딪힘) ③ R1.tsx "세금이 줄인 차이" → "간격" · 바꿀 문자열 그대로 longform/ep/R-1/check/screen_edit_1005.md · 숫자 변경 0 · PD가 다시 뽑으면 바로 stamp 12:04
 - [편집 검수 요청] **firemap-editor** (PD 14:53, 기한 오늘 21:00 — R-1 렌더가 녹음 직후) 반려 3곳 고쳐 다시 뽑음: screen_text.txt 737줄(출처 내부 표시 7곳 → 원문 이름·'파이어맵 계산' · '세금 뒤 통장' → '세금 다 낸 뒤'(자막 cap은 대본 해시 안 바꾸려고 r1props에서 바꿈) · R1.tsx '세금이 줄인 간격 307만원') + 첫 장면 줌아웃 글자 10줄(open.data.zoom, 숫자 facts 원문) · 'SPY는' 대본 말은 녹음 전 해시 유지로 안 바꿈 · 23.lines.1.cap 예보 원문은 사실 담당 몫이라 그대로 · 보고 `py -3.12 work/lfrender.py stamp work/research/longform/ep/R-1 firemap-editor "<본 것>"`
+  착수: firemap-editor 15:32 (운영실장 — R-1 화면 글자 재검수 737줄)
+  완료: firemap-editor 15:33 — R-1 화면 글자 737줄 통과(반려 3곳 다 고쳐짐: 출처 내부 표시 0, 통장→세금 다 낸 뒤, 간격 307만원 / 줌아웃 10줄 숫자 일치·S&P500 통일) · stamp 찍음. 참고: scene14 sub "통장에 남은 돈의 차이"는 세금 뒤 값이라 그대로 두어도 무방
 
 ## 막힘 (풀리지 않은 것)
 - 빠짐(운영실장 13:02): 정기 근무가 10/2 뒤로 한 번도 안 뜬 직원 8 — planner(08:30·11:30)·editor-web(08:10)·editor-en(10:10)·behavior(10:50)·venture-builder(09:40)·venture-research-global(08:20)·venture-research-kr(09:20)·improve(10/4 22:30). 예약은 켜짐(enabled)인데 lastRunAt 10/2 그대로 — 순돌이 채팅 세션에서 예약 상태 확인 필요. 그동안 운영실장이 열린 태그 있는 직원부터 Agent로 투입(13:0x planner·editor-web)
@@ -138,6 +140,7 @@
   - 기한: 10/5 12:00 시안 · 근거 X-TOOL-1(Figma·코드 vs Claude Design)에 'Dembrandt 토큰 먼저' 조건 추가.
   완료: firemap-designer 13:42 — 통과(연봉 v5 구현본, 375·320·1280·375-dark 캡처 직접 확인). 토큰 차이(모서리 16·카드 #191f28 계열·다크 #2a2d33)는 구현이 src/ui 실제 토큰을 쓴 것이라 허용, 숫자 1+행동 1·넘침 0·320에서 버튼 첫 화면 안. 남은 흠(비차단): 320 공제대상가족 행 두 줄, 접기 머리 ▾ 작음. 3인 패널은 돌리지 않음(시안 심사 7.2 기준 동일 구현으로 판단).
   [요청] firemap-product-dev (firemap-designer 13:42) 연봉 결과 v5 구현본 디자인 통과 → 운영(main) 반영 여부 판단·진행 · 근거 design/tokens-ref/salary-v5/review.md·impl/
+  착수: firemap-product-dev 15:32 (운영실장 — F2 운영 반영 판단)
 - [막힘 07:51] [2] firemap-designer 연봉 결과 시안 v3 미통과(평균 6.83, 기준 7, 717433e) — 다음 회차 공통 지적 3개(아래 고정 버튼 마감·버튼↔숫자 시선 분산·입력칸 모양 통일) · 비축 카페 1/2 그대로, 22:10 TBD-D 관문 기한 16:10 (다음 배차 1순위)
 - 막힘(운영실장 08:15): firemap-designer 연봉 결과 시안 v4(2판) 평균 6.83 — 7 미달(기한 12:00). 제미나이 flash 429·lite 7판 내리 6.5 고정이라 판을 못 가름. 남은 점: 320px 첫 화면 버튼·데스크톱 배치·다크 카드 색 3가지 → designer 10:20 정기에서 마감 뒤 flash 풀린 시간에 재심사(371ab4b)
 - [지시] **firemap-venture-builder** (순돌이 11:4x — X-KR-1 엑셀을 직접 열어 봄, 리틀리 가입 대기 중에 끝낼 것):

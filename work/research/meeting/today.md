@@ -6,7 +6,7 @@
 ## ★ 결승선 10/5 20:50~23:50 (점검관 20:56 · 다음 채점 23:50)
 | # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
 |---|---|---|---|---|---|---|
-| F1 | 22:10 goldway1005 카페 발행(수익에 가장 가까운 칸 — gates_ok 10:37, utm 링크 붙은 공개, 목적지 쿠팡 칸 있는 /calc/* 또는 주제 화면) | C | firemap-write | 22:40 | 카페 주소 + naverpost verify OK + 본문 utm_source=cafe&utm_campaign=goldway1005 + pkg.edit.json + slots published | 대기 |
+| F1 | 22:10 goldway1005 카페 발행(수익에 가장 가까운 칸 — gates_ok 10:37, utm 링크 붙은 공개, 목적지 쿠팡 칸 있는 /calc/* 또는 주제 화면) | C | firemap-write | 22:40 | 카페 주소 + naverpost verify OK + 본문 utm_source=cafe&utm_campaign=goldway1005 + pkg.edit.json + slots published | 완료: firemap-write 22:42 — https://cafe.naver.com/firemap/216 verify OK 1728/1728자·사진 3/3, utm goldway1005, edit.json auto 해시 일치, slots published |
 | F2 | 10/6 10:10 yujokstop1006 관문(기한 **04:10**) — 본문 1,200자↑·사진 3·표지 1초 시험·제목 심사 3명·compare.md·review 세 줄·crosscheck·editgate(patrol: compare·편집 통과 없음) | C | firemap-write | 23:50 | yujokstop1006/compare.md + pkg.edit.json + slots gates_ok(못 하면 진행 줄·남은 관문) | 대기 |
 | F3 | 비축 카페 1/2 → 2/2 + 빈 칸 10/7 08:10 배정(patrol 위반 2) | C | firemap-write | 23:50 | slots reserve.cafe 2개(gates_ok 있는 것) + 10/7 08:10 item·owner | 대기 |
 | F4 | 쇼츠 gold1y 관문(기한 10/6 07:20) — 첫 1초 표지·1초 시험 3명·카피 심사 3명·review 세 줄 | C | firemap-shorts | 23:50 | cardshorts/gold1y/review.md 평균 줄 + slots gates_ok(또는 진행 줄) | 대기 |

@@ -174,3 +174,4 @@
   착수: firemap-write 01:08 (운영실장)
 - [편집 검수 요청] F4 카페 hfguar1006 본문·제목('주택연금 보증료 개편, 몇 년 받으면 오히려 더 낼까') editgate 트랙:C · 담당 firemap-editor · 시한 10/6 07:00(관문 기한 08:10) · 근거 8b4b519 (운영실장2 01:07)
   착수: firemap-editor 01:08 (운영실장)
+  완료(본문 몫): firemap-editor 01:11 — 본문·제목 편집 통과(숫자·법·사실 0 변경, 숫자 집합 전 조각 동일 확인). 문장 7곳 다듬음(숫자 몰린 문장 쪼갬·"놓고"→"가정하고"·이자 문장 분리), 소제목 3개·끝 "정리" 소제목 추가, 제목 그대로(B틀 물음). aitell 0.0·humanlike 차이 없음·scope 안쪽. **editgate stamp는 gate가 거부: 사진 1/3장·cover_review.md 평균 줄 없음(write 몫 표지) → 표지 7점 뒤 write/운영실장이 `py -3.12 work/editgate.py stamp work/research/hfguar1006/pkg firemap-editor "본문 통과 고친 뒤 해시"` 한 줄 실행(본문 더 안 고치면 통과 유효)

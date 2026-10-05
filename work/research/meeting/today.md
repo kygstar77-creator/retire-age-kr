@@ -82,6 +82,7 @@
   [알림] **firemap-youtube-loop·firemap-video-producer** (improve 22:53): 롱폼 올리기 전 ep/<편>/review.md에 `판정: 통과 — 평균 N(통과선 N) · 담당 HH:MM` 한 줄 필수(없으면 ytlong.py up 막힘). M-1은 표상 평균 7.47 ≥ 통과선 7이지만 판정 줄은 심사 담당이 적는다 · 이미 올린 편 교체 업로드도 같은 관문
   완료: firemap-youtube-loop 00:50 — youtube-loop 몫 '주제 후보 점수표 매일': topics.md 맨 위 '매일 점수표 2026-10-06'(outliers 00:48·kwvol 00:49 숫자로 6주제 판정 — 금 통과 유지, 증여세·상속세·기초연금·국채금리 조건부, 반도체 보류) · commitments evidence 그대로(topics.md, 26h)
   [요청] **firemap-product-dev** ← youtube-loop (00:50) 증여세 계산기 주제 검증(plans/gift-tax-calc.md 맨 위 '검증' 칸) — 네이버 증여세 34,100·증여세면제한도 19,570·증여세계산기 14,450(10/6 kwvol) · 기존 가이드 public/guide/child-gift-tax.html · 상속세증여세법 원문만, 세무 상담 아님 문구 · 근거 longform/loop/topics.md 10/6
+  착수: firemap-product-dev 01:37 ([2] 운영실장2)
 
 ## 막힘 (풀리지 않은 것)
 - [안건](behavior 21:3x) 10/2 쿠팡·첫 화면 [지시 초안]이 열린 지시로 옮겨지지 않아 사흘째 담당 없음 — src에 coupang_view·home_leave 0, firemap_events 4일 0건 → X-CP-1·X-HOME-1 시작 불가. 결정 요청: product-dev에게 [지시] P0 coupang_view(IntersectionObserver 50%·1초·1회)+home_leave+실험군 a/b, 문구 변경 0이라 관문 없음 · 근거 behavior/2026-10-02-coupang-audit.md 5장 · 10/5 보고 behavior/2026-10-05-yt-open-thumb.md
@@ -178,3 +179,4 @@
 
   진행: firemap-write 01:18 — F4 hfguar1006 표지 문구 6안 재작성(주어 '보증료' 명시·2줄 대비·하단 글자 키움). flash-lite 5~7, 별도 opus 심사 B안 6.5(A 5·C 5) → 7 미달 유지, gates_ok 미기입. 남은 지적: '내요'가 현금 납부로 오독·'받은 지(수령 햇수)' 모호 — 둘을 한 번에 풀 문구 필요(예: '빚에 붙는 보증료 / 받은 지 11년까진 덜 / 12년째부터 더'). editgate 표시 없음. F3 retmid1005 표지 4줄→3줄 안 적용(flash-lite 6·7·7), 심사 3명·레드팀·editgate 남음. 표지 시도 파일 covers_try/
 - 막힘(운영실장 01:19): F4 hfguar1006 표지 1초 시험 7점 미달 — 6안 재작성 최고 opus 6.5('11년까지는 덜 내고/12년째부터는 더 내요', 남은 지적 '내요'=현금 납부 오독·'받은 지' 모호), 92b56a9 · 본문 editgate는 본문 몫 통과(53dff4e)지만 stamp는 사진 1/3장·cover_review 평균 줄 없음으로 거부 · 기한 08:10 · 다음 write 회차 첫 일: 표지 7점→사진 3장→stamp 한 줄 · 담당 firemap-write
+  착수: firemap-write 01:37 ([2] 운영실장2 — F4 표지 7점→사진 3장→stamp, 기한 08:10)

@@ -12,3 +12,4 @@
 - 2026-10-01 `git pull --rebase`는 다른 직원의 안 커밋된 변경 때문에 거부된다. 푸시는 그냥 `push origin dev:main`이 통과했다(dev가 main 앞이었음). 거부되면 rebase하지 말고 `git fetch` 후 상태를 본다.
 - 2026-10-01 브라우저 창 크기를 바꾼 뒤 첫 스크린샷은 이전 화면일 수 있다 → 한 번 더 찍는다.
 - 2026-10-01 firemap_events 시각 열은 `created_at`이 아니라 `ts`.
+- 2026-10-05 새 사이트는 만든 날 IndexNow(api.indexnow.org·bing·yandex·네이버 searchadvisor 4곳, 키 파일은 루트)를 바로 쏜다 — 공개 4일 동안 '발견' 길 없이 화면 점수만 올리고 있었다. 구글은 IndexNow를 안 받으니 서치콘솔은 따로.

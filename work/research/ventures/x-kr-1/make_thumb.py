@@ -56,6 +56,28 @@ def main():
     p = os.path.join(OUT, 'thumb_1080.png')
     im.save(p)
     print(p, rows, big)
+    sheet_image()
+
+
+def sheet_image():
+    # 대표 이미지 2장째(순돌이 10/5 ③, 경쟁 4번 방식): verify.py가 Excel로 뽑은 실제 시트 2 화면(out/sheet2.png)을 그대로 얹는다
+    sh = Image.open(os.path.join(OUT, 'sheet2.png')).convert('RGB')
+    sh = sh.crop((6, 40, sh.width - 90, 1130))  # 가장자리 테두리 선·오른쪽 빈 칸 잘라냄
+    box_w, box_h = 920, 790
+    k = min(box_w / sh.width, box_h / sh.height)
+    sh = sh.resize((int(sh.width * k), int(sh.height * k)), Image.LANCZOS)
+    im = Image.new('RGB', (1080, 1080), BG)
+    d = ImageDraw.Draw(im)
+    X = 80
+    d.text((X, 60), '가계부 엑셀 · 2026', font=font(28), fill=INK2)
+    d.text((X, 104), '「은퇴 나이」 시트 실제 화면', font=font(48, True), fill=INK)
+    x0 = (1080 - sh.width) // 2
+    d.rounded_rectangle((x0 - 12, 188, x0 + sh.width + 12, 200 + sh.height + 12), radius=20, fill=WHITE, outline=LINE, width=2)
+    im.paste(sh, (x0, 200))
+    d.text((X, 1030), '예시 값 · 파이어맵 계산기와 같은 식 · 투자 조언 아님', font=font(22), fill=INK2)
+    p = os.path.join(OUT, 'thumb_2_sheet.png')
+    im.save(p)
+    print(p, sh.size)
 
 
 if __name__ == '__main__':

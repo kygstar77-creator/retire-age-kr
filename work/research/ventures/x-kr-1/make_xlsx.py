@@ -16,6 +16,9 @@ from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter as L
 from openpyxl.worksheet.datavalidation import DataValidation
+from openpyxl.chart import ScatterChart, BarChart, Reference, Series
+from openpyxl.chart.shapes import GraphicalProperties
+from openpyxl.drawing.line import LineProperties
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, 'out')
@@ -149,7 +152,7 @@ def build(case=None):
     s2['B18'] = '파이어맵 계산기와 같은 식 · firemap.kr'
     s2['B18'].hyperlink = 'https://firemap.kr/?utm_source=xlsx&utm_medium=sheet&utm_campaign=xkr1'
     s2['B18'].font = Font(name=FONT, size=10, color=INK2, underline='single')
-    s2.print_area = 'A1:G19'
+    s2.print_area = 'A1:H50'
     s2.page_setup.orientation = 'landscape'
     s2.page_setup.fitToWidth = 1
     s2.sheet_properties.pageSetUpPr.fitToPage = True
@@ -169,7 +172,8 @@ def build(case=None):
         ('계산 가정', True),
         ('· 최근 달 (수입 − 지출)을 은퇴할 때까지 매달 모으고, 은퇴 뒤에는 그달 지출을 매년 물가만큼 늘려 꺼내 씁니다.', False),
         ('· 90세까지 자산이 남는 가장 이른 나이를 찾습니다(70세까지). 국민연금·퇴직금·부동산·세금은 넣지 않았습니다.', False),
-        ('· 「지난달보다 ±N개월」은 앞뒤 두 해 결과 사이를 나눠 어림한 값입니다.', False),
+        ('· 「지난달보다 N개월 빨라져요·늦어져요」는 앞뒤 두 해 결과 사이를 나눠 어림한 값입니다.', False),
+        ('· 「나이별 자산」 그래프는 은퇴 나이에 그만둘 때 90세까지 자산이 어떻게 바뀌는지, 「월별 저축률」은 최근 12개월 (수입 − 지출) ÷ 수입입니다.', False),
         ('· 「은퇴 +N일」은 월 지출이 10만원 늘 때 바뀌는 날 수에 비례해 어림한 값입니다.', False),
         ('', False),
         ('알림', True),
@@ -241,7 +245,7 @@ def build(case=None):
                 f'B{h0}&"세")))')
     c['A31'] = '지난달 대비'
     c['B31'] = (f'=IF(OR(B8=0,D{h0}="",D{h2}=""),"",IF(D{h0}=D{h2},"지난달과 같음",'
-                f'"지난달보다 "&IF(D{h0}<D{h2},"−","+")&ABS(D{h0}-D{h2})&"개월"))')
+                f'"이번 달 지출대로면 지난달보다 "&ABS(D{h0}-D{h2})&"개월 "&IF(D{h0}<D{h2},"빨라져요","늦어져요")))')  # 순돌이 10/5: 무엇과 비교인지
     # 필요 자산: 지금 그만둬도 90세까지 안 마름 ⇔ 자산 > Σ_{y=1..n} 12M(1+i)^y/(1+r)^(y-1), n = 90 - 나이
     c['A32'] = '필요 자산'
     c['CB1'] = 'y'; c['CC1'] = '할인 인출'  # 격자(A~BX)와 겹치지 않는 자리
@@ -249,6 +253,46 @@ def build(case=None):
         c.cell(1 + y, 80, y)
         c.cell(1 + y, 81, f'=IF($B$1+CB{1 + y}>{UNTIL},0,12*$B$6*(1+$B$4)^CB{1 + y}/(1+$B$3)^(CB{1 + y}-1))')
     c['B32'] = f'=CEILING(SUM(CC2:CC{1 + YMAX}),1)'
+
+    # ── 그래프 2개(순돌이 10/5 X-KR-1 ①: 경쟁 4번도 차트) — 시트 2 아래, 숫자는 계산 시트 값 그대로
+    # 나이별 자산: 시나리오 0 격자에서 은퇴 나이 R 행을 그대로 읽는다(90세 넘으면 NA → 선이 끊김)
+    c['CE1'] = '나이'; c['CF1'] = '자산'
+    g0 = tops[0]
+    for y in range(YMAX + 1):
+        r = 2 + y
+        c.cell(r, 83, f'=IF($B$1+{y}>{UNTIL},NA(),$B$1+{y})')
+        c.cell(r, 84, f'=IF(OR($B$21="",$B$1+{y}>{UNTIL}),NA(),INDEX($C${g0}:${L(3 + YMAX)}${g0 + KMAX},$B$21-$B$1+1,{y + 1}))')
+    ch = ScatterChart()
+    ch.title = '나이별 자산(백만원) — 은퇴 나이에 그만둘 때'
+    ch.style = 2
+    ch.y_axis.number_format = '#,##0,,'
+    ch.x_axis.scaling.min, ch.x_axis.scaling.max, ch.x_axis.majorUnit = 20, 90, 10
+    ch.x_axis.majorGridlines = None
+    ch.y_axis.majorGridlines.spPr = GraphicalProperties(ln=LineProperties(solidFill=LINE))
+    ch.legend = None
+    ch.visible_cells_only = False  # 숨긴 계산 시트 값도 그린다
+    se = Series(Reference(c, min_col=84, min_row=2, max_row=2 + YMAX), Reference(c, min_col=83, min_row=2, max_row=2 + YMAX))
+    se.marker.symbol = 'none'
+    se.smooth = False
+    se.graphicalProperties.line.solidFill = ORANGE
+    se.graphicalProperties.line.width = 28000
+    ch.series.append(se)
+    ch.x_axis.delete = False; ch.y_axis.delete = False
+    ch.height, ch.width = 7.5, 16
+    s2.add_chart(ch, 'B21')
+    bc = BarChart()
+    bc.title = '월별 저축률'
+    bc.style = 2
+    bc.y_axis.number_format = '0%'
+    bc.y_axis.majorGridlines.spPr = GraphicalProperties(ln=LineProperties(solidFill=LINE))
+    bc.legend = None
+    bc.add_data(Reference(s1, min_col=11, min_row=3, max_row=14), titles_from_data=False)
+    bc.set_categories(Reference(s1, min_col=7, min_row=3, max_row=14))
+    bc.series[0].graphicalProperties.solidFill = INK2
+    bc.x_axis.number_format = 'yy-mm'
+    bc.x_axis.delete = False; bc.y_axis.delete = False
+    bc.height, bc.width = 6.5, 16
+    s2.add_chart(bc, 'B37')
     return wb
 
 

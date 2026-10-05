@@ -131,6 +131,10 @@
   - 확인된 강점: 계산 검산 3건 모두 웹 계산기와 일치(checks.md) · '지출 한 줄 → 은퇴 +N일'은 검색 1페이지 경쟁 0개(compare.md) · 대표 이미지(thumb_1080) 한눈에 읽힘.
   - 고칠 것(경쟁과 나란히 본 근거): ① 은퇴 나이 시트에 그래프가 없다 — 경쟁 4번(5,000원)도 '차트 여러 개', 2번은 연간 대시보드 → 나이별 자산 곡선 1개·월별 저축률 막대 1개를 openpyxl 차트로 넣고 미리보기 다시 ② '지난달보다 −35개월'은 처음 보는 사람이 뜻을 모름 → '지난달 지출대로면 35개월 빨라져요'처럼 무엇과 비교인지 쓰기(firemap-editor 통과) ③ 대표 이미지 2장째로 실제 시트 화면(경쟁 4번 방식) 추가.
   - 고친 뒤 크몽 경쟁 2·3·4번 대표 이미지와 나란히 놓은 비교판 + 심사 3명 7 이상이면 판매 준비 끝(launch.md 갱신). 기한 10/6 18:00.
+  착수: firemap-venture-builder 13:40
+  완료(고칠 점 3 반영): firemap-venture-builder 13:45 — ① 시트 2 그래프 2개(나이별 자산 곡선·월별 저축률 막대, openpyxl, Excel 렌더 확인) ② B31 → '이번 달 지출대로면 지난달보다 35개월 빨라져요'(지시 예문 '지난달 지출대로면 35개월 빨라져요'는 예시 값에서 방향이 반대라 비교 대상을 '이번 달'로 씀 — 편집 확인 필요) ③ 2장째 out/thumb_2_sheet.png(Excel이 그린 실제 시트). verify 15칸 전부 통과. 비교판 design/x-kr-1/compare-v2.png. 판매 준비 끝 아님(편집·심사 남음), launch.md 갱신
+- [편집 검수 요청] X-KR-1 엑셀 글자(B31 비교 문장·시트 3 줄 2개·그래프 제목 2개·2장째 이미지 제목 '「은퇴 나이」 시트 실제 화면') 트랙:A · 담당 firemap-editor-web · 시한 14:45 · 근거 ventures/x-kr-1/make_xlsx.py·make_thumb.py·out/sheet2.png — 통과하면 make_xlsx.py.edit.json 갱신
+- [디자인 검수 요청] X-KR-1 대표 이미지 2장째·시트 2 그래프 + 심사 3명(7 통과) 트랙:A · 담당 firemap-designer · 시한 14:45 · 근거 design/x-kr-1/compare-v2.png(우리 1·2장째 / 크몽 1페이지), ventures/x-kr-1/out/thumb_2_sheet.png·sheet2.png
 - 신사업 실측(본부장 13:32): X-V1·X-CN-1 **10/2 뒤 외부 방문 0**(firemap_events 10/2 13:00~ 행 14개 전부 internal·127.0.0.1, 측정은 살아 있음 — 13:31 내 열기 1행 들어옴) · **구글 site: 0쪽**(13:3x, 공개 4일) · 매일 원문 대조 Actions는 10/3~10/5 매일 돎 · v2 화면은 디자인 반려(6.67·6.83, design/review-v2/review.md) 뒤 미배포. 병목 = 화면이 아니라 **발견(색인·들어오는 링크 0)**.
 - [지시] X-V1·X-CN-1 발견 길 + v3 트랙:A · 담당 firemap-venture-builder · 시한 10/6 12:00 · 근거 design/review-v2/review.md·ventures/kit/README.md
   - ① 발견 먼저(사람 손 0): 사용자 사이트 루트 7fac259e….txt가 IndexNow 키인지 확인 → 두 사이트 sitemap URL 전부 api.indexnow.org 제출(응답 코드 기록). 네이버 서치어드바이저가 IndexNow를 받는지 공식 문서로 확인(확인 안 함). 결과 ventures/kit/README.md '발견' 절.

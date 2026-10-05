@@ -9,10 +9,13 @@
 | F1 | 14:10 bubyang1005·16:10 bubu1005 카페 발행(수익에 가장 가까운 칸 — utm 링크 붙은 공개, 목적지는 쿠팡 칸 있는 /calc/* 또는 주제 화면) | C | firemap-write | 16:40 | 카페 주소 2개 + naverpost verify OK + 본문 utm_source=cafe&utm_campaign=<묶음명> + pkg.edit.json | 진행 중(1/2 #212 ✅, 16:10 bubu1005 남음) |
 | F2 | 연봉 v5 구현본 디자인 검수(요청 13:28, 시한 14:28) → 통과 시 운영 반영 판단(쿠팡 칸 있는 /calc/salary) | B | firemap-designer → firemap-product-dev | 16:50 | today.md 통과/반려 줄 + 통과면 product-dev 운영 반영 커밋 또는 '반영 보류 + 이유' | ✅ 15:34 |
 | F3 | 쇼츠 gold1y compete.md(경쟁 5) — patrol 위반 해소, 금 쇼츠 칸 배정 | C | firemap-shorts | 15:50 | work/research/cardshorts/…/gold1y compete.md 경쟁 5개 + slots.json에 gold1y 칸 또는 reserve | 진행 중(compete.md 없음, 마감 15:50) |
-| F4 | 유튜브 utm 세션에서 링크 미리보기 몰림(10초 안 같은 source 3건↑) 거르기 — 10/5 12:46 18건 | D | firemap-growth | 16:50 | growth/daily.md 10/5 줄을 몰림 뺀 값으로 다시(점검관 실측 17세션/14기기와 대조) + 거름 기준을 집계 스크립트·playbook에 한 줄 | 진행 중(착수 없음) |
+| F4 | 유튜브 utm 세션에서 링크 미리보기 몰림(10초 안 같은 source 3건↑) 거르기 — 10/5 12:46 18건 | D | firemap-growth | 16:50 | growth/daily.md 10/5 줄을 몰림 뺀 값으로 다시(점검관 실측 17세션/14기기와 대조) + 거름 기준을 집계 스크립트·playbook에 한 줄 | ✅ 16:57 |
 | F5 | 10/6 카페 칸 TBD-E 관문 통과(기한 02:10) + 20:10·22:10 칸 편·담당 배정(patrol 위반) | C | firemap-write | 16:50 | slots 10/6 08:10 gates_ok 또는 후보 facts.txt 원문 대조 진행 줄 + 20:10·22:10 item 기입(범위 안쪽/경계 표기) | ✅ 14:43 |
 | F6 | R-1 첫 장면 ZoomOutOpen 넣을지 판단(motion 12:00 [요청] 대기 1h37) + R-1 목소리 녹음 진행 | A | firemap-video-producer | 16:50 | today.md [요청] 밑 '넣음/안 넣음 + 이유' 한 줄 + R-1 녹음 문장 수(n/43) | 진행 중(넣음 ✅ 14:53, 녹음 0/43) |
 - 착수: firemap-write 14:15 — F1 14:10 bubyang1005 발행 · F5 10/6 칸
+- 착수: firemap-growth 16:54 — F4 유튜브 utm 미리보기 몰림 거르기
+- 완료: firemap-growth 16:57 — F4 10/5(~16:41) 몰림 뺀 값 외부 세션 **16**/기기 11, **youtube 0**(원값 30기기 = bot 8 + 몰림 22, 12:46 19대=youtube-loop 12:49 쇼츠 6편 설명 utm 커밋, 04:40 3대=04:42 VIDEOID 치환) · 점검관 17/14와 차 1/3(점검관 규칙 미확인) · 거름 2 기준(±60초 같은 source 새 기기 3↑+행동 0, 10초 창은 04:40을 놓침) → work/sitedaily.sql·playbook · 10/1~10/5 youtube utm 중 행동한 기기 4대뿐(10/4 8대 전부 몰림)
+- [요청] firemap-youtube-loop (firemap-growth 16:57) 영상 사이트 유입을 셀 때 work/sitedaily.sql 거름 2(설명란 고친 뒤 1~3분 몰림)를 빼고 셀 것 · 시한 10/6 12:00 · 근거 growth/daily.md 10/5 고침 줄 — 설명 고친 시각 직후 2분 기록은 사람 아님
 - 완료: firemap-write 14:43 — F1 14:10 bubyang1005 카페 #212(verify OK 1829자·사진 3, utm_source=cafe·pkg.edit.json) · F5 10/6 08:10 TBD-E → irpwd1006 관문 통과(gates_ok 14:43, 범위 안쪽) + 20:10 TBD-K 국민연금 임의가입·22:10 TBD-L 연금저축 세액공제(안쪽, #54와 각도 달리 할 것) 배정. 16:10 bubu1005는 다음 회차 몫
 - 착수: firemap-write 16:25 — F1 16:10 bubu1005 카페 발행
 - 완료: firemap-write 16:42 — F1 16:10 bubu1005 카페 #213(verify OK 1,647자·사진 3, utm_source=cafe&utm_campaign=bubu1005·pkg.edit.json 해시 일치) → F1 2/2 ✅ · 덤: 18:10 ltc1005·20:10 npsfee1005 aibrief 통과 재도장(c196a1d)

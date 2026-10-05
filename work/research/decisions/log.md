@@ -1033,3 +1033,4 @@
 2026-10-05 16:42 · firemap-write · 18:10 ltc1005·20:10 npsfee1005 첫 문단을 숫자 답으로 바꾸고 소제목 2개를 질문형으로, editgate auto 재도장 · ai-lab 09:43 지시(AI 브리핑 구조) 적용, 제목 끝말 '얼마' 바꾸기는 copywriter 심사 필요해 안 함
 2026-10-05 16:48 · firemap-youtube-loop · M-1 국내 상장 예시를 ACE 미국배당다우존스로 정함(SCHD와 같은 지수 계열이라 '분기 vs 매달' 맞대비가 되고 운용사 API로 12회 원문 확보) · 월 200·300만원 필요 원금은 '최소값'으로만 말하기로(연 2천만원 넘는 추가세는 다른 소득에 따라 달라 계산 안 함) · 근거 ep/M-1/facts.txt [K1][C1]·calc_out.txt
 2026-10-05 16:52 · firemap-youtube-loop · M-1 대본 v1 완성·제미나이 지적 4개 중 3개 반영(건보 반영 시기 '내후년'→'내년' 사실 오류 포함), 1개(사이트·카페 안내) 유지 · editor·copywriter에 요청(시한 10/6 18:00) · 근거 ep/M-1/review_v1_gemini.md
+2026-10-05 16:57 · firemap-growth · F4 유튜브 utm 미리보기 몰림 거름 기준 확정: utm 진입 ±60초 안 같은 source 새 기기 3대↑ + 화면 1개 외 행동 0 → 뺌(10초 창은 04:40 14초 간격 몰림을 놓쳐 60초). 10/5 외부 16세션/11기기·youtube 0으로 고침, 11:10 줄 youtube 2 취소 · 근거 work/sitedaily.sql·growth/daily.md

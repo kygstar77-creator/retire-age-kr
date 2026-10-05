@@ -220,6 +220,9 @@ test.describe('firemap smoke', () => {
     const hero = page.locator('main.fm-screen');
     // 손검산 A(work/test-salary.mjs): 연봉 4,000만·비과세 20만·본인 1·자녀 0·100% — 사람인·잡코리아·인크루트와 줄마다 대조
     await expect(hero).toContainText('2,935,813원');
+    // v5: 공제·계산 방법은 접기 안 — 열어서 같은 줄을 본다(크롤러 설명 블록도 이 접기 안 문장)
+    await page.getByRole('button', { name: /한 달 공제 6가지/ }).click();
+    await page.getByRole('button', { name: /계산 방법/ }).click();
     await expect(hero).toContainText('84,620원');
     await expect(hero).toContainText('112,640원');
     const tool = TOOL_PAGES.find((t) => t.path === '/calc/salary');
@@ -227,18 +230,21 @@ test.describe('firemap smoke', () => {
     for (const b of tool.body.slice(1)) expect(screenText, `crawler text on screen: ${b.slice(0, 20)}`).toContain(b);
     // 기본 화면에서 저축 0원이 되면 은퇴 연결이 막힌다(레드팀 10/1) — 기본 생활비 250만원이면 2,935,813 − 2,500,000
     await expect(hero).toContainText('남는 435,813원을 월 저축으로');
-    // F3 A안: 결과 카드 안 80/100/120% 칩(경쟁 5곳에 없음) — 손검산 A의 80%·120%(salaryNet 원식) 그대로 바뀌고 되돌아온다
+    // 80/100/120% 칩(경쟁 5곳에 없음) — v5에서 '공제대상가족' 조건 행 편집 시트 안. 손검산 A의 80%·120%(salaryNet 원식) 그대로 바뀌고 되돌아온다
     await expect(hero).toContainText('공제 합계');
+    await page.getByRole('button', { name: /공제대상가족 · 본인 포함/ }).click();
     await page.getByRole('tab', { name: '80%' }).click();
     await expect(hero).toContainText('2,954,443원');
     await expect(hero).toContainText('67,690원');
     await page.getByRole('tab', { name: '120%' }).click();
     await expect(hero).toContainText('2,917,203원');
     await page.getByRole('tab', { name: '100%' }).click();
+    await page.getByRole('button', { name: '닫기' }).click();
     await expect(hero).toContainText('2,935,813원');
-    // 결과 카드 타일 3칸이 375px 안에서 넘치지 않는다(시안 지적: 값이 붙음)
-    const over = await page.locator('.ds-hero--compact-tiles .ds-tile').evaluateAll((els) => els.filter((e) => e.scrollWidth > e.clientWidth + 1).length);
-    expect(over, '타일 값 넘침').toBe(0);
+    // v5 조건 행 3개: 값이 줄바꿈 없이 행 안에 들어가고, 화면 가로 넘침이 없다
+    expect(await page.locator('.ds-cond .ds-row-item').count(), '조건 행 3개').toBe(3);
+    const over = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
+    expect(over, '가로 넘침').toBe(false);
     await page.getByRole('button', { name: '이 돈이면 몇 살에 은퇴?' }).click();
     await page.waitForTimeout(500);
     expect(bodies.some((b) => b.event === 'salary_to_fire'), 'salary_to_fire 이벤트').toBe(true);

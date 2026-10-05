@@ -676,3 +676,17 @@ button.ds-cal__cell { cursor: pointer; }
 /* F1 쿠팡 칸(design/f1-coupang/fix.patch의 인라인 값 그대로 옮김 — 모양 변경 0) */
 .fm-coupang-pick .fm-coupang-pick__disclosure{padding:14px 16px 12px;font-size:var(--ds-fs-body-sm);line-height:1.5;color:var(--ds-ink-2);border-bottom:1px solid var(--ds-line)}
 .fm-coupang-pick .fm-coupang-pick__trail{color:var(--ds-ink-3);white-space:nowrap}
+
+/* ---------- 연봉 결과 v5 (/calc/salary, design/tokens-ref/salary-v5 · 2026-10-05) ----------
+   조건 요약 행 3개 = ListRow 한 종류, 56px(359px 이하 48px). 이름 회색 보통 · 값 검정 굵게. 데스크톱 한 열 560 가운데. 새 색·새 수치 없음(토큰만). */
+.ds-salary-v5 > * + * { margin-top: var(--ds-sp-4); }
+.ds-cond .ds-row-item { min-height: 56px; padding-top: 0; padding-bottom: 0; }
+.ds-cond .ds-row-item__title { font-weight: 400; color: var(--ds-ink-2); word-break: keep-all; }
+.ds-cond .ds-row-item__trail { font-size: var(--ds-fs-body); font-weight: 600; color: var(--ds-ink); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ds-salary-v5 .ds-fold__hint { font-size: var(--ds-fs-body-sm); color: var(--ds-ink); font-variant-numeric: tabular-nums; }
+@media (max-width: 359px) {
+  .ds-cond .ds-row-item { min-height: 48px; }
+  .ds-salary-v5 .ds-hero { padding: var(--ds-sp-4); }
+  .ds-salary-v5 > * + * { margin-top: var(--ds-sp-2); }
+}
+@media (min-width: 1024px) { .ds-col-560 { max-width: 560px; margin-left: auto; margin-right: auto; } }

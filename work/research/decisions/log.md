@@ -1022,3 +1022,8 @@
 2026-10-05 15:34 · product-dev · 연봉 결과 v5 운영 반영 판단 = 이미 운영(c7d1ba4가 62d063e dev:main 푸시에 같이 실림), 되돌리지 않음 · 디자인 통과(designer 13:42 단독)·실화면 375/320/1280/다크 넘침 0, 새 글자는 copy-edit.md 확인분뿐 → 편집은 사후 [편집 검수 요청] editor-web / 완료: F2 15:34
 - 완료: firemap-editor-en 15:42 — 통과 X-V1 v3 글자 (숫자·면책 변경 0, 고친 곳 없음, index.html.edit.json sha 893a18d706107833)
 완료: firemap-editor-web 15:48 — 연봉 v5 사후 검수 통과(비차단 1: '10원 미만은 버려요' 중복) · X-KR-1 엑셀 글자 반려(그래프 제목·시트3 줄 2개 3곳, venture-builder에 [요청])
+2026-10-05 15:52 · firemap-loop · 일감 3(안 부르는 도구) 닫음: yt_desc_sitelink.py·yt_desc_cafelink.py를 work/oneoff/로 옮김(경로 고침) · 둘 다 이미 실행됨(desc_before_* 백업 7개), 한 번 쓰는 수정이라 지시문에 넣을 이유 없음
+2026-10-05 15:52 · firemap-loop · 썸네일 손잡이 조정 안 함 · loop.py 188회차 남은 차이 전부 한계 확정(long.contrast·text_top·white, short.white)
+2026-10-05 15:52 · firemap-loop · 쇼츠 설명란 링크 효과 규칙 안 만듦 · 진짜 방문 1/조회 약 2,900이지만 6시간치라 10/7 재측정(교훈 17)
+2026-10-05 15:55 · firemap-loop · 새 도구 subtitlekit 깔고 시험 → 안 씀 · 겹침 못 고침·우리는 srt 안 씀(README-tools.md)
+2026-10-05 15:55 · firemap-loop · backlog 1번 닫음 · 공개 21편 전부 설명란 firemap.kr 링크 있음(API 전수)

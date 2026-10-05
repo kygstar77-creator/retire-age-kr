@@ -1,8 +1,8 @@
 """D-1 설명란 카페 링크를 짝 글(/206)로. snippet 통째로 받아 description만 바꿔 보낸다(defaultAudioLanguage 유지). 백업: longform/loop/desc_before_<id>.json"""
 import sys, json, os, re
-sys.path.insert(0, os.path.dirname(__file__))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import f2_coupang
-D = os.path.join(os.path.dirname(__file__), 'research', 'longform', 'loop')
+D = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'research', 'longform', 'loop')
 vid = 'GMc2Rd1-JYA'; NEW = 'https://cafe.naver.com/firemap/206'
 yt = f2_coupang.service()
 sn = yt.videos().list(part='snippet', id=vid).execute()['items'][0]['snippet']

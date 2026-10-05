@@ -2,9 +2,9 @@
 snippet 통째로 받아 description만 바꿔 보낸다(교훈 18, defaultAudioLanguage 유지). 백업: longform/loop/desc_before_<id>.json
 /calc/* 세 개(연봉·퇴직금·실업급여)는 이 6편 주제와 맞지 않아 같은 주제의 도구 화면을 쓴다(toolPages.js 제목 그대로)."""
 import sys, json, os
-sys.path.insert(0, os.path.dirname(__file__))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import f2_coupang
-D = os.path.join(os.path.dirname(__file__), 'research', 'longform', 'loop')
+D = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'research', 'longform', 'loop')
 U = 'utm_source=youtube&utm_medium=desc&utm_campaign='
 PLAN = {
  'INvS3EzWelY': ('내 나이·모은 돈에 낙폭 넣어 보기(파이어맵 은퇴 계산기)', '/'),

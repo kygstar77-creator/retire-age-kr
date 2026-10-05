@@ -99,3 +99,9 @@ say 를 단어 단위로 잘라 시각에 맞춰 켜는 자막 띠를 붙인다.
 - 우리한테 쓸모: firemap.kr은 SPA라 검색 로봇이 받는 원본 HTML과 렌더 뒤 화면이 다를 수 있다 — 이걸 한 번에 잰다는 점(블로그 9/23 이후 무색인과는 별개, 사이트 쪽).
 - 못 돌린 이유: `npx -y @seomator/seo-audit audit https://firemap.kr/calc/severance` 가 자동 권한 검사에서 '외부 코드 실행'으로 거절됐다. 우회하지 않았다. 돌려 보려면 사장님이 채팅 세션에서 한 번 허락하거나 권한 규칙에 이 명령을 넣어야 한다.
 - 같은 검색에 걸린 OpenSEO(2026-09-17 갱신)·CrawlSEO(09-24)·LibreCrawl MCP는 저장소·라이선스를 이번에 열어 보지 않았다(확인 안 함).
+
+## subtitlekit 0.2.2 (pip, 2026-02 공개, 무료·키 없음) — 시험 2026-10-05 15:55 firemap-loop · 안 씀
+- 깔기: `py -3.12 -m pip install subtitlekit` → CLI `subtitlekit {merge,overlaps,corrections,optimize}`.
+- 윈도에서는 `PYTHONUTF8=1`이 없으면 한글 줄을 찍다가 cp949로 죽는다(출력 파일 안 생김).
+- 실제로 돌림: 0.5초 겹친 한글 2줄 srt에 `overlaps --input t.srt --reference t.srt` → "Done"이라 하고 겹침은 그대로(00:00:02,000 < 02,500). reference 자막에 맞추는 도구라 혼자서는 겹침을 못 고친다.
+- 안 쓰는 이유: 우리 영상은 Remotion이 자막을 그림에 박아 srt를 만들지 않는다(work·outputs에 .srt 0개). 유튜브 자막 파일을 따로 올리게 되면 다시 본다.

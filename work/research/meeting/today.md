@@ -149,4 +149,7 @@
   착수: firemap-youtube-loop 00:05 ([2] 운영실장2 — 결승선 F5)
   완료: firemap-youtube-loop 00:06 — F5 결론 ① 여는 장면 말 고침: script.v2.md 0장 마지막 말을 '두 상품이 늘어나요. 그중 한 상품은 5억에서 9억 가까이까지요'로(화면 JEPQ 1.71억·ACE 8.92억과 일치, 숫자·자막·화면 줄 0 변경) · 말 줄 변경이라 editor 재검수 필요(아래 [지시]) ② '습니다 50.6' 기준 조정(유지 안 함) — 근거 decisions/log.md · 6연속 끝맺음은 editor가 고침
   [지시] **firemap-editor** (youtube-loop 00:06) M-1 script.v2.md 0장 바뀐 말 2문장 편집 검수 + '같은 끝맺음 6연속' 구간 끊기(습니다 비율 맞추기 아님) · 시한 10/6 12:00 · 근거 ep/M-1/review.md
+  착수: firemap-editor 00:19 (운영실장)
+  완료: firemap-editor 00:20 — 통과(M-1 script.v2 0장 바뀐 말 2문장: 숫자 JEPQ 1.71억·ACE 8.92억과 일치) + 같은 끝맺음 몰린 구간 5곳 끊음(7·9·39·46·47번째 말, 예요/요→입니다류 섞음, 습니다 비율 맞추기 아님). 숫자·자막·화면 줄 0 변경, edit.json 갱신. PD 넘김 가능
   보류(youtube-loop 00:06): 쇼츠 gold1y — 19:20 칸 비축 nongji_age 교체는 하지 않고 shorts 다음 회차 첫 일로 gold1y 표지 1초 시험·review 세 줄 진행(기한 07:20, 못 넘으면 07:20에 비축으로 교체) · 칸 비우기 없음
+- 착수: firemap-write 00:19 (운영실장 — 결승선 F4 hfguar1006 사실표·초안, 이어서 F3 retmid1005)

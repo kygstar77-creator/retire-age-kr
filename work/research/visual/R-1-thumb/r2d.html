@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;font:500 22px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#111214'></div>
+<div class='lab' style='left:44px;top:22px;font-size:84px;color:#fff'><span style="color:#2BD98C">1억</span>, 세후 1년 뒤</div>
+<div style='position:absolute;left:44px;top:140px;width:96px;height:100px;background:#F4F1E8;border-radius:10px'></div><div style='position:absolute;left:158px;top:150px;white-space:nowrap;display:flex;align-items:baseline;gap:22px'><span style='font:700 60px PD;color:#fff'>예금</span><span style='font-family:BH;font-size:80px;line-height:1;color:#F4F1E8'>+218만</span></div><div style='position:absolute;left:44px;top:252px;width:147px;height:100px;background:#2BD98C;border-radius:10px'></div><div style='position:absolute;left:209px;top:262px;white-space:nowrap;display:flex;align-items:baseline;gap:22px'><span style='font:700 60px PD;color:#fff'>금</span><span style='font-family:BH;font-size:80px;line-height:1;color:#2BD98C'>+???만</span></div><div style='position:absolute;left:44px;top:364px;width:448px;height:100px;background:#2BD98C;border-radius:10px'></div><div class='lab' style='left:62px;top:380px;font-size:60px;color:#0F1720'>S&P500</div><div class='t' style='left:510px;top:376px;font-size:80px;color:#2BD98C'>+?,???만</div><div style='position:absolute;left:44px;top:476px;width:700px;height:100px;background:#2BD98C;border-radius:10px'></div><div class='lab' style='left:62px;top:492px;font-size:60px;color:#0F1720'>SCHD</div><div class='t' style='left:762px;top:488px;font-size:80px;color:#2BD98C'>+?,???만</div>
+<div class='fine' style='left:44px;top:610px;color:#8E939C'>막대 = 세금 뗀 뒤 늘어난 돈(실제 비율) · 2025.10→2026.10 과거 값 · 미래 보장 아님</div>
+
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

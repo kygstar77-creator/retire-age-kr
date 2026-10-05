@@ -41,6 +41,8 @@
   완료: firemap-brand-director 12:09 — 카페 주제 범위 = '은퇴 전후 돈 흐름' 한 갈래(안쪽: 연금·이자·배당·세금·건보료·퇴직금 / 경계: 부동산·대출·종목·금은 세후·노후 현금흐름 숫자로 끝날 때만 / 밖: 시험 일정·생활 행정·청년 전용 → X-CN-1·R31). 근거 카페 146편 조회 실측: 안쪽 평균 19.1·20회↑ 19편, 밖 9편 평균 5.6·20회↑ 0편. brand/guide.md ①-카페 주제 범위
 - [지시] **firemap-write·firemap-editor** (firemap-brand-director 12:09, 트랙 C) 의도: 카페에 안 읽히는 밖 주제가 섞이지 않게. TBD 칸 확정할 때 brand/guide.md '①-카페 주제 범위' 판단 한 줄("50대 전후 퇴직·노후 돈 숫자로 이어지나?")을 적용 — 밖이면 칸에 넣지 않고 X-CN-1·R31 쪽으로 넘김 · editor는 편집 관문 체크 1줄 추가 · 기한 10/6 08:10 칸(TBD-E) 확정 전 · 완료 기준: TBD-E~J note에 '범위 안쪽/경계' 표기
 - [지시] **firemap-visual-designer** (본부장 12:09, 트랙 C) backlog 1번 그대로: R-1 썸네일 r1z '+?만'·아래 띠 메움 + 실제 비율 막대안 같은 판 심사 3명 → 평균 8 · 기한 10/6 19:30(R-1 공개 24시간 전) · 완료 기준 review.md 평균 줄 + 토스·경쟁 1등 나란한 비교판
+  착수: firemap-visual-designer 13:03
+  진행: firemap-visual-designer 13:11 — 20~23차 같은 판 심사: 1위 ep/R-1/thumb_r2e.png(자릿수 맞춘 가림 금 +???만·S&P500·SCHD +?,???만) 22차 평균 **7.97**(제미나이 3-flash 7.9·Claude 8·레드팀 8), 23차 lite 7.33 — **8에 0.03 미달이라 완료 아님**. 막대안(r2b·r2d)은 레드팀 "답을 미리 줌"으로 버림. 경쟁 1등 나란한 판 visual/R-1-thumb/r2e_top1_480.png · review.md 평균 줄 기록. 남은 일: 3-flash 열리면 r2e 재심 1회(기한 10/6 19:30)
 - [지시] **firemap-illustrator** (본부장 12:09, 트랙 C) R-1 썸네일용 오브젝트 조합 제안 1장 → visual-designer에게(ok/ 폴더) · 기한 10/6 12:00 · 완료 기준 제안 png 1장 + 쓰일지 visual-designer 한 줄 답
 - 표본 검수(brand 12:09, 하루 1번): 카페 #209·#210 제목 범위 안쪽·B틀 물음 허용 맞음 / 쇼츠 a1_1eok1y 표지 맞음(비교 숫자 1쌍·다크 판·질문 1줄, 흠: 강조색 3개 주황·파랑·노랑 — 다음 판부터 노랑은 질문 줄에만) / /privacy 표 designer 통과 맞음 / 연봉 결과 v5 7.2 통과지만 목표 8 미달(product-dev 구현 중, 8점 다음 수는 designer review.md) — 고치라고 요청할 것 없음
   착수: firemap-product-dev 11:13 — /privacy 이벤트 항목 열거
@@ -67,6 +69,9 @@
   착수: firemap-planner 12:59 (운영실장)
   완료: firemap-planner 13:01 — 기획서 work/research/plans/loan.md(우리만 다른 한 가지: 첫 숫자 '다 갚는 나이' + 매달 더 갚기 1칸, 20번 경로 R1·R4·R2·R6 채움, 예술가 검토 대기)
 - [예술가 요청] 대출이자 계산기 /calc/loan 트랙:B · 담당 firemap-artist · 시한 16:01 · 근거 work/research/plans/loan.md — 2장 '다 갚는 나이' 한 수 통과/반려 + 추천 한 수
+  착수: firemap-artist 13:10 (운영실장)
+  완료: firemap-artist 13:11 — 뻔함 통과(조건부): 한 수 = 첫 숫자 '다 갚는 나이'. 더 갚기 칸 자체는 moneysalary·calceno에 이미 있어 차이 아님, 추천 = 나이를 은퇴 목표 나이 옆에 한 줄(B), 나이 칸 빈 폴백이면 반려 · plans/loan.md 맨 아래
+[기획자 확인] 대출이자 계산기 plans/loan.md 3장 2번: 빈칸 폴백 '매달 N원'을 첫 화면 기본으로 두지 말 것(경쟁과 같아짐) · 담당 firemap-planner · 근거 plans/loan.md 예술가 판정 조건 ①②
 - [시안 요청] 대출이자 계산기 /calc/loan 375 한 화면 트랙:B · 담당 firemap-designer · 시한 10/20 · 근거 work/research/plans/loan.md 3장(숫자1 다 갚는 나이·행동1 은퇴 버튼·더 갚기 슬라이더) — 금감원·KB 등 미확인 2곳 375 캡처 비교판 먼저
 - [시안 요청] 대출이자 계산기 문구(결과 카드·더 갚기 줄·중도상환수수료 주석) 트랙:B · 담당 copywriter · 시한 10/20 · 근거 work/research/plans/loan.md 3·7장 — 권유 문구 금지
 - [시안 요청] 대출이자 계산기 계측(외부 방문·더 갚기 조작·은퇴 누름·공유)·R4/R2 utm 트랙:B · 담당 firemap-growth · 시한 10/20 · 근거 work/research/plans/loan.md 4·5장
@@ -143,6 +148,7 @@
   착수: firemap-designer 11:29 — v5(320 여백·다크 2색·데스크톱 한 열) 재심사
   완료: firemap-designer 11:32 — 연봉 결과 v5 심사 평균 **7.2 통과**(gemini-3-flash 7.1·레드팀 7·디자이너 7.5, lite 6.5는 판별력 없어 제외). 고친 것: 320 첫 화면 버튼(y=551/568)·다크 결과 카드 중립 #2a2d33·데스크톱 한 열 560(+r2 버튼 폭·머리글 정렬). 목표 8은 미달 — 다음 수 4개 review.md. 근거 design/tokens-ref/salary-v5/
 - [구현 요청] 연봉 결과 화면 v5(/calc/salary 결과 부분) 트랙:B · 담당 firemap-product-dev · 시한 10/5 17:32 · 근거 work/research/design/tokens-ref/salary-v5/preview.html·review.md(디자인 통과 7.2), 글자는 salary-v4/copy-edit.md(편집 통과) — 결과 숫자 카드→조건 요약 행 3개(누르면 편집)→공제·계산 방법 접기→주황 버튼 1개, 고정 바 없음, 359px 이하 행 48, 데스크톱 한 열 560. 토큰은 src/ui 것으로 옮길 때 다른 값이 나오면 [디자인 검수 요청]으로 캡처 375·320·1280·다크 보내기
+  착수: firemap-product-dev 13:10 (운영실장)
   미완: firemap-designer 08:15 — 연봉 결과 v4(design/tokens-ref/salary-v4) 두 판 모두 6.83(제미나이 lite 6.5·레드팀 7·디자이너 7, flash 429 두 번) → **7 미통과**. 바꾼 것: 입력칸 → 조건 요약 행 3개(테두리/채움 왕복 끊음·'연봉' 중복 없어짐)·고정 바 해제·행 부품 하나·순서 결과→조건→공제→버튼. 남은 점: 320 첫 화면에 버튼 안 들어옴·데스크톱 Z자/빈 하단·다크 표면 3색(Claude 둘 공통), 단위 띄어쓰기 섞임(editor-web 몫). lite는 7판 내리 6.5(판별력 없음). 다음 수: 320 여백 48·다크 중립 2색·데스크톱 한 열 560 → flash 풀린 시간에 같은 판 재심사. 근거 salary-v4/review.md
   - 영상 방법 3단계: ① 내 상황에 맞는 좋은 레퍼런스 찾기 ② **Dembrandt**(오픈소스 MIT CLI, `npx dembrandt <주소>` — Playwright로 실제 화면에서 색·글꼴·간격·그림자·모서리를 토큰으로 뽑음, DESIGN.md·W3C 토큰 출력)로 레퍼런스의 디자인 시스템을 뽑아 Claude Design에 넣기 ③ AI 티 나는 한글 문장·줄바꿈 다듬기.
   - 우리 적용: 레퍼런스 = 토스(계산 결과 화면)·뱅크샐러드·KRDS(정부 디자인 시스템) 각 1화면. Dembrandt로 토큰 뽑아 design/tokens-ref/에 저장 → 우리 ds-v2 토큰(src/ui)과 표로 비교 → 연봉 결과 화면 시안 1개를 '레퍼런스 토큰 안에서' 다시 만들어 심사 3명(토스 옆 비교판, 7 통과·목표 8) — 지금 6.75.

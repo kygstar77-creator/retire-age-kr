@@ -636,6 +636,124 @@ r1z = f"""<div style='position:absolute;inset:0;background:#111214'></div>
 """
 VARIANTS['r1z'] = r1z
 
+# r2a — 10/5 본부장 지시(backlog 1): r1z 그대로 + 레드팀 사실 지적 '???만'(세 자리로 읽힘) → '+?만', 아래 빈 띠(590~720) = 왼쪽 카드를 668까지 늘려 메움
+#   오른쪽 아래(x>960·y>576)는 길이 표시 자리라 비워 둠 → 오른쪽 세 줄은 그대로 40~550.
+def z2rows(x, y, w=580, h=158, gap=18, c='#2BD98C'):
+    s = ''
+    for i, n in enumerate(('금', 'S&P500', 'SCHD')):
+        yy = y + i * (h + gap)
+        s += f"<div style='position:absolute;left:{x}px;top:{yy}px;width:{w}px;height:{h}px;background:#22262E;border-radius:16px'></div>"
+        s += f"<div class='lab' style='left:{x + 24}px;top:{yy + 30}px;font-size:{84 if len(n) < 4 else 72}px;color:#fff'>{n}</div>"
+        s += f"<div class='t' style='right:{1280 - x - w + 26}px;top:{yy + 30}px;font-size:100px;color:{c}'>+?만</div>"
+    return s
+
+
+r2a = f"""<div style='position:absolute;inset:0;background:#111214'></div>
+<div style='position:absolute;left:36px;top:40px;width:620px;height:628px;background:#F4F1E8;border-radius:18px'></div>
+<div class='lab' style='left:66px;top:76px;font-size:96px;color:{INK}'><span style="color:#14A86A">1억</span> 예금</div>
+<div class='lab' style='left:66px;top:196px;font-size:96px;color:{INK}'>세후 1년</div>
+<div class='t' style='left:52px;top:372px;font-size:172px;color:{INK}'>+218만</div>
+<div class='fine' style='left:66px;top:600px;color:#6B6F76'>2025.10→2026.10 과거 값 · 세금 뗀 뒤 · 미래 보장 아님</div>
+{z2rows(676, 40)}
+"""
+VARIANTS['r2a'] = r2a
+
+# r2b — 같은 지시 Claude 8점안: 실제 비율 가로 막대(0부터, 늘어난 돈 세후 비례) + 값은 숨김(예금만 공개), +218만 1.2배↑
+#   10/3 13차 교훈(막대 길이가 답을 미리 알림 → 5.67)과 부딪히는 안 → r2a와 같은 판에서 가른다.
+BMAX = 860
+BW = {k: round(v / GAIN['SCHD'] * BMAX) for k, v in GAIN.items()}
+assert abs(BW['SCHD'] / BW['예금'] - GAIN['SCHD'] / GAIN['예금']) / (GAIN['SCHD'] / GAIN['예금']) < 0.01, BW
+
+
+def r2bars(x, y, h=64, gap=14, labw=250):
+    s = ''
+    for i, n in enumerate(('예금', '금', 'S&P500', 'SCHD')):
+        yy = y + i * (h + gap); w = BW[n]; dep = n == '예금'
+        s += f"<div class='lab' style='left:{x}px;top:{yy + 2}px;font-size:{56 if len(n) < 4 else 48}px;color:#fff'>{n}</div>"
+        s += f"<div style='position:absolute;left:{x + labw}px;top:{yy}px;width:{w}px;height:{h}px;background:{'#F4F1E8' if dep else '#2BD98C'};border-radius:8px'></div>"
+        if not dep:
+            s += f"<div class='t' style='left:{x + labw + w + 14}px;top:{yy + 4}px;font-size:58px;color:#2BD98C'>?</div>"
+    return s
+
+
+r2b = f"""<div style='position:absolute;inset:0;background:#111214'></div>
+<div style='position:absolute;left:36px;top:30px;width:1208px;height:236px;background:#F4F1E8;border-radius:18px'></div>
+<div class='lab' style='left:64px;top:50px;font-size:84px;color:{INK}'><span style="color:#14A86A">1억</span> 예금</div>
+<div class='lab' style='left:64px;top:152px;font-size:84px;color:{INK}'>세후 1년</div>
+<div class='t' style='left:470px;top:46px;font-size:196px;color:{INK}'>+218만</div>
+{r2bars(48, 282, h=60, gap=12)}
+<div class='fine' style='left:48px;top:620px;color:#8E939C'>막대 = 세금 뗀 뒤 늘어난 돈(실제 비율) · 2025.10→2026.10 과거 값 · 미래 보장 아님</div>
+"""
+VARIANTS['r2b'] = r2b
+
+# 20차(10/5 13:2x) r2b 7.00·r2a 6.50·r1z 6.33 → 레드팀 '자릿수를 사실대로 맞춘 가림'(금 3자리·S&P500·SCHD 4자리), Claude '막대 두껍게·이름 막대 안·? 키움'
+MASK = {'금': '+???만', 'S&P500': '+?,???만', 'SCHD': '+?,???만'}
+assert all(len(f"{GAIN[k] // 10000:,}") == len(MASK[k]) - 2 for k in MASK), MASK
+
+
+def c2rows(x, y, w=580, h=166, gap=18, c='#2BD98C'):
+    s = ''
+    for i, n in enumerate(('금', 'S&P500', 'SCHD')):
+        yy = y + i * (h + gap)
+        s += f"<div style='position:absolute;left:{x}px;top:{yy}px;width:{w}px;height:{h}px;background:#22262E;border-radius:16px'></div>"
+        s += f"<div class='lab' style='left:{x + 22}px;top:{yy + 46}px;font-size:{72 if len(n) < 4 else 58}px;color:#fff'>{n}</div>"
+        s += f"<div class='t' style='right:{1280 - x - w + 22}px;top:{yy + 40}px;font-size:{96 if n == '금' else 86}px;color:{c}'>{MASK[n]}</div>"
+    return s
+
+
+r2c = r2a.replace(z2rows(676, 40), c2rows(676, 40))
+VARIANTS['r2c'] = r2c
+
+
+def d2bars(x, y, h=100, gap=12, wmax=700):
+    s = ''
+    for i, n in enumerate(('예금', '금', 'S&P500', 'SCHD')):
+        yy = y + i * (h + gap); w = round(GAIN[n] / GAIN['SCHD'] * wmax); dep = n == '예금'
+        col = '#F4F1E8' if dep else '#2BD98C'; val = '+218만' if dep else MASK[n]
+        s += f"<div style='position:absolute;left:{x}px;top:{yy}px;width:{w}px;height:{h}px;background:{col};border-radius:10px'></div>"
+        if w > 240:
+            s += f"<div class='lab' style='left:{x + 18}px;top:{yy + 16}px;font-size:60px;color:{INK}'>{n}</div>"
+            s += f"<div class='t' style='left:{x + w + 18}px;top:{yy + 12}px;font-size:80px;color:{col}'>{val}</div>"
+        else:
+            s += (f"<div style='position:absolute;left:{x + w + 18}px;top:{yy + 10}px;white-space:nowrap;display:flex;align-items:baseline;gap:22px'>"
+                  f"<span style='font:700 60px PD;color:#fff'>{n}</span><span style='font-family:BH;font-size:80px;line-height:1;color:{col}'>{val}</span></div>")
+    return s
+
+
+r2d = f"""<div style='position:absolute;inset:0;background:#111214'></div>
+<div class='lab' style='left:44px;top:22px;font-size:84px;color:#fff'><span style="color:#2BD98C">1억</span>, 세후 1년 뒤</div>
+{d2bars(44, 140)}
+<div class='fine' style='left:44px;top:610px;color:#8E939C'>막대 = 세금 뗀 뒤 늘어난 돈(실제 비율) · 2025.10→2026.10 과거 값 · 미래 보장 아님</div>
+"""
+VARIANTS['r2d'] = r2d
+
+# r2e — 21차(r2c·r2b 7.17, r2d 6.83): 레드팀·Claude 공통 '+?,???만'이 판에서 가장 작음 → 120px로, 이름 줄이고 왼쪽 카드를 좁혀 자리 냄
+def e2rows(x, y, w, h=166, gap=18, c='#2BD98C'):
+    s = ''
+    for i, n in enumerate(('금', 'S&P500', 'SCHD')):
+        yy = y + i * (h + gap)
+        s += f"<div style='position:absolute;left:{x}px;top:{yy}px;width:{w}px;height:{h}px;background:#22262E;border-radius:16px'></div>"
+        s += f"<div class='lab' style='left:{x + 20}px;top:{yy + 52}px;font-size:{64 if len(n) < 4 else 50}px;color:#fff'>{n}</div>"
+        s += f"<div class='t' style='right:{1280 - x - w + 18}px;top:{yy + 24}px;font-size:120px;color:{c}'>{MASK[n]}</div>"
+    return s
+
+
+r2e = f"""<div style='position:absolute;inset:0;background:#111214'></div>
+<div style='position:absolute;left:24px;top:40px;width:530px;height:628px;background:#F4F1E8;border-radius:18px'></div>
+<div class='lab' style='left:50px;top:76px;font-size:88px;color:{INK}'><span style="color:#14A86A">1억</span> 예금</div>
+<div class='lab' style='left:50px;top:192px;font-size:88px;color:{INK}'>세후 1년</div>
+<div class='t' id='big' data-fit='490' style='left:40px;top:380px;font-size:158px;color:{INK}'>+218만</div>
+<div class='fine' style='left:50px;top:604px;font-size:19px;color:#6B6F76'>2025.10→2026.10 과거 값 · 세금 뗀 뒤 · 미래 보장 아님</div>
+{e2rows(570, 40, 690)}
+"""
+VARIANTS['r2e'] = r2e
+
+# r2f — 22차(r2e 7.97 = 제미나이 3-flash 7.9·Claude 8·레드팀 8): Claude '카드 좁히며 1억 예금이 작아짐 → 1억 예금 키우고 세후 1년은 작게'
+r2f = (r2e.replace("top:76px;font-size:88px;color:", "top:60px;font-size:104px;color:")
+          .replace("top:192px;font-size:88px;color:", "top:196px;font-size:68px;color:"))
+assert r2f != r2e
+VARIANTS['r2f'] = r2f
+
 def check_zones(page):
     return page.evaluate("""()=>{const bad=[];document.querySelectorAll('body *').forEach(e=>{
       if(e.tagName==='SCRIPT'||!e.textContent.trim())return;

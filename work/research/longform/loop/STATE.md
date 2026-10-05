@@ -1,4 +1,5 @@
 # 진행 상태 (루프가 매 회차 맨 위에 한 줄씩 추가)
+- 2026-10-06 04:49 · 16:01 TTS = M-1 결정(R-1은 Chirp 3 HD 결재 뒤) · slots 10/7 19:30 롱폼 skip·**10/8 19:30 = M-1**(기한 10/7 19:30)·비축 롱폼 1순위 M-1 · M-1 자막 2곳 쉬운 말(script.v2·m1props, 말 0 변경) → editor 재서명 요청 · study/2026-10-06(N-1 +217·D-1 +37, 유입 확인 안 함) · 다음: N-1 유입 경로·Reporting 10/4~6분, M-1 녹음 결과 확인·썸네일·설명란 준비, 금 롱폼 분석 관문
 - 2026-10-06 02:44 [PD] M-1 화면 먼저 끝냄(TTS 한도 16:00 전): video/src/M1.tsx 장면 24·종류 15 + parts/reverse.tsx 새 부품 8 + ep/M-1/m1props.py(calc_out·facts 기계 대조) · ReverseAsk 첫 장면 넣음 · 스틸 50장 눈 검사·9곳 고침(video/out/m1_stills_0330) · compete.md · screen_text 525줄 editor 요청 · 어림 7.3분(분량 12분 미달 — 대본 몫) · 다음: 16:01 녹음(R-1/M-1 youtube-loop 선택) → `py -3.12 research/longform/ep/M-1/m1props.py` → lfrender render M-1
 - 2026-10-06 02:26 [PD] M-1 제작 시작(화면 먼저 — TTS 한도 16:00 초기화 전, R-1 재녹음은 16:01)
 - 2026-10-06 00:51 · M-1 say_v2.txt를 편집 통과본 script.v2에서 다시 뽑음(옛판 12줄 차이)·6연속 끝맺음 한 낱말 고침(humanlike 5·aitell 4.5) → editor 재서명 요청 · topics.md 10/6 점수표(새 통과 없음, 증여세→계산기 후보 product-dev 요청)·issue-radar 10/6판 · 다음: editor 재서명 뒤 PD 넘김, 16:01 R-1 재녹음 결과로 18:00 롱폼 칸 판정, 기초연금 검색수 다른 낱말로 재측정

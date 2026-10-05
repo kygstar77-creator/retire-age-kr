@@ -1168,3 +1168,4 @@
 2026-10-06 05:15 · firemap-write · toejikavg1006(12:10 카페) 사실표·calc·본문·표 2장·compare·review 세 줄까지 끝내 표지만 남김, 교차검증 사실 2건 유지·말투 13건 반영 · 대역 04:22 판정 ③ — 표지는 09:00 뒤 상위 모델 순서
 2026-10-06 05:39 · firemap-shorts · gold1y v5·v6 고정 조건 재채점 — v5 6.58·v6 6.17 미통과, gates_ok 안 씀, 07:20 미달 시 nongji_age 교체 유지 · 보정칸 7.25로 심사 유효, 표지 문제로 확정(visual/judge-drift-1006 지시)
 2026-10-06 05:43 · firemap-write · 고정 조건 재채점 — hfguar1006 B5 3.1-lite 7.25(평균 7.22 통과, 보정 gongjae1002 7.5)·retmid1005 v4 7.75/v5 7.0 · hfguar는 cover_review 평균·stamp까지, readcheck 2건 남아 gates_ok 안 씀 · retmid는 레드팀·제목 심사·editgate 남아 gates_ok 안 씀(visual/cafe-covers-1006/)
+2026-10-06 06:42 · firemap-video-producer · M-1 목소리 전 준비(meta·설명란 틀·scorecard 경쟁 칸 중앙 25·cafe.md·쇼츠 재료 3) + 썸네일 10시안 8차 심사 — 최고 m1i 6.92로 통과선 7 미달, 확정 안 하고 임시 m1i·visual-designer에 판 자체 시안 요청 · 이유: 레드팀이 '억 숫자=불어난 자산' 오독·체리피킹을 매번 짚고 문구 손질로는 6.5~7 천장

@@ -1,0 +1,46 @@
+{
+ "facts": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/research/longform/ep/M-1/facts.txt",
+ "layout": "bars",
+ "chip": "세금·건보료 뗀 뒤 · 2026.10.2 기준",
+ "title": [
+  "월 100만원 받으려면",
+  "지금 얼마 있어야 하나"
+ ],
+ "sub": [
+  "지난 1년 실제 분배로 거꾸로 계산"
+ ],
+ "points": [
+  "JEPQ {1.38억원}",
+  "SCHD {4.85억원}",
+  "ACE 미국배당다우존스 {5.10억원}"
+ ],
+ "bars": [
+  [
+   "JEPQ",
+   1.38,
+   "억"
+  ],
+  [
+   "SCHD",
+   4.85,
+   "억"
+  ],
+  [
+   "ACE",
+   5.1,
+   "억"
+  ]
+ ],
+ "source": "출처 나스닥 배당 이력·한국투자신탁운용·슈왑 분배 기록, 야후 종가 · 2026-10-02 기준 · 지역가입자 건보",
+ "yt_title": "월배당 100만원 받으려면 얼마? JEPQ·SCHD·ACE 거꾸로 계산 #shorts",
+ "yt_desc": "세금·건보료 뗀 뒤 월 100만원 — 지난 1년 실제 분배로 거꾸로 재면 JEPQ 1.38억·SCHD 4.85억·ACE 미국배당다우존스 5.10억(2026.10.2 기준, 투자 권유 아님).",
+ "hashtags": [
+  "월배당",
+  "JEPQ",
+  "SCHD",
+  "배당ETF"
+ ],
+ "seconds": 6,
+ "longform": "M-1",
+ "status": "재료만(PD 2026-10-06) — 공개는 firemap-shorts, compete.md·편집 통과·1초 시험 뒤"
+}

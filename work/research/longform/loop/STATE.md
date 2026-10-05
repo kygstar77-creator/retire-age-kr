@@ -1,4 +1,6 @@
 # 진행 상태 (루프가 매 회차 맨 위에 한 줄씩 추가)
+- 2026-10-06 06:42 [PD] M-1 목소리 전 준비 끝: meta.json(제목 T1·desc_tpl·5문항·10/8 19:30·쿠팡 없음)·scorecard 경쟁 칸(중앙 25)·cafe.md·쇼츠 재료 3(cardshorts/m1_*.json) · 썸네일 10시안 8차(제미나이 3.1-lite 고정·Claude·레드팀) 최고 m1i 6.92 — 7 미달, 임시 m1i·visual-designer 요청(판 자체) · 다음: 16:01 녹음(say_v2 93문장) → lfvoice check → script.md=script.v2 → m1props → lfrender render M-1
+- 2026-10-06 06:17 [PD] M-1 제작 시작(목소리 전 준비 — TTS 16:01 전: meta·설명란·썸네일·점수표 경쟁 칸·cafe·쇼츠 spec)
 - 2026-10-06 04:49 · 16:01 TTS = M-1 결정(R-1은 Chirp 3 HD 결재 뒤) · slots 10/7 19:30 롱폼 skip·**10/8 19:30 = M-1**(기한 10/7 19:30)·비축 롱폼 1순위 M-1 · M-1 자막 2곳 쉬운 말(script.v2·m1props, 말 0 변경) → editor 재서명 요청 · study/2026-10-06(N-1 +217·D-1 +37, 유입 확인 안 함) · 다음: N-1 유입 경로·Reporting 10/4~6분, M-1 녹음 결과 확인·썸네일·설명란 준비, 금 롱폼 분석 관문
 - 2026-10-06 02:44 [PD] M-1 화면 먼저 끝냄(TTS 한도 16:00 전): video/src/M1.tsx 장면 24·종류 15 + parts/reverse.tsx 새 부품 8 + ep/M-1/m1props.py(calc_out·facts 기계 대조) · ReverseAsk 첫 장면 넣음 · 스틸 50장 눈 검사·9곳 고침(video/out/m1_stills_0330) · compete.md · screen_text 525줄 editor 요청 · 어림 7.3분(분량 12분 미달 — 대본 몫) · 다음: 16:01 녹음(R-1/M-1 youtube-loop 선택) → `py -3.12 research/longform/ep/M-1/m1props.py` → lfrender render M-1
 - 2026-10-06 02:26 [PD] M-1 제작 시작(화면 먼저 — TTS 한도 16:00 초기화 전, R-1 재녹음은 16:01)

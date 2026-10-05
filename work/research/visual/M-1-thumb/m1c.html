@@ -1,0 +1,18 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;left:52px;top:636px;font:500 24px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#121418'></div>
+<div id='c0' class='t' data-fit='1170' style='left:54px;top:40px;font-size:118px;color:#fff'>월 <span style='color:#FFD400'>100만원</span> 받으려면 얼마?</div>
+<div class='lab' style='left:58px;top:240px;font-size:56px;color:#fff'>JEPQ</div><div style='position:absolute;left:258px;top:232px;width:189px;height:84px;background:#3D8BFF;border-radius:6px'></div><div class='t' style='left:465px;top:236px;font-size:76px;color:#3D8BFF'>1.38억</div><div class='lab' style='left:58px;top:360px;font-size:56px;color:#fff'>SCHD</div><div style='position:absolute;left:258px;top:352px;width:666px;height:84px;background:#C9CED8;border-radius:6px'></div><div class='t' style='left:942px;top:356px;font-size:76px;color:#C9CED8'>4.85억</div><div class='lab' style='left:58px;top:480px;font-size:56px;color:#fff'>ACE</div><div style='position:absolute;left:258px;top:472px;width:700px;height:84px;background:#FF3B30;border-radius:6px'></div><div class='t' style='left:976px;top:476px;font-size:76px;color:#FF3B30'>5.10억</div>
+<div class='fine' style='color:#8A93A3;top:640px;font-size:22px'>2026.10.2 기준 지난 1년 분배 · 세금·건보료 뗀 뒤 · 투자 권유 아님</div>
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

@@ -1,0 +1,45 @@
+{
+ "ep": "M-1",
+ "thumb": "thumb_m1i.png",
+ "thumb_status": "임시 m1i(세 명 평균 6.92, 통과선 7 미달 — 확정 안 함) 06:41 · visual/M-1-thumb/judges.md 8차 · 다음은 판 자체(밝은 바탕) — visual-designer 요청 · 기한 10/7 19:30",
+ "title": "JEPQ·SCHD·ACE 월 100만원 받으려면 얼마? 세금·건보료 뗀 뒤, 가장 적게 나온 달로 거꾸로 계산",
+ "title_by": "firemap-copywriter titles.md T1 (2026-10-05) · 48h CTR이 채널 중앙값 아래면 title_swap으로 한 번 교체",
+ "title_swap": "월 100만원 받으려면 JEPQ 1.38억, SCHD 4.85억? 세금·건보료 뗀 거꾸로 계산",
+ "desc_tpl": "월 100만원(세금·건보료 뗀 뒤)을 분배금으로 받으려면 지금 얼마가 있어야 할까요? 지난 1년 실제 분배로 거꾸로 재면 JEPQ 1.38억원 · SCHD 4.85억원 · ACE 미국배당다우존스 5.10억원입니다(2026년 10월 2일 기준, 지난 기록 계산 · 투자 권유 아님).\n평균이 아니라 가장 적게 나온 달만큼만 매달 나온다고 다시 재면 ACE는 8.92억원(1.75배), JEPQ는 1.71억원(1.23배) — 가장 나쁜 쪽 기준입니다. 연 세전 분배가 2,000만원을 넘는 칸은 금융소득종합과세 추가 세금을 넣지 않은 최소값입니다.\n\n내 목표 금액으로 파이어 계산해 보기: https://firemap.kr/?utm_source=youtube&utm_medium=longform&utm_campaign=VIDEOID\n\n{CHAPTERS}\n\n출처\n· JEPQ 분배금 12회: 나스닥 배당 이력(야후 파이낸스 12회 일치) · 종가: 야후 파이낸스 일별 종가\n· SCHD 분배금 4회: 찰스 슈왑 운용사 분배금 표 · 종가: 야후 파이낸스\n· ACE 미국배당다우존스(402970) 분배금 12회: 한국투자신탁운용 공식 자료(야후 12회 일치) · 종가: 야후 파이낸스\n· 세금: 소득세법 제14조③6호(금융소득 종합과세 기준 2천만원) · 미국 원천징수 15%(한미 조세조약) · 국내 상장 분배는 15.4%로 계산(세금 크게 잡은 쪽)\n· 건강보험료: 국민건강보험법 시행령 제41조③ · 시행규칙 제44조①(금융소득 1천만원 기준) · 보험료율 7.19% + 장기요양(합 8.1348%) · 지역가입자 기준(직장가입자·피부양자는 다름)\n· 환율: 한국은행 ECOS 731Y001(2025-10-02 1,406.0원 → 2026-10-02 1,359.6원)\n확인 안 함: 환전 수수료(증권사마다 다름) · ACE 과세표준 공시\n\n같은 지수를 따르는 국내 상품은 다른 운용사에도 있습니다. 이 영상은 상품 추천이 아닙니다.\n내레이션은 AI 음성 내레이션(Gemini TTS)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.\n파이어맵 카페: https://cafe.naver.com/firemap",
+ "desc": "",
+ "desc_note": "녹음·렌더 뒤 work/video/chapters.py로 {CHAPTERS}를 채워 desc에 넣는다. desc_tpl 문장은 렌더 전 aitell·editor 확인",
+ "chapters": [],
+ "tags": [
+  "JEPQ",
+  "SCHD",
+  "월배당 ETF",
+  "금융소득종합과세",
+  "배당 건강보험료"
+ ],
+ "publishAt": "2026-10-08T19:30:00+09:00",
+ "privacy": "private",
+ "privacy_note": "예약 공개 — publishAt 시각에 자동 public(slots.json 10/8 19:30 롱폼 칸)",
+ "paid": false,
+ "synthetic": false,
+ "veo": false,
+ "coupang": "안 붙임 — 금융상품(ETF) 주제라 쿠팡 금지 규칙",
+ "voice": {
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon"
+ },
+ "video": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/out/m1_ds.mp4",
+ "missing": 93,
+ "answers": {
+  "q1_바꿔끼우기": "아니오 — 필요한 월 금액에서 거꾸로 필요 원금을 세 상품의 실제 12개월 분배·세금·건보료 규칙으로 계산하고, 가장 적은 달 기준(×1.23·×1.75)과 원화 1년 총수익을 같은 막대 규칙으로 놓아 주제 단어만 바꿔 다른 편이 되지 않는다.",
+  "q2_연달아보기": "아니오 — A-1(JEPQ·SCHD 1억 넣고 앞으로 계산)과 틀이 반대(거꾸로)이고, D-1(건보료 규칙 설명)의 규칙을 필요 원금 계산에 이어 쓴다. 화면 장면 24·종류 15, 새 부품 parts/reverse.tsx.",
+  "q3_약속이행": "예 — 제목 '월 100만원 받으려면 얼마?'는 3장 세 상품 계산이, '세금·건보료 뗀 뒤'는 1·2장 규칙이, '가장 적게 나온 달'은 4장이 답한다. 썸네일 ACE 5.10억→8.92억은 0장과 4장에 그대로 나온다.",
+  "q4_조언으로들리나": "아니오 — 여는 장면에서 '사라는 얘기가 아니라 지난 기록 계산'이라 말하고, 같은 지수 다른 운용사 상품이 있다고 말한다. 2,000만원 넘는 칸은 최소값·추가 세금 계산 안 함을 자막으로. 쿠팡·상품 링크 없음.",
+  "q5_사람의몫": "예 — 경쟁 5편이 평균 분배율로 앞으로만 셀 때, 목표 금액에서 거꾸로 + 가장 적은 달 기준으로 다시 재는 관점, 세금·건보료를 같은 규칙으로 세 상품에 적용한 계산, 분배율 1등 JEPQ가 원화 총수익은 꼴찌(+14.65%)인 비교."
+ },
+ "experiment": {
+  "X-THUMB-2": "B(답을 보여 주는 숫자 + 그림 장치 — m1i 12달 막대·평균선·8.92억 필요)"
+ },
+ "made_by": "firemap-video-producer",
+ "made_at": "2026-10-06 06:31",
+ "todo_pd": "10/6 16:01: say_v2.txt 93문장 lfvoice make(한 날·한 모델 gemini-3.8-flash-tts Charon) → lfvoice check → script.md = script.v2.md(editor 자막 2줄 재서명 뒤, 같은 해시로 script.md.edit.json) → py -3.12 research/longform/ep/M-1/m1props.py → screen_text 재뽑기·editor 재서명 → lfrender render M-1 → deess·motioncheck·스틸 눈 검사 → chapters.py로 desc 채움 → scorecard → review 판정 줄(youtube-loop) → ytlong gate → up(10/8 19:30)"
+}

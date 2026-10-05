@@ -1,0 +1,46 @@
+{
+ "facts": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/research/longform/ep/M-1/facts.txt",
+ "layout": "bars",
+ "chip": "1억 넣었다면 · 원화 · 세전",
+ "title": [
+  "분배율 1등,",
+  "1년 총수익은?"
+ ],
+ "sub": [
+  "지난 1년(2025.10.2→2026.10.2)"
+ ],
+ "points": [
+  "JEPQ 분배 {11.62%}, 합 {+14.65%}",
+  "ACE 합 {+18.55%}",
+  "SCHD 합 {+19.46%}"
+ ],
+ "bars": [
+  [
+   "JEPQ",
+   14.65,
+   "%"
+  ],
+  [
+   "ACE",
+   18.55,
+   "%"
+  ],
+  [
+   "SCHD",
+   19.46,
+   "%"
+  ]
+ ],
+ "source": "출처 야후 종가·분배 기록, 한국은행 ECOS 환율 · 분배는 2026.10.2 환율로 바꾼 어림값",
+ "yt_title": "분배율 1등 JEPQ, 1년 총수익은 꼴찌였다 #shorts",
+ "yt_desc": "1억 넣었다면 지난 1년 원화 총수익(세전) SCHD +19.46% · ACE 미국배당다우존스 +18.55% · JEPQ +14.65%. 분배율이 높다고 더 번 건 아니었다(투자 권유 아님).",
+ "hashtags": [
+  "JEPQ",
+  "SCHD",
+  "월배당",
+  "배당ETF"
+ ],
+ "seconds": 6,
+ "longform": "M-1",
+ "status": "재료만(PD 2026-10-06) — 공개는 firemap-shorts, compete.md·편집 통과·1초 시험 뒤"
+}

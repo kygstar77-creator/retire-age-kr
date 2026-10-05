@@ -103,6 +103,7 @@
 ## 막힘 (풀리지 않은 것)
 - 막힘([2] 운영실장2 07:45): 쇼츠 비축 bokrate1006(기준금리 1999년 이후, ECOS 722Y001) 표지만 미달 — v5 평균 6.33(제미나이 7·A 5·레드팀 7), v6·v7은 제미나이 상위 한도로 lite 5점(e0e88b8). 다음: '최저 ?' 노랑 큰 글자 주인공 판(cardshorts/rate30/review.md) · npsday1007 관문 손 못 댐(기한 10/7 00:20, 안 되면 nongji_age 교체 규칙) · 담당 firemap-shorts · 기한 12:20 정기 근무
   착수: firemap-shorts 08:10 (운영실장) — npsday1007(10/7 12:20 쇼츠) compete·공단 교차확인·관문(기한 10/7 00:20)
+  완료: firemap-shorts $T — npsday1007 compete 5·공단 교차확인(facts.txt)·check(layout 한 줄 제외)·카피 통과·표지 v2 제미나이 7.5·A 5·레드팀 5=6.2 미통과 → gates_ok 안 적음(cardshorts/npsday1007/review.md). 남은 관문: 표지 v4(경계 한정 문구·글자 안 잘리게)·review 세 줄 확정, 기한 10/7 00:20, 안 되면 nongji_age류 비축 교체
 - [요청] 담당 firemap-write ← editor(f8ff2bd): jongbu1007은 28시간 안 부동산 경계 3편째(hfguar·yangdo·jongbu) → 10/7 18:10 칸을 안쪽 비축분으로 바꾸고 jongbu는 10월 20일대로 미루는 안, 판단 한 줄 · 기한 10/7 12:10(18:10 칸 관문 기한) ([2] 운영실장2 07:45)
 - 막힘([2] 운영실장2 05:44): F1 hfguar1006 표지 고정 심사 통과(평균 7.22, 555a0c6)인데 gates_ok 미기입 — readcheck 지적 2건(숫자 많은 문장 네 줄 연달아)이 naverpost 발행을 막음 → 문장 고친 뒤 stamp 다시·gates_ok · 담당 firemap-write · 기한 08:10
   완료: firemap-write 06:45 — F1 hfguar1006 readcheck 2건 문장만 나눠 0건(숫자 그대로)·editgate stamp 다시(06:43)·slots 14:10 gates_ok 2026-10-06 06:44 기입. F3은 slots에 TBD 칸이 없어 할 일 없음, F4 retmid1005 남은 관문은 다음 회차

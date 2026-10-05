@@ -20,10 +20,10 @@
 | 14 | 랭킹·벽·실험 | Leaderboard.jsx · Wall.jsx · Experiment.jsx | ✅ 10/1 18:35 (1곳) | 바꿔보기 요약 '연봉 N%'↔칸 이름 '임금상승률' → '임금'으로 하나(fb99c58 운영). funName.js '현명한'은 닉네임 형용사라 aitell 오탐 — 안 바꿈(바꾸면 기존 사용자 닉네임이 바뀜) |
 | 15 | 커뮤니티·뉴스 | Community.jsx · News.jsx · CafePoster.jsx | ✅ 10/1 18:45 (2곳) | 다시 시도 안내를 앱 다수 '잠시 후 다시 해봐요'로(b57ac17 운영). CafePoster는 운영자 전용 화면이라 안 봄.  firemap-v2/cafePosts.js는 발행된 카페 글 사본(aitell 6건) — 원본과 어긋나면 안 돼서 firemap-editor 소관, 여기선 안 고침 |
 | 16 | 공유·계정·설정·동의 | ShareSheet.jsx · AccountCard.jsx · Settings.jsx · Consent.jsx · MenuAll.jsx | ✅ 10/2 13:30 (2곳) | Settings 저장 실패 토스트 '잠시 후 다시 눌러주세요'→앱 기준 '잠시 후 다시 해봐요'. AccountCard 로그인 설명 '카카오로 3초면 돼요' 삭제(잰 적 없는 숫자). Consent는 면책 성격이라 그대로. Settings의 브라우저 조작 안내 '~주세요'는 행동 지시라 그대로 |
-| 17 | 셸·메뉴 | FireMapMVP.jsx · src/ui/* | ⏳ 다음 | |
-| 18 | 푸시 알림 | src/utils/firePush.js | ⏳ | |
-| 19 | 검색용 본문 | functions/_middleware.js | ⏳ | |
-| 20 | 메타 | index.html | ⏳ | |
-| 21 | 안내 페이지 | public/*.html(contact·disclaimer·privacy·insights·fire-jok) | ⏳ | 면책·개인정보는 법정 문구 불변 |
+| 17 | 셸·메뉴 | FireMapMVP.jsx · src/ui/* | ✅ 10/5 20:10 (0곳) | 토스트·카운트다운·입력 칸 안내 모두 짧은 해요체, 같은 말 반복 없음 |
+| 18 | 푸시 알림 | firePush.js · public/sw.js · supabase/functions/send-fire-clock | ✅ 10/5 20:10 (1곳) | 실제 문구는 엣지함수에. 기본 문구가 '…확인해보세요 — 확인하기'로 '확인' 두 번 → 꼬리 뺌(b3d54a6). **엣지함수 배포 전엔 라이브에 안 반영**(git push로 안 올라감) |
+| 19 | 검색용 본문 | functions/_middleware.js · firemap-v2/toolPages.js | ✅ 10/5 20:10 (1곳) | 도구 블록에 '1분이면 나도 계산'이 부제·링크 두 번 → 링크를 앱 말 '파이어맵 홈'(TopBar aria-label)로(b3d54a6 운영). toolPages 설명·본문은 화면 라벨·법 조문이라 그대로. 홈 블록 35·36줄은 index.html description·JSON-LD 원문 사본이라 그대로 |
+| 20 | 메타 | index.html | ✅ 10/5 (0곳) | description·JSON-LD 짧고 사실. og 태그는 index.html에 없음(미들웨어가 넣음) |
+| 21 | 안내 페이지 | public/*.html(contact·disclaimer·privacy·insights·fire-jok) | ⏳ 다음 | 면책·개인정보는 법정 문구 불변 |
 | 22 | 가이드 101편 | public/guide/*.html(생성기 work/gen-guides.mjs) | ⏳ | 생성기 원본에서 고친다 |
 | 23 | 공유 카드 이미지 글자 | functions/og*.js | ⏳ | |

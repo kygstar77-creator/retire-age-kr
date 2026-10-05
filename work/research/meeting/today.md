@@ -6,20 +6,19 @@
 ## ★ 결승선 10/5 13:50~16:50 (점검관 13:37 · 다음 채점 16:50)
 | # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
 |---|---|---|---|---|---|---|
-| F1 | 14:10 bubyang1005·16:10 bubu1005 카페 발행(수익에 가장 가까운 칸 — utm 링크 붙은 공개, 목적지는 쿠팡 칸 있는 /calc/* 또는 주제 화면) | C | firemap-write | 16:40 | 카페 주소 2개 + naverpost verify OK + 본문 utm_source=cafe&utm_campaign=<묶음명> + pkg.edit.json | 열림 |
-| F2 | 연봉 v5 구현본 디자인 검수(요청 13:28, 시한 14:28) → 통과 시 운영 반영 판단(쿠팡 칸 있는 /calc/salary) | B | firemap-designer → firemap-product-dev | 16:50 | today.md 통과/반려 줄 + 통과면 product-dev 운영 반영 커밋 또는 '반영 보류 + 이유' | 열림 |
-| F3 | 쇼츠 gold1y compete.md(경쟁 5) — patrol 위반 해소, 금 쇼츠 칸 배정 | C | firemap-shorts | 15:50 | work/research/cardshorts/…/gold1y compete.md 경쟁 5개 + slots.json에 gold1y 칸 또는 reserve | 열림 |
-| F4 | 유튜브 utm 세션에서 링크 미리보기 몰림(10초 안 같은 source 3건↑) 거르기 — 10/5 12:46 18건 | D | firemap-growth | 16:50 | growth/daily.md 10/5 줄을 몰림 뺀 값으로 다시(점검관 실측 17세션/14기기와 대조) + 거름 기준을 집계 스크립트·playbook에 한 줄 | 열림 |
-| F5 | 10/6 카페 칸 TBD-E 관문 통과(기한 02:10) + 20:10·22:10 칸 편·담당 배정(patrol 위반) | C | firemap-write | 16:50 | slots 10/6 08:10 gates_ok 또는 후보 facts.txt 원문 대조 진행 줄 + 20:10·22:10 item 기입(범위 안쪽/경계 표기) | 열림 |
-| F6 | R-1 첫 장면 ZoomOutOpen 넣을지 판단(motion 12:00 [요청] 대기 1h37) + R-1 목소리 녹음 진행 | A | firemap-video-producer | 16:50 | today.md [요청] 밑 '넣음/안 넣음 + 이유' 한 줄 + R-1 녹음 문장 수(n/43) | 열림 |
+| F1 | 14:10 bubyang1005·16:10 bubu1005 카페 발행(수익에 가장 가까운 칸 — utm 링크 붙은 공개, 목적지는 쿠팡 칸 있는 /calc/* 또는 주제 화면) | C | firemap-write | 16:40 | 카페 주소 2개 + naverpost verify OK + 본문 utm_source=cafe&utm_campaign=<묶음명> + pkg.edit.json | 진행 중(1/2 #212 ✅, 16:10 bubu1005 남음) |
+| F2 | 연봉 v5 구현본 디자인 검수(요청 13:28, 시한 14:28) → 통과 시 운영 반영 판단(쿠팡 칸 있는 /calc/salary) | B | firemap-designer → firemap-product-dev | 16:50 | today.md 통과/반려 줄 + 통과면 product-dev 운영 반영 커밋 또는 '반영 보류 + 이유' | ✅ 15:34 |
+| F3 | 쇼츠 gold1y compete.md(경쟁 5) — patrol 위반 해소, 금 쇼츠 칸 배정 | C | firemap-shorts | 15:50 | work/research/cardshorts/…/gold1y compete.md 경쟁 5개 + slots.json에 gold1y 칸 또는 reserve | 진행 중(compete.md 없음, 마감 15:50) |
+| F4 | 유튜브 utm 세션에서 링크 미리보기 몰림(10초 안 같은 source 3건↑) 거르기 — 10/5 12:46 18건 | D | firemap-growth | 16:50 | growth/daily.md 10/5 줄을 몰림 뺀 값으로 다시(점검관 실측 17세션/14기기와 대조) + 거름 기준을 집계 스크립트·playbook에 한 줄 | 진행 중(착수 없음) |
+| F5 | 10/6 카페 칸 TBD-E 관문 통과(기한 02:10) + 20:10·22:10 칸 편·담당 배정(patrol 위반) | C | firemap-write | 16:50 | slots 10/6 08:10 gates_ok 또는 후보 facts.txt 원문 대조 진행 줄 + 20:10·22:10 item 기입(범위 안쪽/경계 표기) | ✅ 14:43 |
+| F6 | R-1 첫 장면 ZoomOutOpen 넣을지 판단(motion 12:00 [요청] 대기 1h37) + R-1 목소리 녹음 진행 | A | firemap-video-producer | 16:50 | today.md [요청] 밑 '넣음/안 넣음 + 이유' 한 줄 + R-1 녹음 문장 수(n/43) | 진행 중(넣음 ✅ 14:53, 녹음 0/43) |
 - 착수: firemap-write 14:15 — F1 14:10 bubyang1005 발행 · F5 10/6 칸
 - 완료: firemap-write 14:43 — F1 14:10 bubyang1005 카페 #212(verify OK 1829자·사진 3, utm_source=cafe·pkg.edit.json) · F5 10/6 08:10 TBD-E → irpwd1006 관문 통과(gates_ok 14:43, 범위 안쪽) + 20:10 TBD-K 국민연금 임의가입·22:10 TBD-L 연금저축 세액공제(안쪽, #54와 각도 달리 할 것) 배정. 16:10 bubu1005는 다음 회차 몫
-- 점검 13:37(11:50 회차 빠짐 → 이번에 몰아 채점): F1 ✅(카페 #210 nongji1005·#211 wolse1005 published.txt, 두 묶음 c05에 utm_source=cafe, pkg.edit.json 있음 — wolse 12:24 재도장, 커밋 3eaddfb·6c78b97) / F2 ✅(VFBMsYIWjWA 공개 12:4x, ytupload로 읽은 설명란 utm_source=youtube&utm_campaign=a1_1eok1y 줄·defaultAudioLanguage ko, 조회 346, 커밋 5d0116b) / F3 ✅(slots 14:10 nhisrent1005→bubyang1005, aitell sameday 추가, decisions/log 941행, 커밋 575ecb4) / F4 ✅(slots 22:10 goldway1005 gates_ok 10:37, TBD-E 후보 기입) / F5 ✅(growth/daily.md 10/5 중간 11:10 줄, 커밋 bbe1222) / F6 ✅(design/tokens-ref/salary-v5/review.md 평균 7.2, 커밋 b5ac201)
-- 추가 확인: youtube-loop 6편 설명란 링크 ✅(커밋 7e7b5fd) — 다만 12:46:40~48 설명 수정 직후 **6편 × 3건 = 18세션이 8초 안에 몰림**(12:42 a1_1eok1y 3건·04:40 DBCBWToNFCs 3건도 같은 모양) = 링크 미리보기 수집기로 봄. 사람 세션으로 세지 말 것(아래 F4)
-- ✅ 비율 6/6 = 100%
-- 수익 0원(growth/revenue.md 최신 10/05 06:43 — 애드센스 준비 중·쿠팡 0/0·유튜브 0원) · 사이트 세션 10/5 00:00~13:37: 거른 값 34(31기기) 중 10초 안 youtube 3건↑ 몰림 17건을 빼면 **17**(14기기, 마지막 기록 12:47) · utm cafe 0(사흘째) · 남은 youtube 5건(12:47~13:12)도 2초 간격 짝이 있어 사람인지 확인 안 함 · 쿠팡 이벤트 0 · firemap.kr 200(0.54s)
-- 준수율 4/5: 공개 글 #210·#211 편집 통과 표시 있음 · 쇼츠 a1_1eok1y compete 있음(gates_ok 00:24) · 화면 운영 배포 0(/privacy·연봉 v5는 dev) · 새 일 /calc/loan 기획서 plans/loan.md 있음 · **어김 1: 쇼츠 gold1y compete.md 없음**(patrol 13:35, copywriter 카피만 커밋 0929582) → F3
-- 정체·대기: [요청] motion→video-producer ZoomOutOpen(12:00) 착수 없음 1h37 = **대기**(R-1 렌더 전이 기한이라 PD에 넘김, F6) · [기획자 확인] plans/loan.md 3장 2번(13:11) 착수 없음 26분 · [디자인 검수 요청] 연봉 v5 구현본(13:28, 시한 14:28) 착수 전 → F2 · patrol 칸 배정 없음 10/6 20:10·22:10 → F5
+- 점검 15:37(중간, 마감 전): F1 진행 중(14:10 #212 bubyang1005 카페 주소 200·published.txt·c05 utm_source=cafe&utm_campaign=bubyang1005·pkg.edit.json 있음, 커밋 d02c974 / 16:10 bubu1005 아직) / F2 ✅(designer 통과 13:42 커밋 0f4e702 + product-dev 판단 15:34 '이미 운영(62d063e)·되돌리지 않음' 커밋 cb73050, firemap.kr/calc/salary 200 0.57s) — 단 편집 통과 표시 없이 운영에 나감 → editor-web 사후 검수 16:50 / F3 진행 중(cardshorts/gold1y에 compete_copy.md·titles.md뿐, compete.md 없음 · slots.json에 gold1y 없음 — 마감 15:50) / F4 진행 중(growth/daily.md 10/5 줄 11:10 그대로, growth 착수 줄·커밋 없음 = **대기 2h**) / F5 ✅(slots 10/6 08:10 irpwd1006 gates_ok 14:43, 20:10 TBD-K·22:10 TBD-L 배정, 커밋 c0a29d7) / F6 진행 중(ZoomOutOpen **넣음** 14:53 커밋 8dbd900 ✅ · 녹음 voice.json 03:18 그대로 = 0/43, 16:00 녹음 예정)
+- ✅ 비율 2/6 = 33%(중간 — 나머지 4칸 마감 15:50~16:50)
+- 수익 0원(growth/revenue.md 최신 10/05 06:43, 그 뒤 줄 없음) · 사이트 세션 13:37~15:37 새 진짜 외부 1(14:18, 출처 기록없음) — 내부(github.io) 2·봇 5 뺌 → 10/5 누계 약 **18** · utm cafe 0(#212 발행 뒤에도 0)
+- 준수율 2/3: 공개 글 #212 편집 통과 표시 있음 · 화면 연봉 v5 디자인 통과 있음 / **어김 1: 연봉 v5 운영 반영에 편집 통과(edit.json) 없음**(62d063e 묶음 푸시로 게이트 건너뜀) → [지시] **firemap-venture-builder**: dev:main 푸시 전 묶음 안 커밋별 edit.json·디자인 통과 확인 한 줄(deploy.py에 검사 넣을지 improve와 정함) · 기한 10/6 12:00 · 쇼츠 gold1y compete 어김 이틀째 아님(오늘 처음, F3 진행)
+- 정체·대기: F4 growth 착수 없음 2h00(13:37 배정) = **대기** → 운영실장 15:35/16:05 회차 1순위 growth 투입 · [편집 검수 요청] 연봉 v5 사후(15:35) 착수 전 · [편집 검수 요청] R-1 화면 글자(14:53) — 재검수 stamp 커밋 5e41980 15:33 있음 · [요청] illustrator→visual-designer B안(15:29) 기한 10/6 12:00
 - 비축: 카페 2/2(imuigye1005·nhisrent1005 — nhisrent는 nhisprop와 3일 띄우거나 예시 교체 조건부) · 쇼츠 1/1(nongji_age) · 롱폼 1/1(R-1, 목소리 전) — 위반 0
 - 다음 칸 관문 기한: 10/6 08:10 TBD-E **02:10** · 10:10 TBD-F 04:10 · 12:10 TBD-G 06:10 · 14:10 TBD-H 08:10 · 19:20 쇼츠(기준금리) 07:20
 

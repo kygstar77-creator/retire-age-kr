@@ -152,6 +152,8 @@ def frame_check(pkg):
     """카페 틀 v2 3줄(10/02 brand-director): ① 소제목 3~5개 ② 끝 FAQ/정리 소제목 ③ 제목: 명사 끝 또는 B틀 물음(얼마·몇), 반전(왜·는데) 금지. 어긴 곳 목록."""
     text, files = pkg_text(pkg)
     bad = []
+    sc, why = scope_check(pkg)
+    if sc == '밖': bad.append(why)
     heads = [ln.strip() for ln in text.splitlines() if re.match(r'\s*(##\s|■)', ln)]
     if not 3 <= len(heads) <= 5: bad.append(f'소제목 {len(heads)}개 — 3~5개로(##·■ 줄 기준)')
     if not any(FRAME_END.search(h) for h in heads[-2:]): bad.append('끝 FAQ·정리 소제목이 없다 — 마지막 두 소제목 안에 FAQ/자주 묻는/정리/요약')
@@ -181,6 +183,30 @@ def frame_check(pkg):
             n, tot = comma_day(day, pkg, t)
             if n < 2: bad.append(f'{day} 카페 칸 쉼표 없는 제목 {n}/{tot}편 — 하루 2편 이상 필요, 이 제목을 쉼표 없이(질문 한 문장·숫자 한 문장)')
     return bad
+
+
+# 10/05 brand-director 12:09 [지시]: 카페 주제 범위(brand/guide.md ①-카페 주제 범위). 밖 9편은 20회 넘은 글 0편.
+# '밖'은 제목 낱말로 막고(관문), '경계'는 세후·노후 현금흐름 숫자로 끝나는지 사람이 보도록 경고만 낸다.
+SCOPE_OUT = re.compile(r'한능검|한국사\s*능력|토익|TOEIC|토플|오픽|시험\s*일정|대형\s*폐기물|폐기물\s*스티커|장례\s*절차|장례식\s*절차|청년\s*(전용|도약|내일|희망|미래|주택|월세)')
+SCOPE_EDGE = re.compile(r'실거래|아파트|분양|대출\s*금리|주담대|전세|(?<![가-힣])금\s*(시세|\d)|금값|주가|종목')
+SCOPE_TIE = re.compile(r'세후|노후|은퇴|퇴직|연금|월\s*\d|매달|건보|건강보험|생활비|현금|배당|분배금|이자')
+
+
+def scope_check(pkg):
+    """카페 주제 범위 한 줄: '50대 전후 퇴직·노후 돈 숫자로 이어지나?' → ('안쪽'|'경계'|'밖', 이유)."""
+    tp = os.path.join(pkg, 'title.txt')
+    t = open(tp, encoding='utf-8').read().strip() if os.path.exists(tp) else ''
+    m = SCOPE_OUT.search(t)
+    if m: return '밖', f'카페 주제 밖("{m.group(0)}") — X-CN-1·R31 새 사이트 쪽으로(brand/guide.md ①-카페 주제 범위)'
+    m = SCOPE_EDGE.search(t)
+    if m and not SCOPE_TIE.search(text_head(pkg)):
+        return '경계', f'경계 주제("{m.group(0)}")인데 제목·첫 문단에 세후·노후 현금흐름 말이 안 보인다 — 끝이 노후 돈 숫자로 이어지는지 확인'
+    return ('경계' if m else '안쪽'), ''
+
+
+def text_head(pkg):
+    text, _ = pkg_text(pkg)
+    return text[:400]
 
 
 AIB_NUM = re.compile(r'\d|[천만억]\s*원|[일이삼사오육칠팔구십]\s*(?:만|억|천|%)')
@@ -378,6 +404,10 @@ def main(a):
         bad = frame_check(a[1])
         if not bad: print('카페 틀 v2 통과', a[1]); return 0
         print('카페 틀 v2 어김', a[1]); [print('  ', b) for b in bad]; return 5
+    if a[0] == 'scope':
+        sc, why = scope_check(a[1])
+        print(f'카페 주제 범위: {sc}', a[1]); why and print('  ', why)
+        return 5 if sc == '밖' else 0
     if a[0] == 'aibrief':
         bad = aibrief_check(a[1])
         if not bad: print('AI 브리핑 구조 통과', a[1]); return 0

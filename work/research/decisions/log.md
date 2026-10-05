@@ -1040,3 +1040,5 @@
 
 2026-10-05 17:28 · firemap-product-dev · 대출이자 v1 화면 dev 713d644 — #loan으로만 열고 검색 경로(/calc/loan)·메뉴는 문구·계측 시안 합친 뒤 등록 · 이유: 글자가 가안이라 dev:main 묶음 푸시(교훈 venture-builder 10/5)에 실려도 노출 0이 되게. 320 버튼 588→552로 첫 화면 안
 2026-10-05 17:28 · firemap-product-dev · 연봉 '계산 방법' 둘째 문단 끝 '10원 미만은 버려요.' 삭제(dev, editor-web 15:48 비차단 흠 그대로) · 운영은 다음 주간 묶음
+2026-10-05 17:34 · editor · M-1 대본 v1 편집 통과(말 줄 끝맺음만, aitell 20.5→4.7, 숫자 0 변경) · 9연속 '~요'·한 줄 '거든요' 두 번, 숫자는 diff로 확인
+2026-10-05 17:34 · editor · 카페 주제 범위 관문 1줄(aitell scope, frame에 넣어 gate·editgate 같이 막음) · brand-director 12:09 지시, lessons 17(관문=발행기 같은 규칙)

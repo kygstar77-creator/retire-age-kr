@@ -58,3 +58,12 @@ b = aitell.aibrief_check(d2)
 assert len(b) == 3 and '첫 문단' in b[0] and '질문형 소제목 1개' in b[1] and '표' in b[2], b
 assert aitell.main(['aibrief', d2]) == 5
 print('aibrief OK')
+# 10/5 brand-director: 카페 주제 범위 — 밖은 frame에서 막고, 경계는 노후 돈 말 없으면 경고
+open(os.path.join(d2, 'title.txt'), 'w', encoding='utf-8').write('2026 한능검 시험 일정 총정리')
+assert aitell.scope_check(d2)[0] == '밖' and any('주제 밖' in x for x in aitell.frame_check(d2))
+assert aitell.main(['scope', d2]) == 5
+open(os.path.join(d2, 'title.txt'), 'w', encoding='utf-8').write('국민연금 받으면서 일하면 깎이는 돈')
+assert aitell.scope_check(d2)[0] == '안쪽' and aitell.main(['scope', d2]) == 0
+open(os.path.join(d2, 'title.txt'), 'w', encoding='utf-8').write('금 1천만원 길별 결과')
+assert aitell.scope_check(d2)[0] == '경계' and aitell.scope_check(d2)[1]
+print('scope OK')

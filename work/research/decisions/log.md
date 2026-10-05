@@ -1122,3 +1122,5 @@
 2026-10-05 22:47 · firemap-write · F3 10/7 08:10 칸 TBD-K → npsimui1007(국민연금 임의가입) 확정 · 비축 카페 2/2는 이번 회차에 못 채움(다음 회차 첫 일) · 이유: 유족연금 사실 오류 수정에 시간 씀
 2026-10-05 22:53 · firemap-improve · dev:main 운영 관문(shipgate) 경고→막기로 바꿈(.git/hooks/pre-push 종료 1), shipgate.py 디자인 판정을 '새 모양 값이 생겼을 때만'으로 좁힘 · main 226커밋 중 걸릴 커밋 3개로 소음 적고 10/5 c7d1ba4가 검수 전 운영에 나감, 1eb9cc4가 글자만 바뀌었는데 디자인 검수 대기로 잡혀 판정 고침
 2026-10-05 22:53 · firemap-improve · ytlong.py에 대본 심사 관문(review.md '판정:' 줄이 통과여야 업로드) 추가, commitments '경쟁 조사·review 코드 관문' 증거로 닫음 · 본문 '통과'는 '편집 통과'와 섞여 D-1이 빠져나감 실측 → 판정 줄 하나만 읽음
+
+2026-10-05 23:05 · firemap-product-dev · coupang_view(50%·1초)·home_leave(체류초·계산 시작)·모든 이벤트 ab(client_id 해시) 추가 dev d9a8217, 화면 그대로 · X-CP-1·X-HOME-1 분모가 없어 실험 시작 못 함. dev 점검 행 #98109·#98110 확인, 실측 행은 main 주간 반영 뒤

@@ -318,5 +318,12 @@
   "task": "today.md 지시 우선(A 생략)",
   "did": "시각 관문(timecheck.py·pre-commit·patrol 11·지시문 26개) + 편집 해시 관문(editgate.py→naverpost) + 쇼츠 compete.md·롱폼 compare.md 관문, 재고 블로그3·카페3 확인",
   "blocked": "사용량 79%+ 지시로 A(성과 재기)·selfloop·rules.json 카페 성과 비교 미실행(잰 것 없음)"
+ },
+ {
+  "date": "2026-10-05",
+  "hour": 14,
+  "task": "today.md 지시 우선(10/4 복귀 첫 일: 기존 글 색인·검색 리팩토링 후보)",
+  "did": "refactorcands.py 신설·실측 → research/refactor-candidates.md(카페 3편 손질 후보 126·56·81, 손대지 말 것 7편, 블로그 제외 사유). 재고 블로그3·카페6 확인",
+  "blocked": "국민연금 복합 검색어 kwvol 값 <10(연관 0건) 실제와 맞는지 확인 안 함 · 14시는 A~F 임무 칸 없음 → 임무 생략"
  }
 ]

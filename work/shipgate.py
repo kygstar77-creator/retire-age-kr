@@ -14,6 +14,9 @@ LEDGER = os.path.join(ROOT, 'work', 'research', 'shipgate.md')
 SCREEN = re.compile(r'^(src/(components|pages|ui)/|src/App\.|index\.html$|public/(?!guide/).*\.html$)')
 HANGUL = re.compile(r'[가-힣]')
 LOOK = re.compile(r'className|style=|<svg|\.css')
+# 디자인 판정은 '모양 값'이 새로 생겼는지로 본다(10/5 improve): 같은 className 안 글자만 바꾼 1eb9cc4(대출 문구)가
+# '디자인'으로 잡혀 없는 검수를 기다렸다. 더한 줄에 뺀 줄에 없던 className·style·svg 값이 있을 때만 디자인.
+LOOKVAL = re.compile(r'className=(?:"[^"]*"|\{[^}]*\})|style=\{\{[^}]*\}\}|<svg[^>]*>')
 
 
 def git(*a):
@@ -26,12 +29,16 @@ def needs(sha):
         return files, set()
     need = set()
     diff = git('show', '--format=', '-U0', sha, '--', *files)
+    vals = {'+': set(), '-': set()}
     for ln in diff.split('\n'):
-        if ln[:1] in '+-' and ln[:3] not in ('+++', '---'):
+        if ln and ln[0] in '+-' and ln[:3] not in ('+++', '---'):
             if HANGUL.search(ln.split('//')[0]):
                 need.add('편집')
-            if LOOK.search(ln):
-                need.add('디자인')
+            vals[ln[0]] |= set(LOOKVAL.findall(ln))
+            if LOOK.search(ln) and not LOOKVAL.search(ln):
+                need.add('디자인')  # 값까지 못 읽는 모양 줄(여러 줄 style·.css 경로 등)은 그대로 디자인
+    if vals['+'] - vals['-']:  # 새 모양 값이 생겼을 때만(같은 클래스 span을 하나 더 쓴 건 아님)
+        need.add('디자인')
     if any(f.endswith('.css') for f in files):
         need.add('디자인')
     return files, need

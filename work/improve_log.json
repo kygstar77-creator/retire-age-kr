@@ -325,5 +325,12 @@
   "task": "today.md 지시 우선(10/4 복귀 첫 일: 기존 글 색인·검색 리팩토링 후보)",
   "did": "refactorcands.py 신설·실측 → research/refactor-candidates.md(카페 3편 손질 후보 126·56·81, 손대지 말 것 7편, 블로그 제외 사유). 재고 블로그3·카페6 확인",
   "blocked": "국민연금 복합 검색어 kwvol 값 <10(연관 0건) 실제와 맞는지 확인 안 함 · 14시는 A~F 임무 칸 없음 → 임무 생략"
+ },
+ {
+  "date": "2026-10-05",
+  "hour": 22,
+  "task": "today.md 지시 우선(shipgate 요청·약속 넘김) + F 일부",
+  "did": "shipgate dev:main 막기로 결정·pre-push 적용(시험 rc=1/0), shipgate.py 디자인 오판정 고침(1eb9cc4), ytlong.py 대본 심사 관문(review.md '판정:' 줄)+publishAt 빈 편 크래시 고침, 재고 블로그3·카페4 확인, 네이버 로그인됨",
+  "blocked": "rules.json 카페 상위·하위 비교 미실행(14:50 갱신 있어 24h 안) · 22시는 A~F 칸 없음 → F의 유튜브 90일 수집 안 함 · 블로그 오늘 잰 12편 색인 0편(check 경고, 원인 확인 안 함)"
  }
 ]

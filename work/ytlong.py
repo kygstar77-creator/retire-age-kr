@@ -32,8 +32,21 @@ def gate(ep):
         ct = open(cp, encoding='utf-8').read()
         miss = [w for w in ('잘하는', '따라갈', '다르게') if w not in ct]
         if miss: bad.append('compare.md 3줄 중 빠짐: ' + '·'.join(miss))
+    # 대본 심사 관문(10/5 improve, commitments '경쟁 조사·review 코드 관문'): ep/<편>/review.md에 심사 기록과 통과 판정이 있어야 올린다.
+    # D-1은 '평균 7.6 — 통과선 8 미달'인 채 공개 조건을 사람이 따로 챙겼다 → 판정을 코드가 읽는다.
+    # 본문의 '통과'는 편집 통과·통과선 등과 섞여 못 믿는다(D-1이 '편집 통과 10/1'로 빠져나감) → 맨 앞이 '판정:'인 줄 하나만 본다.
+    #   예) 판정: 통과 — 평균 7.47(통과선 7) · youtube-loop 20:51
+    rv = os.path.join(ep, 'review.md')
+    if not os.path.exists(rv): bad.append('대본 심사 review.md 없음(심사 3명 점수·판정)')
+    else:
+        rt = open(rv, encoding='utf-8').read()
+        vd = re.findall(r'^\s*\**판정\**\s*[:：](.*)$', rt, re.M)
+        if not vd: bad.append("review.md에 '판정: 통과 — 평균 N(통과선 N)' 줄 없음")
+        elif not ('통과' in vd[-1] and not re.search(r'미달|보류|미통과|막힘', vd[-1])): bad.append('review.md 마지막 판정이 통과 아님: ' + vd[-1].strip()[:40])
     # C1 롱폼 주 2편·하루 1편(uploads.jsonl 기준, 예약 시각으로 센다)
-    pa = datetime.datetime.fromisoformat(m['publishAt'])
+    if not m.get('publishAt'):  # R-1처럼 칸을 skip해 publishAt이 비면 여기서 죽었다(10/5)
+        return m, bad + ['예약 시각(publishAt) 없음']
+    pa =datetime.datetime.fromisoformat(m['publishAt'])
     me = m.get('ep', os.path.basename(os.path.normpath(ep)))   # 같은 편 교체 업로드(옛 판은 비공개로 둠)는 편 수로 세지 않는다
     prev = [datetime.datetime.fromisoformat(u['publishAt']) for u in uploads() if u.get('publishAt') and not u.get('replaced') and u.get('ep') != me]
     # 2026-10-02 사장님 지시로 '주 2편' 제한 해제 → 하루 1편만(X-YT-FREQ). 주 7편 넘으면 막는다.

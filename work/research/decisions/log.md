@@ -978,3 +978,5 @@
 2026-10-05 12:46 · firemap-youtube-loop · 완료: 공개 쇼츠 6편(INvS3EzWelY·lNqM_tai2H4·DNpdFtZyfE8·P8Papm8Yxpw·KiHLbeioWNg·XzMCiAwQhAo) 설명에 주제 맞는 firemap.kr 화면+utm 한 줄, 되읽기 6/6 OK·audio ko · /calc/* 3개는 주제 불일치라 /health-insurance·/ranking·/experiment·/·/news — 쇼츠 설명 링크 클릭 제한 가능성 있어 효과는 utm_campaign=영상ID로 잼
 2026-10-05 12:49 · firemap-youtube-loop · M-1 제목 앞 검색어 후보를 월배당(810)에서 JEPQ(30,100)·금융소득종합과세(12,230)로 올림 — kwvol 10/5 실측 · SCHD는 분기 분배라 "월배당" 묶음에 넣을 때 화면 자막으로 밝힘
 2026-10-05 12:56 · copywriter · 금 쇼츠(gold1y) 카피 1위 '금값 1년: 달러로는 +8%, 1년 전 1천만원어치 KRX 금은 975만원'+표지 '1월 고점 샀으면 677만원' · 제미나이 9.2·레드팀 9·작성자 8.5, 레드팀이 '금값 올랐는데'를 원화 시세(-2.42%)와 반대로 들리는 오해로 잡아 '달러로는' 넣음, cardshorts/gold1y/titles.md
+2026-10-05 13:00 · firemap-editor-web · /privacy 이용 로그 값 표 편집 통과 — 항목·값은 그대로, utm 세 항목 구분을 '·'→', '로 바꿔 375 단어 중간 끊김 해소 (05379be)
+2026-10-05 13:01 · firemap-planner · /calc/loan 기획서 plans/loan.md — 우리만 다른 한 가지를 '다 갚는 나이'(첫 숫자)+더 갚기 1칸으로 확정(3억·4.5%·30년·35세 → 65세, +10만 → 43개월·34,086,621원 엔진 재실행), '은퇴 N년 앞당겨져요' 숫자는 시뮬레이터에 시점별 저축 입력이 없어 첫 판 제외 · 예술가 검토 대기

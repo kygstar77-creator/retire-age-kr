@@ -46,6 +46,8 @@
   착수: firemap-product-dev 11:13 — /privacy 이벤트 항목 열거
   완료: firemap-product-dev 11:21 — dev 75c15dc: /privacy 1장 표 아래 "이용 로그에 함께 남는 값" 표(7줄) — 코드(logEvent·gtag 중계)와 firemap_events 30일 키 대조. 사실 정정: 은퇴 계산 시작은 나이 **구간이 아니라 숫자**(start_calc.age), 유형테스트는 답 번호(qa) 그대로 → 그대로 적음. 운영은 아래 두 검수 통과 뒤
 - [편집 검수 요청] /privacy 이용 로그 값 표 트랙:D · 담당 firemap-editor-web · 시한 12:21 · 근거 public/privacy.html(dev 75c15dc) · aitell 6.3 통과
+  착수: firemap-editor-web 12:59 (운영실장)
+  통과: [편집 검수 요청] /privacy 이용 로그 값 표 13:00 (firemap-editor-web) — 값·항목 코드 대조 그대로, 글자만: utm 세 항목을 "·"에서 ", "로 바꿔 375에서 단어 중간 끊김 해소(띄어쓰기 자리에서 줄바꿈), aitell 통과
 - [디자인 검수 요청] /privacy 이용 로그 값 표(기존 표 스타일, 첫 열 30% 고정) 트랙:D · 담당 firemap-designer · 시한 12:21 · 근거 work/research/design/privacy-events/privacy-events-375.png·-desktop.png(375 가로 넘침 0)
   착수: firemap-designer 11:29
   통과: [디자인 검수 요청] /privacy 이용 로그 값 표 11:29 (firemap-designer) — 기존 표 CSS 그대로(새 색·새 수치 0, th #fafafa·테두리 #e5e7eb 같은 부품), 375 캡처 가로 넘침 0·첫 열 30% 줄바꿈 단어 단위, 1280 한 줄 정렬 정상. 기존 부품만 쓴 법적 문서 표라 workflow '작은 변경=검수만'으로 심사 3명 비교판 생략. 흠 1(고치지 않아도 됨): 375에서 'utm_campaign'이 단어 중간에서 끊김(overflow-wrap:anywhere) — 글자 쪽은 editor-web 몫
@@ -62,6 +64,12 @@
 ## 열린 [지시]·[요청] — 오늘 근무 (자세한 근거는 archive/2026-10-02.md 참조)
 - [요청] **firemap-video-producer** (firemap-motion-designer 12:00, 기한 R-1 렌더 전) 의도: R-1 첫 23초를 '빈 판+?막대 4개 정지'에서 말마다 바뀌는 줌아웃으로. 부품 video/src/motion/ZoomOutOpen.tsx·미리보기 ep/R-1/motion_preview/open_zoom.mp4·심사 6.33(review_open.md) · 넣을지는 PD 판단 · 넣으면 ep/R-1/motion.md 3단계(nameAt 녹음 뒤 다시·case 'open' 교체·프레임 숫자 대조) · 안 넣어도 손해 없음
 - [기획 요청] 대출이자 계산기 /calc/loan(사장님 순서 ④ 10/31) 트랙:B · 담당 firemap-planner(본부장 경유) · 시한 14:27 · 근거 work/research/calc-competition/loan.md — 검증 통과(대출계산기 312,800·대출이자계산기 284,200), 엔진·대조 5건 dev 73fa470(부동산계산기.com 상환표 360회 일치). 이길 점 후보: ① 다 갚는 나이·"이 이자면 은퇴 몇 년" 연결(경쟁 3곳 다음 행동은 전부 대출 상품) ② 매달 더 갚기 입력 1칸(3억·4.5%·30년 +10만 → 43개월·3,409만원). 기획서 나오면 디자이너 시안 → product-dev 구현(10/31 공개 역산: 시안 10/20까지)
+  착수: firemap-planner 12:59 (운영실장)
+  완료: firemap-planner 13:01 — 기획서 work/research/plans/loan.md(우리만 다른 한 가지: 첫 숫자 '다 갚는 나이' + 매달 더 갚기 1칸, 20번 경로 R1·R4·R2·R6 채움, 예술가 검토 대기)
+- [예술가 요청] 대출이자 계산기 /calc/loan 트랙:B · 담당 firemap-artist · 시한 16:01 · 근거 work/research/plans/loan.md — 2장 '다 갚는 나이' 한 수 통과/반려 + 추천 한 수
+- [시안 요청] 대출이자 계산기 /calc/loan 375 한 화면 트랙:B · 담당 firemap-designer · 시한 10/20 · 근거 work/research/plans/loan.md 3장(숫자1 다 갚는 나이·행동1 은퇴 버튼·더 갚기 슬라이더) — 금감원·KB 등 미확인 2곳 375 캡처 비교판 먼저
+- [시안 요청] 대출이자 계산기 문구(결과 카드·더 갚기 줄·중도상환수수료 주석) 트랙:B · 담당 copywriter · 시한 10/20 · 근거 work/research/plans/loan.md 3·7장 — 권유 문구 금지
+- [시안 요청] 대출이자 계산기 계측(외부 방문·더 갚기 조작·은퇴 누름·공유)·R4/R2 utm 트랙:B · 담당 firemap-growth · 시한 10/20 · 근거 work/research/plans/loan.md 4·5장
 - [요청] **firemap-write** (firemap-audit 10/5 07:57, 기한 14:10 칸 전) 의도: 같은 날 같은 주제 반복 신호 줄이기. nhisprop1005(08:10)와 nhisrent1005(14:10)가 같은 설명·같은 예시(과표 3억→24등급 586점)를 쓴다 → nhisrent1005를 다른 날로 옮기거나(비축과 바꿈) 예시·도입을 바꾸고, gate_pkg에 '같은 날 칸끼리 facts 핵심 숫자·예시 겹침' 검사. 덤: 오늘 7칸 중 5칸이 '…월 얼마'로 끝남 → commaday 옆에 '같은 날 같은 끝말 ≥3' 검사 · 완료 기준: 검사가 오늘 칸 묶음에서 걸리는 것 확인 · 보고: decisions/log.md
   착수: firemap-write 08:58 (운영실장 2) — F3 + F4 22:10 TBD-D
   완료: firemap-write 09:02 — F3: slots 10/5 14:10 칸 nhisrent1005→bubyang1005(비축 교체, slot.txt 10/5 14, nhisrent는 비축으로 내림) + aitell.py sameday 검사(같은 날 숫자 핵심값 ≥3 겹침=gate가 막음·같은 끝말 ≥3칸=경고, 원 배치에서 586·211.5·7.19 겹침과 "얼마" 5칸 걸림 확인, 현재 배치는 숫자 0건·"얼마" 4칸 경고). F4(TBD-D·TBD-E)는 이번 회차 손 안 댐

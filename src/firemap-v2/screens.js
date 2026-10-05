@@ -25,6 +25,8 @@ export const screens = {
   severance:  { hash: '#severance',  title: '퇴직금 계산기',     back: 'menu' },
   unemployment: { hash: '#unemployment', title: '실업급여 계산기', back: 'menu' },
   salary:     { hash: '#salary',     title: '연봉 실수령 계산기', back: 'menu' },
+  // 대출이자 v1 — dev 시험 중. 메뉴·TOOL_PAGES·사이트맵 없음(문구 copywriter·editor-web 통과 뒤 /calc/loan 등록)
+  loan:       { hash: '#loan',       title: '대출이자 계산기',   back: 'menu' },
   news:       { hash: '#news',       title: '소식',              back: 'result' },
   wall:       { hash: '#wall',       title: '방명록',            back: 'result' },
   // 운영자 전용 — 메뉴·탭·사이트맵 어디에도 없다. ?ops=1 로 한 번 들어온 기기에서만 열린다.

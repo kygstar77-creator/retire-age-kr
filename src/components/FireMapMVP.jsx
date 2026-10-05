@@ -17,6 +17,7 @@ import SeveranceCalc from './firemap/SeveranceCalc.jsx';
 import UnemploymentCalc from './firemap/UnemploymentCalc.jsx';
 // 간이세액표(41KB)가 든 화면이라 따로 불러온다 — 다른 화면 첫 로딩을 무겁게 하지 않게.
 const SalaryCalc = lazy(() => import('./firemap/SalaryCalc.jsx'));
+const LoanCalc = lazy(() => import('./firemap/LoanCalc.jsx'));
 import { ForeignStockTaxCard, DividendCard, PensionEarlyClaimCard } from './firemap/TaxPensionModules.jsx';
 import Leaderboard from './firemap/Leaderboard.jsx';
 import CityExplorer from './firemap/CityExplorer.jsx';
@@ -253,6 +254,7 @@ export default function FireMapMVP() {
     severance: () => tool('severance', <SeveranceCalc inputs={inputs} onApply={applyPatch} onMove={setScreen} />),
     unemployment: () => tool('unemployment', <UnemploymentCalc inputs={inputs} onApply={applyPatch} onMove={setScreen} />),
     salary: () => tool('salary', <Suspense fallback={null}><SalaryCalc inputs={inputs} onApply={applyPatch} onMove={setScreen} /></Suspense>),
+    loan: () => tool('loan', <Suspense fallback={null}><LoanCalc inputs={inputs} onMove={setScreen} /></Suspense>),
     news: () => <News onBack={backOf('news')} />,
     wall: () => <Community onBack={backOf('wall')} onMove={setScreen} simulation={simulation} />,
     ops: () => <CafePoster onBack={backOf('ops')} />

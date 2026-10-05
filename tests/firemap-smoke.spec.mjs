@@ -211,6 +211,26 @@ test.describe('firemap smoke', () => {
     }
   });
 
+  test('loan v1 (#loan, dev): example values match engine, extra slider effect, goal line only with saved inputs', async ({ page }) => {
+    await seed(page, false);
+    await page.goto('/#loan');
+    const main = page.locator('main.fm-screen');
+    // 엔진 node 실측(design/loan/spec.md ②): 3억·4.5%·360개월 원리금균등, 지금 나이 35(예시)
+    await expect(main).toContainText('65세');
+    await expect(main).toContainText('1,520,056원');
+    await expect(main).toContainText('2억 4,722만원');
+    await expect(main).toContainText('예시');
+    await expect(main).toContainText('43개월 일찍');
+    await expect(main).toContainText('이자 3,408만원 덜');
+    await expect(main).not.toContainText('은퇴 목표'); // 저장값 없으면 은퇴 목표 줄 없음(예술가 조건 ②)
+  });
+
+  test('loan v1 with saved inputs: goal line from targetRetirementAge', async ({ page }) => {
+    await seed(page);
+    await page.goto('/#loan');
+    await expect(page.locator('main.fm-screen')).toContainText('은퇴 목표');
+  });
+
   test('salary take-home: hand-check A, crawler text is on screen, next step to fire', async ({ page }) => {
     const bodies = [];
     await page.addInitScript(() => { try { localStorage.setItem('fm_events_on', '1'); } catch { /* ignore */ } });

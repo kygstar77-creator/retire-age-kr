@@ -690,3 +690,24 @@ button.ds-cal__cell { cursor: pointer; }
   .ds-salary-v5 > * + * { margin-top: var(--ds-sp-2); }
 }
 @media (min-width: 1024px) { .ds-col-560 { max-width: 560px; margin-left: auto; margin-right: auto; } }
+
+/* ---------- 대출이자 v1 (#loan, design/loan/spec.md · 2026-10-05) — 연봉 v5 부품 그대로, 새 색 0 ---------- */
+.ds-nw { white-space: nowrap; }
+.ds-loan .ds-stat__label { display: inline-flex; align-items: center; gap: 6px; }
+.ds-loan__ex.ds-chip { min-height: 20px; padding: 0 8px; font-size: var(--ds-fs-micro); background: transparent; border-color: currentColor; color: inherit; opacity: .8; }
+.ds-loan__goal { border-top: 1px solid rgba(255,255,255,.16); padding-top: var(--ds-sp-2); margin-top: var(--ds-sp-2); }
+.ds-loan__out { margin: var(--ds-sp-2) 0 0; font-size: var(--ds-fs-body-sm); color: var(--ds-ink-2); font-variant-numeric: tabular-nums; }
+.ds-loan__out b { color: var(--ds-ink); }
+.ds-loan__share { display: block; margin-left: auto; margin-right: auto; padding: var(--ds-sp-2); }
+/* 더 갚기 슬라이더: 주황은 행동 1곳뿐 → 잉크 트랙·흰 손잡이 28px(spec ⑥) */
+.ds-loan__extra .ds-range input[type="range"] { height: 32px; }
+.ds-loan__extra .ds-range input[type="range"]::-webkit-slider-runnable-track { background: linear-gradient(90deg, var(--ds-ink) var(--value, 0%), var(--ds-line-strong) var(--value, 0%)); }
+.ds-loan__extra .ds-range input[type="range"]::-webkit-slider-thumb { width: 28px; height: 28px; margin-top: -11px; border-color: var(--ds-ink); }
+.ds-loan__extra .ds-range input[type="range"]::-moz-range-progress { background: var(--ds-ink); }
+.ds-loan__extra .ds-range input[type="range"]::-moz-range-thumb { width: 28px; height: 28px; border-color: var(--ds-ink); }
+/* 320: 버튼이 접힘선 아래(588/568)로 → 359 이하 여백 축소 규칙(spec ⑥)을 더 갚기 카드에도 */
+@media (max-width: 359px) {
+  .ds-loan__extra.ds-card { padding: var(--ds-sp-4); }
+  .ds-loan__extra .ds-range__value { padding: 4px 10px; }
+  .ds-loan__extra .ds-range__scale { display: none; } /* 0원·100만원 눈금 글자만 숨김(값은 위 칸에 보임) */
+}

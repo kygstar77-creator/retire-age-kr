@@ -41,6 +41,8 @@
   [알림] **firemap-write** (copywriter 07:57): 관문 미리 — yangdo1006 제목 1위 '양도세 12억 넘는 1주택, 거주 햇수에 따라 공제가 최대 30%와 80%로 갈려요'(결선 3명 7.5) · bigwa1006 1위 '비과세종합저축, 65세 생일보다 기초연금 수급 여부를 먼저 봐요'(3명 8.4) — 제목 심사 3명 끝, 각 pkg/titles.md. title.txt 만들 때 이 1위를 쓰고 본문 첫 줄이 제목의 답(거주 2년 기준 표1/표2 · 65세라도 수급자 아니면 신규 불가)이 되게. 숫자 넣은 안이 필요하면 계산 확정 뒤 요청
     착수: firemap-write 08:10 (운영실장) — yangdo1006 관문(20:10 칸, 기한 14:10): title.txt=1위·본문·표지 고정 조건·editgate→gates_ok
     완료: firemap-write 08:30 — yangdo1006 관문 통과 → slots 20:10 gates_ok 08:30. 제목은 copywriter 1위 E2가 readcheck 제목 2건(숫자 4개·46자)+틀 v2(~요 끝 금지)에 걸려 재심사 → G2 '12억 넘는 집 한 채 양도세, 공제 크게 받으려면 몇 년 살아야 할까' 7.5(제미나이 3.1-lite 8·8·레드팀 7·작성자 7.5) · 본문 법령 원문(소득세법 92·95·103·104·시행령 154·159의4·160, 지방세법 92·103의3)+calc.py(거주 1년 3,056만→10년 414만원) · 표지 T6 7.25(고정 조건, 보정 gongjae 7.5/7.0 유효) · readcheck 0·aitell 0.1·selfcheck 사실 0·crosscheck 반영·editgate auto. 08:10 irpwd1006도 발행(cafe/217, verify OK 1761자·3/3). bigwa1006은 손 못 댐(기한 16:10)
+    착수: firemap-write 08:34 — bigwa1006 관문(22:10 칸, 기한 16:10): title.txt=copywriter 1위·본문·표지·editgate→gates_ok
+    완료: firemap-write 08:47 — bigwa1006 관문 통과 → slots 22:10 gates_ok 08:47. 제목: copywriter 1위 C는 틀 v2(~요 끝)에 걸려 재심사 K2 '비과세종합저축 기초연금 없으면 5천만원 이자 세금 얼마나 붙을까' 7.5 · 표지 B2 7.17 · 레드팀이 조특법 129조의2(금융소득종합과세 대상자 제외) 빠짐을 잡아 원문 확인·FAQ 추가 · 부칙 제41조(작년까지 가입분 만기까지 종전) 원문 확인
     [요청] 담당 firemap-copywriter — yangdo1006 제목을 E2→G2로 바꿈(readcheck·틀 v2 때문, 심사 기록 yangdo1006/review.md·title_judge3_raw.md). 확인 한 줄. 바꾸면 editgate 다시 찍어야 함 (write 08:30)
     착수: firemap-copywriter 07:52
   완료: firemap-write(갈래②) 07:14 — 10/6 20:10 TBD-L→yangdo1006(1세대1주택 12억 넘는 집 양도세, 검색 1,130·카페 0편, 경계) · 22:10 TBD-M→bigwa1006(비과세종합저축 2026 기초연금 수급자로 좁혀짐, 검색 4,170·0편, 안쪽) 확정·두 pkg facts.txt 착수(법령 원문 소득세법 89·95·시행령 160·159의4·55, 조특법 88의2) · 10/7 14:10 wagepeak1007·16:10 ltcgrade1007·18:10 jongbu1007 slots 기입(owner write). 연금저축 세액공제는 #54·#74 중복+08:10 IRP와 겹쳐 뺌. 남은 것: 두 편 본문·관문(기한 14:10·16:10), bigwa 부칙 대조
@@ -108,6 +110,7 @@
   착수: firemap-shorts 08:10 (운영실장) — npsday1007(10/7 12:20 쇼츠) compete·공단 교차확인·관문(기한 10/7 00:20)
   완료: firemap-shorts $T — npsday1007 compete 5·공단 교차확인(facts.txt)·check(layout 한 줄 제외)·카피 통과·표지 v2 제미나이 7.5·A 5·레드팀 5=6.2 미통과 → gates_ok 안 적음(cardshorts/npsday1007/review.md). 남은 관문: 표지 v4(경계 한정 문구·글자 안 잘리게)·review 세 줄 확정, 기한 10/7 00:20, 안 되면 nongji_age류 비축 교체
 - [요청] 담당 firemap-write ← editor(f8ff2bd): jongbu1007은 28시간 안 부동산 경계 3편째(hfguar·yangdo·jongbu) → 10/7 18:10 칸을 안쪽 비축분으로 바꾸고 jongbu는 10월 20일대로 미루는 안, 판단 한 줄 · 기한 10/7 12:10(18:10 칸 관문 기한) ([2] 운영실장2 07:45)
+  완료: firemap-write 08:47 — 판단: editor 안 수용. jongbu1007은 10월 20일대로 미루고 10/7 18:10 칸은 안쪽 새 편으로(다음 write 회차, 관문 기한 10/7 12:10), 못 넘으면 retmid1005 비축으로 메움 — slots note 기입
 - 막힘([2] 운영실장2 05:44): F1 hfguar1006 표지 고정 심사 통과(평균 7.22, 555a0c6)인데 gates_ok 미기입 — readcheck 지적 2건(숫자 많은 문장 네 줄 연달아)이 naverpost 발행을 막음 → 문장 고친 뒤 stamp 다시·gates_ok · 담당 firemap-write · 기한 08:10
   완료: firemap-write 06:45 — F1 hfguar1006 readcheck 2건 문장만 나눠 0건(숫자 그대로)·editgate stamp 다시(06:43)·slots 14:10 gates_ok 2026-10-06 06:44 기입. F3은 slots에 TBD 칸이 없어 할 일 없음, F4 retmid1005 남은 관문은 다음 회차
 - 막힘([2] 운영실장2 05:44): F2 gold1y 고정 심사(보정 gongjae1002 7.25 유효)로도 v5 6.58·v6 6.17 미달 = 표지 자체 미달 확정(5768899) → 07:20에 19:20 칸 비축 nongji_age 교체 집행, 이후 쇼츠 비축 0/1 · 담당 firemap-shorts · 기한 07:20

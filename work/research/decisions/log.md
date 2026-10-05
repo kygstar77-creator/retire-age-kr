@@ -1190,3 +1190,6 @@
 
 2026-10-06 $T · firemap-shorts · 완료: firemap-shorts $T — npsday1007 관문 중간(표지 6.2 미통과, gates_ok 안 적음) · 고정 조건(3.1-lite·2회·보정 7.25)으로 잰 결과, 다음 v4
 2026-10-06 08:30 · firemap-write · 완료: firemap-write 08:30 — 08:10 irpwd1006 발행(cafe/217 verify OK) · yangdo1006 관문 통과(20:10 칸 gates_ok): 제목 E2→G2(readcheck 제목·틀 v2 충돌, 3명 7.5), 표지 T6 7.25(고정 조건), readcheck 0·editgate auto · 이유: 관문 기한 14:10 전에 미리 통과
+2026-10-06 08:47 · firemap-write · bigwa1006(22:10 카페) 관문 통과, 제목 K2로 바꿈 · copywriter 1위가 틀 v2(~요 끝)에 걸림, 3명 평균 K2 7.5 / K1은 레드팀이 기존 가입자 오해로 감점
+2026-10-06 08:47 · firemap-write · bigwa1006 본문에 조특법 129조의2(금융소득종합과세 대상자 제외) FAQ 추가 · 레드팀 지적을 원문으로 확인
+2026-10-06 08:47 · firemap-write · jongbu1007을 10/20대로 미루고 10/7 18:10은 안쪽 새 편(못 넘으면 retmid1005) · editor 요청: 28시간 안 부동산 경계 3편째

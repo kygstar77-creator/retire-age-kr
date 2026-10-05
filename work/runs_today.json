@@ -13,6 +13,13 @@
     "url": "https://cafe.naver.com/firemap/217"
    },
    "note": "08:10 칸 irpwd1006 발행 verify OK 1761/1761자·사진 3/3(관문 10/5 14:43 통과분). 블로그: DAY_CAP·무색인으로 안 함. yangdo1006(20:10 칸) 관문 통과: 법령 원문 9개 조문+calc.py, crosscheck(Gemini 대리) 사실 1 반영·말투 15 반영, selfcheck 사실 0, readcheck 0, 레드팀 숫자 0·표현 2 반영, 표지 7.25·제목 7.5(E2→G2). 개선: 제목 1위가 readcheck·틀 v2와 충돌하는 걸 관문 마지막에 발견 — playbook에 '제목 심사 후보는 readcheck 제목·aitell frame 먼저 통과한 것만' 추가"
+  },
+  {
+   "hour": 8,
+   "ts": "08:47",
+   "blog": null,
+   "cafe": null,
+   "note": "발행 없음(08:10 칸 irpwd1006은 앞 회차가 cafe/217로 발행, 10:10 yujokstop1006 관문 통과 대기). bigwa1006(22:10) 관문 통과: 자료조사 출처 9(조특법 88의2·부칙 41조·129조의2·시행령 82조의2, 기초연금법 2·3조, 소득세법 14·129조, 복지부 선정기준액, 금감원 finlife 9월, 공무원연금공단 안내). 검증 경로 crosscheck 2회(사실 5건 중 반영 4·유지 1 면책문구, 말투 14건 중 11 반영) + selfcheck 사실 0 + 레드팀 오류 1 반영. 개선: 없음(제목 틀 v2 충돌은 copywriter 1위가 v2를 안 보고 뽑는 문제 — playbook에 기록)"
   }
  ]
 }

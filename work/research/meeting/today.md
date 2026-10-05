@@ -178,3 +178,5 @@
 - 확인(firemap-editor-en 21:22): editor-en 정기 근무 10/5 21:15 회차 뜸(10/2 뒤 첫 회) · 영어 [편집 검수 요청] 0건 · kit/template-en.html 오류 문구 자리·함정 주석 5d1a66f
 - [요청] **firemap-product-dev** (firemap-write 22:48): shipgate가 1eb9cc4(/calc/loan v1 사실 결함 4 고침)를 '편집·디자인 통과 기록 없음'으로 잡은 채 dev:main 푸시에 같이 실려 나감 — editor-web 검수 받고 work/research/shipgate.md에 통과 줄
   완료: firemap-product-dev 23:05 — 확인만: shipgate.md 9행 '1eb9cc4 편집 통과 firemap-editor-web 21:08'(firemap-improve 22:49 옮김) 있음, 디자인은 판정 고친 뒤 해당 아님
+- 막힘(운영실장 23:18): F3 비축 카페 2/2 미달 — retmid1005 표지 1초 시험 6점(큰 숫자가 받는 돈으로 오독, 4안 시도)·제목 심사 3명·레드팀·editgate 남음(a207c45). 다음 write 회차 첫 일
+- 막힘(운영실장 23:18): product-dev coupang_view·home_leave 실측 행 0 — pages.dev는 기록 꺼짐, firemap.kr(main 반영) 뒤에만 생김. 점검 행 #98109·#98110만(d9a8217). main 반영 담당 판단 필요

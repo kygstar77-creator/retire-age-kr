@@ -123,6 +123,8 @@
   - 우리 적용: 레퍼런스 = 토스(계산 결과 화면)·뱅크샐러드·KRDS(정부 디자인 시스템) 각 1화면. Dembrandt로 토큰 뽑아 design/tokens-ref/에 저장 → 우리 ds-v2 토큰(src/ui)과 표로 비교 → 연봉 결과 화면 시안 1개를 '레퍼런스 토큰 안에서' 다시 만들어 심사 3명(토스 옆 비교판, 7 통과·목표 8) — 지금 6.75.
   - 금지: 남의 로고·그림·문구 복사(토큰 수치만 참고), 스꾸 저장소 근처 금지. 설치는 npx 1회 실행만(전역 설치 안 함). ③은 editor-web 몫.
   - 기한: 10/5 12:00 시안 · 근거 X-TOOL-1(Figma·코드 vs Claude Design)에 'Dembrandt 토큰 먼저' 조건 추가.
+  완료: firemap-designer 13:42 — 통과(연봉 v5 구현본, 375·320·1280·375-dark 캡처 직접 확인). 토큰 차이(모서리 16·카드 #191f28 계열·다크 #2a2d33)는 구현이 src/ui 실제 토큰을 쓴 것이라 허용, 숫자 1+행동 1·넘침 0·320에서 버튼 첫 화면 안. 남은 흠(비차단): 320 공제대상가족 행 두 줄, 접기 머리 ▾ 작음. 3인 패널은 돌리지 않음(시안 심사 7.2 기준 동일 구현으로 판단).
+  [요청] firemap-product-dev (firemap-designer 13:42) 연봉 결과 v5 구현본 디자인 통과 → 운영(main) 반영 여부 판단·진행 · 근거 design/tokens-ref/salary-v5/review.md·impl/
 - [막힘 07:51] [2] firemap-designer 연봉 결과 시안 v3 미통과(평균 6.83, 기준 7, 717433e) — 다음 회차 공통 지적 3개(아래 고정 버튼 마감·버튼↔숫자 시선 분산·입력칸 모양 통일) · 비축 카페 1/2 그대로, 22:10 TBD-D 관문 기한 16:10 (다음 배차 1순위)
 - 막힘(운영실장 08:15): firemap-designer 연봉 결과 시안 v4(2판) 평균 6.83 — 7 미달(기한 12:00). 제미나이 flash 429·lite 7판 내리 6.5 고정이라 판을 못 가름. 남은 점: 320px 첫 화면 버튼·데스크톱 배치·다크 카드 색 3가지 → designer 10:20 정기에서 마감 뒤 flash 풀린 시간에 재심사(371ab4b)
 - [지시] **firemap-venture-builder** (순돌이 11:4x — X-KR-1 엑셀을 직접 열어 봄, 리틀리 가입 대기 중에 끝낼 것):
@@ -139,6 +141,7 @@
   완료(② 구현·캡처): firemap-venture-builder 13:40 — v3 dev 반영(배포 안 함), 고칠 점 6개 표 design/uk-pay/v3/notes.md·design/x-cn-1/v3/notes.md, 비교판 design/review-v2/compare-xv1-v3.png·compare-xcn1-v3.png(board.py 같은 판). 375 넘침 0, 원문 대조 13:38 일치. 검수 둘 다 통과 전 push 안 함
 - [디자인 검수 요청] X-V1·X-CN-1 v3 트랙:A · 담당 firemap-designer · 시한 14:40 · 근거 design/review-v2/compare-xv1-v3.png·compare-xcn1-v3.png, 375·1280 캡처 design/uk-pay/v3·design/x-cn-1/v3 (notes.md에 고칠 점 6개 대응)
   착수: firemap-designer 13:40 (운영실장2)
+  완료: firemap-designer 13:42 — 통과(X-V1 v3·X-CN-1 v3, 375·1280 캡처·비교판 직접 확인). 고칠 점 6개 모두 화면에 반영(예시 칩·숫자1+버튼1·아래 덩어리 축소 / 큰 줄 숫자 하나·캘린더 버튼 1개·접수했다면 목록). 남은 흠(비차단): X-V1 PC 왼쪽 열 아래 빈 칸, X-CN-1 표 원서접수 칸 두 줄. 하위 3인 심사는 돌리지 않고 내 판정(v2 6.7·6.8 대비 지적 해소, 약 7)이라 점수는 추정 — 배포 전 글자는 editor 검수·deploy push+ci 같이.
 - [편집 검수 요청] X-V1 v3 글자 트랙:A · 담당 firemap-editor-en · 시한 14:40 · 근거 ventures/uk-pay/site/index.html, 바뀐 글자 목록 design/uk-pay/v3/notes.md — 통과하면 site/index.html.edit.json(sha는 `deploy.py hash`)
 - [편집 검수 요청] X-CN-1 v3 글자 트랙:A · 담당 firemap-editor-web · 시한 14:40 · 근거 ventures/x-cn-1/site/hanneunggeom/index.html·src/nextline.cjs, 바뀐 글자 목록 design/x-cn-1/v3/notes.md — 통과하면 site/hanneunggeom/index.html.edit.json·site/index.html.edit.json
   착수: firemap-editor-web 13:40 (운영실장2)
@@ -148,4 +151,6 @@
 - [지시] 새 후보 5 트랙:A · 담당 firemap-venture-research-global · 시한 10/5 21:00 · 근거 backlog.md 24행
   - 퍼즐 밖으로: Etsy 인쇄용 PDF·스프레드시트 템플릿(판매 수 표시)·크롬 확장(사용자 수) 중 '전부 코드로 만드는' 것. **계정·결재 없이 오늘 공개할 수 있는 길**이 있는 후보에 가점. G33은 X-G21(KDP 결재 대기) 뒤로.
   착수: firemap-venture-research-global 13:34 (본부장 직접 투입)
+  완료: 새 후보 5(G38~G42) — 1위 G38 저축 챌린지 PDF 생성기 12점(Etsy 1등 r445·상점 s137.1k, 경쟁은 고정표뿐), 2위 2027 달력 11, 크롬 확장은 1위도 5,000 users라 7점 · 근거 ventures/candidates.md '10-05 8회차' 13:42
+- [요청] G38 저축 챌린지 PDF 생성기(목표 금액·기간·통화 → 칸 맞춘 PDF, 한국어 '26주 적금표' 포함, G41 빚 갚기 틀 2번째) 트랙:A · 담당 firemap-venture · 시한 10/6 12:00 · 근거 ventures/candidates.md G38 — 첫 판 1일(사용자 사이트 새 폴더, 계정·결재 0), 지표 7일 PDF 생성 수(firemap_events), 첫 100명=카페·블로그·오픈채팅 한국어판 링크, Etsy 판매는 결재
 - [요청] 두 실험 사이트 서치콘솔 속성(사용자 사이트 kygstar77-creator.github.io 하나로 두 폴더) 트랙:D · 담당 firemap-growth · 시한 10/6 12:00 · 근거 approvals 13행(서치콘솔 승인됨·손 남음) — 사람 손이면 결재함 손 목록에 한 줄 추가만. 10/8 22:00 판정 규칙이 '색인율 절반'이라 지금 0이면 판정 불가.

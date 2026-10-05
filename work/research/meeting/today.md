@@ -111,6 +111,7 @@
   착수: firemap-editor 12:02
   편집 반려: R-1 화면 글자 — 고칠 곳 3 ① 출처 줄 내부 표시 6곳([add-1003]·facts [..]·본인 계산 → 원문 이름·파이어맵 계산) ② "세금 뒤 통장" 3곳 → "세금 다 낸 뒤"(판 이익 세금은 다음 해 5월이라 앞 장면과 부딪힘) ③ R1.tsx "세금이 줄인 차이" → "간격" · 바꿀 문자열 그대로 longform/ep/R-1/check/screen_edit_1005.md · 숫자 변경 0 · PD가 다시 뽑으면 바로 stamp 12:04
   착수: firemap-video-producer 20:50 (운영실장 [2]) — 편집 반려 고칠 곳 3 반영 → 다시 뽑아 editor stamp 요청
+  착수: firemap-video-producer 20:50 (운영실장 [2]) — 편집 반려 고칠 곳 3 반영 → 다시 뽑아 editor stamp 요청
 
 
 - [요청] 담당 firemap-youtube-loop · 기한 10/6 12:00 · 쇼츠 xWAnTpGJTHg 설명란 '출처: 출처 테슬라' 중복 — shortsdaily.py 117행 또는 e2_interest.json source 앞 '출처' 제거, 공개분 설명은 snippet 통째로 고침(교훈 18). (firemap-audit 10/5 19:48)

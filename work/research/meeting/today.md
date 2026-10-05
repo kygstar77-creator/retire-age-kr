@@ -11,7 +11,7 @@
 | F3 | audit 07:57 [요청] — 14:10 nhisrent1005가 08:10 #209와 같은 예시(과표 3억→24등급 586점) → 다른 날로 옮기거나 예시·도입 교체 + gate_pkg '같은 날 칸 facts 숫자 겹침'·'같은 끝말 ≥3' 검사 | C | firemap-write | 12:50(14:10 칸 전) | slots 14:10 칸 바뀜 또는 본문 교체·editgate 재도장 + 검사가 10/5 칸에서 걸리는 것 확인 + decisions/log.md 한 줄 | **대기**(요청 07:57 → 착수 0, 56분) |
 | F4 | 22:10 TBD-D 편 확정·facts.txt(관문 기한 16:10) + 10/6 08:10 TBD-E 후보(기한 10/6 02:10) | C | firemap-write | 12:50 | slots 22:10 item·facts.txt 원문 대조 · TBD-E 후보 한 줄(금 1천만원 길별 세후 = 이슈 레이더 1위 검토) | 완료: firemap-write 10:37 — 22:10 goldway1005 관문 통과·TBD-E 후보 기입 |
 | F5 | 카페→사이트 유입 확인: #209 조회 1·10/4~10/5 utm cafe 0 — 10/5 12시 중간 집계 + 카페 utm 진입(nhisprop1005) 수 | D | firemap-growth | 12:50 | growth/daily.md 10/5 12시 줄(utm cafe·youtube 진입 기기 수, 못 잰 칸 '확인 안 함') | 완료: firemap-growth 11:11 — daily.md 10/5 중간(00:00~11:10) 외부 세션 13/기기 10 · utm cafe 0(이틀째, #209 조회 3·#210 0) · youtube 2(DBCBWToNFCs) · 계산 완료 48(기기 4) · 쿠팡 0 · 서버 쓰기 POST 201 |
-| F6 | 연봉 결과 시안 v4 6.83 → 7 넘기기(designer 지시 기한 10/5 12:00) | D | firemap-designer | 12:00 | 심사 3명 평균 ≥7 줄 또는 막힌 이유 + 다음 판 | 진행 중(08:15 미완) |
+| F6 | 연봉 결과 시안 v4 6.83 → 7 넘기기(designer 지시 기한 10/5 12:00) | D | firemap-designer | 12:00 | 심사 3명 평균 ≥7 줄 또는 막힌 이유 + 다음 판 | 완료: firemap-designer 11:32 — v5 평균 7.2(flash 7.1·레드팀 7·디자이너 7.5) 통과, design/tokens-ref/salary-v5/review.md |
 - 점검 08:53: F1(nhisprop1005 발행) ✅(카페 API #209 '건강보험료 재산 점수 과세표준 3억이면 월 얼마나 붙을까' 조회 1, 본문 firemap.kr/?utm_source=cafe&utm_campaign=nhisprop1005 3곳, pkg.edit.json 있음, 커밋 1b924b5 — 10:10 nongji1005는 새 F1로) / F2(수익·방문 계측) ✅(growth/revenue.md 10/03·10/04·10/05 06:43 줄, daily.md 10/3 마감·10/4 마감·10/5 중간, 커밋 13a5067) / F3(카페 미노출 진단) ✅(decisions/log.md 911~914행 ①~④·결론, 제재 증거 없음·STOP_cafe 없음) / F4(R-1 목소리 없이 되는 단계) ✅(41ddc2c ep/R-1/check/runbook_1600.md·voice_check_1005am.txt, editor 06:30 script.md.edit.json 새 해시) / F5(카페 칸·비축) ✅(slots 18:10 ltc1005 gates_ok 07:14·20:10 npsfee1005 07:48, reserve.cafe 2 = imuigye1005·bubyang1005, 9f208d3)
 - ✅ 비율 5/5 = 100%
 - 수익 0원(growth/revenue.md 최신 10/05 06:43 — 애드센스 준비 중·쿠팡 0/0·유튜브 0원) · 사이트 세션 10/5 00:00~08:24 **9**(8기기, session_start·internal/bot/로컬 기기 제외, 마지막 기록 08:24) · 쿠팡 이벤트 0 · 운영 화면 firemap.kr 200(0.57s)
@@ -39,6 +39,8 @@
   완료: firemap-product-dev 11:21 — dev 75c15dc: /privacy 1장 표 아래 "이용 로그에 함께 남는 값" 표(7줄) — 코드(logEvent·gtag 중계)와 firemap_events 30일 키 대조. 사실 정정: 은퇴 계산 시작은 나이 **구간이 아니라 숫자**(start_calc.age), 유형테스트는 답 번호(qa) 그대로 → 그대로 적음. 운영은 아래 두 검수 통과 뒤
 - [편집 검수 요청] /privacy 이용 로그 값 표 트랙:D · 담당 firemap-editor-web · 시한 12:21 · 근거 public/privacy.html(dev 75c15dc) · aitell 6.3 통과
 - [디자인 검수 요청] /privacy 이용 로그 값 표(기존 표 스타일, 첫 열 30% 고정) 트랙:D · 담당 firemap-designer · 시한 12:21 · 근거 work/research/design/privacy-events/privacy-events-375.png·-desktop.png(375 가로 넘침 0)
+  착수: firemap-designer 11:29
+  통과: [디자인 검수 요청] /privacy 이용 로그 값 표 11:29 (firemap-designer) — 기존 표 CSS 그대로(새 색·새 수치 0, th #fafafa·테두리 #e5e7eb 같은 부품), 375 캡처 가로 넘침 0·첫 열 30% 줄바꿈 단어 단위, 1280 한 줄 정렬 정상. 기존 부품만 쓴 법적 문서 표라 workflow '작은 변경=검수만'으로 심사 3명 비교판 생략. 흠 1(고치지 않아도 됨): 375에서 'utm_campaign'이 단어 중간에서 끊김(overflow-wrap:anywhere) — 글자 쪽은 editor-web 몫
 - 실험: 오늘 판정일 도래 0건. 유튜브 동시 실험 3개 초과는 X-YT-FREQ(10/9) 판정 때 정리.
 
 ## ★ 증명 기준 — 10/15 (사장님 10/01 23:55: 4개 중 3개를 무료 도구로 달성한 뒤에만 유료 구독 결재)
@@ -111,6 +113,9 @@
 - 결재 대기: X-CN-1 저장소 exam-dates-kr(18행) · 쿠팡 인플루언서(14행) · 리틀리(15행, X-KR-1) · 새 유튜브 브랜드 계정(X-G19) · KDP 계정(X-G21, 지금 안 눌러도 됨) · 새 도메인(X-KR-2·3) · 구글 Stitch 약관 동의(0원) · E-1 옛 판은 이미 비공개(사장님 손 0). 반려: vidIQ 유료. 보류: 제미나이 이미지 유료. vidIQ 채널 연결 위젯은 사장님이 눌러야 함.
 - [지시] **firemap-designer**(10/4 21:05 재개 뒤 첫 일) · 협업 visual-designer·editor-web (순돌이 06:5x, 사장님이 보낸 영상 '노디 AI — 클로드로 디자인할 때 프롬프트부터 넣지 마세요' youtu.be/feqjgsQFJ5k, 2.4만 회):
   착수: firemap-designer 08:09 (운영실장) — 연봉 결과 시안 v3 6.83 → 재수정(기한 12:00)
+  착수: firemap-designer 11:29 — v5(320 여백·다크 2색·데스크톱 한 열) 재심사
+  완료: firemap-designer 11:32 — 연봉 결과 v5 심사 평균 **7.2 통과**(gemini-3-flash 7.1·레드팀 7·디자이너 7.5, lite 6.5는 판별력 없어 제외). 고친 것: 320 첫 화면 버튼(y=551/568)·다크 결과 카드 중립 #2a2d33·데스크톱 한 열 560(+r2 버튼 폭·머리글 정렬). 목표 8은 미달 — 다음 수 4개 review.md. 근거 design/tokens-ref/salary-v5/
+- [구현 요청] 연봉 결과 화면 v5(/calc/salary 결과 부분) 트랙:B · 담당 firemap-product-dev · 시한 10/5 17:32 · 근거 work/research/design/tokens-ref/salary-v5/preview.html·review.md(디자인 통과 7.2), 글자는 salary-v4/copy-edit.md(편집 통과) — 결과 숫자 카드→조건 요약 행 3개(누르면 편집)→공제·계산 방법 접기→주황 버튼 1개, 고정 바 없음, 359px 이하 행 48, 데스크톱 한 열 560. 토큰은 src/ui 것으로 옮길 때 다른 값이 나오면 [디자인 검수 요청]으로 캡처 375·320·1280·다크 보내기
   미완: firemap-designer 08:15 — 연봉 결과 v4(design/tokens-ref/salary-v4) 두 판 모두 6.83(제미나이 lite 6.5·레드팀 7·디자이너 7, flash 429 두 번) → **7 미통과**. 바꾼 것: 입력칸 → 조건 요약 행 3개(테두리/채움 왕복 끊음·'연봉' 중복 없어짐)·고정 바 해제·행 부품 하나·순서 결과→조건→공제→버튼. 남은 점: 320 첫 화면에 버튼 안 들어옴·데스크톱 Z자/빈 하단·다크 표면 3색(Claude 둘 공통), 단위 띄어쓰기 섞임(editor-web 몫). lite는 7판 내리 6.5(판별력 없음). 다음 수: 320 여백 48·다크 중립 2색·데스크톱 한 열 560 → flash 풀린 시간에 같은 판 재심사. 근거 salary-v4/review.md
   - 영상 방법 3단계: ① 내 상황에 맞는 좋은 레퍼런스 찾기 ② **Dembrandt**(오픈소스 MIT CLI, `npx dembrandt <주소>` — Playwright로 실제 화면에서 색·글꼴·간격·그림자·모서리를 토큰으로 뽑음, DESIGN.md·W3C 토큰 출력)로 레퍼런스의 디자인 시스템을 뽑아 Claude Design에 넣기 ③ AI 티 나는 한글 문장·줄바꿈 다듬기.
   - 우리 적용: 레퍼런스 = 토스(계산 결과 화면)·뱅크샐러드·KRDS(정부 디자인 시스템) 각 1화면. Dembrandt로 토큰 뽑아 design/tokens-ref/에 저장 → 우리 ds-v2 토큰(src/ui)과 표로 비교 → 연봉 결과 화면 시안 1개를 '레퍼런스 토큰 안에서' 다시 만들어 심사 3명(토스 옆 비교판, 7 통과·목표 8) — 지금 6.75.

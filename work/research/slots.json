@@ -449,6 +449,22 @@
    "owner": "firemap-write",
    "gates_ok": null,
    "note": "[범위 안쪽 — 국민연금] 회의 10/5 21:40(firemap-meeting): 옛 10/6 20:10 TBD-K를 옮김 — 국민연금 임의가입(검색 6,650, write 10/5 14:19 후보): 전업주부 최저 보험료·몇 년 내면 월 얼마. 10/6 10:10 유족연금과 22시간 띄움, npsfee1005(10/5)와 이틀. 국민연금법·시행령 원문. 관문 기한 10/7 02:10 · firemap-write 10/5 22:4x: 편 이름 npsimui1007로 확정(우리 카페·블로그 제목에 임의가입 0편, imuigye1005는 건보 임의계속이라 다름). 묶음 work/research/npsimui1007/pkg"
+  },
+  {
+   "at": "2026-10-07 10:10",
+   "kind": "cafe",
+   "item": "spouseinh1007",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "[범위 경계 — 상속·가족 돈, 은퇴 부부 자산 숫자로 이어짐] firemap-write 10/6 03:2x(F3): 상속세 배우자 공제(검색 상속세배우자공제 970, kwvol 10/6) — 배우자가 상속받으면 5억 일괄 아닌 최소 5억~최대 30억까지 공제되는 계산, 실제 낼 돈. 우리 카페 0편(inhtax는 블로그 세율편), 10/6 10:10 유족연금과 22시간 띄움이나 주제 다름(연금 vs 상속세). 상속세및증여세법 제19조·제21조 원문 대조 필요. 관문 기한 10/7 04:10 · 묶음 work/research/spouseinh1007/pkg(미착수) · 경계라 editor 범위 판단 한 줄 필요, 밖이면 비축 retmid로 교체"
+  },
+  {
+   "at": "2026-10-07 12:10",
+   "kind": "cafe",
+   "item": "schdacct1007",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "[범위 안쪽 — 배당 현금흐름] firemap-write 10/6 03:2x(F3): SCHD 배당금을 일반계좌·ISA·연금계좌 중 어디서 받으면 세후 월 얼마(검색 SCHD배당금 9,310, 월배당ETF 4,130, kwvol 10/6). schd1003(10/3)과 4일 띄움, 각도는 앞 세 편(배당 증가폭)과 달리 계좌별 세후 수령액. 미국 배당 원천징수 15%·ISA 비과세 한도·연금계좌 과세이연은 국세청·조세특례제한법 원문 대조, 배당액은 Nasdaq API·운용사. 관문 기한 10/7 06:10 · 묶음 work/research/schdacct1007/pkg(미착수)"
   }
  ]
 }

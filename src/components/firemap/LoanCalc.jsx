@@ -1,6 +1,6 @@
 // 대출이자 계산기(/calc/loan v1, dev만) — 시안 work/research/design/loan/spec.md(디자인 통과 7.0) · 기획 work/research/plans/loan.md.
-// 숫자1 = 다 갚는 나이(지금 나이 + ⌊상환 개월 ÷ 12⌋), 행동1 = 이 돈이면 몇 살에 은퇴?. 식은 src/utils/loanRepay.js(부동산계산기.com 상환표 360회 일치).
-// 화면 글자는 시안 가안 그대로 — copywriter 문구 시안(10/20)·editor-web 통과 전에는 검색 경로(TOOL_PAGES)에 올리지 않는다(#loan으로만 열림).
+// 숫자1 = 다 갚는 나이(지금 나이 + 상환 개월, 'N세 N개월'), 행동1 = 나는 몇 살에 은퇴할까?(v1은 대출 값을 넘기지 않아 '이 돈이면' 안 씀). 식은 src/utils/loanRepay.js(부동산계산기.com 상환표 360회 일치).
+// 화면 글자 = work/research/design/loan/titles.md 5장 확정안 + 6장 editor-web 통과 문장(10/5). TOOL_PAGES 등록은 별도 일(#loan으로만 열림).
 import { useEffect, useRef, useState } from 'react';
 import { Card, RangeField, StatHero, Button, Tabs, Notice, Icon, ListGroup, ListRow, Fold, Sheet, Chip, toast } from '../../ui/index.js';
 import { loanSchedule, compareMethods, extraEffect } from '../../utils/loanRepay.js';
@@ -20,6 +20,8 @@ const man = (v) => {
 const manShort = (v) => (v >= 1e4 ? `${(v / 1e4).toLocaleString('ko-KR')}만원` : exact(v));
 const METHODS = { equal: '원리금균등', principal: '원금균등', bullet: '만기일시' };
 const EXAMPLE = { age: 35, principal: 300000000, rate: 4.5, years: 30, method: 'equal' }; // 기획서 예시와 같은 값
+// 개월 → 'N년 N개월'(12개월 미만 'N개월', 딱 떨어지면 'N년') — titles.md 3-5
+const ym = (mo) => { const y = Math.floor(mo / 12); const m = mo % 12; return y ? `${y}년${m ? ` ${m}개월` : ''}` : `${m}개월`; };
 const extraBucket = (e) => [0, 100000, 300000, 500000, 1000000].filter((b) => e >= b).pop();
 
 export default function LoanCalc({ inputs, onMove }) {
@@ -37,6 +39,8 @@ export default function LoanCalc({ inputs, onMove }) {
   const base = loanSchedule(loan);
   const fx = extraEffect(loan, extra);
   const ageAt = (months) => age + Math.floor(months / 12);
+  // 끝나는 나이를 개월까지 — 내림(61세)과 '3년 7개월 일찍'이 4살 차로 읽히는 모순을 막는다(titles.md 5장 E9)
+  const ageYM = (months) => { const t = age * 12 + months; return `${Math.floor(t / 12)}세${t % 12 ? ` ${t % 12}개월` : ''}`; };
   const endAge = ageAt(base.months);
   const goal = Number(inputs?.targetRetirementAge) || 0;
   const isExample = !real && age === EXAMPLE.age && principal === EXAMPLE.principal && rate === EXAMPLE.rate && years === EXAMPLE.years && method === EXAMPLE.method;
@@ -56,7 +60,10 @@ export default function LoanCalc({ inputs, onMove }) {
   };
   const share = async () => {
     const url = 'https://firemap.kr/calc/loan';
-    const text = `다 갚는 나이 ${endAge}세${extra > 0 ? ` · 매달 ${manShort(extra)} 더 → ${ageAt(fx.withExtra.months)}세` : ''}`;
+    const more = extra > 0
+      ? (fx.monthsSaved > 0 ? ` → 매달 ${manShort(extra)} 더 갚으면 ${ageYM(fx.withExtra.months)}` : ` → 매달 ${manShort(extra)} 더 갚으면 이자 ${man(fx.interestSaved)} 덜`)
+      : '';
+    const text = `내 대출 다 갚는 나이 ${ageYM(base.months)}${more}`;
     try { logEvent('loan_share', {}); } catch { /* ignore */ }
     try {
       if (navigator.share) await navigator.share({ title: '대출이자 계산기', text, url });
@@ -65,14 +72,17 @@ export default function LoanCalc({ inputs, onMove }) {
   };
 
   const goalLine = real && goal > 0
-    ? (endAge > goal ? `은퇴 목표 ${goal}세 뒤에도 ${endAge - goal}년 더 갚아요` : `은퇴 목표 ${goal}세 전에 끝나요`)
+    ? (endAge > goal ? `은퇴 목표 ${goal}세 뒤에도 ${endAge - goal}년 더 갚아요` : endAge === goal ? `은퇴 목표 ${goal}세에 끝나요` : `은퇴 목표 ${goal}세 전에 끝나요`)
     : null;
   const label = <>다 갚는 나이{isExample && <Chip className="ds-loan__ex">예시</Chip>}</>;
 
+  // 결과 작은 줄: 원리금균등만 '매달'(원금균등·만기일시는 달마다 달라 '첫 달') — titles.md 5장
+  const payLabel = method === 'equal' ? '매달' : '첫 달';
+
   return (
     <div className="ds-col-560 ds-salary-v5 ds-loan">
-      <StatHero label={label} value={`${endAge}세`}
-        sub={<><span className="ds-nw">매달 {exact(base.firstPayment)}</span> · <span className="ds-nw">총이자 {man(base.totalInterest)}</span></>}>
+      <StatHero label={label} value={ageYM(base.months)}
+        sub={<><span className="ds-nw">{payLabel} {exact(base.firstPayment)}</span> · <span className="ds-nw">총이자 {man(base.totalInterest)}</span></>}>
         {goalLine && <p className="ds-hero__sub ds-loan__goal">{goalLine}</p>}
       </StatHero>
 
@@ -84,12 +94,14 @@ export default function LoanCalc({ inputs, onMove }) {
       <Card className="ds-loan__extra">
         <RangeField label="매달 더 갚기" value={extra} min={0} max={1000000} step={10000} format={(v) => (v ? manShort(v) : '0원')}
           onChange={(v) => { touched.current = true; setExtra(Math.round(v / 10000) * 10000); }} />
-        <p className="ds-loan__out">{extra > 0 && fx.monthsSaved >= 0
-          ? <><span className="ds-nw"><b>{ageAt(fx.withExtra.months)}세</b>에 끝나요</span> · <span className="ds-nw">{fx.monthsSaved}개월 일찍</span> · <span className="ds-nw">이자 {man(fx.interestSaved)} 덜</span></>
-          : '움직이면 다 갚는 나이가 바뀌어요'}</p>
+        <p className="ds-loan__out">{extra <= 0
+          ? '움직이면 다 갚는 나이가 바뀌어요'
+          : fx.monthsSaved === 0
+            ? <><span className="ds-nw">끝나는 나이는 같아요</span> · <span className="ds-nw">이자 {man(fx.interestSaved)} 덜</span></>
+            : <><span className="ds-nw"><b>{ageYM(fx.withExtra.months)}</b>에 끝나요</span> · <span className="ds-nw">{ym(fx.monthsSaved)} 일찍</span> · <span className="ds-nw">이자 {man(fx.interestSaved)} 덜</span></>}</p>
       </Card>
 
-      <Button variant="primary" size="lg" full onClick={toRetire}>이 돈이면 몇 살에 은퇴?</Button>
+      <Button variant="primary" size="lg" full onClick={toRetire}>나는 몇 살에 은퇴할까?</Button>
 
       <Fold title="상환 방식별 총이자">
         <ListGroup>
@@ -103,8 +115,8 @@ export default function LoanCalc({ inputs, onMove }) {
         </ListGroup>
       </Fold>
       <Fold title="계산 방법">
-        {/* [카피 몫] 문구 최종은 copywriter·editor-web */}
-        <p className="ds-caption">월 이자 = 남은 원금 × 연 금리 ÷ 12. 총이자는 상환표 매달 이자의 합이에요. 중도상환수수료는 빼고 계산해요.</p>
+        {/* titles.md 6장 editor-web 통과 문장 */}
+        <p className="ds-caption">월 이자 = 남은 원금 × 연 금리 ÷ 12. 총이자는 상환표 매달 이자의 합이에요. 나이는 지금 나이에 상환 기간을 더한 값이에요. 중도상환수수료는 넣지 않았어요 — 더 갚은 돈에는 약정에 따라 붙을 수 있어요.</p>
         <Notice tone="neutral" icon={<Icon name="alert" />} className="ds-mt-2">
           참고용{isExample ? ' · 예시 값' : ''} · 실제 대출 조건은 은행마다 달라요 · <a className="ds-link ds-link--muted" href="/disclaimer">면책 안내</a>
         </Notice>

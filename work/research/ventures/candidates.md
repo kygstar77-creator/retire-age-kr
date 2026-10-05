@@ -801,3 +801,49 @@
 | 5 | R35 타자연습 | 5 | 3 | 2 | 2 | 1 | 13 | 보류 |
 
 **교훈:** 기능 대조를 먼저 하니 검색수 1~3위(일몰 16만·한컴타자 24만·마라톤 9만)가 전부 이미 차 있었다. **큰 숫자보다 '1쪽에 작은 도구 사이트가 0개인 3만대'가 빈칸이다**(대형폐기물신고 36,410·자동차검사기간 1쪽). 다음 회차도 이 거름망(작은 사이트 0개)부터 건다.
+
+## 2026-10-05 13:34~13:4x 회차 — 해외 시장조사원 8회차 (본부장 13:32 직접 투입: 퍼즐 밖 새 후보 5개, G38~G42)
+조사 13:34~13:41 KST, 로그인 없음. **Etsy는 curl 403(807바이트) → 사용자 크롬(claude-in-chrome)에서 검색·상품 화면을 같은 출처 fetch로 읽음.** 표시 지역이 'Etsy South Korea'라 **가격은 USD 환산·할인 적용가**(원래 가격 아님). Etsy 검색 결과 수는 '1,000+ items'로만 나와 정확한 수 **확인 안 함**. 상품별 판매 수는 Etsy가 공개하지 않음 → 대신 **상품 리뷰 수(r)·상점 누적 판매(s)·'In N carts'·Bestseller 표시**를 원문 값으로 적음. 'Listed on'은 갱신일이라 출시일 아님. 크롬 웹스토어는 curl(데스크톱 UA)로 상세 화면 'N users' 원문 값.
+- 정책 원문(13:3x): Etsy Creativity Standards "Sellers must disclose within their listing description if an item is created with the use of AI." · 디지털 다운로드는 'Designed by a seller'로 허용 [etsy.com/legal/creativity] · 수수료 "listing fee of $0.20 USD for each item" · "transaction fee of 6.5%" [etsy.com/legal/fees] — 신규 판매자 설정비·한국 판매자 가입 조건은 **확인 안 함**. 크롬 웹스토어 "pay a one-time registration fee"(금액 문서에 없음, 확인 안 함) [developer.chrome.com/docs/webstore/register] · "An extension must have a single purpose that is narrow and easy to understand." [quality-guidelines] · "submit multiple extensions that provide duplicate experiences or functionality" 금지 [spam-and-abuse].
+- **결재 없는 공개 길(공통):** 사용자 사이트 kygstar77-creator.github.io(이미 공개, 폴더 2개 운영 중)에 새 폴더 1개 = 계정·결재 0, 오늘 공개 가능. Etsy·크롬 웹스토어는 둘 다 계정·등록비 = 결재 필요. (사이트 한도 2 꽉 참은 본부장 판단 — 이 칸은 '사이트'가 아니라 **PDF 생성기 1쪽**으로 제안.)
+
+### G38. 저축 챌린지 인쇄용 PDF '내 금액 생성기'(100 envelope·26/52주·₩/$/£) — **12점, 1위**
+- 수요·돈 [Etsy 'savings challenge printable'·'100 envelope challenge printable' 13:3x, 상품 화면]: 'Money Savings challenges mega bundle' $9.11 **r445 · 상점 s42.3k · 20+ carts · Bestseller** (L/1660474742) · 'Savings Challenge Tracker Bundle' $2.20 r121 s55.5k 20+ carts Bestseller (L/1777933791) · '100 envelope challenge kit' $2.64 r61 **s137.1k** (L/1087950363) · '100 Envelope Challenge Printable' $1.52 r130 s11.5k (L/1379830470) · '20k Savings Challenge House' $2.20 r60 s4.4k.
+- 경쟁 1등: https://www.etsy.com/listing/1660474742 (r445, $9.11 묶음). 무료 쪽 1쪽(웹 검색 13:3x, US): 101planners.com/savings-tracker · mapleplanners.com · printblame.com/finance/100-envelope-challenges(5,050·10,100·20,200·50,500 고정 금액판).
+- **우리만 다른 한 가지:** 경쟁은 전부 '정해진 금액표 PDF'. 우리는 **목표 금액·기간·통화를 넣으면 칸 금액이 맞춰진 PDF가 바로 나오는 생성기**(브라우저 안 jsPDF, 서버 0). 한국어판 '26주 적금 챌린지 표'도 같은 코드.
+- 수익 구조: 무료 생성기(사용자 사이트) → 결재 나면 같은 PDF 묶음을 Etsy($2~9 구간)·크몽에. 생성기 자체 광고 수익은 github.io 하위 주소 애드센스 가능 여부 **확인 안 함**.
+- AI 단독: 100% 코드(표 그리기·합계 검산). 사람 손 0(주문 제작 아님, 자동 생성).
+- 제작 일수: 1일(생성기 1쪽 + 고정 PDF 4종).
+- 위험: Etsy 가격 바닥 $1~2대(경쟁 과다) · 금융 권유 아님(저축 기록표) · Etsy 올리면 AI 표시 문구 필요(코드 생성이라 해당 여부 애매 → 표시하는 쪽으로).
+- 첫 100명 길: **파이어맵 기존 채널(네이버 카페·블로그 자동 발행·카톡 오픈채팅)에 한국어판 링크** — 새 계정 0, 사람 손 0(자동 발행 파이프라인). 영어판은 Pinterest가 본 무대이나 계정 = 결재.
+- 결재: 오늘 공개 0건. Etsy 판매는 Etsy 계정(결재).
+
+### G39. 2027 인쇄용 달력·월간 플래너 PDF 묶음 — 11점, 시즌(10~1월)
+- 수요·돈 [Etsy '2027 printable calendar' 13:3x]: '2027 Monthly Planner Printable Minimalist Landscape' $2.07 **Bestseller · 20+ carts · r8 · 상점 s62k** (L/4540958266) · '2027 Calendar Printable, Monthly Planner Landscape' $1.54 Bestseller 20+ carts r11 s22.2k (L/4387445515) · '2027 … Fillable Calendar' $2.66 Bestseller 20+ carts r13 s10.8k (L/4451173715) · '2027 Editable … Canva' $1.93 20+ carts r1 s1.3k. → 1쪽 상위 4개 전부 'In 20+ carts', 지금이 수요 시작.
+- 경쟁 1등: https://www.etsy.com/listing/4540958266. 무료 쪽 1쪽: calendarlabs.com/2027-pdf-calendar · calendarpedia.com(21종) · worldofprintables.com(160종) · generalblue.com — **무료 과포화**.
+- 수익: Etsy만 의미 있음(무료 페이지는 발견 거의 불가). AI 단독: 100% 코드(날짜·공휴일 표). 제작 1일. 위험: 공휴일 오류 = 1점 리뷰, 가격 $1.5~3, 시즌 지나면 0. 첫 100명: Etsy 검색 자체(계정 결재 필요). 결재 없는 길: 무료 페이지는 가능하나 유입 근거 없음.
+
+### G40. 큰 글씨 혈압·약 복용 기록지 PDF — 10점
+- 수요·돈 [Etsy 'blood pressure log printable' 13:3x]: 'Blood Pressure Log Editable' $1.09 **Bestseller 20+ carts r77 s77.3k** (L/1363407525) · $1.54 13 carts r37 s22.2k · $1.84 Bestseller 20+ carts r13 s1.8k · $1.62 7 carts s37.8k. 'medication tracker printable' 1쪽 Bestseller 있음(세부 잘림 — 확인 안 함).
+- 경쟁 1등: https://www.etsy.com/listing/1363407525. 무료 쪽: 101planners · vertex42 · **printabletoolbox.com '큰 글씨 기본'** · freebplog.com · cardilog.app — 무료 과포화, '큰 글씨'도 이미 있음.
+- AI 단독: 100% 코드. 제작 0.5일. 위험: 건강 수치 해석 문구 넣으면 의료 조언 → 빈 기록표만. 수익 $1대. 첫 100명: 길 없음(무료 경쟁 다수). 결재 없는 공개: 가능.
+
+### G41. 빚 갚기 추적표 PDF(색칠형·눈덩이식) — 10점, G38 생성기 2번째 틀
+- 수요·돈 [Etsy 'debt payoff tracker printable' 13:3x]: 'Debt Payment Tracker' $1.79 In 14 carts r51 **상점 s196.6k** (L/1287504196) · 'Debt Challenge - PRINTABLE' $1.19 r42 **s420.9k** (L/1662596830) · $1.53 20+ carts r27 s43.4k · $1.09 20 carts r15 s47.4k. 상품 리뷰는 15~51로 G38보다 작음.
+- 경쟁 1등: https://www.etsy.com/listing/1287504196. 차이: G38과 같은 '내 빚 금액 넣으면 칸이 맞춰지는' 생성기. AI 단독·1일·결재 0 동일. 위험: 대출 권유·상환 순서 '추천' 문구 금지(기록표만). 첫 100명: G38과 같은 채널. → **단독 실험 말고 G38에 틀 하나로 붙임.**
+- 기존 후보 근거 보탬(G2 영어 FIRE 시트): Etsy 'fire calculator spreadsheet' 13:3x 1쪽 FIRE 상품 r0~1(s0, s18.8k 상점 r1) — **Etsy에서 FIRE 시트 수요 약함**, 1쪽 Bestseller는 일반 'Paycheck Budget Spreadsheet' $0.76 r72 s25k.
+
+### G42. 크롬 확장 '가격 → 일한 시간' 변환(Time is money류) — 7점
+- 수요 [chromewebstore curl 13:3x, 'time is money' 9개 상세]: 1위 'Time Is Money' **5,000 users, 3.8(92평)**(ooppbnomdcjmoepangldchpmjhkeendl, 2025-05 갱신) · 2위 1,000 users 3.9(22평)(dmdomffmhgdpmnnlikklieapbbaegkfm) · 나머지 3~28 users. 비교: 'unit price' 1위 Amazon Unit Price 1,000 users · Unit Price Shopper 272 users 4.9(83평) · 'subscription tracker' 1위 276 users · 'compound interest' 1위 275 users · 'life in weeks' 1위 408 users · 'retirement countdown' 20 users. (대조: 'pomodoro' Focus To-Do 500,000 users.)
+- 경쟁 1등: https://chromewebstore.google.com/detail/ooppbnomdcjmoepangldchpmjhkeendl. **돈·생활 계산 확장은 1위가 5천 명 이하** → ExtensionPay 유료 전환해도 월 수십 달러 수준(G16 근거와 같음).
+- AI 단독: 100% 코드, 0.5~1일. 위험: 쇼핑몰 DOM 바뀌면 고장(운영 손), 등록비 결재, 단일 목적 정책. 결재 없는 공개: GitHub 공개 저장소(압축 해제 설치)는 가능하나 사용자 유입 사실상 0. 첫 100명 길 없음.
+
+### 이번 회차 점수(수요 × 유입 자급 × AI 단독 × 첫 판, 각 1~3 + **결재 없이 오늘 공개 +1**)
+| 후보 | 수요 | 유입 자급 | AI 단독 | 첫 판 | 무결재 | 합 | 비고 |
+|---|---|---|---|---|---|---|---|
+| G38 저축 챌린지 PDF 생성기 | 3 | 2 | 3 | 3 | +1 | **12** | Etsy r445·s137.1k, 경쟁은 고정표·우리는 생성기, 한국어판 첫 100명=기존 채널 |
+| G39 2027 달력 PDF | 3 | 1 | 3 | 3 | +1 | 11 | 1쪽 4개 20+ carts, 무료 과포화·Etsy만 돈 |
+| G40 큰 글씨 혈압 기록지 | 2 | 1 | 3 | 3 | +1 | 10 | s77.3k r77, 무료 '큰 글씨' 이미 있음 |
+| G41 빚 갚기 추적표 | 2 | 1 | 3 | 3 | +1 | 10 | G38 생성기 2번째 틀로 합침 |
+| G42 크롬 '가격→일한 시간' | 1 | 1 | 3 | 2 | 0 | 7 | 1위 5,000 users, 등록비 결재 |
+**교훈:** Etsy 인쇄물은 가격 바닥이 $1~2(한국 지역 환산 할인가 기준)이고 상위 상점 누적 판매가 수만~40만이라 '수요는 확실·차별은 없음'. 무료 PDF 쪽은 101planners 등이 이미 1쪽을 차지 → **고정 PDF로는 못 이김, '내 숫자를 넣으면 맞춰지는 생성기'가 유일한 차이.** 금융 계산 크롬 확장은 1위도 5천 명 이하라 돈 안 됨.

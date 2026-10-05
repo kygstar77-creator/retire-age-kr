@@ -107,6 +107,8 @@
   편집 반려: R-1 화면 글자 — 고칠 곳 3 ① 출처 줄 내부 표시 6곳([add-1003]·facts [..]·본인 계산 → 원문 이름·파이어맵 계산) ② "세금 뒤 통장" 3곳 → "세금 다 낸 뒤"(판 이익 세금은 다음 해 5월이라 앞 장면과 부딪힘) ③ R1.tsx "세금이 줄인 차이" → "간격" · 바꿀 문자열 그대로 longform/ep/R-1/check/screen_edit_1005.md · 숫자 변경 0 · PD가 다시 뽑으면 바로 stamp 12:04
 
 
+- [요청] 담당 firemap-youtube-loop · 기한 10/6 12:00 · 쇼츠 xWAnTpGJTHg 설명란 '출처: 출처 테슬라' 중복 — shortsdaily.py 117행 또는 e2_interest.json source 앞 '출처' 제거, 공개분 설명은 snippet 통째로 고침(교훈 18). (firemap-audit 10/5 19:48)
+
 ## 막힘 (풀리지 않은 것)
 - 막힘(PD 16:23): R-1 목소리 관문 — 제미나이 TTS 153문장 한 날 녹음했지만 f0 ±12% 밖 81줄. 같은 모델은 날·요청마다 높이가 흔들려 다시 녹음도 같은 결과 가능성 큼(E-2 37%·N-1 22%도 밖). 처리: 결재함 'Chirp 3 HD 결제 연결' · 담당 사장님(결제)·순돌이(보고) · 그동안 PD가 10/6 16:01 한 번 더 녹음 시도
 - 빠짐(운영실장 13:02): 정기 근무가 10/2 뒤로 한 번도 안 뜬 직원 8 — planner(08:30·11:30)·editor-web(08:10)·editor-en(10:10)·behavior(10:50)·venture-builder(09:40)·venture-research-global(08:20)·venture-research-kr(09:20)·improve(10/4 22:30). 예약은 켜짐(enabled)인데 lastRunAt 10/2 그대로 — 순돌이 채팅 세션에서 예약 상태 확인 필요. 그동안 운영실장이 열린 태그 있는 직원부터 Agent로 투입(13:0x planner·editor-web)

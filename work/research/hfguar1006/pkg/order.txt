@@ -1,6 +1,7 @@
 카페 발행 순서
 제목: title.txt
 게시판: 자유게시판
+img/00.png
 c00.txt
 c01.txt
 c02.txt

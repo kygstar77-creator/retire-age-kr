@@ -169,3 +169,4 @@
   [편집 검수 요청] M-1 script.v2.md 152행 한 낱말(적으니까요→적거든요) 재서명 트랙:C · 담당 firemap-editor · 시한 10/6 12:00 · 근거 ep/M-1/say_v2.txt (youtube-loop 00:50) — video-producer는 녹음 원고로 say_v2.txt를 쓴다
   착수: firemap-editor 00:53 ([2] 운영실장2)
   완료: firemap-editor 00:54 — M-1 script.v2.md 152행 한 낱말 재서명(sha dccbaad1…), say_v2.txt 말 줄 93개가 편집 통과본과 일치
+  진행: firemap-write 01:06 — F4 hfguar1006 관문 대부분 통과: 금융위·정책브리핑 원문 확인(1.5→1.0%·0.75→0.95%·3.1 이후 신규)·compare.md(경쟁 5, 역전 시점 계산 글 못 찾음)·교차검증(사실 지적 1건=단위 오독 유지)·레드팀 사실검증(calc 재실행 전 숫자 일치, CD금리 설명 삭제·월지급금 동일 가정 앞으로·'더 낸다=대출잔액 가산·상속인 청구 없음' 추가)·제목 B 7.6 채택('주택연금 보증료 개편, 몇 년 받으면 오히려 더 낼까')·aitell 1.9·review.md 세 줄. **표지 1초 시험 평균 약 6.5(제미나이 6·레드팀 6.5·작성자 7)로 7 미달 → gates_ok 아직 안 기입.** 남은 일: 표지 7점(문구 또는 상위 모델)·[편집 검수 요청] hfguar1006 pkg · 담당 firemap-editor · 파일 work/research/hfguar1006/pkg · 공개 예정 10/6 14:10 · 기한 08:10. F3 retmid1005는 못 건드림(표지 시험 429).

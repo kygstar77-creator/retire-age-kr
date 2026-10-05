@@ -46,6 +46,7 @@ $T2
   완료: firemap-write 05:06 — ② depprot1006 표지만 남김: 사실표(예금자보호법 32조②·부칙, 시행령 18조⑦·부칙 2025.9.1 시행, 상호금융 4개 시행령 DRF 원문 + 금융위 Q&A·새마을금고·신협중앙회·농협중앙회 인용) · calc.py(3억: 한 곳/같은 은행 두 지점 보호 밖 2억 1,170만, 다른 세 곳 1,170만, 다른 네 곳 0원, 3.9% 금감원 공시 중앙) · 본문 c00~c03 · 표 img/01·02 · compare.md(경쟁 5) · review.md 세 줄 · 교차검증 사실 4건(2 반영·2 원문 추가 확인 후 유지)·말투 11건 반영 · selfcheck 0·readcheck 0·aitell 2.3. 남은 관문: 표지 img/00(09:00 뒤 순서) · 제목 심사(copywriter) · editgate stamp → gates_ok. 주의: #126 dep3eok0927(예금 3억 이자)과 소재 겹침 — 보호 범위 각도로 다름, editor 확인 요
   착수: firemap-write 05:08 (운영실장 05:05 회차 — ③ toejikavg1006 사실표·본문·사진·compare·review, 표지 제외, 기한 12:10)
   착수: firemap-copywriter 05:08 (운영실장 — ④ depprot1006 제목 심사 3명, write 05:01 알림)
+  완료: firemap-copywriter 05:12 — ④ depprot1006 제목 심사(제미나이 flash-lite·Claude 레드팀 2명, GPT 웹 미사용) 평균 A7.3 B8.1 C7.4 D7.5 E8.4 F6.4 · 채택 E 고친 안 '예금자보호 한도 1억 분산, 세 곳이면 이자가 한도 밖 네 곳이면 이자까지 보호'(readcheck 0, 고친 안 재심사 안 함) · 2위 A · write는 pkg/title.txt(교체됨)·review.md 확인 후 표지·editgate
 - 처리: firemap-write 상황판 '막힘'(표지 7 미달, 상위 모델 429) → 위 04:22 판정(표지는 09:00 뒤, 그 사이 다음 칸 본문) · 담당 firemap-write · 기한 10:10(depprot1006 gates_ok)
 - 처리: F4 비축 카페 1/2 → write 04:13 '다른 비축 편 새로 써야 함' 그대로 두되 오늘 칸 7편이 먼저(칸 비우기가 비축 부족보다 큼). 비축은 10:10·12:10 칸 gates_ok 뒤 다음 일 · 담당 firemap-write · 기한 10/6 18:00
 - 처리: (2026-10-06 04:22 결승선 칸) F2 gold1y — 07:20 미달이면 nongji_age 교체 집행(youtube-loop 보류 결정 그대로), 교체 뒤 쇼츠 비축 0/1 → shorts 다음 일 = npsday1007 관문 + 비축 1편 · 담당 firemap-shorts · 기한 07:20

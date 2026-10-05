@@ -141,7 +141,7 @@
 [scenes.7.key] premium
 [scenes.7.title] 선을 넘으면 붙는 몫
 [scenes.7.sub] 월 100만원을 손에 쥐려면 — 미국 상장 예시
-[scenes.7.source] 국민건강보험법 시행규칙 제44조 · 시행령 제41조 · 국민건강보험공단(보험료율 7.19%·장기요양) · calc_out
+[scenes.7.source] 국민건강보험법 시행규칙 제44조 · 시행령 제41조 · 국민건강보험공단(보험료율 7.19%·장기요양) · 파이어맵 계산
 [scenes.7.chapter] 2장
 [scenes.7.data.head] 1년 · 단위 원
 [scenes.7.data.rows.0.0] 연 세전 분배
@@ -187,7 +187,7 @@
 [scenes.9.key] flow
 [scenes.9.title] 거꾸로 계산하는 법
 [scenes.9.sub] 오른쪽 목표에서 왼쪽 필요한 돈으로
-[scenes.9.source] calc_out(파이어맵 계산) · 건보·세율은 2장
+[scenes.9.source] 파이어맵 계산 · 세율 1장 · 건보료 2장
 [scenes.9.chapter] 3장
 [scenes.9.data.boxes.0.0] 필요한 돈
 [scenes.9.data.boxes.0.1] = 연 세전 분배 ÷ 분배율
@@ -265,7 +265,7 @@
 [scenes.14.key] three
 [scenes.14.title] 월 100만원에 필요한 돈 — 평균 기준
 [scenes.14.sub] 세금·건보료 뗀 뒤 · 지난 1년 평균 분배
-[scenes.14.source] calc_out(파이어맵 계산) · 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스)
+[scenes.14.source] 파이어맵 계산 · 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스)
 [scenes.14.chapter] 3장
 [scenes.14.data.bars.0.0] JEPQ
 [scenes.14.data.bars.0.2] 1.38억원
@@ -338,7 +338,7 @@
 [scenes.17.key] pair
 [scenes.17.title] 평균으로 잴까, 가장 적은 달로 잴까
 [scenes.17.sub] 월 100만원에 필요한 돈 · 억원
-[scenes.17.source] calc_out(파이어맵 계산) · 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스)
+[scenes.17.source] 파이어맵 계산 · 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스)
 [scenes.17.chapter] 4장
 [scenes.17.data.groups.0.0] JEPQ
 [scenes.17.data.groups.0.1.0.1] 1.38억원
@@ -388,7 +388,7 @@
 [scenes.19.key] table
 [scenes.19.title] 월 200만원 · 300만원이면
 [scenes.19.sub] 모두 최소값 — 2,000만원 넘는 추가 세금은 사람마다 달라 빼고 계산
-[scenes.19.source] calc_out(파이어맵 계산) · 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스)
+[scenes.19.source] 파이어맵 계산 · 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스)
 [scenes.19.chapter] 5장
 [scenes.19.data.cols.0] JEPQ
 [scenes.19.data.cols.1] SCHD
@@ -469,7 +469,7 @@
 [scenes.22.key] sum
 [scenes.22.title] 정리
 [scenes.22.sub] 월 100만원 · 세금·건보료 뗀 뒤 · 2026-10-02 기준
-[scenes.22.source] calc_out(파이어맵 계산) · 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스) · 과거 값 · 미래 보장 아님 · 투자 권유 아님
+[scenes.22.source] 파이어맵 계산 · 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스) · 과거 값 · 미래 보장 아님 · 투자 권유 아님
 [scenes.22.chapter] 7장
 [scenes.22.data.cols.0] JEPQ
 [scenes.22.data.cols.1] SCHD

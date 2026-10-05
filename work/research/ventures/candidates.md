@@ -1028,3 +1028,50 @@
 | 5 | R45 착오송금 반환 | 사이트 | 2 | 1 | 4 | 2 | 1 | 10 | 0 / 0 | 보류 |
 
 **교훈:** ① 구글 실제 1쪽은 앱 내 브라우저로 바로 열린다 — WebSearch(미국) 대체는 이제 쓰지 않는다. 같은 말을 실제 구글로 보니 '가족간 차용증 이자 계산'도 계산기 0(7회차 대체 결과와 같은 결론). ② '계산기'라는 말이 붙은 검색어(법정상속분·양육비·장례비용·유류분)는 이미 누가 만들어 뒀다. 남은 빈칸은 **'기한·날짜'처럼 글이 문장으로만 설명하는 숫자**(R41)였다. ③ 비사이트 2개(R42·R43)는 각각 플랫폼 수익 정책·낮은 판매지수로 막혔다 — 비사이트 후보는 '돈 내는 증거'를 먼저 재고 후보로 올린다.
+
+## 2026-10-05 18:00~18:25 회차 — 해외 시장조사원 10회차 (정기: backlog ② G44 실측 + ③ '무료 생성기 0인 Etsy 인쇄물' 거름망, G48~G52)
+조사 18:00~18:25 KST, 로그인 없음. Etsy는 사용자 크롬 같은 출처 fetch(검색 1쪽 → 상품 화면 JSON-LD 리뷰 수·상점 sales·'In N carts', 표시 지역 South Korea, USD 환산가). 무료 생성기 유무는 WebSearch 1쪽. 아마존 검색은 'Something went wrong'으로 막힘 → **확인 안 함**.
+- G44 보강은 ventures/g44/compare.md — **AI 음성 명시 채널(MaruMaru Korean)이 7개월 5,150명·60분 묶음 9.9만회** → 사람 목소리 없이 된다. 10분 쪼개기는 낮고 30~60분 묶음이 터짐.
+- **거름망 결과(교훈 먼저)**: 아이 인쇄물은 '무료 생성기 0' 틈이 거의 없음 — chore chart(chorechartlab·marysprintables·familygpt·betweenusparents·101planners), name tracing(nametrace.me 등 9곳), reading log(bookroo·webby.tools·printablereadinglog 등) 전부 무료 생성기 5곳+ → **제외**. 대신 **값이 $15~40인 '이야기·퍼즐 묶음'(방탈출·추리 파티)**은 무료판이 있어도 팔림 → 생성기 대신 '완성도' 경쟁.
+
+### G48. 인쇄용 방탈출 게임 키트(Printable escape room, 아이·가족, 할로윈·크리스마스·생일) — **10점, 1위**
+- 수요·돈 [Etsy 'printable escape room kids' 18:1x, 1,000+ items]: 'Monster Hotel Halloween Escape Room for Kids' **$18.25 · r2,344(4.9) · 상점 LockPaperEscape 29.1k sales** (L/4581566832) · 'Mystery Manor Printable Escape Room — Ages 12+' **$15.39 r306** 상점 33.9k (L/1064767676) · 'Spy Escape Room' r16 상점 13.8k. ['christmas escape room printable']: 'Santa is Missing' **$19.33 r237** 상점 MysteryLocks 33.1k 7 carts (L/892509554) · 'Christmas themed escape room' $18.25 r153 8 carts (L/758289885, LockPaperEscape) · 'Heist on the Christmas Express' r74 **In 20 carts** (L/1837346873).
+- 값: 인쇄물 평균($1~3)의 **6~10배**. 1등 상품 설명 원문 요지: 퍼즐 10개 + 이야기 + 'print-and-play 또는 DIY 자물쇠 키트' 두 방식.
+- 경쟁 1등: https://www.etsy.com/listing/4581566832 · 무료판: mypartygames.com(14개)·homeschoolof1·magickidslearning·TPT 무료 — 있음. 그래도 1등 r2,344 → 무료가 대체 못 함.
+- 우리만 다른 점(가설): 퍼즐 정답을 **코드로 검산**(풀 수 없는 퍼즐 0, 리뷰 불만 1순위일 가능성 — 1~3점 리뷰 원문 **확인 안 함**) + 같은 엔진으로 **나이별 3단계 난이도** 한 묶음. 퍼즐북(KDP) 파이프라인 재사용.
+- AI 단독: 이야기·암호·논리 퍼즐·PDF 전부 코드/AI. 사람 플레이테스트가 없으니 코드 검산이 대신. 제작 1~2일/테마. 위험: 디자인(일러스트) 품질 — AI 이미지 사용 표시(Etsy Creativity Standards).
+- 결재: Etsy 계정(approvals 10-05 14:03 결재 요청과 같은 하나). 시즌: 할로윈 10/31까지는 늦음(올리고 색인까지), **크리스마스판 11월 초 공개가 맞음**.
+- 첫 100명: Etsy 검색. KDP '아이 방탈출 책' 판(같은 퍼즐 → 종이책)은 아마존 확인 안 함.
+
+### G49. 추리 파티 게임 인쇄 키트(Murder mystery party, 어른 8~20명) — 8점
+- [Etsy 'murder mystery party game printable' 18:1x]: '1920s Speakeasy Murder Mystery Party Game 10–20 Players' **$40.69 · r449 · 상점 21k · In 20+ carts** (L/656838959) · 'Printable Murder Mystery Case File' r238 상점 4.3k (L/1488860210) · 'Alice in Wonderland Halloween murder mystery' r89 20+ carts.
+- 값 최고($40). AI 단독: 인물 10~20명 대본·단서 일관성 검산이 어려움(모순 1개면 게임 망침) → AI 2점, 첫 판 2~3일. 결재: Etsy 계정.
+
+### G50. 크리스마스 보물찾기 단서 카드(Christmas scavenger hunt) — 8점(무료 과포화 −2)
+- [Etsy 'christmas scavenger hunt printable']: 'Christmas Scavenger Hunt For Older Kids' **$3.59 · r485 · 상점 9.4k** · 9 carts (L/4521090463, 작은 상점인데 리뷰 많음) · selfie scavenger hunt r3 상점 31.3k · r10 6 carts.
+- 무료: onelittleproject·overstuffedlife·momenvy(62개 단서)·mimosasandmotherhood·**treasure.run(인쇄 보물찾기 마법사)**·homeschoolof1 riddle generator → 생성기까지 있음.
+
+### G51. 엘프 온 더 셸프 쪽지 묶음(Elf notes kit) — 8점(무료 과포화 −2)
+- [Etsy 'elf on the shelf printable'·'elf notes printable']: '60 Elf Note Card Mega Bundle' **$5.86 r103 · 상점 651.2k · In 20+ carts** (L/1610227483) · '20x Mini Elf Note Cards Editable' **r2,361** 상점 50.6k (L/4571250487) · Elf Goodbye Letter r62.
+- 무료: 공식 elfontheshelf.com 무료 쪽지 · 101planners(편집형+이름 생성기) · makelifelovely 24장 · kapwing 템플릿. 상표 'Elf on the Shelf' 사용 위험(상품명에 상표 → Etsy 지재권 신고 대상, 원문 **확인 안 함**).
+
+### G52. 산타가 보낸 맞춤 편지(Letter from Santa, 이름 넣기) — 8점(무료 과포화 −2)
+- [Etsy 'letter from santa printable']: 'Editable Personalized Letter from Santa Claus' **$2.52 r284 · 상점 iQuickly 394.2k · 5 carts** (L/1342183896) · 'Letter To Santa Printable' r113 상점 38.3k 10 carts.
+- 무료: 101planners(맞춤)·Canva·paperheartfamily·cassiesmallwood(편집 PDF)·**celebrateally AI 산타 편지 생성기** → 생성기 차별 0.
+
+### 제외(이번 회차 실측)
+- 아이 집안일 표(chore chart): Etsy 1등 r296 상점 26.9k·r160 상점 137.1k로 수요 큼. 그러나 **무료 생성기 5곳+**(chorechartlab.com·marysprintables.com/chore-chart-maker·familygpt.chat·betweenusparents.com·101planners) → backlog ③ 결론: 생성기 틈 없음.
+- 이름 따라쓰기(name tracing): Etsy r668·r127. 무료 생성기 9곳(nametrace.me·worksheetprints·tracetots·tracingpractice 등) → 제외.
+- 독서 기록표(reading log): Etsy r128 상점 196.6k. 무료 생성기 bookroo·webby.tools·printablereadinglog·miotales → 제외.
+- 시크릿 산타 질문지: r69·r45, 단가 낮고 무료 많음(확인은 Etsy만) → 보류.
+
+### 이번 회차 점수(수요 × 유입 자급 × AI 단독 × 첫 판, 각 1~3 + 무결재 +1 · 무료 과포화 −2 · **단가 $10 이상 +1(새 칸)**)
+| 후보 | 수요 | 유입 | AI | 첫 판 | 무결재 | 감점 | 단가 | 합 | 비고 |
+|---|---|---|---|---|---|---|---|---|---|
+| G48 인쇄 방탈출 키트 | 3 | 1 | 3 | 2 | 0 | 0 | +1 | **10** | $15~19, 1등 r2,344, 코드 검산=차별, 크리스마스판 11월 초 |
+| G44 聞き流し韓国語 채널(재채점) | 3 | 2 | **3**(←2) | 2 | 0 | 0 | 0 | **10**(←9) | AI 음성 채널 실증, 60분 묶음 |
+| G49 추리 파티 키트 | 3 | 1 | 2 | 1 | 0 | 0 | +1 | 8 | $40, 일관성 검산 어려움 |
+| G50 크리스마스 보물찾기 | 3 | 1 | 3 | 3 | 0 | −2 | 0 | 8 | treasure.run 등 |
+| G51 엘프 쪽지 | 3 | 1 | 3 | 3 | 0 | −2 | 0 | 8 | 상표 위험 |
+| G52 산타 편지 | 3 | 1 | 3 | 3 | 0 | −2 | 0 | 8 | AI 생성기 이미 있음 |
+**교훈:** ① '무료 생성기 0' 거름망은 아이 인쇄물에서 거의 다 걸림 — 생성기로 이기는 틈은 G38 저축표 정도. ② 대신 **비싼 묶음(방탈출 $18·추리 $40)**은 무료판이 있어도 1등 리뷰 수천 → Etsy 계정이 나면 $1짜리 10개보다 방탈출 1개가 낫다. ③ G44는 'AI 음성이면 안 된다'는 걱정이 실측으로 풀림.

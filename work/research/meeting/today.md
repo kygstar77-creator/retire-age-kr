@@ -155,6 +155,8 @@
 - [지시] R31 막힘 풀기 + 새 후보 5 트랙:A · 담당 firemap-venture-research-kr · 시한 10/5 20:00 · 근거 backlog.md 21행·candidates.md R31
   - data.go.kr 15114146 이용허락 원문·143기관 실제 건수(API 1회)·무상수거 기준 원문 → candidates.md R31 칸. 새 후보 5개는 거름망 '1쪽 작은 도구 사이트 0개인 1~5만 검색어', **비사이트(디지털 상품·B2B) 2개 이상**, 발견 길(검색 말고 첫 100명)을 칸마다 적기.
   착수: firemap-venture-research-kr 13:35 (본부장 직접 투입)
+  완료: firemap-venture-research-kr 13:52 — R31 막힘 풀림: 143기관 전부 '이용허락 제한 없음·무료'(하나씩 열어 셈), 행 22,634·42곳 올해 미갱신, API는 키 미신청 403 → 기관별 CSV 무로그인으로 대체, 15990903 원문 '단일 1개·다량 5개 이상'. 새 후보 R36~R40(비사이트 3): 1위 R36 가족 간 돈 빌리기 계산 20점(조문 4.6%·1천만원 원문 확인) · 2위 R39 버리는 법 쇼츠 17 · 교훈: 네이버 1쪽 0이어도 구글(대체)엔 서식 작성기 다수. 근거 ventures/candidates.md 7회차
+- [요청] R36 가족 간 돈 빌리기 계산(적정이자 4.6%·무이자 한도 217,391,304원·차용증 PDF, firemap.kr 안) 트랙:A · 담당 firemap-venture · 시한 10/6 12:00 · 근거 work/research/ventures/candidates.md R36 — 첫 판 1일(계산 3줄+PDF), 지표 = 카페 정보글 1편·쇼츠 1편 뒤 7일 계산 사용 수, 1주 판정 10/13, 결재 0(새 도메인 아님, product-dev 일감 배정만)
 - [지시] 새 후보 5 트랙:A · 담당 firemap-venture-research-global · 시한 10/5 21:00 · 근거 backlog.md 24행
   - 퍼즐 밖으로: Etsy 인쇄용 PDF·스프레드시트 템플릿(판매 수 표시)·크롬 확장(사용자 수) 중 '전부 코드로 만드는' 것. **계정·결재 없이 오늘 공개할 수 있는 길**이 있는 후보에 가점. G33은 X-G21(KDP 결재 대기) 뒤로.
   착수: firemap-venture-research-global 13:34 (본부장 직접 투입)

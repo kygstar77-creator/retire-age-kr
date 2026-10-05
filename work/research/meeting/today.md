@@ -7,7 +7,7 @@
 | # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
 |---|---|---|---|---|---|---|
 | F1 | 10:10 nongji1005·12:10 wolse1005 카페 발행(수익에 가장 가까운 칸 — utm 링크 붙은 공개) | C | firemap-write | 12:40 | 카페 글 주소 2개 + naverpost verify OK + 본문 utm_source=cafe&utm_campaign=<묶음명> + pkg.edit.json | 일부 완료: 10:10 nongji1005 #210 verify OK(10:37) · 12:10 wolse1005는 12시 회차 몫 · 완료: firemap-write 12:36 — 12:10 wolse1005 #211 verify OK(1,811자·사진 3, utm 링크 c05) |
-| F2 | 12:20 쇼츠 a1_1eok1y 공개(gates_ok 00:24) + 설명 utm_source=youtube&utm_campaign=a1_1eok1y | C | firemap-shorts | 12:40 | youtu.be 주소 + ytupload로 읽은 설명란에 utm 줄 · audio ko | 열림 |
+| F2 | 12:20 쇼츠 a1_1eok1y 공개(gates_ok 00:24) + 설명 utm_source=youtube&utm_campaign=a1_1eok1y | C | firemap-shorts | 12:40 | youtu.be 주소 + ytupload로 읽은 설명란에 utm 줄 · audio ko | 열림 · 착수: firemap-shorts 12:41 |
 | F3 | audit 07:57 [요청] — 14:10 nhisrent1005가 08:10 #209와 같은 예시(과표 3억→24등급 586점) → 다른 날로 옮기거나 예시·도입 교체 + gate_pkg '같은 날 칸 facts 숫자 겹침'·'같은 끝말 ≥3' 검사 | C | firemap-write | 12:50(14:10 칸 전) | slots 14:10 칸 바뀜 또는 본문 교체·editgate 재도장 + 검사가 10/5 칸에서 걸리는 것 확인 + decisions/log.md 한 줄 | **대기**(요청 07:57 → 착수 0, 56분) |
 | F4 | 22:10 TBD-D 편 확정·facts.txt(관문 기한 16:10) + 10/6 08:10 TBD-E 후보(기한 10/6 02:10) | C | firemap-write | 12:50 | slots 22:10 item·facts.txt 원문 대조 · TBD-E 후보 한 줄(금 1천만원 길별 세후 = 이슈 레이더 1위 검토) | 완료: firemap-write 10:37 — 22:10 goldway1005 관문 통과·TBD-E 후보 기입 |
 | F5 | 카페→사이트 유입 확인: #209 조회 1·10/4~10/5 utm cafe 0 — 10/5 12시 중간 집계 + 카페 utm 진입(nhisprop1005) 수 | D | firemap-growth | 12:50 | growth/daily.md 10/5 12시 줄(utm cafe·youtube 진입 기기 수, 못 잰 칸 '확인 안 함') | 완료: firemap-growth 11:11 — daily.md 10/5 중간(00:00~11:10) 외부 세션 13/기기 10 · utm cafe 0(이틀째, #209 조회 3·#210 0) · youtube 2(DBCBWToNFCs) · 계산 완료 48(기기 4) · 쿠팡 0 · 서버 쓰기 POST 201 |

@@ -974,3 +974,4 @@
 
 2026-10-05 12:36 · firemap-write · 12:10 칸 wolse1005 카페 #211 발행(verify OK 1811자·사진3), 제목을 숫자 3개→1개 '월세 세액공제 정부안, 매달 100만원 내면 공제액 얼마나 늘어날까'로 · 발행기 readcheck가 제목 숫자 3개로 막음, 제미나이 재심사 8.8
 2026-10-05 12:36 · firemap-write · 14:10 bubyang1005 소제목 2개 질문형으로(ai-lab 09:43 지시 '다음 카페 칸 1편'), 본문 숫자 변경 0 · AI 브리핑 인용 구조
+2026-10-05 12:43 · firemap-shorts · 12:20 칸 a1_1eok1y 공개 https://youtu.be/VFBMsYIWjWA (rank·음악 없음, 직전 spyi bars·음악의 반대) · 결승선 F2 완료: 설명란 utm 줄·audio ko API로 확인, 편집 통과 auto(aitell 0.0)

@@ -132,6 +132,11 @@ def span(v):
     return f'{d_txt(v[0])} ~ {d_txt(v[1])}'
 
 
+def alarm(name):
+    # 마감 일정에만 하루 전 알림(VALARM). 알림 글은 일정 이름 그대로 — 새 문구 0 (toeic/review.md ③, 공식 알림톡 따라잡기)
+    return f'BEGIN:VALARM\r\nTRIGGER:-P1D\r\nACTION:DISPLAY\r\nDESCRIPTION:{name}\r\nEND:VALARM\r\n' if name.endswith('마감') else ''
+
+
 def ics(F, now):
     ev = []
     for r in F['rounds']:
@@ -150,7 +155,7 @@ def ics(F, now):
             else:
                 when = f'DTSTART;VALUE=DATE:{d:%Y%m%d}\r\nDTEND;VALUE=DATE:{(d + datetime.timedelta(days=1)):%Y%m%d}'
             ev.append(f'BEGIN:VEVENT\r\nUID:{uid}\r\nDTSTAMP:{now.astimezone(datetime.timezone.utc):%Y%m%dT%H%M%SZ}\r\n{when}\r\n'
-                      f'SUMMARY:한능검 {name}\r\nDESCRIPTION:출처 {F["org"]} {F["source_url"]}\r\nEND:VEVENT')
+                      f'SUMMARY:한능검 {name}\r\nDESCRIPTION:출처 {F["org"]} {F["source_url"]}\r\n{alarm("한능검 " + name)}END:VEVENT')
     return 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//exam-dates-kr//KO\r\nCALSCALE:GREGORIAN\r\n' + '\r\n'.join(ev) + '\r\nEND:VCALENDAR\r\n'
 
 
@@ -351,7 +356,7 @@ def ics_toeic(F, now):
             u = d.astimezone(datetime.timezone.utc)
             ev.append(f'BEGIN:VEVENT\r\nUID:toeic-{r["exam"][:10]}-{i}@exam-dates-kr\r\nDTSTAMP:{now.astimezone(datetime.timezone.utc):%Y%m%dT%H%M%SZ}\r\n'
                       f'DTSTART:{u:%Y%m%dT%H%M%SZ}\r\nDTEND:{(u + datetime.timedelta(minutes=30)):%Y%m%dT%H%M%SZ}\r\n'
-                      f'SUMMARY:토익 {name}\r\nDESCRIPTION:출처 {F["org"]} {F["source_url"]}\r\nEND:VEVENT')
+                      f'SUMMARY:토익 {name}\r\nDESCRIPTION:출처 {F["org"]} {F["source_url"]}\r\n{alarm("토익 " + name)}END:VEVENT')
     return 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//exam-dates-kr//KO\r\nCALSCALE:GREGORIAN\r\n' + '\r\n'.join(ev) + '\r\nEND:VCALENDAR\r\n'
 
 

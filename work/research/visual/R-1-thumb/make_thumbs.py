@@ -559,6 +559,83 @@ r1v = f"""<div style='position:absolute;inset:0;background:#111214'></div>
 """
 VARIANTS['r1v'] = r1v
 
+
+# r1w·r1x — 2026-10-05 09:4x 벤치마크 규칙 3개(thumb-bench.md: 그래픽 화면 절반 이상 · 바탕색 지난 편과 다르게 · 보조 글 큰 줄의 60% 이상)
+#   + 16차 Claude 8점 조건(① '?' 상자 셋 → 큰 상자 하나 ② 맨 위 줄 줄이고 +218만 키움) · 레드팀('1억'만 초록)
+# r1w = 크림 바탕(지난 6편 남색·검정과 다름), 두 카드가 화면 85%: 예금 +218만(먹색 카드) vs 1등은?(초록 카드, 이름·숫자 숨김)
+r1w = f"""<div style='position:absolute;inset:0;background:#F4F1E8'></div>
+<div class='t' style='left:44px;top:34px;font-size:84px;color:{INK}'>같은 <span style="color:#14A86A">1억</span>, 1년 뒤</div>
+<div style='position:absolute;left:40px;top:160px;width:640px;height:450px;background:#14181F;border-radius:20px'></div>
+<div class='lab' style='left:76px;top:190px;font-size:72px;color:#fff'>예금 (세후)</div>
+<div class='t' style='left:62px;top:340px;font-size:184px;color:#fff'>+218만</div>
+<div style='position:absolute;left:704px;top:160px;width:536px;height:400px;background:#2BD98C;border-radius:20px'></div>
+<div class='lab' style='left:704px;width:536px;text-align:center;top:190px;font-size:72px;color:{INK}'>1등은?</div>
+<div class='t' style='left:704px;width:536px;text-align:center;top:320px;font-size:170px;color:{INK}'>+???만</div>
+<div class='fine' style='left:44px;top:640px;color:#6B7280'>2025.10→2026.10 과거 값 · 세금 뗀 뒤 · 미래 보장 아님</div>
+"""
+VARIANTS['r1w'] = r1w
+
+# r1x = 흰 바탕, 0원부터 실제 비율 막대 2개(예금 2,182,680 vs 1등 15,987,335 = 7.32배 → '7배 넘게').
+#   큰 숫자는 하나(7배), 예금 +218만은 보조(큰 줄 60% 이상), 1등 이름은 '?'로 숨김(질문 + 반전)
+R = GAIN['SCHD'] / GAIN['예금']; assert 7 < R < 7.5, R
+BW = 1000; bw_dep = round(BW / R)
+r1x = f"""<div style='position:absolute;inset:0;background:#FFFFFF'></div>
+<div class='t' style='left:44px;top:40px;font-size:86px;color:{INK}'>같은 1억, <span style="color:#E8382F">1등은 7배 넘게</span></div>
+<div class='lab' style='left:48px;top:196px;font-size:64px;color:{INK}'>예금 (세후)</div>
+<div style='position:absolute;left:48px;top:282px;width:{bw_dep}px;height:110px;background:#14181F;border-radius:0 12px 12px 0'></div>
+<div class='t' style='left:{48 + bw_dep + 20}px;top:290px;font-size:96px;color:{INK}'>+218만</div>
+<div style='position:absolute;left:48px;top:420px;width:{BW}px;height:140px;background:#2BD98C;border-radius:0 14px 14px 0'></div>
+<div class='t' style='left:76px;top:432px;font-size:116px;color:{INK}'>1등 = ?</div>
+<div class='fine' style='left:48px;top:640px;color:#6B7280'>세후 늘어난 돈, 0원부터 · 2025.10→2026.10 과거 값 · 미래 보장 아님</div>
+"""
+VARIANTS['r1x'] = r1x
+
+# r1y — 17차(r1v 1위 유지, r1w·r1x 반려: 후보 이름을 숨기면 주제가 안 읽힘 · '1등' = 파킹통장 경쟁 겹침 3)
+#   r1v 틀 유지 + 보조 글 60% 규칙(Claude·레드팀 공통 '168px 라벨 안 읽힘'): 큰 숫자 150px, 라벨 92px,
+#   오른쪽 '?' 상자 셋 → 이름이 큰 가로 줄 셋(이름 84px + '?' 상자, 길이 같음 = 답 숨김)
+def yrows(x, y, w=560, h=118, gap=16, c='#2BD98C'):
+    s = ''
+    for i, n in enumerate(('금', 'S&P500', 'SCHD')):
+        yy = y + i * (h + gap)
+        s += f"<div style='position:absolute;left:{x}px;top:{yy}px;width:{w}px;height:{h}px;background:#22262E;border-radius:14px'></div>"
+        s += f"<div class='lab' style='left:{x + 26}px;top:{yy + 10}px;font-size:84px;color:#fff'>{n}</div>"
+        s += f"<div style='position:absolute;left:{x + w - 150}px;top:{yy + 12}px;width:134px;height:{h - 24}px;background:{c};border-radius:10px'></div>"
+        s += f"<div class='t' style='left:{x + w - 150}px;width:134px;text-align:center;top:{yy + 16}px;font-size:88px;color:{INK}'>?</div>"
+    return s
+
+
+r1y = f"""<div style='position:absolute;inset:0;background:#111214'></div>
+<div class='t' style='left:40px;top:30px;font-size:84px;color:#fff'>같은 <span style="color:#2BD98C">1억</span>, 1년 뒤</div>
+<div style='position:absolute;left:40px;top:160px;width:600px;height:390px;background:#F4F1E8;border-radius:16px'></div>
+<div class='lab' style='left:70px;top:180px;font-size:92px;color:{INK}'>예금 세후</div>
+<div class='t' style='left:58px;top:340px;font-size:150px;color:{INK}'>+218만</div>
+{yrows(670, 160)}
+<div class='fine' style='left:44px;top:600px;color:#8E939C'>2025.10→2026.10 과거 값 · 세금 뗀 뒤 · 미래 보장 아님</div>
+"""
+VARIANTS['r1y'] = r1y
+
+# r1z — 18차(r1v·r1y 둘 다 6.50): Claude '맨 위 줄은 제목과 같은 말 → 빼고 +218만 되돌리기', 레드팀 "'?' → '+???만'(같은 단위)·아래 빈 띠 줄이기"
+#   '1억'은 카드 라벨로 옮김(1억 예금 세후 92px = 큰 숫자 160px의 58%→ 96px로 60%)
+def zrows(x, y, w=580, h=158, gap=18, c='#2BD98C'):
+    s = ''
+    for i, n in enumerate(('금', 'S&P500', 'SCHD')):
+        yy = y + i * (h + gap)
+        s += f"<div style='position:absolute;left:{x}px;top:{yy}px;width:{w}px;height:{h}px;background:#22262E;border-radius:16px'></div>"
+        s += f"<div class='lab' style='left:{x + 24}px;top:{yy + 30}px;font-size:{84 if len(n) < 4 else 72}px;color:#fff'>{n}</div>"
+        s += f"<div class='t' style='right:{1280 - x - w + 22}px;top:{yy + 32}px;font-size:96px;color:{c}'>???만</div>"
+    return s
+
+
+r1z = f"""<div style='position:absolute;inset:0;background:#111214'></div>
+<div style='position:absolute;left:36px;top:40px;width:620px;height:510px;background:#F4F1E8;border-radius:18px'></div>
+<div class='lab' style='left:66px;top:70px;font-size:96px;color:{INK}'><span style="color:#14A86A">1억</span> 예금</div>
+<div class='lab' style='left:66px;top:186px;font-size:96px;color:{INK}'>세후 1년</div>
+<div class='t' style='left:52px;top:346px;font-size:164px;color:{INK}'>+218만</div>
+{zrows(676, 40)}
+<div class='fine' style='left:40px;top:590px;color:#8E939C'>2025.10→2026.10 과거 값 · 세금 뗀 뒤 · 미래 보장 아님</div>
+"""
+VARIANTS['r1z'] = r1z
+
 def check_zones(page):
     return page.evaluate("""()=>{const bad=[];document.querySelectorAll('body *').forEach(e=>{
       if(e.tagName==='SCRIPT'||!e.textContent.trim())return;

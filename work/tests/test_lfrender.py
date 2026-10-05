@@ -75,7 +75,7 @@ def test_voice_good_passes():
 
 
 def test_voice_pitch_outlier_refused():
-    ok, res = R.voice_check(voice([line(150), line(152), line(148), line(155), line(130, text='뒤쪽 낮은 목소리')]))  # 130/150 = -13.3%
+    ok, res = R.voice_check(voice([line(150), line(152), line(148), line(155), line(105, text='뒤쪽 낮은 목소리')]))  # 105/150 = -30% (10/5 기준 ±25%로 바뀜)
     assert not ok
     assert [r['text'] for r in res['redo']] == ['뒤쪽 낮은 목소리'] and '음높이' in res['redo'][0]['why'][0]
 

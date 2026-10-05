@@ -14,7 +14,10 @@ try: sys.stdout.reconfigure(encoding='utf-8')
 except Exception: pass
 HERE = os.path.dirname(os.path.abspath(__file__))
 VID = os.path.join(HERE, 'video')
-F0_TOL = 0.12          # 목소리 한결같음 ①: 그 편 중앙값 ±12%
+F0_TOL = 0.25          # 목소리 한결같음 ①: 튀는 줄만 — 그 편 중앙값 ±25%
+DRIFT_MAX = 0.07       # ② 앞·뒤 절반 평균 차
+IQR_MAX = 0.16         # ③ 퍼짐 IQR/중앙
+# 10/5 16:3x 순돌이: 줄마다 ±12%는 근거 없던 값 — 사장님이 좋다 한 E-1도 22% 줄이 걸렸다. 실측 기준(voice.json f0): 좋다 한 E-1·D-1 vs 지적된 E-2 → 줄 단위는 ±25%(튀는 줄만), 편 단위로 앞·뒤 절반 평균 차 ≤7%(E-1 −6.8·E-2 −11.6)·퍼짐 IQR/중앙 ≤0.16(E-1 0.16·E-2 0.17). 표본 4편 — 새 편이 쌓이면 다시 잰다.
 TEXT_SKIP_KEYS = {'audio', 'kind', 'img', 'src', 'image', 'color', 'colors', 'id', 'font'}
 MEDIA = re.compile(r'\.(wav|mp3|mp4|png|jpe?g|webp|svg|json|pcm)$', re.I)
 
@@ -181,12 +184,21 @@ def voice_check(vj):
         f = r['f0']
         if res['median_f0']:
             if not isinstance(f, (int, float)) or f <= 0: why.append('f0 없음')
-            elif abs(f / res['median_f0'] - 1) > F0_TOL: why.append(f'음높이 {f:g}Hz(중앙 {res["median_f0"]:g} ±12% = {res["lo"]:g}~{res["hi"]:g} 밖)')
+            elif abs(f / res['median_f0'] - 1) > F0_TOL: why.append(f'음높이 {f:g}Hz(중앙 {res["median_f0"]:g} ±25% = {res["lo"]:g}~{res["hi"]:g} 밖)')
         t = r['tempo']
         if t is not None and abs(float(t) - 1.0) > 1e-9: why.append(f'빠르기 {t:g}배(1.0 고정)')
         if len(ds) >= 2 and r['date'] and r['date'] != main_day: why.append(f'녹음 날짜 {r["date"]}(주 녹음일 {main_day})')
         if why: res['redo'].append({**r, 'why': why})
-    ok = not res['redo'] and len(ds) < 2 and bool(fs) and not all(r['tempo'] is None for r in rows)
+    ep_bad = []
+    seq = [r['f0'] for r in rows if isinstance(r['f0'], (int, float)) and r['f0'] > 0]
+    if len(seq) >= 8:
+        h = len(seq) // 2; a, b = sum(seq[:h]) / h, sum(seq[h:]) / (len(seq) - h)
+        drift = b / a - 1; q = sorted(seq); iqr = (q[3 * len(q) // 4] - q[len(q) // 4]) / res['median_f0']
+        res.update(drift=round(drift, 3), iqr=round(iqr, 3))
+        if abs(drift) > DRIFT_MAX: ep_bad.append(f'앞·뒤 절반 음높이 차 {drift:+.1%}(기준 ±{DRIFT_MAX:.0%}) — 뒤쪽이 다른 목소리처럼 들림')
+        if iqr > IQR_MAX: ep_bad.append(f'음높이 퍼짐 IQR/중앙 {iqr:.2f}(기준 ≤{IQR_MAX})')
+    res['episode'] = ep_bad
+    ok = not res['redo'] and not ep_bad and len(ds) < 2 and bool(fs) and not all(r['tempo'] is None for r in rows)
     return ok, res
 
 def print_voice(res, ok, where=''):

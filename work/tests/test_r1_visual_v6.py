@@ -12,7 +12,7 @@ STILLS = sorted(glob.glob(os.path.join(EP, 'preview', 'stills', '*.png')))
 MOTION = {'open': 'bars', 'road': 'receipt', 'receipt': 'receipt', 'fx': 'count', 'bars': 'bars', 'count': 'count', 'zoom': 'zoom', 'logo': 'zoom', 'end': 'zoom', 'promise': 'receipt', 'swing': 'line', 'person': 'bars', 'act': 'receipt'}
 
 def test_props_built_from_v6_and_durations_from_chars():
-    assert R1['script'] == 'script.v6.md' and R1['rate'] == 5.65
+    assert R1['script'] in ('script.v6.md', 'script.md') and R1['rate'] == 5.65  # 10/5 script.md = 클라우드 v6
     v6 = [l for s in sc.parse(os.path.join(EP, 'script.v6.md')) for l in s['lines']]
     got = [l for s in R1['scenes'] for l in s['lines']]
     assert [l['text'] for l in got] == v6          # 모든 문장이 순서대로 한 번씩

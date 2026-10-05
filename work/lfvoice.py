@@ -289,7 +289,7 @@ def check(ep, vj=None):
     if not rows: sys.exit('소리 없음')
     fm = float(np.median([r[3] for r in rows if r[3]])); bad = []
     for t, x, r, p, _, tp in rows:
-        why = [w for w, c in (('음높이', p and abs(p / fm - 1) > 0.12), ('느림', r < 4.8), ('빠름', r > 8.2), (f'빠르기{tp}', tp != 1.0)) if c]
+        why = [w for w, c in (('음높이', p and abs(p / fm - 1) > 0.25), ('느림', r < 4.8), ('빠름', r > 8.2), (f'빠르기{tp}', tp != 1.0)) if c]
         if why: bad.append(f'{t} | {x} | {r:.2f}음절/초 · {p:.0f}Hz | ' + '·'.join(why))
     tot = sum(s.get('frames', 0) for s in d['sections']) / d.get('fps', FPS); tsyl = sum(syl(l.get('say', l['text'])) for s in d['sections'] for l in s['lines'])
     whole = tsyl / max(tot, 0.1); rates = [r[2] for r in rows]
@@ -297,7 +297,13 @@ def check(ep, vj=None):
     print('튀는 문장', len(bad), *bad[:40], sep='\n  ')
     recs = sorted({l.get('rec') or '?' for s in d['sections'] for l in s['lines'] if l.get('audio')})
     print('녹음 날', recs, '(한 날이어야 통과 — 규칙 4)')
-    ok = whole >= 5.5 and not bad and not d.get('missing') and len(recs) == 1 and '?' not in recs
+    seq = [r[3] for r in rows if r[3]]; ep_bad = []
+    if len(seq) >= 8:  # 10/5 16:3x 순돌이: 줄마다 ±12%는 근거 없던 값 — 사장님이 좋다 한 E-1도 22% 줄이 걸렸다. 실측 기준(voice.json f0): 좋다 한 E-1·D-1 vs 지적된 E-2 → 줄 단위는 ±25%(튀는 줄만), 편 단위로 앞·뒤 절반 평균 차 ≤7%(E-1 −6.8·E-2 −11.6)·퍼짐 IQR/중앙 ≤0.16(E-1 0.16·E-2 0.17). 표본 4편 — 새 편이 쌓이면 다시 잰다.
+        h = len(seq) // 2; drift = np.mean(seq[h:]) / np.mean(seq[:h]) - 1; iqr = (np.percentile(seq, 75) - np.percentile(seq, 25)) / fm
+        print(f'편 단위: 앞·뒤 절반 음높이 차 {drift:+.1%}(기준 ±7%) · 퍼짐 IQR/중앙 {iqr:.2f}(기준 ≤0.16)')
+        if abs(drift) > 0.07: ep_bad.append('drift')
+        if iqr > 0.16: ep_bad.append('iqr')
+    ok = whole >= 5.5 and not bad and not ep_bad and not d.get('missing') and len(recs) == 1 and '?' not in recs
     print('통과' if ok else '막힘'); return ok
 
 def cutat(ep, gi, times, maxreq=9):

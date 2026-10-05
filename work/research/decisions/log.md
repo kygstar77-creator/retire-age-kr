@@ -1054,3 +1054,4 @@
 2026-10-05 18:33 · firemap-write · npsfee1005 제목 '얼마' 겹침 손 안 댐 · 제목을 바꾸면 편집 해시·제목 심사가 무효가 돼 20:10 칸 관문이 깨짐, 다음 회차 비교만
 2026-10-05 18:33 · firemap-write · 리팩토링 #126(dep3eok0927) 첫 문장에 '예금 이자' 넣어 rewrite · improve 14:50 [요청] 1순위, 뜻 같음·aitell 2.2·readcheck 0·editgate auto 재도장
 2026-10-05 18:34 · firemap-write · #126 rewrite 완료(본문 969자·사진3) · editgate stamp는 옛 글 틀 v2 어김으로 거부 — 한 문장만 바꾼 손질이라 진행, rewrite도 편집 표시 검사를 하도록 할지는 improve가 판단
+2026-10-05 18:39 · firemap-planner · R36 가족 간 돈 빌리기 기획서 첫 판 plans/family-loan.md · /calc/loan과 화면 따로(숫자1이 다름)·엔진 공유, 조문 4개 원문 재대조 일치, 차별 = 첫 숫자 무이자 최대 2억1,739만원 + 부모에게 보내는 약속표(예술가 사전 판정 ① 채택) · 예술가 확정 판정 대기 → 통과 시 [시안 요청]

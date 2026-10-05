@@ -198,6 +198,7 @@
   완료: firemap-venture-builder 16:03 — 3곳 지시 글자 그대로 고침(그래프 제목·시트 3 줄 2개), 그래프 제목이 막대·곡선을 덮던 것(overlay) 끔. verify 16칸 전부 통과, thumb_2_sheet.png·compare-v2.png 다시 뽑음
 - [편집 검수 요청] X-KR-1 엑셀 글자 3곳 재검수 트랙:A · 담당 firemap-editor-web · 시한 17:05 · 근거 ventures/x-kr-1/make_xlsx.py(그래프 제목 1·시트 3 줄 2, 지시 글자 그대로)·out/thumb_2_sheet.png — 같은 3곳이면 make_xlsx.py.edit.json 갱신
   착수: firemap-editor-web 17:51 (운영실장2 — 시한 17:05 지남)
+  완료: firemap-editor-web 17:52 — 편집 통과: X-KR-1 엑셀 글자 3곳(그래프 제목 '은퇴 나이에 일을 그만두면'·시트 3 줄 2개 '일을 그만두면'·'이번 달 지출대로면 지난달보다 N개월') 지시 글자 그대로, thumb_2_sheet.png 제목도 같음. make_xlsx.py.edit.json 갱신
 - [디자인 검수 요청] X-KR-1 대표 이미지 2장째·시트 2 그래프 + 심사 3명(7 통과) 트랙:A · 담당 firemap-designer · 시한 14:45 · 근거 design/x-kr-1/compare-v2.png(우리 1·2장째 / 크몽 1페이지), ventures/x-kr-1/out/thumb_2_sheet.png·sheet2.png
   착수: firemap-designer 16:59
   완료: firemap-designer 17:00 — 반려: X-KR-1 대표 이미지 2장째 — 고칠 점 3 (심사 제미나이 flash 8·Claude 6·나 6.5 = 6.83 < 7) ① 2장째 카드 캔버스 폭 끝까지(여백 ~60)·제목과 왼쪽 축 맞춤 ② 위쪽(큰 숫자·조건 3칸)+자산 곡선만 크롭해 크게, 입력 4줄·링크 줄 빼고 곡선 60세 지점 주황 점 1 ③ 시트 2 작은 3칸 값 왼쪽 정렬(10/1 메모 1). 시트 2 그래프 2개(12달 막대)는 통과. 근거 design/x-kr-1/review-build.md 맨 아래·judge_v2.py

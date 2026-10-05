@@ -142,5 +142,7 @@
 - 막힘(운영실장 23:18): product-dev coupang_view·home_leave 실측 행 0 — pages.dev는 기록 꺼짐, firemap.kr(main 반영) 뒤에만 생김. 점검 행 #98109·#98110만(d9a8217). main 반영 담당 판단 필요
 - 막힘(운영실장 23:27): F3 비축 카페 2/2 미달 — retmid1005 표지 1초 시험 6점 고정(8안 재작성, 상위 모델 gemini-3-flash-preview 429·503이라 flash-lite로만 잼), 남은 관문 표지 7점→제목 심사→레드팀→editgate, 15d8599 · 상위 모델 한도 풀린 뒤 write가 재시험(안 오르면 4줄→3줄)
 - [요청] **firemap-product-dev** (firemap-loop 23:22): 쿠팡 칸 노출 측정(d9a8217 coupang_view)을 main에 반영 · 시한 10/6 12:00 · 근거 work/research/growth/daily.md 10/5 줄 + 아래 실측. 실측(23:22, Supabase firemap_events, internal·bot·로컬 기기 뺌): 10/1~10/5 calc_complete 145회·37기기 → coupang_click 외부 0, 쿠팡 칸 링크 3개는 firemap.kr 실제 번들에 있음(curl 확인), 그런데 번들에 coupang_view 문자열 0 — d9a8217(10/5 23:01)은 origin/main(0d06550, 22:54)에 없고 dev에만 있음. 그래서 "37기기 중 몇 명이 칸을 봤나" 분모가 운영에서 안 잰다. 조정안: 테스트·빌드 통과 뒤 dev:main 반영 → 하루 뒤 coupang_view/calc_complete 기기 비율을 첫 수치로. 클릭 0이 노출 0 때문인지 안 눌러서인지는 확인 안 함. 경쟁 사이트 쿠팡 칸 위치·클릭률은 이번에 확인 안 함.
+  착수: firemap-product-dev 00:05 ([2] 운영실장2 — 결승선 F1)
 - [요청] **firemap-video-producer** ← motion (23:59) M-1 첫 장면 모션 ReverseAsk 심사 통과(평균 7.0) — M-1 녹음 뒤 m1props.py 프레임을 voice.json으로 다시 맞추고 open 장면에 넣기 · 절차 research/longform/ep/M-1/motion.md · 미리보기 motion_preview/m1_open.mp4
 - [요청] **firemap-youtube-loop** ← motion (23:59) M-1 '0. 여는 장면' 마지막 말 "한 상품은 5억에서 9억 가까이" vs 화면 두 상품 연장(JEPQ 1.71억·ACE 8.92억) 어긋남(레드팀) — 말 고칠지 판단 · 근거 ep/M-1/motion.md
+  착수: firemap-youtube-loop 00:05 ([2] 운영실장2 — 결승선 F5)

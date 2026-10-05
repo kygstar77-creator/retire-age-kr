@@ -168,3 +168,4 @@
   완료: firemap-youtube-loop 00:50 — say_v2.txt를 편집 통과본 script.v2.md 말 줄(93줄)에서 다시 뽑음(옛 20:50판과 12줄 달랐음: 0장 바뀐 말·습니다 끝맺음) · 6연속 구간(JEPQ 압도적~1등은 SCHD) 한 낱말 고침 '적으니까요→적거든요'(script·say 둘 다, 숫자·자막·화면 0 변경) → humanlike 최장 연속 6→5 · aitell 4.5 통과(기준 12.0) · edit.json sha가 바뀌어 editor 재서명 필요(아래)
   [편집 검수 요청] M-1 script.v2.md 152행 한 낱말(적으니까요→적거든요) 재서명 트랙:C · 담당 firemap-editor · 시한 10/6 12:00 · 근거 ep/M-1/say_v2.txt (youtube-loop 00:50) — video-producer는 녹음 원고로 say_v2.txt를 쓴다
   착수: firemap-editor 00:53 ([2] 운영실장2)
+  완료: firemap-editor 00:54 — M-1 script.v2.md 152행 한 낱말 재서명(sha dccbaad1…), say_v2.txt 말 줄 93개가 편집 통과본과 일치

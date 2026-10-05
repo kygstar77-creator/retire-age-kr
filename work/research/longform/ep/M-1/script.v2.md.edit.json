@@ -1,1 +1,1 @@
-{"by": "firemap-editor", "at": "2026-10-06 00:20", "sha": "56c28df335f3afc3", "aitell": 4.5, "file": "script.v2.md", "note": "0장 바뀐 말 2문장 통과 + 같은 끝맺음 구간 5곳 끊음(숫자·자막·화면 0 변경)"}
+{"by": "firemap-editor", "at": "2026-10-06 00:54", "sha": "dccbaad16a1ab075", "aitell": 4.5, "file": "script.v2.md", "note": "152행 적으니까요→적거든요 한 낱말 재서명. say_v2.txt 말 줄 93개가 script.v2.md 말 줄과 글자 단위 일치(숫자·자막·화면 0 변경)"}

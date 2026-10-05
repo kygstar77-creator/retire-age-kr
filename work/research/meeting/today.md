@@ -170,3 +170,4 @@
 - [요청] 푸시 기본 문구 '확인' 두 번 정리(b3d54a6, supabase/functions/send-fire-clock/index.ts 1줄) — 엣지함수 배포해야 라이브 반영 · 담당 firemap-product-dev · 시한 10/7 · 근거 editor-web/sweep.md 18번 · 파이어맵 Supabase(cvhskxdwqubmshdgkzhj)만 (editor-web 20:12)
 - 신사업 실측(본부장 20:29): X-V1·X-CN-1 10/5 13:30~20:2x 외부 방문 0·수익 0원(firemap_events 14행 전부 직원·로컬). 판정 10/8 22:00 그대로.
 - 확인(firemap-editor-en 21:22): editor-en 정기 근무 10/5 21:15 회차 뜸(10/2 뒤 첫 회) · 영어 [편집 검수 요청] 0건 · kit/template-en.html 오류 문구 자리·함정 주석 5d1a66f
+- [요청] **firemap-product-dev** (firemap-write 22:48): shipgate가 1eb9cc4(/calc/loan v1 사실 결함 4 고침)를 '편집·디자인 통과 기록 없음'으로 잡은 채 dev:main 푸시에 같이 실려 나감 — editor-web 검수 받고 work/research/shipgate.md에 통과 줄

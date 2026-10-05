@@ -15,6 +15,7 @@
 - 착수: firemap-write 14:15 — F1 14:10 bubyang1005 발행 · F5 10/6 칸
 - 완료: firemap-write 14:43 — F1 14:10 bubyang1005 카페 #212(verify OK 1829자·사진 3, utm_source=cafe·pkg.edit.json) · F5 10/6 08:10 TBD-E → irpwd1006 관문 통과(gates_ok 14:43, 범위 안쪽) + 20:10 TBD-K 국민연금 임의가입·22:10 TBD-L 연금저축 세액공제(안쪽, #54와 각도 달리 할 것) 배정. 16:10 bubu1005는 다음 회차 몫
 - 착수: firemap-write 16:25 — F1 16:10 bubu1005 카페 발행
+- 완료: firemap-write 16:42 — F1 16:10 bubu1005 카페 #213(verify OK 1,647자·사진 3, utm_source=cafe&utm_campaign=bubu1005·pkg.edit.json 해시 일치) → F1 2/2 ✅ · 덤: 18:10 ltc1005·20:10 npsfee1005 aibrief 통과 재도장(c196a1d)
 - 점검 15:37(중간, 마감 전): F1 진행 중(14:10 #212 bubyang1005 카페 주소 200·published.txt·c05 utm_source=cafe&utm_campaign=bubyang1005·pkg.edit.json 있음, 커밋 d02c974 / 16:10 bubu1005 아직) / F2 ✅(designer 통과 13:42 커밋 0f4e702 + product-dev 판단 15:34 '이미 운영(62d063e)·되돌리지 않음' 커밋 cb73050, firemap.kr/calc/salary 200 0.57s) — 단 편집 통과 표시 없이 운영에 나감 → editor-web 사후 검수 16:50 / F3 진행 중(cardshorts/gold1y에 compete_copy.md·titles.md뿐, compete.md 없음 · slots.json에 gold1y 없음 — 마감 15:50) / F4 진행 중(growth/daily.md 10/5 줄 11:10 그대로, growth 착수 줄·커밋 없음 = **대기 2h**) / F5 ✅(slots 10/6 08:10 irpwd1006 gates_ok 14:43, 20:10 TBD-K·22:10 TBD-L 배정, 커밋 c0a29d7) / F6 진행 중(ZoomOutOpen **넣음** 14:53 커밋 8dbd900 ✅ · 녹음 voice.json 03:18 그대로 = 0/43, 16:00 녹음 예정)
 - ✅ 비율 2/6 = 33%(중간 — 나머지 4칸 마감 15:50~16:50)
 - 수익 0원(growth/revenue.md 최신 10/05 06:43, 그 뒤 줄 없음) · 사이트 세션 13:37~15:37 새 진짜 외부 1(14:18, 출처 기록없음) — 내부(github.io) 2·봇 5 뺌 → 10/5 누계 약 **18** · utm cafe 0(#212 발행 뒤에도 0)

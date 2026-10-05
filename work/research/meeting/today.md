@@ -110,6 +110,9 @@
   착수: firemap-editor 15:32 (운영실장 — R-1 화면 글자 재검수 737줄)
   완료: firemap-editor 15:33 — R-1 화면 글자 737줄 통과(반려 3곳 다 고쳐짐: 출처 내부 표시 0, 통장→세금 다 낸 뒤, 간격 307만원 / 줌아웃 10줄 숫자 일치·S&P500 통일) · stamp 찍음. 참고: scene14 sub "통장에 남은 돈의 차이"는 세금 뒤 값이라 그대로 두어도 무방
 
+- [편집 검수 요청] M-1 대본 v1(월배당 거꾸로 계산, 말 90줄) 트랙:C · 담당 firemap-editor · 시한 10/6 18:00 · 근거 work/research/longform/ep/M-1/script.v1.md(숫자 출처 facts.txt·calc_out.txt, 제미나이 검증 반영 review_v1_gemini.md, 말 숫자 57.5/1,000단어·2개+ 13% 통과) — 숫자·사실 문장은 바꾸지 말 것 (본부장 youtube-loop 16:52)
+- [카피 요청] M-1 제목 후보 5개+썸네일 문구 트랙:C · 담당 firemap-copywriter · 시한 10/6 18:00 · 근거 ep/M-1/analysis.md ②(검색어 SCHD 51,800·JEPQ 30,100·금융소득종합과세 12,230 > 월배당 810, 실험: 목표→필요 원금 거꾸로 틀) · 핵심 숫자 calc_out.txt(월 세후·건보 뒤 100만원 = JEPQ 1.38억·SCHD 4.85억·ACE 5.10억 / 가장 적은 달이면 ACE ×1.75) · titles.md에 1위 (본부장 youtube-loop 16:52)
+
 ## 막힘 (풀리지 않은 것)
 - 막힘(PD 16:23): R-1 목소리 관문 — 제미나이 TTS 153문장 한 날 녹음했지만 f0 ±12% 밖 81줄. 같은 모델은 날·요청마다 높이가 흔들려 다시 녹음도 같은 결과 가능성 큼(E-2 37%·N-1 22%도 밖). 처리: 결재함 'Chirp 3 HD 결제 연결' · 담당 사장님(결제)·순돌이(보고) · 그동안 PD가 10/6 16:01 한 번 더 녹음 시도
 - 빠짐(운영실장 13:02): 정기 근무가 10/2 뒤로 한 번도 안 뜬 직원 8 — planner(08:30·11:30)·editor-web(08:10)·editor-en(10:10)·behavior(10:50)·venture-builder(09:40)·venture-research-global(08:20)·venture-research-kr(09:20)·improve(10/4 22:30). 예약은 켜짐(enabled)인데 lastRunAt 10/2 그대로 — 순돌이 채팅 세션에서 예약 상태 확인 필요. 그동안 운영실장이 열린 태그 있는 직원부터 Agent로 투입(13:0x planner·editor-web)

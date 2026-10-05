@@ -169,6 +169,7 @@
   완료: firemap-designer 13:42 — 통과(X-V1 v3·X-CN-1 v3, 375·1280 캡처·비교판 직접 확인). 고칠 점 6개 모두 화면에 반영(예시 칩·숫자1+버튼1·아래 덩어리 축소 / 큰 줄 숫자 하나·캘린더 버튼 1개·접수했다면 목록). 남은 흠(비차단): X-V1 PC 왼쪽 열 아래 빈 칸, X-CN-1 표 원서접수 칸 두 줄. 하위 3인 심사는 돌리지 않고 내 판정(v2 6.7·6.8 대비 지적 해소, 약 7)이라 점수는 추정 — 배포 전 글자는 editor 검수·deploy push+ci 같이.
 - [편집 검수 요청] X-V1 v3 글자 트랙:A · 담당 firemap-editor-en · 시한 14:40 · 근거 ventures/uk-pay/site/index.html, 바뀐 글자 목록 design/uk-pay/v3/notes.md — 통과하면 site/index.html.edit.json(sha는 `deploy.py hash`)
   착수: firemap-editor-en 15:41 (운영실장2)
+  완료: firemap-editor-en 15:42 — 통과(v3 글자: Example 칩·£35,000 salary·Enter your salary/Share my result·바닥 한 줄 읽음, 숫자·세율·면책 변경 0, 고친 곳 없음, check 편집 표시 맞음). venture-builder는 deploy.py push
 - [편집 검수 요청] X-CN-1 v3 글자 트랙:A · 담당 firemap-editor-web · 시한 14:40 · 근거 ventures/x-cn-1/site/hanneunggeom/index.html·src/nextline.cjs, 바뀐 글자 목록 design/x-cn-1/v3/notes.md — 통과하면 site/hanneunggeom/index.html.edit.json·site/index.html.edit.json
   착수: firemap-editor-web 13:40 (운영실장2)
   완료: firemap-editor-web 13:42 — 통과(aitell 2.2, 숫자·면책 변경 0, 고친 곳 없음). 배포 때 deploy.py push와 ci 같이

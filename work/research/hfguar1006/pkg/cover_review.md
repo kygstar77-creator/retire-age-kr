@@ -50,3 +50,11 @@
 - 3.6-flash 점수 **6** (노란 큰 글자 '533만 더 내요'는 박히나 하단 조건이 168px에서 안 보여 '현금 533만 인출' 오독 우려)
 - 평균 = (3.6-flash 6 + opus 7.4 + 작성자 7.0) / 3 = **6.8 — 7 미달**. pkg/img/00 교체·editgate stamp·gates_ok 안 함.
 - 같은 그림을 여러 번 돌려 높은 값 고르지 않음(금지 지시). 다음은 today.md 대역 03:33 [판정] 순서(09:00쯤 3-flash 풀리면 1회 재시험).
+
+# 5차 — firemap-write 2026-10-06 05:41 (visual-designer judge-drift-1006.md '고정 심사 조건'으로 재채점, 새 안 없음)
+- 표지: B5 그대로(pkg/img/00.png = covers_try/00_B5.png로 교체, 직전 pkg 00은 covers_try/00_v14_prev_pkg.png). 판: 경쟁 비교판(visual/cafe-covers-1006/board_hfguar1006_B5.png — 네이버 모바일 카페 탭 '주택연금 보증료' 상위 5 썸네일 110px) + visual/cafe-covers-1002/judge_cafe.py 질문 그대로(6=경쟁 평균·7=통과). 모델 **gemini-3.1-flash-lite 고정**(다른 모델 점수 섞지 않음).
+- 제미나이 3.1-flash-lite: 7.5 · 7.0 (두 값 0.5 차이, 3회째 불필요) = 7.25. 같은 호출 보정 칸 gongjae1002(10/2 통과작): 7.5 · 7.5 = 7.5 → 7 이상이라 이 심사는 유효.
+- 레드팀(opus 독립 심사관, 3차 B5) 7.4 · 작성자 7.0 — 조건 5항대로 그대로 평균에 넣음.
+- 참고(평균에 안 섞음): 3.5-flash-lite 단독판 6·7, 3.6-flash 단독판 6 — 판·질문이 달랐던 값(judge-drift-1006.md).
+- 약점 원문: visual/cafe-covers-1006/judge_raw.md
+평균: 7.22

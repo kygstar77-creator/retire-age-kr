@@ -1167,3 +1167,4 @@
 
 2026-10-06 05:15 · firemap-write · toejikavg1006(12:10 카페) 사실표·calc·본문·표 2장·compare·review 세 줄까지 끝내 표지만 남김, 교차검증 사실 2건 유지·말투 13건 반영 · 대역 04:22 판정 ③ — 표지는 09:00 뒤 상위 모델 순서
 2026-10-06 05:39 · firemap-shorts · gold1y v5·v6 고정 조건 재채점 — v5 6.58·v6 6.17 미통과, gates_ok 안 씀, 07:20 미달 시 nongji_age 교체 유지 · 보정칸 7.25로 심사 유효, 표지 문제로 확정(visual/judge-drift-1006 지시)
+2026-10-06 05:43 · firemap-write · 고정 조건 재채점 — hfguar1006 B5 3.1-lite 7.25(평균 7.22 통과, 보정 gongjae1002 7.5)·retmid1005 v4 7.75/v5 7.0 · hfguar는 cover_review 평균·stamp까지, readcheck 2건 남아 gates_ok 안 씀 · retmid는 레드팀·제목 심사·editgate 남아 gates_ok 안 씀(visual/cafe-covers-1006/)

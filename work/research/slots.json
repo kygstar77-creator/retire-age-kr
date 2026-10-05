@@ -11,16 +11,7 @@
   "long": 1
  },
  "reserve": {
-  "shorts": [
-   {
-    "item": "nongji_age",
-    "ep": "work/research/cardshorts/nongji_age.json",
-    "status": "관문 통과: compete 5(배우자 승계 각도 경쟁 0/5)·check 문제 없음·aitell 0.0·숫자 대조 사실표 밖 0(레드팀)·표지 v4 1초 시험 7·7·8=7.33·카피 7·7·7=7.0·review 세 줄 — 농지연금 3억·65세 승계 없음 1,051,330원 vs 배우자 55세 승계 845,100원(공사 예상연금 조회 10/5), rank·음악 없음. 사실표 nongji1005(쇼츠 첫 사용). publish 전 직전 편 layout만 다시 볼 것(rank 연속이면 bars로)",
-    "by": "firemap-shorts",
-    "at": "2026-10-05 01:47",
-    "gates_ok": "2026-10-05 01:47"
-   }
-  ],
+  "shorts": [],
   "cafe": [
    {
     "item": "nhisrent1005",
@@ -419,10 +410,10 @@
   {
    "at": "2026-10-06 19:20",
    "kind": "shorts",
-   "item": "gold1y",
+   "item": "nongji_age",
    "owner": "firemap-shorts",
-   "gates_ok": null,
-   "note": "firemap-shorts 19:31: 금 1천만원 사는 길별 1년([지시] 시한 10/6 21:00, 사실표 goldway1005 쇼츠 첫 사용)으로 배정 — compete.md 6편·spec check 문제 없음·aitell 0.0 끝. 남은 관문: 첫 1초 표지·1초 시험 3명·카피 심사 3명·review 세 줄(기한 07:20). rank·음악 없음. 기준금리 편은 다음 칸으로 미룸(관문 착수 전이었음) | firemap-shorts 10/5 03:44: 편·담당만 배정 — 대기 spec은 전부 사실표 중복 규칙에 막힘(A-1·E-1·E-2 주인공 같음). 관문 전"
+   "gates_ok": "2026-10-05 01:47",
+   "note": "firemap-shorts 10/6 06:42: gold1y 표지 v5 6.58·v6 6.17 미달(5768899, 고정 심사·보정 유효)로 기한 07:20 못 넘겨 비축 nongji_age로 교체(gates_ok는 비축 통과 시각 10/5 01:47 — compete 5·check·aitell 0.0·표지 v4 7.33·카피 7.0·review 세 줄). rank·음악 없음, publish 전 직전 편(10/6 12:20 nhis_prop) layout 확인해 rank 연속이면 bars. gold1y는 표지 다시 만들 대상(시한 10/6 21:00 유지, 통과 시 10/7 이후 칸) | 이전: firemap-shorts 19:31: 금 1천만원 사는 길별 1년([지시] 시한 10/6 21:00, 사실표 goldway1005 쇼츠 첫 사용)으로 배정 — compete.md 6편·spec check 문제 없음·aitell 0.0 끝. 남은 관문: 첫 1초 표지·1초 시험 3명·카피 심사 3명·review 세 줄(기한 07:20). rank·음악 없음. 기준금리 편은 다음 칸으로 미룸(관문 착수 전이었음) | firemap-shorts 10/5 03:44: 편·담당만 배정 — 대기 spec은 전부 사실표 중복 규칙에 막힘(A-1·E-1·E-2 주인공 같음). 관문 전"
   },
   {
    "at": "2026-10-06 19:30",
@@ -498,5 +489,6 @@
    "gates_ok": null,
    "note": "04:4x firemap-youtube-loop: 10/6 16:01 TTS는 M-1에 씀(R-1은 같은 도구로 10/5 f0 밖 81줄·lfpitch 블라인드 탈락 → Chirp 3 HD 결재 뒤). M-1 = 대본 심사 7.47 통과·편집 통과(script.v2·화면 글자 02:50)·화면 24장면 완성. 남은 관문: 16:01 녹음 → m1props 재실행·screen_text 재서명 → 렌더·scorecard·썸네일·review 판정 줄. 관문 기한 10/7 19:30"
   }
- ]
+ ],
+ "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외"
 }

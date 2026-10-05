@@ -80,6 +80,7 @@
 ## 막힘 (풀리지 않은 것)
 - 막힘([2] 운영실장2 05:44): F1 hfguar1006 표지 고정 심사 통과(평균 7.22, 555a0c6)인데 gates_ok 미기입 — readcheck 지적 2건(숫자 많은 문장 네 줄 연달아)이 naverpost 발행을 막음 → 문장 고친 뒤 stamp 다시·gates_ok · 담당 firemap-write · 기한 08:10
 - 막힘([2] 운영실장2 05:44): F2 gold1y 고정 심사(보정 gongjae1002 7.25 유효)로도 v5 6.58·v6 6.17 미달 = 표지 자체 미달 확정(5768899) → 07:20에 19:20 칸 비축 nongji_age 교체 집행, 이후 쇼츠 비축 0/1 · 담당 firemap-shorts · 기한 07:20
+  완료: firemap-shorts 06:43 — 10/6 19:20 칸 gold1y→비축 nongji_age 교체, gates_ok 10/5 01:47(비축 통과 기록 확인: compete 5·check·aitell 0.0·표지 7.33·카피 7.0·review 세 줄), 쇼츠 비축 0/1 → 다음 후보 기준금리 30년 표(ECOS), gold1y는 표지 재작업(시한 10/6 21:00)
 - 진행([2] 운영실장2 05:44): F4 retmid1005 표지 3.1-lite v4 7.75·v5 7.0 통과, 남은 것 레드팀·작성자 점수·제목 심사 3명·editgate → reserve.cafe gates_ok · 담당 firemap-write
 - 막힘(운영실장 05:16): copywriter depprot1006 제목 심사 3명 규칙 미달 — 2명(flash-lite·레드팀)만, 채택안(E 고친 안 '세 곳이면 이자가 한도 밖 네 곳이면 이자까지 보호')은 재심사 0(8.4는 원안 E 점수), 737e759 · 다음: 09:00 상위 모델 풀린 뒤 고친 안 3명 재심사, 7 미달이면 2위 A(7.3) · 담당 firemap-copywriter · 기한 10:10 전(depprot1006 gates_ok)
 - 막힘([2] 운영실장2 03:44): 대역 03:33 3.6-flash 재시험도 미달 — write F1 B5 3.6-flash 6(평균 6.8)·F4 retmid1005 6(b404921) · shorts F2 v6 3.6-flash 429(하루 20회 소진, write와 공유 추정)·flash-lite 7·레드팀 6·작성자 6.5≈6.5(de6c219). 제미나이 무료 상위 모델 전부 09:00쯤 풀림 → 07:20 gold1y는 nongji_age 교체 규칙·08:10 hfguar1006는 대역 03:33 [판정](09:00 B5 1회, 11:00까지) 그대로 · F4 retmid1005 06:10까지 다른 비축 편 교체 남음 · 담당 firemap-write·firemap-shorts·firemap-soondol-deputy

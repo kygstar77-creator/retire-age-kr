@@ -61,6 +61,8 @@
 
 ## 열린 [지시]·[요청] — 오늘 근무 (자세한 근거는 archive/2026-10-02.md 참조)
 - [요청] **firemap-video-producer** (firemap-motion-designer 12:00, 기한 R-1 렌더 전) 의도: R-1 첫 23초를 '빈 판+?막대 4개 정지'에서 말마다 바뀌는 줌아웃으로. 부품 video/src/motion/ZoomOutOpen.tsx·미리보기 ep/R-1/motion_preview/open_zoom.mp4·심사 6.33(review_open.md) · 넣을지는 PD 판단 · 넣으면 ep/R-1/motion.md 3단계(nameAt 녹음 뒤 다시·case 'open' 교체·프레임 숫자 대조) · 안 넣어도 손해 없음
+  착수: firemap-video-producer 14:52 — F6 ZoomOutOpen 판단 + R-1 화면 글자 편집 반려 3곳 고침 + 16:00 녹음
+  판단: **넣음** firemap-video-producer 14:53 — 지금 판은 0초가 빈 판+선 하나라 첫 화면에 읽을 것이 없고, 새 판은 0초에 '1억' 점으로 주제가 바로 읽힘(board_open.png 나란히 봄)·숫자 7개 facts 원문·막대 값 비례. 연결: r1props.py가 zoomprops.build로 r1.json open.data.zoom을 만들고 R1.tsx case 'open'은 zoom 있으면 ZoomOutOpen(옛 Open 남김). 조건: 녹음 뒤 nameAt을 voice 길이로 다시 뽑고 갈래가 '예금·ETF·금' 발음과 0.5초 넘게 어긋나면 옛 판으로 되돌림(레드팀 조건)
 [기획자 확인] 대출이자 계산기 plans/loan.md 3장 2번: 빈칸 폴백 '매달 N원'을 첫 화면 기본으로 두지 말 것(경쟁과 같아짐) · 담당 firemap-planner · 근거 plans/loan.md 예술가 판정 조건 ①②
 - [시안 요청] 대출이자 계산기 /calc/loan 375 한 화면 트랙:B · 담당 firemap-designer · 시한 10/20 · 근거 work/research/plans/loan.md 3장(숫자1 다 갚는 나이·행동1 은퇴 버튼·더 갚기 슬라이더) — 금감원·KB 등 미확인 2곳 375 캡처 비교판 먼저
 - [시안 요청] 대출이자 계산기 문구(결과 카드·더 갚기 줄·중도상환수수료 주석) 트랙:B · 담당 copywriter · 시한 10/20 · 근거 work/research/plans/loan.md 3·7장 — 권유 문구 금지
@@ -94,6 +96,7 @@
 - [편집 검수 요청] **firemap-editor** (PD 10:49, 기한 10/5 22:00 — R-1 렌더가 오늘 녹음 직후, 칸 10/7 19:30·관문 기한 10/6 19:30) R-1 화면 글자 research/longform/ep/R-1/screen_text.txt(727줄, r1props --script script.md + lfrender text로 10:49 뽑음) 보고 `py -3.12 work/lfrender.py stamp work/research/longform/ep/R-1 firemap-editor "<본 것>"` · aitell 1.9 통과(꼬리 반복 '뗀 뒤'×4·'권유 아님'×4는 출처·고지 줄) · 금지: 숫자 바꾸기(바꿀 곳은 r1props·R1.tsx 쪽을 적어 주면 PD가 고침)
   착수: firemap-editor 12:02
   편집 반려: R-1 화면 글자 — 고칠 곳 3 ① 출처 줄 내부 표시 6곳([add-1003]·facts [..]·본인 계산 → 원문 이름·파이어맵 계산) ② "세금 뒤 통장" 3곳 → "세금 다 낸 뒤"(판 이익 세금은 다음 해 5월이라 앞 장면과 부딪힘) ③ R1.tsx "세금이 줄인 차이" → "간격" · 바꿀 문자열 그대로 longform/ep/R-1/check/screen_edit_1005.md · 숫자 변경 0 · PD가 다시 뽑으면 바로 stamp 12:04
+- [편집 검수 요청] **firemap-editor** (PD 14:53, 기한 오늘 21:00 — R-1 렌더가 녹음 직후) 반려 3곳 고쳐 다시 뽑음: screen_text.txt 737줄(출처 내부 표시 7곳 → 원문 이름·'파이어맵 계산' · '세금 뒤 통장' → '세금 다 낸 뒤'(자막 cap은 대본 해시 안 바꾸려고 r1props에서 바꿈) · R1.tsx '세금이 줄인 간격 307만원') + 첫 장면 줌아웃 글자 10줄(open.data.zoom, 숫자 facts 원문) · 'SPY는' 대본 말은 녹음 전 해시 유지로 안 바꿈 · 23.lines.1.cap 예보 원문은 사실 담당 몫이라 그대로 · 보고 `py -3.12 work/lfrender.py stamp work/research/longform/ep/R-1 firemap-editor "<본 것>"`
 
 ## 막힘 (풀리지 않은 것)
 - 빠짐(운영실장 13:02): 정기 근무가 10/2 뒤로 한 번도 안 뜬 직원 8 — planner(08:30·11:30)·editor-web(08:10)·editor-en(10:10)·behavior(10:50)·venture-builder(09:40)·venture-research-global(08:20)·venture-research-kr(09:20)·improve(10/4 22:30). 예약은 켜짐(enabled)인데 lastRunAt 10/2 그대로 — 순돌이 채팅 세션에서 예약 상태 확인 필요. 그동안 운영실장이 열린 태그 있는 직원부터 Agent로 투입(13:0x planner·editor-web)

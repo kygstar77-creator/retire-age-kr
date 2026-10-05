@@ -11,6 +11,16 @@
 [scenes.0.data.bars.2.0] SCHD
 [scenes.0.data.bars.3.0] 금
 [scenes.0.data.gapText] 세금이 줄인 간격 3,072,208원
+[scenes.0.data.zoom.seed] R-1
+[scenes.0.data.zoom.dot] 1억
+[scenes.0.data.zoom.names.0] 예금
+[scenes.0.data.zoom.names.1] S&P500
+[scenes.0.data.zoom.names.2] SCHD
+[scenes.0.data.zoom.names.3] 금
+[scenes.0.data.zoom.gapHead] 맨 위(SCHD)와 맨 아래(예금) 차이
+[scenes.0.data.zoom.pre.0] 16,876,863원
+[scenes.0.data.zoom.post.0] 13,804,655원
+[scenes.0.data.zoom.cut] 줄어든 몫 3,072,208원
 [scenes.0.lines.0.text] 퇴직금이든 적금 만기든, 어느 날 통장에 1억이 들어왔다고 해 볼게요.
 [scenes.0.lines.1.text] 예금에 넣으시겠어요? 미국 주식 ETF를 사시겠어요? 아니면 금을 사 두시겠어요?
 [scenes.0.lines.2.text] 그래서 작년 이맘때 네 군데에 똑같이 넣었다 치고, 세금·환율 뗀 영수증을 뽑아 봤어요.
@@ -107,7 +117,7 @@
 [scenes.6.key] swing
 [scenes.6.title] 1년 안에서는 훨씬 크게 흔들렸다
 [scenes.6.sub] 1억을 넣었다면 매일의 원화 평가액(분배금 빼고 세금 전) · 만원
-[scenes.6.source] [add-1003] 야후 종가 × ECOS 731Y001 매매기준율(본인 계산)
+[scenes.6.source] 야후 파이낸스 종가 × 한국은행 ECOS 731Y001 매매기준율(파이어맵 계산)
 [scenes.6.chapter] 2장
 [scenes.6.data.series.0.0] S&P500
 [scenes.6.data.series.0.1] ink
@@ -223,7 +233,7 @@
 [scenes.9.data.text] 다음 해 5월
 [scenes.9.data.label] 판 이익 세금 내는 때
 [scenes.9.data.note] 확정신고 5월 1일~31일
-[scenes.9.data.after.0] 세금 두 가지 뗀 뒤 통장
+[scenes.9.data.after.0] 세금 두 가지 다 낸 뒤
 [scenes.9.data.after.1] 110,225,307원
 [scenes.9.data.after.2] +10.23%
 [scenes.9.lines.0.text] 그런데 이 세금은 좀 특이해요. 팔 때 바로 빠지지 않거든요.
@@ -254,7 +264,7 @@
 [scenes.10.data.rows.4.0] 판 이익 세금
 [scenes.10.data.rows.4.1] −2,910,286
 [scenes.10.data.rows.4.2] tax
-[scenes.10.data.rows.5.0] 세금 뒤 통장
+[scenes.10.data.rows.5.0] 세금 다 낸 뒤
 [scenes.10.data.rows.5.2] net
 [scenes.10.data.callout.0] 1주당 분배금 1.0339 → 1.0541달러 (+1.95%)
 [scenes.10.lines.0.text] 네 번째는 배당 ETF로 많이 알려진 SCHD예요. 계산은 방금 한 그대로예요.
@@ -274,7 +284,7 @@
 [scenes.11.key] schdfx
 [scenes.11.title] 분배금은 받는 날 환율로 들어온다
 [scenes.11.sub] SCHD 분배금 네 번이 들어온 날의 원/달러 환율 · 원
-[scenes.11.source] [add-1003 A5] 슈왑 분배금 표 × ECOS 731Y001(본인 계산)
+[scenes.11.source] 찰스슈왑 분배금 표 × 한국은행 ECOS 731Y001(파이어맵 계산)
 [scenes.11.chapter] 4장
 [scenes.11.data.dir] v
 [scenes.11.data.hline.1] 끝날 환율 1,359.6원
@@ -363,7 +373,7 @@
 [scenes.15.key] start
 [scenes.15.title] 넣는 날을 바꾸면 순위도 바뀐다
 [scenes.15.sub] 시작일 251개(2024.10.2~2025.10.2)마다 1년 들고 판 결과 · 세 ETF 순서별 날 수
-[scenes.15.source] [add-1003 C1] 야후 종가·분배금, 달러 기준·세금 전(본인 계산)
+[scenes.15.source] 야후 파이낸스 종가·분배금 · 달러 기준·세금 전(파이어맵 계산)
 [scenes.15.chapter] 6장
 [scenes.15.data.dir] v
 [scenes.15.data.bars.0.0] 금>S&P>SCHD
@@ -398,7 +408,7 @@
 [scenes.16.key] caseA
 [scenes.16.title] 30대 · 1년 안에 꺼낼 돈
 [scenes.16.sub] 예: 집 계약금 — 꺼내는 날이 정해진 돈
-[scenes.16.source] [add-1003] 야후 종가 × ECOS 731Y001 매매기준율(본인 계산) · facts [영수증]
+[scenes.16.source] 야후 파이낸스 종가 × 한국은행 ECOS 731Y001 매매기준율(파이어맵 계산)
 [scenes.16.chapter] 7장
 [scenes.16.data.who] 30대
 [scenes.16.data.what] 1년 안에 꺼낼 돈
@@ -424,7 +434,7 @@
 [scenes.17.key] caseB
 [scenes.17.title] 55세 · 은퇴 뒤 생활비 보탬
 [scenes.17.sub] 한 달로 나눈 몫 — 예금은 만기에 한 번, SCHD는 석 달에 한 번
-[scenes.17.source] facts [계산] B · [add-1003 A5·S-B]
+[scenes.17.source] 한국은행 ECOS 121Y002 · 소득세법 제129조 · 찰스슈왑 분배금 표 × ECOS 731Y001(파이어맵 계산)
 [scenes.17.chapter] 7장
 [scenes.17.data.who] 55세
 [scenes.17.data.what] 생활비 보탬
@@ -601,7 +611,7 @@
 [scenes.24.key] caseC
 [scenes.24.title] 60세 · 예금 2억 + 퇴직금 1억
 [scenes.24.sub] 지역가입자 1인 · 재산 0 · 다른 소득 0 가정 · 건보료+장기요양 월액
-[scenes.24.source] [add-1003 S-C] D-1 facts 식(본인 계산) · 이자 귀속 연도·실제 고지액 확인 안 함
+[scenes.24.source] 국민건강보험법 시행규칙 제44조 · D-1 계산식(파이어맵 계산) · 실제 고지액과 다를 수 있음
 [scenes.24.chapter] 10장
 [scenes.24.data.who] 60세
 [scenes.24.data.what] 퇴직금 1억 더 예금
@@ -625,7 +635,7 @@
 [scenes.25.sub] 2025.10.2 → 2026.10.2 · 세금과 환율을 다 뗀 뒤
 [scenes.25.source] 거래소 종가·분배금(야후 파이낸스·나스닥, SCHD 분배금은 찰스슈왑 원문) · 원/달러 ECOS 731Y001 · 과거 값 · 미래 보장 아님 · 투자 권유 아님
 [scenes.25.chapter] 11장
-[scenes.25.data.head] 세금 뒤 통장
+[scenes.25.data.head] 세금 다 낸 뒤 남는 돈
 [scenes.25.data.side.0] 순위 그대로
 [scenes.25.data.side.2] 하지만 넣는 날이 바뀌면 순위도 바뀜
 [scenes.25.data.rows.0.0] SCHD +15.99%
@@ -642,7 +652,7 @@
 [scenes.25.data.rows.3.2] in
 [scenes.25.lines.0.text] 정리해 볼게요. 작년 그날 넣은 돈은 세금과 환율을 다 떼고 이렇게 됐어요.
 [scenes.25.lines.1.text] SCHD는 16% 가까이 늘었고, SPY는 10% 조금 넘게요.
-[scenes.25.lines.1.cap] 세금 뒤 통장 SCHD 1억 1,599만원(+15.99%) · S&P500 1억 1,023만원(+10.23%)
+[scenes.25.lines.1.cap] 세금 다 낸 뒤 SCHD 1억 1,599만원(+15.99%) · S&P500 1억 1,023만원(+10.23%)
 [scenes.25.lines.2.text] 금은 3% 조금 넘게, 예금은 2% 조금 넘게 늘었어요.
 [scenes.25.lines.2.cap] 금 1억 337만원(+3.37%) · 예금 1억 218만원(+2.18%)
 [scenes.25.lines.3.text] 순위는 그대로였고, 세금은 간격을 줄였어요. 하지만 넣는 날이 바뀌면 순위도 쉽게 바뀌었죠.
@@ -650,7 +660,7 @@
 [scenes.26.key] act
 [scenes.26.title] 오늘 해 볼 일 하나
 [scenes.26.sub] 내 통장에서 — 작년 이자·배당 합계 확인
-[scenes.26.source] facts [7][8] · [add-1003 ACT]
+[scenes.26.source] 소득세법 제14조 · 국민건강보험법 시행규칙 제44조
 [scenes.26.chapter] 11장
 [scenes.26.data.head] 내 작년 금융소득
 [scenes.26.data.rows.0.0] ① 작년 이자·배당 합계 찾기
@@ -707,7 +717,7 @@
 [R1.tsx] 원
 [R1.tsx] 오늘 할 일
 [R1.tsx] 하나
-[R1.tsx] 세금이 줄인 차이 307만원
+[R1.tsx] 세금이 줄인 간격 307만원
 [R1.tsx] 1억 넣고 1년, 실제 영수증
 [R1.tsx] 1억의 1년 영수증 #1
 

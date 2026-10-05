@@ -140,7 +140,7 @@ CUTS = [('open', '0.', None), ('promise', '0.', '파이어맵은 매번'), ('roa
         ('thresh', '10.', None), ('caseC', '10.', '실제로 이 문턱을'),
         ('sum', '11.', None), ('act', '11.', '그래서 오늘 해 볼 일은'), ('end', '11.', '이제 여러분 차례예요')]
 END_MIN = 20 * FPS   # 끝 화면(엔드 스크린) 자리는 마지막 20초 이상 — YouTube 도움말 '동영상 마지막 5~20초에 추가'(검색 요약만 봄)
-SRC_ADD = '[add-1003] 야후 종가 × ECOS 731Y001 매매기준율(본인 계산)'
+SRC_ADD = '야후 파이낸스 종가 × 한국은행 ECOS 731Y001 매매기준율(파이어맵 계산)'
 
 
 def R(rows):   # [label, value, tone, at]
@@ -202,17 +202,17 @@ def spec(key, L, A):
     if key == 'spycal':
         return dict(kind='zoom', title='판 이익 세금은 나중에 낸다', sub='팔 때 바로 빠지지 않는다 — 다음 해 5월 직접 신고', source=SRC_TAX,
                     data={'text': '다음 해 5월', 'label': '판 이익 세금 내는 때', 'note': '확정신고 5월 1일~31일', 'start': A('그런데 이 세금은', 8),
-                          'after': ['세금 두 가지 뗀 뒤 통장', won(RC['SPY']['net']) + '원', PCT['SPY'], A('10% 조금', 0)]})
+                          'after': ['세금 두 가지 다 낸 뒤', won(RC['SPY']['net']) + '원', PCT['SPY'], A('10% 조금', 0)]})
     if key == 'schd':
         return dict(kind='receipt', title='SCHD 영수증', sub='배당 ETF · 계산 방법은 S&P500과 같다', source=SRC_ETF,
                     data={'head': 'SCHD · 1억 · 단위 원', 'side': ['+15.99%', A('16% 가까이', 10), '세금 뗀 뒤, 넣은 돈보다 늘어난 비율'],
                           'rows': R([['달러로 오른 폭', '+19.68%', 'in', A('약 20%', 0)], ['원화로 판 돈', won(RC['SCHD']['sell']), 'in', A('약 20%', 30)],
                                      ['분배금 4번(세금 전)', '+' + won(RC['SCHD']['dist']), 'in', A('373만원', 0)], ['미국이 뗀 세금 15%', '−' + won(RC['SCHD']['wht']), 'tax', A('56만원', 0)],
-                                     ['판 이익 세금', '−' + won(RC['SCHD']['cgt']), 'tax', A('291만원', 0)], ['세금 뒤 통장', won(RC['SCHD']['net']), 'net', A('16% 가까이', 0)]]),
+                                     ['판 이익 세금', '−' + won(RC['SCHD']['cgt']), 'tax', A('291만원', 0)], ['세금 다 낸 뒤', won(RC['SCHD']['net']), 'net', A('16% 가까이', 0)]]),
                           'callout': ['1주당 분배금 1.0339 → 1.0541달러 (+1.95%)', A('1주당 분배금', 0)]})
     if key == 'schdfx':
         days = [['12/15', 1472.5], ['3/30', 1508.1], ['6/29', 1544.2], ['9/28', 1352.0]]
-        return dict(kind='bars', title='분배금은 받는 날 환율로 들어온다', sub='SCHD 분배금 네 번이 들어온 날의 원/달러 환율 · 원', source='[add-1003 A5] 슈왑 분배금 표 × ECOS 731Y001(본인 계산)',
+        return dict(kind='bars', title='분배금은 받는 날 환율로 들어온다', sub='SCHD 분배금 네 번이 들어온 날의 원/달러 환율 · 원', source='찰스슈왑 분배금 표 × 한국은행 ECOS 731Y001(파이어맵 계산)',
                     data={'dir': 'v', 'min': 1200, 'max': 1600, 'tags': True, 'hline': [FX[1], '끝날 환율 1,359.6원', A('그런데 분배금은', 0)],
                           'bars': [[d, v, f'{v:,.1f}원', A('그런데 분배금은', 14 + 10 * i), 'ink'] for i, (d, v) in enumerate(days)],
                           'note': ['받은 날 환율이면 +252,402원', A('25만원쯤', 0)]})
@@ -231,18 +231,18 @@ def spec(key, L, A):
                           'callout': ['많이 번 쪽이 세금도 많이 낸다', A('많이 번 쪽이', 0)]})
     if key == 'start':
         order = [['금>S&P>SCHD', 153], ['금>SCHD>S&P', 34], ['SCHD>금>S&P', 34], ['SCHD>S&P>금', 25], ['S&P>금>SCHD', 4], ['S&P>SCHD>금', 1]]
-        return dict(kind='bars', title='넣는 날을 바꾸면 순위도 바뀐다', sub='시작일 251개(2024.10.2~2025.10.2)마다 1년 들고 판 결과 · 세 ETF 순서별 날 수', source='[add-1003 C1] 야후 종가·분배금, 달러 기준·세금 전(본인 계산)',
+        return dict(kind='bars', title='넣는 날을 바꾸면 순위도 바뀐다', sub='시작일 251개(2024.10.2~2025.10.2)마다 1년 들고 판 결과 · 세 ETF 순서별 날 수', source='야후 파이낸스 종가·분배금 · 달러 기준·세금 전(파이어맵 계산)',
                     data={'dir': 'v', 'max': 175, 'tags': True, 'bars': [[o, v, f'{v}일', A('그래서 넣는 날을', 10 + 8 * i), 'accent' if o.startswith('SCHD>S&P') else ('ink' if not o.startswith('금') else 'ink'), None] for i, (o, v) in enumerate(order)],
                           'circle': [3, A('오늘 영수증과 같은', 0)], 'note': ['오늘 순서: 251일 중 25일(10.0%)', A('오늘 영수증과 같은', 10)],
                           'note2': ['금이 1위: 187일(74.5%)', A('오히려 금이', 0)]})
     if key == 'caseA':
-        return dict(kind='person', title='30대 · 1년 안에 꺼낼 돈', sub='예: 집 계약금 — 꺼내는 날이 정해진 돈', source=SRC_ADD + ' · facts [영수증]',
+        return dict(kind='person', title='30대 · 1년 안에 꺼낼 돈', sub='예: 집 계약금 — 꺼내는 날이 정해진 돈', source=SRC_ADD,
                     data={'who': '30대', 'what': '1년 안에 꺼낼 돈', 'dir': 'h', 'min': 7000, 'max': 14200, 'tags': False,
                           'bars': [['예금', 10218, '102,182,680원', A('예금이면', 0), 'ink', '처음부터 정해짐', 10000, '1억'],
                                    ['S&P500', 12304, '123,037,245원', A('S&P500이었다면', 0), 'accent', '꺼내는 날에 따라', 9729, '97,294,730원']],
                           'callout': ['폭 2,574만원', A('S&P500이었다면', 24)]})
     if key == 'caseB':
-        return dict(kind='person', title='55세 · 은퇴 뒤 생활비 보탬', sub='한 달로 나눈 몫 — 예금은 만기에 한 번, SCHD는 석 달에 한 번', source='facts [계산] B · [add-1003 A5·S-B]',
+        return dict(kind='person', title='55세 · 은퇴 뒤 생활비 보탬', sub='한 달로 나눈 몫 — 예금은 만기에 한 번, SCHD는 석 달에 한 번', source='한국은행 ECOS 121Y002 · 소득세법 제129조 · 찰스슈왑 분배금 표 × ECOS 731Y001(파이어맵 계산)',
                     data={'who': '55세', 'what': '생활비 보탬', 'dir': 'v', 'max': 340000, 'tags': True,
                           'bars': [['예금 3.39% 한 달 몫', 238995, '238,995원', A('지금 예금 평균', 0), 'ink'], ['SCHD 지난 1년 한 달 몫', 285120, '285,120원', A('SCHD는 지난 1년', 0), 'accent']],
                           'callout': ['분기마다 796,727~905,832원', A('다만 석 달에', 0)]})
@@ -280,16 +280,16 @@ def spec(key, L, A):
                           'bars': [['예금자보호 한도', 10000, '1억원', A('첫 번째는', 0), 'ink', '한 사람 기준'], ['건보료에 이자 합산', 29499, '약 2억 9,499만원', A('두 번째는', 0), 'ink', '이자 1천만원 넘으면'],
                                    ['종합과세·피부양자', 58997, '약 5억 8,997만원', A('세 번째는', 0), 'ink', '이자 2천만원 넘으면']]})
     if key == 'caseC':
-        return dict(kind='person', title='60세 · 예금 2억 + 퇴직금 1억', sub='지역가입자 1인 · 재산 0 · 다른 소득 0 가정 · 건보료+장기요양 월액', source='[add-1003 S-C] D-1 facts 식(본인 계산) · 이자 귀속 연도·실제 고지액 확인 안 함',
+        return dict(kind='person', title='60세 · 예금 2억 + 퇴직금 1억', sub='지역가입자 1인 · 재산 0 · 다른 소득 0 가정 · 건보료+장기요양 월액', source='국민건강보험법 시행규칙 제44조 · D-1 계산식(파이어맵 계산) · 실제 고지액과 다를 수 있음',
                     data={'who': '60세', 'what': '퇴직금 1억 더 예금', 'dir': 'v', 'max': 80000, 'tags': True,
                           'bars': [['예금 2억 · 이자 6,780,000원', 22800, '월 22,800원', A('예금 2억이', 0), 'ink'], ['예금 3억 · 이자 10,170,000원', 68930, '월 68,930원', A('원금이 3억이', 0), 'rise']],
                           'callout': ['1년 +553,560원', A('1년에 55만원', 0)]})
     if key == 'sum':
         return dict(kind='receipt', title='정리 — 1억의 1년 영수증', sub='2025.10.2 → 2026.10.2 · 세금과 환율을 다 뗀 뒤', source=SRC_ETF + ' · ' + PAST,
-                    data={'head': '세금 뒤 통장', 'side': ['순위 그대로', A('순위는 그대로', 0), '하지만 넣는 날이 바뀌면 순위도 바뀜'],
+                    data={'head': '세금 다 낸 뒤 남는 돈', 'side': ['순위 그대로', A('순위는 그대로', 0), '하지만 넣는 날이 바뀌면 순위도 바뀜'],
                           'rows': R([[f'{NAME[k]}  {PCT[k]}', SAYNET[k], 'net' if k == 'SCHD' else 'in', A(['SCHD는', 'SCHD는', '금은', '금은'][i], [0, 24, 0, 24][i])] for i, k in enumerate(ORD)])})
     if key == 'act':
-        return dict(kind='act', title='오늘 해 볼 일 하나', sub='내 통장에서 — 작년 이자·배당 합계 확인', source='facts [7][8] · [add-1003 ACT]',
+        return dict(kind='act', title='오늘 해 볼 일 하나', sub='내 통장에서 — 작년 이자·배당 합계 확인', source='소득세법 제14조 · 국민건강보험법 시행규칙 제44조',
                     data={'head': '내 작년 금융소득', 'rows': R([['① 작년 이자·배당 합계 찾기', '은행·증권사 앱', 'in', A('은행이나 증권사', 0)],
                                                             ['② 1천만원까지 남은 돈', '지역 건보 합산 경계', 'hi', A('그리고 1천만원과', 0)],
                                                             ['③ 2천만원까지 남은 돈', '종합과세·피부양자', 'hi', A('그리고 1천만원과', 18)]])})
@@ -346,6 +346,15 @@ def main(script):
         scenes.append({'key': key, 'kind': d['kind'], 'title': d['title'], 'sub': d.get('sub'), 'source': d.get('source'),
                        'chapter': None if ch in ('0.', '로고') else (ch.replace('-1.', '장 · 덧붙임') if ch.endswith('-1.') else ch.rstrip('.') + '장'),
                        'data': d['data'], 'lines': out, 'frames': frames})
+    # 편집 반려 10/5 12:04 ②: 대본 [자막]의 '세금 뒤 통장'은 판 이익 세금(다음 해 5월)과 부딪힌다 — 대본 해시를 안 바꾸려고 화면에서만 바꾼다
+    for sc in scenes:
+        for l in sc['lines']:
+            if l['cap']: l['cap'] = l['cap'].replace('세금 뒤 통장', '세금 다 낸 뒤')
+    # 첫 장면 줌아웃(motion-designer 10/5 [요청], PD 넣음 14:5x) — nameAt은 목소리 길이로 다시 잰다
+    sys.path.insert(0, os.path.join(EP, 'motion_preview'))
+    from zoomprops import build as zoom_build
+    op = next(x for x in scenes if x['key'] == 'open')
+    op['data']['zoom'] = zoom_build(op)
     missing = sum(1 for s in scenes for l in s['lines'] if not l['audio'])
     res = {'fps': FPS, 'scenes': scenes, 'missing': missing, 'script': script, 'rate': RATE}
     json.dump(res, open(os.path.join(VID, 'r1.json'), 'w', encoding='utf-8'), ensure_ascii=False)

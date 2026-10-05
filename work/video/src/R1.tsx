@@ -12,6 +12,7 @@ import {TallyCountUp} from './motion/TallyCountUp';
 import {TallyBars, TallyBar} from './motion/TallyBars';
 import {TallyReceipt, TallyRow} from './motion/TallyReceipt';
 import {TallyZoom} from './motion/TallyZoom';
+import {ZoomOutOpen} from './motion/ZoomOutOpen';
 import {TallyTag, TallyCallout, TallyCircle} from './motion/TallyMark';
 import {TallyLineChart, lineXY} from './motion/TallyLineChart';
 
@@ -232,7 +233,7 @@ const End: React.FC<{s: RScene}> = ({s}) => {
 
 const Body: React.FC<{s: RScene}> = ({s}) => {
   switch (s.kind) {
-    case 'open': return <Open s={s} />;
+    case 'open': return s.data.zoom ? <ZoomOutOpen {...s.data.zoom} /> : <Open s={s} />;  // 줌아웃 첫 장면(10/5 PD 넣음), zoom 없으면 옛 판
     case 'promise': return <Promise s={s} />;
     case 'road': return <Road s={s} />;
     case 'receipt': return <Receipt s={s} />;
@@ -283,7 +284,7 @@ export const R1Thumb: React.FC<{net: [string, string, string][]}> = ({net}) => (
       );
     })}
     <div style={{position: 'absolute', left: 60, right: 60, top: 408, height: 4, background: '#2a2c33'}} />
-    <div style={{...F, position: 'absolute', left: 50, top: 428, fontWeight: 700, fontSize: 100, color: T.daccent, letterSpacing: -3, whiteSpace: 'nowrap'}}>세금이 줄인 차이 307만원</div>
+    <div style={{...F, position: 'absolute', left: 50, top: 428, fontWeight: 700, fontSize: 100, color: T.daccent, letterSpacing: -3, whiteSpace: 'nowrap'}}>세금이 줄인 간격 307만원</div>
     <div style={{...F, position: 'absolute', left: 50, top: 556, fontWeight: 700, fontSize: 96, color: '#fff', letterSpacing: -3, whiteSpace: 'nowrap'}}>1억 넣고 1년, 실제 영수증</div>
     <div style={{...F, position: 'absolute', left: 1010, top: 40, fontWeight: 700, fontSize: 28, color: '#101114', background: T.daccent, borderRadius: 10, padding: '6px 16px'}}>1억의 1년 영수증 #1</div>
   </AbsoluteFill>

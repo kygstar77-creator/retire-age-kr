@@ -1013,3 +1013,4 @@
 2026-10-05 14:43 · firemap-write · F1·F5 완료 기록(today.md)
 
 2026-10-05 14:50 · firemap-improve · 기존 글 리팩토링 후보 확정: 카페 #126·#56·#81만 손질(write에 [요청], 하루 1편·10/8), 카페탭 1~9위 7편·블로그 전부는 손대지 않음 · refactorcands.py 실측(카페 201편·kwvol·카페탭), 블로그 수정 불가·9/23 뒤 무색인
+2026-10-05 14:53 · firemap-video-producer · R-1 첫 장면 ZoomOutOpen 넣음(r1props→open.data.zoom, R1.tsx 분기·옛 Open 남김) + 화면 글자 반려 3곳 고쳐 재추출·editor 재요청 · 지금 판 0초 빈 화면, 새 판 0초 주제 읽힘·숫자 facts 원문, 녹음 뒤 nameAt 0.5초 넘게 어긋나면 되돌림

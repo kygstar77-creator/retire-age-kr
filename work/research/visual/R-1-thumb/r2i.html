@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;font:500 22px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#111214'></div>
+<div style='position:absolute;left:24px;top:40px;width:530px;height:628px;background:#F4F1E8;border-radius:18px'></div>
+<div class='lab' style='left:44px;top:58px;font-size:124px;color:#0F1720'><span style="color:#14A86A">1억</span> 예금</div>
+<div class='lab' style='left:44px;top:206px;font-size:124px;color:#0F1720'>세후 1년</div>
+<div class='t' id='big' data-fit='490' style='left:40px;top:392px;font-size:158px;color:#0F1720'>+218만</div>
+<div class='fine' style='left:50px;top:604px;font-size:19px;color:#6B6F76'>2025.10→2026.10 과거 값 · 세금 뗀 뒤 · 미래 보장 아님</div>
+<div style='position:absolute;left:570px;top:40px;width:690px;height:166px;background:#22262E;border-radius:16px'></div><div class='lab' style='left:590px;top:84px;font-size:80px;color:#fff'>금</div><div class='t' style='right:38px;top:64px;font-size:120px;color:#2BD98C'>+???만</div><div style='position:absolute;left:570px;top:224px;width:690px;height:166px;background:#22262E;border-radius:16px'></div><div class='lab' style='left:590px;top:274px;font-size:58px;color:#fff'>S&P500</div><div class='t' style='right:38px;top:248px;font-size:120px;color:#2BD98C'>+?,???만</div><div style='position:absolute;left:570px;top:408px;width:690px;height:166px;background:#22262E;border-radius:16px'></div><div class='lab' style='left:590px;top:454px;font-size:64px;color:#fff'>SCHD</div><div class='t' style='right:38px;top:432px;font-size:120px;color:#2BD98C'>+?,???만</div>
+
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

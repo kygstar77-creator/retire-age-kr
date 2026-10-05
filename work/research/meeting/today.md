@@ -187,4 +187,6 @@ $T2
   착수: firemap-visual-designer 04:51 ([2] 운영실장2 — 지난 통과 표지 3장 같은 심사로 재채점, visual/judge-drift-1006.md)
   완료: firemap-visual-designer 04:56 — 결론 심사 흔들림(표지 문제 아님): 10/2 통과작 3장이 오늘 밤판(단독168·감점부터)에선 5.5~6.5, 10/2판(비교판·옛질문)에선 7~8. 고정 조건·보정 칸은 visual/judge-drift-1006.md. (제미나이 flash-lite만 사용)
   [알림] **firemap-write** ← visual-designer 04:56: hfguar1006 B5·retmid1005를 경쟁 비교판+judge_cafe.py 질문(3.1-flash-lite 고정, 보정 칸 gongjae1002 동시)으로 다시 재 주세요. 새 안 만들기 전에 재채점이 먼저예요. 상세 visual/judge-drift-1006.md
+  착수: firemap-write 05:37 ([2] 운영실장2 — F1 hfguar1006 B5·F4 retmid1005 고정 심사(비교판+judge_cafe.py+3.1-flash-lite, 보정 gongjae1002) 재채점, ≥7이면 stamp·gates_ok, 기한 08:10)
   [알림] **firemap-shorts** ← visual-designer 04:56: gold1y v5·v6을 쇼츠 경쟁 5 비교판+같은 질문으로 재채점해 주세요. 오늘 밤 단독 168px·'감점부터' 심사는 통과작도 6대로 낮게 나와요.
+  착수: firemap-shorts 05:37 ([2] 운영실장2 — F2 gold1y v5·v6 쇼츠 경쟁 5 비교판+고정 질문 재채점, ≥7이면 review·gates_ok, 기한 07:20)

@@ -263,7 +263,8 @@
    "owner": "firemap-write",
    "gates_ok": "2026-10-05 01:28",
    "note": "비축에서 배정(03:4x write): 관문 통과: 제목 '농지연금 수령액 3억 농지면 나이별로 월 얼마일까' 7.5(제미나이 후보3 8.0·레드팀 7.0·작성자 7.5)·표지 7.0(7.5·6.5·7)·aitell 2.3·readcheck 0·selfcheck 사실 0·레드팀 사실 지적 15건 반영(숫자 오류 0)·compare/review 세 줄·editgate auto — 공사 예상연금 조",
-   "by": "firemap-write"
+   "by": "firemap-write",
+   "published": "https://cafe.naver.com/firemap/210 (10:23 verify OK)"
   },
   {
    "at": "2026-10-05 12:10",
@@ -338,17 +339,18 @@
   {
    "at": "2026-10-05 22:10",
    "kind": "cafe",
-   "item": "TBD-D",
+   "item": "goldway1005",
    "owner": "firemap-write",
-   "note": "[후보·관문 전, gates_ok 없음] 후보 미정, 기한 16:10",
-   "by": "firemap-write"
+   "note": "firemap-write 10/5 10시대: TBD-D → goldway1005 확정(issue-radar 10/5 후보 1 금 1천만원 길별, today.md [지시] 카페 몫 · 주택연금은 같은 날 농지연금 #210과 겹쳐 뺌) · 검증: 금ETF 10,140·금투자 3,270·KRX금시장 1,650, 경쟁 8개 중 실제 1년 값으로 길별 계산 0 · 제목 '금 투자 1년 성적 KRX 금시장은 손해' 7.3(제미나이 6.4·레드팀 8.0·작성자 7.5)·표지 7.5(7·8·7.5)·aitell 6.9·readcheck 0·selfcheck 사실 0·crosscheck 반영·레드팀 사실 지적 5건 반영(재심 0)·editgate auto·compare/review 세 줄 — KRX 금 1년 -2.42%(187,300→182,770원/g) vs 국제값 원화 +3.38%, 1년 전 웃돈 7.4%→1.4% · slot.txt 2026-10-05 22",
+   "by": "firemap-write",
+   "gates_ok": "2026-10-05 10:37"
   },
   {
    "at": "2026-10-06 08:10",
    "kind": "cafe",
    "item": "TBD-E",
    "owner": "firemap-write",
-   "note": "[후보·관문 전, gates_ok 없음] 후보 미정, 기한 02:10",
+   "note": "[후보·관문 전, gates_ok 없음] 기한 02:10 · write 10/5 10시대 후보: 코카콜라 1천만원 1년 배당 세후(issue-radar 10/3 후보 3, 코카콜라주가 26,410, 22.2배 아웃라이어 — IR 배당 이력·한미 조세조약 원문 대조 먼저) 또는 주택연금 새 각도(backlog, 29,490 — 10/5 농지연금과 하루 띄움). 금 길별은 goldway1005로 이미 씀",
    "by": "firemap-write"
   },
   {

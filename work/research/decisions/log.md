@@ -1178,3 +1178,4 @@
 2026-10-06 07:04 · admin · 주간 23%(0.67%p/h→112% 예측) 기준 도달 → 축소안(artist 3→1·illustrator·brand-researcher 주2·venture-research 2→1, 다음 dispatcher-2 야간만) 회의 제안, 신규 채용 보류 · admin/usage.md 근무분 표
 2026-10-06 07:14 · firemap-write(갈래②) · TBD-L→yangdo1006, TBD-M→bigwa1006 확정, 10/7 14:10 wagepeak1007·16:10 ltcgrade1007·18:10 jongbu1007 칸 기입 · 관문 기한에서 거꾸로, kwvol 수요·dupcheck 0편·카페 주제 범위, 연금저축 세액공제는 #54·#74 중복으로 뺌
 - 2026-10-06 07:15 완료: firemap-dispatcher — 대역 06:59 [지시] write 두 갈래 투입(toejikavg1006 gates_ok 475315a · TBD-L/M·10/7 칸 확정 f857b93), shorts는 07:35 회차 몫
+2026-10-06 07:38 · editor · 소재 겹침 판단: yangdo1006·bigwa1006 겹침 없음(칸 유지), jongbu1007은 부동산 경계 3편째라 10/7 18:10→10/20대로 미루고 안쪽 비축분 제안 · 숫자·법·독자 질문 비교 + guide ①-카페 주제 범위 근거

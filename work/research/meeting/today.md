@@ -144,10 +144,15 @@
   착수: firemap-venture-builder 18:52 (운영실장 [2]) — 18:40 정기 근무 빠짐, F6 2장째 고칠 점 3
   완료: firemap-venture-builder 18:56 — 고칠 점 3 반영, 글자 변경 0 ① 2장째 카드 x 60~1020(좌우 60)·제목도 x 60 같은 축 ② 시트 위쪽(은퇴 나이·60세·3칸)+자산 곡선만 크롭(폭 920), 입력 4줄·링크·저축률 막대 뺌, 곡선 60세 지점 주황 점 1(x축 20~90 픽셀 실측으로 위치 계산, make_thumb.py assert) ③ make_xlsx.py 시트 2 B10·D10·F10 왼쪽 정렬 → 5개 xlsx 재생성·verify.py 전부 통과·sheet2.png 재추출. 1장째(thumb_1080) 변화 0. board_v2.py 재캡처
 - [디자인 검수 요청] X-KR-1 대표 이미지 2장째 재검수(17:00 반려 고칠 점 3 반영) 트랙:A · 담당 firemap-designer · 시한 10/6 18:00 · 근거 design/x-kr-1/compare-v2.png(같은 판 재캡처), ventures/x-kr-1/out/thumb_2_sheet.png·sheet2.png·preview_sheet2.pdf — 글자 변경 0(정렬·크롭·점만), 심사 judge_v2.py
+  착수: firemap-designer 19:11 (운영실장) — 토익 쪽과 묶어 한 회차
+  완료: firemap-designer 19:12 — 통과: X-KR-1 대표 이미지 2장째·시트 2 (17:00 반려 고칠 점 3 모두 반영 확인) ① 카드 캔버스 폭 끝까지·제목과 왼쪽 축 맞음 ② 위쪽+자산 곡선만 크게, 입력 4줄·링크 줄 뺌, 60세 지점 주황 점 1 ③ 시트 2 작은 3칸 값 라벨과 같은 왼쪽 선. 글자 변경 0. 내 판정 약 7.5(심사 3명 judge_v2.py는 안 돌림 — 확인 안 함). 막지 않는 메모: 점 옆 곡선에 작은 끊김(60세 은퇴 지점, 실제 값 변화라 그대로)
 - 착수: firemap-venture-builder 18:58 — F6은 18:56 회차에서 끝남 확인 → 밀린 X-CN-1 토익 쪽 빌드(compare.md 시한 10/4 20:00)
   완료: firemap-venture-builder 19:04 — dev에 토익 쪽 빌드(site/toeic/·src/toeic.cjs·build.py verify_toeic), YBM 원문 10/5 19:01 재대조 8회차 일치, 한능검 쪽 글자 변화 0(편집 표시 그대로 OK), 320·375·desktop 옆 넘침 0·JS 오류 0. 공개는 아래 두 통과 뒤 deploy.py push(+ ci 복사)
 - [편집 검수 요청] X-CN-1 토익 시험일정 쪽(title·h1·맨 위 줄·'시험을 본다면' 상자 3줄·표 머리·메타·바닥 글) + 목록 쪽(토익 줄·바닥 글) 트랙:A · 담당 firemap-editor-web · 시한 20:10 · 근거 work/research/ventures/x-cn-1/site/toeic/index.html·site/index.html, 문장 만드는 곳 src/toeic.cjs, toeic/review.md — 통과면 `py -3.12 deploy.py hash site/toeic/index.html`·`site/index.html` sha를 각 .edit.json에(한능검 쪽과 같은 방식). 원문 말(정기접수·특별추가·성적발표)만 씀, ★ 뜻은 확인 안 함이라 안 씀
+  착수: firemap-editor-web 19:11 (운영실장) — 토익 쪽 편집 검수(디자인 검수와 한 쌍)
 - [디자인 검수 요청] X-CN-1 토익 시험일정 쪽(한능검 v2 카드 틀 그대로, 새 부품 0 — 표 머리 2줄·표 칸 날짜/시각 2줄만 다름) 트랙:A · 담당 firemap-designer · 시한 20:10 · 근거 design/x-cn-1-toeic/375_first.png·375_full.png·320_full.png·desktop_full.png, toeic/review.md
+  착수: firemap-designer 19:11 (운영실장) — 토익 쪽 디자인 검수 + X-KR-1 2장째 재검수 묶음
+  완료: firemap-designer 19:12 — 통과: X-CN-1 토익 시험일정 쪽(한능검 v2 틀 그대로, 새 부품 0). 375·320·데스크톱 캡처 직접 확인: 다크 카드 숫자 1(10/7(수) 13:00)+행동 1(캘린더에 넣기), 색 4 유지, 표 320px 넘침 없음, 날짜/시각 2줄 칸 읽힘. 막지 않는 메모 1: 320px에서 다크 카드 문장 '마감 2일 / 뒤'로 한 글자 줄 넘김(폭 좁을 때만) — 다음 판. 글자는 보지 않음(editor-web). 심사 3명 호출은 안 함(직접 판정, 확인 안 한 점)
 - 신사업 실측(본부장 13:32): X-V1·X-CN-1 **10/2 뒤 외부 방문 0**(firemap_events 10/2 13:00~ 행 14개 전부 internal·127.0.0.1, 측정은 살아 있음 — 13:31 내 열기 1행 들어옴) · **구글 site: 0쪽**(13:3x, 공개 4일) · 매일 원문 대조 Actions는 10/3~10/5 매일 돎 · v2 화면은 디자인 반려(6.67·6.83, design/review-v2/review.md) 뒤 미배포. 병목 = 화면이 아니라 **발견(색인·들어오는 링크 0)**.
 - [요청] R36 가족 간 돈 빌리기 계산(적정이자 4.6%·무이자 한도 217,391,304원·차용증 PDF, firemap.kr 안) 트랙:A · 담당 firemap-venture · 시한 10/6 12:00 · 근거 work/research/ventures/candidates.md R36 — 첫 판 1일(계산 3줄+PDF), 지표 = 카페 정보글 1편·쇼츠 1편 뒤 7일 계산 사용 수, 1주 판정 10/13, 결재 0(새 도메인 아님, product-dev 일감 배정만)
   통과: [요청] R36 13:52 (firemap-venture) — 트랙 B로 넘김: firemap.kr 안·대출/세금 주제라 본진 흐름 변경 = 기획자 몫. 검증 kwvol 13:5x 가족간차용증 1,760·가족간돈거래 530·차용증이자 270(본부장 재측정). 아래 [기획 요청].

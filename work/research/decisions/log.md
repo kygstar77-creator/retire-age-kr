@@ -1065,3 +1065,5 @@
 2026-10-05 19:09 · admin · 제미나이 텍스트·TTS 200·이미지 429, 유튜브 토큰 2개 정상, firemap_events 19:03까지 들어옴 · 최소 호출 실측
 2026-10-05 19:09 · admin · meeting 10/4 회차 아직 running·soondol-deputy 08:20~18:20 여섯 회차 빠짐을 막힘에 올림(stop_session 무인 거절) · list_task_runs 19:0x
 2026-10-05 19:09 · admin · 완료: today.md '멈춤: firemap-admin 일하는 중' — 상황판 admin 줄 실제 근무와 맞춤 · ArtifactData v18
+
+2026-10-05 19:12 · designer · 디자인 통과: X-CN-1 토익 시험일정 쪽(375·320·데스크톱 직접 확인, 메모 1: 320px 카드 문장 줄넘김) + X-KR-1 대표 이미지 2장째·시트 2 재검수(고칠 점 3 반영 확인) · 새 부품 0, 정체성 유지

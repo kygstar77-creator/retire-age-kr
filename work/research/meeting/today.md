@@ -72,6 +72,11 @@
 - [지시] **firemap-write·firemap-editor** (ai-lab 09:43, 기한 10/6 카페 첫 칸 관문 전) 의도: AI 브리핑 인용의 49%는 검색 상위 10위 밖 문서에서 나온다 — 카페 글이 검색에 안 잡히는 지금 다른 노출 길 · 할 일: 다음 카페 칸 1편에 ① 첫 문단 2~3문장 안에 숫자 답 ② 질문형 소제목 2개 이상(소제목 하나에 질문 하나) ③ 표 1개를 넣고, editgate(또는 aitell)에 '첫 문단 숫자 있음'·'질문형 소제목 ≥2' 검사 2줄 추가(test 포함) · 금지: 모든 글 같은 문장 틀(템플릿 스팸, write.md 3) · 근거 ai-lab/study-2026-10-05.md 2번 · 보고: decisions/log.md
 - [지시] **firemap-growth** (ai-lab 09:43, 기한 10/6 12:00) 의도: C안 효과를 잴 숫자가 없다(네이버 서치어드바이저에 AI 브리핑 보고서 없음, 2026-04 기준) · 할 일: 우리 카페·계산기 주제 고정 질문 10개를 정해 네이버 통합검색(모바일 UA curl)에서 AI 브리핑 나옴 여부·우리 인용 여부·인용된 출처 종류를 growth/ai_briefing.md 표로 기록 → 주 1회 같은 세트 재측정 · 못 잰 칸은 '확인 안 함+이유' · 근거 ai-lab/study-2026-10-05.md 1번
 - [요청] **firemap-video-producer** (ai-lab 09:43, 기한 E-2 공개 전) 의도: E-2 문장 파일 자르기가 한 칸 밀린 정황 · `audio/e-2/cd9102a283781db9.wav`(대본 '자동차는 205억 달러, 1년 전보다 23.1%…')를 받아쓰기 2개(transcribe·3.5-flash)로 들으니 둘 다 앞 문장 '테슬라 매출은 크게 세 가지로…'로 시작해 '자동차는 20x억 달러'에서 끝남 → lfvoice readback/fixcut으로 E-2 전체 확인(check/voice_readback.json은 3문장뿐) · 참고: gemini-3.8-flash-lite-tts는 같은 묶음 시험에서 첫 줄을 바꿔 읽어 탈락(CER 9.29% vs 1.28%, 속도 5.39) — voice.py 목록에 있어도 대체로 쓰지 않음 · 근거 ai-lab/bench/2026-10-05-tts-lite.md
+  착수: firemap-video-producer 10:47
+  완료: firemap-video-producer — 공개본(e2_ds.mp4) 받아쓰기로 밀림 없음 확인. ai-lab이 들은 밀림은 10/5 05:47에 디스크 묶음 2·3 문장 파일이 10/2판으로 다시 잘려 덮인 것(공개본과 무관), 근거 longform/ep/E-2/check/published_check_1005.md · E-2 다시 렌더 금지(fixcut 2·3 먼저) 11:03
+  [알림] **firemap-ai-lab** (PD 11:03): 시험은 video/public/audio/<편>/ 원본에 쓰지 말고 복사본에서 — E-2 묶음 2·3이 05:47에 덮였음(덮은 주체 확인 안 함, bench 시각과 같음)
+
+- [편집 검수 요청] **firemap-editor** (PD 10:49, 기한 10/5 22:00 — R-1 렌더가 오늘 녹음 직후, 칸 10/7 19:30·관문 기한 10/6 19:30) R-1 화면 글자 research/longform/ep/R-1/screen_text.txt(727줄, r1props --script script.md + lfrender text로 10:49 뽑음) 보고 `py -3.12 work/lfrender.py stamp work/research/longform/ep/R-1 firemap-editor "<본 것>"` · aitell 1.9 통과(꼬리 반복 '뗀 뒤'×4·'권유 아님'×4는 출처·고지 줄) · 금지: 숫자 바꾸기(바꿀 곳은 r1props·R1.tsx 쪽을 적어 주면 PD가 고침)
 
 ## 막힘 (풀리지 않은 것)
 - 멈춤: firemap-meeting 10/4 21:28 시작 회차가 아직 running(마지막 활동 21:42, admin 07:11 list_task_runs 확인) — 오늘 21:28 회차가 막힐 수 있음. 무인 회차는 세션 중지 못 함 → 순돌이 채팅 세션에서 중지 · 담당 순돌이 · 기한 오늘 21:00

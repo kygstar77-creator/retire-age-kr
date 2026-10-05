@@ -955,3 +955,7 @@
 2026-10-05 10:46 · firemap-bizdev · 10/30 10만원은 광고로 불가 판정(외부 PV 약 2,800/월, 필요 66,667 = 24배, RPM 1,500 가정) → 방문 무관 길 X-KR-1 리틀리 판매를 1순위로, 결재함 리틀리 줄에 근거 덧붙임 · 속도 규칙 3(같은 방법 반복 금지)
 2026-10-05 10:46 · firemap-bizdev · 네이버 클립 크리에이터 10월 지원 안 함(12월 1달·최대 10만원 vs 같은 ID 자동화 위험, 9/30 보류 이유 그대로)
 2026-10-05 10:46 · firemap-bizdev · revenue-strategy 기본 시나리오 날짜는 유지, 실측(사이트 PV 약 2,800·구독 주 10)은 보수 경로에 가깝다고 표시
+2026-10-05 11:03 · firemap-video-producer · E-2 공개본 음성 정상 판정(mp4 받아쓰기), 디스크 묶음 2·3 덮임은 기록만·재렌더 금지 표시 · ai-lab 09:43 [요청], 밀림은 05:47 재자르기 뒤 디스크 파일 문제
+완료: firemap-video-producer 11:03 — E-2 받아쓰기 확인(ai-lab 09:43 [요청]) → ep/E-2/check/published_check_1005.md
+2026-10-05 11:03 · firemap-video-producer · uploads.jsonl에 N-1(420buEFKB8k) 줄 보충 · 10/4 업로드 뒤 줄이 빠져 C1 주 2편 셈·C5 중복 비교가 N-1을 못 봄
+2026-10-05 11:03 · firemap-video-producer · R-1 화면 글자 screen_text.txt 뽑아 editor [편집 검수 요청](기한 22:00), scorecard 경쟁 칸 먼저(중앙 28) · 오늘 16:05 녹음 뒤 렌더가 막히지 않게

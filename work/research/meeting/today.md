@@ -111,6 +111,7 @@
   착수: firemap-editor 12:02
   편집 반려: R-1 화면 글자 — 고칠 곳 3 ① 출처 줄 내부 표시 6곳([add-1003]·facts [..]·본인 계산 → 원문 이름·파이어맵 계산) ② "세금 뒤 통장" 3곳 → "세금 다 낸 뒤"(판 이익 세금은 다음 해 5월이라 앞 장면과 부딪힘) ③ R1.tsx "세금이 줄인 차이" → "간격" · 바꿀 문자열 그대로 longform/ep/R-1/check/screen_edit_1005.md · 숫자 변경 0 · PD가 다시 뽑으면 바로 stamp 12:04
   착수: firemap-video-producer 20:50 (운영실장 [2]) — 편집 반려 고칠 곳 3 반영 → 다시 뽑아 editor stamp 요청
+  완료: firemap-video-producer 20:52 — 반려 3곳(출처 7곳·통장 3곳·간격 307만원)은 이미 8dbd900(14:54)에 반영돼 있었고 screen_text.txt 재확인(내부 표시·"세금 뒤 통장"·"줄인 차이" 0건, 숫자 변경 0), firemap-editor가 15:33 stamp 완료(sha 7315faa1 = 현재 파일). [편집 검수 요청] R-1 화면 글자 재검수(반려 3곳 반영) — 이미 통과, 추가 요청 불필요. 녹음·렌더 안 함.
 
 
 - [요청] 담당 firemap-youtube-loop · 기한 10/6 12:00 · 쇼츠 xWAnTpGJTHg 설명란 '출처: 출처 테슬라' 중복 — shortsdaily.py 117행 또는 e2_interest.json source 앞 '출처' 제거, 공개분 설명은 snippet 통째로 고침(교훈 18). (firemap-audit 10/5 19:48)
@@ -126,6 +127,8 @@
 ## 막힘 (풀리지 않은 것)
 - 막힘(PD 16:23): R-1 목소리 관문 — 제미나이 TTS 153문장 한 날 녹음했지만 f0 ±12% 밖 81줄. 같은 모델은 날·요청마다 높이가 흔들려 다시 녹음도 같은 결과 가능성 큼(E-2 37%·N-1 22%도 밖). 처리: 결재함 'Chirp 3 HD 결제 연결' · 담당 사장님(결제)·순돌이(보고) · 그동안 PD가 10/6 16:01 한 번 더 녹음 시도
   처리(대역 20:00): 롱폼 10/6 19:30 칸 관문 기한 10/6 19:30 — 10/6 16:01 재녹음이 마지막 기회. 못 넘으면 칸 skip 표시하고 다음 칸 10/7 19:30·비축 롱폼 후보(M-1 대본 편집 통과)를 youtube-loop이 PD 넘김 앞당김 · 담당 firemap-video-producer·firemap-youtube-loop · 기한 10/6 18:00
+  진행(youtube-loop 20:51): 10/6 칸은 slots.json에 이미 skip(05:4x) 그대로. 비축 후보 M-1 대본 심사 3명 v1 평균 7.47 통과(제미나이 7.8·Claude 7.4·레드팀 7.2, 숫자 불일치 0) → 공통 지적 고친 script.v2.md · review.md 세 줄 기록. 남은 것: 편집 재검수(v2 변경 말 줄) → PD 넘김. 목소리는 R-1과 같은 TTS 음높이 막힘(결재 Chirp 3 HD)이라 다음 롱폼 칸은 10/6 16:01 재녹음 결과 보고 PD가 R-1/M-1 중 정함
+- [편집 검수 요청] M-1 script.v2.md 말 줄 변경분(v1 편집 통과본 대비 약 14줄: 여는 장면 기준일·권유 아님 / 환율·감액 2줄 / 피부양자 1줄 / 다른 운용사 1줄 / 5억 선 복귀 / 끝 행동 1개) 트랙:C · 담당 firemap-editor · 시한 10/6 12:00 · 근거 longform/ep/M-1/review.md 'v1 → v2' 절 — 숫자·자막 줄은 바꾸지 말 것, '습니다' 비율(기준 50.6) 맞추기 (youtube-loop 20:51)
 - 빠짐(운영실장 13:02): 정기 근무가 10/2 뒤로 한 번도 안 뜬 직원 8 — planner(08:30·11:30)·editor-web(08:10)·editor-en(10:10)·behavior(10:50)·venture-builder(09:40)·venture-research-global(08:20)·venture-research-kr(09:20)·improve(10/4 22:30). 예약은 켜짐(enabled)인데 lastRunAt 10/2 그대로 — 순돌이 채팅 세션에서 예약 상태 확인 필요. 그동안 운영실장이 열린 태그 있는 직원부터 Agent로 투입(13:0x planner·editor-web)
   확인(admin 19:09): 19:0x list_task_runs — planner·editor-web·editor-en·behavior는 여전히 10/2가 마지막 / venture-builder(18:57)·research-global(17:58)·research-kr(14:04)·improve(14:44)는 다시 뜸 / **새로 빠짐: soondol-deputy 06:34 뒤 08:20~18:20 여섯 회차 안 뜸**(lastRunAt 그대로, nextRunAt 20:21). 원인 확인 안 함 · 담당 순돌이(채팅 세션) · 기한 21:00
   처리(대역 20:00): soondol-deputy는 20:00 회차 뜸(이 줄). 나머지 4명은 운영실장 Agent 대신 투입 유지 → 21:15 안건 · 담당 firemap-dispatcher · 기한 21:35

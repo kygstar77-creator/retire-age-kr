@@ -1,0 +1,4 @@
+10 개편후 {'years': 10, 'pay_total': 12132, 'fee': 1146, 'interest': 3387, 'balance': 16665}
+10 개편전 {'years': 10, 'pay_total': 12132, 'fee': 1204, 'interest': 3474, 'balance': 16810}
+20 개편후 {'years': 20, 'pay_total': 24264, 'fee': 3921, 'interest': 15972, 'balance': 44157}
+20 개편전 {'years': 20, 'pay_total': 24264, 'fee': 3387, 'interest': 16017, 'balance': 43668}

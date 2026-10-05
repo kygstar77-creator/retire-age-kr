@@ -1,0 +1,72 @@
+[
+ {
+  "model": "gemini-3-flash-preview",
+  "n": 1,
+  "ratio": 0.87,
+  "pitched_is": "A",
+  "answer": "{\"same_person\":10,\"processed\":\"B\",\"awkward_A\":1,\"awkward_B\":3,\"why\":\"B는 A의 음높이를 기계적으로 높인 것으로 보이며, 두 녹음의 호흡과 억양이 완벽히 일치합니다.\"}"
+ },
+ {
+  "model": "gemini-3-flash-preview",
+  "n": 2,
+  "ratio": 0.929,
+  "pitched_is": "B",
+  "answer": "{\"same_person\":10,\"processed\":\"B\",\"awkward_A\":1,\"awkward_B\":4,\"why\":\"B는 A의 음높이를 인위적으로 낮춘 듯한 기계적인 울림과 어색함이 느껴집니다.\"}"
+ },
+ {
+  "model": "gemini-3-flash-preview",
+  "n": 3,
+  "ratio": 1.003,
+  "pitched_is": "B",
+  "answer": "{\"same_person\":10,\"processed\":\"B\",\"awkward_A\":1,\"awkward_B\":2,\"why\":\"두 녹음은 동일한 발화이나, B는 A의 음높이를 기계적으로 미세하게 조정한 흔적이 느껴집니다.\"}"
+ },
+ {
+  "model": "gemini-3-flash-preview",
+  "n": 4,
+  "ratio": 1.15,
+  "pitched_is": "B",
+  "answer": "{\"same_person\":10,\"processed\":\"B\",\"awkward_A\":1,\"awkward_B\":3,\"why\":\"B의 음높이가 인위적으로 높아져 있어 A가 원본으로 들립니다.\"}"
+ },
+ {
+  "model": "gemini-3-flash-preview",
+  "n": 5,
+  "ratio": 1.15,
+  "pitched_is": "B",
+  "answer": "오류 429"
+ },
+ {
+  "model": "gemini-3.8-flash",
+  "n": 1,
+  "ratio": 0.87,
+  "pitched_is": "B",
+  "answer": "오류 503"
+ },
+ {
+  "model": "gemini-3.8-flash",
+  "n": 2,
+  "ratio": 0.929,
+  "pitched_is": "A",
+  "answer": "오류 503"
+ },
+ {
+  "model": "gemini-3.8-flash",
+  "n": 3,
+  "ratio": 1.003,
+  "pitched_is": "B",
+  "answer": "오류 503"
+ },
+ {
+  "model": "gemini-3.8-flash",
+  "n": 4,
+  "ratio": 1.15,
+  "pitched_is": "A",
+  "answer": "오류 429"
+ },
+ {
+  "model": "gemini-3.8-flash",
+  "n": 5,
+  "ratio": 1.15,
+  "pitched_is": "B",
+  "answer": "오류 503"
+ }
+]

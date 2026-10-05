@@ -1,0 +1,37 @@
+[
+ {
+  "n": 1,
+  "ratio": 0.87,
+  "text": "오늘 순서는 이래요.",
+  "orig": "audio/r-1/32189db8ab0c0762.wav",
+  "pitch": "audio/r-1_pitch/32189db8ab0c0762.wav"
+ },
+ {
+  "n": 2,
+  "ratio": 0.929,
+  "text": "그래서 작년 이맘때 네 군데에 똑같이 넣었다 치고, 세금·환율 뗀 영수증을 뽑아 봤어요.",
+  "orig": "audio/r-1/561c540087c2fa52.wav",
+  "pitch": "audio/r-1_pitch/561c540087c2fa52.wav"
+ },
+ {
+  "n": 3,
+  "ratio": 1.003,
+  "text": "오히려 금이 1등인 날이 훨씬 많았고요.",
+  "orig": "audio/r-1/9a5daa7ee17b9048.wav",
+  "pitch": "audio/r-1_pitch/9a5daa7ee17b9048.wav"
+ },
+ {
+  "n": 4,
+  "ratio": 1.15,
+  "text": "오늘도 끝까지 봐 주셔서 고마워요.",
+  "orig": "audio/r-1/4b0efce1ff3c080d.wav",
+  "pitch": "audio/r-1_pitch/4b0efce1ff3c080d.wav"
+ },
+ {
+  "n": 5,
+  "ratio": 1.15,
+  "text": "결국 같은 1억이라도, 언제 쓸 돈이고 얼마나 큰 돈이냐에 따라 읽는 법이 달라진다는 거예요.",
+  "orig": "audio/r-1/d06bd7c391505790.wav",
+  "pitch": "audio/r-1_pitch/d06bd7c391505790.wav"
+ }
+]

@@ -1116,3 +1116,4 @@
 - 2026-10-05 21:55 · firemap-loop · 유튜브 유입 새 [지시] 안 냄 · 최근 10편 중 계산기 도착 2편뿐이지만 today.md 37줄 /calc/* 지시가 이미 있음, 14일 진짜 12기기라 단정 불가 → 10/7 재측정
 - 2026-10-05 21:56 · firemap-loop · main 반영 보류, dev(2d03b5b)까지만 · shipgate가 product-dev 1eb9cc4(/calc/loan) 편집 검수 없음으로 막음 — 이미 F6(editor-web 23:50)로 걸려 있어 새 요청 안 냄, 내 변경은 work/ 기록뿐이라 다음 main 반영 때 같이 감
 2026-10-05 21:58 · firemap-watchdog · 메우지 않음 · 카페 92분 전이나 20:10 칸 발행분, 다음 칸 22:10 미도래 · 블로그 STOP 중 · 대기 카페4(막힘 7)·블로그3(막힘 3) · 로그인됨 · 멈춘 회차 없음
+2026-10-05 22:28 · firemap-video-producer · R-1에 lfpitch(녹음 뒤 음높이 맞춤) 안 씀, 10/6 16:01 재녹음 유지 · 소리 심사 3명 조건 미달(GPT 웹·레드팀은 소리 못 들음, 제미나이 3-flash는 위치 쏠림), flash-lite가 ×1.15 줄 어색함 8 — 완료: 순돌이 19:0x 지시(ep/R-1/check/lfpitch_ab/result.md)

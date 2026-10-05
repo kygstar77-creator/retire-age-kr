@@ -1,0 +1,72 @@
+[
+ {
+  "model": "gemini-3.7-flash",
+  "n": 1,
+  "ratio": 0.87,
+  "pitched_is": "A",
+  "answer": "오류 The read operation timed out"
+ },
+ {
+  "model": "gemini-3.7-flash",
+  "n": 2,
+  "ratio": 0.929,
+  "pitched_is": "B",
+  "answer": "오류 The read operation timed out"
+ },
+ {
+  "model": "gemini-3.7-flash",
+  "n": 3,
+  "ratio": 1.003,
+  "pitched_is": "B",
+  "answer": "오류 The read operation timed out"
+ },
+ {
+  "model": "gemini-3.7-flash",
+  "n": 4,
+  "ratio": 1.15,
+  "pitched_is": "B",
+  "answer": "오류 503"
+ },
+ {
+  "model": "gemini-3.7-flash",
+  "n": 5,
+  "ratio": 1.15,
+  "pitched_is": "B",
+  "answer": "오류 503"
+ },
+ {
+  "model": "gemini-3.5-flash-lite",
+  "n": 1,
+  "ratio": 0.87,
+  "pitched_is": "B",
+  "answer": "{\"same_person\": 10, \"processed\": \"모름\", \"awkward_A\": 1, \"awkward_B\": 1, \"why\": \"두 녹음 모두 자연스럽고 동일한 화자의 목소리로 들립니다.\"}"
+ },
+ {
+  "model": "gemini-3.5-flash-lite",
+  "n": 2,
+  "ratio": 0.929,
+  "pitched_is": "A",
+  "answer": "{\"same_person\": 10, \"processed\": \"모름\", \"awkward_A\": 1, \"awkward_B\": 1, \"why\": \"두 녹음 모두 자연스럽고 동일한 화자의 목소리로 들립니다.\"}"
+ },
+ {
+  "model": "gemini-3.5-flash-lite",
+  "n": 3,
+  "ratio": 1.003,
+  "pitched_is": "B",
+  "answer": "{\"same_person\":10,\"processed\":\"모름\",\"awkward_A\":1,\"awkward_B\":1,\"why\":\"두 녹음 모두 인위적인 조작 흔적 없이 자연스럽고 동일인의 목소리로 들립니다.\"}"
+ },
+ {
+  "model": "gemini-3.5-flash-lite",
+  "n": 4,
+  "ratio": 1.15,
+  "pitched_is": "A",
+  "answer": "{\"same_person\": 10, \"processed\": \"모름\", \"awkward_A\": 1, \"awkward_B\": 1, \"why\": \"두 녹음 모두 자연스럽고 동일한 화자의 목소리로 들립니다.\"}"
+ },
+ {
+  "model": "gemini-3.5-flash-lite",
+  "n": 5,
+  "ratio": 1.15,
+  "pitched_is": "B",
+  "answer": "{\"same_person\":10,\"processed\":\"B\",\"awkward_A\":1,\"awkward_B\":8,\"why\":\"B의 음높이가 인위적으로 조작되어 로봇 같은 부자연스러움이 들립니다.\"}"
+ }
+]

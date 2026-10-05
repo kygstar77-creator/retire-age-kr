@@ -1074,3 +1074,4 @@
 
 2026-10-05 19:31 · firemap-shorts · F2 e2_interest 공개 https://youtu.be/xWAnTpGJTHg (bars·음악 있음), 설명 링크 firemap.kr/news utm_campaign=영상ID · 19:20 칸 관문 통과 편, /calc/* 3개는 테슬라 주제와 무관
 2026-10-05 19:31 · firemap-shorts · 완료: F3 gold1y compete.md(경쟁 6)·spec(rank·음악 없음·사는 길별 1천만원 1년)·10/6 19:20 칸 배정, 기준금리 편은 뒤로 · [지시] 금 쇼츠 시한 10/6 21:00, 카피 1위 677만원·+8%는 사실표 밖 숫자라 사실표 숫자로 바꿈
+2026-10-05 19:37 · firemap-planner · plans/deadline-calendar.md 첫 판(R46 먼저·R41 조건부, 공휴일 표 없음 바로잡음) · 국민연금 수령 나이는 product-dev C 트랙 가이드라 기획자 backlog에서 뺌 · 완료: firemap-planner 19:37

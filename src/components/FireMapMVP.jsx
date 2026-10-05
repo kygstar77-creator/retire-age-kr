@@ -135,6 +135,30 @@ export default function FireMapMVP() {
   }, [inputs]);
   useEffect(() => { try { window.scrollTo(0, 0); } catch { /* ignore */ } }, [screen, step]);
   useEffect(() => { try { logEvent('screen_view', { screen }); } catch { /* ignore */ } }, [screen]);
+  // 첫 화면 이탈 측정(10/5 [지시] X-HOME-1): 첫 화면(home)에 머문 초와 계산 시작 여부를 페이지 로드당 1회.
+  // to: 다음 화면(떠나면 'exit') · started: 질문(계산) 화면으로 갔는지. 화면 모양·문구는 그대로.
+  const homeRef = useRef({ at: 0, sent: false });
+  useEffect(() => {
+    const h = homeRef.current;
+    if (h.sent) return;
+    if (screen === 'home') { if (!h.at) h.at = Date.now(); return; }
+    if (!h.at) return;
+    h.sent = true;
+    try { logEvent('home_leave', { sec: Math.min(3600, Math.round((Date.now() - h.at) / 1000)), to: String(screen).slice(0, 40), started: screen === 'question' }); } catch { /* ignore */ }
+  }, [screen]);
+  useEffect(() => {
+    const onHide = () => {
+      const h = homeRef.current;
+      if (h.sent || !h.at || screenRef.current !== 'home') return;
+      h.sent = true;
+      try { logEvent('home_leave', { sec: Math.min(3600, Math.round((Date.now() - h.at) / 1000)), to: 'exit', started: false }); } catch { /* ignore */ }
+    };
+    // 모바일은 앱 전환·종료 때 pagehide가 안 오기도 해서 화면이 가려질 때도 'exit'로 본다.
+    const onVis = () => { if (document.visibilityState === 'hidden') onHide(); };
+    window.addEventListener('pagehide', onHide);
+    document.addEventListener('visibilitychange', onVis);
+    return () => { window.removeEventListener('pagehide', onHide); document.removeEventListener('visibilitychange', onVis); };
+  }, []);
   // 유입 경로: utm 3종 + 들어온 사이트 호스트 + 첫 경로만(개인정보 없는 값). 주소를 해시로 바꾸는 아래 effect보다 먼저 돈다.
   useEffect(() => { try { logEvent('session_start', sessionSourceProps()); } catch { /* ignore */ } }, []);
   useEffect(() => { try { const q = new URLSearchParams(window.location.search || ''); if (q.get('from') === 'push') logEvent('push_open', {}); } catch { /* ignore */ } }, []);

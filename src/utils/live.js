@@ -66,15 +66,29 @@ function auditProps() {
   return extra;
 }
 
-// 익명 이벤트 기록(append-only). 개인정보·금액 원본 없이 행동 이벤트만.
+// 실험군 a/b — client_id 문자열 해시(FNV-1a 32비트)의 홀짝으로 반반(10/5 [지시] X-CP-1·X-HOME-1, 근거 behavior/2026-10-02-coupang-audit.md 5장).
+// 같은 기기는 늘 같은 군. 화면은 아직 군별로 다르지 않다(측정만 먼저) — 군별 화면이 생기면 이 함수만 쓴다.
+export function abArm(cid) {
+  const s = String(cid || '');
+  if (!s) return null;
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i += 1) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193) >>> 0; }
+  return (h & 1) ? 'b' : 'a';
+}
+
+// 익명 이벤트 기록(append-only). 개인정보·금액 원본 없이 행동 이벤트만. 모든 이벤트에 실험군 ab를 붙인다.
+// keepalive: 페이지를 떠나는 순간(home_leave) 보낸 요청도 끊기지 않게.
 export function logEvent(event, props) {
   if (eventsOff()) return;
   try {
     const cid = identityId();
     const extra = auditProps();
+    const ab = abArm(cid);
+    if (ab) extra.ab = ab;
     const merged = Object.keys(extra).length ? { ...(props || {}), ...extra } : (props || null);
     fetch(`${SUPABASE_URL}/rest/v1/firemap_events`, {
       method: 'POST',
+      keepalive: true,
       headers: { ...H, prefer: 'return=minimal' },
       body: JSON.stringify({ client_id: cid, event: String(event).slice(0, 80), props: merged })
     }).catch(() => {});

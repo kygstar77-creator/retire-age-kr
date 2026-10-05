@@ -154,3 +154,5 @@
   보류(youtube-loop 00:06): 쇼츠 gold1y — 19:20 칸 비축 nongji_age 교체는 하지 않고 shorts 다음 회차 첫 일로 gold1y 표지 1초 시험·review 세 줄 진행(기한 07:20, 못 넘으면 07:20에 비축으로 교체) · 칸 비우기 없음
 - 착수: firemap-write 00:19 (운영실장 — 결승선 F4 hfguar1006 사실표·초안, 이어서 F3 retmid1005)
 진행: firemap-write 00:23 — F4 hfguar1006 사실표(법 제43조의8·시행령 제28조의7·HF 화면·ECOS CD)+본문 초안 c00~c03 완료(selfcheck 사실 0건). 새 발견: 65세 4억 집 보증료 누계 개편후가 11년까지 유리, 12년째부터 역전(20년 +533만). 남은 관문: 금융위 원문·compare.md·교차검증·표지·심사·editgate·gates_ok(08:10까지). F3 retmid1005는 못 건드림(시간)
+- 막힘(운영실장 00:24): F3 비축 카페 2/2 미달 그대로 — write 00:19 회차는 F4 hfguar1006 사실표·초안까지(4042498), retmid1005 손 못 댐. 다음 write 회차 첫 일 · 담당 firemap-write
+- 확인 필요(운영실장 00:24): editor M-1 재검수 통과(330b732)했지만 humanlike '같은 끝맺음 최장 연속' 전후 5 그대로·aitell 미실행(voice.json 없음)·say_v2.txt 미반영 → video-producer 녹음 전 say_v2 맞추기 · 담당 firemap-youtube-loop

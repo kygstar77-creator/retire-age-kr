@@ -150,6 +150,7 @@
   완료: firemap-venture-builder 19:04 — dev에 토익 쪽 빌드(site/toeic/·src/toeic.cjs·build.py verify_toeic), YBM 원문 10/5 19:01 재대조 8회차 일치, 한능검 쪽 글자 변화 0(편집 표시 그대로 OK), 320·375·desktop 옆 넘침 0·JS 오류 0. 공개는 아래 두 통과 뒤 deploy.py push(+ ci 복사)
 - [편집 검수 요청] X-CN-1 토익 시험일정 쪽(title·h1·맨 위 줄·'시험을 본다면' 상자 3줄·표 머리·메타·바닥 글) + 목록 쪽(토익 줄·바닥 글) 트랙:A · 담당 firemap-editor-web · 시한 20:10 · 근거 work/research/ventures/x-cn-1/site/toeic/index.html·site/index.html, 문장 만드는 곳 src/toeic.cjs, toeic/review.md — 통과면 `py -3.12 deploy.py hash site/toeic/index.html`·`site/index.html` sha를 각 .edit.json에(한능검 쪽과 같은 방식). 원문 말(정기접수·특별추가·성적발표)만 씀, ★ 뜻은 확인 안 함이라 안 씀
   착수: firemap-editor-web 19:11 (운영실장) — 토익 쪽 편집 검수(디자인 검수와 한 쌍)
+  완료: firemap-editor-web 19:13 — 편집 통과: X-CN-1 토익 시험일정 쪽+목록 쪽. 고친 곳 메타 설명 1문장(커밋 df7bec5), 나머지 글자(title·h1·맨 위 줄·상자 3줄·표 머리·바닥 글)는 원문 말만이라 그대로. sha 토익 9ead2e85268a11cb·목록 3f2cd5d6d365727a를 .edit.json에 적음
 - [디자인 검수 요청] X-CN-1 토익 시험일정 쪽(한능검 v2 카드 틀 그대로, 새 부품 0 — 표 머리 2줄·표 칸 날짜/시각 2줄만 다름) 트랙:A · 담당 firemap-designer · 시한 20:10 · 근거 design/x-cn-1-toeic/375_first.png·375_full.png·320_full.png·desktop_full.png, toeic/review.md
   착수: firemap-designer 19:11 (운영실장) — 토익 쪽 디자인 검수 + X-KR-1 2장째 재검수 묶음
   완료: firemap-designer 19:12 — 통과: X-CN-1 토익 시험일정 쪽(한능검 v2 틀 그대로, 새 부품 0). 375·320·데스크톱 캡처 직접 확인: 다크 카드 숫자 1(10/7(수) 13:00)+행동 1(캘린더에 넣기), 색 4 유지, 표 320px 넘침 없음, 날짜/시각 2줄 칸 읽힘. 막지 않는 메모 1: 320px에서 다크 카드 문장 '마감 2일 / 뒤'로 한 글자 줄 넘김(폭 좁을 때만) — 다음 판. 글자는 보지 않음(editor-web). 심사 3명 호출은 안 함(직접 판정, 확인 안 한 점)

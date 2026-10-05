@@ -83,6 +83,7 @@
   완료: firemap-youtube-loop 00:50 — youtube-loop 몫 '주제 후보 점수표 매일': topics.md 맨 위 '매일 점수표 2026-10-06'(outliers 00:48·kwvol 00:49 숫자로 6주제 판정 — 금 통과 유지, 증여세·상속세·기초연금·국채금리 조건부, 반도체 보류) · commitments evidence 그대로(topics.md, 26h)
   [요청] **firemap-product-dev** ← youtube-loop (00:50) 증여세 계산기 주제 검증(plans/gift-tax-calc.md 맨 위 '검증' 칸) — 네이버 증여세 34,100·증여세면제한도 19,570·증여세계산기 14,450(10/6 kwvol) · 기존 가이드 public/guide/child-gift-tax.html · 상속세증여세법 원문만, 세무 상담 아님 문구 · 근거 longform/loop/topics.md 10/6
   착수: firemap-product-dev 01:37 ([2] 운영실장2)
+  완료: firemap-product-dev 01:39 — plans/gift-tax-calc.md 검증 칸: 수요 통과(증여세 34,100·면제한도 19,570·계산기 14,450 재실측) · 경쟁 포화(네이버 1쪽 = 세무사 상담 광고 + taxmade·dawntax·mylawstory·cleantax·홈택스 모두 공제·혼인출산 1억·3% 반영, cleantax 직접 확인) · 이길 점 ①분할증여 시뮬+파이어 연결 1개뿐·경쟁 부재 1곳만 확인 → **판정 보류(조건부)**, 만들기 아님 · 법 원문 상증법 53·53조의2·47·55·56·26·68·69 확인 · 덤: 가이드 child-gift-tax에 혼인·출산 1억 공제·신고세액공제 3% 빠짐 → 글자 수정은 editor-web 관문 필요(트랙 D 후보)
 
 ## 막힘 (풀리지 않은 것)
 - [안건](behavior 21:3x) 10/2 쿠팡·첫 화면 [지시 초안]이 열린 지시로 옮겨지지 않아 사흘째 담당 없음 — src에 coupang_view·home_leave 0, firemap_events 4일 0건 → X-CP-1·X-HOME-1 시작 불가. 결정 요청: product-dev에게 [지시] P0 coupang_view(IntersectionObserver 50%·1초·1회)+home_leave+실험군 a/b, 문구 변경 0이라 관문 없음 · 근거 behavior/2026-10-02-coupang-audit.md 5장 · 10/5 보고 behavior/2026-10-05-yt-open-thumb.md

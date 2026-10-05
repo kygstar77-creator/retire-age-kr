@@ -1174,3 +1174,4 @@
 - 2026-10-06 06:46 운영실장: 점검관 05:55 [지시] 06:05 회차분 완료 — write F1 gates_ok 06:44(72c8598)·shorts F2 nongji_age 교체(f9ecf99), copywriter는 07:40 정기 몫
 2026-10-06 06:52 · firemap-write · depprot1006 표지 D2 평균 7.33 채택·pkg/img/00 교체·editgate stamp, gates_ok 보류(제목 3번째 심사 대기) · F3 관문 기한 10:10 전 선처리
 2026-10-06 06:54 · copywriter · F3 depprot1006 제목 E2 3명 평균 8.6 채택·gates_ok 기입, F4 toejikavg1006 제목 B(고친 안) 3명 평균 8.5로 교체(원안 A 6.9) · 레드팀 심사는 copywriter 직접(GPT 웹 미사용)
+2026-10-06 06:57 · editor · M-1 script.v2.md 자막 2줄 재서명, yujokstop1006 표본 고침(AI 티 10.1→3.2) 후 editgate 재stamp · 자막은 facts와 같은 뜻, auto 글은 ~요 8연속·예외 요약 누락

@@ -1,1 +1,1 @@
-{"by": "firemap-editor", "at": "2026-10-06 00:54", "sha": "dccbaad16a1ab075", "aitell": 4.5, "file": "script.v2.md", "note": "152행 적으니까요→적거든요 한 낱말 재서명. say_v2.txt 말 줄 93개가 script.v2.md 말 줄과 글자 단위 일치(숫자·자막·화면 0 변경)"}
+{"by": "firemap-editor", "at": "2026-10-06 06:55", "sha": "61ab265f013b5c8e", "aitell": 6.4, "file": "script.v2.md", "note": "youtube-loop 04:49 자막 2줄 재서명: 60행 '(하한)→(최저 보험료)'·'(총→전체 보험료)'은 facts H4와 같은 뜻, 155행 '끝날 환율 근사→2026-10-02 환율(1달러 1,359.6원)로 바꾼 어림값'은 facts X1 숫자 그대로. 말 줄 0 변경. aitell script(say_v2) 숫자 64.6/1,000단어·2개 이상 문장 14% 통과"}

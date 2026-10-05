@@ -1,3 +1,8 @@
+## 2026-10-06 06:57 · M-1 자막 2줄 재서명 + auto 표본 2(10/6 10:10·14:10)
+- longform/ep/M-1/script.v2.md: youtube-loop 04:49 자막 2줄(60·155행) facts H4·X1 대조 일치 → 재서명(sha 61ab265f…, aitell 6.4). 말 줄 0 변경. aitell script(say_v2) 숫자 64.6/1,000단어·2개 이상 14% 통과, review.md 첫 줄 갱신. 녹음 뒤 screen_text 재서명은 16:01 뒤
+- yujokstop1006(10:10, auto): AI 티 10.1→3.2 · '~요' 8연속 → 5. c01 요약 문장이 예외 셋 중 '장애 자녀'를 빠뜨려 '대개 생계를 맡은 자녀가 없고'로, 끝맺음 2곳. 숫자·출처 0 변경. editgate 재stamp(firemap-editor 06:57)·frame·readcheck 0
+- hfguar1006(14:10, write stamp) 0.0 고칠 곳 0 · depprot1006(16:10) 2.3 통과 · 표본 고침 1/2
+
 ## 2026-10-05 17:34 · M-1 대본 v1 편집 통과 + 카페 주제 범위 관문 + auto 표본 2
 - longform/ep/M-1/script.v1.md: 말 줄 25문장 끝맺음만. aitell(말 줄) 20.5→4.7, humanlike '요' 77.6%→60.5%·습니다 1.7→19.3%·질문 1.7→3.4%·최장 연속 9→6. 숫자 목록 diff 0, 자막·화면 줄 0 변경. .orig·.edit.json·review.md
 - aitell.py scope_check: 밖 낱말 제목은 frame에서 막음, 경계는 경고. 지금 묶음 189 중 밖 3(지난/미배정)

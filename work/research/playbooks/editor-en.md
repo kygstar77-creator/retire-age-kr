@@ -44,3 +44,12 @@ Unchanged on purpose: titles, H1s, meta, examples table (re-checked), "This is a
 
 Checked, unchanged: scope line "rates from GOV.UK, checked 1 October 2026" (true), table note "Month is the yearly amount divided by 12 and rounded to the nearest pound…" (matches f() = Math.round), Year/Month headers. deploy.py check 4 pages OK. Not deployed by me — builder's next push carries it.
 - Builders now stamp .edit.json "editor-en 역할" themselves. Shared rules for them: work/research/editor/style-guide-en.md.
+
+## 2026-10-05 21:2x kit/template-en.html sweep (no English requests open; uk-pay unchanged since ee736ca except a code comment in fmkit.js)
+| Where | Before | After | Why |
+|---|---|---|---|
+| form | wrong input → nothing on screen (only calc_invalid logged) | `<p id="err" role="alert">{{INVALID_MSG}}</p>` shown until input is valid | silent failure; error copy is ours to write |
+| header comment | (none) | points to style-guide-en.md + 3 traps: ?s= links make "stay in your browser" false · share text is first person, test at £0/thresholds · INVALID_MSG says what to type, no "Invalid input"/"Oops" | every new site copies this file |
+
+Checked, unchanged: footer disclaimer (true for the template — FMKit.share sends origin+pathname only, no figures), "Share result", "How it's calculated", "Rules as of". aitell 0.5.
+- Error messages: say what to type and give an example. A bare "Invalid input" is the most machine-sounding line on a page.

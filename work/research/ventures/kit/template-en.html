@@ -2,7 +2,12 @@
 <!-- 신사업 빈 템플릿(영어) — firemap-venture-builder 2026-10-01
      쓰는 법: 이 파일을 public/<경로>/index.html 로 복사 → {{…}} 전부 채우기 → compute()만 구현.
      규칙: 본문은 JS 없이 첫 HTML에 있다(체크리스트 16). 숨김 텍스트 없음. 금융상품 권유 문구 금지.
-     제휴 링크를 넣으면 대가성 문구를 링크 바로 위에(coupang-policy.md / Amazon: "As an Amazon Associate I earn from qualifying purchases."). -->
+     제휴 링크를 넣으면 대가성 문구를 링크 바로 위에(coupang-policy.md / Amazon: "As an Amazon Associate I earn from qualifying purchases.").
+     영어 문구: work/research/editor/style-guide-en.md 먼저(editor-en 2026-10-05). 특히
+       - 입력값을 다른 쪽 링크(?s=110000 등)에 실으면 footer의 "stay in your browser"가 거짓이 된다 → "We never log the exact figure, only…"로 바꾸고 privacy에 호스트가 받는 것을 쓴다.
+       - SHARE_TEXT·공유 카드는 사용자가 올리는 말이라 1인칭("I keep £… of my next £1,000"). 0원·문턱값에서 말이 되는지 확인.
+       - INVALID_MSG는 무엇을 넣으면 되는지 한 문장("Enter your salary as a number, e.g. 45000."). "Invalid input"·"Oops" 금지. -->
+
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -61,6 +66,7 @@ footer a{color:var(--sub)}
     <form id="f" class="card" novalidate>
       <!-- 입력은 꼭 필요한 것만(3개 이하 권장). 예: -->
       <div class="field"><label for="a">{{INPUT_A_LABEL}}</label><input id="a" name="a" inputmode="decimal" autocomplete="off" required></div>
+      <p id="err" class="src" role="alert" hidden>{{INVALID_MSG}}</p>
       <button class="primary" type="submit">{{CTA}}</button>
     </form>
 
@@ -103,6 +109,7 @@ var last = null;
 document.getElementById('f').addEventListener('submit', function (e) {
   e.preventDefault();
   var out = compute({ a: document.getElementById('a').value });
+  document.getElementById('err').hidden = !!out;
   if (!out) { FMKit.log('calc_invalid'); return; }
   last = out;
   document.getElementById('big').textContent = out.big;

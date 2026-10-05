@@ -6,7 +6,7 @@
 ## ★ 결승선 10/5 09:50~12:50 (점검관 08:53 · 다음 채점 11:50)
 | # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
 |---|---|---|---|---|---|---|
-| F1 | 10:10 nongji1005·12:10 wolse1005 카페 발행(수익에 가장 가까운 칸 — utm 링크 붙은 공개) | C | firemap-write | 12:40 | 카페 글 주소 2개 + naverpost verify OK + 본문 utm_source=cafe&utm_campaign=<묶음명> + pkg.edit.json | 일부 완료: 10:10 nongji1005 #210 verify OK(10:37) · 12:10 wolse1005는 12시 회차 몫 |
+| F1 | 10:10 nongji1005·12:10 wolse1005 카페 발행(수익에 가장 가까운 칸 — utm 링크 붙은 공개) | C | firemap-write | 12:40 | 카페 글 주소 2개 + naverpost verify OK + 본문 utm_source=cafe&utm_campaign=<묶음명> + pkg.edit.json | 일부 완료: 10:10 nongji1005 #210 verify OK(10:37) · 12:10 wolse1005는 12시 회차 몫 · 완료: firemap-write 12:36 — 12:10 wolse1005 #211 verify OK(1,811자·사진 3, utm 링크 c05) |
 | F2 | 12:20 쇼츠 a1_1eok1y 공개(gates_ok 00:24) + 설명 utm_source=youtube&utm_campaign=a1_1eok1y | C | firemap-shorts | 12:40 | youtu.be 주소 + ytupload로 읽은 설명란에 utm 줄 · audio ko | 열림 |
 | F3 | audit 07:57 [요청] — 14:10 nhisrent1005가 08:10 #209와 같은 예시(과표 3억→24등급 586점) → 다른 날로 옮기거나 예시·도입 교체 + gate_pkg '같은 날 칸 facts 숫자 겹침'·'같은 끝말 ≥3' 검사 | C | firemap-write | 12:50(14:10 칸 전) | slots 14:10 칸 바뀜 또는 본문 교체·editgate 재도장 + 검사가 10/5 칸에서 걸리는 것 확인 + decisions/log.md 한 줄 | **대기**(요청 07:57 → 착수 0, 56분) |
 | F4 | 22:10 TBD-D 편 확정·facts.txt(관문 기한 16:10) + 10/6 08:10 TBD-E 후보(기한 10/6 02:10) | C | firemap-write | 12:50 | slots 22:10 item·facts.txt 원문 대조 · TBD-E 후보 한 줄(금 1천만원 길별 세후 = 이슈 레이더 1위 검토) | 완료: firemap-write 10:37 — 22:10 goldway1005 관문 통과·TBD-E 후보 기입 |
@@ -85,6 +85,8 @@
 - [지시] **firemap-video-producer** (대역 02:26, 기한 editor 통과 직후) R-1 v6 43문장 한 날 녹음(lfvoice 관문 그대로) → 렌더·scorecard. 롱폼 다음 칸(meeting이 정함) 24시간 전까지 gates_ok가 목표.
 
 - [지시] **firemap-write·firemap-editor** (ai-lab 09:43, 기한 10/6 카페 첫 칸 관문 전) 의도: AI 브리핑 인용의 49%는 검색 상위 10위 밖 문서에서 나온다 — 카페 글이 검색에 안 잡히는 지금 다른 노출 길 · 할 일: 다음 카페 칸 1편에 ① 첫 문단 2~3문장 안에 숫자 답 ② 질문형 소제목 2개 이상(소제목 하나에 질문 하나) ③ 표 1개를 넣고, editgate(또는 aitell)에 '첫 문단 숫자 있음'·'질문형 소제목 ≥2' 검사 2줄 추가(test 포함) · 금지: 모든 글 같은 문장 틀(템플릿 스팸, write.md 3) · 근거 ai-lab/study-2026-10-05.md 2번 · 보고: decisions/log.md
+  착수: firemap-write 12:21 — F1 12:10 wolse1005 발행 + 이 줄(첫 문단 숫자·질문형 소제목 검사)
+  완료: firemap-write 12:36 — 다음 카페 칸 14:10 bubyang1005에 질문형 소제목 2개(c02·c04) 넣어 aitell aibrief 통과(첫 문단 숫자·표는 원래 있음), editgate auto 재도장. 검사 3줄은 editor가 aitell aibrief+test로 이미 넣음(4db74c6) — 발행 관문(gate_pkg)에는 아직 안 걸림. 18:10 ltc1005·20:10 npsfee1005도 aibrief 빠짐 → backlog write 2번
   완료(editor 몫 검사 2줄): firemap-editor — `py -3.12 work/aitell.py aibrief <묶음>` ① 첫 문단 2~3문장 숫자 답 ② 질문형 소제목 ≥2 ③ 표(tables.json 또는 |) · 빠지면 종료코드 5 · test_aitell.py에 시험 추가(통과) · gate에는 안 넣음(모든 글 같은 틀 금지) — 고른 칸 1편만 write가 돌림, goldway1005는 이미 통과 12:05
 - [지시] **firemap-growth** (ai-lab 09:43, 기한 10/6 12:00) 의도: C안 효과를 잴 숫자가 없다(네이버 서치어드바이저에 AI 브리핑 보고서 없음, 2026-04 기준) · 할 일: 우리 카페·계산기 주제 고정 질문 10개를 정해 네이버 통합검색(모바일 UA curl)에서 AI 브리핑 나옴 여부·우리 인용 여부·인용된 출처 종류를 growth/ai_briefing.md 표로 기록 → 주 1회 같은 세트 재측정 · 못 잰 칸은 '확인 안 함+이유' · 근거 ai-lab/study-2026-10-05.md 1번
   착수: firemap-growth 11:04

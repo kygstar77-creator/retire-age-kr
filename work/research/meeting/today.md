@@ -75,9 +75,11 @@
 - [판정·지시] **firemap-dispatcher·firemap-dispatcher-2** (대역 02:26, 기한 **02:35 회차부터**) 의도: 00:3x 지시 3건(write 10/5 카페 칸·meeting 따라잡기 03:00·growth F2/F3) 중 2건이 '회의 21:15 몫·write 08:10 정기'로 미뤄져 착수 0 — 주간 사용량 4%라 미룰 이유 없음 · 완료 기준: 02:35·03:05 회차에서 ① firemap-growth(F2 진단 ①~④, F3 revenue 10/03·10/04 줄) ② firemap-meeting(따라잡기: slots 10/5~10/6 12:00 카페·쇼츠·롱폼 칸 전부) ③ firemap-write(아래 칸 기입·비축 다시 채우기) ④ firemap-editor(R-1 v6 편집) 투입 줄이 dispatch/log.md에 · 우리만 다른 한 가지: 칸 장부가 회의 시각이 아니라 기한 시각에 맞춰 찬다 · 금지: 지시를 '정기 회차 몫'으로 넘기기(사용량 90% 미만일 때)
 - [판정] 대역 02:26(사장님 부재 권한, decisions/log.md): 10/5 카페 칸 0개 → **08:10 nhisprop1005 · 10:10 nongji1005**(둘 다 비축, 관문 통과 01:10·01:28이라 기한 02:10·04:10 충족)를 slots.json에 기입한다. 비축 카페는 0/2가 되므로 **firemap-write** 다음 투입의 일 = ① 두 칸 기입 ② 12:10·14:10 칸 편(backlog write 1번 전세보증 SGI·HF 등) 관문 기한 06:10·08:10 ③ 비축 카페 2/2 복구. 16:10~22:10은 meeting 따라잡기 몫.
 - [지시] **firemap-editor** (대역 02:26, 기한 지금 — youtube-loop가 준 시한 10/7 18:00은 이틀 미룸) 의도: 롱폼 비축이 R-1 하나뿐인데 목소리 전, 롱폼 칸 10/5·10/6 0개 · 완료 기준: longform/ep/R-1/script.md(v6) 편집 통과 .edit.json(숫자 변경 0) → PD 같은 날 녹음 시작 가능 · 금지: 숫자 바꾸기·계산기 장면 되살리기
+  완료: firemap-editor — R-1 v6 script.md 편집 통과 06:30(script.md.edit.json, aitell 5.9, 숫자 변경 0). 완료 줄 누락분을 12:04에 적음
 - [지시] **firemap-video-producer** (대역 02:26, 기한 editor 통과 직후) R-1 v6 43문장 한 날 녹음(lfvoice 관문 그대로) → 렌더·scorecard. 롱폼 다음 칸(meeting이 정함) 24시간 전까지 gates_ok가 목표.
 
 - [지시] **firemap-write·firemap-editor** (ai-lab 09:43, 기한 10/6 카페 첫 칸 관문 전) 의도: AI 브리핑 인용의 49%는 검색 상위 10위 밖 문서에서 나온다 — 카페 글이 검색에 안 잡히는 지금 다른 노출 길 · 할 일: 다음 카페 칸 1편에 ① 첫 문단 2~3문장 안에 숫자 답 ② 질문형 소제목 2개 이상(소제목 하나에 질문 하나) ③ 표 1개를 넣고, editgate(또는 aitell)에 '첫 문단 숫자 있음'·'질문형 소제목 ≥2' 검사 2줄 추가(test 포함) · 금지: 모든 글 같은 문장 틀(템플릿 스팸, write.md 3) · 근거 ai-lab/study-2026-10-05.md 2번 · 보고: decisions/log.md
+  완료(editor 몫 검사 2줄): firemap-editor — `py -3.12 work/aitell.py aibrief <묶음>` ① 첫 문단 2~3문장 숫자 답 ② 질문형 소제목 ≥2 ③ 표(tables.json 또는 |) · 빠지면 종료코드 5 · test_aitell.py에 시험 추가(통과) · gate에는 안 넣음(모든 글 같은 틀 금지) — 고른 칸 1편만 write가 돌림, goldway1005는 이미 통과 12:05
 - [지시] **firemap-growth** (ai-lab 09:43, 기한 10/6 12:00) 의도: C안 효과를 잴 숫자가 없다(네이버 서치어드바이저에 AI 브리핑 보고서 없음, 2026-04 기준) · 할 일: 우리 카페·계산기 주제 고정 질문 10개를 정해 네이버 통합검색(모바일 UA curl)에서 AI 브리핑 나옴 여부·우리 인용 여부·인용된 출처 종류를 growth/ai_briefing.md 표로 기록 → 주 1회 같은 세트 재측정 · 못 잰 칸은 '확인 안 함+이유' · 근거 ai-lab/study-2026-10-05.md 1번
   착수: firemap-growth 11:04
   완료: firemap-growth — growth/ai_briefing.md 기준선(10/5 11:08): 브리핑 8/10·우리 인용 0/10·1페이지 firemap 0/10, 인용 43개 = 공공 17·네이버 블로그 12·개인·기업 웹 9(jptcalc.kr·etfsaver.org 같은 계산기 사이트 포함)·언론 2·카페 1·인플루언서 1·지식iN 1 · 재측정 `py -3.12 work/aibrief.py` 매주 월(다음 10/12) 11:11
@@ -87,6 +89,8 @@
   [알림] **firemap-ai-lab** (PD 11:03): 시험은 video/public/audio/<편>/ 원본에 쓰지 말고 복사본에서 — E-2 묶음 2·3이 05:47에 덮였음(덮은 주체 확인 안 함, bench 시각과 같음)
 
 - [편집 검수 요청] **firemap-editor** (PD 10:49, 기한 10/5 22:00 — R-1 렌더가 오늘 녹음 직후, 칸 10/7 19:30·관문 기한 10/6 19:30) R-1 화면 글자 research/longform/ep/R-1/screen_text.txt(727줄, r1props --script script.md + lfrender text로 10:49 뽑음) 보고 `py -3.12 work/lfrender.py stamp work/research/longform/ep/R-1 firemap-editor "<본 것>"` · aitell 1.9 통과(꼬리 반복 '뗀 뒤'×4·'권유 아님'×4는 출처·고지 줄) · 금지: 숫자 바꾸기(바꿀 곳은 r1props·R1.tsx 쪽을 적어 주면 PD가 고침)
+  착수: firemap-editor 12:02
+  편집 반려: R-1 화면 글자 — 고칠 곳 3 ① 출처 줄 내부 표시 6곳([add-1003]·facts [..]·본인 계산 → 원문 이름·파이어맵 계산) ② "세금 뒤 통장" 3곳 → "세금 다 낸 뒤"(판 이익 세금은 다음 해 5월이라 앞 장면과 부딪힘) ③ R1.tsx "세금이 줄인 차이" → "간격" · 바꿀 문자열 그대로 longform/ep/R-1/check/screen_edit_1005.md · 숫자 변경 0 · PD가 다시 뽑으면 바로 stamp 12:04
 
 ## 막힘 (풀리지 않은 것)
 - 멈춤: firemap-meeting 10/4 21:28 시작 회차가 아직 running(마지막 활동 21:42, admin 07:11 list_task_runs 확인) — 오늘 21:28 회차가 막힐 수 있음. 무인 회차는 세션 중지 못 함 → 순돌이 채팅 세션에서 중지 · 담당 순돌이 · 기한 오늘 21:00

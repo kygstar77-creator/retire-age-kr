@@ -6,6 +6,7 @@
 #   py -3.12 work/aitell.py scan <묶음 폴더 여러 개>         → 기준 조정용 분포
 #   py -3.12 work/aitell.py sameday 2026-10-05               → 그 날 카페 칸끼리 숫자 핵심값 겹침(≥3, 같은 예시)·제목 끝말 같은 칸 ≥3 검사. 걸리면 종료코드 5. gate는 숫자 겹침만 막고 끝말은 경고(10/5부터)
 #   py -3.12 work/aitell.py frame <묶음>                     → 카페 틀 v2 3줄 점검(소제목 3~5개·끝 FAQ/정리·제목 명사 끝 또는 B틀 물음, 반전 금지). 어기면 종료코드 5
+#   py -3.12 work/aitell.py aibrief <묶음>                   → AI 브리핑 인용 구조 3줄(10/5 ai-lab): 첫 문단 2~3문장 안 숫자 답·질문형 소제목 ≥2·표 1개. 어기면 종료코드 5. gate에는 안 넣음(모든 글 같은 틀 금지 — 칸 1편씩 고른 글만)
 #   py -3.12 work/aitell.py commaday 2026-10-04               → 그 날 카페 칸 쉼표 없는 제목 수(하루 2편 이상, 10/4 칸부터 frame이 쉼표 제목을 막는다)
 #   py -3.12 work/aitell.py script <편 폴더|voice.json|자막 .json3|대본 텍스트>  → 롱폼 대본 실측 기준 2개(10/4 speechcompare 경쟁 자막 12편 vs 우리 4편): 숫자 1,000단어당 ≤92(경쟁 최대 91.4) · 숫자 2개 이상 문장 ≤20%. 넘으면 종료코드 6
 #   --skip-list (아무 자리)  → 번호·글머리 목록 줄과 법 문구·면책 줄을 끝맺음 반복(연속·'~요'·머리·꼬리)에서 뺀다.
@@ -182,6 +183,28 @@ def frame_check(pkg):
     return bad
 
 
+AIB_NUM = re.compile(r'\d|[천만억]\s*원|[일이삼사오육칠팔구십]\s*(?:만|억|천|%)')
+AIB_Q = re.compile(r'(\?|？|까|나요|가요|얼마|몇|무엇|뭘|뭐)\s*$')
+
+
+def aibrief_check(pkg):
+    """AI 브리핑 인용 구조(10/5 ai-lab study-2026-10-05.md 2번). ① 첫 문단 2~3문장 안에 숫자 답 ② 질문형 소제목 2개 이상 ③ 표 1개. 빠진 것 목록."""
+    text, files = pkg_text(pkg)
+    body = '\n\n'.join(open(f, encoding='utf-8').read() for f in files)
+    bad = []
+    paras = [b.strip() for b in re.split(r'\n\s*\n', body) if b.strip() and not re.match(r'\s*(##|■)', b.strip())]
+    first = ' '.join(sentences(paras[0])[:3]) if paras else ''
+    if not AIB_NUM.search(first): bad.append('첫 문단 2~3문장 안에 숫자 답이 없다 — 질문의 답(금액·%)을 맨 앞에')
+    heads = [re.sub(r'^\s*(##+|■)\s*', '', ln).strip() for ln in body.splitlines() if re.match(r'\s*(##\s|■)', ln)]
+    nq = sum(1 for h in heads if AIB_Q.search(h))
+    if nq < 2: bad.append(f'질문형 소제목 {nq}개 — 2개 이상(소제목 하나에 질문 하나)')
+    tj = os.path.join(pkg, 'tables.json')
+    has_t = os.path.exists(tj) and os.path.getsize(tj) > 4
+    has_t = has_t or any(ln.count('|') >= 2 for ln in body.splitlines())
+    if not has_t: bad.append('표가 없다 — tables.json 또는 | 표 1개')
+    return bad
+
+
 COMMA_FROM = '2026-10-04'
 
 
@@ -355,6 +378,10 @@ def main(a):
         bad = frame_check(a[1])
         if not bad: print('카페 틀 v2 통과', a[1]); return 0
         print('카페 틀 v2 어김', a[1]); [print('  ', b) for b in bad]; return 5
+    if a[0] == 'aibrief':
+        bad = aibrief_check(a[1])
+        if not bad: print('AI 브리핑 구조 통과', a[1]); return 0
+        print('AI 브리핑 구조 빠짐', a[1]); [print('  ', b) for b in bad]; return 5
     if a[0] == 'pass':
         who = a[2] if len(a) > 2 else 'editor'
         import datetime

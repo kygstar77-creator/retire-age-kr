@@ -43,3 +43,18 @@ assert aitell.score('1. 결론적으로 다양한 측면에서 핵심은 현명�
 prose = '첫 문장입니다. 둘째 문장입니다. 셋째 문장입니다. 넷째 문장입니다.'
 assert aitell.score(prose)[0] == aitell.score(prose, skip_list=True)[0]   # 목록 없는 글은 같다
 print('test_aitell: ok')
+# 10/5 ai-lab: AI 브리핑 구조 — 첫 문단 숫자 답·질문형 소제목 ≥2·표 1개
+d2 = tempfile.mkdtemp()
+open(os.path.join(d2, 'title.txt'), 'w', encoding='utf-8').write('금 1천만원 길별 세후')
+open(os.path.join(d2, 'order.txt'), 'w', encoding='utf-8').write('카페 발행 순서\nc00.txt\nc01.txt\nc02.txt\n')
+open(os.path.join(d2, 'c00.txt'), 'w', encoding='utf-8').write('작년에 샀다면 지금은 975만원 남짓이에요. 24만원쯤 손해죠.\n')
+open(os.path.join(d2, 'c01.txt'), 'w', encoding='utf-8').write('## 사는 곳마다 지금 얼마일까?\n본문.\n')
+open(os.path.join(d2, 'c02.txt'), 'w', encoding='utf-8').write('## 세금은 어떻게 붙을까?\n| 길 | 세금 |\n')
+assert aitell.aibrief_check(d2) == [], aitell.aibrief_check(d2)
+assert aitell.main(['aibrief', d2]) == 0
+open(os.path.join(d2, 'c00.txt'), 'w', encoding='utf-8').write('금을 어디서 사느냐에 따라 결과가 갈렸어요. 이유를 볼게요.\n')
+open(os.path.join(d2, 'c02.txt'), 'w', encoding='utf-8').write('## 세금 정리\n본문.\n')
+b = aitell.aibrief_check(d2)
+assert len(b) == 3 and '첫 문단' in b[0] and '질문형 소제목 1개' in b[1] and '표' in b[2], b
+assert aitell.main(['aibrief', d2]) == 5
+print('aibrief OK')

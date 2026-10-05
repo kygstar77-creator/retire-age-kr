@@ -22,7 +22,7 @@ function buildBody(newsLine: string, targetFireDate: string | null, now: number)
     ddayLine = days <= 0 ? '🎉 오늘 파이어 가능 나이 도달!' : `⏳ 파이어까지 D-${fmt(days)}`;
   }
   const parts = [newsLine, ddayLine].filter(Boolean);
-  return (parts.length ? parts.join(' · ') : '오늘의 파이어 한 걸음을 확인해보세요') + ' — 확인하기';
+  return parts.length ? parts.join(' · ') + ' — 확인하기' : '오늘의 파이어 한 걸음을 확인해보세요';
 }
 
 Deno.serve(async (req: Request) => {

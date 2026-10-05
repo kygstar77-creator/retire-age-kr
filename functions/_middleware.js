@@ -24,7 +24,7 @@ function seoBlock(tool, site) {
   const items = tool.sections.map((s) => `<li>${esc(s)}</li>`).join('');
   const others = TOOL_PAGES.filter((t) => t.path !== tool.path).map((t) => `<a href="${site}${t.path}">${esc(t.title)}</a>`).join(' · ');
   const body = (tool.body || []).map((b) => `<p>${esc(b)}</p>`).join('');
-  return `<div id="sSeo" ${BOX}><div ${HERO}><h1 ${HERO_H1}>${esc(tool.title)}</h1><p ${HERO_P}>파이어맵 · 1분이면 나도 계산</p></div><ul>${items}</ul>${body}<p><a href="${site}/">1분이면 나도 계산</a></p><p>${others} · <a href="${site}/guide/">파이어 백과</a></p>${footHtml(site)}</div>`;
+  return `<div id="sSeo" ${BOX}><div ${HERO}><h1 ${HERO_H1}>${esc(tool.title)}</h1><p ${HERO_P}>파이어맵 · 1분이면 나도 계산</p></div><ul>${items}</ul>${body}<p><a href="${site}/">파이어맵 홈</a></p><p>${others} · <a href="${site}/guide/">파이어 백과</a></p>${footHtml(site)}</div>`;
 }
 
 // 첫 화면(/) — 2026-09-30까지는 크롤러가 제목 한 줄(34자)만 받았다. 문구는 index.html의 description·JSON-LD와 도구 화면 라벨 그대로.

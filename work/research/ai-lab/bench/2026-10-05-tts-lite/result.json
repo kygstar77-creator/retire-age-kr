@@ -1,0 +1,22 @@
+{
+ "flash": {
+  "total_sec": 59.21,
+  "speech_sec": 56.06,
+  "rate": 5.57,
+  "f0_med": 152.9,
+  "f0_max_dev_pct": 18.9,
+  "cer_pct": 1.28,
+  "num_miss": [
+   "205"
+  ]
+ },
+ "lite": {
+  "total_sec": 61.37,
+  "speech_sec": 57.88,
+  "rate": 5.39,
+  "f0_med": 142.0,
+  "f0_max_dev_pct": 21.4,
+  "cer_pct": 9.29,
+  "num_miss": []
+ }
+}

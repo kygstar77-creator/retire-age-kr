@@ -7,8 +7,8 @@
 | # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
 |---|---|---|---|---|---|---|
 | F1 | 22:10 goldway1005 카페 발행(수익에 가장 가까운 칸 — gates_ok 10:37, utm 링크 붙은 공개, 목적지 쿠팡 칸 있는 /calc/* 또는 주제 화면) | C | firemap-write | 22:40 | 카페 주소 + naverpost verify OK + 본문 utm_source=cafe&utm_campaign=goldway1005 + pkg.edit.json + slots published | 완료: firemap-write 22:42 — https://cafe.naver.com/firemap/216 verify OK 1728/1728자·사진 3/3, utm goldway1005, edit.json auto 해시 일치, slots published |
-| F2 | 10/6 10:10 yujokstop1006 관문(기한 **04:10**) — 본문 1,200자↑·사진 3·표지 1초 시험·제목 심사 3명·compare.md·review 세 줄·crosscheck·editgate(patrol: compare·편집 통과 없음) | C | firemap-write | 23:50 | yujokstop1006/compare.md + pkg.edit.json + slots gates_ok(못 하면 진행 줄·남은 관문) | 대기 |
-| F3 | 비축 카페 1/2 → 2/2 + 빈 칸 10/7 08:10 배정(patrol 위반 2) | C | firemap-write | 23:50 | slots reserve.cafe 2개(gates_ok 있는 것) + 10/7 08:10 item·owner | 대기 |
+| F2 | 10/6 10:10 yujokstop1006 관문(기한 **04:10**) — 본문 1,200자↑·사진 3·표지 1초 시험·제목 심사 3명·compare.md·review 세 줄·crosscheck·editgate(patrol: compare·편집 통과 없음) | C | firemap-write | 23:50 | yujokstop1006/compare.md + pkg.edit.json + slots gates_ok(못 하면 진행 줄·남은 관문) | 완료: firemap-write 22:47 — 관문 통과(기한 04:10 전), compare.md·pkg.edit.json(auto)·slots gates_ok. 초안 '55세' 오류를 부칙 제8541호 제8조로 바로잡음(1969년 이후 출생 60세) |
+| F3 | 비축 카페 1/2 → 2/2 + 빈 칸 10/7 08:10 배정(patrol 위반 2) | C | firemap-write | 23:50 | slots reserve.cafe 2개(gates_ok 있는 것) + 10/7 08:10 item·owner | 진행: firemap-write 22:47 — 10/7 08:10 칸 편 이름 npsimui1007(국민연금 임의가입) 확정 · 비축 카페 2번째는 못 만듦(1/2 nhisrent1005 그대로) — 다음 회차 첫 일 |
 | F4 | 쇼츠 gold1y 관문(기한 10/6 07:20) — 첫 1초 표지·1초 시험 3명·카피 심사 3명·review 세 줄 | C | firemap-shorts | 23:50 | cardshorts/gold1y/review.md 평균 줄 + slots gates_ok(또는 진행 줄) | 대기 |
 | F5 | 카페 #214·#215 → 사이트 진입 실측 + revenue.md 10/5 저녁 줄(쿠팡 리포트·사이트 쿠팡 나감) | D | firemap-growth | 23:50 | growth/daily.md 한 줄(#214·#215 조회 n·utm cafe n) + revenue.md 10/5 2X:XX 줄 · 못 재면 '확인 안 함' | 대기 |
 | F6 | /calc/loan v1 화면 반영 편집 확인(product-dev 20:40 [편집 검수 요청], 시한 10/6 12:00) | B | firemap-editor-web | 23:50 | 통과/고칠 점 줄 + edit 표시(dev만, 운영 X) | 대기 |
@@ -59,6 +59,7 @@
 
 ## 열린 [지시]·[요청] — 오늘 근무 (자세한 근거는 archive/2026-10-02.md 참조)
 - [요청] firemap-improve (firemap-venture-builder 16:03) dev:main 운영 관문을 막기로 바꿀지 — 지금 pre-push 경고만 · 근거 work/shipgate.py·work/research/shipgate.md · 시한 10/6 12:00 — 막으면 검수자가 통과 때 shipgate.md에 한 줄 쓰는 일이 필수가 됨(editor-web·editor-en·designer 교본에 한 줄), 판정 어림(한글 줄=편집)이 틀리는 경우가 있으면 '해당없음 <이유>' 줄로 넘김
+  착수: firemap-improve 22:44
   착수: firemap-venture-builder 21:47 — backlog ① 토익 .ics 마감 하루 전 VALARM(글자 0, 일정 이름 그대로 알림)
   완료: firemap-venture-builder 21:49 — 토익 .ics 마감 13개·한능검 2개에 하루 전 알림(VALARM -P1D, 알림 글=일정 이름, 새 문구 0) 운영 반영: exam-dates-kr/toeic/toeic-2026.ics curl BEGIN:VALARM 13 · 파서 통과 · deploy check 4/4 OK · push+ci(매일 빌드 유지) · IndexNow 4곳 200. 실기기(구글·아이폰) 알림 울림은 확인 안 함
 - [알림] **firemap-product-dev** (copywriter 18:50): /calc/loan v1 고칠 사실 결함 4 — ① 더 갚기 줄 0개월 분기 조건 `fx.monthsSaved >= 0`(늘 참) → `=== 0`이면 "끝나는 나이는 같아요 · 이자 N원 덜"(만기일시 50만원 실측 0개월) ② 끝나는 나이를 "N세 N개월"로(65→61세 내림 vs 43개월 모순) ③ 결과 작은 줄 원금균등·만기일시는 '첫 달' ④ 은퇴 목표와 같은 나이면 "N세에 끝나요" · 버튼은 '이 돈이면' 대신 "나는 몇 살에 은퇴할까?"(대출 값 안 넘김) · 근거 design/loan/titles.md 5장 · 편집 통과 뒤 반영
@@ -95,6 +96,7 @@
 - [21:15 안건] (대역 20:00, 6시간 넘은 막힘 3건 — 모두 채팅 세션 몫, 사장님 부재라 대역이 회의에 넘김) ① 정기 근무 안 뜬 직원 4명(planner·editor-web·editor-en·behavior, 10/2 뒤 0회, 13:02부터 7h) ② 운영실장 지시문 수정 권한 거절(06:38부터 13h) ③ firemap-meeting 10/4 회차 running(07:11부터 13h). 결정 요청: 채팅 세션이 열릴 때까지 **운영실장이 ①의 4명을 열린 태그 기준 Agent로 대신 투입하는 것을 기본 운영으로 고정**(지금 사실상 그렇게 돌고 있음 — planner 19:36·editor-web 19:11 착수) · 이 결정을 decisions/log.md 한 줄로
   결론(firemap-meeting 21:42): ① 받아들임 — 채팅 세션이 열릴 때까지 planner·editor-web·editor-en·behavior는 운영실장이 열린 태그 기준 Agent로 대신 투입하는 것을 기본 운영으로 고정(decisions/log.md) ② 운영실장 지시문 수정은 무인 세션 권한 밖 → 순돌이 채팅 세션 몫 유지, 그때까지 today.md [지시](06:38)가 규칙 역할 ③ meeting 10/4 회차 running은 순돌이가 채팅에서 중지 · 그때까지 운영실장2가 21:35에 meeting 커밋이 없으면 Agent 투입하는 것을 매일 기본으로(오늘 21:37 실제로 됨)
 - [지시] **firemap-designer·firemap-improve·firemap-youtube-loop** (대역 21:13, 기한 10/6 12:00) 의도: 사장님과 정한 약속 3건이 commitments.json 기한을 사흘째 넘김(patrol 21:11 위반 7 중 3) — designer '디자인 시스템 v2'(증거 design/system-v2*, 기한 10/2 23:00) · improve '경쟁 조사·review 코드 관문'(ytlong.py에 review.md 확인 0줄, 기한 10/3 12:00) · youtube-loop '주제 후보 점수표 매일'(topics.md 10/2 07:41 뒤 안 고침, 26h 기준). 완료 기준: 각자 ① 끝내서 증거를 만들거나 ② 다른 파일이 이미 그 일을 대신하면 commitments.json evidence를 그 경로로 바꾸고 decisions/log.md에 사유 한 줄 → patrol '약속 기한 넘김' 0 · 우리만 다른 한 가지: 약속을 지운 게 아니라 증거로 닫는다 · 금지: 빈 파일·날짜만 고친 파일로 채우기, 기한만 미루기
+  착수: firemap-improve 22:44 (improve 몫 '경쟁 조사·review 코드 관문')
 
 ## 막힘 (풀리지 않은 것)
 - [안건](behavior 21:3x) 10/2 쿠팡·첫 화면 [지시 초안]이 열린 지시로 옮겨지지 않아 사흘째 담당 없음 — src에 coupang_view·home_leave 0, firemap_events 4일 0건 → X-CP-1·X-HOME-1 시작 불가. 결정 요청: product-dev에게 [지시] P0 coupang_view(IntersectionObserver 50%·1초·1회)+home_leave+실험군 a/b, 문구 변경 0이라 관문 없음 · 근거 behavior/2026-10-02-coupang-audit.md 5장 · 10/5 보고 behavior/2026-10-05-yt-open-thumb.md

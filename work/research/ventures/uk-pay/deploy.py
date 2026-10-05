@@ -15,6 +15,7 @@ import aitell  # noqa: E402
 
 sys.path.insert(0, os.path.join(HERE, '..', 'kit'))
 import ghio  # noqa: E402
+import indexnow  # noqa: E402
 FOLDER = 'uk-take-home-pay'
 
 
@@ -54,6 +55,8 @@ def push():
     if not check():
         sys.exit('검사 실패 — push 안 함')
     ghio.sync(SITE, FOLDER, ignore=('*.edit.json',))
+    # 공개 뒤 sitemap URL을 IndexNow 4곳에 다시 알린다(kit/README 5절). 반영 1~2분 전이라도 엔진은 나중에 긁는다
+    indexnow.submit(indexnow.from_sitemap(f'https://{indexnow.HOST}/{FOLDER}/sitemap.xml'))
 
 
 def ci():

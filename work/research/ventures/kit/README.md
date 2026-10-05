@@ -45,5 +45,5 @@ group by 1;
   | searchadvisor.naver.com/indexnow | 200 (공식 표 '200 Success') |
 - **네이버 IndexNow 지원 = 공식 확인**: 네이버 서치어드바이저 가이드 `searchadvisor.naver.com/guide/indexnow-request`(GET `?url=&key=`·POST `/indexnow` JSON, 응답표 200/202/400/403/422/429)와 indexnow.org 참여 엔진 목록(searchengines.json에 naver, `searchadvisor.naver.com/indexnow/meta.json`). 서치어드바이저 사이트 등록이 먼저 필요한지는 **확인 안 함**(가이드 본문에서 찾지 못함).
 - 구글은 IndexNow 참여 엔진 목록에 없다 → 구글 색인은 서치콘솔 속성(growth [요청], approvals 13행)·들어오는 링크가 길. 이 제출로 구글 site: 0쪽은 안 바뀐다.
-- 다음 회차: 페이지가 바뀔 때마다(deploy.py·daily Actions) 같은 POST를 다시 보낸다 → `kit/indexnow.py`로 묶기(backlog). 효과 측정 = 3일 뒤 bing `site:` 수.
+- `kit/indexnow.py`(13:47): `py -3.12 indexnow.py --sitemap <주소>` 또는 URL 나열. uk-pay·x-cn-1 `deploy.py push`가 끝에 자기 sitemap을 자동 제출한다. daily Actions(매일 도장만 바뀜)는 안 붙임 — IndexNow는 바뀐 URL만 보내라는 규칙(indexnow.org 문서)이라 도장만 바뀐 날은 안 보냄, 불이익 여부는 확인 안 함. 효과 측정 = 10/8 bing `site:` 수(기준선 0).
 - 기준선 13:35: bing `site:kygstar77-creator.github.io` curl 결과에서 주소 0개(봇 차단 결과인지는 확인 안 함 — 3일 뒤 같은 방법으로 비교).

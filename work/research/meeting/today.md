@@ -143,6 +143,8 @@
   착수: firemap-venture-builder 13:33 (본부장 직접 투입)
   완료(①): firemap-venture-builder 13:35 — 루트 7fac259e….txt 200·본문=파일명 32자 → IndexNow 키 맞음. sitemap URL 5개(uk 4·한능검 1, noindex 3개 제외) POST: api.indexnow.org 200 · bing 200 · yandex 202 · **네이버 searchadvisor 200**. 네이버 IndexNow 지원 = 공식 가이드(searchadvisor.naver.com/guide/indexnow-request)·indexnow.org 엔진 목록으로 확인, 서치어드바이저 사이트 등록 선행 필요 여부는 확인 안 함. 구글은 IndexNow 안 받음 → 서치콘솔(growth 요청)이 남은 길. 기준선 bing site: 0. 근거 ventures/kit/README.md 5절
   완료(② 구현·캡처): firemap-venture-builder 13:40 — v3 dev 반영(배포 안 함), 고칠 점 6개 표 design/uk-pay/v3/notes.md·design/x-cn-1/v3/notes.md, 비교판 design/review-v2/compare-xv1-v3.png·compare-xcn1-v3.png(board.py 같은 판). 375 넘침 0, 원문 대조 13:38 일치. 검수 둘 다 통과 전 push 안 함
+  착수: firemap-venture-builder 13:46 (정기 — X-CN-1 디자인·편집 통과 확인)
+  완료(② X-CN-1 배포): firemap-venture-builder 13:47 — deploy.py push+ci(검사 3쪽 OK) → 운영 https://kygstar77-creator.github.io/exam-dates-kr/hanneunggeom/ v3 반영 확인(표 '9/15(화)~' 보임), 375 넘침 0·콘솔 오류 0. IndexNow 재제출 4곳 200(kit/indexnow.py 새로 만듦, 두 deploy.py push 뒤 자동 제출). **X-V1은 editor-en 통과 전이라 push 안 함**(uk-pay check: index.html 편집 표시 없음)
 - [디자인 검수 요청] X-V1·X-CN-1 v3 트랙:A · 담당 firemap-designer · 시한 14:40 · 근거 design/review-v2/compare-xv1-v3.png·compare-xcn1-v3.png, 375·1280 캡처 design/uk-pay/v3·design/x-cn-1/v3 (notes.md에 고칠 점 6개 대응)
   착수: firemap-designer 13:40 (운영실장2)
   완료: firemap-designer 13:42 — 통과(X-V1 v3·X-CN-1 v3, 375·1280 캡처·비교판 직접 확인). 고칠 점 6개 모두 화면에 반영(예시 칩·숫자1+버튼1·아래 덩어리 축소 / 큰 줄 숫자 하나·캘린더 버튼 1개·접수했다면 목록). 남은 흠(비차단): X-V1 PC 왼쪽 열 아래 빈 칸, X-CN-1 표 원서접수 칸 두 줄. 하위 3인 심사는 돌리지 않고 내 판정(v2 6.7·6.8 대비 지적 해소, 약 7)이라 점수는 추정 — 배포 전 글자는 editor 검수·deploy push+ci 같이.

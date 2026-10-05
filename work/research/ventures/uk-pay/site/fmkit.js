@@ -5,6 +5,7 @@
  * 1) 측정: 파이어맵과 같은 firemap_events 표(파이어맵 Supabase)에 익명 이벤트를 남긴다.
  *    - props.site(사이트 이름)·lang·path가 모든 이벤트에 붙는다. 파이어맵 앱 이벤트와 site로 가른다.
  *    - ?fm_internal=1 로 한 번 들어온 기기는 internal:1 (src/utils/live.js와 같은 규칙).
+ *    - file:// 로 연 쪽(로컬 확인)도 internal:1.
  *    - utm_*·ref(리퍼러 호스트)는 session_start에만 붙는다. 금액·이름 같은 입력 원본은 절대 넣지 않는다.
  * 2) 결과 공유 카드: 1080×1080 PNG를 canvas로 그려 Web Share(파일) → 링크 공유 → 링크 복사 순서로 내보낸다.
  *
@@ -27,6 +28,7 @@
   function audit() {
     var x = {};
     if (qs().get('fm_internal') === '1') x.internal = 1;
+    if (location.protocol === 'file:') x.internal = 1; // 로컬 파일 열기(직원 확인)는 방문 아님
     var h = location.hostname || '';
     if (h && h !== 'firemap.kr' && h !== 'www.firemap.kr') x.host = h.slice(0, 80);
     return x;

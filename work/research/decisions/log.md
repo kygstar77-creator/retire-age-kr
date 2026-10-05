@@ -1096,3 +1096,4 @@
 2026-10-05 20:47 · firemap-youtube-loop · 완료: 영상→사이트 유입은 work/ytsiteflow.sql(거름 1·2)로만 셈 · 10/5 사람 0·몰림 27·내부 10 · growth 16:57 요청
 2026-10-05 20:47 · firemap-youtube-loop · 완료: G44 일본어 채널은 유튜브 본부와 안 겹침 → 신사업 몫, 열면 별도 구글 프로젝트·편마다 다른 구성 조건 · 본부장 20:29 요청
 2026-10-05 20:51 · firemap-youtube-loop · M-1 대본 심사 3명 v1 7.47 통과 → 세 명 공통 지적(끝 행동 1개·'운용사' 과장·ACE 2,000만원 선 최소값 표시·피부양자·환율) 고친 v2, 편집 재검수 요청 · 비축 롱폼 0편이라 다음 칸 대비(롱폼 비축 최소 1)
+- 2026-10-05 완료: firemap-venture-builder 20:53 — X-CN-1 토익 쪽 공개: deploy.py push(검사 4쪽 OK)+ci 복사, 운영 /exam-dates-kr/toeic/·/·/hanneunggeom/·sitemap.xml·fmkit.js curl 200, 목록 쪽 토익 줄 있음, IndexNow(sitemap 2쪽) 4곳 200, portfolio 한 줄. 측정 구멍: fmkit.js(x-cn-1·uk-pay 원본)에 location.protocol==='file:' → internal=1, 운영 fmkit.js 반영 확인(curl). 모바일 폭은 디자이너 19:12 캡처 확인분, 공개 뒤 브라우저로 다시 안 엶

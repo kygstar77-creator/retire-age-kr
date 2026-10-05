@@ -143,6 +143,7 @@ def build(case=None, preview=False):
                                ('F', '현재 자산', '=D13', '#,##0"원"')]:
         s2[f'{col}9'] = lab; s2[f'{col}9'].font = f(10, color=INK2)
         s2[f'{col}10'] = ref; s2[f'{col}10'].font = f(14, True); s2[f'{col}10'].number_format = fmt
+        s2[f'{col}10'].alignment = Alignment(horizontal='left')  # 값도 라벨과 같은 왼쪽 세로선(디자인 10/1 메모 1·10/5 반려 ③)
         nxt = chr(ord(col) + 1)
         s2.merge_cells(f'{col}10:{nxt}10')  # 9자리 원 금액이 14pt에서 한 칸에 안 들어간다(#### 실측)
         for cc in (col, nxt):

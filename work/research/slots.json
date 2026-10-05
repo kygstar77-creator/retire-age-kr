@@ -31,12 +31,12 @@
     "gates_ok": "2026-10-05 05:28"
    },
    {
-    "item": "bubyang1005",
-    "ep": "work/research/bubyang1005/pkg",
-    "status": "관문 통과: 제목 '부양가족연금 늦춰 받으면 가산은 0%' 8.43(제미나이 9.8·레드팀 8.0·작성자 7.5)·표지 7.33(제미나이 비전 6·레드팀 8.5·작성자 7.5)·aitell 1.8·readcheck 0·selfcheck 사실 0·레드팀 사실 지적 9건 반영(숫자 오류 0)·compare/review 세 줄·editgate auto·frame 통과 — 법 52·62·63·63의2·64조 원문, 연기 5년 배우자 몫 153만 3,150원. 검증: 검색 940(slots TBD-J 메모)·우리 글 0편·경쟁 8개 중 연기·조기 제외 조항 다룬 글 0. 발행 전 slot.txt 시각 적기",
+    "item": "nhisrent1005",
+    "ep": "work/research/nhisrent1005/pkg",
+    "status": "관문 통과(옛 10/5 14:10 칸): 제목 '퇴직 후 건강보험료 집이 있으면 재산 때문에 월 얼마나 더 낼까' 7.2·표지 7.0·aitell 5.6·readcheck 0·selfcheck 사실 0·editgate auto. 같은 날 nhisprop1005(10/5 08:10 #209)와 설명·예시(과표 3억→24등급 586점)가 같아 10/5 칸에서 뺌(audit 07:57). 쓰려면 nhisprop 나간 날에서 3일 이상 띄우거나 예시를 과표 4억(681점)·전세 5억으로 바꾸고 editgate 다시. 제목 끝이 '월 얼마'라 같은 날 끝말 겹침도 볼 것",
     "by": "firemap-write",
-    "at": "2026-10-05 08:36",
-    "gates_ok": "2026-10-05 08:36"
+    "at": "2026-10-05 09:01",
+    "gates_ok": "2026-10-05 05:00"
    }
   ],
   "long": [
@@ -285,11 +285,11 @@
   {
    "at": "2026-10-05 14:10",
    "kind": "cafe",
-   "item": "nhisrent1005",
+   "item": "bubyang1005",
    "owner": "firemap-write",
-   "note": "firemap-write 10/5 05시: 재산 몫 편 — 제목 '퇴직 후 건강보험료 집이 있으면 재산 때문에 월 얼마나 더 낼까' 7.2(제미나이 lite 후보3 7.6·레드팀 7.0·작성자 7)·표지 7.0(레드팀 6→7·작성자 7)·aitell 5.6·readcheck 0·selfcheck 사실 0·레드팀 표 39값 재계산 숫자 오류 0·frame 통과·editgate auto·compare/review 세 줄 · 별표4 60등급 원문 파싱 · slot.txt 2026-10-05 14",
+   "note": "firemap-write 10/5 09:0x: nhisrent1005(08:10 nhisprop1005와 같은 예시 586점)를 비축 bubyang1005로 바꿈(audit 07:57 [요청]). 관문 통과: 제목 '부양가족연금 늦춰 받으면 가산은 0%' 8.43(제미나이 9.8·레드팀 8.0·작성자 7.5)·표지 7.33(제미나이 비전 6·레드팀 8.5·작성자 7.5)·aitell 1.8·readcheck 0·selfcheck 사실 0·레드팀 사실 지적 9건 반영(숫자 오류 0)·compare/review 세 줄·editgate auto·frame 통과 — 법 52·62·63·63의2·64조 원문, 연기 5년 배우자 몫 153만 3,150원. 검증: 검색 940(slots TBD-J 메모)·우리 글 0편·경쟁 8개 중 연기·조기 제외 조항 다룬 글 0. 발행 전 slot.txt 시각 적기",
    "by": "firemap-write",
-   "gates_ok": "2026-10-05 05:00"
+   "gates_ok": "2026-10-05 08:36"
   },
   {
    "at": "2026-10-05 16:10",

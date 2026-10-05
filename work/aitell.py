@@ -4,6 +4,7 @@
 #   py -3.12 work/aitell.py gate <묶음>                      → 기준 넘고 편집 통과 표시 없으면 종료코드 4
 #   py -3.12 work/aitell.py pass <묶음> <편집자>             → 편집 통과 표시(editor_ok.txt)를 남긴다
 #   py -3.12 work/aitell.py scan <묶음 폴더 여러 개>         → 기준 조정용 분포
+#   py -3.12 work/aitell.py sameday 2026-10-05               → 그 날 카페 칸끼리 숫자 핵심값 겹침(≥3, 같은 예시)·제목 끝말 같은 칸 ≥3 검사. 걸리면 종료코드 5. gate는 숫자 겹침만 막고 끝말은 경고(10/5부터)
 #   py -3.12 work/aitell.py frame <묶음>                     → 카페 틀 v2 3줄 점검(소제목 3~5개·끝 FAQ/정리·제목 명사 끝 또는 B틀 물음, 반전 금지). 어기면 종료코드 5
 #   py -3.12 work/aitell.py commaday 2026-10-04               → 그 날 카페 칸 쉼표 없는 제목 수(하루 2편 이상, 10/4 칸부터 frame이 쉼표 제목을 막는다)
 #   py -3.12 work/aitell.py script <편 폴더|voice.json|자막 .json3|대본 텍스트>  → 롱폼 대본 실측 기준 2개(10/4 speechcompare 경쟁 자막 12편 vs 우리 4편): 숫자 1,000단어당 ≤92(경쟁 최대 91.4) · 숫자 2개 이상 문장 ≤20%. 넘으면 종료코드 6
@@ -198,10 +199,77 @@ def comma_day(day, pkg=None, title=None):
     return sum(',' not in x for x in titles), len(titles)
 
 
+SAMEDAY_FROM = '2026-10-05'   # 같은 날 칸끼리 숫자·끝말 겹침 검사(10/5 audit 07:57: nhisprop1005와 nhisrent1005가 586점 예시를 같이 씀, 7칸 중 5칸이 '월 얼마'로 끝남)
+OVERLAP_MIN = 3               # 같은 날 다른 칸과 겹치는 '둥글지 않은' 숫자(586·211.5·7.19처럼 끝이 0이 아닌 3자리 이상)가 이 수 이상이면 같은 예시
+END_SAME_MIN = 3              # 같은 날 같은 끝말 칸 수(그 칸 포함)가 이 수 이상이면 걸림
+
+
+def _day_pkgs(day):
+    """slots.json 그 날 카페 칸 중 묶음 폴더가 있는 것 → [(item, pkg 경로)]."""
+    root = os.path.dirname(os.path.abspath(__file__))
+    sl = json.load(open(os.path.join(root, 'research', 'slots.json'), encoding='utf-8'))
+    out = []
+    for s in sl.get('slots', []):
+        if s.get('kind') != 'cafe' or s.get('skip') or not str(s.get('at', '')).startswith(day) or not s.get('item'): continue
+        d = os.path.join(root, 'research', s['item'], 'pkg')
+        if os.path.exists(os.path.join(d, 'title.txt')): out.append((s['item'], d))
+    return out
+
+
+def _key_nums(pkg):
+    """본문에서 숫자 핵심값: 3자리 이상이고 끝이 0이 아닌 것(연도·URL 제외). 586·211.5·7.19 같은 값이 겹치면 같은 예시다."""
+    t = re.sub(r'https?://\S+', '', pkg_text(pkg)[0])
+    out = set()
+    for x in re.findall(r'\d[\d,]*\.?\d*', t):
+        x = x.replace(',', '').rstrip('.')
+        if len(x) >= 3 and not x.endswith('0') and x not in ('2025', '2026', '2027', '2028'): out.add(x)
+    return out
+
+
+def end_key(title):
+    """제목 끝말 묶음: 끝 12자 안에 '얼마'·'몇'이 있으면 그 말, 아니면 끝 두 글자(까·요·다 뺀 것)."""
+    t = re.sub(r"[\s?!.…'\"]+$", '', title.strip())
+    tail = t[-12:]
+    for k in ('얼마', '몇'):
+        if k in tail: return k
+    return t.rstrip('까요다죠')[-2:]
+
+
+def sameday_check(day, pkg=None):
+    """같은 날 카페 칸끼리 ① 숫자 핵심값 겹침 ② 같은 끝말 3칸 이상. pkg가 있으면 그 묶음이 낀 것만 돌려준다. → (숫자 겹침 목록, 끝말 목록)."""
+    items = _day_pkgs(day)
+    me = os.path.normcase(os.path.abspath(pkg)) if pkg else None
+    if me and me not in [os.path.normcase(os.path.abspath(d)) for _, d in items]:
+        items.append((os.path.basename(os.path.dirname(os.path.abspath(pkg))), pkg))
+    nums = {i: _key_nums(d) for i, d in items}
+    dirs = dict(items)
+    over = []
+    names = [i for i, _ in items]
+    for a in range(len(names)):
+        for b in range(a + 1, len(names)):
+            x, y = names[a], names[b]
+            if me and me not in (os.path.normcase(os.path.abspath(dirs[x])), os.path.normcase(os.path.abspath(dirs[y]))): continue
+            sh = nums[x] & nums[y]
+            if len(sh) >= OVERLAP_MIN: over.append(f'{x}·{y} 숫자 {len(sh)}개 겹침({", ".join(sorted(sh)[:5])}) — 같은 예시면 다른 날로 옮기거나 예시를 바꾼다')
+    ends = collections.defaultdict(list)
+    for i, d in items: ends[end_key(open(os.path.join(d, 'title.txt'), encoding='utf-8').read())].append(i)
+    endbad = []
+    for k, v in ends.items():
+        if len(v) >= END_SAME_MIN and (not me or os.path.basename(os.path.dirname(os.path.abspath(pkg))) in v):
+            endbad.append(f"제목 끝말 '{k}' {len(v)}칸({', '.join(v)}) — 같은 날 {END_SAME_MIN}칸 이상이면 다른 끝말로")
+    return over, endbad
+
+
 def gate_pkg(pkg):
     """발행기용. (올려도 되나, 한 줄 사유, 걸린 곳)."""
     text, files = pkg_text(pkg)
     if is_cafe_pkg(pkg):
+        sp0 = os.path.join(pkg, 'slot.txt')
+        day0 = open(sp0, encoding='utf-8').read().strip()[:10] if os.path.exists(sp0) else ''
+        if day0 >= SAMEDAY_FROM:
+            over, endbad = sameday_check(day0, pkg)
+            for e in endbad: print('[경고]', e)
+            if over: return False, '같은 날 칸과 같은 예시 — ' + '; '.join(over), over
         fb = frame_check(pkg)
         if fb:
             sp = os.path.join(pkg, 'slot.txt')
@@ -278,6 +346,11 @@ def main(a):
     if a[0] == 'commaday':
         n, tot = comma_day(a[1])
         print(f'{a[1]} 카페 칸 쉼표 없는 제목 {n}/{tot}편 — ' + ('통과' if n >= 2 else '걸림(하루 2편 이상)')); return 0 if n >= 2 else 5
+    if a[0] == 'sameday':
+        over, endbad = sameday_check(a[1])
+        for x in over + endbad: print('걸림:', x)
+        print(f'{a[1]} 같은 날 칸 검사 — ' + ('통과' if not (over or endbad) else f'숫자 겹침 {len(over)}건·끝말 {len(endbad)}건'))
+        return 5 if (over or endbad) else 0
     if a[0] == 'frame':
         bad = frame_check(a[1])
         if not bad: print('카페 틀 v2 통과', a[1]); return 0

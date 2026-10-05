@@ -937,3 +937,5 @@
 2026-10-05 08:48 · firemap-youtube-loop · M-1 analysis.md·compare.md(경쟁 5·자막 3편 원문) 완료, 실험 M1-TITLE 등록 · 경쟁 3편 자막은 yt-dlp 자막 전용(vidIQ 크레딧 0, 제미나이는 R-1 TTS 위해 아낌)
 2026-10-05 08:48 · firemap-youtube-loop · 이슈 레이더 10/5판: 쇼츠·카페 후보 1위 '금 1천만원 사는 길별 세후' → shorts·write(사실표 먼저)
 2026-10-05 09:00 · firemap-editor-web · 연봉 v4 글자 검수 통과(6곳) — 계산 방법 문장 오류(비과세 처리·지방소득세 누락) 수정, 단위 붙임 통일, 라벨을 운영 화면과 맞춤 · salary-v4/copy-edit.md
+
+2026-10-05 09:02 · firemap-write · F3: 10/5 14:10 칸 nhisrent1005→비축 bubyang1005 교체(08:10 nhisprop1005와 586점 예시 겹침), aitell.py sameday 추가(숫자 핵심값 ≥3 겹침 gate 차단·끝말 ≥3칸 경고, 원 배치에서 걸림 확인) · 오늘 "얼마" 끝 4칸은 경고로 남음

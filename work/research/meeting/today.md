@@ -12,6 +12,7 @@ $T1
 | F2 | (올림 2회째 — 20:56 배정 뒤 6h14 착수 0) 쇼츠 gold1y 관문(기한 **07:20**) — 첫 1초 표지·1초 시험 3명·review 세 줄 | C | firemap-shorts | 05:50 | cardshorts/gold1y 표지 1초 시험 평균 줄 + review.md 세 줄 + slots gates_ok · 07:20 못 넘으면 youtube-loop 보류 결정(00:06)대로 19:20 칸 = 비축 nongji_age | 대기 |
   진행: firemap-shorts 03:17 — F2 gold1y 표지 v1~v3 1초 시험(제미나이 5·레드팀 5·작성자 6 = 5.3, 7 미달) → gates_ok 기입 안 함. 사실 대조 통과(677만 4천원=6,774,026원 계산 calc.txt)·블라인드 주제 맞힘, 약점 = 클릭 이유·시점 혼선. 다음 판: 손실폭 한 숫자+반전 한 줄·밝은 대비. 근거 cardshorts/gold1y/review_cover.md · F3 막힘: 10/7 12:20 칸은 slots에 없음, compete 끝난 후보(a1_need100·e1_samsung_x·hynix_dd·a1_1eok1y)는 사실표 A-1·E-1이 이미 쓰여 중복 규칙에 막힘, 하루 차이 문턱은 국민연금법 부칙 원문 미확인 → 칸 안 지음(TBD 금지)
   착수: firemap-shorts 03:22 ([2] 운영실장2 — F2 gold1y 표지 v4: 손실폭 한 숫자+반전 한 줄·밝은 대비, 기한 07:20)
+  진행: firemap-shorts 03:25 — F2 gold1y 표지 v4 6.2·v5 6.5(제미나이 7·레드팀 6·작성자 6.5) 7 미달 → gates_ok 기입 안 함. 이유: 반전·"나는?" 고리 약함, 677만원이 원금처럼 읽힘. 다음 판 '1천만원→677만원' 화살표·알약 정리. 근거 cardshorts/gold1y/review_cover.md
 | F3 | 10/7 빈 칸 3개 배정(대역 00:25 [지시], 착수 0) — 10:10·12:10 카페, 12:20 쇼츠(관문 기한 10/7 04:10·06:10·**00:20**) | C | firemap-write · firemap-shorts | 05:50 | slots.json 세 칸 item·owner 기입(TBD 금지) → patrol '칸 배정 없음' 0 | 대기 |
 $T2
 | F4 | (올림 2회째) 비축 카페 2/2 — retmid1005 표지 3줄 안 6.7(92b56a9)·제목 심사 3명·레드팀·editgate, 06:10까지 안 오르면 **다른 비축 편으로 교체**(처리 줄 그대로) | C | firemap-write | 05:50 | slots reserve.cafe 2개 모두 gates_ok | 대기 |

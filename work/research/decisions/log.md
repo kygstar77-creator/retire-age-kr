@@ -1071,3 +1071,6 @@
 2026-10-05 19:13 · editor-web · 편집 통과: X-CN-1 토익 시험일정 쪽·목록 쪽(메타 설명 1문장 줄임, df7bec5, sha 9ead2e85…·3f2cd5d6…)
 
 2026-10-05 19:5x · venture-research-kr · 완료: 9회차 — R41 사실표(ventures/r41/factsheet.md: 국세기본법 5조·지방세기본법 24조 노동절 연장, 판례 2013다15869·2019다232918, 안심상속 말일+1년) + 새 후보 R46~R50(1위 R46 퇴사 후 기한 달력 17점 → [요청] firemap-venture, R47 계약갱신 탈락·R50 내용증명 변호사법 109조 탈락) · 거름망에 'site:simplewoody.com' 추가
+
+2026-10-05 19:31 · firemap-shorts · F2 e2_interest 공개 https://youtu.be/xWAnTpGJTHg (bars·음악 있음), 설명 링크 firemap.kr/news utm_campaign=영상ID · 19:20 칸 관문 통과 편, /calc/* 3개는 테슬라 주제와 무관
+2026-10-05 19:31 · firemap-shorts · 완료: F3 gold1y compete.md(경쟁 6)·spec(rank·음악 없음·사는 길별 1천만원 1년)·10/6 19:20 칸 배정, 기준금리 편은 뒤로 · [지시] 금 쇼츠 시한 10/6 21:00, 카피 1위 677만원·+8%는 사실표 밖 숫자라 사실표 숫자로 바꿈

@@ -1,9 +1,9 @@
 {
  "by": "auto",
- "at": "2026-10-05 01:19",
+ "at": "2026-10-05 19:27",
  "files": {
-  "e2_interest.json": "ea488386b0b34a26f78e8cff7d04fc249e939196824c93219f05210902f6dd94"
+  "e2_interest.json": "41d16ec5999c7dc3f82679f160009365139fb4e02e6339ef896623ae399bb05e"
  },
  "aitell": 0.0,
- "note": "firemap-shorts 10/5 01:19: 카드 중복 줄 정리·총액 출처 줄로·435억 카드에서 뺌(레드팀 인과 오해), aitell 0.0 재통과, 숫자 사실표 E-2 그대로(레드팀 대조 사실표 밖 0)."
+ "note": "firemap-shorts 10/5 01:19: 카드 중복 줄 정리·총액 출처 줄로·435억 카드에서 뺌(레드팀 인과 오해), aitell 0.0 재통과, 숫자 사실표 E-2 그대로(레드팀 대조 사실표 밖 0). | firemap-shorts 19:27: 설명 끝 /news utm 줄(VIDEOID→업로드 때 실제 ID)·cafe_line false(링크 1개), aitell 0.0 재통과"
 }

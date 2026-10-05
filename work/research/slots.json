@@ -33,9 +33,9 @@
    {
     "item": "retmid1005",
     "ep": "work/research/retmid1005/pkg",
-    "status": "작성 중(gates_ok 아님): 퇴직금 중간정산 하면 세금이 합쳐서 얼마나 늘까(검색 퇴직금중간정산 11,480) — 본문 1,800자·사진 3·readcheck 0·selfcheck 사실 0·aitell 0·crosscheck 사실 대조 반영·compare.md·review 세 줄 초안 있음. 남은 관문: 표지 1초 시험 7점 미만(+39만원 안 6·6, 다른 안 4~5 — 큰 숫자가 받는 돈으로 오독) · 제목 심사 3명 · 레드팀 · editgate·.edit.json · slot.txt는 10/8 10 가안",
+    "status": "작성 중(gates_ok 아님): 퇴직금 중간정산 하면 세금이 합쳐서 얼마나 늘까(검색 퇴직금중간정산 11,480) — 본문 1,800자·사진 3·readcheck 0·selfcheck 사실 0·aitell 0·crosscheck 사실 대조 반영·compare.md·review 세 줄 초안 있음. 남은 관문: 표지 1초 시험 7점 미만(10/5 23:27: 주제 오독은 풀렸으나 flash-lite 6점 고정, 상위 모델 429 — 한도 풀리면 gemini-3-flash-preview로 재시험, 표지는 세금 25% 더 내요 안) · 제목 심사 3명 · 레드팀 · editgate·.edit.json · slot.txt는 10/8 10 가안",
     "by": "firemap-write",
-    "at": "2026-10-05 23:17"
+    "at": "2026-10-05 23:27"
    }
   ],
   "long": [

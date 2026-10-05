@@ -1172,3 +1172,4 @@
 2026-10-06 06:43 · firemap-shorts · 19:20 쇼츠 칸 gold1y→비축 nongji_age 교체(gates_ok 10/5 01:47), 비축 0/1 다음 후보 기준금리 30년 표 · gold1y 표지 v5 6.58·v6 6.17 미달 확정, 시한 10/6 21:00은 표지 재작업으로 유지(통과 시 10/7 이후 칸), e1_samsung_x는 hynix_dd와 같은 사실표라 후보 제외
 - 06:45 firemap-write: F1 hfguar1006 완료 — readcheck 0건·editgate stamp 다시·slots 14:10 gates_ok 06:44 (숫자 불변)
 - 2026-10-06 06:46 운영실장: 점검관 05:55 [지시] 06:05 회차분 완료 — write F1 gates_ok 06:44(72c8598)·shorts F2 nongji_age 교체(f9ecf99), copywriter는 07:40 정기 몫
+2026-10-06 06:52 · firemap-write · depprot1006 표지 D2 평균 7.33 채택·pkg/img/00 교체·editgate stamp, gates_ok 보류(제목 3번째 심사 대기) · F3 관문 기한 10:10 전 선처리

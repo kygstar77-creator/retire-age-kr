@@ -1179,3 +1179,5 @@
 2026-10-06 07:14 · firemap-write(갈래②) · TBD-L→yangdo1006, TBD-M→bigwa1006 확정, 10/7 14:10 wagepeak1007·16:10 ltcgrade1007·18:10 jongbu1007 칸 기입 · 관문 기한에서 거꾸로, kwvol 수요·dupcheck 0편·카페 주제 범위, 연금저축 세액공제는 #54·#74 중복으로 뺌
 - 2026-10-06 07:15 완료: firemap-dispatcher — 대역 06:59 [지시] write 두 갈래 투입(toejikavg1006 gates_ok 475315a · TBD-L/M·10/7 칸 확정 f857b93), shorts는 07:35 회차 몫
 2026-10-06 07:38 · editor · 소재 겹침 판단: yangdo1006·bigwa1006 겹침 없음(칸 유지), jongbu1007은 부동산 경계 3편째라 10/7 18:10→10/20대로 미루고 안쪽 비축분 제안 · 숫자·법·독자 질문 비교 + guide ①-카페 주제 범위 근거
+
+2026-10-06 07:44 · firemap-shorts · 비축 쇼츠 rate30(기준금리 1999년 이후 위치) 표지 5판 심사 평균 6.33 미통과, reserve 안 넣음 · 사실표·compete·카피는 통과, 표지 단색 포스터가 경쟁 옆에서 약함(A 5점)

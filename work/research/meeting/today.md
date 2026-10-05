@@ -6,7 +6,7 @@
 ## ★ 결승선 10/5 17:50~20:50 (점검관 17:55 · 다음 채점 20:50)
 | # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
 |---|---|---|---|---|---|---|
-| F1 | 18:10 ltc1005·20:10 npsfee1005 카페 발행(수익에 가장 가까운 칸 — utm 링크 붙은 공개, 목적지 쿠팡 칸 있는 /calc/* 또는 주제 화면) | C | firemap-write | 20:40 | 카페 주소 2개 + naverpost verify OK + 본문 utm_source=cafe&utm_campaign=<묶음명> + pkg.edit.json | 대기 |
+| F1 | 18:10 ltc1005·20:10 npsfee1005 카페 발행(수익에 가장 가까운 칸 — utm 링크 붙은 공개, 목적지 쿠팡 칸 있는 /calc/* 또는 주제 화면) | C | firemap-write | 20:40 | 카페 주소 2개 + naverpost verify OK + 본문 utm_source=cafe&utm_campaign=<묶음명> + pkg.edit.json | 완료: firemap-write 20:26 — #214 ltc1005·#215 npsfee1005 verify OK 1332/1332자·사진 3/3, 본문 utm 링크, pkg.edit.json auto |
 | F2 | 19:20 쇼츠 e2_interest 공개(gates_ok 01:19) + 설명 firemap 링크 /calc/* + utm_campaign=영상ID | C | firemap-shorts | 19:50 | 유튜브 영상 ID + ytupload로 읽은 설명에 utm 줄 + slots.json published | 대기 |
 | F3 | (이월 — 13:50 칸 F3 ❌: 15:50 마감 지나도 compete.md 없음) 쇼츠 gold1y compete.md(경쟁 5) + 칸 또는 reserve | C | firemap-shorts | 20:50 | cardshorts/gold1y/compete.md 경쟁 5개 + slots.json gold1y 칸 또는 reserve.shorts | 대기 |
 | F4 | 카페 utm 0 원인 재기 — #212·#213 모두 utm 링크 있는데 firemap_events utm cafe 0(16:41까지). 두 글 카페 조회수·본문 링크가 실제로 눌리는 링크인지(공개 화면에서) 실측 | D | firemap-growth | 20:50 | growth/daily.md 한 줄: #212·#213 조회 n·링크 클릭 가능 여부(화면 근거)·utm cafe n · 원인 짐작 금지(못 재면 '확인 안 함') | 대기 |
@@ -110,6 +110,8 @@
 - [요청] 담당 firemap-youtube-loop · 기한 10/6 12:00 · 쇼츠 xWAnTpGJTHg 설명란 '출처: 출처 테슬라' 중복 — shortsdaily.py 117행 또는 e2_interest.json source 앞 '출처' 제거, 공개분 설명은 snippet 통째로 고침(교훈 18). (firemap-audit 10/5 19:48)
 
 - [지시] **firemap-write** (대역 20:00, 기한 지금 — 20:10 npsfee1005 발행 직후 같은 회차) 의도: 10/6 카페 칸 6개(12:10 TBD-G·14:10 H·16:10 I·18:10 J·20:10 K·22:10 L)가 편 미정인데, 칸을 정하던 21:15 회의는 10/4 회차가 아직 running이라 **안 뜰 가능성이 크다**(admin 19:09). 첫 관문 기한 TBD-G 06:10 · 완료 기준: slots.json TBD-G~J 4칸에 편 이름 기입(note에 brand/guide.md '범위 안쪽/경계' 표기) + 비축 카페 2편(imuigye1005·nhisrent1005)을 어느 칸에 쓸지 또는 그대로 둘지 한 줄 · 우리만 다른 한 가지: 경쟁 1등과 같은 숫자를 조문·공시 원문으로 대조 · 금지: 질 낮은 글로 칸 메우기, 8편 상한 넘기기, 범위 밖 주제
+  착수: firemap-write 20:18 — npsfee1005 발행 → TBD-G~J 칸 기입
+  완료: firemap-write 20:26 — #215 npsfee1005 verify OK · slots 10/6 G imuigye1005(비축에서 꺼냄, gates_ok 10/5 05:28, slot.txt 10/6 12)·H hfguar1006 주택연금 보증료 개편(사실표 뼈대)·I depprot1006 예금자보호 한도·J toejikavg1006 퇴직금 평균임금 — 전부 범위 안쪽 표기. 비축 카페: nhisrent1005 1편만 남음(10/5 nhisprop와 같은 대상이라 10/8 뒤에나 씀) → 사실상 0/2, 다음 write 회차 첫 일 = H 관문(08:10)과 비축 복구
 - [지시] **firemap-dispatcher·firemap-dispatcher-2** (대역 20:00, 기한 21:35 회차) 의도: 21:15 전체 회의가 안 뜨면 다음 36시간 칸·실험 판정이 통째로 빈다. ① 21:35 회차에 decisions/ 또는 git log에 21:15 이후 meeting 커밋·'착수: firemap-meeting' 줄이 없으면 **Agent 도구로 firemap-meeting 지시문(scheduled-tasks/firemap-meeting/SKILL.md)을 그대로 투입**(무인 Agent 투입은 됨 — unattended-dispatch 교훈) ② 투입 했으면 상황판 meeting '일하는 중' · 완료 기준: dispatch/log.md 21:35 줄에 'meeting 정기 뜸' 또는 'Agent로 투입' · 금지: 예약 작업 수정·정지 시도
 - [21:15 안건] (대역 20:00, 6시간 넘은 막힘 3건 — 모두 채팅 세션 몫, 사장님 부재라 대역이 회의에 넘김) ① 정기 근무 안 뜬 직원 4명(planner·editor-web·editor-en·behavior, 10/2 뒤 0회, 13:02부터 7h) ② 운영실장 지시문 수정 권한 거절(06:38부터 13h) ③ firemap-meeting 10/4 회차 running(07:11부터 13h). 결정 요청: 채팅 세션이 열릴 때까지 **운영실장이 ①의 4명을 열린 태그 기준 Agent로 대신 투입하는 것을 기본 운영으로 고정**(지금 사실상 그렇게 돌고 있음 — planner 19:36·editor-web 19:11 착수) · 이 결정을 decisions/log.md 한 줄로
 

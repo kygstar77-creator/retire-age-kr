@@ -72,6 +72,19 @@
     "url": "https://cafe.naver.com/firemap/214"
    },
    "note": "18:10 칸 ltc1005 발행(jitter 10분 56초) · verify OK 1824/1824자·사진 3/3 · utm_campaign=ltc1005 /calc/salary 200 · pkg.edit.json 해시 일치(auto 16:28) · 블로그 STOP_blog 정지라 안 올림 · 10/6 10:10 TBD-F → yujokstop1006(유족연금 배우자 3년 뒤 55세까지 정지) 사실표·본문 초안(readcheck 0·selfcheck 사실 0·aitell 0.0, 관문 남음) · 리팩토링 #126 첫 문장 '예금 이자' rewrite 진행 · npsfee1005 제목 '얼마' 겹침은 관문 무효화 우려로 안 바꿈 · 개선: 없음"
+  },
+  {
+   "hour": 20,
+   "ts": "20:26",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "국민연금 보험료 월 소득 300만원이면 직장인 몫은 얼마",
+    "url": "https://cafe.naver.com/firemap/215"
+   },
+   "note": "20:10 칸 npsfee1005(관문 통과분) 발행 · verify OK 1332/1332자 사진 3/3 · 블로그는 STOP_blog 유지라 없음 · 10/6 TBD-G~J 기입 · 개선: 없음(새 묶음 안 씀 — hfguar1006 사실표 뼈대만)"
   }
  ]
 }

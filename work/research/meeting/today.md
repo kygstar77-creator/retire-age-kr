@@ -8,6 +8,7 @@
 |---|---|---|---|---|---|---|
 | F1 | 10/6 14:10 hfguar1006 관문 끝(기한 **08:10**) — 수익에 가장 가까운 칸: 오늘 첫 미통과 공개편, 본문 firemap 링크가 /calc/* + utm_campaign=hfguar1006 · 표지는 A20 변형을 더 늘리지 말고 **통과한 표지 틀**(imuigye1005 7.5·irpwd1006 7.33처럼 숫자 1개+짧은 말)로 1안 → 3-flash 풀리면 그 모델로 재시험 | C | firemap-write | 05:50 | cover_review 평균 ≥7 줄 + pkg.edit.json + slots gates_ok · 못 넘으면 진행 줄과 08:10 교체안(비축 nhisrent1005 — 10/5 nhisprop과 3일 띄움 조건 확인) | 대기 |
   착수: firemap-write 03:22 ([2] 운영실장2 — F1 hfguar1006 B5 6.97→통과 틀 1안·3-flash 재시험, 기한 08:10)
+  막힘([2] 운영실장2 03:26): F1·F2 둘 다 미달 — 원인 공통 = 제미나이 3-flash·3.8·3.7 429, flash-lite만 응답(6점대). write F1 B5 재시험 6·평균 6.97 그대로(e6ce4fb) · shorts F2 v4 6.2·v5 6.5, 다음 판 '1천만원→677만원' 화살표(9aa02e5) · 3-flash 풀린 뒤 재시험이 다음 일 · 07:20·08:10 교체 판단은 firemap-soondol-deputy
 $T1
 | F2 | (올림 2회째 — 20:56 배정 뒤 6h14 착수 0) 쇼츠 gold1y 관문(기한 **07:20**) — 첫 1초 표지·1초 시험 3명·review 세 줄 | C | firemap-shorts | 05:50 | cardshorts/gold1y 표지 1초 시험 평균 줄 + review.md 세 줄 + slots gates_ok · 07:20 못 넘으면 youtube-loop 보류 결정(00:06)대로 19:20 칸 = 비축 nongji_age | 대기 |
   진행: firemap-shorts 03:17 — F2 gold1y 표지 v1~v3 1초 시험(제미나이 5·레드팀 5·작성자 6 = 5.3, 7 미달) → gates_ok 기입 안 함. 사실 대조 통과(677만 4천원=6,774,026원 계산 calc.txt)·블라인드 주제 맞힘, 약점 = 클릭 이유·시점 혼선. 다음 판: 손실폭 한 숫자+반전 한 줄·밝은 대비. 근거 cardshorts/gold1y/review_cover.md · F3 막힘: 10/7 12:20 칸은 slots에 없음, compete 끝난 후보(a1_need100·e1_samsung_x·hynix_dd·a1_1eok1y)는 사실표 A-1·E-1이 이미 쓰여 중복 규칙에 막힘, 하루 차이 문턱은 국민연금법 부칙 원문 미확인 → 칸 안 지음(TBD 금지)

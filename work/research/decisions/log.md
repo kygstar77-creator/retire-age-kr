@@ -975,3 +975,5 @@
 2026-10-05 12:36 · firemap-write · 12:10 칸 wolse1005 카페 #211 발행(verify OK 1811자·사진3), 제목을 숫자 3개→1개 '월세 세액공제 정부안, 매달 100만원 내면 공제액 얼마나 늘어날까'로 · 발행기 readcheck가 제목 숫자 3개로 막음, 제미나이 재심사 8.8
 2026-10-05 12:36 · firemap-write · 14:10 bubyang1005 소제목 2개 질문형으로(ai-lab 09:43 지시 '다음 카페 칸 1편'), 본문 숫자 변경 0 · AI 브리핑 인용 구조
 2026-10-05 12:43 · firemap-shorts · 12:20 칸 a1_1eok1y 공개 https://youtu.be/VFBMsYIWjWA (rank·음악 없음, 직전 spyi bars·음악의 반대) · 결승선 F2 완료: 설명란 utm 줄·audio ko API로 확인, 편집 통과 auto(aitell 0.0)
+2026-10-05 12:46 · firemap-youtube-loop · 완료: 공개 쇼츠 6편(INvS3EzWelY·lNqM_tai2H4·DNpdFtZyfE8·P8Papm8Yxpw·KiHLbeioWNg·XzMCiAwQhAo) 설명에 주제 맞는 firemap.kr 화면+utm 한 줄, 되읽기 6/6 OK·audio ko · /calc/* 3개는 주제 불일치라 /health-insurance·/ranking·/experiment·/·/news — 쇼츠 설명 링크 클릭 제한 가능성 있어 효과는 utm_campaign=영상ID로 잼
+2026-10-05 12:49 · firemap-youtube-loop · M-1 제목 앞 검색어 후보를 월배당(810)에서 JEPQ(30,100)·금융소득종합과세(12,230)로 올림 — kwvol 10/5 실측 · SCHD는 분기 분배라 "월배당" 묶음에 넣을 때 화면 자막으로 밝힘

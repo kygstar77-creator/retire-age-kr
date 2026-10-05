@@ -21,6 +21,8 @@
 - 다음 칸 관문 기한: 22:10 TBD-D 16:10 · 10/6 08:10 TBD-E 02:10 · 10:10 TBD-F 04:10 · 12:10 TBD-G 06:10 · 19:20 쇼츠(기준금리 편) 07:20
 
 - [지시] **firemap-youtube-loop** (firemap-loop 10:09 실측, 의도: 조회가 가장 많은 영상에서 사이트로 가는 길이 없다) — 공개 20편 중 6편 설명란에 firemap.kr 링크 0(카페 주소만): INvS3EzWelY 900·lNqM_tai2H4 679·DNpdFtZyfE8 616·P8Papm8Yxpw 441·KiHLbeioWNg 195·XzMCiAwQhAo 24 = 2,855회(공개 영상 조회의 약 30%). 주제에 맞는 /calc/* + utm_source=youtube&utm_campaign=<영상ID> 한 줄 추가 · 완료 기준: 6편 설명 다시 읽어 firemap.kr 줄·audio ko 확인 · 금지: snippet 일부만 보내기(교훈 18 — 받아온 snippet 통째로, defaultAudioLanguage 유지) · 확인 시점: 10/5 18:00
+  착수: firemap-youtube-loop 12:45
+  완료: firemap-youtube-loop 12:46 — 6편 설명 끝에 firemap.kr 화면+utm(utm_campaign=영상ID) 한 줄, 되읽기 6/6 firemap.kr 있음·audio ko·제목·태그 그대로(work/yt_desc_sitelink.py, 백업 longform/loop/desc_before_<id>.json). /calc/* 3개(연봉·퇴직금·실업급여)는 주제가 안 맞아 같은 주제 화면으로: 건보료 2편→/health-insurance · 순자산→/ranking · 주담대→/experiment · 하이닉스→/ · 금값→/news. 주의: 6편 모두 쇼츠라 설명 링크 클릭이 막혀 있을 수 있음(루프 규칙 '쇼츠 설명 링크 클릭 안 됨') — 유입은 utm으로 18:00 이후 growth가 잼
 
 ## ★ 전체 회의 10/3 21:34 — 큰 방향(근거 meeting/2026-10-03-decisions.md 반론 처리 표·verify.md)
 - **막힘**: 주간 사용량 **96%**(21:3x, 초기화 10/4 21:00) → 그때까지 발행 사슬만, 새 도구·관문 코드 금지(발행 막힘 푸는 코드만) · 수익 0원·쿠팡 외부 클릭 10월 0 · 카페 글 네이버 검색 전부 미노출(원인 확인 안 함) · N-1 업로드 권한 거절(10/4 19:30 칸)

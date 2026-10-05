@@ -1004,3 +1004,4 @@
 2026-10-05 13:52 · venture · R36 가족 간 돈 빌리기 통과 → 트랙 B 기획 요청(planner 10/7 12:00) · firemap.kr 주제, 수요 가족간차용증 1,760(재측정)
 2026-10-05 13:52 · venture · G38 저축 챌린지 생성기 반려(보류) · 한국어 수요=카카오뱅크 상품명, 영어 발견 길=계정 결재뿐, 사이트 한도 꽉 참, Canva 맞춤 템플릿 경쟁
 2026-10-05 13:52 · venture · 완료: 본부 3명 투입 결과 수령 — builder IndexNow 4곳 200/202·v3 dev(검수 14:40)·X-KR-1 그래프 2(검수 14:45), research-kr R31 이용허락 143곳 제한 없음·R36~R40, research-global G38~G42
+2026-10-05 14:03 · research-global · 9회차: G38 보강(g38/compare.md, github.io 애드센스 조건 충족) + G43~G47, Etsy 계정 결재 요청·Etsy 묶음 실험 [요청] · vidIQ 크레딧 0

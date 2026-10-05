@@ -919,3 +919,55 @@
 - **G38 반려(보류)**: 한국어 '26주적금' 760은 카카오뱅크 상품 검색(구글 1쪽 확인) — 인쇄표 수요 아님. 영어판 발견 길은 Pinterest·Etsy 계정(결재)뿐 → 결재 없이 올리면 X-V1처럼 색인 0. 구글 US 'custom savings challenge generator' 1쪽에 Canva 맞춤 템플릿 → 차별 약화. 10/8 판정 뒤 Etsy 결재와 묶을 때만 재상정.
 - G39~G42·R37~R40: 이번엔 채택 없음(G39 무료 과포화·G40 큰 글씨도 이미 있음·G42 5,000 users 상한, R37·R38은 R36 기획 결과 보고, R39 쇼츠 채널은 유튜브 본부와 겹침 → youtube-loop 의견 받기).
 - 받아들이지 않은 것: 'github.io 새 폴더면 결재 0이니 오늘 공개' — 결재 0이어도 발견 0이면 실험이 판정 불가(X-V1·X-CN-1 4일 색인 0이 근거).
+
+## 2026-10-05 13:52~14:03 회차 — 해외 시장조사원 9회차 (정기, G38 근거 보강 + '한국 사람이라 이기는 해외 상품'·생성기 계열 새 후보 5개, G43~G47)
+조사 13:52~14:03 KST, 로그인 없음. Etsy는 사용자 크롬 같은 출처 fetch(표시 지역 South Korea, USD 환산 할인가). **vidIQ 크레딧 0(14:0x 'Not enough credits')** → 유튜브는 검색 화면 원문(curl ytInitialData)의 조회수·게시 시점만, 검색량은 **확인 안 함**. 크롬 웹스토어는 curl 상세 화면 'N users'. 1~3점 리뷰는 정렬 버튼이 스크립트로 안 바뀌어 **확인 안 함**.
+- G38 보강은 ventures/g38/compare.md(무료 1쪽 5곳 중 금액 자동 배분 PDF 0곳 · github.io는 Public Suffix List에 있어 애드센스 추가 조건 충족 · 한국 판매자 Etsy는 Payoneer 필수).
+- 이번 회차 교훈 먼저: **빙고·좌석표는 '생성기'가 이미 무료로 10개 가까이 깔려 있음** → G38의 '생성기 차별'은 저축표처럼 무료 생성기가 0인 틈에서만 통함. Etsy 상품은 전부 Etsy 계정(결재)이 있어야 발견됨.
+
+### G43. 아기 샤워 빙고 카드 PDF(서로 다른 카드 60~100장, 단어 채움) — **10점, 1위(Etsy 결재 묶음으로)**
+- 수요·돈 [Etsy 'baby shower bingo printable' 14:1x, 1,000+ items]: 'Baby Bingo, 60 Cards' $1.09 **r142 · 상점 s245.6k · 20+ carts · Bestseller** (L/1566752216) · '100 Baby Shower Bingo Cards, Unique Prefilled' $1.09 **r307** s245.6k Bestseller (L/1592080455, 같은 상점) · $3.04 r58 s15.3k 20+ carts BS (L/1860195003) · $2.83 r18 s13.8k 20+ carts BS (L/4411231446).
+- 경쟁 1등: https://www.etsy.com/listing/1592080455. 무료 생성기(웹 검색 14:1x): bingocardcreator · bingoblitz · myfreebingocards · vectordad · gamecardmaker · jigsawmake · bingogen.ai · randomlyfun — **무료 과포화**, 사이트로는 못 이김.
+- 우리만 다른 점: 거의 없음. 코드로 '중복 없는 100장'은 1등도 이미 함. 차이를 만든다면 **테마 수(성별 공개·브라이덜·은퇴 파티 등) 대량 + 무작위 검산** 정도.
+- AI 단독: 100% 코드(단어 무작위 배치·중복 검사·PDF). 제작 0.5일/테마. 위험: 가격 $1대, 디자인 경쟁(Canva류).
+- 첫 100명: Etsy 검색뿐 → Etsy 계정(결재). 결재 없는 공개 길: 없음(무료 페이지는 과포화).
+
+### G44. 일본어 '聞き流し韓国語'(듣기만 하는 한국어) 얼굴 없는 긴 영상 채널 — 9점, 비퍼즐·한국 원어민 이점
+- 수요 [YouTube 검색 '聞き流し 韓国語' 업로드순·'韓国語 勉強' 14:0x, 원문 조회수]: マルマルMaruMaru Korean '60分聞き流し' **1개월 98,817회** · いんぎんのハングル広場 '寝ながら覚える超初心者フレーズ200選' **5개월 139,286회**(같은 채널 'PDF資料付' 5개월 36,945회) · 本当の生活韓国語 '初心者向け300フレーズ' 1년 292,447회 · ちょっと楽しくなる韓国語Joo 1개월 434,777회 · 聞き流し韓国語CH 4년 2,701,933회. 채널: @KoreanListening 구독 6.71만 · @Korean-BIYORI 2천 · @cheoncheonikankokugo 1.5천(작은 채널도 있음).
+- 대조 스페인어 'aprender coreano'·'palabras en coreano': 1쪽이 4~7년 전 영상(Hablo Coreano 1,601만·Liry Onni 360만) — 최근 1년 안 영상은 ximnaera 47만 1개뿐 → 일본어 쪽이 최근 수요 더 뚜렷.
+- 돈: 유튜브 광고(일본 단가 원문 **확인 안 함**) + 'PDF 단어장' 배포(트리링구얼のトミ '単語帳DL付' 229만회 → 단어장 미끼가 흔한 형식).
+- 우리만 다른 점: 한국 원어민 회사 — 문장·발음 표기 검수 가능. **약점: 경쟁이 '生音声(사람 목소리)'를 내세움** → TTS만으로는 차별 불리(사람 손 0 원칙과 충돌). 사람 목소리 없이 갈지는 시험 전 판단 필요.
+- AI 단독: 대본·자막·TTS(ko·ja)·화면 전부 코드(Remotion). 제작 1일/편. 위험: TTS 품질 거부감, 저작권 0(자체 문장).
+- 결재: 새 유튜브 채널(브랜드 채널) 개설 = 계정 결재. 결재 없는 공개 길 없음.
+- 첫 100명: 유튜브 검색·추천(구독자 0에서 시작하는 작은 채널도 1.5천~2천).
+
+### G45. 한글 쓰기·단어 워크북 PDF(영어·일본어 학습자용) — 9점
+- 수요·돈 [Etsy 'hangul worksheet' 14:0x, 1,000+ items]: 'Korean Hangul Study Pack' $1.43(할인) **r126 · 상점 s22.2k · 20+ carts** (L/1229164570) · '140+ Learn Korean Words Workbook' r16 상점 s940 (L/4368255492) · 'Hangul Writing Practice Paper' r3 s940. 광고 칸 'Learn Korean Workbook Bundle' $13.20(원가 $43.99). 'korean flashcards printable' 1쪽: r6·r4(상점 s15.5k). 'topik vocabulary'(885 results) 1쪽: r3·r2(상점 s5.7k).
+- 경쟁 1등: https://www.etsy.com/listing/1229164570. → **한국어 학습 인쇄물 수요는 중간 이하**(1등 r126, 나머지 한 자릿수).
+- AI 단독: 100%(획순 따라쓰기 칸·단어 목록은 코드, 한국어 검수는 우리 강점). 제작 1일. 결재: Etsy 계정. 첫 100명: Etsy 검색 / G44 채널 'PDF 단어장' 미끼와 묶으면 유입 자급.
+
+### G46. 결혼식 좌석표 생성기(하객 명단 붙여넣기 → 인쇄용 좌석 안내판) — 8점(과포화 감점)
+- 수요·돈 [Etsy 'wedding seating chart template' 14:1x, 1,000+ items]: 'Minimalist Wedding Seating Chart' $3.66 r106 상점 s31.5k 20+ carts (L/4381789804) · $5.84 r23 **s52.8k** Bestseller (L/4490146566) · $1.37 s18.1k BS · $2.19 r15 s3.1k.
+- 무료 생성기(웹 검색 14:1x): 101planners 좌석표 메이커 · wedibox · wedding.studio · seatplan.io · seating-chart-maker.com · wedding-seating-chart.com · seatingkit · seatingchartgenerator.app — **8곳 이상, 명단 붙여넣기·PDF까지 다 됨** → 생성기 차별 0.
+- AI 단독 100%, 1일. 결론: **안 함**(무료 과포화 + Etsy는 Canva 디자인 경쟁).
+
+### G47. 한국어 학습 크롬 확장(웹페이지 한글 위에 로마자·뜻 띄우기) — 7점
+- 수요 [chromewebstore curl 14:1x]: 'korean romanization' 1쪽 — Korean IME with Romanization **3,000 users 3.4점** · Inkah(Chinese & Korean Pop-up Dictionary) 2,000 users 4.9 · Flying Lyrics 499 · Korean Romanization Viewer 188. 'learn korean netflix' — Funlingo(다국어 이중 자막) 20,000 users 4.8 · zeroStudy 7,000 · **Kimchi Reader 4,000 users 4.8** · KLingo 42. 'korean dictionary' — Naver Dictionary 1,000 · English Korean Dictionary 1,000.
+- 경쟁 1등(한국어 전용): https://chromewebstore.google.com/detail/mhballnbcieehgglecpjocnbggoogbge (Kimchi Reader). → 한국어 전용 확장은 1위가 4,000명 — G42와 같은 결론(확장은 돈 안 됨).
+- 결재: 웹스토어 등록비. 결재 없는 공개: GitHub 압축 해제 설치뿐(유입 0).
+
+### 제외(이번 회차 실측)
+- 한국 여행 가이드 PDF(Etsy 'seoul travel guide printable' 956 results): 1쪽 상위 3개 상점 누적 판매 **s2·s0·s6** → 수요 없음.
+- 한국 요리 전자책(Etsy 'korean recipe ebook' 972 results): 상위 리뷰 0, 상점 s9·s93 → 수요 없음.
+- 영어 '한국 이름 생성기': 구글(WebSearch) 1쪽이 koreannamesgenerator.com·k-name.info·koreannametranslator.com 등 전용 도메인 5개+ lingopie·deliciouskorean → 과포화.
+- 아이 집안일 표(Etsy 'chore chart printable'): 'Chore Chart Printable Editable' r296 상점 s26.9k 20+ carts BS(L/1188722444) — 수요 있음. 무료 생성기 유무 **확인 안 함** → 다음 회차에 G38과 같은 방식으로 확인(보류).
+
+### 이번 회차 점수(수요 × 유입 자급 × AI 단독 × 첫 판, 각 1~3 + 결재 없이 오늘 공개 +1, 무료 생성기 과포화 −2)
+| 후보 | 수요 | 유입 자급 | AI 단독 | 첫 판 | 무결재 | 감점 | 합 | 비고 |
+|---|---|---|---|---|---|---|---|---|
+| G43 아기 샤워 빙고 PDF | 3 | 1 | 3 | 3 | 0 | 0 | **10** | 상점 s245.6k·r307, Etsy 결재 묶음(G38·G39와 한 계정) |
+| G44 일본어 聞き流し韓国語 채널 | 3 | 2 | 2 | 2 | 0 | 0 | 9 | 최근 1~5개월 9.9만~13.9만회, 경쟁은 사람 목소리 |
+| G45 한글 워크북 PDF | 2 | 1 | 3 | 3 | 0 | 0 | 9 | 1등 r126, G44 미끼 PDF로 쓰면 유입 자급 |
+| G46 결혼식 좌석표 생성기 | 3 | 1 | 3 | 2 | +1 | −2 | 8 | 무료 생성기 8곳+ → 안 함 |
+| G47 한국어 학습 크롬 확장 | 1 | 1 | 3 | 2 | 0 | 0 | 7 | 한국어 전용 1위 4,000 users |
+**교훈:** ① Etsy 인쇄물은 이제 '어떤 상품'보다 **'Etsy 계정이 있느냐'가 막힘** — 상위 후보(G38·G39·G43) 셋이 같은 결재 하나로 풀림. ② '한국 사람이라 이기는' 해외 상품은 인쇄물·여행·요리·확장에선 수요가 작고, **일본어 한국어 듣기 영상**만 최근 수요가 뚜렷.

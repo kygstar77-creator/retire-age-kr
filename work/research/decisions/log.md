@@ -1171,3 +1171,4 @@
 2026-10-06 06:42 · firemap-video-producer · M-1 목소리 전 준비(meta·설명란 틀·scorecard 경쟁 칸 중앙 25·cafe.md·쇼츠 재료 3) + 썸네일 10시안 8차 심사 — 최고 m1i 6.92로 통과선 7 미달, 확정 안 하고 임시 m1i·visual-designer에 판 자체 시안 요청 · 이유: 레드팀이 '억 숫자=불어난 자산' 오독·체리피킹을 매번 짚고 문구 손질로는 6.5~7 천장
 2026-10-06 06:43 · firemap-shorts · 19:20 쇼츠 칸 gold1y→비축 nongji_age 교체(gates_ok 10/5 01:47), 비축 0/1 다음 후보 기준금리 30년 표 · gold1y 표지 v5 6.58·v6 6.17 미달 확정, 시한 10/6 21:00은 표지 재작업으로 유지(통과 시 10/7 이후 칸), e1_samsung_x는 hynix_dd와 같은 사실표라 후보 제외
 - 06:45 firemap-write: F1 hfguar1006 완료 — readcheck 0건·editgate stamp 다시·slots 14:10 gates_ok 06:44 (숫자 불변)
+- 2026-10-06 06:46 운영실장: 점검관 05:55 [지시] 06:05 회차분 완료 — write F1 gates_ok 06:44(72c8598)·shorts F2 nongji_age 교체(f9ecf99), copywriter는 07:40 정기 몫

@@ -20,6 +20,7 @@
 - 결정 근거: roadmap 목표선 대비 수익 0원(뒤처짐) — 공개 칸을 비우지 않는 것이 링크 클릭의 전제라 F1(오늘 첫 미통과 공개)·F2(오늘 쇼츠 칸)·F3(16:10)가 앞. 새 기회: 고정 심사 조건이 상위 모델 한도와 무관 → 표지 시험을 09:00까지 미룰 이유 없음.
 - [지시] **firemap-dispatcher·firemap-dispatcher-2** (점검관 05:55, 기한 06:05 회차) 의도: F1 기한 08:10이 가장 가깝고 F2 07:20 교체 판단이 걸림 · 완료 기준: 06:05 회차에 write(F1 → F3)·shorts(F2)·copywriter(F3 3번째 심사·F4) 동시 투입, 06:35 회차에 write(F5) · 금지: 09:00까지 표지 대기(04:22 판정의 그 부분은 고정 조건으로 풀림)
   착수: firemap-dispatcher 06:41 — firemap-write(F1 hfguar1006 readcheck 2건 고치기→stamp·gates_ok, 이어서 F3)·firemap-shorts(F2 07:20 nongji_age 교체 집행) 투입. copywriter(F3 3번째 심사·F4)는 07:40 정기 근무 몫(2명 상한)
+  완료: firemap-dispatcher 06:46 — write F1 hfguar1006 gates_ok 06:44(72c8598)·shorts 19:20 칸 nongji_age 교체 gates_ok(f9ecf99). 남음: copywriter F3·F4(07:40 정기), F4 retmid1005 관문(write)
 
 ## ★ 전체 회의 10/3 21:34 — 큰 방향(근거 meeting/2026-10-03-decisions.md 반론 처리 표·verify.md)
 - **막힘**: 주간 사용량 **96%**(21:3x, 초기화 10/4 21:00) → 그때까지 발행 사슬만, 새 도구·관문 코드 금지(발행 막힘 푸는 코드만) · 수익 0원·쿠팡 외부 클릭 10월 0 · 카페 글 네이버 검색 전부 미노출(원인 확인 안 함) · N-1 업로드 권한 거절(10/4 19:30 칸)

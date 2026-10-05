@@ -79,6 +79,7 @@
 
 ## 막힘 (풀리지 않은 것)
 - 막힘([2] 운영실장2 05:44): F1 hfguar1006 표지 고정 심사 통과(평균 7.22, 555a0c6)인데 gates_ok 미기입 — readcheck 지적 2건(숫자 많은 문장 네 줄 연달아)이 naverpost 발행을 막음 → 문장 고친 뒤 stamp 다시·gates_ok · 담당 firemap-write · 기한 08:10
+  완료: firemap-write 06:45 — F1 hfguar1006 readcheck 2건 문장만 나눠 0건(숫자 그대로)·editgate stamp 다시(06:43)·slots 14:10 gates_ok 2026-10-06 06:44 기입. F3은 slots에 TBD 칸이 없어 할 일 없음, F4 retmid1005 남은 관문은 다음 회차
 - 막힘([2] 운영실장2 05:44): F2 gold1y 고정 심사(보정 gongjae1002 7.25 유효)로도 v5 6.58·v6 6.17 미달 = 표지 자체 미달 확정(5768899) → 07:20에 19:20 칸 비축 nongji_age 교체 집행, 이후 쇼츠 비축 0/1 · 담당 firemap-shorts · 기한 07:20
   완료: firemap-shorts 06:43 — 10/6 19:20 칸 gold1y→비축 nongji_age 교체, gates_ok 10/5 01:47(비축 통과 기록 확인: compete 5·check·aitell 0.0·표지 7.33·카피 7.0·review 세 줄), 쇼츠 비축 0/1 → 다음 후보 기준금리 30년 표(ECOS), gold1y는 표지 재작업(시한 10/6 21:00)
 - 진행([2] 운영실장2 05:44): F4 retmid1005 표지 3.1-lite v4 7.75·v5 7.0 통과, 남은 것 레드팀·작성자 점수·제목 심사 3명·editgate → reserve.cafe gates_ok · 담당 firemap-write

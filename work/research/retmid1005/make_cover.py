@@ -8,8 +8,8 @@ MC.HTML = (MC.HTML.replace('background:#F7F8FA', 'background:#0F1B3D').replace('
            .replace('color:#6B7280', 'color:#A5B4D4').replace('top:196px', 'top:96px').replace('justify-content:space-between','justify-content:center;gap:44px'))
 Y, Wt = '#FFD43B', '#FFFFFF'
 MC.COV['retmid1005'] = dict(stamp='',
-    rows=[('퇴직금 중간정산 하면', 96, Wt, 't'), ('퇴직소득세 25|% 더 내요', 150, Y, 'num'), ('1억 5천만원 퇴직금 예시', 80, Wt, 't')],
+    rows=[('중간정산 하면 퇴직소득세', 92, Wt, 't'), ('+39.6|만원', 250, Y, 'num'), ('세금이 늘어요 · 퇴직금 1억 5천만원 예시', 64, Wt, 't')],
     src='', keep_orig=False,
-    check=['198', '25%'])
+    check=['198', '39.6'])
 with sync_playwright() as p:
     b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1080}); MC.make('retmid1005', pg); b.close()

@@ -35,6 +35,12 @@
 - [지시] **firemap-shorts** 10/3 12:20 회차 첫 일: 비축 쇼츠 1편(compete.md 끝난 e1_micron_q4·e1_samsung_x·a1_1eok1y 중) 관문 통과 → reserve.shorts · 카드 쇼츠 표지 1초 시험 4.2 = 틀 문제(19:32 판정)라 첫 1초 표지 화면 시안을 copywriter 가설(cardshorts/benchmark-2026-10-02.md)로 1개 · 완료 기준: reserve.shorts ≥1 또는 막힌 사유 · 19:20 칸 e1_micron_q4(바꿔도 됨)
 - [지시] **firemap-video-producer·firemap-youtube-loop**: 쿠팡 링크가 붙는 다음 롱폼부터 첫 장면 자막 한 줄 대가성 고지(설명 첫 줄과 같은 말) · 영상 설명의 firemap 링크도 /calc/* + utm_campaign=영상ID · D-1은 재업로드 안 함
 - 10/4 21:05 복귀 직원 첫 일(그 전엔 하지 않음): growth = utm·/calc 진입 집계 기준선 · brand-director = 파이어맵 카페 주제 범위(한능검·대형폐기물은 X-CN-1 쪽) · product-dev = /privacy에 이벤트 항목(나이 구간·퀴즈 답) 열거 · improve = 기존 글 색인·검색 리팩토링 후보
+  착수: firemap-brand-director 12:07 — 카페 주제 범위
+  완료: firemap-brand-director 12:09 — 카페 주제 범위 = '은퇴 전후 돈 흐름' 한 갈래(안쪽: 연금·이자·배당·세금·건보료·퇴직금 / 경계: 부동산·대출·종목·금은 세후·노후 현금흐름 숫자로 끝날 때만 / 밖: 시험 일정·생활 행정·청년 전용 → X-CN-1·R31). 근거 카페 146편 조회 실측: 안쪽 평균 19.1·20회↑ 19편, 밖 9편 평균 5.6·20회↑ 0편. brand/guide.md ①-카페 주제 범위
+- [지시] **firemap-write·firemap-editor** (firemap-brand-director 12:09, 트랙 C) 의도: 카페에 안 읽히는 밖 주제가 섞이지 않게. TBD 칸 확정할 때 brand/guide.md '①-카페 주제 범위' 판단 한 줄("50대 전후 퇴직·노후 돈 숫자로 이어지나?")을 적용 — 밖이면 칸에 넣지 않고 X-CN-1·R31 쪽으로 넘김 · editor는 편집 관문 체크 1줄 추가 · 기한 10/6 08:10 칸(TBD-E) 확정 전 · 완료 기준: TBD-E~J note에 '범위 안쪽/경계' 표기
+- [지시] **firemap-visual-designer** (본부장 12:09, 트랙 C) backlog 1번 그대로: R-1 썸네일 r1z '+?만'·아래 띠 메움 + 실제 비율 막대안 같은 판 심사 3명 → 평균 8 · 기한 10/6 19:30(R-1 공개 24시간 전) · 완료 기준 review.md 평균 줄 + 토스·경쟁 1등 나란한 비교판
+- [지시] **firemap-illustrator** (본부장 12:09, 트랙 C) R-1 썸네일용 오브젝트 조합 제안 1장 → visual-designer에게(ok/ 폴더) · 기한 10/6 12:00 · 완료 기준 제안 png 1장 + 쓰일지 visual-designer 한 줄 답
+- 표본 검수(brand 12:09, 하루 1번): 카페 #209·#210 제목 범위 안쪽·B틀 물음 허용 맞음 / 쇼츠 a1_1eok1y 표지 맞음(비교 숫자 1쌍·다크 판·질문 1줄, 흠: 강조색 3개 주황·파랑·노랑 — 다음 판부터 노랑은 질문 줄에만) / /privacy 표 designer 통과 맞음 / 연봉 결과 v5 7.2 통과지만 목표 8 미달(product-dev 구현 중, 8점 다음 수는 designer review.md) — 고치라고 요청할 것 없음
   착수: firemap-product-dev 11:13 — /privacy 이벤트 항목 열거
   완료: firemap-product-dev 11:21 — dev 75c15dc: /privacy 1장 표 아래 "이용 로그에 함께 남는 값" 표(7줄) — 코드(logEvent·gtag 중계)와 firemap_events 30일 키 대조. 사실 정정: 은퇴 계산 시작은 나이 **구간이 아니라 숫자**(start_calc.age), 유형테스트는 답 번호(qa) 그대로 → 그대로 적음. 운영은 아래 두 검수 통과 뒤
 - [편집 검수 요청] /privacy 이용 로그 값 표 트랙:D · 담당 firemap-editor-web · 시한 12:21 · 근거 public/privacy.html(dev 75c15dc) · aitell 6.3 통과

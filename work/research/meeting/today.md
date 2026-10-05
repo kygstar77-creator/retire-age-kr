@@ -117,6 +117,7 @@
 - 승인됨·손 남음: Mobbin 결제(카드) · Claude 사용량 확장(claude.ai 설정 → Usage) · 애드센스 지급 정보 · GA4·서치콘솔 읽기(approvals 13행) · 다음 검색 등록(webmaster.daum.net PC 크롬) · Adobe Stock·Gumroad 가입·정산 · X-V1 저장소(결재함 17행) · data.go.kr 2건(후순위).
 - 결재 대기: X-CN-1 저장소 exam-dates-kr(18행) · 쿠팡 인플루언서(14행) · 리틀리(15행, X-KR-1) · 새 유튜브 브랜드 계정(X-G19) · KDP 계정(X-G21, 지금 안 눌러도 됨) · 새 도메인(X-KR-2·3) · 구글 Stitch 약관 동의(0원) · E-1 옛 판은 이미 비공개(사장님 손 0). 반려: vidIQ 유료. 보류: 제미나이 이미지 유료. vidIQ 채널 연결 위젯은 사장님이 눌러야 함.
 - [디자인 검수 요청] 연봉 결과 v5 구현본(/calc/salary, dev) 트랙:B · 담당 firemap-designer · 시한 14:28 · 근거 work/research/design/tokens-ref/salary-v5/impl/impl-375·320·1280·375-dark.png (시안 preview.html과 토큰 차이: 카드 모서리 20↔16, 숫자 카드 #18191d↔#191f28, 다크 결과 #26272e↔#2a2d33, 접기 머리 ▾·공제 합계 2줄)
+  착수: firemap-designer 13:40 (운영실장2 — v5 구현본 + X-V1·X-CN-1 v3 디자인 검수 한 번에)
   미완: firemap-designer 08:15 — 연봉 결과 v4(design/tokens-ref/salary-v4) 두 판 모두 6.83(제미나이 lite 6.5·레드팀 7·디자이너 7, flash 429 두 번) → **7 미통과**. 바꾼 것: 입력칸 → 조건 요약 행 3개(테두리/채움 왕복 끊음·'연봉' 중복 없어짐)·고정 바 해제·행 부품 하나·순서 결과→조건→공제→버튼. 남은 점: 320 첫 화면에 버튼 안 들어옴·데스크톱 Z자/빈 하단·다크 표면 3색(Claude 둘 공통), 단위 띄어쓰기 섞임(editor-web 몫). lite는 7판 내리 6.5(판별력 없음). 다음 수: 320 여백 48·다크 중립 2색·데스크톱 한 열 560 → flash 풀린 시간에 같은 판 재심사. 근거 salary-v4/review.md
   - 영상 방법 3단계: ① 내 상황에 맞는 좋은 레퍼런스 찾기 ② **Dembrandt**(오픈소스 MIT CLI, `npx dembrandt <주소>` — Playwright로 실제 화면에서 색·글꼴·간격·그림자·모서리를 토큰으로 뽑음, DESIGN.md·W3C 토큰 출력)로 레퍼런스의 디자인 시스템을 뽑아 Claude Design에 넣기 ③ AI 티 나는 한글 문장·줄바꿈 다듬기.
   - 우리 적용: 레퍼런스 = 토스(계산 결과 화면)·뱅크샐러드·KRDS(정부 디자인 시스템) 각 1화면. Dembrandt로 토큰 뽑아 design/tokens-ref/에 저장 → 우리 ds-v2 토큰(src/ui)과 표로 비교 → 연봉 결과 화면 시안 1개를 '레퍼런스 토큰 안에서' 다시 만들어 심사 3명(토스 옆 비교판, 7 통과·목표 8) — 지금 6.75.
@@ -137,8 +138,10 @@
   완료(①): firemap-venture-builder 13:35 — 루트 7fac259e….txt 200·본문=파일명 32자 → IndexNow 키 맞음. sitemap URL 5개(uk 4·한능검 1, noindex 3개 제외) POST: api.indexnow.org 200 · bing 200 · yandex 202 · **네이버 searchadvisor 200**. 네이버 IndexNow 지원 = 공식 가이드(searchadvisor.naver.com/guide/indexnow-request)·indexnow.org 엔진 목록으로 확인, 서치어드바이저 사이트 등록 선행 필요 여부는 확인 안 함. 구글은 IndexNow 안 받음 → 서치콘솔(growth 요청)이 남은 길. 기준선 bing site: 0. 근거 ventures/kit/README.md 5절
   완료(② 구현·캡처): firemap-venture-builder 13:40 — v3 dev 반영(배포 안 함), 고칠 점 6개 표 design/uk-pay/v3/notes.md·design/x-cn-1/v3/notes.md, 비교판 design/review-v2/compare-xv1-v3.png·compare-xcn1-v3.png(board.py 같은 판). 375 넘침 0, 원문 대조 13:38 일치. 검수 둘 다 통과 전 push 안 함
 - [디자인 검수 요청] X-V1·X-CN-1 v3 트랙:A · 담당 firemap-designer · 시한 14:40 · 근거 design/review-v2/compare-xv1-v3.png·compare-xcn1-v3.png, 375·1280 캡처 design/uk-pay/v3·design/x-cn-1/v3 (notes.md에 고칠 점 6개 대응)
+  착수: firemap-designer 13:40 (운영실장2)
 - [편집 검수 요청] X-V1 v3 글자 트랙:A · 담당 firemap-editor-en · 시한 14:40 · 근거 ventures/uk-pay/site/index.html, 바뀐 글자 목록 design/uk-pay/v3/notes.md — 통과하면 site/index.html.edit.json(sha는 `deploy.py hash`)
 - [편집 검수 요청] X-CN-1 v3 글자 트랙:A · 담당 firemap-editor-web · 시한 14:40 · 근거 ventures/x-cn-1/site/hanneunggeom/index.html·src/nextline.cjs, 바뀐 글자 목록 design/x-cn-1/v3/notes.md — 통과하면 site/hanneunggeom/index.html.edit.json·site/index.html.edit.json
+  착수: firemap-editor-web 13:40 (운영실장2)
 - [지시] R31 막힘 풀기 + 새 후보 5 트랙:A · 담당 firemap-venture-research-kr · 시한 10/5 20:00 · 근거 backlog.md 21행·candidates.md R31
   - data.go.kr 15114146 이용허락 원문·143기관 실제 건수(API 1회)·무상수거 기준 원문 → candidates.md R31 칸. 새 후보 5개는 거름망 '1쪽 작은 도구 사이트 0개인 1~5만 검색어', **비사이트(디지털 상품·B2B) 2개 이상**, 발견 길(검색 말고 첫 100명)을 칸마다 적기.
   착수: firemap-venture-research-kr 13:35 (본부장 직접 투입)

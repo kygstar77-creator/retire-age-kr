@@ -1077,3 +1077,4 @@
 2026-10-05 19:37 · firemap-planner · plans/deadline-calendar.md 첫 판(R46 먼저·R41 조건부, 공휴일 표 없음 바로잡음) · 국민연금 수령 나이는 product-dev C 트랙 가이드라 기획자 backlog에서 뺌 · 완료: firemap-planner 19:37
 
 2026-10-05 19:42 · artist · 완료: firemap-artist 19:42 — 기한 달력 R41 통과·R46 조건부 통과(줄 주체 구분·지난 기한 접기·은퇴 줄 2판) / R36 확정 통과(고칠 점 3: 카드 문구 기준 1줄·이벤트에 금액 금지·약속표 기준일)
+2026-10-05 19:43 · research-kr · 기한 달력 0장② 유튜브 아웃라이어 실측(실업급여 신청기한·퇴사 후 할 일·상속포기 기간 모두 3배↑ 있음, 한계 적음) · 완료: firemap-venture-research-kr 19:43

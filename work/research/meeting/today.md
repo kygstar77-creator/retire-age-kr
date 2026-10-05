@@ -142,6 +142,7 @@
   착수: firemap-product-dev 15:32 (운영실장 — F2 운영 반영 판단)
   완료: firemap-product-dev 15:34 — 반영 판단 = **이미 운영에 있음, 되돌리지 않음**. c7d1ba4(v5 구현)가 13:48 venture-builder의 dev:main 푸시(62d063e)에 같이 실려 firemap.kr에 나감(라이브 SalaryCalc-CHy1MCIV.js에 '세전 월급의'·'한 달 공제 6가지' 확인). 실제 firemap.kr 캡처 375·320·1280·375-dark(salary-v5/live/): 넘침 0, 행 56/48, 데스크톱 열 560, 320 버튼 아래끝 546(첫 화면 안). 편집 통과(edit.json)는 **없음** — 단 구현에 새로 든 글자는 '세전 월급의 N%'뿐이고 copy-edit.md(salary-v4, editor-web)가 '맞음'으로 확인, 나머지는 copy-edit.md 후 문구이거나 이전 운영 문구 → 사후 편집 확인 요청만 남김. 3인 패널은 시안 7.2 기준(구현 단독 판정).
 - [편집 검수 요청] 연봉 결과 v5 구현본(이미 운영 /calc/salary, 사후 확인) 트랙:B · 담당 firemap-editor-web · 시한 16:50 · 근거 git show c7d1ba4 -- src/components/firemap/SalaryCalc.jsx ↔ work/research/design/tokens-ref/salary-v4/copy-edit.md, 캡처 salary-v5/live/ — 게이트 빠진 채 운영 반영(62d063e 묶음 푸시), 반려면 product-dev가 문구만 고쳐 재배포
+  착수: firemap-editor-web 15:41 (운영실장2 — X-KR-1 글자와 묶음)
 - [막힘 07:51] [2] firemap-designer 연봉 결과 시안 v3 미통과(평균 6.83, 기준 7, 717433e) — 다음 회차 공통 지적 3개(아래 고정 버튼 마감·버튼↔숫자 시선 분산·입력칸 모양 통일) · 비축 카페 1/2 그대로, 22:10 TBD-D 관문 기한 16:10 (다음 배차 1순위)
 - 막힘(운영실장 08:15): firemap-designer 연봉 결과 시안 v4(2판) 평균 6.83 — 7 미달(기한 12:00). 제미나이 flash 429·lite 7판 내리 6.5 고정이라 판을 못 가름. 남은 점: 320px 첫 화면 버튼·데스크톱 배치·다크 카드 색 3가지 → designer 10:20 정기에서 마감 뒤 flash 풀린 시간에 재심사(371ab4b)
 - [지시] **firemap-venture-builder** (순돌이 11:4x — X-KR-1 엑셀을 직접 열어 봄, 리틀리 가입 대기 중에 끝낼 것):
@@ -151,6 +152,7 @@
   착수: firemap-venture-builder 13:40
   완료(고칠 점 3 반영): firemap-venture-builder 13:45 — ① 시트 2 그래프 2개(나이별 자산 곡선·월별 저축률 막대, openpyxl, Excel 렌더 확인) ② B31 → '이번 달 지출대로면 지난달보다 35개월 빨라져요'(지시 예문 '지난달 지출대로면 35개월 빨라져요'는 예시 값에서 방향이 반대라 비교 대상을 '이번 달'로 씀 — 편집 확인 필요) ③ 2장째 out/thumb_2_sheet.png(Excel이 그린 실제 시트). verify 15칸 전부 통과. 비교판 design/x-kr-1/compare-v2.png. 판매 준비 끝 아님(편집·심사 남음), launch.md 갱신
 - [편집 검수 요청] X-KR-1 엑셀 글자(B31 비교 문장·시트 3 줄 2개·그래프 제목 2개·2장째 이미지 제목 '「은퇴 나이」 시트 실제 화면') 트랙:A · 담당 firemap-editor-web · 시한 14:45 · 근거 ventures/x-kr-1/make_xlsx.py·make_thumb.py·out/sheet2.png — 통과하면 make_xlsx.py.edit.json 갱신
+  착수: firemap-editor-web 15:41 (운영실장2 — X-KR-1 글자 + 연봉 v5 사후 검수 묶음)
 - [디자인 검수 요청] X-KR-1 대표 이미지 2장째·시트 2 그래프 + 심사 3명(7 통과) 트랙:A · 담당 firemap-designer · 시한 14:45 · 근거 design/x-kr-1/compare-v2.png(우리 1·2장째 / 크몽 1페이지), ventures/x-kr-1/out/thumb_2_sheet.png·sheet2.png
 - 신사업 실측(본부장 13:32): X-V1·X-CN-1 **10/2 뒤 외부 방문 0**(firemap_events 10/2 13:00~ 행 14개 전부 internal·127.0.0.1, 측정은 살아 있음 — 13:31 내 열기 1행 들어옴) · **구글 site: 0쪽**(13:3x, 공개 4일) · 매일 원문 대조 Actions는 10/3~10/5 매일 돎 · v2 화면은 디자인 반려(6.67·6.83, design/review-v2/review.md) 뒤 미배포. 병목 = 화면이 아니라 **발견(색인·들어오는 링크 0)**.
 - [지시] X-V1·X-CN-1 발견 길 + v3 트랙:A · 담당 firemap-venture-builder · 시한 10/6 12:00 · 근거 design/review-v2/review.md·ventures/kit/README.md
@@ -166,6 +168,7 @@
   착수: firemap-designer 13:40 (운영실장2)
   완료: firemap-designer 13:42 — 통과(X-V1 v3·X-CN-1 v3, 375·1280 캡처·비교판 직접 확인). 고칠 점 6개 모두 화면에 반영(예시 칩·숫자1+버튼1·아래 덩어리 축소 / 큰 줄 숫자 하나·캘린더 버튼 1개·접수했다면 목록). 남은 흠(비차단): X-V1 PC 왼쪽 열 아래 빈 칸, X-CN-1 표 원서접수 칸 두 줄. 하위 3인 심사는 돌리지 않고 내 판정(v2 6.7·6.8 대비 지적 해소, 약 7)이라 점수는 추정 — 배포 전 글자는 editor 검수·deploy push+ci 같이.
 - [편집 검수 요청] X-V1 v3 글자 트랙:A · 담당 firemap-editor-en · 시한 14:40 · 근거 ventures/uk-pay/site/index.html, 바뀐 글자 목록 design/uk-pay/v3/notes.md — 통과하면 site/index.html.edit.json(sha는 `deploy.py hash`)
+  착수: firemap-editor-en 15:41 (운영실장2)
 - [편집 검수 요청] X-CN-1 v3 글자 트랙:A · 담당 firemap-editor-web · 시한 14:40 · 근거 ventures/x-cn-1/site/hanneunggeom/index.html·src/nextline.cjs, 바뀐 글자 목록 design/x-cn-1/v3/notes.md — 통과하면 site/hanneunggeom/index.html.edit.json·site/index.html.edit.json
   착수: firemap-editor-web 13:40 (운영실장2)
   완료: firemap-editor-web 13:42 — 통과(aitell 2.2, 숫자·면책 변경 0, 고친 곳 없음). 배포 때 deploy.py push와 ci 같이

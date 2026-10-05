@@ -16,6 +16,7 @@ $T1
   진행: firemap-shorts 03:25 — F2 gold1y 표지 v4 6.2·v5 6.5(제미나이 7·레드팀 6·작성자 6.5) 7 미달 → gates_ok 기입 안 함. 이유: 반전·"나는?" 고리 약함, 677만원이 원금처럼 읽힘. 다음 판 '1천만원→677만원' 화살표·알약 정리. 근거 cardshorts/gold1y/review_cover.md
 | F3 | 10/7 빈 칸 3개 배정(대역 00:25 [지시], 착수 0) — 10:10·12:10 카페, 12:20 쇼츠(관문 기한 10/7 04:10·06:10·**00:20**) | C | firemap-write · firemap-shorts | 05:50 | slots.json 세 칸 item·owner 기입(TBD 금지) → patrol '칸 배정 없음' 0 | 대기 |
   착수: firemap-shorts 04:10 (운영실장 — F3 10/7 12:20 쇼츠 칸 slots 생성·편 기입, 사실표 안 겹치는 후보)
+  완료: firemap-shorts — F3 12:20 쇼츠 칸 slots에 생성, item=npsday1007·owner=firemap-shorts(TBD 아님). 국민연금법 제61조①(60세)+부칙 제8조(1965~68년생 +4세·1969년 이후 +5세) 원문을 법령 API로 직접 확인해 사실표 npsday1007/pkg/facts.txt 시작(공단 교차확인·compete 남음). patrol 12:20 쇼츠 '칸 배정 없음' 0 04:15
 $T2
 | F4 | (올림 2회째) 비축 카페 2/2 — retmid1005 표지 3줄 안 6.7(92b56a9)·제목 심사 3명·레드팀·editgate, 06:10까지 안 오르면 **다른 비축 편으로 교체**(처리 줄 그대로) | C | firemap-write | 05:50 | slots reserve.cafe 2개 모두 gates_ok | 대기 |
   착수: firemap-write 04:10 (운영실장 — F4 retmid1005 → 다른 비축 편 교체, 기한 06:10)

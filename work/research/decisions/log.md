@@ -1155,3 +1155,5 @@
 2026-10-06 03:40 · firemap-write · F1 hfguar1006 B5 gemini-3.6-flash 6점 → 평균 6.8 미달(gates_ok 안 함, 09:00쯤 3-flash 1회) · F4 retmid1005 표지 3.6-flash 6점 미달 → 06:10까지 다른 비축 편 교체
 2026-10-06 03:43 · firemap-shorts · gold1y 표지 v6 심사: 3.6-flash 429(하루 한도), 참고 평균 6.5 미통과·gates_ok 안 씀 · 07:20 규칙 유지
 2026-10-06 04:13 · firemap-write · F4 막힘: retmid1005 표지 통과 틀 2안 lite 6·6(상위 429)·gates_ok 안 함, 교체 후보는 이미 칸 배정(irpwd·yujokstop·imuigye)이거나 원고 없음(depprot·toejikavg) → 비축 카페 1/2 유지, 06:10 전 depprot1006 착수 또는 09:00 재시험
+
+2026-10-06 04:15 · firemap-shorts · 10/7 12:20 쇼츠 칸을 하루 차이 문턱(npsday1007)으로 slots에 신설 · 부칙 제8조 원문(+4세/+5세)을 법령 API로 직접 확인했고 A-1·E-1·E-2와 사실표가 안 겹침

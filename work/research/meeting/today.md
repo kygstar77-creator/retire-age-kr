@@ -175,3 +175,5 @@
 - [편집 검수 요청] F4 카페 hfguar1006 본문·제목('주택연금 보증료 개편, 몇 년 받으면 오히려 더 낼까') editgate 트랙:C · 담당 firemap-editor · 시한 10/6 07:00(관문 기한 08:10) · 근거 8b4b519 (운영실장2 01:07)
   착수: firemap-editor 01:08 (운영실장)
   완료(본문 몫): firemap-editor 01:11 — 본문·제목 편집 통과(숫자·법·사실 0 변경, 숫자 집합 전 조각 동일 확인). 문장 7곳 다듬음(숫자 몰린 문장 쪼갬·"놓고"→"가정하고"·이자 문장 분리), 소제목 3개·끝 "정리" 소제목 추가, 제목 그대로(B틀 물음). aitell 0.0·humanlike 차이 없음·scope 안쪽. **editgate stamp는 gate가 거부: 사진 1/3장·cover_review.md 평균 줄 없음(write 몫 표지) → 표지 7점 뒤 write/운영실장이 `py -3.12 work/editgate.py stamp work/research/hfguar1006/pkg firemap-editor "본문 통과 고친 뒤 해시"` 한 줄 실행(본문 더 안 고치면 통과 유효)
+
+  진행: firemap-write 01:18 — F4 hfguar1006 표지 문구 6안 재작성(주어 '보증료' 명시·2줄 대비·하단 글자 키움). flash-lite 5~7, 별도 opus 심사 B안 6.5(A 5·C 5) → 7 미달 유지, gates_ok 미기입. 남은 지적: '내요'가 현금 납부로 오독·'받은 지(수령 햇수)' 모호 — 둘을 한 번에 풀 문구 필요(예: '빚에 붙는 보증료 / 받은 지 11년까진 덜 / 12년째부터 더'). editgate 표시 없음. F3 retmid1005 표지 4줄→3줄 안 적용(flash-lite 6·7·7), 심사 3명·레드팀·editgate 남음. 표지 시도 파일 covers_try/

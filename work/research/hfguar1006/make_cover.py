@@ -5,12 +5,12 @@ V = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'visual', 'ca
 import make_covers as MC
 from playwright.sync_api import sync_playwright
 MC.HTML = (MC.HTML.replace('background:#F7F8FA', 'background:#0F1B3D').replace('.stamp{', '.stamp{display:none;')
-           .replace('color:#6B7280', 'color:#A5B4D4').replace('top:196px', 'top:96px').replace('justify-content:space-between','justify-content:center;gap:44px').replace('font:700 27px PD','font:700 40px PD')
+           .replace('color:#6B7280', 'color:#A5B4D4').replace('top:196px', 'top:96px').replace('justify-content:space-between','justify-content:center;gap:44px').replace('font:700 27px PD','font:700 56px PD')
            .replace('let s=parseFloat(n.style.fontSize);while(', 'let s=n?parseFloat(n.style.fontSize):0;while(n&&'))
 Y, Wt = '#FFD43B', '#FFFFFF'
 MC.COV['hfguar1006'] = dict(stamp='',
-    rows=[('주택연금 보증료 개편 뒤', 84, Wt, 't'), ('받은 지 11년까지는 덜 붙고', 80, Y, 't'), ('12년째부터는 더 붙어요', 92, Y, 't')],
-    src='65세·4억 집 기준 보증료 누계', keep_orig=False,
+    rows=[('개편한 주택연금 보증료', 88, Wt, 't'), ('11년까지는 덜 내고', 112, Y, 't'), ('12년째부터는 더 내요', 112, Y, 't')],
+    src='65세·4억 집 기준', keep_orig=False,
     check=['11년', '12년째']
 )
 with sync_playwright() as p:

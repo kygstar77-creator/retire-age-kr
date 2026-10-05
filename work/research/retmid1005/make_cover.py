@@ -5,10 +5,10 @@ V = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'visual', 'ca
 import make_covers as MC
 from playwright.sync_api import sync_playwright
 MC.HTML = (MC.HTML.replace('background:#F7F8FA', 'background:#0F1B3D').replace('.stamp{', '.stamp{display:none;')
-           .replace('color:#6B7280', 'color:#A5B4D4').replace('top:196px', 'top:96px'))
+           .replace('color:#6B7280', 'color:#A5B4D4').replace('top:196px', 'top:96px').replace('justify-content:space-between','justify-content:center;gap:44px'))
 Y, Wt = '#FFD43B', '#FFFFFF'
 MC.COV['retmid1005'] = dict(stamp='',
-    rows=[('퇴직금 중간정산 하면', 100, Y, 't'), ('한 번에 받을 때보다', 100, Wt, 't'), ('세금 25|% 더 내요', 230, Y, 'num'), ('1억 5천만원 퇴직금 예시', 92, Wt, 't')],
+    rows=[('퇴직금 중간정산 하면', 96, Wt, 't'), ('퇴직소득세 25|% 더 내요', 150, Y, 'num'), ('1억 5천만원 퇴직금 예시', 80, Wt, 't')],
     src='', keep_orig=False,
     check=['198', '25%'])
 with sync_playwright() as p:

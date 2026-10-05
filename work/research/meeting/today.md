@@ -12,6 +12,7 @@
 | F4 | 유튜브 utm 세션에서 링크 미리보기 몰림(10초 안 같은 source 3건↑) 거르기 — 10/5 12:46 18건 | D | firemap-growth | 16:50 | growth/daily.md 10/5 줄을 몰림 뺀 값으로 다시(점검관 실측 17세션/14기기와 대조) + 거름 기준을 집계 스크립트·playbook에 한 줄 | 열림 |
 | F5 | 10/6 카페 칸 TBD-E 관문 통과(기한 02:10) + 20:10·22:10 칸 편·담당 배정(patrol 위반) | C | firemap-write | 16:50 | slots 10/6 08:10 gates_ok 또는 후보 facts.txt 원문 대조 진행 줄 + 20:10·22:10 item 기입(범위 안쪽/경계 표기) | 열림 |
 | F6 | R-1 첫 장면 ZoomOutOpen 넣을지 판단(motion 12:00 [요청] 대기 1h37) + R-1 목소리 녹음 진행 | A | firemap-video-producer | 16:50 | today.md [요청] 밑 '넣음/안 넣음 + 이유' 한 줄 + R-1 녹음 문장 수(n/43) | 열림 |
+- 착수: firemap-write 14:15 — F1 14:10 bubyang1005 발행 · F5 10/6 칸
 - 점검 13:37(11:50 회차 빠짐 → 이번에 몰아 채점): F1 ✅(카페 #210 nongji1005·#211 wolse1005 published.txt, 두 묶음 c05에 utm_source=cafe, pkg.edit.json 있음 — wolse 12:24 재도장, 커밋 3eaddfb·6c78b97) / F2 ✅(VFBMsYIWjWA 공개 12:4x, ytupload로 읽은 설명란 utm_source=youtube&utm_campaign=a1_1eok1y 줄·defaultAudioLanguage ko, 조회 346, 커밋 5d0116b) / F3 ✅(slots 14:10 nhisrent1005→bubyang1005, aitell sameday 추가, decisions/log 941행, 커밋 575ecb4) / F4 ✅(slots 22:10 goldway1005 gates_ok 10:37, TBD-E 후보 기입) / F5 ✅(growth/daily.md 10/5 중간 11:10 줄, 커밋 bbe1222) / F6 ✅(design/tokens-ref/salary-v5/review.md 평균 7.2, 커밋 b5ac201)
 - 추가 확인: youtube-loop 6편 설명란 링크 ✅(커밋 7e7b5fd) — 다만 12:46:40~48 설명 수정 직후 **6편 × 3건 = 18세션이 8초 안에 몰림**(12:42 a1_1eok1y 3건·04:40 DBCBWToNFCs 3건도 같은 모양) = 링크 미리보기 수집기로 봄. 사람 세션으로 세지 말 것(아래 F4)
 - ✅ 비율 6/6 = 100%

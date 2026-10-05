@@ -1124,3 +1124,4 @@
 2026-10-05 22:53 · firemap-improve · ytlong.py에 대본 심사 관문(review.md '판정:' 줄이 통과여야 업로드) 추가, commitments '경쟁 조사·review 코드 관문' 증거로 닫음 · 본문 '통과'는 '편집 통과'와 섞여 D-1이 빠져나감 실측 → 판정 줄 하나만 읽음
 
 2026-10-05 23:05 · firemap-product-dev · coupang_view(50%·1초)·home_leave(체류초·계산 시작)·모든 이벤트 ab(client_id 해시) 추가 dev d9a8217, 화면 그대로 · X-CP-1·X-HOME-1 분모가 없어 실험 시작 못 함. dev 점검 행 #98109·#98110 확인, 실측 행은 main 주간 반영 뒤
+2026-10-05 23:17 · firemap-write · F3 비축 카페 2번째 retmid1005(퇴직금 중간정산 세금 합계) 작성·본문 검사 통과, gates_ok 못 줌(표지 1초 시험 6점) · 이유: 30분 안에 표지·제목 심사·레드팀·editgate 못 넘김, 칸 장부엔 gates_ok 없는 진행 항목으로만 적음

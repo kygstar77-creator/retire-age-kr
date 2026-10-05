@@ -16,4 +16,5 @@
 | 기록 | prompt.txt(도구·지시), usage.md(어느 편에 썼나 — 같은 조합 연속 두 편 금지), judges.md(심사 3명 점수) |
 
 ## 들어 있는 것 (ok/ = 심사 평균 6 이상)
-won_stack 지폐 묶음 · calendar 달력(그날 칸) · rate_up 오름 화살표 · apartment 아파트(판상형·동 번호) · chip 반도체 칩(로고 없음) · bill 고지서 봉투(금액 띠)
+won_stack 지폐 묶음 · calendar 달력(그날 칸) · rate_up 오름 화살표 · apartment 아파트(판상형·동 번호) · chip 반도체 칩(로고 없음) · bill 고지서 봉투(금액 띠) · bankbook 예금 통장 · gold_bar 금괴 · us_index 미국 지수 꺾은선(별 3개 띠, 국기 도안 아님) · div_coins 배당 동전($ 글자 하나)
+- 썸네일에 줄 이름 앞 작은 아이콘(124px)은 168px에서 노란 얼룩이 된다(R-1 제안 A 7.5) — 한 장에 사물 하나, 크게.

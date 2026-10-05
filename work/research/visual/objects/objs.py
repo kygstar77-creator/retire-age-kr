@@ -119,9 +119,67 @@ def bill():
     return b
 
 
+GOLD2 = '#e6bf00'  # 노랑 한 단계 진한 면(금괴 윗면·뒷장) — 1세트 '다음에 고칠 것'의 지폐 뒷장 색
+
+
+def bankbook():
+    # R-1(2026-10-05): 예금 통장 — 펼친 통장 한 권, 왼쪽 등 띠, 금액 줄 3개 중 맨 아래만 노랑+₩. 은행 이름·로고·서식 없음
+    b = f'<rect x="70" y="112" width="372" height="288" rx="22" {s(G1)}/>'  # 뒤표지
+    b += f'<rect x="92" y="94" width="350" height="288" rx="20" {s(WHITE)}/>'
+    b += f'<rect x="92" y="94" width="62" height="288" rx="20" {s(INK)}/>'  # 등 띠
+    for i in range(2):
+        y = 160 + i * 62
+        b += f'<rect x="190" y="{y}" width="{200 - i*50}" height="16" rx="8" fill="{G1}"/>'
+    b += f'<rect x="180" y="282" width="228" height="66" rx="12" fill="{YEL}" stroke="{INK}" stroke-width="10"/>'
+    b += won(222, 315, 0.78) + f'<rect x="256" y="306" width="128" height="18" rx="9" fill="{INK}"/>'
+    return b
+
+
+def gold_bar():
+    # R-1: 금괴 3개 피라미드(사다리꼴 옆면 + 진한 윗면). 각인·제련소 표시·순도 숫자 없음
+    def bar(x, y):
+        w, h, t = 176, 92, 34  # 아래 폭·높이·윗면 들여쓰기
+        side = f'M{x} {y+h} L{x+t} {y} H{x+w-t} L{x+w} {y+h} Z'
+        top = f'M{x+t} {y} L{x+t+14} {y-26} H{x+w-t-14} L{x+w-t} {y} Z'
+        return f'<path d="{top}" {s(GOLD2, 12)}/><path d="{side}" {s(YEL)}/>' +             f'<path d="M{x+t+18} {y+28} H{x+t+60}" stroke="{WHITE}" stroke-width="12" fill="none"/>'  # 반사 한 줄
+    return bar(80, 330) + bar(256, 330) + bar(168, 238)  # 윗괴 바닥 = 아랫괴 윗면(330)
+
+
+def us_index():
+    # R-1: 미국 지수(S&P500 자리) — 오르는 꺾은선 판 + 왼쪽 위 별 3개 띠(미국 국기를 줄인 표지, 실제 국기 도안 아님). 운용사·지수 회사 로고 없음
+    b = f'<rect x="72" y="96" width="368" height="320" rx="24" {s(WHITE)}/>'
+    b += f'<path d="M72 120 a24 24 0 0 1 24 -24 H416 a24 24 0 0 1 24 24 V170 H72 Z" {s(INK)}/>'
+    for i in range(3):
+        cx = 120 + i * 52
+        pts = ' '.join(f'{cx + r * __import__("math").sin(k * 3.14159 / 5):.0f},{133 - r * __import__("math").cos(k * 3.14159 / 5):.0f}'
+                       for k, r in zip(range(10), [18, 7] * 5))
+        b += f'<polygon points="{pts}" fill="{WHITE}"/>'
+    for y in (240, 310):
+        b += f'<path d="M104 {y} H408" stroke="{G1}" stroke-width="8" fill="none"/>'
+    p = 'M104 380 L176 330 L236 352 L310 262 L392 214'
+    b += f'<path d="{p}" fill="none" stroke="{INK}" stroke-width="{SW+26}"/>'
+    b += f'<path d="{p}" fill="none" stroke="{YEL}" stroke-width="{SW+4}"/>'
+    b += f'<circle cx="392" cy="214" r="20" {s(YEL, 10)}/>'
+    return b
+
+
+def div_coins():
+    # R-1: 배당(SCHD 자리) — 동전 3개 쌓임 + 위에서 떨어지는 동전 하나(분배금). $ 표시는 글자 하나, 운용사 로고 없음
+    b = ''
+    for i in range(3):
+        y = 380 - i * 54
+        b += f'<path d="M110 {y} V{y-34} A110 36 0 0 1 330 {y-34} V{y} A110 36 0 0 1 110 {y} Z" {s(GOLD2)}/>'
+        b += f'<ellipse cx="220" cy="{y-34}" rx="110" ry="36" {s(YEL)}/>'
+    b += f'<circle cx="372" cy="128" r="70" {s(YEL)}/>'
+    b += f'<text x="372" y="160" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="92" fill="{INK}">$</text>'
+    b += f'<path d="M372 222 V262 M352 244 L372 266 L392 244" stroke="{INK}" stroke-width="{SW}" fill="none"/>'  # 아래로 떨어짐
+    return b
+
+
 OBJS = {'won_stack': (won_stack, '지폐 묶음(원화 기호)'), 'calendar': (calendar, '달력(마감일)'),
         'rate_up': (rate_up, '오름 화살표(금리·수익률)'), 'apartment': (apartment, '아파트'),
-        'chip': (chip, '반도체 칩(로고 없음)'), 'bill': (bill, '고지서 봉투')}
+        'chip': (chip, '반도체 칩(로고 없음)'), 'bill': (bill, '고지서 봉투'),
+        'bankbook': (bankbook, '예금 통장'), 'gold_bar': (gold_bar, '금괴'), 'us_index': (us_index, '미국 지수 꺾은선'), 'div_coins': (div_coins, '배당 동전')}
 
 
 def svg(k):

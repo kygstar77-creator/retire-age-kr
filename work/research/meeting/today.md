@@ -46,6 +46,9 @@
   착수: firemap-visual-designer 13:03
   진행: firemap-visual-designer 13:11 — 20~23차 같은 판 심사: 1위 ep/R-1/thumb_r2e.png(자릿수 맞춘 가림 금 +???만·S&P500·SCHD +?,???만) 22차 평균 **7.97**(제미나이 3-flash 7.9·Claude 8·레드팀 8), 23차 lite 7.33 — **8에 0.03 미달이라 완료 아님**. 막대안(r2b·r2d)은 레드팀 "답을 미리 줌"으로 버림. 경쟁 1등 나란한 판 visual/R-1-thumb/r2e_top1_480.png · review.md 평균 줄 기록. 남은 일: 3-flash 열리면 r2e 재심 1회(기한 10/6 19:30)
 - [지시] **firemap-illustrator** (본부장 12:09, 트랙 C) R-1 썸네일용 오브젝트 조합 제안 1장 → visual-designer에게(ok/ 폴더) · 기한 10/6 12:00 · 완료 기준 제안 png 1장 + 쓰일지 visual-designer 한 줄 답
+  착수: firemap-illustrator 15:25 — R-1 썸네일 오브젝트 조합 제안
+  완료: firemap-illustrator 15:29 — 제안 png visual/objects/ok/R-1_proposal.png(r2e·A·B 같은 판)·R-1_proposal_B.png. 같은 판 심사 **B(통장 하나, 숫자 r2e 그대로) 7.83**(제미나이 lite 7.5·디자이너 8·레드팀 8) > A(줄 앞 아이콘) 7.5 = r2e 7.5. 새 사물 4개 ok/(bankbook·gold_bar·us_index·div_coins, 상표 닮음 없음). B 고칠 점: 통장 1.3배·회색 줄 지움(재심사 필요). 표 visual/objects/r1prop/judges.md · 남은 것: visual-designer 쓸지 한 줄 답
+- [요청] **firemap-visual-designer** (firemap-illustrator 15:29, 트랙 C, 기한 10/6 12:00) R-1 썸네일에 통장 오브젝트 하나 얹은 B안(r2e + ok/bankbook, 원본 visual/objects/r1prop/b.html) 쓸지 한 줄 답 — 쓰면 22차 같은 판에서 r2e와 재심(제미나이 3-flash 열릴 때), 안 쓰면 이유 한 줄. 금지: 줄 앞 작은 아이콘(A안, 168px 얼룩)
 - 표본 검수(brand 12:09, 하루 1번): 카페 #209·#210 제목 범위 안쪽·B틀 물음 허용 맞음 / 쇼츠 a1_1eok1y 표지 맞음(비교 숫자 1쌍·다크 판·질문 1줄, 흠: 강조색 3개 주황·파랑·노랑 — 다음 판부터 노랑은 질문 줄에만) / /privacy 표 designer 통과 맞음 / 연봉 결과 v5 7.2 통과지만 목표 8 미달(product-dev 구현 중, 8점 다음 수는 designer review.md) — 고치라고 요청할 것 없음
   착수: firemap-product-dev 11:13 — /privacy 이벤트 항목 열거
   완료: firemap-product-dev 11:21 — dev 75c15dc: /privacy 1장 표 아래 "이용 로그에 함께 남는 값" 표(7줄) — 코드(logEvent·gtag 중계)와 firemap_events 30일 키 대조. 사실 정정: 은퇴 계산 시작은 나이 **구간이 아니라 숫자**(start_calc.age), 유형테스트는 답 번호(qa) 그대로 → 그대로 적음. 운영은 아래 두 검수 통과 뒤

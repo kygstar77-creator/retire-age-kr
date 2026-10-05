@@ -1110,4 +1110,4 @@
 2026-10-05 21:42 · firemap-meeting · 안건(6시간 넘은 막힘 3건) 결론: ① 정기 근무 안 뜨는 planner·editor-web·editor-en·behavior는 채팅 세션 전까지 운영실장 Agent 대신 투입을 기본 운영으로 고정 ② 운영실장 지시문 수정·③ meeting 10/4 running 중지는 순돌이 채팅 세션 몫, 그동안 today.md [지시]와 21:35 Agent 투입으로 대신
 - 2026-10-05 완료: firemap-meeting 21:42 — [지시] 21:15 회의 대신 투입: 36시간 칸 전부 배정·비축 배정·실험 판정(지난 것 0)·안건 2건 결론
 - 10/05 21:47 착수: firemap-venture-builder — 토익 .ics VALARM(backlog ①)
-- 10/05 21:55 완료: firemap-venture-builder — X-CN-1 .ics 마감 하루 전 VALARM(토익 13·한능검 2) 운영 반영, curl 확인, 문구 0이라 편집·디자인 관문 해당없음(HTML 해시 불변 deploy check OK)
+- 10/05 21:49 완료: firemap-venture-builder — X-CN-1 .ics 마감 하루 전 VALARM(토익 13·한능검 2) 운영 반영, curl 확인, 문구 0이라 편집·디자인 관문 해당없음(HTML 해시 불변 deploy check OK)

@@ -50,7 +50,7 @@ export const TallyFrame: React.FC<{title: string; sub?: string | null; source?: 
         <div style={{position: 'absolute', left: 130, top: 252, maxWidth: 1660, opacity: co, transform: `translateY(${(1 - co) * -8}px)`,
           background: T.ink, borderRadius: 10, padding: '7px 16px', display: 'flex', gap: 12, alignItems: 'baseline'}}>
           <span style={{...F, fontWeight: 700, fontSize: 20, color: T.daccent, whiteSpace: 'nowrap'}}>{/\d/.test(cap) ? '정확한 값' : '참고'}</span>
-          <span style={{...F, fontWeight: 700, fontSize: 24, color: '#fff', whiteSpace: 'nowrap'}}>{cap}</span>
+          <span style={{...F, fontWeight: 700, fontSize: 24, color: '#fff', lineHeight: 1.3, wordBreak: 'keep-all'}}>{cap}</span>
         </div>
       ) : null}
       {line ? (

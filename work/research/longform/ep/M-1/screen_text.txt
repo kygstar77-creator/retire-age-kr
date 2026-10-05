@@ -1,0 +1,525 @@
+# 화면 글자 — M-1 (lfrender.py text가 만듦. 여기를 고치지 말고 대본·props·tsx를 고친 뒤 다시 뽑는다)
+# 그래프 제목·부제·출처·자막(lines.text)·막대 이름·코드에 박힌 글자. 썸네일 문구는 그림이라 안 들어간다.
+
+## props: video/m1.json
+[scenes.0.key] open
+[scenes.0.title] 매달 100만원 받으려면 얼마 있어야 하나
+[scenes.0.sub] 지난 1년 실제 분배금 · 세금·건강보험료 뗀 뒤 · 2026-10-02 기준
+[scenes.0.source] 운용사·거래소 분배 기록, 거래소 종가, 한국은행 ECOS, 법제처 · 과거 값 · 미래 보장 아님 · 투자 권유 아님
+[scenes.0.data.rev.seed] M-1
+[scenes.0.data.rev.big] 큰돈
+[scenes.0.data.rev.ask0] 매달 ?
+[scenes.0.data.rev.goal] 매달 100만원
+[scenes.0.data.rev.goalSub] 세금·건보료 뗀 뒤
+[scenes.0.data.rev.bars.0.0] JEPQ
+[scenes.0.data.rev.bars.0.2] 1.38억원
+[scenes.0.data.rev.bars.1.0] SCHD
+[scenes.0.data.rev.bars.1.2] 4.85억원
+[scenes.0.data.rev.bars.2.0] ACE 미국배당다우존스
+[scenes.0.data.rev.bars.2.2] 5.10억원
+[scenes.0.data.rev.low.label] 8.92억원
+[scenes.0.data.rev.low.times] ×1.75
+[scenes.0.data.rev.low.tag] 가장 적은 달 기준
+[scenes.0.data.rev.also.0.label] 1.71억원
+[scenes.0.data.rev.also.0.times] ×1.23
+[scenes.0.data.rev.note.0.1] 분기 1회 · 달마다 아님
+[scenes.0.lines.0.text] 월배당 영상은 보통 이렇게 시작하죠. 큰돈을 넣으면 매달 얼마가 나온다.
+[scenes.0.lines.1.text] 근데 대부분은 그런 큰돈이 없잖아요. 그러면 거꾸로 묻는 게 맞죠.
+[scenes.0.lines.2.text] 매달 100만원이 필요하면, 지금 얼마가 있어야 할까요?
+[scenes.0.lines.2.cap] 세금 · 건강보험료까지 뗀 뒤 손에 남는 돈 기준
+[scenes.0.lines.3.text] 지난 1년 동안 실제로 나온 분배금으로, 상품 셋을 거꾸로 계산해 봤어요.
+[scenes.0.lines.4.text] 2026년 10월 2일 기준입니다. 사라는 얘기가 아니라, 지난 기록으로 한 계산입니다.
+[scenes.0.lines.5.text] 가장 적게 필요한 상품은 1억 4천만원 가까이였어요.
+[scenes.0.lines.5.cap] JEPQ 1.38억원 · SCHD 4.85억원 · ACE 미국배당다우존스 5.10억원 (세후·건보료 뒤 월 100만원)
+[scenes.0.lines.6.text] 가장 많이 필요한 상품은 5억이 넘었고요.
+[scenes.0.lines.7.text] 그런데 이 숫자, 다시 재면 확 달라집니다.
+[scenes.0.lines.8.text] 매달 분배금이 똑같이 나오지 않거든요. 가장 적게 나온 달로 다시 재 보면, 두 상품이 늘어나요. 그중 한 상품은 5억에서 9억 가까이까지요.
+[scenes.1.key] road
+[scenes.1.title] 오늘 따라갈 순서
+[scenes.1.sub] 월 100만원에서 거꾸로
+[scenes.1.data.rows.0.0] ① 계산 규칙 세 줄
+[scenes.1.data.rows.1.0] ② 건강보험료가 붙는 선
+[scenes.1.data.rows.2.0] ③ 세 상품 거꾸로 계산
+[scenes.1.data.rows.3.0] ④ 가장 적게 나온 달
+[scenes.1.data.rows.4.0] ⑤ 목표를 올리면 · 분배 뒤 가격
+[scenes.1.lines.0.text] 오늘은 이 계산을 끝까지 따라가 봅니다.
+[scenes.1.lines.1.text] 파이어맵은 운용사·거래소 기록과 법령 원문 숫자로, 내 손에 남는 돈만 계산합니다.
+[scenes.1.lines.2.text] 순서는 이래요. 계산 규칙, 건강보험료 선, 세 상품 계산, 가장 적은 달, 목표를 올렸을 때, 그리고 분배 뒤에 가격이 어떻게 됐는지.
+[scenes.2.key] logo
+[scenes.2.data.sub] 월배당 거꾸로 계산 · 2026.10.2 기준
+[scenes.3.key] rules
+[scenes.3.title] 계산 규칙 세 줄
+[scenes.3.sub] 숫자가 어디서 왔는지 먼저
+[scenes.3.source] 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스) · 한국은행 ECOS 731Y001
+[scenes.3.chapter] 1장
+[scenes.3.data.cards.0.0] ①
+[scenes.3.data.cards.0.1] 지난 1년 실제 분배금
+[scenes.3.data.cards.0.2] 2025.10 ~ 2026.10 · JEPQ·ACE 12회 · SCHD 4회
+[scenes.3.data.cards.1.0] ②
+[scenes.3.data.cards.1.1] 세금 뗌
+[scenes.3.data.cards.1.2] 미국 상장 15% · 국내 상장 15.4%
+[scenes.3.data.cards.2.0] ③
+[scenes.3.data.cards.2.1] 건강보험료 뗌
+[scenes.3.data.cards.2.2] 지역가입자 · 재산·다른 소득 없음
+[scenes.3.data.warn.0] 앞으로도 똑같다는 뜻 아님
+[scenes.3.data.fx.0] 원/달러
+[scenes.3.data.fx.1] 1,406.0원
+[scenes.3.data.fx.2] 1,359.6원
+[scenes.3.lines.0.text] 먼저 규칙부터요. 숫자가 어디서 왔는지 알아야 믿을 수 있으니까요.
+[scenes.3.lines.1.text] 첫째, 지난 1년 실제 분배금을 그대로 썼습니다.
+[scenes.3.lines.1.cap] 2025년 10월 ~ 2026년 10월 · JEPQ·ACE 각 12회, SCHD 4회 · 운용사·거래소 기록
+[scenes.3.lines.2.text] 앞으로도 똑같이 나온다는 뜻은 아니고요. 분배금이 줄어드는 해도 있을 수 있습니다.
+[scenes.3.lines.3.text] 미국 상장 상품은 원화로 받는 돈이 환율에 따라서도 달라집니다.
+[scenes.3.lines.3.cap] 원/달러 2025-10-02 1,406.0원 → 2026-10-02 1,359.6원 (한국은행 ECOS)
+[scenes.4.key] tax
+[scenes.4.title] 둘째, 세금
+[scenes.4.sub] 분배금이 들어오기 전에 먼저 빠지는 돈
+[scenes.4.source] 한미 조세조약 제10조(IRS Table 1) · 소득세법 제14조·제129조 · 지방세법 제103조의13
+[scenes.4.chapter] 1장
+[scenes.4.data.head] 분배금 100이 들어오면
+[scenes.4.data.rows.0.0] 미국 상장(JEPQ·SCHD)
+[scenes.4.data.rows.0.1] 미국 원천징수 15%
+[scenes.4.data.rows.0.2] tax
+[scenes.4.data.rows.1.0] 국내 상장(ACE)
+[scenes.4.data.rows.1.1] 배당소득세 15.4%
+[scenes.4.data.rows.1.2] tax
+[scenes.4.data.rows.2.0] 연 금융소득 2,000만원 안쪽
+[scenes.4.data.rows.2.1] 국내 추가 세금 없음
+[scenes.4.data.rows.2.2] net
+[scenes.4.data.side.0] 15%
+[scenes.4.data.side.2] 미국 상장 분배금에서 먼저
+[scenes.4.data.callout.0] 분배금 전체에 매김 — 세금 크게 잡은 쪽
+[scenes.4.lines.0.text] 둘째, 세금을 뗐습니다.
+[scenes.4.lines.1.text] 미국 상장 상품은 미국에서 먼저 떼어 가요.
+[scenes.4.lines.1.cap] 미국 원천징수 15% · 연 금융소득 2,000만원 안쪽이면 국내 추가 세금 없음
+[scenes.4.lines.2.text] 국내 상장 상품은 배당소득세를 떼고요.
+[scenes.4.lines.2.cap] 배당소득세 15.4% (분배금 전체에 매김 — 실제 과세 몫이 더 작으면 세금도 더 작음)
+[scenes.5.key] rules3
+[scenes.5.title] 셋째, 건강보험료
+[scenes.5.sub] 퇴직 뒤 지역가입자 기준
+[scenes.5.source] 국민건강보험법 시행규칙 제44조 · 시행령 제41조 · 국민건강보험공단(보험료율 7.19%·장기요양)
+[scenes.5.chapter] 1장
+[scenes.5.data.cards.0.0] ①
+[scenes.5.data.cards.0.1] 지난 1년 실제 분배금
+[scenes.5.data.cards.0.2] 2025.10 ~ 2026.10 · JEPQ·ACE 12회 · SCHD 4회
+[scenes.5.data.cards.1.0] ②
+[scenes.5.data.cards.1.1] 세금 뗌
+[scenes.5.data.cards.1.2] 미국 상장 15% · 국내 상장 15.4%
+[scenes.5.data.cards.2.0] ③
+[scenes.5.data.cards.2.1] 건강보험료 뗌
+[scenes.5.data.cards.2.2] 지역가입자 · 재산·다른 소득 없음
+[scenes.5.data.warn.0] 직장가입자는 기준 다름
+[scenes.5.data.stamp.0] 기준일 2026.10.2 · 종가·환율 같은 날
+[scenes.5.lines.0.text] 셋째, 건강보험료까지 뗐죠.
+[scenes.5.lines.1.text] 퇴직하고 지역가입자가 된 분 기준이에요. 회사에 다니는 동안은 기준이 다르고, 이 계산은 퇴직한 뒤를 위한 겁니다.
+[scenes.5.lines.1.cap] 지역가입자 · 재산·다른 소득 없음 가정 · 직장가입자는 기준 다름
+[scenes.5.lines.2.text] 가격과 환율은 모두 같은 날짜로 맞췄습니다.
+[scenes.5.lines.2.cap] 기준일 2026-10-02 · 종가·환율 같은 날
+[scenes.6.key] gauge
+[scenes.6.title] 건강보험료가 붙는 선
+[scenes.6.sub] 이자 + 배당, 1년 합계 · 세금 떼기 전
+[scenes.6.source] 국민건강보험법 시행규칙 제44조 · 시행령 제41조 · 국민건강보험공단(보험료율 7.19%·장기요양)
+[scenes.6.chapter] 2장
+[scenes.6.data.lines.0.1] 1,000만원
+[scenes.6.data.fill.0.2] ink
+[scenes.6.data.fill.1.2] ink
+[scenes.6.data.fill.2.2] rise
+[scenes.6.data.fill.3.2] rise
+[scenes.6.data.all.0] 넘으면 전부 합산
+[scenes.6.data.side.0.0] 세후 월 70.8만원
+[scenes.6.data.side.0.1] 미국 상장 · 국내 상장은 70.5만원
+[scenes.6.data.target.1] 오늘 목표 연 1,561만원
+[scenes.6.lines.0.text] 계산을 해 보니, 제일 먼저 부딪히는 건 세금이 아니었어요. 건강보험료였어요.
+[scenes.6.lines.1.text] 이자와 배당을 합쳐 1년에 1,000만원까지는 건강보험료에 안 들어가요.
+[scenes.6.lines.1.cap] 지역가입자 금융소득 연 1,000만원 이하 → 보험료 소득에 넣지 않음 (국민건강보험법 시행규칙 제44조)
+[scenes.6.lines.2.text] 그럼 조금이라도 넘으면 어떻게 될까요? 넘은 몫만이 아니라, 전부가 들어갑니다.
+[scenes.6.lines.2.cap] 1,000만원 넘으면 이자·배당 전액 합산
+[scenes.6.lines.3.text] 이 선을 매달 받는 돈으로 바꿔 보면, 세금 떼고 한 달에 70만원 정도예요.
+[scenes.6.lines.3.cap] 연 세전 1,000만원 = 세후 월 708,333원(미국 상장) · 705,000원(국내 상장)
+[scenes.6.lines.4.text] 그러니까 그 아래까지는 건강보험료 걱정이 거의 없는 거죠.
+[scenes.6.lines.5.text] 근데 오늘 목표는 그보다 크죠. 선을 넘어요.
+[scenes.7.key] premium
+[scenes.7.title] 선을 넘으면 붙는 몫
+[scenes.7.sub] 월 100만원을 손에 쥐려면 — 미국 상장 예시
+[scenes.7.source] 국민건강보험법 시행규칙 제44조 · 시행령 제41조 · 국민건강보험공단(보험료율 7.19%·장기요양) · calc_out
+[scenes.7.chapter] 2장
+[scenes.7.data.head] 1년 · 단위 원
+[scenes.7.data.rows.0.0] 연 세전 분배
+[scenes.7.data.rows.0.2] in
+[scenes.7.data.rows.1.0] 세금(미국 원천징수)
+[scenes.7.data.rows.1.1] −15%
+[scenes.7.data.rows.1.2] tax
+[scenes.7.data.rows.2.0] 건강보험료(장기요양 포함)
+[scenes.7.data.rows.2.1] −1,269,984
+[scenes.7.data.rows.2.2] tax
+[scenes.7.data.rows.3.0] 손에 남는 돈
+[scenes.7.data.rows.3.1] 월 100만원 × 12
+[scenes.7.data.rows.3.2] net
+[scenes.7.data.count.0] 월 22,800원
+[scenes.7.data.count.1] 월 105,832원
+[scenes.7.data.count.2] 하한
+[scenes.7.data.count.3] 재산·다른 소득 없을 때
+[scenes.7.data.callout.0] 피부양자: 소득만 보면 연 2,000만원까지 따로 안 냄
+[scenes.7.lines.0.text] 다른 소득도 재산도 없는 분이라면, 건강보험료가 최저 금액에서 10만원대로 뛰어요.
+[scenes.7.lines.0.cap] 월 22,800원(하한) → 월 105,832원(총 보험료) (건강보험 7.19% + 장기요양, 연 세전 분배 1,561만원 기준 · 하한 몫까지 더 버는 걸로 넉넉히 잡음)
+[scenes.7.lines.1.text] 자녀 건강보험에 피부양자로 올라가 있는 분이라면, 소득만 보면 연 2,000만원까지는 이 보험료를 따로 내지 않습니다.
+[scenes.7.lines.1.cap] 피부양자 소득 요건 연 2,000만원 이하 · 재산 요건은 따로 (국민건강보험공단)
+[scenes.7.lines.2.text] 그래서 목표 금액을 손에 쥐려면, 그 보험료 몫까지 더 벌어야 하는 거예요.
+[scenes.8.key] when
+[scenes.8.title] 보험료는 1년 늦게 따라온다
+[scenes.8.sub] 올해 받은 배당 → 내년 11월분 고지서부터
+[scenes.8.source] 국민건강보험법 시행령 제41조③
+[scenes.8.chapter] 2장
+[scenes.8.data.segs.0.0] 2026년
+[scenes.8.data.segs.0.1] 배당 받는 해
+[scenes.8.data.segs.0.2] ink
+[scenes.8.data.segs.1.0] 2027년 1~10월
+[scenes.8.data.segs.1.1] 고지서 그대로
+[scenes.8.data.segs.1.2] dim
+[scenes.8.data.segs.2.0] 2027년 11월~
+[scenes.8.data.segs.2.1] 이때부터 반영
+[scenes.8.data.segs.2.2] accent
+[scenes.8.data.note.0] 첫해에 괜찮아도 1년쯤 뒤 바뀜
+[scenes.8.lines.0.text] 하나 더 있어요. 건강보험료는 바로 오르지 않아요.
+[scenes.8.lines.1.text] 올해 받은 배당은 내년 늦가을 고지서부터 반영되거든요.
+[scenes.8.lines.1.cap] 2026년 배당 → 2027년 11월분 보험료부터 (국민건강보험법 시행령 제41조)
+[scenes.8.lines.2.text] 첫해에 괜찮았다고 안심하면, 1년쯤 지나서 고지서가 바뀌는 셈이죠.
+[scenes.9.key] flow
+[scenes.9.title] 거꾸로 계산하는 법
+[scenes.9.sub] 오른쪽 목표에서 왼쪽 필요한 돈으로
+[scenes.9.source] calc_out(파이어맵 계산) · 건보·세율은 2장
+[scenes.9.chapter] 3장
+[scenes.9.data.boxes.0.0] 필요한 돈
+[scenes.9.data.boxes.0.1] = 연 세전 분배 ÷ 분배율
+[scenes.9.data.boxes.1.0] 연 세전 분배
+[scenes.9.data.boxes.1.1] 15,611,746원
+[scenes.9.data.boxes.2.0] 월 100만원
+[scenes.9.data.boxes.2.1] 세금·건보료 뗀 뒤
+[scenes.9.data.note.0] 국내 상장은 15,693,413원
+[scenes.9.lines.0.text] 이제 상품을 하나씩 넣어 볼게요.
+[scenes.9.lines.1.text] 필요한 돈은 결국 이걸로 정해져요. 넣은 돈에서 1년에 얼마가 나오느냐.
+[scenes.9.lines.1.cap] 필요한 돈 = 1년 세전 분배금 ÷ 분배율
+[scenes.9.lines.2.text] 세금과 건강보험료를 다 떼고 매달 그만큼 남으려면, 1년에 세전으로 1,560만원 정도가 나와야 합니다.
+[scenes.9.lines.2.cap] 미국 상장 15,611,746원 · 국내 상장 15,693,413원
+[scenes.10.key] schd
+[scenes.10.title] SCHD — 월 100만원이면
+[scenes.10.sub] 세금·건보료 뗀 뒤 · 지난 1년 실제 분배
+[scenes.10.source] 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스)
+[scenes.10.chapter] 3장
+[scenes.10.data.name] SCHD
+[scenes.10.data.desc] 미국 배당주를 모아 담은 ETF · 미국 상장
+[scenes.10.data.rate] 3.22%
+[scenes.10.data.rateCalc] 분배금 1.0541달러 ÷ 종가 32.72달러
+[scenes.10.data.freq] 연 4회(분기)
+[scenes.10.data.need] 4.85억원
+[scenes.10.lines.0.text] 먼저 SCHD예요. 미국 배당주를 모아 담은 ETF죠.
+[scenes.10.lines.1.text] 지난 1년 분배율은 3.2%였어요.
+[scenes.10.lines.1.cap] 분배금 1.0541달러 ÷ 종가 32.72달러 = 3.22%
+[scenes.10.lines.2.text] 그래서 필요한 돈은 4억 8천만원 정도입니다.
+[scenes.10.lines.2.cap] SCHD · 4.85억원
+[scenes.11.key] cal
+[scenes.11.title] SCHD는 매달 주지 않는다
+[scenes.11.sub] 지난 1년 분배 4회 · 1주당 달러
+[scenes.11.source] 찰스슈왑 SCHD 분배금 표 · 야후 파이낸스
+[scenes.11.chapter] 3장
+[scenes.11.data.note.0] 석 달 치가 한꺼번에 · 나눠 쓰는 건 내 몫
+[scenes.11.lines.0.text] 근데 SCHD, 매달 줄까요? 아닙니다. 분기마다 줘요.
+[scenes.11.lines.0.cap] SCHD 분배 · 2025년 12월 · 2026년 3월 · 6월 · 9월
+[scenes.11.lines.1.text] 매달이 아니라 석 달 치가 한꺼번에 들어와요. 나눠 쓰는 건 내 몫이고요.
+[scenes.12.key] jepq
+[scenes.12.title] JEPQ — 월 100만원이면
+[scenes.12.sub] 세금·건보료 뗀 뒤 · 지난 1년 실제 분배
+[scenes.12.source] 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스)
+[scenes.12.chapter] 3장
+[scenes.12.data.name] JEPQ
+[scenes.12.data.desc] 나스닥 주식 + 옵션 매도(커버드콜) · 미국 상장
+[scenes.12.data.rate] 11.28%
+[scenes.12.data.rateCalc] 분배금 6.88454달러 ÷ 종가 61.04달러
+[scenes.12.data.freq] 연 12회
+[scenes.12.data.need] 1.38억원
+[scenes.12.lines.0.text] 다음은 JEPQ예요. 나스닥 주식을 들고 옵션을 팔아 분배금을 만드는 커버드콜 ETF예요.
+[scenes.12.lines.1.text] 지난 1년 분배율이 11%를 넘었습니다. 성격이 꽤 다른 상품이죠.
+[scenes.12.lines.1.cap] 분배금 6.88454달러 ÷ 종가 61.04달러 = 11.28%
+[scenes.12.lines.2.text] 그래서 필요한 돈이 확 줄어듭니다. 1억 4천만원이 조금 안 돼요.
+[scenes.12.lines.2.cap] JEPQ · 1.38억원
+[scenes.13.key] ace
+[scenes.13.title] ACE 미국배당다우존스 — 월 100만원이면
+[scenes.13.sub] 세금·건보료 뗀 뒤 · 지난 1년 실제 분배
+[scenes.13.source] 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스)
+[scenes.13.chapter] 3장
+[scenes.13.data.name] ACE 미국배당다우존스
+[scenes.13.data.desc] Dow Jones U.S. Dividend 100 · 국내 상장
+[scenes.13.data.rate] 3.08%
+[scenes.13.data.rateCalc] 분배금 441원 ÷ 종가 14,330원
+[scenes.13.data.freq] 연 12회
+[scenes.13.data.need] 5.10억원
+[scenes.13.data.note.0] 같은 지수 상품은 다른 운용사에도 있음 · 예시 1종
+[scenes.13.lines.0.text] 마지막은 우리나라에 상장된 상품, ACE 미국배당다우존스예요.
+[scenes.13.lines.1.text] SCHD와 같은 계열의 지수를 따라가는데, 분배금은 매달 줍니다.
+[scenes.13.lines.2.text] 같은 지수를 따르는 국내 상품은 다른 운용사에도 있습니다. 여기선 예시로 하나만 넣었습니다.
+[scenes.13.lines.2.cap] 기초지수 Dow Jones U.S. Dividend 100 · 같은 지수를 따르는 국내 상품은 다른 운용사에도 있음
+[scenes.13.lines.3.text] 지난 1년 분배율은 3.1%였어요.
+[scenes.13.lines.3.cap] 분배금 441원 ÷ 종가 14,330원 = 3.08%
+[scenes.13.lines.4.text] 필요한 돈은 5억 1천만원 정도. 셋 중에 가장 많습니다.
+[scenes.13.lines.4.cap] ACE 미국배당다우존스 · 5.10억원
+[scenes.14.key] three
+[scenes.14.title] 월 100만원에 필요한 돈 — 평균 기준
+[scenes.14.sub] 세금·건보료 뗀 뒤 · 지난 1년 평균 분배
+[scenes.14.source] calc_out(파이어맵 계산) · 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스)
+[scenes.14.chapter] 3장
+[scenes.14.data.bars.0.0] JEPQ
+[scenes.14.data.bars.0.2] 1.38억원
+[scenes.14.data.bars.0.4] accent
+[scenes.14.data.bars.1.0] SCHD
+[scenes.14.data.bars.1.2] 4.85억원
+[scenes.14.data.bars.1.4] ink
+[scenes.14.data.bars.2.0] ACE 미국배당다우존스
+[scenes.14.data.bars.2.2] 5.10억원
+[scenes.14.data.bars.2.4] ink
+[scenes.14.data.note.0] 분배율이 높을수록 필요한 돈이 적다?
+[scenes.14.data.note2.0] 그런데 이건 평균
+[scenes.14.lines.0.text] 여기까지만 보면 답은 쉬워 보이죠. 분배율이 높은 쪽이 필요한 돈이 적다.
+[scenes.14.lines.1.text] 근데 이건 평균으로 잰 거예요. 실제 통장에는 평균이 들어오지 않잖아요.
+[scenes.15.key] jm
+[scenes.15.title] JEPQ 1주당 분배금, 달마다
+[scenes.15.sub] 지난 12회 · 달러 · 1월분은 2025-12-31 배당락
+[scenes.15.source] 나스닥 배당 이력 · 야후 파이낸스
+[scenes.15.chapter] 4장
+[scenes.15.data.labels.0] 11월
+[scenes.15.data.labels.1] 12월
+[scenes.15.data.labels.2] 1월
+[scenes.15.data.labels.3] 2월
+[scenes.15.data.labels.4] 3월
+[scenes.15.data.labels.5] 4월
+[scenes.15.data.labels.6] 5월
+[scenes.15.data.labels.7] 6월
+[scenes.15.data.labels.8] 7월
+[scenes.15.data.labels.9] 8월
+[scenes.15.data.labels.10] 9월
+[scenes.15.data.labels.11] 10월
+[scenes.15.data.ratio.0] 최대 ÷ 최소 1.51배
+[scenes.15.data.jump.0] 1.38억원
+[scenes.15.data.jump.1] 1.71억원
+[scenes.15.data.jump.2] ×1.23
+[scenes.15.lines.0.text] 매달 들어온 돈을 하나씩 펼쳐 보겠습니다.
+[scenes.15.lines.1.text] JEPQ는 가장 적은 달이 2월이었어요.
+[scenes.15.lines.1.cap] JEPQ 1주당 · 2026년 2월 0.46572달러(가장 적음) · 2026년 8월 0.70497달러(가장 많음)
+[scenes.15.lines.2.text] 가장 많은 달과 비교하면 차이가 꽤 나요.
+[scenes.15.lines.3.text] 생활비는 가장 적게 들어온 달에도 나가죠. 그래서 그 달에도 목표 금액이 남게, 다시 계산했습니다.
+[scenes.15.lines.4.text] 그러면 JEPQ는 1억 7천만원 정도로 늘어나요.
+[scenes.15.lines.4.cap] JEPQ · 가장 적은 달 기준 1.71억원 (평균 기준의 1.23배)
+[scenes.16.key] am
+[scenes.16.title] ACE 미국배당다우존스 1주당 분배금, 달마다
+[scenes.16.sub] 지난 12회 · 원 · 지급기준일 달
+[scenes.16.source] 한국투자신탁운용 공식 분배 기록 · 야후 파이낸스
+[scenes.16.chapter] 4장
+[scenes.16.data.texts.0] 37원
+[scenes.16.data.texts.1] 21원
+[scenes.16.data.texts.2] 53원
+[scenes.16.data.texts.3] 39원
+[scenes.16.data.texts.4] 24원
+[scenes.16.data.texts.5] 46원
+[scenes.16.data.texts.6] 44원
+[scenes.16.data.texts.7] 27원
+[scenes.16.data.texts.8] 40원
+[scenes.16.data.texts.9] 50원
+[scenes.16.data.texts.10] 25원
+[scenes.16.data.texts.11] 35원
+[scenes.16.data.ratio.0] 최대 ÷ 최소 2.52배
+[scenes.16.data.jump.0] 5.10억원
+[scenes.16.data.jump.1] 8.92억원
+[scenes.16.data.jump.2] ×1.75 · 최소값
+[scenes.16.lines.0.text] ACE 미국배당다우존스는 차이가 더 커요.
+[scenes.16.lines.1.text] 가장 적은 달은 1주에 21원이었는데요.
+[scenes.16.lines.1.cap] ACE 1주당 · 2025년 11월 21원(가장 적음) · 2025년 12월 53원(가장 많음)
+[scenes.16.lines.2.text] 가장 많은 달은 그 두 배를 훌쩍 넘었어요.
+[scenes.16.lines.3.text] 그래서 가장 적은 달 기준으로 다시 재면, 거의 9억이 필요합니다.
+[scenes.16.lines.3.cap] ACE 미국배당다우존스 · 가장 적은 달 기준 8.92억원 (평균 기준의 1.75배) · 이 경우 연 세전 분배 약 2,746만원 → 2,000만원 선 넘음, 추가 세금·건보 계산 안 함 = 최소값
+[scenes.17.key] pair
+[scenes.17.title] 평균으로 잴까, 가장 적은 달로 잴까
+[scenes.17.sub] 월 100만원에 필요한 돈 · 억원
+[scenes.17.source] calc_out(파이어맵 계산) · 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스)
+[scenes.17.chapter] 4장
+[scenes.17.data.groups.0.0] JEPQ
+[scenes.17.data.groups.0.1.0.1] 1.38억원
+[scenes.17.data.groups.0.1.0.2] ink
+[scenes.17.data.groups.0.1.1.1] 1.71억원
+[scenes.17.data.groups.0.1.1.2] accent
+[scenes.17.data.groups.1.0] SCHD
+[scenes.17.data.groups.1.1.0.1] 4.85억원
+[scenes.17.data.groups.1.1.0.2] ink
+[scenes.17.data.groups.2.0] ACE 미국배당다우존스
+[scenes.17.data.groups.2.1.0.1] 5.10억원
+[scenes.17.data.groups.2.1.0.2] ink
+[scenes.17.data.groups.2.1.1.1] 8.92억원
+[scenes.17.data.groups.2.1.1.2] accent
+[scenes.17.data.legend.0.0] 평균 기준
+[scenes.17.data.legend.0.1] ink
+[scenes.17.data.legend.1.0] 가장 적은 달 기준
+[scenes.17.data.legend.1.1] accent
+[scenes.17.data.chip.1] 분기 1회 · 나눠 쓰기 전제
+[scenes.17.data.save.0] 많은 달에 남겨 두면 → 평균 기준으로
+[scenes.17.lines.0.text] 월배당이라는 이름만 보면 매달 비슷한 돈이 나올 것 같지만, 실제 기록은 달마다 꽤 달랐습니다.
+[scenes.17.lines.1.text] 그러니까 월배당으로 생활비를 짠다면, 평균 말고 가장 적은 달을 먼저 보셔야 해요.
+[scenes.17.lines.2.text] 아니면 많이 나온 달에 남겨 두었다가 적은 달에 채우면, 필요한 돈은 다시 평균 기준인 5억 선으로 돌아옵니다.
+[scenes.17.lines.3.text] 결국 SCHD처럼 나눠 쓰는 계산이죠.
+[scenes.18.key] gauge2
+[scenes.18.title] 목표를 올리면 두 번째 선
+[scenes.18.sub] 이자 + 배당, 1년 합계 · 세금 떼기 전
+[scenes.18.source] 소득세법 제14조 제3항 제6호 · 국민건강보험공단 피부양자 소득 요건 · 국민건강보험법 시행규칙 제44조
+[scenes.18.chapter] 5장
+[scenes.18.data.lines.0.1] 1,000만원 · 건보료
+[scenes.18.data.lines.1.1] 2,000만원 · 종합과세 · 피부양자
+[scenes.18.data.fill.0.2] ink
+[scenes.18.data.fill.1.2] rise
+[scenes.18.data.side.0.0] 월 200만원 → 연 세전 3,122만원
+[scenes.18.data.side.0.1] 미국 상장 31,223,493원 · 국내 31,386,827원
+[scenes.18.data.all.0] 여기부터 사람마다 다름 → 최소값
+[scenes.18.lines.0.text] 이번엔 목표를 올려 볼게요.
+[scenes.18.lines.1.text] 매달 200만원이면 1년 세전 분배금이 훨씬 커지는데요.
+[scenes.18.lines.1.cap] 월 200만원 → 연 세전 31,223,493원(미국 상장) · 31,386,827원(국내 상장)
+[scenes.18.lines.2.text] 여기서 두 번째 선을 넘어요.
+[scenes.18.lines.3.text] 이자와 배당이 1년에 2,000만원을 넘으면, 다른 소득과 합쳐서 세금을 다시 계산하는 종합과세 대상이 되거든요.
+[scenes.18.lines.3.cap] 금융소득 종합과세 기준 연 2,000만원 (소득세법 제14조 제3항 제6호)
+[scenes.18.lines.4.text] 자녀 건강보험에 피부양자로 올라가 있던 분은, 이 선을 넘으면 자격도 잃습니다.
+[scenes.18.lines.4.cap] 피부양자 소득 요건 연 2,000만원 이하 (국민건강보험공단)
+[scenes.18.lines.5.text] 다른 소득이 얼마인지에 따라 세금이 달라져서, 여기서부터는 사람마다 숫자가 달라요.
+[scenes.18.lines.6.text] 그래서 지금부터 보여 드리는 금액은 '적어도 이만큼'이에요.
+[scenes.19.key] table
+[scenes.19.title] 월 200만원 · 300만원이면
+[scenes.19.sub] 모두 최소값 — 2,000만원 넘는 추가 세금은 사람마다 달라 빼고 계산
+[scenes.19.source] calc_out(파이어맵 계산) · 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스)
+[scenes.19.chapter] 5장
+[scenes.19.data.cols.0] JEPQ
+[scenes.19.data.cols.1] SCHD
+[scenes.19.data.cols.2] ACE 미국배당다우존스
+[scenes.19.data.rows.0.0] 월 200만원
+[scenes.19.data.rows.0.1.0] 2.77억원
+[scenes.19.data.rows.0.1.1] 9.69억원
+[scenes.19.data.rows.0.1.2] 10.20억원
+[scenes.19.data.rows.1.0] 월 300만원
+[scenes.19.data.rows.1.1.0] 4.15억원
+[scenes.19.data.rows.1.1.1] 14.54억원
+[scenes.19.data.rows.1.1.2] 15.30억원
+[scenes.19.data.stamp] 최소
+[scenes.19.lines.0.text] 그 경우 JEPQ로도 적어도 2억 8천만원 정도가 필요합니다.
+[scenes.19.lines.0.cap] 월 200만원 · JEPQ 2.77억원 · SCHD 9.69억원 · ACE 10.20억원 (모두 최소값)
+[scenes.19.lines.1.text] SCHD와 ACE는 10억 안팎이고요.
+[scenes.19.lines.2.text] 목표를 300만원으로 올리면 JEPQ도 4억이 넘어요.
+[scenes.19.lines.2.cap] 월 300만원 · JEPQ 4.15억원 · SCHD 14.54억원 · ACE 15.30억원 (모두 최소값)
+[scenes.19.lines.3.text] 분배율이 높은 상품이 아니면 15억 가까이 필요하다는 얘기죠.
+[scenes.20.key] total
+[scenes.20.title] 1년 전 1억을 넣었다면
+[scenes.20.sub] 분배금 + 가격 변화 · 원화 · 세전 · 분배금은 끝날 환율로 바꾼 근사
+[scenes.20.source] 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스) · 한국은행 ECOS 731Y001
+[scenes.20.chapter] 6장
+[scenes.20.data.bars.0.0] SCHD
+[scenes.20.data.bars.0.2] +19.46%
+[scenes.20.data.bars.0.4] accent
+[scenes.20.data.bars.0.5] 119,456,864원
+[scenes.20.data.bars.1.0] ACE 미국배당다우존스
+[scenes.20.data.bars.1.2] +18.55%
+[scenes.20.data.bars.1.4] ink
+[scenes.20.data.bars.1.5] 118,547,352원
+[scenes.20.data.bars.2.0] JEPQ
+[scenes.20.data.bars.2.2] +14.65%
+[scenes.20.data.bars.2.4] ink
+[scenes.20.data.bars.2.5] 114,649,910원
+[scenes.20.data.note.0] 어느 쪽이 가장 많이 남았을까?
+[scenes.20.lines.0.text] 지금까지만 보면 JEPQ가 압도적이에요. 같은 목표에 필요한 돈이 가장 적거든요.
+[scenes.20.lines.1.text] 그럼 작년에 같은 돈을 넣었다면, 지금 어느 쪽이 가장 많이 남았을까요?
+[scenes.20.lines.2.text] 분배금에 가격 변화까지 합쳐 봤어요. 원화로요.
+[scenes.20.lines.2.cap] 2025-10-02 → 2026-10-02 · 원화 · 세전 · 분배금은 끝날 환율로 바꾼 근사
+[scenes.20.lines.3.text] 1등은 SCHD였어요. 1억이 1억 2천만원 가까이 됐죠.
+[scenes.20.lines.3.cap] SCHD 합계 +19.46% · 가격 +15.73% · 분배 3.73%
+[scenes.20.lines.4.text] ACE 미국배당다우존스도 비슷했습니다.
+[scenes.20.lines.4.cap] ACE 미국배당다우존스 합계 +18.55% · 가격 +15.01% · 분배 3.54%
+[scenes.20.lines.5.text] JEPQ는 셋 중에 가장 적었어요.
+[scenes.20.lines.5.cap] JEPQ 합계 +14.65% · 가격 +3.03% · 분배 11.62%
+[scenes.21.key] split
+[scenes.21.title] 분배금과 가격 변화, 따로 보면
+[scenes.21.sub] 1년 · 원화 · 세전 · %
+[scenes.21.source] 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스) · 한국은행 ECOS 731Y001
+[scenes.21.chapter] 6장
+[scenes.21.data.groups.0.0] JEPQ
+[scenes.21.data.groups.0.1.0.1] +3.03%
+[scenes.21.data.groups.0.1.0.2] ink
+[scenes.21.data.groups.0.1.1.1] 11.62%
+[scenes.21.data.groups.0.1.1.2] accent
+[scenes.21.data.groups.1.0] SCHD
+[scenes.21.data.groups.1.1.0.1] +15.73%
+[scenes.21.data.groups.1.1.0.2] ink
+[scenes.21.data.groups.1.1.1.1] 3.73%
+[scenes.21.data.groups.1.1.1.2] accent
+[scenes.21.data.groups.2.0] ACE 미국배당다우존스
+[scenes.21.data.groups.2.1.0.1] +15.01%
+[scenes.21.data.groups.2.1.0.2] ink
+[scenes.21.data.groups.2.1.1.1] 3.54%
+[scenes.21.data.groups.2.1.1.2] accent
+[scenes.21.data.legend.0.0] 가격 변화
+[scenes.21.data.legend.0.1] ink
+[scenes.21.data.legend.1.0] 분배금
+[scenes.21.data.legend.1.1] accent
+[scenes.21.data.save.0] 커버드콜: 오를 때 몫 일부를 내주고 분배금을 만듦
+[scenes.21.data.save2.0] 지난 기록 — 옆으로 기는 해엔 반대일 수도
+[scenes.21.lines.0.text] 분배금은 가장 많이 받았는데, 가격은 거의 안 올랐거든요.
+[scenes.21.lines.1.text] 커버드콜은 옵션을 팔아 분배금을 만드는 대신, 주가가 많이 오를 때 그 몫을 일부 내줍니다.
+[scenes.21.lines.2.text] 그러니까 분배율이 높다는 건, 필요한 돈이 적다는 뜻이면서 동시에 원금이 덜 자랄 수 있다는 뜻이에요.
+[scenes.21.lines.3.text] 물론 지난 기록일 뿐입니다. 장이 옆으로 기는 해에는 결과가 반대로 나올 수도 있고요.
+[scenes.22.key] sum
+[scenes.22.title] 정리
+[scenes.22.sub] 월 100만원 · 세금·건보료 뗀 뒤 · 2026-10-02 기준
+[scenes.22.source] calc_out(파이어맵 계산) · 운용사·거래소 분배 기록(나스닥·찰스슈왑·한국투자신탁운용) · 거래소 종가(야후 파이낸스) · 과거 값 · 미래 보장 아님 · 투자 권유 아님
+[scenes.22.chapter] 7장
+[scenes.22.data.cols.0] JEPQ
+[scenes.22.data.cols.1] SCHD
+[scenes.22.data.cols.2] ACE 미국배당다우존스
+[scenes.22.data.rows.0.0] 평균 기준
+[scenes.22.data.rows.0.1.0] 1.38억원
+[scenes.22.data.rows.0.1.1] 4.85억원
+[scenes.22.data.rows.0.1.2] 5.10억원
+[scenes.22.data.rows.1.0] 가장 적은 달 기준
+[scenes.22.data.rows.1.1.0] 1.71억원
+[scenes.22.data.rows.1.1.1] 분기 지급
+[scenes.22.data.rows.1.1.2] 8.92억원
+[scenes.22.data.rows.2.0] 1년 총수익
+[scenes.22.data.rows.2.1.0] +14.65%
+[scenes.22.data.rows.2.1.1] +19.46%
+[scenes.22.data.rows.2.1.2] +18.55%
+[scenes.22.data.top.0] 세후 월 70만원쯤부터 건보료
+[scenes.22.lines.0.text] 정리해 볼게요.
+[scenes.22.lines.1.text] 첫째, 세금 떼고 월 70만원 정도부터 건강보험료가 붙어요. 조금만 넘어도 전부가 들어가죠.
+[scenes.22.lines.2.text] 둘째, 월배당은 매달 같은 돈이 아닙니다. 가장 적은 달로 다시 재면 필요한 돈이 크게 늘어요.
+[scenes.22.lines.3.text] 셋째, 분배금이 많은 상품은 필요한 돈이 적은 대신 원금이 덜 자랄 수 있어요.
+[scenes.23.key] end
+[scenes.23.title] 내 목표 금액으로 다시 계산
+[scenes.23.sub] firemap.kr 계산기 · 설명란 링크
+[scenes.23.source] 출처·기준일 전부 설명란 · 과거 값 · 미래 보장 아님 · 투자 권유 아님
+[scenes.23.chapter] 7장
+[scenes.23.data.cta] firemap.kr
+[scenes.23.data.ctaSub] 내 목표 금액을 넣어 보세요
+[scenes.23.lines.0.text] 설명란 파이어맵 계산기에 내 목표 금액을 넣어 보세요.
+[scenes.23.lines.0.cap] firemap.kr 계산기 · 설명란 링크
+[scenes.23.lines.1.text] 오늘 숫자는 운용사·거래소 기록과 법령 원문으로 계산했고, 출처와 기준일은 설명란에 모두 적어 뒀습니다.
+[scenes.23.lines.2.text] 특정 상품을 사거나 팔라는 뜻은 아니고, 지난 기록으로 계산한 예시입니다.
+[script] script.v2.md
+
+## 화면 코드: video/src/M1.tsx
+[M1.tsx] 월 100만원에 필요한 돈
+
+## 화면 코드: video/src/parts/fm.tsx
+[fm.tsx] ${e}억 ${r.toLocaleString()}만원
+[fm.tsx] ${e}억원
+[fm.tsx] ${r.toLocaleString()}만원
+[fm.tsx] 1년 뒤 남은 돈
+[fm.tsx] 원금
+[fm.tsx] 떨어진 해
+[fm.tsx] 세금·건보료
+[fm.tsx] 월 100만원 원금
+[fm.tsx] 파이어맵
+[fm.tsx] 파이어맵
+
+## 화면 코드: video/src/parts/reverse.tsx
+[reverse.tsx] 만원
+[reverse.tsx] 지난 1년 분배율
+[reverse.tsx] 필요한 돈

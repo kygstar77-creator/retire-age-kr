@@ -27,3 +27,7 @@
 
 ## parts/receipt.tsx (2026-10-03 10:32, PD · R-1 1억의 1년 영수증에서 처음)
 - ReceiptPaper(영수증 종이: 위에서 내려오며 줄마다 인쇄, 세금 빨강·통장 굵은 주황·빈 줄 빗금) · Stamp('확인 안 함' 비스듬 도장) · DotStrip(상품 하나 = 점 하나 띠, 중앙·최저·최고) · Coins(분배금 동전 n개 떨어짐). X-SERIES-1 영수증 다음 편에 그대로 쓴다.
+
+## parts/reverse.tsx (2026-10-06 02:44, PD · M-1 월배당 거꾸로에서 처음)
+- RuleCards(규칙 카드 줄, 안 나온 카드는 점선 자리표) · Gauge(가로 문턱 게이지: 문턱선·차오름·목표 꼬리표) · Timeline(구간 띠 3칸) · FlowBoxes(거꾸로 화살표 상자) · ProductCard(상품 카드 + 분배율·필요한 돈) · Calendar12(12칸 달력·동전) · GroupBars(묶음 막대, 나란히 — 쌓지 않음) · Grid(표·칸 도장·강조 칸). 쓰임 video/src/M1.tsx, 재료 ep/M-1/m1props.py
+- 2026-10-06 02:44 PD · 공용 고침: motion/TallyBars 꼬리표 모드에서 valueText ''면 꼬리표 안 그림(빈 검은 점 생김) · motion/TallyFrame 자막([자막]) 길면 줄바꿈(nowrap이라 판 밖으로 넘쳤음)

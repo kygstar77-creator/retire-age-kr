@@ -27,7 +27,7 @@ export const TallyBars: React.FC<{bars: TallyBar[]; x: number; y: number; w: num
           return (
             <div key={i}>
               <div style={{position: 'absolute', left: i * (bw + g), width: bw, bottom: 0, top: h - bottom - bh, height: bh, background: b.color ?? T.ink2, borderRadius: '10px 10px 0 0'}} />
-              {tags ? (
+              {tags ? (!b.valueText ? null :
                 <div style={{position: 'absolute', left: i * (bw + g) + bw / 2, top: h - bottom - bh - 14, transform: `translate(-50%, -100%) scale(${0.7 + 0.3 * vo})`, opacity: vo,
                   ...F, fontWeight: 700, fontSize: valueSize * 0.78, color: '#fff', background: b.color === T.accent || b.color === T.rise ? b.color : T.ink, borderRadius: 8, padding: '4px 12px', whiteSpace: 'nowrap'}}>{b.valueText}</div>
               ) : (

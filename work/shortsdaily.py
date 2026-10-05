@@ -114,7 +114,9 @@ def build_desc(spec):
     """설명란 글. spec "cafe_line": false면 카페 주소 줄을 뺀다(없으면 true — 기존 쇼츠 그대로).
     2026-10-01 F5 sevpay: 계산기 utm 링크 1개 원칙인데 publish가 카페 주소를 자동으로 붙여 링크가 2개가 됐다."""
     cafe = ('금리·예금·연금·부동산 숫자를 매일 정리하는 곳 — 파이어맵 카페\n' + CAFE + '\n\n') if spec.get('cafe_line', True) else ''
-    return spec['yt_desc'].strip() + '\n\n' + '출처: ' + spec['source'] + '\n\n' + cafe + ' '.join('#' + h for h in spec['hashtags'])
+    # 10/5 audit xWAnTpGJTHg: source가 '출처 …'로 시작하면 '출처: 출처'가 됐다 — 앞머리 '출처'를 떼고 붙인다
+    src = re.sub(r'^\s*출처\s*[:：]?\s*', '', spec['source'])
+    return spec['yt_desc'].strip() + '\n\n' + '출처: ' + src + '\n\n' + cafe + ' '.join('#' + h for h in spec['hashtags'])
 
 def publish(sp):
     spec = json.load(open(sp, encoding='utf-8'))

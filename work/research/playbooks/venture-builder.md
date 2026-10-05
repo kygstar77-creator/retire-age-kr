@@ -13,3 +13,5 @@
 - 2026-10-01 브라우저 창 크기를 바꾼 뒤 첫 스크린샷은 이전 화면일 수 있다 → 한 번 더 찍는다.
 - 2026-10-01 firemap_events 시각 열은 `created_at`이 아니라 `ts`.
 - 2026-10-05 새 사이트는 만든 날 IndexNow(api.indexnow.org·bing·yandex·네이버 searchadvisor 4곳, 키 파일은 루트)를 바로 쏜다 — 공개 4일 동안 '발견' 길 없이 화면 점수만 올리고 있었다. 구글은 IndexNow를 안 받으니 서치콘솔은 따로.
+
+- (10/05 16:03) firemap.kr로 가는 `dev:main` 푸시 전 `py -3.12 work/shipgate.py` — 묶음 안 남의 커밋까지 커밋별 편집·디자인 통과를 본다. NO가 남의 커밋이면 푸시 미루고 그 담당에게 [요청]. 통과 기록은 work/research/shipgate.md 한 줄.

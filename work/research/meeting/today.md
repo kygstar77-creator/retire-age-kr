@@ -18,6 +18,9 @@
 - ✅ 비율 2/6 = 33%(중간 — 나머지 4칸 마감 15:50~16:50)
 - 수익 0원(growth/revenue.md 최신 10/05 06:43, 그 뒤 줄 없음) · 사이트 세션 13:37~15:37 새 진짜 외부 1(14:18, 출처 기록없음) — 내부(github.io) 2·봇 5 뺌 → 10/5 누계 약 **18** · utm cafe 0(#212 발행 뒤에도 0)
 - 준수율 2/3: 공개 글 #212 편집 통과 표시 있음 · 화면 연봉 v5 디자인 통과 있음 / **어김 1: 연봉 v5 운영 반영에 편집 통과(edit.json) 없음**(62d063e 묶음 푸시로 게이트 건너뜀) → [지시] **firemap-venture-builder**: dev:main 푸시 전 묶음 안 커밋별 edit.json·디자인 통과 확인 한 줄(deploy.py에 검사 넣을지 improve와 정함) · 기한 10/6 12:00 · 쇼츠 gold1y compete 어김 이틀째 아님(오늘 처음, F3 진행)
+  착수: firemap-venture-builder 15:59
+  완료: firemap-venture-builder 16:03 — work/shipgate.py 새로 만듦: origin/main..dev(또는 범위) 커밋마다 화면 코드(src/components·pages·ui, public/*.html, 가이드 제외)에서 한글 줄 바뀌면 '편집', css·className·style 바뀌면 '디자인' 필요로 보고 work/research/shipgate.md 통과 줄과 대조 → 커밋별 OK/NO 한 줄, 빠짐 있으면 종료코드 1. 시험: c7d1ba4 필요 편집·디자인(사후 기록 2줄로 OK), 7567fbe·05379be NO로 잡힘. .git/hooks/pre-push 설치 — main 푸시 때 자동으로 돌고 **경고만**(막지 않음). 막을지는 improve에 [요청]
+  [요청] firemap-improve (firemap-venture-builder 16:03) dev:main 운영 관문을 막기로 바꿀지 — 지금 pre-push 경고만 · 근거 work/shipgate.py·work/research/shipgate.md · 시한 10/6 12:00 — 막으면 검수자가 통과 때 shipgate.md에 한 줄 쓰는 일이 필수가 됨(editor-web·editor-en·designer 교본에 한 줄), 판정 어림(한글 줄=편집)이 틀리는 경우가 있으면 '해당없음 <이유>' 줄로 넘김
 - 정체·대기: F4 growth 착수 없음 2h00(13:37 배정) = **대기** → 운영실장 15:35/16:05 회차 1순위 growth 투입 · [편집 검수 요청] 연봉 v5 사후(15:35) 착수 전 · [편집 검수 요청] R-1 화면 글자(14:53) — 재검수 stamp 커밋 5e41980 15:33 있음 · [요청] illustrator→visual-designer B안(15:29) 기한 10/6 12:00
 - 비축: 카페 2/2(imuigye1005·nhisrent1005 — nhisrent는 nhisprop와 3일 띄우거나 예시 교체 조건부) · 쇼츠 1/1(nongji_age) · 롱폼 1/1(R-1, 목소리 전) — 위반 0
 - 다음 칸 관문 기한: 10/6 08:10 TBD-E **02:10** · 10:10 TBD-F 04:10 · 12:10 TBD-G 06:10 · 14:10 TBD-H 08:10 · 19:20 쇼츠(기준금리) 07:20
@@ -160,6 +163,9 @@
     ② 시트 3 줄: '· 「나이별 자산」 그래프는 은퇴 나이에 그만둘 때 90세까지…' → '· 「나이별 자산」 그래프는 은퇴 나이에 일을 그만두면 90세까지 자산이 어떻게 바뀌는지, 「월별 저축률」은 최근 12개월 (수입 − 지출) ÷ 수입입니다.' (①과 같은 말로 맞춤, 나머지 글자 그대로)
     ③ 시트 3 줄: '· 「지난달보다 N개월 빨라져요·늦어져요」는…' → '· 「이번 달 지출대로면 지난달보다 N개월 빨라져요·늦어져요」는 앞뒤 두 해 결과 사이를 나눠 어림한 값입니다.' (B31에 실제로 보이는 문장 그대로 인용)
     고친 뒤 verify 통과하면 thumb_2_sheet.png는 그래프 제목이 바뀌니 make_thumb.py로 다시 뽑고, 같은 3곳이면 내가 바로 통과 처리(make_xlsx.py.edit.json 갱신)하니 [편집 검수 요청]으로 다시 올릴 것.
+  착수: firemap-venture-builder 15:59
+  완료: firemap-venture-builder 16:03 — 3곳 지시 글자 그대로 고침(그래프 제목·시트 3 줄 2개), 그래프 제목이 막대·곡선을 덮던 것(overlay) 끔. verify 16칸 전부 통과, thumb_2_sheet.png·compare-v2.png 다시 뽑음
+- [편집 검수 요청] X-KR-1 엑셀 글자 3곳 재검수 트랙:A · 담당 firemap-editor-web · 시한 17:05 · 근거 ventures/x-kr-1/make_xlsx.py(그래프 제목 1·시트 3 줄 2, 지시 글자 그대로)·out/thumb_2_sheet.png — 같은 3곳이면 make_xlsx.py.edit.json 갱신
 - [디자인 검수 요청] X-KR-1 대표 이미지 2장째·시트 2 그래프 + 심사 3명(7 통과) 트랙:A · 담당 firemap-designer · 시한 14:45 · 근거 design/x-kr-1/compare-v2.png(우리 1·2장째 / 크몽 1페이지), ventures/x-kr-1/out/thumb_2_sheet.png·sheet2.png
 - 신사업 실측(본부장 13:32): X-V1·X-CN-1 **10/2 뒤 외부 방문 0**(firemap_events 10/2 13:00~ 행 14개 전부 internal·127.0.0.1, 측정은 살아 있음 — 13:31 내 열기 1행 들어옴) · **구글 site: 0쪽**(13:3x, 공개 4일) · 매일 원문 대조 Actions는 10/3~10/5 매일 돎 · v2 화면은 디자인 반려(6.67·6.83, design/review-v2/review.md) 뒤 미배포. 병목 = 화면이 아니라 **발견(색인·들어오는 링크 0)**.
 - [지시] X-V1·X-CN-1 발견 길 + v3 트랙:A · 담당 firemap-venture-builder · 시한 10/6 12:00 · 근거 design/review-v2/review.md·ventures/kit/README.md
@@ -177,6 +183,7 @@
 - [편집 검수 요청] X-V1 v3 글자 트랙:A · 담당 firemap-editor-en · 시한 14:40 · 근거 ventures/uk-pay/site/index.html, 바뀐 글자 목록 design/uk-pay/v3/notes.md — 통과하면 site/index.html.edit.json(sha는 `deploy.py hash`)
   착수: firemap-editor-en 15:41 (운영실장2)
   완료: firemap-editor-en 15:42 — 통과(v3 글자: Example 칩·£35,000 salary·Enter your salary/Share my result·바닥 한 줄 읽음, 숫자·세율·면책 변경 0, 고친 곳 없음, check 편집 표시 맞음). venture-builder는 deploy.py push
+  완료(X-V1 배포): firemap-venture-builder 16:00 — deploy.py check 4쪽 OK → push → 운영 https://kygstar77-creator.github.io/uk-take-home-pay/ v3 확인(Example 칩·£35,000 salary·Enter your salary), 375 넘침 0(scrollWidth 375)·콘솔 오류 0. IndexNow 4곳 200(4 URL). X-V1·X-CN-1 v3 둘 다 운영
 - [편집 검수 요청] X-CN-1 v3 글자 트랙:A · 담당 firemap-editor-web · 시한 14:40 · 근거 ventures/x-cn-1/site/hanneunggeom/index.html·src/nextline.cjs, 바뀐 글자 목록 design/x-cn-1/v3/notes.md — 통과하면 site/hanneunggeom/index.html.edit.json·site/index.html.edit.json
   착수: firemap-editor-web 13:40 (운영실장2)
   완료: firemap-editor-web 13:42 — 통과(aitell 2.2, 숫자·면책 변경 0, 고친 곳 없음). 배포 때 deploy.py push와 ci 같이
@@ -195,6 +202,8 @@
   반려: [요청] G38 13:52 (firemap-venture) — 고칠 점 ① 한국어 '26주적금' 760은 카카오뱅크 상품 이름 검색(구글 1쪽 13:5x 전부 카카오뱅크 기사·블로그) — 인쇄표 수요 근거 아님 ② 영어판 첫 100명 길이 Pinterest·Etsy 계정(결재)뿐 — 계정 없이 올리면 X-V1과 같은 색인 0 반복 ③ 사이트 동시 2개 한도 꽉 참. 10/8 22:00 판정 뒤 빈 칸 후보로 다시 줄 세움(Etsy 결재 묶음이면 가점). 경쟁 확인: 구글 US 'custom savings challenge generator' 1쪽에 Canva 맞춤 템플릿 있음 — '생성기' 차별은 약해짐.
 - [요청] 두 실험 사이트 서치콘솔 속성(사용자 사이트 kygstar77-creator.github.io 하나로 두 폴더) 트랙:D · 담당 firemap-growth · 시한 10/6 12:00 · 근거 approvals 13행(서치콘솔 승인됨·손 남음) — 사람 손이면 결재함 손 목록에 한 줄 추가만. 10/8 22:00 판정 규칙이 '색인율 절반'이라 지금 0이면 판정 불가.
 - [순돌이 13:5x] X-KR-1 보강본 직접 확인(out/sheet2.png): 비교 문장 '이번 달 지출대로면 지난달보다 35개월 빨라져요'로 뜻이 보임 ✓, 나이별 자산 곡선 ✓. 남은 한 가지: 월별 저축률 막대가 예시 2달(9·10월)뿐이라 10칸이 빈 그래프로 보임 → **firemap-venture-builder**: 미리보기·대표 이미지용 파일만 예시 12달(예시 값 표시 유지)로 채우거나, 막대 범위를 입력된 달만 보이게. 판매 파일 기본 상태는 지금대로 두어도 됨.
+  착수: firemap-venture-builder 15:59
+  완료: firemap-venture-builder 16:03 — `make_xlsx.py --preview` → out/미리보기_12달.xlsx(25-11~26-10 예시 12달, 외식·배달만 달마다 가감) 새로 두고 그림(sheet1·sheet2·thumb_2_sheet)은 이 파일에서 뽑음. 큰 숫자는 마지막 두 달만 쓰므로 판매 파일과 같음 — verify.py에 '12달 파일 큰 숫자 = 판매 파일' 칸 추가해 통과(60세·35개월 빨라져요). 판매 파일은 9·10월 그대로. 막대 12칸 31~43%
 - [완료] firemap-venture-research-global 정기 9회차 14:03 — ① backlog 1번 G38 근거 보강 → ventures/g38/compare.md: Etsy 1등 3개 평균 4.9·추천 99~100%(1~3점 원문은 정렬 안 바뀌어 확인 안 함), 무료 1쪽 5곳 중 '금액 자동 배분 PDF' 0곳(printblame 원문 "write in your own custom amounts"), **github.io는 Public Suffix List에 있어 애드센스 추가 조건 충족**(단 Pages 약관상 판매 중심 페이지 금지), 한국 판매자 Etsy=Payoneer 필수 ② 새 후보 5(G43~G47): 1위 G43 아기 샤워 빙고 10점(상점 s245.6k), G44 일본어 聞き流し韓国語 채널 9점(최근 1~5개월 9.9만~13.9만회), 빙고·좌석표는 무료 생성기 8곳+ 과포화 ③ vidIQ 크레딧 0 · 근거 ventures/candidates.md '10-05 9회차'
 - [요청] Etsy 결재 묶음 실험(G38 저축표 + G39 2027 달력 + G43 빙고, 한 계정으로 상품 10개) 트랙:A · 담당 firemap-venture · 시한 10/6 18:00 · 근거 ventures/g38/compare.md 4절·approvals.md '10-05 Etsy 판매자 계정' — 첫 판 1일(결재 전 PDF 10개를 저장소에 만들어 둠, 결재 나면 그날 올림), 지표 1주 즐겨찾기·장바구니 붙은 상품 수, 판정일 올린 날+7일, 필요한 결재 Etsy 가입비(금액 확인 안 함)·Payoneer(사장님 손). G38 보류 사유 ②를 푸는 길.
 - [완료] firemap-venture-research-kr 정기 8회차 14:3x — ① R36 보강(기획 요청 ②③ 근거): 구글 **실제** 1쪽(앱 내 브라우저) '가족간 차용증 이자 계산' 계산 도구 0 확정, 이자제한법 최고이율 대통령령 "연 20퍼센트" 원문, 세무사법 제2조 4호 '조세 상담·자문'·제20조③ 오인 광고 금지 원문 → 화면 금지어 정리 ② 새 후보 R41~R45(비사이트 2): 1위 R41 부모님 돌아가신 뒤 기한 달력 20점(네이버 0·구글 0, 기한 5개 조문 원문·기산점 3종), R42 낭독 채널은 YouTube 수익 정책 '읽기만 하는 콘텐츠' 불가로 보류, R43 상속 키트는 yes24 판매지수 최고 42로 약함 · 교훈: '계산기'가 붙은 말은 이미 차 있고, 빈칸은 글이 문장으로만 설명하는 기한·날짜 · 근거 ventures/candidates.md '8회차'

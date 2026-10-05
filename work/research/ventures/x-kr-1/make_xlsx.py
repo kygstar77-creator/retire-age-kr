@@ -17,6 +17,7 @@ from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
 from openpyxl.utils import get_column_letter as L
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.chart import ScatterChart, BarChart, Reference, Series
+from openpyxl.chart.title import title_maker
 from openpyxl.chart.shapes import GraphicalProperties
 from openpyxl.drawing.line import LineProperties
 
@@ -51,19 +52,29 @@ def f(size=11, bold=False, color=INK):
     return Font(name=FONT, size=size, bold=bold, color=color)
 
 
-def ledger_rows(case):
+PREVIEW_EXTRA = [250000, 150000, 400000, 100000, 200000, 0, 150000, 300000, 50000, 200000]  # 25-11~26-08 외식·배달 가감(원) — 미리보기 전용
+
+
+def ledger_rows(case, preview=False):
     """(날짜, 항목, 금액, 분류) 목록. 예시 파일은 9·10월 두 달."""
     if case is None:
         sep = [(n, a + (100000 if n == '외식·배달' else 50000 if n == '기타' else 0), c) for n, a, c in EX_LINES]
         out = [(datetime.date(2026, 9, 1 + i), n, a, c) for i, (n, a, c) in enumerate(sep)]
         out += [(datetime.date(2026, 10, 1 + i), n, a, c) for i, (n, a, c) in enumerate(EX_LINES)]
+        if preview:  # 대표 이미지용(순돌이 10/5): 앞 10달을 더해 저축률 막대 12칸을 채운다. 큰 숫자는 마지막 두 달만 쓰므로 판매 파일과 같다
+            for k, extra in enumerate(PREVIEW_EXTRA):
+                y, m = (2025, 11 + k) if k < 2 else (2026, k - 1)
+                for i, (n, a, c) in enumerate(EX_LINES):
+                    a += extra if n == '외식·배달' else 0
+                    out.append((datetime.date(y, m, 1 + i), n, a, c))
+            out.sort(key=lambda t: t[0])
         return out
     age, asset, r, i, inc, m_this, m_prev = CASES[case]
     return [(datetime.date(2026, 9, 1), '급여', inc, INCOME), (datetime.date(2026, 9, 2), '생활비', m_prev, '기타상품·서비스'),
             (datetime.date(2026, 10, 1), '급여', inc, INCOME), (datetime.date(2026, 10, 2), '생활비', m_this, '기타상품·서비스')]
 
 
-def build(case=None):
+def build(case=None, preview=False):
     wb = Workbook()
     s1 = wb.active
     s1.title = '월 가계부'
@@ -89,7 +100,7 @@ def build(case=None):
         e = s1.cell(r, 5, f'=IF(OR(C{r}="",D{r}="",D{r}="{INCOME}",계산!$B$20=""),"",ROUND(C{r}*계산!$B$20,0))')
         e.number_format = '"+"#,##0"일";"−"#,##0"일";"0일"'
         e.font = f(11, True, ORANGE)
-    for k, (d, n, a, cat) in enumerate(ledger_rows(case)):
+    for k, (d, n, a, cat) in enumerate(ledger_rows(case, preview)):
         r = FIRST + k
         s1.cell(r, 1, d); s1.cell(r, 2, n); s1.cell(r, 3, a); s1.cell(r, 4, cat)
     # 월 요약 G:K (최근 12개월)
@@ -172,8 +183,8 @@ def build(case=None):
         ('계산 가정', True),
         ('· 최근 달 (수입 − 지출)을 은퇴할 때까지 매달 모으고, 은퇴 뒤에는 그달 지출을 매년 물가만큼 늘려 꺼내 씁니다.', False),
         ('· 90세까지 자산이 남는 가장 이른 나이를 찾습니다(70세까지). 국민연금·퇴직금·부동산·세금은 넣지 않았습니다.', False),
-        ('· 「지난달보다 N개월 빨라져요·늦어져요」는 앞뒤 두 해 결과 사이를 나눠 어림한 값입니다.', False),
-        ('· 「나이별 자산」 그래프는 은퇴 나이에 그만둘 때 90세까지 자산이 어떻게 바뀌는지, 「월별 저축률」은 최근 12개월 (수입 − 지출) ÷ 수입입니다.', False),
+        ('· 「이번 달 지출대로면 지난달보다 N개월 빨라져요·늦어져요」는 앞뒤 두 해 결과 사이를 나눠 어림한 값입니다.', False),
+        ('· 「나이별 자산」 그래프는 은퇴 나이에 일을 그만두면 90세까지 자산이 어떻게 바뀌는지, 「월별 저축률」은 최근 12개월 (수입 − 지출) ÷ 수입입니다.', False),
         ('· 「은퇴 +N일」은 월 지출이 10만원 늘 때 바뀌는 날 수에 비례해 어림한 값입니다.', False),
         ('', False),
         ('알림', True),
@@ -263,7 +274,8 @@ def build(case=None):
         c.cell(r, 83, f'=IF($B$1+{y}>{UNTIL},NA(),$B$1+{y})')
         c.cell(r, 84, f'=IF(OR($B$21="",$B$1+{y}>{UNTIL}),NA(),INDEX($C${g0}:${L(3 + YMAX)}${g0 + KMAX},$B$21-$B$1+1,{y + 1}))')
     ch = ScatterChart()
-    ch.title = '나이별 자산(백만원) — 은퇴 나이에 그만둘 때'
+    ch.title = title_maker('나이별 자산(백만원) — 은퇴 나이에 일을 그만두면')
+    ch.title.overlay = False  # 제목이 곡선·막대를 덮지 않게(10/5 미리보기에서 26-04 막대와 겹침)
     ch.style = 2
     ch.y_axis.number_format = '#,##0,,'
     ch.x_axis.scaling.min, ch.x_axis.scaling.max, ch.x_axis.majorUnit = 20, 90, 10
@@ -281,7 +293,8 @@ def build(case=None):
     ch.height, ch.width = 7.5, 16
     s2.add_chart(ch, 'B21')
     bc = BarChart()
-    bc.title = '월별 저축률'
+    bc.title = title_maker('월별 저축률')
+    bc.title.overlay = False
     bc.style = 2
     bc.y_axis.number_format = '0%'
     bc.y_axis.majorGridlines.spPr = GraphicalProperties(ln=LineProperties(solidFill=LINE))
@@ -301,7 +314,9 @@ if __name__ == '__main__':
     if '--case' in sys.argv:
         n = int(sys.argv[sys.argv.index('--case') + 1])
         p = os.path.join(OUT, f'case_{n}.xlsx')
+    elif '--preview' in sys.argv:  # 대표 이미지·미리보기 전용(판매 파일 아님, 설명 시트 '9~10월' 글자는 판매 파일 그대로)
+        n, p = None, os.path.join(OUT, '미리보기_12달.xlsx')
     else:
         n, p = None, os.path.join(OUT, '가계부_은퇴나이_2026.xlsx')
-    build(n).save(p)
+    build(n, '--preview' in sys.argv).save(p)
     print(p)

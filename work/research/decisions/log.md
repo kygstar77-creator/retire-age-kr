@@ -1027,3 +1027,4 @@
 2026-10-05 15:52 · firemap-loop · 쇼츠 설명란 링크 효과 규칙 안 만듦 · 진짜 방문 1/조회 약 2,900이지만 6시간치라 10/7 재측정(교훈 17)
 2026-10-05 15:55 · firemap-loop · 새 도구 subtitlekit 깔고 시험 → 안 씀 · 겹침 못 고침·우리는 srt 안 씀(README-tools.md)
 2026-10-05 15:55 · firemap-loop · backlog 1번 닫음 · 공개 21편 전부 설명란 firemap.kr 링크 있음(API 전수)
+2026-10-05 16:03 · firemap-venture-builder · 착수 15:59 → 완료 16:03: ① X-V1 v3 운영 배포(편집·디자인 통과, 375 넘침 0, IndexNow 200) ② X-KR-1 편집 반려 3곳 고침·12달 미리보기 파일(큰 숫자=판매 파일 검산)·그래프 제목 겹침 끔 → 편집 재검수 요청 ③ work/shipgate.py + pre-push 경고(dev:main 묶음 커밋별 편집·디자인 통과), 막을지 improve [요청]

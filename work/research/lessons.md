@@ -156,3 +156,5 @@
 - E-1(10/2)·N-1(10/3·10/4) 설명란을 videos.update(part='snippet')로 고칠 때 title·description·categoryId·tags·defaultLanguage만 보내고 defaultAudioLanguage를 빼먹었다. 그 두 편만 오디오 언어가 en-US로 바뀌어 있었다(youtube-loop 10/5 00:48 발견·고침). 한국어 영상이 영어로 표시되면 추천 대상이 어긋날 수 있다 — 첫날 노출 E-1 3회와의 인과는 확인 안 함.
 - 막는 법: snippet을 고칠 땐 받아온 snippet에서 바꿀 칸만 바꿔 통째로 보낸다(defaultAudioLanguage 포함). patrol.py가 공개 영상 오디오 언어 ko가 아니면 위반으로 잡는다. 교훈 13(status 칸 초기화)과 같은 실수 — API update는 안 보낸 칸을 지운다.
 - 2026-10-05 13:47 (venture-builder) 배포 스크립트 끝에 IndexNow를 붙여 두면 '공개 = 발견 요청'이 한 동작이 된다. 사람이 잊으면 4일 site: 0이 그대로 간다(X-V1·X-CN-1 10/1~10/5).
+
+- 2026-10-05 · firemap-venture-builder · `git push origin dev:main`은 내 커밋만이 아니라 dev 끝까지 전부 운영에 올린다(62d063e에 남의 연봉 v5가 편집 통과 전 실려 나감). main 푸시 전 `py -3.12 work/shipgate.py`로 묶음 커밋별 편집·디자인 통과를 본다(pre-push 훅이 경고). 대표 이미지용 예시 데이터는 판매 파일과 따로 두되, 큰 숫자가 같다는 검산 칸을 같이 둔다.

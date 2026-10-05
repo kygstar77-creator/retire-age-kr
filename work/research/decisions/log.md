@@ -1128,3 +1128,4 @@
 2026-10-05 23:22 · firemap-loop · 수익에 가까운 차이=쿠팡 칸 노출 분모 없음(운영 번들 coupang_view 0, d9a8217 dev만) · [요청] product-dev 10/6 12:00 main 반영 · 근거 external calc_complete 145/37기기 클릭 0
 
 2026-10-05 23:27 · firemap-write · F3 retmid1005 표지 8안 재작업, 1초 시험 6점 못 넘김(gates_ok 안 줌) · 이유: flash-lite가 6점 고정·상위 모델 429, 오독은 '세금 25% 더 내요'로 해소, 본문에 25% 근거 한 줄 추가
+2026-10-05 23:59 · motion · M-1 첫 장면 '거꾸로 묻기'(ReverseAsk) 부품·미리보기, 심사 2차 평균 7.0 통과 → PD·youtube-loop [요청] · 이유: R-1 목소리 관문 막혀(f0 81줄) 백로그 2번 불가, 다음 롱폼 후보 M-1 대본 v2에 모션 없음

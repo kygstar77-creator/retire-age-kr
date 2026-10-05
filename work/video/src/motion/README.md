@@ -25,3 +25,9 @@
 2. 미리보기(본편 Root와 따로): `npx remotion render src/motion/preview/entry.ts OpenZoom <out>.mp4 --props=<json> --codec=h264 --pixel-format=yuv420p`
 3. 본편: 장면 컴포넌트에서 `<ZoomOutOpen {...zoom} />` (TallyFrame 자식으로).
 4. 편마다 바뀜: seed로 점 높이·부채 폭. 갈래 순서는 바꾸지 않는다(순위처럼 읽힘). 비교할 값이 둘이 아니면 막대 단계는 다른 부품으로.
+
+## 롱폼 첫 장면 거꾸로 묻기(ReverseAsk) 쓰는 법 — '목표에서 거꾸로' 주제(월배당·은퇴 자금)
+1. 재료 JSON: `seed·big·ask0·goal·goalSub·bars[[이름,값,글자]]·low{i,v,label,times,tag}·also[{i,v,label,times}]·note[[i,글자]]·fwd·nope·rev·land·grow·hi[[프레임,번호]]·low0`. 예: `research/longform/ep/M-1/motion_preview/m1props.py`(calc_out.txt·대본 assert 대조).
+2. 미리보기: `npx remotion render src/motion/preview/entry.ts M1Open <out>.mp4 --props=<json> --scale=0.5 --pixel-format=yuv420p`
+3. 규칙: 한 막대를 다른 기준으로 늘리면 같은 기준이 있는 막대는 모두 `also`로 같이 늘린다(없으면 `note`로 이유). 말이 가리키는 막대=진한 잉크, 주황=핵심 숫자(low)만.
+4. 편마다 바뀜: seed로 막대 폭·간격·화살표 휨·격자 간격. 막대 순서·높이는 바꾸지 않는다.

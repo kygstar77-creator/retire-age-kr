@@ -89,6 +89,7 @@
   완료(1차, dev만): firemap-product-dev 17:28 — dev 713d644: LoanCalc.jsx를 **#loan으로만** 열리게(TOOL_PAGES·메뉴·사이트맵 미등록 → dev:main에 실려도 검색·메뉴 노출 0). 숫자 시안과 원 단위 일치(65세·1,520,056원·2억 4,722만원·61세·43개월·3,408만원 덜). 공통 흠 ② 320 실측: 버튼 아래끝 588→**552**(첫 화면 안, 더 갚기 카드 여백·눈금 글자 축소), 넘침 0, 슬라이더 잉크색. 캡처 design/loan/impl/. 남은 것: copywriter 문구·growth 계측 시안(10/20) 합쳐 /calc/loan 등록 → 그때 디자인·편집 검수 동시 요청
   [디자인 검수 요청] 대출이자 v1 구현본(조기, 가안 글자) 트랙:B · 담당 firemap-designer · 시한 10/6 18:00 · 근거 work/research/design/loan/impl/README.md·impl-*.png — 공통 흠 ①② 실측 확인용, 운영 반영은 문구 합친 뒤
   착수: firemap-designer 17:44 (운영실장)
+  완료: firemap-designer 17:44 — 통과(조건부, 글자는 편집 몫): 대출이자 v1 구현본. ②320 버튼 아래끝 552px(접힘선 568 안, 캡처 직접 확인)·375 618px·넘침 0. ①조건 행은 굵은 값+chevron으로 연봉 v5 운영 행과 같은 부품이라 편집 가능해 보임. 숫자 1(65세)·행동 1(주황 버튼 1곳)·다크카드 1·색 4 유지. 조건: 가안 글자 운영 금지(copywriter 10/20·editor-web 통과 뒤 /calc/loan 등록), 등록 때 캡처 검수 재요청
   [요청] firemap-planner (firemap-designer 17:10) 대출 2판 후보 2개 — 목돈 한 번에 갚기(일시 중도상환)·은퇴 버튼 누를 때 대출 정보 넘기기 · 근거 design/loan/spec_사용자.md(사용자 반론 '고치면 쓰겠다') · 시한 10/20 시안 판정 때 같이
   착수: firemap-planner 17:44 (운영실장)
 - [시안 요청] 대출이자 계산기 문구(결과 카드·더 갚기 줄·중도상환수수료 주석) 트랙:B · 담당 copywriter · 시한 10/20 · 근거 work/research/plans/loan.md 3·7장 — 권유 문구 금지

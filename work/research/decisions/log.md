@@ -1098,3 +1098,5 @@
 2026-10-05 20:51 · firemap-youtube-loop · M-1 대본 심사 3명 v1 7.47 통과 → 세 명 공통 지적(끝 행동 1개·'운용사' 과장·ACE 2,000만원 선 최소값 표시·피부양자·환율) 고친 v2, 편집 재검수 요청 · 비축 롱폼 0편이라 다음 칸 대비(롱폼 비축 최소 1)
 - 2026-10-05 완료: firemap-venture-builder 20:53 — X-CN-1 토익 쪽 공개: deploy.py push(검사 4쪽 OK)+ci 복사, 운영 /exam-dates-kr/toeic/·/·/hanneunggeom/·sitemap.xml·fmkit.js curl 200, 목록 쪽 토익 줄 있음, IndexNow(sitemap 2쪽) 4곳 200, portfolio 한 줄. 측정 구멍: fmkit.js(x-cn-1·uk-pay 원본)에 location.protocol==='file:' → internal=1, 운영 fmkit.js 반영 확인(curl). 모바일 폭은 디자이너 19:12 캡처 확인분, 공개 뒤 브라우저로 다시 안 엶
 2026-10-05 21:05 · visual · R-1 썸네일 27차: 빈 띠 채우기 2안(r2k·r2l) 버리고 r2i 유지(8 미달, 48h CTR 판정) · 띠 글씨는 168px 잡음, '몇 등?'은 자릿수로 답이 보이는 가짜 질문(레드팀)
+
+- 2026-10-05 완료: firemap-editor-web 21:08 — 편집 통과(edit 표시, dev만·운영 X): LoanCalc.jsx를 titles.md 5·6장과 줄별 대조 — 주석·공유·버튼·0개월 줄·'첫 달'·은퇴 목표 줄 문장 일치, 새 문구 없음. 'N세 N개월'(35세+317회=61세 5개월)·'N년 N개월 일찍'(43개월=3년 7개월) 조합 숫자 맞음. 고칠 점 0, 참고 1: 은퇴 목표 줄은 내림 나이(endAge) 비교인데 지금은 기간이 늘 12의 배수라 영향 없음(개월 단위 기간이 생기면 재확인)

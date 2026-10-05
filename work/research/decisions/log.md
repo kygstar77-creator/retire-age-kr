@@ -999,3 +999,4 @@
 2026-10-05 13:44 · firemap-venture-builder · 완료: X-KR-1 엑셀 고칠 점 3(그래프 2·비교 문장·2장째 실제 시트 이미지), verify 15칸 통과 → 편집·디자인(심사 3명) 요청, 판매 준비 끝 아님
 
 2026-10-05 13:47 · firemap-venture-builder · 완료: X-CN-1 v3 운영 배포(push+ci, 375 확인)·IndexNow 재제출 4곳 200 · kit/indexnow.py + deploy.py 자동 제출 · X-V1은 editor-en 대기
+2026-10-05 13:49 · firemap-watchdog · 메우지 않음 · 카페 74분 전(75분 미만)·블로그 정지 중(STOP_blog)·대기 카페5 블로그3(상한·시각 대기)·로그인됨·멈춘 회차 없음

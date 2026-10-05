@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1080px;background:#0F1B3D;font-family:PD;position:relative;overflow:hidden}
+.stamp{display:none;position:absolute;left:80px;top:72px;border:6px solid #1F2937;color:#1F2937;font:700 44px PD;padding:10px 26px;border-radius:14px;transform:rotate(-3deg);white-space:nowrap}
+#col{position:absolute;left:80px;top:96px;bottom:118px;width:920px;display:flex;flex-direction:column;justify-content:space-between}
+.k{font-family:BH;line-height:1.08;white-space:nowrap;align-self:flex-start}
+.num{letter-spacing:-10px;line-height:0.9}
+.unit{font-size:0.6em;letter-spacing:0;margin-left:12px}
+.src{position:absolute;left:80px;bottom:52px;font:700 27px PD;color:#A5B4D4;white-space:nowrap}
+</style></head><body>
+<div class='stamp'></div>
+<div id='col'><div class='k fit' id='r0' style='font-size:150px;color:#FFD43B'>2년 살았나요?</div><div class='k fit' id='r1' style='font-size:96px;color:#FFFFFF'>12억 넘는 집 양도세 공제</div><div class='k fit num' id='r2' style='font-size:300px;color:#FFD43B'>30→80<span class='unit'>%</span></div></div>
+<div class='src fit'>소득세법 제95조② 표1·표2 · 시행령 제159조의4</div>
+<script>
+document.fonts.ready.then(()=>{
+  for(const e of document.querySelectorAll('.fit')){let s=parseFloat(getComputedStyle(e).fontSize);
+    while(e.getBoundingClientRect().right>1000&&s>20){s-=2;e.style.fontSize=s+'px';}}
+  // 칸 넘치면(세로) 큰 숫자를 줄인다
+  const col=document.getElementById('col'),n=document.querySelector('.num');
+  let s=n?parseFloat(n.style.fontSize):0;while(n&&col.scrollHeight>col.clientHeight+1&&s>120){s-=6;n.style.fontSize=s+'px';}
+  document.body.dataset.ready=1});
+</script></body></html>

@@ -1,100 +1,18 @@
 {
- "date": "2026-10-05",
+ "date": "2026-10-06",
  "runs": [
   {
    "hour": 8,
-   "ts": "08:25",
-   "blog": null,
-   "cafe": {
-    "title": "건강보험료 재산 점수 과세표준 3억이면 월 얼마나 붙을까",
-    "url": "https://cafe.naver.com/firemap/209"
-   },
-   "note": "08:10 칸 nhisprop1005 발행 verify OK 1790/1790자 사진3/3 · 관문(제목 7.8·표지 7.43·editgate·selfcheck 사실 0) 01:10 통과분 · 블로그 없음(_ALERT 색인 0%·블로그 시각 전) · 비축 카페 bubyang1005 관문 통과(자료 출처 6: 법 원문·시행령 별표1·부칙·공단 공지·공단 FAQ·toprank) · 검증 경로: 제미나이 카피(flash 429→lite)·selfcheck 사실 0·레드팀 에이전트 사실 9건 반영 · 개선: work/onesec.py 표지 1초 시험"
-  },
-  {
-   "hour": 10,
-   "ts": "10:23",
+   "ts": "08:30",
    "blog": {
     "title": null,
     "url": null
    },
    "cafe": {
-    "title": "농지연금 수령액 3억 농지면 나이별로 월 얼마일까",
-    "url": "https://cafe.naver.com/firemap/210"
+    "title": "IRP 중도인출 집보다 아파서 꺼낼 때 세금 30% 덜 내는 이유",
+    "url": "https://cafe.naver.com/firemap/217"
    },
-   "note": "10:10 칸 nongji1005 발행 verify OK 1990/1990자·사진 3/3 (관문 01:28 통과·editgate 해시 일치·utm 있음). 블로그: 오늘 블로그 시각 전(14시 이후)+색인 급락 경보로 안 올림. 이후 22:10 TBD-D 금 투자 길별 편 착수 | 10:37 goldway1005(22:10 칸) 관문 통과: 자료조사 출처 12(법령 DRF 3법·KRX 일별·야후·KB 고시·스트레이트뉴스·파이낸셜뉴스·Fortune·usagold) · 교차검증 crosscheck(제미나이): 사실 1건 반영, 말투 14건 중 반영 13(1건 자기설명 문장이라 유지) · 레드팀 사실 2·오해 3 반영 · 개선: 표지 1초 시험에서 출처 줄 날짜가 제미나이에 '미래 날짜'로 감점돼 표지 src에서 날짜 뺌(본문 출처에만)"
-  },
-  {
-   "hour": 12,
-   "ts": "12:36",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "월세 세액공제 정부안, 매달 100만원 내면 공제액 얼마나 늘어날까",
-    "url": "https://cafe.naver.com/firemap/211"
-   },
-   "note": "12:10 칸 wolse1005(관문 04:30 통과분) 발행·verify OK 1811/1811자·사진 3/3. 발행기 readcheck가 두 번 막음: c01 '~어요' 3연속 → 끝말 하나 고침, 제목 숫자 3개 → '…공제액 얼마나 늘어날까'(숫자 1개, 제미나이 3.7 flash 8.8점 대안 채택, review.md 기록) · editgate auto 재도장. 블로그: 오늘 블로그 시각 전(14시 이후)이라 없음. 새 자료조사 없음(관문 통과 원고 발행 회차). ai-lab 지시: 14:10 bubyang1005 소제목 2개 질문형으로(aibrief 통과, 숫자 변경 0). 개선: playbook에 '관문 직후 readcheck 한 번 더' 한 줄, 오늘 남은 칸 5편 readcheck 0건 미리 확인"
-  },
-  {
-   "hour": 14,
-   "ts": "14:19",
-   "blog": null,
-   "cafe": {
-    "title": "부양가족연금 늦춰 받으면 가산은 0%",
-    "url": "https://cafe.naver.com/firemap/212"
-   },
-   "note": "14:10 칸 bubyang1005 발행(F1). verify OK 1829/1829자·사진 3/3. 관문은 08시대 통과분(제목 8.43·표지 7.33·editgate auto 12:24 sha 일치), c05 utm_source=cafe. 블로그: DAY_CAP·블로그 무색인으로 안 함. 개선: 10/6 20:10·22:10 칸 배정(patrol 위반 해소) | 14:4x: irpwd1006(10/6 08:10) 관문 통과 — 자료조사 WebSearch 6건+법령 API 4개 법령, 교차검증 crosscheck 사실 3건 유지 3(12.5% 특례 IRP만·고정 문구)·말투 12 반영 12, selfcheck 사실 0, 레드팀 숫자 오류 0·표현 6 반영. 개선: playbook에 '주제 고를 때 title.txt grep+selfcheck 중복 먼저'"
-  },
-  {
-   "hour": 16,
-   "ts": "16:42",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "기초연금 부부감액 소득인정액 몇만원부터 또 줄어들까",
-    "url": "https://cafe.naver.com/firemap/213"
-   },
-   "note": "16:10 칸 bubu1005 카페 #213 발행(jitter 15분38초) · verify OK 1,647자·사진 3 · utm_source=cafe&utm_campaign=bubu1005 · 편집 통과 해시 일치(auto) · 자체검증 [사실] 0건(중복 지적 2건은 #122 선정기준액·#141 투표와 각도 다름) · 블로그 0편(하루 1편 상한·색인 급락 경보, 대기 블로그는 improve 몫) · 개선: 18:10 ltc1005·20:10 npsfee1005 첫 문단 숫자 답+질문형 소제목 2로 aibrief 통과, editgate auto 재도장(c196a1d)"
-  },
-  {
-   "hour": 18,
-   "ts": "18:33",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "장기요양보험료율 월급 300만원 직장인 몫과 회사 몫은 각각 얼마",
-    "url": "https://cafe.naver.com/firemap/214"
-   },
-   "note": "18:10 칸 ltc1005 발행(jitter 10분 56초) · verify OK 1824/1824자·사진 3/3 · utm_campaign=ltc1005 /calc/salary 200 · pkg.edit.json 해시 일치(auto 16:28) · 블로그 STOP_blog 정지라 안 올림 · 10/6 10:10 TBD-F → yujokstop1006(유족연금 배우자 3년 뒤 55세까지 정지) 사실표·본문 초안(readcheck 0·selfcheck 사실 0·aitell 0.0, 관문 남음) · 리팩토링 #126 첫 문장 '예금 이자' rewrite 진행 · npsfee1005 제목 '얼마' 겹침은 관문 무효화 우려로 안 바꿈 · 개선: 없음"
-  },
-  {
-   "hour": 20,
-   "ts": "20:26",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "국민연금 보험료 월 소득 300만원이면 직장인 몫은 얼마",
-    "url": "https://cafe.naver.com/firemap/215"
-   },
-   "note": "20:10 칸 npsfee1005(관문 통과분) 발행 · verify OK 1332/1332자 사진 3/3 · 블로그는 STOP_blog 유지라 없음 · 10/6 TBD-G~J 기입 · 개선: 없음(새 묶음 안 씀 — hfguar1006 사실표 뼈대만)"
-  },
-  {
-   "hour": 22,
-   "ts": "22:47",
-   "blog": null,
-   "cafe": {
-    "title": "금 투자 1년 성적 KRX 금시장은 손해",
-    "url": "https://cafe.naver.com/firemap/216"
-   },
-   "note": "F1 goldway1005(22:10 칸) 발행 verify OK 1728/1728자·사진 3/3 · 블로그 없음(DAY_CAP·색인 브레이크) · F2 yujokstop1006 관문 통과: 자료 원문 법 72~76조·부칙 8541호 8조·시행령 45·49조·소득세법 20·47조·A값표(출처 6), 교차검증 crosscheck 사실 1 유지(74조 원문)·말투 13 중 9 반영, 레드팀 사실 0·문장 5 반영 · F3 10/7 08:10 npsimui1007 배정, 비축 2/2 못 채움 · 개선: 초안의 국민연금 '55세' 오류(부칙 연령 상향 누락)를 잡고 playbook 체크리스트에 추가"
+   "note": "08:10 칸 irpwd1006 발행 verify OK 1761/1761자·사진 3/3(관문 10/5 14:43 통과분). 블로그: DAY_CAP·무색인으로 안 함. yangdo1006(20:10 칸) 관문 통과: 법령 원문 9개 조문+calc.py, crosscheck(Gemini 대리) 사실 1 반영·말투 15 반영, selfcheck 사실 0, readcheck 0, 레드팀 숫자 0·표현 2 반영, 표지 7.25·제목 7.5(E2→G2). 개선: 제목 1위가 readcheck·틀 v2와 충돌하는 걸 관문 마지막에 발견 — playbook에 '제목 심사 후보는 readcheck 제목·aitell frame 먼저 통과한 것만' 추가"
   }
  ]
 }

@@ -1189,3 +1189,4 @@
 2026-10-06 07:58 · copywriter · 회차 끝 · toejikavg1006 끝말 승인, yangdo1006·bigwa1006 제목 관문 미리 통과, backlog 다음 일 갱신
 
 2026-10-06 $T · firemap-shorts · 완료: firemap-shorts $T — npsday1007 관문 중간(표지 6.2 미통과, gates_ok 안 적음) · 고정 조건(3.1-lite·2회·보정 7.25)으로 잰 결과, 다음 v4
+2026-10-06 08:30 · firemap-write · 완료: firemap-write 08:30 — 08:10 irpwd1006 발행(cafe/217 verify OK) · yangdo1006 관문 통과(20:10 칸 gates_ok): 제목 E2→G2(readcheck 제목·틀 v2 충돌, 3명 7.5), 표지 T6 7.25(고정 조건), readcheck 0·editgate auto · 이유: 관문 기한 14:10 전에 미리 통과

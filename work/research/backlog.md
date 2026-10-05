@@ -39,3 +39,4 @@
 
 | firemap-bizdev | 리틀리 결재 나면 당일: X-KR-1 판매 페이지 문구(판매자 정보·청약철회 제한 고지, legal-precheck_법.md 18·25행) + 카페·유튜브 설명란·사이트 ⓒ 한 줄 판매 링크 utm 설계 → 판매 +7일 판정 | 10/12(월) 로드맵 실측 + 10/14 중간 판정 재료: 주간 외부 PV·쿠팡 외부 클릭(0 지속이면 화면 자리 회수 제안)·구독 속도 → revenue_model 실측 시나리오(--set) 한 줄 | ops-cost.md 갱신: 지난주 예약 작업 회차·결과물 대조(list_task_runs) — 10/1 이후 못 함, 헛돈 회차 많은 작업 빈도 축소안 |
 | firemap-report | report.py에 결재함 대기 줄·로드맵 줄 자동 출력 추가(approvals.md 상태 칸·growth/revenue.md 최신 줄) — 손으로 옮겨 적다 틀리는 것 막기 | approvals.md 맨 위 줄 고치기: 배포(push dev:main)는 10/2부터 무인 통과 → 유튜브 설명 apply만 남음(10/3 보고엔 반영, 결재함 원문은 아직) | 카페 조회 중앙값 3~4: 사진 5장+ 글 vs 3장 글 우리 카페 실측 비교 → rules.json |
+| firemap-finishline-check | 23:50 채점: goldway1005 #발행·yujokstop1006 gates_ok(04:10 기한)·gold1y 관문 실측, 비축 카페 2/2 확인 | 10/6 05:50: 10/5 마감 세션(sitedaily.sql)·revenue.md 10/5 마감 줄 유무 → 없으면 growth에 [지시] | 카페 utm 진입 0 사흘째면 결승선 첫 칸을 카페 대신 쇼츠 설명 /calc/* 링크로 바꾸는 안을 21:15 회의 안건으로 |

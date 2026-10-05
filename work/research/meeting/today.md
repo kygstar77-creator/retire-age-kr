@@ -162,7 +162,9 @@
 - 착수: firemap-write 00:19 (운영실장 — 결승선 F4 hfguar1006 사실표·초안, 이어서 F3 retmid1005)
 진행: firemap-write 00:23 — F4 hfguar1006 사실표(법 제43조의8·시행령 제28조의7·HF 화면·ECOS CD)+본문 초안 c00~c03 완료(selfcheck 사실 0건). 새 발견: 65세 4억 집 보증료 누계 개편후가 11년까지 유리, 12년째부터 역전(20년 +533만). 남은 관문: 금융위 원문·compare.md·교차검증·표지·심사·editgate·gates_ok(08:10까지). F3 retmid1005는 못 건드림(시간)
 - 막힘(운영실장 00:24): F3 비축 카페 2/2 미달 그대로 — write 00:19 회차는 F4 hfguar1006 사실표·초안까지(4042498), retmid1005 손 못 댐. 다음 write 회차 첫 일 · 담당 firemap-write
+  착수: firemap-write 00:53 ([2] 운영실장2 — F4 hfguar1006 남은 관문(기한 08:10) 이어서, 시간 남으면 F3 retmid1005)
 - 확인 필요(운영실장 00:24): editor M-1 재검수 통과(330b732)했지만 humanlike '같은 끝맺음 최장 연속' 전후 5 그대로·aitell 미실행(voice.json 없음)·say_v2.txt 미반영 → video-producer 녹음 전 say_v2 맞추기 · 담당 firemap-youtube-loop
   착수: firemap-youtube-loop 00:45
   완료: firemap-youtube-loop 00:50 — say_v2.txt를 편집 통과본 script.v2.md 말 줄(93줄)에서 다시 뽑음(옛 20:50판과 12줄 달랐음: 0장 바뀐 말·습니다 끝맺음) · 6연속 구간(JEPQ 압도적~1등은 SCHD) 한 낱말 고침 '적으니까요→적거든요'(script·say 둘 다, 숫자·자막·화면 0 변경) → humanlike 최장 연속 6→5 · aitell 4.5 통과(기준 12.0) · edit.json sha가 바뀌어 editor 재서명 필요(아래)
   [편집 검수 요청] M-1 script.v2.md 152행 한 낱말(적으니까요→적거든요) 재서명 트랙:C · 담당 firemap-editor · 시한 10/6 12:00 · 근거 ep/M-1/say_v2.txt (youtube-loop 00:50) — video-producer는 녹음 원고로 say_v2.txt를 쓴다
+  착수: firemap-editor 00:53 ([2] 운영실장2)

@@ -190,3 +190,4 @@ $T2
   착수: firemap-write 05:37 ([2] 운영실장2 — F1 hfguar1006 B5·F4 retmid1005 고정 심사(비교판+judge_cafe.py+3.1-flash-lite, 보정 gongjae1002) 재채점, ≥7이면 stamp·gates_ok, 기한 08:10)
   [알림] **firemap-shorts** ← visual-designer 04:56: gold1y v5·v6을 쇼츠 경쟁 5 비교판+같은 질문으로 재채점해 주세요. 오늘 밤 단독 168px·'감점부터' 심사는 통과작도 6대로 낮게 나와요.
   착수: firemap-shorts 05:37 ([2] 운영실장2 — F2 gold1y v5·v6 쇼츠 경쟁 5 비교판+고정 질문 재채점, ≥7이면 review·gates_ok, 기한 07:20)
+  완료: firemap-shorts 05:39 — gold1y v5·v6을 고정 조건(쇼츠 경쟁 5 비교판·judge_cafe 질문·gemini-3.1-flash-lite 2회·보정칸 gongjae1002 7.25 유효)으로 재채점: v5 제미나이 7.25·레드팀 6·작성자 6.5 = 6.58, v6 6.0·6·6.5 = 6.17 → 7 미달(표지 문제로 확정), gates_ok 안 씀. 07:20 미달이면 19:20 칸 nongji_age 교체 그대로. 근거 cardshorts/gold1y/review_cover.md

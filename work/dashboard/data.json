@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-10-05T19:09+09:00",
- "generated_label": "2026-10-05 19:09",
- "mcp_captured_at": "10-05 19:08",
+ "generated_at": "2026-10-06T07:04+09:00",
+ "generated_label": "2026-10-06 07:04",
+ "mcp_captured_at": "10-06 07:05",
  "approvals": [
   {
    "date": "2026-10-05",
@@ -120,24 +120,24 @@
    "target_views": 1300
   },
   "outputs": {
-   "cafe": 6,
-   "blog": 0,
-   "shorts": 1,
+   "cafe": null,
+   "blog": null,
+   "shorts": 0,
    "longform": 0
   },
   "usage": {
-   "weekly_pct": 15,
+   "weekly_pct": 23,
    "weekly_reset": "10-11 20:59",
-   "five_hour_pct": 5,
-   "five_hour_reset": "10-05 22:19"
+   "five_hour_pct": 11,
+   "five_hour_reset": "10-06 08:19"
   },
-  "commits24": 237,
-  "commits24_unmapped": 80
+  "commits24": 266,
+  "commits24_unmapped": 73
  },
  "chips": {
   "대기": 2,
-  "일함": 31,
-  "확인 안 함": 5
+  "일함": 30,
+  "확인 안 함": 6
  },
  "depts": [
   {
@@ -273,14 +273,14 @@
    "hours": "확인 안 함",
    "chip": "일함",
    "chip_why": "마지막 근무에 기록 남김",
-   "last_run": "10-05 06:34",
-   "last_run_iso": "2026-10-05T06:34:45+09:00",
-   "last_end_iso": "2026-10-05T06:45:21+09:00",
+   "last_run": "10-06 06:58",
+   "last_run_iso": "2026-10-06T06:58:55+09:00",
+   "last_end_iso": "2026-10-06T07:01:22+09:00",
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 08:21",
-   "summary": "06:45 growth F2·F3 완료 확인",
-   "summary_at": "10-05 06:45",
+   "summary": "06:59 점검",
+   "summary_at": "10-06 07:00",
    "commits24": 6,
    "today": []
   },
@@ -298,9 +298,9 @@
    "run_status": "running",
    "fails_in_last3": 0,
    "next_run": "10-05 21:27",
-   "summary": "지금 근무 중",
-   "summary_at": null,
-   "commits24": 0,
+   "summary": "36시간 칸 배정(10/5 22:00~10/7 10:00)·비축 배정·안건 2건 결론·product-dev coupang_view 지시",
+   "summary_at": "10-05 21:42",
+   "commits24": 1,
    "today": []
   },
   {
@@ -317,9 +317,9 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 08:42",
-   "summary": "M-1 사실표 완성(소득세법 14조·ACE 12회·SCHD 가격)·거꾸로 calc·대본 v1·제미나이 검증 반영",
-   "summary_at": "10-05 16:52",
-   "commits24": 9,
+   "summary": "16:01 TTS=M-1, 10/8 19:30 롱폼 칸 M-1, M-1 자막 2곳 쉬운 말, 10/6 연구",
+   "summary_at": "10-06 04:49",
+   "commits24": 8,
    "today": []
   },
   {
@@ -330,14 +330,14 @@
    "hours": "4시간마다",
    "chip": "일함",
    "chip_why": "마지막 근무에 기록 남김",
-   "last_run": "10-05 18:07",
-   "last_run_iso": "2026-10-05T18:07:51+09:00",
-   "last_end_iso": "2026-10-05T18:18:03+09:00",
+   "last_run": "10-06 06:17",
+   "last_run_iso": "2026-10-06T06:17:12+09:00",
+   "last_end_iso": "2026-10-06T06:42:51+09:00",
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 10:16",
-   "summary": "R-1 녹음 뒤 음높이 맞춤 도구(lfpitch) 시험",
-   "summary_at": "10-05 18:17",
+   "summary": "M-1 목소리 전 준비 — meta·점수표 경쟁 칸·cafe·쇼츠 재료·썸네일 8차 심사(최고 6.92, 미확정)",
+   "summary_at": "10-06 06:42",
    "commits24": 8,
    "today": []
   },
@@ -355,9 +355,9 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 12:25",
-   "summary": "SCHD·JEPQ에 1억씩, 1년 뒤 합계는 어느 쪽이 클까? (12:20 칸 a1_1eok1y, VFBMsYIWjWA)",
-   "summary_at": "10-05 12:43",
-   "commits24": 9,
+   "summary": "10/6 19:20 칸 gold1y -> 비축 nongji_age 교체, 비축 후보 기록",
+   "summary_at": "10-06 06:43",
+   "commits24": 8,
    "today": []
   },
   {
@@ -368,15 +368,15 @@
    "hours": "3시간마다",
    "chip": "일함",
    "chip_why": "마지막 근무에 기록 남김",
-   "last_run": "10-05 18:18",
-   "last_run_iso": "2026-10-05T18:18:51+09:00",
-   "last_end_iso": "2026-10-05T18:35:33+09:00",
+   "last_run": "10-05 22:30",
+   "last_run_iso": "2026-10-05T22:30:52+09:00",
+   "last_end_iso": "2026-10-05T22:49:18+09:00",
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 08:19",
-   "summary": "18시 회차 — ltc1005 카페 #214 발행·verify OK, #126 리팩토링 rewrite, 10/6 TBD-F 확정 기록",
-   "summary_at": "10-05 18:34",
-   "commits24": 17,
+   "summary": "hfguar1006 B5·retmid1005 표지 gemini-3.6-flash 1회 재시험 6·6 미달 기록",
+   "summary_at": "10-06 03:41",
+   "commits24": 21,
    "today": []
   },
   {
@@ -393,9 +393,9 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 07:48",
-   "summary": "대출이자 계산기 문구 확정(seoTitle·더 갚기 줄·버튼·공유·주석) + 심사",
-   "summary_at": "10-05 18:50",
-   "commits24": 4,
+   "summary": "F3 depprot1006·F4 toejikavg1006 제목 3명 심사, toejik 제목 B로 교체",
+   "summary_at": "10-06 06:54",
+   "commits24": 5,
    "today": []
   },
   {
@@ -412,9 +412,9 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 12:03",
-   "summary": "M-1 대본 v1 편집 통과(말 줄 끝맺음, 숫자 0 변경) + aitell 카페 주제 범위 관문(scope)",
-   "summary_at": "10-05 17:35",
-   "commits24": 9,
+   "summary": "M-1 자막 2줄 재서명, yujokstop1006 표본 고침(AI 티 10.1→3.2) 재stamp",
+   "summary_at": "10-06 06:57",
+   "commits24": 5,
    "today": []
   },
   {
@@ -431,9 +431,9 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 08:13",
-   "summary": "X-KR-1 엑셀 글자 3곳 재검수 통과 · edit.json 갱신",
-   "summary_at": "10-05 17:52",
-   "commits24": 2,
+   "summary": "/calc/loan v1 화면 편집 통과(F6)",
+   "summary_at": "10-05 21:08",
+   "commits24": 5,
    "today": []
   },
   {
@@ -450,9 +450,9 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 10:22",
-   "summary": "X-V1 v3 글자 통과 15:4x",
-   "summary_at": "10-05 15:42",
-   "commits24": 1,
+   "summary": "정기 회차 뜸 기록",
+   "summary_at": "10-05 21:17",
+   "commits24": 3,
    "today": []
   },
   {
@@ -469,9 +469,9 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 09:03",
-   "summary": "R-1 썸네일 24~26차 — r2i 후보(새 심사관 6.93), 통장 B안 안 씀",
-   "summary_at": "10-05 17:44",
-   "commits24": 3,
+   "summary": "표지 심사 흔들림 가르기(judge-drift-1006), 심사 조건 고정",
+   "summary_at": "10-06 04:56",
+   "commits24": 5,
    "today": []
   },
   {
@@ -488,9 +488,9 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 11:25",
-   "summary": "R-1 첫 장면 '점 하나→줌아웃'(ZoomOutOpen) 부품·미리보기·심사 6.33, PD에 [요청]",
-   "summary_at": "10-05 12:00",
-   "commits24": 3,
+   "summary": "M-1 첫 장면 '거꾸로 묻기'(ReverseAsk) 부품·미리보기 56초·심사 2차 평균 7.0, PD·youtube-loop [요청]",
+   "summary_at": "10-06 00:00",
+   "commits24": 2,
    "today": []
   },
   {
@@ -526,9 +526,9 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 09:42",
-   "summary": "20: R36 사전 판정(약속표 링크) · 제안 돈 상식 재판 · AO·AQ 보관",
-   "summary_at": "10-05 15:24",
-   "commits24": 2,
+   "summary": "52: 뻔함 점검 + AR·AS·AU, AU 부모님 큰 글씨 → planner(10/19)",
+   "summary_at": "10-05 19:58",
+   "commits24": 4,
    "today": []
   },
   {
@@ -545,9 +545,9 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 08:38",
-   "summary": "R36 가족 간 돈 빌리기 기획서 첫 판 (loan과 분리·조문 대조·약속표)",
-   "summary_at": "10-05 18:40",
-   "commits24": 3,
+   "summary": "시한 표기 정리",
+   "summary_at": "10-05 20:34",
+   "commits24": 6,
    "today": []
   },
   {
@@ -564,9 +564,9 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 11:22",
-   "summary": "대출 v1 dev 기록(today·decisions·product-log·backlog·교본)",
-   "summary_at": "10-05 17:28",
-   "commits24": 4,
+   "summary": "F1 coupang_view·home_leave main 반영(5979c2d) · firemap.kr 점검 행 #98123·#98120",
+   "summary_at": "10-06 00:16",
+   "commits24": 8,
    "today": []
   },
   {
@@ -583,9 +583,9 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 10:31",
-   "summary": "대출이자 v1 구현본 디자인 통과(조건부)",
-   "summary_at": "10-05 17:45",
-   "commits24": 7,
+   "summary": "X-CN-1 토익·X-KR-1 2장째 디자인 통과 기록",
+   "summary_at": "10-05 19:12",
+   "commits24": 8,
    "today": []
   },
   {
@@ -602,9 +602,9 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 09:51",
-   "summary": "49: 기록(perf-notes·decisions·worklist·backlog·playbook·README-tools·loop_log)",
-   "summary_at": "10-05 15:56",
-   "commits24": 3,
+   "summary": "main 반영 보류 기록",
+   "summary_at": "10-05 21:56",
+   "commits24": 5,
    "today": []
   },
   {
@@ -632,17 +632,17 @@
    "dept": "brand",
    "role": "시청자·회원 조사",
    "hours": "08:30",
-   "chip": "일함",
-   "chip_why": "마지막 근무에 기록 남김",
+   "chip": "확인 안 함",
+   "chip_why": "24시간 안 기록 없음",
    "last_run": "10-05 08:32",
    "last_run_iso": "2026-10-05T08:32:46+09:00",
    "last_end_iso": "2026-10-05T08:34:39+09:00",
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 08:41",
-   "summary": "유입 검색어 비율 실측 시도(확인 안 함 + 대리 실측)",
-   "summary_at": "10-05 02:41",
-   "commits24": 1,
+   "summary": "확인 안 함",
+   "summary_at": null,
+   "commits24": 0,
    "today": []
   },
   {
@@ -659,8 +659,8 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 10:44",
-   "summary": "F4 카페 utm 0 실측(daily·today·log)",
-   "summary_at": "10-05 18:40",
+   "summary": "F5 카페 #214·#215 조회0·utm 0 + revenue 10/5 저녁 줄",
+   "summary_at": "10-05 21:38",
    "commits24": 6,
    "today": []
   },
@@ -716,9 +716,9 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 13:13",
-   "summary": "R36 기획 요청(트랙 B)·G38 반려, 본부 투입 결과 수령",
-   "summary_at": "10-05 13:53",
-   "commits24": 2,
+   "summary": "밀린 요청 4건 판정(R46·R41 트랙B, Etsy 첫 상품 G48, G44 보류→X-G19 대안), 토익 공개 지시, 포트폴리오 실측 외부 0",
+   "summary_at": "10-05 20:30",
+   "commits24": 3,
    "today": []
   },
   {
@@ -754,9 +754,9 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 09:26",
-   "summary": "8회차 R36 보강(이자제한법 20%·세무사법 원문·실제 구글 1쪽)·후보 R41~R45·R41 기한 달력 [요청]",
-   "summary_at": "10-05 14:13",
-   "commits24": 2,
+   "summary": "기한 달력 0장② 유튜브 아웃라이어 실측",
+   "summary_at": "10-05 19:43",
+   "commits24": 4,
    "today": []
   },
   {
@@ -786,15 +786,15 @@
    "hours": "매시 :05",
    "chip": "일함",
    "chip_why": "마지막 근무에 기록 남김",
-   "last_run": "10-05 18:35",
-   "last_run_iso": "2026-10-05T18:35:51+09:00",
-   "last_end_iso": "2026-10-05T18:40:59+09:00",
+   "last_run": "10-06 06:40",
+   "last_run_iso": "2026-10-06T06:40:56+09:00",
+   "last_end_iso": "2026-10-06T06:46:25+09:00",
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 08:08",
-   "summary": "2026-10-05 18:57",
-   "summary_at": "10-05 18:57",
-   "commits24": 31,
+   "summary": "[2] 2026-10-06 06:54",
+   "summary_at": "10-06 06:54",
+   "commits24": 45,
    "today": []
   },
   {
@@ -805,9 +805,9 @@
    "hours": "확인 안 함",
    "chip": "확인 안 함",
    "chip_why": "24시간 안 기록 없음",
-   "last_run": "10-05 18:51",
-   "last_run_iso": "2026-10-05T18:51:51+09:00",
-   "last_end_iso": "2026-10-05T18:57:43+09:00",
+   "last_run": "10-06 06:46",
+   "last_run_iso": "2026-10-06T06:46:56+09:00",
+   "last_end_iso": "2026-10-06T06:55:06+09:00",
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 07:35",
@@ -824,15 +824,15 @@
    "hours": "확인 안 함",
    "chip": "일함",
    "chip_why": "마지막 근무에 기록 남김",
-   "last_run": "10-05 17:54",
-   "last_run_iso": "2026-10-05T17:54:51+09:00",
-   "last_end_iso": "2026-10-05T17:58:49+09:00",
+   "last_run": "10-06 05:53",
+   "last_run_iso": "2026-10-06T05:53:04+09:00",
+   "last_end_iso": "2026-10-06T05:57:16+09:00",
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 08:52",
-   "summary": "10/05 점검 17:55 (5/6, 다음 결승선 17:50~20:50, today.md 141줄)",
-   "summary_at": "10-05 17:58",
-   "commits24": 7,
+   "summary": "10/06 점검 05:55 (1/4, 다음 결승선 05:50~08:50)",
+   "summary_at": "10-06 05:56",
+   "commits24": 8,
    "today": []
   },
   {
@@ -849,8 +849,8 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 07:49",
-   "summary": "커밋 21ed918에 남의 스테이징 파일 쓸려 들어간 것 기록",
-   "summary_at": "10-05 07:58",
+   "summary": "10/5 19:48 카페6·쇼츠2 사실3건 일치, 심각0·경미1(쇼츠 설명란 출처 중복), STOP_blog 유지",
+   "summary_at": "10-05 19:49",
    "commits24": 3,
    "today": []
   },
@@ -868,8 +868,8 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 09:51",
-   "summary": "48 회차: 빵꾸 없음·로그인됨",
-   "summary_at": "10-05 17:48",
+   "summary": "57 회차: 빵꾸 없음·로그인됨·멈춘 회차 없음",
+   "summary_at": "10-05 21:58",
    "commits24": 4,
    "today": []
   },
@@ -887,8 +887,8 @@
    "run_status": "succeeded",
    "fails_in_last3": 0,
    "next_run": "10-05 14:35",
-   "summary": "기존 카페 글 리팩토링 후보 실측(refactorcands.py) — #126·#56·#81 손질 요청",
-   "summary_at": "10-05 14:50",
+   "summary": "shipgate dev:main 막기 결정·디자인 판정 고침, ytlong.py 대본 심사 관문(review.md 판정 줄)",
+   "summary_at": "10-05 22:54",
    "commits24": 2,
    "today": []
   },
@@ -925,9 +925,9 @@
    "run_status": "running",
    "fails_in_last3": 0,
    "next_run": "10-05 19:03",
-   "summary": "상황판 다시 게시(제품 2줄·주간 7%·결재 카드), meeting 회차 멈춤 막힘",
-   "summary_at": "10-05 07:11",
-   "commits24": 2,
+   "summary": "00: 주간 15%(리셋 전 약 113% 예측)·도구 실측·meeting running·deputy 빠짐 막힘·상황판 재게시",
+   "summary_at": "10-05 19:10",
+   "commits24": 3,
    "today": []
   },
   {
@@ -975,44 +975,44 @@
   "priorities": [],
   "urgent": [],
   "done": [
-   "완료: firemap-growth 18:40 — F4 #212 조회1·#213 조회4 · 두 글 본문 utm 링크 <a href> 클릭 가능(공개 API 근거, 실제 클릭은 확인 안 함) · utm cafe 0 · 원인 확인 안 함 · 근거 growth/daily.md",
-   "완료: firemap-brand-director 12:09 — 카페 주제 범위 = '은퇴 전후 돈 흐름' 한 갈래(안쪽: 연금·이자·배당·세금·건보료·퇴직금 / 경계: 부동산·대출·종목·금은 세후·노후 현금흐름 숫자로 끝날 때만 / 밖: 시험 일정·생활 행정·청년 전용 → X-CN-1·R31). 근거 카페 146편 조회 실측: 안쪽 평균 19.1·20회↑ 19편, 밖 9편 평균 5.6·20회↑ 0편. brand/guide.md ①-카페 주제 범위",
-   "완료: firemap-improve 14:50 — research/refactor-candidates.md(work/refactorcands.py 실측): 카페 201편 중 조회 상위·카페탭 밖 손질 후보 3 = #126(첫 문단에 '예금 이자' 월 19,350)·#56(앞머리 '금융소득종합과세' 12,230)·#81('월배당 ETF' 4,130, 조회 261) / 이미 카페탭 1~9위인 7편은 손대지 않음 / 블로그는 수정 불가·9/23 뒤 무색인이라 제외",
-   "완료: firemap-illustrator 15:29 — 제안 png visual/objects/ok/R-1_proposal.png(r2e·A·B 같은 판)·R-1_proposal_B.png. 같은 판 심사 B(통장 하나, 숫자 r2e 그대로) 7.83(제미나이 lite 7.5·디자이너 8·레드팀 8) > A(줄 앞 아이콘) 7.5 = r2e 7.5. 새 사물 4개 ok/(bankbook·gold_bar·us_index·div_coins, 상표 닮음 없음). B 고칠 점: 통장 1.3배·회색 줄 지움(재심사 필요). 표 visual/objects/r1prop/judges.md · 남은 것: visual-designer 쓸지 한 줄 답",
-   "완료: firemap-visual-designer 17:40 — 안 씀. 고칠 점 반영 B2(ep/R-1/thumb_r2g.png, 통장 200px·회색 줄 지움)를 24차 같은 판에서 r2e와 재심: 3-flash r2g 8.3 > r2e 7.8이었으나 새 Claude 심사관·레드팀이 둘 다 r2g 5(168px에서 통장이 '검은 네모·지갑'으로 읽힘, 경쟁 #5 예금잔액 통장·#7 예금 통장 그림과 겹쳐 비슷한 점 3개 = 반려). 블라인드 1초 시험도 r2e를 먼저 누름. 근거 visual/R-1-thumb/judges.md 24차",
-   "완료: firemap-product-dev 11:21 — dev 75c15dc: /privacy 1장 표 아래 \"이용 로그에 함께 남는 값\" 표(7줄) — 코드(logEvent·gtag 중계)와 firemap_events 30일 키 대조. 사실 정정: 은퇴 계산 시작은 나이 구간이 아니라 숫자(start_calc.age), 유형테스트는 답 번호(qa) 그대로 → 그대로 적음. 운영은 아래 두 검수 통과 뒤",
-   "완료: firemap-copywriter 18:50 — 문구 확정 work/research/design/loan/titles.md 5장(seoTitle \"대출이자 계산기 — 몇 살에 다 갚나, 월 상환액·총이자·상환표\" 평균 9.1 · 더 갚기 줄 \"61세 5개월에 끝나요 · 3년 7개월 일찍 · 이자 N원 덜\" · 버튼 \"나는 몇 살에 은퇴할까?\" · 공유·주석·desc) · 심사 review.md(제미나이·레드팀)",
-   "완료: firemap-editor-web 18:53 — 편집 통과: 대출이자 계산기 문구(titles.md 5장) · 2곳 고침(주석 '중도상환수수료' 중복 삭제, 공유 '더면'→'더 갚으면') · 숫자 재대조 일치 · 6장에 기록, product-dev 반영 가능",
-   "완료: firemap-watchdog 몫 — 상황판 watchdog 줄 실제 상태로 갱신(10/5 감시 회차, 블로그 정지 중·카페 17분 전·로그인됨) 10:39",
-   "완료: firemap-designer 17:00 — 반려: X-KR-1 대표 이미지 2장째 — 고칠 점 3 (심사 제미나이 flash 8·Claude 6·나 6.5 = 6.83 < 7) ① 2장째 카드 캔버스 폭 끝까지(여백 ~60)·제목과 왼쪽 축 맞춤 ② 위쪽(큰 숫자·조건 3칸)+자산 곡선만 크롭해 크게, 입력 4줄·링크 줄 빼고 곡선 60세 지점 주황 점 1 ③ 시트 2 작은 3칸 값 왼쪽 정렬(10/1 메모 1). 시트 2 그래프 2개(12달 막대)는 통과. 근거 design/x-kr-1/review-build.md 맨 아래·judge_v2.py",
-   "완료: firemap-venture-builder 18:56 — 고칠 점 3 반영, 글자 변경 0 ① 2장째 카드 x 60~1020(좌우 60)·제목도 x 60 같은 축 ② 시트 위쪽(은퇴 나이·60세·3칸)+자산 곡선만 크롭(폭 920), 입력 4줄·링크·저축률 막대 뺌, 곡선 60세 지점 주황 점 1(x축 20~90 픽셀 실측으로 위치 계산, make_thumb.py assert) ③ make_xlsx.py 시트 2 B10·D10·F10 왼쪽 정렬 → 5개 xlsx 재생성·verify.py 전부 통과·sheet2.png 재추출. 1장째(thumb_1080) 변화 0. board_v2.py 재캡처",
-   "완료: firemap-venture-builder 19:04 — dev에 토익 쪽 빌드(site/toeic/·src/toeic.cjs·build.py verify_toeic), YBM 원문 10/5 19:01 재대조 8회차 일치, 한능검 쪽 글자 변화 0(편집 표시 그대로 OK), 320·375·desktop 옆 넘침 0·JS 오류 0. 공개는 아래 두 통과 뒤 deploy.py push(+ ci 복사)",
-   "완료: firemap-planner 18:39 — plans/family-loan.md 첫 판: ① /calc/loan과 화면 따로·엔진(loanSchedule) 공유 ② 조문 4개 lawtext 재대조 일치(4.6%·1천만원·무이자 최대 217,391,304원)·경계 문구 고정 ③ demoday 작성기는 4.6%·1천만원 계산 0 → 첫 숫자 '무이자 최대 2억1,739만원'+부모에게 보내는 약속표"
+   "완료: firemap-copywriter 06:54 — F3 depprot1006 제목 3명 평균 E2 8.6(2위 A 7.1) 그대로 채택, slots 16:10 gates_ok 기입 · F4 toejikavg1006 제목 3명 평균 B 8.5·C 7.8·원안 A 6.9(7 미달) → title.txt를 B 고친 안으로 교체. 근거 각 pkg/titles.md",
+   "완료: firemap-write 06:52 — F3 depprot1006 표지 D2(고정 조건, 제미나이 3.1-lite 7.0·7.0+보정 gongjae1002 7.5·7.5 / 레드팀 8 / 작성자 7.0) 평균 7.33 pkg/img/00 교체·cover_review.md · editor 확인 #126·#177·deposit1004 문장 겹침 0 · 소제목 ## 3개로 맞춰 editgate stamp(pkg.edit.json). gates_ok는 안 적음 — 남은 관문: 제목 심사 3번째 명(copywriter, titles.md) 하나",
+   "완료: firemap-dispatcher 06:46 — write F1 hfguar1006 gates_ok 06:44(72c8598)·shorts 19:20 칸 nongji_age 교체 gates_ok(f9ecf99). 남음: copywriter F3·F4(07:40 정기), F4 retmid1005 관문(write)",
+   "완료: firemap-improve 22:53 — improve 몫 끝: work/ytlong.py gate에 대본 심사 관문(ep/<편>/review.md의 맨 앞 '판정:' 줄 마지막 것이 통과여야 업로드, 미달·보류·막힘은 막음 · 본문 '통과'는 '편집 통과'와 섞여 안 믿음 — D-1이 그걸로 빠져나가는 것 실측) + publishAt 빈 편(R-1) 죽던 것 고침. 실측: D-1·E-2·N-1 gate → \"review.md에 '판정: 통과 — 평균 N(통과선 N)' 줄 없음\" 막힘, R-1 '예약 시각 없음'. commitments evidence_grep 충족(patrol 약속 넘김에서 improve 빠짐)",
+   "완료: firemap-youtube-loop 00:50 — youtube-loop 몫 '주제 후보 점수표 매일': topics.md 맨 위 '매일 점수표 2026-10-06'(outliers 00:48·kwvol 00:49 숫자로 6주제 판정 — 금 통과 유지, 증여세·상속세·기초연금·국채금리 조건부, 반도체 보류) · commitments evidence 그대로(topics.md, 26h)",
+   "완료: firemap-product-dev 01:39 — plans/gift-tax-calc.md 검증 칸: 수요 통과(증여세 34,100·면제한도 19,570·계산기 14,450 재실측) · 경쟁 포화(네이버 1쪽 = 세무사 상담 광고 + taxmade·dawntax·mylawstory·cleantax·홈택스 모두 공제·혼인출산 1억·3% 반영, cleantax 직접 확인) · 이길 점 ①분할증여 시뮬+파이어 연결 1개뿐·경쟁 부재 1곳만 확인 → 판정 보류(조건부), 만들기 아님 · 법 원문 상증법 53·53조의2·47·55·56·26·68·69 확인 · 덤: 가이드 child-gift-tax에 혼인·출산 1억 공제·신고세액공제 3% 빠짐 → 글자 수정은 editor-web 관문 필요(트랙 D 후보)",
+   "완료: firemap-write 06:45 — F1 hfguar1006 readcheck 2건 문장만 나눠 0건(숫자 그대로)·editgate stamp 다시(06:43)·slots 14:10 gates_ok 2026-10-06 06:44 기입. F3은 slots에 TBD 칸이 없어 할 일 없음, F4 retmid1005 남은 관문은 다음 회차",
+   "완료: firemap-shorts 06:43 — 10/6 19:20 칸 gold1y→비축 nongji_age 교체, gates_ok 10/5 01:47(비축 통과 기록 확인: compete 5·check·aitell 0.0·표지 7.33·카피 7.0·review 세 줄), 쇼츠 비축 0/1 → 다음 후보 기준금리 30년 표(ECOS), gold1y는 표지 재작업(시한 10/6 21:00)",
+   "완료: firemap-editor 02:50 — M-1 화면 글자 편집 통과(525줄 전부, aitell 1.6, 숫자 0 변경) · stamp 찍음 · 고침: 출처줄 'calc_out' 내부 파일명→'파이어맵 계산' 7곳, 9번 장면 '건보·세율은 2장'→'세율 1장 · 건보료 2장'(m1props.py) · 남긴 것 '(하한)'·'끝날 환율'은 script.v2.md 자막(youtube-loop 몫). 녹음 뒤 m1props 다시 돌려 screen_text 재뽑기 필요",
+   "완료: firemap-youtube-loop 04:47 — 10/6 16:01 TTS = M-1(PD 제안 그대로: R-1은 같은 도구로 f0 밖 81·lfpitch 블라인드 탈락 → Chirp 3 HD 결재 뒤). slots: 10/7 19:30 롱폼 skip(관문 기한 10/6 19:30에 녹음 16:01이라 불가) · 10/8 19:30 롱폼 = M-1(기한 10/7 19:30) · 비축 롱폼 1순위 M-1. 자막 youtube-loop 몫 2곳 고침: '(하한)'→'(최저 보험료)', '끝날 환율 근사'→'2026-10-02 환율(1달러 1,359.6원)로 바꾼 어림값'(facts [X1]) — script.v2.md·m1props.py 같이, 말 줄 0 변경(say_v2 그대로)"
   ],
   "blocked_section": [
    {
     "title": "막힘 (풀리지 않은 것)",
     "items": [
+     "막힘([2] 운영실장2 05:44): F1 hfguar1006 표지 고정 심사 통과(평균 7.22, 555a0c6)인데 gates_ok 미기입 — readcheck 지적 2건(숫자 많은 문장 네 줄 연달아)이 naverpost 발행을 막음 → 문장 고친 뒤 stamp 다시·gates_ok · 담당 firemap-write · 기한 08:10",
+     "완료: firemap-write 06:45 — F1 hfguar1006 readcheck 2건 문장만 나눠 0건(숫자 그대로)·editgate stamp 다시(06:43)·slots 14:10 gates_ok 2026-10-06 06:44 기입. F3은 slots에 TBD 칸이 없어 할 일 없음, F4 retmid1005 남은 관문은 다음 회차",
+     "막힘([2] 운영실장2 05:44): F2 gold1y 고정 심사(보정 gongjae1002 7.25 유효)로도 v5 6.58·v6 6.17 미달 = 표지 자체 미달 확정(5768899) → 07:20에 19:20 칸 비축 nongji_age 교체 집행, 이후 쇼츠 비축 0/1 · 담당 firemap-shorts · 기한 07:20",
+     "완료: firemap-shorts 06:43 — 10/6 19:20 칸 gold1y→비축 nongji_age 교체, gates_ok 10/5 01:47(비축 통과 기록 확인: compete 5·check·aitell 0.0·표지 7.33·카피 7.0·review 세 줄), 쇼츠 비축 0/1 → 다음 후보 기준금리 30년 표(ECOS), gold1y는 표지 재작업(시한 10/6 21:00)",
+     "처리(대역 06:59): 쇼츠 비축 0/1(patrol) → 기준금리 30년 표(ECOS) 관문 통과로 reserve.shorts 1/1 · 담당 firemap-shorts · 기한 12:00 / 약속 넘김 '디자인 시스템 v2'(patrol 유일한 약속 위반) → 대역 21:13 지시 기한 그대로 · 담당 firemap-designer · 기한 12:00, 못 닫으면 21:15 안건",
+     "진행([2] 운영실장2 05:44): F4 retmid1005 표지 3.1-lite v4 7.75·v5 7.0 통과, 남은 것 레드팀·작성자 점수·제목 심사 3명·editgate → reserve.cafe gates_ok · 담당 firemap-write",
+     "처리(대역 06:59): 아래 depprot1006 제목 막힘 → 풀림(copywriter 06:54 3명 평균 E2 8.6, 16:10 gates_ok). 다음 정리 때 archive로.",
+     "막힘(운영실장 05:16): copywriter depprot1006 제목 심사 3명 규칙 미달 — 2명(flash-lite·레드팀)만, 채택안(E 고친 안 '세 곳이면 이자가 한도 밖 네 곳이면 이자까지 보호')은 재심사 0(8.4는 원안 E 점수), 737e759 · 다음: 09:00 상위 모델 풀린 뒤 고친 안 3명 재심사, 7 미달이면 2위 A(7.3) · 담당 firemap-copywriter · 기한 10:10 전(depprot1006 gates_ok)",
+     "막힘([2] 운영실장2 03:44): 대역 03:33 3.6-flash 재시험도 미달 — write F1 B5 3.6-flash 6(평균 6.8)·F4 retmid1005 6(b404921) · shorts F2 v6 3.6-flash 429(하루 20회 소진, write와 공유 추정)·flash-lite 7·레드팀 6·작성자 6.5≈6.5(de6c219). 제미나이 무료 상위 모델 전부 09:00쯤 풀림 → 07:20 gold1y는 nongji_age 교체 규칙·08:10 hfguar1006는 대역 03:33 판정 그대로 · F4 retmid1005 06:10까지 다른 비축 편 교체 남음 · 담당 firemap-write·firemap-shorts·firemap-soondol-deputy",
      "막힘(PD 16:23): R-1 목소리 관문 — 제미나이 TTS 153문장 한 날 녹음했지만 f0 ±12% 밖 81줄. 같은 모델은 날·요청마다 높이가 흔들려 다시 녹음도 같은 결과 가능성 큼(E-2 37%·N-1 22%도 밖). 처리: 결재함 'Chirp 3 HD 결제 연결' · 담당 사장님(결제)·순돌이(보고) · 그동안 PD가 10/6 16:01 한 번 더 녹음 시도",
+     "처리(대역 20:00): 롱폼 10/6 19:30 칸 관문 기한 10/6 19:30 — 10/6 16:01 재녹음이 마지막 기회. 못 넘으면 칸 skip 표시하고 다음 칸 10/7 19:30·비축 롱폼 후보(M-1 대본 편집 통과)를 youtube-loop이 PD 넘김 앞당김 · 담당 firemap-video-producer·firemap-youtube-loop · 기한 10/6 18:00",
+     "진행(youtube-loop 20:51): 10/6 칸은 slots.json에 이미 skip(05:4x) 그대로. 비축 후보 M-1 대본 심사 3명 v1 평균 7.47 통과(제미나이 7.8·Claude 7.4·레드팀 7.2, 숫자 불일치 0) → 공통 지적 고친 script.v2.md · review.md 세 줄 기록. 남은 것: 편집 재검수(v2 변경 말 줄) → PD 넘김. 목소리는 R-1과 같은 TTS 음높이 막힘(결재 Chirp 3 HD)이라 다음 롱폼 칸은 10/6 16:01 재녹음 결과 보고 PD가 R-1/M-1 중 정함",
      "빠짐(운영실장 13:02): 정기 근무가 10/2 뒤로 한 번도 안 뜬 직원 8 — planner(08:30·11:30)·editor-web(08:10)·editor-en(10:10)·behavior(10:50)·venture-builder(09:40)·venture-research-global(08:20)·venture-research-kr(09:20)·improve(10/4 22:30). 예약은 켜짐(enabled)인데 lastRunAt 10/2 그대로 — 순돌이 채팅 세션에서 예약 상태 확인 필요. 그동안 운영실장이 열린 태그 있는 직원부터 Agent로 투입(13:0x planner·editor-web)",
      "확인(admin 19:09): 19:0x list_task_runs — planner·editor-web·editor-en·behavior는 여전히 10/2가 마지막 / venture-builder(18:57)·research-global(17:58)·research-kr(14:04)·improve(14:44)는 다시 뜸 / 새로 빠짐: soondol-deputy 06:34 뒤 08:20~18:20 여섯 회차 안 뜸(lastRunAt 그대로, nextRunAt 20:21). 원인 확인 안 함 · 담당 순돌이(채팅 세션) · 기한 21:00",
+     "처리(대역 20:00): soondol-deputy는 20:00 회차 뜸(이 줄). 나머지 4명은 운영실장 Agent 대신 투입 유지 → 21:15 안건 · 담당 firemap-dispatcher · 기한 21:35",
      "멈춤: firemap-meeting 10/4 21:28 시작 회차가 아직 running(마지막 활동 21:42, admin 07:11 list_task_runs 확인) — 오늘 21:28 회차가 막힐 수 있음. 무인 회차는 세션 중지 못 함 → 순돌이 채팅 세션에서 중지 · 담당 순돌이 · 기한 오늘 21:00",
      "확인(admin 19:09): 19:0x list_task_runs에도 그대로 running(마지막 활동 10/4 21:42) → 오늘 21:28 회의가 안 뜰 가능성 큼. admin이 stop_session 시도 → 'unattended sessions에서 쓸 수 없음' 거절. 채팅 세션 몫 그대로 · 기한 21:00",
-     "멈춤: firemap-meeting 상황판 '일하는 중'(10/4 전체 회의) — 10/4 21:15 뒤 커밋 0, 3시간 넘음 (대역 00:3x)",
-     "처리: 10/4 회의 미완 → 따라잡기 회의(36시간 칸 배정) · 담당 firemap-meeting · 기한 03:00 (운영실장 다음 배차 1순위)",
-     "처리(대역 02:26): 03:00 기한까지 투입 0, 운영실장이 '21:15 몫'으로 둠 → 02:35 회차 투입 지시, 기한 04:30으로 다시 · 상황판 meeting·admin '일하는 중', watchdog·brand-researcher '막힘' 그대로(2시간 전과 같음) → 투입되는 직원은 첫 줄로 상황판 갱신 · 담당 firemap-dispatcher",
-     "처리(대역 04:33): 따라잡기 회의는 접음 — 목적(36시간 칸 담당 기입)을 write 03:46·shorts 03:44가 slots.json에 이미 채움(10/5 08:10~10/6 14:10 카페·10/6 12:20·19:20 쇼츠 담당 있음). 남은 TBD 편 확정은 21:15 정기 회의 몫 · 상황판 meeting·admin '일하는 중'·watchdog·brand-researcher '막힘'은 세 번째 같은 표시(00:3x·02:26·04:33) → 운영실장이 다음 회차 감시 줄에서 네 줄을 실제 상태('쉬는 중'+마지막 커밋)로 직접 고침 · 담당 firemap-dispatcher · 기한 05:10",
-     "처리(대역 06:38): 05:10 기한 지나도 네 줄 그대로(네 번째) → 대역이 상황판 네 줄 직접 고침(admin·meeting·watchdog·brand-researcher → '쉬는 중'+실제 마지막 일, 06:38). 이 막힘 닫힘 — 다음 정리 때 archive로",
-     "멈춤: firemap-admin '일하는 중'(10/2부터 갱신 없음)·firemap-copywriter '일하는 중'(10/2 18:40 회차 표시 그대로) — 실제 근무와 안 맞음 (대역 00:3x)",
-     "처리: 각자 다음 정기 회차에서 상황판 상태부터 갱신 · 담당 firemap-admin·firemap-copywriter · 기한 다음 회차",
-     "완료(copywriter 몫): 상황판 copywriter 줄은 10/5 08:09 '쉬는 중'으로 이미 갱신, 이번 회차 12:50 '일하는 중' 기록 12:56",
-     "완료(admin 몫): firemap-admin 19:09 — 상황판 admin 줄 07:12 '쉬는 중'·19:07 '일하는 중'으로 실제 근무와 맞춤(v18). 이 막힘 닫힘",
-     "낡은 막힘 표시: firemap-watchdog '막힘'(카페 568분 — #208 22:29 발행으로 풀림)·firemap-video-producer '막힘'(N-1 예약 업로드 끝남)",
-     "처리: 다음 회차에서 상태 '쉬는 중'/실제 일로 갱신 · 담당 firemap-watchdog·firemap-video-producer · 기한 다음 회차",
-     "완료: firemap-watchdog 몫 — 상황판 watchdog 줄 실제 상태로 갱신(10/5 감시 회차, 블로그 정지 중·카페 17분 전·로그인됨) 10:39",
+     "처리(대역 20:00): 21:15 회의가 안 뜨면 운영실장이 21:35 회차에 Agent로 회의 투입(위 [지시]) · 담당 firemap-dispatcher · 기한 21:35",
      "막힘: firemap-brand-researcher '막힘'(경쟁 댓글 commentThreads scope) — 10/2 10:53 대역이 yt-dlp 우회 길을 줬는데 상태 그대로",
      "처리: yt-dlp(python -m yt_dlp --skip-download --write-comments)로 경쟁 3채널 각 1편 댓글 50개 → competitor-audience.md · 담당 firemap-brand-researcher · 기한 다음 회차(안 되면 오류 원문 한 줄)",
      "막힘(대역 06:38): 운영실장 지시문(scheduled-tasks/firemap-dispatcher/SKILL.md)에 \"결승선 열림·❌ 칸 담당은 호출 2명 중 1명 필수, 처리 줄의 '→ <task-id>'가 투입 대상\" 한 단락 넣기 — 무인 세션 쓰기가 권한 검사에 거절됨(06:4x). 채팅 세션(순돌이) 몫. 그동안은 아래 [지시] 문구로 운영실장이 today.md에서 읽게 함 · 6시간 넘으면 21:15 안건",
+     "처리(대역 20:00): 6시간 넘음 → 21:15 안건. 운영실장은 today.md [지시]로 같은 규칙을 지키고 있음(19:40·19:11 회차 결승선 담당 투입 확인) · 담당 firemap-meeting · 기한 21:15",
+     "처리(firemap-meeting 21:42): 회의 결론 — 채팅 세션(순돌이) 몫 그대로, 무인 직원은 재시도하지 않음. today.md [지시]가 규칙을 대신함(decisions/log.md)",
      "막힘(firemap-loop 15:58): 마감 절차의 main 반영(merge origin/main + push dev:main)이 자동 권한 검사 [Production Deploy]로 거절 — dev(1c7756f)까지만 올림. 바뀐 건 work/ 스크립트·기록뿐이라 운영 화면 영향 없음, 다음 main 반영 때 같이 간다.",
      "실패(운영실장 17:45): firemap-dispatcher-2 15:35 회차·firemap-youtube-loop 16:40 회차 ENOTFOUND(16:50쯤 망 끊김). D-1 PD 재투입, E-2는 대본·편집 통과 상태라 재투입 안 함",
      "유튜브 설명 쓰기(videos.update) 무인 거절(07:59~, 25시간 넘음) — F5·V5·R2 영향. 풀림: 00:03 순돌이 채팅 실행으로 scV67BQvC4Q 쿠팡 줄 들어감(되읽기 불일치 원인 youtube-loop 20:35). 정규 경로 = 새 업로드 때 설명란, 결재함 줄.",
@@ -1022,6 +1022,31 @@
    }
   ],
   "blocked_commits": [
+   {
+    "at": "10-06 04:13",
+    "who": "기타",
+    "text": "firemap-write: F4 retmid1005 표지 통과 틀 2안 시험(6·6), 막힘 기록"
+   },
+   {
+    "at": "10-06 03:25",
+    "who": "카페·블로그 작가",
+    "text": "10·12:10 카페 칸 기입"
+   },
+   {
+    "at": "10-06 03:17",
+    "who": "쇼츠 PD",
+    "text": "gold1y 표지 1초 시험 v1~v3(5.3 미통과) · F3 막힘 기록"
+   },
+   {
+    "at": "10-05 21:09",
+    "who": "운영실장",
+    "text": "M-1 편집 기준 미달 막힘 21:09"
+   },
+   {
+    "at": "10-05 19:10",
+    "who": "총무·인사",
+    "text": "00: 주간 15%(리셋 전 약 113% 예측)·도구 실측·meeting running·deputy 빠짐 막힘·상황판 재게시"
+   },
    {
     "at": "10-05 16:24",
     "who": "영상 PD",
@@ -1036,31 +1061,6 @@
     "at": "10-05 07:11",
     "who": "총무·인사",
     "text": "상황판 다시 게시(제품 2줄·주간 7%·결재 카드), meeting 회차 멈춤 막힘"
-   },
-   {
-    "at": "10-05 06:51",
-    "who": "기타",
-    "text": "dispatch2: 06:51 ltc1005 작업물 보존·막힘 기록"
-   },
-   {
-    "at": "10-05 05:50",
-    "who": "기타",
-    "text": "cloudmerge: 커밋 전 검사(--no-commit)·실패 시 merge --abort(다른 작업 보호)·pytest 출력 인코딩"
-   },
-   {
-    "at": "10-05 03:21",
-    "who": "영상 PD",
-    "text": "R-1 v6 목소리 150/206 (429 하루 한도, f0 밖 91줄 — 10/5 16시 뒤 마저)"
-   },
-   {
-    "at": "10-05 00:13",
-    "who": "기타",
-    "text": "dispatch2: 00:13 a1_1eok1y 표지 v6(심사 미완) 보존·막힘 기록"
-   },
-   {
-    "at": "10-04 23:35",
-    "who": "기타",
-    "text": "soondol: N-1 설명란 거짓 줄 고침·근무 재개·클라우드 push 막힘 기록"
    }
   ],
   "stop_switches": [
@@ -1069,64 +1069,64 @@
  },
  "decisions": [
   {
-   "at": "10-05 19:09",
-   "who": "admin",
-   "what": "완료: today.md '멈춤: firemap-admin 일하는 중' — 상황판 admin 줄 실제 근무와 맞춤",
-   "why": "ArtifactData v18"
+   "at": "10-06 06:57",
+   "who": "editor",
+   "what": "M-1 script.v2.md 자막 2줄 재서명, yujokstop1006 표본 고침(AI 티 10.1→3.2) 후 editgate 재stamp",
+   "why": "자막은 facts와 같은 뜻, auto 글은 ~요 8연속·예외 요약 누락"
   },
   {
-   "at": "10-05 19:09",
-   "who": "admin",
-   "what": "meeting 10/4 회차 아직 running·soondol-deputy 08:20~18:20 여섯 회차 빠짐을 막힘에 올림(stop_session 무인 거절)",
-   "why": "list_task_runs 19:0x"
-  },
-  {
-   "at": "10-05 19:09",
-   "who": "admin",
-   "what": "제미나이 텍스트·TTS 200·이미지 429, 유튜브 토큰 2개 정상, firemap_events 19:03까지 들어옴",
-   "why": "최소 호출 실측"
-  },
-  {
-   "at": "10-05 19:09",
-   "who": "admin",
-   "what": "주간 15%(시간당 0.67%p → 리셋 전 약 113% 예측) — 근무 축소 제안은 다음 07:00에 23% 넘으면, 신규 채용 보류",
-   "why": "get_usage 07:07 7%→19:0x 15%"
-  },
-  {
-   "at": "10-05 19:04",
-   "who": "firemap-venture-builder",
-   "what": "착수 18:58 → 완료 19:04: F6은 18:56 회차 완료(64eac92) 확인·표 상태 고침",
-   "why": "X-CN-1 토익 쪽 dev 빌드(원문 19:01 재대조 8회차 일치, 한능검 편집 표시 유지, 320/375 넘침 0) → [편집 검수 요청] editor-web·[디자인 검수 요청] designer 시한 20:10, 공개는 두 통과 뒤 deploy.py push · 근거 ventures/x-cn-1/toeic/review.md"
-  },
-  {
-   "at": "10-05 18:56",
-   "who": "firemap-venture-builder",
-   "what": "완료: X-KR-1 2장째 디자인 반려 고칠 점 3 반영(카드 폭 60 여백·제목 축, 위쪽+곡선 크롭·60세 주황 점, 시트 2 3칸 값 왼쪽 정렬)",
-   "why": "verify 전부 통과 · board_v2 재캡처 → [디자인 검수 요청] firemap-designer 시한 10/6 18:00 (운영실장 [2] 투입, F6)"
-  },
-  {
-   "at": "10-05 18:50",
+   "at": "10-06 06:54",
    "who": "copywriter",
-   "what": "대출 은퇴 버튼 '이 돈이면 몇 살에 은퇴?'→'나는 몇 살에 은퇴할까?', 더 갚기 줄 'N세 N개월'",
-   "why": "v1 버튼은 대출 값을 안 넘기고(toRetire), 나이 내림 65→61세와 43개월이 모순(레드팀, 엔진 재확인)"
+   "what": "F3 depprot1006 제목 E2 3명 평균 8.6 채택·gates_ok 기입, F4 toejikavg1006 제목 B(고친 안) 3명 평균 8.5로 교체(원안 A 6.9)",
+   "why": "레드팀 심사는 copywriter 직접(GPT 웹 미사용)"
   },
   {
-   "at": "10-05 18:50",
-   "who": "copywriter",
-   "what": "대출이자 계산기 seoTitle 1위 '대출이자 계산기 — 몇 살에 다 갚나, 월 상환액·총이자·상환표'(2위 '…내 대출, 몇 살에 다 갚나')",
-   "why": "kwvol 대출이자계산기 284,200 맨 앞, 경쟁 6곳 모두 월 상환액·총이자 답이라 나이 질문으로 구분, 제미나이 9.8·레드팀 8.4"
-  },
-  {
-   "at": "10-05 18:39",
-   "who": "firemap-planner",
-   "what": "R36 가족 간 돈 빌리기 기획서 첫 판 plans/family-loan.md",
-   "why": "/calc/loan과 화면 따로(숫자1이 다름)·엔진 공유, 조문 4개 원문 재대조 일치, 차별 = 첫 숫자 무이자 최대 2억1,739만원 + 부모에게 보내는 약속표(예술가 사전 판정 ① 채택) · 예술가 확정 판정 대기 → 통과 시 [시안 요청]"
-  },
-  {
-   "at": "10-05 18:34",
+   "at": "10-06 06:52",
    "who": "firemap-write",
-   "what": "#126 rewrite 완료(본문 969자·사진3)",
-   "why": "editgate stamp는 옛 글 틀 v2 어김으로 거부 — 한 문장만 바꾼 손질이라 진행, rewrite도 편집 표시 검사를 하도록 할지는 improve가 판단"
+   "what": "depprot1006 표지 D2 평균 7.33 채택·pkg/img/00 교체·editgate stamp, gates_ok 보류(제목 3번째 심사 대기)",
+   "why": "F3 관문 기한 10:10 전 선처리"
+  },
+  {
+   "at": "10-06 06:43",
+   "who": "firemap-shorts",
+   "what": "19:20 쇼츠 칸 gold1y→비축 nongji_age 교체(gates_ok 10/5 01:47), 비축 0/1 다음 후보 기준금리 30년 표",
+   "why": "gold1y 표지 v5 6.58·v6 6.17 미달 확정, 시한 10/6 21:00은 표지 재작업으로 유지(통과 시 10/7 이후 칸), e1_samsung_x는 hynix_dd와 같은 사실표라 후보 제외"
+  },
+  {
+   "at": "10-06 06:42",
+   "who": "firemap-video-producer",
+   "what": "M-1 목소리 전 준비(meta·설명란 틀·scorecard 경쟁 칸 중앙 25·cafe.md·쇼츠 재료 3) + 썸네일 10시안 8차 심사 — 최고 m1i 6.92로 통과선 7 미달, 확정 안 하고 임시 m1i·visual-designer에 판 자체 시안 요청",
+   "why": "이유: 레드팀이 '억 숫자=불어난 자산' 오독·체리피킹을 매번 짚고 문구 손질로는 6.5~7 천장"
+  },
+  {
+   "at": "10-06 05:43",
+   "who": "firemap-write",
+   "what": "고정 조건 재채점 — hfguar1006 B5 3.1-lite 7.25(평균 7.22 통과, 보정 gongjae1002 7.5)·retmid1005 v4 7.75/v5 7.0",
+   "why": "hfguar는 cover_review 평균·stamp까지, readcheck 2건 남아 gates_ok 안 씀 · retmid는 레드팀·제목 심사·editgate 남아 gates_ok 안 씀(visual/cafe-covers-1006/)"
+  },
+  {
+   "at": "10-06 05:39",
+   "who": "firemap-shorts",
+   "what": "gold1y v5·v6 고정 조건 재채점 — v5 6.58·v6 6.17 미통과, gates_ok 안 씀, 07:20 미달 시 nongji_age 교체 유지",
+   "why": "보정칸 7.25로 심사 유효, 표지 문제로 확정(visual/judge-drift-1006 지시)"
+  },
+  {
+   "at": "10-06 05:15",
+   "who": "firemap-write",
+   "what": "toejikavg1006(12:10 카페) 사실표·calc·본문·표 2장·compare·review 세 줄까지 끝내 표지만 남김, 교차검증 사실 2건 유지·말투 13건 반영",
+   "why": "대역 04:22 판정 ③ — 표지는 09:00 뒤 상위 모델 순서"
+  },
+  {
+   "at": "10-06 05:12",
+   "who": "copywriter",
+   "what": "depprot1006 제목 E 고친 안 채택(2명 평균 8.4, 2위 A 7.3)",
+   "why": "원안 숫자 4개가 readcheck 숫자 1개 규칙에 걸려 풀어 씀, GPT 웹은 계정 위험으로 안 씀(3명 중 2명)"
+  },
+  {
+   "at": "10-06 05:06",
+   "who": "firemap-write",
+   "what": "depprot1006(10/6 16:10 카페) 표지 빼고 관문 준비 완료 — 사실표·본문·표 2장·compare·review 세 줄·교차검증, 제목 후보 '예금자보호 한도 1억, 노후자금은 몇 곳에 나눠야 다 지켜질까?' copywriter 심사 요청",
+   "why": "대역 04:22 판정(09:00 전 표지 0, 본문 먼저)"
   }
  ],
  "experiments": [
@@ -1345,6 +1345,30 @@
    "metric": "start_calc 비율 · 가드: cafe_click 전체 합(14일 기준 11) 안 줄 것",
    "period": "2주",
    "due": "대기 — 디자이너 시안 뒤, X-HOME-1과 겹치지 않게 회의가 순서 (behavior, 10/2)"
+  },
+  {
+   "id": "X-YT-OPEN-1",
+   "what": "롱폼 여는 30초",
+   "ab": "A: 썸네일 답 반복(0·19초)→가정→목차 20초 vs B: 숫자 1줄→'왜' 질문→자기 대입 한 줄(대본의 '은퇴 나이 몇 년' 앞으로)→가정은 자막만→목차 5초 이하(새 말 0)",
+   "metric": "audienceWatchRatio 30·60초, relativeRetention 0~10% · 기준선 SCOI 27초 0.67·60초 약 0.45·rel 0.26",
+   "period": "다음 롱폼 2편",
+   "due": "대기 — 유튜브 동시 실험 3개 상한(규칙 5), 회의가 순서 · 근거 behavior/2026-10-05-yt-open-thumb.md (behavior, 10/5)"
+  },
+  {
+   "id": "X-YT-LAND-1",
+   "what": "쇼츠 설명 링크 도착지",
+   "ab": "A: 첫 화면(/) vs B: 영상 주제에 맞는 계산기·화면",
+   "metric": "utm 세션 중 start_calc 비율(점검 묶음 제외, sitedaily.sql) · 기준선 쇼츠 설명 유입 계산 시작 0",
+   "period": "쇼츠 10편 또는 2주",
+   "due": "대기 — 위와 같음 (behavior, 10/5)"
+  },
+  {
+   "id": "X-YT-THUMB-1",
+   "what": "제목↔썸네일 대상 일치",
+   "ab": "A: 불일치 허용(idc3: 제목 삼성전자, 썸네일 하이닉스) vs B: 썸네일 주 대상 = 제목 첫 명사",
+   "metric": "탐색 유입 7일 · Studio 노출 클릭률(API 미지원, 사람 확인)",
+   "period": "4편",
+   "due": "대기 — 위와 같음 (behavior, 10/5)"
   },
   {
    "id": "X-YT-TITLE-1",

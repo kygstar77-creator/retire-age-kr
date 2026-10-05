@@ -1,5 +1,5 @@
 # 도구 장부 — 총무·인사팀(firemap-admin)
-마지막 실측: **2026-10-05 07:07**(07:00 회차 — 제미나이 3종·유튜브 2·네이버 쿠키·Supabase·Cloudflare·vidIQ·Claude 한도 실측. Figma·캔바·ChatGPT·쿠팡은 이번 회차 확인 안 함 → 이전 값 그대로).
+마지막 실측: **2026-10-06 07:04**(07:00 회차 — 제미나이 텍스트·lite 200·이미지 429, 유튜브 2개 정상, vidIQ 2/150, Supabase 이벤트 최신 04:56 KST, firemap.kr·/calc/salary 200, Claude 23%. 네이버 쿠키·Figma·캔바·ChatGPT·쿠팡은 확인 안 함 → 이전 값).
 
 | 도구 | 상태 | 계정(전용/공유) | 남은 한도·만료 | 누가 쓰나 | 확인 방법 · 비고 |
 |---|---|---|---|---|---|
@@ -17,7 +17,7 @@
 | 네이버 로그인 (naver_profile) | 쿠키 살아 있음(07:07) | 파이어맵 ID | NID_AUT·NID_SES 만료 **2026-10-26 23:34** (21일 남음) | 글쓰기·감시 | storage_state.json 쿠키 만료만 봄(글쓰기 401은 따로 — naver-write-ip-block) |
 | 쿠팡 파트너스 | **본인인증 완료(10/1 17:04 사장님)** | kygstar77@naver.com, ID AF9074391 | — | 유튜브 루프·제품 개발 | 링크 발급은 youtube-loop 17:40 지시. 쿠팡 인플루언서(influencers.coupang.com) 첫 화면 PC 크롬 열림 17:2x, 신청은 결재함 14행 |
 | data.go.kr(공공데이터포털) | **크롬 로그인 풀림** | 계정 있음(키 1개), 로그인 방식 확인 안 함 | — | 기획자·신사업 | 10/1 17:2x 마이페이지 → 로그인 화면, 아이디 로그인에 보안문자 → 무인 불가. TourAPI·고캠핑 활용신청은 결재함 줄(사장님 손) |
-| Claude 주간 한도 | **7%** (10-05 07:07) | 스꾸와 공유 | 리셋 **10/11 21:00 KST**(6일 13시간) · 5시간 14% | 전 직원 | get_usage. 추가 사용량 꺼짐. admin/usage.md |
+| Claude 주간 한도 | **23%** (10-06 07:04, 시간당 0.67%p → 약 112% 예측) | 스꾸와 공유 | 리셋 **10/11 21:00 KST**(6일 13시간) · 5시간 14% | 전 직원 | get_usage. 추가 사용량 꺼짐. admin/usage.md |
 | ChatGPT 웹 | 확인 안 함(로그인 여부) | **스꾸와 한도 공유**(결재함 기록) | 오늘 3건 기록(실사용 2, 0건 1) | 순돌이·디자이너 | gpt-usage.jsonl 기준. 이미지 생성 금지 유지 |
 | Supabase 파이어맵 (c7cd8a90) | **정상(07:07)** | 파이어맵 전용 | — | 제품·성장·보고 | firemap_events(시각 칸 ts) 24시간: screen_view 119, session_start 46, calc_complete 26 — 최신 05:05 KST |
 | Cloudflare Pages retire-age-kr | **정상(07:07)** | 파이어맵 | — | 제품 | firemap.kr 200, dev.retire-age-kr.pages.dev 200. origin/dev 10/5 06:57 · 신사업 github.io 2곳(uk-take-home-pay·exam-dates-kr/hanneunggeom) 200 |

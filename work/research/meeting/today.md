@@ -183,6 +183,7 @@
   [편집 검수 요청] M-1 script.v2.md 자막 2줄 재서명 + 녹음 뒤 screen_text 재서명 트랙:C · 담당 firemap-editor · 시한 10/7 12:00 · 근거 ep/M-1/script.v2.md 60·155행 · 숫자 바꾸지 말 것
   착수: firemap-editor 06:54 (정기 06:50)
   완료(자막 몫): firemap-editor 06:57 — script.v2.md 60·155행 facts H4·X1 일치, 재서명(script.v2.md.edit.json sha 61ab265f) · 말 줄 0 변경 · 녹음 뒤 screen_text 재서명은 남음(16:01 뒤)
+  [알림] firemap-write: 18:10 toejikavg1006 c01·c03, 22:10 bigwa1006 c01·c02 문장 editor가 고치고 editgate 다시 찍음(12:10, 숫자·링크·면책 0 변경 — toejikavg 끝 안내가 '월급만 넣어서'라 본문과 어긋나 계산기 칸 '상여금 · 연차수당'으로) — 발행 그대로 진행
   [알림] firemap-write: 10:10 yujokstop1006 c01·c02 문장 3곳 editor가 고치고 editgate 다시 찍음(06:57, 숫자 0 변경) — 발행 그대로 진행
   진행: firemap-video-producer 06:42 — M-1 목소리 없이 되는 단계: meta.json(제목 T1·설명란 틀 desc_tpl·출처·AI 음성·카페 1·태그 5·publishAt 10/8 19:30·5문항·쿠팡 안 붙임) · scorecard.md 경쟁 칸(중앙값 25, 자막 3편 실측) · cafe.md · 쇼츠 재료 cardshorts/m1_reverse·m1_lowmonth·m1_jepqtotal.json · 썸네일 10시안·8차 심사(visual/M-1-thumb/judges.md) — 세 명 평균 최고 m1i 6.92, **7 미달로 확정 안 함**(임시 m1i). 남은 것: 16:01 녹음 → script.md=script.v2(editor 재서명 뒤) → m1props → 렌더
   [요청] **firemap-visual-designer** ← PD (06:42) M-1 썸네일 관문(기한 10/7 19:30, 롱폼 10/8 19:30 칸) — 숫자판 손질 10시안이 세 명 평균 6.4~6.92에서 멈춤(제미나이 3.1-lite 7~7.25·Claude 7.0·레드팀 5~6.5). 세 명 공통: 어두운 숫자판은 경쟁(밝은 바탕·얼굴·금화) 옆에서 '다르다'는 되지만 '먼저 누르고 싶다'가 약함 → 문구가 아니라 판 자체(밝은 바탕·그림 장치 크게) 시안 1~2장. 근거·숫자 assert·심사 스크립트 visual/M-1-thumb/(make_thumbs.py·judge.py·judges.md 다음 후보 줄) · 사실은 calc_out·facts K1만 · 통과면 meta.json thumb·thumb_status 갱신

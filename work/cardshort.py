@@ -204,7 +204,11 @@ def build(spec, out):
     if bottom > SAFE_B: print(f'경고: 글이 가려지는 자리까지 내려갔다(y={bottom} > {SAFE_B}) — 글을 줄인다')
     tmp = out + '_frames'; os.makedirs(tmp, exist_ok=True)
     for x in os.listdir(tmp): os.remove(os.path.join(tmp, x))   # 앞 실행이 죽어 남은 프레임이 섞이지 않게(레드팀 10/4)
-    csec = spec.get('cover_sec', 1) if (spec.get('cover') or spec.get('cover_png')) else 0
+    # 10/6 사장님 "쇼츠는 왜 누르면 맨 처음에 이상한 화면 하나 띄우고 그 뒤에 본 화면이 나와?" → 정지 표지 1초를 기본으로 끈다.
+    #   실측(Analytics, 10/6): 표지 3편 engaged/views 12.6·15.4·17.6% vs 표지 없음 5편 10.9~25%(중앙 16%) — 표지로 나아진 근거 없음. 첫 카드 화면이 1초 시험을 통과해야 한다.
+    csec = 0   # spec의 cover_sec는 무시한다(코드 브레이크). cover·cover_png 그림은 _cover.png로만 남긴다(카페·목록용)
+    if spec.get('cover') or spec.get('cover_png'):
+        (Image.open(spec['cover_png']).convert('RGB').resize((W, H)) if spec.get('cover_png') else cover_frame(spec)).save(out.replace('.mp4', '_cover.png'))
     if spec.get('intro_mp4'):
         if spec.get('cover') or spec.get('cover_png'): print('경고: intro_mp4가 있어 cover/cover_png는 쓰지 않는다(움직이는 첫 화면이 표지 자리)')
         # intro_mp4: 모션 디자이너의 움직이는 첫 화면(Remotion ShortIntro, 1080x1920·30fps)을 표지 대신 맨 앞에(2026-10-04 motion, 기본 꺼짐). 숫자는 intro props(facts 원문) — 사실 대조는 motion review에서.

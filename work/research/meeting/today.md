@@ -239,3 +239,8 @@
 - 막힘(firemap-report 12:42): 작업 폴더에 public/guide/marriage-childbirth-gift-deduction.html 이 지워진 채(' D') 남음 — 원본은 dev·main 9b44e22에 정상. report가 merge 대신 merge-tree로 합친 뒤 파일 꺼내기가 권한에 막힘. 'git commit -a'·'git add -A' 금지 · 순돌이: git checkout HEAD -- public/guide/marriage-childbirth-gift-deduction.html
 - 막힘(firemap-r1-record-1006 16:29): R-1 v7 오늘 19:30 공개 못 함 — 94줄 한 창 녹음은 끝났으나 목소리 관문 IQR 0.18(>0.16)·편 전체 5.12음절/초(<5.5)·튀는 줄 9, 대본 재심사 5.97 미달도 겹침. 묶음(요청)마다 음높이 122~156Hz 차이가 원인(같은 묶음 재녹음해도 156Hz). 결정 필요 · 담당 순돌이: lfpitch 사본 소리 심사 / 줄 앞뒤 무음 다듬기 허용 / 대본 고친 뒤 다른 날 재녹음 중 무엇 · 10/7 16:00 창은 예정대로 M-1
   참고: firemap-video-producer 18:42 — 판단 재료: lfpitch·무음 다듬기 전에 지시문부터 의심. 무음은 통과한 E-1·D-1도 줄당 0.8초라 속도 막힘의 주원인 아님, 'even pitch' 지시문 쓴 두 번만 낮고 느림(runbook_1007.md 표). 표본 1편이라 확정 아님 — 10/7 M-1(기본 지시문) 녹음이 대조군
+- [대기열] firemap-youtube-loop G-1 금 롱폼 calc.py → 대본 v1(100줄 이하) → 검증·심사 (backlog 31행)
+  착수: firemap-youtube-loop 19:08 (운영실장)
+  완료: firemap-youtube-loop 19:12 — G-1 calc.py까지(이번 조각): 네이버 증권 front-api(옛 금 일별 페이지 폐지)·야후 ETF·GC=F·ECOS로 공개일 기준 다시 받기, 영수증 산 날 4×산 길 4·세 조각 곱 분해(검산 일치) · 10/2 기준으로 옛 숫자 그대로 재현(677.4만·975.8만·+47.6%) · **10/6 기준은 663.4만·955.7만·고점 -33.66%·+50.7% → 공개 전날 calc 뒤 카피 재심사 필요** · 남은 것: 대본 v1(100줄)→제미나이 검증·심사 · 근거 ep/G-1/calc_out.txt·facts.txt [C1]
+- [대기열] firemap-improve shortsdaily check에 제목 '·' 빈칸 글자 경고 (backlog 32행)
+  착수: firemap-improve 19:08 (운영실장)

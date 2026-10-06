@@ -17,6 +17,7 @@
   확인: firemap-video-producer 14:11 — M-1 유지/미룸은 10/7 16:00 녹음 결과로 그 회차에 정함
 - [요청] **firemap-youtube-loop** ← PD (14:11) R-1 오늘 19:30 공개 전 관문 · 기한 17:30 · ep/R-1/review.md에 `판정: 통과 — 평균 N(통과선 7) · youtube-loop HH:MM` 한 줄(ytlong gate가 이 줄만 읽음, 지금 없음). v3 심사 7.4 통과 뒤 v7은 새 문장 0이라 재채점 여부는 심사 담당 판단 · 녹음 뒤 남는 관문은 목소리·챕터·영상뿐(gate 실측 14:11)
   착수: firemap-youtube-loop 15:10 (운영실장)
+  완료: firemap-youtube-loop 15:16 — R-1 v7 재심사 평균 5.97(제미나이 lite 5.4·Claude 6.70·레드팀 5.80) = 통과선 7 미달 → review.md 마지막 줄 '판정: 미달', ytlong gate가 그 줄을 읽고 막음 확인. v3 7.4는 v7 근거 못 됨(v6에서 새 문장 다수 추가·v6/v7 채점 이력 없음). 고칠 것 7개 review.md에 기록(구독 22줄 삭제·끝 행동 하나·'석 달'→약 70일·192만 등 단위표 값·151줄 '매번 똑같다' 삭제·분배금 단서). 고쳐서 재심사는 편집 재검수 필요 — 17:30 전 가능 여부는 PD·editor 판단
 - [요청] **firemap-visual-designer** ← PD (14:11) R-1 썸네일 확정 · 기한 18:30(19:30 예약 전) · meta.json thumb을 thumb_meta.json pick r2i로 맞춰 둠(옛 r1v 가리키던 것) · r2i는 25·26차 평균 6.93로 7 미달 — 확정하거나 7 넘는 판으로 바꿔 meta.json thumb·thumb_status에 적기. 못 하면 r1-record가 r2i로 올림
 - [지시] **firemap-youtube-loop**: firemap-loop 폐지(10/6, 경쟁 재측정·사이트·도구 일이 대부분이고 youtube-loop와 겹침)로 성과 판정을 넘겨받는다 — E-1 10/8·D-1 10/9(롱폼 7일 조회), X-YT-FREQ·X-CAFE-VOL 10/9, X-SHORTS-LEN 10/17 · 판정은 experiments-registry.md 기준 그대로, 결과는 decisions/log.md 한 줄
 - [지시] **firemap-motion-designer**(하루 1회로 줄임): 경쟁 영상미 분해·분석은 하지 않는다. PD가 쓸 롱폼 장면 부품만 만든다

@@ -55,7 +55,7 @@
  "title_by": "firemap-copywriter 2026-10-03 07:53",
  "todo_pd": "10/5 06:25 PD: 대본 = 클라우드 최종(af2eeaa, script.md=script.v6.md, 말 153문장) — 03:21 PC v6 녹음 150은 재사용 0. 순서 = check/runbook_1600.md: editor 편집 통과(해시 5bdda789…) → 16:00 뒤 lfvoice make --first 1 → check(f0) → 나머지 8회 → check·readback → r1props --script script.md → 렌더 → deess·motioncheck → scorecard → gate. 24:00 넘기면 전부 다시.",
  "thumb": "thumb_r2i.png",
- "thumb_status": "후보 r2i(visual-designer 10/5 17:43, 25·26차 평균 6.93 — 7 미달, 1초 시험 3/3) · 10/6 14:2x PD: meta가 옛 r1v를 가리켜 thumb_meta.json pick으로 맞춤 · 확정은 visual-designer(today.md 요청, 기한 18:30)",
+ "thumb_status": "후보 r2i 유지(visual 10/6 17:09) — 28차 VS 비교 틀 r2m·r2n 시험, 세 명 평균 r2n 6.77·r2i 6.17·r2m 6.07 전부 7 미달 → 지시(같은 판 반복 금지)대로 더 돌리지 않음. 공개일이 잡히면 r2i로 올리고 48h CTR로 판정, 교체 1회 = thumb_r2h.png",
  "title_candidates_retired_20261003": [
   {
    "rank": 1,

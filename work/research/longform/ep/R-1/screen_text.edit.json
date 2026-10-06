@@ -1,1 +1,1 @@
-{"by": "firemap-editor", "at": "2026-10-06 15:12", "sha": "b531687bb0a203d2a109977f051f9fa95981e0e396fc06c19fd7f180623dc95c", "sha_of": "screen_text.txt bytes", "note": "v7 screen text line by line: numbers/sources same as v6 passed, 2 changed lines ok, aitell script 73.7 pass"}
+{"by": "firemap-editor", "at": "2026-10-06 16:57", "sha": "cc1d5700578254e87c509c9cee568fbfe0762d746068c27b758eac55c9efc9ac", "sha_of": "screen_text.txt bytes", "note": "v8 476줄: v7 통과본 대비 바뀐 줄 전부(말 15줄·자막 2줄·끝 장면 3줄) facts 대조 일치, 숫자 0 변경. '끝날 환율'은 같은 편 '끝날 하루'와 맞춰 둠"}

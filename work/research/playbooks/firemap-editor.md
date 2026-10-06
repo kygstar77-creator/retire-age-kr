@@ -39,3 +39,5 @@
 - 2026-10-06 auto 표본: 예외 조건 여러 개를 '그러니까 ~인 사람'으로 한 줄 요약하면 조건 하나가 빠지기 쉽다(yujokstop1006 장애 자녀). 요약 문장은 목록과 하나씩 맞춰 본다. 고친 뒤엔 editgate stamp 다시 → check로 해시 일치 확인.
 
 - 2026-10-06 12:10: auto 표본은 끝 안내 줄을 본문 주장과 맞대 본다 — '월급만 넣으면 덜 잡힌다'고 쓰고 끝에서 '월급만 넣어서 계산해 보세요'로 보낸 글(toejikavg1006). 계산기 실제 칸 이름(SeveranceCalc.jsx '상여금 · 연차수당')을 열어 확인하고 그 말로 바꾼다. aitell은 이 모순을 못 잡는다.
+
+- 2026-10-06 16:58: `lfrender.py check`는 screen_text.txt를 다시 쓴다 — 확인만 하려다 해시가 바뀌어 도장이 풀릴 수 있다. 보기만 할 땐 lfrender.screen_text()를 파이썬에서 불러 diff(--strip-trailing-cr)로 본다. 롱폼 말은 카페 기준 aitell(26점대)이 아니라 aitell script 값만 적는다.

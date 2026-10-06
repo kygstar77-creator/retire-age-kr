@@ -22,6 +22,8 @@
   착수: firemap-youtube-loop 16:47 — 16:29 r1-record가 오늘 공개 안 함으로 정리, 지적 7개 고친 v8 대본 → 재심사 (다른 날 재녹음용)
   완료: firemap-youtube-loop 16:52 — R-1 대본 v8(말 90줄) 재심사 평균 **7.40 통과**(제미나이 3-flash 8.2·Claude 6.60·레드팀 7.40, 공개 막을 사실 오류 없음) · review.md 마지막 줄 '판정: 통과' · scriptnum 0·aitell 통과 · r1props CUTS v8 맞춤·screen_text 다시 뽑음(476줄) · 바뀐 말 15줄은 목소리 없음 → 다른 날 재녹음 필요(목소리 관문은 PD·순돌이 몫)
 - [편집 검수 요청] R-1 v8 대본·화면 글자 재서명 트랙:C · 담당 firemap-editor · 시한 10/7 12:00 · 근거 ep/R-1/review.md 'v8 대본 재심사'(바뀐 말: 39만 7천·16만 4천·191만 6천·55만 9천·24만 4천원, '두 달 남짓', 분배금 환율 단서 1줄, 마지막 분배금 1줄, '공개된 숫자로', '원 단위까지 정확히 빼면 307만원', 구독·댓글 요청 삭제) · screen_text.txt 476줄 (youtube-loop 16:52)
+  착수: firemap-editor 16:56 (정기 16:50)
+  완료: firemap-editor 16:58 — R-1 v8 대본 재서명(script.md.edit.json, aitell script 74.2/1,000·2개이상 7% 통과)·화면 글자 476줄 stamp(lfrender check 편집 통과). v7 통과본 대비 바뀐 줄(말 15·자막 2·끝 장면) facts 말하는 단위·A5 252,402·약 70일 대조 일치, 숫자·말 0 변경 · 남은 렌더 관문은 목소리(재녹음 6줄)뿐
 - [요청] **firemap-visual-designer** ← PD (14:11) R-1 썸네일 확정 · 기한 18:30(19:30 예약 전) · meta.json thumb을 thumb_meta.json pick r2i로 맞춰 둠(옛 r1v 가리키던 것) · r2i는 25·26차 평균 6.93로 7 미달 — 확정하거나 7 넘는 판으로 바꿔 meta.json thumb·thumb_status에 적기. 못 하면 r1-record가 r2i로 올림
 - [지시] **firemap-youtube-loop**: firemap-loop 폐지(10/6, 경쟁 재측정·사이트·도구 일이 대부분이고 youtube-loop와 겹침)로 성과 판정을 넘겨받는다 — E-1 10/8·D-1 10/9(롱폼 7일 조회), X-YT-FREQ·X-CAFE-VOL 10/9, X-SHORTS-LEN 10/17 · 판정은 experiments-registry.md 기준 그대로, 결과는 decisions/log.md 한 줄
 - [지시] **firemap-motion-designer**(하루 1회로 줄임): 경쟁 영상미 분해·분석은 하지 않는다. PD가 쓸 롱폼 장면 부품만 만든다
@@ -217,6 +219,7 @@
   [편집 검수 요청] M-1 script.v2.md 자막 2줄 재서명 + 녹음 뒤 screen_text 재서명 트랙:C · 담당 firemap-editor · 시한 10/7 12:00 · 근거 ep/M-1/script.v2.md 60·155행 · 숫자 바꾸지 말 것
   착수: firemap-editor 06:54 (정기 06:50)
   완료(자막 몫): firemap-editor 06:57 — script.v2.md 60·155행 facts H4·X1 일치, 재서명(script.v2.md.edit.json sha 61ab265f) · 말 줄 0 변경 · 녹음 뒤 screen_text 재서명은 남음(16:01 뒤)
+  완료(중간): firemap-editor 16:58 — M-1 screen_text 녹음 전 재뽑기(lfrender check가 m1.json 04:45로 다시 씀) 바뀐 4줄 facts H4·X1 일치 → stamp. 모션 새 글자 4칸(hook·stamp)은 대본 2·4줄과 같은 말로 미리 봄 — 녹음(10/7 16:00) 뒤 m1props 재실행하면 다시 stamp 필요
   [알림] firemap-write: 18:10 toejikavg1006 c01·c03, 22:10 bigwa1006 c01·c02 문장 editor가 고치고 editgate 다시 찍음(12:10, 숫자·링크·면책 0 변경 — toejikavg 끝 안내가 '월급만 넣어서'라 본문과 어긋나 계산기 칸 '상여금 · 연차수당'으로) — 발행 그대로 진행
   [알림] firemap-write: 10:10 yujokstop1006 c01·c02 문장 3곳 editor가 고치고 editgate 다시 찍음(06:57, 숫자 0 변경) — 발행 그대로 진행
   진행: firemap-video-producer 06:42 — M-1 목소리 없이 되는 단계: meta.json(제목 T1·설명란 틀 desc_tpl·출처·AI 음성·카페 1·태그 5·publishAt 10/8 19:30·5문항·쿠팡 안 붙임) · scorecard.md 경쟁 칸(중앙값 25, 자막 3편 실측) · cafe.md · 쇼츠 재료 cardshorts/m1_reverse·m1_lowmonth·m1_jepqtotal.json · 썸네일 10시안·8차 심사(visual/M-1-thumb/judges.md) — 세 명 평균 최고 m1i 6.92, **7 미달로 확정 안 함**(임시 m1i). 남은 것: 16:01 녹음 → script.md=script.v2(editor 재서명 뒤) → m1props → 렌더

@@ -5,7 +5,7 @@
 
 | 직원 | 다음 일 1 | 다음 일 2 | 다음 일 3 |
 |---|---|---|---|
-| firemap-meeting | 10/6 21:28 정기: 검증 참모로 계산 입력값이 firemap_events에 실리는지(법 참모 보류 건) + 결승선 없앤 뒤 운영실장 투입이 관문 기한을 지키는지(X-OPS-5 대체) | 10/17: X-CAFE-CALC-1 중간 점검(10/10 시작)(7일 합 외부 3기기 미만이면 종료) | 10/15: 증명 기준 3개(사이트 방문·쇼츠 조회·쿠팡) 판정, 핵심 화면 품질은 중단 |
+| firemap-meeting | 10/7 21:28: X-OPS-6 첫 달성률(칸 대비 공개) + R-1/M-1 Studio CTR 읽기가 실제로 되는지 report 결과 확인 | 10/9: X-YT-FREQ·X-CAFE-VOL 판정(롱폼 하루 1 목표 vs 실측) | 10/17: X-CAFE-CALC-1 중간 점검(7일 합 외부 3기기 미만이면 조기 종료) |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | 10/8 칸 편 확정·관문(10/7 카페 7칸은 전부 통과) — 수요 검증(kwvol) 먼저 | 비축 1개 예금·이자·금리 묶음(비축 카페 2/2 유지) | goldway #216 KB 고시 날짜 수정(기한 10/7) · refactor #56: naverpost rewrite에 제목만 바꾸는 방식(fintax 묶음 img 없음) 붙인 뒤 실행 |
 | firemap-editor | M-1 녹음(10/7 16:00) 뒤 m1props 재실행본 screen_text 재stamp(모션 hook·stamp 4칸 포함) + R-1 재녹음 뒤 바뀐 줄 낭독 확인 | aitell에 '끝 안내 ↔ 본문' 검사 시험(toejikavg1006 사례 test) + FAQ 묶음 '~요' 연속 따로 세기(Q줄이 연속을 부풀림, wagepeak1007) | 공개 글 전수 점검(sweep.md) #120부터 3편 · 공개 롱폼(A-1·E-1·E-2) 출처 줄 내부 꼬리표 점검 |

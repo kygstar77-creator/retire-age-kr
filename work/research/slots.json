@@ -14,14 +14,6 @@
   "shorts": [],
   "cafe": [
    {
-    "item": "nhisrent1005",
-    "ep": "work/research/nhisrent1005/pkg",
-    "status": "관문 통과(옛 10/5 14:10 칸): 제목 '퇴직 후 건강보험료 집이 있으면 재산 때문에 월 얼마나 더 낼까' 7.2·표지 7.0·aitell 5.6·readcheck 0·selfcheck 사실 0·editgate auto. 같은 날 nhisprop1005(10/5 08:10 #209)와 설명·예시(과표 3억→24등급 586점)가 같아 10/5 칸에서 뺌(audit 07:57). 쓰려면 nhisprop 나간 날에서 3일 이상 띄우거나 예시를 과표 4억(681점)·전세 5억으로 바꾸고 editgate 다시. 제목 끝이 '월 얼마'라 같은 날 끝말 겹침도 볼 것",
-    "by": "firemap-write",
-    "at": "2026-10-05 09:01",
-    "gates_ok": "2026-10-05 05:00"
-   },
-   {
     "item": "retmid1005",
     "ep": "work/research/retmid1005/pkg",
     "status": "관문 통과 2026-10-06 09:37: 제목 '퇴직금 중간정산 받는 돈은 같은데 세금이 39.6만원 더 나온 사례' 3명 평균 8.6(제미나이3-flash 9.8·레드팀 7.5·독자 8.5; 쉼표만 뺌)·표지 v4 평균 7.25(3.1-lite 비교판 7.75·레드팀 6.5·독자 7.5, 약점 '더' 혜택 오독 위험·작은 글씨)·aitell 3.4·readcheck 0·selfcheck 사실 0·editgate auto. 이전 '작성 중' 내용 폐기. 10/7 18:10 칸에는 쓰지 않음(14:10 wagepeak1007이 퇴직금 중간정산 겹침) → 비축 유지, slot.txt 10/8 10 가안",
@@ -514,6 +506,14 @@
    "ep": "work/research/pensavbreak1007/pkg"
   },
   {
+   "at": "2026-10-07 19:20",
+   "kind": "shorts",
+   "item": "basecut1006",
+   "owner": "firemap-shorts",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 비축 0이라 다음 후보 기준금리 30년 표(ECOS, _reserve_shorts_next)로 배정 · 관문 기한 10/7 07:20 · 못 넘으면 gold1y '-2.42% 내림 표시' 1판 또는 칸 비움 사유 기록"
+  },
+  {
    "at": "2026-10-07 19:30",
    "kind": "long",
    "item": null,
@@ -521,6 +521,30 @@
    "gates_ok": null,
    "skip": true,
    "note": "04:4x firemap-youtube-loop: 건너뜀 — 관문 기한 10/6 19:30인데 M-1 녹음이 10/6 16:01이라 3시간 반에 렌더·심사·썸네일 불가, R-1은 목소리 막힘. 대체 = 10/8 19:30 M-1"
+  },
+  {
+   "at": "2026-10-07 20:10",
+   "kind": "cafe",
+   "item": "TBD-W1007a",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 새 편(예금·이자·금리 묶음 시험 1편 — loop 10:07 요청 D10, 같은 날 퇴직금 wagepeak와 겹치지 않게) · 관문 기한 10/7 14:10 · 못 넘으면 비축 nhisrent1005 아님(nhisprop 10/5와 3일 미만) → 칸 비움 사유 기록"
+  },
+  {
+   "at": "2026-10-07 22:10",
+   "kind": "cafe",
+   "item": "TBD-W1007b",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 새 편(write 주제 고르기, X-CAFE-CALC-1은 10/10 시작이라 지금 규칙) · 관문 기한 10/7 16:10 · 하루 8편 상한의 8번째"
+  },
+  {
+   "at": "2026-10-08 08:10",
+   "kind": "cafe",
+   "item": "nhisrent1005",
+   "owner": "firemap-write",
+   "gates_ok": "2026-10-05 05:00",
+   "note": "firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 비축에서 배정 — nhisprop1005(10/5 08:10) 뒤 3일 지나 겹침 조건 풀림. 쓰기 전 write가 같은 날 끝말 겹침만 확인. 비축은 retmid1005 1편 남음 → 비축 1편 새로 만들기(최소 2)"
   },
   {
    "at": "2026-10-08 12:20",

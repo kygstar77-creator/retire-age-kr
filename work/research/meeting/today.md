@@ -6,6 +6,17 @@
 - [알림] **firemap-meeting**(10/4 회차, 10/6 10:45 마무리) → **firemap-shorts·firemap-write·순돌이**: 유튜브 utm 11건(10/4)은 전부 공개 1~41초 뒤 기계 접속이었고 진짜 유입은 0~1이다(meeting/2026-10-04-verify.md). 쇼츠 설명 링크는 클릭되지 않는다. 그래서 F1의 '설명 utm'은 지키되 성과로 세지 않는다. 쇼츠→사이트 길은 '관련 동영상'(N-1 등 롱폼)으로 잇는다. **막힘**: 첫 화면 쿠팡 칸·가이드 면책 11~13개·/privacy 문구는 product-dev 몫인데 예약이 삭제돼 배정자가 없다(순돌이 판단). → **닫음: 10/6 사장님 지시로 사이트 새 개발 중단**(첫 화면·가이드·/privacy 손대지 않음).
 
 
+## ★ 회의 10/6 21:44 (정기) — 근거 meeting/2026-10-06-decisions.md·verify.md
+- [하루 숫자 · X-OPS-6 B, 10/7~10/13] 칸 대비 공개: **firemap-write** 카페 제시각 발행/칸 8 · **firemap-shorts** 공개/2칸 · **firemap-video-producer·firemap-youtube-loop** 롱폼 공개/주 칸(10/8 M-1). 회의가 매일 밤 달성률을 잰다.
+- [지시] **firemap-video-producer** (기한 10/7 19:30 = M-1 관문 기한) 의도: 이미 반응한 시청자(A-1 홈피드 2,330회)를 M-1로 잇는다 · 완료 기준: M-1 설명란 링크 줄에 A-1 주소 1줄 + 끝 화면 A-1 지정, A-1 설명란에 M-1 주소는 M-1 공개 직후 · 기준 예시: '같은 종목 반대로 계산한 편: https://youtu.be/…' · 금지: 쿠팡 링크 추가, 새 숫자 · 확인 시점: 10/7 18:05 회차 · 보고: decisions/log.md 한 줄
+- [지시] **firemap-video-producer** (기한 10/7 22:05 회차) 의도: Chirp 3 HD 결재가 '사실상 0원'인지 숫자로 · 완료 기준: R-1 v8·M-1·G-1 말 줄 글자 수 합(공백 포함)을 approvals.md 10/5 항목 밑에 한 줄(월 100만 글자 무료 대비 %) · 금지: 결제 시도 · 보고: decisions/log.md
+- [지시] **firemap-report** (기한 R-1 또는 M-1 공개 48시간 뒤 첫 12:30 회차) 의도: 썸네일 관문 예외(D4)가 판정 없이 굳지 않게 · 완료 기준: Studio 화면에서 그 편 노출 클릭률을 읽어 revenue.md 아래 한 줄, 우리 롱폼 중앙값과 비교 · 못 읽으면 '확인 안 함 — 이유'와 함께 today.md 막힘 칸 · 금지: 추정 숫자
+- [지시] **firemap-visual-designer** (지금부터) 관문 미달 예외 공개는 편당 1회만, 판정 지표를 무인 회차가 읽을 수 있을 때만(launch-checklist 27). 48시간 CTR이 중앙값 미만이면 다음 판으로 교체.
+- [지시] **firemap-shorts** (기한 10/7 07:20) 10/7 19:20 칸 basecut1006(기준금리 30년, ECOS) 관문 통과 → gates_ok · 못 넘으면 gold1y '-2.42% 내림 표시' 1판, 그것도 미달이면 칸 비움 사유를 slots.json에 · 이어서 비축 1편(최소 1)
+- [지시] **firemap-write** (기한 10/7 14:10·16:10) 10/7 20:10 TBD-W1007a(예금·이자·금리 묶음 시험 1편, loop 10:07 요청)·22:10 TBD-W1007b 편 확정·관문 통과 · 10/8 08:10은 비축 nhisrent1005 배정됨(같은 날 끝말 겹침만 확인) · 카페 비축 1/2 → 1편 새로
+- 막힘(회의 21:44): 롱폼 이틀 연속 0편 — 무료 TTS 한도·목소리 퍼짐. 풀 방법 = Chirp 3 HD 결제 계정 연결(approvals.md 맨 위, 사장님 결재). 결재 전까지 대본 100줄 상한 유지 · 담당 순돌이(결재 전달)
+- 막힘(회의 21:44): today.md 255줄(상한 150) — archive 옮기던 finishline-check 삭제로 담당 없음 → 운영실장(firemap-dispatcher) 10/7 03:05 회차가 완료 항목을 archive/2026-10-06.md로 옮김
+
 ## ★ 순돌이 10/6 11:2x — 롱폼 재개 · 클라우드 작업실 폐지
 - [지시·긴급] **firemap-youtube-loop** (기한 오늘 12:35 회차, 늦어도 15:30) 의도: R-1을 무료 TTS 한 창(16:00 초기화, 약 100줄) 안에 녹음해 오늘 19:30에 공개 · 완료 기준: ep/R-1/script.md를 말하는 줄 100줄 이하 v7로(원본은 script.v6.md 보존, 뺀 부분은 R-1/leftover.md) · `py -3.12 work/aitell.py script work/research/longform/ep/R-1` 통과 · screen_text.txt 맞춰 줄임 · lfvoice sections 줄 수를 decisions/log.md에 한 줄 · 금지: 새 문장 짓기(v6 문장을 고르고 다듬기), facts.txt 밖 숫자, 녹음 시도(16:10 firemap-r1-record-1006 몫) · 근거: RULES '하루 녹음 한도 안 길이'
   착수: firemap-youtube-loop 12:44

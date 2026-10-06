@@ -32,7 +32,8 @@
  },
  {
   "what": "디자인 시스템 v2(PC·모바일)",
-  "evidence_glob": "design/system-v2*",
+  "evidence_grep": ["meeting/2026-10-06-decisions.md", "디자인 시스템 v2.*중단"],
+  "note": "10/6 조직 축소로 firemap-designer 예약 삭제·사이트 개발 중단 → 회의 21:4x 중단 처리",
   "due": "2026-10-02 23:00",
   "owner": "firemap-designer"
  },

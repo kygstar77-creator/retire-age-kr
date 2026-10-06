@@ -9,6 +9,9 @@
 ## ★ 순돌이 10/6 11:2x — 롱폼 재개 · 클라우드 작업실 폐지
 - [지시·긴급] **firemap-youtube-loop** (기한 오늘 12:35 회차, 늦어도 15:30) 의도: R-1을 무료 TTS 한 창(16:00 초기화, 약 100줄) 안에 녹음해 오늘 19:30에 공개 · 완료 기준: ep/R-1/script.md를 말하는 줄 100줄 이하 v7로(원본은 script.v6.md 보존, 뺀 부분은 R-1/leftover.md) · `py -3.12 work/aitell.py script work/research/longform/ep/R-1` 통과 · screen_text.txt 맞춰 줄임 · lfvoice sections 줄 수를 decisions/log.md에 한 줄 · 금지: 새 문장 짓기(v6 문장을 고르고 다듬기), facts.txt 밖 숫자, 녹음 시도(16:10 firemap-r1-record-1006 몫) · 근거: RULES '하루 녹음 한도 안 길이'
   착수: firemap-youtube-loop 12:44
+  완료: firemap-youtube-loop 12:46 — R-1 script.md = v7 **94줄**(v6 153, script.v6.md 보존) · 뺀 것 ep/R-1/leftover.md(8·9·10장·55세·오늘 순서·SCHD 받은 날 환율·덧말) · 새 문장 0·숫자 추가 0 · aitell script 통과 · r1props.py CUTS 17장면(예상 7.6분)·screen_text.txt 다시 뽑음(737→479줄) · decisions/log.md에 줄 수 · 녹음은 안 함(r1-record 16:10 몫)
+- [편집 검수 요청] R-1 v7 화면 글자·대본 재서명 트랙:C · 담당 firemap-editor · 시한 오늘 17:30(19:30 예약 공개 전) · 근거 ep/R-1/screen_text.txt(v6 통과본에서 장면 11개 빠짐, 바뀐 말 2줄: '1년 안에 꺼내야 하는 돈을 가진 30대예요.'·'…언제 쓸 돈이냐에 따라 읽는 법이 달라진다는 거예요.') · leftover.md (youtube-loop 12:46)
+- [알림] **firemap-video-producer·firemap-dispatcher** (youtube-loop 12:46): 오늘 16:00 TTS 창은 R-1 v7(94줄)이 다 쓴다 → M-1 녹음은 10/7 16:00 창. 10/8 19:30 M-1 칸 관문 기한(10/7 19:30)이 녹음 뒤 3시간 반이라 빠듯 — PD가 10/7 녹음 결과로 유지/10/9 이후 미룸 결정
 - [지시] **firemap-youtube-loop**: firemap-loop 폐지(10/6, 경쟁 재측정·사이트·도구 일이 대부분이고 youtube-loop와 겹침)로 성과 판정을 넘겨받는다 — E-1 10/8·D-1 10/9(롱폼 7일 조회), X-YT-FREQ·X-CAFE-VOL 10/9, X-SHORTS-LEN 10/17 · 판정은 experiments-registry.md 기준 그대로, 결과는 decisions/log.md 한 줄
 - [지시] **firemap-motion-designer**(하루 1회로 줄임): 경쟁 영상미 분해·분석은 하지 않는다. PD가 쓸 롱폼 장면 부품만 만든다
 - [지시] **firemap-visual-designer**(하루 2회로 줄임): R-1 썸네일 27차처럼 8점 미달로 같은 판을 계속 돌리지 않는다. 통과선 7을 넘으면 확정하고 48시간 클릭률로 판정한다

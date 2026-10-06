@@ -129,16 +129,14 @@ for t, d, v in [('SPY', '20260702', 123037245), ('SPY', '20260910', 107755946), 
 SWI = {t: {d: i for i, (d, _) in enumerate(SW[t])} for t in SW}
 
 # 장면 = (키, 장 번호, 시작 문장 조각 — None이면 장 처음부터). 장면마다 20~40초, 그 안에서 문장마다 표시가 하나씩 더해진다.
-CUTS = [('open', '0.', None), ('promise', '0.', '파이어맵은 매번'), ('road', '0.', '오늘 순서는'), ('logo', '로고', None),
+CUTS = [('open', '0.', None), ('promise', '0.', '파이어맵은 매번'), ('logo', '로고', None),
         ('dep', '1.', None), ('fx', '2.', None), ('swing', '2.', '그런데 시작과 끝만'),
         ('spy', '3.', None), ('spytax', '3.', '자, 이제 세금이에요'), ('spycal', '3.', '그런데 이 세금은 좀 특이해요'),
-        ('schd', '4.', None), ('schdfx', '4.', '그런데 분배금은 받는 날'), ('gold', '5.', None),
+        ('schd', '4.', None), ('gold', '5.', None),
         ('rank', '6.', None), ('gap', '6.', '그럼 세금은 아무것도'), ('start', '6.', '그런데 여기서 반론'),
-        ('caseA', '7.', None), ('caseB', '7.', '두 번째는 은퇴 뒤'),
-        ('rate', '8.', None), ('now', '8.', '지금 평균 금리로 1억을'), ('posted', '8.', '은행들이 내건 금리도'),
-        ('cpi', '9.', None), ('when', '9.', '같은 예금도 언제'),
-        ('thresh', '10.', None), ('caseC', '10.', '실제로 이 문턱을'),
-        ('sum', '11.', None), ('act', '11.', '그래서 오늘 해 볼 일은'), ('end', '11.', '이제 여러분 차례예요')]
+        ('caseA', '7.', None),
+        ('sum', '8.', None), ('end', '8.', '이제 여러분 차례예요')]
+# v7(10/6, 무료 TTS 한 창 100줄): road·schdfx·caseB·rate·now·posted·cpi·when·thresh·caseC·act 장면은 대본에서 빠져 CUTS에서도 뺐다(spec 코드는 다음 편 재료로 남김 — leftover.md)
 END_MIN = 20 * FPS   # 끝 화면(엔드 스크린) 자리는 마지막 20초 이상 — YouTube 도움말 '동영상 마지막 5~20초에 추가'(검색 요약만 봄)
 SRC_ADD = '야후 파이낸스 종가 × 한국은행 ECOS 731Y001 매매기준율(파이어맵 계산)'
 
@@ -367,4 +365,4 @@ def main(script):
 
 if __name__ == '__main__':
     a = sys.argv[1:]
-    main(a[a.index('--script') + 1] if '--script' in a else 'script.v6.md')
+    main(a[a.index('--script') + 1] if '--script' in a else 'script.v7.md')

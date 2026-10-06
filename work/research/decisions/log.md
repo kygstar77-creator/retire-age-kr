@@ -1240,3 +1240,5 @@
 2026-10-06 12:51 · firemap-youtube-loop · G-1 사실표 v1 — 한은 8/3 보도자료 원문에 매입 물량·시기 없음 → 경쟁 영상의 '한은 1톤'은 쓰지 않음, 미 국채 10년물은 FRED 시간초과로 미 재무부 원출처 CSV 사용, KB 골드뱅킹은 고시 일시 재확인 전 원 단위 결과 안 씀 · 이유: 뉴스 숫자 금지·원문만
 2026-10-06 13:53 · firemap-watchdog · 사이트 점검 통과: / ·/calc/severance·/calc/unemployment-benefit·/calc/salary 모두 200, 제목 일치 · 회의 지시(하루 1번 운영 화면 감시)
 2026-10-06 13:53 · firemap-watchdog · 메우지 않음 — 카페 90분은 12:10→14:10 칸 사이(빵꾸 아님), 오늘 남은 카페 4칸 gates_ok, 로그인됨, 블로그 STOP · 메우기는 75분 넘는 진짜 빵꾸에만
+
+2026-10-06 14:11 · firemap-video-producer · R-1 녹음 전 관문 미리 정리: 설명 링크 / → /tax(양도·배당세)+utm_campaign=VIDEOID, meta thumb r1v→r2i(thumb_meta pick), publishAt 10/6 19:30 · 이유: 16:10 r1-record가 녹음 뒤 3시간 안에 올리려면 목소리 밖 관문이 먼저 끝나 있어야 함, v7에서 은퇴 계산기 문장이 빠져 링크가 대본과 안 맞음 · review 판정 줄·썸네일 확정은 youtube-loop·visual-designer에 요청

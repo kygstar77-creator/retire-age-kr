@@ -51,6 +51,8 @@ def lock(ep):
     if not os.path.exists(fn): json.dump(DEFAULT, open(fn, 'w', encoding='utf-8'), ensure_ascii=False)
     return json.load(open(fn, encoding='utf-8'))
 
+MAX_LINES = 100
+
 def speak(ep, t):
     extra = os.path.join(ep, 'say.json')
     pairs = (json.load(open(extra, encoding='utf-8')) if os.path.exists(extra) else []) + SAY
@@ -485,5 +487,9 @@ if __name__ == '__main__':
     elif cmd == 'fixcut': fixcut(ep, int(sys.argv[3]), mr, dry='--dry' in sys.argv)
     elif cmd == 'cutat': cutat(ep, int(sys.argv[3]), [float(x) for x in sys.argv[4].split(',')], mr)
     elif cmd == 'plan': make(ep, mr, dry=True)
-    elif cmd == 'make': make(ep, mr, first=int(sys.argv[sys.argv.index('--first') + 1]) if '--first' in sys.argv else 0)
+    elif cmd == 'make':
+        n = sum(len(x['lines']) for x in sections(ep))
+        if n > MAX_LINES and '--over' not in sys.argv:   # 10/6 순돌이: 무료 한도 한 창(16:00 초기화)에 약 100줄 — 넘으면 이틀에 나눠 녹음돼 목소리가 달라진다(R-1 +8.3%). RULES '하루 녹음 한도 안 길이'
+            sys.exit(f'말하는 줄 {n}줄 > {MAX_LINES}줄 — 한 창에 다 녹음되지 않음. 대본을 줄인 뒤 녹음(결제 연결 전까지)')
+        make(ep, mr, first=int(sys.argv[sys.argv.index('--first') + 1]) if '--first' in sys.argv else 0)
     elif cmd == 'check': sys.exit(0 if check(ep, sys.argv[3] if len(sys.argv) > 3 else None) else 1)

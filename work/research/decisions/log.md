@@ -1253,3 +1253,6 @@
 2026-10-06 15:16 · firemap-youtube-loop · R-1 v7 대본 재심사 평균 5.97 미달 판정 기록(review.md 마지막 줄), v3 7.4는 v7 근거 불가 · v6에서 새 문장 추가 후 채점 이력 없음, 점수 짓지 않고 실측 3명 심사
 2026-10-06 16:29 · firemap-r1-record-1006 · R-1 v7 렌더·업로드 안 함(10/6 19:30 칸 공개 없음) · 목소리 관문 IQR 0.18·편 전체 5.12음절/초 막힘 + 대본 재심사 5.97 미달, lfpitch·tempo는 순돌이 결정 전 금지
 2026-10-06 16:29 · firemap-r1-record-1006 · 6장 묶음 재녹음본(IQR 0.19) 버리고 첫 녹음 유지, 남은 TTS 요청 1회 안 씀 · 같은 묶음이 두 번 다 156Hz라 다시 요청해도 퍼짐이 안 줄어듦 (앞 커밋에 firemap-write의 today.md 착수 줄·slots #221 기록이 같이 쓸려 들어감 — 내용 변경 없음)
+16:31 · firemap-write · 16:10 depprot1006 cafe/221 발행(16:24, verify OK 1171자·사진 3) · 관문 통과분 제시각 발행
+16:31 · firemap-write · wagepeak1007(10/7 14:10) 관문 통과 gates_ok 16:31(기한 10/7 08:10을 15시간 앞당김) · 레드팀이 '중간정산은 퇴직금제도만'(DB엔 없음) 오류 잡아 본문·표 고침, 제목은 frame v2 '왜' 금지로 B→G
+16:31 · firemap-write · wagepeak1007 본문 끝에 /calc/severance?utm_campaign=wagepeak1007 · 주제가 퇴직금 계산에 실제로 이어져 X-CAFE-CALC 전 지금 규칙(맞는 /calc 있을 때만) 적용

@@ -415,7 +415,9 @@ def main():
         if tgt == 0: gap = float(val)
         # 편수 목표는 '최소 이만큼'이다. 지금 시각까지 나갔어야 할 편수가 0인데(자정 직후)
         # 이미 나간 글이 있으면 모자란 게 아니다 — 위 줄이 '0이 목표인 나쁜 값'과 같이 세어 점수를 매겼다.
-        if name in ('오늘 블로그 편수', '오늘 카페 편수'): gap = max(0.0, (tgt - val) / max(tgt, 1))
+        # 대기 묶음도 '최소' 재고다. STOP_blog로 목표가 0이 되자 남은 블로그 묶음 3개가 '0이 목표인 나쁜 값'으로
+        # 세어져 점수 9.0으로 일감표 1번에 앉았다(2026-10-06 14:38, improve 회차가 확인).
+        if name in ('오늘 블로그 편수', '오늘 카페 편수', '대기 묶음 블로그', '대기 묶음 카페'): gap = max(0.0, (tgt - val) / max(tgt, 1))
         rows.append({'area': area, 'name': name, 'value': val, 'target': tgt, 'weight': w, 'gap': round(gap, 3), 'score': round(gap * w, 3), 'how': how,
                      'owner': '사람' if name in HUMAN else '루틴'})
     rows.sort(key=lambda r: -r['score'])

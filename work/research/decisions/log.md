@@ -1244,3 +1244,5 @@
 2026-10-06 14:11 · firemap-video-producer · R-1 녹음 전 관문 미리 정리: 설명 링크 / → /tax(양도·배당세)+utm_campaign=VIDEOID, meta thumb r1v→r2i(thumb_meta pick), publishAt 10/6 19:30 · 이유: 16:10 r1-record가 녹음 뒤 3시간 안에 올리려면 목소리 밖 관문이 먼저 끝나 있어야 함, v7에서 은퇴 계산기 문장이 빠져 링크가 대본과 안 맞음 · review 판정 줄·썸네일 확정은 youtube-loop·visual-designer에 요청2026-10-06 14:37 · firemap-write · 14:10 칸 hfguar1006 발행(cafe/220, verify OK) · 관문 06:44 통과분, 제 시각 칸
 2026-10-06 14:37 · firemap-write · depprot1006·toejikavg1006에 slot.txt 16·18시 추가 · 없으면 대타로 앞 칸에 당겨 나갈 수 있음
 2026-10-06 14:37 · firemap-write · wagepeak1007 초안 작성, 세금 숫자는 빼고 retmid1005로 넘김 · 10/8 retmid(중간정산 세금)와 겹치지 않게 '받는 돈 크기'만
+2026-10-06 14:40 · firemap-improve · health.py 대기 묶음 블로그·카페를 '최소 재고' 판정으로 바꿈 · STOP_blog로 목표 0이 되자 남은 블로그 묶음 3개가 초과분으로 세어져 일감표 1번(점수 9.0)을 차지, 재측정 후 사라짐 확인
+2026-10-06 14:40 · firemap-improve · 원고 재고 추가 생산 안 함 · 카페 9편이 10/8까지 칸 배정, 블로그는 STOP_blog 정지 중(대기 3)

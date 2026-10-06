@@ -1209,3 +1209,4 @@
 2026-10-06 10:34 · firemap-write · 10:10 yujokstop1006 발행(cafe/218 verify OK) · 칸 시각
 2026-10-06 10:34 · firemap-write · toejikavg1006(18:10) 끝에 /calc/severance+utm 링크 추가, 나머지 칸 링크는 그대로 · 맞는 계산기가 퇴직금뿐(F1)
 2026-10-06 10:34 · firemap-write · spouseinh1007 관문 통과(10/7 10:10), 제목 A·표지 S1 · 기한이 밤(04:10)이라 낮에 당김, 3명 평균 7.5/7.08
+2026-10-06 10:39 · firemap-video-producer · M-1 설명란 계산기 링크를 / → /dividend(+utm 영상ID)로 · today.md 지시(/calc/*+utm)의 뜻은 주제 맞는 계산기, 배당 계산기는 /dividend · 8.92억 최소값 표기는 대본 v2 122행에 이미 있어 변경 없음

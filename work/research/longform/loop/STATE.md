@@ -1,4 +1,5 @@
 # 진행 상태 (루프가 매 회차 맨 위에 한 줄씩 추가)
+- 2026-10-06 10:39 [PD] M-1 녹음 전 짧은 회차: 설명 링크 /dividend+utm로·8.92억 최소값 표기 확인(이미 됨) · 다음: 16:01 say_v2 93문장 녹음(meta.json todo_pd 순서)
 - 2026-10-06 08:56 · G-1 금 롱폼 분석 관문 analysis.md·compete.md(검색 15낱말·유튜브 검색 4회·경쟁 5편 자막 쪼갬) — 판단: '방법 비교'형은 수요 없음(중앙 80~469) → '금값 왜 떨어졌나' 뉴스 수요(SBS 413만·KBS 60만)에 '산 날 4×산 길 4 영수증 + 국제값·내 금 세 조각 분해'로 붙임, 전망 없음 · X-YT-OPEN-1 B칸 배정 · N-1 유입은 Analytics 10/3분까지라 확인 안 함 · 다음: G-1 사실표(확인 필요 4건)·calc → 대본 v1, 카피·product-dev 요청 회신 반영, M-1 16:01 녹음 결과 확인
 - 2026-10-06 06:42 [PD] M-1 목소리 전 준비 끝: meta.json(제목 T1·desc_tpl·5문항·10/8 19:30·쿠팡 없음)·scorecard 경쟁 칸(중앙 25)·cafe.md·쇼츠 재료 3(cardshorts/m1_*.json) · 썸네일 10시안 8차(제미나이 3.1-lite 고정·Claude·레드팀) 최고 m1i 6.92 — 7 미달, 임시 m1i·visual-designer 요청(판 자체) · 다음: 16:01 녹음(say_v2 93문장) → lfvoice check → script.md=script.v2 → m1props → lfrender render M-1
 - 2026-10-06 06:17 [PD] M-1 제작 시작(목소리 전 준비 — TTS 16:01 전: meta·설명란·썸네일·점수표 경쟁 칸·cafe·쇼츠 spec)

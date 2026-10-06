@@ -1,0 +1,13 @@
+{
+ "model": "gemini-3.1-flash-lite",
+ "scores": {
+  "P4": [
+   7.0,
+   7.5
+  ],
+  "gongjae1002": [
+   7.5,
+   7.0
+  ]
+ }
+}

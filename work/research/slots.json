@@ -507,8 +507,8 @@
    "kind": "cafe",
    "item": "pensavbreak1007",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "[범위 안쪽 — 연금(연금저축)] firemap-write 09:37 F4: jongbu1007은 10/20대로 미룬 뒤 새 편 확정 = 연금저축 중도 해지하면 얼마 떼이나(검색 연금저축해지 750·연금저축 27,930, 우리 카페 해지 글 0편 dupcheck). 소득세법 제21조①21호·제129조①6호 나목 원문 받음(기타소득 15%+지방세). 10/6 08:10 irpwd1006(IRP 부득이 인출)과 각도 다름·제목 겹치면 hold. 관문 기한 10/7 12:10 · 묶음 work/research/pensavbreak1007 facts.txt 착수(남은 조사 6항목) · 못 넘으면 retmid1005 교체 기입 가능하나 14:10 wagepeak와 겹쳐 10/8 쪽이 안전",
+   "gates_ok": "2026-10-06 18:38",
+   "note": "[범위 안쪽 — 연금(연금저축)] firemap-write 09:37 F4: jongbu1007은 10/20대로 미룬 뒤 새 편 확정 = 연금저축 중도 해지하면 얼마 떼이나(검색 연금저축해지 750·연금저축 27,930, 우리 카페 해지 글 0편 dupcheck). 소득세법 제21조①21호·제129조①6호 나목 원문 받음(기타소득 15%+지방세). 10/6 08:10 irpwd1006(IRP 부득이 인출)과 각도 다름·제목 겹치면 hold. 관문 기한 10/7 12:10 · 묶음 work/research/pensavbreak1007 facts.txt 착수(남은 조사 6항목) · 못 넘으면 retmid1005 교체 기입 가능하나 14:10 wagepeak와 겹쳐 10/8 쪽이 안전 · 관문 통과(write 18:38): 제목 A '연금저축 해지하면 세액공제 받은 것보다 얼마나 더 떼일까' 7.0 · 표지 P4 7.13 · crosscheck 사실 4 중 반영 3·유지 1 · 레드팀 오류 2·표현 9 반영, 재심사 새 지적 0 · readcheck 0·aitell 1.5·selfcheck 사실 0·editgate auto",
    "ep": "work/research/pensavbreak1007/pkg"
   },
   {

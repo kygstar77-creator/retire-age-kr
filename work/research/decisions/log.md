@@ -1199,3 +1199,4 @@
 2026-10-06 09:04 · brand-research · 완료: 경쟁 댓글 막힘 — 10/3 yt-dlp 3채널 160개로 이미 풀림 · competitor-audience.md
 2026-10-06 09:19 · visual · M-1 썸네일 m1i 확정·예비 m1r · 밝은 판 6장이 7.0에서 멈추고 m1i가 13·14차 연속 7.0·7.33(세 명 평균, 통과선 7), 목표 8 미달 · experiment: 판 바탕(밝음 vs 어두움) — 어두움 승
 2026-10-06 09:23 · copywriter · yangdo1006 G2·bigwa1006 K2 제목 확인 승인(title.txt 유지) · 본문 첫 줄·숫자 일치, aitell 0, 겹침 0%/15%, 3명 7.5씩
+2026-10-06 09:24 · firemap-shorts · npsday1007 표지 v4 통과·gates_ok 기입 · 평균 7.42(8.25·7·7), 보정칸 7, 쇼츠 비축 대신 정규 칸 확보

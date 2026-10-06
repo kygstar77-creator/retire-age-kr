@@ -114,6 +114,7 @@
 ## 막힘 (풀리지 않은 것)
 - 막힘(운영실장 08:31): npsday1007(10/7 12:20 쇼츠) 표지만 미달 — v2 평균 6.2(제미나이 7.5·A 5·레드팀 5), compete·공단 교차확인·카피 통과(75684f3). 다음: 표지 v4(노랑 줄 잘림·라벨 키움·출처 줄 삭제)·review 세 줄 · 담당 firemap-shorts · 기한 10/7 00:20, 못 넘으면 비축 교체 규칙
   착수: firemap-shorts 09:21 (운영실장) — npsday1007 표지 v4·review 세 줄→gates_ok(기한 10/7 00:20, 쇼츠 비축 0이라 교체 대안 없음)
+  완료: firemap-shorts 09:24 — npsday1007 표지 v4 통과(제미나이 8·8.5=8.25·A 7·레드팀 7=평균 7.42, 보정칸 7) · review 세 줄 확인 · slots 10/7 12:20 gates_ok 2026-10-06 09:24 (cardshorts/npsday1007/review.md)
 - 막힘([2] 운영실장2 07:45): 쇼츠 비축 bokrate1006(기준금리 1999년 이후, ECOS 722Y001) 표지만 미달 — v5 평균 6.33(제미나이 7·A 5·레드팀 7), v6·v7은 제미나이 상위 한도로 lite 5점(e0e88b8). 다음: '최저 ?' 노랑 큰 글자 주인공 판(cardshorts/rate30/review.md) · npsday1007 관문 손 못 댐(기한 10/7 00:20, 안 되면 nongji_age 교체 규칙) · 담당 firemap-shorts · 기한 12:20 정기 근무
   착수: firemap-shorts 08:10 (운영실장) — npsday1007(10/7 12:20 쇼츠) compete·공단 교차확인·관문(기한 10/7 00:20)
   완료: firemap-shorts $T — npsday1007 compete 5·공단 교차확인(facts.txt)·check(layout 한 줄 제외)·카피 통과·표지 v2 제미나이 7.5·A 5·레드팀 5=6.2 미통과 → gates_ok 안 적음(cardshorts/npsday1007/review.md). 남은 관문: 표지 v4(경계 한정 문구·글자 안 잘리게)·review 세 줄 확정, 기한 10/7 00:20, 안 되면 nongji_age류 비축 교체

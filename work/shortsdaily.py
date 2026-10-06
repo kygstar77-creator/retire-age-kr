@@ -119,6 +119,20 @@ def check(spec):
     if 'music' not in spec: bad.append('spec에 "music": true/false를 적어야 함 — 음악 실험 중(직전 편과 반대로, experiments.md)')
     return bad
 
+GAP_WARN = 0.2   # 읽히는 칸의 20% 넘게 비면 경고(막지는 않는다 — 사실이 아니라 화면 문제)
+
+def warn(spec):
+    """공개를 막지 않는 화면 경고. 2026-10-06: 카드 아래 약 23% 빈칸이 세 편에서 반복(backlog)."""
+    out = []
+    try:
+        import cardshort
+        g = cardshort.bottom_gap(spec)
+        if g and g[1] > GAP_WARN:
+            out.append(f'카드 아래 {g[1]:.0%} 빈칸(글 끝 y={g[0]}, 읽히는 칸 끝 {cardshort.SAFE_B}) — 점(points) 한 줄을 더하거나 막대·순위 줄을 늘린다')
+    except Exception as e:
+        out.append(f'빈칸 재기 실패: {e}')
+    return out
+
 def channel_today():
     """채널 전체의 오늘(한국 시간) 공개 쇼츠 수 — 이 로그 말고 다른 루틴(동네 쇼츠 등)이 올린 것까지 센다.
     2026-09-30: 한도를 이 파일 로그로만 세면 firemap-youtube-loop의 동네 쇼츠가 빠져 하루 3편을 넘길 수 있었다. 못 재면 None."""
@@ -160,6 +174,7 @@ def build_desc(spec):
 def publish(sp):
     spec = json.load(open(sp, encoding='utf-8'))
     bad = check(spec)
+    for w in warn(spec): print('경고(막지 않음):', w)
     # 경쟁 비교 관문(10/2 대역): cardshorts/<편>/compete.md에 경쟁 5편 표(| 1 | … | 5 |)가 없으면 공개하지 않는다. 이름은 compete.md 하나로 통일
     cp = os.path.join(os.path.splitext(sp)[0], 'compete.md')
     if not os.path.exists(cp): bad.append('경쟁 비교 없음: ' + os.path.relpath(cp, HERE) + ' (경쟁 5편 표 + 잘된 이유·다른 한 가지)')
@@ -209,7 +224,9 @@ if __name__ == '__main__':
         rows = today_rows(); print(f'오늘 {len(rows)}/{DAY_CAP}편', '| 막힘:', gate() or '없음')
         for r in log_rows()[-10:]: print(' ', r['at'], r['layout'], r['id'], r['title'][:40])
     elif cmd == 'check':
-        b = check(json.load(open(sys.argv[2], encoding='utf-8'))); print('\n'.join(b) if b else '문제 없음')
+        sp_ = json.load(open(sys.argv[2], encoding='utf-8'))
+        b = check(sp_); print('\n'.join(b) if b else '문제 없음')
+        for w in warn(sp_): print('경고(막지 않음):', w)
     elif cmd == 'publish': publish(sys.argv[2])
     elif cmd == 'desc':   # 올리지 않고 설명란만 찍는다(링크 수 확인용)
         d = build_desc(json.load(open(sys.argv[2], encoding='utf-8'))); links = re.findall(r'https?://\S+', d)

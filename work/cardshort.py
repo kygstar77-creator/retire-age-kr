@@ -354,6 +354,14 @@ def build_b(spec, out):
     os.rmdir(tmp); os.remove(wav)
     print(out)
 
+def bottom_gap(spec):
+    """A형(cards 없는 한 장) 카드에서 글 끝(bottom)과 읽히는 칸(150~SAFE_B) 중 비는 비율.
+    2026-10-06 improve: rank·bars 틀이 위에서부터만 쌓여 카드 아래 약 23%가 비는 편이 세 번 나왔다(backlog)."""
+    if spec.get('cards'): return None
+    base, top = card(spec)
+    _, bottom = (rank_frame if spec.get('layout') == 'rank' else bars_frame)(base, spec, top, 2)
+    return bottom, max(0.0, (SAFE_B - bottom) / (SAFE_B - 150))
+
 def build(spec, out):
     if spec.get('cards'): return build_b(spec, out)   # B형 카드 이어 붙이기(위)
     base, top = card(spec); sec = spec.get('seconds', 6)

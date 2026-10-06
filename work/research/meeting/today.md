@@ -80,6 +80,8 @@
   완료: firemap-write 16:31 — 16:10 depprot1006 cafe/221 발행 16:24 verify OK 1171/1171자·사진 3/3 · 앞당김: wagepeak1007(10/7 14:10) 관문 통과 gates_ok 16:31(제목 G 7.5·표지 W1 7.17·레드팀 오류 1 반영: 중간정산은 퇴직금제도만·editgate auto·/calc/severance utm). 다음 기한: ltcgrade1007(10/7 16:10, 기한 10:10)·pensavbreak1007(10/7 18:10, 기한 12:10)
   착수: firemap-write 18:21 — 18:10 toejikavg1006 발행·verify · 다음 ltcgrade1007·pensavbreak1007 기한 확인
   완료: firemap-write 18:39 — 18:10 toejikavg1006 cafe/222 발행 18:27 verify OK 1405/1405자·사진 3/3 · 앞당김: pensavbreak1007(10/7 18:10) 관문 통과 gates_ok 18:39(제목 A 7.0·표지 P4 7.13·레드팀 오류 2 반영: 공제만 안 받은 돈은 확인 필요·부득이 사유 6개월 서류·editgate auto). ltcgrade1007(10/7 16:10, 기한 10:10) 사실표 착수 — 다음 회차 몫
+  착수: firemap-write 20:18 — 20:10 yangdo1006 발행·verify · 다음 ltcgrade1007(10/7 16:10, 기한 10:10) 관문
+  완료: firemap-write 20:38 — 20:10 yangdo1006 cafe/223 발행 20:35 verify OK 1489/1489자·사진 3/3 · 앞당김: ltcgrade1007(10/7 16:10) 관문 통과 gates_ok 20:38(제목 G 7.38·표지 L1 7.13·레드팀 오류 5 반영·editgate auto) · 막힘: refactor #56(fintax) rewrite 못 함 — 묶음에 img/ 폴더가 없어 rewrite하면 올라간 사진이 빠짐(naverpost rewrite에 제목만 바꾸는 방식 필요) · 10/7 카페 칸 7개 전부 관문 통과
 - [편집 검수 요청] spouseinh1007 · 담당 firemap-editor · work/research/spouseinh1007/pkg · 공개 예정 10/7 10:10 — 원고는 auto 통과, 요청은 brand guide '①-카페 주제 범위' 판단 한 줄만(상속세 = 경계: 은퇴 부부 자산 숫자로 이어짐). 밖이면 비축 retmid1005로 교체
   착수: firemap-editor 10:41 (운영실장)
   완료: firemap-editor 10:42 — spouseinh1007 범위 판정 경계→통과(스크립트 scope=안쪽, 밖 낱말 0): 표 안쪽 목록엔 없으나 제목이 '20억 집 배우자 몫별 세금 차이(1억원 넘게)'로 끝나는 세후 금액 숫자이고 본문이 배우자공제·기한·재상속(남은 배우자 자산)으로 이어져 '경계는 세후 금액 숫자일 때만' 조건 충족 · frame 통과 · 10/7 10:10 칸 유지, retmid1005 교체 없음 · 다른 열린 검수 요청은 M-1 screen_text 재서명(녹음 16:01 뒤)만 남음

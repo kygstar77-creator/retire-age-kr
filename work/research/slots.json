@@ -24,9 +24,10 @@
    {
     "item": "retmid1005",
     "ep": "work/research/retmid1005/pkg",
-    "status": "작성 중(gates_ok 아님): 퇴직금 중간정산 하면 세금이 합쳐서 얼마나 늘까(검색 퇴직금중간정산 11,480) — 본문 1,800자·사진 3·readcheck 0·selfcheck 사실 0·aitell 0·crosscheck 사실 대조 반영·compare.md·review 세 줄 초안 있음. 남은 관문: 표지 1초 시험 7점 미만(10/5 23:27: 주제 오독은 풀렸으나 flash-lite 6점 고정, 상위 모델 429 — 한도 풀리면 gemini-3-flash-preview로 재시험, 표지는 세금 25% 더 내요 안) · 제목 심사 3명 · 레드팀 · editgate·.edit.json · slot.txt는 10/8 10 가안",
+    "status": "관문 통과 2026-10-06 09:37: 제목 '퇴직금 중간정산 받는 돈은 같은데 세금이 39.6만원 더 나온 사례' 3명 평균 8.6(제미나이3-flash 9.8·레드팀 7.5·독자 8.5; 쉼표만 뺌)·표지 v4 평균 7.25(3.1-lite 비교판 7.75·레드팀 6.5·독자 7.5, 약점 '더' 혜택 오독 위험·작은 글씨)·aitell 3.4·readcheck 0·selfcheck 사실 0·editgate auto. 이전 '작성 중' 내용 폐기. 10/7 18:10 칸에는 쓰지 않음(14:10 wagepeak1007이 퇴직금 중간정산 겹침) → 비축 유지, slot.txt 10/8 10 가안",
     "by": "firemap-write",
-    "at": "2026-10-05 23:27"
+    "at": "2026-10-06 09:37",
+    "gates_ok": "2026-10-06 09:37"
    }
   ],
   "long": [
@@ -497,10 +498,11 @@
   {
    "at": "2026-10-07 18:10",
    "kind": "cafe",
-   "item": "jongbu1007",
+   "item": "pensavbreak1007",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "[판단 write 08:47] editor 안 수용: 28시간 안 부동산 경계 3편째라 jongbu는 10/20대로 미룸 → 이 칸은 안쪽 새 편(다음 write 회차, 관문 기한 10/7 12:10)·못 넘으면 retmid1005 비축 | [범위 경계 — 부동산 → 은퇴 1주택자 보유세 세후 금액으로 끝냄] firemap-write(갈래②) 10/6 07:1x: 종합부동산세 1주택 고령자·장기보유 세액공제(검색 종합부동산세 9,030, 우리 카페 0편 dupcheck — #175는 양도세 일시적 2주택), 11월 고지 앞. 종합부동산세법 제8·9조 원문. 10/6 20:10 yangdo1006(양도세)과 22시간·법 다름. 관문 기한 10/7 12:10 · 묶음 work/research/jongbu1007/pkg(미착수)"
+   "note": "[범위 안쪽 — 연금(연금저축)] firemap-write 09:37 F4: jongbu1007은 10/20대로 미룬 뒤 새 편 확정 = 연금저축 중도 해지하면 얼마 떼이나(검색 연금저축해지 750·연금저축 27,930, 우리 카페 해지 글 0편 dupcheck). 소득세법 제21조①21호·제129조①6호 나목 원문 받음(기타소득 15%+지방세). 10/6 08:10 irpwd1006(IRP 부득이 인출)과 각도 다름·제목 겹치면 hold. 관문 기한 10/7 12:10 · 묶음 work/research/pensavbreak1007 facts.txt 착수(남은 조사 6항목) · 못 넘으면 retmid1005 교체 기입 가능하나 14:10 wagepeak와 겹쳐 10/8 쪽이 안전",
+   "ep": "work/research/pensavbreak1007/pkg"
   },
   {
    "at": "2026-10-07 19:30",

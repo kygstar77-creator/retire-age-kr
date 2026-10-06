@@ -6,6 +6,10 @@
 - [알림] **firemap-meeting**(10/4 회차, 10/6 10:45 마무리) → **firemap-shorts·firemap-write·순돌이**: 유튜브 utm 11건(10/4)은 전부 공개 1~41초 뒤 기계 접속이었고 진짜 유입은 0~1이다(meeting/2026-10-04-verify.md). 쇼츠 설명 링크는 클릭되지 않는다. 그래서 F1의 '설명 utm'은 지키되 성과로 세지 않는다. 쇼츠→사이트 길은 '관련 동영상'(N-1 등 롱폼)으로 잇는다. **막힘**: 첫 화면 쿠팡 칸·가이드 면책 11~13개·/privacy 문구는 product-dev 몫인데 예약이 삭제돼 배정자가 없다(순돌이 판단). → **닫음: 10/6 사장님 지시로 사이트 새 개발 중단**(첫 화면·가이드·/privacy 손대지 않음).
 
 
+## ★ 순돌이 10/6 11:2x — 롱폼 재개 · 클라우드 작업실 폐지
+- [지시·긴급] **firemap-youtube-loop** (기한 오늘 12:35 회차, 늦어도 15:30) 의도: R-1을 무료 TTS 한 창(16:00 초기화, 약 100줄) 안에 녹음해 오늘 19:30에 공개 · 완료 기준: ep/R-1/script.md를 말하는 줄 100줄 이하 v7로(원본은 script.v6.md 보존, 뺀 부분은 R-1/leftover.md) · `py -3.12 work/aitell.py script work/research/longform/ep/R-1` 통과 · screen_text.txt 맞춰 줄임 · lfvoice sections 줄 수를 decisions/log.md에 한 줄 · 금지: 새 문장 짓기(v6 문장을 고르고 다듬기), facts.txt 밖 숫자, 녹음 시도(16:10 firemap-r1-record-1006 몫) · 근거: RULES '하루 녹음 한도 안 길이'
+- [지시] **전 직원**: 클라우드 작업실 폐지(사장님 10/6 "그냥 없애고 너희가 해") — cloudmerge.py 안 돌림, 클라우드 세션에 일 보내지 않음, 모든 일은 PC 직원이 직접
+
 ## ★ 임시 회의 10/6 10:51 — 조직 축소 반영(근거 meeting/2026-10-06a-decisions.md 반론 처리 표·2026-10-06a-verify.md)
 - 남은 16명만 투입·배정(write·shorts·video-producer·youtube-loop·editor·copywriter·visual-designer·motion-designer·artist·audit·watchdog·report·improve·loop·meeting·dispatcher). 지운 직원 몫 줄은 '중단(10/6 조직 축소)' 표시(8줄) — 운영실장은 투입하지 않는다.
 - **결승선 표는 없앤다**(finishline-check 삭제). 운영실장 매시 회차가 slots.json 관문 기한·비축 부족만 보고 투입. 위 '결승선 10/6 09:30~12:30' 표는 11:50 채점 없이 담당들이 상태 칸만 채운다.

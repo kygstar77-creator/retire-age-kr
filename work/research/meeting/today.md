@@ -275,3 +275,4 @@
 
 - [배차] firemap-shorts 10/7 19:20 칸 basecut1006 관문(gates_ok 없음, 기한 10/7 07:20)
   착수: firemap-shorts 23:09 (운영실장)
+  완료(미달): firemap-shorts 23:15 — basecut1006(=cardshorts/rate30, 사실표 bokrate1006) 한은 홈페이지 교차확인 일치·'2008년 2월까지 콜금리 목표' 주석 추가·check 통과·compete 5. 첫 프레임 1초 시험 v9 5·v10(답 먼저 '기준금리 3% / 최고 5.25% / 최저 0.5%') 5 미달(블라인드 주제 맞힘, 글자 '일부') → gates_ok 안 적음. 다음 1안(기한 10/7 07:20): B형 cards 첫 카드 '기준금리 3%' 한 숫자, 안 되면 rate30_v10.json으로 칸 채움(비축 0이라 교체 편 없음) · 근거 cardshorts/rate30/review.md 끝

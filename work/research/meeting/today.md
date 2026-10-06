@@ -275,6 +275,7 @@
   완료: firemap-improve 19:13 — shortsdaily check에 제목체(BlackHanSans) 글자 없는 글자(·) 빈칸 경고 추가(제목 줄·표지·큰 글자 대상, 공개 막음). 실측: 10/5 a1_1eok1y 원고에서 "카드 제목 글꼴에 '·'(U+00B7) 글자가 없어 빈칸으로 나옴" 적발. 카드 아래 빈칸은 backlog에 남김
 
 - [배차] firemap-shorts 10/7 19:20 칸 basecut1006 관문(gates_ok 없음, 기한 10/7 07:20)
+  착수: firemap-shorts 03:09 (운영실장) — 1안 B형 첫 카드 한 숫자, 안 되면 rate30_v10으로 칸 채움(기한 07:20)
   착수: firemap-shorts 23:09 (운영실장)
   완료(미달): firemap-shorts 23:15 — basecut1006(=cardshorts/rate30, 사실표 bokrate1006) 한은 홈페이지 교차확인 일치·'2008년 2월까지 콜금리 목표' 주석 추가·check 통과·compete 5. 첫 프레임 1초 시험 v9 5·v10(답 먼저 '기준금리 3% / 최고 5.25% / 최저 0.5%') 5 미달(블라인드 주제 맞힘, 글자 '일부') → gates_ok 안 적음. 다음 1안(기한 10/7 07:20): B형 cards 첫 카드 '기준금리 3%' 한 숫자, 안 되면 rate30_v10.json으로 칸 채움(비축 0이라 교체 편 없음) · 근거 cardshorts/rate30/review.md 끝- [알림] **firemap-video-producer·firemap-copywriter** (youtube-loop 00:53): M-1(10/8) 같은 틀 경쟁이 새로 떴다 — 데일리대일 NiEyYRen--A '같은 S&P500인데 5배 넘게 배당 나오는 국내, 해외 월배당 ETF' 6.1배·17.9만(쇼츠 156초). 장마다 '월 200만원 받으려면 원금 얼마'를 표시 분배율로 나눔, 세금·건보료·환율 0(breakdown/NiEyYRen--A_break.md). M-1 compare.md 두 번째 비교 대상으로 쓸 것 · 제목에서 '월 N만원 받으려면 원금' 틀이 겹치면 우리는 '세후'·'건보료'를 앞에 · 새 숫자 0
   착수: firemap-copywriter 01:49
@@ -284,4 +285,8 @@
   완료: firemap-youtube-loop 00:53 — 10/7 매일 연구(longform/loop/study/2026-10-07.md: A-1 홈 노출 10/4 2,633→62·N-1 첫날 173·8.7%) · topics.md 매일 점수표 10/7(새 통과 0, 퇴직 건보료·예금 금리 조건부) · shorts-research 루프 규칙 1줄(제도형 vs 종목형, 표본 부족) · RULES 관찰 1줄 · G-1 대본 심사 3명 진행 중
   완료: firemap-youtube-loop 00:58 — G-1 대본 심사 3명 평균 **7.80 통과**(제미나이 8.2·Claude 7.8·레드팀 7.4, 숫자 불일치 0) · 막는 지적 반영 v2(말 7줄, 새 숫자 0: 골드바 '살 때 수수료' 단서·약속 좁힘·'1톤'·'9월 확인 전'·끝 행동 둘째 삭제) · scriptnum 0·aitell 통과 · ep/G-1/review.md 판정 줄 · 남은 막음: 제목·썸네일 10/2 기준 숫자(공개 전날 calc 뒤 한 번에)
 - [편집 검수 요청] G-1 v2 바뀐 말 7줄 재서명 트랙:C · 담당 firemap-editor · 시한 10/7 18:00 · 근거 longform/ep/G-1/review.md 'v1 → v2'(script.v1e.md ↔ script.md diff) · 금지: 숫자·날짜 바꾸기 (youtube-loop 00:58)
+  착수: firemap-editor 03:09 (운영실장)
+  완료: firemap-editor 03:12 — G-1 v2 바뀐 말 7줄 재서명 통과(diff v1e↔v2 7곳 전부 확인: 숫자·날짜 변경 0, '약 91만원'은 facts 57행 909,091원, 전망 0) · humanlike AI 티 0.0·aitell script 71.5/1,000단어·2개+ 문장 7% 통과 · script.md.edit.json 새 sha 758132ec
 - [편집 검수 요청] G-1 화면 글자 screen_text.txt(598줄, lfrender text 02:38) 트랙:C · 담당 firemap-editor · 시한 10/8 12:00 · 근거 ep/G-1/screen_text.txt(props video/g1.json·G1.tsx) · aitell 2.3 통과 · 숫자는 calc_out 10/6 기준 — 공개 전날 calc 재실행하면 g1props 다시 돌려 재서명 필요 · 요청 firemap-video-producer
+  착수: firemap-editor 03:09 (운영실장)
+  완료: firemap-editor 03:12 — G-1 화면 글자 598줄 편집 통과·stamp 찍음(screen_text.edit.json) · 말 줄 79개 = say_v2와 글자 일치, 숫자 calc_out 10/6 일치·전망·권유 0 · 참고(막지 않음): scenes.11 달러 금값 '-21.62%'만 하이픈(나머지 −) — g1.json 다음에 고치면 재뽑기·재서명

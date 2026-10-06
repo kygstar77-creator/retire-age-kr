@@ -92,8 +92,11 @@ def score(text, skip_list=False):
     # 해요체 쏠림: '~요'만 다섯 문장 넘게 잇따르거나, 문장 열에 여섯 넘게 '~요'(카페 실측 9/27 '요' 16%, 우리 글 75%)
     # 평어체 '~다'는 블로그 기본 말투라 쏠림으로 치지 않는다(editor style-guide 블로그 기준).
     yo = [s for s in sents if re.search(r'요[.?!]?$', s)]
+    # FAQ 'Q.' 질문 줄은 연속에서 건너뛴다(세지도 끊지도 않음) — 10/7 parking1007: Q줄 '~요?'가 답의 '~요'와 이어져 연속을 부풀림
+    qs = [m.group(1).strip() for m in re.finditer(r'(?m)^\s*Q\s*[.:)]\s*(.+)$', text)]
     run, yrun = 0, 0
     for s in sents:
+        if qs and s.strip().endswith('?') and any(s.strip() in q for q in qs): continue
         run = run + 1 if re.search(r'요[.?!]?$', s) else 0; yrun = max(yrun, run)
     if yrun >= 5: pts += 2 * (yrun - 4); hits.append(f"'~요' {yrun}문장 연속")
     if len(sents) >= 10 and len(yo) / len(sents) > 0.6:
@@ -102,9 +105,9 @@ def score(text, skip_list=False):
     heads = collections.Counter(' '.join(s.split()[:2]) for s in sents if len(s.split()) >= 4)
     tails = collections.Counter(' '.join(s.split()[-2:]) for s in sents if len(s.split()) >= 4)
     for label, cnt in (('머리', heads), ('꼬리', tails)):
-        for k, c in cnt.items():
-            if c >= 3 and re.search(r'[가-힣A-Za-z]', k):
-                pts += 2 * (c - 2); hits.append(f'같은 문장 {label} "{k}" ×{c}')
+        for w, c in cnt.items():
+            if c >= 3 and re.search(r'[가-힣A-Za-z]', w):
+                pts += 2 * (c - 2); hits.append(f'같은 문장 {label} "{w}" ×{c}')
     if k: hits.append(f'목록·법 문구 {k}줄은 끝맺음 반복에서 뺌(--skip-list)')
     n = len(re.sub(r'[\s\W_]', '', text))
     val = pts if n < 300 else pts / (n / 1000)

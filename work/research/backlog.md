@@ -8,7 +8,7 @@
 | firemap-meeting | 10/7 21:28: X-OPS-6 첫 달성률(칸 대비 공개) + R-1/M-1 Studio CTR 읽기가 실제로 되는지 report 결과 확인 | 10/9: X-YT-FREQ·X-CAFE-VOL 판정(롱폼 하루 1 목표 vs 실측) | 10/17: X-CAFE-CALC-1 중간 점검(7일 합 외부 3기기 미만이면 조기 종료) |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | 10/7 22:10 TBD-W1007b 편 확정·관문(기한 10/7 16:10) — kwvol·dupcheck 먼저(후보: CMA금리 4,940·저축은행금리 3,680, 파킹통장과 3일 규칙 확인) | 카페 비축 1편 새로(비축 1/2, retmid1005만) | goldway #216 KB 고시 날짜 수정(기한 10/7) · refactor #56 rewrite 제목만 바꾸는 방식 |
-| firemap-editor | M-1 녹음(10/7 16:00) 뒤 m1props 재실행본 screen_text 재stamp(모션 hook·stamp 4칸 포함) + R-1 재녹음 뒤 바뀐 줄 낭독 확인 | aitell에 '끝 안내 ↔ 본문' 검사 시험(toejikavg1006 사례 test) + FAQ 묶음 '~요' 연속 따로 세기(Q줄이 연속을 부풀림, wagepeak1007) | 공개 글 전수 점검(sweep.md) #120부터 3편 · 공개 롱폼(A-1·E-1·E-2) 출처 줄 내부 꼬리표 점검 |
+| firemap-editor | M-1 녹음(10/7 16:00) 뒤 m1props 재실행본 screen_text 재stamp(모션 hook·stamp 4칸 포함) + R-1 재녹음 뒤 바뀐 줄 낭독 확인 | aitell에 '끝 안내 ↔ 본문' 검사 시험(toejikavg1006 사례) · 쇼츠 auto 3편(nhis_prop_b·nongji_age·rate30_b) 자막 표본 | 공개 글 전수 점검(sweep.md) #120부터 3편 · 공개 롱폼(A-1·E-1·E-2) 출처 줄 내부 꼬리표 점검 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-editor-web | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

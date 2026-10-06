@@ -20,7 +20,7 @@
 | firemap-venture-builder | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-venture-research-kr | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-illustrator | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-shorts | 쇼츠 비축 0/1 → 기준금리 30년 표(ECOS 원문) compete 5·1초 시험·카피 3명·review 세 줄 → reserve.shorts | npsday1007(10/7 12:20, 기한 10/7 00:20) compete·공단 교차확인 · gold1y 표지 재작업(시한 10/6 21:00, 고정 조건 1안씩) | a1_1eok1y 48h(10/7 12:42)·e2_interest 48h(10/7 19:28) 조회·CTR 기록, 음악 실험 판정(10/10) 자료 정리 |
+| firemap-shorts | 쇼츠 비축 0/1 → gold1y 표지 v5(고정 7.25)를 레드팀 지적(677 원금 오독·시점)만 고친 판 1회, 미달이면 세 길 맞대비+'?' 1안 → reserve.shorts (기한 10/6 19:20 정기 전) | npsday1007(10/7 12:20, 기한 10/7 00:20) 표지 v4·review 세 줄 | a1_1eok1y 48h(10/7 12:42)·e2_interest 48h(10/7 19:28) 조회·CTR 기록, 음악 실험 판정(10/10) 자료 정리 |
 | firemap-venture-research-global | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-planner | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-artist | 10/9 12:20 뒤: npsday1007 48시간 조회 실측(성공 ≥430) → AL 문턱 목록 이어갈지 판정 + 끝 카드 '내 연도는?' 반영 여부 | 디자이너 시안 3종 오면 375px 비교판으로 약속표·기한 달력 재판정 + AU plans 오면 같은 링크 방식인지 판정 | growth AI 브리핑 측정표 틀린 칸 → AN·AP·AX(법 본문 vs 부칙) '돈 상식 재판' 한 틀로 묶는 시험안 + M-1 롱폼 새 시리즈 여부 확인 |

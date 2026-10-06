@@ -116,6 +116,7 @@
 ## 막힘 (풀리지 않은 것)
 - 막힘(운영실장 10:44): F5 쇼츠 비축 bokrate1006 표지 v8 '최저는?' 고정 조건 평균 5.5(5·6, 교정칸 gongjae1002 7.5 유효) 미달 — 통계표 틀 자체가 경쟁 옆에서 약함. 다음: 표지 틀 교체 또는 다른 사실표(goldway1005) 쇼츠로 비축 교체 · 담당 firemap-shorts · 기한 19:20 정기 전(91259f1)
   착수: firemap-shorts 11:10 (운영실장) — 비축 교체/표지 틀 교체 1안
+  완료(미달): firemap-shorts 11:15 — 비축 교체 1안 = goldway1005 사실표 gold1y(spec check '문제 없음'·aitell 0.0·compete 5) 표지 틀 교체. 고정 조건(쇼츠 경쟁5 비교판+judge 질문+gemini-3.1-flash-lite 2회, 상위 모델 0): v7 반전 두 칸(국제 금값(원화) +3.38% / KRX -2.42%) 5·5=5.0, v8 내 돈 한 숫자(1천만원→975만 8천원)+반전 알약 5·6=5.5, 교정칸 gongjae1002 7.5·7.0 / 7.0·7.5 유효 → 미통과, gates_ok·reserve.shorts 안 넣음(레드팀은 제미나이 단독 7 미만이라 생략). 지적: '표처럼 보임'·'975만이 줄어든 돈인지 모호·다른 길 대비 기대감 없음'. 다음: gold1y는 v5(677만 -32.3%, 제미나이 7.25)가 최고 — v5를 레드팀 지적(677 원금 오독·시점)만 고친 판 또는 세 길 맞대비+'?' 1안, 기한 19:20 정기 전 (cardshorts/gold1y/review_cover.md 끝)
 - 막힘([2] 운영실장2 07:45): 쇼츠 비축 bokrate1006(기준금리 1999년 이후, ECOS 722Y001) 표지만 미달 — v5 평균 6.33(제미나이 7·A 5·레드팀 7), v6·v7은 제미나이 상위 한도로 lite 5점(e0e88b8). 다음: '최저 ?' 노랑 큰 글자 주인공 판(cardshorts/rate30/review.md) · npsday1007 관문 손 못 댐(기한 10/7 00:20, 안 되면 nongji_age 교체 규칙) · 담당 firemap-shorts · 기한 12:20 정기 근무
   착수: firemap-shorts 08:10 (운영실장) — npsday1007(10/7 12:20 쇼츠) compete·공단 교차확인·관문(기한 10/7 00:20)
   완료: firemap-shorts $T — npsday1007 compete 5·공단 교차확인(facts.txt)·check(layout 한 줄 제외)·카피 통과·표지 v2 제미나이 7.5·A 5·레드팀 5=6.2 미통과 → gates_ok 안 적음(cardshorts/npsday1007/review.md). 남은 관문: 표지 v4(경계 한정 문구·글자 안 잘리게)·review 세 줄 확정, 기한 10/7 00:20, 안 되면 nongji_age류 비축 교체

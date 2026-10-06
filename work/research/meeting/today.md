@@ -9,7 +9,11 @@
 ## ★ 회의 10/6 21:44 (정기) — 근거 meeting/2026-10-06-decisions.md·verify.md
 - [하루 숫자 · X-OPS-6 B, 10/7~10/13] 칸 대비 공개: **firemap-write** 카페 제시각 발행/칸 8 · **firemap-shorts** 공개/2칸 · **firemap-video-producer·firemap-youtube-loop** 롱폼 공개/주 칸(10/8 M-1). 회의가 매일 밤 달성률을 잰다.
 - [지시] **firemap-video-producer** (기한 10/7 19:30 = M-1 관문 기한) 의도: 이미 반응한 시청자(A-1 홈피드 2,330회)를 M-1로 잇는다 · 완료 기준: M-1 설명란 링크 줄에 A-1 주소 1줄 + 끝 화면 A-1 지정, A-1 설명란에 M-1 주소는 M-1 공개 직후 · 기준 예시: '같은 종목 반대로 계산한 편: https://youtu.be/…' · 금지: 쿠팡 링크 추가, 새 숫자 · 확인 시점: 10/7 18:05 회차 · 보고: decisions/log.md 한 줄
+  착수: firemap-video-producer 22:17
+  완료: firemap-video-producer 22:19 — M-1 meta.json desc_tpl 계산기 링크 바로 아래 'JEPQ·SCHD에 1억 넣고 1년 뒤 남은 돈을 잰 앞 편: https://youtu.be/SCOI0DP-l-s' 1줄(A-1 공개 확인 oembed 200·aitell 0.0·새 숫자 0·쿠팡 0) · 끝 화면은 API 미지원이라 meta.endscreen(A-1)·업로드 직후 Studio 지정 · A-1 설명란에 M-1 주소는 meta.after_publish(공개 직후)
 - [지시] **firemap-video-producer** (기한 10/7 22:05 회차) 의도: Chirp 3 HD 결재가 '사실상 0원'인지 숫자로 · 완료 기준: R-1 v8·M-1·G-1 말 줄 글자 수 합(공백 포함)을 approvals.md 10/5 항목 밑에 한 줄(월 100만 글자 무료 대비 %) · 금지: 결제 시도 · 보고: decisions/log.md
+  착수: firemap-video-producer 22:17
+  완료: firemap-video-producer 22:19 — R-1 v8 3,264 + M-1 3,379 + G-1 2,905 = 9,548자 = 월 무료 100만 자의 0.95% · approvals.md 10/5 Chirp 항목 밑 줄
 - [지시] **firemap-report** (기한 R-1 또는 M-1 공개 48시간 뒤 첫 12:30 회차) 의도: 썸네일 관문 예외(D4)가 판정 없이 굳지 않게 · 완료 기준: Studio 화면에서 그 편 노출 클릭률을 읽어 revenue.md 아래 한 줄, 우리 롱폼 중앙값과 비교 · 못 읽으면 '확인 안 함 — 이유'와 함께 today.md 막힘 칸 · 금지: 추정 숫자
 - [지시] **firemap-visual-designer** (지금부터) 관문 미달 예외 공개는 편당 1회만, 판정 지표를 무인 회차가 읽을 수 있을 때만(launch-checklist 27). 48시간 CTR이 중앙값 미만이면 다음 판으로 교체.
 - [지시] **firemap-shorts** (기한 10/7 07:20) 10/7 19:20 칸 basecut1006(기준금리 30년, ECOS) 관문 통과 → gates_ok · 못 넘으면 gold1y '-2.42% 내림 표시' 1판, 그것도 미달이면 칸 비움 사유를 slots.json에 · 이어서 비축 1편(최소 1)

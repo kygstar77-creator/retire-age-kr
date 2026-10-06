@@ -18,6 +18,7 @@
 - [지시] **firemap-youtube-loop**: firemap-loop 폐지(10/6, 경쟁 재측정·사이트·도구 일이 대부분이고 youtube-loop와 겹침)로 성과 판정을 넘겨받는다 — E-1 10/8·D-1 10/9(롱폼 7일 조회), X-YT-FREQ·X-CAFE-VOL 10/9, X-SHORTS-LEN 10/17 · 판정은 experiments-registry.md 기준 그대로, 결과는 decisions/log.md 한 줄
 - [지시] **firemap-motion-designer**(하루 1회로 줄임): 경쟁 영상미 분해·분석은 하지 않는다. PD가 쓸 롱폼 장면 부품만 만든다
 - [지시] **firemap-visual-designer**(하루 2회로 줄임): R-1 썸네일 27차처럼 8점 미달로 같은 판을 계속 돌리지 않는다. 통과선 7을 넘으면 확정하고 48시간 클릭률로 판정한다
+- [지시·긴급] **firemap-shorts** (사장님 10/3 "쇼츠도 내용을 좀 길게 해서 알차게" → X-SHORTS-LEN 등록만 하고 B를 한 편도 안 만듦, 10/6 재지시) 의도: 7초 카드 말고 '알찬' 쇼츠를 실제로 내보내 비교 · 완료 기준: cardshort.py에 spec "cards": [카드 3~4장] 이어 붙이기(장마다 6~10초, 합 25~40초, 장 사이 막대·숫자 움직임, 첫 프레임부터 본 화면) → **10/8 12:20 칸을 B로**(주제는 이미 A로 나간 nhis_prop·a1_1eok1y·e2_interest 중 하나 — 같은 주제 짝), 10/9·10/10에 한 짝씩 더(하루 2편 중 1편) · 목소리는 쓰지 않는다(무료 TTS는 롱폼 몫, 결제 뒤 목소리 판 추가) · 관문(사실표·편집·1초 시험 첫 프레임)은 그대로, 12시간 전 통과 · 금지: 장마다 같은 말 반복, 카드 한 장에 숫자 3개 넘게
 - [지시] **전 직원**: 클라우드 작업실 폐지(사장님 10/6 "그냥 없애고 너희가 해") — cloudmerge.py 안 돌림, 클라우드 세션에 일 보내지 않음, 모든 일은 PC 직원이 직접
 
 ## ★ 임시 회의 10/6 10:51 — 조직 축소 반영(근거 meeting/2026-10-06a-decisions.md 반론 처리 표·2026-10-06a-verify.md)
@@ -58,6 +59,7 @@
   완료(F1 카페 몫): firemap-write 10:34 — 10:10 yujokstop1006 cafe/218 발행 verify OK 1265/1265자·사진 3/3. 링크 점검: 오늘·내일 칸 중 맞는 /calc 있는 건 toejikavg1006(18:10)뿐 → /calc/severance?utm_campaign=toejikavg1006 + 면책 줄 추가·editgate auto 재찍음(숫자 0 변경). yujokstop·imuigye(건보)·나머지는 맞는 /calc 없음(라이브 /calc = severance·unemployment-benefit·salary) → 링크 안 바꿈. retmid1005는 이미 /calc/severance.
   착수: firemap-write 12:22 — F1 12:10 imuigye1005 발행·verify(늦게 시작한 회차, jitter 대기 중) → 다음 schdacct1007(10/7 12:10, 기한 06:10) 관문
   완료: firemap-write 12:44 — F1 12:10 imuigye1005 cafe/219 발행 verify OK 2017/2017자·사진 3/3 (12:24, 링크 /calc 맞는 것 없어 그대로) · 앞당김: 10/7 12:10 schdacct1007(SCHD 계좌별 미국 세금) 관문 통과 gates_ok 12:44(기한 10/7 06:10을 17시간 앞당김) — 경쟁 상위 3편에 없는 2025 선환급 폐지·2026-07 연금 공제(시행령 0.55·소득세 한도)를 원문으로
+  착수: firemap-write 14:27 — 14:10 hfguar1006 발행·verify · 다음 wagepeak1007(10/7 14:10, 기한 10/7 08:10) 사실표 착수
   완료(앞당김): firemap-write 10:34 — 10/7 10:10 spouseinh1007(상속세 배우자공제) 관문 통과 gates_ok(기한 10/7 04:10을 18시간 앞당김): 제목 A 3명 7.5·표지 S1 7.08·crosscheck 사실 3 중 반영 1·유지 2·레드팀 오류 2 반영·selfcheck 사실 0·readcheck 0·editgate auto · 묶음 work/research/spouseinh1007/pkg
 - [편집 검수 요청] spouseinh1007 · 담당 firemap-editor · work/research/spouseinh1007/pkg · 공개 예정 10/7 10:10 — 원고는 auto 통과, 요청은 brand guide '①-카페 주제 범위' 판단 한 줄만(상속세 = 경계: 은퇴 부부 자산 숫자로 이어짐). 밖이면 비축 retmid1005로 교체
   착수: firemap-editor 10:41 (운영실장)

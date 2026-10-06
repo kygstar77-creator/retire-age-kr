@@ -144,7 +144,7 @@ m1i = f"""<div style='position:absolute;inset:0;background:{BG}'></div>
 <div id='i1' class='t' data-fit='880' style='left:46px;top:430px;font-size:170px;color:{YEL}'>8.92억 필요</div>
 <div class='lab' style='left:62px;top:604px;font-size:30px;color:#fff'>월 100만원 받으려면 · 평균으로 잴 때의 1.75배</div>
 """
-FINE_I = f"<div class='fine' style='color:{GREY};top:650px;font-size:20px'>세후 기준 · 2026.10.2 · 연 2천만원 넘는 몫의 추가 세금·건보료 미포함</div>"
+FINE_I = f"<div class='fine' style='color:{GREY};top:650px;font-size:20px'>세금·건보료 뗀 뒤 · 2026.10.2 · 연 2천만원 넘는 몫의 추가 세금·건보료 미포함</div>"
 VARIANTS['m1i'] = m1i + FINE_I
 
 
@@ -160,6 +160,149 @@ m1j = f"""<div style='position:absolute;inset:0;background:{BG}'></div>
 FINE_J = f"<div class='fine' style='color:{GREY};top:652px;font-size:20px'>세금·건보료 뗀 뒤 · 2026.10.2 · 연 2천만원 넘는 몫의 추가분은 빼고 잰 최소값</div>"
 VARIANTS['m1j'] = m1j + FINE_J
 
+
+
+# ── 9차(10/6 09시 visual-designer, PD 요청) — 8차까지 세 명 공통 '어두운 숫자판은 다르지만 먼저 누르고 싶지 않다' → 문구가 아니라 판 자체.
+#    밝은 바탕 + 그림 장치를 화면 절반 이상으로. 문구는 지난 차수에서 쓴 대본 말(104행 '통장에는 평균이 들어오지 않잖아요', 106행 '가장 적게 나온 달로 다시 재면')만.
+#    숫자: calc_out JEPQ 1.38억→1.71억(×1.23)·ACE 5.10억→8.92억(×1.75) · facts K1 12달 분배.
+assert '필요 원금 1.38억원 · 가장 적은 달 기준이면 1.71억원(×1.23)' in calc
+NAVY, PAPER = '#1B2A4A', '#FFFFFF'
+
+# m1k — 흰 바탕, 12달 막대를 화면 위 절반 가득(굵게), 21원 막대만 빨강, 평균 점선. 아래 'ACE 8.92억 필요'.
+def big_month_bars(x0, ybase, hmax, w, gap, base='#C5CCD8'):
+    s = ''
+    for i, v in enumerate(ACE12):
+        h = hmax * v / max(ACE12); c = RED if v == min(ACE12) else base
+        s += f"<div style='position:absolute;left:{x0 + i * (w + gap)}px;top:{ybase - h:.0f}px;width:{w}px;height:{h:.0f}px;background:{c};border-radius:6px 6px 0 0'></div>"
+    i = ACE12.index(min(ACE12)); xm = x0 + i * (w + gap)
+    s += f"<div class='t' style='left:{xm - 18}px;top:{ybase - hmax * 21 / 53 - 80:.0f}px;font-size:68px;color:{RED}'>21원</div>"
+    ya = ybase - hmax * (sum(ACE12) / 12) / max(ACE12); xe = x0 + 12 * (w + gap) - gap
+    s += f"<div style='position:absolute;left:{x0 - 8}px;top:{ya - 3:.0f}px;width:{xe - x0 + 16}px;height:0;border-top:7px dashed {NAVY}'></div>"
+    s += f"<div class='t' style='left:{xe + 18}px;top:{ya - 34:.0f}px;font-size:60px;color:{NAVY}'>평균</div>"
+    return s
+m1k = f"""<div style='position:absolute;inset:0;background:{PAPER}'></div>
+<div id='k0' class='t' data-fit='1170' style='left:48px;top:30px;font-size:92px;color:{INK};background:{YEL};padding:10px 18px 6px'>통장엔 평균이 안 들어온다</div>
+{big_month_bars(60, 440, 290, w=64, gap=12)}
+<div id='k1' class='t' data-fit='900' style='left:44px;top:462px;font-size:150px;color:{INK}'>ACE <span style='color:{RED}'>8.92억</span> 필요</div>
+"""
+FINE_K = f"<div class='fine' style='color:#5B6475;top:640px;font-size:22px'>ACE 미국배당다우존스 1주당 분배 12달 · 세후 월 100만원 · 2026.10.2 · 추가 세금 미포함</div>"
+VARIANTS['m1k'] = m1k + FINE_K
+
+# m1l — 노랑 바탕, 세로 탑 두 개(JEPQ·ACE): 점선 테두리 = 평균으로 잰 돈, 꽉 찬 탑 = 가장 적은 달로 잰 돈. ACE 탑이 위까지 솟음.
+#    레드팀 8차 조건(체리피킹 막기 = JEPQ도 같이) 반영. 큰 숫자 하나 = 8.92억.
+def tower(x, w, ybase, hpx_avg, hpx_low, col, name, low_txt, big):
+    s = f"<div style='position:absolute;left:{x}px;top:{ybase - hpx_low:.0f}px;width:{w}px;height:{hpx_low:.0f}px;background:{col};border-radius:8px 8px 0 0'></div>"
+    s += f"<div style='position:absolute;left:{x}px;top:{ybase - hpx_avg:.0f}px;width:{w}px;height:0;border-top:7px dashed {'#fff' if hpx_avg < hpx_low else INK}'></div>"
+    s += f"<div class='t' style='left:{x + w // 2}px;transform:translateX(-50%);top:{ybase + 14}px;font-size:58px;color:{INK}'>{name}</div>"
+    s += f"<div class='t' style='left:{x + w + 22}px;top:{ybase - hpx_low - 6:.0f}px;font-size:{big}px;color:{col if col != INK else INK}'>{low_txt}</div>"
+    return s
+_H = 450 / 8.92  # 8.92억 = 470px
+m1l = f"""<div style='position:absolute;inset:0;background:{YEL}'></div>
+<div id='l0' class='t' data-fit='1180' style='left:48px;top:30px;font-size:80px;color:{INK}'>가장 적은 달로 다시 재면</div>
+{tower(80, 150, 570, 1.38 * _H, 1.71 * _H, NAVY, 'JEPQ', '1.71억', 70)}
+{tower(520, 190, 570, 5.10 * _H, 8.92 * _H, RED, 'ACE', '8.92억', 150)}
+<div class='lab' style='left:740px;top:{570 - 5.10 * _H - 26:.0f}px;font-size:40px;color:{INK}'>- - - 평균으로 재면 5.10억</div>
+"""
+FINE_L = f"<div class='fine' style='color:{INK};top:652px;font-size:18px;left:60px'>세후 월 100만원 필요한 돈 · 2026.10.2 지난 1년 분배 · 추가 세금 미포함 · 투자 권유 아님</div>"
+VARIANTS['m1l'] = m1l + FINE_L
+
+# m1m — 흰 바탕 통장 그림: 왼쪽에 통장 한 장(날짜·입금 줄 12개, 21원 줄만 빨간 동그라미), 오른쪽 큰 숫자.
+def passbook(x, y, w):
+    rows = ['25.10', '25.11', '25.12', '26.01', '26.02', '26.03', '26.04', '26.05', '26.06', '26.07', '26.08', '26.09']
+    s = f"<div style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{38 + 12 * 38 + 14}px;background:#fff;border:4px solid {NAVY};border-radius:14px;box-shadow:10px 12px 0 #D6DBE4'></div>"
+    s += f"<div style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:44px;background:{NAVY};border-radius:12px 12px 0 0'></div>"
+    s += f"<div class='lab' style='left:{x + 20}px;top:{y + 6}px;font-size:28px;color:#fff'>분배 입금 (1주당)</div>"
+    for i, (d, v) in enumerate(zip(rows, ACE12)):
+        yy = y + 52 + i * 38; c = RED if v == min(ACE12) else INK
+        s += f"<div class='lab' style='left:{x + 22}px;top:{yy}px;font-size:28px;color:#6B7486'>{d}</div>"
+        s += f"<div class='lab' style='left:{x + w - 110}px;top:{yy}px;font-size:30px;color:{c}'>{v}원</div>"
+        if v == min(ACE12):
+            s += f"<div style='position:absolute;left:{x + 8}px;top:{yy - 6}px;width:{w - 16}px;height:44px;border:6px solid {RED};border-radius:24px'></div>"
+    return s
+m1m = f"""<div style='position:absolute;inset:0;background:#EEF1F6'></div>
+{passbook(48, 40, 360)}
+<div id='m0' class='t' data-fit='800' style='left:456px;top:54px;font-size:84px;color:{INK}'>통장엔 평균이</div>
+<div id='m2' class='t' data-fit='800' style='left:456px;top:150px;font-size:84px;color:{INK}'>안 들어온다</div>
+<div id='m3' class='t' data-fit='790' style='left:460px;top:286px;font-size:64px;color:{NAVY}'>ACE 미국배당다우존스</div>
+<div id='m1' class='t' data-fit='800' style='left:452px;top:380px;font-size:190px;color:{RED}'>8.92억<span style='font-size:110px;color:{INK}'> 필요</span></div>
+"""
+FINE_M = f"<div class='fine' style='color:#5B6475;top:654px;font-size:18px;left:52px'>세후 월 100만원 · 가장 적은 달 기준 · 2026.10.2 · 추가 세금 미포함</div>"
+VARIANTS['m1m'] = m1m + FINE_M
+
+
+# ── 10차(10/6 visual-designer) — 9차 Claude m1l 7.6(1위): ① '평균으로 재면 5.10억'이 168px에서 안 읽힘 → 크게·흰 점선 굵게 ② 윗줄 더 크게 ③ 1.71억 키워 무게 맞추기.
+def tower2(x, w, ybase, hpx_avg, hpx_low, col, name, low_txt, big, avg_txt=None):
+    s = f"<div style='position:absolute;left:{x}px;top:{ybase - hpx_low:.0f}px;width:{w}px;height:{hpx_low:.0f}px;background:{col};border-radius:8px 8px 0 0'></div>"
+    s += f"<div style='position:absolute;left:{x - 10}px;top:{ybase - hpx_avg - 5:.0f}px;width:{w + 20}px;height:0;border-top:10px dashed {INK}'></div>"
+    s += f"<div class='t' style='left:{x + w // 2}px;transform:translateX(-50%);top:{ybase + 6}px;font-size:72px;color:{INK}'>{name}</div>"
+    s += f"<div class='t' style='left:{x + w + 22}px;top:{ybase - hpx_low - 4:.0f}px;font-size:{big}px;color:{col}'>{low_txt}</div>"
+    if avg_txt:
+        s += f"<div class='t' style='left:{x + w + 26}px;top:{ybase - hpx_avg - 30:.0f}px;font-size:60px;color:{INK}'>{avg_txt}</div>"
+    return s
+m1n = f"""<div style='position:absolute;inset:0;background:{YEL}'></div>
+<div id='n0' class='t' data-fit='1180' style='left:44px;top:26px;font-size:96px;color:{INK}'>가장 적은 달로 다시 재면</div>
+{tower2(70, 150, 570, 1.38 * _H, 1.71 * _H, NAVY, 'JEPQ', '1.71억', 96)}
+{tower2(560, 190, 570, 5.10 * _H, 8.92 * _H, RED, 'ACE', '8.92억', 150, '평균이면 5.10억')}
+"""
+VARIANTS['m1n'] = m1n + FINE_L
+
+
+# ── 11차 — 9차 레드팀 m1l 5.5: '필요'가 없어 'ACE 8.92억 됐다'로 읽힘 + '월 100만원'이 168px에 없음.
+#    → 윗줄 = '월 100만원에 필요한 돈'(m1d 윗줄, 1초 시험 통과 말), 반전 조건은 8.92억 바로 밑 꼬리표(대본 106행).
+m1o = f"""<div style='position:absolute;inset:0;background:{YEL}'></div>
+<div id='o0' class='t' data-fit='1180' style='left:44px;top:26px;font-size:96px;color:{INK}'>월 100만원에 필요한 돈</div>
+{tower2(70, 150, 570, 1.38 * _H, 1.71 * _H, NAVY, 'JEPQ', '1.71억', 96)}
+{tower2(560, 190, 570, 5.10 * _H, 8.92 * _H, RED, 'ACE', '8.92억', 150, '평균이면 5.10억')}
+<div class='t' style='left:70px;top:150px;font-size:58px;color:{INK}'>가장 적은 달로</div>
+<div class='t' style='left:70px;top:222px;font-size:58px;color:{INK}'>다시 재면 →</div>
+"""
+FINE_O = f"<div class='fine' style='color:{INK};top:652px;font-size:18px;left:60px'>세금·건보료 뗀 뒤 · 2026.10.2 지난 1년 분배 · 연 2천만원 넘는 몫 추가 세금 미포함 · 투자 권유 아님</div>"
+VARIANTS['m1o'] = m1o + FINE_O
+
+
+# ── 12차 — 10차 m1o 제미나이 7.5·6.5 / Claude 7 / 레드팀 7 = 7.0. 공통: '가장 적은 달로 다시 재면'이 168px에서 뭉개짐·화살표가 ACE만 가리켜
+#    JEPQ 기준이 헷갈림 → 조건을 윗줄 바로 밑 둘째 줄(두 막대 공통 기준)로 크게, 막대 이름 키움.
+_H2 = 350 / 8.92
+m1p = f"""<div style='position:absolute;inset:0;background:{YEL}'></div>
+<div id='p0' class='t' data-fit='1180' style='left:44px;top:24px;font-size:96px;color:{INK}'>월 100만원에 필요한 돈</div>
+<div id='p2' class='t' data-fit='1180' style='left:48px;top:136px;font-size:64px;color:{RED}'>가장 적은 달로 다시 재면</div>
+{tower2(70, 160, 566, 1.38 * _H2, 1.71 * _H2, NAVY, 'JEPQ', '1.71억', 100)}
+{tower2(560, 190, 566, 5.10 * _H2, 8.92 * _H2, RED, 'ACE', '8.92억', 138, '평균이면 5.10억')}
+"""
+VARIANTS['m1p'] = m1p + FINE_O
+
+
+# ── 13차 — 11차 m1p 제미나이 7.5·7.5 / Claude 7 / 레드팀 6 = 6.83. 레드팀: JEPQ·ACE 나란히 = 상품 우열('JEPQ가 싸다')로 읽힘, 8.92억은 최소값인데 맨숫자.
+#    → JEPQ 탑 빼고 이유(ACE 12달 막대, 21원 빨강)를 왼쪽에, 결과 '최소 8.92억'을 오른쪽에. 노랑 바탕·윗줄은 10차 m1o(세 명 7.0)에서 그대로.
+def ybars(x0, ybase, hmax, w, gap):
+    s = ''
+    for i, v in enumerate(ACE12):
+        h = hmax * v / max(ACE12); c = RED if v == min(ACE12) else NAVY
+        s += f"<div style='position:absolute;left:{x0 + i * (w + gap)}px;top:{ybase - h:.0f}px;width:{w}px;height:{h:.0f}px;background:{c};border-radius:4px 4px 0 0'></div>"
+    i = ACE12.index(min(ACE12)); xm = x0 + i * (w + gap)
+    s += f"<div class='t' style='left:{xm - 30}px;top:{ybase - hmax * 21 / 53 - 78:.0f}px;font-size:60px;color:{RED};background:{YEL};padding:4px 8px;border:5px solid {RED};border-radius:10px;z-index:2'>21원</div>"
+    ya = ybase - hmax * (sum(ACE12) / 12) / max(ACE12); xe = x0 + 12 * (w + gap) - gap
+    s += f"<div style='position:absolute;left:{x0 - 8}px;top:{ya - 4:.0f}px;width:{xe - x0 + 16}px;height:0;border-top:8px dashed {INK}'></div>"
+    return s
+m1q = f"""<div style='position:absolute;inset:0;background:{YEL}'></div>
+<div id='q0' class='t' data-fit='1180' style='left:44px;top:24px;font-size:96px;color:{INK}'>월 100만원에 필요한 돈</div>
+<div id='q2' class='t' data-fit='1180' style='left:48px;top:136px;font-size:64px;color:{RED}'>가장 적은 달로 다시 재면</div>
+{ybars(56, 560, 300, 36, 10)}
+<div class='lab' style='left:58px;top:574px;font-size:34px;color:{INK}'>ACE 미국배당다우존스 · 12달 분배(1주)</div>
+<div class='t' style='left:640px;top:250px;font-size:64px;color:{INK}'>최소</div>
+<div id='q1' class='t' data-fit='600' style='left:634px;top:320px;font-size:170px;color:{RED}'>8.92억</div>
+<div class='t' style='left:640px;top:500px;font-size:56px;color:{INK}'>평균이면 5.10억</div>
+"""
+FINE_Q = f"<div class='fine' style='color:{INK};top:652px;font-size:18px;left:60px'>세금·건보료 뗀 뒤 · 2026.10.2 지난 1년 분배 · 연 2천만원 넘는 몫의 추가 세금·건보료 미포함 · 투자 권유 아님</div>"
+VARIANTS['m1q'] = m1q + FINE_Q
+
+
+# ── 14차 — 13차 m1q 제미나이 7.5·7.5 / Claude 6 / 레드팀 7 = 6.83. 두 명 공통: 8.92억 옆에 '필요'(옆 경쟁 '22억까지 불어납니다'와 오독 막기), 조건 줄 더 크게.
+m1r = m1q.replace("id='q2' class='t' data-fit='1180' style='left:48px;top:136px;font-size:64px", "id='q2' class='t' data-fit='1180' style='left:46px;top:132px;font-size:76px") \
+         .replace("<div id='q1' class='t' data-fit='600' style='left:634px;top:320px;font-size:170px;color:{RED}'>8.92억</div>".format(RED=RED),
+                  "<div id='q1' class='t' data-fit='630' style='left:634px;top:330px;font-size:156px;color:{RED}'>8.92억<span style='font-size:92px;color:{INK}'> 필요</span></div>".format(RED=RED, INK=INK))
+assert m1r.count('필요') == 2 and 'font-size:76px' in m1r
+VARIANTS['m1r'] = m1r + FINE_Q
 
 def check_zones(page):
     return page.evaluate("""()=>{const bad=[];document.querySelectorAll('body *').forEach(e=>{

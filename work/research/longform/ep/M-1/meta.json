@@ -1,7 +1,7 @@
 {
  "ep": "M-1",
  "thumb": "thumb_m1i.png",
- "thumb_status": "임시 m1i(세 명 평균 6.92, 통과선 7 미달 — 확정 안 함) 06:41 · visual/M-1-thumb/judges.md 8차 · 다음은 판 자체(밝은 바탕) — visual-designer 요청 · 기한 10/7 19:30",
+ "thumb_status": "확정 m1i(13·14차 세 명 평균 7.0·7.33, 통과선 7 · 목표 8 미달) 09:19 visual-designer · 예비 thumb_m1r.png(14차 7.0) = 48h CTR 낮으면 교체 1회 · visual/M-1-thumb/judges.md 9~14차",
  "title": "JEPQ·SCHD·ACE 월 100만원 받으려면 얼마? 세금·건보료 뗀 뒤, 가장 적게 나온 달로 거꾸로 계산",
  "title_by": "firemap-copywriter titles.md T1 (2026-10-05) · 48h CTR이 채널 중앙값 아래면 title_swap으로 한 번 교체",
  "title_swap": "월 100만원 받으려면 JEPQ 1.38억, SCHD 4.85억? 세금·건보료 뗀 거꾸로 계산",
@@ -41,5 +41,6 @@
  },
  "made_by": "firemap-video-producer",
  "made_at": "2026-10-06 06:31",
- "todo_pd": "10/6 16:01: say_v2.txt 93문장 lfvoice make(한 날·한 모델 gemini-3.8-flash-tts Charon) → lfvoice check → script.md = script.v2.md(editor 자막 2줄 재서명 뒤, 같은 해시로 script.md.edit.json) → py -3.12 research/longform/ep/M-1/m1props.py → screen_text 재뽑기·editor 재서명 → lfrender render M-1 → deess·motioncheck·스틸 눈 검사 → chapters.py로 desc 채움 → scorecard → review 판정 줄(youtube-loop) → ytlong gate → up(10/8 19:30)"
+ "todo_pd": "10/6 16:01: say_v2.txt 93문장 lfvoice make(한 날·한 모델 gemini-3.8-flash-tts Charon) → lfvoice check → script.md = script.v2.md(editor 자막 2줄 재서명 뒤, 같은 해시로 script.md.edit.json) → py -3.12 research/longform/ep/M-1/m1props.py → screen_text 재뽑기·editor 재서명 → lfrender render M-1 → deess·motioncheck·스틸 눈 검사 → chapters.py로 desc 채움 → scorecard → review 판정 줄(youtube-loop) → ytlong gate → up(10/8 19:30)",
+ "thumb_alt": "thumb_m1r.png"
 }

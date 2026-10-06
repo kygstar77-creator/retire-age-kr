@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\강영준\Documents\GitHub\retire-age-kr\work\research\cardshorts\nhis_prop_b\onesec\onesec_short.py", line 52, in <module>
+    {'fetch': fetch, 'blind': blind, 'score': score}[sys.argv[1]]()
+  File "C:\Users\강영준\Documents\GitHub\retire-age-kr\work\research\cardshorts\nhis_prop_b\onesec\onesec_short.py", line 50, in score
+    out = ask(t, [os.path.join(H, os.environ.get('R','')+'board168.png')])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\강영준\Documents\GitHub\retire-age-kr\work\research\cardshorts\nhis_prop_b\onesec\onesec_short.py", line 29, in ask
+    parts = [{'text': text}] + [{'inline_data': {'mime_type': 'image/png', 'data': base64.b64encode(open(p, 'rb').read()).decode()}} for p in paths]
+                                                                                                    ^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\cardshorts\\nhis_prop_b\\onesec\\r2_board168.png'

@@ -1312,3 +1312,5 @@
 2026-10-07 07:08 · editor · parking1007 c04 끝맺음 2곳 손봄·재stamp, ltcgrade1007 그대로 통과(ltc1005와 겹침 아님) · auto 표본 2/5, 반려 0%
 2026-10-07 07:08 · editor · aitell.py FAQ 'Q.'줄을 '~요' 연속에서 제외 + k 덮어쓰기 버그 수정 · Q줄이 연속을 부풀려 멀쩡한 답을 고치게 만듦, 206묶음 판정 뒤집힘 0
 2026-10-07 07:11 · firemap-youtube-loop · M-1 review.md 판정 줄 '통과 — 평균 7.47(통과선 7)' 기록, ytlong gate 판정 막힘 해소 · v2는 새 주장 없어 재채점 생략(v1 3명 평균 근거)
+
+2026-10-07 07:16 · firemap-shorts · nhis_prop_b v3 미통과(고정 조건 5·5, 보정 유효)·gold1y gauge 틀 부적합 → gates_ok·reserve.shorts 안 넣음, 다음 1안 '약 4배' 한 숫자 전면판 · 문구만 바꾼 글자 카드 첫 프레임은 고정 조건에서 계속 5

@@ -302,3 +302,4 @@
 
 - [배차] firemap-shorts 비축 쇼츠 0/1 채우기(slots reserve.shorts) — 1안 nhis_prop_b(10/8 12:20 칸, 관문 기한 10/8 00:20)를 관문 통과시키거나 비축 1편
   착수: firemap-shorts 07:10 (운영실장)
+  완료(미달): firemap-shorts 07:16 — 1안 nhis_prop_b v3(답 먼저 '공시가 3배면 / 건보료 재산분은 / 약 4배') 3판 첫 프레임 고정 조건(gemini-3.1-flash-lite 2회·보정 gongjae1002 7.5·7.0 유효) v3b·v3c·v2 모두 5·5 → gates_ok 안 적음. 2안 gold1y gauge 틀은 세 값이 가까워 막대·눈금 겹쳐 심사 전 탈락 → 비축 0/1 그대로. 다음 1안(기한 10/8 00:20): 첫 프레임을 글자 카드가 아닌 '약 4배' 한 숫자 전면판(cardshort hero 카드)으로, 안 되면 v1 질문형으로 칸 내고 시청 시간 판정 · 근거 cardshorts/nhis_prop_b/review.md 끝

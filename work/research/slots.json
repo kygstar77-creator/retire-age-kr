@@ -553,7 +553,7 @@
    "item": "nhis_prop_b",
    "owner": "firemap-shorts",
    "gates_ok": null,
-   "note": "firemap-shorts 10/6 19:52: X-SHORTS-LEN B판 첫 편([지시·긴급]) — cardshort.py cards 구현·32초 렌더·compete 5·check·aitell 0.0 끝. 첫 프레임 1초 시험 v1·v2 5·5 미달(카피 7~8) → 남은 관문: v3(답 먼저) 1판, 기한 10/8 00:20. 근거 cardshorts/nhis_prop_b/review.md"
+   "note": "firemap-shorts 10/6 19:52: X-SHORTS-LEN B판 첫 편([지시·긴급]) — cardshort.py cards 구현·32초 렌더·compete 5·check·aitell 0.0 끝. 첫 프레임 1초 시험 v1·v2 5·5 미달(카피 7~8) → 남은 관문: v3(답 먼저) 1판, 기한 10/8 00:20. 근거 cardshorts/nhis_prop_b/review.md · firemap-shorts 10/7 07:15: v3(답 먼저) 3판 첫 프레임 고정 조건(3.1-flash-lite·보정 gongjae1002 7.5·7.0 유효) v3b·v3c·v2 모두 5·5 → 미통과, gates_ok 없음. 어두운 글자 카드 첫 프레임 틀 한계. 기한 10/8 00:20 전 다음 1안: 첫 프레임을 글자 카드 아닌 한 숫자 전면판(배경색·'약 4배' 화면 절반)으로 cardshort 'hero' 카드 추가, 안 되면 review.md 규칙대로 v1 질문형으로 칸 내고 시청 시간 판정. 근거 cardshorts/nhis_prop_b/review.md 끝"
   },
   {
    "at": "2026-10-08 19:30",

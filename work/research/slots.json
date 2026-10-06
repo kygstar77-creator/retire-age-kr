@@ -534,10 +534,10 @@
   {
    "at": "2026-10-07 22:10",
    "kind": "cafe",
-   "item": "TBD-W1007b",
+   "item": "earlyjob1007",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 새 편(write 주제 고르기, X-CAFE-CALC-1은 10/10 시작이라 지금 규칙) · 관문 기한 10/7 16:10 · 하루 8편 상한의 8번째"
+   "gates_ok": "2026-10-07 08:43",
+   "note": "[범위 안쪽 — 50대 퇴직 뒤 재취업 돈] 관문 통과(write 08:43): 조기재취업수당 지급 제외 월급 574만→300만원 행정예고(고용노동부 공고 제2026-458호, 9/29, 의견 10/18, 부칙 11/1 이후 수급자격 신청자부터) · 검색 조기재취업수당 8,160·우리 카페 0편 · 제목 T16 7.5(제미나이 3회 7.9·레드팀 7·작성자 7.5, 틀 v2 통과) · 표지 E5 7.0(보정 gongjae 7.25 유효) · crosscheck 사실 5 중 반영 4·유지 1 · 레드팀 오류 9 반영→재검 0 · readcheck 본문 0·aitell 0.0·selfcheck 사실 0·editgate auto · /calc/unemployment-benefit utm · 이전 note: firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 새 편(write 주제 고르기, X-CAFE-CALC-1은 10/10 시작이라 지금 규칙) · 관문 기한 10/7 16:10 · 하루 8편 상한의 8번째"
   },
   {
    "at": "2026-10-08 08:10",

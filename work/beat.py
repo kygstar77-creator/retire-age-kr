@@ -35,7 +35,9 @@ BUDGET = {'write': 45, 'watchdog': 20, 'improve': 40, 'loop': 40, 'report': 50}
 # 2026-10-06 loop: 또 예약이 바뀌었는데 표를 안 고쳐 watchdog가 '11.9시간째(정상 3시간)'로 일감표 5번에 올랐다.
 #   write    10 8,10,...,22 * * * → 22:10 다음이 08:10, 10시간
 #   watchdog 45 9,13,17,21 * * *  → 21:45 다음이 09:45, 12시간
-GAP_OK = {'write': 10, 'watchdog': 12, 'improve': 16, 'loop': 12, 'report': 24}
+# 2026-10-07 write: firemap-loop 예약은 10/6 조직 축소 때 삭제됐다(list_scheduled_tasks에 없음). 그런데 표에 남아
+#   일감표 2번이 'loop 22.7시간째(정상 12시간)'를 계속 올렸다 — 고칠 수 없는 걸 세고 있었다. 예약이 다시 생기면 넣는다.
+GAP_OK = {'write': 10, 'watchdog': 12, 'improve': 16, 'report': 24}
 SLACK = 1.5   # 예약이 늦게 떠도 되도록 얹는 시간
 
 # 예산을 넘겼어도 마지막 단계 맥박이 이 안(분)이면 살아서 일하는 중이다. 끊지 않는다.

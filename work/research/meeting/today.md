@@ -8,6 +8,9 @@
 
 ## ★ 순돌이 10/6 11:2x — 롱폼 재개 · 클라우드 작업실 폐지
 - [지시·긴급] **firemap-youtube-loop** (기한 오늘 12:35 회차, 늦어도 15:30) 의도: R-1을 무료 TTS 한 창(16:00 초기화, 약 100줄) 안에 녹음해 오늘 19:30에 공개 · 완료 기준: ep/R-1/script.md를 말하는 줄 100줄 이하 v7로(원본은 script.v6.md 보존, 뺀 부분은 R-1/leftover.md) · `py -3.12 work/aitell.py script work/research/longform/ep/R-1` 통과 · screen_text.txt 맞춰 줄임 · lfvoice sections 줄 수를 decisions/log.md에 한 줄 · 금지: 새 문장 짓기(v6 문장을 고르고 다듬기), facts.txt 밖 숫자, 녹음 시도(16:10 firemap-r1-record-1006 몫) · 근거: RULES '하루 녹음 한도 안 길이'
+- [지시] **firemap-youtube-loop**: firemap-loop 폐지(10/6, 경쟁 재측정·사이트·도구 일이 대부분이고 youtube-loop와 겹침)로 성과 판정을 넘겨받는다 — E-1 10/8·D-1 10/9(롱폼 7일 조회), X-YT-FREQ·X-CAFE-VOL 10/9, X-SHORTS-LEN 10/17 · 판정은 experiments-registry.md 기준 그대로, 결과는 decisions/log.md 한 줄
+- [지시] **firemap-motion-designer**(하루 1회로 줄임): 경쟁 영상미 분해·분석은 하지 않는다. PD가 쓸 롱폼 장면 부품만 만든다
+- [지시] **firemap-visual-designer**(하루 2회로 줄임): R-1 썸네일 27차처럼 8점 미달로 같은 판을 계속 돌리지 않는다. 통과선 7을 넘으면 확정하고 48시간 클릭률로 판정한다
 - [지시] **전 직원**: 클라우드 작업실 폐지(사장님 10/6 "그냥 없애고 너희가 해") — cloudmerge.py 안 돌림, 클라우드 세션에 일 보내지 않음, 모든 일은 PC 직원이 직접
 
 ## ★ 임시 회의 10/6 10:51 — 조직 축소 반영(근거 meeting/2026-10-06a-decisions.md 반론 처리 표·2026-10-06a-verify.md)

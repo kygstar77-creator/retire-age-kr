@@ -60,3 +60,4 @@
 
 - 2026-10-06 20:38 ltcgrade1007: 심사 스크립트(title_judge.py)를 다른 편에서 복사하면 독자·핵심 숫자 줄을 정규식으로 바꾸다 실패해 옛 글 설명으로 채점된다 — 복사 뒤 프롬프트 줄을 sed -n으로 눈으로 확인하고 돌린다. 레드팀은 제목 '한 칸'처럼 어느 경우인지 흐린 말을 낚시로 본다 → 제목엔 문턱(75점)처럼 구체적인 말.
 - refactor rewrite 전 묶음 img/ 폴더가 있는지 먼저 본다(fintax는 없음 → rewrite하면 사진이 빠진다).
+- 10/6 22:4x parking1007: 저축은행중앙회 입출금 공시는 화면에 안 나오고 ratanym_0100.jct(JSON)로 온다 — Playwright로 페이지 열고 `$('#pagePer').val(200); $('#btnSearch').click()` 뒤 응답을 받으면 156개 전부(RATE_LOW·RATE_HIGH·HGST_INTR_APL_AMT·SWEETENER·ETC_NOTE_MATTER). '최고금리'만 보면 낚인다 — 적용 금액·판매중단(ETC_NOTE)까지 본다. 레드팀 제안도 원문 대조(65세 비과세종합저축 제안은 2026 개정으로 틀렸다).

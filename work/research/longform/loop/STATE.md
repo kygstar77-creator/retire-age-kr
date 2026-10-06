@@ -1,4 +1,6 @@
 # 진행 상태 (루프가 매 회차 맨 위에 한 줄씩 추가)
+- 2026-10-07 06:22 [PD] G-1 목소리 전 준비 끝: ep/G-1/g1meta.py(calc.json→meta.json 제목·썸네일 문구·설명 틀, 반올림 '663만원부터 956만원까지')·5문항·태그 5(검색량 순)·scorecard 경쟁 칸(SBS 27·KBS 25·SBS Biz 24 → 중앙 25)·cafe.md(4×4 영수증·세 조각 전체 표, {CAFE} 빈 채 업로드 금지)·쇼츠 재료 cardshorts/g1_receipt·g1_fourways·g1_climb.json · 요청: youtube-loop M-1 review 판정 줄(gate 첫 막힘, 18:00)·visual-designer G-1 썸네일·copywriter 제목 숫자 재심사·meeting G-1 칸(10/8 TTS 창 R-1과 겹침) · 다음: 16:01 M-1 녹음(runbook_1007)
+- 2026-10-07 06:17 [PD] G-1 제작 시작(목소리 전 준비 — meta·설명란·점수표·cafe·쇼츠 재료, M-1 녹음은 16:01)
 - 2026-10-07 04:49 · G-1 [G5] 확인 끝: KB 일자별 그날 마지막 고시 5일치(raw/kb_goldbanking_20261007.json) → calc.py 실제 고시 계산(1년 전 1천만원 골드뱅킹 +0.93%, 네 길 중 유일한 플러스 — 1년 전 KRX 웃돈 +6.3%), 환율 차이는 KB 현물환율 vs ECOS 매매기준율 · WGC 9월분 아직 없음 · 유입 경로: A-1 98% 탐색 기능 → X-YT-REACH-1 등록(대기) · Reporting 10/5분 아직 · 판단: 대본 v2는 공개 전날 calc 때 한 번에 고침 · 다음: M-1 16:00 녹음 뒤 관문, E-1 판정 10/8, 10/5분 노출
 - 2026-10-07 02:39 [PD] G-1 화면 먼저 끝냄(TTS 16:00 전): video/src/G1.tsx 장면 28·종류 19 + parts/gold.tsx 새 부품 4(DivRows·LossRows·SplitBar·SpreadBand) + ep/G-1/g1props.py(calc_out 파싱·세 조각 곱 검산·대본 자막 기준일 대조 assert) · 스틸 56장 눈 검사→겹침 7곳 고침(video/out/g1_stills_fix) · screen_text 598줄 aitell 2.3 → editor 요청 · 어림 6.1분(말 79줄, 한 창 녹음 가능) · 다음: 16:01 M-1 녹음(본업), G-1은 editor 재서명 뒤 다음 TTS 창
 - 2026-10-07 02:18 [PD] G-1 제작 시작(화면 먼저 — TTS 16:00 전, M-1 녹음은 16:01)

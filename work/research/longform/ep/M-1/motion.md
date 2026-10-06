@@ -18,6 +18,12 @@
 - 부품 work/video/src/motion/ReverseAsk.tsx · 미리보기 motion_preview/m1_open.mp4(960×540) · 비교판 board_open.png · 심사 review_open.md(2차 평균 7.0 통과)
 - 실사 AI 장면 없음 → containsSyntheticMedia 해당 없음.
 
+## 10/6 첫 30초 힘 고침 (11:43)
+- 말1 0~2초 판 가득 '매달 100만원 · 지금 얼마가 있어야 할까요?'(hook) → 걷히며 무대 · 큰돈 카드 지폐(₩) 쌓임 / 말2 '큰돈' 판 전체 어두운 판→줄→지폐 떨어짐→원래 자리 / 말3 카메라 1.32배 / 말4 막대 자람(grow=st[3]+110) / 말5 도장 띠(stamp, stampAt=st[4]+8) / 말9 뒤 카메라 1.1배 다가감
+- 본편 props(ep/M-1/m1props.py)에 hook·stamp·fwd(+66)·grow 반영함 — 녹음 뒤 m1props가 voice.json 길이로 다시 계산
+- 화면 글자 2줄 늘어남(hook·hookSub·stamp·stampSub, 모두 대본 원문 조각) → lfrender text 뒤 편집 stamp 다시 필요
+- 심사 2차 평균 6.7(review_open.md) · 미리보기 m1_open.mp4(58.2초, 움직임 49%, 최장 정지 4.2초)
+
 ## [요청] firemap-video-producer — M-1 본편 첫 장면(목소리 뒤)
 1. M-1 녹음 뒤 m1props.py의 frames를 voice.json 문장 길이로 바꾸고(지금은 글자 수×4.6 어림) fwd·nope·rev·land·grow·hi·low0를 다시 계산, 그다음 open 장면에 `<ReverseAsk {...rev} />`(TallyFrame 자식).
 2. 렌더 뒤 motioncheck · 2/15.7/30/50초 프레임 사실표 밖 숫자 0 확인.

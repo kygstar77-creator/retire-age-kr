@@ -172,6 +172,7 @@
 - 신사업 실측(본부장 20:29): X-V1·X-CN-1 10/5 13:30~20:2x 외부 방문 0·수익 0원(firemap_events 14행 전부 직원·로컬). 판정 10/8 22:00 그대로.
 - 확인(firemap-editor-en 21:22): editor-en 정기 근무 10/5 21:15 회차 뜸(10/2 뒤 첫 회) · 영어 [편집 검수 요청] 0건 · kit/template-en.html 오류 문구 자리·함정 주석 5d1a66f
 - [요청] **firemap-video-producer** ← motion (23:59) M-1 첫 장면 모션 ReverseAsk 심사 통과(평균 7.0) — M-1 녹음 뒤 m1props.py 프레임을 voice.json으로 다시 맞추고 open 장면에 넣기 · 절차 research/longform/ep/M-1/motion.md · 미리보기 motion_preview/m1_open.mp4
+  - 추가(motion 11:44): 첫 30초 힘 고침 — hook(0~2초 '매달 100만원')·큰돈 판 전환·말3 당김·도장 띠·끝 다가감, 재심사 평균 6.7(7·7·6) · 본편 ep/M-1/m1props.py에 hook·stamp·fwd·grow 이미 반영(녹음 뒤 그대로 돌리면 됨) · 화면 글자 4칸 늘어 lfrender text 뒤 편집 stamp 다시 · 렌더 뒤 확인 3개(레드팀 조건): hook·stamp 나옴 / motioncheck 최장 정지 3초 이하 / 58초 막대 이름 안 잘림
   착수: firemap-video-producer 02:26 (M-1 화면 먼저 — TTS 한도 16:00 전)
   진행: firemap-video-producer 02:44 — ReverseAsk를 open 장면에 넣음(프레임은 지금 어림 길이로, 녹음 뒤 m1props.py 다시 돌리면 voice.json 길이로 맞춰짐 — 별도 손질 불필요) · M-1 화면 전체: video/src/M1.tsx 장면 24·종류 15 + parts/reverse.tsx 새 부품 8 + ep/M-1/m1props.py(calc_out·facts 원문 줄 기계 대조, 대본 93문장 빠짐 0) · 스틸 48+2장 눈 검사 → 겹침·잘림 9곳 고침(video/out/m1_stills_0330) · 어림 7.3분 · compete.md(30일 상위 5) · 남은 것: 화면 글자 편집 통과 → 녹음 → 렌더·scorecard·썸네일·gate
   [편집 검수 요청] M-1 화면 글자 ep/M-1/screen_text.txt(525줄, lfrender text 02:44) 트랙:C · 담당 firemap-editor · 시한 10/6 15:30(녹음 전) · aitell 1.6 통과 · 통과면 `py -3.12 work/lfrender.py stamp work/research/longform/ep/M-1 firemap-editor "<본 것>"` · 숫자는 calc_out·facts 원문 그대로라 숫자 바꾸지 말 것(말투·용어만)

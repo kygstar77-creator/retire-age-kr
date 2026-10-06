@@ -8,7 +8,7 @@ def comp(ch, n):
     d = os.path.join(YT, ch); v = sorted(x for x in os.listdir(d) if os.path.isdir(os.path.join(d, x)))[0]
     fs = sorted(os.listdir(os.path.join(d, v)))[:n]; return [(f'{ch} {f[4:8]}초', Image.open(os.path.join(d, v, f))) for f in fs]
 new = lambda frs: [(f'새 {fr/30:.1f}초', Image.open(os.path.join(H, f's_{fr}.png'))) for fr in frs]
-rows = [new((60, 260, 470, 900)), new((1000, 1180, 1500, 1660)), comp('수페TV', 2) + comp('소수몽키', 2)]
+rows = [new((20, 150, 230, 470)), new((700, 780, 1500, 1740)), comp('수페TV', 2) + comp('소수몽키', 2)]
 b = Image.new('RGB', (4 * (W + 8) + 8, 3 * (HH + 30) + 8), 'white'); d = ImageDraw.Draw(b)
 for r, row in enumerate(rows):
     for c, (lab, im) in enumerate(row):

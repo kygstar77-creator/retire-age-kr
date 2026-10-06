@@ -19,6 +19,8 @@ export type ReverseAskProps = {
   low: {i: number; v: number; label: string; times: string; tag: string};  // 늘어나는 막대(말이 가리키는 것, 주황)
   also: {i: number; v: number; label: string; times: string}[];   // 같은 규칙으로 함께 늘어나는 막대(잉크, 한 막대만 늘면 나머지가 안전해 보이는 오독 방지 — 심사 10/5)
   note: [number, string][];     // 같은 규칙을 못 쓰는 막대의 이유 칩(예: 분기 지급)
+  hook?: string; hookSub?: string;
+  stamp?: string; stampSub?: string; stampAt?: number;   // 말 5(기준일·권유 아님): 판 가운데 어두운 도장 판이 내려앉았다 위로 걷힘 — 막대 다 자란 뒤 정지 끊기(레드팀 10/6). 글자는 대본 원문 조각만.   // 첫 화면(0~fwd): 판 가득 큰 목표 숫자 — 첫 30초 힘(심사 10/5 공통 지적: 흰 판·상자 2개). 글자는 대본 원문만.
   fwd: number; nope: number; rev: number; land: number; grow: number; hi: [number, number][]; low0: number;  // 프레임: 보통 방향·거꾸로·막대·[강조 프레임, 막대 번호]·늘어남
 };
 
@@ -50,17 +52,32 @@ export const ReverseAsk: React.FC<ReverseAskProps> = (p) => {
   const c1 = interpolate(f, [p.land - 10, p.land + 40], [0, 1], {...CL, easing: ease});
   const c2 = interpolate(f, [p.low0 - 6, p.low0 + 40], [0, 1], {...CL, easing: ease});
   const drift = interpolate(f, [0, p.land], [0, 1], CL);
-  const zA = 1.16 - 0.04 * drift;
-  const z = zA + (1 - zA) * c1;
-  const fx = 900 + (960 - 900) * c1 + (xs[p.low.i] - 960) * 0.45 * c2;   // 화면 가운데에 올 월드 x
-  const fy = 470 + (560 - 470) * c1;
+  // 말 3 '거꾸로'(rev): 카메라가 화살표·물음표 쪽으로 1.32배 당겨 판을 채움(심사 10/6 Claude: 15.7초도 0.7초처럼 판 가득)
+  const c0 = interpolate(f, [p.rev - 22, p.rev + 8], [0, 1], {...CL, easing: ease});
+  const zA = 1.16 - 0.04 * drift; const zR = zA + (1.32 - zA) * c0;
+  const push = interpolate(f, [p.low0 + 84, p.low0 + 360], [0, 1], {...CL, easing: Easing.inOut(Easing.quad)});   // 늘어난 뒤 끝까지 천천히 다가감(끝 8초 정지 끊기)
+  const z = (zR + (1 - zR) * c1) * (1 + 0.1 * push);
+  const fxA = 900 + 60 * c0;
+  const fx = fxA + (960 - fxA) * c1 + (xs[p.low.i] - 960) * 0.45 * c2;   // 화면 가운데에 올 월드 x
+  const fy = 470 + (560 - 470) * c1 + 30 * push;   // 다가가는 동안 아래로 보정 — 0 기준선·막대 이름이 판 안에 남게(레드팀 10/6 잘림)
   const tx = 960 - z * fx; const ty = 545 - z * fy;
   const bz = Math.sqrt(z); const btx = (960 - bz * fx) * 0.5; const bty = (545 - bz * fy) * 0.5;  // 뒷층: 절반만
 
+  // 0. 여는 판(hook): 판 가득 목표 숫자 → fwd-24~fwd-6에 앞으로 날아가며 걷히고 무대가 뒤에서 들어옴
+  const hk = p.hook ? interpolate(f, [p.fwd - 24, p.fwd - 4], [0, 1], {...CL, easing: ease}) : 1;
+  // 말 '큰돈이 없잖아요': '큰돈' 카드가 판을 다 채운 어두운 판으로 커짐(nope~+16) → 줄(+18~+34) → 지폐 떨어짐(+30~) → 원래 자리로 줄어들며 걷힘(+58~+78)
+  const sOpen = interpolate(f, [p.nope, p.nope + 16], [0, 1], {...CL, easing: out});
+  const sBack = interpolate(f, [p.nope + 58, p.nope + 78], [0, 1], {...CL, easing: ease});
+  const sw0 = sOpen * (1 - sBack);
+  const sCut = interpolate(f, [p.nope + 18, p.nope + 34], [0, 1], {...CL, easing: out});
+  const sFall = interpolate(f, [p.nope + 30, p.nope + 54], [0, 1], {...CL, easing: Easing.in(Easing.quad)});
+  // 지폐 쌓임(말 '큰돈을 넣으면'): fwd+20부터 한 장씩 — 숫자 없는 그림
+  const BILLS = 7;
+  const bill = (k: number) => interpolate(f, [p.fwd + 20 + k * 12, p.fwd + 30 + k * 12], [0, 1], {...CL, easing: out});
   // ① 보통 방향 화살표: fwd~fwd+30 그려짐, rev-30부터 걷힘
   const a1 = interpolate(f, [p.fwd, p.fwd + 30], [0, 1], {...CL, easing: out}) * (1 - fade(f, p.nope + 20, 16));
   // 말 '큰돈이 없잖아요'(nope): 큰돈 카드에 줄이 그어지고 작아지며 흐려짐
-  const no = interpolate(f, [p.nope, p.nope + 24], [0, 1], {...CL, easing: out});
+  const no = interpolate(f, [p.nope + 58, p.nope + 78], [0, 1], {...CL, easing: out});
   // ② 거꾸로: 카드 글자 바뀜(rev-14), 화살표 rev~rev+34
   const sw = fade(f, p.rev - 16, 10);
   const a2 = interpolate(f, [p.rev, p.rev + 34], [0, 1], {...CL, easing: out});
@@ -86,7 +103,7 @@ export const ReverseAsk: React.FC<ReverseAskProps> = (p) => {
     return {d: pts.join(' '), ex, ey, ang};
   };
   const A1 = curve(L.x + 150, R.x - 190, L.y, a1);
-  const A2 = curve(R.x - 190, L.x + 210, R.y, a2);
+  const A2 = curve(R.x - 190, L.x + 300, R.y, a2);
 
   const card = (x: number, y: number, w: number, hgt: number, hi: boolean, o: number, s = 1): React.CSSProperties => ({
     position: 'absolute', left: x - w / 2, top: y - hgt / 2, width: w, height: hgt, borderRadius: 26, background: T.surface, opacity: o,
@@ -103,8 +120,14 @@ export const ReverseAsk: React.FC<ReverseAskProps> = (p) => {
       <div style={{position: 'absolute', left: 0, top: 0, width: 1920, height: 1080, transformOrigin: '0 0', transform: `translate(${tx}px, ${ty}px) scale(${z})`}}>
         {/* ①② 위층: 큰돈 · 화살표 · 카드 */}
         <div style={{position: 'absolute', left: 0, top: 0, width: 1920, height: 1080, opacity: topO, transform: `translateY(${-60 * settle}px)`}}>
-          <div style={card(L.x, L.y, 280, 150, false, (1 - sw) * (1 - 0.55 * no), 1 - 0.22 * no)}>
-            <div style={{fontWeight: 700, fontSize: 52, color: T.ink, position: 'relative'}}>{p.big}
+          <div style={card(L.x, L.y, 320, 280, false, (1 - sw) * (1 - 0.55 * no) * (1 - sOpen * (1 - sBack)), 1 - 0.22 * no)}>
+            <div style={{position: 'relative', width: 200, height: BILLS * 17 + 20, marginBottom: 10}}>
+              {Array.from({length: BILLS}, (_, k) => (k + 1) / BILLS > 1 - sFall ? null : (
+                <div key={k} style={{position: 'absolute', left: ((h >> (k % 8)) % 3) * 6 - 6, bottom: k * 17, width: 200, height: 30, borderRadius: 6, boxSizing: 'border-box',
+                  background: T.soft, border: `3px solid ${T.accent}`, opacity: bill(k), transform: `translateY(${(1 - bill(k)) * -26}px)`,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', ...F, fontWeight: 700, fontSize: 18, color: T.accent, lineHeight: 1}}>₩</div>))}
+            </div>
+            <div style={{fontWeight: 700, fontSize: 60, color: T.ink, position: 'relative'}}>{p.big}
               <div style={{position: 'absolute', left: -14, top: '52%', height: 6, borderRadius: 3, background: T.ink, width: `calc(${no * 100}% + 28px)`, opacity: no > 0.01 ? 1 : 0}} />
             </div>
           </div>
@@ -127,7 +150,7 @@ export const ReverseAsk: React.FC<ReverseAskProps> = (p) => {
         <div style={{position: 'absolute', left: xs[0] - bw, top: base, width: xs[n - 1] - xs[0] + 2 * bw, height: 4, borderRadius: 2, background: T.ink3, opacity: fade(f, p.land + 20, 14)}} />
         {/* '?' 셋 → 막대 */}
         {p.bars.map((b, i) => {
-          const q0 = {x: L.x + (i - (n - 1) / 2) * 110, y: L.y};
+          const q0 = {x: L.x + 90 + (i - (n - 1) / 2) * 110, y: L.y};
           const qx = q0.x + (xs[i] - q0.x) * settle; const qy = q0.y + (base - 70 - q0.y) * settle;
           const hgt = b[1] * px * growK;
           const isLow = i === p.low.i; const al = p.also.find((a) => a.i === i);
@@ -138,7 +161,7 @@ export const ReverseAsk: React.FC<ReverseAskProps> = (p) => {
           return (
             <React.Fragment key={i}>
               <div style={{...F, position: 'absolute', left: qx - 50, top: qy - 60, width: 100, height: 120, display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontWeight: 700, fontSize: 96, color: T.accent, opacity: qO, transform: `scale(${(0.6 + 0.4 * qIn(i)) * (1 + 0.08 * Math.sin(Math.PI * 2 * hold + i))})`}}>?</div>
+                fontWeight: 700, fontSize: 132, color: T.accent, opacity: qO, transform: `scale(${(0.6 + 0.4 * qIn(i)) * (1 + 0.08 * Math.sin(Math.PI * 2 * hold + i))})`}}>?</div>
               <div style={{...F, position: 'absolute', left: xs[i] - 200, width: 400, top: base + 18, textAlign: 'center', whiteSpace: 'nowrap',
                   fontWeight: 700, fontSize: 34, color: dim ? T.ink3 : T.ink2, opacity: fade(f, p.land + 30 + i * 8, 12)}}>{b[0]}</div>
               {growK > 0 && <>
@@ -169,9 +192,10 @@ export const ReverseAsk: React.FC<ReverseAskProps> = (p) => {
               <div style={{...F, position: 'absolute', left: xs[i] + bw / 2 + 22, top: base - p.bars[i][1] * px - 22, whiteSpace: 'nowrap', opacity: fade(f, p.low0 + 30, 10),
                 fontWeight: 700, fontSize: 30, color: T.ink3}}>{p.bars[i][2]}</div>
               {p.also.map((al) => { const t2 = base - al.v * px; return (
-                <div key={al.i} style={{...F, position: 'absolute', left: xs[al.i] - 160, width: 320, top: t2 - 110, textAlign: 'center', whiteSpace: 'nowrap', opacity: o}}>
+                <div key={al.i} style={{...F, position: 'absolute', left: xs[al.i] - 160, width: 320, top: t2 - 150, textAlign: 'center', whiteSpace: 'nowrap', opacity: o}}>
                   <div style={{fontWeight: 700, fontSize: 46, color: T.ink}}>{al.label}</div>
-                  <div style={{fontWeight: 700, fontSize: 32, color: T.ink2}}>{al.times} · {p.low.tag}</div>
+                  <div style={{fontWeight: 700, fontSize: 32, color: T.ink2}}>{al.times}</div>
+                  <div style={{fontWeight: 700, fontSize: 30, color: T.ink3}}>{p.bars[al.i][2]}</div>
                 </div>); })}
               {p.note.map(([ni, txt]) => (
                 <div key={ni} style={{...F, position: 'absolute', left: xs[ni] - 200, width: 400, top: base - p.bars[ni][1] * px - 132, textAlign: 'center', whiteSpace: 'nowrap', opacity: o}}>
@@ -181,6 +205,50 @@ export const ReverseAsk: React.FC<ReverseAskProps> = (p) => {
           );
         })()}
       </div>
+      {/* 판 덮개 둘(화면 좌표): 여는 판 · '큰돈' 판 — 말 1·2에서 화면 절반 이상이 바뀌는 단계 전환 */}
+      {(() => {
+        const B = {x: 102, y: 238, w: 1716, h: 612};
+        const lx = tx + z * L.x; const ly = ty + z * L.y; const lw = z * 320; const lh = z * 280;
+        const r = (k: number) => ({left: lx - lw / 2 + (B.x - (lx - lw / 2)) * k, top: ly - lh / 2 + (B.y - (ly - lh / 2)) * k, width: lw + (B.w - lw) * k, height: lh + (B.h - lh) * k});
+        return (
+          <>
+            {p.hook && hk < 1 && (
+              <div style={{position: 'absolute', left: B.x, top: B.y, width: B.w, height: B.h, background: T.surface, opacity: 1 - hk, ...F,
+                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', transform: `scale(${1 + 0.9 * hk})`}}>
+                <div style={{fontWeight: 700, fontSize: 190, color: T.accent, letterSpacing: -4, lineHeight: 1,
+                  transform: `scale(${interpolate(f, [0, 10], [0.86, 1], {...CL, easing: out})})`}}>{p.hook}</div>
+                <div style={{fontWeight: 700, fontSize: 64, color: T.ink, marginTop: 34, opacity: fade(f, 8, 10)}}>{p.hookSub}</div>
+              </div>
+            )}
+            {p.stamp && p.stampAt !== undefined && (() => {
+              const a = interpolate(f, [p.stampAt, p.stampAt + 12], [0, 1], {...CL, easing: out});
+              const b = interpolate(f, [p.stampAt + 96, p.stampAt + 116], [0, 1], {...CL, easing: ease});
+              if (a <= 0 || b >= 1) return null;
+              return (
+                <div style={{position: 'absolute', left: 410, top: 256, width: 1100, height: 250, borderRadius: 26, background: T.ink, ...F,
+                  display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', opacity: a * (1 - b),
+                  transform: `translateY(${-260 * b}px) scale(${1.25 - 0.25 * a})`, boxShadow: '0 30px 80px rgba(24,25,29,0.35)'}}>
+                  <div style={{fontWeight: 700, fontSize: 84, color: T.dink, letterSpacing: -2}}>{p.stamp}</div>
+                  <div style={{fontWeight: 700, fontSize: 40, color: T.daccent, marginTop: 14, opacity: fade(f, p.stampAt + 16, 10)}}>{p.stampSub}</div>
+                </div>);
+            })()}
+            {sw0 > 0.001 && (
+              <div style={{position: 'absolute', ...r(sw0), borderRadius: 26 * (1 - sw0) + 22 * sw0, background: T.ink, overflow: 'hidden', ...F,
+                display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', opacity: Math.min(1, sw0 * 3)}}>
+                <div style={{position: 'relative', width: 520, height: 210, marginBottom: 18, transform: `scale(${0.35 + 0.65 * sw0})`}}>
+                  {Array.from({length: BILLS}, (_, k) => (
+                    <div key={k} style={{position: 'absolute', left: ((h >> (k % 8)) % 3) * 14 - 14, bottom: k * 26, width: 520, height: 46, borderRadius: 10, boxSizing: 'border-box',
+                      border: `4px solid ${T.daccent}`, background: T.dsurface, display: 'flex', alignItems: 'center', justifyContent: 'center', ...F, fontWeight: 700, fontSize: 32, color: T.daccent, lineHeight: 1,
+                      transform: `translate(${sFall * (k % 2 ? 1 : -1) * (60 + k * 22)}px, ${sFall * (520 + k * 40)}px) rotate(${sFall * (k % 2 ? 1 : -1) * (14 + k * 4)}deg)`}}>₩</div>))}
+                </div>
+                <div style={{position: 'relative', fontWeight: 700, fontSize: 170 * (0.35 + 0.65 * sw0), color: T.dink, lineHeight: 1}}>{p.big}
+                  <div style={{position: 'absolute', left: -30, top: '40%', height: 16, borderRadius: 8, background: T.daccent, width: `calc(${sCut * 100}% + 60px)`, opacity: sCut > 0.01 ? 1 : 0}} />
+                </div>
+              </div>
+            )}
+          </>
+        );
+      })()}
     </div>
   );
 };

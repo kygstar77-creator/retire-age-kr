@@ -230,11 +230,12 @@ def main():
             st = [0]
             for l in out: st.append(st[-1] + l['frames'])
             assert len(out) == 9, len(out)
-            d['data']['rev'] = {'seed': 'M-1', 'big': '큰돈', 'ask0': '매달 ?', 'goal': '매달 100만원', 'goalSub': '세금·건보료 뗀 뒤',
+            d['data']['rev'] = {'seed': 'M-1', 'hook': '매달 100만원', 'hookSub': '지금 얼마가 있어야 할까요?', 'big': '큰돈', 'ask0': '매달 ?', 'goal': '매달 100만원', 'goalSub': '세금·건보료 뗀 뒤',
                                 'bars': [['JEPQ', 1.38, '1.38억원'], ['SCHD', 4.85, '4.85억원'], ['ACE 미국배당다우존스', 5.10, '5.10억원']],
                                 'low': {'i': 2, 'v': 8.92, 'label': '8.92억원', 'times': '×1.75', 'tag': '가장 적은 달 기준'},
                                 'also': [{'i': 0, 'v': 1.71, 'label': '1.71억원', 'times': '×1.23'}], 'note': [[1, '분기 1회 · 달마다 아님']],
-                                'fwd': st[0] + 40, 'nope': st[1] + 20, 'rev': st[2] + 10, 'land': st[3] + 20, 'grow': st[4] + 20,
+                                'fwd': st[0] + 66, 'nope': st[1] + 20, 'rev': st[2] + 10, 'land': st[3] + 20, 'grow': st[3] + 110,
+                                'stamp': '2026년 10월 2일 기준', 'stampSub': '사라는 얘기가 아니라, 지난 기록으로 한 계산', 'stampAt': st[4] + 8,  # motion 10/6 첫 30초 힘(정지 11.2→4.2초)
                                 'hi': [[st[5] + 6, 0], [st[6] + 6, 2], [st[7] + 6, -1]], 'low0': st[8] + 30}
             frames += 20
         scenes.append({'key': key, 'kind': d['kind'], 'title': d['title'], 'sub': d.get('sub'), 'source': d.get('source'),

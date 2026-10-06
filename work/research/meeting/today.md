@@ -31,6 +31,8 @@
 - [지시] **firemap-motion-designer**(하루 1회로 줄임): 경쟁 영상미 분해·분석은 하지 않는다. PD가 쓸 롱폼 장면 부품만 만든다
 - [지시] **firemap-visual-designer**(하루 2회로 줄임): R-1 썸네일 27차처럼 8점 미달로 같은 판을 계속 돌리지 않는다. 통과선 7을 넘으면 확정하고 48시간 클릭률로 판정한다
 - [지시·긴급] **firemap-shorts** (사장님 10/3 "쇼츠도 내용을 좀 길게 해서 알차게" → X-SHORTS-LEN 등록만 하고 B를 한 편도 안 만듦, 10/6 재지시) 의도: 7초 카드 말고 '알찬' 쇼츠를 실제로 내보내 비교 · 완료 기준: cardshort.py에 spec "cards": [카드 3~4장] 이어 붙이기(장마다 6~10초, 합 25~40초, 장 사이 막대·숫자 움직임, 첫 프레임부터 본 화면) → **10/8 12:20 칸을 B로**(주제는 이미 A로 나간 nhis_prop·a1_1eok1y·e2_interest 중 하나 — 같은 주제 짝), 10/9·10/10에 한 짝씩 더(하루 2편 중 1편) · 목소리는 쓰지 않는다(무료 TTS는 롱폼 몫, 결제 뒤 목소리 판 추가) · 관문(사실표·편집·1초 시험 첫 프레임)은 그대로, 12시간 전 통과 · 금지: 장마다 같은 말 반복, 카드 한 장에 숫자 3개 넘게
+  착수: firemap-shorts 19:31 — cardshort.py "cards" 이어 붙이기 + nhis_prop B판(계기판 첫 장)
+  진행: firemap-shorts 19:52 — cardshort.py "cards"(gauge·ratio·points·end, 장 사이 밀기, 끝→첫 장 겹침, 세로 가운데 정렬) + shortsdaily check(카드 글자 사실표 대조·카드당 숫자 3개·장 6~10초·합 25~40초) 구현. nhis_prop_b 32초 렌더·compete 5·aitell 0.0·edit auto. 첫 프레임 1초 시험 v1·v2 5·5 미달(카피 7·8/8·6) → gates_ok 아직. 다음: v3 답 먼저 1판(기한 10/8 00:20), 10/8 12:20 칸 slots에 올림. 10/9·10/10 짝은 a1_1eok1y·e2_interest (cardshorts/nhis_prop_b/review.md)
 - [지시] **전 직원**: 클라우드 작업실 폐지(사장님 10/6 "그냥 없애고 너희가 해") — cloudmerge.py 안 돌림, 클라우드 세션에 일 보내지 않음, 모든 일은 PC 직원이 직접
 
 ## ★ 임시 회의 10/6 10:51 — 조직 축소 반영(근거 meeting/2026-10-06a-decisions.md 반론 처리 표·2026-10-06a-verify.md)
@@ -244,3 +246,4 @@
   완료: firemap-youtube-loop 19:12 — G-1 calc.py까지(이번 조각): 네이버 증권 front-api(옛 금 일별 페이지 폐지)·야후 ETF·GC=F·ECOS로 공개일 기준 다시 받기, 영수증 산 날 4×산 길 4·세 조각 곱 분해(검산 일치) · 10/2 기준으로 옛 숫자 그대로 재현(677.4만·975.8만·+47.6%) · **10/6 기준은 663.4만·955.7만·고점 -33.66%·+50.7% → 공개 전날 calc 뒤 카피 재심사 필요** · 남은 것: 대본 v1(100줄)→제미나이 검증·심사 · 근거 ep/G-1/calc_out.txt·facts.txt [C1]
 - [대기열] firemap-improve shortsdaily check에 제목 '·' 빈칸 글자 경고 (backlog 32행)
   착수: firemap-improve 19:08 (운영실장)
+  완료: firemap-improve 19:13 — shortsdaily check에 제목체(BlackHanSans) 글자 없는 글자(·) 빈칸 경고 추가(제목 줄·표지·큰 글자 대상, 공개 막음). 실측: 10/5 a1_1eok1y 원고에서 "카드 제목 글꼴에 '·'(U+00B7) 글자가 없어 빈칸으로 나옴" 적발. 카드 아래 빈칸은 backlog에 남김

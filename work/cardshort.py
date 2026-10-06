@@ -197,7 +197,165 @@ def cover_chart_frame(spec, im, d, M):
     if y + 70 > SAFE_B: print(f'경고: 표지 그림이 가려지는 자리까지(y={y + 70})')
     return im
 
+
+# ── B형 '알찬' 쇼츠: 카드 3~4장 이어 붙이기(2026-10-06 firemap-shorts, [지시·긴급] 사장님 10/3 "쇼츠도 내용을 좀 길게 해서 알차게") ──
+# spec "cards": [{kind, sec, ...}, ...] 장마다 6~10초, 합 25~40초. 첫 프레임부터 본 화면(표지 없음). 실험 X-SHORTS-LEN B판.
+#   kind "gauge"  : 한 칸 계기판 — q(질문 줄들)·small·steps[[라벨, 숫자, 단위], ...]·unit_label·hold(단계당 초).
+#                   중간값(사실표 밖 숫자)은 찍지 않는다 — 숫자는 단계 값으로 '탁' 바뀌고, 움직이는 건 막대 길이뿐(레드팀 10/4 '87.0 중간값').
+#   kind "ratio"  : head(줄들)·rows[[라벨, 막대 길이용 값(화면에 안 찍힘), 찍을 글자], ...]·note. 막대가 차례로 자란다.
+#   kind "points" : head(줄들)·points(0.8초 간격으로 나타남, {강조})·note.
+#   kind "end"    : head(줄들)·lines·source. 마지막 0.4초는 첫 장 첫 프레임으로 겹쳐 넘어가 반복 재생이 이어진다.
+# 장 사이 0.25초는 다음 장이 오른쪽에서 밀려 들어온다. 화면 글자는 전부 spec 안 — shortsdaily check가 사실표와 대조한다.
+CARD_TOP = 262
+
+def fit(d, txt, mx, s, lo=56, fnt=None):
+    fnt = fnt or BHS
+    while s > lo and d.textlength(txt.replace('{', '').replace('}', ''), font=fnt(s)) > mx: s -= 4
+    return s
+
+def head_block(d, lines, y, size=96):
+    M = 64
+    for ln in lines:
+        s = fit(d, ln, SAFE_R - M, size)
+        draw_runs(d, M, y, runs(ln), BHS(s)); y += int(s * 1.2)
+    return y
+
+def card_gauge(d, c, t, y):
+    M = 64
+    y = head_block(d, c['q'], y, c.get('q_size', 120))
+    if c.get('small'): d.text((M, y + 6), c['small'], font=PD7(40), fill=GREY); y += 74
+    y += 56
+    steps = c['steps']; hold = c.get('hold', 1.5); k = min(len(steps) - 1, int(t / hold)); tk = t - k * hold
+    label, v, unit = steps[k]; mx = max(x[1] for x in steps)
+    d.rounded_rectangle((M, y, SAFE_R, y + 600), 28, fill=(30, 33, 42))
+    d.text((M + 40, y + 36), label, font=PD7(70), fill=WHITE)
+    if c.get('unit_label'):
+        f = PD7(40); d.text((SAFE_R - 40 - d.textlength(c['unit_label'], font=f), y + 56), c['unit_label'], font=f, fill=GREY)
+    pop = 1 + 0.10 * max(0.0, 1 - tk / 0.25) if k > 0 else 1.0       # 숫자가 바뀌는 순간 살짝 커졌다 돌아온다
+    val = f'{v:,}{unit}'; s0 = fit(d, val, SAFE_R - M - 80, 200); s = int(s0 * pop)
+    d.text((M + 40, y + 146 + (s0 - s) // 2), val, font=BHS(s), fill=YELLOW)
+    # 막대: 앞 단계 길이 → 이번 단계 길이로 0.4초 동안 자란다(길이만 움직임, 숫자는 안 찍음)
+    prev = steps[k - 1][1] if k > 0 else 0; g = min(1.0, tk / 0.4); g = 1 - (1 - g) ** 3
+    if k == 0: g = 1.0
+    span = SAFE_R - M - 80; bw = span * (prev + (v - prev) * g) / mx
+    by = y + 400
+    d.rounded_rectangle((M + 40, by, SAFE_R - 40, by + 56), 14, fill=(52, 56, 68))
+    d.rounded_rectangle((M + 40, by, M + 40 + max(int(bw), 12), by + 56), 14, fill=YELLOW)
+    # 단계 눈금: 라벨 끝말(3억·9억…)을 막대 아래에 — 처음·끝·지금 단계만(5억·6억처럼 가까운 눈금이 겹쳐서, 10/6 시안)
+    for i, (lb, vv, _) in enumerate(steps):
+        if i not in (0, len(steps) - 1, k): continue
+        tick = lb.split()[-1]; f = PD7(44); tw = d.textlength(tick, font=f)
+        x = M + 40 + span * vv / mx - tw
+        d.text((max(M + 40, x), by + 76), tick, font=f, fill=YELLOW if i == k else (WHITE if i < k else (96, 100, 114)))
+    return y + 620
+
+def card_ratio(d, c, t, y):
+    M = 64
+    y = head_block(d, c['head'], y, 116) + 60
+    rows = c['rows']; mx = max(r[1] for r in rows)
+    for i, (label, r, txt) in enumerate(rows):
+        g = min(1.0, max(0.0, (t - 0.3 - 0.8 * i) / 0.9)); g = 1 - (1 - g) ** 3
+        col = YELLOW if i == len(rows) - 1 else (150, 156, 170)
+        d.text((M, y), label, font=PD7(60), fill=WHITE); y += 90
+        bw = (SAFE_R - M) * r / mx * g
+        d.rounded_rectangle((M, y, M + max(int(bw), 12), y + 84), 18, fill=col)
+        if g >= 1: d.text((M, y + 104), txt, font=BHS(140), fill=col)
+        y += 104 + 190
+    if c.get('note') and t > 0.3 + 0.8 * len(rows) + 0.5:
+        draw_runs(d, M, y, runs(c['note']), PD7(64))
+    return y + 90 if c.get('note') else y
+
+def card_points(d, c, t, y):
+    M = 64
+    y = head_block(d, c['head'], y, 116) + 70
+    for i, p in enumerate(c['points']):
+        lines = wrap_runs(d, runs(p), PD7(60), SAFE_R - M - 84)
+        if t >= 0.4 + 0.8 * i:
+            d.text((M, y - 4), str(i + 1), font=BHS(76), fill=YELLOW)
+            for j, ln in enumerate(lines): draw_runs(d, M + 84, y + 4 + 84 * j, ln, PD7(60))
+        y += 84 * len(lines) + 56
+    if c.get('note'):
+        show = t >= 0.4 + 0.8 * len(c['points'])
+        for ln in wrap_runs(d, [(ch, GREY) for ch in c['note']], PD5(36), SAFE_R - M):
+            if show: draw_runs(d, M, y + 10, ln, PD5(36))
+            y += 50
+    return y
+
+def card_end(d, c, t, y, spec):
+    M = 64
+    y = head_block(d, c['head'], y, 128) + 60
+    for ln in c.get('lines', []):
+        for w in wrap_runs(d, runs(ln), PD7(58), SAFE_R - M):
+            draw_runs(d, M, y, w, PD7(58)); y += 82
+        y += 20
+    y += 30
+    for ln in wrap_runs(d, [(ch, GREY) for ch in spec['source']], PD5(30), SAFE_R - M):
+        draw_runs(d, M, y, ln, PD5(30)); y += 42
+    d.text((M, y + 18), spec.get('foot', '파이어맵'), font=PD7(38), fill=(255, 150, 70))
+    return y + 70
+
+def draw_card(d, spec, c, t, y):
+    k = c['kind']
+    if k == 'gauge': return card_gauge(d, c, t, y)
+    if k == 'ratio': return card_ratio(d, c, t, y)
+    if k == 'points': return card_points(d, c, t, y)
+    if k == 'end': return card_end(d, c, t, y, spec)
+    raise ValueError('모르는 카드 종류: ' + k)
+
+def card_image(spec, c, t, off):
+    """한 장의 t초 그림. off(세로 밀기)는 다 그려진 상태의 높이로 정해 가운데 정렬 — 아래가 비는 문제(10/5·10/6 '고칠 것') 막기."""
+    im = Image.new('RGB', (W, H), BG); d = ImageDraw.Draw(im); M = 64; y = 150
+    d.rounded_rectangle((M, y, M + 190, y + 58), 12, fill=(255, 107, 0)); d.text((M + 22, y + 8), '파이어맵', font=PD7(36), fill=WHITE)
+    chip = spec['chip']; cw = d.textlength(chip, font=PD7(32)) + 40
+    d.rounded_rectangle((M + 210, y, M + 210 + cw, y + 58), 12, fill=YELLOW); d.text((M + 230, y + 10), chip, font=PD7(32), fill=BG)
+    draw_card(d, spec, c, t, CARD_TOP + off)
+    return im
+
+def build_cards(spec, out, tmp):
+    cards = spec['cards']; total = sum(c['sec'] for c in cards)
+    if not 25 <= total <= 40: print(f'경고: 카드 합 {total}초 — 25~40초 밖')
+    offs = []
+    for c in cards:
+        probe = Image.new('RGB', (W, H)); bottom = draw_card(ImageDraw.Draw(probe), spec, c, 99, CARD_TOP)
+        if bottom > SAFE_B: print(f'경고: {c["kind"]} 카드가 가려지는 자리까지(y={bottom} > {SAFE_B})')
+        offs.append(max(0, (SAFE_B - bottom) // 2))
+    first = card_image(spec, cards[0], 0, offs[0])
+    SL, XF = int(0.25 * FPS), int(0.4 * FPS); n = 0
+    for ci, c in enumerate(cards):
+        nf = int(c['sec'] * FPS)
+        prev = card_image(spec, cards[ci - 1], 99, offs[ci - 1]) if ci > 0 else None
+        for i in range(nf):
+            im = card_image(spec, c, i / FPS, offs[ci])
+            if prev is not None and i < SL:          # 앞 장 마지막 그림을 왼쪽으로 밀어내며 들어온다
+                g = (i + 1) / SL; g = 1 - (1 - g) ** 3; dx = int(W * (1 - g))
+                fr = Image.new('RGB', (W, H), BG); fr.paste(prev, (dx - W, 0)); fr.paste(im, (dx, 0)); im = fr
+            if ci == len(cards) - 1 and i >= nf - XF:   # 끝 → 첫 장 첫 프레임으로 겹쳐 반복이 끊기지 않게
+                im = Image.blend(im, first, (i - (nf - XF) + 1) / XF)
+            im.save(os.path.join(tmp, f'{n:04d}.png')); n += 1
+    for ci, c in enumerate(cards):
+        card_image(spec, c, 99, offs[ci]).save(out.replace('.mp4', f'_card{ci + 1}.png'))
+    first.save(out.replace('.mp4', '_card.png'))   # 첫 프레임 = 1초 시험 대상(10/6 표지 폐지)
+    return total
+
+def build_b(spec, out):
+    tmp = out + '_frames'; os.makedirs(tmp, exist_ok=True)
+    for x in os.listdir(tmp): os.remove(os.path.join(tmp, x))
+    sec = build_cards(spec, out, tmp)
+    wav = out + '.wav'
+    if spec.get('music', True):
+        music(wav, sec, spec.get('yt_title', '') + spec.get('facts', ''))
+        subprocess.run([FF, '-v', 'error', '-y', '-framerate', str(FPS), '-i', os.path.join(tmp, '%04d.png'), '-i', wav,
+                        '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', '-c:a', 'aac', '-b:a', '160k', '-shortest', out], check=True)
+    else:
+        open(wav, 'wb').close()
+        subprocess.run([FF, '-v', 'error', '-y', '-framerate', str(FPS), '-i', os.path.join(tmp, '%04d.png'),
+                        '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', '-an', out], check=True)
+    for f in os.listdir(tmp): os.remove(os.path.join(tmp, f))
+    os.rmdir(tmp); os.remove(wav)
+    print(out)
+
 def build(spec, out):
+    if spec.get('cards'): return build_b(spec, out)   # B형 카드 이어 붙이기(위)
     base, top = card(spec); sec = spec.get('seconds', 6)
     frame = rank_frame if spec.get('layout') == 'rank' else bars_frame
     _, bottom = frame(base, spec, top, 2)

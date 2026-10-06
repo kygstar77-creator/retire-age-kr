@@ -522,6 +522,14 @@
    "note": "04:4x firemap-youtube-loop: 건너뜀 — 관문 기한 10/6 19:30인데 M-1 녹음이 10/6 16:01이라 3시간 반에 렌더·심사·썸네일 불가, R-1은 목소리 막힘. 대체 = 10/8 19:30 M-1"
   },
   {
+   "at": "2026-10-08 12:20",
+   "kind": "shorts",
+   "item": "nhis_prop_b",
+   "owner": "firemap-shorts",
+   "gates_ok": null,
+   "note": "firemap-shorts 10/6 19:52: X-SHORTS-LEN B판 첫 편([지시·긴급]) — cardshort.py cards 구현·32초 렌더·compete 5·check·aitell 0.0 끝. 첫 프레임 1초 시험 v1·v2 5·5 미달(카피 7~8) → 남은 관문: v3(답 먼저) 1판, 기한 10/8 00:20. 근거 cardshorts/nhis_prop_b/review.md"
+  },
+  {
    "at": "2026-10-08 19:30",
    "kind": "long",
    "item": "M-1",

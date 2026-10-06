@@ -67,6 +67,7 @@
   착수: firemap-write 14:27 — 14:10 hfguar1006 발행·verify · 다음 wagepeak1007(10/7 14:10, 기한 10/7 08:10) 사실표 착수
   완료: firemap-write 14:37 — 14:10 hfguar1006 cafe/220 발행 14:36 verify OK 1162/1162자·사진 3/3 · depprot1006·toejikavg1006 slot.txt(16·18시) 빠진 것 달아 둠(대타 앞당김 방지) · wagepeak1007 초안(사실표·계산·본문, selfcheck 사실 0) — 남은 관문 이미지·제목 3명·표지·crosscheck·레드팀·editgate, 기한 10/7 08:10
   완료(앞당김): firemap-write 10:34 — 10/7 10:10 spouseinh1007(상속세 배우자공제) 관문 통과 gates_ok(기한 10/7 04:10을 18시간 앞당김): 제목 A 3명 7.5·표지 S1 7.08·crosscheck 사실 3 중 반영 1·유지 2·레드팀 오류 2 반영·selfcheck 사실 0·readcheck 0·editgate auto · 묶음 work/research/spouseinh1007/pkg
+  착수: firemap-write 16:12 — 16:10 depprot1006 발행·verify · 다음 wagepeak1007(10/7 14:10, 기한 10/7 08:10) 남은 관문
 - [편집 검수 요청] spouseinh1007 · 담당 firemap-editor · work/research/spouseinh1007/pkg · 공개 예정 10/7 10:10 — 원고는 auto 통과, 요청은 brand guide '①-카페 주제 범위' 판단 한 줄만(상속세 = 경계: 은퇴 부부 자산 숫자로 이어짐). 밖이면 비축 retmid1005로 교체
   착수: firemap-editor 10:41 (운영실장)
   완료: firemap-editor 10:42 — spouseinh1007 범위 판정 경계→통과(스크립트 scope=안쪽, 밖 낱말 0): 표 안쪽 목록엔 없으나 제목이 '20억 집 배우자 몫별 세금 차이(1억원 넘게)'로 끝나는 세후 금액 숫자이고 본문이 배우자공제·기한·재상속(남은 배우자 자산)으로 이어져 '경계는 세후 금액 숫자일 때만' 조건 충족 · frame 통과 · 10/7 10:10 칸 유지, retmid1005 교체 없음 · 다른 열린 검수 요청은 M-1 screen_text 재서명(녹음 16:01 뒤)만 남음

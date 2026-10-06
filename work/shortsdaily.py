@@ -37,6 +37,23 @@ def spec_text(spec):
     parts += [cc.get('big', ''), cc.get('span', '')]
     return ' '.join(parts)
 
+_BHS_CMAP = None
+def bhs_missing(texts):
+    """제목체(BlackHanSans)에 글자가 없어 카드에 빈칸으로 찍히는 글자(2026-10-06: '자가·전세'가 '자가   전세'로, 10/3·10/5 두 번).
+    cardshort.py가 BHS로 그리는 글만 본다 — 제목 줄·표지·표지 큰 글자. fontTools가 없으면 못 잼(빈 목록)."""
+    global _BHS_CMAP
+    if _BHS_CMAP is None:
+        try:
+            from fontTools.ttLib import TTFont
+            _BHS_CMAP = set(TTFont(os.path.join(HERE, 'fonts', 'BlackHanSans.ttf')).getBestCmap())
+        except Exception: _BHS_CMAP = False
+    if not _BHS_CMAP: return []
+    out = []
+    for t in texts:
+        for ch in t or '':
+            if not ch.isspace() and ord(ch) not in _BHS_CMAP and ch not in out: out.append(ch)
+    return out
+
 def check(spec):
     """(문제 목록). 날짜·연도·순번 같은 숫자는 사실표에 없어도 된다(ALLOW)."""
     bad = []
@@ -48,6 +65,9 @@ def check(spec):
     allow = set(spec.get('allow', [])) | {'1', '2', '3', '4', '5', '12', '2026'}
     for n in sorted(nums(spec_text(spec)) - have - allow):
         bad.append('사실표에 없는 숫자: ' + n)
+    cc = spec.get('cover_chart') or {}
+    for ch in bhs_missing(list(spec.get('title', [])) + list(spec.get('cover', [])) + [cc.get('big', '')]):
+        bad.append("카드 제목 글꼴에 '%s'(U+%04X) 글자가 없어 빈칸으로 나옴 — '와'·','로 바꾸기" % (ch, ord(ch)))
     t = spec.get('yt_title', '')
     if not t: bad.append('yt_title 없음')
     if len(t) > 70: bad.append('yt_title 70자 넘음(%d)' % len(t))

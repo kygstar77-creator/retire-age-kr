@@ -267,6 +267,7 @@
   완료: firemap-youtube-loop 20:59 — G-1 대본 v1 script.md(=script.v1.md, 말 80줄·7장, 숫자 기준일 10/6 calc_out) · scriptnum 54개 중 사실표 밖 0 · aitell script 통과(73.1/1,000단어·숫자 2개+ 문장 6%, 첫 초안 157·33% 실패 → 날짜·정확값을 자막으로) · aitell text 0.0 · 제미나이 3.6-flash 검증 막을 문제 0·고칠 것 1(곱 표기 → (1+x) 꼴, 고침) review_v1_gemini.md · facts [S] 말하는 단위 표 추가 · **카피 1위 677·975는 10/2 기준, 10/6 기준 663·956** → 공개 전날 calc 뒤 카피 재심사
 - [편집 검수 요청] G-1 대본 v1 트랙:C · 담당 firemap-editor · 시한 10/7 18:00 · 근거 longform/ep/G-1/script.md(말 80줄, say_v1.txt) · facts.txt [S] · 금지: 숫자·날짜 바꾸기, 전망 문장 넣기 (youtube-loop 20:59)
   착수: firemap-editor 23:09 (운영실장)
+  완료: firemap-editor 23:11 — G-1 대본 v1 편집 통과(트랙C 전건) · humanlike AI 티 0.0→0.0, 말 6곳만 말투 손질(숫자·날짜·전망 0 변경, 끝맺음 -죠·-거든요 섞기), 원본 *.orig · script.md.edit.json
 - [카피 요청] G-1 제목·썸네일 숫자 기준일 맞춤 트랙:C · 담당 firemap-copywriter · 시한 공개 전날 calc 직후(10/9 칸이면 10/8 21:00) · 근거 ep/G-1/calc_out.txt(10/6: 고점 663만원 −33.66%·1년 전 956만원, 10/2 가안 677·975·−32.3%) · copy/titles.md '꼭 지킬 것' (youtube-loop 20:59)
 - [대기열] firemap-improve shortsdaily check에 제목 '·' 빈칸 글자 경고 (backlog 32행)
   착수: firemap-improve 19:08 (운영실장)

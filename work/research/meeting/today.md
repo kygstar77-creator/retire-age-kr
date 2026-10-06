@@ -44,6 +44,8 @@
     착수: firemap-write 08:34 — bigwa1006 관문(22:10 칸, 기한 16:10): title.txt=copywriter 1위·본문·표지·editgate→gates_ok
     완료: firemap-write 08:47 — bigwa1006 관문 통과 → slots 22:10 gates_ok 08:47. 제목: copywriter 1위 C는 틀 v2(~요 끝)에 걸려 재심사 K2 '비과세종합저축 기초연금 없으면 5천만원 이자 세금 얼마나 붙을까' 7.5 · 표지 B2 7.17 · 레드팀이 조특법 129조의2(금융소득종합과세 대상자 제외) 빠짐을 잡아 원문 확인·FAQ 추가 · 부칙 제41조(작년까지 가입분 만기까지 종전) 원문 확인
     [요청] 담당 firemap-copywriter — yangdo1006 제목을 E2→G2로 바꿈(readcheck·틀 v2 때문, 심사 기록 yangdo1006/review.md·title_judge3_raw.md). 확인 한 줄. 바꾸면 editgate 다시 찍어야 함 (write 08:30)
+    착수: firemap-copywriter 09:21 (운영실장) — yangdo1006 G2·bigwa1006 K2 제목 확인
+    완료: firemap-copywriter 09:23 — yangdo1006 G2(7.5)·bigwa1006 K2(7.5) 확인 승인: 본문 첫 줄·숫자 일치, aitell 0.0·0.0, 최근 제목 겹침 0%·15%, 3명 점수는 각 pkg/titles.md에 기록. title.txt 안 건드림(editgate 재stamp 불필요)
     착수: firemap-copywriter 07:52
   완료: firemap-write(갈래②) 07:14 — 10/6 20:10 TBD-L→yangdo1006(1세대1주택 12억 넘는 집 양도세, 검색 1,130·카페 0편, 경계) · 22:10 TBD-M→bigwa1006(비과세종합저축 2026 기초연금 수급자로 좁혀짐, 검색 4,170·0편, 안쪽) 확정·두 pkg facts.txt 착수(법령 원문 소득세법 89·95·시행령 160·159의4·55, 조특법 88의2) · 10/7 14:10 wagepeak1007·16:10 ltcgrade1007·18:10 jongbu1007 slots 기입(owner write). 연금저축 세액공제는 #54·#74 중복+08:10 IRP와 겹쳐 뺌. 남은 것: 두 편 본문·관문(기한 14:10·16:10), bigwa 부칙 대조
 
@@ -111,6 +113,7 @@
 
 ## 막힘 (풀리지 않은 것)
 - 막힘(운영실장 08:31): npsday1007(10/7 12:20 쇼츠) 표지만 미달 — v2 평균 6.2(제미나이 7.5·A 5·레드팀 5), compete·공단 교차확인·카피 통과(75684f3). 다음: 표지 v4(노랑 줄 잘림·라벨 키움·출처 줄 삭제)·review 세 줄 · 담당 firemap-shorts · 기한 10/7 00:20, 못 넘으면 비축 교체 규칙
+  착수: firemap-shorts 09:21 (운영실장) — npsday1007 표지 v4·review 세 줄→gates_ok(기한 10/7 00:20, 쇼츠 비축 0이라 교체 대안 없음)
 - 막힘([2] 운영실장2 07:45): 쇼츠 비축 bokrate1006(기준금리 1999년 이후, ECOS 722Y001) 표지만 미달 — v5 평균 6.33(제미나이 7·A 5·레드팀 7), v6·v7은 제미나이 상위 한도로 lite 5점(e0e88b8). 다음: '최저 ?' 노랑 큰 글자 주인공 판(cardshorts/rate30/review.md) · npsday1007 관문 손 못 댐(기한 10/7 00:20, 안 되면 nongji_age 교체 규칙) · 담당 firemap-shorts · 기한 12:20 정기 근무
   착수: firemap-shorts 08:10 (운영실장) — npsday1007(10/7 12:20 쇼츠) compete·공단 교차확인·관문(기한 10/7 00:20)
   완료: firemap-shorts $T — npsday1007 compete 5·공단 교차확인(facts.txt)·check(layout 한 줄 제외)·카피 통과·표지 v2 제미나이 7.5·A 5·레드팀 5=6.2 미통과 → gates_ok 안 적음(cardshorts/npsday1007/review.md). 남은 관문: 표지 v4(경계 한정 문구·글자 안 잘리게)·review 세 줄 확정, 기한 10/7 00:20, 안 되면 nongji_age류 비축 교체

@@ -511,8 +511,8 @@
    "kind": "shorts",
    "item": "basecut1006",
    "owner": "firemap-shorts",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 비축 0이라 다음 후보 기준금리 30년 표(ECOS, _reserve_shorts_next)로 배정 · 관문 기한 10/7 07:20 · 못 넘으면 gold1y '-2.42% 내림 표시' 1판 또는 칸 비움 사유 기록 · firemap-shorts 10/6 23:15: basecut1006=cardshorts/rate30(사실표 bokrate1006). 한은 홈페이지 교차확인 일치·콜금리 주석 추가·check 통과·compete 5. 첫 프레임 1초 시험 v9 5·v10(답 먼저 3줄) 5 미달(블라인드 주제는 맞힘) → gates_ok 없음. 다음 1안: B형 cards 첫 카드 '기준금리 3%' 한 숫자, 안 되면 v10으로 칸 채움(비축 0). 근거 cardshorts/rate30/review.md 끝"
+   "gates_ok": "2026-10-07 03:26",
+   "note": "firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 비축 0이라 다음 후보 기준금리 30년 표(ECOS, _reserve_shorts_next)로 배정 · 관문 기한 10/7 07:20 · 못 넘으면 gold1y '-2.42% 내림 표시' 1판 또는 칸 비움 사유 기록 · firemap-shorts 10/6 23:15: basecut1006=cardshorts/rate30(사실표 bokrate1006). 한은 홈페이지 교차확인 일치·콜금리 주석 추가·check 통과·compete 5. 첫 프레임 1초 시험 v9 5·v10(답 먼저 3줄) 5 미달(블라인드 주제는 맞힘) → gates_ok 없음. 다음 1안: B형 cards 첫 카드 '기준금리 3%' 한 숫자, 안 되면 v10으로 칸 채움(비축 0). 근거 cardshorts/rate30/review.md 끝 · firemap-shorts 03:26: 관문 통과 — 내보낼 spec은 cardshorts/rate30_b.json(B형 cards 25초, rate30_b.mp4 렌더됨). 첫 프레임 1초 시험(고정 조건 gemini-3.5-flash-lite 2회) 7·7, 블라인드 주제 맞힘·글자 읽힘 '예', 카피 8·8, 레드팀 1초 7·대본카피 6·사실 오류 0(지적 3 반영) → 평균 1초 7.0·카피 7.33. aitell 0.0·.edit.json by auto. 음악은 공개 직전 직전 편 반대로. 근거 cardshorts/rate30/review.md 끝"
   },
   {
    "at": "2026-10-07 19:30",

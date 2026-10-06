@@ -376,7 +376,8 @@
    "owner": "firemap-write",
    "note": "[범위 안쪽 — 건보료(퇴직 뒤 임의계속가입)] 비축에서 꺼냄(write 10/5 20:21): 관문 통과 2026-10-05 05:28 그대로 — 제목 '건강보험 임의계속가입 평균 월급이 300만원이었다면 월 얼마일까' 7.5·표지 7.5·aitell 0.0·editgate auto. 10/5 08:10 nhisprop(재산 건보료)와 하루 띄움. 발행 전 dupcheck 다시",
    "by": "firemap-write",
-   "gates_ok": "2026-10-05 05:28"
+   "gates_ok": "2026-10-05 05:28",
+   "published": "2026-10-06 12:24 https://cafe.naver.com/firemap/219 (verify OK 2017/2017자·사진 3/3)"
   },
   {
    "at": "2026-10-06 12:20",
@@ -384,7 +385,8 @@
    "item": "nhis_prop",
    "owner": "firemap-shorts",
    "gates_ok": "2026-10-05 03:45",
-   "note": "firemap-shorts 10/5 03:44: 배정 — 지역가입자 건보료 재산분 1세대1주택 공시가별(사실표 nhisprop1005 쇼츠 첫 사용, rank·음악 없음). compete 5·check 문제 없음·aitell 0.0·숫자 대조 사실표 밖 0(레드팀). 표지 v1 7·6·6=6.33 미통과 → v2(9억 ? 칸·1주택 특례율 표기) 제미나이 8·카피 7, 심사관 A·레드팀 v2 재심사 결과 미수령 → gates_ok 비움. X-SHORTS-LEN 짝 아님(B판 렌더 없음). 근거 cardshorts/nhis_prop/ | firemap-shorts 10/5 03:45: v2 재심사 도착 — 표지 제미나이 8·A 7·레드팀 7=7.33 통과, 카피 7·7·7=7.0 통과(블라인드 주제 3/3), 숫자 사실표 밖 0. 제목 쉼표만 고침('117,240원, 9억은?'). gates_ok 기입. 공개 전 다듬을 것(선택): 첫 줄 '소득 없어도'→'집 한 채만 있어도'(경쟁4와 겹침)·'?'를 숫자 크기로·설명에 적용 시점."
+   "note": "firemap-shorts 10/5 03:44: 배정 — 지역가입자 건보료 재산분 1세대1주택 공시가별(사실표 nhisprop1005 쇼츠 첫 사용, rank·음악 없음). compete 5·check 문제 없음·aitell 0.0·숫자 대조 사실표 밖 0(레드팀). 표지 v1 7·6·6=6.33 미통과 → v2(9억 ? 칸·1주택 특례율 표기) 제미나이 8·카피 7, 심사관 A·레드팀 v2 재심사 결과 미수령 → gates_ok 비움. X-SHORTS-LEN 짝 아님(B판 렌더 없음). 근거 cardshorts/nhis_prop/ | firemap-shorts 10/5 03:45: v2 재심사 도착 — 표지 제미나이 8·A 7·레드팀 7=7.33 통과, 카피 7·7·7=7.0 통과(블라인드 주제 3/3), 숫자 사실표 밖 0. 제목 쉼표만 고침('117,240원, 9억은?'). gates_ok 기입. 공개 전 다듬을 것(선택): 첫 줄 '소득 없어도'→'집 한 채만 있어도'(경쟁4와 겹침)·'?'를 숫자 크기로·설명에 적용 시점.",
+   "published": "2026-10-06 12:28 https://youtu.be/qMXVDJ19_TY (verify OK public·processed·채널 UCV3…PlVg · rank·음악 없음 · 설명 링크=카페 주소만: 건보료 /calc 계산기 없음)"
   },
   {
    "at": "2026-10-06 14:10",
@@ -470,8 +472,8 @@
    "kind": "cafe",
    "item": "schdacct1007",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "[범위 안쪽 — 배당 현금흐름] firemap-write 10/6 03:2x(F3): SCHD 배당금을 일반계좌·ISA·연금계좌 중 어디서 받으면 세후 월 얼마(검색 SCHD배당금 9,310, 월배당ETF 4,130, kwvol 10/6). schd1003(10/3)과 4일 띄움, 각도는 앞 세 편(배당 증가폭)과 달리 계좌별 세후 수령액. 미국 배당 원천징수 15%·ISA 비과세 한도·연금계좌 과세이연은 국세청·조세특례제한법 원문 대조, 배당액은 Nasdaq API·운용사. 관문 기한 10/7 06:10 · 묶음 work/research/schdacct1007/pkg(미착수)"
+   "gates_ok": "2026-10-06 12:44",
+   "note": "[범위 안쪽 — 배당 현금흐름] firemap-write 10/6 03:2x(F3): SCHD 배당금을 일반계좌·ISA·연금계좌 중 어디서 받으면 세후 월 얼마(검색 SCHD배당금 9,310, 월배당ETF 4,130, kwvol 10/6). schd1003(10/3)과 4일 띄움, 각도는 앞 세 편(배당 증가폭)과 달리 계좌별 세후 수령액. 미국 배당 원천징수 15%·ISA 비과세 한도·연금계좌 과세이연은 국세청·조세특례제한법 원문 대조, 배당액은 Nasdaq API·운용사. 관문 기한 10/7 06:10 · 묶음 work/research/schdacct1007/pkg(미착수) · 관문 통과(write 12:44): 제목 E 'SCHD 배당금 ISA나 연금저축에서 받으면 미국 세금 얼마나 빠질까' 7.5(제미나이 7·7·레드팀 8·작성자 7.5) · 표지 S3 7.58 · readcheck 0·selfcheck 사실 0·aitell 1.1·crosscheck 사실 4 중 반영 2·유지 2·레드팀 사실 3 반영(시행령 189조의2④ 0.55·한도 소득세분) · editgate auto · 묶음 work/research/schdacct1007/pkg"
   },
   {
    "at": "2026-10-07 12:20",

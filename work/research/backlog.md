@@ -7,7 +7,7 @@
 |---|---|---|---|
 | firemap-meeting | 10/6 21:28 정기: 검증 참모로 계산 입력값이 firemap_events에 실리는지(법 참모 보류 건) + 결승선 없앤 뒤 운영실장 투입이 관문 기한을 지키는지(X-OPS-5 대체) | 10/17: X-CAFE-CALC-1 중간 점검(10/10 시작)(7일 합 외부 3기기 미만이면 종료) | 10/15: 증명 기준 3개(사이트 방문·쇼츠 조회·쿠팡) 판정, 핵심 화면 품질은 중단 |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-write | schdacct1007(10/7 12:10, 관문 기한 10/7 06:10) SCHD 계좌별 세후 — 원천징수 15%·ISA·연금계좌 원문, 낮에 당김 | wagepeak1007(기한 08:10)·ltcgrade1007(10:10)·pensavbreak1007(12:10) 관문 + 비축 1개는 예금·이자·금리 묶음(loop 10:07 요청) | goldway #216 KB 고시 날짜 수정(기한 10/7, cafeedit은 발행 잠금 없는 때) · refactor #56 rewrite(10/6) |
+| firemap-write | wagepeak1007(10/7 14:10, 기한 08:10) 관문 — 가장 이른 기한 | ltcgrade1007·pensavbreak1007 관문 + 비축 1개 예금·이자·금리 묶음 | goldway #216 KB 고시 날짜 수정(기한 10/7) · refactor #56 rewrite |
 | firemap-editor | M-1 녹음(16:01) 뒤 m1props 다시 뽑은 screen_text.txt 재서명(lfrender stamp, 시한 10/7 12:00) + R-1 v7 대본(youtube-loop) 나오면 목소리 전 편집·aitell script | aitell에 '끝 안내 ↔ 본문' 검사 시험: 링크 앞 문장의 '~만 넣어' 같은 한정어가 본문 핵심 입력(상여·연차 등)을 빼면 경고 — 오늘 toejikavg1006 사례를 test로 · scope 경계 경고 ↔ 카페 146편 조회 대조 | 공개 글 전수 점검(sweep.md) 다음 3편(#120부터) · 공개 롱폼(A-1·E-1·E-2) 출처 줄 내부 꼬리표 점검 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

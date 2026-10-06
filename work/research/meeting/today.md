@@ -196,6 +196,7 @@
 - [순돌이 16:4x] 목소리 관문 기준 실측으로 고침(줄 ±12% → 튀는 줄 ±25% + 편 단위 앞뒤 차 ≤7%·퍼짐 ≤0.16, 근거 E-1·D-1 좋음 vs E-2 지적). R-1 지금 녹음은 새 기준으로도 막힘(앞뒤 +8.3%·퍼짐 0.22·중앙 136Hz로 다른 편 150~157보다 낮음) → **firemap-video-producer**: R-1 다시 녹음(한 회차·한 날). 제미나이 무료 한도로 한 날에 다 못 하면 결재함 'Chirp 3 HD'(구글 클라우드 음성, 무료 월 100만 자) 결제 연결이 풀어 줌 — 사장님 대기.
   착수: firemap-video-producer 18:08 — TTS 한도 소진(16:23 10회 다 씀)이라 재녹음은 10/6 16:01. 그 사이 녹음 뒤 음높이 맞춤 시험
   진행: firemap-video-producer 18:17 — work/lfpitch.py(rubberband·옮김 ±15%·앞뒤 무음 0.1초)로 오늘 녹음 → 앞뒤 차 +3.0%·퍼짐 0.08·편 전체 6.14 = 음높이·전체 속도 통과, 줄 속도 27줄(2장 9~10음절/초)만 남음 · 10/6 순서 ep/R-1/check/runbook_1600.md 끝 절 · 완료는 10/6 재녹음 뒤
+  진행: firemap-video-producer 18:42 — (10/6) 막힘 원인 실측: 기본 지시문 4편 f0 144~157·IQR ≤0.16 통과 vs R-1 'even pitch' 지시문 2회 130~139·IQR 0.18~0.21 → R-1 재녹음은 tts.json prompt 빼고(전부 다시 녹음), 날은 M-1(10/7) 뒤 · 근거 ep/M-1/check/runbook_1007.md 표
 - [요청] firemap-venture (해외 시장조사원 18:25) 실험 제안 2개 트랙:A · 시한 10/6 18:00 · 근거 ventures/candidates.md 10회차·ventures/g44/compare.md · **중단(10/6 조직 축소)**
   착수: firemap-venture 20:29
   통과: ① G48 20:29 (firemap-venture) — Etsy 묶음 첫 상품으로 채택(위 Etsy 줄). 조건: research-global ventures/g48/compare.md(1~3점 리뷰 불만 1순위·무료판 비교·코드 검산 차별) 10/6 18:00까지 → 그 뒤 빌더 지시서. Etsy AI 사용 표시·Creativity Standards 문구는 결재 나면 확인.
@@ -234,3 +235,4 @@
 - [순돌이 11:0x · 사장님 '카페·쇼츠·롱폼 관련 예약 빼고는 다 지워. 사이트 개발하는 건 별로'] 예약 21개 삭제(product-dev·venture 4종·designer·editor-web·editor-en·illustrator·brand 2종·admin·ai-lab·bizdev·behavior·planner·growth·deputy·finishline·dispatcher-2·monthly-report — SKILL.md는 남음). 남은 직원 16(카페·쇼츠·롱폼 제작·편집·감사·발행 감시·회의·운영실장). 사이트 새 개발 중단, 운영 화면은 그대로. 스꾸 예약은 손 안 댐. 사용량 관리는 순돌이 순찰이 맡음(admin 없음).
 - 막힘(firemap-report 12:42): 작업 폴더에 public/guide/marriage-childbirth-gift-deduction.html 이 지워진 채(' D') 남음 — 원본은 dev·main 9b44e22에 정상. report가 merge 대신 merge-tree로 합친 뒤 파일 꺼내기가 권한에 막힘. 'git commit -a'·'git add -A' 금지 · 순돌이: git checkout HEAD -- public/guide/marriage-childbirth-gift-deduction.html
 - 막힘(firemap-r1-record-1006 16:29): R-1 v7 오늘 19:30 공개 못 함 — 94줄 한 창 녹음은 끝났으나 목소리 관문 IQR 0.18(>0.16)·편 전체 5.12음절/초(<5.5)·튀는 줄 9, 대본 재심사 5.97 미달도 겹침. 묶음(요청)마다 음높이 122~156Hz 차이가 원인(같은 묶음 재녹음해도 156Hz). 결정 필요 · 담당 순돌이: lfpitch 사본 소리 심사 / 줄 앞뒤 무음 다듬기 허용 / 대본 고친 뒤 다른 날 재녹음 중 무엇 · 10/7 16:00 창은 예정대로 M-1
+  참고: firemap-video-producer 18:42 — 판단 재료: lfpitch·무음 다듬기 전에 지시문부터 의심. 무음은 통과한 E-1·D-1도 줄당 0.8초라 속도 막힘의 주원인 아님, 'even pitch' 지시문 쓴 두 번만 낮고 느림(runbook_1007.md 표). 표본 1편이라 확정 아님 — 10/7 M-1(기본 지시문) 녹음이 대조군

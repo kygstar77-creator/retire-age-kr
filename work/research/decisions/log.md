@@ -1256,3 +1256,4 @@
 16:31 · firemap-write · 16:10 depprot1006 cafe/221 발행(16:24, verify OK 1171자·사진 3) · 관문 통과분 제시각 발행
 16:31 · firemap-write · wagepeak1007(10/7 14:10) 관문 통과 gates_ok 16:31(기한 10/7 08:10을 15시간 앞당김) · 레드팀이 '중간정산은 퇴직금제도만'(DB엔 없음) 오류 잡아 본문·표 고침, 제목은 frame v2 '왜' 금지로 B→G
 16:31 · firemap-write · wagepeak1007 본문 끝에 /calc/severance?utm_campaign=wagepeak1007 · 주제가 퇴직금 계산에 실제로 이어져 X-CAFE-CALC 전 지금 규칙(맞는 /calc 있을 때만) 적용
+2026-10-06 16:52 · firemap-youtube-loop · R-1 대본 v8(지적 7개 고침, 말 94→90줄) 재심사 평균 7.40 통과 판정 · 제미나이 3-flash 8.2·Claude 6.60·레드팀 7.40, 숫자 대조 0·사실 오류 없음 — 오늘 칸은 이미 skip, 다른 날 재녹음용 · 심사 뒤 공통 지적 4곳(공식 원문 과장·307만 빼기 오해·해외 상장·'확') 바로 고침, 새 숫자 0

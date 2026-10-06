@@ -129,13 +129,13 @@ for t, d, v in [('SPY', '20260702', 123037245), ('SPY', '20260910', 107755946), 
 SWI = {t: {d: i for i, (d, _) in enumerate(SW[t])} for t in SW}
 
 # 장면 = (키, 장 번호, 시작 문장 조각 — None이면 장 처음부터). 장면마다 20~40초, 그 안에서 문장마다 표시가 하나씩 더해진다.
-CUTS = [('open', '0.', None), ('promise', '0.', '파이어맵은 매번'), ('logo', '로고', None),
+CUTS = [('open', '0.', None), ('promise', '0.', '파이어맵은 이렇게'), ('logo', '로고', None),
         ('dep', '1.', None), ('fx', '2.', None), ('swing', '2.', '그런데 시작과 끝만'),
         ('spy', '3.', None), ('spytax', '3.', '자, 이제 세금이에요'), ('spycal', '3.', '그런데 이 세금은 좀 특이해요'),
         ('schd', '4.', None), ('gold', '5.', None),
         ('rank', '6.', None), ('gap', '6.', '그럼 세금은 아무것도'), ('start', '6.', '그런데 여기서 반론'),
         ('caseA', '7.', None),
-        ('sum', '8.', None), ('end', '8.', '이제 여러분 차례예요')]
+        ('sum', '8.', None), ('end', '8.', '오늘 숫자는 모두')]
 # v7(10/6, 무료 TTS 한 창 100줄): road·schdfx·caseB·rate·now·posted·cpi·when·thresh·caseC·act 장면은 대본에서 빠져 CUTS에서도 뺐다(spec 코드는 다음 편 재료로 남김 — leftover.md)
 END_MIN = 20 * FPS   # 끝 화면(엔드 스크린) 자리는 마지막 20초 이상 — YouTube 도움말 '동영상 마지막 5~20초에 추가'(검색 요약만 봄)
 SRC_ADD = '야후 파이낸스 종가 × 한국은행 ECOS 731Y001 매매기준율(파이어맵 계산)'
@@ -164,7 +164,7 @@ def spec(key, L, A):
     if key == 'dep':
         return dict(kind='receipt', title='예금 영수증', sub='2025년 10월 새로 가입한 1년 정기예금 평균 연 2.58%', source=SRC_DEP,
                     data={'head': '정기예금 1년 · 1억 · 단위 원', 'rows': R([['넣은 돈', won(100_000_000), 'in', 0], ['이자 연 2.58%', '+' + won(RC['DEP']['gain']), 'in', A('258만원', 0)],
-                                                                    ['세금 15.4%', '−' + won(RC['DEP']['tax']), 'tax', A('40만원', 0)], ['1년 뒤 통장', won(RC['DEP']['net']), 'net', A('2.18%', 0)]]),
+                                                                    ['세금 15.4%', '−' + won(RC['DEP']['tax']), 'tax', A('39만 7천원', 0)], ['1년 뒤 통장', won(RC['DEP']['net']), 'net', A('2.18%', 0)]]),
                           'side': [PCT['DEP'], A('2.18%', 10), '넣은 돈보다 늘어난 비율'], 'callout': ['받을 돈이 처음부터 정해짐', A('줄이 몇 개 없죠', 0)]})
     if key == 'fx':
         return dict(kind='fx', title='달러로 바꿀 때 생기는 줄', sub='1달러를 사는 데 드는 원화 — 작년 그날과 올해 같은 날', source=SRC_FX,
@@ -178,8 +178,8 @@ def spec(key, L, A):
         return dict(kind='swing', title='1년 안에서는 훨씬 크게 흔들렸다', sub='1억을 넣었다면 매일의 원화 평가액(분배금 빼고 세금 전) · 만원', source=SRC_ADD,
                     data={'series': [['S&P500', 'ink', pts['SPY']], ['SCHD', 'ink3', pts['SCHD']], ['금', 'accent', pts['GLD']]], 'n': n, 'min': 9000, 'max': 15000,
                           'draw': A('그런데 시작과 끝만', 0), 'xlabels': months,
-                          'tags': [['SPY', idx('SPY', '20260702'), 12304, '7.2 · 123,037,245원', A('석 달 만에', 0), 'up', False],
-                                   ['SPY', idx('SPY', '20260910'), 10776, '9.10 · 107,755,946원', A('석 달 만에', 14), 'left', False],
+                          'tags': [['SPY', idx('SPY', '20260702'), 12304, '7.2 · 123,037,245원', A('두 달 남짓', 0), 'up', False],
+                                   ['SPY', idx('SPY', '20260910'), 10776, '9.10 · 107,755,946원', A('두 달 남짓', 14), 'left', False],
                                    ['GLD', idx('GLD', '20260128'), 14364, '1.28 · 143,638,454원', A('금은 더 컸어요', 0), 'up', True],
                                    ['GLD', idx('GLD', '20260928'), 10243, '9.28 · 102,425,567원 (−28.69%)', A('금은 더 컸어요', 16), 'down', True]],
                           'fxAt': A('가장 높았던 날은', 0), 'fx': ['환율 최고 1,554.4원', '최저 1,337.9원']})
@@ -193,9 +193,9 @@ def spec(key, L, A):
     if key == 'spytax':
         return dict(kind='receipt', title='세금은 두 군데서 뗀다', sub='분배금은 미국에서 15% · 판 이익은 250만원 넘는 부분에 22%', source=SRC_TAX,
                     data={'head': 'SPY 세금 계산 · 단위 원', 'side': ['22%', A('22%를', 10), '공제 250만원 넘는 이익에 붙는 세율'],
-                          'rows': R([['분배금에서 (미국 15%)', '−' + won(RC['SPY']['wht']), 'tax', A('16만원', 0)], ['판 이익', won(RC['SPY']['gain']), 'in', A('다음은 판 이익', 0)],
+                          'rows': R([['분배금에서 (미국 15%)', '−' + won(RC['SPY']['wht']), 'tax', A('16만 4천원', 0)], ['판 이익', won(RC['SPY']['gain']), 'in', A('다음은 판 이익', 0)],
                                      ['빼 주는 돈(공제)', '−2,500,000', 'dim', A('다음은 판 이익', 14)], ['곱하는 세율', '× 22%', 'in', A('22%를', 0)],
-                                     ['판 이익 세금', '−' + won(RC['SPY']['cgt']), 'tax', A('192만원', 0)]]),
+                                     ['판 이익 세금', '−' + won(RC['SPY']['cgt']), 'tax', A('191만 6천원', 0)]]),
                           'callout': ['넣은 돈이 작을수록 세금 비중 ↓', A('공제가 금액과', 0)]})
     if key == 'spycal':
         return dict(kind='zoom', title='판 이익 세금은 나중에 낸다', sub='팔 때 바로 빠지지 않는다 — 다음 해 5월 직접 신고', source=SRC_TAX,
@@ -205,7 +205,7 @@ def spec(key, L, A):
         return dict(kind='receipt', title='SCHD 영수증', sub='배당 ETF · 계산 방법은 S&P500과 같다', source=SRC_ETF,
                     data={'head': 'SCHD · 1억 · 단위 원', 'side': ['+15.99%', A('16% 가까이', 10), '세금 뗀 뒤, 넣은 돈보다 늘어난 비율'],
                           'rows': R([['달러로 오른 폭', '+19.68%', 'in', A('약 20%', 0)], ['원화로 판 돈', won(RC['SCHD']['sell']), 'in', A('약 20%', 30)],
-                                     ['분배금 4번(세금 전)', '+' + won(RC['SCHD']['dist']), 'in', A('373만원', 0)], ['미국이 뗀 세금 15%', '−' + won(RC['SCHD']['wht']), 'tax', A('56만원', 0)],
+                                     ['분배금 4번(세금 전)', '+' + won(RC['SCHD']['dist']), 'in', A('373만원', 0)], ['미국이 뗀 세금 15%', '−' + won(RC['SCHD']['wht']), 'tax', A('55만 9천원', 0)],
                                      ['판 이익 세금', '−' + won(RC['SCHD']['cgt']), 'tax', A('291만원', 0)], ['세금 다 낸 뒤', won(RC['SCHD']['net']), 'net', A('16% 가까이', 0)]]),
                           'callout': ['1주당 분배금 1.0339 → 1.0541달러 (+1.95%)', A('1주당 분배금', 0)]})
     if key == 'schdfx':
@@ -365,4 +365,4 @@ def main(script):
 
 if __name__ == '__main__':
     a = sys.argv[1:]
-    main(a[a.index('--script') + 1] if '--script' in a else 'script.v7.md')
+    main(a[a.index('--script') + 1] if '--script' in a else 'script.v8.md')

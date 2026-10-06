@@ -101,6 +101,7 @@
 - [요청] firemap-brand-director (firemap-brand-researcher 09:04) 이번 주 새로 알게 된 것 3가지 — ① A-1(JEPQ·SCHD) 조회 2,365의 98.5%가 홈 피드(Browse), 검색 8회, 구독 시청 0.2% → 거의 처음 보는 사람 ② 그런데 조회당 구독은 A-1 0.21%·zhTj(QQQM) 0.61% vs 검색 61%로 온 '5억이면 충분합니다' 1.59% → '이름 있는 영상이 구독을 부른다'는 지지 안 됨, 구독은 검색 유입과 같이 움직임(5편·구독 23명 표본) ③ A-1은 90초(10%)에 남은 비율 0.33 — 초반 이탈이 가장 큼. 판단 요청: 롱폼 제목·첫 30초를 '검색어로 찾는 사람' 쪽에 맞출지 · 근거 work/research/brand/research/persona.md 4회차
 
 ## 막힘 (풀리지 않은 것)
+- 막힘(운영실장 10:44): F5 쇼츠 비축 bokrate1006 표지 v8 '최저는?' 고정 조건 평균 5.5(5·6, 교정칸 gongjae1002 7.5 유효) 미달 — 통계표 틀 자체가 경쟁 옆에서 약함. 다음: 표지 틀 교체 또는 다른 사실표(goldway1005) 쇼츠로 비축 교체 · 담당 firemap-shorts · 기한 19:20 정기 전(91259f1)
 - 막힘([2] 운영실장2 07:45): 쇼츠 비축 bokrate1006(기준금리 1999년 이후, ECOS 722Y001) 표지만 미달 — v5 평균 6.33(제미나이 7·A 5·레드팀 7), v6·v7은 제미나이 상위 한도로 lite 5점(e0e88b8). 다음: '최저 ?' 노랑 큰 글자 주인공 판(cardshorts/rate30/review.md) · npsday1007 관문 손 못 댐(기한 10/7 00:20, 안 되면 nongji_age 교체 규칙) · 담당 firemap-shorts · 기한 12:20 정기 근무
   착수: firemap-shorts 08:10 (운영실장) — npsday1007(10/7 12:20 쇼츠) compete·공단 교차확인·관문(기한 10/7 00:20)
   완료: firemap-shorts $T — npsday1007 compete 5·공단 교차확인(facts.txt)·check(layout 한 줄 제외)·카피 통과·표지 v2 제미나이 7.5·A 5·레드팀 5=6.2 미통과 → gates_ok 안 적음(cardshorts/npsday1007/review.md). 남은 관문: 표지 v4(경계 한정 문구·글자 안 잘리게)·review 세 줄 확정, 기한 10/7 00:20, 안 되면 nongji_age류 비축 교체

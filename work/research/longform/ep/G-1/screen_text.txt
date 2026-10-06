@@ -1,0 +1,598 @@
+# 화면 글자 — G-1 (lfrender.py text가 만듦. 여기를 고치지 말고 대본·props·tsx를 고친 뒤 다시 뽑는다)
+# 그래프 제목·부제·출처·자막(lines.text)·막대 이름·코드에 박힌 글자. 썸네일 문구는 그림이라 안 들어간다.
+
+## props: video/g1.json
+[scenes.0.key] open
+[scenes.0.title] 금 1천만원어치, 지금 얼마?
+[scenes.0.sub] 같은 금 · 산 날만 다르다 · 2026-10-06 KRX 금시장 종가 기준
+[scenes.0.source] 한국거래소 KRX 금시장 금 1kg 종가(네이버 증권 일별 시세) · 2026-10-06 기준 · 지나간 값 · 전망·투자 권유 아님
+[scenes.0.data.cards.0.head] 1월 고점에 산 영수증
+[scenes.0.data.cards.0.rows.0.0] 산 날
+[scenes.0.data.cards.0.rows.0.2] in
+[scenes.0.data.cards.0.rows.1.0] 산 값 1g
+[scenes.0.data.cards.0.rows.1.1] 269,810원
+[scenes.0.data.cards.0.rows.1.2] in
+[scenes.0.data.cards.0.rows.2.0] 오늘 1g
+[scenes.0.data.cards.0.rows.2.1] 179,000원
+[scenes.0.data.cards.0.rows.2.2] in
+[scenes.0.data.cards.0.rows.3.0] 지금 가치
+[scenes.0.data.cards.0.rows.3.1] 6,634,298원
+[scenes.0.data.cards.0.rows.3.2] net
+[scenes.0.data.cards.0.big] 663만원
+[scenes.0.data.cards.0.pct] −33.66%
+[scenes.0.data.cards.1.head] 1년 전에 산 영수증
+[scenes.0.data.cards.1.rows.0.0] 산 날
+[scenes.0.data.cards.1.rows.0.2] in
+[scenes.0.data.cards.1.rows.1.0] 산 값 1g
+[scenes.0.data.cards.1.rows.1.1] 187,300원
+[scenes.0.data.cards.1.rows.1.2] in
+[scenes.0.data.cards.1.rows.2.0] 오늘 1g
+[scenes.0.data.cards.1.rows.2.1] 179,000원
+[scenes.0.data.cards.1.rows.2.2] in
+[scenes.0.data.cards.1.rows.3.0] 지금 가치
+[scenes.0.data.cards.1.rows.3.1] 9,556,861원
+[scenes.0.data.cards.1.rows.3.2] net
+[scenes.0.data.cards.1.big] 956만원
+[scenes.0.data.cards.1.pct] −4.43%
+[scenes.0.lines.0.text] 올해 1월, 금값이 꼭대기였던 날 천만원어치를 샀다면 지금 663만원이에요.
+[scenes.0.lines.0.cap] KRX 금시장 1g 269,810원(2026-01-29) → 179,000원(2026-10-06) · 6,634,298원 (−33.66%)
+[scenes.0.lines.1.text] 그런데 작년 이맘때 샀다면 956만원이고요.
+[scenes.0.lines.1.cap] 2025-10-02 187,300원/g → 9,556,861원 (−4.43%)
+[scenes.0.lines.2.text] 같은 금인데, 산 날만 달랐던 거죠.
+[scenes.1.key] pick
+[scenes.1.title] 내가 산 날은?
+[scenes.1.sub] 하나만 떠올려 보세요
+[scenes.1.data.cards.0.0] ①
+[scenes.1.data.cards.0.1] 1년 전
+[scenes.1.data.cards.0.2] 25.10.02 산 날
+[scenes.1.data.cards.1.0] ②
+[scenes.1.data.cards.1.1] 1월 고점
+[scenes.1.data.cards.1.2] 26.01.29 산 날
+[scenes.1.data.cards.2.0] ③
+[scenes.1.data.cards.2.1] 3개월 전
+[scenes.1.data.cards.2.2] 26.07.06 산 날
+[scenes.1.data.cards.3.0] ④
+[scenes.1.data.cards.3.1] 1개월 전
+[scenes.1.data.cards.3.2] 26.09.04 산 날
+[scenes.1.lines.0.text] 금을 갖고 계시다면, 언제 사셨는지 하나만 떠올려 보세요.
+[scenes.1.lines.0.cap] 내가 산 날은? · 1년 전 / 1월 고점 / 3개월 전 / 1개월 전
+[scenes.2.key] road
+[scenes.2.title] 오늘 순서
+[scenes.2.sub] 영수증부터 산수까지
+[scenes.2.data.rows.0.0] ① 산 날 영수증 4장
+[scenes.2.data.rows.1.0] ② 국제 금값 vs 내 금, 세 조각
+[scenes.2.data.rows.2.0] ③ 산 길 4개 — 같은 1천만원
+[scenes.2.data.rows.3.0] ④ 같은 시기에 움직인 숫자
+[scenes.2.data.rows.4.0] ⑤ 산 값까지의 산수
+[scenes.2.lines.0.text] 오늘은 천만원어치 금을 네 날짜에 샀다고 치고 영수증을 뽑아 볼게요. 같은 날 산 길에 따라 얼마나 갈리는지도 같이 보고요.
+[scenes.2.lines.1.text] 그리고 국제 금값은 작년보다 올랐는데 왜 한국에서 산 금은 떨어졌는지, 그 차이를 세 조각으로 나눠 봅니다.
+[scenes.2.lines.1.cap] 1장 산 날 영수증 · 2장 세 조각 · 3장 산 길 4개 · 4장 같은 시기 숫자 · 5장 산 값까지 산수
+[scenes.3.key] logo
+[scenes.3.data.sub] 금값 1천만원 영수증 · 2026-10-06 기준
+[scenes.4.key] today
+[scenes.4.title] 오늘 금값 한 장
+[scenes.4.sub] KRX 금시장 금 1g 값 · 천원
+[scenes.4.source] 한국거래소 KRX 금시장 금 1kg 종가(네이버 증권 일별 시세) · 2026-10-06 기준
+[scenes.4.chapter] 1장
+[scenes.4.data.series.0.0] KRX 금 1g
+[scenes.4.data.series.0.1] accent
+[scenes.4.data.xlabels.0.1] 10월
+[scenes.4.data.xlabels.1.1] 12월
+[scenes.4.data.xlabels.2.1] 2월
+[scenes.4.data.xlabels.3.1] 4월
+[scenes.4.data.xlabels.4.1] 6월
+[scenes.4.data.xlabels.5.1] 8월
+[scenes.4.data.xlabels.6.1] 10월
+[scenes.4.data.ticks.0.1] 16만
+[scenes.4.data.ticks.1.1] 20만
+[scenes.4.data.ticks.2.1] 24만
+[scenes.4.data.ticks.3.1] 28만
+[scenes.4.data.tags.0.2] 오늘 179,000원
+[scenes.4.data.tags.0.4] left
+[scenes.4.data.tags.1.2] 26.01.29 269,810원
+[scenes.4.data.tags.1.4] up
+[scenes.4.data.callouts.0.0] 고점 대비 −33.66%
+[scenes.4.data.callouts.1.0] 어느 날과 비교하나?
+[scenes.4.data.callouts.2.0] → 내가 산 날 기준
+[scenes.4.lines.0.text] 먼저 기준부터 맞출게요. 오늘 금값은 전부 한국거래소 KRX 금시장 종가입니다.
+[scenes.4.lines.0.cap] KRX 금시장 금 1kg 종가 · 원/g · 2026-10-06 기준 · 네이버 증권 일별 시세
+[scenes.4.lines.1.text] 지금 금 한 그램은 18만원이 조금 안 돼요.
+[scenes.4.lines.1.cap] 179,000원/g
+[scenes.4.lines.2.text] 가장 비쌌던 날엔 27만원 가까이 했고요.
+[scenes.4.lines.2.cap] 269,810원/g (2026-01-29)
+[scenes.4.lines.3.text] 꼭대기에서 3분의 1쯤 내려온 거죠.
+[scenes.4.lines.3.cap] 고점 대비 −33.66%
+[scenes.4.lines.4.text] '얼마나 떨어졌나'는 어느 날이랑 비교하느냐에 따라 숫자가 완전히 달라져요.
+[scenes.4.lines.5.text] 그래서 오늘은 '내가 산 날'을 기준으로 다시 계산했습니다.
+[scenes.5.key] buy
+[scenes.5.title] 산 날 영수증 4장
+[scenes.5.sub] 1천만원어치를 그날 샀다면, 오늘 팔 때 받는 돈 · 점선 = 오늘 1g 179,000원 · 증권사 수수료 별도
+[scenes.5.source] 한국거래소 KRX 금시장 금 1kg 종가(네이버 증권 일별 시세) · 2026-10-06 기준
+[scenes.5.chapter] 2장
+[scenes.5.data.series.0.0] KRX 금 1g
+[scenes.5.data.series.0.1] ink
+[scenes.5.data.xlabels.0.1] 10월
+[scenes.5.data.xlabels.1.1] 12월
+[scenes.5.data.xlabels.2.1] 2월
+[scenes.5.data.xlabels.3.1] 4월
+[scenes.5.data.xlabels.4.1] 6월
+[scenes.5.data.xlabels.5.1] 8월
+[scenes.5.data.xlabels.6.1] 10월
+[scenes.5.data.ticks.0.1] 16만
+[scenes.5.data.ticks.1.1] 20만
+[scenes.5.data.ticks.2.1] 24만
+[scenes.5.data.ticks.3.1] 28만
+[scenes.5.data.tags.0.2] 1년 전 → 9,556,861원
+[scenes.5.data.tags.0.4] down
+[scenes.5.data.tags.1.2] 1월 고점 → 6,634,298원
+[scenes.5.data.tags.1.4] right
+[scenes.5.data.tags.2.2] 3개월 전 → 8,783,983원
+[scenes.5.data.tags.2.4] up
+[scenes.5.data.tags.3.2] 1개월 전 → 9,180,900원
+[scenes.5.data.tags.3.4] down
+[scenes.5.data.callouts.0.0] 네 장 다 손실 · 폭은 4%~34%
+[scenes.5.lines.0.text] 첫 번째 영수증은 1년 전이에요.
+[scenes.5.lines.0.cap] 2025-10-02 · 187,300원/g
+[scenes.5.lines.1.text] 천만원어치가 지금 956만원이 됐어요.
+[scenes.5.lines.1.cap] 9,556,861원 (−443,139원 · −4.43%) · 증권사 수수료 별도
+[scenes.5.lines.2.text] 두 번째는 고점에 산 영수증, 아까 그 663만원이죠.
+[scenes.5.lines.3.text] 337만원이 사라진 셈이에요.
+[scenes.5.lines.3.cap] 6,634,298원 (−3,365,702원 · −33.66%)
+[scenes.5.lines.4.text] 세 번째는 3개월 전, 878만원이 남았어요.
+[scenes.5.lines.4.cap] 2026-07-06 · 203,780원/g → 8,783,983원 (−12.16%)
+[scenes.5.lines.5.text] 네 번째, 한 달 전에 샀다면 918만원입니다.
+[scenes.5.lines.5.cap] 2026-09-04 · 194,970원/g → 9,180,900원 (−8.19%)
+[scenes.5.lines.6.text] 네 장 다 손실인데, 그 폭이 4%에서 34%까지 벌어져요.
+[scenes.6.key] odd
+[scenes.6.title] 국제 금값은 올랐는데
+[scenes.6.sub] 같은 1년(작년 이맘때 → 오늘) · 늘어난 비율
+[scenes.6.source] KRX 금 종가 · 금 선물 GC=F(야후, 뉴욕 전날 종가) · 한국은행 ECOS 731Y001 매매기준율(파이어맵 계산, 국제값은 어림)
+[scenes.6.chapter] 2장
+[scenes.6.data.rows.0.0] 달러 금값
+[scenes.6.data.rows.0.2] +6.65%
+[scenes.6.data.rows.1.0] 한국 KRX 금
+[scenes.6.data.rows.1.2] −4.43%
+[scenes.6.data.q.0] 왜?
+[scenes.6.lines.0.text] 그럼 이상한 점이 하나 생기는데요.
+[scenes.6.lines.1.text] 작년과 비교하면, 국제 금값은 달러로 7% 가까이 올랐거든요.
+[scenes.6.lines.1.cap] 금 선물(GC=F) 달러 기준 +6.65% · 뉴욕 전날 종가 기준
+[scenes.6.lines.2.text] 그런데 왜 한국에서 산 금은 떨어졌을까요?
+[scenes.7.key] formula
+[scenes.7.title] 한국 금값 = 세 가지의 곱
+[scenes.7.sub] 세 조각 중 하나만 움직여도 내 금값이 바뀐다
+[scenes.7.source] KRX 금 종가 · 금 선물 GC=F(야후, 뉴욕 전날 종가) · 한국은행 ECOS 731Y001 매매기준율(파이어맵 계산, 국제값은 어림)
+[scenes.7.chapter] 3장
+[scenes.7.data.toks.0.0] KRX 금값
+[scenes.7.data.toks.0.2] num
+[scenes.7.data.toks.1.0] =
+[scenes.7.data.toks.1.2] op
+[scenes.7.data.toks.2.0] 달러 금값
+[scenes.7.data.toks.2.2] ink
+[scenes.7.data.toks.3.0] ×
+[scenes.7.data.toks.3.2] op
+[scenes.7.data.toks.4.0] 환율
+[scenes.7.data.toks.4.2] ink
+[scenes.7.data.toks.5.0] ×
+[scenes.7.data.toks.5.2] op
+[scenes.7.data.toks.6.0] KRX 웃돈
+[scenes.7.data.toks.6.2] ink
+[scenes.7.data.subs.0] 국제 시세(달러)
+[scenes.7.data.subs.1] 원/달러 매매기준율
+[scenes.7.data.subs.2] KRX 금 ÷ 국제값 어림
+[scenes.7.lines.0.text] 한국에서 사는 금값은 세 가지를 곱한 거예요.
+[scenes.7.lines.1.text] 달러로 매긴 국제 금값, 원/달러 환율, 그리고 KRX 금이 국제 값보다 얼마나 비싸게 거래되느냐, 이 세 개요.
+[scenes.7.lines.1.cap] KRX 금값 = 달러 금값 × 환율 × KRX 웃돈
+[scenes.8.key] piece1
+[scenes.8.title] 1년 전에 산 영수증, 세 조각
+[scenes.8.sub] 25.10.02 → 26.10.06 · 막대 = 늘어난(줄어든) 비율
+[scenes.8.source] KRX 금 종가 · 금 선물 GC=F(야후, 뉴욕 전날 종가) · 한국은행 ECOS 731Y001 매매기준율(파이어맵 계산, 국제값은 어림)
+[scenes.8.chapter] 3장
+[scenes.8.data.rows.0.0] 달러 금값
+[scenes.8.data.rows.0.2] +6.65%
+[scenes.8.data.rows.1.0] 환율
+[scenes.8.data.rows.1.2] −3.38%
+[scenes.8.data.rows.2.0] KRX 웃돈
+[scenes.8.data.rows.2.2] −7.26%
+[scenes.8.data.rows.3.0] = 내 금
+[scenes.8.data.rows.3.2] −4.43%
+[scenes.8.lines.0.text] 작년 영수증부터 세 조각으로 나눠 볼게요.
+[scenes.8.lines.1.text] 첫 조각, 달러 금값은 7% 가까이 올랐죠. 여기까진 플러스예요.
+[scenes.8.lines.2.text] 둘째 조각은 환율인데요. 그사이 원화 값이 올라서, 달러 금값을 원화로 바꾸면 3% 넘게 깎여요.
+[scenes.8.lines.2.cap] 원/달러 1,406.0원(2025-10-02) → 1,358.5원(2026-10-06) · −3.38% · 한국은행 ECOS 매매기준율
+[scenes.9.key] prem
+[scenes.9.title] KRX 웃돈 — 국제값보다 얼마나 비쌌나
+[scenes.9.sub] KRX 금 ÷ (금 선물 × 매매기준율) − 1 · 어림
+[scenes.9.source] KRX 금 종가 · 금 선물 GC=F(야후, 뉴욕 전날 종가) · 한국은행 ECOS 731Y001 매매기준율(파이어맵 계산, 국제값은 어림)
+[scenes.9.chapter] 3장
+[scenes.9.data.rows.0.0] 그때 25.10.02
+[scenes.9.data.rows.0.2] +6.3%
+[scenes.9.data.rows.1.0] 지금 26.10.06
+[scenes.9.data.rows.1.2] −1.4%
+[scenes.9.data.q.0] 웃돈 변화 −7.26%
+[scenes.9.lines.0.text] 셋째 조각이 제일 커요. KRX 웃돈이에요.
+[scenes.9.lines.1.text] 작년엔 KRX 금이, 국제 값을 원화로 바꾼 것보다 6% 넘게 비쌌습니다.
+[scenes.9.lines.1.cap] KRX 웃돈 +6.3% (국제값 어림 = 금 선물 × 매매기준율 대비)
+[scenes.9.lines.2.text] 지금은 오히려 조금 싸요.
+[scenes.9.lines.2.cap] KRX 웃돈 −1.4%
+[scenes.9.lines.3.text] 이 웃돈이 빠진 것만으로도 7% 넘게 깎였죠.
+[scenes.9.lines.3.cap] 웃돈 변화 −7.26%
+[scenes.10.key] piece1b
+[scenes.10.title] 1년 전에 산 영수증, 세 조각
+[scenes.10.sub] 25.10.02 → 26.10.06 · 막대 = 늘어난(줄어든) 비율
+[scenes.10.source] KRX 금 종가 · 금 선물 GC=F(야후, 뉴욕 전날 종가) · 한국은행 ECOS 731Y001 매매기준율(파이어맵 계산, 국제값은 어림)
+[scenes.10.chapter] 3장
+[scenes.10.data.rows.0.0] 달러 금값
+[scenes.10.data.rows.0.2] +6.65%
+[scenes.10.data.rows.1.0] 환율
+[scenes.10.data.rows.1.2] −3.38%
+[scenes.10.data.rows.2.0] KRX 웃돈
+[scenes.10.data.rows.2.2] −7.26%
+[scenes.10.data.rows.3.0] = 내 금
+[scenes.10.data.rows.3.2] −4.43%
+[scenes.10.data.prem.0] 웃돈 그때 +6.3% → 지금 −1.4%
+[scenes.10.data.note.0] 금값이 아니라 환율·웃돈에서 잃었다
+[scenes.10.lines.0.text] 세 조각을 곱하면 결국 4% 남짓 손실로 끝나는 거죠.
+[scenes.10.lines.0.cap] (1+6.65%) × (1−3.38%) × (1−7.26%) − 1 = −4.43% (곱 검산 일치)
+[scenes.10.lines.1.text] 그러니까 작년에 산 분은 금값이 아니라 환율과 웃돈에서 잃은 거예요.
+[scenes.11.key] piece2
+[scenes.11.title] 1월 고점에 산 영수증, 세 조각
+[scenes.11.sub] 26.01.29 → 26.10.06 · 막대 = 늘어난(줄어든) 비율
+[scenes.11.source] KRX 금 종가 · 금 선물 GC=F(야후, 뉴욕 전날 종가) · 한국은행 ECOS 731Y001 매매기준율(파이어맵 계산, 국제값은 어림)
+[scenes.11.chapter] 3장
+[scenes.11.data.rows.0.0] 달러 금값
+[scenes.11.data.rows.0.2] -21.62%
+[scenes.11.data.rows.1.0] 환율
+[scenes.11.data.rows.1.2] −4.91%
+[scenes.11.data.rows.2.0] KRX 웃돈
+[scenes.11.data.rows.2.2] −10.99%
+[scenes.11.data.rows.3.0] = 내 금
+[scenes.11.data.rows.3.2] −33.66%
+[scenes.11.data.prem.0] 웃돈 그때 +10.8% → 지금 −1.4%
+[scenes.11.data.note.0] 달러 금값 자체가 빠졌다
+[scenes.11.lines.0.text] 고점에 산 분은 얘기가 다릅니다.
+[scenes.11.lines.1.text] 이때는 달러 금값 자체가 22% 가까이 빠졌어요.
+[scenes.11.lines.1.cap] 달러 금값 −21.62% · 환율 −4.91% · KRX 웃돈 −10.99%
+[scenes.11.lines.2.text] 거기에 그때 붙어 있던 웃돈, 11% 가까이가 사라졌고요.
+[scenes.11.lines.2.cap] KRX 웃돈 +10.8% → −1.4%
+[scenes.12.key] grid
+[scenes.12.title] 산 날마다 깎인 이유가 다르다
+[scenes.12.sub] 세 조각 · 가장 크게 깎인 칸에 표시
+[scenes.12.source] KRX 금 종가 · 금 선물 GC=F(야후, 뉴욕 전날 종가) · 한국은행 ECOS 731Y001 매매기준율(파이어맵 계산, 국제값은 어림)
+[scenes.12.chapter] 3장
+[scenes.12.data.cols.0] 달러 금값
+[scenes.12.data.cols.1] 환율
+[scenes.12.data.cols.2] KRX 웃돈
+[scenes.12.data.cols.3] 내 금
+[scenes.12.data.rows.0.0] 1년 전
+[scenes.12.data.rows.0.1.0] +6.65%
+[scenes.12.data.rows.0.1.1] −3.38%
+[scenes.12.data.rows.0.1.2] −7.26%
+[scenes.12.data.rows.0.1.3] −4.43%
+[scenes.12.data.rows.1.0] 1월 고점
+[scenes.12.data.rows.1.1.0] −21.62%
+[scenes.12.data.rows.1.1.1] −4.91%
+[scenes.12.data.rows.1.1.2] −10.99%
+[scenes.12.data.rows.1.1.3] −33.66%
+[scenes.12.data.rows.2.0] 3개월 전
+[scenes.12.data.rows.2.1.0] +0.75%
+[scenes.12.data.rows.2.1.1] −11.77%
+[scenes.12.data.rows.2.1.2] −1.19%
+[scenes.12.data.rows.2.1.3] −12.16%
+[scenes.12.data.rows.3.0] 1개월 전
+[scenes.12.data.rows.3.1.0] −8.44%
+[scenes.12.data.rows.3.1.1] −0.07%
+[scenes.12.data.rows.3.1.2] +0.34%
+[scenes.12.data.rows.3.1.3] −8.19%
+[scenes.12.lines.0.text] 3개월 전은 또 달라요. 금값은 거의 그대로였는데, 환율에서 12% 가까이 깎였거든요.
+[scenes.12.lines.0.cap] 달러 금값 +0.75% · 환율 −11.77% · 웃돈 −1.19%
+[scenes.12.lines.1.text] 한 달 전은 반대예요. 환율과 웃돈은 거의 그대로고, 달러 금값이 8% 넘게 빠진 게 전부입니다.
+[scenes.12.lines.1.cap] 달러 금값 −8.44% · 환율 −0.07% · 웃돈 +0.34%
+[scenes.12.lines.2.text] 그래서 '금값이 떨어졌다'는 말 하나로는 내 손실이 설명이 안 돼요. 산 날마다 깎인 이유가 다르거든요.
+[scenes.13.key] paths
+[scenes.13.title] 같은 1천만원, 산 길 4개
+[scenes.13.sub] 길마다 세금·수수료가 다르다
+[scenes.13.source] 국가법령정보센터 — 조세특례제한법 제126조의7 · 소득세법 제94·17·129·14조 · 부가가치세법 제30조
+[scenes.13.chapter] 4장
+[scenes.13.data.cards.0.0] ①
+[scenes.13.data.cards.0.1] KRX 금시장
+[scenes.13.data.cards.0.2] 증권사 계좌 · 1g 단위
+[scenes.13.data.cards.1.0] ②
+[scenes.13.data.cards.1.1] 금 ETF
+[scenes.13.data.cards.1.2] 주식처럼 사고팜
+[scenes.13.data.cards.2.0] ③
+[scenes.13.data.cards.2.1] 골드뱅킹
+[scenes.13.data.cards.2.2] 은행 통장 · 0.01g
+[scenes.13.data.cards.3.0] ④
+[scenes.13.data.cards.3.1] 골드바
+[scenes.13.data.cards.3.2] 실물 · 금은방·은행
+[scenes.13.lines.0.text] 이번엔 산 날 말고, 산 길을 바꿔 볼게요.
+[scenes.13.lines.1.text] 금을 사는 길은 크게 네 가지예요. KRX 금시장, 금 ETF, 은행 골드뱅킹, 그리고 골드바 같은 실물이요.
+[scenes.14.key] krx
+[scenes.14.title] ① KRX 금시장 — 세금
+[scenes.14.sub] 사고팔 때 부가세 없음 · 판 차익에 양도세 없음 · 실물로 찾으면 10%
+[scenes.14.source] 국가법령정보센터 — 조세특례제한법 제126조의7 · 소득세법 제94·17·129·14조 · 부가가치세법 제30조
+[scenes.14.chapter] 4장
+[scenes.14.data.head] KRX 금시장 · 세금 영수증
+[scenes.14.data.rows.0.0] 부가가치세
+[scenes.14.data.rows.0.1] 면제
+[scenes.14.data.rows.0.2] in
+[scenes.14.data.rows.1.0] 조특법 제126조의7①
+[scenes.14.data.rows.1.1] 금 현물시장 매매
+[scenes.14.data.rows.1.2] dim
+[scenes.14.data.rows.2.0] 판 차익 양도세
+[scenes.14.data.rows.2.1] 없음
+[scenes.14.data.rows.2.2] in
+[scenes.14.data.rows.3.0] 소득세법 제94조
+[scenes.14.data.rows.3.1] 목록에 금 없음
+[scenes.14.data.rows.3.2] dim
+[scenes.14.data.rows.4.0] 실물로 찾을 때
+[scenes.14.data.rows.4.1] 부가세 10%
+[scenes.14.data.rows.4.2] tax
+[scenes.14.data.side.0] 세금 0
+[scenes.14.data.side.2] 사고파는 동안
+[scenes.14.lines.0.text] 먼저 KRX 금시장. 여기서 사고팔면 부가가치세가 면제돼요.
+[scenes.14.lines.0.cap] 조세특례제한법 제126조의7① · KRX 금 현물시장 금지금 매매 = 부가가치세 면제
+[scenes.14.lines.1.text] 개인이 금을 팔아 남긴 차익엔 양도소득세도 없어요. 소득세법이 정한 양도소득 목록에 금이 없거든요.
+[scenes.14.lines.1.cap] 소득세법 제94조 양도소득 범위 — 토지·건물, 부동산 권리, 주식 등 · 금지금 없음
+[scenes.14.lines.2.text] 다만 금을 실물로 찾아가는 순간 부가세 10%가 붙습니다.
+[scenes.14.lines.2.cap] 같은 조④ 보관기관에서 인출 = 재화의 공급 · 부가가치세법 제30조 세율 10%
+[scenes.15.key] etf
+[scenes.15.title] ② 금 ETF
+[scenes.15.sub] ACE KRX금현물(411060) · 작년 이맘때 샀다면
+[scenes.15.source] 야후 파이낸스 종가 · 국가법령정보센터 — 조세특례제한법 제126조의7 · 소득세법 제94·17·129·14조 · 부가가치세법 제30조
+[scenes.15.chapter] 4장
+[scenes.15.data.head] 금 ETF · 1천만원 · 단위 원
+[scenes.15.data.rows.0.0] 오늘 받는 돈
+[scenes.15.data.rows.0.2] net
+[scenes.15.data.rows.1.0] KRX 금이었다면
+[scenes.15.data.rows.1.2] dim
+[scenes.15.data.rows.2.0] 차익 세금
+[scenes.15.data.rows.2.1] 15.4%
+[scenes.15.data.rows.2.2] tax
+[scenes.15.data.rows.3.0] 손실이면
+[scenes.15.data.rows.3.1] 세금 0
+[scenes.15.data.rows.3.2] in
+[scenes.15.data.rows.4.0] 이자·배당 합계 2천만원 넘으면
+[scenes.15.data.rows.4.1] 종합과세
+[scenes.15.data.rows.4.2] hi
+[scenes.15.data.side.0] −5.27%
+[scenes.15.data.side.2] 1년 전에 산 금 ETF
+[scenes.15.lines.0.text] 두 번째는 금 ETF예요. 작년에 샀다면 947만원으로, KRX 금보다 조금 더 줄었어요.
+[scenes.15.lines.0.cap] ACE KRX금현물(411060) 26,360원 → 24,970원 · 9,472,686원 (−5.27%)
+[scenes.15.lines.1.text] ETF는 차익이 나면 배당소득으로 보고 15.4%를 떼요. 지금처럼 손실이면 낼 세금이 없고요.
+[scenes.15.lines.1.cap] 소득세법 제17조①5호 · 원천징수 14% + 지방소득세 1.4% = 15.4% · 일반 계좌 기준
+[scenes.15.lines.2.text] 이자와 배당이 한 해 2천만원을 넘으면 다른 소득과 합쳐서 세금을 매긴다는 것도 같이 봐 두세요.
+[scenes.15.lines.2.cap] 소득세법 제14조③6호 · 2천만원 이하 = 분리과세로 끝
+[scenes.16.key] bank
+[scenes.16.title] ③ 골드뱅킹 — 살 때 +1%, 팔 때 −1%
+[scenes.16.sub] 은행 고시 규칙 · 기준가격 = 국제 금가격 × 환율 ÷ 31.1034768
+[scenes.16.source] KB국민은행 골드뱅킹 고시 규칙 · 소득세법 제17조①5의2호
+[scenes.16.chapter] 4장
+[scenes.16.lines.0.text] 세 번째는 골드뱅킹이에요. 은행 고시 기준으로 살 때는 조금 비싸게, 팔 때는 조금 싸게 쳐요. 각각 1%씩이요.
+[scenes.16.lines.0.cap] 기준가격 = 국제 금가격 × 환율 ÷ 31.1034768 · 살 때 +1.00% · 팔 때 −1.00% (KB 골드뱅킹 고시 규칙)
+[scenes.16.lines.1.text] 사고팔기만 해도 2% 가까이 빠지고, 차익엔 ETF와 같은 세금이 붙어요.
+[scenes.16.lines.1.cap] 소득세법 제17조①5의2호 · 배당소득 15.4%
+[scenes.16.lines.2.text] 은행 고시값은 날짜별로 다시 확인해야 해서, 오늘 영수증에선 원 단위로 적지 않았어요.
+[scenes.17.key] bar
+[scenes.17.title] ④ 골드바 — 출발선이 뒤에 있다
+[scenes.17.sub] 1천만원을 내면 그중 부가세 10%
+[scenes.17.source] 부가가치세법 제30조 · 파이어맵 계산
+[scenes.17.chapter] 4장
+[scenes.17.data.vat] 909,091원
+[scenes.17.data.gold] 9,090,909원
+[scenes.17.data.need.0] 금값이 +10% 올라야 낸 돈만큼
+[scenes.17.data.fee.0] 살 때 수수료·팔 때 값 차이 별도
+[scenes.17.lines.0.text] 네 번째는 골드바예요. 천만원을 내면 그중 약 91만원이 부가세입니다.
+[scenes.17.lines.0.cap] 1천만원 중 부가세 909,091원 · 금값 몫 9,090,909원
+[scenes.17.lines.1.text] 그래서 금값이 10% 올라야 낸 돈만큼이 돼요. 살 때 붙는 수수료와 팔 때 받는 값 차이는 뺀 계산이고요.
+[scenes.18.key] pathcmp
+[scenes.18.title] 작년에 산 1천만원, 길에 따라
+[scenes.18.sub] 막대 = 1천만원에서 줄어든 만큼 · 골드바는 금값 몫만 · 골드뱅킹은 고시 확인 전이라 뺌
+[scenes.18.source] 한국거래소 KRX 금시장 금 1kg 종가(네이버 증권 일별 시세) · 2026-10-06 기준 · 부가가치세법 제30조
+[scenes.18.chapter] 4장
+[scenes.18.data.rows.0.0] 골드바
+[scenes.18.data.rows.0.2] 8,688,055원 (−13.12%)
+[scenes.18.data.rows.1.0] KRX 금시장
+[scenes.18.data.rows.1.2] 9,556,861원 (−4.43%)
+[scenes.18.data.rows.2.0] 금 ETF
+[scenes.18.data.rows.2.2] 9,472,686원 (−5.27%)
+[scenes.18.data.gap.0] KRX − 골드바 868,806원
+[scenes.18.lines.0.text] 작년에 골드바로 샀다면, 지금 금값 몫은 869만원이에요.
+[scenes.18.lines.0.cap] 8,688,055원 (−13.12%) · 금값 몫이 KRX 금값만큼 움직였다고 본 어림 · 살 때 수수료·팔 때 값 차이 별도 = 실제로는 더 적음
+[scenes.18.lines.1.text] 같은 날 같은 돈인데, 길에 따라 87만원 가까이 갈린 거죠. 수수료까지 치면 차이는 더 커지고요.
+[scenes.18.lines.1.cap] KRX 9,556,861원 − 골드바 8,688,055원 = 868,806원 · 골드뱅킹은 고시 확인 전이라 제외
+[scenes.19.key] up10
+[scenes.19.title] 금값이 10% 오르면 남는 차익
+[scenes.19.sub] 가정 · 1천만원 · ETF는 차익 전부 15.4%로 어림
+[scenes.19.source] 국가법령정보센터 — 조세특례제한법 제126조의7 · 소득세법 제94·17·129·14조 · 부가가치세법 제30조
+[scenes.19.chapter] 4장
+[scenes.19.data.bars.0.0] KRX 금시장
+[scenes.19.data.bars.0.2] 1,000,000원
+[scenes.19.data.bars.0.4] accent
+[scenes.19.data.bars.0.5] 세금 0
+[scenes.19.data.bars.1.0] 금 ETF
+[scenes.19.data.bars.1.2] 846,000원
+[scenes.19.data.bars.1.4] ink
+[scenes.19.data.bars.1.5] 세금 154,000원
+[scenes.19.lines.0.text] 금값이 10% 오른다고 쳐 볼까요?
+[scenes.19.lines.1.text] KRX는 차익 100만원이 그대로 남아요.
+[scenes.19.lines.2.text] ETF는 세금을 떼면 85만원 가까이가 남고요.
+[scenes.19.lines.2.cap] 가정 · 1천만원, 금값 +10% · KRX 1,000,000원(세금 0) · ETF 1,000,000 − 154,000 = 846,000원
+[scenes.20.key] ust
+[scenes.20.title] 미국 10년 국채 금리
+[scenes.20.sub] % · 같은 시기에 움직인 숫자(원인 단정 아님)
+[scenes.20.source] 미 재무부 Daily Treasury Par Yield Curve 10 Yr
+[scenes.20.chapter] 5장
+[scenes.20.data.series.0.0] 10년 금리
+[scenes.20.data.series.0.1] ink
+[scenes.20.data.xlabels.0.1] 9월
+[scenes.20.data.xlabels.1.1] 11월
+[scenes.20.data.xlabels.2.1] 26.1월
+[scenes.20.data.xlabels.3.1] 3월
+[scenes.20.data.xlabels.4.1] 5월
+[scenes.20.data.xlabels.5.1] 7월
+[scenes.20.data.xlabels.6.1] 9월
+[scenes.20.data.ticks.0.1] 4.0%
+[scenes.20.data.ticks.1.1] 4.5%
+[scenes.20.data.ticks.2.1] 5.0%
+[scenes.20.data.ticks.3.1] 5.5%
+[scenes.20.data.tags.0.2] 25.10.02 4.10%
+[scenes.20.data.tags.0.4] down
+[scenes.20.data.tags.1.2] 26.10.05 5.31% · 1년 최고
+[scenes.20.data.tags.1.4] left
+[scenes.20.lines.0.text] 그럼 금값은 왜 떨어졌을까요. 여기선 원인을 단정하지 않고, 같은 시기 원문 숫자만 보여 드릴게요.
+[scenes.20.lines.1.text] 미국 장기 국채 금리는 지금 5.31%로, 지난 한 해 중 가장 높아요.
+[scenes.20.lines.2.text] 작년 이맘때는 4.1%였고요.
+[scenes.20.lines.2.cap] 미 재무부 Daily Treasury Par Yield Curve 10 Yr · 2025-10-02 4.10% → 2026-10-05 5.31% (1년 최고)
+[scenes.21.key] fxl
+[scenes.21.title] 원/달러 환율
+[scenes.21.sub] 원 · 매매기준율
+[scenes.21.source] 한국은행 ECOS 731Y001
+[scenes.21.chapter] 5장
+[scenes.21.data.series.0.0] 원/달러
+[scenes.21.data.series.0.1] ink
+[scenes.21.data.xlabels.0.1] 9월
+[scenes.21.data.xlabels.1.1] 11월
+[scenes.21.data.xlabels.2.1] 26.1월
+[scenes.21.data.xlabels.3.1] 3월
+[scenes.21.data.xlabels.4.1] 5월
+[scenes.21.data.xlabels.5.1] 7월
+[scenes.21.data.xlabels.6.1] 9월
+[scenes.21.data.tags.0.2] 26.07.02 1,554.4원
+[scenes.21.data.tags.0.4] up
+[scenes.21.data.tags.1.2] 26.10.06 1,358.5원
+[scenes.21.data.tags.1.4] left
+[scenes.21.lines.0.text] 환율은 여름에 가장 높았다가, 지금은 1,358원 남짓까지 내려왔습니다.
+[scenes.21.lines.0.cap] 최고 1,554.4원(2026-07-02) → 1,358.5원(2026-10-06) · 한국은행 ECOS
+[scenes.22.key] bok
+[scenes.22.title] 한국은행 보도자료
+[scenes.22.sub] 2026년 8월 3일 · 국내에서 생산된 금을 사들일 길
+[scenes.22.source] 한국은행 보도자료 2026-08-03(공보 2026-8-7호)
+[scenes.22.chapter] 5장
+[scenes.22.data.body] 「한국은행, 국내 생산 금 매입 협력 체계 구축」
+[scenes.22.data.big] 언제·얼마나 = 원문에 없음
+[scenes.22.data.q2] "실제매입시기는 … 종합적으로 고려하여 결정할 예정"
+[scenes.22.lines.0.text] 한국은행은 8월에, 국내에서 생산된 금을 사들일 길을 만들었다고 발표했어요.
+[scenes.22.lines.0.cap] 한국은행 보도자료 2026-08-03 「한국은행, 국내 생산 금 매입 협력 체계 구축」
+[scenes.22.lines.1.text] 다만 언제, 얼마나 살지는 보도자료에 없어요.
+[scenes.22.lines.1.cap] "실제매입시기는 … 종합적으로 고려하여 결정할 예정" (보도자료 원문)
+[scenes.23.key] wgc
+[scenes.23.title] 세계 금 ETF로 들어온 돈
+[scenes.23.sub] 2026년 8월 한 달 · 세계금협회(WGC) 9월 9일 자료
+[scenes.23.source] World Gold Council, Gold ETF holdings and flows 2026-09-09
+[scenes.23.chapter] 5장
+[scenes.23.data.text] US$18bn
+[scenes.23.data.label] 8월 순유입
+[scenes.23.data.pre] 180억 달러
+[scenes.23.data.tag.0] 보유량 4,189t · 사상 최대
+[scenes.23.data.call.0] 고점이 지난 뒤에도 들어옴
+[scenes.23.lines.0.text] 세계금협회 자료를 보면, 지난 8월 세계 금 ETF로 180억 달러가 들어왔어요.
+[scenes.23.lines.1.text] 보유량은 사상 최대였고요.
+[scenes.23.lines.1.cap] World Gold Council 2026-09-09 · 8월 순유입 US$18bn · 보유량 4,189t (record high)
+[scenes.23.lines.2.text] 고점이 지난 뒤에도 ETF로는 돈이 들어온 거죠.
+[scenes.24.key] nocause
+[scenes.24.title] 무엇이 얼마나 움직였나?
+[scenes.24.sub] 네 가지 모두 원문에 기여도 숫자가 없다
+[scenes.24.source] 지나간 값 · 전망·투자 권유 아님
+[scenes.24.chapter] 5장
+[scenes.24.data.cards.0.0] 금리
+[scenes.24.data.cards.0.1] 미 10년 5.31%
+[scenes.24.data.cards.1.0] 환율
+[scenes.24.data.cards.1.1] 1,358.5원
+[scenes.24.data.cards.2.0] 중앙은행
+[scenes.24.data.cards.2.1] 시기·물량 미정
+[scenes.24.data.cards.3.0] ETF
+[scenes.24.data.cards.3.1] US$18bn 유입
+[scenes.24.data.stamp.0] 기여도 숫자 없음
+[scenes.24.data.no.0] 전망은 말하지 않습니다
+[scenes.24.lines.0.text] 금리, 환율, 중앙은행, ETF. 이 중 무엇이 금값을 얼마나 움직였는지는 원문 어디에도 숫자로 나와 있지 않습니다.
+[scenes.24.lines.1.text] 그래서 앞으로 어떻게 될지도 오늘은 말씀드리지 않을게요.
+[scenes.25.key] math
+[scenes.25.title] 산 값까지의 산수
+[scenes.25.sub] 1월 고점에 산 금 · 1g 179,000원 → 269,810원
+[scenes.25.source] 한국거래소 KRX 금시장 금 1kg 종가(네이버 증권 일별 시세) · 2026-10-06 기준 · 전망 아님, 산수
+[scenes.25.chapter] 6장
+[scenes.25.data.down.1] −33.66%
+[scenes.25.data.up.1] +50.7%
+[scenes.25.data.note.0] 떨어진 만큼만 올라서는 모자란다
+[scenes.25.data.fee.0] 수수료·팔 때 값 차이는 뺀 숫자
+[scenes.25.lines.0.text] 대신 산수 하나는 할 수 있어요.
+[scenes.25.lines.1.text] 고점에 산 금이 산 값으로 돌아가려면, 지금부터 51% 올라야 해요.
+[scenes.25.lines.1.cap] 269,810 ÷ 179,000 − 1 = +50.7% · 전망 아님, 산수
+[scenes.25.lines.2.text] 34% 떨어진 걸 메우는 데 51%가 필요한 거죠. 떨어진 만큼만 올라서는 모자라요.
+[scenes.25.lines.3.text] 이것도 증권사 수수료나, 골드바라면 팔 때 값 차이를 뺀 숫자예요.
+[scenes.26.key] sum
+[scenes.26.title] 정리 — 금 1천만원 영수증 4장
+[scenes.26.sub] 2026-10-06 기준 · KRX 금시장 · 증권사 수수료 별도
+[scenes.26.source] 한국거래소 KRX 금시장 금 1kg 종가(네이버 증권 일별 시세) · 2026-10-06 기준 · 지나간 값 · 전망·투자 권유 아님
+[scenes.26.chapter] 7장
+[scenes.26.data.head] 오늘 팔면 받는 돈
+[scenes.26.data.rows.0.0] 1년 전 (25.10.02)
+[scenes.26.data.rows.0.2] in
+[scenes.26.data.rows.1.0] 1월 고점 (26.01.29)
+[scenes.26.data.rows.1.2] net
+[scenes.26.data.rows.2.0] 3개월 전 (26.07.06)
+[scenes.26.data.rows.2.2] in
+[scenes.26.data.rows.3.0] 1개월 전 (26.09.04)
+[scenes.26.data.rows.3.2] in
+[scenes.26.data.side.0] 산 날이 갈랐다
+[scenes.26.data.side.2] 같은 날이라도 골드바는 부가세만큼 뒤
+[scenes.26.lines.0.text] 정리할게요. 오늘 기준으로 천만원어치 금이,
+[scenes.26.lines.1.text] 작년에 샀다면 956만원, 고점에 샀다면 663만원이 됐습니다.
+[scenes.26.lines.1.cap] 1년 전 9,556,861원 · 고점 6,634,298원 · 3개월 전 8,783,983원 · 1개월 전 9,180,900원
+[scenes.26.lines.2.text] 작년에 산 분은 금값은 올랐는데 환율과 웃돈에서 잃었고, 고점에 산 분은 금값 자체가 빠졌어요.
+[scenes.26.lines.3.text] 같은 날 샀어도 골드바는 부가세 약 91만원만큼 출발선이 뒤에 있었고요.
+[scenes.27.key] end
+[scenes.27.title] 전체 표는 카페 글에
+[scenes.27.sub] 산 날 4 × 산 길 4 · 설명란 링크
+[scenes.27.source] 지나간 값 · 전망·투자 권유 아님
+[scenes.27.chapter] 7장
+[scenes.27.data.text] 산 날 4 × 산 길 4
+[scenes.27.data.label] 전체 영수증 표
+[scenes.27.data.note] 설명란의 카페 글
+[scenes.27.lines.0.text] 산 날 네 개, 산 길 네 개를 다 채운 전체 표는 설명란의 카페 글에 올려 둘게요.
+[scenes.27.lines.1.text] 오늘 숫자는 모두 지나간 값이고, 금을 사거나 팔라는 말은 아닙니다.
+[scenes.27.lines.2.text] 끝까지 봐 주셔서 고맙습니다.
+[script] script.md
+
+## 화면 코드: video/src/G1.tsx
+[G1.tsx] 금값 1천만원 영수증 · 오늘 순서
+[G1.tsx] 기준가격
+[G1.tsx] 살 때 +1.00%
+[G1.tsx] 팔 때 −1.00%
+[G1.tsx] 사고팔기만 해도 2% 가까이
+[G1.tsx] 차익엔 배당소득세 15.4%
+[G1.tsx] 원 단위 결과는 고시 확인 전
+[G1.tsx] 낸 돈 1천만원
+[G1.tsx] 금값 몫
+[G1.tsx] 부가세 10%
+[G1.tsx] 내려온 폭
+[G1.tsx] 산 값까지 올라야 할 폭
+[G1.tsx] 원
+[G1.tsx] 1g 값이 돌아가야 할 곳
+[G1.tsx] 지금 ${d.from.toLocaleString('en-US')}원
+
+## 화면 코드: video/src/parts/fm.tsx
+[fm.tsx] ${e}억 ${r.toLocaleString()}만원
+[fm.tsx] ${e}억원
+[fm.tsx] ${r.toLocaleString()}만원
+[fm.tsx] 1년 뒤 남은 돈
+[fm.tsx] 원금
+[fm.tsx] 떨어진 해
+[fm.tsx] 세금·건보료
+[fm.tsx] 월 100만원 원금
+[fm.tsx] 파이어맵
+[fm.tsx] 파이어맵
+
+## 화면 코드: video/src/parts/receipt.tsx
+[receipt.tsx] 중앙 ${med.toFixed(2)}%
+
+## 화면 코드: video/src/parts/explain.tsx
+[explain.tsx] ${t}개월
+
+## 화면 코드: video/src/parts/reverse.tsx
+[reverse.tsx] 만원
+[reverse.tsx] 지난 1년 분배율
+[reverse.tsx] 필요한 돈
+
+## 화면 코드: video/src/parts/gold.tsx

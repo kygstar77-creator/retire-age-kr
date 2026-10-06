@@ -31,3 +31,6 @@
 ## parts/reverse.tsx (2026-10-06 02:44, PD · M-1 월배당 거꾸로에서 처음)
 - RuleCards(규칙 카드 줄, 안 나온 카드는 점선 자리표) · Gauge(가로 문턱 게이지: 문턱선·차오름·목표 꼬리표) · Timeline(구간 띠 3칸) · FlowBoxes(거꾸로 화살표 상자) · ProductCard(상품 카드 + 분배율·필요한 돈) · Calendar12(12칸 달력·동전) · GroupBars(묶음 막대, 나란히 — 쌓지 않음) · Grid(표·칸 도장·강조 칸). 쓰임 video/src/M1.tsx, 재료 ep/M-1/m1props.py
 - 2026-10-06 02:44 PD · 공용 고침: motion/TallyBars 꼬리표 모드에서 valueText ''면 꼬리표 안 그림(빈 검은 점 생김) · motion/TallyFrame 자막([자막]) 길면 줄바꿈(nowrap이라 판 밖으로 넘쳤음)
+
+## parts/gold.tsx (2026-10-07 02:36, PD · G-1 금값 영수증에서 처음)
+- DivRows(0 기준 좌우 막대 — 이름 왼쪽 고정 칸·값 오른쪽 고정 칸이라 음수 글자가 이름을 안 덮음, 안 나온 줄 점선 자리표, total 줄) · LossRows(줄어든 만큼 막대 + 받는 돈 글자) · SplitBar(낸 돈을 두 몫으로 — 금값 몫/부가세, 겹치지 않음) · SpreadBand(기준값 위아래 살 때 +%/팔 때 −% 띠). 쓰임 video/src/G1.tsx(장면 28·종류 19), 재료 ep/G-1/g1props.py(calc_out 파싱 — 공개 전날 calc 재실행 뒤 다시 돌리면 끝, 대본 자막과 기준일 다르면 멈춤)

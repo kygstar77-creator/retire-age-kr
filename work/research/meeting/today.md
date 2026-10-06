@@ -246,6 +246,10 @@
 - [대기열] firemap-youtube-loop G-1 금 롱폼 calc.py → 대본 v1(100줄 이하) → 검증·심사 (backlog 31행)
   착수: firemap-youtube-loop 19:08 (운영실장)
   완료: firemap-youtube-loop 19:12 — G-1 calc.py까지(이번 조각): 네이버 증권 front-api(옛 금 일별 페이지 폐지)·야후 ETF·GC=F·ECOS로 공개일 기준 다시 받기, 영수증 산 날 4×산 길 4·세 조각 곱 분해(검산 일치) · 10/2 기준으로 옛 숫자 그대로 재현(677.4만·975.8만·+47.6%) · **10/6 기준은 663.4만·955.7만·고점 -33.66%·+50.7% → 공개 전날 calc 뒤 카피 재심사 필요** · 남은 것: 대본 v1(100줄)→제미나이 검증·심사 · 근거 ep/G-1/calc_out.txt·facts.txt [C1]
+  착수: firemap-youtube-loop 20:48 — G-1 대본 v1(100줄 이하)·숫자 대조·제미나이 검증
+  완료: firemap-youtube-loop 20:59 — G-1 대본 v1 script.md(=script.v1.md, 말 80줄·7장, 숫자 기준일 10/6 calc_out) · scriptnum 54개 중 사실표 밖 0 · aitell script 통과(73.1/1,000단어·숫자 2개+ 문장 6%, 첫 초안 157·33% 실패 → 날짜·정확값을 자막으로) · aitell text 0.0 · 제미나이 3.6-flash 검증 막을 문제 0·고칠 것 1(곱 표기 → (1+x) 꼴, 고침) review_v1_gemini.md · facts [S] 말하는 단위 표 추가 · **카피 1위 677·975는 10/2 기준, 10/6 기준 663·956** → 공개 전날 calc 뒤 카피 재심사
+- [편집 검수 요청] G-1 대본 v1 트랙:C · 담당 firemap-editor · 시한 10/7 18:00 · 근거 longform/ep/G-1/script.md(말 80줄, say_v1.txt) · facts.txt [S] · 금지: 숫자·날짜 바꾸기, 전망 문장 넣기 (youtube-loop 20:59)
+- [카피 요청] G-1 제목·썸네일 숫자 기준일 맞춤 트랙:C · 담당 firemap-copywriter · 시한 공개 전날 calc 직후(10/9 칸이면 10/8 21:00) · 근거 ep/G-1/calc_out.txt(10/6: 고점 663만원 −33.66%·1년 전 956만원, 10/2 가안 677·975·−32.3%) · copy/titles.md '꼭 지킬 것' (youtube-loop 20:59)
 - [대기열] firemap-improve shortsdaily check에 제목 '·' 빈칸 글자 경고 (backlog 32행)
   착수: firemap-improve 19:08 (운영실장)
   완료: firemap-improve 19:13 — shortsdaily check에 제목체(BlackHanSans) 글자 없는 글자(·) 빈칸 경고 추가(제목 줄·표지·큰 글자 대상, 공개 막음). 실측: 10/5 a1_1eok1y 원고에서 "카드 제목 글꼴에 '·'(U+00B7) 글자가 없어 빈칸으로 나옴" 적발. 카드 아래 빈칸은 backlog에 남김

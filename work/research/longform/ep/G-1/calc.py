@@ -5,13 +5,17 @@
 #   KRX 금시장 금 1kg 일별 종가 원/g — 네이버 증권 front-api(reutersCode M04020000, 옛 goldDailyQuote 페이지는 10/6 폐지 확인)
 #   ACE KRX금현물 ETF 411060.KS 종가 · 금 선물 GC=F(달러/온스) — 야후 차트 API
 #   원/달러 매매기준율 — 한국은행 ECOS 731Y001 0000001(일)
-# 세금·비용 규칙은 facts.txt [G0] 법 원문 줄. 골드뱅킹은 KB 고시 일시가 확인 필요([G5])라 '어림'으로만 찍는다(대본에 원 단위 금지).
+# 세금·비용 규칙은 facts.txt [G0] 법 원문 줄. 골드뱅킹은 raw/kb_goldbanking_*.json(KB 일자별 그날 마지막 고시, [G5])에 산 날·기준일이 다 있으면 실제 고시로,
+#   없으면 국제값 어림 ±1%로 찍고 '어림' 표시(대본에 어림 값 금지 — 공개 전날 KB 화면에서 새 날짜를 받아 json에 더한다).
 import sys, os, json, math, datetime as dt, time
 sys.path.insert(0, r'C:\Users\강영준\Documents\GitHub\retire-age-kr\work'); sys.stdout.reconfigure(encoding='utf-8')
 import apis
 HERE = os.path.dirname(os.path.abspath(__file__)); RAW = os.path.join(HERE, 'raw'); os.makedirs(RAW, exist_ok=True)
 M = 10_000_000; OZ = 31.1034768; TAX = 0.154; VAT = 0.10; GB = 0.01   # 골드뱅킹 살 때 +1%·팔 때 -1%(KB 고시 규칙, [G0])
 START = '2025-09-01'
+import glob
+KB = {}
+for _f in sorted(glob.glob(os.path.join(RAW, 'kb_goldbanking_*.json'))): KB.update(json.load(open(_f, encoding='utf-8'))['rows'])
 
 def krx_gold():
     out, page = {}, 1
@@ -73,7 +77,7 @@ g1, f1, i1, gd1, fd1 = intl(asof)
 P(f'ETF 411060 {e1d} {e1:,.0f}원 · GC=F {gd1} {g1:,.2f}달러 · ECOS {fd1} {f1:,.1f}원 · 국제값 원/g 어림 {i1:,.0f} · KRX 웃돈 {(k1/i1-1)*100:.2f}%')
 P('')
 P('## 영수증 — 1천만원, 산 날 4 × 산 길 4 (팔 때 기준일 값, 증권사 수수료·실물 매입가 차이 별도)')
-P('| 산 날 | KRX 금시장 | 금현물 ETF(411060) | 골드뱅킹(어림) | 골드바(부가세 10%) |')
+P('| 산 날 | KRX 금시장 | 금현물 ETF(411060) | 골드뱅킹(KB 그날 마지막 고시) | 골드바(부가세 10%) |')
 P('|---|---|---|---|---|')
 rec = []
 for name, d0 in days:
@@ -81,13 +85,17 @@ for name, d0 in days:
     krx_v = M * r                                           # 부가세 면제(조특법 126조의7①)·양도세 없음(소득세법 94조)
     ed0, e0 = on_or_before(etf, d0); etf_g = M * (e1 / e0 - 1); etf_v = M + etf_g - max(0, etf_g) * TAX   # 이익만 15.4%(어림: 과표기준가 대신 매매차익)
     _, _, i0, gd0, fd0 = intl(d0)
-    gb_g = M / (i0 * (1 + GB)) * i1 * (1 - GB) - M; gb_v = M + gb_g - max(0, gb_g) * TAX
+    if d0 in KB and asof in KB:                            # KB 실제 고시: 살 때 매입가격·팔 때 매도가격(기준가 ±1.00% 확인 10/7)
+        gb_g = M / KB[d0]['buy'] * KB[asof]['sell'] - M; gb_src = 'KB 고시'
+    else:
+        gb_g = M / (i0 * (1 + GB)) * i1 * (1 - GB) - M; gb_src = '어림'
+    gb_v = M + gb_g - max(0, gb_g) * TAX                   # 골드뱅킹 차익 = 배당소득 15.4%([G0])
     bar_v = M / (1 + VAT) * r                               # 부가세 10% 먼저 빠진 금값 몫이 KRX만큼 움직였다고 본 값(파는 값 차이 별도)
     row = dict(name=name, day=d0, krx0=k0, krx=round(krx_v), krx_pct=(r-1)*100, etf_day=ed0, etf0=e0, etf=round(etf_v),
-               etf_pct=(e1/e0-1)*100, gb=round(gb_v), gb_pct=(gb_v/M-1)*100, bar=round(bar_v), bar_pct=(bar_v/M-1)*100,
+               etf_pct=(e1/e0-1)*100, gb=round(gb_v), gb_pct=(gb_v/M-1)*100, gb_src=gb_src, bar=round(bar_v), bar_pct=(bar_v/M-1)*100,
                gc_day=gd0, fx_day=fd0, intl0=i0)
     rec.append(row)
-    P(f"| {name} {d0} ({k0:,.0f}원/g) | {krx_v:,.0f}원 ({(r-1)*100:+.2f}%) | {etf_v:,.0f}원 ({(etf_v/M-1)*100:+.2f}%) | {gb_v:,.0f}원 ({(gb_v/M-1)*100:+.2f}%) | {bar_v:,.0f}원 ({(bar_v/M-1)*100:+.2f}%) |")
+    P(f"| {name} {d0} ({k0:,.0f}원/g) | {krx_v:,.0f}원 ({(r-1)*100:+.2f}%) | {etf_v:,.0f}원 ({(etf_v/M-1)*100:+.2f}%) | {gb_v:,.0f}원 ({(gb_v/M-1)*100:+.2f}%){'' if gb_src == 'KB 고시' else ' 어림'} | {bar_v:,.0f}원 ({(bar_v/M-1)*100:+.2f}%) |")
 P('')
 P('## 세 조각 분해 — KRX 금 변화 = 달러 금값 × 환율 × KRX 웃돈 (곱이 정확히 맞음, 막대는 로그 비율로 % 포인트 배분)')
 P('| 산 날 | KRX 전체 | 달러 금값(GC=F) | 환율(ECOS) | KRX 웃돈 | 웃돈 그때→지금 | 검산(곱) |')
@@ -103,7 +111,7 @@ P('')
 P('## 쓰는 법·주의')
 P('- 대본 숫자는 이 표만. 제목 677만원·975만원은 2026-10-02 기준 가안 — 기준일이 바뀌면 카피 재심사(titles.md 꼭 지킬 것).')
 P('- 국제값은 GC=F(선물, 전날 뉴욕 종가)×ECOS 매매기준율 어림 → 화면에 "어림" 표기. 웃돈은 이 어림 대비라 소수 한 자리까지만 말한다.')
-P('- 골드뱅킹 열은 국제값 어림 ±1% 규칙으로 낸 값이라 KB 실제 고시와 다르다([G5]) → 대본에서는 %·원 단위 둘 다 말하지 않고 규칙만.')
+P('- 골드뱅킹 열: 표시 없음 = KB 일자별 그날 마지막 고시(살 때 매입가·팔 때 매도가, raw/kb_goldbanking_*.json), "어림" = 고시 없는 날이라 국제값×ECOS ±1% → 어림 값은 대본에 쓰지 않는다. KB 환율은 현물환율이라 ECOS 매매기준율과 다르다([G5]).')
 P('- ETF 세금은 매매차익 15.4%로 어림(실제는 과표기준가 증가분과 작은 쪽). 손실 구간은 세금 0이라 영향 없음.')
 P('- 골드바는 금값 몫이 KRX만큼 움직였다고 본 값. 금은방·은행에 팔 때 받는 값 차이는 빠져 있어 실제로는 더 적다.')
 open(os.path.join(HERE, 'calc_out.txt'), 'w', encoding='utf-8').write('\n'.join(L) + '\n')

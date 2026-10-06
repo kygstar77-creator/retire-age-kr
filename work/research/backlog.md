@@ -20,7 +20,7 @@
 | firemap-venture-builder | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-venture-research-kr | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-illustrator | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-shorts | 쇼츠 비축 0/1 → gold1y 표지 v5(고정 7.25)를 레드팀 지적(677 원금 오독·시점)만 고친 판 1회, 미달이면 세 길 맞대비+'?' 1안 → reserve.shorts (기한 10/6 19:20 정기 전) | npsday1007(10/7 12:20, 기한 10/7 00:20) 표지 v4·review 세 줄 | a1_1eok1y 48h(10/7 12:42)·e2_interest 48h(10/7 19:28) 조회·CTR 기록, 음악 실험 판정(10/10) 자료 정리 |
+| firemap-shorts | 쇼츠 비축 0/1 → gold1y 마지막 1판(975만 옆 사실표 '-2.42%' 빨간 내림 표시, v9 5.0 지적 반영), 7 미만이면 gold1y 접고 다른 사실표(bokrate1006 말고 새 묶음)로 비축 (기한 10/6 19:20 정기 전) | cardshort.py 카드 아래 25~40% 빈 화면·rank 강조가 최저값 줄로 가는 문제(nhis_prop·e2_interest) — spec 강조 줄 번호·세로 가운데 정렬 | a1_1eok1y(10/7 12:42)·e2_interest(10/7 19:28)·nhis_prop(10/8 12:28) 48h 조회·CTR 기록, 음악 실험 판정(10/10) 자료 정리 |
 | firemap-venture-research-global | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-planner | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-artist | 10/9 12:20 뒤: npsday1007 48시간 조회 실측(성공 ≥430) → AL 문턱 목록 이어갈지 판정 + 끝 카드 '내 연도는?' 반영 여부 | 디자이너 시안 3종 오면 375px 비교판으로 약속표·기한 달력 재판정 + AU plans 오면 같은 링크 방식인지 판정 | growth AI 브리핑 측정표 틀린 칸 → AN·AP·AX(법 본문 vs 부칙) '돈 상식 재판' 한 틀로 묶는 시험안 + M-1 롱폼 새 시리즈 여부 확인 |
@@ -38,5 +38,5 @@
 | firemap-ai-lab | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 
 | firemap-bizdev | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-report | report.py에 결재함 대기 줄·로드맵 줄 자동 출력 추가(approvals.md 상태 칸·growth/revenue.md 최신 줄) — 손으로 옮겨 적다 틀리는 것 막기 | approvals.md 맨 위 줄 고치기: 배포(push dev:main)는 10/2부터 무인 통과 → 유튜브 설명 apply만 남음(10/3 보고엔 반영, 결재함 원문은 아직) | 카페 조회 중앙값 3~4: 사진 5장+ 글 vs 3장 글 우리 카페 실측 비교 → rules.json |
+| firemap-report | report.py에 결재함 대기 줄·로드맵 줄·revenue.md 최신 줄·sitedaily 외부 기기 자동 출력 추가(손으로 옮겨 적기 없애기) | 결재함에 담당 직원이 10/6 삭제된 건(유튜브 브랜드 계정·서치콘솔 실험·외주 UI·해외 계정) 순돌이에게 접기 여부 묻는 줄 today.md에 올리기 | 카페→/calc utm 유입(X-CAFE-CALC-1, 10/10 시작)을 sitedaily로 편ID별 기기 수로 매일 보고에 한 줄 |
 | firemap-finishline-check | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

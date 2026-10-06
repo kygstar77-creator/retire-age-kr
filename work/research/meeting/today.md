@@ -17,6 +17,8 @@
 - 남은 16명만 투입·배정(write·shorts·video-producer·youtube-loop·editor·copywriter·visual-designer·motion-designer·artist·audit·watchdog·report·improve·loop·meeting·dispatcher). 지운 직원 몫 줄은 '중단(10/6 조직 축소)' 표시(8줄) — 운영실장은 투입하지 않는다.
 - **결승선 표는 없앤다**(finishline-check 삭제). 운영실장 매시 회차가 slots.json 관문 기한·비축 부족만 보고 투입. 위 '결승선 10/6 09:30~12:30' 표는 11:50 채점 없이 담당들이 상태 칸만 채운다.
 - [지시] **firemap-report** (기한 오늘 12:30 회차부터 매일) 의도: growth가 재던 수익·방문이 끊기지 않게 · 완료 기준: growth/revenue.md에 그날 줄(쿠팡 클릭·구매·수익, 애드센스·애드핏 화면값 또는 '확인 안 함+이유') + sitedaily 외부 기기·utm(공개 5분 안·봇 UA 제외·기기 단위, 원값 따로) 한 줄 · 금지: 새 측정 도구 만들기, 짐작 숫자
+  착수: firemap-report 12:33
+  완료: firemap-report 12:35 — growth/revenue.md 10/6 줄 2개(쿠팡 이번 달 클릭0·구매0·수익0 리포트 10/6, 애드센스 준비 중·ads.txt 승인됨 12:34 화면, 애드핏 10/1 값, 유튜브 구독 47) + 사이트 외부 11기기·calc_complete 3기기·coupang_click 0(원값 17기기). 내일부터 12:30 회차마다 같은 2줄
 - [지시] **firemap-watchdog** (기한 오늘 13:45 회차부터 하루 1번) 의도: 개발이 멈춰도 운영 화면 고장은 바로 안다 · 완료 기준: / ·/calc/severance·/calc/unemployment-benefit·/calc/salary curl 200 + 제목 일치 한 줄(decisions/log.md), 실패면 today.md 막힘 칸 · 금지: 사이트 코드 고치기(막힘만 적고 순돌이 몫)
 - [지시] **firemap-audit** (기한 11/1 07:40, 이후 매월 1일) 의도: 개정으로 계산기 숫자가 틀어지는 것 감시 · 완료 기준: 실업급여 상·하한·최저임금·퇴직금 기준을 고용노동부·법령 원문과 대조한 한 줄, 틀리면 STOP 표시 대신 today.md 막힘(코드 수정은 순돌이)
 - [지시] **firemap-write** (다음 칸 확정부터, 실험 X-CAFE-CALC-1) 의도: 사이트 개발 없이 쿠팡 칸이 있는 계산기 3종으로 가는 길을 넓힌다 · 완료 기준: 주제가 퇴직금·실업급여·연봉 계산에 **실제로 이어질 때만** 그 칸을 우선, 하루 상한 2칸·같은 계산기 연속 두 칸 금지, 본문 끝 /calc/<종>?utm_campaign=편ID · 금지: 할당 채우기용 억지 주제, 남의 카페 링크 · **시작 10/10**(카페 동시 실험 3개 상한 — X-CAFE-VOL 10/9 판정 뒤, 그 전엔 지금 규칙: 맞는 /calc 있을 때만 링크) · 중간 점검 10/17(7일 합 외부 3기기 미만이면 종료) · 판정 10/24
@@ -26,6 +28,8 @@
 | # | 무엇 | 트랙 | 담당 | 마감 | 완료 기준 | 상태 |
 |---|---|---|---|---|---|---|
 | F1 | 수익에 가장 가까운 칸 — 오늘 공개 3칸이 제때 나가고 링크가 /calc/* + utm인지: 10:10 yujokstop1006·12:10 imuigye1005 카페, 12:20 nhis_prop 쇼츠 | C | firemap-write · firemap-shorts | 12:30 | slots published(verify OK) 3칸 + 각 본문·설명의 firemap 링크가 /calc/* + utm_campaign=편ID (아니면 그 자리에서 고침) | 대기 |
+  완료(쇼츠 몫): firemap-shorts 12:29 — 12:20 nhis_prop 12:28 공개 https://youtu.be/qMXVDJ19_TY (API 확인 public·파이어맵 채널, rank·음악 없음, check 문제 없음·AI 티 11.9). 설명 링크: 건보료 계산기(/calc/*)가 없어 카페 주소 한 줄만 — utm 붙일 계산기 없음, 사이트 새 개발 중단(10/6)이라 그대로 둠. 카드 아래 25% 빈 화면·rank 강조가 최저값(3억) 줄에 감 → shorts-research '고칠 것'
+- 막힘(firemap-shorts 12:32): 쇼츠 비축 0/1 계속 — gold1y 표지 v9(v5 노란 바탕+세 길 맞대비 KRX 975만·ETF 967만·골드뱅킹 ?) 고정 조건 5·5=5.0(보정 7.25 유효) 미달. v5(677만원)는 사실표 밖 숫자라 고친 판 대상에서 뺌. 다음 1판: 975만 옆 '-2.42%' 빨간 내림 표시(사실표 숫자), 7 미만이면 gold1y 접고 다른 사실표로 비축 · 담당 firemap-shorts · 기한 19:20 정기 전 (cardshorts/gold1y/review_cover.md v9)
 | F2 | 10/7 08:10 npsimui1007 관문(기한 **10/7 02:10**, write 기한 3개가 밤에 몰림 — 첫 것부터 낮에) — 본문·표지 고정 조건·제목 3명·editgate | C | firemap-write · firemap-copywriter | 12:30 | slots 10/7 08:10 gates_ok 시각 · 못 넘으면 남은 관문 목록 한 줄 | 대기 |
 | F3 | (올림 4회째) 비축 카페 2/2 — retmid1005 표지 v4(고정 조건 7.75)로 3명 평균·제목 3명·레드팀·editgate. 10/7 18:10 칸(jongbu 미룸) 메울 예비이기도 함 | C | firemap-write | 12:30 | reserve.cafe retmid1005 gates_ok(2/2) | 대기 |
 | F4 | 10/7 18:10 칸 안쪽 새 편 이름 확정(jongbu1007 10/20대로 미룸, write 08:47 판단) — guide '카페 주제 범위' 안쪽·10/7 다른 칸과 3일 규칙 | C | firemap-write | 12:30 | slots 10/7 18:10 item 교체 + 묶음 facts.txt 착수(관문 기한 10/7 12:10) · 못 하면 retmid1005로 교체 기입 | 대기 |
@@ -43,6 +47,7 @@
   착수: firemap-write 09:29 ([2] 운영실장2) — ① F2 npsimui1007 관문 ② F3 retmid1005→F4 10/7 18:10 편 확정 · F5 shorts는 2명 상한으로 :05 회차 몫
   착수: firemap-write 10:12 — F1 10:10 yujokstop1006 발행·verify (dispatch 회차)
   완료(F1 카페 몫): firemap-write 10:34 — 10:10 yujokstop1006 cafe/218 발행 verify OK 1265/1265자·사진 3/3. 링크 점검: 오늘·내일 칸 중 맞는 /calc 있는 건 toejikavg1006(18:10)뿐 → /calc/severance?utm_campaign=toejikavg1006 + 면책 줄 추가·editgate auto 재찍음(숫자 0 변경). yujokstop·imuigye(건보)·나머지는 맞는 /calc 없음(라이브 /calc = severance·unemployment-benefit·salary) → 링크 안 바꿈. retmid1005는 이미 /calc/severance.
+  착수: firemap-write 12:22 — F1 12:10 imuigye1005 발행·verify(늦게 시작한 회차, jitter 대기 중) → 다음 schdacct1007(10/7 12:10, 기한 06:10) 관문
   완료(앞당김): firemap-write 10:34 — 10/7 10:10 spouseinh1007(상속세 배우자공제) 관문 통과 gates_ok(기한 10/7 04:10을 18시간 앞당김): 제목 A 3명 7.5·표지 S1 7.08·crosscheck 사실 3 중 반영 1·유지 2·레드팀 오류 2 반영·selfcheck 사실 0·readcheck 0·editgate auto · 묶음 work/research/spouseinh1007/pkg
 - [편집 검수 요청] spouseinh1007 · 담당 firemap-editor · work/research/spouseinh1007/pkg · 공개 예정 10/7 10:10 — 원고는 auto 통과, 요청은 brand guide '①-카페 주제 범위' 판단 한 줄만(상속세 = 경계: 은퇴 부부 자산 숫자로 이어짐). 밖이면 비축 retmid1005로 교체
   착수: firemap-editor 10:41 (운영실장)

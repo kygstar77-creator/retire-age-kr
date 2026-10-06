@@ -492,8 +492,8 @@
    {
     "title": "건강보험료율 2026, 직장·지역 7.19%와 실제 계산",
     "date": "Wed, 23 Sep 2026",
-    "self_rank": null,
-    "indexed": false
+    "self_rank": 1,
+    "indexed": true
    },
    {
     "title": "상속세 세율 2026, 일괄공제 5억 빼고 실제 낼 돈",
@@ -2614,5 +2614,533 @@
    "basis": "어제 글 표본 없음 — 지난 글 전체"
   },
   "at": "2026-10-01 12:37"
+ },
+ "2026-10-05": {
+  "cafe": [
+   {
+    "title": "건강보험료 재산 점수 과세표준 3억이면 월 얼마나 붙을까",
+    "read": 3
+   },
+   {
+    "title": "연봉 순위, 위로 갈수록 한 칸 오르기 어려워지는 이유",
+    "read": 3
+   },
+   {
+    "title": "퇴직금 1억 세금, 다닌 햇수 따라 얼마나 달라질까?",
+    "read": 6
+   },
+   {
+    "title": "퇴직 후 건강보험료는 배당·이자 1천만원 넘으면 월 얼마 더 나올까?",
+    "read": 9
+   },
+   {
+    "title": "전세보증보험 가입조건 따져 보면 공시가격 2억 빌라는 전세 얼마까지?",
+    "read": 2
+   },
+   {
+    "title": "실업급여 조건, 65세 넘어 들어간 회사는 그만둬도 못 받는 이유",
+    "read": 7
+   },
+   {
+    "title": "증여세 면제한도, 엄마가 먼저 쓰면 할머니가 준 1억 세금이 두 배",
+    "read": 3
+   },
+   {
+    "title": "사망자 계좌 정지 뒤 장례비, 유가족 통장 아닌 장례식장으로",
+    "read": 7
+   },
+   {
+    "title": "SCHD 배당금, 주가 크게 오른 1년 새 배당은 얼마나 늘었을까?",
+    "read": 6
+   },
+   {
+    "title": "국민연금 피부양자 탈락 기준, 재산 많으면 1천만원으로 반토막",
+    "read": 19
+   },
+   {
+    "title": "인천 오피스텔 매매, 9월 신고 셋 중 하나는 한 건물 거래",
+    "read": 0
+   },
+   {
+    "title": "서울 전세가율 높은 아파트, 매매가와 6600만원 차이 나는 곳도",
+    "read": 8
+   },
+   {
+    "title": "헬리오시티 국민평형 실거래가, 같은 동 구축보다 덜 오른 1년",
+    "read": 12
+   },
+   {
+    "title": "국민연금 미적립부채 1,450조 보도, 내 연금 계산식엔 기금 잔액이 없다",
+    "read": 1
+   },
+   {
+    "title": "공공재개발 이주비 대출이자 지원, 금리 3.8% 밑이면 덜 받아요",
+    "read": 5
+   },
+   {
+    "title": "[오피스텔 시황] 파크하비오 투룸 9월 실거래, 전세 중간값이 매매 중간값의 84%",
+    "read": 2
+   },
+   {
+    "title": "서울 아파트 실거래가로 본 구별 전세가율, 금천 60.9% 강남 35.9%",
+    "read": 7
+   },
+   {
+    "title": "프리랜서 원천징수 2.2%로 내려가는데, 보험설계사는 왜 그대로일까?",
+    "read": 0
+   },
+   {
+    "title": "마이크론 실적 이익률 25%→80.7%, SK하이닉스·삼성전자 8분기 공시 표",
+    "read": 1
+   },
+   {
+    "title": "한능검 취소좌석 오늘 17시 마감, 놓치면 다음 회차는 언제?",
+    "read": 1
+   },
+   {
+    "title": "실업급여 계산, 월급 차이가 커도 하루 금액은 왜 비슷할까?",
+    "read": 5
+   },
+   {
+    "title": "부부 국민연금으로 모자란 생활비, 예금으로 채우려면 얼마 있어야 할까?",
+    "read": 10
+   },
+   {
+    "title": "커버드콜 ETF 분배금은 더 받았는데, 남은 돈은 왜 SCHD보다 적었을까?",
+    "read": 23
+   },
+   {
+    "title": "메인스트리트캐피탈 배당, 세후 월 100만원 받으려면 몇 주 필요할까?",
+    "read": 2
+   },
+   {
+    "title": "SOXX SMH 차이, 엔비디아 비중은 얼마나 다를까?",
+    "read": 10
+   },
+   {
+    "title": "미국 장기 국채 금리 24년 만에 최고, 대출 금리는 얼마나 올랐을까?",
+    "read": 3
+   },
+   {
+    "title": "미국 내부자 매수 이번 주 1위 인히브릭스(INBX), 어떤 회사일까?",
+    "read": 1
+   },
+   {
+    "title": "액센츄어 실적 발표, 회사가 미리 밝힌 매출 전망은 얼마일까?",
+    "read": 0
+   },
+   {
+    "title": "AMD 월드랩스 인수, 82억 달러에 사는 회사는 뭘 하는 곳일까?",
+    "read": 3
+   },
+   {
+    "title": "전세 사는 우리 집 순자산, 자가 가구와 비교하면 어디쯤일까?",
+    "read": 7
+   }
+  ],
+  "blog": [
+   {
+    "title": "도곡동 아파트 실거래가, 평당 가장 비싼 단지는 타워팰리스일까?",
+    "date": "Wed, 30 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "엑슨모빌 홀딩스는 뭐가 바뀐 걸까? 배당금·배당일·주가 한 번에",
+    "date": "Wed, 30 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "대치동 아파트 실거래가, 은마 전세 6억일 때 래미안대치팰리스 전세는?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "VOO 배당금 9월 지급일, SPY·SPYM과 비교하면 뭐가 다를까?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "문정동 아파트 실거래가, 올림픽훼밀리타운이 파크하비오보다 6억 비싸다고?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "반포동 아파트 실거래가, 같은 국민평형인데 단지마다 20억 갈린 석 달",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "TLT 주가, 상장 뒤 가장 낮은데 배당은 얼마나 나올까?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "SCHD 9월 배당금, 주가가 뛰는 동안 배당은 얼마나 늘었을까?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "생산적금융 ISA 정부안 확정, 8월 발표 때와 뭐가 달라졌을까?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "성동구 아파트 매매, 작년 여름의 절반으로 줄었는데 평당 가격은?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "개포동 아파트 실거래가, 개포주공 전세 4억일 때 옆 새 아파트는 얼마?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "평촌동 아파트 실거래가, 같은 단지 1년 전과 견주면 얼마나 올랐을까?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   }
+  ],
+  "control": true,
+  "recheck": [
+   {
+    "title": "[공유] 아파트 전세가율 최고갱신",
+    "date": "Sat, 07 Dec 2024",
+    "self_rank": null,
+    "indexed": null,
+    "first_seen": "2026-09-22"
+   },
+   {
+    "title": "[공유] 아파트 vs 주식 투자",
+    "date": "Sat, 07 Dec 2024",
+    "self_rank": null,
+    "indexed": null,
+    "first_seen": "2026-09-22"
+   },
+   {
+    "title": "[공유] 젊은 사람들은 자산의 90%를 주식에 투자해야 한다",
+    "date": "Sat, 07 Dec 2024",
+    "self_rank": null,
+    "indexed": null,
+    "first_seen": "2026-09-22"
+   },
+   {
+    "title": "건강보험료율 2026, 직장·지역 7.19%와 실제 계산",
+    "date": "Wed, 23 Sep 2026",
+    "self_rank": 1,
+    "indexed": true,
+    "first_seen": "2026-09-23"
+   },
+   {
+    "title": "잠실주공5단지 평당 1억 7,500만원인데 같은 송파구 최저 단지는 4,400만원",
+    "date": "Thu, 24 Sep 2026",
+    "self_rank": null,
+    "indexed": false,
+    "first_seen": "2026-09-24"
+   },
+   {
+    "title": "내부자 매수 금액 1위가 IPO 청약이던 날, 명단에서 내가 확인한 것",
+    "date": "Thu, 24 Sep 2026",
+    "self_rank": null,
+    "indexed": false,
+    "first_seen": "2026-09-24"
+   },
+   {
+    "title": "존슨앤존슨 주가와 배당금 배당일, 2분기 실적까지 정리",
+    "date": "Thu, 24 Sep 2026",
+    "self_rank": null,
+    "indexed": false,
+    "first_seen": "2026-09-24"
+   },
+   {
+    "title": "재산세 계산기는 26만원인데 고지서는 62만원, 내 고지서에 붙은 세금",
+    "date": "Thu, 24 Sep 2026",
+    "self_rank": null,
+    "indexed": false,
+    "first_seen": "2026-09-24"
+   }
+  ],
+  "mature": {
+   "n": 5,
+   "indexed": 1,
+   "rate": 0.2,
+   "basis": "어제 글 표본 없음 — 지난 글 전체"
+  },
+  "at": "2026-10-05 10:05"
+ },
+ "2026-10-06": {
+  "cafe": [
+   {
+    "title": "건강보험 임의계속가입 평균 월급이 300만원이었다면 월 얼마일까",
+    "read": 1
+   },
+   {
+    "title": "유족연금 3년 뒤 끊긴 배우자 몇 살에 다시 받을까",
+    "read": 0
+   },
+   {
+    "title": "IRP 중도인출 집보다 아파서 꺼낼 때 세금 30% 덜 내는 이유",
+    "read": 2
+   },
+   {
+    "title": "금 투자 1년 성적 KRX 금시장은 손해",
+    "read": 5
+   },
+   {
+    "title": "국민연금 보험료 월 소득 300만원이면 직장인 몫은 얼마",
+    "read": 0
+   },
+   {
+    "title": "장기요양보험료율 월급 300만원 직장인 몫과 회사 몫은 각각 얼마",
+    "read": 1
+   },
+   {
+    "title": "기초연금 부부감액 소득인정액 몇만원부터 또 줄어들까",
+    "read": 6
+   },
+   {
+    "title": "부양가족연금 늦춰 받으면 가산은 0%",
+    "read": 2
+   },
+   {
+    "title": "월세 세액공제 정부안, 매달 100만원 내면 공제액 얼마나 늘어날까",
+    "read": 4
+   },
+   {
+    "title": "농지연금 수령액 3억 농지면 나이별로 월 얼마일까",
+    "read": 6
+   },
+   {
+    "title": "건강보험료 재산 점수 과세표준 3억이면 월 얼마나 붙을까",
+    "read": 6
+   },
+   {
+    "title": "연봉 순위, 위로 갈수록 한 칸 오르기 어려워지는 이유",
+    "read": 18
+   },
+   {
+    "title": "퇴직금 1억 세금, 다닌 햇수 따라 얼마나 달라질까?",
+    "read": 8
+   },
+   {
+    "title": "퇴직 후 건강보험료는 배당·이자 1천만원 넘으면 월 얼마 더 나올까?",
+    "read": 12
+   },
+   {
+    "title": "전세보증보험 가입조건 따져 보면 공시가격 2억 빌라는 전세 얼마까지?",
+    "read": 2
+   },
+   {
+    "title": "실업급여 조건, 65세 넘어 들어간 회사는 그만둬도 못 받는 이유",
+    "read": 31
+   },
+   {
+    "title": "증여세 면제한도, 엄마가 먼저 쓰면 할머니가 준 1억 세금이 두 배",
+    "read": 3
+   },
+   {
+    "title": "사망자 계좌 정지 뒤 장례비, 유가족 통장 아닌 장례식장으로",
+    "read": 10
+   },
+   {
+    "title": "SCHD 배당금, 주가 크게 오른 1년 새 배당은 얼마나 늘었을까?",
+    "read": 25
+   },
+   {
+    "title": "국민연금 피부양자 탈락 기준, 재산 많으면 1천만원으로 반토막",
+    "read": 25
+   },
+   {
+    "title": "인천 오피스텔 매매, 9월 신고 셋 중 하나는 한 건물 거래",
+    "read": 0
+   },
+   {
+    "title": "서울 전세가율 높은 아파트, 매매가와 6600만원 차이 나는 곳도",
+    "read": 10
+   },
+   {
+    "title": "헬리오시티 국민평형 실거래가, 같은 동 구축보다 덜 오른 1년",
+    "read": 13
+   },
+   {
+    "title": "국민연금 미적립부채 1,450조 보도, 내 연금 계산식엔 기금 잔액이 없다",
+    "read": 1
+   },
+   {
+    "title": "공공재개발 이주비 대출이자 지원, 금리 3.8% 밑이면 덜 받아요",
+    "read": 6
+   },
+   {
+    "title": "[오피스텔 시황] 파크하비오 투룸 9월 실거래, 전세 중간값이 매매 중간값의 84%",
+    "read": 2
+   },
+   {
+    "title": "서울 아파트 실거래가로 본 구별 전세가율, 금천 60.9% 강남 35.9%",
+    "read": 9
+   },
+   {
+    "title": "프리랜서 원천징수 2.2%로 내려가는데, 보험설계사는 왜 그대로일까?",
+    "read": 0
+   },
+   {
+    "title": "마이크론 실적 이익률 25%→80.7%, SK하이닉스·삼성전자 8분기 공시 표",
+    "read": 1
+   },
+   {
+    "title": "한능검 취소좌석 오늘 17시 마감, 놓치면 다음 회차는 언제?",
+    "read": 1
+   }
+  ],
+  "blog": [
+   {
+    "title": "도곡동 아파트 실거래가, 평당 가장 비싼 단지는 타워팰리스일까?",
+    "date": "Wed, 30 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "엑슨모빌 홀딩스는 뭐가 바뀐 걸까? 배당금·배당일·주가 한 번에",
+    "date": "Wed, 30 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "대치동 아파트 실거래가, 은마 전세 6억일 때 래미안대치팰리스 전세는?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "VOO 배당금 9월 지급일, SPY·SPYM과 비교하면 뭐가 다를까?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "문정동 아파트 실거래가, 올림픽훼밀리타운이 파크하비오보다 6억 비싸다고?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "반포동 아파트 실거래가, 같은 국민평형인데 단지마다 20억 갈린 석 달",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "TLT 주가, 상장 뒤 가장 낮은데 배당은 얼마나 나올까?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "SCHD 9월 배당금, 주가가 뛰는 동안 배당은 얼마나 늘었을까?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "생산적금융 ISA 정부안 확정, 8월 발표 때와 뭐가 달라졌을까?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "성동구 아파트 매매, 작년 여름의 절반으로 줄었는데 평당 가격은?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "개포동 아파트 실거래가, 개포주공 전세 4억일 때 옆 새 아파트는 얼마?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   },
+   {
+    "title": "평촌동 아파트 실거래가, 같은 단지 1년 전과 견주면 얼마나 올랐을까?",
+    "date": "Tue, 29 Sep 2026",
+    "self_rank": null,
+    "indexed": false
+   }
+  ],
+  "control": true,
+  "recheck": [
+   {
+    "title": "[공유] 아파트 전세가율 최고갱신",
+    "date": "Sat, 07 Dec 2024",
+    "self_rank": null,
+    "indexed": null,
+    "first_seen": "2026-09-22"
+   },
+   {
+    "title": "[공유] 아파트 vs 주식 투자",
+    "date": "Sat, 07 Dec 2024",
+    "self_rank": null,
+    "indexed": null,
+    "first_seen": "2026-09-22"
+   },
+   {
+    "title": "[공유] 젊은 사람들은 자산의 90%를 주식에 투자해야 한다",
+    "date": "Sat, 07 Dec 2024",
+    "self_rank": null,
+    "indexed": null,
+    "first_seen": "2026-09-22"
+   },
+   {
+    "title": "잠실주공5단지 평당 1억 7,500만원인데 같은 송파구 최저 단지는 4,400만원",
+    "date": "Thu, 24 Sep 2026",
+    "self_rank": null,
+    "indexed": false,
+    "first_seen": "2026-09-24"
+   },
+   {
+    "title": "내부자 매수 금액 1위가 IPO 청약이던 날, 명단에서 내가 확인한 것",
+    "date": "Thu, 24 Sep 2026",
+    "self_rank": null,
+    "indexed": false,
+    "first_seen": "2026-09-24"
+   },
+   {
+    "title": "존슨앤존슨 주가와 배당금 배당일, 2분기 실적까지 정리",
+    "date": "Thu, 24 Sep 2026",
+    "self_rank": null,
+    "indexed": false,
+    "first_seen": "2026-09-24"
+   },
+   {
+    "title": "재산세 계산기는 26만원인데 고지서는 62만원, 내 고지서에 붙은 세금",
+    "date": "Thu, 24 Sep 2026",
+    "self_rank": null,
+    "indexed": false,
+    "first_seen": "2026-09-24"
+   },
+   {
+    "title": "연금 받을 때 떼는 세금 5.5%인데 1,500만원 넘으면 달라지는 기준",
+    "date": "Thu, 24 Sep 2026",
+    "self_rank": null,
+    "indexed": false,
+    "first_seen": "2026-09-24"
+   }
+  ],
+  "mature": {
+   "n": 5,
+   "indexed": 0,
+   "rate": 0.0,
+   "basis": "어제 글 표본 없음 — 지난 글 전체"
+  },
+  "at": "2026-10-06 12:38"
  }
 }

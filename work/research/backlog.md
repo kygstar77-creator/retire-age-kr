@@ -5,7 +5,7 @@
 
 | 직원 | 다음 일 1 | 다음 일 2 | 다음 일 3 |
 |---|---|---|---|
-| firemap-meeting | 10/6 21:15: product-dev coupang_view·home_leave 배포 확인 → X-CP-1·X-HOME-1 시작 순서 확정 | 10/8 판정 준비: X-OPS-1·X-OPS-5·X-TOOL-1 숫자표(기한 내 완료율·공개 수·빈 시간·사용량) | 10/9 X-CAFE-VOL·X-YT-FREQ 판정 + 유튜브 대기 실험 3건 순서(LAND→OPEN→THUMB) |
+| firemap-meeting | 10/6 21:15: (product-dev 예약 10/6 삭제 — 누가 맡았는지부터) 첫 화면 쿠팡 칸·coupang_view·home_leave 배포 확인 → X-CP-1·X-HOME-1 시작 순서 확정 | 10/8 판정 준비: X-OPS-1·X-OPS-5·X-TOOL-1 숫자표(기한 내 완료율·공개 수·빈 시간·사용량) | 10/9 X-CAFE-VOL·X-YT-FREQ 판정 + 유튜브 대기 실험 3건 순서(LAND→OPEN→THUMB) |
 | firemap-behavior | 10/5 안건(coupang_view·home_leave 지시) 처리 추적 → 이벤트 들어오면 X-CP-1·X-HOME-1 시작 | 회의가 X-YT-OPEN-1 순서 정하면 다음 롱폼 대본 여는 장면 심리 검토·공개 7일 뒤 30·60초 곡선 판정 | 10/9 X-XP-1 중간 측정 · Studio 노출 클릭률 사람 확인 요청(API 미지원) · 카페 제목 심리 검토(아직 안 함) |
 | firemap-write | schdacct1007(10/7 12:10, 관문 기한 10/7 06:10) SCHD 계좌별 세후 — 원천징수 15%·ISA·연금계좌 원문, 낮에 당김 | wagepeak1007(기한 08:10)·ltcgrade1007(10:10)·pensavbreak1007(12:10) 관문 + 비축 1개는 예금·이자·금리 묶음(loop 10:07 요청) | goldway #216 KB 고시 날짜 수정(기한 10/7, cafeedit은 발행 잠금 없는 때) · refactor #56 rewrite(10/6) |
 | firemap-editor | M-1 녹음(16:01) 뒤 m1props 다시 뽑은 screen_text.txt 재서명(lfrender stamp, 시한 10/7 12:00) | aitell auto 기준 '~요' 7연속↑·55%↑ 단독 불합격 — cloud/publish-script-gate-1003 합친 뒤 바로 · scope 경계 경고가 실제로 조회 낮은 글을 잡는지 카페 146편 조회와 대조(맞으면 경계도 막기) | 공개 글 전수 점검(sweep.md) 조회 많은 순 다음 3편 · 공개 롱폼(A-1·E-1·E-2) 출처 줄 내부 꼬리표 점검 |

@@ -181,10 +181,9 @@ def spec(key, L, A):
                     data={'series': [['S&P500', 'ink', pts['SPY']], ['SCHD', 'ink3', pts['SCHD']], ['금', 'accent', pts['GLD']]], 'n': n, 'min': 9000, 'max': 15000,
                           'draw': A('그런데 시작과 끝만', 0), 'xlabels': months,
                           'tags': [['SPY', idx('SPY', '20260702'), 12304, '7.2 · 123,037,245원', A('석 달 만에', 0), 'up', False],
-                                   ['SPY', idx('SPY', '20260910'), 10776, '9.10 · 107,755,946원', A('석 달 만에', 14), 'left', False],
-                                   ['GLD', idx('GLD', '20260128'), 14364, '1.28 · 143,638,454원', A('금은 더 컸어요', 0), 'up', True],
-                                   ['GLD', idx('GLD', '20260928'), 10243, '9.28 · 102,425,567원 (−28.69%)', A('금은 더 컸어요', 16), 'down', True]],
-                          'fxAt': A('가장 높았던 날은', 0), 'fx': ['환율 최고 1,554.4원', '최저 1,337.9원']})
+                                   ['SPY', idx('SPY', '20260910'), 10776, '9.10 · 107,755,946원', A('석 달 만에', 14), 'left', False]] + ([['GLD', idx('GLD', '20260128'), 14364, '1.28 · 143,638,454원', A('금은 더 컸어요', 0), 'up', True],
+                                   ['GLD', idx('GLD', '20260928'), 10243, '9.28 · 102,425,567원 (−28.69%)', A('금은 더 컸어요', 16), 'down', True]] if L('금은 더 컸어요') >= 0 else []),   # v7은 금 고점 문장을 뺐다
+                          'fxAt': A('가장 높았던 날은', 0) if L('가장 높았던 날은') >= 0 else A('그런데 시작과 끝만', 30), 'fx': ['환율 최고 1,554.4원', '최저 1,337.9원']})
     if key == 'spy':
         return dict(kind='receipt', title='S&P500 영수증', sub='SPY · 달러로 사서 1년 뒤 원화로 판 값', source=SRC_ETF,
                     data={'head': 'S&P500 ETF(SPY) · 1억 · 단위 원', 'side': ['+15.01%', A('약 15%', 10), '달러로 1년 동안 오른 폭'],
@@ -319,11 +318,14 @@ def main(script):
 
     def chap(title):
         return re.sub(r'^\[', '', title).split()[0].rstrip(']')
+    # v7(10/6, 하루 녹음 한도 100줄): 대본에 없는 장·시작 문장의 장면은 건너뛴다 — v6은 그대로 전부 남는다
+    have = {chap(s['title']): s['lines'] for s in secs}
+    ACTIVE = [c for c in CUTS if c[1] in have and (c[2] is None or any(t.startswith(c[2]) for t in have[c[1]]))]
     scenes = []
-    for key, ch, start in CUTS:
+    for key, ch, start in ACTIVE:
         sec = next(s for s in secs if chap(s['title']) == ch)
         lines = sec['lines']
-        cuts = [c for c in CUTS if c[1] == ch]
+        cuts = [c for c in ACTIVE if c[1] == ch]
         idx = [0 if c[2] is None else next(j for j, t in enumerate(lines) if t.startswith(c[2])) for c in cuts]
         me = [c[0] for c in cuts].index(key)
         part = lines[idx[me]:(idx[me + 1] if me + 1 < len(idx) else None)]

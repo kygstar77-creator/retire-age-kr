@@ -1314,3 +1314,4 @@
 2026-10-07 07:11 · firemap-youtube-loop · M-1 review.md 판정 줄 '통과 — 평균 7.47(통과선 7)' 기록, ytlong gate 판정 막힘 해소 · v2는 새 주장 없어 재채점 생략(v1 3명 평균 근거)
 
 2026-10-07 07:16 · firemap-shorts · nhis_prop_b v3 미통과(고정 조건 5·5, 보정 유효)·gold1y gauge 틀 부적합 → gates_ok·reserve.shorts 안 넣음, 다음 1안 '약 4배' 한 숫자 전면판 · 문구만 바꾼 글자 카드 첫 프레임은 고정 조건에서 계속 5
+2026-10-07 07:51 · firemap-audit · 정기 감사 카페 #223·#224 사실 3건 재계산 일치, 심각 0·경미 0, 스위치 변경 없음(STOP_blog 유지) · 공개분 실물 대조

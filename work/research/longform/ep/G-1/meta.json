@@ -1,7 +1,7 @@
 {
  "ep": "G-1",
- "thumb": null,
- "thumb_status": "없음 — [썸네일 요청] firemap-visual-designer (PD 10/7)",
+ "thumb": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/research/longform/ep/G-1/thumb_g1f.png",
+ "thumb_status": "확정 g1f(visual-designer 10/7 09:16) — 3차 세 명 평균 7.40(제미나이 3.1-lite 8·8 / Claude 6.7 / 레드팀 7.5), 대조 g1e 7.15, 1초 블라인드 매 차수 주제 맞힘, 목표 8 미달 · 숫자는 make_thumbs.py가 calc_out에서 읽음 → 공개 전날 calc 재실행 뒤 `py -3.12 work/research/visual/G-1-thumb/make_thumbs.py g1f,g1s` 다시 돌릴 것(고점 날짜 바뀌면 assert가 막음) · 근거 visual/G-1-thumb/judges.md",
  "title_by": "firemap-copywriter copy/titles.md 1위 틀(C3, 3명 7.93) · 숫자는 g1meta.py가 calc.json에서 · 48h CTR이 채널 중앙값 아래면 title_swap+thumb_text_swap 짝으로 한 번 교체",
  "tags": [
   "금값",
@@ -27,7 +27,8 @@
  "desc_note": "녹음·렌더 뒤 chapters.py로 {CHAPTERS}, 카페 전체 표 글(cafe.md → firemap-write) 발행 뒤 {CAFE}를 그 주소로 채워 desc에. {CAFE}가 빈 채로는 올리지 않는다(대본 7장 \"설명란의 카페 글\" 약속).",
  "cafe_url": null,
  "experiment": {
-  "X-YT-OPEN-1": "B(첫 30초 구성, analysis ⑧)"
+  "X-YT-OPEN-1": "B(첫 30초 구성, analysis ⑧)",
+  "X-THUMB-2": "B(한 줄 큰 숫자 — g1f)"
  },
  "endscreen": {
   "video": null,
@@ -52,5 +53,8 @@
   "q3_약속이행": "예 — 제목 '산 날 따라 663만원부터 956만원까지'는 2장 영수증 4장이, '1천만원'은 4장 산 길 4개가, 썸네일 '1월 고점에 샀다면 -33.7%'는 2장·6장이 답한다. 대본 7장의 '전체 표는 카페 글' 약속은 cafe.md 글이 올라간 뒤에만 공개({CAFE} 빈 채 업로드 금지).",
   "q4_조언으로들리나": "아니오 — 전망·'지금 사라'를 말하지 않고(5장 '앞으로는 말씀드리지 않겠다'), +50.7%는 '전망 아님, 산수' 자막, 원인은 '같은 시기에 움직였다'까지만. 끝에 '금을 사거나 팔라는 말은 아닙니다'. 쿠팡·상품 링크 없음.",
   "q5_사람의몫": "예 — 경쟁 뉴스 3편이 한 구간·전망 대담일 때, 산 날별 영수증과 웃돈 조각을 원문 값으로 분해한 관점, 1년 전 KRX 웃돈 +6.3%가 그 손실의 가장 큰 조각이라는 계산, 한은 '1톤'처럼 원문에 없는 말을 빼는 사실 판단은 사람(팀)의 몫이다."
- }
+ },
+ "thumb_swap": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/research/longform/ep/G-1/thumb_g1s.png",
+ "thumb_swap_status": "예비(thumb_text_swap '산 값 되찾으려면 +50.7%') — 심사 전. 48h CTR이 채널 중앙값 아래면 title_swap과 짝으로 교체 결정 때 같은 판 3명 심사 뒤 올림",
+ "thumb_alt": "KRX 금시장 1g 종가 2025.10.2~2026.10.6 선 그래프, 1월 고점부터 빨간 선, 금 1월 고점에 샀다면 −33.7%"
 }

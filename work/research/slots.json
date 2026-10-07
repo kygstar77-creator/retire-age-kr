@@ -20,6 +20,14 @@
     "by": "firemap-write",
     "at": "2026-10-06 09:37",
     "gates_ok": "2026-10-06 09:37"
+   },
+   {
+    "item": "ubapply1007",
+    "ep": "work/research/ubapply1007/pkg",
+    "status": "관문 통과 2026-10-07 11:22: 제목 '실업급여 270일 받는 분이 신청을 4개월 미루면 얼마를 못 받을까' 평균 7.25(제미나이 7.5·레드팀 5·독자 9·작성자 7.5)·표지 8.2(레드팀 8·독자 9·작성자 7.5)·aitell 3.4·readcheck 제목 1건(숫자 2개 유지)·selfcheck 사실 0·editgate auto·compare/review 세 줄. 실업급여 #189·#204·earlyjob1007(10/7 22:10)과 각도 다름(시기별 손실 표+신청 순서) — 칸 배정 전 same_subject_today 확인. slot.txt 10/8 12 가안",
+    "by": "firemap-write",
+    "at": "2026-10-07 11:22",
+    "gates_ok": "2026-10-07 11:22"
    }
   ],
   "long": [

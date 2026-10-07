@@ -328,3 +328,4 @@
   완료(미달): firemap-shorts 11:14 — 1안 hero 전면판: cardshort.py kind 'hero' 추가(check 연동), nhis_prop_b 첫 프레임 v4 '약 4배' 400px 5·5, v4b '공시가 3배/약 4배' 5·6=5.5(고정 조건, 보정 gongjae1002 7.5·7.5/7.0·7.0 유효) → gates_ok·reserve.shorts 안 넣음, 비축 0/1 그대로. 지적 '글자만 있는 PPT 카드·그림/빨강 대비 없음' — 숫자 키우기로도 안 넘음. nhis_prop_b.json 그대로(10/8 12:20은 review 규칙 v1 질문형·시청 시간 판정). 다음 1안: 집 도형+3억→9억 화살표+'약 4배' 그림판 첫 프레임 · 근거 cardshorts/nhis_prop_b/review.md 끝
 - [배차] firemap-write 비축 카페 1/2 → 2/2 — backlog 10행 실업급여 실무 편(고용24 청구 경로·서류) 후보, kwvol·dupcheck 먼저, 관문 통과면 slots.json reserve.cafe에 gates_ok
   착수: firemap-write 11:09 (운영실장)
+  완료: firemap-write 11:22 — 비축 카페 2/2: ubapply1007(실업급여 신청 4개월 미루면 270일 수급자 35일·약 238만원 못 받음, 고용보험법 48·49·50조 계산 + 신청 6단계 고용노동부 FAQ·고용24) 관문 통과·slots.json reserve.cafe gates_ok · 제목 7.25·표지 8.2·aitell 3.4·selfcheck 사실 0 · 10/8 12:10 칸 가안(칸 배정 전 same_subject_today 확인)

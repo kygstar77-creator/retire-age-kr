@@ -31,6 +31,7 @@ def nums(text):
 def card_text(c):
     """B형 카드 한 장의 화면 글자 전부(막대 길이용 숫자 rows[i][1]는 화면에 안 찍혀서 뺀다)."""
     out = list(c.get('q', [])) + list(c.get('head', [])) + list(c.get('points', [])) + list(c.get('lines', []))
+    out += [c.get('label', ''), c.get('big', '')]                   # hero 전면판(10/7)
     out += [c.get('small', ''), c.get('note', ''), c.get('unit_label', '')]
     out += [f'{l} {v:,}{u}' for l, v, u in c.get('steps', [])]
     out += [f'{l} {txt}' for l, _, txt in c.get('rows', [])]
@@ -76,13 +77,13 @@ def check(spec):
         bad.append('사실표에 없는 숫자: ' + n)
     for i, c in enumerate(spec.get('cards', []), 1):   # B형: 카드 한 장에 숫자 3개까지(계기판은 한 번에 숫자 하나라 뺀다) · 장마다 6~10초 · 합 25~40초
         if c.get('kind') != 'gauge':
-            ns = nums(' '.join(list(c.get('head', [])) + list(c.get('points', [])) + list(c.get('lines', [])) + [c.get('note', '')] + [f'{l} {x}' for l, _, x in c.get('rows', [])]))  # 줄 이름(라벨)도 화면 숫자
+            ns = nums(' '.join(list(c.get('head', [])) + list(c.get('points', [])) + list(c.get('lines', [])) + [c.get('note', ''), c.get('label', ''), c.get('big', '')] + [f'{l} {x}' for l, _, x in c.get('rows', [])]))  # 줄 이름(라벨)도 화면 숫자
             if len(ns) > 3: bad.append(f'카드 {i}에 숫자 {len(ns)}개(3개까지): ' + ', '.join(sorted(ns)))
         if not 6 <= c.get('sec', 0) <= 10: bad.append(f'카드 {i} 길이 {c.get("sec")}초(6~10초)')
     if spec.get('cards'):
         tot = sum(c.get('sec', 0) for c in spec['cards'])
         if not 25 <= tot <= 40: bad.append(f'카드 합 {tot}초(25~40초)')
-    bhs_cards = [x for c in spec.get('cards', []) for x in list(c.get('q', [])) + list(c.get('head', [])) + [r[2] for r in c.get('rows', [])]]
+    bhs_cards = [x for c in spec.get('cards', []) for x in list(c.get('q', [])) + list(c.get('head', [])) + [c.get('label', ''), c.get('big', '')] + [r[2] for r in c.get('rows', [])]]
     bhs_cards += [f'{v:,}{u}' for c in spec.get('cards', []) for _, v, u in c.get('steps', [])]
     cc = spec.get('cover_chart') or {}
     for ch in bhs_missing(bhs_cards + list(spec.get('title', [])) + list(spec.get('cover', [])) + [cc.get('big', '')]):

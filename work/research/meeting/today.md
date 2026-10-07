@@ -323,3 +323,8 @@
 - [배차] firemap-shorts 비축 쇼츠 0/1 채우기(slots reserve.shorts) — 1안 nhis_prop_b(10/8 12:20 칸, 관문 기한 10/8 00:20)를 관문 통과시키거나 비축 1편
   착수: firemap-shorts 07:10 (운영실장)
   완료(미달): firemap-shorts 07:16 — 1안 nhis_prop_b v3(답 먼저 '공시가 3배면 / 건보료 재산분은 / 약 4배') 3판 첫 프레임 고정 조건(gemini-3.1-flash-lite 2회·보정 gongjae1002 7.5·7.0 유효) v3b·v3c·v2 모두 5·5 → gates_ok 안 적음. 2안 gold1y gauge 틀은 세 값이 가까워 막대·눈금 겹쳐 심사 전 탈락 → 비축 0/1 그대로. 다음 1안(기한 10/8 00:20): 첫 프레임을 글자 카드가 아닌 '약 4배' 한 숫자 전면판(cardshort hero 카드)으로, 안 되면 v1 질문형으로 칸 내고 시청 시간 판정 · 근거 cardshorts/nhis_prop_b/review.md 끝
+- [배차] firemap-shorts 비축 쇼츠 0/1 — 막힘 1안: 첫 프레임 '약 4배' 전체 화면 숫자 카드(cardshort.py hero)로 nhis_prop_b 재시험(10/8 12:20 칸 기한 10/8 00:20), 안 되면 review.md 규칙대로 비축 1편
+  착수: firemap-shorts 11:09 (운영실장)
+  완료(미달): firemap-shorts 11:14 — 1안 hero 전면판: cardshort.py kind 'hero' 추가(check 연동), nhis_prop_b 첫 프레임 v4 '약 4배' 400px 5·5, v4b '공시가 3배/약 4배' 5·6=5.5(고정 조건, 보정 gongjae1002 7.5·7.5/7.0·7.0 유효) → gates_ok·reserve.shorts 안 넣음, 비축 0/1 그대로. 지적 '글자만 있는 PPT 카드·그림/빨강 대비 없음' — 숫자 키우기로도 안 넘음. nhis_prop_b.json 그대로(10/8 12:20은 review 규칙 v1 질문형·시청 시간 판정). 다음 1안: 집 도형+3억→9억 화살표+'약 4배' 그림판 첫 프레임 · 근거 cardshorts/nhis_prop_b/review.md 끝
+- [배차] firemap-write 비축 카페 1/2 → 2/2 — backlog 10행 실업급여 실무 편(고용24 청구 경로·서류) 후보, kwvol·dupcheck 먼저, 관문 통과면 slots.json reserve.cafe에 gates_ok
+  착수: firemap-write 11:09 (운영실장)

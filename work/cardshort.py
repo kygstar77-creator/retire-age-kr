@@ -204,6 +204,8 @@ def cover_chart_frame(spec, im, d, M):
 #                   중간값(사실표 밖 숫자)은 찍지 않는다 — 숫자는 단계 값으로 '탁' 바뀌고, 움직이는 건 막대 길이뿐(레드팀 10/4 '87.0 중간값').
 #   kind "ratio"  : head(줄들)·rows[[라벨, 막대 길이용 값(화면에 안 찍힘), 찍을 글자], ...]·note. 막대가 차례로 자란다.
 #   kind "points" : head(줄들)·points(0.8초 간격으로 나타남, {강조})·note.
+#   kind "hero"   : 한 숫자 전면판(10/7 firemap-shorts, 1초 시험 막힘 1안) — head(작은 위 줄들)·label(큰 흰 줄)·big(화면 가득 노랑 숫자)·note(회색 한 줄).
+#                   첫 프레임부터 다 보인다(1초 시험 대상). big은 0.5초마다 아주 살짝 숨쉬듯 커졌다 돌아온다.
 #   kind "end"    : head(줄들)·lines·source. 마지막 0.4초는 첫 장 첫 프레임으로 겹쳐 넘어가 반복 재생이 이어진다.
 # 장 사이 0.25초는 다음 장이 오른쪽에서 밀려 들어온다. 화면 글자는 전부 spec 안 — shortsdaily check가 사실표와 대조한다.
 CARD_TOP = 262
@@ -248,6 +250,21 @@ def card_gauge(d, c, t, y):
         x = M + 40 + span * vv / mx - tw
         d.text((max(M + 40, x), by + 76), tick, font=f, fill=YELLOW if i == k else (WHITE if i < k else (96, 100, 114)))
     return y + 620
+
+def card_hero(d, c, t, y):
+    M = 64
+    y = head_block(d, c.get('head', []), y, c.get('head_size', 104)) + 20
+    if c.get('label'):
+        s = fit(d, c['label'], SAFE_R - M, 136); draw_runs(d, M, y, runs(c['label']), BHS(s)); y += int(s * 1.15)
+    big = c['big']; s0 = fit(d, big, SAFE_R - M, c.get('big_size', 400), lo=120)
+    pulse = 1 + 0.03 * max(0.0, math.sin(math.pi * (t - 1.0) / 0.5)) if 1.0 <= t < 3.0 else 1.0
+    s = int(s0 * pulse); f = BHS(s)
+    d.text((M + (s0 - s) // 4, y + (s0 - s) // 2 - int(s0 * 0.08)), big.replace('{', '').replace('}', ''), font=f, fill=YELLOW)
+    y += int(s0 * 1.05)
+    if c.get('note'):
+        for ln in wrap_runs(d, runs(c['note']), PD7(54), SAFE_R - M):
+            draw_runs(d, M, y, [(ch, GREY if col == WHITE else col) for ch, col in ln], PD7(54)); y += 76
+    return y + 10
 
 def card_ratio(d, c, t, y):
     M = 64
@@ -297,6 +314,7 @@ def card_end(d, c, t, y, spec):
 def draw_card(d, spec, c, t, y):
     k = c['kind']
     if k == 'gauge': return card_gauge(d, c, t, y)
+    if k == 'hero': return card_hero(d, c, t, y)
     if k == 'ratio': return card_ratio(d, c, t, y)
     if k == 'points': return card_points(d, c, t, y)
     if k == 'end': return card_end(d, c, t, y, spec)

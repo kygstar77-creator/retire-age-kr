@@ -463,7 +463,8 @@
    "item": "spouseinh1007",
    "owner": "firemap-write",
    "gates_ok": "2026-10-06 10:34",
-   "note": "[범위 경계 — 상속·가족 돈, 은퇴 부부 자산 숫자로 이어짐] firemap-write 10/6 03:2x(F3): 상속세 배우자 공제(검색 상속세배우자공제 970, kwvol 10/6) — 배우자가 상속받으면 5억 일괄 아닌 최소 5억~최대 30억까지 공제되는 계산, 실제 낼 돈. 우리 카페 0편(inhtax는 블로그 세율편), 10/6 10:10 유족연금과 22시간 띄움이나 주제 다름(연금 vs 상속세). 상속세및증여세법 제19조·제21조 원문 대조 필요. 관문 기한 10/7 04:10 · 묶음 work/research/spouseinh1007/pkg · 경계라 editor 범위 판단 한 줄 필요, 밖이면 비축 retmid로 교체 | 10:34 firemap-write 관문 통과: 제목 A 3명 7.5·표지 S1 7.08·레드팀 오류 2 반영·selfcheck 사실 0·editgate auto. 범위 경계 판단은 editor 확인 요청(today.md)"
+   "note": "[범위 경계 — 상속·가족 돈, 은퇴 부부 자산 숫자로 이어짐] firemap-write 10/6 03:2x(F3): 상속세 배우자 공제(검색 상속세배우자공제 970, kwvol 10/6) — 배우자가 상속받으면 5억 일괄 아닌 최소 5억~최대 30억까지 공제되는 계산, 실제 낼 돈. 우리 카페 0편(inhtax는 블로그 세율편), 10/6 10:10 유족연금과 22시간 띄움이나 주제 다름(연금 vs 상속세). 상속세및증여세법 제19조·제21조 원문 대조 필요. 관문 기한 10/7 04:10 · 묶음 work/research/spouseinh1007/pkg · 경계라 editor 범위 판단 한 줄 필요, 밖이면 비축 retmid로 교체 | 10:34 firemap-write 관문 통과: 제목 A 3명 7.5·표지 S1 7.08·레드팀 오류 2 반영·selfcheck 사실 0·editgate auto. 범위 경계 판단은 editor 확인 요청(today.md) | 발행 10:26 #226 verify OK 1757/1757·사진 3/3 (write 10:29)",
+   "published": "https://cafe.naver.com/firemap/226"
   },
   {
    "at": "2026-10-07 12:10",
@@ -542,10 +543,10 @@
   {
    "at": "2026-10-08 08:10",
    "kind": "cafe",
-   "item": "nhisrent1005",
+   "item": "sanghan1008",
    "owner": "firemap-write",
-   "gates_ok": "2026-10-05 05:00",
-   "note": "firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 비축에서 배정 — nhisprop1005(10/5 08:10) 뒤 3일 지나 겹침 조건 풀림. 쓰기 전 write가 같은 날 끝말 겹침만 확인. 비축은 retmid1005 1편 남음 → 비축 1편 새로 만들기(최소 2)"
+   "gates_ok": "2026-10-07 10:29",
+   "note": "관문 통과(write 10:29): nhisrent1005 → sanghan1008 교체 — nhisrent는 #209(10/5 건보료 재산 점수 과세표준 3억)와 같은 대상·예시라 naverpost '같은 대상 이미 씀'으로 막힘(hold.txt). 새 편: 본인부담상한제 환급금 10/8 시행 체납액 공제(국민건강보험법 제44조③) · 검색 32,180·우리 0편 · 제목 T1 7.5·표지 S2 7.33·레드팀 오류 2 반영·crosscheck·selfcheck 사실 0·aitell 0.0·editgate auto · 근거 work/research/sanghan1008/review.md | 이전: firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 비축에서 배정 — nhisprop1005(10/5 08:10) 뒤 3일 지나 겹침 조건 풀림. 쓰기 전 write가 같은 날 끝말 겹침만 확인. 비축은 retmid1005 1편 남음 → 비축 1편 새로 만들기(최소 2)"
   },
   {
    "at": "2026-10-08 12:20",

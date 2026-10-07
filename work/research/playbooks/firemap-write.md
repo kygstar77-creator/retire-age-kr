@@ -63,3 +63,5 @@
 - 10/6 22:4x parking1007: 저축은행중앙회 입출금 공시는 화면에 안 나오고 ratanym_0100.jct(JSON)로 온다 — Playwright로 페이지 열고 `$('#pagePer').val(200); $('#btnSearch').click()` 뒤 응답을 받으면 156개 전부(RATE_LOW·RATE_HIGH·HGST_INTR_APL_AMT·SWEETENER·ETC_NOTE_MATTER). '최고금리'만 보면 낚인다 — 적용 금액·판매중단(ETC_NOTE)까지 본다. 레드팀 제안도 원문 대조(65세 비과세종합저축 제안은 2026 개정으로 틀렸다).
 
 - 2026-10-07 earlyjob1007: 제목은 심사 전에 aitell.frame_check(틀 v2: ~는데·왜 금지, 물음은 얼마·몇만)부터 돌린다 — 제미나이 8점 받은 T6을 도장 단계에서 버리고 2차례 다시 심사했다. 행정예고는 부칙 적용례(무슨 날 기준인지)와 시행일 요일까지 원문으로 본다.
+
+- 10/7: 관문 통과(gates_ok)한 비축 묶음도 칸에 넣기 전에 발행기 중복 검사(naverpost same_subject_today, 최근 카페 24편)를 돌린다 — nhisrent1005는 #209와 같은 예시라 칸 전날까지 막혀 있었다. 새 편은 '발행일 당일 시행되는 법 조항'(법령 eflaw 시행예정본)처럼 경쟁 0편인 시의성을 찾으면 하루 안에 관문을 넘길 수 있다.

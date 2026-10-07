@@ -13,6 +13,19 @@
     "url": "https://cafe.naver.com/firemap/225"
    },
    "note": "verify OK 1312/1312자·사진 3/3 · 블로그는 회복 계획대로 발행 안 함(STOP_blog) · 다음 칸 earlyjob1007(10/7 22:10) 관문 통과: 자료 6출처(고용노동부 공고 2026-458 hwpx 원문·고시 2024-60·고용보험법·시행령·별표1·WebSearch 경쟁) · 검증 경로 crosscheck(Gemini 대리) 사실 5 중 반영 4·유지 1(계산기 링크), 말투 10 중 2 반영 · 레드팀 오류 9 반영→재검 0 · selfcheck 사실 0 · 개선: beat.py GAP_OK에서 삭제된 loop 예약 제거(일감표 2번 헛신호)"
+  },
+  {
+   "hour": 10,
+   "ts": "10:30",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "상속세 배우자공제 20억 집이면 배우자 몫 따라 세금 얼마나 달라질까",
+    "url": "https://cafe.naver.com/firemap/226"
+   },
+   "note": "verify OK 1757/1757자·사진 3/3 · 블로그는 회복 계획대로 발행 안 함 · 10/8 08:10 칸 nhisrent1005(#209 중복 막힘) → sanghan1008 관문 통과: 자료 5출처(보건복지부 보도자료 2026-08-31 본문·붙임 PDF, 국민건강보험법 2026.10.8 시행본·현행본, 법령 검색, WebSearch 경쟁/매체 3) · 검증 경로 crosscheck(Gemini 대리) 사실 2 중 반영 1·유지 1, 말투 12 중 7 반영 · 레드팀 숫자 오류 0·오류 2 반영·표현 9 중 8 반영 · selfcheck 사실 0 · 개선: patrol.py에 '다음 36시간 카페 칸 묶음의 발행기 막힘(hold.txt·같은 대상 이미 씀)' 검사 추가 — gates_ok만 보고 칸이 찬 줄 알았던 10/8 08:10 nhisrent1005 같은 빈칸을 순찰이 잡음"
   }
  ]
 }

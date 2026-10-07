@@ -83,6 +83,20 @@ try:
             else: continue
         if at < now: continue
         dl = at - datetime.timedelta(hours=lead[x['kind']])
+        # 10/7 write: 10/8 08:10 칸 nhisrent1005가 gates_ok인데도 발행기가 '같은 대상 이미 씀'(#209)으로 막고 있었다.
+        # 관문 통과 표시만 보면 칸이 찬 것처럼 보이니, 다음 36시간 카페 칸 묶음은 발행기 막힘(hold·같은 대상)도 미리 잰다.
+        if x['kind'] == 'cafe' and x.get('item') and at <= now + datetime.timedelta(hours=36):
+            pk = os.path.join(R, x['item'], 'pkg')
+            try:
+                if os.path.exists(os.path.join(pk, 'hold.txt')):
+                    bad.append(f"칸 묶음 보류됨: {x['at'][5:]} cafe {x['item']} — hold.txt가 있어 발행기가 안 올림, 칸 편 교체 필요")
+                elif os.path.exists(os.path.join(pk, 'title.txt')) and not os.path.exists(os.path.join(pk, 'published.txt')):
+                    if HERE not in sys.path: sys.path.insert(0, HERE)
+                    import naverpost as _np
+                    _dup = _np.same_subject_today('cafe', open(os.path.join(pk, 'title.txt'), encoding='utf-8').read().strip())
+                    if _dup: bad.append(f"칸 묶음 중복 막힘: {x['at'][5:]} cafe {x['item']} — 발행기 '같은 대상 이미 씀'({_dup[0][1]}), 칸 편 교체 필요")
+            except Exception as e:
+                print('칸 묶음 막힘 검사 못 함:', x['item'], e)
         if x.get('gates_ok'): continue
         what = f"{x['at'][5:]} {x['kind']} {x.get('item') or '편 없음'}({x.get('owner','')})"
         if now >= dl: bad.append(f'미리 통과 못 함: {what} — 관문 기한 {dl:%m/%d %H:%M} 지남, 비축분으로 바꾸거나 오늘 안에 통과')

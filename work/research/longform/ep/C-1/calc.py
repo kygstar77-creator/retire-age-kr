@@ -207,3 +207,23 @@ for s in [2000, 2008]:
         out3.append(f'  {s}년 시작 {mode}: ' + ' '.join(f'{s + i}:{x / 1e8:.2f}' for i, x in enumerate(pth)))
 (HERE / 'calc_out.txt').open('a', encoding='utf-8').write('\n'.join(out3) + '\n')
 print('\n'.join(out3))
+
+# 7) 달러 기준 절(artist 10/8 13:54 ③) — 문턱(1997 vs 1998 시작)이 환율 효과인지 같은 화면에 밝히기 위해
+#    '환율이 한 번도 안 움직였다고 놓으면'(달러 수익률을 그대로 원화 잔액에 적용). 세금·건보 규칙은 같다.
+out7 = ['\n## 7) 원화 vs 달러 기준(환율 변화 뺌) — 3억원 · 월 200만원 · 시작 해 1989~2006, 고갈 연차(없으면 버틴 해+)']
+for s in range(1989, 2007):
+    cells = []
+    for lab, R in [('원화', R_KRW), ('달러', R_USD)]:
+        rs = [R[y] for y in YEARS if y >= s]
+        for mode in ['A', 'B']:
+            k, n, end, _ = run(300_000_000, 24_000_000, rs, mode)
+            cells.append(f'{lab} {mode} ' + (f'{k}년차 바닥' if k else f'{n}년+ 남음 {eok(end)}'))
+    out7.append(f'  {s}년 시작: ' + ' | '.join(cells))
+for lab, R in [('원화', R_KRW), ('달러', R_USD)]:
+    c = {}
+    for mode in ['A', 'B']:
+        c[mode] = sum(1 for s in range(1989, 2007) if run(300_000_000, 24_000_000, [R[y] for y in YEARS if y >= s][:20], mode)[0])
+    out7.append(f'  {lab} 기준 20년 안에 바닥(18개 중): 배당 {c["A"]} · 팔기 {c["B"]}')
+out7.append(f'  환율(ECOS 연말): 1996 {fx[1996]:,.1f} · 1997 {fx[1997]:,.1f} · 1998 {fx[1998]:,.1f} · 2025 {fx[2025]:,.1f}')
+(HERE / 'calc_out.txt').open('a', encoding='utf-8').write('\n'.join(out7) + '\n')
+print('\n'.join(out7))

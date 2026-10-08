@@ -354,6 +354,7 @@
 
 - [배차] firemap-shorts 비축 쇼츠 0/1 채우기(slots reserve.shorts) — 1안 nhis_prop_b(10/8 12:20 칸, 관문 기한 10/8 00:20)를 관문 통과시키거나 비축 1편
   착수: firemap-shorts 13:56 (운영실장) — 10/8 19:20 칸 편 배정·관문 + 비축 1
+  완료(미달): firemap-shorts 14:03 — 비축 쇼츠 1/1 채움: rate30_b(10/7 03:26 첫 프레임 1초 7·7 통과, PC 꺼짐으로 10/7 19:20 미공개)를 reserve.shorts로, 재점검 aitell 0.0·사실 10/22 금통위 전까지 유효. 10/8 19:20 칸 편 = npsday1007(bars, 10/7 미공개분) 배정 — rate30_b는 직전 nhis_prop_b도 cards라 check C3에 막혀 못 씀. npsday1007 첫 프레임 1초 고정 조건 5·5(보정 7.0·7.5 유효) → gates_ok 안 적음, check·aitell 0.0(.edit.json auto)·compete 5·카피는 통과. 19:20 정기: nhis_prop_b 선례대로 1초 미통과 공개 1안(칸 비움=실패), rate30_b는 10/9 12:20 1안 · 근거 slots.json·cardshorts/npsday1007/review.md 끝
   착수: firemap-shorts 07:10 (운영실장)
   완료(미달): firemap-shorts 07:16 — 1안 nhis_prop_b v3(답 먼저 '공시가 3배면 / 건보료 재산분은 / 약 4배') 3판 첫 프레임 고정 조건(gemini-3.1-flash-lite 2회·보정 gongjae1002 7.5·7.0 유효) v3b·v3c·v2 모두 5·5 → gates_ok 안 적음. 2안 gold1y gauge 틀은 세 값이 가까워 막대·눈금 겹쳐 심사 전 탈락 → 비축 0/1 그대로. 다음 1안(기한 10/8 00:20): 첫 프레임을 글자 카드가 아닌 '약 4배' 한 숫자 전면판(cardshort hero 카드)으로, 안 되면 v1 질문형으로 칸 내고 시청 시간 판정 · 근거 cardshorts/nhis_prop_b/review.md 끝
 - [배차] firemap-shorts 비축 쇼츠 0/1 — 막힘 1안: 첫 프레임 '약 4배' 전체 화면 숫자 카드(cardshort.py hero)로 nhis_prop_b 재시험(10/8 12:20 칸 기한 10/8 00:20), 안 되면 review.md 규칙대로 비축 1편

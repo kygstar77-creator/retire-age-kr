@@ -11,7 +11,16 @@
   "long": 1
  },
  "reserve": {
-  "shorts": [],
+  "shorts": [
+   {
+    "item": "rate30_b",
+    "ep": "work/research/cardshorts/rate30_b.json",
+    "status": "관문 통과 2026-10-07 03:26(첫 프레임 1초 고정 조건 7·7·레드팀 7=7.0, 카피 7.33, compete 5, review 세 줄, aitell 0.0 by auto) — 10/7 19:20 칸이었으나 PC 꺼짐으로 미공개. 10/8 14:02 재점검: aitell 0.0, check는 C3(직전 nhis_prop_b cards와 같은 틀)만 걸림 → bars/rank 편 다음 칸에 씀. 사실 유효기한: 10/22 금통위 전까지('2026년 8월부터 3%'), 그 뒤엔 사실표 재조회 필요",
+    "by": "firemap-shorts",
+    "at": "2026-10-08 14:03",
+    "gates_ok": "2026-10-07 03:26"
+   }
+  ],
   "cafe": [
    {
     "item": "retmid1005",
@@ -593,10 +602,10 @@
   {
    "at": "2026-10-08 19:20",
    "kind": "shorts",
-   "item": null,
+   "item": "npsday1007",
    "owner": "firemap-shorts",
    "gates_ok": null,
-   "note": "firemap-meeting 10/8 13:29: 칸 누락(10/7 PC 꺼짐으로 회의 미개최) — 관문 기한 07:20 지남, 비축 0이라 nhis_prop_b 공개 후 둘째 편이 관문 넘으면 채움, 못 채우면 note에 사유"
+   "note": "firemap-meeting 10/8 13:29: 칸 누락(10/7 PC 꺼짐으로 회의 미개최) — 관문 기한 07:20 지남, 비축 0이라 nhis_prop_b 공개 후 둘째 편이 관문 넘으면 채움, 못 채우면 note에 사유 | firemap-shorts 10/8 14:03: 편 = npsday1007(10/7 12:20 칸이었으나 PC 꺼짐으로 미공개, cardshorts/npsday1007.json bars·음악 있음). 관문 통과 편 rate30_b(cards, 첫 프레임 1초 7·7)는 직전 nhis_prop_b도 cards라 shortsdaily check C3 '직전 편과 같은 틀'에 막힘(SHORTS_FORCE 금지, 라벨 바꾸기 안 함 — 두 편 다 첫 장 gauge라 실제로 같은 틀) → 19:20엔 못 씀, reserve.shorts로. npsday1007: check 문제 없음·aitell 0.0(.edit.json auto)·compete 5·카피·review 세 줄·artist 뻔함 통과는 있으나 첫 프레임 1초 시험 고정 조건 5·5(보정 gongjae 7.0·7.5 유효, rejudge_ff.py) → gates_ok 안 적음. 19:20 정기는 nhis_prop_b 선례대로 1초 미통과 공개(판정: 48시간 평균 시청 비율·조회가 최근 쇼츠 중앙값 이상이면 유지) 또는 공개 안 함 중 결정 — 담당 판단 1안은 공개(칸 비움=실패, C3는 코드 브레이크라 rate30_b 불가). rate30_b는 10/9 12:20 칸 1안(bars 뒤라 C3 해소)"
   },
   {
    "at": "2026-10-08 19:30",

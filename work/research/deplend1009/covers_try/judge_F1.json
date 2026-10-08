@@ -1,0 +1,9 @@
+{
+ "model": "gemini-3.1-flash-lite",
+ "scores": {
+  "F1": [
+   7.5,
+   7.5
+  ]
+ }
+}

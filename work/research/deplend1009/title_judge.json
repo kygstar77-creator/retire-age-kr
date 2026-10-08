@@ -1,0 +1,33 @@
+{
+ "model": "gemini-3.1-flash-lite",
+ "scores": {
+  "D1": [
+   null,
+   null
+  ],
+  "D2": [
+   null,
+   null
+  ],
+  "D4": [
+   null,
+   null
+  ],
+  "D5": [
+   null,
+   null
+  ],
+  "D6": [
+   null,
+   null
+  ],
+  "D8": [
+   null,
+   null
+  ],
+  "D9": [
+   null,
+   null
+  ]
+ }
+}

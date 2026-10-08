@@ -643,10 +643,10 @@
   {
    "at": "2026-10-09 10:10",
    "kind": "cafe",
-   "item": null,
+   "item": "deplend1009",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 = 칸-6h. 08:10은 비축 retmid1005 우선 검토(같은 날 같은 대상 확인). 예금·이자 주제 하루 1칸 이상(rules.json 10/8)"
+   "note": "firemap-write 10/8 15:20: 원고 c00~c03·표 2장·제목 가안·레드팀 사실 대조 반영 끝, gates_ok 아직 — 표지 7 미달·readcheck 4건·crosscheck·editgate 남음(work/research/deplend1009/review.md). 기한 10/9 04:10"
   },
   {
    "at": "2026-10-09 12:10",

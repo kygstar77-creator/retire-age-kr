@@ -13,6 +13,19 @@
     "url": "https://cafe.naver.com/firemap/227"
    },
    "note": "verify OK 1334/1334자·사진 3/3 · 제목 숫자 2개라 readcheck가 막아 '실업급여 270일 받는 분이 신청을 미루면 얼마나 못 받을까'로 고침(4개월은 본문 첫 줄 그대로, 본문 0 변경)·editgate auto 재도장 · 블로그는 회복 계획대로 발행 안 함 · 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0, 카페 8칸 빈칸) → 오늘 14~22시 칸에 관문 통과 묶음 재배정(sanghan·parking·pensavbreak·wagepeak·ltcgrade) · 리팩토링 #81(mdiv12) 첫 문단에 '월배당 ETF'·'비교' 넣어 rewrite, verify OK 1483자·사진 3 · 새 자료조사 없음(비축 묶음 발행 회차) · 교차검증은 묶음 관문 때 끝남 · 개선: 없음(제목 숫자 2개를 '유지'로 남긴 비축분이 발행 때 막힘 — 비축 관문에서 readcheck 제목 지적은 유지 불가로 playbook에 적음)"
+  },
+  {
+   "hour": 14,
+   "ts": "14:39",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "본인부담상한제 환급금 10월부터 밀린 건강보험료 먼저 빼고 지급",
+    "url": "https://cafe.naver.com/firemap/228"
+   },
+   "note": "14:10 칸 sanghan1008 발행(관문 10/7 10:29) · verify OK 1496/1496자·사진 3/3 · 제목 교체(readcheck 숫자 2→1, 같은 날 '얼마' 끝말 3칸 경고)·editgate auto 재stamp · 블로그: 회복 계획(하루 1편·색인 0 경보)대로 이번 회차 없음 · 10/9 08:10=earlyjob1007 · schdacct1007 시세 재조회(10/7 종가) · 새 편 사실표 2개(deplend1009 예금담보대출 vs 중도해지·npsage1009 64년생 국민연금 수령 63세) — 원고·관문은 다음 회차 · 개선: 없음(editgate stamp를 잘못 인자로 한 번 찍은 것 즉시 되돌림)"
   }
  ]
 }

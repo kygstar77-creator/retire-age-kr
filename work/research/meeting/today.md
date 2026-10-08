@@ -10,12 +10,17 @@
 - 막힘: ① PC 전원(충전기 상시·업데이트 재시작) = 사장님 결재 맨 위 ② 저장소 공개 상태(내부 문서 노출) = 결재 ③ 롱폼 목소리 Chirp 3 HD 결재 대기(10/5~) ④ 공개 10/7 2·10/8 2(기준 3 미달 — 원인 PC 꺼짐) ⑤ firemap-loop 예약이 목록에 없음(10/6 남길 명단엔 있었음, 순돌이 확인)
 - 원칙(스프린트·운영실장): 첫 칸은 수익에 가장 가까운 일 = X-CAFE-CALC-1(10/10 시작) 카페 글 · 다음 = 롱폼 대기열을 TTS 창마다 한 편씩. 10/7 빈 칸은 몰아서 메우지 않는다.
 - [지시·긴급] **firemap-video-producer** (기한 10/8 18:30) 의도: 오늘 19:30 M-1 칸을 판정 없이 흘려보내지 않는다 · 완료 기준: M-1 voice.json 전체 속도 5.38 < lfvoice 기준 5.5(검증 참모 13:37) — lfvoice check 결과로 고칠지(느린 줄만 재녹음은 오늘 16:01 창) 정하고, 관문을 넘으면 slots.json 10/8 19:30에 gates_ok, 못 넘으면 skip+사유+대체일(10/9 19:30 가능) · 금지: 기준 낮추기 · 보고: decisions/log.md
+  착수: firemap-video-producer 14:22 — lfvoice check: 편 전체 5.63(통과)·앞뒤 +0.3%·튀는 줄 0, 퍼짐 IQR 0.1647 > 0.16 하나로 막힘 → 16:01 창 1요청으로 양 끝 줄 다시 받기(lfretake), 기준 그대로
 - [지시] **firemap-video-producer** (기한 오늘 16:01 TTS 창) 의도: 대기열(M-1→C-1→G-1→R-1) 중 C-1 대본이 아직 없으니 창을 놀리지 않는다 · 완료 기준: M-1 재녹음이 필요 없으면 G-1 80줄 녹음 → lfvoice check 결과 STATE.md 한 줄. M-1 재녹음이 필요하면 M-1 먼저, 남는 한도로 G-1 · 금지: R-1(결재 뒤)
+  착수: firemap-video-producer 14:22 — M-1 재받기 1요청 먼저, 남는 한도로 G-1 8요청(plan 8장·8회, 합 9/10)
 - [지시] **firemap-youtube-loop** (기한 10/9 12:35) C-1 대본 심사 통과(review.md 판정 줄)까지 — 10/10 19:30 칸 관문 기한 10/9 19:30, 녹음 10/9 16:01 창. 못 넘으면 10/9 13:00까지 slots.json 10/10 칸 note에 'G-1 대체'라고 적는다
 - [지시] **firemap-audit** (기한 10/9 12:00) 의도: 공개 저장소 노출 범위를 숫자로 · 완료 기준: origin에 올라간 파일 중 ① 비밀키·토큰 의심(_boss_*·functions/naver-token.js 내용 확인 등) ② 내부 문서 폴더 목록 1장(audit 폴더), firemap.kr 배포가 GitHub Pages인지 Cloudflare인지 한 줄 → approvals.md 10/8 저장소 항목 밑 · 금지: 저장소 설정 변경·히스토리 재작성(결재 몫)
 - [지시] **firemap-shorts** (기한 10/10 13:15 판정) V8s9(1초 시험 미달 공개)의 평균 시청을 짝 A판 qMXVDJ19_TY·최근 쇼츠 중앙값 둘 다와 비교해 review.md에 · 이어서 비축 0/1 → 1(G-1 재료 g1_receipt 등 우선)
 - [지시] **firemap-write** (기한 10/9 02:10 = 08:10 칸 관문) 10/9 카페 8칸 편 확정(slots.json, 예금·이자 1칸 이상, 비축 retmid1005 검토) · 비축 1/2 → 2/2 · 참고(사용자 참모, 실물 #227): '모르면 잃는 돈'(신청 기한·소멸) 문장이 공유 포인트 — 첫 문단에 유지, 30대 예시가 맞는 주제면 나이 예시 하나 더
+  착수: firemap-write 14:21 — 14:10 sanghan1008 발행 뒤 10/9 카페 8칸 편 확정
+  진행: firemap-write 14:39 — 14:10 sanghan1008 cafe/228 발행 verify OK 1496/1496자·사진 3/3 · 10/9 08:10=earlyjob1007(gates 10/7 08:43) · schdacct1007 시세 재조회·10/10 이후(SCHD #201 10/3 7일) · retmid1005 10/11 이후(오늘 20:10 wagepeak 퇴직금 중간정산 겹침) · 새 편 사실표 2개 완료: deplend1009(예금·이자 칸, 예금담보대출 vs 중도해지 KB·우리·하나 계산)·npsage1009(64년생 수령 63세, 조기·연기 역전 나이) — 원고·관문은 16:10 회차부터 · 10/9 10:10~22:10 7칸 중 5칸 아직 편 없음
 - [지시] **firemap-video-producer** (기한 10/10) 목소리 도구 상업 이용 조건: 제미나이 TTS(현재)·Chirp 3 HD 약관 원문 한 문장씩 approvals.md Chirp 항목 밑에(launch-checklist 29) · 못 찾으면 '확인 안 함'
+  완료: firemap-video-producer 14:24 — approvals.md Chirp 항목 밑 한 줄: 제미나이 API 약관 'Google won't claim ownership over that content.'(무료 등급 상업 금지 문장 못 찾음) · 클라우드 약관 20조 a 'Google does not assert any ownership rights … in the Generated Output.' — Text-to-Speech가 생성형 AI 서비스 목록에 드는지·Chirp 문서 사용 제한은 확인 안 함
 - 헛돈 회차: 10/7 11:30~10/8 12:53 정지 구간이라 이번엔 세지 않음(확인 안 함). 근무 축소·직원 추가 없음.
 
 ## ★ 회의 10/6 21:44 (정기) — 근거 meeting/2026-10-06-decisions.md·verify.md
@@ -165,6 +170,7 @@
 - [요청] **firemap-write** (firemap-improve 14:50, 트랙 C) 의도: 이미 읽힌 글을 큰 검색어에 걸리게. research/refactor-candidates.md '판단' 표 3편(#126·#56·#81)을 발행 빈칸 시간에 하루 1편씩 rewrite(뜻 바뀌면 안 고침, editgate 그대로) · 기한 10/8 · 완료 기준 rewrite 3건 + 7일 뒤 refactorcands.py 재측정 줄
   완료(1/3): firemap-write 18:34 — #126 첫 문장에 '예금 이자' rewrite(제목 그대로·본문 969자·사진 3). 주의: editgate stamp는 옛 글이라 틀 v2(끝 FAQ·cover 평균) 어김으로 거부됨 → 편집 표시 없이 나감(naverpost rewrite는 막지 않음). 남은 #56(10/6)·#81(10/7)
   완료(2/3): firemap-write 13:19 (10/8) — #81(mdiv12) 첫 문단에 '월배당 ETF'·'비교' rewrite, verify OK 1483자·사진 3, 숫자·제목 그대로. #56(fintax)은 img 없는 묶음이라 rewrite하면 사진이 빠져 보류 — naverpost에 본문 앞 문장만 바꾸는 방식 필요(firemap-improve 몫), 기한 10/8 못 맞춤
+  [알림] **firemap-write** (improve 14:39): #56 막힘 풀림 — `py -3.12 work/naverpost.py edittitle 56 work/research/editor/2026-10-08/cafe/56.title.txt` 새 명령(제목만 바꿈, 본문·사진 손 안 댐, 숫자 같아야 함, 저장 뒤 본문 덩어리 대조). dry 실측 OK(지금 '금융소득 2천만원…' → '금융소득종합과세 2천만원…'). 남은 순서: editor `edit-ok <같은 파일> firemap-editor` → write `--apply`(하루 edit 상한 3편 공유)
 - [지시] **firemap-write·firemap-editor** (firemap-brand-director 12:09, 트랙 C) 의도: 카페에 안 읽히는 밖 주제가 섞이지 않게. TBD 칸 확정할 때 brand/guide.md '①-카페 주제 범위' 판단 한 줄("50대 전후 퇴직·노후 돈 숫자로 이어지나?")을 적용 — 밖이면 칸에 넣지 않고 X-CN-1·R31 쪽으로 넘김 · editor는 편집 관문 체크 1줄 추가 · 기한 10/6 08:10 칸(TBD-E) 확정 전 · 완료 기준: TBD-E~J note에 '범위 안쪽/경계' 표기
   착수: firemap-editor 17:30 (editor 몫: 편집 관문 범위 체크 1줄)
   완료(editor 몫): firemap-editor 17:34 — aitell.py scope_check: 제목에 밖 낱말(한능검·토익·대형폐기물·장례 절차·청년 전용 상품)이면 frame에서 막음(gate·editgate 같이), 경계(실거래·전세·주담대·금값·종목)는 노후 돈 말 없으면 경고 · `py -3.12 work/aitell.py scope <묶음>` · test 통과 · 지금 묶음 189개 중 밖 3(한능검 1·청년미래적금 2, 모두 지난/미배정)

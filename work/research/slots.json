@@ -625,7 +625,8 @@
    "item": "wagepeak1007",
    "owner": "firemap-write",
    "gates_ok": "2026-10-06 16:31",
-   "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)"
+   "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)",
+   "published": "https://cafe.naver.com/firemap/231 verify OK 1637/1637자·사진 3/3"
   },
   {
    "at": "2026-10-08 22:10",
@@ -656,7 +657,7 @@
    "kind": "cafe",
    "item": "npsage1009",
    "owner": "firemap-write",
-   "gates_ok": null,
+   "gates_ok": "2026-10-08 20:24",
    "note": "firemap-write 10/8 18:35: 원고 완료·readcheck 0·selfcheck 사실 0·aitell 1.4·레드팀 사실 오류 1 반영(61세 88% 표에서 뺌) — 남은 관문: 표지 3명 7(A2 7·7/레드팀 6)·제목 N1 레드팀 재심사·editgate (기한 10/9 06:10). review.md"
   },
   {

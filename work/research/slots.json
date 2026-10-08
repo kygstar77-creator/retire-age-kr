@@ -687,10 +687,10 @@
   {
    "at": "2026-10-09 19:20",
    "kind": "shorts",
-   "item": null,
+   "item": "c1_tiles",
    "owner": "firemap-shorts",
    "gates_ok": null,
-   "note": "firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 10/9 07:20"
+   "note": "firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 10/9 07:20 | firemap-shorts 10/8 23:26: 편 = c1_tiles(C-1 사실표 쇼츠 첫 사용, bars vs·음악 있음, 직전 rate30_b cards라 C3 해소). compete 5·check(틀만 남음)·aitell 0.0(.edit.json auto)·review 세 줄 끝. 첫 프레임 1초 고정 조건 v2 5·5→v3b 6.5·6.5(최고, 채택)·v4a/b 5~6 → 7 미달, gates_ok 안 적음. 다음 1안(기한 07:20): 빈 아래 절반에 '평균이면 둘 다 100년+' 반전 줄, 안 되면 v3b 1초 미통과 공개·48시간 판정 · 근거 cardshorts/c1_tiles/review.md"
   },
   {
    "at": "2026-10-09 20:10",

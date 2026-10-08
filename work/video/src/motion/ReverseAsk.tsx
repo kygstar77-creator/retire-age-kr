@@ -42,7 +42,7 @@ export const ReverseAsk: React.FC<ReverseAskProps> = (p) => {
   // 무대(월드 좌표, 1920×1080 판 안)
   const base = 790;                                // 0 기준선
   const vmax = Math.max(p.low.v, ...p.also.map((a) => a.v), ...p.bars.map((b) => b[1]));
-  const px = 460 / vmax;                           // 값 1 = px
+  const px = 420 / vmax;                           // 값 1 = px (10/8 PD: 460이면 가장 적은 달 빗금 꼭대기가 판 위 '정확한 값' 띠에 가려짐)
   const n = p.bars.length;
   const cx0 = 960 - ((n - 1) * gapX) / 2;
   const xs = p.bars.map((_, i) => cx0 + i * gapX);
@@ -54,12 +54,20 @@ export const ReverseAsk: React.FC<ReverseAskProps> = (p) => {
   const drift = interpolate(f, [0, p.land], [0, 1], CL);
   // 말 3 '거꾸로'(rev): 카메라가 화살표·물음표 쪽으로 1.32배 당겨 판을 채움(심사 10/6 Claude: 15.7초도 0.7초처럼 판 가득)
   const c0 = interpolate(f, [p.rev - 22, p.rev + 8], [0, 1], {...CL, easing: ease});
-  const zA = 1.16 - 0.04 * drift; const zR = zA + (1.32 - zA) * c0;
+  // 말 1 뒤 '큰돈'에 지폐 쌓이는 동안(fwd+20~nope) 카메라가 큰돈 쪽으로 다가감 — 실제 목소리 길이(10/8)에서 3.0~6.2초 정지 끊기, c0가 이어받음
+  const pin = interpolate(f, [p.fwd + 16, p.nope + 4], [0, 1], {...CL, easing: Easing.inOut(Easing.quad)});
+  const zA = 1.16 - 0.04 * drift + 0.10 * pin; const zR = zA + (1.32 - zA) * c0;
   const push = interpolate(f, [p.low0 + 84, p.low0 + 360], [0, 1], {...CL, easing: Easing.inOut(Easing.quad)});   // 늘어난 뒤 끝까지 천천히 다가감(끝 8초 정지 끊기)
-  const z = (zR + (1 - zR) * c1) * (1 + 0.1 * push);
-  const fxA = 900 + 60 * c0;
-  const fx = fxA + (960 - fxA) * c1 + (xs[p.low.i] - 960) * 0.45 * c2;   // 화면 가운데에 올 월드 x
-  const fy = 470 + (560 - 470) * c1 + 30 * push;   // 다가가는 동안 아래로 보정 — 0 기준선·막대 이름이 판 안에 남게(레드팀 10/6 잘림)
+  // 도장 걷힌 뒤~low0: 막대 셋이 10초 서 있던 구간(10/8 레드팀: 26.4~36.5초 화면 차 0) — 아주 느리게 다가감, push가 이어받음
+  const mid = interpolate(f, [(p.stampAt ?? p.grow) + 60, p.low0 + 84], [0, 1], {...CL, easing: Easing.inOut(Easing.sin)});
+  const ez = 0.04 * mid * (1 - push) + 0.1 * push;   // 0.09면 끝 push 몫을 먼저 써서 40.5~46초 5.8초 정지(10/8 시험)
+  const z = (zR + (1 - zR) * c1) * (1 + ez);
+  const fxA = 900 + 60 * c0;   // 옆 이동은 안 함 — 10/8 시험에서 -150px면 '매달 ?' 카드가 판 오른쪽에서 잘림
+  // 말이 가리키는 막대 쪽으로 카메라가 옆으로 따라감(hi 프레임마다 40프레임, -1이면 가운데) — c2(low0)가 이어받음 · 10/8 레드팀 '막대 셋 10초 서 있음'
+  let hx = 0, prevT = 0;
+  for (const [a, i] of p.hi) { const t = i >= 0 ? (xs[i] - 960) * 0.2 : 0; hx += (t - prevT) * interpolate(f, [a - 4, a + 40], [0, 1], {...CL, easing: ease}); prevT = t; }
+  const fx = fxA + (960 - fxA) * c1 + hx * (1 - c2) + (xs[p.low.i] - 960) * 0.45 * c2;   // 화면 가운데에 올 월드 x
+  const fy = 470 + (560 - 470) * c1 + 12 * mid * (1 - push) + 30 * push;   // 다가가는 동안 아래로 보정 — 0 기준선·막대 이름이 판 안에 남게(레드팀 10/6 잘림)
   const tx = 960 - z * fx; const ty = 545 - z * fy;
   const bz = Math.sqrt(z); const btx = (960 - bz * fx) * 0.5; const bty = (545 - bz * fy) * 0.5;  // 뒷층: 절반만
 
@@ -73,7 +81,9 @@ export const ReverseAsk: React.FC<ReverseAskProps> = (p) => {
   const sFall = interpolate(f, [p.nope + 30, p.nope + 54], [0, 1], {...CL, easing: Easing.in(Easing.quad)});
   // 지폐 쌓임(말 '큰돈을 넣으면'): fwd+20부터 한 장씩 — 숫자 없는 그림
   const BILLS = 7;
-  const bill = (k: number) => interpolate(f, [p.fwd + 20 + k * 12, p.fwd + 30 + k * 12], [0, 1], {...CL, easing: out});
+  // 간격은 fwd~nope 사이를 다 채우게(실제 목소리 길이 10/8 실측: 고정 12프레임이면 3.0~6.2초 3.2초 정지 — 레드팀 조건 3초 이하)
+  const bGap = Math.max(12, (p.nope - p.fwd - 34) / BILLS);
+  const bill = (k: number) => interpolate(f, [p.fwd + 20 + k * bGap, p.fwd + 32 + k * bGap], [0, 1], {...CL, easing: out});
   // ① 보통 방향 화살표: fwd~fwd+30 그려짐, rev-30부터 걷힘
   const a1 = interpolate(f, [p.fwd, p.fwd + 30], [0, 1], {...CL, easing: out}) * (1 - fade(f, p.nope + 20, 16));
   // 말 '큰돈이 없잖아요'(nope): 큰돈 카드에 줄이 그어지고 작아지며 흐려짐
@@ -124,7 +134,7 @@ export const ReverseAsk: React.FC<ReverseAskProps> = (p) => {
             <div style={{position: 'relative', width: 200, height: BILLS * 17 + 20, marginBottom: 10}}>
               {Array.from({length: BILLS}, (_, k) => (k + 1) / BILLS > 1 - sFall ? null : (
                 <div key={k} style={{position: 'absolute', left: ((h >> (k % 8)) % 3) * 6 - 6, bottom: k * 17, width: 200, height: 30, borderRadius: 6, boxSizing: 'border-box',
-                  background: T.soft, border: `3px solid ${T.accent}`, opacity: bill(k), transform: `translateY(${(1 - bill(k)) * -26}px)`,
+                  background: T.soft, border: `3px solid ${T.accent}`, opacity: bill(k), transform: `translateY(${(1 - bill(k)) * -90}px) rotate(${(1 - bill(k)) * (k % 2 ? 8 : -8)}deg)`,
                   display: 'flex', alignItems: 'center', justifyContent: 'center', ...F, fontWeight: 700, fontSize: 18, color: T.accent, lineHeight: 1}}>₩</div>))}
             </div>
             <div style={{fontWeight: 700, fontSize: 60, color: T.ink, position: 'relative'}}>{p.big}
@@ -189,7 +199,7 @@ export const ReverseAsk: React.FC<ReverseAskProps> = (p) => {
                 <div style={{fontWeight: 700, fontSize: 40, color: T.ink}}>{p.low.times}</div>
                 <div style={{fontWeight: 700, fontSize: 30, color: T.ink2}}>{p.low.tag}</div>
               </div>
-              <div style={{...F, position: 'absolute', left: xs[i] + bw / 2 + 22, top: base - p.bars[i][1] * px - 22, whiteSpace: 'nowrap', opacity: fade(f, p.low0 + 30, 10),
+              <div style={{...F, position: 'absolute', left: xs[i] + bw / 2 + 22, top: base - p.bars[i][1] * px + 14, whiteSpace: 'nowrap', opacity: fade(f, p.low0 + 30, 10),
                 fontWeight: 700, fontSize: 30, color: T.ink3}}>{p.bars[i][2]}</div>
               {p.also.map((al) => { const t2 = base - al.v * px; return (
                 <div key={al.i} style={{...F, position: 'absolute', left: xs[al.i] - 160, width: 320, top: t2 - 150, textAlign: 'center', whiteSpace: 'nowrap', opacity: o}}>

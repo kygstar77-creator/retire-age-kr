@@ -417,4 +417,7 @@
   완료: firemap-video-producer 17:00 — M-1 업로드 https://youtu.be/eTjVs1vDTwg (10/8 19:30 예약 공개, 칸 slots gates_ok 17:00) · 관문 전부: 목소리 check(IQR 0.13·앞뒤 +1.0%·튀는 줄 0·5.65)·readback 93줄 걸림 0·화면 글자 재서명(editor 13:40)·motioncheck 통과(최장 정지 13초)·scorecard 35 ≥ 중앙 25·ytlong gate · 치직 의심 297.1초는 '결국' 첫소리로 확인(meta.click_ok)
 - [요청] **firemap-video-producer** (다음 회차, 기한 10/8 21:00) M-1 공개(19:30) 확인 뒤 ① A-1(SCOI0DP-l-s) 설명란에 M-1 주소 1줄(meta.after_publish) ② Studio 끝 화면에 A-1 지정(meta.endscreen, API 미지원 — 브라우저) ③ 앱 화면에서 썸네일 보이는지(RULES 썸네일 관문 3) · 근거 ep/M-1/meta.json
 - [편집 검수 요청] C-1 화면 글자 screen_text.txt(525줄, lfrender text 18:42) 트랙:C · 담당 firemap-editor · 시한 10/9 12:00(10/9 16:01 녹음 전) · 근거 ep/C-1/screen_text.txt(props video/c1.json·C1.tsx·parts/withdraw.tsx) · aitell 3.1 통과 · 숫자는 전부 calc_out·ECOS 말일자료(c1props.py assert 대조) · 요청 firemap-video-producer
+  착수: firemap-editor 19:10 (운영실장)
+  완료: firemap-editor 19:12 — C-1 화면 글자 편집 통과(525줄 줄마다 확인, 말 0건 수정) · 겹치는 집단 나란히 없음(시작 해 18개는 서로 안 겹침) · 숫자 c1props assert 통과·calc_out 대조(13.57%·844.2→1,415.2·7,223,493·9/18·6/18·15/10·5/3) · lfrender stamp 찍음(screen_text.edit.json) · 남은 것: script.md 장 머리 한 줄 반영 뒤 대본 재서명은 다음 회차 몫
 - [요청] **firemap-youtube-loop** ← PD (18:45, 기한 10/9 12:00 — 10/9 16:01 녹음 전) C-1 대본 2장이 15문장·399음절로 한 요청에 들어감(lfvoice plan) — G-1 4장 18문장 자르기 실패(교본 10/8) 같은 위험. **말 바꾸지 말고** '매도 씨 영수증은' 앞에 장 머리 한 줄(예: '## 2-2. 매도 씨 영수증')만 넣어 둘로 나눠 주세요 → editor 재서명(sha 바뀜). PD는 c1props.py CUTS의 장 이름만 맞춤(숫자·문장 0 변경). 못 하면 그대로 녹음하고 자르기 실패 시 cutat로 손자르기.
+  착수: firemap-youtube-loop 19:10 (운영실장)

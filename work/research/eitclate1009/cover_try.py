@@ -24,6 +24,11 @@ V_ = {
  'G10': [('근로장려금 늦은 신청', 110, Wt, 't'), ('11월 → 3월까지', 190, Y, 't'), ('12월 1일 → 4월까지', 130, Wt, 't')],
  'G11': [('근로장려금', 190, Y, 't'), ('11월 → 3월', 200, Wt, 't'), ('12월 1일 → 4월', 150, Wt, 't')],
  'G12': [('근로장려금', 190, '#0F1B3D', 't'), ('11월 → 3월', 200, '#0F1B3D', 't'), ('12월 1일 → 4월', 150, '#7A1F1F', 't')],
+ 'G13': [('근로장려금', 170, Y, 't'), ('하루 늦게 내면', 160, Wt, 't'), ('기한 한 달 뒤로', 160, Y, 't')],
+ 'G14': [('근로장려금', 150, Y, 't'), ('11월 30일 → 3월 30일', 100, Wt, 't'), ('12월 1일 → 4월 30일', 100, Wt, 't'), ('하루 차이, 기한은 한 달', 100, Y, 't')],
+ 'G15': [('근로장려금 기한 후 신청', 100, Wt, 't'), ('하루 차이', 220, Y, 't'), ('지급 기한은 한 달', 120, Wt, 't')],
+ 'G16': [('근로장려금', 190, Wt, 't'), ('11월 → 3월', 200, Y, 't'), ('12월 1일 → 4월', 150, Wt, 't')],
+ 'G17': [('근로장려금', 190, Y, 't'), ('11월 → 3월', 200, Wt, 't'), ('12월 1일 → 4월', 150, Wt, 't')],
  'G3': [('근로장려금', 140, Y, 't'), ('11월 30일 → 3월 30일', 120, Wt, 't'), ('12월 1일 → 4월 30일', 120, Y, 't'), ('늦어도 받는 날', 90, Wt, 't')],
 }
 names = sys.argv[1:] or list(V_)
@@ -33,7 +38,7 @@ with sync_playwright() as p:
     b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1080})
     for n in names:
         html = os.path.join(D, 'covers_try', n + '.html')
-        HX = HT.replace('background:#0F1B3D', 'background:#FFD43B').replace('color:#A5B4D4','color:#0F1B3D') if n=='G12' else HT
+        HX = HT.replace('background:#0F1B3D', 'background:#FFD43B').replace('color:#A5B4D4','color:#0F1B3D') if n=='G12' else (HT.replace('background:#0F1B3D', 'background:#D7261E').replace('color:#A5B4D4','color:#FFE3E0') if n=='G16' else (HT.replace('background:#0F1B3D', 'background:#1F4FD8').replace('color:#A5B4D4','color:#DCE6FF') if n=='G17' else HT))
         open(html, 'w', encoding='utf-8').write(HX % dict(stamp='', src=SRC, f=MC.M.FONTS, rows=MC.rows_html(V_[n])))
         pg.goto(Path(html).as_uri()); pg.wait_for_selector('body[data-ready]')
         box = pg.evaluate("[...document.querySelectorAll('.k,.src')].map(e=>{const r=e.getBoundingClientRect();return [e.className,Math.round(r.right),Math.round(r.bottom)]})")

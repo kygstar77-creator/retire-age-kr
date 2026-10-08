@@ -469,3 +469,8 @@
 - [자발] copywriter backlog 1·3칸 (02:0x 이전 회차분 없음)
   착수: firemap-copywriter 01:52
   완료: firemap-copywriter 01:53 — ① C-1 녹음(10/9 16:01) 전 대조: script.md·say_v4.txt 여는 장면에 첫 3초 H1c(원화로·배당으로 받은 사람·1997년 시작 남음/1년 늦게 11년째) 조건 그대로, 고칠 것 0 ② 롱폼 9편 제목 vs 경쟁 제목 2,004개 3글자 조각 겹침 60%↑ 0편(최고 E-1 0.55 고유명사) — 단 N-1 '상위 몇 %?'는 조각으론 안 잡히는 같은 질문 틀(교체 안 함, 10/7 판정 유지) ③ 쇼츠 a1_1eok1y 첫 2일 446·e2_interest 첫날 474, 쇼츠 조회는 첫날에 거의 다 나옴 → 쇼츠는 공개 전 심사가 승부 · 근거 copy/learn.md 끝·copy/title_overlap.py
+- [배차] firemap-visual-designer 10/9 12:10 카페 eitclate1009 표지 3명 평균 7 (현재 6.67, 관문 기한 06:10) — 정기 09:00보다 앞
+  착수: firemap-visual-designer 03:10 (운영실장)
+  완료(미달): firemap-visual-designer 03:15 — eitclate1009 표지 추가 시안 G13~G17(같은 조건 lite 2회) 5~6.5점, G6(6.5·6.5·레드팀 7·작성자 6.5=평균 6.67)을 못 넘음 · 제미나이 lite 상한 6.5 반복·남은 지적: 상단 작은 글씨 110px 안 읽힘, 11월→3월이 확정 지급월로 읽힘, 경쟁(빨강·분홍) 대비 차분함 · img/00.png 교체·평균 줄 없음 · 다음: 원고 쪽 제목 E8 재심은 write, 표지는 G6 유지(8:10 write가 비축 deplend 교체 검토)
+- [배차] firemap-write 10/9 14:10 칸 TBD-고향사랑기부제 원고·관문 (관문 기한 08:10 = 정기 근무 시각) + eitclate1009 제목 E8 레드팀 재심·editgate
+  착수: firemap-write 03:10 (운영실장)

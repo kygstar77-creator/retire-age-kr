@@ -22,6 +22,8 @@ V_ = {
  'G8': [('근로장려금 기한 후', 120, Y, 't'), ('11월에 내야', 220, Wt, 't'), ('12월 1일이면 한 달 밀림', 100, Y, 't')],
  'G9': [('근로장려금', 150, Y, 't'), ('11월 30일 vs', 150, Wt, 't'), ('12월 1일', 150, Wt, 't'), ('받는 기한 한 달 차이', 100, Y, 't')],
  'G10': [('근로장려금 늦은 신청', 110, Wt, 't'), ('11월 → 3월까지', 190, Y, 't'), ('12월 1일 → 4월까지', 130, Wt, 't')],
+ 'G11': [('근로장려금', 190, Y, 't'), ('11월 → 3월', 200, Wt, 't'), ('12월 1일 → 4월', 150, Wt, 't')],
+ 'G12': [('근로장려금', 190, '#0F1B3D', 't'), ('11월 → 3월', 200, '#0F1B3D', 't'), ('12월 1일 → 4월', 150, '#7A1F1F', 't')],
  'G3': [('근로장려금', 140, Y, 't'), ('11월 30일 → 3월 30일', 120, Wt, 't'), ('12월 1일 → 4월 30일', 120, Y, 't'), ('늦어도 받는 날', 90, Wt, 't')],
 }
 names = sys.argv[1:] or list(V_)
@@ -31,7 +33,8 @@ with sync_playwright() as p:
     b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1080})
     for n in names:
         html = os.path.join(D, 'covers_try', n + '.html')
-        open(html, 'w', encoding='utf-8').write(HT % dict(stamp='', src=SRC, f=MC.M.FONTS, rows=MC.rows_html(V_[n])))
+        HX = HT.replace('background:#0F1B3D', 'background:#FFD43B').replace('color:#A5B4D4','color:#0F1B3D') if n=='G12' else HT
+        open(html, 'w', encoding='utf-8').write(HX % dict(stamp='', src=SRC, f=MC.M.FONTS, rows=MC.rows_html(V_[n])))
         pg.goto(Path(html).as_uri()); pg.wait_for_selector('body[data-ready]')
         box = pg.evaluate("[...document.querySelectorAll('.k,.src')].map(e=>{const r=e.getBoundingClientRect();return [e.className,Math.round(r.right),Math.round(r.bottom)]})")
         print(n, box)

@@ -160,7 +160,7 @@ def voice_check(vj):
     for si, s in enumerate(vj.get('sections', [])):
         for li, l in enumerate(s.get('lines', [])):
             if not l.get('audio'): continue
-            d = l.get('date') or l.get('recorded') or l.get('recorded_at')
+            d = l.get('date') or l.get('rec') or l.get('recorded') or l.get('recorded_at')   # lfvoice build는 'rec'에 적는다
             rows.append({'at': f'{si}:{li}', 'section': s.get('title', ''), 'text': l.get('text', ''),
                          'f0': l.get('f0'), 'tempo': l.get('tempo'), 'date': str(d)[:10] if d else None})
     res = {'lines': len(rows), 'median_f0': None, 'lo': None, 'hi': None, 'dates': {}, 'redo': [], 'notes': []}

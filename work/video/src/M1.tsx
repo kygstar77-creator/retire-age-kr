@@ -163,15 +163,41 @@ const Months: React.FC<{s: MScene}> = ({s}) => {
   );
 };
 
+// 문장이 바뀔 때마다 카메라가 살짝 다가가거나 옮겨 간다(10/8 PD: motioncheck 비교 장면·끝 화면 15초 넘는 정지 3곳 — 글자는 그대로, 움직임만)
+const POSES: [number, number, number][] = [[1, 0, 0], [1.035, -14, -10], [1.02, 12, -4], [1.04, -6, -14], [1.015, 10, 0], [1.035, -10, -10]];   // 판 안(x 102~1818)에 남는 폭
+const lineCam = (lines: MLine[], f: number, amp = 1) => {
+  const st = tallyStarts(lines); let k = 0;
+  st.forEach((a, i) => { if (i > 0) k += interpolate(f, [a, a + 26], [0, 1], CL); });
+  const i0 = Math.min(Math.floor(k), POSES.length - 1), i1 = Math.min(i0 + 1, POSES.length - 1), t = k - Math.floor(k);
+  const e = t * t * (3 - 2 * t); const P = POSES[i0].map((v, j) => v + (POSES[i1][j] - v) * e);
+  return `translate(${P[1] * amp}px, ${P[2] * amp}px) scale(${1 + (P[0] - 1) * amp})`;
+};
+const LineCam: React.FC<{lines: MLine[]; children: React.ReactNode}> = ({lines, children}) => {
+  const f = useCurrentFrame();
+  return <div style={{position: 'absolute', left: 0, top: 0, width: 1920, height: 1080, transformOrigin: '960px 560px', transform: lineCam(lines, f)}}>{children}</div>;
+};
+
+// 말이 가리키는 막대만 남기고 흐리게(10/8 PD, motioncheck 정지 18초) — 줄 순서마다 [묶음, 막대] 강조, -1 = 전체
+const PAIR_MIN: [number, number][] = [[-1, -1], [-1, 1], [-1, 0], [1, -1]];    // 4장(chip 있음): 일반 → 가장 적은 달 막대 → 평균 막대 → SCHD처럼
+const PAIR_SPLIT: [number, number][] = [[0, -1], [0, -1], [-1, 0], [-1, -1]];  // 6장: JEPQ 분배금 많고 가격 그대로 → 커버드콜 → 원금이 덜 자람(가격) → 지난 기록
 const Pair: React.FC<{s: MScene}> = ({s}) => {
-  const d = s.data;
+  const d = s.data; const f = useCurrentFrame();
+  const st = tallyStarts(s.lines); const plan = d.chip ? PAIR_MIN : PAIR_SPLIT;
+  const dim = plan ? (gi: number, bi: number) => {
+    let o = 1;
+    st.forEach((a, i) => {
+      const [g, b] = plan[Math.min(i, plan.length - 1)]; const hit = (g < 0 || g === gi) && (b < 0 || b === bi);
+      const t = interpolate(f, [a, a + 12], [0, 1], CL); o = o + ((hit ? 1 : 0.28) - o) * t;
+    });
+    return o;
+  } : undefined;
   return (
-    <>
-      <GroupBars groups={d.groups} max={d.max} at={d.at} legend={d.legend} x={150} y={430} w={1160} h={300} />
+    <LineCam lines={s.lines}>
+      <GroupBars groups={d.groups} max={d.max} at={d.at} legend={d.legend} x={150} y={430} w={1160} h={300} dim={dim} />
       {d.chip ? <TallyTag x={150 + d.chip[0] * ((1160 - 180) / 3 + 90) + (1160 - 180) / 6} y={512} text={d.chip[1]} start={d.chip[2]} side="up" size={22} /> : null}
       {d.save ? <TallyCallout x={1380} y={360} text={d.save[0]} start={d.save[1]} size={28} w={380} /> : null}
       {d.save2 ? <TallyCallout x={1380} y={600} text={d.save2[0]} start={d.save2[1]} size={26} w={380} /> : null}
-    </>
+    </LineCam>
   );
 };
 
@@ -190,7 +216,7 @@ const End: React.FC<{s: MScene}> = ({s}) => {
   const sp = spring({frame: f - d.at, fps, config: {damping: 12}});
   return (
     <>
-      <div style={{position: 'absolute', left: 150, top: 400, opacity: sp}}>
+      <div style={{position: 'absolute', left: 150, top: 400, opacity: sp, transformOrigin: '300px 100px', transform: lineCam(s.lines, f, 2.2)}}>
         <div style={{...F, fontWeight: 700, fontSize: 36, color: T.ink2}}>{d.ctaSub}</div>
         <div style={{...F, fontWeight: 700, fontSize: 130, color: T.accent, letterSpacing: -3, transform: `scale(${0.8 + 0.2 * sp})`, transformOrigin: 'left center'}}>{d.cta}</div>
       </div>

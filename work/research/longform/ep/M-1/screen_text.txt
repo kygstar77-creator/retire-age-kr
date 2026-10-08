@@ -7,6 +7,8 @@
 [scenes.0.sub] 지난 1년 실제 분배금 · 세금·건강보험료 뗀 뒤 · 2026-10-02 기준
 [scenes.0.source] 운용사·거래소 분배 기록, 거래소 종가, 한국은행 ECOS, 법제처 · 과거 값 · 미래 보장 아님 · 투자 권유 아님
 [scenes.0.data.rev.seed] M-1
+[scenes.0.data.rev.hook] 매달 100만원
+[scenes.0.data.rev.hookSub] 지금 얼마가 있어야 할까요?
 [scenes.0.data.rev.big] 큰돈
 [scenes.0.data.rev.ask0] 매달 ?
 [scenes.0.data.rev.goal] 매달 100만원
@@ -23,6 +25,8 @@
 [scenes.0.data.rev.also.0.label] 1.71억원
 [scenes.0.data.rev.also.0.times] ×1.23
 [scenes.0.data.rev.note.0.1] 분기 1회 · 달마다 아님
+[scenes.0.data.rev.stamp] 2026년 10월 2일 기준
+[scenes.0.data.rev.stampSub] 사라는 얘기가 아니라, 지난 기록으로 한 계산
 [scenes.0.lines.0.text] 월배당 영상은 보통 이렇게 시작하죠. 큰돈을 넣으면 매달 얼마가 나온다.
 [scenes.0.lines.1.text] 근데 대부분은 그런 큰돈이 없잖아요. 그러면 거꾸로 묻는 게 맞죠.
 [scenes.0.lines.2.text] 매달 100만원이 필요하면, 지금 얼마가 있어야 할까요?

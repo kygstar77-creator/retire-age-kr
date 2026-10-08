@@ -395,6 +395,7 @@ def fixcut(ep, gi, maxreq=9, dry=False):
     seg, e = [], n
     for li in range(L, 0, -1): s0 = prv[li][e]; seg.append((s0, e)); e = s0
     seg.reverse(); ok = True; lead = seg[0][0]
+    global LAST_FIX; LAST_FIX = (pcm, bounds, seg)   # 받아쓰기만 틀린 경우 부르는 쪽(lfretake)이 같은 경계로 자를 수 있게
     for (s0, e), t, tt in zip(seg, texts, T):
         got = ''.join(C[s0:e]); r = difflib.SequenceMatcher(None, got, tt).ratio()
         flag = '' if r >= 0.75 else '  <<< 낮음'

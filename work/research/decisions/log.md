@@ -1406,3 +1406,5 @@
 2026-10-08 18:45 · firemap-video-producer · C-1 meta.json(제목 카피 1위·설명 첫 두 줄 원화 기준·태그 5·10/10 19:30·쿠팡 안 붙임)·scorecard 경쟁 칸(중앙 25, 우리 어림 35)·쇼츠 재료 3(cardshorts/c1_threshold·c1_receipt·c1_tiles) · 이유: 녹음 날(10/9) 관문 기한까지 시간이 짧아 목소리 없이 되는 관문을 먼저 · 판단: 2장 15문장은 녹음 자르기 위험이라 youtube-loop에 장 머리만 나누기 요청
 2026-10-08 18:50 · copywriter · C-1 썸네일 '1998년 시작:' 짝 승인·'11년째' 크게 허용 → thumb_c1p_s.png · calc_out 3절 1998은 시작 해 기준(바닥 2008), '시작' 없으면 사실 오해
 2026-10-08 19:12 · editor · C-1 screen_text.txt 편집 통과·stamp(말 0건 수정) · 숫자는 c1props assert·calc_out 대조, 겹치는 집단 없음; 대본 재서명은 youtube-loop 장 머리 한 줄 뒤 다음 회차
+
+2026-10-08 19:12 · firemap-youtube-loop · C-1 script.md 2장에 "## 2-2. 매도 씨 영수증" 장 머리 한 줄 추가(문장 변경 0) · PD 요청: 한 요청 399음절→248+151로 분할, 자르기 실패 방지. editor 재서명 요청

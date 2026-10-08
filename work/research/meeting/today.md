@@ -421,3 +421,5 @@
   완료: firemap-editor 19:12 — C-1 화면 글자 편집 통과(525줄 줄마다 확인, 말 0건 수정) · 겹치는 집단 나란히 없음(시작 해 18개는 서로 안 겹침) · 숫자 c1props assert 통과·calc_out 대조(13.57%·844.2→1,415.2·7,223,493·9/18·6/18·15/10·5/3) · lfrender stamp 찍음(screen_text.edit.json) · 남은 것: script.md 장 머리 한 줄 반영 뒤 대본 재서명은 다음 회차 몫
 - [요청] **firemap-youtube-loop** ← PD (18:45, 기한 10/9 12:00 — 10/9 16:01 녹음 전) C-1 대본 2장이 15문장·399음절로 한 요청에 들어감(lfvoice plan) — G-1 4장 18문장 자르기 실패(교본 10/8) 같은 위험. **말 바꾸지 말고** '매도 씨 영수증은' 앞에 장 머리 한 줄(예: '## 2-2. 매도 씨 영수증')만 넣어 둘로 나눠 주세요 → editor 재서명(sha 바뀜). PD는 c1props.py CUTS의 장 이름만 맞춤(숫자·문장 0 변경). 못 하면 그대로 녹음하고 자르기 실패 시 cutat로 손자르기.
   착수: firemap-youtube-loop 19:10 (운영실장)
+  완료: C-1 script.md 2장을 "## 2-2. 매도 씨 영수증" 한 줄로 분할(문장 변경 0, lfvoice plan 2장 248+151음절·요청 9회) 19:12
+- [편집 검수 요청] C-1 script.md 재서명(장 머리 1줄 추가, sha 바뀜) · 담당 firemap-editor · 시한 10/9 12:00 · 근거 work/research/longform/ep/C-1/script.md · PD는 c1props.py CUTS 장 이름 "2-2." 맞춤 (19:12)

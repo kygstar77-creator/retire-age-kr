@@ -11,7 +11,7 @@ HT = (MC.HTML.replace('background:#F7F8FA', 'background:#0F1B3D').replace('.stam
       .replace('color:#6B7280', 'color:#A5B4D4').replace('top:196px', 'top:96px')
       .replace('let s=parseFloat(n.style.fontSize);while(', 'let s=n?parseFloat(n.style.fontSize):0;while(n&&'))
 Y, Wt = '#FFD43B', '#FFFFFF'
-SRC = '소득세법 제59조의3 · 시행령 제118조의3'
+SRC = '소득세법 제59조의3 · 시행령 제118조의2'
 V_ = {
  'I1': [('ISA 만기 자금', 130, Wt, 't'), ('연금으로 옮기면', 130, Wt, 't'), ('최대 49만5천원', 150, Y, 't')],
  'I2': [('ISA 연금 이전', 130, Wt, 't'), ('두 해에 나눠도', 140, Y, 't'), ('공제 한도 300만원', 120, Wt, 't')],
@@ -21,6 +21,8 @@ V_ = {
  'I6': [('ISA 만기', 190, Wt, 't'), ('→ 연금계좌', 160, Wt, 't'), ('49만5천원 환급', 150, Y, 't')],
  'I7': [('ISA 연금 이전', 150, '#0F1B3D', 't'), ('두 해 나눠도', 170, '#0F1B3D', 't'), ('공제는 한 번', 190, '#D7261E', 't')],
  'I8': [('ISA → 연금', 190, '#0F1B3D', 't'), ('49만5천원', 230, '#D7261E', 't')],
+ 'I9': [('ISA 연금 이전', 150, '#0F1B3D', 't'), ('두 해 나눠도', 170, '#0F1B3D', 't'), ('한도는 한 번', 190, '#D7261E', 't')],
+ 'I10': [('ISA 연금 이전', 150, '#0F1B3D', 't'), ('소득 없는 해엔', 160, '#0F1B3D', 't'), ('환급 0원', 230, '#D7261E', 't')],
 }
 names = sys.argv[1:] or list(V_)
 S = 110; F = ImageFont.truetype(r'C:\Windows\Fonts\malgunbd.ttf', 12)
@@ -29,7 +31,7 @@ with sync_playwright() as p:
     b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1080, 'height': 1080})
     for n in names:
         html = os.path.join(D, 'covers_try', n + '.html')
-        HX = HT.replace('background:#0F1B3D', 'background:#FFD43B').replace('color:#A5B4D4','color:#0F1B3D') if n in ('G12','I7','I8') else (HT.replace('background:#0F1B3D', 'background:#D7261E').replace('color:#A5B4D4','color:#FFE3E0') if n=='G16' else (HT.replace('background:#0F1B3D', 'background:#1F4FD8').replace('color:#A5B4D4','color:#DCE6FF') if n=='G17' else HT))
+        HX = HT.replace('background:#0F1B3D', 'background:#FFD43B').replace('color:#A5B4D4','color:#0F1B3D') if n in ('G12','I7','I8','I9','I10') else (HT.replace('background:#0F1B3D', 'background:#D7261E').replace('color:#A5B4D4','color:#FFE3E0') if n=='G16' else (HT.replace('background:#0F1B3D', 'background:#1F4FD8').replace('color:#A5B4D4','color:#DCE6FF') if n=='G17' else HT))
         open(html, 'w', encoding='utf-8').write(HX % dict(stamp='', src=SRC, f=MC.M.FONTS, rows=MC.rows_html(V_[n])))
         pg.goto(Path(html).as_uri()); pg.wait_for_selector('body[data-ready]')
         box = pg.evaluate("[...document.querySelectorAll('.k,.src')].map(e=>{const r=e.getBoundingClientRect();return [e.className,Math.round(r.right),Math.round(r.bottom)]})")

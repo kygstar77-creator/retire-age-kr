@@ -1,80 +1,18 @@
 {
- "date": "2026-10-08",
+ "date": "2026-10-09",
  "runs": [
   {
-   "hour": 12,
-   "ts": "13:19",
+   "hour": 8,
+   "ts": "08:41",
    "blog": {
     "title": null,
     "url": null
    },
    "cafe": {
-    "title": "실업급여 270일 받는 분이 신청을 미루면 얼마나 못 받을까",
-    "url": "https://cafe.naver.com/firemap/227"
+    "title": "조기재취업수당 300만원 기준 예고, 이번 달 신청하면 얼마 다를까",
+    "url": "https://cafe.naver.com/firemap/233"
    },
-   "note": "verify OK 1334/1334자·사진 3/3 · 제목 숫자 2개라 readcheck가 막아 '실업급여 270일 받는 분이 신청을 미루면 얼마나 못 받을까'로 고침(4개월은 본문 첫 줄 그대로, 본문 0 변경)·editgate auto 재도장 · 블로그는 회복 계획대로 발행 안 함 · 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0, 카페 8칸 빈칸) → 오늘 14~22시 칸에 관문 통과 묶음 재배정(sanghan·parking·pensavbreak·wagepeak·ltcgrade) · 리팩토링 #81(mdiv12) 첫 문단에 '월배당 ETF'·'비교' 넣어 rewrite, verify OK 1483자·사진 3 · 새 자료조사 없음(비축 묶음 발행 회차) · 교차검증은 묶음 관문 때 끝남 · 개선: 없음(제목 숫자 2개를 '유지'로 남긴 비축분이 발행 때 막힘 — 비축 관문에서 readcheck 제목 지적은 유지 불가로 playbook에 적음)"
-  },
-  {
-   "hour": 14,
-   "ts": "14:39",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "본인부담상한제 환급금 10월부터 밀린 건강보험료 먼저 빼고 지급",
-    "url": "https://cafe.naver.com/firemap/228"
-   },
-   "note": "14:10 칸 sanghan1008 발행(관문 10/7 10:29) · verify OK 1496/1496자·사진 3/3 · 제목 교체(readcheck 숫자 2→1, 같은 날 '얼마' 끝말 3칸 경고)·editgate auto 재stamp · 블로그: 회복 계획(하루 1편·색인 0 경보)대로 이번 회차 없음 · 10/9 08:10=earlyjob1007 · schdacct1007 시세 재조회(10/7 종가) · 새 편 사실표 2개(deplend1009 예금담보대출 vs 중도해지·npsage1009 64년생 국민연금 수령 63세) — 원고·관문은 다음 회차 · 개선: 없음(editgate stamp를 잘못 인자로 한 번 찍은 것 즉시 되돌림)"
-  },
-  {
-   "hour": 16,
-   "ts": "16:43",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "파킹통장 5천만원 넣으면 한 달 이자 얼마나 차이 날까",
-    "url": "https://cafe.naver.com/firemap/229"
-   },
-   "note": "16:10 칸 parking1007 발행(관문 10/6 22:43, 금리 10/6 공시 기준 날짜 명시) · verify OK 1393/1393자·사진 3/3 · 블로그: 회복 계획(색인 0 경보)대로 없음 · 10/9 10:10 deplend1009 관문 통과: 검증 경로 crosscheck 사실(gemini-3.6-flash) 7건 중 반영 0·유지 7(calc.md 식 값), 말투는 Gemini 시간 초과 → selfcheck 사실 0·말투 0, readcheck 4→0 · 개선: deplend 표지 1초 오독('이자'=낼 돈) 교훈을 playbook에 추가"
-  },
-  {
-   "hour": 18,
-   "ts": "18:35",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "연금저축 중도해지, 돌려받은 세액공제보다 더 내는 세금",
-    "url": "https://cafe.naver.com/firemap/230"
-   },
-   "note": "18:10 칸 pensavbreak1007 발행(관문 10/6 18:38·편집 통과 해시 일치) · verify OK 1401/1401자·사진 3/3 · 블로그: 회복 계획(색인 0 경보)대로 없음 · 10/9 12:10 npsage1009 원고: 자료조사 [오늘 찾은 것] 6건(14:29~31 조사)·법령 API·공단 · 검증 경로 crosscheck(gemini 3.8-flash) 사실 4건 중 반영 2·유지 2(표는 이미지, 계산 전제 calc.md) + 레드팀(Claude 에이전트) 사실 오류 1·주의 3 전부 반영 · selfcheck 사실 0·readcheck 0·aitell 1.4 · 남은 관문 표지·제목 재심사·editgate · 개선: 없음(표지 판정기 흔들림 5~7.5 — 같은 시안 2회 차가 1.0, 기록만)"
-  },
-  {
-   "hour": 20,
-   "ts": "20:24",
-   "blog": null,
-   "cafe": {
-    "title": "임금피크제 퇴직금 그대로 두면 4천만원 넘게 줄어드는 계산",
-    "url": "https://cafe.naver.com/firemap/231"
-   },
-   "note": "20:10 칸 wagepeak1007 발행 verify OK 1637/1637자·사진 3/3(관문 10/6 통과본, 편집 해시 일치). 블로그 없음(DAY_CAP·회복 계획). 10/9 12:10 npsage1009 관문 통과: 표지 A13 평균 7.33·제목 레드팀 6→누적 이득으로 고침·readcheck 0·aitell 1.4·editgate auto. 개선: apis._j가 HTML 오류 페이지를 JSONDecodeError 대신 'HTML 응답 <주소>'로 알림(finlife가 error_kor.html로 넘어감, 확인 20:26) · 표지 숫자 420px"
-  },
-  {
-   "hour": 22,
-   "ts": "22:39",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "장기요양등급 75점 문턱에서 갈리는 한 달 한도",
-    "url": "https://cafe.naver.com/firemap/232"
-   },
-   "note": "블로그 없음(하루 상한·회복 계획) · 카페 verify OK 1208/1208자·사진 3/3 · 다음 칸 eitclate1009: 자료조사 [오늘 찾은 것] 6건(SBS Biz·세정신문·파이낸셜뉴스·toprank·카페탭·조세특례제한법 API) · 검증 경로 crosscheck(사실 2 반영 2)+selfcheck(사실 0)+레드팀(사실 2 반영 2) · 표지·제목 미통과 · 개선: 없음(제목 심사 프롬프트에 마감 오독 감점 조건 추가는 이 편 한정)"
+   "note": "08:10 칸 earlyjob1007 발행 verify OK 1503/1503자·사진 3/3 (제목 readcheck 숫자 3개로 막혀 재심 T22 7.0, editgate auto 재날인). 블로그: 회복 계획(하루 1편 이하·브레이크 _ALERT 색인 0)으로 이번 회차 안 함. 16:10 isapen1009 원고 — 자료조사 출처 7(법령 DRF 3·보도 3·경쟁 4편 본문), 교차검증 crosscheck 2회(사실 지적 4 중 반영 1·유지 3, 말투 30 중 반영 20), 레드팀 2회 사실 오류 7 전부 반영, 제목 L2 7.67, 표지 6.5 미달 → visual-designer 요청. 개선: playbook에 연금 한도 글 계산 전제 규칙 추가"
   }
  ]
 }

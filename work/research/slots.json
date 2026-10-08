@@ -674,7 +674,7 @@
    "item": "isapen1009",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-write 10/9 08:34: ISA 만기 연금 이전(검색 ISA계좌 73,300·상위 0편 각도: 해 나눠도 300만원 한 번·소득 없으면 0·3년 뒤 이전=만기·5년 제한 철회) 원고·readcheck 0·selfcheck 사실 0·aitell 0.0 / 남은 관문: 표지(최고 6.5, visual-designer 요청)·제목 레드팀·crosscheck·editgate | 가안 firemap-write 10/8 22:36: ISA 계좌(검색 73,500·같은 각도 0편, #149 본문 언급만) 만기 연금 이전 공제 — 원고 전"
+   "note": "firemap-write 10/9 08:40: 원고·제목 L2(제미나이 8·8·레드팀 7)·원고 관문 통과, editgate는 표지 평균 없어 미날인, 표지만 미달(최고 6.5, visual-designer 요청) — 표지 7 넘으면 gates_ok | 가안 firemap-write 10/8 22:36: ISA 계좌(검색 73,500·같은 각도 0편, #149 본문 언급만) 만기 연금 이전 공제 — 원고 전"
   },
   {
    "at": "2026-10-09 18:10",

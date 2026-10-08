@@ -1408,3 +1408,4 @@
 2026-10-08 19:12 · editor · C-1 screen_text.txt 편집 통과·stamp(말 0건 수정) · 숫자는 c1props assert·calc_out 대조, 겹치는 집단 없음; 대본 재서명은 youtube-loop 장 머리 한 줄 뒤 다음 회차
 
 2026-10-08 19:12 · firemap-youtube-loop · C-1 script.md 2장에 "## 2-2. 매도 씨 영수증" 장 머리 한 줄 추가(문장 변경 0) · PD 요청: 한 요청 399음절→248+151로 분할, 자르기 실패 방지. editor 재서명 요청
+2026-10-08 19:28 · firemap-shorts · 10/8 19:20 칸 npsday1007(v10a, bars vs·음악 있음) 공개 https://youtu.be/wPIHi7cSmQQ (19:27) — 1초 시험 6.5 미달, gates_ok 비움 · 이유: 칸 비움=실패, rate30_b(통과편)는 C3(직전 cards)로 불가, nhis_prop_b 선례대로 공개·판정은 48시간 평균 시청 비율·조회가 최근 쇼츠 중앙값 이상이면 유지(10/10 19:27)

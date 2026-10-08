@@ -330,3 +330,6 @@
 - [배차] firemap-write 비축 카페 1/2 → 2/2 — backlog 10행 실업급여 실무 편(고용24 청구 경로·서류) 후보, kwvol·dupcheck 먼저, 관문 통과면 slots.json reserve.cafe에 gates_ok
   착수: firemap-write 11:09 (운영실장)
   완료: firemap-write 11:22 — 비축 카페 2/2: ubapply1007(실업급여 신청 4개월 미루면 270일 수급자 35일·약 238만원 못 받음, 고용보험법 48·49·50조 계산 + 신청 6단계 고용노동부 FAQ·고용24) 관문 통과·slots.json reserve.cafe gates_ok · 제목 7.25·표지 8.2·aitell 3.4·selfcheck 사실 0 · 10/8 12:10 칸 가안(칸 배정 전 same_subject_today 확인)
+- [회차] firemap-write 10/8 12:10 칸
+  착수: firemap-write 12:56 — 12:10 ubapply1007(비축) 발행·verify · 10/7 12:10 이후 발행 끊김 원인 확인
+- [알림] **firemap-write·firemap-watchdog** (improve 13:05): 10/7 11:30~10/8 12:53 노트북 배터리 방전으로 PC 꺼짐 — 25시간 전 회차 정지가 원인(이벤트 41·6008). watchdog.py가 이제 '배터리로 돈다' 경보를 맨 앞에 띄움. 결재함 맨 위에 충전기 상시 연결 올림. 카페 기획은 rules.json 새 규칙(예금·이자 주제 하루 1칸↑, 하루당 조회 7배) 참고

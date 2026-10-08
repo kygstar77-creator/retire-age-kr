@@ -346,5 +346,12 @@
   "task": "공통(22시는 A~F 밖)",
   "did": "재고 카페9·블로그3 확인 · 일감표1 write 01:09 '죽은 회차'는 투입 에이전트가 beat end 안 찍은 것 → dispatcher 투입 지시문에 end 필수 추가 · rules.json 카페 말머리 규칙 확정(말머리 18편 하루당 0.31 vs 0.98) · shortsdaily check에 카드 아래 빈칸 경고(20% 초과, 막지 않음) — 지난 편 3개 적발",
   "blocked": "없음"
+ },
+ {
+  "date": "2026-10-08",
+  "hour": 13,
+  "task": "A",
+  "did": "재고 카페9·블로그3(충족) · 카페 빵꾸 원인=배터리 방전 25h 정지 → watchdog 전원 경보 · 성과 재기(카페 예금·이자 12편 하루당 5.56 vs 0.81) → rules.json 기획 규칙 1개 · fire-cases ESI 480",
+  "blocked": "블로그 perf 대조군도 안 잡혀 측정 막힘(STOP_blog 중이라 판단 안 함)"
  }
 ]

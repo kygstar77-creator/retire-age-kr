@@ -77,6 +77,27 @@ def series_gap():
         return []
     return [n for n, pat in SERIES.items() if not any(re.search(pat, t) for t in titles)]
 
+def power_state():
+    """배터리 상태와 최근 24시간 비정상 종료(이벤트 6008). 데스크톱(배터리 없음)이면 on_battery 없음."""
+    ps = ("$b=Get-CimInstance Win32_Battery | Select-Object -First 1;"
+          "if($b){'B '+$b.BatteryStatus+' '+$b.EstimatedChargeRemaining};"
+          "Get-WinEvent -FilterHashtable @{LogName='System';Id=6008;StartTime=(Get-Date).AddHours(-24)} -EA SilentlyContinue"
+          " | ForEach-Object { 'C '+$_.TimeCreated.ToString('MM-dd HH:mm') }")
+    r = subprocess.run(['powershell', '-NoProfile', '-Command', ps], capture_output=True, text=True,
+                       encoding='utf-8', errors='ignore', timeout=60)
+    out = {}
+    crashes = []
+    for ln in r.stdout.splitlines():
+        p = ln.split()
+        if len(p) == 3 and p[0] == 'B':
+            # BatteryStatus 1 = 방전 중(충전기 없음). 2 이상은 AC 연결·충전 중.
+            out['on_battery'] = p[1] == '1'
+            out['pct'] = int(p[2]) if p[2].isdigit() else None
+        elif len(p) == 3 and p[0] == 'C':
+            crashes.append(p[1] + ' ' + p[2] + ' 재부팅')
+    if crashes: out['last_crash'] = ', '.join(crashes)
+    return out
+
 def main():
     import naverpost as N
     check_only = '--check' in sys.argv
@@ -180,6 +201,20 @@ def main():
         rec['alert'].insert(0, '네이버 글쓰기가 IP 확인에서 막혔다(쿠키는 살아 있다) — '
                                '사장님이 `py -3.12 work/naverpost.py login` 을 한 번 해야 대기 원고가 나간다: '
                                + authfail[:120])
+
+    # 2-d) 전원. 2026-10-07 11:27·11:30 노트북 배터리가 바닥나 두 번 꺼졌고(Kernel-Power 41,
+    # BugcheckCode 0, 전원 버튼 기록 없음) 10/8 12:53 다시 켜질 때까지 25시간 모든 회차가 멈췄다.
+    # 꺼진 PC는 아무것도 못 알리니, 켜져 있는 동안 '충전기 빠짐'을 먼저 잡는다.
+    try:
+        pw = power_state()
+        if pw:
+            rec['power'] = pw
+            if pw.get('on_battery'):
+                rec['alert'].insert(0, f"노트북이 충전기 없이 배터리로 돈다({pw.get('pct')}%) — 바닥나면 모든 회차가 멈춘다"
+                                       "(10/7 11:30 방전으로 25시간 정지). 충전기를 꽂아야 한다")
+            if pw.get('last_crash'):
+                rec['note'].append('최근 비정상 종료: ' + pw['last_crash'])
+    except Exception as e: print('전원 점검 실패:', repr(e)[:80])
 
     gaps = series_gap()
     rec['안 나간 시리즈'] = gaps

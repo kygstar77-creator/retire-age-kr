@@ -27,8 +27,12 @@
   착수: firemap-youtube-loop 00:44
   완료: firemap-youtube-loop 00:45 — G-1 script.md 장 머리 2줄만 추가('## 3-2. 고점·3개월 전·한 달 전 세 조각'·'## 4-2. 골드뱅킹과 골드바, 그리고 금값이 10% 오르면'), 말 줄 79개 글자 그대로(diff 0) · `lfvoice plan --maxreq 10 --cap 270` = 장 10개·요청 10회, 최대 279음절(4-2·5장, C-1 290 선례 안) · 4장을 셋으로 나누면 11회라 둘로 · PD: g1props.py CUTS 장 이름 '3-2.'·'4-2.' 맞춤 · editor 재서명 요청 아래
 - [편집 검수 요청] G-1 script.md 재서명(장 머리 2줄 추가, sha 바뀜, 말 0 변경) 트랙:C · 담당 firemap-editor · 시한 10/10 12:00 · 근거 work/research/longform/ep/G-1/script.md (youtube-loop 00:45)
+  착수: firemap-editor 07:05 (정기 06:50)
+  완료: firemap-editor 07:09 — G-1 script.md 재서명(장 머리 3-2·4-2 두 줄만, 말 79줄 diff 0, 헤더 말 자연스러움) · say_v2 aitell script 71.5/1,000·2개+ 7% 통과 · script.md.edit.json sha ffd7eeb9
 - [지시] **firemap-audit** (기한 10/9 19:50) 의도: 저장소 비공개 결재를 기다리는 동안 무엇이 열려 있는지 사장님이 한눈에 · 완료 기준: 개인정보 든 파일 경로 목록(값은 옮기지 않음)·자동 발행 코드·로그 경로를 audit/repo-exposure-1008.md에 덧붙이고 approvals.md 저장소 줄 밑 한 줄 · 금지: 설정 변경·히스토리 재작성·push로 지우기(결재 몫)
 - [지시] **firemap-editor** (10/9 06:50 정기) 10/9 카페 칸 제목 끝말 분포 표본 검수(write ②와 같이), 6/8 넘게 같은 끝말이면 교체 재심사
+  착수: firemap-editor 07:05 (정기 06:50)
+  완료: firemap-editor 07:09 — 10/9 카페 제목 끝말: 확정 4칸 얼마 2(earlyjob·deplend)·차이 1(eitclate)·이유 1(hometown), TBD 4칸 원고 전 · aitell sameday 10/9 통과 → 교체 없음 · 표본 2편(deplend1009·earlyjob1007 auto 통과분) 읽음, 고칠 곳 0 · 참고: eitclate·hometown은 editgate 표시 없음·표지 평균 줄 없음(hometown 사진 2/3) — write 몫
 - 헛돈 회차: 오늘 커밋 기준 남은 직원 전원 결과물 있음. watchdog '메우기 없음'은 감시 설계라 헛돔 아님. list_task_runs 회차별 집계는 하지 않음(확인 안 함). 근무 축소·직원 추가 없음.
 
 ## ★ 회의 10/8 13:38 (따라잡기 — 10/7 회의는 PC 25시간 꺼짐으로 못 열림) — 근거 meeting/2026-10-08-decisions.md·verify.md
@@ -96,6 +100,8 @@
 - [지시] **firemap-shorts**: 1초 시험 미달 공개가 이틀 연속 나왔다(10/8 nhis_prop_b·npsday1007). 칸 비우기도 실패지만 미달 공개도 실패다. 비축(reserve.shorts) 2편을 유지해 미달 칸은 비축으로 바꾼다.
 
 - [편집 검수 요청] W-1 1화 대본 v2 트랙:C · 담당 firemap-editor · 시한 10/10 12:00 · 근거 longform/ep/W-1/script.md(말 54줄 say_v2.txt) · calc_out.txt · 금지: 숫자·날짜 바꾸기, '{F}' 표시 지우기(10/10 06시 뒤 youtube-loop가 숫자만 갱신), 원인·전망 문장 넣기 (youtube-loop 05:16)
+  착수: firemap-editor 07:05 (정기 06:50)
+  완료: firemap-editor 07:09 — W-1 대본 v2 편집 통과(트랙C 전건) · 끝맺음 13곳 섞음(-요 92.5→73.1%·습니다 0→16.4%, 같은 끝맺음 최장 29→10) · 숫자·날짜·{F}·원인/전망 0 변경, CUTS 첫말 유지 · aitell script 65.9→65.7 통과 · 제미나이 사용자 반론: 말투 AI 티 지적 0(코스피 7,000 의심은 facts D1 7003.74로 확인) · say_v2.txt 같이 고침(원본 *.orig) · script.md.edit.json
 - [카피 요청] W-1 1화 제목·썸네일 문구·첫 3초 트랙:B(새 코너 첫 편) · 담당 firemap-copywriter · 시한 10/10 12:00 · 근거 longform/ep/W-1/analysis.md ②(삼성전자주가 1,796만·코스피 741만·삼성전자배당금 30만)·compete.md(경쟁 5편 제목 틀, IqwNtfVL8Vg '107조 찍은 날 주가 하락' 역설형과 겹치지 않게) · 우리 첫 줄 '100주 영수증 −140만원' · 금지: '역대 최대'(원문에 없음), 전망·'기회', '~까' 끝 쏠림 (youtube-loop 05:16)
 - [요청] **firemap-write** ← youtube-loop (05:16) W-1 1화 카페 긴 글 트랙:C · 시한 10/11 롱폼 공개(19:30) 당일 · 근거 longform/ep/W-1/cafe.md(표 5장·출처, {F} 3칸은 10/10 06시 뒤 calc_out으로 바뀜) · {VIDEO} 빈 채 발행
 - [알림] **firemap-meeting·firemap-video-producer** (youtube-loop 05:16): W-1 1화 대본 심사 통과(8.07). slots.json에 W-1 칸 없음 → 회의가 배정. 계산: 10/11 19:30 칸이면 관문 기한 10/10 19:30 → 녹음은 **10/10 16:01 창**이어야 함(10/11 16:01 녹음은 기한 뒤). 지금 10/10 창은 G-1(PD 요청 22:21) — G-1 칸 10/12 19:30의 관문 기한은 10/11 19:30이라 G-1을 10/11 16:01 창으로 미루면 둘 다 들어감(말 54줄 ≈ 6요청이라 1요청 시험 여유 있음). 결정은 회의·PD.
@@ -472,6 +478,8 @@
   착수: firemap-youtube-loop 19:10 (운영실장)
   완료: C-1 script.md 2장을 "## 2-2. 매도 씨 영수증" 한 줄로 분할(문장 변경 0, lfvoice plan 2장 248+151음절·요청 9회) 19:12
 - [편집 검수 요청] C-1 script.md 재서명(장 머리 1줄 추가, sha 바뀜) · 담당 firemap-editor · 시한 10/9 12:00 · 근거 work/research/longform/ep/C-1/script.md · PD는 c1props.py CUTS 장 이름 "2-2." 맞춤 (19:12)
+  착수: firemap-editor 07:05 (정기 06:50)
+  완료: firemap-editor 07:09 — C-1 script.md 재서명(## 2-2 한 줄만, 말 diff 0) · say_v4 aitell script 86.0 통과 · script.md.edit.json sha b1f3cbb0
 - [요청] **firemap-write** ← youtube-loop (20:46) C-1 카페 긴 글 트랙:C · 시한 10/10 롱폼 공개(19:30) 당일 · 근거 longform/ep/C-1/cafe.md(v4 맞춤 — 첫 표에 달러 기준·1997/1998 문턱 행, 소제목 6 '받쳐 준 해·깎은 해', 숫자 전부 calc_out·facts 기계 대조 밖 0) · 제목은 copy/titles.md 1위와 같은 결론으로 · {VIDEO} 빈 채 발행 금지 · 금지: '원화 약세가 받쳐 줬다' 한쪽 결론, 상품 권유
 - [배차] firemap-shorts 10/9 19:20 칸 편 없음·비축 쇼츠 0/1 — 관문 기한 10/9 07:20(정기 12:20보다 앞)
   착수: firemap-shorts 23:10 (운영실장)
@@ -493,4 +501,6 @@
   완료(미달): firemap-write 03:27 — 고향사랑기부제 원고 hometown1009(work/research/hometown1009/pkg) 작성: 조특법 제58조·법 제4·8·9조·시행령 제5조 원문 직접 계산, readcheck 0·selfcheck 사실 0·aitell 1.9·crosscheck 사실 4건(반영 2·유지 2), 표지 H4 3명 평균 7.0 통과 / 미달: 제목 최종본('...20만원 넘으면 공제율이 떨어지는 이유') 독립 재심 전(레드팀이 앞 제목 5·6 → 제안대로 교체) · editgate stamp·slots gates_ok 안 적음 · eitclate1009 제목 E8 레드팀 5(미통과, 대안 2개 review.md) — 08:10 write가 제목 재심→stamp→gates_ok
 - 막힘(운영실장 03:27): 10/9 관문 기한 칸 2개가 아직 미달. ① 12:10 eitclate1009: 표지 G13~G17 모두 5~6.5점으로 G6 평균 6.67을 못 넘음(9418193), 제목 E8 레드팀 재심 5점 미통과(aa54ca1) → 기한 06:10을 넘기므로 08:10 write가 비축 카페(retmid1005·npsage1009, gates_ok 있음)로 12:10 칸을 채우고 eitclate1009는 고쳐서 다음 칸으로 넘긴다(칸 비우기 금지). ② 14:10 hometown1009(고향사랑기부제): 원고 관문 통과, 표지 H4 평균 7.0, 제목 최종본 재심·editgate·gates_ok 남음 → 08:10 write 1순위(기한 08:10).
 - [편집 검수 요청] W-1 1화 화면 글자 screen_text.txt(444줄, lfrender text 06:33) 트랙:C · 담당 firemap-editor · 시한 10/10 12:00(10/10 16:01 녹음 창 전 — 칸은 회의가 정함) · 근거 longform/ep/W-1/screen_text.txt(props video/w1.json·W1.tsx·parts/weekly.tsx, 재료 ep/W-1/w1props.py) · aitell 3.3 통과 · 숫자는 calc_out·raw 그대로(assert), calc_out 밖 화면 값 3개만: 코스피 10/6·10/7 종가(ECOS 802Y001 w1009/raw/ecos_d_20261009.json)·4장 '주가 몫'(F4−E5, 합이 F5와 1원 안 assert)·DART 표 매출 전분기·전년동기(171.50·86.06, 공시 원문) · 미국 금요일 종가 들어오면(10/10 06시 뒤 calc) w1props 다시 돌려 4·5장 숫자만 바뀜 → 그때 재서명 1회 필요 · 금지: 말 줄(script.md) 고치기 — 대본 편집은 별도 · (PD 06:33)
+  착수: firemap-editor 07:05 (정기 06:50)
+  완료: firemap-editor 07:09 — W-1 화면 글자 편집 통과·stamp(대본 편집 반영해 w1props·lfrender text 다시 뽑음, 바뀐 줄 = 말 13줄뿐) · 숫자 calc_out·DART·ECOS 대조, 겹치는 집단 없음, 전망·권유 0 · 참고(막지 않음, 금요일 숫자 갱신 때 같이): ① scenes.14 big.2 '-539,440원' 하이픈→− ② script.md 82행 자막 '(야후 파이낸스, 금요일 종가로 갱신)'은 제작 메모가 화면에 나옴 — youtube-loop가 {F} 갱신 때 빼기 → 갱신 뒤 재서명 1회
 - [뻔함 검수 요청] W-1 1화(새 시리즈 '이번 주 뉴스가 내 돈에 얼마' 첫 편 — workflow 규칙상 첫 편만) 트랙:C · 담당 firemap-artist · 시한 1시간(관문 기한은 칸 배정 뒤 회의) · 근거 video/out/w1_stills/*_85.png(장면 26·종류 23, 대표 프레임)·ep/W-1/compete.md('우리만 다른 한 가지' = 원 단위 영수증 세 장·원문 표) · 판정 줄을 이 줄 아래에 '뻔함 통과/미달 + 이유 1줄' · (PD 06:33)

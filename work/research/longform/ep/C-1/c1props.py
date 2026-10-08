@@ -83,7 +83,7 @@ bal_str = lambda s: s.replace('18년 버팀·2025년 말 ', '').replace('29년+ 
 CUTS = [('open', '0.', None), ('vs', '0.', '그런데 실제 시장 순서대로'), ('fx97', '0.', '딱 1년 차이인데'), ('duo', '0.', '오늘은 같은 3억을'), ('road', '0.', '이 둘을 37년'),
         ('logo', '로고', None),
         ('rules', '1.', None), ('assume', '1.', '그러니까 상품 비교가'),
-        ('rcptA', '2.', None), ('thresh', '2.', '왜 이렇게 붙을까요'), ('rcptB', '2.', '매도 씨 영수증은'), ('hlist', '2.', '지역 건보료는 이자나'), ('double', '2.', '물론 주식이 오른 뒤에'),
+        ('rcptA', '2.', None), ('thresh', '2.', '왜 이렇게 붙을까요'), ('rcptB', '2-2.', None), ('hlist', '2-2.', '지역 건보료는 이자나'), ('double', '2-2.', '물론 주식이 오른 뒤에'),
         ('avg', '3.', None), ('gap', '3.', '첫해 영수증 차이가'),
         ('years', '4.', None), ('fx08', '4.', '금융위기 때는'), ('tiles', '4.', '시작한 해를 하나씩'),
         ('path00', '5.', None), ('path08', '5.', '이번엔 금융위기 해에'),
@@ -262,7 +262,7 @@ def main(script):
         frames = sum(x['frames'] for x in out) if out else 72
         if key == 'end': frames = max(frames, END_MIN)
         scenes.append({'key': key, 'kind': d['kind'], 'title': d['title'], 'sub': d.get('sub'), 'source': d.get('source'),
-                       'chapter': None if ch in ('0.', '로고') else ch.rstrip('.') + '장', 'data': d['data'], 'lines': out, 'frames': frames})
+                       'chapter': None if ch in ('0.', '로고') else ch.rstrip('.').split('-')[0] + '장', 'data': d['data'], 'lines': out, 'frames': frames})
     n_lines = sum(len(s['lines']) for s in secs)
     assert n_lines == sum(len(s['lines']) for s in scenes), f'빠진 문장: 대본 {n_lines} vs 장면 {sum(len(s["lines"]) for s in scenes)}'
     missing = sum(1 for s in scenes for l in s['lines'] if not l['audio'])

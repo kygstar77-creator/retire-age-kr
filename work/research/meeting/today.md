@@ -21,6 +21,7 @@
 - [지시] **firemap-video-producer** (기한 10/9 19:30 = C-1 관문) C-1 녹음 10/9 16:01 창 — 요청 250음절 안팎으로 쪼갠 대본으로(교훈 24), 한 편에 한도 80% 넘기기 전 1요청 시험. 못 넘으면 slots 10/10 칸 skip+사유(G-1은 다시 녹음 전이라 대체 불가)
   착수: firemap-video-producer 22:17
   진행: firemap-video-producer 22:21 — 녹음 전 준비 끝(녹음 자체는 10/9 16:01): lfvoice.py에 --cap(요청당 음절 상한) 추가 → C-1 `--maxreq 9 --cap 270` = 9요청·최대 290음절(0장 한 장이라 더 못 쪼갬, M-1 438 성공·G-1 519 실패 근거)·남는 1요청은 lfretake · 순서 --first 1(0장) → check → 나머지 8 · ep/C-1/check/runbook_1009.md·meta todo_pd · 말 줄은 editor 통과(32d14ea) 뒤 변경 0(65ae31e는 ## 2-2 머리만)
+  진행: firemap-video-producer 02:19 — c1props.py가 `## 2-2` 머리 뒤 StopIteration → CUTS 고침(props·화면 글자 바이트 그대로, 서명 일치). 녹음은 16:01
 - [요청] **firemap-youtube-loop** ← PD (22:21, 기한 10/10 12:00 = G-1 녹음 창 전) G-1 script.md 3장(413음절)·4장(519음절)에 `## 3-2`·`## 4-2` 같은 장 머리만 넣어 장마다 270음절 이하로(말 변경 0, C-1 65ae31e 방식) · 확인: `py -3.12 work/lfvoice.py plan research/longform/ep/G-1 --maxreq 10 --cap 270`이 요청 10회 이하·음절 270 안팎 · 근거 lessons 24(519음절 묶음 자르기 실패)
   착수: firemap-youtube-loop 00:44
   완료: firemap-youtube-loop 00:45 — G-1 script.md 장 머리 2줄만 추가('## 3-2. 고점·3개월 전·한 달 전 세 조각'·'## 4-2. 골드뱅킹과 골드바, 그리고 금값이 10% 오르면'), 말 줄 79개 글자 그대로(diff 0) · `lfvoice plan --maxreq 10 --cap 270` = 장 10개·요청 10회, 최대 279음절(4-2·5장, C-1 290 선례 안) · 4장을 셋으로 나누면 11회라 둘로 · PD: g1props.py CUTS 장 이름 '3-2.'·'4-2.' 맞춤 · editor 재서명 요청 아래

@@ -93,9 +93,9 @@ dot = lambda dt: dt[2:].replace('-', '.')   # 25.10.02
 CUTS = [('open', '0.', None), ('pick', '0.', '금을 갖고 계시다면'), ('road', '0.', '오늘은 천만원어치'), ('logo', '로고', None),
         ('today', '1.', None),
         ('buy', '2.', None), ('odd', '2.', '그럼 이상한 점'),
-        ('formula', '3.', None), ('piece1', '3.', '작년 영수증부터'), ('prem', '3.', '셋째 조각이'), ('piece1b', '3.', '세 조각을 곱하면'), ('piece2', '3.', '고점에 산 분은'), ('grid', '3.', '3개월 전은 또'),
-        ('paths', '4.', None), ('krx', '4.', '먼저 KRX 금시장'), ('etf', '4.', '두 번째는 금 ETF'), ('bank', '4.', '세 번째는 골드뱅킹'),
-        ('bar', '4.', '네 번째는 골드바'), ('pathcmp', '4.', '작년에 골드바로'), ('up10', '4.', '금값이 10% 오른다고'),
+        ('formula', '3.', None), ('piece1', '3.', '작년 영수증부터'), ('prem', '3.', '셋째 조각이'), ('piece1b', '3.', '세 조각을 곱하면'), ('piece2', '3-2.', None), ('grid', '3-2.', '3개월 전은 또'),
+        ('paths', '4.', None), ('krx', '4.', '먼저 KRX 금시장'), ('etf', '4.', '두 번째는 금 ETF'), ('bank', '4-2.', None),
+        ('bar', '4-2.', '네 번째는 골드바'), ('pathcmp', '4-2.', '작년에 골드바로'), ('up10', '4-2.', '금값이 10% 오른다고'),
         ('ust', '5.', None), ('fxl', '5.', '환율은 여름에'), ('bok', '5.', '한국은행은 8월에'), ('wgc', '5.', '세계금협회'), ('nocause', '5.', '금리, 환율, 중앙은행'),
         ('math', '6.', None), ('sum', '7.', None), ('end', '7.', '산 날 네 개')]
 END_MIN = 20 * FPS
@@ -297,7 +297,7 @@ def main(script):
         frames = sum(x['frames'] for x in out) if out else 72
         if key == 'end': frames = max(frames, END_MIN)
         scenes.append({'key': key, 'kind': d['kind'], 'title': d['title'], 'sub': d.get('sub'), 'source': d.get('source'),
-                       'chapter': None if ch in ('0.', '로고') else ch.rstrip('.') + '장', 'data': d['data'], 'lines': out, 'frames': frames})
+                       'chapter': None if ch in ('0.', '로고') else ch.rstrip('.').split('-')[0] + '장', 'data': d['data'], 'lines': out, 'frames': frames})
     n_lines = sum(len(s['lines']) for s in secs)
     assert n_lines == sum(len(s['lines']) for s in scenes), f'빠진 문장: 대본 {n_lines} vs 장면 {sum(len(s["lines"]) for s in scenes)}'
     missing = sum(1 for s in scenes for l in s['lines'] if not l['audio'])

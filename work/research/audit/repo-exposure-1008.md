@@ -22,3 +22,31 @@
 - **firemap.kr = Cloudflare**(응답 server: cloudflare·CF-RAY, POST /naver-token이 Pages Function으로 응답 400 bad_json, wrangler.jsonc assets ./outputs/deploy).
 - GitHub Pages는 **미리보기 사본**만: .github/workflows/pages.yml(main push → kygstar77-creator.github.io/retire-age-kr/, 같은 제목 200 OK).
 - 비공개로 돌리면: 무료 요금제 GitHub Pages 미리보기는 멈출 수 있음(firemap.kr 본 사이트와 무관). Cloudflare가 이 저장소를 Git 연동으로 빌드하는지, 손 업로드(wrangler)인지는 **확인 안 함** — Git 연동이면 Cloudflare GitHub 앱 권한이 비공개 저장소까지 있는지 봐야 함.
+
+## ④ 덧붙임 10/9 07:54 — 개인정보 든 파일 경로·자동 발행 코드·로그 경로 (값은 옮기지 않음)
+기준: origin/main 5721cfc(2026-10-08 22:41) · git grep. 설정·히스토리는 건드리지 않음.
+
+**사장님 계정 메일(지메일·네이버 두 주소) — 10파일**
+- work/insider.py · work/research/insider0929/fn.py · work/research/longform/ep/E-1/mu8k.py · work/research/ventures/kit/ghio.py (SEC 요청 User-Agent 줄)
+- work/research/admin/paid-tools-2026-10.md · work/research/admin/tools.md · work/research/approvals.md · work/research/coupang-partners-site.md · work/research/meeting/archive/2026-10-02.md · work/research/audit/repo-exposure-1008.md(이 파일, 주소 1번)
+- 참고: 회의 21:42 '11파일'과 1 차이 — 그 회의의 검색식은 확인 안 함
+- 사이트 문의용 공개 메일(retireage.kr)은 19파일(privacy·contact·disclaimer 등) — 일부러 공개한 주소라 노출 문제 아님
+
+**남의 개인 메일(포털 메일 5종) — 4파일, 전부 퍼 온 원자료**
+- work/research/cardshorts/a1_need100/compete_raw.json · work/research/cardshorts/e1_hynix_dd/compete_raw.json · work/research/editor/2026-10-01/blog_224421077560.txt · work/research/editor/sweep/yt_comp.json
+- 넓은 식(회사·기관 주소 포함, work/ 아래)으로는 29종·43파일 — 기관 대표 메일 등 섞여 있어 하나씩 가르지 않음(확인 안 함)
+
+**휴대폰 형식 번호(하이픈 있는 010-xxxx-xxxx) — 4파일, 전부 퍼 온 원자료**
+- work/research/cardshorts/e1_hynix_dd/compete_raw.json(2) · work/research/toejikavg1006/moel_calc.html · work/research/toejikavg1006/moel_calc.txt · work/research/yt/lessons_2026-09-23.md
+- 하이픈 없는 식으로 넓히면 숫자 자료(facts.txt 등)가 마구 걸려 판정 불가 — 회의 '8파일'과 차이는 이 때문으로 보임(확인 안 함)
+- 주민번호 형식: 0건(걸린 것은 법령 서식 예시 111111-1111111 등)
+
+**자동 발행 코드(로그인 없이 열림)**
+- 네이버: work/naverpost.py(블로그·카페 Playwright 발행) · work/cafeapi.py(카페 글쓰기 API) · work/cafeedit.py · work/test_cafeedit.py · work/blogfix.py · work/blogimg.py · functions/cafe-post.js(사용자 본인 토큰으로 카페 글 — 사이트 기능)
+- 유튜브: work/ytupload.py · work/ytlong.py · work/shortsdaily.py · work/cardshort.py · work/shorts.py · work/ytdesc_all.py · work/ytplaceholder.py · work/yt_audiolang_ko.py
+- 감시: work/watchdog.py
+
+**발행 로그(시각·글 번호가 남음)**
+- work/research/*/pkg/published.txt 298개 + work/research/ptax924/published.txt · work/research/mdiv12/published.txt
+- work/research/_cafeapi_log.jsonl · work/research/_cafe_edit/log.jsonl · work/research/cardshorts/log.jsonl · work/research/longform/loop/uploads.jsonl · work/research/caferank.jsonl · work/research/indexnow-log.jsonl · work/research/gpt-usage.jsonl · work/perf_log.json · work/improve_log.json
+- 각 pkg/verify.txt·check_self.txt에도 발행 주소가 들어 있음(수 세지 않음)

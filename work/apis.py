@@ -28,7 +28,10 @@ def _j(u, t=25, tries=3):
     for i in range(tries):
         try:
             r = urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=t)
-            return json.loads(r.read().decode('utf-8', 'ignore'))
+            b = r.read().decode('utf-8', 'ignore')
+            # 2026-10-08 20시: finlife가 error_kor.html로 넘겨 JSONDecodeError만 찍혔다 — 어디로 넘어갔는지 남긴다.
+            if b.lstrip().startswith('<'): raise ValueError(f'JSON 아님 — HTML 응답 {r.geturl()}')
+            return json.loads(b)
         except Exception as e:
             last = e
             if i < tries - 1: time.sleep(1.5 * (i + 1))

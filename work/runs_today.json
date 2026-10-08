@@ -61,7 +61,7 @@
     "title": "임금피크제 퇴직금 그대로 두면 4천만원 넘게 줄어드는 계산",
     "url": "https://cafe.naver.com/firemap/231"
    },
-   "note": "20:10 칸 wagepeak1007 발행 verify OK 1637/1637자·사진 3/3(관문 10/6 통과본, 편집 해시 일치). 블로그 없음(DAY_CAP·회복 계획). 10/9 12:10 npsage1009 관문 통과: 표지 A13 평균 7.33·제목 레드팀 6→누적 이득으로 고침·readcheck 0·aitell 1.4·editgate auto. 개선: 표지 숫자 200px→420px(110px에서 숫자가 안 읽히던 문제)"
+   "note": "20:10 칸 wagepeak1007 발행 verify OK 1637/1637자·사진 3/3(관문 10/6 통과본, 편집 해시 일치). 블로그 없음(DAY_CAP·회복 계획). 10/9 12:10 npsage1009 관문 통과: 표지 A13 평균 7.33·제목 레드팀 6→누적 이득으로 고침·readcheck 0·aitell 1.4·editgate auto. 개선: apis._j가 HTML 오류 페이지를 JSONDecodeError 대신 'HTML 응답 <주소>'로 알림(finlife가 error_kor.html로 넘어감, 확인 20:26) · 표지 숫자 420px"
   }
  ]
 }

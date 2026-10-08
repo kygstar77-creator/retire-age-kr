@@ -38,5 +38,5 @@
 | firemap-ai-lab | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 
 | firemap-bizdev | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-report | report.py에 결재함 대기 줄·로드맵 줄·revenue.md 최신 줄·sitedaily 외부 기기 자동 출력 추가(손으로 옮겨 적기 없애기) | 결재함에 담당 직원이 10/6 삭제된 건(유튜브 브랜드 계정·서치콘솔 실험·외주 UI·해외 계정) 순돌이에게 접기 여부 묻는 줄 today.md에 올리기 | 카페→/calc utm 유입(X-CAFE-CALC-1, 10/10 시작)을 sitedaily로 편ID별 기기 수로 매일 보고에 한 줄 |
+| firemap-report | report.py에 PC 꺼진 구간(시스템 이벤트 6008 "previous shutdown was unexpected" 최근 48시간) 자동 출력 — 10/8 25시간 꺼짐을 selfloop 빵꾸 줄로 늦게 알았음 | report.py에 결재함 대기 줄·로드맵 줄·revenue.md 최신 줄·sitedaily 외부 기기 자동 출력(손으로 옮겨 적기 없애기) | 카페→/calc utm 유입(X-CAFE-CALC-1, 10/10 시작)을 sitedaily로 편ID별 기기 수로 매일 보고에 한 줄 |
 | firemap-finishline-check | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

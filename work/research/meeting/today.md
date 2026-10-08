@@ -71,6 +71,7 @@
 - [지시] **firemap-report** (기한 오늘 12:30 회차부터 매일) 의도: growth가 재던 수익·방문이 끊기지 않게 · 완료 기준: growth/revenue.md에 그날 줄(쿠팡 클릭·구매·수익, 애드센스·애드핏 화면값 또는 '확인 안 함+이유') + sitedaily 외부 기기·utm(공개 5분 안·봇 UA 제외·기기 단위, 원값 따로) 한 줄 · 금지: 새 측정 도구 만들기, 짐작 숫자
   착수: firemap-report 12:33
   완료: firemap-report 12:35 — growth/revenue.md 10/6 줄 2개(쿠팡 이번 달 클릭0·구매0·수익0 리포트 10/6, 애드센스 준비 중·ads.txt 승인됨 12:34 화면, 애드핏 10/1 값, 유튜브 구독 47) + 사이트 외부 11기기·calc_complete 3기기·coupang_click 0(원값 17기기). 내일부터 12:30 회차마다 같은 2줄
+  완료: firemap-report 13:10 — (10/8 회) revenue.md 10/8 줄(쿠팡 0/0/0 리포트 2026.10.08·애드센스 준비 중 12:59 화면·구독 49) + 사이트 외부 10/7 완결 33기기·calc_complete 12기기·coupang_click 0 · 10/7 줄은 PC 꺼짐으로 빠짐
 - [지시] **firemap-watchdog** (기한 오늘 13:45 회차부터 하루 1번) 의도: 개발이 멈춰도 운영 화면 고장은 바로 안다 · 완료 기준: / ·/calc/severance·/calc/unemployment-benefit·/calc/salary curl 200 + 제목 일치 한 줄(decisions/log.md), 실패면 today.md 막힘 칸 · 금지: 사이트 코드 고치기(막힘만 적고 순돌이 몫)
   착수: firemap-watchdog 13:52
   완료: firemap-watchdog 13:53 — 사이트 4쪽 curl 200·제목 일치(/ 파이어 가능 나이 계산기 · /calc/severance 퇴직금 계산기 · /calc/unemployment-benefit 실업급여 계산기 · /calc/salary 연봉계산기 2026). 막힘 없음
@@ -333,3 +334,4 @@
 - [회차] firemap-write 10/8 12:10 칸
   착수: firemap-write 12:56 — 12:10 ubapply1007(비축) 발행·verify · 10/7 12:10 이후 발행 끊김 원인 확인
 - [알림] **firemap-write·firemap-watchdog** (improve 13:05): 10/7 11:30~10/8 12:53 노트북 배터리 방전으로 PC 꺼짐 — 25시간 전 회차 정지가 원인(이벤트 41·6008). watchdog.py가 이제 '배터리로 돈다' 경보를 맨 앞에 띄움. 결재함 맨 위에 충전기 상시 연결 올림. 카페 기획은 rules.json 새 규칙(예금·이자 주제 하루 1칸↑, 하루당 조회 7배) 참고
+- 막힘(firemap-report 13:10): PC가 10/7 11:30~10/8 12:53 꺼져 있었다(윈도 업데이트 10/7 11:18 직후 비정상 종료 2회, 시스템 이벤트 6008). 그동안 전 회차 멈춤·카페 10/7 12:10~10/8 12:10 칸 빔. 전원·업데이트 재시작 설정은 시스템 설정이라 직원이 못 바꿈 → 10/8 보고 '손봐 주실 것'에 올림 · 담당 순돌이(사장님 전달)

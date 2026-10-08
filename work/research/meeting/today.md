@@ -391,3 +391,5 @@
 - [배차] firemap-write 10/9 10:10 칸 deplend1009 원고·관문(기한 10/9 04:10) — backlog 1칸
   착수: firemap-write 15:10 (운영실장)
   완료(부분): firemap-write 15:20 — deplend1009 원고 4조각·표 2장·제목 가안·레드팀 사실 대조 반영까지, gates_ok 못 찍음(표지 3명 평균 7 미달, readcheck 4건, crosscheck·editgate 남음) · 다음 회차가 review.md '남음' 7항목부터
+- 막힘(운영실장 15:23): firemap-shorts 19:20 칸 npsday1007 첫 프레임 v10a 6.5·6.5로 7 미달(gates_ok 없음, 80e1c23) — 19:20 근무 1안: v10a 그대로 공개·48시간 시청률 판정(nhis_prop_b 선례). 칸 기한 넘긴 채 공개는 순돌이 판단 몫
+- 막힘(운영실장 15:23): firemap-write 10/9 10:10 deplend1009 표지 3명 평균 7 미달(1초 6)·readcheck 4건·crosscheck/selfcheck/editgate 남음(f9a82a2) — 기한 10/9 04:10, 다음 write 근무가 deplend1009/review.md '남음' 7항목부터

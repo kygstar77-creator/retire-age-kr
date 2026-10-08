@@ -216,6 +216,23 @@ def main():
                 rec['note'].append('최근 비정상 종료: ' + pw['last_crash'])
     except Exception as e: print('전원 점검 실패:', repr(e)[:80])
 
+    # 2-e) 사이트 4쪽. 10/6 사이트 개발을 멈춰 고장 나도 아무도 안 본다 — 손으로 재던 것을 매 회차 자동으로.
+    #      코드를 고치지는 않는다(순돌이 몫). 200이 아니거나 제목이 다르면 알리기만 한다.
+    SITE = {'/': '파이어맵', '/calc/severance': '퇴직금 계산기',
+            '/calc/unemployment-benefit': '실업급여 계산기', '/calc/salary': '연봉계산기'}
+    bad = []
+    for path, want in SITE.items():
+        try:
+            import urllib.request
+            r = urllib.request.urlopen(urllib.request.Request('https://firemap.kr' + path,
+                                       headers={'User-Agent': 'Mozilla/5.0'}), timeout=20)
+            t = re.search(r'<title>([^<]*)', r.read().decode('utf-8', 'ignore'))
+            if r.status != 200 or not t or want not in t.group(1): bad.append(f'{path}({r.status})')
+        except Exception as e:
+            bad.append(f'{path}({str(e)[:40]})')
+    rec['site'] = 'ok' if not bad else bad
+    if bad: rec['alert'].append('사이트 쪽 이상: ' + ', '.join(bad) + ' — today.md 막힘에 적는다(코드 수정은 순돌이)')
+
     gaps = series_gap()
     rec['안 나간 시리즈'] = gaps
     if gaps: rec['alert'].append('최근 글에 한 편도 없는 시리즈: ' + ', '.join(gaps))
@@ -269,7 +286,8 @@ def main():
             try:
                 with open(logf, 'w', encoding='utf-8') as fh:
                     pr = subprocess.Popen([sys.executable, os.path.join(HERE, 'naverpost.py'), kind, pkg],
-                                          stdout=fh, stderr=subprocess.STDOUT)
+                                          stdout=fh, stderr=subprocess.STDOUT,
+                                          env={**os.environ, 'PYTHONUNBUFFERED': '1'})  # 10/8: 자식 출력이 섞여 URL이 'cafe.naAI'로 잘림
                     try:
                         pr.wait(timeout=1500)
                     except subprocess.TimeoutExpired:
@@ -278,7 +296,7 @@ def main():
                 out = io.open(logf, encoding='utf-8', errors='ignore').read().strip()
             except Exception as e:
                 rec['did'].append(f'{kind} 메우다 멈춤: {str(e)[:100]}'); continue
-            u = re.search(r'URL (\S+)', out)
+            u = re.search(r'URL (https://(?:cafe|blog)\.naver\.com/[\w/]+)', out)
             if u: rec['did'].append(f'{kind} 빵꾸 메움 → {u.group(1)}')
             else: rec['did'].append(f'{kind} 메우기 실패: ' + (out.splitlines()[-1][:120] if out else '(출력 없음)'))
     elif need:

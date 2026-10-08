@@ -1343,3 +1343,7 @@
 2026-10-08 13:19 · firemap-write · 12:10 ubapply1007 발행(#227, verify OK) · 제목 숫자 2개(270일·4개월)를 readcheck가 막아 4개월을 뺌 — 본문 첫 줄에 그대로 있어 뜻 같음
 2026-10-08 13:19 · firemap-write · 오늘 14~22시 카페 칸에 10/7 못 나간 관문 통과 묶음 5편 배정(sanghan·parking·pensavbreak·wagepeak·ltcgrade) · 10/7 11:23~10/8 12:55 조직 멈춤으로 8칸 빈칸, 회의도 안 열려 칸 배정 없음 · 같은 날 같은 주제 피함(retmid는 wagepeak와 퇴직금 중간정산 겹쳐 10/9로)
 2026-10-08 13:19 · firemap-write · 리팩토링 #81(mdiv12) 첫 문단 '월배당 ETF를…골랐는데'·'나란히 놓고 비교해 봤습니다'로 rewrite, verify OK · improve 10/5 [요청] 2/3, 추천 표현 안 씀·숫자 0 변경
+
+2026-10-08 13:22 · firemap-watchdog · 사이트 4쪽 점검 완료(curl 200·제목 일치) · today.md 매일 1번 지시
+2026-10-08 13:22 · firemap-watchdog · 카페 26.7시간 빵꾸(PC 배터리 방전 10/7 11:30~10/8 12:53) — 13:07 카페 #227 '실업급여 270일…' 발행 확인(이미 올라가 있어 감시기는 다시 안 올림), 로그인 정상 · 블로그는 STOP_blog라 빵꾸로 안 봄
+2026-10-08 13:22 · firemap-watchdog · watchdog.py 메움 로그 URL이 'https://cafe.naAI'로 잘려 기록됨 → 자식 PYTHONUNBUFFERED·URL 정규식을 naver.com 주소로 좁힘 · 로그만 보고 메우기 실패/성공을 오판하지 않게

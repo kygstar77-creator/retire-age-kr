@@ -47,6 +47,10 @@
   - 같은 주제로 카페 글 1편과 쇼츠 B(긴 판) 1편의 재료를 남긴다.
   - 금지: 기준 영상 문장·숫자 베끼기, 상품 추천, 확인 안 된 숫자.
   착수: firemap-youtube-loop 13:18 — C-1 benchmark 확인(지역가입자 건보료·연도별 순서)→analysis·compete→대본 (PC 25시간 꺼짐으로 12:35 기한 넘김)
+  완료: firemap-youtube-loop 13:41 — C-1 대본 v2(말 72줄) · ep/C-1/: calc.py(야후 ^SP500TR 1989~2025 + ECOS 연말 환율, 같은 지수에서 '배당으로 받기 vs 팔아 쓰기' 고갈 연차)·facts.txt·compete.md(5편, 지역 건보료 원 단위·37개 시작 해 다 돌린 편 0)·analysis.md·cafe.md(1억·3억·5억 표) · 쇼츠 재료 cardshorts/c1_seq_note.md · benchmark '다르게 할 것' 둘 다 확인: ① 양도소득은 지역 건보 소득 목록 밖(시행령 제41조①) → 3억·월 200만원 첫해 배당 쪽 미국 세금 468만+건보 254만 vs 팔기 0원 ② 실제 순서: 평균이면 둘 다 100년+, 20년 치 있는 시작 해 18개 중 20년 안에 바닥 배당 9·팔기 6, 2000년 시작 9·11년차 → 각도 유지 · scriptnum 45개 밖 0 · aitell script 75.4/1,000·10% 통과 · aitell 1.8 · 제미나이 3.6-flash 막는 문제 1(잘린 입력 탓, facts에 경로 추가)·고칠 것 1(건보 고지 시기, 반영) review_v2_gemini.md · 남은 것: 심사 3명(review.md)·편집·카피
+- [편집 검수 요청] C-1 대본 v2 트랙:C · 담당 firemap-editor · 시한 10/9 18:00 · 근거 longform/ep/C-1/script.md(말 72줄, say_v2.txt) · facts.txt [S] · 금지: 숫자·날짜 바꾸기, 상품 추천 (youtube-loop 13:41)
+- [카피 요청] C-1 제목·썸네일 문구·첫 3초 트랙:C · 담당 firemap-copywriter · 시한 10/9 21:00 · 근거 longform/ep/C-1/analysis.md ②(S&P500 243,900·파이어족 12,780·해외주식양도소득세 5,530)·compete.md 경쟁 5개 제목 틀 — 수페TV '3억 월 300 평생' 틀·숫자 반복 금지, 상품명 금지, 첫 3초 가안 compete.md 끝 (youtube-loop 13:41)
+  착수: firemap-copywriter 13:42
 - [지시] **firemap-meeting**: 롱폼 대기열 순서를 M-1(오늘 녹음) → C-1 → G-1·R-1로 바꾼다. C-1 공개 칸을 slots.json에 넣는다.
   착수: firemap-meeting 13:28
   완료: firemap-meeting 13:31 — 대기열 M-1(10/8 19:30, PD 13:22 녹음 중) → C-1(10/10 19:30, 관문 기한 10/9 19:30·녹음 10/9 16:01 창) → G-1(10/12 19:30, 녹음 오늘 16:01 창 — C-1 대본이 아직 없어 창을 놀리지 않음, C-1 미달이면 G-1이 10/10로 당김) → R-1(Chirp 결재 뒤). slots.json 반영, PD 06:22 G-1 칸 알림도 이것으로 닫음
@@ -356,3 +360,4 @@
 - 막힘(firemap-report 13:10): PC가 10/7 11:30~10/8 12:53 꺼져 있었다(윈도 업데이트 10/7 11:18 직후 비정상 종료 2회, 시스템 이벤트 6008). 그동안 전 회차 멈춤·카페 10/7 12:10~10/8 12:10 칸 빔. 전원·업데이트 재시작 설정은 시스템 설정이라 직원이 못 바꿈 → 10/8 보고 '손봐 주실 것'에 올림 · 담당 순돌이(사장님 전달)
   완료: firemap-write 13:19 — 12:10 ubapply1007 cafe/227 발행 13:07 verify OK 1334/1334자·사진 3/3(제목 숫자 2→1로 고쳐 readcheck 통과, 본문 0 변경) · 리팩토링 #81 rewrite verify OK(2/3, #56은 사진 없는 묶음이라 보류 그대로) · 오늘 14~22시 칸 재배정: 14 sanghan1008·16 parking1007·18 pensavbreak1007·20 wagepeak1007·22 ltcgrade1007(전부 gates_ok 있음, slot.txt·slots.json) · 비축 카페 1/2(retmid1005)
 - 막힘(firemap-write 13:19): 10/7 11:23 커밋 뒤 10/8 12:55까지 어느 직원 회차도 안 돎(git·runs·decisions 전부 공백) — 카페 10/7 12:10~10/8 10:10 8칸 빈칸, 21시 회의도 안 열려 10/8 이후 칸 배정 없음. PC 꺼짐/절전 추정(확인 안 함) · 운영실장·순돌이가 원인 확인 필요 · 남은 10/7 칸 묶음 schdacct1007(시세 재조회 필요)·earlyjob1007·retmid1005는 10/9 칸 후보
+  완료: firemap-editor M-1 화면 글자 재서명 13:40 — 통과 · 10/6 추가 4줄(hook 매달 100만원·hookSub 지금 얼마가 있어야 할까요?·stamp 2026년 10월 2일 기준·stampSub 사라는 얘기가 아니라, 지난 기록으로 한 계산) 전부 script.md 여는 장면 원문 조각(말 3·말 5, stampSub는 끝 "입니다"만 뺌), stamp 등장 시점=말 5 · aitell text 4줄 0.0 · lfrender stamp 찍음

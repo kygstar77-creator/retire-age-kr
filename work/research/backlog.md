@@ -5,7 +5,7 @@
 
 | 직원 | 다음 일 1 | 다음 일 2 | 다음 일 3 |
 |---|---|---|---|
-| firemap-meeting | 10/7 21:28: X-OPS-6 첫 달성률(칸 대비 공개) + R-1/M-1 Studio CTR 읽기가 실제로 되는지 report 결과 확인 | 10/9: X-YT-FREQ·X-CAFE-VOL 판정(롱폼 하루 1 목표 vs 실측) | 10/17: X-CAFE-CALC-1 중간 점검(7일 합 외부 3기기 미만이면 조기 종료) |
+| firemap-meeting | 10/8 21:28 정기: X-OPS-6 첫 달성률(10/7·10/8 칸 대비 공개, PC 꺼짐 구간 따로) + M-1 공개/skip 결과 + audit 저장소 노출 목록 반영 | 10/9: X-YT-FREQ·X-CAFE-VOL 판정(롱폼 하루 1 목표 vs 실측) | 10/10: X-SHORTS-LEN·X-SHORTS-1 판정, C-1/G-1 칸 확정 |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | 10/9 카페 칸 8개 배정·관문 확인 — schdacct1007(시세 재조회)·earlyjob1007(의견 마감 10/18 전)·retmid1005 먼저, 모자란 칸은 새 편(회의가 안 열렸으면 직접) | 비축 카페 2/2 보충 — 실업급여 구직급여 일액·날수 표 편 등, 비축 관문에서 readcheck 제목 지적 0으로 | refactor #56 — naverpost rewrite에 '첫 문장만 바꾸기'(사진 유지) 필요, improve에 요청 후 처리 |
 | firemap-editor | M-1 녹음(10/7 16:00) 뒤 m1props 재실행본 screen_text 재stamp(모션 hook·stamp 4칸 포함) + R-1 재녹음 뒤 바뀐 줄 낭독 확인 | aitell에 '끝 안내 ↔ 본문' 검사 시험(toejikavg1006 사례) · 쇼츠 auto 3편(nhis_prop_b·nongji_age·rate30_b) 자막 표본 | 공개 글 전수 점검(sweep.md) #120부터 3편 · 공개 롱폼(A-1·E-1·E-2) 출처 줄 내부 꼬리표 점검 |

@@ -591,6 +591,14 @@
    "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)"
   },
   {
+   "at": "2026-10-08 19:20",
+   "kind": "shorts",
+   "item": null,
+   "owner": "firemap-shorts",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/8 13:29: 칸 누락(10/7 PC 꺼짐으로 회의 미개최) — 관문 기한 07:20 지남, 비축 0이라 nhis_prop_b 공개 후 둘째 편이 관문 넘으면 채움, 못 채우면 note에 사유"
+  },
+  {
    "at": "2026-10-08 19:30",
    "kind": "long",
    "item": "M-1",
@@ -613,6 +621,102 @@
    "owner": "firemap-write",
    "gates_ok": "2026-10-06 20:38",
    "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)"
+  },
+  {
+   "at": "2026-10-09 08:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 = 칸-6h. 08:10은 비축 retmid1005 우선 검토(같은 날 같은 대상 확인). 예금·이자 주제 하루 1칸 이상(rules.json 10/8)"
+  },
+  {
+   "at": "2026-10-09 10:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 = 칸-6h. 08:10은 비축 retmid1005 우선 검토(같은 날 같은 대상 확인). 예금·이자 주제 하루 1칸 이상(rules.json 10/8)"
+  },
+  {
+   "at": "2026-10-09 12:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 = 칸-6h. 08:10은 비축 retmid1005 우선 검토(같은 날 같은 대상 확인). 예금·이자 주제 하루 1칸 이상(rules.json 10/8)"
+  },
+  {
+   "at": "2026-10-09 12:20",
+   "kind": "shorts",
+   "item": null,
+   "owner": "firemap-shorts",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 10/9 00:20, G-1 쇼츠 재료(g1_receipt·g1_fourways·g1_climb) 우선"
+  },
+  {
+   "at": "2026-10-09 14:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 = 칸-6h. 08:10은 비축 retmid1005 우선 검토(같은 날 같은 대상 확인). 예금·이자 주제 하루 1칸 이상(rules.json 10/8)"
+  },
+  {
+   "at": "2026-10-09 16:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 = 칸-6h. 08:10은 비축 retmid1005 우선 검토(같은 날 같은 대상 확인). 예금·이자 주제 하루 1칸 이상(rules.json 10/8)"
+  },
+  {
+   "at": "2026-10-09 18:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 = 칸-6h. 08:10은 비축 retmid1005 우선 검토(같은 날 같은 대상 확인). 예금·이자 주제 하루 1칸 이상(rules.json 10/8)"
+  },
+  {
+   "at": "2026-10-09 19:20",
+   "kind": "shorts",
+   "item": null,
+   "owner": "firemap-shorts",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 10/9 07:20"
+  },
+  {
+   "at": "2026-10-09 20:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 = 칸-6h. 08:10은 비축 retmid1005 우선 검토(같은 날 같은 대상 확인). 예금·이자 주제 하루 1칸 이상(rules.json 10/8)"
+  },
+  {
+   "at": "2026-10-09 22:10",
+   "kind": "cafe",
+   "item": null,
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 = 칸-6h. 08:10은 비축 retmid1005 우선 검토(같은 날 같은 대상 확인). 예금·이자 주제 하루 1칸 이상(rules.json 10/8)"
+  },
+  {
+   "at": "2026-10-10 19:30",
+   "kind": "long",
+   "item": "C-1",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/8 13:29: 순돌이 10/7 지시 순서 M-1→C-1→G-1·R-1. 관문 기한 10/9 19:30(대본 심사·녹음 10/9 16:01 창). C-1이 기한 못 넘으면 대체 G-1(10/8 16:01 녹음분)로 이 칸을 채운다 — 칸 비우기 금지"
+  },
+  {
+   "at": "2026-10-12 19:30",
+   "kind": "long",
+   "item": "G-1",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/8 13:29: G-1은 목소리 전 준비 끝·썸네일 g1f·카피 통과. 녹음 = 10/8 16:01 TTS 창(C-1 대본이 아직 없어 그 창은 G-1). 10/10 칸에 C-1이 들어가면 G-1은 여기, C-1 미달이면 G-1이 10/10로 당겨지고 이 칸은 C-1. 공개 전날 calc 재실행·카피 숫자 재확인. 관문 기한 10/11 19:30"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외"

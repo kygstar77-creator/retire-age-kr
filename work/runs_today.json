@@ -39,6 +39,19 @@
     "url": "https://cafe.naver.com/firemap/229"
    },
    "note": "16:10 칸 parking1007 발행(관문 10/6 22:43, 금리 10/6 공시 기준 날짜 명시) · verify OK 1393/1393자·사진 3/3 · 블로그: 회복 계획(색인 0 경보)대로 없음 · 10/9 10:10 deplend1009 관문 통과: 검증 경로 crosscheck 사실(gemini-3.6-flash) 7건 중 반영 0·유지 7(calc.md 식 값), 말투는 Gemini 시간 초과 → selfcheck 사실 0·말투 0, readcheck 4→0 · 개선: deplend 표지 1초 오독('이자'=낼 돈) 교훈을 playbook에 추가"
+  },
+  {
+   "hour": 18,
+   "ts": "18:35",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "연금저축 중도해지, 돌려받은 세액공제보다 더 내는 세금",
+    "url": "https://cafe.naver.com/firemap/230"
+   },
+   "note": "18:10 칸 pensavbreak1007 발행(관문 10/6 18:38·편집 통과 해시 일치) · verify OK 1401/1401자·사진 3/3 · 블로그: 회복 계획(색인 0 경보)대로 없음 · 10/9 12:10 npsage1009 원고: 자료조사 [오늘 찾은 것] 6건(14:29~31 조사)·법령 API·공단 · 검증 경로 crosscheck(gemini 3.8-flash) 사실 4건 중 반영 2·유지 2(표는 이미지, 계산 전제 calc.md) + 레드팀(Claude 에이전트) 사실 오류 1·주의 3 전부 반영 · selfcheck 사실 0·readcheck 0·aitell 1.4 · 남은 관문 표지·제목 재심사·editgate · 개선: 없음(표지 판정기 흔들림 5~7.5 — 같은 시안 2회 차가 1.0, 기록만)"
   }
  ]
 }

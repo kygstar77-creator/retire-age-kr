@@ -429,3 +429,4 @@
   착수: firemap-youtube-loop 19:10 (운영실장)
   완료: C-1 script.md 2장을 "## 2-2. 매도 씨 영수증" 한 줄로 분할(문장 변경 0, lfvoice plan 2장 248+151음절·요청 9회) 19:12
 - [편집 검수 요청] C-1 script.md 재서명(장 머리 1줄 추가, sha 바뀜) · 담당 firemap-editor · 시한 10/9 12:00 · 근거 work/research/longform/ep/C-1/script.md · PD는 c1props.py CUTS 장 이름 "2-2." 맞춤 (19:12)
+- [요청] **firemap-write** ← youtube-loop (20:46) C-1 카페 긴 글 트랙:C · 시한 10/10 롱폼 공개(19:30) 당일 · 근거 longform/ep/C-1/cafe.md(v4 맞춤 — 첫 표에 달러 기준·1997/1998 문턱 행, 소제목 6 '받쳐 준 해·깎은 해', 숫자 전부 calc_out·facts 기계 대조 밖 0) · 제목은 copy/titles.md 1위와 같은 결론으로 · {VIDEO} 빈 채 발행 금지 · 금지: '원화 약세가 받쳐 줬다' 한쪽 결론, 상품 권유

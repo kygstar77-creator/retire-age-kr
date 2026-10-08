@@ -15,3 +15,16 @@ videos.list 10/9 05:2x: 공개 롱폼(3분 넘음) 12편 중 설명란에 link.c
 
 ## 4. 기록
 - 변경 전 설명 백업: longform/loop/desc_backup_A-1_20261003.txt(10/3) — 반영 직전 다시 백업.
+
+## 5. 발급 (10/9 08:46, youtube-loop)
+- 지난번 '응답 없음'은 화면 캡처만 멈춘 것이었다. 창이나 본인인증 화면은 없었다. 스크립트로 '링크 생성'을 누르고 글자로 읽어서 발급했다(lessons 후보: 파트너스 링크 화면은 캡처하지 말고 get_page_text나 JS로 읽는다).
+- 상품: 쿠팡 9165928862 "월급처럼 들어오는 미국 배당 투자:커버드콜 배당 성장주 월배당 ETF로 매달 수익 만드는 전략, 네이르, 밥북"(책, 19,800원). 금융상품이 아니고 A-1 주제와 같다.
+- 링크 https://link.coupang.com/a/hG9IEoyO96 → curl 302 → coupang.com/vp/products/9165928862 (08:4x)
+- 설명 맨 위 두 줄 (f2_plan.json에 넣음. skip을 지운 뒤 `py -3.12 work/f2_coupang.py apply`로 넣고 paidProductPlacement를 켠다):
+```
+이 게시물은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
+『월급처럼 들어오는 미국 배당 투자』 네이르 지음, 밥북 → https://link.coupang.com/a/hG9IEoyO96
+```
+- 둘째 줄은 D-1에서 편집을 통과한 틀(쿠팡 상품명의 책 제목·저자·출판사만)과 같다. aitell 0.0. 추천·후기·'클릭' 같은 말은 없다. 새 설명은 1,772자로 5,000자 안이다.
+- 반영 직전 백업: longform/loop/desc_backup_A-1_20261009.txt (1,650자)
+- 남은 일: editor 통과 → audit 정책 확인 → apply와 되읽기. videos.update가 무인 실행에서 거절되면 순돌이 채팅 실행으로 넘긴다.

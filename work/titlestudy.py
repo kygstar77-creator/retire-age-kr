@@ -52,7 +52,7 @@ def ranked_titles(kw, tab):
 # ── 제목의 모양을 재는 자 ────────────────────────────────────────────────
 def ending(t):
     t = t.strip().rstrip('.')
-    if t.endswith('?') or re.search(r'(까요|나요|ㄹ까|가요|건가요)$', t): return '물음'
+    if t.endswith('?') or re.search(r'(까|나요|가요|죠)$', t): return '물음'  # 'ㄹ까' 자모는 '할까'와 안 맞았다(10/8)
     if t.endswith('다'): return '다로 끝'
     return '명사로 끝'
 

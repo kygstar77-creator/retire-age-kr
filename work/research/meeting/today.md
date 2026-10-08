@@ -30,6 +30,7 @@
   착수: firemap-editor 07:05 (정기 06:50)
   완료: firemap-editor 07:09 — G-1 script.md 재서명(장 머리 3-2·4-2 두 줄만, 말 79줄 diff 0, 헤더 말 자연스러움) · say_v2 aitell script 71.5/1,000·2개+ 7% 통과 · script.md.edit.json sha ffd7eeb9
 - [지시] **firemap-audit** (기한 10/9 19:50) 의도: 저장소 비공개 결재를 기다리는 동안 무엇이 열려 있는지 사장님이 한눈에 · 완료 기준: 개인정보 든 파일 경로 목록(값은 옮기지 않음)·자동 발행 코드·로그 경로를 audit/repo-exposure-1008.md에 덧붙이고 approvals.md 저장소 줄 밑 한 줄 · 금지: 설정 변경·히스토리 재작성·push로 지우기(결재 몫)
+  착수: firemap-audit 07:51 — 개인정보 든 파일 경로·자동 발행 코드·로그 경로 목록(값 옮기지 않음)
 - [지시] **firemap-editor** (10/9 06:50 정기) 10/9 카페 칸 제목 끝말 분포 표본 검수(write ②와 같이), 6/8 넘게 같은 끝말이면 교체 재심사
   착수: firemap-editor 07:05 (정기 06:50)
   완료: firemap-editor 07:09 — 10/9 카페 제목 끝말: 확정 4칸 얼마 2(earlyjob·deplend)·차이 1(eitclate)·이유 1(hometown), TBD 4칸 원고 전 · aitell sameday 10/9 통과 → 교체 없음 · 표본 2편(deplend1009·earlyjob1007 auto 통과분) 읽음, 고칠 곳 0 · 참고: eitclate·hometown은 editgate 표시 없음·표지 평균 줄 없음(hometown 사진 2/3) — write 몫
@@ -510,3 +511,7 @@
   완료: firemap-write 07:20 — ① 14:10 hometown1009 관문 통과 gates_ok(제목 최종본 제미나이 7·7·레드팀 7, 표지 H4 7.0, 구간별 공제율 표 사진 추가로 3장, editgate auto) ② 12:10 eitclate1009 미달 → 비축 retmid1005로 교체(gates_ok 10/6 09:37, naverpost block 없음; wagepeak1007과 40시간 간격이나 각도 다름 — 순돌이 확인 요망), eitclate1009는 hold·10/10 12로 넘기고 제목 대안 2개 기록 · ③ 16:10 TBD-ISA 착수는 시간 남아 다음 회차(기한 10:10) · 비축 카페 1/2(npsage1009만)
   착수: firemap-write 07:10 (운영실장)
 - 막힘(운영실장 07:20): 16:10 TBD-ISA 원고 미착수(관문 기한 10:10) → 08:10 write 정기 1순위. 비축 카페 1/2(npsage1009만, 10/14 이후 가능)·비축 쇼츠 0/1 — 다음 회차 첫 일 비축분. 12:10 retmid1005는 wagepeak1007(10/7)과 퇴직금 주제 40시간 간격 — 순돌이 확인 요망(633ffc0)
+- [자발] copywriter backlog 3칸 쇼츠 제목 틀 × 조회 (열린 지시 0 — G-1 숫자 대조 404행은 공개 전날 calc 뒤라 대기)
+  착수: firemap-copywriter 07:52
+  완료: firemap-copywriter 07:56 — 쇼츠 15편 표 copy/shorts_titlefx.md: 조회 93~98%가 쇼츠 피드(검색 11~26회) · 단정 694 vs 질문 437이지만 넘기지 않은 비율 15.5 vs 17.1%로 차 없음 → 제목 틀 효과로 안 봄, 쇼츠 제목은 검색어 맨 앞·후킹은 첫 프레임 · 분석 day 태평양 날짜 잘림 고침 · X-YT-TITLE-1 중간 점검 칸 적음
+  [알림] **firemap-shorts** (copywriter 07:56): 쇼츠 후킹 심사 점수는 제목보다 첫 프레임 문구에 몰 것(피드 유입 93~98%), 제목은 검색어 맨 앞·사실 그대로 · 근거 copy/learn.md 끝

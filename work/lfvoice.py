@@ -1,5 +1,5 @@
 # 롱폼 목소리 — RULES.md '목소리 고정·말 속도' 규칙 1~3을 코드로 지킨다(ep/A-1/voice.py의 후속, A-1에서 난 사고 세 가지를 막는다).
-#   py -3.12 work/lfvoice.py plan  <ep폴더> [--maxreq 9]   # 요청 묶음만 보여 준다(API 안 부름)
+#   py -3.12 work/lfvoice.py plan  <ep폴더> [--maxreq 9] [--cap 270]   # 요청 묶음만 보여 준다(API 안 부름) · --cap = 요청당 음절 상한(교훈 24)
 #   py -3.12 work/lfvoice.py make  <ep폴더> [--maxreq 9] [--first 1]   # 없는 문장만 만든다 → 자르기 → voice.json · --first N = 새 요청 N회만 보내고 멈춤(첫 묶음 뒤 check로 높낮이 먼저 보기, lessons R-1 v6)
 #   ep/tts.json에 'prompt'가 있으면 그 편은 그 지시문으로 고정(편 안에서 바꾸면 전부 다시 녹음 — 한 날·한 목소리 규칙)
 #   py -3.12 work/lfvoice.py check <ep폴더>                 # 편 전체 말 속도·음높이 일관성 검사(공개 전 필수, 규칙 3)
@@ -210,8 +210,19 @@ def tempo(fn, rate):
     subprocess.run([ffmpeg(), '-y', '-loglevel', 'error', '-i', fn, '-filter:a', f'atempo={f:.3f}', '-ar', str(SR), '-ac', '1', tmp], check=True)
     os.replace(tmp, fn); return round(f, 3)
 
-def pack(secs, maxreq):
+def pack(secs, maxreq, cap=0):
     # 장 순서를 지키며 음절이 고르게 maxreq 묶음 이하로 나눈다
+    # cap>0: 이웃 장을 cap음절 안까지만 묶는다(장 하나가 cap보다 길면 그 장 혼자) — 교훈 24, G-1 519음절 묶음 자르기 실패·M-1 438음절 성공
+    if cap:
+        groups, cur, acc = [], [], 0
+        for s in secs:
+            if not s['lines']: continue
+            n = sum(syl(t) for t in s['lines'])
+            if cur and acc + n > cap: groups.append(cur); cur, acc = [], 0
+            cur.append(s); acc += n
+        if cur: groups.append(cur)
+        if len(groups) > maxreq: sys.exit(f'--cap {cap}로 묶으면 요청 {len(groups)}회 > --maxreq {maxreq}')
+        return groups
     tot = sum(syl(t) for s in secs for t in s['lines']); per = tot / maxreq; groups, cur, acc = [], [], 0
     for s in secs:
         if not s['lines']: continue
@@ -229,11 +240,11 @@ def request(cfg, texts):
         data=json.dumps(body).encode(), headers={'Content-Type': 'application/json'}), timeout=600))
     return np.frombuffer(base64.b64decode(r['candidates'][0]['content']['parts'][0]['inlineData']['data']), dtype=np.int16).astype(np.float32)
 
-def make(ep, maxreq, dry=False, first=0):
+def make(ep, maxreq, dry=False, first=0, cap=0):
     secs = sections(ep); holes = [t for s in secs for t in s['lines'] if '{{' in t or '○' in t]
     if holes: print(f'대본 빈자리 {len(holes)}곳(예: {holes[0][:30]})')
     if holes and not dry: sys.exit('빈자리를 채운 뒤 만든다')
-    cfg = lock(ep); groups = pack(secs, maxreq)
+    cfg = lock(ep); groups = pack(secs, maxreq, cap)
     print(f"모델 {cfg['model']} · 목소리 {cfg['voice']} · 장 {sum(1 for s in secs if s['lines'])}개 → 요청 {len(groups)}회")
     for g in groups: print('  ', ' + '.join(s['title'][:14] for s in g), sum(syl(t) for s in g for t in s['lines']), '음절')
     if dry: return
@@ -484,13 +495,14 @@ def readback(ep, only=None):
 
 if __name__ == '__main__':
     cmd, ep = sys.argv[1], os.path.abspath(sys.argv[2]); mr = int(sys.argv[sys.argv.index('--maxreq') + 1]) if '--maxreq' in sys.argv else 9
+    cap = int(sys.argv[sys.argv.index('--cap') + 1]) if '--cap' in sys.argv else 0
     if cmd == 'readback': sys.exit(0 if readback(ep, sys.argv[3].split(',') if len(sys.argv) > 3 and not sys.argv[3].startswith('--') else None) else 1)
     elif cmd == 'fixcut': fixcut(ep, int(sys.argv[3]), mr, dry='--dry' in sys.argv)
     elif cmd == 'cutat': cutat(ep, int(sys.argv[3]), [float(x) for x in sys.argv[4].split(',')], mr)
-    elif cmd == 'plan': make(ep, mr, dry=True)
+    elif cmd == 'plan': make(ep, mr, dry=True, cap=cap)
     elif cmd == 'make':
         n = sum(len(x['lines']) for x in sections(ep))
         if n > MAX_LINES and '--over' not in sys.argv:   # 10/6 순돌이: 무료 한도 한 창(16:00 초기화)에 약 100줄 — 넘으면 이틀에 나눠 녹음돼 목소리가 달라진다(R-1 +8.3%). RULES '하루 녹음 한도 안 길이'
             sys.exit(f'말하는 줄 {n}줄 > {MAX_LINES}줄 — 한 창에 다 녹음되지 않음. 대본을 줄인 뒤 녹음(결제 연결 전까지)')
-        make(ep, mr, first=int(sys.argv[sys.argv.index('--first') + 1]) if '--first' in sys.argv else 0)
+        make(ep, mr, first=int(sys.argv[sys.argv.index('--first') + 1]) if '--first' in sys.argv else 0, cap=cap)
     elif cmd == 'check': sys.exit(0 if check(ep, sys.argv[3] if len(sys.argv) > 3 else None) else 1)

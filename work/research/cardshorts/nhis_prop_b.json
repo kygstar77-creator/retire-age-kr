@@ -1,7 +1,7 @@
 {
  "facts": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/research/nhisprop1005/pkg/facts.txt",
  "layout": "cards",
- "music": true,
+ "music": false,
  "chip": "건강보험법 시행령 별표 4 · 2026년 10월",
  "cards": [
   {
@@ -104,6 +104,6 @@
   "10",
   "5"
  ],
- "experiment": "X-SHORTS-LEN B판 (짝 A판 nhis_prop qMXVDJ19_TY, 10/6 12:28) · 음악 A/B는 공개 직전 직전 편 반대로",
+ "experiment": "X-SHORTS-LEN B판 (짝 A판 nhis_prop qMXVDJ19_TY, 10/6 12:28) · 음악 없음(직전 nongji_age 음악 있음의 반대) · 1초 시험 v1~v4b 미달 → review.md 규칙대로 v1 질문형 공개, 판정은 시청 시간",
  "why": "루프 규칙: 조회 난 편은 '내 돈 얼마' 생활 돈 질문 → 공시가별 내 월 재산분 · 예술가 AY '한 칸 계기판'(첫 8초 숫자 하나가 3억→9억으로 바뀜, 목록 넘기기 아님) · 카피 1위 R1(8.13) 첫 프레임 '공시가 3배, 건보료는 몇 배?'·제목 · 반전 답 3.98배는 facts 계산 줄 먼저"
 }

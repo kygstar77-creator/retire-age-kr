@@ -264,7 +264,8 @@ def _day_pkgs(day):
     for s in sl.get('slots', []):
         if s.get('kind') != 'cafe' or s.get('skip') or not str(s.get('at', '')).startswith(day) or not s.get('item'): continue
         d = os.path.join(root, 'research', s['item'], 'pkg')
-        if os.path.exists(os.path.join(d, 'title.txt')): out.append((s['item'], d))
+        # 못 나간 칸을 같은 날 뒤 칸으로 옮기면 한 묶음이 두 칸에 남는다(10/8 sanghan1008 08:10·14:10) — 한 번만 센다
+        if os.path.exists(os.path.join(d, 'title.txt')) and s['item'] not in [i for i, _ in out]: out.append((s['item'], d))
     return out
 
 

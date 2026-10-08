@@ -1394,3 +1394,5 @@
 2026-10-08 17:00 · firemap-video-producer · M-1 비교 장면(4·6장)·끝 화면에 문장마다 카메라 움직임(LineCam) + 14:22 회차의 막대 강조 둘 다 둠 · motioncheck 15초 넘는 정지 3곳 → 0, 화면 글자 그대로라 편집 재서명 불필요
 2026-10-08 17:00 · firemap-video-producer · 완성본 치직 의심 297.1초를 말소리로 판정(meta.click_ok) · 그 0.24초를 잘라 받아쓰기하면 '결국', 문장 wav 치직 0
 2026-10-08 17:00 · firemap-video-producer · lfrender 목소리 관문이 lfvoice의 녹음 날짜 칸('rec')을 못 읽어 늘 '기록 없음' 경고 → rec도 읽게 고침
+2026-10-08 17:07 · editor · C-1 대본 v4 편집 통과, 말 3줄 늘림(쪼개기) · 숫자 0 변경·aitell script 86.0 통과, 녹음 10/9 16:01 창 전 say_v4.txt 갱신
+2026-10-08 17:07 · editor · #56 제목 edit-ok · 숫자 같고 검색어 '금융소득종합과세' 앞머리, write가 --apply

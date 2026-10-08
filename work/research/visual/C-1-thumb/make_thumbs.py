@@ -330,6 +330,65 @@ def c1no(bg, base_col):
 VARIANTS.update(c1n=c1no('#EFE4CC', '#3A4150'), c1o=c1no('#FFFFFF', '#3A4150'))
 
 
+# ── 7차(10/8 17시) — 6차: c1n 6.88(제미나이 6.75·Claude 6.9·레드팀 7). 1초 블라인드에서 새 문구는 '1997/1998 투자 수익률 그래프'로만 읽혀
+#    '3억으로 노후 생활비 꺼내 쓰기'라는 주제를 3/3 못 맞힘(경쟁 5장은 '3억'이 가장 큼). → 이번 차수의 1순위 = 주제가 168px에서 읽히게.
+#    처방: 작은 줄의 말 '3억 · 월 200만원'을 글자 그대로 맨 위 큰 줄로 올리고(낱말 변경 0), 나머지 '원화 계산 · 배당으로 받기'는 알약에.
+#    레드팀 6차: 두 선 출발점에 공통 점 + '3억'(초록 선에서 뗀 자리) · 바탕 한 단계 진하게 · '11년째' 키움. Claude 6차: 크기 1순위 하나 — '1997년 시작: 아직 남음'은 한 줄 64px로 낮춤.
+#    그림에 축 이름 '남은 돈'(사실 설명, 카피 아님) — 수익률 그래프가 아니라 통장 잔액이라는 것을 1초에 알리려고.
+#    c1p = 1위 문구(titles.md 1위) · c1q = 교체안 문구(titles.md thumb_text_swap '1년 차이: 29년 넘게 vs 11년째 바닥', '넘게' 반드시)
+CREAM7 = '#E9D9B4'
+
+
+def lines7(x0, y0, w, h, lw=24):
+    s, X, Y = lines4(x0, y0, w, h, lw=lw)
+    a, b, c = f"stroke='{RED}' stroke-width='{lw + 4}'", f"r='24' fill='{RED}' stroke='#fff' stroke-width='7'", "stroke='#9AA0AA' stroke-width='5'"
+    assert a in s and b in s and c in s
+    s = s.replace(a, f"stroke='{RED}' stroke-width='{lw + 10}'").replace(b, f"r='34' fill='{RED}' stroke='#fff' stroke-width='10'").replace(c, "stroke='#3A4150' stroke-width='8'")
+    s = s.replace('</svg>', f"<circle cx='{X(0):.1f}' cy='{Y(3):.1f}' r='50' fill='{INK}' stroke='#fff' stroke-width='6'/></svg>")
+    return s, X, Y
+
+
+def c1p_html():
+    s, X, Y = lines7(740, 196, 500, 374)
+    return f"""<div style='position:absolute;inset:0;background:{CREAM7}'></div>
+{s}
+<div class='t' style='left:{X(0) - 38:.0f}px;top:{Y(3) - 27:.0f}px;font-size:40px;color:#fff'>3억</div>
+<div class='t' style='left:{X(0) - 40:.0f}px;top:{Y(7) - 40:.0f}px;font-size:34px;color:#3A4150;font-family:PD;font-weight:700'>계좌에 남은 돈</div>
+<div id='p0' class='t' data-fit='1200' style='left:36px;top:18px;font-size:104px;color:{INK}'>3억 · 월 200만원 <span style='font-size:44px;color:#fff;background:{NAVY};padding:6px 18px 9px;border-radius:999px;font-family:PD;font-weight:700;vertical-align:middle'>원화 계산 · 배당으로 받기</span></div>
+<div id='p1' class='t' data-fit='640' style='left:40px;top:170px;font-size:64px;color:{GREEN}'>1997년 시작: 아직 남음</div>
+<div class='t' style='left:40px;top:268px;font-size:70px;color:{RED}'>1998년:</div>
+<div id='p3' class='t' data-fit='640' style='left:30px;top:344px;font-size:190px;color:{RED}'>11년째<span style='font-size:96px'> 바닥</span></div>
+<div class='fine' style='color:#5F6675;top:660px;font-size:15px'>{FINE4}</div>
+"""
+
+
+def c1q_html():
+    s, X, Y = lines7(740, 196, 500, 374)
+    return f"""<div style='position:absolute;inset:0;background:{CREAM7}'></div>
+{s}
+<div class='t' style='left:{X(0) - 38:.0f}px;top:{Y(3) - 27:.0f}px;font-size:40px;color:#fff'>3억</div>
+<div class='t' style='left:{X(0) - 40:.0f}px;top:{Y(7) - 40:.0f}px;font-size:34px;color:#3A4150;font-family:PD;font-weight:700'>계좌에 남은 돈</div>
+<div class='t' style='left:{X(16):.0f}px;top:{Y(6.4):.0f}px;font-size:40px;color:{GREEN}'>1997 시작</div>
+<div class='t' style='left:{X(11) + 40:.0f}px;top:{Y(0) - 70:.0f}px;font-size:40px;color:{RED}'>1998 시작</div>
+<div id='q0' class='t' data-fit='1200' style='left:36px;top:18px;font-size:104px;color:{INK}'>3억 · 월 200만원 <span style='font-size:40px;color:#fff;background:{NAVY};padding:6px 18px 9px;border-radius:999px;font-family:PD;font-weight:700;vertical-align:middle'>1997 vs 1998 시작 · 원화 · 배당으로 받기</span></div>
+<div class='t' style='left:40px;top:170px;font-size:72px;color:{INK}'>1년 차이:</div>
+<div id='q2' class='t' data-fit='640' style='left:34px;top:254px;font-size:120px;color:{GREEN}'>29년 넘게</div>
+<div class='t' style='left:44px;top:390px;font-size:56px;color:#3A4150'>vs</div>
+<div id='q4' class='t' data-fit='640' style='left:30px;top:440px;font-size:150px;color:{RED}'>11년째<span style='font-size:84px'> 바닥</span></div>
+<div class='fine' style='color:#5F6675;top:660px;font-size:15px'>{FINE4}</div>
+"""
+
+
+VARIANTS.update(c1p=c1p_html(), c1q=c1q_html())
+
+
+# 7차 판정(17:1x): c1p 세 명 평균 7.0(제미나이 7.0·7.0 / Claude 7 / 레드팀 7) → 통과선 7, 확정. c1n 6.67 · c1q 6.75지만 레드팀 겹침 3('3억'·'vs'·빨강) 반려.
+#   레드팀 사실: 축 이름 '통장'은 증권 계좌라 틀린 말 → '계좌에 남은 돈'(위에서 바꿈, 카피 아님). 
+#   c1p_s = '1998년 시작:'(copywriter 답 대기, 10/9 12:00) — 승인되면 이 판으로 바꿈. 낱말 하나 차이라 재심사 없이 레드팀 처방 그대로.
+VARIANTS['c1p_s'] = VARIANTS['c1p'].replace(">1998년:</div>", ">1998년 시작:</div>")
+assert VARIANTS['c1p_s'] != VARIANTS['c1p']
+
+
 def check_zones(page):
     return page.evaluate("""()=>{const bad=[];document.querySelectorAll('body *').forEach(e=>{
       if(e.tagName==='SCRIPT'||e.closest('svg')||!e.textContent.trim())return;

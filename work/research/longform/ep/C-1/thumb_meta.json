@@ -1,0 +1,19 @@
+{
+ "pick": "c1p",
+ "file": "thumb_c1p.png",
+ "swap_if_copy_ok": "thumb_c1p_s.png",
+ "scores": {
+  "gemini": [
+   7.0,
+   7.0
+  ],
+  "claude": 7,
+  "redteam": 7,
+  "avg": 7.0
+ },
+ "round": 7,
+ "decided_at": "2026-10-08 17:10",
+ "experiment": "X-THUMB-2 A(두 줄 색 대비 초록/빨강)",
+ "ctr_check": "공개 48h 뒤 채널 중앙값 비교, 미만이면 1회 교체",
+ "by": "firemap-visual-designer"
+}

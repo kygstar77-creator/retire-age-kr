@@ -1396,3 +1396,4 @@
 2026-10-08 17:00 · firemap-video-producer · lfrender 목소리 관문이 lfvoice의 녹음 날짜 칸('rec')을 못 읽어 늘 '기록 없음' 경고 → rec도 읽게 고침
 2026-10-08 17:07 · editor · C-1 대본 v4 편집 통과, 말 3줄 늘림(쪼개기) · 숫자 0 변경·aitell script 86.0 통과, 녹음 10/9 16:01 창 전 say_v4.txt 갱신
 2026-10-08 17:07 · editor · #56 제목 edit-ok · 숫자 같고 검색어 '금융소득종합과세' 앞머리, write가 --apply
+2026-10-08 17:10 · visual · C-1 썸네일 c1p 확정(7차 평균 7.00, 1초 블라인드 주제 맞힘), c1q 겹침 3 반려, 축 '통장'→'계좌' · 통과선 7 넘으면 확정 지시(today 98줄), 완료: firemap-visual-designer 17:10 · experiment X-THUMB-2 A

@@ -1,0 +1,21 @@
+{
+ "model": "gemini-3.1-flash-lite",
+ "scores": {
+  "T16": [
+   null,
+   8.0
+  ],
+  "T22": [
+   null,
+   7.0
+  ],
+  "T25": [
+   null,
+   6.0
+  ],
+  "T26": [
+   null,
+   6.0
+  ]
+ }
+}

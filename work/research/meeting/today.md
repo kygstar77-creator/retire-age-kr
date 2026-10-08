@@ -34,6 +34,7 @@
   - script.md는 말하는 줄 100줄 이하로, 숫자 밀도 관문을 통과해야 한다. 고갈 연차를 끝까지 끄는 구조로 쓴다.
   - 같은 주제로 카페 글 1편과 쇼츠 B(긴 판) 1편의 재료를 남긴다.
   - 금지: 기준 영상 문장·숫자 베끼기, 상품 추천, 확인 안 된 숫자.
+  착수: firemap-youtube-loop 13:18 — C-1 benchmark 확인(지역가입자 건보료·연도별 순서)→analysis·compete→대본 (PC 25시간 꺼짐으로 12:35 기한 넘김)
 - [지시] **firemap-meeting**: 롱폼 대기열 순서를 M-1(오늘 녹음) → C-1 → G-1·R-1로 바꾼다. C-1 공개 칸을 slots.json에 넣는다.
 
 ## ★ 순돌이 10/6 11:2x — 롱폼 재개 · 클라우드 작업실 폐지
@@ -63,6 +64,7 @@
 - [지시·긴급] **firemap-shorts** (사장님 10/3 "쇼츠도 내용을 좀 길게 해서 알차게" → X-SHORTS-LEN 등록만 하고 B를 한 편도 안 만듦, 10/6 재지시) 의도: 7초 카드 말고 '알찬' 쇼츠를 실제로 내보내 비교 · 완료 기준: cardshort.py에 spec "cards": [카드 3~4장] 이어 붙이기(장마다 6~10초, 합 25~40초, 장 사이 막대·숫자 움직임, 첫 프레임부터 본 화면) → **10/8 12:20 칸을 B로**(주제는 이미 A로 나간 nhis_prop·a1_1eok1y·e2_interest 중 하나 — 같은 주제 짝), 10/9·10/10에 한 짝씩 더(하루 2편 중 1편) · 목소리는 쓰지 않는다(무료 TTS는 롱폼 몫, 결제 뒤 목소리 판 추가) · 관문(사실표·편집·1초 시험 첫 프레임)은 그대로, 12시간 전 통과 · 금지: 장마다 같은 말 반복, 카드 한 장에 숫자 3개 넘게
   착수: firemap-shorts 19:31 — cardshort.py "cards" 이어 붙이기 + nhis_prop B판(계기판 첫 장)
   진행: firemap-shorts 19:52 — cardshort.py "cards"(gauge·ratio·points·end, 장 사이 밀기, 끝→첫 장 겹침, 세로 가운데 정렬) + shortsdaily check(카드 글자 사실표 대조·카드당 숫자 3개·장 6~10초·합 25~40초) 구현. nhis_prop_b 32초 렌더·compete 5·aitell 0.0·edit auto. 첫 프레임 1초 시험 v1·v2 5·5 미달(카피 7·8/8·6) → gates_ok 아직. 다음: v3 답 먼저 1판(기한 10/8 00:20), 10/8 12:20 칸 slots에 올림. 10/9·10/10 짝은 a1_1eok1y·e2_interest (cardshorts/nhis_prop_b/review.md)
+  완료: firemap-shorts 13:16 — 10/8 12:20 칸 B판 nhis_prop_b 13:15 공개 https://youtu.be/V8s9_TwoNRY (32초 카드 4장·음악 없음·check 문제 없음·AI 티 0.0). 55분 늦음 = PC 25시간 꺼짐(배터리). 1초 시험 v1~v4b 미달 그대로라 review.md 규칙대로 v1 질문형으로 내고 판정은 48시간 시청 시간(≥15초 성공·<8초면 계기판 접음, 10/10). 다음 짝 10/9 a1_1eok1y·10/10 e2_interest
 - [지시] **전 직원**: 클라우드 작업실 폐지(사장님 10/6 "그냥 없애고 너희가 해") — cloudmerge.py 안 돌림, 클라우드 세션에 일 보내지 않음, 모든 일은 PC 직원이 직접
 
 ## ★ 임시 회의 10/6 10:51 — 조직 축소 반영(근거 meeting/2026-10-06a-decisions.md 반론 처리 표·2026-10-06a-verify.md)
@@ -139,6 +141,7 @@
   완료: firemap-video-producer 10:39 — M-1(쿠팡 없음·금융 주제라 고지 자막 해당 없음) 설명 링크 첫 화면(/) → 주제 맞는 계산기 firemap.kr/dividend(배당으로 파이어, 운영 200 확인)+utm_campaign=VIDEOID(업로드 때 영상ID 자동 치환) · meta.json desc_tpl·link_note(14948db) · D-1 재업로드 안 함 그대로
 - [요청] **firemap-write** (firemap-improve 14:50, 트랙 C) 의도: 이미 읽힌 글을 큰 검색어에 걸리게. research/refactor-candidates.md '판단' 표 3편(#126·#56·#81)을 발행 빈칸 시간에 하루 1편씩 rewrite(뜻 바뀌면 안 고침, editgate 그대로) · 기한 10/8 · 완료 기준 rewrite 3건 + 7일 뒤 refactorcands.py 재측정 줄
   완료(1/3): firemap-write 18:34 — #126 첫 문장에 '예금 이자' rewrite(제목 그대로·본문 969자·사진 3). 주의: editgate stamp는 옛 글이라 틀 v2(끝 FAQ·cover 평균) 어김으로 거부됨 → 편집 표시 없이 나감(naverpost rewrite는 막지 않음). 남은 #56(10/6)·#81(10/7)
+  완료(2/3): firemap-write 13:19 (10/8) — #81(mdiv12) 첫 문단에 '월배당 ETF'·'비교' rewrite, verify OK 1483자·사진 3, 숫자·제목 그대로. #56(fintax)은 img 없는 묶음이라 rewrite하면 사진이 빠져 보류 — naverpost에 본문 앞 문장만 바꾸는 방식 필요(firemap-improve 몫), 기한 10/8 못 맞춤
 - [지시] **firemap-write·firemap-editor** (firemap-brand-director 12:09, 트랙 C) 의도: 카페에 안 읽히는 밖 주제가 섞이지 않게. TBD 칸 확정할 때 brand/guide.md '①-카페 주제 범위' 판단 한 줄("50대 전후 퇴직·노후 돈 숫자로 이어지나?")을 적용 — 밖이면 칸에 넣지 않고 X-CN-1·R31 쪽으로 넘김 · editor는 편집 관문 체크 1줄 추가 · 기한 10/6 08:10 칸(TBD-E) 확정 전 · 완료 기준: TBD-E~J note에 '범위 안쪽/경계' 표기
   착수: firemap-editor 17:30 (editor 몫: 편집 관문 범위 체크 1줄)
   완료(editor 몫): firemap-editor 17:34 — aitell.py scope_check: 제목에 밖 낱말(한능검·토익·대형폐기물·장례 절차·청년 전용 상품)이면 frame에서 막음(gate·editgate 같이), 경계(실거래·전세·주담대·금값·종목)는 노후 돈 말 없으면 경고 · `py -3.12 work/aitell.py scope <묶음>` · test 통과 · 지금 묶음 189개 중 밖 3(한능검 1·청년미래적금 2, 모두 지난/미배정)
@@ -335,3 +338,5 @@
   착수: firemap-write 12:56 — 12:10 ubapply1007(비축) 발행·verify · 10/7 12:10 이후 발행 끊김 원인 확인
 - [알림] **firemap-write·firemap-watchdog** (improve 13:05): 10/7 11:30~10/8 12:53 노트북 배터리 방전으로 PC 꺼짐 — 25시간 전 회차 정지가 원인(이벤트 41·6008). watchdog.py가 이제 '배터리로 돈다' 경보를 맨 앞에 띄움. 결재함 맨 위에 충전기 상시 연결 올림. 카페 기획은 rules.json 새 규칙(예금·이자 주제 하루 1칸↑, 하루당 조회 7배) 참고
 - 막힘(firemap-report 13:10): PC가 10/7 11:30~10/8 12:53 꺼져 있었다(윈도 업데이트 10/7 11:18 직후 비정상 종료 2회, 시스템 이벤트 6008). 그동안 전 회차 멈춤·카페 10/7 12:10~10/8 12:10 칸 빔. 전원·업데이트 재시작 설정은 시스템 설정이라 직원이 못 바꿈 → 10/8 보고 '손봐 주실 것'에 올림 · 담당 순돌이(사장님 전달)
+  완료: firemap-write 13:19 — 12:10 ubapply1007 cafe/227 발행 13:07 verify OK 1334/1334자·사진 3/3(제목 숫자 2→1로 고쳐 readcheck 통과, 본문 0 변경) · 리팩토링 #81 rewrite verify OK(2/3, #56은 사진 없는 묶음이라 보류 그대로) · 오늘 14~22시 칸 재배정: 14 sanghan1008·16 parking1007·18 pensavbreak1007·20 wagepeak1007·22 ltcgrade1007(전부 gates_ok 있음, slot.txt·slots.json) · 비축 카페 1/2(retmid1005)
+- 막힘(firemap-write 13:19): 10/7 11:23 커밋 뒤 10/8 12:55까지 어느 직원 회차도 안 돎(git·runs·decisions 전부 공백) — 카페 10/7 12:10~10/8 10:10 8칸 빈칸, 21시 회의도 안 열려 10/8 이후 칸 배정 없음. PC 꺼짐/절전 추정(확인 안 함) · 운영실장·순돌이가 원인 확인 필요 · 남은 10/7 칸 묶음 schdacct1007(시세 재조회 필요)·earlyjob1007·retmid1005는 10/9 칸 후보

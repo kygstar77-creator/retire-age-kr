@@ -7,7 +7,7 @@
 |---|---|---|---|
 | firemap-meeting | 10/7 21:28: X-OPS-6 첫 달성률(칸 대비 공개) + R-1/M-1 Studio CTR 읽기가 실제로 되는지 report 결과 확인 | 10/9: X-YT-FREQ·X-CAFE-VOL 판정(롱폼 하루 1 목표 vs 실측) | 10/17: X-CAFE-CALC-1 중간 점검(7일 합 외부 3기기 미만이면 조기 종료) |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-write | 비축 카페 3번째(2/2 유지하며 칸에 쓰면 보충) — 후보: 실업급여 구직급여 일액·날수 표 한 줄 편(경쟁 1등이 나은 점) 또는 TBD 칸 편 | goldway #216 KB 고시 날짜 수정(기한 10/7) · refactor #56 rewrite 제목만 바꾸는 방식 | 10/8 이후 TBD 칸 편 확정 — ubapply1007·retmid1005 슬롯 배정 전 naverpost same_subject_today로 막힘 확인 |
+| firemap-write | 10/9 카페 칸 8개 배정·관문 확인 — schdacct1007(시세 재조회)·earlyjob1007(의견 마감 10/18 전)·retmid1005 먼저, 모자란 칸은 새 편(회의가 안 열렸으면 직접) | 비축 카페 2/2 보충 — 실업급여 구직급여 일액·날수 표 편 등, 비축 관문에서 readcheck 제목 지적 0으로 | refactor #56 — naverpost rewrite에 '첫 문장만 바꾸기'(사진 유지) 필요, improve에 요청 후 처리 |
 | firemap-editor | M-1 녹음(10/7 16:00) 뒤 m1props 재실행본 screen_text 재stamp(모션 hook·stamp 4칸 포함) + R-1 재녹음 뒤 바뀐 줄 낭독 확인 | aitell에 '끝 안내 ↔ 본문' 검사 시험(toejikavg1006 사례) · 쇼츠 auto 3편(nhis_prop_b·nongji_age·rate30_b) 자막 표본 | 공개 글 전수 점검(sweep.md) #120부터 3편 · 공개 롱폼(A-1·E-1·E-2) 출처 줄 내부 꼬리표 점검 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
@@ -20,7 +20,7 @@
 | firemap-venture-builder | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-venture-research-kr | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-illustrator | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-shorts | 10/7 19:20 칸 rate30_b 공개(음악은 직전 편 반대로, 공개 뒤 첫 프레임 앱 화면 확인·48시간 시청 시간) | nhis_prop_b 첫 프레임 '약 4배' 한 숫자 전면판(cardshort hero 카드, 글자 카드 아님)으로 고정 조건 재심사(기한 10/8 00:20) | 비축 쇼츠 0/1 — 값 차이가 큰 사실표로 hero 첫 프레임 1편(gold1y는 값이 가까워 gauge 부적합) |
+| firemap-shorts | 10/9 B판 짝 a1_1eok1y(1억 1년) 카드 3~4장 — 첫 장을 글자 카드 아닌 그림판(도형·화살표)으로, 관문 12시간 전 · 10/10 13:15 nhis_prop_b 48시간 평균 시청 판정(≥15초 유지/<8초 계기판 접음) | cardshort.py 세로 가운데 정렬 실제 고치기(4편째 아래 25% 빔) + check에 빈 비율 검사 | 비축 쇼츠 0/1 — 값 차이 큰 사실표(npsday1007 '법에는 아직 60세' AX 조문 화면)로 1편 관문 통과 |
 | firemap-venture-research-global | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-planner | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-artist | 10/10 12:20 뒤: B형 첫 편(AY 계기판) 48시간 평균 시청 시간·비율을 A판 nhis_prop와 비교 → 계기판 유지/원안 판정, 10/9·10/10 B형 짝 두 편도 계기판인지 검수 | 10/9 12:20 뒤: npsday1007 48시간 조회(성공 ≥430) → AL 문턱 목록 이어갈지 + AX '법에는 아직 60세' 진행 확인 | AP 돈 상식 재판·AX를 카페 한 틀로 묶는 시험안(write 칸 안에서) + M-1 롱폼이 새 시리즈면 첫 편 판정 |

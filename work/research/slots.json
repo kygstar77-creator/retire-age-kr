@@ -20,14 +20,6 @@
     "by": "firemap-write",
     "at": "2026-10-06 09:37",
     "gates_ok": "2026-10-06 09:37"
-   },
-   {
-    "item": "ubapply1007",
-    "ep": "work/research/ubapply1007/pkg",
-    "status": "관문 통과 2026-10-07 11:22: 제목 '실업급여 270일 받는 분이 신청을 4개월 미루면 얼마를 못 받을까' 평균 7.25(제미나이 7.5·레드팀 5·독자 9·작성자 7.5)·표지 8.2(레드팀 8·독자 9·작성자 7.5)·aitell 3.4·readcheck 제목 1건(숫자 2개 유지)·selfcheck 사실 0·editgate auto·compare/review 세 줄. 실업급여 #189·#204·earlyjob1007(10/7 22:10)과 각도 다름(시기별 손실 표+신청 순서) — 칸 배정 전 same_subject_today 확인. slot.txt 10/8 12 가안",
-    "by": "firemap-write",
-    "at": "2026-10-07 11:22",
-    "gates_ok": "2026-10-07 11:22"
    }
   ],
   "long": [
@@ -557,12 +549,46 @@
    "note": "관문 통과(write 10:29): nhisrent1005 → sanghan1008 교체 — nhisrent는 #209(10/5 건보료 재산 점수 과세표준 3억)와 같은 대상·예시라 naverpost '같은 대상 이미 씀'으로 막힘(hold.txt). 새 편: 본인부담상한제 환급금 10/8 시행 체납액 공제(국민건강보험법 제44조③) · 검색 32,180·우리 0편 · 제목 T1 7.5·표지 S2 7.33·레드팀 오류 2 반영·crosscheck·selfcheck 사실 0·aitell 0.0·editgate auto · 근거 work/research/sanghan1008/review.md | 이전: firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 비축에서 배정 — nhisprop1005(10/5 08:10) 뒤 3일 지나 겹침 조건 풀림. 쓰기 전 write가 같은 날 끝말 겹침만 확인. 비축은 retmid1005 1편 남음 → 비축 1편 새로 만들기(최소 2)"
   },
   {
+   "at": "2026-10-08 12:10",
+   "kind": "cafe",
+   "item": "ubapply1007",
+   "owner": "firemap-write",
+   "gates_ok": "2026-10-07 11:22",
+   "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)",
+   "published": "https://cafe.naver.com/firemap/227 verify OK 1334/1334·사진 3/3 (13:07)"
+  },
+  {
    "at": "2026-10-08 12:20",
    "kind": "shorts",
    "item": "nhis_prop_b",
    "owner": "firemap-shorts",
    "gates_ok": null,
-   "note": "firemap-shorts 10/6 19:52: X-SHORTS-LEN B판 첫 편([지시·긴급]) — cardshort.py cards 구현·32초 렌더·compete 5·check·aitell 0.0 끝. 첫 프레임 1초 시험 v1·v2 5·5 미달(카피 7~8) → 남은 관문: v3(답 먼저) 1판, 기한 10/8 00:20. 근거 cardshorts/nhis_prop_b/review.md · firemap-shorts 10/7 07:15: v3(답 먼저) 3판 첫 프레임 고정 조건(3.1-flash-lite·보정 gongjae1002 7.5·7.0 유효) v3b·v3c·v2 모두 5·5 → 미통과, gates_ok 없음. 어두운 글자 카드 첫 프레임 틀 한계. 기한 10/8 00:20 전 다음 1안: 첫 프레임을 글자 카드 아닌 한 숫자 전면판(배경색·'약 4배' 화면 절반)으로 cardshort 'hero' 카드 추가, 안 되면 review.md 규칙대로 v1 질문형으로 칸 내고 시청 시간 판정. 근거 cardshorts/nhis_prop_b/review.md 끝"
+   "note": "firemap-shorts 10/6 19:52: X-SHORTS-LEN B판 첫 편([지시·긴급]) — cardshort.py cards 구현·32초 렌더·compete 5·check·aitell 0.0 끝. 첫 프레임 1초 시험 v1·v2 5·5 미달(카피 7~8) → 남은 관문: v3(답 먼저) 1판, 기한 10/8 00:20. 근거 cardshorts/nhis_prop_b/review.md · firemap-shorts 10/7 07:15: v3(답 먼저) 3판 첫 프레임 고정 조건(3.1-flash-lite·보정 gongjae1002 7.5·7.0 유효) v3b·v3c·v2 모두 5·5 → 미통과, gates_ok 없음. 어두운 글자 카드 첫 프레임 틀 한계. 기한 10/8 00:20 전 다음 1안: 첫 프레임을 글자 카드 아닌 한 숫자 전면판(배경색·'약 4배' 화면 절반)으로 cardshort 'hero' 카드 추가, 안 되면 review.md 규칙대로 v1 질문형으로 칸 내고 시청 시간 판정. 근거 cardshorts/nhis_prop_b/review.md 끝 · firemap-shorts 10/8 13:16: 1초 시험 v1~v4b 미달 그대로 → review.md·운영실장 11:23 규칙대로 v1 질문형 공개(gates_ok는 비워 둠 — 1초 시험 미통과 공개, 판정은 48시간 평균 시청 시간 ≥15초·댓글 '내 집 ○억' ≥3, 버림 <8초)",
+   "published": "2026-10-08 13:15 https://youtu.be/V8s9_TwoNRY (55분 늦음 — PC 25시간 꺼짐(배터리), 회차 13:11 시작)"
+  },
+  {
+   "at": "2026-10-08 14:10",
+   "kind": "cafe",
+   "item": "sanghan1008",
+   "owner": "firemap-write",
+   "gates_ok": "2026-10-07 10:29",
+   "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)"
+  },
+  {
+   "at": "2026-10-08 16:10",
+   "kind": "cafe",
+   "item": "parking1007",
+   "owner": "firemap-write",
+   "gates_ok": "2026-10-06 22:43",
+   "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)"
+  },
+  {
+   "at": "2026-10-08 18:10",
+   "kind": "cafe",
+   "item": "pensavbreak1007",
+   "owner": "firemap-write",
+   "gates_ok": "2026-10-06 18:38",
+   "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)"
   },
   {
    "at": "2026-10-08 19:30",
@@ -571,6 +597,22 @@
    "owner": "firemap-video-producer",
    "gates_ok": null,
    "note": "04:4x firemap-youtube-loop: 10/6 16:01 TTS는 M-1에 씀(R-1은 같은 도구로 10/5 f0 밖 81줄·lfpitch 블라인드 탈락 → Chirp 3 HD 결재 뒤). M-1 = 대본 심사 7.47 통과·편집 통과(script.v2·화면 글자 02:50)·화면 24장면 완성. 남은 관문: 16:01 녹음 → m1props 재실행·screen_text 재서명 → 렌더·scorecard·썸네일·review 판정 줄. 관문 기한 10/7 19:30"
+  },
+  {
+   "at": "2026-10-08 20:10",
+   "kind": "cafe",
+   "item": "wagepeak1007",
+   "owner": "firemap-write",
+   "gates_ok": "2026-10-06 16:31",
+   "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)"
+  },
+  {
+   "at": "2026-10-08 22:10",
+   "kind": "cafe",
+   "item": "ltcgrade1007",
+   "owner": "firemap-write",
+   "gates_ok": "2026-10-06 20:38",
+   "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외"

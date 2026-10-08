@@ -509,3 +509,4 @@
 - [배차] firemap-write 10/9 14:10 hometown1009 제목 재심·editgate·gates_ok(기한 08:10) + 12:10 eitclate1009 미달 → 비축 카페(retmid1005·npsage1009)로 칸 채우기 + 16:10 TBD-ISA 착수(기한 10:10)
   완료: firemap-write 07:20 — ① 14:10 hometown1009 관문 통과 gates_ok(제목 최종본 제미나이 7·7·레드팀 7, 표지 H4 7.0, 구간별 공제율 표 사진 추가로 3장, editgate auto) ② 12:10 eitclate1009 미달 → 비축 retmid1005로 교체(gates_ok 10/6 09:37, naverpost block 없음; wagepeak1007과 40시간 간격이나 각도 다름 — 순돌이 확인 요망), eitclate1009는 hold·10/10 12로 넘기고 제목 대안 2개 기록 · ③ 16:10 TBD-ISA 착수는 시간 남아 다음 회차(기한 10:10) · 비축 카페 1/2(npsage1009만)
   착수: firemap-write 07:10 (운영실장)
+- 막힘(운영실장 07:20): 16:10 TBD-ISA 원고 미착수(관문 기한 10:10) → 08:10 write 정기 1순위. 비축 카페 1/2(npsage1009만, 10/14 이후 가능)·비축 쇼츠 0/1 — 다음 회차 첫 일 비축분. 12:10 retmid1005는 wagepeak1007(10/7)과 퇴직금 주제 40시간 간격 — 순돌이 확인 요망(633ffc0)

@@ -11,16 +11,7 @@
   "long": 1
  },
  "reserve": {
-  "shorts": [
-   {
-    "item": "rate30_b",
-    "ep": "work/research/cardshorts/rate30_b.json",
-    "status": "관문 통과 2026-10-07 03:26(첫 프레임 1초 고정 조건 7·7·레드팀 7=7.0, 카피 7.33, compete 5, review 세 줄, aitell 0.0 by auto) — 10/7 19:20 칸이었으나 PC 꺼짐으로 미공개. 10/8 14:02 재점검: aitell 0.0, check는 C3(직전 nhis_prop_b cards와 같은 틀)만 걸림 → bars/rank 편 다음 칸에 씀. 사실 유효기한: 10/22 금통위 전까지('2026년 8월부터 3%'), 그 뒤엔 사실표 재조회 필요",
-    "by": "firemap-shorts",
-    "at": "2026-10-08 14:03",
-    "gates_ok": "2026-10-07 03:26"
-   }
-  ],
+  "shorts": [],
   "cafe": [
    {
     "item": "retmid1005",
@@ -32,13 +23,6 @@
    }
   ],
   "long": [
-   {
-    "item": "M-1",
-    "ep": "longform/ep/M-1",
-    "status": "대본 심사 7.47·편집 통과·화면 완성, 10/6 16:01 녹음 → 10/8 19:30 칸",
-    "by": "firemap-youtube-loop",
-    "at": "2026-10-06 04:47"
-   },
    {
     "item": "R-1",
     "ep": "longform/ep/R-1",
@@ -552,10 +536,10 @@
   {
    "at": "2026-10-08 08:10",
    "kind": "cafe",
-   "item": "sanghan1008",
+   "item": null,
    "owner": "firemap-write",
    "gates_ok": "2026-10-07 10:29",
-   "note": "관문 통과(write 10:29): nhisrent1005 → sanghan1008 교체 — nhisrent는 #209(10/5 건보료 재산 점수 과세표준 3억)와 같은 대상·예시라 naverpost '같은 대상 이미 씀'으로 막힘(hold.txt). 새 편: 본인부담상한제 환급금 10/8 시행 체납액 공제(국민건강보험법 제44조③) · 검색 32,180·우리 0편 · 제목 T1 7.5·표지 S2 7.33·레드팀 오류 2 반영·crosscheck·selfcheck 사실 0·aitell 0.0·editgate auto · 근거 work/research/sanghan1008/review.md | 이전: firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 비축에서 배정 — nhisprop1005(10/5 08:10) 뒤 3일 지나 겹침 조건 풀림. 쓰기 전 write가 같은 날 끝말 겹침만 확인. 비축은 retmid1005 1편 남음 → 비축 1편 새로 만들기(최소 2)"
+   "note": "skip — PC 꺼짐(10/7 11:30~10/8 12:53)으로 못 나감, sanghan1008은 14:10 칸에서 공개(#228). 이중 기록 정리 firemap-meeting 10/8 21:44(검증 참모 21:42)"
   },
   {
    "at": "2026-10-08 12:10",

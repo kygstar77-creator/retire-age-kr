@@ -51,6 +51,8 @@
 - [편집 검수 요청] C-1 대본 v2 트랙:C · 담당 firemap-editor · 시한 10/9 18:00 · 근거 longform/ep/C-1/script.md(말 72줄, say_v2.txt) · facts.txt [S] · 금지: 숫자·날짜 바꾸기, 상품 추천 (youtube-loop 13:41)
 - [카피 요청] C-1 제목·썸네일 문구·첫 3초 트랙:C · 담당 firemap-copywriter · 시한 10/9 21:00 · 근거 longform/ep/C-1/analysis.md ②(S&P500 243,900·파이어족 12,780·해외주식양도소득세 5,530)·compete.md 경쟁 5개 제목 틀 — 수페TV '3억 월 300 평생' 틀·숫자 반복 금지, 상품명 금지, 첫 3초 가안 compete.md 끝 (youtube-loop 13:41)
   착수: firemap-copywriter 13:42
+  완료: firemap-copywriter 13:48 — C-1 1위 제목 'S&P500 3억·월 200만원, 평균이면 100년 넘게 가는데 2000년 시작 배당 쪽은 9년째 바닥' · 썸네일 '배당 9년 · 매도 11년'(작게 2000년 시작·3억·월 200만원) · 결선 3명 평균 8.50(제미나이 8.0·레드팀 9.0·작성자 8.5) · 2위 '첫해 세금·건보료 722만원 vs 0원' 8.47 · 제미나이 1차 1위 K5(10.0 '먼저 바닥나는 이유')는 레드팀 5.8 가정 없는 단정으로 탈락 · 근거 ep/C-1/copy/titles.md·review.md
+  [알림] **firemap-youtube-loop·firemap-video-producer·firemap-visual-designer** (copywriter 13:48): C-1 제목·썸네일은 ep/C-1/copy/titles.md 1위를 쓴다(meta.json 만들 때 title_candidates로). 첫 3초는 대본 0장 둘째 줄의 '9년째에 통장이 빈 사람이 나옵니다' → '배당으로 받은 사람은 9년째에 통장이 빕니다'(레드팀: 조건을 말에, 숫자 변경 0) — 고치는 건 youtube-loop 몫. '9년'에서 '2000년 시작·배당 쪽' 조건을 떼지 말 것, 2008년 5.27억은 원화 기준(달러 0.22억)이라 제목·썸네일에 쓰지 않음
 - [지시] **firemap-meeting**: 롱폼 대기열 순서를 M-1(오늘 녹음) → C-1 → G-1·R-1로 바꾼다. C-1 공개 칸을 slots.json에 넣는다.
   착수: firemap-meeting 13:28
   완료: firemap-meeting 13:31 — 대기열 M-1(10/8 19:30, PD 13:22 녹음 중) → C-1(10/10 19:30, 관문 기한 10/9 19:30·녹음 10/9 16:01 창) → G-1(10/12 19:30, 녹음 오늘 16:01 창 — C-1 대본이 아직 없어 창을 놀리지 않음, C-1 미달이면 G-1이 10/10로 당김) → R-1(Chirp 결재 뒤). slots.json 반영, PD 06:22 G-1 칸 알림도 이것으로 닫음

@@ -11,14 +11,17 @@
 - 원칙(스프린트·운영실장): 첫 칸은 수익에 가장 가까운 일 = X-CAFE-CALC-1(10/10 시작) 카페 글 · 다음 = 롱폼 대기열을 TTS 창마다 한 편씩. 10/7 빈 칸은 몰아서 메우지 않는다.
 - [지시·긴급] **firemap-video-producer** (기한 10/8 18:30) 의도: 오늘 19:30 M-1 칸을 판정 없이 흘려보내지 않는다 · 완료 기준: M-1 voice.json 전체 속도 5.38 < lfvoice 기준 5.5(검증 참모 13:37) — lfvoice check 결과로 고칠지(느린 줄만 재녹음은 오늘 16:01 창) 정하고, 관문을 넘으면 slots.json 10/8 19:30에 gates_ok, 못 넘으면 skip+사유+대체일(10/9 19:30 가능) · 금지: 기준 낮추기 · 보고: decisions/log.md
   착수: firemap-video-producer 14:22 — lfvoice check: 편 전체 5.63(통과)·앞뒤 +0.3%·튀는 줄 0, 퍼짐 IQR 0.1647 > 0.16 하나로 막힘 → 16:01 창 1요청으로 양 끝 줄 다시 받기(lfretake), 기준 그대로
+  진행: firemap-video-producer 16:40 (14:22 회차) — 같은 M-1을 13:22 회차가 계속 맡고 있어 M-1 업로드·m1_ds·meta는 13:22 회차에 넘김. 사실만: 16:02에 M-1 wav를 따로 다시 받음(lfretake 1요청, audio/m-1/_take_10081602 — 13:22 회차 16:01 재받기 뒤라 16줄을 덮어씀, 합친 readback 93줄 걸림 0·check 통과 IQR 0.13) · 오늘 TTS 10/10 다 씀(M-1 2·G-1 8) · meta.json chapters 8개·desc 채움(chapters.py), M1.tsx Pair 강조(dim)·parts/reverse.tsx GroupBars dim 속성 추가 — 화면 글자 해시 그대로 · 내 16:30 렌더는 멈춤
 - [지시] **firemap-video-producer** (기한 오늘 16:01 TTS 창) 의도: 대기열(M-1→C-1→G-1→R-1) 중 C-1 대본이 아직 없으니 창을 놀리지 않는다 · 완료 기준: M-1 재녹음이 필요 없으면 G-1 80줄 녹음 → lfvoice check 결과 STATE.md 한 줄. M-1 재녹음이 필요하면 M-1 먼저, 남는 한도로 G-1 · 금지: R-1(결재 뒤)
   착수: firemap-video-producer 14:22 — M-1 재받기 1요청 먼저, 남는 한도로 G-1 8요청(plan 8장·8회, 합 9/10)
+  완료: firemap-video-producer 16:42 — M-1 재받기 1요청(16:02) 뒤 G-1 8요청 녹음 → lfvoice check 막힘: 4장 18문장 자르기 실패(fixcut 2회 '맞춤 실패', 쉼 조각 수 < 문장 수)·튀는 줄 10·IQR 0.19 → 오늘 녹음분은 audio/g-1_1008·voice.1008.json으로 옮김, G-1은 다음 창에 처음부터 전부 다시(한 날 규칙) · 오늘 TTS 10/10 다 씀
 - [지시] **firemap-youtube-loop** (기한 10/9 12:35) C-1 대본 심사 통과(review.md 판정 줄)까지 — 10/10 19:30 칸 관문 기한 10/9 19:30, 녹음 10/9 16:01 창. 못 넘으면 10/9 13:00까지 slots.json 10/10 칸 note에 'G-1 대체'라고 적는다
 - [지시] **firemap-audit** (기한 10/9 12:00) 의도: 공개 저장소 노출 범위를 숫자로 · 완료 기준: origin에 올라간 파일 중 ① 비밀키·토큰 의심(_boss_*·functions/naver-token.js 내용 확인 등) ② 내부 문서 폴더 목록 1장(audit 폴더), firemap.kr 배포가 GitHub Pages인지 Cloudflare인지 한 줄 → approvals.md 10/8 저장소 항목 밑 · 금지: 저장소 설정 변경·히스토리 재작성(결재 몫)
 - [지시] **firemap-shorts** (기한 10/10 13:15 판정) V8s9(1초 시험 미달 공개)의 평균 시청을 짝 A판 qMXVDJ19_TY·최근 쇼츠 중앙값 둘 다와 비교해 review.md에 · 이어서 비축 0/1 → 1(G-1 재료 g1_receipt 등 우선)
 - [지시] **firemap-write** (기한 10/9 02:10 = 08:10 칸 관문) 10/9 카페 8칸 편 확정(slots.json, 예금·이자 1칸 이상, 비축 retmid1005 검토) · 비축 1/2 → 2/2 · 참고(사용자 참모, 실물 #227): '모르면 잃는 돈'(신청 기한·소멸) 문장이 공유 포인트 — 첫 문단에 유지, 30대 예시가 맞는 주제면 나이 예시 하나 더
   착수: firemap-write 14:21 — 14:10 sanghan1008 발행 뒤 10/9 카페 8칸 편 확정
   진행: firemap-write 14:39 — 14:10 sanghan1008 cafe/228 발행 verify OK 1496/1496자·사진 3/3 · 10/9 08:10=earlyjob1007(gates 10/7 08:43) · schdacct1007 시세 재조회·10/10 이후(SCHD #201 10/3 7일) · retmid1005 10/11 이후(오늘 20:10 wagepeak 퇴직금 중간정산 겹침) · 새 편 사실표 2개 완료: deplend1009(예금·이자 칸, 예금담보대출 vs 중도해지 KB·우리·하나 계산)·npsage1009(64년생 수령 63세, 조기·연기 역전 나이) — 원고·관문은 16:10 회차부터 · 10/9 10:10~22:10 7칸 중 5칸 아직 편 없음
+  착수: firemap-write 16:21 — 16:10 parking1007 발행·verify · 10/9 칸 deplend1009 남은 관문(표지·readcheck·crosscheck·editgate)·npsage1009 원고
 - [지시] **firemap-video-producer** (기한 10/10) 목소리 도구 상업 이용 조건: 제미나이 TTS(현재)·Chirp 3 HD 약관 원문 한 문장씩 approvals.md Chirp 항목 밑에(launch-checklist 29) · 못 찾으면 '확인 안 함'
   완료: firemap-video-producer 14:24 — approvals.md Chirp 항목 밑 한 줄: 제미나이 API 약관 'Google won't claim ownership over that content.'(무료 등급 상업 금지 문장 못 찾음) · 클라우드 약관 20조 a 'Google does not assert any ownership rights … in the Generated Output.' — Text-to-Speech가 생성형 AI 서비스 목록에 드는지·Chirp 문서 사용 제한은 확인 안 함
 - 헛돈 회차: 10/7 11:30~10/8 12:53 정지 구간이라 이번엔 세지 않음(확인 안 함). 근무 축소·직원 추가 없음.
@@ -393,3 +396,4 @@
   완료(부분): firemap-write 15:20 — deplend1009 원고 4조각·표 2장·제목 가안·레드팀 사실 대조 반영까지, gates_ok 못 찍음(표지 3명 평균 7 미달, readcheck 4건, crosscheck·editgate 남음) · 다음 회차가 review.md '남음' 7항목부터
 - 막힘(운영실장 15:23): firemap-shorts 19:20 칸 npsday1007 첫 프레임 v10a 6.5·6.5로 7 미달(gates_ok 없음, 80e1c23) — 19:20 근무 1안: v10a 그대로 공개·48시간 시청률 판정(nhis_prop_b 선례). 칸 기한 넘긴 채 공개는 순돌이 판단 몫
 - 막힘(운영실장 15:23): firemap-write 10/9 10:10 deplend1009 표지 3명 평균 7 미달(1초 6)·readcheck 4건·crosscheck/selfcheck/editgate 남음(f9a82a2) — 기한 10/9 04:10, 다음 write 근무가 deplend1009/review.md '남음' 7항목부터
+- [알림] **firemap-video-producer**(13:22 회차) 16:40 — M-1을 14:22 회차도 '이어서' 잡아 두 회차가 겹침(16:26·16:31 렌더 둘). 업로드(ytlong up, 19:30 예약)는 13:22 회차가 하고, 14:22 회차에는 M-1 up 금지·m1_ds/meta.json 손대지 말기를 세션 메시지로 알림. 원인: STATE '제작 시작' 줄을 보고도 '이어서'로 들어옴 → 회차 시작 때 같은 편 '[PD] 시작' 줄이 3시간 안에 있으면 그 회차 몫(RULES/교본에 적음)

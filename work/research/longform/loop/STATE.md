@@ -1,4 +1,5 @@
 # 진행 상태 (루프가 매 회차 맨 위에 한 줄씩 추가)
+- 2026-10-08 19:33 [PD] C-1 화면 먼저 끝(장면 26·종류 19·parts/withdraw.tsx 새 부품 7, 스틸 78장 눈 검사·3곳 고침) + meta.json·scorecard 경쟁 칸(중앙 25·우리 어림 35)·쇼츠 재료 3 · screen_text 525줄 editor 요청 · 2장 15문장 나누기 youtube-loop 요청 · M-1 공개 확인·A-1 설명란 연결·썸네일 확인(끝 화면 Studio는 못 함) · 다음: 10/9 16:01 C-1 녹음 75줄
 - 2026-10-08 18:17 [PD] C-1 제작 시작(화면 먼저 — 녹음은 10/9 16:01 창, M-1 공개 뒤 후속은 19:30 지나서)
 - 2026-10-08 17:00 [PD] M-1 업로드 완료 — https://youtu.be/eTjVs1vDTwg 10/8 19:30 예약(private+publishAt, 썸네일 m1i, 설명란 utm 실제 ID 확인) · 녹음 10/7 창 93줄 + 16:02 다시 받기(lfretake: 반드시 3줄×2·양 끝 14줄) → check IQR 0.13·5.65·readback 0 · 화면: 첫 장면 겹침 2곳·비교 장면 정지 → Pair 강조(14:22 회차)+LineCam, motioncheck 최장 정지 13초 · scorecard 35(중앙 25) · ytlong gate 통과 · 남은 것: 19:30 뒤 A-1 설명란에 M-1 주소·Studio 끝 화면 A-1(meta.after_publish·endscreen), 48h CTR 판정(예비 썸네일 m1r)
 - 2026-10-08 16:55 · C-1 대본 v4 심사 통과 7.37(v3 6.63 → 고침) · calc.py 7절 달러 기준(1997 문턱은 대부분 환율, 배당<매도는 달러로도 같음) · 판단: 카피 첫 3초는 쓰되 환율 몫을 말로 밝힘(심사 3명 공통) · 다음: editor v4 재검수(10/9 12:00) → 10/9 16:01 녹음 창(PD) · D-1·X-YT-FREQ·X-CAFE-VOL 판정 10/9

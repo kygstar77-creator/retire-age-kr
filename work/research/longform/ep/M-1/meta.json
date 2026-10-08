@@ -98,5 +98,9 @@
  "click_ok": [
   297.1
  ],
- "click_ok_note": "297.1초 = 4장 끝 줄 \"결국 SCHD처럼…\" 첫소리 0.24초(문장 wav 0.30~0.54초). 그 조각만 잘라 gemini-3.5-flash 받아쓰기 → \"결국\", 문장 wav clickscan 치직 0 — 말소리 · firemap-video-producer 2026-10-08 16:28"
+ "click_ok_note": "297.1초 = 4장 끝 줄 \"결국 SCHD처럼…\" 첫소리 0.24초(문장 wav 0.30~0.54초). 그 조각만 잘라 gemini-3.5-flash 받아쓰기 → \"결국\", 문장 wav clickscan 치직 0 — 말소리 · firemap-video-producer 2026-10-08 16:28",
+ "after_publish_done": [
+  "2026-10-08 19:33 A-1 설명란 M-1 주소 추가(되읽기 OK)",
+  "2026-10-08 19:33 공개 썸네일 = m1i 확인"
+ ]
 }

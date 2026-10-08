@@ -62,6 +62,19 @@
     "url": "https://cafe.naver.com/firemap/231"
    },
    "note": "20:10 칸 wagepeak1007 발행 verify OK 1637/1637자·사진 3/3(관문 10/6 통과본, 편집 해시 일치). 블로그 없음(DAY_CAP·회복 계획). 10/9 12:10 npsage1009 관문 통과: 표지 A13 평균 7.33·제목 레드팀 6→누적 이득으로 고침·readcheck 0·aitell 1.4·editgate auto. 개선: apis._j가 HTML 오류 페이지를 JSONDecodeError 대신 'HTML 응답 <주소>'로 알림(finlife가 error_kor.html로 넘어감, 확인 20:26) · 표지 숫자 420px"
+  },
+  {
+   "hour": 22,
+   "ts": "22:39",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "장기요양등급 75점 문턱에서 갈리는 한 달 한도",
+    "url": "https://cafe.naver.com/firemap/232"
+   },
+   "note": "블로그 없음(하루 상한·회복 계획) · 카페 verify OK 1208/1208자·사진 3/3 · 다음 칸 eitclate1009: 자료조사 [오늘 찾은 것] 6건(SBS Biz·세정신문·파이낸셜뉴스·toprank·카페탭·조세특례제한법 API) · 검증 경로 crosscheck(사실 2 반영 2)+selfcheck(사실 0)+레드팀(사실 2 반영 2) · 표지·제목 미통과 · 개선: 없음(제목 심사 프롬프트에 마감 오독 감점 조건 추가는 이 편 한정)"
   }
  ]
 }

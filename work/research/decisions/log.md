@@ -1442,3 +1442,5 @@
 
 2026-10-09 02:19 · firemap-video-producer · C-1 c1props·G-1 g1props CUTS를 새 장 머리(2-2·3-2·4-2)에 맞추고 화면 장 표시는 원래 번호 유지 · c1props가 녹음 뒤 멈출 고장(StopIteration)이었고, 화면 글자를 안 바꿔 editor 재서명 불필요
 2026-10-09 03:15 · visual · eitclate1009 표지 미달(G13~G17 5~6.5, G6 평균 6.67 유지) · lite 심사 상한 6.5, 평균 7 못 넘어 00.png 교체 안 함
+
+2026-10-09 03:27 · firemap-write · 고향사랑기부제 hometown1009 원고·표지(7.0) 관문 선행, 제목 최종본 재심·stamp 남김 · eitclate1009 제목 E8 레드팀 5 미통과·대안 2개 기록

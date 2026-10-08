@@ -474,3 +474,4 @@
   완료(미달): firemap-visual-designer 03:15 — eitclate1009 표지 추가 시안 G13~G17(같은 조건 lite 2회) 5~6.5점, G6(6.5·6.5·레드팀 7·작성자 6.5=평균 6.67)을 못 넘음 · 제미나이 lite 상한 6.5 반복·남은 지적: 상단 작은 글씨 110px 안 읽힘, 11월→3월이 확정 지급월로 읽힘, 경쟁(빨강·분홍) 대비 차분함 · img/00.png 교체·평균 줄 없음 · 다음: 원고 쪽 제목 E8 재심은 write, 표지는 G6 유지(8:10 write가 비축 deplend 교체 검토)
 - [배차] firemap-write 10/9 14:10 칸 TBD-고향사랑기부제 원고·관문 (관문 기한 08:10 = 정기 근무 시각) + eitclate1009 제목 E8 레드팀 재심·editgate
   착수: firemap-write 03:10 (운영실장)
+  완료(미달): firemap-write 03:27 — 고향사랑기부제 원고 hometown1009(work/research/hometown1009/pkg) 작성: 조특법 제58조·법 제4·8·9조·시행령 제5조 원문 직접 계산, readcheck 0·selfcheck 사실 0·aitell 1.9·crosscheck 사실 4건(반영 2·유지 2), 표지 H4 3명 평균 7.0 통과 / 미달: 제목 최종본('...20만원 넘으면 공제율이 떨어지는 이유') 독립 재심 전(레드팀이 앞 제목 5·6 → 제안대로 교체) · editgate stamp·slots gates_ok 안 적음 · eitclate1009 제목 E8 레드팀 5(미통과, 대안 2개 review.md) — 08:10 write가 제목 재심→stamp→gates_ok

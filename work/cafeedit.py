@@ -362,6 +362,82 @@ def cli_img(args):
     if bad: print('저장 뒤 대조 실패:', bad, '- 원본', bk); return 3
     print('저장 확인: 바뀐 자리만 새 사진, 글·나머지 사진 그대로', url); return 0
 
+# ---------- 제목만 바꾸기(2026-10-08) ----------
+# 검색어 손질(refactor-candidates.md '판단' #56)은 제목 앞머리만 바꾸면 된다. rewrite(naverpost)는 본문을 묶음으로
+# 통째로 다시 넣어 사진 없는 묶음(fintax)이면 올라간 사진이 빠지고, edit(위)는 제목을 안 바꾼다 — write가 10/8 기한을 못 맞춘 이유.
+#   py -3.12 work/naverpost.py edittitle 56 work/research/editor/2026-10-08/cafe/56.title.txt          # dry: 지금/바꿀 제목 대조
+#   py -3.12 work/naverpost.py edit-ok work/research/editor/2026-10-08/cafe/56.title.txt firemap-editor
+#   py -3.12 work/naverpost.py edittitle 56 <같은 파일> --apply                                          # 적용
+# - 파일 첫 줄이 새 제목. 숫자 목록이 지금 제목과 같아야 한다(뜻 바꾸기 금지). 본문·사진은 손대지 않고, 저장 뒤 본문 HTML 덩어리가 전과 같은지 대조한다.
+def plan_title(aid, txt, subject, html):
+    raw = open(txt, encoding='utf-8').read()
+    new = (raw.strip().splitlines() or [''])[0].strip()
+    if not new: raise ValueError('새 제목이 비었다')
+    if len(new) > 100: raise ValueError(f'제목이 너무 길다({len(new)}자)')
+    if new == subject: raise ValueError('지금 제목과 같다')
+    if nums(new) != nums(subject): raise ValueError(f'숫자가 달라진다 {dict(nums(subject))} → {dict(nums(new))} — 뜻을 바꾸는 제목은 안 고친다')
+    comps = components(html)
+    return {'aid': aid, 'subject': subject, 'new': new, 'layout': [c[0] for c in comps],
+            'body': [c[1] for c in comps], 'sha_txt': hashlib.sha256(raw.encode('utf-8')).hexdigest()}
+
+def apply_browser_title(p):
+    import naverpost as N
+    from playwright.sync_api import sync_playwright
+    with sync_playwright() as pw:
+        ctx = N.launch(pw, headless=os.environ.get('NAVER_HEADED') != '1'); page = ctx.new_page()
+        try:
+            if not N.logged_in(page): raise RuntimeError('로그인 안 됨 — py -3.12 work/naverpost.py login')
+            edit = N.open_cafe_edit(page, p['aid']); frame = edit.main_frame
+            if not frame.locator('.se-component').count(): raise RuntimeError('새 편집기가 아님(구 편집기 글은 미지원)')
+            n_img = frame.locator('.se-component.se-image').count()
+            tl = edit.locator('textarea[placeholder*="제목"], input[placeholder*="제목"]').first
+            if not tl.count(): raise RuntimeError('제목 칸을 못 찾았다')
+            before = (tl.input_value() or '').strip()
+            if before != p['subject']: raise RuntimeError(f'편집기 제목이 글과 다르다("{before[:30]}")')
+            tl.click(); tl.fill(p['new']); edit.wait_for_timeout(300)
+            if (tl.input_value() or '').strip() != p['new']: raise RuntimeError('제목 칸에 새 제목이 안 들어갔다 — 등록하지 않는다')
+            if frame.locator('.se-component.se-image').count() != n_img: raise RuntimeError('편집 중 사진 수가 바뀌었다 — 등록하지 않는다')
+            N.shot(edit, f'cafe_edittitle_{p["aid"]}')
+            if not N.set_cafe_public(edit): raise RuntimeError('전체공개 선택 실패')
+            return N.submit_cafe(edit)
+        finally:
+            try: ctx.close()
+            except Exception: pass
+
+def cli_title(args):
+    aid, txt = int(args[0]), os.path.abspath(args[1]); apply = '--apply' in args
+    subject, html = fetch_live(aid)
+    bk = backup(aid, subject, html)
+    p = plan_title(aid, txt, subject, html)
+    pv = os.path.join(os.path.dirname(bk), 'preview_title.md')
+    open(pv, 'w', encoding='utf-8').write(f'# 카페 {aid} 제목 바꾸기 대조 (dry)\n\n- 지금: {subject}\n- 바꿀 제목: {p["new"]}\n'
+                                          f'- 본문: 안 바꿈 ({" · ".join(p["layout"])})\n- 숫자: {sum(nums(subject).values())}개 전후 동일\n')
+    print(f'원본 백업 {bk}\n대조표 {pv}\n지금: {subject}\n바꿈: {p["new"]}')
+    if not apply:
+        log({'at': datetime.datetime.now().isoformat(timespec='seconds'), 'aid': aid, 'txt': txt, 'kind': 'title', 'applied': False, 'dry': True})
+        print('dry — 적용하지 않았다. editor가 edit-ok 한 뒤 --apply'); return 0
+    import naverpost as N
+    sf = N.stop_flag('cafe')
+    if sf: print('감사 정지 스위치 —', sf[:120]); return 2
+    ok, why = check_ok(txt, p['sha_txt'])
+    if not ok: print('적용 안 함:', why); return 4
+    n = edits_today()
+    if n >= EDIT_CAP: print(f'오늘 이미 {n}편 고쳤다 — 하루 {EDIT_CAP}편까지'); return 5
+    url = apply_browser_title(p)
+    bad = ['읽기 실패']
+    for _ in range(4):
+        time.sleep(8)
+        try:
+            s2, h2 = fetch_live(aid); c2 = components(h2); bad = []
+            if s2 != p['new']: bad.append(f'제목이 안 바뀜("{s2[:30]}")')
+            if [c[0] for c in c2] != p['layout'] or [c[1] for c in c2] != p['body']: bad.append('본문 덩어리가 달라졌다')
+        except Exception as e: bad = [repr(e)[:80]]
+        if not bad: break
+    log({'at': datetime.datetime.now().isoformat(timespec='seconds'), 'aid': aid, 'txt': txt, 'kind': 'title', 'applied': True,
+         'ok': not bad, 'bad': bad, 'backup': bk, 'url': url, 'from': subject, 'to': p['new']})
+    if bad: print('저장 뒤 대조 실패:', bad, '— 원본', bk); return 3
+    print('저장 확인: 제목만 바뀜, 본문·사진 그대로', url); return 0
+
 # ---------- 명령 ----------
 def cli(args):
     if args and args[0] == 'ok':                      # edit-ok <txt> <who>
@@ -369,6 +445,7 @@ def cli(args):
         if re.search(r'\.(png|jpe?g)$', txt, re.I): print('사진 통과 표시:', mark_ok_img(txt, who)[:12], who); return 0
         print('통과 표시:', mark_ok(txt, who)[:12], who); return 0
     if args and args[0] == 'img': return cli_img(args[1:])
+    if args and args[0] == 'title': return cli_title(args[1:])
     aid, txt = int(args[0]), os.path.abspath(args[1])
     apply = '--apply' in args
     subject, html = fetch_live(aid)

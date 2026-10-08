@@ -10,6 +10,7 @@
 #   python work/naverpost.py shot  <url> <파일>  # 디버그: 페이지 스크린샷
 #   python work/naverpost.py editimg <글번호> <img폴더> [--apply]  # 공개된 카페 글 사진만 같은 자리에서 교체(기본 dry)
 #   python work/naverpost.py edit <글번호> <txt> [--apply]  # 공개된 카페 글 본문만 수정(사진 자리 유지, 기본 dry) — work/cafeedit.py
+#   python work/naverpost.py edittitle <글번호> <제목.txt> [--apply]  # 제목만 수정(본문·사진 그대로, 숫자 같아야 함, 기본 dry)
 #
 # pkg/order.txt 형식(글쓰기 회차가 만든다):
 #   제목: title.txt
@@ -1337,10 +1338,10 @@ def show_alert():
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else 'check'
     # 공개된 카페 글 본문 수정(2026-10-01). 새 글 발행 경로와 따로 cafeedit.py에 있다. 기본 dry, --apply는 editor 통과 표시·하루 3편 상한.
-    if cmd in ('edit', 'edit-ok', 'editimg'):
+    if cmd in ('edit', 'edit-ok', 'editimg', 'edittitle'):
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         import cafeedit
-        sys.exit(cafeedit.cli((['ok'] if cmd == 'edit-ok' else ['img'] if cmd == 'editimg' else []) + sys.argv[2:]))
+        sys.exit(cafeedit.cli((['ok'] if cmd == 'edit-ok' else ['img'] if cmd == 'editimg' else ['title'] if cmd == 'edittitle' else []) + sys.argv[2:]))
     show_alert()
     # pending은 브라우저가 필요 없다 — live_pairs()가 평범한 HTTP로 올라간 제목을 받아 온다.
     # 그런데도 launch()를 거치느라 브라우저 잠금을 잡고 있었다. 2026-09-25 01:55 실측:

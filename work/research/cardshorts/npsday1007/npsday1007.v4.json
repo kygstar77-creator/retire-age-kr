@@ -5,10 +5,10 @@
  "chip": "국민연금법 부칙 · 공단 안내 · 2026년 10월",
  "title": [
   "국민연금 수령나이",
-  "하루 차이로 1년?"
+  "12/31생 vs 1/1생"
  ],
  "sub": [
-  "12월 31일생 vs 1월 1일생"
+  "기준은 출생연도예요"
  ],
  "points": [
   "1968년 12월 31일생은 {64세}부터 받아요",
@@ -17,12 +17,12 @@
  ],
  "bars": [
   [
-   "1968년생",
+   "1968-12-31생",
    64,
    "세"
   ],
   [
-   "1969년생",
+   "1969-01-01생",
    65,
    "세"
   ]
@@ -55,13 +55,7 @@
   "5",
   "8541"
  ],
- "experiment": "X-SHORTS 음악 A/B: music=true · A형 bars vs모양 첫 편",
- "why": "루프 규칙: 조회 난 편은 내 돈·내 생일 대입 질문 · 경쟁 5가 전부 출생연도 구간 표라 경계 하루(12/31 vs 1/1)로 각도 변경(0/5) · 직전 배정 nongji_age rank·음악 없음 → bars·음악 있음 · 레드팀 지적 반영: '생일'→출생연도 기준 명시, 의문형 뺌 · 10/8 15:1x 첫 프레임 1초 시험: A형 bars를 'vs' 모양(값 2개 색 상자·막대 자람 없음·출처 줄 1초 뒤)으로 — 5·5 → 6.5·6.5(v10a, 9판 시험), 7 미달",
- "cover_png": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/research/cardshorts/npsday1007/cover.png",
- "bars_style": "vs",
- "vs_no_points": true,
- "vs_big": true,
- "vs_outline": true,
- "vs_label_size": 80,
- "vs_src_delay": 1.0
+ "experiment": "X-SHORTS 음악 A/B: music=true",
+ "why": "루프 규칙: 조회 난 편은 내 돈·내 생일 대입 질문 · 경쟁 5가 전부 출생연도 구간 표라 경계 하루(12/31 vs 1/1)로 각도 변경(0/5) · 직전 배정 nongji_age rank·음악 없음 → bars·음악 있음 · 레드팀 지적 반영: '생일'→출생연도 기준 명시, 의문형 뺌",
+ "cover_png": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/research/cardshorts/npsday1007/cover.png"
 }

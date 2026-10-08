@@ -26,3 +26,20 @@
 - check '문제 없음'(bars, 직전 nhis_prop_b cards와 다름) · aitell 0.0 → npsday1007.edit.json by auto.
 - 1초 시험(첫 프레임 t=0.5, 168px, 경쟁5 비교판 onesec/ff_board168.png, 고정 조건 gemini-3.1-flash-lite 2회, rejudge_ff.py): **5·5**, 보정칸 gongjae1002 7.0·7.5(유효). v4 표지 7.42는 폐지된 표지 기준이라 이제 안 셈.
 - 결론: A형 한 장 첫 프레임은 nhis_prop_b·rate30 v9·v10·gold1y와 같이 5점대 — 틀 한계 그대로.
+
+## 10/8 19:20 칸 첫 프레임 고침 — firemap-shorts 10/8 15:1x~15:21 — **1초 시험 6.5 미달, gates_ok 안 적음**
+- 고친 것: cardshort.py A형 bars에 'vs' 모양(spec bars_style:'vs' + vs_no_points·vs_big·vs_outline·vs_label_size·vs_note·vs_stack·vs_src_delay·chip_late·title_hi). 막대가 자라는 중이라 t=0.5 첫 프레임에 58.4세·59.3세 같은 중간값이 찍히던 문제도 vs 모양에선 없음(처음부터 최종값).
+- 심사(고정 조건 rejudge_ff.py, gemini-3.1-flash-lite 2회, 경쟁 5 비교판 onesec/<판>_ff_board168.png, 보정칸 gongjae1002 매번 7.0~7.5 유효):
+| 판 | 내용 | 점수 |
+|---|---|---|
+| 기존 bars | 번호 줄 3·막대 자람 | 5·5 |
+| v5a / v5b | vs 상자 2개 + 번호 줄 / 번호 줄 없음 | 6·6 / 6·6 |
+| v6a / v6b | 상자 안 연도 범위(1965~1968년생·1969년생 이후), 제목 '하루 차이로 1년' / '12/31생 vs 1/1생' | 6·6 / 6.5·6 |
+| v7a / v7b | 상자 크게 + 출처 줄 1초 뒤 | 5·6 / 6.5·6 |
+| v8a·v8b·v8c | 위아래 두 줄 표 모양 / 질문형 제목 | 모두 6·6 |
+| v9a / v9b | 라벨 1968년생·1969년생, 흰 테두리, sub '12월 31일생 vs 1월 1일생' | 7·6 / 6·6 |
+| **v10a** | v9a에서 상자 아래 날짜 줄 뺌, 라벨 80px | **6.5·6.5 (최고)** |
+| v10b·v11a·v11b·v12a·v12b | 제목 순서 바꿈·칩 늦게·제목 노랑·sub 뺌 | 6~6.25 |
+- 반복 지적: 경쟁 5가 전부 연도표 → '내 연도 찾기 표'가 없어 정보 밀도 낮아 보임, 어두운 배경. 경계 하루 각도는 표가 될 수 없고 61~63세 행은 사실표에 없는 계산이라 못 넣음. 같은 판 재채점으로 7을 고르는 일은 안 함.
+- npsday1007.json = v10a로 바꿈(옛 판 npsday1007.v4.json). check 문제 없음(빈칸 경고 21%만), aitell text 0.0, .edit.json 해시 갱신. 렌더 확인: t=0.5 큰 글자만, t≥1 출처 줄·칩.
+- 19:20 근무 대안 1순위: v10a 그대로 1초 미통과 공개(nhis_prop_b 선례, 판정 48시간 시청 비율·조회 vs 최근 중앙값). rate30_b는 C3로 불가.

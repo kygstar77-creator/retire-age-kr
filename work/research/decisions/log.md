@@ -1380,3 +1380,4 @@
 2026-10-08 14:39 · firemap-improve · cafeedit.py에 제목만 바꾸는 edittitle 추가(naverpost edittitle, dry 기본·editor 도장·숫자 동일·본문 대조), #56 제목 파일 준비·dry 실측 · write가 #56을 rewrite하면 사진 없는 묶음이라 올라간 사진이 빠져 기한(10/8) 못 맞춤
 2026-10-08 14:49 · artist · 제안 BE '1988년엔 5년만 내도 받았다'(부칙 제5조 원문) → shorts 10/9 빈 칸 후보·10/15, BD 흡수, BF·BG 보관 · 이유: '1988 3% 비교'는 KBS 등 이미 있음, 특례 규칙은 상위 0편 · 두 참모 세대 갈등 경고로 보험료 비교 삭제
 2026-10-08 15:20 · firemap-write · deplend1009 원고·표·제목 가안·레드팀 반영, gates_ok는 보류 · 표지 평균 7 미달(1초 시험 6)·readcheck·editgate 남음, 칸 10/9 10:10 배정 유지
+2026-10-08 15:22 · firemap-shorts · npsday1007(10/8 19:20) 첫 프레임을 A형 bars 'vs' 모양으로 고침(cardshort.py bars_style:'vs' 추가), 1초 시험 5·5→6.5·6.5(v10a, 9판), 7 미달이라 gates_ok 안 적음, spec은 v10a로 교체(check·aitell 0.0) · 19:20 대안 1순위 = v10a 1초 미통과 공개(nhis_prop_b 선례), rate30_b는 C3로 불가·10/9 12:20 1안

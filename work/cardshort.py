@@ -51,18 +51,23 @@ def draw_runs(d, x, y, line, f):
 # 읽혀야 할 것은 전부 x 64~930, y 150~1540 안에 넣는다(2026-09-28 첫 시안에서 막대·카페 주소가 가려질 자리에 있었다).
 SAFE_R, SAFE_B = 930, 1540
 
-def card(spec):
-    """정지 카드. 막대 자리(bars_top)를 돌려준다."""
-    im = Image.new('RGB', (W, H), BG); d = ImageDraw.Draw(im); M = 64; y = 150
+def chip_row(d, spec):
+    M, y = 64, 150
     d.rounded_rectangle((M, y, M + 190, y + 58), 12, fill=(255, 107, 0)); d.text((M + 22, y + 8), '파이어맵', font=PD7(36), fill=WHITE)
     chip = spec['chip']; cw = d.textlength(chip, font=PD7(32)) + 40
     d.rounded_rectangle((M + 210, y, M + 210 + cw, y + 58), 12, fill=YELLOW); d.text((M + 230, y + 10), chip, font=PD7(32), fill=BG)
+
+def card(spec):
+    """정지 카드. 막대 자리(bars_top)를 돌려준다."""
+    im = Image.new('RGB', (W, H), BG); d = ImageDraw.Draw(im); M = 64; y = 150
+    if not spec.get('chip_late'): chip_row(d, spec)   # chip_late: 출처 칩도 vs_src_delay 초부터(vs_frame) — 첫 프레임엔 큰 글자만
     y += 96
-    for ln in spec['title']:
-        d.text((M, y), ln, font=BHS(100), fill=WHITE); y += 116
+    for k, ln in enumerate(spec['title']):
+        d.text((M, y), ln, font=BHS(100), fill=YELLOW if k == spec.get('title_hi', -1) else WHITE); y += 116
     for ln in spec.get('sub', []):
         d.text((M, y + 4), ln, font=PD7(56), fill=YELLOW); y += 80
     y += 26
+    if spec.get('bars_style') == 'vs': return im, y   # vs판: 숫자 상자 2개가 제목 바로 아래, 번호 줄은 그 뒤(bars_frame)
     for i, p in enumerate(spec['points'], 1):
         d.text((M, y - 2), str(i), font=BHS(58), fill=YELLOW)
         for ln in wrap_runs(d, runs(p), PD7(44), SAFE_R - M - 62):
@@ -88,8 +93,56 @@ def rank_frame(base, spec, top, t):
     d.text((M, y + 14), spec.get('foot', '파이어맵'), font=PD7(34), fill=(255, 150, 70))
     return im, y + 60
 
+def vs_frame(base, spec, top, t):
+    """bars 틀의 'vs' 모양(2026-10-08 firemap-shorts): 값 2개를 색 상자 두 개로 크게, 처음부터 다 보인다.
+    왜: A형 한 장 첫 프레임 1초 시험이 매번 5점 — 168px에서 번호 줄·막대가 안 읽히고, 막대가 자라는 중이라
+    t=0.5 첫 프레임에 58.4세 같은 중간값이 찍혔다(npsday1007 rejudge_ff_raw.md). 숫자는 spec bars 그대로."""
+    im = base.copy(); d = ImageDraw.Draw(im); M = 64
+    (l1, v1, u1), (l2, v2, u2) = spec['bars'][:2]
+    notes = spec.get('vs_note') or ['', '']   # 상자 아래쪽 한 줄(예: 같은 값이 적용되는 출생연도 범위 — 사실표 문구 그대로)
+    if spec.get('vs_stack'):   # 표처럼 위아래 두 줄(왼쪽 출생일·연도 범위, 오른쪽 나이) — 경쟁 상위가 전부 연도표라 '내 연도 찾기'를 한 줄씩
+        y = top; rh = 250
+        for k, (lab, v, u, fill, fg) in enumerate([(l1, v1, u1, YELLOW, BG), (l2, v2, u2, (255, 107, 0), WHITE)]):
+            d.rounded_rectangle((M, y, SAFE_R, y + rh), 28, fill=fill)
+            val = f'{v:,}{u}'; fv = BHS(200)
+            vx = SAFE_R - 36 - d.textlength(val, font=fv)
+            d.text((vx, y + 12), val, font=fv, fill=fg)
+            d.text((M + 36, y + 50), lab, font=PD7(fit(d, lab, vx - M - 60, 54, 30, PD7)), fill=fg)
+            if notes[k]: d.text((M + 36, y + 140), notes[k], font=PD7(fit(d, notes[k], vx - M - 60, 50, 30, PD7)), fill=fg)
+            y += rh + 24
+        y += 16
+    big = 120 if spec.get('vs_big') else 0   # 상자·숫자를 더 크게(첫 프레임 168px용)
+    gap = 96; bw = (SAFE_R - M - gap) // 2; bh = 330 + big + (90 if any(notes) else 0)
+    if not spec.get('vs_stack'): y = top
+    for k, (lab, v, u, x0, fill, fg) in ([] if spec.get('vs_stack') else enumerate([(l1, v1, u1, M, YELLOW, BG), (l2, v2, u2, M + bw + gap, (255, 107, 0), WHITE)])):
+        d.rounded_rectangle((x0, y, x0 + bw, y + bh), 28, fill=fill, outline=WHITE if spec.get('vs_outline') else None, width=8)
+        f = PD7(fit(d, lab, bw - 40, spec.get('vs_label_size', 50), 30, PD7))
+        d.text((x0 + (bw - d.textlength(lab, font=f)) / 2, y + 30), lab, font=f, fill=fg)
+        val = f'{v:,}{u}'; fv = BHS(fit(d, val, bw - 30, 190 + big, 90, BHS))
+        d.text((x0 + (bw - d.textlength(val, font=fv)) / 2, y + 110 + big // 3), val, font=fv, fill=fg)
+        if notes[k]:
+            fn = PD7(fit(d, notes[k], bw - 40, 46, 30, PD7))
+            d.text((x0 + (bw - d.textlength(notes[k], font=fn)) / 2, y + 340 + big), notes[k], font=fn, fill=fg)
+    if not spec.get('vs_stack'):
+        d.text((M + bw + (gap - d.textlength('vs', font=BHS(64))) / 2, y + bh / 2 - 40), 'vs', font=BHS(64), fill=WHITE)
+        y += bh + 40
+    if not spec.get('vs_no_points'):
+        for i, p in enumerate(spec['points'], 1):
+            d.text((M, y - 2), str(i), font=BHS(52), fill=YELLOW)
+            for ln in wrap_runs(d, runs(p), PD7(40), SAFE_R - M - 62):
+                draw_runs(d, M + 62, y + 4, ln, PD7(40)); y += 56
+            y += 14
+        y += 10
+    if t < spec.get('vs_src_delay', 0): return im, y + 3 * 38 + 60
+    if spec.get('chip_late'): chip_row(d, spec)   # 출처 줄은 이 초부터(첫 프레임엔 큰 글자만 — 168px에서 깨알 글씨가 감점) · 자리는 미리 잡아 둔다
+    for ln in wrap_runs(d, [(c, GREY) for c in spec['source']], PD5(27), SAFE_R - M):
+        draw_runs(d, M, y, ln, PD5(27)); y += 38
+    d.text((M, y + 14), spec.get('foot', '파이어맵'), font=PD7(34), fill=(255, 150, 70))
+    return im, y + 60
+
 def bars_frame(base, spec, top, t):
     """비교 막대. 0.9초 동안 자라고 머문다 — 영상이 반복될 때마다 다시 자란다."""
+    if spec.get('bars_style') == 'vs': return vs_frame(base, spec, top, t)
     im = base.copy(); d = ImageDraw.Draw(im); M = 64
     items = spec['bars']; mx = max(v for _, v, _ in items)
     g = min(1.0, t / 0.9); g = 1 - (1 - g) ** 3

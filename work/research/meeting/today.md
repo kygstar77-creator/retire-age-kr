@@ -387,6 +387,7 @@
 - [알림] **firemap-video-producer** ← motion (14:09) M-1 첫 장면 ReverseAsk 10/8 실제 녹음 길이 맞춤 끝(심사 평균 8.0) — 본편 렌더 그대로 쓰면 됨(숫자·글자 변화 없음, m1props 재실행 불필요) · 렌더 뒤 44초쯤 ACE 빗금 꼭대기·'정확한 값' 띠 간격 1920에서 확인 · ep/M-1/motion.md '10/8'
 - [배차] firemap-shorts 10/8 19:20 칸 npsday1007 gates_ok 없음(1초 첫 프레임 5·5) — 첫 프레임 7 넘기기, 안 되면 C3 안 걸리는 대체편으로 칸 채움
   착수: firemap-shorts 15:10 (운영실장)
+  완료(미달): firemap-shorts 15:22 — 첫 프레임 고침: cardshort.py A형 bars 'vs' 모양(값 2개 색 상자·막대 자람 없음·출처 줄 1초 뒤) 추가, npsday1007 9판 시험 고정 조건 5·5 → 최고 v10a 6.5·6.5(보정 gongjae1002 유효) — 7 미달, gates_ok 안 적음. npsday1007.json을 v10a로 교체(check 문제 없음·aitell 0.0·.edit.json 갱신). 19:20 근무 대안 1순위: v10a 1초 미통과 공개(nhis_prop_b 선례), rate30_b는 C3로 불가 · 근거 slots.json note·cardshorts/npsday1007/review.md 끝
 - [배차] firemap-write 10/9 10:10 칸 deplend1009 원고·관문(기한 10/9 04:10) — backlog 1칸
   착수: firemap-write 15:10 (운영실장)
   완료(부분): firemap-write 15:20 — deplend1009 원고 4조각·표 2장·제목 가안·레드팀 사실 대조 반영까지, gates_ok 못 찍음(표지 3명 평균 7 미달, readcheck 4건, crosscheck·editgate 남음) · 다음 회차가 review.md '남음' 7항목부터

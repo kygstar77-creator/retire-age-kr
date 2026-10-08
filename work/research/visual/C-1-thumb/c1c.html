@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;left:52px;top:636px;font:500 24px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#FBFAF7'></div>
+<svg style='position:absolute;left:0;top:0' width='1280' height='720'><line x1='70' y1='540.0' x2='1150' y2='540.0' stroke='#9AA0AA' stroke-width='4'/><polyline points='70.0,220.0 160.0,245.6 250.0,290.4 340.0,382.1 430.0,370.4 520.0,401.3 610.0,424.8 700.0,444.0 790.0,465.3 880.0,498.4 970.0,521.9 1060.0,540.0' fill='none' stroke='#1E2A44' stroke-width='14' stroke-linejoin='round' stroke-linecap='round'/><polyline points='70.0,220.0 160.0,253.1 250.0,305.3 340.0,398.1 430.0,400.3 520.0,437.6 610.0,469.6 700.0,500.5 790.0,532.5 880.0,540.0' fill='none' stroke='#E5322D' stroke-width='16' stroke-linejoin='round' stroke-linecap='round'/><circle cx='880.0' cy='540.0' r='25.2' fill='#E5322D' stroke='#fff' stroke-width='6'/><circle cx='1060.0' cy='540.0' r='25.2' fill='#1E2A44' stroke='#fff' stroke-width='6'/></svg>
+<div id='c0' class='t' data-fit='1180' style='left:44px;top:30px;font-size:46px;color:#6B7280;font-family:PD;font-weight:700'>S&amp;P500 2000년 시작 · 3억 · 월 200만원</div>
+<div class='lab' style='left:66px;top:160px;font-size:44px;color:#16181D'>3억</div>
+<div id='c1' class='t' style='left:480px;top:240px;font-size:150px;color:#E5322D'>배당 9년</div>
+<div id='c2' class='t' style='left:860px;top:390px;font-size:76px;color:#1E2A44'>매도 11년</div>
+<div class='fine' style='color:#6B7280;top:640px;font-size:20px'>S&amp;P500 총수익지수·원화 환산, 2000년부터 실제 연도 순서 · 세금·건보료 반영 · 지나간 값 · 투자 권유 아님</div>
+
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

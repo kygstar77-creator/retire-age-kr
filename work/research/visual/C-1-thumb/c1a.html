@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;left:52px;top:636px;font:500 24px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#F3EEE3'></div>
+<svg style='position:absolute;left:0;top:0' width='1280' height='720'><line x1='660' y1='560.0' x2='1220' y2='560.0' stroke='#9AA0AA' stroke-width='4'/><polyline points='660.0,180.0 706.7,210.4 753.3,263.6 800.0,372.5 846.7,358.6 893.3,395.3 940.0,423.2 986.7,446.0 1033.3,471.3 1080.0,510.6 1126.7,538.5 1173.3,560.0' fill='none' stroke='#1E2A44' stroke-width='14' stroke-linejoin='round' stroke-linecap='round'/><polyline points='660.0,180.0 706.7,219.3 753.3,281.3 800.0,391.5 846.7,394.1 893.3,438.4 940.0,476.4 986.7,513.1 1033.3,551.1 1080.0,560.0' fill='none' stroke='#E5322D' stroke-width='16' stroke-linejoin='round' stroke-linecap='round'/><circle cx='1080.0' cy='560.0' r='25.2' fill='#E5322D' stroke='#fff' stroke-width='6'/><circle cx='1173.3' cy='560.0' r='25.2' fill='#1E2A44' stroke='#fff' stroke-width='6'/></svg>
+<div class='lab' style='left:686px;top:150px;font-size:40px;color:#16181D'>3억</div>
+<div class='lab' style='left:660px;top:574px;font-size:36px;color:#6B7280'>0원</div>
+<div id='a0' class='t' data-fit='1180' style='left:48px;top:44px;font-size:52px;color:#16181D;font-family:PD;font-weight:700'>S&amp;P500 · 2000년 시작 · 3억 · 월 200만원</div>
+<div id='a1' class='t' data-fit='590' style='left:44px;top:150px;font-size:200px;color:#E5322D'>배당 9년</div>
+<div id='a2' class='t' data-fit='640' style='left:44px;top:380px;font-size:150px;color:#1E2A44'>매도 11년</div>
+<div class='fine' style='color:#6B7280;top:640px;font-size:20px'>S&amp;P500 총수익지수·원화 환산, 2000년부터 실제 연도 순서 · 세금·건보료 반영 · 지나간 값 · 투자 권유 아님</div>
+
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

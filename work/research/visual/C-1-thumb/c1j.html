@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;left:52px;top:636px;font:500 24px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#F3EEE3'></div>
+<svg style='position:absolute;left:0;top:0' width='1280' height='720'><line x1='700' y1='520.0' x2='1220' y2='520.0' stroke='#9AA0AA' stroke-width='5'/><polyline points='700.0,348.6 717.9,176.6 735.9,162.9 753.8,130.3 771.7,148.6 789.7,192.0 807.6,301.1 825.5,261.7 843.4,288.0 861.4,301.7 879.3,307.4 897.2,312.6 915.2,360.0 933.1,352.6 951.0,352.6 969.0,365.1 986.9,372.6 1004.8,350.9 1022.8,340.6 1040.7,345.1 1058.6,338.9 1076.6,343.4 1094.5,361.7 1112.4,329.1 1130.3,327.4 1148.3,274.9 1166.2,321.1 1184.1,287.4 1202.1,213.7 1220.0,188.0' fill='none' stroke='#0F7B5F' stroke-width='14' stroke-linejoin='round' stroke-linecap='round'/><polyline points='700.0,348.6 717.9,351.4 735.9,346.9 753.8,365.1 771.7,392.6 789.7,442.9 807.6,444.0 825.5,463.4 843.4,480.6 861.4,497.1 879.3,514.9 897.2,520.0' fill='none' stroke='#E5322D' stroke-width='18' stroke-linejoin='round' stroke-linecap='round'/><circle cx='897.2' cy='520.0' r='24' fill='#E5322D' stroke='#fff' stroke-width='7'/><circle cx='1220.0' cy='188.0' r='18' fill='#0F7B5F' stroke='#fff' stroke-width='6'/></svg>
+<div class='t' style='left:40px;top:34px;font-size:84px;color:#0F7B5F'>1997년 시작</div>
+<div class='t' style='left:40px;top:128px;font-size:96px;color:#0F7B5F'>아직 남음</div>
+<div class='t' style='left:40px;top:278px;font-size:84px;color:#E5322D'>1998년</div>
+<div id='j4' class='t' data-fit='640' style='left:36px;top:372px;font-size:150px;color:#E5322D'>11년째 바닥</div>
+<div class='t' style='left:927px;top:456px;font-size:52px;color:#E5322D'>0원</div>
+<div class='t' style='left:44px;top:566px;font-size:34px;color:#16181D;font-family:PD;font-weight:700'>원화 계산 · 3억 · 월 200만원 · 배당으로 받기</div>
+<div class='fine' style='color:#6B7280;top:650px;font-size:17px'>S&amp;P500 총수익지수 · 원화(ECOS 연말 환율) · 1997·1998년부터 실제 연도 순서 · 세금·건보료 반영 · 2025년까지 · 투자 권유 아님</div>
+
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

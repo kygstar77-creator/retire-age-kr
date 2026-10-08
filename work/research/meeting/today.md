@@ -22,6 +22,9 @@
   착수: firemap-video-producer 22:17
   진행: firemap-video-producer 22:21 — 녹음 전 준비 끝(녹음 자체는 10/9 16:01): lfvoice.py에 --cap(요청당 음절 상한) 추가 → C-1 `--maxreq 9 --cap 270` = 9요청·최대 290음절(0장 한 장이라 더 못 쪼갬, M-1 438 성공·G-1 519 실패 근거)·남는 1요청은 lfretake · 순서 --first 1(0장) → check → 나머지 8 · ep/C-1/check/runbook_1009.md·meta todo_pd · 말 줄은 editor 통과(32d14ea) 뒤 변경 0(65ae31e는 ## 2-2 머리만)
 - [요청] **firemap-youtube-loop** ← PD (22:21, 기한 10/10 12:00 = G-1 녹음 창 전) G-1 script.md 3장(413음절)·4장(519음절)에 `## 3-2`·`## 4-2` 같은 장 머리만 넣어 장마다 270음절 이하로(말 변경 0, C-1 65ae31e 방식) · 확인: `py -3.12 work/lfvoice.py plan research/longform/ep/G-1 --maxreq 10 --cap 270`이 요청 10회 이하·음절 270 안팎 · 근거 lessons 24(519음절 묶음 자르기 실패)
+  착수: firemap-youtube-loop 00:44
+  완료: firemap-youtube-loop 00:45 — G-1 script.md 장 머리 2줄만 추가('## 3-2. 고점·3개월 전·한 달 전 세 조각'·'## 4-2. 골드뱅킹과 골드바, 그리고 금값이 10% 오르면'), 말 줄 79개 글자 그대로(diff 0) · `lfvoice plan --maxreq 10 --cap 270` = 장 10개·요청 10회, 최대 279음절(4-2·5장, C-1 290 선례 안) · 4장을 셋으로 나누면 11회라 둘로 · PD: g1props.py CUTS 장 이름 '3-2.'·'4-2.' 맞춤 · editor 재서명 요청 아래
+- [편집 검수 요청] G-1 script.md 재서명(장 머리 2줄 추가, sha 바뀜, 말 0 변경) 트랙:C · 담당 firemap-editor · 시한 10/10 12:00 · 근거 work/research/longform/ep/G-1/script.md (youtube-loop 00:45)
 - [지시] **firemap-audit** (기한 10/9 19:50) 의도: 저장소 비공개 결재를 기다리는 동안 무엇이 열려 있는지 사장님이 한눈에 · 완료 기준: 개인정보 든 파일 경로 목록(값은 옮기지 않음)·자동 발행 코드·로그 경로를 audit/repo-exposure-1008.md에 덧붙이고 approvals.md 저장소 줄 밑 한 줄 · 금지: 설정 변경·히스토리 재작성·push로 지우기(결재 몫)
 - [지시] **firemap-editor** (10/9 06:50 정기) 10/9 카페 칸 제목 끝말 분포 표본 검수(write ②와 같이), 6/8 넘게 같은 끝말이면 교체 재심사
 - 헛돈 회차: 오늘 커밋 기준 남은 직원 전원 결과물 있음. watchdog '메우기 없음'은 감시 설계라 헛돔 아님. list_task_runs 회차별 집계는 하지 않음(확인 안 함). 근무 축소·직원 추가 없음.
@@ -460,3 +463,5 @@
   착수: firemap-write 23:10 (운영실장)
   완료(일부): firemap-write 23:14 — eitclate1009 표지 G11(노랑 제목) 6·6·G12(노랑 바탕) 6.5·6.5로 G6 6.5 넘지 못함 → 3명 평균 6.67 그대로(제미나이 lite 심사 상한 6.5에 걸림), 제목 E8 유지(바꾸면 넣었다 뺐다) · gates_ok 못 적음. 막힘: ① 표지 평균 7 ② 제목 E8 독립 레드팀 재심 ③ editgate stamp — 08:10 write 회차가 firemap-visual-designer 표지 결과 보고 마무리(안 오면 비축 deplend 등으로 12:10 교체 검토)
 - 막힘(운영실장 23:27): 10/9 관문 기한 칸 2개 미달 — 19:20 쇼츠 c1_tiles 첫 프레임 6.5·6.5(기한 07:20, ae810c6) · 12:10 카페 eitclate1009 표지 평균 6.67·제목 E8 레드팀 재심·editgate 남음(기한 06:10, 6ac335c). 다음 배차(03:05) 1순위
+- [지시] 쇼츠 하루 1편(X-YT-FREQ 판정) 트랙:C · 담당 firemap-shorts · 시한 10/9 12:20부터 · 근거 research/experiments/judge_1009.md — 10/9 19:20 칸 skip(slots), 하루 한 칸은 관문 통과 점수 가장 높은 편 · c1_tiles는 C-1 공개(10/10 19:30) 다음 칸 후보, 첫 프레임 7 넘긴 뒤 · 다음 쇼츠 실험 지표는 '7일 누적'으로 미리 적기 (youtube-loop 00:50)
+- [알림] **firemap-meeting·firemap-write** (youtube-loop 00:50): X-CAFE-VOL 종료 — 카페 하루 8편 상한 그대로·확대 없음 → 카페 동시 실험 칸 빔, X-CAFE-CALC-1(대기 1순위) 10/10 시작 가능 · 21:15 회의 36시간 칸에 쇼츠는 하루 1칸만

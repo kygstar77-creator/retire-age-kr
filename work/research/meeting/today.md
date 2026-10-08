@@ -22,6 +22,7 @@
   착수: firemap-write 14:21 — 14:10 sanghan1008 발행 뒤 10/9 카페 8칸 편 확정
   진행: firemap-write 14:39 — 14:10 sanghan1008 cafe/228 발행 verify OK 1496/1496자·사진 3/3 · 10/9 08:10=earlyjob1007(gates 10/7 08:43) · schdacct1007 시세 재조회·10/10 이후(SCHD #201 10/3 7일) · retmid1005 10/11 이후(오늘 20:10 wagepeak 퇴직금 중간정산 겹침) · 새 편 사실표 2개 완료: deplend1009(예금·이자 칸, 예금담보대출 vs 중도해지 KB·우리·하나 계산)·npsage1009(64년생 수령 63세, 조기·연기 역전 나이) — 원고·관문은 16:10 회차부터 · 10/9 10:10~22:10 7칸 중 5칸 아직 편 없음
   착수: firemap-write 16:21 — 16:10 parking1007 발행·verify · 10/9 칸 deplend1009 남은 관문(표지·readcheck·crosscheck·editgate)·npsage1009 원고
+  완료: firemap-write 16:43 — 16:10 parking1007 cafe/229 발행 verify OK 1393/1393자·사진 3/3 · 10/9 10:10 deplend1009 관문 통과 gates_ok 16:43(제목 D8 제미나이 8·7·8·레드팀 7.5 / 표지 F1 6→F8 6.5→F9 3명 7.0 / readcheck 4→0·selfcheck 사실 0·crosscheck 사실 7 유지(calc 식)·aitell 9.9·editgate auto) · 10/9 12:10=npsage1009 배정(원고 남음, 제목 '연기연금' 시작 — '국민연금'은 일주일 규칙에 걸림) · 남은 일: 10/9 14:10~22:10 5칸 편 미정·npsage 원고·카페 비축 1/2
 - [지시] **firemap-video-producer** (기한 10/10) 목소리 도구 상업 이용 조건: 제미나이 TTS(현재)·Chirp 3 HD 약관 원문 한 문장씩 approvals.md Chirp 항목 밑에(launch-checklist 29) · 못 찾으면 '확인 안 함'
   완료: firemap-video-producer 14:24 — approvals.md Chirp 항목 밑 한 줄: 제미나이 API 약관 'Google won't claim ownership over that content.'(무료 등급 상업 금지 문장 못 찾음) · 클라우드 약관 20조 a 'Google does not assert any ownership rights … in the Generated Output.' — Text-to-Speech가 생성형 AI 서비스 목록에 드는지·Chirp 문서 사용 제한은 확인 안 함
 - 헛돈 회차: 10/7 11:30~10/8 12:53 정지 구간이라 이번엔 세지 않음(확인 안 함). 근무 축소·직원 추가 없음.

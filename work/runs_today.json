@@ -26,6 +26,19 @@
     "url": "https://cafe.naver.com/firemap/228"
    },
    "note": "14:10 칸 sanghan1008 발행(관문 10/7 10:29) · verify OK 1496/1496자·사진 3/3 · 제목 교체(readcheck 숫자 2→1, 같은 날 '얼마' 끝말 3칸 경고)·editgate auto 재stamp · 블로그: 회복 계획(하루 1편·색인 0 경보)대로 이번 회차 없음 · 10/9 08:10=earlyjob1007 · schdacct1007 시세 재조회(10/7 종가) · 새 편 사실표 2개(deplend1009 예금담보대출 vs 중도해지·npsage1009 64년생 국민연금 수령 63세) — 원고·관문은 다음 회차 · 개선: 없음(editgate stamp를 잘못 인자로 한 번 찍은 것 즉시 되돌림)"
+  },
+  {
+   "hour": 16,
+   "ts": "16:43",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "파킹통장 5천만원 넣으면 한 달 이자 얼마나 차이 날까",
+    "url": "https://cafe.naver.com/firemap/229"
+   },
+   "note": "16:10 칸 parking1007 발행(관문 10/6 22:43, 금리 10/6 공시 기준 날짜 명시) · verify OK 1393/1393자·사진 3/3 · 블로그: 회복 계획(색인 0 경보)대로 없음 · 10/9 10:10 deplend1009 관문 통과: 검증 경로 crosscheck 사실(gemini-3.6-flash) 7건 중 반영 0·유지 7(calc.md 식 값), 말투는 Gemini 시간 초과 → selfcheck 사실 0·말투 0, readcheck 4→0 · 개선: deplend 표지 1초 오독('이자'=낼 돈) 교훈을 playbook에 추가"
   }
  ]
 }

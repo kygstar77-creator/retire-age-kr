@@ -590,7 +590,8 @@
    "item": "parking1007",
    "owner": "firemap-write",
    "gates_ok": "2026-10-06 22:43",
-   "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)"
+   "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)",
+   "published": "https://cafe.naver.com/firemap/229"
   },
   {
    "at": "2026-10-08 18:10",
@@ -645,16 +646,16 @@
    "kind": "cafe",
    "item": "deplend1009",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-write 10/8 15:20: 원고 c00~c03·표 2장·제목 가안·레드팀 사실 대조 반영 끝, gates_ok 아직 — 표지 7 미달·readcheck 4건·crosscheck·editgate 남음(work/research/deplend1009/review.md). 기한 10/9 04:10"
+   "gates_ok": "2026-10-08 16:43",
+   "note": "관문 통과(write 16:43): 제목 D8 제미나이 8·7·8·레드팀 7.5 · 표지 F9 3명 7.0 · readcheck 0·selfcheck 사실 0·crosscheck 사실 7 유지(calc.md 식)·aitell 9.9·editgate auto · review.md 경쟁 세 줄"
   },
   {
    "at": "2026-10-09 12:10",
    "kind": "cafe",
-   "item": null,
+   "item": "npsage1009",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 = 칸-6h. 08:10은 비축 retmid1005 우선 검토(같은 날 같은 대상 확인). 예금·이자 주제 하루 1칸 이상(rules.json 10/8)"
+   "note": "firemap-write 10/8 16:43: 사실표·calc 끝(64년생 정상 63세·조기 최대 58·연기 최대 68, 역전 나이) — 원고·관문 남음(기한 10/9 06:10). dupcheck: 제목에 '국민연금'은 일주일 안 4편(#196·215·225·200)이라 막힘 → 제목은 '연기연금'(새것)으로 시작"
   },
   {
    "at": "2026-10-09 12:20",

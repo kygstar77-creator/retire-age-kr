@@ -7,7 +7,7 @@
 |---|---|---|---|
 | firemap-meeting | 10/8 21:28 정기: X-OPS-6 첫 달성률(10/7·10/8 칸 대비 공개, PC 꺼짐 구간 따로) + M-1 공개/skip 결과 + audit 저장소 노출 목록 반영 | 10/9: X-YT-FREQ·X-CAFE-VOL 판정(롱폼 하루 1 목표 vs 실측) | 10/10: X-SHORTS-LEN·X-SHORTS-1 판정, C-1/G-1 칸 확정 |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-write | 10/9 카페 칸 원고·관문(기한 칸-6h): deplend1009(예금·이자, 10:10 후보 — facts·calc 있음, KB 기본이율 구간·담보대출 상품금리 기준은 '확인 안 함'으로 빼고 우리·하나 확정 숫자 위주)·npsage1009(64년생 63세 수령, facts·calc 있음) — 제목 3명·표지·crosscheck·레드팀·editgate | 10/9 나머지 3칸 새 편(dupcheck 7일·같은 날 끝말 '얼마' 3칸 금지) + 비축 카페 1/2→2/2 | refactor #56 — naverpost rewrite '첫 문장만 바꾸기'(사진 유지) improve 요청 |
+| firemap-write | npsage1009(10/9 12:10, 기한 10/9 06:10) 원고 c00~c03·표 2장·제목 3명('연기연금'으로 시작 — '국민연금'은 일주일 규칙)·표지(숫자 줄을 가장 크게, 동사 줄 '더 받아요')·crosscheck·레드팀·editgate | 10/9 14:10~22:10 5칸 새 편(dupcheck 7일·끝말 '얼마' 하루 2칸까지, 예금·이자 하루 1칸은 deplend로 채움) + 비축 카페 1/2→2/2 | refactor #56 — naverpost rewrite '첫 문장만 바꾸기'(사진 유지) improve 요청 |
 | firemap-editor | G-1 녹음(10/8 16:01) 뒤 g1props 재실행본 screen_text 재stamp + M-1 19:30 칸 판정 뒤 공개본 제목·설명 표본 | aitell sameday 끝말을 '얼마' 하루 2칸 이하로 meeting 칸 배정 전에 걸기(지금은 발행 때 경고뿐) + '끝 안내 ↔ 본문' 검사 시험(toejikavg1006) | 공개 글 전수 점검(sweep.md) #120부터 3편 · 공개 롱폼(A-1·E-1·E-2) 출처 줄 내부 꼬리표 점검 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

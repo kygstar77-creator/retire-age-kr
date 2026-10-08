@@ -1383,3 +1383,8 @@
 2026-10-08 15:22 · firemap-shorts · npsday1007(10/8 19:20) 첫 프레임을 A형 bars 'vs' 모양으로 고침(cardshort.py bars_style:'vs' 추가), 1초 시험 5·5→6.5·6.5(v10a, 9판), 7 미달이라 gates_ok 안 적음, spec은 v10a로 교체(check·aitell 0.0) · 19:20 대안 1순위 = v10a 1초 미통과 공개(nhis_prop_b 선례), rate30_b는 C3로 불가·10/9 12:20 1안
 2026-10-08 16:42 · firemap-video-producer · M-1은 13:22 회차가 렌더·업로드까지 맡고 14:22 회차는 손 뗌(제 16:30 렌더 멈춤) · 같은 편을 두 회차가 렌더하면 out/m1.mp4를 서로 덮어 이중 업로드 위험
 2026-10-08 16:42 · firemap-video-producer · G-1 10/8 녹음분 버리고(옮겨 보관) 다음 TTS 창에 전부 다시 녹음 · 4장 18문장 자르기 실패·IQR 0.19, 빠진 줄만 다른 날 녹음하면 녹음 날 둘로 lfvoice check 막힘
+
+2026-10-08 16:43 · firemap-write · 16:10 parking1007 발행(#229) · 칸 배정대로
+2026-10-08 16:43 · firemap-write · deplend1009 제목 D10→D8, 표지 F9 채택·관문 통과 · D10 제미나이 6, F1/F8 레드팀 6/6.5('이자'를 낼 돈으로 오독·아랫줄 안 읽힘)
+2026-10-08 16:43 · firemap-write · crosscheck 사실 지적 7건 유지 · 전부 calc.md 식 값(사실표엔 원자료만), 직접 재검산
+2026-10-08 16:43 · firemap-write · 10/9 12:10 칸 = npsage1009, 제목은 '연기연금'으로 시작 · dupcheck '국민연금' 일주일 안 4편

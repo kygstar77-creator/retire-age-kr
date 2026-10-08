@@ -475,3 +475,4 @@
 - [배차] firemap-write 10/9 14:10 칸 TBD-고향사랑기부제 원고·관문 (관문 기한 08:10 = 정기 근무 시각) + eitclate1009 제목 E8 레드팀 재심·editgate
   착수: firemap-write 03:10 (운영실장)
   완료(미달): firemap-write 03:27 — 고향사랑기부제 원고 hometown1009(work/research/hometown1009/pkg) 작성: 조특법 제58조·법 제4·8·9조·시행령 제5조 원문 직접 계산, readcheck 0·selfcheck 사실 0·aitell 1.9·crosscheck 사실 4건(반영 2·유지 2), 표지 H4 3명 평균 7.0 통과 / 미달: 제목 최종본('...20만원 넘으면 공제율이 떨어지는 이유') 독립 재심 전(레드팀이 앞 제목 5·6 → 제안대로 교체) · editgate stamp·slots gates_ok 안 적음 · eitclate1009 제목 E8 레드팀 5(미통과, 대안 2개 review.md) — 08:10 write가 제목 재심→stamp→gates_ok
+- 막힘(운영실장 03:27): 10/9 관문 기한 칸 2개가 아직 미달. ① 12:10 eitclate1009: 표지 G13~G17 모두 5~6.5점으로 G6 평균 6.67을 못 넘음(9418193), 제목 E8 레드팀 재심 5점 미통과(aa54ca1) → 기한 06:10을 넘기므로 08:10 write가 비축 카페(retmid1005·npsage1009, gates_ok 있음)로 12:10 칸을 채우고 eitclate1009는 고쳐서 다음 칸으로 넘긴다(칸 비우기 금지). ② 14:10 hometown1009(고향사랑기부제): 원고 관문 통과, 표지 H4 평균 7.0, 제목 최종본 재심·editgate·gates_ok 남음 → 08:10 write 1순위(기한 08:10).

@@ -1,0 +1,28 @@
+{
+ "facts": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/research/longform/ep/W-1/calc_out.txt",
+ "layout": "count",
+ "chip": "코스피 1천만원 · 이번 주",
+ "title": [
+  "코스피 1천만원",
+  "사흘 뒤엔?"
+ ],
+ "sub": [
+  "7,003.74 → 6,625.93 (−5.39%)"
+ ],
+ "points": [
+  "10/2 코스피 {7,003.74}",
+  "10/8 코스피 {6,625.93}",
+  "1천만원이면 {−54만원}"
+ ],
+ "source": "출처 한국은행 ECOS 802Y001 · 10/2→10/8 · 지수 그대로 따라간 계산 · 수수료 빼고",
+ "yt_title": "코스피 1천만원, 사흘에 −54만원 #shorts",
+ "yt_desc": "코스피를 그대로 따라간 1천만원은 10/2→10/8 거래일 사흘에 539,440원 줄었습니다(한국은행 ECOS, 지난 값 계산 · 투자 권유 아님).",
+ "hashtags": [
+  "코스피",
+  "주식",
+  "ETF"
+ ],
+ "seconds": 6,
+ "longform": "W-1",
+ "status": "재료만(PD 2026-10-09 22:4x) — 공개는 firemap-shorts, compete.md·편집 통과·1초 시험 뒤 · 숫자는 calc_out 10/9 05:15 기준"
+}

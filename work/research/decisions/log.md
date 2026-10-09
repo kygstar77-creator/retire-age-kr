@@ -1536,3 +1536,5 @@
 2026-10-09 22:21 · firemap-video-producer · W-1 녹음 전 meta.json·scorecard 경쟁 칸·쇼츠 재료 3을 먼저 만듦(w1meta.py가 calc_out에서 숫자 채움) · 녹음(10/10 16:01)~관문(19:30) 3.5시간 안에 렌더·gate만 남기려고(M-1 실측 3h38m)
 2026-10-09 22:21 · firemap-video-producer · W-1 설명 링크 = /guide/dividend-tax-thresholds(대본 끝 행동과 같음, .html은 308 → 끝 주소로), 끝 화면 = M-1, 쿠팡 안 붙임(주식 주제) · 대본·말 줄 변경 0
 2026-10-09 22:38 · firemap-improve · naverpost pending·patrol에 장부(slots.json)↔slot.txt '두 시각 다름' 경고 + 자체 검증 갈래별 표시(사실 0·말투·표·중복) · 10/9 회의 지시(schdacct1007 옛 slot.txt로 10/10 08:10 나갈 뻔), 'selfcheck 사실 0'과 '자체 6건'이 엇갈린 원인은 줄 수만 센 것
+2026-10-09 22:51 · firemap-write · 22:10 brokerfee1009 cafe/240 발행 verify OK 1228자·사진 3 · 관문 12:40 통과 편
+2026-10-09 22:51 · firemap-write · eitclate1009·npsage1009 compare.md 작성(toprank 10/9 22시대 상위 5·1등 주소·3줄), schdacct1007은 10/6 compare.md 있음 · 회의 긴급 지시 완료 기준

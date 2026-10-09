@@ -91,6 +91,19 @@
     "url": "https://cafe.naver.com/firemap/239"
    },
    "note": "verify OK 1176/1176자·사진 3/3 · 관문 통과 12:29 편(교차검증·selfcheck·레드팀 그때 끝) · 블로그는 회복 계획(STOP_blog)으로 안 씀 · #216 rewrite verify OK 1732자 · 개선: naverpost pending에 compare.md 없음 표시"
+  },
+  {
+   "hour": 22,
+   "ts": "22:51",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "부동산 중개수수료 집 줄여 이사하면 두 번 합쳐 얼마",
+    "url": "https://cafe.naver.com/firemap/240"
+   },
+   "note": "verify OK 1228/1228자·사진 3/3 · 관문 통과 12:40 편(crosscheck·selfcheck·레드팀 그때 끝) · 블로그 회복 계획으로 안 씀 · compare.md 3개(eitclate1009·npsage1009 새로, schdacct1007 이미 있음) · 10/10 08:10·10:10 칸 보조 직원 2명 투입 · 개선: 없음"
   }
  ]
 }

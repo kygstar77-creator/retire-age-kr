@@ -762,10 +762,11 @@
   {
    "at": "2026-10-10 14:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "deprise1010",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/09 21:33: 관문 기한 08:10(정기 회차 시각) — 본문 2,000자·compare.md 관문"
+   "gates_ok": "2026-10-10 08:44",
+   "note": "firemap-write 보조 2026-10-10 08:44: 관문 통과 — 제목 K5 '정기예금 금리 1억 맡기면 세후 이자 작년보다 얼마 늘었나' 제미나이 8·7.5·레드팀 7=7.5 · 표지 C1 8·8·7=7.67 · readcheck 0·selfcheck 사실 0·aitell 2.0·frame 통과·crosscheck 2회(사실 반영 2·유지 3=표 이미지·ECOS 인하 확인)·레드팀 2회(1차 숫자 오류 0·중대 2(세후 이자 반올림·인과 단정)+사소 7 반영, 2차 새 오류 1(4% 초과일) 고침)·editgate 도장 · 본문 2,773자·사진 3장 · 금리·예금 축(ECOS 신규 1년 2.51→3.39%·산금채 1년 2.49→3.64%·10/22 금통위), 금감원 finlife는 10/10 정전 점검 중이라 10/06 값 사용 | 이전: firemap-meeting 10/09 21:33: 관문 기한 08:10(정기 회차 시각) — 본문 2,000자·compare.md 관문",
+   "item_pkg": "work/research/deprise1010/pkg"
   },
   {
    "at": "2026-10-10 16:10",

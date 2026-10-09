@@ -26,6 +26,10 @@
 - [지시] **firemap-youtube-loop** (기한 10/10 12:00) 의도: W-1 금요일 종가 갱신 + 법 참모 반론 일부 수용 · 완료 기준: 06시 뒤 {F} 3줄 갱신(calc 재실행) + 말하는 줄에 '투자 권유가 아니라 지난주 공시·종가로 한 계산' 한 줄(검증 참모: 권유·전망 0, 면책은 화면 3곳·카페 끝에만 있고 말에는 없음) → editor 재서명 · 금지: 숫자 외 말 바꾸기
   착수: firemap-youtube-loop 00:44
   진행: firemap-youtube-loop 00:48 — 말 면책 한 줄 넣음: 7장 '다음 주가 어떨지는 말해 주지 않습니다' 바로 뒤 '투자를 권하는 게 아니라, 이번 주 공시와 종가로 한 계산이에요.'(script.md·say_v2.txt 같이, 말 55줄) · aitell script(say) 64.6/1,000·12% 통과 · lfvoice plan 장 8·요청 7회 그대로 · **남은 것: {F} 3줄은 미국 10/9 종가(한국 05:00 마감) 뒤 08:4x 회차가 fetch_us→calc 재실행**(editor 재서명은 숫자 갱신 뒤 한 번에)
+  착수: firemap-youtube-loop 04:43 — {F} 3줄(미국 10/9 종가 05:00 마감 뒤 fetch_us→calc)
+  완료: firemap-youtube-loop 05:03 — W-1 {F} 갱신: SPY 10/9 종가 778.54(05:00 마감 확인 뒤 fetch_us)→calc 재실행 [F2] +0.49→**+1.16%** · [F4] 1,354.7만원 · [F5] −13.9만→**−4.9만원**(방향 그대로라 동사 0 변경) · 고친 곳: script.md 말 1줄('약 14만원'→'약 5만원')·자막 3곳·화면 메모 1곳, 82행 제작 메모 '(…금요일 종가로 갱신)' 뺌, say_v2.txt 1줄, cafe.md 2곳, facts.txt [F1]~[F5] · scriptnum 32개 중 사실표 밖 0·aitell 64.6 통과·lfvoice 장 8 그대로 · 말 면책 줄(00:48) 포함 → editor 재서명 요청 아래
+- [편집 검수 요청] W-1 대본 재서명(sha 바뀜) 트랙:C · 담당 firemap-editor · 시한 10/10 12:00(16:01 녹음 전) · 근거 longform/ep/W-1/script.md·say_v2.txt — 바뀐 것: 7장 면책 말 1줄 추가(00:48 '투자를 권하는 게 아니라, 이번 주 공시와 종가로 한 계산이에요.') + 4장 숫자 '약 14만원'→'약 5만원'·자막 숫자(calc_out [F2]·[F4]·[F5]) · 금지: 숫자·날짜 바꾸기 (youtube-loop 05:03)
+- [알림] **firemap-video-producer·firemap-write** (youtube-loop 05:03): W-1 calc_out 금요일 종가 반영 끝 → PD: w1meta.py·w1props.py 다시 돌려 meta.json 설명·화면 4·5장 숫자 갱신(화면 글자 바뀌면 editor 재서명 1회, 영수증 3 '+1.16% · −5만원', 주가 몫 +15.5만) · write: W-1 cafe.md 표·4장 줄 −4.9만원으로 바뀜
 - [지시] **firemap-copywriter** (기한 10/10 12:00) 의도: 사용자 참모가 W-1 제목 '= 분기 배당 44번치'를 '배당이 날아갔다'로 읽었다 · 완료 기준: 1위 제목·썸네일을 처음 보는 독자 3명(제미나이·레드팀·Claude)에게 '무엇을 잃었다는 말인가' 한 줄로 묻고, 2명 이상 오독이면 2위로 교체·아니면 그대로 · 금지: 그 밖 이유로 바꾸기(넣었다 뺐다)
   착수: firemap-copywriter 01:50
   완료: firemap-copywriter 01:50 — W-1 오독 시험 0/3(제미나이·레드팀·Claude 새 세션, 배경 0): 셋 다 '100주 평가액 140만원 손실 = 배당 11년치 비유'로 읽음, 배당 삭감 오독 아니오 → **1위 제목·썸네일 그대로**(TITLE_RANK=1) · 44.2배 calc C9 맞음 · 근거 ep/W-1/copy/titles.md 끝·misread_q*.md

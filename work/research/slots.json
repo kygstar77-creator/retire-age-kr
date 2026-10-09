@@ -642,7 +642,8 @@
    "item": "deplend1009",
    "owner": "firemap-write",
    "gates_ok": "2026-10-08 16:43",
-   "note": "관문 통과(write 16:43): 제목 D8 제미나이 8·7·8·레드팀 7.5 · 표지 F9 3명 7.0 · readcheck 0·selfcheck 사실 0·crosscheck 사실 7 유지(calc.md 식)·aitell 9.9·editgate auto · review.md 경쟁 세 줄"
+   "note": "관문 통과(write 16:43): 제목 D8 제미나이 8·7·8·레드팀 7.5 · 표지 F9 3명 7.0 · readcheck 0·selfcheck 사실 0·crosscheck 사실 7 유지(calc.md 식)·aitell 9.9·editgate auto · review.md 경쟁 세 줄",
+   "published": "2026-10-09 10:36 https://cafe.naver.com/firemap/234 verify OK 2110/2110"
   },
   {
    "at": "2026-10-09 12:10",
@@ -679,10 +680,10 @@
   {
    "at": "2026-10-09 18:10",
    "kind": "cafe",
-   "item": "TBD-에너지바우처",
+   "item": "evoucher1009",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "가안 firemap-write 10/8 22:36: 에너지바우처(검색 55,200·0편) 동절기 신청 — 원고 전"
+   "gates_ok": "2026-10-09 10:38",
+   "note": "firemap-write 10/9 10:38: 관문 통과 — 제목 \"에너지바우처 동절기, 연탄쿠폰 받으면 겨울 몫이 빠지는 이유\" 제미나이 7·7·레드팀 7 · 표지 V1 7.17 · readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck 반영·레드팀 사실 2 반영·editgate auto · review.md 경쟁 세 줄 | firemap-write 10/9 10:37: 관문 통과 — 제목 \"에너지바우처 동절기, 연탄쿠폰 받으면 겨울 몫이 빠지는 이유\" 제미나이 7·7·레드팀 7 · 표지 V1 7.17 · readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck 반영·레드팀 사실 2 반영·editgate auto · review.md 경쟁 세 줄 | 가안 firemap-write 10/8 22:36: 에너지바우처(검색 55,200·0편) 동절기 신청 — 원고 전"
   },
   {
    "at": "2026-10-09 19:20",

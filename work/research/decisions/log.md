@@ -1471,3 +1471,5 @@
 2026-10-09 09:53 · firemap-watchdog · 사이트 4쪽 점검 완료(10/9 회) — / · /calc/severance · /calc/unemployment-benefit · /calc/salary 모두 200·제목 일치 · today.md 하루 1번 지시
 2026-10-09 09:53 · firemap-watchdog · 메우기 없음 — 카페 84분 전 발행이나 대기 5개가 상한·시각 대기(watchdog.py 판정), 블로그 STOP_blog 정지 중, 로그인됨, 멈춘 회차 없음
 2026-10-09 10:24 · firemap-video-producer · W-1 6장 달력 빈 날 칸 좁히고 영수증 빈 값 '?'로, 하이픈→− · artist 07:12·editor 07:09 지적 반영(새 사실 0, 글자 diff 1줄)
+2026-10-09 10:38 · firemap-write · 10:10 칸 deplend1009 발행(cafe/234, verify OK) · 관문 통과 편, 제 시각
+2026-10-09 10:38 · firemap-write · 18:10 칸 TBD-에너지바우처 → evoucher1009 확정·관문 통과, 각도는 '연탄쿠폰·긴급복지 연료비와 겹치면 겨울 몫 빠짐' · 경쟁 상위 8편이 금액·신청법만 쓰고 이 단서를 금액으로 보인 글 0편, 카페 탭에 같은 질문이 실제로 올라옴

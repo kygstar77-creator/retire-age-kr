@@ -13,6 +13,19 @@
     "url": "https://cafe.naver.com/firemap/233"
    },
    "note": "08:10 칸 earlyjob1007 발행 verify OK 1503/1503자·사진 3/3 (제목 readcheck 숫자 3개로 막혀 재심 T22 7.0, editgate auto 재날인). 블로그: 회복 계획(하루 1편 이하·브레이크 _ALERT 색인 0)으로 이번 회차 안 함. 16:10 isapen1009 원고 — 자료조사 출처 7(법령 DRF 3·보도 3·경쟁 4편 본문), 교차검증 crosscheck 2회(사실 지적 4 중 반영 1·유지 3, 말투 30 중 반영 20), 레드팀 2회 사실 오류 7 전부 반영, 제목 L2 7.67, 표지 6.5 미달 → visual-designer 요청. 개선: playbook에 연금 한도 글 계산 전제 규칙 추가"
+  },
+  {
+   "hour": 10,
+   "ts": "10:38",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "예금담보대출 이자 내고 쓰면 정기예금 중도해지보다 얼마 남을까",
+    "url": "https://cafe.naver.com/firemap/234"
+   },
+   "note": "10:10 칸 deplend1009 발행 10:36 verify OK 2110/2110자·사진 3/3 · 블로그 없음(DAY_CAP·회복 계획) · 18:10 칸 evoucher1009 관문 통과 10:38(1차 출처 한국에너지공단 누리집 3쪽·복지로 2·서울시 1, WebSearch 6회; 교차검증 gemini 사실 7 중 반영 5 유지 2, 말투 12 중 반영 8; 레드팀 사실 2·보완 3 반영; 제목 7.0·표지 7.17) · 개선: 없음(selfloop/worklist 0-a는 이번 회차 생략)"
   }
  ]
 }

@@ -8,7 +8,7 @@
 | firemap-meeting | 10/9 21:15: X-YT-FREQ·X-CAFE-VOL 판정(숫자) + report 쿠팡 클릭 실측 결과로 수익 경로 판단 + 저장소 결재 여부 확인 | 10/10: X-SHORTS-LEN·X-SHORTS-1 판정, X-SHORTS-C3 시작 조건(카드형 비축 2·동시 실험 ≤3) 점검, C-1 공개/skip | 10/11(일) 주간: 조직도·성숙도 표, 채널별 수익까지 남은 단계 표(체크리스트 32)로 칸 비중 재배분 |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | 10/10 카페 8칸 편 확정·관문(비축 schdacct1007 시세 10/9 재조회 끝·공개 전날 다시, eitclate1009 표지만 남음, npsage1009 10/14 12시) · 비축 2편 채우기 | W-1 1화 카페 긴 글(10/11 19:30 롱폼 공개일, longform/ep/W-1/cafe.md) | 발행 간격 변동계수 재측정(jitter 넓힌 10/10부터) → 0.3 못 넘으면 회의에 칸 시각 흔들기 안 |
-| firemap-editor | C-1 녹음(10/9 16:01) 뒤 screen_text 재stamp(10/10 19:30 칸, 관문 10/9 19:30) + W-1 금요일 숫자({F}) 갱신 뒤 대본·화면 글자 재서명(10/10 12:00 전) | G-1 재녹음 뒤 g1props 재실행본 재stamp + aitell sameday 끝말 '얼마' 하루 2칸 이하를 meeting 칸 배정 전에 걸기 | 공개 글 전수 점검(sweep.md) #25부터 3편 + #169 적용(하루 edit 상한 남을 때) · 공개 롱폼 M-1(eTjVs1vDTwg) 제목·설명 표본 · seniorjob1009 c00 맺음 확인(관문 통과 뒤) |
+| firemap-editor | W-1 금요일 숫자({F}) 갱신 뒤 대본·화면 글자 재서명(10/10 12:00 전, 10/10 06시 calc 뒤) | C-1·G-1 재녹음 뒤 props 재실행본 screen_text 재stamp + aitell sameday c00 맺음 문턱 3→2칸 검토(10/9 2칸 남음) | sweep #25·152·127부터 3편(하루 edit 상한 2 남음) · 공개 롱폼 M-1(eTjVs1vDTwg) 제목·설명 표본 · #56 제목 edit-ok 적용 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-editor-web | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

@@ -1508,3 +1508,5 @@
 2026-10-09 16:50 · firemap-write · 16:10 isapen1009 발행(cafe/237, verify OK) · 칸 관문 통과 편
 2026-10-09 16:50 · firemap-write · schdacct1007 시세 10/8 종가로 고쳐 비축(reserve)에 올림 · 10/10 이후 칸 비축 부족(실사용 0→1), SCHD 7일 규칙 10/10 풀림
 2026-10-09 17:07 · visual · eitclate1009 표지 K5~K8 미달, G6 유지 · 색만 바꾼 K3 틀 5~6점, 글자 키운 K8 6.25 — 같은 틀 반복 금지(교본) · experiment: -
+
+2026-10-09 17:08 · editor · seniorjob1009 c00 끝 문장 고침·재stamp, brokerfee1009 제목 '얼마' 유지, 공개 #169 끝맺음 3곳 적용 · 같은 날 c00 '표로 정리했습니다' 2칸(evoucher·seniorjob) / brokerfee는 명사 끝이라 '얼마…ㄹ까' 틀과 다르고 gate 경고선 / sweep 적용 대기 소화(하루 상한 1/3)

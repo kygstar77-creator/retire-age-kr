@@ -237,8 +237,8 @@ def main():
         rc = [x for x in (last.get('recheck') or []) if x.get('indexed') is not None]
         if rc:
             M.append(('검색', '제목검색 10위 안 비율(하루 지난 글)',
-                      round(sum(1 for x in rc if (x.get('self_rank') or 99) <= 10) / len(rc), 3), 0.6, 2,
-                      f'{len(rc)}편 기준 · 제목 규칙(series-plan)·toprank 항목 채우기'))
+                      round(sum(1 for x in rc if (x.get('self_rank') or 99) <= 10) / len(rc), 3), 0.6, 0 if 'blog' in STOPPED else 2,
+                      f'{len(rc)}편 기준 · STOP_blog 동안 회차가 닫을 일 아님' if 'blog' in STOPPED else f'{len(rc)}편 기준 · 제목 규칙(series-plan)·toprank 항목 채우기'))
         if b:
             M += [('검색', '색인율(당일 글 — 참고용)', round(sum(1 for x in b if x.get('indexed')) / len(b), 3), 0.3, 1, '색인은 하루쯤 걸린다. 이 값이 낮은 것만으로 발행량을 줄이지 않는다')]
             if not rc:
@@ -257,8 +257,10 @@ def main():
         done = [d for d in days if d < td]
         if done:
             dv = vis[done[-1]]
-            M.append(('성장', '블로그 하루 방문(마지막 완결일)', dv['today'], 100, 3,
-                      f"{done[-1]} {dv.get('at','')} 측정 · 색인·순위가 먼저. 발행량만 늘리면 안 오른다"))
+            # 10/9 report: STOP_blog(10/6 조직 축소) 동안 이 줄이 일감표 1번을 3회차 연속 차지해 매번 '막힘'만 적혔다
+            # (10/8 14:39·22:40·10/9 12:38). 색인율처럼 보이게만 두고 점수는 0.
+            M.append(('성장', '블로그 하루 방문(마지막 완결일)', dv['today'], 100, 0 if 'blog' in STOPPED else 3,
+                      f"{done[-1]} {dv.get('at','')} 측정 · " + ('STOP_blog 동안 회차가 닫을 일 아님' if 'blog' in STOPPED else '색인·순위가 먼저. 발행량만 늘리면 안 오른다')))
             M.append(('성장', '블로그 오늘 방문(하루가 덜 지났다 — 참고용)', today_v, 100, 0,
                       f"{days[-1]} {vis[days[-1]].get('at','')} 측정 · 하루가 끝나야 견줄 수 있다"))
         else:

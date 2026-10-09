@@ -757,7 +757,7 @@
    "item": "g1_climb",
    "owner": "firemap-shorts",
    "gates_ok": null,
-   "note": "firemap-shorts 10/9 15:2x: 편 = g1_climb(G-1 재료 '고점에 산 금 본전까지 34%→51%', bars vs·음악 있음, 직전 rate30_b cards라 C3 해소). compete 5·check 문제 없음·aitell 0.0(.edit.json auto)·review 세 줄 끝. 첫 프레임 1초 고정 조건 v4 5·5, v5 5·5(보정 gongjae1002 7.0~7.5 유효) → 7 미달, gates_ok 안 적음. 공개 전날(10/9 밤) G-1 calc 재실행 뒤 숫자 재확인 필요. 다음 1안: +51% 전면 한 숫자(hero)나 금 그림 요소 첫 프레임. 못 넘으면 npsday1007 선례(1초 미통과 공개·48시간 판정) 또는 비축 대체. 근거 cardshorts/g1_climb/review.md"
+   "note": "firemap-shorts 10/9 15:2x: 편 = g1_climb(G-1 재료 '고점에 산 금 본전까지 34%→51%', bars vs·음악 있음, 직전 rate30_b cards라 C3 해소). compete 5·check 문제 없음·aitell 0.0(.edit.json auto)·review 세 줄 끝. 첫 프레임 1초 고정 조건 v4 5·5, v5 5·5(보정 gongjae1002 7.0~7.5 유효) → 7 미달, gates_ok 안 적음. 공개 전날(10/9 밤) G-1 calc 재실행 뒤 숫자 재확인 필요. 다음 1안: +51% 전면 한 숫자(hero)나 금 그림 요소 첫 프레임. 못 넘으면 npsday1007 선례(1초 미통과 공개·48시간 판정) 또는 비축 대체.  10/10 07:13 firemap-shorts: v9 hero 한 숫자 전면판(금 -34%, 왜 +51%?) 고정 조건 5·5(보정 7.5·7.0 유효) 미달 — v4~v9 5계열 모두 5, gates_ok 안 적음·미달 공개 금지. 이 칸은 g1_climb 접고 다른 편(카드 틀 말고 그림 요소 필요)이 12:20 전 관문 통과해야 하며 못 넘으면 칸 skip+사유. 근거 cardshorts/g1_climb/review.md"
   },
   {
    "at": "2026-10-10 14:10",

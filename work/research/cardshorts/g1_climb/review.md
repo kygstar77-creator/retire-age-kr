@@ -27,3 +27,7 @@
 - v8 = Canva generate-image로 만든 금 막대 사진(자체 생성, 저작권 안전, 원본 112x199 썸네일만 받아져 확대·블러) 배경 + 큰 글 '금 -34%, 왜 / +51%?'. v8b = 글 키움·밝게. 고정 조건 rejudge_ff.py 2회: v8 5·5(보정 7.5·7.0), v8b 5·5(보정 7.5·7.5). 근거 v8b_rejudge_ff_raw.md, 그림 v8/ff_v8b.png.
 - 한계: 사진 해상도가 낮아 영상에 쓰려면 고해상도 원본 필요(Canva export 필요). Gemini 이미지 모델은 무료 한도 429. 카드 틀(cardshort.py)엔 배경 사진 옵션 아직 없음.
 - 결론: 글자 카드·벡터·사진 배경 4계열(v4~v8b) 모두 5. 다음 안: hero 숫자 단독 또는 12:20 칸은 v10a 선례처럼 미통과 공개 판단(순돌이 몫) 또는 다른 편.
+
+## v9 hero 한 숫자 전면판 (firemap-shorts 10/10 07:13) — 5·5, gates_ok 안 적음
+- 첫 프레임 '금 -34%, 왜 / +51%?'(+51% 노랑 화면 가득, cardshort.py hero) · 고정 조건 rejudge_ff.py 2회 5·5(보정 gongjae1002 7.5·7.0 유효) · 근거 v9_rejudge_ff_raw.md, 그림 onesec/v9_first.png, spec g1_climb_v9.json.
+- 지적: 글자는 읽히고 주제도 맞힘('고점에 물린 금, 본전 찾으려면 얼마나') 그러나 호기심 장치 약함. 글자·벡터·사진·hero 5계열 모두 5 → g1_climb는 접는다(같은 그림 재시험 금지). 미달 공개 안 함.

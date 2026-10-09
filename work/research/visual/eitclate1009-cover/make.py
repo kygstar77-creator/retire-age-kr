@@ -32,12 +32,27 @@ V = {
  'K4': dict(bg=NAV, fg=WHT, head=[('근로장려금 기한 후 신청', 84, '#A5B4D4', 90), ('하루 늦으면', 170, WHT, 260), ('지급 기한', 150, YEL, 490), ('한 달 밀림', 190, YEL, 660)],
             rows=[], foot=('11/30 신청 3/30까지 · 12/1 마감일 4/30까지', 50, '#A5B4D4', 920)),
 }
+# 10/9 17시 K3 틀 그대로 색만 시험(write 14:52 요청): 흰 바탕 · 노랑 바탕 · 진초록 바탕 — 경쟁 빨강·분홍과 겹치지 않고, 4월 칸은 빨강 금지(감액 오독)
+K3 = V['K3']
+def recolor(bg, fg, sub, hi, card, cardfg, hicard, hicardfg, foot):
+    v = dict(K3); v.update(bg=bg, fg=fg, head=[('근로장려금 기한 후 신청', 84, sub, 70), ('하루 차이, 한 달 차이', 120, hi, 180)],
+        foot=('2027년 · 법이 정한 지급 기한', 46, foot, 950),
+        rows=[(450, ('11월 중', card, cardfg), ('3월 30일까지', hicard, hicardfg)), (690, ('12월 1일 마감', card, cardfg), ('4월 30일까지', card, cardfg))])
+    return v
+V['K5'] = recolor('#FFFFFF', NAV, '#4A5878', '#1F4FD8', '#EEF2F8', NAV, NAV, YEL, '#4A5878')
+V['K6'] = recolor(YEL, NAV, NAV, NAV, WHT, NAV, NAV, YEL, NAV)
+V['K7'] = recolor('#0E4D3C', WHT, '#A8D5C2', YEL, WHT, '#0E4D3C', YEL, '#0E4D3C', '#A8D5C2')
+# K5~K7 제미나이 5~6: '110px에서 표가 뭉개짐' → 칸 글자 96px로 키우고 날짜를 숫자형(11/30·12/1)으로, 위 라벨은 '지급 기한' 하나만 크게 · 노랑 바탕(심사 2회 공통 제안)
+V['K8'] = dict(bg=YEL, fg=NAV, head=[('근로장려금 기한 후 신청', 76, NAV, 40), ('하루 차이, 한 달 차이', 118, '#1F4FD8', 140)],
+    lab=('', '지급 기한'), laby=320, w=(470, 410), fs=86, rh=230, foot=('2027년 · 법이 정한 지급 기한', 50, NAV, 950),
+    rows=[(395, ('11/30 신청', WHT, NAV), ('3/30까지', NAV, YEL)), (660, ('12/1 마감일', WHT, NAV), ('4/30까지', WHT, NAV))])
 def html(v):
     h = ''.join(f'<div class="h" style="top:{t}px;font-size:{s}px;color:{c}">{x}</div>' for x, s, c, t in v['head'])
     lab = '' if not v['rows'] else f'<div class="lab" style="top:{v.get("laby",0)}px;color:{v["fg"]}"><span style="width:390px;text-align:center">{v.get("lab",("",""))[0]}</span><span style="width:390px;text-align:center">{v.get("lab",("",""))[1]}</span></div>'
     w = v.get('w', (390, 390)); fs = v.get('fs', 82)
     lab = lab.replace('width:390px', f'width:{w[0]}px', 1).replace('width:390px', f'width:{w[1]}px', 1)
-    rows = ''.join(f'<div class="row" style="top:{t}px"><div class="d" style="width:{w[0]}px;font-size:{fs}px;background:{a[1]};color:{a[2]}">{a[0]}</div><div class="a">{AR % (v["fg"], v["fg"])}</div><div class="d" style="width:{w[1]}px;font-size:{fs}px;background:{b[1]};color:{b[2]}">{b[0]}</div></div>' for t, a, b in v['rows'])
+    rh = v.get('rh', 190)
+    rows = ''.join(f'<div class="row" style="top:{t}px;height:{rh}px"><div class="d" style="height:{rh}px;width:{w[0]}px;font-size:{fs}px;background:{a[1]};color:{a[2]}">{a[0]}</div><div class="a">{AR % (v["fg"], v["fg"])}</div><div class="d" style="height:{rh}px;width:{w[1]}px;font-size:{fs}px;background:{b[1]};color:{b[2]}">{b[0]}</div></div>' for t, a, b in v['rows'])
     if v.get('foot'): x, sz, c, t = v['foot']; rows += f'<div class="h" style="top:{t}px;font-size:{sz}px;color:{c};font-family:P">{x}</div>'
     return f'<html><head><meta charset="utf-8"><style>{CSS % dict(ft=FT, bg=v["bg"])}</style></head><body>{h}{lab}{rows}</body></html>'
 names = sys.argv[1:] or list(V)

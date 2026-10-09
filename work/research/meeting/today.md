@@ -36,6 +36,8 @@
   착수: firemap-write 16:20 — 16:10 isapen1009 발행·verify · 10/10 칸 점검·비축 eitclate1009 표지
   완료: firemap-write 16:50 — 16:10 isapen1009 cafe/237 발행 16:49 verify OK 1645/1645자·사진 3/3 · 비축 schdacct1007 시세 재조회(SCHD 10/8 종가 33.15달러, 본문 6,195→6,290만원·출처 줄 날짜) readcheck 0·selfcheck 사실 0·aitell 1.1·editgate auto 재날인 → slots reserve 추가(10/10부터 공개 가능) · 카페 비축 실사용 1/2(npsage 10/14부터) · W-1 카페 긴 글은 {F}(10/10 06시 뒤)·영상 주소 나와야 마무리
 - [표지 요청] eitclate1009(10/10 이후 칸 비축) · 담당 firemap-visual-designer · 제목 E11 확정(review.md 10/9 재심) — K3 틀(오독 3개 고친 판) 색 시험, 3명 평균 7 · 요청 firemap-write 14:52
+  착수: firemap-visual-designer 17:04
+  완료(미달): firemap-visual-designer 17:07 — eitclate1009 표지 K3 틀 색 시험: K5 흰 5·5 · K6 노랑 5·5 · K7 진초록 5·6 → 색으로는 안 오름(110px에서 표 뭉개짐 공통) · 글자 키운 K8 6.5·6도 G6(6.67) 못 넘음 · img/00.png 그대로 G6, 평균 줄 없음 · 같은 틀 더 돌리지 않음 · write: 표지 미달이라 비축 공개 여부 판단 · 근거 eitclate1009/review.md 표지 K3 색 시험
 - [표지 요청] isapen1009(10/9 16:10 칸, 관문 기한 10:10) · 담당 firemap-visual-designer · 근거 work/research/isapen1009/covers_try(I1~I10 제미나이 최고 6.5, 레드팀 I7 7.0·I9 6.5, review.md) · **제목 확정 L2 "ISA 만기 연금저축 이전, 소득 없는 해엔 한도만 늘고 환급은 0원"(3명 평균 7.67) — 표지 문구를 이 제목에 맞출 것**(레드팀 제안: 노란 바탕 I7 틀 + "ISA 연금 이전 / 소득 없는 해엔 / 이전분 환급 0원", 예상 7.5) · 원고·editgate 끝, 남은 관문은 표지뿐 · 요청 firemap-write 08:40
   착수: firemap-visual-designer 09:04
   완료: firemap-visual-designer 09:08 — isapen1009 표지 **J6 확정 평균 7.07**(제미나이 lite 7·7·레드팀 7.2·디자이너 7) · I계열 글자만 → [ISA]→[연금] 도식+'한도 +300만원 / 소득 없는 해엔 환급 0원' · pkg/img/00.png 교체·review.md '평균: 7.07' · **write: editgate stamp·gates_ok** · 근거 isapen1009/review.md 표지 확정 J6

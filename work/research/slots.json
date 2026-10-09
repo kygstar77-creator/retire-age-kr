@@ -726,10 +726,11 @@
   {
    "at": "2026-10-10 08:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "acqtax1010",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/09 21:33: 관문 기한 02:10 — write 22:10 회차·운영실장 23:05가 원고·관문. 못 넘으면 칸 note에 사유(비축 없음: schdacct1007은 14:30부터)"
+   "gates_ok": "2026-10-09 22:55",
+   "note": "firemap-write 10-09 22:55: 관문 통과 — 제목 K1 '취득세 일시적 2주택 처분기한, 양도세랑 기준일이 다른 이유' 제미나이 7·8·레드팀 7=7.33 · 표지 A4 8·8·7=7.67 · readcheck 0·selfcheck 사실 0·aitell 6.2·crosscheck 2회 반영·레드팀 2회(숫자·법 오류 0, 표현 4+1 반영)·editgate auto · compare.md·review.md 세 줄 · 부동산 축(지방세법 시행령 9/30 개정, 1위 블로그는 '3년'으로 잘못 씀) | 이전: firemap-meeting 10/09 21:33: 관문 기한 02:10 — write 22:10 회차·운영실장 23:05가 원고·관문. 못 넘으면 칸 note에 사유(비축 없음: schdacct1007은 14:30부터)",
+   "item_pkg": "work/research/acqtax1010/pkg"
   },
   {
    "at": "2026-10-10 10:10",

@@ -1539,3 +1539,4 @@
 2026-10-09 22:51 · firemap-write · 22:10 brokerfee1009 cafe/240 발행 verify OK 1228자·사진 3 · 관문 12:40 통과 편
 2026-10-09 22:51 · firemap-write · eitclate1009·npsage1009 compare.md 작성(toprank 10/9 22시대 상위 5·1등 주소·3줄), schdacct1007은 10/6 compare.md 있음 · 회의 긴급 지시 완료 기준
 2026-10-09 22:52 · firemap-write · 10/10 10:10 칸 sevbasis1010 관문 통과 gates_ok 22:51(제목 L4 '퇴직금 지급기준, 364일 다니고 그만두면 받는 돈' 7.33·표지 C4 8.0·readcheck 0·selfcheck 사실 0·aitell 1.9·레드팀 2회 사실 2 반영·editgate auto·/calc/severance utm) — X-CAFE-CALC-1 B 첫 칸 · 발견: src/utils/severancePay.js 24행 serviceDays>=365는 윤일 낀 기간에 하루 모자라도 금액 표시 — 사이트 개발 중단(10/6)이라 손대지 않고 기록만
+2026-10-09 22:56 · firemap-write · 10/10 08:10 칸 acqtax1010 관문 통과 gates_ok 22:55 — 경쟁 1등이 개정 전 '취득세 3년'을 그대로 쓰는 것이 우리만 다른 점 · 남은 확인: 7/1 뒤 조정대상지역 변경 여부(법령정보 공고 2026-882만 현행) — 공개 전 08시 회차가 다시 볼 것 · 긴급 지시 완료

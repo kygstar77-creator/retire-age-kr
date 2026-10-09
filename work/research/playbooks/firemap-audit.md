@@ -34,3 +34,4 @@
 - 2026-10-08 20:04: 공개 저장소 비밀키 감사는 파일 이름 grep보다 `git grep -lIE <패턴> origin/main`(ya29·GOCSPX·ghp_·sk-·AIza·BEGIN PRIVATE KEY·sb_secret)이 빠르다. 걸린 것은 반드시 문맥을 본다 — 퍼 온 HTML 안 남의 위젯 토큰(livere Bearer·Firebase AIza)이 대부분이다. _boss_처럼 위험한 커밋은 `git branch -a --contains <커밋>`으로 원격에 있는지까지 확인. 배포처는 `curl -sI`의 server 헤더+Pages Function 응답으로 판정.
 - 2026-10-09 07:58: 발행 간격 감사는 '정각이냐'만 보면 놓친다 — `ls */pkg/published.txt | xargs date -r +%s`로 같은 날 간격 변동계수를 잰다(0.3 미만이면 기계적). 개인정보 경로 감사는 휴대폰 식에 하이픈을 필수로(`(?<![0-9-])01[016789]-\d{3,4}-\d{4}`) — 없으면 숫자 자료가 마구 걸린다.
 - 2026-10-09 19:54: 공식 누리집 원문 대조는 curl로 받아 숫자 문자열을 찾되, '-->' 바로 앞 표는 주석 처리된 옛 표일 수 있다(에너지바우처 하·동절기 표) — 살아 있는 표인지 주석 경계를 먼저 본다. RSS 첫 pubDate는 채널 빌드 시각이라 item 안 pubDate로 새 글을 판정한다.
+- 2026-10-10 07:53: 블로그 RSS 아이디는 kygstar7777(perf.py BLOGID)이다. kygstar77로 받으면 2020년 글이 나와 '새 글 없음'을 잘못 볼 수 있다. 시청 지속은 ytupload 토큰에 yt-analytics 범위가 없어 못 잰다 — 다른 경로(vidIQ·Studio) 먼저 찾는다.

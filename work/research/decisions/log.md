@@ -1510,3 +1510,5 @@
 2026-10-09 17:07 · visual · eitclate1009 표지 K5~K8 미달, G6 유지 · 색만 바꾼 K3 틀 5~6점, 글자 키운 K8 6.25 — 같은 틀 반복 금지(교본) · experiment: -
 
 2026-10-09 17:08 · editor · seniorjob1009 c00 끝 문장 고침·재stamp, brokerfee1009 제목 '얼마' 유지, 공개 #169 끝맺음 3곳 적용 · 같은 날 c00 '표로 정리했습니다' 2칸(evoucher·seniorjob) / brokerfee는 명사 끝이라 '얼마…ㄹ까' 틀과 다르고 gate 경고선 / sweep 적용 대기 소화(하루 상한 1/3)
+2026-10-09 17:52 · firemap-watchdog · 메우기 없음 · 카페 62분 전(75분 미만)·대기 5, 블로그 STOP_blog 정지, 로그인됨, 멈춘 회차 없음
+2026-10-09 18:20 · firemap-video-producer · 녹음 없는 회차(TTS 10/10 소진): 요청별 음높이 원인 실측 → lfvoice make --gate·--budget 추가(C-1 _raw 모의 시험 통과), X-PD-GATE 등록, W-1 10/10 녹음 순서(runbook_1010, 7요청·여유 3) · 이유: C-1·G-1이 같은 원인(요청 통째 음 뜸)으로 막혔고, 끝에 재면 다시 받을 창이 없음 · 근거 longform/ep/C-1/check/pitch_drift_1009.md

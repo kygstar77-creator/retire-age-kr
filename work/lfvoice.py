@@ -1,6 +1,6 @@
 # 롱폼 목소리 — RULES.md '목소리 고정·말 속도' 규칙 1~3을 코드로 지킨다(ep/A-1/voice.py의 후속, A-1에서 난 사고 세 가지를 막는다).
 #   py -3.12 work/lfvoice.py plan  <ep폴더> [--maxreq 9] [--cap 270]   # 요청 묶음만 보여 준다(API 안 부름) · --cap = 요청당 음절 상한(교훈 24)
-#   py -3.12 work/lfvoice.py make  <ep폴더> [--maxreq 9] [--first 1]   # 없는 문장만 만든다 → 자르기 → voice.json · --first N = 새 요청 N회만 보내고 멈춤(첫 묶음 뒤 check로 높낮이 먼저 보기, lessons R-1 v6)
+#   py -3.12 work/lfvoice.py make  <ep폴더> [--maxreq 9] [--first 1] [--gate 0.10 --budget 10]   # --gate: 요청마다 음높이 재서 벗어나면 그 자리에서 다시 받기(budget = 이번 실행 새 요청 상한) · 없는 문장만 만든다 → 자르기 → voice.json · --first N = 새 요청 N회만 보내고 멈춤(첫 묶음 뒤 check로 높낮이 먼저 보기, lessons R-1 v6)
 #   ep/tts.json에 'prompt'가 있으면 그 편은 그 지시문으로 고정(편 안에서 바꾸면 전부 다시 녹음 — 한 날·한 목소리 규칙)
 #   py -3.12 work/lfvoice.py check <ep폴더>                 # 편 전체 말 속도·음높이 일관성 검사(공개 전 필수, 규칙 3)
 #   py -3.12 work/lfvoice.py cutat <ep폴더> <묶음번호> 6.7,19.0,...  # 자르기 실패 묶음을 받아쓰기로 확인한 문장 시작 시각으로 자른다(API 안 부름)
@@ -240,7 +240,10 @@ def request(cfg, texts):
         data=json.dumps(body).encode(), headers={'Content-Type': 'application/json'}), timeout=600))
     return np.frombuffer(base64.b64decode(r['candidates'][0]['content']['parts'][0]['inlineData']['data']), dtype=np.int16).astype(np.float32)
 
-def make(ep, maxreq, dry=False, first=0, cap=0):
+def make(ep, maxreq, dry=False, first=0, cap=0, gate=0.0, budget=0):
+    # gate>0(10/9 PD): 요청마다 받은 소리 전체 f0를 바로 재서, 이미 받아들인 요청들 중앙값(첫 요청은 tts.json ref_f0, 없으면 148Hz)에서 gate 비율 넘게 벗어나면
+    #   _raw/<키>.rej<n>.pcm으로 치우고 같은 묶음을 다시 요청한다(budget 회 안에서). 다시 받아도 벗어나면 가장 가까운 것을 쓴다.
+    #   근거: 지난 9편 장별 음높이 — 튀는 건 문장 내용(끝맺음·숫자·길이) 아닌 요청 통째(C-1 5~7장 +9~17%, G-1 6장 +25%), research/longform/ep/C-1/check/pitch_drift_1009.md
     secs = sections(ep); holes = [t for s in secs for t in s['lines'] if '{{' in t or '○' in t]
     if holes: print(f'대본 빈자리 {len(holes)}곳(예: {holes[0][:30]})')
     if holes and not dry: sys.exit('빈자리를 채운 뒤 만든다')
@@ -248,18 +251,31 @@ def make(ep, maxreq, dry=False, first=0, cap=0):
     print(f"모델 {cfg['model']} · 목소리 {cfg['voice']} · 장 {sum(1 for s in secs if s['lines'])}개 → 요청 {len(groups)}회")
     for g in groups: print('  ', ' + '.join(s['title'][:14] for s in g), sum(syl(t) for s in g for t in s['lines']), '음절')
     if dry: return
-    pad = np.zeros(int(SR * 0.08), dtype=np.float32); stopped = None; sent = 0
+    pad = np.zeros(int(SR * 0.08), dtype=np.float32); stopped = None; sent = 0; acc = []
     for g in groups:
         texts = [speak(ep, t) for s in g for t in s['lines']]; todo = [t for t in texts if not os.path.exists(wav_of(ep, cfg, t)[1])]
         if not todo or stopped: continue
         rk = hashlib.md5(('|'.join([cfg['model'], cfg['voice']] + todo)).encode()).hexdigest()[:16]; raw = os.path.join(aud_dir(ep), '_raw', rk + '.pcm')
-        if os.path.exists(raw): pcm = np.fromfile(raw, dtype=np.int16).astype(np.float32)
-        else:
-            if first and sent >= first: stopped = f'--first {first}'; print(f'  --first {first}: 요청 {sent}회 뒤 멈춤 — check로 높낮이 본 뒤 이어서 make'); continue
-            try: sent += 1; pcm = request(cfg, todo); pcm.astype(np.int16).tofile(raw)
-            except urllib.error.HTTPError as e:
-                msg = e.read().decode(errors='ignore'); stopped = f"{e.code} {'하루 할당량' if 'PerDay' in msg else msg[:120]}"
-                print('  멈춤 —', stopped, '(규칙 1: 다른 모델로 넘어가지 않음)'); continue
+        takes = []
+        while True:
+            if os.path.exists(raw): pcm = np.fromfile(raw, dtype=np.int16).astype(np.float32)
+            else:
+                if first and sent >= first: stopped = f'--first {first}'; print(f'  --first {first}: 요청 {sent}회 뒤 멈춤 — check로 높낮이 본 뒤 이어서 make'); break
+                if budget and sent >= budget: stopped = f'--budget {budget}'; print(f'  --budget {budget}: 요청 {sent}회 다 씀'); break
+                try: sent += 1; pcm = request(cfg, todo); pcm.astype(np.int16).tofile(raw)
+                except urllib.error.HTTPError as e:
+                    msg = e.read().decode(errors='ignore'); stopped = f"{e.code} {'하루 할당량' if 'PerDay' in msg else msg[:120]}"
+                    print('  멈춤 —', stopped, '(규칙 1: 다른 모델로 넘어가지 않음)'); break
+            if not gate: break
+            hz = f0(pcm, SR); ref = float(np.median(acc)) if acc else float(cfg.get('ref_f0', 148)); dev = hz / ref - 1
+            print(f'  요청 음높이 {hz:.0f}Hz · 기준 {ref:.0f}Hz · {dev:+.1%}')
+            if abs(dev) <= gate: acc.append(hz); break
+            takes.append((abs(dev), hz, pcm)); rej = raw[:-4] + f'.rej{len(takes)}.pcm'; os.replace(raw, rej)
+            if (budget and sent >= budget) or (first and sent >= first) or len(takes) > 2:
+                d, hz, pcm = min(takes); pcm.astype(np.int16).tofile(raw); acc.append(hz)
+                print(f'  ⚠ 다시 받을 요청 없음/3번째 — 가장 가까운 {hz:.0f}Hz({d:.1%}) 씀'); break
+            print(f'  벗어남 → {os.path.basename(rej)}로 치우고 다시 요청')
+        if stopped and not os.path.exists(raw): continue
         segs = cut(pcm, todo) or align(pcm, todo)
         if segs is None: print('  자르기 실패(저장본 있음, 다시 요청 안 함):', todo[0][:20]); continue
         for t, sg in zip(todo, segs): write(wav_of(ep, cfg, t)[1], np.concatenate([pad, sg, pad]))
@@ -504,5 +520,7 @@ if __name__ == '__main__':
         n = sum(len(x['lines']) for x in sections(ep))
         if n > MAX_LINES and '--over' not in sys.argv:   # 10/6 순돌이: 무료 한도 한 창(16:00 초기화)에 약 100줄 — 넘으면 이틀에 나눠 녹음돼 목소리가 달라진다(R-1 +8.3%). RULES '하루 녹음 한도 안 길이'
             sys.exit(f'말하는 줄 {n}줄 > {MAX_LINES}줄 — 한 창에 다 녹음되지 않음. 대본을 줄인 뒤 녹음(결제 연결 전까지)')
-        make(ep, mr, first=int(sys.argv[sys.argv.index('--first') + 1]) if '--first' in sys.argv else 0, cap=cap)
+        make(ep, mr, first=int(sys.argv[sys.argv.index('--first') + 1]) if '--first' in sys.argv else 0, cap=cap,
+             gate=float(sys.argv[sys.argv.index('--gate') + 1]) if '--gate' in sys.argv else 0.0,
+             budget=int(sys.argv[sys.argv.index('--budget') + 1]) if '--budget' in sys.argv else 0)
     elif cmd == 'check': sys.exit(0 if check(ep, sys.argv[3] if len(sys.argv) > 3 else None) else 1)

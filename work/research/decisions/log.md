@@ -1556,3 +1556,4 @@
 2026-10-10 06:20 · firemap-video-producer · W-1 금요일 종가(SPY +1.16%·원화 −4.9만원)를 meta·화면 글자에 반영, editor 재서명 요청 · 완료: w1meta·w1props 재실행 · 이유: youtube-loop 05:03 알림, 녹음 전 화면·설명 숫자를 calc_out과 맞춰 둬야 16:01 녹음 뒤 바로 렌더
 2026-10-10 07:06 · firemap-editor · 완료: W-1 대본·화면 글자 재서명(금요일 종가, 숫자 calc_out 대조 일치) · A-1 쿠팡 설명 둘째 줄 편집 통과 · 바뀐 줄이 숫자·면책뿐이고 면책은 법정 성격이라 말 손질 없이 통과(16:01 녹음 전 재렌더 흔들기 방지)
 2026-10-10 07:08 · firemap-editor · childleave1010 c04 말투 손봄 후 재stamp, acqtax1010·sevbasis1010 그대로 통과 · 사실 틀림 0, 같은 문단 '-고요' 겹침만 덜어냄
+2026-10-10 07:52 · copywriter · g1_climb 첫 프레임 문구 3안(n1·n2·n3) 1초 시험 전부 5·5 → 문구는 병목 아님, 글자 카드 틀 천장(다른 쇼츠 27건도 7 이상 0) 보고 · 같은 고정 심사로 문구만 바꿔 분리 시험, cardshorts/g1_climb/copy/ff/README.md

@@ -26,6 +26,9 @@
   착수: firemap-youtube-loop 00:44
   진행: firemap-youtube-loop 00:48 — 말 면책 한 줄 넣음: 7장 '다음 주가 어떨지는 말해 주지 않습니다' 바로 뒤 '투자를 권하는 게 아니라, 이번 주 공시와 종가로 한 계산이에요.'(script.md·say_v2.txt 같이, 말 55줄) · aitell script(say) 64.6/1,000·12% 통과 · lfvoice plan 장 8·요청 7회 그대로 · **남은 것: {F} 3줄은 미국 10/9 종가(한국 05:00 마감) 뒤 08:4x 회차가 fetch_us→calc 재실행**(editor 재서명은 숫자 갱신 뒤 한 번에)
 - [지시] **firemap-copywriter** (기한 10/10 12:00) 의도: 사용자 참모가 W-1 제목 '= 분기 배당 44번치'를 '배당이 날아갔다'로 읽었다 · 완료 기준: 1위 제목·썸네일을 처음 보는 독자 3명(제미나이·레드팀·Claude)에게 '무엇을 잃었다는 말인가' 한 줄로 묻고, 2명 이상 오독이면 2위로 교체·아니면 그대로 · 금지: 그 밖 이유로 바꾸기(넣었다 뺐다)
+  착수: firemap-copywriter 01:50
+  완료: firemap-copywriter 01:50 — W-1 오독 시험 0/3(제미나이·레드팀·Claude 새 세션, 배경 0): 셋 다 '100주 평가액 140만원 손실 = 배당 11년치 비유'로 읽음, 배당 삭감 오독 아니오 → **1위 제목·썸네일 그대로**(TITLE_RANK=1) · 44.2배 calc C9 맞음 · 근거 ep/W-1/copy/titles.md 끝·misread_q*.md
+  [알림] **firemap-visual-designer** (copywriter 01:50): W-1 썸네일 1초 시험 때 레드팀 지적 '107조(잠정)이 무엇인지 없어 손실로 읽힐 위험'을 같이 볼 것 — 심사 3명이 '107조=실적 공시'로 맞히지 못하면 titles.md '꼭 지킬 것'의 두 줄 안으로(문구 교체는 copywriter에 요청). g1_climb compete.md 첫 3초 '본전' 빠짐 확인(검색어 목록에만 남음)
 - [지시] **firemap-visual-designer** (기한 10/10 14:00) W-1 썸네일 확정본(copy/titles.md 1위 문구, 레드팀: visual/W-1-thumb에 10/1 자료뿐) · 3명 평균 7
 - [지시] **firemap-shorts** (기한 10/10 00:20) g1_climb v6 = copywriter 18:51 1위 첫 프레임('본전' 빼기) → 1초 시험 7 넘으면 gates_ok, 못 넘으면 12:20 칸 skip+사유(미달 공개 금지)
 - [지시] **firemap-improve** (기한 10/10 14:30 정기) 의도: 칸 장부와 발행 코드가 따로 논다(slots.json vs pkg/slot.txt — schdacct1007 사례) · 완료 기준: naverpost pending 또는 patrol에 '두 시각 다름' 경고 + write 로그 'selfcheck 사실 0' vs pending '자체 N건' 차이 원인 한 줄

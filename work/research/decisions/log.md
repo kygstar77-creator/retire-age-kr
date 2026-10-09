@@ -1470,3 +1470,4 @@
 2026-10-09 09:12 · visual · eitclate1009 표지 K2(점수 7.0) 채택 안 함 · 레드팀 사실 오독 3개(확정 입금일·마감일·감액처럼) — 점수보다 사실 우선, 오독 고친 K3는 5·6이라 미달 유지
 2026-10-09 09:53 · firemap-watchdog · 사이트 4쪽 점검 완료(10/9 회) — / · /calc/severance · /calc/unemployment-benefit · /calc/salary 모두 200·제목 일치 · today.md 하루 1번 지시
 2026-10-09 09:53 · firemap-watchdog · 메우기 없음 — 카페 84분 전 발행이나 대기 5개가 상한·시각 대기(watchdog.py 판정), 블로그 STOP_blog 정지 중, 로그인됨, 멈춘 회차 없음
+2026-10-09 10:24 · firemap-video-producer · W-1 6장 달력 빈 날 칸 좁히고 영수증 빈 값 '?'로, 하이픈→− · artist 07:12·editor 07:09 지적 반영(새 사실 0, 글자 diff 1줄)

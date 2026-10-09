@@ -143,7 +143,7 @@ def spec(key, A):
     if key == 'kbars':
         bars = [[md(d), KO[d], f'{KO[d]:,.2f}', 0 if d == '20261002' else A('코스피를 그대로') + 8 * i, 'fall' if d == '20261008' else 'ink', None] for i, d in enumerate(['20261002'] + WEEK)]
         return dict(kind='kbars', title='영수증 2 · 코스피 1천만원', sub='지수 그대로 따라간 돈 · 보수·세금·추적 오차 빼고', source=SRC_KR,
-                    data={'min': 0, 'max': 7600, 'bars': bars, 'total': TOT(0, A('이번 주 사흘')), 'big': [f'−{-S4}만원', A('이번 주 사흘'), iw(D4) + '원 · ' + M(f'{D3:.2f}%')]})
+                    data={'min': 0, 'max': 7600, 'bars': bars, 'total': TOT(0, A('이번 주 사흘')), 'big': [f'−{-S4}만원', A('이번 주 사흘'), iw(D4).replace('-', '−') + '원 · ' + M(f'{D3:.2f}%')]})
     if key == 'diverge':
         return dict(kind='diverge', title='한 종목이나 시장 전체나', sub='10/2 → 10/8 · %', source=SRC_PX + ' · ' + SRC_KR,
                     data={'rows': [['삼성전자', C5, M(f'{C5:.2f}%'), 0], ['코스피', D3, M(f'{D3:.2f}%'), 12]], 'max': 8, 'q': ['비슷한 비율로 줄었다', 30]})

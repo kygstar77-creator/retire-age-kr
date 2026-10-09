@@ -218,7 +218,7 @@
 [scenes.14.data.total.2.0] 미국 1만 달러
 [scenes.14.data.total.2.1] −13.9만원
 [scenes.14.data.big.0] −54만원
-[scenes.14.data.big.2] -539,440원 · −5.39%
+[scenes.14.data.big.2] −539,440원 · −5.39%
 [scenes.14.lines.0.text] 이번엔 종목 하나가 아니라 시장 전체예요.
 [scenes.14.lines.1.text] 코스피를 그대로 따라가는 돈이 1천만원 있었다고 해 볼게요.
 [scenes.14.lines.2.text] 이번 주 사흘 동안 약 54만원이 줄었습니다.

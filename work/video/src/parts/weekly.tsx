@@ -93,18 +93,22 @@ export const DotCount: React.FC<{n: number; at: number; label: string; big: stri
 
 // 다음 주 달력: cells = [요일, 날짜, 일 글자|null, 나타날 프레임, 강조?] + later = [날짜, 일 글자, 프레임] 칩 줄
 export const NextCal: React.FC<{cells: [string, string, string | null, number, boolean][]; later: [string, string, number][]; x?: number; y?: number; w?: number}> =
-  ({cells, later, x = 150, y = 320, w = 1620}) => {
+  ({cells, later, x = 150, y: y0 = 320, w = 1620}) => {
+  const y = later.length ? y0 : y0 + 100; // 아래 칩 줄이 없으면 보드 가운데로
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
-  const g = 18; const cw = (w - g * (cells.length - 1)) / cells.length; const ch = 270;
+  // 일 있는 칸은 넓게(3배), 빈 날은 좁은 점선 칸 — 흰 면이 화면을 차지하지 않게(10/9 artist 지적)
+  const g = 18; const wt = cells.map((c) => (c[2] ? 3 : 1)); const unit = (w - g * (cells.length - 1)) / wt.reduce((a, b) => a + b, 0); const ch = 270;
+  const lefts = wt.map((_, i) => x + wt.slice(0, i).reduce((a, b) => a + b * unit + g, 0));
   return (
     <>
       {cells.map(([dow, date, ev, at, hot], i) => {
-        const o = fade(f, at, 10); const s = spring({frame: f - at, fps, config: {damping: 13}});
+        const o = fade(f, at, 10); const s = spring({frame: f - at, fps, config: {damping: 13}}); const cw = wt[i] * unit;
         return (
-          <div key={i} style={{position: 'absolute', left: x + i * (cw + g), top: y, width: cw, height: ch, borderRadius: 18, background: hot ? T.soft : T.surface,
-            boxShadow: hot ? `inset 0 0 0 4px ${T.accent}` : lift, opacity: o, transform: `scale(${hot ? 0.94 + 0.06 * s : 1})`}}>
+          <div key={i} style={{position: 'absolute', left: lefts[i], top: y, width: cw, height: ch, borderRadius: 18, background: hot ? T.soft : ev ? T.surface : 'transparent',
+            border: ev ? undefined : `3px dashed ${T.ink3}`, boxSizing: 'border-box',
+            boxShadow: hot ? `inset 0 0 0 4px ${T.accent}` : ev ? lift : undefined, opacity: ev ? o : o * 0.55, transform: `scale(${hot ? 0.94 + 0.06 * s : 1})`}}>
             <div style={{...F, position: 'absolute', left: 22, top: 18, fontWeight: 700, fontSize: 30, color: T.ink2, whiteSpace: 'nowrap'}}>{dow}</div>
-            <div style={{...F, position: 'absolute', right: 22, top: 18, fontWeight: 700, fontSize: 30, color: T.ink3, whiteSpace: 'nowrap'}}>{date}</div>
+            <div style={{...F, position: 'absolute', ...(ev ? {right: 22, top: 18} : {left: 22, top: 64}), fontWeight: 700, fontSize: 30, color: T.ink3, whiteSpace: 'nowrap'}}>{date}</div>
             {ev ? ev.split('\n').map((t, k) => <div key={k} style={{...F, position: 'absolute', left: 22, right: 22, top: 100 + k * 44, fontWeight: 700, fontSize: 32, color: hot ? T.accent : T.ink, whiteSpace: 'nowrap'}}>{t}</div>) : null}
           </div>
         );
@@ -133,7 +137,7 @@ export const WeekTotal: React.FC<{head: string; cells: [string, string, number][
         return (
           <div key={i} style={{borderTop: i ? `1px solid ${T.dsurface}` : undefined, padding: '6px 0'}}>
             <div style={{...F, fontWeight: 700, fontSize: 22, color: T.dink3, whiteSpace: 'nowrap'}}>{n}</div>
-            <div style={{...F, fontWeight: 700, fontSize: 36, color: f >= at ? T.dink : T.dink3, opacity: f >= at ? o : 0.4, textAlign: 'right', transform: `scale(${0.8 + 0.2 * pop})`, transformOrigin: 'right center', whiteSpace: 'nowrap'}}>{f >= at ? v : '—'}</div>
+            <div style={{...F, fontWeight: 700, fontSize: 36, color: f >= at ? T.dink : T.daccent, opacity: f >= at ? o : 0.85, textAlign: 'right', transform: `scale(${0.8 + 0.2 * pop})`, transformOrigin: 'right center', whiteSpace: 'nowrap'}}>{f >= at ? v : '?'}</div>
           </div>
         );
       })}

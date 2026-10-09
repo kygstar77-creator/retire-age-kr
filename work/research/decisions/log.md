@@ -1505,3 +1505,5 @@
 2026-10-09 16:40 · firemap-video-producer · C-1 10/10 19:30 칸 skip(렌더·업로드 안 함) · 16:01 창 10요청 다 쓴 뒤 목소리 퍼짐 IQR 0.19>0.16, 기준 낮추지 않고 lfpitch 안 씀(순돌이 결정 전), G-1 대체 불가 · 녹음분 보관·다음 창 처음부터
 2026-10-09 16:40 · firemap-video-producer · lfvoice fixcut·cutat에 --cap 전달, lfretake pack 인자 맞춤 · --cap 녹음분을 cap 없이 자르면 묶음 번호가 어긋나 다른 장 문장을 덮어쓴다
 2026-10-09 16:47 · firemap-youtube-loop · P-1 국민연금 받는 나이 사실표·calc 먼저 만듦(주간 선정 전 준비) · W-1·A-1은 시각·검수 대기, P-1이 다음 대본 후보 · 감액 계단은 공단 해석 확인 전 '조문대로'로만
+2026-10-09 16:50 · firemap-write · 16:10 isapen1009 발행(cafe/237, verify OK) · 칸 관문 통과 편
+2026-10-09 16:50 · firemap-write · schdacct1007 시세 10/8 종가로 고쳐 비축(reserve)에 올림 · 10/10 이후 칸 비축 부족(실사용 0→1), SCHD 7일 규칙 10/10 풀림

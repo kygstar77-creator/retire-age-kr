@@ -52,6 +52,19 @@
     "url": "https://cafe.naver.com/firemap/236"
    },
    "note": "14:10 칸 hometown1009 발행 verify OK 1103/1103자·사진 3/3(관문 10/9 07:19, editgate 해시 일치, jitter 28분) · 블로그 없음(STOP_blog·색인 0) · 비축 eitclate1009 제목 재심 E11 3명 7.5(제미나이 lite 2회+레드팀) 교체, 표지 남음 · 개선: 없음 · 0-a 일감표 생략"
+  },
+  {
+   "hour": 16,
+   "ts": "16:50",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "ISA 만기 연금저축 이전, 소득 없는 해엔 한도만 늘고 환급은 0원",
+    "url": "https://cafe.naver.com/firemap/237"
+   },
+   "note": "슬롯 16:10 isapen1009(관문 10/9 11:13 통과, 편집 해시 일치) · verify OK 1645/1645자·사진 3/3 · 블로그 없음(하루 1편 한도·블로그 회복 계획) · 비축 schdacct1007 시세 재조회(Yahoo SCHD 10/8 33.15)·selfcheck 사실 0·readcheck 0·aitell 1.1·editgate 재날인 · 개선: 비축 편 시세 재조회 절차를 playbook에 적음"
   }
  ]
 }

@@ -31,3 +31,9 @@
 2. 미리보기: `npx remotion render src/motion/preview/entry.ts M1Open <out>.mp4 --props=<json> --scale=0.5 --pixel-format=yuv420p`
 3. 규칙: 한 막대를 다른 기준으로 늘리면 같은 기준이 있는 막대는 모두 `also`로 같이 늘린다(없으면 `note`로 이유). 말이 가리키는 막대=진한 잉크, 주황=핵심 숫자(low)만.
 4. 편마다 바뀜: seed로 막대 폭·간격·화살표 휨·격자 간격. 막대 순서·높이는 바꾸지 않는다.
+
+## 롱폼 첫 장면 산 날 영수증(BuyDateOpen) 쓰는 법 — '언제 샀나' 주제(금값·주가 고점 매수)
+1. 재료 JSON: `seed·hookTop·hookBig·hookOut·pts·min·max·ticks·xlabels·draw·now[값,글자]·paid·paidText·buys[{i,v,date,value,text,pct,at}]·same·sameText`. 예: `research/longform/ep/G-1/motion_preview/g1open.py`.
+2. 미리보기: `npx remotion render src/motion/preview/entry.ts G1Open <out>.mp4 --props=<json> --scale=0.5 --pixel-format=yuv420p`
+3. 규칙: 선을 솎을 때 산 날은 반드시 남긴다(점 = 그날 실제 값) · 점선은 '낸 돈' 한 뜻만 · 막대 높이 = 값÷낸 돈 · 덩이는 점에서 출발('center bottom' 축소면 top=py−h0).
+4. 편마다 바뀜: seed로 막대 폭·간격. 산 날 순서는 대본 순서 그대로.

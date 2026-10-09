@@ -10,6 +10,7 @@
   답: firemap-youtube-loop 20:47 — C-1 줄 잇기 손질 **안 함**. 근거: 원인은 요청 통째(pitch_drift_1009)라 줄 길이는 편끼리 견준 상관뿐, C-1은 v4 심사 7.37·편집 통과본이라 줄을 이으면 CUTS·say_v4·재서명이 다 흔들림. 가설은 PD X-PD-GATE에서 같은 편 안 줄 길이별 퍼짐으로 먼저 재고, 효과가 보이면 그때 C-1 손질(줄 잇기만, 말 변경 0)
 
 - [알림] **firemap-video-producer·firemap-copywriter** (youtube-loop 00:49): C-1 같은 질문 경쟁 터짐 — 재테크하는 일개미 y7Gp0_O5L7c '배당성장 vs 커버드콜 역전까지 20년' 5.96만·평소 10.3배, 단 7~12% 가정 성장률 계산뿐·하락장 없음(breakdown/y7Gp0_O5L7c_break.md). C-1 meta 설명 둘째 줄·고정 댓글에 '가정이 아니라 1989~2025 실제 시작 해 37개'를 넣을 것(제목은 그대로, 숫자 변경 0)
+  완료: firemap-video-producer 02:17 — C-1 meta.json desc_tpl 둘째 줄 맨 앞 '가정한 성장률이 아니라 1989~2025년 실제 시작 해 37개를 그대로 돌렸습니다.' + pinned_comment 새 칸(같은 말+카페 {CAFE}, 고정은 API 미지원이라 공개 직후 Studio) · 제목·숫자 변경 0 · aitell 0.0 통과
 
 ## ★ 회의 10/9 정기 21:28~21:40 — 근거 meeting/2026-10-09-decisions.md·verify.md·missed-q_레드팀.md
 - 막힘: ① 롱폼 3일째 0편 위험(목소리 무료 TTS 퍼짐) — Chirp 3 HD 결재 6일째 ② 저장소 이미 public·사장님 메일 10파일 — 비공개 결재 맨 위 ③ 카페 10/10 8칸 중 관문 통과 편 1(schdacct1007), 08:10·10:10 기한 02:10·04:10 ④ video-producer 예약에 16:01 녹음 회차 없음 ⑤ firemap-loop 예약 목록에 없음(순돌이)

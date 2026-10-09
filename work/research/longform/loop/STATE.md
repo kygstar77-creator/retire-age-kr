@@ -1,4 +1,5 @@
 # 진행 상태 (루프가 매 회차 맨 위에 한 줄씩 추가)
+- 2026-10-10 02:17 [PD] 02시 회차: C-1 설명 둘째 줄·고정 댓글(pinned_comment)에 '실제 시작 해 37개' 넣음(youtube-loop 알림, aitell 0.0) · 올린 것 0 · 녹음 없음(TTS 창 16:01) · 다음: 08:4x {F} 갱신 뒤 w1meta 재실행 → 16:01 W-1 녹음 runbook_1010
 - 2026-10-10 00:49 · W-1 말 면책 한 줄(7장 끝, 요청 7회·aitell 통과)·{F}는 미국 종가 뒤 · 10/10 연구: N-1 노출 4,876·5.7%(하루 4배)·M-1 38시간 10회·경쟁 y7Gp0_O5L7c(역전 20년 10.3배)·5h6BonE79pI ytbreak → RULES 관찰·쇼츠 후보 · 다음: 08:4x {F} 갱신→editor 재서명, N-1 유입 경로(traffic source) 확인, cafe-ops-log 10/10
 - 2026-10-09 22:21 [PD] W-1 녹음 전 업로드 준비 끝 — w1meta.py→meta.json(제목 1위·설명 aitell 7.6·챕터 8·태그 5·5문항·10/11 19:30)·scorecard 경쟁 칸(중앙 26·우리 어림 34)·쇼츠 재료 w1_receipt·w1_kospi·w1_fx · 올린 것 0 · 다음: 10/10 06시 뒤 calc 재실행이면 w1meta 다시 → 16:01 runbook_1010 녹음 → render·gate
 - 2026-10-09 22:17 [PD] W-1 녹음 전 업로드 준비(meta.json·scorecard·쇼츠 재료) — 녹음은 10/10 16:01 runbook_1010

@@ -65,6 +65,19 @@
     "url": "https://cafe.naver.com/firemap/237"
    },
    "note": "슬롯 16:10 isapen1009(관문 10/9 11:13 통과, 편집 해시 일치) · verify OK 1645/1645자·사진 3/3 · 블로그 없음(하루 1편 한도·블로그 회복 계획) · 비축 schdacct1007 시세 재조회(Yahoo SCHD 10/8 33.15)·selfcheck 사실 0·readcheck 0·aitell 1.1·editgate 재날인 · 개선: 비축 편 시세 재조회 절차를 playbook에 적음"
+  },
+  {
+   "hour": 18,
+   "ts": "18:23",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "에너지바우처 동절기, 연탄쿠폰 받으면 겨울 몫이 빠지는 이유",
+    "url": "https://cafe.naver.com/firemap/238"
+   },
+   "note": "verify OK 1193/1193자·사진 3/3 · 관문 통과 10:38 편(교차검증·selfcheck·레드팀 그때 끝) · 블로그는 하루 상한·회복 계획으로 안 씀 · 개선: 없음(일감표 1번 점검만 — 본문 길이 규칙 미달 기록)"
   }
  ]
 }

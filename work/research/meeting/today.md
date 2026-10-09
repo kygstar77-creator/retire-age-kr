@@ -493,6 +493,7 @@
 
 - [배차] firemap-shorts 10/7 19:20 칸 basecut1006 관문(gates_ok 없음, 기한 10/7 07:20)
   착수: firemap-shorts 03:09 (운영실장) — 1안 B형 첫 카드 한 숫자, 안 되면 rate30_v10으로 칸 채움(기한 07:20)
+  완료(미달): firemap-shorts 03:14 — g1_climb 첫 프레임 v8·v8b(Canva 생성 금 사진 배경+'금 -34%, 왜 +51%?' 큰 글) 1초 시험 5·5(보정 7.5 유효) → 7 미달, gates_ok 안 적음. 막힘: 글자·벡터·사진배경 4계열 모두 5, 다음 안 hero 숫자 단독 또는 미통과 공개 판단(순돌이)·고해상도 사진은 Canva export 필요 · 근거 cardshorts/g1_climb/review.md
   완료: firemap-shorts 03:27 — basecut1006 관문 통과: rate30 B형 cards(rate30_b.json, 첫 장 '지금 3%' 계기판 25초, rate30_b.mp4 렌더) 첫 프레임 1초 시험 고정 조건 7·7(v9·v10 5)·블라인드 주제 맞힘 글자 읽힘 '예'·카피 8·8·레드팀 1초 7/카피 6/사실 오류 0(지적 3 반영)·aitell 0.0 → slots.json gates_ok 2026-10-07 03:26. 19:20 공개는 rate30_b.json으로(rate30_v10 채움안 안 씀) · 근거 cardshorts/rate30/review.md 끝
   착수: firemap-shorts 23:09 (운영실장)
   완료(미달): firemap-shorts 23:17 — g1_climb v6 = copywriter 1위 '금 -34%, 왜 +51%?'(+51%만 크게)+금 막대 그림·화살표, '본전' 뺌(compete.md 첫 3초 문장도) · 새 틀 bars_style gold(cardshort.py)·spec g1_climb_v6.json·check 문제 없음 · 1초 시험 v6 5·5, v7(그림 키움) 5·5(보정 7.0~7.5 유효) → 7 미달, gates_ok 안 적음. 막힘: 벡터 그림·글자 카드 한계(경쟁은 사진급 금 이미지·강한 색 대비) · 다음 1안 사진급 금 이미지 또는 숫자 하나 hero, 안 되면 12:20 칸 skip+사유(기한 10/10 00:20) · 비축 쇼츠 0/1 그대로 · 근거 cardshorts/g1_climb/review.md
@@ -644,3 +645,7 @@
   착수: firemap-write 23:09 (운영실장)
   완료(일부): firemap-write 23:14 — 10/10 12:10 칸 교체: eitclate1009(표지 6.67 상한에 막힘)를 뺴고 새 편 childleave1010(육아휴직급여, 검색 79,500·dupcheck 새것·법 제70조/시행령 제95조 원문 facts.txt) 배정 · 10/11 10:10 TBD-CALC-연봉실수령 배정(기한 04:10) · patrol의 '보류됨'·'10-11 10:10 배정 없음' 사라짐 / 미완: childleave1010 원고·관문 gates_ok(기한 06:10, 00:10~06:10 회차) — 비축 npsage1009(10/14 08:30 전 불가)·schdacct1007(14:30 전 불가)은 12:10에 못 써서 새 편이 유일한 길 · 비축 카페 2/2지만 schdacct 16:10 소진 뒤 1
 - 막힘(운영실장 23:17): ① 10/10 12:20 쇼츠 g1_climb v6·v7 첫 프레임 1초 5·5 미달(fc0df33) — 관문 기한 00:20 넘김, 비축 쇼츠 0/1. 쇼츠 칸은 skip 불가(patrol) → 다음 안(사진급 금 이미지·hero 숫자 카드) 또는 다른 편, 12:20 정기 근무 전 결론 필요 · 순돌이 판단: 기한 넘긴 채 공개 여부 ② 10/10 12:10 카페 childleave1010 새 편(afc23fd) 원고~editgate 남음, 기한 06:10 — write 다음 회차(08:10 정기 전 03:05 배차) 1순위 · 10/11 10:10 TBD-CALC-연봉실수령 기한 04:10 ③ 10-10 19:20 쇼츠 칸 배정 없음(하루 1편 규칙이면 skip 표시 필요 — 회의 몫)
+- [배차] firemap-write 10/10 12:10 칸 childleave1010 원고~editgate·gates_ok(관문 기한 06:10) + 10/11 10:10 연봉실수령(기한 04:10 넘김 → 비축으로 칸 채우기) (운영실장 03:09)
+  착수: firemap-write 03:09 (운영실장)
+- [배차] firemap-shorts 10/10 12:20 칸 g1_climb 1초 미달(기한 00:20 넘김) — 다음 안(사진급 금 이미지·hero 숫자 카드) 또는 다른 편으로 첫 프레임 7 넘기기·비축 쇼츠 0/1 (운영실장 03:09)
+  착수: firemap-shorts 03:09 (운영실장)

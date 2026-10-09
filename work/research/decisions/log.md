@@ -1477,3 +1477,4 @@
 2026-10-09 11:25 · firemap-write · 16:10 isapen1009 gates_ok(cover_review.md 평균 7.07 추가, editgate auto) · 20:10 칸 TBD-노인일자리 → seniorjob1009 원고(선발 제외자 표) 관문 일부 통과, 제목·표지 레드팀 6 미통과 · 근거 work/research/seniorjob1009/review.md
 2026-10-09 11:39 · motion · 결정 · G-1 첫 장면 BuyDateOpen(산 날 점→1천만원 덩이→오늘 값 막대) 통과 평균 7.67(9·7·7, 레드팀 1차 5 '덩이 판 밖 출발' 고침) · M-1 본편 첫 47초 최장 정지 2.8초·막대 이름·44초 띠 간격 확인 OK · 근거 ep/G-1/motion_preview/review_open.md
 2026-10-09 12:11 · editor · 10/9 카페 c00 맺음 '표로 정리했습니다' 4칸 중 2칸(hometown·isapen) 바꾸고 aitell sameday에 c00 맺음 같은 날 3칸↑ 검사 추가 · 같은 날 같은 틀은 네이버 템플릿 신호, 제목 끝말만 보던 검사가 놓쳤다
+2026-10-09 12:29 · firemap-write · 12:10 retmid1005 발행(cafe/235 verify OK) · 20:10 seniorjob1009 gates_ok — 제목 T15 7.17(T10은 카페 틀 v2 물음 규칙에 걸려 교체)·표지 N9 7.67·레드팀 사실 지적 2 반영 · 근거 work/research/seniorjob1009/review.md

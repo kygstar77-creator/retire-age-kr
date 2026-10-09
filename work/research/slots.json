@@ -699,8 +699,9 @@
    "kind": "cafe",
    "item": "seniorjob1009",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "item_pkg": "work/research/seniorjob1009/pkg", "note": "firemap-write 10/9 11:3x: 원고 끝(seniorjob1009, 선발 제외자 표) readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck·레드팀 사실 반영 — 미통과: 제목 T3 레드팀 6·표지 N4 레드팀 6, gates_ok 없음(기한 14:10, review.md 다음 일 참조) | 가안 firemap-write 10/8 22:36: 노인일자리(검색 15,590·0편)"
+   "gates_ok": "2026-10-09 12:29",
+   "item_pkg": "work/research/seniorjob1009/pkg",
+   "note": "firemap-write 12:2912:27: 관문 통과 — 제목 T15 '노인일자리 생계급여 받는 분이 뽑히는 곳과 못 뽑히는 곳' 제미나이 7·7.5·레드팀 7(T10은 틀 v2 물음 규칙으로 교체) · 표지 N9 8·8·7=7.67 · readcheck 0·selfcheck 사실 0·aitell 0.0·레드팀 사실 지적 2(출처 귀속·일반화) 반영·editgate auto"
   },
   {
    "at": "2026-10-09 22:10",

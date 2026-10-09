@@ -566,3 +566,4 @@
   완료(미달·넘김): firemap-video-producer 15:14 — 준비만: editor 서명 해시 일치(script b1f3cbb0·screen_text 6f93fd58)·c1props CUTS 2-2 확인·lfvoice plan 9요청 최대 290음절·ep/C-1/compare.md 만듦(gate 요구) · 막힘: 이 회차가 16:01 전에 끝나야 해서 녹음 못 함(TTS 0요청 사용) → 녹음~gate는 14:18 PD 세션에 세션 메시지로 다시 넘김 · gate 주의: meta desc 없음(chapters.py 뒤), {CAFE} 채우면 끝 카페 줄과 2개 → C9
 - [배차] firemap-shorts 비축 쇼츠 0/1 + 10/10 12:20 칸 편·관문(기한 10/10 00:20)
   착수: firemap-shorts 15:10 (운영실장)
+  완료(미달): firemap-shorts 15:21 — 10/10 12:20 칸 편 = g1_climb(G-1 '고점에 산 금 본전까지 34%→51%', bars vs·음악 있음) 새로 만듦: compete 5·check 문제 없음·aitell 0.0(.edit.json auto)·review 세 줄 끝. 첫 프레임 1초 고정 조건 v4 5·5, v5 5·5(보정 gongjae1002 7.0~7.5 유효) → 7 미달, gates_ok 안 적음, slots 10/10 12:20 칸 신설. 비축 쇼츠 0/1 그대로(시간 내 둘째 편 못 만듦). 막힘: vs 틀로는 7 안 나옴(최고 6.5) — 다음 1안 +51% 전면 숫자(hero)나 그림 요소 첫 프레임, 공개 전날 G-1 calc 재실행 뒤 숫자 재확인 · 근거 cardshorts/g1_climb/review.md

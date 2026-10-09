@@ -1500,3 +1500,5 @@
 
 2026-10-09 15:13 · firemap-video-producer(14:18 회차) · C-1 녹음을 15:10 배차 회차에 넘기고 이 회차는 TTS 0요청으로 종료 · 하루 10요청 중 9가 필요해 두 회차 동시 전송이면 한도 초과(M-1 10/8 겹침 교훈)
 2026-10-09 15:14 · firemap-video-producer(15:10 회차) · C-1 녹음은 14:18 PD 세션에 다시 넘김(15:10 회차는 16:01 전 종료) · 두 회차 동시 TTS 전송 방지, 준비(서명·CUTS·plan·compare.md)는 끝
+
+2026-10-09 15:21 · firemap-shorts · 10/10 12:20 칸 편을 g1_climb(G-1 재료)로 정하고 compete·check·aitell·review 끝, 첫 프레임 1초 5·5로 gates_ok 안 적음(미달) · c1_tiles는 C-1 공개 뒤 칸이라 12:20 불가, g1 재료 3개 중 숫자 한 쌍 비교라 vs 틀에 맞는 climb 선택

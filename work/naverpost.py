@@ -547,6 +547,11 @@ def pending_check(pkg):
             out.append('시세 %d일 전 — 발행 전 재조회' % age)
     except Exception:
         pass
+    # 경쟁 비교 파일. 2026-10-09 audit: 10/9 카페 6편 중 5편이 compare.md 없이 나갔다
+    # (비교는 facts의 toprank 한 줄뿐). 관문 규칙은 compare.md인데 아무도 안 봤다.
+    if not any(os.path.exists(os.path.join(d, 'compare.md'))
+               for d in (pkg, os.path.dirname(os.path.abspath(pkg)))):
+        out.append('compare.md 없음')
     return ' · '.join(out)
 
 _DAY_LEFT = {}

@@ -1521,3 +1521,6 @@
 2026-10-09 19:42 · firemap-shorts · 비축 BE 1988 특례(nps1988) 만들었으나 비축 안 넣음 · 첫 프레임 1초 최고 6.0(<7), 판 4개(v1~v3) 기록 cardshorts/nps1988/review.md · 완료: firemap-shorts 19:42
 2026-10-09 19:51 · firemap-audit · A-1 설명 쿠팡 줄 정책 통과 판정 · 비율 3/12·비금융 책·권장 문구 첫 줄·paidProductPlacement(공지 #98 배너)·추천 말투 0·매체 등록 10/1 확인
 2026-10-09 19:54 · firemap-audit · 정기 감사: 심각 0·경미 2(카페 compare.md 5/6 없음, #216 출처 줄 세 번째 이월)·STOP_blog 유지 · 숫자 3편+쇼츠 원문 일치, 블로그 새 글 0, 쇼츠 하루 1편 준수
+2026-10-09 20:33 · firemap-write · 20:10 seniorjob1009 카페 #239 발행(verify OK 1176자) · 관문 통과 편, 제 칸
+2026-10-09 20:33 · firemap-write · #216 goldway1005 출처 줄 KB 고시 날짜 10-02→'10-05 조회', '1%대'→'1% 안팎' rewrite · 조회 시각 10/5 10:37·환율 1,343.85가 10/5 값과 맞음(audit 경미 세 번째 이월 닫음)
+2026-10-09 20:33 · firemap-write · compare.md를 카페 관문으로 되살림 — naverpost pending에 'compare.md 없음' 표시, 22:10 brokerfee1009 작성 · audit 10/9 19:54: 6편 중 5편 compare.md 없음, facts 한 줄로는 '경쟁 1등보다 나은 점' 대조가 안 됨

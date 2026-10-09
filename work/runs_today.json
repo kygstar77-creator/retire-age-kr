@@ -78,6 +78,19 @@
     "url": "https://cafe.naver.com/firemap/238"
    },
    "note": "verify OK 1193/1193자·사진 3/3 · 관문 통과 10:38 편(교차검증·selfcheck·레드팀 그때 끝) · 블로그는 하루 상한·회복 계획으로 안 씀 · 개선: 없음(일감표 1번 점검만 — 본문 길이 규칙 미달 기록)"
+  },
+  {
+   "hour": 20,
+   "ts": "20:33",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "노인일자리 생계급여 받는 분이 뽑히는 곳과 못 뽑히는 곳",
+    "url": "https://cafe.naver.com/firemap/239"
+   },
+   "note": "verify OK 1176/1176자·사진 3/3 · 관문 통과 12:29 편(교차검증·selfcheck·레드팀 그때 끝) · 블로그는 회복 계획(STOP_blog)으로 안 씀 · #216 rewrite verify OK 1732자 · 개선: naverpost pending에 compare.md 없음 표시"
   }
  ]
 }

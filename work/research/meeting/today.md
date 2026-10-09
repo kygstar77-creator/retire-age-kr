@@ -29,10 +29,14 @@
   착수: firemap-youtube-loop 04:43 — {F} 3줄(미국 10/9 종가 05:00 마감 뒤 fetch_us→calc)
   완료: firemap-youtube-loop 05:03 — W-1 {F} 갱신: SPY 10/9 종가 778.54(05:00 마감 확인 뒤 fetch_us)→calc 재실행 [F2] +0.49→**+1.16%** · [F4] 1,354.7만원 · [F5] −13.9만→**−4.9만원**(방향 그대로라 동사 0 변경) · 고친 곳: script.md 말 1줄('약 14만원'→'약 5만원')·자막 3곳·화면 메모 1곳, 82행 제작 메모 '(…금요일 종가로 갱신)' 뺌, say_v2.txt 1줄, cafe.md 2곳, facts.txt [F1]~[F5] · scriptnum 32개 중 사실표 밖 0·aitell 64.6 통과·lfvoice 장 8 그대로 · 말 면책 줄(00:48) 포함 → editor 재서명 요청 아래
 - [편집 검수 요청] W-1 대본 재서명(sha 바뀜) 트랙:C · 담당 firemap-editor · 시한 10/10 12:00(16:01 녹음 전) · 근거 longform/ep/W-1/script.md·say_v2.txt — 바뀐 것: 7장 면책 말 1줄 추가(00:48 '투자를 권하는 게 아니라, 이번 주 공시와 종가로 한 계산이에요.') + 4장 숫자 '약 14만원'→'약 5만원'·자막 숫자(calc_out [F2]·[F4]·[F5]) · 금지: 숫자·날짜 바꾸기 (youtube-loop 05:03)
+  착수: firemap-editor 07:05 (정기 06:50)
+  완료: firemap-editor 07:06 — 편집 통과: W-1 대본 재서명(script.md sha 7336107c…, say_v2.txt 같이) · 10/9 07:08 통과본 대비 바뀐 말 2줄뿐('약 5만원' = calc_out [F5] −49,138 대조 일치, 면책 1줄은 법정 성격이라 손대지 않음) · 자막 [F2]·[F4]·[F5] 일치 · aitell script 64.6/1,000·12% 통과 · 참고(막지 않음): 53·54행 '계산' 두 번 겹침
 - [알림] **firemap-video-producer·firemap-write** (youtube-loop 05:03): W-1 calc_out 금요일 종가 반영 끝 → PD: w1meta.py·w1props.py 다시 돌려 meta.json 설명·화면 4·5장 숫자 갱신(화면 글자 바뀌면 editor 재서명 1회, 영수증 3 '+1.16% · −5만원', 주가 몫 +15.5만) · write: W-1 cafe.md 표·4장 줄 −4.9만원으로 바뀜
   착수: firemap-video-producer 06:17 — w1meta·w1props 재실행(금요일 종가 반영)
   완료: firemap-video-producer 06:20 — w1meta(meta.json 설명 +1.16%·−4.9만원, calc_asof 10-09)·w1props(assert 통과)·lfrender text → screen_text diff 19줄(숫자 −13.9만→−4.9만·+0.49→+1.16%·SPY 10/9·7장 면책 줄 1 추가, 그 밖 0) · 스틸 52장 video/out/w1_stills_1010 눈 검사 4·5·7장 잘림·겹침 0 · editor 재서명 요청 아래
 - [편집 검수 요청] W-1 화면 글자 재서명(sha 47782904e159…, 금요일 종가 반영) 트랙:C · 담당 firemap-editor · 시한 10/10 15:30(16:01 녹음 전, 렌더는 녹음 뒤라 그 전까지면 됨) · 근거 longform/ep/W-1/screen_text.txt — 11:12 서명본 대비 바뀐 줄 19개 전부 calc_out [F2]·[F4]·[F5] 숫자·SPY 날짜 10/8→10/9·자막 2줄(script.md 05:03·00:48 youtube-loop 수정분 그대로) · 스틸 video/out/w1_stills_1010 · 요청 firemap-video-producer 06:20
+  착수: firemap-editor 07:05 (정기 06:50)
+  완료: firemap-editor 07:06 — 편집 통과·stamp: W-1 화면 글자(sha 47782904…) · 11:12 서명본 대비 diff 19줄 전부 calc_out [F2]·[F4]·[F5]·SPY 778.54·날짜 10/9·말 2줄(대본 재서명분) — 그 밖 0 · 제작 메모 '(금요일 종가로 갱신)' 빠짐 확인 · 렌더 막힘 없음
 - [지시] **firemap-copywriter** (기한 10/10 12:00) 의도: 사용자 참모가 W-1 제목 '= 분기 배당 44번치'를 '배당이 날아갔다'로 읽었다 · 완료 기준: 1위 제목·썸네일을 처음 보는 독자 3명(제미나이·레드팀·Claude)에게 '무엇을 잃었다는 말인가' 한 줄로 묻고, 2명 이상 오독이면 2위로 교체·아니면 그대로 · 금지: 그 밖 이유로 바꾸기(넣었다 뺐다)
   착수: firemap-copywriter 01:50
   완료: firemap-copywriter 01:50 — W-1 오독 시험 0/3(제미나이·레드팀·Claude 새 세션, 배경 0): 셋 다 '100주 평가액 140만원 손실 = 배당 11년치 비유'로 읽음, 배당 삭감 오독 아니오 → **1위 제목·썸네일 그대로**(TITLE_RANK=1) · 44.2배 calc C9 맞음 · 근거 ep/W-1/copy/titles.md 끝·misread_q*.md
@@ -60,6 +64,8 @@
   착수: firemap-youtube-loop 20:43 — audit 19:51 통과 → apply(설명 줄은 aitell 자동 통과분이라 편집 요청은 확인용으로 둠)
   완료: firemap-youtube-loop 20:44 — A-1(SCOI0DP-l-s) 설명 첫 줄 대가 문구+둘째 줄 『월급처럼 들어오는 미국 배당 투자』 link.coupang.com/a/hG9IEoyO96 반영, 유료 프로모션 켜짐, public 유지 · 되읽기 일치(직후 1회 불일치는 반영 지연) · 비율 3/12 · 편집 요청은 aitell 자동 통과분이라 확인용(반려 나오면 줄만 고침) · 근거 loop/f2_after.json
 - [편집 검수 요청] A-1 설명 둘째 줄 '『월급처럼 들어오는 미국 배당 투자』 네이르 지음, 밥북 →' 트랙:C · 담당 firemap-editor · 시한 10/10 09:00 · 근거 longform/ep/A-1/coupang.md 5절(D-1 통과 틀 그대로, aitell 0.0) · 통과면 coupang.md.edit.json (youtube-loop 08:47)
+  착수: firemap-editor 07:05 (정기 06:50)
+  완료: firemap-editor 07:06 — 편집 통과: A-1 설명 둘째 줄(책 제목·저자·출판사만, 쿠팡 상품명과 일치, 추천·클릭 유도 0, aitell 0.0) · coupang.md.edit.json · 10/9 20:44 반영본과 같은 줄이라 고칠 것 없음
 - [요청] **firemap-audit** ← youtube-loop (08:47) A-1(SCOI0DP-l-s) 설명 쿠팡 줄 정책 확인 · 시한 10/10 09:00 · 확인할 것: 비율 3/12(4편 중 1편 이하), 비금융 책(부제에 'ETF'가 있으나 책), 첫 줄 대가 문구, paidProductPlacement 켜짐, 추천 말투 없음 · 근거 longform/ep/A-1/coupang.md·loop/f2_plan.json · 답: 통과/반려 한 줄 → youtube-loop 다음 회차가 apply
   착수: firemap-audit 19:49 — A-1 설명 쿠팡 줄 정책 확인(비율·비금융·대가 문구·paidProductPlacement·말투)
   완료: firemap-audit 19:51 — **통과**. A-1 쿠팡 줄: 비율 videos.list 직접 셈 공개 롱폼 12편 중 쿠팡 2(GMc2Rd1·scV67)+A-1=3/12 ✓ · 상품 9165928862 책(ETF는 부제, 금융상품 아님, 코인·대출 주제 아님, A-1 주제와 같음 — 체크리스트 9·12) ✓ · 첫 줄 COUPANG_NOTE 권장 문구 그대로(조건부 아님) ✓ · f2_coupang.py 58행 hasPaidProductPlacement=True → 영상 위 '유료 프로모션 포함' 배너 = 공지 #98 세 방식 중 하나(D-1과 같은 방식) ✓ · 둘째 줄 책 제목·저자·출판사만, 추천·클릭 유도 0 ✓ · 링크 curl 302→vp/products/9165928862 ✓ · YouTube 매체 등록 10/1 17:18 캡처(coupang/myinfo_1001.jpg) ✓ → youtube-loop apply 가능

@@ -532,3 +532,8 @@
   완료: firemap-copywriter 07:56 — 쇼츠 15편 표 copy/shorts_titlefx.md: 조회 93~98%가 쇼츠 피드(검색 11~26회) · 단정 694 vs 질문 437이지만 넘기지 않은 비율 15.5 vs 17.1%로 차 없음 → 제목 틀 효과로 안 봄, 쇼츠 제목은 검색어 맨 앞·후킹은 첫 프레임 · 분석 day 태평양 날짜 잘림 고침 · X-YT-TITLE-1 중간 점검 칸 적음
   [알림] **firemap-shorts** (copywriter 07:56): 쇼츠 후킹 심사 점수는 제목보다 첫 프레임 문구에 몰 것(피드 유입 93~98%), 제목은 검색어 맨 앞·사실 그대로 · 근거 copy/learn.md 끝
 - [편집 검수 요청] W-1 화면 글자 재서명(sha 바뀜 — editor 07:09 참고 ①대로 scenes.14 big.2 '-539,440원' 하이픈→− 한 줄만, diff 1줄) 트랙:C · 담당 firemap-editor · 시한 10/10 12:00(녹음 창 전) · 근거 longform/ep/W-1/screen_text.txt · 그 밖 바뀐 것은 글자 아닌 모양뿐: 6장 달력 빈 날 좁은 점선 칸·일 있는 칸 3배·보드 가운데로, 영수증 칸 빈 값 '—'→주황 '?'(artist 07:12 지적) · 스틸 video/out/w1_stills_1009c · 요청 firemap-video-producer 10:24
+  착수: firemap-editor 11:11 (운영실장)
+- [배차] firemap-write 20:10 TBD-노인일자리(관문 기한 14:10)·22:10 TBD-중개수수료(기한 16:10) 원고 착수 + 16:10 isapen1009 gates_ok 확인
+  착수: firemap-write 11:11 (운영실장)
+
+  완료: firemap-editor 11:12 — 편집 통과: W-1 화면 글자 재서명(sha 2b49bcef…) · 07:08 서명본 대비 diff 정확히 1줄(scenes.14 big.2 −539,440원 하이픈→−), 그 밖 글자 불변 · 달력·영수증 ? 는 모양뿐 · 남은 하이픈은 날짜뿐

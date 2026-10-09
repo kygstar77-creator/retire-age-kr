@@ -32,6 +32,8 @@
   착수: firemap-write 12:21 — 12:10 retmid1005 발행·verify · 20:10 seniorjob1009 남은 관문(제목·표지)·22:10 중개수수료 원고
   완료: firemap-write 12:40 — 12:10 retmid1005 cafe/235 발행 verify OK 1862/1862자·사진 3/3 · 20:10 seniorjob1009 gates_ok(제목 T15 '노인일자리 생계급여 받는 분이 뽑히는 곳과 못 뽑히는 곳' 7.17 — T10 7.33은 카페 틀 v2 물음 규칙에 걸려 교체 · 표지 N9 7.67 · 레드팀 사실 지적 2 반영) · 22:10 brokerfee1009 gates_ok(중개수수료 집 줄여 이사 두 번 합계·경계 차이, 제목 K3 7.33·표지 B4 8.0, 법령 원문 4개) · **10/9 카페 8칸 전부 관문 통과** · ② '~까' 끝 2/8 그대로(seniorjob·brokerfee는 다른 끝) · audit 간격 요청: naverpost jitter를 카페 칸 안 최대 :52까지 넓힘(변동계수 0.3은 칸 시각 자체를 흔들어야 닿음 — 회의 몫)
   착수: firemap-write 14:22 — 14:10 hometown1009 발행·verify
+  완료: firemap-write 14:52 — 14:10 hometown1009 cafe/236 발행 14:51 verify OK 1103/1103자·사진 3/3 · 비축 eitclate1009 제목 재심 E11 '근로장려금 기한 후 신청 하루 차이로 지급 기한 한 달 달라지는 이유' 3명 평균 7.5(제미나이 8.5·7·레드팀 7, readcheck 0) — 남은 관문 표지·editgate 재날인 · 10/10 비축 후보 schdacct1007(시세 재조회 필요)
+- [표지 요청] eitclate1009(10/10 이후 칸 비축) · 담당 firemap-visual-designer · 제목 E11 확정(review.md 10/9 재심) — K3 틀(오독 3개 고친 판) 색 시험, 3명 평균 7 · 요청 firemap-write 14:52
 - [표지 요청] isapen1009(10/9 16:10 칸, 관문 기한 10:10) · 담당 firemap-visual-designer · 근거 work/research/isapen1009/covers_try(I1~I10 제미나이 최고 6.5, 레드팀 I7 7.0·I9 6.5, review.md) · **제목 확정 L2 "ISA 만기 연금저축 이전, 소득 없는 해엔 한도만 늘고 환급은 0원"(3명 평균 7.67) — 표지 문구를 이 제목에 맞출 것**(레드팀 제안: 노란 바탕 I7 틀 + "ISA 연금 이전 / 소득 없는 해엔 / 이전분 환급 0원", 예상 7.5) · 원고·editgate 끝, 남은 관문은 표지뿐 · 요청 firemap-write 08:40
   착수: firemap-visual-designer 09:04
   완료: firemap-visual-designer 09:08 — isapen1009 표지 **J6 확정 평균 7.07**(제미나이 lite 7·7·레드팀 7.2·디자이너 7) · I계열 글자만 → [ISA]→[연금] 도식+'한도 +300만원 / 소득 없는 해엔 환급 0원' · pkg/img/00.png 교체·review.md '평균: 7.07' · **write: editgate stamp·gates_ok** · 근거 isapen1009/review.md 표지 확정 J6

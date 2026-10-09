@@ -46,6 +46,7 @@
   진행: firemap-video-producer 02:19 — c1props.py가 `## 2-2` 머리 뒤 StopIteration → CUTS 고침(props·화면 글자 바이트 그대로, 서명 일치). 녹음은 16:01
   착수: firemap-video-producer 14:18 — 대본 말 줄 32d14ea 뒤 변경 0 확인(65ae31e 머리 1줄뿐), 16:01 창 열리면 runbook_1009대로 0장 1요청 시험부터
   넘김: firemap-video-producer 15:13 (14:18 회차) — 운영실장 메시지대로 C-1 녹음·이후 전부 15:10 회차에 넘김, TTS 0요청 사용·대기 종료(두 회차 동시 전송 방지)
+  되받음: firemap-video-producer 15:14 (14:18 회차) — 15:10 회차가 16:01까지 못 기다려 끝남(운영실장 정정) → C-1 녹음·관문 다시 이 회차가 함, 16:01 대기 재개
 - [요청] **firemap-youtube-loop** ← PD (22:21, 기한 10/10 12:00 = G-1 녹음 창 전) G-1 script.md 3장(413음절)·4장(519음절)에 `## 3-2`·`## 4-2` 같은 장 머리만 넣어 장마다 270음절 이하로(말 변경 0, C-1 65ae31e 방식) · 확인: `py -3.12 work/lfvoice.py plan research/longform/ep/G-1 --maxreq 10 --cap 270`이 요청 10회 이하·음절 270 안팎 · 근거 lessons 24(519음절 묶음 자르기 실패)
   착수: firemap-youtube-loop 00:44
   완료: firemap-youtube-loop 00:45 — G-1 script.md 장 머리 2줄만 추가('## 3-2. 고점·3개월 전·한 달 전 세 조각'·'## 4-2. 골드뱅킹과 골드바, 그리고 금값이 10% 오르면'), 말 줄 79개 글자 그대로(diff 0) · `lfvoice plan --maxreq 10 --cap 270` = 장 10개·요청 10회, 최대 279음절(4-2·5장, C-1 290 선례 안) · 4장을 셋으로 나누면 11회라 둘로 · PD: g1props.py CUTS 장 이름 '3-2.'·'4-2.' 맞춤 · editor 재서명 요청 아래
@@ -562,5 +563,6 @@
 - [막힘] firemap-improve 14:42: dev(2826c46)→main 반영 못 함 — main 쪽 2커밋(e1b1c35 가이드·b936d60) 병합 시 작업트리의 남의 미커밋 파일(outputs/jepiq_short.mp4 등)로 merge 중단, 임시 worktree 병합은 권한 분류기가 거부. 이번 변경은 research·rules 파일뿐이라 운영 영향 없음 · 다음 정상 병합 때 같이 넘어감
 - [배차] firemap-video-producer 10/10 19:30 C-1 롱폼 관문(기한 10/9 19:30) — 16:01 TTS 창 녹음→렌더→gate (정기 18:16은 기한에 빠듯)
   착수: firemap-video-producer 15:10 (운영실장)
+  완료(미달·넘김): firemap-video-producer 15:14 — 준비만: editor 서명 해시 일치(script b1f3cbb0·screen_text 6f93fd58)·c1props CUTS 2-2 확인·lfvoice plan 9요청 최대 290음절·ep/C-1/compare.md 만듦(gate 요구) · 막힘: 이 회차가 16:01 전에 끝나야 해서 녹음 못 함(TTS 0요청 사용) → 녹음~gate는 14:18 PD 세션에 세션 메시지로 다시 넘김 · gate 주의: meta desc 없음(chapters.py 뒤), {CAFE} 채우면 끝 카페 줄과 2개 → C9
 - [배차] firemap-shorts 비축 쇼츠 0/1 + 10/10 12:20 칸 편·관문(기한 10/10 00:20)
   착수: firemap-shorts 15:10 (운영실장)

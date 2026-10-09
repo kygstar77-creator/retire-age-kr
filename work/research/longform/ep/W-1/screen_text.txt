@@ -126,7 +126,7 @@
 [scenes.9.data.total.1.0] 코스피 1천만원
 [scenes.9.data.total.1.1] −54만원
 [scenes.9.data.total.2.0] 미국 1만 달러
-[scenes.9.data.total.2.1] −13.9만원
+[scenes.9.data.total.2.1] −4.9만원
 [scenes.9.lines.0.text] 이제 100주를 가진 사람이요.
 [scenes.9.lines.1.text] 이번 주 사흘 동안 평가액은 140만원이 줄었습니다.
 [scenes.9.lines.1.cap] 100주 × 종가 10/2 276,000원 = 2,760만원 → 10/8 262,000원 = 2,620만원 · −140만원 (−5.07%)
@@ -154,7 +154,7 @@
 [scenes.10.data.total.1.0] 코스피 1천만원
 [scenes.10.data.total.1.1] −54만원
 [scenes.10.data.total.2.0] 미국 1만 달러
-[scenes.10.data.total.2.1] −13.9만원
+[scenes.10.data.total.2.1] −4.9만원
 [scenes.10.lines.0.text] 그럼 배당은요? 가장 최근 분기 배당은 6월 말 주주에게 8월에 지급하기로 한 거예요.
 [scenes.10.lines.0.cap] 2026년 2분기 분기배당 보통주 1주당 374원 · 기준일 2026-06-30 · 지급 예정일 2026-08-28 (DART 2026.07.30 현금·현물배당결정)
 [scenes.10.lines.1.text] 100주면 세금을 떼고 3만원 남짓이에요.
@@ -216,7 +216,7 @@
 [scenes.14.data.total.1.0] 코스피 1천만원
 [scenes.14.data.total.1.1] −54만원
 [scenes.14.data.total.2.0] 미국 1만 달러
-[scenes.14.data.total.2.1] −13.9만원
+[scenes.14.data.total.2.1] −4.9만원
 [scenes.14.data.big.0] −54만원
 [scenes.14.data.big.2] −539,440원 · −5.39%
 [scenes.14.lines.0.text] 이번엔 종목 하나가 아니라 시장 전체예요.
@@ -254,9 +254,9 @@
 [scenes.17.chapter] 4장
 [scenes.17.data.lines.0.0] SPY(달러)
 [scenes.17.data.lines.0.2.0] $769.64
-[scenes.17.data.lines.0.2.1] $773.39
+[scenes.17.data.lines.0.2.1] $778.54
 [scenes.17.data.lines.0.3] rise
-[scenes.17.data.lines.0.5] +0.49%
+[scenes.17.data.lines.0.5] +1.16%
 [scenes.17.data.lines.1.0] 원달러
 [scenes.17.data.lines.1.2.0] 1,359.6원
 [scenes.17.data.lines.1.2.1] 1,339.2원
@@ -279,33 +279,33 @@
 [scenes.18.data.total.1.0] 코스피 1천만원
 [scenes.18.data.total.1.1] −54만원
 [scenes.18.data.total.2.0] 미국 1만 달러
-[scenes.18.data.total.2.1] −13.9만원
+[scenes.18.data.total.2.1] −4.9만원
 [scenes.18.lines.0.text] 먼저 환율만 떼어 보면요.
 [scenes.18.lines.1.text] 달러는 그대로 1만 달러인데, 원화로 바꾸면 20만원 넘게 줄었습니다.
 [scenes.18.lines.1.cap] 10,000달러 × 1,359.60원 = 1,359.6만원 → × 1,339.20원 = 1,339.2만원 · 환율만으로 −20.4만원
 [scenes.18.lines.2.text] 달러 값이 싸지면, 가진 달러를 원화로 셀 때 그만큼 작아지거든요.
 [scenes.19.key] bridge
 [scenes.19.title] 영수증 3 · 미국 1만 달러
-[scenes.19.sub] SPY 10/2 → 10/8 · 원화 · 만원
+[scenes.19.sub] SPY 10/2 → 10/9 · 원화 · 만원
 [scenes.19.source] 야후 파이낸스 SPY 일별 종가 · 한국은행 ECOS 원달러 매매기준율
 [scenes.19.chapter] 4장
 [scenes.19.data.steps.0.2] 1,359.6만
 [scenes.19.data.steps.1.0] 환율 몫
 [scenes.19.data.steps.1.2] −20.4만
 [scenes.19.data.steps.2.0] 주가 몫
-[scenes.19.data.steps.2.2] +6.5만
+[scenes.19.data.steps.2.2] +15.5만
 [scenes.19.data.steps.3.0] 원화 합계
-[scenes.19.data.steps.3.2] 1,345.7만
+[scenes.19.data.steps.3.2] 1,354.7만
 [scenes.19.data.total.0.0] 삼성전자 100주
 [scenes.19.data.total.0.1] −140만원
 [scenes.19.data.total.1.0] 코스피 1천만원
 [scenes.19.data.total.1.1] −54만원
 [scenes.19.data.total.2.0] 미국 1만 달러
-[scenes.19.data.total.2.1] −13.9만원
+[scenes.19.data.total.2.1] −4.9만원
 [scenes.19.lines.0.text] 그 사이 S&P500을 따라가는 미국 ETF는 달러로 조금 올랐어요.
-[scenes.19.lines.0.cap] SPY 종가 10/2 → 10/8 +0.49% (야후 파이낸스, 금요일 종가로 갱신)
-[scenes.19.lines.1.text] 둘을 합치면, 원화로는 약 14만원 줄었어요.
-[scenes.19.lines.1.cap] 1,359.6만원 → 1,345.7만원 · −13.9만원 · 환율은 10/8 매매기준율
+[scenes.19.lines.0.cap] SPY 종가 10/2 → 10/9 +1.16% (야후 파이낸스)
+[scenes.19.lines.1.text] 둘을 합치면, 원화로는 약 5만원 줄었어요.
+[scenes.19.lines.1.cap] 1,359.6만원 → 1,354.7만원 · −4.9만원 · 환율은 10/8 매매기준율(10/9 한글날 휴장)
 [scenes.19.lines.2.text] 주가는 올랐는데 원화 통장은 줄어든 한 주였어요. 해외 주식은 환율이 늘 같이 따라와요.
 [scenes.20.key] trio
 [scenes.20.title] 영수증 세 장
@@ -327,15 +327,15 @@
 [scenes.20.data.cards.1.pct] −5.39%
 [scenes.20.data.cards.2.head] 미국 1만 달러
 [scenes.20.data.cards.2.rows.0.0] 달러로
-[scenes.20.data.cards.2.rows.0.1] +0.49%
+[scenes.20.data.cards.2.rows.0.1] +1.16%
 [scenes.20.data.cards.2.rows.0.2] in
 [scenes.20.data.cards.2.rows.1.0] 원화로
-[scenes.20.data.cards.2.rows.1.1] −138,749
+[scenes.20.data.cards.2.rows.1.1] −49,138
 [scenes.20.data.cards.2.rows.1.2] net
-[scenes.20.data.cards.2.pct] 달러 +0.49%
+[scenes.20.data.cards.2.pct] 달러 +1.16%
 [scenes.20.data.q.0] 무엇을 · 어떤 돈으로 갖고 있느냐
 [scenes.20.lines.0.text] 영수증 세 장을 나란히 놓으면 이래요.
-[scenes.20.lines.0.cap] 삼성전자 100주 평가액 −140만원 · 지난 분기 배당(8월 지급) 세후 31,640원 / 코스피 1천만원 −54만원 / 미국 1만 달러 원화 −13.9만원 · 평가액 기준, 팔지 않으면 확정 아님, 수수료 빼고 계산
+[scenes.20.lines.0.cap] 삼성전자 100주 평가액 −140만원 · 지난 분기 배당(8월 지급) 세후 31,640원 / 코스피 1천만원 −54만원 / 미국 1만 달러 원화 −4.9만원 · 평가액 기준, 팔지 않으면 확정 아님, 수수료 빼고 계산
 [scenes.20.lines.1.text] 삼성전자 100주는 금액으로 가장 크게 줄었고, 지난 분기 배당은 그에 비하면 아주 작았어요.
 [scenes.20.lines.2.text] 비율로 보면 시장 전체가 조금 더 내렸고요.
 [scenes.20.lines.3.text] 미국 주식을 가진 사람은 주가가 올랐는데도, 환율 때문에 원화로는 줄었어요.
@@ -393,7 +393,7 @@
 [scenes.24.data.rows.2.0] 지난 분기 배당(세후)
 [scenes.24.data.rows.2.2] dim
 [scenes.24.data.rows.3.0] 미국 1만 달러
-[scenes.24.data.rows.3.1] 달러 +0.49% · 원화 −14만원
+[scenes.24.data.rows.3.1] 달러 +1.16% · 원화 −5만원
 [scenes.24.data.rows.3.2] hi
 [scenes.24.data.side.0] 107.40조
 [scenes.24.data.side.2] 3분기 영업이익(잠정)
@@ -409,8 +409,9 @@
 [scenes.25.data.label] 파이어맵 배당 세금 정리
 [scenes.25.data.note] 이번 주 숫자를 그대로 곱한 계산 · 다음 주는 말하지 않는다
 [scenes.25.lines.0.text] 이 계산은 이번 주 숫자를 그대로 곱한 거예요. 다음 주가 어떨지는 말해 주지 않습니다.
-[scenes.25.lines.1.text] 내 배당에 세금이 얼마 붙는지는, 설명란의 파이어맵 배당 세금 정리에서 확인해 보세요.
-[scenes.25.lines.1.cap] firemap.kr/guide/dividend-tax-thresholds.html · 설명란 링크
+[scenes.25.lines.1.text] 투자를 권하는 게 아니라, 이번 주 공시와 종가로 한 계산이에요.
+[scenes.25.lines.2.text] 내 배당에 세금이 얼마 붙는지는, 설명란의 파이어맵 배당 세금 정리에서 확인해 보세요.
+[scenes.25.lines.2.cap] firemap.kr/guide/dividend-tax-thresholds.html · 설명란 링크
 [script] script.md
 
 ## 화면 코드: video/src/W1.tsx

@@ -795,7 +795,7 @@ def day_guard(kind):
             f'{kind} 오늘 이미 {n}편 올렸다 — 하루 {cap}편까지만 올린다. '
             f'많이 올릴수록 안 읽힌다(하루 5편 미만 카페 조회 74 vs 20편 넘는 카페 조회 2). 내일 올린다')
 
-def jitter(kind):
+def jitter(kind, pkg=None):
     """발행 시각을 흩뜨린다. 매시 정각에 올리면 사람이 쓴 글로 안 보인다.
 
     네이버 공식(2016-07-12 '블로그 검색 저품질 관련 잘못된 소문 Top'):
@@ -808,10 +808,16 @@ def jitter(kind):
     if os.environ.get('NAVER_FORCE') == '1': return
     import random
     s = random.randint(0, 17 * 60)
+    # 2026-10-09 audit 요청: 10/8 카페 간격 91·109·118·117·123분(변동계수 0.09, naver-policy A3 경고선 0.3),
+    # 최근 5편 중 4편이 :23~:27. 회차가 칸 시각 :10에 시작해 늘 비슷한 분에 올렸다.
+    # 카페 코너 칸 안(slot 'now')이면 그 시간이 끝나기 8분 전까지 아무 때나 고른다 — '매일 이 시간에' 약속은 지킨다.
+    if kind == 'cafe' and pkg and slot_state(pkg) == 'now':
+        room = int((slot_of(pkg) + datetime.timedelta(minutes=52) - datetime.datetime.now()).total_seconds())
+        if room > 17 * 60: s = random.randint(0, room)
     # 2026-09-28 03시: 회차가 `timeout 900`으로 감싸 돌렸는데 15분 16초를 뽑아 쉬는 중에 죽었다.
     # 출력엔 에러가 없고 published.txt만 없어 한참 헤맸다. 잠금 대기 15분 + 여기 17분 + 발행이라
     # 바깥에서 시간 제한을 걸려면 35분 넘게 준다(아니면 백그라운드로 돌린다).
-    print(f'{kind} 발행 전 {s//60}분 {s%60}초 쉰다(정각 몰림 방지) — 바깥 timeout은 35분 이상', flush=True)
+    print(f'{kind} 발행 전 {s//60}분 {s%60}초 쉰다(정각 몰림 방지) — 바깥 timeout은 60분 이상(카페 칸 안이면 최대 약 40분)', flush=True)
     time.sleep(s)
 
 def alive(page):
@@ -985,7 +991,7 @@ def with_corner_tail(title, seq):
 def post_cafe(page, pkg, wait=False):
     if slot_state(pkg) == 'early' and os.environ.get('NAVER_FORCE') != '1':
         raise RuntimeError('코너 시각 전이다 — %s시에 올린다(pkg/slot.txt)' % slot_of(pkg).strftime('%m-%d %H'))
-    day_guard('cafe'); jitter('cafe'); rate_guard('cafe', wait)
+    day_guard('cafe'); jitter('cafe', pkg); rate_guard('cafe', wait)
     page = alive(page)
     title, seq, meta = read_pkg(pkg)
     # "매일 이 시간에 올라와요"는 제 시각에 올라갈 때만 붙인다. 쉬는 시간(jitter) 뒤에 잰다.

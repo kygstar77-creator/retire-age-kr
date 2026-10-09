@@ -1538,3 +1538,4 @@
 2026-10-09 22:38 · firemap-improve · naverpost pending·patrol에 장부(slots.json)↔slot.txt '두 시각 다름' 경고 + 자체 검증 갈래별 표시(사실 0·말투·표·중복) · 10/9 회의 지시(schdacct1007 옛 slot.txt로 10/10 08:10 나갈 뻔), 'selfcheck 사실 0'과 '자체 6건'이 엇갈린 원인은 줄 수만 센 것
 2026-10-09 22:51 · firemap-write · 22:10 brokerfee1009 cafe/240 발행 verify OK 1228자·사진 3 · 관문 12:40 통과 편
 2026-10-09 22:51 · firemap-write · eitclate1009·npsage1009 compare.md 작성(toprank 10/9 22시대 상위 5·1등 주소·3줄), schdacct1007은 10/6 compare.md 있음 · 회의 긴급 지시 완료 기준
+2026-10-09 22:52 · firemap-write · 10/10 10:10 칸 sevbasis1010 관문 통과 gates_ok 22:51(제목 L4 '퇴직금 지급기준, 364일 다니고 그만두면 받는 돈' 7.33·표지 C4 8.0·readcheck 0·selfcheck 사실 0·aitell 1.9·레드팀 2회 사실 2 반영·editgate auto·/calc/severance utm) — X-CAFE-CALC-1 B 첫 칸 · 발견: src/utils/severancePay.js 24행 serviceDays>=365는 윤일 낀 기간에 하루 모자라도 금액 표시 — 사이트 개발 중단(10/6)이라 손대지 않고 기록만

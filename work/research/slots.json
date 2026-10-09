@@ -734,10 +734,11 @@
   {
    "at": "2026-10-10 10:10",
    "kind": "cafe",
-   "item": "TBD-CALC-퇴직금",
+   "item": "sevbasis1010",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/09 21:33: X-CAFE-CALC-1 B칸(10/10 시작): 퇴직금·실업급여·연봉 실수령 계산에 실제로 이어지는 주제, 본문에 맞는 /calc 링크+utm, 같은 계산기 연속 금지 · 관문 기한 04:10"
+   "gates_ok": "2026-10-09 22:51",
+   "note": "firemap-write helper 2026-10-09 22:51: 관문 통과 — 제목 L4 '퇴직금 지급기준, 364일 다니고 그만두면 받는 돈' 제미나이 7·8·레드팀 7=7.33 · 표지 C4 8·8·8=8.0 · readcheck 0·selfcheck 사실 0·aitell 1.9·frame 통과·crosscheck 사실 4 유지(링크·면책·AI 고지)·레드팀 사실 2·표현 8 반영(2차 오류 없음)·editgate auto · /calc/severance utm sevbasis1010 · 별도 과제: severancePay.js 365일 판정 윤년 문제",
+   "item_pkg": "work/research/sevbasis1010/pkg"
   },
   {
    "at": "2026-10-10 12:10",

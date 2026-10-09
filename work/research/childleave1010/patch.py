@@ -1,0 +1,7 @@
+s=open('make_cover.py',encoding='utf-8').read()
+s=s.replace(" 'B': [", " 'C': [('육아휴직 12개월', 124, Wt, 't'), ('2,310|만원', 250, Y, 'num'), ('월급 300만원부터는 다 같아요', 70, Wt, 't')],\n 'B': [")
+open('make_cover.py','w',encoding='utf-8').write(s)
+j=open('judge_cover.py',encoding='utf-8').read().replace("for k in 'AB':","for k in 'C':")
+open('judge_cover.py','w',encoding='utf-8').write(j)
+r=open('judge_run.py',encoding='utf-8').read().replace("jobs=[('A',os.path.join(HH,'covers_try','board_A.png'),os.path.join(HH,'pkg')),('B',os.path.join(HH,'covers_try','board_B.png'),os.path.join(HH,'pkg')),","jobs=[('C',os.path.join(HH,'covers_try','board_C.png'),os.path.join(HH,'pkg')),").replace("judge_raw.md","judge_raw_C.md").replace("judge.json","judge_C.json")
+open('judge_run.py','w',encoding='utf-8').write(r)

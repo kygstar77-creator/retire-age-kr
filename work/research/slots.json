@@ -746,9 +746,10 @@
    "kind": "cafe",
    "item": "childleave1010",
    "owner": "firemap-write",
-   "gates_ok": null,
+   "gates_ok": "2026-10-10 03:30",
    "note": "firemap-write 10/09 23:1x: eitclate1009는 표지 평균 6.67(심사 상한 6.5 반복, K·G 25장 미달)로 이 칸에서 뺌(hold 유지, 12/1 마감이라 표지 7 넘으면 이후 칸). 새 편 육아휴직급여(kwvol 79,500·dupcheck 새것·고용보험법 제70조·시행령 제95조 원문 확보: 1~3개월 통상임금 상한 250만·4~6개월 200만·7개월~80% 상한 160만·하한 70만). 원고·관문 기한 06:10, 담당 write 00:10~06:10 회차. 비축 npsage1009는 10/14 08:30 전 불가, schdacct1007은 14:30 전 불가라 쓰지 않음",
-   "item_pkg": "work/research/childleave1010/pkg"
+   "item_pkg": "work/research/childleave1010/pkg",
+   "gate_note": "2026-10-10 03:30 firemap-write 관문 통과: 제목 평균 7.5(제미나이 8·독립 레드팀 7·작성자 7.5) · 표지 F 평균 7.25(제미나이 7.25·독립 레드팀 7·작성자 7.5, 보정 gongjae1002 7.0~7.5) · editgate auto 일치 · readcheck 0·selfcheck 사실 0·aitell 6.3 · compare/review 세 줄 · slot.txt 2026-10-10 12 · naverpost pending block은 코너 시각 전뿐"
   },
   {
    "at": "2026-10-10 12:20",

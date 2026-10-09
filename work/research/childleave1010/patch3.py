@@ -1,0 +1,8 @@
+s=open('make_cover.py',encoding='utf-8').read()
+s=s.replace(" 'B': ["," 'F': [('육아휴직 12개월 급여', 104, Wt, 't'), ('150|만원', 280, Y, 'num'), ('통상임금 2배 차이인데 이만큼', 80, Wt, 't')],\n 'B': [",1)
+s=s.replace("['2,310', '150'] if v=='B' else ['2,310']","['2,310', '150'] if v in 'BF' else ['2,310']")
+open('make_cover.py','w',encoding='utf-8').write(s)
+j=open('judge_cover.py',encoding='utf-8').read().replace("for k in 'DE':","for k in 'F':")
+open('judge_cover.py','w',encoding='utf-8').write(j)
+r=open('judge_run.py',encoding='utf-8').read().replace("jobs=[('D',os.path.join(HH,'covers_try','board_D.png'),os.path.join(HH,'pkg')),('E',os.path.join(HH,'covers_try','board_E.png'),os.path.join(HH,'pkg')),","jobs=[('F',os.path.join(HH,'covers_try','board_F.png'),os.path.join(HH,'pkg')),").replace("_DE.md","_F.md").replace("_DE.json","_F.json")
+open('judge_run.py','w',encoding='utf-8').write(r)

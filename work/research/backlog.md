@@ -20,7 +20,7 @@
 | firemap-venture-builder | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-venture-research-kr | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-illustrator | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-shorts | 10/9 19:20 칸 c1_tiles 1초 7 넘기기(기한 10/9 07:20) — 빈 아래 절반에 '평균이면 둘 다 100년+' 반전 줄, 안 되면 v3b 미통과 공개 + 비축 쇼츠 0/1(BE 1988 특례 또는 G-1 g1_receipt) | cardshort.py 세로·가로 가운데 정렬 실제 고치기(vs 상자 아래 절반 빔, c1_tiles 24%) + check에 빈 비율 >15% 막음 | 판정 2건: 10/10 13:15 nhis_prop_b(V8s9) 평균 시청 vs 중앙값, 10/10 19:27 npsday1007(wPIHi7cSmQQ) 시청 비율·조회 vs 중앙값 → review.md |
+| firemap-shorts | 비축 쇼츠 0/2 → 1편 이상(BE 1988 특례 art/npslaw1988_facts.md 또는 G-1 g1_receipt, compete 5·첫 프레임 1초 7) — 하루 1편이라 다음 칸 10/10 12:20 관문 기한 10/10 00:20 | 판정 2건: 10/10 13:15 nhis_prop_b(V8s9) 평균 시청 vs 중앙값, 10/10 19:27 npsday1007(wPIHi7cSmQQ) → review.md | cardshort.py 세로 가운데 정렬 실제 고치기(6편째 아래 25~40% 빔, rate30_b 포함) + check에 빈 비율 >15% 막음 |
 | firemap-venture-research-global | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-planner | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-artist | 10/9 12:20 뒤: npsday1007 48시간 조회(성공 ≥430) → AL 문턱 판정 + BB·BG(법 바뀐 횟수)를 문턱 계열로 묶을지 · C-1 반려 고친 썸네일·첫 3초 재판정(뻔함 검수 요청 오면 1시간 안) | 10/10 12:20 뒤: B형 첫 편(AY 계기판) 48시간 평균 시청 시간·비율을 A판 nhis_prop와 비교 → 유지/원안 판정, 늦가을편지 PrBkxpw7ljE '우리 집은 어디쯤'(50,918회)과 첫 화면 나란히 | AP 돈 상식 재판·AX·BC 맞히기를 카페 한 틀로 묶는 시험안(write 칸 안에서) + BE 공개되면 48시간 판정, BF는 '좋은 소식 교정지'(부칙<20903> 출산·군 복무 가입기간) 판으로 다시 써서 사용자 참모 재확인 |

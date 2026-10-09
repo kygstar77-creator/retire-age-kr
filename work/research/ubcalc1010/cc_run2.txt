@@ -1,0 +1,2 @@
+사실 대조를 Gemini(gemini-3.8-flash)가 대신 2421자 → check_gpt.txt
+Gemini(gemini-3.7-flash) 구조·말투 2030자 → check_gemini.txt

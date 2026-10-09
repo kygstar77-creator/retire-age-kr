@@ -778,10 +778,11 @@
   {
    "at": "2026-10-10 18:10",
    "kind": "cafe",
-   "item": "TBD-CALC-실업급여",
+   "item": "ubcalc1010",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/09 21:33: X-CAFE-CALC-1 B칸(10/10 시작): 퇴직금·실업급여·연봉 실수령 계산에 실제로 이어지는 주제, 본문에 맞는 /calc 링크+utm, 같은 계산기 연속 금지 · 관문 기한 12:10"
+   "gates_ok": "2026-10-10 07:34",
+   "note": "이전: firemap-meeting 10/09 21:33: X-CAFE-CALC-1 B칸(10/10 시작): 퇴직금·실업급여·연봉 실수령 계산에 실제로 이어지는 주제, 본문에 맞는 /calc 링크+utm, 같은 계산기 연속 금지 · 관문 기한 12:10 · firemap-write 보조 2026-10-10 07:34: ubcalc1010 실업급여 피보험기간 전 회사 합산(고용보험법 제50조), 계산기 링크 utm_campaign=ubcalc1010, 제목 K8 7.33·표지 7.67, 본문 약 2,700자·사진 3장, crosscheck·레드팀 2회 완료, editgate 도장",
+   "item_pkg": "work/research/ubcalc1010/pkg"
   },
   {
    "at": "2026-10-10 19:30",

@@ -744,10 +744,11 @@
   {
    "at": "2026-10-10 12:10",
    "kind": "cafe",
-   "item": "eitclate1009",
+   "item": "childleave1010",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-meeting 10/09 21:33: hold 편 — 표지 평균 7·제목 E11 재심 넘으면 이 칸, 못 넘으면 06:10까지 다른 편으로 교체(칸 비우기 금지)"
+   "note": "firemap-write 10/09 23:1x: eitclate1009는 표지 평균 6.67(심사 상한 6.5 반복, K·G 25장 미달)로 이 칸에서 뺌(hold 유지, 12/1 마감이라 표지 7 넘으면 이후 칸). 새 편 육아휴직급여(kwvol 79,500·dupcheck 새것·고용보험법 제70조·시행령 제95조 원문 확보: 1~3개월 통상임금 상한 250만·4~6개월 200만·7개월~80% 상한 160만·하한 70만). 원고·관문 기한 06:10, 담당 write 00:10~06:10 회차. 비축 npsage1009는 10/14 08:30 전 불가, schdacct1007은 14:30 전 불가라 쓰지 않음",
+   "item_pkg": "work/research/childleave1010/pkg"
   },
   {
    "at": "2026-10-10 12:20",
@@ -813,6 +814,14 @@
    "owner": "firemap-write",
    "gates_ok": null,
    "note": "firemap-meeting 10/09 21:33: 관문 기한 02:10 — 10/10 회차들이 비축 겸 미리"
+  },
+  {
+   "at": "2026-10-11 10:10",
+   "kind": "cafe",
+   "item": "TBD-CALC-연봉실수령",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-write 10/09 23:1x: X-CAFE-CALC-1 B칸 3번째(퇴직금 10/10 10:10 · 실업급여 10/10 18:10 다음) — 연봉 실수령 계산에 이어지는 주제, 본문에 /calc 링크+utm, 같은 계산기 연속 금지 · 관문 기한 10/11 04:10"
   },
   {
    "at": "2026-10-11 12:20",

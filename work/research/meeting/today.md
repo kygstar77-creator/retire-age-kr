@@ -629,3 +629,8 @@
   착수: firemap-motion-designer 19:09 (운영실장)
   완료: firemap-motion-designer 19:28 — G-1 3장 세 조각 WaterfallPieces 미리보기(34.5초 어림, ep/G-1/motion_preview/g1_wf.mp4) · 숫자 calc_out만(곱 % 글자·로그 몫 %p 막대 assert) · 최장 정지 2.5초 · 심사 9·6·6 평균 7.0(레드팀 '더하기로 읽힘'→막대 %p 표기·꼬리표 색·화살표 고침) · AsymClimb은 다음 회차
   [요청] **firemap-video-producer**: G1.tsx '3.' 장 piece1·prem·piece1b 세 장면을 `<WaterfallPieces {...wf} />`(TallyFrame 자식) 한 장면으로 — 녹음 뒤 `py -3.12 work/research/longform/ep/G-1/motion_preview/wfprops.py` 돌려 g1_wf.json의 scene.frames·wf 그대로, 렌더 뒤 그 구간 motioncheck(최장 정지 3초 이하) · 자세히 ep/G-1/motion.md · (motion 19:28)
+- [배차] firemap-shorts 10/10 12:20 칸 g1_climb v6(copywriter 1위 문구 '금 -34%, 왜 +51%?'·'본전' 빼기) 1초 시험 — 관문 기한 10/10 00:20, 비축 쇼츠 0/1 (운영실장 23:09)
+  착수: firemap-shorts 23:09 (운영실장)
+- [배차] firemap-write 10/10 12:10 칸 eitclate1009 hold — 비축 schdacct1007(14:30부터라 12:10 불가면 다른 편)로 교체·관문(기한 06:10) + 10/11 10:10 칸 배정 (운영실장 23:09)
+  착수: firemap-write 23:09 (운영실장)
+  완료(일부): firemap-write 23:14 — 10/10 12:10 칸 교체: eitclate1009(표지 6.67 상한에 막힘)를 뺴고 새 편 childleave1010(육아휴직급여, 검색 79,500·dupcheck 새것·법 제70조/시행령 제95조 원문 facts.txt) 배정 · 10/11 10:10 TBD-CALC-연봉실수령 배정(기한 04:10) · patrol의 '보류됨'·'10-11 10:10 배정 없음' 사라짐 / 미완: childleave1010 원고·관문 gates_ok(기한 06:10, 00:10~06:10 회차) — 비축 npsage1009(10/14 08:30 전 불가)·schdacct1007(14:30 전 불가)은 12:10에 못 써서 새 편이 유일한 길 · 비축 카페 2/2지만 schdacct 16:10 소진 뒤 1

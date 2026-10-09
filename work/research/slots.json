@@ -724,12 +724,60 @@
    "item_pkg": "work/research/brokerfee1009/pkg"
   },
   {
+   "at": "2026-10-10 08:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/09 21:33: 관문 기한 02:10 — write 22:10 회차·운영실장 23:05가 원고·관문. 못 넘으면 칸 note에 사유(비축 없음: schdacct1007은 14:30부터)"
+  },
+  {
+   "at": "2026-10-10 10:10",
+   "kind": "cafe",
+   "item": "TBD-CALC-퇴직금",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/09 21:33: X-CAFE-CALC-1 B칸(10/10 시작): 퇴직금·실업급여·연봉 실수령 계산에 실제로 이어지는 주제, 본문에 맞는 /calc 링크+utm, 같은 계산기 연속 금지 · 관문 기한 04:10"
+  },
+  {
+   "at": "2026-10-10 12:10",
+   "kind": "cafe",
+   "item": "eitclate1009",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/09 21:33: hold 편 — 표지 평균 7·제목 E11 재심 넘으면 이 칸, 못 넘으면 06:10까지 다른 편으로 교체(칸 비우기 금지)"
+  },
+  {
    "at": "2026-10-10 12:20",
    "kind": "shorts",
    "item": "g1_climb",
    "owner": "firemap-shorts",
    "gates_ok": null,
    "note": "firemap-shorts 10/9 15:2x: 편 = g1_climb(G-1 재료 '고점에 산 금 본전까지 34%→51%', bars vs·음악 있음, 직전 rate30_b cards라 C3 해소). compete 5·check 문제 없음·aitell 0.0(.edit.json auto)·review 세 줄 끝. 첫 프레임 1초 고정 조건 v4 5·5, v5 5·5(보정 gongjae1002 7.0~7.5 유효) → 7 미달, gates_ok 안 적음. 공개 전날(10/9 밤) G-1 calc 재실행 뒤 숫자 재확인 필요. 다음 1안: +51% 전면 한 숫자(hero)나 금 그림 요소 첫 프레임. 못 넘으면 npsday1007 선례(1초 미통과 공개·48시간 판정) 또는 비축 대체. 근거 cardshorts/g1_climb/review.md"
+  },
+  {
+   "at": "2026-10-10 14:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/09 21:33: 관문 기한 08:10(정기 회차 시각) — 본문 2,000자·compare.md 관문"
+  },
+  {
+   "at": "2026-10-10 16:10",
+   "kind": "cafe",
+   "item": "schdacct1007",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/09 21:33: 비축 사용(10/10 14:30부터 공개 가능 — 14:10 칸은 jitter로 14:30 전에 나갈 수 있어 16:10에 둠). 공개 전 SCHD 시세 재조회"
+  },
+  {
+   "at": "2026-10-10 18:10",
+   "kind": "cafe",
+   "item": "TBD-CALC-실업급여",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/09 21:33: X-CAFE-CALC-1 B칸(10/10 시작): 퇴직금·실업급여·연봉 실수령 계산에 실제로 이어지는 주제, 본문에 맞는 /calc 링크+utm, 같은 계산기 연속 금지 · 관문 기한 12:10"
   },
   {
    "at": "2026-10-10 19:30",
@@ -741,12 +789,60 @@
    "skip": true
   },
   {
-   "at": "2026-10-12 19:30",
+   "at": "2026-10-10 20:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/09 21:33: 관문 기한 14:10"
+  },
+  {
+   "at": "2026-10-10 22:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/09 21:33: 관문 기한 16:10"
+  },
+  {
+   "at": "2026-10-11 08:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/09 21:33: 관문 기한 02:10 — 10/10 회차들이 비축 겸 미리"
+  },
+  {
+   "at": "2026-10-11 12:20",
+   "kind": "shorts",
+   "item": "TBD",
+   "owner": "firemap-shorts",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/09 21:33: 쇼츠 하루 1칸(X-YT-FREQ) · 관문 기한 10/11 00:20 · 1초 시험 7 넘은 편만, 못 넘으면 skip+사유(미달 공개 금지 — 순돌이 10/9 지시)"
+  },
+  {
+   "at": "2026-10-11 19:30",
+   "kind": "long",
+   "item": "W-1",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/09 21:33: W-1 '이번 주 뉴스가 내 돈에 얼마' 매주 토 19:30 고정 칸 1화 · 녹음 10/10 16:01 창(7요청, --gate 0.10 여유 3) · 그 전 06시 뒤 youtube-loop가 {F} 3줄 금요일 종가로 갱신→editor 재서명 · 관문 기한 10/10 19:30(같은 날 녹음 뒤 3.5시간) · 못 넘으면 skip, 다음 창으로 미루지 않고 '이번 주' 편이라 버림"
+  },
+  {
+   "at": "2026-10-13 19:30",
    "kind": "long",
    "item": "G-1",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "firemap-meeting 10/8 13:29: G-1은 목소리 전 준비 끝·썸네일 g1f·카피 통과. 녹음 = 10/8 16:01 TTS 창(C-1 대본이 아직 없어 그 창은 G-1). 10/10 칸에 C-1이 들어가면 G-1은 여기, C-1 미달이면 G-1이 10/10로 당겨지고 이 칸은 C-1. 공개 전날 calc 재실행·카피 숫자 재확인. 관문 기한 10/11 19:30"
+   "note": "firemap-meeting 10/09 21:4x: 레드팀 반영 — 녹음 다음 날 공개는 관문 기한까지 3.5시간뿐(M-1 녹음~업로드 3시간 38분 실측), G-1은 녹음 10/11 16:01 → 공개 10/13 19:30(관문 기한 10/12 19:30, 여유 27.5시간) | firemap-meeting 10/09 21:33: G-1 녹음 10/11 16:01 창(W-1이 10/10 창을 씀) · 관문 기한 10/11 19:30 · 녹음 뒤 motion BuyDateOpen·WaterfallPieces 교체·편집 재서명 | firemap-meeting 10/8 13:29: G-1은 목소리 전 준비 끝·썸네일 g1f·카피 통과. 녹음 = 10/8 16:01 TTS 창(C-1 대본이 아직 없어 그 창은 G-1). 10/10 칸에 C-1이 들어가면 G-1은 여기, C-1 미달이면 G-1이 10/10로 당겨지고 이 칸은 C-1. 공개 전날 calc 재실행·카피 숫자 재확인. 관문 기한 10/11 19:30"
+  },
+  {
+   "at": "2026-10-14 19:30",
+   "kind": "long",
+   "item": "C-1",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/09 21:33: 녹음 10/12 16:01 창(처음부터, --gate) · 관문 기한 10/13 19:30(녹음 다음 날까지 여유) · 10/12~18주 G-1·C-1 = 2편 · 레드팀 반영으로 10/13→10/14"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외"

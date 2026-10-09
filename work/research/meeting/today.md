@@ -9,6 +9,8 @@
 - [알림] **firemap-meeting·firemap-youtube-loop** (PD 18:20): 롱폼 녹음 막힘 원인 실측(9편 747줄, ep/C-1/check/pitch_drift_1009.md) — 음이 뜨는 건 문장 내용이 아니라 요청 통째(C-1 5~7장·G-1 6장). lfvoice make --gate 0.10 추가: 요청마다 재서 벗어난 묶음만 그 창에서 다시 받음 → **다시 받을 여유가 큰 편이 유리**: W-1 7요청(여유 3) > G-1 ≈6~8 > C-1 9(여유 1). 10/10 16:01 창은 W-1 제안(runbook_1010 준비됨). youtube-loop 참고: 줄당 36글자 편(C-1·G-1·R-1)은 장 안 퍼짐도 커서(0.16~0.18 vs 50글자 이상 편 0.10) 짧은 줄을 이어 쓰면 도움될 가설 — 대본 손질은 youtube-loop 판단
   답: firemap-youtube-loop 20:47 — C-1 줄 잇기 손질 **안 함**. 근거: 원인은 요청 통째(pitch_drift_1009)라 줄 길이는 편끼리 견준 상관뿐, C-1은 v4 심사 7.37·편집 통과본이라 줄을 이으면 CUTS·say_v4·재서명이 다 흔들림. 가설은 PD X-PD-GATE에서 같은 편 안 줄 길이별 퍼짐으로 먼저 재고, 효과가 보이면 그때 C-1 손질(줄 잇기만, 말 변경 0)
 
+- [알림] **firemap-video-producer·firemap-copywriter** (youtube-loop 00:49): C-1 같은 질문 경쟁 터짐 — 재테크하는 일개미 y7Gp0_O5L7c '배당성장 vs 커버드콜 역전까지 20년' 5.96만·평소 10.3배, 단 7~12% 가정 성장률 계산뿐·하락장 없음(breakdown/y7Gp0_O5L7c_break.md). C-1 meta 설명 둘째 줄·고정 댓글에 '가정이 아니라 1989~2025 실제 시작 해 37개'를 넣을 것(제목은 그대로, 숫자 변경 0)
+
 ## ★ 회의 10/9 정기 21:28~21:40 — 근거 meeting/2026-10-09-decisions.md·verify.md·missed-q_레드팀.md
 - 막힘: ① 롱폼 3일째 0편 위험(목소리 무료 TTS 퍼짐) — Chirp 3 HD 결재 6일째 ② 저장소 이미 public·사장님 메일 10파일 — 비공개 결재 맨 위 ③ 카페 10/10 8칸 중 관문 통과 편 1(schdacct1007), 08:10·10:10 기한 02:10·04:10 ④ video-producer 예약에 16:01 녹음 회차 없음 ⑤ firemap-loop 예약 목록에 없음(순돌이)
 - X-OPS-6 하루 숫자(10/9): 카페 칸 대비 공개 7/8(22:10 대기) · 쇼츠 1/1(관문 통과편, 19:20 칸 skip은 X-YT-FREQ) · 롱폼 0/1(C-1 skip) · [지시] 기한 내 4/5(shorts 비축 2편 미달)
@@ -21,6 +23,8 @@
   착수: firemap-video-producer 22:17 — 녹음 전 준비(meta.json·scorecard·쇼츠 재료), 녹음은 10/10 16:01 runbook_1010
   진행: firemap-video-producer 22:21 — 녹음 뒤 3.5시간 관문을 줄이려 업로드 준비 먼저 끝: ep/W-1/w1meta.py(calc_out에서 제목·설명 숫자 채움, titles.md 1위 숫자 assert — 06시 calc 재실행 뒤 다시 돌림)→meta.json(챕터 8=w1.json 장면 번호·태그 5 검색량 순·5문항·publishAt 10/11 19:30·쿠팡 안 붙임·설명 aitell 7.6 통과) · scorecard 경쟁 칸(롱폼 상위 3편 중앙 26·우리 어림 34) · 쇼츠 재료 cardshorts/w1_receipt·w1_kospi·w1_fx · 남은 것: 16:01 녹음→render→gate, 썸네일은 visual 14:00
 - [지시] **firemap-youtube-loop** (기한 10/10 12:00) 의도: W-1 금요일 종가 갱신 + 법 참모 반론 일부 수용 · 완료 기준: 06시 뒤 {F} 3줄 갱신(calc 재실행) + 말하는 줄에 '투자 권유가 아니라 지난주 공시·종가로 한 계산' 한 줄(검증 참모: 권유·전망 0, 면책은 화면 3곳·카페 끝에만 있고 말에는 없음) → editor 재서명 · 금지: 숫자 외 말 바꾸기
+  착수: firemap-youtube-loop 00:44
+  진행: firemap-youtube-loop 00:48 — 말 면책 한 줄 넣음: 7장 '다음 주가 어떨지는 말해 주지 않습니다' 바로 뒤 '투자를 권하는 게 아니라, 이번 주 공시와 종가로 한 계산이에요.'(script.md·say_v2.txt 같이, 말 55줄) · aitell script(say) 64.6/1,000·12% 통과 · lfvoice plan 장 8·요청 7회 그대로 · **남은 것: {F} 3줄은 미국 10/9 종가(한국 05:00 마감) 뒤 08:4x 회차가 fetch_us→calc 재실행**(editor 재서명은 숫자 갱신 뒤 한 번에)
 - [지시] **firemap-copywriter** (기한 10/10 12:00) 의도: 사용자 참모가 W-1 제목 '= 분기 배당 44번치'를 '배당이 날아갔다'로 읽었다 · 완료 기준: 1위 제목·썸네일을 처음 보는 독자 3명(제미나이·레드팀·Claude)에게 '무엇을 잃었다는 말인가' 한 줄로 묻고, 2명 이상 오독이면 2위로 교체·아니면 그대로 · 금지: 그 밖 이유로 바꾸기(넣었다 뺐다)
 - [지시] **firemap-visual-designer** (기한 10/10 14:00) W-1 썸네일 확정본(copy/titles.md 1위 문구, 레드팀: visual/W-1-thumb에 10/1 자료뿐) · 3명 평균 7
 - [지시] **firemap-shorts** (기한 10/10 00:20) g1_climb v6 = copywriter 18:51 1위 첫 프레임('본전' 빼기) → 1초 시험 7 넘으면 gates_ok, 못 넘으면 12:20 칸 skip+사유(미달 공개 금지)

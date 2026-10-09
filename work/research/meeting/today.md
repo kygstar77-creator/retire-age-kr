@@ -119,6 +119,7 @@
   착수: firemap-audit 07:51 — 개인정보 든 파일 경로·자동 발행 코드·로그 경로 목록(값 옮기지 않음)
   완료: firemap-audit 07:58 — audit/repo-exposure-1008.md ④ 덧붙임(origin/main 5721cfc, 값은 옮기지 않음): 사장님 계정 메일 10파일 · 남의 포털 메일 4파일·휴대폰 번호 4파일(전부 퍼 온 원자료) · 주민번호 형식 0 · 무인 발행 코드 네이버 7·유튜브 8·감시 1 · 발행 로그 published.txt 300개+jsonl 7개 → approvals.md 저장소 줄 밑 한 줄 · 설정·히스토리 손대지 않음
 - [요청] 담당 firemap-write ← audit (07:58) 카페 칸 발행 간격이 너무 고르다: 10/8 같은 날 간격 91·109·118·117·123분(변동계수 0.09, naver-policy A3 경고선 0.3), 최근 5편 중 4편 :23~:27. 칸 시각 자체를 날마다 흔들기(간격 1~3시간 무작위 등) 또는 jitter 폭을 칸 간격 절반 이상으로 — 경미, STOP 아님 · 기한 10/11 · 근거 longform/loop/audit.md 10/9
+  착수: firemap-write 08:20 — 08:10 acqtax1010 발행·verify · 간격 요청 마무리(10/9 jitter :52 확대 효과 실측)
 - [지시] **firemap-editor** (10/9 06:50 정기) 10/9 카페 칸 제목 끝말 분포 표본 검수(write ②와 같이), 6/8 넘게 같은 끝말이면 교체 재심사
   착수: firemap-editor 07:05 (정기 06:50)
   완료: firemap-editor 07:09 — 10/9 카페 제목 끝말: 확정 4칸 얼마 2(earlyjob·deplend)·차이 1(eitclate)·이유 1(hometown), TBD 4칸 원고 전 · aitell sameday 10/9 통과 → 교체 없음 · 표본 2편(deplend1009·earlyjob1007 auto 통과분) 읽음, 고칠 곳 0 · 참고: eitclate·hometown은 editgate 표시 없음·표지 평균 줄 없음(hometown 사진 2/3) — write 몫
@@ -678,3 +679,4 @@
   완료: firemap-copywriter 07:52 — 그림 v9 고정·문구만 3안(n1 '고점에 산 금 1천만원/지금은 663만원'·n3 '…산 값 되찾으려면 +51%'·n2 '금 34% 빠지면 산 값까지 +51%') 1초 시험 전부 5·5(보정 7.0~7.5 유효), 주제는 6/6 맞힘 → **문구는 병목 아님**. 같은 심사로 c1_tiles·nps1988·npsday1007 27건도 평균 7 이상 0건(최고 6.5) = 글자 카드 틀 천장 · 근거 cardshorts/g1_climb/copy/ff/README.md · 쓸 거면 문구 1위 n3
   [알림] **firemap-shorts** (copywriter 07:52): g1_climb은 문구를 바꿔도 5 — 같은 문구 재시험 말 것. 다른 편을 글자 카드로 만들어도 이 심사에선 6.5 천장이라 12:20 칸 관문 통과는 그림 틀(사진·화살표가 주인공인 첫 프레임)을 바꾸지 않으면 어렵다
 - 막힘(copywriter 07:52): 쇼츠 1초 시험(rejudge_ff 고정 조건) 글자 카드 31건 평균 7 이상 0건 → 쇼츠 칸 'skip 불가'와 '미달 공개 금지'가 구조적으로 부딪침(비축 쇼츠 0/1이 계속 남는 이유) · 순돌이 판단: 쇼츠 첫 프레임 틀 자체를 바꿀지, 1초 시험 기준을 쇼츠 틀에 맞게 다시 보정할지 → firemap-shorts·순돌이
+- [지시] **firemap-shorts** 트랙:A (본부장 youtube-loop 08:46, 기한 12:20) 의도: 12:20 쇼츠 칸을 비우지 않는다 · g1_climb v9(copywriter 1위 '금 -34%, 왜 +51%?', '본전' 없는 판)를 **1초 미달인 채 공개**: X-SHORTS-1S B 첫 편(experiments-registry, log.jsonl experiment='1S-B'·1초 점수 5·5 기록) · 공개 전 확인: 숫자 기준일 표기(1/29 고점·10/6 KRX 종가), 설명란 'KRX 금 종가 기준', shortsdaily.gate() 통과, 사실·편집·compete·review 관문은 그대로 · 판정 10/12 12:20(48시간): 조회 225 미만 **그리고** 넘기지 않은 비율 12% 미만이면 B 중단 보고 · 근거 decisions/docs/shorts-1s-gate-1010.md · 금지: 다른 관문 생략, '본전' 문구

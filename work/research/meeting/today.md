@@ -33,6 +33,7 @@
   완료: firemap-write 12:40 — 12:10 retmid1005 cafe/235 발행 verify OK 1862/1862자·사진 3/3 · 20:10 seniorjob1009 gates_ok(제목 T15 '노인일자리 생계급여 받는 분이 뽑히는 곳과 못 뽑히는 곳' 7.17 — T10 7.33은 카페 틀 v2 물음 규칙에 걸려 교체 · 표지 N9 7.67 · 레드팀 사실 지적 2 반영) · 22:10 brokerfee1009 gates_ok(중개수수료 집 줄여 이사 두 번 합계·경계 차이, 제목 K3 7.33·표지 B4 8.0, 법령 원문 4개) · **10/9 카페 8칸 전부 관문 통과** · ② '~까' 끝 2/8 그대로(seniorjob·brokerfee는 다른 끝) · audit 간격 요청: naverpost jitter를 카페 칸 안 최대 :52까지 넓힘(변동계수 0.3은 칸 시각 자체를 흔들어야 닿음 — 회의 몫)
   착수: firemap-write 14:22 — 14:10 hometown1009 발행·verify
   완료: firemap-write 14:52 — 14:10 hometown1009 cafe/236 발행 14:51 verify OK 1103/1103자·사진 3/3 · 비축 eitclate1009 제목 재심 E11 '근로장려금 기한 후 신청 하루 차이로 지급 기한 한 달 달라지는 이유' 3명 평균 7.5(제미나이 8.5·7·레드팀 7, readcheck 0) — 남은 관문 표지·editgate 재날인 · 10/10 비축 후보 schdacct1007(시세 재조회 필요)
+  착수: firemap-write 16:20 — 16:10 isapen1009 발행·verify · 10/10 칸 점검·비축 eitclate1009 표지
 - [표지 요청] eitclate1009(10/10 이후 칸 비축) · 담당 firemap-visual-designer · 제목 E11 확정(review.md 10/9 재심) — K3 틀(오독 3개 고친 판) 색 시험, 3명 평균 7 · 요청 firemap-write 14:52
 - [표지 요청] isapen1009(10/9 16:10 칸, 관문 기한 10:10) · 담당 firemap-visual-designer · 근거 work/research/isapen1009/covers_try(I1~I10 제미나이 최고 6.5, 레드팀 I7 7.0·I9 6.5, review.md) · **제목 확정 L2 "ISA 만기 연금저축 이전, 소득 없는 해엔 한도만 늘고 환급은 0원"(3명 평균 7.67) — 표지 문구를 이 제목에 맞출 것**(레드팀 제안: 노란 바탕 I7 틀 + "ISA 연금 이전 / 소득 없는 해엔 / 이전분 환급 0원", 예상 7.5) · 원고·editgate 끝, 남은 관문은 표지뿐 · 요청 firemap-write 08:40
   착수: firemap-visual-designer 09:04
@@ -47,6 +48,7 @@
   착수: firemap-video-producer 14:18 — 대본 말 줄 32d14ea 뒤 변경 0 확인(65ae31e 머리 1줄뿐), 16:01 창 열리면 runbook_1009대로 0장 1요청 시험부터
   넘김: firemap-video-producer 15:13 (14:18 회차) — 운영실장 메시지대로 C-1 녹음·이후 전부 15:10 회차에 넘김, TTS 0요청 사용·대기 종료(두 회차 동시 전송 방지)
   되받음: firemap-video-producer 15:14 (14:18 회차) — 15:10 회차가 16:01까지 못 기다려 끝남(운영실장 정정) → C-1 녹음·관문 다시 이 회차가 함, 16:01 대기 재개
+  완료(미달): firemap-video-producer 16:40 — C-1 녹음 16:01 창 TTS 10/10(0장 시험 1: 153Hz 통과 → 본 8 → lfretake 1, 11줄 교체) · 편 전체 5.66·앞뒤 +6.4% 통과, **퍼짐 IQR 0.19>0.16 막힘**(5·6·7장 요청이 159·170·171Hz로 뜸, 앞쪽 139~153) · readback 75줄 걸림 1(오인식 추정) · 기준 그대로, lfpitch 안 씀(순돌이 결정 전 금지) → slots 10/10 19:30 skip+사유(G-1 대체 불가) · 녹음분 audio/c-1_1009·voice.1009.json 보관, C-1은 다음 창 처음부터 · 근거 ep/C-1/check/voice_check_1009.txt · 고친 도구: lfvoice fixcut·cutat --cap(묶음 번호가 녹음 때와 어긋나던 것)·lfretake pack 인자
 - [요청] **firemap-youtube-loop** ← PD (22:21, 기한 10/10 12:00 = G-1 녹음 창 전) G-1 script.md 3장(413음절)·4장(519음절)에 `## 3-2`·`## 4-2` 같은 장 머리만 넣어 장마다 270음절 이하로(말 변경 0, C-1 65ae31e 방식) · 확인: `py -3.12 work/lfvoice.py plan research/longform/ep/G-1 --maxreq 10 --cap 270`이 요청 10회 이하·음절 270 안팎 · 근거 lessons 24(519음절 묶음 자르기 실패)
   착수: firemap-youtube-loop 00:44
   완료: firemap-youtube-loop 00:45 — G-1 script.md 장 머리 2줄만 추가('## 3-2. 고점·3개월 전·한 달 전 세 조각'·'## 4-2. 골드뱅킹과 골드바, 그리고 금값이 10% 오르면'), 말 줄 79개 글자 그대로(diff 0) · `lfvoice plan --maxreq 10 --cap 270` = 장 10개·요청 10회, 최대 279음절(4-2·5장, C-1 290 선례 안) · 4장을 셋으로 나누면 11회라 둘로 · PD: g1props.py CUTS 장 이름 '3-2.'·'4-2.' 맞춤 · editor 재서명 요청 아래
@@ -568,3 +570,5 @@
   착수: firemap-shorts 15:10 (운영실장)
   완료(미달): firemap-shorts 15:21 — 10/10 12:20 칸 편 = g1_climb(G-1 '고점에 산 금 본전까지 34%→51%', bars vs·음악 있음) 새로 만듦: compete 5·check 문제 없음·aitell 0.0(.edit.json auto)·review 세 줄 끝. 첫 프레임 1초 고정 조건 v4 5·5, v5 5·5(보정 gongjae1002 7.0~7.5 유효) → 7 미달, gates_ok 안 적음, slots 10/10 12:20 칸 신설. 비축 쇼츠 0/1 그대로(시간 내 둘째 편 못 만듦). 막힘: vs 틀로는 7 안 나옴(최고 6.5) — 다음 1안 +51% 전면 숫자(hero)나 그림 요소 첫 프레임, 공개 전날 G-1 calc 재실행 뒤 숫자 재확인 · 근거 cardshorts/g1_climb/review.md
 - 막힘(운영실장 15:21): ① C-1 롱폼(관문 기한 19:30) 녹음은 14:18 PD 세션(local_c8023e07)이 16:01 창에서 이어받음(dcb4c19) — gate 전 걸림 2개: meta.json desc 없음(chapters.py 먼저)·{CAFE} 채우면 카페 링크 2개로 C9. 19:05 운영실장 회차에 voice.json·gates_ok 확인, 없으면 대체 G-1 판단 → firemap-video-producer ② 10/10 12:20 쇼츠 g1_climb 첫 프레임 1초 5·5 미달(통과선 7, a73584d) · 기한 10/10 00:20 · 비축 쇼츠 0/1 → firemap-shorts 다음 안(+51% 전면 숫자·금 그림) ③ 비축 카페 실사용 0/2(npsage1009는 10/14부터) → firemap-write 16:10 정기 1순위
+
+- [요청] **firemap-meeting** ← firemap-video-producer (16:40) 롱폼 녹음 창 배정 · 사실: 10/10 19:30 칸 skip(C-1 IQR 0.19). 남은 대기 C-1(75줄·9요청)·W-1(54줄≈6요청, 10/11 19:30 칸이면 10/10 창 필수)·G-1(다시 녹음) — 한 창 10요청이라 하루 한 편 · 제안: 10/10 창 W-1, 10/11 창 C-1(10/12 칸) 또는 G-1 · 판단 필요(순돌이): ① 1요청 시험이 뒤쪽 요청의 음높이 흔들림(+15%)을 못 잡음 — 무료 제미나이 TTS로는 IQR 0.16이 운(R-1·G-1·C-1 세 번 막힘) ② 이번 C-1 녹음분(c-1_1009)에 lfpitch 사본 소리 심사 허용 여부 ③ Chirp 3 HD 결재(approvals.md, 3편 0.95%)

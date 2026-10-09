@@ -46,7 +46,7 @@ for l in pick:   # 옛 녹음을 먼저 옮겨 둔다
 rk = V.hashlib.md5(('|'.join([cfg['model'], cfg['voice']] + todo)).encode()).hexdigest()[:16]; raw = os.path.join(V.aud_dir(ep), '_raw', rk + '.pcm')
 if not os.path.exists(raw): V.request(cfg, todo).astype(np.int16).tofile(raw); print('저장', raw)
 # TTS가 지시문을 앞머리에 읽기도 해서 cut 대신 받아쓰기 맞춤(fixcut 경계)으로 자른다 — 묶음 하나짜리 가짜 pack, 쓰기는 여기서
-V.pack = lambda secs, mr: [[{'title': 'retake', 'lines': [l['text'] for l in order]}]]
+V.pack = lambda secs, mr, cap=0: [[{'title': 'retake', 'lines': [l['text'] for l in order]}]]
 V.fixcut(ep, 0, dry=True)
 pcm, bounds, seg = V.LAST_FIX; pad = np.zeros(int(V.SR * 0.08), dtype=np.float32)
 cands = {}

@@ -319,9 +319,9 @@ def check(ep, vj=None):
     ok = whole >= 5.5 and not bad and not ep_bad and not d.get('missing') and len(recs) == 1 and '?' not in recs
     print('통과' if ok else '막힘'); return ok
 
-def cutat(ep, gi, times, maxreq=9):
+def cutat(ep, gi, times, maxreq=9, cap=0):
     # 받아쓰기로 확인한 문장 시작 시각으로 저장본을 자른다: 시각마다 0.3초 넘는 가장 가까운 쉼(0.8초 안)에 붙인다. API 안 부름.
-    cfg = lock(ep); g = pack(sections(ep), maxreq)[gi]
+    cfg = lock(ep); g = pack(sections(ep), maxreq, cap)[gi]   # 녹음 때와 같은 --cap이어야 묶음 번호가 맞는다(10/9 C-1)
     texts = [speak(ep, t) for s in g for t in s['lines']]; todo = [t for t in texts if not os.path.exists(wav_of(ep, cfg, t)[1])]
     rk = hashlib.md5(('|'.join([cfg['model'], cfg['voice']] + todo)).encode()).hexdigest()[:16]
     pcm = np.fromfile(os.path.join(aud_dir(ep), '_raw', rk + '.pcm'), dtype=np.int16).astype(np.float32)
@@ -345,11 +345,11 @@ def cutat(ep, gi, times, maxreq=9):
     for t, sg in zip(todo, [pcm[a:b] for a, b in zip([st] + cuts, cuts + [len(pcm)])]): write(wav_of(ep, cfg, t)[1], np.concatenate([pad, sg, pad]))
     print('  시각으로 자름', len(todo), '문장'); build(ep)
 
-def fixcut(ep, gi, maxreq=9, dry=False):
+def fixcut(ep, gi, maxreq=9, dry=False, cap=0):
     # 받아쓰기 맞춤 자르기(10/1 E-1 사고 뒤 추가): 저장본을 모든 쉼(0.25초+)에서 조각내 조각마다 받아쓰고,
     # 조각을 대본 문장에 차례대로 붙여(DP, 글자 닮음 최대) 문장 파일을 만든다. 앞머리에 TTS가 읽어 버린 지시문(영어)은 버린다.
     import io, difflib
-    cfg = lock(ep); g = pack(sections(ep), maxreq)[gi]
+    cfg = lock(ep); g = pack(sections(ep), maxreq, cap)[gi]   # 녹음 때와 같은 --cap이어야 묶음 번호가 맞는다(10/9 C-1)
     texts = [speak(ep, t) for s in g for t in s['lines']]
     rk = hashlib.md5(('|'.join([cfg['model'], cfg['voice']] + texts)).encode()).hexdigest()[:16]
     pcm = np.fromfile(os.path.join(aud_dir(ep), '_raw', rk + '.pcm'), dtype=np.int16).astype(np.float32)
@@ -497,8 +497,8 @@ if __name__ == '__main__':
     cmd, ep = sys.argv[1], os.path.abspath(sys.argv[2]); mr = int(sys.argv[sys.argv.index('--maxreq') + 1]) if '--maxreq' in sys.argv else 9
     cap = int(sys.argv[sys.argv.index('--cap') + 1]) if '--cap' in sys.argv else 0
     if cmd == 'readback': sys.exit(0 if readback(ep, sys.argv[3].split(',') if len(sys.argv) > 3 and not sys.argv[3].startswith('--') else None) else 1)
-    elif cmd == 'fixcut': fixcut(ep, int(sys.argv[3]), mr, dry='--dry' in sys.argv)
-    elif cmd == 'cutat': cutat(ep, int(sys.argv[3]), [float(x) for x in sys.argv[4].split(',')], mr)
+    elif cmd == 'fixcut': fixcut(ep, int(sys.argv[3]), mr, dry='--dry' in sys.argv, cap=cap)
+    elif cmd == 'cutat': cutat(ep, int(sys.argv[3]), [float(x) for x in sys.argv[4].split(',')], mr, cap)
     elif cmd == 'plan': make(ep, mr, dry=True, cap=cap)
     elif cmd == 'make':
         n = sum(len(x['lines']) for x in sections(ep))

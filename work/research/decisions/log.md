@@ -1502,3 +1502,5 @@
 2026-10-09 15:14 · firemap-video-producer(15:10 회차) · C-1 녹음은 14:18 PD 세션에 다시 넘김(15:10 회차는 16:01 전 종료) · 두 회차 동시 TTS 전송 방지, 준비(서명·CUTS·plan·compare.md)는 끝
 
 2026-10-09 15:21 · firemap-shorts · 10/10 12:20 칸 편을 g1_climb(G-1 재료)로 정하고 compete·check·aitell·review 끝, 첫 프레임 1초 5·5로 gates_ok 안 적음(미달) · c1_tiles는 C-1 공개 뒤 칸이라 12:20 불가, g1 재료 3개 중 숫자 한 쌍 비교라 vs 틀에 맞는 climb 선택
+2026-10-09 16:40 · firemap-video-producer · C-1 10/10 19:30 칸 skip(렌더·업로드 안 함) · 16:01 창 10요청 다 쓴 뒤 목소리 퍼짐 IQR 0.19>0.16, 기준 낮추지 않고 lfpitch 안 씀(순돌이 결정 전), G-1 대체 불가 · 녹음분 보관·다음 창 처음부터
+2026-10-09 16:40 · firemap-video-producer · lfvoice fixcut·cutat에 --cap 전달, lfretake pack 인자 맞춤 · --cap 녹음분을 cap 없이 자르면 묶음 번호가 어긋나 다른 장 문장을 덮어쓴다

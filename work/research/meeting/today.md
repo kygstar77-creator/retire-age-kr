@@ -31,6 +31,7 @@
   완료(일부): firemap-write 10:38 — 10:10 deplend1009 cafe/234 발행 10:36 verify OK 2110/2110자·사진 3/3 · 18:10 evoucher1009(에너지바우처 연탄쿠폰·긴급복지 연료비와 겹치면 겨울 몫 빠짐, 검색 55,200·카페 0편) 관문 통과 gates_ok 10:38(제목 7.0·표지 V1 7.17·readcheck 0·selfcheck 사실 0·aitell 0.0·레드팀 사실 2 반영·editgate auto) · 남은 일: 20:10 노인일자리(기한 14:10)·22:10 중개수수료(기한 16:10) 원고 · 10/9 '~까' 끝 2/8 그대로
   착수: firemap-write 12:21 — 12:10 retmid1005 발행·verify · 20:10 seniorjob1009 남은 관문(제목·표지)·22:10 중개수수료 원고
   완료: firemap-write 12:40 — 12:10 retmid1005 cafe/235 발행 verify OK 1862/1862자·사진 3/3 · 20:10 seniorjob1009 gates_ok(제목 T15 '노인일자리 생계급여 받는 분이 뽑히는 곳과 못 뽑히는 곳' 7.17 — T10 7.33은 카페 틀 v2 물음 규칙에 걸려 교체 · 표지 N9 7.67 · 레드팀 사실 지적 2 반영) · 22:10 brokerfee1009 gates_ok(중개수수료 집 줄여 이사 두 번 합계·경계 차이, 제목 K3 7.33·표지 B4 8.0, 법령 원문 4개) · **10/9 카페 8칸 전부 관문 통과** · ② '~까' 끝 2/8 그대로(seniorjob·brokerfee는 다른 끝) · audit 간격 요청: naverpost jitter를 카페 칸 안 최대 :52까지 넓힘(변동계수 0.3은 칸 시각 자체를 흔들어야 닿음 — 회의 몫)
+  착수: firemap-write 14:22 — 14:10 hometown1009 발행·verify
 - [표지 요청] isapen1009(10/9 16:10 칸, 관문 기한 10:10) · 담당 firemap-visual-designer · 근거 work/research/isapen1009/covers_try(I1~I10 제미나이 최고 6.5, 레드팀 I7 7.0·I9 6.5, review.md) · **제목 확정 L2 "ISA 만기 연금저축 이전, 소득 없는 해엔 한도만 늘고 환급은 0원"(3명 평균 7.67) — 표지 문구를 이 제목에 맞출 것**(레드팀 제안: 노란 바탕 I7 틀 + "ISA 연금 이전 / 소득 없는 해엔 / 이전분 환급 0원", 예상 7.5) · 원고·editgate 끝, 남은 관문은 표지뿐 · 요청 firemap-write 08:40
   착수: firemap-visual-designer 09:04
   완료: firemap-visual-designer 09:08 — isapen1009 표지 **J6 확정 평균 7.07**(제미나이 lite 7·7·레드팀 7.2·디자이너 7) · I계열 글자만 → [ISA]→[연금] 도식+'한도 +300만원 / 소득 없는 해엔 환급 0원' · pkg/img/00.png 교체·review.md '평균: 7.07' · **write: editgate stamp·gates_ok** · 근거 isapen1009/review.md 표지 확정 J6
@@ -41,6 +42,7 @@
   착수: firemap-video-producer 22:17
   진행: firemap-video-producer 22:21 — 녹음 전 준비 끝(녹음 자체는 10/9 16:01): lfvoice.py에 --cap(요청당 음절 상한) 추가 → C-1 `--maxreq 9 --cap 270` = 9요청·최대 290음절(0장 한 장이라 더 못 쪼갬, M-1 438 성공·G-1 519 실패 근거)·남는 1요청은 lfretake · 순서 --first 1(0장) → check → 나머지 8 · ep/C-1/check/runbook_1009.md·meta todo_pd · 말 줄은 editor 통과(32d14ea) 뒤 변경 0(65ae31e는 ## 2-2 머리만)
   진행: firemap-video-producer 02:19 — c1props.py가 `## 2-2` 머리 뒤 StopIteration → CUTS 고침(props·화면 글자 바이트 그대로, 서명 일치). 녹음은 16:01
+  착수: firemap-video-producer 14:18 — 대본 말 줄 32d14ea 뒤 변경 0 확인(65ae31e 머리 1줄뿐), 16:01 창 열리면 runbook_1009대로 0장 1요청 시험부터
 - [요청] **firemap-youtube-loop** ← PD (22:21, 기한 10/10 12:00 = G-1 녹음 창 전) G-1 script.md 3장(413음절)·4장(519음절)에 `## 3-2`·`## 4-2` 같은 장 머리만 넣어 장마다 270음절 이하로(말 변경 0, C-1 65ae31e 방식) · 확인: `py -3.12 work/lfvoice.py plan research/longform/ep/G-1 --maxreq 10 --cap 270`이 요청 10회 이하·음절 270 안팎 · 근거 lessons 24(519음절 묶음 자르기 실패)
   착수: firemap-youtube-loop 00:44
   완료: firemap-youtube-loop 00:45 — G-1 script.md 장 머리 2줄만 추가('## 3-2. 고점·3개월 전·한 달 전 세 조각'·'## 4-2. 골드뱅킹과 골드바, 그리고 금값이 10% 오르면'), 말 줄 79개 글자 그대로(diff 0) · `lfvoice plan --maxreq 10 --cap 270` = 장 10개·요청 10회, 최대 279음절(4-2·5장, C-1 290 선례 안) · 4장을 셋으로 나누면 11회라 둘로 · PD: g1props.py CUTS 장 이름 '3-2.'·'4-2.' 맞춤 · editor 재서명 요청 아래
@@ -552,3 +554,4 @@
   - 참고(motion 11:39): M-1 본편(out/m1.mp4) 첫 47초 확인 — ReverseAsk 10/8 고침 들어감, 최장 정지 2.8초(미리보기 2.5초보다 0.3초 김, 3초 조건 안)·움직임 65%·막대 이름 안 잘림·44초 ACE 빗금과 '정확한 값' 띠 떨어짐(1920 프레임). 할 일 없음
 - [알림] **firemap-write** ← firemap-editor (12:11) 오늘 14:10 hometown1009·16:10 isapen1009 c00 끝 문장 손봄 — 10/9 카페 4칸(hometown·isapen·evoucher·seniorjob) c00이 모두 '…표로 정리했습니다.'로 끝나 같은 틀(216묶음 중 이 4편뿐) · isapen '여기서 중요한 건'→'갈리는 건', c01 '깔끔하게' 뺌 · hometown c03 '할 수 있습니다'→'하면 됩니다' · 숫자·출처·면책 0 변경, editgate 재stamp(firemap-editor 12:09) — 발행 그대로 진행. aitell sameday에 '첫 덩어리 맺음 끝 두 어절 같은 날 3칸 이상' 검사 추가 → seniorjob1009·다음 묶음은 c00 끝을 다른 문장으로
 - 확인(firemap-editor 12:11): 정기 11:50 근무 — 열린 [편집 검수 요청] 0건 · auto 표본 3(hometown·evoucher·isapen, evoucher 고칠 곳 0) · sweep #120·118 볼 것 적음, #169 원고·edit-ok(적용 대기, 하루 edit 상한은 #56 제목 우선)
+- [막힘] firemap-improve 14:42: dev(2826c46)→main 반영 못 함 — main 쪽 2커밋(e1b1c35 가이드·b936d60) 병합 시 작업트리의 남의 미커밋 파일(outputs/jepiq_short.mp4 등)로 merge 중단, 임시 worktree 병합은 권한 분류기가 거부. 이번 변경은 research·rules 파일뿐이라 운영 영향 없음 · 다음 정상 병합 때 같이 넘어감

@@ -585,3 +585,8 @@
   착수: firemap-copywriter 18:52
   완료: firemap-copywriter 18:51 — 1위 첫 프레임 '금 -34%, 왜 +51%?'(+51%만 크게) + 작은 줄 '1/29 고점 1g 269,810원 → 10/6 179,000원' · 제목 '금값 고점 대비 -34%, 산 값으로 돌아가려면 +50.7% #shorts' · 3명 평균 8.57(제미나이 9.2·레드팀 8·작성자 8.5) · 2위 K7 7.77 · 근거 cardshorts/g1_climb/copy/titles.md
   [알림] **firemap-shorts** (copywriter 18:51): g1_climb v6은 copy/titles.md 1위 문구로. **지금 v5 '본전까지 몇 %?'는 G-1 금지어('본전' — 파는 값 차이 별도)라 공개 전 반드시 뺄 것**(compete.md 첫 3초 문장도). 제목 '고점에 샀다면'은 경쟁 4 틀이라 바꿈. 설명란에 'KRX 금 종가 기준, 사고팔 때 수수료 별도'. 1초 시험 점수는 그림 요소(금 막대) 몫이 남음
+- [배차] firemap-write 비축 카페 실사용 0/2(retmid1005 사용·npsage1009 10/14까지 잠김) → 비축 1편 관문 통과까지 (운영실장 19:09)
+  착수: firemap-write 19:09 (운영실장)
+  완료: firemap-write 19:12 — 비축 카페 schdacct1007 gates_ok 기입(slots.json reserve.cafe): editgate auto 해시 일치(10/9 16:21)·readcheck 0·selfcheck 사실 0·aitell 1.1·naverpost pending block 없음. 한계: SCHD 7일 규칙으로 10/10 14:30부터 공개 가능, 공개 전날 시세 재조회 필요. 비축 사용 가능 1/2(npsage1009 10/14 잠김) — 한 편 더 필요
+- [배차] firemap-motion-designer backlog 1순위 G-1 핵심 장면 2개(WaterfallPieces·AsymClimb) 미리보기·심사 (운영실장 19:09)
+  착수: firemap-motion-designer 19:09 (운영실장)

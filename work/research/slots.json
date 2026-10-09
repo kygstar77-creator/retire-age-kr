@@ -32,7 +32,10 @@
    {
     "item": "schdacct1007",
     "ep": "work/research/schdacct1007/pkg",
-    "status": "관문 통과 2026-10-06(제목 E 7.5·표지 S3 7.58·레드팀 사실 3 반영) · 10/9 16:21 firemap-write 시세 재조회(SCHD 10/8 종가 33.15달러, 6,195→6,290만원)·readcheck 0·selfcheck 사실 0·aitell 1.1·editgate auto 재날인 · SCHD 7일 규칙(#201 10/3)로 10/10부터 공개 가능 · 공개 전날 시세 다시 볼 것"
+    "status": "관문 통과 2026-10-06(제목 E 7.5·표지 S3 7.58·레드팀 사실 3 반영) · 10/9 16:21 firemap-write 시세 재조회(SCHD 10/8 종가 33.15달러, 6,195→6,290만원)·readcheck 0·selfcheck 사실 0·aitell 1.1·editgate auto 재날인 · SCHD 7일 규칙(#201 10/3)로 10/10부터 공개 가능 · 공개 전날 시세 다시 볼 것 | 2026-10-09 19:11 firemap-write 비축 재확인: editgate auto 일치·readcheck 0·selfcheck 사실 0·aitell 1.1·pending block 없음 → gates_ok 기입(SCHD 마지막 공개 schd1003 10/3 14:29 → 10/10 14:30부터)",
+    "gates_ok": "2026-10-09 19:11",
+    "by": "firemap-write",
+    "at": "2026-10-09 19:11"
    }
   ],
   "long": [

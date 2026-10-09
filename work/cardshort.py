@@ -67,7 +67,7 @@ def card(spec):
     for ln in spec.get('sub', []):
         d.text((M, y + 4), ln, font=PD7(56), fill=YELLOW); y += 80
     y += 26
-    if spec.get('bars_style') == 'vs': return im, y   # vs판: 숫자 상자 2개가 제목 바로 아래, 번호 줄은 그 뒤(bars_frame)
+    if spec.get('bars_style') in ('vs', 'gold'): return im, y   # gold판도 글을 gold_frame이 다 그린다 / vs판: 숫자 상자 2개가 제목 바로 아래, 번호 줄은 그 뒤(bars_frame)
     for i, p in enumerate(spec['points'], 1):
         d.text((M, y - 2), str(i), font=BHS(58), fill=YELLOW)
         for ln in wrap_runs(d, runs(p), PD7(44), SAFE_R - M - 62):
@@ -140,9 +140,40 @@ def vs_frame(base, spec, top, t):
     d.text((M, y + 14), spec.get('foot', '파이어맵'), font=PD7(34), fill=(255, 150, 70))
     return im, y + 60
 
+def ingot(d, x0, x1, ybot, h, tag=None):
+    """금 막대 그림(2026-10-09 firemap-shorts, g1_climb v6 1초 시험 '그림 요소'): 아래가 넓은 사다리꼴 옆면 + 밝은 윗면. h는 높이(값 비율로 정함)."""
+    inset = int((x1 - x0) * 0.10); top = ybot - h; face = int(min(70, h * 0.22))
+    d.polygon([(x0 + inset, top + face), (x1 - inset, top + face), (x1, ybot), (x0, ybot)], fill=(214, 150, 20))
+    d.polygon([(x0 + inset, top + face), (x1 - inset, top + face), (x1 - inset * 0.55, top + face + h * 0.18), (x0 + inset * 0.55, top + face + h * 0.18)], fill=(240, 185, 40))
+    d.polygon([(x0 + inset * 2.2, top), (x1 - inset * 2.2, top), (x1 - inset, top + face), (x0 + inset, top + face)], fill=(255, 226, 120))
+    d.line((x0 + 10, ybot - 4, x1 - 10, ybot - 4), fill=(150, 98, 10), width=6)
+
+def gold_frame(base, spec, top, t):
+    """'gold' 모양(2026-10-09 firemap-shorts): 첫 프레임 = 큰 +51% 한 숫자 + 금 막대 두 개(높이는 269,810 대 179,000 비율, 그림일 뿐 글자 아님). 처음부터 다 보인다."""
+    im = base.copy(); d = ImageDraw.Draw(im); M = 64; g = spec['gold']
+    y = 262
+    s = fit(d, g['top'], SAFE_R - M, 118); draw_runs(d, M, y, runs(g['top']), BHS(s)); y += int(s * 1.15) + 6
+    s0 = fit(d, g['big'], SAFE_R - M, 360, lo=120); d.text((M, y - int(s0 * 0.06)), g['big'], font=BHS(s0), fill=YELLOW); y += int(s0 * 1.12) + 30
+    hi, lo = g['hi'], g['lo']; hh = 500; ybot = y + 20 + hh; bw = 380; gap = 80
+    xa = M; xb = xa + bw + gap
+    ingot(d, xa, xa + bw, ybot, hh); ingot(d, xb, xb + bw, ybot, int(hh * lo / hi))
+    ax = xb + bw // 2; ay0 = ybot - hh + 20; ay1 = ybot - int(hh * lo / hi) - 30   # 빨간 화살표: 고점 높이에서 지금 높이로
+    if ay1 > ay0 + 60:
+        d.line((ax, ay0, ax, ay1 - 40), fill=(255, 70, 60), width=34); d.polygon([(ax - 62, ay1 - 50), (ax + 62, ay1 - 50), (ax, ay1 + 20)], fill=(255, 70, 60))
+    for xx, lab in ((xa, g['l1']), (xb, g['l2'])):
+        f = BHS(fit(d, lab, bw + gap - 20, 62, 30, BHS)); d.text((xx + (bw - d.textlength(lab, font=f)) / 2, ybot + 14), lab, font=f, fill=WHITE)
+    y = ybot + 14 + 86
+    if t < spec.get('vs_src_delay', 0): return im, y + 3 * 38 + 60
+    if spec.get('chip_late'): chip_row(d, spec)
+    for ln in wrap_runs(d, [(c, GREY) for c in spec['source']], PD5(27), SAFE_R - M):
+        draw_runs(d, M, y, ln, PD5(27)); y += 38
+    d.text((M, y + 14), spec.get('foot', '파이어맵'), font=PD7(34), fill=(255, 150, 70))
+    return im, y + 60
+
 def bars_frame(base, spec, top, t):
     """비교 막대. 0.9초 동안 자라고 머문다 — 영상이 반복될 때마다 다시 자란다."""
     if spec.get('bars_style') == 'vs': return vs_frame(base, spec, top, t)
+    if spec.get('bars_style') == 'gold': return gold_frame(base, spec, top, t)
     im = base.copy(); d = ImageDraw.Draw(im); M = 64
     items = spec['bars']; mx = max(v for _, v, _ in items)
     g = min(1.0, t / 0.9); g = 1 - (1 - g) ** 3

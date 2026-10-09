@@ -310,6 +310,15 @@ def sameday_check(day, pkg=None):
     for k, v in ends.items():
         if len(v) >= END_SAME_MIN and (not me or os.path.basename(os.path.dirname(os.path.abspath(pkg))) in v):
             endbad.append(f"제목 끝말 '{k}' {len(v)}칸({', '.join(v)}) — 같은 날 {END_SAME_MIN}칸 이상이면 다른 끝말로")
+    # 10/9 editor: 그날 4칸 c00이 모두 '…표로 정리했습니다.'로 끝났다(216묶음 중 그 4편뿐) — 첫 덩어리 맺음 문장 끝 두 어절도 같은 기준으로 본다
+    leads = collections.defaultdict(list)
+    for i, d in items:
+        c0 = os.path.join(d, 'c00.txt')
+        ss = sentences(open(c0, encoding='utf-8').read()) if os.path.exists(c0) else []
+        if ss: leads[' '.join(ss[-1].split()[-2:])].append(i)
+    for k, v in leads.items():
+        if len(v) >= END_SAME_MIN and (not me or os.path.basename(os.path.dirname(os.path.abspath(pkg))) in v):
+            endbad.append(f"첫 덩어리 맺음 '{k}' {len(v)}칸({', '.join(v)}) — 같은 날 {END_SAME_MIN}칸 이상이면 다른 문장으로")
     return over, endbad
 
 

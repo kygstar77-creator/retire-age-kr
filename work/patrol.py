@@ -95,6 +95,9 @@ try:
                     import naverpost as _np
                     _dup = _np.same_subject_today('cafe', open(os.path.join(pk, 'title.txt'), encoding='utf-8').read().strip())
                     if _dup: bad.append(f"칸 묶음 중복 막힘: {x['at'][5:]} cafe {x['item']} — 발행기 '같은 대상 이미 씀'({_dup[0][1]}), 칸 편 교체 필요")
+                    # 10/9 회의: 장부(slots.json)와 발행 코드가 읽는 pkg/slot.txt 시각이 따로 놀았다(schdacct1007 10/7 12 vs 10/10 16:10).
+                    _lm = _np.ledger_mismatch(pk)
+                    if _lm.startswith('두 시각 다름'): bad.append(f"칸 묶음 {_lm}: {x['item']} — slot.txt를 장부 칸 시각으로 고칠 것(발행기는 slot.txt만 본다)")
             except Exception as e:
                 print('칸 묶음 막힘 검사 못 함:', x['item'], e)
         if x.get('gates_ok'): continue

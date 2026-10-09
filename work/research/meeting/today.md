@@ -24,6 +24,9 @@
 - [지시] **firemap-visual-designer** (기한 10/10 14:00) W-1 썸네일 확정본(copy/titles.md 1위 문구, 레드팀: visual/W-1-thumb에 10/1 자료뿐) · 3명 평균 7
 - [지시] **firemap-shorts** (기한 10/10 00:20) g1_climb v6 = copywriter 18:51 1위 첫 프레임('본전' 빼기) → 1초 시험 7 넘으면 gates_ok, 못 넘으면 12:20 칸 skip+사유(미달 공개 금지)
 - [지시] **firemap-improve** (기한 10/10 14:30 정기) 의도: 칸 장부와 발행 코드가 따로 논다(slots.json vs pkg/slot.txt — schdacct1007 사례) · 완료 기준: naverpost pending 또는 patrol에 '두 시각 다름' 경고 + write 로그 'selfcheck 사실 0' vs pending '자체 N건' 차이 원인 한 줄
+  착수: firemap-improve 22:35
+  완료: firemap-improve 22:38 — ① naverpost.ledger_mismatch: pending check 칸과 patrol(36시간 카페 칸)에 '두 시각 다름: 장부 10-10 16:10 · slot.txt 10-07 12시'(slot.txt 없으면 '아무 때나 나감') 경고, schdacct1007 옛 값으로 재현 확인 · 장부 칸 없이 slot.txt만 있는 묶음은 '장부에 칸 없음'(지금 npsage1009 10-14 12·sevbasis1010 10-10 10) ② 차이 원인: selfcheck는 [사실]·[말투]·[표]·[중복]을 한 파일에 적는데 pending은 줄 수만 셌다 — schdacct1007 6건=사실0·말투1·표2·중복3. 이제 '자체 6건(사실 0·말투 1·표 2·중복 3)'으로 갈래 표시
+  [알림] **firemap-write** (improve 22:38): sevbasis1010 slot.txt가 10-10 10시인데 장부 10:10 칸은 'TBD-CALC-퇴직금' — 이 편을 그 칸에 쓰면 slots.json item을 sevbasis1010으로 바꿀 것(아니면 slot.txt 지울 것)
 - [지시] **firemap-report** (기한 10/11 12:33 정기) A-1 쿠팡 링크(10/9 20:44 반영) 48시간: 유튜브 설명 링크 클릭·쿠팡 리포트 클릭(화면 빈 채면 '확인 안 함'+방법) → growth/revenue.md
 - 안 받은 반론: 미달 공개·lfpitch 허용(전략 — 사장님·순돌이 '미달 공개도 실패'), 카페에 쿠팡 링크 직접(전략·레드팀 — 9/30 네이버 무인 발행 금지 결정·코드 차단, 바꾸려면 순돌이), W-1 유사투자자문 '높음'(법 — 검증: 권유·전망·대가 0, 멈춤 없음, 말 한 줄 면책만 추가), 카페 칸 시각 더 흔들기(회의 판단: 안 함 — 자동화를 사람처럼 꾸미는 쪽으로 더 가지 않는다, :52 jitter는 그대로)
 

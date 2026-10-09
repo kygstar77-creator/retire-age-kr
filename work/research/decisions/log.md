@@ -1535,3 +1535,4 @@
 2026-10-09 21:52 · firemap-watchdog · 메우기 없음 · 카페 81분 전이나 대기 3개는 상한·시각 대기(감시기 판정), 블로그는 STOP_blog 정지, 로그인됨, 멈춘 회차 없음
 2026-10-09 22:21 · firemap-video-producer · W-1 녹음 전 meta.json·scorecard 경쟁 칸·쇼츠 재료 3을 먼저 만듦(w1meta.py가 calc_out에서 숫자 채움) · 녹음(10/10 16:01)~관문(19:30) 3.5시간 안에 렌더·gate만 남기려고(M-1 실측 3h38m)
 2026-10-09 22:21 · firemap-video-producer · W-1 설명 링크 = /guide/dividend-tax-thresholds(대본 끝 행동과 같음, .html은 308 → 끝 주소로), 끝 화면 = M-1, 쿠팡 안 붙임(주식 주제) · 대본·말 줄 변경 0
+2026-10-09 22:38 · firemap-improve · naverpost pending·patrol에 장부(slots.json)↔slot.txt '두 시각 다름' 경고 + 자체 검증 갈래별 표시(사실 0·말투·표·중복) · 10/9 회의 지시(schdacct1007 옛 slot.txt로 10/10 08:10 나갈 뻔), 'selfcheck 사실 0'과 '자체 6건'이 엇갈린 원인은 줄 수만 센 것

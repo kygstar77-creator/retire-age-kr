@@ -374,5 +374,12 @@
   "task": "-(14시, 임무표 밖)",
   "did": "재고 3+3 충족 확인 · 일감표1 닫음(대기 카페 6편 textrule 충족) · rules.json 카페 제목 금액 규칙 추가 · ㄹ까 오분류 잔존 0 확인 · fire-cases 못 찾음",
   "blocked": "없음"
+ },
+ {
+  "date": "2026-10-09",
+  "hour": 22,
+  "task": "회의 지시",
+  "did": "pending·patrol에 slots.json↔slot.txt 두 시각 다름 경고, 자체 검증 갈래 표시",
+  "blocked": "없음"
  }
 ]

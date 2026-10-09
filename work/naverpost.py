@@ -461,6 +461,33 @@ def slot_of(pkg):
     try: return datetime.datetime.strptime(open(f, encoding='utf-8').read().strip()[:13], '%Y-%m-%d %H')
     except Exception: return None
 
+def ledger_mismatch(pkg, now=None):
+    """칸 장부(research/slots.json)와 발행 코드가 읽는 pkg/slot.txt의 시각이 다르면 경고 한 줄. 같으면 ''.
+
+    2026-10-09 21:41 회의(레드팀): schdacct1007은 장부상 10/10 16:10 칸인데 slot.txt는 옛 칸 '2026-10-07 12'
+    그대로였다. 발행 코드는 slot.txt만 보므로 시각이 지난(late) 묶음으로 잡혀 10/10 08:10 첫 회차에 나갈 뻔했다
+    (SCHD 7일 규칙 14:30 전). 회의·write가 장부만 고치고 slot.txt를 안 고치면 아무도 몰랐다.
+    지난 칸은 보지 않는다(이미 나갔거나 장부가 정리할 몫)."""
+    try:
+        item = os.path.basename(os.path.dirname(os.path.abspath(pkg)))
+        sl = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research', 'slots.json'), encoding='utf-8'))
+    except Exception:
+        return ''
+    now = now or datetime.datetime.now()
+    ats = [x['at'] for x in sl.get('slots', [])
+           if x.get('item') == item and not x.get('skip') and x.get('at', '') >= (now - datetime.timedelta(hours=1)).strftime('%Y-%m-%d %H:%M')]
+    t = slot_of(pkg)
+    mine = t.strftime('%Y-%m-%d %H') if t else None
+    if ats:
+        if mine is None:
+            return '두 시각 다름: 장부 %s · slot.txt 없음(아무 때나 나감)' % ats[0][5:]
+        if mine not in [a[:13] for a in ats]:
+            return '두 시각 다름: 장부 %s · slot.txt %s' % (ats[0][5:], mine[5:] + '시')
+        return ''
+    if t and t >= now - datetime.timedelta(hours=1):
+        return '장부에 칸 없음: slot.txt %s시만 있음' % mine[5:]
+    return ''
+
 def slot_state(pkg, now=None):
     """'early'(아직 그 시각 전) · 'now'(그 시각 안) · 'late'(지남) · None(시각 없음)."""
     t = slot_of(pkg)
@@ -535,9 +562,22 @@ def pending_check(pkg):
         if not os.path.exists(f):
             out.append(tag + ' 안 돌림'); continue
         body = open(f, encoding='utf-8').read()
-        n = sum(1 for ln in body.splitlines()
-                if ln.strip() and not ln.startswith('#') and '지적 없음' not in ln)
-        if n: out.append('%s %d건' % (tag, n))
+        lines = [ln for ln in body.splitlines()
+                 if ln.strip() and not ln.startswith('#') and '지적 없음' not in ln]
+        if not lines: continue
+        if tag == '자체':
+            # 2026-10-09 회의: write 로그는 'selfcheck 사실 0'인데 여기는 '자체 6건'(schdacct1007)이라 두 말이 엇갈렸다.
+            # selfcheck는 [사실]·[말투]·[표]·[중복]을 한 파일에 적는데 줄 수만 셌기 때문이다. 6건은 말투1·표2·중복3이었다.
+            # 막을 거리는 [사실]이고 나머지는 참고라 갈래별로 보여 준다.
+            kinds = {}
+            for ln in lines:
+                m = re.match(r'\[([^\]]+)\]', ln)
+                k = m.group(1) if m else '기타'
+                kinds[k] = kinds.get(k, 0) + 1
+            parts = ['사실 %d' % kinds.pop('사실', 0)] + ['%s %d' % kv for kv in kinds.items()]
+            out.append('자체 %d건(%s)' % (len(lines), '·'.join(parts)))
+        else:
+            out.append('%s %d건' % (tag, len(lines)))
     # 종목·배당 묶음은 주가·환율이 글에 박힌다. 2026-09-30 22시: main0929가 9/25 종가·9/28 환율로
     # 이틀째 대기 중이었다 — 발행 회차가 모르고 올리면 "지금 주가"가 닷새 전 값이 된다.
     try:
@@ -547,6 +587,8 @@ def pending_check(pkg):
             out.append('시세 %d일 전 — 발행 전 재조회' % age)
     except Exception:
         pass
+    w = ledger_mismatch(pkg)
+    if w: out.append(w)
     # 경쟁 비교 파일. 2026-10-09 audit: 10/9 카페 6편 중 5편이 compare.md 없이 나갔다
     # (비교는 facts의 toprank 한 줄뿐). 관문 규칙은 compare.md인데 아무도 안 봤다.
     if not any(os.path.exists(os.path.join(d, 'compare.md'))

@@ -1474,3 +1474,4 @@
 2026-10-09 10:38 · firemap-write · 10:10 칸 deplend1009 발행(cafe/234, verify OK) · 관문 통과 편, 제 시각
 2026-10-09 10:38 · firemap-write · 18:10 칸 TBD-에너지바우처 → evoucher1009 확정·관문 통과, 각도는 '연탄쿠폰·긴급복지 연료비와 겹치면 겨울 몫 빠짐' · 경쟁 상위 8편이 금액·신청법만 쓰고 이 단서를 금액으로 보인 글 0편, 카페 탭에 같은 질문이 실제로 올라옴
 2026-10-09 11:12 · editor · 결정 · 편집 통과 W-1 화면 글자 재서명(diff 1줄 하이픈→−, 나머지 불변)
+2026-10-09 11:25 · firemap-write · 16:10 isapen1009 gates_ok(cover_review.md 평균 7.07 추가, editgate auto) · 20:10 칸 TBD-노인일자리 → seniorjob1009 원고(선발 제외자 표) 관문 일부 통과, 제목·표지 레드팀 6 미통과 · 근거 work/research/seniorjob1009/review.md

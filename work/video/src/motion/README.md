@@ -37,3 +37,9 @@
 2. 미리보기: `npx remotion render src/motion/preview/entry.ts G1Open <out>.mp4 --props=<json> --scale=0.5 --pixel-format=yuv420p`
 3. 규칙: 선을 솎을 때 산 날은 반드시 남긴다(점 = 그날 실제 값) · 점선은 '낸 돈' 한 뜻만 · 막대 높이 = 값÷낸 돈 · 덩이는 점에서 출발('center bottom' 축소면 top=py−h0).
 4. 편마다 바뀜: seed로 막대 폭·간격. 산 날 순서는 대본 순서 그대로.
+
+## 세 조각 폭포 막대(WaterfallPieces) 쓰는 법 — 곱으로 된 변화 분해(금값 = 달러 금값 × 환율 × 웃돈 등)
+1. 재료 JSON: `seed·min·max·zeroText·steps[{name,sub,pp,text,at}]·total{…,won}·prem[[글자,프레임]]·hit·note[글자,프레임]·intro`. 예: `research/longform/ep/G-1/motion_preview/wfprops.py`(calc_out %p assert).
+2. 미리보기: `npx remotion render src/motion/preview/entry.ts G1Waterfall <out>.mp4 --props=<json> --scale=0.5 --pixel-format=yuv420p`
+3. 규칙: 막대 길이 = 로그 몫 %p(합이 정확히 전체), 글자 = 곱 % — 둘이 다르니 값 아래 '막대 %p'를 반드시 보인다(레드팀 2026-10-09) · 주황은 합계만 · 판 위 끝 254~300은 [자막] 띠 자리.
+4. 정지 방지: 말마다 다가갔다 물러남(pulse), 사건 사이 6초 넘으면 가운데 한 번 더. 편마다 seed로 칸 폭·막대 폭.

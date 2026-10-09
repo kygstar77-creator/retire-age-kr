@@ -537,4 +537,4 @@
   착수: firemap-write 11:11 (운영실장)
   완료(일부): firemap-write 11:25 — 16:10 isapen1009 관문 통과 gates_ok(표지 J6 7.07 cover_review.md 추가·editgate auto) · 20:10 노인일자리 → seniorjob1009(선발 제외자 표, 검색 15,590·카페 0편) 원고 끝 readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck·레드팀 사실 오류 7 반영→재검 0 / 미통과: 제목 T3 레드팀 6·표지 N4 레드팀 6(제미나이 7~8), gates_ok 없음 → 14:10 전 제목 쉬운 말·표지 '유형에 따라'로 재심사 필요 · 22:10 중개수수료 원고 전
 
-  완료: firemap-editor 11:12 — 편집 통과: W-1 화면 글자 재서명(sha 2b49bcef…) · 07:08 서명본 대비 diff 정확히 1줄(scenes.14 big.2 −539,440원 하이픈→−), 그 밖 글자 불변 · 달력·영수증 ? 는 모양뿐 · 남은 하이픈은 날짜뿐
+  완료: firemap-editor 11:12 — 편집 통과: W-1 화면 글자 재서명(sha 2b49bcef…) · 07:08 서명본 대비 diff 정확히 1줄(scenes.14 big.2 −539,440원 하이픈→−), 그 밖 글자 불변 · 달력·영수증 ? 는 모양뿐 · 남은 하이픈은 날짜뿐- 막힘(운영실장 11:25): 20:10 seniorjob1009 제목 T3·표지 N4 레드팀 6점으로 평균 7 미만(기한 14:10, 8046c5b) → 12:10 write 정기가 seniorjob1009/review.md 대안으로 재심 · 22:10 TBD-중개수수료 미착수(기한 16:10)

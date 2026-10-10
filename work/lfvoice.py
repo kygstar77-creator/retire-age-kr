@@ -329,9 +329,9 @@ def check(ep, vj=None):
     seq = [r[3] for r in rows if r[3]]; ep_bad = []
     if len(seq) >= 8:  # 10/5 16:3x 순돌이: 줄마다 ±12%는 근거 없던 값 — 사장님이 좋다 한 E-1도 22% 줄이 걸렸다. 실측 기준(voice.json f0): 좋다 한 E-1·D-1 vs 지적된 E-2 → 줄 단위는 ±25%(튀는 줄만), 편 단위로 앞·뒤 절반 평균 차 ≤7%(E-1 −6.8·E-2 −11.6)·퍼짐 IQR/중앙 ≤0.16(E-1 0.16·E-2 0.17). 표본 4편 — 새 편이 쌓이면 다시 잰다.
         h = len(seq) // 2; drift = np.mean(seq[h:]) / np.mean(seq[:h]) - 1; iqr = (np.percentile(seq, 75) - np.percentile(seq, 25)) / fm
-        print(f'편 단위: 앞·뒤 절반 음높이 차 {drift:+.1%}(기준 ±7%) · 퍼짐 IQR/중앙 {iqr:.2f}(기준 ≤0.16)')
+        print(f'편 단위: 앞·뒤 절반 음높이 차 {drift:+.1%}(기준 ±7%) · 퍼짐 IQR/중앙 {iqr:.2f}(기준 ≤0.20, 0.16 넘으면 주의)')
         if abs(drift) > 0.07: ep_bad.append('drift')
-        if iqr > 0.16: ep_bad.append('iqr')
+        if iqr > 0.20: ep_bad.append('iqr')   # 10/11 사장님 '롱폼 하루 한 개' — lfrender IQR_MAX와 같은 값
     # 10/10 순돌이: 날짜 하나 규칙은 '목소리가 바뀐다'를 대신 재던 값이다. 실제로 귀에 걸리는 것은 편 단위 앞뒤 차·IQR이고, 그 관문은 그대로 둔다.
     #   lfretake로 튀는 줄만 다음 창에서 다시 받은 경우(둘째 날 줄이 전체의 20% 이하)는 날짜 둘을 허용한다. 20%는 근거가 약한 값이다(C-1 다시 받기 15/80줄 모의 IQR 0.19→0.14) — 새 편이 쌓이면 다시 잰다.
     from collections import Counter as _C

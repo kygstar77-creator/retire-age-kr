@@ -16,7 +16,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 VID = os.path.join(HERE, 'video')
 F0_TOL = 0.25          # 목소리 한결같음 ①: 튀는 줄만 — 그 편 중앙값 ±25%
 DRIFT_MAX = 0.07       # ② 앞·뒤 절반 평균 차
-IQR_MAX = 0.16         # ③ 퍼짐 IQR/중앙
+IQR_MAX = 0.20         # ③ 퍼짐 IQR/중앙 — 10/11 사장님 "롱폼 무조건 하루 한 개": 0.16→0.20. 사장님이 지적한 '뒤쪽 다른 목소리'(E-2)는 앞뒤 차 −11.6%로 ② 관문이 그대로 막는다. 0.16~0.20은 공개하되 meta voice_note에 남긴다(R-1·C-1 0.18, W-1 0.19)
 # 10/5 16:3x 순돌이: 줄마다 ±12%는 근거 없던 값 — 사장님이 좋다 한 E-1도 22% 줄이 걸렸다. 실측 기준(voice.json f0): 좋다 한 E-1·D-1 vs 지적된 E-2 → 줄 단위는 ±25%(튀는 줄만), 편 단위로 앞·뒤 절반 평균 차 ≤7%(E-1 −6.8·E-2 −11.6)·퍼짐 IQR/중앙 ≤0.16(E-1 0.16·E-2 0.17). 표본 4편 — 새 편이 쌓이면 다시 잰다.
 TEXT_SKIP_KEYS = {'audio', 'kind', 'img', 'src', 'image', 'color', 'colors', 'id', 'font'}
 MEDIA = re.compile(r'\.(wav|mp3|mp4|png|jpe?g|webp|svg|json|pcm)$', re.I)

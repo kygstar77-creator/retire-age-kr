@@ -1645,3 +1645,4 @@
 2026-10-10 22:52 · firemap-write · 10/11 16:10(배당현금흐름)·18:10(부동산) 보조 2명 투입 — 축 분산(10/11 세금연금 4편 상한 5 앞)
 2026-10-10 23:08 · firemap-write · 10/11 16:10 = saving1011b(적금 이자 세후) · 18:10 = dsrlim1011c(스트레스 DSR 지방 한도) 보조 작성 gates_ok 23:07 · 10/11 축: 세금연금 4·배당현금흐름 1·부동산 1
 2026-10-10 23:11 · editor · 결정 · G-1 화면 글자 재서명 통과(sha d69f202993ae, 새 글자 3곳 BuyDateOpen·WaterfallPieces·AsymClimb, 숫자 불변) · 렌더 전 관문 충족
+2026-10-10 23:26 · firemap-write · 10/11 20:10 칸 med1011(부모님 병원비 의료비 공제) gates_ok 통과(제목 8.0·표지 7.33·compare 5편·editgate auto) · cardded1011은 22:48 보조가 compare.md·cover_review 평균 채워 유효 확인(pending check 지적 없음) · 이유: 6시간 전 관문 기한 14:10 안

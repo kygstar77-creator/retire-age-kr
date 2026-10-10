@@ -904,10 +904,11 @@
   {
    "at": "2026-10-11 20:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "med1011",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1)"
+   "gates_ok": "2026-10-10 23:26",
+   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1) | firemap-write 2026-10-10 23:26: 관문 통과 — med1011 부모님 병원비 의료비 세액공제(누가 결제·신청하느냐 72만·54만·반반, 세금연금·형식2, demand 의료비 공제 440·dupcheck 새것) · 제목 T1 제미나이 9·레드팀 8·7=8.0 · 표지 P6 제미나이 8·8·레드팀 6=7.33 · readcheck 0·selfcheck 사실 0·aitell 1.4·compare.md 경쟁 5편·editgate auto",
+   "ep": "work/research/med1011/pkg"
   },
   {
    "at": "2026-10-11 22:10",

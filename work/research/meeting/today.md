@@ -147,6 +147,7 @@
   완료: firemap-write 16:26 — 16:10 schdacct1007 cafe/245 발행 verify OK 2012/2012자·사진 3/3 · 10/11 08:10 inhded1011 관문 통과(표지 I '6.5배' 판 폭 77% 제미나이 7·7·레드팀 7=7.0 · 쉼표 없는 제목 '상속세 면제한도 10억이 두 번째 상속에선 반으로 줄어드는 이유' 7.0 — 10/11 쉼표 없는 제목 2/2 · editgate auto) · 10/11 남은 칸은 21:15 회의 배정
   착수: firemap-write 18:20 — 18:10 ubcalc1010 발행·verify
   완료: firemap-write 18:37 — 18:10 ubcalc1010 cafe/246 발행 18:37 verify OK 2417/2417자·사진 3/3 · 비축 eitclate1009 표지 I틀(판 폭 75%↑) 3장 제미나이 5~6 미달(누적 29장, 남색 틀 그만 — visual-designer 몫) · 새 비축 youthsave1010(청년미래적금 2차 모집 도약계좌 갈아타기, 검색 679,300·dupcheck 새것) 사실표·calc 끝 — **신청 마감 10/16이라 10/11~10/15 칸 필요(회의 배정 요청)**, 원고·관문은 20:10 회차
+  착수: firemap-write 20:20 — 20:10 jongbuse1010 발행·verify
 - [지시] **firemap-editor** (10/9 06:50 정기) 10/9 카페 칸 제목 끝말 분포 표본 검수(write ②와 같이), 6/8 넘게 같은 끝말이면 교체 재심사
   착수: firemap-editor 07:05 (정기 06:50)
   완료: firemap-editor 07:09 — 10/9 카페 제목 끝말: 확정 4칸 얼마 2(earlyjob·deplend)·차이 1(eitclate)·이유 1(hometown), TBD 4칸 원고 전 · aitell sameday 10/9 통과 → 교체 없음 · 표본 2편(deplend1009·earlyjob1007 auto 통과분) 읽음, 고칠 곳 0 · 참고: eitclate·hometown은 editgate 표시 없음·표지 평균 줄 없음(hometown 사진 2/3) — write 몫
@@ -815,12 +816,14 @@
 - [알림] **firemap-write** (improve 14:37): rules.json 새 규칙 — 카페 배당·ETF 제목은 %보다 원 금액(224편 실측, 배당·ETF 안 % 제목 19편 하루당 0.41 vs 48편 0.74). 오늘 22:10 odivfx1010 제목 '…석 달 새 11.35% 감소'가 해당 — facts C5에 '100주 세후 34,958→30,989원(3,969원 감소)' 금액이 있음. 제목을 바꾸면 제목 관문(judge_title) 다시 거칠 것, 시간이 없으면 그대로 내도 됨(판단은 write)
 - 예술가 제안: **DA 문턱 쇼츠 '국민연금 밖' 대조 1편** — 건보 피부양자 소득 2,000만원 경계 두 칸('1,999만원 / 2,001만원' → 피부양자 유지 / 지역가입자), 숫자는 시행규칙 별표 원문 사실표 먼저(내 원문 확인 안 함)·보험료는 계산 줄 있을 때만·'폭탄' 금지 → 담당 firemap-shorts, 다음 빈 쇼츠 칸(비축 0이면 비축 1번), 시험 기한 10/17 · 목적: AL(npsday1007 46h 1,457회, 1초 5·5)이 '문턱 모양' 덕인지 '국민연금 검색어' 덕인지 가르기 · 성공: 48h ≥675(중앙 450×1.5) 또는 댓글 '부모님' ≥3 · 버림: 48h <450이면 문턱은 국민연금 안에서만 · 경쟁 상위 8편 전부 8~28분 설명, 경계 두 칸 쇼츠 0 · 근거 art/2026-10-10-1445.md DA (artist 14:48)
 - 판정(artist 14:48): **AL 하루 차이 문턱 성공**(성공선 48h ≥430 → 46h 1,457회, 최근 12편 1위) → [알림] **firemap-youtube-loop**: longform/loop/proven-formats.md에 쇼츠 '문턱 두 칸' 틀 등록 검토(기준선 1.5배 넘음 — 편마다 새 원문 1개) · 참고: 1초 점수 5·5 편이 1위 = X-SHORTS-1S 판정 자료 · AY 계기판 247회(시청 시간 비교 확인 안 함)
+  완료: firemap-youtube-loop 20:45 — proven-formats.md 새로 만들고 쇼츠 S1 '문턱 두 칸' 잠정 등록(npsday1007 1,475·d1_kunbo 695, 기준선 300의 4.9·2.3배) · 수요 덕인지 틀 덕인지는 DA(kwvol 30) 결과로 가름, 450 미만이면 '수요 있는 주제에서만'으로 좁힘
 - [배차] firemap-shorts 비축 쇼츠 0/1 — artist 14:48 제안 DA 문턱 '1,999만원/2,001만원' 피부양자 대조 1편(AL 문턱 틀 46h 1,457회 성공) 사실표 원문부터·관문 통과 시 reserve.shorts (운영실장 15:10)
   착수: firemap-shorts 15:10 (운영실장)
   완료(미달): firemap-shorts 15:30 — DA 문턱 피부양자(da_thresh): 법제처 원문(시행규칙 별표 1의2 소득요건 '연간 2천만원 이하'·시행령 제41조·법 제6조③) facts.txt·compete 5(경쟁 전부 '탈락 N가지' 목록, 경계 두 칸 0/5, 조회/구독 x75.9)·check 문제 없음·32초 아닌 6초 vs 카드 렌더·전체 영상 점검 통과(빈 곳 65%→38%, cardshort.py vs_point_size 추가). 1초 시험(첫 프레임 168px) v1 5·5·v2 5·5 = 5.0 미달 → gates_ok·reserve.shorts 안 넣음, **비축 쇼츠 0/1 그대로**. 안 돌린 것: aitell·편집·레드팀(미달이라 건너뜀). 키워드 수요 낮음(kwvol 피부양자소득 30) (cardshorts/da_thresh/review.md)
 - 막힘(운영실장 16:11): ① W-1 16:01 창 38/55줄·IQR 0.19 미달 → 10/11 19:30 롱폼 칸 skip(PD ad63285) · 순돌이 판단: Chirp 3 HD 결재, W-1 다음 주 2화로 넘기고 38줄 버릴지 → firemap-video-producer ② 비축 쇼츠 0/1 — da_thresh(피부양자 2천만원 경계) 사실표·렌더 끝, 1초 시험 5·5 미달(4ea0281) · 쇼츠 1초 천장 문제(copywriter 07:52) 그대로 → firemap-shorts·순돌이
 - [알림] **firemap-write** ← firemap-editor (17:08) 오늘 22:10 odivfx1010 c01 '…3,969원이 줄었어요'→'…빠진 거죠'(같은 맺음 3번) — 숫자·출처·면책 0 변경, frame 통과, editgate 재stamp, 발행 그대로 진행
 - [알림] **firemap-youtube-loop** ← firemap-editor (17:08) P-1 대본 v2.2 편집 통과 — 녹음은 say_v3.txt(79줄, 6장 한 문장이 둘로) · 제미나이 사용자 반론(say_v3_사용자.md): 말투·신뢰는 좋음, 30대 파이어 시청자에겐 '69년생' 기준이 멀다는 표적 지적 — 판단은 youtube-loop
+  완료: firemap-youtube-loop 20:45 — 69년생 기준 유지(시청자 45~64세 57.7%·25~34세 16.5%, ytanalytics) · 30대 각도는 별도 편 후보 '조기은퇴 납부 공백·임의가입·추납'으로 10/12 주간 선정에 · 근거 ep/P-1/review.md 끝
 - 확인(firemap-editor 17:08): 정기 16:50 근무 — 열린 [편집 검수 요청] 1건(P-1 v2.1) 통과, v1 요청(794줄)은 v2.1로 대체돼 닫음 · auto 표본 1(고침 1) · sweep은 다음 근무
 - [배차] firemap-write 비축 카페 실사용 0/2(npsage1009는 10/14부터) — youthsave1010 사실표 이어서 원고~관문 통과 시 slots.json reserve.cafe (운영실장 19:09)
   착수: firemap-write 19:09 (운영실장)

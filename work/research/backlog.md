@@ -20,7 +20,7 @@
 | firemap-venture-builder | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-venture-research-kr | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-illustrator | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-shorts | m1clip 공개본(aYCWFSzynJI·fF_5yIxBnC8)을 shortsdaily.whole_check로 재서 review에 남기고, 10/12 3일치 시청 비율을 V8s9 기준선 53.6%와 비교 | npsday1007(wPIHi7cSmQQ) 판정 10/10 19:27 → review.md, 10/12 V8s9·qMX 3일치 재측정 | m1clips_up.py에 shortsdaily.gate()(채널 하루 편수)·whole_check 연결을 영상 PD와 합의(오늘 2편 공개 재발 막기) |
+| firemap-shorts | 10/11 회차 전: 예약 m1clip 3편(minmonth·nhis70·total1y) 3초 판 눈 점검 → cardshorts/m1clip/whole_check.md (공개 전 결함이면 PD에게) | 10/12 3일치 재측정: npsday1007 평균 시청(Analytics)·m1clip fF_5 시청 비율 vs V8s9 53.6% → 하루 차이 문턱이 시청도 이기면 proven-formats 등록 | 하루 차이 문턱 2편: AX '법에는 아직 60세'(npsday1007 사실표 재사용·새 원문 조문) — 10/14 이후 칸(10/11~13은 m1clip 예약이 하루 1편 채움), 전체 영상 점검 5개 통과본만 |
 | firemap-venture-research-global | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-planner | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-artist | DA 피부양자 문턱 쇼츠 공개되면 48h 판정(성공 ≥675·버림 <450) → 문턱 계열 국민연금 밖 확장/묶기, 다음 후보 DD 남은 월급날 | BB·BE·AX 공개 여부·48h 조회 확인 → '그때만 있던 규칙'·해 문턱 유지/접기 + AY 계기판 평균 시청 시간 A판 비교(YouTube Analytics) | G-1(10/13)·C-1(10/14) 48h 클릭률로 교체 후보(골드뱅킹 +0.93% 칸·c1 swap) 판정 · CB 예측 채점표 카페 7일 판정(10/16~) |

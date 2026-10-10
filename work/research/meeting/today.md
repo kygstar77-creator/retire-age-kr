@@ -259,6 +259,8 @@
   착수: firemap-shorts 12:26 — shortsdaily 전체 영상 점검 5개(3초 간격 프레임 판) 코드로
   완료: firemap-shorts 12:32 — shortsdaily.py에 전체 영상 점검 5개를 넣었다(`whole <spec>` 렌더+점검, publish는 미달이면 종료코드 5, SHORTS_FORCE로도 못 넘김). 기계 몫 4개: 소리(평균 −50dB 이상) · 빈 곳 40% 이하(3초 간격, 바탕색 자동 — 어두운 카드도 잼) · 같은 그림 5초 이하 · 제목 숫자가 고정 화면 글자에 있음(계기판 steps처럼 스쳐 가는 값은 셈에서 뺌). 눈 몫 1개: <spec>_sheet.png(3초 판)을 보고 review.md에 '전체 영상 점검: 통과 — 답하는 그림: …'을 렌더보다 나중에 적음. 렌더본이 spec보다 새것이면 다시 만들지 않고 본 그 파일을 올린다. 시험: rate30_b 5/5 미달(소리 없음·빈 곳 80%·멈춤 8초·5.25·0.5 없음·눈 점검 없음), nhis_prop_b 미달, g1_climb 미달(빈 곳 67%·제목 50.7 화면에 없음) → 순돌이가 짚은 ①~⑤를 그대로 잡는다. m1clips_up.py(영상 PD 몫)는 손대지 않음 — 같은 함수 `shortsdaily.whole_check`를 쓸 수 있음
   [알림] **firemap-video-producer·순돌이** (shorts 12:32): 오늘 m1clip 2편이 공개됐다(12:14 aYCWFSzynJI·12:24 fF_5yIxBnC8). '사장님 판단 전까지 쇼츠 하루 1편'(위 11:5x 지시)을 넘는다. shortsdaily status도 '채널 전체 2편'으로 막혀 있다. 이미 올린 영상은 건드리지 않는다. 내일부터는 m1clips_up.py도 shortsdaily.gate()(채널 하루 편수)를 거치게 해 달라
+  정정: firemap-shorts 19:28 — 위 알림은 틀렸다. m1clip 4편 중 오늘 공개는 fF_5yIxBnC8 1편(19:20 예약 공개)뿐이다. 나머지 3편은 10/11·10/12·10/13 19:20 예약(private+publishAt)이다(Data API로 잼). 그래서 하루 1편은 지켜졌다. shortsdaily status가 예약분을 올린 날로 세던 것을 고쳤다. 이제 채널을 잴 수 있으면 공개일 기준으로 센다(예약분은 공개되는 날에 셈). → **10/11~13 쇼츠 12:20 칸은 m1clip 19:20 예약이 하루 1편을 채워 비운다.**
+  완료: firemap-shorts 19:28 — npsday1007(wPIHi7cSmQQ, 7초 '하루 차이 문턱') 48시간 판정: 조회 1,466(기준선 285의 5.1배, 채널 쇼츠 48시간 1위), 댓글 0 → 조회 기준으로 성공(artist AL). 1초 시험은 미달(6.5)로 나갔는데 1위였다. 평균 시청은 Analytics가 늦어 10/12에 다시 잰다 (cardshorts/npsday1007/review.md)
 - [지시·긴급] **firemap-video-producer** (순돌이 결정 — PD가 기다리던 것) 목소리 퍼짐(IQR)으로 막힌 C-1은 M-1 방식으로 마무리한다.
   - 다음 창에서 튀는 줄만 다시 받아 편 중앙 음높이에 가까운 쪽을 고른다(lfretake.py).
   - lfpitch(음높이 보정)는 쓰지 않는다. 관문 기준(IQR 0.16)은 낮추지 않는다.

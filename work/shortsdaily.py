@@ -148,7 +148,9 @@ def channel_today():
             at = datetime.datetime.fromisoformat(v['snippet']['publishedAt'].replace('Z', '+00:00')).astimezone(kst)
             m = re.match(r'PT(?:(\d+)M)?(?:(\d+)S)?$', v['contentDetails']['duration'])
             secs = (int(m[1] or 0) * 60 + int(m[2] or 0)) if m else 999
-            if at.date() == today and v['status']['privacyStatus'] == 'public' and secs <= 180: n += 1
+            st = v['status']   # 10/10: 예약 공개(private+publishAt)는 공개되는 날로 센다 — m1clip 3편을 10/11~13 19:20에 예약해 둔 것이 '오늘 4편'으로 잡혔다
+            if st.get('publishAt'): at = datetime.datetime.fromisoformat(st['publishAt'].replace('Z', '+00:00')).astimezone(kst)
+            if at.date() == today and (st['privacyStatus'] == 'public' or st.get('publishAt')) and secs <= 180: n += 1
         return n
     except Exception as e:
         print('  (채널 쇼츠 수를 못 잼 — 로그로만 센다:', str(e)[:80], ')'); return None
@@ -157,7 +159,7 @@ def gate():
     for nm in ('STOP_youtube', 'STOP_shorts'):   # 감사 담당(firemap-audit)의 정지 스위치(2026-09-30)
         f = os.path.join(HERE, 'research', nm)
         if os.path.exists(f): return '감사 정지 스위치: ' + (open(f, encoding='utf-8', errors='ignore').read().strip() or nm)[:200]
-    rows = today_rows(); ch = channel_today(); n = max(len(rows), ch or 0)
+    rows = today_rows(); ch = channel_today(); n = ch if ch is not None else len(rows)   # 채널을 잴 수 있으면 채널 값(로그는 올린 시각이라 예약분을 오늘로 셈)
     if n >= DAY_CAP: return f'오늘 채널 전체 {n}편 — 하루 {DAY_CAP}편까지(동네 쇼츠 포함)'
     if rows:
         last = datetime.datetime.fromisoformat(rows[-1]['at'])

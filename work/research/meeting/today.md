@@ -23,6 +23,7 @@
   알림: firemap-video-producer 14:17 — 14:05 PD 회차가 16:01 창 녹음을 맡아 대기 중. 15:05에 PD를 또 배차하면 녹음은 하지 말 것(같은 창 중복 전송)
   착수: firemap-dispatcher 15:10 — 14:05 PD 회차(14:16 시작)가 14:19에 '성공'으로 끝남·대기 프로세스 없음(실측) → 16:01 창 녹음자 없음. PD를 W-1 녹음으로 투입(한 창 한 편)
   착수: firemap-video-producer 15:10 (운영실장)
+  나눔: firemap-video-producer 16:01 (14:05 회차, 끝나지 않고 16:01까지 대기했음) — 15:10 회차가 W-1을 맡았으니 이 회차는 순돌이 ① C-1 2요청(make 1·lfretake 1)만, W-1은 손대지 않음 · 오늘 한도 10 = C-1 2 + W-1 최대 8
 - [지시] **firemap-video-producer** (기한 10/10 19:30 = W-1 관문) 의도: 주간 고정 코너 첫 편을 제 시각(10/11 토 19:30)에 · 완료 기준: 16:01 창 W-1 녹음(lfvoice --gate 0.10) → 렌더 → gate → gates_ok · 기한을 넘기면 같은 날 계속 고치되 **공개는 관문 전부 통과일 때만**(못 넘으면 10/11 칸 skip, '이번 주' 편이라 미루지 않음) · 금지: lfpitch 사본으로 소리 심사 통과(순돌이 결정 전), 기준 낮추기
   착수: firemap-video-producer 22:17 — 녹음 전 준비(meta.json·scorecard·쇼츠 재료), 녹음은 10/10 16:01 runbook_1010
   진행: firemap-video-producer 22:21 — 녹음 뒤 3.5시간 관문을 줄이려 업로드 준비 먼저 끝: ep/W-1/w1meta.py(calc_out에서 제목·설명 숫자 채움, titles.md 1위 숫자 assert — 06시 calc 재실행 뒤 다시 돌림)→meta.json(챕터 8=w1.json 장면 번호·태그 5 검색량 순·5문항·publishAt 10/11 19:30·쿠팡 안 붙임·설명 aitell 7.6 통과) · scorecard 경쟁 칸(롱폼 상위 3편 중앙 26·우리 어림 34) · 쇼츠 재료 cardshorts/w1_receipt·w1_kospi·w1_fx · 남은 것: 16:01 녹음→render→gate, 썸네일은 visual 14:00
@@ -203,6 +204,7 @@
   ① C-1: voice.1009.json → voice.json, audio/c-1_1009 → audio/c-1로 되돌린 뒤 `lfvoice make`(새 줄 1, 1요청) → `lfretake --n 15`(1요청).
   ② W-1 녹음(7요청).
   - C-1은 readback → check → c1props → render 순서로 하고, **10/12 19:30**에 공개한다(slots·meta 고침). W-1은 10/11 그대로, G-1은 10/13이다.
+  완료(미달): firemap-video-producer 16:05 — C-1 16:01 창 2요청(make 새 줄 1 — 14초·2.79음절/초로 길게 나와 readback 내용은 맞음 / lfretake --n 15 → 12줄 교체·trim) · check: 편 전체 5.61·앞뒤 +3.6%·날짜 둘(다시 받기 15/80≤20% 허용) 통과, **퍼짐 IQR 0.18>0.16 막힘**(모의 0.14 예상과 다름 — 새로 받은 15줄도 142~209Hz로 퍼짐, 한 요청 안에서도 흔들림) · 튀는 줄 4(0장 190·6장 191·7장 205Hz·8장 빠름) · 기준 그대로, lfpitch 안 씀 · W-1은 15:10 회차가 맡아 손대지 않음(오늘 한도 C-1 2 + W-1 최대 8) · 근거 ep/C-1/check/voice_check_1010.txt · C-1 10/12 칸: 관문 기한 10/11 19:30 전 TTS 창은 10/11 16:01(G-1 배정)뿐 → 순돌이 판단 필요(G-1 창을 C-1 튀는 줄에 쓸지, C-1 10/12 skip할지)
   착수: firemap-video-producer 14:17 (14:05 정기 회차) — 이 회차가 16:01까지 대기해 ①C-1 ②W-1 녹음까지 맡음. **15:05 배차 PD 회차는 TTS 0요청**(한 창 두 세션 전송 방지)
   - lfvoice·lfrender의 날짜 규칙을 고쳤다(1e688d4). 다시 받은 줄이 전체의 20% 이하면 녹음 날 둘을 허용한다. 앞뒤 차 7%·IQR 0.16 관문은 그대로다.
 

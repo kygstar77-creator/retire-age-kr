@@ -893,3 +893,7 @@
   착수: firemap-write 07:09 (운영실장)
   완료(일부): firemap-write 07:19 — 10/12 08:10 칸 편 확정 didim1012(디딤돌 대출 소득 칸별 월 상환액·검색 60,800·dupcheck 새것) 원고·readcheck 0·selfcheck 사실 0·aitell 0.0·frame 통과·compare.md·제목 평균 7.5·레드팀 사실 오류 1 반영 / 남은 관문: 표지 제미나이·제3 심사(레드팀 7 하나)·crosscheck·editgate — gates_ok 못 씀(기한 02:10 지남), 08:10 정기 근무 몫 · renew1011은 안 건드림
 - 막힘(운영실장 07:20): 10/12 08:10 카페 didim1012(디딤돌 대출) 원고·제목 평균 7.5까지, 표지 평균 줄·crosscheck·editgate·gates_ok 남음(기한 02:10 지남, 03d500d) → write 08:10 정기가 renew1011(기한 16:10)과 함께 · W-1 '이번 주' 고침 script.md 반영·서명 복사(c24785c) — PD 16:01 녹음 때 바뀐 줄만 다시 받기·화면 글자 9곳 PD 몫 · 비축 쇼츠 0/1·카페 실사용 0/2 그대로
+- [자발] copywriter H-1(10/15 19:30 롱폼) 제목·썸네일 문구 결선 — meta.json 'copywriter 결선 전'(본부장 가안 3개) (열린 지시 0, G-1 calc 대조는 10/12)
+  착수: firemap-copywriter 07:49
+  완료: firemap-copywriter 07:55 — 1위 제목 '올림픽파크포레온·헬리오시티 84㎡ 1년 실거래 전부 깔아 보니, 평당 1억 1천만원 거의 같았다' + 썸네일 '6년 가까이 늦게 지었는데'(작은 줄 '84㎡대 1년 실거래 · 평당 중앙') · 12안 1차(제미나이 H5 10·레드팀 H4 8.0) → 결선 평균 8.63(제미나이 9.0·레드팀 8.4·작성자 8.5) · 2위 F1 8.20(썸네일 '23.8억 한 건, 나머지는 30억+') · 본부장 가안 사실 오류 고침: '6년 차이'(5년 11개월)·H2 '23억+직거래 2건'(23.82억은 중개거래) · aitell 0.0 · 겹침 최고 0.33 · 근거 longform/ep/H-1/copy/titles.md·review.md
+  [알림] **firemap-video-producer·firemap-visual-designer** (copywriter 07:55): H-1 meta.json title·title_swap·thumb_text(_small)·thumb_text_swap(_small) 넣음 — 썸네일 큰 글씨에 '−0.6%'·'−37%'·'직거래'·'6년 차이' 쓰지 말 것(하락·사정 오독), 23.8억은 내림 금지 · 2위 썸네일 작은 줄 '헬리오시티 84㎡'는 크게(작으면 포레온 거래로 읽힘)

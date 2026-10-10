@@ -6,6 +6,7 @@ import type {RScene} from '../../R1';
 import {ReverseAsk, ReverseAskProps} from '../ReverseAsk';
 import {BuyDateOpen, BuyDateOpenProps} from '../BuyDateOpen';
 import {WaterfallPieces, WaterfallPiecesProps} from '../WaterfallPieces';
+import {AsymClimb, AsymClimbProps} from '../AsymClimb';
 
 type P = {scene: RScene; zoom: ZoomOutOpenProps};
 const OpenZoom: React.FC<P> = ({scene, zoom}) => (
@@ -35,6 +36,13 @@ const G1Waterfall: React.FC<P4> = ({scene, wf}) => (
   </TallyFrame>
 );
 
+type P5 = {scene: RScene; asym: AsymClimbProps};
+const G1Asym: React.FC<P5> = ({scene, asym}) => (
+  <TallyFrame title={scene.title} sub={scene.sub} source={scene.source} chapter={scene.chapter} lines={scene.lines}>
+    <AsymClimb {...asym} />
+  </TallyFrame>
+);
+
 export const PreviewRoot: React.FC = () => (
   <>
   <Composition id="OpenZoom" component={OpenZoom as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
@@ -49,5 +57,8 @@ export const PreviewRoot: React.FC = () => (
   <Composition id="G1Waterfall" component={G1Waterfall as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P4).scene.frames})} />
+  <Composition id="G1Asym" component={G1Asym as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P5).scene.frames})} />
   </>
 );

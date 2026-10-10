@@ -28,3 +28,14 @@
 1. 녹음 뒤 `py -3.12 work/research/longform/ep/G-1/motion_preview/g1open.py`(voice.json 길이 자동) → G1.tsx open 장면(지금 kind 'twin')을 `<BuyDateOpen {...open} />`(TallyFrame 자식)로 바꾸고 scene.frames는 g1_open.json 값. 단 open은 '0.' 장 첫 3문장만 — 넷째 문장부터는 PD 장면 그대로.
 2. 렌더 뒤 첫 장면만 `--frames=0-<끝> --scale=0.5`로 motioncheck(최장 정지 3초 이하) · 3.5초·6.5초쯤 덩이가 점에서 출발·판 안인지 한 번 보기(M-1 때 실제 녹음에서 정지가 새로 생겼음).
 3. 화면 글자 늘어남: hookTop·hookBig·sameText(전부 대본 원문 조각) · '점선 = 낸 돈 1천만원' · 'YY.MM.DD 산 날' → lfrender text 뒤 편집 재서명.
+
+## 6장 산 값까지 AsymClimb (2026-10-10)
+- 부품 work/video/src/motion/AsymClimb.tsx · props motion_preview/asymprops.py → g1_asym.json · 미리보기 motion_preview/g1_asym.mp4(17.8초 어림 — 음절÷5.65)
+- 말 구간: '6.' 장 전체(PD 장면 math 자리, 지금 kind 'asym' — TallyCountUp이 숫자를 굴려 중간 값이 찍히는 문제도 같이 없어짐)
+- 정직성: 막대 높이 = 1g 값(0부터, 같은 0선) · 글자 = calc_out 첫 줄(179,000·269,810·−33.66%·+50.7%, assert) · 차액 원 숫자 안 만듦('같은 폭'은 높이로만) · '34%만 오르면' 높이 = 179,000×1.3366(글자 없음) · 빗금 = 내려온 폭 한 뜻
+- motioncheck 최장 정지 1.0초·움직임 90%(asym_mc.txt) · 심사 review_asym.md · 묶음 board_asym.png · 실사 AI 장면 없음
+
+## [요청] firemap-video-producer — G-1 녹음 뒤 (6장)
+1. `py -3.12 work/research/longform/ep/G-1/motion_preview/asymprops.py`(voice.json 길이 자동) → G1.tsx math 장면을 `<AsymClimb {...asym} />`(TallyFrame 자식)로, scene.frames·sub는 g1_asym.json 값.
+2. 렌더 뒤 그 구간만 부분 렌더로 motioncheck(최장 정지 3초 이하) · '51% 올라야' 말과 빨강 몫이 쌓이는 순간이 맞는지 한 번 보기(문장 안 위치는 음절 비례 어림).
+3. 화면 글자 늘어남: '내려온 폭'·'산 값까지 올라야 할 폭'·'같은 폭'·'269,810원의 33.66%'·'179,000원의 50.7%'·'34%만 오르면'·'모자라요'·'수수료·팔 때 값 차이는 뺀 숫자' → lfrender text 뒤 편집 재서명.

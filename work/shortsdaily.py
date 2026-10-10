@@ -1,7 +1,8 @@
 # 쇼츠 하루 2~3편 발행 — 2026-09-29 사장님 "그럼 그렇게 해"
 #   py -3.12 work/shortsdaily.py status                      오늘 올린 편수·마지막 발행·쓴 원고 목록
 #   py -3.12 work/shortsdaily.py check   <spec.json>          숫자 대조·글 길이만 본다(만들지 않음)
-#   py -3.12 work/shortsdaily.py publish <spec.json>          대조 → 영상 → 유튜브 공개 → 기록
+#   py -3.12 work/shortsdaily.py whole   <spec.json>          렌더 + 전체 영상 점검 5개(소리·빈 곳 40%·멈춤 5초·제목 숫자·눈 점검) + 3초 판
+#   py -3.12 work/shortsdaily.py publish <spec.json>          대조 → 영상 → 전체 영상 점검 → 유튜브 공개 → 기록
 #   py -3.12 work/shortsdaily.py d7                          편별 공개 뒤 7일 조회·구독 증가를 log.jsonl에 채운다(ytanalytics 토큰)
 #
 # 왜 하루 3편까지인가(work/research/shorts-research.md):
@@ -164,6 +165,59 @@ def gate():
         if gap < MIN_GAP_H: return f'마지막 발행 {gap:.1f}시간 전 — {MIN_GAP_H}시간 간격'
     return ''
 
+WHOLE_MARK = '전체 영상 점검: 통과'
+
+def whole_measure(mp4):
+    """전체 영상 점검(10/10 순돌이 지시 — rate30_b가 첫 프레임만 보고 나갔다)의 기계 몫.
+    소리 · 빈 곳(3초 간격) · 가장 길게 멈춘 화면 + 3초 간격 프레임 판(<spec>_sheet.png).
+    빈 곳은 emptyscan과 같은 60px 칸 셈이지만, 바탕색을 프레임에서 가장 흔한 무늬 없는 칸 색으로 잡는다
+    (카드 쇼츠는 어두운 바탕이라 emptyscan의 밝은 바탕 목록으로 재면 0%가 나온다)."""
+    import subprocess, tempfile, glob, imageio_ffmpeg, numpy as np
+    from PIL import Image
+    FF = imageio_ffmpeg.get_ffmpeg_exe()
+    run = lambda a: subprocess.run([FF, '-hide_banner'] + a, capture_output=True, text=True, encoding='utf-8', errors='replace').stderr
+    has_a = any('Audio:' in l for l in run(['-i', mp4]).splitlines()); vol = None
+    if has_a:
+        m = re.search(r'mean_volume:\s*(-?[\d.]+)', run(['-i', mp4, '-vn', '-af', 'volumedetect', '-f', 'null', '-']))
+        vol = float(m.group(1)) if m else None
+    sheet = os.path.splitext(mp4)[0] + '_sheet.png'
+    subprocess.run([FF, '-v', 'error', '-y', '-i', mp4, '-vf', 'fps=1/3,scale=270:480,tile=6x3', '-frames:v', '1', sheet], check=True)
+    tmp = tempfile.mkdtemp()
+    subprocess.run([FF, '-v', 'error', '-i', mp4, '-vf', 'fps=1,scale=540:960', os.path.join(tmp, '%03d.png')], check=True)
+    arr = [np.asarray(Image.open(f).convert('RGB')).astype(np.float32) for f in sorted(glob.glob(os.path.join(tmp, '*.png')))]
+    still = best = 0
+    for i in range(1, len(arr)):   # 이웃 1초 프레임 차이 0.3 미만 = 같은 그림
+        still = still + 1 if float(np.abs(arr[i] - arr[i - 1]).mean()) < 0.3 else 0; best = max(best, still)
+    def empty(a):
+        H, W, _ = a.shape; c = W // 18; ny, nx = H // c, W // c
+        t = a[:ny * c, :nx * c].reshape(ny, c, nx, c, 3).transpose(0, 2, 1, 3, 4).reshape(ny, nx, -1, 3)
+        flat = t.std(2).max(2) < 3; col = t.mean(2)
+        if not flat.any(): return 0.0
+        vals, cnt = np.unique(np.round(col[flat] / 8), axis=0, return_counts=True); bg = vals[cnt.argmax()] * 8
+        return float((flat & (np.abs(col - bg).max(2) < 10)).mean())
+    em = [empty(a) for a in arr[::3]]
+    return {'audio': has_a, 'mean_volume': vol, 'still_longest_s': best, 'empty_max': round(max(em), 3) if em else 0.0,
+            'empty_each_3s': [round(x, 2) for x in em], 'sheet': sheet}
+
+def whole_check(spec, sp, mp4):
+    """전체 영상 점검 5개 — 막는 줄 목록. 기계 4개(소리·빈 곳 40%·멈춤 5초·제목 숫자가 화면에) +
+    눈 1개(질문에 답하는 그림): 판을 본 사람이 review.md에 WHOLE_MARK 줄을 mp4보다 나중에 적어야 통과."""
+    bad = []; m = whole_measure(mp4)
+    json.dump(m, open(os.path.splitext(mp4)[0] + '_whole.json', 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    print('전체 영상 점검:', json.dumps({k: v for k, v in m.items() if k != 'empty_each_3s'}, ensure_ascii=False))
+    if not m['audio'] or m['mean_volume'] is None or m['mean_volume'] < -50: bad.append(f'소리 없음(평균 {m["mean_volume"]} dB) — 음악이나 목소리')
+    if m['empty_max'] > 0.40: bad.append(f'빈 곳 최대 {m["empty_max"]:.0%} > 40% (3초마다 {m["empty_each_3s"]})')
+    if m['still_longest_s'] > 5: bad.append(f'멈춘 화면 {m["still_longest_s"]}초 > 5초')
+    # B형은 카드 글자만 화면에 — 계기판 steps는 2초씩 스쳐 가는 값이라 뺀다(rate30_b: 제목 '최고 5.25%'가 steps에만 있어 3초 판에 한 번도 안 찍힘)
+    if spec.get('cards'): screen = spec.get('chip', '') + ' ' + ' '.join(card_text({k: v for k, v in c.items() if k != 'steps'}) for c in spec['cards'])
+    else: screen = spec_text({k: v for k, v in spec.items() if k not in ('yt_title', 'yt_desc')})
+    miss = sorted(nums(spec.get('yt_title', '')) - nums(screen))
+    if miss: bad.append('제목 숫자가 화면에 안 나옴: ' + ', '.join(miss))
+    rv = os.path.join(os.path.splitext(sp)[0], 'review.md')
+    if not (os.path.exists(rv) and WHOLE_MARK in open(rv, encoding='utf-8').read() and os.path.getmtime(rv) > os.path.getmtime(mp4)):
+        bad.append(f'눈 점검 없음: {os.path.relpath(m["sheet"], HERE)}을 보고 {os.path.relpath(rv, HERE)}에 "{WHOLE_MARK} — 답하는 그림: …" (렌더보다 나중)')
+    return bad
+
 def build_desc(spec):
     """설명란 글. spec "cafe_line": false면 카페 주소 줄을 뺀다(없으면 true — 기존 쇼츠 그대로).
     2026-10-01 F5 sevpay: 계산기 utm 링크 1개 원칙인데 publish가 카페 주소를 자동으로 붙여 링크가 2개가 됐다."""
@@ -171,6 +225,13 @@ def build_desc(spec):
     # 10/5 audit xWAnTpGJTHg: source가 '출처 …'로 시작하면 '출처: 출처'가 됐다 — 앞머리 '출처'를 떼고 붙인다
     src = re.sub(r'^\s*출처\s*[:：]?\s*', '', spec['source'])
     return spec['yt_desc'].strip() + '\n\n' + '출처: ' + src + '\n\n' + cafe + ' '.join('#' + h for h in spec['hashtags'])
+
+def render(sp, spec):
+    """렌더본이 spec보다 새것이면 그대로 쓴다 — 눈 점검(review.md)이 본 그 파일을 올리려고."""
+    mp4 = os.path.splitext(sp)[0] + '.mp4'
+    if not (os.path.exists(mp4) and os.path.getmtime(mp4) > os.path.getmtime(sp)):
+        import cardshort; cardshort.build(spec, mp4)
+    return mp4
 
 def publish(sp):
     spec = json.load(open(sp, encoding='utf-8'))
@@ -189,9 +250,10 @@ def publish(sp):
     same = [r for r in log_rows() if r.get('facts') and r.get('facts') == spec.get('facts')]
     if any(subj(r.get('title')) == subj(spec.get('yt_title')) for r in same) or len(same) >= 2:
         print('올리지 않는다: 이 사실표로 같은 주인공 쇼츠가 있거나 이미 2편 —', spec['facts']); sys.exit(4)
-    import cardshort, ytupload
-    mp4 = os.path.splitext(sp)[0] + '.mp4'
-    cardshort.build(spec, mp4)
+    import ytupload
+    mp4 = render(sp, spec)
+    wb = whole_check(spec, sp, mp4)   # 전체 영상 점검(10/10) — 미달 공개 금지, SHORTS_FORCE로도 못 넘긴다
+    if wb: print('올리지 않는다(전체 영상 점검):'); [print('  -', b) for b in wb]; sys.exit(5)
     desc = build_desc(spec)
     vid = ytupload.upload(mp4, spec['yt_title'], desc, privacy='public', tags=','.join(spec.get('tags', spec['hashtags'])))
     import hashlib
@@ -229,6 +291,9 @@ if __name__ == '__main__':
         b = check(sp_); print('\n'.join(b) if b else '문제 없음')
         for w in warn(sp_): print('경고(막지 않음):', w)
     elif cmd == 'publish': publish(sys.argv[2])
+    elif cmd == 'whole':   # 렌더 + 전체 영상 점검만(올리지 않음): 판을 보고 review.md에 '전체 영상 점검: 통과 — 답하는 그림: …'
+        sp_ = json.load(open(sys.argv[2], encoding='utf-8')); b = whole_check(sp_, sys.argv[2], render(sys.argv[2], sp_))
+        print('\n'.join(b) if b else '전체 영상 점검 통과')
     elif cmd == 'desc':   # 올리지 않고 설명란만 찍는다(링크 수 확인용)
         d = build_desc(json.load(open(sys.argv[2], encoding='utf-8'))); links = re.findall(r'https?://\S+', d)
         print(d); print('---\n링크', len(links), '개:', links)

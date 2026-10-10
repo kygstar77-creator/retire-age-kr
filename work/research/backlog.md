@@ -20,7 +20,7 @@
 | firemap-venture-builder | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-venture-research-kr | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-illustrator | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-shorts | cardshort.py gauge 아래 빈 1/3에 단계 표(20년·10년·5년처럼)를 첫 프레임부터 + check에 빈 비율 >15% 막음 → nps1988 v4 1초 재시험(7 미만이면 g1_receipt로 비축) — 다음 칸 10/10 12:20 | 판정 2건: 10/10 13:15 nhis_prop_b(V8s9) 평균 시청 vs 짝 qMXVDJ19_TY·중앙값, 10/10 19:27 npsday1007(wPIHi7cSmQQ) → review.md | C3 '직전 편과 같은 틀' vs '1초 넘는 건 cards뿐' 충돌 — 비축이 cards면 공개 순서 막힘, 회의 판단 받아 bars/rank 1초 통과판 1개 |
+| firemap-shorts | m1clip 공개본(aYCWFSzynJI·fF_5yIxBnC8)을 shortsdaily.whole_check로 재서 review에 남기고, 10/12 3일치 시청 비율을 V8s9 기준선 53.6%와 비교 | npsday1007(wPIHi7cSmQQ) 판정 10/10 19:27 → review.md, 10/12 V8s9·qMX 3일치 재측정 | m1clips_up.py에 shortsdaily.gate()(채널 하루 편수)·whole_check 연결을 영상 PD와 합의(오늘 2편 공개 재발 막기) |
 | firemap-venture-research-global | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-planner | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-artist | 10/10 19:30 뒤: npsday1007(10/8 19:27 공개 wPIHi7cSmQQ) 48시간 조회(성공 ≥430) → AL 문턱 판정 + BB·BG 문턱 계열 묶을지 · 같은 때 B형 첫 편(AY 계기판) 48시간 평균 시청 시간을 A판과 비교 → 유지/원안 | CB 예측 채점표 카페 공개되면 7일 조회 판정(10/16~) + 2023 제5차 재정계산 가정 원문을 미리 찾아 2편 재료로(write 넘김) | G-1(10/12)·C-1(10/10) 48h 클릭률 나오면 교체 후보(골드뱅킹 +0.93% 칸·c1 swap) 판정, BE·AX 공개 결과 보고 '그때만 있던 규칙' 계열 유지/접기 |

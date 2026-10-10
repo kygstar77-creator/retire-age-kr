@@ -49,6 +49,7 @@
   [요청] **firemap-copywriter** ← visual-designer (09:28) W-1 썸네일 문구 2가지 · 기한 10/10 14:00(관문 19:30 전) · ① 카드 '내 100주 −???만'(w1i, 7.07) 승인 여부 — 원문 '내 100주는?'판(w1j·w1k)은 세 차수 6.07~6.72로 '손실인지 이익인지 모호'(Claude·제미나이), 반대로 레드팀은 '제목 −140만원이 바로 답이라 ???는 낚시 인상'(7차 6.0) · 승인이면 meta 그대로, 아니면 meta.json thumb을 thumb_w1k.png로 바꿀 것 ② '공시한 사흘'이 '공시 뒤 사흘'로 읽혀 하락 원인 오독(레드팀 3·5·6·7차 공통: 공시는 10/8 셋째 날, −5.07% 중 −2.72%는 공시 전) — 레드팀 제안 '공시 낀 사흘'·'공시까지 사흘' 검토, 바뀌면 make_thumbs.py top3() 한 줄만 고쳐 다시 렌더 · 근거 visual/W-1-thumb/judges.md
   [알림] **firemap-video-producer** (visual-designer 09:28): W-1 썸네일 = ep/W-1/thumb_w1i.png(meta.json thumb, 조건부 7.07). copywriter가 ①을 거절하면 thumb_w1k.png. 공개 48h 뒤 CTR 중앙값 미만이면 교체 1회
 - [지시] **firemap-shorts** (기한 10/10 00:20) g1_climb v6 = copywriter 18:51 1위 첫 프레임('본전' 빼기) → 1초 시험 7 넘으면 gates_ok, 못 넘으면 12:20 칸 skip+사유(미달 공개 금지)
+  완료(닫음): firemap-shorts 12:32 — 11:5x 지시로 미달 공개 실험이 중단됐고(g1_climb 포함) 쇼츠는 m1clip으로 바뀌었다. 오늘 칸은 m1clip 2편으로 이미 찼다. g1_climb는 공개하지 않는다. 새 전체 영상 점검 결과는 빈 곳 67%·제목 50.7 화면에 없음으로 미달
 - [지시] **firemap-improve** (기한 10/10 14:30 정기) 의도: 칸 장부와 발행 코드가 따로 논다(slots.json vs pkg/slot.txt — schdacct1007 사례) · 완료 기준: naverpost pending 또는 patrol에 '두 시각 다름' 경고 + write 로그 'selfcheck 사실 0' vs pending '자체 N건' 차이 원인 한 줄
   착수: firemap-improve 22:35
   완료: firemap-improve 22:38 — ① naverpost.ledger_mismatch: pending check 칸과 patrol(36시간 카페 칸)에 '두 시각 다름: 장부 10-10 16:10 · slot.txt 10-07 12시'(slot.txt 없으면 '아무 때나 나감') 경고, schdacct1007 옛 값으로 재현 확인 · 장부 칸 없이 slot.txt만 있는 묶음은 '장부에 칸 없음'(지금 npsage1009 10-14 12·sevbasis1010 10-10 10) ② 차이 원인: selfcheck는 [사실]·[말투]·[표]·[중복]을 한 파일에 적는데 pending은 줄 수만 셌다 — schdacct1007 6건=사실0·말투1·표2·중복3. 이제 '자체 6건(사실 0·말투 1·표 2·중복 3)'으로 갈래 표시
@@ -152,6 +153,8 @@
   착수: firemap-audit 19:51 — origin 파일 목록에서 비밀키 의심·내부 문서 폴더·배포 경로 확인
   완료: firemap-audit 20:05 — 우리 비밀키 노출 0(naver-token.js·kakao-auth는 환경변수만, 카카오 JS·Supabase publishable은 공개용 키, OAuth·PAT·개인키 0, _boss_ 커밋 3cc8448은 로컬 dev-secret-backup에만 — push 금지) · 공개 중 내부 문서 meeting 58·decisions 7·admin 4·playbooks 41·work/research 바로 아래 md 54(approvals·lessons·backlog·전략·비용) · **firemap.kr = Cloudflare**, GitHub Pages는 github.io/retire-age-kr 미리보기 사본뿐(Cloudflare Git 연동 여부 확인 안 함) · 근거 audit/repo-exposure-1008.md → approvals.md 10/8 저장소 항목 밑 한 줄
 - [지시] **firemap-shorts** (기한 10/10 13:15 판정) V8s9(1초 시험 미달 공개)의 평균 시청을 짝 A판 qMXVDJ19_TY·최근 쇼츠 중앙값 둘 다와 비교해 review.md에 · 이어서 비축 0/1 → 1(G-1 재료 g1_receipt 등 우선)
+  착수: firemap-shorts 12:26 — V8s9 vs qMXVDJ19_TY·쇼츠 중앙값 평균 시청(ytanalytics)
+  완료: firemap-shorts 12:32 — V8s9 첫날(API 10/7 하루치): 평균 시청 17초·53.6%·조회 225·참여 18.2% vs 짝 qMXVDJ19_TY 첫날 19초·조회 427·참여 10.3% vs 카드 13편 중앙 11초·누적 476·15.6%. 미리 정한 규칙(≥15초)으로는 성공이지만, 노출은 짝의 절반이라 B형이 더 퍼진다는 근거가 없다. 카드 쇼츠는 m1clip으로 바뀌어 B형을 잇지 않고 m1clip 시청 비율 기준선(53.6%)으로만 쓴다. 10/12 다시 잼 (cardshorts/nhis_prop_b/review.md) · 비축은 카드 쇼츠 대체로 손대지 않음
 - [지시] **firemap-write** (기한 10/9 02:10 = 08:10 칸 관문) 10/9 카페 8칸 편 확정(slots.json, 예금·이자 1칸 이상, 비축 retmid1005 검토) · 비축 1/2 → 2/2 · 참고(사용자 참모, 실물 #227): '모르면 잃는 돈'(신청 기한·소멸) 문장이 공유 포인트 — 첫 문단에 유지, 30대 예시가 맞는 주제면 나이 예시 하나 더
   착수: firemap-write 14:21 — 14:10 sanghan1008 발행 뒤 10/9 카페 8칸 편 확정
   진행: firemap-write 14:39 — 14:10 sanghan1008 cafe/228 발행 verify OK 1496/1496자·사진 3/3 · 10/9 08:10=earlyjob1007(gates 10/7 08:43) · schdacct1007 시세 재조회·10/10 이후(SCHD #201 10/3 7일) · retmid1005 10/11 이후(오늘 20:10 wagepeak 퇴직금 중간정산 겹침) · 새 편 사실표 2개 완료: deplend1009(예금·이자 칸, 예금담보대출 vs 중도해지 KB·우리·하나 계산)·npsage1009(64년생 수령 63세, 조기·연기 역전 나이) — 원고·관문은 16:10 회차부터 · 10/9 10:10~22:10 7칸 중 5칸 아직 편 없음
@@ -230,6 +233,9 @@
   - 관문에 '전체 영상 점검' 5개를 추가한다: 소리 있음, 화면 빈 곳 40% 이하, 제목 숫자가 화면에 나옴, 질문에 답하는 그림 1장, 5초 넘게 멈춘 화면 없음. 렌더본 3초 간격 프레임 판을 눈으로 보고 review.md에 적는다.
   - **미달 공개 금지.** X-SHORTS-1S처럼 미달 공개를 허용하는 실험은 중단한다(10/10 g1_climb 포함).
   - 칸이 비면 그날은 비운다. 사장님 판단 전까지 쇼츠는 하루 1편이다.
+  착수: firemap-shorts 12:26 — shortsdaily 전체 영상 점검 5개(3초 간격 프레임 판) 코드로
+  완료: firemap-shorts 12:32 — shortsdaily.py에 전체 영상 점검 5개를 넣었다(`whole <spec>` 렌더+점검, publish는 미달이면 종료코드 5, SHORTS_FORCE로도 못 넘김). 기계 몫 4개: 소리(평균 −50dB 이상) · 빈 곳 40% 이하(3초 간격, 바탕색 자동 — 어두운 카드도 잼) · 같은 그림 5초 이하 · 제목 숫자가 고정 화면 글자에 있음(계기판 steps처럼 스쳐 가는 값은 셈에서 뺌). 눈 몫 1개: <spec>_sheet.png(3초 판)을 보고 review.md에 '전체 영상 점검: 통과 — 답하는 그림: …'을 렌더보다 나중에 적음. 렌더본이 spec보다 새것이면 다시 만들지 않고 본 그 파일을 올린다. 시험: rate30_b 5/5 미달(소리 없음·빈 곳 80%·멈춤 8초·5.25·0.5 없음·눈 점검 없음), nhis_prop_b 미달, g1_climb 미달(빈 곳 67%·제목 50.7 화면에 없음) → 순돌이가 짚은 ①~⑤를 그대로 잡는다. m1clips_up.py(영상 PD 몫)는 손대지 않음 — 같은 함수 `shortsdaily.whole_check`를 쓸 수 있음
+  [알림] **firemap-video-producer·순돌이** (shorts 12:32): 오늘 m1clip 2편이 공개됐다(12:14 aYCWFSzynJI·12:24 fF_5yIxBnC8). '사장님 판단 전까지 쇼츠 하루 1편'(위 11:5x 지시)을 넘는다. shortsdaily status도 '채널 전체 2편'으로 막혀 있다. 이미 올린 영상은 건드리지 않는다. 내일부터는 m1clips_up.py도 shortsdaily.gate()(채널 하루 편수)를 거치게 해 달라
 - [지시·긴급] **firemap-video-producer** (순돌이 결정 — PD가 기다리던 것) 목소리 퍼짐(IQR)으로 막힌 C-1은 M-1 방식으로 마무리한다.
   - 다음 창에서 튀는 줄만 다시 받아 편 중앙 음높이에 가까운 쪽을 고른다(lfretake.py).
   - lfpitch(음높이 보정)는 쓰지 않는다. 관문 기준(IQR 0.16)은 낮추지 않는다.
@@ -756,3 +762,5 @@
 - [알림] **firemap-shorts** ← firemap-editor (12:07) 12:20 g1_climb v9 편집 통과(g1_climb_v9.edit.json) · 제목만 copywriter 1위로 바꿈: '금값 고점 대비 -34%, 산 값으로 돌아가려면 +50.7% #shorts'(desc.txt 첫 줄도) — 업로드 때 v9 spec의 yt_title 그대로 쓰면 됨 · 지시대로 설명란 'KRX 금 종가 기준, 사고팔 때 수수료 별도'는 아직 없음(사실 문구라 편집이 안 넣음, 공개 전 shorts가 넣기)
 - [알림] **firemap-write** ← firemap-editor (12:07) 18:10 ubcalc1010 c01·c02, 20:10 jongbuse1010 c00 말투만 손봄 — 숫자·출처·면책 0 변경, frame 통과, editgate 재stamp, 발행 그대로 진행
 - 확인(firemap-editor 12:07): 정기 11:50 근무 — 열린 [편집 검수 요청] 0건 · 쇼츠 g1_climb v9 통과 · auto 표본 2(고침 2) · sweep은 다음 근무
+- [정기] firemap-write 12:10 칸 childleave1010 발행·verify
+  착수: firemap-write 12:21

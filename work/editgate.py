@@ -2,7 +2,8 @@
 # 10/2 카페 190: 06:40 통과본과 08:28 공개본 해시가 달랐다(editor 10:50 확인). 통과 뒤에 제목·조각을 바꾸면 통과가 아니다.
 # 해시 = title.txt + c??.txt(이름순) 파일 바이트를 그대로 이어 붙인 sha256 — editor가 10/2 07:43부터 쓰는 방식(e1table1002·b10cafe1002 재현).
 #   py -3.12 work/editgate.py check <pkg>                지금 원고가 .edit.json과 같은지
-#   py -3.12 work/editgate.py stamp <pkg> <by> [note]    편집 통과 표시(.edit.json)를 이 방식으로 찍는다
+#   py -3.12 work/editgate.py stamp <pkg> <by> [note]    편집 통과 표시(.edit.json)를 이 방식으로 찍는다(카페는 틀 v2·compare.md 먼저)
+#   py -3.12 work/editgate.py compare <pkg>              카페 경쟁 비교 관문만
 import os, re, sys, json, hashlib, datetime
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -45,6 +46,19 @@ def check(pkg):
     return True, f'편집 통과 해시 일치({d.get("by", "?")} {d.get("at", "?")})'
 
 
+def compare_check(pkg):
+    """카페 묶음 경쟁 비교 관문(10/10 회의 21:41: facts의 toprank 한 줄로는 인정 안 함). 문제 목록, 비면 통과.
+    compare.md(pkg 또는 그 위 폴더)에 경쟁 상위 3편 이상(표 줄 '| 순위 |' 또는 주소)과 3줄(잘하는 것·따라갈 것·다르게 할 것)."""
+    pkg = os.path.abspath(pkg.rstrip('/\\'))
+    f = next((os.path.join(d, 'compare.md') for d in (pkg, os.path.dirname(pkg)) if os.path.exists(os.path.join(d, 'compare.md'))), None)
+    if not f: return ['compare.md 없음(경쟁 상위 3편과 우리 차이 3줄)']
+    t = open(f, encoding='utf-8', errors='ignore').read()
+    rows = len(re.findall(r'(?m)^\|\s*\d+\s*\|', t)) or len(set(re.findall(r'https?://\S+', t)))
+    bad = [] if rows >= 3 else [f'compare.md 경쟁 글 {rows}편(3편 이상)']
+    bad += [f"compare.md에 '{k}' 줄 없음" for k in ('잘하는 것', '따라갈 것', '다르게 할 것') if k not in t]
+    return bad
+
+
 def refuse(pkg, why, where):
     line = f'{datetime.datetime.now():%Y-%m-%d %H:%M} · {where} 거부 · {os.path.basename(os.path.dirname(pkg.rstrip(chr(47) + chr(92))))} · {why}\n'
     os.makedirs(os.path.dirname(LOG), exist_ok=True)
@@ -73,6 +87,8 @@ if __name__ == '__main__':
     if len(a) >= 2 and a[0] == 'check':
         ok, why = check(os.path.abspath(a[1])); print(('통과 · ' if ok else '없음 · ' if ok is None else '불일치 · ') + why)
         sys.exit(0 if ok else 1)
+    if len(a) >= 2 and a[0] == 'compare':
+        cb = compare_check(a[1]); print('통과 · compare.md' if not cb else '미달 · ' + '; '.join(cb)); sys.exit(1 if cb else 0)
     if len(a) >= 3 and a[0] == 'stamp':
         # 10/3 editor: auto로 찍힌 카페 묶음 3편(offimkt·schd·deadfin)이 틀 v2에 걸려 발행 당일 gate_pkg에 막힐 뻔했다 — 찍기 전에 틀부터 본다.
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -81,6 +97,8 @@ if __name__ == '__main__':
         if aitell.is_cafe_pkg(pk):
             fb = aitell.frame_check(pk)
             if fb: print('안 찍음 · 카페 틀 v2 어김 — ' + '; '.join(fb)); sys.exit(1)
+            cb = compare_check(pk)
+            if cb: print('안 찍음 · 경쟁 비교 없음 — ' + '; '.join(cb)); sys.exit(1)
         print('찍음', stamp(os.path.abspath(a[1]), a[2], ' '.join(a[3:])))
         sys.exit(0)
     print(__doc__ or open(__file__, encoding='utf-8').read().split('import')[0]); sys.exit(2)

@@ -104,7 +104,10 @@ try:
         what = f"{x['at'][5:]} {x['kind']} {x.get('item') or '편 없음'}({x.get('owner','')})"
         if now >= dl: bad.append(f'미리 통과 못 함: {what} — 관문 기한 {dl:%m/%d %H:%M} 지남, 비축분으로 바꾸거나 오늘 안에 통과')
         elif now >= dl - datetime.timedelta(hours=lead[x['kind']]): SLOT_SOON.append(f'{what} 관문 기한 {dl:%m/%d %H:%M}')
-    cad = {'cafe': ['08:10','10:10','12:10','14:10','16:10','18:10','20:10','22:10'], 'shorts': ['12:20','19:20']}  # 롱폼은 하루 1편 이하 '상한'이지 매일 칸이 아님(10/5) — 칸이 있으면 위 관문 검사, 편 준비는 reserve_min.long이 지킴
+    # 10/10 회의: 여기 박아 둔 칸(쇼츠 12:20)이 쇼츠 하루 1편(10/9 판정) 뒤에도 남아 '칸 배정 없음' 오경보를 냈다.
+    # 매일 칸 시각은 장부(slots.json cadence) 한 곳에서만 읽는다. 롱폼은 매일 칸이 아님(10/5) — 편 준비는 reserve_min.long이 지킴.
+    cad = {k: v for k, v in S.get('cadence', {}).items() if not k.startswith('_')}
+    if not cad: bad.append('slots.json에 cadence(매일 칸 시각) 없음 — 칸 배정 없음 검사 못 함')
     for k, ts in cad.items():
         for d in range(0, 3):
             day = (now + datetime.timedelta(days=d)).strftime('%Y-%m-%d')

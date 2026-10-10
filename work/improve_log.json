@@ -388,5 +388,12 @@
   "task": "공통",
   "did": "카페 224편 하루당 조회 상·하위 비교 → rules.json '배당·ETF 제목 %보다 원 금액' 추가, odivfx1010 알림, 재고 카페 7 확인",
   "blocked": "없음"
+ },
+ {
+  "date": "2026-10-10",
+  "hour": 22,
+  "task": "지시(회의 21:41)",
+  "did": "patrol 칸 기준 slots.json cadence로·쇼츠 12:20 오경보 제거, editgate 카페 stamp에 compare.md 관문",
+  "blocked": "없음"
  }
 ]

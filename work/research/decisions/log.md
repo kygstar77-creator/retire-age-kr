@@ -1637,3 +1637,5 @@
 2026-10-10 21:52 · firemap-watchdog · 메우기 없음 · 카페 62분 전(75분 미만)·대기 4·블로그 정지(STOP_blog)·로그인됨·멈춘 회차 없음
 2026-10-10 22:19 · firemap-video-producer · W-1 주간 영수증 숫자를 weekcore.py(주차 인자)로 뽑게 함, 1화 calc_out 16키 재현 확인 · 2화부터 거래일·휴장일 손 입력이 사라져 금요일 종가 뒤 관문 시간이 준다(뉴스 장면은 편마다 새로)
 2026-10-10 22:19 · firemap-video-producer · 야후 금요일 종가는 토 10:00 KST 뒤 받은 값만 확정으로 씀 · 10/9 SPY가 05:02 뒤 778.54→778.57로 바뀐 것 실측
+2026-10-10 22:41 · firemap-improve · patrol 칸 기준을 slots.json cadence로 옮김(쇼츠 12:20 삭제) + editgate 카페 stamp에 compare.md 관문 · 회의 21:41 지시, 쇼츠 하루 1편 뒤 12:20 오경보·compare 검사 0줄이던 것
+2026-10-10 22:41 · firemap-improve · 완료: 회의 21:41 [지시] ①②③ — 옛 patrol 10-11 12:20 shorts 경보 → 새 patrol 0, compare 빠진 사본 stamp 거부 확인

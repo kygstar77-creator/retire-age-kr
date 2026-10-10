@@ -14,7 +14,7 @@ calc = open(os.path.join(EP, 'calc_out.txt'), encoding='utf-8').read()
 meta = json.load(open(os.path.join(EP, 'meta.json'), encoding='utf-8'))
 OP = float(re.search(r'\[A1\][^=]*= ([\d.]+)', calc).group(1))
 assert int(OP) == 107, OP
-assert meta['thumb_text'] == '107조(잠정) 공시한 사흘, 내 100주는?', meta['thumb_text']
+assert meta['thumb_text'] == '107조(잠정) 공시까지 사흘, 내 100주 −140만', meta['thumb_text']  # copywriter 10/10 2차 오독 시험(copy/titles.md 끝)
 assert re.search(r'\[C3\] 10/8 종가\(실적 발표일\)', calc)
 
 INK, RED, BLUE, GREY = '#16181D', '#E03A2F', '#1F5BD8', '#6B7280'
@@ -80,7 +80,7 @@ def top3():
     return f"""<div style='position:absolute;inset:0;background:#E8EEF8'></div>
 <div class='t' style='left:52px;top:34px;font-size:76px;color:{INK}'>삼성전자 3분기 영업이익</div>
 <div class='t' style='left:46px;top:120px;font-size:156px;color:{RED};letter-spacing:-4px'>107조<span style='font-size:66px;letter-spacing:0'> (잠정)</span></div>
-<div class='t' style='left:52px;top:286px;font-size:72px;color:{INK}'>공시한 사흘,</div>
+<div class='t' style='left:52px;top:286px;font-size:72px;color:{INK}'>공시까지 사흘,</div>
 <div style='position:absolute;left:36px;top:378px;width:910px;height:236px;background:{NAVY};border-radius:28px'></div>"""
 MINUS = "<span style='font-family:PD;font-weight:700'>−</span>"
 w1e = top3() + f"""
@@ -205,6 +205,18 @@ w1k = top3() + strip7() + f"""
 <div class='fine' style='color:{GREY};top:652px;font-size:20px'>{FINE5}</div>
 """
 VARIANTS['w1k'] = w1k
+
+
+# ── copywriter 10/10 2차 오독 시험(ep/W-1/copy/titles.md 끝) — top3 셋째 줄 '공시한 사흘,'→'공시까지 사흘,'(공시 원인 오독 줄임) · 카드 '−???만'은 낚시로 읽혀 불승인.
+#    w1l = w1i 그림 + 카드 '내 100주 −140만'(calc_out C8, 감춤 없음) · w1m = w1k 그림 + 새 셋째 줄(예비). w1a~w1k png는 옛 문구 — 다시 렌더하지 말 것(top3가 바뀌어 덮어씀).
+C8 = int(re.search(r'\[C8\][^=]*= (-?\d+)', calc).group(1)); assert C8 == -1400000, C8
+w1l = top3() + strip6() + f"""
+<div class='t' style='left:72px;top:410px;font-size:112px;color:#fff'>내 100주</div>
+<div class='t' style='left:80px;top:540px;font-size:50px;color:#C9D3E6'>평가액 10/2→10/8</div>
+<div id='l1' class='t' style='left:500px;top:410px;font-size:112px;color:#7FB0FF'>{MINUS}{-C8 // 10000}만</div>
+<div class='fine' style='color:{GREY};top:652px;font-size:20px'>{FINE5}</div>
+"""
+VARIANTS.update(w1l=w1l, w1m=w1k)
 
 
 def check_zones(page):

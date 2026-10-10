@@ -258,6 +258,28 @@ def spec(key, L, A):
     raise KeyError(key)
 
 
+# motion-designer 부품 3개(motion.md 요청, PD 10/10) — motion_preview 스크립트가 voice.json 길이로 다시 만든 json을 PD 장면 자리에 끼운다.
+#   open(0장 첫 3문장)·piece1+prem+piece1b(3장 세 조각)·math(6장). 문장이 장면과 한 줄이라도 어긋나면 멈춘다.
+MOTION = [('g1open.py', 'g1_open.json', 'open', ['open']), ('wfprops.py', 'g1_wf.json', 'wf', ['piece1', 'prem', 'piece1b']),
+          ('asymprops.py', 'g1_asym.json', 'asym', ['math'])]
+
+
+def swap_motion(scenes):
+    import subprocess
+    mp = os.path.join(EP, 'motion_preview')
+    for py, js, dk, keys in MOTION:
+        subprocess.run([sys.executable, os.path.join(mp, py)], check=True, capture_output=True)
+        j = json.load(open(os.path.join(mp, js), encoding='utf-8'))
+        i = [s['key'] for s in scenes].index(keys[0])
+        old = scenes[i:i + len(keys)]
+        assert [s['key'] for s in old] == keys, (keys, [s['key'] for s in old])
+        assert [l['text'] for s in old for l in s['lines']] == [l['text'] for l in j['scene']['lines']], f'{js} 문장이 장면과 다름'
+        sc = dict(j['scene']); sc['data'] = {dk: j[dk]}
+        sc['lines'] = [l for s in old for l in s['lines']]   # 자막 칩·목소리는 PD 파싱 그대로
+        scenes[i:i + len(keys)] = [sc]
+    return scenes
+
+
 def main(script):
     path = os.path.join(EP, script)
     txt = open(path, encoding='utf-8').read()
@@ -298,6 +320,7 @@ def main(script):
         if key == 'end': frames = max(frames, END_MIN)
         scenes.append({'key': key, 'kind': d['kind'], 'title': d['title'], 'sub': d.get('sub'), 'source': d.get('source'),
                        'chapter': None if ch in ('0.', '로고') else ch.rstrip('.').split('-')[0] + '장', 'data': d['data'], 'lines': out, 'frames': frames})
+    scenes = swap_motion(scenes)
     n_lines = sum(len(s['lines']) for s in secs)
     assert n_lines == sum(len(s['lines']) for s in scenes), f'빠진 문장: 대본 {n_lines} vs 장면 {sum(len(s["lines"]) for s in scenes)}'
     missing = sum(1 for s in scenes for l in s['lines'] if not l['audio'])

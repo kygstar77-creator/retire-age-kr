@@ -54,7 +54,7 @@ export const WaterfallPieces: React.FC<WaterfallPiecesProps> = (p) => {
           <line x1={x0 - 20} x2={x0 + colW * 4} y1={zy} y2={zy} stroke={T.ink} strokeWidth={4} opacity={fade(f, p.intro, 12)}
             strokeDasharray={2000} strokeDashoffset={2000 * (1 - grow(p.intro))} />
           <text x={x0 - 30} y={zy + 8} textAnchor="end" fontFamily="PD" fontWeight={700} fontSize={24} fill={T.ink2} opacity={fade(f, p.intro + 8)}>0</text>
-          <text x={x0 - 30} y={zy + 38} textAnchor="end" fontFamily="PD" fontWeight={500} fontSize={20} fill={T.ink3} opacity={fade(f, p.intro + 8)}>{p.zeroText.split(' = ')[0]}</text>
+          <text x={x0 - 20} y={zy + 38} textAnchor="start" fontFamily="PD" fontWeight={500} fontSize={20} fill={T.ink3} opacity={fade(f, p.intro + 8)}>{p.zeroText.split(' = ')[0]}</text>
           {/* 이어 붙이는 가는 선(앞 막대 끝 → 다음 막대 시작) */}
           {p.steps.map((s, i) => {
             const nx = i + 1 < p.steps.length ? p.steps[i + 1].at : p.total.at;

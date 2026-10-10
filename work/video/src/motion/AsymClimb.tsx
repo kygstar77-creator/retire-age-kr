@@ -180,7 +180,8 @@ export const AsymClimb: React.FC<AsymClimbProps> = (p) => {
 
         {/* 도장: 수수료·팔 때 값 차이 뺀 숫자(대본 원문 조각) */}
         {f >= p.fee[1] ? (
-          <div style={{...F, position: 'absolute', left: RX + barW / 2 + 30, top: 690, width: 440, opacity: gF, transform: `translateY(${(1 - gF) * 20}px) rotate(${-1.5 + r('s') * 1}deg)`,
+          <div style={{...F, position: 'absolute', left: RX + barW / 2 + 80, top: 630, width: 320,   // 10/10 PD: +30·한 줄이면 G1 녹음 길이에서 카메라 1.08배일 때 분홍 테두리에 겹침 → 두 줄로 오른쪽
+             opacity: gF, transform: `translateY(${(1 - gF) * 20}px) rotate(${-1.5 + r('s') * 1}deg)`,
             background: T.ink, color: '#fff', borderRadius: 14, padding: '14px 22px', fontWeight: 700, fontSize: 30, lineHeight: 1.3, boxShadow: '0 10px 24px rgba(0,0,0,.18)'}}>
             {p.fee[0]}
           </div>

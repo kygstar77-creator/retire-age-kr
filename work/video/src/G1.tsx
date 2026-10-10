@@ -15,6 +15,9 @@ import {TallyReceipt, TallyRow} from './motion/TallyReceipt';
 import {TallyZoom} from './motion/TallyZoom';
 import {TallyTag, TallyCallout} from './motion/TallyMark';
 import {TallyLineChart, lineXY} from './motion/TallyLineChart';
+import {BuyDateOpen} from './motion/BuyDateOpen';
+import {WaterfallPieces} from './motion/WaterfallPieces';
+import {AsymClimb} from './motion/AsymClimb';
 
 type GLine = TallyLine & {audio?: string | null};
 export type GScene = {key: string; kind: string; title: string; sub?: string | null; source?: string | null; chapter?: string | null; data: any; lines: GLine[]; frames: number};
@@ -254,6 +257,8 @@ const End: React.FC<{s: GScene}> = ({s}) => {
 
 const Body: React.FC<{s: GScene}> = ({s}) => {
   switch (s.kind) {
+    case 'open': return <BuyDateOpen {...s.data.open} />;   // motion-designer 첫 장면(10/10 PD 넣음)
+    case 'waterfall': return <WaterfallPieces {...s.data.wf} />;   // 3장 세 조각(piece1·prem·piece1b 자리)
     case 'twin': return <Twin s={s} />;
     case 'cards': return <Cards s={s} />;
     case 'road': return <Road s={s} />;
@@ -270,7 +275,7 @@ const Body: React.FC<{s: GScene}> = ({s}) => {
     case 'quote': return <Quote s={s} />;
     case 'count': return <Count s={s} />;
     case 'stamps': return <Stamps s={s} />;
-    case 'asym': return <Asym s={s} />;
+    case 'asym': return s.data.asym ? <AsymClimb {...s.data.asym} /> : <Asym s={s} />;   // 6장 AsymClimb, 없으면 옛 판
     case 'end': return <End s={s} />;
     default: return null;
   }

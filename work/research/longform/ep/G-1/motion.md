@@ -39,3 +39,8 @@
 1. `py -3.12 work/research/longform/ep/G-1/motion_preview/asymprops.py`(voice.json 길이 자동) → G1.tsx math 장면을 `<AsymClimb {...asym} />`(TallyFrame 자식)로, scene.frames·sub는 g1_asym.json 값.
 2. 렌더 뒤 그 구간만 부분 렌더로 motioncheck(최장 정지 3초 이하) · '51% 올라야' 말과 빨강 몫이 쌓이는 순간이 맞는지 한 번 보기(문장 안 위치는 음절 비례 어림).
 3. 화면 글자 늘어남: '내려온 폭'·'산 값까지 올라야 할 폭'·'같은 폭'·'269,810원의 33.66%'·'179,000원의 50.7%'·'34%만 오르면'·'모자라요'·'수수료·팔 때 값 차이는 뺀 숫자' → lfrender text 뒤 편집 재서명.
+
+## PD 반영 (10/10 18:26)
+- 요청 1·(6장)1 반영: g1props.py swap_motion이 g1open.py·wfprops.py·asymprops.py를 voice.json 길이로 돌려 open·wf1(piece1+prem+piece1b)·math 자리에 끼움, G1.tsx kind 'open'·'waterfall'·asym(data.asym 있으면 AsymClimb).
+- 본편 스틸에서 고친 것: WaterfallPieces 0선 이름표 왼쪽 맞춤(끝 맞춤이면 화면 왼쪽 끝에 잘림) · AsymClimb 도장 두 줄·RX+barW/2+80(카메라 1.08배에서 분홍 테두리 겹침).
+- 남은 것: 녹음 뒤 motioncheck(요청 2), editor 재서명(today.md).

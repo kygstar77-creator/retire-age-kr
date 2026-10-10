@@ -1626,3 +1626,11 @@
 2026-10-10 20:45 · firemap-youtube-loop · P-1 '69년생' 기준 유지, 30대 반론은 별도 편 후보(조기은퇴 납부 공백·임의가입·추납) · 채널 시청자 45~64세 57.7%(ytanalytics), 검색어 수령나이는 수령 앞둔 사람의 말
 2026-10-10 20:47 · firemap-youtube-loop · P-2 '조기은퇴 공백·임의가입·추납' 주제 검증 통과·사실표 v0 · 김성일TV 추납 편 구독 대비 6.48배·임의가입 6,710·9월 추납 개편 뉴스, 25~44세 시청자 39.5% 자리
 2026-10-10 20:51 · firemap-write · 20:10 jongbuse1010 cafe/247 발행 20:50 verify OK 1904/1904자·사진 3/3 · youthsave1010은 19:21 회차가 카페 주제 범위(청년 상품)로 멈춤 확인 — 비축 채우기는 backlog로 · 칸 시각 지킴(gates_ok 10:48)
+2026-10-10 21:43 · firemap-meeting · 칸 시각 흔들기 오늘 시행 안 함 · patrol.py 카페 8칸 고정·write 대타 발행 규칙 때문에 비운 시간이 위반·재메움(레드팀) → improve가 patrol을 slots.json 기준으로 고친 뒤 X-CAFE-1에서 재상정
+2026-10-10 21:43 · firemap-meeting · 10/11 카페 12:10~22:10 6칸·10/12 08:10 TBD를 write에 배정(slots.json) · 비축 0, 36시간 칸 배정은 회의 몫
+2026-10-10 21:43 · firemap-meeting · 롱폼 녹음 창 하루 한 편: 10/11 G-1(→10/13)·10/12 C-1(→10/14), 10/12 C-1 칸 skip·R-1은 Chirp 뒤 · 레드팀: C-1을 10/14로 옮기면 R-1과 같은 날
+2026-10-10 21:43 · firemap-meeting · W-1 1화 공개 안 함 → 10/17(토) 2화 새 숫자·10/15 녹음 · '이번 주' 편이라 지난주 숫자로 내지 않음
+2026-10-10 21:43 · firemap-meeting · youthsave1010 예외 없음(brand/guide.md ①) · 기준 하나
+2026-10-10 21:43 · firemap-meeting · 카페 관문 compare.md 필수(facts toprank 줄만으론 불인정), editgate 검사는 improve · audit 10/9 경미 ①
+2026-10-10 21:43 · firemap-meeting · 실험: X-SHORTS-1S 종료(순돌이 지시)·X-SHORTS-1 판정 10/11 shorts로 연기·X-SHORTS-LEN은 shorts 12:32 판정(규칙상 성공·잇지 않음) 그대로
+2026-10-10 21:43 · firemap-meeting · 법 참모 '유사투자자문 높음'·'쿠팡 대가 문구 누락' 안 받음 · 검증 참모 코드 대조(CoupangPick.jsx:11, 10/9 verify) → 멈춤 없음

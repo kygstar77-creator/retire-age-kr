@@ -752,16 +752,6 @@
    "gate_note": "2026-10-10 03:30 firemap-write 관문 통과: 제목 평균 7.5(제미나이 8·독립 레드팀 7·작성자 7.5) · 표지 F 평균 7.25(제미나이 7.25·독립 레드팀 7·작성자 7.5, 보정 gongjae1002 7.0~7.5) · editgate auto 일치 · readcheck 0·selfcheck 사실 0·aitell 6.3 · compare/review 세 줄 · slot.txt 2026-10-10 12 · naverpost pending block은 코너 시각 전뿐"
   },
   {
-   "at": "2026-10-10 19:20",
-   "kind": "shorts",
-   "item": "m1s_need100",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-10 12:41",
-   "published": "예약 2026-10-10T19:20:00+09:00 https://youtu.be/fF_5yIxBnC8 (private→자동 공개, videos.list 확인 private 2026-10-10T10:20:00Z)",
-   "item_pkg": "work/research/cardshorts/m1s_need100",
-   "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_need100/review.md · 카드 쇼츠 대체(사장님 10/10 지시) | 이전 칸 12:20 g1_climb(미달, 접음) → firemap-shorts 10/9 15:2x: 편 = g1_climb(G-1 재료 '고점에 산 금 본전까지 34%→51%', bars vs·음악 있음, 직전 rate30_b cards라 C3 해소). compete 5·check 문제 없음·aitell 0.0(.edit.json auto)·review 세 줄 끝. 첫 프레임 1초 고정 조건 v4 5·5, v5 5·5(보정 gongjae1002 7.0~7.5 유효) → 7 미달, gates_ok 안 적음. 공개 전날(10/9 밤) G-1 calc 재실행 뒤 숫자 재확인 필요. 다음 1안: +51% 전면 한 숫자(hero)나 금 그림 요소 첫 프레임. 못 넘으면 npsday1007 선례(1초 미통과 공개·48시간 판정) 또는 비축 대체.  10/10 07:13 firemap-shorts: v9 hero 한 숫자 전면판(금 -34%, 왜 +51%?) 고정 조건 5·5(보정 7.5·7.0 유효) 미달 — v4~v9 5계열 모두 5, gates_ok 안 적음·미달 공개 금지. 이 칸은 g1_climb 접고 다른 편(카드 틀 말고 그림 요소 필요)이 12:20 전 관문 통과해야 하며 못 넘으면 칸 skip+사유. 근거 cardshorts/g1_climb/review.md"
-  },
-  {
    "at": "2026-10-10 14:10",
    "kind": "cafe",
    "item": "deprise1010",
@@ -786,6 +776,16 @@
    "gates_ok": "2026-10-10 07:34",
    "note": "이전: firemap-meeting 10/09 21:33: X-CAFE-CALC-1 B칸(10/10 시작): 퇴직금·실업급여·연봉 실수령 계산에 실제로 이어지는 주제, 본문에 맞는 /calc 링크+utm, 같은 계산기 연속 금지 · 관문 기한 12:10 · firemap-write 보조 2026-10-10 07:34: ubcalc1010 실업급여 피보험기간 전 회사 합산(고용보험법 제50조), 계산기 링크 utm_campaign=ubcalc1010, 제목 K8 7.33·표지 7.67, 본문 약 2,700자·사진 3장, crosscheck·레드팀 2회 완료, editgate 도장",
    "item_pkg": "work/research/ubcalc1010/pkg"
+  },
+  {
+   "at": "2026-10-10 19:20",
+   "kind": "shorts",
+   "item": "m1s_need100",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-10 12:41",
+   "published": "예약 2026-10-10T19:20:00+09:00 https://youtu.be/fF_5yIxBnC8 (private→자동 공개, videos.list 확인 private 2026-10-10T10:20:00Z)",
+   "item_pkg": "work/research/cardshorts/m1s_need100",
+   "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_need100/review.md · 카드 쇼츠 대체(사장님 10/10 지시) | 이전 칸 12:20 g1_climb(미달, 접음) → firemap-shorts 10/9 15:2x: 편 = g1_climb(G-1 재료 '고점에 산 금 본전까지 34%→51%', bars vs·음악 있음, 직전 rate30_b cards라 C3 해소). compete 5·check 문제 없음·aitell 0.0(.edit.json auto)·review 세 줄 끝. 첫 프레임 1초 고정 조건 v4 5·5, v5 5·5(보정 gongjae1002 7.0~7.5 유효) → 7 미달, gates_ok 안 적음. 공개 전날(10/9 밤) G-1 calc 재실행 뒤 숫자 재확인 필요. 다음 1안: +51% 전면 한 숫자(hero)나 금 그림 요소 첫 프레임. 못 넘으면 npsday1007 선례(1초 미통과 공개·48시간 판정) 또는 비축 대체.  10/10 07:13 firemap-shorts: v9 hero 한 숫자 전면판(금 -34%, 왜 +51%?) 고정 조건 5·5(보정 7.5·7.0 유효) 미달 — v4~v9 5계열 모두 5, gates_ok 안 적음·미달 공개 금지. 이 칸은 g1_climb 접고 다른 편(카드 틀 말고 그림 요소 필요)이 12:20 전 관문 통과해야 하며 못 넘으면 칸 skip+사유. 근거 cardshorts/g1_climb/review.md"
   },
   {
    "at": "2026-10-10 19:30",
@@ -831,6 +831,38 @@
    "note": "firemap-write 10/09 23:1x: X-CAFE-CALC-1 B칸 3번째(퇴직금 10/10 10:10 · 실업급여 10/10 18:10 다음) — 연봉 실수령 계산에 이어지는 주제, 본문에 /calc 링크+utm, 같은 계산기 연속 금지 · 관문 기한 10/11 04:10 | firemap-write 2026-10-10 14:42: 관문 통과 — netpay1011 월급 실수령액 2026 달별 변화(/calc/salary utm) · 제목 T6 '월급 실수령액 연초에 줄고 3월엔 자녀 있는 집만 늘어난 이유' 제미나이 7·9·레드팀 7.5=7.83 · 표지 P5 8·8·7=7.67 · readcheck 0·selfcheck 사실 0·aitell 0.9·crosscheck 사실 반영 3·유지 2·레드팀 2회 사실 오류 0(오해 6 반영)·editgate auto · compare.md·review.md 세 줄"
   },
   {
+   "at": "2026-10-11 12:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1)"
+  },
+  {
+   "at": "2026-10-11 14:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1)"
+  },
+  {
+   "at": "2026-10-11 16:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1)"
+  },
+  {
+   "at": "2026-10-11 18:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1)"
+  },
+  {
    "at": "2026-10-11 19:20",
    "kind": "shorts",
    "item": "m1s_minmonth",
@@ -846,16 +878,32 @@
    "item": "W-1",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "firemap-video-producer 10/10 16:09: skip — 16:01 창 W-1 8요청 뒤 429(한도 10 = C-1 2 + W-1 8, W-1 8요청 중 3요청이 음높이 벗어나 다시 받기: 0장 128·125Hz, 3장 173Hz) · 녹음 38/55줄(7장 중 5묶음, 5·6장·7장 2묶음 못 받음) · 받은 38줄도 퍼짐 IQR 0.19>0.16(앞뒤 −6.6% 통과) · 남은 17줄(31%)은 다음 날 녹음이면 규칙 4(다시 받기 20% 이하만 이틀 허용)로 막힘 → 관문 기한 10/10 19:30 못 넘음, 지시대로 10/11 칸 skip('이번 주' 편이라 미루지 않음). 녹음분 audio/w-1 보관(_rej0 = 첫 시험 128Hz) | firemap-meeting 10/09 21:33: W-1 '이번 주 뉴스가 내 돈에 얼마' 매주 토 19:30 고정 칸 1화 · 녹음 10/10 16:01 창(7요청, --gate 0.10 여유 3) · 그 전 06시 뒤 youtube-loop가 {F} 3줄 금요일 종가로 갱신→editor 재서명 · 관문 기한 10/10 19:30(같은 날 녹음 뒤 3.5시간) · 못 넘으면 skip, 다음 창으로 미루지 않고 '이번 주' 편이라 버림",
+   "note": "firemap-video-producer 10/10 16:09: skip — 16:01 창 W-1 8요청 뒤 429(한도 10 = C-1 2 + W-1 8, W-1 8요청 중 3요청이 음높이 벗어나 다시 받기: 0장 128·125Hz, 3장 173Hz) · 녹음 38/55줄(7장 중 5묶음, 5·6장·7장 2묶음 못 받음) · 받은 38줄도 퍼짐 IQR 0.19>0.16(앞뒤 −6.6% 통과) · 남은 17줄(31%)은 다음 날 녹음이면 규칙 4(다시 받기 20% 이하만 이틀 허용)로 막힘 → 관문 기한 10/10 19:30 못 넘음, 지시대로 10/11 칸 skip('이번 주' 편이라 미루지 않음). 녹음분 audio/w-1 보관(_rej0 = 첫 시험 128Hz) | firemap-meeting 10/09 21:33: W-1 '이번 주 뉴스가 내 돈에 얼마' 매주 토 19:30 고정 칸 1화 · 녹음 10/10 16:01 창(7요청, --gate 0.10 여유 3) · 그 전 06시 뒤 youtube-loop가 {F} 3줄 금요일 종가로 갱신→editor 재서명 · 관문 기한 10/10 19:30(같은 날 녹음 뒤 3.5시간) · 못 넘으면 skip, 다음 창으로 미루지 않고 '이번 주' 편이라 버림 | firemap-meeting 10/10 21:40: W-1 1화는 지난주 숫자라 공개 안 함 → 10/17(토) 19:30 2화로 새 숫자·새 녹음(youtube-loop 대본, 녹음 10/15 창)",
    "skip": true
   },
   {
-   "at": "2026-10-12 19:30",
-   "kind": "long",
-   "item": "C-1",
-   "owner": "firemap-video-producer",
+   "at": "2026-10-11 20:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-video-producer 10/10 16:05: 16:01 창 2요청(새 줄 1·lfretake 15) 뒤 IQR 0.18>0.16 막힘(앞뒤 +3.6%·5.61 통과) — 관문 기한 10/11 19:30 전 녹음 창은 10/11 16:01(G-1 배정)뿐, 순돌이 판단 대기 | 순돌이 10/10 12:4x: C-1 v5(예고·결론부터·궁금증 챕터·가상 인물 장면, 6e286c3) — 10/10 16:01 창에서 새 줄 1 + lfretake --n 15(2요청, W-1 7요청보다 먼저) → check(날짜 둘은 다시 받기 20% 이하면 허용, 앞뒤 차·IQR 관문 그대로) → render → 10/12 19:30. 관문 기한 10/11 19:30"
+   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1)"
+  },
+  {
+   "at": "2026-10-11 22:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1)"
+  },
+  {
+   "at": "2026-10-12 08:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1)"
   },
   {
    "at": "2026-10-12 19:20",
@@ -866,6 +914,14 @@
    "published": "예약 2026-10-12T19:20:00+09:00 https://youtu.be/xmmkdtLhmXs (private→자동 공개, videos.list 확인 private 2026-10-12T10:20:00Z)",
    "item_pkg": "work/research/cardshorts/m1s_nhis70",
    "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_nhis70/review.md · 카드 쇼츠 대체(사장님 10/10 지시)"
+  },
+  {
+   "at": "2026-10-12 19:30",
+   "kind": "long",
+   "item": "C-1",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "firemap-meeting 10/10 21:40: skip 예정 — 녹음 창은 하루 한 편(10요청), 10/11 16:01 창은 G-1(→10/13). C-1은 10/12 16:01 창 녹음 → 10/14 19:30 칸. | 이전: firemap-video-producer 10/10 16:05: 16:01 창 2요청(새 줄 1·lfretake 15) 뒤 IQR 0.18>0.16 막힘(앞뒤 +3.6%·5.61 통과) — 관문 기한 10/11 19:30 전 녹음 창은 10/11 16:01(G-1 배정)뿐, 순돌이 판단 대기 | 순돌이 10/10 12:4x: C-1 v5(예고·결론부터·궁금증 챕터·가상 인물 장면, 6e286c3) — 10/10 16:01 창에서 새 줄 1 + lfretake --n 15(2요청, W-1 7요청보다 먼저) → check(날짜 둘은 다시 받기 20% 이하면 허용, 앞뒤 차·IQR 관문 그대로) → render → 10/12 19:30. 관문 기한 10/11 19:30"
   },
   {
    "at": "2026-10-13 19:20",
@@ -888,10 +944,10 @@
   {
    "at": "2026-10-14 19:30",
    "kind": "long",
-   "item": "R-1",
+   "item": "C-1",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "순돌이 10/10 12:4x: C-1은 10/12로 당김(16:01 창에서 lfretake 다시 받기 2요청) → 이 칸은 R-1 후보(회의가 확정) | firemap-meeting 10/09 21:33: 녹음 10/12 16:01 창(처음부터, --gate) · 관문 기한 10/13 19:30(녹음 다음 날까지 여유) · 10/12~18주 G-1·C-1 = 2편 · 레드팀 반영으로 10/13→10/14"
+   "note": "firemap-meeting 10/10 21:40: C-1 확정(녹음 10/12 16:01 창, 관문 기한 10/13 19:30). R-1은 Chirp 결재 뒤로 뺌(같은 날 롱폼 2편 금지). | 이전: 순돌이 10/10 12:4x: C-1은 10/12로 당김(16:01 창에서 lfretake 다시 받기 2요청) → 이 칸은 R-1 후보(회의가 확정) | firemap-meeting 10/09 21:33: 녹음 10/12 16:01 창(처음부터, --gate) · 관문 기한 10/13 19:30(녹음 다음 날까지 여유) · 10/12~18주 G-1·C-1 = 2편 · 레드팀 반영으로 10/13→10/14"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외"

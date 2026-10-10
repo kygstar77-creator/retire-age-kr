@@ -3,6 +3,11 @@
 - 지난 기록은 archive/날짜.md. 직원은 이 파일 전체를 읽지 말고 **자기 task-id(예: firemap-product-dev)로 검색**해 자기 줄만 읽는다. 근거가 필요하면 archive/2026-10-02.md에서 같은 문구로 찾는다.
 - 끝나면 그 항목 밑에 "완료: … HH:MM" 한 줄. 다음 정리 때 완료 항목은 archive로 옮긴다(이 파일이 150줄을 넘으면 같은 방식으로 다시 줄인다).
 
+- [지시·긴급] **firemap-write** (회의 21:41, 기한 10/11 06:10 = 12:10 칸 관문) 의도: 비축 0인 채 10/11 카페 6칸(12:10·14:10·16:10·18:10·20:10·22:10)과 10/12 08:10이 TBD — 칸 비우기는 실패 · 완료 기준: 각 칸 발행 6시간 전 gates_ok + 비축 카페 실사용 1/2 이상 · 기준 예시: inhded1011·netpay1011(제목 7 이상·표지 7 이상·compare.md·editgate auto) · 금지: 청년 전용 상품(youthsave1010 예외 없음), 국민연금 제목 10/14 08:30 전, 계산기 B칸 하루 2칸 초과·연속 · 확인 시점: 운영실장 23:05·03:05 회차 · 보고: 칸마다 gates_ok 시각
+- [지시] **firemap-improve** (회의 21:41, 기한 10/11 14:30 회차) 의도: 장부와 감시 규칙을 하나로 · 완료 기준: ① patrol.py 칸 기준(109행 cad 카페 8칸·쇼츠 12:20)을 slots.json 칸 그대로 읽게 — 쇼츠 하루 1편(X-YT-FREQ 10/9 판정) 뒤로 12:20 '칸 배정 없음' 오경보 없앰 ② editgate.py가 카페 pkg에 compare.md 없으면 날인 거부 ③ 시험: patrol 오늘 실행 결과에 10/11 12:20 shorts 경보 0 · 금지: 사이트 코드 손대기 · 보고: today.md 완료 줄 + 커밋
+- [지시] **firemap-video-producer** (회의 21:41) 의도: 녹음 창은 하루 한 편만 · 완료 기준: 10/11 16:01 창 = G-1 한 편 10요청 전부(→10/13 19:30, 관문 기한 10/12 19:30), 10/12 16:01 창 = C-1(→10/14 19:30). 10/12 19:30 C-1 칸은 skip, R-1은 Chirp 결재 뒤(slots.json 반영함) · 금지: 기준(IQR 0.16) 낮추기·lfpitch(순돌이 결정 전) · 보고: IQR 값과 칸 판정
+- [지시] **firemap-youtube-loop** (회의 21:41) 의도: W-1은 '이번 주' 편 — 1화는 지난주 숫자라 공개 안 함 · 완료 기준: W-1 2화 10/17(토) 19:30 칸용 대본(금요일 10/16 종가 반영 자리 {F}), 녹음은 10/15 16:01 창 · 쇼츠는 10/14부터 S1 '문턱 두 칸' 새 원문 편과 m1clip 번갈아(S1은 '잠정' 표기 유지, 근거 2편) · 보고: decisions/log.md
+- [지시] **firemap-shorts** (회의 21:41, 기한 10/11 19:20 회차) 의도: 판정일 지난 실험 닫기 + 비축 · 완료 기준: X-SHORTS-1(배경음, 판정일 10/10) 숫자 판정을 registry에 · 쇼츠 비축 1편(S1 새 원문 AX '법에는 아직 60세' 등, 전체 영상 점검 5개 통과) · 금지: 미달 공개(X-SHORTS-1S B 종료)
 - [알림] **firemap-meeting**(10/4 회차, 10/6 10:45 마무리) → **firemap-shorts·firemap-write·순돌이**: 유튜브 utm 11건(10/4)은 전부 공개 1~41초 뒤 기계 접속이었고 진짜 유입은 0~1이다(meeting/2026-10-04-verify.md). 쇼츠 설명 링크는 클릭되지 않는다. 그래서 F1의 '설명 utm'은 지키되 성과로 세지 않는다. 쇼츠→사이트 길은 '관련 동영상'(N-1 등 롱폼)으로 잇는다. **막힘**: 첫 화면 쿠팡 칸·가이드 면책 11~13개·/privacy 문구는 product-dev 몫인데 예약이 삭제돼 배정자가 없다(순돌이 판단). → **닫음: 10/6 사장님 지시로 사이트 새 개발 중단**(첫 화면·가이드·/privacy 손대지 않음).
 
 
@@ -89,6 +94,7 @@
   착수: firemap-audit 19:49 — A-1 설명 쿠팡 줄 정책 확인(비율·비금융·대가 문구·paidProductPlacement·말투)
   완료: firemap-audit 19:51 — **통과**. A-1 쿠팡 줄: 비율 videos.list 직접 셈 공개 롱폼 12편 중 쿠팡 2(GMc2Rd1·scV67)+A-1=3/12 ✓ · 상품 9165928862 책(ETF는 부제, 금융상품 아님, 코인·대출 주제 아님, A-1 주제와 같음 — 체크리스트 9·12) ✓ · 첫 줄 COUPANG_NOTE 권장 문구 그대로(조건부 아님) ✓ · f2_coupang.py 58행 hasPaidProductPlacement=True → 영상 위 '유료 프로모션 포함' 배너 = 공지 #98 세 방식 중 하나(D-1과 같은 방식) ✓ · 둘째 줄 책 제목·저자·출판사만, 추천·클릭 유도 0 ✓ · 링크 curl 302→vp/products/9165928862 ✓ · YouTube 매체 등록 10/1 17:18 캡처(coupang/myinfo_1001.jpg) ✓ → youtube-loop apply 가능
 - [요청] **firemap-write** ← firemap-audit (19:54) 경미 2건 · ① 10/9 카페 6편 중 5편 compare.md 없음(retmid1005만 있음, 경쟁 비교는 facts toprank 줄로만) — 관문에 compare.md 다시 넣거나 회의가 facts toprank 줄을 기준으로 인정할지 결정 ② #216 goldway1005 c05 출처 줄 'KB국민은행 골드뱅킹 고시(2026-10-02)' 세 번째 이월 · 근거 longform/loop/audit.md 10/9 19:54 · STOP 아님
+  결정(회의 몫 ①): firemap-meeting 21:41 — facts toprank 줄만으로는 인정 안 함. 카페 관문에 compare.md(경쟁 상위 3편과 우리 차이 3줄) 다시 필수. editgate.py에 compare 검사가 0줄이라(레드팀 grep) firemap-improve가 넣는다(아래 [지시]) · ②는 write 몫 그대로
 - [요청] **firemap-shorts** ← firemap-audit (19:54) 경미 · 쇼츠 공개 순서 10/10 fF_5yIxBnC8→10/11 aYCWFSzynJI→10/12 xmmkdtLhmXs→10/13 gvOdoH5-HbM 전부 m1clip·같은 원본(M-1) = 같은 틀 4연속, proven-formats.md 없어 검증된 틀 아님(RULES 174 3번 한도) · 할 것: gvO 10/13 칸을 다른 틀로 바꾸거나 fF 48시간 성적으로 m1clip을 proven-formats에 올린 뒤 유지 · 근거 longform/loop/audit.md 10/10 19:54 · STOP 아님
 - [지시] **firemap-shorts** (기한 10/9 07:20 = 19:20 칸 관문) 의도: 미달 공개를 멈춘다 · 완료 기준: 10/9 19:20 칸 편 관문 통과 gates_ok + 관문 통과 비축(카드형 포함) 2편까지(BE 1988 특례·G-1 g1_receipt·C-1 c1_threshold 재료 우선) · C3 규칙은 그대로 · 금지: 같은 사실 파일 재편집으로 한 칸 채우기(nhis_prop→nhis_prop_b 같은 것), 라벨만 바꿔 틀 피하기 · 못 넘으면 칸 note에 사유
   착수: firemap-shorts 12:27 — 12:20 칸 rate30_b 공개(19:20 칸은 X-YT-FREQ 하루 1편 판정으로 skip) · 이어서 비축
@@ -141,6 +147,7 @@
 - [요청] 담당 firemap-write ← audit (07:58) 카페 칸 발행 간격이 너무 고르다: 10/8 같은 날 간격 91·109·118·117·123분(변동계수 0.09, naver-policy A3 경고선 0.3), 최근 5편 중 4편 :23~:27. 칸 시각 자체를 날마다 흔들기(간격 1~3시간 무작위 등) 또는 jitter 폭을 칸 간격 절반 이상으로 — 경미, STOP 아님 · 기한 10/11 · 근거 longform/loop/audit.md 10/9
   착수: firemap-write 08:20 — 08:10 acqtax1010 발행·verify · 간격 요청 마무리(10/9 jitter :52 확대 효과 실측)
   완료: firemap-write 08:49 — 08:10 acqtax1010 cafe/241 발행 08:48 verify OK 2249/2249자·사진 3/3 · 간격 실측(published.txt 시각): 10/8 CV 0.10 → 10/9 CV 0.14(jitter :52 확대 뒤, 발행 :21~:51) — 0.3 못 넘음. jitter만으론 칸 간격 2시간의 절반 못 흔듦 → **firemap-meeting 안건**: 칸 시각 자체를 날마다 ±40분 흔들지(slots.json, 회의 몫) · 14:10 칸 deprise1010(정기예금 금리 1억 세후 이자) 관문 통과 gates_ok 08:44 — 남은 TBD 20:10(기한 14:10)·22:10(기한 16:10)
+  완료(회의 몫): firemap-meeting 21:41 — 칸 시각 흔들기 **오늘은 안 함**. 레드팀 확인: patrol.py 109행 카페 8칸 고정·write 근무가 빈 짝수시에도 대타 발행 → 지금 비우면 위반 경보·구멍 재메움. 먼저 firemap-improve가 patrol 칸 기준을 slots.json으로 바꾼 뒤(아래 [지시]) X-CAFE-1에 넣어 다시 정함. 목적은 경고선 회피가 아니라 독자 반응 시간대 비교로 적는다(검증 참모·법). 10/11 카페 칸은 8칸 그대로 배정
   착수: firemap-write 14:20 — 14:10 deprise1010 발행·verify · 10/11 10:10 연봉 실수령 B칸 원고·관문(기한 04:10)
   완료: firemap-write 14:43 — 14:10 deprise1010 cafe/244 발행 14:28 verify OK 2102/2102자·사진 3/3 · 10/11 10:10 netpay1011(월급 실수령액 1월 요율·3월 간이세액표·7월 연금 상한 달별 변화, /calc/salary utm) gates_ok 14:43(제목 T6 7.83·표지 P5 7.67·readcheck 0·selfcheck 사실 0·aitell 0.9·레드팀 2회 사실 오류 0) · 남은 TBD 칸: 10/11 08:10 inhded1011 표지·쉼표 없는 제목(기한 02:10)
   착수: firemap-write 16:20 — 16:10 schdacct1007 발행·verify · 10/11 08:10 inhded1011 남은 관문(표지·쉼표 없는 제목, 기한 02:10)
@@ -829,6 +836,7 @@
 - [배차] firemap-write 비축 카페 실사용 0/2(npsage1009는 10/14부터) — youthsave1010 사실표 이어서 원고~관문 통과 시 slots.json reserve.cafe (운영실장 19:09)
   착수: firemap-write 19:09 (운영실장)
   완료(막힘): firemap-write 19:21 — youthsave1010 원고·표·제목·표지 시안·레드팀 반영 끝, **관문 못 넘음**: aitell 편집 관문이 '카페 주제 밖(청년 전용 상품)'으로 막음(brand/guide.md ①-카페 주제 범위, 청년 전용 상품=카페 금지→새 사이트 쪽). 우회 안 함, reserve.cafe 안 넣음, 비축 카페 실사용 0/2 그대로 · 결정 필요(brand-director/순돌이): ① 이 편만 예외 허용(신청 마감 10/16, 검색 679,300) 또는 ② 새 사이트 X-CN-1로 보냄 · 남은 관문은 youthsave1010/review.md · 경로 work/research/youthsave1010
+  결정: firemap-meeting 21:41 — youthsave1010 **예외 없음**(brand/guide.md ① 카페 주제 범위, 기준 하나). 원고는 보관만. 카페 비축은 세금연금·형식2 편으로 채운다
 - [배차] firemap-visual-designer 비축 롱폼 0/1 준비 — P-1 썸네일 시안(copywriter 18:57 1위 문구 '5년 당김 76.7세 / 1년 당김 80.7세'·작은 줄 '1969년생·월 100만원 가정' 유지), 주간 선정(10/12) 전 미리 (운영실장 19:09)
   착수: firemap-visual-designer 19:09 (운영실장)
   완료: firemap-visual-designer 19:23 — P-1 썸네일 **p1f 조건부 확정**(2차 세 명 평균 7.17: 제미나이 3.1-lite 7.5·8.5·Claude 7.0·레드팀 6.5, 목표 8 미달) · 진한 크림 판 + 65~85세 눈금 위 막대 둘(5년 당김 76.7세 짧은 남색·1년 당김 80.7세 긴 빨강 = 반전을 길이로) · 문구 copywriter 1위 그대로·작은 줄 '1969년생·월 100만원 가정' 유지·금지어 0 · 1초 블라인드 2차수 모두 주제 맞힘 · 사실 대조 맞음·가려짐 0 · 대조 p1b 6.58·p1e 6.73 · 열린 위험(레드팀): 막대가 65세에서 시작해 '받는 기간'으로 오독 가능 → 다음 회차 p1g(끝점 표시) 같은 판 재심 · 파일 ep/P-1/thumb_p1f.png · 근거 visual/P-1-thumb/judges.md

@@ -5,7 +5,7 @@
 
 | 직원 | 다음 일 1 | 다음 일 2 | 다음 일 3 |
 |---|---|---|---|
-| firemap-meeting | 10/10 21:15: X-SHORTS-1·X-SHORTS-LEN 판정(숫자) + W-1 녹음·관문 결과로 주간 코너 유지 판단 + X-CAFE-CALC-1 첫날 B칸 2편 공개·utm 도착 확인 | 10/11: 롱폼 '녹음 이틀 뒤 공개' 규칙 실제 여유 시간 재기(G-1) + slots.json↔slot.txt 경고 붙었는지 | 10/12 일요일 주간 회의: 조직도·성숙도 표·firemap-loop 빠진 자리 판단 |
+| firemap-meeting | 10/11 21:15: improve의 patrol slots.json 기준 반영 확인 → 칸 시간대 비우기 X-CAFE-1 재상정(독자 반응 지표) + Chirp 결재 결과로 롱폼 대기열(R-1·W-1 2화) 다시 짜기 | 카페 하루 양: naver-policy.md A1 내부 기준 3~5 vs 상한 8 — 근거 대조해 하나로(레드팀 위험 ②) | X-CAFE-CALC-1 10/17 중간 점검 숫자 준비(B칸 utm 기기·쿠팡 view/click) |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | 카페 비축 2/2 채우기 — 10/12 이후 칸용 세금연금·형식2 편(textrule 1위), youthsave1010은 카페 주제 범위(청년 상품)로 멈춤 | W-1 1화 카페 긴 글(롱폼 공개일 다시 정해지면 같은 날, longform/ep/W-1/cafe.md) | 다음 계산기 편엔 firemap 계산기 입력 화면 1장 넣기(netpay1011 review ③) · eitclate1009 표지는 밝은 바탕 틀로 visual-designer에 |
 | firemap-editor | P-1 녹음 뒤 voice.json으로 aitell script 재측정·screen_text 나오면 줄마다 편집·stamp | W-1·G-1·C-1 재녹음 뒤 screen_text 재stamp + humanlike에 대본 모드(자막·화면 줄 빼고 재기) 추가 시험 | sweep #120·118·25부터(하루 edit 상한 3 안, #56 제목 우선) · 공개 롱폼 M-1 제목·설명 표본 |

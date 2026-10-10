@@ -1,0 +1,27 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;left:52px;top:636px;font:500 24px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#EFE4CC'></div>
+<div class='t' style='left:48px;top:26px;font-size:80px;color:#1E2A44'>국민연금</div>
+<div style='position:absolute;left:55px;top:136px;width:10px;height:384px;background:#16181D'></div>
+<div style='position:absolute;left:60px;top:142px;width:513px;height:104px;background:#1E2A44;border-radius:0 12px 12px 0'></div>
+<div class='t' style='left:84px;top:160px;font-size:70px;color:#fff'>5년 당김</div>
+<div class='t' style='left:591px;top:142px;font-size:110px;color:#1E2A44'>76.7세</div>
+<div style='position:absolute;left:60px;top:272px;width:689px;height:132px;background:#E5322D;border-radius:0 12px 12px 0'></div>
+<div class='t' style='left:84px;top:302px;font-size:76px;color:#fff'>1년 당김</div>
+<div id='f1' class='t' data-fit='420' style='left:763px;top:244px;font-size:186px;color:#E5322D'>80.7세</div>
+<div class='lab' style='left:80px;top:428px;font-size:56px;color:#16181D'>제때 받은 쪽이 따라잡는 나이</div>
+<div style='position:absolute;left:60px;top:516px;width:880px;border-top:4px solid #4B5262'></div><div style='position:absolute;left:58px;top:504px;width:4px;height:28px;background:#4B5262'></div><div class='lab' style='left:30px;top:538px;width:60px;text-align:center;font-size:30px;color:#4B5262'>65</div><div style='position:absolute;left:278px;top:504px;width:4px;height:28px;background:#4B5262'></div><div class='lab' style='left:250px;top:538px;width:60px;text-align:center;font-size:30px;color:#4B5262'>70</div><div style='position:absolute;left:498px;top:504px;width:4px;height:28px;background:#4B5262'></div><div class='lab' style='left:470px;top:538px;width:60px;text-align:center;font-size:30px;color:#4B5262'>75</div><div style='position:absolute;left:718px;top:504px;width:4px;height:28px;background:#4B5262'></div><div class='lab' style='left:690px;top:538px;width:60px;text-align:center;font-size:30px;color:#4B5262'>80</div><div style='position:absolute;left:938px;top:504px;width:4px;height:28px;background:#4B5262'></div><div class='lab' style='left:910px;top:538px;width:60px;text-align:center;font-size:30px;color:#4B5262'>85</div>
+<div class='fine' style='color:#16181D;top:604px;left:60px;font-size:36px'>1969년생·월 100만원 가정</div>
+
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

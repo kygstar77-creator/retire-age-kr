@@ -13,8 +13,8 @@
  "desc": "영업이익 107.4조원은 회사가 공시한 잠정치, 평가액은 팔지 않으면 확정 손실이 아닙니다.\n삼성전자 주가는 10월 2일 276,000원에서 10월 8일 262,000원으로 거래일 사흘 −5.07%, 100주 평가액은 2,760만원에서 2,620만원으로 140만원 줄었습니다. 지난 분기(2분기, 8월 지급) 배당 100주 세후 31,640원의 44.2배입니다.\n같은 사흘 코스피를 그대로 따라간 1천만원은 54만원 줄었고(−5.39%), 미국 S&P500을 따라가는 ETF(SPY) 1만 달러는 달러로 +1.16%였지만, 원화로는 4.9만원 줄었습니다(원달러 1,359.6원 → 1,339.2원, 한국은행 매매기준율).\n지난주 공시·종가로 한 계산이고, 투자 권유나 다음 주 전망이 아닙니다(수수료 빼고 계산).\n\n내 배당에 세금이 얼마 붙는지(파이어맵 배당 세금 정리): https://firemap.kr/guide/dividend-tax-thresholds?utm_source=youtube&utm_medium=longform&utm_campaign=VIDEOID\n\n{CHAPTERS}\n\n출처\n· 삼성전자 연결 영업(잠정)실적 공시: DART 접수번호 20261008800004 · 2분기 배당 결정: DART 20260730800137(기준일 6/30·지급 8/28) · 1년 전 3분기 배당: DART 20251030800075\n· 삼성전자(005930.KS)·SPY 종가: 야후 파이낸스 일별 종가\n· 코스피: 한국은행 ECOS 802Y001 · 원달러 매매기준율: 한국은행 ECOS 731Y001\n· 미국 소비자물가: 세인트루이스 연준 FRED CPIAUCNS · 일정: 미국 노동통계국 CPI 발표 일정 · 한국은행 통화정책방향 결정회의 · 미국 연준 FOMC 일정표\n· 배당 세금 15.4%(배당소득세 14% + 지방소득세 1.4%)로 계산\n확인 안 함: 삼성전자 3분기 배당 금액(공시 전) · 증권사 수수료\n\n이 영상은 종목 추천이 아닙니다.\n내레이션은 AI 음성 내레이션(Gemini TTS)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.\n파이어맵 카페: https://cafe.naver.com/firemap",
  "desc_note": "w1meta.py가 calc_out에서 숫자를 채운다. 녹음·렌더 뒤 work/video/chapters.py video/w1.json ep/W-1로 {CHAPTERS}. 렌더 전 desc_tpl 문장 aitell·editor 확인",
  "calc_asof": "2026-10-09",
- "thumb": null,
- "thumb_status": "대기 — firemap-visual-designer 확정본(10/10 14:00 기한, visual/W-1-thumb) · 1초 시험 3명 평균 7 이상",
+ "thumb": "thumb_w1i.png",
+ "thumb_status": "조건부 통과 — visual-designer 10/10 09:28, 7차 세 명 평균 7.07(제미나이 3.1-lite 8·8 · Claude 7.2 · 레드팀 6.0, 목표 8 미달, 1초 블라인드 주제 맞힘, 겹침 2). 조건: 카드 문구 \"내 100주 −???만\"은 titles.md 원문 \"내 100주는?\"과 달라 copywriter 승인 필요 — 미승인이면 thumb_w1k.png(카피 원문판, 6.63)로. 48h CTR 채널 중앙값 미만이면 교체 1회. 근거 visual/W-1-thumb/judges.md",
  "chapters": [
   [
    0,
@@ -94,5 +94,6 @@
  ],
  "made_by": "firemap-video-producer",
  "made_at": "2026-10-09 22:3x",
- "todo_pd": "10/10 06시 뒤 calc 재실행 확인 → w1meta.py 다시 → 16:01 runbook_1010 녹음 → w1props → lfrender text(editor stamp) → lfrender render W-1 → 스틸 눈 검사·motioncheck → chapters.py video/w1.json ep/W-1 → scorecard 우리 칸 → ytlong gate → up(10/11 19:30) · 관문 기한 10/10 19:30"
+ "todo_pd": "10/10 06시 뒤 calc 재실행 확인 → w1meta.py 다시 → 16:01 runbook_1010 녹음 → w1props → lfrender text(editor stamp) → lfrender render W-1 → 스틸 눈 검사·motioncheck → chapters.py video/w1.json ep/W-1 → scorecard 우리 칸 → ytlong gate → up(10/11 19:30) · 관문 기한 10/10 19:30",
+ "thumb_alt": "thumb_w1k.png"
 }

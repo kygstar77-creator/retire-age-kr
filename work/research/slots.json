@@ -797,18 +797,19 @@
   {
    "at": "2026-10-10 20:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "jongbuse1010",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/09 21:33: 관문 기한 14:10"
+   "gates_ok": "2026-10-10 10:48",
+   "note": "firemap-write 2026-10-10 10:48: 관문 통과 — 제목 J11 '종부세 고령자 공제, 올해 일흔이어도 30%인 경우' 제미나이 8·8·레드팀 7.5=7.83 · 표지 A1 8·8·8=8.0 · readcheck 0·selfcheck 사실 0·aitell 2.7·crosscheck 사실 4(반영 3·유지 1)·레드팀 3회 사실 1·오해 11 반영 · editgate auto · 법령 원문 4개 법 · compare.md·review.md · 이전: firemap-meeting 10/09 21:33: 관문 기한 14:10"
   },
   {
    "at": "2026-10-10 22:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "odivfx1010",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/09 21:33: 관문 기한 16:10"
+   "gates_ok": "2026-10-10 10:49",
+   "note": "firemap-write 보조 2026-10-10 10:49: 관문 통과 — 제목 K3 '리얼티인컴 배당금 원화로 바꿔 보니 석 달 새 11.35% 감소' 제미나이 8·8·레드팀 7.5=7.83 · 표지 A3 8·8·8=8.0 · readcheck 0·selfcheck 사실 0·aitell 0.0·frame 통과·crosscheck 사실 반영 3·유지 1·말투 12 반영·레드팀 사실 1 반영(조세협약 15% 표현)·editgate auto · 본문 2,567자·사진 3장 · 배당현금흐름+환율 축(10-K·10-Q·보도자료·ECOS 매매기준율, 10월분은 10/8 환율 가정) | 이전: firemap-meeting 10/09 21:33: 관문 기한 16:10",
+   "item_pkg": "work/research/odivfx1010/pkg"
   },
   {
    "at": "2026-10-11 08:10",

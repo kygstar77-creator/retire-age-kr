@@ -13,6 +13,19 @@
     "url": "https://cafe.naver.com/firemap/241"
    },
    "note": "08:10 칸 acqtax1010 jitter 27분 뒤 08:48 발행 · verify OK 2249/2249자·사진 3/3 · 관문은 10/9 22:55 통과분(crosscheck 2·레드팀 2·selfcheck 사실 0) · 블로그 회복 계획으로 안 씀(STOP_blog) · 14:10 칸 deprise1010(정기예금 금리 1억 세후 이자, 경제·금리 축) 보조 직원이 관문 통과 gates_ok 08:44(제목 7.5·표지 7.67·readcheck 0·selfcheck 사실 0·aitell 2.0·crosscheck 2·레드팀 2, finlife 점검 중이라 10/6 공시값+날짜 명시) · 간격 실측: 10/8 CV 0.10 → 10/9 CV 0.14(jitter :52 확대 뒤), 경고선 0.3 못 넘음 → 회의에 칸 시각 흔들기 안건 · 개선: 없음(간격 문제는 칸 시각=회의 몫)"
+  },
+  {
+   "hour": 10,
+   "ts": "10:52",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "퇴직금 지급기준, 364일 다니고 그만두면 받는 돈",
+    "url": "https://cafe.naver.com/firemap/242"
+   },
+   "note": "10:10 칸 sevbasis1010 jitter 30분 뒤 10:51 발행 → verify OK 2199/2199자·사진 3/3 · 관문 10/9 22:51 통과분, 제 시각 칸 · 블로그는 회복 계획대로 안 씀(STOP_blog) · 20:10 칸 jongbuse1010(종부세 고령자·장기보유 공제, 6월 1일 기준·80% 한도) 관문 통과: 자료조사 WebSearch 6건+법령 원문 4개 법 · readcheck 0·selfcheck 사실 0·aitell 2.7 · 교차검증(crosscheck gemini): 사실 지적 4건 중 반영 3·유지 1(위 표=img/01), 말투 11건 중 반영 9 · 레드팀 3회 사실 오류 1(보유기간 14년 11개월은 7월 1일 취득만)·오해 11 반영 · 제목 J11 7.83·표지 A1 8.0 · 22:10 칸 odivfx1010(리얼티인컴(O) 배당 원화 환산, 보조 직원) 관문 통과 10:49, 제목 티커 병기 후 editgate 재날인 · 개선: 제목 후보를 심사 전 카페 틀 v2로 거르기를 교본에 추가(J8이 7.83 받고 stamp에서 막혀 재심사)"
   }
  ]
 }

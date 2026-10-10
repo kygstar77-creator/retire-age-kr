@@ -752,12 +752,14 @@
    "gate_note": "2026-10-10 03:30 firemap-write 관문 통과: 제목 평균 7.5(제미나이 8·독립 레드팀 7·작성자 7.5) · 표지 F 평균 7.25(제미나이 7.25·독립 레드팀 7·작성자 7.5, 보정 gongjae1002 7.0~7.5) · editgate auto 일치 · readcheck 0·selfcheck 사실 0·aitell 6.3 · compare/review 세 줄 · slot.txt 2026-10-10 12 · naverpost pending block은 코너 시각 전뿐"
   },
   {
-   "at": "2026-10-10 12:20",
+   "at": "2026-10-10 19:20",
    "kind": "shorts",
-   "item": "g1_climb",
-   "owner": "firemap-shorts",
-   "gates_ok": null,
-   "note": "firemap-shorts 10/9 15:2x: 편 = g1_climb(G-1 재료 '고점에 산 금 본전까지 34%→51%', bars vs·음악 있음, 직전 rate30_b cards라 C3 해소). compete 5·check 문제 없음·aitell 0.0(.edit.json auto)·review 세 줄 끝. 첫 프레임 1초 고정 조건 v4 5·5, v5 5·5(보정 gongjae1002 7.0~7.5 유효) → 7 미달, gates_ok 안 적음. 공개 전날(10/9 밤) G-1 calc 재실행 뒤 숫자 재확인 필요. 다음 1안: +51% 전면 한 숫자(hero)나 금 그림 요소 첫 프레임. 못 넘으면 npsday1007 선례(1초 미통과 공개·48시간 판정) 또는 비축 대체.  10/10 07:13 firemap-shorts: v9 hero 한 숫자 전면판(금 -34%, 왜 +51%?) 고정 조건 5·5(보정 7.5·7.0 유효) 미달 — v4~v9 5계열 모두 5, gates_ok 안 적음·미달 공개 금지. 이 칸은 g1_climb 접고 다른 편(카드 틀 말고 그림 요소 필요)이 12:20 전 관문 통과해야 하며 못 넘으면 칸 skip+사유. 근거 cardshorts/g1_climb/review.md"
+   "item": "m1s_need100",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-10 12:41",
+   "published": "예약 2026-10-10T19:20:00+09:00 https://youtu.be/fF_5yIxBnC8 (private→자동 공개, videos.list 확인 private 2026-10-10T10:20:00Z)",
+   "item_pkg": "work/research/cardshorts/m1s_need100",
+   "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_need100/review.md · 카드 쇼츠 대체(사장님 10/10 지시) | 이전 칸 12:20 g1_climb(미달, 접음) → firemap-shorts 10/9 15:2x: 편 = g1_climb(G-1 재료 '고점에 산 금 본전까지 34%→51%', bars vs·음악 있음, 직전 rate30_b cards라 C3 해소). compete 5·check 문제 없음·aitell 0.0(.edit.json auto)·review 세 줄 끝. 첫 프레임 1초 고정 조건 v4 5·5, v5 5·5(보정 gongjae1002 7.0~7.5 유효) → 7 미달, gates_ok 안 적음. 공개 전날(10/9 밤) G-1 calc 재실행 뒤 숫자 재확인 필요. 다음 1안: +51% 전면 한 숫자(hero)나 금 그림 요소 첫 프레임. 못 넘으면 npsday1007 선례(1초 미통과 공개·48시간 판정) 또는 비축 대체.  10/10 07:13 firemap-shorts: v9 hero 한 숫자 전면판(금 -34%, 왜 +51%?) 고정 조건 5·5(보정 7.5·7.0 유효) 미달 — v4~v9 5계열 모두 5, gates_ok 안 적음·미달 공개 금지. 이 칸은 g1_climb 접고 다른 편(카드 틀 말고 그림 요소 필요)이 12:20 전 관문 통과해야 하며 못 넘으면 칸 skip+사유. 근거 cardshorts/g1_climb/review.md"
   },
   {
    "at": "2026-10-10 14:10",
@@ -828,12 +830,14 @@
    "note": "firemap-write 10/09 23:1x: X-CAFE-CALC-1 B칸 3번째(퇴직금 10/10 10:10 · 실업급여 10/10 18:10 다음) — 연봉 실수령 계산에 이어지는 주제, 본문에 /calc 링크+utm, 같은 계산기 연속 금지 · 관문 기한 10/11 04:10"
   },
   {
-   "at": "2026-10-11 12:20",
+   "at": "2026-10-11 19:20",
    "kind": "shorts",
-   "item": "TBD",
-   "owner": "firemap-shorts",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/09 21:33: 쇼츠 하루 1칸(X-YT-FREQ) · 관문 기한 10/11 00:20 · 1초 시험 7 넘은 편만, 못 넘으면 skip+사유(미달 공개 금지 — 순돌이 10/9 지시)"
+   "item": "m1s_minmonth",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-10 12:41",
+   "published": "예약 2026-10-11T19:20:00+09:00 https://youtu.be/aYCWFSzynJI (private→자동 공개, videos.list 확인 private 2026-10-11T10:20:00Z)",
+   "item_pkg": "work/research/cardshorts/m1s_minmonth",
+   "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_minmonth/review.md · 카드 쇼츠 대체(사장님 10/10 지시) | 이전 12:20 TBD → firemap-meeting 10/09 21:33: 쇼츠 하루 1칸(X-YT-FREQ) · 관문 기한 10/11 00:20 · 1초 시험 7 넘은 편만, 못 넘으면 skip+사유(미달 공개 금지 — 순돌이 10/9 지시)"
   },
   {
    "at": "2026-10-11 19:30",
@@ -850,6 +854,26 @@
    "owner": "firemap-video-producer",
    "gates_ok": null,
    "note": "순돌이 10/10 12:4x: C-1 v5(예고·결론부터·궁금증 챕터·가상 인물 장면, 6e286c3) — 10/10 16:01 창에서 새 줄 1 + lfretake --n 15(2요청, W-1 7요청보다 먼저) → check(날짜 둘은 다시 받기 20% 이하면 허용, 앞뒤 차·IQR 관문 그대로) → render → 10/12 19:30. 관문 기한 10/11 19:30"
+  },
+  {
+   "at": "2026-10-12 19:20",
+   "kind": "shorts",
+   "item": "m1s_nhis70",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-10 12:41",
+   "published": "예약 2026-10-12T19:20:00+09:00 https://youtu.be/xmmkdtLhmXs (private→자동 공개, videos.list 확인 private 2026-10-12T10:20:00Z)",
+   "item_pkg": "work/research/cardshorts/m1s_nhis70",
+   "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_nhis70/review.md · 카드 쇼츠 대체(사장님 10/10 지시)"
+  },
+  {
+   "at": "2026-10-13 19:20",
+   "kind": "shorts",
+   "item": "m1s_total1y",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-10 12:41",
+   "published": "예약 2026-10-13T19:20:00+09:00 https://youtu.be/gvOdoH5-HbM (private→자동 공개, videos.list 확인 private 2026-10-13T10:20:00Z)",
+   "item_pkg": "work/research/cardshorts/m1s_total1y",
+   "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_total1y/review.md · 카드 쇼츠 대체(사장님 10/10 지시)"
   },
   {
    "at": "2026-10-13 19:30",

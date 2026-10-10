@@ -25,6 +25,8 @@ import c1 from '../c1.json';
 import {W1, W1Props, w1Frames} from './W1';
 import w1 from '../w1.json';
 import {MotionKit} from './MotionKit';
+import {M1S, M1SProps, m1sFrames} from './M1S';
+import m1s from '../m1s.json';
 import {ShortIntro, ShortIntroProps, introFrames} from './motion/ShortIntro';
 import introE2 from '../intro_e2_interest.json';
 import {ShortIntroBars, ShortIntroBarsProps, introBarsFrames} from './motion/ShortIntroBars';
@@ -95,6 +97,9 @@ export const Root: React.FC = () => {
     <Composition id="ShortIntroBars" component={ShortIntroBars as unknown as React.FC<Record<string, unknown>>} durationInFrames={introBarsFrames(introBars as ShortIntroBarsProps)} fps={30}
       width={1080} height={1920} defaultProps={introBars as unknown as Record<string, unknown>}
       calculateMetadata={({props: pp}) => ({durationInFrames: introBarsFrames(pp as unknown as ShortIntroBarsProps)})} />
+    <Composition id="M1S" component={M1S as unknown as React.FC<Record<string, unknown>>} durationInFrames={m1sFrames(m1s as unknown as M1SProps)} fps={30}
+      width={1080} height={1920} defaultProps={m1s as unknown as Record<string, unknown>}
+      calculateMetadata={({props: pp}) => ({durationInFrames: m1sFrames(pp as unknown as M1SProps)})} />
     <Composition id="MotionKit" component={MotionKit} durationInFrames={360} fps={30} width={1920} height={1080} />
     </>
   );

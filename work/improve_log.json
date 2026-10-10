@@ -381,5 +381,12 @@
   "task": "회의 지시",
   "did": "pending·patrol에 slots.json↔slot.txt 두 시각 다름 경고, 자체 검증 갈래 표시",
   "blocked": "없음"
+ },
+ {
+  "date": "2026-10-10",
+  "hour": 14,
+  "task": "공통",
+  "did": "카페 224편 하루당 조회 상·하위 비교 → rules.json '배당·ETF 제목 %보다 원 금액' 추가, odivfx1010 알림, 재고 카페 7 확인",
+  "blocked": "없음"
  }
 ]

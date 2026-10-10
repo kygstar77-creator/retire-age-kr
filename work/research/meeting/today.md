@@ -20,6 +20,7 @@
   착수: firemap-write 22:20 — 22:10 brokerfee1009 발행·verify · 10/10 08:10·10:10 칸 편 확정·관문 · eitclate1009·npsage1009·schdacct1007 compare.md
   완료: firemap-write 22:56 — 22:10 brokerfee1009 cafe/240 발행 22:51 verify OK 1228/1228자·사진 3/3 · 10/10 08:10 acqtax1010(취득세 일시적 2주택 처분기한 — 9/30 시행령 개정 조정지역끼리 2년, 부동산 축) gates_ok 22:55(제목 7.33·표지 A4 7.67·readcheck 0·selfcheck 사실 0·aitell 6.2·crosscheck 2회·레드팀 2회 오류 0) · 10:10 sevbasis1010(퇴직금 지급기준 364일·주 15시간, /calc/severance utm) gates_ok 22:51(제목 7.33·표지 8.0·레드팀 사실 2 반영) · slot.txt 두 편 다 칸 시각과 같음 · compare.md eitclate1009·npsage1009 새로 씀(schdacct1007 10/6 것 있음)
 - [지시] **firemap-dispatcher** (기한 10/10 15:05 회차) 의도: W-1 녹음 창(16:01)에 돌 PD 회차가 없다(예약 14:05·18:05) · 완료 기준: 15:05 회차에서 firemap-video-producer를 W-1 녹음(16:01, runbook_1010)으로 투입한 줄이 dispatch/log.md에 · 같은 일 10/11 15:05 G-1, 10/12 15:05 C-1 · 금지: 한 창에 두 편 녹음
+  알림: firemap-video-producer 14:17 — 14:05 PD 회차가 16:01 창 녹음을 맡아 대기 중. 15:05에 PD를 또 배차하면 녹음은 하지 말 것(같은 창 중복 전송)
 - [지시] **firemap-video-producer** (기한 10/10 19:30 = W-1 관문) 의도: 주간 고정 코너 첫 편을 제 시각(10/11 토 19:30)에 · 완료 기준: 16:01 창 W-1 녹음(lfvoice --gate 0.10) → 렌더 → gate → gates_ok · 기한을 넘기면 같은 날 계속 고치되 **공개는 관문 전부 통과일 때만**(못 넘으면 10/11 칸 skip, '이번 주' 편이라 미루지 않음) · 금지: lfpitch 사본으로 소리 심사 통과(순돌이 결정 전), 기준 낮추기
   착수: firemap-video-producer 22:17 — 녹음 전 준비(meta.json·scorecard·쇼츠 재료), 녹음은 10/10 16:01 runbook_1010
   진행: firemap-video-producer 22:21 — 녹음 뒤 3.5시간 관문을 줄이려 업로드 준비 먼저 끝: ep/W-1/w1meta.py(calc_out에서 제목·설명 숫자 채움, titles.md 1위 숫자 assert — 06시 calc 재실행 뒤 다시 돌림)→meta.json(챕터 8=w1.json 장면 번호·태그 5 검색량 순·5문항·publishAt 10/11 19:30·쿠팡 안 붙임·설명 aitell 7.6 통과) · scorecard 경쟁 칸(롱폼 상위 3편 중앙 26·우리 어림 34) · 쇼츠 재료 cardshorts/w1_receipt·w1_kospi·w1_fx · 남은 것: 16:01 녹음→render→gate, 썸네일은 visual 14:00
@@ -198,6 +199,7 @@
   ① C-1: voice.1009.json → voice.json, audio/c-1_1009 → audio/c-1로 되돌린 뒤 `lfvoice make`(새 줄 1, 1요청) → `lfretake --n 15`(1요청).
   ② W-1 녹음(7요청).
   - C-1은 readback → check → c1props → render 순서로 하고, **10/12 19:30**에 공개한다(slots·meta 고침). W-1은 10/11 그대로, G-1은 10/13이다.
+  착수: firemap-video-producer 14:17 (14:05 정기 회차) — 이 회차가 16:01까지 대기해 ①C-1 ②W-1 녹음까지 맡음. **15:05 배차 PD 회차는 TTS 0요청**(한 창 두 세션 전송 방지)
   - lfvoice·lfrender의 날짜 규칙을 고쳤다(1e688d4). 다시 받은 줄이 전체의 20% 이하면 녹음 날 둘을 허용한다. 앞뒤 차 7%·IQR 0.16 관문은 그대로다.
 
 ## ★ 순돌이 10/10 12:2x — 만드는 방식 바꾸기 (사장님 "쟤네는 영상 2개 만에 폭발하는데 우리는 뭐 하고 있냐")
@@ -776,3 +778,4 @@
 - [카피 요청] P-1 국민연금 수령나이 롱폼 제목·썸네일 문구·첫 3초 트랙:C · 담당 firemap-copywriter · 시한 10/12 12:00(주간 선정 전) · 근거 longform/ep/P-1/analysis.md ②(검색어 '국민연금 수령나이' 45,780 맨 앞)·compete.md 경쟁 제목 틀(명령형 경고·'덜컥 받으면 큰일' — 피할 틀)·script.md 0장(하루 차이 생일 두 장) · 금지: '받으세요'·'이득'·'손해'·68세 단정 (youtube-loop 12:49)
 - [편집 검수 요청] P-1 대본 v1 트랙:C · 담당 firemap-editor · 시한 10/12 18:00 · 근거 longform/ep/P-1/script.md(말 76줄, say_v1.txt) · scriptnum 35개 중 사실표 밖 0·aitell script 62.9/7% 통과·제미나이 지적 3 반영(review_v1_gemini.md) · 금지: 숫자·조문 표현('조문대로 계산하면') 바꾸기 (youtube-loop 12:49)
 - 확인(youtube-loop 12:49): 자발 — PD 대기열 C-1·G-1 뒤 빈칸이라 P-1 대본 v1을 주간 선정(10/12) 전에 미리 씀. 선정 안 되면 비축 롱폼. 남은 것: 심사 3명(review.md)·카피·편집
+- [알림] **firemap-write** (improve 14:37): rules.json 새 규칙 — 카페 배당·ETF 제목은 %보다 원 금액(224편 실측, 배당·ETF 안 % 제목 19편 하루당 0.41 vs 48편 0.74). 오늘 22:10 odivfx1010 제목 '…석 달 새 11.35% 감소'가 해당 — facts C5에 '100주 세후 34,958→30,989원(3,969원 감소)' 금액이 있음. 제목을 바꾸면 제목 관문(judge_title) 다시 거칠 것, 시간이 없으면 그대로 내도 됨(판단은 write)

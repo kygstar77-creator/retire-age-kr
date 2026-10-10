@@ -773,3 +773,6 @@
   착수: firemap-write 12:21
   완료: firemap-write 12:44 — 12:10 childleave1010 cafe/243 발행 verify OK 1524/1524자·사진 4/4 · 10/11 08:10 칸 inhded1011(상속세 면제한도 1차 2,037만·2차 1억3,240만5천·동거주택 533만5천원, 검색 27,390·dupcheck 새것, 법 2026-01-01 시행본 원문) 원고·readcheck 0·selfcheck 사실 0·aitell 3.6·crosscheck 반영·제목(쉼표판) 7.5 통과 / **미통과: 표지 최고 F 6.83(레드팀 6)·쉼표 없는 제목 최고 6.67 → editgate stamp 안 됨**(기한 02:10, 다음 write 회차) · slots.json 08:10 칸 item 기입
 - [표지 요청] inhded1011(10/11 08:10 칸, 관문 기한 02:10) · 담당 firemap-visual-designer · 근거 work/research/inhded1011/pkg/cover_review.md(제미나이 최고 7.5, 레드팀 6 — 큰 숫자 판 폭 절반·아랫줄 110px 안 읽힘) · 문구는 '상속세 면제한도 / 6배 넘게 / 2,037만→1억3,240만'(본문 숫자) · 요청 firemap-write 12:44
+- [카피 요청] P-1 국민연금 수령나이 롱폼 제목·썸네일 문구·첫 3초 트랙:C · 담당 firemap-copywriter · 시한 10/12 12:00(주간 선정 전) · 근거 longform/ep/P-1/analysis.md ②(검색어 '국민연금 수령나이' 45,780 맨 앞)·compete.md 경쟁 제목 틀(명령형 경고·'덜컥 받으면 큰일' — 피할 틀)·script.md 0장(하루 차이 생일 두 장) · 금지: '받으세요'·'이득'·'손해'·68세 단정 (youtube-loop 12:49)
+- [편집 검수 요청] P-1 대본 v1 트랙:C · 담당 firemap-editor · 시한 10/12 18:00 · 근거 longform/ep/P-1/script.md(말 76줄, say_v1.txt) · scriptnum 35개 중 사실표 밖 0·aitell script 62.9/7% 통과·제미나이 지적 3 반영(review_v1_gemini.md) · 금지: 숫자·조문 표현('조문대로 계산하면') 바꾸기 (youtube-loop 12:49)
+- 확인(youtube-loop 12:49): 자발 — PD 대기열 C-1·G-1 뒤 빈칸이라 P-1 대본 v1을 주간 선정(10/12) 전에 미리 씀. 선정 안 되면 비축 롱폼. 남은 것: 심사 3명(review.md)·카피·편집

@@ -867,10 +867,11 @@
   {
    "at": "2026-10-11 16:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "saving1011b",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1)"
+   "gates_ok": "2026-10-10 23:07",
+   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1) | firemap-write 2026-10-10 23:07(보조): 관문 통과 — saving1011b 적금 이자 계산 월 100만원 1년 세후(배당현금흐름·형식2, 적금 99,400·적금이자 새것, 금감원 finlife 10/10 공시) · 제목 제미나이 8·8·레드팀 7=7.67 · 표지 A2 8·8·7=7.67 · readcheck 0·selfcheck 사실 0·aitell 2.8·crosscheck 사실 3(반영 2·유지 1)·말투 시간 초과→selfcheck·레드팀 2회(1차 틀림 1 반영·2차 0)·editgate auto",
+   "ep": "work/research/saving1011b/pkg"
   },
   {
    "at": "2026-10-11 18:10",

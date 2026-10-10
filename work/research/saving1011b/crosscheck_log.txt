@@ -1,0 +1,2 @@
+사실 대조를 Gemini(gemini-3.6-flash)가 대신 1480자 → check_gpt.txt
+Gemini 실패: 응답 없음(TimeoutError: The read operation timed out) · 남은 예산 -7초

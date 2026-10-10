@@ -22,12 +22,12 @@ def prompt(pk):
 def score(t):
     m=re.search(r'점수[^0-9]{0,20}(\d+(?:\.\d+)?)',t); return float(m.group(1)) if m else None
 V=os.path.join(HH,'..','visual','cafe-covers-1002','board_gongjae1002.png')
-jobs=[(k,os.path.join(HH,'covers_try',f'board_{k}.png'),os.path.join(HH,'pkg')) for k in 'H']+[('gongjae1002',V,os.path.join(HH,'..','gongjae1002','pkg'))]
+jobs=[(k,os.path.join(HH,'covers_try',f'board_{k}.png'),os.path.join(HH,'pkg')) for k in 'IJ']+[('gongjae1002',V,os.path.join(HH,'..','gongjae1002','pkg'))]
 res={};raw=[]
 for k,b,pk in jobs:
     sc=[]
     for rep in (1,2):
         t=ask(prompt(pk),b); s=score(t); sc.append(s); raw.append(f'### {k} 회{rep} 점수 {s}\n{t}\n'); print(k,rep,s,flush=True)
     res[k]=sc
-open(os.path.join(HH,'covers_try','judge_raw_H.md'),'w',encoding='utf-8').write('\n'.join(raw))
-json.dump({'model':M,'scores':res},open(os.path.join(HH,'covers_try','judge_H.json'),'w',encoding='utf-8'),ensure_ascii=False)
+open(os.path.join(HH,'covers_try','judge_raw_IJ.md'),'w',encoding='utf-8').write('\n'.join(raw))
+json.dump({'model':M,'scores':res},open(os.path.join(HH,'covers_try','judge_IJ.json'),'w',encoding='utf-8'),ensure_ascii=False)

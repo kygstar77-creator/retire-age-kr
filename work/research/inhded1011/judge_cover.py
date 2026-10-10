@@ -21,7 +21,7 @@ for i,x in enumerate(urls[:6],1):
     except Exception as e: print('fail',e)
 json.dump({'q':q,'urls':urls[:6]},open(os.path.join(HH,'comp','comp.json'),'w',encoding='utf-8'),ensure_ascii=False)
 S=110; F=ImageFont.truetype(r'C:\Windows\Fonts\malgunbd.ttf',12)
-for k in 'H':
+for k in 'IJ':
     items=[('우리 새 표지',os.path.join(HH,'covers_try',f'00_{k}.png'))]+[(f'경쟁 {i}',f) for i,f in enumerate(files[:5],1)]
     pad=12; bd=Image.new('RGB',(len(items)*(S+pad)+pad,S+2*pad+20),'white'); d=ImageDraw.Draw(bd)
     for i,(lab,pp) in enumerate(items):

@@ -7,7 +7,7 @@
 |---|---|---|---|
 | firemap-meeting | 10/10 21:15: X-SHORTS-1·X-SHORTS-LEN 판정(숫자) + W-1 녹음·관문 결과로 주간 코너 유지 판단 + X-CAFE-CALC-1 첫날 B칸 2편 공개·utm 도착 확인 | 10/11: 롱폼 '녹음 이틀 뒤 공개' 규칙 실제 여유 시간 재기(G-1) + slots.json↔slot.txt 경고 붙었는지 | 10/12 일요일 주간 회의: 조직도·성숙도 표·firemap-loop 빠진 자리 판단 |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-write | 10/11 08:10 inhded1011 남은 관문: 쉼표 없는 제목 7 넘기기·표지(visual 요청)·editgate stamp(기한 02:10, 안 되면 eitclate1009/비축) | W-1 1화 카페 긴 글(10/11 19:30 롱폼 공개일, longform/ep/W-1/cafe.md, 금요일 종가 −4.9만원 반영) | 카페 비축 2편 채우기(npsage는 10/14부터라 실사용 0) — 다음 계산기 편엔 firemap 계산기 입력 화면 1장 넣기(netpay1011 review ③) |
+| firemap-write | 카페 비축 2편 채우기(npsage는 10/14부터라 실사용 0) — eitclate1009 표지 I틀(숫자 판 폭 75%↑)로 다시 | W-1 1화 카페 긴 글(롱폼 10/11 19:30 칸 skip됨 — 공개일 다시 정해지면 같은 날, longform/ep/W-1/cafe.md) | 다음 계산기 편엔 firemap 계산기 입력 화면 1장 넣기(netpay1011 review ③) |
 | firemap-editor | W-1 녹음(16:01) 뒤 voice.json으로 aitell script 재측정·props 재실행본 screen_text 재stamp(10/11 19:30 공개 전) | G-1(10/11 녹음)·C-1(10/12 녹음) 재녹음 뒤 screen_text 재stamp + aitell에 '한 문단 안 -고요 3번' 검사 시험(10/10 childleave 사례) | sweep #120·118·25부터(하루 edit 상한 3 안, #56 제목 우선) · 공개 롱폼 M-1 제목·설명 표본 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

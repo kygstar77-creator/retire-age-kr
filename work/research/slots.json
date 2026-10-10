@@ -1,898 +1,898 @@
 {
- "_rule": "사장님 10/2 15:1x: 관문 못 넘어 발행 안 하는 게 아니라 미리 8점 넘겨 계획한 시각에 발행. 칸마다 item(편)과 gates_ok(모든 관문 통과 시각)를 적는다. 관문 기한 = 발행 시각 - lead(롱폼 24시간·쇼츠 12시간·카페 6시간). 기한까지 gates_ok가 없으면 patrol 위반, 비축분(reserve)에서 통과한 편으로 바꿔 끼운다. 채우는 사람: 전체 회의(21:15)가 다음 36시간 칸 전부 배정, 3시간 스프린트가 점검, 담당이 통과 시 gates_ok 기입. | 롱폼 칸 규칙(10/5 youtube-loop): 롱폼은 하루 1편 이하 상한일 뿐 매일 칸이 아니다. 공개할 편이 없는 날은 칸에 \"skip\":true와 사유·대체 날짜를 적는다(patrol은 skip 칸을 건너뜀).",
- "lead_hours": {
-  "long": 24,
-  "shorts": 12,
-  "cafe": 6
- },
- "reserve_min": {
-  "shorts": 1,
-  "cafe": 2,
-  "long": 1
- },
- "reserve": {
-  "shorts": [],
-  "cafe": [
-   {
-    "item": "retmid1005",
-    "ep": "work/research/retmid1005/pkg",
-    "status": "10/9 12:10 칸에 배정(eitclate1009 미달 대체) — 비축에서 빠짐. 관문 통과 기록: 관문 통과 2026-10-06 09:37: 제목 '퇴직금 중간정산 받는 돈은 같은데 세금이 39.6만원 더 나온 사례' 3명 평균 8.6(제미나이3-flash 9.8·레드팀 7.5·독자 8.5; 쉼표만 뺌)·표지 v",
-    "by": "firemap-write",
-    "at": "2026-10-06 09:37",
-    "gates_ok": "2026-10-06 09:37"
-   },
-   {
-    "item": "npsage1009",
-    "ep": "work/research/npsage1009/pkg",
-    "status": "관문 통과 2026-10-08 20:24(제목 레드팀 재심사·표지 A13 7.33·editgate auto). 국민연금 일주일 상한(본문 주제 기준)으로 10/9 12:10에서 뺌 — 마지막 국민연금 제목 npsimui1007(10/7 08:28) 이후 7일인 10/14 08:30부터 공개 가능. slot.txt 2026-10-14 12 가안",
-    "by": "firemap-write",
-    "at": "2026-10-08 22:36",
-    "gates_ok": "2026-10-08 20:24"
-   },
-   {
-    "item": "schdacct1007",
-    "ep": "work/research/schdacct1007/pkg",
-    "status": "관문 통과 2026-10-06(제목 E 7.5·표지 S3 7.58·레드팀 사실 3 반영) · 10/9 16:21 firemap-write 시세 재조회(SCHD 10/8 종가 33.15달러, 6,195→6,290만원)·readcheck 0·selfcheck 사실 0·aitell 1.1·editgate auto 재날인 · SCHD 7일 규칙(#201 10/3)로 10/10부터 공개 가능 · 공개 전날 시세 다시 볼 것 | 2026-10-09 19:11 firemap-write 비축 재확인: editgate auto 일치·readcheck 0·selfcheck 사실 0·aitell 1.1·pending block 없음 → gates_ok 기입(SCHD 마지막 공개 schd1003 10/3 14:29 → 10/10 14:30부터)",
-    "gates_ok": "2026-10-10 11:12",
-    "by": "firemap-write",
-    "at": "2026-10-09 19:11"
-   }
+  "_rule": "사장님 10/2 15:1x: 관문 못 넘어 발행 안 하는 게 아니라 미리 8점 넘겨 계획한 시각에 발행. 칸마다 item(편)과 gates_ok(모든 관문 통과 시각)를 적는다. 관문 기한 = 발행 시각 - lead(롱폼 24시간·쇼츠 12시간·카페 6시간). 기한까지 gates_ok가 없으면 patrol 위반, 비축분(reserve)에서 통과한 편으로 바꿔 끼운다. 채우는 사람: 전체 회의(21:15)가 다음 36시간 칸 전부 배정, 3시간 스프린트가 점검, 담당이 통과 시 gates_ok 기입. | 롱폼 칸 규칙(10/5 youtube-loop): 롱폼은 하루 1편 이하 상한일 뿐 매일 칸이 아니다. 공개할 편이 없는 날은 칸에 \"skip\":true와 사유·대체 날짜를 적는다(patrol은 skip 칸을 건너뜀).",
+  "lead_hours": {
+    "long": 24,
+    "shorts": 12,
+    "cafe": 6
+  },
+  "reserve_min": {
+    "shorts": 1,
+    "cafe": 2,
+    "long": 1
+  },
+  "reserve": {
+    "shorts": [],
+    "cafe": [
+      {
+        "item": "retmid1005",
+        "ep": "work/research/retmid1005/pkg",
+        "status": "10/9 12:10 칸에 배정(eitclate1009 미달 대체) — 비축에서 빠짐. 관문 통과 기록: 관문 통과 2026-10-06 09:37: 제목 '퇴직금 중간정산 받는 돈은 같은데 세금이 39.6만원 더 나온 사례' 3명 평균 8.6(제미나이3-flash 9.8·레드팀 7.5·독자 8.5; 쉼표만 뺌)·표지 v",
+        "by": "firemap-write",
+        "at": "2026-10-06 09:37",
+        "gates_ok": "2026-10-06 09:37"
+      },
+      {
+        "item": "npsage1009",
+        "ep": "work/research/npsage1009/pkg",
+        "status": "관문 통과 2026-10-08 20:24(제목 레드팀 재심사·표지 A13 7.33·editgate auto). 국민연금 일주일 상한(본문 주제 기준)으로 10/9 12:10에서 뺌 — 마지막 국민연금 제목 npsimui1007(10/7 08:28) 이후 7일인 10/14 08:30부터 공개 가능. slot.txt 2026-10-14 12 가안",
+        "by": "firemap-write",
+        "at": "2026-10-08 22:36",
+        "gates_ok": "2026-10-08 20:24"
+      },
+      {
+        "item": "schdacct1007",
+        "ep": "work/research/schdacct1007/pkg",
+        "status": "관문 통과 2026-10-06(제목 E 7.5·표지 S3 7.58·레드팀 사실 3 반영) · 10/9 16:21 firemap-write 시세 재조회(SCHD 10/8 종가 33.15달러, 6,195→6,290만원)·readcheck 0·selfcheck 사실 0·aitell 1.1·editgate auto 재날인 · SCHD 7일 규칙(#201 10/3)로 10/10부터 공개 가능 · 공개 전날 시세 다시 볼 것 | 2026-10-09 19:11 firemap-write 비축 재확인: editgate auto 일치·readcheck 0·selfcheck 사실 0·aitell 1.1·pending block 없음 → gates_ok 기입(SCHD 마지막 공개 schd1003 10/3 14:29 → 10/10 14:30부터)",
+        "gates_ok": "2026-10-10 11:12",
+        "by": "firemap-write",
+        "at": "2026-10-09 19:11"
+      }
+    ],
+    "long": [
+      {
+        "item": "R-1",
+        "ep": "longform/ep/R-1",
+        "status": "10/5 PD: 대본 편집 통과(06:30)·첫 장면 줌아웃 넣음·153문장 녹음했으나 목소리 관문 막힘(f0 밖 81) — 10/6 16:01 재녹음 · 화면 글자 editor stamp 대기 | 10/6 04:47 youtube-loop: 16:01 TTS는 M-1에 씀 — R-1은 Chirp 3 HD 결재(목소리 도구 교체) 뒤 녹음 | 10/6 12:46 youtube-loop: 순돌이 11:2x 지시로 R-1 v7 94줄(7.6분, 한 창 녹음 가능) — 녹음·렌더·19:30 예약은 firemap-r1-record-1006(16:10) · 화면 글자 editor 재서명 필요 | 10/6 16:29 r1-record: v7 94줄 한 창 녹음 끝(같은 모델·Charon, 6장 묶음 1회 재녹음했으나 더 나빠 첫 녹음 유지) — 목소리 관문 막힘: 앞뒤 차 +4.8%(통과)·IQR 0.18(기준 0.16)·편 전체 5.12음절/초(기준 5.5)·튀는 줄 9 → 렌더·업로드 안 함. 원인: 요청(묶음)마다 음높이 122~156Hz. 대본 재심사 5.97도 미달. gates_ok 없음",
+        "by": "firemap-youtube-loop",
+        "at": "2026-10-06 16:29"
+      }
+    ],
+    "_meeting_1005": "회의 10/5 21:40(firemap-meeting) 비축 배정: 카페 1/2 → firemap-write가 10/6 14:10까지 관문 통과 예비 1편 추가(TBD-M 후보 중 남는 것 또는 nhisrent1005 예시 바꿔 10/8 이후용) · 쇼츠 1/1(nongji_age)이지만 10/6 19:20 gold1y 기한 07:20 못 넘으면 소진 → firemap-shorts가 10/6 12:00까지 예비 1편 더 · 롱폼 0/1(R-1 gates_ok 없음) → firemap-youtube-loop·video-producer가 R-1 재녹음(10/6 16:01)·editor stamp로 10/7 19:30 전 24시간(10/6 19:30)까지 관문, 못 넘으면 10/7 롱폼 칸 skip"
+  },
+  "slots": [
+    {
+      "at": "2026-10-02 16:10",
+      "kind": "cafe",
+      "item": "offimkt1002",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-02 15:40",
+      "note": "#194 15:48 발행(앞당김 사고, 교훈 14)"
+    },
+    {
+      "at": "2026-10-02 18:10",
+      "kind": "cafe",
+      "item": "nps1002",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-02 16:05",
+      "note": "표지 7.00·editgate 통과·#195+90분 뒤 → #196 18:31 발행·verify OK"
+    },
+    {
+      "at": "2026-10-02 19:20",
+      "kind": "shorts",
+      "item": "a1_need100",
+      "owner": "firemap-shorts",
+      "gates_ok": null,
+      "note": "19:32 firemap-shorts: 공개 보류 — 표지 1초 시험 평균 4.2<7(review.md). 비축 0이라 빈칸"
+    },
+    {
+      "at": "2026-10-02 19:30",
+      "kind": "long",
+      "item": "D-1",
+      "owner": "firemap-video-producer",
+      "gates_ok": "2026-10-02 17:51",
+      "note": "예약 업로드 GMc2Rd1-JYA publishAt 19:30 · 썸네일 d1k · 목소리 70/70·readback 3건 한글 재청취로 오탐 확인·clickscan 0·deess -13.7dB · 17:51 PD"
+    },
+    {
+      "at": "2026-10-02 20:10",
+      "kind": "cafe",
+      "item": "garak0929",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-02 18:31",
+      "note": "제목 8.7·표지 8·editgate auto 해시·review 세 줄 · 오늘 8번째(상한 8) · nps1002+90분 뒤 · 20:10 회차 없어 미발행 → write 22:31 착수, #197 22:35 발행·verify OK(837/837자·사진 4/4) · 오늘 8번째"
+    },
+    {
+      "at": "2026-10-02 22:10",
+      "kind": "cafe",
+      "item": null,
+      "owner": "firemap-write",
+      "gates_ok": null,
+      "note": "오늘 카페 6편(#190~195)+18:10 nps1002+20:10 1편 = 8편 상한 → 22:10 칸 비움(write 16:31 판단)"
+    },
+    {
+      "at": "2026-10-03 08:10",
+      "kind": "cafe",
+      "item": "b10danji1003",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-02 16:31",
+      "note": "B10 단지 전세가율 높은/낮은 10 · 제목 7.8·표지 8·편집 auto(해시)·compare/review 세 줄",
+      "published": "https://cafe.naver.com/firemap/198 08:38"
+    },
+    {
+      "at": "2026-10-03 10:10",
+      "kind": "cafe",
+      "item": "offimkt_ic0929",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-02 22:49",
+      "note": "회의 22:5x: 비축분에서 끼움(시황, 10/9 넘으면 낡음) · 금융 면책 한 줄(/disclaimer 문장 그대로)은 editor 06:50 회차가 붙이고 editgate stamp 다시 → 해시 바뀌므로 그 전엔 발행 금지(반론 1)",
+      "status": "발행 10:31 #199 verify OK"
+    },
+    {
+      "at": "2026-10-03 12:10",
+      "kind": "cafe",
+      "item": "pibu1003",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-02 23:23",
+      "note": "국민연금 피부양자 탈락 기준(이슈 레이더 후보 2) — 시행규칙 별표1의2·시행령41·시행규칙44 원문 대조, 제목 8.8·표지 8·editgate auto(해시)·compare/review 세 줄·레드팀 7건 반영",
+      "published": "https://cafe.naver.com/firemap/200 12:36 verify OK"
+    },
+    {
+      "at": "2026-10-03 12:20",
+      "kind": "shorts",
+      "item": "e1_hynix_dd",
+      "owner": "firemap-shorts",
+      "gates_ok": "2026-10-03 00:20",
+      "note": "firemap-shorts 10/3 00:2x: 표지 v3(종가선 낙폭 그림+2026년 6/22→7/30+최대 낙폭) 재심사 7·7·7=7.0 통과, 공개 전 네이버 시세 재확인 필요 / firemap-shorts 10/2 23:17: 관문 미통과 — 표지 1초 시험 3명 평균 6.7<7(카피 7.0 통과·주제 맞힘 3/3). 고칠 것: 표지에 낙폭 그림+시점(6/22→7/30) · review.md"
+    },
+    {
+      "at": "2026-10-03 14:10",
+      "kind": "cafe",
+      "item": "schd1003",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-03 00:25",
+      "note": "SCHD 배당금 1년 +2.0% 대 주가 +18.6%(슈왑 공식 분배금 표 대조) · 제목 8.8(제미나이 8.4·레드팀 9.2)·표지 정사각 7.5·editgate auto(해시)·compare/review 세 줄·selfcheck 사실 0·레드팀 7건 반영 · 검색 'SCHD배당금' 9,310",
+      "published": "https://cafe.naver.com/firemap/201 14:28"
+    },
+    {
+      "at": "2026-10-03 16:10",
+      "kind": "cafe",
+      "item": "deadfin1003",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-03 02:38",
+      "note": "사망자 계좌 정지·장례비 예외 인출(이슈 레이더 10/2 9번, 9/11 시행) — 금융위 보도자료 9/7·정책브리핑 안심상속·가족관계등록법 84·122조 원문 대조, 제목 8.9(제미나이 9.0·레드팀 8.8)·표지 8(2차, 레드팀 1차 6 지적 반영)·editgate auto(해시)·compare/review 세 줄·selfcheck 사실 0·readcheck 0·레드팀 7건 반영 · 검색 '사망자계좌정지' 2,960 · 버린 편 npsearly1003(우리 #103 중복)"
+    },
+    {
+      "at": "2026-10-03 18:10",
+      "kind": "cafe",
+      "item": "gift1003",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-03 04:23",
+      "note": "증여세 면제한도(직계존속 공제 공유·손주 할증 30%) — 상속세 및 증여세법 53·53의2·57·26·55·68·69조 원문(법령 API, 2025.10.1 시행본) 대조, 제목 9.9(제미나이 9.8·레드팀 10)·표지 8·editgate auto(해시)·compare/review 세 줄·selfcheck 사실 0·[중복] 없음·readcheck 0·aitell 0.0·레드팀 8건 반영 · 검색 '증여세면제한도' 19,260 · 같은 날 다른 칸과 법령·주제 안 겹침"
+    },
+    {
+      "at": "2026-10-03 19:20",
+      "kind": "shorts",
+      "item": "d1_kunbo",
+      "owner": "firemap-shorts",
+      "gates_ok": "2026-10-03 08:21",
+      "note": "firemap-shorts 2026-10-03 19:28: e1_micron_q4가 publish 마지막 점검에 걸림(E-1 사실표로 이미 e1_hynix_dd를 만들어 '같은 사실표 금지'). 규칙대로 비축 d1_kunbo로 대체 공개 https://youtu.be/lNqM_tai2H4 (19:27, bars·음악 있음으로만 바꿈, 숫자·표지 그대로, 썸네일=첫 1초 표지 지정) · 이전 메모: 회의 22:5x 배정: compete.md 끝난 3편(e1_micron_q4·e1_samsung_x·a1_1eok1y) 중 준비도 높은 편으로 shorts가 바꿔도 됨 · 표지 1초 시험 7↑"
+    },
+    {
+      "at": "2026-10-03 19:30",
+      "kind": "long",
+      "item": "E-2",
+      "owner": "firemap-video-producer",
+      "gates_ok": "2026-10-03 17:53",
+      "note": "대본 심사 통과 평균 7.0 ($T) · 썸네일 e2f 확정 · 목소리 41/67(PD 18:38, 남은 26 10/3 16:05) · 화면·렌더·제목 남음 · 업로드 https://youtu.be/7eD6SLt_jKc 예약 19:30 (PD 17:53)"
+    },
+    {
+      "at": "2026-10-03 20:10",
+      "kind": "cafe",
+      "item": "ubjob1003",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-03 06:20",
+      "note": "실업급여 조건 — 65세 넘어 새로 고용되면 적용 제외(고용보험법 10조)·정년/계약만료 정당한 이직 사유(시행규칙 별표2 12호)·자진퇴사 예외 5개 원문 대조, 제목 8.45(제미나이 8.4·레드팀 8.5, 2차)·표지 9(2차)·editgate auto(해시)·compare/review 세 줄·selfcheck 사실 0·readcheck 0·aitell 8.0·레드팀 8건 반영 · 검색 '실업급여조건' 116,300 · 같은 날 다른 칸과 법령·주제 안 겹침 · 이전 칸 note: 회의 10/2 22:5x 배정: write 생산(편명은 관문 시작 때 item에 기입). 못 채우면 질 낮은 글로 메우지 말고 '생산 부족' 사유를 note에",
+      "published": "https://cafe.naver.com/firemap/204 20:20 verify OK"
+    },
+    {
+      "at": "2026-10-03 22:10",
+      "kind": "cafe",
+      "item": "sevtax1003",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-03 10:26",
+      "note": "퇴직금 일시금 세금 근속연수별(소득세법 14·48·55·129조 원문 계산, DB생명 사례 검산) · 제목 7.7(제미나이 7.2·심사관 8.2·레드팀 7.8)·표지 7.75·editgate auto 해시·compare/review 세 줄·틀 v2·레드팀 8건 반영 · 링크 /calc/severance utm · 면책 줄 · 10/3 22:10 칸 못 나감(정기 근무 꺼짐) → 10/4 12:10 칸으로",
+      "published": "2026-10-04 12:24 https://cafe.naver.com/firemap/207"
+    },
+    {
+      "at": "2026-10-04 08:10",
+      "kind": "cafe",
+      "item": "jeonseg1004",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-03 16:29",
+      "published": "2026-10-04 08:29 https://cafe.naver.com/firemap/205",
+      "note": "전세보증보험 가입조건(HUG 상품개요 원문 10/3 조회, 검색 5,930·우리 카페 0건) — 빌라 한도 공시가격 126%·보증료 3억 2년. 제목 심사 평균 9.2, 표지 7.33, 레드팀 사실 6건 반영 · 정기예금(deposit1004)은 카페 #139 중복이라 hold · 10/3 20:21 write: 제목 쉼표 없는 틀로 재심사 7.83, editgate auto 재도장",
+      "by": "firemap-write"
+    },
+    {
+      "at": "2026-10-04 10:10",
+      "kind": "cafe",
+      "item": "d1cafe1004",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-03 18:38",
+      "published": "2026-10-04 10:31 https://cafe.naver.com/firemap/206",
+      "note": "롱폼 D-1(10/2 공개) 카페 긴 글 — 퇴직 후 지역 건보료 금융소득 1,000만원 경계(월 2만 2,800→6만 7,850원)·연금 150만원이면 1년 81만원·임의계속가입(법 110조 원문). 제목 8.6(제미나이 9.2·레드팀 8.6·작성자 8.0)·표지 8.33·editgate auto·compare/review 세 줄·틀 v2·selfcheck 사실 0 · 검색 퇴직후건강보험료 1,280·건강보험료계산 5,520 · 10/3 20:21 write: 제목 쉼표 없는 틀(월 얼마 더 나올까?) 재심사 8.0, editgate auto 재도장"
+    },
+    {
+      "at": "2026-10-04 12:20",
+      "kind": "shorts",
+      "item": "e1_micron_q4",
+      "owner": "firemap-shorts",
+      "gates_ok": "2026-10-03 02:27",
+      "note": "firemap-shorts 10/4 12:29: a1_spyi 표지 미통과(기한 00:20 지남)·비축 0 → 10/3 02:27 관문 통과한 e1_micron_q4로 채움(주인공 다름 규칙 10/3 19:5x). rank·음악 없음·utm 줄만 바꿈, aitell 0.0 해시 갱신 / 이전: firemap-shorts 10/3 18:19: spec·compete 5·숫자 대조·카피 7↑ 끝, 표지 1초 시험 미통과(제미나이 6.5·A 6·B 5=5.83<7) → 고칠 것 cardshorts/a1_spyi/review.md · 기한 10/4 00:20 안에 재심사, 못 넘으면 reserve d1_kunbo로 대체",
+      "published": "https://youtu.be/DBCBWToNFCs 12:28"
+    },
+    {
+      "at": "2026-10-04 19:20",
+      "kind": "shorts",
+      "item": "a1_spyi",
+      "owner": "firemap-shorts",
+      "gates_ok": "2026-10-04 19:29",
+      "note": "firemap-shorts 10/4 19:3x: 배정 없던 칸·비축 0 → a1_spyi 표지 v8 재심사 7.0 통과 뒤 같은 회차 공개(12시간 전 관문 기한은 못 지킴)",
+      "published": "https://youtu.be/rCwU25Ew2pw 19:31"
+    },
+    {
+      "at": "2026-10-04 19:30",
+      "kind": "long",
+      "item": "N-1",
+      "owner": "firemap-video-producer",
+      "gates_ok": "2026-10-03 19:08",
+      "note": "420buEFKB8k 예약 업로드(순돌이 19:5x, 무인 회차 권한 막힘 대신)"
+    },
+    {
+      "at": "2026-10-04 20:10",
+      "kind": "cafe",
+      "item": "n1cafe1004",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-03 14:27",
+      "note": "롱폼 N-1(10/4 19:30) 카페 긴 글 — 국세청 근로소득 백분위 2024 귀속 연봉 자리표·세금 몫, 순자산은 Q 한 문단(카페 44 연결). 제목 8.57(제미나이 9.2·레드팀 8.5·작성자 8.0)·표지 7.5·editgate auto 해시·compare/review 세 줄·틀 v2·selfcheck 사실 0. 발행 전 할 일: N-1 공개 주소를 c05 링크 아래 한 줄로 넣고(영상 넣기) editgate 다시 찍기 — 영상이 늦으면 영상 줄 없이 발행.",
+      "published": "2026-10-04 22:29 https://cafe.naver.com/firemap/208 (늦음 — 20시 readcheck 거부, 제목 교체)"
+    },
+    {
+      "at": "2026-10-05 08:10",
+      "kind": "cafe",
+      "item": "nhisprop1005",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-05 01:10",
+      "note": "비축에서 배정(03:4x write): 관문 통과: 제목 평균 7.8(제미나이 8.4·레드팀 7.0·작성자 8.0)·표지 7.43·aitell 4.7·readcheck 0·selfcheck 사실 0·레드팀 사실 12건 반영·compare/review 세 줄·editgate auto·frame 통과 — 건보료 재산 점수표(시행령 별표4 원문 60등급) 과세표준 3억 월 12만 3,930원",
+      "by": "firemap-write",
+      "published": "https://cafe.naver.com/firemap/209 (08:25 verify OK)"
+    },
+    {
+      "at": "2026-10-05 10:10",
+      "kind": "cafe",
+      "item": "nongji1005",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-05 01:28",
+      "note": "비축에서 배정(03:4x write): 관문 통과: 제목 '농지연금 수령액 3억 농지면 나이별로 월 얼마일까' 7.5(제미나이 후보3 8.0·레드팀 7.0·작성자 7.5)·표지 7.0(7.5·6.5·7)·aitell 2.3·readcheck 0·selfcheck 사실 0·레드팀 사실 지적 15건 반영(숫자 오류 0)·compare/review 세 줄·editgate auto — 공사 예상연금 조",
+      "by": "firemap-write",
+      "published": "https://cafe.naver.com/firemap/210 (10:23 verify OK)"
+    },
+    {
+      "at": "2026-10-05 12:10",
+      "kind": "cafe",
+      "item": "wolse1005",
+      "owner": "firemap-write",
+      "note": "firemap-write 10/5 04시대: 원 후보 jeonseg2_1005(HF·SGI)는 HF 502·SGI 원문 못 받아 주제 교체 → 월세 세액공제 정부안(한도 1,200만원·청년 17%) 대 현행 월 100만원 기준 170→204만 · 제목 7.07(editor 04:46 새 제목 재심사: lite 6.6·레드팀 7.2·작성자 7.4)·표지 7.8(8·8·7.5)·aitell 통과·readcheck 0·selfcheck 사실 0·레드팀 사실 지적 10건 반영·editgate auto·frame 통과·compare/review 세 줄",
+      "by": "firemap-write",
+      "gates_ok": "2026-10-05 04:30"
+    },
+    {
+      "at": "2026-10-05 12:20",
+      "kind": "shorts",
+      "item": "a1_1eok1y",
+      "owner": "firemap-shorts",
+      "gates_ok": "2026-10-05 00:24",
+      "note": "firemap-shorts 10/4 23:17: spec·check·aitell 0.0·숫자 [9] 대조·compete 5 끝, 제목 '세금 떼고' 고침. 표지 v2 1초 시험 제미나이 6.8·A 6·레드팀 6=6.27<7 미통과(주제 맞힘 3/3) → 글자 덩어리 줄이기·SCHD 숫자 묻힘·'미국 세금 15%'·그림 하나(cardshorts/a1_1eok1y/review.md). 기한 00:20 못 넘으면 12:20 정기 회차 전 재심사, 안 되면 e2_interest 당겨 씀 | 운영실장2 10/5 00:14: v6 제미나이 7·A 6.8·레드팀 7=6.93<7 미통과. 고칠 것 today.md(분배금 숫자 키우기·? 칸 채운 막대·회색 작은 글씨 빼기). 12:20 정기가 v7 재심사, 실패면 대체 편. | firemap-shorts 10/5 00:24: v7 6.0(5·7·6)·v8 6.33(5·7·7) 거쳐 **v9 통과 제미나이 7·A 7·레드팀 7=7.0**(블라인드 주제 맞힘, 숫자 [9]·막대 비율 대조 맞음). cover.png=v9(mkcover_v9.py).",
+      "published": "https://youtu.be/VFBMsYIWjWA 12:42"
+    },
+    {
+      "at": "2026-10-05 14:10",
+      "kind": "cafe",
+      "item": "bubyang1005",
+      "owner": "firemap-write",
+      "note": "firemap-write 10/5 09:0x: nhisrent1005(08:10 nhisprop1005와 같은 예시 586점)를 비축 bubyang1005로 바꿈(audit 07:57 [요청]). 관문 통과: 제목 '부양가족연금 늦춰 받으면 가산은 0%' 8.43(제미나이 9.8·레드팀 8.0·작성자 7.5)·표지 7.33(제미나이 비전 6·레드팀 8.5·작성자 7.5)·aitell 1.8·readcheck 0·selfcheck 사실 0·레드팀 사실 지적 9건 반영(숫자 오류 0)·compare/review 세 줄·editgate auto·frame 통과 — 법 52·62·63·63의2·64조 원문, 연기 5년 배우자 몫 153만 3,150원. 검증: 검색 940(slots TBD-J 메모)·우리 글 0편·경쟁 8개 중 연기·조기 제외 조항 다룬 글 0. 발행 전 slot.txt 시각 적기 | 발행 14:17 #212 verify OK 1829/1829·사진 3/3 (write 14:19)",
+      "by": "firemap-write",
+      "gates_ok": "2026-10-05 08:36",
+      "published": "https://cafe.naver.com/firemap/212"
+    },
+    {
+      "at": "2026-10-05 16:10",
+      "kind": "cafe",
+      "item": "bubu1005",
+      "owner": "firemap-write",
+      "note": "firemap-write 10/5 05:5x(운영실장2): TBD-A → bubu1005 확정(기초연금 부부감액, 검색 650·2027 예산안 부부감액 축소 이슈) · 제목 '기초연금 부부감액 소득인정액 몇만원부터 또 줄어들까' 8.27(제미나이 lite 7.8·레드팀 9.0·작성자 8.0)·표지 7.25·aitell 1.3·readcheck 0·selfcheck 사실 0·레드팀 숫자 오류 0·해석 7건 반영·editgate auto·compare/review 세 줄 — 법 제8조·시행령 제11조 원문, 부부 소득인정액 339만 2,480원 넘으면 소득역전 감액 · slot.txt 2026-10-05 16 | 이전: [후보·관문 전, gates_ok 없음] 회의(21:15)가 수요 검증한 편으로 확정 — 후보 미정, 기한 10:10 | write 05:3x 후보: 기초연금 부부감액(검색 650, 기초연금법 원문)·상속세 배우자공제(970) 중 법제처 원문 대조 되는 것 · 비축 imuigye1005는 칸에 쓰지 말고 비축으로 둠(비축 1/2)",
+      "by": "firemap-write",
+      "gates_ok": "2026-10-05 05:53"
+    },
+    {
+      "at": "2026-10-05 18:10",
+      "kind": "cafe",
+      "item": "ltc1005",
+      "owner": "firemap-write",
+      "note": "firemap-write 10/5 06:3x: TBD-B → ltc1005 후보 확정(2026 장기요양보험료율 0.9448%=건보료의 13.14%, 낼 때 건보료×13.14%와 받을 때 본인부담 한 글, 검색 2,670·우리 글 중복 0, 복지부 보도자료·시행령 제4조·건보법 시행령 제44조 원문 확인, facts.txt 있음) · 본문·표지·심사 관문은 아직(gates_ok 없음, 기한 12:10) | 이전: [후보·관문 전] 후보 미정 | firemap-write 10-05 07:14: 관문 통과 — 레드팀 사실7건 반영(시행일 단서·근사 주석·Q2·Q3·제10조 감면), 표지 14,170원 키움 레드팀 8.0·평균7.6, 제목 7.4/8.8, aitell 1.2·readcheck 0·selfcheck 사실 0, editgate auto",
+      "by": "firemap-write",
+      "gates_ok": "2026-10-05 07:14"
+    },
+    {
+      "at": "2026-10-05 19:20",
+      "kind": "shorts",
+      "item": "e2_interest",
+      "owner": "firemap-shorts",
+      "gates_ok": "2026-10-05 01:19",
+      "note": "firemap-shorts 10/4 23:17 배정: 테슬라 2분기 이자수익 422 > 영업이익 398(E-2 사실표 미사용). 남은 것: compete.md 5·첫 1초 표지·카피/표지 심사 3명·12:20 rank 뒤라 bars·음악 있음·chip '2026.9' 숫자 allow. X-SHORTS-LEN 첫 짝은 a1_1eok1y로 못 함(A-1 3번째 막힘) → E-2로 A(7초)·B(30~45초 TTS) 짝 권장 | firemap-shorts 10/5 01:10: compete 5 끝(이자 각도 0/7)·check 문제 없음·aitell 0.0·숫자 대조 맞음. 인트로 0초 1초 시험 6.0 → 정지 표지 cover_png v2~v5, 최고 표지 6.67·카피 7.33(v3)/6.33(v5) — 같은 판에 3명 모두 7 이상 못 맞춤(제미나이 5~7 흔들림). 미통과. 다음: 제목 단정형(넣음, 미심사)+카드 중복 줄 빼고 435억 키우기 → 재심사 3명(기한 07:20) · cardshorts/e2_interest/review.md | firemap-shorts 10/5 01:19: 표지 v8(cover_v8.png, 결론 맨 위·막대 안 숫자) 제미나이 7·A 7·레드팀 7=7.0, 카피 8·7·7=7.33 통과. 카드 레드팀·A 지적대로 정리. 근거 cardshorts/e2_interest/review.md | firemap-shorts 19:31: 공개. 설명 끝 firemap.kr/news utm_campaign=xWAnTpGJTHg(되읽기 OK, /calc/* 3개는 주제 불일치라 youtube-loop 10/5 12:46 방식대로 /news), cafe_line false",
+      "published": "https://youtu.be/xWAnTpGJTHg 19:28"
+    },
+    {
+      "at": "2026-10-05 19:30",
+      "kind": "long",
+      "item": null,
+      "owner": "firemap-video-producer",
+      "gates_ok": null,
+      "skip": true,
+      "note": "05:4x firemap-youtube-loop: 롱폼은 '하루 1편 이하' 상한이지 매일 칸이 아님(RULES 177행·workflow 118행·series-plan 주 2편 시작). 10/2·10/3·10/4가 매일이었던 건 D-1·E-2·N-1 대본이 마침 있어서. 오늘은 공개할 편이 없음: 비축 R-1은 목소리 150/206·TTS 429·f0 막힘(다음 시도 16:00 뒤, 한 날 녹음)이라 관문 기한(10/4 19:30)이 이미 지났고 W-1은 대본 없음. 칸 건너뜀 · 대체 = R-1 목소리·화면·편집 통과 뒤 다음 가능한 롱폼 칸(빨라야 10/7 19:30, 늦어도 W-1 10/11)"
+    },
+    {
+      "at": "2026-10-05 20:10",
+      "kind": "cafe",
+      "item": "npsfee1005",
+      "owner": "firemap-write",
+      "note": "firemap-write 10/5 07:4x: TBD-C → npsfee1005(국민연금 보험료 2026 직장인 몫 4.75%·월 소득별 표·상한 659만/하한 41만·연도별 몫, 검색 1,520/보험료율 1,260, 우리 글 중복 없음—npscont는 임의계속·추납) 관문 통과: 국민연금법 부칙4조·제88조·시행령 5조·공단 안내 대조·제목 7.3(제미나이 lite 8.0·레드팀 6.5·작성자 7.5)·표지 7.8(레드팀 8.0·작성자 7.5)·aitell 4.8·readcheck 0·selfcheck 사실 0·레드팀 숫자 오류 0·해석 지적 반영·frame 통과·editgate auto·compare/review 세 줄 · slot.txt 2026-10-05 20 · 링크 /calc/salary utm · 면책 줄",
+      "by": "firemap-write",
+      "gates_ok": "2026-10-05 07:48",
+      "published": "2026-10-05 20:26 https://cafe.naver.com/firemap/215"
+    },
+    {
+      "at": "2026-10-05 22:10",
+      "kind": "cafe",
+      "item": "goldway1005",
+      "owner": "firemap-write",
+      "note": "firemap-write 10/5 10시대: TBD-D → goldway1005 확정(issue-radar 10/5 후보 1 금 1천만원 길별, today.md [지시] 카페 몫 · 주택연금은 같은 날 농지연금 #210과 겹쳐 뺌) · 검증: 금ETF 10,140·금투자 3,270·KRX금시장 1,650, 경쟁 8개 중 실제 1년 값으로 길별 계산 0 · 제목 '금 투자 1년 성적 KRX 금시장은 손해' 7.3(제미나이 6.4·레드팀 8.0·작성자 7.5)·표지 7.5(7·8·7.5)·aitell 6.9·readcheck 0·selfcheck 사실 0·crosscheck 반영·레드팀 사실 지적 5건 반영(재심 0)·editgate auto·compare/review 세 줄 — KRX 금 1년 -2.42%(187,300→182,770원/g) vs 국제값 원화 +3.38%, 1년 전 웃돈 7.4%→1.4% · slot.txt 2026-10-05 22",
+      "by": "firemap-write",
+      "gates_ok": "2026-10-05 10:37",
+      "published": "2026-10-05 22:41 https://cafe.naver.com/firemap/216 (verify OK 1728/1728자·사진 3/3)"
+    },
+    {
+      "at": "2026-10-06 08:10",
+      "kind": "cafe",
+      "item": "irpwd1006",
+      "owner": "firemap-write",
+      "note": "[범위 안쪽 — 퇴직금·퇴직연금] 관문 통과(write 14:43): 제목 'IRP 중도인출 집보다 아파서 꺼낼 때 세금 30% 덜 내는 이유' 8.0(제미나이 8.2·레드팀 8.3·작성자 7.5)·표지 7.33·aitell 6.4·readcheck 0·selfcheck 사실 0·레드팀 숫자 오류 0(표현 6 반영)·crosscheck 말투 12 반영·compare/review 세 줄·editgate auto. #123(사유·통계)과 각도 다름: 사유별 세금(요양 126만 vs 집 180만, 퇴직금 2억·15년). 링크 /calc/severance utm",
+      "by": "firemap-write",
+      "gates_ok": "2026-10-05 14:43",
+      "published": "2026-10-06 08:27 https://cafe.naver.com/firemap/217 (verify OK 1761/1761자·사진 3/3)"
+    },
+    {
+      "at": "2026-10-06 10:10",
+      "kind": "cafe",
+      "item": "yujokstop1006",
+      "owner": "firemap-write",
+      "note": "[범위 안쪽 — 국민연금(배우자 사망 뒤 노후 소득)] 편 확정 firemap-write 10/5 18:23: 유족연금 배우자 '3년 받고 55세까지 정지'와 예외 셋(장애·자녀 양육·A값 3,193,511원 넘는 소득 없음) — 검색 5,250, #138(두 연금 고르기·30%)과 각도 다름. facts.txt 원문 대조 진행: 법 72~76조·시행령 45·49조 받음, 근로소득금액 정의 확인 남음. 본문 초안 c00~c05 18:3x(readcheck 0·selfcheck 사실 0·aitell 0.0, 1,063자 — 1,200자 이상으로 늘릴 것) · 남은 관문: 사진 3장·표지 1초 시험·제목 심사 3명·compare/review 세 줄·crosscheck·editgate, 기한 04:10 · 주의: selfcheck [중복] #138과 대상 같음(9/28, 8일 전·각도 다름) | 이전: [후보·관문 전] 후보 미정 · 관문 통과 2026-10-05 22:47 firemap-write: 제목 '유족연금 3년 뒤 끊긴 배우자 몇 살에 다시 받을까' 8.2(제미나이 9.0·레드팀 8·작성자 7.5)·표지 7.5·readcheck 0·selfcheck 사실 0·aitell 통과·crosscheck 반영·레드팀 사실 ①~⑥ 맞음·compare/review 세 줄·editgate auto. 초안의 55세 오류를 부칙 제8541호 제8조로 고침(1969년 이후 출생 60세)",
+      "by": "firemap-write",
+      "gates_ok": "2026-10-05 22:47",
+      "published": "2026-10-06 10:30 https://cafe.naver.com/firemap/218 (verify OK 1265/1265자·사진 3/3)"
+    },
+    {
+      "at": "2026-10-06 12:10",
+      "kind": "cafe",
+      "item": "imuigye1005",
+      "owner": "firemap-write",
+      "note": "[범위 안쪽 — 건보료(퇴직 뒤 임의계속가입)] 비축에서 꺼냄(write 10/5 20:21): 관문 통과 2026-10-05 05:28 그대로 — 제목 '건강보험 임의계속가입 평균 월급이 300만원이었다면 월 얼마일까' 7.5·표지 7.5·aitell 0.0·editgate auto. 10/5 08:10 nhisprop(재산 건보료)와 하루 띄움. 발행 전 dupcheck 다시",
+      "by": "firemap-write",
+      "gates_ok": "2026-10-05 05:28",
+      "published": "2026-10-06 12:24 https://cafe.naver.com/firemap/219 (verify OK 2017/2017자·사진 3/3)"
+    },
+    {
+      "at": "2026-10-06 12:20",
+      "kind": "shorts",
+      "item": "nhis_prop",
+      "owner": "firemap-shorts",
+      "gates_ok": "2026-10-05 03:45",
+      "note": "firemap-shorts 10/5 03:44: 배정 — 지역가입자 건보료 재산분 1세대1주택 공시가별(사실표 nhisprop1005 쇼츠 첫 사용, rank·음악 없음). compete 5·check 문제 없음·aitell 0.0·숫자 대조 사실표 밖 0(레드팀). 표지 v1 7·6·6=6.33 미통과 → v2(9억 ? 칸·1주택 특례율 표기) 제미나이 8·카피 7, 심사관 A·레드팀 v2 재심사 결과 미수령 → gates_ok 비움. X-SHORTS-LEN 짝 아님(B판 렌더 없음). 근거 cardshorts/nhis_prop/ | firemap-shorts 10/5 03:45: v2 재심사 도착 — 표지 제미나이 8·A 7·레드팀 7=7.33 통과, 카피 7·7·7=7.0 통과(블라인드 주제 3/3), 숫자 사실표 밖 0. 제목 쉼표만 고침('117,240원, 9억은?'). gates_ok 기입. 공개 전 다듬을 것(선택): 첫 줄 '소득 없어도'→'집 한 채만 있어도'(경쟁4와 겹침)·'?'를 숫자 크기로·설명에 적용 시점.",
+      "published": "2026-10-06 12:28 https://youtu.be/qMXVDJ19_TY (verify OK public·processed·채널 UCV3…PlVg · rank·음악 없음 · 설명 링크=카페 주소만: 건보료 /calc 계산기 없음)"
+    },
+    {
+      "at": "2026-10-06 14:10",
+      "kind": "cafe",
+      "item": "hfguar1006",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-06 06:44",
+      "note": "[범위 안쪽 — 주택연금] 편 확정 write 10/5 20:21: 주택연금(검색 29,490) 각도 '보증료·대출이자가 집값에서 얼마나 빠지나' — 초기보증료·연 보증료·대출잔액 누적, 한국주택금융공사법·시행령·HF 공시 원문. 우리 #55(나이 55세·12억 한도)·월지급표와 다른 각도. 관문 기한 08:10 | firemap-write 10/6 06:44: F1 — readcheck 본문말투 2건(숫자 문장 연달아)을 문장만 나눠 고쳐 0건(숫자·사실 그대로). editgate stamp 다시(sha 1f3c158), 표지 고정 심사 평균 7.22(555a0c6) 유지, 카페 틀 v2·사진 3장 통과. check_self 2건은 안내(표 칸 12개는 이미지 표 / '주택연금' 중복은 #55와 각도 다름: 보증료·누적). firemap.kr 링크는 주택연금 계산기 경로가 toolPages에 없어 본문에 넣지 않음.",
+      "by": "firemap-write",
+      "published": "2026-10-06 14:36 https://cafe.naver.com/firemap/220 (verify OK 1162/1162자·사진 3/3)"
+    },
+    {
+      "at": "2026-10-06 16:10",
+      "kind": "cafe",
+      "item": "depprot1006",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-06 06:54",
+      "note": "[범위 안쪽 — 예금] 편 확정 write 10/5 20:21: 예금자보호 한도(검색 5,210, 우리 글 0편) — 1억 상향 뒤 노후자금 3억을 은행·저축은행·상호금융에 나눠 맡기면 어디까지 보호되나, 예금자보호법·시행령 원문. 관문 기한 10:10",
+      "by": "firemap-write",
+      "published": "2026-10-06 16:24 https://cafe.naver.com/firemap/221 (verify OK 1171/1171자·사진 3/3)"
+    },
+    {
+      "at": "2026-10-06 18:10",
+      "kind": "cafe",
+      "item": "toejikavg1006",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-06 07:11",
+      "note": "[범위 안쪽 — 퇴직금] 편 확정 write 10/5 20:21: 퇴직금 계산(검색 19,110) 각도 '평균임금에 상여·연차수당 넣는 법' — 근로기준법 제2조·근퇴법 제8조 원문. 우리 sevtax1003(세금)·rettax(연금수령 세금)와 각도 다름. 경계: 08:10 IRP(근퇴법 시행령 14조·소득세법)와 같은 퇴직금 갈래 — 조문은 다르나 editor가 겹친다고 보면 10/7로 밀고 이 칸은 그때 새 비축으로. 관문 기한 12:10",
+      "by": "firemap-write",
+      "published": "2026-10-06 18:27 https://cafe.naver.com/firemap/222 (verify OK 1405/1405자·사진 3/3)"
+    },
+    {
+      "at": "2026-10-06 19:20",
+      "kind": "shorts",
+      "item": "nongji_age",
+      "owner": "firemap-shorts",
+      "gates_ok": "2026-10-05 01:47",
+      "note": "firemap-shorts 10/6 19:31: 비축 nongji_age 공개 19:30 — 직전 rank·음악 없음이라 bars·음악 있음으로 바꿈, 업로드 관문 aitell 21.9(설명 ~요 7연속) → 설명 끝맺음만 고쳐 0.0. | firemap-shorts 10/6 06:42: gold1y 표지 v5 6.58·v6 6.17 미달(5768899, 고정 심사·보정 유효)로 기한 07:20 못 넘겨 비축 nongji_age로 교체(gates_ok는 비축 통과 시각 10/5 01:47 — compete 5·check·aitell 0.0·표지 v4 7.33·카피 7.0·review 세 줄). rank·음악 없음, publish 전 직전 편(10/6 12:20 nhis_prop) layout 확인해 rank 연속이면 bars. gold1y는 표지 다시 만들 대상(시한 10/6 21:00 유지, 통과 시 10/7 이후 칸) | 이전: firemap-shorts 19:31: 금 1천만원 사는 길별 1년([지시] 시한 10/6 21:00, 사실표 goldway1005 쇼츠 첫 사용)으로 배정 — compete.md 6편·spec check 문제 없음·aitell 0.0 끝. 남은 관문: 첫 1초 표지·1초 시험 3명·카피 심사 3명·review 세 줄(기한 07:20). rank·음악 없음. 기준금리 편은 다음 칸으로 미룸(관문 착수 전이었음) | firemap-shorts 10/5 03:44: 편·담당만 배정 — 대기 spec은 전부 사실표 중복 규칙에 막힘(A-1·E-1·E-2 주인공 같음). 관문 전",
+      "published": "2026-10-06 19:30 https://youtu.be/Xlt5q1PvxK8"
+    },
+    {
+      "at": "2026-10-06 19:30",
+      "kind": "long",
+      "item": null,
+      "owner": "firemap-video-producer",
+      "gates_ok": null,
+      "skip": true,
+      "note": "05:4x firemap-youtube-loop: 건너뜀 — 10/5 칸과 같은 이유(R-1 목소리 150/206 막힘, 관문 기한 10/5 19:30 안에 못 끝남 가능성 큼, W-1 대본 없음). R-1이 10/5 19:30 전에 편집·썸네일·목소리·화면 관문을 모두 넘기면 skip을 지우고 item=R-1·gates_ok를 적는다 | 16:29 r1-record-1006: R-1 목소리 관문 막힘(IQR 0.18·5.12음절/초)·대본 5.97 미달 → 이 칸 공개 없음"
+    },
+    {
+      "at": "2026-10-06 20:10",
+      "kind": "cafe",
+      "item": "yangdo1006",
+      "owner": "firemap-write",
+      "note": "관문 통과(write 08:30): 제목 G2 '12억 넘는 집 한 채 양도세, 공제 크게 받으려면 몇 년 살아야 할까' 7.5(제미나이 3.1-lite 8·8·레드팀 7·작성자 7.5) — copywriter 1위 E2는 readcheck 제목 2건·틀 v2(~요 끝)로 못 씀 · 표지 T6 7.25(고정 조건: 비교판·judge_cafe·3.1-lite 2회·보정 gongjae 7.5/7.0) · readcheck 0·aitell 0.1·selfcheck 사실 0·crosscheck 사실 1·말투 15 반영·레드팀 숫자 0·editgate auto. 계산 6억→15억·보유 15년: 거주 1년 3,056만→10년 414만원 | [범위 경계 — 부동산 → 퇴직 뒤 집 줄여 갈 때 세금 내고 남는 돈으로 끝냄] firemap-write(갈래②) 10/6 07:1x: TBD-L → yangdo1006 확정 — 1세대1주택 비과세 12억 넘는 집 팔 때 양도세(고가주택 안분·장기보유특별공제 보유+거주 최대 80%). 검색 1세대1주택비과세 1,130·양도소득세 24,090(kwvol 10/6), 우리 카페 0편(dupcheck), #175 일시적 2주택과 각도 다름. 소득세법 제89조·제95조·시행령 제160조·제159조의4·제55조 원문 받음 → pkg/facts.txt. 14:10 hfguar(주택연금)와 법·돈 흐름 다름. 관문 기한 14:10 | 연금저축 세액공제(옛 TBD-L 후보)는 뺌: 카페 #54(900만원 135만원)·#74(연금저축 vs ISA) 이미 두 편 + 같은 날 08:10 irpwd1006(IRP) 겹침 — 11월 이후 남은 한도 각도로 다시 검토 | 이전: [범위 안쪽 — 연금 세금] 회의 10/5 21:40(firemap-meeting): 22:10 TBD-L(연금저축·IRP 세액공제)을 이 칸으로 당김 — 각도는 write 14:4x 지적대로 '연말까지 남은 납입 한도·12월 마지막 납입일'만(#54 '900만원·135만원' 각도 금지), 소득세법 제59조의3 원문. 관문 기한 14:10. 국민연금 임의가입(옛 TBD-K)은 10/6 10:10 유족연금과 같은 법이라 10/7 08:10으로 옮김 | 이전: [범위 안쪽 — 국민연금] 후보: 국민연금 임의가입(검색 6,650 · 전업주부 최저 보험료·몇 년 내면 월 얼마) — npsfee1005(10/5 20:10)와 하루 띄움, 기한 14:10 (write 10/5 14:19) | write 10/5 18:23: 같은 날 10:10이 유족연금(국민연금법)이라 임의가입이면 같은 법 하루 두 번 — 10/7로 미루거나 다른 안쪽 후보로 바꿀 것",
+      "by": "firemap-write",
+      "gates_ok": "2026-10-06 08:30",
+      "published": "2026-10-06 20:35 https://cafe.naver.com/firemap/223 (verify OK 1489/1489자·사진 3/3)"
+    },
+    {
+      "at": "2026-10-06 22:10",
+      "kind": "cafe",
+      "item": "bigwa1006",
+      "owner": "firemap-write",
+      "note": "관문 통과(write 08:47): 제목 K2 '비과세종합저축 기초연금 없으면 5천만원 이자 세금 얼마나 붙을까' 7.5(제미나이 7·7·레드팀 8·작성자 7.5) — copywriter 1위 C는 틀 v2(~요 끝)로 못 씀 · 표지 B2 7.17 · 부칙 제41조·시행령 82조의2·조특법 129조의2 원문 대조 · readcheck 0·aitell 4.2·selfcheck 사실 0·crosscheck 2회 반영·레드팀 오류 1 반영·editgate auto | [범위 안쪽 — 예금 이자 세금] firemap-write(갈래②) 10/6 07:1x: TBD-M → bigwa1006 확정 — 비과세종합저축 1인 5천만원, 2026.1.1부터 신규 가입은 65세 이상 중 기초연금 수급자만(조특법 제88조의2 2025.12.23 개정, 2028년 말까지). 검색 4,170(kwvol 10/6), 우리 카페 0편(dupcheck). 원문·은행 약관 변경 안내 → pkg/facts.txt, 부칙 경과조치 대조 남음. 16:10 depprot(예금자보호 한도)와 같은 예금이지만 법·질문 다름 — editor가 겹친다고 보면 10/8 이후로. 관문 기한 16:10 | 1세대1주택 양도세(옛 TBD-M 후보)는 20:10 yangdo1006으로 당김 | 이전: [범위 안쪽 — 퇴직 뒤 집 한 채] 회의 10/5 21:40(firemap-meeting): 후보 = 1세대1주택 양도세 비과세 12억 기준(퇴직 뒤 집 줄여 갈 때 남는 돈) — 소득세법 제89조·시행령 제154·156조 원문으로 사실표, 검색수는 work/kwvol.py로 재고 1,000 미만이거나 우리 글 중복이면 write가 다른 안쪽 후보로 바꿔도 됨(note에 이유). 관문 기한 16:10. 못 넘으면 비축에서 끼움(nhisrent1005는 nhisprop 10/5 08:10에서 3일 안 지나 불가 → 새 비축 필요) | 이전: [범위 안쪽 — 연금 세금] 후보: 연금저축 세액공제(검색 3,030 · 연말 앞 수요, 소득세법 제59조의3 원문) — 9/29 연금소득세 글과 각도 다름(넣을 때 공제), 기한 16:10 (write 10/5 14:19) | 주의(write 14:4x selfcheck): 카페 #54 \"연금저축·IRP 세액공제, 900만원 넣으면 최대 135만원입니다\"가 이미 있음 — 같은 각도 금지, 쓰려면 \"연말까지 남은 한도·12월 납입 마감일\" 각도로, 아니면 다른 안쪽 후보로 바꿈",
+      "by": "firemap-write",
+      "gates_ok": "2026-10-06 08:47",
+      "published": "https://cafe.naver.com/firemap/224"
+    },
+    {
+      "at": "2026-10-07 08:10",
+      "kind": "cafe",
+      "item": "npsimui1007",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-06 09:43",
+      "note": "관문 통과(write 09:43, F2): 제목 K5 '국민연금 임의가입 최저 보험료로 10년 내면 매달 얼마 받을까' 7.33(제미나이 7·7·레드팀 7.5·작성자 7.5) · 표지 N1 7.58(고정 조건, 3.1-flash-lite·보정 gongjae 7.0·7.5) · 국민연금법 10·13·51·61·88조+부칙, 공단 중위수 101만3천원·예상연금월액표 원문 대조 · readcheck 0·aitell 1.6·selfcheck 사실 0·crosscheck 2회·레드팀 오류 5 반영·editgate auto | [범위 안쪽 — 국민연금] 회의 10/5 21:40(firemap-meeting): 옛 10/6 20:10 TBD-K를 옮김 — 국민연금 임의가입(검색 6,650, write 10/5 14:19 후보): 전업주부 최저 보험료·몇 년 내면 월 얼마. 10/6 10:10 유족연금과 22시간 띄움, npsfee1005(10/5)와 이틀. 국민연금법·시행령 원문. 관문 기한 10/7 02:10 · firemap-write 10/5 22:4x: 편 이름 npsimui1007로 확정(우리 카페·블로그 제목에 임의가입 0편, imuigye1005는 건보 임의계속이라 다름). 묶음 work/research/npsimui1007/pkg",
+      "by": "firemap-write"
+    },
+    {
+      "at": "2026-10-07 10:10",
+      "kind": "cafe",
+      "item": "spouseinh1007",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-06 10:34",
+      "note": "[범위 경계 — 상속·가족 돈, 은퇴 부부 자산 숫자로 이어짐] firemap-write 10/6 03:2x(F3): 상속세 배우자 공제(검색 상속세배우자공제 970, kwvol 10/6) — 배우자가 상속받으면 5억 일괄 아닌 최소 5억~최대 30억까지 공제되는 계산, 실제 낼 돈. 우리 카페 0편(inhtax는 블로그 세율편), 10/6 10:10 유족연금과 22시간 띄움이나 주제 다름(연금 vs 상속세). 상속세및증여세법 제19조·제21조 원문 대조 필요. 관문 기한 10/7 04:10 · 묶음 work/research/spouseinh1007/pkg · 경계라 editor 범위 판단 한 줄 필요, 밖이면 비축 retmid로 교체 | 10:34 firemap-write 관문 통과: 제목 A 3명 7.5·표지 S1 7.08·레드팀 오류 2 반영·selfcheck 사실 0·editgate auto. 범위 경계 판단은 editor 확인 요청(today.md) | 발행 10:26 #226 verify OK 1757/1757·사진 3/3 (write 10:29)",
+      "published": "https://cafe.naver.com/firemap/226"
+    },
+    {
+      "at": "2026-10-07 12:10",
+      "kind": "cafe",
+      "item": "schdacct1007",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-06 12:44",
+      "note": "[범위 안쪽 — 배당 현금흐름] firemap-write 10/6 03:2x(F3): SCHD 배당금을 일반계좌·ISA·연금계좌 중 어디서 받으면 세후 월 얼마(검색 SCHD배당금 9,310, 월배당ETF 4,130, kwvol 10/6). schd1003(10/3)과 4일 띄움, 각도는 앞 세 편(배당 증가폭)과 달리 계좌별 세후 수령액. 미국 배당 원천징수 15%·ISA 비과세 한도·연금계좌 과세이연은 국세청·조세특례제한법 원문 대조, 배당액은 Nasdaq API·운용사. 관문 기한 10/7 06:10 · 묶음 work/research/schdacct1007/pkg(미착수) · 관문 통과(write 12:44): 제목 E 'SCHD 배당금 ISA나 연금저축에서 받으면 미국 세금 얼마나 빠질까' 7.5(제미나이 7·7·레드팀 8·작성자 7.5) · 표지 S3 7.58 · readcheck 0·selfcheck 사실 0·aitell 1.1·crosscheck 사실 4 중 반영 2·유지 2·레드팀 사실 3 반영(시행령 189조의2④ 0.55·한도 소득세분) · editgate auto · 묶음 work/research/schdacct1007/pkg"
+    },
+    {
+      "at": "2026-10-07 12:20",
+      "kind": "shorts",
+      "item": "npsday1007",
+      "owner": "firemap-shorts",
+      "gates_ok": "2026-10-06 09:24",
+      "note": "firemap-shorts 10/6 04:1x(F3): 하루 차이 문턱 — 1968-12-31생 vs 1969-01-01생 노령연금 64세 vs 65세(1년 차이). 국민연금법 제61조 제1항(60세)+부칙 제8조(1965~68년생 +4세·1969년 이후 +5세) 원문을 법령 API로 직접 확인(사실표 work/research/npsday1007/pkg/facts.txt, 쇼츠 첫 사용·A-1·E-1·E-2와 안 겹침). 남은 관문: 공단 지급개시연령 표 교차확인·compete.md 5개·spec check·표지 1초 시험·카피 심사·review 세 줄, 기한 10/7 00:20. 예술가 ideas AL '하루 차이 문턱'. 같은 날 카페 10:10 spouseinh1007·12:10 schdacct1007과 주제 다름. 안 되면 비축 nongji_age로 교체."
+    },
+    {
+      "at": "2026-10-07 14:10",
+      "kind": "cafe",
+      "item": "wagepeak1007",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-06 16:31",
+      "note": "[범위 안쪽 — 퇴직금·퇴직연금] firemap-write(갈래②) 10/6 07:1x: 임금피크제 앞두고 퇴직금 중간정산·DB→DC 전환하면 퇴직금 얼마 차이(검색 임금피크제 5,810·퇴직연금DB형 1,220, 우리 카페 0편 dupcheck). 근로자퇴직급여 보장법·시행령 원문. 10/6 18:10 toejikavg1006(평균임금에 상여·연차)와 20시간 띄움, 각도 다름(임금 깎이기 전 정산). 관문 기한 10/7 08:10 · 묶음 work/research/wagepeak1007/pkg(미착수) · 초안 firemap-write 10/6 14:3x: 사실표(근퇴법 8·20·32·46조·시행령 3조·근기법 2조 원문)·가정 사례 계산(그대로 1억800만/중간정산 1억6,800만/DC 1억6,980만)·본문 c00~c03·selfcheck 사실 0·readcheck 1(숫자 연속, 남음). 남은 관문: 이미지 2장·제목 3명·표지 1초·crosscheck·레드팀·compare.md·editgate · 관문 통과 16:31(firemap-write): 제목 G 3명 7.5(B는 frame v2 '왜' 탈락)·표지 W1 7.17·crosscheck 사실 2 중 반영 1·유지 1·레드팀 오류 1+재심사 1 반영(중간정산=퇴직금제도만)·readcheck 0·selfcheck 사실 0·aitell 5.2·frame v2·editgate auto·compare.md·review.md 세 줄 · /calc/severance utm"
+    },
+    {
+      "at": "2026-10-07 16:10",
+      "kind": "cafe",
+      "item": "ltcgrade1007",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-06 20:38",
+      "note": "관문 통과(write 20:38): 제목 G '장기요양등급 75점 문턱, 한 달 한도는 얼마나 갈릴까' 7.38 · 표지 L1 7.13 · crosscheck 사실 9 중 반영 7·유지 2 · 레드팀 오류 5 반영(재심사 0) · readcheck 0·aitell 0.0·selfcheck 사실 0·editgate auto · /calc 맞는 것 없음 | [범위 안쪽 — 노후 돌봄 비용] firemap-write(갈래②) 10/6 07:1x: 장기요양등급(검색 20,590, 우리 카페 0편 dupcheck) — 등급 판정 점수 기준과 등급별 월 한도액, 등급 하나 차이로 월 얼마. 노인장기요양보험법·시행령·복지부 고시 원문. ltc1005(10/5, 보험료·본인부담률)와 이틀, 각도 다름 — editor 겹침 판단 한 줄. 관문 기한 10/7 10:10 · 묶음 work/research/ltcgrade1007/pkg(미착수)"
+    },
+    {
+      "at": "2026-10-07 18:10",
+      "kind": "cafe",
+      "item": "pensavbreak1007",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-06 18:38",
+      "note": "[범위 안쪽 — 연금(연금저축)] firemap-write 09:37 F4: jongbu1007은 10/20대로 미룬 뒤 새 편 확정 = 연금저축 중도 해지하면 얼마 떼이나(검색 연금저축해지 750·연금저축 27,930, 우리 카페 해지 글 0편 dupcheck). 소득세법 제21조①21호·제129조①6호 나목 원문 받음(기타소득 15%+지방세). 10/6 08:10 irpwd1006(IRP 부득이 인출)과 각도 다름·제목 겹치면 hold. 관문 기한 10/7 12:10 · 묶음 work/research/pensavbreak1007 facts.txt 착수(남은 조사 6항목) · 못 넘으면 retmid1005 교체 기입 가능하나 14:10 wagepeak와 겹쳐 10/8 쪽이 안전 · 관문 통과(write 18:38): 제목 A '연금저축 해지하면 세액공제 받은 것보다 얼마나 더 떼일까' 7.0 · 표지 P4 7.13 · crosscheck 사실 4 중 반영 3·유지 1 · 레드팀 오류 2·표현 9 반영, 재심사 새 지적 0 · readcheck 0·aitell 1.5·selfcheck 사실 0·editgate auto",
+      "ep": "work/research/pensavbreak1007/pkg"
+    },
+    {
+      "at": "2026-10-07 19:20",
+      "kind": "shorts",
+      "item": "basecut1006",
+      "owner": "firemap-shorts",
+      "gates_ok": "2026-10-07 03:26",
+      "note": "firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 비축 0이라 다음 후보 기준금리 30년 표(ECOS, _reserve_shorts_next)로 배정 · 관문 기한 10/7 07:20 · 못 넘으면 gold1y '-2.42% 내림 표시' 1판 또는 칸 비움 사유 기록 · firemap-shorts 10/6 23:15: basecut1006=cardshorts/rate30(사실표 bokrate1006). 한은 홈페이지 교차확인 일치·콜금리 주석 추가·check 통과·compete 5. 첫 프레임 1초 시험 v9 5·v10(답 먼저 3줄) 5 미달(블라인드 주제는 맞힘) → gates_ok 없음. 다음 1안: B형 cards 첫 카드 '기준금리 3%' 한 숫자, 안 되면 v10으로 칸 채움(비축 0). 근거 cardshorts/rate30/review.md 끝 · firemap-shorts 03:26: 관문 통과 — 내보낼 spec은 cardshorts/rate30_b.json(B형 cards 25초, rate30_b.mp4 렌더됨). 첫 프레임 1초 시험(고정 조건 gemini-3.5-flash-lite 2회) 7·7, 블라인드 주제 맞힘·글자 읽힘 '예', 카피 8·8, 레드팀 1초 7·대본카피 6·사실 오류 0(지적 3 반영) → 평균 1초 7.0·카피 7.33. aitell 0.0·.edit.json by auto. 음악은 공개 직전 직전 편 반대로. 근거 cardshorts/rate30/review.md 끝"
+    },
+    {
+      "at": "2026-10-07 19:30",
+      "kind": "long",
+      "item": null,
+      "owner": "firemap-video-producer",
+      "gates_ok": null,
+      "skip": true,
+      "note": "04:4x firemap-youtube-loop: 건너뜀 — 관문 기한 10/6 19:30인데 M-1 녹음이 10/6 16:01이라 3시간 반에 렌더·심사·썸네일 불가, R-1은 목소리 막힘. 대체 = 10/8 19:30 M-1"
+    },
+    {
+      "at": "2026-10-07 20:10",
+      "kind": "cafe",
+      "item": "parking1007",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-06 22:43",
+      "note": "[범위 안쪽 — 예금·이자(퇴직금·비상금 잠깐 둘 곳), D10 시험] 관문 통과(write 22:43): 제목 T1 '파킹통장 5천만원 넣으면 한 달 이자 얼마나 차이 날까' 7.5(제미나이 8·8·레드팀 7·작성자 7.5) · 표지 P1 7.0(보정 7.0 유효) · 검색 파킹통장 125,600·우리 0편 · 저축은행중앙회 공시 156개+토스·카카오 공식 · 레드팀 오류 3 반영 · editgate auto · 묶음 work/research/parking1007/pkg · 옛 note: firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 새 편(예금·이자·금리 묶음 시험 1편 — loop 10:07 요청 D10, 같은 날 퇴직금 wagepeak"
+    },
+    {
+      "at": "2026-10-07 22:10",
+      "kind": "cafe",
+      "item": "earlyjob1007",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-07 08:43",
+      "note": "[범위 안쪽 — 50대 퇴직 뒤 재취업 돈] 관문 통과(write 08:43): 조기재취업수당 지급 제외 월급 574만→300만원 행정예고(고용노동부 공고 제2026-458호, 9/29, 의견 10/18, 부칙 11/1 이후 수급자격 신청자부터) · 검색 조기재취업수당 8,160·우리 카페 0편 · 제목 T16 7.5(제미나이 3회 7.9·레드팀 7·작성자 7.5, 틀 v2 통과) · 표지 E5 7.0(보정 gongjae 7.25 유효) · crosscheck 사실 5 중 반영 4·유지 1 · 레드팀 오류 9 반영→재검 0 · readcheck 본문 0·aitell 0.0·selfcheck 사실 0·editgate auto · /calc/unemployment-benefit utm · 이전 note: firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 새 편(write 주제 고르기, X-CAFE-CALC-1은 10/10 시작이라 지금 규칙) · 관문 기한 10/7 16:10 · 하루 8편 상한의 8번째"
+    },
+    {
+      "at": "2026-10-08 08:10",
+      "kind": "cafe",
+      "item": null,
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-07 10:29",
+      "note": "skip — PC 꺼짐(10/7 11:30~10/8 12:53)으로 못 나감, sanghan1008은 14:10 칸에서 공개(#228). 이중 기록 정리 firemap-meeting 10/8 21:44(검증 참모 21:42)"
+    },
+    {
+      "at": "2026-10-08 12:10",
+      "kind": "cafe",
+      "item": "ubapply1007",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-07 11:22",
+      "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)",
+      "published": "https://cafe.naver.com/firemap/227 verify OK 1334/1334·사진 3/3 (13:07)"
+    },
+    {
+      "at": "2026-10-08 12:20",
+      "kind": "shorts",
+      "item": "nhis_prop_b",
+      "owner": "firemap-shorts",
+      "gates_ok": null,
+      "note": "firemap-shorts 10/6 19:52: X-SHORTS-LEN B판 첫 편([지시·긴급]) — cardshort.py cards 구현·32초 렌더·compete 5·check·aitell 0.0 끝. 첫 프레임 1초 시험 v1·v2 5·5 미달(카피 7~8) → 남은 관문: v3(답 먼저) 1판, 기한 10/8 00:20. 근거 cardshorts/nhis_prop_b/review.md · firemap-shorts 10/7 07:15: v3(답 먼저) 3판 첫 프레임 고정 조건(3.1-flash-lite·보정 gongjae1002 7.5·7.0 유효) v3b·v3c·v2 모두 5·5 → 미통과, gates_ok 없음. 어두운 글자 카드 첫 프레임 틀 한계. 기한 10/8 00:20 전 다음 1안: 첫 프레임을 글자 카드 아닌 한 숫자 전면판(배경색·'약 4배' 화면 절반)으로 cardshort 'hero' 카드 추가, 안 되면 review.md 규칙대로 v1 질문형으로 칸 내고 시청 시간 판정. 근거 cardshorts/nhis_prop_b/review.md 끝 · firemap-shorts 10/8 13:16: 1초 시험 v1~v4b 미달 그대로 → review.md·운영실장 11:23 규칙대로 v1 질문형 공개(gates_ok는 비워 둠 — 1초 시험 미통과 공개, 판정은 48시간 평균 시청 시간 ≥15초·댓글 '내 집 ○억' ≥3, 버림 <8초)",
+      "published": "2026-10-08 13:15 https://youtu.be/V8s9_TwoNRY (55분 늦음 — PC 25시간 꺼짐(배터리), 회차 13:11 시작)"
+    },
+    {
+      "at": "2026-10-08 14:10",
+      "kind": "cafe",
+      "item": "sanghan1008",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-07 10:29",
+      "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)",
+      "published": "https://cafe.naver.com/firemap/228"
+    },
+    {
+      "at": "2026-10-08 16:10",
+      "kind": "cafe",
+      "item": "parking1007",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-06 22:43",
+      "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)",
+      "published": "https://cafe.naver.com/firemap/229"
+    },
+    {
+      "at": "2026-10-08 18:10",
+      "kind": "cafe",
+      "item": "pensavbreak1007",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-06 18:38",
+      "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)"
+    },
+    {
+      "at": "2026-10-08 19:20",
+      "kind": "shorts",
+      "item": "npsday1007",
+      "owner": "firemap-shorts",
+      "gates_ok": null,
+      "note": "firemap-meeting 10/8 13:29: 칸 누락(10/7 PC 꺼짐으로 회의 미개최) — 관문 기한 07:20 지남, 비축 0이라 nhis_prop_b 공개 후 둘째 편이 관문 넘으면 채움, 못 채우면 note에 사유 | firemap-shorts 10/8 14:03: 편 = npsday1007(10/7 12:20 칸이었으나 PC 꺼짐으로 미공개, cardshorts/npsday1007.json bars·음악 있음). 관문 통과 편 rate30_b(cards, 첫 프레임 1초 7·7)는 직전 nhis_prop_b도 cards라 shortsdaily check C3 '직전 편과 같은 틀'에 막힘(SHORTS_FORCE 금지, 라벨 바꾸기 안 함 — 두 편 다 첫 장 gauge라 실제로 같은 틀) → 19:20엔 못 씀, reserve.shorts로. npsday1007: check 문제 없음·aitell 0.0(.edit.json auto)·compete 5·카피·review 세 줄·artist 뻔함 통과는 있으나 첫 프레임 1초 시험 고정 조건 5·5(보정 gongjae 7.0·7.5 유효, rejudge_ff.py) → gates_ok 안 적음. 19:20 정기는 nhis_prop_b 선례대로 1초 미통과 공개(판정: 48시간 평균 시청 비율·조회가 최근 쇼츠 중앙값 이상이면 유지) 또는 공개 안 함 중 결정 — 담당 판단 1안은 공개(칸 비움=실패, C3는 코드 브레이크라 rate30_b 불가). rate30_b는 10/9 12:20 칸 1안(bars 뒤라 C3 해소) | firemap-shorts 10/8 15:21: 첫 프레임 고침 — cardshort.py bars 'vs' 모양(값 2개 색 상자·막대 자람 없음·출처 줄 1초 뒤, spec bars_style:'vs') 추가, 9판 시험(고정 조건 3.1-flash-lite 2회·보정 gongjae1002 7.0~7.5 전부 유효): v5 6·6, v6 6~6.25, v7 5.5~6.25, v8 6, v9a 6.5, v10a 6.5·6.5(최고), v11·v12 6 → 7 미달, gates_ok 안 적음. npsday1007.json은 v10a로 바꿈(옛 판 cardshorts/npsday1007/npsday1007.v4.json), check 문제 없음·aitell 0.0·.edit.json 해시 갱신. 심사 반복 지적: 경쟁 5가 전부 연도표라 '내 연도 찾기 표' 요구 — 경계 하루 각도는 표가 될 수 없고, 61~63세 행은 사실표에 없는 계산이라 못 넣음. 19:20 근무 대안 1순위: npsday1007(v10a, 1초 6.5) 그대로 공개(nhis_prop_b 선례: 1초 미통과 공개, gates_ok 비움, 판정 48시간 평균 시청 비율·조회가 최근 쇼츠 중앙값 이상이면 유지) — 5점 판보다 1.5점 높음. rate30_b(cards)는 C3로 불가, 10/9 12:20 1안 유지. 근거 cardshorts/npsday1007/review.md 끝 | firemap-shorts 10/8 19:28: v10a 1초 미통과(6.5) 공개 19:27 wPIHi7cSmQQ, gates_ok 비움, 판정 10/10 19:27(48시간 시청 비율·조회 vs 최근 중앙값)",
+      "published": "2026-10-08 19:27 https://youtu.be/wPIHi7cSmQQ"
+    },
+    {
+      "at": "2026-10-08 19:30",
+      "kind": "long",
+      "item": "M-1",
+      "owner": "firemap-video-producer",
+      "gates_ok": "2026-10-08 16:59",
+      "note": "04:4x firemap-youtube-loop: 10/6 16:01 TTS는 M-1에 씀(R-1은 같은 도구로 10/5 f0 밖 81줄·lfpitch 블라인드 탈락 → Chirp 3 HD 결재 뒤). M-1 = 대본 심사 7.47 통과·편집 통과(script.v2·화면 글자 02:50)·화면 24장면 완성. 남은 관문: 16:01 녹음 → m1props 재실행·screen_text 재서명 → 렌더·scorecard·썸네일·review 판정 줄. 관문 기한 10/7 19:30 · PD 16:59: 관문 기한(10/7 19:30)은 PC 꺼짐으로 넘김, 10/7 창 녹음+16:02 다시 받기로 같은 날 관문 전부 통과(목소리·readback 0·화면 글자 재서명·motioncheck·scorecard 35·ytlong gate) → 칸 시각 그대로 예약",
+      "published": "예약 2026-10-08 19:30 https://youtu.be/eTjVs1vDTwg"
+    },
+    {
+      "at": "2026-10-08 20:10",
+      "kind": "cafe",
+      "item": "wagepeak1007",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-06 16:31",
+      "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)",
+      "published": "https://cafe.naver.com/firemap/231 verify OK 1637/1637자·사진 3/3"
+    },
+    {
+      "at": "2026-10-08 22:10",
+      "kind": "cafe",
+      "item": "ltcgrade1007",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-06 20:38",
+      "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)"
+    },
+    {
+      "at": "2026-10-09 08:10",
+      "kind": "cafe",
+      "item": "earlyjob1007",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-07 08:43",
+      "note": "firemap-write 10/8 14:26: 10/7 칸이던 earlyjob1007(관문 통과 10/7 08:43, PC 꺼짐으로 미공개) 배정 — 행정예고 의견 10/18까지라 빨리. 같은 대상(조기재취업수당) 카페 0편(dupcheck). 12:10 ubapply1007(실업급여 신청)과 갈래는 같지만 대상 다름. retmid1005는 20:10 wagepeak1007(퇴직금 중간정산)과 겹쳐 10/11 이후로, schdacct1007은 SCHD #201(10/3) 7일 규칙으로 10/10 이후"
+    },
+    {
+      "at": "2026-10-09 10:10",
+      "kind": "cafe",
+      "item": "deplend1009",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-08 16:43",
+      "note": "관문 통과(write 16:43): 제목 D8 제미나이 8·7·8·레드팀 7.5 · 표지 F9 3명 7.0 · readcheck 0·selfcheck 사실 0·crosscheck 사실 7 유지(calc.md 식)·aitell 9.9·editgate auto · review.md 경쟁 세 줄",
+      "published": "2026-10-09 10:36 https://cafe.naver.com/firemap/234 verify OK 2110/2110"
+    },
+    {
+      "at": "2026-10-09 12:10",
+      "kind": "cafe",
+      "item": "retmid1005",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-06 09:37",
+      "note": "firemap-write 10/9 07:19: eitclate1009 미달(표지 G6 6.67·제목 E8 레드팀 5, 기한 06:10 경과)이라 비축 retmid1005로 채움(관문 통과 10/6 09:37, naverpost block 없음). npsage1009는 국민연금 일주일 상한으로 10/14 이후. 퇴직금 겹침: wagepeak1007(10/7 20:10, 임금피크 퇴직금)과 40시간 간격이나 각도·대상이 다름(중간정산 세금 사례) — 순돌이 확인 요망. eitclate1009는 12/1 마감이라 10/10 이후 칸으로 넘김(제목 대안 ①②·표지 7 필요)"
+    },
+    {
+      "at": "2026-10-09 12:20",
+      "kind": "shorts",
+      "item": "rate30_b",
+      "owner": "firemap-shorts",
+      "gates_ok": "2026-10-07 03:26",
+      "note": "firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 10/9 00:20, G-1 쇼츠 재료(g1_receipt·g1_fourways·g1_climb) 우선 | firemap-shorts 10/8 19:28: rate30_b 배정(관문 통과 10/7 03:26, 직전 npsday1007 bars라 C3 해소, 사실 기한 10/22). 비축 쇼츠 0/1이 되므로 다음 회차 첫 일 = 비축 1편 | firemap-shorts 10/9 12:33: 12:32 공개 dpqo14US8tk(cards·음악 없음). B판 compete.md 새로 받음(rate30_b/compete.md, 9/9 이후 5편), 설명 AI 티 21.5→0.0. 비축 쇼츠 0/1",
+      "published": "2026-10-09 12:32 https://youtu.be/dpqo14US8tk"
+    },
+    {
+      "at": "2026-10-09 14:10",
+      "kind": "cafe",
+      "item": "hometown1009",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-09 07:19",
+      "note": "firemap-write 10/9: 관문 통과 — 제목 최종본 '고향사랑기부제 연말정산 20만원 넘으면 공제율이 떨어지는 이유' 제미나이 7·7·레드팀 7 · 표지 H4 7.0(3명) · 원고 readcheck 0·selfcheck 사실 0·aitell 2.0·crosscheck 반영 · 사진 3장(구간별 공제율 표 추가) · editgate auto · review.md 경쟁 세 줄",
+      "published": "2026-10-09 14:51 https://cafe.naver.com/firemap/236 verify OK 1103/1103"
+    },
+    {
+      "at": "2026-10-09 16:10",
+      "kind": "cafe",
+      "item": "isapen1009",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-09 11:13",
+      "note": "firemap-write 10/9 08:40: 원고·제목 L2(제미나이 8·8·레드팀 7)·원고 관문 통과, editgate는 표지 평균 없어 미날인, 표지만 미달(최고 6.5, visual-designer 요청) — 표지 7 넘으면 gates_ok | 가안 firemap-write 10/8 22:36: ISA 계좌(검색 73,500·같은 각도 0편, #149 본문 언급만) 만기 연금 이전 공제 — 원고 전",
+      "published": "2026-10-09 16:49 https://cafe.naver.com/firemap/237 verify OK 1645/1645"
+    },
+    {
+      "at": "2026-10-09 18:10",
+      "kind": "cafe",
+      "item": "evoucher1009",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-09 10:38",
+      "note": "firemap-write 10/9 10:38: 관문 통과 — 제목 \"에너지바우처 동절기, 연탄쿠폰 받으면 겨울 몫이 빠지는 이유\" 제미나이 7·7·레드팀 7 · 표지 V1 7.17 · readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck 반영·레드팀 사실 2 반영·editgate auto · review.md 경쟁 세 줄 | firemap-write 10/9 10:37: 관문 통과 — 제목 \"에너지바우처 동절기, 연탄쿠폰 받으면 겨울 몫이 빠지는 이유\" 제미나이 7·7·레드팀 7 · 표지 V1 7.17 · readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck 반영·레드팀 사실 2 반영·editgate auto · review.md 경쟁 세 줄 | 가안 firemap-write 10/8 22:36: 에너지바우처(검색 55,200·0편) 동절기 신청 — 원고 전"
+    },
+    {
+      "at": "2026-10-09 19:20",
+      "kind": "shorts",
+      "item": "c1_tiles",
+      "owner": "firemap-shorts",
+      "gates_ok": null,
+      "note": "youtube-loop 10/9 00:50: X-YT-FREQ 판정(쇼츠 48h 중앙 107<180·관문 미달 공개 1회 → 미리 정한 기준대로 쇼츠 하루 1편, research/experiments/judge_1009.md) — 이 칸 비움. c1_tiles는 C-1(10/10 19:30) 공개 뒤 하루 1편 칸 후보(첫 프레임 7 넘긴 뒤) | 이전: firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 10/9 07:20 | firemap-shorts 10/8 23:26: 편 = c1_tiles(C-1 사실표 쇼츠 첫 사용, bars vs·음악 있음, 직전 rate30_b cards라 C3 해소). compete 5·check(틀만 남음)·aitell 0.0(.edit.json auto)·review 세 줄 끝. 첫 프레임 1초 고정 조건 v2 5·5→v3b 6.5·6.5(최고, 채택)·v4a/b 5~6 → 7 미달, gates_ok 안 적음. 다음 1안(기한 07:20): 빈 아래 절반에 '평균이면 둘 다 100년+' 반전 줄, 안 되면 v3b 1초 미통과 공개·48시간 판정 · 근거 cardshorts/c1_tiles/review.md",
+      "skip": true
+    },
+    {
+      "at": "2026-10-09 20:10",
+      "kind": "cafe",
+      "item": "seniorjob1009",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-09 12:29",
+      "item_pkg": "work/research/seniorjob1009/pkg",
+      "note": "firemap-write 12:2912:27: 관문 통과 — 제목 T15 '노인일자리 생계급여 받는 분이 뽑히는 곳과 못 뽑히는 곳' 제미나이 7·7.5·레드팀 7(T10은 틀 v2 물음 규칙으로 교체) · 표지 N9 8·8·7=7.67 · readcheck 0·selfcheck 사실 0·aitell 0.0·레드팀 사실 지적 2(출처 귀속·일반화) 반영·editgate auto"
+    },
+    {
+      "at": "2026-10-09 22:10",
+      "kind": "cafe",
+      "item": "brokerfee1009",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-09 12:40",
+      "note": "firemap-write 10/9 12:40: 관문 통과 — 제목 K3 '부동산 중개수수료 집 줄여 이사하면 두 번 합쳐 얼마' 제미나이 7·8·레드팀 7 · 표지 B4 8·8·8 · readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck 사실 4 중 반영 3·레드팀 표현 4+흐름 2 반영(숫자·법 오류 0)·editgate auto · 부동산 축(10/9 다른 칸은 세금·복지)",
+      "item_pkg": "work/research/brokerfee1009/pkg"
+    },
+    {
+      "at": "2026-10-10 08:10",
+      "kind": "cafe",
+      "item": "acqtax1010",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-09 22:55",
+      "note": "firemap-write 10-09 22:55: 관문 통과 — 제목 K1 '취득세 일시적 2주택 처분기한, 양도세랑 기준일이 다른 이유' 제미나이 7·8·레드팀 7=7.33 · 표지 A4 8·8·7=7.67 · readcheck 0·selfcheck 사실 0·aitell 6.2·crosscheck 2회 반영·레드팀 2회(숫자·법 오류 0, 표현 4+1 반영)·editgate auto · compare.md·review.md 세 줄 · 부동산 축(지방세법 시행령 9/30 개정, 1위 블로그는 '3년'으로 잘못 씀) | 이전: firemap-meeting 10/09 21:33: 관문 기한 02:10 — write 22:10 회차·운영실장 23:05가 원고·관문. 못 넘으면 칸 note에 사유(비축 없음: schdacct1007은 14:30부터)",
+      "item_pkg": "work/research/acqtax1010/pkg"
+    },
+    {
+      "at": "2026-10-10 10:10",
+      "kind": "cafe",
+      "item": "sevbasis1010",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-09 22:51",
+      "note": "firemap-write helper 2026-10-09 22:51: 관문 통과 — 제목 L4 '퇴직금 지급기준, 364일 다니고 그만두면 받는 돈' 제미나이 7·8·레드팀 7=7.33 · 표지 C4 8·8·8=8.0 · readcheck 0·selfcheck 사실 0·aitell 1.9·frame 통과·crosscheck 사실 4 유지(링크·면책·AI 고지)·레드팀 사실 2·표현 8 반영(2차 오류 없음)·editgate auto · /calc/severance utm sevbasis1010 · 별도 과제: severancePay.js 365일 판정 윤년 문제",
+      "item_pkg": "work/research/sevbasis1010/pkg"
+    },
+    {
+      "at": "2026-10-10 12:10",
+      "kind": "cafe",
+      "item": "childleave1010",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-10 03:30",
+      "note": "firemap-write 10/09 23:1x: eitclate1009는 표지 평균 6.67(심사 상한 6.5 반복, K·G 25장 미달)로 이 칸에서 뺌(hold 유지, 12/1 마감이라 표지 7 넘으면 이후 칸). 새 편 육아휴직급여(kwvol 79,500·dupcheck 새것·고용보험법 제70조·시행령 제95조 원문 확보: 1~3개월 통상임금 상한 250만·4~6개월 200만·7개월~80% 상한 160만·하한 70만). 원고·관문 기한 06:10, 담당 write 00:10~06:10 회차. 비축 npsage1009는 10/14 08:30 전 불가, schdacct1007은 14:30 전 불가라 쓰지 않음",
+      "item_pkg": "work/research/childleave1010/pkg",
+      "gate_note": "2026-10-10 03:30 firemap-write 관문 통과: 제목 평균 7.5(제미나이 8·독립 레드팀 7·작성자 7.5) · 표지 F 평균 7.25(제미나이 7.25·독립 레드팀 7·작성자 7.5, 보정 gongjae1002 7.0~7.5) · editgate auto 일치 · readcheck 0·selfcheck 사실 0·aitell 6.3 · compare/review 세 줄 · slot.txt 2026-10-10 12 · naverpost pending block은 코너 시각 전뿐"
+    },
+    {
+      "at": "2026-10-10 19:20",
+      "kind": "shorts",
+      "item": "m1s_need100",
+      "owner": "firemap-video-producer",
+      "gates_ok": "2026-10-10 12:41",
+      "published": "예약 2026-10-10T19:20:00+09:00 https://youtu.be/fF_5yIxBnC8 (private→자동 공개, videos.list 확인 private 2026-10-10T10:20:00Z)",
+      "item_pkg": "work/research/cardshorts/m1s_need100",
+      "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_need100/review.md · 카드 쇼츠 대체(사장님 10/10 지시) | 이전 칸 12:20 g1_climb(미달, 접음) → firemap-shorts 10/9 15:2x: 편 = g1_climb(G-1 재료 '고점에 산 금 본전까지 34%→51%', bars vs·음악 있음, 직전 rate30_b cards라 C3 해소). compete 5·check 문제 없음·aitell 0.0(.edit.json auto)·review 세 줄 끝. 첫 프레임 1초 고정 조건 v4 5·5, v5 5·5(보정 gongjae1002 7.0~7.5 유효) → 7 미달, gates_ok 안 적음. 공개 전날(10/9 밤) G-1 calc 재실행 뒤 숫자 재확인 필요. 다음 1안: +51% 전면 한 숫자(hero)나 금 그림 요소 첫 프레임. 못 넘으면 npsday1007 선례(1초 미통과 공개·48시간 판정) 또는 비축 대체.  10/10 07:13 firemap-shorts: v9 hero 한 숫자 전면판(금 -34%, 왜 +51%?) 고정 조건 5·5(보정 7.5·7.0 유효) 미달 — v4~v9 5계열 모두 5, gates_ok 안 적음·미달 공개 금지. 이 칸은 g1_climb 접고 다른 편(카드 틀 말고 그림 요소 필요)이 12:20 전 관문 통과해야 하며 못 넘으면 칸 skip+사유. 근거 cardshorts/g1_climb/review.md"
+    },
+    {
+      "at": "2026-10-10 14:10",
+      "kind": "cafe",
+      "item": "deprise1010",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-10 08:44",
+      "note": "firemap-write 보조 2026-10-10 08:44: 관문 통과 — 제목 K5 '정기예금 금리 1억 맡기면 세후 이자 작년보다 얼마 늘었나' 제미나이 8·7.5·레드팀 7=7.5 · 표지 C1 8·8·7=7.67 · readcheck 0·selfcheck 사실 0·aitell 2.0·frame 통과·crosscheck 2회(사실 반영 2·유지 3=표 이미지·ECOS 인하 확인)·레드팀 2회(1차 숫자 오류 0·중대 2(세후 이자 반올림·인과 단정)+사소 7 반영, 2차 새 오류 1(4% 초과일) 고침)·editgate 도장 · 본문 2,773자·사진 3장 · 금리·예금 축(ECOS 신규 1년 2.51→3.39%·산금채 1년 2.49→3.64%·10/22 금통위), 금감원 finlife는 10/10 정전 점검 중이라 10/06 값 사용 | 이전: firemap-meeting 10/09 21:33: 관문 기한 08:10(정기 회차 시각) — 본문 2,000자·compare.md 관문",
+      "item_pkg": "work/research/deprise1010/pkg"
+    },
+    {
+      "at": "2026-10-10 16:10",
+      "kind": "cafe",
+      "item": "schdacct1007",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-10 11:12",
+      "note": "firemap-meeting 10/09 21:33: 비축 사용(10/10 14:30부터 공개 가능 — 14:10 칸은 jitter로 14:30 전에 나갈 수 있어 16:10에 둠). 공개 전 SCHD 시세 재조회 | firemap-write 2026-10-10 11:12: 관문 통과(비축 사용) — 시세 10/9 종가 33.04달러로 재조회(6,290→6,270만원), readcheck 0·selfcheck 사실 0·aitell 1.1·editgate auto 재날인, SCHD 14:30부터 공개 가능, slot.txt 2026-10-10 16"
+    },
+    {
+      "at": "2026-10-10 18:10",
+      "kind": "cafe",
+      "item": "ubcalc1010",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-10 07:34",
+      "note": "이전: firemap-meeting 10/09 21:33: X-CAFE-CALC-1 B칸(10/10 시작): 퇴직금·실업급여·연봉 실수령 계산에 실제로 이어지는 주제, 본문에 맞는 /calc 링크+utm, 같은 계산기 연속 금지 · 관문 기한 12:10 · firemap-write 보조 2026-10-10 07:34: ubcalc1010 실업급여 피보험기간 전 회사 합산(고용보험법 제50조), 계산기 링크 utm_campaign=ubcalc1010, 제목 K8 7.33·표지 7.67, 본문 약 2,700자·사진 3장, crosscheck·레드팀 2회 완료, editgate 도장",
+      "item_pkg": "work/research/ubcalc1010/pkg"
+    },
+    {
+      "at": "2026-10-10 19:30",
+      "kind": "long",
+      "item": "C-1",
+      "owner": "firemap-video-producer",
+      "gates_ok": null,
+      "note": "firemap-video-producer 10/9 16:39: C-1 목소리 관문 미달로 skip — 10/9 16:01 창 TTS 10/10 다 씀(시험1·본8·lfretake1), 편 전체 5.66·앞뒤 +6.4% 통과, 퍼짐 IQR 0.19>0.16(5~7장 요청이 159~171Hz로 뜸, 앞은 139~153) · 기준 그대로·lfpitch는 순돌이 결정 전 금지 · 대체 G-1 불가(10/8 녹음 실패, 다시 녹음 전) · 녹음분 audio/c-1_1009 보관, C-1은 다음 창 처음부터 · 근거 ep/C-1/check/voice_check_1009.txt · 이전 note: firemap-meeting 10/8 13:29: 순돌이 10/7 지시 순서 M-1→C-1→G-1·R-1. 관문 기한 10/9 19:30(대본 심사·녹음 10/9 16:01 창). C-1이 기한 못 넘으면 대체 G-1(10/8 16:01 녹음분)로 이 칸을 채운다 — 칸 비우기 금지",
+      "skip": true
+    },
+    {
+      "at": "2026-10-10 20:10",
+      "kind": "cafe",
+      "item": "jongbuse1010",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-10 10:48",
+      "note": "firemap-write 2026-10-10 10:48: 관문 통과 — 제목 J11 '종부세 고령자 공제, 올해 일흔이어도 30%인 경우' 제미나이 8·8·레드팀 7.5=7.83 · 표지 A1 8·8·8=8.0 · readcheck 0·selfcheck 사실 0·aitell 2.7·crosscheck 사실 4(반영 3·유지 1)·레드팀 3회 사실 1·오해 11 반영 · editgate auto · 법령 원문 4개 법 · compare.md·review.md · 이전: firemap-meeting 10/09 21:33: 관문 기한 14:10"
+    },
+    {
+      "at": "2026-10-10 22:10",
+      "kind": "cafe",
+      "item": "odivfx1010",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-10 10:49",
+      "note": "firemap-write 보조 2026-10-10 10:49: 관문 통과 — 제목 K3 '리얼티인컴 배당금 원화로 바꿔 보니 석 달 새 11.35% 감소' 제미나이 8·8·레드팀 7.5=7.83 · 표지 A3 8·8·8=8.0 · readcheck 0·selfcheck 사실 0·aitell 0.0·frame 통과·crosscheck 사실 반영 3·유지 1·말투 12 반영·레드팀 사실 1 반영(조세협약 15% 표현)·editgate auto · 본문 2,567자·사진 3장 · 배당현금흐름+환율 축(10-K·10-Q·보도자료·ECOS 매매기준율, 10월분은 10/8 환율 가정) | 이전: firemap-meeting 10/09 21:33: 관문 기한 16:10",
+      "item_pkg": "work/research/odivfx1010/pkg"
+    },
+    {
+      "at": "2026-10-11 08:10",
+      "kind": "cafe",
+      "item": "inhded1011",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-10 16:26",
+      "note": "firemap-write 2026-10-10 12:43: inhded1011(상속세 면제한도 — 1차 2,037만·2차 1억3,240만5천·동거주택 533만5천원, 검색 27,390·dupcheck 새것) 원고·readcheck 0·selfcheck 사실 0·aitell 3.6·crosscheck 반영·제목(쉼표판) 7.5 통과 / 남은 관문: 표지(최고 6.83)·쉼표 없는 제목(10/11 쉼표 없는 제목 하루 2편 규칙)·editgate stamp — 기한 02:10, 못 넘으면 eitclate1009·비축으로 | firemap-write 2026-10-10 16:26: 관문 통과 — 표지 I(6.5배 판 폭 77%) 제미나이 7·7·레드팀 7·작성자 7=7.0 · 쉼표 없는 제목 \"상속세 면제한도 10억이 두 번째 상속에선 반으로 줄어드는 이유\" 제미나이 7·레드팀 7·작성자 7=7.0(10/11 쉼표 없는 제목 2/2) · readcheck 0·aitell 3.6·editgate auto",
+      "ep": "work/research/inhded1011/pkg"
+    },
+    {
+      "at": "2026-10-11 10:10",
+      "kind": "cafe",
+      "item": "netpay1011",
+      "owner": "firemap-write",
+      "gates_ok": "2026-10-10 14:42",
+      "note": "firemap-write 10/09 23:1x: X-CAFE-CALC-1 B칸 3번째(퇴직금 10/10 10:10 · 실업급여 10/10 18:10 다음) — 연봉 실수령 계산에 이어지는 주제, 본문에 /calc 링크+utm, 같은 계산기 연속 금지 · 관문 기한 10/11 04:10 | firemap-write 2026-10-10 14:42: 관문 통과 — netpay1011 월급 실수령액 2026 달별 변화(/calc/salary utm) · 제목 T6 '월급 실수령액 연초에 줄고 3월엔 자녀 있는 집만 늘어난 이유' 제미나이 7·9·레드팀 7.5=7.83 · 표지 P5 8·8·7=7.67 · readcheck 0·selfcheck 사실 0·aitell 0.9·crosscheck 사실 반영 3·유지 2·레드팀 2회 사실 오류 0(오해 6 반영)·editgate auto · compare.md·review.md 세 줄"
+    },
+    {
+      "at": "2026-10-11 19:20",
+      "kind": "shorts",
+      "item": "m1s_minmonth",
+      "owner": "firemap-video-producer",
+      "gates_ok": "2026-10-10 12:41",
+      "published": "예약 2026-10-11T19:20:00+09:00 https://youtu.be/aYCWFSzynJI (private→자동 공개, videos.list 확인 private 2026-10-11T10:20:00Z)",
+      "item_pkg": "work/research/cardshorts/m1s_minmonth",
+      "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_minmonth/review.md · 카드 쇼츠 대체(사장님 10/10 지시) | 이전 12:20 TBD → firemap-meeting 10/09 21:33: 쇼츠 하루 1칸(X-YT-FREQ) · 관문 기한 10/11 00:20 · 1초 시험 7 넘은 편만, 못 넘으면 skip+사유(미달 공개 금지 — 순돌이 10/9 지시)"
+    },
+    {
+      "at": "2026-10-11 19:30",
+      "kind": "long",
+      "item": "W-1",
+      "owner": "firemap-video-producer",
+      "gates_ok": null,
+      "note": "firemap-video-producer 10/10 16:09: skip — 16:01 창 W-1 8요청 뒤 429(한도 10 = C-1 2 + W-1 8, W-1 8요청 중 3요청이 음높이 벗어나 다시 받기: 0장 128·125Hz, 3장 173Hz) · 녹음 38/55줄(7장 중 5묶음, 5·6장·7장 2묶음 못 받음) · 받은 38줄도 퍼짐 IQR 0.19>0.16(앞뒤 −6.6% 통과) · 남은 17줄(31%)은 다음 날 녹음이면 규칙 4(다시 받기 20% 이하만 이틀 허용)로 막힘 → 관문 기한 10/10 19:30 못 넘음, 지시대로 10/11 칸 skip('이번 주' 편이라 미루지 않음). 녹음분 audio/w-1 보관(_rej0 = 첫 시험 128Hz) | firemap-meeting 10/09 21:33: W-1 '이번 주 뉴스가 내 돈에 얼마' 매주 토 19:30 고정 칸 1화 · 녹음 10/10 16:01 창(7요청, --gate 0.10 여유 3) · 그 전 06시 뒤 youtube-loop가 {F} 3줄 금요일 종가로 갱신→editor 재서명 · 관문 기한 10/10 19:30(같은 날 녹음 뒤 3.5시간) · 못 넘으면 skip, 다음 창으로 미루지 않고 '이번 주' 편이라 버림",
+      "skip": true
+    },
+    {
+      "at": "2026-10-12 19:30",
+      "kind": "long",
+      "item": "C-1",
+      "owner": "firemap-video-producer",
+      "gates_ok": null,
+      "note": "firemap-video-producer 10/10 16:05: 16:01 창 2요청(새 줄 1·lfretake 15) 뒤 IQR 0.18>0.16 막힘(앞뒤 +3.6%·5.61 통과) — 관문 기한 10/11 19:30 전 녹음 창은 10/11 16:01(G-1 배정)뿐, 순돌이 판단 대기 | 순돌이 10/10 12:4x: C-1 v5(예고·결론부터·궁금증 챕터·가상 인물 장면, 6e286c3) — 10/10 16:01 창에서 새 줄 1 + lfretake --n 15(2요청, W-1 7요청보다 먼저) → check(날짜 둘은 다시 받기 20% 이하면 허용, 앞뒤 차·IQR 관문 그대로) → render → 10/12 19:30. 관문 기한 10/11 19:30"
+    },
+    {
+      "at": "2026-10-12 19:20",
+      "kind": "shorts",
+      "item": "m1s_nhis70",
+      "owner": "firemap-video-producer",
+      "gates_ok": "2026-10-10 12:41",
+      "published": "예약 2026-10-12T19:20:00+09:00 https://youtu.be/xmmkdtLhmXs (private→자동 공개, videos.list 확인 private 2026-10-12T10:20:00Z)",
+      "item_pkg": "work/research/cardshorts/m1s_nhis70",
+      "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_nhis70/review.md · 카드 쇼츠 대체(사장님 10/10 지시)"
+    },
+    {
+      "at": "2026-10-13 19:20",
+      "kind": "shorts",
+      "item": "m1s_total1y",
+      "owner": "firemap-video-producer",
+      "gates_ok": "2026-10-10 12:41",
+      "published": "예약 2026-10-13T19:20:00+09:00 https://youtu.be/gvOdoH5-HbM (private→자동 공개, videos.list 확인 private 2026-10-13T10:20:00Z)",
+      "item_pkg": "work/research/cardshorts/m1s_total1y",
+      "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_total1y/review.md · 카드 쇼츠 대체(사장님 10/10 지시)"
+    },
+    {
+      "at": "2026-10-13 19:30",
+      "kind": "long",
+      "item": "G-1",
+      "owner": "firemap-video-producer",
+      "gates_ok": null,
+      "note": "firemap-meeting 10/09 21:4x: 레드팀 반영 — 녹음 다음 날 공개는 관문 기한까지 3.5시간뿐(M-1 녹음~업로드 3시간 38분 실측), G-1은 녹음 10/11 16:01 → 공개 10/13 19:30(관문 기한 10/12 19:30, 여유 27.5시간) | firemap-meeting 10/09 21:33: G-1 녹음 10/11 16:01 창(W-1이 10/10 창을 씀) · 관문 기한 10/11 19:30 · 녹음 뒤 motion BuyDateOpen·WaterfallPieces 교체·편집 재서명 | firemap-meeting 10/8 13:29: G-1은 목소리 전 준비 끝·썸네일 g1f·카피 통과. 녹음 = 10/8 16:01 TTS 창(C-1 대본이 아직 없어 그 창은 G-1). 10/10 칸에 C-1이 들어가면 G-1은 여기, C-1 미달이면 G-1이 10/10로 당겨지고 이 칸은 C-1. 공개 전날 calc 재실행·카피 숫자 재확인. 관문 기한 10/11 19:30"
+    },
+    {
+      "at": "2026-10-14 19:30",
+      "kind": "long",
+      "item": "R-1",
+      "owner": "firemap-video-producer",
+      "gates_ok": null,
+      "note": "순돌이 10/10 12:4x: C-1은 10/12로 당김(16:01 창에서 lfretake 다시 받기 2요청) → 이 칸은 R-1 후보(회의가 확정) | firemap-meeting 10/09 21:33: 녹음 10/12 16:01 창(처음부터, --gate) · 관문 기한 10/13 19:30(녹음 다음 날까지 여유) · 10/12~18주 G-1·C-1 = 2편 · 레드팀 반영으로 10/13→10/14"
+    }
   ],
-  "long": [
-   {
-    "item": "R-1",
-    "ep": "longform/ep/R-1",
-    "status": "10/5 PD: 대본 편집 통과(06:30)·첫 장면 줌아웃 넣음·153문장 녹음했으나 목소리 관문 막힘(f0 밖 81) — 10/6 16:01 재녹음 · 화면 글자 editor stamp 대기 | 10/6 04:47 youtube-loop: 16:01 TTS는 M-1에 씀 — R-1은 Chirp 3 HD 결재(목소리 도구 교체) 뒤 녹음 | 10/6 12:46 youtube-loop: 순돌이 11:2x 지시로 R-1 v7 94줄(7.6분, 한 창 녹음 가능) — 녹음·렌더·19:30 예약은 firemap-r1-record-1006(16:10) · 화면 글자 editor 재서명 필요 | 10/6 16:29 r1-record: v7 94줄 한 창 녹음 끝(같은 모델·Charon, 6장 묶음 1회 재녹음했으나 더 나빠 첫 녹음 유지) — 목소리 관문 막힘: 앞뒤 차 +4.8%(통과)·IQR 0.18(기준 0.16)·편 전체 5.12음절/초(기준 5.5)·튀는 줄 9 → 렌더·업로드 안 함. 원인: 요청(묶음)마다 음높이 122~156Hz. 대본 재심사 5.97도 미달. gates_ok 없음",
-    "by": "firemap-youtube-loop",
-    "at": "2026-10-06 16:29"
-   }
-  ],
-  "_meeting_1005": "회의 10/5 21:40(firemap-meeting) 비축 배정: 카페 1/2 → firemap-write가 10/6 14:10까지 관문 통과 예비 1편 추가(TBD-M 후보 중 남는 것 또는 nhisrent1005 예시 바꿔 10/8 이후용) · 쇼츠 1/1(nongji_age)이지만 10/6 19:20 gold1y 기한 07:20 못 넘으면 소진 → firemap-shorts가 10/6 12:00까지 예비 1편 더 · 롱폼 0/1(R-1 gates_ok 없음) → firemap-youtube-loop·video-producer가 R-1 재녹음(10/6 16:01)·editor stamp로 10/7 19:30 전 24시간(10/6 19:30)까지 관문, 못 넘으면 10/7 롱폼 칸 skip"
- },
- "slots": [
-  {
-   "at": "2026-10-02 16:10",
-   "kind": "cafe",
-   "item": "offimkt1002",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-02 15:40",
-   "note": "#194 15:48 발행(앞당김 사고, 교훈 14)"
-  },
-  {
-   "at": "2026-10-02 18:10",
-   "kind": "cafe",
-   "item": "nps1002",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-02 16:05",
-   "note": "표지 7.00·editgate 통과·#195+90분 뒤 → #196 18:31 발행·verify OK"
-  },
-  {
-   "at": "2026-10-02 19:20",
-   "kind": "shorts",
-   "item": "a1_need100",
-   "owner": "firemap-shorts",
-   "gates_ok": null,
-   "note": "19:32 firemap-shorts: 공개 보류 — 표지 1초 시험 평균 4.2<7(review.md). 비축 0이라 빈칸"
-  },
-  {
-   "at": "2026-10-02 19:30",
-   "kind": "long",
-   "item": "D-1",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-02 17:51",
-   "note": "예약 업로드 GMc2Rd1-JYA publishAt 19:30 · 썸네일 d1k · 목소리 70/70·readback 3건 한글 재청취로 오탐 확인·clickscan 0·deess -13.7dB · 17:51 PD"
-  },
-  {
-   "at": "2026-10-02 20:10",
-   "kind": "cafe",
-   "item": "garak0929",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-02 18:31",
-   "note": "제목 8.7·표지 8·editgate auto 해시·review 세 줄 · 오늘 8번째(상한 8) · nps1002+90분 뒤 · 20:10 회차 없어 미발행 → write 22:31 착수, #197 22:35 발행·verify OK(837/837자·사진 4/4) · 오늘 8번째"
-  },
-  {
-   "at": "2026-10-02 22:10",
-   "kind": "cafe",
-   "item": null,
-   "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "오늘 카페 6편(#190~195)+18:10 nps1002+20:10 1편 = 8편 상한 → 22:10 칸 비움(write 16:31 판단)"
-  },
-  {
-   "at": "2026-10-03 08:10",
-   "kind": "cafe",
-   "item": "b10danji1003",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-02 16:31",
-   "note": "B10 단지 전세가율 높은/낮은 10 · 제목 7.8·표지 8·편집 auto(해시)·compare/review 세 줄",
-   "published": "https://cafe.naver.com/firemap/198 08:38"
-  },
-  {
-   "at": "2026-10-03 10:10",
-   "kind": "cafe",
-   "item": "offimkt_ic0929",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-02 22:49",
-   "note": "회의 22:5x: 비축분에서 끼움(시황, 10/9 넘으면 낡음) · 금융 면책 한 줄(/disclaimer 문장 그대로)은 editor 06:50 회차가 붙이고 editgate stamp 다시 → 해시 바뀌므로 그 전엔 발행 금지(반론 1)",
-   "status": "발행 10:31 #199 verify OK"
-  },
-  {
-   "at": "2026-10-03 12:10",
-   "kind": "cafe",
-   "item": "pibu1003",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-02 23:23",
-   "note": "국민연금 피부양자 탈락 기준(이슈 레이더 후보 2) — 시행규칙 별표1의2·시행령41·시행규칙44 원문 대조, 제목 8.8·표지 8·editgate auto(해시)·compare/review 세 줄·레드팀 7건 반영",
-   "published": "https://cafe.naver.com/firemap/200 12:36 verify OK"
-  },
-  {
-   "at": "2026-10-03 12:20",
-   "kind": "shorts",
-   "item": "e1_hynix_dd",
-   "owner": "firemap-shorts",
-   "gates_ok": "2026-10-03 00:20",
-   "note": "firemap-shorts 10/3 00:2x: 표지 v3(종가선 낙폭 그림+2026년 6/22→7/30+최대 낙폭) 재심사 7·7·7=7.0 통과, 공개 전 네이버 시세 재확인 필요 / firemap-shorts 10/2 23:17: 관문 미통과 — 표지 1초 시험 3명 평균 6.7<7(카피 7.0 통과·주제 맞힘 3/3). 고칠 것: 표지에 낙폭 그림+시점(6/22→7/30) · review.md"
-  },
-  {
-   "at": "2026-10-03 14:10",
-   "kind": "cafe",
-   "item": "schd1003",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-03 00:25",
-   "note": "SCHD 배당금 1년 +2.0% 대 주가 +18.6%(슈왑 공식 분배금 표 대조) · 제목 8.8(제미나이 8.4·레드팀 9.2)·표지 정사각 7.5·editgate auto(해시)·compare/review 세 줄·selfcheck 사실 0·레드팀 7건 반영 · 검색 'SCHD배당금' 9,310",
-   "published": "https://cafe.naver.com/firemap/201 14:28"
-  },
-  {
-   "at": "2026-10-03 16:10",
-   "kind": "cafe",
-   "item": "deadfin1003",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-03 02:38",
-   "note": "사망자 계좌 정지·장례비 예외 인출(이슈 레이더 10/2 9번, 9/11 시행) — 금융위 보도자료 9/7·정책브리핑 안심상속·가족관계등록법 84·122조 원문 대조, 제목 8.9(제미나이 9.0·레드팀 8.8)·표지 8(2차, 레드팀 1차 6 지적 반영)·editgate auto(해시)·compare/review 세 줄·selfcheck 사실 0·readcheck 0·레드팀 7건 반영 · 검색 '사망자계좌정지' 2,960 · 버린 편 npsearly1003(우리 #103 중복)"
-  },
-  {
-   "at": "2026-10-03 18:10",
-   "kind": "cafe",
-   "item": "gift1003",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-03 04:23",
-   "note": "증여세 면제한도(직계존속 공제 공유·손주 할증 30%) — 상속세 및 증여세법 53·53의2·57·26·55·68·69조 원문(법령 API, 2025.10.1 시행본) 대조, 제목 9.9(제미나이 9.8·레드팀 10)·표지 8·editgate auto(해시)·compare/review 세 줄·selfcheck 사실 0·[중복] 없음·readcheck 0·aitell 0.0·레드팀 8건 반영 · 검색 '증여세면제한도' 19,260 · 같은 날 다른 칸과 법령·주제 안 겹침"
-  },
-  {
-   "at": "2026-10-03 19:20",
-   "kind": "shorts",
-   "item": "d1_kunbo",
-   "owner": "firemap-shorts",
-   "gates_ok": "2026-10-03 08:21",
-   "note": "firemap-shorts 2026-10-03 19:28: e1_micron_q4가 publish 마지막 점검에 걸림(E-1 사실표로 이미 e1_hynix_dd를 만들어 '같은 사실표 금지'). 규칙대로 비축 d1_kunbo로 대체 공개 https://youtu.be/lNqM_tai2H4 (19:27, bars·음악 있음으로만 바꿈, 숫자·표지 그대로, 썸네일=첫 1초 표지 지정) · 이전 메모: 회의 22:5x 배정: compete.md 끝난 3편(e1_micron_q4·e1_samsung_x·a1_1eok1y) 중 준비도 높은 편으로 shorts가 바꿔도 됨 · 표지 1초 시험 7↑"
-  },
-  {
-   "at": "2026-10-03 19:30",
-   "kind": "long",
-   "item": "E-2",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-03 17:53",
-   "note": "대본 심사 통과 평균 7.0 ($T) · 썸네일 e2f 확정 · 목소리 41/67(PD 18:38, 남은 26 10/3 16:05) · 화면·렌더·제목 남음 · 업로드 https://youtu.be/7eD6SLt_jKc 예약 19:30 (PD 17:53)"
-  },
-  {
-   "at": "2026-10-03 20:10",
-   "kind": "cafe",
-   "item": "ubjob1003",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-03 06:20",
-   "note": "실업급여 조건 — 65세 넘어 새로 고용되면 적용 제외(고용보험법 10조)·정년/계약만료 정당한 이직 사유(시행규칙 별표2 12호)·자진퇴사 예외 5개 원문 대조, 제목 8.45(제미나이 8.4·레드팀 8.5, 2차)·표지 9(2차)·editgate auto(해시)·compare/review 세 줄·selfcheck 사실 0·readcheck 0·aitell 8.0·레드팀 8건 반영 · 검색 '실업급여조건' 116,300 · 같은 날 다른 칸과 법령·주제 안 겹침 · 이전 칸 note: 회의 10/2 22:5x 배정: write 생산(편명은 관문 시작 때 item에 기입). 못 채우면 질 낮은 글로 메우지 말고 '생산 부족' 사유를 note에",
-   "published": "https://cafe.naver.com/firemap/204 20:20 verify OK"
-  },
-  {
-   "at": "2026-10-03 22:10",
-   "kind": "cafe",
-   "item": "sevtax1003",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-03 10:26",
-   "note": "퇴직금 일시금 세금 근속연수별(소득세법 14·48·55·129조 원문 계산, DB생명 사례 검산) · 제목 7.7(제미나이 7.2·심사관 8.2·레드팀 7.8)·표지 7.75·editgate auto 해시·compare/review 세 줄·틀 v2·레드팀 8건 반영 · 링크 /calc/severance utm · 면책 줄 · 10/3 22:10 칸 못 나감(정기 근무 꺼짐) → 10/4 12:10 칸으로",
-   "published": "2026-10-04 12:24 https://cafe.naver.com/firemap/207"
-  },
-  {
-   "at": "2026-10-04 08:10",
-   "kind": "cafe",
-   "item": "jeonseg1004",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-03 16:29",
-   "published": "2026-10-04 08:29 https://cafe.naver.com/firemap/205",
-   "note": "전세보증보험 가입조건(HUG 상품개요 원문 10/3 조회, 검색 5,930·우리 카페 0건) — 빌라 한도 공시가격 126%·보증료 3억 2년. 제목 심사 평균 9.2, 표지 7.33, 레드팀 사실 6건 반영 · 정기예금(deposit1004)은 카페 #139 중복이라 hold · 10/3 20:21 write: 제목 쉼표 없는 틀로 재심사 7.83, editgate auto 재도장",
-   "by": "firemap-write"
-  },
-  {
-   "at": "2026-10-04 10:10",
-   "kind": "cafe",
-   "item": "d1cafe1004",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-03 18:38",
-   "published": "2026-10-04 10:31 https://cafe.naver.com/firemap/206",
-   "note": "롱폼 D-1(10/2 공개) 카페 긴 글 — 퇴직 후 지역 건보료 금융소득 1,000만원 경계(월 2만 2,800→6만 7,850원)·연금 150만원이면 1년 81만원·임의계속가입(법 110조 원문). 제목 8.6(제미나이 9.2·레드팀 8.6·작성자 8.0)·표지 8.33·editgate auto·compare/review 세 줄·틀 v2·selfcheck 사실 0 · 검색 퇴직후건강보험료 1,280·건강보험료계산 5,520 · 10/3 20:21 write: 제목 쉼표 없는 틀(월 얼마 더 나올까?) 재심사 8.0, editgate auto 재도장"
-  },
-  {
-   "at": "2026-10-04 12:20",
-   "kind": "shorts",
-   "item": "e1_micron_q4",
-   "owner": "firemap-shorts",
-   "gates_ok": "2026-10-03 02:27",
-   "note": "firemap-shorts 10/4 12:29: a1_spyi 표지 미통과(기한 00:20 지남)·비축 0 → 10/3 02:27 관문 통과한 e1_micron_q4로 채움(주인공 다름 규칙 10/3 19:5x). rank·음악 없음·utm 줄만 바꿈, aitell 0.0 해시 갱신 / 이전: firemap-shorts 10/3 18:19: spec·compete 5·숫자 대조·카피 7↑ 끝, 표지 1초 시험 미통과(제미나이 6.5·A 6·B 5=5.83<7) → 고칠 것 cardshorts/a1_spyi/review.md · 기한 10/4 00:20 안에 재심사, 못 넘으면 reserve d1_kunbo로 대체",
-   "published": "https://youtu.be/DBCBWToNFCs 12:28"
-  },
-  {
-   "at": "2026-10-04 19:20",
-   "kind": "shorts",
-   "item": "a1_spyi",
-   "owner": "firemap-shorts",
-   "gates_ok": "2026-10-04 19:29",
-   "note": "firemap-shorts 10/4 19:3x: 배정 없던 칸·비축 0 → a1_spyi 표지 v8 재심사 7.0 통과 뒤 같은 회차 공개(12시간 전 관문 기한은 못 지킴)",
-   "published": "https://youtu.be/rCwU25Ew2pw 19:31"
-  },
-  {
-   "at": "2026-10-04 19:30",
-   "kind": "long",
-   "item": "N-1",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-03 19:08",
-   "note": "420buEFKB8k 예약 업로드(순돌이 19:5x, 무인 회차 권한 막힘 대신)"
-  },
-  {
-   "at": "2026-10-04 20:10",
-   "kind": "cafe",
-   "item": "n1cafe1004",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-03 14:27",
-   "note": "롱폼 N-1(10/4 19:30) 카페 긴 글 — 국세청 근로소득 백분위 2024 귀속 연봉 자리표·세금 몫, 순자산은 Q 한 문단(카페 44 연결). 제목 8.57(제미나이 9.2·레드팀 8.5·작성자 8.0)·표지 7.5·editgate auto 해시·compare/review 세 줄·틀 v2·selfcheck 사실 0. 발행 전 할 일: N-1 공개 주소를 c05 링크 아래 한 줄로 넣고(영상 넣기) editgate 다시 찍기 — 영상이 늦으면 영상 줄 없이 발행.",
-   "published": "2026-10-04 22:29 https://cafe.naver.com/firemap/208 (늦음 — 20시 readcheck 거부, 제목 교체)"
-  },
-  {
-   "at": "2026-10-05 08:10",
-   "kind": "cafe",
-   "item": "nhisprop1005",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-05 01:10",
-   "note": "비축에서 배정(03:4x write): 관문 통과: 제목 평균 7.8(제미나이 8.4·레드팀 7.0·작성자 8.0)·표지 7.43·aitell 4.7·readcheck 0·selfcheck 사실 0·레드팀 사실 12건 반영·compare/review 세 줄·editgate auto·frame 통과 — 건보료 재산 점수표(시행령 별표4 원문 60등급) 과세표준 3억 월 12만 3,930원",
-   "by": "firemap-write",
-   "published": "https://cafe.naver.com/firemap/209 (08:25 verify OK)"
-  },
-  {
-   "at": "2026-10-05 10:10",
-   "kind": "cafe",
-   "item": "nongji1005",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-05 01:28",
-   "note": "비축에서 배정(03:4x write): 관문 통과: 제목 '농지연금 수령액 3억 농지면 나이별로 월 얼마일까' 7.5(제미나이 후보3 8.0·레드팀 7.0·작성자 7.5)·표지 7.0(7.5·6.5·7)·aitell 2.3·readcheck 0·selfcheck 사실 0·레드팀 사실 지적 15건 반영(숫자 오류 0)·compare/review 세 줄·editgate auto — 공사 예상연금 조",
-   "by": "firemap-write",
-   "published": "https://cafe.naver.com/firemap/210 (10:23 verify OK)"
-  },
-  {
-   "at": "2026-10-05 12:10",
-   "kind": "cafe",
-   "item": "wolse1005",
-   "owner": "firemap-write",
-   "note": "firemap-write 10/5 04시대: 원 후보 jeonseg2_1005(HF·SGI)는 HF 502·SGI 원문 못 받아 주제 교체 → 월세 세액공제 정부안(한도 1,200만원·청년 17%) 대 현행 월 100만원 기준 170→204만 · 제목 7.07(editor 04:46 새 제목 재심사: lite 6.6·레드팀 7.2·작성자 7.4)·표지 7.8(8·8·7.5)·aitell 통과·readcheck 0·selfcheck 사실 0·레드팀 사실 지적 10건 반영·editgate auto·frame 통과·compare/review 세 줄",
-   "by": "firemap-write",
-   "gates_ok": "2026-10-05 04:30"
-  },
-  {
-   "at": "2026-10-05 12:20",
-   "kind": "shorts",
-   "item": "a1_1eok1y",
-   "owner": "firemap-shorts",
-   "gates_ok": "2026-10-05 00:24",
-   "note": "firemap-shorts 10/4 23:17: spec·check·aitell 0.0·숫자 [9] 대조·compete 5 끝, 제목 '세금 떼고' 고침. 표지 v2 1초 시험 제미나이 6.8·A 6·레드팀 6=6.27<7 미통과(주제 맞힘 3/3) → 글자 덩어리 줄이기·SCHD 숫자 묻힘·'미국 세금 15%'·그림 하나(cardshorts/a1_1eok1y/review.md). 기한 00:20 못 넘으면 12:20 정기 회차 전 재심사, 안 되면 e2_interest 당겨 씀 | 운영실장2 10/5 00:14: v6 제미나이 7·A 6.8·레드팀 7=6.93<7 미통과. 고칠 것 today.md(분배금 숫자 키우기·? 칸 채운 막대·회색 작은 글씨 빼기). 12:20 정기가 v7 재심사, 실패면 대체 편. | firemap-shorts 10/5 00:24: v7 6.0(5·7·6)·v8 6.33(5·7·7) 거쳐 **v9 통과 제미나이 7·A 7·레드팀 7=7.0**(블라인드 주제 맞힘, 숫자 [9]·막대 비율 대조 맞음). cover.png=v9(mkcover_v9.py).",
-   "published": "https://youtu.be/VFBMsYIWjWA 12:42"
-  },
-  {
-   "at": "2026-10-05 14:10",
-   "kind": "cafe",
-   "item": "bubyang1005",
-   "owner": "firemap-write",
-   "note": "firemap-write 10/5 09:0x: nhisrent1005(08:10 nhisprop1005와 같은 예시 586점)를 비축 bubyang1005로 바꿈(audit 07:57 [요청]). 관문 통과: 제목 '부양가족연금 늦춰 받으면 가산은 0%' 8.43(제미나이 9.8·레드팀 8.0·작성자 7.5)·표지 7.33(제미나이 비전 6·레드팀 8.5·작성자 7.5)·aitell 1.8·readcheck 0·selfcheck 사실 0·레드팀 사실 지적 9건 반영(숫자 오류 0)·compare/review 세 줄·editgate auto·frame 통과 — 법 52·62·63·63의2·64조 원문, 연기 5년 배우자 몫 153만 3,150원. 검증: 검색 940(slots TBD-J 메모)·우리 글 0편·경쟁 8개 중 연기·조기 제외 조항 다룬 글 0. 발행 전 slot.txt 시각 적기 | 발행 14:17 #212 verify OK 1829/1829·사진 3/3 (write 14:19)",
-   "by": "firemap-write",
-   "gates_ok": "2026-10-05 08:36",
-   "published": "https://cafe.naver.com/firemap/212"
-  },
-  {
-   "at": "2026-10-05 16:10",
-   "kind": "cafe",
-   "item": "bubu1005",
-   "owner": "firemap-write",
-   "note": "firemap-write 10/5 05:5x(운영실장2): TBD-A → bubu1005 확정(기초연금 부부감액, 검색 650·2027 예산안 부부감액 축소 이슈) · 제목 '기초연금 부부감액 소득인정액 몇만원부터 또 줄어들까' 8.27(제미나이 lite 7.8·레드팀 9.0·작성자 8.0)·표지 7.25·aitell 1.3·readcheck 0·selfcheck 사실 0·레드팀 숫자 오류 0·해석 7건 반영·editgate auto·compare/review 세 줄 — 법 제8조·시행령 제11조 원문, 부부 소득인정액 339만 2,480원 넘으면 소득역전 감액 · slot.txt 2026-10-05 16 | 이전: [후보·관문 전, gates_ok 없음] 회의(21:15)가 수요 검증한 편으로 확정 — 후보 미정, 기한 10:10 | write 05:3x 후보: 기초연금 부부감액(검색 650, 기초연금법 원문)·상속세 배우자공제(970) 중 법제처 원문 대조 되는 것 · 비축 imuigye1005는 칸에 쓰지 말고 비축으로 둠(비축 1/2)",
-   "by": "firemap-write",
-   "gates_ok": "2026-10-05 05:53"
-  },
-  {
-   "at": "2026-10-05 18:10",
-   "kind": "cafe",
-   "item": "ltc1005",
-   "owner": "firemap-write",
-   "note": "firemap-write 10/5 06:3x: TBD-B → ltc1005 후보 확정(2026 장기요양보험료율 0.9448%=건보료의 13.14%, 낼 때 건보료×13.14%와 받을 때 본인부담 한 글, 검색 2,670·우리 글 중복 0, 복지부 보도자료·시행령 제4조·건보법 시행령 제44조 원문 확인, facts.txt 있음) · 본문·표지·심사 관문은 아직(gates_ok 없음, 기한 12:10) | 이전: [후보·관문 전] 후보 미정 | firemap-write 10-05 07:14: 관문 통과 — 레드팀 사실7건 반영(시행일 단서·근사 주석·Q2·Q3·제10조 감면), 표지 14,170원 키움 레드팀 8.0·평균7.6, 제목 7.4/8.8, aitell 1.2·readcheck 0·selfcheck 사실 0, editgate auto",
-   "by": "firemap-write",
-   "gates_ok": "2026-10-05 07:14"
-  },
-  {
-   "at": "2026-10-05 19:20",
-   "kind": "shorts",
-   "item": "e2_interest",
-   "owner": "firemap-shorts",
-   "gates_ok": "2026-10-05 01:19",
-   "note": "firemap-shorts 10/4 23:17 배정: 테슬라 2분기 이자수익 422 > 영업이익 398(E-2 사실표 미사용). 남은 것: compete.md 5·첫 1초 표지·카피/표지 심사 3명·12:20 rank 뒤라 bars·음악 있음·chip '2026.9' 숫자 allow. X-SHORTS-LEN 첫 짝은 a1_1eok1y로 못 함(A-1 3번째 막힘) → E-2로 A(7초)·B(30~45초 TTS) 짝 권장 | firemap-shorts 10/5 01:10: compete 5 끝(이자 각도 0/7)·check 문제 없음·aitell 0.0·숫자 대조 맞음. 인트로 0초 1초 시험 6.0 → 정지 표지 cover_png v2~v5, 최고 표지 6.67·카피 7.33(v3)/6.33(v5) — 같은 판에 3명 모두 7 이상 못 맞춤(제미나이 5~7 흔들림). 미통과. 다음: 제목 단정형(넣음, 미심사)+카드 중복 줄 빼고 435억 키우기 → 재심사 3명(기한 07:20) · cardshorts/e2_interest/review.md | firemap-shorts 10/5 01:19: 표지 v8(cover_v8.png, 결론 맨 위·막대 안 숫자) 제미나이 7·A 7·레드팀 7=7.0, 카피 8·7·7=7.33 통과. 카드 레드팀·A 지적대로 정리. 근거 cardshorts/e2_interest/review.md | firemap-shorts 19:31: 공개. 설명 끝 firemap.kr/news utm_campaign=xWAnTpGJTHg(되읽기 OK, /calc/* 3개는 주제 불일치라 youtube-loop 10/5 12:46 방식대로 /news), cafe_line false",
-   "published": "https://youtu.be/xWAnTpGJTHg 19:28"
-  },
-  {
-   "at": "2026-10-05 19:30",
-   "kind": "long",
-   "item": null,
-   "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "skip": true,
-   "note": "05:4x firemap-youtube-loop: 롱폼은 '하루 1편 이하' 상한이지 매일 칸이 아님(RULES 177행·workflow 118행·series-plan 주 2편 시작). 10/2·10/3·10/4가 매일이었던 건 D-1·E-2·N-1 대본이 마침 있어서. 오늘은 공개할 편이 없음: 비축 R-1은 목소리 150/206·TTS 429·f0 막힘(다음 시도 16:00 뒤, 한 날 녹음)이라 관문 기한(10/4 19:30)이 이미 지났고 W-1은 대본 없음. 칸 건너뜀 · 대체 = R-1 목소리·화면·편집 통과 뒤 다음 가능한 롱폼 칸(빨라야 10/7 19:30, 늦어도 W-1 10/11)"
-  },
-  {
-   "at": "2026-10-05 20:10",
-   "kind": "cafe",
-   "item": "npsfee1005",
-   "owner": "firemap-write",
-   "note": "firemap-write 10/5 07:4x: TBD-C → npsfee1005(국민연금 보험료 2026 직장인 몫 4.75%·월 소득별 표·상한 659만/하한 41만·연도별 몫, 검색 1,520/보험료율 1,260, 우리 글 중복 없음—npscont는 임의계속·추납) 관문 통과: 국민연금법 부칙4조·제88조·시행령 5조·공단 안내 대조·제목 7.3(제미나이 lite 8.0·레드팀 6.5·작성자 7.5)·표지 7.8(레드팀 8.0·작성자 7.5)·aitell 4.8·readcheck 0·selfcheck 사실 0·레드팀 숫자 오류 0·해석 지적 반영·frame 통과·editgate auto·compare/review 세 줄 · slot.txt 2026-10-05 20 · 링크 /calc/salary utm · 면책 줄",
-   "by": "firemap-write",
-   "gates_ok": "2026-10-05 07:48",
-   "published": "2026-10-05 20:26 https://cafe.naver.com/firemap/215"
-  },
-  {
-   "at": "2026-10-05 22:10",
-   "kind": "cafe",
-   "item": "goldway1005",
-   "owner": "firemap-write",
-   "note": "firemap-write 10/5 10시대: TBD-D → goldway1005 확정(issue-radar 10/5 후보 1 금 1천만원 길별, today.md [지시] 카페 몫 · 주택연금은 같은 날 농지연금 #210과 겹쳐 뺌) · 검증: 금ETF 10,140·금투자 3,270·KRX금시장 1,650, 경쟁 8개 중 실제 1년 값으로 길별 계산 0 · 제목 '금 투자 1년 성적 KRX 금시장은 손해' 7.3(제미나이 6.4·레드팀 8.0·작성자 7.5)·표지 7.5(7·8·7.5)·aitell 6.9·readcheck 0·selfcheck 사실 0·crosscheck 반영·레드팀 사실 지적 5건 반영(재심 0)·editgate auto·compare/review 세 줄 — KRX 금 1년 -2.42%(187,300→182,770원/g) vs 국제값 원화 +3.38%, 1년 전 웃돈 7.4%→1.4% · slot.txt 2026-10-05 22",
-   "by": "firemap-write",
-   "gates_ok": "2026-10-05 10:37",
-   "published": "2026-10-05 22:41 https://cafe.naver.com/firemap/216 (verify OK 1728/1728자·사진 3/3)"
-  },
-  {
-   "at": "2026-10-06 08:10",
-   "kind": "cafe",
-   "item": "irpwd1006",
-   "owner": "firemap-write",
-   "note": "[범위 안쪽 — 퇴직금·퇴직연금] 관문 통과(write 14:43): 제목 'IRP 중도인출 집보다 아파서 꺼낼 때 세금 30% 덜 내는 이유' 8.0(제미나이 8.2·레드팀 8.3·작성자 7.5)·표지 7.33·aitell 6.4·readcheck 0·selfcheck 사실 0·레드팀 숫자 오류 0(표현 6 반영)·crosscheck 말투 12 반영·compare/review 세 줄·editgate auto. #123(사유·통계)과 각도 다름: 사유별 세금(요양 126만 vs 집 180만, 퇴직금 2억·15년). 링크 /calc/severance utm",
-   "by": "firemap-write",
-   "gates_ok": "2026-10-05 14:43",
-   "published": "2026-10-06 08:27 https://cafe.naver.com/firemap/217 (verify OK 1761/1761자·사진 3/3)"
-  },
-  {
-   "at": "2026-10-06 10:10",
-   "kind": "cafe",
-   "item": "yujokstop1006",
-   "owner": "firemap-write",
-   "note": "[범위 안쪽 — 국민연금(배우자 사망 뒤 노후 소득)] 편 확정 firemap-write 10/5 18:23: 유족연금 배우자 '3년 받고 55세까지 정지'와 예외 셋(장애·자녀 양육·A값 3,193,511원 넘는 소득 없음) — 검색 5,250, #138(두 연금 고르기·30%)과 각도 다름. facts.txt 원문 대조 진행: 법 72~76조·시행령 45·49조 받음, 근로소득금액 정의 확인 남음. 본문 초안 c00~c05 18:3x(readcheck 0·selfcheck 사실 0·aitell 0.0, 1,063자 — 1,200자 이상으로 늘릴 것) · 남은 관문: 사진 3장·표지 1초 시험·제목 심사 3명·compare/review 세 줄·crosscheck·editgate, 기한 04:10 · 주의: selfcheck [중복] #138과 대상 같음(9/28, 8일 전·각도 다름) | 이전: [후보·관문 전] 후보 미정 · 관문 통과 2026-10-05 22:47 firemap-write: 제목 '유족연금 3년 뒤 끊긴 배우자 몇 살에 다시 받을까' 8.2(제미나이 9.0·레드팀 8·작성자 7.5)·표지 7.5·readcheck 0·selfcheck 사실 0·aitell 통과·crosscheck 반영·레드팀 사실 ①~⑥ 맞음·compare/review 세 줄·editgate auto. 초안의 55세 오류를 부칙 제8541호 제8조로 고침(1969년 이후 출생 60세)",
-   "by": "firemap-write",
-   "gates_ok": "2026-10-05 22:47",
-   "published": "2026-10-06 10:30 https://cafe.naver.com/firemap/218 (verify OK 1265/1265자·사진 3/3)"
-  },
-  {
-   "at": "2026-10-06 12:10",
-   "kind": "cafe",
-   "item": "imuigye1005",
-   "owner": "firemap-write",
-   "note": "[범위 안쪽 — 건보료(퇴직 뒤 임의계속가입)] 비축에서 꺼냄(write 10/5 20:21): 관문 통과 2026-10-05 05:28 그대로 — 제목 '건강보험 임의계속가입 평균 월급이 300만원이었다면 월 얼마일까' 7.5·표지 7.5·aitell 0.0·editgate auto. 10/5 08:10 nhisprop(재산 건보료)와 하루 띄움. 발행 전 dupcheck 다시",
-   "by": "firemap-write",
-   "gates_ok": "2026-10-05 05:28",
-   "published": "2026-10-06 12:24 https://cafe.naver.com/firemap/219 (verify OK 2017/2017자·사진 3/3)"
-  },
-  {
-   "at": "2026-10-06 12:20",
-   "kind": "shorts",
-   "item": "nhis_prop",
-   "owner": "firemap-shorts",
-   "gates_ok": "2026-10-05 03:45",
-   "note": "firemap-shorts 10/5 03:44: 배정 — 지역가입자 건보료 재산분 1세대1주택 공시가별(사실표 nhisprop1005 쇼츠 첫 사용, rank·음악 없음). compete 5·check 문제 없음·aitell 0.0·숫자 대조 사실표 밖 0(레드팀). 표지 v1 7·6·6=6.33 미통과 → v2(9억 ? 칸·1주택 특례율 표기) 제미나이 8·카피 7, 심사관 A·레드팀 v2 재심사 결과 미수령 → gates_ok 비움. X-SHORTS-LEN 짝 아님(B판 렌더 없음). 근거 cardshorts/nhis_prop/ | firemap-shorts 10/5 03:45: v2 재심사 도착 — 표지 제미나이 8·A 7·레드팀 7=7.33 통과, 카피 7·7·7=7.0 통과(블라인드 주제 3/3), 숫자 사실표 밖 0. 제목 쉼표만 고침('117,240원, 9억은?'). gates_ok 기입. 공개 전 다듬을 것(선택): 첫 줄 '소득 없어도'→'집 한 채만 있어도'(경쟁4와 겹침)·'?'를 숫자 크기로·설명에 적용 시점.",
-   "published": "2026-10-06 12:28 https://youtu.be/qMXVDJ19_TY (verify OK public·processed·채널 UCV3…PlVg · rank·음악 없음 · 설명 링크=카페 주소만: 건보료 /calc 계산기 없음)"
-  },
-  {
-   "at": "2026-10-06 14:10",
-   "kind": "cafe",
-   "item": "hfguar1006",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-06 06:44",
-   "note": "[범위 안쪽 — 주택연금] 편 확정 write 10/5 20:21: 주택연금(검색 29,490) 각도 '보증료·대출이자가 집값에서 얼마나 빠지나' — 초기보증료·연 보증료·대출잔액 누적, 한국주택금융공사법·시행령·HF 공시 원문. 우리 #55(나이 55세·12억 한도)·월지급표와 다른 각도. 관문 기한 08:10 | firemap-write 10/6 06:44: F1 — readcheck 본문말투 2건(숫자 문장 연달아)을 문장만 나눠 고쳐 0건(숫자·사실 그대로). editgate stamp 다시(sha 1f3c158), 표지 고정 심사 평균 7.22(555a0c6) 유지, 카페 틀 v2·사진 3장 통과. check_self 2건은 안내(표 칸 12개는 이미지 표 / '주택연금' 중복은 #55와 각도 다름: 보증료·누적). firemap.kr 링크는 주택연금 계산기 경로가 toolPages에 없어 본문에 넣지 않음.",
-   "by": "firemap-write",
-   "published": "2026-10-06 14:36 https://cafe.naver.com/firemap/220 (verify OK 1162/1162자·사진 3/3)"
-  },
-  {
-   "at": "2026-10-06 16:10",
-   "kind": "cafe",
-   "item": "depprot1006",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-06 06:54",
-   "note": "[범위 안쪽 — 예금] 편 확정 write 10/5 20:21: 예금자보호 한도(검색 5,210, 우리 글 0편) — 1억 상향 뒤 노후자금 3억을 은행·저축은행·상호금융에 나눠 맡기면 어디까지 보호되나, 예금자보호법·시행령 원문. 관문 기한 10:10",
-   "by": "firemap-write",
-   "published": "2026-10-06 16:24 https://cafe.naver.com/firemap/221 (verify OK 1171/1171자·사진 3/3)"
-  },
-  {
-   "at": "2026-10-06 18:10",
-   "kind": "cafe",
-   "item": "toejikavg1006",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-06 07:11",
-   "note": "[범위 안쪽 — 퇴직금] 편 확정 write 10/5 20:21: 퇴직금 계산(검색 19,110) 각도 '평균임금에 상여·연차수당 넣는 법' — 근로기준법 제2조·근퇴법 제8조 원문. 우리 sevtax1003(세금)·rettax(연금수령 세금)와 각도 다름. 경계: 08:10 IRP(근퇴법 시행령 14조·소득세법)와 같은 퇴직금 갈래 — 조문은 다르나 editor가 겹친다고 보면 10/7로 밀고 이 칸은 그때 새 비축으로. 관문 기한 12:10",
-   "by": "firemap-write",
-   "published": "2026-10-06 18:27 https://cafe.naver.com/firemap/222 (verify OK 1405/1405자·사진 3/3)"
-  },
-  {
-   "at": "2026-10-06 19:20",
-   "kind": "shorts",
-   "item": "nongji_age",
-   "owner": "firemap-shorts",
-   "gates_ok": "2026-10-05 01:47",
-   "note": "firemap-shorts 10/6 19:31: 비축 nongji_age 공개 19:30 — 직전 rank·음악 없음이라 bars·음악 있음으로 바꿈, 업로드 관문 aitell 21.9(설명 ~요 7연속) → 설명 끝맺음만 고쳐 0.0. | firemap-shorts 10/6 06:42: gold1y 표지 v5 6.58·v6 6.17 미달(5768899, 고정 심사·보정 유효)로 기한 07:20 못 넘겨 비축 nongji_age로 교체(gates_ok는 비축 통과 시각 10/5 01:47 — compete 5·check·aitell 0.0·표지 v4 7.33·카피 7.0·review 세 줄). rank·음악 없음, publish 전 직전 편(10/6 12:20 nhis_prop) layout 확인해 rank 연속이면 bars. gold1y는 표지 다시 만들 대상(시한 10/6 21:00 유지, 통과 시 10/7 이후 칸) | 이전: firemap-shorts 19:31: 금 1천만원 사는 길별 1년([지시] 시한 10/6 21:00, 사실표 goldway1005 쇼츠 첫 사용)으로 배정 — compete.md 6편·spec check 문제 없음·aitell 0.0 끝. 남은 관문: 첫 1초 표지·1초 시험 3명·카피 심사 3명·review 세 줄(기한 07:20). rank·음악 없음. 기준금리 편은 다음 칸으로 미룸(관문 착수 전이었음) | firemap-shorts 10/5 03:44: 편·담당만 배정 — 대기 spec은 전부 사실표 중복 규칙에 막힘(A-1·E-1·E-2 주인공 같음). 관문 전",
-   "published": "2026-10-06 19:30 https://youtu.be/Xlt5q1PvxK8"
-  },
-  {
-   "at": "2026-10-06 19:30",
-   "kind": "long",
-   "item": null,
-   "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "skip": true,
-   "note": "05:4x firemap-youtube-loop: 건너뜀 — 10/5 칸과 같은 이유(R-1 목소리 150/206 막힘, 관문 기한 10/5 19:30 안에 못 끝남 가능성 큼, W-1 대본 없음). R-1이 10/5 19:30 전에 편집·썸네일·목소리·화면 관문을 모두 넘기면 skip을 지우고 item=R-1·gates_ok를 적는다 | 16:29 r1-record-1006: R-1 목소리 관문 막힘(IQR 0.18·5.12음절/초)·대본 5.97 미달 → 이 칸 공개 없음"
-  },
-  {
-   "at": "2026-10-06 20:10",
-   "kind": "cafe",
-   "item": "yangdo1006",
-   "owner": "firemap-write",
-   "note": "관문 통과(write 08:30): 제목 G2 '12억 넘는 집 한 채 양도세, 공제 크게 받으려면 몇 년 살아야 할까' 7.5(제미나이 3.1-lite 8·8·레드팀 7·작성자 7.5) — copywriter 1위 E2는 readcheck 제목 2건·틀 v2(~요 끝)로 못 씀 · 표지 T6 7.25(고정 조건: 비교판·judge_cafe·3.1-lite 2회·보정 gongjae 7.5/7.0) · readcheck 0·aitell 0.1·selfcheck 사실 0·crosscheck 사실 1·말투 15 반영·레드팀 숫자 0·editgate auto. 계산 6억→15억·보유 15년: 거주 1년 3,056만→10년 414만원 | [범위 경계 — 부동산 → 퇴직 뒤 집 줄여 갈 때 세금 내고 남는 돈으로 끝냄] firemap-write(갈래②) 10/6 07:1x: TBD-L → yangdo1006 확정 — 1세대1주택 비과세 12억 넘는 집 팔 때 양도세(고가주택 안분·장기보유특별공제 보유+거주 최대 80%). 검색 1세대1주택비과세 1,130·양도소득세 24,090(kwvol 10/6), 우리 카페 0편(dupcheck), #175 일시적 2주택과 각도 다름. 소득세법 제89조·제95조·시행령 제160조·제159조의4·제55조 원문 받음 → pkg/facts.txt. 14:10 hfguar(주택연금)와 법·돈 흐름 다름. 관문 기한 14:10 | 연금저축 세액공제(옛 TBD-L 후보)는 뺌: 카페 #54(900만원 135만원)·#74(연금저축 vs ISA) 이미 두 편 + 같은 날 08:10 irpwd1006(IRP) 겹침 — 11월 이후 남은 한도 각도로 다시 검토 | 이전: [범위 안쪽 — 연금 세금] 회의 10/5 21:40(firemap-meeting): 22:10 TBD-L(연금저축·IRP 세액공제)을 이 칸으로 당김 — 각도는 write 14:4x 지적대로 '연말까지 남은 납입 한도·12월 마지막 납입일'만(#54 '900만원·135만원' 각도 금지), 소득세법 제59조의3 원문. 관문 기한 14:10. 국민연금 임의가입(옛 TBD-K)은 10/6 10:10 유족연금과 같은 법이라 10/7 08:10으로 옮김 | 이전: [범위 안쪽 — 국민연금] 후보: 국민연금 임의가입(검색 6,650 · 전업주부 최저 보험료·몇 년 내면 월 얼마) — npsfee1005(10/5 20:10)와 하루 띄움, 기한 14:10 (write 10/5 14:19) | write 10/5 18:23: 같은 날 10:10이 유족연금(국민연금법)이라 임의가입이면 같은 법 하루 두 번 — 10/7로 미루거나 다른 안쪽 후보로 바꿀 것",
-   "by": "firemap-write",
-   "gates_ok": "2026-10-06 08:30",
-   "published": "2026-10-06 20:35 https://cafe.naver.com/firemap/223 (verify OK 1489/1489자·사진 3/3)"
-  },
-  {
-   "at": "2026-10-06 22:10",
-   "kind": "cafe",
-   "item": "bigwa1006",
-   "owner": "firemap-write",
-   "note": "관문 통과(write 08:47): 제목 K2 '비과세종합저축 기초연금 없으면 5천만원 이자 세금 얼마나 붙을까' 7.5(제미나이 7·7·레드팀 8·작성자 7.5) — copywriter 1위 C는 틀 v2(~요 끝)로 못 씀 · 표지 B2 7.17 · 부칙 제41조·시행령 82조의2·조특법 129조의2 원문 대조 · readcheck 0·aitell 4.2·selfcheck 사실 0·crosscheck 2회 반영·레드팀 오류 1 반영·editgate auto | [범위 안쪽 — 예금 이자 세금] firemap-write(갈래②) 10/6 07:1x: TBD-M → bigwa1006 확정 — 비과세종합저축 1인 5천만원, 2026.1.1부터 신규 가입은 65세 이상 중 기초연금 수급자만(조특법 제88조의2 2025.12.23 개정, 2028년 말까지). 검색 4,170(kwvol 10/6), 우리 카페 0편(dupcheck). 원문·은행 약관 변경 안내 → pkg/facts.txt, 부칙 경과조치 대조 남음. 16:10 depprot(예금자보호 한도)와 같은 예금이지만 법·질문 다름 — editor가 겹친다고 보면 10/8 이후로. 관문 기한 16:10 | 1세대1주택 양도세(옛 TBD-M 후보)는 20:10 yangdo1006으로 당김 | 이전: [범위 안쪽 — 퇴직 뒤 집 한 채] 회의 10/5 21:40(firemap-meeting): 후보 = 1세대1주택 양도세 비과세 12억 기준(퇴직 뒤 집 줄여 갈 때 남는 돈) — 소득세법 제89조·시행령 제154·156조 원문으로 사실표, 검색수는 work/kwvol.py로 재고 1,000 미만이거나 우리 글 중복이면 write가 다른 안쪽 후보로 바꿔도 됨(note에 이유). 관문 기한 16:10. 못 넘으면 비축에서 끼움(nhisrent1005는 nhisprop 10/5 08:10에서 3일 안 지나 불가 → 새 비축 필요) | 이전: [범위 안쪽 — 연금 세금] 후보: 연금저축 세액공제(검색 3,030 · 연말 앞 수요, 소득세법 제59조의3 원문) — 9/29 연금소득세 글과 각도 다름(넣을 때 공제), 기한 16:10 (write 10/5 14:19) | 주의(write 14:4x selfcheck): 카페 #54 \"연금저축·IRP 세액공제, 900만원 넣으면 최대 135만원입니다\"가 이미 있음 — 같은 각도 금지, 쓰려면 \"연말까지 남은 한도·12월 납입 마감일\" 각도로, 아니면 다른 안쪽 후보로 바꿈",
-   "by": "firemap-write",
-   "gates_ok": "2026-10-06 08:47",
-   "published": "https://cafe.naver.com/firemap/224"
-  },
-  {
-   "at": "2026-10-07 08:10",
-   "kind": "cafe",
-   "item": "npsimui1007",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-06 09:43",
-   "note": "관문 통과(write 09:43, F2): 제목 K5 '국민연금 임의가입 최저 보험료로 10년 내면 매달 얼마 받을까' 7.33(제미나이 7·7·레드팀 7.5·작성자 7.5) · 표지 N1 7.58(고정 조건, 3.1-flash-lite·보정 gongjae 7.0·7.5) · 국민연금법 10·13·51·61·88조+부칙, 공단 중위수 101만3천원·예상연금월액표 원문 대조 · readcheck 0·aitell 1.6·selfcheck 사실 0·crosscheck 2회·레드팀 오류 5 반영·editgate auto | [범위 안쪽 — 국민연금] 회의 10/5 21:40(firemap-meeting): 옛 10/6 20:10 TBD-K를 옮김 — 국민연금 임의가입(검색 6,650, write 10/5 14:19 후보): 전업주부 최저 보험료·몇 년 내면 월 얼마. 10/6 10:10 유족연금과 22시간 띄움, npsfee1005(10/5)와 이틀. 국민연금법·시행령 원문. 관문 기한 10/7 02:10 · firemap-write 10/5 22:4x: 편 이름 npsimui1007로 확정(우리 카페·블로그 제목에 임의가입 0편, imuigye1005는 건보 임의계속이라 다름). 묶음 work/research/npsimui1007/pkg",
-   "by": "firemap-write"
-  },
-  {
-   "at": "2026-10-07 10:10",
-   "kind": "cafe",
-   "item": "spouseinh1007",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-06 10:34",
-   "note": "[범위 경계 — 상속·가족 돈, 은퇴 부부 자산 숫자로 이어짐] firemap-write 10/6 03:2x(F3): 상속세 배우자 공제(검색 상속세배우자공제 970, kwvol 10/6) — 배우자가 상속받으면 5억 일괄 아닌 최소 5억~최대 30억까지 공제되는 계산, 실제 낼 돈. 우리 카페 0편(inhtax는 블로그 세율편), 10/6 10:10 유족연금과 22시간 띄움이나 주제 다름(연금 vs 상속세). 상속세및증여세법 제19조·제21조 원문 대조 필요. 관문 기한 10/7 04:10 · 묶음 work/research/spouseinh1007/pkg · 경계라 editor 범위 판단 한 줄 필요, 밖이면 비축 retmid로 교체 | 10:34 firemap-write 관문 통과: 제목 A 3명 7.5·표지 S1 7.08·레드팀 오류 2 반영·selfcheck 사실 0·editgate auto. 범위 경계 판단은 editor 확인 요청(today.md) | 발행 10:26 #226 verify OK 1757/1757·사진 3/3 (write 10:29)",
-   "published": "https://cafe.naver.com/firemap/226"
-  },
-  {
-   "at": "2026-10-07 12:10",
-   "kind": "cafe",
-   "item": "schdacct1007",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-06 12:44",
-   "note": "[범위 안쪽 — 배당 현금흐름] firemap-write 10/6 03:2x(F3): SCHD 배당금을 일반계좌·ISA·연금계좌 중 어디서 받으면 세후 월 얼마(검색 SCHD배당금 9,310, 월배당ETF 4,130, kwvol 10/6). schd1003(10/3)과 4일 띄움, 각도는 앞 세 편(배당 증가폭)과 달리 계좌별 세후 수령액. 미국 배당 원천징수 15%·ISA 비과세 한도·연금계좌 과세이연은 국세청·조세특례제한법 원문 대조, 배당액은 Nasdaq API·운용사. 관문 기한 10/7 06:10 · 묶음 work/research/schdacct1007/pkg(미착수) · 관문 통과(write 12:44): 제목 E 'SCHD 배당금 ISA나 연금저축에서 받으면 미국 세금 얼마나 빠질까' 7.5(제미나이 7·7·레드팀 8·작성자 7.5) · 표지 S3 7.58 · readcheck 0·selfcheck 사실 0·aitell 1.1·crosscheck 사실 4 중 반영 2·유지 2·레드팀 사실 3 반영(시행령 189조의2④ 0.55·한도 소득세분) · editgate auto · 묶음 work/research/schdacct1007/pkg"
-  },
-  {
-   "at": "2026-10-07 12:20",
-   "kind": "shorts",
-   "item": "npsday1007",
-   "owner": "firemap-shorts",
-   "gates_ok": "2026-10-06 09:24",
-   "note": "firemap-shorts 10/6 04:1x(F3): 하루 차이 문턱 — 1968-12-31생 vs 1969-01-01생 노령연금 64세 vs 65세(1년 차이). 국민연금법 제61조 제1항(60세)+부칙 제8조(1965~68년생 +4세·1969년 이후 +5세) 원문을 법령 API로 직접 확인(사실표 work/research/npsday1007/pkg/facts.txt, 쇼츠 첫 사용·A-1·E-1·E-2와 안 겹침). 남은 관문: 공단 지급개시연령 표 교차확인·compete.md 5개·spec check·표지 1초 시험·카피 심사·review 세 줄, 기한 10/7 00:20. 예술가 ideas AL '하루 차이 문턱'. 같은 날 카페 10:10 spouseinh1007·12:10 schdacct1007과 주제 다름. 안 되면 비축 nongji_age로 교체."
-  },
-  {
-   "at": "2026-10-07 14:10",
-   "kind": "cafe",
-   "item": "wagepeak1007",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-06 16:31",
-   "note": "[범위 안쪽 — 퇴직금·퇴직연금] firemap-write(갈래②) 10/6 07:1x: 임금피크제 앞두고 퇴직금 중간정산·DB→DC 전환하면 퇴직금 얼마 차이(검색 임금피크제 5,810·퇴직연금DB형 1,220, 우리 카페 0편 dupcheck). 근로자퇴직급여 보장법·시행령 원문. 10/6 18:10 toejikavg1006(평균임금에 상여·연차)와 20시간 띄움, 각도 다름(임금 깎이기 전 정산). 관문 기한 10/7 08:10 · 묶음 work/research/wagepeak1007/pkg(미착수) · 초안 firemap-write 10/6 14:3x: 사실표(근퇴법 8·20·32·46조·시행령 3조·근기법 2조 원문)·가정 사례 계산(그대로 1억800만/중간정산 1억6,800만/DC 1억6,980만)·본문 c00~c03·selfcheck 사실 0·readcheck 1(숫자 연속, 남음). 남은 관문: 이미지 2장·제목 3명·표지 1초·crosscheck·레드팀·compare.md·editgate · 관문 통과 16:31(firemap-write): 제목 G 3명 7.5(B는 frame v2 '왜' 탈락)·표지 W1 7.17·crosscheck 사실 2 중 반영 1·유지 1·레드팀 오류 1+재심사 1 반영(중간정산=퇴직금제도만)·readcheck 0·selfcheck 사실 0·aitell 5.2·frame v2·editgate auto·compare.md·review.md 세 줄 · /calc/severance utm"
-  },
-  {
-   "at": "2026-10-07 16:10",
-   "kind": "cafe",
-   "item": "ltcgrade1007",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-06 20:38",
-   "note": "관문 통과(write 20:38): 제목 G '장기요양등급 75점 문턱, 한 달 한도는 얼마나 갈릴까' 7.38 · 표지 L1 7.13 · crosscheck 사실 9 중 반영 7·유지 2 · 레드팀 오류 5 반영(재심사 0) · readcheck 0·aitell 0.0·selfcheck 사실 0·editgate auto · /calc 맞는 것 없음 | [범위 안쪽 — 노후 돌봄 비용] firemap-write(갈래②) 10/6 07:1x: 장기요양등급(검색 20,590, 우리 카페 0편 dupcheck) — 등급 판정 점수 기준과 등급별 월 한도액, 등급 하나 차이로 월 얼마. 노인장기요양보험법·시행령·복지부 고시 원문. ltc1005(10/5, 보험료·본인부담률)와 이틀, 각도 다름 — editor 겹침 판단 한 줄. 관문 기한 10/7 10:10 · 묶음 work/research/ltcgrade1007/pkg(미착수)"
-  },
-  {
-   "at": "2026-10-07 18:10",
-   "kind": "cafe",
-   "item": "pensavbreak1007",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-06 18:38",
-   "note": "[범위 안쪽 — 연금(연금저축)] firemap-write 09:37 F4: jongbu1007은 10/20대로 미룬 뒤 새 편 확정 = 연금저축 중도 해지하면 얼마 떼이나(검색 연금저축해지 750·연금저축 27,930, 우리 카페 해지 글 0편 dupcheck). 소득세법 제21조①21호·제129조①6호 나목 원문 받음(기타소득 15%+지방세). 10/6 08:10 irpwd1006(IRP 부득이 인출)과 각도 다름·제목 겹치면 hold. 관문 기한 10/7 12:10 · 묶음 work/research/pensavbreak1007 facts.txt 착수(남은 조사 6항목) · 못 넘으면 retmid1005 교체 기입 가능하나 14:10 wagepeak와 겹쳐 10/8 쪽이 안전 · 관문 통과(write 18:38): 제목 A '연금저축 해지하면 세액공제 받은 것보다 얼마나 더 떼일까' 7.0 · 표지 P4 7.13 · crosscheck 사실 4 중 반영 3·유지 1 · 레드팀 오류 2·표현 9 반영, 재심사 새 지적 0 · readcheck 0·aitell 1.5·selfcheck 사실 0·editgate auto",
-   "ep": "work/research/pensavbreak1007/pkg"
-  },
-  {
-   "at": "2026-10-07 19:20",
-   "kind": "shorts",
-   "item": "basecut1006",
-   "owner": "firemap-shorts",
-   "gates_ok": "2026-10-07 03:26",
-   "note": "firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 비축 0이라 다음 후보 기준금리 30년 표(ECOS, _reserve_shorts_next)로 배정 · 관문 기한 10/7 07:20 · 못 넘으면 gold1y '-2.42% 내림 표시' 1판 또는 칸 비움 사유 기록 · firemap-shorts 10/6 23:15: basecut1006=cardshorts/rate30(사실표 bokrate1006). 한은 홈페이지 교차확인 일치·콜금리 주석 추가·check 통과·compete 5. 첫 프레임 1초 시험 v9 5·v10(답 먼저 3줄) 5 미달(블라인드 주제는 맞힘) → gates_ok 없음. 다음 1안: B형 cards 첫 카드 '기준금리 3%' 한 숫자, 안 되면 v10으로 칸 채움(비축 0). 근거 cardshorts/rate30/review.md 끝 · firemap-shorts 03:26: 관문 통과 — 내보낼 spec은 cardshorts/rate30_b.json(B형 cards 25초, rate30_b.mp4 렌더됨). 첫 프레임 1초 시험(고정 조건 gemini-3.5-flash-lite 2회) 7·7, 블라인드 주제 맞힘·글자 읽힘 '예', 카피 8·8, 레드팀 1초 7·대본카피 6·사실 오류 0(지적 3 반영) → 평균 1초 7.0·카피 7.33. aitell 0.0·.edit.json by auto. 음악은 공개 직전 직전 편 반대로. 근거 cardshorts/rate30/review.md 끝"
-  },
-  {
-   "at": "2026-10-07 19:30",
-   "kind": "long",
-   "item": null,
-   "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "skip": true,
-   "note": "04:4x firemap-youtube-loop: 건너뜀 — 관문 기한 10/6 19:30인데 M-1 녹음이 10/6 16:01이라 3시간 반에 렌더·심사·썸네일 불가, R-1은 목소리 막힘. 대체 = 10/8 19:30 M-1"
-  },
-  {
-   "at": "2026-10-07 20:10",
-   "kind": "cafe",
-   "item": "parking1007",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-06 22:43",
-   "note": "[범위 안쪽 — 예금·이자(퇴직금·비상금 잠깐 둘 곳), D10 시험] 관문 통과(write 22:43): 제목 T1 '파킹통장 5천만원 넣으면 한 달 이자 얼마나 차이 날까' 7.5(제미나이 8·8·레드팀 7·작성자 7.5) · 표지 P1 7.0(보정 7.0 유효) · 검색 파킹통장 125,600·우리 0편 · 저축은행중앙회 공시 156개+토스·카카오 공식 · 레드팀 오류 3 반영 · editgate auto · 묶음 work/research/parking1007/pkg · 옛 note: firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 새 편(예금·이자·금리 묶음 시험 1편 — loop 10:07 요청 D10, 같은 날 퇴직금 wagepeak"
-  },
-  {
-   "at": "2026-10-07 22:10",
-   "kind": "cafe",
-   "item": "earlyjob1007",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-07 08:43",
-   "note": "[범위 안쪽 — 50대 퇴직 뒤 재취업 돈] 관문 통과(write 08:43): 조기재취업수당 지급 제외 월급 574만→300만원 행정예고(고용노동부 공고 제2026-458호, 9/29, 의견 10/18, 부칙 11/1 이후 수급자격 신청자부터) · 검색 조기재취업수당 8,160·우리 카페 0편 · 제목 T16 7.5(제미나이 3회 7.9·레드팀 7·작성자 7.5, 틀 v2 통과) · 표지 E5 7.0(보정 gongjae 7.25 유효) · crosscheck 사실 5 중 반영 4·유지 1 · 레드팀 오류 9 반영→재검 0 · readcheck 본문 0·aitell 0.0·selfcheck 사실 0·editgate auto · /calc/unemployment-benefit utm · 이전 note: firemap-meeting 10/6 21:4x(정기 회의, patrol 21:32 칸 배정 없음 4개): 새 편(write 주제 고르기, X-CAFE-CALC-1은 10/10 시작이라 지금 규칙) · 관문 기한 10/7 16:10 · 하루 8편 상한의 8번째"
-  },
-  {
-   "at": "2026-10-08 08:10",
-   "kind": "cafe",
-   "item": null,
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-07 10:29",
-   "note": "skip — PC 꺼짐(10/7 11:30~10/8 12:53)으로 못 나감, sanghan1008은 14:10 칸에서 공개(#228). 이중 기록 정리 firemap-meeting 10/8 21:44(검증 참모 21:42)"
-  },
-  {
-   "at": "2026-10-08 12:10",
-   "kind": "cafe",
-   "item": "ubapply1007",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-07 11:22",
-   "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)",
-   "published": "https://cafe.naver.com/firemap/227 verify OK 1334/1334·사진 3/3 (13:07)"
-  },
-  {
-   "at": "2026-10-08 12:20",
-   "kind": "shorts",
-   "item": "nhis_prop_b",
-   "owner": "firemap-shorts",
-   "gates_ok": null,
-   "note": "firemap-shorts 10/6 19:52: X-SHORTS-LEN B판 첫 편([지시·긴급]) — cardshort.py cards 구현·32초 렌더·compete 5·check·aitell 0.0 끝. 첫 프레임 1초 시험 v1·v2 5·5 미달(카피 7~8) → 남은 관문: v3(답 먼저) 1판, 기한 10/8 00:20. 근거 cardshorts/nhis_prop_b/review.md · firemap-shorts 10/7 07:15: v3(답 먼저) 3판 첫 프레임 고정 조건(3.1-flash-lite·보정 gongjae1002 7.5·7.0 유효) v3b·v3c·v2 모두 5·5 → 미통과, gates_ok 없음. 어두운 글자 카드 첫 프레임 틀 한계. 기한 10/8 00:20 전 다음 1안: 첫 프레임을 글자 카드 아닌 한 숫자 전면판(배경색·'약 4배' 화면 절반)으로 cardshort 'hero' 카드 추가, 안 되면 review.md 규칙대로 v1 질문형으로 칸 내고 시청 시간 판정. 근거 cardshorts/nhis_prop_b/review.md 끝 · firemap-shorts 10/8 13:16: 1초 시험 v1~v4b 미달 그대로 → review.md·운영실장 11:23 규칙대로 v1 질문형 공개(gates_ok는 비워 둠 — 1초 시험 미통과 공개, 판정은 48시간 평균 시청 시간 ≥15초·댓글 '내 집 ○억' ≥3, 버림 <8초)",
-   "published": "2026-10-08 13:15 https://youtu.be/V8s9_TwoNRY (55분 늦음 — PC 25시간 꺼짐(배터리), 회차 13:11 시작)"
-  },
-  {
-   "at": "2026-10-08 14:10",
-   "kind": "cafe",
-   "item": "sanghan1008",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-07 10:29",
-   "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)",
-   "published": "https://cafe.naver.com/firemap/228"
-  },
-  {
-   "at": "2026-10-08 16:10",
-   "kind": "cafe",
-   "item": "parking1007",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-06 22:43",
-   "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)",
-   "published": "https://cafe.naver.com/firemap/229"
-  },
-  {
-   "at": "2026-10-08 18:10",
-   "kind": "cafe",
-   "item": "pensavbreak1007",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-06 18:38",
-   "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)"
-  },
-  {
-   "at": "2026-10-08 19:20",
-   "kind": "shorts",
-   "item": "npsday1007",
-   "owner": "firemap-shorts",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/8 13:29: 칸 누락(10/7 PC 꺼짐으로 회의 미개최) — 관문 기한 07:20 지남, 비축 0이라 nhis_prop_b 공개 후 둘째 편이 관문 넘으면 채움, 못 채우면 note에 사유 | firemap-shorts 10/8 14:03: 편 = npsday1007(10/7 12:20 칸이었으나 PC 꺼짐으로 미공개, cardshorts/npsday1007.json bars·음악 있음). 관문 통과 편 rate30_b(cards, 첫 프레임 1초 7·7)는 직전 nhis_prop_b도 cards라 shortsdaily check C3 '직전 편과 같은 틀'에 막힘(SHORTS_FORCE 금지, 라벨 바꾸기 안 함 — 두 편 다 첫 장 gauge라 실제로 같은 틀) → 19:20엔 못 씀, reserve.shorts로. npsday1007: check 문제 없음·aitell 0.0(.edit.json auto)·compete 5·카피·review 세 줄·artist 뻔함 통과는 있으나 첫 프레임 1초 시험 고정 조건 5·5(보정 gongjae 7.0·7.5 유효, rejudge_ff.py) → gates_ok 안 적음. 19:20 정기는 nhis_prop_b 선례대로 1초 미통과 공개(판정: 48시간 평균 시청 비율·조회가 최근 쇼츠 중앙값 이상이면 유지) 또는 공개 안 함 중 결정 — 담당 판단 1안은 공개(칸 비움=실패, C3는 코드 브레이크라 rate30_b 불가). rate30_b는 10/9 12:20 칸 1안(bars 뒤라 C3 해소) | firemap-shorts 10/8 15:21: 첫 프레임 고침 — cardshort.py bars 'vs' 모양(값 2개 색 상자·막대 자람 없음·출처 줄 1초 뒤, spec bars_style:'vs') 추가, 9판 시험(고정 조건 3.1-flash-lite 2회·보정 gongjae1002 7.0~7.5 전부 유효): v5 6·6, v6 6~6.25, v7 5.5~6.25, v8 6, v9a 6.5, v10a 6.5·6.5(최고), v11·v12 6 → 7 미달, gates_ok 안 적음. npsday1007.json은 v10a로 바꿈(옛 판 cardshorts/npsday1007/npsday1007.v4.json), check 문제 없음·aitell 0.0·.edit.json 해시 갱신. 심사 반복 지적: 경쟁 5가 전부 연도표라 '내 연도 찾기 표' 요구 — 경계 하루 각도는 표가 될 수 없고, 61~63세 행은 사실표에 없는 계산이라 못 넣음. 19:20 근무 대안 1순위: npsday1007(v10a, 1초 6.5) 그대로 공개(nhis_prop_b 선례: 1초 미통과 공개, gates_ok 비움, 판정 48시간 평균 시청 비율·조회가 최근 쇼츠 중앙값 이상이면 유지) — 5점 판보다 1.5점 높음. rate30_b(cards)는 C3로 불가, 10/9 12:20 1안 유지. 근거 cardshorts/npsday1007/review.md 끝 | firemap-shorts 10/8 19:28: v10a 1초 미통과(6.5) 공개 19:27 wPIHi7cSmQQ, gates_ok 비움, 판정 10/10 19:27(48시간 시청 비율·조회 vs 최근 중앙값)",
-   "published": "2026-10-08 19:27 https://youtu.be/wPIHi7cSmQQ"
-  },
-  {
-   "at": "2026-10-08 19:30",
-   "kind": "long",
-   "item": "M-1",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-08 16:59",
-   "note": "04:4x firemap-youtube-loop: 10/6 16:01 TTS는 M-1에 씀(R-1은 같은 도구로 10/5 f0 밖 81줄·lfpitch 블라인드 탈락 → Chirp 3 HD 결재 뒤). M-1 = 대본 심사 7.47 통과·편집 통과(script.v2·화면 글자 02:50)·화면 24장면 완성. 남은 관문: 16:01 녹음 → m1props 재실행·screen_text 재서명 → 렌더·scorecard·썸네일·review 판정 줄. 관문 기한 10/7 19:30 · PD 16:59: 관문 기한(10/7 19:30)은 PC 꺼짐으로 넘김, 10/7 창 녹음+16:02 다시 받기로 같은 날 관문 전부 통과(목소리·readback 0·화면 글자 재서명·motioncheck·scorecard 35·ytlong gate) → 칸 시각 그대로 예약",
-   "published": "예약 2026-10-08 19:30 https://youtu.be/eTjVs1vDTwg"
-  },
-  {
-   "at": "2026-10-08 20:10",
-   "kind": "cafe",
-   "item": "wagepeak1007",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-06 16:31",
-   "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)",
-   "published": "https://cafe.naver.com/firemap/231 verify OK 1637/1637자·사진 3/3"
-  },
-  {
-   "at": "2026-10-08 22:10",
-   "kind": "cafe",
-   "item": "ltcgrade1007",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-06 20:38",
-   "note": "firemap-write 10/8 13:1x 재배정: 10/7 11:23~10/8 12:55 조직 전체 멈춤(커밋 0)으로 10/7 12:10~10/8 10:10 카페 8칸 빈칸 → 관문 통과 묶음을 오늘 남은 칸에 순서대로(같은 날 주제 겹침 피함)"
-  },
-  {
-   "at": "2026-10-09 08:10",
-   "kind": "cafe",
-   "item": "earlyjob1007",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-07 08:43",
-   "note": "firemap-write 10/8 14:26: 10/7 칸이던 earlyjob1007(관문 통과 10/7 08:43, PC 꺼짐으로 미공개) 배정 — 행정예고 의견 10/18까지라 빨리. 같은 대상(조기재취업수당) 카페 0편(dupcheck). 12:10 ubapply1007(실업급여 신청)과 갈래는 같지만 대상 다름. retmid1005는 20:10 wagepeak1007(퇴직금 중간정산)과 겹쳐 10/11 이후로, schdacct1007은 SCHD #201(10/3) 7일 규칙으로 10/10 이후"
-  },
-  {
-   "at": "2026-10-09 10:10",
-   "kind": "cafe",
-   "item": "deplend1009",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-08 16:43",
-   "note": "관문 통과(write 16:43): 제목 D8 제미나이 8·7·8·레드팀 7.5 · 표지 F9 3명 7.0 · readcheck 0·selfcheck 사실 0·crosscheck 사실 7 유지(calc.md 식)·aitell 9.9·editgate auto · review.md 경쟁 세 줄",
-   "published": "2026-10-09 10:36 https://cafe.naver.com/firemap/234 verify OK 2110/2110"
-  },
-  {
-   "at": "2026-10-09 12:10",
-   "kind": "cafe",
-   "item": "retmid1005",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-06 09:37",
-   "note": "firemap-write 10/9 07:19: eitclate1009 미달(표지 G6 6.67·제목 E8 레드팀 5, 기한 06:10 경과)이라 비축 retmid1005로 채움(관문 통과 10/6 09:37, naverpost block 없음). npsage1009는 국민연금 일주일 상한으로 10/14 이후. 퇴직금 겹침: wagepeak1007(10/7 20:10, 임금피크 퇴직금)과 40시간 간격이나 각도·대상이 다름(중간정산 세금 사례) — 순돌이 확인 요망. eitclate1009는 12/1 마감이라 10/10 이후 칸으로 넘김(제목 대안 ①②·표지 7 필요)"
-  },
-  {
-   "at": "2026-10-09 12:20",
-   "kind": "shorts",
-   "item": "rate30_b",
-   "owner": "firemap-shorts",
-   "gates_ok": "2026-10-07 03:26",
-   "note": "firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 10/9 00:20, G-1 쇼츠 재료(g1_receipt·g1_fourways·g1_climb) 우선 | firemap-shorts 10/8 19:28: rate30_b 배정(관문 통과 10/7 03:26, 직전 npsday1007 bars라 C3 해소, 사실 기한 10/22). 비축 쇼츠 0/1이 되므로 다음 회차 첫 일 = 비축 1편 | firemap-shorts 10/9 12:33: 12:32 공개 dpqo14US8tk(cards·음악 없음). B판 compete.md 새로 받음(rate30_b/compete.md, 9/9 이후 5편), 설명 AI 티 21.5→0.0. 비축 쇼츠 0/1",
-   "published": "2026-10-09 12:32 https://youtu.be/dpqo14US8tk"
-  },
-  {
-   "at": "2026-10-09 14:10",
-   "kind": "cafe",
-   "item": "hometown1009",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-09 07:19",
-   "note": "firemap-write 10/9: 관문 통과 — 제목 최종본 '고향사랑기부제 연말정산 20만원 넘으면 공제율이 떨어지는 이유' 제미나이 7·7·레드팀 7 · 표지 H4 7.0(3명) · 원고 readcheck 0·selfcheck 사실 0·aitell 2.0·crosscheck 반영 · 사진 3장(구간별 공제율 표 추가) · editgate auto · review.md 경쟁 세 줄",
-   "published": "2026-10-09 14:51 https://cafe.naver.com/firemap/236 verify OK 1103/1103"
-  },
-  {
-   "at": "2026-10-09 16:10",
-   "kind": "cafe",
-   "item": "isapen1009",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-09 11:13",
-   "note": "firemap-write 10/9 08:40: 원고·제목 L2(제미나이 8·8·레드팀 7)·원고 관문 통과, editgate는 표지 평균 없어 미날인, 표지만 미달(최고 6.5, visual-designer 요청) — 표지 7 넘으면 gates_ok | 가안 firemap-write 10/8 22:36: ISA 계좌(검색 73,500·같은 각도 0편, #149 본문 언급만) 만기 연금 이전 공제 — 원고 전",
-   "published": "2026-10-09 16:49 https://cafe.naver.com/firemap/237 verify OK 1645/1645"
-  },
-  {
-   "at": "2026-10-09 18:10",
-   "kind": "cafe",
-   "item": "evoucher1009",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-09 10:38",
-   "note": "firemap-write 10/9 10:38: 관문 통과 — 제목 \"에너지바우처 동절기, 연탄쿠폰 받으면 겨울 몫이 빠지는 이유\" 제미나이 7·7·레드팀 7 · 표지 V1 7.17 · readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck 반영·레드팀 사실 2 반영·editgate auto · review.md 경쟁 세 줄 | firemap-write 10/9 10:37: 관문 통과 — 제목 \"에너지바우처 동절기, 연탄쿠폰 받으면 겨울 몫이 빠지는 이유\" 제미나이 7·7·레드팀 7 · 표지 V1 7.17 · readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck 반영·레드팀 사실 2 반영·editgate auto · review.md 경쟁 세 줄 | 가안 firemap-write 10/8 22:36: 에너지바우처(검색 55,200·0편) 동절기 신청 — 원고 전"
-  },
-  {
-   "at": "2026-10-09 19:20",
-   "kind": "shorts",
-   "item": "c1_tiles",
-   "owner": "firemap-shorts",
-   "gates_ok": null,
-   "note": "youtube-loop 10/9 00:50: X-YT-FREQ 판정(쇼츠 48h 중앙 107<180·관문 미달 공개 1회 → 미리 정한 기준대로 쇼츠 하루 1편, research/experiments/judge_1009.md) — 이 칸 비움. c1_tiles는 C-1(10/10 19:30) 공개 뒤 하루 1편 칸 후보(첫 프레임 7 넘긴 뒤) | 이전: firemap-meeting 10/8 13:29: 편 미정 — 관문 기한 10/9 07:20 | firemap-shorts 10/8 23:26: 편 = c1_tiles(C-1 사실표 쇼츠 첫 사용, bars vs·음악 있음, 직전 rate30_b cards라 C3 해소). compete 5·check(틀만 남음)·aitell 0.0(.edit.json auto)·review 세 줄 끝. 첫 프레임 1초 고정 조건 v2 5·5→v3b 6.5·6.5(최고, 채택)·v4a/b 5~6 → 7 미달, gates_ok 안 적음. 다음 1안(기한 07:20): 빈 아래 절반에 '평균이면 둘 다 100년+' 반전 줄, 안 되면 v3b 1초 미통과 공개·48시간 판정 · 근거 cardshorts/c1_tiles/review.md",
-   "skip": true
-  },
-  {
-   "at": "2026-10-09 20:10",
-   "kind": "cafe",
-   "item": "seniorjob1009",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-09 12:29",
-   "item_pkg": "work/research/seniorjob1009/pkg",
-   "note": "firemap-write 12:2912:27: 관문 통과 — 제목 T15 '노인일자리 생계급여 받는 분이 뽑히는 곳과 못 뽑히는 곳' 제미나이 7·7.5·레드팀 7(T10은 틀 v2 물음 규칙으로 교체) · 표지 N9 8·8·7=7.67 · readcheck 0·selfcheck 사실 0·aitell 0.0·레드팀 사실 지적 2(출처 귀속·일반화) 반영·editgate auto"
-  },
-  {
-   "at": "2026-10-09 22:10",
-   "kind": "cafe",
-   "item": "brokerfee1009",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-09 12:40",
-   "note": "firemap-write 10/9 12:40: 관문 통과 — 제목 K3 '부동산 중개수수료 집 줄여 이사하면 두 번 합쳐 얼마' 제미나이 7·8·레드팀 7 · 표지 B4 8·8·8 · readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck 사실 4 중 반영 3·레드팀 표현 4+흐름 2 반영(숫자·법 오류 0)·editgate auto · 부동산 축(10/9 다른 칸은 세금·복지)",
-   "item_pkg": "work/research/brokerfee1009/pkg"
-  },
-  {
-   "at": "2026-10-10 08:10",
-   "kind": "cafe",
-   "item": "acqtax1010",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-09 22:55",
-   "note": "firemap-write 10-09 22:55: 관문 통과 — 제목 K1 '취득세 일시적 2주택 처분기한, 양도세랑 기준일이 다른 이유' 제미나이 7·8·레드팀 7=7.33 · 표지 A4 8·8·7=7.67 · readcheck 0·selfcheck 사실 0·aitell 6.2·crosscheck 2회 반영·레드팀 2회(숫자·법 오류 0, 표현 4+1 반영)·editgate auto · compare.md·review.md 세 줄 · 부동산 축(지방세법 시행령 9/30 개정, 1위 블로그는 '3년'으로 잘못 씀) | 이전: firemap-meeting 10/09 21:33: 관문 기한 02:10 — write 22:10 회차·운영실장 23:05가 원고·관문. 못 넘으면 칸 note에 사유(비축 없음: schdacct1007은 14:30부터)",
-   "item_pkg": "work/research/acqtax1010/pkg"
-  },
-  {
-   "at": "2026-10-10 10:10",
-   "kind": "cafe",
-   "item": "sevbasis1010",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-09 22:51",
-   "note": "firemap-write helper 2026-10-09 22:51: 관문 통과 — 제목 L4 '퇴직금 지급기준, 364일 다니고 그만두면 받는 돈' 제미나이 7·8·레드팀 7=7.33 · 표지 C4 8·8·8=8.0 · readcheck 0·selfcheck 사실 0·aitell 1.9·frame 통과·crosscheck 사실 4 유지(링크·면책·AI 고지)·레드팀 사실 2·표현 8 반영(2차 오류 없음)·editgate auto · /calc/severance utm sevbasis1010 · 별도 과제: severancePay.js 365일 판정 윤년 문제",
-   "item_pkg": "work/research/sevbasis1010/pkg"
-  },
-  {
-   "at": "2026-10-10 12:10",
-   "kind": "cafe",
-   "item": "childleave1010",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-10 03:30",
-   "note": "firemap-write 10/09 23:1x: eitclate1009는 표지 평균 6.67(심사 상한 6.5 반복, K·G 25장 미달)로 이 칸에서 뺌(hold 유지, 12/1 마감이라 표지 7 넘으면 이후 칸). 새 편 육아휴직급여(kwvol 79,500·dupcheck 새것·고용보험법 제70조·시행령 제95조 원문 확보: 1~3개월 통상임금 상한 250만·4~6개월 200만·7개월~80% 상한 160만·하한 70만). 원고·관문 기한 06:10, 담당 write 00:10~06:10 회차. 비축 npsage1009는 10/14 08:30 전 불가, schdacct1007은 14:30 전 불가라 쓰지 않음",
-   "item_pkg": "work/research/childleave1010/pkg",
-   "gate_note": "2026-10-10 03:30 firemap-write 관문 통과: 제목 평균 7.5(제미나이 8·독립 레드팀 7·작성자 7.5) · 표지 F 평균 7.25(제미나이 7.25·독립 레드팀 7·작성자 7.5, 보정 gongjae1002 7.0~7.5) · editgate auto 일치 · readcheck 0·selfcheck 사실 0·aitell 6.3 · compare/review 세 줄 · slot.txt 2026-10-10 12 · naverpost pending block은 코너 시각 전뿐"
-  },
-  {
-   "at": "2026-10-10 19:20",
-   "kind": "shorts",
-   "item": "m1s_need100",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-10 12:41",
-   "published": "예약 2026-10-10T19:20:00+09:00 https://youtu.be/fF_5yIxBnC8 (private→자동 공개, videos.list 확인 private 2026-10-10T10:20:00Z)",
-   "item_pkg": "work/research/cardshorts/m1s_need100",
-   "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_need100/review.md · 카드 쇼츠 대체(사장님 10/10 지시) | 이전 칸 12:20 g1_climb(미달, 접음) → firemap-shorts 10/9 15:2x: 편 = g1_climb(G-1 재료 '고점에 산 금 본전까지 34%→51%', bars vs·음악 있음, 직전 rate30_b cards라 C3 해소). compete 5·check 문제 없음·aitell 0.0(.edit.json auto)·review 세 줄 끝. 첫 프레임 1초 고정 조건 v4 5·5, v5 5·5(보정 gongjae1002 7.0~7.5 유효) → 7 미달, gates_ok 안 적음. 공개 전날(10/9 밤) G-1 calc 재실행 뒤 숫자 재확인 필요. 다음 1안: +51% 전면 한 숫자(hero)나 금 그림 요소 첫 프레임. 못 넘으면 npsday1007 선례(1초 미통과 공개·48시간 판정) 또는 비축 대체.  10/10 07:13 firemap-shorts: v9 hero 한 숫자 전면판(금 -34%, 왜 +51%?) 고정 조건 5·5(보정 7.5·7.0 유효) 미달 — v4~v9 5계열 모두 5, gates_ok 안 적음·미달 공개 금지. 이 칸은 g1_climb 접고 다른 편(카드 틀 말고 그림 요소 필요)이 12:20 전 관문 통과해야 하며 못 넘으면 칸 skip+사유. 근거 cardshorts/g1_climb/review.md"
-  },
-  {
-   "at": "2026-10-10 14:10",
-   "kind": "cafe",
-   "item": "deprise1010",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-10 08:44",
-   "note": "firemap-write 보조 2026-10-10 08:44: 관문 통과 — 제목 K5 '정기예금 금리 1억 맡기면 세후 이자 작년보다 얼마 늘었나' 제미나이 8·7.5·레드팀 7=7.5 · 표지 C1 8·8·7=7.67 · readcheck 0·selfcheck 사실 0·aitell 2.0·frame 통과·crosscheck 2회(사실 반영 2·유지 3=표 이미지·ECOS 인하 확인)·레드팀 2회(1차 숫자 오류 0·중대 2(세후 이자 반올림·인과 단정)+사소 7 반영, 2차 새 오류 1(4% 초과일) 고침)·editgate 도장 · 본문 2,773자·사진 3장 · 금리·예금 축(ECOS 신규 1년 2.51→3.39%·산금채 1년 2.49→3.64%·10/22 금통위), 금감원 finlife는 10/10 정전 점검 중이라 10/06 값 사용 | 이전: firemap-meeting 10/09 21:33: 관문 기한 08:10(정기 회차 시각) — 본문 2,000자·compare.md 관문",
-   "item_pkg": "work/research/deprise1010/pkg"
-  },
-  {
-   "at": "2026-10-10 16:10",
-   "kind": "cafe",
-   "item": "schdacct1007",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-10 11:12",
-   "note": "firemap-meeting 10/09 21:33: 비축 사용(10/10 14:30부터 공개 가능 — 14:10 칸은 jitter로 14:30 전에 나갈 수 있어 16:10에 둠). 공개 전 SCHD 시세 재조회 | firemap-write 2026-10-10 11:12: 관문 통과(비축 사용) — 시세 10/9 종가 33.04달러로 재조회(6,290→6,270만원), readcheck 0·selfcheck 사실 0·aitell 1.1·editgate auto 재날인, SCHD 14:30부터 공개 가능, slot.txt 2026-10-10 16"
-  },
-  {
-   "at": "2026-10-10 18:10",
-   "kind": "cafe",
-   "item": "ubcalc1010",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-10 07:34",
-   "note": "이전: firemap-meeting 10/09 21:33: X-CAFE-CALC-1 B칸(10/10 시작): 퇴직금·실업급여·연봉 실수령 계산에 실제로 이어지는 주제, 본문에 맞는 /calc 링크+utm, 같은 계산기 연속 금지 · 관문 기한 12:10 · firemap-write 보조 2026-10-10 07:34: ubcalc1010 실업급여 피보험기간 전 회사 합산(고용보험법 제50조), 계산기 링크 utm_campaign=ubcalc1010, 제목 K8 7.33·표지 7.67, 본문 약 2,700자·사진 3장, crosscheck·레드팀 2회 완료, editgate 도장",
-   "item_pkg": "work/research/ubcalc1010/pkg"
-  },
-  {
-   "at": "2026-10-10 19:30",
-   "kind": "long",
-   "item": "C-1",
-   "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "firemap-video-producer 10/9 16:39: C-1 목소리 관문 미달로 skip — 10/9 16:01 창 TTS 10/10 다 씀(시험1·본8·lfretake1), 편 전체 5.66·앞뒤 +6.4% 통과, 퍼짐 IQR 0.19>0.16(5~7장 요청이 159~171Hz로 뜸, 앞은 139~153) · 기준 그대로·lfpitch는 순돌이 결정 전 금지 · 대체 G-1 불가(10/8 녹음 실패, 다시 녹음 전) · 녹음분 audio/c-1_1009 보관, C-1은 다음 창 처음부터 · 근거 ep/C-1/check/voice_check_1009.txt · 이전 note: firemap-meeting 10/8 13:29: 순돌이 10/7 지시 순서 M-1→C-1→G-1·R-1. 관문 기한 10/9 19:30(대본 심사·녹음 10/9 16:01 창). C-1이 기한 못 넘으면 대체 G-1(10/8 16:01 녹음분)로 이 칸을 채운다 — 칸 비우기 금지",
-   "skip": true
-  },
-  {
-   "at": "2026-10-10 20:10",
-   "kind": "cafe",
-   "item": "jongbuse1010",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-10 10:48",
-   "note": "firemap-write 2026-10-10 10:48: 관문 통과 — 제목 J11 '종부세 고령자 공제, 올해 일흔이어도 30%인 경우' 제미나이 8·8·레드팀 7.5=7.83 · 표지 A1 8·8·8=8.0 · readcheck 0·selfcheck 사실 0·aitell 2.7·crosscheck 사실 4(반영 3·유지 1)·레드팀 3회 사실 1·오해 11 반영 · editgate auto · 법령 원문 4개 법 · compare.md·review.md · 이전: firemap-meeting 10/09 21:33: 관문 기한 14:10"
-  },
-  {
-   "at": "2026-10-10 22:10",
-   "kind": "cafe",
-   "item": "odivfx1010",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-10 10:49",
-   "note": "firemap-write 보조 2026-10-10 10:49: 관문 통과 — 제목 K3 '리얼티인컴 배당금 원화로 바꿔 보니 석 달 새 11.35% 감소' 제미나이 8·8·레드팀 7.5=7.83 · 표지 A3 8·8·8=8.0 · readcheck 0·selfcheck 사실 0·aitell 0.0·frame 통과·crosscheck 사실 반영 3·유지 1·말투 12 반영·레드팀 사실 1 반영(조세협약 15% 표현)·editgate auto · 본문 2,567자·사진 3장 · 배당현금흐름+환율 축(10-K·10-Q·보도자료·ECOS 매매기준율, 10월분은 10/8 환율 가정) | 이전: firemap-meeting 10/09 21:33: 관문 기한 16:10",
-   "item_pkg": "work/research/odivfx1010/pkg"
-  },
-  {
-   "at": "2026-10-11 08:10",
-   "kind": "cafe",
-   "item": "inhded1011",
-   "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-write 2026-10-10 12:43: inhded1011(상속세 면제한도 — 1차 2,037만·2차 1억3,240만5천·동거주택 533만5천원, 검색 27,390·dupcheck 새것) 원고·readcheck 0·selfcheck 사실 0·aitell 3.6·crosscheck 반영·제목(쉼표판) 7.5 통과 / 남은 관문: 표지(최고 6.83)·쉼표 없는 제목(10/11 쉼표 없는 제목 하루 2편 규칙)·editgate stamp — 기한 02:10, 못 넘으면 eitclate1009·비축으로",
-   "ep": "work/research/inhded1011/pkg"
-  },
-  {
-   "at": "2026-10-11 10:10",
-   "kind": "cafe",
-   "item": "netpay1011",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-10 14:42",
-   "note": "firemap-write 10/09 23:1x: X-CAFE-CALC-1 B칸 3번째(퇴직금 10/10 10:10 · 실업급여 10/10 18:10 다음) — 연봉 실수령 계산에 이어지는 주제, 본문에 /calc 링크+utm, 같은 계산기 연속 금지 · 관문 기한 10/11 04:10 | firemap-write 2026-10-10 14:42: 관문 통과 — netpay1011 월급 실수령액 2026 달별 변화(/calc/salary utm) · 제목 T6 '월급 실수령액 연초에 줄고 3월엔 자녀 있는 집만 늘어난 이유' 제미나이 7·9·레드팀 7.5=7.83 · 표지 P5 8·8·7=7.67 · readcheck 0·selfcheck 사실 0·aitell 0.9·crosscheck 사실 반영 3·유지 2·레드팀 2회 사실 오류 0(오해 6 반영)·editgate auto · compare.md·review.md 세 줄"
-  },
-  {
-   "at": "2026-10-11 19:20",
-   "kind": "shorts",
-   "item": "m1s_minmonth",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-10 12:41",
-   "published": "예약 2026-10-11T19:20:00+09:00 https://youtu.be/aYCWFSzynJI (private→자동 공개, videos.list 확인 private 2026-10-11T10:20:00Z)",
-   "item_pkg": "work/research/cardshorts/m1s_minmonth",
-   "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_minmonth/review.md · 카드 쇼츠 대체(사장님 10/10 지시) | 이전 12:20 TBD → firemap-meeting 10/09 21:33: 쇼츠 하루 1칸(X-YT-FREQ) · 관문 기한 10/11 00:20 · 1초 시험 7 넘은 편만, 못 넘으면 skip+사유(미달 공개 금지 — 순돌이 10/9 지시)"
-  },
-  {
-   "at": "2026-10-11 19:30",
-   "kind": "long",
-   "item": "W-1",
-   "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "firemap-video-producer 10/10 16:09: skip — 16:01 창 W-1 8요청 뒤 429(한도 10 = C-1 2 + W-1 8, W-1 8요청 중 3요청이 음높이 벗어나 다시 받기: 0장 128·125Hz, 3장 173Hz) · 녹음 38/55줄(7장 중 5묶음, 5·6장·7장 2묶음 못 받음) · 받은 38줄도 퍼짐 IQR 0.19>0.16(앞뒤 −6.6% 통과) · 남은 17줄(31%)은 다음 날 녹음이면 규칙 4(다시 받기 20% 이하만 이틀 허용)로 막힘 → 관문 기한 10/10 19:30 못 넘음, 지시대로 10/11 칸 skip('이번 주' 편이라 미루지 않음). 녹음분 audio/w-1 보관(_rej0 = 첫 시험 128Hz) | firemap-meeting 10/09 21:33: W-1 '이번 주 뉴스가 내 돈에 얼마' 매주 토 19:30 고정 칸 1화 · 녹음 10/10 16:01 창(7요청, --gate 0.10 여유 3) · 그 전 06시 뒤 youtube-loop가 {F} 3줄 금요일 종가로 갱신→editor 재서명 · 관문 기한 10/10 19:30(같은 날 녹음 뒤 3.5시간) · 못 넘으면 skip, 다음 창으로 미루지 않고 '이번 주' 편이라 버림",
-   "skip": true
-  },
-  {
-   "at": "2026-10-12 19:30",
-   "kind": "long",
-   "item": "C-1",
-   "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "firemap-video-producer 10/10 16:05: 16:01 창 2요청(새 줄 1·lfretake 15) 뒤 IQR 0.18>0.16 막힘(앞뒤 +3.6%·5.61 통과) — 관문 기한 10/11 19:30 전 녹음 창은 10/11 16:01(G-1 배정)뿐, 순돌이 판단 대기 | 순돌이 10/10 12:4x: C-1 v5(예고·결론부터·궁금증 챕터·가상 인물 장면, 6e286c3) — 10/10 16:01 창에서 새 줄 1 + lfretake --n 15(2요청, W-1 7요청보다 먼저) → check(날짜 둘은 다시 받기 20% 이하면 허용, 앞뒤 차·IQR 관문 그대로) → render → 10/12 19:30. 관문 기한 10/11 19:30"
-  },
-  {
-   "at": "2026-10-12 19:20",
-   "kind": "shorts",
-   "item": "m1s_nhis70",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-10 12:41",
-   "published": "예약 2026-10-12T19:20:00+09:00 https://youtu.be/xmmkdtLhmXs (private→자동 공개, videos.list 확인 private 2026-10-12T10:20:00Z)",
-   "item_pkg": "work/research/cardshorts/m1s_nhis70",
-   "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_nhis70/review.md · 카드 쇼츠 대체(사장님 10/10 지시)"
-  },
-  {
-   "at": "2026-10-13 19:20",
-   "kind": "shorts",
-   "item": "m1s_total1y",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-10 12:41",
-   "published": "예약 2026-10-13T19:20:00+09:00 https://youtu.be/gvOdoH5-HbM (private→자동 공개, videos.list 확인 private 2026-10-13T10:20:00Z)",
-   "item_pkg": "work/research/cardshorts/m1s_total1y",
-   "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_total1y/review.md · 카드 쇼츠 대체(사장님 10/10 지시)"
-  },
-  {
-   "at": "2026-10-13 19:30",
-   "kind": "long",
-   "item": "G-1",
-   "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/09 21:4x: 레드팀 반영 — 녹음 다음 날 공개는 관문 기한까지 3.5시간뿐(M-1 녹음~업로드 3시간 38분 실측), G-1은 녹음 10/11 16:01 → 공개 10/13 19:30(관문 기한 10/12 19:30, 여유 27.5시간) | firemap-meeting 10/09 21:33: G-1 녹음 10/11 16:01 창(W-1이 10/10 창을 씀) · 관문 기한 10/11 19:30 · 녹음 뒤 motion BuyDateOpen·WaterfallPieces 교체·편집 재서명 | firemap-meeting 10/8 13:29: G-1은 목소리 전 준비 끝·썸네일 g1f·카피 통과. 녹음 = 10/8 16:01 TTS 창(C-1 대본이 아직 없어 그 창은 G-1). 10/10 칸에 C-1이 들어가면 G-1은 여기, C-1 미달이면 G-1이 10/10로 당겨지고 이 칸은 C-1. 공개 전날 calc 재실행·카피 숫자 재확인. 관문 기한 10/11 19:30"
-  },
-  {
-   "at": "2026-10-14 19:30",
-   "kind": "long",
-   "item": "R-1",
-   "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "순돌이 10/10 12:4x: C-1은 10/12로 당김(16:01 창에서 lfretake 다시 받기 2요청) → 이 칸은 R-1 후보(회의가 확정) | firemap-meeting 10/09 21:33: 녹음 10/12 16:01 창(처음부터, --gate) · 관문 기한 10/13 19:30(녹음 다음 날까지 여유) · 10/12~18주 G-1·C-1 = 2편 · 레드팀 반영으로 10/13→10/14"
-  }
- ],
- "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외"
+  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외"
 }

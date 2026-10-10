@@ -913,10 +913,11 @@
   {
    "at": "2026-10-11 22:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "renew1011",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1)"
+   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1) | firemap-write 2026-10-11 03:14: 편 확정 renew1011 계약갱신청구권(갱신 증액 5% 한도·실거주 거절 뒤 제3자 임대 손해배상 계산, 부동산·형식2, demand 12,060·dupcheck 새것) — 원고·관문 전, gates_ok 아직",
+   "ep": "work/research/renew1011/pkg"
   },
   {
    "at": "2026-10-12 08:10",

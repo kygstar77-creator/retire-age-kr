@@ -849,18 +849,20 @@
   {
    "at": "2026-10-11 12:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "mortded1011",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1)"
+   "gates_ok": "2026-10-10 22:50",
+   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1) | firemap-write 2026-10-10 22:50: 관문 통과 — mortded1011 주담대 이자 소득공제(12월 31일 2주택이면 그해 공제 0원·2026 세제개편안 실거주, 세금연금·형식2, 장기주택저당 dupcheck 새것) · 제목 T8 제미나이 9.2·8.5·레드팀 7=8.23 · 표지 N1 8·8·8=8.0 · readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck 사실 대조만(말투 300초 초과→selfcheck)·레드팀 2회(1차 틀림 3 반영·2차 0)·editgate auto · compare.md·review.md 세 줄",
+   "ep": "work/research/mortded1011/pkg"
   },
   {
    "at": "2026-10-11 14:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "cardded1011",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1)"
+   "gates_ok": "2026-10-10 22:48",
+   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1) / firemap-write 보조 2026-10-10 22:48: cardded1011 신용카드 소득공제(세금연금·형식2) 관문 통과 — 제목 8.0(제미나이 8.5·8.5·레드팀 7) · 표지 7.67(8·8·7) · readcheck 0 · selfcheck 사실 0 · aitell 3.3 · crosscheck 사실 1 유지·말투 Gemini 시간초과→selfcheck · editgate 날인 · pending '코너 시각 전'",
+   "ep": "work/research/cardded1011/pkg"
   },
   {
    "at": "2026-10-11 16:10",

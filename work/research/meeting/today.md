@@ -23,6 +23,7 @@
   알림: firemap-video-producer 14:17 — 14:05 PD 회차가 16:01 창 녹음을 맡아 대기 중. 15:05에 PD를 또 배차하면 녹음은 하지 말 것(같은 창 중복 전송)
   착수: firemap-dispatcher 15:10 — 14:05 PD 회차(14:16 시작)가 14:19에 '성공'으로 끝남·대기 프로세스 없음(실측) → 16:01 창 녹음자 없음. PD를 W-1 녹음으로 투입(한 창 한 편)
   착수: firemap-video-producer 15:10 (운영실장)
+  완료: firemap-dispatcher 16:11 — 15:10 PD 투입(16:01 창 W-1 녹음). 결과 미달: 38/55줄만 받음(음높이 재요청 3·429), IQR 0.19>0.16 → 10/11 19:30 칸 skip(ad63285) · 같은 일 10/11 15:05 G-1
   나눔: firemap-video-producer 16:01 (14:05 회차, 끝나지 않고 16:01까지 대기했음) — 15:10 회차가 W-1을 맡았으니 이 회차는 순돌이 ① C-1 2요청(make 1·lfretake 1)만, W-1은 손대지 않음 · 오늘 한도 10 = C-1 2 + W-1 최대 8
 - [지시] **firemap-video-producer** (기한 10/10 19:30 = W-1 관문) 의도: 주간 고정 코너 첫 편을 제 시각(10/11 토 19:30)에 · 완료 기준: 16:01 창 W-1 녹음(lfvoice --gate 0.10) → 렌더 → gate → gates_ok · 기한을 넘기면 같은 날 계속 고치되 **공개는 관문 전부 통과일 때만**(못 넘으면 10/11 칸 skip, '이번 주' 편이라 미루지 않음) · 금지: lfpitch 사본으로 소리 심사 통과(순돌이 결정 전), 기준 낮추기
   착수: firemap-video-producer 22:17 — 녹음 전 준비(meta.json·scorecard·쇼츠 재료), 녹음은 10/10 16:01 runbook_1010
@@ -792,3 +793,4 @@
 - [배차] firemap-shorts 비축 쇼츠 0/1 — artist 14:48 제안 DA 문턱 '1,999만원/2,001만원' 피부양자 대조 1편(AL 문턱 틀 46h 1,457회 성공) 사실표 원문부터·관문 통과 시 reserve.shorts (운영실장 15:10)
   착수: firemap-shorts 15:10 (운영실장)
   완료(미달): firemap-shorts 15:30 — DA 문턱 피부양자(da_thresh): 법제처 원문(시행규칙 별표 1의2 소득요건 '연간 2천만원 이하'·시행령 제41조·법 제6조③) facts.txt·compete 5(경쟁 전부 '탈락 N가지' 목록, 경계 두 칸 0/5, 조회/구독 x75.9)·check 문제 없음·32초 아닌 6초 vs 카드 렌더·전체 영상 점검 통과(빈 곳 65%→38%, cardshort.py vs_point_size 추가). 1초 시험(첫 프레임 168px) v1 5·5·v2 5·5 = 5.0 미달 → gates_ok·reserve.shorts 안 넣음, **비축 쇼츠 0/1 그대로**. 안 돌린 것: aitell·편집·레드팀(미달이라 건너뜀). 키워드 수요 낮음(kwvol 피부양자소득 30) (cardshorts/da_thresh/review.md)
+- 막힘(운영실장 16:11): ① W-1 16:01 창 38/55줄·IQR 0.19 미달 → 10/11 19:30 롱폼 칸 skip(PD ad63285) · 순돌이 판단: Chirp 3 HD 결재, W-1 다음 주 2화로 넘기고 38줄 버릴지 → firemap-video-producer ② 비축 쇼츠 0/1 — da_thresh(피부양자 2천만원 경계) 사실표·렌더 끝, 1초 시험 5·5 미달(4ea0281) · 쇼츠 1초 천장 문제(copywriter 07:52) 그대로 → firemap-shorts·순돌이

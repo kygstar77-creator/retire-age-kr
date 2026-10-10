@@ -915,8 +915,8 @@
    "kind": "cafe",
    "item": "renew1011",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1) | firemap-write 2026-10-11 03:14: 편 확정 renew1011 계약갱신청구권(갱신 증액 5% 한도·실거주 거절 뒤 제3자 임대 손해배상 계산, 부동산·형식2, demand 12,060·dupcheck 새것) — 원고·관문 전, gates_ok 아직",
+   "gates_ok": "2026-10-11 08:34",
+   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1) | firemap-write 2026-10-11 03:14: 편 확정 renew1011 계약갱신청구권(갱신 증액 5% 한도·실거주 거절 뒤 제3자 임대 손해배상 계산, 부동산·형식2, demand 12,060·dupcheck 새것) — 원고·관문 전, gates_ok 아직 | firemap-write 2026-10-11 08:34: 관문 통과 — 제목 R10 7.67(제미나이 8·8·레드팀 7)·표지 K6 7.33·compare.md 경쟁 5편·readcheck 0·selfcheck 사실 0·crosscheck 사실 2 반영·레드팀 사실 0·editgate auto",
    "ep": "work/research/renew1011/pkg"
   },
   {
@@ -924,8 +924,8 @@
    "kind": "cafe",
    "item": "didim1012",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1) | firemap-write 2026-10-11 07:20: 편 확정 didim1012(디딤돌 대출 소득 칸별 월 상환액, kwvol 60,800·dupcheck 새것·공사 금리안내 2026-10-01) 원고·readcheck 0·selfcheck 사실 0·aitell 0.0·frame 통과·제목 평균 7.5(제미나이 7·7.5·레드팀 8)·compare.md·레드팀 사실 오류 1 반영 / 남은 관문: 표지 제미나이·제3 심사(레드팀 7 하나뿐)·crosscheck·editgate stamp — 기한 02:10 지남, 08:10 정기 근무가 이어서"
+   "gates_ok": "2026-10-11 08:24",
+   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1) | firemap-write 2026-10-11 07:20: 편 확정 didim1012(디딤돌 대출 소득 칸별 월 상환액, kwvol 60,800·dupcheck 새것·공사 금리안내 2026-10-01) 원고·readcheck 0·selfcheck 사실 0·aitell 0.0·frame 통과·제목 평균 7.5(제미나이 7·7.5·레드팀 8)·compare.md·레드팀 사실 오류 1 반영 / 남은 관문: 표지 제미나이·제3 심사(레드팀 7 하나뿐)·crosscheck·editgate stamp — 기한 02:10 지남, 08:10 정기 근무가 이어서 | firemap-write 2026-10-11 08:24: 남은 관문 통과 — 표지 D1 7.67(제미나이 8·8·레드팀 7)·crosscheck 사실 4 중 반영 1(자녀 우대 1명당 5년)·readcheck 0·selfcheck 사실 0·aitell 0.0·editgate auto"
   },
   {
    "at": "2026-10-12 19:20",

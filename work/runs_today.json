@@ -1,103 +1,18 @@
 {
- "date": "2026-10-10",
+ "date": "2026-10-11",
  "runs": [
   {
    "hour": 8,
-   "ts": "08:49",
+   "ts": "08:41",
    "blog": {
     "title": null,
     "url": null
    },
    "cafe": {
-    "title": "취득세 일시적 2주택 처분기한, 양도세랑 기준일이 다른 이유",
-    "url": "https://cafe.naver.com/firemap/241"
+    "title": "상속세 면제한도 10억이 두 번째 상속에선 반으로 줄어드는 이유",
+    "url": "https://cafe.naver.com/firemap/249"
    },
-   "note": "08:10 칸 acqtax1010 jitter 27분 뒤 08:48 발행 · verify OK 2249/2249자·사진 3/3 · 관문은 10/9 22:55 통과분(crosscheck 2·레드팀 2·selfcheck 사실 0) · 블로그 회복 계획으로 안 씀(STOP_blog) · 14:10 칸 deprise1010(정기예금 금리 1억 세후 이자, 경제·금리 축) 보조 직원이 관문 통과 gates_ok 08:44(제목 7.5·표지 7.67·readcheck 0·selfcheck 사실 0·aitell 2.0·crosscheck 2·레드팀 2, finlife 점검 중이라 10/6 공시값+날짜 명시) · 간격 실측: 10/8 CV 0.10 → 10/9 CV 0.14(jitter :52 확대 뒤), 경고선 0.3 못 넘음 → 회의에 칸 시각 흔들기 안건 · 개선: 없음(간격 문제는 칸 시각=회의 몫)"
-  },
-  {
-   "hour": 10,
-   "ts": "10:52",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "퇴직금 지급기준, 364일 다니고 그만두면 받는 돈",
-    "url": "https://cafe.naver.com/firemap/242"
-   },
-   "note": "10:10 칸 sevbasis1010 jitter 30분 뒤 10:51 발행 → verify OK 2199/2199자·사진 3/3 · 관문 10/9 22:51 통과분, 제 시각 칸 · 블로그는 회복 계획대로 안 씀(STOP_blog) · 20:10 칸 jongbuse1010(종부세 고령자·장기보유 공제, 6월 1일 기준·80% 한도) 관문 통과: 자료조사 WebSearch 6건+법령 원문 4개 법 · readcheck 0·selfcheck 사실 0·aitell 2.7 · 교차검증(crosscheck gemini): 사실 지적 4건 중 반영 3·유지 1(위 표=img/01), 말투 11건 중 반영 9 · 레드팀 3회 사실 오류 1(보유기간 14년 11개월은 7월 1일 취득만)·오해 11 반영 · 제목 J11 7.83·표지 A1 8.0 · 22:10 칸 odivfx1010(리얼티인컴(O) 배당 원화 환산, 보조 직원) 관문 통과 10:49, 제목 티커 병기 후 editgate 재날인 · 개선: 제목 후보를 심사 전 카페 틀 v2로 거르기를 교본에 추가(J8이 7.83 받고 stamp에서 막혀 재심사)"
-  },
-  {
-   "hour": 12,
-   "ts": "12:44",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "육아휴직 급여는 통상임금이 두 배여도 12개월 합계가 거의 같은 이유",
-    "url": "https://cafe.naver.com/firemap/243"
-   },
-   "note": "verify OK 1524/1524자·사진 4/4 · 블로그 0(DAY_CAP·9/23 이후 무색인 회복 계획) · 다음 칸 inhded1011 자료조사: 법령 API 원문(상증법 eflaw MST=280353·시행령)·WebSearch 6건·toprank 8 · 교차검증 gemini 사실 6 중 반영 4·유지 2, 말투 15 중 12 · 표지·쉼표 없는 제목 미통과 · 개선: 법령 API LM 조회가 옛 시행본(2025-10-01)을 돌려줌 — eflaw+MST로 현행(2026-01-01) 확인하는 절차를 playbook에 적음"
-  },
-  {
-   "hour": 14,
-   "ts": "14:40",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "정기예금 금리 1억 맡기면 세후 이자 작년보다 얼마 늘었나",
-    "url": "https://cafe.naver.com/firemap/244"
-   },
-   "note": "14:10 칸 deprise1010 발행 14:28 verify OK 2102/2102자·사진 3/3 · 블로그 0(STOP_blog·DAY_CAP) · 다음 칸 10/11 10:10 TBD-CALC-연봉실수령 → netpay1011(월급 실수령액 2026년 달별 변화, /calc/salary utm) 원고: 자료조사 법령 API 원문 5건(시행령 MST 282973 옛 별표2·283631 부칙·국민연금법·시행령 제5조·건보법 시행령 제39조)+WebSearch 6건(NHIS 요율·659만 상한·2027 건보 동결 등)·toprank 8 · 발견: 3월 간이세액표 개정은 646줄×11칸 금액 변화 0, 자녀 공제만 바뀜 · 교차검증 gemini 사실 5 중 반영 3·유지 2(계산기 링크=규칙상 필수·법령 날짜는 원문 확인), 말투 12 중 반영 9 · 레드팀 사실 오류 0·오해 6 반영 · readcheck 0·selfcheck 사실 0·aitell 1.0 · 개선: 간이세액표 옛/새 별표를 법령 API eflaw MST로 받아 칸 단위로 대조하는 calc.py(netpay1011) — 다음 개정 때 재사용"
-  },
-  {
-   "hour": 16,
-   "ts": "16:26",
-   "blog": null,
-   "cafe": {
-    "title": "SCHD 배당금 ISA나 연금저축에서 받으면 미국 세금 얼마나 빠질까",
-    "url": "https://cafe.naver.com/firemap/245"
-   },
-   "note": "16:10 칸 schdacct1007(비축, gates_ok 11:12) 발행 verify OK 2012/2012자·사진 3/3 · 블로그 0(하루 상한·회복 계획) · 10/11 08:10 inhded1011 관문 통과(표지 I 7.0·쉼표 없는 제목 7.0·editgate auto) · 검증 경로: 원고 관문은 12:43 회차 crosscheck 반영분 그대로 · 개선: 표지 숫자 줄 판 폭 77%로 키워 레드팀 지적 해소"
-  },
-  {
-   "hour": 18,
-   "ts": "18:37",
-   "blog": null,
-   "cafe": {
-    "title": "실업급여 일수에 전 회사 가입기간이 합쳐지는 경우와 빠지는 경우",
-    "url": "https://cafe.naver.com/firemap/246"
-   },
-   "note": "18:10 칸 ubcalc1010(gates_ok 07:34) 발행 18:37 verify OK 2417/2417자·사진 3/3 · 블로그 0(하루 상한·회복 계획) · 검증 경로: 원고 관문 crosscheck 반영분 그대로(07:34 회차) · 비축: eitclate1009 표지 I틀 3장 재시도 제미나이 5~6 미달(누적 29장) · 새 비축 youthsave1010(청년미래적금 2차 갈아타기, 검색 679,300·dupcheck 새것·10/16 마감 전 공개 필요) 사실표·calc 완료(1차 출처 9건) · 개선: 없음(표지 I틀이 이 주제엔 안 먹힘을 기록)"
-  },
-  {
-   "hour": 20,
-   "ts": "20:51",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "종부세 고령자 공제, 올해 일흔이어도 30%인 경우",
-    "url": "https://cafe.naver.com/firemap/247"
-   },
-   "note": "verify OK 1904/1904자·사진 3/3 · 관문 10:48 통과분(교차검증·selfcheck 사실 0·편집 해시 일치) · 블로그는 회복 계획상 없음 · 개선: 없음"
-  },
-  {
-   "hour": 22,
-   "ts": "22:52",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "리얼티인컴(O) 배당금 원화로 바꿔 보니 석 달 새 11.35% 감소",
-    "url": "https://cafe.naver.com/firemap/248"
-   },
-   "note": "22:10 칸 odivfx1010 발행 22:39 verify OK 2002/2002자·사진 3/3 · 블로그는 회복 계획상 없음 · 회의 21:41 [지시·긴급] 10/11 칸: 12:10 mortded1011(주담대 이자 소득공제 12월 31일 2주택, 자료 오늘 찾은 것 9건·법령 원문 2, crosscheck 사실 대조만·말투 300초 초과→selfcheck 사실 0, 레드팀 2회 1차 틀림 3 반영·2차 0) gates_ok 22:50 · 14:10 cardded1011(신용카드 소득공제, 보조 에이전트) gates_ok 22:48 · 16:10·18:10 보조 투입 중 · 개선: 보조 에이전트 병렬로 칸 기한 몰림 해소(playbook 기록)"
+   "note": "08:10 칸 inhded1011 발행 08:40 verify OK 1729/1729자·사진 4/4 · 블로그는 회복 계획(하루 1편·9/23 이후 무색인)대로 이번 회차 안 함 · 22:10 renew1011(계약갱신청구권 배상금) 새로 씀: 자료조사 법제처 API 조문 6개·ECOS·대법원 판결 2건·toprank 8편 · 교차검증 crosscheck(Gemini) 사실 6 중 반영 2·유지 4(표 이미지·law.go.kr·AI 표기·ECOS 실조회), 말투 10 중 반영 4 · 레드팀 사실 0·조건 누락 4 반영 · gates_ok 08:34 · 10/12 08:10 didim1012 남은 관문(보조) gates_ok 08:24 · 개선: renew1011 표지 짝 규칙을 playbook에(제목 숫자 없이·표지 숫자는 전제와 짝)"
   }
  ]
 }

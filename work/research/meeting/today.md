@@ -781,6 +781,9 @@
   착수: firemap-visual-designer 11:09 (운영실장)
   완료(미달): firemap-visual-designer 11:17 — g1_climb 사진·화살표 첫 프레임 틀 13안(p1~t3) 같은 1초 시험(rejudge_ff 고정 조건) 26회: **7 넘긴 틀 없음**, 최고 r1(밝은 금 사진+'고점에 샀다면?'+'산 값까지'+거대 +51%+노랑↑) 6·6.5·6·6(평균 6.13)·t1·t3 6·6 — 글자 카드 5·5보다 한 칸 오름, 보정칸 7~7.5 정상 · 심사 매번 '+51%가 수익률로 오독, 본전·회복 단어 넣어라'(copywriter 원칙상 안 씀) · 실제 KRX 선을 크게 키우면 5로 떨어짐 · 근거 cardshorts/g1_climb/ff2/README.md·all_168.png · [알림] 없음(통과 틀 없음) · 다음 열쇠: copywriter '본전' 류 단어 허용 판단 → r1 틀 문구만 교체 시험
 - 막힘(운영실장 11:18): ① 비축 쇼츠 0/1 — visual 사진·화살표 첫 프레임 13안 최고 r1 평균 6.13(글자 카드 5보다 +1, 7 미달, 82fe1ea). 심사가 매번 '+51%가 수익률로 읽힘·본전/회복 단어 넣어라' → copywriter 판단: '본전·회복' 허용 여부(허용 시 r1 문구만 바꿔 재시험) → firemap-copywriter 12:40 정기 ② 10/11 08:10 카페 칸 편 미확정(기한 02:10) → firemap-write 22:10·00:10 · 비축 카페 1/2
+  착수: firemap-copywriter 18:49 (① 본전·회복 허용 판단)
+  완료: firemap-copywriter 18:57 — '본전'·'원금' 계속 금지(KRX 매매 수수료가 빠져 실제 본전은 +50.7%보다 큼, 168px에 '수수료 별도'를 읽힐 자리 없음) · '회복'은 '산 값 회복'처럼 목적어 붙일 때만 허용 · r1 틀 문구만 바꿔 재시험(rejudge_ff 고정 조건): u1 '고점에 샀다면?/산 값 회복까지/+51%' 6·6.5 · **u2 '금 -34%/산 값 회복까지/+51%' 6.5·6.5**(보정 7.5·7) — r1 6.13보다 +0.37, '+51%=수익률' 오독은 사라졌지만 **7 미달**. 남은 지적은 그림 정적·질문형 아님 → 문구는 병목 아님(07:52 결론 그대로) · 근거 cardshorts/g1_climb/ff3/README.md
+  [알림] **firemap-shorts·firemap-visual-designer** (copywriter 18:57): 쇼츠 첫 프레임에 '산 값 회복까지'는 써도 됨('본전'·'원금'·'회복' 단독은 여전히 금지). g1_climb 다음 판을 만들면 문구는 u2(cardshorts/g1_climb/ff3/u2.png), 남은 1점은 그림·움직임 몫
 - 막힘(firemap-video-producer 16:09): W-1 10/11 칸 skip — 무료 TTS 한 창 W-1 몫 8요청 중 3요청이 음높이 벗어남(0장 두 번 125~128Hz, 3장 173Hz)으로 날아가 5·6·7장 17줄 못 받음 · 받은 38줄도 IQR 0.19(R-1·G-1·C-1에 이어 네 번째) → 무료 Gemini TTS로는 IQR 0.16 통과가 운이라는 10/9 판단 그대로. 판단 필요(순돌이): ① Chirp 3 HD 결재(approvals.md 맨 위) ② W-1을 다음 주 2화로 넘길지·이번 38줄 버릴지 · 담당 순돌이
 - [자기 배정] firemap-motion-designer backlog 1순위 G-1 '6. 산 값까지' AsymClimb 미리보기·심사
   착수: firemap-motion-designer 11:25
@@ -796,6 +799,9 @@
   착수: firemap-visual-designer 17:04
   완료: firemap-visual-designer 17:05 — 할 일 없음으로 닫음: firemap-write가 16:23에 재시안 I('6.5배' 430px 판 폭 77%·아랫줄 130px) 세 명 평균 7.0으로 통과시킴(cover_review.md, pkg/img/00.png=I), slots.json 08:10 칸 gates_ok 16:26 · 더 고치지 않음(넣었다 뺐다 금지)
 - [카피 요청] P-1 국민연금 수령나이 롱폼 제목·썸네일 문구·첫 3초 트랙:C · 담당 firemap-copywriter · 시한 10/12 12:00(주간 선정 전) · 근거 longform/ep/P-1/analysis.md ②(검색어 '국민연금 수령나이' 45,780 맨 앞)·compete.md 경쟁 제목 틀(명령형 경고·'덜컥 받으면 큰일' — 피할 틀)·script.md 0장(하루 차이 생일 두 장) · 금지: '받으세요'·'이득'·'손해'·68세 단정 (youtube-loop 12:49)
+  착수: firemap-copywriter 18:49
+  완료: firemap-copywriter 18:57 — P-1 1위 제목 '국민연금 수령나이, 1년만 당기면 따라잡히는 나이가 오히려 늦다'(대본 첫 3초 둘째 줄과 글자 같음) + 썸네일 '5년 당김 76.7세 / 1년 당김 80.7세'(작은 줄 '제때 받은 쪽이 따라잡는 나이 · 1969년생·월 100만원 가정') · 12안 1차 제미나이·레드팀 둘 다 P5 1위 → 결선 평균 8.33(제미나이 8.8·레드팀 8.2·작성자 8.0) · 2위 '…연봉 약 7,600만원을 넘으면 월 15만원부터 깎여요' 8.17 · 사실 대조 전부 맞음, aitell 0.0 · 근거 longform/ep/P-1/copy/titles.md·review.md
+  [알림] **firemap-youtube-loop·firemap-video-producer·firemap-visual-designer** (copywriter 18:57): P-1 meta.json 만들 때 title_candidates=[1위, 2위](copy/titles.md). 썸네일 작은 줄 '1969년생·월 100만원 가정' 지우지 말 것(1965~68년생은 75.7·82.9) · '15만원씩'·'월급 519만원'·'6/17 개정' 금지
 - [편집 검수 요청] P-1 대본 v1 트랙:C · 담당 firemap-editor · 시한 10/12 18:00 · 근거 longform/ep/P-1/script.md(말 76줄, say_v1.txt) · scriptnum 35개 중 사실표 밖 0·aitell script 62.9/7% 통과·제미나이 지적 3 반영(review_v1_gemini.md) · 금지: 숫자·조문 표현('조문대로 계산하면') 바꾸기 (youtube-loop 12:49)
   완료: firemap-editor 17:08 — v2.1 요청(아래)으로 대체, v2.2로 편집 통과
 - 확인(youtube-loop 12:49): 자발 — PD 대기열 C-1·G-1 뒤 빈칸이라 P-1 대본 v1을 주간 선정(10/12) 전에 미리 씀. 선정 안 되면 비축 롱폼. 남은 것: 심사 3명(review.md)·카피·편집

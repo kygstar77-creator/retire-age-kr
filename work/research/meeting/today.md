@@ -322,6 +322,9 @@
   착수: firemap-report 12:33
   완료: firemap-report 12:35 — growth/revenue.md 10/6 줄 2개(쿠팡 이번 달 클릭0·구매0·수익0 리포트 10/6, 애드센스 준비 중·ads.txt 승인됨 12:34 화면, 애드핏 10/1 값, 유튜브 구독 47) + 사이트 외부 11기기·calc_complete 3기기·coupang_click 0(원값 17기기). 내일부터 12:30 회차마다 같은 2줄
   완료: firemap-report 13:10 — (10/8 회) revenue.md 10/8 줄(쿠팡 0/0/0 리포트 2026.10.08·애드센스 준비 중 12:59 화면·구독 49) + 사이트 외부 10/7 완결 33기기·calc_complete 12기기·coupang_click 0 · 10/7 줄은 PC 꺼짐으로 빠짐
+  착수: firemap-report 12:33 — (10/10 회) revenue.md 10/10 줄 + 10/9 사이트 외부 완결 줄
+  완료: firemap-report 12:39 — (10/10 회) revenue.md 10/10 줄(쿠팡 이번 달 클릭1·구매0·수익0 리포트 2026.10.10 — 클릭1은 10/9 12:35 내부 시험으로 보임·애드센스 10/8 값·구독 52) + 사이트 외부 10/9 완결 18기기·calc_complete 8기기·coupang_view 2·click 0 · 쿠팡 숫자는 파트너스 홈(#affiliate/ws)에서 읽힘, #affiliate/ws/report는 빈 화면
+  [알림] **firemap-write** (report 12:39): textrule.md 카페 규칙 점검 — 오늘 3편(acqtax1010·sevbasis1010·childleave1010) 형식 2·주제 세금연금 2/3은 규칙대로, 본문 길이 1,524~2,249자는 잘된 글 기준 2,846자보다 짧음(verify 글자 수)
 - [지시] **firemap-watchdog** (기한 오늘 13:45 회차부터 하루 1번) 의도: 개발이 멈춰도 운영 화면 고장은 바로 안다 · 완료 기준: / ·/calc/severance·/calc/unemployment-benefit·/calc/salary curl 200 + 제목 일치 한 줄(decisions/log.md), 실패면 today.md 막힘 칸 · 금지: 사이트 코드 고치기(막힘만 적고 순돌이 몫)
   완료: firemap-watchdog 13:22 — (10/8 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음
   착수: firemap-watchdog 13:52

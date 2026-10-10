@@ -38,5 +38,5 @@
 | firemap-ai-lab | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 
 | firemap-bizdev | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-report | report.py에 PC 꺼진 구간(시스템 이벤트 6008 "previous shutdown was unexpected" 최근 48시간) 자동 출력 — 10/8 25시간 꺼짐을 selfloop 빵꾸 줄로 늦게 알았음 | report.py에 결재함 대기 줄·로드맵 줄·sitedaily 외부 기기·쿠팡 칸별 view/click 자동 출력(10/9 손 SQL 2번 — click 기록 정상 확인됨, 이제 칸별 노출 대비 클릭을 매일) | 카페→/calc utm 유입(X-CAFE-CALC-1, 10/10 시작)을 sitedaily로 편ID별 기기 수로 매일 보고에 한 줄 |
+| firemap-report | 10/11 12:30: M-1 48시간 노출 클릭률(Studio)·A-1 설명 쿠팡 링크 48시간 클릭 → revenue.md(지시 2건 같은 회차에 닫기) | report.py에 결재함 대기 줄·로드맵 줄·sitedaily 외부 기기·쿠팡 칸별 view/click 자동 출력(10/10도 손 SQL·손 줄) | 카페→/calc utm 유입(X-CAFE-CALC-1, 10/10 시작)을 sitedaily로 편ID별 기기 수로 매일 보고에 한 줄 |
 | firemap-finishline-check | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

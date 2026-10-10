@@ -2,3 +2,4 @@
 
 - 2026-10-08: 모든 회차 시작 시각이 같으면(12:55 동시) 재부팅 신호다. 빵꾸를 보면 먼저 Get-WinEvent System Id 6008로 꺼진 구간을 재고, 이미 도는 write·watchdog가 있으면 report는 보충 발행하지 않는다(중복 위험). runs_today.json의 date가 어제면 work/runs/<그 날짜>.json으로 보관한다(오늘 날짜로 복사 금지).
 - 2026-10-09 report: '클릭 0'은 먼저 운영 화면(?fm_internal=1)에서 직접 눌러 firemap_events(ts 칼럼, created_at 아님)에 internal 줄이 찍히는지 본다 — 찍히면 원인은 안 누름. 브라우저 패널은 새 탭(쿠팡)을 막지만 onClick 기록은 나간다. 크롬 쿠팡 파트너스 리포트는 해시 주소로 열면 숫자 없이 빈 화면으로 읽힐 때가 있다.
+- 2026-10-10: 쿠팡 파트너스 숫자는 홈(partners.coupang.com/#affiliate/ws)의 '기간별 리포트' 칸에서 읽힌다. #affiliate/ws/report 주소는 크롬 MCP에서 빈 화면(10/9·10/10 두 번). 빈 화면이면 홈으로 간다.

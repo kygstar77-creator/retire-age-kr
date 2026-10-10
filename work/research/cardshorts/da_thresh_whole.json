@@ -1,0 +1,11 @@
+{
+ "audio": true,
+ "mean_volume": -20.3,
+ "still_longest_s": 4,
+ "empty_max": 0.38,
+ "empty_each_3s": [
+  0.38,
+  0.34
+ ],
+ "sheet": "work/research/cardshorts/da_thresh_sheet.png"
+}

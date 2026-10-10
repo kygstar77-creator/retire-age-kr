@@ -111,7 +111,7 @@ def vs_frame(base, spec, top, t):
             if notes[k]: d.text((M + 36, y + 140), notes[k], font=PD7(fit(d, notes[k], vx - M - 60, 50, 30, PD7)), fill=fg)
             y += rh + 24
         y += 16
-    big = 120 if spec.get('vs_big') else 0   # 상자·숫자를 더 크게(첫 프레임 168px용)
+    vb = spec.get('vs_big'); big = (vb if (isinstance(vb, int) and not isinstance(vb, bool) and vb > 1) else 120) if vb else 0   # 상자·숫자를 더 크게(첫 프레임 168px용)
     gap = 96; bw = (SAFE_R - M - gap) // 2; bh = 330 + big + (90 if any(notes) else 0)
     if not spec.get('vs_stack'): y = top
     for k, (lab, v, u, x0, fill, fg) in ([] if spec.get('vs_stack') else enumerate([(l1, v1, u1, M, YELLOW, BG), (l2, v2, u2, M + bw + gap, (255, 107, 0), WHITE)])):
@@ -127,11 +127,14 @@ def vs_frame(base, spec, top, t):
         d.text((M + bw + (gap - d.textlength('vs', font=BHS(64))) / 2, y + bh / 2 - 40), 'vs', font=BHS(64), fill=WHITE)
         y += bh + 40
     if not spec.get('vs_no_points'):
+        ps = spec.get('vs_point_size', 40); lh = int(ps * 1.4)   # 2026-10-10 firemap-shorts: 글자 키워 아래 빈 화면을 메운다(da_thresh)
         for i, p in enumerate(spec['points'], 1):
-            d.text((M, y - 2), str(i), font=BHS(52), fill=YELLOW)
-            for ln in wrap_runs(d, runs(p), PD7(40), SAFE_R - M - 62):
-                draw_runs(d, M + 62, y + 4, ln, PD7(40)); y += 56
-            y += 14
+            show = t >= spec.get('vs_points_delay', 0)   # 첫 프레임엔 큰 상자만(168px 시험), 점은 이 초부터
+            if show: d.text((M, y - 2), str(i), font=BHS(int(ps * 1.3)), fill=YELLOW)
+            for ln in wrap_runs(d, runs(p), PD7(ps), SAFE_R - M - 62):
+                if show: draw_runs(d, M + 62, y + 4, ln, PD7(ps))
+                y += lh
+            y += 14 + (ps - 40) // 2
         y += 10
     if t < spec.get('vs_src_delay', 0): return im, y + 3 * 38 + 60
     if spec.get('chip_late'): chip_row(d, spec)   # 출처 줄은 이 초부터(첫 프레임엔 큰 글자만 — 168px에서 깨알 글씨가 감점) · 자리는 미리 잡아 둔다

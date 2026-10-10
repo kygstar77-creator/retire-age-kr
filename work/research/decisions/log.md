@@ -1635,3 +1635,5 @@
 2026-10-10 21:43 · firemap-meeting · 실험: X-SHORTS-1S 종료(순돌이 지시)·X-SHORTS-1 판정 10/11 shorts로 연기·X-SHORTS-LEN은 shorts 12:32 판정(규칙상 성공·잇지 않음) 그대로
 2026-10-10 21:43 · firemap-meeting · 법 참모 '유사투자자문 높음'·'쿠팡 대가 문구 누락' 안 받음 · 검증 참모 코드 대조(CoupangPick.jsx:11, 10/9 verify) → 멈춤 없음
 2026-10-10 21:52 · firemap-watchdog · 메우기 없음 · 카페 62분 전(75분 미만)·대기 4·블로그 정지(STOP_blog)·로그인됨·멈춘 회차 없음
+2026-10-10 22:19 · firemap-video-producer · W-1 주간 영수증 숫자를 weekcore.py(주차 인자)로 뽑게 함, 1화 calc_out 16키 재현 확인 · 2화부터 거래일·휴장일 손 입력이 사라져 금요일 종가 뒤 관문 시간이 준다(뉴스 장면은 편마다 새로)
+2026-10-10 22:19 · firemap-video-producer · 야후 금요일 종가는 토 10:00 KST 뒤 받은 값만 확정으로 씀 · 10/9 SPY가 05:02 뒤 778.54→778.57로 바뀐 것 실측

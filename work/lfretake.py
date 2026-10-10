@@ -1,6 +1,6 @@
 # 롱폼 목소리 다시 받기 — 같은 날·같은 모델·같은 목소리로 튀는 줄만 한 요청에 모아 다시 녹음하고,
 # 줄마다 옛 녹음과 새 녹음 중 편 중앙 음높이에 가깝고 속도 기준(4.8~8.2) 안인 쪽을 고른다(2026-10-08 PD, M-1 IQR 0.18 막힘).
-#   py -3.12 work/lfretake.py <ep폴더> [--n 20] [--dry] [--trim]   # --trim = 다시 받기 없이 앞뒤 빈 소리만 다듬기
+#   py -3.12 work/lfretake.py <ep폴더> [--n 20] [--takes 2] [--dry] [--trim]   # --takes = retake_must 줄을 몇 번씩 받을지   # --trim = 다시 받기 없이 앞뒤 빈 소리만 다듬기
 # 옛 녹음은 audio/<편>/_take1/에 남긴다. 요청 1회 = 무료 한도 1회. 다른 모델로 넘어가지 않는다(lfvoice 규칙 1).
 import sys, os, json, shutil
 import numpy as np
@@ -34,8 +34,9 @@ mf = os.path.join(ep, 'check', 'retake_must.txt')
 must_keys = [x.strip() for x in open(mf, encoding='utf-8')] if os.path.exists(mf) else []
 must = [l for k in must_keys if k for l in rows if l['text'].startswith(k)]
 pick = must + [l for l in sorted(rows, key=lambda l: -score(l['f0'], l['rate'])) if l not in must][:N]
-TAKES = {id(l): (2 if l in must else 1) for l in pick}
-print(f'편 중앙 {fm:.0f}Hz · 다시 받을 줄 {len(pick)}(반드시 {len(must)}·2번씩)')
+MT = int(ARGS[ARGS.index('--takes') + 1]) if '--takes' in ARGS else 2   # 10/11 PD: 반드시 줄을 한 번씩만(--takes 1) — 줄이 많을 때 한 요청 길이를 지키려고
+TAKES = {id(l): (MT if l in must else 1) for l in pick}
+print(f'편 중앙 {fm:.0f}Hz · 다시 받을 줄 {len(pick)}(반드시 {len(must)}·{MT}번씩)')
 for l in pick: print(f"  {'반드시 ' if l in must else ''}{l['f0']:.0f}Hz {l['rate']:.2f} | {l['text'][:30]}")
 if dry: sys.exit()
 order = [l for l in pick for _ in range(TAKES[id(l)])]

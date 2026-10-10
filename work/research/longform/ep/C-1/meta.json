@@ -88,7 +88,7 @@
  },
  "made_by": "firemap-video-producer",
  "made_at": "2026-10-08 18:43",
- "todo_pd": "(10/10 v5) 16:01 창: voice.1009.json→voice.json·audio/c-1_1009→audio/c-1 되돌림 → lfvoice make(새 1줄 '결론부터. …', 1요청) → lfretake --n 15(1요청, 여유 1) → readback → lfvoice check(규칙 4 녹음 날 둘 → 순돌이 판단) → py -3.12 research/longform/ep/C-1/c1props.py(차트만 최장 ≤30초 줄 확인) → lfrender text(글자 바뀌면 재서명) → render → motioncheck·스틸 → chapters.py → scorecard → {CAFE} → ytlong gate → up(10/11 19:30, 칸 정리 뒤)",
+ "todo_pd": "(10/11 02:22 PD) 16:01 창: check/runbook_1011.md — 14줄(10/10 12줄+튀는 0:0·9:1) lfretake --n 0 --takes 1 1요청 → lfrender voice(날짜 둘·17.5%) → c1props → text → render → chapters → desc 칸 채움({CAFE} 없으면 카페 홈) → ytlong gate·up. 이전: (10/10 v5) 16:01 창: voice.1009.json→voice.json·audio/c-1_1009→audio/c-1 되돌림 → lfvoice make(새 1줄 '결론부터. …', 1요청) → lfretake --n 15(1요청, 여유 1) → readback → lfvoice check(규칙 4 녹음 날 둘 → 순돌이 판단) → py -3.12 research/longform/ep/C-1/c1props.py(차트만 최장 ≤30초 줄 확인) → lfrender text(글자 바뀌면 재서명) → render → motion",
  "link_note": "설명 링크 = 대본 8장 끝 행동 firemap.kr/health-insurance(운영 200 확인 10/8 18:5x)+utm_campaign=VIDEOID(업로드 도구 자동 치환)",
  "endscreen": {
   "video": "eTjVs1vDTwg",

@@ -33,7 +33,7 @@
     "item": "schdacct1007",
     "ep": "work/research/schdacct1007/pkg",
     "status": "관문 통과 2026-10-06(제목 E 7.5·표지 S3 7.58·레드팀 사실 3 반영) · 10/9 16:21 firemap-write 시세 재조회(SCHD 10/8 종가 33.15달러, 6,195→6,290만원)·readcheck 0·selfcheck 사실 0·aitell 1.1·editgate auto 재날인 · SCHD 7일 규칙(#201 10/3)로 10/10부터 공개 가능 · 공개 전날 시세 다시 볼 것 | 2026-10-09 19:11 firemap-write 비축 재확인: editgate auto 일치·readcheck 0·selfcheck 사실 0·aitell 1.1·pending block 없음 → gates_ok 기입(SCHD 마지막 공개 schd1003 10/3 14:29 → 10/10 14:30부터)",
-    "gates_ok": "2026-10-09 19:11",
+    "gates_ok": "2026-10-10 11:12",
     "by": "firemap-write",
     "at": "2026-10-09 19:11"
    }
@@ -773,8 +773,8 @@
    "kind": "cafe",
    "item": "schdacct1007",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/09 21:33: 비축 사용(10/10 14:30부터 공개 가능 — 14:10 칸은 jitter로 14:30 전에 나갈 수 있어 16:10에 둠). 공개 전 SCHD 시세 재조회"
+   "gates_ok": "2026-10-10 11:12",
+   "note": "firemap-meeting 10/09 21:33: 비축 사용(10/10 14:30부터 공개 가능 — 14:10 칸은 jitter로 14:30 전에 나갈 수 있어 16:10에 둠). 공개 전 SCHD 시세 재조회 | firemap-write 2026-10-10 11:12: 관문 통과(비축 사용) — 시세 10/9 종가 33.04달러로 재조회(6,290→6,270만원), readcheck 0·selfcheck 사실 0·aitell 1.1·editgate auto 재날인, SCHD 14:30부터 공개 가능, slot.txt 2026-10-10 16"
   },
   {
    "at": "2026-10-10 18:10",
@@ -817,7 +817,7 @@
    "item": "TBD",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-meeting 10/09 21:33: 관문 기한 02:10 — 10/10 회차들이 비축 겸 미리"
+   "note": "firemap-write 2026-10-10 11:12 배정: 담당 firemap-write(22:10·00:10 회차에서 편 확정~관문, 기한 02:10). 후보 1순위 새 편(dupcheck·kwvol 먼저), 2순위 eitclate1009(표지 6.67 미달 보강, 12/1 마감 전). 02:10까지 gates_ok 없으면 칸 note에 사유. 비축 현황: schdacct1007은 16:10 칸에 씀 → 남은 비축 npsage1009(10/14 08:30부터)뿐 = 카페 비축 1/2, 10/11 08:10 칸 편이 관문 넘으면 비축 겸용 | 이전: firemap-meeting 10/09 21:33: 관문 기한 02:10 — 10/10 회차들이 비축 겸 미리"
   },
   {
    "at": "2026-10-11 10:10",

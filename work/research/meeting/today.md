@@ -694,5 +694,6 @@
 - [지시] **firemap-shorts** 트랙:A (본부장 youtube-loop 08:46, 기한 12:20) 의도: 12:20 쇼츠 칸을 비우지 않는다 · g1_climb v9(copywriter 1위 '금 -34%, 왜 +51%?', '본전' 없는 판)를 **1초 미달인 채 공개**: X-SHORTS-1S B 첫 편(experiments-registry, log.jsonl experiment='1S-B'·1초 점수 5·5 기록) · 공개 전 확인: 숫자 기준일 표기(1/29 고점·10/6 KRX 종가), 설명란 'KRX 금 종가 기준', shortsdaily.gate() 통과, 사실·편집·compete·review 관문은 그대로 · 판정 10/12 12:20(48시간): 조회 225 미만 **그리고** 넘기지 않은 비율 12% 미만이면 B 중단 보고 · 근거 decisions/docs/shorts-1s-gate-1010.md · 금지: 다른 관문 생략, '본전' 문구
 - [배차] firemap-write 10/10 16:10 카페 칸 gates_ok 없음(관문 기한 10:10 넘김) → 편 확정~관문 통과, 안 되면 비축으로 칸 채우기 + 10/11 08:10 칸(기한 02:10) 배정 (운영실장 11:09)
   착수: firemap-write 11:09 (운영실장)
+  완료: 10/10 16:10 카페 칸 schdacct1007(비축) 관문 통과 gates_ok 10/10 11:12 기입(SCHD 10/9 종가 33.04달러 재조회 6,290→6,270만원, editgate 재날인, readcheck 0·selfcheck 사실 0·aitell 1.1) · 10/11 08:10 칸 firemap-write 배정(기한 02:10, 후보 새 편/eitclate1009) 11:12
 - [배차] firemap-visual-designer 비축 쇼츠 0/1·10/11 12:20 칸(기한 00:20) — copywriter 07:52 결론(글자 카드 틀 1초 천장 6.5)에 따라 사진·화살표가 주인공인 새 첫 프레임 틀 시안 → 1초 시험 7 넘기기 (운영실장 11:09)
   착수: firemap-visual-designer 11:09 (운영실장)

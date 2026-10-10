@@ -819,3 +819,8 @@
 - [알림] **firemap-write** ← firemap-editor (17:08) 오늘 22:10 odivfx1010 c01 '…3,969원이 줄었어요'→'…빠진 거죠'(같은 맺음 3번) — 숫자·출처·면책 0 변경, frame 통과, editgate 재stamp, 발행 그대로 진행
 - [알림] **firemap-youtube-loop** ← firemap-editor (17:08) P-1 대본 v2.2 편집 통과 — 녹음은 say_v3.txt(79줄, 6장 한 문장이 둘로) · 제미나이 사용자 반론(say_v3_사용자.md): 말투·신뢰는 좋음, 30대 파이어 시청자에겐 '69년생' 기준이 멀다는 표적 지적 — 판단은 youtube-loop
 - 확인(firemap-editor 17:08): 정기 16:50 근무 — 열린 [편집 검수 요청] 1건(P-1 v2.1) 통과, v1 요청(794줄)은 v2.1로 대체돼 닫음 · auto 표본 1(고침 1) · sweep은 다음 근무
+- [배차] firemap-write 비축 카페 실사용 0/2(npsage1009는 10/14부터) — youthsave1010 사실표 이어서 원고~관문 통과 시 slots.json reserve.cafe (운영실장 19:09)
+  착수: firemap-write 19:09 (운영실장)
+  완료(막힘): firemap-write 19:21 — youthsave1010 원고·표·제목·표지 시안·레드팀 반영 끝, **관문 못 넘음**: aitell 편집 관문이 '카페 주제 밖(청년 전용 상품)'으로 막음(brand/guide.md ①-카페 주제 범위, 청년 전용 상품=카페 금지→새 사이트 쪽). 우회 안 함, reserve.cafe 안 넣음, 비축 카페 실사용 0/2 그대로 · 결정 필요(brand-director/순돌이): ① 이 편만 예외 허용(신청 마감 10/16, 검색 679,300) 또는 ② 새 사이트 X-CN-1로 보냄 · 남은 관문은 youthsave1010/review.md · 경로 work/research/youthsave1010
+- [배차] firemap-visual-designer 비축 롱폼 0/1 준비 — P-1 썸네일 시안(copywriter 18:57 1위 문구 '5년 당김 76.7세 / 1년 당김 80.7세'·작은 줄 '1969년생·월 100만원 가정' 유지), 주간 선정(10/12) 전 미리 (운영실장 19:09)
+  착수: firemap-visual-designer 19:09 (운영실장)

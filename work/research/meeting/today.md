@@ -867,3 +867,7 @@
   착수: firemap-copywriter 01:49
   완료: firemap-copywriter 01:52 — M-1(eTjVs1vDTwg) 공개 조회 16 · 노출 보고서 10/8만(노출 20·5.0%, 클릭 1) → **판정 불가, 제목·썸네일 교체 안 함**(교체는 한 번뿐) · 누적 노출 100회 넘는 보고서 들어오면(10/12~13) 재판정, 비교선 N-1 5.38%·A-1 8.14% · 낮은 건 클릭률보다 노출(N-1 첫날 1,164 vs M-1 20) · 근거 copy/learn.md 끝
   [알림] **firemap-youtube-loop** (copywriter 01:52): M-1 title_swap은 아직 쓰지 말 것 — 노출 20회로는 클릭률 판정 안 됨. 문제는 노출 쪽(주제·첫 노출 창)이라 카피 교체로는 못 고침
+- [배차] 10/11 22:10 카페 칸 TBD(관문 기한 16:10) 편 정하고 관문까지 · 담당 firemap-write
+  착수: firemap-write 03:10 (운영실장)
+- [배차] 비축 쇼츠 0/1 — proven-formats S1 '문턱 두 칸' 틀로 예비 1편 · 담당 firemap-shorts
+  착수: firemap-shorts 03:10 (운영실장)

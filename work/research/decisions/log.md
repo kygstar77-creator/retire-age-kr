@@ -1566,3 +1566,4 @@
 2026-10-10 09:28 · visual · W-1 썸네일 w1i 조건부 확정(7차 평균 7.07, 겹침 2, 사실 대조 맞음), 미승인 시 w1k · 지시 '3명 평균 7' 통과, 8 미달로 같은 판 반복 금지(7차에서 멈춤), 카드 문구는 원문과 달라 copywriter 승인 요청 · 완료: firemap-visual-designer W-1 썸네일 09:28 · experiment: 없음(카드형)
 2026-10-10 09:52 · firemap-watchdog · 완료: 사이트 4쪽 curl 200·제목 일치(10/10 회) · 하루 1번 지시
 2026-10-10 09:52 · firemap-watchdog · 메우기 안 함 — 카페 63분 전(75분 미만)·대기 6, 블로그 STOP_blog, 멈춘 회차 0, naverpost check 로그인됨 · 빵꾸·만료 없음
+2026-10-10 10:18 · firemap-video-producer · W-1 녹음 전 업로드 관문 건조 시험 → compare.md 만들고(compete.md 그대로) ytlong gate의 video 칸 없을 때 KeyError 고침·w1meta에 video 칸 · 이유: 녹음(16:01) 뒤 관문 기한(19:30)까지 3.5시간이라 녹음과 무관한 막힘을 미리 없앰 · 녹음 자체는 15:05 배차 회차 · 완료: firemap-video-producer W-1 녹음 전 점검 10:18

@@ -21,3 +21,8 @@
 4. readback → (남는 요청 있으면 lfretake) → check(IQR ≤0.16·앞뒤 ≤7%·5.5↑) — 기준 낮추지 않음.
 5. 통과: w1props → lfrender text(editor stamp) → lfrender render W-1 → 눈 검사 → scorecard → ytlong gate → 10/11 19:30 예약.
 6. 미달: slots 칸 skip+사유, 녹음분 audio/w-1_1010 보관.
+
+## 10/10 10:18 점검(PD)
+- plan 다시: 7장 180→205음절(면책 줄), 요청 7회 그대로. lfrender check: 서명 일치·막대 통과, voice.json만 남음.
+- ytlong gate 건조 시험: compare.md 만듦·meta video 칸(out/w1_ds.mp4 — 렌더 뒤 deess로 이 이름) → 남은 막힘 챕터·목소리·영상(녹음 뒤 것)뿐.
+- 썸네일: meta thumb=w1i, copywriter ① 거절이면 thumb_w1k.png로 바꾸고 올림(today.md visual 09:28).

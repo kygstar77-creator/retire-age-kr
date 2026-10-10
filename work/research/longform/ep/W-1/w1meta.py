@@ -88,6 +88,7 @@ m.setdefault("answers", {
 m.setdefault("experiment", {"W1-NEWS": "그 주 뉴스 이름을 제목 맨 앞(analysis ⑧)", "X-PD-GATE": "B(--gate 0.10)", "X-SERIES-1": "④ 주식 뉴스형 고정 코너 1화"})
 m.setdefault("endscreen", {"video": "eTjVs1vDTwg", "ep": "M-1", "how": "API 미지원 — 업로드 직후 Studio 최종 화면 '특정 동영상 = M-1'(배당 이어짐)", "status": "업로드 뒤 할 일"})
 m.setdefault("after_publish", ["cafe.md 카페 글은 영상과 같은 시각 또는 먼저(analysis.md 132행, firemap-write)"])
+m.setdefault("video", "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/out/w1_ds.mp4")  # 렌더 → deess 뒤 파일(M-1 m1_ds 같은 틀)
 m.setdefault("made_by", "firemap-video-producer"); m.setdefault("made_at", "2026-10-09 22:3x")
 m.setdefault("todo_pd", "10/10 06시 뒤 calc 재실행 확인 → w1meta.py 다시 → 16:01 runbook_1010 녹음 → w1props → lfrender text(editor stamp) → lfrender render W-1 → 스틸 눈 검사·motioncheck → chapters.py video/w1.json ep/W-1 → scorecard 우리 칸 → ytlong gate → up(10/11 19:30) · 관문 기한 10/10 19:30")
 json.dump(m, open(mp, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

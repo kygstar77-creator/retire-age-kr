@@ -87,10 +87,11 @@ def gate(ep):
     ans = m.get('answers', {})
     if len(ans) < 5 or any(not str(v).strip() for v in ans.values()): bad.append('§5.2 판단 5문항 답 없음')
     for f in ('video', 'thumb'):
+        if not m.get(f): bad.append(f'meta.json에 {f} 칸 없음'); m[f] = ''; continue
         if not os.path.exists(os.path.join(ep, m[f]) if not os.path.isabs(m[f]) else m[f]): bad.append(f'{f} 파일 없음')
     # 목소리 '치익'(ㅅ·ㅊ 쉿소리) — 2026-10-01 사장님 "치익~ 하는 소리 너무 거슬린다". 렌더 뒤 video/deess.py 거친 파일만(RULES 4. 소리)
     vp = os.path.join(ep, m['video']) if not os.path.isabs(m['video']) else m['video']
-    if os.path.exists(vp):
+    if m['video'] and os.path.isfile(vp):
         sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'video')); import deess
         r = deess.measure(vp)
         if r and r['sib_vs_voiced_db'] > deess.LIMIT_DB: bad.append(f'쉿소리 {r["sib_vs_voiced_db"]}dB > {deess.LIMIT_DB}dB — py -3.12 work/video/deess.py <영상>')
@@ -104,7 +105,7 @@ def gate(ep):
     if mute: bad.append(f'문장 wav 무음 {mute}개')
     if n: bad.append(f'문장 wav 치직 {n}곳 — py -3.12 work/video/clickscan.py fix {ad} 뒤 다시 렌더')
     # 10/6 순돌이: 문장 wav만 보고 완성 영상은 안 봤다 — 공개된 E-2(347.8·368.4초)·N-1(57.5·363.9초) 완성본에서 검사기가 4곳을 잡았다(귀 확인 안 함). 완성 영상도 본다.
-    if os.path.exists(vp):
+    if m['video'] and os.path.isfile(vp):
         a_, sr_ = clickscan.load(vp); ok_ = m.get('click_ok', [])   # 들어서 말소리로 확인한 자리(초)만 meta.json click_ok에 — 누가 어떻게 들었는지 click_ok_note에
         fb = [b for b in clickscan.bursts(a_, sr_) if not any(abs(b[0] / sr_ - x) < 0.3 for x in ok_)]
         if fb: bad.append('완성 영상 치직 의심 ' + ', '.join(f'{s/sr_:.1f}초' for s, _, _ in fb[:8]) + ' — 그 자리 1초를 들어 보고(제미나이 듣기 또는 사람) 말소리가 아니면 문장 wav를 고쳐 다시 렌더')

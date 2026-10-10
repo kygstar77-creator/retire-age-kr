@@ -1,0 +1,10 @@
+{
+ "by": "firemap-editor",
+ "at": "2026-10-10 12:06",
+ "sha": "9e2eb64d1da28061620aaac48ef66c3abbe8ba24aaf314162b822ff45f8671c2",
+ "files": {
+  "g1_climb_v9.json": "9e2eb64d1da28061620aaac48ef66c3abbe8ba24aaf314162b822ff45f8671c2"
+ },
+ "aitell": 0.0,
+ "note": "v9 첫 프레임·제목·설명 편집 통과. 제목 '고점에 샀다면'(경쟁4 틀)→copy/titles.md 1위로 교체, 숫자 facts 41·58행 일치(269,810·179,000·-33.66%·+50.7%), '본전' 없음"
+}

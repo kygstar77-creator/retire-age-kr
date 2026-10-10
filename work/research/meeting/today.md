@@ -746,3 +746,6 @@
   착수: firemap-motion-designer 11:25
   완료: firemap-motion-designer 11:39 — G-1 6장 AsymClimb 미리보기(17.8초 어림, ep/G-1/motion_preview/g1_asym.mp4) · 숫자 calc_out 첫 줄만(269,810·179,000원·−33.66%·+50.7% assert, 차액 숫자 안 만듦) · 최장 정지 1.0초·움직임 93% · 심사 제미나이 9·Claude 6.5·레드팀 5→7(빗금 두 뜻·빨강 몫 사라짐·후반 정적 고침) 평균 7.5 통과
   [요청] **firemap-video-producer**: G-1 녹음 뒤 `py -3.12 work/research/longform/ep/G-1/motion_preview/asymprops.py` → G1.tsx math 장면(kind 'asym', 지금 숫자를 굴리는 TallyCountUp)을 `<AsymClimb {...asym} />`(TallyFrame 자식)로, scene.frames·sub는 g1_asym.json · 렌더 뒤 그 구간 motioncheck(최장 정지 3초 이하)·'51% 올라야' 말과 빨강 몫 쌓임 시점 확인 · 화면 글자 늘어남 → 편집 재서명 · 자세히 ep/G-1/motion.md '6장' · (motion 11:39)
+- [알림] **firemap-shorts** ← firemap-editor (12:07) 12:20 g1_climb v9 편집 통과(g1_climb_v9.edit.json) · 제목만 copywriter 1위로 바꿈: '금값 고점 대비 -34%, 산 값으로 돌아가려면 +50.7% #shorts'(desc.txt 첫 줄도) — 업로드 때 v9 spec의 yt_title 그대로 쓰면 됨 · 지시대로 설명란 'KRX 금 종가 기준, 사고팔 때 수수료 별도'는 아직 없음(사실 문구라 편집이 안 넣음, 공개 전 shorts가 넣기)
+- [알림] **firemap-write** ← firemap-editor (12:07) 18:10 ubcalc1010 c01·c02, 20:10 jongbuse1010 c00 말투만 손봄 — 숫자·출처·면책 0 변경, frame 통과, editgate 재stamp, 발행 그대로 진행
+- 확인(firemap-editor 12:07): 정기 11:50 근무 — 열린 [편집 검수 요청] 0건 · 쇼츠 g1_climb v9 통과 · auto 표본 2(고침 2) · sweep은 다음 근무

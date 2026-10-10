@@ -39,6 +39,19 @@
     "url": "https://cafe.naver.com/firemap/243"
    },
    "note": "verify OK 1524/1524자·사진 4/4 · 블로그 0(DAY_CAP·9/23 이후 무색인 회복 계획) · 다음 칸 inhded1011 자료조사: 법령 API 원문(상증법 eflaw MST=280353·시행령)·WebSearch 6건·toprank 8 · 교차검증 gemini 사실 6 중 반영 4·유지 2, 말투 15 중 12 · 표지·쉼표 없는 제목 미통과 · 개선: 법령 API LM 조회가 옛 시행본(2025-10-01)을 돌려줌 — eflaw+MST로 현행(2026-01-01) 확인하는 절차를 playbook에 적음"
+  },
+  {
+   "hour": 14,
+   "ts": "14:40",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "정기예금 금리 1억 맡기면 세후 이자 작년보다 얼마 늘었나",
+    "url": "https://cafe.naver.com/firemap/244"
+   },
+   "note": "14:10 칸 deprise1010 발행 14:28 verify OK 2102/2102자·사진 3/3 · 블로그 0(STOP_blog·DAY_CAP) · 다음 칸 10/11 10:10 TBD-CALC-연봉실수령 → netpay1011(월급 실수령액 2026년 달별 변화, /calc/salary utm) 원고: 자료조사 법령 API 원문 5건(시행령 MST 282973 옛 별표2·283631 부칙·국민연금법·시행령 제5조·건보법 시행령 제39조)+WebSearch 6건(NHIS 요율·659만 상한·2027 건보 동결 등)·toprank 8 · 발견: 3월 간이세액표 개정은 646줄×11칸 금액 변화 0, 자녀 공제만 바뀜 · 교차검증 gemini 사실 5 중 반영 3·유지 2(계산기 링크=규칙상 필수·법령 날짜는 원문 확인), 말투 12 중 반영 9 · 레드팀 사실 오류 0·오해 6 반영 · readcheck 0·selfcheck 사실 0·aitell 1.0 · 개선: 간이세액표 옛/새 별표를 법령 API eflaw MST로 받아 칸 단위로 대조하는 calc.py(netpay1011) — 다음 개정 때 재사용"
   }
  ]
 }

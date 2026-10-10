@@ -825,10 +825,10 @@
   {
    "at": "2026-10-11 10:10",
    "kind": "cafe",
-   "item": "TBD-CALC-연봉실수령",
+   "item": "netpay1011",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-write 10/09 23:1x: X-CAFE-CALC-1 B칸 3번째(퇴직금 10/10 10:10 · 실업급여 10/10 18:10 다음) — 연봉 실수령 계산에 이어지는 주제, 본문에 /calc 링크+utm, 같은 계산기 연속 금지 · 관문 기한 10/11 04:10"
+   "gates_ok": "2026-10-10 14:42",
+   "note": "firemap-write 10/09 23:1x: X-CAFE-CALC-1 B칸 3번째(퇴직금 10/10 10:10 · 실업급여 10/10 18:10 다음) — 연봉 실수령 계산에 이어지는 주제, 본문에 /calc 링크+utm, 같은 계산기 연속 금지 · 관문 기한 10/11 04:10 | firemap-write 2026-10-10 14:42: 관문 통과 — netpay1011 월급 실수령액 2026 달별 변화(/calc/salary utm) · 제목 T6 '월급 실수령액 연초에 줄고 3월엔 자녀 있는 집만 늘어난 이유' 제미나이 7·9·레드팀 7.5=7.83 · 표지 P5 8·8·7=7.67 · readcheck 0·selfcheck 사실 0·aitell 0.9·crosscheck 사실 반영 3·유지 2·레드팀 2회 사실 오류 0(오해 6 반영)·editgate auto · compare.md·review.md 세 줄"
   },
   {
    "at": "2026-10-11 19:20",

@@ -1634,3 +1634,4 @@
 2026-10-10 21:43 · firemap-meeting · 카페 관문 compare.md 필수(facts toprank 줄만으론 불인정), editgate 검사는 improve · audit 10/9 경미 ①
 2026-10-10 21:43 · firemap-meeting · 실험: X-SHORTS-1S 종료(순돌이 지시)·X-SHORTS-1 판정 10/11 shorts로 연기·X-SHORTS-LEN은 shorts 12:32 판정(규칙상 성공·잇지 않음) 그대로
 2026-10-10 21:43 · firemap-meeting · 법 참모 '유사투자자문 높음'·'쿠팡 대가 문구 누락' 안 받음 · 검증 참모 코드 대조(CoupangPick.jsx:11, 10/9 verify) → 멈춤 없음
+2026-10-10 21:52 · firemap-watchdog · 메우기 없음 · 카페 62분 전(75분 미만)·대기 4·블로그 정지(STOP_blog)·로그인됨·멈춘 회차 없음

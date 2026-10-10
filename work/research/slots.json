@@ -875,10 +875,11 @@
   {
    "at": "2026-10-11 18:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "dsrlim1011c",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1)"
+   "gates_ok": "2026-10-10 23:07",
+   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1) | firemap-write 2026-10-10 23:07(보조): 관문 통과 — dsrlim1011c 스트레스 DSR 대출한도 수도권·지방(부동산·형식2, DSR 새것·검색 DSR계산기 70,700) · 제목 제미나이 8.5·7·레드팀 7=7.5 · 표지 N4 8·8·8=8.0 · readcheck 0·selfcheck 사실 0·aitell 1.1·crosscheck 300초 초과→selfcheck·레드팀 2회 틀림 0·editgate auto · 지방 0.75%는 12/31까지 기준 — 발행 전 금융위 새 발표 있으면 c04·표 고칠 것",
+   "ep": "work/research/dsrlim1011c/pkg"
   },
   {
    "at": "2026-10-11 19:20",

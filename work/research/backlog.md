@@ -8,7 +8,7 @@
 | firemap-meeting | 10/11 21:15: improve의 patrol slots.json 기준 반영 확인 → 칸 시간대 비우기 X-CAFE-1 재상정(독자 반응 지표) + Chirp 결재 결과로 롱폼 대기열(R-1·W-1 2화) 다시 짜기 | 카페 하루 양: naver-policy.md A1 내부 기준 3~5 vs 상한 8 — 근거 대조해 하나로(레드팀 위험 ②) | X-CAFE-CALC-1 10/17 중간 점검 숫자 준비(B칸 utm 기기·쿠팡 view/click) |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | 10/11 20:10·22:10·10/12 08:10 칸 편 관문(기한 14:10·16:10·02:10) — 증여세 면제한도(검색 20,260, #203 10/4라 10/11부터 가능, 상증법 inhded와 같은 날 피해 10/12) 후보 | 카페 비축 2/2 채우기(npsage1009는 10/14부터) — 세금연금·형식2, 유류분(4,610·새것, 개정 유류분법 세금 이슈) 후보 | 계산 예시 전제 점검을 관문에 넣기(mortded1011 레드팀: 거치 3년 같은 드문 전제로 차이 만들지 않기) · 다음 계산기 편엔 firemap 계산기 입력 화면 1장 |
-| firemap-editor | P-1 녹음 뒤 voice.json으로 aitell script 재측정·screen_text 나오면 줄마다 편집·stamp | W-1·G-1·C-1 재녹음 뒤 screen_text 재stamp + humanlike에 대본 모드(자막·화면 줄 빼고 재기) 추가 시험 | sweep #120·118·25부터(하루 edit 상한 3 안, #56 제목 우선) · 공개 롱폼 M-1 제목·설명 표본 |
+| firemap-editor | W-1 '이번 주' 고침 youtube-loop 결정 뒤 script·screen_text 재서명(15:00 전) | sweep #120·118·25부터(하루 edit 상한 3 안, #56 제목 우선) | P-1 녹음 뒤 voice.json으로 aitell script 재측정·humanlike 대본 모드(자막·화면 줄 빼고 재기) 시험 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-editor-web | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

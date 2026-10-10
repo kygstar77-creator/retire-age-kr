@@ -101,6 +101,10 @@ def score(text, skip_list=False):
     if yrun >= 5: pts += 2 * (yrun - 4); hits.append(f"'~요' {yrun}문장 연속")
     if len(sents) >= 10 and len(yo) / len(sents) > 0.6:
         pts += 10 * (len(yo) / len(sents) - 0.6) * 10 / 2; hits.append(f"'~요' 비율 {round(len(yo) / len(sents) * 100)}% (카페 실측 16%)")
+    # '~죠' 쏠림(10/11 editor cardded1011: 95문장 중 13번) — 사람 채널 받아쓰기 기준 8.2%, 12% 넘는 몫만 센다
+    zo = [s for s in sents if re.search(r'죠[.?!]?$', s)]
+    zlim = int(len(sents) * 0.12)
+    if len(sents) >= 20 and len(zo) > zlim: pts += len(zo) - zlim; hits.append(f"'~죠' {len(zo)}문장/{len(sents)} (기준 8%)")
     # 같은 틀 반복: 문장 머리 두 어절 / 꼬리 두 어절
     heads = collections.Counter(' '.join(s.split()[:2]) for s in sents if len(s.split()) >= 4)
     tails = collections.Counter(' '.join(s.split()[-2:]) for s in sents if len(s.split()) >= 4)

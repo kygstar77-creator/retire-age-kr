@@ -816,10 +816,11 @@
   {
    "at": "2026-10-11 08:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "inhded1011",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-write 2026-10-10 11:12 배정: 담당 firemap-write(22:10·00:10 회차에서 편 확정~관문, 기한 02:10). 후보 1순위 새 편(dupcheck·kwvol 먼저), 2순위 eitclate1009(표지 6.67 미달 보강, 12/1 마감 전). 02:10까지 gates_ok 없으면 칸 note에 사유. 비축 현황: schdacct1007은 16:10 칸에 씀 → 남은 비축 npsage1009(10/14 08:30부터)뿐 = 카페 비축 1/2, 10/11 08:10 칸 편이 관문 넘으면 비축 겸용 | 이전: firemap-meeting 10/09 21:33: 관문 기한 02:10 — 10/10 회차들이 비축 겸 미리"
+   "note": "firemap-write 2026-10-10 12:43: inhded1011(상속세 면제한도 — 1차 2,037만·2차 1억3,240만5천·동거주택 533만5천원, 검색 27,390·dupcheck 새것) 원고·readcheck 0·selfcheck 사실 0·aitell 3.6·crosscheck 반영·제목(쉼표판) 7.5 통과 / 남은 관문: 표지(최고 6.83)·쉼표 없는 제목(10/11 쉼표 없는 제목 하루 2편 규칙)·editgate stamp — 기한 02:10, 못 넘으면 eitclate1009·비축으로",
+   "ep": "work/research/inhded1011/pkg"
   },
   {
    "at": "2026-10-11 10:10",

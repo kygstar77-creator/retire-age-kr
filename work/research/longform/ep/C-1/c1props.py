@@ -80,20 +80,79 @@ COND = '꺼내는 돈 전부 배당 · 1월 초 1년 치 · 물가 반영 안 �
 yr = lambda v: v if v.endswith('+') else v + '년'
 bal_str = lambda s: s.replace('18년 버팀·2025년 말 ', '').replace('29년+ 남음 ', '')
 
-CUTS = [('open', '0.', None), ('vs', '0.', '그런데 실제 시장 순서대로'), ('fx97', '0.', '딱 1년 차이인데'), ('duo', '0.', '오늘은 같은 3억을'), ('road', '0.', '이 둘을 37년'),
+# v5(10/10): 0장 = 예고(녹음된 줄 + 본편 센 말 3줄 재사용) → '결론부터' 2줄(새 1 + 8장 줄 재사용) · 0장 끝 두 사람 소개는 1장 머리로 · 차트만 30초 넘게 잇지 않게 사람 장면(persona, 가상 인물) 7개
+CUTS = [('open', '0.', None), ('vs', '0.', '그런데 실제 시장 순서대로'), ('fx97', '0.', '딱 1년 차이인데'),
+        ('pvB', '0.', '매도 씨 영수증은 첫해'), ('pvT', '0.', '평균으로는 평생이던'), ('pvL', '0.', '매도 씨는 지난해 말에도'), ('concl', '0.', '결론부터.'),
         ('logo', '로고', None),
-        ('rules', '1.', None), ('assume', '1.', '그러니까 상품 비교가'),
+        ('duo', '1.', None), ('road', '1.', '이 둘을 37년'), ('rules', '1.', '두 사람 다 퇴직한'), ('assume', '1.', '그러니까 상품 비교가'),
         ('rcptA', '2.', None), ('thresh', '2.', '왜 이렇게 붙을까요'), ('rcptB', '2-2.', None), ('hlist', '2-2.', '지역 건보료는 이자나'), ('double', '2-2.', '물론 주식이 오른 뒤에'),
-        ('avg', '3.', None), ('gap', '3.', '첫해 영수증 차이가'),
-        ('years', '4.', None), ('fx08', '4.', '금융위기 때는'), ('tiles', '4.', '시작한 해를 하나씩'),
-        ('path00', '5.', None), ('path08', '5.', '이번엔 금융위기 해에'),
-        ('avg300', '6.', None), ('grid', '6.', '실제 순서로는 배당 씨가'),
-        ('fxline', '7.', None), ('usd', '7.', '환율을 빼도'),
+        ('avg', '3.', None), ('me1', '3.', '첫해 영수증 차이가'),
+        ('years', '4.', None), ('fx08', '4.', '금융위기 때는'), ('tiles', '4.', '시작한 해를 하나씩'), ('me18', '4.', '평균으로는 평생이던'),
+        ('me00', '5.', None), ('path00', '5.', '시장이 회복해도'), ('path08', '5.', '이번엔 금융위기 해에'),
+        ('me300', '6.', None), ('avg300', '6.', '월 300만원이면'), ('grid', '6.', '실제 순서로는 배당 씨가'),
+        ('mefx', '7.', None), ('fxline', '7.', '외환위기 해에는'), ('me97', '7.', '맨 앞에서 본'), ('usd', '7.', '환율을 빼도'),
         ('sum', '8.', None), ('end', '8.', '이 계산은 두 사람이')]
 END_MIN = 20 * FPS
+# 궁금증형 장 제목(10/10 기준 영상 분해) — 화면은 그 장 첫 장면 제목·1장 '오늘 순서' 목록, 설명란은 meta.json chapters에 같은 글
+CH_Q = {'1.': '같은 3억, 무엇이 다를까?', '2.': '왜 배당 씨 영수증만 길까?', '3.': '평균이면 둘 다 평생?', '4.': '실제 순서로 돌리면?',
+        '5.': '같은 해 은퇴, 어디서 갈렸나', '6.': '덜 꺼내면 달라질까?', '7.': '1997년 시작은 왜 버텼나', '8.': '그래서 남는 세 가지'}
+FAKE = '가상 인물 · 계산용'
+# 사람 장면에 쓰는 값 검산(calc_out 2·3·6·7절)
+assert R['net'] % 12 == 0 and R['net'] // 12 == 2_000_000
+LO98 = min(int(SEQ[('3.00', 200, 'A')][str(y)]) for y in range(1998, 2003)); HI98 = max(int(SEQ[('3.00', 200, 'A')][str(y)]) for y in range(1998, 2003))
+assert (LO98, HI98) == (9, 11)
+B00 = dict(BAL[(2000, 'A')]); assert (B00[2000], B00[2001], B00[2002], B00[2008]) == (2.69, 2.20, 1.33, 0.0)
+
+
+def persona(who, desc, col, head, rows, title, sub, stamp=None):
+    return dict(kind='persona', title=title, sub=sub, source=SRC + ' · ' + PAST,
+                data={'person': [who, desc, col], 'tag': FAKE, 'head': head, 'rows': rows, 'stamp': stamp})
 
 
 def spec(key, A):
+    if key == 'pvB':
+        return persona('매도 씨', '필요한 만큼 팔기', 'fall', '매도 씨 · 첫해 영수증 · 단위 원',
+                       [['판 돈', won(R['Bsell']), 'in', 0], ['양도세(산 직후)', '0', 'tax', 8], ['건보료 더 냄', '0', 'tax', 16], ['손에 쥐는 돈', won(R['net']), 'net', 24]],
+                       '첫해 세금 0원', FAKE + ' · ' + SUB)
+    if key == 'pvT':
+        ys = list(range(1989, 2007))
+        return dict(kind='tiles', title='평균이면 평생이던 돈', sub=SUB + ' · 배당 씨 · 숫자 = 바닥난 연차(+는 자료 끝까지 버팀)', source=SRC + ' · ' + PAST,
+                    data={'rows': [['배당 씨', 'accent', [[y, SEQ[('3.00', 200, 'A')][str(y)]] for y in ys], 0]], 'count': [[f'{KRW20[0]}/18', 30]], 'box': None})
+    if key == 'pvL':
+        d = spec('path08', lambda w, plus=0: plus); d['title'] = '2008년에 시작한 두 사람'; return d
+    if key == 'concl':
+        return dict(kind='law', title='오늘 계산, 한 줄로', sub='같은 지수 · 같은 결과 · ' + SUB, source=SRC + ' · ' + PAST,
+                    data={'head': '버틴 햇수를 가른 것', 'rows': [['어떤 길로 꺼내나', '배당 vs 팔기', 'in', A('결론부터', 30)], ['얼마씩 꺼내나', '월 150·200·300만원', 'in', A('결론부터', 75)],
+                                                              ['→ 버틴 햇수', '갈렸다', 'net', A('결론부터', 120)], ['평균으로 센 평생', '실제 순서에선 자주 무너짐', 'hi', A('평균으로 계산한')]],
+                          'side': ['결론부터', 0, '같은 지수라도']})
+    if key == 'me1':
+        return persona('배당 씨', '분배금으로 받기', 'accent', '배당 씨의 한 달 · 첫해 · 단위 원',
+                       [['손에 쥐는 돈', f'월 {won(R["net"] // 12)}', 'in', 0], ['건보료 더 냄', f'월 {won(R["him"])}', 'tax', 10], ['미국 원천징수', f'연 {won(R["us"])}', 'tax', 20],
+                        ['첫해 더 빠진 돈', won(GAP), 'net', A('첫해 영수증 차이가', 30)]],
+                       '배당 씨의 한 달 영수증', FAKE + ' · ' + SUB, stamp=['매도 씨는 0원', A('평균이 높으면')])
+    if key == 'me18':
+        return persona('배당 씨 18명', '은퇴한 해만 다름', 'accent', '20년 뒤, 배당 씨들의 통장',
+                       [['시작 해 1989~2006년', '18명', 'in', 0], ['20년 안에 통장 0원', f'{KRW20[0]}명', 'tax', 12],
+                        ['1998~2002년 은퇴', f'{LO98}~{HI98}년차 0원', 'hi', A('갈린 건')], ['매도 씨였다면 0원', f'{KRW20[1]}명', 'dim', A('갈린 건', 45)]],
+                       '절반은 20년을 못 갔다', FAKE + ' · ' + SUB + ' · 1명 = 시작 해 1개')
+    if key == 'me00':
+        return persona('배당 씨', '2000년 1월 은퇴', 'accent', '배당 씨 통장 · 연말 잔액',
+                       [['2000년 1월', '3억원', 'in', 0], ['2000년 말', f'{B00[2000]:.2f}억원', 'in', A('원화로 보면')], ['2001년 말', f'{B00[2001]:.2f}억원', 'in', A('원화로 보면', 45)],
+                        ['2002년 말', f'{B00[2002]:.2f}억원', 'tax', A('두 사람 다 원금')]],
+                       CH_Q['5.'], FAKE + ' · 2000년 시작 · ' + SUB, stamp=['절반 밑', A('두 사람 다 원금', 20)])
+    if key == 'me300':
+        return persona('배당 씨', '3억 · 같은 지수', 'accent', '한 달에 얼마 꺼낼까',
+                       [['월 150만원', '덜 꺼내기', 'in', 6], ['월 200만원', '지금까지', 'hi', 14], ['월 300만원', '더 꺼내기', 'in', 22]],
+                       CH_Q['6.'], FAKE + ' · 3억 · 원화 계산')
+    if key == 'mefx':
+        return persona('배당 씨', '생활비는 원화', 'accent', '배당 씨의 돈, 두 나라',
+                       [['모아 둔 돈', '미국 대형주 지수(달러)', 'in', 0], ['꺼내 쓰는 돈', '원화 월 200만원', 'in', A('하나 더 볼', 50)], ['그 사이', '원/달러 환율', 'hi', A('하나 더 볼', 100)]],
+                       CH_Q['7.'], FAKE + ' · ' + SUB)
+    if key == 'me97':
+        return persona('배당 씨', '1997년 1월 은퇴', 'accent', '배당 씨 통장 · 1997년 시작',
+                       [['1997년 1월', '3억원', 'in', 0], ['1997년 원화 수익', M(f'{RET[1997][1]:+.1f}') + '%', 'hi', 20], ['2025년 말', bal_str(S7[1997][0]) + ' 남음', 'net', 50],
+                        ['달러로만 계산하면', S7[1997][2], 'dim', A('맨 앞에서 본', 110)]],
+                       '1997년 1월에 은퇴한 배당 씨', FAKE + ' · ' + SUB, stamp=['환율 덕', A('맨 앞에서 본', 80)])
     if key == 'open':
         return dict(kind='drain', title='3억에서 매달 200만원, 언제 바닥날까', sub=f'평균 수익률(원화 연 {GEO_KRW}%)이 매년 같다고 놓으면', source=SRC + ' · ' + PAST,
                     data={'tank': '3억원', 'out': '월 200만원', 'in': f'연 {GEO_KRW}% 매년', 'score': [['평균대로', AVG[('3.00', 200)]['A'], 8]]})
@@ -108,10 +167,10 @@ def spec(key, A):
                           'rows': [['1997년 시작', [bal_str(S7[1997][0]) + ' 남음', S7[1997][2]], 0], ['1998년 시작', [S7[1998][0], S7[1998][2]], 0]],
                           'hot': [[0, 1, A('환율을 빼고')], [1, 1, A('환율을 빼고', 10)]], 'note': ['1년 차이의 대부분 = 환율 몫', A('그러니까 이 1년')]})
     if key == 'duo':
-        return dict(kind='duo', title='같은 3억, 꺼내는 길 둘', sub='같은 지수 · 같은 결과 · 받는 길만 다르다', source=None,
-                    data={'mid': '같은 3억', 'a': ['배당 씨', '분배금으로 받기', A('배당으로 받는')], 'b': ['매도 씨', '필요한 만큼 팔기', A('배당으로 받는', 40)]})
+        return dict(kind='duo', title=CH_Q['1.'], sub='배당 씨 · 매도 씨 = ' + FAKE + ' · 같은 지수 · 받는 길만 다르다', source=None,
+                    data={'mid': '같은 3억', 'a': ['배당 씨', '분배금으로 받기', A('배당으로 받는')], 'b': ['매도 씨', '필요한 만큼 팔기', A('배당으로 받는', 40)], 'tag': [FAKE, A('배당으로 받는', 60)]})
     if key == 'road':
-        items = ['두 사람의 규칙', '첫해 영수증 — 세금·건보료', '평균이면?', '37년 실제 순서', '두 해 따라가기', '꺼내는 돈을 바꾸면', '환율']
+        items = [CH_Q[f'{i}.'] for i in range(2, 9)]
         return dict(kind='road', title='오늘 순서', sub='1989~2025년 37년 실제 기록', source=SRC,
                     data={'rows': [[f'{"①②③④⑤⑥⑦"[i]}  {t}', A('이 둘을', 6 + 10 * i) if i < 4 else A('세금과 지역가입자', 6 + 12 * (i - 4))] for i, t in enumerate(items)]})
     if key == 'logo':
@@ -125,7 +184,7 @@ def spec(key, A):
                     data={'cards': [['상품 비교', '아님 · 같은 결과', A('그러니까')], ['분배', '꺼내는 돈 전부 배당', A('여기선')], ['물가', '반영 안 함', A('여기선', 16)], ['종합과세 추가세', '계산 안 함', A('여기선', 32)]],
                           'stamp': ['가정', A('실제 배당 상품은')], 'no': ['= 배당 쪽 비용은 적게 잡힌 쪽', A('여기선', 50)]})
     if key == 'rcptA':
-        return dict(kind='law', title='배당 씨 · 첫해 영수증', sub=SUB + ' · 단위 원', source=SRC_LAW,
+        return dict(kind='law', title=CH_Q['2.'], sub='배당 씨 · 첫해 영수증 · ' + SUB + ' · 단위 원', source=SRC_LAW,
                     data={'head': '배당 씨 · 첫해', 'rows': [['세전 분배금', won(R['gross']), 'in', A('배당 씨가')], ['미국 원천징수 15%', '−' + won(R['us']), 'tax', A('미국에서')],
                                                              ['건보료 더 냄(8.1348%)', '−' + won(R['hi']), 'tax', A('여기에 건강보험료')], ['손에 쥐는 돈', won(R['net']), 'net', A('여기에 건강보험료', 40)]],
                           'side': [f'월 {won(R["him"])}원', A('여기에 건강보험료', 10), '건보료 · 다음 해 11월 고지서부터']})
@@ -148,7 +207,7 @@ def spec(key, A):
                     data={'max': 3_000_000, 'bars': [['양도세', R['Btax2'], won(R['Btax2']) + '원', A('산 값의 두 배'), 'ink', f'판 돈 {won(R["Bsell2"])}원'],
                                                      ['건보료 더 냄', 0, '0원', A('그래도 건보료'), 'fall', '양도소득은 목록 밖']]})
     if key == 'avg':
-        return dict(kind='count', title='평균이면 둘 다 평생', sub='1989~2025년 원화 기하평균이 매년 똑같이 나온다면', source=SRC,
+        return dict(kind='count', title=CH_Q['3.'], sub='1989~2025년 원화 기하평균이 매년 똑같이 나온다면', source=SRC,
                     data={'to': float(GEO_KRW), 'text': GEO_KRW + '%', 'label': '원화로 본 평균 · 연', 'note': f'달러로는 {GEO_USD}%', 'start': A('원화로 본'),
                           'score': [['배당 씨', AVG[('3.00', 200)]['A'], A('이러면')], ['매도 씨', AVG[('3.00', 200)]['B'], A('이러면', 10)]]})
     if key == 'gap':
@@ -156,7 +215,7 @@ def spec(key, A):
                     data={'text': won(GAP) + '원', 'start': A('첫해 영수증'), 'label': '배당 씨 첫해 · 매도 씨는 0원', 'note': '평균이 높으면 이 차이가 가려진다', 'noteAt': A('평균이 높으면')})
     if key == 'years':
         vals = [RET[y][1] for y in YEARS]
-        return dict(kind='years', title='실제 순서 — 해마다 원화 수익률', sub='S&P500 총수익 · 원화 환산 · 1989~2025', source=SRC,
+        return dict(kind='years', title=CH_Q['4.'], sub='해마다 원화 수익률 · S&P500 총수익 · 원화 환산 · 1989~2025', source=SRC,
                     data={'years': YEARS, 'vals': vals, 'start': 0, 'max': 130, 'min': -60,
                           'tags': [[YEARS.index(y), RET[y][1], f'{y} {M(f"{RET[y][1]:+.1f}")}%', A('원화로 가장') + 8 * i] for i, y in enumerate(worst[:3])]})
     if key == 'fx08':
@@ -169,7 +228,7 @@ def spec(key, A):
         return dict(kind='tiles', title='시작한 해 18개 — 20년을 버텼나', sub=SUB + ' · 숫자 = 바닥난 연차(+는 자료 끝까지 버팀)', source=SRC + ' · ' + PAST,
                     data={'rows': [['배당 씨', 'accent', cell('A'), A('배당 씨 쪽은')], ['매도 씨', 'fall', cell('B'), A('매도 씨 쪽은')]],
                           'count': [[f'{KRW20[0]}/18', A('배당 씨 쪽은', 10)], [f'{KRW20[1]}/18', A('매도 씨 쪽은', 10)]],
-                          'box': [1998, 2002, A('갈린 건'), '1998~2002 시작 · 큰 하락이 초반에']})
+                          'box': None})
     if key in ('path00', 'path08'):
         y0 = 2000 if key == 'path00' else 2008
         a, b = BAL[(y0, 'A')], BAL[(y0, 'B')]; yrs = [y for y, _ in b] if len(b) >= len(a) else [y for y, _ in a]
@@ -180,7 +239,7 @@ def spec(key, A):
         ea, eb = S6[(200, y0)]
         if key == 'path00':
             tags = [[len(a) - 1, sa[len(a) - 1], f'배당 씨 {ea}', A('배당 씨는 9년째'), 'up', True], [len(b), 0.0, f'매도 씨 {eb}', A('배당 씨는 9년째', 40), 'up', False],
-                    [3, sa[3], f'2002년 말 {sa[3]:.2f}억', A('두 사람 다 원금'), 'down', False]]
+                    [3, sa[3], f'2002년 말 {sa[3]:.2f}억', 0, 'down', False]]
             score = [['배당 씨', ea.replace(' 바닥', ''), A('배당 씨는 9년째')], ['매도 씨', eb.replace(' 바닥', ''), A('배당 씨는 9년째', 40)]]
         else:
             tags = [[len(a), 0.0, f'배당 씨 {ea}(2024)', A('배당 씨는 17년째'), 'up', True], [len(sb) - 1, sb[-1], f'매도 씨 2025년 말 {sb[-1]:.2f}억원', A('매도 씨는 지난해'), 'left', False]]
@@ -205,7 +264,7 @@ def spec(key, A):
                     data={'series': [['원/달러', 'ink', v]], 'min': 600, 'max': 1600, 'draw': 0, 'dur': 50, 'xlabels': [[i, str(y)] for i, y in enumerate(ys) if y % 5 == 0],
                           'ticks': [[800, '800'], [1000, '1,000'], [1200, '1,200'], [1400, '1,400']],
                           'tags': [[ys.index(1996), FX[1996], f'1996 {FX[1996]:,}원', A('외환위기 해에는'), 'down', False], [ys.index(1997), FX[1997], f'1997 {FX[1997]:,}원 · 원화 수익 {M(f"{RET[1997][1]:+.1f}")}%', A('외환위기 해에는', 40), 'up', True],
-                                   [ys.index(2008), FX[2008], f'2008 {FX[2008]:,}원', A('맨 앞에서 본'), 'up', False]]})
+                                   [ys.index(2008), FX[2008], f'2008 {FX[2008]:,}원', A('외환위기 해에는', 90), 'up', False]]})
     if key == 'usd':
         return dict(kind='grid', title='환율을 빼도 순서는 같았다', sub='3억 · 월 200만원 · 시작 해 1989~2006년 18개 · 20년 안에 바닥', source=SRC,
                     data={'cols': ['원화로 계산', '달러로만 계산'],
@@ -213,7 +272,7 @@ def spec(key, A):
                           'hot': [[0, 1, A('환율을 빼도', 30)], [1, 1, A('환율을 빼도', 50)], [2, 0, A('그런데 1998년', 30)]],
                           'note': ['앞으로 환율이 어느 쪽일지는 이 계산이 말하지 않는다', A('환율은 어느 해에')]})
     if key == 'sum':
-        return dict(kind='law', title='정리 — 세 가지', sub=SUB + ' · ' + COND, source=SRC + ' · ' + PAST,
+        return dict(kind='law', title=CH_Q['8.'], sub=SUB + ' · ' + COND, source=SRC + ' · ' + PAST,
                     data={'head': '점수판 전체', 'rows': [['평균대로 계산', AVG[('3.00', 200)]['A'], 'dim', 0], ['실제 순서 · 20년 안 바닥', f'배당 {KRW20[0]}/18 · 매도 {KRW20[1]}/18', 'in', A('평균으로 계산한')],
                                                           ['첫해 더 빠진 돈(배당 씨)', won(GAP) + '원', 'tax', A('같은 지수라도')], ['월 300만원 · 20년 안 바닥', f'배당 {F20[("3.00", 300)][0]}/18 · 매도 {F20[("3.00", 300)][1]}/18', 'hi', A('그리고 얼마를')]],
                           'side': ['꺼내는 돈', A('그리고 얼마를', 20), '받는 길만큼 중요했다']})
@@ -271,6 +330,11 @@ def main(script):
     tot = sum(s['frames'] for s in scenes) / FPS
     print(f'장면 {len(scenes)} · 길이 {tot / 60:.2f}분 · 말 {n_lines}줄 · 목소리 없는 문장 {missing} · 종류 {len({s["kind"] for s in scenes})} {sorted({s["kind"] for s in scenes})}')
     for s in scenes: print(f"  {s['key']:8} {s['kind']:8} {s['frames'] / FPS:6.1f}초 문장{len(s['lines']):3}  {s['title']}")
+    # 차트만 이어지는 구간(10/10 기준 영상 분해: 사람 장면 없이 30초 넘기지 않기) — 녹음 길이가 바뀌면 다시 본다
+    CHART = {'grid', 'bars', 'count', 'zoom', 'years', 'diverge', 'tiles', 'line', 'thresh'}
+    run = mx = 0
+    for s in scenes: run = run + s['frames'] if s['kind'] in CHART else 0; mx = max(mx, run)
+    print(f'차트만 이어진 최장 {mx / FPS:.1f}초(기준 ≤30)' + (' — 넘음: 사람 장면(persona)을 사이에 넣는다' if mx > 30 * FPS else ''))
     return res
 
 

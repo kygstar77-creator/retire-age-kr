@@ -68,8 +68,8 @@ export const VsTiles: React.FC<{tiles: [string, string, string, number, string][
   );
 };
 
-// 두 사람: 왼쪽 a, 오른쪽 b(이름, 설명, 시작), 가운데 같은 돈 상자
-const Person: React.FC<{x: number; y: number; name: string; desc: string; at: number; color: string}> = ({x, y, name, desc, at, color}) => {
+// 두 사람: 왼쪽 a, 오른쪽 b(이름, 설명, 시작), 가운데 같은 돈 상자 · Person은 C-1 v5 사람 장면(persona)에서도 씀
+export const Person: React.FC<{x: number; y: number; name: string; desc: string; at: number; color: string}> = ({x, y, name, desc, at, color}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig(); const s = spring({frame: f - at, fps, config: {damping: 12}});
   if (f < at) return null;
   return (

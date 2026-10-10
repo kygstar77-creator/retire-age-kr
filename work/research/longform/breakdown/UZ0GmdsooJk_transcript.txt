@@ -1,0 +1,178 @@
+[gemini-3.7-flash · 2026-10-10 11:56 · https://www.youtube.com/watch?v=UZ0GmdsooJk]
+[00:00] And now we're on pace to hit $60K this month.
+[00:03] And I didn't even know how to vibe code, I didn't even know how to prompt.
+[00:05] 18살 대학 중퇴생이 만든 건 복근 사진에 점수 매기는 앱.
+[00:10] And just before launch, I was like, there's absolutely no way I can release this. This is terrible.
+[00:16] 2개월 만든 앱을 처음부터 다시 만들었습니다.
+[00:19] The problem was our margins were terrible. We were running at like 5 to 10%.
+[00:24] 인플루언서 영상 한 편에 수천 달러씩 쓴 결과였죠.
+[00:28] And there's zero competitors in this niche, which is kind of crazy.
+[00:32] 근데 진짜 0명이었을까요?
+[00:35] Anybody can build an AbMaxx app, right?
+[00:37] Building it is not the hard part.
+[00:38] Hope, thanks for sharing everything so openly, even though you probably have a few copycats.
+[00:43] 그리고 지금 이 앱엔 가격표가 붙어 있습니다.
+[00:46] 그래서 월 5만 달러는 진짜 어디서 나왔을까요?
+[00:52] 결론부터.
+[00:53] 앱은 AI가 짰습니다.
+[00:55] 그것도 두 번.
+[00:57] 근데 돈을 만든 건 앱이 아니었죠.
+[01:00] 오래된 욕망, 비싼 실수, 고객이 모인 광고판.
+[01:04] 그리고 함정 하나.
+[01:08] AbMaxx에 복근 사진을 올리면 AI가 점수를 매기고 운동 루틴까지 짜 줍니다.
+[01:14] 근데 이 단순한 앱의 한 달 매출을 들으면 좀 억울해집니다.
+[01:18] Yeah, so our monthly revenue is just about $55,000 this month.
+[01:22] And we currently have 16,000 downloads in the past 28 days.
+[01:26] And we have just over 3,000 active paying customers.
+[01:29] 인터뷰 속 그 숫자, 공개 기록으로도 보입니다.
+[01:33] 앱 결제를 모아 주는 RevenueCat 매출을 TrustMRR이 그대로 공개하는데, AbMaxx 한 앱만 9월 53,175달러.
+[01:41] 근데 구독료를 한 달 치로 나눠 센 MRR은 18,659달러.
+[01:47] 1년 치 결제가 결제한 달 매출에 몰려 잡히거든요.
+[01:50] 주인공은 뉴욕의 리노 레이턴.
+[01:53] 인터뷰 땐 18살, 지금은 19살.
+[01:56] 대학은 한 학기 만에 그만뒀고, 앱은 만들어 본 적도 없었죠.
+[02:00] 그런데 어떻게 여기까지 왔을까요?
+[02:05] 시작은 아주 사소했습니다.
+[02:07] Yeah, so actually I was back in back in February and I went to the gym with all my friends.
+[02:12] Everyone kept comparing about who has better abs.
+[02:14] They were like, "Oh, I have better abs than you. I have better abs than you."
+[02:17] And I just kept that, kept thinking like everyone cares about their abs.
+[02:21] And then I started to do a little research and I found out that if someone wanted to get abs in 2026, there was absolutely no place for them to go.
+[02:29] 창업 인터뷰 채널 Starter Story의 진행자 팻 월스는 옛날 TV 광고를 떠올리죠.
+[02:35] And I remember 20, 10, 20 years ago when I was a kid just like watching TV, they would have these ads for like 5-minute abs.
+[02:43] And you'd buy some sort of device or some sort of work out thing, back then it was like Bowflex or something like that.
+[02:49] But they would market it specifically for if you want abs for the summer.
+[02:53] You're essentially doing this in, you know, a modern social media way.
+[02:58] '여름엔 복근'.
+[02:59] 여름은 해마다 오니까 이 욕망은 늙지를 않습니다.
+[03:03] 근데 코딩 모르는 18살이 앱은 어떻게 만들었을까요?
+[03:07] Yeah, so I originally built this in Lovable back in February.
+[03:11] And this is when I didn't even know anything about apps.
+[03:14] I didn't even know what RevenueCat was.
+[03:16] I didn't even know what an onboarding was.
+[03:17] And I spent 2 months manually prompting this old project in Lovable.
+[03:22] After 2 months, I was ready to launch.
+[03:25] And just before launch, I was like, there's absolutely no way I can release this.
+[03:28] This is terrible.
+[03:30] So I decided to rebuild the entire thing back in Rork.
+[03:34] 근데 '못 내놓겠다'던 그 앱, 이미 나와 있었습니다.
+[03:38] 말로 시키면 앱을 짜 주는 AI 빌더 Lovable 버전이 2026년 2월 9일 App Store에 올라갔거든요.
+[03:45] 2개월 매출은 합쳐서 88.93달러.
+[03:49] 갈아탄 곳은 또 다른 AI 빌더 Rork.
+[03:52] 그리고 리노는 X로 갑니다.
+[03:54] And this is when I started to get on to X and starting to follow all these other successful app founders.
+[03:59] And I picked up a lot of great advice about not only how to vibe code, but also some like onboarding tactics, how to market, all like the insider advice you need that is working for their app.
+[04:10] Rork로 다시 만드는 데 1개월.
+[04:12] 그러자 매출이 4월 1,362달러, 5월 5,041달러.
+[04:18] 경쟁 앱 조사엔 Sensor Tower를 썼고요.
+[04:21] 그런데 이때 리노는 비싼 실수를 하나 저지르죠.
+[04:26] 리노가 처음 돈을 건 곳은 사용 후기처럼 찍는 홍보 영상, UGC였습니다.
+[04:32] I started running UGC with these big influencers in the fitness niche, which was probably one of the biggest mistakes I've ever made.
+[04:38] We were blindly going into this.
+[04:40] We didn't even have a winning format or a winning content strategy to give these influencers before spending thousands of dollars for each video.
+[04:46] So that's probably the biggest mistake.
+[04:49] And so alongside that, we were also running faceless TikTok slideshows, which I was manually posting on my own.
+[04:55] The big UGC deals alongside these TikTok slideshows helped us get up to 3 to 4k in revenue.
+[05:01] But the problem was our margins were terrible.
+[05:03] We were running at like 5 to 10%.
+[05:05] Which is why I came up with the idea...
+[05:07] 번 돈 대부분이 영상값으로 나간 셈이죠.
+[05:10] 리노가 현금 대신 내민 카드는 지분이었습니다.
+[05:13] Yeah, and we partnered up with a big fitness influencer on social media in return for some equity, which helped us get the ground running off the start.
+[05:21] Which I would recommend to any inexperienced founders who are looking to get the ground running off launch.
+[05:26] 근데 6월까지 월 1만 달러를 넘긴 달은 없었습니다.
+[05:30] 리노는 X에 몇 달째 막혀 있었다고 썼죠.
+[05:34] 다음 수는 의외로 빼기.
+[05:36] 광고비가 매출로 몇 배 돌아오는지, 그 ROAS를 따져 보고요.
+[05:41] Yeah, so basically we cut out every single UGC deal, every influencer deal, and we started to double down on what was working for us.
+[05:48] And we found out that our Meta ads were running at like a 2 2 to 2.5x ROAS.
+[05:53] And they were extremely profitable.
+[05:55] So we just started doubling down on Meta ads, and we only stuck with our one big creator that we gave equity to, and he would just create content for us, and we would just run paid ads behind it strictly through Meta.
+[06:06] As well...
+[06:07] 근데 인스타·페이스북에 돌리던 그 영상을 틱톡에도 걸자, 얘기가 달라집니다.
+[06:13] At the same exact creatives, we were able to we were able to get 4 to 5x ROAS on the same creatives.
+[06:18] Mainly because on TikTok, it targets a younger audience, and Meta is more of an older audience.
+[06:23] So our target user is anywhere from 15 to 30 years old.
+[06:26] And with...
+[06:27] 판을 바꾼 건 틱톡이었고, 나머진 거기에 기름을 부은 거죠.
+[06:31] 먼저 가격.
+[06:33] 월 11.99달러 구독을 주 8.99달러 구독으로.
+[06:38] 결제 단위를 바꾼 겁니다.
+[06:39] 고객 1명이 결국 내는 돈, LTV가 평균 1.25달러 올랐답니다.
+[06:45] 광고 소재도 Grok과 ChatGPT Images, Seedance 2.5로 2배 늘렸고요.
+[06:50] 그리고 공짜 채널, 얼굴 없는 틱톡 슬라이드쇼.
+[06:54] 형식은 이렇습니다.
+[06:55] For example, if you're building a calorie-tracking app, the first slide would be "5 ways to improve your life", let's just say.
+[07:02] Slide one, walk 10,000 steps a day.
+[07:05] Slide two, work out seven times a week.
+[07:07] Slide three, eat extremely clean.
+[07:09] Slide four, use this app [blank] to help you blah blah blah.
+[07:13] 리노는 이런 슬라이드쇼를 매일 올렸습니다.
+[07:16] 하루 10분, 비용 0달러.
+[07:19] 근데 첫 장 한 줄에 운명이 갈렸죠.
+[07:22] 16만 5,000뷰, 그리고 920뷰.
+[07:26] 리노가 X에 적은 성적표는 '월 약 6만 달러 페이스, 순마진 약 40%.'
+[07:32] UGC 시절 5~10%던 마진과는 딴판이죠.
+[07:36] TrustMRR 매출도 7월 21,773달러에서 8월 52,435달러로.
+[07:43] 근데 인터뷰 막바지, 묘한 말이 나옵니다.
+[07:49] Yeah, so that's pretty much AbMaxx, super simple.
+[07:51] And I was actually the first one to come up with this idea, believe it or not.
+[07:55] And there's zero competitors in this niche, which is kind of crazy.
+[07:59] You mentioned that, you know, you were the first to come up with this app idea.
+[08:03] Here's the thing.
+[08:04] Anybody can build an AbMaxx app, right?
+[08:06] Building it is not the hard part. I hope...
+[08:08] 경쟁자 0명이라는데, App Store에서 복근 앱만 찾아봐도 얘기가 다릅니다.
+[08:14] 2018년에 나온 앱 하나가 미국 평가만 38,326개죠.
+[08:19] AI 복근 점수 앱만 6월부터 9월 사이 4개가 새로 나왔고, 인터뷰 공개 전에 전부 스토어에 있었죠.
+[08:26] 만드는 건 어렵지 않다는 말, 경쟁자들이 먼저 증명한 셈입니다.
+[08:30] 숫자 하나도 다시 봐야 합니다.
+[08:33] 인터뷰 첫마디죠.
+[08:34] So I'm Lino Leighton. I launched my first app AbMaxx about 5 months ago, and now we're on pace to hit 60k this month.
+[08:41] 5개월은 다시 만든 앱부터 센 거고요.
+[08:44] 6만 달러는 그때까지 속도로 한 달을 어림한 페이스 추정치죠.
+[08:48] 실제 최고 기록은 9월 53,175달러.
+[08:52] 예고편의 그 가격표, TrustMRR에 걸린 매물 표시죠.
+[08:57] 6월 16일 처음 부른 값은 4만 7,000달러.
+[09:00] 매출이 뛸수록 값도 올려서, 9월 9일부터는 100만 달러.
+[09:05] 닮은 앱들이 나오던 그 여름이었죠.
+[09:07] 다만 부르는 값일 뿐, 팔린 값은 아닙니다.
+[09:10] 인수 제안은 21건.
+[09:12] TrustMRR에서 리노 이름이 붙은 두 번째 앱 Baller도 매물이고요.
+[09:18] 그럼 진짜 가져갈 건 뭘까요?
+[09:22] 리노가 처음부터 다시 한다면, 1단계는 X의 앱 창업자들 사이로 들어가는 겁니다.
+[09:28] 그리고 아까 그 조사 툴을 엽니다.
+[09:30] Then I would go onto Sensor Tower and start looking up some ideas you have for apps and start trying to find the hot niche right now.
+[09:37] The way to find this is by looking up potential app ideas in there, and if there are a ton of apps in that niche consistently doing over 10k a month, then that's a niche you want to build in.
+[09:46] Yeah, so...
+[09:47] 경쟁자 0명을 자랑하던 리노가, 정작 공식에선 잘 버는 경쟁자가 많은 데로 가라는 거죠.
+[09:53] 그리고 2단계.
+[09:54] 핵심은 마지막 장의 행동 유도 문구, CTA입니다.
+[09:59] Yeah, so step two is post before building.
+[10:01] Once you have your app idea, if you want to validate it even more before even start building it, I would make a faceless TikTok page and start promoting your app through organic TikTok slideshows, and start posting three to four times a day.
+[10:12] However, since your app is not built, instead of giving them a CTA on a specific slide, I would replace the CTA with "Comment app, and I will send it to you."
+[10:21] 'app' 댓글이 쌓이면 그때 만듭니다.
+[10:24] 3단계는 7일 안에 출시.
+[10:26] Lovable에 2개월을 쓴 사람이라 나온 숫자죠.
+[10:29] 4단계, 광고는 작은 크리에이터부터.
+[10:32] I would reach out to them and pay them like $100 for 10 videos, and have them test out a bunch of different hooks, formats, and CTAs for my app.
+[10:40] The goal would be for this is just to find your winning content style before putting any serious money behind it.
+[10:46] 영상 한 편에 수천 달러를 태우던 리노가, 이젠 편당 10달러꼴로 먼저 간을 보라는 겁니다.
+[10:52] 먹히는 포맷을 찾은 뒤에야 크게 키우고요.
+[10:55] 네 단계 어디에도 코딩 실력은 없습니다.
+[10:59] 내일 해 볼 수 있는 건 얼굴 없는 슬라이드쇼 계정 하나.
+[11:03] 물론 댓글이 매출을 약속하진 않습니다.
+[11:05] 한국은 사정이 좀 다릅니다.
+[11:07] AI 피트니스 앱 플랜핏이 이미 평가 28,896개.
+[11:12] 광고판도 다르죠.
+[11:14] 2026년 1월 기준 월간 이용자, 인스타그램 2,797만, 틱톡 943만.
+[11:21] 내 고객 나이대가 어디 있는지부터 봐야 합니다.
+[11:24] 마지막으로, 리노의 한마디.
+[11:26] This kind of goes for any business. It's simply just do not give up, and stop comparing yourself to all these people you see on social media who are doing six figures, seven figures.
+[11:37] Don't compare your level two or your level three to someone else's level, and just focus on your path and what's ahead, and what's the next step for you.
+[11:45] You're going to go through some tough times where you literally think your life is over, like I experienced. I thought my life is over. Looking back on it now, it was no big deal.
+[11:53] But you just have to keep going...
+[11:55] AI로 앱을 두 번 만든 리노.
+[11:58] 근데 월 5만 달러를 만든 건 고객을 끝까지 쫓아간 광고 공식이었습니다.
+[12:03] 그리고 쉽게 만든 앱 옆엔 닮은 앱도 쉽게 붙죠.
+[12:07] 다음 편도 '설마 이걸로?' 싶은 사례입니다.

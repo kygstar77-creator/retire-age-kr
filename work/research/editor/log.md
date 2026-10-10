@@ -1,3 +1,6 @@
+## 2026-10-10 12:05 · C-1 v5 대본·화면 재서명(youtube-head 편집 대행 — 10/10 지시 '바뀐 줄만 직접 검토해 stamp')
+- 바뀐 줄만 봄: 말 새 1줄 '결론부터. 같은 지수라도 어떤 길로, 얼마씩 꺼내느냐에 따라 버틴 햇수가 갈렸습니다.'(숫자 0, '결론부터 말하면'은 aitell AI 말이라 피함) · 재배치·재사용 9줄은 10/9 녹음 문장 그대로 · aitell script(말 80줄) 85.0/1,000·14% 통과, 전체 AI 티 5.2 · 화면 글자 새 값 전부 calc_out 2·3·6·7절(c1props assert) · '가상 인물 · 계산용' 표시 · script.md.edit.json 162e0d74… · screen_text c4518eb4… · 원본 script.v4.md
+
 ## 2026-10-10 07:08 · 정기 06:50 — W-1 대본·화면 재서명 · A-1 쿠팡 줄 · auto 표본 3(10/10 08:10 acqtax·10:10 sevbasis·12:10 childleave)
 - W-1 script.md·say_v2.txt 재서명: 바뀐 말 2줄('약 5만원' = calc_out [F5] −49,138 · 면책 1줄), aitell script 64.6/1,000·12% 통과. 면책은 법정 성격이라 손대지 않음
 - W-1 screen_text 재stamp(47782904…): diff 19줄 전부 [F2]·[F4]·[F5]·SPY 778.54·날짜·말 2줄

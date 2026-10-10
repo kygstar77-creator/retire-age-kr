@@ -1,13 +1,14 @@
 // C-1 "3억으로 매달 200만원 — 배당으로 받기 vs 팔아서 쓰기" 화면 — 재료: work/video/c1.json(ep/C-1/c1props.py가 script.md·voice.json·calc_out.txt·raw로 만든다)
 // 틀은 G-1·R-1과 같은 TallyFrame(흰 보드·형광 부제·[자막] 칩·출처). 새 그림은 parts/withdraw.tsx(점수판·통장 통·두 칸 대결·두 사람·문턱 자·해마다 막대·시작 해 칸).
 // 숫자 글자는 전부 c1.json에서 온다(calc_out 문구 그대로). 코드 안 숫자는 배치 좌표뿐. 상품 추천·전망 없음. 색: 배당 씨 주황(accent)·매도 씨 파랑(fall).
+// v5(10/10): 사람 장면 persona = 기존 부품 Person(두 사람 아이콘) + Stamp('가상 인물' 도장) + TallyReceipt(한 달 영수증·통장) — 차트만 30초 넘게 잇지 않게.
 import React from 'react';
 import {AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, spring, useVideoConfig} from 'remotion';
 import {T, F, CL, LogoSting} from './parts/fm';
 import {Stamp} from './parts/receipt';
 import {RuleCards, Grid} from './parts/reverse';
 import {DivRows} from './parts/gold';
-import {ScoreBoard, Tank, VsTiles, Duo, Ruler, YearBars, StartTiles} from './parts/withdraw';
+import {ScoreBoard, Tank, VsTiles, Duo, Ruler, YearBars, StartTiles, Person} from './parts/withdraw';
 import {TallyFrame, TallyLine, tallyStarts} from './motion/TallyFrame';
 import {TallyCountUp} from './motion/TallyCountUp';
 import {TallyBars, TallyBar} from './motion/TallyBars';
@@ -194,6 +195,28 @@ const Line: React.FC<{s: CScene}> = ({s}) => {
   );
 };
 
+const Persona: React.FC<{s: CScene}> = ({s}) => {
+  const f = useCurrentFrame(); const d = s.data;
+  const rows = toRows(d.rows);
+  return (
+    <>
+      <Person x={150} y={330} name={d.person[0]} desc={d.person[1]} at={0} color={COL[d.person[2]] ?? T.accent} />
+      <Stamp x={230} y={690} o={fade(f, 8, 8)} text={d.tag} color={T.ink3} size={26} rot={-6} />
+      <TallyReceipt x={720} y={300} w={1060} head={d.head} rows={rows} size={rows.length > 4 ? 30 : 34} active={activeRow(rows, f)} stamp={d.stamp ? {text: d.stamp[0], start: d.stamp[1]} : undefined} />
+    </>
+  );
+};
+
+const DuoS: React.FC<{s: CScene}> = ({s}) => {
+  const f = useCurrentFrame(); const d = s.data;
+  return (
+    <>
+      <Duo mid={d.mid} a={d.a} b={d.b} />
+      {d.tag ? [210, 1350].map((x, i) => <Stamp key={i} x={x} y={690} o={fade(f, d.tag[1] + i * 4, 8)} text={d.tag[0]} color={T.ink3} size={24} rot={-6} />) : null}
+    </>
+  );
+};
+
 const End: React.FC<{s: CScene}> = ({s}) => {
   const d = s.data; const f = useCurrentFrame();
   return (
@@ -210,7 +233,8 @@ const Body: React.FC<{s: CScene}> = ({s}) => {
     case 'drain': return <Drain s={s} />;
     case 'vs': return <Vs s={s} />;
     case 'grid': return <GridS s={s} />;
-    case 'duo': return <Duo mid={s.data.mid} a={s.data.a} b={s.data.b} />;
+    case 'duo': return <DuoS s={s} />;
+    case 'persona': return <Persona s={s} />;
     case 'road': return <Road s={s} />;
     case 'cards': return <Cards s={s} />;
     case 'stamps': return <Stamps s={s} />;

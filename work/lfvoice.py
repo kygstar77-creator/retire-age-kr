@@ -332,7 +332,12 @@ def check(ep, vj=None):
         print(f'편 단위: 앞·뒤 절반 음높이 차 {drift:+.1%}(기준 ±7%) · 퍼짐 IQR/중앙 {iqr:.2f}(기준 ≤0.16)')
         if abs(drift) > 0.07: ep_bad.append('drift')
         if iqr > 0.16: ep_bad.append('iqr')
-    ok = whole >= 5.5 and not bad and not ep_bad and not d.get('missing') and len(recs) == 1 and '?' not in recs
+    # 10/10 순돌이: 날짜 하나 규칙은 '목소리가 바뀐다'를 대신 재던 값이다. 실제로 귀에 걸리는 것은 편 단위 앞뒤 차·IQR이고, 그 관문은 그대로 둔다.
+    #   lfretake로 튀는 줄만 다음 창에서 다시 받은 경우(둘째 날 줄이 전체의 20% 이하)는 날짜 둘을 허용한다. 20%는 근거가 약한 값이다(C-1 다시 받기 15/80줄 모의 IQR 0.19→0.14) — 새 편이 쌓이면 다시 잰다.
+    from collections import Counter as _C
+    rc = _C(l.get('rec') or '?' for s in d['sections'] for l in s['lines'] if l.get('audio')); tot = sum(rc.values()) or 1
+    one_day = len(recs) == 1 or (len(recs) == 2 and min(rc.values()) / tot <= 0.20)
+    ok = whole >= 5.5 and not bad and not ep_bad and not d.get('missing') and one_day and '?' not in recs
     print('통과' if ok else '막힘'); return ok
 
 def cutat(ep, gi, times, maxreq=9, cap=0):

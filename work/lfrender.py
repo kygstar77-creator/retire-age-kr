@@ -179,6 +179,7 @@ def voice_check(vj):
     nodate = sum(1 for r in rows if not r['date'])
     if nodate: res['notes'].append(f'녹음 날짜 기록 없음 {nodate}/{len(rows)}줄 — 한 날 녹음 여부 확인 안 함')
     main_day = ds.most_common(1)[0][0] if ds else None
+    retake_ok = len(ds) == 2 and min(ds.values()) / max(1, sum(ds.values())) <= 0.20   # 10/10 순돌이: lfretake 다시 받기(둘째 날 20% 이하)는 허용, 편 단위 앞뒤 차·IQR 관문은 그대로(lfvoice.check와 같은 기준)
     for r in rows:
         why = []
         f = r['f0']
@@ -187,7 +188,7 @@ def voice_check(vj):
             elif abs(f / res['median_f0'] - 1) > F0_TOL: why.append(f'음높이 {f:g}Hz(중앙 {res["median_f0"]:g} ±25% = {res["lo"]:g}~{res["hi"]:g} 밖)')
         t = r['tempo']
         if t is not None and abs(float(t) - 1.0) > 1e-9: why.append(f'빠르기 {t:g}배(1.0 고정)')
-        if len(ds) >= 2 and r['date'] and r['date'] != main_day: why.append(f'녹음 날짜 {r["date"]}(주 녹음일 {main_day})')
+        if not retake_ok and len(ds) >= 2 and r['date'] and r['date'] != main_day: why.append(f'녹음 날짜 {r["date"]}(주 녹음일 {main_day})')
         if why: res['redo'].append({**r, 'why': why})
     ep_bad = []
     seq = [r['f0'] for r in rows if isinstance(r['f0'], (int, float)) and r['f0'] > 0]
@@ -198,7 +199,7 @@ def voice_check(vj):
         if abs(drift) > DRIFT_MAX: ep_bad.append(f'앞·뒤 절반 음높이 차 {drift:+.1%}(기준 ±{DRIFT_MAX:.0%}) — 뒤쪽이 다른 목소리처럼 들림')
         if iqr > IQR_MAX: ep_bad.append(f'음높이 퍼짐 IQR/중앙 {iqr:.2f}(기준 ≤{IQR_MAX})')
     res['episode'] = ep_bad
-    ok = not res['redo'] and not ep_bad and len(ds) < 2 and bool(fs) and not all(r['tempo'] is None for r in rows)
+    ok = not res['redo'] and not ep_bad and (len(ds) < 2 or retake_ok) and bool(fs) and not all(r['tempo'] is None for r in rows)
     return ok, res
 
 def print_voice(res, ok, where=''):

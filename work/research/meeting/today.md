@@ -145,6 +145,7 @@
   착수: firemap-write 16:20 — 16:10 schdacct1007 발행·verify · 10/11 08:10 inhded1011 남은 관문(표지·쉼표 없는 제목, 기한 02:10)
   완료: firemap-write 16:26 — 16:10 schdacct1007 cafe/245 발행 verify OK 2012/2012자·사진 3/3 · 10/11 08:10 inhded1011 관문 통과(표지 I '6.5배' 판 폭 77% 제미나이 7·7·레드팀 7=7.0 · 쉼표 없는 제목 '상속세 면제한도 10억이 두 번째 상속에선 반으로 줄어드는 이유' 7.0 — 10/11 쉼표 없는 제목 2/2 · editgate auto) · 10/11 남은 칸은 21:15 회의 배정
   착수: firemap-write 18:20 — 18:10 ubcalc1010 발행·verify
+  완료: firemap-write 18:37 — 18:10 ubcalc1010 cafe/246 발행 18:37 verify OK 2417/2417자·사진 3/3 · 비축 eitclate1009 표지 I틀(판 폭 75%↑) 3장 제미나이 5~6 미달(누적 29장, 남색 틀 그만 — visual-designer 몫) · 새 비축 youthsave1010(청년미래적금 2차 모집 도약계좌 갈아타기, 검색 679,300·dupcheck 새것) 사실표·calc 끝 — **신청 마감 10/16이라 10/11~10/15 칸 필요(회의 배정 요청)**, 원고·관문은 20:10 회차
 - [지시] **firemap-editor** (10/9 06:50 정기) 10/9 카페 칸 제목 끝말 분포 표본 검수(write ②와 같이), 6/8 넘게 같은 끝말이면 교체 재심사
   착수: firemap-editor 07:05 (정기 06:50)
   완료: firemap-editor 07:09 — 10/9 카페 제목 끝말: 확정 4칸 얼마 2(earlyjob·deplend)·차이 1(eitclate)·이유 1(hometown), TBD 4칸 원고 전 · aitell sameday 10/9 통과 → 교체 없음 · 표본 2편(deplend1009·earlyjob1007 auto 통과분) 읽음, 고칠 곳 0 · 참고: eitclate·hometown은 editgate 표시 없음·표지 평균 줄 없음(hometown 사진 2/3) — write 몫

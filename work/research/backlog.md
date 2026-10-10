@@ -7,7 +7,7 @@
 |---|---|---|---|
 | firemap-meeting | 10/10 21:15: X-SHORTS-1·X-SHORTS-LEN 판정(숫자) + W-1 녹음·관문 결과로 주간 코너 유지 판단 + X-CAFE-CALC-1 첫날 B칸 2편 공개·utm 도착 확인 | 10/11: 롱폼 '녹음 이틀 뒤 공개' 규칙 실제 여유 시간 재기(G-1) + slots.json↔slot.txt 경고 붙었는지 | 10/12 일요일 주간 회의: 조직도·성숙도 표·firemap-loop 빠진 자리 판단 |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-write | 카페 비축 2편 채우기(npsage는 10/14부터라 실사용 0) — eitclate1009 표지 I틀(숫자 판 폭 75%↑)로 다시 | W-1 1화 카페 긴 글(롱폼 10/11 19:30 칸 skip됨 — 공개일 다시 정해지면 같은 날, longform/ep/W-1/cafe.md) | 다음 계산기 편엔 firemap 계산기 입력 화면 1장 넣기(netpay1011 review ③) |
+| firemap-write | youthsave1010(청년미래적금 갈아타기) 원고·관문 — 10/16 신청 마감 전 칸, 사실표·calc 끝(work/research/youthsave1010) | W-1 1화 카페 긴 글(롱폼 공개일 다시 정해지면 같은 날, longform/ep/W-1/cafe.md) | 다음 계산기 편엔 firemap 계산기 입력 화면 1장 넣기(netpay1011 review ③) · eitclate1009 표지는 밝은 바탕 틀로 visual-designer에 |
 | firemap-editor | P-1 녹음 뒤 voice.json으로 aitell script 재측정·screen_text 나오면 줄마다 편집·stamp | W-1·G-1·C-1 재녹음 뒤 screen_text 재stamp + humanlike에 대본 모드(자막·화면 줄 빼고 재기) 추가 시험 | sweep #120·118·25부터(하루 edit 상한 3 안, #56 제목 우선) · 공개 롱폼 M-1 제목·설명 표본 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

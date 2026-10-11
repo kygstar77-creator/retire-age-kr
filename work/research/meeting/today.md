@@ -11,6 +11,7 @@
   완료(일부): firemap-write 23:26 — 10/11 20:10 칸 med1011(부모님 병원비 의료비 세액공제, 세금연금·형식2) gates_ok 23:26(제목 8.0·표지 7.33·compare.md 경쟁 5편·editgate auto) · improve 22:41 알림 확인: cardded1011은 22:48에 compare.md(경쟁 5편)·cover_review 평균 7.67·소제목 5로 이미 채워져 유효(pending check 지적 없음) · 10/11 카페 6칸 중 5칸 관문 통과 · 남은 TBD 22:10(기한 16:10)·10/12 08:10(기한 02:10) · 비축 카페 새 편은 못 만듦(칸 우선)
   착수: firemap-write 08:20 — 08:10 inhded1011 발행·verify · 남은 TBD 22:10(기한 16:10)·10/12 08:10(기한 02:10) 관문
   완료: firemap-write 08:41 — 08:10 inhded1011 cafe/249 발행 08:40 verify OK 1729/1729자·사진 4/4 · 22:10 renew1011(계약갱신청구권 실거주 거절 뒤 새 세입자 배상금, 부동산·형식2) gates_ok 08:34(제목 7.67·표지 K6 7.33·compare.md 경쟁 5편·readcheck 0·selfcheck 사실 0·crosscheck 사실 2 반영·레드팀 사실 0·editgate auto) · 10/12 08:10 didim1012 gates_ok 08:24(표지 7.67·crosscheck 반영 1·editgate auto) · **10/11 카페 8칸 + 10/12 08:10 전부 관문 통과** · 비축 카페 새 편은 못 만듦 · C-1 22:10 요청은 C-1 공개되면 renew1011을 비축으로 돌리면 됨
+  착수: firemap-write 10:20 — 10:10 netpay1011 발행·verify · 비축 카페 1편
 - [지시] **firemap-improve** (회의 21:41, 기한 10/11 14:30 회차) 의도: 장부와 감시 규칙을 하나로 · 완료 기준: ① patrol.py 칸 기준(109행 cad 카페 8칸·쇼츠 12:20)을 slots.json 칸 그대로 읽게 — 쇼츠 하루 1편(X-YT-FREQ 10/9 판정) 뒤로 12:20 '칸 배정 없음' 오경보 없앰 ② editgate.py가 카페 pkg에 compare.md 없으면 날인 거부 ③ 시험: patrol 오늘 실행 결과에 10/11 12:20 shorts 경보 0 · 금지: 사이트 코드 손대기 · 보고: today.md 완료 줄 + 커밋
   착수: firemap-improve 22:35
   완료: firemap-improve 22:41 — ① 매일 칸 시각을 slots.json 'cadence'(카페 8칸·쇼츠 19:20 한 칸) 한 곳으로 옮기고 patrol.py는 그것만 읽음(하드코딩 cad 삭제, cadence 없으면 경보) ② editgate.py compare_check: 카페 stamp 때 compare.md(pkg 또는 위 폴더)에 경쟁 3편 이상(표 줄·주소)+'잘하는 것·따라갈 것·다르게 할 것' 없으면 '안 찍음' · `editgate.py compare <pkg>` 단독 검사 추가 ③ 시험: 옛 patrol은 '칸 배정 없음 10-11 12:20 shorts' 경보, 새 patrol은 0(남은 경보는 진짜 빈칸 10-12 10:10 cafe 하나). 임시 사본으로 compare.md 빼면 거부·넣으면 찍힘 확인
@@ -235,6 +236,14 @@
   완료: firemap-write 10:30 — 10:10 spouseinh1007 cafe/226 발행 10:26 verify OK 1757/1757자·사진 3/3 · **10/8 08:10 칸 교체**: 배정된 nhisrent1005가 #209(10/5 '건강보험료 재산 점수 과세표준 3억')와 같은 대상·예시라 naverpost가 '같은 대상 이미 씀'으로 막고 있었음(그대로면 10/8 08:10 빈칸) → hold.txt, 새 편 sanghan1008(본인부담상한제 환급금, 10/8 시행 국민건강보험법 제44조③ 체납액 공제 — 경쟁 상위 8편 0편, 검색 32,180) 관문 통과 gates_ok 10:30(제목 T1 7.5·표지 S2 7.33·레드팀 오류 2 반영·editgate auto) · 남은 일: 카페 비축 1/2(retmid1005만)
 - 막힘(회의 21:44): 롱폼 이틀 연속 0편 — 무료 TTS 한도·목소리 퍼짐. 풀 방법 = Chirp 3 HD 결제 계정 연결(approvals.md 맨 위, 사장님 결재). 결재 전까지 대본 100줄 상한 유지 · 담당 순돌이(결재 전달)
 - 막힘(회의 21:44): today.md 255줄(상한 150) — archive 옮기던 finishline-check 삭제로 담당 없음 → 운영실장(firemap-dispatcher) 10/7 03:05 회차가 완료 항목을 archive/2026-10-06.md로 옮김
+
+## ★ 순돌이 10/11 10:3x — 유튜브↔카페 짝 글 (사장님 "유튜브에 올린 건 카페에도 무조건")
+- [지시·긴급] **firemap-write**
+  - 오늘 22:10 빈 칸은 **쇼츠 aYCWFSzynJI**(19:20 공개, '월배당 가장 적게 나온 달로 다시 재면 얼마?') 짝 글이다.
+  - **M-1 롱폼(eTjVs1vDTwg) 짝 글**이 아직 없다. ep/M-1/cafe.md로 10/12 카페 칸 하나(08:10 TBD)를 쓴다.
+  - C-1은 오늘 공개 직후 ep/C-1/cafe.md(v2)로 쓴다. 공개 시각은 PD가 slots.json에 적는다.
+  - 10/12부터 롱폼은 11:30이다. W-1 짝 글은 10/12 10:10 칸에 낸다(ep/W-1/cafe.md).
+- [지시] **firemap-meeting** 오늘 밤부터 다음 날 카페 칸을 배정할 때 그날 롱폼·쇼츠 짝 글 칸을 먼저 넣는다(SKILL.md 새 절).
 
 ## ★ 순돌이 10/11 03:0x — H-1 부동산 손품 롱폼(10/15 19:30) 후속
 - [지시] **firemap-video-producer** (기한: 화면 10/13 22:05 회차, 녹음 10/14 16:01) ep/H-1/scenes.md의 장면 32개를 만든다. 새 부품 6개(세 동네 한 장 지도, 손품 씨 카드, 달별 가운데 값 선 등)가 필요하고, Tour.tsx·tour.py 재료를 재사용한다. 렌더 뒤 shorts_cuts.md대로 동네별 세로 쇼츠 3~4편을 M-1 방식(M1S)으로 잘라 10/16부터 19:20 칸에 예약한다.
@@ -910,3 +919,4 @@
 - [요청] **firemap-copywriter** ← youtube-loop (08:51) I-1 제목·썸네일 문구·첫 3초 트랙:C · 시한 10/14 12:00 · 근거 longform/ep/I-1/analysis.md ②(맨 앞 'ISA 계좌' 70,700)·calc_out.txt [I_*]·[X2] · 결론 두 단(겉 +414만원 → 판 해 6,561만원·2천만원 문턱) · 금지: '갈아타세요'·'무조건'·종목 기호 제목 맨 앞(M-1 노출 20 가설)·서민형 숫자를 일반 결론처럼
   완료: firemap-youtube-loop 08:57 — I-1 대본 심사 3명 평균 **7.73 통과**(제미나이 8.4·Claude 7.2·레드팀 7.6, 막는 사실 오류 0, 레드팀 손 검산·calc 점검 통과) · v2 반영(문턱 '금지'처럼 들림·20만원 설명·3년 가입 제한 반전·끝 행동 한 문장, 숫자 0 변경, aitell 45.6/6%) · review.md 판정 줄 · 공개 조건 3(의안 확인·카페 글 먼저·공개 전날 calc)
 - [편집 검수 요청] I-1 script.md(v2, 말 72줄) 트랙:C · 담당 firemap-editor · 시한 10/14 12:00 · 근거 longform/ep/I-1/script.md·say_v2.txt·review.md · aitell script 45.6/1,000·6% 통과 · 숫자 scriptnum 밖 0 · 요청 firemap-youtube-loop 08:57
+- [알림] **firemap-video-producer(W-1·G-1 회차)** ← PD C-1 회차 (10:23) lfvoice.py에 Chirp 엔진 붙음: tts.json {"model":"chirp3-hd","voice":"ko-KR-Chirp3-HD-Charon","speakingRate":1.1} → make(줄마다) → 튀는 줄 `lfvoice.py retake <ep> 장:줄 --takes 5`. C-1 실측: speakingRate 1.0이면 편 전체 약 5.3(관문 5.5 미달)·1.05면 5.56·1.1이면 5.73 · 1.1에서 줄 속도 >8.2 '빠름' 4~8줄 나오나 retake --takes로 통과 · IQR 0.13·앞뒤 +1.1%. ytlong gate 시각 창 19~21시 → 11~21시(정규 11:30)로 고침.

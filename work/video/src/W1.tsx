@@ -26,6 +26,16 @@ const fade = (f: number, at: number, d = 10) => interpolate(f, [at, at + d], [0,
 const activeRow = (rows: TallyRow[], f: number) => { let k = -1; rows.forEach((r, i) => { if (f >= r.start) k = i; }); return k; };
 const toRows = (rows: any[]): TallyRow[] => rows.map(([label, value, tone, at]: [string, string, any, number]) => ({label, value, tone, start: at ?? 0}));
 const lift = '0 10px 30px rgba(0,0,0,0.07)';
+// U5(같은 화면 8초 이하): 줄이 바뀌면 그 줄이 말하는 항목을 검은 띠·검은 카드로 꺼낸다. 글자는 props에 있는 것만 다시 놓는다.
+const sayAt = (s: WScene, li: number, needle?: string) => { const st = tallyStarts(s.lines); const l = s.lines[li]; if (!l) return 1e9;
+  const k = needle ? l.text.indexOf(needle) : -1; return st[li] + (k > 0 ? Math.round(l.frames * k / l.text.length) : 0); };
+const DarkBar: React.FC<{text: string; at: number; x: number; y: number; w: number; size?: number; color?: string}> = ({text, at, x, y, w, size = 46, color = T.dink}) => {
+  const f = useCurrentFrame(); const {fps} = useVideoConfig();
+  if (f < at) return null;
+  const sp = spring({frame: f - at, fps, config: {damping: 14}});
+  return <div style={{position: 'absolute', left: x, top: y + (1 - sp) * 20, width: w, opacity: sp, background: T.ink, borderRadius: 16, padding: '26px 40px', boxSizing: 'border-box',
+    ...F, fontWeight: 700, fontSize: size, color, whiteSpace: 'nowrap', lineHeight: 1.2}}>{text}</div>;
+};
 
 const Note: React.FC<{text: string; at: number; x?: number; y?: number; color?: string; size?: number}> = ({text, at, x = 150, y = 760, color = T.ink2, size = 34}) => {
   const f = useCurrentFrame();
@@ -63,17 +73,19 @@ const Bars: React.FC<{s: WScene}> = ({s}) => {
 
 const Three: React.FC<{s: WScene}> = ({s}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig(); const g = 40, w = (1620 - g * 2) / 3;
+  const cards: [string, string, number][] = s.data.cards;
+  const on = cards.map(([, sub]) => sayAt(s, 1, sub)); let cur = -1; on.forEach((a, i) => { if (f >= a) cur = i; });
   return (
     <>
-      {s.data.cards.map(([h, sub, at]: [string, string, number], i: number) => {
-        const sp = spring({frame: f - at, fps, config: {damping: 14}});
+      {cards.map(([h, sub, at], i) => {
+        const sp = spring({frame: f - at, fps, config: {damping: 14}}); const dk = i === cur;
         return (
-          <div key={i} style={{position: 'absolute', left: 150 + i * (w + g), top: 330 + (1 - sp) * 40, width: w, height: 400, background: T.surface, borderRadius: '18px 18px 0 0', boxShadow: lift, opacity: f >= at ? sp : 0}}>
-            <div style={{...F, position: 'absolute', left: 34, top: 34, fontWeight: 700, fontSize: 30, color: T.accent}}>{`영수증 ${i + 1}`}</div>
-            <div style={{...F, position: 'absolute', left: 34, top: 84, fontWeight: 700, fontSize: 44, color: T.ink, whiteSpace: 'nowrap'}}>{h}</div>
-            <div style={{position: 'absolute', left: 34, right: 34, top: 160, borderTop: `3px dashed ${T.line}`}} />
-            {[0, 1, 2].map((k) => <div key={k} style={{position: 'absolute', left: 34, right: 34, top: 190 + k * 54, height: 30, borderRadius: 8, background: `repeating-linear-gradient(135deg, ${T.bg} 0 10px, ${T.surface} 10px 20px)`}} />)}
-            <div style={{...F, position: 'absolute', left: 34, bottom: 30, fontWeight: 700, fontSize: 28, color: T.ink2, whiteSpace: 'nowrap'}}>{sub}</div>
+          <div key={i} style={{position: 'absolute', left: 150 + i * (w + g), top: 330 + (1 - sp) * 40, width: w, height: 400, background: dk ? T.ink : T.surface, borderRadius: '18px 18px 0 0', boxShadow: lift, opacity: f >= at ? sp : 0}}>
+            <div style={{...F, position: 'absolute', left: 34, top: 34, fontWeight: 700, fontSize: 30, color: dk ? T.daccent : T.accent}}>{`영수증 ${i + 1}`}</div>
+            <div style={{...F, position: 'absolute', left: 34, top: 84, fontWeight: 700, fontSize: 44, color: dk ? T.dink : T.ink, whiteSpace: 'nowrap'}}>{h}</div>
+            <div style={{position: 'absolute', left: 34, right: 34, top: 160, borderTop: `3px dashed ${dk ? T.dink3 : T.line}`}} />
+            {dk ? null : [0, 1, 2].map((k) => <div key={k} style={{position: 'absolute', left: 34, right: 34, top: 190 + k * 54, height: 30, borderRadius: 8, background: `repeating-linear-gradient(135deg, ${T.bg} 0 10px, ${T.surface} 10px 20px)`}} />)}
+            <div style={{...F, position: 'absolute', left: 34, right: 30, ...(dk ? {top: 196} : {bottom: 30}), fontWeight: 700, fontSize: dk ? 40 : 28, color: dk ? T.dink : T.ink2, lineHeight: 1.3, wordBreak: 'keep-all'}}>{sub}</div>
           </div>
         );
       })}
@@ -129,7 +141,8 @@ const Rcpt: React.FC<{s: WScene}> = ({s}) => {
   const f = useCurrentFrame(); const d = s.data; const rows = toRows(d.rows);
   return (
     <>
-      <TallyReceipt x={200} y={310} w={1000} head={d.head} rows={rows} size={38} active={activeRow(rows, f)} stamp={d.stamp ? {text: d.stamp[0], start: d.stamp[1]} : undefined} />
+      <TallyReceipt x={200} y={310} w={1000} head={d.head} rows={rows} size={38} active={activeRow(rows, f)} focus />
+      {d.stamp ? <DarkBar text={d.stamp[0]} at={d.stamp[1]} x={200} y={690} w={1000} size={42} color={T.daccent} /> : null}
       <WeekTotal head={HEAD} cells={d.total} />
     </>
   );
@@ -217,7 +230,7 @@ const Diverge: React.FC<{s: WScene}> = ({s}) => {
 const StampS: React.FC<{s: WScene}> = ({s}) => (
   <>
     <Cards2 cards={s.data.cards} stamp={s.data.stamp} dashed={-1} />
-    <Note text={s.data.no[0]} at={s.data.no[1]} x={180} y={690} color={T.accent} size={40} />
+    <DarkBar text={s.data.no[0]} at={s.data.no[1]} x={180} y={672} w={1560} size={46} />
   </>
 );
 
@@ -225,7 +238,7 @@ const Bridge: React.FC<{s: WScene}> = ({s}) => {
   const d = s.data;
   return (
     <>
-      <BridgeBars steps={d.steps} lo={d.lo} hi={d.hi} x={200} y={350} w={1140} h={380} />
+      <BridgeBars steps={d.steps} lo={d.lo} hi={d.hi} x={200} y={350} w={1140} h={380} dimAt={s.lines.length > 2 ? tallyStarts(s.lines)[2] : undefined} />
       <WeekTotal head={HEAD} cells={d.total} />
     </>
   );
@@ -233,15 +246,17 @@ const Bridge: React.FC<{s: WScene}> = ({s}) => {
 
 const Trio: React.FC<{s: WScene}> = ({s}) => {
   const f = useCurrentFrame(); const d = s.data; const g = 36, w = (1620 - g * 2) / 3;
+  let cur = -1; d.cards.forEach((c: any, i: number) => { if (f >= c.at) cur = i; }); if (f >= d.q[1]) cur = -1;
   return (
     <>
       {d.cards.map((c: any, i: number) => {
         const rows: TallyRow[] = c.rows.map(([l, v, t]: [string, string, any]) => ({label: l, value: v, tone: t, start: 0}));
-        const on = f >= c.at;
+        const on = f >= c.at; const dk = i === cur;
         return (
           <React.Fragment key={i}>
-            <div style={{opacity: on ? 1 : 0.85}}><TallyReceipt x={150 + i * (w + g)} y={350} w={w} head={c.head} rows={rows} size={30} start={i * 8} active={on ? rows.length - 1 : -1} /></div>
-            <div style={{...F, position: 'absolute', left: 150 + i * (w + g) + 30, top: 640, fontWeight: 700, fontSize: 50, color: !on ? T.ink3 : c.pct.includes('−') ? T.fall : T.rise, opacity: fade(f, i * 8 + 20), whiteSpace: 'nowrap'}}>{c.pct}</div>
+            <div style={{opacity: on ? 1 : 0.85}}><TallyReceipt x={150 + i * (w + g)} y={350} w={w} head={c.head} rows={rows} size={30} start={i * 8} active={on ? rows.length - 1 : -1} focus={dk} /></div>
+            <div style={{...F, position: 'absolute', left: 150 + i * (w + g), top: 622, width: w, boxSizing: 'border-box', padding: '14px 30px', borderRadius: 16, background: dk ? T.ink : 'transparent', fontWeight: 700, fontSize: 50, lineHeight: 1.2,
+              color: !on ? T.ink3 : c.pct.includes('−') ? (dk ? T.dfall : T.fall) : T.rise, opacity: fade(f, i * 8 + 20), whiteSpace: 'nowrap'}}>{c.pct}</div>
           </React.Fragment>
         );
       })}
@@ -252,34 +267,56 @@ const Trio: React.FC<{s: WScene}> = ({s}) => {
 
 const Cal: React.FC<{s: WScene}> = ({s}) => <NextCal cells={s.data.cells} later={s.data.later} x={150} y={340} w={1620} />;
 
-const Road: React.FC<{s: WScene}> = ({s}) => {
-  const f = useCurrentFrame();
+const Road: React.FC<{s: WScene; next?: string}> = ({s, next}) => {
+  const f = useCurrentFrame(); const st = tallyStarts(s.lines);
   const rows: TallyRow[] = s.data.rows.map(([t, at]: [string, number]) => ({label: t, start: at, tone: 'in'}));
-  return <TallyReceipt x={360} y={300} w={1200} head={s.data.head} rows={rows} size={36} active={activeRow(rows, f)} />;
+  const a1 = st[0] + Math.round(s.lines[0].frames * 0.5);
+  const act = s.lines.length > 2 && f >= st[2] ? -1 : f >= st[1] ? 3 : f >= a1 ? 2 : 1;
+  return (
+    <>
+      <TallyReceipt x={360} y={300} w={1200} head={s.data.head} rows={rows} size={36} active={act} focus />
+      {next && s.lines.length > 2 ? <DarkBar text={next} at={st[2]} x={360} y={712} w={1200} size={44} color={T.daccent} /> : null}
+    </>
+  );
 };
 
 const Sum: React.FC<{s: WScene}> = ({s}) => {
   const f = useCurrentFrame(); const d = s.data; const rows = toRows(d.rows);
   return (
     <>
-      <TallyReceipt x={760} y={300} w={1020} head={d.head} rows={rows} size={30} active={activeRow(rows, f)} />
+      <TallyReceipt x={760} y={300} w={1020} head={d.head} rows={rows} size={30} active={activeRow(rows, f)} focus />
       <Big b={d.side} x={170} y={420} size={110} />
     </>
   );
 };
 
 const End: React.FC<{s: WScene}> = ({s}) => {
-  const d = s.data; const f = useCurrentFrame();
+  const d = s.data; const f = useCurrentFrame(); const {fps} = useVideoConfig(); const st = tallyStarts(s.lines);
+  const parts: string[] = String(d.note).split(' · '); const subs: string[] = String(s.sub ?? '').split(' · ');
+  const bAt = sayAt(s, 0, s.lines[0]?.text.split('. ')[1]?.slice(0, 4));
+  const tEnd = st[st.length - 1] + s.lines[s.lines.length - 1].frames;
+  const g = 48, w = (1560 - g) / 2; const out = interpolate(f, [d.start - 8, d.start], [1, 0], CL);
+  const ls = spring({frame: f - d.start, fps, config: {damping: 14}});
   return (
     <>
-      <TallyZoom text={d.text} start={d.start} x={180} y={400} size={60} label={d.label} />
-      <Note text={d.note} at={d.start + 30} x={180} y={600} color={T.ink3} size={30} />
-      <div style={{position: 'absolute', left: 150, top: 330, width: 1620, height: 440, borderRadius: 20, border: `3px dashed ${T.line}`, opacity: fade(f, 0, 14)}} />
+      {f < d.start ? parts.slice(0, 2).map((t, i) => {
+        const at = i === 0 ? 6 : bAt; const dk = i === 0 ? f < st[1] : f >= st[1];
+        const sp = spring({frame: f - at, fps, config: {damping: 14}});
+        return <div key={i} style={{position: 'absolute', left: 180 + i * (w + g), top: 360 + (1 - sp) * 30, width: w, height: 260, borderRadius: 20, opacity: (f >= at ? sp : 0) * out, boxSizing: 'border-box', padding: '0 44px',
+          display: 'flex', alignItems: 'center', background: dk ? T.ink : T.bg, border: dk ? undefined : `4px dashed ${T.ink3}`, ...F, fontWeight: 700, fontSize: 50, color: dk ? T.dink : T.ink2, lineHeight: 1.3, wordBreak: 'keep-all'}}>{t}</div>;
+      }) : null}
+      {f >= d.start ? (
+        <div style={{position: 'absolute', left: 150, top: 360 + (1 - ls) * 30, width: 1620, opacity: ls, background: T.ink, borderRadius: 20, padding: '34px 44px', boxSizing: 'border-box'}}>
+          <div style={{...F, fontWeight: 700, fontSize: 34, color: T.dink3, whiteSpace: 'nowrap'}}>{d.label}</div>
+          <div style={{...F, fontWeight: 700, fontSize: 56, color: T.daccent, marginTop: 14, whiteSpace: 'nowrap', letterSpacing: -1}}>{d.text}</div>
+        </div>
+      ) : null}
+      {subs.length > 1 ? <DarkBar text={subs[subs.length - 1]} at={tEnd} x={150} y={640} w={1620} size={44} color={T.daccent} /> : null}
     </>
   );
 };
 
-const Body: React.FC<{s: WScene}> = ({s}) => {
+const Body: React.FC<{s: WScene; next?: string}> = ({s, next}) => {
   switch (s.kind) {
     case 'open': return <Open s={s} />;
     case 'bars': return <Bars s={s} />;
@@ -300,19 +337,19 @@ const Body: React.FC<{s: WScene}> = ({s}) => {
     case 'bridge': return <Bridge s={s} />;
     case 'trio': return <Trio s={s} />;
     case 'cal': return <Cal s={s} />;
-    case 'road': return <Road s={s} />;
+    case 'road': return <Road s={s} next={next} />;
     case 'sum': return <Sum s={s} />;
     case 'end': return <End s={s} />;
     default: return null;
   }
 };
 
-const SceneView: React.FC<{s: WScene}> = ({s}) => {
+const SceneView: React.FC<{s: WScene; next?: string}> = ({s, next}) => {
   if (s.kind === 'logo') return <AbsoluteFill><LogoSting sub={s.data.sub} /></AbsoluteFill>;
   const st = tallyStarts(s.lines);
   return (
     <TallyFrame title={s.title} sub={s.sub} source={s.source} chapter={s.chapter} lines={s.lines}>
-      <Body s={s} />
+      <Body s={s} next={next} />
       {s.lines.map((l, i) => l.audio ? <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence> : null)}
     </TallyFrame>
   );
@@ -320,9 +357,10 @@ const SceneView: React.FC<{s: WScene}> = ({s}) => {
 
 export const W1: React.FC<W1Props> = (p) => {
   let from = 0;
+  const endSub = p.scenes.find((x) => x.kind === 'end')?.sub; const next = endSub ? endSub.split(' · ').slice(-1)[0] : undefined;
   return (
     <AbsoluteFill style={{background: T.bg}}>
-      {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><SceneView s={s} /></Sequence>; from += s.frames; return el; })}
+      {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><SceneView s={s} next={next} /></Sequence>; from += s.frames; return el; })}
     </AbsoluteFill>
   );
 };

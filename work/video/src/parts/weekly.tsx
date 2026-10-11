@@ -39,9 +39,10 @@ export const WeekStrip: React.FC<{days: [string, string, string | null, number |
 };
 
 // 다리 막대: steps = [이름, 값(첫·끝은 금액, 가운데는 차이), 글자, 나타날 프레임]. 바닥(lo)을 잘라 작은 차이도 보이게 하고, 잘랐다는 물결 표시를 둔다
-export const BridgeBars: React.FC<{steps: [string, number, string, number][]; lo: number; hi: number; x?: number; y?: number; w?: number; h?: number; unit?: string}> =
-  ({steps, lo, hi, x = 200, y = 320, w = 1500, h = 440, unit = ''}) => {
+export const BridgeBars: React.FC<{steps: [string, number, string, number][]; lo: number; hi: number; x?: number; y?: number; w?: number; h?: number; unit?: string; dimAt?: number}> =
+  ({steps, lo, hi, x = 200, y = 320, w = 1500, h = 440, unit = '', dimAt}) => {
   const f = useCurrentFrame();
+  const dm = dimAt == null ? 1 : 1 - 0.6 * Math.min(1, Math.max(0, (f - dimAt) / 10)); // dimAt 뒤: 처음·끝 막대를 흐리게 해 가운데 두 몫(환율·주가)만 남긴다
   const sy = (v: number) => y + h - ((v - lo) / (hi - lo)) * h;
   const slot = w / steps.length; const bw = slot * 0.56;
   let run = 0;
@@ -57,7 +58,7 @@ export const BridgeBars: React.FC<{steps: [string, number, string, number][]; lo
         else { const a = run, b = run + v; y0 = sy(Math.max(a, b)); y1 = sy(Math.min(a, b)); col = v < 0 ? T.fall : T.rise; run = b; }
         const prevTop = i > 0 ? sy(first ? v : (last ? v : run - v)) : 0;
         const hh = (y1 - y0);
-        return <g key={i} opacity={Math.min(1, o * 2)}>
+        return <g key={i} opacity={Math.min(1, o * 2) * (first || last ? dm : 1)}>
           {i > 0 ? <line x1={bx - (slot - bw)} x2={bx} y1={prevTop} y2={prevTop} stroke={T.ink3} strokeWidth={2} strokeDasharray="6 6" /> : null}
           {first || last
             ? <rect x={bx} y={y1 - hh * o} width={bw} height={hh * o} rx={8} fill={col} />

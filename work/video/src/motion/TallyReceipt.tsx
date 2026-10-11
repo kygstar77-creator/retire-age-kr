@@ -6,8 +6,8 @@ import {T, F, CL} from '../parts/fm';
 
 export type TallyRow = {label: string; value?: string; tone?: 'in' | 'tax' | 'net' | 'blank' | 'hi' | 'dim'; start: number; note?: string};
 
-export const TallyReceipt: React.FC<{x: number; y: number; w: number; head: string; rows: TallyRow[]; size?: number; start?: number; printDur?: number; active?: number; stamp?: {text: string; start: number}}> =
-  ({x, y, w, head, rows, size = 36, start = 0, printDur = 14, active = -1, stamp}) => {
+export const TallyReceipt: React.FC<{x: number; y: number; w: number; head: string; rows: TallyRow[]; size?: number; start?: number; printDur?: number; active?: number; stamp?: {text: string; start: number}; focus?: boolean}> =
+  ({x, y, w, head, rows, size = 36, start = 0, printDur = 14, active = -1, stamp, focus = false}) => {
   const f = useCurrentFrame();
   const drop = interpolate(f, [start, start + 14], [0, 1], {...CL, easing: Easing.out(Easing.cubic)});
   const rowH = size * 1.75;
@@ -21,14 +21,15 @@ export const TallyReceipt: React.FC<{x: number; y: number; w: number; head: stri
         {rows.map((r, i) => {
           const tone = r.tone ?? 'in';
           const p = interpolate(f, [r.start, r.start + printDur], [0, 1], {...CL, easing: Easing.inOut(Easing.quad)});
-          const col = tone === 'tax' ? T.rise : tone === 'net' || tone === 'hi' ? T.accent : tone === 'blank' || tone === 'dim' ? T.ink3 : T.ink;
+          const dk = focus && i === active; // focus: 지금 말하는 줄만 검은 띠로 꺼낸다(U5 — 줄이 바뀌면 판이 바뀐다)
+          const col = dk ? (tone === 'tax' ? '#ff8a8d' : tone === 'net' || tone === 'hi' ? T.daccent : T.dink) : tone === 'tax' ? T.rise : tone === 'net' || tone === 'hi' ? T.accent : tone === 'blank' || tone === 'dim' ? T.ink3 : T.ink;
           const top = 96 + i * rowH;
           return (
             <div key={i} style={{position: 'absolute', left: 34, right: 34, top, height: rowH, clipPath: `inset(0 ${(1 - p) * 100}% 0 0)`,
               borderTop: tone === 'net' ? `3px solid ${T.ink}` : undefined, display: 'flex', alignItems: 'center',
-              background: tone === 'blank' ? `repeating-linear-gradient(135deg, ${T.bg} 0 10px, ${T.surface} 10px 20px)` : i === active ? T.soft : undefined, borderRadius: tone === 'blank' || i === active ? 8 : 0,
-              boxShadow: i === active ? `inset 6px 0 0 ${T.accent}` : undefined, paddingLeft: i === active ? 14 : 0, paddingRight: i === active ? 10 : 0}}>
-              <span style={{...F, fontWeight: tone === 'net' || tone === 'hi' ? 700 : 500, fontSize: tone === 'net' ? size * 0.92 : size * 0.8, color: tone === 'blank' || tone === 'dim' ? T.ink3 : T.ink2,
+              background: dk ? T.ink : tone === 'blank' ? `repeating-linear-gradient(135deg, ${T.bg} 0 10px, ${T.surface} 10px 20px)` : i === active ? T.soft : undefined, borderRadius: tone === 'blank' || i === active ? 8 : 0,
+              boxShadow: i === active ? `inset 6px 0 0 ${T.accent}` : undefined, paddingLeft: i === active ? (dk ? 20 : 14) : 0, paddingRight: i === active ? (dk ? 16 : 10) : 0}}>
+              <span style={{...F, fontWeight: tone === 'net' || tone === 'hi' ? 700 : 500, fontSize: tone === 'net' ? size * 0.92 : size * 0.8, color: dk ? T.dink : tone === 'blank' || tone === 'dim' ? T.ink3 : T.ink2,
                 paddingLeft: tone === 'blank' ? 12 : 0, whiteSpace: 'nowrap'}}>{r.label}{r.note ? <span style={{fontSize: size * 0.56, color: T.ink3, marginLeft: 12}}>{r.note}</span> : null}</span>
               <span style={{...F, fontWeight: 700, fontSize: tone === 'net' ? size * 1.15 : size, color: col, marginLeft: 'auto', paddingRight: tone === 'blank' ? 12 : 0, whiteSpace: 'nowrap'}}>{r.value ?? ''}</span>
             </div>

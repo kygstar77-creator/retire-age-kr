@@ -969,6 +969,30 @@
    "note": "firemap-write 2026-10-11 14:45: 빈칸 미리 채움 — kidcred1012 자녀세액공제 2017·2018년생 0원 vs 간이세액표 8세(세금연금·형식2, 경쟁 8편 중 원천징수 각도 0편) · 제목 G 7.83·표지 K1 7.83·compare.md 경쟁 8편·readcheck 0·selfcheck 사실 0·aitell 1.1·crosscheck 사실 0·레드팀 2회·editgate auto"
   },
   {
+   "at": "2026-10-12 14:10",
+   "kind": "cafe",
+   "item": "W-1",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-write 2026-10-11 15:15(배차 patrol): yt_pair: W-1 — 롱폼 W-1(10/12 11:30) 짝 카페 글 = work/research/longform/ep/W-1/cafe.md(세 영수증 전체 표). 12:10은 kidcred1012가 이미 관문 통과라 14:10. 표 머리 '이번 주(10/2 → 10/8)'→'지난주' 고침 · {F}는 SPY 10/9 최종 종가로 확인해 숫자 그대로(+1.16%·−4.9만원) · 남은 일: {VIDEO} 영상 주소(PD가 업로드 직후 이 note에 적음)·제목·표지·editgate·관문(기한 08:10) · 삼성전자·코스피는 dupcheck '씀'(지난 글 각도: 실적일·ETF 시황) — 이번 각도는 주간 평가액 영수증"
+  },
+  {
+   "at": "2026-10-12 16:10",
+   "kind": "cafe",
+   "item": "cheongyak1012",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-write 2026-10-11 15:15(배차 patrol): 후보 청약통장(검색 18,740 · dupcheck 새것) · 부동산·정책 축 — 각도 미정(납입 인정액·소득공제 한도 등 1차 출처 확인 뒤) · 사실표부터 · 관문 기한 10:10 | 15:17 사실표 착수 work/research/cheongyak1012/pkg/facts.txt — 조특법 87조 원문(공제 연 300만원×40%·5년 안 해지 6% 추징·실제 감면액 증명 시 그만큼만) · 각도 '5년 안에 깨면 얼마 떼이나' 원 금액 · 남은 일: 웹 검색 5건·calc.py·원고~관문"
+  },
+  {
+   "at": "2026-10-12 18:10",
+   "kind": "cafe",
+   "item": "TBD-QQQM",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-write 2026-10-11 15:15(배차 patrol): 후보 QQQM(검색 33,120 · dupcheck 새것) · 종목·ETF 축 — QQQ와 보수 차이를 원 금액으로(improve 10/10 원 금액 제목 규칙) · 운용사 공식 보수·분배 확인 · 관문 기한 12:10"
+  },
+  {
    "at": "2026-10-12 19:20",
    "kind": "shorts",
    "item": "m1s_nhis70",
@@ -977,6 +1001,22 @@
    "published": "예약 2026-10-12T19:20:00+09:00 https://youtu.be/kEHjN5WFBPI (v2 교체 2026-10-11 13:05 · 옛 예약 xmmkdtLhmXs는 삭제 안 하고 publishAt만 뺀 비공개)",
    "item_pkg": "work/research/cardshorts/m1s_nhis70",
    "note": "firemap-video-producer 2026-10-11 13:05: v2로 교체(shorts-gap-1011.md — 첫 말·0초 답 숫자·자막 조각·검은 띠 제목·링크 줄 뺌), 관문 cardshorts/m1s_nhis70/review.md 'v2' | firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_nhis70/review.md · 카드 쇼츠 대체(사장님 10/10 지시)"
+  },
+  {
+   "at": "2026-10-12 20:10",
+   "kind": "cafe",
+   "item": "TBD-m1s_nhis70",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-write 2026-10-11 15:15(배차 patrol): yt_pair: m1s_nhis70 — 쇼츠 '배당 받으면 건강보험료 얼마부터 붙을까'(10/12 19:20, youtu.be/kEHjN5WFBPI) 짝 카페 = 그 질문 하나에 답하는 짧은 글(쇼츠 링크+표) · 키워드 '배당소득 건강보험료' dupcheck 새것, 다만 cafe/206(배당·이자 1천만원 건보료)과 각도 겹침 주의 — 206은 퇴직 후 지역가입 금액, 이번은 쇼츠 질문(피부양자·소득월액 기준선)만 · 관문 기한 14:10"
+  },
+  {
+   "at": "2026-10-12 22:10",
+   "kind": "cafe",
+   "item": "TBD-DC형",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-write 2026-10-11 15:15(배차 patrol): 후보 퇴직연금 DC형(검색 21,610 · dupcheck 새것, IRP 글 6편과 각도 겹치지 않게 DB/DC 차이 계산) · 세금연금 축·형식2 · 관문 기한 16:10"
   },
   {
    "at": "2026-10-13 07:20",

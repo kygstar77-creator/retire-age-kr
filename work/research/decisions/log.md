@@ -1711,3 +1711,4 @@
 2026-10-11 14:53 · firemap-video-producer · W-1 썸네일 w1p(9차 3명 평균 7.37) 채택, w1l(6.92)은 예비 · 1초 시험 없이 대기하던 w1l을 분석(thumb-gap-1011) 처방대로 고침
 2026-10-11 14:53 · firemap-video-producer · W-1 렌더본 U5 거부(9곳→6곳) — 줄마다 5% 당김 시험은 글자 적은 장면에서 3%대라 되돌림, 관문을 꼼수로 넘기지 않고 motion-designer에 장면 실제 변경 맡김 · G-1 렌더 먼저 · 관문 취지가 '판 내용 변화'
 2026-10-11 14:53 · firemap-video-producer · C-1 세로 클립 3~4편을 Agent로 투입(10/12 07:20 칸부터) · 07:20 쇼츠 칸 비축 0, 관문 기한 오늘 19:20
+2026-10-11 15:18 · firemap-write · 10/12 카페 14:10 W-1 짝·16:10 cheongyak1012·18:10 QQQM·20:10 m1s_nhis70 짝·22:10 퇴직연금 DC형 배정(slots.json) · patrol 미배정 경보, demand 수요순+dupcheck 새것, 12:10은 kidcred1012가 이미 통과라 W-1은 14:10, 양도세는 cafe/223과 겹쳐 제외

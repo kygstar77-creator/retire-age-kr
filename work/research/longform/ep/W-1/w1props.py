@@ -70,17 +70,17 @@ SRC_US = '야후 파이낸스 SPY 일별 종가 · 한국은행 ECOS 원달러 �
 SRC_CAL = '미국 노동통계국(BLS)·한국은행·미국 연준 일정표 · FRED CPIAUCNS'
 NOTE = '평가액 기준 · 팔지 않으면 확정 아님 · 수수료 빼고 계산 · 전망·투자 권유 아님'
 md = lambda d: f'{int(d[4:6])}/{int(d[6:])}'
-TOT_HEAD = '이번 주 영수증'
+TOT_HEAD = '지난주 영수증'
 TOT = lambda a=None, b=None, c=None: [['삼성전자 100주', f'−{round(-C8 / 1e4):,}만원', a if a is not None else 10**9],
                                       ['코스피 1천만원', f'−{-S4}만원' if S4 < 0 else f'+{S4}만원', b if b is not None else 10**9],
                                       ['미국 1만 달러', f'{sgn(F5)}{man1(F5)}만원', c if c is not None else 10**9]]
 US_TXT = (f'달러 {sgn(F2)}{abs(F2):.2f}%', f'원화 {sgn(F5)}{round(abs(F5) / 1e4)}만원')
 
-CUTS = [('open', '0.', None), ('dayfall', '0.', '발표한 날'), ('three', '0.', '이번 주에 내 돈이'),
+CUTS = [('open', '0.', None), ('dayfall', '0.', '발표한 날'), ('three', '0.', '지난주에 내 돈이'),
         ('logo', '로고', None),
         ('week', '1.', None), ('kospi', '1.', '그 짧은 사흘'), ('fx', '1.', '같은 기간에'),
         ('dart', '2.', None), ('quote', '2.', '다만 이건'), ('rcpt1', '2.', '이제 100주를'), ('div', '2.', '그럼 배당은요'), ('pairs', '2.', '1년 전 3분기'),
-        ('dots', '2.', '그래서 이번 주'), ('pending', '2.', '실적이 배당으로'),
+        ('dots', '2.', '그래서 지난주'), ('pending', '2.', '실적이 배당으로'),
         ('kbars', '3.', None), ('diverge', '3.', '107조 실적을'), ('noreason', '3.', '실적 발표 하나'),
         ('dual', '4.', None), ('fxonly', '4.', '먼저 환율만'), ('bridge', '4.', '그 사이 S&P500'),
         ('trio', '5.', None),
@@ -91,14 +91,14 @@ END_MIN = 20 * FPS
 
 def spec(key, A):
     if key == 'open':
-        return dict(kind='open', title='삼성전자 100주, 이번 주 영수증', sub='종가 10/2 → 10/8 · 단위 원', source=SRC_PX + ' · ' + SRC_DART,
-                    data={'head': '삼성전자 100주 · 이번 주', 'rows': [['10/2 종가 × 100주', iw(C6), 'in', 0], ['10/8 종가 × 100주', iw(C7), 'in', 8], ['평가액', '−' + iw(-C8), 'net', 16]],
+        return dict(kind='open', title='삼성전자 100주, 지난주 영수증', sub='종가 10/2 → 10/8 · 단위 원', source=SRC_PX + ' · ' + SRC_DART,
+                    data={'head': '삼성전자 100주 · 지난주', 'rows': [['10/2 종가 × 100주', iw(C6), 'in', 0], ['10/8 종가 × 100주', iw(C7), 'in', 8], ['평가액', '−' + iw(-C8), 'net', 16]],
                           'big': [f'{OP[0]}조원', A('같은 주에'), f'3분기 영업이익(잠정) · 1년 전 {OP[2]}조원']})
     if key == 'dayfall':
         return dict(kind='bars', title='발표한 날 주가는', sub='삼성전자 종가 · 원', source=SRC_PX,
                     data={'min': 0, 'max': 290_000, 'bars': [['10/7 발표 전날', C2, iw(C2), 0, 'ink', None], ['10/8 발표한 날', C3, iw(C3), 10, 'fall', M(f'{C4:+.2f}%')]]})
     if key == 'three':
-        return dict(kind='three', title='영수증 세 장', sub='이번 주 뉴스 세 개 → 내 돈', source=None,
+        return dict(kind='three', title='영수증 세 장', sub='지난주 뉴스 세 개 → 내 돈', source=None,
                     data={'cards': [['삼성전자 100주', '조금 가진 사람', 6], ['코스피 1천만원', '시장 전체에 넣어 둔 사람', 16],
                                     ['미국 주식 1만 달러', '미국 주식을 가진 사람', 26]]})
     if key == 'logo':
@@ -106,7 +106,7 @@ def spec(key, A):
     if key == 'week':
         days = [['월', '10/5', '개천절 대체공휴일', None, None, 0], ['화', md(WEEK[0]), None, KO[WEEK[0]], f'{KO[WEEK[0]]:,.2f}', 6], ['수', md(WEEK[1]), None, KO[WEEK[1]], f'{KO[WEEK[1]]:,.2f}', 12],
                 ['목', md(WEEK[2]), None, KO[WEEK[2]], f'{KO[WEEK[2]]:,.2f}', 18], ['금', '10/9', '한글날', None, None, A('월요일은', 50)]]
-        return dict(kind='week', title='이번 주 한국 증시는 사흘', sub='코스피 그날 종가', source=SRC_KR, data={'days': days, 'lo': 0, 'hi': 7200, 'barAt': A('먼저 달력', 40)})
+        return dict(kind='week', title='지난주 한국 증시는 사흘', sub='코스피 그날 종가', source=SRC_KR, data={'days': days, 'lo': 0, 'hi': 7200, 'barAt': A('먼저 달력', 40)})
     if key == 'kospi':
         return dict(kind='count', title='코스피, 사흘 동안', sub=f'{md("20261002")} {D1:,.2f} → {md("20261008")} {D2:,.2f}', source=SRC_KR,
                     data={'to': D3, 'text': M(f'{D3:.2f}%'), 'label': '코스피 · 10/2 → 10/8', 'note': f'{D1:,.2f} → {D2:,.2f}', 'start': 0})
@@ -123,8 +123,8 @@ def spec(key, A):
                     data={'quote': QUOTE, 'stamp': ['잠정', 30]})
     if key == 'rcpt1':
         return dict(kind='rcpt', title='영수증 1 · 삼성전자 100주', sub='종가 10/2 → 10/8 · 단위 원', source=SRC_PX,
-                    data={'head': '삼성전자 100주', 'rows': [['10/2 평가액', iw(C6), 'in', 0], ['10/8 평가액', iw(C7), 'in', A('이번 주 사흘')], ['평가액 차이', '−' + iw(-C8), 'net', A('이번 주 사흘', 30)]],
-                          'stamp': ['평가액 · 팔기 전엔 확정 아님', A('물론 팔지')], 'total': TOT(A('이번 주 사흘', 30))})
+                    data={'head': '삼성전자 100주', 'rows': [['10/2 평가액', iw(C6), 'in', 0], ['10/8 평가액', iw(C7), 'in', A('지난주 사흘')], ['평가액 차이', '−' + iw(-C8), 'net', A('지난주 사흘', 30)]],
+                          'stamp': ['평가액 · 팔기 전엔 확정 아님', A('물론 팔지')], 'total': TOT(A('지난주 사흘', 30))})
     if key == 'div':
         return dict(kind='div', title='그럼 배당은', sub='가장 최근 분기 배당 · 2026년 2분기', source=SRC_DIV,
                     data={'head': '배당 · 100주', 'rows': [[f'1주 {won(int(B2))}원 × 100주', iw(B5), 'in', 0], ['세금 15.4%', '−' + iw(B5 - B6), 'tax', A('100주면')], ['통장에', iw(B6), 'net', A('100주면', 20)]],
@@ -134,8 +134,8 @@ def spec(key, A):
                     data={'groups': [['영업이익', [['1년 전 3분기', A2, f'{OP[2]}조', 0], ['2026년 2분기', B3, f'{OP[1]}조', A('영업이익은 그사이')]], f'{B4}배', A('영업이익은 그사이', 20)],
                                      ['1주 배당', [['1년 전 3분기', B1, f'{int(B1)}원', 0], ['2026년 2분기', B2, f'{int(B2)}원', 8]], '거의 그대로', A('영업이익은 그사이', 60)]]})
     if key == 'dots':
-        return dict(kind='dots', title='이번 주 영수증은 이렇게 기운다', sub=f'평가액 −{round(-C8 / 1e4)}만원 ÷ 세후 분기 배당 {iw(B6)}원', source=SRC_PX + ' · ' + SRC_DIV,
-                    data={'n': int(C9), 'at': A('이번 주에 줄어든'), 'big': f'×{C9}', 'label': '세후 분기 배당 몇 번 치인가'})
+        return dict(kind='dots', title='지난주 영수증은 이렇게 기운다', sub=f'평가액 −{round(-C8 / 1e4)}만원 ÷ 세후 분기 배당 {iw(B6)}원', source=SRC_PX + ' · ' + SRC_DIV,
+                    data={'n': int(C9), 'at': A('지난주에 줄어든'), 'big': f'×{C9}', 'label': '세후 분기 배당 몇 번 치인가'})
     if key == 'pending':
         return dict(kind='pending', title='3분기 배당은 아직', sub='배당 금액은 이사회가 정한다', source=SRC_DIV,
                     data={'cards': [['1년 전 3분기 배당', '이사회 결의 2025-10-30 · 기준일 2025-09-30', 0], ['올해 3분기 배당', '금액 공시 전', A('올해 3분기')]],
@@ -143,7 +143,7 @@ def spec(key, A):
     if key == 'kbars':
         bars = [[md(d), KO[d], f'{KO[d]:,.2f}', 0 if d == '20261002' else A('코스피를 그대로') + 8 * i, 'fall' if d == '20261008' else 'ink', None] for i, d in enumerate(['20261002'] + WEEK)]
         return dict(kind='kbars', title='영수증 2 · 코스피 1천만원', sub='지수 그대로 따라간 돈 · 보수·세금·추적 오차 빼고', source=SRC_KR,
-                    data={'min': 0, 'max': 7600, 'bars': bars, 'total': TOT(0, A('이번 주 사흘')), 'big': [f'−{-S4}만원', A('이번 주 사흘'), iw(D4).replace('-', '−') + '원 · ' + M(f'{D3:.2f}%')]})
+                    data={'min': 0, 'max': 7600, 'bars': bars, 'total': TOT(0, A('지난주 사흘')), 'big': [f'−{-S4}만원', A('지난주 사흘'), iw(D4).replace('-', '−') + '원 · ' + M(f'{D3:.2f}%')]})
     if key == 'diverge':
         return dict(kind='diverge', title='한 종목이나 시장 전체나', sub='10/2 → 10/8 · %', source=SRC_PX + ' · ' + SRC_KR,
                     data={'rows': [['삼성전자', C5, M(f'{C5:.2f}%'), 0], ['코스피', D3, M(f'{D3:.2f}%'), 12]], 'max': 8, 'q': ['비슷한 비율로 줄었다', 30]})
@@ -173,7 +173,7 @@ def spec(key, A):
                           'q': ['무엇을 · 어떤 돈으로 갖고 있느냐', A('같은 한 주라도')]})
     if key == 'cal':
         cells = [['월', '10/12', None, 0, False], ['화', '10/13', None, 0, False], ['수', '10/14', '미국 9월 CPI\n밤 9:30', A('수요일 밤'), True], ['목', '10/15', None, 0, False], ['금', '10/16', None, 0, False]]
-        return dict(kind='cal', title='다음 주에 볼 날짜', sub='한국 시각', source=SRC_CAL, data={'cells': cells, 'later': []})
+        return dict(kind='cal', title='이번 주에 볼 날짜', sub='한국 시각', source=SRC_CAL, data={'cells': cells, 'later': []})
     if key == 'cpi':
         return dict(kind='count', title='지난 8월 미국 물가', sub='소비자물가지수 · 1년 전 같은 달 대비', source=SRC_CAL,
                     data={'to': G6, 'text': f'+{G6}%', 'label': '미국 CPI · 2026년 8월', 'note': '2025년 8월 대비', 'start': 0})
@@ -183,12 +183,12 @@ def spec(key, A):
                                                          ['삼성전자 3분기 배당 · 공시 나오면 계산', A('삼성전자 3분기')]]})
     if key == 'sum':
         return dict(kind='sum', title='정리', sub=NOTE, source=SRC_DART + ' · ' + SRC_KR,
-                    data={'head': '이번 주', 'rows': [['가장 큰 숫자 · 3분기 영업이익(잠정)', f'{OP[0]}조원', 'in', 0], ['삼성전자 100주 평가액', '−' + iw(-C8), 'tax', A('하지만 100주')],
+                    data={'head': '지난주', 'rows': [['가장 큰 숫자 · 3분기 영업이익(잠정)', f'{OP[0]}조원', 'in', 0], ['삼성전자 100주 평가액', '−' + iw(-C8), 'tax', A('하지만 100주')],
                                                      ['지난 분기 배당(세후)', iw(B6), 'dim', A('하지만 100주', 40)], ['미국 1만 달러', f'{US_TXT[0]} · {US_TXT[1]}', 'hi', A('미국 주식은 달러로')]],
                           'side': [f'{OP[0]}조', 0, '3분기 영업이익(잠정)']})
     if key == 'end':
-        return dict(kind='end', title='내 배당엔 세금이 얼마?', sub='설명란 링크 · 다음 주 이 시간 새 영수증', source='전망·투자 권유 아님',
-                    data={'text': 'firemap.kr/guide/dividend-tax-thresholds.html', 'label': '파이어맵 배당 세금 정리', 'note': '이번 주 숫자를 그대로 곱한 계산 · 다음 주는 말하지 않는다', 'start': A('내 배당에')})
+        return dict(kind='end', title='내 배당엔 세금이 얼마?', sub='설명란 링크 · 토요일 이 시간 2화 영수증', source='전망·투자 권유 아님',
+                    data={'text': 'firemap.kr/guide/dividend-tax-thresholds.html', 'label': '파이어맵 배당 세금 정리', 'note': '지난주 숫자를 그대로 곱한 계산 · 이번 주는 말하지 않는다', 'start': A('내 배당에')})
     raise KeyError(key)
 
 

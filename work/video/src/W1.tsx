@@ -21,7 +21,7 @@ export type W1Props = {fps: number; scenes: WScene[]; missing: number; script?: 
 export const w1Frames = (p: W1Props) => p.scenes.reduce((a, s) => a + s.frames, 0);
 
 const COL: Record<string, string> = {ink: T.ink2, ink3: T.ink3, accent: T.accent, rise: T.rise, fall: T.fall};
-const HEAD = '이번 주 영수증';
+const HEAD = '지난주 영수증';
 const fade = (f: number, at: number, d = 10) => interpolate(f, [at, at + d], [0, 1], CL);
 const activeRow = (rows: TallyRow[], f: number) => { let k = -1; rows.forEach((r, i) => { if (f >= r.start) k = i; }); return k; };
 const toRows = (rows: any[]): TallyRow[] => rows.map(([label, value, tone, at]: [string, string, any, number]) => ({label, value, tone, start: at ?? 0}));

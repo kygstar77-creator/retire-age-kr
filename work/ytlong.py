@@ -43,6 +43,18 @@ def gate(ep):
         vd = re.findall(r'^\s*\**판정\**\s*[:：](.*)$', rt, re.M)
         if not vd: bad.append("review.md에 '판정: 통과 — 평균 N(통과선 N)' 줄 없음")
         elif not ('통과' in vd[-1] and not re.search(r'미달|보류|미통과|막힘', vd[-1])): bad.append('review.md 마지막 판정이 통과 아님: ' + vd[-1].strip()[:40])
+    # 10/11 사장님 "잘된 동영상 비교해서 만들기로 했는데 왜 안 했어?" — 분석(10/11 gap 파일들)과 대조하지 않은 편은 못 올린다.
+    #   ep/<편>/bench_check.md: 제목·썸네일·첫 60초·자막·대본 각각 [잘된 예 ID·근거 파일 → 우리 편 → 맞춤/안 맞춤] 표 + 맨 끝 '대조: 통과' 줄.
+    bc = os.path.join(ep, 'bench_check.md')
+    if not os.path.exists(bc): bad.append('bench_check.md 없음 — 잘된 영상 대조(제목·썸네일·첫 60초·자막·대본) 없이 못 올림')
+    else:
+        bt = open(bc, encoding='utf-8').read()
+        miss = [k for k in ('제목', '썸네일', '첫 60초', '자막', '대본') if k not in bt]
+        vd2 = re.findall(r'^\s*\**대조\**\s*[:：](.*)$', bt, re.M)
+        if miss: bad.append('bench_check.md에 빠진 항목: ' + '·'.join(miss))
+        if not vd2 or '통과' not in vd2[-1] or re.search(r'미달|보류|미통과', vd2[-1]): bad.append("bench_check.md 마지막 '대조: 통과' 줄 없음")
+        tt = m.get('title', ''); tn = len(re.findall(r'\d[\d,.]*', tt))
+        if tn > 2: bad.append(f'제목 숫자 {tn}개 — 조회 1만+ 롱폼 108편 중앙 1개(10/11 실측), 2개 이하로')
     # C1 롱폼 주 2편·하루 1편(uploads.jsonl 기준, 예약 시각으로 센다)
     if not m.get('publishAt'):  # R-1처럼 칸을 skip해 publishAt이 비면 여기서 죽었다(10/5)
         return m, bad + ['예약 시각(publishAt) 없음']

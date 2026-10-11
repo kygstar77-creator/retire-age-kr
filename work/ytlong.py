@@ -52,7 +52,8 @@ def gate(ep):
     # 2026-10-02 사장님 지시로 '주 2편' 제한 해제 → 하루 1편만(X-YT-FREQ). 주 7편 넘으면 막는다.
     if sum(1 for p in prev if abs((pa - p).total_seconds()) < 7 * 86400) >= 7: bad.append('C1 롱폼 주 7편 넘음')
     if any(p.astimezone(KST).date() == pa.astimezone(KST).date() for p in prev): bad.append('C1 같은 날 롱폼 2편')
-    if not (19 <= pa.astimezone(KST).hour < 21): bad.append('예약 시각이 한국 19~21시 밖')
+    # 10/11 10:2x 사장님: 롱폼 정규 시각 매일 11:30(전 19:30). 그날 밀린 편은 관문을 다 넘는 즉시 공개 → 한국 11~21시만 허용(새벽·밤 공개는 계속 막음)
+    if not (11 <= pa.astimezone(KST).hour < 21): bad.append('예약 시각이 한국 11~21시 밖')
     if pa < datetime.datetime.now(KST) + datetime.timedelta(minutes=20): bad.append('예약 시각이 너무 가깝거나 지났다')
     # C5 이전 편 대본과 같은 문장 20% 초과(첫·끝 문장 제외)
     mine = body_sentences(os.path.join(ep, 'script.md'))[1:-1]

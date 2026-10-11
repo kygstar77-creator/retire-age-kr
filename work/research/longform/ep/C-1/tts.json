@@ -1,1 +1,1 @@
-{"model": "gemini-3.8-flash-tts", "voice": "Charon"}
+{"model": "chirp3-hd", "voice": "ko-KR-Chirp3-HD-Charon", "speakingRate": 1.1, "note": "2026-10-11 사장님 롱폼 목소리 Chirp 3 HD Charon으로 바꿈. speakingRate 1.1 = 편 전체 하나로 고정(1.0 시험 6줄 어림 편 전체 5.53 — 관문 5.5에 너무 붙음, 1.1 어림 5.79). 옛 제미나이 녹음은 tts.gemini.json·voice.gemini.json·audio/c-1_gemini"}

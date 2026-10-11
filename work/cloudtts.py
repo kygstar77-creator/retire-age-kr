@@ -27,8 +27,9 @@ def session():
     return AuthorizedSession(service_account.Credentials.from_service_account_file(KEY, scopes=['https://www.googleapis.com/auth/cloud-platform']))
 
 _S = None
-def synth(text, voice='ko-KR-Chirp3-HD-Charon', tag=''):
-    """문장 하나 → 24kHz mono int16 PCM bytes. 막히면 예외."""
+def synth(text, voice='ko-KR-Chirp3-HD-Charon', tag='', rate=None):
+    """문장 하나 → 24kHz mono int16 PCM bytes. 막히면 예외.
+    rate = audioConfig.speakingRate(0.25~2.0, Chirp 3 HD 'pace control' — docs.cloud.google.com/text-to-speech/docs/chirp3-hd 10/11 확인). 글자 수 과금은 같다."""
     global _S
     if 'Chirp3-HD' not in voice: raise SystemExit(f'막음: {voice} — Chirp 3 HD만 허용(무료 한도 있는 모델)')
     n = len(text)
@@ -37,11 +38,14 @@ def synth(text, voice='ko-KR-Chirp3-HD-Charon', tag=''):
     _S = _S or session()
     body = {'input': {'text': text}, 'voice': {'languageCode': voice[:5], 'name': voice},
             'audioConfig': {'audioEncoding': 'LINEAR16', 'sampleRateHertz': SR}}
+    if rate and float(rate) != 1.0:
+        if not 0.25 <= float(rate) <= 2.0: raise SystemExit(f'막음: speakingRate {rate} — 0.25~2.0만')
+        body['audioConfig']['speakingRate'] = float(rate)
     r = _S.post('https://texttospeech.googleapis.com/v1/text:synthesize', json=body, timeout=120)
     if not r.ok: raise RuntimeError(f'{r.status_code} {r.text[:200]}')
     os.makedirs(os.path.dirname(LEDGER), exist_ok=True)
     with open(LEDGER, 'a', encoding='utf-8') as f:
-        f.write(json.dumps({'ts': datetime.datetime.now().isoformat(timespec='seconds'), 'chars': n, 'voice': voice, 'tag': tag}, ensure_ascii=False) + '\n')
+        f.write(json.dumps({'ts': datetime.datetime.now().isoformat(timespec='seconds'), 'chars': n, 'voice': voice, 'tag': tag, **({'rate': float(rate)} if rate and float(rate) != 1.0 else {})}, ensure_ascii=False) + '\n')
     wav = base64.b64decode(r.json()['audioContent'])
     with wave.open(io.BytesIO(wav)) as w: return w.readframes(w.getnframes())
 

@@ -1681,3 +1681,9 @@
 2026-10-11 12:14 · motion · U5 겹침 검사(OverlapProbe·ovcheck.mjs)·같은 화면 8초 검사(그래픽 4% 기준)를 lfrender render·screen에, 통과 기록을 ytupload 롱폼 관문에 붙임(10/11 12:00 뒤 렌더본부터) · M-1 0:20 사고를 그대로 잡고 G-1 오탐 0까지 맞춤, C-1 오늘 칸은 막지 않으려고 시작 시각을 둠
 2026-10-11 12:14 · motion · G-1 겹침 2건 렌더 전 고침('1개월 전' 꼬리표 left·결론 글자 20px 아래) · 검사가 잡은 실제 겹침 · 편집 재서명 요청
 2026-10-11 12:14 · motion · Temp의 Remotion 번들 43개(다시 만들 수 있는 캐시, 실행 중 렌더 0 확인) 지움 · C: 남은 4.8MB → 21GB
+2026-10-11 12:41 · firemap-video-producer · 롱폼 목소리 Chirp 3 HD Charon 엔진을 lfvoice.py에 붙임(tts.json model chirp3-hd → 줄마다 cloudtts.synth, 150줄 상한, retake --takes) · 사장님 10/11 목소리 변경, 무료 한도 장치(cloudtts 50만 자)는 그대로
+2026-10-11 12:41 · firemap-video-producer · speakingRate 편마다 하나로 고정: C-1 1.1(1.0이면 편 전체 약 5.3·1.05면 5.56으로 관문 5.5에 붙음), G-1 1.15(1.1에서 5.40 — 숫자 줄 많음) · atempo 안 씀
+2026-10-11 12:41 · firemap-video-producer · deess.py --chirp(deesser i=0.75:m=0.6:f=0.6) 추가 · Chirp 목소리는 기본 필터 뒤 -11.1dB로 기준 -12 못 넘음, f=0.55는 '딱' 첫머리를 치직으로 잡히게 해서 f=0.6
+2026-10-11 12:41 · firemap-video-producer · ytlong gate 예약 시각 창 19~21시 → 11~21시 · 사장님 10/11 롱폼 정규 11:30·밀린 편 즉시 공개
+2026-10-11 12:41 · firemap-video-producer · C-1은 11:04 렌더본(U5 예외)으로 올림, 12:17 렌더본은 U5 12곳 걸려 안 씀 · 48.2초 치직 의심은 16:00 뒤 제미나이 듣기로 확인 후 업로드(지어서 click_ok 적지 않음)
+2026-10-11 12:41 · firemap-video-producer · C-1 새 썸네일 thumb_c1r.png 만들어만 둠(명암 폭 81.9 통과, 큰 글 24자·숫자 6개로 7장 기준 2개 미달·1초 시험 미실시) → 업로드는 확정본 c1p_s, 교체는 순돌이 판단

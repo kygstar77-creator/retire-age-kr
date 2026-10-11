@@ -1,5 +1,5 @@
 # 렌더 뒤 목소리 '치익'(ㅅ·ㅊ 쉿소리) 줄이기 — 화면은 그대로 복사, 소리만 디에서 통과.
-#   py -3.12 work/video/deess.py <입력.mp4> [출력.mp4]      # 출력 생략 시 <입력>_ds.mp4
+#   py -3.12 work/video/deess.py <입력.mp4> [출력.mp4] [--chirp]  # 출력 생략 시 <입력>_ds.mp4 · --chirp = Chirp 3 HD 편(CHIRP_FILTER)
 #   py -3.12 work/video/deess.py --measure <파일>          # 쉿소리/모음 비(dB)·대역만 잰다
 # 2026-10-01 사장님 "두 번째 유튜브 영상에서 치익~ 하는 소리 너무 거슬린다".
 # 실측(E-1 앞 120초): 우리 렌더에는 효과음 트랙이 없다(Remotion은 문장 wav만, 쇼츠는 합성 패드뿐) →
@@ -12,6 +12,11 @@ sys.stdout.reconfigure(encoding='utf-8')
 FF = imageio_ffmpeg.get_ffmpeg_exe()
 FILTER = 'deesser=i=0.6:m=0.5:f=0.6:s=o'
 LIMIT_DB = -12.0
+# 10/11 PD: Chirp 3 HD(Charon) 목소리는 ㅅ·ㅊ가 더 세다 — C-1 렌더 -10.7dB, 기본 FILTER 뒤 -11.1dB(기준 못 넘음).
+#   시험(C-1 전체): 두 번 -11.3 · treble -3dB -11.2 · i=0.7:m=0.6:f=0.55 -11.8 · i=0.75:m=0.6:f=0.55 -12.2(2~4kHz -0.8dB만, E-1 때 허용 -2.3dB 안) · i=0.8은 쉿소리 틀이 10개 밑으로 사라져 measure가 None(잣대 자체가 안 잼 → 안 씀).
+#   f=0.55는 '딱' 같은 된소리 첫머리를 판판하게 만들어 clickscan 규칙 B가 19.63초를 치직으로 잡음 → f=0.6(기본과 같은 주파수)·i=0.75·m=0.6: -12.2dB, 2~4kHz -0.8dB, 그 자리 안 잡힘.
+#   → Chirp 편은 --chirp로 CHIRP_FILTER. 기본 FILTER(제미나이 편)는 그대로.
+CHIRP_FILTER = 'deesser=i=0.75:m=0.6:f=0.6:s=o'
 
 def measure(path, sec=None):
     sr = 44100
@@ -27,9 +32,9 @@ def measure(path, sec=None):
     return {'sib_vs_voiced_db': round(float(20 * np.log10(np.median(rms[sib]) / np.median(rms[voiced]))), 1),
             'band_2_4k': band(2000, 4000), 'band_4_8k': band(4000, 8000), 'band_8_12k': band(8000, 12000)}
 
-def run(src, dst):
+def run(src, dst, filt=None):
     subprocess.run([FF, '-v', 'error', '-y', '-i', src, '-map', '0:v', '-map', '0:a', '-c:v', 'copy',
-                    '-af', FILTER, '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', dst], check=True)
+                    '-af', filt or FILTER, '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', dst], check=True)
     a, b = measure(src), measure(dst)
     print('전', a); print('후', b)
     if b and b['sib_vs_voiced_db'] > LIMIT_DB: print(f'경고: 쉿소리가 아직 {b["sib_vs_voiced_db"]}dB (기준 {LIMIT_DB}dB 이하)'); sys.exit(1)
@@ -37,5 +42,6 @@ def run(src, dst):
 
 if __name__ == '__main__':
     if sys.argv[1] == '--measure': print(measure(sys.argv[2])); sys.exit(0)
-    src = sys.argv[1]; dst = sys.argv[2] if len(sys.argv) > 2 else os.path.splitext(src)[0] + '_ds.mp4'
-    run(src, dst)
+    chirp = '--chirp' in sys.argv; a = [x for x in sys.argv[1:] if x != '--chirp']
+    src = a[0]; dst = a[1] if len(a) > 1 else os.path.splitext(src)[0] + '_ds.mp4'
+    run(src, dst, CHIRP_FILTER if chirp else None)

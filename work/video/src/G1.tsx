@@ -2,7 +2,7 @@
 // 틀은 R-1(1억의 1년 영수증)과 같은 TallyFrame(흰 보드·형광 부제·[자막] 칩·출처) + 영수증 종이. 새 그림은 parts/gold.tsx(세 조각 좌우 막대·줄어든 만큼 막대·몫 나누기·살 때/팔 때 띠).
 // 숫자 글자는 전부 g1.json에서 온다(calc_out 문구 그대로). 코드 안 숫자는 배치 좌표뿐. 본문 계산기 장면 없음(RULES X-CALC-VID), 전망 없음.
 import React from 'react';
-import {AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, spring, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, spring, useVideoConfig, Easing} from 'remotion';
 import {T, F, CL, LogoSting} from './parts/fm';
 import {Stamp} from './parts/receipt';
 import {Tokens, Tok} from './parts/explain';
@@ -34,14 +34,35 @@ const Note: React.FC<{text: string; at: number; x?: number; y?: number; color?: 
   return <div style={{...F, position: 'absolute', left: x, top: y + (1 - fade(f, at)) * 10, fontWeight: 700, fontSize: size, color, opacity: fade(f, at), whiteSpace: 'nowrap'}}>{text}</div>;
 };
 
-const Side: React.FC<{side?: [string, number, string]; y?: number}> = ({side, y = 440}) => {
+// U5(10/11 motion): 줄이 바뀌면 그 줄이 말하는 항목을 판에서 꺼낸다 — 검은 띠·검은 카드·값 띠. 글자는 props·다른 장면에 이미 있는 것만 다시 놓는다.
+const pickAt = (tl: [number, number][] | undefined, f: number, dflt: number) => { let k = dflt; (tl ?? []).forEach(([at, v]) => { if (f >= at) k = v; }); return k; };
+const DarkBar: React.FC<{text: string; at: number; x: number; y: number; w: number; size?: number; color?: string; bg?: string; wrap?: boolean}> = ({text, at, x, y, w, size = 44, color = T.dink, bg = T.ink, wrap}) => {
+  const f = useCurrentFrame(); const {fps} = useVideoConfig();
+  if (f < at) return null;
+  const sp = spring({frame: f - at, fps, config: {damping: 14}});
+  return <div style={{position: 'absolute', left: x, top: y + (1 - sp) * 20, width: w, opacity: sp, background: bg, borderRadius: 16, padding: '22px 34px', boxSizing: 'border-box',
+    ...F, fontWeight: 700, fontSize: size, color, whiteSpace: wrap ? 'normal' : 'nowrap', wordBreak: 'keep-all', lineHeight: 1.25}}>{text}</div>;
+};
+// 영수증 한 줄을 검은 띠로(TallyReceipt와 같은 자리·같은 글자)
+const DarkRow: React.FC<{r: TallyRow; x: number; y: number; w: number; size: number; i: number}> = ({r, x, y, w, size, i}) => {
+  const rowH = size * 1.75; const tone = r.tone ?? 'in';
+  const col = tone === 'tax' ? '#ff8a8d' : tone === 'net' || tone === 'hi' ? T.daccent : T.dink;
+  return (
+    <div style={{position: 'absolute', left: x + 30, width: w - 60, top: y + 96 + i * rowH, height: rowH, background: T.ink, borderRadius: 8, display: 'flex', alignItems: 'center', padding: '0 18px', boxSizing: 'border-box'}}>
+      <span style={{...F, fontWeight: 700, fontSize: tone === 'net' ? size * 0.92 : size * 0.8, color: T.dink, whiteSpace: 'nowrap'}}>{r.label}</span>
+      <span style={{...F, fontWeight: 700, fontSize: tone === 'net' ? size * 1.15 : size, color: col, marginLeft: 'auto', whiteSpace: 'nowrap'}}>{r.value ?? ''}</span>
+    </div>
+  );
+};
+
+const Side: React.FC<{side?: [string, number, string]; y?: number; hideSub?: boolean}> = ({side, y = 440, hideSub}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
   if (!side) return null;
   const s = spring({frame: f - side[1], fps, config: {damping: 12}});
   return (
     <div style={{position: 'absolute', left: 150, top: y, opacity: f >= side[1] ? 1 : 0}}>
       <div style={{...F, fontWeight: 700, fontSize: side[0].length > 8 ? 84 : 120, color: T.accent, lineHeight: 1.05, whiteSpace: 'nowrap', letterSpacing: -2, transform: `scale(${0.7 + 0.3 * s})`, transformOrigin: 'left center'}}>{side[0]}</div>
-      <div style={{...F, fontWeight: 700, fontSize: 30, color: T.ink2, marginTop: 14, whiteSpace: 'nowrap'}}>{side[2]}</div>
+      {hideSub ? null : <div style={{...F, fontWeight: 700, fontSize: 30, color: T.ink2, marginTop: 14, whiteSpace: 'nowrap'}}>{side[2]}</div>}
     </div>
   );
 };
@@ -83,14 +104,23 @@ const Line: React.FC<{s: GScene}> = ({s}) => {
   const d = s.data;
   const X = 260, Y = 320, W = d.callouts ? 940 : 1260, H = 430;
   const series = d.series.map(([name, col, pts]: [string, string, number[]]) => ({name, color: COL[col], pts, width: col === 'accent' ? 6 : 5}));
-  const n = d.series[0][2].length; const xy = lineXY(X, Y, W, H, d.min, d.max, n);
+  const n = d.series[0][2].length; const xy = lineXY(X, Y, W, H, d.min, d.max, n); const f = useCurrentFrame();
+  const SH = [T.fall, T.rise];   // U5: shade = [시작 점, 위 값, 아래 값, 나타남, 사라짐, 색] — 산 값~오늘 값 띠
   return (
     <>
+      {(d.cols ?? []).map(([i, a, b]: number[], k: number) => { if (f < a || f >= b) return null; const [cx] = xy(i, d.min);
+        return <div key={'c' + k} style={{position: 'absolute', left: cx - 20, top: Y, width: 40, height: H, background: T.ink, opacity: 0.16 * fade(f, a + k * 4, 8), borderRadius: 8}} />; })}
+      {(d.shade ?? []).map(([i, v1, v2, a, b, tone]: number[], k: number) => { if (f < a || f >= b) return null; const [x1, y1] = xy(i, v1); const [x2, y2] = xy(n - 1, v2); const c = SH[tone] ?? T.fall;
+        return <React.Fragment key={'s' + k}>
+          <div style={{position: 'absolute', left: x1, top: Math.min(y1, y2), width: (x2 - x1) * fade(f, a, 14), height: Math.abs(y2 - y1), background: c, opacity: 0.3}} />
+          <div style={{position: 'absolute', left: x1 - 3, top: Math.min(y1, y2), width: 6, height: Math.abs(y2 - y1), background: c, opacity: fade(f, a, 6)}} />
+        </React.Fragment>; })}
       <TallyLineChart series={series} x={X} y={Y} w={W} h={H} min={d.min} max={d.max} start={d.draw} dur={d.dur ?? 60}
         base={d.base ? {v: d.base[0], text: d.base[1]} : undefined} ticks={d.ticks.map(([v, t]: [number, string]) => ({v, text: t}))}
         xlabels={d.xlabels.map(([i, t]: [number, string]) => ({i, text: t}))} />
       {d.tags.map((t: any, i: number) => { const [tx, ty] = xy(t[0], t[1]); return <TallyTag key={i} x={tx} y={ty} text={t[2]} start={t[3]} side={t[4]} hot={t[5]} size={24} />; })}
       {(d.callouts ?? []).map((c: any, i: number) => <TallyCallout key={i} x={c[2]} y={c[3]} text={c[0]} start={c[1]} size={30} w={500} />)}
+      {(d.pull ?? []).map(([ti, py]: number[], i: number) => <DarkBar key={'p' + i} text={d.tags[ti][2]} at={d.tags[ti][3]} x={1350} y={py} w={450} size={36} bg={d.tags[ti][5] ? T.accent : T.ink} color="#fff" />)}
     </>
   );
 };
@@ -139,17 +169,33 @@ const Pieces: React.FC<{s: GScene}> = ({s}) => {
 };
 
 const GridS: React.FC<{s: GScene}> = ({s}) => {
-  const d = s.data;
-  return <Grid cols={d.cols} rows={d.rows} hot={d.hot} x={150} y={264} w={1620} />;
+  const d = s.data; const f = useCurrentFrame();
+  const fr = pickAt(d.focus, f, -1); const row = fr >= 0 ? d.rows[fr] : null;
+  const GY = 292;   // 정확한 값 칩(y 252~297)이 첫 열 머리 '달러 금값'을 가리지 않게
+  const lw = 380, cw = (1620 - lw) / d.cols.length, rh = d.rows.length > 2 ? 120 : 150, top = GY + 76 + 10 + fr * rh;
+  return (
+    <>
+      <Grid cols={d.cols} rows={row && f >= row[2] ? d.rows.map((r: any, i: number) => i === fr ? ['', r[1].map(() => ''), r[2]] : r) : d.rows} hot={d.hot} x={150} y={GY} w={1620} />
+      {row && f >= row[2] ? <div style={{position: 'absolute', left: 150, top: top - 4, width: 1620, height: rh - 10, background: T.ink, borderRadius: 14}}>
+        <div style={{...F, position: 'absolute', left: 24, top: 0, height: rh - 10, display: 'flex', alignItems: 'center', fontWeight: 700, fontSize: 40, color: T.dink, whiteSpace: 'nowrap'}}>{row[0]}</div>
+        {row[1].map((c: string, i: number) => { const h = d.hot.find(([hr, hc]: number[]) => hr === fr && hc === i); const on = h ? f >= h[2] : false;
+          return <div key={i} style={{position: 'absolute', left: lw + i * cw + 12, width: cw - 24, top: 4, height: rh - 18, borderRadius: 14, background: on ? T.accent : 'transparent',
+            display: 'flex', alignItems: 'center', justifyContent: 'center', ...F, fontWeight: 700, fontSize: 54, color: on ? '#fff' : T.dink, whiteSpace: 'nowrap'}}>{c}</div>; })}
+      </div> : null}
+    </>
+  );
 };
 
 const Law: React.FC<{s: GScene}> = ({s}) => {
   const f = useCurrentFrame(); const d = s.data;
   const rows = toRows(d.rows); const size = rows.length > 4 ? 31 : 34;
+  const act = activeRow(rows, f); const fr0 = d.focus ? pickAt(d.focus, f, -1) : -1; const fr = fr0 === -2 ? act : fr0;   // -2 = 방금 찍힌 줄
   return (
     <>
-      <TallyReceipt x={900} y={280} w={880} head={d.head} rows={rows} size={size} active={activeRow(rows, f)} />
-      <Side side={d.side} />
+      <TallyReceipt x={900} y={280} w={880} head={d.head} rows={fr >= 0 && f >= rows[fr].start + 10 ? rows.map((r, i) => i === fr ? {...r, label: '', value: ''} : r) : rows} size={size} active={act} />
+      {fr >= 0 && f >= rows[fr].start + 10 ? <DarkRow r={rows[fr]} x={900} y={280} w={880} size={size} i={fr} /> : null}
+      <Side side={d.side} hideSub={d.side2At != null} />
+      {d.side2At != null && d.side ? <DarkBar text={d.side[2]} at={d.side2At} x={150} y={600} w={700} size={36} wrap /> : null}
     </>
   );
 };
@@ -161,19 +207,24 @@ const Spread: React.FC<{s: GScene}> = ({s}) => {
       <SpreadBand x={200} y={560} w={900} step={150} mid={d.mid} buy={d.buy} sell={d.sell} gap={d.gap}
         labels={{mid: '기준가격', buy: '살 때 +1.00%', sell: '팔 때 −1.00%', gap: '사고팔기만 해도 2% 가까이'}} />
       <TallyTag x={1360} y={360} text="차익엔 배당소득세 15.4%" start={d.tax} side="right" size={26} />
-      {f >= d.stamp ? <Stamp x={1340} y={700} o={fade(f, d.stamp, 8)} text="원 단위 결과는 고시 확인 전" color={T.ink3} size={28} /> : null}
+      <DarkBar text="원 단위 결과는 고시 확인 전" at={d.stamp} x={1390} y={540} w={410} size={46} wrap />
     </>
   );
 };
 
 const Split: React.FC<{s: GScene}> = ({s}) => {
-  const d = s.data;
+  const d = s.data; const f = useCurrentFrame();
   return (
     <>
       <SplitBar x={200} y={400} w={1400} h={130} ratio={d.ratio} at={d.at} splitAt={d.vatAt} whole="낸 돈 1천만원"
         a={['금값 몫', d.gold]} b={['부가세 10%', d.vat]} />
-      <TallyCallout x={200} y={720} text={d.need[0]} start={d.need[1]} size={32} />
-      <Note text={d.fee[0]} at={d.fee[1]} x={900} y={740} color={T.ink3} size={28} />
+      {f >= d.need[1] ? <>
+        <div style={{position: 'absolute', left: 200, top: 670, width: 1400 * (1 - d.ratio), height: 80, background: T.ink2, borderRadius: '12px 0 0 12px', opacity: fade(f, d.need[1], 8)}} />
+        <div style={{position: 'absolute', left: 200 + 1400 * (1 - d.ratio), top: 670, height: 80, background: T.accent, borderRadius: '0 12px 12px 0',
+          width: (1400 * d.ratio + 18) * interpolate(f, [d.need[1] + 8, d.need[1] + 38], [0, 1], {...CL, easing: Easing.out(Easing.cubic)})}} />
+      </> : null}
+      <TallyCallout x={200} y={770} text={d.need[0]} start={d.need[1]} size={32} />
+      <Note text={d.fee[0]} at={d.fee[1]} x={900} y={785} color={T.ink3} size={28} />
     </>
   );
 };
@@ -192,9 +243,7 @@ const Quote: React.FC<{s: GScene}> = ({s}) => {
         <div style={{...F, fontWeight: 700, fontSize: 26, color: T.ink3, padding: '26px 40px 0'}}>{d.src}</div>
         <div style={{...F, fontWeight: 700, fontSize: 52, color: T.ink, padding: '28px 40px 0', whiteSpace: 'nowrap'}}>{d.body}</div>
       </div>
-      <div style={{position: 'absolute', left: 150, top: 550, width: 1620, opacity: fade(f, d.q2At)}}>
-        <div style={{...F, fontWeight: 500, fontSize: 36, color: T.ink2, borderLeft: `8px solid ${T.line}`, paddingLeft: 28, whiteSpace: 'nowrap'}}>{d.q2}</div>
-      </div>
+      <DarkBar text={d.q2} at={d.q2At} x={150} y={540} w={1620} size={40} />
       {f >= d.bigAt ? <Stamp x={170} y={680} o={fade(f, d.bigAt, 8)} text={d.big} color={T.rise} size={44} rot={-4} /> : null}
     </>
   );
@@ -227,7 +276,7 @@ const Stamps: React.FC<{s: GScene}> = ({s}) => {
           </div>
         );
       })}
-      <Note text={d.no[0]} at={d.no[1]} x={150} y={680} color={T.ink} size={44} />
+      <DarkBar text={d.no[0]} at={d.no[1]} x={150} y={650} w={760} size={46} />
     </>
   );
 };
@@ -246,10 +295,20 @@ const Asym: React.FC<{s: GScene}> = ({s}) => {
 };
 
 const End: React.FC<{s: GScene}> = ({s}) => {
-  const d = s.data; const f = useCurrentFrame();
+  const d = s.data; const f = useCurrentFrame(); const {fps} = useVideoConfig(); const st = tallyStarts(s.lines);
+  // U5: 끝 화면 20초(말 11초 + 엔드 스크린) — 줄마다 왼쪽 판이 바뀐다: 숫자 → '지나간 값' 띠 → 전체 표 카드 → 카페 글 띠. 오른쪽 점선 상자는 엔드 스크린 자리라 비워 둔다.
+  const tEnd = st[st.length - 1] + s.lines[s.lines.length - 1].frames;
+  const cardAt = st[2] ?? tEnd; const ctaAt = tEnd + 48;
+  const out = interpolate(f, [cardAt - 6, cardAt], [1, 0], CL); const cs = spring({frame: f - cardAt, fps, config: {damping: 14}});
   return (
     <>
-      <TallyZoom text={d.text} start={d.start} x={150} y={420} size={110} label={d.label} note={d.note} />
+      {f < cardAt ? <div style={{opacity: out}}><TallyZoom text={d.text} start={d.start} x={150} y={420} size={110} label={d.label} note={d.note} /></div> : null}
+      {f >= cardAt ? <div style={{position: 'absolute', left: 150, top: 380 + (1 - cs) * 30, width: 820, opacity: cs, background: T.ink, borderRadius: 20, padding: '30px 40px', boxSizing: 'border-box'}}>
+        <div style={{...F, fontWeight: 700, fontSize: 34, color: T.dink3, whiteSpace: 'nowrap'}}>{d.label}</div>
+        <div style={{...F, fontWeight: 700, fontSize: 84, color: T.daccent, marginTop: 12, whiteSpace: 'nowrap', letterSpacing: -2}}>{d.text}</div>
+      </div> : null}
+      {s.source && f < ctaAt ? <DarkBar text={s.source} at={st[1] ?? 0} x={150} y={670} w={820} size={38} /> : null}
+      <DarkBar text={d.note} at={ctaAt} x={150} y={670} w={820} size={44} bg={T.accent} color="#fff" />
       <div style={{position: 'absolute', left: 1000, top: 300, width: 780, height: 440, borderRadius: 20, border: `3px dashed ${T.line}`, opacity: fade(f, 0, 14)}} />
     </>
   );

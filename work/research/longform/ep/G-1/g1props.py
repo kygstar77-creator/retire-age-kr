@@ -103,6 +103,10 @@ END_MIN = 20 * FPS
 
 def spec(key, L, A):
     K = {lab: P['KRX'] for lab, _, _, P in DATES}
+    def S(w, needle):   # 그 줄 안 needle 자리(글자 비례 어림) — U5 줄 안에서 판을 바꿀 때
+        j = next(j for j, x in enumerate(L) if w in x['text']); k = L[j]['text'].index(needle)
+        return A(w) + round(L[j]['frames'] * k / len(L[j]['text']))
+    OFF = 10**9
     if key == 'open':
         return dict(kind='twin', title='금 1천만원어치, 지금 얼마?', sub=f'같은 금 · 산 날만 다르다 · {ASOF} KRX 금시장 종가 기준', source=SRC_KRX + ' · ' + PAST,
                     data={'cards': [
@@ -130,7 +134,12 @@ def spec(key, L, A):
                           'tags': [[len(vals) - 1, vals[-1], f'오늘 {won(NOWP)}원', A('18만원이', 0), 'left', True],
                                    [idx(PEAKD), round(PEAKP / 1000), f'{dot(PEAKD)} {won(PEAKP)}원', A('가장 비쌌던 날', 0), 'up', False]],
                           'callouts': [['고점 대비 ' + M(PEAKPCT) + '%', A('3분의 1쯤', 0), 1300, 300], ['어느 날과 비교하나?', A('어느 날이랑', 0), 1300, 390],
-                                       ['→ 내가 산 날 기준', A('그래서 오늘은', 0), 1300, 470]]})
+                                       ['→ 내가 산 날 기준', A('그래서 오늘은', 0), 1300, 470]],
+                          # U5 10/11: 줄마다 판이 바뀐다 — 고점→오늘 내려온 폭(3분의 1) → 산 날 후보 4개 → 산 날 값~오늘 값 띠 4개(다음 장면 영수증 4장으로 이어짐)
+                          'shade': [[idx(PEAKD), PEAKP / 1000, NOWP / 1000, A('3분의 1쯤'), A('어느 날이랑'), 0]] +
+                                   [[idx(dt), g / 1000, NOWP / 1000, A('그래서 오늘은'), OFF, 0] for _, dt, g, _ in DATES],
+                          'cols': [[idx(dt), A('어느 날이랑'), A('그래서 오늘은')] for _, dt, _, _ in DATES],
+                          'pull': [[0, 570], [1, 680]]})   # 꼬리표 0·1(오늘·고점 값)을 오른쪽 검은 띠로 크게
     if key == 'buy':
         pts = thin(KRX, 2); vals = [round(v / 1000) for _, v in pts]
         idx = lambda d: next(i for i, (x, _) in enumerate(pts) if x >= d)
@@ -140,7 +149,10 @@ def spec(key, L, A):
         return dict(kind='line', title='산 날 영수증 4장', sub=f'1천만원어치를 그날 샀다면, 오늘 팔 때 받는 돈 · 점선 = 오늘 1g {won(NOWP)}원 · ' + NOTFEE, source=SRC_KRX,
                     data={'series': [['KRX 금 1g', 'ink', vals]], 'min': 150, 'max': 290, 'draw': 0, 'dur': 30, 'xlabels': months(pts),
                           'ticks': [[160, '16만'], [200, '20만'], [240, '24만'], [280, '28만']], 'tags': tags,
-                          'base': [round(NOWP / 1000), ''], 'callouts': [['네 장 다 손실 · 폭은 4%~34%', A('네 장 다', 0), 1250, 300]]})
+                          'base': [round(NOWP / 1000), ''], 'callouts': [['네 장 다 손실 · 폭은 4%~34%', A('네 장 다', 0), 1250, 300]],
+                          # U5 10/11: 말하는 영수증의 산 값~오늘 값 띠만 꺼냄, '네 장 다'에서 넷 다
+                          'shade': [[idx(dt), g / 1000, NOWP / 1000, A(word[lab]), A(nxt), 0] for (lab, dt, g, _), nxt in zip(DATES, ['두 번째는', '세 번째는', '네 번째', '네 장 다'])] +
+                                   [[idx(dt), g / 1000, NOWP / 1000, A('네 장 다'), OFF, 0] for _, dt, g, _ in DATES]})
     if key == 'range':
         rows = [[SHORT[lab], 10_000_000 - P['KRX'][0], f'{won(P["KRX"][0])}원 ({M(P["KRX"][1])}%)', A('네 장 다', 6 + 8 * i), lab == '1년 고점'] for i, (lab, _, _, P) in enumerate(DATES)]
         return dict(kind='loss', title='네 장 다 손실, 폭은 4%~34%', sub='막대 = 1천만원에서 줄어든 만큼 · 글자 = 오늘 받는 돈', source=SRC_KRX + ' · ' + NOTFEE,
@@ -179,7 +191,8 @@ def spec(key, L, A):
         big = lambda lab: max(range(3), key=lambda i: abs(pc([DEC[lab]['usd'], DEC[lab]['fx'], DEC[lab]['prem']][i])))
         return dict(kind='grid', title='산 날마다 깎인 이유가 다르다', sub='세 조각 · 가장 크게 깎인 칸에 표시', source=SRC_DEC,
                     data={'cols': ['달러 금값', '환율', 'KRX 웃돈', '내 금'], 'rows': rows,
-                          'hot': [[0, big('1년 전'), 0], [1, big('1년 고점'), 0], [2, big('3개월 전'), A('3개월 전은', 20)], [3, big('1개월 전'), A('한 달 전은', 20)]]})
+                          'hot': [[0, big('1년 전'), 0], [1, big('1년 고점'), 0], [2, big('3개월 전'), A('3개월 전은', 20)], [3, big('1개월 전'), A('한 달 전은', 20)]],
+                          'focus': [[0, 2], [A('한 달 전은'), 3], [A('그래서'), -1]]})   # U5: 말하는 줄만 검은 띠
     if key == 'paths':
         return dict(kind='cards', title='같은 1천만원, 산 길 4개', sub='길마다 세금·수수료가 다르다', source=SRC_LAW,
                     data={'cards': [['①', 'KRX 금시장', '증권사 계좌 · 1g 단위', A('KRX 금시장', 0)], ['②', '금 ETF', '주식처럼 사고팜', A('금 ETF', 0)],
@@ -189,7 +202,7 @@ def spec(key, L, A):
                     data={'head': 'KRX 금시장 · 세금 영수증', 'rows': [['부가가치세', '면제', 'in', A('부가가치세가 면제', 0)], ['조특법 제126조의7①', '금 현물시장 매매', 'dim', A('부가가치세가 면제', 16)],
                                                                     ['판 차익 양도세', '없음', 'in', A('양도소득세도', 0)], ['소득세법 제94조', '목록에 금 없음', 'dim', A('양도소득세도', 24)],
                                                                     ['실물로 찾을 때', '부가세 10%', 'tax', A('실물로 찾아가는', 0)]],
-                          'side': ['세금 0', A('부가가치세가 면제', 10), '사고파는 동안']})
+                          'side': ['세금 0', A('부가가치세가 면제', 10), '사고파는 동안'], 'focus': [[0, -2]]})
     if key == 'etf':
         e = D['1년 전'][3]['ETF']
         return dict(kind='law', title='② 금 ETF', sub='ACE KRX금현물(411060) · 작년 이맘때 샀다면', source='야후 파이낸스 종가 · ' + SRC_LAW,
@@ -199,7 +212,7 @@ def spec(key, L, A):
                           'side': [M(e[1]) + '%', A('두 번째는', 20), '1년 전에 산 금 ETF']})
     if key == 'bank':
         return dict(kind='spread', title='③ 골드뱅킹 — 살 때 +1%, 팔 때 −1%', sub='은행 고시 규칙 · 기준가격 = 국제 금가격 × 환율 ÷ 31.1034768', source='KB국민은행 골드뱅킹 고시 규칙 · 소득세법 제17조①5의2호',
-                    data={'mid': A('세 번째는', 0), 'buy': A('살 때는', 0), 'sell': A('팔 때는', 0), 'gap': A('사고팔기만', 0), 'tax': A('사고팔기만', 30), 'stamp': A('은행 고시값은', 0)})
+                    data={'mid': A('세 번째는', 0), 'buy': S('세 번째는', '살 때는'), 'sell': S('세 번째는', '팔 때는'), 'gap': A('사고팔기만', 0), 'tax': A('사고팔기만', 30), 'stamp': A('은행 고시값은', 0)})
     if key == 'bar':
         return dict(kind='split', title='④ 골드바 — 출발선이 뒤에 있다', sub='1천만원을 내면 그중 부가세 10%', source='부가가치세법 제30조 · 파이어맵 계산',
                     data={'vat': won(VAT) + '원', 'gold': won(GOLDPART) + '원', 'ratio': VAT / 10_000_000, 'at': A('네 번째는', 0), 'vatAt': A('91만원이', 0),
@@ -221,7 +234,8 @@ def spec(key, L, A):
                     data={'series': [['10년 금리', 'ink', vals]], 'min': 3.8, 'max': 5.5, 'draw': 0, 'xlabels': months(pts),
                           'ticks': [[4.0, '4.0%'], [4.5, '4.5%'], [5.0, '5.0%'], [5.5, '5.5%']],
                           'tags': [[next(i for i, (d, _) in enumerate(pts) if d >= '2025-10-02'), 4.10, '25.10.02 4.10%', A('작년 이맘때', 0), 'down', False],
-                                   [len(vals) - 1, 5.31, '26.10.05 5.31% · 1년 최고', A('미국 장기', 10), 'left', True]]})
+                                   [len(vals) - 1, 5.31, '26.10.05 5.31% · 1년 최고', A('미국 장기', 10), 'left', True]],
+                          'shade': [[next(i for i, (d, _) in enumerate(pts) if d >= '2025-10-02'), 5.31, 4.10, A('미국 장기'), OFF, 1]]})
     if key == 'fxl':
         pts = thin(FXS, 2); vals = [v for _, v in pts]
         return dict(kind='line', title='원/달러 환율', sub='원 · 매매기준율', source='한국은행 ECOS 731Y001',
@@ -242,7 +256,7 @@ def spec(key, L, A):
     if key == 'nocause':
         return dict(kind='stamps', title='무엇이 얼마나 움직였나?', sub='네 가지 모두 원문에 기여도 숫자가 없다', source=PAST,
                     data={'cards': [['금리', '미 10년 5.31%', A('금리, 환율', 0)], ['환율', '1,358.5원', A('금리, 환율', 8)], ['중앙은행', '시기·물량 미정', A('금리, 환율', 16)], ['ETF', 'US$18bn 유입', A('금리, 환율', 24)]],
-                          'stamp': ['기여도 숫자 없음', A('원문 어디에도', 0)], 'no': ['전망은 말하지 않습니다', A('그래서 앞으로', 0)]})
+                          'stamp': ['기여도 숫자 없음', S('금리, 환율', '원문 어디에도')], 'no': ['전망은 말하지 않습니다', A('그래서 앞으로', 0)]})
     if key == 'math':
         return dict(kind='asym', title='산 값까지의 산수', sub=f'1월 고점에 산 금 · 1g {won(NOWP)}원 → {won(PEAKP)}원', source=SRC_KRX + ' · 전망 아님, 산수',
                     data={'down': [abs(pc(PEAKPCT)), M(PEAKPCT) + '%', A('34% 떨어진', 0)], 'up': [float(BACK), '+' + BACK + '%', A('고점에 산 금이', 0)],
@@ -251,7 +265,8 @@ def spec(key, L, A):
     if key == 'sum':
         return dict(kind='law', title='정리 — 금 1천만원 영수증 4장', sub=f'{ASOF} 기준 · KRX 금시장 · ' + NOTFEE, source=SRC_KRX + ' · ' + PAST,
                     data={'head': '오늘 팔면 받는 돈', 'rows': [[f'{SHORT[lab]} ({dot(dt)})', won(P['KRX'][0]), 'net' if lab == '1년 고점' else 'in', A('작년에 샀다면', 10 * i)] for i, (lab, dt, _, P) in enumerate(DATES)],
-                          'side': ['산 날이 갈랐다', A('작년에 산 분은', 0), '같은 날이라도 골드바는 부가세만큼 뒤']})
+                          'side': ['산 날이 갈랐다', A('작년에 산 분은', 0), '같은 날이라도 골드바는 부가세만큼 뒤'],
+                          'focus': [[0, -2], [A('작년에 산 분은'), 0], [S('작년에 산 분은', '고점에 산 분은'), 1], [A('같은 날 샀어도'), -1]], 'side2At': A('같은 날 샀어도')})
     if key == 'end':
         return dict(kind='end', title='전체 표는 카페 글에', sub='산 날 4 × 산 길 4 · 설명란 링크', source=PAST,
                     data={'text': '산 날 4 × 산 길 4', 'label': '전체 영수증 표', 'note': '설명란의 카페 글', 'start': A('산 날 네 개', 0)})
@@ -315,7 +330,7 @@ def main(script):
             j = next((j for j, x in enumerate(_o) if w in x['text']), -1)
             assert j >= 0, (_k, w)
             return sum(x['frames'] for x in _o[:j]) + plus
-        d = spec(key, None, A)
+        d = spec(key, out, A)
         frames = sum(x['frames'] for x in out) if out else 72
         if key == 'end': frames = max(frames, END_MIN)
         scenes.append({'key': key, 'kind': d['kind'], 'title': d['title'], 'sub': d.get('sub'), 'source': d.get('source'),

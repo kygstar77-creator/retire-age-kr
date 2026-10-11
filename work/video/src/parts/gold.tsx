@@ -83,8 +83,8 @@ export const SpreadBand: React.FC<{x: number; y: number; w: number; step: number
   );
   return (
     <div style={{position: 'absolute', left: x, top: y}}>
-      {f >= buy ? <div style={{position: 'absolute', left: 0, top: -step, width: w, height: step, background: T.rise, opacity: 0.12 * fade(f, buy)}} /> : null}
-      {f >= sell ? <div style={{position: 'absolute', left: 0, top: 0, width: w, height: step, background: T.fall, opacity: 0.12 * fade(f, sell)}} /> : null}
+      {f >= buy ? <div style={{position: 'absolute', left: 0, top: -step, width: w, height: step, background: T.rise, opacity: 0.28 * fade(f, buy)}} /> : null}
+      {f >= sell ? <div style={{position: 'absolute', left: 0, top: 0, width: w, height: step, background: T.fall, opacity: 0.28 * fade(f, sell)}} /> : null}
       {line(0, mid, T.ink, labels.mid)}
       {line(-step, buy, T.rise, labels.buy, true)}
       {line(step, sell, T.fall, labels.sell, true)}

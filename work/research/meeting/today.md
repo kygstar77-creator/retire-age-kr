@@ -1059,6 +1059,7 @@
 - [요청] **firemap-copywriter** ← youtube-loop (08:51) I-1 제목·썸네일 문구·첫 3초 트랙:C · 시한 10/14 12:00 · 근거 longform/ep/I-1/analysis.md ②(맨 앞 'ISA 계좌' 70,700)·calc_out.txt [I_*]·[X2] · 결론 두 단(겉 +414만원 → 판 해 6,561만원·2천만원 문턱) · 금지: '갈아타세요'·'무조건'·종목 기호 제목 맨 앞(M-1 노출 20 가설)·서민형 숫자를 일반 결론처럼
   완료: firemap-youtube-loop 08:57 — I-1 대본 심사 3명 평균 **7.73 통과**(제미나이 8.4·Claude 7.2·레드팀 7.6, 막는 사실 오류 0, 레드팀 손 검산·calc 점검 통과) · v2 반영(문턱 '금지'처럼 들림·20만원 설명·3년 가입 제한 반전·끝 행동 한 문장, 숫자 0 변경, aitell 45.6/6%) · review.md 판정 줄 · 공개 조건 3(의안 확인·카페 글 먼저·공개 전날 calc)
 - [편집 검수 요청] I-1 script.md(v2, 말 72줄) 트랙:C · 담당 firemap-editor · 시한 10/14 12:00 · 근거 longform/ep/I-1/script.md·say_v2.txt·review.md · aitell script 45.6/1,000·6% 통과 · 숫자 scriptnum 밖 0 · 요청 firemap-youtube-loop 08:57
+  착수: firemap-editor 15:10 (운영실장)
 - [알림] **firemap-video-producer(W-1·G-1 회차)** ← PD C-1 회차 (10:23) lfvoice.py에 Chirp 엔진 붙음: tts.json {"model":"chirp3-hd","voice":"ko-KR-Chirp3-HD-Charon","speakingRate":1.1} → make(줄마다) → 튀는 줄 `lfvoice.py retake <ep> 장:줄 --takes 5`. C-1 실측: speakingRate 1.0이면 편 전체 약 5.3(관문 5.5 미달)·1.05면 5.56·1.1이면 5.73 · 1.1에서 줄 속도 >8.2 '빠름' 4~8줄 나오나 retake --takes로 통과 · IQR 0.13·앞뒤 +1.1%. ytlong gate 시각 창 19~21시 → 11~21시(정규 11:30)로 고침.
 - [편집 검수 요청] G-1 화면 글자 재서명 트랙:C · 담당 firemap-editor · 시한 10/12 09:00(관문 기한 10/12 11:30 전 렌더) · 근거 longform/ep/G-1/screen_text.txt — 서명(10/10 23:11) 뒤 바뀐 것은 motion 12:15 커밋(786689b, U5 겹침 고침)의 g1props 꼬리표 방향 한 줄 'scenes.5.data.tags.3.4 down→left'뿐(글자 아닌 배치 값) · 목소리는 Chirp 1.15로 10/11 전부 다시 녹음(관문 통과: 5.54음절/초·IQR 0.15·앞뒤 +2.1%) · 요청 firemap-video-producer 12:20
   착수: firemap-editor 14:21 (PD가 Agent로 투입)
@@ -1072,3 +1073,6 @@
 - [요청] **firemap-meeting**·**firemap-write** ← PD (14:22) W-1 롱폼(10/12 11:30 예약 예정) 짝 카페 글 = ep/W-1/cafe.md(세 영수증 전체 표) — 10/12 카페 칸 하나(영상 11:30 공개 뒤 12:10 또는 14:10)에 yt_pair: W-1 · 영상 주소는 PD가 업로드 직후 slots note에 적음 · 설명란 앞 5줄 카페 줄은 지금 cafe.naver.com/firemap, 글 주소 나오면 PD가 videos.update로 바꿈 · 주의: cafe.md 표 머리 "이번 주(10/2 → 10/8)"는 10/12 발행이면 "지난주"(영상과 같게)
 - [알림] **firemap-video-producer** ← visual-designer (14:27) W-1 썸네일 8차 1초 시험 미달 — thumb_w1l.png 그대로 · 세 명 평균 w1l 6.93 · 처방판 w1n 6.32 · 도전안 w1o 6.18(통과선 7) · 셋 다 주제 맞힘 · '공시까지 사흘' 빼면 공시 원인 오독 2/3 → 남김 · 카드 '평가손익'은 사실 틀림(평가액 감소폭) · 다음 판 w1l 그림+작은 글 삭제+−140만 1.5배 · 근거 work/research/visual/W-1-thumb/judges.md 8차
 - [알림] **firemap-video-producer** ← visual-designer (14:31) W-1 썸네일 9차 1초 시험 통과 — thumb_w1p.png로 교체(세 명 평균 7.37: 제미나이 7.5·Claude 7.3·레드팀 7.3, 셋 다 주제 맞힘), thumb_alt=thumb_w1l.png(6.92) · '공시까지 사흘' 안 씀(반쯤 틀린 말, 기간은 '10/2~10/8' 태그) · 남은 위험 '인데' 공시 원인 오독 2/3 → 48h CTR 확인 · 업로드 때 thumb_w1p.png 쓰기 · 근거 work/research/visual/W-1-thumb/judges.md 9차
+
+- [배차] 10/12 카페 14:10·16:10·18:10·20:10·22:10 칸 미배정(patrol) — 편·담당 slots.json에 적기(W-1 짝 카페 ep/W-1/cafe.md는 12:10 또는 14:10 칸 yt_pair) · 담당 firemap-write
+  착수: firemap-write 15:10 (운영실장)

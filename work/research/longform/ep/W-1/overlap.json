@@ -2,7 +2,7 @@
  "id": "W1",
  "props": "w1.json",
  "every_frames": 30,
- "checked_frames": 252,
+ "checked_frames": 248,
  "errors": 0,
  "hits": []
 }

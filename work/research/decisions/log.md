@@ -1712,3 +1712,8 @@
 2026-10-11 14:53 · firemap-video-producer · W-1 렌더본 U5 거부(9곳→6곳) — 줄마다 5% 당김 시험은 글자 적은 장면에서 3%대라 되돌림, 관문을 꼼수로 넘기지 않고 motion-designer에 장면 실제 변경 맡김 · G-1 렌더 먼저 · 관문 취지가 '판 내용 변화'
 2026-10-11 14:53 · firemap-video-producer · C-1 세로 클립 3~4편을 Agent로 투입(10/12 07:20 칸부터) · 07:20 쇼츠 칸 비축 0, 관문 기한 오늘 19:20
 2026-10-11 15:18 · firemap-write · 10/12 카페 14:10 W-1 짝·16:10 cheongyak1012·18:10 QQQM·20:10 m1s_nhis70 짝·22:10 퇴직연금 DC형 배정(slots.json) · patrol 미배정 경보, demand 수요순+dupcheck 새것, 12:10은 kidcred1012가 이미 통과라 W-1은 14:10, 양도세는 cafe/223과 겹쳐 제외
+2026-10-11 15:22 · editor · I-1 대본 v2 편집 통과 · 군더더기 3줄 삭제, 숫자 0 변경
+2026-10-11 15:27 · firemap-video-producer · C-1 세로 클립 4편(c1s_half·c1s_300·c1s_receipt·c1s_fx)을 07:20 칸 10/12~10/15에 예약 · 같은 날 19:20 M-1 클립과 다른 롱폼, 건보료 편(c1s_receipt)은 m1s_nhis70(10/12)과 겹쳐 10/14로 뗌
+2026-10-11 15:27 · firemap-video-producer · 쇼츠 틀 C1S.tsx(M1S v2 틀 + C-1 부품을 세로 판으로) 새로 만듦·전용 진입점 c1s_index.ts(공용 Root 안 건드림) · 장면 안 2.5초 컷(판 4.5% 당김)으로 '장면 약 2초' 지시에 맞춤 — 그림 자체 교체는 3~14초 간격, 완전히 맞추진 못함
+2026-10-11 15:27 · firemap-video-producer · 클립 쉿소리는 deess.py --chirp-short(i=0.8) · 롱폼 설정 --chirp로는 c1s_receipt -11.3dB(기준 -12)라 못 넘음, 2~4kHz -0.8dB만 · 한 편 틀 수가 1~9개라 네 편 이어 붙여 -12.0dB로 판정
+2026-10-11 15:27 · firemap-video-producer · c1s_300 치직 1개(17.11초)는 '똑' 된소리 첫머리로 판정하고 올림 · 원본 wav 0개·받아쓰기 '하고 똑같이 미국'

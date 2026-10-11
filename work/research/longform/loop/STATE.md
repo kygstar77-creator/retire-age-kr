@@ -1,4 +1,5 @@
 # 진행 상태 (루프가 매 회차 맨 위에 한 줄씩 추가)
+- 2026-10-11 15:27 [PD] C-1 쇼츠 4편 예약 — 10/12 07:20 c1s_half https://youtu.be/nPG2tHYsjpU · 10/13 07:20 c1s_300 https://youtu.be/32G21MwLY_A · 10/14 07:20 c1s_receipt https://youtu.be/QlL0VK4PB_8 · 10/15 07:20 c1s_fx https://youtu.be/LEEGTOokOaM (private+publishAt, videos.list 확인, 채널 파이어맵) · 관문 cardshorts/c1s_*/review.md · 틀 video/src/C1S.tsx
 - 2026-10-11 14:20 [PD] W-1 렌더 시작(editor 14:20 재서명 통과) · 썸네일 w1n은 visual-designer 투입 중 · C-1 세로 클립(10/12 07:20~)도 투입 중
 - 2026-10-11 14:18 [PD] W-1 제작 이어서 시작(렌더→gate→예약 10/12 11:30) — 막힘 1개: 화면 글자 editor 재서명(10:29 요청이 today.md에 안 남음) → 편집 직원 투입
 - 2026-10-11 13:14 [PD] C-1 올림 — https://youtu.be/DBJaHJ2pVTw · 예약 공개 2026-10-11 13:34(지금+22분, ytlong 20분 하한 · private→자동 공개, videos.list 확인) · Chirp 3 HD Charon speakingRate 1.1 · 목소리 IQR 0.12·앞뒤 +0.9%·5.73음절/초 · 11:04 렌더본(U5 예외)+deess --chirp -12.2dB · 48.2초 click_ok(순돌이 파형 대조 0.992) · 썸네일 thumb_c1r(순돌이 지시) · 설명 'AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)' · 합성 표시 True로 보냈으나 videos.list가 이 칸을 안 돌려줘 확인 안 함(지난 편도 None, 수정 토큰 권한 없음)

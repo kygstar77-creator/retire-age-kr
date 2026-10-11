@@ -1,0 +1,21 @@
+{
+ "name": "c1s_half",
+ "mp4": "work/video/out/c1s_half_ds.mp4",
+ "publishAt": "2026-10-12T07:20:00+09:00",
+ "title": "3억 노후자금, 평균이면 평생인데 실제 순서로 돌리면? 배당 9/18 바닥 #shorts",
+ "description": "전체 계산: https://youtu.be/DBJaHJ2pVTw\n\n3억에서 손에 쥐는 돈 월 200만원을 꺼낼 때, S&P500 총수익의 원화 평균 연 13.57%가 매년 같다고 놓으면 두 사람 다 100년이 넘어도 바닥나지 않습니다.\n1989~2006년에 시작한 18개 해를 실제 연도 순서로 돌리면, 20년 안에 바닥난 경우가 배당으로 받기 9번 · 필요한 만큼 팔기 6번이었습니다.\n2000년에 시작하면 2002년 말 통장이 배당 씨 1.33억원 · 매도 씨 1.48억원으로 줄었고, 배당 씨 9년차 · 매도 씨 11년차에 바닥났습니다.\n\n계산 조건: 배당 씨·매도 씨는 계산용 가상 인물 · 퇴직한 지역가입자 · 같은 지수(S&P500 총수익)에 넣고 투자 결과는 똑같다고 놓음 · 1월 초에 1년 치를 한 번에 꺼낸다고 단순화 · 물가 반영 안 함 · 종합과세 추가 세금은 계산 안 함\n출처: 야후 파이낸스 ^SP500TR(S&P500 총수익) 연말 종가 · 한국은행 ECOS 731Y004 연말 환율 · 국가법령정보센터(국민건강보험법 시행령 제41조 · 시행규칙 제44조 · 소득세법 · 한미 조세조약) · 파이어맵 계산\n지나간 기록이고, 앞으로도 그대로 반복된다는 뜻은 아닙니다. 상품 추천·투자 권유가 아닙니다.\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.\n\n#shorts #노후자금 #은퇴 #S&P500",
+ "tags": "노후자금,은퇴,3억,S&P500,배당,인출",
+ "same_day_pair": "m1s_nhis70",
+ "same_day_title_sim": 0.26,
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "nPG2tHYsjpU",
+ "uploaded_at": "2026-10-11 15:25:42",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-11T22:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

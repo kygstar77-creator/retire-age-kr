@@ -1,5 +1,5 @@
 # 렌더 뒤 목소리 '치익'(ㅅ·ㅊ 쉿소리) 줄이기 — 화면은 그대로 복사, 소리만 디에서 통과.
-#   py -3.12 work/video/deess.py <입력.mp4> [출력.mp4] [--chirp]  # 출력 생략 시 <입력>_ds.mp4 · --chirp = Chirp 3 HD 편(CHIRP_FILTER)
+#   py -3.12 work/video/deess.py <입력.mp4> [출력.mp4] [--chirp | --chirp-short]  # 출력 생략 시 <입력>_ds.mp4 · --chirp = Chirp 3 HD 편(CHIRP_FILTER)
 #   py -3.12 work/video/deess.py --measure <파일>          # 쉿소리/모음 비(dB)·대역만 잰다
 # 2026-10-01 사장님 "두 번째 유튜브 영상에서 치익~ 하는 소리 너무 거슬린다".
 # 실측(E-1 앞 120초): 우리 렌더에는 효과음 트랙이 없다(Remotion은 문장 wav만, 쇼츠는 합성 패드뿐) →
@@ -17,6 +17,9 @@ LIMIT_DB = -12.0
 #   f=0.55는 '딱' 같은 된소리 첫머리를 판판하게 만들어 clickscan 규칙 B가 19.63초를 치직으로 잡음 → f=0.6(기본과 같은 주파수)·i=0.75·m=0.6: -12.2dB, 2~4kHz -0.8dB, 그 자리 안 잡힘.
 #   → Chirp 편은 --chirp로 CHIRP_FILTER. 기본 FILTER(제미나이 편)는 그대로.
 CHIRP_FILTER = 'deesser=i=0.75:m=0.6:f=0.6:s=o'
+# 10/11 PD(C-1 세로 클립): 45~55초 클립은 CHIRP_FILTER 뒤 c1s_receipt -11.3dB(쉿소리 틀 9개뿐) — 기준 못 넘음. i=0.8:m=0.6:f=0.6 → -12.0dB(틀 31→2), 2~4kHz -0.8dB(허용 -2.3 안).
+#   틀이 10개 밑이라 measure()가 None을 내므로 판정은 틀 수 제한 없이 같은 식으로 잰 값(review.md에 적음). --chirp-short로 쓴다.
+CHIRP_SHORT_FILTER = 'deesser=i=0.8:m=0.6:f=0.6:s=o'
 
 def measure(path, sec=None):
     sr = 44100
@@ -42,6 +45,6 @@ def run(src, dst, filt=None):
 
 if __name__ == '__main__':
     if sys.argv[1] == '--measure': print(measure(sys.argv[2])); sys.exit(0)
-    chirp = '--chirp' in sys.argv; a = [x for x in sys.argv[1:] if x != '--chirp']
+    chirp = '--chirp' in sys.argv; short = '--chirp-short' in sys.argv; a = [x for x in sys.argv[1:] if x not in ('--chirp', '--chirp-short')]
     src = a[0]; dst = a[1] if len(a) > 1 else os.path.splitext(src)[0] + '_ds.mp4'
-    run(src, dst, CHIRP_FILTER if chirp else None)
+    run(src, dst, CHIRP_SHORT_FILTER if short else CHIRP_FILTER if chirp else None)

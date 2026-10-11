@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;left:52px;top:636px;font:500 24px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#EEF2F8'></div>
+<div class='t' style='left:48px;top:60px;font-size:100px;color:#16181D'>영업이익</div>
+<div id='o1' class='t' data-fit='580' style='left:40px;top:190px;font-size:170px;color:#E03A2F;letter-spacing:-5px'>107조</div>
+<div class='t' style='left:48px;top:390px;font-size:100px;color:#16181D'><span style='font-size:64px'>(잠정)</span>인데</div>
+<div style='position:absolute;left:640px;top:36px;width:604px;height:524px;background:#14264A;border-radius:36px;box-shadow:0 10px 0 #C9D3E6'></div>
+<div class='t' style='left:684px;top:80px;font-size:76px;color:#fff'>내 100주</div>
+<div class='t' style='left:688px;top:172px;font-size:44px;color:#C9D3E6'>삼성전자 · 평가손익</div>
+<div style='position:absolute;left:684px;top:244px;width:516px;height:4px;background:#2E4470'></div>
+<div id='o2' class='t' data-fit='520' style='left:676px;top:300px;font-size:200px;color:#7FB0FF;letter-spacing:-5px'><span style='font-family:PD;font-weight:700'>−</span>140만</div>
+
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

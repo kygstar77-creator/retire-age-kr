@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;left:52px;top:636px;font:500 24px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#EEF2F8'></div>
+<div class='t' style='left:48px;top:44px;font-size:84px;color:#16181D'>영업이익</div>
+<div id='n1' class='t' data-fit='590' style='left:44px;top:146px;font-size:96px;color:#16181D'><span style='color:#E03A2F'>107조</span><span style='font-size:52px'>(잠정)</span>인데</div>
+<div class='t' style='left:48px;top:296px;font-size:132px;color:#1F5BD8'>내 100주</div>
+<div id='n2' class='t' data-fit='590' style='left:40px;top:446px;font-size:168px;color:#1F5BD8;letter-spacing:-4px'><span style='font-family:PD;font-weight:700'>−</span>140만</div>
+<div style='position:absolute;left:668px;top:40px;width:572px;height:516px;background:#14264A;border-radius:36px;box-shadow:0 10px 0 #C9D3E6'></div>
+<div class='t' style='left:712px;top:92px;font-size:64px;color:#fff'>삼성전자 100주</div>
+<div style='position:absolute;left:712px;top:196px;width:484px;height:4px;background:#2E4470'></div>
+<div class='t' style='left:712px;top:248px;font-size:56px;color:#C9D3E6'>평가손익</div>
+<div id='n3' class='t' data-fit='484' style='left:706px;top:350px;font-size:150px;color:#7FB0FF;letter-spacing:-3px'><span style='font-family:PD;font-weight:700'>−</span>140만원</div>
+
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

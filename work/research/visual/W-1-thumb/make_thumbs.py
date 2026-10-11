@@ -218,6 +218,36 @@ w1l = top3() + strip6() + f"""
 """
 VARIANTS.update(w1l=w1l, w1m=w1k)
 
+# ── w1n (10/11, thumb-gap-1011.md '### W-1') — 큰 글 두 줄 '영업이익 107조(잠정)인데' / '내 100주 −140만'(뒷줄 1.3배+, 파랑), 숫자 2개(A1·C8)만.
+#    지움: 선 카드·'평가액 10/2→10/8'·출처 줄·'공시까지 사흘'. 오른쪽 절반 = 파이어맵 계산기 결과 카드(진한 카드 1장, 증권사 앱 모양 아님): '삼성전자 100주 · 평가손익 −140만원'.
+#    렌더: py -3.12 make_thumbs.py w1n  (w1a~w1m 다시 렌더 금지)
+W140 = -C8 // 10000; assert W140 == 140
+w1n = f"""<div style='position:absolute;inset:0;background:#EEF2F8'></div>
+<div class='t' style='left:48px;top:44px;font-size:84px;color:{INK}'>영업이익</div>
+<div id='n1' class='t' data-fit='590' style='left:44px;top:146px;font-size:96px;color:{INK}'><span style='color:{RED}'>{int(OP)}조</span><span style='font-size:52px'>(잠정)</span>인데</div>
+<div class='t' style='left:48px;top:296px;font-size:132px;color:{BLUE}'>내 100주</div>
+<div id='n2' class='t' data-fit='590' style='left:40px;top:446px;font-size:168px;color:{BLUE};letter-spacing:-4px'>{MINUS}{W140}만</div>
+<div style='position:absolute;left:668px;top:40px;width:572px;height:516px;background:{NAVY};border-radius:36px;box-shadow:0 10px 0 #C9D3E6'></div>
+<div class='t' style='left:712px;top:92px;font-size:64px;color:#fff'>삼성전자 100주</div>
+<div style='position:absolute;left:712px;top:196px;width:484px;height:4px;background:#2E4470'></div>
+<div class='t' style='left:712px;top:248px;font-size:56px;color:#C9D3E6'>평가손익</div>
+<div id='n3' class='t' data-fit='484' style='left:706px;top:350px;font-size:150px;color:#7FB0FF;letter-spacing:-3px'>{MINUS}{W140}만원</div>
+"""
+VARIANTS['w1n'] = w1n
+
+# w1o(도전안) — 큰 글 둘째 줄을 카드 자체로: 왼쪽 '영업이익 / 107조(잠정) / 인데', 오른쪽 카드 '삼성전자 · 내 100주 / 평가손익 / −140만원'(같은 숫자 두 번 안 씀).
+w1o = f"""<div style='position:absolute;inset:0;background:#EEF2F8'></div>
+<div class='t' style='left:48px;top:60px;font-size:100px;color:{INK}'>영업이익</div>
+<div id='o1' class='t' data-fit='580' style='left:40px;top:190px;font-size:170px;color:{RED};letter-spacing:-5px'>{int(OP)}조</div>
+<div class='t' style='left:48px;top:390px;font-size:100px;color:{INK}'><span style='font-size:64px'>(잠정)</span>인데</div>
+<div style='position:absolute;left:640px;top:36px;width:604px;height:524px;background:{NAVY};border-radius:36px;box-shadow:0 10px 0 #C9D3E6'></div>
+<div class='t' style='left:684px;top:80px;font-size:76px;color:#fff'>내 100주</div>
+<div class='t' style='left:688px;top:172px;font-size:44px;color:#C9D3E6'>삼성전자 · 평가손익</div>
+<div style='position:absolute;left:684px;top:244px;width:516px;height:4px;background:#2E4470'></div>
+<div id='o2' class='t' data-fit='520' style='left:676px;top:300px;font-size:200px;color:#7FB0FF;letter-spacing:-5px'>{MINUS}{W140}만</div>
+"""
+VARIANTS['w1o'] = w1o
+
 
 def check_zones(page):
     return page.evaluate("""()=>{const bad=[];document.querySelectorAll('body *').forEach(e=>{

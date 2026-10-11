@@ -14,7 +14,7 @@
  "desc_note": "w1meta.py가 calc_out에서 숫자를 채운다. 녹음·렌더 뒤 work/video/chapters.py video/w1.json ep/W-1로 {CHAPTERS}. 렌더 전 desc_tpl 문장 aitell·editor 확인",
  "calc_asof": "2026-10-09",
  "thumb": "thumb_w1l.png",
- "thumb_status": "카피 확정·1초 시험 대기 — copywriter 10/10 12:46 2차 오독 시험(copy/titles.md 끝): '−???만' 불승인(제미나이 5/5·Claude 독자·레드팀 모두 '제목에 답이 있는데 가린 낚시'), '공시한 사흘'→'공시까지 사흘'(공시 원인 오독 제미나이 0/3·Claude 0/1). w1l = w1i 그림+카드 '내 100주 −140만', w1m = w1k 그림+새 셋째 줄(예비). visual-designer 1초 시험 3명 평균 7 넘는 판을 thumb로(관문 19:30 전). 옛 w1i·w1k는 쓰지 않음",
+ "thumb_status": "1초 시험 8차 미달(2026-10-11 14:27, visual-designer) — thumb w1l 유지. 세 명 평균 w1l 6.93(제미나이 8.5·7.5/Claude 6.2/레드팀 6.6) · 처방판 w1n 6.32(7.5·6/5.8/6.4) · 도전안 w1o 6.18(6.5·5/6.6/6.2), 통과선 7 미달. 셋 다 1초 주제 맞힘. w1n·w1o: −140만 두 번·'삼성전자' 168px 안 읽힘·카드 '평가손익'은 사실 틀림(평가액 감소폭). '공시까지 사흘' 빼면 공시 원인 오독 2/3 예(w1l 1/3) → 10/10 시험과 충돌, 남김. 다음 판: w1l 그림 + '평가액 10/2→10/8'·출처 줄 삭제 + −140만 1.5배. 기록 work/research/visual/W-1-thumb/judges.md 8차",
  "chapters": [
   [
    0,

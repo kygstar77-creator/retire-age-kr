@@ -52,6 +52,14 @@
     "gates_ok": "2026-10-10 11:12",
     "by": "firemap-write",
     "at": "2026-10-09 19:11"
+   },
+   {
+    "item": "yuryu1011",
+    "ep": "work/research/yuryu1011/pkg",
+    "status": "관문 통과 2026-10-11 12:36(제목 T9 7.73·표지 Y2 7.67·readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck 사실 1 유지·레드팀 2회 사실 0·경미 7 반영·editgate auto). 세금연금 축·형식2. 상속세 글(inhded1011 10/11 08:10)과 하루 이상 띄워 10/12 이후 칸. slot.txt 없음 — 칸 배정 시 적을 것",
+    "by": "firemap-write",
+    "at": "2026-10-11 12:36",
+    "gates_ok": "2026-10-11 12:36"
    }
   ],
   "long": [

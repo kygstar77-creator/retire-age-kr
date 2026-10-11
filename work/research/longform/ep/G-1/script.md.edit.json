@@ -1,1 +1,1 @@
-{"by": "firemap-editor", "at": "2026-10-09 07:06", "sha": "ffd7eeb9b570439b", "aitell": 0.0, "script_per1k": 71.5, "note": "장 머리 ## 3-2·## 4-2 두 줄 추가 재서명, 말 변경 0"}
+{"by": "firemap-editor", "at": "2026-10-11 16:34", "sha": "c884fd066b2bd055", "aitell": 4.5, "script_per1k": 71.9, "note": "끝 인사 줄 '끝까지 봐 주셔서 고맙습니다.' 삭제(사장님 10/11 인사 금지) 재서명, 다른 말 변경 0 · aitell 4.5는 [자막: KRX] 머리 반복(자막 출처) · per1k는 say_v2.txt(숫자 표기) 기준 — voice.json say가 한글 읽기로 바뀌어 script 검사에 0.0으로 나옴"}

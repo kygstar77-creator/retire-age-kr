@@ -10,7 +10,7 @@
   "금현물 ETF",
   "KRX 금시장"
  ],
- "publishAt": null,
+ "publishAt": "2026-10-13T11:30:00+09:00",
  "privacy": "private",
  "privacy_note": "예약 공개 — publishAt 시각에 자동 public(slots.json 롱폼 칸, 회의가 배정)",
  "paid": false,

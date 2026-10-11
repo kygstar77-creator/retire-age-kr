@@ -169,6 +169,84 @@ def rows4(bg='#ECE6DA'):
 VARIANTS['h1h'] = rows4()
 
 
+# ── 5차(10/11 17:0x, 새 형식) — 4차까지 같은 판(제목 위·이름 왼쪽 세로·점 오른쪽) 최고 6.58. 공통 지적: 168px에서 이름이 경쟁(화면 30~40%) 대비 절반, 점 구름=먼지, 결론 큰 숫자=경쟁 '억 줄' 겹침.
+#    처방(judges.md 다음 판): 두 단지를 좌우 두 칸 주인공으로, 칸마다 큰 입주 연도, 점은 칸 아래 얇은 띠(같은 눈금·중앙선 같은 자리), 결론 숫자 없음.
+# h1i: 이름이 주인공(헬리오 100px·포레온 fit 560), 연도 110px, 칸 사이 굵은 '=' (점 띠 높이) — '같다'를 숫자 없이 기호로.
+# h1j: 연도가 주인공(180px, 2018 남색·2024 청록), 이름 64px 위, 칸 사이 빨강 화살표 '→ 6년'은 쓰지 않고 제목에 맡김, 점 띠 + '='.
+def cols(name_px, year_px, name_top, year_top, strip_top, bg='#ECE6DA'):
+    C1, C2 = '#22325A', '#12866F'
+    L, R, Wc = 44, 664, 572
+    s1, X1 = strip(HE, L + 20, Wc - 40, strip_top, 70, C1, r=11)
+    s2, X2 = strip(OP, R + 20, Wc - 40, strip_top, 70, C2, r=11)
+    s1 = s1.replace('opacity:.75', 'opacity:.9'); s2 = s2.replace('opacity:.75', 'opacity:.9')
+    card = lambda x, c: f"<div style='position:absolute;left:{x}px;top:168px;width:{Wc}px;height:{strip_top + 70 + 26 - 168}px;background:#FFFFFF;border-radius:18px;border-top:12px solid {c}'></div>"
+    eq = f"<div class='t' style='left:612px;top:{strip_top - 4}px;font-size:84px;color:{INK}'>=</div>"
+    return f"""<div style='position:absolute;inset:0;background:{bg}'></div>
+<div id='t0' class='t' data-fit='1190' style='left:44px;top:34px;font-size:112px;color:{INK}'><span style='color:{RED}'>6년 가까이</span> 늦게 지었는데</div>
+{card(L, C1)}{card(R, C2)}
+<div id='n1' class='t' data-fit='532' style='left:{L + 20}px;top:{name_top}px;font-size:{name_px}px;color:{C1}'>헬리오시티</div>
+<div id='n2' class='t' data-fit='532' style='left:{R + 20}px;top:{name_top}px;font-size:{name_px}px;color:{C2}'>올림픽파크포레온</div>
+<div class='t' style='left:{L + 20}px;top:{year_top}px;font-size:{year_px}px;color:{INK}'>2018<span style='font:700 {year_px // 3}px PD'> 입주</span></div>
+<div class='t' style='left:{R + 20}px;top:{year_top}px;font-size:{year_px}px;color:{INK}'>2024<span style='font:700 {year_px // 3}px PD'> 입주</span></div>
+{s1}{s2}{eq}
+<div class='lab' style='left:48px;top:600px;font-size:44px;color:{INK}'>{SMALL}</div>
+"""
+VARIANTS['h1i'] = cols(100, 110, 196, 314, 450)
+VARIANTS['h1j'] = cols(64, 180, 192, 270, 458)
+
+
+# ── 6차(10/11 17:2x) — 5차 h1j 6.97(제미나이 6.5·7.5·Claude 7·레드팀 6.9, 겹침 1), h1i 6.47, h1d 6.08. 세 명 공통: 점 띠·'='가 168px에서 안 보임,
+#    '무엇이 같은지'(평당값)가 아래 작은 글씨에만, 베이지 판 대비 약함. 처방: 점 띠 삭제, 칸 아래 전폭 검은 띠 '둘 다 평당 1억 1천만'(중앙 11,087·10,988 둘 다 반올림 1억 1천만),
+#    칸 사이 '=' 키움. h1k 밝은 판·h1l 어두운 판(대비 시험).
+def cols6(dark=False):
+    C1, C2 = ('#8FB3FF', '#2FD3A6') if dark else ('#22325A', '#12866F')
+    bg, card_bg, ink = ('#10141F', '#1B2232', '#FFFFFF') if dark else ('#ECE6DA', '#FFFFFF', INK)
+    L, R, Wc = 44, 684, 552
+    card = lambda x, c: f"<div style='position:absolute;left:{x}px;top:164px;width:{Wc}px;height:272px;background:{card_bg};border-radius:18px;border-top:14px solid {c}'></div>"
+    band_bg, band_fg = ('#FFFFFF', INK) if dark else (INK, '#FFFFFF')
+    return f"""<div style='position:absolute;inset:0;background:{bg}'></div>
+<div id='t0' class='t' data-fit='1190' style='left:44px;top:30px;font-size:112px;color:{ink}'><span style='color:{"#FF4B3E" if dark else RED}'>6년 가까이</span> 늦게 지었는데</div>
+{card(L, C1)}{card(R, C2)}
+<div id='n1' class='t' data-fit='532' style='left:{L + 20}px;top:190px;font-size:66px;color:{C1}'>헬리오시티</div>
+<div id='n2' class='t' data-fit='532' style='left:{R + 20}px;top:190px;font-size:66px;color:{C2}'>올림픽파크포레온</div>
+<div class='t' style='left:{L + 20}px;top:270px;font-size:144px;color:{ink}'>2018<span style='font:700 50px PD'> 입주</span></div>
+<div class='t' style='left:{R + 20}px;top:270px;font-size:144px;color:{ink}'>2024<span style='font:700 50px PD'> 입주</span></div>
+<div style='position:absolute;left:{L}px;top:452px;width:{R + Wc - L}px;height:112px;background:{band_bg};border-radius:18px'></div>
+<div class='t' style='left:0;width:1280px;text-align:center;top:466px;font-size:84px;color:{band_fg}'>둘 다 평당 1억 1천만</div>
+<div class='t' style='left:613px;top:262px;font-size:110px;color:{ink}'>=</div>
+<div class='lab' style='left:48px;top:600px;font-size:44px;color:{ink}'>{SMALL}</div>
+"""
+VARIANTS['h1k'] = cols6()
+VARIANTS['h1l'] = cols6(dark=True)
+
+
+# ── 7차(10/11 17:3x) — 6차 h1k 6.67(제미나이 7.5·7.5·Claude 6·레드팀 6.5 겹침 2)·h1l 6.6·h1j 5.83. 레드팀: meta title이 16:36 질문형('포레온은 헬리오시티보다 비쌀까?')으로 바뀜 →
+#    띠 '둘 다 1억 1천만'은 제목 질문의 답을 미리 말함 + 전폭 억 줄 = 경쟁 '억 하락' 줄 겹침, 연도 사이 '='는 '2018=2024' 오독. 처방: 띠·'=' 삭제.
+# h1m: 두 칸만(이름·큰 연도), 칸 아래에 각 단지 평당 칸 '평당 ?' — 답은 제목 질문에 맡기고 '새 단지 값'을 궁금증으로(숫자 없음).
+# h1n: 같은 칸, 칸 안에 실제 평당 중앙(F4 11,087 · F5 원자료 10,988) '1억 1,087만'·'1억 988만' — 새 단지가 오히려 조금 낮다는 반전을 숫자 둘로(크기 중간, 전폭 줄 아님).
+def cols7(reveal):
+    C1, C2, ink = '#22325A', '#12866F', INK
+    L, R, Wc = 44, 684, 552
+    card = lambda x, c: f"<div style='position:absolute;left:{x}px;top:164px;width:{Wc}px;height:392px;background:#FFFFFF;border-radius:18px;border-top:14px solid {c}'></div>"
+    v1, v2 = ('1억 1,087만', '1억 988만') if reveal else ('?', '?')
+    vs = 68 if reveal else 96
+    price = lambda x, c, v: (f"<div style='position:absolute;left:{x + 20}px;top:438px;width:{Wc - 40}px;height:98px;background:{c};border-radius:12px'></div>"
+                             f"<div class='lab' style='left:{x + 40}px;top:462px;font-size:46px;color:#fff'>평당</div>"
+                             f"<div class='t' style='left:{x + 140}px;top:{454 if reveal else 444}px;font-size:{vs}px;color:#fff'>{v}</div>")
+    return f"""<div style='position:absolute;inset:0;background:#ECE6DA'></div>
+<div id='t0' class='t' data-fit='1190' style='left:44px;top:30px;font-size:112px;color:{ink}'><span style='color:{RED}'>6년 가까이</span> 늦게 지었는데</div>
+{card(L, C1)}{card(R, C2)}
+<div id='n1' class='t' data-fit='512' style='left:{L + 20}px;top:190px;font-size:66px;color:{C1}'>헬리오시티</div>
+<div id='n2' class='t' data-fit='512' style='left:{R + 20}px;top:190px;font-size:66px;color:{C2}'>올림픽파크포레온</div>
+<div class='t' style='left:{L + 20}px;top:276px;font-size:144px;color:{ink}'>2018<span style='font:700 50px PD'> 입주</span></div>
+<div class='t' style='left:{R + 20}px;top:276px;font-size:144px;color:{ink}'>2024<span style='font:700 50px PD'> 입주</span></div>
+{price(L, C1, v1)}{price(R, C2, v2)}
+<div class='lab' style='left:48px;top:600px;font-size:44px;color:{ink}'>{SMALL}</div>
+"""
+VARIANTS['h1m'] = cols7(False)
+VARIANTS['h1n'] = cols7(True)
+
+
 def check_zones(page):
     return page.evaluate("""()=>{const bad=[];document.querySelectorAll('body *').forEach(e=>{
       if(e.tagName==='SCRIPT'||e.closest('svg')||!e.textContent.trim())return;

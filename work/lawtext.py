@@ -24,9 +24,51 @@ JO = re.compile(r'<조문단위[^>]*>(.*?)</조문단위>', re.S)
 CDATA = re.compile(r'<!\[CDATA\[(.*?)\]\]>', re.S)
 
 
-def fetch(law_name):
-    url = API % urllib.parse.quote(law_name)
+def _get(url):
     return urllib.request.urlopen(url, timeout=90).read().decode('utf-8', 'replace')
+
+
+def latest_ef(law_name, today=None):
+    """오늘 시행 중인 판 가운데 가장 늦게 공포된 판의 (MST, 공포일자)를 찾는다.
+
+    2026-10-11 14시 회차: LM=소득세법(현행)이 공포 2025.12.23판(시행 2026.7.1)을 돌려줘
+    제59조의2가 '8세 이상'으로 나왔다. 실제로는 2026.4.21 공포·시행 법률 제21548호가
+    '13세 이상'+부칙(2026년 9세)으로 바꿨다. API 목록에서 그 판은 '연혁'으로 찍혀
+    '현행'만 받으면 놓친다. 그래서 eflaw 목록에서 시행일 ≤ 오늘인 판 중 공포가 가장 늦은 것을 고른다.
+    """
+    import datetime
+    today = today or datetime.date.today().strftime('%Y%m%d')
+    url = ('http://www.law.go.kr/DRF/lawSearch.do?OC=test&target=eflaw&type=XML&display=100&query=%s'
+           % urllib.parse.quote(law_name))
+    best = None
+    for b in re.findall(r'<law [^>]*>(.*?)</law>', _get(url), re.S):
+        if _tag(b, '법령명한글') != law_name:
+            continue
+        ef, pub, mst = _tag(b, '시행일자'), _tag(b, '공포일자'), _tag(b, '법령일련번호')
+        if ef and ef <= today and (best is None or (pub, ef) > best[1:]):
+            best = (mst, pub, ef)
+    return best, today
+
+
+def fetch(law_name):
+    xml = _get(API % urllib.parse.quote(law_name))
+    try:
+        best, today = latest_ef(law_name)
+        cur = _tag(xml[:3000], '공포일자')
+        if best and best[1] > cur:
+            print('[lawtext] 현행 응답은 공포 %s판 — 그 뒤 공포·시행된 %s판(MST %s)으로 읽는다'
+                  % (cur, best[1], best[0]), file=sys.stderr)
+            # efYd는 그 판의 시행일자와 같아야 한다(오늘 날짜를 넣으면 '일치하는 법령이 없습니다').
+            new = _get('http://www.law.go.kr/DRF/lawService.do?OC=test&target=eflaw&MST=%s&efYd=%s&type=XML'
+                       % (best[0], best[2]))
+            if '<조문단위' in new:
+                fetch.older = xml  # 현행 응답(나중 시행일 조문은 이쪽에만 있을 수 있다) — 조문이 다르면 둘 다 보인다
+                xml = new
+            else:
+                print('[lawtext] 최신판 본문을 못 받음 — 현행 응답 그대로', file=sys.stderr)
+    except Exception as e:  # 목록 조회가 막혀도 예전처럼 현행으로 읽는다
+        print('[lawtext] 최신판 확인 실패(%s) — 현행 응답 그대로' % e, file=sys.stderr)
+    return xml
 
 
 def _tag(block, name):
@@ -125,6 +167,11 @@ def main():
         if not a:
             raise SystemExit('%s 에 제%s조%s 가 없다' % (law, jo, ('의' + gaji) if gaji else ''))
         body = a['글']
+        old = getattr(fetch, 'older', None)
+        b = pick(old, jo, gaji) if old else None
+        if b and b['글'] != body:
+            body += ('\n\n[참고: 현행 응답(공포 %s판)의 같은 조문 — 위와 다르다. 시행일이 다른 조항은 둘 다 확인]\n%s'
+                     % (_tag(old[:3000], '공포일자'), b['글']))
         head = '%s %s' % (law, label(a))
 
     text = head + '\n\n' + body

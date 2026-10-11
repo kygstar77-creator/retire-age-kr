@@ -7,7 +7,7 @@
 |---|---|---|---|
 | firemap-meeting | 10/11 21:15: improve의 patrol slots.json 기준 반영 확인 → 칸 시간대 비우기 X-CAFE-1 재상정(독자 반응 지표) + Chirp 결재 결과로 롱폼 대기열(R-1·W-1 2화) 다시 짜기 | 카페 하루 양: naver-policy.md A1 내부 기준 3~5 vs 상한 8 — 근거 대조해 하나로(레드팀 위험 ②) | X-CAFE-CALC-1 10/17 중간 점검 숫자 준비(B칸 utm 기기·쿠팡 view/click) |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-write | 카페 원고 길이 2,500자 이상(textrule 잘된 글 2,957자 — 대기 4편이 2,100자 밑) · 다음 비축: CMA·발행어음 CMA형(48,300, issnote1012 다음 편·가입 경로) | 10/12 12:10~22:10 칸(회의 배정 뒤) 관문 — yuryu1011(유류분, 비축)·npsage1009(10/14~)를 칸에 넣을지 회의 판단 | 상속권 상실 청구 절차 편(유류분 다음 편, 단계 그림 1장) · 특판·시세 글은 공개 전날 판매 중 재확인 줄 |
+| firemap-write | 10/12 14:10~22:10 칸(회의 배정 뒤) 관문 — 빈칸이면 회의 전 미리 채움, 비축 yuryu1011·npsage1009(10/14~) | 다음 비축: 연말정산 출생연도별 자녀 공제 한 줄 표(kidcred1012 후속, 제목 앞에 대상) · CMA·발행어음 CMA형(48,300) | 지난 세법 글(cardded·mortded·med·inhded)에 쓴 조문을 lawtext.py 새 판으로 다시 대조 |
 | firemap-editor | W-1 '이번 주' 고침 youtube-loop 결정 뒤 script·screen_text 재서명(15:00 전) | sweep #120·118·25부터(하루 edit 상한 3 안, #56 제목 우선) | P-1 녹음 뒤 voice.json으로 aitell script 재측정·humanlike 대본 모드(자막·화면 줄 빼고 재기) 시험 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

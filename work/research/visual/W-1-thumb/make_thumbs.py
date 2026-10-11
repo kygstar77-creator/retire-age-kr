@@ -248,6 +248,17 @@ w1o = f"""<div style='position:absolute;inset:0;background:#EEF2F8'></div>
 """
 VARIANTS['w1o'] = w1o
 
+# ── w1p (9차, 10/11 순돌이 지시) — 맨 윗줄 '삼성전자' 굵게 + 날짜 태그 '10/2~10/8'('공시까지 사흘'은 안 씀: −5.07% 중 공시 전 −2.72%)
+#    큰 글 두 줄 '영업이익 107조(잠정)인데' / '내 100주 −140만'(진한 카드 안, −140만 한 번만, '평가손익' 말 안 씀). 숫자 A1·C8 두 개.
+w1p = f"""<div style='position:absolute;inset:0;background:#EEF2F8'></div>
+<div class='t' style='left:48px;top:56px;font-size:120px;color:{INK}'>삼성전자</div>
+<div style='position:absolute;left:536px;top:78px;height:80px;padding:0 28px;border-radius:40px;background:{INK};color:#fff;font:700 50px PD;line-height:80px;white-space:nowrap'>10/2~10/8</div>
+<div id='p1' class='t' data-fit='1180' style='left:48px;top:212px;font-size:108px;color:{INK}'>영업이익 <span style='color:{RED}'>{int(OP)}조</span><span style='font-size:58px'>(잠정)</span>인데</div>
+<div style='position:absolute;left:32px;top:356px;width:1216px;height:208px;background:{NAVY};border-radius:36px'></div>
+<div id='p2' class='t' data-fit='1140' style='left:72px;top:376px;font-size:172px;color:#fff;letter-spacing:-3px'>내 100주 <span style='color:#7FB0FF'>{MINUS}{W140}만</span></div>
+"""
+VARIANTS['w1p'] = w1p
+
 
 def check_zones(page):
     return page.evaluate("""()=>{const bad=[];document.querySelectorAll('body *').forEach(e=>{

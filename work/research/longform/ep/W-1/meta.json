@@ -13,8 +13,8 @@
  "desc": "영업이익 107.4조원은 회사가 공시한 잠정치, 평가액은 팔지 않으면 확정 손실이 아닙니다.\n삼성전자 주가는 10월 2일 276,000원에서 10월 8일 262,000원으로 거래일 사흘 −5.07%, 100주 평가액은 2,760만원에서 2,620만원으로 140만원 줄었습니다. 지난 분기(2분기, 8월 지급) 배당 100주 세후 31,640원의 44.2배입니다.\n같은 사흘 코스피를 그대로 따라간 1천만원은 54만원 줄었고(−5.39%), 미국 S&P500을 따라가는 ETF(SPY) 1만 달러는 달러로 +1.16%였지만, 원화로는 4.9만원 줄었습니다(원달러 1,359.6원 → 1,339.2원, 한국은행 매매기준율).\n지난주 공시·종가로 한 계산이고, 투자 권유나 이번 주 전망이 아닙니다(수수료 빼고 계산).\n\n내 배당에 세금이 얼마 붙는지(파이어맵 배당 세금 정리): https://firemap.kr/guide/dividend-tax-thresholds?utm_source=youtube&utm_medium=longform&utm_campaign=VIDEOID\n\n{CHAPTERS}\n\n출처\n· 삼성전자 연결 영업(잠정)실적 공시: DART 접수번호 20261008800004 · 2분기 배당 결정: DART 20260730800137(기준일 6/30·지급 8/28) · 1년 전 3분기 배당: DART 20251030800075\n· 삼성전자(005930.KS)·SPY 종가: 야후 파이낸스 일별 종가\n· 코스피: 한국은행 ECOS 802Y001 · 원달러 매매기준율: 한국은행 ECOS 731Y001\n· 미국 소비자물가: 세인트루이스 연준 FRED CPIAUCNS · 일정: 미국 노동통계국 CPI 발표 일정 · 한국은행 통화정책방향 결정회의 · 미국 연준 FOMC 일정표\n· 배당 세금 15.4%(배당소득세 14% + 지방소득세 1.4%)로 계산\n확인 안 함: 삼성전자 3분기 배당 금액(공시 전) · 증권사 수수료\n\n이 영상은 종목 추천이 아닙니다.\n내레이션은 AI 음성 내레이션(구글 Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.\n파이어맵 카페: https://cafe.naver.com/firemap",
  "desc_note": "w1meta.py가 calc_out에서 숫자를 채운다. 녹음·렌더 뒤 work/video/chapters.py video/w1.json ep/W-1로 {CHAPTERS}. 렌더 전 desc_tpl 문장 aitell·editor 확인",
  "calc_asof": "2026-10-09",
- "thumb": "thumb_w1l.png",
- "thumb_status": "1초 시험 8차 미달(2026-10-11 14:27, visual-designer) — thumb w1l 유지. 세 명 평균 w1l 6.93(제미나이 8.5·7.5/Claude 6.2/레드팀 6.6) · 처방판 w1n 6.32(7.5·6/5.8/6.4) · 도전안 w1o 6.18(6.5·5/6.6/6.2), 통과선 7 미달. 셋 다 1초 주제 맞힘. w1n·w1o: −140만 두 번·'삼성전자' 168px 안 읽힘·카드 '평가손익'은 사실 틀림(평가액 감소폭). '공시까지 사흘' 빼면 공시 원인 오독 2/3 예(w1l 1/3) → 10/10 시험과 충돌, 남김. 다음 판: w1l 그림 + '평가액 10/2→10/8'·출처 줄 삭제 + −140만 1.5배. 기록 work/research/visual/W-1-thumb/judges.md 8차",
+ "thumb": "thumb_w1p.png",
+ "thumb_status": "1초 시험 9차 통과(2026-10-11 14:31, visual-designer) — w1p 세 명 평균 7.37(제미나이 3.1-lite 7.5·7.5 / Claude 독자 7.3 / 레드팀 7.3), 통과선 7·목표 8 미달, 셋 다 1초 주제 맞힘. 대조 w1l 6.92(7.0·8.5/6.6/6.4, 겹침 3·'공시까지 사흘' 반쯤 틀림) → thumb_alt. 8차 w1n 6.32·w1o 6.18 미달. w1p 글자 '삼성전자 · 10/2~10/8 · 영업이익 107조(잠정)인데 · 내 100주 −140만'(A1·C8). 남은 위험: '인데'를 공시 원인으로 읽음 2/3(레드팀 아니오) — 48h CTR로 확인. 기록 work/research/visual/W-1-thumb/judges.md 9차",
  "chapters": [
   [
    0,
@@ -96,7 +96,7 @@
  "made_by": "firemap-video-producer",
  "made_at": "2026-10-09 22:3x",
  "todo_pd": "editor 재서명(14:00) → lfrender render W-1 → 스틸 눈 검사 → chapters.py video/w1.json ep/W-1 → ytlong gate → thumb(w1l 1초 시험 16:00 결과) → up(publishAt 10/12 19:30) · 관문 기한 10/11 19:30",
- "thumb_alt": "thumb_w1m.png",
+ "thumb_alt": "thumb_w1l.png",
  "video": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/out/w1_ds.mp4",
  "missing": 0
 }

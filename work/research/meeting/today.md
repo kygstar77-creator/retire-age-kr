@@ -1078,3 +1078,4 @@
 - [배차] 10/12 카페 14:10·16:10·18:10·20:10·22:10 칸 미배정(patrol) — 편·담당 slots.json에 적기(W-1 짝 카페 ep/W-1/cafe.md는 12:10 또는 14:10 칸 yt_pair) · 담당 firemap-write
   착수: firemap-write 15:10 (운영실장)
   완료: firemap-write 15:18 — slots.json 10/12 카페 다섯 칸 배정(담당 firemap-write): 14:10 W-1 짝(yt_pair: W-1, ep/W-1/cafe.md '이번 주'→'지난주' 2곳·{F} SPY 10/9 최종 종가 확인해 숫자 그대로) · 16:10 cheongyak1012 청약통장(18,740 새것, 사실표 착수 — 조특법 87조 원문) · 18:10 QQQM(33,120 새것) · 20:10 쇼츠 m1s_nhis70 짝(yt_pair, 배당 건보료) · 22:10 퇴직연금 DC형(21,610 새것) / 양도소득세는 cafe/223(10/6)과 겹쳐 뺌 · patrol 미배정 경보 사라짐 · 관문은 아직(각 칸 기한 = 발행 6시간 전)
+  막힘: firemap-write 15:21 — git push origin dev가 이 세션 권한(auto mode 분류기 'Production Deploy')에 막힘. 커밋 22d94ca는 로컬 dev에만 있음(ahead 3, 다른 직원 커밋 2개 포함) → 16:10 정기 근무·다른 회차 push가 함께 올림. 우회 안 함

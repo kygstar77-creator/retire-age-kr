@@ -1,0 +1,28 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;left:52px;top:636px;font:500 24px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#EEF1F5'></div>
+<div id='b0' class='t' data-fit='1180' style='left:48px;top:34px;font-size:118px;color:#16181D'><span style='color:#E5322D'>6년 가까이</span> 늦게 지었는데</div>
+<div style='position:absolute;left:80px;top:262px;width:1100px;border-top:6px solid #6B7280'></div>
+<div class='lab' style='left:30px;top:276px;width:100px;text-align:center;font-size:30px;color:#6B7280'>2016</div><div class='lab' style='left:250px;top:276px;width:100px;text-align:center;font-size:30px;color:#6B7280'>2018</div><div class='lab' style='left:470px;top:276px;width:100px;text-align:center;font-size:30px;color:#6B7280'>2020</div><div class='lab' style='left:690px;top:276px;width:100px;text-align:center;font-size:30px;color:#6B7280'>2022</div><div class='lab' style='left:910px;top:276px;width:100px;text-align:center;font-size:30px;color:#6B7280'>2024</div><div class='lab' style='left:1130px;top:276px;width:100px;text-align:center;font-size:30px;color:#6B7280'>2026</div>
+<div style='position:absolute;left:405px;top:200px;width:651px;height:40px;border:6px solid #E5322D;border-bottom:none;border-radius:10px 10px 0 0'></div>
+<div style='position:absolute;left:391px;top:248px;width:28px;height:28px;border-radius:50%;background:#1E2A44'></div>
+<div style='position:absolute;left:1042px;top:248px;width:28px;height:28px;border-radius:50%;background:#0F7B6C'></div>
+<div class='lab' style='left:56px;top:350px;font-size:44px;color:#16181D'>평당<br>중앙</div>
+<div style='position:absolute;left:200px;top:330px;width:763px;height:96px;background:#1E2A44;border-radius:0 12px 12px 0'></div>
+<div class='t' style='left:226px;top:350px;font-size:58px;color:#fff'>헬리오시티 · 2018</div>
+<div style='position:absolute;left:200px;top:446px;width:756px;height:96px;background:#0F7B6C;border-radius:0 12px 12px 0'></div>
+<div class='t' style='left:226px;top:466px;font-size:58px;color:#fff'>올림픽파크포레온 · 2024</div>
+<div class='lab' style='left:50px;top:592px;font-size:46px;color:#16181D'>84㎡대 1년 실거래 · 평당 중앙</div>
+
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

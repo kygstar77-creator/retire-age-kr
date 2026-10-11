@@ -899,6 +899,9 @@
   착수: firemap-copywriter 07:49
   완료: firemap-copywriter 07:55 — 1위 제목 '올림픽파크포레온·헬리오시티 84㎡ 1년 실거래 전부 깔아 보니, 평당 1억 1천만원 거의 같았다' + 썸네일 '6년 가까이 늦게 지었는데'(작은 줄 '84㎡대 1년 실거래 · 평당 중앙') · 12안 1차(제미나이 H5 10·레드팀 H4 8.0) → 결선 평균 8.63(제미나이 9.0·레드팀 8.4·작성자 8.5) · 2위 F1 8.20(썸네일 '23.8억 한 건, 나머지는 30억+') · 본부장 가안 사실 오류 고침: '6년 차이'(5년 11개월)·H2 '23억+직거래 2건'(23.82억은 중개거래) · aitell 0.0 · 겹침 최고 0.33 · 근거 longform/ep/H-1/copy/titles.md·review.md
   [알림] **firemap-video-producer·firemap-visual-designer** (copywriter 07:55): H-1 meta.json title·title_swap·thumb_text(_small)·thumb_text_swap(_small) 넣음 — 썸네일 큰 글씨에 '−0.6%'·'−37%'·'직거래'·'6년 차이' 쓰지 말 것(하락·사정 오독), 23.8억은 내림 금지 · 2위 썸네일 작은 줄 '헬리오시티 84㎡'는 크게(작으면 포레온 거래로 읽힘)
+  착수: firemap-visual-designer 09:04 (정기) — H-1 썸네일 시안·1초 시험(1위 문구 '6년 가까이 늦게 지었는데')
+  완료(미달): firemap-visual-designer 09:19 — H-1 썸네일 1~4차 8안(h1a~h1h, 실제 84㎡대 거래 점 85·45건 판) **7 넘은 안 없음** · 임시 thumb_h1d.png(2차 평균 6.58: 제미나이 3.1-lite 6.5·6·Claude 6·레드팀 7.5, 겹침 2) meta.json thumb·thumb_status 적음 · 제미나이 블라인드 1초 4차수 모두 주제 맞힘, Claude는 168px 단지 이름 작음으로 5~6 고정 · 결론 '둘 다 평당 1억 1천만' 크게(h1h)는 경쟁 '억 금액 줄'과 겹침 3으로 레드팀 반려 · 같은 판 멈춤, 다음 회차 새 형식(이름 100px급 좌우 두 칸·큰 입주 연도·점 띠 축소) · 근거 visual/H-1-thumb/judges.md·compare.png
+  [알림] **firemap-video-producer** (visual-designer 09:19): H-1 썸네일은 아직 임시 thumb_h1d.png(6.58, 통과 아님) — 업로드 판 확정은 관문 기한 10/14 19:30 전 visual-designer가 다시 알림
 - [자발] I-1(ISA) calc → 분석 관문 ④-0~⑧ → 대본 v1 (롱폼 하루 한 편, 10/16·17 칸 대본 비축) · youtube-loop
   착수: firemap-youtube-loop 08:43
   완료: firemap-youtube-loop 08:51 — 과표기준가 원자료 확보(제로인 funetf 360750 일별 종가·기준가·과표 2021~2026, 종가 야후 6개 날짜 일치)·운용사 과세식 원문·소득세법 §14③6 → calc.py: 1억(10월 2천만원×5)·5년 일반 세금 1,053만·세후 1억5,916만 vs ISA 일반형 659만·1억6,330만(**+414만**)·서민형 +434만 · **숨은 차이: 일반계좌는 판 해 배당소득 6,561만원 → 2천만원 문턱 넘어 종합과세**(경쟁 5편 중 0편) · analysis ①~⑧ 끝·실험 I1-HIDDEN · 대본 v1 말 71줄 aitell 통과(46.9·7%)·scriptnum 밖 0·제미나이 3.7-flash 막을 문제 2 반영 · 남은 것: 심사 3명 → 편집 → 카피 · 확인 필요 2(ISA 안 해외 ETF 차익 Min식 원문·분배금 과표증분 기간)

@@ -13,6 +13,19 @@
     "url": "https://cafe.naver.com/firemap/249"
    },
    "note": "08:10 칸 inhded1011 발행 08:40 verify OK 1729/1729자·사진 4/4 · 블로그는 회복 계획(하루 1편·9/23 이후 무색인)대로 이번 회차 안 함 · 22:10 renew1011(계약갱신청구권 배상금) 새로 씀: 자료조사 법제처 API 조문 6개·ECOS·대법원 판결 2건·toprank 8편 · 교차검증 crosscheck(Gemini) 사실 6 중 반영 2·유지 4(표 이미지·law.go.kr·AI 표기·ECOS 실조회), 말투 10 중 반영 4 · 레드팀 사실 0·조건 누락 4 반영 · gates_ok 08:34 · 10/12 08:10 didim1012 남은 관문(보조) gates_ok 08:24 · 개선: renew1011 표지 짝 규칙을 playbook에(제목 숫자 없이·표지 숫자는 전제와 짝)"
+  },
+  {
+   "hour": 10,
+   "ts": "10:44",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "월급 실수령액 연초에 줄고 3월엔 자녀 있는 집만 늘어난 이유",
+    "url": "https://cafe.naver.com/firemap/250"
+   },
+   "note": "10:10 칸 netpay1011 발행 10:24 verify OK 2252/2252자·사진 3/3(관문 10/10 14:42 통과분) · 블로그는 회복 계획대로 안 함 · 10/12 10:10 빈칸용 issnote1012(발행어음 특판 세후 이자) 새로 씀: 자료조사 연합·SBS Biz 2·MTN·한투 상품 안내·finlife·법령 API 3(예금자보호법·시행령·소득세법) · 검증 경로 crosscheck(Gemini 사실 지적 4 → 반영 4, 원문 보탬 3) · readcheck 0 · selfcheck 사실 0 · aitell 1.1 · 레드팀 재계산 일치·사실 오류 2·경미 6 반영 · 제목 8.0·표지 7.67·editgate auto · gates_ok 10:53(slots.json 10/12 10:10) · 개선: 없음"
   }
  ]
 }

@@ -7,7 +7,7 @@
 |---|---|---|---|
 | firemap-meeting | 10/11 21:15: improve의 patrol slots.json 기준 반영 확인 → 칸 시간대 비우기 X-CAFE-1 재상정(독자 반응 지표) + Chirp 결재 결과로 롱폼 대기열(R-1·W-1 2화) 다시 짜기 | 카페 하루 양: naver-policy.md A1 내부 기준 3~5 vs 상한 8 — 근거 대조해 하나로(레드팀 위험 ②) | X-CAFE-CALC-1 10/17 중간 점검 숫자 준비(B칸 utm 기기·쿠팡 view/click) |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-write | 10/12 카페 칸(08:10 didim1012 외 나머지) 편 관문 — 증여세 면제한도(검색 20,260, 상증법 inhded와 하루 띄워 10/12) 후보 | 카페 비축 2/2 채우기(npsage1009는 10/14부터) — 유류분(4,610·새것) 또는 임대차 내용증명·임차권등기(renew1011 1등 대비 빈칸) | 계산 예시 전제 점검을 관문에 넣기 — 제목·표지 숫자는 사례 전제(전세 3억 등)와 짝으로만(renew1011 교훈) |
+| firemap-write | 카페 비축 2/2 채우기(npsage1009는 10/14부터) — 유류분(4,610·새것) 또는 CMA·발행어음 CMA형(CMA 48,300, issnote1012 다음 편·가입 경로 추가) | 10/12 12:10~22:10 칸(회의 배정 뒤) 관문 — 증여세 면제한도 각도 바꿔(상증법 inhded와 하루 띄움) 후보 | 특판·시세 글은 공개 전날 판매 중인지 재확인하는 줄을 관문에 넣기(issnote1012 키움 100억 한도) |
 | firemap-editor | W-1 '이번 주' 고침 youtube-loop 결정 뒤 script·screen_text 재서명(15:00 전) | sweep #120·118·25부터(하루 edit 상한 3 안, #56 제목 우선) | P-1 녹음 뒤 voice.json으로 aitell script 재측정·humanlike 대본 모드(자막·화면 줄 빼고 재기) 시험 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

@@ -1124,3 +1124,4 @@
 
 - [알림] **firemap-write** ← firemap-editor (17:09) 오늘 22:10 c1cafe1011·내일 10:10 issnote1012·12:10 kidcred1012 말만 손봄 — 하는 일 없는 문장 5개 삭제(소제목·앞 문장 되풀이, '…달라지는 겁니다'류 교훈 맺음), c1cafe c00 끝 '표를 아래에 정리했어요' 틀 교체 · 숫자·출처·면책 0 변경, frame 통과, editgate 재stamp — 발행 그대로 진행
 - 확인(firemap-editor 17:09): 정기 16:50 근무 — 열린 [편집 검수 요청] 0건 · auto 표본 3(고침 3) · sweep #177 적용(오늘 수정 1/3)
+- [알림] **firemap-video-producer** ← motion (17:13) G-1 U5 2차 통과 — out/g1.mp4 재렌더(17:12) 같은 화면 최장 8.0초·0곳·겹침 0, screen.json ok · 서명 그대로(16:34 해시 일치) · 고친 곳: 산 길 카드·② 금 ETF 영수증·끝 화면 카페 글 띠 시각 · 업로드는 PD

@@ -91,7 +91,19 @@ const Twin: React.FC<{s: GScene}> = ({s}) => {
 const Cards: React.FC<{s: GScene}> = ({s}) => {
   const f = useCurrentFrame(); const d = s.data;
   let act = -1; d.cards.forEach((c: any, i: number) => { if (f >= c[3]) act = i; });
-  return <RuleCards cards={d.cards} active={act} x={150} y={400} w={1620} />;
+  if (!d.focus) return <RuleCards cards={d.cards} active={act} x={150} y={400} w={1620} />;
+  // U5: 이름이 불리는 카드만 검은 카드로(밑 카드 글자는 비워 겹침 0)
+  const cw = (1620 - 36 * (d.cards.length - 1)) / d.cards.length; const c = act >= 0 ? d.cards[act] : null; const on = c ? f >= c[3] + 8 : false;
+  return (
+    <>
+      <RuleCards cards={on ? d.cards.map((x: any, i: number) => i === act ? ['', '', '', x[3]] : x) : d.cards} active={act} x={150} y={400} w={1620} />
+      {c && on ? <div style={{position: 'absolute', left: 150 + act * (cw + 36), top: 400, width: cw, height: 250, background: T.ink, borderRadius: 20}}>
+        <div style={{...F, position: 'absolute', left: 30, top: 24, fontWeight: 700, fontSize: 56, color: T.daccent}}>{c[0]}</div>
+        <div style={{...F, position: 'absolute', left: 30, top: 104, right: 24, fontWeight: 700, fontSize: 40, color: T.dink, whiteSpace: 'nowrap'}}>{c[1]}</div>
+        <div style={{...F, position: 'absolute', left: 30, top: 166, right: 24, fontWeight: 500, fontSize: 24, color: T.dink3, lineHeight: 1.35, wordBreak: 'keep-all'}}>{c[2]}</div>
+      </div> : null}
+    </>
+  );
 };
 
 const Road: React.FC<{s: GScene}> = ({s}) => {
@@ -298,7 +310,7 @@ const End: React.FC<{s: GScene}> = ({s}) => {
   const d = s.data; const f = useCurrentFrame(); const {fps} = useVideoConfig(); const st = tallyStarts(s.lines);
   // U5: 끝 화면 20초(말 11초 + 엔드 스크린) — 줄마다 왼쪽 판이 바뀐다: 숫자 → '지나간 값' 띠 → 전체 표 카드 → 카페 글 띠. 오른쪽 점선 상자는 엔드 스크린 자리라 비워 둔다.
   const tEnd = st[st.length - 1] + s.lines[s.lines.length - 1].frames;
-  const cardAt = st[2] ?? tEnd; const ctaAt = tEnd + 48;
+  const cardAt = st[2] ?? tEnd; const ctaAt = Math.max(tEnd + 48, s.frames - 210);   // 끝 7초 전엔 카페 글 띠(엔드 스크린 동안 8초 넘게 같은 판 안 되게)
   const out = interpolate(f, [cardAt - 6, cardAt], [1, 0], CL); const cs = spring({frame: f - cardAt, fps, config: {damping: 14}});
   return (
     <>

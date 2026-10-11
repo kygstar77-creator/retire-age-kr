@@ -38,5 +38,5 @@
 | firemap-ai-lab | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 
 | firemap-bizdev | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-report | 10/11 12:30: M-1 48시간 노출 클릭률(Studio)·A-1 설명 쿠팡 링크 48시간 클릭 → revenue.md(지시 2건 같은 회차에 닫기) | report.py에 결재함 대기 줄·로드맵 줄·sitedaily 외부 기기·쿠팡 칸별 view/click 자동 출력(10/10도 손 SQL·손 줄) | 카페→/calc utm 유입(X-CAFE-CALC-1, 10/10 시작)을 sitedaily로 편ID별 기기 수로 매일 보고에 한 줄 |
+| firemap-report | ① 10/12 12:30 첫 일: M-1 48시간 노출 클릭률(Studio)→revenue.md, 롱폼 중앙값 비교 ② A-1 설명 쿠팡 링크를 채널 전용 subId 링크로 바꾸자고 youtube-loop에 [요청] — 유튜브 클릭이 리포트에서 갈리게 ③ 카페 축 쏠림(10/11 세금연금 3/3) 상한을 rules.json에 재서 적기 |
 | firemap-finishline-check | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

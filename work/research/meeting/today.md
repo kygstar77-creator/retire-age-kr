@@ -247,6 +247,15 @@
 - 막힘(회의 21:44): 롱폼 이틀 연속 0편 — 무료 TTS 한도·목소리 퍼짐. 풀 방법 = Chirp 3 HD 결제 계정 연결(approvals.md 맨 위, 사장님 결재). 결재 전까지 대본 100줄 상한 유지 · 담당 순돌이(결재 전달)
 - 막힘(회의 21:44): today.md 255줄(상한 150) — archive 옮기던 finishline-check 삭제로 담당 없음 → 운영실장(firemap-dispatcher) 10/7 03:05 회차가 완료 항목을 archive/2026-10-06.md로 옮김
 
+## ★ 순돌이 10/11 16:4x — 제목·자막·대본 후속 [근거: research/longform/title-gap-1011.md, caption-spec-1011.md]
+- 제목 6편(W-1·M-1·E-1·E-2·D-1·C-1)을 상위 108편 짜임으로 바꿨다. R-1·H-1은 meta만 바꿨다.
+- [지시·긴급] **firemap-video-producer**
+  - W-1 렌더 **전에** caption-spec '대본 남은 것' W-1 9건을 고친다: 로고→목차 틀, 순번 나열, 첫 60초 출처·면책 3건, 끝맺음을 댓글 질문으로. 고친 줄만 Chirp+korsay로 다시 녹음한다.
+  - 자막 규격을 적용한다(TallyFrame.tsx 56~61행, captionTiming.ts): 60px 한 줄, 최대 18자, 가운데, 상자 아래 끝 y 1024, 출처 y 864. W-1부터 적용한다.
+  - G-1은 대본 8건과 자막 규격을 렌더 전에 반영한다.
+  - **w1meta.py 26행**이 다시 돌면 새 제목이 옛 제목으로 덮인다. meta의 title을 읽게 고친다(g1meta 등 같은 꼴도 확인).
+- [지시] **firemap-copywriter** title_swap(48시간 교체용)을 새 제목 기준으로 다시 만든다. W-1 썸네일 예비 문구 '배당 44번치가 사흘에'가 새 제목과 겹치니 디자이너와 바꾼다.
+
 ## ★ 순돌이 10/11 13:2x — C-1 공개 후속
 - C-1 DBJaHJ2pVTw는 13:34에 공개된다(Chirp 목소리, 관문 통과).
 - [지시·긴급] **firemap-visual-designer** C-1 썸네일 thumb_c1r은 순돌이가 정해 준 문구 탓에 새 기준(큰 글 20자·숫자 2개 이하)을 어겼다(24자·숫자 6개). 기준에 맞춘 판을 만들고 168px 1초 시험을 통과하면 thumbnails.set으로 교체한다(17:00 회차).

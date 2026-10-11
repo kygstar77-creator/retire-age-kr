@@ -54,9 +54,9 @@ def ok_token(tok, ctx):
 
 
 def check(name):
-    p = json.load(open(os.path.join(WORK, 'video', name + '.json'), encoding='utf-8'))
+    p = json.load(open(os.path.join(WORK, 'video', name + '.json'), encoding='utf-8'))   # 10/11 v2는 이름에 _v2를 붙여 부른다(upload.json은 편 폴더)
     ts = []; texts(p, ts)
-    meta = os.path.join(HERE, name, 'upload.json')
+    meta = os.path.join(HERE, name.replace('_v2', ''), 'upload.json')
     if os.path.exists(meta):
         u = json.load(open(meta, encoding='utf-8')); ts += [u['title'], u['description']]
     bad, rows = [], []
@@ -77,7 +77,7 @@ def check(name):
 
 
 if __name__ == '__main__':
-    names = sys.argv[1:] or ['m1s_need100', 'm1s_minmonth', 'm1s_nhis70', 'm1s_total1y']
+    names = sys.argv[1:] or ['m1s_need100', 'm1s_minmonth', 'm1s_nhis70', 'm1s_total1y', 'm1s_minmonth_v2', 'm1s_nhis70_v2', 'm1s_total1y_v2']
     ok = all([check(n) for n in names])
     print('숫자 대조 통과' if ok else '숫자 대조 — 원문에 없는 숫자 있음')
     sys.exit(0 if ok else 1)

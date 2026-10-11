@@ -8,6 +8,7 @@ const serveUrl = await bundle({entryPoint: path.resolve('src/m1s_index.ts')});
 for (const pf of files) {
   const props = JSON.parse(fs.readFileSync(pf, 'utf-8'));
   const comp = await selectComposition({serveUrl, id: 'M1S', inputProps: props});
+  await renderStill({composition: comp, serveUrl, output: path.join(outDir, `${props.name}_f0.png`), frame: 0, inputProps: props, imageFormat: 'png'});
   let from = 0;
   for (const [si, s] of props.scenes.entries()) {
     for (const r of [0.05, 0.5, 0.95]) {

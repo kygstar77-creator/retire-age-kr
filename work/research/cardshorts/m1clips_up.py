@@ -1,5 +1,7 @@
 # M-1 쇼츠 예약 업로드 — cardshorts/<편>/upload.json + review.md '판정: 통과' 줄이 있어야 올린다.
 #   py -3.12 work/research/cardshorts/m1clips_up.py <편이름>            # videos.insert(private + publishAt) → videos.list로 확인 → log.jsonl 한 줄
+#   py -3.12 work/research/cardshorts/m1clips_up.py <편이름> --replace     # 10/11 v2 교체: 새 판을 같은 publishAt으로 올린 뒤, 옛 예약 영상은 삭제하지 않고 publishAt만 빼서 비공개로 둔다
+#                                                                          (review.md '판정(v2): 통과' 줄 필요 · log.jsonl의 그 편 줄 id를 새 것으로 바꾸고 replaced_id를 남김)
 #   py -3.12 work/research/cardshorts/m1clips_up.py <편이름> --check [--fix]   # 올린 영상 상태만 다시 본다(--fix: AI 합성 표시 비었으면 다시 씀)
 import os, sys, json, re, hashlib, datetime
 sys.stdout.reconfigure(encoding='utf-8')
@@ -41,6 +43,21 @@ def fix_synth(vid, up):
     return echo
 
 
+def unschedule(vid):
+    """옛 예약 영상을 지우지 않고 publishAt만 뺀다 — status 전체를 넘긴다(privacy private · embeddable·publicStatsViewable·selfDeclaredMadeForKids·license 유지)."""
+    import f2_coupang
+    yt2 = f2_coupang.service()
+    st = yt2.videos().list(part='status', id=vid).execute()['items'][0]['status']
+    if st.get('privacyStatus') != 'private': print('건드리지 않는다: 이미 공개됨', vid, st.get('privacyStatus')); return None
+    body = {k: st[k] for k in STATUS_KEEP if k in st and k != 'publishAt'}
+    body.update(privacyStatus='private', containsSyntheticMedia=True)
+    r = yt2.videos().update(part='status', body={'id': vid, 'status': body}).execute()['status']
+    back = yt2.videos().list(part='status', id=vid).execute()['items'][0]['status']
+    print('옛 영상', vid, '→ 응답', {k: r.get(k) for k in ('privacyStatus', 'publishAt')}, '| 다시 읽음',
+          {k: back.get(k) for k in ('privacyStatus', 'publishAt', 'embeddable', 'publicStatsViewable', 'selfDeclaredMadeForKids')})
+    return back
+
+
 def main(name, check_only=False):
     d = os.path.join(HERE, name); up = json.load(open(os.path.join(d, 'upload.json'), encoding='utf-8'))
     yt = ytupload.service()
@@ -51,9 +68,13 @@ def main(name, check_only=False):
         up['status'] = {k: v['status'].get(k) for k in ('privacyStatus', 'publishAt', 'embeddable', 'publicStatsViewable', 'selfDeclaredMadeForKids')}
         json.dump(up, open(os.path.join(d, 'upload.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         return 0
-    if up.get('id'): print('이미 올림:', up['id']); show(yt, up['id']); return 0
+    replace = '--replace' in sys.argv
+    if up.get('id') and not replace: print('이미 올림:', up['id']); show(yt, up['id']); return 0
+    if replace and up.get('v') != 2: print('올리지 않는다: upload.json v가 2가 아님(새 판 mp4·제목 확인)'); return 3
     rv = open(os.path.join(d, 'review.md'), encoding='utf-8').read() if os.path.exists(os.path.join(d, 'review.md')) else ''
-    if not re.search(r'^판정: 통과', rv, re.M): print('올리지 않는다: review.md에 "판정: 통과" 줄 없음'); return 3
+    mark = r'^판정\(v2\): 통과' if replace else r'^판정: 통과'
+    if not re.search(mark, rv, re.M): print('올리지 않는다: review.md에 판정 줄 없음', mark); return 3
+    old = up.get('id') if replace else None
     pub = datetime.datetime.fromisoformat(up['publishAt'])
     if pub <= datetime.datetime.now(KST) + datetime.timedelta(minutes=15): print('올리지 않는다: publishAt이 15분 안이거나 지났다', up['publishAt']); return 4
     title, desc = up['title'], up['description']
@@ -79,15 +100,31 @@ def main(name, check_only=False):
     up['synth_insert_echo'] = res.get('status', {}).get('containsSyntheticMedia')
     up['synth_update_echo'] = fix_synth(vid, up)
     v = show(yt, vid)
+    if v['status'].get('publishAt') is None or v['status'].get('privacyStatus') != 'private': print('새 판 예약 확인 실패 — 옛 예약을 건드리지 않는다'); return 8
+    if old:
+        back = unschedule(old)
+        up.setdefault('replaced', []).append({'id': old, 'unscheduled_at': datetime.datetime.now(KST).strftime('%Y-%m-%d %H:%M:%S'),
+                                              'status_after': {k: (back or {}).get(k) for k in ('privacyStatus', 'publishAt')}})
     up.update(id=vid, uploaded_at=datetime.datetime.now(KST).strftime('%Y-%m-%d %H:%M:%S'), status={k: v['status'].get(k) for k in ('privacyStatus', 'publishAt', 'embeddable', 'publicStatsViewable', 'selfDeclaredMadeForKids')})
     json.dump(up, open(os.path.join(d, 'upload.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-    props = json.load(open(os.path.join(WORK, 'video', name + '.json'), encoding='utf-8'))
+    spec = f'work/video/{name}' + ('_v2' if up.get('v') == 2 else '') + '.json'
+    props = json.load(open(os.path.join(REPO, spec), encoding='utf-8'))
     seed = hashlib.md5('|'.join(l['audio'] for s in props['scenes'] for l in s['lines']).encode()).hexdigest()
     row = {'at': datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S'), 'id': vid, 'title': title, 'audio_seed': seed, 'layout': 'm1clip', 'music': False,
-           'facts': os.path.join(WORK, 'research', 'longform', 'ep', 'M-1', 'facts.txt').replace('\\', '/'), 'spec': f'work/video/{name}.json',
+           'facts': os.path.join(WORK, 'research', 'longform', 'ep', 'M-1', 'facts.txt').replace('\\', '/'), 'spec': spec,
            'd7_views': None, 'd7_subs': None, 'publishAt': up['publishAt'], 'from_long': 'eTjVs1vDTwg', 'voice': 'M-1 voice.json wav 재사용(새 녹음 없음)'}
-    with open(os.path.join(HERE, 'log.jsonl'), 'a', encoding='utf-8') as f: f.write(json.dumps(row, ensure_ascii=False) + '\n')
-    print('log.jsonl 한 줄 추가')
+    lp = os.path.join(HERE, 'log.jsonl')
+    if old:   # 그 편 줄의 id를 새 것으로 바꾼다(옛 id는 replaced_id로 남김)
+        rows = open(lp, encoding='utf-8').read().splitlines(); hit = 0
+        for i, ln in enumerate(rows):
+            try: o = json.loads(ln)
+            except Exception: continue
+            if o.get('id') == old: rows[i] = json.dumps(dict(row, replaced_id=old, first_at=o.get('at')), ensure_ascii=False); hit += 1
+        if not hit: rows.append(json.dumps(dict(row, replaced_id=old), ensure_ascii=False))
+        open(lp, 'w', encoding='utf-8', newline='\n').write('\n'.join(rows) + '\n'); print('log.jsonl 그 편 줄 id 바꿈', old, '→', vid)
+    else:
+        with open(lp, 'a', encoding='utf-8') as f: f.write(json.dumps(row, ensure_ascii=False) + '\n')
+        print('log.jsonl 한 줄 추가')
     return 0
 
 

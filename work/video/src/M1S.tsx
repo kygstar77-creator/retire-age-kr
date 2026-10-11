@@ -8,7 +8,7 @@ import {TallyBars, TallyBar} from './motion/TallyBars';
 
 type SLine = {n: number; text: string; cap?: string | null; audio: string; frames: number};
 type SScene = {kind: string; label: string; source?: string | null; data: any; lines: SLine[]; frames: number};
-export type M1SProps = {fps: number; name: string; question: string[]; hot: string; track?: [string, number, string][] | null; base: string; long: string; scenes: SScene[]};
+export type M1SProps = {fps: number; name: string; question: string[]; hot: string; track?: [string, number, string][] | null; base: string; long: string; scenes: SScene[]; v?: number; answer?: {label: string; items: string[]; arrow?: boolean; note?: string} | null};
 export const m1sFrames = (p: M1SProps) => p.scenes.reduce((a, s) => a + s.frames, 0);
 
 const BW = 1000, BH = 860;
@@ -16,7 +16,8 @@ const COL: Record<string, string> = {accent: T.accent, ink: T.ink, rise: T.rise,
 const starts = (lines: SLine[]) => { const o: number[] = []; let a = 0; for (const l of lines) { o.push(a); a += l.frames; } return o; };
 // 줄 번호(소수면 그 줄 안 비율) → 장면 안 프레임
 const atL = (s: SScene, x: number | null | undefined) => {
-  if (x == null) return 1e9; const i = Math.min(Math.floor(x), s.lines.length - 1); const st = starts(s.lines);
+  if (x == null) return 1e9; if (x < 0) return x * 30;   // 음수 = 장면 시작 전(이미 다 그려진 상태)
+  const i = Math.min(Math.floor(x), s.lines.length - 1); const st = starts(s.lines);
   return st[i] + (x - i) * s.lines[i].frames;
 };
 const ease = (f: number, a: number, d = 14) => interpolate(f, [a, a + d], [0, 1], {...CL, easing: Easing.out(Easing.cubic)});
@@ -136,10 +137,10 @@ const Bars: React.FC<{s: SScene}> = ({s}) => {
   return (
     <>
       <div style={{position: 'absolute', left: 40, top: 30, ...pop(f, 0)}}>
-        <Txt s={58} c={T.ink}>{d.note[0]}</Txt><Txt s={58} c={T.accent}>{d.note[1]}</Txt>
+        <Txt s={d.tall ? 66 : 58} c={T.ink}>{d.note[0]}</Txt><Txt s={d.tall ? 66 : 58} c={T.accent}>{d.note[1]}</Txt>
       </div>
-      <TallyBars bars={bars} x={80} y={250} w={840} h={420} max={d.max} labelSize={30} valueSize={60} tags />
-      {d.stamp ? <div style={{position: 'absolute', left: 40, top: 800, opacity: ease(f, 30)}}><Txt s={24} c={T.ink3}>{d.stamp}</Txt></div> : null}
+      <TallyBars bars={bars} x={80} y={d.tall ? 230 : 250} w={840} h={d.tall ? 500 : 420} max={d.max} labelSize={d.tall ? 32 : 30} valueSize={d.tall ? 76 : 60} gap={d.tall ? 36 : undefined} tags />
+      {d.stamp ? <div style={{position: 'absolute', left: 40, top: d.tall ? 826 : 800, opacity: d.tall ? 1 : ease(f, 30)}}><Txt s={d.tall ? 26 : 24} c={d.tall ? T.ink2 : T.ink3}>{d.stamp}</Txt></div> : null}
     </>
   );
 };
@@ -292,7 +293,7 @@ const First: React.FC<{s: SScene}> = ({s}) => {
       <div style={{position: 'absolute', left: 40, top: 250, ...pop(f, b)}}>
         <Txt s={150} c={T.rise}>{d.b}</Txt>
       </div>
-      <div style={{position: 'absolute', left: 40, top: 280 + 200 * ease(f, b - 4, 12), display: 'flex', flexWrap: 'wrap', gap: 16, width: 920}}>
+      <div style={{position: 'absolute', left: 40, top: 480, display: 'flex', flexWrap: 'wrap', gap: 16, width: 920}}>
         {chips.map((c, i) => {
           const hot = i === 2 && f >= b;
           return <div key={i} style={{...F, fontWeight: 700, fontSize: 46, width: 452, height: 116, boxSizing: 'border-box', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: 14, color: hot ? '#fff' : T.ink, background: hot ? T.rise : T.bg,
@@ -387,12 +388,12 @@ const Ask1: React.FC<{s: SScene}> = ({s}) => {
     <>
       <div style={{position: 'absolute', left: 40, top: 24}}><Txt s={40} c={T.ink2}>{d.when}</Txt></div>
       {d.names.map((n: string, i: number) => (
-        <Box key={i} x={40 + i * 313} y={100} w={294} h={250} bg={T.soft} style={{...pop(f, 4 + i * 8), textAlign: 'center'}}>
+        <Box key={i} x={40 + i * 313} y={100} w={294} h={250} bg={T.soft} style={{...pop(f, -10 + i * 3), textAlign: 'center'}}>
           <Txt s={100} c={T.accent}>{d.put}</Txt>
           <Txt s={n.length > 6 ? 26 : 38} c={T.ink2} style={{marginTop: 18}}>{n}</Txt>
         </Box>
       ))}
-      <div style={{position: 'absolute', left: 0, width: BW, top: 400, textAlign: 'center', ...pop(f, 30)}}>
+      <div style={{position: 'absolute', left: 0, width: BW, top: 400, textAlign: 'center', ...pop(f, -6)}}>
         <Txt s={44} c={T.ink2}>{d.now}</Txt>
         <Txt s={110} style={{transform: `scale(${1 + 0.04 * Math.sin(f / 7)})`}}>{d.ask}</Txt>
       </div>
@@ -412,7 +413,7 @@ const Total: React.FC<{s: SScene}> = ({s}) => {
       {bars.map((b, i) => { const n = bars.length, g = Math.min(80, 840 / n * 0.35), bw = (840 - g * (n - 1)) / n; const o = 1 - ease(f, b.start, 8);
         return o <= 0 ? null : <div key={i} style={{position: 'absolute', left: 80 + i * (bw + g), top: 200 + 440 * 0.45, width: bw, height: 440 * 0.55, background: T.line, borderRadius: '10px 10px 0 0', opacity: o,
           display: 'flex', alignItems: 'center', justifyContent: 'center', ...F, fontWeight: 700, fontSize: 90, color: T.ink3}}>?</div>; })}
-      <TallyBars bars={bars} x={80} y={200} w={840} h={440} max={d.max} labelSize={30} valueSize={64} tags circle={{i: 0, start: 30}} />
+      <TallyBars bars={bars} x={80} y={200} w={840} h={440} max={d.max} labelSize={bars.some((b) => b.label.length > 8) ? 25 : 30} valueSize={64} tags circle={{i: 0, start: 30}} />
     </>
   );
 };
@@ -492,7 +493,94 @@ const Frame: React.FC<{s: SScene; p: M1SProps; from: number; total: number}> = (
   );
 };
 
+// ───────── v2 (10/11 쇼츠 격차 shorts-gap-1011.md 반영) ─────────
+// 위 검은 띠 제목 2줄(글자 높이 약 6%) · 가운데 판 꽉 채움 · 자막은 10~15자 조각으로 약 2초마다(소리는 그대로) · '정확한 값' 띠·출처·링크 안내 줄 없음(설명란으로)
+// 첫 장면 data.full이면 0프레임에 다 그려진 상태(움직임은 이미 끝난 시점부터 보여 줌).
+const chunks = (t: string) => {
+  // 낱말 단위로 나눠 조각 길이(공백 포함)가 고르게 — 목표 = 전체/조각 수(약 13자), 한 조각 최대 16자. 문장 끝(.?!)에서는 꼭 끊는다.
+  const out: string[] = [];
+  for (const sen of t.split(/(?<=[.?!])\s+/).filter(Boolean)) {
+    const w = sen.split(/\s+/).filter(Boolean); const n = w.length; const L = sen.length; const k = Math.max(1, Math.round(L / 13)); const tg = L / k;
+    const len = (i: number, j: number) => w.slice(i, j).join(' ').length;
+    const best: number[] = Array(n + 1).fill(Infinity); const prev: number[] = Array(n + 1).fill(0); best[0] = 0;
+    for (let j = 1; j <= n; j++) for (let i = 0; i < j; i++) {
+      const l = len(i, j); if (l > 16 && j - i > 1) continue;
+      const c = best[i] + (l - tg) * (l - tg) + (l < 5 ? 60 : 0) + (j < n && /\d[억만천원]*$/.test(w[j - 1]) && /^\d/.test(w[j]) ? 400 : 0) + (j < n && w[j - 1].length === 1 ? 200 : 0); if (c < best[j]) { best[j] = c; prev[j] = i; }
+    }
+    const cut: string[] = []; for (let j = n; j > 0; j = prev[j]) cut.unshift(w.slice(prev[j], j).join(' '));
+    out.push(...cut);
+  }
+  return out.map((c) => c.replace(/[.,]$/, ''));
+};
+const NUMRX = /(\d[\d,.]*\s?(?:천만원|만원|억|원|%|배|달러|월|년)?)/;
+const Hi: React.FC<{t: string}> = ({t}) => <>{t.split(NUMRX).map((x, i) => (i % 2 ? <span key={i} style={{color: '#FFD000'}}>{x}</span> : <React.Fragment key={i}>{x}</React.Fragment>))}</>;
+const Caption2: React.FC<{s: SScene; first: boolean}> = ({s, first}) => {
+  const f = useCurrentFrame(); const st = starts(s.lines);
+  let k = 0; st.forEach((a, i) => { if (f >= a) k = i; });
+  const l = s.lines[k]; const cs = chunks(l.text); const tot = cs.reduce((a, x) => a + x.replace(/\s/g, '').length, 0);
+  const speak = l.frames - 8; let acc = 0, j = 0, from = st[k];
+  for (let i = 0; i < cs.length; i++) { const a = st[k] + (acc / tot) * speak; if (f >= a) { j = i; from = a; } acc += cs[i].replace(/\s/g, '').length; }
+  const o = first && k === 0 && j === 0 ? 1 : interpolate(f, [from, from + 3], [0, 1], CL);
+  return (
+    <div style={{height: 196, boxSizing: 'border-box', background: T.ink, padding: '14px 28px', borderRadius: 24, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <div style={{...F, fontWeight: 700, fontSize: 76, lineHeight: 1.2, color: '#fff', textAlign: 'center', wordBreak: 'keep-all', letterSpacing: -1, opacity: 0.5 + 0.5 * o, transform: `scale(${0.96 + 0.04 * o})`}}><Hi t={cs[j]} /></div>
+    </div>
+  );
+};
+const BW2 = 1080, SC2 = BW2 / BW, BH2 = Math.round(BH * SC2);
+const Frame2: React.FC<{s: SScene; p: M1SProps; from: number; total: number; first: boolean}> = ({s, p, from, total, first}) => {
+  const f = useCurrentFrame(); const st = starts(s.lines);
+  const drift = interpolate(f, [0, s.frames], [1, 1.025], CL);
+  const body = s.data.full ? <Sequence from={-90} layout="none"><Body s={s} p={p} /></Sequence> : <Body s={s} p={p} />;
+  return (
+    <AbsoluteFill>
+      <div style={{position: 'absolute', left: 0, top: 322, width: BW2, height: BH2, background: '#fff', overflow: 'hidden'}}>
+        <div style={{position: 'absolute', left: 0, top: 0, width: BW, height: BH, transform: `scale(${SC2 * drift})`, transformOrigin: '0 0'}}>{body}</div>
+      </div>
+      <div style={{position: 'absolute', left: 30, top: 322 + BH2 + 24, width: 1020}}><Caption2 s={s} first={first} /></div>
+      <div style={{position: 'absolute', left: 30, top: 322 + BH2 + 230, width: 1020, height: 12, background: T.line, borderRadius: 6}}>
+        <div style={{width: `${((from + f) / total) * 100}%`, height: 12, background: T.accent, borderRadius: 6}} />
+      </div>
+      {s.lines.map((l, i) => <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
+    </AbsoluteFill>
+  );
+};
+const M1Sv2: React.FC<M1SProps> = (p) => {
+  const total = m1sFrames(p); let from = 0;
+  return (
+    <AbsoluteFill style={{background: T.bg}}>
+      <style>{FONT_CSS}</style>
+      <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 322, background: T.dbg}} />
+      <div style={{position: 'absolute', left: 40, top: 30, display: 'flex', alignItems: 'center', gap: 10}}>
+        <Flame size={24} /><span style={{...F, fontWeight: 700, fontSize: 26, color: T.dink3}}>파이어맵</span>
+        <span style={{...F, fontWeight: 500, fontSize: 22, color: T.dink3, marginLeft: 10}}>{p.base}</span>
+      </div>
+      <div style={{position: 'absolute', left: 0, top: 78, width: 1080, textAlign: 'center'}}>
+        {p.question.map((line, i) => {
+          const k = line.indexOf(p.hot);
+          return <div key={i} style={{...F, fontWeight: 700, fontSize: 100, lineHeight: 1.16, color: '#fff', letterSpacing: -3, whiteSpace: 'nowrap'}}>
+            {k < 0 ? line : <>{line.slice(0, k)}<span style={{color: '#FFD000'}}>{p.hot}</span>{line.slice(k + p.hot.length)}</>}</div>;
+        })}
+      </div>
+      {p.answer ? (
+        <div style={{position: 'absolute', left: 30, top: 322 + BH2 + 262, width: 1020, height: 250, boxSizing: 'border-box', background: T.soft, borderRadius: 24, padding: '18px 30px'}}>
+          <div style={{...F, fontWeight: 700, fontSize: 34, color: T.ink2}}>{p.answer.label}</div>
+          <div style={{display: 'flex', alignItems: 'baseline', gap: 22, marginTop: 6, whiteSpace: 'nowrap'}}>
+            {p.answer.items.map((x, i) => <React.Fragment key={i}>
+              {i ? <span style={{...F, fontWeight: 700, fontSize: 70, color: T.ink3}}>{p.answer!.arrow ? '→' : '·'}</span> : null}
+              <span style={{...F, fontWeight: 700, fontSize: Math.min(96, Math.floor(940 / (p.answer!.items.join('').length * 0.62 + (p.answer!.items.length - 1) * 1.6))), color: i === p.answer!.items.length - 1 || !p.answer!.arrow ? T.accent : T.ink, letterSpacing: -2}}>{x}</span>
+            </React.Fragment>)}
+          </div>
+          {p.answer.note ? <div style={{...F, fontWeight: 700, fontSize: 30, color: T.ink2, marginTop: 2}}>{p.answer.note}</div> : null}
+        </div>
+      ) : null}
+      {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Frame2 s={s} p={p} from={from} total={total} first={i === 0} /></Sequence>; from += s.frames; return el; })}
+    </AbsoluteFill>
+  );
+};
+
 export const M1S: React.FC<M1SProps> = (p) => {
+  if ((p.v ?? 1) >= 2) return <M1Sv2 {...p} />;
   const total = m1sFrames(p); let from = 0;
   const q = p.question;
   return (

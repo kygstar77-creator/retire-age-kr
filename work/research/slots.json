@@ -896,9 +896,9 @@
    "item": "m1s_minmonth",
    "owner": "firemap-video-producer",
    "gates_ok": "2026-10-10 12:41",
-   "published": "예약 2026-10-11T19:20:00+09:00 https://youtu.be/aYCWFSzynJI (private→자동 공개, videos.list 확인 private 2026-10-11T10:20:00Z)",
+   "published": "예약 2026-10-11T19:20:00+09:00 https://youtu.be/Y8mAKmcQbt8 (v2 교체 2026-10-11 13:05 · 옛 예약 aYCWFSzynJI는 삭제 안 하고 publishAt만 뺀 비공개)",
    "item_pkg": "work/research/cardshorts/m1s_minmonth",
-   "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_minmonth/review.md · 카드 쇼츠 대체(사장님 10/10 지시) | 이전 12:20 TBD → firemap-meeting 10/09 21:33: 쇼츠 하루 1칸(X-YT-FREQ) · 관문 기한 10/11 00:20 · 1초 시험 7 넘은 편만, 못 넘으면 skip+사유(미달 공개 금지 — 순돌이 10/9 지시)"
+   "note": "firemap-video-producer 2026-10-11 13:05: v2로 교체(shorts-gap-1011.md — 첫 말·0초 답 숫자·자막 조각·검은 띠 제목·링크 줄 뺌), 관문 cardshorts/m1s_minmonth/review.md 'v2' | firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_minmonth/review.md · 카드 쇼츠 대체(사장님 10/10 지시) | 이전 12:20 TBD → firemap-meeting 10/09 21:33: 쇼츠 하루 1칸(X-YT-FREQ) · 관문 기한 10/11 00:20 · 1초 시험 7 넘은 편만, 못 넘으면 skip+사유(미달 공개 금지 — 순돌이 10/9 지시)"
   },
   {
    "at": "2026-10-11 19:30",
@@ -965,9 +965,9 @@
    "item": "m1s_nhis70",
    "owner": "firemap-video-producer",
    "gates_ok": "2026-10-10 12:41",
-   "published": "예약 2026-10-12T19:20:00+09:00 https://youtu.be/xmmkdtLhmXs (private→자동 공개, videos.list 확인 private 2026-10-12T10:20:00Z)",
+   "published": "예약 2026-10-12T19:20:00+09:00 https://youtu.be/kEHjN5WFBPI (v2 교체 2026-10-11 13:05 · 옛 예약 xmmkdtLhmXs는 삭제 안 하고 publishAt만 뺀 비공개)",
    "item_pkg": "work/research/cardshorts/m1s_nhis70",
-   "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_nhis70/review.md · 카드 쇼츠 대체(사장님 10/10 지시)"
+   "note": "firemap-video-producer 2026-10-11 13:05: v2로 교체(shorts-gap-1011.md — 첫 말·0초 답 숫자·자막 조각·검은 띠 제목·링크 줄 뺌), 관문 cardshorts/m1s_nhis70/review.md 'v2' | firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_nhis70/review.md · 카드 쇼츠 대체(사장님 10/10 지시)"
   },
   {
    "at": "2026-10-13 07:20",
@@ -991,9 +991,9 @@
    "item": "m1s_total1y",
    "owner": "firemap-video-producer",
    "gates_ok": "2026-10-10 12:41",
-   "published": "예약 2026-10-13T19:20:00+09:00 https://youtu.be/gvOdoH5-HbM (private→자동 공개, videos.list 확인 private 2026-10-13T10:20:00Z)",
+   "published": "예약 2026-10-13T19:20:00+09:00 https://youtu.be/uMqmvqNM02k (v2 교체 2026-10-11 13:05 · 옛 예약 gvOdoH5-HbM는 삭제 안 하고 publishAt만 뺀 비공개)",
    "item_pkg": "work/research/cardshorts/m1s_total1y",
-   "note": "firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_total1y/review.md · 카드 쇼츠 대체(사장님 10/10 지시)"
+   "note": "firemap-video-producer 2026-10-11 13:05: v2로 교체(shorts-gap-1011.md — 첫 말·0초 답 숫자·자막 조각·검은 띠 제목·링크 줄 뺌), 관문 cardshorts/m1s_total1y/review.md 'v2' | firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_total1y/review.md · 카드 쇼츠 대체(사장님 10/10 지시)"
   },
   {
    "at": "2026-10-14 07:20",

@@ -18,12 +18,19 @@ SC = {s['key']: s for s in m1['scenes']}
 TAIL = 36            # 마지막 줄 뒤 1.2초 여유
 
 
-def L(*idx):
+def L(*idx, **over):
     out = []
     for i in idx:
         l = LINES[i]
         out.append({'n': i, 'text': l['text'], 'cap': CAP.get(l['text']), 'audio': l['audio'], 'frames': l['frames']})
+    if over: out[0].update(over)        # 첫 줄만 바꿔 끼움(예: 앞머리 자른 wav)
     return out
+
+
+# 10/11 v2: 줄 60 앞머리 '그래서'(0.30~0.56초)를 쉼(0.59초)에서 자른 wav — m1clips_trim.py, 원본 wav는 그대로
+# 10/11 v2: 줄 28 wav 앞에 줄 27 끝 '선을 넘어요.'(0.28~0.92초)가 붙어 있음(받아쓰기 m1clips_hear.py) — 쇼츠 맨 앞에 두므로 1.05초 쉼에서 잘라 냄
+L28_CUT = dict(audio='audio/m-1/ac1e8f652c8f7e02_from105.wav', frames=184, trimmed='선을 넘어요.')
+L60_CUT = dict(audio='audio/m-1/4053069856f7b986_from059.wav', frames=112, text='가장 적은 달 기준으로 다시 재면, 거의 9억이 필요합니다.', trimmed='그래서')
 
 
 def scene(kind, label, src, lines, **data):
@@ -56,10 +63,11 @@ SHORTS = {
  ),
  # ② 가장 적게 나온 달로 다시 재면 — JEPQ 1.38→1.71억, ACE 5.10→8.92억(롱폼 4장)
  'm1s_minmonth': dict(
-  question=['월배당, 가장 적게 나온 달로', '다시 재면 얼마?'], hot='가장 적게 나온 달',
+  v=2, question=['가장 적게 나온 달로', '다시 재면 얼마?'], hot='가장 적게 나온 달',
+  answer=dict(label='월 100만원에 필요한 돈 · ACE 미국배당다우존스', items=['5.10억원', '8.92억원'], arrow=True, note='평균 기준 → 가장 적은 달 기준(×1.75)'),
   scenes=[
-   scene('jump', 'ACE 미국배당다우존스 · 월 100만원에 필요한 돈', 'am', L(60), name='ACE 미국배당다우존스', what='월 100만원에 필요한 돈',
-         a=[5.1, '5.10억원', '평균 기준'], b=[8.92, '8.92억원', '가장 적은 달 기준'], mult='×1.75 · 최소값', max=10),
+   scene('jump', 'ACE 미국배당다우존스 · 월 100만원에 필요한 돈', 'am', L(60, **L60_CUT), name='ACE 미국배당다우존스', what='월 100만원에 필요한 돈',
+         a=[5.1, '5.10억원', '평균 기준'], b=[8.92, '8.92억원', '가장 적은 달 기준'], mult='×1.75 · 최소값', max=10, full=True),
    scene('morph', '월배당 = 매달 같은 돈?', 'am', L(61), name='ACE 미국배당다우존스 1주당 분배금, 달마다', vals=am['vals'], labels=am['labels'],
          texts=am['texts'], min=am['min'], max=am['max'], hi=am['hi'], ask='매달 같은 돈?', ans='실제 기록은 달마다 달랐다'),
    scene('months', 'JEPQ 1주당 분배금, 달마다', 'jm', L(52, 53, 54, 55, 56), name='JEPQ', unit='1주당 분배금(달러)', vals=jm['vals'], labels=jm['labels'],
@@ -76,16 +84,17 @@ SHORTS = {
  ),
  # ③ 건강보험료는 얼마부터 붙나 — 세금 떼고 월 70만원 선(롱폼 2장)
  'm1s_nhis70': dict(
-  question=['배당 받으면 건강보험료,', '얼마부터 붙을까?'], hot='얼마부터',
+  v=2, question=['배당 받으면 건보료', '얼마부터 붙을까?'], hot='얼마부터',
+  answer=dict(label='이자·배당 연 1,000만원 넘으면 · 지역가입자', items=['월 22,800원', '105,832원'], arrow=True, note='재산·다른 소득 없을 때 · 연 세전 분배 1,561만원 기준'),
   scenes=[
+   scene('premium', '선을 넘으면 붙는 몫', 'premium', L(28, **L28_CUT), who='재산·다른 소득 없을 때', a=['월 22,800원', '최저 보험료', 22800], b=['월 105,832원', '총 보험료(건강 + 장기요양)', 105832],
+         at=0, note='건강보험 7.19% + 장기요양 · 연 세전 분배 1,561만원 기준', full=True),
    scene('first', '제일 먼저 부딪히는 것', 'gauge', L(22), a='세금', b='건강보험료', sub='지역가입자 · 재산·다른 소득 없음 가정'),
    scene('gauge', '건강보험료가 붙는 선', 'gauge', L(23, 24, 25, 26, 27), max=1800, line=[1000, '연 1,000만원'],
          fill=[[900, 0.3, 'ink'], [1100, 1.35, 'ink'], [1100, 1.6, 'rise'], [1561, 4.3, 'rise']],
          rows=[[0.45, '1,000만원까지', '보험료 소득에 안 넣음', 'ink'], [1.5, '넘으면', '넘은 몫만이 아니라 전부 합산', 'rise'],
                [2.25, '세후 월 70.8만원', '미국 상장 · 국내 상장은 70.5만원', 'accent'], [4.3, '오늘 목표 연 1,561만원', '선을 넘는다', 'rise']],
          head='이자 + 배당, 1년 합계(세전)', under=['1,000만원까지 보험료 소득에 안 넣음', 3.05, 4.25]),
-   scene('premium', '선을 넘으면 붙는 몫', 'premium', L(28), who='재산·다른 소득 없을 때', a=['월 22,800원', '최저 보험료', 22800], b=['월 105,832원', '총 보험료(건강 + 장기요양)', 105832],
-         at=0.45, note='건강보험 7.19% + 장기요양 · 연 세전 분배 1,561만원 기준'),
    scene('timeline', '보험료는 1년 늦게 따라온다', 'when', L(31, 32, 33), y0='2026', y1='2027', hit=10,
          segs=[['2026년', '배당 받는 해'], ['2027년 1~10월', '고지서 그대로'], ['2027년 11월~', '이때부터 반영']], fillAt=1, hitAt=1.45,
          note=['첫해에 괜찮아도 1년쯤 뒤 바뀜', 2]),
@@ -93,16 +102,20 @@ SHORTS = {
  ),
  # ④ 분배금 많이 받으면 더 번 걸까 — 1년 원화 총수익(롱폼 6장)
  'm1s_total1y': dict(
-  question=['분배금 많이 받으면', '더 번 걸까?'], hot='더 번 걸까',
+  v=2, question=['분배금 많이 받으면', '더 번 걸까?'], hot='더 번 걸까',
+  answer=dict(label='1억 → 1년 뒤 · 원화 · 세전', items=['SCHD +19.46%', 'JEPQ +14.65%'], arrow=False, note='JEPQ는 분배 11.62% · 가격 +3.03%'),
   scenes=[
+   scene('total', '1년 전 1억을 넣었다면', 'total', L(79), max=22, full=True,
+         bars=[['SCHD', 19.46, '+19.46%', 'accent', '119,456,864원', -1], ['ACE 미국배당다우존스', 18.55, '+18.55%', 'ink', '118,547,352원', -1],
+               ['JEPQ', 14.65, '+14.65%', 'ink', '114,649,910원', -1]]),
    scene('bars', '월 100만원에 필요한 돈 — 평균 기준', 'three', L(76), max=6,
          bars=[['JEPQ', 1.38, '1.38억원', 'accent'], ['SCHD', 4.85, '4.85억원', 'ink'], ['ACE 미국배당다우존스', 5.1, '5.10억원', 'ink']],
-         note=['같은 목표에', '필요한 돈 가장 적은 JEPQ'], stamp=None),
+         note=['같은 목표에', '필요한 돈 가장 적은 JEPQ'], stamp='월 100만원(세금·건보료 뗀 뒤)에 필요한 돈 · 평균 기준', tall=True),
    scene('ask1', '1년 전 1억을 넣었다면', 'total', L(77, 78), names=['SCHD', 'ACE 미국배당다우존스', 'JEPQ'], put='1억', ask='지금 얼마?', when='1년 전(2025-10-02)에 넣었다면', now='2026-10-02',
          chips=['분배금 + 가격 변화', '원화 · 세전'], chipAt=1),
-   scene('total', '1년 전 1억을 넣었다면', 'total', L(79, 80, 81), max=22,
-         bars=[['SCHD', 19.46, '+19.46%', 'accent', '119,456,864원', 0], ['ACE 미국배당다우존스', 18.55, '+18.55%', 'ink', '118,547,352원', 1],
-               ['JEPQ', 14.65, '+14.65%', 'ink', '114,649,910원', 2]]),
+   scene('total', '1년 전 1억을 넣었다면', 'total', L(80, 81), max=22,
+         bars=[['SCHD', 19.46, '+19.46%', 'accent', '119,456,864원', -1], ['ACE 미국배당다우존스', 18.55, '+18.55%', 'ink', '118,547,352원', 0],
+               ['JEPQ', 14.65, '+14.65%', 'ink', '114,649,910원', 1]]),
    scene('pair', '분배금과 가격 변화, 따로 보면', 'split', L(82, 83, 84, 85), max=18,
          groups=[['JEPQ', [[3.03, '+3.03%', 'ink'], [11.62, '11.62%', 'accent']]], ['SCHD', [[15.73, '+15.73%', 'ink'], [3.73, '3.73%', 'accent']]],
                  ['ACE 미국배당다우존스', [[15.01, '+15.01%', 'ink'], [3.54, '3.54%', 'accent']]]],
@@ -118,8 +131,8 @@ def build(name, d):
     sc = d['scenes']
     for s in sc: s['frames'] = sum(l['frames'] for l in s['lines'])
     sc[-1]['frames'] += TAIL
-    p = {'fps': 30, 'name': name, 'question': d['question'], 'hot': d['hot'], 'track': d.get('track'),
-         'base': '2026년 10월 2일 기준 · 지난 1년 실제 기록 계산', 'long': '전체 계산은 7분 영상에서 · 설명란 첫 줄 링크', 'scenes': sc}
+    p = {'fps': 30, 'name': name, 'v': d.get('v', 1), 'question': d['question'], 'hot': d['hot'], 'track': d.get('track'),
+         'answer': d.get('answer'), 'base': '2026년 10월 2일 기준 · 지난 1년 실제 기록 계산', 'long': '전체 계산은 7분 영상에서 · 설명란 첫 줄 링크', 'scenes': sc}
     return p
 
 
@@ -128,7 +141,7 @@ if __name__ == '__main__':
     for name, d in SHORTS.items():
         p = build(name, d)
         fr = sum(s['frames'] for s in p['scenes'])
-        fn = os.path.join(VID, name + '.json')
+        fn = os.path.join(VID, name + ('_v2' if p['v'] >= 2 else '') + '.json')   # v1 json은 공개·교체된 판 그대로 둔다
         json.dump(p, open(fn, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
         print(f"{name}: {fr} 프레임 = {fr / 30:.1f}초 · 줄 {[l['n'] for s in p['scenes'] for l in s['lines']]}")
         first = first or p

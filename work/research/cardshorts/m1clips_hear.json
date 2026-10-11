@@ -1,0 +1,162 @@
+{
+ "audio/m-1/ac1e8f652c8f7e02.wav": {
+  "heard": "선을 넘어요. 다른 소득도 재산도 없는 분이라면 건강보험료가 최저 금액에서 10만 원대로 뛰어요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:23"
+ },
+ "audio/m-1/a27de8adb7976f99.wav": {
+  "heard": "계산을 해보니 제일 먼저 부딪히는 건 세금이 아니었어요. 건강보험료였어요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:23"
+ },
+ "audio/m-1/705589c0e3699f8d.wav": {
+  "heard": "이자와 배당을 합쳐 1년에 1,000만 원까지는 건강보험료에 안 들어가요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:23"
+ },
+ "audio/m-1/e9b82de30433290f.wav": {
+  "heard": "그럼 조금이라도 넘으면 어떻게 될까요? 넘은 목만이 아니라 전부가 들어갑니다.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:24"
+ },
+ "audio/m-1/ba7292b2cf1845ee.wav": {
+  "heard": "이 돈을 매달 받는 돈으로 바꿔보면 세금 떼고 한 달에 70만 원 정도예요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:24"
+ },
+ "audio/m-1/3bde227c3e075157.wav": {
+  "heard": "그러니까 그 아래까지는 건강보험료 걱정이 거의 없는 거죠.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:24"
+ },
+ "audio/m-1/77913901c6149c71.wav": {
+  "heard": "근데 오늘 목표는 그보다 크죠. 선을 넘어요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:24"
+ },
+ "audio/m-1/cfec28f45cc98363.wav": {
+  "heard": "하나 더 있어요. 건강보험료는 바로 오르지 않아요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:24"
+ },
+ "audio/m-1/217579e5847602f5.wav": {
+  "heard": "올해 받은 배당은 내년 늦가을 고지서부터 반영되거든요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:25"
+ },
+ "audio/m-1/fb0eebbd0b101aa2.wav": {
+  "heard": "첫 해에 괜찮았다고 안심하면 1년쯤 지나서 고지서가 바뀌는 셈이죠.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:25"
+ },
+ "audio/m-1/13e545f688b916c0.wav": {
+  "heard": "1등은 슈드였어요. 1억이 1억 2천만 원 가까이 됐죠.",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-11 12:25"
+ },
+ "audio/m-1/acce3044cabc4253.wav": {
+  "heard": "지금까지만 보면 제피큐가 압도적이에요. 같은 목표에 필요한 돈이 가장 적거든요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:25"
+ },
+ "audio/m-1/8f58f6aaeb5c32a9.wav": {
+  "heard": "그럼 작년에 같은 돈을 넣었다면 지금 어느 쪽이 가장 많이 남았을까요?",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:25"
+ },
+ "audio/m-1/a0c5626c88f87524.wav": {
+  "heard": "분배 금액 가격 변화까지 합쳐 봤어요. 원어로요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:26"
+ },
+ "audio/m-1/9f1dcd810710faef.wav": {
+  "heard": "에이스, 미국 배당 다우존스도 비슷했습니다.",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-11 12:26"
+ },
+ "audio/m-1/8db92e39bab3ceb4.wav": {
+  "heard": "제 PQ는 셋 중에 가장 적었어요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:26"
+ },
+ "audio/m-1/f1d907e9ed8a8c8c.wav": {
+  "heard": "분배금은 가장 많이 받았는데 가격은 거의 안 올랐거든요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:26"
+ },
+ "audio/m-1/3bd76c86c35b4364.wav": {
+  "heard": "커버드 콜은 옵션을 팔아 분배금을 만드는 대신 주가가 많이 오를 때 그 몫을 일부 내줍니다.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:26"
+ },
+ "audio/m-1/f25f3028c45f7356.wav": {
+  "heard": "그러니까 분배율이 높다는 건 필요한 돈이 적다는 뜻이면서 동시에 원금이 덜 자랄 수 있다는 뜻이에요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:26"
+ },
+ "audio/m-1/f5308d317159e303.wav": {
+  "heard": "물론 지난 기록일 뿐입니다. 장이 옆으로 기는 해에는 결과가 반대로 나올 수도 있고요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:27"
+ },
+ "audio/m-1/4053069856f7b986_from059.wav": {
+  "heard": "가장 적은 달 기준으로 다시 재면 거의 9억이 필요합니다.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:27"
+ },
+ "audio/m-1/55f6d5fcd72a0ee4.wav": {
+  "heard": "월배당이라는 이름만 보면 매달 비슷한 돈이 나올 것 같지만, 실제 기록은 달마다 꽤 달랐습니다.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:27"
+ },
+ "audio/m-1/312cb0a9538a1aa8.wav": {
+  "heard": "매달 들어온 돈을 하나씩 펼쳐보겠습니다.",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-11 12:27"
+ },
+ "audio/m-1/09b11a3a0687c05d.wav": {
+  "heard": "제 피크는 가장 적은 달이 2월이었어요.",
+  "model": "gemini-flash-lite-latest",
+  "at": "2026-10-11 12:27"
+ },
+ "audio/m-1/1033f1f61c69303c.wav": {
+  "heard": "가장 많은 달과 비교하면 차이가 꽤 나요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:28"
+ },
+ "audio/m-1/78969dafd8b3ce5d.wav": {
+  "heard": "생활비는 가장 적게 들어온 달에도 나가죠. 그래서 그 달에도 목표 금액이 남게 다시 계산했습니다.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:28"
+ },
+ "audio/m-1/d83ad034950cf479.wav": {
+  "heard": "그러면 제 PQ는 1억 7천만 원 정도로 늘어나요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:28"
+ },
+ "audio/m-1/a9d6ec83ace2f335.wav": {
+  "heard": "이 세 미국 배당 다우존스는 차이가 더 커요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:28"
+ },
+ "audio/m-1/38b4cb213b4fff37.wav": {
+  "heard": "가장 적은 달은 1주의 21원이었는데요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:28"
+ },
+ "audio/m-1/7943bdfc823ae3eb.wav": {
+  "heard": "가장 많은 달은 그 두 배를 훌쩍 넘었어요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:28"
+ },
+ "audio/m-1/4053069856f7b986.wav": {
+  "heard": "그래서 가장 적은 달 기준으로 다시 재면 거의 9억이 필요합니다.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:29"
+ },
+ "audio/m-1/eda4e171e0d93298.wav": {
+  "heard": "그러니까 월배당으로 생활비를 짠다면 평균 말고 가장 적은 달을 먼저 보셔야 해요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-11 12:29"
+ }
+}

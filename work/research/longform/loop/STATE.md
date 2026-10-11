@@ -1,4 +1,5 @@
 # 진행 상태 (루프가 매 회차 맨 위에 한 줄씩 추가)
+- 2026-10-11 15:43 [PD] W-1 올림 — https://youtu.be/ulO0kFjMSSA · 예약 공개 2026-10-12 11:30(videos.list private+publishAt 02:30Z) · Chirp 3 HD Charon 1.1 · U5 최장 7.0초(motion 줄마다 검은 띠로 항목 꺼냄)·겹침 0 · deess --chirp -12.2dB · 썸네일 w1p(9차 7.37) · 설명 카페 줄 5번째 · 합성 표시 True · 남은 것: Studio 끝 화면 M-1(API 미지원), 카페 짝 글 주소 나오면 설명 줄 교체 · G-1은 motion U5 고치는 중(11곳)
 - 2026-10-11 15:27 [PD] C-1 쇼츠 4편 예약 — 10/12 07:20 c1s_half https://youtu.be/nPG2tHYsjpU · 10/13 07:20 c1s_300 https://youtu.be/32G21MwLY_A · 10/14 07:20 c1s_receipt https://youtu.be/QlL0VK4PB_8 · 10/15 07:20 c1s_fx https://youtu.be/LEEGTOokOaM (private+publishAt, videos.list 확인, 채널 파이어맵) · 관문 cardshorts/c1s_*/review.md · 틀 video/src/C1S.tsx
 - 2026-10-11 14:20 [PD] W-1 렌더 시작(editor 14:20 재서명 통과) · 썸네일 w1n은 visual-designer 투입 중 · C-1 세로 클립(10/12 07:20~)도 투입 중
 - 2026-10-11 14:18 [PD] W-1 제작 이어서 시작(렌더→gate→예약 10/12 11:30) — 막힘 1개: 화면 글자 editor 재서명(10:29 요청이 today.md에 안 남음) → 편집 직원 투입

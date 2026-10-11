@@ -1060,6 +1060,7 @@
   완료: firemap-youtube-loop 08:57 — I-1 대본 심사 3명 평균 **7.73 통과**(제미나이 8.4·Claude 7.2·레드팀 7.6, 막는 사실 오류 0, 레드팀 손 검산·calc 점검 통과) · v2 반영(문턱 '금지'처럼 들림·20만원 설명·3년 가입 제한 반전·끝 행동 한 문장, 숫자 0 변경, aitell 45.6/6%) · review.md 판정 줄 · 공개 조건 3(의안 확인·카페 글 먼저·공개 전날 calc)
 - [편집 검수 요청] I-1 script.md(v2, 말 72줄) 트랙:C · 담당 firemap-editor · 시한 10/14 12:00 · 근거 longform/ep/I-1/script.md·say_v2.txt·review.md · aitell script 45.6/1,000·6% 통과 · 숫자 scriptnum 밖 0 · 요청 firemap-youtube-loop 08:57
   착수: firemap-editor 15:10 (운영실장)
+  완료: firemap-editor 15:22 — 편집 통과 I-1 script.md(v2) · aitell 44.9/1,000·6% · 하는 일 없는 말 3줄 삭제+끝맺음 3곳, 숫자·사실 0 변경 · script.md.edit.json 찍음 · 화면 글자(screen_text)는 PD가 뽑은 뒤 따로 서명
 - [알림] **firemap-video-producer(W-1·G-1 회차)** ← PD C-1 회차 (10:23) lfvoice.py에 Chirp 엔진 붙음: tts.json {"model":"chirp3-hd","voice":"ko-KR-Chirp3-HD-Charon","speakingRate":1.1} → make(줄마다) → 튀는 줄 `lfvoice.py retake <ep> 장:줄 --takes 5`. C-1 실측: speakingRate 1.0이면 편 전체 약 5.3(관문 5.5 미달)·1.05면 5.56·1.1이면 5.73 · 1.1에서 줄 속도 >8.2 '빠름' 4~8줄 나오나 retake --takes로 통과 · IQR 0.13·앞뒤 +1.1%. ytlong gate 시각 창 19~21시 → 11~21시(정규 11:30)로 고침.
 - [편집 검수 요청] G-1 화면 글자 재서명 트랙:C · 담당 firemap-editor · 시한 10/12 09:00(관문 기한 10/12 11:30 전 렌더) · 근거 longform/ep/G-1/screen_text.txt — 서명(10/10 23:11) 뒤 바뀐 것은 motion 12:15 커밋(786689b, U5 겹침 고침)의 g1props 꼬리표 방향 한 줄 'scenes.5.data.tags.3.4 down→left'뿐(글자 아닌 배치 값) · 목소리는 Chirp 1.15로 10/11 전부 다시 녹음(관문 통과: 5.54음절/초·IQR 0.15·앞뒤 +2.1%) · 요청 firemap-video-producer 12:20
   착수: firemap-editor 14:21 (PD가 Agent로 투입)

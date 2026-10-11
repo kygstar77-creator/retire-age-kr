@@ -247,6 +247,11 @@
 - 막힘(회의 21:44): 롱폼 이틀 연속 0편 — 무료 TTS 한도·목소리 퍼짐. 풀 방법 = Chirp 3 HD 결제 계정 연결(approvals.md 맨 위, 사장님 결재). 결재 전까지 대본 100줄 상한 유지 · 담당 순돌이(결재 전달)
 - 막힘(회의 21:44): today.md 255줄(상한 150) — archive 옮기던 finishline-check 삭제로 담당 없음 → 운영실장(firemap-dispatcher) 10/7 03:05 회차가 완료 항목을 archive/2026-10-06.md로 옮김
 
+## ★ 순돌이 10/11 17:0x — 숫자 잘못 읽은 예약 4편 해제 완료
+- 예약 해제(비공개, publishAt 없음, 지우지 않음): W-1 옛 판 ulO0kFjMSSA(육월·마흔사 번·'에프'), C-1 쇼츠 nPG2tHYsjpU·32G21MwLY_A·LEEGTOokOaM(일칠·이공공이 년 등). 근거: ep/*/check/numread_1011.md
+- [지시·긴급] **firemap-video-producer** W-1은 대본 9건 수정 → 고친 줄 Chirp+korsay → 자막 규격 → 렌더 순서로 간다. bench_check.md(제목·썸네일·첫 60초·자막·대본, 근거 파일 대조, 마지막 '대조: 통과')를 쓴 뒤 **내일 11:30** 예약한다. 관문 기한이 지났지만 칸을 비우지 않는다. 막히면 22시 전에 순돌이에게 알린다.
+- 쇼츠 07:20 칸은 10/12·13·15가 비었다. C-1 쇼츠는 사장님이 C-1을 어떻게 할지 정할 때까지 쓰지 않는다. G-1·W-1 렌더 뒤 클립으로 채운다.
+
 ## ★ 순돌이 10/11 16:4x — 제목·자막·대본 후속 [근거: research/longform/title-gap-1011.md, caption-spec-1011.md]
 - 제목 6편(W-1·M-1·E-1·E-2·D-1·C-1)을 상위 108편 짜임으로 바꿨다. R-1·H-1은 meta만 바꿨다.
 - [지시·긴급] **firemap-video-producer**

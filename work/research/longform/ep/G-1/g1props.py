@@ -135,7 +135,7 @@ def spec(key, L, A):
         pts = thin(KRX, 2); vals = [round(v / 1000) for _, v in pts]
         idx = lambda d: next(i for i, (x, _) in enumerate(pts) if x >= d)
         word = {'1년 전': '첫 번째', '1년 고점': '두 번째는', '3개월 전': '세 번째는', '1개월 전': '네 번째'}
-        side = {'1년 전': 'down', '1년 고점': 'right', '3개월 전': 'up', '1개월 전': 'down'}
+        side = {'1년 전': 'down', '1년 고점': 'right', '3개월 전': 'up', '1개월 전': 'left'}  # 10/11 U5 겹침: down이면 끝 이름 'KRX 금 1g'의 KRX를 덮음
         tags = [[idx(dt), round(g / 1000), f'{SHORT[lab]} → {won(P["KRX"][0])}원', A(word[lab], 0), side[lab], lab == '1년 고점'] for lab, dt, g, P in DATES]
         return dict(kind='line', title='산 날 영수증 4장', sub=f'1천만원어치를 그날 샀다면, 오늘 팔 때 받는 돈 · 점선 = 오늘 1g {won(NOWP)}원 · ' + NOTFEE, source=SRC_KRX,
                     data={'series': [['KRX 금 1g', 'ink', vals]], 'min': 150, 'max': 290, 'draw': 0, 'dur': 30, 'xlabels': months(pts),

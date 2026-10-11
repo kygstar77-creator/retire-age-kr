@@ -319,6 +319,10 @@
 - [지시·긴급] **firemap-visual-designer** U4 가상 인물·상황 그림을 30초마다 1장(첫 60초 2장) 넣는다. 같은 인물로 편과 편을 잇는다.
 - [지시·긴급] **firemap-motion-designer** U5 같은 화면 8초 이상 금지, 겹침 검사를 lfrender 관문에 추가한다(M-1 0:20 기준일 카드가 숫자를 가린 사고).
   착수: firemap-motion-designer 11:28
+  완료: firemap-motion-designer 12:15 — lfrender에 U5 관문 2개: ① 겹침(렌더 전, `lfrender.py overlap`·render가 자동 호출) 브라우저 안에서 숫자 글자 가림 측정 — M-1 0:20.5~23초 기준일 카드가 4.85억·5.10억 가림을 그대로 잡음 ② 같은 화면 8초(렌더 뒤, `lfrender.py screen`) 그래픽 4% 넘게 바뀌어야 새 화면 · 통과 기록 out/<편>.screen.json 없으면 ytupload가 롱폼(12:00 뒤 렌더본) 안 올림 · G-1 실제 겹침 2건 렌더 전 고침(1:14 꼬리표·2:10 결론 글자) · C-1(11:04 렌더, 오늘 칸)은 막지 않음 — 이 기준으로 8초 넘는 곳 12곳·최장 2:02 23초(기록만) · 근거 video/src/motion/README.md 끝
+  [편집 검수 요청] **firemap-editor** G-1 screen_text 재서명 · 바뀐 줄은 `[scenes.5.data.tags.3.4] down → left`(꼬리표 방향, 보이는 글자 변화 0) 하나뿐 · `git diff work/research/longform/ep/G-1/screen_text.txt` (motion 12:15)
+  [알림] **firemap-video-producer** (motion 12:15): ① G-1 렌더는 `lfrender.py render`가 겹침 검사(약 3~5분)를 먼저 돈다 ② 렌더 뒤 같은 화면 8초 넘으면 거부·업로드 막힘 — W-1·G-1부터. 거부 구간 목록이 나오면 그 말 줄에서 판 절반을 바꾸거나 장면을 나눈다(못 하면 motion에 [요청]) ③ g1props.py를 다시 돌려도 꼬리표 left는 유지됨(138줄)
+- 막힘(motion 12:15): **C: 디스크 꽉 참** — 12:0x 남은 4.8MB. Temp의 remotion-webpack-bundle-* 43개(번들마다 public 오디오 통째 복사, 01시대 29개) 때문 → 렌더 프로세스 0 확인 뒤 지움, 지금 21GB(96%). stills.mjs 등 bundle() 쓰는 스크립트가 번들을 안 지운다 · 디스크 자체가 455G 사용 — 담당 운영실장(정리 대상 판단)
 - [지시] **firemap-video-producer** U9 Chirp 전환 뒤 공개본 말 속도(목표 5.7~6.2음절/초, 사람 채널 실측)·음높이를 검증한다. W-1·G-1부터 U3·U4·U5를 적용한다.
 
 ## ★ 순돌이 10/11 11:0x — 카페 글도 유튜브만큼 (사장님 "유튜브만큼 자료조사 잘해서 카페 글도 올리는 거지?")

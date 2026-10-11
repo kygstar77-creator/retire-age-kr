@@ -5,7 +5,10 @@
 #   py -3.12 work/lfrender.py stamp  <ep폴더> <by> [note]     # 편집 통과 표시 screen_text.edit.json(sha256 = screen_text.txt 바이트) — firemap-editor만
 #   py -3.12 work/lfrender.py check  <ep폴더>                 # 관문 3개(화면 글자 편집 통과·누적 구간 막대·목소리 한결같음)만 본다
 #   py -3.12 work/lfrender.py voice  <ep폴더|voice.json>      # 목소리 관문만(다시 녹음할 줄 목록)
-#   py -3.12 work/lfrender.py render <ep폴더> [remotion 추가 인자…]  # 관문 3개 통과해야 npx remotion render 를 부른다
+#   py -3.12 work/lfrender.py render <ep폴더> [remotion 추가 인자…]  # 관문 4개(겹침 포함) 통과해야 npx remotion render, 렌더 뒤 '같은 화면 8초' 검사
+#   py -3.12 work/lfrender.py overlap <ep폴더>                # 겹침 검사만(숫자 글자가 카드·글자·도형에 가려짐) → ep/<편>/overlap.json
+#   py -3.12 work/lfrender.py screen <ep폴더> [mp4]           # 렌더본 화면 관문(같은 화면 8초 이하 + 겹침 0) → out/<편>.screen.json(ytupload가 본다)
+# U5(10/11 순돌이, quality-gap-1011 ③): A-1 첫 42초 같은 두 숫자 화면·M-1 0:46 빈 상자 8초·M-1 0:20 기준일 카드가 4.85억·5.10억을 가림.
 # 편 폴더 이름 E-2 → 컴포지션 E2, props work/video/e2.json, 출력 work/video/out/e2.mp4 (STATE.md에 적힌 렌더 명령과 같음).
 # 우회 표시는 두지 않는다(규칙 3 "통과 전 렌더는 금지"). 화면 미리보기(node stills.mjs)는 이 관문을 거치지 않는다.
 import os, re, sys, json, glob, hashlib, datetime, subprocess
@@ -18,6 +21,12 @@ F0_TOL = 0.25          # 목소리 한결같음 ①: 튀는 줄만 — 그 편 �
 DRIFT_MAX = 0.07       # ② 앞·뒤 절반 평균 차
 IQR_MAX = 0.20         # ③ 퍼짐 IQR/중앙 — 10/11 사장님 "롱폼 무조건 하루 한 개": 0.16→0.20. 사장님이 지적한 '뒤쪽 다른 목소리'(E-2)는 앞뒤 차 −11.6%로 ② 관문이 그대로 막는다. 0.16~0.20은 공개하되 meta voice_note에 남긴다(R-1·C-1 0.18, W-1 0.19)
 # 10/5 16:3x 순돌이: 줄마다 ±12%는 근거 없던 값 — 사장님이 좋다 한 E-1도 22% 줄이 걸렸다. 실측 기준(voice.json f0): 좋다 한 E-1·D-1 vs 지적된 E-2 → 줄 단위는 ±25%(튀는 줄만), 편 단위로 앞·뒤 절반 평균 차 ≤7%(E-1 −6.8·E-2 −11.6)·퍼짐 IQR/중앙 ≤0.16(E-1 0.16·E-2 0.17). 표본 4편 — 새 편이 쌓이면 다시 잰다.
+STILL_MAX = 8.0       # U5: 같은 화면 최장(초). 넘으면 거부
+STILL_FRAC = 0.04     # 그 화면 첫 프레임 대비 그래픽 영역(아래 26% 자막 띠 뺌)의 4% 넘는 점이 밝기 24 넘게 바뀌어야 '새 화면'.
+                      # 10/11 실측: 0.02는 A-1 첫 화면을 주황 동그라미·칩 바뀜마다 끊고(9.5·14초), 0.04면 23.5·20.5초로 '같은 두 숫자 화면'을 잡는다.
+                      # M-1 0:46 '오늘 따라갈 순서' 빈 상자는 0.04에서 14초. (motioncheck.py는 1초 전과 비교하는 '움직임' 검사라 작은 움직임에 속는다)
+OV_EVERY = 1.0        # 겹침 탐침 간격(초). M-1 사고는 2.5초(0.5초 간격으로 20.5~23초 6번 잡힘)
+SCREEN_FROM = '2026-10-11 12:00'   # 이 시각 뒤 렌더본부터 ytupload가 screen.json을 요구(C-1 11:04 렌더본은 그 전 — 기록만)
 TEXT_SKIP_KEYS = {'audio', 'kind', 'img', 'src', 'image', 'color', 'colors', 'id', 'font'}
 MEDIA = re.compile(r'\.(wav|mp3|mp4|png|jpe?g|webp|svg|json|pcm)$', re.I)
 
@@ -235,15 +244,96 @@ def gates(ep, vid=VID, write_text=True):
         ok = False; out.append('거부 · voice.json 없음')
     return ok, out
 
+# ───────────────────────── 4. 겹침(렌더 전) · 같은 화면 8초(렌더 뒤) — U5 ─────────────────────────
+def _ov_sources(ep, vid=VID):
+    return [props_path(ep, vid)] + tsx_files(ep, vid) + glob.glob(os.path.join(vid, 'src', 'motion', '*.tsx')) + glob.glob(os.path.join(vid, 'src', 'parts', '*.tsx'))
+
+def overlap_check(ep, vid=VID, every=OV_EVERY):
+    """(ok, [줄]). node ovcheck.mjs로 렌더 중 숫자 글자 가림을 잰다. props·tsx가 overlap.json보다 새것이 아니면 다시 재지 않는다."""
+    cid = comp_id(ep); out = os.path.join(ep, 'overlap.json')
+    srcs = [f for f in _ov_sources(ep, vid) if os.path.exists(f)]
+    fresh = os.path.exists(out) and os.path.getmtime(out) >= max(os.path.getmtime(f) for f in srcs)
+    if not fresh:
+        r = subprocess.run(['node', 'ovcheck.mjs', cid, os.path.basename(props_path(ep, vid)), out, str(every)], cwd=vid,
+                           capture_output=True, text=True, encoding='utf-8', errors='replace', shell=(os.name == 'nt'))
+        if r.returncode != 0 or not os.path.exists(out):
+            return False, [f'거부 · 겹침 검사 실패(ovcheck.mjs 종료 {r.returncode}): ' + (r.stderr or r.stdout)[-300:].replace('\n', ' ')]
+    d = json.load(open(out, encoding='utf-8'))
+    if not d.get('checked_frames'): return False, ['거부 · 겹침 검사가 프레임을 하나도 못 쟀다(탐침이 안 붙음)']
+    hits = d.get('hits', [])
+    if not hits: return True, [f"통과 · 겹침 0 ({d['checked_frames']}프레임, {every:g}초 간격{' · 재사용' if fresh else ''})"]
+    L = [f"거부 · 겹침 {len(hits)}건 — 숫자 글자가 다른 것에 가려짐 ({out})"]
+    seen = set()
+    for h in hits:
+        k = (h['num'], h['by'])
+        if k in seen: continue
+        seen.add(k); t = h['t']
+        L.append(f"  {int(t // 60)}:{t % 60:04.1f} '{h['num']}' ← {h['by']} ({h['how']}, 글자 x{h['x']} y{h['y']})")
+    return False, L
+
+def still_runs(mp4, frac=STILL_FRAC, px=24, fps=2):
+    """([(길이초, 시작초)] 긴 순, 길이초). 화면 첫 프레임(기준)과 비교해 그래픽 영역 frac 넘게 바뀌면 새 화면."""
+    import imageio_ffmpeg, numpy as np
+    W, H = 160, 90
+    r = subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), '-hide_banner', '-loglevel', 'error', '-i', mp4, '-vf',
+                        f'fps={fps},crop=iw:ih*0.74:0:0,scale={W}:{H},format=gray', '-f', 'rawvideo', '-'], capture_output=True)
+    fr = np.frombuffer(r.stdout, np.uint8).reshape(-1, H, W).astype(np.int16)
+    runs, a = [], 0
+    for i in range(1, len(fr)):
+        if (np.abs(fr[i] - fr[a]) > px).mean() > frac: runs.append(((i - a) / fps, a / fps)); a = i
+    runs.append(((len(fr) - a) / fps, a / fps))
+    return sorted(runs, reverse=True), len(fr) / fps
+
+def screen_gate(ep, mp4=None, vid=VID, overlap=True):
+    """렌더본 화면 관문: 같은 화면 STILL_MAX초 이하 + 겹침 0. 결과를 out/<편>.screen.json에 남긴다(ytupload가 본다)."""
+    low = comp_id(ep).lower(); mp4 = mp4 or os.path.join(vid, 'out', low + '.mp4')
+    if not os.path.exists(mp4): return False, [f'거부 · 렌더본 없음: {mp4}']
+    runs, dur = still_runs(mp4)
+    bad = [r for r in runs if r[0] > STILL_MAX]
+    s_ok = not bad
+    L = [('통과' if s_ok else '거부') + f' · 같은 화면 최장 {runs[0][0]:.1f}초(기준 {STILL_MAX:g}초 이하) · {STILL_MAX:g}초 넘는 곳 {len(bad)}곳 · 길이 {dur:.0f}초']
+    L += [f'  {g:.1f}초  {int(st // 60)}:{st % 60:04.1f}~' for g, st in bad[:15]]
+    o_ok, o_lines = overlap_check(ep, vid) if overlap else (False, ['확인 안 함 · 겹침(--no-overlap)'])
+    L += o_lines
+    ok = s_ok and o_ok
+    rec = {'mp4': os.path.basename(mp4), 'size': os.path.getsize(mp4), 'mtime': os.path.getmtime(mp4), 'ok': ok,
+           'still_max': round(runs[0][0], 1), 'still_over': [[round(g, 1), round(st, 1)] for g, st in bad], 'overlap_ok': o_ok,
+           'at': datetime.datetime.now().strftime('%Y-%m-%d %H:%M'), 'rule': f'U5 같은 화면 <={STILL_MAX:g}초·겹침 0 (frac {STILL_FRAC})'}
+    with open(os.path.splitext(mp4)[0] + '.screen.json', 'w', encoding='utf-8') as f: json.dump(rec, f, ensure_ascii=False)
+    return ok, L
+
+def screen_ok_for_upload(mp4):
+    """ytupload용 (ok, 이유). 롱폼 렌더본(out/<x1>.mp4·<x1>_ds.mp4)만 본다. SCREEN_FROM 전 렌더본은 요구하지 않는다."""
+    b = os.path.basename(mp4); m = re.fullmatch(r'([a-z]\d+)(_ds)?\.mp4', b)
+    if not m: return True, '롱폼 렌더본 아님 — 화면 관문 해당 없음'
+    base = os.path.join(os.path.dirname(os.path.abspath(mp4)), m.group(1) + '.mp4')
+    src = base if os.path.exists(base) else mp4
+    t0 = datetime.datetime.strptime(SCREEN_FROM, '%Y-%m-%d %H:%M').timestamp()
+    if os.path.getmtime(src) < t0: return True, f'{SCREEN_FROM} 전 렌더본 — 화면 관문 요구 안 함'
+    jp = os.path.splitext(base)[0] + '.screen.json'
+    if not os.path.exists(jp): return False, '화면 관문 기록 없음 — py -3.12 work/lfrender.py screen <ep폴더> 먼저'
+    d = json.load(open(jp, encoding='utf-8'))
+    if d.get('size') != os.path.getsize(src) or abs(d.get('mtime', 0) - os.path.getmtime(src)) > 1:
+        return False, '화면 관문 뒤 렌더본이 바뀌었다 — lfrender.py screen 다시'
+    if not d.get('ok'): return False, f"화면 관문 거부 기록(같은 화면 최장 {d.get('still_max')}초·겹침 {'0' if d.get('overlap_ok') else '있음/안 잼'}) — 고쳐서 다시 렌더"
+    return True, f"화면 관문 통과(같은 화면 최장 {d.get('still_max')}초·겹침 0, {d.get('at')})"
+
 def render(ep, extra=(), vid=VID):
     ok, out = gates(ep, vid)
+    o_ok, o_lines = overlap_check(ep, vid); ok &= o_ok; out += o_lines
     print(*out, sep='\n')
     if not ok:
         print('렌더하지 않는다 — 위 거부를 고친 뒤 다시'); return 1
     cid = comp_id(ep); low = cid.lower()
     cmd = ['npx', 'remotion', 'render', 'src/index.ts', cid, f'out/{low}.mp4', '--pixel-format=yuv420p', f'--props={low}.json', *extra]
     print('렌더:', ' '.join(cmd))
-    return subprocess.call(cmd, cwd=vid, shell=(os.name == 'nt'))
+    rc = subprocess.call(cmd, cwd=vid, shell=(os.name == 'nt'))
+    if rc: return rc
+    s_ok, s_lines = screen_gate(ep, vid=vid)
+    print(*s_lines, sep='\n')
+    if not s_ok:
+        print('렌더본 화면 관문 거부 — 올리지 않는다(ytupload가 막는다). 위 구간에 장면을 나누거나 판 절반 이상을 바꾼 뒤 다시'); return 1
+    return 0
 
 
 if __name__ == '__main__':
@@ -261,4 +351,10 @@ if __name__ == '__main__':
     if cmd == 'check':
         ok, out = gates(ep); print(*out, sep='\n'); print('관문 통과' if ok else '관문 거부'); sys.exit(0 if ok else 1)
     if cmd == 'render': sys.exit(render(ep, a[2:]))
+    if cmd == 'overlap':
+        ok, out = overlap_check(ep); print(*out, sep='\n'); sys.exit(0 if ok else 1)
+    if cmd == 'screen':
+        rest = [x for x in a[2:] if x != '--no-overlap']
+        ok, out = screen_gate(ep, os.path.abspath(rest[0]) if rest else None, overlap='--no-overlap' not in a)
+        print(*out, sep='\n'); print('화면 관문 통과' if ok else '화면 관문 거부'); sys.exit(0 if ok else 1)
     print('모르는 명령:', cmd); sys.exit(2)

@@ -113,12 +113,12 @@ export const WaterfallPieces: React.FC<WaterfallPiecesProps> = (p) => {
           </svg>
         ) : null}
 
-        {/* 결론: 0선 아래 빈 자리(첫째·둘째 칸)에 두 줄 — 1차는 판 위 끝 [자막] 띠·+6.65%와 겹쳤다 */}
+        {/* 결론: 0선 아래 빈 자리(첫째·둘째 칸)에 두 줄 — 1차는 판 위 끝 [자막] 띠·+6.65%와 겹쳤다 · zy+34는 '산 값' 글자 아랫부분을 잘랐다(10/11 겹침 검사) */}
         {f >= p.note[1] ? (() => {
           const g = interpolate(f, [p.note[1] + 6, p.note[1] + 24], [0, 1], {...CL, easing: out});
           const [l1, l2] = p.note[0].split(' 환율');
           return (
-            <div style={{...F, position: 'absolute', left: x0 + 10, top: zy + 34, fontWeight: 700, fontSize: 50, lineHeight: 1.18, letterSpacing: -1, color: T.accent,
+            <div style={{...F, position: 'absolute', left: x0 + 10, top: zy + 54, fontWeight: 700, fontSize: 50, lineHeight: 1.18, letterSpacing: -1, color: T.accent,
               opacity: g, transform: `translateY(${(1 - g) * 14}px)`, whiteSpace: 'nowrap', textShadow: '0 0 14px #fff, 0 0 6px #fff'}}>
               <div>{l1}</div><div>{l2 !== undefined ? '환율' + l2 : ''}</div>
               <div style={{height: 6, width: 560 * g, background: T.accent, borderRadius: 3, marginTop: 8}} />

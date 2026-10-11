@@ -47,6 +47,11 @@ def upload(path, title, desc, privacy='private', tags='', paid=False):
     import ytplaceholder
     other = [x for x in ytplaceholder.find(title + '\n' + desc) if x != 'VIDEOID']
     if other: print('올리지 않는다: 자리표시자', other); sys.exit(7)
+    # 화면 관문(10/11 U5): 롱폼 렌더본은 같은 화면 8초 이하·숫자 겹침 0 기록(out/<편>.screen.json)이 있어야 올린다.
+    import lfrender
+    ok_sc, msg_sc = lfrender.screen_ok_for_upload(path)
+    if not ok_sc: print('올리지 않는다:', msg_sc); sys.exit(8)
+    print(msg_sc)
     from googleapiclient.http import MediaFileUpload
     yt = service()
     body = {'snippet': {'title': title[:100], 'description': desc[:5000], 'tags': [t.strip() for t in tags.split(',') if t.strip()][:30], 'categoryId': '22', 'defaultLanguage': 'ko', 'defaultAudioLanguage': 'ko'},

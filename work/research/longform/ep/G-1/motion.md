@@ -44,3 +44,8 @@
 - 요청 1·(6장)1 반영: g1props.py swap_motion이 g1open.py·wfprops.py·asymprops.py를 voice.json 길이로 돌려 open·wf1(piece1+prem+piece1b)·math 자리에 끼움, G1.tsx kind 'open'·'waterfall'·asym(data.asym 있으면 AsymClimb).
 - 본편 스틸에서 고친 것: WaterfallPieces 0선 이름표 왼쪽 맞춤(끝 맞춤이면 화면 왼쪽 끝에 잘림) · AsymClimb 도장 두 줄·RX+barW/2+80(카메라 1.08배에서 분홍 테두리 겹침).
 - 남은 것: 녹음 뒤 motioncheck(요청 2), editor 재서명(today.md).
+
+## 10/11 12:14 겹침 검사(U5) — 렌더 전 고침 2건 (motion)
+- 1:14~1:20 '1개월 전 → 9,180,900원' 꼬리표(down)가 끝 이름 'KRX 금 1g'의 KRX를 덮음 → side 'left'(g1props.py 138줄·g1.json). 겹침 0 확인.
+- 2:10~2:14 결론 '금값이 아니라' 글자가 0선 '25.10.02 산 값' 아랫부분을 자름 → WaterfallPieces 결론 top zy+34→zy+54. 겹침 0 확인.
+- 화면 글자 diff는 꼬리표 방향 단어 'down'→'left' 한 줄(보이는 글자 아님) — 편집 재서명 필요.

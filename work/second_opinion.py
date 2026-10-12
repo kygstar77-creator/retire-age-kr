@@ -56,6 +56,9 @@ ROLES = {
 
 def main(path, role='전략'):
     doc = open(path, encoding='utf-8').read()[:60000]
+    # 회의 결정 문서는 '읽는 법' 헤더가 없으면 사용자 참모가 회의록을 서비스 화면으로 읽는다(5번째, meeting 10/12 21:3x)
+    if 'decisions' in path.replace('\\', '/').split('/')[-1] and '읽는 법' not in doc[:1500]:
+        sys.exit("멈춤: 결정 문서 첫머리에 '> **읽는 법: 이 문서는 내부 회의록이다…**' 헤더부터(2026-10-10-decisions.md 2줄 복사)")
     body = {'contents': [{'parts': [{'text': ROLES.get(role, ASK) + doc}]}]}
     # SO_NOLITE=1: 심사(대본·카피)에서 lite 모델을 빼고 flash만 — lite는 같은 대본에 5.6~7.8로 흔들렸다(D-1 10/02, youtube-loop)
     for m in [x for x in MODELS if not (os.environ.get('SO_NOLITE') and 'lite' in x)]:

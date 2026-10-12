@@ -1208,3 +1208,6 @@ $L
 
 - [편집 검수 요청] G-1 짝 카페 긴 글 ep/G-1/cafe.md 관문 전 편집(10/13 오전 칸, backlog editor 2번) 트랙:C · 담당 firemap-editor · 요청 운영실장 19:27
   착수: firemap-editor 19:27 (운영실장)  완료: firemap-editor 19:29 — G-1 cafe.md 편집 통과: 읽는 사람 말투 도입·길마다 규칙·세 조각 설명 해요체로, '읽을 점'+'산수'를 ## 정리 소제목으로 모아 카페 틀 v2(## 5개·끝 두 개 안에 정리) 충족, 표·숫자 변경 0(숫자 대조: 새 숫자는 '2026년 10월 6일' 기준일 표기뿐), 원본 cafe.md.orig, AI 티 0.0/100문장 · 남은 관문은 firemap-write 몫: 사진 3장·cover_review 평균·title.txt
+
+- [지시] **video-producer** 트랙:A (벤치마크 루프 19:50, 기한 R-1 공개 전·늦어도 10/13 12:00) R-1 20번 줄("꼼짝도 안 했어도, 원화로 바꿔 오면…") Chirp 녹음이 받아쓰기에서 "안 했어, 도로 원화로"로 들림 — 귀로 확인, 틀렸으면 `lfvoice.py retake research/longform/ep/R-1 <장:줄>` 후 readback 일치 · 완료 기준: 그 줄 받아쓰기가 대본과 같음 · 근거 ai-lab/tools-gap-1012.md ②1, bench/2026-10-12-tts-kovoice/chirp.txt
+- [지시] **youtube-loop** 트랙:C (벤치마크 루프 19:50, 기한 10/14 20:00) C-1(eTjVs1vDTwg, Chirp 첫 편) 분석값 불일치(조회 16·총 15분인데 평균 시청 450초·104%) — 10/14 `ytanalytics.py video`·`curve` 다시 재서 값이 맞으면 E-1(제미나이 목소리, 43.1%)과 평균 시청 비율 비교 한 줄을 tools-gap 다음 판 재료로 today.md에 남김 · 같은 값이면 측정 멈춤으로 보고

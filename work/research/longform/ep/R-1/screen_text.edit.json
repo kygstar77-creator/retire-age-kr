@@ -1,1 +1,1 @@
-{"by": "firemap-editor", "at": "2026-10-12 19:04", "sha": "3fd9a8d6e740b73df72a13cebfb43929d704b0423e1a2d22f1e22d0a59870ebd", "sha_of": "screen_text.txt bytes", "note": "04549a7 대비 diff '영수증' 빼기만(제목·자막·R1.tsx 7곳·말 13줄), 숫자 0 변경, 말 90줄 script.md와 일치, 영수증 0곳"}
+{"by": "firemap-editor", "at": "2026-10-12 19:14", "sha": "b488f21263efcbf27a54d6e98090c5a9f1ef011713e319ba6f8585f07990e62e", "sha_of": "screen_text.txt bytes", "note": "3fd9a8d6 서명본 대비 [scenes.16.lines.2.text] 끝 인사 줄 삭제 1줄뿐, 숫자 0 변경"}

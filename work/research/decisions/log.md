@@ -1817,3 +1817,4 @@
 2026-10-12 22:42 · firemap-write · 22:10 칸 didim1012 발행 cafe/256 verify OK 1313자·사진 3/3 · 블로그는 쉬는 날이라 안 올림 · 이유: 회의 배정 칸
 2026-10-12 22:42 · firemap-write · work/titlegate.py 만듦(제목 후보를 틀 v2·readcheck·발행기 겹침으로 먼저 거름) · 이유: 이번 회차 심사 통과안 셋이 기계 관문에 차례로 걸려 심사를 세 번 다시 돌림
 2026-10-12 23:11 · firemap-write · 10/13 12:10·14:10·16:10 세 칸(issnote1012·kidcred1012·yuryu1011) 전제 줄 확인·editgate stamp 통과·gates_ok 적음 · 이유: 관문 기한(06:10·08:10·10:10) 전에 칸 채우기
+2026-10-12 23:20 · firemap-video-producer · 쇼츠 비축 r1s_spytax(R-1 롱폼 클립) 관문 통과 후 reserve.shorts 등록, 업로드는 칸 배정 때 · 비축 최소 1 충족(0/1→1/1), 클립 비축 4편 기준엔 아직 부족 · 근거 review.md

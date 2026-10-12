@@ -44,6 +44,39 @@ SHORTS['r1s_fx'] = dict(
   ],
 )
 
+# ── R-1: 해외 ETF 판 이익, 세금은 얼마·언제 내나 (줄 37·38 → 39·40 → 41·42·43 → 45·46 → 47) · 10/12 23시 비축 ──
+tx = RS['spytax']['data']
+srct = RS['spytax']['source']
+a = L(37, 38)
+b = L(39, 40)
+c = L(41, 42, 43)
+d = L(45, 46)
+e = L(47)
+SHORTS['r1s_spytax'] = dict(
+  question=['해외 ETF 판 이익,', '세금은 얼마, 언제 내나?'], hot='언제',
+  base='소득세법·한미 조세조약 · SPY 1억 계산 · 지나간 값',
+  answer=dict(label='SPY 1억 · 1년 들고 판 뒤', items=['판 이익 세금 191만원', '내는 때: 다음 해 5월'], arrow=False,
+              note='분배금 15%는 미국에서 먼저 뗌 · 공제 250만원'),
+  scenes=[
+   scene('vs', '세금은 두 군데서 뗀다', srct, a, full=True,
+         tiles=[['분배금에서', '미국 15%', '한미 조세조약 · 국내에서 또 안 뗌', 0, 'ink'],
+                ['판 이익에서', '국내 22%', '공제 250만원 넘는 부분만', at(a, 1) + 90, 'accent']]),
+   scene('receipt', '분배금에서 빠진 돈', srct, b, head='SPY 1억 · 분배금 세금 · 단위 원', size=46,
+         rows=[[tx['rows'][0][0], tx['rows'][0][1], 'tax', 0]],
+         side=['16만 4천원', at(b, 1), '분배금에서 미국이 먼저 뗀 돈']),
+   scene('receipt', '판 이익 세금 계산', srct, c, head=tx['head'], size=46,
+         rows=[[tx['rows'][1][0], tx['rows'][1][1], 'in', 0], [tx['rows'][2][0], tx['rows'][2][1], 'dim', 110],
+               [tx['rows'][3][0], tx['rows'][3][1], 'in', at(c, 2)], [tx['rows'][4][0], tx['rows'][4][1], 'tax', at(c, 2.3)]],
+         side=['22%', at(c, 2), tx['side'][2]]),
+   scene('vs', '세금 내는 때', srct, d,
+         tiles=[['팔 때', '바로 안 빠짐', '통장엔 팔고 난 돈 그대로', 10, 'ink'],
+                ['판 이익 세금 내는 때', '다음 해 5월', '내가 직접 신고 · 확정신고 5월 1일~31일', at(d, 1), 'accent']]),
+   scene('receipt', '통장에 찍힌 돈이 전부는 아니다', srct, e, head='SPY 판 이익 세금 · 다음 해 5월 직접 신고', size=46,
+         rows=[['판 이익 세금', '−1,916,240', 'tax', 0]],
+         side=['다음 해 5월', 40, '다 써 버리면 신고할 때 당황']),
+  ],
+)
+
 
 if __name__ == '__main__':
     for name, dd in SHORTS.items():

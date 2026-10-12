@@ -31,7 +31,17 @@
   ]
  },
  "reserve": {
-  "shorts": [],
+  "shorts": [
+   {
+    "item": "r1s_spytax",
+    "ep": "R-1",
+    "pkg": "work/research/cardshorts/r1s_spytax",
+    "status": "관문 통과(compete 6·숫자 대조 0·읽기 어긋남 0·치직 0·쉿소리 틀 0·0초 프레임·8초 이하) — R-1 롱폼 클립 46.25초 C1S 틀, 새 녹음 없음, props work/video/r1s_spytax.json, mp4 work/video/out/r1s_spytax_ds.mp4(미업로드). 쓸 때: R-1 공개(10/14 11:30) 뒤 날짜, 10/14 19:20 r1s_fx와 같은 날 금지(10/15 07:20이면 가능), 업로드는 w1g1clips_up.py 방식(upload.json 먼저). review.md",
+    "by": "firemap-video-producer",
+    "at": "2026-10-12 23:20",
+    "gates_ok": "2026-10-12 23:20"
+   }
+  ],
   "cafe": [
    {
     "item": "npsage1009",

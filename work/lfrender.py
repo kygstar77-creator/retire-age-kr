@@ -223,6 +223,18 @@ def print_voice(res, ok, where=''):
 
 
 # ───────────────────────── 관문 묶음 · 렌더 ─────────────────────────
+LOGO_FROM = 60   # 10/13 벤치 U3(quality-gap-1013): 첫 60초에 로고 카드 0 — W-1 0:16~0:20 로고가 남았던 일
+
+def logo_check(props):
+    # scenes[].kind == 'logo'가 첫 LOGO_FROM초 안에서 시작하면 거부. 장면 길이(frames)가 없는 props는 잴 수 없어 그렇게 적고 통과.
+    sc = props.get('scenes') if isinstance(props, dict) else None
+    if not isinstance(sc, list) or not all(isinstance(s, dict) and 'frames' in s for s in sc): return True, '통과 · 로고 위치(장면 길이 없는 props — 확인 안 함)'
+    fps, t = props.get('fps', 30), 0
+    for s in sc:
+        if s.get('kind') == 'logo' and t / fps < LOGO_FROM: return False, f'거부 · 로고 카드가 {t / fps:.1f}초에 나옴(첫 {LOGO_FROM}초 밖으로 옮기거나 빼기)'
+        t += s['frames']
+    return True, f'통과 · 첫 {LOGO_FROM}초 로고 카드 없음'
+
 def gates(ep, vid=VID, write_text=True):
     """(ok, [줄]) — 화면 글자를 다시 뽑아(write_text) 편집 통과 해시와 대조, 누적 구간, 목소리."""
     ok, out = True, []
@@ -235,6 +247,7 @@ def gates(ep, vid=VID, write_text=True):
     if not e_ok: out.append(f'  firemap-editor가 {os.path.join(ep, "screen_text.txt")}를 보고: py -3.12 work/lfrender.py stamp {ep} firemap-editor "<무엇을 봤는지>"')
     c_ok, msgs = cumulative_check(props); ok &= c_ok
     out += msgs or ['통과 · 누적 구간 막대 없음']
+    l_ok, l_msg = logo_check(props); ok &= l_ok; out.append(l_msg)
     vp = os.path.join(ep, 'voice.json')
     if os.path.exists(vp):
         v_ok, res = voice_check(json.load(open(vp, encoding='utf-8'))); ok &= v_ok

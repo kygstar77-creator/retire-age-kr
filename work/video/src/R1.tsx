@@ -305,7 +305,8 @@ const Act: React.FC<{s: RScene}> = ({s}) => {
 const End: React.FC<{s: RScene}> = ({s}) => {
   const d = s.data; const f = useCurrentFrame();
   // U5: 말이 끝나면 부제(시리즈·재생목록)를 검은 카드로, 5초 뒤 주황으로(오른쪽 점선 상자는 끝 화면 자리라 비움)
-  const last = s.lines.length - 1; const e = last >= 0 ? lineAt(s, last) + s.lines[last].frames + 6 : 1e9;
+  // 10/13: 끝 댓글 질문 줄이 붙어 같은 화면 10.5초 — props data.card(그 질문 시작 프레임)가 있으면 그때 카드를 띄운다
+  const last = s.lines.length - 1; const e = typeof d.card === 'number' ? d.card : last >= 0 ? lineAt(s, last) + s.lines[last].frames + 6 : 1e9;
   return (
     <>
       {s.sub && f >= e ? <DarkCard at={e} x={150} y={705} w={760} bg={f >= e + 150 ? T.accent : T.ink} items={splitBy(s.sub, '·').map((t, i) => ({t, size: i ? 32 : 40}))} /> : null}

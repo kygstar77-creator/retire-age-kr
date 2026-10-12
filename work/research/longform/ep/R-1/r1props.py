@@ -129,7 +129,8 @@ for t, d, v in [('SPY', '20260702', 123037245), ('SPY', '20260910', 107755946), 
 SWI = {t: {d: i for i, (d, _) in enumerate(SW[t])} for t in SW}
 
 # 장면 = (키, 장 번호, 시작 문장 조각 — None이면 장 처음부터). 장면마다 20~40초, 그 안에서 문장마다 표시가 하나씩 더해진다.
-CUTS = [('open', '0.', None), ('promise', '0.', '파이어맵은 이렇게'), ('logo', '로고', None),
+# 10/13 PD(벤치 10/13 A19·U3): 첫 60초 자기 방법 소개(promise)·시리즈 소개 줄 삭제, 로고 카드는 첫 60초에서 뺌 — spec 코드는 남김
+CUTS = [('open', '0.', None),
         ('dep', '1.', None), ('fx', '2.', None), ('swing', '2.', '그런데 시작과 끝만'),
         ('spy', '3.', None), ('spytax', '3.', '자, 이제 세금이에요'), ('spycal', '3.', '그런데 이 세금은 좀 특이해요'),
         ('schd', '4.', None), ('gold', '5.', None),
@@ -164,7 +165,7 @@ def spec(key, L, A):
     if key == 'dep':
         return dict(kind='receipt', title='예금은 얼마 남았나', sub='2025년 10월 새로 가입한 1년 정기예금 평균 연 2.58%', source=SRC_DEP,
                     data={'head': '정기예금 1년 · 1억 · 단위 원', 'rows': R([['넣은 돈', won(100_000_000), 'in', 0], ['이자 연 2.58%', '+' + won(RC['DEP']['gain']), 'in', A('258만원', 0)],
-                                                                    ['세금 15.4%', '−' + won(RC['DEP']['tax']), 'tax', A('39만 7천원', 0)], ['1년 뒤 통장', won(RC['DEP']['net']), 'net', A('2.18%', 0)]]),
+                                                                    ['세금 15.4%', '−' + won(RC['DEP']['tax']), 'tax', A('40만원 가까이', 0)], ['1년 뒤 통장', won(RC['DEP']['net']), 'net', A('2.18%', 0)]]),
                           'side': [PCT['DEP'], A('2.18%', 10), '넣은 돈보다 늘어난 비율'], 'callout': ['받을 돈이 처음부터 정해짐', A('줄이 몇 개 없죠', 0)]})
     if key == 'fx':
         return dict(kind='fx', title='달러로 바꿀 때 생기는 줄', sub='1달러를 사는 데 드는 원화 — 작년 그날과 올해 같은 날', source=SRC_FX,
@@ -293,7 +294,7 @@ def spec(key, L, A):
                                                             ['③ 2천만원까지 남은 돈', '종합과세·피부양자', 'hi', A('그리고 1천만원과', 18)]])})
     if key == 'end':
         return dict(kind='end', title='2편에서 이어서', sub='1억, 1년 뒤 남은 돈 시리즈 · 재생목록에 차례대로', source=PAST,
-                    data={'text': '다음 편', 'label': '1억, 1년 뒤 남은 돈', 'note': '같은 규칙으로, 실제 그날 넣었다면', 'start': A('다음 편에서도', 0)})
+                    data={'text': '다음 편', 'label': '1억, 1년 뒤 남은 돈', 'note': '같은 규칙으로, 실제 그날 넣었다면', 'start': A('다음 편에서도', 0), 'card': A('여러분의 1억은', 0)})
     raise KeyError(key)
 
 

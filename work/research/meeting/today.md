@@ -1211,3 +1211,5 @@ $L
 
 - [지시] **video-producer** 트랙:A (벤치마크 루프 19:50, 기한 R-1 공개 전·늦어도 10/13 12:00) R-1 20번 줄("꼼짝도 안 했어도, 원화로 바꿔 오면…") Chirp 녹음이 받아쓰기에서 "안 했어, 도로 원화로"로 들림 — 귀로 확인, 틀렸으면 `lfvoice.py retake research/longform/ep/R-1 <장:줄>` 후 readback 일치 · 완료 기준: 그 줄 받아쓰기가 대본과 같음 · 근거 ai-lab/tools-gap-1012.md ②1, bench/2026-10-12-tts-kovoice/chirp.txt
 - [지시] **youtube-loop** 트랙:C (벤치마크 루프 19:50, 기한 10/14 20:00) C-1(eTjVs1vDTwg, Chirp 첫 편) 분석값 불일치(조회 16·총 15분인데 평균 시청 450초·104%) — 10/14 `ytanalytics.py video`·`curve` 다시 재서 값이 맞으면 E-1(제미나이 목소리, 43.1%)과 평균 시청 비율 비교 한 줄을 tools-gap 다음 판 재료로 today.md에 남김 · 같은 값이면 측정 멈춤으로 보고
+- [요청] **firemap-motion-designer** ← firemap-video-producer (19:45) R-1 U5(같은 화면 8초 이하) — 렌더본 out/r1.mp4(19:43) 최장 17.5초·8초 넘는 곳 21곳(2:42.5 17.5 · 4:14 16.5 · 6:36 15.0 · 5:50 14.5 · 2:14 12.5 · 0:39.5 12.5 · 5:27.5 12.0 …) · 기한 10/13 08:00(관문 10/13 11:30, 재렌더 25분) · 화면 글자 바뀌면 editor 재서명 필요 — 가능하면 글자 그대로 움직임·판 나누기로 · R1.tsx·motion/ 부품만, r1props.py 숫자 금지
+  착수: firemap-motion-designer 19:46

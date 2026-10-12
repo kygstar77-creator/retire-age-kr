@@ -23,12 +23,12 @@
 [scenes.0.data.zoom.cut] 줄어든 몫 3,072,208원
 [scenes.0.lines.0.text] 퇴직금이든 적금 만기든, 어느 날 통장에 1억이 들어왔다고 해 볼게요.
 [scenes.0.lines.1.text] 예금에 넣으시겠어요? 미국 주식 ETF를 사시겠어요? 아니면 금을 사 두시겠어요?
-[scenes.0.lines.2.text] 그래서 작년 이맘때 네 군데에 똑같이 넣었다 치고, 세금·환율 뗀 영수증을 뽑아 봤어요.
+[scenes.0.lines.2.text] 그래서 작년 이맘때 네 군데에 똑같이 넣었다 치고, 세금·환율까지 떼고 남은 돈을 계산해 봤어요.
 [scenes.0.lines.2.cap] 2025년 10월 2일에 넣고 2026년 10월 2일에 뺐다면 · 예금 · S&P500 · SCHD · 금
 [scenes.0.lines.3.text] 결과부터 하나 말씀드리면, 세금이 맨 위와 맨 아래 사이 간격을 307만원이나 줄였어요.
 [scenes.0.lines.3.cap] 맨 위(SCHD)와 맨 아래(예금) 차이 · 세금 전 16,876,863원 → 세금 뒤 13,804,655원
 [scenes.1.key] promise
-[scenes.1.title] 1억의 1년 영수증
+[scenes.1.title] 1억, 1년 뒤 남은 돈
 [scenes.1.sub] 공식 원문 숫자로, 내 돈에 실제로 남는 금액만
 [scenes.1.source] 한국은행 ECOS · 금융감독원 · 법제처 · 거래소 종가
 [scenes.1.data.rows.0.0] 원문 숫자
@@ -44,13 +44,13 @@
 [scenes.1.data.rows.3.1] 통장에 찍히는 금액
 [scenes.1.data.rows.3.2] net
 [scenes.1.lines.0.text] 파이어맵은 이렇게, 공개된 숫자로 내 돈에 실제로 남는 금액만 계산합니다.
-[scenes.1.lines.1.text] 오늘은 '1억의 1년 영수증' 시리즈, 그 첫 번째 편이에요.
-[scenes.1.lines.1.cap] 1억의 1년 영수증 · 1편
-[scenes.1.lines.2.text] 그럼 순위까지 뒤집혔을까요? 영수증을 끝까지 떼어 보면 답이 나와요.
+[scenes.1.lines.1.text] 오늘은 '1억, 1년 뒤 남은 돈' 시리즈, 그 첫 번째 편이에요.
+[scenes.1.lines.1.cap] 1억, 1년 뒤 남은 돈 · 1편
+[scenes.1.lines.2.text] 그럼 순위까지 뒤집혔을까요? 네 곳을 끝까지 계산해 보면 답이 나와요.
 [scenes.2.key] logo
-[scenes.2.data.sub] 1억의 1년 영수증 · 1편 · 2025.10.2 → 2026.10.2
+[scenes.2.data.sub] 1억, 1년 뒤 남은 돈 · 1편 · 2025.10.2 → 2026.10.2
 [scenes.3.key] dep
-[scenes.3.title] 예금 영수증
+[scenes.3.title] 예금은 얼마 남았나
 [scenes.3.sub] 2025년 10월 새로 가입한 1년 정기예금 평균 연 2.58%
 [scenes.3.source] 한국은행 ECOS 121Y002(은행 신규 정기예금 1년 가중평균) · 소득세법 제129조 · 지방세법 제103조의13
 [scenes.3.chapter] 1장
@@ -68,7 +68,7 @@
 [scenes.3.data.side.0] +2.18%
 [scenes.3.data.side.2] 넣은 돈보다 늘어난 비율
 [scenes.3.data.callout.0] 받을 돈이 처음부터 정해짐
-[scenes.3.lines.0.text] 첫 번째 영수증은 예금이에요.
+[scenes.3.lines.0.text] 첫 번째는 예금이에요.
 [scenes.3.lines.1.text] 작년 10월에 은행에서 새로 가입한 정기예금 금리는 평균 연 2.58%였어요.
 [scenes.3.lines.1.cap] 은행 신규 정기예금(1년) 평균 금리 · 2025년 10월 · 연 2.58% (한국은행 · 실제 가입 금리)
 [scenes.3.lines.2.text] 그럼 이자는 258만원이 붙어요.
@@ -90,7 +90,7 @@
 [scenes.4.data.b] 1,359.6원
 [scenes.4.data.pct] 달러 값 −3.30%
 [scenes.4.data.loss] −3,300,142원
-[scenes.4.lines.0.text] 두 번째는 영수증에 한 줄이 더 생기는 이야기예요.
+[scenes.4.lines.0.text] 두 번째는 계산에 한 줄이 더 붙는 이야기예요.
 [scenes.4.lines.1.text] 나머지 세 곳은 모두 미국 ETF라서, 원화를 달러로 바꿔서 사고 팔 때 다시 원화로 바꿔요.
 [scenes.4.lines.2.text] 작년 그날 환율은 1,406원이었어요.
 [scenes.4.lines.3.text] 올해 같은 날에는 1,359.6원이었고요.
@@ -139,9 +139,9 @@
 [scenes.5.lines.3.cap] SPY 1억 원화 평가액 2026.7.2 123,037,245원 → 2026.9.10 107,755,946원 · 그사이 달러 가격은 +1.75%
 [scenes.5.lines.4.text] 금은 더 컸어요. 가장 높았던 날부터 30% 가까이 내려왔거든요.
 [scenes.5.lines.4.cap] 금(GLD) 1억 원화 평가액 2026.1.28 143,638,454원 → 2026.9.28 102,425,567원 (−28.69%)
-[scenes.5.lines.5.text] 그러니까 1년 영수증은 끝날 하루의 사진이고, 그 사이 길은 훨씬 거칠었습니다.
+[scenes.5.lines.5.text] 그러니까 1년 결과는 끝날 하루만 본 숫자고, 그 사이 길은 훨씬 거칠었습니다.
 [scenes.6.key] spy
-[scenes.6.title] S&P500 영수증
+[scenes.6.title] S&P500은 얼마 남았나
 [scenes.6.sub] SPY · 달러로 사서 1년 뒤 원화로 판 값
 [scenes.6.source] 거래소 종가·분배금(야후 파이낸스·나스닥, SCHD 분배금은 찰스슈왑 원문) · 원/달러 ECOS 731Y001
 [scenes.6.chapter] 3장
@@ -169,11 +169,11 @@
 [scenes.6.lines.3.text] 여기에 분배금이 더 있어요. ETF 안의 회사들이 준 배당을 모아서 나눠 주는 돈이에요.
 [scenes.6.lines.4.text] 석 달에 한 번씩 네 번, 원화로 다 합치면 약 110만원이에요.
 [scenes.6.lines.4.cap] 분배금(세금 전) 1,095,716원 · 4번
-[scenes.6.lines.5.text] 분배금은 실제로는 받는 날 환율로 바뀌지만, 이 영수증은 끝날 환율로 한 번에 바꿨어요.
+[scenes.6.lines.5.text] 분배금은 실제로는 받는 날 환율로 바뀌지만, 이 계산은 끝날 환율로 한 번에 바꿨어요.
 [scenes.6.lines.5.cap] 분배금 환율 = 2026.10.2 1,359.6원으로 단순화 · 받은 날 환율로는 SCHD 세후 252,402원 더 많음 · 순위 영향 없음
 [scenes.6.lines.6.text] 재밌는 건 마지막 분배금이에요. 판 날보다 4주 늦게 들어와요.
 [scenes.6.lines.6.cap] 네 번째 분배금 기준일 2026.9.18 · 지급일 2026.10.30 · 1억 기준 세금 전 272,929원
-[scenes.6.lines.7.text] 기준일에 들고만 있었으면 팔고 나서도 받아요. 판 날 통장엔 아직 없지만, 이 영수증엔 그 돈까지 넣었어요.
+[scenes.6.lines.7.text] 기준일에 들고만 있었으면 팔고 나서도 받아요. 판 날 통장엔 아직 없지만, 이 계산엔 그 돈까지 넣었어요.
 [scenes.7.key] spytax
 [scenes.7.title] 세금은 두 군데서 뗀다
 [scenes.7.sub] 분배금은 미국에서 15% · 판 이익은 250만원 넘는 부분에 22%
@@ -227,7 +227,7 @@
 [scenes.8.lines.3.text] 이렇게 세금 두 가지를 다 내면, 원금보다 10% 조금 넘게 늘어 있어요.
 [scenes.8.lines.3.cap] 세금 뒤 110,225,307원 (+10.23%) · 운용 보수는 매일 가격에 이미 반영
 [scenes.9.key] schd
-[scenes.9.title] SCHD 영수증
+[scenes.9.title] SCHD는 얼마 남았나
 [scenes.9.sub] 배당 ETF · 계산 방법은 S&P500과 같다
 [scenes.9.source] 거래소 종가·분배금(야후 파이낸스·나스닥, SCHD 분배금은 찰스슈왑 원문) · 원/달러 ECOS 731Y001
 [scenes.9.chapter] 4장
@@ -262,7 +262,7 @@
 [scenes.9.lines.4.cap] 미국이 뗀 세금 15% −559,242원
 [scenes.9.lines.5.text] 판 이익에는 291만원 정도 세금이 붙어요.
 [scenes.9.lines.5.cap] 이익 15,728,578원 → 판 이익 세금 2,910,286원
-[scenes.9.lines.6.text] 다 내고 나면 원금보다 16% 가까이 늘었어요. 네 장 가운데 가장 많이 남은 영수증이에요.
+[scenes.9.lines.6.text] 다 내고 나면 원금보다 16% 가까이 늘었어요. 네 곳 가운데 가장 많이 남았어요.
 [scenes.9.lines.6.cap] 세금 뒤 115,987,335원 (+15.99%)
 [scenes.10.key] gold
 [scenes.10.title] 금은 환율이 주인공
@@ -277,7 +277,7 @@
 [scenes.10.data.bars.1.2] +3.37%
 [scenes.10.data.bars.1.4] accent
 [scenes.10.data.note.0] 환율 −3.30%가 깎아 먹음
-[scenes.10.lines.0.text] 마지막 영수증은 금이에요. 금값은 달러로 약 7% 올랐어요.
+[scenes.10.lines.0.text] 마지막은 금이에요. 금값은 달러로 약 7% 올랐어요.
 [scenes.10.lines.0.cap] GLD 종가 354.79 → 380.14달러 (+7.15%)
 [scenes.10.lines.1.text] 그런데 원화로 바꾸고 나면 이익이 361만원으로 줄어요.
 [scenes.10.lines.1.cap] 판 돈 103,609,129원 · 이익 3,609,129원
@@ -361,7 +361,7 @@
 [scenes.13.lines.0.text] 그런데 여기서 반론이 하나 나와요. 넣은 날이 하필 그날이라서 그런 거 아니냐는 거죠.
 [scenes.13.lines.1.text] 그래서 넣는 날을 하루씩 옮겨 가며, 1년씩 들고 판 결과를 다 줄 세워 봤어요.
 [scenes.13.lines.1.cap] 시작일 2024.10.2~2025.10.2 거래일 251개 · 달러 기준 · 가격+분배금 · 세금 전 · 세 ETF끼리만
-[scenes.13.lines.2.text] 오늘 영수증과 같은 순서가 나온 날은 열 번에 한 번꼴이었어요.
+[scenes.13.lines.2.text] 오늘 결과와 같은 순서가 나온 날은 열 번에 한 번꼴이었어요.
 [scenes.13.lines.2.cap] SCHD > SPY > 금 — 251일 중 25일 (10.0%)
 [scenes.13.lines.3.text] 오히려 금이 1등인 날이 훨씬 많았고요.
 [scenes.13.lines.3.cap] 금이 1위 — 251일 중 187일 (74.5%)
@@ -385,7 +385,7 @@
 [scenes.14.data.bars.1.5] 꺼내는 날에 따라
 [scenes.14.data.bars.1.7] 97,294,730원
 [scenes.14.data.callout.0] 폭 2,574만원
-[scenes.14.lines.0.text] 이 영수증을 사람에 따라 다시 읽어 볼게요.
+[scenes.14.lines.0.text] 이 결과를 사람에 따라 다시 읽어 볼게요.
 [scenes.14.lines.1.text] 1년 안에 꺼내야 하는 돈을 가진 30대예요. 집 계약금 같은 돈이요.
 [scenes.14.lines.2.text] 예금이면 1년 뒤 받을 돈이 처음부터 정해져 있어요.
 [scenes.14.lines.3.text] S&P500이었다면 꺼내는 날에 따라 2,574만원 폭으로 달라졌어요.
@@ -393,7 +393,7 @@
 [scenes.14.lines.4.text] 날짜가 정해진 돈이라면, 수익률보다 이 폭이 더 중요해요.
 [scenes.14.lines.5.text] 예금은 이 폭이 없는 대신, 얻는 것도 2% 남짓으로 정해져 있다는 게 대가고요.
 [scenes.15.key] sum
-[scenes.15.title] 정리 — 1억의 1년 영수증
+[scenes.15.title] 정리 — 1억, 1년 뒤 남은 돈
 [scenes.15.sub] 2025.10.2 → 2026.10.2 · 세금과 환율을 다 뗀 뒤
 [scenes.15.source] 거래소 종가·분배금(야후 파이낸스·나스닥, SCHD 분배금은 찰스슈왑 원문) · 원/달러 ECOS 731Y001 · 과거 값 · 미래 보장 아님 · 투자 권유 아님
 [scenes.15.chapter] 8장
@@ -420,30 +420,29 @@
 [scenes.15.lines.3.text] 순위는 그대로였고, 세금은 간격을 줄였어요. 하지만 넣는 날이 바뀌면 순위도 쉽게 바뀌었죠.
 [scenes.15.lines.4.text] 결국 같은 1억이라도, 언제 쓸 돈이냐에 따라 읽는 법이 달라진다는 거예요.
 [scenes.16.key] end
-[scenes.16.title] 다음 영수증은 2편에서
-[scenes.16.sub] 1억의 1년 영수증 시리즈 · 재생목록에 차례대로
+[scenes.16.title] 2편에서 이어서
+[scenes.16.sub] 1억, 1년 뒤 남은 돈 시리즈 · 재생목록에 차례대로
 [scenes.16.source] 과거 값 · 미래 보장 아님 · 투자 권유 아님
 [scenes.16.chapter] 8장
 [scenes.16.data.text] 다음 편
-[scenes.16.data.label] 1억의 1년 영수증
+[scenes.16.data.label] 1억, 1년 뒤 남은 돈
 [scenes.16.data.note] 같은 규칙으로, 실제 그날 넣었다면
 [scenes.16.lines.0.text] 오늘 숫자는 모두 지나간 1년 값이고, 어디에 넣으라는 말은 아닙니다.
-[scenes.16.lines.1.text] 다음 편에서도 같은 규칙으로, 실제 그날 넣었다면 얼마가 남는지 영수증을 뽑아 올게요.
-[scenes.16.lines.2.text] 오늘도 끝까지 봐 주셔서 고마워요.
-[script] script.v8.md
+[scenes.16.lines.1.text] 다음 편에서도 같은 규칙으로, 실제 그날 넣었다면 얼마가 남는지 계산해 올게요.
+[script] script.md
 
 ## 화면 코드: video/src/R1.tsx
 [R1.tsx] 1억
 [R1.tsx] 1년 뒤
 [R1.tsx] 얼마?
 [R1.tsx] 1편
-[R1.tsx] 파이어맵 영수증 규칙
+[R1.tsx] 파이어맵 계산 규칙
 [R1.tsx] 시리즈
-[R1.tsx] 1억의
-[R1.tsx] 1년 영수증
+[R1.tsx] 1억,
+[R1.tsx] 1년 뒤 남은 돈
 [R1.tsx] 1편 · 2025.10 → 2026.10
 [R1.tsx] 순위까지 뒤집혔을까?
-[R1.tsx] 1억의 1년 영수증 · 오늘 순서
+[R1.tsx] 1억, 1년 뒤 남은 돈 · 오늘 순서
 [R1.tsx] 작년 그날 (2025.10.2)
 [R1.tsx] 원
 [R1.tsx] 올해 같은 날 (2026.10.2)
@@ -457,8 +456,8 @@
 [R1.tsx] 오늘 할 일
 [R1.tsx] 하나
 [R1.tsx] 세금이 줄인 간격 307만원
-[R1.tsx] 1억 넣고 1년, 실제 영수증
-[R1.tsx] 1억의 1년 영수증 #1
+[R1.tsx] 1억 넣고 1년, 실제로 남은 돈
+[R1.tsx] 1억, 1년 뒤 남은 돈 #1
 
 ## 화면 코드: video/src/parts/fm.tsx
 [fm.tsx] ${e}억 ${r.toLocaleString()}만원

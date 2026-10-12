@@ -61,10 +61,10 @@ const Promise: React.FC<{s: RScene}> = ({s}) => {
   const rows: TallyRow[] = d.rows.map(([label, value, tone, at]: [string, string, any, number]) => ({label, value, tone, start: at}));
   return (
     <>
-      <TallyReceipt x={980} y={300} w={800} head="파이어맵 영수증 규칙" rows={rows} size={34} active={activeRow(rows, f)} stamp={{text: '1편', start: d.stamp}} />
+      <TallyReceipt x={980} y={300} w={800} head="파이어맵 계산 규칙" rows={rows} size={34} active={activeRow(rows, f)} stamp={{text: '1편', start: d.stamp}} />
       <div style={{position: 'absolute', left: 150, top: 380}}>
         <div style={{...F, fontWeight: 700, fontSize: 40, color: T.ink2, opacity: fade(f, 0)}}>시리즈</div>
-        <div style={{...F, fontWeight: 700, fontSize: 84, color: T.ink, lineHeight: 1.1, opacity: fade(f, 4)}}>1억의<br />1년 영수증</div>
+        <div style={{...F, fontWeight: 700, fontSize: 84, color: T.ink, lineHeight: 1.1, opacity: fade(f, 4)}}>1억,<br />1년 뒤 남은 돈</div>
       </div>
       {f >= d.stamp ? <Stamp x={150} y={640} o={fade(f, d.stamp, 8)} text="1편 · 2025.10 → 2026.10" color={T.accent} size={34} /> : null}
       <TallyCallout x={150} y={740} text="순위까지 뒤집혔을까?" start={d.q} size={30} />
@@ -75,7 +75,7 @@ const Promise: React.FC<{s: RScene}> = ({s}) => {
 const Road: React.FC<{s: RScene}> = ({s}) => {
   const f = useCurrentFrame();
   const rows: TallyRow[] = s.data.rows.map(([t, at]: [string, number]) => ({label: t, start: at, tone: 'in'}));
-  return <TallyReceipt x={360} y={300} w={1200} head="1억의 1년 영수증 · 오늘 순서" rows={rows} size={44} active={activeRow(rows, f)} />;
+  return <TallyReceipt x={360} y={300} w={1200} head="1억, 1년 뒤 남은 돈 · 오늘 순서" rows={rows} size={44} active={activeRow(rows, f)} />;
 };
 
 const Receipt: React.FC<{s: RScene}> = ({s}) => {
@@ -115,7 +115,7 @@ const Swing: React.FC<{s: RScene}> = ({s}) => {
   return (
     <>
       <TallyLineChart series={series} x={X} y={Y} w={W} h={H} min={d.min} max={d.max} start={d.draw} dur={75}
-        base={{v: 10000, text: '넣은 돈 1억'}} ticks={[{v: 9000, text: '9,000'}, {v: 11000, text: '1.1억'}, {v: 13000, text: '1.3억'}, {v: 15000, text: '1.5억'}]}
+        base={{v: 10000, text: '넣은 돈 1억', x: 1000}} ticks={[{v: 9000, text: '9,000'}, {v: 11000, text: '1.1억'}, {v: 13000, text: '1.3억'}, {v: 15000, text: '1.5억'}]}
         xlabels={d.xlabels.map(([i, t]: [number, string]) => ({i, text: t}))} />
       {d.tags.map((t: any, i: number) => { const [tx, ty] = xy(t[1], t[2]); return <TallyTag key={i} x={tx} y={ty} text={t[3]} start={t[4]} side={t[5]} hot={t[6]} size={22} />; })}
       <TallyCallout x={1560} y={330} text={d.fx[0]} start={d.fxAt} size={24} w={230} />
@@ -285,7 +285,7 @@ export const R1Thumb: React.FC<{net: [string, string, string][]}> = ({net}) => (
     })}
     <div style={{position: 'absolute', left: 60, right: 60, top: 408, height: 4, background: '#2a2c33'}} />
     <div style={{...F, position: 'absolute', left: 50, top: 428, fontWeight: 700, fontSize: 100, color: T.daccent, letterSpacing: -3, whiteSpace: 'nowrap'}}>세금이 줄인 간격 307만원</div>
-    <div style={{...F, position: 'absolute', left: 50, top: 556, fontWeight: 700, fontSize: 96, color: '#fff', letterSpacing: -3, whiteSpace: 'nowrap'}}>1억 넣고 1년, 실제 영수증</div>
-    <div style={{...F, position: 'absolute', left: 1010, top: 40, fontWeight: 700, fontSize: 28, color: '#101114', background: T.daccent, borderRadius: 10, padding: '6px 16px'}}>1억의 1년 영수증 #1</div>
+    <div style={{...F, position: 'absolute', left: 50, top: 556, fontWeight: 700, fontSize: 96, color: '#fff', letterSpacing: -3, whiteSpace: 'nowrap'}}>1억 넣고 1년, 실제로 남은 돈</div>
+    <div style={{...F, position: 'absolute', left: 1010, top: 40, fontWeight: 700, fontSize: 28, color: '#101114', background: T.daccent, borderRadius: 10, padding: '6px 16px'}}>1억, 1년 뒤 남은 돈 #1</div>
   </AbsoluteFill>
 );

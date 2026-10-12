@@ -89,7 +89,7 @@ export const ZoomOutOpen: React.FC<ZoomOutOpenProps> = (p) => {
             const k = interpolate(f, [p.travel + 20, p.travel + 110], [0, 1], {...CL, easing: ease});
             if (f < p.travel + 20) return null;
             const x = P.x + (endX - P.x) * k * 0.86; const y = P.y + (ys[i] - P.y) * k * 0.86;
-            return <div key={i} style={{...F, position: 'absolute', left: x - 34, top: y - 46, fontWeight: 700, fontSize: 26, color: T.accent, background: T.soft, borderRadius: 8, padding: '2px 10px', whiteSpace: 'nowrap', opacity: fade(f, p.travel + 20, 8)}}>{p.dot}</div>;
+            return <div key={i} style={{...F, position: 'absolute', left: x - 34, top: y - 46, fontWeight: 700, fontSize: 26, color: T.accent, background: T.soft, borderRadius: 8, padding: '2px 10px', whiteSpace: 'nowrap', opacity: interpolate(k, [0.35, 0.45], [0, 1], CL)}}>{p.dot}</div>;   // 10/12 PD: 네 장이 한 점에 겹쳐 보이던 것(겹침 관문 0:11) — 갈라진 뒤에 나타남
           })}
           <div style={{...F, position: 'absolute', left: P.x - 60, top: 806, fontWeight: 700, fontSize: 28, color: T.ink2, opacity: fade(f, p.travel, 12), whiteSpace: 'nowrap'}}>{p.from}</div>
           <div style={{...F, position: 'absolute', left: endX - 70, top: 806, fontWeight: 700, fontSize: 28, color: T.ink2, opacity: fade(f, p.travel + 24, 12), whiteSpace: 'nowrap'}}>{p.to}</div>

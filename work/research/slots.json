@@ -1056,24 +1056,24 @@
    "kind": "cafe",
    "item": "issnote1012",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-12 19:04: 관문 통과(10/11 10:53) 대기분"
+   "gates_ok": "2026-10-12 23:11",
+   "note": "firemap-meeting 2026-10-12 19:04: 관문 통과(10/11 10:53) 대기분 | firemap-write 2026-10-12 23:11: 전제 줄 확인·editgate stamp 통과(전제 가능)"
   },
   {
    "at": "2026-10-13 14:10",
    "kind": "cafe",
    "item": "kidcred1012",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-12 19:04: 관문 통과(10/11 14:45) 대기분"
+   "gates_ok": "2026-10-12 23:11",
+   "note": "firemap-meeting 2026-10-12 19:04: 관문 통과(10/11 14:45) 대기분 | firemap-write 2026-10-12 23:11: 전제 줄 확인·editgate stamp 통과(전제 가능)"
   },
   {
    "at": "2026-10-13 16:10",
    "kind": "cafe",
    "item": "yuryu1011",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-12 19:04: 비축(관문 10/11 12:36)에서 칸으로 — 상속세 inhded(10/11)와 이틀 띄움"
+   "gates_ok": "2026-10-12 23:11",
+   "note": "firemap-meeting 2026-10-12 19:04: 비축(관문 10/11 12:36)에서 칸으로 — 상속세 inhded(10/11)와 이틀 띄움 | firemap-write 2026-10-12 23:11: 전제 줄 확인·editgate stamp 통과(전제 가능)"
   },
   {
    "at": "2026-10-13 18:10",

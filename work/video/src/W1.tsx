@@ -296,7 +296,11 @@ const End: React.FC<{s: WScene}> = ({s}) => {
   const bAt = sayAt(s, 0, s.lines[0]?.text.split('. ')[1]?.slice(0, 4));
   const tEnd = st[st.length - 1] + s.lines[s.lines.length - 1].frames;
   const g = 48, w = (1560 - g) / 2; const out = interpolate(f, [d.start - 8, d.start], [1, 0], CL);
-  const ls = spring({frame: f - d.start, fps, config: {damping: 14}});
+  // 끝 화면 20초가 한 화면으로 8초 넘게 멈추지 않게(U5): 댓글 질문 줄이 나오면 질문 카드 → 말이 끝나면 링크 카드 + 질문 띠. 글자는 말 줄(편집 통과본)에서만 가져온다
+  const qi = s.lines.findIndex((l) => l.text.includes('?')); const qAt = qi > 0 && qi >= s.lines.length - 1 ? st[qi] : 1e9;
+  const q = qi > 0 ? s.lines[qi].text.slice(0, s.lines[qi].text.indexOf('?') + 1) : '';
+  const qs = spring({frame: f - qAt, fps, config: {damping: 14}});
+  const ls = spring({frame: f - (f >= tEnd ? tEnd : d.start), fps, config: {damping: 14}});
   return (
     <>
       {f < d.start ? parts.slice(0, 2).map((t, i) => {
@@ -305,13 +309,19 @@ const End: React.FC<{s: WScene}> = ({s}) => {
         return <div key={i} style={{position: 'absolute', left: 180 + i * (w + g), top: 360 + (1 - sp) * 30, width: w, height: 260, borderRadius: 20, opacity: (f >= at ? sp : 0) * out, boxSizing: 'border-box', padding: '0 44px',
           display: 'flex', alignItems: 'center', background: dk ? T.ink : T.bg, border: dk ? undefined : `4px dashed ${T.ink3}`, ...F, fontWeight: 700, fontSize: 50, color: dk ? T.dink : T.ink2, lineHeight: 1.3, wordBreak: 'keep-all'}}>{t}</div>;
       }) : null}
-      {f >= d.start ? (
+      {f >= qAt && f < tEnd ? (
+        <div style={{position: 'absolute', left: 150, top: 330 + (1 - qs) * 30, width: 1620, height: 300, opacity: qs, background: T.bg, border: `4px solid ${T.ink}`, borderRadius: 20, padding: '0 56px', boxSizing: 'border-box',
+          display: 'flex', alignItems: 'center', ...F, fontWeight: 700, fontSize: 58, color: T.ink, lineHeight: 1.3, wordBreak: 'keep-all'}}>{q}</div>
+      ) : null}
+      {f >= tEnd && q ? <DarkBar text={q} at={tEnd} x={150} y={640} w={1620} size={40} color={T.dink} /> : null}
+      {f >= d.start && (f < qAt || f >= tEnd) ? (
         <div style={{position: 'absolute', left: 150, top: 360 + (1 - ls) * 30, width: 1620, opacity: ls, background: T.ink, borderRadius: 20, padding: '34px 44px', boxSizing: 'border-box'}}>
           <div style={{...F, fontWeight: 700, fontSize: 34, color: T.dink3, whiteSpace: 'nowrap'}}>{d.label}</div>
           <div style={{...F, fontWeight: 700, fontSize: 56, color: T.daccent, marginTop: 14, whiteSpace: 'nowrap', letterSpacing: -1}}>{d.text}</div>
         </div>
       ) : null}
-      {subs.length > 1 ? <DarkBar text={subs[subs.length - 1]} at={tEnd} x={150} y={640} w={1620} size={44} color={T.daccent} /> : null}
+      {/* PD 10/12: 마지막 줄(댓글 질문)에 질문 띠 — U5 같은 화면 8초(끝 장면 12.5초) 막힘 고침 */}
+      {d.ask ? <DarkBar text={d.ask} at={st[st.length - 1]} x={150} y={640} w={1620} size={44} color={T.daccent} /> : subs.length > 1 ? <DarkBar text={subs[subs.length - 1]} at={tEnd} x={150} y={640} w={1620} size={44} color={T.daccent} /> : null}
     </>
   );
 };

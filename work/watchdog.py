@@ -297,7 +297,10 @@ def main():
             except Exception as e:
                 rec['did'].append(f'{kind} 메우다 멈춤: {str(e)[:100]}'); continue
             u = re.search(r'URL (https://(?:cafe|blog)\.naver\.com/[\w/]+)', out)
-            if u: rec['did'].append(f'{kind} 빵꾸 메움 → {u.group(1)}')
+            # 10/12 18:44: 같은 시각 write 회차가 올린 묶음을 naverpost가 '이미 올라가 있음'으로 건너뛰었는데
+            # 여기선 '빵꾸 메움'으로 적혀 감시기가 메운 것처럼 보였다. 건너뛴 경우는 따로 적는다.
+            if u and '이미 올라가 있음' in out: rec['did'].append(f'{kind} 메우려던 묶음은 다른 회차가 이미 올림 → {u.group(1)} (감시기 발행 아님)')
+            elif u: rec['did'].append(f'{kind} 빵꾸 메움 → {u.group(1)}')
             else: rec['did'].append(f'{kind} 메우기 실패: ' + (out.splitlines()[-1][:120] if out else '(출력 없음)'))
     elif need:
         rec['did'].append('--check 라서 올리지는 않았다: ' + ', '.join(need))

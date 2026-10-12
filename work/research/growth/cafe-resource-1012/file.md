@@ -1,7 +1,7 @@
 # 파일 글 (멤버공개) — 원고 · 사장님이 손으로 올림
 
 - 우리 도구로는 엑셀 첨부가 안 된다(publish-check.md). 그래서 이 글만 사장님이 카페 글쓰기 화면에서 올린다. 순서는 publish-check.md 3장에 있다.
-- 첨부 파일: `C:\Users\강영준\Documents\GitHub\retire-age-kr\work\research\ventures\x-kr-1\out\가계부_은퇴나이_2026.xlsx` (966,115바이트, 10/12 고친 판)
+- 첨부 파일: `C:\Users\강영준\Documents\GitHub\retire-age-kr\work\research\ventures\x-kr-1\out\가계부_은퇴나이_2026.xlsx` (966,126바이트, 10/12 고친 판)
 - 게시판: 자유게시판 · 공개: **멤버공개**
 - 아래 '제목'과 '본문'을 그대로 복사해 붙여 넣는다.
 - 검사(10/12, 임시 사본): aitell 0.0(기준 12) 통과 · readcheck 지적 0건.

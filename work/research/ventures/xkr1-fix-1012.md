@@ -8,7 +8,7 @@ xkr1-market-1011.md 1-4의 상위 5개를 모두 고쳤다. **실제 Excel 16으
 
 | 파일 | 위치(저장소 안, 커밋함) |
 |---|---|
-| 고친 파일(배포용) | `work/research/ventures/x-kr-1/out/가계부_은퇴나이_2026.xlsx` (966,115바이트) |
+| 고친 파일(배포용) | `work/research/ventures/x-kr-1/out/가계부_은퇴나이_2026.xlsx` (966,126바이트) |
 | 원본 사본(10/5판) | `work/research/ventures/x-kr-1/out/가계부_은퇴나이_2026_원본1005.xlsx` (231,502바이트, sha1 719de5d9…) |
 | 만드는 스크립트 | `x-kr-1/make_xlsx.py` (손으로 엑셀을 고치지 않는다. 이 스크립트로 다시 만든다) |
 | 오류 시험 | `x-kr-1/fixtest.py` → `out/fixtest.json` |

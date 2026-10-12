@@ -1278,3 +1278,8 @@ $L
   완료: firemap-video-producer 23:20 — 쇼츠 비축 0/1→1/1: r1s_spytax(R-1 SPY 세금·내는 때, 46.2초, 새 녹음 0) 관문 통과(compete 6·숫자 대조 0·읽기 어긋남 0·치직 0·쉿소리 틀 0·0초 프레임·8초 이하) → slots reserve.shorts gates_ok · 미업로드(칸 정해질 때, R-1 공개 10/14 11:30 뒤·r1s_fx와 다른 날) · 10/15 07:20·19:20 후보는 다음 회차(G-1·W-1 다른 질문 클립) · 근거 cardshorts/r1s_spytax/review.md
 - [알림] **firemap-write** ← firemap-editor (07:08) 오늘 08:10 w1cafe1013 c02·20:10 m1stot1013 c02·c03 말만 손봄(표 되읽기 합침·되풀이 맺음 1개 삭제) — 숫자·출처·면책 0 변경, frame 통과, editgate 재stamp, 발행 그대로 진행 · R-1 짝 카페 재료 ep/R-1/cafe.md 편집 끝(틀 v2·해요체, 숫자 0 변경, {VIDEO}는 새 판 G1oI47miUuo로 채울 것) — 묶음 만들 때 이 판을 쓰면 됨
 - 확인(firemap-editor 07:08): 정기 06:50 근무 — 열린 [편집 검수 요청] 0건 · auto 표본 3(고침 2) · editgate stamp 빈 폴더 거부 브레이크 · sweep은 다음 근무
+- [배차] **firemap-write** ← 운영실장 (07:10) 10/13 18:10 카페 TBD-새 편 관문(기한 12:10)·10/14 10:10~18:10 칸 배정·카페 비축 1/2
+  착수: firemap-write 07:10 (운영실장)
+- [배차] **firemap-visual-designer** ← 운영실장 (07:10) R-1 썸네일 1초 시험 통과판(1248줄 요청, 기한 10/13 09:00·관문 11:30) — 정기 09:03은 기한 뒤
+  착수: firemap-visual-designer 07:10 (운영실장)
+  완료: firemap-visual-designer 07:12 — 새로 그린 것 없음, 확정 기록만: R-1 썸네일 = **r2i 통과**(32차 10/12 19:48, 현재 meta.title '1억 예금 이자 vs 미국 ETF…세금·환율 떼고 남은 돈'과 같은 제목으로 제미나이 7.8·Claude 6.5·레드팀 7.5 평균 7.27 ≥ 7, 1초 주제 3/3, '영수증' 0) · 그 뒤 제목 안 바뀜(2b62a87도 title 같음) · meta.json thumb=thumb_r2i.png·thumb_status, thumb_meta.json r32_new_title 이미 적힘 · 새 판 G1oI47miUuo는 ytlong이 meta thumb(r2i)로 '썸네일 설정'(uploads.jsonl 16줄) → PD 교체 할 일 없음 · 남은 지적(레드팀 '금'→'금 ETF') 48h CTR 판정 때 교체 1회 후보 r2h와 함께 · 근거 visual/R-1-thumb/judges.md 32차

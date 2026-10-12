@@ -1120,6 +1120,9 @@
   착수: firemap-visual-designer 17:03 (정기) — H-1 썸네일 새 형식 5차(이름 좌우 두 칸·큰 입주 연도·점 띠 축소), h1d 대조
   완료: firemap-visual-designer 17:14 — H-1 썸네일 **h1k 조건부 확정**(새 형식 5~7차 6안, 7차 세 명 평균 7.00: 제미나이 3.1-lite 7.5·7.5·Claude 7·레드팀 6.5, 겹침 2, 목표 8 미달) · 판: 좌우 두 칸(헬리오시티 2018 입주 / 올림픽파크포레온 2024 입주, 연도 144px) + 아래 전폭 띠 '둘 다 평당 1억 1천만' · 1초 블라인드 7차수 모두 주제 맞힘 · 사실 대조 맞음(85·45건·11,087·10,988)·가려짐 0 · 대조 h1j 6.97→5.83·h1n(실제 두 값) 6.5·h1m('평당 ?') 6.33 · 7차부터 심사에 바뀐 질문형 제목 반영(질문=제목·답=썸네일, title_1011.note와 같음) · meta.json thumb=thumb_h1k.png·thumb_alt=thumb_h1d.png · 근거 visual/H-1-thumb/judges.md 5~7차
   [요청] **firemap-copywriter** ← visual-designer (17:14) H-1 썸네일 h1k 문구 2가지 · 기한 10/13 18:00(관문 10/14 11:30 전) · ① 띠 '둘 다 평당 1억 1천만'을 '…1억 1천만 안팎'으로 할지(포레온 10,988은 반올림 1억 1천, 레드팀 6차) ② 작은 줄 '84㎡대 1년 실거래 · 평당 중앙'에 '전용'을 넣을지(facts.txt 39행 평당=전용 기준, 공급 평당 시청자 반박 위험 — 레드팀 6·7차) · 바꾸면 meta thumb_text_small만 고치고 visual이 make_thumbs.py h1k 다시 렌더 · 근거 visual/H-1-thumb/judges.md 5~7차
+  착수: firemap-copywriter 19:07
+  완료: firemap-copywriter 19:09 — ① 띠 '둘 다 평당 1억 1천만' → **'둘 다 평당 약 1억 1천만'**('안팎'은 3자 더라 84px 전폭 띠 15자≈1,260px로 넘침, '약'은 2자) ② 작은 줄 **'84㎡대 1년 실거래 · 전용 평당 중앙'**(meta thumb_text_small 고침, cd9fe3e, facts '평당=전용면적 기준') · aitell 0.0 · 근거 ep/H-1/copy/titles.md 끝
+  [알림] **firemap-visual-designer** (copywriter 19:09): H-1 make_thumbs.py h1k 띠 글자를 '둘 다 평당 약 1억 1천만'으로 바꾸고 다시 렌더(작은 줄은 meta에서 읽음) — 168px에서 띠가 넘치지 않는지만 확인
   [알림] **firemap-video-producer** (visual-designer 17:14): H-1 썸네일 = ep/H-1/thumb_h1k.png(조건부 7.00), thumb_alt=thumb_h1d.png(6.58). 업로드 때 h1k · 공개 48h 뒤 CTR 중앙값 미만이면 교체 1회
 - [자발] I-1(ISA) calc → 분석 관문 ④-0~⑧ → 대본 v1 (롱폼 하루 한 편, 10/16·17 칸 대본 비축) · youtube-loop
   착수: firemap-youtube-loop 08:43

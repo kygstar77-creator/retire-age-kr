@@ -3,6 +3,13 @@
 - 지난 기록은 archive/날짜.md. 직원은 이 파일 전체를 읽지 말고 **자기 task-id(예: firemap-product-dev)로 검색**해 자기 줄만 읽는다. 근거가 필요하면 archive/2026-10-02.md에서 같은 문구로 찾는다.
 - 끝나면 그 항목 밑에 "완료: … HH:MM" 한 줄. 다음 정리 때 완료 항목은 archive로 옮긴다(이 파일이 150줄을 넘으면 같은 방식으로 다시 줄인다).
 
+## ★ 벤치마크 루프 10/13 03:2x — 롱폼 2판 (근거 research/longform/quality-gap-1013.md) · 지난 U1~U10 반영 2/10(일부 4)
+- [지시·긴급] **firemap-copywriter**+**firemap-video-producer** R-1(10/14 11:30) 첫 60초: 16줄 '파이어맵은 이렇게…계산합니다'·17줄 시리즈 소개 삭제, 33줄 '39만 7천원'→반올림, 끝에 댓글 질문 1줄 · 완료 기준: 고친 말 줄만 Chirp 재녹음·재렌더, bench_check 첫 60초 '맞춤' · 기한 10/13 20:00. G-1(오늘 11:30)은 0:16~0:32 '오늘 순서' 16초를 질문 한 줄로 바꿀 수 있으면 바꾸고, 못 하면 bench_check에 '미반영' 기록
+- [지시] **firemap-copywriter** aitell script에 검사 4개 추가: 6자리 이상 정밀 숫자 낭독·'첫 번째…' 순번 3개 이상·말 목차('볼게요' 3연속)·꼬리표 낭독({F}·'이미지 1' 같은 표시) · 완료 기준: R-1·G-1 대본에 돌려 걸린 줄 목록 기록 · 기한 10/14 23:00
+- [지시] **firemap-youtube-loop**+**firemap-visual-designer** N1 시범: C-1 소재(3억·배당 vs 팔기·1998년 시작)를 공개 가상 인물 1명의 이야기로 다시 기획(근거 하이젠버그 UfCBrFHyJtw 9.6배: 인물 조각 21.8%·숫자 12.3%·그림 100%·결말 65% 지점) · 완료 기준: 대본 인물 조각 15% 이상·결말 60% 뒤·가상 고지 2:30 안, 같은 얼굴 인물 시트 1벌·30초마다 그림 1장 · 기한 10/16
+- [지시] **firemap-youtube-loop** N2: 세법 개정안(종부세·양도세) 의안 원문 확인 → '공시가격 구간별 1주택 종부세 전·후' 편 기획안 · 기한 10/15 · U10 결론(클립 fF_5 648회 → M-1 롱폼 17→20회) 기록 + 클립 방식 변경안, W-1 3일 노출 10/15 기록(U1)
+- [지시] **firemap-video-producer** 다음 렌더부터 로고 카드 첫 60초 밖(W-1 0:16~0:20에 남음), W-1 음높이 앞뒤 차 측정 1줄 · 기한 10/15
+
 ## ★ 정기 회의 10/12 21:28~21:41 (19:16 따라잡기 뒤 결정만) — 근거 meeting/2026-10-12b-decisions.md·b-verify.md
 - 공개 10/12: **4**(쇼츠 m1s_nhis70·롱폼 W-1 0yWQ·카페 #254·#255) — 기준 3 충족. 22:10 didim1012 남음 · 0원 뒤처짐 · 외부 15기기·click 0
 - 막힘: ① 10/13 20:10 m1stot1013은 발행기가 '같은 대상 이미 씀'(#245 schdacct1007과 SCHD가 겹침, naverpost subject_keys)으로 막는다 ② 비축 쇼츠 0/1·카페 1/2 ③ 저장소 public(우리 비밀값은 노출 안 됨, 의장 확인 — 결재 유지)
@@ -22,6 +29,7 @@
 - [지시·긴급] **firemap-video-producer** (기한 오늘 23:00·10/13 09:30) 의도: 롱폼 정규 칸을 다시 매일로 · 완료 기준: ① W-1 새 판 오늘 밤 공개 → 링크를 slots.json 10/13 08:10 note·이 줄 밑에(write 짝 글용) ② G-1 EZvDDPlXo90 10/13 11:30 재예약 → slots gates_ok 시각 ③ c1s_receipt QlL0VK4PB_8: 순돌이 해제 목록에 없고 upload.json엔 10/14 07:20 예약이 남음(검증 참모) — videos.list로 publishAt 실측, 남아 있으면 풀기(권한 막히면 순돌이) ④ 10/13 07:20·10/14 07:20 쇼츠 = G-1·W-1 클립(같은 날 19:20 m1s와 다른 롱폼), numread 받아쓰기 대조 통과분만 예약 ⑤ W-1이 오늘 나가면 10/14 11:30 = P-1(관문 기한 10/13 11:30), 못 넘으면 R-1 · 기준 예시: G-1 10/11 17:18 관문 전부 통과 기록 · 금지: C-1 클립 사용, 숫자 읽기 대조 없이 예약, 미달 공개, 빠진 칸 몰아 공개 · 확인 시점: 운영실장 23:05 · 보고: decisions/log.md
   진행: firemap-video-producer 19:22 — ① 완료: W-1 https://youtu.be/0yWQeW38UJE 19:47 공개 예약, slots 10/13 08:10 note에 yt_pair 링크 · ②③(G-1 재예약·쇼츠)은 G-1 회차(순돌이 배차 18:45) 몫
 - [지시·긴급] **firemap-video-producer** (기한 G-1 재예약 전, 오늘 23:00) 의도: AI 목소리 편은 전부 '변경·합성 콘텐츠' 켬(A-1 meta synthetic_why·RULES 4장) · 완료 기준: G-1·H-1·R-1 meta.json synthetic=true(업로드 전), 이미 올린 M-1 eTjVs1vDTwg·N-1 420buEFKB8k·E-2는 videos.update status.containsSyntheticMedia=true(제목·설명 등 다른 칸 같이 넘기기, 교훈 18) · 금지: 카페 'AI(Claude) 작성' 끝문장 되살리기(사장님 10/11 지시 — 유튜브 표시와 별개) · 보고: decisions/log.md, 권한 403이면 막힘 줄
+  착수: firemap-video-producer 02:19
 - [지시·긴급] **firemap-write** (기한 10/13 02:10·04:10) 의도: 내일 아침 짝 글 두 칸을 영상보다 먼저 · 완료 기준: 오늘 20:10 med1011·22:10 didim1012 발행 verify + 10/13 08:10 W-1 짝(ep/W-1/cafe.md, W-1 공개 시)·10:10 G-1 짝(ep/G-1/cafe.md, '영수증' 2곳 평범한 말로) gates_ok · 10/13 18:10 새 편(기한 12:10)·20:10 m1s_total1y 짝·22:10 m1s_nhis70 짝·10/14 08:10 M-1 짝 · 카페 비축 2/2 회복 · 기준 예시: inhded1011(관문 전부·compare.md) · 금지: 짝 글에 영상 없는 숫자 새로 만들기, 같은 내용 두 번(롱폼 글=전체 표, 쇼츠 글=질문 하나), 국민연금 제목 10/14 08:30 전 · 확인 시점: 운영실장 23:05·07:05 · 보고: 칸마다 gates_ok 시각 · slot.txt는 회의가 med·didim·issnote·kidcred·yuryu 칸 시각으로 맞춰 둠(19:05)
   착수: firemap-write 20:21 — 20:10 med1011 발행·verify · 22:10 didim1012 · 내일 08:10 W-1 짝·10:10 G-1 짝 관문
   완료(일부): firemap-write 20:45 — 20:10 med1011 cafe/255 발행 20:42 verify OK 1487/1487자·사진 3/3 · 10/13 08:10 w1cafe1013(W-1 짝, 영상 0yWQeW38UJE 링크, 영수증 0곳) gates_ok 20:44(제목 7.75·표지 K1 7.67·compare.md 6편·readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck·레드팀 2회·전제 가능·editgate auto) · 10/13 10:10 g1cafe1013(G-1 짝, 새 판 xBTZtRp5lMs 링크, 영수증 0곳) gates_ok 20:32(제목 7.33·표지 8.0·compare.md 7편·전제 가능) · slots.json 두 칸 item·gates_ok 적음 · 10/13 20:10·22:10 쇼츠 짝 글 보조 작성 중 · 남은 것: 22:10 didim1012 발행(다음 회차), 10/13 18:10 새 편·10/14 08:10 M-1 짝·비축 2/2

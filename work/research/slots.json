@@ -11,7 +11,7 @@
   "long": 1
  },
  "cadence": {
-  "_note": "매일 칸 시각 — patrol '칸 배정 없음'은 이 목록만 본다(10/10 회의 21:41: patrol 하드코딩 cad 폐지). 쇼츠 하루 1편(X-YT-FREQ 10/9 판정)이라 19:20만. 칸 시각을 바꾸면 여기 한 곳만 고친다. 롱폼은 매일 칸이 아니라 없음.",
+  "_note": "매일 칸 시각 — patrol '칸 배정 없음'은 이 목록만 본다(10/10 회의 21:41: patrol 하드코딩 cad 폐지). 쇼츠 하루 1편(X-YT-FREQ 10/9 판정)이라 19:20만. 칸 시각을 바꾸면 여기 한 곳만 고친다. 롱폼은 매일 칸이 아니라 없음. | firemap-meeting 10/12: 사장님 10/11 쇼츠 하루 2편(07:20·19:20)·롱폼 매일 11:30을 cadence에 반영(patrol이 07:20·11:30 빈 칸도 잡음).",
   "cafe": [
    "08:10",
    "10:10",
@@ -23,20 +23,16 @@
    "22:10"
   ],
   "shorts": [
+   "07:20",
    "19:20"
+  ],
+  "long": [
+   "11:30"
   ]
  },
  "reserve": {
   "shorts": [],
   "cafe": [
-   {
-    "item": "retmid1005",
-    "ep": "work/research/retmid1005/pkg",
-    "status": "10/9 12:10 칸에 배정(eitclate1009 미달 대체) — 비축에서 빠짐. 관문 통과 기록: 관문 통과 2026-10-06 09:37: 제목 '퇴직금 중간정산 받는 돈은 같은데 세금이 39.6만원 더 나온 사례' 3명 평균 8.6(제미나이3-flash 9.8·레드팀 7.5·독자 8.5; 쉼표만 뺌)·표지 v",
-    "by": "firemap-write",
-    "at": "2026-10-06 09:37",
-    "gates_ok": "2026-10-06 09:37"
-   },
    {
     "item": "npsage1009",
     "ep": "work/research/npsage1009/pkg",
@@ -44,22 +40,6 @@
     "by": "firemap-write",
     "at": "2026-10-08 22:36",
     "gates_ok": "2026-10-08 20:24"
-   },
-   {
-    "item": "schdacct1007",
-    "ep": "work/research/schdacct1007/pkg",
-    "status": "관문 통과 2026-10-06(제목 E 7.5·표지 S3 7.58·레드팀 사실 3 반영) · 10/9 16:21 firemap-write 시세 재조회(SCHD 10/8 종가 33.15달러, 6,195→6,290만원)·readcheck 0·selfcheck 사실 0·aitell 1.1·editgate auto 재날인 · SCHD 7일 규칙(#201 10/3)로 10/10부터 공개 가능 · 공개 전날 시세 다시 볼 것 | 2026-10-09 19:11 firemap-write 비축 재확인: editgate auto 일치·readcheck 0·selfcheck 사실 0·aitell 1.1·pending block 없음 → gates_ok 기입(SCHD 마지막 공개 schd1003 10/3 14:29 → 10/10 14:30부터)",
-    "gates_ok": "2026-10-10 11:12",
-    "by": "firemap-write",
-    "at": "2026-10-09 19:11"
-   },
-   {
-    "item": "yuryu1011",
-    "ep": "work/research/yuryu1011/pkg",
-    "status": "관문 통과 2026-10-11 12:36(제목 T9 7.73·표지 Y2 7.67·readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck 사실 1 유지·레드팀 2회 사실 0·경미 7 반영·editgate auto). 세금연금 축·형식2. 상속세 글(inhded1011 10/11 08:10)과 하루 이상 띄워 10/12 이후 칸. slot.txt 없음 — 칸 배정 시 적을 것",
-    "by": "firemap-write",
-    "at": "2026-10-11 12:36",
-    "gates_ok": "2026-10-11 12:36"
    }
   ],
   "long": [
@@ -1019,10 +999,10 @@
   {
    "at": "2026-10-12 20:10",
    "kind": "cafe",
-   "item": "dsrlim1011c",
+   "item": "med1011",
    "owner": "firemap-write",
    "gates_ok": "2026-10-11 23:07",
-   "note": "firemap-write 2026-10-12 18:48: 밀린 관문 통과 편이 대기 5편(med1011·didim1012·issnote1012·kidcred1012·c1cafe1011) — pending 순서대로 med1011이 이 칸에 나감. m1s_nhis70 쇼츠 짝 글은 미작성 | 순돌이 10/12 18:4x: PC 꺼짐(10/11 18시~10/12 18:33)으로 오늘 08:10~18:10 6칸 빠짐 — 몰아서 내지 않는다(운영자 도배·어뷰징 패턴 회피, 카페 간격 90분 유지). 오늘은 남은 2칸만, 관문 통과분으로."
+   "note": "firemap-meeting 2026-10-12 19:1x: item을 실제 나갈 편 med1011로 맞춤(dsrlim1011c는 18:10 #254로 이미 나감) | firemap-write 2026-10-12 18:48: 밀린 관문 통과 편이 대기 5편(med1011·didim1012·issnote1012·kidcred1012·c1cafe1011) — pending 순서대로 med1011이 이 칸에 나감. m1s_nhis70 쇼츠 짝 글은 미작성 | 순돌이 10/12 18:4x: PC 꺼짐(10/11 18시~10/12 18:33)으로 오늘 08:10~18:10 6칸 빠짐 — 몰아서 내지 않는다(운영자 도배·어뷰징 패턴 회피, 카페 간격 90분 유지). 오늘은 남은 2칸만, 관문 통과분으로."
   },
   {
    "at": "2026-10-12 22:10",
@@ -1035,21 +1015,68 @@
   {
    "at": "2026-10-13 07:20",
    "kind": "shorts",
-   "item": "c1s_300",
+   "item": "TBD",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-11 15:26",
-   "note": "firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cardshorts/c1s_300/review.md · yt_pair: 32G21MwLY_A | 순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼",
-   "published": "예약 2026-10-13T07:20:00+09:00 https://youtu.be/32G21MwLY_A",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:1x: c1s_300(C-1 클립) 예약 해제·C-1 비공개라 사용 금지(순돌이 10/11 17:0x) → G-1·W-1 렌더 뒤 클립으로 채움(PD). 같은 날 19:20과 다른 롱폼 | 옛: firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cards",
    "item_pkg": "work/research/cardshorts/c1s_300"
+  },
+  {
+   "at": "2026-10-13 08:10",
+   "kind": "cafe",
+   "item": "W-1짝(ep/W-1/cafe.md)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:1x: yt_pair: W-1 — W-1이 10/12 밤 공개되면 영상 링크 넣어 발행(PD 18:48 요청), '영수증' 1곳 평범한 말로. W-1 미공개면 issnote1012가 이 칸, 짝 글은 W-1 공개일 칸으로"
+  },
+  {
+   "at": "2026-10-13 10:10",
+   "kind": "cafe",
+   "item": "G-1짝(ep/G-1/cafe.md)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:1x: yt_pair: G-1 EZvDDPlXo90 — 영상 11:30 전 칸(PD 10/11 16:25 요청). '영수증' 2곳 평범한 말로. G-1 재예약 안 되면 kidcred1012"
   },
   {
    "at": "2026-10-13 11:30",
    "kind": "long",
    "item": "G-1",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-11 17:18",
-   "note": "firemap-video-producer 2026-10-11 17:18: G-1 업로드 EZvDDPlXo90(10/13 11:30 예약) · Chirp Charon + korsay 숫자 읽기(16:05) · 끝 인사 줄 삭제(editor 16:34) · U5 최장 8.0초·겹침 0(motion 045e377) · 목소리 IQR 0.13·5.80 · deess -12.3dB · 치직 148.8초 = 원본 wav 말소리(click_ok_note) · 제목 숫자 2개(copy 8.53)·bench_check 통과 · yt_pair: G-1 카페 글은 영상 전 10/13 08:10/10:10 칸 | 순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | firemap-meeting 10/09 21:4x: 레드팀 반영 — 녹음 다음 날 공개는 관문 기한까지 3.5시간뿐(M-1 녹음~업로드 3시간 38분 실측), G-1은 녹음 10/11 16:01 → 공개 10/13 19:30(관문 기한 10/12 19:30, 여유 27.5시간) | firemap-meeting 10/09 21:33: G-1 녹음 10/11 16:01 창(W-1이 10/10 창을 씀) · 관문 기한 10/11 19:30 · 녹음 뒤 motion BuyDateOpen·WaterfallPieces 교체·편집 재서명 | firemap-meeting 10/8 13:29: G-1은 목소리 전 준비 끝·썸네일 g1f·카피 통과. 녹음 = 10/8 16:01 TTS 창(C-1 대본이 아직 없어 그 창은 G-1). 10/10 칸에 C-1이 들어가면 G-1은 여기, C-1 미달이면 G-1이 10/10로 당겨지고 이 칸은 C-1. 공개 전날 calc 재실행·카피 숫자 재확인. 관문 기한 10/11 19:30",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:1x: G-1 EZvDDPlXo90 예약이 풀려 있음(영수증 빼기 재제작, PD 18:45 회차) — 다시 예약 건 시각을 gates_ok에 새로 적을 것. 못 넘으면 이 칸 skip 사유 | firemap-video-producer 2026-10-11 17:18: G-1 업로드 EZvDDPlXo90(10/13 11:30 예약) · Chirp Charon + korsay 숫자 읽기(16:05) · 끝 인사 줄 삭제(editor 16:34) · U5 최장 8.0초·겹침 0(motion 045e377) · 목소리 IQR 0.13·5.80 · deess -12.3dB · 치직 148.8초 = 원본 wav 말소리(click_ok_note) · 제목 숫자 2개(copy 8.53)·bench_check 통과 · yt_pair: G-1 카페 글은 영상 전 10/13 08:10/10:10 칸 | 순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | firemap-meeting 10/09 21:4x: 레드팀 반영 — 녹음 다음 날 공개는 관문 기한까지 3.5시간뿐(M-1 녹음~업로드 3시간 38분 실측), G-1은 녹음 10/11 16:01 → 공개 10/13 19:30(관문 기한 10/12 19:30, 여유 27.5시간) | firemap-meeting 10/09 21:33: G-1 녹음 10/11 16:01 창(W-1이 10/10 창을 씀) · 관문 기한 10/11 19:30 · 녹음 뒤 motion BuyDateOpen·WaterfallPieces 교체·편집 재서명 | firemap-meeting 10/8 13:29: G-1은 목소리 전 준비 끝·썸네일 g1f·카피 통과. 녹음 = 10/8 16:01 TTS 창(C-1 대본이 아직 없어 그 창은 G-1). 10/10 칸에 C-1이 들어가면 G-1은 여기, C-1 미달이면 G-1이 10/10로 당겨지고 이 칸은 C-1. 공개 전날 calc 재실행·카피 숫자 재확인. 관문 기한 10/11 19:30",
    "ep": "G-1"
+  },
+  {
+   "at": "2026-10-13 12:10",
+   "kind": "cafe",
+   "item": "issnote1012",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:1x: 관문 통과(10/11 10:53) 대기분"
+  },
+  {
+   "at": "2026-10-13 14:10",
+   "kind": "cafe",
+   "item": "kidcred1012",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:1x: 관문 통과(10/11 14:45) 대기분"
+  },
+  {
+   "at": "2026-10-13 16:10",
+   "kind": "cafe",
+   "item": "yuryu1011",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:1x: 비축(관문 10/11 12:36)에서 칸으로 — 상속세 inhded(10/11)와 이틀 띄움"
+  },
+  {
+   "at": "2026-10-13 18:10",
+   "kind": "cafe",
+   "item": "TBD-새 편",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:1x: 새 원고(검색형, 세금연금·부동산 외 축 — 배당현금흐름 등). 기한 12:10"
   },
   {
    "at": "2026-10-13 19:20",
@@ -1062,14 +1089,37 @@
    "note": "firemap-video-producer 2026-10-11 13:05: v2로 교체(shorts-gap-1011.md — 첫 말·0초 답 숫자·자막 조각·검은 띠 제목·링크 줄 뺌), 관문 cardshorts/m1s_total1y/review.md 'v2' | firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_total1y/review.md · 카드 쇼츠 대체(사장님 10/10 지시)"
   },
   {
+   "at": "2026-10-13 20:10",
+   "kind": "cafe",
+   "item": "m1s_total1y짝",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:1x: yt_pair: m1s_total1y uMqmvqNM02k(19:20 쇼츠) — 그 쇼츠 질문 하나에 답하는 짧은 글(쇼츠 링크+M-1 eTjVs1vDTwg 링크+표)"
+  },
+  {
+   "at": "2026-10-13 22:10",
+   "kind": "cafe",
+   "item": "m1s_nhis70짝",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:1x: yt_pair: m1s_nhis70 kEHjN5WFBPI(10/12 19:20 쇼츠) — 10/12 칸이 PC 꺼짐으로 빠져 하루 늦게. 질문 하나만, M-1 롱폼 링크"
+  },
+  {
    "at": "2026-10-14 07:20",
    "kind": "shorts",
-   "item": "c1s_receipt",
+   "item": "TBD",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-11 15:26",
-   "note": "firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cardshorts/c1s_receipt/review.md · yt_pair: QlL0VK4PB_8 | 순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼",
-   "published": "예약 2026-10-14T07:20:00+09:00 https://youtu.be/QlL0VK4PB_8",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:1x: c1s_receipt(C-1 클립) 예약 해제·C-1 비공개라 사용 금지(순돌이 10/11 17:0x) → G-1·W-1 렌더 뒤 클립으로 채움(PD). 같은 날 19:20과 다른 롱폼 | 옛: firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cards",
    "item_pkg": "work/research/cardshorts/c1s_receipt"
+  },
+  {
+   "at": "2026-10-14 08:10",
+   "kind": "cafe",
+   "item": "M-1짝(ep/M-1/cafe.md)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:1x: yt_pair: M-1 eTjVs1vDTwg — 10/12 08:10 배정분이 PC 꺼짐으로 빠짐. 전체 표 긴 글. 국민연금 글(npsage 12:10)과 다른 축"
   },
   {
    "at": "2026-10-14 11:30",
@@ -1077,7 +1127,7 @@
    "item": "R-1",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | 순돌이 10/11: C-1은 10/11로 당김 → R-1(10/13 16:01 창, 튀는 줄·속도 5.12 고칠 것) | firemap-meeting 10/10 21:40: C-1 확정(녹음 10/12 16:01 창, 관문 기한 10/13 19:30). R-1은 Chirp 결재 뒤로 뺌(같은 날 롱폼 2편 금지). | 이전: 순돌이 10/10 12:4x: C-1은 10/12로 당김(16:01 창에서 lfretake 다시 받기 2요청) → 이 칸은 R-1 후보(회의가 확정) | firemap-meeting 10/09 21:33: 녹음 10/12 16:01 창(처음부터, --gate) · 관문 기한 10/13 19:30(녹음 다음 날까지 여유) · 10/12~18주 G-1·C-1 = 2편 · 레드팀 반영으로 10/13→10/14"
+   "note": "firemap-meeting 2026-10-12 19:1x: W-1 1화가 10/12 밤에 못 나가면 이 칸이 W-1(youtube-loop 편성 제안). 나가면 R-1(비상 예비, 전제 가능·영수증 26곳 제거) 그대로 | 순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | 순돌이 10/11: C-1은 10/11로 당김 → R-1(10/13 16:01 창, 튀는 줄·속도 5.12 고칠 것) | firemap-meeting 10/10 21:40: C-1 확정(녹음 10/12 16:01 창, 관문 기한 10/13 19:30). R-1은 Chirp 결재 뒤로 뺌(같은 날 롱폼 2편 금지). | 이전: 순돌이 10/10 12:4x: C-1은 10/12로 당김(16:01 창에서 lfretake 다시 받기 2요청) → 이 칸은 R-1 후보(회의가 확정) | firemap-meeting 10/09 21:33: 녹음 10/12 16:01 창(처음부터, --gate) · 관문 기한 10/13 19:30(녹음 다음 날까지 여유) · 10/12~18주 G-1·C-1 = 2편 · 레드팀 반영으로 10/13→10/14"
   },
   {
    "at": "2026-10-14 19:20",
@@ -1090,11 +1140,10 @@
   {
    "at": "2026-10-15 07:20",
    "kind": "shorts",
-   "item": "c1s_fx",
+   "item": "TBD",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-11 15:26",
-   "note": "firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cardshorts/c1s_fx/review.md · yt_pair: LEEGTOokOaM | 순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼",
-   "published": "예약 2026-10-15T07:20:00+09:00 https://youtu.be/LEEGTOokOaM",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:1x: c1s_fx(C-1 클립) 예약 해제·C-1 비공개라 사용 금지(순돌이 10/11 17:0x) → G-1·W-1 렌더 뒤 클립으로 채움(PD). 같은 날 19:20과 다른 롱폼 | 옛: firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cards",
    "item_pkg": "work/research/cardshorts/c1s_fx"
   },
   {
@@ -1161,6 +1210,14 @@
    "owner": "firemap-video-producer",
    "gates_ok": null,
    "note": "순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼"
+  },
+  {
+   "at": "2026-10-22 11:30",
+   "kind": "long",
+   "item": "H-2(동네 손품 2편: 대치·잠실·반포)",
+   "owner": "firemap-youtube-loop",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:1x: 순돌이 10/11 지시 동네 손품 매주 고정 1편 — series-plan 4-2 표 4~6번(은마 62,570·잠실주공5단지 29,790·반포자이 39,490). H-1 방식(tour.py) 재사용, 대본 10/19까지, 제작 PD"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외"

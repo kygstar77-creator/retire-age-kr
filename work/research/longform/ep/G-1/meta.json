@@ -14,7 +14,7 @@
  "privacy": "private",
  "privacy_note": "예약 공개 — publishAt 시각에 자동 public(slots.json 롱폼 칸, 회의가 배정)",
  "paid": false,
- "synthetic": false,
+ "synthetic": true,
  "veo": false,
  "coupang": "안 붙임 — 금 투자(금융·투자 주제), 시험 4편 중 1편 규칙도 이 편 아님",
  "voice": {

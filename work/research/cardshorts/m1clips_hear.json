@@ -478,5 +478,60 @@
   "heard": "그런데 왜 한국에서 산 금은 떨어졌을까요?",
   "model": "gemini-3.7-flash",
   "at": "2026-10-12 20:14"
+ },
+ "audio/r-1/7859d2ea21464696.wav": {
+  "heard": "그러니까 달러로 산 ETF가 꼼짝도 안 해서 도원화로 바꿔 오면 돈이 줄어 있어요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-12 22:27"
+ },
+ "audio/r-1/9dbb4f4d6621aa0d.wav": {
+  "heard": "작년 그날 환율은 1406원이었어요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-12 22:27"
+ },
+ "audio/r-1/b71cc099d0d8178c.wav": {
+  "heard": "오늘 같은 날에는 1359.6원이었고요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-12 22:27"
+ },
+ "audio/r-1/5f262cf286027f30.wav": {
+  "heard": "달러 값이 3.3% 내려간 거예요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-12 22:27"
+ },
+ "audio/r-1/85b9a47e29bf37c3.wav": {
+  "heard": "원금 기준으로 환율 하나 때문에 약 330만 원이 빠져요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-12 22:30"
+ },
+ "audio/r-1/07d26605b48ca61a.wav": {
+  "heard": "그런데 시작과 끝만 보면 놓치는 게 있어요. 1년 안에서는 환율이 훨씬 크게 움직였거든요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-12 22:30"
+ },
+ "audio/r-1/19231d4fc43c09aa.wav": {
+  "heard": "가장 높았던 날은 1554.4원이었고요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-12 22:30"
+ },
+ "audio/r-1/275892293a589cf2.wav": {
+  "heard": "가장 낮았던 날은 1337.9원이었어요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-12 22:31"
+ },
+ "audio/r-1/3a012ea0a73ec69c.wav": {
+  "heard": "그래서 S&P 500에 넣은 1억은 두 달 남짓 만에 1,528만 원이 환율 때문에 빠진 구간이 있었어요.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-12 22:31"
+ },
+ "audio/r-1/cc8d72f89fd08777.wav": {
+  "heard": "그러니까 1년 결과는 끝날 하루만 본 숫자고 그 사이 길은 훨씬 거칠었습니다.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-12 22:31"
+ },
+ "audio/r-1/22990909bb91013b.wav": {
+  "heard": "오늘 숫자는 모두 지나간 1년 값이 고어디에 넣으라는 말은 아닙니다.",
+  "model": "gemini-3.1-flash-lite",
+  "at": "2026-10-12 22:32"
  }
 }

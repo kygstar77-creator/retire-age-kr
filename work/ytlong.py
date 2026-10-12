@@ -2,6 +2,7 @@
 # 그리고 yt-policy-algorithm.md §5.1 관문(C1·C5·C7·C8·C9·C11)을 코드로 막는다. §5.2 판단 5문항 답은 meta.json에 적혀 있어야 올린다.
 #   py -3.12 work/ytlong.py gate <ep폴더>            # 관문만(업로드 안 함)
 #   py -3.12 work/ytlong.py up <ep폴더>              # 관문 통과 시 업로드 → uploads.jsonl 기록
+#   py -3.12 work/ytlong.py up <ep폴더> --replace <옛 videoId>   # 같은 편 새 판(옛 판은 비공개로 따로 정리) — 없으면 중복 검사가 막는다
 # ep폴더/meta.json: {"video": mp4, "thumb": png, "title", "desc", "tags": [...], "publishAt": "2026-10-01T19:30:00+09:00",
 #                   "synthetic": bool, "veo": bool, "answers": {"q1".."q5"}, "missing": 0}
 # 예약 공개는 API 규칙상 privacyStatus=private + publishAt이어야 한다(videos 문서 status.publishAt). 그래서 C11(비공개 금지)은
@@ -130,8 +131,28 @@ def gate(ep):
         if not okv: bad.append('목소리 한결같음 막힘 — py -3.12 work/lfvoice.py check ' + ep + ' | ' + buf.getvalue().strip().splitlines()[-1])
     return m, bad
 
-def up(ep):
+def dup_check(ep, m, replace=None):
+    # 교훈 31·체크리스트 41(10/12 회의): W-1 같은 판을 두 회차가 따로 올려 중복 영상(0yWQ·dPrE). 배차 메시지가 아니라 장부를 믿는다.
+    #   uploads.jsonl에 같은 편의 살아 있는(replaced 없는) 줄, slots.json에 같은 편이나 같은 칸(publishAt 시각)의 published가 있으면 멈춘다.
+    #   새 판으로 바꾸는 게 맞으면 --replace <옛 videoId>로 그 하나만 허용한다.
+    me = m.get('ep', os.path.basename(os.path.normpath(ep))); bad = []
+    for u in uploads():
+        if u.get('ep') == me and not u.get('replaced') and u.get('videoId') != replace:
+            bad.append(f"중복: uploads.jsonl에 {me} {u.get('videoId')}({u.get('publishAt')}) 이미 있음 — 새 판이면 --replace {u.get('videoId')}")
+    sp = os.path.join(HERE, 'research', 'slots.json')
+    if os.path.exists(sp) and m.get('publishAt'):
+        at = datetime.datetime.fromisoformat(m['publishAt']).astimezone(KST).strftime('%Y-%m-%d %H:%M')
+        for x in json.load(open(sp, encoding='utf-8')).get('slots', []):
+            if x.get('kind') != 'long' or not x.get('published'): continue
+            if x.get('item') == me or x.get('ep') == me or x.get('at') == at:
+                pub = str(x['published'])
+                if replace and replace in pub: continue
+                bad.append(f"중복: slots.json {x.get('at')} {x.get('item')} published 있음 — {pub[:70]}")
+    return bad
+
+def up(ep, replace=None):
     m, bad = gate(ep)
+    bad += dup_check(ep, m, replace)
     if bad: print('관문 막힘:', *bad, sep='\n  '); sys.exit(3)
     from ytupload import service
     from googleapiclient.http import MediaFileUpload
@@ -160,6 +181,11 @@ def up(ep):
     v = yt.videos().list(part='status,snippet', id=vid).execute()['items'][0]['status']
     rec = {'ep': os.path.basename(os.path.normpath(ep)), 'videoId': vid, 'title': m['title'], 'publishAt': m['publishAt'], 'desc': m['desc'],
            'status': v, 'answers': m['answers'], 'notes': notes, 'at': datetime.datetime.now(KST).isoformat(timespec='minutes')}
+    if replace:   # 옛 판 줄에 replaced 표시 — C1 같은 날 2편·중복 검사가 옛 판을 세지 않게
+        ls = [json.loads(l) for l in open(UPL, encoding='utf-8') if l.strip()]
+        for u in ls:
+            if u.get('videoId') == replace and not u.get('replaced'): u['replaced'] = vid
+        open(UPL, 'w', encoding='utf-8').write(''.join(json.dumps(u, ensure_ascii=False) + '\n' for u in ls))
     open(UPL, 'a', encoding='utf-8').write(json.dumps(rec, ensure_ascii=False) + '\n')
     print(json.dumps({'videoId': vid, 'status': v, 'notes': notes}, ensure_ascii=False))
 
@@ -167,4 +193,7 @@ if __name__ == '__main__':
     cmd, ep = sys.argv[1], os.path.abspath(sys.argv[2])
     if cmd == 'gate':
         m, bad = gate(ep); print('통과' if not bad else '막힘:\n  ' + '\n  '.join(bad))
-    elif cmd == 'up': up(ep)
+    elif cmd == 'up': up(ep, sys.argv[sys.argv.index('--replace') + 1] if '--replace' in sys.argv else None)
+    elif cmd == 'dup':   # 중복 검사만
+        m = json.load(open(os.path.join(ep, 'meta.json'), encoding='utf-8')); b = dup_check(ep, m, sys.argv[sys.argv.index('--replace') + 1] if '--replace' in sys.argv else None)
+        print('중복 없음' if not b else chr(10).join(b))

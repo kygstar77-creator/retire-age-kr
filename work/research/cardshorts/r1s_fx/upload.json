@@ -1,0 +1,22 @@
+{
+ "name": "r1s_fx",
+ "ep": "R-1",
+ "from_long": "9JNYZsjG4Mo",
+ "mp4": "work/video/out/r1s_fx_ds.mp4",
+ "publishAt": "2026-10-14T19:20:00+09:00",
+ "title": "달러로 산 미국 ETF, 환율만으로 1억에서 330만원 줄었다 #shorts",
+ "description": "전체 계산: https://youtu.be/9JNYZsjG4Mo\n\n미국 ETF를 1억어치 달러로 사서 1년 들고 있었다면, 원/달러 매매기준율이 2025년 10월 2일 1,406.0원에서 2026년 10월 2일 1,359.6원으로 내려(달러 값 −3.30%) 원화로 바꿔 올 때 환율만으로 3,300,142원(약 330만원)이 줄어듭니다.\n1년 안에서는 환율이 더 크게 움직였습니다. 가장 높았던 날 1,554.4원(2026-07-02), 가장 낮았던 날 1,337.9원(2026-09-10). 그 사이 S&P500(SPY) 1억의 원화 값은 123,037,245원에서 107,755,946원으로 두 달 남짓 만에 1,528만원 줄었는데, 같은 기간 달러 가격은 올랐습니다.\n세금까지 뗀 네 곳(예금·S&P500·SCHD·금) 1년 결과는 본편에서 계산합니다.\n\n출처: 한국은행 ECOS 731Y001(원/달러 매매기준율) · 야후 파이낸스 종가 · 파이어맵 계산\n지나간 1년 값이고, 어디에 넣으라는 말이 아닙니다.\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.\n\n#shorts #환율 #미국ETF",
+ "tags": "환율,미국 ETF,환차손,원달러 환율,S&P500",
+ "same_day_pair": "10/14 07:20 g1s_buyday(G-1) — 다른 롱폼",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "2i957iWL8ko",
+ "uploaded_at": "2026-10-12 22:39:15",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-14T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

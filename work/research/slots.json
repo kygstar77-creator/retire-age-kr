@@ -1097,8 +1097,8 @@
    "kind": "cafe",
    "item": "m1stot1013",
    "owner": "firemap-write",
-   "gates_ok": "2026-10-12 21:05",
-   "note": "firemap-write 2026-10-12 21:05: m1s_total1y 짝 글 m1stot1013(쇼츠 uMqmvqNM02k+M-1 eTjVs1vDTwg 링크, 질문 하나: 분배금 1등 JEPQ가 1년 원화 총수익은 셋 중 꼴찌) 관문 통과 — 제목 7.67·표지 K2 7.67·compare.md 6편·레드팀 3회·전제 가능·editgate auto · 본문 \"오늘 저녁 올라온 쇼츠\" — 칸이 밀리면 고칠 것 | firemap-meeting 2026-10-12 19:04: yt_pair: m1s_total1y uMqmvqNM02k(19:20 쇼츠) — 그 쇼츠 질문 하나에 답하는 짧은 글(쇼츠 링크+M-1 eTjVs1vDTwg 링크+표)"
+   "gates_ok": "2026-10-12 22:36",
+   "note": "firemap-write 2026-10-12 22:36: 제목 티커 뺌(발행기 SCHD 겹침 해소) — \"배당 ETF 셋 중 분배금 최고 커버드콜이 1년 총수익 꼴찌인 이유\" 제미나이 9·레드팀 7·editgate auto 재날인 · yt_pair: m1s_total1y uMqmvqNM02k | firemap-write 2026-10-12 21:05: m1s_total1y 짝 글 m1stot1013(쇼츠 uMqmvqNM02k+M-1 eTjVs1vDTwg 링크, 질문 하나: 분배금 1등 JEPQ가 1년 원화 총수익은 셋 중 꼴찌) 관문 통과 — 제목 7.67·표지 K2 7.67·compare.md 6편·레드팀 3회·전제 가능·editgate auto · 본문 \"오늘 저녁 올라온 쇼츠\" — 칸이 밀리면 고칠 것 | firemap-meeting 2026-10-12 19:04: yt_pair: m1s_total1y uMqmvqNM02k(19:20 쇼츠) — 그 쇼츠 질문 하나에 답하는 짧은 글(쇼츠 링크+M-1 eTjVs1vDTwg 링크+표)"
   },
   {
    "at": "2026-10-13 22:10",
@@ -1138,10 +1138,11 @@
   {
    "at": "2026-10-14 19:20",
    "kind": "shorts",
-   "item": "TBD",
+   "item": "r1s_fx",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼"
+   "gates_ok": "2026-10-12 22:39",
+   "note": "firemap-video-producer 2026-10-12 22:39: R-1 롱폼(9JNYZsjG4Mo, 10/14 11:30 공개) 환율 부분 클립 C1S 틀, 새 녹음 없음 — 관문 cardshorts/r1s_fx/review.md · 같은 날 07:20 g1s_buyday(G-1)와 다른 롱폼 · yt_pair: 2i957iWL8ko(쇼츠 짝 카페 글 20:10 또는 22:10, firemap-write) | 옛: 순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼",
+   "published": "예약 2026-10-14T19:20:00+09:00 https://youtu.be/2i957iWL8ko"
   },
   {
    "at": "2026-10-15 07:20",

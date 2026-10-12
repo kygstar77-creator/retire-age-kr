@@ -38,3 +38,4 @@
 - 2026-10-10 07:53: 블로그 RSS 아이디는 kygstar7777(perf.py BLOGID)이다. kygstar77로 받으면 2020년 글이 나와 '새 글 없음'을 잘못 볼 수 있다. 시청 지속은 ytupload 토큰에 yt-analytics 범위가 없어 못 잰다 — 다른 경로(vidIQ·Studio) 먼저 찾는다.
 - 2026-10-11 07:52: RSS는 정규식 첫 pubDate가 아니라 <item> 안 pubDate만 본다 — 10/9에 적어 두고도 오늘 또 첫 줄 07:51을 새 글로 볼 뻔했다. 파싱 한 줄: re.findall(r'<item>(.*?)</item>') 뒤 pubDate. 환율 원화 환산 글은 apis.ecos('731Y001','D',d,d,'0000001')로 날짜별 1분 안에 재대조된다.
 - 2026-10-12 18:57: 영상이 내려가면 slots.json에서 그 영상의 짝 카페(yt_pair)를 grep해 대기열에 남아 있는지 본다 — gates_ok는 나중 지시(전제 검사)를 모른다. 막을 땐 STOP_cafe보다 pkg/hold.txt(편 단위)가 덜 다친다.
+- 2026-10-12 21:04: GitHub REST는 비인증이면 IP당 한도로 403이 난다 — 공개 여부는 웹·raw.githubusercontent 200으로도 잴 수 있고, API 값이 필요하면 git 자격 증명 토큰으로 인증해서 부른다. 야후 chart API 기간은 2026년 epoch(1790726400~)로 — 2025 값을 받아 놓고 틀렸다고 볼 뻔했다.

@@ -18,6 +18,8 @@
 #   카테고리: 경제지식      (블로그)
 #   태그: a, b, c           (블로그)
 #   게시판: 자유게시판       (카페)
+#   attach: <파일 경로>      (카페, 선택) 파일 첨부. 한 줄에 하나, 여러 줄 가능. 경로는 사진과 같은 규칙(pkg/.. → pkg)
+#   visibility: members     (카페, 선택) 멤버공개. 없으면 지금처럼 전체공개
 import sys, os, re, time, json, io, subprocess, datetime, urllib.parse
 sys.stdout.reconfigure(encoding='utf-8')
 from playwright.sync_api import sync_playwright, TimeoutError as PWTimeout
@@ -112,13 +114,53 @@ def logged_in(page, deep=True):
     except Exception as e:
         print('로그인 실검사 실패:', repr(e)[:90]); return True   # 못 재면 막지 않는다
 
+# 카페 선택 옵션(2026-10-12 회원 자료 글): 엑셀 파일 첨부 + 멤버공개.
+# 공식 카페 API에는 이미지 칸만 있고, 이 발행기는 늘 전체공개를 골랐다(research/growth/cafe-resource-1012/publish-check.md).
+# order.txt에 이 줄이 없으면 아무것도 바뀌지 않는다(2026-10-12 기준 order.txt 372개 중 이 줄이 있는 것 0개).
+_OPT_RE = re.compile(r'^(attach|visibility)\s*[:：]\s*(.+)$', re.I)
+_VIS = {'members': 'members', 'member': 'members', '멤버공개': 'members', 'public': 'public', '전체공개': 'public'}
+ATTACH_MAX = 50 * 1024 * 1024   # 글쓰기 화면 '파일 불러오기' 창 문구 "파일당 50MB까지 첨부 가능합니다"(2026-10-12 캡처)
+
+def _unquote(v):
+    return v.strip().strip('"').strip("'").strip()
+
+def pkg_options(pkg):
+    """order.txt의 선택 옵션. {'attach': [절대경로, ...], 'visibility': 'members'|'public'} 중 있는 것만.
+    파일이 없거나 50MB를 넘거나 공개 값이 낯설면 ValueError — 발행 전에 멈춘다(엉뚱하게 전체공개로 나가지 않게)."""
+    out = {}
+    for line in open(os.path.join(pkg, 'order.txt'), encoding='utf-8').read().splitlines():
+        m = _OPT_RE.match(line.strip())
+        if not m: continue
+        key, raw = m.group(1).lower(), m.group(2).strip()
+        if key == 'visibility':
+            v = _VIS.get(_unquote(raw).lower())
+            if not v: raise ValueError(f'visibility 값을 모른다: {raw} (members 또는 public)')
+            out['visibility'] = v
+            continue
+        vals = [raw]
+        if raw.startswith('['):
+            try: vals = [str(x) for x in json.loads(raw)]
+            except Exception: vals = [x for x in raw.strip('[]').split(',')]
+        for tok in (_unquote(x) for x in vals):
+            if not tok: continue
+            path = tok if os.path.isabs(tok) else os.path.normpath(os.path.join(pkg, '..', tok))
+            if not os.path.isabs(tok) and not os.path.exists(path):
+                alt = os.path.normpath(os.path.join(pkg, tok))
+                if os.path.exists(alt): path = alt
+            if not os.path.isfile(path): raise ValueError('첨부 파일 없음: ' + path)
+            if os.path.getsize(path) > ATTACH_MAX: raise ValueError(f'첨부 파일이 50MB를 넘는다: {path}')
+            out.setdefault('attach', []).append(path)
+    return out
+
 def read_pkg(pkg):
     order = open(os.path.join(pkg, 'order.txt'), encoding='utf-8').read().splitlines()
     title = open(os.path.join(pkg, 'title.txt'), encoding='utf-8').read().strip()
     seq, meta = [], {}
+    meta.update(pkg_options(pkg))
     for line in order:
         s = line.strip()
         if not s or s.startswith('제목'): continue
+        if _OPT_RE.match(s): continue
         m = re.match(r'^(카테고리|태그|게시판)\s*[:：]\s*(.+)$', s)
         if m: meta[m.group(1)] = m.group(2).split('·')[0].strip(); continue   # '자유게시판 · 전체공개' 같은 꼬리 제거
         if s.startswith('블로그 발행') or s.startswith('카페 발행'): continue
@@ -907,6 +949,8 @@ def post_blog(page, pkg, wait=False):
     day_guard('blog'); jitter('blog'); rate_guard('blog', wait)
     page = alive(page)
     title, seq, meta = read_pkg(pkg)
+    if meta.get('attach') or meta.get('visibility'):
+        raise RuntimeError('attach·visibility는 카페 전용 옵션이다 — 블로그로 올리지 않는다')
     seq = with_cafe_tail(seq)
     page.goto(f'https://blog.naver.com/{BLOG_ID}/postwrite', wait_until='domcontentloaded')
     page.wait_for_timeout(6000)
@@ -1086,9 +1130,76 @@ def post_cafe(page, pkg, wait=False):
         if kind == 'text': type_text(frame, val)
         else: insert_image(frame, val, photo)
     verify_body(frame, seq, '카페')
+    # 선택 옵션(order.txt attach·visibility). 없으면 아래 두 블록은 아무것도 안 한다 — 예전과 같은 길이다.
+    files = meta.get('attach') or []
+    for f in files:
+        attach_file(page, frame, f)
+    if files:
+        got = frame.locator('.se-component.se-file').count()
+        print(f'카페 첨부 파일 {got}/{len(files)}개')
+        if got < len(files): raise RuntimeError('첨부 파일이 덜 들어감 — 등록하지 않음')
     shot(page, 'cafe_body')
-    set_cafe_public(page)
+    if meta.get('visibility') == 'members':
+        if not set_cafe_members(page): raise RuntimeError('멤버공개 선택 실패 — 등록하지 않음')
+    else:
+        set_cafe_public(page)
     return submit_cafe(page, title)
+
+def attach_file(page, frame, path):
+    """본문 끝에 파일 하나를 첨부한다(도구 막대 '파일' → '내 컴퓨터' → 파일 고르기).
+    2026-10-12 글쓰기 화면 시험(등록 안 누름)으로 확인한 것:
+      - 도구 막대 button[data-name="file"]을 누르면 바로 파일 창이 아니라 '파일 불러오기' 창이 뜬다(내 컴퓨터 / 네이버 MYBOX).
+      - '내 컴퓨터'(button.se-popup-file-source-button-local)를 눌러야 파일 고르기 창이 열린다.
+      - 고르면 POST upapi.cafe.naver.com/v1.0/cafes/editor/files 로 올라가고 본문에 .se-component.se-file 이 생긴다.
+        파일 이름은 .se-file-name 에 그대로 보인다.
+    업로드 응답이 없거나 실패했거나 이름이 본문에 안 보이면 멈춘다 — 파일 없는 자료 글이 나가지 않게."""
+    name = os.path.basename(path)
+    before = frame.locator('.se-component.se-file').count()
+    ups = []
+    def _up(resp):
+        try:
+            if '/editor/files' in resp.url and resp.request.method == 'POST': ups.append(resp.status)
+        except Exception: pass
+    page.on('response', _up)
+    try:
+        click_last_paragraph(frame)
+        page.locator('button[data-name="file"]').first.click(); page.wait_for_timeout(1000)
+        with page.expect_file_chooser(timeout=15000) as fc:
+            page.locator('button.se-popup-file-source-button-local, button:has-text("내 컴퓨터")').first.click()
+        fc.value.set_files(path)
+        for _ in range(120):                   # 업로드 응답과 파일 칸이 생길 때까지(최대 60초)
+            page.wait_for_timeout(500)
+            if ups and frame.locator('.se-component.se-file').count() > before: break
+        page.wait_for_timeout(800)
+    finally:
+        try: page.remove_listener('response', _up)
+        except Exception: pass
+    names = [n.strip() for n in frame.locator('.se-component.se-file .se-file-name').all_inner_texts()]
+    print(f'파일 첨부: {name} · 업로드 응답 {ups} · 본문 파일 칸 {names}')
+    if not ups: raise RuntimeError(f'파일 업로드 응답이 없다: {name}')
+    if any(s >= 400 for s in ups): raise RuntimeError(f'파일 업로드 실패({ups}): {name}')
+    if frame.locator('.se-component.se-file').count() <= before or name not in names:
+        raise RuntimeError(f'본문에 파일 칸이 안 생겼다: {name}')
+
+def set_cafe_members(page):
+    """공개 설정을 멤버공개로. 2026-10-12 글쓰기 화면에서 확인: 라디오는 input#member(name=public value=false)와
+    input#all(value=true)이고, 새 글은 처음부터 멤버공개가 골라져 있다. '공개 설정' 버튼을 눌러 펼쳐야
+    label[for=member]가 보인다. 기본값을 믿지 않고 눌러 고른 뒤 실제 체크 상태로 판정한다.
+    그 아래 '검색 · 네이버 서비스공개'(input#permit, 기본 켜짐)는 건드리지 않는다 — 결과는 로그에 남긴다."""
+    state = "() => { const m=document.querySelector('input#member[name=public]'), a=document.querySelector('input#all[name=public]'), p=document.querySelector('input#permit'); return {member: !!(m && m.checked), all: !!(a && a.checked), permit: p ? p.checked : null}; }"
+    lab = page.locator('label[for="member"]').first
+    for i in range(2):
+        try:
+            if not lab.is_visible():
+                page.get_by_text('공개 설정', exact=False).first.click(); page.wait_for_timeout(500)
+            lab.click(timeout=5000); break
+        except Exception as e:
+            print(f'멤버공개 클릭 실패({i+1}/2):', repr(e)[:100])
+    page.wait_for_timeout(600)
+    st = page.evaluate(state)
+    ok = st['member'] and not st['all']
+    print('멤버공개:', '선택됨' if ok else '선택 실패', f'(검색·네이버 서비스공개 {"켜짐" if st["permit"] else "꺼짐" if st["permit"] is False else "못 찾음"})')
+    return ok
 
 def set_cafe_public(page):
     """공개 설정을 전체공개로. 라디오(name=public value=true)는 비활성이 아니다 — 2026-09-22 프로브로 확인.
@@ -1286,6 +1397,9 @@ def rewrite_cafe(page, article_id, pkg):
     제목도 묶음 것으로 맞춘다. 2026-09-26까지는 본문만 갈아 끼우고 제목은 건드리지 않았다 —
     공지·가입인사 제목을 고치려고 돌렸더니 "성공"이라 찍고는 옛 제목이 그대로 남아 있었다."""
     title, seq, meta = read_pkg(pkg)
+    # 재작성은 본문을 통째로 비우고(첨부 파일 칸도 지워진다) 전체공개로 다시 등록한다 → 옵션 글에는 쓰지 않는다.
+    if meta.get('attach') or meta.get('visibility') == 'members':
+        raise RuntimeError('attach·멤버공개 묶음은 rewrite 미지원 — 전체공개·파일 없음으로 바뀐다')
     edit = open_cafe_edit(page, article_id)
     frame = edit.main_frame
     if not frame.locator('.se-component').count(): raise RuntimeError('새 편집기가 아님(구 편집기 글은 rewrite 미지원)')
@@ -1520,6 +1634,15 @@ def main():
             args = [a for a in sys.argv[2:] if a not in ('--wait', '--nowait')]
             wait = '--nowait' not in sys.argv
             pkg = os.path.abspath(args[0])
+            # 선택 옵션(attach·visibility)은 쉬기(jitter) 전에 검사한다. 옵션이 없는 묶음은 그대로 지나간다.
+            try:
+                _opts = pkg_options(pkg)
+            except ValueError as e:
+                print('옵션 오류 — 올리지 않는다:', e); sys.exit(4)
+            if _opts and cmd == 'blog':
+                print('attach·visibility는 카페 전용 옵션이다 — 블로그로 올리지 않는다'); sys.exit(4)
+            if _opts:
+                print('카페 옵션:', json.dumps(_opts, ensure_ascii=False))
             # 사진이 한 장도 없는 묶음은 올리지 않는다(2026-09-25 13시 회차).
             # cma1007이 order.txt에 img 줄이 하나도 없는 채로 카페에 나갔다 — 사진 0장.
             # 같은 날 나간 다른 카페 글은 모두 3~4장이었으니 규칙이 아니라 묶음 하나가 빠진 것이고,

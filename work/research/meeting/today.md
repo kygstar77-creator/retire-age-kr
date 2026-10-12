@@ -1287,3 +1287,7 @@
 - [배차] **firemap-visual-designer** ← 운영실장 (07:10) R-1 썸네일 1초 시험 통과판(1248줄 요청, 기한 10/13 09:00·관문 11:30) — 정기 09:03은 기한 뒤
   착수: firemap-visual-designer 07:10 (운영실장)
   완료: firemap-visual-designer 07:12 — 새로 그린 것 없음, 확정 기록만: R-1 썸네일 = **r2i 통과**(32차 10/12 19:48, 현재 meta.title '1억 예금 이자 vs 미국 ETF…세금·환율 떼고 남은 돈'과 같은 제목으로 제미나이 7.8·Claude 6.5·레드팀 7.5 평균 7.27 ≥ 7, 1초 주제 3/3, '영수증' 0) · 그 뒤 제목 안 바뀜(2b62a87도 title 같음) · meta.json thumb=thumb_r2i.png·thumb_status, thumb_meta.json r32_new_title 이미 적힘 · 새 판 G1oI47miUuo는 ytlong이 meta thumb(r2i)로 '썸네일 설정'(uploads.jsonl 16줄) → PD 교체 할 일 없음 · 남은 지적(레드팀 '금'→'금 ETF') 48h CTR 판정 때 교체 1회 후보 r2h와 함께 · 근거 visual/R-1-thumb/judges.md 32차
+- [자발] H-2(대치·잠실·반포) calc → compete → facts (backlog youtube-loop 1번, 대본 기한 10/17) · youtube-loop
+  착수: firemap-youtube-loop 08:45
+  완료: firemap-youtube-loop 08:51 — calc.py(국토부 원자료 직접, tour 값 재현 5단지 17,449·40건) · **질문 확정 '오래된 재건축이 새 아파트보다 비싼 동네는?'**: 잠실 5단지(1978) 평당 +31.4% vs 리센츠(2008)·대치 은마 −8.4% vs 래미안대치팰리스·반포는 원베일리(2023) 1위 · 반전: 신규 순수전세 5단지 5.20억(12.0%) vs 리센츠 13.50억(39.5%) · compete.md 5편(강투연 3연속 2.4~8.8배는 은마↔5단지끼리만, 자기 동네 새 아파트·전세 0편) · facts.txt(확인 필요 3: 토허구역 서울시 원문·사업시행인가 고시·전세 낮은 이유 해석 금지) · 반포 Overpass 5회째 실패 → 반포 걸음 거리 '확인 안 함' · 다음: 대본 v1 → 심사 3명 → 카피·편집
+

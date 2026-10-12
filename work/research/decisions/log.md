@@ -1830,3 +1830,5 @@
 2026-10-13 06:40 · firemap-video-producer · R-1 끝 댓글 질문 줄은 PD가 쓰고 editor 통과(06:24) · 지시 기한 20:00 안에 녹음·렌더·재예약까지 하려고, copywriter 회차를 기다리지 않음
 2026-10-13 06:59 · firemap-video-producer · 결정 · R-1 새 판 G1oI47miUuo 10/14 11:30 예약, 옛 9JNYZsjG4Mo 예약 풀고 비공개 · 이유: 벤치 10/13 첫 60초 지시(말·화면이 바뀌어 snippet 수정으로 안 됨, G-1 10/12와 같은 방식), 관문 전부 통과
 2026-10-13 06:59 · firemap-video-producer · 쇼츠 r1s_fx(2i957iWL8ko) 설명 첫 줄 링크를 새 롱폼으로 · 옛 판은 공개되지 않아 링크가 죽음
+2026-10-13 07:08 · editor · editgate.py stamp가 글 파일(title.txt·c??.txt) 없는 폴더를 거부 · 상위 폴더에 찍어 빈 해시 파일이 두 번(10/10·10/13) 생김, 말로 막은 교본 줄이 안 먹어 코드 브레이크로
+2026-10-13 07:08 · editor · 완료: 정기 06:50 — auto 표본 3(w1cafe1013·m1stot1013 고침, m1snhis1013 그대로) 재stamp · R-1 cafe.md 말투·틀 v2 편집(숫자 0 변경) · 열린 요청 0

@@ -113,6 +113,9 @@ if __name__ == '__main__':
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         import aitell
         pk = os.path.abspath(a[1])
+        # 10/10·10/13 editor: pkg 대신 상위 폴더에 찍어 빈 해시(e3b0c4…) 파일이 두 번 생겼다 — 글 파일 없는 폴더는 거부.
+        if not os.path.exists(os.path.join(pk, 'title.txt')) and not any(re.fullmatch(r'c\d\d\.txt', f) for f in os.listdir(pk)):
+            print('안 찍음 · title.txt·c??.txt가 없는 폴더 — 묶음(pkg) 폴더를 주세요: ' + pk); sys.exit(1)
         if aitell.is_cafe_pkg(pk):
             fb = aitell.frame_check(pk)
             if fb: print('안 찍음 · 카페 틀 v2 어김 — ' + '; '.join(fb)); sys.exit(1)

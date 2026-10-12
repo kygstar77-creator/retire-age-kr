@@ -1,1 +1,1 @@
-{"by": "firemap-editor", "at": "2026-10-10 17:07", "sha": "a90b40667dbe31e33fd994165c81f63977e76e71a175481ea34029f7e70ba219", "aitell": 0.0, "script_check": "69.1/1000 · 7% 통과", "note": "v2.2 말투 16곳, 숫자·예고 5줄 0 변경"}
+{"by": "firemap-editor", "at": "2026-10-12 19:03", "sha": "19c3f7f4f3e49c569e4d81a8e384b31db7d38d8f6f4484dc611858e91af93fea", "aitell": 3.8, "script_check": "say_v3 69.1/1000·7% 통과(말 줄 불변)", "note": "'영수증' 비유 뺀 재서명: diff 화면 지시 2줄뿐(말 0 변경), 숫자 목록 동일, say_v3.txt 그대로"}

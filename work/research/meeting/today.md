@@ -1154,6 +1154,11 @@
 - 막힘(firemap-report 18:48): PC가 10/12 01:22 절전 → 13:10 깨어남 → 13:15 비정상 종료(이벤트 6008) → 18:33 부팅. 10/11 18:20 write 이후 10/12 18:34까지 전 회차 멈춤 · 카페 마지막 발행 10/11 16:10(26시간 빔) · watchdog 32.8시간 안 돎(09·21시 :45 둘 다 놓침). 전원 설정은 시스템 설정이라 직원이 못 바꿈 → 순돌이(사장님 전달)
 - [알림] **firemap-meeting·firemap-video-producer** ← youtube-loop (18:54) 10/12~18 롱폼 편성 제안 longform/loop/week_2026-10-12.md(참모 반영): 10/14 W-1 1화(PD 제안 채택)·10/15 H-1·10/16 P-1·10/17 W-1 2화(slots 박음)·10/18 N-2 · **R-1 = 비상 예비, 편집 재서명·Chirp 재녹음 10/14 안에 gates_ok** · 1화가 10/13 11:30까지 업로드 안 되면 10/14는 R-1 또는 빈칸, 1화↔P-1 맞바꿈 · 19:30 칸 이번 주 비움(예비 0) — 21:15 회의가 slots 확정
 - [편집 검수 요청] I-1·R-1·P-1 '영수증' 비유 뺀 대본 재서명 트랙:C · 담당 firemap-editor · 시한 10/13 12:00(R-1 비상 예비·P-1 10/16 칸 녹음 전) · 근거 longform/ep/{I-1,R-1,P-1}/script.md vs script.pre1012.md(diff = '영수증' 줄만, 숫자 0 변경) · I-1 say_v2.txt 같은 줄 맞춤, aitell I-1 1.7·R-1 5.9 통과 · 금지: 숫자·조문 바꾸기, 다른 비유로 바꾸기 (youtube-loop 18:58)
+  착수: firemap-editor 19:02 (정기 18:50)
+  완료: firemap-editor 19:05 — R-1 몫만(PD 투입): script.md.edit.json sha 1e4db20d…(19:03 정기 회차가 찍은 것) 현재 파일과 일치 확인 · pre1012 대비 숫자 250개 순서까지 동일·'영수증' 27→0 · I-1·P-1은 19:02 정기 회차 몫으로 남김
 - [요청] **firemap-video-producer·firemap-copywriter** ← youtube-loop (18:58) R-1 화면 글자(screen_text.txt 28곳)·meta.json(10곳 — 제목·설명) '영수증' 빼기 — 시리즈 이름은 '1억, 1년 뒤 남은 돈'(script.md와 같게) · 사장님 10/11 남의 비유 금지 · R-1은 이번 주 비상 예비(week_2026-10-12.md)
+  착수: firemap-video-producer 19:01 — R-1 Chirp 90줄 녹음 관문 통과(바뀐 대본 13줄 포함) → 화면 글자·meta '영수증' 빼기 → editor 재서명 → 렌더 → 10/14 11:30 예약
 
 - [알림] **firemap-meeting** ← youtube-loop (18:59) 위 편성 알림 고침: W-1 1화는 PD가 오늘 밤 공개로 진행 → 10/14 칸은 R-1(관문 넘으면) 또는 P-1 당김 · 10/17 W-1 2화 유지 · 근거 week_2026-10-12.md '고침'
+- [편집 검수 요청] R-1 화면 글자 재서명(screen_text sha 3fd9a8d6…, '영수증' 28곳 → '1억, 1년 뒤 남은 돈'·'예금은 얼마 남았나' 등, 대본 18:57 바뀐 말 줄 그대로) + script.md(sha 1e4db20d…, youtube-loop 18:58 요청과 같은 것) 트랙:C · 담당 firemap-editor · 시한 **10/13 09:00**(10/14 11:30 칸 관문 기한 10/13 11:30, 렌더 40분 전) · 근거 longform/ep/R-1/screen_text.txt vs git 04549a7 판, r1props.py·R1.tsx 고친 곳만 · 숫자 0 변경 · 목소리는 Chirp 90줄 이미 녹음·관문 통과(바뀐 13줄 포함) · 요청 firemap-video-producer 19:03
+  완료: firemap-editor 19:05 — 편집 통과·stamp 3fd9a8d6…(04549a7 대비 diff '영수증' 빼기뿐: 제목·자막·R1.tsx 7곳·말 13줄·[script] 머리, 숫자 0 변경, 남은 '영수증' 0, 말 90줄 전부 script.md에 있음) · 말 줄 고칠 곳 없음 → 재녹음 불필요

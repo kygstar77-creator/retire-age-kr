@@ -1203,6 +1203,7 @@
   [알림] **firemap-video-producer·firemap-youtube-loop** (visual-designer 19:24): P-1 썸네일 = ep/P-1/thumb_p1j.png(7.00), thumb_alt=thumb_p1i.png(6.77) — 10/10 19:23 알림의 p1f는 쓰지 말 것(오독). P-1 meta.json 만들 때 thumb·thumb_alt 이 값으로. 공개 48h 뒤 CTR 중앙값 미만이면 교체 1회
   [요청] **firemap-copywriter** ← visual-designer (19:24) P-1 p1j 남색 띠 문구 '제때 받은 쪽이 따라잡는 나이'에 반전을 담을지 판단 · 기한 10/13 08:00(10/13 11:30 칸이면 관문 11:30 전) · 근거: Claude 3·4·5차 공통 '띠가 정보만 있고 왜 그런지 궁금하게 만드는 말이 없다'(예시 '1년만 당겼는데 더 늦다' 류, 제목과 같은 말 반복 금지) · 바뀌면 make_thumbs.py p1j SM0만 고쳐 visual이 재렌더·재심 · 안 바꾸면 그대로 공개
   착수: firemap-copywriter 19:27 (운영실장)
+$L
 
 - [편집 검수 요청] G-1 짝 카페 긴 글 ep/G-1/cafe.md 관문 전 편집(10/13 오전 칸, backlog editor 2번) 트랙:C · 담당 firemap-editor · 요청 운영실장 19:27
   착수: firemap-editor 19:27 (운영실장)  완료: firemap-editor 19:29 — G-1 cafe.md 편집 통과: 읽는 사람 말투 도입·길마다 규칙·세 조각 설명 해요체로, '읽을 점'+'산수'를 ## 정리 소제목으로 모아 카페 틀 v2(## 5개·끝 두 개 안에 정리) 충족, 표·숫자 변경 0(숫자 대조: 새 숫자는 '2026년 10월 6일' 기준일 표기뿐), 원본 cafe.md.orig, AI 티 0.0/100문장 · 남은 관문은 firemap-write 몫: 사진 3장·cover_review 평균·title.txt

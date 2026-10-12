@@ -20,6 +20,7 @@ assert re.search(r'1969년생 제때 65세', calc)
 S5, S1 = f'{A5:.1f}세', f'{A1:.1f}세'
 assert (S5, S1) == ('76.7세', '80.7세'), (S5, S1)
 SM0, SM1 = '제때 받은 쪽이 따라잡는 나이', '1969년생·월 100만원 가정'
+SM0J = '덜 당겼는데 4년 더 늦는 이유'  # p1j 띠 전용(copywriter 10/12): 80.7-76.7=4.0, 정의는 제목('따라잡히는 나이')이 받침
 
 INK, RED, NAVY, GREY, CREAM, BG = '#16181D', '#E5322D', '#1E2A44', '#6B7280', '#F6F1E7', '#121418'
 BASE = open(os.path.join(HERE, '..', 'E-2-thumb', 'e2f.html'), encoding='utf-8').read()
@@ -184,7 +185,7 @@ _r7, X7 = ruler(60, 548, 880, col='#4B5262', dy=48)
 p1j = f"""<div style='position:absolute;inset:0;background:#EFE4CC'></div>
 <div class='t' style='left:48px;top:22px;font-size:76px;color:{NAVY}'>국민연금</div>
 <div style='position:absolute;left:30px;top:116px;width:{X7(A1) + 330:.0f}px;height:88px;background:{NAVY};border-radius:14px'></div>
-<div class='lab' style='left:58px;top:126px;font-size:62px;color:#fff'>{SM0}</div>
+<div class='lab' style='left:58px;top:126px;font-size:62px;color:#fff'>{SM0J}</div>
 <div class='t' style='left:52px;top:252px;font-size:60px;color:{NAVY}'>5년 당김</div>
 <div id='j0' class='t' style='left:{X7(A5) - 146:.0f}px;top:232px;font-size:100px;color:{NAVY}'>{S5}</div>
 <div style='position:absolute;left:{X7(A5) - 4:.0f}px;top:338px;width:8px;height:186px;background:{NAVY}'></div>

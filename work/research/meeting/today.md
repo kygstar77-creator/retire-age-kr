@@ -440,11 +440,13 @@
   - C-1은 오늘 공개 직후 ep/C-1/cafe.md(v2)로 쓴다. 공개 시각은 PD가 slots.json에 적는다.
   - 10/12부터 롱폼은 11:30이다. W-1 짝 글은 10/12 10:10 칸에 낸다(ep/W-1/cafe.md).
 - [지시] **firemap-meeting** 오늘 밤부터 다음 날 카페 칸을 배정할 때 그날 롱폼·쇼츠 짝 글 칸을 먼저 넣는다(SKILL.md 새 절).
+  완료: firemap-meeting 19:16 — 10/13 카페 8칸 중 짝 글 4칸 먼저(08:10 W-1·10:10 G-1·20:10 m1s_total1y·22:10 m1s_nhis70) + 10/14 08:10 M-1 짝, slots note에 yt_pair
 
 ## ★ 순돌이 10/11 03:0x — H-1 부동산 손품 롱폼(10/15 19:30) 후속
 - [지시] **firemap-video-producer** (기한: 화면 10/13 22:05 회차, 녹음 10/14 16:01) ep/H-1/scenes.md의 장면 32개를 만든다. 새 부품 6개(세 동네 한 장 지도, 손품 씨 카드, 달별 가운데 값 선 등)가 필요하고, Tour.tsx·tour.py 재료를 재사용한다. 렌더 뒤 shorts_cuts.md대로 동네별 세로 쇼츠 3~4편을 M-1 방식(M1S)으로 잘라 10/16부터 19:20 칸에 예약한다.
 - [지시] **firemap-write** 10/15 카페 칸 하나에 ep/H-1/cafe.md·cafe_table.md(세 동네 단지 37곳 전체 표)를 **롱폼 공개(19:30) 전**에 발행한다. 대본 끝줄이 "카페에 올려 둘게요"다. 발행 뒤 그 주소를 H-1 meta.json 설명란 {CAFE}에 넣는다.
 - [지시] **firemap-meeting** 동네 손품('대신 둘러봐 드립니다')을 매주 고정 롱폼 1편으로 slots에 둔다. 매주 다음 2~3동네를 정한다(series-plan 4-2 표 순서와 검색량 기준).
+  완료: firemap-meeting 19:16 — H-1(가락·둔촌·고덕) 10/15 다음 H-2 = 4-2 표 4~6번 대치·잠실·반포(은마 62,570·잠실주공5단지 29,790·반포자이 39,490) 10/22 11:30 칸, 대본 youtube-loop 10/19
 
 ## ★ 순돌이 10/10 12:5x — C-1 v5 녹음·칸 확정 (앞 지시 '10/11 C-1 먼저'를 고침)
 - [지시·긴급] **firemap-video-producer** 오늘 16:01 창은 순서대로 쓴다.
@@ -1123,6 +1125,9 @@
   착수: firemap-youtube-loop 08:43
   완료: firemap-youtube-loop 08:51 — 과표기준가 원자료 확보(제로인 funetf 360750 일별 종가·기준가·과표 2021~2026, 종가 야후 6개 날짜 일치)·운용사 과세식 원문·소득세법 §14③6 → calc.py: 1억(10월 2천만원×5)·5년 일반 세금 1,053만·세후 1억5,916만 vs ISA 일반형 659만·1억6,330만(**+414만**)·서민형 +434만 · **숨은 차이: 일반계좌는 판 해 배당소득 6,561만원 → 2천만원 문턱 넘어 종합과세**(경쟁 5편 중 0편) · analysis ①~⑧ 끝·실험 I1-HIDDEN · 대본 v1 말 71줄 aitell 통과(46.9·7%)·scriptnum 밖 0·제미나이 3.7-flash 막을 문제 2 반영 · 남은 것: 심사 3명 → 편집 → 카피 · 확인 필요 2(ISA 안 해외 ETF 차익 Min식 원문·분배금 과표증분 기간)
 - [요청] **firemap-copywriter** ← youtube-loop (08:51) I-1 제목·썸네일 문구·첫 3초 트랙:C · 시한 10/14 12:00 · 근거 longform/ep/I-1/analysis.md ②(맨 앞 'ISA 계좌' 70,700)·calc_out.txt [I_*]·[X2] · 결론 두 단(겉 +414만원 → 판 해 6,561만원·2천만원 문턱) · 금지: '갈아타세요'·'무조건'·종목 기호 제목 맨 앞(M-1 노출 20 가설)·서민형 숫자를 일반 결론처럼
+  착수: firemap-copywriter 19:10
+  완료: firemap-copywriter 19:16 — 1위 제목 **'ISA 계좌 vs 일반계좌, 같은 1억·같은 ETF 5년인데 다른 건 계좌 하나'**(대본 둘째 줄과 같은 말) + 썸네일 **'+414만원'**(작은 줄 'ISA가 더 손에 쥔 돈 · 안 잡힌 차이 하나 더') · 12안 1차(레드팀 I5 8.6·제미나이 I11 9.4/레드팀 7.4) → 결선 평균 **8.60**(제미나이 9.2·레드팀 8.6·작성자 8.0) · 2위 'ISA 계좌 없이 미국 지수 ETF 1억 5년, 파는 해 금융소득 6,561만원'+막대 8.50 · 숫자 calc_out 대조 맞음, aitell 0.0, 겹침 최고 0.13 · 근거 longform/ep/I-1/copy/titles.md·review.md
+  [알림] **firemap-youtube-loop·firemap-video-producer·firemap-visual-designer** (copywriter 19:16): I-1 meta.json 만들 때 title_candidates=[1위, 2위](copy/titles.md) · 설명 첫 줄에 '2021~2025년 10월 2천만원씩 샀다고 가정·2026-10-08 종가' 꼭 · '세후 414만원'·'세금 폭탄'·'함정'·'5년 보유' 금지(414만은 종합과세 추가분 없는 값, 6,561만은 과세분)
   완료: firemap-youtube-loop 08:57 — I-1 대본 심사 3명 평균 **7.73 통과**(제미나이 8.4·Claude 7.2·레드팀 7.6, 막는 사실 오류 0, 레드팀 손 검산·calc 점검 통과) · v2 반영(문턱 '금지'처럼 들림·20만원 설명·3년 가입 제한 반전·끝 행동 한 문장, 숫자 0 변경, aitell 45.6/6%) · review.md 판정 줄 · 공개 조건 3(의안 확인·카페 글 먼저·공개 전날 calc)
 - [편집 검수 요청] I-1 script.md(v2, 말 72줄) 트랙:C · 담당 firemap-editor · 시한 10/14 12:00 · 근거 longform/ep/I-1/script.md·say_v2.txt·review.md · aitell script 45.6/1,000·6% 통과 · 숫자 scriptnum 밖 0 · 요청 firemap-youtube-loop 08:57
   착수: firemap-editor 15:10 (운영실장)
@@ -1173,6 +1178,7 @@
   완료: firemap-editor 19:05 — R-1 몫만(PD 투입): script.md.edit.json sha 1e4db20d…(19:03 정기 회차가 찍은 것) 현재 파일과 일치 확인 · pre1012 대비 숫자 250개 순서까지 동일·'영수증' 27→0 · I-1·P-1은 19:02 정기 회차 몫으로 남김
 - [요청] **firemap-video-producer·firemap-copywriter** ← youtube-loop (18:58) R-1 화면 글자(screen_text.txt 28곳)·meta.json(10곳 — 제목·설명) '영수증' 빼기 — 시리즈 이름은 '1억, 1년 뒤 남은 돈'(script.md와 같게) · 사장님 10/11 남의 비유 금지 · R-1은 이번 주 비상 예비(week_2026-10-12.md)
   착수: firemap-copywriter 19:07 (meta.json 제목·설명 몫)
+  완료: firemap-copywriter 19:16 — meta.json 제목·설명 '영수증' 빼기는 PD 회차가 이미 고침(커밋 전) · 카피 점검: 새 제목 '…작년에 넣었다 치고 세금 떼고 남은 돈' 사실 맞음·aitell 0.0, 설명 시리즈 이름 '1억, 1년 뒤 남은 돈' 맞음 → 더 고칠 것 없음, 파일은 PD 몫이라 안 건드림
   착수: firemap-video-producer 19:01 — R-1 Chirp 90줄 녹음 관문 통과(바뀐 대본 13줄 포함) → 화면 글자·meta '영수증' 빼기 → editor 재서명 → 렌더 → 10/14 11:30 예약
 
 - [알림] **firemap-meeting** ← youtube-loop (18:59) 위 편성 알림 고침: W-1 1화는 PD가 오늘 밤 공개로 진행 → 10/14 칸은 R-1(관문 넘으면) 또는 P-1 당김 · 10/17 W-1 2화 유지 · 근거 week_2026-10-12.md '고침'

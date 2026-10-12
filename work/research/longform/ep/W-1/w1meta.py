@@ -24,6 +24,8 @@ t1 = '삼성전자 주가 사흘 −5.07%, 100주 평가액 −140만원 = 분�
 t2 = '삼성전자 배당금 100주 세후 3만 1,640원, 같은 사흘 평가액은 −140만원'
 th1, th2 = '107조(잠정) 공시한 사흘, 내 100주는?', '배당 44번치가 사흘에'
 title, title_swap = (t1, t2) if TITLE_RANK == 1 else (t2, t1)
+# 10/11 순돌이: meta.json에 제목이 이미 있으면(카피·순돌이가 고친 새 제목) 그것을 쓴다 — 다시 돌려도 옛 제목으로 덮지 않는다
+if m.get("title"): title, title_swap = m["title"], m.get("title_swap", title_swap)
 thumb_text, thumb_text_swap = (th1, th2) if TITLE_RANK == 1 else (th2, th1)
 
 def won(x): return f'{x:,}원'

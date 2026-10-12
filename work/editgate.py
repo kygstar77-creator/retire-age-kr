@@ -4,6 +4,7 @@
 #   py -3.12 work/editgate.py check <pkg>                지금 원고가 .edit.json과 같은지
 #   py -3.12 work/editgate.py stamp <pkg> <by> [note]    편집 통과 표시(.edit.json)를 이 방식으로 찍는다(카페는 틀 v2·compare.md 먼저)
 #   py -3.12 work/editgate.py compare <pkg>              카페 경쟁 비교 관문만
+#   카페 stamp는 review.md/compare.md의 '전제: 가능 — <facts 근거>' 줄도 본다(10/12 레드팀 R2)
 import os, re, sys, json, hashlib, datetime
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -59,6 +60,24 @@ def compare_check(pkg):
     return bad
 
 
+def premise_check(pkg):
+    """카페 전제 관문(10/12 레드팀 R2 — C-1 짝 글이 '3억 배당 월 200만원'처럼 불가능한 전제로 관문을 넘었다).
+    review.md 또는 compare.md(pkg 또는 그 위 폴더)에 '전제: 가능 — <facts 근거>' 줄. 없거나 '불가능'이면 문제 목록."""
+    pkg = os.path.abspath(pkg.rstrip('/\\'))
+    lines = []
+    for d in (pkg, os.path.dirname(pkg)):
+        for n in ('review.md', 'compare.md'):
+            p = os.path.join(d, n)
+            if os.path.exists(p):
+                lines += [ln.strip() for ln in open(p, encoding='utf-8', errors='ignore') if re.match(r'\s*[-*]?\s*\**전제\**\s*[:：]', ln)]
+    if not lines: return ["review.md/compare.md에 '전제: 가능 — <facts 근거>' 줄 없음"]
+    last = lines[-1]
+    if re.search(r'불가능', last): return [f'전제 불가능으로 적힘 — {last[:80]}']
+    if not re.search(r'가능', last): return [f"전제 줄에 가능/불가능 판정이 없다 — {last[:80]}"]
+    if len(re.sub(r'.*?가능', '', last, count=1).strip(' —-:·')) < 8: return [f'전제 줄에 근거(facts)가 없다 — {last[:80]}']
+    return []
+
+
 def refuse(pkg, why, where):
     line = f'{datetime.datetime.now():%Y-%m-%d %H:%M} · {where} 거부 · {os.path.basename(os.path.dirname(pkg.rstrip(chr(47) + chr(92))))} · {why}\n'
     os.makedirs(os.path.dirname(LOG), exist_ok=True)
@@ -99,6 +118,8 @@ if __name__ == '__main__':
             if fb: print('안 찍음 · 카페 틀 v2 어김 — ' + '; '.join(fb)); sys.exit(1)
             cb = compare_check(pk)
             if cb: print('안 찍음 · 경쟁 비교 없음 — ' + '; '.join(cb)); sys.exit(1)
+            pb = premise_check(pk)
+            if pb: print('안 찍음 · 전제 관문 — ' + '; '.join(pb)); sys.exit(1)
         print('찍음', stamp(os.path.abspath(a[1]), a[2], ' '.join(a[3:])))
         sys.exit(0)
     print(__doc__ or open(__file__, encoding='utf-8').read().split('import')[0]); sys.exit(2)

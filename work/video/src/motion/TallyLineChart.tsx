@@ -8,7 +8,7 @@ export type TallySeries = {name: string; color: string; dash?: string; width?: n
 export const lineXY = (x: number, y: number, w: number, h: number, min: number, max: number, n: number) => (i: number, v: number) => [x + (i / Math.max(1, n - 1)) * w, y + h - ((v - min) / (max - min)) * h] as const;
 
 export const TallyLineChart: React.FC<{series: TallySeries[]; x: number; y: number; w: number; h: number; min: number; max: number; start: number; dur?: number;
-  base?: {v: number; text: string}; ticks?: {v: number; text: string}[]; xlabels?: {i: number; text: string}[]}> =
+  base?: {v: number; text: string; x?: number}; ticks?: {v: number; text: string}[]; xlabels?: {i: number; text: string}[]}> =
   ({series, x, y, w, h, min, max, start, dur = 60, base, ticks = [], xlabels = []}) => {
   const f = useCurrentFrame();
   const p = interpolate(f, [start, start + dur], [0, 1], {...CL, easing: Easing.inOut(Easing.quad)});
@@ -21,7 +21,7 @@ export const TallyLineChart: React.FC<{series: TallySeries[]; x: number; y: numb
           <text x={x - 14} y={ty + 8} textAnchor="end" fontFamily="PD" fontWeight={500} fontSize={22} fill={T.ink3}>{t.text}</text></g>); })}
       {base ? (() => { const [, by] = xy(0, base.v); return (
         <g><line x1={x} x2={x + w} y1={by} y2={by} stroke={T.ink} strokeWidth={3} strokeDasharray="10 8" />
-          <text x={x + w} y={by + 32} textAnchor="end" fontFamily="PD" fontWeight={700} fontSize={24} fill={T.ink}>{base.text}</text></g>); })() : null}
+          <text x={base.x ?? x + w} y={by + 32} textAnchor={base.x === undefined ? 'end' : 'middle'} fontFamily="PD" fontWeight={700} fontSize={24} fill={T.ink}>{base.text}</text></g>); })() : null}
       {xlabels.map((l, i) => { const [lx] = xy(l.i, min); return <text key={i} x={lx} y={y + h + 34} textAnchor="middle" fontFamily="PD" fontWeight={500} fontSize={22} fill={T.ink3}>{l.text}</text>; })}
       {series.map((s, si) => {
         const d = s.pts.map((v, i) => { const [px, py] = xy(i, v); return `${i ? 'L' : 'M'}${px.toFixed(1)} ${py.toFixed(1)}`; }).join(' ');

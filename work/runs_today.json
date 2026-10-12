@@ -1,67 +1,31 @@
 {
- "date": "2026-10-11",
+ "date": "2026-10-12",
  "runs": [
   {
-   "hour": 8,
-   "ts": "08:41",
+   "hour": 18,
+   "ts": "18:48",
    "blog": {
     "title": null,
     "url": null
    },
    "cafe": {
-    "title": "상속세 면제한도 10억이 두 번째 상속에선 반으로 줄어드는 이유",
-    "url": "https://cafe.naver.com/firemap/249"
+    "title": "스트레스 DSR 대출한도 같은 연봉인데 지방이 6천만원 더 나오는 이유",
+    "url": "https://cafe.naver.com/firemap/254"
    },
-   "note": "08:10 칸 inhded1011 발행 08:40 verify OK 1729/1729자·사진 4/4 · 블로그는 회복 계획(하루 1편·9/23 이후 무색인)대로 이번 회차 안 함 · 22:10 renew1011(계약갱신청구권 배상금) 새로 씀: 자료조사 법제처 API 조문 6개·ECOS·대법원 판결 2건·toprank 8편 · 교차검증 crosscheck(Gemini) 사실 6 중 반영 2·유지 4(표 이미지·law.go.kr·AI 표기·ECOS 실조회), 말투 10 중 반영 4 · 레드팀 사실 0·조건 누락 4 반영 · gates_ok 08:34 · 10/12 08:10 didim1012 남은 관문(보조) gates_ok 08:24 · 개선: renew1011 표지 짝 규칙을 playbook에(제목 숫자 없이·표지 숫자는 전제와 짝)"
+   "note": "PC 꺼짐(10/11 18:20~10/12 18:34)으로 하루 밀린 대기 맨 위 dsrlim1011c(10/11 23:07 관문 통과) 발행 18:47 · verify OK 2103/2103자·사진 3/3 · 블로그는 회복 계획상 안 함 · 새 자료조사·새 원고 없음(관문 통과 대기 5편+비축 2편이 오늘 밤·내일 칸을 덮음) · 교차검증은 관문 때 끝난 편 · 개선: 없음(beat.py improve 오경보는 report가 같은 회차에 고침)"
   },
   {
-   "hour": 10,
-   "ts": "10:44",
+   "hour": 20,
+   "ts": "20:45",
    "blog": {
     "title": null,
     "url": null
    },
    "cafe": {
-    "title": "월급 실수령액 연초에 줄고 3월엔 자녀 있는 집만 늘어난 이유",
-    "url": "https://cafe.naver.com/firemap/250"
+    "title": "부모님 병원비 공제, 연봉 낮은 형제가 신청하면 세금이 18만원 더 줄어드는 이유",
+    "url": "https://cafe.naver.com/firemap/255"
    },
-   "note": "10:10 칸 netpay1011 발행 10:24 verify OK 2252/2252자·사진 3/3(관문 10/10 14:42 통과분) · 블로그는 회복 계획대로 안 함 · 10/12 10:10 빈칸용 issnote1012(발행어음 특판 세후 이자) 새로 씀: 자료조사 연합·SBS Biz 2·MTN·한투 상품 안내·finlife·법령 API 3(예금자보호법·시행령·소득세법) · 검증 경로 crosscheck(Gemini 사실 지적 4 → 반영 4, 원문 보탬 3) · readcheck 0 · selfcheck 사실 0 · aitell 1.1 · 레드팀 재계산 일치·사실 오류 2·경미 6 반영 · 제목 8.0·표지 7.67·editgate auto · gates_ok 10:53(slots.json 10/12 10:10) · 개선: 없음"
-  },
-  {
-   "hour": 12,
-   "ts": "12:45",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "주담대 이자 소득공제 연말에 집이 두 채면 한 해 공제가 사라지는 이유",
-    "url": "https://cafe.naver.com/firemap/251"
-   },
-   "note": "12:10 칸 mortded1011 발행(jitter 21분, 12:43) verify OK 2177/2177자·사진 3/3 · 블로그는 하루 상한·회복 계획으로 안 씀 · 사장님 10/11 지시로 미발행 대기 9편(cardded·didim·dsrlim·eitclate·issnote·med·npsage·renew·saving)과 mortded의 'AI(Claude)' 끝문장 제거·editgate 재날인(eitclate는 cover_review 평균 없어 원래 보류) · 비축 카페 yuryu1011(유류분 개정, 세금연금·형식2) 관문 통과: 자료 출처 6(법령 XML·부칙·대법원 95다17885·신앤김·한경·다음)·검증 경로 crosscheck(사실 1건 원문으로 유지, 말투 12 중 8 반영)+레드팀 2회(사실 0·경미 7 반영)·제목 7.73·표지 7.67 · 개선: 일감표 1번 닫음(글 규칙 점검 — 원고 길이 4편 미달, 다음부터 2,500자+)"
-  },
-  {
-   "hour": 14,
-   "ts": "14:45",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "신용카드 소득공제, 체크카드로 바꿔도 한 푼도 안 느는 사람",
-    "url": "https://cafe.naver.com/firemap/252"
-   },
-   "note": "14:10 칸 cardded1011 발행(jitter 14분, 14:36) verify OK 2551/2551자·사진 3/3 · 블로그는 하루 상한·회복 계획으로 안 씀 · 10/12 12:10 빈칸에 kidcred1012(자녀세액공제 2017·2018년생 0원인데 간이세액표는 8세 — 1명 환급 256,630원 감소) 관문 통과 14:45: 자료 출처 8(소득세법 법률 제21548호·시행령 별표 2·아동수당법 부칙 원문 XML, 조선비즈·헤럴드·머니투데이·토스뱅크)·검증 경로 crosscheck(사실 0, 말투 13 중 11 반영)+레드팀 2회(틀림 1·오독 3·출처 1 반영)·제목 G 7.83·표지 K1 7.83 · 개선: lawtext.py가 법령 API '현행'만 읽어 4/21 개정(자녀세액공제 9세)을 놓치던 것 — eflaw 목록에서 시행 중 최신 공포판을 읽고 조문이 다르면 둘 다 보이게 고침"
-  },
-  {
-   "hour": 16,
-   "ts": "16:35",
-   "blog": null,
-   "cafe": {
-    "title": "적금 이자 계산, 3.86%인데 손에 쥐는 건 절반도 안 되는 이유",
-    "url": "https://cafe.naver.com/firemap/253"
-   },
-   "note": "16:10 saving1011b 발행 verify OK 2264/2264자·사진 3/3 · 블로그 회복 계획대로 발행 안 함 · 22:10 칸을 C-1 롱폼 짝 c1cafe1011로 교체(gates_ok 16:34, 출처 = C-1 사실표·calc_out, 새 숫자 0) · 검증 경로 crosscheck(Gemini) 사실 2 반영·말투 3 반영 + 레드팀 2회(1차 틀림 2·오해 3 반영, 2차 0) · renew1011 비축으로 · 개선: 없음(selfloop 일감표는 이번 회차 시간상 건너뜀)"
+   "note": "20:10 칸 med1011 발행 20:42 verify OK 1487/1487자·사진 3/3 · 블로그는 쉬는 날(무작위 규칙) · 10/13 08:10 w1cafe1013(W-1 짝, 자료조사 DART 원문 3건 재확인·ECOS·야후) gates_ok 20:44 — crosscheck 사실 3 중 유지 3(원문 확인), 말투 12 중 반영 4 · 레드팀 2회(1차 오해 4 전부 반영, 2차 경미 3 반영) · 10/13 10:10 g1cafe1013(G-1 짝, 보조) gates_ok 20:32 — crosscheck 사실 4 중 반영 1·유지 3, 말투 14 중 반영 9 · 개선: editgate stamp에 카페 전제 관문(R2) 추가·시험 통과, 대기 4편 '전제:' 줄"
   }
  ]
 }

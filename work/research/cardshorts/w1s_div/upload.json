@@ -1,0 +1,24 @@
+{
+ "name": "w1s_div",
+ "ep": "W-1",
+ "from_long": "0yWQeW38UJE",
+ "mp4": "work/video/out/w1s_div_ds.mp4",
+ "publishAt": "2026-10-13T07:20:00+09:00",
+ "title": "삼성전자 영업이익 107조인데, 내 100주는 얼마 줄었을까? #shorts",
+ "description": "전체 계산: https://youtu.be/0yWQeW38UJE\n\n삼성전자가 3분기 연결 영업이익(잠정) 107.40조원을 공시한 주, 100주 평가액은 종가 기준 2,760만원(10월 2일 276,000원)에서 2,620만원(10월 8일 262,000원)으로 140만원 줄었습니다. 발표한 날 종가는 268,500원 → 262,000원(−2.42%).\n같은 100주의 가장 최근 분기 배당(2분기, 8월 28일 지급 예정): 1주 374원 × 100주 = 37,400원, 세금 15.4%를 떼면 31,640원. 줄어든 평가액은 그 44.2배예요.\n1년 전 3분기 1주 배당은 370원이었고, 올해 3분기 배당 금액은 아직 공시 전(이사회가 정함).\n\n출처: 금융감독원 전자공시(DART) 삼성전자 연결 영업(잠정)실적 공정공시 2026.10.08 · 현금·현물배당결정 2026.07.30·2025.10.30 · 야후 파이낸스 005930.KS 일별 종가 · 파이어맵 계산\n지나간 값 계산이라 팔지 않으면 확정 손실이 아니고, 투자 권유도 아닙니다.\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.\n\n#shorts #삼성전자 #배당",
+ "tags": "삼성전자,삼성전자 배당금,삼성전자 영업이익,삼성전자 주가,분기배당",
+ "same_day_pair": "m1s_total1y(10/13 19:20, M-1)",
+ "same_day_title_sim": 0.0,
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "BeBZeqolm8c",
+ "uploaded_at": "2026-10-12 20:16:18",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-12T22:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ },
+ "relinked": "2026-10-12 20:19 설명 첫 줄 dPrEOVxP3ug→0yWQeW38UJE(videos.update snippet 전체 칸·defaultAudioLanguage ko)"
+}

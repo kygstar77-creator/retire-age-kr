@@ -1,9 +1,11 @@
 // Tally 움직임 부품 ① 장면 틀 — 제목·형광 부제·흰 보드·정확한 값 칩([자막])·말 자막·출처를 안전 구역 안에만 둔다(2026-10-03 cloud/r1-remake-1003)
 // 안전 구역: 오른쪽 아래 25%×20%(x>1440·y>864, 유튜브 끝 화면·구독 버튼 자리)와 맨 아래 5%(y>1026)에는 글자·그림을 두지 않는다.
-// 보드(흰 판)는 x 100~1820 · y 236~852, 말 자막은 x 120~1400 · 아래 끝 y 984, 출처는 y 996~1018. 토큰은 parts/fm(T·F)과 같다.
+// 보드(흰 판)는 x 100~1820 · y 236~852, 말 자막은 가운데 · 아래 끝 y 1024(1줄 60px, 한 쪽 18자), 출처 y 864~886. 토큰은 parts/fm(T·F)과 같다.
+// 자막 규격 근거 research/longform/caption-spec-1011.md(상위 26편 실측, 10/11 순돌이 지시). 끝 화면 구간은 capX=760으로 옮겨 오른쪽 아래 금지 구역을 비운다.
 import React from 'react';
 import {AbsoluteFill, interpolate, useCurrentFrame, Easing} from 'remotion';
 import {T, F, CL, FONT_CSS, Flame} from '../parts/fm';
+import {wordTimings, paginate, activeWord, pageOf, CaptionPage} from '../motion-proto/captionTiming';
 
 export const SAFE = {W: 1920, H: 1080, left: 120, textRight: 1400, brX: 1440, brY: 864, bottom: 1026};
 export const BOARD = {x: 100, y: 236, w: 1720, h: 616};
@@ -16,8 +18,19 @@ export const tallyIdx = (lines: TallyLine[], f: number) => { const st = tallySta
 // 출처는 자르지 않고 글자를 줄여 한 줄(x 120~1400)에 넣는다 — 한글 1em, 영문·숫자 0.56em로 어림
 export const srcSize = (src: string) => { const u = [...('출처 ' + src)].reduce((a, c) => a + (/[ㄱ-힝]/.test(c) ? 1 : 0.56), 0); return Math.max(13, Math.min(19, Math.floor((SAFE.textRight - SAFE.left) / u))); };
 
-export const TallyFrame: React.FC<{title: string; sub?: string | null; source?: string | null; chapter?: string | null; lines: TallyLine[]; children?: React.ReactNode; board?: boolean}> =
-  ({title, sub, source, chapter, lines, children, board = true}) => {
+// 말 자막 쪽 나누기: 한 쪽 공백 뺀 18자, 5자 이하로 남는 꼬리 쪽은 앞 쪽에 붙인다(caption-spec 4장)
+const CAP_MAX = 18, CAP_TAIL = 5;
+const nsp = (t: string) => t.replace(/\s/g, '').length;
+export const capPages = (text: string): CaptionPage[] => {
+  const pages = paginate(text.split(/\s+/).filter(Boolean), CAP_MAX);
+  if (pages.length > 1 && nsp(pages[pages.length - 1].text) <= CAP_TAIL) { const b = pages.pop() as CaptionPage; const a = pages.pop() as CaptionPage; pages.push({first: a.first, last: b.last, text: a.text + ' ' + b.text}); }
+  return pages;
+};
+// 한 줄(nowrap)이 상자 maxWidth 1400 안에 들도록: 한글 1em, 그 밖 0.56em, 공백 0.3em로 어림해 60px에서 줄인다
+const capSize = (t: string) => { const u = [...t].reduce((a, c) => a + (/[ㄱ-힝]/.test(c) ? 1 : /\s/.test(c) ? 0.3 : 0.56), 0); return Math.min(60, Math.floor(1330 / Math.max(1, u))); };
+
+export const TallyFrame: React.FC<{title: string; sub?: string | null; source?: string | null; chapter?: string | null; lines: TallyLine[]; children?: React.ReactNode; board?: boolean; capX?: number}> =
+  ({title, sub, source, chapter, lines, children, board = true, capX = 960}) => {
   const f = useCurrentFrame();
   const o = interpolate(f, [0, 10], [0, 1], CL);
   const hl = interpolate(f, [6, 22], [0, 1], {...CL, easing: Easing.out(Easing.cubic)});
@@ -26,6 +39,8 @@ export const TallyFrame: React.FC<{title: string; sub?: string | null; source?: 
   for (let i = 0; i <= k; i++) if (lines[i]?.cap) { cap = lines[i].cap as string; capAt = tallyStarts(lines)[i]; }
   const co = interpolate(f, [capAt, capAt + 8], [0, 1], CL);
   const line = k >= 0 ? lines[k] : null; const lo = line ? interpolate(f, [tallyStarts(lines)[k], tallyStarts(lines)[k] + 5], [0, 1], CL) : 0;
+  let page = '';
+  if (line) { const pages = capPages(line.text); const tm = wordTimings(line.text, line.frames, 0.92); page = pages[pageOf(pages, Math.max(0, activeWord(tm, f - tallyStarts(lines)[k])))]?.text ?? line.text; }
   return (
     <AbsoluteFill style={{background: T.bg}}>
       <style>{FONT_CSS}</style>
@@ -54,11 +69,11 @@ export const TallyFrame: React.FC<{title: string; sub?: string | null; source?: 
         </div>
       ) : null}
       {line ? (
-        <div style={{position: 'absolute', left: SAFE.left, bottom: 1080 - 984, maxWidth: SAFE.textRight - SAFE.left, opacity: lo}}>
-          <div style={{...F, fontWeight: 700, fontSize: 38, lineHeight: 1.32, color: '#fff', background: T.ink, padding: '12px 28px', borderRadius: 16, wordBreak: 'keep-all'}}>{line.text}</div>
+        <div style={{position: 'absolute', left: capX - 700, width: 1400, bottom: 56, display: 'flex', justifyContent: 'center', opacity: lo}}>
+          <div style={{...F, fontWeight: 700, fontSize: capSize(page), lineHeight: 1.25, color: '#fff', background: T.ink, padding: '10px 32px', borderRadius: 12, whiteSpace: 'nowrap', maxWidth: 1400}}>{page}</div>
         </div>
       ) : null}
-      {source ? <div style={{...F, fontWeight: 500, fontSize: srcSize(source), color: T.ink3, position: 'absolute', left: SAFE.left, top: 996, whiteSpace: 'nowrap'}}>출처 {source}</div> : null}
+      {source ? <div style={{...F, fontWeight: 500, fontSize: srcSize(source), color: T.ink3, position: 'absolute', left: SAFE.left, top: 864, whiteSpace: 'nowrap'}}>출처 {source}</div> : null}
     </AbsoluteFill>
   );
 };

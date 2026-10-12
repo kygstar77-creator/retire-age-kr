@@ -20,19 +20,20 @@ assert re.search(r'1969년생 제때 65세', calc)
 S5, S1 = f'{A5:.1f}세', f'{A1:.1f}세'
 assert (S5, S1) == ('76.7세', '80.7세'), (S5, S1)
 SM0, SM1 = '제때 받은 쪽이 따라잡는 나이', '1969년생·월 100만원 가정'
+SM0J = '덜 당겼는데 4년 더 늦는 이유'  # p1j 띠 전용(copywriter 10/12): 80.7-76.7=4.0, 정의는 제목('따라잡히는 나이')이 받침
 
 INK, RED, NAVY, GREY, CREAM, BG = '#16181D', '#E5322D', '#1E2A44', '#6B7280', '#F6F1E7', '#121418'
 BASE = open(os.path.join(HERE, '..', 'E-2-thumb', 'e2f.html'), encoding='utf-8').read()
 HEAD, TAIL = BASE.split('<body>')[0] + '<body>', '<script>' + BASE.split('<script>')[1]
 
 
-def ruler(x0, y0, w, lo=65, hi=85, col=GREY):
+def ruler(x0, y0, w, lo=65, hi=85, col=GREY, dy=22):
     """나이 눈금 65~85세(5세 간격). 반환 (html, 나이→x 함수)"""
     X = lambda a: x0 + w * (a - lo) / (hi - lo)
     s = f"<div style='position:absolute;left:{x0}px;top:{y0}px;width:{w}px;border-top:4px solid {col}'></div>"
     for a in range(lo, hi + 1, 5):
         s += f"<div style='position:absolute;left:{X(a) - 2:.0f}px;top:{y0 - 12}px;width:4px;height:28px;background:{col}'></div>"
-        s += f"<div class='lab' style='left:{X(a) - 30:.0f}px;top:{y0 + 22}px;width:60px;text-align:center;font-size:30px;color:{col}'>{a}</div>"
+        s += f"<div class='lab' style='left:{X(a) - 30:.0f}px;top:{y0 + dy}px;width:60px;text-align:center;font-size:30px;color:{col}'>{a}</div>"
     return s, X
 
 
@@ -126,6 +127,77 @@ p1f = f"""<div style='position:absolute;inset:0;background:#EFE4CC'></div>
 <div class='fine' style='color:{INK};top:604px;left:60px;font-size:36px'>{SM1}</div>
 """
 VARIANTS['p1f'] = p1f
+
+
+# ── 3차(10/12 19:2x) — 2차 레드팀 열린 위험: 막대 둘 다 65세에서 시작 → '65세부터 76.7세까지 받는 기간'으로 오독(실제 시작 60·64세).
+# p1g — 처방 ①: 막대 없앰. 눈금(65~85세) 위 끝점 두 개 + 숫자에서 눈금까지 내린 점선. 위치 차이가 반전(80.7이 더 오른쪽).
+_r5, X5 = ruler(60, 520, 880, col='#4B5262')
+p1g = f"""<div style='position:absolute;inset:0;background:#EFE4CC'></div>
+<div class='t' style='left:48px;top:26px;font-size:80px;color:{NAVY}'>국민연금</div>
+<div class='lab' style='left:400px;top:46px;font-size:46px;color:{INK}'>{SM0}</div>
+<div class='t' style='left:52px;top:150px;font-size:76px;color:{NAVY}'>5년 당김</div>
+<div class='t' style='left:{X5(A5) - 150:.0f}px;top:136px;font-size:104px;color:{NAVY}'>{S5}</div>
+<div style='position:absolute;left:{X5(A5) - 3:.0f}px;top:250px;height:262px;border-left:6px dashed {NAVY}'></div>
+<div class='t' style='left:52px;top:330px;font-size:84px;color:{RED}'>1년 당김</div>
+<div id='g1' class='t' data-fit='420' style='left:{X5(A5) + 34:.0f}px;top:262px;font-size:180px;color:{RED}'>{S1}</div>
+<div style='position:absolute;left:{X5(A1) - 4:.0f}px;top:446px;height:66px;border-left:8px dashed {RED}'></div>
+{_r5}
+<div style='position:absolute;left:{X5(A5) - 22:.0f}px;top:498px;width:44px;height:44px;border-radius:50%;background:{NAVY}'></div>
+<div style='position:absolute;left:{X5(A1) - 30:.0f}px;top:490px;width:60px;height:60px;border-radius:50%;background:{RED}'></div>
+<div class='fine' style='color:{INK};top:604px;left:60px;font-size:36px'>{SM1}</div>
+"""
+VARIANTS['p1g'] = p1g
+
+# p1h — 처방 ②의 변형: p1f 막대 그대로(길이 = 반전, Claude 2차), 막대가 시작하는 굵은 선 위에 '제때 65세'(calc 1절 원문 낱말)를 붙여
+#        막대 = '제때 받은 사람 기준 눈금'임을 1초에 보이게. 축 제목 줄은 그대로.
+p1h = p1f.replace(f"<div class='t' style='left:48px;top:26px;font-size:80px;color:{NAVY}'>국민연금</div>",
+    f"<div class='t' style='left:48px;top:26px;font-size:80px;color:{NAVY}'>국민연금</div>"
+    f"<div class='lab' style='left:{X4(65) - 12:.0f}px;top:96px;font-size:30px;color:#fff;background:{INK};padding:2px 10px;border-radius:6px'>제때 65세</div>")
+assert p1h != p1f
+VARIANTS['p1h'] = p1h
+
+
+# ── 4차 — 3차 세 명: p1f 6.53·p1g 6.27·p1h 6.70(7 미달). 레드팀 p1g 1위(7.2, 오독 줄었음) 처방: 숫자를 자기 점에 붙이고 '1년 당김'을 빨강 점 쪽으로.
+#        Claude: 점 크게·숫자를 자기 점 바로 위에. p1h '제때 65세' 꼬리표는 168px에서 안 보이고 오히려 '65세 시작' 인상 강화(레드팀) → 버림.
+# p1i — 끝점판: 5년 줄은 숫자 오른쪽 끝을 남색 점 x에 맞춰 위에서 실선으로 내림, 1년 줄은 빨강 점 x에서 시작해 아래 실선. 점 64/84px.
+_r6, X6 = ruler(60, 556, 880, col='#4B5262')
+p1i = f"""<div style='position:absolute;inset:0;background:#EFE4CC'></div>
+<div class='t' style='left:48px;top:26px;font-size:80px;color:{NAVY}'>국민연금</div>
+<div class='lab' style='left:400px;top:44px;font-size:48px;color:{INK}'>{SM0}</div>
+<div class='t' style='left:52px;top:176px;font-size:60px;color:{NAVY}'>5년 당김</div>
+<div id='i0' class='t' style='right:{1280 - X6(A5) - 8:.0f}px;top:150px;font-size:100px;color:{NAVY}'>{S5}</div>
+<div style='position:absolute;left:{X6(A5) - 4:.0f}px;top:262px;width:8px;height:270px;background:{NAVY}'></div>
+<div class='t' style='left:{X6(A1) + 6:.0f}px;top:204px;font-size:72px;color:{RED}'>1년 당김</div>
+<div id='i1' class='t' data-fit='520' style='left:{X6(A1) - 10:.0f}px;top:284px;font-size:170px;color:{RED}'>{S1}</div>
+<div style='position:absolute;left:{X6(A1) - 5:.0f}px;top:458px;width:10px;height:72px;background:{RED}'></div>
+{_r6}
+<div style='position:absolute;left:{X6(A5) - 32:.0f}px;top:524px;width:64px;height:64px;border-radius:50%;background:{NAVY}'></div>
+<div style='position:absolute;left:{X6(A1) - 42:.0f}px;top:514px;width:84px;height:84px;border-radius:50%;background:{RED}'></div>
+<div class='fine' style='color:{INK};top:630px;left:60px;font-size:34px'>{SM1}</div>
+"""
+VARIANTS['p1i'] = p1i
+
+
+# ── 5차 — 4차 세 명: p1i 6.95(제미나이 8·6.5·Claude 6.4·레드팀 7.2)·p1f 6.17·p1h 6.32. 막대판은 오독 확정(레드팀·Claude 둘 다) → 끝점판으로 간다.
+# p1j — p1i 처방 셋: ① 부제 '제때 받은 쪽이 따라잡는 나이'를 64px 흰 글자 남색 띠로(168px에서 읽히게, 두 심사 공통) ② 76.7세를 점 위 가운데로(레드팀)
+#        ③ 빨강 점이 눈금 '80'을 가림 → 눈금 숫자를 점 아래로 내림(Claude). 문구 추가 없음(반전 문구 제안은 copywriter 몫).
+_r7, X7 = ruler(60, 548, 880, col='#4B5262', dy=48)
+p1j = f"""<div style='position:absolute;inset:0;background:#EFE4CC'></div>
+<div class='t' style='left:48px;top:22px;font-size:76px;color:{NAVY}'>국민연금</div>
+<div style='position:absolute;left:30px;top:116px;width:{X7(A1) + 330:.0f}px;height:88px;background:{NAVY};border-radius:14px'></div>
+<div class='lab' style='left:58px;top:126px;font-size:62px;color:#fff'>{SM0J}</div>
+<div class='t' style='left:52px;top:252px;font-size:60px;color:{NAVY}'>5년 당김</div>
+<div id='j0' class='t' style='left:{X7(A5) - 146:.0f}px;top:232px;font-size:100px;color:{NAVY}'>{S5}</div>
+<div style='position:absolute;left:{X7(A5) - 4:.0f}px;top:338px;width:8px;height:186px;background:{NAVY}'></div>
+<div class='t' style='left:{X7(A1) + 50:.0f}px;top:236px;font-size:60px;color:{RED}'>1년 당김</div>
+<div id='j1' class='t' data-fit='440' style='left:{X7(A1) + 50:.0f}px;top:312px;font-size:150px;color:{RED}'>{S1}</div>
+{_r7}
+<div style='position:absolute;left:{X7(A5) - 30:.0f}px;top:518px;width:60px;height:60px;border-radius:50%;background:{NAVY}'></div>
+<div style='position:absolute;left:{X7(A1) - 38:.0f}px;top:510px;width:76px;height:76px;border-radius:50%;background:{RED}'></div>
+<svg style='position:absolute;left:0;top:0' width='1280' height='720'><line x1='{X7(A1) + 24:.0f}' y1='518' x2='{X7(A1) + 70:.0f}' y2='446' stroke='{RED}' stroke-width='9' stroke-linecap='round'/></svg>
+<div class='fine' style='color:{INK};top:640px;left:60px;font-size:32px'>{SM1}</div>
+"""
+VARIANTS['p1j'] = p1j
 
 
 def check_zones(page):

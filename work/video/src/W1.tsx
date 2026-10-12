@@ -1,5 +1,5 @@
 // W-1 1화 "이번 주 뉴스가 내 돈에 얼마" 화면 — 재료: work/video/w1.json(ep/W-1/w1props.py가 script.md·voice.json·calc_out.txt·w1009/raw로 만든다)
-// 틀은 C-1·G-1과 같은 TallyFrame(흰 보드·형광 부제·[자막] 칩·출처). 새 그림은 parts/weekly.tsx(다섯 칸 띠·다리 막대·점 세기·다음 주 달력·작은 선·이번 주 영수증 칸).
+// 틀은 C-1·G-1과 같은 TallyFrame(흰 보드·형광 부제·[자막] 칩·출처). 새 그림은 parts/weekly.tsx(다섯 칸 띠·다리 막대·점 세기·다음 주 달력·작은 선·지난주 내 돈 칸).
 // 숫자 글자는 전부 w1.json에서 온다(calc_out·원문 그대로). 코드 안 숫자는 배치 좌표뿐. 전망·추천 없음. 색: 줄어듦 파랑(fall)·늘어남 빨강(rise)·우리 강조 주황(accent).
 import React from 'react';
 import {AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, spring, useVideoConfig} from 'remotion';
@@ -21,7 +21,7 @@ export type W1Props = {fps: number; scenes: WScene[]; missing: number; script?: 
 export const w1Frames = (p: W1Props) => p.scenes.reduce((a, s) => a + s.frames, 0);
 
 const COL: Record<string, string> = {ink: T.ink2, ink3: T.ink3, accent: T.accent, rise: T.rise, fall: T.fall};
-const HEAD = '지난주 영수증';
+const HEAD = '지난주 내 돈';
 const fade = (f: number, at: number, d = 10) => interpolate(f, [at, at + d], [0, 1], CL);
 const activeRow = (rows: TallyRow[], f: number) => { let k = -1; rows.forEach((r, i) => { if (f >= r.start) k = i; }); return k; };
 const toRows = (rows: any[]): TallyRow[] => rows.map(([label, value, tone, at]: [string, string, any, number]) => ({label, value, tone, start: at ?? 0}));
@@ -74,14 +74,14 @@ const Bars: React.FC<{s: WScene}> = ({s}) => {
 const Three: React.FC<{s: WScene}> = ({s}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig(); const g = 40, w = (1620 - g * 2) / 3;
   const cards: [string, string, number][] = s.data.cards;
-  const on = cards.map(([, sub]) => sayAt(s, 1, sub)); let cur = -1; on.forEach((a, i) => { if (f >= a) cur = i; });
+  const on = cards.map(([, sub]) => sayAt(s, 0, sub)); let cur = -1; on.forEach((a, i) => { if (f >= a) cur = i; });
   return (
     <>
       {cards.map(([h, sub, at], i) => {
         const sp = spring({frame: f - at, fps, config: {damping: 14}}); const dk = i === cur;
         return (
           <div key={i} style={{position: 'absolute', left: 150 + i * (w + g), top: 330 + (1 - sp) * 40, width: w, height: 400, background: dk ? T.ink : T.surface, borderRadius: '18px 18px 0 0', boxShadow: lift, opacity: f >= at ? sp : 0}}>
-            <div style={{...F, position: 'absolute', left: 34, top: 34, fontWeight: 700, fontSize: 30, color: dk ? T.daccent : T.accent}}>{`영수증 ${i + 1}`}</div>
+            <div style={{...F, position: 'absolute', left: 34, top: 34, fontWeight: 700, fontSize: 30, color: dk ? T.daccent : T.accent}}>{['한 종목', '시장 전체', '해외'][i]}</div>
             <div style={{...F, position: 'absolute', left: 34, top: 84, fontWeight: 700, fontSize: 44, color: dk ? T.dink : T.ink, whiteSpace: 'nowrap'}}>{h}</div>
             <div style={{position: 'absolute', left: 34, right: 34, top: 160, borderTop: `3px dashed ${dk ? T.dink3 : T.line}`}} />
             {dk ? null : [0, 1, 2].map((k) => <div key={k} style={{position: 'absolute', left: 34, right: 34, top: 190 + k * 54, height: 30, borderRadius: 8, background: `repeating-linear-gradient(135deg, ${T.bg} 0 10px, ${T.surface} 10px 20px)`}} />)}
@@ -296,7 +296,11 @@ const End: React.FC<{s: WScene}> = ({s}) => {
   const bAt = sayAt(s, 0, s.lines[0]?.text.split('. ')[1]?.slice(0, 4));
   const tEnd = st[st.length - 1] + s.lines[s.lines.length - 1].frames;
   const g = 48, w = (1560 - g) / 2; const out = interpolate(f, [d.start - 8, d.start], [1, 0], CL);
-  const ls = spring({frame: f - d.start, fps, config: {damping: 14}});
+  // 끝 화면 20초가 한 화면으로 8초 넘게 멈추지 않게(U5): 댓글 질문 줄이 나오면 질문 카드 → 말이 끝나면 링크 카드 + 질문 띠. 글자는 말 줄(편집 통과본)에서만 가져온다
+  const qi = s.lines.findIndex((l) => l.text.includes('?')); const qAt = qi > 0 && qi >= s.lines.length - 1 ? st[qi] : 1e9;
+  const q = qi > 0 ? s.lines[qi].text.slice(0, s.lines[qi].text.indexOf('?') + 1) : '';
+  const qs = spring({frame: f - qAt, fps, config: {damping: 14}});
+  const ls = spring({frame: f - (f >= tEnd ? tEnd : d.start), fps, config: {damping: 14}});
   return (
     <>
       {f < d.start ? parts.slice(0, 2).map((t, i) => {
@@ -305,13 +309,19 @@ const End: React.FC<{s: WScene}> = ({s}) => {
         return <div key={i} style={{position: 'absolute', left: 180 + i * (w + g), top: 360 + (1 - sp) * 30, width: w, height: 260, borderRadius: 20, opacity: (f >= at ? sp : 0) * out, boxSizing: 'border-box', padding: '0 44px',
           display: 'flex', alignItems: 'center', background: dk ? T.ink : T.bg, border: dk ? undefined : `4px dashed ${T.ink3}`, ...F, fontWeight: 700, fontSize: 50, color: dk ? T.dink : T.ink2, lineHeight: 1.3, wordBreak: 'keep-all'}}>{t}</div>;
       }) : null}
-      {f >= d.start ? (
+      {f >= qAt && f < tEnd ? (
+        <div style={{position: 'absolute', left: 150, top: 330 + (1 - qs) * 30, width: 1620, height: 300, opacity: qs, background: T.bg, border: `4px solid ${T.ink}`, borderRadius: 20, padding: '0 56px', boxSizing: 'border-box',
+          display: 'flex', alignItems: 'center', ...F, fontWeight: 700, fontSize: 58, color: T.ink, lineHeight: 1.3, wordBreak: 'keep-all'}}>{q}</div>
+      ) : null}
+      {f >= tEnd && q ? <DarkBar text={q} at={tEnd} x={150} y={640} w={1620} size={40} color={T.dink} /> : null}
+      {f >= d.start && (f < qAt || f >= tEnd) ? (
         <div style={{position: 'absolute', left: 150, top: 360 + (1 - ls) * 30, width: 1620, opacity: ls, background: T.ink, borderRadius: 20, padding: '34px 44px', boxSizing: 'border-box'}}>
           <div style={{...F, fontWeight: 700, fontSize: 34, color: T.dink3, whiteSpace: 'nowrap'}}>{d.label}</div>
           <div style={{...F, fontWeight: 700, fontSize: 56, color: T.daccent, marginTop: 14, whiteSpace: 'nowrap', letterSpacing: -1}}>{d.text}</div>
         </div>
       ) : null}
-      {subs.length > 1 ? <DarkBar text={subs[subs.length - 1]} at={tEnd} x={150} y={640} w={1620} size={44} color={T.daccent} /> : null}
+      {/* PD 10/12: 마지막 줄(댓글 질문)에 질문 띠 — U5 같은 화면 8초(끝 장면 12.5초) 막힘 고침 */}
+      {d.ask ? <DarkBar text={d.ask} at={st[st.length - 1]} x={150} y={640} w={1620} size={44} color={T.daccent} /> : subs.length > 1 ? <DarkBar text={subs[subs.length - 1]} at={tEnd} x={150} y={640} w={1620} size={44} color={T.daccent} /> : null}
     </>
   );
 };
@@ -348,7 +358,7 @@ const SceneView: React.FC<{s: WScene; next?: string}> = ({s, next}) => {
   if (s.kind === 'logo') return <AbsoluteFill><LogoSting sub={s.data.sub} /></AbsoluteFill>;
   const st = tallyStarts(s.lines);
   return (
-    <TallyFrame title={s.title} sub={s.sub} source={s.source} chapter={s.chapter} lines={s.lines}>
+    <TallyFrame title={s.title} sub={s.sub} source={s.source} chapter={s.chapter} lines={s.lines} capX={s.kind === 'end' ? 760 : 960}>
       <Body s={s} next={next} />
       {s.lines.map((l, i) => l.audio ? <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence> : null)}
     </TallyFrame>

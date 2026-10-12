@@ -30,13 +30,13 @@ export const TallyTag: React.FC<{x: number; y: number; text: string; start: numb
 };
 
 // 말풍선: 흰 바탕 주황 테두리 짧은 문장 + 꼬리 삼각형(아래쪽)
-export const TallyCallout: React.FC<{x: number; y: number; text: string; start: number; w?: number; size?: number}> = ({x, y, text, start, w, size = 28}) => {
+export const TallyCallout: React.FC<{x: number; y: number; text: string; start: number; w?: number; size?: number; dark?: boolean}> = ({x, y, text, start, w, size = 28, dark = false}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
   const s = spring({frame: f - start, fps, config: {damping: 13}});
   if (f < start) return null;
   return (
     <div style={{position: 'absolute', left: x, top: y, width: w, opacity: s, transform: `translateY(${(1 - s) * 16}px)`}}>
-      <div style={{...F, fontWeight: 700, fontSize: size, color: T.ink, background: '#fff', border: `3px solid ${T.accent}`, borderRadius: 14, padding: '10px 18px', lineHeight: 1.3, wordBreak: 'keep-all'}}>{text}</div>
+      <div style={{...F, fontWeight: 700, fontSize: size, color: dark ? '#fff' : T.ink, background: dark ? T.ink : '#fff', border: `3px solid ${T.accent}`, borderRadius: 14, padding: '10px 18px', lineHeight: 1.3, wordBreak: 'keep-all'}}>{text}</div>
     </div>
   );
 };

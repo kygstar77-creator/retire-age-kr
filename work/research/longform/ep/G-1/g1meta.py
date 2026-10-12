@@ -17,7 +17,8 @@ asof_ko = f'{ad.year}년 {ad.month}월 {ad.day}일'
 pkd = datetime.date.fromisoformat(pk['day']); y1d = datetime.date.fromisoformat(y1['day'])
 
 # copywriter 10/11: ytlong gate 제목 숫자 2개 이하(f8ddd6e) → 심사 3명 1위 T1·2위 T4 고침(copy/title_1011*.md). 1위는 숫자 칸 없음
-title = '금값 1천만원 영수증 4장, 내가 산 날은 지금 얼마?'
+# PD 10/12: 제목은 meta.json title(title_1012 심사 기록)을 읽는다 — 이 파일이 다시 돌아도 옛 제목('영수증')으로 덮지 않게(순돌이 10/11 w1meta 지적과 같은 꼴)
+title = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'meta.json'), encoding='utf-8')).get('title') or '금 1천만원어치, 내가 산 날에 따라 지금 얼마 남았을까?'
 title_swap = f'금값 꼭대기에 내가 1천만원어치 샀다면 지금 {man(lo)}만원'   # 663 = KRX 고점 칸(lo==pk assert), 예비 썸네일 '+50.7%'(고점 산 값)과 짝
 thumb_text = f'{pkd.month}월 고점에 샀다면 {pk["krx_pct"]:.1f}%'
 thumb_text_swap = f'산 값 되찾으려면 +{c["need_pct"]:.1f}%'   # copywriter 10/7: '산 값까지'는 '고점까지' 전망으로 읽힐 소지(레드팀)
@@ -59,7 +60,7 @@ base = {
  'made_by': 'firemap-video-producer', 'made_at': m.get('made_at', datetime.datetime.now().strftime('%Y-%m-%d %H:%M')),
 }
 m.update(base)
-m.update({'asof': asof, 'title': title, 'title_swap': title_swap, 'title_candidates': [title, title_swap],
+m.update({'asof': asof, 'title': title, 'title_swap': title_swap, 
           'thumb_text': thumb_text, 'thumb_text_swap': thumb_text_swap, 'desc_tpl': desc_tpl})
 m.setdefault('answers', {})
 json.dump(m, open(mp, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

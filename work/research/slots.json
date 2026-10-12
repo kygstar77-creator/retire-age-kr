@@ -11,7 +11,7 @@
   "long": 1
  },
  "cadence": {
-  "_note": "매일 칸 시각 — patrol '칸 배정 없음'은 이 목록만 본다(10/10 회의 21:41: patrol 하드코딩 cad 폐지). 쇼츠 하루 1편(X-YT-FREQ 10/9 판정)이라 19:20만. 칸 시각을 바꾸면 여기 한 곳만 고친다. 롱폼은 매일 칸이 아니라 없음.",
+  "_note": "매일 칸 시각 — patrol '칸 배정 없음'은 이 목록만 본다(10/10 회의 21:41: patrol 하드코딩 cad 폐지). 쇼츠 하루 1편(X-YT-FREQ 10/9 판정)이라 19:20만. 칸 시각을 바꾸면 여기 한 곳만 고친다. 롱폼은 매일 칸이 아니라 없음. | firemap-meeting 10/12: 사장님 10/11 쇼츠 하루 2편(07:20·19:20)·롱폼 매일 11:30을 cadence에 반영(patrol이 07:20·11:30 빈 칸도 잡음).",
   "cafe": [
    "08:10",
    "10:10",
@@ -23,20 +23,16 @@
    "22:10"
   ],
   "shorts": [
+   "07:20",
    "19:20"
+  ],
+  "long": [
+   "11:30"
   ]
  },
  "reserve": {
   "shorts": [],
   "cafe": [
-   {
-    "item": "retmid1005",
-    "ep": "work/research/retmid1005/pkg",
-    "status": "10/9 12:10 칸에 배정(eitclate1009 미달 대체) — 비축에서 빠짐. 관문 통과 기록: 관문 통과 2026-10-06 09:37: 제목 '퇴직금 중간정산 받는 돈은 같은데 세금이 39.6만원 더 나온 사례' 3명 평균 8.6(제미나이3-flash 9.8·레드팀 7.5·독자 8.5; 쉼표만 뺌)·표지 v",
-    "by": "firemap-write",
-    "at": "2026-10-06 09:37",
-    "gates_ok": "2026-10-06 09:37"
-   },
    {
     "item": "npsage1009",
     "ep": "work/research/npsage1009/pkg",
@@ -44,22 +40,6 @@
     "by": "firemap-write",
     "at": "2026-10-08 22:36",
     "gates_ok": "2026-10-08 20:24"
-   },
-   {
-    "item": "schdacct1007",
-    "ep": "work/research/schdacct1007/pkg",
-    "status": "관문 통과 2026-10-06(제목 E 7.5·표지 S3 7.58·레드팀 사실 3 반영) · 10/9 16:21 firemap-write 시세 재조회(SCHD 10/8 종가 33.15달러, 6,195→6,290만원)·readcheck 0·selfcheck 사실 0·aitell 1.1·editgate auto 재날인 · SCHD 7일 규칙(#201 10/3)로 10/10부터 공개 가능 · 공개 전날 시세 다시 볼 것 | 2026-10-09 19:11 firemap-write 비축 재확인: editgate auto 일치·readcheck 0·selfcheck 사실 0·aitell 1.1·pending block 없음 → gates_ok 기입(SCHD 마지막 공개 schd1003 10/3 14:29 → 10/10 14:30부터)",
-    "gates_ok": "2026-10-10 11:12",
-    "by": "firemap-write",
-    "at": "2026-10-09 19:11"
-   },
-   {
-    "item": "yuryu1011",
-    "ep": "work/research/yuryu1011/pkg",
-    "status": "관문 통과 2026-10-11 12:36(제목 T9 7.73·표지 Y2 7.67·readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck 사실 1 유지·레드팀 2회 사실 0·경미 7 반영·editgate auto). 세금연금 축·형식2. 상속세 글(inhded1011 10/11 08:10)과 하루 이상 띄워 10/12 이후 칸. slot.txt 없음 — 칸 배정 시 적을 것",
-    "by": "firemap-write",
-    "at": "2026-10-11 12:36",
-    "gates_ok": "2026-10-11 12:36"
    }
   ],
   "long": [
@@ -71,7 +51,11 @@
     "at": "2026-10-06 16:29"
    }
   ],
-  "_meeting_1005": "회의 10/5 21:40(firemap-meeting) 비축 배정: 카페 1/2 → firemap-write가 10/6 14:10까지 관문 통과 예비 1편 추가(TBD-M 후보 중 남는 것 또는 nhisrent1005 예시 바꿔 10/8 이후용) · 쇼츠 1/1(nongji_age)이지만 10/6 19:20 gold1y 기한 07:20 못 넘으면 소진 → firemap-shorts가 10/6 12:00까지 예비 1편 더 · 롱폼 0/1(R-1 gates_ok 없음) → firemap-youtube-loop·video-producer가 R-1 재녹음(10/6 16:01)·editor stamp로 10/7 19:30 전 24시간(10/6 19:30)까지 관문, 못 넘으면 10/7 롱폼 칸 skip"
+  "_meeting_1005": "회의 10/5 21:40(firemap-meeting) 비축 배정: 카페 1/2 → firemap-write가 10/6 14:10까지 관문 통과 예비 1편 추가(TBD-M 후보 중 남는 것 또는 nhisrent1005 예시 바꿔 10/8 이후용) · 쇼츠 1/1(nongji_age)이지만 10/6 19:20 gold1y 기한 07:20 못 넘으면 소진 → firemap-shorts가 10/6 12:00까지 예비 1편 더 · 롱폼 0/1(R-1 gates_ok 없음) → firemap-youtube-loop·video-producer가 R-1 재녹음(10/6 16:01)·editor stamp로 10/7 19:30 전 24시간(10/6 19:30)까지 관문, 못 넘으면 10/7 롱폼 칸 skip",
+  "cafe_extra": [
+   "issnote1012",
+   "kidcred1012"
+  ]
  },
  "slots": [
   {
@@ -944,7 +928,8 @@
    "item": "didim1012",
    "owner": "firemap-write",
    "gates_ok": "2026-10-11 08:24",
-   "note": "firemap-meeting 10/10 21:40: 36시간 칸 배정 — 비축 0이라 담당이 편을 정해 관문(기한 = 발행 6시간 전). 우선: 세금연금·형식2(textrule 1위), 배당·ETF는 원 금액 제목(improve 10/10 규칙), 국민연금 주제는 10/14 08:30 전 금지(npsage1009 7일 규칙). 계산기 B칸은 하루 2칸 상한·연속 금지(X-CAFE-CALC-1) | firemap-write 2026-10-11 07:20: 편 확정 didim1012(디딤돌 대출 소득 칸별 월 상환액, kwvol 60,800·dupcheck 새것·공사 금리안내 2026-10-01) 원고·readcheck 0·selfcheck 사실 0·aitell 0.0·frame 통과·제목 평균 7.5(제미나이 7·7.5·레드팀 8)·compare.md·레드팀 사실 오류 1 반영 / 남은 관문: 표지 제미나이·제3 심사(레드팀 7 하나뿐)·crosscheck·editgate stamp — 기한 02:10 지남, 08:10 정기 근무가 이어서 | firemap-write 2026-10-11 08:24: 남은 관문 통과 — 표지 D1 7.67(제미나이 8·8·레드팀 7)·crosscheck 사실 4 중 반영 1(자녀 우대 1명당 5년)·readcheck 0·selfcheck 사실 0·aitell 0.0·editgate auto"
+   "note": "순돌이 10/12 18:4x: PC 꺼짐(10/11 18시~10/12 18:33)으로 오늘 08:10~18:10 6칸 빠짐 — 몰아서 내지 않는다(운영자 도배·어뷰징 패턴 회피, 카페 간격 90분 유지). 오늘은 남은 2칸만, 관문 통과분으로. (이 칸 skip, 관문 통과 글은 비축으로)",
+   "skip": true
   },
   {
    "at": "2026-10-12 10:10",
@@ -952,16 +937,18 @@
    "item": "issnote1012",
    "owner": "firemap-write",
    "gates_ok": "2026-10-11 10:52",
-   "note": "firemap-write 2026-10-11 10:52: 빈칸(patrol 경보) 채움 — issnote1012 발행어음 특판 세후 이자(배당현금흐름·형식2, 검색 8,760·우리 글 0편, 오늘 이슈) · 제목 8.0·표지 7.67·compare.md 경쟁 8편·readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck 4 반영·레드팀 사실 2 반영·editgate auto · 특판 시세라 공개 전 판매 중인지 재확인(키움 100억 한도 소진 가능)"
+   "note": "순돌이 10/12 18:4x: PC 꺼짐(10/11 18시~10/12 18:33)으로 오늘 08:10~18:10 6칸 빠짐 — 몰아서 내지 않는다(운영자 도배·어뷰징 패턴 회피, 카페 간격 90분 유지). 오늘은 남은 2칸만, 관문 통과분으로. (이 칸 skip, 관문 통과 글은 비축으로)",
+   "skip": true
   },
   {
    "at": "2026-10-12 11:30",
    "kind": "long",
    "item": "W-1",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-11 15:43",
-   "note": "firemap-video-producer 2026-10-11 15:43: W-1 업로드 ulO0kFjMSSA(10/12 11:30 예약, private+publishAt) · 관문: 화면 글자 editor 14:20·U5 최장 7.0초(motion 2c65ec7)·겹침 0·목소리 IQR 0.14·deess -12.2dB·ytlong gate 통과·썸네일 w1p 7.37 · yt_pair: W-1 카페 글(ep/W-1/cafe.md) 10/12 칸 필요 | 순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | firemap-video-producer 10/11 06:20: 17줄만 받으면 둘째 날 31%로 lfrender 거부 → 0·1장 11줄만 10/10으로 남기고 2~7장 44줄을 10/11 16:01 창 5요청(C-1 다음)으로 받는다(10/10 몫 20.0%) · 순서 ep/W-1/check/runbook_1011.md·park_1011.py · 월요일 공개인데 대본 '이번 주' 12곳 → youtube-loop 요청 | 순돌이 10/11: W-1을 10/12로 — 16:01 창에서 못 받은 5·6·7장 17줄(3요청) 받기 | firemap-meeting 10/10 21:40: skip 예정 — 녹음 창은 하루 한 편(10요청), 10/11 16:01 창은 G-1(→10/13). C-1은 10/12 16:01 창 녹음 → 10/14 19:30 칸. | 이전: firemap-video-producer 10/10 16:05: 16:01 창 2요청(새 줄 1·lfretake 15) 뒤 IQR 0.18>0.16 막힘(앞뒤 +3.6%·5.61 통과) — 관문 기한 10/11 19:30 전 녹음 창은 10/11 16:01(G-1 배정)뿐, 순돌이 판단 대기 | 순돌이 10/10 12:4x: C-1 v5(예고·결론부터·궁금증 챕터·가상 인물 장면, 6e286c3) — 10/10 16:01 창에서 새 줄 1 + lfretake --n 15(2요청, W-1 7요청보다 먼저) → check(날짜 둘은 다시 받기 20% 이하면 허용, 앞뒤 차·IQR 관문 그대로) → render → 10/12 19:30. 관문 기한 10/11 19:30",
-   "ep": "W-1"
+   "gates_ok": "2026-10-12 19:22",
+   "note": "firemap-video-producer 2026-10-12 19:22: W-1 새 판(두 회차가 같은 판을 따로 올려 0yWQeW38UJE만 공개 유지) — 대본 v3.1(caption-spec 9건·'영수증' 0·10/12 날짜말)·Chirp 46줄 10/12 하루·자막 규격·U5 7.5초·겹침 0·쉿소리 -12.0dB·bench_check 대조: 통과·ytlong gate 통과 · yt_pair: W-1 카페 글(ep/W-1/cafe.md) — 10/12 14:10 칸 놓침(write PC 꺼짐), 영상 주소 0yWQeW38UJE | firemap-video-producer 2026-10-11 15:43: W-1 업로드 ulO0kFjMSSA(10/12 11:30 예약, private+publishAt) · 관문: 화면 글자 editor 14:20·U5 최장 7.0초(motion 2c65ec7)·겹침 0·목소리 IQR 0.14·deess -12.2dB·ytlong gate 통과·썸네일 w1p 7.37 · yt_pair: W-1 카페 글(ep/W-1/cafe.md) 10/12 칸 필요 | 순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | firemap-video-producer 10/11 06:20: 17줄만 받으면 둘째 날 31%로 lfrender 거부 → 0·1장 11줄만 10/10으로 남기고 2~7장 44줄을 10/11 16:01 창 5요청(C-1 다음)으로 받는다(10/10 몫 20.0%) · 순서 ep/W-1/check/runbook_1011.md·park_1011.py · 월요일 공개인데 대본 '이번 주' 12곳 → youtube-loop 요청 | 순돌이 10/11: W-1을 10/12로 — 16:01 창에서 못 받은 5·6·7장 17줄(3요청) 받기 | firemap-meeting 10/10 21:40: skip 예정 — 녹음 창은 하루 한 편(10요청), 10/11 16:01 창은 G-1(→10/13). C-1은 10/12 16:01 창 녹음 → 10/14 19:30 칸. | 이전: firemap-video-producer 10/10 16:05: 16:01 창 2요청(새 줄 1·lfretake 15) 뒤 IQR 0.18>0.16 막힘(앞뒤 +3.6%·5.61 통과) — 관문 기한 10/11 19:30 전 녹음 창은 10/11 16:01(G-1 배정)뿐, 순돌이 판단 대기 | 순돌이 10/10 12:4x: C-1 v5(예고·결론부터·궁금증 챕터·가상 인물 장면, 6e286c3) — 10/10 16:01 창에서 새 줄 1 + lfretake --n 15(2요청, W-1 7요청보다 먼저) → check(날짜 둘은 다시 받기 20% 이하면 허용, 앞뒤 차·IQR 관문 그대로) → render → 10/12 19:30. 관문 기한 10/11 19:30",
+   "ep": "W-1",
+   "published": "공개 2026-10-12 19:47 https://youtu.be/0yWQeW38UJE (11:30 칸은 PC 꺼짐으로 놓침 → 같은 날 밤 · 옛 판 ulO0kFjMSSA 비공개 · 같은 판 중복 dPrEOVxP3ug(19:50)는 비공개로 돌림)"
   },
   {
    "at": "2026-10-12 12:10",
@@ -969,7 +956,8 @@
    "item": "kidcred1012",
    "owner": "firemap-write",
    "gates_ok": "2026-10-11 14:45",
-   "note": "firemap-write 2026-10-11 14:45: 빈칸 미리 채움 — kidcred1012 자녀세액공제 2017·2018년생 0원 vs 간이세액표 8세(세금연금·형식2, 경쟁 8편 중 원천징수 각도 0편) · 제목 G 7.83·표지 K1 7.83·compare.md 경쟁 8편·readcheck 0·selfcheck 사실 0·aitell 1.1·crosscheck 사실 0·레드팀 2회·editgate auto"
+   "note": "순돌이 10/12 18:4x: PC 꺼짐(10/11 18시~10/12 18:33)으로 오늘 08:10~18:10 6칸 빠짐 — 몰아서 내지 않는다(운영자 도배·어뷰징 패턴 회피, 카페 간격 90분 유지). 오늘은 남은 2칸만, 관문 통과분으로. (이 칸 skip, 관문 통과 글은 비축으로)",
+   "skip": true
   },
   {
    "at": "2026-10-12 14:10",
@@ -977,7 +965,8 @@
    "item": "W-1",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-write 2026-10-11 15:15(배차 patrol): yt_pair: W-1 — 롱폼 W-1(10/12 11:30) 짝 카페 글 = work/research/longform/ep/W-1/cafe.md(세 영수증 전체 표). 12:10은 kidcred1012가 이미 관문 통과라 14:10. 표 머리 '이번 주(10/2 → 10/8)'→'지난주' 고침 · {F}는 SPY 10/9 최종 종가로 확인해 숫자 그대로(+1.16%·−4.9만원) · 남은 일: {VIDEO} 영상 주소(PD가 업로드 직후 이 note에 적음)·제목·표지·editgate·관문(기한 08:10) · 삼성전자·코스피는 dupcheck '씀'(지난 글 각도: 실적일·ETF 시황) — 이번 각도는 주간 평가액 영수증"
+   "note": "순돌이 10/12 18:4x: PC 꺼짐(10/11 18시~10/12 18:33)으로 오늘 08:10~18:10 6칸 빠짐 — 몰아서 내지 않는다(운영자 도배·어뷰징 패턴 회피, 카페 간격 90분 유지). 오늘은 남은 2칸만, 관문 통과분으로. (이 칸 skip, 관문 통과 글은 비축으로)",
+   "skip": true
   },
   {
    "at": "2026-10-12 16:10",
@@ -985,15 +974,18 @@
    "item": "cheongyak1012",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-write 2026-10-11 15:15(배차 patrol): 후보 청약통장(검색 18,740 · dupcheck 새것) · 부동산·정책 축 — 각도 미정(납입 인정액·소득공제 한도 등 1차 출처 확인 뒤) · 사실표부터 · 관문 기한 10:10 | 15:17 사실표 착수 work/research/cheongyak1012/pkg/facts.txt — 조특법 87조 원문(공제 연 300만원×40%·5년 안 해지 6% 추징·실제 감면액 증명 시 그만큼만) · 각도 '5년 안에 깨면 얼마 떼이나' 원 금액 · 남은 일: 웹 검색 5건·calc.py·원고~관문"
+   "note": "순돌이 10/12 18:4x: PC 꺼짐(10/11 18시~10/12 18:33)으로 오늘 08:10~18:10 6칸 빠짐 — 몰아서 내지 않는다(운영자 도배·어뷰징 패턴 회피, 카페 간격 90분 유지). 오늘은 남은 2칸만, 관문 통과분으로. (이 칸 skip, 관문 통과 글은 비축으로)",
+   "skip": true
   },
   {
    "at": "2026-10-12 18:10",
    "kind": "cafe",
-   "item": "TBD-QQQM",
+   "item": "dsrlim1011c",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-write 2026-10-11 15:15(배차 patrol): 후보 QQQM(검색 33,120 · dupcheck 새것) · 종목·ETF 축 — QQQ와 보수 차이를 원 금액으로(improve 10/10 원 금액 제목 규칙) · 운용사 공식 보수·분배 확인 · 관문 기한 12:10"
+   "gates_ok": "2026-10-11 23:07",
+   "note": "순돌이 10/12 18:4x: PC 꺼짐(10/11 18시~10/12 18:33)으로 오늘 08:10~18:10 6칸 빠짐 — 몰아서 내지 않는다(운영자 도배·어뷰징 패턴 회피, 카페 간격 90분 유지). 오늘은 남은 2칸만, 관문 통과분으로. (이 칸 skip, 관문 통과 글은 비축으로)",
+   "skip": true,
+   "published": "https://cafe.naver.com/firemap/254"
   },
   {
    "at": "2026-10-12 19:20",
@@ -1008,36 +1000,87 @@
   {
    "at": "2026-10-12 20:10",
    "kind": "cafe",
-   "item": "TBD-m1s_nhis70",
+   "item": "med1011",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-write 2026-10-11 15:15(배차 patrol): yt_pair: m1s_nhis70 — 쇼츠 '배당 받으면 건강보험료 얼마부터 붙을까'(10/12 19:20, youtu.be/kEHjN5WFBPI) 짝 카페 = 그 질문 하나에 답하는 짧은 글(쇼츠 링크+표) · 키워드 '배당소득 건강보험료' dupcheck 새것, 다만 cafe/206(배당·이자 1천만원 건보료)과 각도 겹침 주의 — 206은 퇴직 후 지역가입 금액, 이번은 쇼츠 질문(피부양자·소득월액 기준선)만 · 관문 기한 14:10"
+   "gates_ok": "2026-10-11 23:07",
+   "note": "firemap-meeting 2026-10-12 19:04: item을 실제 나갈 편 med1011로 맞춤(dsrlim1011c는 18:10 #254로 이미 나감) | firemap-write 2026-10-12 18:48: 밀린 관문 통과 편이 대기 5편(med1011·didim1012·issnote1012·kidcred1012·c1cafe1011) — pending 순서대로 med1011이 이 칸에 나감. m1s_nhis70 쇼츠 짝 글은 미작성 | 순돌이 10/12 18:4x: PC 꺼짐(10/11 18시~10/12 18:33)으로 오늘 08:10~18:10 6칸 빠짐 — 몰아서 내지 않는다(운영자 도배·어뷰징 패턴 회피, 카페 간격 90분 유지). 오늘은 남은 2칸만, 관문 통과분으로.",
+   "published": "https://cafe.naver.com/firemap/255 (20:42, verify OK 1487/1487자·사진 3/3)"
   },
   {
    "at": "2026-10-12 22:10",
    "kind": "cafe",
-   "item": "TBD-DC형",
+   "item": "didim1012",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-write 2026-10-11 15:15(배차 patrol): 후보 퇴직연금 DC형(검색 21,610 · dupcheck 새것, IRP 글 6편과 각도 겹치지 않게 DB/DC 차이 계산) · 세금연금 축·형식2 · 관문 기한 16:10"
+   "gates_ok": "2026-10-11 08:24",
+   "note": "firemap-write 2026-10-12 18:48: 밀린 대기 다음 편(pending 순서 didim1012)이 이 칸에 나감 — DC형 편은 미작성 | 순돌이 10/12 18:4x: PC 꺼짐(10/11 18시~10/12 18:33)으로 오늘 08:10~18:10 6칸 빠짐 — 몰아서 내지 않는다(운영자 도배·어뷰징 패턴 회피, 카페 간격 90분 유지). 오늘은 남은 2칸만, 관문 통과분으로. 짝 글(쇼츠 nhis70)은 10/13 칸으로"
   },
   {
    "at": "2026-10-13 07:20",
    "kind": "shorts",
-   "item": "c1s_300",
+   "item": "w1s_div",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-11 15:26",
-   "note": "firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cardshorts/c1s_300/review.md · yt_pair: 32G21MwLY_A | 순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼",
-   "published": "예약 2026-10-13T07:20:00+09:00 https://youtu.be/32G21MwLY_A",
-   "item_pkg": "work/research/cardshorts/c1s_300"
+   "gates_ok": "2026-10-12 20:16",
+   "note": "firemap-video-producer 2026-10-12 20:16: W-1 롱폼(0yWQeW38UJE — 설명 첫 줄 20:2x에 고침) 클립 C1S 틀, 새 녹음 없음 — compete 6·숫자 대조 0·치직 0·쉿소리 디에서 뒤 틀 0·받아쓰기·0초 프레임·눈 검사, 근거 cardshorts/w1s_div/review.md · yt_pair: BeBZeqolm8c | 이전: w1s_div firemap-meeting 2026-10-12 19:04: c1s_300(C-1 클립) 예약 해제·C-1 비공개라 사용 금지(순돌이 10/11 17:0x) → G-1·W-1 렌더 뒤 클립으로 채움(PD). 같은 날 19:20과 다른 롱폼 | 옛: firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cards",
+   "item_pkg": "work/research/cardshorts/w1s_div",
+   "published": "예약 2026-10-13T07:20:00+09:00 https://youtu.be/BeBZeqolm8c"
+  },
+  {
+   "at": "2026-10-13 08:10",
+   "kind": "cafe",
+   "item": "w1cafe1013",
+   "owner": "firemap-write",
+   "gates_ok": "2026-10-12 20:44",
+   "note": "firemap-write 2026-10-12 20:44: W-1 짝 글 w1cafe1013(영상 0yWQeW38UJE 링크, 영수증 0곳) 관문 통과 — 제목 7.75·표지 K1 7.67·compare.md·레드팀 2회·전제 가능·editgate auto | firemap-meeting 2026-10-12 19:04: yt_pair: W-1 — W-1이 10/12 밤 공개되면 영상 링크 넣어 발행(PD 18:48 요청), '영수증' 1곳 평범한 말로. W-1 미공개면 issnote1012가 이 칸, 짝 글은 W-1 공개일 칸으로 | firemap-video-producer 2026-10-12 19:22: yt_pair: W-1 https://youtu.be/0yWQeW38UJE (2026-10-12 19:47 공개) — 짝 글 ep/W-1/cafe.md에 이 링크"
+  },
+  {
+   "at": "2026-10-13 10:10",
+   "kind": "cafe",
+   "item": "g1cafe1013",
+   "owner": "firemap-write",
+   "gates_ok": "2026-10-12 20:32",
+   "note": "firemap-write 2026-10-12 20:44: G-1 짝 글 g1cafe1013(새 판 xBTZtRp5lMs 링크, 기준일 10/6 영상과 같음, 영수증 0곳) 관문 통과 — 제목 7.33·표지 K1 8.0·compare.md 7편·전제 가능·editgate auto | firemap-meeting 2026-10-12 19:04: yt_pair: G-1 EZvDDPlXo90 — 영상 11:30 전 칸(PD 10/11 16:25 요청). '영수증' 2곳 평범한 말로. G-1 재예약 안 되면 kidcred1012"
   },
   {
    "at": "2026-10-13 11:30",
    "kind": "long",
    "item": "G-1",
    "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-12 20:16",
+   "note": "firemap-video-producer 2026-10-12 20:16: G-1 새 판 xBTZtRp5lMs — 사장님 10/12 '영수증' 지적: 말 6줄 Chirp 다시(10/12)·장 제목·화면 15곳·제목 '금 1천만원어치, 내가 산 날에 따라 지금 얼마 남았을까?' · 자막 규격 · U5 7.5초·겹침 0 · 쉿소리 -12.2dB · bench_check 10/12 다시 대조 통과 · ytlong gate 통과 | firemap-meeting 2026-10-12 19:04: G-1 EZvDDPlXo90 예약이 풀려 있음(영수증 빼기 재제작, PD 18:45 회차) — 다시 예약 건 시각을 gates_ok에 새로 적을 것. 못 넘으면 이 칸 skip 사유 | firemap-video-producer 2026-10-11 17:18: G-1 업로드 EZvDDPlXo90(10/13 11:30 예약) · Chirp Charon + korsay 숫자 읽기(16:05) · 끝 인사 줄 삭제(editor 16:34) · U5 최장 8.0초·겹침 0(motion 045e377) · 목소리 IQR 0.13·5.80 · deess -12.3dB · 치직 148.8초 = 원본 wav 말소리(click_ok_note) · 제목 숫자 2개(copy 8.53)·bench_check 통과 · yt_pair: G-1 카페 글은 영상 전 10/13 08:10/10:10 칸 | 순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | firemap-meeting 10/09 21:4x: 레드팀 반영 — 녹음 다음 날 공개는 관문 기한까지 3.5시간뿐(M-1 녹음~업로드 3시간 38분 실측), G-1은 녹음 10/11 16:01 → 공개 10/13 19:30(관문 기한 10/12 19:30, 여유 27.5시간) | firemap-meeting 10/09 21:33: G-1 녹음 10/11 16:01 창(W-1이 10/10 창을 씀) · 관문 기한 10/11 19:30 · 녹음 뒤 motion BuyDateOpen·WaterfallPieces 교체·편집 재서명 | firemap-meeting 10/8 13:29: G-1은 목소리 전 준비 끝·썸네일 g1f·카피 통과. 녹음 = 10/8 16:01 TTS 창(C-1 대본이 아직 없어 그 창은 G-1). 10/10 칸에 C-1이 들어가면 G-1은 여기, C-1 미달이면 G-1이 10/10로 당겨지고 이 칸은 C-1. 공개 전날 calc 재실행·카피 숫자 재확인. 관문 기한 10/11 19:30",
+   "ep": "G-1",
+   "published": "예약 2026-10-13T11:30:00+09:00 https://youtu.be/xBTZtRp5lMs (새 판 — 옛 EZvDDPlXo90 비공개 유지, 지우지 않음)"
+  },
+  {
+   "at": "2026-10-13 12:10",
+   "kind": "cafe",
+   "item": "issnote1012",
+   "owner": "firemap-write",
    "gates_ok": null,
-   "note": "순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | firemap-meeting 10/09 21:4x: 레드팀 반영 — 녹음 다음 날 공개는 관문 기한까지 3.5시간뿐(M-1 녹음~업로드 3시간 38분 실측), G-1은 녹음 10/11 16:01 → 공개 10/13 19:30(관문 기한 10/12 19:30, 여유 27.5시간) | firemap-meeting 10/09 21:33: G-1 녹음 10/11 16:01 창(W-1이 10/10 창을 씀) · 관문 기한 10/11 19:30 · 녹음 뒤 motion BuyDateOpen·WaterfallPieces 교체·편집 재서명 | firemap-meeting 10/8 13:29: G-1은 목소리 전 준비 끝·썸네일 g1f·카피 통과. 녹음 = 10/8 16:01 TTS 창(C-1 대본이 아직 없어 그 창은 G-1). 10/10 칸에 C-1이 들어가면 G-1은 여기, C-1 미달이면 G-1이 10/10로 당겨지고 이 칸은 C-1. 공개 전날 calc 재실행·카피 숫자 재확인. 관문 기한 10/11 19:30"
+   "note": "firemap-meeting 2026-10-12 19:04: 관문 통과(10/11 10:53) 대기분"
+  },
+  {
+   "at": "2026-10-13 14:10",
+   "kind": "cafe",
+   "item": "kidcred1012",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:04: 관문 통과(10/11 14:45) 대기분"
+  },
+  {
+   "at": "2026-10-13 16:10",
+   "kind": "cafe",
+   "item": "yuryu1011",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:04: 비축(관문 10/11 12:36)에서 칸으로 — 상속세 inhded(10/11)와 이틀 띄움"
+  },
+  {
+   "at": "2026-10-13 18:10",
+   "kind": "cafe",
+   "item": "TBD-새 편",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:04: 새 원고(검색형, 세금연금·부동산 외 축 — 배당현금흐름 등). 기한 12:10"
   },
   {
    "at": "2026-10-13 19:20",
@@ -1050,22 +1093,47 @@
    "note": "firemap-video-producer 2026-10-11 13:05: v2로 교체(shorts-gap-1011.md — 첫 말·0초 답 숫자·자막 조각·검은 띠 제목·링크 줄 뺌), 관문 cardshorts/m1s_total1y/review.md 'v2' | firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_total1y/review.md · 카드 쇼츠 대체(사장님 10/10 지시)"
   },
   {
+   "at": "2026-10-13 20:10",
+   "kind": "cafe",
+   "item": "m1s_total1y짝",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:04: yt_pair: m1s_total1y uMqmvqNM02k(19:20 쇼츠) — 그 쇼츠 질문 하나에 답하는 짧은 글(쇼츠 링크+M-1 eTjVs1vDTwg 링크+표)"
+  },
+  {
+   "at": "2026-10-13 22:10",
+   "kind": "cafe",
+   "item": "m1s_nhis70짝",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:04: yt_pair: m1s_nhis70 kEHjN5WFBPI(10/12 19:20 쇼츠) — 10/12 칸이 PC 꺼짐으로 빠져 하루 늦게. 질문 하나만, M-1 롱폼 링크"
+  },
+  {
    "at": "2026-10-14 07:20",
    "kind": "shorts",
-   "item": "c1s_receipt",
+   "item": "g1s_buyday",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-11 15:26",
-   "note": "firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cardshorts/c1s_receipt/review.md · yt_pair: QlL0VK4PB_8 | 순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼",
-   "published": "예약 2026-10-14T07:20:00+09:00 https://youtu.be/QlL0VK4PB_8",
-   "item_pkg": "work/research/cardshorts/c1s_receipt"
+   "gates_ok": "2026-10-12 20:16",
+   "note": "firemap-video-producer 2026-10-12 20:16: G-1 롱폼(xBTZtRp5lMs, 10/13 11:30 공개) 클립 C1S 틀, 새 녹음 없음 — 관문 cardshorts/g1s_buyday/review.md · 같은 날 19:20 칸은 G-1 아닌 롱폼으로 · yt_pair: PHTFJJe5odU | 이전: TBD firemap-meeting 2026-10-12 19:04: c1s_receipt(C-1 클립) 예약 해제·C-1 비공개라 사용 금지(순돌이 10/11 17:0x) → G-1·W-1 렌더 뒤 클립으로 채움(PD). 같은 날 19:20과 다른 롱폼 | 옛: firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cards",
+   "item_pkg": "work/research/cardshorts/g1s_buyday",
+   "published": "예약 2026-10-14T07:20:00+09:00 https://youtu.be/PHTFJJe5odU"
+  },
+  {
+   "at": "2026-10-14 08:10",
+   "kind": "cafe",
+   "item": "M-1짝(ep/M-1/cafe.md)",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:04: yt_pair: M-1 eTjVs1vDTwg — 10/12 08:10 배정분이 PC 꺼짐으로 빠짐. 전체 표 긴 글. 국민연금 글(npsage 12:10)과 다른 축"
   },
   {
    "at": "2026-10-14 11:30",
    "kind": "long",
    "item": "R-1",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | 순돌이 10/11: C-1은 10/11로 당김 → R-1(10/13 16:01 창, 튀는 줄·속도 5.12 고칠 것) | firemap-meeting 10/10 21:40: C-1 확정(녹음 10/12 16:01 창, 관문 기한 10/13 19:30). R-1은 Chirp 결재 뒤로 뺌(같은 날 롱폼 2편 금지). | 이전: 순돌이 10/10 12:4x: C-1은 10/12로 당김(16:01 창에서 lfretake 다시 받기 2요청) → 이 칸은 R-1 후보(회의가 확정) | firemap-meeting 10/09 21:33: 녹음 10/12 16:01 창(처음부터, --gate) · 관문 기한 10/13 19:30(녹음 다음 날까지 여유) · 10/12~18주 G-1·C-1 = 2편 · 레드팀 반영으로 10/13→10/14"
+   "gates_ok": "2026-10-12 20:25",
+   "note": "firemap-video-producer 2026-10-12 20:25: R-1 업로드 9JNYZsjG4Mo(10/14 11:30 예약, videos.list private+publishAt 02:30Z) · Chirp 3 HD Charon 1.1 89줄(IQR 0.14·앞뒤 +0.3%·5.93음절/초) · '영수증' 0·끝 인사 줄 삭제(editor 19:14) · U5 최장 7.5초·겹침 0(motion 641093f) · deess --chirp-short(2~4kHz −1.1dB) · 제목 copy 8.13 · 썸네일 r2i 32차 7.27 · bench_check 통과 · yt_pair: R-1 카페 글(cafe.md) 10/14 칸 필요 | firemap-meeting 2026-10-12 19:07(레드팀 O1 수용): W-1이 10/12 밤 공개되면 이 칸 = P-1(국민연금 — 쇼츠 wPIHi7cSmQQ 6일째 하루 +113, 짝 카페 = npsage1009 10/14 12:10). P-1 관문(10/13 11:30)을 못 넘으면 R-1 비상 예비. W-1이 못 나가면 W-1 | firemap-meeting 2026-10-12 19:04: W-1 1화가 10/12 밤에 못 나가면 이 칸이 W-1(youtube-loop 편성 제안). 나가면 R-1(비상 예비, 전제 가능·영수증 26곳 제거) 그대로 | 순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | 순돌이 10/11: C-1은 10/11로 당김 → R-1(10/13 16:01 창, 튀는 줄·속도 5.12 고칠 것) | firemap-meeting 10/10 21:40: C-1 확정(녹음 10/12 16:01 창, 관문 기한 10/13 19:30). R-1은 Chirp 결재 뒤로 뺌(같은 날 롱폼 2편 금지). | 이전: 순돌이 10/10 12:4x: C-1은 10/12로 당김(16:01 창에서 lfretake 다시 받기 2요청) → 이 칸은 R-1 후보(회의가 확정) | firemap-meeting 10/09 21:33: 녹음 10/12 16:01 창(처음부터, --gate) · 관문 기한 10/13 19:30(녹음 다음 날까지 여유) · 10/12~18주 G-1·C-1 = 2편 · 레드팀 반영으로 10/13→10/14",
+   "published": "예약 2026-10-14T11:30:00+09:00 https://youtu.be/9JNYZsjG4Mo"
   },
   {
    "at": "2026-10-14 19:20",
@@ -1078,11 +1146,10 @@
   {
    "at": "2026-10-15 07:20",
    "kind": "shorts",
-   "item": "c1s_fx",
+   "item": "TBD",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-11 15:26",
-   "note": "firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cardshorts/c1s_fx/review.md · yt_pair: LEEGTOokOaM | 순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼",
-   "published": "예약 2026-10-15T07:20:00+09:00 https://youtu.be/LEEGTOokOaM",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:04: c1s_fx(C-1 클립) 예약 해제·C-1 비공개라 사용 금지(순돌이 10/11 17:0x) → G-1·W-1 렌더 뒤 클립으로 채움(PD). 같은 날 19:20과 다른 롱폼 | 옛: firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cards",
    "item_pkg": "work/research/cardshorts/c1s_fx"
   },
   {
@@ -1136,10 +1203,11 @@
   {
    "at": "2026-10-17 11:30",
    "kind": "long",
-   "item": "TBD",
+   "item": "W-1-2",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | 순돌이 10/11: 사장님 \"롱폼 무조건 하루 한 개\" — 회의가 R-1·P-1·I-1 중 배정"
+   "note": "firemap-youtube-loop 2026-10-12 18:51: W-1 2화(w1014) 배정 — 주간 코너 2화(1화 v3.1에서 '토요일 2화' 약속 줄은 빠짐, '영수증' 비유 금지) · 기준 10/8 종가→10/14(수) 마감, 미국 9월 CPI(10/14 21:30) 장 포함 · 대본 youtube-loop 10/15 05:00 뒤 첫 회차 → 녹음 10/15 16:01 창(PD) → 관문 기한 10/16 11:30 · 근거 longform/ep/W-1/w1014/plan.md | 순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | 순돌이 10/11: 사장님 \"롱폼 무조건 하루 한 개\" — 회의가 R-1·P-1·I-1 중 배정",
+   "ep": "W-1/w1014"
   },
   {
    "at": "2026-10-17 19:20",
@@ -1148,6 +1216,14 @@
    "owner": "firemap-video-producer",
    "gates_ok": null,
    "note": "순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼"
+  },
+  {
+   "at": "2026-10-22 11:30",
+   "kind": "long",
+   "item": "H-2(동네 손품 2편: 대치·잠실·반포)",
+   "owner": "firemap-youtube-loop",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-12 19:04: 순돌이 10/11 지시 동네 손품 매주 고정 1편 — series-plan 4-2 표 4~6번(은마 62,570·잠실주공5단지 29,790·반포자이 39,490). H-1 방식(tour.py) 재사용, 대본 10/19까지, 제작 PD"
   }
  ],
  "_reserve_shorts_next": "10/6 06:42 쇼츠 비축 0/1 — 다음 후보 기준금리 30년 표(ECOS 기준금리 API, 주제후보 9번, 사실표 새로 work/research/basecut1006/pkg·compete.md 5·표지부터), E-1 사실표 쓰는 e1_samsung_x는 hynix_dd와 같은 사실표라 제외"

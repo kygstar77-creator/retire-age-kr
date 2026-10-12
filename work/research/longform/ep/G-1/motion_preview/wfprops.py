@@ -13,7 +13,7 @@ txt = open(script, encoding='utf-8').read()
 G.check_script(txt)
 chap = lambda t: re.sub(r'^\[', '', t).split()[0].rstrip(']')
 sec = next(s for s in SC.parse(script) if chap(s['title']) == '3.')
-i0 = next(j for j, t in enumerate(sec['lines']) if t.startswith('작년 영수증부터'))
+i0 = next(j for j, t in enumerate(sec['lines']) if t.startswith('작년에 산 경우부터'))
 says = sec['lines'][i0:]
 caps, last = {}, None
 for line in txt.splitlines():
@@ -59,7 +59,7 @@ wf = {'seed': 'G-1-wf', 'min': -8, 'max': 7.5, 'zeroText': f'{G.dot(dt)} 산 값
       'prem': [[f'웃돈 그때 {G.M(d["p0"])}%', A('작년엔', 4)], [f'지금 {G.M(d["p1"])}%', A('지금은 오히려', 4)]],
       'hit': A('이 웃돈이 빠진', 4),
       'note': [note, A('그러니까', 4)], 'intro': 0}
-scene = {'key': 'wf1', 'kind': 'waterfall', 'title': f'{G.SHORT[lab]}에 산 영수증, 세 조각', 'sub': f'{G.dot(dt)} → {G.dot(G.ASOF)} · 곱이라 % 단순 합과 다름 · 막대 = 몫(%p), 합 = 내 금',
+scene = {'key': 'wf1', 'kind': 'waterfall', 'title': f'{G.SHORT[lab]}에 산 금, 세 조각', 'sub': f'{G.dot(dt)} → {G.dot(G.ASOF)} · 곱이라 % 단순 합과 다름 · 막대 = 몫(%p), 합 = 내 금',
          'source': G.SRC_DEC, 'chapter': '3장', 'lines': lines, 'frames': sum(l['frames'] for l in lines) + 20}
 json.dump({'scene': scene, 'wf': wf}, open(os.path.join(H, 'g1_wf.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 print('frames', scene['frames'], 'missing voice', sum(1 for l in lines if not l['audio']), [round(x, 3) for x in pp], [s['at'] for s in wf['steps']], wf['total']['at'], wf['note'][1])

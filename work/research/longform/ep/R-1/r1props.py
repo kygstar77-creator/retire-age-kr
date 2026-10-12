@@ -151,18 +151,18 @@ def spec(key, L, A):
                     data={'bars': [[NAME[k], A('통장에 1억', 8 + 7 * i)] for i, k in enumerate(['DEP', 'SPY', 'SCHD', 'GLD'])], 'q': A('예금에 넣으시겠어요', 0),
                           'gap': A('결과부터', 0), 'gapText': '세금이 줄인 간격 ' + won(GAP[0] - GAP[1]) + '원'})
     if key == 'promise':
-        return dict(kind='promise', title='1억의 1년 영수증', sub='공식 원문 숫자로, 내 돈에 실제로 남는 금액만', source='한국은행 ECOS · 금융감독원 · 법제처 · 거래소 종가',
+        return dict(kind='promise', title='1억, 1년 뒤 남은 돈', sub='공식 원문 숫자로, 내 돈에 실제로 남는 금액만', source='한국은행 ECOS · 금융감독원 · 법제처 · 거래소 종가',
                     data={'stamp': A('오늘은', 0), 'rows': [['원문 숫자', '한국은행·금감원·법령', 'in', A('파이어맵은', 10)], ['세금', '이자·분배금·판 이익', 'in', A('파이어맵은', 22)],
                                                              ['환율', '산 날·판 날 매매기준율', 'in', A('파이어맵은', 34)], ['남는 돈', '통장에 찍히는 금액', 'net', A('파이어맵은', 46)]],
                           'q': A('그럼 순위까지', 0)})
     if key == 'road':
-        items = ['예금 영수증', '달러로 바꿀 때 생기는 줄', '미국 ETF 영수증 세 장', '순위 · 반론', '사람마다 · 지금 예금']
-        return dict(kind='road', title='오늘 확인할 다섯 가지', sub='영수증 순서대로', source=None,
+        items = ['예금은 얼마 남았나', '달러로 바꿀 때 생기는 줄', '미국 ETF 세 곳', '순위 · 반론', '사람마다 · 지금 예금']
+        return dict(kind='road', title='오늘 확인할 다섯 가지', sub='이 순서대로', source=None,
                     data={'rows': [[f'{"①②③④⑤"[i]}  {t}', A('예금 영수증,' if i < 4 else '마지막으로', 10 + (i if i < 4 else 0) * 16)] for i, t in enumerate(items)]})
     if key == 'logo':
-        return dict(kind='logo', title='', data={'sub': '1억의 1년 영수증 · 1편 · 2025.10.2 → 2026.10.2'})
+        return dict(kind='logo', title='', data={'sub': '1억, 1년 뒤 남은 돈 · 1편 · 2025.10.2 → 2026.10.2'})
     if key == 'dep':
-        return dict(kind='receipt', title='예금 영수증', sub='2025년 10월 새로 가입한 1년 정기예금 평균 연 2.58%', source=SRC_DEP,
+        return dict(kind='receipt', title='예금은 얼마 남았나', sub='2025년 10월 새로 가입한 1년 정기예금 평균 연 2.58%', source=SRC_DEP,
                     data={'head': '정기예금 1년 · 1억 · 단위 원', 'rows': R([['넣은 돈', won(100_000_000), 'in', 0], ['이자 연 2.58%', '+' + won(RC['DEP']['gain']), 'in', A('258만원', 0)],
                                                                     ['세금 15.4%', '−' + won(RC['DEP']['tax']), 'tax', A('39만 7천원', 0)], ['1년 뒤 통장', won(RC['DEP']['net']), 'net', A('2.18%', 0)]]),
                           'side': [PCT['DEP'], A('2.18%', 10), '넣은 돈보다 늘어난 비율'], 'callout': ['받을 돈이 처음부터 정해짐', A('줄이 몇 개 없죠', 0)]})
@@ -184,7 +184,7 @@ def spec(key, L, A):
                                    ['GLD', idx('GLD', '20260928'), 10243, '9.28 · 102,425,567원 (−28.69%)', A('금은 더 컸어요', 16), 'down', True]],
                           'fxAt': A('가장 높았던 날은', 0), 'fx': ['환율 최고 1,554.4원', '최저 1,337.9원']})
     if key == 'spy':
-        return dict(kind='receipt', title='S&P500 영수증', sub='SPY · 달러로 사서 1년 뒤 원화로 판 값', source=SRC_ETF,
+        return dict(kind='receipt', title='S&P500은 얼마 남았나', sub='SPY · 달러로 사서 1년 뒤 원화로 판 값', source=SRC_ETF,
                     data={'head': 'S&P500 ETF(SPY) · 1억 · 단위 원', 'side': ['+15.01%', A('약 15%', 10), '달러로 1년 동안 오른 폭'],
                           'rows': R([['달러로 오른 폭', '+15.01%', 'in', A('약 15%', 0)], ['원화로 판 돈', won(RC['SPY']['sell']), 'in', A('1,121만원', 0)],
                                      ['그중 이익', won(RC['SPY']['gain']), 'hi', A('1,121만원', 18)], ['분배금 4번(세금 전)', '+' + won(RC['SPY']['dist']), 'in', A('110만원', 0)],
@@ -202,7 +202,7 @@ def spec(key, L, A):
                     data={'text': '다음 해 5월', 'label': '판 이익 세금 내는 때', 'note': '확정신고 5월 1일~31일', 'start': A('그런데 이 세금은', 8),
                           'after': ['세금 두 가지 다 낸 뒤', won(RC['SPY']['net']) + '원', PCT['SPY'], A('10% 조금', 0)]})
     if key == 'schd':
-        return dict(kind='receipt', title='SCHD 영수증', sub='배당 ETF · 계산 방법은 S&P500과 같다', source=SRC_ETF,
+        return dict(kind='receipt', title='SCHD는 얼마 남았나', sub='배당 ETF · 계산 방법은 S&P500과 같다', source=SRC_ETF,
                     data={'head': 'SCHD · 1억 · 단위 원', 'side': ['+15.99%', A('16% 가까이', 10), '세금 뗀 뒤, 넣은 돈보다 늘어난 비율'],
                           'rows': R([['달러로 오른 폭', '+19.68%', 'in', A('약 20%', 0)], ['원화로 판 돈', won(RC['SCHD']['sell']), 'in', A('약 20%', 30)],
                                      ['분배금 4번(세금 전)', '+' + won(RC['SCHD']['dist']), 'in', A('373만원', 0)], ['미국이 뗀 세금 15%', '−' + won(RC['SCHD']['wht']), 'tax', A('55만 9천원', 0)],
@@ -231,7 +231,7 @@ def spec(key, L, A):
         order = [['금>S&P>SCHD', 153], ['금>SCHD>S&P', 34], ['SCHD>금>S&P', 34], ['SCHD>S&P>금', 25], ['S&P>금>SCHD', 4], ['S&P>SCHD>금', 1]]
         return dict(kind='bars', title='넣는 날을 바꾸면 순위도 바뀐다', sub='시작일 251개(2024.10.2~2025.10.2)마다 1년 들고 판 결과 · 세 ETF 순서별 날 수', source='야후 파이낸스 종가·분배금 · 달러 기준·세금 전(파이어맵 계산)',
                     data={'dir': 'v', 'max': 175, 'tags': True, 'bars': [[o, v, f'{v}일', A('그래서 넣는 날을', 10 + 8 * i), 'accent' if o.startswith('SCHD>S&P') else ('ink' if not o.startswith('금') else 'ink'), None] for i, (o, v) in enumerate(order)],
-                          'circle': [3, A('오늘 영수증과 같은', 0)], 'note': ['오늘 순서: 251일 중 25일(10.0%)', A('오늘 영수증과 같은', 10)],
+                          'circle': [3, A('오늘 결과와 같은', 0)], 'note': ['오늘 순서: 251일 중 25일(10.0%)', A('오늘 결과와 같은', 10)],
                           'note2': ['금이 1위: 187일(74.5%)', A('오히려 금이', 0)]})
     if key == 'caseA':
         return dict(kind='person', title='30대 · 1년 안에 꺼낼 돈', sub='예: 집 계약금 — 꺼내는 날이 정해진 돈', source=SRC_ADD,
@@ -283,7 +283,7 @@ def spec(key, L, A):
                           'bars': [['예금 2억 · 이자 6,780,000원', 22800, '월 22,800원', A('예금 2억이', 0), 'ink'], ['예금 3억 · 이자 10,170,000원', 68930, '월 68,930원', A('원금이 3억이', 0), 'rise']],
                           'callout': ['1년 +553,560원', A('1년에 55만원', 0)]})
     if key == 'sum':
-        return dict(kind='receipt', title='정리 — 1억의 1년 영수증', sub='2025.10.2 → 2026.10.2 · 세금과 환율을 다 뗀 뒤', source=SRC_ETF + ' · ' + PAST,
+        return dict(kind='receipt', title='정리 — 1억, 1년 뒤 남은 돈', sub='2025.10.2 → 2026.10.2 · 세금과 환율을 다 뗀 뒤', source=SRC_ETF + ' · ' + PAST,
                     data={'head': '세금 다 낸 뒤 남는 돈', 'side': ['순위 그대로', A('순위는 그대로', 0), '하지만 넣는 날이 바뀌면 순위도 바뀜'],
                           'rows': R([[f'{NAME[k]}  {PCT[k]}', SAYNET[k], 'net' if k == 'SCHD' else 'in', A(['SCHD는', 'SCHD는', '금은', '금은'][i], [0, 24, 0, 24][i])] for i, k in enumerate(ORD)])})
     if key == 'act':
@@ -292,8 +292,8 @@ def spec(key, L, A):
                                                             ['② 1천만원까지 남은 돈', '지역 건보 합산 경계', 'hi', A('그리고 1천만원과', 0)],
                                                             ['③ 2천만원까지 남은 돈', '종합과세·피부양자', 'hi', A('그리고 1천만원과', 18)]])})
     if key == 'end':
-        return dict(kind='end', title='다음 영수증은 2편에서', sub='1억의 1년 영수증 시리즈 · 재생목록에 차례대로', source=PAST,
-                    data={'text': '다음 편', 'label': '1억의 1년 영수증', 'note': '같은 규칙으로, 실제 그날 넣었다면', 'start': A('다음 편에서도', 0)})
+        return dict(kind='end', title='2편에서 이어서', sub='1억, 1년 뒤 남은 돈 시리즈 · 재생목록에 차례대로', source=PAST,
+                    data={'text': '다음 편', 'label': '1억, 1년 뒤 남은 돈', 'note': '같은 규칙으로, 실제 그날 넣었다면', 'start': A('다음 편에서도', 0)})
     raise KeyError(key)
 
 

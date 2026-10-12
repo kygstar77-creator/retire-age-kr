@@ -62,6 +62,10 @@ def speak(ep, t):
     extra = os.path.join(ep, 'say.json')
     pairs = (json.load(open(extra, encoding='utf-8')) if os.path.exists(extra) else []) + SAY
     for a, b in sorted(pairs, key=lambda p: -len(p[0])): t = t.replace(a, b)
+    # 10/11 사장님 "17년이면 십칠 년이라고 읽어야 하는데 왜 일칠 년이라고 해?" — Chirp 3 HD는 숫자를 자리별로 읽는 일이 있어
+    # Chirp 편만 마지막 단계로 숫자를 한국어 읽기로 바꾼다(work/korsay.py). 제미나이 편은 그대로. 대본·화면 글자는 안 바뀐다(녹음할 말만).
+    if is_chirp(lock(ep)):
+        sys.path.insert(0, HERE); import korsay; t = korsay.say(t)
     return t
 
 def sections(ep):

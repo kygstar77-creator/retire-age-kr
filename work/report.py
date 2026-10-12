@@ -39,7 +39,13 @@ def main():
     out = [f'[파이어맵 {time.strftime("%-m/%-d") if os.name != "nt" else time.strftime("%#m/%#d")}]']
 
     # 발행
-    runs = (load(os.path.join(HERE, 'runs_today.json'), {'runs': []}) or {}).get('runs', [])
+    rt = load(os.path.join(HERE, 'runs_today.json'), {'runs': []}) or {}
+    runs = rt.get('runs', [])
+    # 2026-10-12 report: PC가 10/11 저녁~10/12 18:33 멈춰 write가 새 날 파일을 안 만들었다.
+    # 그런데 어제 파일의 카페 5편을 '오늘 5/8'로 찍었다 — 실제 오늘은 0편. 날짜가 다르면 오늘 것은 0이다.
+    stale = rt.get('date') and rt.get('date') != time.strftime('%Y-%m-%d')
+    if stale:
+        runs = []
     # 같은 글이 여러 회차 기록에 들어간다 — 발행한 회차와 그것을 확인한 회차가 둘 다 적는다.
     # 2026-09-25: law1001 하나가 10시·11시 기록에 겹쳐 블로그가 4편으로 나왔다(실제 3편,
     # verify today와 RSS로 확인). 편수는 회차가 아니라 서로 다른 주소를 센다.
@@ -52,7 +58,7 @@ def main():
         from naverpost import DAY_CAP
     except Exception:
         DAY_CAP = {}
-    out.append(f"발행  블로그 {nb}/{DAY_CAP.get('blog', '?')} · 카페 {nc}/{DAY_CAP.get('cafe', '?')} (하루 상한)")
+    out.append(f"발행  블로그 {nb}/{DAY_CAP.get('blog', '?')} · 카페 {nc}/{DAY_CAP.get('cafe', '?')} (하루 상한)" + (f" · 기록 파일이 {rt.get('date')}에 멈춤" if stale else ''))
 
     # 색인 — 하루 지난 글 기준. 당일 글은 색인될 시간이 없어 언제나 낮다.
     perf = load(os.path.join(HERE, 'perf_log.json'), {}) or {}

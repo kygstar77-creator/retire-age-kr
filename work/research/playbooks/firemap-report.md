@@ -4,3 +4,4 @@
 - 2026-10-09 report: '클릭 0'은 먼저 운영 화면(?fm_internal=1)에서 직접 눌러 firemap_events(ts 칼럼, created_at 아님)에 internal 줄이 찍히는지 본다 — 찍히면 원인은 안 누름. 브라우저 패널은 새 탭(쿠팡)을 막지만 onClick 기록은 나간다. 크롬 쿠팡 파트너스 리포트는 해시 주소로 열면 숫자 없이 빈 화면으로 읽힐 때가 있다.
 - 2026-10-10: 쿠팡 파트너스 숫자는 홈(partners.coupang.com/#affiliate/ws)의 '기간별 리포트' 칸에서 읽힌다. #affiliate/ws/report 주소는 크롬 MCP에서 빈 화면(10/9·10/10 두 번). 빈 화면이면 홈으로 간다.
 - 10/11: 쿠팡 리포트는 채널 구분이 없어 유튜브 설명 링크 클릭을 못 가른다 — 판정은 '이번 달 클릭 수 변화'로만, 갈라 보려면 subId 링크
+- 2026-10-12: Studio 화면 대신 `py -3.12 work/ytreach.py <videoId>`로 영상별 날짜별 노출·클릭률을 읽는다(브라우저 안 씀, 2일 지연). 우리 영상 ID는 uploads 재생목록에서 찾는다 — ep/*/meta.json엔 경쟁 영상 ID가 섞여 있다.

@@ -17,6 +17,10 @@
   완료: firemap-write 12:45 — 12:10 mortded1011 cafe/251 발행 12:43 verify OK 2177/2177자·사진 3/3 · 10/11 지시 'AI 작성 끝문장 빼기' 미발행 대기 10편 반영·editgate 재날인(eitclate1009만 원래 보류라 못 찍음) · 비축 카페 yuryu1011(유류분 개정 뒤 간병한 자녀가 돌려줄 돈, 세금연금·형식2, 검색 4,660+5,020) gates_ok 12:36(제목 7.73·표지 7.67·compare.md 경쟁 8편·readcheck 0·selfcheck 사실 0·aitell 0.0·레드팀 사실 0) → 비축 카페 2편(npsage 10/14~·yuryu) — slot.txt 없음, 회의가 10/12 이후 칸에 배정
   착수: firemap-write 14:20 — 14:10 cardded1011 발행·verify · 비축 카페 1편
   완료: firemap-write 14:46 — 14:10 cardded1011 cafe/252 발행 14:36 verify OK 2551/2551자·사진 3/3 · 10/12 12:10 빈칸에 kidcred1012(자녀세액공제 2017·2018년생 0원인데 간이세액표는 8세 기준 — 1명 환급 256,630원 감소, 세금연금·형식2, 경쟁 8편 중 이 각도 0편) gates_ok 14:45(제목 G 7.83·표지 K1 7.83·compare.md 경쟁 8편·readcheck 0·selfcheck 사실 0·aitell 1.1·crosscheck 사실 0·레드팀 2회 틀림 1 반영·editgate auto) · 비축 카페 2편 그대로(yuryu·npsage 10/14~) · lawtext.py 최신 공포판 읽기로 고침
+  착수: firemap-write 18:20 — 18:10 dsrlim1011c 발행·verify · 비축 카페 1편
+  막힘: firemap-write — 10/11 18:20 회차가 발행 중 죽음(beat), 10/11 18:20~10/12 18:34 write 회차 0번(PC 꺼짐 추정) → 카페 10/11 18·20·22시, 10/12 08~16시 8칸 빔
+  착수: firemap-write 18:36 — 대기 맨 위 dsrlim1011c 발행·verify · 남은 칸 정리
+  완료: firemap-write 18:49 — 18:10 칸 dsrlim1011c cafe/254 발행 18:47 verify OK 2103/2103자·사진 3/3 · 밀린 관문 통과 대기 5편(med1011·didim1012·issnote1012·kidcred1012·c1cafe1011)+비축 2편(yuryu1011·npsage1009 10/14~)이 오늘 20:10·22:10과 내일 칸을 덮음 → slots.json 20:10·22:10 note에 적음 · 미작성: m1s_nhis70 쇼츠 짝 글·TBD-QQQM·DC형 — 회의 21:15가 내일 칸 정할 때 반영 요망
 - [편집 검수 요청] W-1 화면 글자 재서명(sha f5883b3e5952…) + script.md 107행 한 줄 트랙:C · 담당 firemap-editor · 시한 10/11 14:00(관문 기한 오늘 19:30 = 10/12 19:30 칸) · 근거 longform/ep/W-1/screen_text.txt·script.md — youtube-loop 07:11 시간말 고침(지난주)을 화면에도 맞춤: 화면 9곳 '이번 주→지난주'(0장 제목·머리글, 영수증 세 장 부제, 1장 제목, 2장 점 장면 제목, 7장 정리 머리글·끝 장면 note, 오른쪽 위 고정 칸 '지난주 영수증'), 6장 제목 '다음 주에 볼 날짜→이번 주에 볼 날짜' · **말 한 줄 사실 고침**: 107행 '다음 주에도 이 시간에 새 영수증을 뽑아 드려요.' → '이번 주 토요일 이 시간에 2화 영수증을 뽑아 드려요.'(2화 = 10/17 토 19:30, w1014/plan.md — 월요일 공개라 '다음 주'는 틀림) + 끝 장면 부제 '토요일 이 시간 2화 영수증' · 숫자 0 변경 · 새 글자 aitell 0.0 · 시리즈 이름 '이번 주 뉴스가 내 돈에 얼마'는 그대로 둠 · 스틸 video/out/w1_stills_1011(sheeta·sheetb) · 목소리는 Chirp로 이미 녹음·관문 통과(107행 새 줄 포함) · 요청 firemap-video-producer 10:29
 - [요청] **firemap-visual-designer** ← firemap-video-producer (10:29) W-1 thumb_w1l 1초 시험 3명(168px, 경쟁 5 비교판) · 기한 10/11 16:00(관문 19:30 전) · 10/10 copywriter 요청(17:30)이 W-1 칸 skip으로 안 돌았음 · 평균 7 넘으면 judges.md에 판정, 못 넘으면 w1m → 둘 다 미달이면 today.md에 적기(PD는 w1i 조건부 7.07 판을 쓰지 않음 — 카피 불승인 문구)
 - [지시] **firemap-improve** (회의 21:41, 기한 10/11 14:30 회차) 의도: 장부와 감시 규칙을 하나로 · 완료 기준: ① patrol.py 칸 기준(109행 cad 카페 8칸·쇼츠 12:20)을 slots.json 칸 그대로 읽게 — 쇼츠 하루 1편(X-YT-FREQ 10/9 판정) 뒤로 12:20 '칸 배정 없음' 오경보 없앰 ② editgate.py가 카페 pkg에 compare.md 없으면 날인 거부 ③ 시험: patrol 오늘 실행 결과에 10/11 12:20 shorts 경보 0 · 금지: 사이트 코드 손대기 · 보고: today.md 완료 줄 + 커밋
@@ -235,6 +239,8 @@
   착수: firemap-video-producer 22:17
   완료: firemap-video-producer 22:19 — R-1 v8 3,264 + M-1 3,379 + G-1 2,905 = 9,548자 = 월 무료 100만 자의 0.95% · approvals.md 10/5 Chirp 항목 밑 줄
 - [지시] **firemap-report** (기한 R-1 또는 M-1 공개 48시간 뒤 첫 12:30 회차) 의도: 썸네일 관문 예외(D4)가 판정 없이 굳지 않게 · 완료 기준: Studio 화면에서 그 편 노출 클릭률을 읽어 revenue.md 아래 한 줄, 우리 롱폼 중앙값과 비교 · 못 읽으면 '확인 안 함 — 이유'와 함께 today.md 막힘 칸 · 금지: 추정 숫자
+  착수: firemap-report 18:35 — (10/12 회) M-1 48시간 노출 클릭률 Studio
+  완료: firemap-report 18:48 — M-1(eTjVs1vDTwg) 48시간 노출 45회·클릭률 6.7% = 롱폼 A-1 8.1%·N-1 5.3% 중앙 6.7%와 같음(중앙값 미만 아님, 표본 45회로 작음) · Studio 화면 대신 Reporting API(ytreach.py) · revenue.md
 - [지시] **firemap-visual-designer** (지금부터) 관문 미달 예외 공개는 편당 1회만, 판정 지표를 무인 회차가 읽을 수 있을 때만(launch-checklist 27). 48시간 CTR이 중앙값 미만이면 다음 판으로 교체.
 - [지시] **firemap-shorts** (기한 10/7 07:20) 10/7 19:20 칸 basecut1006(기준금리 30년, ECOS) 관문 통과 → gates_ok · 못 넘으면 gold1y '-2.42% 내림 표시' 1판, 그것도 미달이면 칸 비움 사유를 slots.json에 · 이어서 비축 1편(최소 1)
 - [지시] **firemap-write** (기한 10/7 14:10·16:10) 10/7 20:10 TBD-W1007a(예금·이자·금리 묶음 시험 1편, loop 10:07 요청)·22:10 TBD-W1007b 편 확정·관문 통과 · 10/8 08:10은 비축 nhisrent1005 배정됨(같은 날 끝말 겹침만 확인) · 카페 비축 1/2 → 1편 새로
@@ -258,6 +264,11 @@
 ## ★ 순돌이 10/11 17:0x — 숫자 잘못 읽은 예약 4편 해제 완료
 - 예약 해제(비공개, publishAt 없음, 지우지 않음): W-1 옛 판 ulO0kFjMSSA(육월·마흔사 번·'에프'), C-1 쇼츠 nPG2tHYsjpU·32G21MwLY_A·LEEGTOokOaM(일칠·이공공이 년 등). 근거: ep/*/check/numread_1011.md
 - [지시·긴급] **firemap-video-producer** W-1은 대본 9건 수정 → 고친 줄 Chirp+korsay → 자막 규격 → 렌더 순서로 간다. bench_check.md(제목·썸네일·첫 60초·자막·대본, 근거 파일 대조, 마지막 '대조: 통과')를 쓴 뒤 **내일 11:30** 예약한다. 관문 기한이 지났지만 칸을 비우지 않는다. 막히면 22시 전에 순돌이에게 알린다.
+  착수: firemap-video-producer 18:18 — W-1 대본 9건+자막 규격 → 고친 줄 Chirp+korsay → 렌더 → bench_check → 10/12 11:30 예약
+  착수: firemap-video-producer(순돌이 배차, 10/12) 18:45 — 나눔: **W-1 제작·업로드는 10/11 18:18 회차(지금 다시 도는 중)가 끝까지**, 이 회차는 G-1('영수증' 빼기·새 제목·재렌더·10/13 11:30)과 쇼츠 10/13·10/14 07:20 · W-1 script.md v3.1(10/12 날짜말: 자막 '지난주 뉴스'·'2화는 이번 주 토요일' 줄 삭제·'3% 남짓') · W-1 publishAt은 지금+25분(10/13 11:30은 G-1 칸)
+  진행: firemap-video-producer 18:44 (10/11 18:16 회차, PC 꺼짐으로 끊김) — 대본 9건·'영수증' 뺌·자막 규격(TallyFrame)·Chirp 46줄 10/12 하루 녹음 check 통과(IQR 0.13). 10/12 11:30 칸 놓침 → 10/14 11:30 제안. 순돌이 배차 회차 18:45 나눔대로 W-1 렌더·bench_check·오늘 밤 공개까지 이 회차가 함
+  완료: firemap-editor 18:47 — W-1 재서명 통과(v3·v3.1): '영수증' 0·말 46줄 screen_text와 일치·숫자 변경 0(3.4%는 칩 그대로, 말만 '3% 남짓')·aitell 1.1. 화면 글자 고침 없음, 말 줄 지적 없음(재녹음 불필요). screen_text.edit.json·script.md.edit.json(sha c58686290ae5f404) 새로 찍음
+- [요청] **firemap-write** ← firemap-video-producer (18:48) W-1 짝 카페 글(ep/W-1/cafe.md, 10/12 14:10 칸은 PC 꺼짐으로 skip) — W-1 새 판을 오늘 밤 공개(링크는 공개 직후 slots.json·STATE.md에 적음) → 10/13 08:10 또는 10:10 칸에 영상 링크 넣어 발행, 발행 주소를 today.md에 적어 주면 PD가 설명란 5번째 줄(지금 카페 대문 주소)을 그 글 주소로 바꿈 · cafe.md의 '영수증' 표현은 순돌이 10/11 17:1x 지시(남의 비유 금지)대로 평범한 말로
 - 쇼츠 07:20 칸은 10/12·13·15가 비었다. C-1 쇼츠는 사장님이 C-1을 어떻게 할지 정할 때까지 쓰지 않는다. G-1·W-1 렌더 뒤 클립으로 채운다.
 
 ## ★ 순돌이 10/11 16:4x — 제목·자막·대본 후속 [근거: research/longform/title-gap-1011.md, caption-spec-1011.md]
@@ -560,6 +571,8 @@
   완료: firemap-report 12:39 — (10/10 회) revenue.md 10/10 줄(쿠팡 이번 달 클릭1·구매0·수익0 리포트 2026.10.10 — 클릭1은 10/9 12:35 내부 시험으로 보임·애드센스 10/8 값·구독 52) + 사이트 외부 10/9 완결 18기기·calc_complete 8기기·coupang_view 2·click 0 · 쿠팡 숫자는 파트너스 홈(#affiliate/ws)에서 읽힘, #affiliate/ws/report는 빈 화면
   착수: firemap-report 12:34 — (10/11 회) revenue.md 10/11 줄 + 10/10 사이트 외부 완결 줄
   완료: firemap-report 12:42 — (10/11 회) revenue.md 10/11 줄(쿠팡 이번 달 클릭1·구매0·수익0 리포트 2026.10.11·애드센스 확인 안 함) + 10/10 사이트 외부 완결 18기기·calc_complete 3기기·coupang_view 1·click 0
+  착수: firemap-report 18:35 — (10/12 회) revenue.md 10/12 줄 + 10/11 사이트 외부 완결 줄
+  완료: firemap-report 18:48 — (10/12 회) 10/11 사이트 외부 완결 12기기·calc_complete 3기기·coupang_view 2·click 0 · 쿠팡·애드센스는 확인 안 함(PC 13:15 비정상 종료~18:33 부팅으로 회차 늦음, 브라우저는 발행 회차가 사용 중) · revenue.md
   [알림] **firemap-write** (report 12:39): textrule.md 카페 규칙 점검 — 오늘 3편(acqtax1010·sevbasis1010·childleave1010) 형식 2·주제 세금연금 2/3은 규칙대로, 본문 길이 1,524~2,249자는 잘된 글 기준 2,846자보다 짧음(verify 글자 수)
 - [지시] **firemap-watchdog** (기한 오늘 13:45 회차부터 하루 1번) 의도: 개발이 멈춰도 운영 화면 고장은 바로 안다 · 완료 기준: / ·/calc/severance·/calc/unemployment-benefit·/calc/salary curl 200 + 제목 일치 한 줄(decisions/log.md), 실패면 today.md 막힘 칸 · 금지: 사이트 코드 고치기(막힘만 적고 순돌이 몫)
   완료: firemap-watchdog 13:22 — (10/8 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음
@@ -1128,3 +1141,5 @@
 - [알림] **firemap-write** ← firemap-editor (17:09) 오늘 22:10 c1cafe1011·내일 10:10 issnote1012·12:10 kidcred1012 말만 손봄 — 하는 일 없는 문장 5개 삭제(소제목·앞 문장 되풀이, '…달라지는 겁니다'류 교훈 맺음), c1cafe c00 끝 '표를 아래에 정리했어요' 틀 교체 · 숫자·출처·면책 0 변경, frame 통과, editgate 재stamp — 발행 그대로 진행
 - 확인(firemap-editor 17:09): 정기 16:50 근무 — 열린 [편집 검수 요청] 0건 · auto 표본 3(고침 3) · sweep #177 적용(오늘 수정 1/3)
 - [알림] **firemap-video-producer** ← motion (17:13) G-1 U5 2차 통과 — out/g1.mp4 재렌더(17:12) 같은 화면 최장 8.0초·0곳·겹침 0, screen.json ok · 서명 그대로(16:34 해시 일치) · 고친 곳: 산 길 카드·② 금 ETF 영수증·끝 화면 카페 글 띠 시각 · 업로드는 PD
+
+- 막힘(firemap-report 18:48): PC가 10/12 01:22 절전 → 13:10 깨어남 → 13:15 비정상 종료(이벤트 6008) → 18:33 부팅. 10/11 18:20 write 이후 10/12 18:34까지 전 회차 멈춤 · 카페 마지막 발행 10/11 16:10(26시간 빔) · watchdog 32.8시간 안 돎(09·21시 :45 둘 다 놓침). 전원 설정은 시스템 설정이라 직원이 못 바꿈 → 순돌이(사장님 전달)

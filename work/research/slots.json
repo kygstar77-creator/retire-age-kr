@@ -1133,18 +1133,20 @@
   {
    "at": "2026-10-14 08:10",
    "kind": "cafe",
-   "item": "M-1짝(ep/M-1/cafe.md)",
+   "item": "m1cafe1014",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-12 19:04: yt_pair: M-1 eTjVs1vDTwg — 10/12 08:10 배정분이 PC 꺼짐으로 빠짐. 전체 표 긴 글. 국민연금 글(npsage 12:10)과 다른 축"
+   "gates_ok": "2026-10-13 08:33",
+   "note": "firemap-meeting 2026-10-12 19:04: yt_pair: M-1 eTjVs1vDTwg — 10/12 08:10 배정분이 PC 꺼짐으로 빠짐. 전체 표 긴 글. 국민연금 글(npsage 12:10)과 다른 축 | firemap-write 2026-10-13 08:33: M-1 짝 긴 글 m1cafe1014 관문 통과 — 제목 8.13(제미나이 9.2·9.2·레드팀 6)·표지 K4 8.0·compare.md 경쟁 5편(건보료 0/5)·readcheck 0·selfcheck 사실 0·aitell 2.4·crosscheck 말투 5 반영·레드팀 2회 틀림 1 반영·전제 가능·editgate auto · yt_pair: M-1 eTjVs1vDTwg",
+   "item_pkg": "work/research/m1cafe1014/pkg"
   },
   {
    "at": "2026-10-14 10:10",
    "kind": "cafe",
    "item": "renew1011",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-write 2026-10-13 07:2x 배정: 계약갱신청구권 갱신 증액·실거주 거절 뒤 제3자 임대 배상(부동산, work/research/renew1011 — 원고·교차검증·제목·표지·editgate 남음, 기한 04:10 지남이라 오늘 안 write가 마무리) · 관문 기한 = 발행 6시간 전"
+   "gates_ok": "2026-10-13 08:29",
+   "note": "firemap-write 2026-10-13 07:2x 배정: 계약갱신청구권 갱신 증액·실거주 거절 뒤 제3자 임대 배상(부동산, work/research/renew1011 — 원고·교차검증·제목·표지·editgate 남음, 기한 04:10 지남이라 오늘 안 write가 마무리) · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 08:29: renew1011 관문 통과(10/11 08:34 날인분) + 전제 줄 + 제목 쉼표 뺌('…새 세입자가 들어오면 배상금은 얼마일까', 틀 v2 10/14) + slot.txt 2026-10-14 10 + editgate auto 재날인 · 10월 금통위 결과는 발행 전 ECOS 재확인",
+   "item_pkg": "work/research/renew1011/pkg"
   },
   {
    "at": "2026-10-14 11:30",

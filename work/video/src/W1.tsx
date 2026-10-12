@@ -1,5 +1,5 @@
 // W-1 1화 "이번 주 뉴스가 내 돈에 얼마" 화면 — 재료: work/video/w1.json(ep/W-1/w1props.py가 script.md·voice.json·calc_out.txt·w1009/raw로 만든다)
-// 틀은 C-1·G-1과 같은 TallyFrame(흰 보드·형광 부제·[자막] 칩·출처). 새 그림은 parts/weekly.tsx(다섯 칸 띠·다리 막대·점 세기·다음 주 달력·작은 선·이번 주 영수증 칸).
+// 틀은 C-1·G-1과 같은 TallyFrame(흰 보드·형광 부제·[자막] 칩·출처). 새 그림은 parts/weekly.tsx(다섯 칸 띠·다리 막대·점 세기·다음 주 달력·작은 선·지난주 내 돈 칸).
 // 숫자 글자는 전부 w1.json에서 온다(calc_out·원문 그대로). 코드 안 숫자는 배치 좌표뿐. 전망·추천 없음. 색: 줄어듦 파랑(fall)·늘어남 빨강(rise)·우리 강조 주황(accent).
 import React from 'react';
 import {AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, spring, useVideoConfig} from 'remotion';
@@ -21,7 +21,7 @@ export type W1Props = {fps: number; scenes: WScene[]; missing: number; script?: 
 export const w1Frames = (p: W1Props) => p.scenes.reduce((a, s) => a + s.frames, 0);
 
 const COL: Record<string, string> = {ink: T.ink2, ink3: T.ink3, accent: T.accent, rise: T.rise, fall: T.fall};
-const HEAD = '지난주 영수증';
+const HEAD = '지난주 내 돈';
 const fade = (f: number, at: number, d = 10) => interpolate(f, [at, at + d], [0, 1], CL);
 const activeRow = (rows: TallyRow[], f: number) => { let k = -1; rows.forEach((r, i) => { if (f >= r.start) k = i; }); return k; };
 const toRows = (rows: any[]): TallyRow[] => rows.map(([label, value, tone, at]: [string, string, any, number]) => ({label, value, tone, start: at ?? 0}));
@@ -74,14 +74,14 @@ const Bars: React.FC<{s: WScene}> = ({s}) => {
 const Three: React.FC<{s: WScene}> = ({s}) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig(); const g = 40, w = (1620 - g * 2) / 3;
   const cards: [string, string, number][] = s.data.cards;
-  const on = cards.map(([, sub]) => sayAt(s, 1, sub)); let cur = -1; on.forEach((a, i) => { if (f >= a) cur = i; });
+  const on = cards.map(([, sub]) => sayAt(s, 0, sub)); let cur = -1; on.forEach((a, i) => { if (f >= a) cur = i; });
   return (
     <>
       {cards.map(([h, sub, at], i) => {
         const sp = spring({frame: f - at, fps, config: {damping: 14}}); const dk = i === cur;
         return (
           <div key={i} style={{position: 'absolute', left: 150 + i * (w + g), top: 330 + (1 - sp) * 40, width: w, height: 400, background: dk ? T.ink : T.surface, borderRadius: '18px 18px 0 0', boxShadow: lift, opacity: f >= at ? sp : 0}}>
-            <div style={{...F, position: 'absolute', left: 34, top: 34, fontWeight: 700, fontSize: 30, color: dk ? T.daccent : T.accent}}>{`영수증 ${i + 1}`}</div>
+            <div style={{...F, position: 'absolute', left: 34, top: 34, fontWeight: 700, fontSize: 30, color: dk ? T.daccent : T.accent}}>{['한 종목', '시장 전체', '해외'][i]}</div>
             <div style={{...F, position: 'absolute', left: 34, top: 84, fontWeight: 700, fontSize: 44, color: dk ? T.dink : T.ink, whiteSpace: 'nowrap'}}>{h}</div>
             <div style={{position: 'absolute', left: 34, right: 34, top: 160, borderTop: `3px dashed ${dk ? T.dink3 : T.line}`}} />
             {dk ? null : [0, 1, 2].map((k) => <div key={k} style={{position: 'absolute', left: 34, right: 34, top: 190 + k * 54, height: 30, borderRadius: 8, background: `repeating-linear-gradient(135deg, ${T.bg} 0 10px, ${T.surface} 10px 20px)`}} />)}
@@ -348,7 +348,7 @@ const SceneView: React.FC<{s: WScene; next?: string}> = ({s, next}) => {
   if (s.kind === 'logo') return <AbsoluteFill><LogoSting sub={s.data.sub} /></AbsoluteFill>;
   const st = tallyStarts(s.lines);
   return (
-    <TallyFrame title={s.title} sub={s.sub} source={s.source} chapter={s.chapter} lines={s.lines}>
+    <TallyFrame title={s.title} sub={s.sub} source={s.source} chapter={s.chapter} lines={s.lines} capX={s.kind === 'end' ? 760 : 960}>
       <Body s={s} next={next} />
       {s.lines.map((l, i) => l.audio ? <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence> : null)}
     </TallyFrame>

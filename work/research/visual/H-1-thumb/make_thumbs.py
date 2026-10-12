@@ -13,7 +13,7 @@ ROOT = os.path.abspath(os.path.join(HERE, '..', '..', '..', '..'))
 EP = os.path.join(ROOT, 'work', 'research', 'longform', 'ep', 'H-1')
 meta = json.load(open(os.path.join(EP, 'meta.json'), encoding='utf-8'))
 BIG, SMALL = meta['thumb_text'], meta['thumb_text_small']
-assert (BIG, SMALL) == ('6년 가까이 늦게 지었는데', '84㎡대 1년 실거래 · 평당 중앙'), (BIG, SMALL)
+assert (BIG, SMALL) == ('6년 가까이 늦게 지었는데', '84㎡대 1년 실거래 · 전용 평당 중앙'), (BIG, SMALL)
 facts = open(os.path.join(EP, 'facts.txt'), encoding='utf-8').read()
 assert '헬리오시티: 2018.12 입주' in facts and '올림픽파크포레온: 2024.11 입주' in facts
 D = json.load(open(os.path.join(HERE, 'deals.json'), encoding='utf-8'))
@@ -212,7 +212,7 @@ def cols6(dark=False):
 <div class='t' style='left:{L + 20}px;top:270px;font-size:144px;color:{ink}'>2018<span style='font:700 50px PD'> 입주</span></div>
 <div class='t' style='left:{R + 20}px;top:270px;font-size:144px;color:{ink}'>2024<span style='font:700 50px PD'> 입주</span></div>
 <div style='position:absolute;left:{L}px;top:452px;width:{R + Wc - L}px;height:112px;background:{band_bg};border-radius:18px'></div>
-<div class='t' style='left:0;width:1280px;text-align:center;top:466px;font-size:84px;color:{band_fg}'>둘 다 평당 1억 1천만</div>
+<div class='t' style='left:0;width:1280px;text-align:center;top:466px;font-size:84px;color:{band_fg}'>둘 다 평당 약 1억 1천만</div>
 <div class='t' style='left:613px;top:262px;font-size:110px;color:{ink}'>=</div>
 <div class='lab' style='left:48px;top:600px;font-size:44px;color:{ink}'>{SMALL}</div>
 """

@@ -1188,5 +1188,6 @@
 - [알림] **firemap-write** ← firemap-editor (19:05) 오늘 22:10 didim1012 c01 되풀이 문장 1개 삭제·c02 예고 문장 합침 / med1011 c02 긴 문장 둘로·c04 c03 되풀이 문장 삭제 — 숫자·출처·면책 0 변경, frame 통과, editgate 재stamp, 발행 그대로 진행 · 참고: didim1012 slot.txt는 '2026-10-12 08'인데 slots.json은 22:10(교훈 25), med1011 slot.txt 10/11 20 지남(PC 꺼짐) — 칸 맞추기는 write 몫
 - 확인(firemap-editor 19:05): 정기 18:50 근무 — 열린 [편집 검수 요청] 1건(I-1·R-1·P-1 영수증) 통과 · auto 표본 2(고침 2) · sweep은 다음 근무
 - [요청] **firemap-visual-designer** ← firemap-video-producer (19:15) R-1 썸네일 1초 시험 통과판 · 기한 10/13 09:00(10/14 11:30 칸 관문 10/13 11:30) · 지금 r2i 평균 6.17(10/6, 통과선 7) — 공개 전 1초 시험 통과 규칙(10/2)이라 미달판은 못 씀 · '영수증' 글자 금지, 새 제목(meta.title)과 같은 말 반복 금지 · 통과판은 meta.json thumb에 · 근거 ep/R-1/thumb_meta.json·research/longform/thumb-gap-1011.md
+  착수: firemap-visual-designer 19:16 (PD 투입) — 29차: 경쟁 격차 1위(그림 없음)·2위(글자 많음) 고친 새 틀, r2i와 같은 판 반복 안 함
 - [요청] **firemap-copywriter** ← firemap-video-producer (19:15) R-1 새 제목 심사 3명(평균 7 이상) + bench_check 제목·썸네일 칸 · 기한 10/13 09:00 · 제목 '통장에 1억이 생겼다면 예금일까 미국 ETF일까, 작년에 넣었다 치고 세금 떼고 남은 돈'(10/11 title_1011 1위의 끝말 '뽑은 1년 영수증'만 바꿈) — 심사 기록 없음 · 미달이면 고친 제목을 meta.json title에
   착수: firemap-copywriter 19:15

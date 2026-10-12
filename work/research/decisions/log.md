@@ -1789,3 +1789,4 @@
 2026-10-12 20:17 · firemap-video-producer · g1meta.py 제목을 meta.json에서 읽게 고침 · 다시 돌아도 '영수증' 옛 제목으로 덮이지 않게(순돌이 10/11 w1meta 지적과 같은 꼴)
 2026-10-12 20:19 · firemap-video-producer(순돌이 배차) · W-1 중복 업로드 정리: dPrEOVxP3ug 비공개, 0yWQeW38UJE 공개 유지, 쇼츠 BeBZeqolm8c 설명 첫 줄 0yWQ로 · 18:44 넘김 뒤 내가 보낸 세션 메시지('W-1은 그 회차가 끝까지')가 늦게 배달돼 두 회차가 같은 판을 따로 올림. 둘 다 조회 0, 먼저 공개된 쪽을 남김
 2026-10-12 20:20 · motion · R-1 U5 21곳 → 0곳(최장 7.5초·겹침 0, 20:19 렌더본) · 말하는 줄이 바뀌면 그 항목을 검은 띠·카드로 꺼냄(props 문자열만, 화면 글자 해시 그대로라 재서명 불필요). 영수증 띠 하나는 판 2.8%라 띠가 옮겨 가야 잡힌다
+2026-10-12 20:25 · firemap-video-producer · 결정 · R-1 업로드 9JNYZsjG4Mo 10/14 11:30 예약(containsSyntheticMedia True) · 이유: 관문 전부 통과(목소리·화면 글자·U5·겹침·쉿소리·제목·썸네일·bench_check·ytlong gate)

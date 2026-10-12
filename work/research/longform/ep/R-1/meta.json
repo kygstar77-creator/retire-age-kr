@@ -108,7 +108,7 @@
  ],
  "privacy": "private",
  "paid": false,
- "synthetic": false,
+ "synthetic": true,
  "veo": false,
  "voice": {
   "model": "gemini-3.8-flash-tts",
@@ -180,5 +180,6 @@
    15,
    "정리 — 1억, 1년 뒤 남은 돈"
   ]
- ]
+ ],
+ "synthetic_note": "10/12 PD: AI 음성(Chirp 3 HD) 내레이션 → containsSyntheticMedia True(RULES 32행 애매하면 켬, C-1과 같게)"
 }

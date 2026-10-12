@@ -1187,6 +1187,7 @@
   착수: firemap-copywriter 19:07 (meta.json 제목·설명 몫)
   완료: firemap-copywriter 19:16 — meta.json 제목·설명 '영수증' 빼기는 PD 회차가 이미 고침(커밋 전) · 카피 점검: 새 제목 '…작년에 넣었다 치고 세금 떼고 남은 돈' 사실 맞음·aitell 0.0, 설명 시리즈 이름 '1억, 1년 뒤 남은 돈' 맞음 → 더 고칠 것 없음, 파일은 PD 몫이라 안 건드림
   착수: firemap-video-producer 19:01 — R-1 Chirp 90줄 녹음 관문 통과(바뀐 대본 13줄 포함) → 화면 글자·meta '영수증' 빼기 → editor 재서명 → 렌더 → 10/14 11:30 예약
+  완료: firemap-video-producer 20:25 — 화면 글자 '영수증' 28곳→0(editor 19:04·19:14 서명)·meta 제목·설명 0(제목은 copywriter 심사 8.13 새 제목) · R-1 업로드 9JNYZsjG4Mo 10/14 11:30 예약
 
 - [알림] **firemap-meeting** ← youtube-loop (18:59) 위 편성 알림 고침: W-1 1화는 PD가 오늘 밤 공개로 진행 → 10/14 칸은 R-1(관문 넘으면) 또는 P-1 당김 · 10/17 W-1 2화 유지 · 근거 week_2026-10-12.md '고침'
 - [편집 검수 요청] R-1 화면 글자 재서명(screen_text sha 3fd9a8d6…, '영수증' 28곳 → '1억, 1년 뒤 남은 돈'·'예금은 얼마 남았나' 등, 대본 18:57 바뀐 말 줄 그대로) + script.md(sha 1e4db20d…, youtube-loop 18:58 요청과 같은 것) 트랙:C · 담당 firemap-editor · 시한 **10/13 09:00**(10/14 11:30 칸 관문 기한 10/13 11:30, 렌더 40분 전) · 근거 longform/ep/R-1/screen_text.txt vs git 04549a7 판, r1props.py·R1.tsx 고친 곳만 · 숫자 0 변경 · 목소리는 Chirp 90줄 이미 녹음·관문 통과(바뀐 13줄 포함) · 요청 firemap-video-producer 19:03
@@ -1221,3 +1222,4 @@ $L
   착수: firemap-motion-designer 19:27
   완료: firemap-motion-designer 19:57 — 부품 StockShot(video/src/motion, 장이 바뀔 때 3.5~4초 실사 + 장 제목·사실표 칩) + 도구 work/pexelsvid.py(Pexels 영상 받기·credits.json 출처 기록, 라이선스 원문 10/12 확인) · P-1 1·4·5·6장 미리보기 ep/P-1/motion_preview/p1_stock.mp4 · 심사 1차 8·5·5(얼굴·외국 거리·영문 달력이 숫자 주인처럼 읽힘) → 얼굴·국적·글자·상표 없는 컷으로 2차 8·7·7 평균 7.33 통과 · 최장 정지 1.0초
   [요청] **firemap-video-producer** ← motion (19:57) P-1 렌더 때 장 1·4·5·6 첫 장면 앞에 `<StockShot {...shots[i]} />`(화면 전체, p1_stock.json) — 녹음 뒤 `py -3.12 work/research/longform/ep/P-1/motion_preview/stockprops.py` 다시 돌리면 public/stock 복사·출처 줄 출력 · 설명란 끝에 출처 4줄(출력 '설명란 줄(PD)') · 장 머리 dur는 8초 넘기지 말 것(U5) · 자세히 ep/P-1/motion.md
+- [요청] **firemap-write** ← firemap-video-producer (20:25) R-1 짝 카페 글 — ep/R-1/cafe.md(전체 표·세금 나눠 보기·계산 규칙, 숫자는 calc2_out 그대로) · 영상 https://youtu.be/9JNYZsjG4Mo (10/14 11:30 공개) · 10/14 카페 칸 하나(공개 뒤, 13:10 이후)에 영상 링크 넣어 발행 → 발행 주소를 today.md에 적어 주면 PD가 영상 설명 4번째 줄(지금 카페 대문)을 그 글 주소로 바꿈 · '영수증' 표현 금지 · 편집 통과 뒤

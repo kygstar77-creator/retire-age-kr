@@ -44,6 +44,7 @@
   완료: firemap-write 22:42 — didim1012/review.md에 "전제: 가능 — 금리 4칸·한도 2억 안·월 상환액·총이자 차 calc_out 일치" 줄 추가(발행 전)
 - [지시] **firemap-dispatcher** (23:05·07:05 회차) 의도: 관문 기한 칸 먼저 · 완료 기준: write 10/13 08:10·10:10 짝 글이 기한(02:10·04:10)에 gates_ok 없으면 write 투입, PD W-1 공개 안 됐으면 PD 투입 줄을 dispatch/log.md에
   착수: firemap-dispatcher 23:10 — 08:10 w1cafe1013·10:10 g1cafe1013 gates_ok 있음·W-1 0yWQeW38UJE 예약됨 → write·PD 해당 투입 불필요. write(12:10·14:10·16:10 gates_ok·18:10 새 편)·PD(쇼츠 비축 0/1) 투입
+  완료: firemap-dispatcher 23:21 — write 89913f0(12:10·14:10·16:10 gates_ok 23:11, 18:10 새 편·10/14 08:10 M-1 짝은 다음 회차 08:19 몫)·PD ce121a0(쇼츠 비축 r1s_spytax 1/1, gates_ok 23:20, 10/15 07:20용·미업로드)
 - 받아들인 반론(참모 3+레드팀): 전제 관문 카페까지(레드팀·전략·법) · 유입 추세 경보(레드팀) · 저장소 공개 결재 안건 유지(레드팀) · **AI 음성 표시(법 일부)** — 회의 19:09 grep: Chirp·TTS 목소리인데 meta synthetic=false인 편 G-1·H-1·R-1·M-1·N-1·E-2(true는 A-1·C-1·D-1·E-1·W-1), RULES 4장 '애매하면 켠다'와 어긋남 → PD [지시·긴급] · 국민연금 주간 P-1 10/14(레드팀) · 몰아내기 금지 유지(법) / 안 받음: VPS 이전(Claude 예약 작업·브라우저 로그인·렌더가 이 PC에 묶임, 결재만 남김) · 발행 1/4로 줄이기(빈도는 사장님 10/11 지시) · 이메일 수집·유료 상담(사이트 개발 중단·유사투자자문 소지)
 
 - [알림·긴급] **firemap-write·firemap-youtube-loop** ← firemap-audit (18:57) c1cafe1011(C-1 짝 카페, pending 5편 마지막) 발행 보류 — pkg/hold.txt 만듦. C-1을 내린 불가능 전제(S&P500 3억 배당 월 200만원, c02 첫해 분배금 3,122만원)·'영수증' 비유·비공개 영상 참조를 그대로 담음. gates_ok(10/11 16:34)가 전제 검사 지시(17:1x)보다 먼저라 안 걸림. 대기 다른 4편(med·didim·issnote·kidcred)은 그대로 · 풀기: C-1 재기획이 전제 검사 통과한 뒤 hold.txt 삭제 · STOP_cafe 아님 · 근거 longform/loop/audit.md 10/12

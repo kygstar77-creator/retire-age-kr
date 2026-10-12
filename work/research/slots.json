@@ -1088,10 +1088,11 @@
   {
    "at": "2026-10-13 18:10",
    "kind": "cafe",
-   "item": "TBD-새 편",
+   "item": "reitetf1013",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-12 19:04: 새 원고(검색형, 세금연금·부동산 외 축 — 배당현금흐름 등). 기한 12:10"
+   "gates_ok": "2026-10-13 07:24",
+   "note": "firemap-write 2026-10-13 07:24: TIGER·KODEX 리츠 ETF 1억 1년 세전·세후(TIGER 396원·세후 -0.34%, KODEX 387원·-5.38%) 관문 통과 — 제목 7.67·표지 K4 8.0·compare.md 8편·레드팀 2회·전제 가능·editgate auto | firemap-meeting 2026-10-12 19:04: 새 원고(검색형, 세금연금·부동산 외 축 — 배당현금흐름 등). 기한 12:10",
+   "item_pkg": "work/research/reitetf1013/pkg"
   },
   {
    "at": "2026-10-13 19:20",
@@ -1138,6 +1139,14 @@
    "note": "firemap-meeting 2026-10-12 19:04: yt_pair: M-1 eTjVs1vDTwg — 10/12 08:10 배정분이 PC 꺼짐으로 빠짐. 전체 표 긴 글. 국민연금 글(npsage 12:10)과 다른 축"
   },
   {
+   "at": "2026-10-14 10:10",
+   "kind": "cafe",
+   "item": "renew1011",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-write 2026-10-13 07:2x 배정: 계약갱신청구권 갱신 증액·실거주 거절 뒤 제3자 임대 배상(부동산, work/research/renew1011 — 원고·교차검증·제목·표지·editgate 남음, 기한 04:10 지남이라 오늘 안 write가 마무리) · 관문 기한 = 발행 6시간 전"
+  },
+  {
    "at": "2026-10-14 11:30",
    "kind": "long",
    "item": "R-1",
@@ -1147,6 +1156,38 @@
    "published": "예약 2026-10-14T11:30:00+09:00 https://youtu.be/G1oI47miUuo"
   },
   {
+   "at": "2026-10-14 12:10",
+   "kind": "cafe",
+   "item": "npsage1009",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-write 2026-10-13 07:2x 배정: 국민연금 비축분(관문 통과 2026-10-08 20:24) — 마지막 국민연금 제목 10/7 08:28 뒤 7일 = 10/14 08:30 이후 공개 가능 · 관문 기한 = 발행 6시간 전"
+  },
+  {
+   "at": "2026-10-14 14:10",
+   "kind": "cafe",
+   "item": "r1cafe1014",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-write 2026-10-13 07:2x 배정: R-1 롱폼(11:30 공개) 짝 긴 글 ep/R-1/cafe.md 전체 표·{VIDEO}는 새 판 G1oI47miUuo · yt_pair: R-1 · 13:10 이후 · \"영수증\" 금지 · 발행 주소를 today.md에 적어 PD가 영상 설명을 바꿈 · 관문 기한 = 발행 6시간 전"
+  },
+  {
+   "at": "2026-10-14 16:10",
+   "kind": "cafe",
+   "item": "cheongyak1012",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-write 2026-10-13 07:2x 배정: 청약통장(검색 18,740, 조특법 87조 원문, work/research/cheongyak1012 facts.txt만 있음 — 원고부터) · 관문 기한 = 발행 6시간 전"
+  },
+  {
+   "at": "2026-10-14 18:10",
+   "kind": "cafe",
+   "item": "qqqm1014",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-write 2026-10-13 07:2x 배정: QQQM vs QQQ 보수 원 금액(검색 33,120; 9/22 사실표 work/research/qqqm는 낡아 새로 조사) — 10/13 18:10 리츠 ETF와 다른 날이라 종목 축 겹침 없음 · 관문 기한 = 발행 6시간 전"
+  },
+  {
    "at": "2026-10-14 19:20",
    "kind": "shorts",
    "item": "r1s_fx",
@@ -1154,6 +1195,22 @@
    "gates_ok": "2026-10-12 22:39",
    "note": "firemap-video-producer 2026-10-12 22:39: R-1 롱폼(G1oI47miUuo, 10/14 11:30 공개) 환율 부분 클립 C1S 틀, 새 녹음 없음 — 관문 cardshorts/r1s_fx/review.md · 같은 날 07:20 g1s_buyday(G-1)와 다른 롱폼 · yt_pair: 2i957iWL8ko(쇼츠 짝 카페 글 20:10 또는 22:10, firemap-write) | 옛: 순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼",
    "published": "예약 2026-10-14T19:20:00+09:00 https://youtu.be/2i957iWL8ko"
+  },
+  {
+   "at": "2026-10-14 20:10",
+   "kind": "cafe",
+   "item": "r1cafe_fx1014",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-write 2026-10-13 07:2x 배정: 쇼츠 r1s_fx(2i957iWL8ko, 19:20 공개) 짝 짧은 글 — 질문 하나 \"달러로 산 ETF, 환율이 얼마나 깎았나\" · 쇼츠+본편 G1oI47miUuo 링크+표 1개(숫자 ep/R-1/facts.txt [10]·[add-1003 B1·B2]) · yt_pair: 2i957iWL8ko · 롱폼 짝 글과 겹치지 않게 · 관문 기한 = 발행 6시간 전"
+  },
+  {
+   "at": "2026-10-14 22:10",
+   "kind": "cafe",
+   "item": "dcpension1014",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-write 2026-10-13 07:2x 배정: 퇴직연금 DC형(검색 21,610) — 사실표부터 · 관문 기한 = 발행 6시간 전"
   },
   {
    "at": "2026-10-15 07:20",

@@ -1,0 +1,59 @@
+{
+ "shots": [
+  {
+   "seed": "P-1",
+   "src": "stock/19875346.mp4",
+   "from": 30,
+   "chapter": "1장",
+   "title": "하루 차이로 한 살?",
+   "chip": "1969년생부터 65세",
+   "chipAt": 43,
+   "dur": 114,
+   "blur": [],
+   "side": "left"
+  },
+  {
+   "seed": "P-1",
+   "src": "stock/5612232.mp4",
+   "from": 60,
+   "chapter": "4장",
+   "title": "평균까지 살면 누가 앞서나",
+   "chip": "65세 기대여명 남 19.5년·여 23.7년(평균)",
+   "chipAt": 43,
+   "dur": 114,
+   "blur": [],
+   "side": "right"
+  },
+  {
+   "seed": "P-1",
+   "src": "stock/18835800.mp4",
+   "from": 60,
+   "chapter": "5장",
+   "title": "519만원 위의 계단",
+   "chip": "국민연금법 제63조의2 · 2026-06-17 시행",
+   "chipAt": 43,
+   "dur": 114,
+   "blur": [
+    {
+     "x": 410,
+     "y": 625,
+     "w": 220,
+     "h": 110
+    }
+   ],
+   "side": "left"
+  },
+  {
+   "seed": "P-1",
+   "src": "stock/7593893.mp4",
+   "from": 30,
+   "chapter": "6장",
+   "title": "445억원은 누구 몫?",
+   "chip": "신청 없이 7월 말부터 환급",
+   "chipAt": 43,
+   "dur": 114,
+   "blur": [],
+   "side": "right"
+  }
+ ]
+}

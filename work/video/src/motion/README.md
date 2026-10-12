@@ -56,3 +56,11 @@
 - 가림으로 치지 않는 것: 화면 절반 넘는 판(장면 층·훅 카드), 글자 뒤 바탕과 같은 색 가림막(차례로 드러내기), 선만 있는 도형(손그림 동그라미). 글자끼리는 실제 글자 자리로 본다.
 - 실측: M-1 0:20.5~23초 기준일 카드가 4.85억·5.10억을 가림 잡음(첫 30초 오탐 0). G-1 실제 겹침 2건 잡아 고침. 부분만: `node work/video/ovcheck.mjs G1 g1.json out.json 0.5 3800-4300`.
 - 새 부품을 만들면: 숫자 위에 카드·꼬리표를 띄우는 자리는 끝 이름표(선 그래프 series 이름)·0선 이름과 부딪히는지 overlap으로 한 번 잰다.
+
+## 실사 장 머리(StockShot) 쓰는 법 — 장이 바뀔 때 2.5~4초 주제 실사 + 장 물음 (10/12, 사장님 10/11 "다른 애들도 다 장면 넣고 있구만")
+1. 재료: `py -3.12 work/pexelsvid.py "<영어 검색어>" 4 work/research/longform/ep/<편>` → ep/<편>/stock/<id>.mp4(깃 제외) + credits.json(작가·주소·라이선스·desc_line). Pexels 라이선스 원문(10/12 확인): 영상 무료·출처 의무 없음·고쳐 써도 됨 / 금지 = 알아볼 수 있는 사람을 나쁘게, 사람·상표가 보증하는 듯, 원본 그대로 재판매.
+2. 고르기(심사 1차 5·5에서 배운 것): **얼굴·국적·글자·숫자·연도·상표가 안 보이는 컷**만. 얼굴 있는 사람 위에 '깎임'류 제목을 얹으면 그 사람이 대상처럼 읽힌다(레드팀). 외국 거리 위 수명 숫자 = 그 사람 수명처럼 읽힘. 영문 달력 날짜 = 사실 날짜처럼 읽힘. 손·발·물건·풍경 클로즈업이 안전하다. 남은 상표는 `blur`(화면 1920x1080 좌표)로.
+3. 재료 JSON: `shots[{seed·src('stock/<id>.mp4')·from(앞 자를 프레임)·chapter·title(대본 장 제목 그대로)·chip(facts 원문)·chipAt·dur·side·blur}]`. 예: `research/longform/ep/P-1/motion_preview/stockprops.py`(장 제목·칩 근거 assert, public/stock 복사, credits used 표시).
+4. 미리보기: `npx remotion render src/motion/preview/entry.ts StockReel <out>.mp4 --props=<json> --scale=0.5 --pixel-format=yuv420p`
+5. 본편: 장 첫 장면 앞에 `<StockShot {...shot} />`(TallyFrame 밖, 화면 전체) dur 105(3.5초) — 장 첫 말을 그 위에 깔면 dur를 그 줄 길이로(8초 넘기지 말 것 — U5). 설명란 끝에 credits.json desc_line(used=true) 줄을 붙인다.
+6. 편마다 바뀜: 글자 쪽(한 편 안에서 번갈아 — side), seed로 밀어 들어가는 방향·제목 등장 방향·색 입힘(잉크/남색). 같은 컷을 다른 편에 다시 쓰지 않는다(credits.json used).

@@ -1140,9 +1140,9 @@ def post_cafe(page, pkg, wait=False):
         if got < len(files): raise RuntimeError('첨부 파일이 덜 들어감 — 등록하지 않음')
     shot(page, 'cafe_body')
     if meta.get('visibility') == 'members':
-        if not set_cafe_members(page): raise RuntimeError('멤버공개 선택 실패 — 등록하지 않음')
-    else:
-        set_cafe_public(page)
+        if not set_cafe_members(page): raise RuntimeError('멤버공개·검색공개 끄기 실패 — 등록하지 않음')
+        return submit_cafe(page, title, members=True)
+    set_cafe_public(page)
     return submit_cafe(page, title)
 
 def attach_file(page, frame, path):
@@ -1185,7 +1185,7 @@ def set_cafe_members(page):
     """공개 설정을 멤버공개로. 2026-10-12 글쓰기 화면에서 확인: 라디오는 input#member(name=public value=false)와
     input#all(value=true)이고, 새 글은 처음부터 멤버공개가 골라져 있다. '공개 설정' 버튼을 눌러 펼쳐야
     label[for=member]가 보인다. 기본값을 믿지 않고 눌러 고른 뒤 실제 체크 상태로 판정한다.
-    그 아래 '검색 · 네이버 서비스공개'(input#permit, 기본 켜짐)는 건드리지 않는다 — 결과는 로그에 남긴다."""
+    그 아래 '검색 · 네이버 서비스공개'(input#permit, 기본 켜짐)는 끈다. 멤버공개·끔 둘 다 확인돼야 True."""
     state = "() => { const m=document.querySelector('input#member[name=public]'), a=document.querySelector('input#all[name=public]'), p=document.querySelector('input#permit'); return {member: !!(m && m.checked), all: !!(a && a.checked), permit: p ? p.checked : null}; }"
     lab = page.locator('label[for="member"]').first
     for i in range(2):
@@ -1196,9 +1196,17 @@ def set_cafe_members(page):
         except Exception as e:
             print(f'멤버공개 클릭 실패({i+1}/2):', repr(e)[:100])
     page.wait_for_timeout(600)
+    # 2026-10-12 순돌이 결정: 멤버공개 글은 '검색·네이버 서비스공개'(input#permit, 기본 켜짐)를 끈다.
+    # 화면 안내 "검색 ∙ 네이버 서비스 공개 허용 시 멤버가 아닌 사람도 글을 볼 수 있는 경우가 있습니다." — 켜 두면 회원 전용의 뜻이 없다.
+    for i in range(2):
+        if page.evaluate(state)['permit'] is not True: break
+        try: page.locator('label[for="permit"]').first.click(timeout=5000)
+        except Exception as e: print(f'검색·네이버 서비스공개 끄기 클릭 실패({i+1}/2):', repr(e)[:100])
+        page.wait_for_timeout(500)
     st = page.evaluate(state)
-    ok = st['member'] and not st['all']
-    print('멤버공개:', '선택됨' if ok else '선택 실패', f'(검색·네이버 서비스공개 {"켜짐" if st["permit"] else "꺼짐" if st["permit"] is False else "못 찾음"})')
+    ok = st['member'] and not st['all'] and st['permit'] is False
+    print('멤버공개:', '선택됨' if (st['member'] and not st['all']) else '선택 실패',
+          f'· 검색·네이버 서비스공개 {"꺼짐" if st["permit"] is False else "켜짐(끄기 실패)" if st["permit"] else "못 찾음"}')
     return ok
 
 def set_cafe_public(page):
@@ -1217,7 +1225,7 @@ def set_cafe_public(page):
     print('전체공개:', '선택됨' if ok else '선택 실패')
     return ok
 
-def submit_cafe(page, title=None):
+def submit_cafe(page, title=None, members=False):
     # 2026-09-25: 9시간 넘게 카페·블로그가 "등록 눌렀는데 화면이 안 넘어감"으로 전부 실패했다.
     # 원인은 확인 창이 DOM 요소가 아니라 window.confirm 이었다는 것이다. Playwright는 손잡이를
     # 안 걸어 두면 네이티브 대화상자를 자동으로 '취소'한다 — 그래서 등록이 조용히 없던 일이 되고
@@ -1256,18 +1264,28 @@ def submit_cafe(page, title=None):
     # 확인 버튼을 .last 로 잡은 것이 화면에 없는 버튼이라 클릭이 시간초과로 죽었고, except: pass 가
     # 그걸 통째로 삼켜 창이 그대로 남았다. 그래서 10시간 동안 '등록 눌렀는데 화면이 안 넘어감'으로만 보였다.
     # 보이는 확인 버튼을 골라 누르고, 실패하면 삼키지 말고 찍어 남긴다.
-    try:
-        page.get_by_text('계속할까요', exact=False).first.wait_for(state='visible', timeout=8000)
-        btns = page.get_by_role('button', name=re.compile(r'^\s*확인\s*$'))
-        hit = None
-        for i in range(btns.count()):
-            if btns.nth(i).is_visible(): hit = btns.nth(i); break
-        if hit is None: hit = page.get_by_text('확인', exact=True).last
-        hit.click(timeout=5000)
-        print('전체공개 확인 창 — 확인을 눌렀다')
-        page.wait_for_timeout(2500); shot(page, 'cafe_after_confirm')   # 확인 누른 직후(진단용)
-    except Exception as e:
-        print('확인 창 처리 실패:', repr(e)[:140]); shot(page, 'cafe_confirm_fail')
+    # 멤버공개 글(members=True)은 전체공개 확인 창을 기다리지 않는다(2026-10-12 순돌이 결정).
+    # 기다리면 창이 안 뜨는 게 정상인데 8초 뒤 '확인 창 처리 실패'가 찍힌다. 혹시 지금 떠 있으면 누르고, 없으면 바로 넘어간다.
+    if members:
+        try:
+            if page.get_by_text('계속할까요', exact=False).count():
+                for b in page.get_by_role('button', name=re.compile(r'^\s*확인\s*$')).all():
+                    if b.is_visible(): b.click(timeout=5000); print('확인 창 — 확인을 눌렀다(멤버공개)'); break
+        except Exception as e:
+            print('멤버공개 확인 창 처리 중 오류(넘어감):', repr(e)[:120])
+    else:
+        try:
+            page.get_by_text('계속할까요', exact=False).first.wait_for(state='visible', timeout=8000)
+            btns = page.get_by_role('button', name=re.compile(r'^\s*확인\s*$'))
+            hit = None
+            for i in range(btns.count()):
+                if btns.nth(i).is_visible(): hit = btns.nth(i); break
+            if hit is None: hit = page.get_by_text('확인', exact=True).last
+            hit.click(timeout=5000)
+            print('전체공개 확인 창 — 확인을 눌렀다')
+            page.wait_for_timeout(2500); shot(page, 'cafe_after_confirm')   # 확인 누른 직후(진단용)
+        except Exception as e:
+            print('확인 창 처리 실패:', repr(e)[:140]); shot(page, 'cafe_confirm_fail')
     # 등록 뒤 ArticleRead.nhn?...&articleid=NN 또는 .../articles/NN 또는 /firemap/NN 으로 이동한다
     # 2026-09-25 07:05: 10시간 동안 "등록 눌렀는데 화면이 안 넘어감"으로만 적히던 것의 진짜 이유는
     # 서버가 돌려준 이 답이었다 — {"errorCode":"10004","message":"NaverUser 인증 실패 …

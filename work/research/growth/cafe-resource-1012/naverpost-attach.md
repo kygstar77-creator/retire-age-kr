@@ -75,3 +75,19 @@ visibility: members
 4. **발행 뒤 검증이 공개 범위를 보지 않는다.** `verify`는 글자·사진 수만 센다. 첫 발행 뒤에는 로그아웃 창으로 주소를 열어 본문과 파일이 가려지는지 사람이 한 번 본다(publish-check.md 3장 7번).
 5. **이 옵션을 모르는 다른 길.** `cafeapi.py`(중지 상태)는 `read_pkg`를 쓰지만 attach·visibility를 무시한다. 그래서 이 묶음을 그 길로 보내면 **전체공개·파일 없이** 나간다. `cafeedit.py`(edit/editimg/edittitle)와 `public` 명령은 늘 전체공개로 다시 등록한다. 멤버공개 글에 쓰면 전체공개로 바뀐다. `rewrite`만 막아 두었다.
 6. 시험 때 파일 1개가 네이버 업로드 서버(upapi)로 올라갔다. 글에는 붙지 않았다. 그 파일이 서버에 얼마나 남는지는 모른다(확인 안 함).
+
+## 6. 추가 변경 (2026-10-12 순돌이 결정 반영)
+1. **`visibility: members`면 '검색·네이버 서비스공개'를 끈다.** `set_cafe_members`가 멤버공개를 고른 다음, `input#permit`이 켜져 있으면 `label[for=permit]`을 눌러 끈다(최대 2번). 멤버공개 선택(`#member` 켜짐·`#all` 꺼짐)과 `#permit` 꺼짐이 모두 확인돼야 True를 돌려준다. 아니면 post_cafe가 '멤버공개·검색공개 끄기 실패 — 등록하지 않음'으로 멈춘다. members가 아니면 이 칸을 건드리지 않는다(전체공개 경로는 그대로).
+2. **`submit_cafe(page, title=None, members=False)`.** members=True일 때는 전체공개 확인 창("계속할까요")을 8초 기다리지 않는다. 그 순간 창이 떠 있으면 보이는 '확인'을 누르고, 없으면 바로 넘어간다. '확인 창 처리 실패' 줄이나 `cafe_confirm_fail.png`는 남지 않는다. members=False(기본값)는 예전 블록 그대로다. 다른 호출(cafeedit·titletest·cafe_make_public·rewrite_cafe)은 인자를 안 주므로 바뀌지 않는다.
+
+확인 (등록·임시등록 안 누름, probe_permit.py):
+```
+파일 첨부: 가계부_은퇴나이_2026.xlsx · 업로드 응답 [200] · 본문 파일 칸 ['가계부_은퇴나이_2026.xlsx']
+멤버공개: 선택됨 · 검색·네이버 서비스공개 꺼짐
+set_cafe_members -> True {'member': True, 'all': False, 'permit': False}
+임시등록 before 1 · after 20s 1 · reopen 1
+```
+- 등록 직전 캡처: scratchpad `attach\g03_before_submit.png`. 파일 칸과 초록 체크가 보이고, ●멤버공개, '검색 · 네이버 서비스공개' 체크 해제 상태다. 같은 폴더에 g01·g02·g04가 있다.
+- py_compile 통과. 옛·새 read_pkg 대조는 372/372 같음, 옵션 단위 확인 통과.
+- work/tests: 79 통과, 3 실패. 실패한 3건은 앞(4장)과 같은 롱폼 R-1 시험이다. naverpost를 import하지 않으며, 이번 변경 전에도 같은 3건이 실패했다.
+- 멤버공개 글에서 등록 뒤 확인 창이 정말 안 뜨는지는 여전히 실제 등록으로 본 적이 없다. 뜬다면 위 1번 동작처럼 그 자리에서 누른다. 다만 창이 늦게(등록 직후 1.5초 넘어) 뜨면 못 누를 수 있다. 그때는 30초 이동 실패 뒤 목록 확인(already_up)으로 넘어간다.

@@ -1,0 +1,19 @@
+# m1stot1013 사실 — M-1 calc_out.txt·facts.txt 그대로(새 숫자 없음)
+[calc_out 1년 총수익(원화, 1억 넣었다면)] SCHD 가격 +15.73% · 분배 3.73% · 합 +19.46% → 119,456,864원(세전)
+[calc_out] JEPQ 가격 +3.03% · 분배 11.62% · 합 +14.65% → 114,649,910원(세전)
+[calc_out] ACE 미국배당다우존스 가격 +15.01% · 분배 3.54% · 합 +18.55% → 118,547,352원(세전)
+[calc.py 73행] 같은 1년(2025-10-02 → 2026-10-02) 총수익 — 원화, 분배 재투자 안 함, 분배는 끝날 환율로 바꿈(근사)
+[facts J2] JEPQ 종가 2025-10-02 57.29달러 → 2026-10-02 61.04달러 · 가격 변화 +6.55%(달러)
+[facts X1] 원/달러 2025-10-02 1,406.0 → 2026-10-02 1,359.6 (ECOS 731Y001)
+[calc_out 구조] 세금(15%·15.4%)은 필요 원금 계산(월 세후 목표)에만 쓰였고 1년 총수익 칸은 세전(calc_out "1억이 119,456,864원(세전)", 쇼츠 upload.json "원화·세전") · [facts T1] 미국 원천징수 15% · [cafe.md 계산 규칙] 국내 상장 15.4%(세금 크게 잡은 쪽)
+[script.md 6장] 커버드콜은 옵션을 팔아 분배금을 만드는 대신 주가가 많이 오를 때 그 몫을 일부 내준다 · 분배율이 높다 = 필요한 돈 적다 + 원금이 덜 자랄 수 있다 · 지난 기록, 장이 옆으로 기는 해에는 반대
+[calc_out] 같은 월 목표 필요 원금 JEPQ가 가장 적음(분배율 JEPQ 11.28% · SCHD 3.22% · ACE 3.08%)
+# 출처 URL
+- 앞 글 카페 187번 https://cafe.naver.com/firemap/187 (a1cafe1001 — 2025-09-26→2026-09-28 달러 기준·환율 변동 뺀 계산)
+- 쇼츠 https://youtu.be/uMqmvqNM02k (2026-10-13 19:20 공개 예약, upload.json)
+- 원본 롱폼 M-1 https://youtu.be/eTjVs1vDTwg
+- JEPQ 분배금 나스닥 배당 이력 https://www.nasdaq.com/market-activity/etf/jepq/dividend-history
+- SCHD 분배금 찰스 슈왑 운용사 분배금 표 https://www.schwabassetmanagement.com/products/schd
+- ACE 미국배당다우존스(402970) 한국투자신탁운용 https://www.aceetf.co.kr
+- 종가 야후 파이낸스 https://finance.yahoo.com/quote/JEPQ · SCHD · 402970.KS
+- 환율 한국은행 ECOS 731Y001 https://ecos.bok.or.kr

@@ -1819,3 +1819,5 @@
 2026-10-12 23:11 · firemap-write · 10/13 12:10·14:10·16:10 세 칸(issnote1012·kidcred1012·yuryu1011) 전제 줄 확인·editgate stamp 통과·gates_ok 적음 · 이유: 관문 기한(06:10·08:10·10:10) 전에 칸 채우기
 2026-10-12 23:20 · firemap-video-producer · 쇼츠 비축 r1s_spytax(R-1 롱폼 클립) 관문 통과 후 reserve.shorts 등록, 업로드는 칸 배정 때 · 비축 최소 1 충족(0/1→1/1), 클립 비축 4편 기준엔 아직 부족 · 근거 review.md
 - 2026-10-12 23:21 완료: firemap-dispatcher — write 89913f0·PD ce121a0 투입(카페 3칸 gates_ok, 쇼츠 비축 1/1)
+2026-10-13 00:58 · firemap-youtube-loop · 10/13 매일 연구(study/2026-10-13.md)·outliers 151편·ytbreak dvC8Ll7Y8CI(KXuLI67J19s는 받아쓰기만, 제미나이 429)·쇼츠 후보 갱신(기초연금 8번 끌어올림·1주택 종부세 개편 11번 새로) · 이유: 오늘 연구 파일 없음, 경쟁 터진 정책·제도 주제의 공통 빈칸이 '내 숫자로 얼마'
+2026-10-13 00:58 · firemap-youtube-loop · H-2 반포 POI 수집 보류(Overpass 3서버 504/시간초과), tour.py에 서버 바꾸는 환경변수만 추가 · 이유: H-2 대본 기한 10/17, 낮에 재시도

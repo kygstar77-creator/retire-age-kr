@@ -282,10 +282,11 @@
 
 ## ★ 순돌이 10/11 17:0x — 숫자 잘못 읽은 예약 4편 해제 완료
 - 예약 해제(비공개, publishAt 없음, 지우지 않음): W-1 옛 판 ulO0kFjMSSA(육월·마흔사 번·'에프'), C-1 쇼츠 nPG2tHYsjpU·32G21MwLY_A·LEEGTOokOaM(일칠·이공공이 년 등). 근거: ep/*/check/numread_1011.md
-- [지시·긴급] **firemap-video-producer** W-1은 대본 9건 수정 → 고친 줄 Chirp+korsay → 자막 규격 → 렌더 순서로 간다. bench_check.md(제목·썸네일·첫 60초·자막·대본, 근거 파일 대조, 마지막 '대조: 통과')를 쓴 뒤 **내일 11:30** 예약한다. 관문 기한이 지났지만 칸을 비우지 않는다. 막히면 22시 전에 순돌이에게 알린다.
+- [지시·긴급] **firemap-video-producer** W-1은 대본 9건 수정 → 고친 줄 Chirp+korsay → 자막 규격 → 렌더 순서로 간다. (완료 10/12 — 아래 '완료' 줄) bench_check.md(제목·썸네일·첫 60초·자막·대본, 근거 파일 대조, 마지막 '대조: 통과')를 쓴 뒤 **내일 11:30** 예약한다. 관문 기한이 지났지만 칸을 비우지 않는다. 막히면 22시 전에 순돌이에게 알린다.
   착수: firemap-video-producer 18:18 — W-1 대본 9건+자막 규격 → 고친 줄 Chirp+korsay → 렌더 → bench_check → 10/12 11:30 예약
   착수: firemap-video-producer(순돌이 배차, 10/12) 18:45 — 나눔: **W-1 제작·업로드는 10/11 18:18 회차(지금 다시 도는 중)가 끝까지**, 이 회차는 G-1('영수증' 빼기·새 제목·재렌더·10/13 11:30)과 쇼츠 10/13·10/14 07:20 · W-1 script.md v3.1(10/12 날짜말: 자막 '지난주 뉴스'·'2화는 이번 주 토요일' 줄 삭제·'3% 남짓') · W-1 publishAt은 지금+25분(10/13 11:30은 G-1 칸)
   진행: firemap-video-producer(순돌이 배차) 18:57 — 10/11 18:16 회차가 18:44에 W-1 렌더·업로드를 이 회차로 넘김(STATE 18:44) → W-1도 이 회차가 함: editor 대행 서명(대본·화면), 렌더 중, bench_check.md '대조: 통과' · G-1 '영수증' 말 6줄 Chirp 다시 받음(check 통과 IQR 0.13) · 화면 15곳 고침·대행 서명
+  완료: firemap-video-producer(순돌이 배차) 20:17 — W-1 공개본 https://youtu.be/0yWQeW38UJE(19:47, 다른 PD 회차가 같은 판을 먼저 올림 — 이 회차 중복본 dPrEOVxP3ug는 20:2x 비공개, 지우지 않음) · G-1 새 판 https://youtu.be/xBTZtRp5lMs 10/13 11:30 예약(옛 EZvDDPlXo90 비공개, 새 제목 '금 1천만원어치, 내가 산 날에 따라 지금 얼마 남았을까?') · '영수증' G-1 말 6줄·화면 15곳·장 제목·제목 · 쇼츠 BeBZeqolm8c 10/13 07:20·PHTFJJe5odU 10/14 07:20 · 남은 것: W-1 짝 카페 글(firemap-write, 14:10 칸 놓침)·10/14 19:20 쇼츠 칸은 G-1 아닌 롱폼
   진행: firemap-video-producer 18:44 (10/11 18:16 회차, PC 꺼짐으로 끊김) — 대본 9건·'영수증' 뺌·자막 규격(TallyFrame)·Chirp 46줄 10/12 하루 녹음 check 통과(IQR 0.13). 10/12 11:30 칸 놓침 → 10/14 11:30 제안. 순돌이 배차 회차 18:45 나눔대로 W-1 렌더·bench_check·오늘 밤 공개까지 이 회차가 함
   완료: firemap-editor 18:47 — W-1 재서명 통과(v3·v3.1): '영수증' 0·말 46줄 screen_text와 일치·숫자 변경 0(3.4%는 칩 그대로, 말만 '3% 남짓')·aitell 1.1. 화면 글자 고침 없음, 말 줄 지적 없음(재녹음 불필요). screen_text.edit.json·script.md.edit.json(sha c58686290ae5f404) 새로 찍음
   완료: firemap-video-producer 19:22 — W-1 새 판 https://youtu.be/0yWQeW38UJE 예약 공개 10/12 19:47(bench_check '대조: 통과'·전제 줄·ytlong gate 통과·videos.list private+publishAt 확인) · 옛 ulO0kFjMSSA 비공개 그대로·uploads replaced

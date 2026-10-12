@@ -1,0 +1,119 @@
+# W-1·G-1 롱폼을 잘라 세로 쇼츠 props를 만든다 (firemap-video-producer 2026-10-12, c1clips.py를 본뜸 · 틀 = video/src/C1S.tsx 그대로).
+#   py -3.12 work/research/cardshorts/w1g1clips.py       # → work/video/w1s_div.json · g1s_buyday.json
+# 목소리 = ep/W-1·G-1 voice.json wav 그대로(Chirp 3 HD Charon, 새 녹음 없음). 줄 번호 = video/w1.json·g1.json 장면 순서대로 센 전체 순번(0부터).
+# 화면 숫자 = video/w1.json·g1.json(편집 통과한 롱폼 화면 글자) 그대로. 숫자를 새로 계산하지 않는다(배치·프레임만 정한다).
+import os, json, sys, copy
+sys.stdout.reconfigure(encoding='utf-8')
+HERE = os.path.dirname(os.path.abspath(__file__))
+WORK = os.path.normpath(os.path.join(HERE, '..', '..'))
+VID = os.path.join(WORK, 'video')
+TAIL = 36
+
+
+def load(name):
+    p = json.load(open(os.path.join(VID, name + '.json'), encoding='utf-8'))
+    lines = [l for s in p['scenes'] for l in s['lines']]
+    sc = {s['key']: s for s in p['scenes']}
+    return lines, sc
+
+
+def mk(lines):
+    def L(*idx):
+        return [{'n': i, 'text': lines[i]['text'], 'cap': lines[i].get('cap'), 'audio': lines[i]['audio'], 'frames': lines[i]['frames']} for i in idx]
+    return L
+
+
+def at(ls, x):
+    i = min(int(x), len(ls) - 1); a = sum(l['frames'] for l in ls[:i])
+    return int(round(a + (x - i) * ls[i]['frames']))
+
+
+def scene(kind, label, source, lines, **data):
+    return {'kind': kind, 'label': label, 'source': source, 'data': data, 'lines': lines}
+
+
+SHORTS = {}
+
+# ── W-1: 영업이익 107조인데 내 100주는? (줄 0·1·2 → 15·16 → 17·18 → 19·14 → 20) ──
+WL, WS = load('w1')
+L = mk(WL)
+op = WS['open']['data']; df = WS['dayfall']['data']; dv = WS['div']['data']; pr = WS['pairs']['data']; dt = WS['dots']['data']
+a = L(0, 1)
+b = L(2)
+c = L(15, 16)
+d = L(17, 18)
+e = L(19, 14)
+f_ = L(20)
+eg, dg = pr['groups'][0], pr['groups'][1]
+SHORTS['w1s_div'] = dict(
+  question=['영업이익 107조인데', '내 100주는?'], hot='100주',
+  base='지난주 종가·공시 그대로 계산 · 지나간 값',
+  answer=dict(label='삼성전자 100주 · 종가 10/2 → 10/8', items=['평가액 −140만원', '분기 배당 44번치'], arrow=False,
+              note='세후 분기 배당 31,640원 · 팔기 전엔 확정 손실 아님'),
+  scenes=[
+   scene('vs', '같은 주, 두 숫자', WS['open']['source'], a, full=True,   # full = 판을 90프레임 당겨 0초부터 첫 칸이 다 보이게(둘째 칸 시각은 +90)
+         tiles=[['삼성전자 100주 평가액', '−140만원', '종가 10/2 276,000원 → 10/8 262,000원', 0, 'fall'],
+                ['3분기 영업이익(잠정)', op['big'][0], op['big'][2], at(a, 1) + 90, 'rise']]),
+   scene('bars', '발표한 날 주가는', WS['dayfall']['source'], b, head='삼성전자 종가 · 원',
+         bars=[[x[0], x[1], x[2], 0 if i == 0 else 8, x[4], x[5]] for i, x in enumerate(df['bars'])], max=df['max']),
+   scene('receipt', '배당 · 100주', WS['div']['source'], c, head=dv['head'], size=46,
+         rows=[[r[0], r[1] + '원', r[2], [0, at(c, 1), at(c, 1.5)][i]] for i, r in enumerate(dv['rows'])],
+         side=['31,640원', at(c, 1.6), '100주 분기 배당 · 세금 뗀 뒤']),
+   scene('grid', '1년 사이 — 이익과 배당', WS['pairs']['source'], d, head='삼성전자 · 1년 사이',
+         cols=['1년 전 3분기', '2026년 2분기'],
+         rows=[[eg[0], [eg[1][0][2], eg[1][1][2]], 0], [dg[0], [dg[1][0][2], dg[1][1][2]], at(d, 0.4)]],
+         hot=[[0, 1, at(d, 1.2)], [1, 1, at(d, 1.6)]], note=[eg[2] + ' · 배당은 ' + dg[2], at(d, 1.5)]),
+   scene('receipt', '줄어든 평가액 = 분기 배당 몇 번', WS['dots']['source'], e, head='줄어든 평가액 ÷ 세후 분기 배당', size=46,
+         rows=[['10/2 → 10/8 평가액', '−1,400,000원', 'net', 0], ['세후 분기 배당', '31,640원', 'in', 12]],
+         side=[dt['big'], 30, '분기 배당 몇 번치']),
+   scene('vs', '3분기 배당은 아직', WS['pending']['source'], f_,
+         tiles=[[WS['pending']['data']['cards'][0][0], '370원', WS['pending']['data']['cards'][0][1], 0, 'ink'],
+                [WS['pending']['data']['cards'][1][0], '공시 전', '이사회가 정함', at(f_, 0.6), 'accent']]),
+  ],
+)
+
+# ── G-1: 금 1천만원어치, 언제 샀나요? (줄 0·1·2·3 → 16·17·18 → 68·69·70 → 19·20·21) ──
+GL, GS = load('g1')
+L = mk(GL)
+src = GS['buy']['source']
+g0 = L(0, 1, 2, 3)
+g1 = L(16, 17, 18)
+g2 = L(69, 70)
+g3 = L(19, 20, 21)
+# 산 날 4개 막대(값 = 오늘 받는 돈, 화면 글자는 g1.json loss 장면 글자 그대로)
+loss = GS['loss']['data'] if 'loss' in GS else None
+SHORTS['g1s_buyday'] = dict(
+  question=['금 1천만원어치,', '언제 샀나요?'], hot='언제',
+  base='KRX 금시장 종가 2026-10-06 기준 · 지나간 값',
+  answer=dict(label='금 1천만원어치 · 오늘(10/6) 팔면 받는 돈', items=['1월 고점 663만원', '1년 전 956만원'], arrow=False,
+              note='KRX 금시장 종가 · 증권사 수수료 별도'),
+  scenes=[
+   scene('bars', '산 날 4개', src, g0, head='1천만원어치 · 오늘 받는 돈(만원)', full=True,
+         bars=[['1월 고점', 663, '663만원', 0, 'fall', '2026-01-29'], ['1년 전', 956, '956만원', 0, 'ink', '2025-10-02'],
+               ['3개월 전', 878, '878만원', 0, 'ink', '2026-07-06'], ['1개월 전', 918, '918만원', 0, 'ink', '2026-09-04']], max=1000),
+   scene('bars', '넷 다 손실', src, g1, head='1천만원에서 줄어든 비율',
+         bars=[['1월 고점', 33.66, '−33.66%', 0, 'fall', None], ['3개월 전', 12.16, '−12.16%', 0, 'ink', None],
+               ['1개월 전', 8.19, '−8.19%', at(g1, 1), 'ink', None], ['1년 전', 4.43, '−4.43%', at(g1, 2), 'ink', None]], max=40),
+   scene('receipt', '산 값까지의 산수', GS['math']['source'], g2, head='고점에 산 금이 산 값으로 돌아가려면', size=46,
+         rows=[['산 값 1g(2026-01-29)', '269,810원', 'in', 0], ['오늘 1g(2026-10-06)', '179,000원', 'tax', 10], ['떨어진 폭', '−33.66%', 'net', at(g2, 1)]],
+         side=['+50.7%', 40, '올라야 산 값 · 전망 아님, 산수']),
+   scene('vs', '작년 대비', GS['odd']['source'], g3,
+         tiles=[['국제 금값(달러, 1년)', '+6.65%', '금 선물 GC=F · 뉴욕 종가', 10, 'rise'],   # 10/12 눈 검사: 첫 줄 2.6초 빈 판 → 장면 시작에 바로
+                ['한국에서 산 금(1년)', '−4.43%', 'KRX 금시장 종가', at(g3, 2), 'fall']]),
+  ],
+)
+
+
+def build(name, d):
+    sc = d['scenes']
+    for s in sc: s['frames'] = sum(l['frames'] for l in s['lines'])
+    sc[-1]['frames'] += TAIL
+    return {'fps': 30, 'name': name, 'question': d['question'], 'hot': d['hot'], 'answer': d.get('answer'), 'base': d['base'], 'scenes': sc}
+
+
+if __name__ == '__main__':
+    for name, d in SHORTS.items():
+        p = build(name, d)
+        fr = sum(s['frames'] for s in p['scenes'])
+        json.dump(p, open(os.path.join(VID, name + '.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        print(f"{name}: {fr} 프레임 = {fr / 30:.1f}초 · 줄 {[l['n'] for s in p['scenes'] for l in s['lines']]}")

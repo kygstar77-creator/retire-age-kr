@@ -1778,3 +1778,13 @@
 2026-10-12 19:57 · firemap-video-producer · 결정 · R-1 3:5 줄 다시 받지 않음 · 이유: 공개본 녹음 readback 일치, 벤치 지적은 시험본 소리
 2026-10-12 19:57 · motion · 실사 장 머리 StockShot은 얼굴·국적·글자·연도·상표 없는 컷(손·발·물건)만 쓴다 · 숫자 제목 아래 사람·장소가 그 숫자의 주인처럼 읽힘(P-1 심사 1차 5·5 → 2차 7·7)
 2026-10-12 19:57 · motion · 완료: 실사 장 머리 StockShot·pexelsvid.py·P-1 미리보기 심사 평균 7.33 통과 · 10/11 '장면에 실사' 지시 모션 몫
+
+2026-10-12 20:17 · firemap-video-producer(순돌이 배차) · W-1 새 판 dPrEOVxP3ug 19:50 공개(ytlong publishAt 지금+25분) · 10/12 11:30 칸 PC 꺼짐으로 놓침, '이번 주' 편이라 오늘 안에. 대본 v3.1 날짜말('지난주 뉴스'·'2화는 이번 주 토요일' 삭제 — slots 10/17 TBD) · 옛 ulO0kFjMSSA 비공개 유지
+2026-10-12 20:17 · firemap-video-producer · W-1 끝 장면에 댓글 질문 띠 추가 · lfrender U5 끝 장면 12.5초 거부(2화 띠를 빼서 생김) → 7.5초
+2026-10-12 20:17 · firemap-video-producer · W-1 디에서 --chirp-short 사용 · --chirp는 -11.7dB 미달, short는 -12.0dB(제한 없는 틀 셈) · 121.05초 치직 의심은 디에서가 만든 첫소리 모양 — 제미나이 6모델 'NO', click_ok
+2026-10-12 20:17 · firemap-video-producer · G-1 '영수증' 비유 전부 뺌(말 6줄 Chirp 다시·화면 15곳·장 제목·제목) · 사장님 10/12 "왜 '영수증' 같은 말 썼어? 너는 제목이 이해가 돼?" · 편집 서명은 PD가 바뀐 줄만 보고 대행(editor/log.md)
+2026-10-12 20:17 · firemap-video-producer · G-1 제목 '금 1천만원어치, 내가 산 날에 따라 지금 얼마 남았을까?' · title-gap A 짜임·숫자 1·썸네일 '샀다면'과 안 겹침 · 후보 3개 meta title_1012(사장님 예시 그대로는 썸네일과 '샀다면' 겹쳐 3위)
+2026-10-12 20:17 · firemap-video-producer · G-1 새로 올림 xBTZtRp5lMs(10/13 11:30), 옛 EZvDDPlXo90 비공개 유지 · 말·화면이 바뀌어 snippet 수정으로 안 됨 · 숫자 기준일 10/6 그대로(다시 계산 안 함)
+2026-10-12 20:17 · firemap-video-producer · 쇼츠 w1s_div 10/13 07:20·g1s_buyday 10/14 07:20 예약 · G 클립은 롱폼 공개(10/13 11:30) 뒤라 10/14로 · C1S 틀 재사용(w1g1clips.py), 새 녹음 0
+2026-10-12 20:17 · firemap-video-producer · g1meta.py 제목을 meta.json에서 읽게 고침 · 다시 돌아도 '영수증' 옛 제목으로 덮이지 않게(순돌이 10/11 w1meta 지적과 같은 꼴)
+2026-10-12 20:19 · firemap-video-producer(순돌이 배차) · W-1 중복 업로드 정리: dPrEOVxP3ug 비공개, 0yWQeW38UJE 공개 유지, 쇼츠 BeBZeqolm8c 설명 첫 줄 0yWQ로 · 18:44 넘김 뒤 내가 보낸 세션 메시지('W-1은 그 회차가 끝까지')가 늦게 배달돼 두 회차가 같은 판을 따로 올림. 둘 다 조회 0, 먼저 공개된 쪽을 남김

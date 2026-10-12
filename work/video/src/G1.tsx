@@ -109,7 +109,7 @@ const Cards: React.FC<{s: GScene}> = ({s}) => {
 const Road: React.FC<{s: GScene}> = ({s}) => {
   const f = useCurrentFrame();
   const rows: TallyRow[] = s.data.rows.map(([t, at]: [string, number]) => ({label: t, start: at, tone: 'in'}));
-  return <TallyReceipt x={360} y={290} w={1200} head="금값 1천만원 영수증 · 오늘 순서" rows={rows} size={42} active={activeRow(rows, f)} />;
+  return <TallyReceipt x={360} y={290} w={1200} head="금 1천만원어치 · 오늘 순서" rows={rows} size={42} active={activeRow(rows, f)} />;
 };
 
 const Line: React.FC<{s: GScene}> = ({s}) => {

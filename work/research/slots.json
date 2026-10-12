@@ -946,9 +946,9 @@
    "item": "W-1",
    "owner": "firemap-video-producer",
    "gates_ok": "2026-10-12 19:22",
-   "note": "firemap-video-producer 2026-10-12 19:22: W-1 새 판 dPrEOVxP3ug — 대본 v3.1(caption-spec 9건·'영수증' 0·10/12 날짜말)·Chirp 46줄 10/12 하루·자막 규격·U5 7.5초·겹침 0·쉿소리 -12.0dB·bench_check 대조: 통과·ytlong gate 통과 · yt_pair: W-1 카페 글(ep/W-1/cafe.md) — 10/12 14:10 칸 놓침(write PC 꺼짐), 영상 주소 dPrEOVxP3ug | firemap-video-producer 2026-10-11 15:43: W-1 업로드 ulO0kFjMSSA(10/12 11:30 예약, private+publishAt) · 관문: 화면 글자 editor 14:20·U5 최장 7.0초(motion 2c65ec7)·겹침 0·목소리 IQR 0.14·deess -12.2dB·ytlong gate 통과·썸네일 w1p 7.37 · yt_pair: W-1 카페 글(ep/W-1/cafe.md) 10/12 칸 필요 | 순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | firemap-video-producer 10/11 06:20: 17줄만 받으면 둘째 날 31%로 lfrender 거부 → 0·1장 11줄만 10/10으로 남기고 2~7장 44줄을 10/11 16:01 창 5요청(C-1 다음)으로 받는다(10/10 몫 20.0%) · 순서 ep/W-1/check/runbook_1011.md·park_1011.py · 월요일 공개인데 대본 '이번 주' 12곳 → youtube-loop 요청 | 순돌이 10/11: W-1을 10/12로 — 16:01 창에서 못 받은 5·6·7장 17줄(3요청) 받기 | firemap-meeting 10/10 21:40: skip 예정 — 녹음 창은 하루 한 편(10요청), 10/11 16:01 창은 G-1(→10/13). C-1은 10/12 16:01 창 녹음 → 10/14 19:30 칸. | 이전: firemap-video-producer 10/10 16:05: 16:01 창 2요청(새 줄 1·lfretake 15) 뒤 IQR 0.18>0.16 막힘(앞뒤 +3.6%·5.61 통과) — 관문 기한 10/11 19:30 전 녹음 창은 10/11 16:01(G-1 배정)뿐, 순돌이 판단 대기 | 순돌이 10/10 12:4x: C-1 v5(예고·결론부터·궁금증 챕터·가상 인물 장면, 6e286c3) — 10/10 16:01 창에서 새 줄 1 + lfretake --n 15(2요청, W-1 7요청보다 먼저) → check(날짜 둘은 다시 받기 20% 이하면 허용, 앞뒤 차·IQR 관문 그대로) → render → 10/12 19:30. 관문 기한 10/11 19:30",
+   "note": "firemap-video-producer 2026-10-12 19:22: W-1 새 판(두 회차가 같은 판을 따로 올려 0yWQeW38UJE만 공개 유지) — 대본 v3.1(caption-spec 9건·'영수증' 0·10/12 날짜말)·Chirp 46줄 10/12 하루·자막 규격·U5 7.5초·겹침 0·쉿소리 -12.0dB·bench_check 대조: 통과·ytlong gate 통과 · yt_pair: W-1 카페 글(ep/W-1/cafe.md) — 10/12 14:10 칸 놓침(write PC 꺼짐), 영상 주소 0yWQeW38UJE | firemap-video-producer 2026-10-11 15:43: W-1 업로드 ulO0kFjMSSA(10/12 11:30 예약, private+publishAt) · 관문: 화면 글자 editor 14:20·U5 최장 7.0초(motion 2c65ec7)·겹침 0·목소리 IQR 0.14·deess -12.2dB·ytlong gate 통과·썸네일 w1p 7.37 · yt_pair: W-1 카페 글(ep/W-1/cafe.md) 10/12 칸 필요 | 순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | firemap-video-producer 10/11 06:20: 17줄만 받으면 둘째 날 31%로 lfrender 거부 → 0·1장 11줄만 10/10으로 남기고 2~7장 44줄을 10/11 16:01 창 5요청(C-1 다음)으로 받는다(10/10 몫 20.0%) · 순서 ep/W-1/check/runbook_1011.md·park_1011.py · 월요일 공개인데 대본 '이번 주' 12곳 → youtube-loop 요청 | 순돌이 10/11: W-1을 10/12로 — 16:01 창에서 못 받은 5·6·7장 17줄(3요청) 받기 | firemap-meeting 10/10 21:40: skip 예정 — 녹음 창은 하루 한 편(10요청), 10/11 16:01 창은 G-1(→10/13). C-1은 10/12 16:01 창 녹음 → 10/14 19:30 칸. | 이전: firemap-video-producer 10/10 16:05: 16:01 창 2요청(새 줄 1·lfretake 15) 뒤 IQR 0.18>0.16 막힘(앞뒤 +3.6%·5.61 통과) — 관문 기한 10/11 19:30 전 녹음 창은 10/11 16:01(G-1 배정)뿐, 순돌이 판단 대기 | 순돌이 10/10 12:4x: C-1 v5(예고·결론부터·궁금증 챕터·가상 인물 장면, 6e286c3) — 10/10 16:01 창에서 새 줄 1 + lfretake --n 15(2요청, W-1 7요청보다 먼저) → check(날짜 둘은 다시 받기 20% 이하면 허용, 앞뒤 차·IQR 관문 그대로) → render → 10/12 19:30. 관문 기한 10/11 19:30",
    "ep": "W-1",
-   "published": "예약 2026-10-12T19:47:00+09:00 https://youtu.be/0yWQeW38UJE (11:30 칸은 PC 꺼짐으로 놓침 → 순돌이 10/12 지시로 같은 날 밤 공개, private+publishAt 확인 19:22) · 옛 ulO0kFjMSSA 비공개 유지"
+   "published": "공개 2026-10-12 19:47 https://youtu.be/0yWQeW38UJE (11:30 칸은 PC 꺼짐으로 놓침 → 같은 날 밤 · 옛 판 ulO0kFjMSSA 비공개 · 같은 판 중복 dPrEOVxP3ug(19:50)는 비공개로 돌림)"
   },
   {
    "at": "2026-10-12 12:10",
@@ -1016,11 +1016,12 @@
   {
    "at": "2026-10-13 07:20",
    "kind": "shorts",
-   "item": "TBD",
+   "item": "w1s_div",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-12 19:04: c1s_300(C-1 클립) 예약 해제·C-1 비공개라 사용 금지(순돌이 10/11 17:0x) → G-1·W-1 렌더 뒤 클립으로 채움(PD). 같은 날 19:20과 다른 롱폼 | 옛: firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cards",
-   "item_pkg": "work/research/cardshorts/c1s_300"
+   "gates_ok": "2026-10-12 20:16",
+   "note": "firemap-video-producer 2026-10-12 20:16: W-1 롱폼(0yWQeW38UJE — 설명 첫 줄 20:2x에 고침) 클립 C1S 틀, 새 녹음 없음 — compete 6·숫자 대조 0·치직 0·쉿소리 디에서 뒤 틀 0·받아쓰기·0초 프레임·눈 검사, 근거 cardshorts/w1s_div/review.md · yt_pair: BeBZeqolm8c | 이전: w1s_div firemap-meeting 2026-10-12 19:04: c1s_300(C-1 클립) 예약 해제·C-1 비공개라 사용 금지(순돌이 10/11 17:0x) → G-1·W-1 렌더 뒤 클립으로 채움(PD). 같은 날 19:20과 다른 롱폼 | 옛: firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cards",
+   "item_pkg": "work/research/cardshorts/w1s_div",
+   "published": "예약 2026-10-13T07:20:00+09:00 https://youtu.be/BeBZeqolm8c"
   },
   {
    "at": "2026-10-13 08:10",
@@ -1043,9 +1044,10 @@
    "kind": "long",
    "item": "G-1",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-12 19:04: G-1 EZvDDPlXo90 예약이 풀려 있음(영수증 빼기 재제작, PD 18:45 회차) — 다시 예약 건 시각을 gates_ok에 새로 적을 것. 못 넘으면 이 칸 skip 사유 | firemap-video-producer 2026-10-11 17:18: G-1 업로드 EZvDDPlXo90(10/13 11:30 예약) · Chirp Charon + korsay 숫자 읽기(16:05) · 끝 인사 줄 삭제(editor 16:34) · U5 최장 8.0초·겹침 0(motion 045e377) · 목소리 IQR 0.13·5.80 · deess -12.3dB · 치직 148.8초 = 원본 wav 말소리(click_ok_note) · 제목 숫자 2개(copy 8.53)·bench_check 통과 · yt_pair: G-1 카페 글은 영상 전 10/13 08:10/10:10 칸 | 순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | firemap-meeting 10/09 21:4x: 레드팀 반영 — 녹음 다음 날 공개는 관문 기한까지 3.5시간뿐(M-1 녹음~업로드 3시간 38분 실측), G-1은 녹음 10/11 16:01 → 공개 10/13 19:30(관문 기한 10/12 19:30, 여유 27.5시간) | firemap-meeting 10/09 21:33: G-1 녹음 10/11 16:01 창(W-1이 10/10 창을 씀) · 관문 기한 10/11 19:30 · 녹음 뒤 motion BuyDateOpen·WaterfallPieces 교체·편집 재서명 | firemap-meeting 10/8 13:29: G-1은 목소리 전 준비 끝·썸네일 g1f·카피 통과. 녹음 = 10/8 16:01 TTS 창(C-1 대본이 아직 없어 그 창은 G-1). 10/10 칸에 C-1이 들어가면 G-1은 여기, C-1 미달이면 G-1이 10/10로 당겨지고 이 칸은 C-1. 공개 전날 calc 재실행·카피 숫자 재확인. 관문 기한 10/11 19:30",
-   "ep": "G-1"
+   "gates_ok": "2026-10-12 20:16",
+   "note": "firemap-video-producer 2026-10-12 20:16: G-1 새 판 xBTZtRp5lMs — 사장님 10/12 '영수증' 지적: 말 6줄 Chirp 다시(10/12)·장 제목·화면 15곳·제목 '금 1천만원어치, 내가 산 날에 따라 지금 얼마 남았을까?' · 자막 규격 · U5 7.5초·겹침 0 · 쉿소리 -12.2dB · bench_check 10/12 다시 대조 통과 · ytlong gate 통과 | firemap-meeting 2026-10-12 19:04: G-1 EZvDDPlXo90 예약이 풀려 있음(영수증 빼기 재제작, PD 18:45 회차) — 다시 예약 건 시각을 gates_ok에 새로 적을 것. 못 넘으면 이 칸 skip 사유 | firemap-video-producer 2026-10-11 17:18: G-1 업로드 EZvDDPlXo90(10/13 11:30 예약) · Chirp Charon + korsay 숫자 읽기(16:05) · 끝 인사 줄 삭제(editor 16:34) · U5 최장 8.0초·겹침 0(motion 045e377) · 목소리 IQR 0.13·5.80 · deess -12.3dB · 치직 148.8초 = 원본 wav 말소리(click_ok_note) · 제목 숫자 2개(copy 8.53)·bench_check 통과 · yt_pair: G-1 카페 글은 영상 전 10/13 08:10/10:10 칸 | 순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | firemap-meeting 10/09 21:4x: 레드팀 반영 — 녹음 다음 날 공개는 관문 기한까지 3.5시간뿐(M-1 녹음~업로드 3시간 38분 실측), G-1은 녹음 10/11 16:01 → 공개 10/13 19:30(관문 기한 10/12 19:30, 여유 27.5시간) | firemap-meeting 10/09 21:33: G-1 녹음 10/11 16:01 창(W-1이 10/10 창을 씀) · 관문 기한 10/11 19:30 · 녹음 뒤 motion BuyDateOpen·WaterfallPieces 교체·편집 재서명 | firemap-meeting 10/8 13:29: G-1은 목소리 전 준비 끝·썸네일 g1f·카피 통과. 녹음 = 10/8 16:01 TTS 창(C-1 대본이 아직 없어 그 창은 G-1). 10/10 칸에 C-1이 들어가면 G-1은 여기, C-1 미달이면 G-1이 10/10로 당겨지고 이 칸은 C-1. 공개 전날 calc 재실행·카피 숫자 재확인. 관문 기한 10/11 19:30",
+   "ep": "G-1",
+   "published": "예약 2026-10-13T11:30:00+09:00 https://youtu.be/xBTZtRp5lMs (새 판 — 옛 EZvDDPlXo90 비공개 유지, 지우지 않음)"
   },
   {
    "at": "2026-10-13 12:10",
@@ -1108,11 +1110,12 @@
   {
    "at": "2026-10-14 07:20",
    "kind": "shorts",
-   "item": "TBD",
+   "item": "g1s_buyday",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-12 19:04: c1s_receipt(C-1 클립) 예약 해제·C-1 비공개라 사용 금지(순돌이 10/11 17:0x) → G-1·W-1 렌더 뒤 클립으로 채움(PD). 같은 날 19:20과 다른 롱폼 | 옛: firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cards",
-   "item_pkg": "work/research/cardshorts/c1s_receipt"
+   "gates_ok": "2026-10-12 20:16",
+   "note": "firemap-video-producer 2026-10-12 20:16: G-1 롱폼(xBTZtRp5lMs, 10/13 11:30 공개) 클립 C1S 틀, 새 녹음 없음 — 관문 cardshorts/g1s_buyday/review.md · 같은 날 19:20 칸은 G-1 아닌 롱폼으로 · yt_pair: PHTFJJe5odU | 이전: TBD firemap-meeting 2026-10-12 19:04: c1s_receipt(C-1 클립) 예약 해제·C-1 비공개라 사용 금지(순돌이 10/11 17:0x) → G-1·W-1 렌더 뒤 클립으로 채움(PD). 같은 날 19:20과 다른 롱폼 | 옛: firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cards",
+   "item_pkg": "work/research/cardshorts/g1s_buyday",
+   "published": "예약 2026-10-14T07:20:00+09:00 https://youtu.be/PHTFJJe5odU"
   },
   {
    "at": "2026-10-14 08:10",

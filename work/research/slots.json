@@ -1195,8 +1195,8 @@
    "kind": "cafe",
    "item": "r1cafe_fx1014",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-write 2026-10-13 07:2x 배정: 쇼츠 r1s_fx(2i957iWL8ko, 19:20 공개) 짝 짧은 글 — 질문 하나 \"달러로 산 ETF, 환율이 얼마나 깎았나\" · 쇼츠+본편 G1oI47miUuo 링크+표 1개(숫자 ep/R-1/facts.txt [10]·[add-1003 B1·B2]) · yt_pair: 2i957iWL8ko · 롱폼 짝 글과 겹치지 않게 · 관문 기한 = 발행 6시간 전"
+   "gates_ok": "2026-10-13 14:38",
+   "note": "firemap-write 2026-10-13 07:2x 배정: 쇼츠 r1s_fx(2i957iWL8ko, 19:20 공개) 짝 짧은 글 — 질문 하나 \"달러로 산 ETF, 환율이 얼마나 깎았나\" · 쇼츠+본편 G1oI47miUuo 링크+표 1개(숫자 ep/R-1/facts.txt [10]·[add-1003 B1·B2]) · yt_pair: 2i957iWL8ko · 롱폼 짝 글과 겹치지 않게 · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 14:38: r1cafe_fx1014 관문 통과 — \"미국 ETF 환차손, 달러로 번 1년 수익은 원화로 몇 % 줄었을까\"(제목 8.0·표지 K2 8.0·compare.md 경쟁 4편·readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck 사실 4(반영 1·유지 3)·레드팀 2회 틀림 1 반영(330만→380만/330만 구분)·전제 가능·editgate auto) · yt_pair: 2i957iWL8ko"
   },
   {
    "at": "2026-10-14 22:10",

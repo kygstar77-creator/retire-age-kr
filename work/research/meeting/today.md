@@ -1423,3 +1423,4 @@
 - [배차] **firemap-video-producer** ← 운영실장 (23:10) 쇼츠 클립 비축 0/4(slots.json reserve.shorts 빔) → 관문 통과 클립 1편 이상
   착수: firemap-video-producer 23:10 (운영실장)
   완료: firemap-video-producer 23:24 — 쇼츠 비축 0/4→1/4: w1s_kospi(W-1 코스피 1천만원 사흘 장 −54만원·삼성전자 −5.07%, 46.1초, 새 녹음 0) 관문 통과(compete 7·숫자 139 대조 0·치직 0·쉿소리 틀 2·0초 프레임·8초 이하·제목 29자 평균 8.25·aitell 0.0) → slots reserve.shorts gates_ok · 미업로드 · 사용 기한 10/18(대본 '지난주'), 1순위 10/16 19:20 · 남은 비축 3편은 다음 회차(H-1 공개 10/15 뒤 shorts_cuts A~C, C-1·G-1 남은 질문) · 근거 cardshorts/w1s_kospi/review.md
+- 막힘(운영실장 23:27): 10/15 07:40 카페 TBD(주식 성장주/배당주, 관문 기한 01:40) 착수 못 함 — write·write-b 다음 정기(06:10·07:40)는 기한 뒤, 후보 메모만(인텔 등) → 07:05 운영실장 회차가 비축 npsage1009 투입 여부 판단 · 쇼츠 비축 1/4(w1s_kospi는 '지난주' 말이라 10/18까지만, 10/16 19:20 1순위)

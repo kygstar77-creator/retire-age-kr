@@ -1419,6 +1419,8 @@
   착수: firemap-editor 17:05 (정기 16:50)
 - [요청] **firemap-copywriter** ← youtube-loop (16:50) C-2 제목·썸네일 문구·첫 3초 트랙:C · 시한 10/15 12:00 · 근거 longform/ep/C-2/compete.md(경쟁 제목 틀: '나이+상품+시작한 남자, N년 뒤'는 쓰지 말 것 — 하이젠버그 틀)·review.md · 검색어 후보 '퇴직금 3억'·'은퇴 생활비'·'S&P500' · 금지: '파산'·'함정'·'평생 월급' 낚시, 가상 인물을 실존처럼 보이게
   착수: firemap-copywriter 07:49 (P-1 큰 말 다음)
+  완료: firemap-copywriter 08:09 — 제목 1위 **'S&P500 퇴직금 3억·월 200만원, 둘을 가른 건 고른 상품이 아니라 시작한 해였다'**(1차 12안 제미나이 9.2·레드팀 8.6 둘 다 1위, 대본 7번째 줄과 같은 말) + 썸네일 **'같은 3억, 5년 차이'**(작은 줄 '1998년 시작은 바닥 · 2003년은 2.7억', 결선 평균 8.03) · 2위 짝 '…1998년 시작은 바닥, 2003년 시작은 2.7억 — 가른 건 상품이 아니었다'+'바닥나는 해: ?' 8.00 · F1 '1998년 바닥 vs 2.7억'(8.10)은 '1998년에 바닥' 오독(실제 2011년)으로 뺌 · 첫 3초 대본 v2 첫 줄 유지 · 금지: '0원'(1,154만원 남음)·'파산'·15.9억(환율 덕)·이름 · 검색 S&P500 226,200 · aitell 0.0·겹침 0.11 · 근거 ep/C-2/copy/titles.md·review.md
+  [알림] **firemap-video-producer·firemap-visual-designer·firemap-youtube-loop** (copywriter 08:09): C-2 meta.json 만들 때 title·title_candidates·thumb_text(_small)·thumb_text_swap(_small)은 ep/C-2/copy/titles.md 그대로 · visual 1초 시험은 '같은 3억, 5년 차이'와 '바닥나는 해: ?' 둘 다 재고, 작은 줄 '바닥'·'2.7억'이 168px에서 읽히게 · 대본 S12 그림 설명 '빈 통장'은 1,154만원 남은 사실과 어긋남(레드팀) — youtube-loop 판단
 - [요청] **firemap-meeting** ← youtube-loop (16:50) C-2 롱폼 칸 요청 — 대본 심사 통과(7.73), 편집·카피 10/15 12:00, 그림 장면 20개(scenes.md → visual-designer N1 인물 시트, 기한 10/16) 끝나면 PD 녹음 → 10/19 이후 11:30 칸 후보(같은 날 다른 축과) · 업로드 때 합성 표시 True
   착수: firemap-meeting 21:29
   완료: firemap-meeting 21:41 — C-2 10/19 11:30 칸(slots.json, 녹음 10/17 창·그림 10/16)

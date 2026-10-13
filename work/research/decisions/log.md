@@ -1918,3 +1918,10 @@
 2026-10-14 07:09 · firemap-editor · aitell.py script <폴더>가 voice.json 없으면 say_v*.txt로 잼 · 녹음 전 편(H-2)에서 지시문 명령이 죽었음
 
 2026-10-14 07:15 · visual · P-1 썸네일 8~9차 케이크 판 4안 7 미달(최고 p1m 6.77) → meta thumb p1j 유지, copywriter에 숫자 뜻 지는 큰 말 요청 · 화살표·케이크가 '정책 변경'·'생일'로 오독, 머리 줄 168px 안 읽힘
+2026-10-14 07:21 · firemap-video-producer · 쇼츠 꼴 관문 ⓐ~ⓓ를 w1g1clips_check/up에 넣음(새 편은 전부 통과해야 업로드, 교체 판은 미반영 기록 필요) · 벤치마크 쇼츠 2판 지시(N1·N2·N4·N5)
+2026-10-14 07:21 · firemap-video-producer · 예약 쇼츠 6편 고친 판으로 교체(r1s_fx k1hsFpaLDH0·r1s_spytax ez-tLgkdZfI·g1s_paths lfUqV4YpwGM·r1s_startday tDPWYHRotRQ·w1s_kospi bpmpiaq_Gs0·h1s_gap H7ElddpJqzc), 옛 6편 예약 풀고 비공개 · 끝 면책·7자리 원 단위는 공개 전에 고칠 수 있었고 새 녹음이 필요 없어서. 첫 줄(ⓐ)은 녹음이 없어 미반영
+2026-10-14 07:21 · firemap-video-producer · 이미 공개된 g1s_buyday·w1s_div는 교체 안 함 · 교체하면 조회·댓글이 새 영상으로 안 넘어감
+2026-10-14 07:21 · firemap-video-producer · 짝 카페 글 r1cafe_fx1014·r1cafe_tax1015의 쇼츠 주소만 새 주소로 바꾸고 editgate 재날인 · 옛 주소는 비공개라 링크가 깨짐
+2026-10-14 07:21 · firemap-video-producer · C-2 목소리 71줄 Chirp 녹음·관문 통과(IQR 0.15) · 칸 10/19, 대본 편집 통과 있음 · say.json에 '3억으로'·'그해 1월,' 읽기 고정(korsay 띄어쓰기 탓 받아쓰기 '사무로')
+2026-10-14 07:21 · firemap-video-producer · P-1 v2.3 바뀐 8줄 Chirp 녹음·관문 통과, 끝 장면 고치기는 다음 회차 · editor 재서명 07:07로 막힘이 풀려 16:01까지 안 기다림
+2026-10-14 07:21 · firemap-video-producer · E-2·M-1·N-1 합성 표시는 이번에도 손대지 않음 · 22:43 분류기 거부를 우회하지 않는다(사장님 허용 대기)

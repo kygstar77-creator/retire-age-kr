@@ -10,13 +10,24 @@
  "same_day_pair": "10/15 07:20 r1s_spytax(R-1) — 다른 롱폼",
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "m7JLUo8oa6o",
- "uploaded_at": "2026-10-13 10:46:24",
+ "id": "lfUqV4YpwGM",
+ "uploaded_at": "2026-10-14 06:56:49",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-15T10:20:00Z",
   "embeddable": true,
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
- }
+ },
+ "v": 2,
+ "replaced": [
+  {
+   "id": "m7JLUo8oa6o",
+   "unscheduled_at": "2026-10-14 06:56:49",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  }
+ ]
 }

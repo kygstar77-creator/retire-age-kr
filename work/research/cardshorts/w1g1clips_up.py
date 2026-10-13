@@ -74,6 +74,13 @@ def main(name, check_only=False):
     rv = open(os.path.join(d, 'review.md'), encoding='utf-8').read() if os.path.exists(os.path.join(d, 'review.md')) else ''
     mark = r'^판정\(v2\): 통과' if replace else r'^판정: 통과'
     if not re.search(mark, rv, re.M): print('올리지 않는다: review.md에 판정 줄 없음', mark); return 3
+    import w1g1clips_check as fc   # 10/14 꼴 관문 ⓐ~ⓓ(today.md 벤치마크 쇼츠 2판) — 새 편은 전부 통과, --replace(이미 잡힌 칸 고친 판)는 못 고친 항목이 review.md '꼴 관문 미반영: ⓐ…' 줄에 있어야
+    hits = fc.form_check(name, up.get('layout', 'c1clip'), upload=not replace)
+    if hits:
+        unfixed = (re.search(r'^꼴 관문 미반영:(.*)$', rv, re.M) or [None, ''])[1]
+        left = [h for h in hits if not (replace and h[0] in unfixed)]
+        if left: print('올리지 않는다: 꼴 관문', *left, sep='\n  '); return 9
+        print('꼴 관문: 고친 판 · 미반영 기록 있음 —', unfixed.strip())
     old = up.get('id') if replace else None
     pub = datetime.datetime.fromisoformat(up['publishAt'])
     if pub <= datetime.datetime.now(KST) + datetime.timedelta(minutes=15): print('올리지 않는다: publishAt이 15분 안이거나 지났다', up['publishAt']); return 4
@@ -110,7 +117,7 @@ def main(name, check_only=False):
     spec = f'work/video/{name}.json'
     props = json.load(open(os.path.join(REPO, spec), encoding='utf-8'))
     seed = hashlib.md5('|'.join(l['audio'] for s in props['scenes'] for l in s['lines']).encode()).hexdigest()
-    row = {'at': datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S'), 'id': vid, 'title': title, 'audio_seed': seed, 'layout': 'c1clip', 'music': False,
+    row = {'at': datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%S'), 'id': vid, 'title': title, 'audio_seed': seed, 'layout': up.get('layout', 'c1clip'), 'music': False,
            'facts': os.path.join(WORK, 'research', 'longform', 'ep', up['ep'], 'facts.txt').replace('\\', '/'), 'spec': spec,
            'd7_views': None, 'd7_subs': None, 'publishAt': up['publishAt'], 'from_long': up['from_long'], 'voice': up['ep'] + ' voice.json wav 재사용(Chirp 3 HD Charon, 새 녹음 없음)'}
     lp = os.path.join(HERE, 'log.jsonl')

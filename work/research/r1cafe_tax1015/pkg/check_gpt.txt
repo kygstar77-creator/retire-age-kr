@@ -23,7 +23,7 @@
 - **IRS Publication 515 Table 1 (한미 조세조약 12조)**: IRS 규정 원문 대조 확인 완료
 - **뉴시스 기사 URL (`newsis.com/view/NISX20260120_0003483682`)**: 매체 기사 확인 완료
 - **MTN 기사 URL (`news.mtn.co.kr/news-detail/2026072613323786121`)**: 매체 기사 확인 완료
-- **유튜브 URL (`youtu.be/6Ml6j1O_QoE`, `youtu.be/G1oI47miUuo`)**: 영상 링크 대조 확인 완료
+- **유튜브 URL (`youtu.be/ez-tLgkdZfI`, `youtu.be/G1oI47miUuo`)**: 영상 링크 대조 확인 완료
 
 *(모든 출처 확인 완료 / 확인 불가 항목 없음)*
 

@@ -10,8 +10,8 @@
  "same_day_pair": "10/14 07:20 g1s_buyday(G-1) — 다른 롱폼",
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "2i957iWL8ko",
- "uploaded_at": "2026-10-12 22:39:15",
+ "id": "k1hsFpaLDH0",
+ "uploaded_at": "2026-10-14 06:56:18",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-14T10:20:00Z",
@@ -19,5 +19,16 @@
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
  },
- "relink": "2026-10-13 06:58 롱폼 새 판으로 설명 첫 줄 링크 바꿈(videos.update 확인)"
+ "relink": "2026-10-13 06:58 롱폼 새 판으로 설명 첫 줄 링크 바꿈(videos.update 확인)",
+ "v": 2,
+ "replaced": [
+  {
+   "id": "2i957iWL8ko",
+   "unscheduled_at": "2026-10-14 06:56:18",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": "2026-10-14T10:20:00Z"
+   }
+  }
+ ]
 }

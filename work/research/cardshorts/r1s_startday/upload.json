@@ -11,13 +11,24 @@
  "title_review": "10/13 22:4x PD: 제미나이 3.1-flash-lite 8('넣어 봤다' 판, 3.8-flash 429) · 레드팀(Claude) 7('계산해 봤다' 판 재채점, '넣어 봤다'는 실제 투자 과장이라 고침) · PD 7.5 → 평균 7.5 · 29자·숫자 2(1억·251) · 설명 둘째 줄 '과거 값으로 계산·실제 투자 결과 아님'(레드팀 권고)",
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "5hOz7Gmf2Z8",
- "uploaded_at": "2026-10-13 22:43:17",
+ "id": "tDPWYHRotRQ",
+ "uploaded_at": "2026-10-14 06:57:04",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-15T22:20:00Z",
   "embeddable": true,
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
- }
+ },
+ "v": 2,
+ "replaced": [
+  {
+   "id": "5hOz7Gmf2Z8",
+   "unscheduled_at": "2026-10-14 06:57:04",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  }
+ ]
 }

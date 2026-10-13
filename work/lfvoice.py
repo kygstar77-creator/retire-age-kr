@@ -573,6 +573,7 @@ def readback(ep, only=None):
             out.append({'at': f'{si}:{li}', 'text': l['text'], 'heard': votes, 'models': models, 'sim': round(sim, 2), 'flag': flag.strip()})
             if flag.strip(): bad.append(f'{si}:{li} {flag.strip()} | {l["text"][:30]} | 들림 {votes[-1] and votes[-1][:40]}')
             time.sleep(1)
+    os.makedirs(os.path.join(ep, 'check'), exist_ok=True)   # 10/14 PD: check 폴더 없는 새 편에서 다 받아쓰고 저장에서 죽던 것
     json.dump(out, open(os.path.join(ep, 'check', 'voice_readback' + ('_part' if only else '') + '.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(f'받아쓰기 대조 {len(out)}문장 · 걸린 문장 {len(bad)}'); [print('  ' + b) for b in bad]
     return not bad

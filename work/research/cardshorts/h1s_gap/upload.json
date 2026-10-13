@@ -20,13 +20,24 @@
  "same_day_pair": "10/17 19:20 칸은 H-1 아닌 다른 롱폼 클립",
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "9Yftl4x-vRc",
- "uploaded_at": "2026-10-14 02:31:45",
+ "id": "H7ElddpJqzc",
+ "uploaded_at": "2026-10-14 06:29:46",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-16T22:20:00Z",
   "embeddable": true,
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
- }
+ },
+ "v": 2,
+ "replaced": [
+  {
+   "id": "9Yftl4x-vRc",
+   "unscheduled_at": "2026-10-14 06:29:46",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  }
+ ]
 }

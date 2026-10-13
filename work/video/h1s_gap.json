@@ -269,16 +269,9 @@
      "cap": null,
      "audio": "audio/h-1/293d4ee9bfc8be6f.wav",
      "frames": 104
-    },
-    {
-     "n": 87,
-     "text": "어디로 가라는 말은 아니에요.",
-     "cap": null,
-     "audio": "audio/h-1/b1976124cd03ec3f.wav",
-     "frames": 93
     }
    ],
-   "frames": 345
+   "frames": 252
   }
  ]
 }

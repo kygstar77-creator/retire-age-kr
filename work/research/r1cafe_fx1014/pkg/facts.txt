@@ -1,4 +1,4 @@
-[오늘 찾은 것] 2026-10-13 쇼츠 r1s_fx(2i957iWL8ko, 10/14 19:20 공개) 짝 글 — 숫자는 전부 R-1 facts·calc2_out에서 옮김(새 조사 숫자 없음, 짝 글 규칙)
+[오늘 찾은 것] 2026-10-13 쇼츠 r1s_fx(k1hsFpaLDH0, 10/14 19:20 공개) 짝 글 — 숫자는 전부 R-1 facts·calc2_out에서 옮김(새 조사 숫자 없음, 짝 글 규칙)
 - 2026-10-13 네이버 블로그 탭 '미국 ETF 환율 손실' 상위 8 · '환차손' 상위 8(toprank1/2.txt) — 대부분 가정 숫자(+10%/−10%) 설명, 실제 1년 일별 환율 구간은 1편(donneum, 5월 이후)
 - 검색수(demand.py 2026-10-13): 환차손 1,700 · 환헤지 1,460 · '미국ETF 환율' 10
 
@@ -13,5 +13,5 @@
 [F8] SPY는 S&P500 지수를 따라가는 미국 상장 ETF(SPDR S&P 500 ETF Trust) · 1억 = 100,000,000원(시작 평가액) — R-1 facts
 [계산] 9월 796,727 − 6월 862,184 = −65,457원 → '6만 5천원쯤 적었다'
 출처 URL: https://ecos.bok.or.kr (731Y001) · https://query1.finance.yahoo.com/v8/finance/chart/SPY · https://www.schwabassetmanagement.com/products/schd (분배금 표)
-[F9] 본편 R-1 롱폼 https://youtu.be/G1oI47miUuo (10/14 11:30 공개 예약, 예금·S&P500·SCHD·금 세후 1년 비교) · 쇼츠 r1s_fx https://youtu.be/2i957iWL8ko (10/14 19:20 공개) — slots.json 10/14 20:10 note·cardshorts/r1s_fx/upload.json · 이 글은 10/14 20:10 발행이라 "오늘 저녁 올라온 쇼츠"가 맞음
+[F9] 본편 R-1 롱폼 https://youtu.be/G1oI47miUuo (10/14 11:30 공개 예약, 예금·S&P500·SCHD·금 세후 1년 비교) · 쇼츠 r1s_fx https://youtu.be/k1hsFpaLDH0 (10/14 19:20 공개) — slots.json 10/14 20:10 note·cardshorts/r1s_fx/upload.json · 이 글은 10/14 20:10 발행이라 "오늘 저녁 올라온 쇼츠"가 맞음
 [계산] 환율이 그대로였다면 1억 × 769.64/669.22 = 115,005,529원 · 실제 111,210,188원 → 차 3,795,341원(약 380만원, 오른 몫 포함 환율 손실) · 원금 1억만 따지면 3,300,142원(F1) — 레드팀 10/13 지적 반영

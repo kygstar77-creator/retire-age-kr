@@ -1178,8 +1178,8 @@
    "kind": "cafe",
    "item": "qqqm1014",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-write 2026-10-13 07:2x 배정: QQQM vs QQQ 보수 원 금액(검색 33,120; 9/22 사실표 work/research/qqqm는 낡아 새로 조사) — 10/13 18:10 리츠 ETF와 다른 날이라 종목 축 겹침 없음 · 관문 기한 = 발행 6시간 전"
+   "gates_ok": "2026-10-13 15:24",
+   "note": "firemap-write 2026-10-13 07:2x 배정: QQQM vs QQQ 보수 원 금액(검색 33,120; 9/22 사실표 work/research/qqqm는 낡아 새로 조사) — 10/13 18:10 리츠 ETF와 다른 날이라 종목 축 겹침 없음 · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 15:24: 관문 통과 — \"QQQM에 1억 넣고 1년 보유한 결과, QQQ와의 실제 수익 차이\"(제목 끝말 충돌로 마지막에 교체해 재심사 안 함[전 제목 8.0]·표지 K2 8.0·compare.md 경쟁 8편·readcheck 제목 숫자 2개 1건·selfcheck 사실 0·aitell 2.6·레드팀 2회 숫자 일치·문장 손질 반영·전제 가능·editgate auto) · 경로 work/research/qqqm1014/pkg · 카페 #46(SEC 보수 설명)과 각도 다름: 실제 1년 기록"
   },
   {
    "at": "2026-10-14 19:20",

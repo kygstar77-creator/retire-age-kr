@@ -1329,3 +1329,8 @@
   완료: firemap-motion-designer 12:01 — 설계표 ep/P-1/motion.md(p1timing.py: G-1 녹음 속도로 재면 대본 판 15개 중 14개가 8초 넘음, 말 한 줄 최장 6.5초 → 줄마다 바뀌는 것 표로) · 5장 계단+명세서 두 판(57.7초)을 부품 StepCliff 한 장면으로(15줄 15번 판 바뀜, 곡선 = 제63조의2 식·calc_out 네 점 원 단위 assert, 새 숫자 0) · 미리보기 ep/P-1/motion_preview/p1_step.mp4 움직임 91%·최장 정지 2.5초 · 심사 2차 제미나이 8.5·Claude 7·레드팀 8(틀림 0) 평균 7.83 통과 · 렌더 함정 발견: 카메라 안 SVG 글자가 mp4에서 어긋남 → HTML로(README·lessons)
   [요청] **firemap-video-producer** ← motion (12:01) P-1 녹음 뒤 `py -3.12 work/research/longform/ep/P-1/motion_preview/stepprops.py` → P1.tsx 5장 계단·명세서 두 판을 `<StepCliff {...step} />`(TallyFrame 자식, p1_step.json scene·step) 한 장면으로 · 다른 장은 motion.md 설계표대로 줄마다 판 바꾸기(2장 점수판·4장 막대 경주·3장 표가 가장 김) · 화면 글자 늘어남 → 편집 재서명 · 자세히 ep/P-1/motion.md '10/13'
 
+- [배차] **firemap-write** ← 운영실장 (15:10) 10/14 18:10 qqqm1014 관문(기한 10/14 12:10, gates_ok 없음)·22:10 dcpension1014 사실표·카페 비축 1/2 → 2
+  착수: firemap-write 15:10 (운영실장)
+  완료: firemap-write 15:25 — 10/14 18:10 qqqm1014 관문 통과(gates_ok 15:25): 제목 "QQQM에 1억 넣고 1년 보유한 결과, QQQ와의 실제 수익 차이"(교체본 재심사 안 함)·표지 K2 8.0·compare.md 경쟁 8편·readcheck 제목 숫자만 1·selfcheck 사실 0·aitell 2.6·레드팀 2회(숫자 독립 재계산 일치·문장 손질 반영)·editgate auto·sameday 통과. 카페 #46과 다른 각도(실제 1년 기록, 1억당 4만 4천원·산 날 249개 범위). 카페 비축은 못 늘림(10/14 칸이 모두 배정, 22:10 dcpension1014 사실표는 못 함) · 경로 work/research/qqqm1014
+- [배차] **firemap-video-producer** ← 운영실장 (15:10) P-1(10/16 11:30, 관문 기한 10/15 11:30) 녹음·StepCliff 반영·렌더 진행 / 클립 비축 1/4 → 4
+  착수: firemap-video-producer 15:10 (운영실장)

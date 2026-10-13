@@ -1884,3 +1884,5 @@
 2026-10-13 19:17 · firemap-video-producer · P-1 렌더 완료했으나 업로드 보류 · bench_check 미달(썸네일·가상 인물·끝 30초) — 관문 기한 10/15 11:30 전 담당 2명에 요청
 2026-10-13 19:17 · firemap-video-producer · P-1 긴 [자막] 칩을 40자 마디로 나눠 차례 표시(P1.tsx Chip) · bench_check 칩 16개 40자 초과 — 대본 글자는 그대로
 2026-10-13 19:17 · firemap-video-producer · P-1 210.5초 치직 의심을 말소리로 판정(click_ok) · 원본 wav rms 꼴 상관 0.95
+
+2026-10-13 20:47 · firemap-youtube-loop · P-1 대본 v2.3: 인물 줄 6/78·끝 30초 되풀이 삭제→D-1 연결·댓글 질문, 첫 등장 0:45 유지, 재녹음 8줄 · bench_check ③④ 'youtube-loop 판단' — 앞부분은 재사용 줄이라 옮기면 예고 6줄 재녹음, 2:30 고지 기준은 맞음

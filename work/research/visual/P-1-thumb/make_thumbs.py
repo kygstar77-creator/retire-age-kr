@@ -185,7 +185,7 @@ _r7, X7 = ruler(60, 548, 880, col='#4B5262', dy=48)
 p1j = f"""<div style='position:absolute;inset:0;background:#EFE4CC'></div>
 <div class='t' style='left:48px;top:22px;font-size:76px;color:{NAVY}'>국민연금</div>
 <div style='position:absolute;left:30px;top:116px;width:{X7(A1) + 330:.0f}px;height:88px;background:{NAVY};border-radius:14px'></div>
-<div class='lab' style='left:58px;top:126px;font-size:62px;color:#fff'>{SM0J}</div>
+<div class='lab' style='left:58px;top:126px;font-size:62px;color:#fff'>{SM0}</div>
 <div class='t' style='left:52px;top:252px;font-size:60px;color:{NAVY}'>5년 당김</div>
 <div id='j0' class='t' style='left:{X7(A5) - 146:.0f}px;top:232px;font-size:100px;color:{NAVY}'>{S5}</div>
 <div style='position:absolute;left:{X7(A5) - 4:.0f}px;top:338px;width:8px;height:186px;background:{NAVY}'></div>
@@ -198,6 +198,11 @@ p1j = f"""<div style='position:absolute;inset:0;background:#EFE4CC'></div>
 <div class='fine' style='color:{INK};top:640px;left:60px;font-size:32px'>{SM1}</div>
 """
 VARIANTS['p1j'] = p1j
+
+
+# ── 6차(10/13) — SM0J 띠 '덜 당겼는데 4년 더 늦는 이유' 재심: 제미나이 7.5·7.5, Claude 5, 레드팀 5(오독 높음: '늦는'=수령이 늦다로 읽힘, '따라잡히는'이 화면에 없음)
+#    → copywriter 조건대로 p1j는 SM0 원문으로 되돌림(1회). p1l = p1j + 두 심사 공통 처방(띠 글자 62→80px·띠 진하게) — 문구는 그대로.
+VARIANTS['p1l'] = p1j.replace("left:30px;top:116px", "left:24px;top:110px").replace(f"width:{X7(A1) + 330:.0f}px;height:88px;background:{NAVY}", "width:990px;height:112px;background:#101A33").replace("left:58px;top:126px;font-size:62px", "left:50px;top:118px;font-size:82px")
 
 
 def check_zones(page):

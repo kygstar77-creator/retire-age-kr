@@ -36,7 +36,10 @@ def dong_months(d):
     m = re.search(rf'- {d} 동 전체: 1년 (\d+)건 · 4~5월 (\d+)건\(\d+%\) · 달별 (.+)', CALC)
     xs = re.findall(r'(\d\d\.\d\d) (\d+)', m.group(3))
     assert sum(int(n) for _, n in xs) == int(m.group(1)), d
-    return {'total': int(m.group(1)), 'spring': int(m.group(2)), 'months': [['20' + ym, int(n)] for ym, n in xs]}
+    end = re.search(rf'{d}: 기간 2025\.11 ~ (\d{{4}}\.\d\d)', CALC).group(1)      # 동마다 자료 마지막 달(calc_out 1: 가락 2026.10, 둔촌·고덕 2026.09)
+    ms = [['20' + ym, int(n)] for ym, n in xs if '20' + ym <= end]
+    assert sum(n for _, n in ms) == int(m.group(1)), d
+    return {'total': int(m.group(1)), 'spring': int(m.group(2)), 'months': ms}
 DONGV = {d: dong_months(d) for d in ['가락동', '둔촌동', '고덕동']}
 
 def deals_of(head):

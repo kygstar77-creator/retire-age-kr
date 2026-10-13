@@ -632,6 +632,7 @@ const Gap: React.FC<{s: HScene}> = ({s}) => {
   const Z = 1150, PX = 25, RH = 86;
   const lastRow = Math.max(...rows.map((r) => r[5]));
   const ex = k > lastRow ? Math.min(d.extra.length - 1, k - lastRow - 1) : -1;
+  const intro = k === 0 && Math.min(...rows.map((r) => r[5])) > 0;   // 첫 줄: 주황 카드만(기준선·작은 라벨은 칸이 나올 때부터)
   return (
     <>
       <div style={{position: 'absolute', left: 150, top: Y0, width: 420, height: 300, background: T.ink, borderRadius: 20, padding: '30px 34px', boxSizing: 'border-box', opacity: fade(f, 6)}}>
@@ -640,9 +641,9 @@ const Gap: React.FC<{s: HScene}> = ({s}) => {
         <div style={{...F, fontWeight: 700, fontSize: 22, color: T.daccent, wordBreak: 'keep-all'}}>{d.deposit[2]}</div>
       </div>
       {ex >= 0 ? <DarkCard f={f} x={150} y={Y0 + 330} w={420} at={at(lastRow + 1 + ex)} big={d.extra[ex]} bg={T.accent} size={32} /> : null}
-      <div style={{...F, position: 'absolute', left: 620, top: Y0 - 4, fontWeight: 700, fontSize: 24, color: T.ink3}}>{d.jeonse ? '전세로 옮기면 보증금이' : '사려면 더 드는 돈'}</div>
-      {k === 0 && Math.min(...rows.map((r) => r[5])) > 0 ? <DarkCard f={f} x={620} y={Y0 + 40} w={1160} at={8} big={d.jeonse ? '전세로 옮기면 보증금이' : '사려면 더 드는 돈'} small={s.sub ?? ''} bg={T.accent} size={52} /> : null}
-      <div style={{position: 'absolute', left: Z, top: Y0 + 26, height: RH * rows.length, borderLeft: `3px solid ${T.ink3}`}} />
+      {intro ? <DarkCard f={f} x={620} y={Y0 + 40} w={1160} at={8} big={d.jeonse ? '전세로 옮기면 보증금이' : '사려면 더 드는 돈'} small={s.sub ?? ''} bg={T.accent} size={52} />
+        : <div style={{...F, position: 'absolute', left: 620, top: Y0 - 4, fontWeight: 700, fontSize: 24, color: T.ink3}}>{d.jeonse ? '전세로 옮기면 보증금이' : '사려면 더 드는 돈'}</div>}
+      {intro ? null : <div style={{position: 'absolute', left: Z, top: Y0 + 26, height: RH * rows.length, borderLeft: `3px solid ${T.ink3}`}} />}
       {rows.map(([name, base, txt, v, , line], i) => {
         const a = at(line) + 8; const g = ease(f, a, 24); const top = Y0 + 30 + i * RH; const w = Math.abs(v) * PX * g; const neg = v < 0; const cur = k === line;
         return <div key={i} style={{opacity: fade(f, a - 4)}}>

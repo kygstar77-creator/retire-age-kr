@@ -32,7 +32,7 @@
 | firemap-improve | refactorcands.py 재측정(10/12~): #126·#81 rewrite·#56 제목(edittitle 적용 뒤) 7일 조회·카페탭 비교 | 카페 제목 금액 규칙(10/9) 재측정(10/23): 규칙 뒤 금액 제목 비율·하루당 조회 vs 규칙 전, 형식(계산형) 섞임 떼고 | 예금·이자 규칙(10/22)·배당ETF 제목 %→금액 규칙(10/24) 재측정: 규칙 뒤 해당 편 하루당 조회 vs 그 외 |
 | firemap-admin | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-watchdog | 카페 검색 기준선(cafe_search_baseline.json) 매 회차 재측정 스크립트화(work/cafesearch.py) — 한 편이라도 잡히기 시작하거나 잡히던 글이 빠지면 신호 | 막힌 묶음 13개(블로그 3·카페 10, 10/13 09:5x 재실측 — youthsave1010은 사진 2/3장만 채우면 산다) 폐기 목록 제안 — 제목만 고치면 살릴 카페 묶음은 editor 목록으로 | 메우기 결과를 로그 문자열이 아니라 카페 API 최신 글 번호+published.txt 시각으로 확인(10/12 '이미 올라가 있음'을 메움으로 적던 것은 고침 — 남은 건 글 번호 대조) |
-| firemap-audit | W-1·G-1 짝 카페 발행(10/13 08:10·10:10) 뒤 되읽기 — 본문 숫자·영상 링크가 공개 상태인지(G-1 11:30 뒤), 다음 회차 첫 일 | M-1 eTjVs1vDTwg 노출 멈춤 원인 — Studio 노출수로 노출 0인지 클릭 0인지 가르기 | containsSyntheticMedia 실물 확인 방법 찾기(videos.list에 안 나옴 — Studio 화면 또는 PD 업로드 로그) + dsrlim·saving·issnote 1차 출처 재조회 |
+| firemap-audit | 롱폼 노출 멈춤(G-1 9.5h 1회·W-1 25h 4회·M-1 21회) 원인 — Studio/Analytics impressions로 노출 0인지 클릭 0인지 가르기, 쇼츠는 살아 있음(BeBZ 1,036) | 10/15 07:20 BeBZ 48시간 판정 → c1clip 1.5배(450) 넘으면 proven-formats 등록 요청, 못 넘으면 10/15 c1clip 칸 다른 틀 요청 | containsSyntheticMedia 실물 확인(Studio 화면) + 재산 등급표 586점·ECOS 환율 1차 출처 재조회 |
 | firemap-soondol-deputy | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-loop | 쇼츠 utm 실유입 10/7 재측정(work/sql/yt_inflow.sql) — 14일 진짜 12기기(10/5 21:5x), 도착지 /calc/* vs 첫 화면 나눠 세기 | 카페 '예금·이자·금리' 묶음 10/9 재측정 — write가 비축 칸에 넣은 편이 하루당 조회 1.31(묶음 중앙값)을 넘는지, read_snaps 24시간 값이 왜 4편만 맞는지(30분 간격 찍기가 회차 사이에 안 돎?) | 롱폼 420b 10→224 원인 — YouTube Analytics 트래픽 소스(검색·추천)로 확인, 다른 롱폼 10~54와 비교 |
 | firemap-ai-lab | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

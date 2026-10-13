@@ -90,3 +90,4 @@
 
 - 10/13 r1s_startday: ① 롱폼 새 판(줄 삭제) 뒤 클립 생성기를 그냥 돌리면 이미 예약한 클립 props를 엉뚱한 줄로 덮는다 — 생성기는 이름 인자로만 돌린다 ② 유튜브 설명에 '>'·'<' 있으면 400 invalidDescription(ytlong은 전각으로 바꿈, 쇼츠 도구는 안 바꿈) ③ C1S 막대는 꼬리표 글자가 길면 왼쪽이 잘리고 6개면 이름이 겹친다 → 큰 글자는 짧게, 6개 이상은 receipt 줄 목록 ④ remotion 웹팩 캐시 EPERM은 --bundle-cache=false
 - 10/13 23시 w1s_kospi: '지난주'라고 말하는 주간 롱폼(W-1) 클립은 사용 기한(다음 일요일)을 upload.json use_by·reserve status에 적는다 · C1S receipt 판은 4줄까지(5줄째 잘림), 4줄이면 side 글이 판 아래와 겹친다
+- 10/14 h1s_gap·d1s_when: 롱폼 큰 글자 칸에 단지 이름처럼 긴 고유명사를 넣으면 세로 판에서 잘린다 → 동네·짧은 말을 큰 글자로, 이름은 아래 줄 · 제미나이 목소리 편 클립은 deess 기본 필터(--chirp-short는 Chirp 전용) · 쇼츠 제목 심사 1위라도 숫자 3개 넘으면 쓰지 않는다 · 이미 나간 카드 쇼츠와 같은 질문 금지 → cardshorts/ 에서 그 숫자로 grep 먼저

@@ -1,0 +1,32 @@
+{
+ "name": "h1s_gap",
+ "ep": "H-1",
+ "from_long": "rVg0pQVo_wk",
+ "mp4": "work/video/out/h1s_gap_ds.mp4",
+ "publishAt": "2026-10-17T07:20:00+09:00",
+ "use_after": "2026-10-15 11:30 (H-1 롱폼 공개 뒤)",
+ "title": "전세 9억 5천으로 헬리오시티·포레온 가려면 얼마 더? #shorts",
+ "description": "전체 계산: https://youtu.be/rVg0pQVo_wk\n가상 인물 계산 · 세금·중개보수·대출 넣지 않은 단순 차액 · 투자 권유 아님\n\n고덕동 래미안힐스테이트고덕 84㎡대 전세 보증금 9.50억(같은 평형 신규 전세 65건의 가운데 값)을 그대로 두고, 84㎡대 1년 매매 가운데 값과의 차이를 뺐어요.\n사려면 고덕아남 +5.70억, 래미안힐스테이트고덕 +10.70억, 고덕그라시움 +14.60억, 올림픽파크포레온 +18.75억, 헬리오시티 +19.00억이 더 들어요.\n전세로만 옮기면 고덕그라시움 +0.50억, 헬리오시티 +3.00억, 올림픽파크포레온 +4.50억이고, 고덕아남(1996.03 입주)은 보증금이 4.20억 남아요.\n\n출처: 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 파이어맵 계산\n대출 한도는 사람마다 달라 계산하지 않았고, 어디로 가라는 말이 아닙니다.\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.\n\n#shorts #헬리오시티 #전세",
+ "tags": "헬리오시티,올림픽파크포레온,고덕 전세,전세 만기,84㎡ 실거래",
+ "title_review": {
+  "gemini-3.1-flash-lite": "9 (B안, h1s_gap/title_gemini2.json · 3.8-flash 429)",
+  "PD": 7.5,
+  "avg": 8.25,
+  "len_no_hashtag": 31,
+  "numbers": 1,
+  "PD_why": "단지 이름이 둘째 자리·포레온 줄임말 −, 매매·전세 둘 다 답하는 질문이라 낚시 아님",
+  "changed": "심사안 B '9.5억' → '9억 5천'(원문 표기 '9억 5천만원', 숫자 대조 통과용, 뜻 같음)"
+ },
+ "same_day_pair": "10/17 19:20 칸은 H-1 아닌 다른 롱폼 클립",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "9Yftl4x-vRc",
+ "uploaded_at": "2026-10-14 02:31:45",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-16T22:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

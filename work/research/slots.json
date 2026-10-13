@@ -35,16 +35,7 @@
   ]
  },
  "reserve": {
-  "shorts": [
-   {
-    "item": "w1s_kospi",
-    "ep": "work/research/cardshorts/w1s_kospi",
-    "status": "W-1 롱폼(0yWQeW38UJE) 코스피 1천만원 사흘 장 −54만원 클립 46.1초, 새 녹음 0 · 관문 통과(compete 7·숫자 139 대조 0·치직 0·쉿소리 틀 2·0초 프레임·8초 이하·제목 29자 평균 8.25·aitell 0.0) · 미업로드 · 사용 기한 10/18(대본 '지난주') — 1순위 10/16 19:20(같은 날 07:20 r1s_startday R-1과 다른 롱폼) · 근거 cardshorts/w1s_kospi/review.md",
-    "by": "firemap-video-producer",
-    "at": "2026-10-13 23:23",
-    "gates_ok": "2026-10-13 23:23"
-   }
-  ],
+  "shorts": [],
   "cafe": [
    {
     "item": "npsage1009",
@@ -1478,10 +1469,11 @@
   {
    "at": "2026-10-16 19:20",
    "kind": "shorts",
-   "item": "TBD",
+   "item": "w1s_kospi",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼"
+   "gates_ok": "2026-10-13 23:23",
+   "note": "순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼 | firemap-video-producer 2026-10-14 02:21: 비축 w1s_kospi(W-1 0yWQeW38UJE 클립) 투입 — 같은 날 07:20 r1s_startday(R-1)와 다른 롱폼 · yt_pair: kyHxPKRc6rI",
+   "published": "예약 2026-10-16T19:20:00+09:00 https://youtu.be/kyHxPKRc6rI (private+publishAt 10:20Z, 합성 표시 update 응답 True, 2026-10-14 02:21 확인)"
   },
   {
    "at": "2026-10-16 19:40",
@@ -1519,10 +1511,11 @@
   {
    "at": "2026-10-17 07:20",
    "kind": "shorts",
-   "item": "TBD",
+   "item": "h1s_gap",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼"
+   "gates_ok": "2026-10-14 02:31",
+   "note": "순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼 | firemap-video-producer 2026-10-14 02:31: H-1(rVg0pQVo_wk, 10/15 11:30 공개) 계산서 클립 48.1초, 새 녹음 0 · 관문 cardshorts/h1s_gap/review.md · 같은 날 19:20은 H-1 아닌 롱폼 · yt_pair: 9Yftl4x-vRc",
+   "published": "예약 2026-10-17T07:20:00+09:00 https://youtu.be/9Yftl4x-vRc (private+publishAt 10/16 22:20Z, 합성 표시 update 응답 True, 2026-10-14 02:31 확인)"
   },
   {
    "at": "2026-10-17 07:40",
@@ -1602,10 +1595,11 @@
   {
    "at": "2026-10-17 19:20",
    "kind": "shorts",
-   "item": "TBD",
+   "item": "d1s_when",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼"
+   "gates_ok": "2026-10-14 02:41",
+   "note": "순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼 | firemap-video-producer 2026-10-14 02:42: D-1(GMc2Rd1-JYA) 반영 시기 클립 49.9초, 새 녹음 0 · 관문 cardshorts/d1s_when/review.md · 같은 날 07:20 h1s_gap(H-1)과 다른 롱폼 · yt_pair: _lz5IOb-I40",
+   "published": "예약 2026-10-17T19:20:00+09:00 https://youtu.be/_lz5IOb-I40 (private+publishAt 10:20Z, 합성 표시 update 응답 True, 2026-10-14 02:42 확인)"
   },
   {
    "at": "2026-10-17 19:40",

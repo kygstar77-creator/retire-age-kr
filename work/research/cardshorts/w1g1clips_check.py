@@ -5,9 +5,9 @@ import os, re, sys, json
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.normpath(os.path.join(HERE, '..', '..'))
-_N = (sys.argv[1:] or ['w1s_div'])[0]; _E = {'w1': 'W-1', 'g1': 'G-1', 'r1': 'R-1'}[_N[:2]]; _J = _E[0].lower() + '1.json'   # 10/12 22시 R-1 추가
+_N = (sys.argv[1:] or ['w1s_div'])[0]; _E = {'w1': 'W-1', 'g1': 'G-1', 'r1': 'R-1', 'h1': 'H-1', 'd1': 'D-1'}[_N[:2]]; _J = _E[0].lower() + '1.json'   # 10/12 22시 R-1 추가
 EP = os.path.join(WORK, 'research', 'longform', 'ep', _E)   # 10/12 PD: W-1·G-1 쇼츠용(한 번에 한 편)
-SRC = open(os.path.join(EP, 'facts.txt'), encoding='utf-8').read() + '\n' + open(os.path.join(EP, 'calc_out.txt'), encoding='utf-8').read()
+SRC = open(os.path.join(EP, 'facts.txt'), encoding='utf-8').read() + '\n' + (open(os.path.join(EP, 'calc_out.txt'), encoding='utf-8').read() if os.path.exists(os.path.join(EP, 'calc_out.txt')) else '')   # 10/14: D-1은 calc_out 없음(계산은 facts [계산] 줄)
 # 편집 통과한 롱폼 화면 글자(video/c1.json — 자막·칩·그림 글자·눈금, calc_out 문구에서 뽑은 것)도 원문으로 본다
 def _flat(x, out):
     if isinstance(x, dict): [_flat(v, out) for k, v in x.items() if k not in ('audio', 'frames')]

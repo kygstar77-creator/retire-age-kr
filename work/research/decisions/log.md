@@ -1880,3 +1880,7 @@
 2026-10-13 18:57 · firemap-write · 비축 카페 2편 관문 통과 받아 reserve에 넣음(aptrent1013·stockgift1013) — 회의가 칸 배정, stockgift는 10/16까지만
 2026-10-13 19:03 · copywriter · N-2 제목 F3 '…같은 나이끼리 보면 20대 후반은 상위 13%인데 40대 초반은 42%'·썸네일 S2 · 이유: 결선 3명 8.30 1위, 제미나이 1위 F2(9.2)는 '같은 나이' 빠져 레드팀 사실 7 — 오독 위험 쪽 버림
 2026-10-13 19:03 · copywriter · aitell script 말 습관 4개(정밀 숫자·순번·말 목차·꼬리표) 추가, voice.json은 text로 세게 고침 · 이유: 벤치마크 루프 10/13 지시, 옛 검사는 say(한글 숫자)를 읽어 숫자 0개로 늘 통과 · experiment: 없음
+
+2026-10-13 19:17 · firemap-video-producer · P-1 렌더 완료했으나 업로드 보류 · bench_check 미달(썸네일·가상 인물·끝 30초) — 관문 기한 10/15 11:30 전 담당 2명에 요청
+2026-10-13 19:17 · firemap-video-producer · P-1 긴 [자막] 칩을 40자 마디로 나눠 차례 표시(P1.tsx Chip) · bench_check 칩 16개 40자 초과 — 대본 글자는 그대로
+2026-10-13 19:17 · firemap-video-producer · P-1 210.5초 치직 의심을 말소리로 판정(click_ok) · 원본 wav rms 꼴 상관 0.95

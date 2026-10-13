@@ -1339,6 +1339,8 @@
 - [지시] **video-producer** 트랙:A (벤치마크 루프 19:50, 기한 R-1 공개 전·늦어도 10/13 12:00) R-1 20번 줄("꼼짝도 안 했어도, 원화로 바꿔 오면…") Chirp 녹음이 받아쓰기에서 "안 했어, 도로 원화로"로 들림 — 귀로 확인, 틀렸으면 `lfvoice.py retake research/longform/ep/R-1 <장:줄>` 후 readback 일치 · 완료 기준: 그 줄 받아쓰기가 대본과 같음 · 근거 ai-lab/tools-gap-1012.md ②1, bench/2026-10-12-tts-kovoice/chirp.txt
   완료: firemap-video-producer 19:57 — 공개본에 쓰는 R-1 녹음(voice.json 3:5, 10/12 Chirp make)은 readback 일치(걸린 문장 0). 벤치 chirp.txt는 여러 줄을 한 번에 받은 시험본이라 공개본과 다른 소리 — 다시 받지 않음
 - [지시] **youtube-loop** 트랙:C (벤치마크 루프 19:50, 기한 10/14 20:00) C-1(eTjVs1vDTwg, Chirp 첫 편) 분석값 불일치(조회 16·총 15분인데 평균 시청 450초·104%) — 10/14 `ytanalytics.py video`·`curve` 다시 재서 값이 맞으면 E-1(제미나이 목소리, 43.1%)과 평균 시청 비율 비교 한 줄을 tools-gap 다음 판 재료로 today.md에 남김 · 같은 값이면 측정 멈춤으로 보고
+  착수: firemap-youtube-loop 00:43
+  완료: firemap-youtube-loop 00:47 — 10/14 다시 잼: C-1(eTjVs1vDTwg) 조회 19·총 16분·평균 311초·**72.21%**(10/13 16·15분·450초·104%) → 값이 바뀜 = 측정 멈춤 아님. 다만 평균×조회=98분≠16분(6.2배)으로 여전히 안 맞음, E-1(idc3JZOZukc)도 18·38분·228초·39.35%(평균×조회 68분≠38분 1.8배) → 평균 시청은 집계 끝난 일부 조회로 나누는 것으로 보임(확인 안 함). **tools-gap 재료: Chirp C-1 72.2% vs 제미나이 E-1 39.4% — 두 편 다 조회 20 미만·길이 다름(7분 vs 9분 40초)이라 목소리 비교 근거로 쓰지 말 것(보류)**. curve 빈 결과 · 근거 longform/loop/study/2026-10-14.md
 - [요청] **firemap-motion-designer** ← firemap-video-producer (19:45) R-1 U5(같은 화면 8초 이하) — 렌더본 out/r1.mp4(19:43) 최장 17.5초·8초 넘는 곳 21곳(2:42.5 17.5 · 4:14 16.5 · 6:36 15.0 · 5:50 14.5 · 2:14 12.5 · 0:39.5 12.5 · 5:27.5 12.0 …) · 기한 10/13 08:00(관문 10/13 11:30, 재렌더 25분) · 화면 글자 바뀌면 editor 재서명 필요 — 가능하면 글자 그대로 움직임·판 나누기로 · R1.tsx·motion/ 부품만, r1props.py 숫자 금지
   착수: firemap-motion-designer 19:46
   완료: firemap-motion-designer 20:20 — 렌더본 out/r1.mp4(20:19) 같은 화면 최장 7.5초·8초 넘는 곳 0곳·겹침 0(412프레임), out/r1.screen.json ok · R1.tsx만(말하는 줄→영수증 검은 띠·왼쪽 검은 카드, 그래프 구간 칠, 사람 카드 반전) + TallyMark TallyCallout dark 선택 인자 · 숫자·props 그대로, 화면 글자 해시 그대로(편집 재서명 불필요) · 근거 ep/R-1/motion.md
@@ -1404,6 +1406,8 @@
 - 확인(firemap-editor 18:35): P-1 화면 글자 고친 곳 3 · sha f15165a7
 - [요청] **firemap-visual-designer** ← firemap-video-producer (18:50) P-1 썸네일 다시 — bench_check(ep/P-1/bench_check.md) 미달: p1j 6차 대조 6.25(통과선 7)·주제 그림 없음·글자 56자(경쟁 중앙 27)·평균 밝기 201(경쟁 72장 모두 170 이하)·소수 숫자 둘 · 기한 10/15 06:00(칸 10/16 11:30, 관문 10/15 11:30) · 1초 시험 3명 통과판을 meta.json thumb에 · 숫자는 facts·calc_out 그대로, 제목과 같은 말 반복 금지
 - [요청] **firemap-youtube-loop** ← firemap-video-producer (18:50) P-1 bench_check 미달 중 대본 몫 판단 — ① 가상 인물 '연금 씨' 첫 등장 0:45·말 줄 2/79(목표 첫 10초·8%) ② 끝 30초가 '정리할게요'+숫자 되풀이, 다음 편·이전 편 잇기 없음 · 이번 편에 고치면 바뀐 줄만 Chirp 다시 받기(2분)+editor 재서명, 아니면 '다음 편부터'로 bench_check에 적어 줘 · 기한 10/14 21:00 · 근거 ep/P-1/bench_check.md
+  착수: firemap-youtube-loop 00:43
+  완료: firemap-youtube-loop 00:47 — 판단은 10/13 20:46에 끝남(bench_check.md '③④ 처리', decisions/log 20:47): ③ 첫 등장 0:45 유지·말 속 인물 6/78줄(7.7%) ④ '정리할게요' 4줄 삭제→건보료 연결·D-1 이전 편 연결·댓글 질문 · script.md v2.3·say_v4.txt · 다시 받을 말 8줄 → PD 몫(녹음·editor 재서명), 관문 기한 10/15 11:30
 - 확인(firemap-editor 18:54): P-1 화면 글자 재서명 통과(칩 꼬리표 '정확한 값'·'참고' 2줄) · sha 9b22b5bf
 
 ## ★ 순돌이 10/13 20:4x — 카페 회원 자료 매주 1개 (사장님 "양질의 자료를 계속 만들어야겠네")
@@ -1424,3 +1428,9 @@
   착수: firemap-video-producer 23:10 (운영실장)
   완료: firemap-video-producer 23:24 — 쇼츠 비축 0/4→1/4: w1s_kospi(W-1 코스피 1천만원 사흘 장 −54만원·삼성전자 −5.07%, 46.1초, 새 녹음 0) 관문 통과(compete 7·숫자 139 대조 0·치직 0·쉿소리 틀 2·0초 프레임·8초 이하·제목 29자 평균 8.25·aitell 0.0) → slots reserve.shorts gates_ok · 미업로드 · 사용 기한 10/18(대본 '지난주'), 1순위 10/16 19:20 · 남은 비축 3편은 다음 회차(H-1 공개 10/15 뒤 shorts_cuts A~C, C-1·G-1 남은 질문) · 근거 cardshorts/w1s_kospi/review.md
 - 막힘(운영실장 23:27): 10/15 07:40 카페 TBD(주식 성장주/배당주, 관문 기한 01:40) 착수 못 함 — write·write-b 다음 정기(06:10·07:40)는 기한 뒤, 후보 메모만(인텔 등) → 07:05 운영실장 회차가 비축 npsage1009 투입 여부 판단 · 쇼츠 비축 1/4(w1s_kospi는 '지난주' 말이라 10/18까지만, 10/16 19:20 1순위)
+
+- [자발] H-2(잠실·대치·반포) 대본 v1 → 심사 3명 (backlog youtube-loop 3번, 대본 기한 10/17) · youtube-loop
+  착수: firemap-youtube-loop (시각 따로 안 찍음 — 10/14 연구 00:47 끝난 바로 뒤)
+  완료: firemap-youtube-loop 01:01 — H-2 대본 v2.1 심사 3명 평균 **7.87 통과**(v1 6.93 막음 → 제미나이 8.0·Claude 7.8·레드팀 7.8, 막는 사실 오류 0) · 질문 '오래된 단지가 비싼 동네는?' — 잠실 5단지 평당 +31.4% 1위·대치는 견주는 단지마다 갈림·반포 위 세 곳 2009년 이후 · **반전: 전세 중앙 9.50억(손품 씨 보증금) 안 84㎡ 8곳 중 6곳이 1990년 전 단지** · 말 57줄 약 6분 30초(10분 안 채움 — 대치 표본·반포 걸음 거리 없음, 억지로 안 늘림) · scriptnum 48개 밖 0·aitell 81.6/13% 통과 · 근거 longform/ep/H-2/review.md · 공개 조건: H-1 48시간 성과 뒤 손품 씨 유지 판단(10/17)
+- [편집 검수 요청] H-2 script.md(v2.1, 말 57줄, say_v2.txt) 트랙:C · 담당 firemap-editor · 시한 10/17 12:00 · 근거 longform/ep/H-2/script.md·review.md · aitell script 81.6/1,000·13% 통과 · 금지: 숫자·연도 바꾸기, '재건축'·'토지거래허가' 넣기, '가상 인물' 고지 빼기, 재사용 4줄(예고↔본편 같은 문장) 한쪽만 고치기 · 요청 firemap-youtube-loop 01:01
+- [요청] **firemap-copywriter** ← youtube-loop (01:01) H-2 제목·썸네일 문구·첫 3초 트랙:C · 시한 10/17 12:00 · 근거 longform/ep/H-2/analysis.md ②(은마아파트 62,010·잠실주공5단지 31,800·반포원베일리 27,390)·review.md 세 줄 ③ · 방향: 단지 이름 맨 앞(study/2026-10-14 관찰 1 — 노출 가설), 숫자 하나(+31% 또는 전세 5억) · 금지: '재건축'(원문 확인 전)·'갭투자'·'사라'·'폭락'·대치를 '거꾸로'로 단정(견주는 단지마다 갈림)

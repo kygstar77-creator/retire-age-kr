@@ -19,7 +19,9 @@ AREAS = ['주식 투자', '성장주', '배당주 배당금', 'ETF 추천 비교
 OURS = 'UCV3ZcSho5Z1i8k_FAiKPlVg'
 
 def sec(d):
-    m = re.match(r'P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?', d or ''); a = [int(x or 0) for x in m.groups()]
+    m = re.match(r'P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?', d or '')
+    if not m: return 0  # 라이브·예정 영상은 duration이 비어 있다(10/14 멈춤)
+    a = [int(x or 0) for x in m.groups()]
     return a[0]*86400 + a[1]*3600 + a[2]*60 + a[3]
 
 def seed_video_ids():

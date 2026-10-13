@@ -52,7 +52,7 @@ for lawd, umd, tk in DONG:
         B[(umd, apt)] = dict(n=len(rows), med=med, ppy=ppy, built=built, jm=jm, rows=rows)
         print(f"- {apt}(건축 {built}) {len(rows)}건 중앙 {eok(med)} · 평당 {ppy:,.0f}만원 · 최저 {eok(min(amts))} 최고 {eok(max(amts))} · 직거래 {direct} · 순수전세 {len(js)}건 {eok(jm) if jm else '-'}" + (f' · 전세가율 {jm/med*100:.1f}%' if jm else ''))
 
-print('\n## 2. 같은 동네 오래된 단지 vs 새 단지(84㎡대 평당 중앙) — 건축 1990 이전을 오래된 단지로')
+print('\n## 2. 같은 동네 오래된 단지 vs 새 단지(84㎡대 평당 중앙) — 1990년 전(1990 제외) 건축을 오래된 단지로')
 for umd in ('대치동', '잠실동', '반포동'):
     items = [(a, v) for (u, a), v in B.items() if u == umd and v['n'] >= 5]
     old = [(a, v) for a, v in items if str(v['built']).isdigit() and int(v['built']) < 1990]

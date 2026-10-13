@@ -103,6 +103,44 @@ SHORTS['g1s_buyday'] = dict(
   ],
 )
 
+# ── G-1 둘째 클립: 같은 날 1천만원, 산 길 따라 (줄 52·53 → 40 → 41 → 44 → 47 → 50·51) — PD 10/13, g1s_buyday(산 날)와 다른 질문 ──
+def _at_word(ls, i, word):   # 줄 i 안에서 word가 나오는 글자 위치를 말 길이 비율로 프레임에 맞춘다(자막 조각과 같은 어림)
+    t = ls[i]['text']; k = t.find(word); assert k >= 0, word
+    return sum(l['frames'] for l in ls[:i]) + int(round(k / len(t) * (ls[i]['frames'] - 8)))
+p0 = L(52, 53)
+p1 = L(40)
+p2 = L(41)
+p3 = L(44)
+pb = L(47)   # 10/13: 첫 판(줄 42 양도세)은 '두 번째→네 번째'로 세 번째가 빠져 들림 → 42 빼고 골드뱅킹 47
+p4 = L(50, 51)
+SHORTS['g1s_paths'] = dict(
+  question=['금 1천만원,', '어느 길로 샀나요?'], hot='어느 길',
+  base='KRX 금시장 종가 2026-10-06 기준 · 지나간 값',
+  answer=dict(label='2025-10-02 1천만원어치 · 오늘(10/6) 받는 돈', items=['KRX 금시장 956만원', '골드바 869만원'], arrow=False,
+              note='금 ETF 947만원 · 골드바는 금값 몫 어림 · 수수료 별도'),
+  scenes=[
+   scene('bars', '같은 날, 산 길 3개', GS['pathcmp']['source'], p0, head='작년 1천만원어치 · 오늘 받는 돈(만원)', full=True,   # full: 판 +90프레임
+         bars=[['골드바', 869, '869만원', 0, 'fall', '금값 몫 어림'], ['KRX 금시장', 956, '956만원', at(p0, 1) + 90, 'ink', None],
+               ['금 ETF', 947, '947만원', at(p0, 1) + 120, 'ink', None]], max=1000),
+   scene('receipt', '금 사는 길 4개', GS['paths']['source'], p1, head='금 사는 길 4개', size=46,
+         rows=[['KRX 금시장', '증권사 계좌', 'in', 0], ['금 ETF', '주식처럼 사고팜', 'in', _at_word(p1, 0, '금 ETF')],
+               ['골드뱅킹', '은행 통장', 'in', _at_word(p1, 0, '골드뱅킹')], ['골드바', '실물', 'in', _at_word(p1, 0, '골드바')]]),
+   scene('receipt', 'KRX 금시장 세금', GS['krx']['source'], p2, head='KRX 금시장 · 세금', size=46,
+         rows=[['부가가치세', '면제', 'in', 0], ['판 차익 양도세', '없음', 'in', 50]],
+         side=['세금 0', 85, '사고파는 동안']),
+   scene('receipt', '금 ETF', GS['etf']['source'], p3, head='금 ETF · 1천만원 · 단위 원', size=46,
+         rows=[['오늘 받는 돈', '9,472,686', 'net', 0], ['KRX 금이었다면', '9,556,861', 'dim', _at_word(p3, 0, 'KRX 금보다')]],
+         side=['−5.27%', 20, '1년 전에 산 금 ETF']),
+   scene('receipt', '골드뱅킹', GS['bank']['source'], pb, head='골드뱅킹 · 은행 고시 기준', size=46,
+         rows=[['기준가격', '국제 금가격 × 환율', 'dim', 0], ['살 때', '+1.00%', 'tax', _at_word(pb, 0, '살 때')], ['팔 때', '−1.00%', 'tax', _at_word(pb, 0, '팔 때')]],
+         side=['1%씩', _at_word(pb, 0, '각각'), '살 때 한 번, 팔 때 한 번']),
+   scene('receipt', '골드바 부가세', GS['bar']['source'], p4, head='골드바 · 1천만원을 내면', size=46,
+         rows=[['부가세', '909,091원', 'tax', 0], ['금값 몫', '9,090,909원', 'in', _at_word(p4, 0, '부가세') - 30],
+               ['살 때 수수료·팔 때 값 차이', '별도', 'dim', _at_word(p4, 1, '살 때')]],
+         side=['+10%', at(p4, 1), '금값이 올라야 낸 돈만큼']),
+  ],
+)
+
 
 def build(name, d):
     sc = d['scenes']
@@ -113,6 +151,7 @@ def build(name, d):
 
 if __name__ == '__main__':
     for name, d in SHORTS.items():
+        if sys.argv[1:] and name not in sys.argv[1:]: continue   # 10/13: 이름을 주면 그 편만 다시 씀
         p = build(name, d)
         fr = sum(s['frames'] for s in p['scenes'])
         json.dump(p, open(os.path.join(VID, name + '.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

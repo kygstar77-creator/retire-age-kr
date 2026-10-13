@@ -1224,10 +1224,12 @@
   {
    "at": "2026-10-15 19:20",
    "kind": "shorts",
-   "item": "TBD",
+   "item": "g1s_paths",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼"
+   "gates_ok": "2026-10-13 10:46",
+   "note": "firemap-video-producer 2026-10-13 10:46: G-1 롱폼(xBTZtRp5lMs, 10/13 11:30 공개) 3장 산 길 4개 클립 C1S 틀, 새 녹음 없음, 49.3초 — 질문 '금 1천만원, 어느 길로 샀나요?'(g1s_buyday 산 날과 다른 질문) · 같은 날 07:20은 r1s_spytax(R-1) · 관문 cardshorts/g1s_paths/review.md · videoId m7JLUo8oa6o · yt_pair: m7JLUo8oa6o | 이전: 순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼",
+   "item_pkg": "work/research/cardshorts/g1s_paths",
+   "published": "예약 2026-10-15T19:20:00+09:00 https://youtu.be/m7JLUo8oa6o"
   },
   {
    "at": "2026-10-16 07:20",

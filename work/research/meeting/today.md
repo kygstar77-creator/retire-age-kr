@@ -55,6 +55,7 @@
   완료: firemap-write 12:46 — 12:10 issnote1012 cafe/259 발행 12:46 verify OK 1955/1955자·사진 3/3 · 10/14 16:10 cheongyak1012(청약통장 해지 추징, 세율별 감면 대 추징·퇴직 6개월 예외) gates_ok 12:37(제목 8.0·표지 Q5 8.0·compare.md 경쟁 8·readcheck 0·selfcheck 사실 0·aitell 0.0·레드팀 2회 틀림 1 반영·전제 가능·editgate auto) · 남은 것: 10/14 18:10 qqqm(기한 12:10)·20:10 r1cafe_fx·22:10 dcpension, 비축 카페 2/2
   착수: firemap-write 14:21 — 14:10 kidcred1012 발행·verify · 남은 칸 관문 점검
   완료: firemap-write 14:42 — 14:10 kidcred1012 cafe/260 발행 14:41 verify OK 1840/1840자·사진 3/3 · 10/14 20:10 r1cafe_fx1014(쇼츠 r1s_fx 짝, "미국 ETF 환차손, 달러로 번 1년 수익은 원화로 몇 % 줄었을까", 영상 2i957iWL8ko·본편 G1oI47miUuo) gates_ok 14:38(제목 8.0·표지 K2 8.0·compare.md 경쟁 4·readcheck 0·selfcheck 사실 0·aitell 0.0·레드팀 2회 틀림 1 반영·전제 가능·editgate auto·titlegate·sameday 통과) · 남은 것: 10/14 18:10 qqqm1014(기한 지남, 카페 #46과 같은 각도 — 막히면 비축분으로)·22:10 dcpension1014(기한 16:10)
+  착수: firemap-write 16:21 — 16:10 yuryu1011 발행·verify · 10/14 18:10 qqqm1014·22:10 dcpension1014 관문
 - [지시] **firemap-write** (기한 10/14 12:00, 레드팀 R2) 의도: 카페에도 전제 관문 · 완료 기준: editgate.py stamp가 카페 pkg review/compare에 '전제:'(가능/불가능 + facts 근거) 줄 없으면 '안 찍음' + 대기 편(issnote1012·kidcred1012·yuryu1011·npsage1009)에 '전제:' 줄 · 시험: 임시 사본에서 줄 빼면 거부 · 금지: 사이트 코드 · 보고: today.md 완료 줄+커밋
   완료: firemap-write 20:45 — editgate.py stamp가 카페 pkg의 review.md/compare.md(pkg 또는 위 폴더)에 '전제: 가능 — <근거>' 줄이 없거나 '불가능'·근거 없음이면 '안 찍음 · 전제 관문' · 시험: inhded1011 임시 사본에서 줄 뺌→거부, 불가능→거부, 가능+근거→찍음 · issnote1012·kidcred1012·yuryu1011·npsage1009 review.md에 전제 줄(전부 가능, facts 번호) — 기존 날인 해시 그대로 일치
 - [지시] **firemap-report** (기한 10/13 12:30 회차, 레드팀 R1) 의도: 사이트 유입 1/3 감소(10/7 33기기 → 10/11 12, utm youtube 7 → 0) 원인 · 완료 기준: sitedaily로 10/5~10/12 날짜별 외부 기기·utm source 표를 growth/revenue.md에, 줄어든 source 한 줄 원인(설명란 링크 위치 변경 10/11 등 날짜 대조) + 쿠팡·애드센스 화면 실측(10/12 확인 안 함) · 금지: 추정 숫자 · 보고: launch-checklist 39 경보 줄
@@ -326,6 +327,19 @@
   완료: firemap-write 10:30 — 10:10 spouseinh1007 cafe/226 발행 10:26 verify OK 1757/1757자·사진 3/3 · **10/8 08:10 칸 교체**: 배정된 nhisrent1005가 #209(10/5 '건강보험료 재산 점수 과세표준 3억')와 같은 대상·예시라 naverpost가 '같은 대상 이미 씀'으로 막고 있었음(그대로면 10/8 08:10 빈칸) → hold.txt, 새 편 sanghan1008(본인부담상한제 환급금, 10/8 시행 국민건강보험법 제44조③ 체납액 공제 — 경쟁 상위 8편 0편, 검색 32,180) 관문 통과 gates_ok 10:30(제목 T1 7.5·표지 S2 7.33·레드팀 오류 2 반영·editgate auto) · 남은 일: 카페 비축 1/2(retmid1005만)
 - 막힘(회의 21:44): 롱폼 이틀 연속 0편 — 무료 TTS 한도·목소리 퍼짐. 풀 방법 = Chirp 3 HD 결제 계정 연결(approvals.md 맨 위, 사장님 결재). 결재 전까지 대본 100줄 상한 유지 · 담당 순돌이(결재 전달)
 - 막힘(회의 21:44): today.md 255줄(상한 150) — archive 옮기던 finishline-check 삭제로 담당 없음 → 운영실장(firemap-dispatcher) 10/7 03:05 회차가 완료 항목을 archive/2026-10-06.md로 옮김
+
+## ★ 순돌이 10/13 14:xx — 쉼표 쉼 (사장님 "AI 목소리가 쉼표를 제대로 못 읽는 것 같은데" → 샘플 3번 선택)
+- 실측(G-1 쉼표 든 실제 줄 10개, Chirp Charon 1.15):
+  - 지금 방식: 0.2초 넘는 쉼 10번
+  - 쉼표 뒤 [pause short]·문장 끝 [pause] 표시(markup 입력): 0.2초 넘는 쉼 20번
+  - 다만 전체 길이가 43.7초에서 49.3초로 13% 길어진다. 공식 문서 docs.cloud.google.com/text-to-speech/docs/chirp3-hd에 따르면 태그는 markup 필드에서만 듣고, 모델이 가끔 무시할 수 있다.
+- [지시·긴급] **firemap-video-producer**
+  - work/cloudtts.py에 markup 입력(쉼표 뒤 [pause short], 문장 끝 [pause])을 옵션으로 넣는다.
+  - lfvoice Chirp 경로에서 기본으로 쓰고, korsay 다음에 적용한다.
+  - 말 속도 관문(5.5음절/초)을 지키려면 speakingRate를 다시 맞춘다(편 전체 하나의 값).
+  - 받아쓰기로 '포즈'·'pause' 같은 태그가 소리로 읽히지 않는지 확인한다.
+  - 다음 새 녹음 편부터 적용한다(C-2·N-2·A-2). 이미 예약된 R-1·H-1은 다시 녹음하지 않는다.
+- korsay: '1월'을 '일 월'로 띄어 읽는다 → '일월'로 고친다(달 이름 전체).
 
 ## ★ 순돌이 10/12 22:xx — 카페 회원 자료 1호 발행 [근거: research/growth/calc-gap-1012.md(1순위), cafe-resource-1012/fin-excel-check.md(검산), naverpost-attach.md(파일·멤버공개 옵션)]
 - [지시·긴급] **firemap-write** 10/13

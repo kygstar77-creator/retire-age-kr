@@ -54,7 +54,9 @@
   "_meeting_1005": "회의 10/5 21:40(firemap-meeting) 비축 배정: 카페 1/2 → firemap-write가 10/6 14:10까지 관문 통과 예비 1편 추가(TBD-M 후보 중 남는 것 또는 nhisrent1005 예시 바꿔 10/8 이후용) · 쇼츠 1/1(nongji_age)이지만 10/6 19:20 gold1y 기한 07:20 못 넘으면 소진 → firemap-shorts가 10/6 12:00까지 예비 1편 더 · 롱폼 0/1(R-1 gates_ok 없음) → firemap-youtube-loop·video-producer가 R-1 재녹음(10/6 16:01)·editor stamp로 10/7 19:30 전 24시간(10/6 19:30)까지 관문, 못 넘으면 10/7 롱폼 칸 skip",
   "cafe_extra": [
    "issnote1012",
-   "kidcred1012"
+   "kidcred1012",
+   "kidcred1012",
+   "yuryu1011"
   ]
  },
  "slots": [
@@ -1062,18 +1064,18 @@
   {
    "at": "2026-10-13 14:10",
    "kind": "cafe",
-   "item": "kidcred1012",
+   "item": "finfile1013",
    "owner": "firemap-write",
-   "gates_ok": "2026-10-12 23:11",
-   "note": "firemap-meeting 2026-10-12 19:04: 관문 통과(10/11 14:45) 대기분 | firemap-write 2026-10-12 23:11: 전제 줄 확인·editgate stamp 통과(전제 가능)"
+   "gates_ok": null,
+   "note": "순돌이 10/13 13:3x: 회원 자료 1호(today.md 10/12 22:xx 지시) — 10:10·12:10에 넣어야 했는데 slots에 안 넣어 빠짐. 파일 글은 order.txt에 attach: work/research/growth/cafe-resource-1012/out/금융소득_건보료_판정_2026.xlsx · visibility: members, 원고 fin-file.md. 발행 뒤 로그아웃 창 확인 필수. 원고 fin-file.md · 밀린 kidcred1012는 비축"
   },
   {
    "at": "2026-10-13 16:10",
    "kind": "cafe",
-   "item": "yuryu1011",
+   "item": "finguide1013",
    "owner": "firemap-write",
-   "gates_ok": "2026-10-12 23:11",
-   "note": "firemap-meeting 2026-10-12 19:04: 비축(관문 10/11 12:36)에서 칸으로 — 상속세 inhded(10/11)와 이틀 띄움 | firemap-write 2026-10-12 23:11: 전제 줄 확인·editgate stamp 통과(전제 가능)"
+   "gates_ok": null,
+   "note": "순돌이 10/13 13:3x: 회원 자료 1호(today.md 10/12 22:xx 지시) — 10:10·12:10에 넣어야 했는데 slots에 안 넣어 빠짐. 파일 글은 order.txt에 attach: work/research/growth/cafe-resource-1012/out/금융소득_건보료_판정_2026.xlsx · visibility: members, 원고 fin-file.md. 발행 뒤 로그아웃 창 확인 필수. 원고 fin-guide.md(전체 공개) · 밀린 yuryu1011는 비축"
   },
   {
    "at": "2026-10-13 18:10",

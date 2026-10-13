@@ -64,3 +64,11 @@
 4. 미리보기: `npx remotion render src/motion/preview/entry.ts StockReel <out>.mp4 --props=<json> --scale=0.5 --pixel-format=yuv420p`
 5. 본편: 장 첫 장면 앞에 `<StockShot {...shot} />`(TallyFrame 밖, 화면 전체) dur 105(3.5초) — 장 첫 말을 그 위에 깔면 dur를 그 줄 길이로(8초 넘기지 말 것 — U5). 설명란 끝에 credits.json desc_line(used=true) 줄을 붙인다.
 6. 편마다 바뀜: 글자 쪽(한 편 안에서 번갈아 — side), seed로 밀어 들어가는 방향·제목 등장 방향·색 입힘(잉크/남색). 같은 컷을 다른 편에 다시 쓰지 않는다(credits.json used).
+
+## 문턱 위 계단(StepCliff) 쓰는 법 — '선을 넘으면 툭 깎인다'(감액·과세 구간 문턱, 10/13 P-1 5장)
+1. 재료 JSON: `seed·xMin·xMax·yMax·a·gap·cap·tiers[[초과 하한,그때 값,기울기]]·xticks·yticks·oldText·newText·plusText·zeroText·axisX·axisY·notWage·formula[]·salary·ask·jumpText·stair·pts[{x,text,at}]·capText·period·slips·zone·beats[15]`. 예: `research/longform/ep/P-1/motion_preview/stepprops.py`(곡선 식을 calc_out 점과 원 단위 assert).
+2. 미리보기: `py -3.12 research/longform/ep/P-1/motion_preview/steprender.py`(원래 크기 렌더 + 줄마다 스틸 + motioncheck). 0.5배 렌더로 심사하지 않는다.
+3. 규칙: 곡선은 식으로만(점은 calc_out과 맞는지 assert) · 원문 확인 안 된 옛 법 곡선은 그리지 않는다 · 가정(연금 월 100만원)은 세로축 제목에 늘 보인다 · 문턱 글자는 '이 선부터'(이상).
+4. U5: beats = 말 줄 시작 프레임. 줄마다 왼쪽 빈 칸(문턱 아래 0원 구간 위)에 카드가 바뀌어 들어오고 카메라 초점이 옮겨 간다 → 58초 장면에 8초 넘는 같은 화면 0.
+5. **SVG `<text>`는 카메라 변형(scale·translate) 안에서 렌더 프레임마다 자리가 어긋난다**(still은 정상, mp4만) — 축 눈금 같은 글자는 HTML div로 둔다.
+6. 편마다 바뀜: seed로 왼쪽 여백·카드 기울기. 다른 문턱 주제(건보 피부양자·금융소득 2천만원 등)는 tiers·축만 바꿔 쓴다.

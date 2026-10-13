@@ -8,6 +8,7 @@ import {BuyDateOpen, BuyDateOpenProps} from '../BuyDateOpen';
 import {WaterfallPieces, WaterfallPiecesProps} from '../WaterfallPieces';
 import {AsymClimb, AsymClimbProps} from '../AsymClimb';
 import {StockShot, StockShotProps} from '../StockShot';
+import {StepCliff, StepCliffProps} from '../StepCliff';
 import {Series} from 'remotion';
 
 type P = {scene: RScene; zoom: ZoomOutOpenProps};
@@ -50,6 +51,13 @@ const StockReel: React.FC<P6> = ({shots}) => (
   <Series>{shots.map((sh, i) => <Series.Sequence key={i} durationInFrames={sh.dur}><StockShot {...sh} /></Series.Sequence>)}</Series>
 );
 
+type P7 = {scene: RScene; step: StepCliffProps};
+const P1Step: React.FC<P7> = ({scene, step}) => (
+  <TallyFrame title={scene.title} sub={scene.sub} source={scene.source} chapter={scene.chapter} lines={scene.lines}>
+    <StepCliff {...step} />
+  </TallyFrame>
+);
+
 export const PreviewRoot: React.FC = () => (
   <>
   <Composition id="OpenZoom" component={OpenZoom as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
@@ -70,5 +78,8 @@ export const PreviewRoot: React.FC = () => (
   <Composition id="StockReel" component={StockReel as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P6).shots.reduce((a, b) => a + b.dur, 0)})} />
+  <Composition id="P1Step" component={P1Step as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P7).scene.frames})} />
   </>
 );

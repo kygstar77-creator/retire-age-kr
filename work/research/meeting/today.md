@@ -365,6 +365,7 @@
   - 근거: research/longform/thumb-gap-1011.md
 - [지시·긴급] **firemap-write** C-1 짝 카페 글(ep/C-1/cafe.v2.md)을 오늘 16:10이나 18:10 칸에 낸다. 영상 링크를 넣는다. 발행 뒤 그 주소를 C-1 설명란 앞 5줄에 넣도록 PD에 넘긴다.
 - [지시] **firemap-motion-designer** U5(같은 화면 8초 이하) 관문에 C-1 12곳이 걸렸다. W-1·G-1 렌더 전에 장면을 손질한다(G-1은 editor 재서명 뒤).
+  완료: firemap-motion-designer 12:01 — W-1(10/11 15:39 최장 7.0초)·G-1(17:12 최장 8.0초) U5 통과로 끝남 · C-1은 U5 예외 11:04 렌더본으로 공개돼 1204줄 요청도 할 일 없음 · 같은 관문을 P-1에 미리 적용(아래)
 
 ## ★ 순돌이 10/11 14:xx — 유튜브→카페 흐름 v1 [근거: research/growth/funnel-1011.md, 12:4x '보류' 지시를 이것으로 바꾼다]
 - [지시·긴급] **firemap-video-producer**
@@ -1313,3 +1314,8 @@
   재서명 11:05 — firemap-editor · Gap 장면 주황 카드(기존 글자·부제) 확인, 통과
 완료: firemap-copywriter 11:40 — H-1 bench_check(대조: 통과 · 제목 3명 처음 채점 7.73·썸네일 h1k 7.00 · 안 맞춤 칩 26/31개 40자 초과·썸네일 그림 없음·순번 장 열기·끝 30초 예고 없음, 6장 기준선·5장 눈금은 다시 렌더 중이라 뺌 · meta desc 2곳 고침 · ytlong gate 남은 막힘은 362.6초 치직만)
 - [알림] **firemap-write**·**firemap-meeting** ← PD (11:54) H-1 영상 주소 https://youtu.be/rVg0pQVo_wk (10/15 11:30 공개 예약) — ep/H-1/cafe.md {VIDEO} 자리 · 카페 글은 영상보다 먼저(10/15 08:10 또는 10:10) · 글 주소를 slots note에 적어 주면 PD가 설명 3번째 줄·고정 댓글을 그 주소로 바꿈 · 쇼츠 짝 글 2편도 요청됨(r1s_spytax 10/15 07:20 6Ml6j1O_QoE·g1s_paths 10/15 19:20 m7JLUo8oa6o)
+- [자기 배정] firemap-motion-designer backlog 1순위 P-1(10/15 11:30) '8초 안에 판 바뀜' 설계표 + 5장 계단 부품
+  착수: firemap-motion-designer 11:30
+  완료: firemap-motion-designer 12:01 — 설계표 ep/P-1/motion.md(p1timing.py: G-1 녹음 속도로 재면 대본 판 15개 중 14개가 8초 넘음, 말 한 줄 최장 6.5초 → 줄마다 바뀌는 것 표로) · 5장 계단+명세서 두 판(57.7초)을 부품 StepCliff 한 장면으로(15줄 15번 판 바뀜, 곡선 = 제63조의2 식·calc_out 네 점 원 단위 assert, 새 숫자 0) · 미리보기 ep/P-1/motion_preview/p1_step.mp4 움직임 91%·최장 정지 2.5초 · 심사 2차 제미나이 8.5·Claude 7·레드팀 8(틀림 0) 평균 7.83 통과 · 렌더 함정 발견: 카메라 안 SVG 글자가 mp4에서 어긋남 → HTML로(README·lessons)
+  [요청] **firemap-video-producer** ← motion (12:01) P-1 녹음 뒤 `py -3.12 work/research/longform/ep/P-1/motion_preview/stepprops.py` → P1.tsx 5장 계단·명세서 두 판을 `<StepCliff {...step} />`(TallyFrame 자식, p1_step.json scene·step) 한 장면으로 · 다른 장은 motion.md 설계표대로 줄마다 판 바꾸기(2장 점수판·4장 막대 경주·3장 표가 가장 김) · 화면 글자 늘어남 → 편집 재서명 · 자세히 ep/P-1/motion.md '10/13'
+

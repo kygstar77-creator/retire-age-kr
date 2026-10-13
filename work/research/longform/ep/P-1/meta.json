@@ -1,0 +1,106 @@
+{
+ "ep": "P-1",
+ "series": "연금·정책",
+ "title": "국민연금 수령나이, 1년만 당기면 따라잡히는 나이가 오히려 늦다",
+ "title_by": "firemap-copywriter 2026-10-10 18:57 결선 1위 8.33(copy/titles.md)",
+ "title_candidates": [
+  "국민연금 수령나이, 1년만 당기면 따라잡히는 나이가 오히려 늦다",
+  "국민연금 수령나이, 일하며 받을 때 연봉 약 7,600만원을 넘으면 월 15만원부터 깎여요"
+ ],
+ "thumb_text": "5년 당김 76.7세 / 1년 당김 80.7세",
+ "thumb_text_small": "제때 받은 쪽이 따라잡는 나이 · 1969년생·월 100만원 가정",
+ "thumb": "thumb_p1j.png",
+ "thumb_alt": "thumb_p1i.png",
+ "thumb_status": "visual-designer 10/10 19:24 p1j 7.00 통과판(today.md)",
+ "desc_first2": [
+  "국민연금 수령나이를 5년 당기면(60세·월 70만원) 제때(65세·월 100만원) 받은 쪽이 76.67세에 따라잡고, 1년만 당기면 그 나이가 80.67세로 오히려 늦어집니다. 5년 미루면(70세·월 136만원) 83.89세에 제때를 앞섭니다(1969년생·월 100만원 가정, 국민연금법 조기·연기 비율).",
+  "60대에 일하면서 받으면 2026년 6월 17일 시행 개정으로 공제 뒤 월 소득 519만 3,511원을 넘을 때 감액이 시작되고, 조문대로 계산하면 선을 넘는 순간 15만원부터 깎입니다(보건복지부 표·국민연금법 제63조의2)."
+ ],
+ "desc_tpl": "국민연금 수령나이를 5년 당기면(60세·월 70만원) 제때(65세·월 100만원) 받은 쪽이 76.67세에 따라잡고, 1년만 당기면 그 나이가 80.67세로 오히려 늦어집니다. 5년 미루면(70세·월 136만원) 83.89세에 제때를 앞섭니다(1969년생·월 100만원 가정, 국민연금법 조기·연기 비율).\n60대에 일하면서 받으면 2026년 6월 17일 시행 개정으로 공제 뒤 월 소득 519만 3,511원을 넘을 때 감액이 시작되고, 조문대로 계산하면 선을 넘는 순간 15만원부터 깎입니다(보건복지부 표·국민연금법 제63조의2).\n\n출생연도별 표와 계산 근거: https://firemap.kr/guide/national-pension-early\n카페 전체 표: {CAFE}\n\n{CHAPTERS}\n\n출처\n· 국민연금법 제61조②·제62조②·제63조②·제63조의2·제66조①, 부칙(법률 제8541호) 제8조·부칙(법률 제21203호) 제1조·제2조(국가법령정보센터)\n· 국민연금공단 노령연금 안내 · 2026년 적용 A값 3,193,511원\n· 보건복지부 보도자료(개선된 노령연금 감액제도 본격 시행) — 환급 약 10만 명·445억원\n· KOSIS 간이생명표 2024(65세 기대여명 남 19.5년·여 23.7년, 평균일 뿐)\n· 68세 안은 국회 토론회 발제안(법 개정 아님, 자료집 원문 미확인)\n계산 가정: 65세 월 100만원(가정) · 세금·건보료·부양가족연금 제외 · 물가 반영은 세 길에 같게 · 69년생 연금 씨는 가상 인물 · 공단 실무 해석은 확인 안 함\n\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)입니다.\n영상 일부: Pavel Danilyuk / Pexels (https://www.pexels.com/video/accountant-writing-on-her-notebook-7593893/)\n영상 일부: Sketch Benjamin / Pexels (https://www.pexels.com/video/birthday-cake-with-candles-homemade-19875346/)\n영상 일부: Thirdman / Pexels (https://www.pexels.com/video/a-person-walking-on-unpaved-pathway-5612232/)\n영상 일부: indra projects / Pexels (https://www.pexels.com/video/man-typing-on-laptop-keyboard-on-work-desk-18835800/)",
+ "chapters": [
+  [
+   0,
+   "예고편"
+  ],
+  [
+   1,
+   "결론부터"
+  ],
+  [
+   2,
+   "하루 차이로 한 살?"
+  ],
+  [
+   5,
+   "70만원, 100만원, 136만원"
+  ],
+  [
+   6,
+   "당긴 쪽은 언제 따라잡히나"
+  ],
+  [
+   8,
+   "평균까지 살면 누가 앞서나"
+  ],
+  [
+   10,
+   "519만원 위의 계단"
+  ],
+  [
+   11,
+   "445억원은 누구 몫?"
+  ],
+  [
+   12,
+   "68세, 정해진 걸까"
+  ],
+  [
+   13,
+   "정리"
+  ]
+ ],
+ "tags": [
+  "국민연금 수령나이",
+  "국민연금 조기수령",
+  "연기연금",
+  "노령연금 감액",
+  "국민연금 개정"
+ ],
+ "publishAt": "2026-10-16T11:30:00+09:00",
+ "privacy": "private",
+ "privacy_note": "private + publishAt 예약(공개 시각에 public)",
+ "paid": false,
+ "synthetic": true,
+ "veo": false,
+ "coupang": false,
+ "voice": "Chirp 3 HD Charon 1.1 · 79줄 · 10/13 하루",
+ "missing": 0,
+ "answers": {
+  "q1_바꿔끼우기": "아니오 — 출생연도·금액만 바꾼 틀이 아니라 1·5년 당김 반전(80.67 > 76.67), 2026-06-17 시행 감액 계단(519만원 위 15만원)처럼 이 주제 조문에서만 나온 발견으로 짰다.",
+  "q2_연달아보기": "아니오 — 같은 주 롱폼 R-1(ETF)·H-1(부동산)과 축이 다르다(연금·정책). 화면은 점수판·누적 선·기대여명 막대·계단(StepCliff) 등 15가지.",
+  "q3_약속이행": "예 — 제목 \"1년만 당기면 따라잡히는 나이가 오히려 늦다\"는 3장 표(1년 80.67세 vs 5년 76.67세)가 그대로 답하고, 썸네일 두 숫자와 같은 값이다.",
+  "q4_조언으로들리나": "아니오 — '받으세요·이득·손해' 0, 답은 평균에 있지 않고 건강·다른 돈에 달렸다고 맺는다. 감액은 '조문대로 계산하면'으로만 말한다.",
+  "q5_사람의몫": "예 — 조문 원문(제63조의2·부칙)과 복지부 표를 맞대 계단을 확인하고, 경쟁이 말하지 않은 1년 당김 반전·기대여명 대조를 계산해 붙였다."
+ },
+ "experiment": {
+  "X-LF-TEASER": "예고(본편 재사용)→결론부터→궁금증 장·가상 인물",
+  "X-STOCK-HEAD": "실사 장 머리(StockShot) 첫 적용 — 1·4·5·6장"
+ },
+ "pinned_comment": "몇 년생이세요? 출생연도별로 시작 나이만 바꾸면 따라잡히는 나이도 그만큼 앞당겨져요. 표와 계산 근거: https://firemap.kr/guide/national-pension-early",
+ "endscreen": {
+  "how": "Studio 최종 화면 — 업로드 뒤 할 일",
+  "status": "미정"
+ },
+ "video": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\video\\out\\p1_ds.mp4",
+ "made_by": "firemap-video-producer",
+ "made_at": "2026-10-13 18:38",
+ "todo_pd": [
+  "bench_check.md",
+  "scorecard.md",
+  "compare.md(경쟁 3줄)",
+  "deess → p1_ds.mp4",
+  "ytlong gate",
+  "짝 카페 글 주소 {CAFE}"
+ ],
+ "desc": "국민연금 수령나이를 5년 당기면(60세·월 70만원) 제때(65세·월 100만원) 받은 쪽이 76.67세에 따라잡고, 1년만 당기면 그 나이가 80.67세로 오히려 늦어집니다. 5년 미루면(70세·월 136만원) 83.89세에 제때를 앞섭니다(1969년생·월 100만원 가정, 국민연금법 조기·연기 비율).\n60대에 일하면서 받으면 2026년 6월 17일 시행 개정으로 공제 뒤 월 소득 519만 3,511원을 넘을 때 감액이 시작되고, 조문대로 계산하면 선을 넘는 순간 15만원부터 깎입니다(보건복지부 표·국민연금법 제63조의2).\n\n출생연도별 표와 계산 근거: https://firemap.kr/guide/national-pension-early\n카페 전체 표: {CAFE}\n\n0:00 예고편\n0:19 결론부터\n0:30 하루 차이로 한 살?\n0:57 70만원, 100만원, 136만원\n1:27 당긴 쪽은 언제 따라잡히나\n2:06 평균까지 살면 누가 앞서나\n2:55 519만원 위의 계단\n3:50 445억원은 누구 몫?\n4:13 68세, 정해진 걸까\n4:27 정리\n\n출처\n· 국민연금법 제61조②·제62조②·제63조②·제63조의2·제66조①, 부칙(법률 제8541호) 제8조·부칙(법률 제21203호) 제1조·제2조(국가법령정보센터)\n· 국민연금공단 노령연금 안내 · 2026년 적용 A값 3,193,511원\n· 보건복지부 보도자료(개선된 노령연금 감액제도 본격 시행) — 환급 약 10만 명·445억원\n· KOSIS 간이생명표 2024(65세 기대여명 남 19.5년·여 23.7년, 평균일 뿐)\n· 68세 안은 국회 토론회 발제안(법 개정 아님, 자료집 원문 미확인)\n계산 가정: 65세 월 100만원(가정) · 세금·건보료·부양가족연금 제외 · 물가 반영은 세 길에 같게 · 69년생 연금 씨는 가상 인물 · 공단 실무 해석은 확인 안 함\n\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)입니다.\n영상 일부: Pavel Danilyuk / Pexels (https://www.pexels.com/video/accountant-writing-on-her-notebook-7593893/)\n영상 일부: Sketch Benjamin / Pexels (https://www.pexels.com/video/birthday-cake-with-candles-homemade-19875346/)\n영상 일부: Thirdman / Pexels (https://www.pexels.com/video/a-person-walking-on-unpaved-pathway-5612232/)\n영상 일부: indra projects / Pexels (https://www.pexels.com/video/man-typing-on-laptop-keyboard-on-work-desk-18835800/)"
+}

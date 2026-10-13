@@ -1,0 +1,8 @@
+{
+ "id": "P1",
+ "props": "p1.json",
+ "every_frames": 30,
+ "checked_frames": 288,
+ "errors": 0,
+ "hits": []
+}

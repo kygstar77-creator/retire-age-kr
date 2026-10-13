@@ -48,8 +48,9 @@ def auto_widths(cols, rows, hl_col=None, cap=0.34):
         ws=[cap if i in over else w+spare*w/rest for i,w in enumerate(ws)]
     return ws
 
-def table(path, title, cols, rows, widths=None, note=None, hl_col=None, src=None):
-    W=900; pad=36; th=54; lh=30; vpad=15
+def table(path, title, cols, rows, widths=None, note=None, hl_col=None, src=None, W=900):
+    # W: 열이 많은 전체 표(h1cafe1015 9열 37곳)는 900이면 숫자가 세로로 쪼개져 넓혀 그린다
+    pad=36; th=54; lh=30; vpad=15
     x0=pad; tw=W-pad*2
     # widths를 안 주면 내용을 재서 자동으로 정한다.
     fs=22

@@ -5,6 +5,7 @@
 
 ## ★ 벤치마크 루프 10/14 03:3x — 쇼츠 2판 (근거 research/cardshorts/shorts-gap-1014.md) · 지난 표 7개 반영 3·일부 4·안 됨 0, 순위④ 그림·⑦ 틀 다양 안 됨
 - [지시] **firemap-video-producer** (기한 10/15 19:20) 클립 관문 w1g1clips_check.py에 ⓐ 첫 줄 숫자 1개 이상·접속사 시작 금지·35자 이하 ⓑ 끝 줄 면책('~라는 말은 아니'·'말할 수는 없') 금지 ⓒ 화면 7자리 이상 원 단위 → 만원 반올림 ⓓ 최근 10편 한 layout 50% 초과면 업로드 거부(지금 c1clip 10/10) · 완료 기준: 10/12~14 클립 9편에 돌려 걸린 목록 기록, 예약분은 공개 전 고칠 수 있으면 고치고 아니면 review.md '미반영'
+  착수: firemap-video-producer 06:17 — w1g1clips_check.py에 ⓐ~ⓓ 넣고 10/12~14 클립 9편 검사
 - [지시] **firemap-visual-designer**+**firemap-motion-designer** (기한 10/18) 두 번째 쇼츠 틀 'c2person': 흰 판 대신 장면마다 그림 1장(정우 씨 SVG 시트·장소) + 큰 3줄 자막 + 숫자 하나, 빈 흰 상자 0 (근거 fOdDiP5-Auc 68만 AI 인물 장면, 우리 그림 0/9) · 완료 기준: 클립 1편 렌더, sheet.png 8초마다 그림 1장 이상 · 10/19~ 칸 절반을 이 틀로
 - [지시] **firemap-copywriter** (기한 10/17) 다음 클립 2편 끝 줄 = 질문 또는 공식 한 줄('1억이면 ○, 2억이면 ○', 근거 5h6BonE79pI) · 면책은 설명란만
 - [지시] **firemap-youtube-loop** (상시) 하루 쇼츠 2편 중 1편은 그 주 뉴스 숫자 클립(BeBZeqolm8c 삼성 107조 51회/h, 다른 클립 6~29회/h)
@@ -20,7 +21,10 @@
   착수: firemap-video-producer 22:17 — E-2·M-1·N-1 containsSyntheticMedia
   막힘: firemap-video-producer 22:43 — ytupload 토큰은 videos.update 403(권한 범위 부족), f2_coupang force-ssl 토큰 사용은 자동 권한 분류기가 거부('자격 증명 탐색') → 우회하지 않고 멈춤. 세 편 meta synthetic도 안 바꿈(실제 상태와 맞춰 두려고). 사장님 허용 또는 채팅 세션 처리 필요 · 기한 10/14 11:30
 - [지시·긴급] **firemap-write** (기한 10/15 03:10) 의도: H-1 짝 글을 영상(10/15 11:30) 전에 · 완료 기준: h1cafe1015 = ep/H-1/cafe.md(세 동네 37곳 전체 표, '둔촌동·고덕동은 2026.09 거래까지'), slot.txt 2026-10-15 09, gates_ok · 같은 회차에 10/15 10:40 r1s_spytax 짝(질문 하나·r1cafe 표 반복 금지)·12:10 부동산 새 편 · 금지: 미달 공개, 칸 몰아내기
+  완료(일부): firemap-write 06:54 — 10/15 09:10 h1cafe1015(H-1 짝 긴 글, 세 동네 37곳 표 3장, 둔촌·고덕 10월 거래 없음 명시, 영상 rVg0pQVo_wk) gates_ok(제목 7.17·표지 K4 7.83·compare.md 경쟁 8·readcheck 0·selfcheck 사실 0·aitell 2.6·crosscheck·레드팀 2회 틀림 3→0·전제 가능·editgate auto) · 10:40 r1cafe_tax1015는 write-b가 10/13 22:57 이미 통과 · 남은 것: 10/15 12:10 부동산 새 편(기한 06:10, 다음 write 회차) · 덤: 10/14 15:10 m1stot1013을 10/15 15:10으로 옮김(06:10 M-1 긴 글과 예시 숫자 5개 겹쳐 발행기 sameday 거부) → 10/14 15:10은 새 편 rateloan1014(주담대 변동·고정, 금리 축)로 채움
 - [지시] **firemap-write** (기한 10/14 21:10) 의도: 장부 공개 기록을 코드로(X-OPS-7, 교훈 33) · 완료 기준: naverpost.py가 verify OK 직후 slots.json 그 칸(slot.txt 시각)에 published(주소·시각) 자동 기입, 10/14 첫 발행에서 확인 · 덤: 주제 맞는 firemap.kr 계산기가 있는 글은 끝에 계산기 줄 1개(오늘 8편 중 1편만 있음, 검증 참모) — 새 홍보 문구 0, 기존 줄 꼴 그대로
+  착수: firemap-write 06:20 — naverpost verify OK 뒤 slots.json published 자동 기입 · 06:10 m1cafe1014 발행에서 확인
+  완료: firemap-write 06:54 — naverpost.py verify_published가 OK면 ledger_published()로 slots.json 그 칸(item + slot.txt 시각, 이미 적힌 칸은 안 덮음)에 published "주소 HH:MM verify OK N자" 자동 기입 · 10/14 첫 발행 m1cafe1014 cafe/265 verify 1866/1866·사진 3/3 → "장부: 2026-10-14 06:10 칸 published 적음" 확인 · 덤(계산기 줄): m1cafe1014는 이미 있음, h1cafe1015는 맞는 계산기 없어 안 넣음, 새 편 rateloan1014에 대출 계산기 줄(기존 꼴)
 - [지시] **firemap-write**(자료 담당) (기한 10/20) 회원 자료 2호 = **양도세(부동산, 1주택 12억 초과·장기보유특별공제) 엑셀** · 완료 기준: 홈택스 '양도소득세 자동계산' 결과와 대조한 검증표(fin_verify.py처럼, 사례 5개 이상 차이 0) · 제목·파일·시트에 '판정' 말 대신 '계산', 1호 B53 면책 문장을 첫 화면 위로(새 말 짓지 않음) · 파일 글 멤버공개·안내 글 전체공개 · 종부세 엑셀은 보류(정부안 국회 통과 전, 레드팀 R3)
 - [지시] **firemap-youtube-loop** (기한 10/18) T-1 양도세 롱폼 대본(10/21 11:30 칸, 회원 자료 2호와 같은 주제) · J-1(10/20)은 제목·말에 '정부안 기준·국회 통과 전·올해 11월 고지는 현행'을 밝히고 9/1 수정안 사례로 다시 대조 · J-1과 T-1이 같은 부동산 세금 축이라 이틀 연속이 싫으면 J-1↔H-2(10/22) 바꿈은 youtube-loop 판단 · C-2 칸 10/19 확정
 - [지시] **firemap-report** (매일 12:30) 카페 색인 하루 1회: 전날 카페 글이 네이버 카페탭·통합검색에 잡히는 비율 · 10/15까지 0이면 순돌이에게 '카페 12편 되돌릴지' 사장님 결정 거리로(빈도는 사장님만)

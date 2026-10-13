@@ -1522,7 +1522,34 @@ def verify_published(page, pkg):
     ok = best['text'] >= want * 0.9 and best['img'] >= want_img
     res = {'ok': ok, 'url': url, 'text': best['text'], 'want': want, 'img': best['img'], 'want_img': want_img}
     open(os.path.join(pkg, 'verify.txt'), 'w', encoding='utf-8').write(json.dumps(res, ensure_ascii=False) + '\n')
+    if ok: print(ledger_published(pkg, res))
     return res
+
+def ledger_published(pkg, r):
+    """verify OK 직후 칸 장부(research/slots.json) 그 칸에 published(주소·발행 시각)를 적는다.
+    2026-10-13 회의(X-OPS-7, 교훈 33): 장부 published를 손으로 적다 보니 대부분 비어
+    X-OPS-6을 셀 수 없어 종료했다. 칸은 item 이름과 slot.txt 시각으로 찾고, 이미 적힌 칸은 덮지 않는다."""
+    try:
+        item = os.path.basename(os.path.dirname(os.path.abspath(pkg)))
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research', 'slots.json')
+        pub = os.path.join(pkg, 'published.txt')
+        url = open(pub, encoding='utf-8').read().strip().splitlines()[-1]
+        hm = time.strftime('%H:%M', time.localtime(os.path.getmtime(pub)))
+        sl = json.load(open(path, encoding='utf-8'))
+        cands = [x for x in sl.get('slots', []) if x.get('item') == item and not x.get('skip')]
+        t = slot_of(pkg)
+        if t:
+            cands = [x for x in cands if x.get('at', '')[:13] == t.strftime('%Y-%m-%d %H')] or cands
+        cands = [x for x in cands if not x.get('published')]
+        if not cands: return '장부: 적을 칸 없음(이미 적혔거나 칸 없음)'
+        x = cands[0]
+        x['published'] = '%s %s verify OK %s자' % (url, hm, r.get('text', ''))
+        tmp = path + '.tmp'
+        json.dump(sl, open(tmp, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+        os.replace(tmp, path)
+        return '장부: %s 칸 published 적음' % x['at']
+    except Exception as e:
+        return '장부: 못 적음 ' + repr(e)[:120]
 
 def auth_failed():
     """글쓰기가 인증으로 막힌 기록이 남아 있나.

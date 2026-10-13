@@ -9,6 +9,7 @@
 #   py -3.12 work/aitell.py aibrief <묶음>                   → AI 브리핑 인용 구조 3줄(10/5 ai-lab): 첫 문단 2~3문장 안 숫자 답·질문형 소제목 ≥2·표 1개. 어기면 종료코드 5. gate에는 안 넣음(모든 글 같은 틀 금지 — 칸 1편씩 고른 글만)
 #   py -3.12 work/aitell.py commaday 2026-10-04               → 그 날 카페 칸 쉼표 없는 제목 수(하루 2편 이상, 10/4 칸부터 frame이 쉼표 제목을 막는다)
 #   py -3.12 work/aitell.py script <편 폴더|voice.json|자막 .json3|대본 텍스트>  → 롱폼 대본 실측 기준 2개(10/4 speechcompare 경쟁 자막 12편 vs 우리 4편): 숫자 1,000단어당 ≤92(경쟁 최대 91.4) · 숫자 2개 이상 문장 ≤20%. 넘으면 종료코드 6
+#        + 말 습관 4개(10/13 벤치마크 루프): 정밀 숫자 낭독('39만 7천'·6자리↑)·순번 3종↑·말 목차('볼게요') 3연속·꼬리표 낭독({F}·이미지 1·S3) — 걸린 줄 번호 출력, 걸리면 종료코드 6
 #   --skip-list (아무 자리)  → 번호·글머리 목록 줄과 법 문구·면책 줄을 끝맺음 반복(연속·'~요'·머리·꼬리)에서 뺀다.
 #                              사전(AI 말·설명조) 검사는 그대로. 기본은 꺼짐 — 기존 통과 점수가 안 바뀐다(10/1 대역 X-KR-1 요청).
 # 사장님 10/1 "사소한 것까지 모든 글을 다 검토해서 사람이 쓴 글로 바꿔야 하는데" — 순돌이 지시 [지시·긴급].
@@ -364,8 +365,53 @@ def script_text(p):
         return ' '.join(''.join(s.get('utf8', '') for s in e.get('segs', [])) for e in d.get('events', []) if e.get('segs')).replace(chr(10), ' ')
     if p.endswith('.json'):
         v = json.load(open(p, encoding='utf-8'))
-        return ' '.join(l['say'] for s in v['sections'] for l in s['lines'])
+        # 'say'는 숫자를 한글로 풀어 읽은 줄('이백오십팔만 원')이라 숫자가 0개로 세졌다(10/13 R-1·G-1 0.0/1,000) → 숫자 그대로인 'text'
+        return ' '.join(l.get('text') or l['say'] for s in v['sections'] for l in s['lines'])
     return open(p, encoding='utf-8').read()
+
+
+def script_lines(p, field='text'):
+    """말 줄 목록(줄 번호를 붙여 보고하려고). voice.json은 text(숫자 그대로) 또는 say(실제 읽는 글), 텍스트는 빈 줄 뺀 줄."""
+    if os.path.isdir(p): p = os.path.join(p, 'voice.json')
+    if p.endswith('.json'):
+        v = json.load(open(p, encoding='utf-8'))
+        return [l.get(field) or l.get('text') or l['say'] for s in v['sections'] for l in s['lines']]
+    return [x.strip() for x in script_text(p).splitlines() if x.strip()]
+
+
+# 벤치마크 루프 10/13(quality-gap-1013)·U6: 1위급 대본에 없는 말 습관 4개. 걸린 줄을 돌려준다.
+_UNIT = {'조': 10**12, '억': 10**8, '천만': 10**7, '백만': 10**6, '만': 10**4, '천': 10**3}
+_COMPOUND = re.compile(r'(\d[\d,]*(?:\.\d+)?)\s*(조|억|만)\s*(\d[\d,]*)\s*(천만|백만|억|만|천)?')
+_ORD = re.compile(r'(첫|두|세|네|다섯|여섯|일곱)\s?번째|(첫|둘|셋|넷|다섯)째')
+_TOC = re.compile(r'(볼게요|보겠습니다|볼까요|알아볼게요|알아보겠습니다|살펴볼게요|살펴보겠습니다)')
+_TAG = re.compile(r'\{[^}]*\}|\[[^\]]*\]|(이미지|그림|장면|슬라이드)\s?\d|(?<![A-Za-z&])(?!A4|A3|B5|G7|G20)[A-Z]\d{1,2}(?![\d.])')  # 종이·회의 이름은 꼬리표 아님
+
+
+def _sig(n):
+    return len(str(int(round(n))).rstrip('0'))
+
+
+def script_habits(lines, said=None):
+    """[(검사, 줄 번호(1부터), 줄)] — 정밀 숫자 낭독·순번 3개 이상·말 목차 3연속·꼬리표 낭독.
+    said: 실제 읽는 줄(voice.json say). text의 {F} 같은 표시는 say에서 빠지면 낭독이 아니라 꼬리표 검사는 said로 한다."""
+    hits = []
+    said = said if said and len(said) == len(lines) else lines
+    for i, (l, sl) in enumerate(zip(lines, said), 1):
+        prec = False
+        for m in _COMPOUND.finditer(l):   # '39만 7천원'·'1억 1,087만'·'2,107만 8,535명'. '3억 5천만'처럼 유효숫자 2개는 둔다
+            a = float(m.group(1).replace(',', '')) * _UNIT[m.group(2)]
+            b = float(m.group(3).replace(',', '')) * (_UNIT[m.group(4)] if m.group(4) else 1)
+            if b < _UNIT[m.group(2)] and _sig(a + b) >= 3: prec = True
+        if prec or any(len(x.replace(',', '')) >= 6 for x in re.findall(r'\d[\d,]{4,}', l)): hits.append(('정밀 숫자', i, l))
+        if _TAG.search(sl): hits.append(('꼬리표 낭독', i, sl))
+    ords = [(i, l, re.sub(r'\s', '', m.group(0))) for i, l in enumerate(lines, 1) for m in _ORD.finditer(l)]
+    if len({o[2] for o in ords}) >= 3: hits += [('순번 나열', i, l) for i, l, _ in ords]
+    run = []
+    for i, l in enumerate(lines, 1):
+        run = run + [(i, l)] if _TOC.search(l) else []
+        if len(run) == 3: hits += [('말 목차', j, x) for j, x in run]
+        elif len(run) > 3: hits.append(('말 목차', i, l))
+    return sorted(hits, key=lambda h: h[1])
 
 
 def script_check(text):
@@ -406,7 +452,11 @@ def main(a):
         print(f'대본 실측 숫자 {per:.1f}/1,000단어(기준 ≤{SCRIPT_NUM_PER_1000}) · 숫자 2개 이상 문장 {multi:.0f}%(기준 ≤{SCRIPT_MULTI_NUM_PCT}%) · 문장 {n} — ' + ('통과' if ok else '실패'))
         for b in bad: print('  ', b)
         if not ok: print('  숫자·사실 문장은 바꾸지 않는다: 말에는 숫자 하나·반올림, 정확한 값은 화면 자막으로 옮긴다.')
-        return 0 if ok else 6
+        habits = script_habits(script_lines(a[1]), script_lines(a[1], 'say'))
+        print('말 습관 4개(정밀 숫자·순번 3개↑·말 목차 3연속·꼬리표 낭독) — ' + ('통과' if not habits else f'{len(habits)}건 걸림'))
+        for k, i, l in habits: print(f'   [{k}] {i}줄: {l[:70]}')
+        if habits: print('  정밀 숫자는 말로 반올림(정확값은 화면), 순번·목차는 질문 한 줄로, 꼬리표는 말에서 지운다.')
+        return 0 if ok and not habits else 6
     if a[0] == 'gate':
         ok, msg, hits = gate_pkg(a[1])
         if ok: print(msg); return 0

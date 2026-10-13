@@ -276,10 +276,12 @@ def _day_pkgs(day):
 def _key_nums(pkg):
     """본문에서 숫자 핵심값: 3자리 이상이고 끝이 0이 아닌 것(연도·URL 제외). 586·211.5·7.19 같은 값이 겹치면 같은 예시다."""
     t = re.sub(r'https?://\S+', '', pkg_text(pkg)[0])
+    # 통계표 코드(ECOS 731Y001)·종목코드 섞인 말은 예시가 아니다 — 10/13 g1cafe1013·m1stot1013이 출처 줄 731Y001과 세율 15.4로 막힘
+    t = re.sub(r'\b\w*\d+[A-Za-z]+\w*\b', '', t)
     out = set()
     for x in re.findall(r'\d[\d,]*\.?\d*', t):
         x = x.replace(',', '').rstrip('.')
-        if len(x) >= 3 and not x.endswith('0') and x not in ('2025', '2026', '2027', '2028'): out.add(x)
+        if len(x) >= 3 and not x.endswith('0') and x not in ('2025', '2026', '2027', '2028', '15.4', '16.5', '22.0'): out.add(x)
     return out
 
 

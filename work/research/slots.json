@@ -1152,16 +1152,16 @@
    "kind": "cafe",
    "item": "npsage1009",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-write 2026-10-13 07:2x 배정: 국민연금 비축분(관문 통과 2026-10-08 20:24) — 마지막 국민연금 제목 10/7 08:28 뒤 7일 = 10/14 08:30 이후 공개 가능 · 관문 기한 = 발행 6시간 전"
+   "gates_ok": "2026-10-13 10:28",
+   "note": "firemap-write 2026-10-13 07:2x 배정: 국민연금 비축분(관문 통과 2026-10-08 20:24) — 마지막 국민연금 제목 10/7 08:28 뒤 7일 = 10/14 08:30 이후 공개 가능 · 관문 기한 = 발행 6시간 전 · firemap-write 10:28 gates_ok: editgate check 해시 일치(auto 10/11 12:22)·review.md 전제 줄 있음·slot.txt 2026-10-14 12"
   },
   {
    "at": "2026-10-14 14:10",
    "kind": "cafe",
    "item": "r1cafe1014",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-write 2026-10-13 07:2x 배정: R-1 롱폼(11:30 공개) 짝 긴 글 ep/R-1/cafe.md 전체 표·{VIDEO}는 새 판 G1oI47miUuo · yt_pair: R-1 · 13:10 이후 · \"영수증\" 금지 · 발행 주소를 today.md에 적어 PD가 영상 설명을 바꿈 · 관문 기한 = 발행 6시간 전"
+   "gates_ok": "2026-10-13 10:33",
+   "note": "firemap-write 2026-10-13 07:2x 배정: R-1 롱폼(11:30 공개) 짝 긴 글 ep/R-1/cafe.md 전체 표·{VIDEO}는 새 판 G1oI47miUuo · yt_pair: R-1 · 13:10 이후 · \"영수증\" 금지 · 발행 주소를 today.md에 적어 PD가 영상 설명을 바꿈 · 관문 기한 = 발행 6시간 전 · firemap-write 10:33 gates_ok: yt_pair R-1 G1oI47miUuo · 제목 7.33·표지 K4 7.67·compare.md 경쟁 6편·readcheck 0·selfcheck 사실 0·aitell 2.7·crosscheck 사실 0·레드팀 2회(틀림 2 반영)·전제 가능·editgate auto"
   },
   {
    "at": "2026-10-14 16:10",

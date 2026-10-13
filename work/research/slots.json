@@ -40,6 +40,22 @@
     "by": "firemap-write",
     "at": "2026-10-08 22:36",
     "gates_ok": "2026-10-08 20:24"
+   },
+   {
+    "item": "aptrent1013",
+    "ep": "work/research/aptrent1013/pkg",
+    "status": "관문 통과 2026-10-13 18:45 — 제목 '아파트 월세 같은 단지·같은 면적끼리 보면 작년보다 5.6% 상승' 7.83·표지 A1 7.58·readcheck 0·crosscheck 2차 사실 0·aitell 0.0·레드팀 2회 틀림 3 반영·compare 7편·전제 가능·editgate auto. 부동산 축 형식4. 9월 계약 신고 진행 중(30일) — 10월 말 넘겨 내면 숫자 재조회·재날인. slot.txt 2026-10-16 16 가안",
+    "by": "firemap-write",
+    "at": "2026-10-13 18:46",
+    "gates_ok": "2026-10-13 18:45"
+   },
+   {
+    "item": "stockgift1013",
+    "ep": "work/research/stockgift1013/pkg",
+    "status": "관문 통과 2026-10-13 18:56 — 제목 T9 '주식 증여 급락일에 넘겨도 삼성전자 평가액 28% 높게 나온 계산' 7.92·표지 S1 7.67·readcheck 0·selfcheck 사실 0·crosscheck 사실 1 반영·aitell 0.0·레드팀 2회(1차 5건 반영, 2차 0)·compare 5편(실제 주가 계산 0/5)·전제 가능·editgate auto. 세금연금 축. 주의: (1) 본문 '10월 말' 반환 기한 — 10/16 넘겨 내면 시의성 깨짐, 10/14~16 칸에만 (2) 제목 끝 '~나온 계산'은 사장님이 지적한 압축 모양과 비슷 — copywriter가 바꾸면 재심사·재날인. slot.txt 2026-10-16 10 가안",
+    "by": "firemap-write",
+    "at": "2026-10-13 18:57",
+    "gates_ok": "2026-10-13 18:56"
    }
   ],
   "long": [

@@ -8,6 +8,7 @@
   착수: firemap-video-producer 06:21 — 말 줄 16·17 삭제·33 반올림·끝 댓글 질문 → Chirp 새 줄만 → r1props CUTS(promise·로고 빼기, 로고 첫 60초 밖 지시 같이) → 재렌더 → --replace 9JNY
   완료: firemap-video-producer 06:59 — R-1 새 판 https://youtu.be/G1oI47miUuo 10/14 11:30 예약(옛 9JNYZsjG4Mo 예약 풀고 비공개) · 16·17줄 삭제·33줄 "40만원 가까이"·끝 댓글 질문(PD 문구, editor 06:24 통과)·로고 장면 뺌 · 고친 말 2줄만 Chirp 재녹음(받아쓰기 0 틀림) · bench_check 첫 60초 5칸 맞춤 · G-1은 미반영(G-1/bench_check.md — 새 videoId면 10:10 카페 짝 링크 깨짐) · copywriter 몫 남은 것 없음 · [알림] firemap-write: R-1 짝 카페 글 영상 링크는 G1oI47miUuo
 - [지시] **firemap-copywriter** aitell script에 검사 4개 추가: 6자리 이상 정밀 숫자 낭독·'첫 번째…' 순번 3개 이상·말 목차('볼게요' 3연속)·꼬리표 낭독({F}·'이미지 1' 같은 표시) · 완료 기준: R-1·G-1 대본에 돌려 걸린 줄 목록 기록 · 기한 10/14 23:00
+  착수: firemap-copywriter 18:52 (N-2 카피 다음)
 - [지시] **firemap-youtube-loop**+**firemap-visual-designer** N1 시범: C-1 소재(3억·배당 vs 팔기·1998년 시작)를 공개 가상 인물 1명의 이야기로 다시 기획(근거 하이젠버그 UfCBrFHyJtw 9.6배: 인물 조각 21.8%·숫자 12.3%·그림 100%·결말 65% 지점) · 완료 기준: 대본 인물 조각 15% 이상·결말 60% 뒤·가상 고지 2:30 안, 같은 얼굴 인물 시트 1벌·30초마다 그림 1장 · 기한 10/16
   진행: firemap-visual-designer 09:12 — 인물 시트: 제미나이 이미지 3모델 모두 429(오늘 한도) → Canva generate-image로 시트 1장 나왔으나 원본 내려받기 막힘(미리보기 199px뿐, 서명 URL 403) · 프롬프트·인물 설정(55세 1998 → 66세 2009, 안경·왼눈 밑 점·남색 카디건·파란 통장)은 visual/N1-person/gen.py에 고정, 다음 회차 제미나이로 시트 → 시트를 참조로 장면 3장(1998·2001·2009) · youtube-loop 대본 나오면 30초마다 장면 목록 맞춤
   착수: firemap-visual-designer 17:04 — N1 인물 시트 제미나이 재시도 → 장면 S1·S5·S10
@@ -60,6 +61,7 @@
   착수: firemap-write 16:21 — 16:10 yuryu1011 발행·verify · 10/14 18:10 qqqm1014·22:10 dcpension1014 관문
   완료: firemap-write 16:38 — 16:10 yuryu1011 cafe/261 발행 16:37 verify OK 1470/1470자·사진 3/3 · 10/14 22:10 dcpension1014(퇴직연금 DB형 대 DC형, 손익분기=월급 인상률·임금피크 예시) gates_ok 16:34(제목 7.9·표지 K4 7.67·compare.md 경쟁 6편·readcheck 0·selfcheck 사실 0·aitell 2.5·레드팀 2회 틀림 1·오해 6 반영·전제 가능·editgate auto) · 18:10 qqqm1014는 15:24 이미 통과 · 10/14 카페 8칸 전부 gates_ok · 남은 것: 카페 비축 2/2(지금 0 — 10/14 칸에 다 배정)
   착수: firemap-write 18:22 — 18:10 reitetf1013 발행·verify · 카페 비축 0/2 채우기
+  완료: firemap-write 18:57 — 18:10 reitetf1013 cafe/262 발행 18:29 verify OK 1138/1138자·사진 3/3 · 카페 비축 0/2→2/2: aptrent1013(서울 아파트 월세 같은 단지·면적 +5.6%, 제목 7.83·표지 7.58·editgate auto, slot 가안 10/16 16) · stockgift1013(상장주식 증여 전후 2개월 평균, 제목 7.92·표지 7.67·editgate auto, slot 가안 10/16 10 — '10월 말' 반환 기한 때문에 10/16까지만) · [알림] firemap-meeting: 두 편 slots 칸 배정 필요(pending '장부에 칸 없음') · [알림] firemap-copywriter: stockgift1013 제목 끝 '~나온 계산' 압축 모양 재검토(바꾸면 재심사·editgate 재날인)
 - [지시] **firemap-write** (기한 10/14 12:00, 레드팀 R2) 의도: 카페에도 전제 관문 · 완료 기준: editgate.py stamp가 카페 pkg review/compare에 '전제:'(가능/불가능 + facts 근거) 줄 없으면 '안 찍음' + 대기 편(issnote1012·kidcred1012·yuryu1011·npsage1009)에 '전제:' 줄 · 시험: 임시 사본에서 줄 빼면 거부 · 금지: 사이트 코드 · 보고: today.md 완료 줄+커밋
   완료: firemap-write 20:45 — editgate.py stamp가 카페 pkg의 review.md/compare.md(pkg 또는 위 폴더)에 '전제: 가능 — <근거>' 줄이 없거나 '불가능'·근거 없음이면 '안 찍음 · 전제 관문' · 시험: inhded1011 임시 사본에서 줄 뺌→거부, 불가능→거부, 가능+근거→찍음 · issnote1012·kidcred1012·yuryu1011·npsage1009 review.md에 전제 줄(전부 가능, facts 번호) — 기존 날인 해시 그대로 일치
 - [지시] **firemap-report** (기한 10/13 12:30 회차, 레드팀 R1) 의도: 사이트 유입 1/3 감소(10/7 33기기 → 10/11 12, utm youtube 7 → 0) 원인 · 완료 기준: sitedaily로 10/5~10/12 날짜별 외부 기기·utm source 표를 growth/revenue.md에, 줄어든 source 한 줄 원인(설명란 링크 위치 변경 10/11 등 날짜 대조) + 쿠팡·애드센스 화면 실측(10/12 확인 안 함) · 금지: 추정 숫자 · 보고: launch-checklist 39 경보 줄
@@ -518,6 +520,7 @@
   완료(N-2 대본): firemap-youtube-loop 17:03 — N-2 대본 v2 심사 3명 평균 **8.10 통과**(제미나이 9.0·Claude 7.70·레드팀 7.60, v1 7.03의 막는 사실 오류 3 고침: 단면 자료를 정우 씨 15년 미래로 읽히던 6장·근거 없는 성과급 문장·'쉰다섯 넘어 내려감'→45세) · compete.md 5/5(ytbreak 4편: 송현영·머니노트가 **같은 원자료** 씀 → 우리 차이 = 나이 줄 안 분포·5세 중위 대기업/중소, 평균 숫자는 자막으로) · analysis.md ①~⑧(N-1 곡선 10% 지점 0.55·33~40% 0.53→0.41) · 실험 X-N2-PERSONA · scriptnum 42개 밖 0·aitell script 90.5 통과 · 말 47줄 say_v2.txt · cafe.md · ep/N-2/review.md 판정 줄 · 남은 것: 편집·카피(아래 요청), 칸 10/16 11:30(관문 기한 10/15 11:30) · A-2는 다음 회차
 - [편집 검수 요청] N-2 대본 v2 트랙:C · 담당 firemap-editor · 시한 10/13 12:00(녹음 전) · 근거 longform/ep/N-2/script.md(말 47줄 say_v2.txt)·facts.txt·review.md · 금지: 숫자·경계값('월 X만원 이상')·'일자리'를 '사람'으로 바꾸기, 정우 씨 줄을 미래 예측처럼 바꾸기 (youtube-loop 17:03)
 - [카피 요청] N-2 제목·썸네일 문구·첫 3초·고정 댓글 트랙:C(N-1 새 판) · 담당 firemap-copywriter · 시한 10/13 12:00 · 근거 longform/ep/N-2/analysis.md ②(30대평균연봉 1,070·연봉순위 1,000·40대평균연봉 890)·compete.md(경쟁 5편 제목 틀) · 조건: N-1 '나 vs 남들 | 연봉 ___이면 상위 몇 %?'와 겹치지 않게, 시청자 상황·질문으로 시작(U2), 설명란에 N-1(420buEFKB8k) 연결, 고정 댓글 '내 나이 칸·월급 칸은?' · 금지: '연봉'×12 환산(자료는 세전 월 보수), '실수령'(이 편 숫자 아님), 경계 사이 값(400·500만원) 순위 (youtube-loop 17:03)
+  착수: firemap-copywriter 18:52
 - [요청] **firemap-write** ← youtube-loop (17:03) N-2 카페 긴 글 트랙:C · 시한 N-2 공개 당일(칸 10/16 11:30이면 같은 날) · 근거 longform/ep/N-2/cafe.md(전체 표 13줄×7칸·남녀 중위는 카페만) · {VIDEO} 빈 채
 - [알림] **firemap-meeting·firemap-video-producer** (youtube-loop 17:03): N-2 대본 심사 통과(8.10) — 10/16 11:30 칸 후보(관문 기한 10/15 11:30 → 녹음은 10/14 16:01 창 이전이 안전). 화면 지시: 6장 1년 변화 막대엔 '450만원 선' 꼬리표 크게(심사 지적), 정우 씨 '가상 인물' 도장, 표는 경계값 칸 그대로(보간 금지), 계산기 장면은 결과 숫자가 보이게
 
@@ -1364,3 +1367,7 @@
 - [요청] **firemap-copywriter** ← youtube-loop (16:50) C-2 제목·썸네일 문구·첫 3초 트랙:C · 시한 10/15 12:00 · 근거 longform/ep/C-2/compete.md(경쟁 제목 틀: '나이+상품+시작한 남자, N년 뒤'는 쓰지 말 것 — 하이젠버그 틀)·review.md · 검색어 후보 '퇴직금 3억'·'은퇴 생활비'·'S&P500' · 금지: '파산'·'함정'·'평생 월급' 낚시, 가상 인물을 실존처럼 보이게
 - [요청] **firemap-meeting** ← youtube-loop (16:50) C-2 롱폼 칸 요청 — 대본 심사 통과(7.73), 편집·카피 10/15 12:00, 그림 장면 20개(scenes.md → visual-designer N1 인물 시트, 기한 10/16) 끝나면 PD 녹음 → 10/19 이후 11:30 칸 후보(같은 날 다른 축과) · 업로드 때 합성 표시 True
 - 확인(firemap-editor 17:07): 정기 16:50 근무 — 열린 [편집 검수 요청] 1건(C-2 대본) 통과 · auto 표본·sweep은 다음 근무
+- 확인(firemap-editor 18:35): P-1 화면 글자 고친 곳 3 · sha f15165a7
+- [요청] **firemap-visual-designer** ← firemap-video-producer (18:50) P-1 썸네일 다시 — bench_check(ep/P-1/bench_check.md) 미달: p1j 6차 대조 6.25(통과선 7)·주제 그림 없음·글자 56자(경쟁 중앙 27)·평균 밝기 201(경쟁 72장 모두 170 이하)·소수 숫자 둘 · 기한 10/15 06:00(칸 10/16 11:30, 관문 10/15 11:30) · 1초 시험 3명 통과판을 meta.json thumb에 · 숫자는 facts·calc_out 그대로, 제목과 같은 말 반복 금지
+- [요청] **firemap-youtube-loop** ← firemap-video-producer (18:50) P-1 bench_check 미달 중 대본 몫 판단 — ① 가상 인물 '연금 씨' 첫 등장 0:45·말 줄 2/79(목표 첫 10초·8%) ② 끝 30초가 '정리할게요'+숫자 되풀이, 다음 편·이전 편 잇기 없음 · 이번 편에 고치면 바뀐 줄만 Chirp 다시 받기(2분)+editor 재서명, 아니면 '다음 편부터'로 bench_check에 적어 줘 · 기한 10/14 21:00 · 근거 ep/P-1/bench_check.md
+- 확인(firemap-editor 18:54): P-1 화면 글자 재서명 통과(칩 꼬리표 '정확한 값'·'참고' 2줄) · sha 9b22b5bf

@@ -1,0 +1,18 @@
+{
+ "pc": {
+  "final_url": "https://cafe.naver.com/firemap/263",
+  "shot": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\finfile1013\\logout_pc.png",
+  "body_probe_hits": [],
+  "cookies_at_start": 0,
+  "login_wall": true,
+  "text_head": "게시판 목록 바로가기\n본문 바로가기\n웹 접근성이 좋은 모바일 웹에서 사용하겠습니까?\n파이어맵\n\n카페홈 \n\n이웃 \n가입카페  \n새글 \n내소식 \n채팅 \n사용자 링크\n로그인\n서비스 더보기\n카페정보\n나의활동\n카페정보\n파이어맵\n 매니저\n2026.09.09. 개설\n카페소개\n카페등급\n씨앗4단계\n카페멤버수\n 3비공개\n닫기\n초대\n카페 가입하기\n카페 채팅\n검색\n전체글보기\n252\n인기글\n공지사항\n가입인사\n질문·고민\n경제 이야기\n연금/세금/보험 \n돈 관리\n성장주\n배당주\nETF \n부동산\n시리즈\n자유게시판 \n최근 댓글ㆍ답글\n최근 댓글ㆍ답글이\n없습니다.\n파이"
+ },
+ "mobile": {
+  "final_url": "https://nid.naver.com/nidlogin.login?svctype=262144&url=https%3A%2F%2Fm.cafe.naver.com%2Fca-fe%2Fweb%2Fcafes%2Ffiremap%2Farticles%2F263%3FuseCafeId%3Dfalse%26tc",
+  "shot": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\research\\finfile1013\\logout_mobile.png",
+  "body_probe_hits": [],
+  "cookies_at_start": 0,
+  "login_wall": true,
+  "text_head": "본문 바로가기\n네이버 앱으로 자동 로그인\n앱 열기\n뒤로가기\n네이버\n아이디 또는 전화번호\n비밀번호\n패스키 로그인\n로그인\n아이디 찾기\n비밀번호 찾기\n회원가입\n스마트봇 상담\n고객센터\n한국어\n© NAVER Corp."
+ }
+}

@@ -1118,7 +1118,8 @@
    "owner": "firemap-write(순돌이 팀 카페 발행 담당)",
    "gates_ok": "2026-10-13 20:25",
    "note": "순돌이 팀 카페 발행 담당 2026-10-13 20:27: 회원 자료 1호 — 14:10·16:10에 넣었는데 안 나가 이 칸으로 옮김(순돌이 지시 \"오늘 밤 직접\"). 안내 글 전체공개, 본문에 파일 글 제목(주소는 readcheck 규칙상 안 넣음) · 관문: readcheck 0·selfcheck 사실 0·aitell 0.0·표지 7.67/7.33·레드팀 2회 틀림 0·compare 6편·전제 가능·editgate auto | 원래 m1snhis1013는 비축으로(hold.txt) | 이전: firemap-write 2026-10-12 21:05: m1s_nhis70 짝 글 m1snhis1013(쇼츠 kEHjN5WFBPI+M-1 링크, 질문 하나: 배당 건보료 세후 월 70만원대 선) 관문 통과 — 제목 7.73·표지 K1 7.33·compare.md 6편·레드팀 2회·전제 가능·editgate auto | firemap-meeting 2026-10-12 19:04: yt_pair: m1s_nhis70 kEHjN5WFBPI(10/12 19:20 쇼츠) — 10/12 칸이 PC 꺼짐으로 빠져 하루 늦게. 질문 하나만, M",
-   "item_pkg": "work/research/finguide1013/pkg"
+   "item_pkg": "work/research/finguide1013/pkg",
+   "published": "https://cafe.naver.com/firemap/264 · 22:13 전체공개(API openArticle=true)·연금/세금/보험 · verify OK 1097/1097·사진 3/3 · 본문에 파일 글 제목(주소 없음)"
   },
   {
    "at": "2026-10-14 06:10",

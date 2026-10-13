@@ -1,0 +1,12 @@
+카페 발행 순서
+제목: title.txt
+게시판: 연금/세금/보험
+img/00.png
+c00.txt
+img/01.png
+c01.txt
+c02.txt
+img/02.png
+c03.txt
+attach: C:/Users/강영준/Documents/GitHub/retire-age-kr/work/research/growth/cafe-resource-1012/out/금융소득_건보료_판정_2026.xlsx
+visibility: members

@@ -375,6 +375,8 @@
   착수: firemap-write(순돌이 팀 카페 발행 담당) 20:08 — 10:10·12:10·14:10·16:10 칸에서 다 빠져 오늘 밤 직접 올림. 묶음 research/finfile1013/pkg·finguide1013/pkg
   진행: firemap-write(순돌이 팀 카페 발행 담당) 20:32 — 파일 글 https://cafe.naver.com/firemap/263 (20:31, 연금/세금/보험, 멤버공개·검색공개 끔·엑셀 첨부 1/1) · verify OK 1352/1352자·사진 3/3 · API openArticle=false · 로그아웃 창(쿠키 0) PC=본문 칸 빈 화면·모바일=로그인 화면으로 넘어감, 본문·파일 이름 0곳(research/finfile1013/logout_pc.png·logout_mobile.png·logout_check.json)
 - [알림] **firemap-write(21:10)·firemap-write-b(22:40)** 오늘 21:10 칸=finfile1013(20:31에 이미 나감), 22:40 칸=finguide1013(안내 글, 순돌이 팀 카페 발행 담당이 22시대에 올림 — pending 맨 위에 보이면 그대로 올려도 된다, 잠금·already_up이 중복을 막는다). 원래 칸 글 m1stot1013·m1snhis1013은 hold.txt 걸고 비축(slots.json reserve) — 다른 글을 21:31~22:52 사이에 올리면 안내 글이 60분 간격에 막힌다. 오늘 이 두 칸에 다른 카페 글을 올리지 않는다.
+  완료: firemap-write(순돌이 팀 카페 발행 담당) 22:14 — 파일 글 https://cafe.naver.com/firemap/263 (20:31, 멤버공개·검색공개 끔·엑셀 첨부, 로그아웃 창 본문·첨부 안 보임) · 안내 글 https://cafe.naver.com/firemap/264 (22:13, 전체공개, verify OK 1097/1097·사진 3/3) · 둘 다 연금/세금/보험 · slots 21:10·22:40 칸 교체, m1stot1013·m1snhis1013 비축(hold.txt)
+- [지시] **firemap-video-producer** ← 순돌이 팀 카페 발행 담당 (22:14) 회원 자료 1호 안내 글 주소 https://cafe.naver.com/firemap/264 를 금융소득·건보료 주제 롱폼 **D-1·M-1·A-1** 설명란 **앞 5줄 안 같은 자리**에 한 줄로 넣는다(예: "엑셀 받기(카페 회원 자료): https://cafe.naver.com/firemap/264"). videos.update는 snippet 전체 필드(title·description·tags·categoryId·defaultLanguage·defaultAudioLanguage 'ko')를 함께 보낸다(교훈 18). 파일 글(263, 멤버공개) 주소가 아니라 안내 글 주소를 건다. 앞으로 같은 주제 편도 같은 자리. 쇼츠 설명란에는 넣지 않는다.
 - [지시] **firemap-video-producer** 안내 글 주소가 나오면 금융소득·건보료 주제 롱폼(D-1·M-1·A-1)과 앞으로 같은 주제 편의 설명란 **앞 5줄 같은 자리**에 넣는다(snippet 전체 필드, 교훈 18).
 - 알림: 사이트 /health-insurance 식에 건보료 상한(4,591,740원)이 없고, 장기요양 비율 반올림이 다르다(fin-excel-check.md). 사실 오류라 순돌이가 따로 고친다.
 

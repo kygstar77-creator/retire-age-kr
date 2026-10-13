@@ -1114,20 +1114,28 @@
    "note": "firemap-video-producer 2026-10-11 13:05: v2로 교체(shorts-gap-1011.md — 첫 말·0초 답 숫자·자막 조각·검은 띠 제목·링크 줄 뺌), 관문 cardshorts/m1s_total1y/review.md 'v2' | firemap-video-producer 2026-10-10 12:41: M-1 롱폼(eTjVs1vDTwg)을 자른 세로 쇼츠(목소리 = M-1 voice.json wav 재사용, 새 TTS 없음) — 관문 숫자 대조 0·치직 0·눈 검사 5항목 통과, 근거 cardshorts/m1s_total1y/review.md · 카드 쇼츠 대체(사장님 10/10 지시)"
   },
   {
-   "at": "2026-10-13 20:10",
+   "at": "2026-10-13 21:10",
    "kind": "cafe",
    "item": "m1stot1013",
    "owner": "firemap-write",
    "gates_ok": "2026-10-12 22:36",
-   "note": "firemap-write 2026-10-12 22:36: 제목 티커 뺌(발행기 SCHD 겹침 해소) — \"배당 ETF 셋 중 분배금 최고 커버드콜이 1년 총수익 꼴찌인 이유\" 제미나이 9·레드팀 7·editgate auto 재날인 · yt_pair: m1s_total1y uMqmvqNM02k | firemap-write 2026-10-12 21:05: m1s_total1y 짝 글 m1stot1013(쇼츠 uMqmvqNM02k+M-1 eTjVs1vDTwg 링크, 질문 하나: 분배금 1등 JEPQ가 1년 원화 총수익은 셋 중 꼴찌) 관문 통과 — 제목 7.67·표지 K2 7.67·compare.md 6편·레드팀 3회·전제 가능·editgate auto · 본문 \"오늘 저녁 올라온 쇼츠\" — 칸이 밀리면 고칠 것 | firemap-meeting 2026-10-12 19:04: yt_pair: m1s_total1y uMqmvqNM02k(19:20 쇼츠) — 그 쇼츠 질문 하나에 답하는 짧은 글(쇼츠 링크+M-1 eTjVs1vDTwg 링크+표)"
+   "note": "firemap-write 2026-10-12 22:36: 제목 티커 뺌(발행기 SCHD 겹침 해소) — \"배당 ETF 셋 중 분배금 최고 커버드콜이 1년 총수익 꼴찌인 이유\" 제미나이 9·레드팀 7·editgate auto 재날인 · yt_pair: m1s_total1y uMqmvqNM02k | firemap-write 2026-10-12 21:05: m1s_total1y 짝 글 m1stot1013(쇼츠 uMqmvqNM02k+M-1 eTjVs1vDTwg 링크, 질문 하나: 분배금 1등 JEPQ가 1년 원화 총수익은 셋 중 꼴찌) 관 | 10/13 칸 재배치 10-13 20:10→10-13 21:10"
   },
   {
-   "at": "2026-10-13 22:10",
+   "at": "2026-10-13 22:40",
    "kind": "cafe",
    "item": "m1snhis1013",
-   "owner": "firemap-write",
+   "owner": "firemap-write-b",
    "gates_ok": "2026-10-12 21:05",
-   "note": "firemap-write 2026-10-12 21:05: m1s_nhis70 짝 글 m1snhis1013(쇼츠 kEHjN5WFBPI+M-1 링크, 질문 하나: 배당 건보료 세후 월 70만원대 선) 관문 통과 — 제목 7.73·표지 K1 7.33·compare.md 6편·레드팀 2회·전제 가능·editgate auto | firemap-meeting 2026-10-12 19:04: yt_pair: m1s_nhis70 kEHjN5WFBPI(10/12 19:20 쇼츠) — 10/12 칸이 PC 꺼짐으로 빠져 하루 늦게. 질문 하나만, M-1 롱폼 링크"
+   "note": "firemap-write 2026-10-12 21:05: m1s_nhis70 짝 글 m1snhis1013(쇼츠 kEHjN5WFBPI+M-1 링크, 질문 하나: 배당 건보료 세후 월 70만원대 선) 관문 통과 — 제목 7.73·표지 K1 7.33·compare.md 6편·레드팀 2회·전제 가능·editgate auto | firemap-meeting 2026-10-12 19:04: yt_pair: m1s_nhis70 kEHjN5WFBPI(10/12 19:20 쇼츠) — 10/12 칸이 PC 꺼짐으로 빠져 하루 늦게. 질문 하나만, M | 10/13 칸 재배치 10-13 22:10→10-13 22:40"
+  },
+  {
+   "at": "2026-10-14 06:10",
+   "kind": "cafe",
+   "item": "m1cafe1014",
+   "owner": "firemap-write",
+   "gates_ok": "2026-10-13 08:33",
+   "note": "firemap-meeting 2026-10-12 19:04: yt_pair: M-1 eTjVs1vDTwg — 10/12 08:10 배정분이 PC 꺼짐으로 빠짐. 전체 표 긴 글. 국민연금 글(npsage 12:10)과 다른 축 | firemap-write 2026-10-13 08:33: M-1 짝 긴 글 m1cafe1014 관문 통과 — 제목 8.13(제미나이 9.2·9.2·레드팀 6)·표지 K4 8.0·compare.md 경쟁 5편(건보료 0/5)·readcheck 0·selfcheck 사실 0·aitell 2.4·crossche | 10/13 칸 재배치 10-14 08:10→10-14 06:10"
   },
   {
    "at": "2026-10-14 07:20",
@@ -1140,22 +1148,28 @@
    "published": "예약 2026-10-14T07:20:00+09:00 https://youtu.be/PHTFJJe5odU"
   },
   {
-   "at": "2026-10-14 08:10",
-   "kind": "cafe",
-   "item": "m1cafe1014",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-13 08:33",
-   "note": "firemap-meeting 2026-10-12 19:04: yt_pair: M-1 eTjVs1vDTwg — 10/12 08:10 배정분이 PC 꺼짐으로 빠짐. 전체 표 긴 글. 국민연금 글(npsage 12:10)과 다른 축 | firemap-write 2026-10-13 08:33: M-1 짝 긴 글 m1cafe1014 관문 통과 — 제목 8.13(제미나이 9.2·9.2·레드팀 6)·표지 K4 8.0·compare.md 경쟁 5편(건보료 0/5)·readcheck 0·selfcheck 사실 0·aitell 2.4·crosscheck 말투 5 반영·레드팀 2회 틀림 1 반영·전제 가능·editgate auto · yt_pair: M-1 eTjVs1vDTwg",
-   "item_pkg": "work/research/m1cafe1014/pkg"
-  },
-  {
-   "at": "2026-10-14 10:10",
+   "at": "2026-10-14 07:40",
    "kind": "cafe",
    "item": "renew1011",
-   "owner": "firemap-write",
+   "owner": "firemap-write-b",
    "gates_ok": "2026-10-13 08:29",
-   "note": "firemap-write 2026-10-13 07:2x 배정: 계약갱신청구권 갱신 증액·실거주 거절 뒤 제3자 임대 배상(부동산, work/research/renew1011 — 원고·교차검증·제목·표지·editgate 남음, 기한 04:10 지남이라 오늘 안 write가 마무리) · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 08:29: renew1011 관문 통과(10/11 08:34 날인분) + 전제 줄 + 제목 쉼표 뺌('…새 세입자가 들어오면 배상금은 얼마일까', 틀 v2 10/14) + slot.txt 2026-10-14 10 + editgate auto 재날인 · 10월 금통위 결과는 발행 전 ECOS 재확인",
-   "item_pkg": "work/research/renew1011/pkg"
+   "note": "firemap-write 2026-10-13 07:2x 배정: 계약갱신청구권 갱신 증액·실거주 거절 뒤 제3자 임대 배상(부동산, work/research/renew1011 — 원고·교차검증·제목·표지·editgate 남음, 기한 04:10 지남이라 오늘 안 write가 마무리) · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 08:29: renew1011 관문 통과(10/11 08:34 날인분) + 전제 줄 + 제목 쉼표 뺌('…새 세입자가 들어오면 배상금은 얼마일까', 틀 v2 10/14) +  | 10/13 칸 재배치 10-14 10:10→10-14 07:40"
+  },
+  {
+   "at": "2026-10-14 09:10",
+   "kind": "cafe",
+   "item": "npsage1009",
+   "owner": "firemap-write",
+   "gates_ok": "2026-10-13 10:28",
+   "note": "firemap-write 2026-10-13 07:2x 배정: 국민연금 비축분(관문 통과 2026-10-08 20:24) — 마지막 국민연금 제목 10/7 08:28 뒤 7일 = 10/14 08:30 이후 공개 가능 · 관문 기한 = 발행 6시간 전 · firemap-write 10:28 gates_ok: editgate check 해시 일치(auto 10/11 12:22)·review.md 전제 줄 있음·slot.txt 2026-10-14 12 | 10/13 칸 재배치 10-14 12:10→10-14 09:10"
+  },
+  {
+   "at": "2026-10-14 10:40",
+   "kind": "cafe",
+   "item": "r1cafe1014",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-10-13 10:33",
+   "note": "firemap-write 2026-10-13 07:2x 배정: R-1 롱폼(11:30 공개) 짝 긴 글 ep/R-1/cafe.md 전체 표·{VIDEO}는 새 판 G1oI47miUuo · yt_pair: R-1 · 13:10 이후 · \"영수증\" 금지 · 발행 주소를 today.md에 적어 PD가 영상 설명을 바꿈 · 관문 기한 = 발행 6시간 전 · firemap-write 10:33 gates_ok: yt_pair R-1 G1oI47miUuo · 제목 7.33·표지 K4 7.67·compare.md 경쟁 6편·readcheck 0 | 10/13 칸 재배치 10-14 14:10→10-14 10:40"
   },
   {
    "at": "2026-10-14 11:30",
@@ -1169,34 +1183,42 @@
   {
    "at": "2026-10-14 12:10",
    "kind": "cafe",
-   "item": "npsage1009",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-13 10:28",
-   "note": "firemap-write 2026-10-13 07:2x 배정: 국민연금 비축분(관문 통과 2026-10-08 20:24) — 마지막 국민연금 제목 10/7 08:28 뒤 7일 = 10/14 08:30 이후 공개 가능 · 관문 기한 = 발행 6시간 전 · firemap-write 10:28 gates_ok: editgate check 해시 일치(auto 10/11 12:22)·review.md 전제 줄 있음·slot.txt 2026-10-14 12"
-  },
-  {
-   "at": "2026-10-14 14:10",
-   "kind": "cafe",
-   "item": "r1cafe1014",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-13 10:33",
-   "note": "firemap-write 2026-10-13 07:2x 배정: R-1 롱폼(11:30 공개) 짝 긴 글 ep/R-1/cafe.md 전체 표·{VIDEO}는 새 판 G1oI47miUuo · yt_pair: R-1 · 13:10 이후 · \"영수증\" 금지 · 발행 주소를 today.md에 적어 PD가 영상 설명을 바꿈 · 관문 기한 = 발행 6시간 전 · firemap-write 10:33 gates_ok: yt_pair R-1 G1oI47miUuo · 제목 7.33·표지 K4 7.67·compare.md 경쟁 6편·readcheck 0·selfcheck 사실 0·aitell 2.7·crosscheck 사실 0·레드팀 2회(틀림 2 반영)·전제 가능·editgate auto"
-  },
-  {
-   "at": "2026-10-14 16:10",
-   "kind": "cafe",
    "item": "cheongyak1012",
    "owner": "firemap-write",
    "gates_ok": "2026-10-13 12:37",
-   "note": "firemap-write 2026-10-13 07:2x 배정: 청약통장(검색 18,740, 조특법 87조 원문, work/research/cheongyak1012 facts.txt만 있음 — 원고부터) · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 12:37: 관문 통과 — \"청약통장 해지 추징 54만원, 세율 낮으면 절반 넘게 줄이는 조건\"(제목 8.0·표지 Q5 8.0·compare.md 경쟁 8·readcheck 0·selfcheck 사실 0·aitell 0.0·레드팀 2회 틀림 1 반영·전제 가능·editgate auto)"
+   "note": "firemap-write 2026-10-13 07:2x 배정: 청약통장(검색 18,740, 조특법 87조 원문, work/research/cheongyak1012 facts.txt만 있음 — 원고부터) · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 12:37: 관문 통과 — \"청약통장 해지 추징 54만원, 세율 낮으면 절반 넘게 줄이는 조건\"(제목 8.0·표지 Q5 8.0·compare.md 경쟁 8·readcheck 0·selfcheck 사실 0·aitell 0.0·레드팀 2회 틀림 1 반영·전 | 10/13 칸 재배치 10-14 16:10→10-14 12:10"
+  },
+  {
+   "at": "2026-10-14 13:40",
+   "kind": "cafe",
+   "item": "qqqm1014",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-10-13 15:24",
+   "note": "firemap-write 2026-10-13 07:2x 배정: QQQM vs QQQ 보수 원 금액(검색 33,120; 9/22 사실표 work/research/qqqm는 낡아 새로 조사) — 10/13 18:10 리츠 ETF와 다른 날이라 종목 축 겹침 없음 · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 15:24: 관문 통과 — \"QQQM에 1억 넣고 1년 보유한 결과, QQQ와의 실제 수익 차이\"(제목 끝말 충돌로 마지막에 교체해 재심사 안 함[전 제목 8.0]·표지 K2 8.0·compare | 10/13 칸 재배치 10-14 18:10→10-14 13:40"
+  },
+  {
+   "at": "2026-10-14 15:10",
+   "kind": "cafe",
+   "item": "r1cafe_fx1014",
+   "owner": "firemap-write",
+   "gates_ok": "2026-10-13 14:38",
+   "note": "firemap-write 2026-10-13 07:2x 배정: 쇼츠 r1s_fx(2i957iWL8ko, 19:20 공개) 짝 짧은 글 — 질문 하나 \"달러로 산 ETF, 환율이 얼마나 깎았나\" · 쇼츠+본편 G1oI47miUuo 링크+표 1개(숫자 ep/R-1/facts.txt [10]·[add-1003 B1·B2]) · yt_pair: 2i957iWL8ko · 롱폼 짝 글과 겹치지 않게 · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 14:38: r1cafe_fx1014 관문 통과 — \"미국 ET | 10/13 칸 재배치 10-14 20:10→10-14 15:10"
+  },
+  {
+   "at": "2026-10-14 16:40",
+   "kind": "cafe",
+   "item": "dcpension1014",
+   "owner": "firemap-write-b",
+   "gates_ok": "2026-10-13 16:34",
+   "note": "firemap-write 2026-10-13 07:2x 배정: 퇴직연금 DC형(검색 21,610) — 사실표부터 · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 16:34: 관문 통과 — \"퇴직연금 DC형으로 바꿀까, 임금피크 앞두면 계산이 달라지는 이유\"(제목 7.9·표지 K4 7.67·compare.md 경쟁 6편·readcheck 0·selfcheck 사실 0·aitell 2.5·crosscheck 말투 12 반영·레드팀 2회 틀림 1·오해 6 반영·전제 가능·editgate auto) · 경 | 10/13 칸 재배치 10-14 22:10→10-14 16:40"
   },
   {
    "at": "2026-10-14 18:10",
    "kind": "cafe",
-   "item": "qqqm1014",
+   "item": "TBD",
    "owner": "firemap-write",
-   "gates_ok": "2026-10-13 15:24",
-   "note": "firemap-write 2026-10-13 07:2x 배정: QQQM vs QQQ 보수 원 금액(검색 33,120; 9/22 사실표 work/research/qqqm는 낡아 새로 조사) — 10/13 18:10 리츠 ETF와 다른 날이라 종목 축 겹침 없음 · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 15:24: 관문 통과 — \"QQQM에 1억 넣고 1년 보유한 결과, QQQ와의 실제 수익 차이\"(제목 끝말 충돌로 마지막에 교체해 재심사 안 함[전 제목 8.0]·표지 K2 8.0·compare.md 경쟁 8편·readcheck 제목 숫자 2개 1건·selfcheck 사실 0·aitell 2.6·레드팀 2회 숫자 일치·문장 손질 반영·전제 가능·editgate auto) · 경로 work/research/qqqm1014/pkg · 카페 #46(SEC 보수 설명)과 각도 다름: 실제 1년 기록"
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
   },
   {
    "at": "2026-10-14 19:20",
@@ -1208,20 +1230,36 @@
    "published": "예약 2026-10-14T19:20:00+09:00 https://youtu.be/2i957iWL8ko"
   },
   {
-   "at": "2026-10-14 20:10",
+   "at": "2026-10-14 19:40",
    "kind": "cafe",
-   "item": "r1cafe_fx1014",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-13 14:38",
-   "note": "firemap-write 2026-10-13 07:2x 배정: 쇼츠 r1s_fx(2i957iWL8ko, 19:20 공개) 짝 짧은 글 — 질문 하나 \"달러로 산 ETF, 환율이 얼마나 깎았나\" · 쇼츠+본편 G1oI47miUuo 링크+표 1개(숫자 ep/R-1/facts.txt [10]·[add-1003 B1·B2]) · yt_pair: 2i957iWL8ko · 롱폼 짝 글과 겹치지 않게 · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 14:38: r1cafe_fx1014 관문 통과 — \"미국 ETF 환차손, 달러로 번 1년 수익은 원화로 몇 % 줄었을까\"(제목 8.0·표지 K2 8.0·compare.md 경쟁 4편·readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck 사실 4(반영 1·유지 3)·레드팀 2회 틀림 1 반영(330만→380만/330만 구분)·전제 가능·editgate auto) · yt_pair: 2i957iWL8ko"
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
   },
   {
-   "at": "2026-10-14 22:10",
+   "at": "2026-10-14 21:10",
    "kind": "cafe",
-   "item": "dcpension1014",
+   "item": "TBD",
    "owner": "firemap-write",
-   "gates_ok": "2026-10-13 16:34",
-   "note": "firemap-write 2026-10-13 07:2x 배정: 퇴직연금 DC형(검색 21,610) — 사실표부터 · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 16:34: 관문 통과 — \"퇴직연금 DC형으로 바꿀까, 임금피크 앞두면 계산이 달라지는 이유\"(제목 7.9·표지 K4 7.67·compare.md 경쟁 6편·readcheck 0·selfcheck 사실 0·aitell 2.5·crosscheck 말투 12 반영·레드팀 2회 틀림 1·오해 6 반영·전제 가능·editgate auto) · 경로 work/research/dcpension1014/pkg"
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-14 22:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-15 06:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
   },
   {
    "at": "2026-10-15 07:20",
@@ -1233,6 +1271,30 @@
    "item_pkg": "work/research/cardshorts/c1s_fx"
   },
   {
+   "at": "2026-10-15 07:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-15 09:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-15 10:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
    "at": "2026-10-15 11:30",
    "kind": "long",
    "item": "H-1",
@@ -1240,6 +1302,46 @@
    "gates_ok": "2026-10-13 11:54",
    "note": "firemap-video-producer 2026-10-13 11:54: H-1 업로드 rVg0pQVo_wk(10/15 11:30 예약) · Chirp 91줄·대본 심사 7.47·제목 7.73·bench_check 통과·U5 8.0초·겹침 0·점수표 36(경쟁 중앙 25) · 짝 카페 글 10/15 08:10/10:10(영상보다 먼저) → 글 주소 나오면 PD가 설명 3번째 줄·고정 댓글 교체 · yt_pair: rVg0pQVo_wk | 순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | 콘텐츠 본부장 2026-10-11 02:49 대본 완성(date 값): H-1 부동산 롱폼 — 헬리오시티·올림픽파크포레온·고덕그라시움 84㎡ 1년 실거래 전부(가락·둔촌·고덕, tour.py) · 말 97줄+쇼츠용 3줄=95줄 녹음 · aitell script 통과 · 녹음 10/14 16:01 창(PD) · 관문 기한 10/15 19:30 전 · 카페 표 글({CAFE}) 먼저 · ep/H-1 | 순돌이 10/11: 사장님 \"롱폼 무조건 하루 한 개\" — 회의가 R-1·P-1·I-1 중 배정",
    "published": "https://youtu.be/rVg0pQVo_wk 예약 private+publishAt 2026-10-15T02:30Z"
+  },
+  {
+   "at": "2026-10-15 12:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-15 13:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-15 15:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-15 16:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-15 18:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
   },
   {
    "at": "2026-10-15 19:20",
@@ -1252,12 +1354,68 @@
    "published": "예약 2026-10-15T19:20:00+09:00 https://youtu.be/m7JLUo8oa6o"
   },
   {
+   "at": "2026-10-15 19:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-15 21:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-15 22:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-16 06:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
    "at": "2026-10-16 07:20",
    "kind": "shorts",
    "item": "TBD",
    "owner": "firemap-video-producer",
    "gates_ok": null,
    "note": "순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼"
+  },
+  {
+   "at": "2026-10-16 07:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-16 09:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-16 10:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
   },
   {
    "at": "2026-10-16 11:30",
@@ -1268,6 +1426,46 @@
    "note": "firemap-youtube-loop 2026-10-12 20:47: P-1(국민연금 수령나이 당기기·제때·미루기) 배정 — 10/14 11:30은 R-1이 이미 예약(PD 20:25)이라 지시 ②의 10/14 대신 이 칸. 대본 v2.2 심사 7.20 통과·editor 서명 19:03(sha 19c3f7f4)·전제 줄 공단 원문(노령종류별 지급현황 2025-06 완전노령연금 평균 약 111만원)으로 닫음 · 녹음 10/14 16:01 창, 관문 기한 10/15 11:30 · 짝 카페 npsage1009(10/14 12:10, 영상 링크 없이 먼저) | 순돌이 10/11 10:2x 사장님 \"매일 11시 30분으로, 오늘부터\" — 19:30→11:30 | 순돌이 10/11: 사장님 \"롱폼 무조건 하루 한 개\" — 회의가 R-1·P-1·I-1 중 배정"
   },
   {
+   "at": "2026-10-16 12:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-16 13:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-16 15:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-16 16:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-16 18:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
    "at": "2026-10-16 19:20",
    "kind": "shorts",
    "item": "TBD",
@@ -1276,12 +1474,68 @@
    "note": "순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼"
   },
   {
+   "at": "2026-10-16 19:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-16 21:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-16 22:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-17 06:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
    "at": "2026-10-17 07:20",
    "kind": "shorts",
    "item": "TBD",
    "owner": "firemap-video-producer",
    "gates_ok": null,
    "note": "순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼"
+  },
+  {
+   "at": "2026-10-17 07:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-17 09:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-17 10:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
   },
   {
    "at": "2026-10-17 11:30",
@@ -1293,12 +1547,76 @@
    "ep": "W-1/w1014"
   },
   {
+   "at": "2026-10-17 12:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-17 13:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-17 15:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-17 16:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-17 18:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
    "at": "2026-10-17 19:20",
    "kind": "shorts",
    "item": "TBD",
    "owner": "firemap-video-producer",
    "gates_ok": null,
    "note": "순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼"
+  },
+  {
+   "at": "2026-10-17 19:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-17 21:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-17 22:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
   },
   {
    "at": "2026-10-22 11:30",

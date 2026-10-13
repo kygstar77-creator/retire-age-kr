@@ -1168,8 +1168,8 @@
    "kind": "cafe",
    "item": "cheongyak1012",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-write 2026-10-13 07:2x 배정: 청약통장(검색 18,740, 조특법 87조 원문, work/research/cheongyak1012 facts.txt만 있음 — 원고부터) · 관문 기한 = 발행 6시간 전"
+   "gates_ok": "2026-10-13 12:37",
+   "note": "firemap-write 2026-10-13 07:2x 배정: 청약통장(검색 18,740, 조특법 87조 원문, work/research/cheongyak1012 facts.txt만 있음 — 원고부터) · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 12:37: 관문 통과 — \"청약통장 해지 추징 54만원, 세율 낮으면 절반 넘게 줄이는 조건\"(제목 8.0·표지 Q5 8.0·compare.md 경쟁 8·readcheck 0·selfcheck 사실 0·aitell 0.0·레드팀 2회 틀림 1 반영·전제 가능·editgate auto)"
   },
   {
    "at": "2026-10-14 18:10",

@@ -1,3 +1,4 @@
+실측: 숫자 80.0/1,000단어 · 2개 이상 문장 13% · aitell script 통과 (편집 2026-10-14 07:10, say_v2.txt)
 # H-2 대본 심사 (youtube-loop) — 통과선 평균 7(목표 8) · 심사 3명: 제미나이(second_opinion.py 대본, SO_NOLITE)·Claude 심사관(하위 작업자)·레드팀(하위 작업자, redteam-prompt.md)
 입력: review_in_script_v1.md / v2.md(대본 + facts + calc_out + compete.md). 제미나이 원문 review_in_script_v1_대본.md·v2_대본.md. 사실 검증 review_gemini_v1.md(3.7-flash, 막을 3 반영)·review_gemini_v1b.md(3.5-flash-lite, 막을 0).
 

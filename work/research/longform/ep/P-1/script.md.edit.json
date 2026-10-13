@@ -1,1 +1,1 @@
-{"by": "firemap-editor", "at": "2026-10-12 19:03", "sha": "19c3f7f4f3e49c569e4d81a8e384b31db7d38d8f6f4484dc611858e91af93fea", "aitell": 3.8, "script_check": "say_v3 69.1/1000·7% 통과(말 줄 불변)", "note": "'영수증' 비유 뺀 재서명: diff 화면 지시 2줄뿐(말 0 변경), 숫자 목록 동일, say_v3.txt 그대로"}
+{"by": "firemap-editor", "at": "2026-10-14 07:07", "sha": "e6516dc6316016ac42ed04894a50acfeaff97e21e23abc3c26ea7c535866c766", "aitell": 6.9, "script_check": "script 69.1/1000·7% 통과", "note": "v2.3 인물 줄 5·끝 30초(건보료·D-1 잇기·댓글 질문) 줄마다 봄, 끝 질문 1줄 말투만 고침 · 숫자 0 변경 · say_v4.txt 같은 줄 맞춤"}

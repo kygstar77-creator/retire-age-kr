@@ -357,9 +357,17 @@ SCRIPT_NUM_PER_1000 = 92   # 지시는 ≤90이나 경쟁 자막 mOBsKBLWrN4가 
 SCRIPT_MULTI_NUM_PCT = 20  # 숫자 2개 이상 문장 비율: 경쟁 중앙값 11%·최대 20% / 우리 40%
 
 
+def script_src(p):
+    """편 폴더면 voice.json, 녹음 전 편(H-2 10/14)은 voice.json이 없으니 가장 새 say_v*.txt(말 줄만)."""
+    if not os.path.isdir(p): return p
+    if os.path.exists(os.path.join(p, 'voice.json')): return os.path.join(p, 'voice.json')
+    says = sorted(glob.glob(os.path.join(p, 'say_v*.txt')), key=lambda x: int(re.sub(r'\D', '', os.path.basename(x)) or 0))
+    return says[-1] if says else os.path.join(p, 'voice.json')
+
+
 def script_text(p):
     """편 폴더(voice.json)·voice.json·자막 json3·일반 텍스트에서 말하는 글만 뽑는다."""
-    if os.path.isdir(p): p = os.path.join(p, 'voice.json')
+    p = script_src(p)
     if p.endswith('.json3'):
         d = json.load(open(p, encoding='utf-8'))
         return ' '.join(''.join(s.get('utf8', '') for s in e.get('segs', [])) for e in d.get('events', []) if e.get('segs')).replace(chr(10), ' ')
@@ -372,7 +380,7 @@ def script_text(p):
 
 def script_lines(p, field='text'):
     """말 줄 목록(줄 번호를 붙여 보고하려고). voice.json은 text(숫자 그대로) 또는 say(실제 읽는 글), 텍스트는 빈 줄 뺀 줄."""
-    if os.path.isdir(p): p = os.path.join(p, 'voice.json')
+    p = script_src(p)
     if p.endswith('.json'):
         v = json.load(open(p, encoding='utf-8'))
         return [l.get(field) or l.get('text') or l['say'] for s in v['sections'] for l in s['lines']]

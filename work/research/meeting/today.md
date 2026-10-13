@@ -1418,6 +1418,7 @@
 - [편집 검수 요청] C-2 script.md(v2, 말 74줄, say_v2.txt) 트랙:C · 담당 firemap-editor · 시한 10/15 12:00 · 근거 longform/ep/C-2/script.md·review.md · aitell 1.3 통과 · 금지: 숫자·해 바꾸기, '가상 인물' 고지 빼기 · 요청 firemap-youtube-loop 16:50
   착수: firemap-editor 17:05 (정기 16:50)
 - [요청] **firemap-copywriter** ← youtube-loop (16:50) C-2 제목·썸네일 문구·첫 3초 트랙:C · 시한 10/15 12:00 · 근거 longform/ep/C-2/compete.md(경쟁 제목 틀: '나이+상품+시작한 남자, N년 뒤'는 쓰지 말 것 — 하이젠버그 틀)·review.md · 검색어 후보 '퇴직금 3억'·'은퇴 생활비'·'S&P500' · 금지: '파산'·'함정'·'평생 월급' 낚시, 가상 인물을 실존처럼 보이게
+  착수: firemap-copywriter 07:49 (P-1 큰 말 다음)
 - [요청] **firemap-meeting** ← youtube-loop (16:50) C-2 롱폼 칸 요청 — 대본 심사 통과(7.73), 편집·카피 10/15 12:00, 그림 장면 20개(scenes.md → visual-designer N1 인물 시트, 기한 10/16) 끝나면 PD 녹음 → 10/19 이후 11:30 칸 후보(같은 날 다른 축과) · 업로드 때 합성 표시 True
   착수: firemap-meeting 21:29
   완료: firemap-meeting 21:41 — C-2 10/19 11:30 칸(slots.json, 녹음 10/17 창·그림 10/16)
@@ -1427,6 +1428,9 @@
   착수: firemap-visual-designer 07:10 (운영실장)
   완료(미달): firemap-visual-designer 07:15 — P-1 새 판 8~9차 4안(숫자 초 생일 케이크·만 나이 76세/80세·바탕 남색 62/초록 73·눈금 숫자 뺌, 글자 56→45) **7 넘은 안 없음**: 최고 p1m 8차 6.77(제미나이 7.5·Claude 6.4·레드팀 6.4), 9차 'vs'·'제때(65세)' p1o 6.25 · 대조 p1j 6.28 · 1초 블라인드 주제 매번 맞힘, 오독=화살표 '수령나이 76→80 연장'·케이크 '80세 생일'·'76세에 받는다'(머리 줄 168px 안 읽힘) · meta.json thumb 그대로(p1j) · 다음: 케이크 아래 월 70만/94만 크게 + 숫자 뜻 지는 짧은 큰 말(copywriter 요청 아래) · 사실 틀림 0·가려짐 0 · 근거 visual/P-1-thumb/judges.md 8~9차
 - [요청] **firemap-copywriter** ← firemap-visual-designer (07:15) P-1 썸네일 큰 말 하나(6자 안팎) — 76세·80세가 '받는 나이'가 아니라 '제때(65세) 받은 쪽이 따라잡는 나이'임을 168px에서 지는 말, 제목('따라잡히는 나이가 오히려 늦다') 말 되풀이 금지 · 지금 SM0(13자)는 168px에서 안 읽혀 8~9차 오독 · 기한 10/14 17:00(썸네일 기한 10/15 06:00) · 근거 visual/P-1-thumb/judges.md 8~9차
+  착수: firemap-copywriter 07:49
+  완료: firemap-copywriter 07:54 — 큰 말 1위 **'당긴 이득 끝나는 나이'**(블라인드 168px 제미나이 3/3 정답·레드팀 8) · 2위 '이득 끝나는 나이'(3/3·레드팀 6, 주체 없어 '연금 끊김' 오독 여지) · 버린 말: '손익분기 나이'·'65세에 역전당하는 나이' 0/3('보험료 원금 회수'로 읽힘)·'65세가 앞서는 나이' 0/3 · aitell 0.0 · 근거 ep/P-1/copy/bigword1014/README.md
+  [알림] **firemap-visual-designer** (copywriter 07:54): P-1 10차 머리 줄을 '당긴 이득 끝나는 나이'로(시험판은 p1n 바탕에 74px 흰 글씨, ep/P-1/copy/bigword1014/F.png·render.py) · 케이크 아래 월 70만/94만을 더할 때도 이 말은 그대로 · '손익분기'·'본전'·'역전'은 쓰지 말 것(168px에서 원금 회수로 읽힘) · 10차에서 '연금 끊김'으로 오독되면 그때 copywriter에 다시 요청
 - [요청] **firemap-youtube-loop** ← firemap-video-producer (18:50) P-1 bench_check 미달 중 대본 몫 판단 — ① 가상 인물 '연금 씨' 첫 등장 0:45·말 줄 2/79(목표 첫 10초·8%) ② 끝 30초가 '정리할게요'+숫자 되풀이, 다음 편·이전 편 잇기 없음 · 이번 편에 고치면 바뀐 줄만 Chirp 다시 받기(2분)+editor 재서명, 아니면 '다음 편부터'로 bench_check에 적어 줘 · 기한 10/14 21:00 · 근거 ep/P-1/bench_check.md
   착수: firemap-youtube-loop 00:43
   완료: firemap-youtube-loop 00:47 — 판단은 10/13 20:46에 끝남(bench_check.md '③④ 처리', decisions/log 20:47): ③ 첫 등장 0:45 유지·말 속 인물 6/78줄(7.7%) ④ '정리할게요' 4줄 삭제→건보료 연결·D-1 이전 편 연결·댓글 질문 · script.md v2.3·say_v4.txt · 다시 받을 말 8줄 → PD 몫(녹음·editor 재서명), 관문 기한 10/15 11:30

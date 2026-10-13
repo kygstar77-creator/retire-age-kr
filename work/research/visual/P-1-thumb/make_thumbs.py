@@ -232,6 +232,63 @@ def main(keys):
     json.dump(report, open(zp, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
 
+
+
+# ── 8차(10/14 07:1x, PD 18:50 bench_check 미달 처방) — ① 주제 사물(숫자 초 꽂힌 생일 케이크 = '몇 살에') ② 글자 56→30자 안팎(눈금 숫자 뺌)
+#    ③ 바탕 주제색(짙은 남색·짙은 초록, 평균 밝기 170 아래) ④ 소수점 둘 → '만 76세'·'만 80세'(calc 76.67·80.67의 만 나이, 8개월은 작은 꼬리).
+#    76.67-76=0.67년=8개월, 80.67-80=0.67년=8개월 — assert. SM0·SM1 원문 유지(SM1 '지우지 말 것').
+assert int(A5) == 76 and int(A1) == 80 and round((A5 - 76) * 12) == 8 and round((A1 - 80) * 12) == 8
+N5, N1 = str(int(A5)), str(int(A1))
+
+
+def cake(cx, top, w, num, numcol, fs, body='#F4E9D8', icing='#E5322D'):
+    """숫자 초 케이크: cx 가운데, top=초 숫자 윗변. 케이크 몸통은 숫자 아래."""
+    ch = fs * 0.95
+    s = ''
+    # 불꽃·심지(숫자마다)
+    n = len(num); gap = fs * 0.62
+    for i in range(n):
+        x = cx - fs * 0.17 + (i - (n - 1) / 2) * gap
+        s += f"<div style='position:absolute;left:{x - 3:.0f}px;top:{top - 8:.0f}px;width:6px;height:{fs * 0.24:.0f}px;background:#3A2F25'></div>"
+        s += (f"<div style='position:absolute;left:{x - 16:.0f}px;top:{top - 64:.0f}px;width:32px;height:56px;border-radius:50% 50% 50% 50%/60% 60% 40% 40%;"
+              f"background:radial-gradient(circle at 50% 70%,#FFF6C8 0 25%,#FFC93C 45%,#FF7A1A 80%);box-shadow:0 0 30px 8px rgba(255,170,40,.55)'></div>")
+    s += f"<div class='t' style='left:{cx - w / 2:.0f}px;width:{w:.0f}px;text-align:center;top:{top - fs * 0.02:.0f}px;font-size:{fs}px;color:{numcol};-webkit-text-stroke:6px #fff;paint-order:stroke'>{num}<span style='font-size:{fs * 0.38:.0f}px'>세</span></div>"
+    by = top + fs * 0.9
+    s += f"<div style='position:absolute;left:{cx - w / 2:.0f}px;top:{by:.0f}px;width:{w:.0f}px;height:{fs * 0.62:.0f}px;background:{body};border-radius:14px'></div>"
+    s += f"<div style='position:absolute;left:{cx - w / 2:.0f}px;top:{by:.0f}px;width:{w:.0f}px;height:{fs * 0.17:.0f}px;background:{icing};border-radius:14px 14px 22px 22px'></div>"
+    s += f"<div style='position:absolute;left:{cx - w / 2 - 24:.0f}px;top:{by + fs * 0.62 - 8:.0f}px;width:{w + 48:.0f}px;height:16px;background:#C9CED8;border-radius:8px'></div>"
+    return s
+
+
+def p1cake(bg, band, k5='#9FB0D0'):
+    return f"""<div style='position:absolute;inset:0;background:{bg}'></div>
+<div class='t' style='left:44px;top:26px;font-size:74px;color:#FFD23F'>국민연금</div>
+<div class='lab' style='left:330px;top:40px;font-size:52px;color:#fff'>{SM0}</div>
+<div class='t' style='left:150px;top:170px;font-size:64px;color:{k5}'>5년 당김</div>
+{cake(270, 330, 300, N5, '#5B6B8C', 170, body='#DCE3EF', icing='#7F90B3')}
+<div class='t' style='left:600px;top:140px;font-size:84px;color:#fff'>1년 당김</div>
+{cake(735, 300, 400, N1, RED, 220)}
+<div class='lab' style='left:462px;top:{300 + 220 * 0.33:.0f}px;font-size:60px;color:#fff'>→</div>
+<div class='fine' style='color:#C9D1E0;top:636px;left:52px;font-size:30px'>{SM1} · 만 나이</div>
+"""
+
+
+VARIANTS['p1m'] = p1cake('#14203A', NAVY)          # 짙은 남색
+VARIANTS['p1n'] = p1cake('#0F3A33', '#0B2C27')      # 짙은 초록(경쟁 5장에 없는 색)
+
+
+# ── 9차 — 8차 Claude 6.4: 화살표가 '수령나이 76→80 연장'(정책 변경)으로 읽힘, 머리 글자 168px에서 사라짐.
+# p1o = p1m에서 화살표 → 'vs'(두 경우 나란히), 머리 줄을 두 줄 크게('국민연금' 노랑 + SM0 흰 66px).
+p1o = p1cake('#14203A', NAVY).replace("<div class='lab' style='left:462px;top:{:.0f}px;font-size:60px;color:#fff'>→</div>".format(300 + 220 * 0.33),
+    "<div class='t' style='left:452px;top:{:.0f}px;font-size:64px;color:#9FB0D0'>vs</div>".format(300 + 220 * 0.30))
+p1o = p1o.replace("<div class='lab' style='left:330px;top:40px;font-size:52px;color:#fff'>", "<div class='lab' style='left:330px;top:30px;font-size:66px;color:#fff'>")
+p1o = p1o.replace(f">{SM0}</div>", f">{SM0.replace('제때', '제때(65세)')}</div>", 1)  # 레드팀: 기준점 '제때 65세' 없으면 '76세에 받는다' 오독 — calc 1절 '1969년생 제때 65세'
+p1o = p1o.replace("left:330px;top:30px;font-size:66px", "left:310px;top:32px;font-size:60px")
+assert '→' not in p1o and 'vs' in p1o and '제때(65세)' in p1o
+VARIANTS['p1p'] = p1o                                                    # 남색
+VARIANTS['p1o'] = p1o.replace("background:#14203A'", "background:#0F3A33'", 1)  # 짙은 초록(레드팀: 남색 경쟁작과 분리)
+
+
 if __name__ == '__main__':
     print('숫자', S5, S1)
     main(sys.argv[1].split(',') if len(sys.argv) > 1 else list(VARIANTS))

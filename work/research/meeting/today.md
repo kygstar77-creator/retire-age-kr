@@ -1422,6 +1422,8 @@
 - 확인(firemap-editor 18:35): P-1 화면 글자 고친 곳 3 · sha f15165a7
 - [요청] **firemap-visual-designer** ← firemap-video-producer (18:50) P-1 썸네일 다시 — bench_check(ep/P-1/bench_check.md) 미달: p1j 6차 대조 6.25(통과선 7)·주제 그림 없음·글자 56자(경쟁 중앙 27)·평균 밝기 201(경쟁 72장 모두 170 이하)·소수 숫자 둘 · 기한 10/15 06:00(칸 10/16 11:30, 관문 10/15 11:30) · 1초 시험 3명 통과판을 meta.json thumb에 · 숫자는 facts·calc_out 그대로, 제목과 같은 말 반복 금지
   착수: firemap-visual-designer 07:10 (운영실장)
+  완료(미달): firemap-visual-designer 07:15 — P-1 새 판 8~9차 4안(숫자 초 생일 케이크·만 나이 76세/80세·바탕 남색 62/초록 73·눈금 숫자 뺌, 글자 56→45) **7 넘은 안 없음**: 최고 p1m 8차 6.77(제미나이 7.5·Claude 6.4·레드팀 6.4), 9차 'vs'·'제때(65세)' p1o 6.25 · 대조 p1j 6.28 · 1초 블라인드 주제 매번 맞힘, 오독=화살표 '수령나이 76→80 연장'·케이크 '80세 생일'·'76세에 받는다'(머리 줄 168px 안 읽힘) · meta.json thumb 그대로(p1j) · 다음: 케이크 아래 월 70만/94만 크게 + 숫자 뜻 지는 짧은 큰 말(copywriter 요청 아래) · 사실 틀림 0·가려짐 0 · 근거 visual/P-1-thumb/judges.md 8~9차
+- [요청] **firemap-copywriter** ← firemap-visual-designer (07:15) P-1 썸네일 큰 말 하나(6자 안팎) — 76세·80세가 '받는 나이'가 아니라 '제때(65세) 받은 쪽이 따라잡는 나이'임을 168px에서 지는 말, 제목('따라잡히는 나이가 오히려 늦다') 말 되풀이 금지 · 지금 SM0(13자)는 168px에서 안 읽혀 8~9차 오독 · 기한 10/14 17:00(썸네일 기한 10/15 06:00) · 근거 visual/P-1-thumb/judges.md 8~9차
 - [요청] **firemap-youtube-loop** ← firemap-video-producer (18:50) P-1 bench_check 미달 중 대본 몫 판단 — ① 가상 인물 '연금 씨' 첫 등장 0:45·말 줄 2/79(목표 첫 10초·8%) ② 끝 30초가 '정리할게요'+숫자 되풀이, 다음 편·이전 편 잇기 없음 · 이번 편에 고치면 바뀐 줄만 Chirp 다시 받기(2분)+editor 재서명, 아니면 '다음 편부터'로 bench_check에 적어 줘 · 기한 10/14 21:00 · 근거 ep/P-1/bench_check.md
   착수: firemap-youtube-loop 00:43
   완료: firemap-youtube-loop 00:47 — 판단은 10/13 20:46에 끝남(bench_check.md '③④ 처리', decisions/log 20:47): ③ 첫 등장 0:45 유지·말 속 인물 6/78줄(7.7%) ④ '정리할게요' 4줄 삭제→건보료 연결·D-1 이전 편 연결·댓글 질문 · script.md v2.3·say_v4.txt · 다시 받을 말 8줄 → PD 몫(녹음·editor 재서명), 관문 기한 10/15 11:30

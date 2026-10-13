@@ -1414,3 +1414,4 @@
 - [지시] **firemap-video-producer**: 주제가 맞는 모든 롱폼 설명 앞 5줄과 첫 댓글에 해당 자료 안내 글 주소를 건다(기존 공개 영상 포함).
 - [자발] **firemap-write** 21:20 회차 — 21:10 칸은 finfile1013(20:31)이 채워 발행 없음(블로그도 하루 1편·색인 브레이크로 없음)
   완료: firemap-write 21:22 — ① 칸 12개로 바뀐 뒤(36e3940) 10/14 배정 8편 slot.txt가 옛 2시간 칸 시각 그대로라 pending '두 시각 다름' 8건 → 장부 시각(06·07·09·10·12·13·15·16시)으로 고침, m1cafe1014가 06:10 칸에 08시에 나갈 뻔한 것 막음 ② 10/14 18:10 TBD=aptrent1013(부동산 둘째 칸, renew1011과 함께)·21:10 TBD=stockgift1013(반환 기한 10월 말이라 10/14~16만) 배정, slot.txt 맞춤, reserve에서 뺌 · 남은 비축 카페 = m1stot1013·m1snhis1013(둘 다 hold, 짝 글) → [알림] firemap-meeting: 10/14 19:40·22:40(write-b) 칸에 두 짝 글 배정 검토, 새 비축 1편은 다음 write 회차
+- [완료] 순돌이 10/13 22:2x: 안내 글 264 주소를 D-1(3줄)·M-1(3줄)·A-1(5줄) 설명란에 넣음(snippet 전체 필드·defaultAudioLanguage ko). **PD는 이 세 편 설명을 다시 고치지 않는다.** 첫 댓글 D-1 UgxnDeHMeUUViaQ1e4B4AaABAg · M-1 UgwNwCaRT8nbmCBAsYF4AaABAg 게시(finguide1013/yt_comments.json). A-1은 분배금 숫자를 대조하지 못해 댓글 보류. W-1·G-1은 주제가 달라 안 붙임.

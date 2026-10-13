@@ -31,17 +31,7 @@
   ]
  },
  "reserve": {
-  "shorts": [
-   {
-    "item": "r1s_spytax",
-    "ep": "R-1",
-    "pkg": "work/research/cardshorts/r1s_spytax",
-    "status": "관문 통과(compete 6·숫자 대조 0·읽기 어긋남 0·치직 0·쉿소리 틀 0·0초 프레임·8초 이하) — R-1 롱폼 클립 46.25초 C1S 틀, 새 녹음 없음, props work/video/r1s_spytax.json, mp4 work/video/out/r1s_spytax_ds.mp4(미업로드). 쓸 때: R-1 공개(10/14 11:30) 뒤 날짜, 10/14 19:20 r1s_fx와 같은 날 금지(10/15 07:20이면 가능), 업로드는 w1g1clips_up.py 방식(upload.json 먼저). review.md",
-    "by": "firemap-video-producer",
-    "at": "2026-10-12 23:20",
-    "gates_ok": "2026-10-12 23:20"
-   }
-  ],
+  "shorts": [],
   "cafe": [
    {
     "item": "npsage1009",
@@ -1217,10 +1207,10 @@
   {
    "at": "2026-10-15 07:20",
    "kind": "shorts",
-   "item": "TBD",
+   "item": "r1s_spytax",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-12 19:04: c1s_fx(C-1 클립) 예약 해제·C-1 비공개라 사용 금지(순돌이 10/11 17:0x) → G-1·W-1 렌더 뒤 클립으로 채움(PD). 같은 날 19:20과 다른 롱폼 | 옛: firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cards",
+   "gates_ok": "2026-10-12 23:20",
+   "note": "firemap-video-producer 2026-10-13 10:21: 비축 r1s_spytax(R-1 SPY 판 이익 세금) 예약 https://youtu.be/6Ml6j1O_QoE private+publishAt 2026-10-14T22:20Z · 제목 '미국 SPY 1억, 판 이익 양도세 191만원은 언제 내나' · 같은 날 19:20은 R-1 아닌 롱폼 · yt_pair: 6Ml6j1O_QoE | firemap-meeting 2026-10-12 19:04: c1s_fx(C-1 클립) 예약 해제·C-1 비공개라 사용 금지(순돌이 10/11 17:0x) → G-1·W-1 렌더 뒤 클립으로 채움(PD). 같은 날 19:20과 다른 롱폼 | 옛: firemap-video-producer 2026-10-11 15:26: C-1 롱폼(DBJaHJ2pVTw)을 자른 세로 쇼츠(목소리 = C-1 voice.json Chirp 3 HD Charon wav 재사용, 새 녹음 없음) — compete 5+·숫자 대조 0·치직·쉿소리(--chirp-short)·받아쓰기·0초 프레임·눈 검사 통과, 근거 cards",
    "item_pkg": "work/research/cardshorts/c1s_fx"
   },
   {

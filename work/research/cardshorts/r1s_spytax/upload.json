@@ -1,0 +1,23 @@
+{
+ "name": "r1s_spytax",
+ "ep": "R-1",
+ "from_long": "G1oI47miUuo",
+ "mp4": "work/video/out/r1s_spytax_ds.mp4",
+ "publishAt": "2026-10-15T07:20:00+09:00",
+ "title": "미국 SPY 1억, 판 이익 양도세 191만원은 언제 내나 #shorts",
+ "description": "전체 계산: https://youtu.be/G1oI47miUuo\n\n미국 상장 ETF SPY(S&P500)에 1억을 넣고 1년 뒤 팔았다면 세금은 두 군데서 떼요. 분배금은 미국에서 15%(약 16만 4천원)를 먼저 떼고 들어오고, 판 이익 11,210,188원에서 기본공제 250만원을 뺀 나머지에 22%를 매기면 1,916,240원이에요.\n이 판 이익 세금은 팔 때 계좌에서 빠지지 않고, 다음 해 5월(1일~31일) 확정신고로 직접 내요. 국내 증시에 상장된 해외 ETF는 방식이 달라요.\n예금·SCHD·금까지 네 곳의 1년 결과는 본편에 있어요.\n\n출처: 소득세법(해외주식 양도소득 기본공제 250만원·세율 22% 지방세 포함) · 야후 파이낸스 종가 · 한국은행 ECOS 원/달러 매매기준율 · 파이어맵 계산\n지나간 1년 값이고, 어디에 넣으라는 말이 아닙니다.\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.\n\n#shorts #해외주식세금 #미국ETF",
+ "tags": "해외주식 양도세,미국 ETF 세금,SPY,양도소득세 신고,S&P500",
+ "same_day_pair": "10/15 19:20 칸은 R-1 아닌 다른 롱폼 클립(H-1 공개 10/15 11:30 뒤 또는 G-1·W-1)",
+ "title_review": "10/13 PD: 제미나이 3.8-flash 7.5 · Claude(PD) 8 · 레드팀(앞 후보 '해외 ETF 세금 191만원…' 5점: 국내 상장 해외 ETF 오독·1억 기준 없음·191만원이 전체 세금처럼 읽힘) → 'SPY 1억'·'판 이익 양도세'로 셋 다 고침, 고친 판은 레드팀 재채점 안 함 · 32자·숫자 2",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "6Ml6j1O_QoE",
+ "uploaded_at": "2026-10-13 10:21:26",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-14T22:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

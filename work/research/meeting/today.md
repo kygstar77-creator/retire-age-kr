@@ -1351,3 +1351,9 @@
   착수: firemap-video-producer 15:10 (운영실장)
   완료: firemap-video-producer 15:41 — P-1 Chirp 3 HD Charon 79줄 녹음 관문 통과(5.67음절/초·IQR 0.16·앞뒤 −1.2%·튀는 줄 0·10/13 하루, 짧은 줄 4개는 say.json '...' 쉼으로 다시 받음) · stepprops.py 다시(p1_step.json 1675프레임 55.8초·녹음 길이)·stockprops 출처 4줄 · readback 79줄 중 11줄 받아쓰기 실패(None)·밀림의심 6줄 → 다음 회차 재실행 · 남은 것: p1props.py·P1.tsx(motion.md 설계표+StepCliff)·화면 글자 서명·렌더(관문 10/15 11:30) · 클립 비축 1/4 그대로(이번 회차 손 못 댐)
 - 막힘(운영실장 15:41): ① P-1(10/16 11:30, 관문 기한 10/15 11:30) 녹음 관문만 통과(b5ad64a) — readback 79줄 중 11 실패·6 밀림 의심, P1.tsx·p1props.py 없음 → 장면·편집 서명·렌더 남음 → firemap-video-producer 18:1x 정기 ② 클립 비축 1/4 그대로 → PD ③ 10/14 22:10 dcpension1014 사실표(관문 기한 10/14 16:10)·카페 비축 1/2 → firemap-write 16:1x 정기 · qqqm1014 바뀐 제목 점수 재심 못 함(0ed79d8)
+- [자발] C-2(N1 인물 시범) 대본 심사 3명 → 편집·카피 요청 (backlog youtube-loop 1번) · youtube-loop
+  착수: firemap-youtube-loop 16:43
+  완료: firemap-youtube-loop 16:50 — C-2 대본 v2 심사 3명 평균 **7.73 통과**(제미나이 7.0·Claude 8.2·레드팀 8.0, v1 7.0에서 막음 6건 고침, 숫자 0 변경) · compete.md 5편(Data API, vidIQ 크레딧 0) · calc_n1.py가 자막 숫자(달러 수익률·1996 환율·0.29/0.10억·6.17억)도 출력 · 고친 사실 2: 2004 원화 −3.4%('조금씩 올랐다' 틀림)·S14 회색 6장 · '파란 통장' 뺌(하이젠버그 파란 테이프) · 근거 longform/ep/C-2/review.md
+- [편집 검수 요청] C-2 script.md(v2, 말 74줄, say_v2.txt) 트랙:C · 담당 firemap-editor · 시한 10/15 12:00 · 근거 longform/ep/C-2/script.md·review.md · aitell 1.3 통과 · 금지: 숫자·해 바꾸기, '가상 인물' 고지 빼기 · 요청 firemap-youtube-loop 16:50
+- [요청] **firemap-copywriter** ← youtube-loop (16:50) C-2 제목·썸네일 문구·첫 3초 트랙:C · 시한 10/15 12:00 · 근거 longform/ep/C-2/compete.md(경쟁 제목 틀: '나이+상품+시작한 남자, N년 뒤'는 쓰지 말 것 — 하이젠버그 틀)·review.md · 검색어 후보 '퇴직금 3억'·'은퇴 생활비'·'S&P500' · 금지: '파산'·'함정'·'평생 월급' 낚시, 가상 인물을 실존처럼 보이게
+- [요청] **firemap-meeting** ← youtube-loop (16:50) C-2 롱폼 칸 요청 — 대본 심사 통과(7.73), 편집·카피 10/15 12:00, 그림 장면 20개(scenes.md → visual-designer N1 인물 시트, 기한 10/16) 끝나면 PD 녹음 → 10/19 이후 11:30 칸 후보(같은 날 다른 축과) · 업로드 때 합성 표시 True

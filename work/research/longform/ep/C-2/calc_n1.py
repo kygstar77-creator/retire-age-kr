@@ -20,7 +20,7 @@ def path_detail(p0, net_year, start, R):
         v_after = (v - g) * (1 + R[y])
         rows.append((y, v, v_after, tax)); v = v_after
     return rows
-w('# C-2 calc_n1_out (calc_n1.py) — 팔아 쓰기만 · 3억원 · 원화(ECOS 연말 환율) · S&P500 총수익 ^SP500TR')
+w('# C-2 calc_n1_out (calc_n1.py) — 팔아 쓰기만 · 3억원 · 원화(ECOS 연말 환율) · S&P500 총수익 ^SP500TR · 가정: 1월 초 1년 치 한 번에 매도, 물가 반영 안 함, 미국 배당 원천세 반영 안 함(총수익 지수 그대로)')
 for m in [200, 150]:
     for s in [1997, 1998, 2003]:
         rows = path_detail(P0, m * 120000, s, C.R_KRW)
@@ -35,6 +35,14 @@ rows = path_detail(P0, 24_000_000, 1998, C.R_KRW)
 n = sum(1 for r in rows if r[2] is not None)
 w(f'\n## 1998 월200: 다 꺼낸 해 {n}번 · 손에 쥔 돈 합 {n*2400/10000:.2f}억원 · 마지막 해 남은 돈 {rows[-1][1]/1e4:,.0f}만원')
 w(f'## 환율(ECOS 연말): 1997 {C.fx[1997]:,.1f} · 1998 {C.fx[1998]:,.1f} · 2007 {C.fx[2007]:,.1f} · 2008 {C.fx[2008]:,.1f}')
+# 심사 10/13: 자막 숫자도 이 파일에서만 — 달러 수익률·1996 환율·자료 기간·꺼낸 뒤 남은 돈
+w(f'## 환율(ECOS 연말) 1996 {C.fx[1996]:,.1f} · 자료 기간 ^SP500TR 연말 {min(C.YEARS)-1}~{max(C.YEARS)}')
+w('## 달러 수익률(^SP500TR): ' + ' · '.join(f'{y} {C.R_USD[y]*100:+.1f}%' for y in [1997, 1998, 2008]))
+for y, v0, v1, tax in rows:
+    if y in (2009, 2010):
+        w(f'## {y} 1월 꺼낸 뒤 남은 돈(세금 {tax/1e4:.0f}만원 포함해 판 뒤): {(v1/(1+C.R_KRW[y]))/1e8:.2f}억원')
+r97 = path_detail(P0, 24_000_000, 1997, C.R_KRW)
+w(f'## 1997 월200(영호 씨): 첫해 말 {r97[0][2]/1e8:.2f}억원 · 2025년 말 {r97[-1][2]/1e8:.2f}억원')
 (HERE / 'calc_n1_out.txt').write_text('\n'.join(out) + '\n', encoding='utf-8')
 print('\n'.join(out))
 

@@ -1335,3 +1335,4 @@
 - [배차] **firemap-video-producer** ← 운영실장 (15:10) P-1(10/16 11:30, 관문 기한 10/15 11:30) 녹음·StepCliff 반영·렌더 진행 / 클립 비축 1/4 → 4
   착수: firemap-video-producer 15:10 (운영실장)
   완료: firemap-video-producer 15:41 — P-1 Chirp 3 HD Charon 79줄 녹음 관문 통과(5.67음절/초·IQR 0.16·앞뒤 −1.2%·튀는 줄 0·10/13 하루, 짧은 줄 4개는 say.json '...' 쉼으로 다시 받음) · stepprops.py 다시(p1_step.json 1675프레임 55.8초·녹음 길이)·stockprops 출처 4줄 · readback 79줄 중 11줄 받아쓰기 실패(None)·밀림의심 6줄 → 다음 회차 재실행 · 남은 것: p1props.py·P1.tsx(motion.md 설계표+StepCliff)·화면 글자 서명·렌더(관문 10/15 11:30) · 클립 비축 1/4 그대로(이번 회차 손 못 댐)
+- 막힘(운영실장 15:41): ① P-1(10/16 11:30, 관문 기한 10/15 11:30) 녹음 관문만 통과(b5ad64a) — readback 79줄 중 11 실패·6 밀림 의심, P1.tsx·p1props.py 없음 → 장면·편집 서명·렌더 남음 → firemap-video-producer 18:1x 정기 ② 클립 비축 1/4 그대로 → PD ③ 10/14 22:10 dcpension1014 사실표(관문 기한 10/14 16:10)·카페 비축 1/2 → firemap-write 16:1x 정기 · qqqm1014 바뀐 제목 점수 재심 못 함(0ed79d8)

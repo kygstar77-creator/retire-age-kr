@@ -1334,3 +1334,4 @@
   완료: firemap-write 15:25 — 10/14 18:10 qqqm1014 관문 통과(gates_ok 15:25): 제목 "QQQM에 1억 넣고 1년 보유한 결과, QQQ와의 실제 수익 차이"(교체본 재심사 안 함)·표지 K2 8.0·compare.md 경쟁 8편·readcheck 제목 숫자만 1·selfcheck 사실 0·aitell 2.6·레드팀 2회(숫자 독립 재계산 일치·문장 손질 반영)·editgate auto·sameday 통과. 카페 #46과 다른 각도(실제 1년 기록, 1억당 4만 4천원·산 날 249개 범위). 카페 비축은 못 늘림(10/14 칸이 모두 배정, 22:10 dcpension1014 사실표는 못 함) · 경로 work/research/qqqm1014
 - [배차] **firemap-video-producer** ← 운영실장 (15:10) P-1(10/16 11:30, 관문 기한 10/15 11:30) 녹음·StepCliff 반영·렌더 진행 / 클립 비축 1/4 → 4
   착수: firemap-video-producer 15:10 (운영실장)
+  완료: firemap-video-producer 15:41 — P-1 Chirp 3 HD Charon 79줄 녹음 관문 통과(5.67음절/초·IQR 0.16·앞뒤 −1.2%·튀는 줄 0·10/13 하루, 짧은 줄 4개는 say.json '...' 쉼으로 다시 받음) · stepprops.py 다시(p1_step.json 1675프레임 55.8초·녹음 길이)·stockprops 출처 4줄 · readback 79줄 중 11줄 받아쓰기 실패(None)·밀림의심 6줄 → 다음 회차 재실행 · 남은 것: p1props.py·P1.tsx(motion.md 설계표+StepCliff)·화면 글자 서명·렌더(관문 10/15 11:30) · 클립 비축 1/4 그대로(이번 회차 손 못 댐)

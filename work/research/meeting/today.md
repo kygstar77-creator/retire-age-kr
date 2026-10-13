@@ -10,6 +10,8 @@
 - [지시] **firemap-copywriter** aitell script에 검사 4개 추가: 6자리 이상 정밀 숫자 낭독·'첫 번째…' 순번 3개 이상·말 목차('볼게요' 3연속)·꼬리표 낭독({F}·'이미지 1' 같은 표시) · 완료 기준: R-1·G-1 대본에 돌려 걸린 줄 목록 기록 · 기한 10/14 23:00
 - [지시] **firemap-youtube-loop**+**firemap-visual-designer** N1 시범: C-1 소재(3억·배당 vs 팔기·1998년 시작)를 공개 가상 인물 1명의 이야기로 다시 기획(근거 하이젠버그 UfCBrFHyJtw 9.6배: 인물 조각 21.8%·숫자 12.3%·그림 100%·결말 65% 지점) · 완료 기준: 대본 인물 조각 15% 이상·결말 60% 뒤·가상 고지 2:30 안, 같은 얼굴 인물 시트 1벌·30초마다 그림 1장 · 기한 10/16
   진행: firemap-visual-designer 09:12 — 인물 시트: 제미나이 이미지 3모델 모두 429(오늘 한도) → Canva generate-image로 시트 1장 나왔으나 원본 내려받기 막힘(미리보기 199px뿐, 서명 URL 403) · 프롬프트·인물 설정(55세 1998 → 66세 2009, 안경·왼눈 밑 점·남색 카디건·파란 통장)은 visual/N1-person/gen.py에 고정, 다음 회차 제미나이로 시트 → 시트를 참조로 장면 3장(1998·2001·2009) · youtube-loop 대본 나오면 30초마다 장면 목록 맞춤
+  착수: firemap-visual-designer 17:04 — N1 인물 시트 제미나이 재시도 → 장면 S1·S5·S10
+  진행: firemap-visual-designer 17:07 — 제미나이 이미지 3모델 다시 429 → **SVG로 직접 그린 정우 씨 시트 1벌**(visual/N1-person/sheet_svg.png: 55세·68세 × 서 있는 몸·표정 4개 calm·worried·surprised·relieved, 안경·왼눈 밑 점·남색 카디건·파란 통장 부품 고정이라 장면마다 같은 얼굴) + 장면 3장 s1998(S1 왼쪽 40% 비움)·s2001(S5 TV 빨간 선)·s2011(S12 빈 통장, 오른쪽 40% 비움) · 그림 안 글자 0 · 제미나이 3.1-lite 읽기 '같은 인물·글자 없음·9점'(약점 '연도 표시 없음'은 렌더 때 해 카드로 얹는 몫) · 남은 것: S2~S4·S6~S11·S13~S17 17장(draw.py에 장면 함수만 더하면 됨, 기한 10/16) · 근거 visual/N1-person/draw.py·judge.txt
   착수: firemap-youtube-loop 12:43 — N1 대본: C-1 사실표 재사용 → 가상 인물 1명 이야기 구조(인물 조각 15%↑·결말 60% 뒤·가상 고지 2:30 안) → 30초마다 장면 목록
   완료(대본): firemap-youtube-loop 12:51 — ep/C-2/script.md v1 · 배당 쪽 전부 뺌(C-1 불가능 전제), **팔아 쓰기 한 길만**: 정우 씨(가상) 1998년 3억·월 200만원 → 2011년 1월 바닥(14년차, 손에 쥔 돈 3.12억) · 병렬 인물 민수 씨(2003 시작, 2025년 말 2.72억)·영호 씨(1997, 15.90억 — 환율 몫 밝힘) · 37명 중 6명 바닥(5명이 1998~2002 연달아) · 금액별 0/5/6/17 · 2001년에 월 100만원으로 줄였다면 5.91억 남음 vs 2003년 3.49억 · 계산 ep/C-2/calc_n1.py(C-1 calc 그대로, calc_out 3절과 일치) · 지표: 인물 줄 40%대(≥15%)·결말 61% 지점(≥60%)·가상 고지 0:26(≤2:30)·길이 어림 5:27 · aitell script 73.3/1,000·15% 통과, AI 티 4.7 · 장면 20개 ep/C-2/scenes.md(30초 넘는 칸 0) · 남은 것: 심사 3명·editor·카피 제목 → 칸 배정(회의)
 - [알림] **firemap-visual-designer** ← youtube-loop (12:51) N1 장면 목록 ep/C-2/scenes.md(20장, 시각 어림·결말 S12 61%) · 인물 시트 정우 씨 1벌 + 영호·민수 씨 뒷모습만 · 끝 해 2011(68세)로 바뀜(설정 66세 2009 → 시트 그대로 써도 됨) · gen.py SCENE 키 s1998·s2001·s2009는 S1·S5·S10에 그대로 맞음
@@ -651,6 +653,7 @@
   완료: firemap-youtube-loop 16:52 — R-1 대본 v8(말 90줄) 재심사 평균 **7.40 통과**(제미나이 3-flash 8.2·Claude 6.60·레드팀 7.40, 공개 막을 사실 오류 없음) · review.md 마지막 줄 '판정: 통과' · scriptnum 0·aitell 통과 · r1props CUTS v8 맞춤·screen_text 다시 뽑음(476줄) · 바뀐 말 15줄은 목소리 없음 → 다른 날 재녹음 필요(목소리 관문은 PD·순돌이 몫)
 - [편집 검수 요청] R-1 v8 대본·화면 글자 재서명 트랙:C · 담당 firemap-editor · 시한 10/7 12:00 · 근거 ep/R-1/review.md 'v8 대본 재심사'(바뀐 말: 39만 7천·16만 4천·191만 6천·55만 9천·24만 4천원, '두 달 남짓', 분배금 환율 단서 1줄, 마지막 분배금 1줄, '공개된 숫자로', '원 단위까지 정확히 빼면 307만원', 구독·댓글 요청 삭제) · screen_text.txt 476줄 (youtube-loop 16:52)
   착수: firemap-editor 16:56 (정기 16:50)
+  완료: firemap-editor 17:07 — 편집 통과 C-2 script.md·say_v2.txt · 말 74→71줄(되풀이 3줄 삭제·겹친 '6%대' 1곳·물음 3곳 ?·'-요' 5연속 끊기) · 숫자·해·가상 인물 고지 0 변경 · aitell 1.3→0.0 · script 83.1/1,000·17% 통과 · script.md.edit.json(say_sha 포함) · 원본 .orig · PD 녹음은 지금 say_v2.txt 그대로 · 참고(내용 몫, youtube-loop): 제미나이 사용자 시험 '고치면 쓰겠다' — 모으는 단계(35세) 시청자에겐 끝 계산기 연결이 약하다는 의견만, 말투 지적 0
   완료: firemap-editor 16:58 — R-1 v8 대본 재서명(script.md.edit.json, aitell script 74.2/1,000·2개이상 7% 통과)·화면 글자 476줄 stamp(lfrender check 편집 통과). v7 통과본 대비 바뀐 줄(말 15·자막 2·끝 장면) facts 말하는 단위·A5 252,402·약 70일 대조 일치, 숫자·말 0 변경 · 남은 렌더 관문은 목소리(재녹음 6줄)뿐
 - [요청] **firemap-visual-designer** ← PD (14:11) R-1 썸네일 확정 · 기한 18:30(19:30 예약 전) · meta.json thumb을 thumb_meta.json pick r2i로 맞춰 둠(옛 r1v 가리키던 것) · r2i는 25·26차 평균 6.93로 7 미달 — 확정하거나 7 넘는 판으로 바꿔 meta.json thumb·thumb_status에 적기. 못 하면 r1-record가 r2i로 올림
   착수: firemap-visual-designer 17:05
@@ -1355,5 +1358,7 @@
   착수: firemap-youtube-loop 16:43
   완료: firemap-youtube-loop 16:50 — C-2 대본 v2 심사 3명 평균 **7.73 통과**(제미나이 7.0·Claude 8.2·레드팀 8.0, v1 7.0에서 막음 6건 고침, 숫자 0 변경) · compete.md 5편(Data API, vidIQ 크레딧 0) · calc_n1.py가 자막 숫자(달러 수익률·1996 환율·0.29/0.10억·6.17억)도 출력 · 고친 사실 2: 2004 원화 −3.4%('조금씩 올랐다' 틀림)·S14 회색 6장 · '파란 통장' 뺌(하이젠버그 파란 테이프) · 근거 longform/ep/C-2/review.md
 - [편집 검수 요청] C-2 script.md(v2, 말 74줄, say_v2.txt) 트랙:C · 담당 firemap-editor · 시한 10/15 12:00 · 근거 longform/ep/C-2/script.md·review.md · aitell 1.3 통과 · 금지: 숫자·해 바꾸기, '가상 인물' 고지 빼기 · 요청 firemap-youtube-loop 16:50
+  착수: firemap-editor 17:05 (정기 16:50)
 - [요청] **firemap-copywriter** ← youtube-loop (16:50) C-2 제목·썸네일 문구·첫 3초 트랙:C · 시한 10/15 12:00 · 근거 longform/ep/C-2/compete.md(경쟁 제목 틀: '나이+상품+시작한 남자, N년 뒤'는 쓰지 말 것 — 하이젠버그 틀)·review.md · 검색어 후보 '퇴직금 3억'·'은퇴 생활비'·'S&P500' · 금지: '파산'·'함정'·'평생 월급' 낚시, 가상 인물을 실존처럼 보이게
 - [요청] **firemap-meeting** ← youtube-loop (16:50) C-2 롱폼 칸 요청 — 대본 심사 통과(7.73), 편집·카피 10/15 12:00, 그림 장면 20개(scenes.md → visual-designer N1 인물 시트, 기한 10/16) 끝나면 PD 녹음 → 10/19 이후 11:30 칸 후보(같은 날 다른 축과) · 업로드 때 합성 표시 True
+- 확인(firemap-editor 17:07): 정기 16:50 근무 — 열린 [편집 검수 요청] 1건(C-2 대본) 통과 · auto 표본·sweep은 다음 근무

@@ -1898,3 +1898,4 @@
 2026-10-13 22:43 · firemap-video-producer · E-2·M-1·N-1 containsSyntheticMedia 미완(막힘) · 이유: force-ssl 토큰 사용이 자동 권한 분류기에 거부됨, 우회하지 않음 — 사장님이 허용하거나 채팅 세션이 처리
 2026-10-13 22:58 · firemap-write-b · 22:40 칸 추가 발행 안 함(finguide1013 22:13 발행분이 칸 채움) · 10/15 10:40 칸에 r1cafe_tax1015(SPY 양도세 짝 글) 관문 통과 배정 · 비축 0이라 다음 write-b 칸 먼저 채움
 2026-10-13 23:24 · firemap-video-producer · 쇼츠 비축 w1s_kospi(W-1 코스피 1천만원 사흘 장) 관문 통과·reserve.shorts에 올림, 미업로드 · 비축 0/4, W-1은 w1s_div 하나만 써서 다른 질문 남음, 10/16 19:20은 R-1(07:20)과 다른 롱폼이어야 함 · 완료: firemap-video-producer 23:24
+2026-10-13 23:26 · firemap-write · 10/15 06:10 칸 minus1015(마이너스통장 이자, 돈 관리) 관문 통과·gates_ok · 07:40 칸은 시간 모자라 못 함

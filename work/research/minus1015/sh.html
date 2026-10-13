@@ -1,0 +1,952 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MG4T6WWNM5"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-MG4T6WWNM5');
+</script>    
+<link href="/resources/publish/kr/css/libs/swiper-bundle.min.css" rel="stylesheet" media="all">
+<link href="/resources/publish/kr/css/common.css?dt=20261013232539" rel="stylesheet">
+<link href="/resources/publish/kr/css/main.css?dt=20261013232539" rel="stylesheet">
+<link href="/resources/publish/kr/css/content.css?dt=20261013232539" rel="stylesheet">
+<link href="/resources/ckeditor5/css/ckeditor5.css" rel="stylesheet">
+
+<script src="/resources/js/lib/jquery-3.4.1.min.js"></script>
+<script src="/resources/publish/kr/js/common.js?dt=20261013232539"></script>
+<script src="/resources/publish/kr/js/content.js?dt=20261013232539"></script>
+
+<script src="/resources/js/common/ajax.js"></script>
+<script src="/resources/js/common/app-module.js"></script>
+<script src="/resources/js/common/validation.js"></script>
+<script src="/resources/js/common/frontCommon.js?dt=20261013232539"></script>
+<script>
+	const lang = "kr";
+	const CONTEXT_PATH = '';
+	const URL = {
+		'REPORT' : {'VIEW':CONTEXT_PATH+'/'+lang+'/pr/press', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/pr/report'}
+		,'NOTICE' : {'VIEW':CONTEXT_PATH+'/'+lang+'/pr/notice', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/pr/notice'}
+		, 'VIDEO' : {'VIEW':CONTEXT_PATH+'/'+lang+'/pr/media/videoAds', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/pr/cf'}
+		, 'PAPER' : {'VIEW':CONTEXT_PATH+'/'+lang+'/pr/media/printAds', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/pr/print'}
+
+		, 'PRESS' : {'VIEW':CONTEXT_PATH+'/'+lang+'/archive/press', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/archive/press'}
+		, 'BUSINESS' : {'VIEW':CONTEXT_PATH+'/'+lang+'/archive/business', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/archive/business'}
+		, 'EXTEND' : {'VIEW':CONTEXT_PATH+'/'+lang+'/archive/insight/extend', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/archive/insight/extend'}
+		, 'KNOWLEDGE' : {'VIEW':CONTEXT_PATH+'/'+lang+'/archive/insight/knowledge', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/archive/insight/knowledge'}
+		, 'DICTIONARY' : {'VIEW':CONTEXT_PATH+'/'+lang+'/archive/insight/dictionary', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/archive/insight/dictionary'}
+		, 'RESULT' : {'VIEW':CONTEXT_PATH+'/'+lang+'/governance/shareholder/result', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/governance/shareholder_result'}
+		, 'COUNCIL' : {'VIEW':CONTEXT_PATH+'/'+lang+'/governance/director/disclosure', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/governance/council_disclosure'}
+		
+        , 'GROUP' : {'VIEW':CONTEXT_PATH+'/'+lang+'/about/ceo/work', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/about/group_management'}
+        , 'LETTER' : {'VIEW':CONTEXT_PATH+'/'+lang+'/about/ceo/letter', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/about/ceo_letter'}
+
+        , 'EREPORT' : {'VIEW':CONTEXT_PATH+'/'+lang+'/esg/report/report', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/esg/report'}
+        , 'EREPORT_SPECIAL' : {'VIEW':CONTEXT_PATH+'/'+lang+'/esg/report/special', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/esg/report'}
+        , 'ENVIRONMENTAL' : {'VIEW':CONTEXT_PATH+'/'+lang+'/esg/strategy/environmental', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/esg/strategy/environmental'}
+        
+		, 'OFTEN' : {'VIEW':CONTEXT_PATH+'/'+lang+'/ir/disclosure/domesticTimely', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/ir/disclosure_often'}
+		, 'OVERSEAS' : {'VIEW':CONTEXT_PATH+'/'+lang+'/ir/disclosure/overseas', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/ir/disclosure_overseas'}
+		, 'AUDIT' : {'VIEW':CONTEXT_PATH+'/'+lang+'/ir/disclosure/audit', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/ir/disclosure_audit'}
+		, 'MANAGE' : {'VIEW':CONTEXT_PATH+'/'+lang+'/ir/disclosure/pillarDisclosure', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/ir/disclosure_management'}
+		, 'DREPORT' : {'VIEW':CONTEXT_PATH+'/'+lang+'/ir/disclosure/businessReport', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/ir/disclosure_report'}
+		, 'OPERATION' : {'VIEW':CONTEXT_PATH+'/'+lang+'/ir/disclosure/salesReport', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/ir/disclosure_operation'}
+		, 'ANNOUNCE' : {'VIEW':CONTEXT_PATH+'/'+lang+'/ir/disclosure/announcements', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/ir/disclosure_announce'}
+		, 'FRESULT' : {'VIEW':CONTEXT_PATH+'/'+lang+'/ir/finance/investorPresentations', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/ir/finance_result'}
+		, 'STATEMENTS' : {'VIEW':CONTEXT_PATH+'/'+lang+'/ir/finance/financialStatements', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/ir/finance_statements'}
+		, 'BOOK' : {'VIEW':CONTEXT_PATH+'/'+lang+'/ir/finance/factBook', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/ir/fact_book'}
+		, 'ACCOUNTS' : {'VIEW':CONTEXT_PATH+'/'+lang+'/ir/finance/settlementAnnouncement', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/ir/finance_accounts'}
+		, 'IR' : {'VIEW':CONTEXT_PATH+'/'+lang+'/ir/calender', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/ir/ir_calender'}
+		, 'IR_OVERVIEW' : {'VIEW':CONTEXT_PATH+'/'+lang+'/ir/overview', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/ir/overview'}
+		, 'VALUE' : {'VIEW':CONTEXT_PATH+'/'+lang+'/ir/value_up', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/ir/ir_value_up'}
+		, 'ANNUAL' : {'VIEW':CONTEXT_PATH+'/'+lang+'/ir/finance/annualReport', 'API':CONTEXT_PATH+Web.baseUrl.FRONT_API+'/ir/annual_report'}
+		};
+	const MESSAGE = {
+	};
+</script>
+</head>
+
+
+
+
+		
+
+
+
+
+
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge; chrome=1">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+
+<title id="html_title">마이너스 통장의 운영 원리: 신용대출과 비교를 통한 특징 분석</title>
+
+<meta name="title" content="마이너스 통장의 운영 원리: 신용대출과 비교를 통한 특징 분석" />
+
+	<meta name="author" content="신한금융지주 미래전략연구소" />
+	<meta property="og:author" content="신한금융지주 미래전략연구소" />
+
+
+	<meta nema="description" content="마이너스 통장(신용한도대출)의 정확한 정의와 일반 신용대출과의 차이점, 그리고 신청 조건과 한도 설정 기준에 대해 상세히 설명해 드립니다.">
+	<meta name="summary" content="마이너스 통장(신용한도대출)의 정확한 정의와 일반 신용대출과의 차이점, 그리고 신청 조건과 한도 설정 기준에 대해 상세히 설명해 드립니다." />
+	<meta property="og:description" content="마이너스 통장(신용한도대출)의 정확한 정의와 일반 신용대출과의 차이점, 그리고 신청 조건과 한도 설정 기준에 대해 상세히 설명해 드립니다." />
+	<meta name="twitter:description" content="마이너스 통장(신용한도대출)의 정확한 정의와 일반 신용대출과의 차이점, 그리고 신청 조건과 한도 설정 기준에 대해 상세히 설명해 드립니다." />
+
+<meta name="format-detection" content="telephone=no" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta name="bingbot" content="index, follow" />
+<meta property="og:title" content="마이너스 통장의 운영 원리: 신용대출과 비교를 통한 특징 분석" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="/resources/publish/kr/images/common/sfg_og.jpg" />
+<meta property="og:url" content="https://www.shinhangroup.com/kr/archive/insight/extend/detail/32307" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="마이너스 통장의 운영 원리: 신용대출과 비교를 통한 특징 분석" />
+<meta name="twitter:image" content="/resources/publish/kr/images/common/sfg_og.jpg" />
+<meta name="twitter:url" content="https://www.shinhangroup.com/kr/archive/insight/extend/detail/32307" />
+
+<meta content="https://www.shinhangroup.com/kr/main/" itemprop="url" />
+<meta name="apple-mobile-web-app-title" content="신한금융그룹" />
+<meta name="application-name" content="신한금융그룹" />
+
+<link rel="canonical" href="https://www.shinhangroup.com/kr/archive/insight/extend/detail/32307" />
+
+<link rel="shortcut icon" type="image/x-icon" href="/resources/publish/kr/images/common/favicon.ico" />
+<link rel="icon" sizes="16x16" type="image/png" href="/resources/publish/kr/images/common/favicon_16_16.png" />
+<link rel="icon" sizes="32x32" type="image/png" href="/resources/publish/kr/images/common/favicon_32_32.png" />
+<link rel="icon" sizes="192x192" type="image/png" href="/resources/publish/kr/images/common/favicon_192_192.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/resources/publish/kr/images/common/favicon_144_144.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/resources/publish/kr/images/common/favicon_180_180.png" />
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@graph": [
+      {
+        "@type": "Organization",
+        "name": "신한금융지주",
+        "url": "https://www.shinhangroup.com/kr/main",
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "신한금융지주"
+        }
+      },
+	
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+		  {
+            "@type": "Question",
+            "name": "마이너스 통장 신청 조건과 한도는 어떻게 결정되나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": " 신청자의 신용 점수, 재직 기간, 연 소득 등을 종합적으로 심사하여 승인 여부와 한도가 결정됩니다.
+
+보통 1금융권 은행 기준으로 6개월 이상의 재직 기간과 일정 수준 이상의 연 소득이 증빙 되어야 합니다. 한도는 개인의 신용등급과 기존에 보유한 부채 규모에 따라 차등 적용되며, 고객의 신용도에 따라 한도와 금리가 수시로 변경될 수 있으므로 정기적인 관리가 필요합니다."
+            }
+          },{
+            "@type": "Question",
+            "name": "마이너스 통장을 만들어만 두고 안 쓰면 신용 점수에 영향이 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "신용 점수에 직접적인 영향은 적지만, 마이너스 통장에 부여된 한도는 다른 대출 심사 시 총부채에 포함되는 결정적인 기준이 됩니다. 개설 초기에는 신규 대출 발생으로 인해 신용점수가 소폭 하락할 수 있으나, 연체 없이 사용하지 않는다면 점수는 곧 회복됩니다. 다만 대출 한도(DSR) 측면은 가장 유의해야 할 점입니다. 실제 사용 금액이 0원이라도, 금융기관은 마이너스 통장의 설정 한도 전액을 부채로 간주합니다. 따라서 향후 주택담보대출 등을 받을 때 본인의 총 대출 가능 금액이 마이너스 통장 한도만큼 줄어들게 됩니다. "
+            }
+          },
+        ]
+      },
+	
+      {
+        "@type": "Article",
+        "headline": "마이너스 통장의 운영 원리: 신용대출과 비교를 통한 특징 분석",
+        "image": "https://www.shinhangroup.com/resources/publish/kr/images/common/sfg_og.jpg",
+        "datePublished": "2026.01.29",
+        "inLanguage": "ko-KR",
+        "articleSection": ["신한 뉴스룸", "인사이트"],
+        "isAccessibleForFree": true,
+        "sameAs": [
+          "https://www.instagram.com/shinhangroup_official",
+          "https://www.youtube.com/@shinhangroup_official",
+          "https://www.facebook.com/shinhangroup.official"
+        ],
+		"author": { 
+			{"@type": "Person", "name": "신한금융지주 미래전략연구소"}
+		},
+        "publisher": {
+          "@type": "Organization",
+          "name": "신한금융지주"
+        }
+	
+      }
+    ]
+}
+</script>
+
+<script>
+	const SEARCH_TEXT = '';
+	const BOARD_TYPE = 'EXTEND';
+</script>
+<script type="text/javascript" src="/resources/js/front/archive/extend/detail.js?v=20251001"></script>
+<body>
+	<div id="skipNavi">
+        <a href="#container">본문 바로가기</a>
+    </div>
+    <div class="wrap">
+        
+
+
+<header id="header" class="init_bg">
+    <div class="inner">
+    		
+				
+					<div class="logo"><a href="/kr/main/skip" role="button" aria-label="신한금융그룹"></a></div>
+				
+				
+			
+        
+
+<nav class="gnb">
+    <ul>
+    	
+<li class="gnb_li">
+    <a href="#" class="depth1" role="button">소개</a>
+    <div class="smenu">
+        <ul class="smenu_box">
+            <li>
+                <span class="depth2">그룹 소개</span>
+                <ul class="depth3_list">
+                    <li><a href="/kr/about/group/intro" role="button" class="depth3">신한금융그룹 소개</a></li>
+				    <li><a href="/kr/about/group/mission" role="button" class="depth3">미션·핵심가치·그룹 비전</a></li>
+				    <li><a href="/kr/about/group/history6" role="button" class="depth3">연혁</a></li>
+				    <li><a href="/kr/about/group/organization" role="button" class="depth3">조직도</a></li>
+    			</ul>
+			</li>
+			<li>
+			    <span class="depth2">CEO 소개</span>
+			    <ul class="depth3_list">
+			        <li><a href="/kr/about/ceo/greetings" role="button" class="depth3">CEO 인사말</a></li>
+			        <li><a href="/kr/about/ceo/letter" role="button" class="depth3">주주서신</a></li>
+				    <li><a href="/kr/about/ceo/work" role="button" class="depth3">그룹경영활동</a></li>
+				    <li><a href="/kr/about/ceo/profile" role="button" class="depth3">CEO 프로필</a></li>
+			    </ul>
+			</li>
+			<li>
+			    <span class="depth2">윤리경영</span>
+			    <ul class="depth3_list">
+			        <li><a href="/kr/about/ethics/shinhanin" role="button" class="depth3">신한人윤리</a></li>
+				    <li><a href="/kr/about/ethics/code" role="button" class="depth3">그룹윤리강령</a></li>
+				    <li><a href="/kr/about/ethics/partner" role="button" class="depth3">협력회사 행동규범</a></li>
+				    <li><a href="/kr/about/ethics/decoration" role="button" class="depth3">인권선언서</a></li>
+			    </ul>
+			</li>
+			<li class="two">
+				<a href="/kr/about/network/group" class="depth2">신한 네트워크</a>
+			    <span class="depth2 twodepth">그룹 아이덴티티</span>
+			    <ul class="depth3_list">
+			        <li><a href="/kr/about/identity/ci" role="button" class="depth3">CI</a></li>
+				    <li><a href="/kr/about/identity/typeface" role="button" class="depth3">서체</a></li>
+				    <li><a href="/kr/about/identity/character" role="button" class="depth3">캐릭터</a></li>
+			    </ul>
+			</li>
+			<li>
+			    <a href="/kr/about/map" class="depth2">오시는 길</a>
+            </li>
+        </ul>
+    </div>
+</li>
+<li class="gnb_li">
+    <a href="#" class="depth1" role="button">기업 지배구조</a>
+    <div class="smenu">
+        <ul class="smenu_box">
+            <li>
+                <span class="depth2">주주총회</span>
+                <ul class="depth3_list">
+                    <li><a href="/kr/governance/shareholder/structure" role="button" class="depth3">주주구성</a></li>
+				    <li><a href="/kr/governance/shareholder/allocation" role="button" class="depth3">배당현황</a></li>
+				    <li><a href="/kr/governance/shareholder/result" role="button" class="depth3">주주총회 관련자료</a></li>
+    			</ul>
+			</li>
+			<li>
+			    <span class="depth2">이사회</span>
+			    <ul class="depth3_list">
+			        <li><a href="/kr/governance/director/member" role="button" class="depth3">구성현황</a></li>
+				    <li><a href="/kr/governance/director/committee" role="button" class="depth3">이사회내 위원회</a></li>
+				    <li><a href="/kr/governance/director/activity" role="button" class="depth3">주요활동내역</a></li>
+			    </ul>
+			</li>
+			<li>
+			    <a href="/kr/governance/director/disclosure" class="depth2">지배구조 공시</a>
+			</li>
+			<li>
+			    <span class="depth2">관련 규정</span>
+			    <ul class="depth3_list">
+			        <li><a href="/kr/governance/regulation/incorporation" role="button" class="depth3">정관</a></li>
+				    <li><a href="/kr/governance/regulation/bylaw" role="button" class="depth3">이사회 규정</a></li>
+				    <li><a href="/kr/governance/regulation/independence" role="button" class="depth3">이사독립성 Guidelines</a></li>
+				    <li><a href="/kr/governance/regulation/diversity" role="button" class="depth3">이사회다양성 Guidelines</a></li>
+			    </ul>
+			</li>
+			<li>
+			    <a href="/kr/governance/etc/cge" class="depth2">지배구조 기타</a>
+            </li>
+        </ul>
+    </div>
+</li>
+<li class="gnb_li">
+    <a href="#" class="depth1" role="button">투자정보 </a>
+    <div class="smenu">
+        <ul class="smenu_box">
+            <li class="two">
+                <a href="/kr/ir/overview" role="button" class="depth2">Investor Relations</a>
+    			<a href="/kr/ir/value_up" role="button" class="depth2 twodepth">기업가치 제고 계획</a>
+			</li>
+			<li>
+			    <span class="depth2">공시정보</span>
+			    <ul class="depth3_list">
+			        <li><a href="/kr/ir/disclosure/domesticTimely" role="button" class="depth3">수시공시</a></li>
+				    <li><a href="/kr/ir/disclosure/pillarDisclosure" role="button" class="depth3">경영공시</a></li>
+
+				    <li><a href="/kr/ir/disclosure/businessReport" role="button" class="depth3">사업보고서</a></li>
+				    <li><a href="/kr/ir/disclosure/audit" role="button" class="depth3">감사보고서</a></li>
+				    <li><a href="/kr/ir/disclosure/salesReport" role="button" class="depth3">영업보고서</a></li>
+				    <li><a href="/kr/ir/disclosure/announcements" role="button" class="depth3">공고</a></li>
+			<!--                             <li><a href="#" role="button" class="depth3">공시규정</a></li> -->
+			    </ul>
+			</li>
+			<li>
+			    <span class="depth2">재무정보</span>
+			    <ul class="depth3_list">
+			        <li><a href="/kr/ir/finance/investorPresentations" role="button" class="depth3">실적발표</a></li>
+				    <li><a href="/kr/ir/finance/annualReport" role="button" class="depth3">Annual Report</a></li>
+				    <li><a href="/kr/ir/finance/financialStatements" role="button" class="depth3">재무제표</a></li>
+				    <li><a href="/kr/ir/finance/factBook" role="button" class="depth3">Fact Book</a></li>
+				    <li><a href="/kr/ir/finance/settlementAnnouncement" role="button" class="depth3">결산공고</a></li>
+			    </ul>
+			</li>
+			<li>
+			    <span class="depth2">주가정보</span>
+			    <ul class="depth3_list">
+			        <li><a href="/kr/ir/stock/domestic/current" role="button" class="depth3">국내시세</a></li>
+				    <li><a href="/kr/ir/stock/oversea/current" role="button" class="depth3">해외시세(ADR)</a></li>
+				    <li><a href="/kr/ir/stock/comparison/domestic" role="button" class="depth3">주요지수비교</a></li>
+				    <li><a href="/kr/ir/stock/competitors" role="button" class="depth3">동업종 비교</a></li>
+			    </ul>
+			</li>
+			<li class="two">
+			    <a href="/kr/ir/credit_rating" role="button" class="depth2">신용등급</a>
+			    <a href="/kr/ir/calender" role="button" class="depth2 twodepth">IR 캘린더</a>
+			</li>
+        </ul>
+    </div>
+</li>
+<li class="gnb_li">
+    <a href="#" class="depth1" role="button">ESG </a>
+    <div class="smenu">
+        <ul class="smenu_box">
+            <li>
+                <span class="depth2">ESG 전략</span>
+                <ul class="depth3_list">
+                    <li><a href="/kr/esg/strategy/framework" role="button" class="depth3">ESG 전략체계</a></li>
+				    <li><a href="/kr/esg/strategy/governance" role="button" class="depth3">ESG 지배구조</a></li>
+				    <li><a href="/kr/esg/strategy/environmental" role="button" class="depth3">ESG 경영</a></li>
+    			</ul>
+			</li>
+			<li>
+			    <span class="depth2">ESG 활동과 성과</span>
+			    <ul class="depth3_list">
+			        <li><a href="/kr/esg/achievements/milestone" role="button" class="depth3">Milestone</a></li>
+				    <li><a href="/kr/esg/achievements/evaluation" role="button" class="depth3">대외 평가</a></li>
+				    <li><a href="/kr/esg/achievements/initiatives" role="button" class="depth3">참여 이니셔티브</a></li>
+				    <li><a href="/kr/esg/achievements/kpis" role="button" class="depth3">ESG 전략지표</a></li>
+			    </ul>
+			</li>
+			<li>
+			    <span class="depth2">ESG Reporting</span>
+			    <ul class="depth3_list">
+			        <li><a href="/kr/esg/report/report" role="button" class="depth3">ESG 보고서</a></li>
+				    <li><a href="/kr/esg/report/special" role="button" class="depth3">Special Report</a></li>
+				    <li><a href="/kr/esg/report/data" role="button" class="depth3">Data Pack</a></li>
+				    <li><a href="/kr/esg/report/archive" role="button" class="depth3">자회사 아카이브</a></li>
+			    </ul>
+			</li>
+			<li>
+			    <span class="depth2">사회공헌활동</span>
+   			    <ul class="depth3_list">
+			        <li><a href="/kr/esg/corporate/social_responsibility" role="button" class="depth3">아름다운 동행</a></li>
+				    <li><a href="/kr/esg/corporate/social_safety" role="button" class="depth3">위기의 순간, 신한과 함께</a></li>
+			    </ul>
+            </li>
+        </ul>
+    </div>
+</li>
+<li class="gnb_li">
+    <a href="#" class="depth1 outlink" role="button">PR센터</a>
+    <div class="smenu">
+        <ul class="smenu_box">
+			<li>
+			    <a href="/kr/pr/awards" role="button" class="depth2">주요수상내역</a>
+			</li>
+			<li>
+			    <span class="depth2">신한 미디어</span>
+			    <ul class="depth3_list">
+			        <li><a href="/kr/pr/media/videoAds" role="button" class="depth3">영상광고</a></li>
+			    	<li><a href="/kr/pr/media/printAds" role="button" class="depth3">지면광고</a></li>
+			    </ul>
+			</li> 
+			<li>
+			    <span class="depth2">스포츠 스폰서십</span>
+			    <ul class="depth3_list">
+			        <li><a href="/kr/pr/sports/sponsorship/type1" role="button" class="depth3">대회 및 리그 파트너십</a></li>
+				    <li><a href="/kr/pr/sports/sponsorship/type2" role="button" class="depth3">스포츠단</a></li>
+				    <li><a href="/kr/pr/sports/sponsorship/type3" role="button" class="depth3">국가대표팀후원</a></li>
+				    <li><a href="/kr/pr/sports/sponsorship/type4" role="button" class="depth3">선수후원</a></li>
+			    </ul>
+			</li> 
+			<li class="two">
+			    <a href="/kr/pr/shinhanin" role="button" class="depth2">신한인</a>
+			    <a href="/kr/pr/notice" role="button" class="depth2 twodepth">공지사항</a>
+			</li> 
+			<li>
+			    <span class="depth2">그룹 브랜드 소개</span>
+			    <ul class="depth3_list">
+			        <li><a href="/kr/pr/brand/premier" role="button" class="depth3">신한 Premier</a></li>
+			    	<li><a href="/kr/pr/brand/solmate" role="button" class="depth3">신한 SOL메이트</a></li>
+			    </ul>
+			</li>  
+        </ul>
+    </div>
+</li>
+<li class="gnb_li">
+    <a href="#" class="depth1 outlink" role="button">신한 뉴스룸</a>
+    <div class="smenu">
+        <ul class="smenu_box">
+            <li>
+                <a href="/kr/pr/press" role="button" class="depth2">보도자료</a>
+			</li>
+             <li>
+				<a href="/kr/archive/press" role="button" class="depth2">그룹사 뉴스</a>
+             </li>
+             <li>
+				<a href="/kr/archive/business" role="button" class="depth2">주요 비즈니스</a>
+             </li>
+			<li>
+			    <span class="depth2">신한 인사이트</span>
+			    <ul class="depth3_list">
+			        <li><a href="/kr/archive/insight/extend" role="button" class="depth3">불리기</a></li>
+                  
+			    </ul>
+			</li>  
+        </ul>
+    </div>
+</li>
+    </ul> 
+</nav>
+        <div class="head_util">
+            <div class="link_wrap">
+                <button type="button" class="btn_selct">KR</button>
+                <ul class="list">
+                    <li><a href="/kr" role="button">KR</a></li>
+                    <li><a href="/en" role="button">EN</a></li>
+                    <li><a href="/jp" role="button">JP</a></li>
+                </ul>
+            </div>
+            <div class="language">
+            	<a href="/kr" role="button" class="on">KR</a>
+            	<a href="/en" role="button" >EN</a>
+            	<a href="/jp" role="button" >JP</a>
+            </div>
+            <a href="#" class="btn_menu">
+            	
+            		
+            	
+            	
+            	
+                <em class="txt">전체메뉴 열기</em>
+            </a>
+        </div>
+		<div class="allmenu">
+        	
+
+<div class="blind">전체 메뉴</div>
+<ul class="allmenu_list">
+	
+
+        <li class="allmenu_li first">
+            <a href="#" class="depth1" role="button">소개</a>
+            <div class="smenu">
+                <ul class="smenu_wrap">
+                    <li>
+                        <a class="depth2 on">그룹 소개</a>
+                        <ul class="depth3_list">
+		                    <li><a href="/kr/about/group/intro" role="button" class="depth3">신한금융그룹 소개</a></li>
+						    <li><a href="/kr/about/group/mission" role="button" class="depth3">미션·핵심가치·그룹 비전</a></li>
+						    <li><a href="/kr/about/group/history6" role="button" class="depth3">연혁</a></li>
+						    <li><a href="/kr/about/group/organization" role="button" class="depth3">조직도</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="depth2">CEO 소개</span>
+                        <ul class="depth3_list">
+					        <li><a href="/kr/about/ceo/greetings" role="button" class="depth3">CEO 인사말</a></li>
+			        		<li><a href="/kr/about/ceo/letter" role="button" class="depth3">주주서신</a></li>
+						    <li><a href="/kr/about/ceo/work" role="button" class="depth3">그룹경영활동</a></li>
+						    <li><a href="/kr/about/ceo/profile" role="button" class="depth3">CEO 프로필</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="depth2">윤리경영</span>
+                        <ul class="depth3_list">
+					        <li><a href="/kr/about/ethics/shinhanin" role="button" class="depth3">신한人윤리</a></li>
+						    <li><a href="/kr/about/ethics/code" role="button" class="depth3">그룹윤리강령</a></li>
+						    <li><a href="/kr/about/ethics/partner" role="button" class="depth3">협력회사 행동규범</a></li>
+						    <li><a href="/kr/about/ethics/decoration" role="button" class="depth3">인권선언서</a></li>
+                        </ul>
+                    </li>
+                    <li>
+						<a href="/kr/about/network/group" class="depth2">신한 네트워크</a>
+                    </li>
+                    <li>
+                        <span class="depth2">그룹 아이덴티티</span>
+                        <ul class="depth3_list">
+					        <li><a href="/kr/about/identity/ci" role="button" class="depth3">CI</a></li>
+						    <li><a href="/kr/about/identity/typeface" role="button" class="depth3">서체</a></li>
+						    <li><a href="/kr/about/identity/character" role="button" class="depth3">캐릭터</a></li>
+                        </ul>
+                    </li>
+                    <li>
+			    		<a href="/kr/about/map" class="depth2">오시는 길</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="allmenu_li">
+            <a href="#" class="depth1" role="button">기업 지배구조</a>
+            <div class="smenu">
+                <ul class="smenu_wrap">
+                    <li>
+                        <span class="depth2 on">주주총회</span>
+                        <ul class="depth3_list">
+		                    <li><a href="/kr/governance/shareholder/structure" role="button" class="depth3">주주구성</a></li>
+						    <li><a href="/kr/governance/shareholder/allocation" role="button" class="depth3">배당현황</a></li>
+						    <li><a href="/kr/governance/shareholder/result" role="button" class="depth3">주주총회 관련자료</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="depth2">이사회</span>
+                        <ul class="depth3_list">
+					        <li><a href="/kr/governance/director/member" role="button" class="depth3">구성현황</a></li>
+						    <li><a href="/kr/governance/director/committee" role="button" class="depth3">이사회내 위원회</a></li>
+						    <li><a href="/kr/governance/director/activity" role="button" class="depth3">주요활동내역</a></li>
+                        </ul>
+                    </li>
+                    <li>
+			    		<a href="/kr/governance/director/disclosure" class="depth2">지배구조 공시</a>
+                    </li>
+                    <li>
+                        <span class="depth2">관련 규정</span>
+                        <ul class="depth3_list">
+					        <li><a href="/kr/governance/regulation/incorporation" role="button" class="depth3">정관</a></li>
+						    <li><a href="/kr/governance/regulation/bylaw" role="button" class="depth3">이사회 규정</a></li>
+						    <li><a href="/kr/governance/regulation/independence" role="button" class="depth3">이사독립성 Guidelines</a></li>
+						    <li><a href="/kr/governance/regulation/diversity" role="button" class="depth3">이사회다양성 Guidelines</a></li>
+                        </ul>
+                    </li>
+                    <li>
+			   			<a href="/kr/governance/etc/cge" class="depth2">지배구조 기타</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="allmenu_li">
+            <a href="#" class="depth1" role="button">투자정보</a>
+            <div class="smenu">
+                <ul class="smenu_wrap">
+                    <li>
+                		<a href="/kr/ir/overview" role="button" class="depth2">Investor Relations</a>
+                    </li>
+                	<li>
+			    		<a href="/kr/ir/value_up" role="button" class="depth2">기업가치 제고 계획</a>
+                    </li>
+                    <li>
+                        <span class="depth2">공시정보</span>
+                        <ul class="depth3_list">
+					        <li><a href="/kr/ir/disclosure/domesticTimely" role="button" class="depth3">수시공시</a></li>
+						    <li><a href="/kr/ir/disclosure/pillarDisclosure" role="button" class="depth3">경영공시</a></li>
+
+						    <li><a href="/kr/ir/disclosure/businessReport" role="button" class="depth3">사업보고서</a></li>
+						    <li><a href="/kr/ir/disclosure/audit" role="button" class="depth3">감사보고서</a></li>
+						    <li><a href="/kr/ir/disclosure/salesReport" role="button" class="depth3">영업보고서</a></li>
+						    <li><a href="/kr/ir/disclosure/announcements" role="button" class="depth3">공고</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="depth2">재무정보</span>
+                        <ul class="depth3_list">
+					        <li><a href="/kr/ir/finance/investorPresentations" role="button" class="depth3">실적발표</a></li>
+						    <li><a href="/kr/ir/finance/annualReport" role="button" class="depth3">Annual Report</a></li>
+						    <li><a href="/kr/ir/finance/financialStatements" role="button" class="depth3">재무제표</a></li>
+						    <li><a href="/kr/ir/finance/factBook" role="button" class="depth3">Fact Book</a></li>
+						    <li><a href="/kr/ir/finance/settlementAnnouncement" role="button" class="depth3">결산공고</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="depth2">주가정보</span>
+                        <ul class="depth3_list">
+					        <li><a href="/kr/ir/stock/domestic/current" role="button" class="depth3">국내시세</a></li>
+						    <li><a href="/kr/ir/stock/oversea/current" role="button" class="depth3">해외시세(ADR)</a></li>
+						    <li><a href="/kr/ir/stock/comparison/domestic" role="button" class="depth3">주요지수비교</a></li>
+						    <li><a href="/kr/ir/stock/competitors" role="button" class="depth3">동업종 비교</a></li>
+                        </ul>
+                    </li>
+                    <li>
+			    		<a href="/kr/ir/credit_rating" role="button" class="depth2">신용등급</a>
+                    </li>
+                    <li>
+			    		<a href="/kr/ir/calender" role="button" class="depth2">IR 캘린더</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="allmenu_li">
+            <a href="#" class="depth1" role="button">ESG</a>
+            <div class="smenu">
+                <ul class="smenu_wrap">
+                    <li>
+                        <span class="depth2 on">ESG 전략</span>
+                        <ul class="depth3_list">
+		                    <li><a href="/kr/esg/strategy/framework" role="button" class="depth3">ESG 전략체계</a></li>
+						    <li><a href="/kr/esg/strategy/governance" role="button" class="depth3">ESG 지배구조</a></li>
+						    <li><a href="/kr/esg/strategy/environmental" role="button" class="depth3">ESG 경영</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="depth2">ESG 활동과 성과</span>
+                        <ul class="depth3_list">
+					        <li><a href="/kr/esg/achievements/milestone" role="button" class="depth3">Milestone</a></li>
+						    <li><a href="/kr/esg/achievements/evaluation" role="button" class="depth3">대외 평가</a></li>
+						    <li><a href="/kr/esg/achievements/initiatives" role="button" class="depth3">참여 이니셔티브</a></li>
+						    <li><a href="/kr/esg/achievements/kpis" role="button" class="depth3">ESG 전략지표</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="depth2">ESG Reporting</span>
+                        <ul class="depth3_list">
+					        <li><a href="/kr/esg/report/report" role="button" class="depth3">ESG 보고서</a></li>
+						    <li><a href="/kr/esg/report/special" role="button" class="depth3">Special Report</a></li>
+						    <li><a href="/kr/esg/report/data" role="button" class="depth3">Data Pack</a></li>
+						    <li><a href="/kr/esg/report/archive" role="button" class="depth3">자회사 아카이브</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span class="depth2">사회공헌활동</span>
+                        <ul class="depth3_list">
+					        <li><a href="/kr/esg/corporate/social_responsibility" role="button" class="depth3">사회공헌활동</a></li>
+					        <li><a href="/kr/esg/corporate/social_safety" role="button" class="depth3">위기의 순간, 신한과 함께</a></li>
+                        </ul>
+			    		
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="allmenu_li">
+            <a href="#" class="depth1" role="button">PR센터</a>
+            <div class="smenu">
+                <ul class="smenu_wrap">
+                    <li>
+			    		<a href="/kr/pr/awards" role="button" class="depth2">주요수상내역</a>
+                    </li>
+                    <li>
+                        <span class="depth2">신한 미디어</span>
+                        <ul class="depth3_list">
+					        <li><a href="/kr/pr/media/videoAds" role="button" class="depth3">영상광고</a></li>
+					    	<li><a href="/kr/pr/media/printAds" role="button" class="depth3">지면광고</a></li>
+                        </ul>
+                    </li> 
+                    <li>
+                        <span class="depth2">스포츠 스폰서십</span>
+                        <ul class="depth3_list">
+					        <li><a href="/kr/pr/sports/sponsorship/type1" role="button" class="depth3">대회 및 리그 파트너십</a></li>
+						    <li><a href="/kr/pr/sports/sponsorship/type2" role="button" class="depth3">스포츠단</a></li>
+						    <li><a href="/kr/pr/sports/sponsorship/type3" role="button" class="depth3">국가대표팀후원</a></li>
+						    <li><a href="/kr/pr/sports/sponsorship/type4" role="button" class="depth3">선수후원</a></li>
+                        </ul>
+                    </li> 
+                    <li>
+			   			<a href="/kr/pr/shinhanin" role="button" class="depth2">신한인</a>
+                    </li> 
+                    <li>
+			    		<a href="/kr/pr/notice" role="button" class="depth2">공지사항</a>
+                    </li>  
+					<li>
+					    <span class="depth2">그룹 브랜드 소개</span>
+					    <ul class="depth3_list">
+					        <li><a href="/kr/pr/brand/premier" role="button" class="depth3">신한 Premier</a></li>
+					    	<li><a href="/kr/pr/brand/solmate" role="button" class="depth3">신한 SOL메이트</a></li>
+					    </ul>
+					</li> 
+                </ul>
+            </div>
+        </li>
+        <li class="allmenu_li">
+            <a href="#" class="depth1" role="button">신한 뉴스룸</a>
+            <div class="smenu">
+                <ul class="smenu_wrap">
+                    <li>
+                		<a href="/kr/pr/press" role="button" class="depth2">보도자료</a>
+                    </li>
+                    <li>
+			    		<a href="/kr/archive/press" role="button" class="depth2">그룹사 뉴스</a>
+                    </li>
+                    <li>
+			    		<a href="/kr/archive/business" role="button" class="depth2">주요 비즈니스</a>
+                    </li>
+					<li>
+					    <span class="depth2">신한 인사이트</span>
+					    <ul class="depth3_list">
+					        <li><a href="/kr/archive/insight/extend" role="button" class="depth3">불리기</a></li>
+                    			    	
+					    </ul>
+					</li> 
+                </ul>
+            </div>
+        </li>
+</ul> 
+        </div>
+    </div>
+    <div class="dim"></div>    
+</header>
+            <!--content-->
+        <div id="container"> 
+            <ul class="breadcrumb">
+                <li>홈</li>
+                <li>신한 뉴스룸</li>
+                <li>신한 인사이트</li>
+                <li aria-current="page">불리기</li>
+            </ul>
+            <!--content-->
+            <div class="content">
+                <h2 class="title">불리기</h2>
+                <div class="inner">
+                    <div class="g_tit">
+                        <div class="insight_wrap">
+                            <div class="tit_wrap type2">
+	                            <div class="main">
+	                                <h1 class="tit">마이너스 통장의 운영 원리: 신용대출과 비교를 통한 특징 분석</h1>
+	                                <span class="date">2026.01.29</span>
+                                </div>
+                            </div>
+                            <div class="board_details archive geo">
+	                            
+	                            	<div class="summary">
+	                            		<h2>핵심 요약</h2>
+	                            		<div><ul><li>마이너스 통장은 금융기관이 정한 한도 내에서 입출금 통장의 잔액이 0원 미만으로 내려가도 자유롭게 돈을 찾아 쓸 수 있는 대출 상품</li><li>사용한 금액과 기간에 대해서만 이자가 붙는 구조로 비상금 용도로 활용</li><li>다만 금리가 상대적으로 높을 수 있어 주의가 필요</li></ul></div>
+	                            	</div>
+	                            
+                               	<p class="notice_txt ck-content"><h3>마이너스 통장이란 무엇인가요?&nbsp;</h3><p>금융권에서 흔히 '마통'이라 불리는 <strong>마이너스 통장</strong>의 정식 명칭은 <strong>'신용한도대출'</strong>입니다. 일반적인 대출이 한 번에 목돈을 빌려주는 방식이라면, 마이너스 통장은 통장에 빌릴 수 있는 최대 금액(한도)을 설정해 두고 필요할 때마다 꺼내 쓰는 방식입니다.</p><p>&nbsp;</p><p>마이너스 통장은 <strong>입출금이 자유로운 보통예금 계좌에 일정 금액의 대출 한도를 설정하여, 잔액이 없더라도 한도 내에서 수시로 돈을 찾아 쓸 수 있게 만든 상품</strong>을 의미합니다. 통장 잔액이 '마이너스(-)'로 표시되기 때문에 마이너스 통장이라는 이름이 붙었습니다.</p><p>&nbsp;</p><h3>마이너스 통장의 주요 특징과 장점</h3><p>마이너스 통장은 유동성 확보 측면에서 매우 유리한 특징을 가지고 있습니다.</p><p>&nbsp;</p><ol><li><strong>사용한 만큼만 내는 이자:</strong> 대출 한도가 3,000만 원이라도 실제 100만 원만 꺼내 썼다면, 그 100만 원에 대해서만 이자가 발생합니다.</li><li><strong>복리식 이자 계산:</strong> 매달 발생하는 이자가 대출 원금에 합산되어 다음 달 이자가 계산되므로, 장기간 마이너스 상태를 유지할 경우 이자 부담이 빠르게 늘어날 수 있습니다.</li><li><strong>자유로운 중도 상환:</strong> 별도의 중도상환수수료 없이 언제든 여윳돈이 생기면 통장에 입금하여 대출금을 갚을 수 있어 편리합니다.</li></ol><p>&nbsp;</p><h3>마이너스 통장 vs 일반 신용대출 비교</h3><p>마이너스 통장과 일반 신용대출은 모두 신용을 담보로 하지만, 자금의 흐름과 이자 계산 방식에서 큰 차이가 있습니다.</p><p>&nbsp;</p><figure class="table" style="width:96.85%;"><table class="ck-table-resized" style=";"><colgroup><col style="width:14.76%;"><col style="width:36.59%;"><col style="width:48.65%;"></colgroup><thead><tr><th style="width:58.75pt;"><p style="text-align:center;"><strong>구분</strong></p></th><th style="width:141.25pt;"><p style="text-align:center;"><strong>일반 신용대출 (건별 대출)</strong></p></th><th style="width:216.25pt;"><p style="text-align:center;"><strong>마이너스 통장 (한도 대출)</strong></p></th></tr></thead><tbody><tr><th style="width:58.75pt;"><p style="text-align:center;"><strong>대출 방식</strong></p></th><td style="width:141.25pt;"><p style="text-align:center;">신청 시 전액 입금</p></td><td style="width:216.25pt;"><p style="text-align:center;">필요할 때마다 한도 내 수시 인출</p></td></tr><tr><th style="width:58.75pt;"><p style="text-align:center;"><strong>이자 계산</strong></p></th><td style="width:141.25pt;"><p style="text-align:center;">대출 전액에 대해 발생</p></td><td style="width:216.25pt;"><p style="text-align:center;">실제 사용한 금액과 기간에 대해서만 발생</p></td></tr><tr><th style="width:58.75pt;"><p style="text-align:center;"><strong>금리 수준</strong></p></th><td style="width:141.25pt;"><p style="text-align:center;">상대적으로 낮음</p></td><td style="width:216.25pt;"><p style="text-align:center;">일반 신용대출보다 금리가 더 높게 적용되는 경우가 많음</p></td></tr><tr><th style="width:58.75pt;"><p style="text-align:center;"><strong>상환 방식</strong></p></th><td style="width:141.25pt;"><p style="text-align:center;">만기 일시 또는 분할 상환</p></td><td style="width:216.25pt;"><p style="text-align:center;">수시 입금을 통한 자동 상환</p></td></tr></tbody></table></figure><p>&nbsp;</p><p>마이너스 통장은 갑작스러운 지출에 대비할 수 있는 훌륭한 비상금 창구입니다. 하지만 사용이 간편한 만큼 무분별하게 사용하기 쉽고, 일반 대출보다 금리가 높으며 이자가 원금에 붙는 복리 구조라는 위험성도 내포하고 있습니다. 본인의 상환 능력을 고려하여 꼭 필요한 한도만큼만 설정하고, 자금이 생길 때마다 즉시 채워 넣는 습관이 필요합니다.</p><p>&nbsp;</p></p>
+                               	
+									<section id="faq">
+										<h2>핵심 Q&A</h2>
+	                                   	
+		                             	    <div>  
+		                               			<h3>Q1. 마이너스 통장 신청 조건과 한도는 어떻게 결정되나요?</h3>
+		                               			<p> 신청자의 신용 점수, 재직 기간, 연 소득 등을 종합적으로 심사하여 승인 여부와 한도가 결정됩니다.
+
+보통 1금융권 은행 기준으로 6개월 이상의 재직 기간과 일정 수준 이상의 연 소득이 증빙 되어야 합니다. 한도는 개인의 신용등급과 기존에 보유한 부채 규모에 따라 차등 적용되며, 고객의 신용도에 따라 한도와 금리가 수시로 변경될 수 있으므로 정기적인 관리가 필요합니다.</p>
+		                               		</div>
+	                                   	
+		                             	    <div>  
+		                               			<h3>Q2. 마이너스 통장을 만들어만 두고 안 쓰면 신용 점수에 영향이 있나요?</h3>
+		                               			<p>신용 점수에 직접적인 영향은 적지만, 마이너스 통장에 부여된 한도는 다른 대출 심사 시 총부채에 포함되는 결정적인 기준이 됩니다. 개설 초기에는 신규 대출 발생으로 인해 신용점수가 소폭 하락할 수 있으나, 연체 없이 사용하지 않는다면 점수는 곧 회복됩니다. 다만 대출 한도(DSR) 측면은 가장 유의해야 할 점입니다. 실제 사용 금액이 0원이라도, 금융기관은 마이너스 통장의 설정 한도 전액을 부채로 간주합니다. 따라서 향후 주택담보대출 등을 받을 때 본인의 총 대출 가능 금액이 마이너스 통장 한도만큼 줄어들게 됩니다. </p>
+		                               		</div>
+	                                   	
+                                   	</section>
+                               	
+                               	
+                                   		
+		                               	<div class="person">
+											<h2>저자 정보</h2>
+											
+												<p>이름: 신한금융지주 미래전략연구소</p>
+											
+											
+											
+											
+											
+										</div>
+                                   	
+                               		                               	
+	                        	
+	                        		
+	                        		
+	                        			<p class="policy">본 콘텐츠는 오직 정보 제공만을 목적으로 제작되었으며,
+									법률·세무·금융·투자·보험 등 전문적인 자문에 해당하지 않습니다. 콘텐츠는 관련 법령·제도·시장환경의 변화에 따라
+									내용이 달라질 수 있으므로 참고자료로만 활용하시기 바랍니다. 본 콘텐츠의 이용으로 인해 발생하는 개인이 입은
+									손해는 이용자 본인에게 있으며, 중요한 의사결정이 필요한 경우 반드시 관련 분야의 전문가와 별도로 상담하시기
+									바랍니다.</p>
+	                        		
+	                        	
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn_wrap">
+                        <div class="left">
+                        	
+                        	
+                        		
+                        			<a href="/kr/archive/insight/extend/detail/32711" class="btn gray"><span>이전</span></a>
+                        		
+                        		
+                        	
+
+							
+                        	
+                        		
+                        			<a href="/kr/archive/insight/extend/detail/32306" class="btn gray"><span>다음</span></a>
+                        		
+                        		
+                        	
+                        </div>
+                        <div class="right">
+                        	<a href="/kr/archive/insight/extend" class="btn blue"><span>목록</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--//content-->
+            <div id="top_btn_wrap">
+                <button type="button" class="top_btn">Go to page top</button>
+            </div>
+        </div>
+        
+
+
+<style>
+
+.loading .dimmed {display:block;overflow:hidden;position:fixed;top:0;bottom:0;left:0;right:0;width:100%;height:100%; background-color:rgba(0, 0, 0, .6);z-index:1100;}
+.loading .progress {position:fixed;top:50%;left:50%;transform:translate(-50%, -50%);z-index: 1200;}
+.loading .progress img {width:64px;height:64px}
+</style>
+<div class="loading common_progress_bg" style="display:none;">
+    <div class="dimmed"></div>
+    <div class="progress"><img src="/resources/publish/kr/images/common/loading.gif" alt=""></div>
+</div>
+<footer id="footer">
+	
+<div class="inner">
+    <div class="footer_wrap">
+        <ul class="footer_menu">
+			<li><a href="/kr/main/policy/privacy"><strong>개인정보처리방침</strong></a></li>
+			<li><a href="/kr/main/policy/credit"><strong>신용정보활용체제</strong></a></li>
+			<li><a href="/kr/main/policy/customer">고객정보취급방침</a></li>
+			<li><a href="/kr/main/policy/guard">신한지킴이</a></li>
+        </ul>
+        <div class="famlysite">
+            <button type="button" class="btn_selct">Family site</button>
+            <div class="list">
+                <div class="scrollbar">
+                    <ul>
+                        <li><a href="http://www.shinhan.com" target="_blank" title="새창열림" role="button">신한은행</a></li>
+                        <li><a href="http://www.shinhancard.com" target="_blank" title="새창열림" role="button">신한카드</a></li>
+                        <li><a href="http://www.shinhansec.com" target="_blank" title="새창열림" role="button">신한투자증권</a></li> 
+                        <li><a href="http://www.shinhanlife.co.kr" target="_blank" title="새창열림" role="button">신한라이프</a></li>
+                        <li><a href="http://www.shcap.co.kr" target="_blank" title="새창열림" role="button">신한캐피탈</a></li>
+                        <li><a href="https://www.shinhanfund.com" target="_blank" title="새창열림" role="button">신한자산운용</a></li>
+                        <li><a href="https://www.jejubank.co.kr" target="_blank" title="새창열림" role="button">제주은행</a></li>
+                        <li><a href="http://www.shinhansavings.co.kr" target="_blank" title="새창열림" role="button">신한저축은행</a></li>
+                        <li><a href="http://www.shinhantrust.kr" target="_blank" title="새창열림" role="button">신한자산신탁</a></li>
+                        <li><a href="http://www.shinhansys.co.kr" target="_blank" title="새창열림" role="button">신한DS</a></li>
+                        <li><a href="https://www.shinhanfundpartners.com/" target="_blank" title="새창열림" role="button">신한펀드파트너스</a></li> 
+                        <li><a href="http://shinhanrem.com/" target="_blank" title="새창열림" role="button">신한리츠운용</a></li>
+                        <li><a href="http://www.shinhanvc.com" target="_blank" title="새창열림" role="button">신한벤처투자</a></li>
+                        <li><a href="http://www.shinhanez.co.kr/" target="_blank" title="새창열림" role="button">신한EZ손해보험</a></li>
+                        <li><a href="http://www.shsf.or.kr" target="_blank" title="새창열림" role="button">신한장학재단</a></li>
+                        <li><a href="http://www.shinhanfoundation.or.kr/" target="_blank" title="새창열림" role="button">신한금융희망재단</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_wrap type2">
+        <div class="address">
+            <span class="flogo">신한금융그룹</span>
+            <span class="txt">서울특별시 중구 세종대로 9길 20 (태평로 2가 120) 16층/17층</span>
+            <span class="copyright">Copyright ©SHINHAN FINANCIAL GROUP. All Rights Reserved.</span>
+        </div>
+        <ul class="f_sns">
+            <li class="youtube"><a href="https://www.youtube.com/channel/UCJSNpKmXlsTc5bP33X3kz6A" role="button" title="신한금융그룹 유튜브사이트 바로가기" target="_blank"></a></li>
+            <li class="instagram"><a href="https://www.instagram.com/shinhangroup_official/" role="button" title="신한금융그룹 인스타그램사이트 바로가기" target="_blank"></a></li>
+            <li class="facebook"><a href="https://www.facebook.com/shinhangroup.official" role="button" title="신한금융그룹 페이스북사이트 바로가기" target="_blank"></a></li>
+            <!-- 25.01.02 브랜드전략팀 요청 
+            <li class="btarr"><a href="javascript:void(0);" role="button"></a></li>
+             -->
+        </ul>
+    </div>
+    <div class="footer_wrap">
+ 	   	<ul class="footerAward"> 
+            <li class="awd">
+          		<img src="/resources/publish/kr/images/common/wa.png" class="awd_img" alt="" />  
+          		<span class="awd_txt">웹어워드코리아 2024<br> PC웹 최고대상</span>
+            </li>
+            <li class="awd">
+                <img src="/resources/publish/kr/images/common/cdp.png" class="awd_img" alt="" />  
+          		<span class="awd_txt">탄소정보공개프로젝트(CDP)<br> 플래티넘 클럽 5년 연속 편입</span>
+            </li>
+            <li class="awd">
+                <img src="/resources/publish/kr/images/common/kbpi.png" class="awd_img" alt="" />  
+          		<span class="awd_txt">한국산업의 브랜드파워(K-BPI)<br> 금융그룹 부문 15년 연속 1위</span>
+            </li>
+        </ul>
+    </div>
+    <!-- 25.01.02 브랜드전략팀 요청
+    <div class="footerExpand" id="footerExpand">
+        <ul> 
+            <li class="awd02"></li>
+            <li class="awd02">다우존스 지속가능경영 월드지수 11년 연속 편입</li>
+            <li class="awd03">탄소정보공개프로젝트 플래티넘 클럽 3년 연속 편입</li>
+            <li class="awd04">한국산업의 브랜드파워 금융그룹 부문 13년 연속 1위</li>
+        </ul>
+    </div>
+     -->
+</div>
+</footer>
+    </div>
+</body>
+</html>

@@ -1419,6 +1419,7 @@
 - [완료] 순돌이 10/13 22:2x: 안내 글 264 주소를 D-1(3줄)·M-1(3줄)·A-1(5줄) 설명란에 넣음(snippet 전체 필드·defaultAudioLanguage ko). **PD는 이 세 편 설명을 다시 고치지 않는다.** 첫 댓글 D-1 UgxnDeHMeUUViaQ1e4B4AaABAg · M-1 UgwNwCaRT8nbmCBAsYF4AaABAg 게시(finguide1013/yt_comments.json). A-1은 분배금 숫자를 대조하지 못해 댓글 보류. W-1·G-1은 주제가 달라 안 붙임.
 - [배차] **firemap-write** ← 운영실장 (23:10) 10/15 06:10 TBD(관문 기한 00:10)·07:40 TBD(기한 01:40) — 정기 06:10은 기한 뒤
   착수: firemap-write 23:10 (운영실장)
+완료: firemap-write 23:26 — 10/15 06:10 칸 minus1015 관문 통과(gates_ok 기록): "마이너스통장 500만원 이자는 은행 다섯 곳마다 얼마나 다르고 며칠 쓰면 얼마일까"(금감원 공시 5개 은행 금리·KB 원문·계산 대조, 표지 7.67·제목 7~8·레드팀 3회 틀림 0·editgate auto·frame 통과). 07:40 칸(write-b, 기한 01:40)은 못 함 — 인텔(검색 63,900)·성장주/배당주 후보, 다음 write 회차 | 경로 work/research/minus1015
 - [배차] **firemap-video-producer** ← 운영실장 (23:10) 쇼츠 클립 비축 0/4(slots.json reserve.shorts 빔) → 관문 통과 클립 1편 이상
   착수: firemap-video-producer 23:10 (운영실장)
   완료: firemap-video-producer 23:24 — 쇼츠 비축 0/4→1/4: w1s_kospi(W-1 코스피 1천만원 사흘 장 −54만원·삼성전자 −5.07%, 46.1초, 새 녹음 0) 관문 통과(compete 7·숫자 139 대조 0·치직 0·쉿소리 틀 2·0초 프레임·8초 이하·제목 29자 평균 8.25·aitell 0.0) → slots reserve.shorts gates_ok · 미업로드 · 사용 기한 10/18(대본 '지난주'), 1순위 10/16 19:20 · 남은 비축 3편은 다음 회차(H-1 공개 10/15 뒤 shorts_cuts A~C, C-1·G-1 남은 질문) · 근거 cardshorts/w1s_kospi/review.md

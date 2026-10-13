@@ -42,20 +42,20 @@
     "gates_ok": "2026-10-08 20:24"
    },
    {
-    "item": "aptrent1013",
-    "ep": "work/research/aptrent1013/pkg",
-    "status": "관문 통과 2026-10-13 18:45 — 제목 '아파트 월세 같은 단지·같은 면적끼리 보면 작년보다 5.6% 상승' 7.83·표지 A1 7.58·readcheck 0·crosscheck 2차 사실 0·aitell 0.0·레드팀 2회 틀림 3 반영·compare 7편·전제 가능·editgate auto. 부동산 축 형식4. 9월 계약 신고 진행 중(30일) — 10월 말 넘겨 내면 숫자 재조회·재날인. slot.txt 2026-10-16 16 가안",
-    "by": "firemap-write",
-    "at": "2026-10-13 18:46",
-    "gates_ok": "2026-10-13 18:45"
+    "item": "m1stot1013",
+    "ep": "work/research/m1stot1013/pkg",
+    "status": "관문 통과 2026-10-12 22:36 — 2026-10-13 21:10 칸을 회원 자료 1호에 내줌(2026-10-13 20:27 순돌이 지시). pkg/hold.txt 걸림, 다음 칸 배정은 회의. yt_pair 짝 글이라 늦어도 이번 주 안",
+    "by": "firemap-write(순돌이 팀 카페 발행 담당)",
+    "at": "2026-10-13 20:27",
+    "gates_ok": "2026-10-12 22:36"
    },
    {
-    "item": "stockgift1013",
-    "ep": "work/research/stockgift1013/pkg",
-    "status": "관문 통과 2026-10-13 18:56 — 제목 T9 '주식 증여 급락일에 넘겨도 삼성전자 평가액 28% 높게 나온 계산' 7.92·표지 S1 7.67·readcheck 0·selfcheck 사실 0·crosscheck 사실 1 반영·aitell 0.0·레드팀 2회(1차 5건 반영, 2차 0)·compare 5편(실제 주가 계산 0/5)·전제 가능·editgate auto. 세금연금 축. 주의: (1) 본문 '10월 말' 반환 기한 — 10/16 넘겨 내면 시의성 깨짐, 10/14~16 칸에만 (2) 제목 끝 '~나온 계산'은 사장님이 지적한 압축 모양과 비슷 — copywriter가 바꾸면 재심사·재날인. slot.txt 2026-10-16 10 가안",
-    "by": "firemap-write",
-    "at": "2026-10-13 18:57",
-    "gates_ok": "2026-10-13 18:56"
+    "item": "m1snhis1013",
+    "ep": "work/research/m1snhis1013/pkg",
+    "status": "관문 통과 2026-10-12 21:05 — 2026-10-13 22:40 칸을 회원 자료 1호에 내줌(2026-10-13 20:27 순돌이 지시). pkg/hold.txt 걸림, 다음 칸 배정은 회의. yt_pair 짝 글이라 늦어도 이번 주 안",
+    "by": "firemap-write(순돌이 팀 카페 발행 담당)",
+    "at": "2026-10-13 20:27",
+    "gates_ok": "2026-10-12 21:05"
    }
   ],
   "long": [
@@ -1083,7 +1083,7 @@
    "item": "finfile1013",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "순돌이 10/13 13:3x: 회원 자료 1호(today.md 10/12 22:xx 지시) — 10:10·12:10에 넣어야 했는데 slots에 안 넣어 빠짐. 파일 글은 order.txt에 attach: work/research/growth/cafe-resource-1012/out/금융소득_건보료_판정_2026.xlsx · visibility: members, 원고 fin-file.md. 발행 뒤 로그아웃 창 확인 필수. 원고 fin-file.md · 밀린 kidcred1012는 비축"
+   "note": "2026-10-13 20:27 순돌이 팀 카페 발행 담당: 이 칸에서는 안 나감(발행 0) — 21:10·22:40 칸으로 옮김 | 순돌이 10/13 13:3x: 회원 자료 1호(today.md 10/12 22:xx 지시) — 10:10·12:10에 넣어야 했는데 slots에 안 넣어 빠짐. 파일 글은 order.txt에 attach: work/research/growth/cafe-resource-1012/out/금융소득_건보료_판정_2026.xlsx · visibility: members, 원고 fin-file.md. 발행 뒤 로그아웃 창 확인 필수. 원고 fin-file.md · 밀린 kidcred1012는 비축"
   },
   {
    "at": "2026-10-13 16:10",
@@ -1091,7 +1091,7 @@
    "item": "finguide1013",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "순돌이 10/13 13:3x: 회원 자료 1호(today.md 10/12 22:xx 지시) — 10:10·12:10에 넣어야 했는데 slots에 안 넣어 빠짐. 파일 글은 order.txt에 attach: work/research/growth/cafe-resource-1012/out/금융소득_건보료_판정_2026.xlsx · visibility: members, 원고 fin-file.md. 발행 뒤 로그아웃 창 확인 필수. 원고 fin-guide.md(전체 공개) · 밀린 yuryu1011는 비축"
+   "note": "2026-10-13 20:27 순돌이 팀 카페 발행 담당: 이 칸에서는 안 나감(발행 0) — 21:10·22:40 칸으로 옮김 | 순돌이 10/13 13:3x: 회원 자료 1호(today.md 10/12 22:xx 지시) — 10:10·12:10에 넣어야 했는데 slots에 안 넣어 빠짐. 파일 글은 order.txt에 attach: work/research/growth/cafe-resource-1012/out/금융소득_건보료_판정_2026.xlsx · visibility: members, 원고 fin-file.md. 발행 뒤 로그아웃 창 확인 필수. 원고 fin-guide.md(전체 공개) · 밀린 yuryu1011는 비축"
   },
   {
    "at": "2026-10-13 18:10",
@@ -1116,18 +1116,21 @@
   {
    "at": "2026-10-13 21:10",
    "kind": "cafe",
-   "item": "m1stot1013",
-   "owner": "firemap-write",
-   "gates_ok": "2026-10-12 22:36",
-   "note": "firemap-write 2026-10-12 22:36: 제목 티커 뺌(발행기 SCHD 겹침 해소) — \"배당 ETF 셋 중 분배금 최고 커버드콜이 1년 총수익 꼴찌인 이유\" 제미나이 9·레드팀 7·editgate auto 재날인 · yt_pair: m1s_total1y uMqmvqNM02k | firemap-write 2026-10-12 21:05: m1s_total1y 짝 글 m1stot1013(쇼츠 uMqmvqNM02k+M-1 eTjVs1vDTwg 링크, 질문 하나: 분배금 1등 JEPQ가 1년 원화 총수익은 셋 중 꼴찌) 관 | 10/13 칸 재배치 10-13 20:10→10-13 21:10"
+   "item": "finfile1013",
+   "owner": "firemap-write(순돌이 팀 카페 발행 담당)",
+   "gates_ok": "2026-10-13 20:25",
+   "note": "순돌이 팀 카페 발행 담당 2026-10-13 20:27: 회원 자료 1호 — 14:10·16:10에 넣었는데 안 나가 이 칸으로 옮김(순돌이 지시 \"오늘 밤 직접\"). 파일 글 멤버공개·검색공개 끔·엑셀 첨부, 발행 뒤 로그아웃 창 확인 · 관문: readcheck 0·selfcheck 사실 0·aitell 0.0·표지 7.67/7.33·레드팀 2회 틀림 0·compare 6편·전제 가능·editgate auto | 원래 m1stot1013는 비축으로(hold.txt) | 이전: firemap-write 2026-10-12 22:36: 제목 티커 뺌(발행기 SCHD 겹침 해소) — \"배당 ETF 셋 중 분배금 최고 커버드콜이 1년 총수익 꼴찌인 이유\" 제미나이 9·레드팀 7·editgate auto 재날인 · yt_pair: m1s_total1y uMqmvqNM02k | firemap-write 2026-10-12 21:05: m1s_total1y 짝 글 m1stot1013(쇼츠 uMqmvqNM02k+M-1 eTjVs1vDTwg 링크, 질문 하나: 분배금 1등 JEPQ가 1년 원화 총수익은 셋 중 꼴찌) 관",
+   "item_pkg": "work/research/finfile1013/pkg",
+   "published": "https://cafe.naver.com/firemap/263 · 20:31 멤버공개(API openArticle=false)·검색공개 끔·엑셀 첨부 1/1 · verify OK 1352/1352·사진 3/3 · 로그아웃 창 본문·첨부 안 보임(PC 빈 화면·모바일 로그인으로 이동, finfile1013/logout_*.png)"
   },
   {
    "at": "2026-10-13 22:40",
    "kind": "cafe",
-   "item": "m1snhis1013",
-   "owner": "firemap-write-b",
-   "gates_ok": "2026-10-12 21:05",
-   "note": "firemap-write 2026-10-12 21:05: m1s_nhis70 짝 글 m1snhis1013(쇼츠 kEHjN5WFBPI+M-1 링크, 질문 하나: 배당 건보료 세후 월 70만원대 선) 관문 통과 — 제목 7.73·표지 K1 7.33·compare.md 6편·레드팀 2회·전제 가능·editgate auto | firemap-meeting 2026-10-12 19:04: yt_pair: m1s_nhis70 kEHjN5WFBPI(10/12 19:20 쇼츠) — 10/12 칸이 PC 꺼짐으로 빠져 하루 늦게. 질문 하나만, M | 10/13 칸 재배치 10-13 22:10→10-13 22:40"
+   "item": "finguide1013",
+   "owner": "firemap-write(순돌이 팀 카페 발행 담당)",
+   "gates_ok": "2026-10-13 20:25",
+   "note": "순돌이 팀 카페 발행 담당 2026-10-13 20:27: 회원 자료 1호 — 14:10·16:10에 넣었는데 안 나가 이 칸으로 옮김(순돌이 지시 \"오늘 밤 직접\"). 안내 글 전체공개, 본문에 파일 글 제목(주소는 readcheck 규칙상 안 넣음) · 관문: readcheck 0·selfcheck 사실 0·aitell 0.0·표지 7.67/7.33·레드팀 2회 틀림 0·compare 6편·전제 가능·editgate auto | 원래 m1snhis1013는 비축으로(hold.txt) | 이전: firemap-write 2026-10-12 21:05: m1s_nhis70 짝 글 m1snhis1013(쇼츠 kEHjN5WFBPI+M-1 링크, 질문 하나: 배당 건보료 세후 월 70만원대 선) 관문 통과 — 제목 7.73·표지 K1 7.33·compare.md 6편·레드팀 2회·전제 가능·editgate auto | firemap-meeting 2026-10-12 19:04: yt_pair: m1s_nhis70 kEHjN5WFBPI(10/12 19:20 쇼츠) — 10/12 칸이 PC 꺼짐으로 빠져 하루 늦게. 질문 하나만, M",
+   "item_pkg": "work/research/finguide1013/pkg"
   },
   {
    "at": "2026-10-14 06:10",
@@ -1215,10 +1218,10 @@
   {
    "at": "2026-10-14 18:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "aptrent1013",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+   "gates_ok": "2026-10-13 18:45",
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | write 2026-10-13 21:22: 비축 aptrent1013 배정 — 부동산 하루 2칸(renew1011과 함께)"
   },
   {
    "at": "2026-10-14 19:20",
@@ -1241,10 +1244,10 @@
   {
    "at": "2026-10-14 21:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "stockgift1013",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+   "gates_ok": "2026-10-13 18:56",
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | write 2026-10-13 21:22: 비축 stockgift1013 배정 — 본문 반환 기한 10월 말 때문에 10/14~16 칸만"
   },
   {
    "at": "2026-10-14 22:40",

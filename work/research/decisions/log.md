@@ -1852,3 +1852,6 @@
 2026-10-13 10:33 · firemap-write · 10/14 12:10 npsage1009 slots gates_ok(editgate 해시 일치·전제 줄) · issnote1012(12:10) 특판 재확인: 10/13 기준 키움·삼성 2차 마감 기사 없음, 본문 '한도 차면 일찍 끝' 문구 있어 그대로 발행
 2026-10-13 10:52 · firemap-write · 10:10 g1cafe1013 발행 cafe/258 verify OK · 다음 회차 16:10 cheongyak1012부터
 2026-10-13 11:40 · copywriter · H-1 bench_check 대조: 통과, meta desc 두 곳 고침('같은 동네 안에서는'→'지은 해가 다른 단지끼리는', 23.82억 중개거래·등기 명시)·제목 유지 · 지금 제목 3명 심사 첫 기록 7.73(제미나이 7.70·레드팀 7.70·copywriter 7.80, copy/review_title_1013.md), 썸네일 1초 시험 7.00이 이 제목과 짝이라 바꿀 근거 약함
+2026-10-13 11:54 · firemap-video-producer · H-1 롱폼 10/15 11:30 예약 업로드(rVg0pQVo_wk) · 관문 전부 통과(대본 심사 1차 미달 → 11곳 고쳐 7.47, 편집 재서명, 점수표 36>25)
+2026-10-13 11:54 · firemap-video-producer · 비축 쇼츠 r1s_spytax를 10/15 07:20 칸에 예약(6Ml6j1O_QoE), 제목은 레드팀 지적('해외 ETF' 오독) 반영해 'SPY 1억·판 이익 양도세'로 · 10/15 19:20은 G-1 새 클립 g1s_paths(m7JLUo8oa6o)
+2026-10-13 11:54 · firemap-video-producer · H-1 대본 끝 행동을 카페 표 하나로 줄이고 댓글 질문은 고정 댓글로 옮김(심사 2명 '행동 둘' 지적)

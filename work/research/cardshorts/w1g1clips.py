@@ -142,6 +142,47 @@ SHORTS['g1s_paths'] = dict(
 )
 
 
+# ── W-1: 코스피 1천만원, 사흘 장에 얼마 빠졌나 (줄 22·23 → 4·5 → 6·7 → 1 → 12·13 → 24 → 25) · 10/13 23시 비축 ──
+#   w1s_div(배당 44번치)와 다른 질문 · 첫 줄도 다름(w1s_div는 줄 0, 이 편은 줄 22)
+WL, WS = load('w1')
+L = mk(WL)
+kb = WS['kbars']['data']; dvg = WS['diverge']['data']; ks = WS['kbars']['source']
+a = L(22, 23)
+b = L(4, 5)
+c = L(6, 7)
+d = L(1)
+e = L(12, 13)
+f_ = L(24)
+g = L(25)
+SHORTS['w1s_kospi'] = dict(
+  question=['코스피 1천만원,', '사흘 장에 얼마 빠졌나?'], hot='사흘',
+  base='한국은행 ECOS 코스피 종가 그대로 · 지나간 값',
+  answer=dict(label='코스피 1천만원 · 종가 10/2 → 10/8', items=['−54만원 (−5.39%)', '삼성전자 100주 −5.07%'], arrow=False,
+              note='107조 실적 낸 종목과 시장이 비슷한 비율 · 이유는 확인 안 함'),
+  scenes=[
+   scene('vs', '코스피를 따라가는 1천만원', ks, a, full=True,
+         tiles=[['코스피 1천만원 · 10/2 → 10/8', kb['big'][0], kb['big'][2], 0, 'fall'],
+                ['장이 선 날', '사흘', '10/6 · 10/7 · 10/8', at(a, 1) + 90, 'ink']]),
+   scene('receipt', '지난주 달력', WS['week']['source'], b, head='10/5 ~ 10/9 · 코스피 종가', size=46,
+         rows=[['화 10/6', '6,941.39', 'in', 20], ['수 10/7', '6,803.90', 'in', 40], ['목 10/8', '6,625.93', 'net', 60],
+               ['월 10/5 · 금 10/9', '대체공휴일 · 한글날', 'dim', at(b, 1)]]),   # 23시 눈 검사: 5줄째 잘림·'사흘' 옆 글이 판과 겹침 → 휴일 한 줄·옆 글 뺌
+   scene('bars', '코스피 종가', ks, c, head='코스피 · 종가',
+         bars=[[x[0], x[1], x[2], [0, 20, 40, 60][i], x[4], '−5.39%' if i == 3 else None] for i, x in enumerate(kb['bars'])], max=kb['max']),
+   scene('vs', '같은 주, 삼성전자 공시', WS['dart']['source'], d,
+         tiles=[['3분기 영업이익(잠정)', '107.40조원', '1년 전 3분기 12.17조원', 0, 'rise'],
+                ['공시한 날', '10/8', 'DART 영업(잠정)실적 공정공시', at(d, 0.55), 'ink']]),
+   scene('receipt', '삼성전자 100주', WS['rcpt1']['source'], e, head='삼성전자 100주 · 종가 × 100주', size=46,
+         rows=[['10/2 평가액', '27,600,000', 'in', 0], ['10/8 평가액', '26,200,000', 'in', 25], ['평가액 차이', '−1,400,000', 'net', at(e, 1) + 30]],   # 23시 눈 검사: 첫 줄만 3초 → 둘째 줄 당김
+         side=['−5.07%', at(e, 1.5), '삼성전자 100주 · 10/2 → 10/8']),
+   scene('diverge', '한 종목 vs 시장 전체', WS['diverge']['source'], f_, head='10/2 → 10/8 · 종가 기준',
+         rows=dvg['rows'], max=dvg['max'], q=dvg['q']),
+   scene('vs', '이유는?', WS['dart']['source'] + ' · ' + ks, g,
+         tiles=[['삼성전자 실적 발표', '10/8 공시', '영업이익 107.40조원(잠정)', 0, 'ink'],
+                ['시장이 내린 이유', '확인 안 함', '원문 자료로는 이유까지 확인되지 않음', at(g, 0.5), 'accent']]),
+  ],
+)
+
+
 def build(name, d):
     sc = d['scenes']
     for s in sc: s['frames'] = sum(l['frames'] for l in s['lines'])

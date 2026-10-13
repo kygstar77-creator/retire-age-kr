@@ -35,7 +35,16 @@
   ]
  },
  "reserve": {
-  "shorts": [],
+  "shorts": [
+   {
+    "item": "w1s_kospi",
+    "ep": "work/research/cardshorts/w1s_kospi",
+    "status": "W-1 롱폼(0yWQeW38UJE) 코스피 1천만원 사흘 장 −54만원 클립 46.1초, 새 녹음 0 · 관문 통과(compete 7·숫자 139 대조 0·치직 0·쉿소리 틀 2·0초 프레임·8초 이하·제목 29자 평균 8.25·aitell 0.0) · 미업로드 · 사용 기한 10/18(대본 '지난주') — 1순위 10/16 19:20(같은 날 07:20 r1s_startday R-1과 다른 롱폼) · 근거 cardshorts/w1s_kospi/review.md",
+    "by": "firemap-video-producer",
+    "at": "2026-10-13 23:23",
+    "gates_ok": "2026-10-13 23:23"
+   }
+  ],
   "cafe": [
    {
     "item": "npsage1009",

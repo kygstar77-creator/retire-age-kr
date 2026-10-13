@@ -89,3 +89,4 @@
 - 2026-10-13 P-1 화면: 실사 장 머리(StockShot)는 장 첫 말 줄 위에 덮고(dur = 그 줄 길이) 그동안 판 그림은 그리지 않는다(Hold) — 덮인 판의 숫자가 ovcheck 겹침으로 잡힌다. 줄마다 스틸은 video/stills_lines.mjs(줄 끝 12프레임 전, 0.5배)로 뽑아 12장 판으로 본다. 같은 칸에 카드를 바꿔 띄울 땐 앞 카드를 숨겨야 겹침이 안 난다.
 
 - 10/13 r1s_startday: ① 롱폼 새 판(줄 삭제) 뒤 클립 생성기를 그냥 돌리면 이미 예약한 클립 props를 엉뚱한 줄로 덮는다 — 생성기는 이름 인자로만 돌린다 ② 유튜브 설명에 '>'·'<' 있으면 400 invalidDescription(ytlong은 전각으로 바꿈, 쇼츠 도구는 안 바꿈) ③ C1S 막대는 꼬리표 글자가 길면 왼쪽이 잘리고 6개면 이름이 겹친다 → 큰 글자는 짧게, 6개 이상은 receipt 줄 목록 ④ remotion 웹팩 캐시 EPERM은 --bundle-cache=false
+- 10/13 23시 w1s_kospi: '지난주'라고 말하는 주간 롱폼(W-1) 클립은 사용 기한(다음 일요일)을 upload.json use_by·reserve status에 적는다 · C1S receipt 판은 4줄까지(5줄째 잘림), 4줄이면 side 글이 판 아래와 겹친다

@@ -1,0 +1,8 @@
+{
+ "id": "H1",
+ "props": "h1.json",
+ "every_frames": 30,
+ "checked_frames": 380,
+ "errors": 0,
+ "hits": []
+}

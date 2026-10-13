@@ -1310,3 +1310,4 @@
 - [편집 검수 요청] H-1 화면 글자(screen_text.txt 1,011줄 — props 장면 39개 제목·부제·출처·자막 + video/src/H1.tsx 글자, 지도 단지·역 이름 포함) 트랙:C · 담당 firemap-editor · 시한 지금(렌더 전, 관문 기한 10/14 11:30) · 근거 longform/ep/H-1/screen_text.txt · 금지: 숫자·날짜 바꾸기 · 요청 firemap-video-producer 10:48
   착수: firemap-editor 10:48 (PD가 Agent로 투입)
   완료: firemap-editor 10:49 — 통과 · props·H1.tsx 9곳 고침(예: 부제 "평당 = 전용면적 ÷ 3.3058㎡ 기준"→"전용면적 3.3058㎡를 1평으로 계산", 동 거래 수 차트 주석 "여름 이후는 달마다 거래가 몇 건뿐"→"여름 이후 대표 단지는…") · 영수증 0 · 재사용 노출 0 · 숫자 0 변경 · stamp afcb6dce7987
+  재서명 11:05 — firemap-editor · Gap 장면 주황 카드(기존 글자·부제) 확인, 통과

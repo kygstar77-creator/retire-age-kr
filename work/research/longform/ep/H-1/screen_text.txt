@@ -1,0 +1,1013 @@
+# 화면 글자 — H-1 (lfrender.py text가 만듦. 여기를 고치지 말고 대본·props·tsx를 고친 뒤 다시 뽑는다)
+# 그래프 제목·부제·출처·자막(lines.text)·막대 이름·코드에 박힌 글자. 썸네일 문구는 그림이라 안 들어간다.
+
+## props: video/h1.json
+[scenes.0.key] t_dots
+[scenes.0.title] 같은 달, 같은 단지, 같은 평형
+[scenes.0.sub] 헬리오시티 84㎡대 · 1년 거래 85건 · 점 하나 = 거래 하나
+[scenes.0.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.0.data.mode] feb
+[scenes.0.data.gap] 같은 달 최고 − 최저 7.68억
+[scenes.0.lines.0.text] 같은 달, 같은 단지, 같은 평형인데 7억 넘게 차이 나는 거래가 있었어요.
+[scenes.0.lines.0.cap] 헬리오시티 84㎡대 · 2026년 2월 거래 4건 · 23.82억(9층) ~ 31.50억(28층)
+[scenes.0.lines.1.text] 그 한 건만 보면 크게 떨어진 것 같지만, 같은 달 나머지 거래는 모두 30억 이상이었죠.
+[scenes.1.key] t_person
+[scenes.1.title] 전세 만기를 앞둔 손품 씨
+[scenes.1.sub] 가상 인물 · 계산을 위해 만든 사람(실존 인물 아님)
+[scenes.1.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.1.data.tags.0] 40대 직장인
+[scenes.1.data.tags.1] 초등학생 아이 하나
+[scenes.1.data.tags.2] 지하철 출근
+[scenes.1.data.home.0] 지금 사는 곳
+[scenes.1.data.home.1] 래미안힐스테이트고덕 84㎡대 전세
+[scenes.1.data.deposit.0] 보증금
+[scenes.1.data.deposit.1] 9억 5천만원
+[scenes.1.data.deposit.2] 같은 평형 신규 전세 65건의 가운데 값
+[scenes.1.data.dday] 전세 만기 D-90
+[scenes.1.data.dongs.0] 가락동
+[scenes.1.data.dongs.1] 둔촌동
+[scenes.1.data.dongs.2] 고덕동
+[scenes.1.data.rules.0] 같은 평형 값
+[scenes.1.data.rules.1] 전세로 계속 살 때 드는 돈
+[scenes.1.data.rules.2] 아이 걸음으로 학교·역까지
+[scenes.1.data.promise.0] 1년 치 거래 전부
+[scenes.1.data.promise.1] 단지마다 더 드는 돈
+[scenes.1.lines.0.text] 전세 만기를 앞둔 손품 씨와 1년 치 거래를 전부 깔아 보고, 단지마다 얼마가 더 드는지까지 계산해 볼게요.
+[scenes.2.key] t_bars
+[scenes.2.title] 6년 가까이 늦게 지었는데
+[scenes.2.sub] 84㎡대 평당 값 · 1년 가운데 값 · 전용면적 3.3058㎡를 1평으로 계산
+[scenes.2.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 국토교통부 공동주택 단지 정보
+[scenes.2.data.bars.0.0] 헬리오시티
+[scenes.2.data.bars.0.2] 1억 1,087만원
+[scenes.2.data.bars.0.3] 2018.12 입주
+[scenes.2.data.bars.0.4] ink
+[scenes.2.data.bars.1.0] 올림픽파크포레온
+[scenes.2.data.bars.1.2] 1억 1,017만원
+[scenes.2.data.bars.1.3] 2024.11 입주
+[scenes.2.data.bars.1.4] accent
+[scenes.2.data.diff] 차이 −0.6%
+[scenes.2.data.note] 매매 가운데 값 28.50억 vs 28.25억
+[scenes.2.lines.0.text] 6년 가까이 늦게 지은 단지인데, 전용면적 평당 값은 거의 똑같았어요.
+[scenes.2.lines.0.cap] 84㎡대 평당 헬리오시티 1억 1,087만원 · 올림픽파크포레온 1억 1,017만원
+[scenes.3.key] t_period
+[scenes.3.title] 봄 두 달에 몰린 거래
+[scenes.3.sub] 올림픽파크포레온 · 모든 평형 매매 113건 · 해제·공공기관 매수 제외
+[scenes.3.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.3.data.bars.0.0] 2025.11~2026.03
+[scenes.3.data.bars.0.2] 1건
+[scenes.3.data.bars.0.3] 다섯 달
+[scenes.3.data.bars.1.0] 2026.04~05
+[scenes.3.data.bars.1.2] 94건
+[scenes.3.data.bars.1.3] 두 달
+[scenes.3.data.bars.2.0] 2026.06~10
+[scenes.3.data.bars.2.2] 18건
+[scenes.3.data.bars.2.3] 다섯 달
+[scenes.3.data.pct] 113건 중 94건(83%)
+[scenes.3.data.why] 왜 몰렸는지는 실거래 자료에 없음
+[scenes.3.data.sub84] 84㎡대만 보면 45건 중 34건(76%)
+[scenes.3.lines.0.text] 모든 평형을 합치면, 한 해 거래의 80% 넘게가 봄 두 달에 몰린 단지도 있었어요.
+[scenes.4.key] t_map
+[scenes.4.title] 같은 동네, 지은 해가 다른 단지
+[scenes.4.sub] 고덕동 · 84㎡대 평당 값(1년 가운데 값) · 전용면적 3.3058㎡를 1평으로 계산
+[scenes.4.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.4.data.focus.0] 고덕그라시움
+[scenes.4.data.focus.1] 고덕아남
+[scenes.4.data.cards.0.0] 고덕그라시움
+[scenes.4.data.cards.0.1] 2019.09 입주 · 4,932세대
+[scenes.4.data.cards.0.2] 9,457만원
+[scenes.4.data.cards.1.0] 고덕아남
+[scenes.4.data.cards.1.1] 1996.03 입주 · 807세대
+[scenes.4.data.cards.1.2] 5,937만원
+[scenes.4.data.cards.2.0] 차이
+[scenes.4.data.cards.2.1] 그라시움보다 −37.2%
+[scenes.4.data.cards.2.2] 고덕아남 매매 가운데 15.20억
+[scenes.4.lines.0.text] 같은 동네라도 지은 해가 다른 단지끼리는 값이 크게 갈렸어요.
+[scenes.5.key] concl
+[scenes.5.title] 결론부터
+[scenes.5.sub] 1년 치를 전부 깔아 놓고 본 세 동네
+[scenes.5.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.5.data.rows.0] 한 건이 아니라 1년 전부를 본다
+[scenes.5.data.rows.1] 헬리오시티·포레온, 평당 값 거의 같음
+[scenes.5.data.rows.2] 같은 동네라도 지은 해 따라 크게 갈림
+[scenes.5.lines.0.text] 결론부터. 한 건의 거래로는 그 단지 값을 말할 수 없었어요.
+[scenes.6.key] person
+[scenes.6.title] 오늘 같이 다닐 사람, 손품 씨
+[scenes.6.sub] 가상 인물 · 계산을 위해 만든 사람(실존 인물 아님)
+[scenes.6.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.6.chapter] 1장
+[scenes.6.data.tags.0] 40대 직장인
+[scenes.6.data.tags.1] 초등학생 아이 하나
+[scenes.6.data.tags.2] 지하철 출근
+[scenes.6.data.home.0] 지금 사는 곳
+[scenes.6.data.home.1] 래미안힐스테이트고덕 84㎡대 전세
+[scenes.6.data.deposit.0] 보증금
+[scenes.6.data.deposit.1] 9억 5천만원
+[scenes.6.data.deposit.2] 같은 평형 신규 전세 65건의 가운데 값
+[scenes.6.data.dday] 전세 만기 D-90
+[scenes.6.data.dongs.0] 가락동
+[scenes.6.data.dongs.1] 둔촌동
+[scenes.6.data.dongs.2] 고덕동
+[scenes.6.data.rules.0] 같은 평형 값
+[scenes.6.data.rules.1] 전세로 계속 살 때 드는 돈
+[scenes.6.data.rules.2] 아이 걸음으로 학교·역까지
+[scenes.6.data.promise.0] 1년 치 거래 전부
+[scenes.6.data.promise.1] 단지마다 더 드는 돈
+[scenes.6.lines.0.text] 오늘 같이 다닐 사람은 손품 씨예요. 실제 인물이 아니라 계산을 위해 만든 가상 인물입니다.
+[scenes.6.lines.1.text] 직장인이고, 초등학생 아이가 하나 있어요.
+[scenes.6.lines.2.text] 지금은 고덕동 래미안힐스테이트고덕에 전세로 살아요.
+[scenes.6.lines.3.text] 보증금은 그 단지 같은 평형 전세의 1년 가운데 값으로 잡았어요.
+[scenes.6.lines.3.cap] 손품 씨(가상 인물·계산용) 40대 · 보증금 9억 5천만원 = 래미안힐스테이트고덕 84㎡대 신규 순수전세 65건 중앙값
+[scenes.6.lines.4.text] 만기가 다가오자 손품 씨는 세 동네를 지도로 둘러보기로 했어요.
+[scenes.6.lines.5.text] 기준은 세 가지로 정했어요. 같은 평형 값, 전세로 계속 살 때 드는 돈, 그리고 아이 걸음으로 학교와 역까지예요.
+[scenes.7.key] map3
+[scenes.7.title] 세 동네를 지도로
+[scenes.7.sub] 송파구 가락동 · 강동구 둔촌동 · 강동구 고덕동 · 대표 단지는 주황
+[scenes.7.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.7.chapter] 1장
+[scenes.7.data.focus.0] 헬리오시티
+[scenes.7.data.focus.1] 올림픽파크포레온
+[scenes.7.data.focus.2] 고덕그라시움
+[scenes.7.data.cards.0.0] 가락동
+[scenes.7.data.cards.0.1] 헬리오시티
+[scenes.7.data.cards.0.2] 송파구
+[scenes.7.data.cards.1.0] 둔촌동
+[scenes.7.data.cards.1.1] 올림픽파크포레온
+[scenes.7.data.cards.1.2] 강동구
+[scenes.7.data.cards.2.0] 고덕동
+[scenes.7.data.cards.2.1] 고덕그라시움 · 손품 씨네 동네
+[scenes.7.data.cards.2.2] 강동구
+[scenes.7.lines.0.text] 송파구 가락동, 강동구 둔촌동, 그리고 지금 사는 고덕동이에요.
+[scenes.8.key] tiles
+[scenes.8.title] 무엇으로 쟀나
+[scenes.8.sub] 국토교통부 실거래 1년 · 오픈스트리트맵 보행로 · 84㎡대 하나
+[scenes.8.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.8.chapter] 1장
+[scenes.8.data.tiles.0.0] 가락동
+[scenes.8.data.tiles.0.1] 596건
+[scenes.8.data.tiles.1.0] 둔촌동
+[scenes.8.data.tiles.1.1] 343건
+[scenes.8.data.tiles.2.0] 고덕동
+[scenes.8.data.tiles.2.1] 277건
+[scenes.8.data.tilesHead] 1년 매매(해제·공공기관 매수 제외)
+[scenes.8.data.walk.focus.0] 헬리오시티
+[scenes.8.data.walk.routes.0.0] 헬리오시티
+[scenes.8.data.walk.routes.0.1] station
+[scenes.8.data.walkNote.0] 직선거리가 아니라
+[scenes.8.data.walkNote.1] 실제 걷는 길로 잰 거리
+[scenes.8.data.size.0] 84㎡대
+[scenes.8.data.size.1] 전용 80~85㎡ · 국민평형
+[scenes.8.lines.0.text] 자료는 국토교통부에 신고된 실거래 한 해 치만 씁니다.
+[scenes.8.lines.0.cap] 2025.11~2026.10 계약(둔촌동·고덕동은 2026.09 거래까지) · 매매 가락동 596건 · 둔촌동 343건 · 고덕동 277건 · 해제·공공기관 매수 제외 · 2026-10-11 받음
+[scenes.8.lines.1.text] 걷는 거리는 오픈스트리트맵 길을 따라 직접 쟀고요.
+[scenes.8.lines.1.cap] 직선거리 아님 · 단지 가운데 → 지하철 출입구 보행로 · © OpenStreetMap contributors
+[scenes.8.lines.2.text] 평형은 국민평형이라 부르는 84㎡ 하나로 맞췄습니다.
+[scenes.9.key] h_map
+[scenes.9.title] 첫 동네, 송파구 가락동
+[scenes.9.sub] 헬리오시티 · 9,510세대 · 2018.12 입주
+[scenes.9.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.9.chapter] 2장
+[scenes.9.data.focus.0] 헬리오시티
+[scenes.9.data.cards.0.0] 헬리오시티
+[scenes.9.data.cards.0.1] 9,510세대 · 2018.12 입주
+[scenes.9.data.cards.1.0] 84㎡대 매매
+[scenes.9.data.cards.1.1] 1년 85건
+[scenes.9.data.cards.1.2] 2025.11~2026.10 계약
+[scenes.9.data.cards.2.0] 가운데 값
+[scenes.9.data.cards.2.1] 28.50억
+[scenes.9.data.cards.2.2] 최저 20.00억 · 최고 31.50억
+[scenes.9.lines.0.text] 첫 동네는 송파구 가락동, 헬리오시티예요.
+[scenes.9.lines.1.text] 이 평형만 해도 한 해 내내 거래가 이어졌어요.
+[scenes.9.lines.2.text] 가운데 값은 28억 원대 중반이었고요.
+[scenes.10.key] h_dots
+[scenes.10.title] 헬리오시티 84㎡대, 1년 거래 85건
+[scenes.10.sub] 점 하나 = 거래 하나 · 2025.11~2026.10 계약
+[scenes.10.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.10.chapter] 2장
+[scenes.10.data.mode] sort
+[scenes.10.data.gap] 같은 달 최고 − 최저 7.68억
+[scenes.10.lines.0.text] 가운데 값은 거래를 값 순서로 줄 세웠을 때 한가운데 오는 값이에요. 튀는 한 건에 덜 흔들리죠.
+[scenes.10.lines.0.cap] 84㎡대 85건 중앙 28.50억 · 최저 20.00억 · 최고 31.50억
+[scenes.10.lines.1.text] 그런데 그중에 23억대 거래가 한 건 있었어요.
+[scenes.10.lines.2.text] 같은 달, 같은 단지, 같은 평형인데 7억 넘게 차이 나는 거래가 있었어요.
+[scenes.10.lines.3.text] 그 한 건만 보면 크게 떨어진 것 같지만, 같은 달 나머지 거래는 모두 30억 이상이었죠.
+[scenes.10.lines.3.cap] 2026.02 · 12일 23.82억 9층 · 27일 30.00억 15층 · 14일 30.70억 18층 · 19일 31.50억 28층 · 4건 모두 중개거래 · 23.82억은 2026.04.14 등기
+[scenes.11.key] h_deal
+[scenes.11.title] 23.82억 거래 한 건
+[scenes.11.sub] 헬리오시티 84㎡대 · 국토교통부 실거래 원자료 칸 그대로
+[scenes.11.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.11.chapter] 2장
+[scenes.11.data.cards.0.0.0] 계약일
+[scenes.11.data.cards.0.1.0] 층
+[scenes.11.data.cards.0.1.1] 9층
+[scenes.11.data.cards.0.2.0] 거래금액
+[scenes.11.data.cards.0.2.1] 23.82억
+[scenes.11.data.cards.0.3.0] 거래 유형
+[scenes.11.data.cards.0.3.1] 중개거래
+[scenes.11.data.cards.0.4.0] 등기일
+[scenes.11.lines.0.text] 이 거래는 중개사를 거쳤고, 등기까지 마친 거래였어요.
+[scenes.12.key] h_floor
+[scenes.12.title] 같은 달 4건, 층과 값
+[scenes.12.sub] 헬리오시티 84㎡대 · 2026년 2월 계약 · 모두 중개거래
+[scenes.12.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.12.chapter] 2장
+[scenes.12.data.deals.0.1] 23.82억
+[scenes.12.data.deals.0.2] 12일
+[scenes.12.data.deals.1.1] 30.00억
+[scenes.12.data.deals.1.2] 27일
+[scenes.12.data.deals.2.1] 30.70억
+[scenes.12.data.deals.2.2] 14일
+[scenes.12.data.deals.3.1] 31.50억
+[scenes.12.data.deals.3.2] 19일
+[scenes.12.data.why.0] 왜 이 값이었는지
+[scenes.12.data.why.1] 실거래 자료에는 나오지 않음
+[scenes.12.lines.0.text] 층이 달랐다는 건 알 수 있지만, 왜 이 값이었는지는 실거래 자료에 나오지 않아요.
+[scenes.13.key] h_may
+[scenes.13.title] 봄에는 20억 거래도
+[scenes.13.sub] 헬리오시티 84㎡대 · 2026년 5월 계약 18건
+[scenes.13.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.13.chapter] 2장
+[scenes.13.data.mode] may
+[scenes.13.data.band] 나머지 17건 27.00~30.50억 · 모두 중개거래
+[scenes.13.data.def.0] 직거래
+[scenes.13.data.def.1] 중개사 없이 사고판 사람이 직접 신고한 거래
+[scenes.13.lines.0.text] 봄에는 20억짜리 거래도 있었어요.
+[scenes.13.lines.1.text] 이건 중개사를 거치지 않은 직거래로 신고됐고요.
+[scenes.13.lines.2.text] 같은 달 다른 거래들과는 값이 한참 떨어져 있었죠.
+[scenes.13.lines.3.text] 직거래는 사고판 사람이 중개사 없이 직접 신고한 거래예요.
+[scenes.13.lines.3.cap] 2026.05 84㎡대 18건 · 28일 20.00억 26층 직거래 · 나머지 17건 27.00~30.50억 중개거래
+[scenes.13.lines.4.text] 그래서 손품 씨는 한 건이 아니라 한 달 전체를 보기로 했어요.
+[scenes.14.key] h_line
+[scenes.14.title] 달마다 가운데 값을 이으면
+[scenes.14.sub] 헬리오시티 84㎡대 · 동떨어진 거래 1건 뺌 · 단위 억원
+[scenes.14.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.14.chapter] 2장
+[scenes.14.data.series.0.0] 헬리오시티 84㎡대
+[scenes.14.data.series.0.1] accent
+[scenes.14.lines.0.text] 달마다 가운데 값을 이으면 4월이 가장 낮았어요.
+[scenes.15.key] h_walk
+[scenes.15.title] 걸어서 재 보면
+[scenes.15.sub] 헬리오시티 가운데 → 출입구·학교·마트 · 오픈스트리트맵 보행로
+[scenes.15.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.15.chapter] 2장
+[scenes.15.data.focus.0] 헬리오시티
+[scenes.15.data.routes.0.0] 헬리오시티
+[scenes.15.data.routes.0.1] station
+[scenes.15.data.routes.1.0] 헬리오시티
+[scenes.15.data.routes.1.1] school
+[scenes.15.data.cards.0.0] 송파역 출입구
+[scenes.15.data.cards.0.1] 360m
+[scenes.15.data.cards.0.2] 역
+[scenes.15.data.cards.1.0] 서울가락초등학교
+[scenes.15.data.cards.1.1] 660m
+[scenes.15.data.cards.1.2] 초등학교
+[scenes.15.data.cards.2.0] 롯데마트
+[scenes.15.data.cards.2.1] 1,400m
+[scenes.15.data.cards.2.2] 마트
+[scenes.15.data.cards.3.0] 가장 가까운 학교가
+[scenes.15.data.cards.3.1] 꼭 다니게 될 학교는 아님
+[scenes.15.data.cards.3.2] 배정 학교 확인 안 함
+[scenes.15.lines.0.text] 단지 가운데서 송파역 출입구까지는 걸어서 360m였어요.
+[scenes.15.lines.1.text] 가장 가까운 초등학교는 역보다 더 멀었고요.
+[scenes.15.lines.1.cap] 송파역 출입구 360m · 서울가락초등학교 660m · 롯데마트 1,400m · OSM 보행로
+[scenes.15.lines.2.text] 다만 가장 가까운 학교가 꼭 다니게 될 학교는 아니에요.
+[scenes.16.key] h_ssmap
+[scenes.16.title] 같은 가락동, 오래된 단지
+[scenes.16.sub] 가락쌍용1차 · 2,064세대 · 1997.03 입주
+[scenes.16.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.16.chapter] 2장
+[scenes.16.data.focus.0] 헬리오시티
+[scenes.16.data.focus.1] 가락쌍용1차
+[scenes.16.data.cards.0.0] 가락쌍용1차
+[scenes.16.data.cards.0.1] 2,064세대 · 1997.03 입주
+[scenes.16.data.cards.1.0] 헬리오시티
+[scenes.16.data.cards.1.1] 9,510세대 · 2018.12 입주
+[scenes.16.lines.0.text] 같은 가락동의 오래된 단지, 가락쌍용1차도 봤어요.
+[scenes.17.key] h_ssbar
+[scenes.17.title] 같은 평형 평당 값
+[scenes.17.sub] 가락동 · 84㎡대 평당 값(1년 가운데 값) · 전용면적 3.3058㎡를 1평으로 계산
+[scenes.17.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 국토교통부 공동주택 단지 정보
+[scenes.17.chapter] 2장
+[scenes.17.data.bars.0.0] 헬리오시티
+[scenes.17.data.bars.0.2] 1억 1,087만원
+[scenes.17.data.bars.0.3] 84건 · 2018.12
+[scenes.17.data.bars.0.4] ink
+[scenes.17.data.bars.1.0] 가락쌍용1차
+[scenes.17.data.bars.1.2] 8,080만원
+[scenes.17.data.bars.1.3] 29건 · 1997.03
+[scenes.17.data.bars.1.4] accent
+[scenes.17.data.diff] −27.1%
+[scenes.17.lines.0.text] 같은 평형 평당 값이 헬리오시티보다 27% 낮았어요.
+[scenes.17.lines.0.cap] 84㎡대 평당 헬리오시티 1억 1,087만원(84건) · 가락쌍용1차 8,080만원(29건) · −27.1%
+[scenes.18.key] f_map
+[scenes.18.title] 두 번째 동네, 강동구 둔촌동
+[scenes.18.sub] 올림픽파크포레온 · 12,032세대 · 2024.11 입주
+[scenes.18.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.18.chapter] 3장
+[scenes.18.data.focus.0] 올림픽파크포레온
+[scenes.18.data.cards.0.0] 올림픽파크포레온
+[scenes.18.data.cards.0.1] 12,032세대 · 2024.11 입주
+[scenes.18.data.cards.1.0] 헬리오시티보다 큰 단지
+[scenes.18.data.cards.1.1] 12,032세대 vs 9,510세대
+[scenes.18.lines.0.text] 두 번째 동네는 강동구 둔촌동, 올림픽파크포레온이에요.
+[scenes.18.lines.1.text] 재작년 말에 입주한, 헬리오시티보다도 큰 단지죠.
+[scenes.19.key] f_bars
+[scenes.19.title] 6년 가까이 늦게 지었는데
+[scenes.19.sub] 84㎡대 평당 값 · 1년 가운데 값 · 전용면적 3.3058㎡를 1평으로 계산
+[scenes.19.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 국토교통부 공동주택 단지 정보
+[scenes.19.chapter] 3장
+[scenes.19.data.bars.0.0] 헬리오시티
+[scenes.19.data.bars.0.2] 1억 1,087만원
+[scenes.19.data.bars.0.3] 2018.12 입주
+[scenes.19.data.bars.0.4] ink
+[scenes.19.data.bars.1.0] 올림픽파크포레온
+[scenes.19.data.bars.1.2] 1억 1,017만원
+[scenes.19.data.bars.1.3] 2024.11 입주
+[scenes.19.data.bars.1.4] accent
+[scenes.19.data.diff] 차이 −0.6%
+[scenes.19.data.note] 매매 가운데 값 28.50억 vs 28.25억
+[scenes.19.lines.0.text] 6년 가까이 늦게 지은 단지인데, 전용면적 평당 값은 거의 똑같았어요.
+[scenes.19.lines.0.cap] 84㎡대 평당 헬리오시티 1억 1,087만원 · 올림픽파크포레온 1억 1,017만원 · −0.6% · 매매 중앙 28.50억 vs 28.25억
+[scenes.20.key] f_cal
+[scenes.20.title] 거래가 한쪽에 몰렸다
+[scenes.20.sub] 올림픽파크포레온 84㎡대 · 달마다 매매 건수(1년 45건)
+[scenes.20.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.20.chapter] 3장
+[scenes.20.data.note] 4~5월 34건(76%)
+[scenes.20.lines.0.text] 손품 씨는 여기서 이상한 점을 하나 더 봤어요. 거래가 한쪽에 몰려 있었거든요.
+[scenes.21.key] f_period
+[scenes.21.title] 봄 두 달에 몰린 거래
+[scenes.21.sub] 올림픽파크포레온 · 모든 평형 매매 113건 · 해제·공공기관 매수 제외
+[scenes.21.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.21.chapter] 3장
+[scenes.21.data.bars.0.0] 2025.11~2026.03
+[scenes.21.data.bars.0.2] 1건
+[scenes.21.data.bars.0.3] 다섯 달
+[scenes.21.data.bars.1.0] 2026.04~05
+[scenes.21.data.bars.1.2] 94건
+[scenes.21.data.bars.1.3] 두 달
+[scenes.21.data.bars.2.0] 2026.06~10
+[scenes.21.data.bars.2.2] 18건
+[scenes.21.data.bars.2.3] 다섯 달
+[scenes.21.data.pct] 113건 중 94건(83%)
+[scenes.21.data.why] 왜 몰렸는지는 실거래 자료에 없음
+[scenes.21.data.sub84] 84㎡대만 보면 45건 중 34건(76%)
+[scenes.21.lines.0.text] 모든 평형을 합치면, 한 해 거래의 80% 넘게가 봄 두 달에 몰린 단지도 있었어요.
+[scenes.21.lines.0.cap] 올림픽파크포레온 전 면적 1년 113건 중 2026년 4~5월 94건(83%) · 84㎡대만 45건 중 34건(76%) · 2025.11~2026.03 1건
+[scenes.21.lines.1.text] 그 앞 다섯 달은 거래가 거의 없었고요.
+[scenes.21.lines.2.text] 왜 그때 몰렸는지는 실거래 자료에 나오지 않아서, 이유는 짐작하지 않을게요.
+[scenes.22.key] f_deal
+[scenes.22.title] 가을의 23억 거래
+[scenes.22.sub] 올림픽파크포레온 84㎡대 · 2026년 9월 계약 2건(10/11 받은 값)
+[scenes.22.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.22.chapter] 3장
+[scenes.22.data.cards.0.0.0] 계약일
+[scenes.22.data.cards.0.1.0] 층
+[scenes.22.data.cards.0.1.1] 19층
+[scenes.22.data.cards.0.2.0] 거래금액
+[scenes.22.data.cards.0.2.1] 23.00억
+[scenes.22.data.cards.0.3.0] 거래 유형
+[scenes.22.data.cards.0.3.1] 직거래
+[scenes.22.data.cards.0.4.0] 등기
+[scenes.22.data.cards.0.4.1] 칸 비어 있음
+[scenes.22.data.cards.1.0.0] 계약일
+[scenes.22.data.cards.1.1.0] 층
+[scenes.22.data.cards.1.1.1] 28층
+[scenes.22.data.cards.1.2.0] 거래금액
+[scenes.22.data.cards.1.2.1] 28.90억
+[scenes.22.data.cards.1.3.0] 거래 유형
+[scenes.22.data.cards.1.3.1] 중개거래
+[scenes.22.data.cards.1.4.0] 등기
+[scenes.22.data.cards.1.4.1] 칸 비어 있음
+[scenes.22.lines.0.text] 가을 들어서는 23억 거래가 한 건 있었는데, 이것도 직거래로 신고됐어요.
+[scenes.22.lines.1.text] 같은 달 중개사를 거친 거래는 29억 가까이였죠.
+[scenes.22.lines.1.cap] 2026.09 84㎡대 · 12일 23.00억 19층 직거래 · 22일 28.90억 28층 중개거래 · 둘 다 등기 칸 비어 있음(10/11 받은 값)
+[scenes.23.key] f_rent
+[scenes.23.title] 손품 씨 눈에 들어온 전세
+[scenes.23.sub] 84㎡대 신규 순수전세 · 1년 가운데 값
+[scenes.23.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.23.chapter] 3장
+[scenes.23.data.bars.0.0] 올림픽파크포레온
+[scenes.23.data.bars.0.2] 14.00억
+[scenes.23.data.bars.0.3] 35건
+[scenes.23.data.bars.0.4] accent
+[scenes.23.data.bars.1.0] 헬리오시티
+[scenes.23.data.bars.1.2] 12.50억
+[scenes.23.data.bars.1.3] 132건
+[scenes.23.data.bars.1.4] ink
+[scenes.23.data.ratio.0.0] 올림픽파크포레온
+[scenes.23.data.ratio.1.0] 헬리오시티
+[scenes.23.data.ratio.2.0] 고덕그라시움
+[scenes.23.data.ratioHead] 전세가율 = 같은 면적 전세 가운데 값 ÷ 매매 가운데 값
+[scenes.23.data.say.0] 매매 값이 같아도
+[scenes.23.data.say.1] 보증금이 더 드는 단지
+[scenes.23.lines.0.text] 손품 씨 눈에 들어온 건 전세였어요.
+[scenes.23.lines.1.text] 이 단지 전세 가운데 값은 14억으로, 헬리오시티보다 높았어요.
+[scenes.23.lines.1.cap] 84㎡대 신규 순수전세 중앙 올림픽파크포레온 14.00억(35건) · 헬리오시티 12.50억(132건)
+[scenes.23.lines.2.text] 매매 값에서 전세가 차지하는 비율도, 세 동네 대표 단지 가운데 가장 높았고요.
+[scenes.23.lines.3.text] 전세로 사는 사람 입장에선, 매매 값이 같아도 보증금이 더 드는 단지라는 뜻이죠.
+[scenes.23.lines.3.cap] 전세가율(같은 면적대 전세 중앙 ÷ 매매 중앙) 올림픽파크포레온 49.6% · 헬리오시티 43.9% · 고덕그라시움 41.5%
+[scenes.24.key] f_walk
+[scenes.24.title] 둔촌동에서 걸어서
+[scenes.24.sub] 올림픽파크포레온 가운데 → 출입구·학교 · 오픈스트리트맵 보행로
+[scenes.24.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.24.chapter] 3장
+[scenes.24.data.focus.0] 올림픽파크포레온
+[scenes.24.data.routes.0.0] 올림픽파크포레온
+[scenes.24.data.routes.0.1] station
+[scenes.24.data.routes.1.0] 올림픽파크포레온
+[scenes.24.data.routes.1.1] school
+[scenes.24.data.cards.0.0] 둔촌오륜역 출입구
+[scenes.24.data.cards.0.1] 430m
+[scenes.24.data.cards.0.2] 역
+[scenes.24.data.cards.1.0] 서울위례초등학교
+[scenes.24.data.cards.1.1] 270m
+[scenes.24.data.cards.1.2] 초등학교
+[scenes.24.data.cards.2.0] 학교가 역보다
+[scenes.24.data.cards.2.1] 더 가까움
+[scenes.24.lines.0.text] 걸어서는 둔촌오륜역 출입구까지 430m였어요.
+[scenes.24.lines.1.text] 가장 가까운 초등학교는 역보다 더 가까웠고요.
+[scenes.24.lines.1.cap] 둔촌오륜역 출입구 430m · 서울위례초등학교 270m · OSM 보행로
+[scenes.25.key] g_map
+[scenes.25.title] 마지막, 강동구 고덕동
+[scenes.25.sub] 손품 씨가 지금 사는 동네 · 오픈스트리트맵 보행로
+[scenes.25.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.25.chapter] 4장
+[scenes.25.data.focus.0] 고덕그라시움
+[scenes.25.data.focus.1] 래미안힐스테이트고덕
+[scenes.25.data.home] 래미안힐스테이트고덕
+[scenes.25.data.routes.0.0] 고덕그라시움
+[scenes.25.data.routes.0.1] station
+[scenes.25.data.routes.1.0] 래미안힐스테이트고덕
+[scenes.25.data.routes.1.1] station
+[scenes.25.data.cards.0.0] 손품 씨네
+[scenes.25.data.cards.0.1] 래미안힐스테이트고덕
+[scenes.25.data.cards.0.2] 지금 사는 곳
+[scenes.25.data.cards.1.0] 고덕그라시움 → 상일동역 출입구
+[scenes.25.data.cards.1.1] 180m
+[scenes.25.data.cards.2.0] 래미안힐스테이트고덕 → 고덕역 출입구
+[scenes.25.data.cards.2.1] 640m
+[scenes.25.lines.0.text] 마지막은 손품 씨가 지금 사는 고덕동이에요.
+[scenes.25.lines.1.text] 고덕그라시움은 상일동역 출입구까지 걸어서 180m였어요.
+[scenes.25.lines.2.text] 손품 씨네 래미안힐스테이트고덕은 고덕역 출입구까지 640m고요.
+[scenes.25.lines.2.cap] 고덕그라시움 → 상일동역 출입구 180m · 래미안힐스테이트고덕 → 고덕역 출입구 640m · OSM 보행로
+[scenes.26.key] g_ruler
+[scenes.26.title] 역까지 걷는 거리
+[scenes.26.sub] 단지 가운데 → 지하철 출입구 · 오픈스트리트맵 보행로
+[scenes.26.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.26.chapter] 4장
+[scenes.26.data.groups.0.0] 지하철 출입구
+[scenes.26.data.groups.0.1.0.0] 고덕그라시움
+[scenes.26.data.groups.0.1.0.2] 180m
+[scenes.26.data.groups.0.1.0.3] accent
+[scenes.26.data.groups.0.1.1.0] 래미안힐스테이트고덕
+[scenes.26.data.groups.0.1.1.2] 640m
+[scenes.26.data.groups.0.1.1.3] ink
+[scenes.26.data.note] 640 ÷ 180 = 3.56배
+[scenes.26.lines.0.text] 같은 동네 안에서 역까지 걷는 거리가 세 배 넘게 차이 났어요.
+[scenes.27.key] g_bars
+[scenes.27.title] 같은 평형 평당 값
+[scenes.27.sub] 고덕동 · 84㎡대 평당 값(1년 가운데 값) · 전용면적 3.3058㎡를 1평으로 계산
+[scenes.27.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 국토교통부 공동주택 단지 정보
+[scenes.27.chapter] 4장
+[scenes.27.data.bars.0.0] 고덕그라시움
+[scenes.27.data.bars.0.2] 9,457만원
+[scenes.27.data.bars.0.3] 25건
+[scenes.27.data.bars.0.4] accent
+[scenes.27.data.bars.1.0] 래미안힐스테이트고덕
+[scenes.27.data.bars.1.2] 7,865만원
+[scenes.27.data.bars.1.3] 33건
+[scenes.27.data.bars.1.4] ink
+[scenes.27.data.diff] 그라시움이 +20.2%
+[scenes.27.lines.0.text] 같은 평형 평당 값은 그라시움이 20% 높았어요.
+[scenes.27.lines.0.cap] 84㎡대 평당 고덕그라시움 9,457만원(25건) · 래미안힐스테이트고덕 7,865만원(33건) · 그라시움이 +20.2%
+[scenes.28.key] g_walk2
+[scenes.28.title] 학교 길과 장 보는 길
+[scenes.28.sub] 가장 가까운 초등학교·이마트까지 · 배정 학교 아님 · 오픈스트리트맵 보행로
+[scenes.28.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.28.chapter] 4장
+[scenes.28.data.groups.0.0] 가장 가까운 초등학교
+[scenes.28.data.groups.0.1.0.0] 고덕그라시움
+[scenes.28.data.groups.0.1.0.2] 390m
+[scenes.28.data.groups.0.1.0.3] accent
+[scenes.28.data.groups.0.1.1.0] 래미안힐스테이트고덕
+[scenes.28.data.groups.0.1.1.2] 600m
+[scenes.28.data.groups.0.1.1.3] ink
+[scenes.28.data.groups.1.0] 이마트
+[scenes.28.data.groups.1.1.0.0] 고덕그라시움
+[scenes.28.data.groups.1.1.0.2] 1,170m
+[scenes.28.data.groups.1.1.0.3] ink
+[scenes.28.data.groups.1.1.1.0] 래미안힐스테이트고덕
+[scenes.28.data.groups.1.1.1.2] 960m
+[scenes.28.data.groups.1.1.1.3] accent
+[scenes.28.data.note] 학교는 그라시움이 210m 짧고, 마트는 손품 씨네가 짧음
+[scenes.28.lines.0.text] 아이 학교 길도 봤어요. 가장 가까운 초등학교까지는 그라시움 쪽이 더 짧았어요.
+[scenes.28.lines.1.text] 손품 씨네보다 200m쯤 덜 걷죠.
+[scenes.28.lines.1.cap] 고덕그라시움 → 서울고덕초등학교 390m · 래미안힐스테이트고덕 → 서울묘곡초등학교 600m · OSM 보행로 · 배정 학교 아님
+[scenes.28.lines.2.text] 그런데 장 보러 가는 길은 손품 씨네가 오히려 가까웠어요.
+[scenes.28.lines.3.text] 이마트까지 손품 씨네는 960m, 그라시움은 1km가 넘었죠.
+[scenes.28.lines.3.cap] 이마트 래미안힐스테이트고덕 960m · 고덕그라시움 1,170m · OSM 보행로
+[scenes.29.key] g_cards
+[scenes.29.title] 지은 해도, 세대 수도 다르다
+[scenes.29.sub] 평당 값 차이가 역 때문이라고는 말할 수 없음
+[scenes.29.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 국토교통부 공동주택 단지 정보
+[scenes.29.chapter] 4장
+[scenes.29.data.cards.0.0] 고덕그라시움
+[scenes.29.data.cards.0.1.0.0] 입주
+[scenes.29.data.cards.0.1.1.0] 세대
+[scenes.29.data.cards.0.1.1.1] 4,932세대
+[scenes.29.data.cards.0.1.2.0] 역까지
+[scenes.29.data.cards.0.1.2.1] 180m
+[scenes.29.data.cards.0.1.3.0] 평당
+[scenes.29.data.cards.0.1.3.1] 9,457만원
+[scenes.29.data.cards.1.0] 래미안힐스테이트고덕
+[scenes.29.data.cards.1.1.0.0] 입주
+[scenes.29.data.cards.1.1.1.0] 세대
+[scenes.29.data.cards.1.1.1.1] 3,658세대
+[scenes.29.data.cards.1.1.2.0] 역까지
+[scenes.29.data.cards.1.1.2.1] 640m
+[scenes.29.data.cards.1.1.3.0] 평당
+[scenes.29.data.cards.1.1.3.1] 7,865만원
+[scenes.29.lines.0.text] 그렇다고 평당 값 차이가 역 때문이라고는 말할 수 없어요.
+[scenes.29.lines.1.text] 지은 해도, 세대 수도, 단지 안 사정도 다르니까요.
+[scenes.29.lines.1.cap] 입주 고덕그라시움 2019.09 · 4,932세대 / 래미안힐스테이트고덕 2016.12 · 3,658세대
+[scenes.30.key] g_anam
+[scenes.30.title] 같은 동네의 오래된 단지
+[scenes.30.sub] 고덕동 · 84㎡대 평당 값(1년 가운데 값) · 전용면적 3.3058㎡를 1평으로 계산
+[scenes.30.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.30.chapter] 4장
+[scenes.30.data.focus.0] 고덕그라시움
+[scenes.30.data.focus.1] 고덕아남
+[scenes.30.data.cards.0.0] 고덕그라시움
+[scenes.30.data.cards.0.1] 2019.09 입주 · 4,932세대
+[scenes.30.data.cards.0.2] 9,457만원
+[scenes.30.data.cards.1.0] 고덕아남
+[scenes.30.data.cards.1.1] 1996.03 입주 · 807세대
+[scenes.30.data.cards.1.2] 5,937만원
+[scenes.30.data.cards.2.0] 차이
+[scenes.30.data.cards.2.1] 그라시움보다 −37.2%
+[scenes.30.data.cards.2.2] 고덕아남 매매 가운데 15.20억
+[scenes.30.lines.0.text] 같은 동네 오래된 단지, 고덕아남은 15억대였어요.
+[scenes.30.lines.0.cap] 고덕아남 84㎡대 40건 중앙 15.20억 · 평당 5,937만원 · 그라시움보다 −37.2%
+[scenes.31.key] g_diff
+[scenes.31.title] 새 단지와 오래된 단지, 평당 값 차이
+[scenes.31.sub] 84㎡대 평당 · 같은 동네 새 단지 대비 · 전용면적 3.3058㎡를 1평으로 계산
+[scenes.31.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 국토교통부 공동주택 단지 정보
+[scenes.31.chapter] 4장
+[scenes.31.data.rows.0.0] 가락동
+[scenes.31.data.rows.0.1] 가락쌍용1차 vs 헬리오시티
+[scenes.31.data.rows.0.3] −27.1%
+[scenes.31.data.rows.1.0] 고덕동
+[scenes.31.data.rows.1.1] 고덕아남 vs 고덕그라시움
+[scenes.31.data.rows.1.3] −37.2%
+[scenes.31.data.rows.2.0] 둔촌동
+[scenes.31.data.rows.2.1] 둔촌신동아 vs 올림픽파크포레온
+[scenes.31.data.rows.2.3] −47.0%
+[scenes.31.data.rows.2.4] 4건뿐, 참고
+[scenes.31.lines.0.text] 같은 동네라도 지은 해가 다른 단지끼리는 값이 크게 갈렸어요.
+[scenes.31.lines.1.text] 평당 값으로 25% 넘게 벌어진 거예요.
+[scenes.31.lines.1.cap] 84㎡대 평당, 같은 동네 새 단지 대비 — 가락동 가락쌍용1차 −27.1% · 고덕동 고덕아남 −37.2% · 둔촌동 둔촌신동아 −47.0%(4건뿐, 참고)
+[scenes.32.key] s_lines
+[scenes.32.title] 세 단지의 달별 가운데 값
+[scenes.32.sub] 각 단지 거래 가장 많은 평형 · 동떨어진 거래 뺌 · 단위 억원
+[scenes.32.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.32.chapter] 5장
+[scenes.32.data.series.0.0] 헬리오시티 84㎡대
+[scenes.32.data.series.0.1] ink
+[scenes.32.data.series.1.0] 올림픽파크포레온 84㎡대
+[scenes.32.data.series.1.1] accent
+[scenes.32.data.series.2.0] 고덕그라시움 59㎡대
+[scenes.32.data.series.2.1] fall
+[scenes.32.data.band.2] 4·5월
+[scenes.32.lines.0.text] 세 단지에서 같은 모양이 보였어요.
+[scenes.32.lines.1.text] 세 대표 단지 모두, 거래가 가장 많은 평형의 4월 가운데 값이 한 해 중 낮은 쪽이었어요.
+[scenes.32.lines.1.cap] 각 단지 거래 최다 면적대 4월 중앙 · 헬리오시티 84㎡대 28.00억(25건) · 올림픽파크포레온 84㎡대 27.55억(9건) · 고덕그라시움 59㎡대 18.85억(19건) — 각 단지 1년 중 가장 낮은 달(포레온은 직거래 낀 9월 2건 제외)
+[scenes.33.key] s_vol
+[scenes.33.title] 동 전체, 달마다 거래 수
+[scenes.33.sub] 매매 · 해제·공공기관 매수 제외 · 4·5월은 주황
+[scenes.33.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.33.chapter] 5장
+[scenes.33.data.dongs.0.0] 가락동
+[scenes.33.data.dongs.0.2] 4~5월 185건 / 596건
+[scenes.33.data.dongs.1.0] 둔촌동
+[scenes.33.data.dongs.1.2] 4~5월 150건 / 343건
+[scenes.33.data.dongs.2.0] 고덕동
+[scenes.33.data.dongs.2.2] 4~5월 115건 / 277건
+[scenes.33.data.notes.0] 여름 이후 대표 단지는 달마다 거래 몇 건뿐
+[scenes.33.data.notes.1] 한 해 치 자료 — 해마다 같다고 말할 수 없음
+[scenes.33.lines.0.text] 동 전체로 넓혀 봐도, 세 동네 모두 4월과 5월 거래가 가장 많았어요.
+[scenes.33.lines.0.cap] 동 전체 매매(해제·공공 제외) 4~5월 · 가락동 185건/596건 · 둔촌동 150건/343건 · 고덕동 115건/277건
+[scenes.33.lines.1.text] 여름엔 가운데 값이 다시 올라갔어요.
+[scenes.33.lines.1.cap] 헬리오시티 84㎡대 7월 30.00억(3건) · 올림픽파크포레온 84㎡대 8월 30.00억(5건) · 고덕그라시움 59㎡대 7월 20.90억(5건)
+[scenes.33.lines.2.text] 다만 여름 이후는 거래가 몇 건 안 돼서, 한 건이 가운데 값을 크게 움직여요.
+[scenes.33.lines.3.text] 한 해 치 자료라서, 해마다 이렇다고는 말할 수 없어요.
+[scenes.34.key] s_deadline
+[scenes.34.title] 최근 두 달은 아직 늘 수 있다
+[scenes.34.sub] 부동산 거래신고 등에 관한 법률 제3조① · 계약일부터 30일 안에 신고
+[scenes.34.source] 부동산 거래신고 등에 관한 법률 제3조①(국가법령정보센터) · 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.34.chapter] 5장
+[scenes.34.data.stamp] 마지막 몇 건으로 방향을 읽지 않기
+[scenes.34.lines.0.text] 최근 두 달 계약은 신고 기한이 남아 있어서, 숫자가 더 늘 수도 있습니다.
+[scenes.34.lines.0.cap] 부동산 거래신고 등에 관한 법률 제3조① 계약일부터 30일 안에 신고 · 이 자료는 2026-10-11 받은 값
+[scenes.34.lines.1.text] 그래서 손품 씨는 마지막 몇 건으로 방향을 읽지 않기로 했어요.
+[scenes.35.key] gap1
+[scenes.35.title] 손품 씨의 계산서
+[scenes.35.sub] 84㎡대 매매 가운데 값 − 지금 보증금 9.50억
+[scenes.35.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.35.chapter] 6장
+[scenes.35.data.deposit.0] 지금 보증금
+[scenes.35.data.deposit.1] 9.50억
+[scenes.35.data.deposit.2] 래미안힐스테이트고덕 84㎡대 전세
+[scenes.35.data.rows.0.0] 래미안힐스테이트고덕
+[scenes.35.data.rows.0.1] 매매 20.20억
+[scenes.35.data.rows.0.2] +10.70억
+[scenes.35.data.rows.0.4] 지금 사는 단지
+[scenes.35.data.rows.1.0] 고덕아남
+[scenes.35.data.rows.1.1] 매매 15.20억
+[scenes.35.data.rows.1.2] +5.70억
+[scenes.35.data.rows.1.4] 고덕아남
+[scenes.35.data.rows.2.0] 고덕그라시움
+[scenes.35.data.rows.2.1] 매매 24.10억
+[scenes.35.data.rows.2.2] +14.60억
+[scenes.35.data.rows.2.4] 그라시움
+[scenes.35.data.rows.3.0] 올림픽파크포레온
+[scenes.35.data.rows.3.1] 매매 28.25억
+[scenes.35.data.rows.3.2] +18.75억
+[scenes.35.data.rows.3.4] 포레온
+[scenes.35.data.rows.4.0] 헬리오시티
+[scenes.35.data.rows.4.1] 매매 28.50억
+[scenes.35.data.rows.4.2] +19.00억
+[scenes.35.data.rows.4.4] 헬리오시티
+[scenes.35.data.foot] 세금·중개보수·대출은 넣지 않은 단순 차액 · 대출 한도는 사람마다 달라 계산 안 함
+[scenes.35.data.extra.0] 세금·중개보수·대출은 넣지 않은 단순 차액
+[scenes.35.data.extra.1] 대출 한도는 사람마다 달라 계산하지 않음
+[scenes.35.lines.0.text] 이제 손품 씨의 계산서예요.
+[scenes.35.lines.1.text] 지금 보증금으로 지금 사는 단지를 사려면, 10억 넘게 더 필요해요.
+[scenes.35.lines.1.cap] 래미안힐스테이트고덕 84㎡대 매매 중앙 20.20억 − 보증금 9.50억 = 10.70억
+[scenes.35.lines.2.text] 고덕아남이면 6억 가까이 더 들고요.
+[scenes.35.lines.3.text] 그라시움은 15억 가까이 더 들어요.
+[scenes.35.lines.4.text] 헬리오시티와 포레온은 19억 안팎이 더 필요하죠.
+[scenes.35.lines.4.cap] 더 드는 돈 = 84㎡대 매매 중앙 − 9.50억 · 고덕아남 5.70억 · 고덕그라시움 14.60억 · 올림픽파크포레온 18.75억 · 헬리오시티 19.00억
+[scenes.35.lines.5.text] 세금이랑 중개보수, 대출은 넣지 않고 단순히 뺀 값이에요.
+[scenes.35.lines.6.text] 대출 한도는 사람마다 달라서 계산하지 않았어요.
+[scenes.36.key] gap2
+[scenes.36.title] 전세로만 옮긴다면
+[scenes.36.sub] 84㎡대 신규 순수전세 가운데 값 − 지금 보증금 9.50억
+[scenes.36.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음)
+[scenes.36.chapter] 6장
+[scenes.36.data.deposit.0] 지금 보증금
+[scenes.36.data.deposit.1] 9.50억
+[scenes.36.data.deposit.2] 래미안힐스테이트고덕 84㎡대 전세
+[scenes.36.data.rows.0.0] 고덕아남
+[scenes.36.data.rows.0.1] 전세 5.30억
+[scenes.36.data.rows.0.2] −4.20억
+[scenes.36.data.rows.0.4] 고덕아남
+[scenes.36.data.rows.1.0] 고덕그라시움
+[scenes.36.data.rows.1.1] 전세 10.00억
+[scenes.36.data.rows.1.2] +0.50억
+[scenes.36.data.rows.1.4] 그라시움
+[scenes.36.data.rows.2.0] 헬리오시티
+[scenes.36.data.rows.2.1] 전세 12.50억
+[scenes.36.data.rows.2.2] +3.00억
+[scenes.36.data.rows.2.4] 헬리오시티
+[scenes.36.data.rows.3.0] 올림픽파크포레온
+[scenes.36.data.rows.3.1] 전세 14.00억
+[scenes.36.data.rows.3.2] +4.50억
+[scenes.36.data.rows.3.4] 포레온
+[scenes.36.data.foot] 세금·중개보수·대출은 넣지 않은 단순 차액 · 대출 한도는 사람마다 달라 계산 안 함
+[scenes.36.data.extra.0] 고덕아남 1996.03 입주 · 고덕동 지도 단지 중 두 번째로 오래됨
+[scenes.36.data.extra.1] 어디로 가라는 말이 아니라, 단순히 뺀 계산
+[scenes.36.lines.0.text] 그럼 전세로만 옮긴다면요?
+[scenes.36.lines.1.text] 그라시움 같은 평형 전세는 가운데 값이 10억, 지금보다 조금 더예요.
+[scenes.36.lines.2.text] 헬리오시티는 3억을 더 얹어야 하고요.
+[scenes.36.lines.3.text] 포레온은 4억 넘게 더 얹어야 해요.
+[scenes.36.lines.3.cap] 84㎡대 신규 순수전세 중앙 − 9.50억 · 고덕그라시움 10.00억(+0.50억) · 헬리오시티 12.50억(+3.00억) · 올림픽파크포레온 14.00억(+4.50억) · 고덕아남 5.30억(−4.20억)
+[scenes.36.lines.4.text] 고덕아남으로 가면, 반대로 보증금이 4억 넘게 남아요.
+[scenes.36.lines.5.text] 대신 이 동네에서 오래된 축에 드는 단지예요.
+[scenes.36.lines.6.text] 어디로 가라는 말은 아니에요.
+[scenes.37.key] e_map
+[scenes.37.title] 평당 값과 걷는 거리
+[scenes.37.sub] 84㎡대 평당 값 · 대표 단지 셋과 같은 동네 오래된 단지 셋
+[scenes.37.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.37.chapter] 7장
+[scenes.37.data.focus.0] 헬리오시티
+[scenes.37.data.focus.1] 가락쌍용1차
+[scenes.37.data.focus.2] 올림픽파크포레온
+[scenes.37.data.focus.3] 둔촌신동아
+[scenes.37.data.focus.4] 고덕그라시움
+[scenes.37.data.focus.5] 고덕아남
+[scenes.37.data.labels.0] 헬리오시티
+[scenes.37.data.labels.1] 올림픽파크포레온
+[scenes.37.data.labels.2] 고덕그라시움
+[scenes.37.data.cards.0.0] 헬리오시티
+[scenes.37.data.cards.0.1] 1억 1,087만원
+[scenes.37.data.cards.0.2] 가락쌍용1차 8,080만원
+[scenes.37.data.cards.1.0] 올림픽파크포레온
+[scenes.37.data.cards.1.1] 1억 1,017만원
+[scenes.37.data.cards.1.2] 둔촌신동아 5,840만원(4건)
+[scenes.37.data.cards.2.0] 고덕그라시움
+[scenes.37.data.cards.2.1] 9,457만원
+[scenes.37.data.cards.2.2] 고덕아남 5,937만원
+[scenes.37.lines.0.text] 걸어서 잰 거리는 평당 값 순서와 꼭 같지 않았어요.
+[scenes.38.key] e_table
+[scenes.38.title] 세 동네 단지 37곳 표
+[scenes.38.sub] 파이어맵 카페에 전체 표 · 여기는 대표 단지만 · 계산·비교 자료, 사고팔라는 권유 아님
+[scenes.38.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL) · cafe.naver.com/firemap
+[scenes.38.chapter] 7장
+[scenes.38.data.cols.0] 단지
+[scenes.38.data.cols.1] 입주
+[scenes.38.data.cols.2] 세대
+[scenes.38.data.cols.3] 84㎡대 평당
+[scenes.38.data.cols.4] 전세가율
+[scenes.38.data.cols.5] 역(걸어서)
+[scenes.38.data.cols.6] 초등학교
+[scenes.38.data.rows.0.0] 헬리오시티
+[scenes.38.data.rows.0.3] 11,087만원
+[scenes.38.data.rows.0.4] 43.9%
+[scenes.38.data.rows.0.5] 송파역 360m
+[scenes.38.data.rows.0.6] 서울가락초등학교 660m
+[scenes.38.data.rows.1.0] 가락쌍용1차
+[scenes.38.data.rows.1.3] 8,080만원
+[scenes.38.data.rows.1.4] 37.8%
+[scenes.38.data.rows.1.5] 경찰병원역 670m
+[scenes.38.data.rows.1.6] 가주초등학교 140m
+[scenes.38.data.rows.2.0] 올림픽파크포레온
+[scenes.38.data.rows.2.3] 11,017만원
+[scenes.38.data.rows.2.4] 49.6%
+[scenes.38.data.rows.2.5] 둔촌오륜역 430m
+[scenes.38.data.rows.2.6] 서울위례초등학교 270m
+[scenes.38.data.rows.3.0] 둔촌신동아
+[scenes.38.data.rows.3.3] 5,840만원
+[scenes.38.data.rows.3.4] 46.9%
+[scenes.38.data.rows.3.5] 중앙보훈병원역 600m
+[scenes.38.data.rows.3.6] 한산초등학교 310m
+[scenes.38.data.rows.4.0] 고덕그라시움
+[scenes.38.data.rows.4.3] 9,457만원
+[scenes.38.data.rows.4.4] 40.1%
+[scenes.38.data.rows.4.5] 상일동역 180m
+[scenes.38.data.rows.4.6] 서울고덕초등학교 390m
+[scenes.38.data.rows.5.0] 래미안힐스테이트고덕
+[scenes.38.data.rows.5.3] 7,865만원
+[scenes.38.data.rows.5.4] 47.0%
+[scenes.38.data.rows.5.5] 고덕역 640m
+[scenes.38.data.rows.5.6] 서울묘곡초등학교 600m
+[scenes.38.data.rows.6.0] 고덕아남
+[scenes.38.data.rows.6.3] 5,937만원
+[scenes.38.data.rows.6.4] 34.9%
+[scenes.38.data.rows.6.5] 암사역사공원역 660m
+[scenes.38.data.rows.6.6] 서울명일초등학교 710m
+[scenes.38.data.cafe] cafe.naver.com/firemap
+[scenes.38.lines.0.text] 세 동네 단지 37곳 전체 표는 파이어맵 카페에 올려 뒀어요.
+[scenes.38.lines.0.cap] cafe.naver.com/firemap · 국토교통부 실거래 · 공동주택 단지 정보 · OpenStreetMap · 계산·비교 자료이며 매수·매도 권유가 아닙니다
+[scenes.38.lines.1.text] 고민되는 단지가 있으면, 그 단지 칸부터 확인해 보세요.
+[maps.garak.name] 가락동
+[maps.garak.stations.0.0] 수서
+[maps.garak.stations.1.0] 가락시장
+[maps.garak.stations.2.0] 잠실나루
+[maps.garak.stations.3.0] 오금
+[maps.garak.stations.4.0] 잠실새내
+[maps.garak.stations.5.0] 잠실
+[maps.garak.stations.6.0] 경찰병원
+[maps.garak.stations.7.0] 거여
+[maps.garak.stations.8.0] 개롱
+[maps.garak.stations.9.0] 방이
+[maps.garak.stations.10.0] 올림픽공원
+[maps.garak.stations.11.0] 둔촌동
+[maps.garak.stations.12.0] 문정
+[maps.garak.stations.13.0] 송파
+[maps.garak.stations.14.0] 석촌
+[maps.garak.stations.15.0] 몽촌토성
+[maps.garak.stations.16.0] 둔촌오륜
+[maps.garak.stations.17.0] 한성백제
+[maps.garak.stations.18.0] 송파나루
+[maps.garak.stations.19.0] 석촌고분
+[maps.garak.stations.20.0] 삼전
+[maps.garak.cx.0.name] 헬리오시티
+[maps.garak.cx.0.walk.station.name] 송파역 출입구
+[maps.garak.cx.0.walk.school.name] 서울가락초등학교
+[maps.garak.cx.0.walk.mart.name] 롯데마트
+[maps.garak.cx.1.name] 가락쌍용1차
+[maps.garak.cx.1.walk.station.name] 경찰병원역 출입구
+[maps.garak.cx.1.walk.school.name] 가주초등학교
+[maps.garak.cx.1.walk.mart.name] 롯데마트
+[maps.garak.cx.2.name] 가락래미안파크팰리스
+[maps.garak.cx.2.walk.station.name] 개롱역 출입구
+[maps.garak.cx.2.walk.school.name] 서울가동초등학교
+[maps.garak.cx.2.walk.mart.name] 롯데마트
+[maps.garak.cx.3.name] 가락금호
+[maps.garak.cx.3.walk.station.name] 가락시장역 출입구
+[maps.garak.cx.3.walk.school.name] 신가초등학교
+[maps.garak.cx.3.walk.mart.name] 롯데마트
+[maps.garak.cx.4.name] 가락우성1차
+[maps.garak.cx.4.walk.station.name] 가락시장역 출입구
+[maps.garak.cx.4.walk.school.name] 신가초등학교
+[maps.garak.cx.4.walk.mart.name] 롯데마트
+[maps.garak.cx.5.name] 가락대림
+[maps.garak.cx.5.walk.station.name] 송파역 출입구
+[maps.garak.cx.5.walk.school.name] 신가초등학교
+[maps.garak.cx.5.walk.mart.name] 롯데마트
+[maps.garak.cx.6.name] 송파성원상떼빌
+[maps.garak.cx.6.walk.station.name] 경찰병원역 출입구
+[maps.garak.cx.6.walk.school.name] 신가초등학교
+[maps.garak.cx.6.walk.mart.name] 롯데마트
+[maps.garak.cx.7.name] 송파가락두산위브센티움
+[maps.garak.cx.7.walk.station.name] 가락시장역 출입구
+[maps.garak.cx.7.walk.school.name] 서울평화초등학교
+[maps.garak.cx.7.walk.mart.name] 롯데마트
+[maps.garak.cx.8.name] 가락동부센트레빌
+[maps.garak.cx.8.walk.station.name] 송파역 출입구
+[maps.garak.cx.8.walk.school.name] 신가초등학교
+[maps.garak.cx.8.walk.mart.name] 롯데마트
+[maps.garak.cx.9.name] 삼환가락
+[maps.garak.cx.9.walk.station.name] 개롱역 출입구
+[maps.garak.cx.9.walk.school.name] 서울개롱초등학교
+[maps.garak.cx.9.walk.mart.name] 롯데마트
+[maps.garak.cx.10.name] 가락현대6차
+[maps.garak.cx.11.name] 가락한신
+[maps.garak.cx.11.walk.station.name] 가락시장역 출입구
+[maps.garak.cx.11.walk.school.name] 서울평화초등학교
+[maps.garak.cx.11.walk.mart.name] 롯데마트
+[maps.garak.cx.12.name] 가락우성2차
+[maps.garak.cx.12.walk.station.name] 경찰병원역 출입구
+[maps.garak.cx.12.walk.school.name] 서울문정초등학교
+[maps.garak.cx.12.walk.mart.name] 롯데마트
+[maps.garak.cx.13.name] 가락극동
+[maps.garak.cx.13.walk.station.name] 개롱역 출입구
+[maps.garak.cx.13.walk.school.name] 서울가동초등학교
+[maps.garak.cx.13.walk.mart.name] 롯데마트
+[maps.garak.cx.14.name] 가락풍림
+[maps.garak.cx.14.walk.station.name] 경찰병원역 출입구
+[maps.garak.cx.14.walk.school.name] 가주초등학교
+[maps.garak.cx.14.walk.mart.name] 롯데마트
+[maps.garak.cx.15.name] 송파동부센트레빌
+[maps.garak.cx.15.walk.station.name] 송파역 출입구
+[maps.garak.cx.15.walk.school.name] 서울가락초등학교
+[maps.garak.cx.15.walk.mart.name] 롯데마트
+[maps.garak.cx.16.name] 한화오벨리스크
+[maps.garak.cx.16.walk.station.name] 경찰병원역 출입구
+[maps.garak.cx.16.walk.school.name] 신가초등학교
+[maps.garak.cx.16.walk.mart.name] 롯데마트
+[maps.garak.cx.17.name] 가락현대5차
+[maps.garak.cx.17.walk.station.name] 개롱역 출입구
+[maps.garak.cx.17.walk.school.name] 서울가동초등학교
+[maps.garak.cx.17.walk.mart.name] 롯데마트
+[maps.garak.cx.18.name] 가락3차쌍용스윗닷홈(1~4동)
+[maps.garak.cx.18.walk.station.name] 경찰병원역 출입구
+[maps.garak.cx.18.walk.school.name] 신가초등학교
+[maps.garak.cx.18.walk.mart.name] 롯데마트
+[maps.garak.cx.19.name] 송파롯데캐슬파인힐
+[maps.garak.cx.19.walk.station.name] 가락시장역 출입구
+[maps.garak.cx.19.walk.school.name] 서울평화초등학교
+[maps.garak.cx.19.walk.mart.name] 롯데마트
+[maps.dunchon.name] 둔촌동
+[maps.dunchon.stations.0.0] 천호
+[maps.dunchon.stations.1.0] 둔촌동
+[maps.dunchon.stations.2.0] 굽은다리
+[maps.dunchon.stations.3.0] 길동
+[maps.dunchon.stations.4.0] 강동
+[maps.dunchon.stations.5.0] 강동구청
+[maps.dunchon.stations.6.0] 중앙보훈병원
+[maps.dunchon.stations.7.0] 둔촌오륜
+[maps.dunchon.cx.0.name] 올림픽파크포레온
+[maps.dunchon.cx.0.walk.station.name] 둔촌오륜역 출입구
+[maps.dunchon.cx.0.walk.school.name] 서울위례초등학교
+[maps.dunchon.cx.1.name] 둔촌신동아
+[maps.dunchon.cx.1.walk.station.name] 중앙보훈병원역 출입구
+[maps.dunchon.cx.1.walk.school.name] 한산초등학교
+[maps.dunchon.cx.1.walk.mart.name] 이마트
+[maps.dunchon.cx.2.name] 신성둔촌미소지움1차
+[maps.dunchon.cx.2.walk.station.name] 중앙보훈병원역 출입구
+[maps.dunchon.cx.2.walk.school.name] 한산초등학교
+[maps.dunchon.cx.2.walk.mart.name] 이마트
+[maps.dunchon.cx.3.name] 둔촌하이츠
+[maps.dunchon.cx.3.walk.station.name] 중앙보훈병원역 출입구
+[maps.dunchon.cx.3.walk.school.name] 한산초등학교
+[maps.dunchon.cx.3.walk.mart.name] 이마트
+[maps.dunchon.cx.4.name] 더샵둔촌포레
+[maps.dunchon.cx.4.walk.station.name] 중앙보훈병원역 출입구
+[maps.dunchon.cx.4.walk.school.name] 선린초등학교
+[maps.dunchon.cx.4.walk.mart.name] 이마트
+[maps.dunchon.cx.5.name] 둔촌현대3차
+[maps.dunchon.cx.5.walk.station.name] 중앙보훈병원역 출입구
+[maps.dunchon.cx.5.walk.school.name] 선린초등학교
+[maps.dunchon.cx.5.walk.mart.name] 이마트
+[maps.dunchon.cx.6.name] 신성둔촌미소지움2차
+[maps.dunchon.cx.6.walk.station.name] 중앙보훈병원역 출입구
+[maps.dunchon.cx.6.walk.school.name] 한산초등학교
+[maps.dunchon.cx.6.walk.mart.name] 이마트
+[maps.dunchon.cx.7.name] 둔촌현대4차
+[maps.dunchon.cx.7.walk.station.name] 중앙보훈병원역 출입구
+[maps.dunchon.cx.7.walk.school.name] 선린초등학교
+[maps.dunchon.cx.7.walk.mart.name] 이마트
+[maps.dunchon.cx.8.name] 둔촌현대2차
+[maps.dunchon.cx.8.walk.station.name] 둔촌동역 출입구
+[maps.dunchon.cx.8.walk.school.name] 한산초등학교
+[maps.dunchon.cx.8.walk.mart.name] 이마트
+[maps.dunchon.cx.9.name] 둔촌한솔솔파크
+[maps.dunchon.cx.9.walk.station.name] 중앙보훈병원역 출입구
+[maps.dunchon.cx.9.walk.school.name] 선린초등학교
+[maps.dunchon.cx.9.walk.mart.name] 이마트
+[maps.godeok.name] 고덕동
+[maps.godeok.stations.0.0] 암사역사공원
+[maps.godeok.stations.1.0] 강일
+[maps.godeok.stations.2.0] 상일동
+[maps.godeok.stations.3.0] 고덕
+[maps.godeok.stations.4.0] 명일
+[maps.godeok.cx.0.name] 고덕그라시움
+[maps.godeok.cx.0.walk.station.name] 상일동역 출입구
+[maps.godeok.cx.0.walk.school.name] 서울고덕초등학교
+[maps.godeok.cx.0.walk.mart.name] 이마트
+[maps.godeok.cx.1.name] 고덕아남
+[maps.godeok.cx.1.walk.station.name] 암사역사공원역 출입구
+[maps.godeok.cx.1.walk.school.name] 서울명일초등학교
+[maps.godeok.cx.1.walk.mart.name] 이마트
+[maps.godeok.cx.2.name] 래미안힐스테이트고덕
+[maps.godeok.cx.2.walk.station.name] 고덕역 출입구
+[maps.godeok.cx.2.walk.school.name] 서울묘곡초등학교
+[maps.godeok.cx.2.walk.mart.name] 이마트
+[maps.godeok.cx.3.name] 고덕센트럴푸르지오
+[maps.godeok.cx.3.walk.station.name] 상일동역 출입구
+[maps.godeok.cx.3.walk.school.name] 강명초등학교
+[maps.godeok.cx.3.walk.mart.name] 이마트
+[maps.godeok.cx.4.name] 고덕풍경채어바니티
+[maps.godeok.cx.4.walk.station.name] 상일동역 출입구
+[maps.godeok.cx.4.walk.school.name] 서울고덕초등학교
+[maps.godeok.cx.4.walk.mart.name] 이마트
+[maps.godeok.cx.5.name] 고덕아이파크
+[maps.godeok.cx.5.walk.station.name] 고덕역 출입구
+[maps.godeok.cx.5.walk.school.name] 서울묘곡초등학교
+[maps.godeok.cx.5.walk.mart.name] 이마트
+[maps.godeok.cx.6.name] 고덕현대
+[maps.godeok.cx.6.walk.station.name] 고덕역 출입구
+[maps.godeok.cx.6.walk.school.name] 서울대명초등학교
+[maps.godeok.cx.6.walk.mart.name] 이마트
+
+## 화면 코드: video/src/H1.tsx
+[H1.tsx] 손품 씨네
+[H1.tsx] 23.82억
+[H1.tsx] 가운데 값 28.50억 — 85건 중 43번째
+[H1.tsx] 20.00억
+[H1.tsx] 싼 거래 ← 값 순서로 줄 세움 → 비싼 거래
+[H1.tsx] 2026년 2월 · 84㎡대 4건
+[H1.tsx] 23억대 거래 한 건
+[H1.tsx] 1년 85건 중 23억대 이하는 2건
+[H1.tsx] 가운데 값
+[H1.tsx] 값 순서로 줄 세워 한가운데 오는 값
+[H1.tsx] 28일 · 26층 · 20.00억
+[H1.tsx] 거래 유형: 직거래
+[H1.tsx] 5월 거래 18건 중 하나
+[H1.tsx] 같은 달 다른 17건은 모두 중개거래
+[H1.tsx] 나머지 17건
+[H1.tsx] 한 건 대신 한 달 전체
+[H1.tsx] 2026년 5월 18건을 같이 본다
+[H1.tsx] 그 앞 다섯 달은 1건
+[H1.tsx] 2025.11~2026.03 · 모든 평형
+[H1.tsx] 이유는 짐작하지 않는다
+[H1.tsx] 손품 씨
+[H1.tsx] 가상 인물 · 계산용
+[H1.tsx] 실제 인물이 아니라
+[H1.tsx] 계산을 위해 만든 가상 인물
+[H1.tsx] 손품 씨의 기준 세 가지
+[H1.tsx] 직거래
+[H1.tsx] ], [`${lo[0]} · 가장 낮은 달 (${lo[2]}건)`, `${lo[1].toFixed(2)}억`,
+[H1.tsx] ], [`${last[0]} (${last[2]}건)`, `${last[1].toFixed(2)}억`,
+[H1.tsx] ${first[0]} (${first[2]}건)
+[H1.tsx] ${first[1].toFixed(2)}억
+[H1.tsx] ${lo[0]} · 가장 낮은 달 (${lo[2]}건)
+[H1.tsx] ${lo[1].toFixed(2)}억
+[H1.tsx] ${last[0]} (${last[2]}건)
+[H1.tsx] ${last[1].toFixed(2)}억
+[H1.tsx] 4월 ${lo[1].toFixed(2)}억
+[H1.tsx] ${lo[2]}건 · 1년 중 낮은 쪽
+[H1.tsx] 칸 안 숫자 = 그달 계약 건수 · 진할수록 많음
+[H1.tsx] 전세 칸부터 봤다
+[H1.tsx] 매매보다 전세
+[H1.tsx] 손품 씨는 지금 전세로 산다
+[H1.tsx] 같은 동네 안에서 세 배 넘게
+[H1.tsx] 손품 씨네보다 200m쯤 덜 걷는다
+[H1.tsx] 마트는 손품 씨네가 더 가까움
+[H1.tsx] 새 단지 기준
+[H1.tsx] 25% 넘게 벌어짐
+[H1.tsx] 84㎡대 평당, 세 동네 모두
+[H1.tsx] 여름엔 가운데 값이 다시 올라감
+[H1.tsx] 대표 단지마다 거래 많은 평형 기준
+[H1.tsx] 한 건이 가운데 값을 크게 움직인다
+[H1.tsx] ■ 검은 칸 = 자료 받은 날(10.11)
+[H1.tsx] ■ 주황 칸 = 그 전 30일
+[H1.tsx] 이 기간 계약은 신고 기한이 남아 있어 건수가 더 늘 수 있음
+[H1.tsx] 전세로 옮기면 보증금이
+[H1.tsx] 사려면 더 드는 돈
+[H1.tsx] 전세로 옮기면 보증금이
+[H1.tsx] 사려면 더 드는 돈
+[H1.tsx] ${d.cafe} · 37곳 전체 표
+
+## 화면 코드: video/src/parts/fm.tsx
+[fm.tsx] ${e}억 ${r.toLocaleString()}만원
+[fm.tsx] ${e}억원
+[fm.tsx] ${r.toLocaleString()}만원
+[fm.tsx] 1년 뒤 남은 돈
+[fm.tsx] 원금
+[fm.tsx] 떨어진 해
+[fm.tsx] 세금·건보료
+[fm.tsx] 월 100만원 원금
+[fm.tsx] 파이어맵
+[fm.tsx] 파이어맵

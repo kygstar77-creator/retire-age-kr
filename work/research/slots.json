@@ -1203,8 +1203,8 @@
    "kind": "cafe",
    "item": "dcpension1014",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-write 2026-10-13 07:2x 배정: 퇴직연금 DC형(검색 21,610) — 사실표부터 · 관문 기한 = 발행 6시간 전"
+   "gates_ok": "2026-10-13 16:34",
+   "note": "firemap-write 2026-10-13 07:2x 배정: 퇴직연금 DC형(검색 21,610) — 사실표부터 · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 16:34: 관문 통과 — \"퇴직연금 DC형으로 바꿀까, 임금피크 앞두면 계산이 달라지는 이유\"(제목 7.9·표지 K4 7.67·compare.md 경쟁 6편·readcheck 0·selfcheck 사실 0·aitell 2.5·crosscheck 말투 12 반영·레드팀 2회 틀림 1·오해 6 반영·전제 가능·editgate auto) · 경로 work/research/dcpension1014/pkg"
   },
   {
    "at": "2026-10-15 07:20",

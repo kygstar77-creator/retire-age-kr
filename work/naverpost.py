@@ -1038,23 +1038,68 @@ def post_blog(page, pkg, wait=False):
 # 공지사항·가입인사도 자동 글이 갈 곳이 아니다.
 HUMAN_ONLY = ('공지사항', '가입인사', '질문·고민', '내 포트폴리오', '출석부', '파이어 이야기')
 FALLBACK = '자유게시판'
-# 묶음이 부르는 이름과 게시판 이름이 딱 안 맞을 때 — 말이 겹치면 그쪽으로 보낸다
-BOARD_HINT = [
-    (('배당', '현금흐름', '분배금', '월배당'), '배당·현금흐름'),
-    (('미국', 'ETF', 'etf', '해외', '종목', '주식'), '미국주식·ETF'),
-    (('연금', '세금', '절세', '건보', '국민연금', '퇴직'), '연금·세금'),
-    (('부동산', '아파트', '전세', '월세', '청약', '단지', '분양'), '부동산'),
-]
 
-def pick_board(want, boards):
-    """올릴 게시판을 고른다. 없는 이름을 부르면 뜻이 가까운 곳으로, 그래도 없으면 자유게시판."""
+# 2026-10-13 사장님 분류(경제·정책·돈·주식 3갈래·부동산·시리즈)로 게시판을 나눴다(research/growth/cafe-menu-1013.md '실행 기록').
+# 게시판(menuId): 경제 이야기(10) · 연금/세금/보험(8) · 돈 관리(11) · 성장주(12) · 배당주(6) · ETF(7) · 부동산(9) · 시리즈(13) · 자유게시판(1)
+# 옛 글 249편 대응표 research/growth/cafe-menu-1013b.csv 와 같은 규칙을 여기 한 곳에 둔다.
+#   1) 묶음 order.txt '게시판:' 이 실제 주제 게시판 이름이면 그대로 쓴다.
+#   2) '자유게시판'·'자동'·없는 이름이면 제목으로 고른다(아래 표). '자유게시판(고정)' 은 규칙을 건너뛰고 자유게시판.
+#   3) 규칙에 안 걸리면 pkg/axis.txt(세금연금·부동산만 씀), 그래도 없으면 자유게시판.
+SERIES_HEAD = re.compile(r'^\s*\[[^\]]{2,12}\]')          # [아파트 시황]·[금리·환율]·[오늘의 투표] 같은 연재 머리말
+SERIES_NAMES = ('나 vs 남들', '대신 둘러봐 드립니다', '주간 뉴스')
+# 제목에 있으면 다른 말보다 먼저 '연금/세금/보험' (세금·제도 글이 종목 이름을 같이 달아도 주제는 세금이다)
+POLICY_STRONG = ('공제', '세액공제', '소득공제', '연말정산', '양도세', '양도소득세', '상속세', '증여세', '종부세', '종합부동산세', '재산세', '취득세',
+                 '소득세', '금융소득', '종합과세', '분리과세', '비과세', '원천징수', '세제',
+                 '국민연금', '기초연금', '퇴직연금', '연금저축', 'IRP', '주택연금', '농지연금', '유족연금', '노령연금', '연금소득',
+                 '건강보험', '건보료', '피부양자', '장기요양', '본인부담', '실업급여', '육아휴직', '퇴직금', '고용보험', '조기재취업',
+                 '임금피크', '바우처', '노인일자리', '유류분', '고향사랑')
+# 나머지는 제목에서 가장 앞에 나온 말의 게시판(사장님 지시: 성장주·배당주·ETF가 애매하면 제목 첫 주제어)
+BOARD_WORDS = [
+    ('ETF', ('ETF', 'etf', 'JEPI', 'JEPQ', 'SCHD', 'QQQ', 'VOO', 'SPY', 'VYM', 'DGRO', 'QYLD', 'XYLD', 'HDV', 'DIVO',
+             'SOXX', 'SMH', 'SOXL', 'TIGER', 'KODEX', 'SOL ', 'ACE ', 'RISE ', '커버드콜', '분배금', '분배율', '월배당', 'S&P500', '나스닥100')),
+    ('돈 관리', ('예금', '적금', '파킹통장', '발행어음', 'CMA', '청년도약', '청년미래', '골드', '금 투자', '금값', '예금자보호',
+              '신용대출', '마이너스통장', '순자산', '연봉', '실수령', '가계부', '저축', '청약통장')),
+    ('부동산', ('부동산', '아파트', '오피스텔', '빌라', '전세', '월세', '주담대', '주택담보', '청약', '분양', '재개발', '재건축',
+             '실거래', '매입임대', '임대', 'DSR', 'LTV', '디딤돌', '보금자리', '중개수수료', '계약갱신', '집값', '국민평형', '단지')),
+    ('경제 이야기', ('FOMC', '기준금리', '국채', '국고채', '금리', '환율', '원달러', '유가', '물가', 'CPI', 'PCE', '점도표',
+                 '코스피', '코스닥', '증시', '실적 발표', '실적발표', '경제')),
+    ('배당주', ('배당',)),
+    ('성장주', ('주가', '내부자', '종목', '실적', '인수', '매출', '성장주', '미국주식', 'AI ')),
+]
+AXIS_BOARD = {'세금연금': '연금/세금/보험', '부동산': '부동산'}
+
+def board_by_rule(title, axis=''):
+    """제목(과 axis)으로 고른 게시판 이름. 아무 규칙에도 안 걸리면 None."""
+    t = title or ''
+    if SERIES_HEAD.match(t) or any(s in t for s in SERIES_NAMES): return '시리즈'
+    if any(w in t for w in POLICY_STRONG): return '연금/세금/보험'
+    best = None
+    for board, words in BOARD_WORDS:
+        for w in words:
+            i = t.find(w)
+            if i >= 0 and (best is None or i < best[0]): best = (i, board)
+    if best: return best[1]
+    return AXIS_BOARD.get((axis or '').strip())
+
+def pick_board(want, boards, title='', axis=''):
+    """올릴 게시판을 고른다.
+    - want 가 실제로 있는 주제 게시판이면 그대로(사람 자리 HUMAN_ONLY 는 제외 — 그건 --board 로만).
+    - want 가 '자유게시판'·'자동'·없는 이름이면 제목 규칙(board_by_rule), 그래도 없으면 자유게시판.
+    title 을 안 주면 예전과 같다(want 가 있으면 그대로, 없으면 자유게시판)."""
     if not boards: return want
     safe = [b for b in boards if b not in HUMAN_ONLY] or boards
-    if want in safe: return want
-    for words, board in BOARD_HINT:
-        if any(w in want for w in words) and board in safe: return board
+    w = (want or '').strip()
+    if w.replace(' ', '') in ('자유게시판(고정)', '자유게시판고정'):
+        return FALLBACK if FALLBACK in safe else safe[0]
+    if w in safe and w != FALLBACK: return w
+    rule = board_by_rule(title or ('' if w in ('자동', FALLBACK) else w), axis)
+    if rule and rule in safe: return rule
     if FALLBACK in safe: return FALLBACK
     return safe[0]
+
+def pkg_axis(pkg):
+    try: return open(os.path.join(pkg, 'axis.txt'), encoding='utf-8').read().strip()
+    except Exception: return ''
 
 # 매일 코너 글 끝에 '매일 받아보는 법' 한 줄. 사장님 2026-09-27: "매일 연동해서 보내줄 수 있으면 더 좋지 신문배달하듯이".
 # 네이버 카페 구독은 가입해야 쓸 수 있다(공식 도움말 '구독 서비스 소개': "활동하는 카페에서 … 구독").
@@ -1105,11 +1150,11 @@ def post_cafe(page, pkg, wait=False):
     if '--board' in sys.argv:
         i = sys.argv.index('--board')
         if i + 1 < len(sys.argv): force = sys.argv[i + 1]
-    pick = force if (force and force in boards) else pick_board(want, boards)
+    pick = force if (force and force in boards) else pick_board(want, boards, title, pkg_axis(pkg))
     if force and pick != force:
         print(f'--board "{force}" 가 카페에 없다 → "{pick}" (있는 것: {boards})')
     if pick != want:
-        print(f'게시판 "{want}" 없음 → "{pick}" 로 올린다 (있는 것: {boards})')
+        print(f'게시판 "{want}" → "{pick}" 로 올린다(제목 규칙·있는 것 기준) (있는 것: {boards})')
     # 고른 뒤 실제로 닫혔는지 본다. 2026-09-25 06:02 실측: 목록은 열렸는데 항목 클릭이 안 먹어
     # 버튼이 "게시판을 선택해 주세요." 그대로였고, 그 상태로 본문을 2분 동안 다 채운 뒤
     # 등록이 눌리지 않아 30초 이동 실패로만 보였다. 여기서 못 고르면 본문 넣기 전에 멈춘다.

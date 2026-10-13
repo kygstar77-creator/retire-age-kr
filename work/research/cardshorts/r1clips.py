@@ -77,9 +77,46 @@ SHORTS['r1s_spytax'] = dict(
   ],
 )
 
+# ── R-1: 1억 넣은 날만 바꾸면 1등도 바뀌나 · 10/13 22시 비축 ──
+# 주의(10/13 22시): 위 r1s_fx·r1s_spytax 줄 번호는 10/12 r1.json 기준이다. 10/13 06시 새 판(G1oI47miUuo)에서 말 줄 16·17이 빠져
+# 번호가 밀렸으니, 두 편을 다시 쓰지 말 것(이미 렌더·예약됨). 아래 r1s_startday는 10/13 새 판 r1.json 번호
+# (줄 62·63 → 69·70 → 71·72·73 → 75·76 → 77·78). 이름을 주고 돌린다: py -3.12 r1clips.py r1s_startday
+rk = RS['rank']['data']; st = RS['start']['data']; ca = RS['caseA']['data']
+assert L(62)[0]['text'].startswith('세금 떼기 전에도, 뗀 뒤에도 SCHD') and L(78)[0]['text'].startswith('날짜가 정해진 돈이라면')
+a = L(62, 63)
+b = L(69, 70)
+c = L(71, 72, 73)
+d = L(75, 76)
+e = L(77, 78)
+SHORTS['r1s_startday'] = dict(
+  question=['1억 넣은 날만 바꿔도', '1등이 바뀔까?'], hot='1등',
+  base='야후 파이낸스 종가·분배금 · 한국은행 ECOS · 지나간 값',
+  answer=dict(label='1억 · 넣는 날 251번 · 1년 들고 판 순서', items=['오늘 순서는 10번에 1번', '금이 1등인 날 74.5%'], arrow=False,
+              note='달러 기준 · 세금 전 · 지나간 값'),
+  scenes=[
+   scene('bars', '세금·환율 떼고 1년 뒤', RS['rank']['source'], a, head='1억 · 2025-10-02 → 2026-10-02 · 세금·환율 뗀 뒤', full=True,   # full: 판 +90프레임
+         bars=[[x[0], x[1], x[5], [0, at(a, 1) + 90, at(a, 1.3) + 90, at(a, 1.6) + 90][i], x[4], x[2]] for i, x in enumerate(rk['bars'])], max=rk['max']),   # 22시 눈 검사: '1억 1,599만원' 꼬리표가 왼쪽에서 잘림 → 큰 글자는 %, 금액은 아래
+   scene('receipt', '넣는 날을 하루씩 옮기면', RS['start']['source'], b, head='넣는 날 251번 · 1년 들고 판 순서 · 달러·세금 전', size=40,   # 22시 눈 검사: 막대 6개 이름이 겹침 → 줄 목록
+         rows=[[x[0].replace('>', ' > ').replace('S&P', 'S&P500'), x[2], 'hi' if x[4] == 'accent' else 'in', 20 + i * 14] for i, x in enumerate(st['bars'])],   # 22:4x 눈 검사: 줄 69 동안 빈 판 5초 → 처음부터
+         side=['25일', at(b, 1.5), '오늘과 같은 순서 · 251일 중']),
+   scene('vs', '251번 가운데', RS['start']['source'], c,
+         tiles=[['오늘과 같은 순서', '10번에 1번', '251일 중 25일 (10.0%)', 0, 'ink'],
+                ['금이 1등인 날', '74.5%', '251일 중 187일', at(c, 1), 'accent']]),
+   scene('vs', '1년 안에 꺼낼 돈이라면', RS['caseA']['source'], d,
+         tiles=[['1년 안에 꺼낼 돈', '집 계약금', '30대 · 쓸 날짜가 정해진 돈', 0, 'ink'],
+                ['예금이면 1년 뒤', '1억 218만원', '102,182,680원 · 처음부터 정해짐', at(d, 0.8), 'ink']]),
+   scene('vs', 'S&P500이었다면', RS['caseA']['source'], e,
+         tiles=[['S&P500 · 꺼내는 날에 따라', '폭 2,574만원', '97,294,730원 ~ 123,037,245원', 0, 'fall'],
+                ['날짜가 정해진 돈이면', '수익률보다 폭', '꺼내는 날 값이 얼마나 흔들리나', at(e, 0.7), 'accent']]),   # 빈 칸 5.3초 → 3.7초
+  ],
+)
+assert ca['bars'][0][2] == '102,182,680원' and ca['bars'][1][2] == '123,037,245원' and ca['bars'][1][7] == '97,294,730원' and ca['callout'][0] == '폭 2,574만원'
+assert st['note'][0] == '오늘 순서: 251일 중 25일(10.0%)' and st['note2'][0] == '금이 1위: 187일(74.5%)' and rk['bars'][3][2] == '1억 218만원'
+
 
 if __name__ == '__main__':
     for name, dd in SHORTS.items():
+        if name not in sys.argv[1:]: continue   # 10/13: 이름을 준 편만 쓴다(옛 번호 두 편을 덮지 않게)
         p = build(name, dd)
         fr = sum(s['frames'] for s in p['scenes'])
         json.dump(p, open(os.path.join(VID, name + '.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

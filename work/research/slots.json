@@ -1384,10 +1384,11 @@
   {
    "at": "2026-10-16 07:20",
    "kind": "shorts",
-   "item": "TBD",
+   "item": "r1s_startday",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "순돌이 10/11 사장님 \"쇼츠 12시간 간격 하루 두 개\" — 롱폼 클립(C-1·W-1·G-1…), 같은 날 다른 롱폼"
+   "gates_ok": "2026-10-13 22:43",
+   "note": "firemap-video-producer 2026-10-13 22:43: R-1 클립(G1oI47miUuo, 10/14 11:30 공개 뒤) 넣는 날 251번 순서 · yt_pair: 5hOz7Gmf2Z8 — 카페 짝 글(질문 하나: 넣는 날 바꾸면 순서) 10/16 07:20 뒤 칸, firemap-write",
+   "published": "예약 2026-10-16T07:20:00+09:00 https://youtu.be/5hOz7Gmf2Z8 (private+publishAt 10/15 22:20Z, 합성 표시 update True)"
   },
   {
    "at": "2026-10-16 07:40",

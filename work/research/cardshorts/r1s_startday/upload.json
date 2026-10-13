@@ -1,0 +1,23 @@
+{
+ "name": "r1s_startday",
+ "ep": "R-1",
+ "from_long": "G1oI47miUuo",
+ "mp4": "work/video/out/r1s_startday_ds.mp4",
+ "publishAt": "2026-10-16T07:20:00+09:00",
+ "title": "1억 넣은 날만 바꾸면 1등도 바뀔까? 251번 계산해 봤다 #shorts",
+ "description": "전체 계산: https://youtu.be/G1oI47miUuo\n과거 값으로 계산 · 달러 기준·세금 전 · 실제 투자 결과 아님\n\n2025년 10월 2일에 1억을 넣고 세금·환율까지 떼면 1년 뒤 SCHD, S&P500, 금, 예금 순서였어요.\n넣는 날을 2024년 10월 2일부터 2025년 10월 2일까지 거래일 251번 하루씩 옮겨 1년씩 들고 판 순서(달러 기준·세금 전)를 세면, 같은 순서는 251번 중 25번(10.0%)이고 금이 1등인 날이 187번(74.5%)이었어요.\n1년 안에 꺼낼 돈이라면 S&P500은 꺼내는 날에 따라 97,294,730원에서 123,037,245원까지, 2,574만원 폭으로 달라졌어요.\n\n출처: 야후 파이낸스 종가·분배금 · 한국은행 ECOS 원/달러 매매기준율(731Y001) · 파이어맵 계산\n지나간 값이고, 어디에 넣으라는 말이 아닙니다.\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.\n\n#shorts #미국ETF #예금",
+ "tags": "S&P500,SCHD,금 투자,예금 vs ETF,투자 시점",
+ "same_day_pair": "10/16 19:20 칸은 R-1 아닌 다른 롱폼 클립(H-1·P-1 공개 뒤)",
+ "title_review": "10/13 22:4x PD: 제미나이 3.1-flash-lite 8('넣어 봤다' 판, 3.8-flash 429) · 레드팀(Claude) 7('계산해 봤다' 판 재채점, '넣어 봤다'는 실제 투자 과장이라 고침) · PD 7.5 → 평균 7.5 · 29자·숫자 2(1억·251) · 설명 둘째 줄 '과거 값으로 계산·실제 투자 결과 아님'(레드팀 권고)",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "5hOz7Gmf2Z8",
+ "uploaded_at": "2026-10-13 22:43:17",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-15T22:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

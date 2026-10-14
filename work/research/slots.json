@@ -1636,7 +1636,7 @@
    "item": "g1s_why",
    "owner": "firemap-video-producer",
    "gates_ok": "2026-10-14 11:07",
-   "published": "예약 2026-10-18T07:20:00+09:00 https://youtu.be/PwMsHCqPhR4 (private+publishAt 22:20Z, 합성 표시 update 응답 True)",
+   "published": "예약 2026-10-18T07:20:00+09:00 https://youtu.be/9gDZ8tVXFzQ (v2 넷째 막대 가림 고친 판 — 옛 PwMsHCqPhR4 예약 풀음)",
    "note": "firemap-video-producer 2026-10-14 11:07: G-1 롱폼(xBTZtRp5lMs) 3장 세 조각 클립, M1S 틀(c1clip ⓓ 회피), 새 녹음 0 — 관문 cardshorts/g1s_why/review.md · 같은 날 11:30 롱폼 N-2(다른 축) · 19:20 칸은 G-1 아닌 롱폼으로"
   },
   {
@@ -1646,6 +1646,15 @@
    "owner": "firemap-video-producer",
    "gates_ok": null,
    "note": "firemap-meeting 2026-10-13 21:32: 소득 상위%(같은 나이끼리) — 대본 8.10·카피 F3 확정. 관문 기한 10/17 11:30, 녹음 10/16 16:01 창 전. 축: 경제·통계"
+  },
+  {
+   "at": "2026-10-18 19:20",
+   "kind": "shorts",
+   "item": "r1s_gap",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-14 11:28",
+   "published": "예약 2026-10-18T19:20:00+09:00 https://youtu.be/-nl4KLh-H_g (private+publishAt 10:20Z, 합성 표시 update 응답 True)",
+   "note": "firemap-video-producer 2026-10-14 11:28: R-1 롱폼(G1oI47miUuo) 순위·SCHD−예금 간격 클립, M1S 틀, 새 녹음 0 — 관문 cardshorts/r1s_gap/review.md · 같은 날 07:20 g1s_why(G-1)와 다른 롱폼"
   },
   {
    "at": "2026-10-19 11:30",

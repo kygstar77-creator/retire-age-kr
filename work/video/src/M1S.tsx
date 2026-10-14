@@ -419,10 +419,10 @@ const Total: React.FC<{s: SScene}> = ({s}) => {
 };
 
 // 조각 막대(10/14 PD, g1s_why): 0선(가운데)에서 +는 오른쪽, −는 왼쪽. 줄마다 막대 하나씩 · 글자(이름·값)는 막대 위 줄에 두어 판 밖으로 안 나감.
-// data: ghost(true면 줄 전에도 이름만 흐리게) · head [글, 줄] · zero 0선 이름 · max(%) · rows [이름, 작은 글, 값, 값 글, 줄, 색] · hi [행 번호들, 줄] · note [글, 줄]
+// data: cx·half(0선 위치·한쪽 길이, 모두 +면 cx 60) · ghost(true면 줄 전에도 이름만 흐리게) · head [글, 줄] · zero 0선 이름 · max(%) · rows [이름, 작은 글, 값, 값 글, 줄, 색] · hi [행 번호들, 줄] · note [글, 줄]
 const Pieces: React.FC<{s: SScene}> = ({s}) => {
   const f = useCurrentFrame(); const d = s.data; const A = (x: number | null | undefined) => atL(s, x);
-  const cx = 500, half = 440, k = half / d.max, y0 = d.head ? 150 : 60, step = d.rows.length > 3 ? 150 : 190;
+  const cx = d.cx ?? 500, half = d.half ?? 440, k = half / d.max, y0 = d.head ? 150 : 60, step = d.rows.length > 3 ? ((d.notes || d.note) ? 128 : 150) : 190;   // 4줄+아래 칸이면 128(10/14: 넷째 막대가 칸에 가림)
   const hiOn = d.hi && f >= A(d.hi[1]) && (d.hi[2] == null || f < A(d.hi[2]));
   return (
     <>
@@ -436,7 +436,7 @@ const Pieces: React.FC<{s: SScene}> = ({s}) => {
           <div key={i} style={{position: 'absolute', left: 0, top: y0 + i * step, width: BW, height: step, opacity: (f >= a ? 1 : d.ghost ? 0.3 : 0) * (dim ? 0.3 : 1)}}>
             <div style={{position: 'absolute', left: 40, top: 0, width: 600}}><Txt s={40} c={T.ink}>{r[0]}</Txt><Txt s={24} c={T.ink2}>{r[1]}</Txt></div>
             <div style={{position: 'absolute', right: 40, top: -4, textAlign: 'right', opacity: ease(f, a + 10, 10)}}><Txt s={64} c={col}>{r[3]}</Txt></div>
-            <div style={{position: 'absolute', top: step - 64, left: r[2] >= 0 ? cx : cx - w, width: w, height: 44, background: col, borderRadius: 10}} />
+            <div style={{position: 'absolute', top: step < 150 ? step - 42 : step - 64, left: r[2] >= 0 ? cx : cx - w, width: w, height: step < 150 ? 32 : 44, background: col, borderRadius: 10}} />
           </div>
         );
       })}

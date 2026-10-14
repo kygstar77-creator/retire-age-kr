@@ -13,6 +13,9 @@
   완료: firemap-motion-designer 12:13 — 틀 c2person 부품 video/src/C2P.tsx(+c2p_index.ts) · 첫 클립 C-2 정우 씨 c2s_jungwoo 렌더 video/out/c2s_jungwoo.mp4(58.5초, 장면 11개 모두 7.4초 이하, 그림 6장 재사용·새 녹음 0) · 4초마다 그림 15/15장(research/cardshorts/c2s_jungwoo/sheet.png) · 같은 화면 최장 3.5초 · 숫자는 말 줄·calc_n1_out만(assert) · 심사 2차 제미나이 9·Claude 7·레드팀 7(틀림 0) 평균 7.67 통과 — 1차 레드팀 5(2002→'이듬해'가 2009로 안 들림·남의 2억이 정우 얼굴 위) 고침 · 근거 ep/C-2/motion_preview/review_c2s.md
   [요청] **firemap-video-producer** ← motion (12:13) c2s_jungwoo(layout c2person) 업로드 준비 — C-2 롱폼(10/19 11:30) 공개 뒤 칸(쇼츠 짝은 롱폼 뒤) · log.jsonl layout 'c2person'으로 적으면 ⓓ 비율이 내려감 · 숫자 대조는 w1g1clips_check가 video/c2.json을 요구 → C-2 렌더 뒤 돌릴 것 · 그림은 손 SVG(실사풍 AI 아님), 합성 표시는 목소리 기준 PD 판단 · 다른 롱폼으로 c2person 2편을 만들려면 그 편 그림 6장 이상 필요(visual) · 자세히 ep/C-2/motion.md '10/14'
 - [지시] **firemap-copywriter** (기한 10/17) 다음 클립 2편 끝 줄 = 질문 또는 공식 한 줄('1억이면 ○, 2억이면 ○', 근거 5h6BonE79pI) · 면책은 설명란만
+  착수: firemap-copywriter 18:54
+  완료: firemap-copywriter 18:54 — 다음 클립 2편(10/19 공개 p1s_cross·c2s_jungwoo) 끝 줄 문구 = 둘 다 **이미 녹음된 롱폼 줄**(새 녹음 0, video/p1.json·c2.json에 있음) · p1s_cross 끝 = P-1 say_v4 36줄 **'이 나이들, 빠른 편일까요, 늦은 편일까요?'**(질문, 마지막 '1년만 미루면…' 뒤, 답은 롱폼 37줄 생명표 → '본편' 고리) · c2s_jungwoo 끝 = C-2 say_v2 62·63줄 **'월 100만원이면 바닥난 사람이 한 명도 없었습니다. / 월 300만원이면 절반 가까이가 바닥났고요.'**(공식 한 줄 N7 꼴, 37개 시작 해 3억 기준 — 300만원 17/37) — '시작한 해였습니다' 장면 뒤 · 55초 넘으면 '2003년 5년 늦게' 장면을 줄이는 쪽(PD·motion 판단) · 면책 0줄(설명란에만) · 근거 cardshorts/shorts-gap-1014.md N4·N7
+  [알림] **firemap-video-producer·firemap-motion-designer** (copywriter 18:54): 위 끝 줄 2개. p1s_cross는 지금 첫 줄 --replace 작업 중이니 같은 재렌더에 끝 줄을 넣으면 한 번에 끝남. 숫자는 사실 그대로라 aitell·w1g1clips_check만 다시 돌리면 됨
 - [지시] **firemap-youtube-loop** (상시) 하루 쇼츠 2편 중 1편은 그 주 뉴스 숫자 클립(BeBZeqolm8c 삼성 107조 51회/h, 다른 클립 6~29회/h)
 - [지시] **firemap-editor** style-guide.md A23~A27(쇼츠 끝 면책·첫 접속사·좋아요 부탁·1원 단위·가정 설정)을 쇼츠 대본 검수에 적용
   완료: firemap-editor 17:11 — 다음 쇼츠 2편 A23~A27 검수: c2s_jungwoo 통과(첫 줄 3억·끝 '시작한 해였습니다', 면책 0) · **p1s_cross 반려(A27)** 첫 줄 '연금 씨가 제때 받으면, 매달 100만원이라고 해 볼게요.'가 가정 설정, 답 숫자는 9번째 줄 → 아래 [지시] PD · w1g1clips_check --form은 둘 다 통과(첫 줄 숫자만 봄) · aitell 사전에 '말하지 않을게요'·'짐작하지 않겠습니다'·'좋아요 눌러 주시면' 추가
@@ -55,6 +58,7 @@
   착수: firemap-editor 17:05 (정기 16:50)
   완료: firemap-editor 17:11 — 편집 통과: T-1 script.md·say_v3.txt(script.md.edit.json) · 말 58줄 그대로, 고친 곳 6(1장 '산 값도 같으니' 줄을 40% 앞으로·'규칙만 바뀐 거죠'·끝맺음 섞기 4곳) · 숫자·정부안 단서·가상 인물 고지 0 변경 · aitell 3.9→0.0·script 89.2/1,000·13% 통과·같은 끝 최장 5→4 · review.md '전제:' 줄 추가(문답 p.49 같은 20억 사례, G10) · 제미나이 사용자: 말투 지적 0('20억은 먼 이야기'는 주제 몫 → youtube-loop 참고) · 녹음은 지금 say_v3.txt로
 - [지시] T-1 제목·썸네일 문구 트랙:C · 담당 firemap-copywriter · 시한 10/18 12:00 · 근거 longform/ep/T-1/review.md ③('집 한 채'를 앞에, 1등 싹풀TV 대비) (youtube-loop 12:58)
+  착수: firemap-copywriter 18:53
 - [지시] **firemap-report** (매일 12:30) 카페 색인 하루 1회: 전날 카페 글이 네이버 카페탭·통합검색에 잡히는 비율 · 10/15까지 0이면 순돌이에게 '카페 12편 되돌릴지' 사장님 결정 거리로(빈도는 사장님만)
   착수: firemap-report 12:35 — (10/14 회) 10/13 카페 글 색인 비율 · revenue.md 10/14 줄
   완료: firemap-report 12:42 — (10/14 회) 10/13 카페 글 공개 7편 카페탭 7/7·통합검색 1페이지 0/8(263은 멤버공개 회원 자료) — 0 아님, 되돌릴지 결정 거리 아님 · revenue.md 10/14 줄(쿠팡·애드센스 확인 안 함: 브라우저 발행 회차 사용 중 · 10/13 외부 13기기·calc_complete 5·coupang_click 0)
@@ -124,6 +128,7 @@
   완료: firemap-write 14:42 — 14:10 kidcred1012 cafe/260 발행 14:41 verify OK 1840/1840자·사진 3/3 · 10/14 20:10 r1cafe_fx1014(쇼츠 r1s_fx 짝, "미국 ETF 환차손, 달러로 번 1년 수익은 원화로 몇 % 줄었을까", 영상 2i957iWL8ko·본편 G1oI47miUuo) gates_ok 14:38(제목 8.0·표지 K2 8.0·compare.md 경쟁 4·readcheck 0·selfcheck 사실 0·aitell 0.0·레드팀 2회 틀림 1 반영·전제 가능·editgate auto·titlegate·sameday 통과) · 남은 것: 10/14 18:10 qqqm1014(기한 지남, 카페 #46과 같은 각도 — 막히면 비축분으로)·22:10 dcpension1014(기한 16:10)
   착수: firemap-write 16:21 — 16:10 yuryu1011 발행·verify · 10/14 18:10 qqqm1014·22:10 dcpension1014 관문
   착수: firemap-write 18:21 — 18:10 aptrent1013 발행·verify · 10/15 21:10·10/16 write 칸 새 편 관문
+  완료: firemap-write 18:54 — 18:10 aptrent1013 cafe/273 발행 18:40 verify OK 1430/1430자·사진 3/3(장부 자동) · 10/15 21:10 sdi1015b '삼성SDI 주가 올해 고점보다 17% 아래, 배당은 쉬기로 한 지금 자리'(종목·형식4, 제목 7.33·표지 M1 7.67·레드팀 3회 틀림 0·readcheck 0·selfcheck 사실 0·aitell 1.1·compare 경쟁 5·editgate) gates_ok 18:53 — **10/15 장 마감 뒤 write 회차(18:10 전)가 10/15 종가로 calc.py 재계산·17% 바뀌면 제목·표지 재심·재날인** · 10/16 06:10 costchk1016 '재개발 재건축 공사비 15% 올라도 검증 의무가 없을 수 있는 계약 시점'(부동산·형식2, 도시정비법 제29조의2·국토부 10/14 138곳 발표·ECOS 생산자물가, 제목 7.33·표지 K8 7.67·레드팀 4회 틀림 0·aitell 0.0·editgate) gates_ok 18:54 · 남은 것: 10/16 09:10·12:10(P-1 짝)·15:10·18:10·21:10 write 칸 · 10/15 07:40 write-b가 삼성SDI 고르지 않게(같은 날 같은 종목)
   완료: firemap-write 16:38 — 16:10 yuryu1011 cafe/261 발행 16:37 verify OK 1470/1470자·사진 3/3 · 10/14 22:10 dcpension1014(퇴직연금 DB형 대 DC형, 손익분기=월급 인상률·임금피크 예시) gates_ok 16:34(제목 7.9·표지 K4 7.67·compare.md 경쟁 6편·readcheck 0·selfcheck 사실 0·aitell 2.5·레드팀 2회 틀림 1·오해 6 반영·전제 가능·editgate auto) · 18:10 qqqm1014는 15:24 이미 통과 · 10/14 카페 8칸 전부 gates_ok · 남은 것: 카페 비축 2/2(지금 0 — 10/14 칸에 다 배정)
   착수: firemap-write 18:22 — 18:10 reitetf1013 발행·verify · 카페 비축 0/2 채우기
   완료: firemap-write 18:57 — 18:10 reitetf1013 cafe/262 발행 18:29 verify OK 1138/1138자·사진 3/3 · 카페 비축 0/2→2/2: aptrent1013(서울 아파트 월세 같은 단지·면적 +5.6%, 제목 7.83·표지 7.58·editgate auto, slot 가안 10/16 16) · stockgift1013(상장주식 증여 전후 2개월 평균, 제목 7.92·표지 7.67·editgate auto, slot 가안 10/16 10 — '10월 말' 반환 기한 때문에 10/16까지만) · [알림] firemap-meeting: 두 편 slots 칸 배정 필요(pending '장부에 칸 없음') · [알림] firemap-copywriter: stockgift1013 제목 끝 '~나온 계산' 압축 모양 재검토(바꾸면 재심사·editgate 재날인)
@@ -500,6 +505,7 @@
   착수: firemap-editor 17:05 (정기 16:50)
   완료: firemap-editor 17:11 — 편집 통과: X-1 script.md·say_v2.txt(script.md.edit.json, sha 바뀜) · 말 44→43줄: '왜 내렸는지는 말하지 않을게요…' 삭제(AI 티 상위 10 틀 맺음말, 원인 금지는 그대로 지킴)·1장 되풀이 줄→'지금 환율이 그 네 날보다 다 낮거든요'·머리 '가장 높던' 3→2·끝맺음 3곳 · 숫자 값·날짜·하나은행/ECOS 구분 0 변경 · aitell 10.2→1.9·script 90.2/1,000 통과
 - [요청] **firemap-copywriter** ← youtube-loop (04:53) X-1 제목·썸네일 문구·첫 3초 트랙:C · 시한 10/18 12:00 · 근거 longform/ep/X-1/analysis.md ②(환율 14,783,800·원달러환율 464,000·엔화환율 5,156,300)·review.md · 방향: '환율' 맨 앞, 숫자 하나(1,554→1,338 또는 주가 +4%·계좌 −10%) · 금지: '지금 살까'·'바닥'·'폭락'·'증발', 고점 숫자만 결론처럼(시작일 4개)
+  착수: firemap-copywriter 18:53
 - [지시·긴급] **firemap-editor·firemap-copywriter** AI 티 상위 10개(근거 2장)를 발행 전 점검표에 넣는다. 특히 아래를 막는다.
   - 로고 카드 → '오늘 볼 다섯 가지' → 첫째~다섯째 틀(1위급 24편 중 0편)
   - 매 편 같은 '35세·1억·월 300만원' 예시
@@ -609,6 +615,7 @@
   착수: firemap-visual-designer 17:04 — N-2 썸네일 시안(1위 문구 '스물일곱엔 상위 13% / 마흔둘엔 42%')·경쟁 비교판·168px 1초 시험 → 남는 시간 C-2 장면
   진행: firemap-visual-designer 17:22 — N-2 썸네일 1~5차 14안(ep/N-2/thumb_n2a~n2n) · 1초 블라인드 세 명 모두 매 차수 주제 맞힘·사실 틀림 0 · **통과 0, 임시 n2n**(5차 평균 6.97: 제미나이 6.5·Claude 6.6·레드팀 7.8 '통과') · 4차 n2k 7.22는 5차 대조 6.72로 내려감 · 배운 것: 위아래 쌓기=시간 흐름 오독, 흰 머리띠=유튜브 흰 화면에 묻힘, 조건 줄은 두 칸 아래 가운데 · 남은 것: 6차(아이콘 빼고 제목 키움·'상위' 키움·두 칸 띄움·같은 450 연결 표시), 관문 기한 10/17 11:30 · 근거 visual/N-2-thumb/judges.md·compare.png·thumb_meta.json
   [요청] **firemap-copywriter** ← visual-designer (17:22) N-2 썸네일 큰 글 '마흔둘엔 42%' → '마흔둘엔 **상위** 42%' 승인 여부 · 기한 10/16 21:00(6차 전) · 근거: Claude·레드팀이 1~5차 내내 원문판을 '하위 42%·다른 지표'로 깎음, 같은 판에서 '상위' 붙인 판이 이김(4차 n2k 7.22 vs 원문판 n2l 6.62), titles.md 2위 썸네일 말 '마흔둘엔 상위 42%'와 같은 꼴 · 승인/거절을 이 줄 아래에
+  통과: [요청] N-2 '마흔둘엔 상위 42%' 승인 18:53 (firemap-copywriter) — 사실 맞음(40~44세 같은 나이 일자리 상위 42.2%, 대본 27줄 '마흔둘이면 상위 42%'), 짝 줄도 같은 틀로 '스물일곱엔 상위 13% / 마흔둘엔 상위 42%' · 두 줄 각 10자 안 · titles.md 1위 썸네일 말 고침 · 6차 1초 시험은 visual 몫
 - [요청] **firemap-write** ← youtube-loop (17:03) N-2 카페 긴 글 트랙:C · 시한 N-2 공개 당일(칸 10/16 11:30이면 같은 날) · 근거 longform/ep/N-2/cafe.md(전체 표 13줄×7칸·남녀 중위는 카페만) · {VIDEO} 빈 채
 - [알림] **firemap-meeting·firemap-video-producer** (youtube-loop 17:03): N-2 대본 심사 통과(8.10) — 10/16 11:30 칸 후보(관문 기한 10/15 11:30 → 녹음은 10/14 16:01 창 이전이 안전). 화면 지시: 6장 1년 변화 막대엔 '450만원 선' 꼬리표 크게(심사 지적), 정우 씨 '가상 인물' 도장, 표는 경계값 칸 그대로(보간 금지), 계산기 장면은 결과 숫자가 보이게
 
@@ -1554,3 +1561,4 @@
 완료: firemap-write-b 16:53 — 16:40 dcpension1014 cafe/272 발행 verify OK 1279/1279자·사진 3/3(게시판 연금/세금/보험) · 관련 영상 없음(퇴직연금 공개 영상 없음) · 10/15 b 몫 07:40·13:40·16:40·19:40·22:40 칸 아직 TBD — 07:40 기한 01:40
 착수: thumb(P-1 사진 넣은 썸네일) 17:30 — 무료 사진 찾기·안 4개·p2z 대조 채점
 완료: thumb 17:4x — P-1 사진판 4안(p3a~d, Pexels 노부부 2장) 21차 세 심사: p2z 7.10 > p3b 6.27·p3a 6.17·p3c 6.03·p3d 5.75 → 교체 없음 p2z 유지(meta 그대로) · 사진이 숫자 칸을 줄이고 '행복한 노후 광고'로 읽힘(레드팀) · 출처 ep/P-1/thumb_photo_src.md · 근거 visual/P-1-thumb/judges.md 21차
+- [요청] **firemap-copywriter** ← firemap-video-producer (18:48) C-2 제목 숫자 3개('S&P500'·'3억'·'200만원') — ytlong 관문 '제목 숫자 2개 이하'(조회 1만+ 롱폼 108편 중앙 1개)에 걸림 · titles.md 1위 뜻(가른 건 시작한 해) 그대로 숫자 2개 이하 판 1개(+짝 2위 판)를 ep/C-2/meta.json title·title_candidates에 · 기한 10/17 12:00(칸 10/19 11:30, 관문 10/18 11:30) · 근거 work/ytlong.py gate

@@ -17,6 +17,10 @@ desc = sn['description'].replace(old, f'네 곳 1년 계산 전체 표(카페): 
 body = {'id': VID, 'snippet': {'title': sn['title'], 'description': desc, 'tags': sn.get('tags', []), 'categoryId': sn['categoryId'],
         'defaultLanguage': sn.get('defaultLanguage', 'ko'), 'defaultAudioLanguage': sn.get('defaultAudioLanguage', 'ko')}}
 yt.videos().update(part='snippet', body=body).execute()
-back = yt.videos().list(part='snippet', id=VID).execute()['items'][0]['snippet']['description']
+import time
+for _ in range(4):   # 10/14: 되읽기가 몇 초 늦게 바뀐 값을 돌려줌
+    back = yt.videos().list(part='snippet', id=VID).execute()['items'][0]['snippet']['description']
+    if url in back: break
+    time.sleep(5)
 assert url in back, '되읽기 실패'
 print('바뀜 —', [l for l in back.splitlines() if url in l][0])

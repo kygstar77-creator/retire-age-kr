@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;left:52px;top:636px;font:500 24px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;left:0;top:0;width:1280px;height:330px;background:#FFD23F'></div>
+<div style='position:absolute;left:0;top:330px;width:1280px;height:390px;background:#18233F'></div>
+<div class='t' style='left:46px;top:46px;font-size:92px;color:#14171C'>스물일곱엔</div>
+<div class='t' style='left:42px;top:150px;font-size:156px;color:#D7261E'>상위 13%</div>
+<div class='t' style='left:46px;top:366px;font-size:92px;color:#FFFFFF'>마흔둘엔</div>
+<div class='t' style='left:42px;top:470px;font-size:156px;color:#9FB4E8'>42%</div>
+<div class='lab' style='left:50px;top:640px;font-size:34px;color:#C9D3E6'>세전 월 450만원 · 같은 나이 일자리</div>
+<div style='position:absolute;left:830px;top:70px;width:380px;height:450px;background:#FFFFFF;border-radius:14px;box-shadow:0 16px 0 rgba(0,0,0,.28);transform:rotate(-4deg)'><div style='position:absolute;left:0;top:0;width:380px;height:27px;background:#2B6BE4;border-radius:14px 14px 0 0'></div><div class='t' style='left:38px;top:54px;font-size:45px;color:#6B7280'>세전 월급</div><div class='t' style='left:30px;top:122px;font-size:90px;color:#14171C'>450만원</div><div style='position:absolute;left:38px;top:252px;width:304px;height:16px;background:#D5D9E0;border-radius:4px'></div><div style='position:absolute;left:38px;top:292px;width:209px;height:16px;background:#D5D9E0;border-radius:4px'></div><div style='position:absolute;left:38px;top:333px;width:304px;height:16px;background:#D5D9E0;border-radius:4px'></div><div style='position:absolute;left:38px;top:374px;width:209px;height:16px;background:#D5D9E0;border-radius:4px'></div></div>
+
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

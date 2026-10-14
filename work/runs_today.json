@@ -108,6 +108,19 @@
     "url": "https://cafe.naver.com/firemap/274"
    },
    "note": "19:40 칸 r1cafe_fx1014(쇼츠 r1s_fx k1hsFpaLDH0 짝, 관문 10/13 14:38 통과·editgate 해시 일치) · 쇼츠·본편 둘 다 oembed 200(공개) 확인 후 발행 · verify OK 1236/1236자·사진 3/3 · 게시판 ETF(자동) · 개선: 없음"
+  },
+  {
+   "hour": 21,
+   "ts": "21:45",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "주식 증여 급락일에 넘겨도 삼성전자 평가액 28% 높게 나온 계산",
+    "url": "https://cafe.naver.com/firemap/275"
+   },
+   "note": "21:10 칸 stockgift1013(10/13 관문 통과분) 발행 · verify OK 1623/1623자·사진 3/3 · 발행 전 관련 영상 줄 추가(W-1 0yWQeW38UJE, public 확인)·editgate auto 재stamp·aitell 0.0 · 블로그 없음(하루 1편 상한·색인 0/12) · 다음: p1cafe1016(10/16 12:10 P-1 짝 글) 관문 진행 · 개선: playbook에 '본문 URL은 한 줄 따로' 추가"
   }
  ]
 }

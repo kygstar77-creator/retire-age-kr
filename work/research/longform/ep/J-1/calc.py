@@ -124,6 +124,28 @@ def table(age=55, held=10, lived=10):
               f"{m(s[0]['total'])} | {m(s[2]['total'])} | {m(s[2]['total'] - s[0]['total'])}")
 
 
+def recheck_final():
+    """정부 적용사례 3건(8월안)을 9/1 확정안(의안 2221046: 비거주 공제 12억·상한 150%)으로 다시 계산."""
+    cases = [("① 30억 70세 10년 거주", 30, 70, 10, 10), ("② 30억 70세 10년 보유·비거주", 30, 70, 10, 0),
+             ("③ 50억 70세 10년 거주", 50, 70, 10, 10)]
+    print("\n[9/1 확정안으로 다시 계산] 정부 사례 가정 그대로(보유·거주 10년 고정), 단위 만원: 8월안 → 확정안")
+    for name, p, age, held, lived in cases:
+        pa = pf = None
+        for y in (2026, 2027, 2028):
+            a = jongbu(p * EOK, y, age, held, lived, "aug", pa); pa = a["total"]
+            f = jongbu(p * EOK, y, age, held, lived, "final", pf); pf = f["total"]
+            print(f"{name} {y}: 종부세 {m(a['jong'])} → {m(f['jong'])} · 보유세 {m(a['total'])} → {m(f['total'])}")
+
+
+def cliff(age=55, held=10):
+    """비거주 1주택: 납세의무 문턱 14억(안 §7①)인데 공제는 12억(안 §8①) — 문턱 앞뒤 2028년."""
+    print(f"\n[비거주 문턱] {age}세·보유 {held}년·거주 0, 2028년 종부세(만원)")
+    for p in (13.9, 14.0, 14.01, 14.5, 15):
+        s = series(p * EOK, age, held, 0, "final")
+        r = series(p * EOK, age, held, 10, "final")
+        print(f"공시 {p}억: 비거주 {m(s[2]['jong'])} · 10년 거주 {m(r[2]['jong'])}")
+
+
 if __name__ == "__main__":
     if verify() and "--force" not in sys.argv:
         sys.exit(1)
@@ -131,3 +153,5 @@ if __name__ == "__main__":
     table(55, 10, 0)
     table(70, 15, 15)
     table(45, 3, 3)
+    recheck_final()
+    cliff()

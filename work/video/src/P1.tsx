@@ -348,17 +348,38 @@ const Stamp: React.FC<{s: PScene}> = ({s}) => {
 
 // ───────── 마무리 ─────────
 const Sum: React.FC<{s: PScene}> = ({s}) => {
-  const {f, at} = useBeat(s); const d = s.data; const A = (i: number) => at(d.at[i]);
-  const tiles = [...d.cells, d.line, d.stair]; const when = [0, 0, 2, 3];
+  const {f, at} = useBeat(s); const d = s.data; const A = (i: number) => at(d.at[i]); const b = beatOf(d.at, at, f);
+  const tiles = [...d.cells, d.line, d.stair];
   return (
     <>
-      {tiles.map((t: string[], i: number) => {
-        const on = i < 2 ? f >= A(1) : f >= A(when[i]); const o = i < 2 ? 1 : fade(f, A(when[i]), 10);
-        return <Box key={i} x={160 + i * 410} y={Y0 + 10} w={380} h={300} o={o} bg={on ? (i === 2 ? T.accent : i === 3 ? T.fall : T.ink) : '#fff'} border={on ? undefined : `3px solid ${T.line}`}>
-          <Txt s={30} c={on ? '#fff' : T.ink3} al="center">{t[0]}</Txt><Txt s={64} c={on ? '#fff' : T.ink} al="center">{t[1]}</Txt><Txt s={28} c={on ? '#fff' : T.ink2} al="center">{t[2]}</Txt>
-        </Box>;
-      })}
-      <Box x={160} y={Y0 + 340} w={1210} h={150} bg={T.ink} o={fade(f, A(4), 10)}><Txt s={30} c={T.daccent}>{d.link[0]} · {d.link[2]}</Txt><Txt s={50} c="#fff">{d.link[1]}</Txt></Box>
+      {b === 0 ? <>
+        {tiles.map((t: string[], i: number) => (
+          <Box key={i} x={160 + i * 410} y={Y0 + 10} w={380} h={260} o={fade(f, i * 6, 10)} bg={i === 2 ? T.accent : i === 3 ? T.fall : T.ink}>
+            <Txt s={30} c="#fff" al="center">{t[0]}</Txt><Txt s={60} c="#fff" al="center">{t[1]}</Txt><Txt s={28} c="#fff" al="center">{t[2]}</Txt>
+          </Box>
+        ))}
+        <Box x={160} y={Y0 + 300} w={1640} h={170} bg="#fff" border={`4px solid ${T.ink}`} o={fade(f, 24, 10)}>
+          <Txt s={36} c={T.ink2}>{d.kb[0]}</Txt><Txt s={64}>{d.kb[1]}</Txt>
+        </Box>
+      </> : null}
+      {b === 1 ? <>
+        <div style={{position: 'absolute', left: 160, top: Y0 + 10, width: 800, height: 450, borderRadius: 18, overflow: 'hidden', opacity: fade(f, A(1), 10),
+          transform: `scale(${0.96 + 0.04 * fade(f, A(1), 12)})`, boxShadow: '0 8px 30px rgba(0,0,0,.18)'}}>
+          <img src={staticFile(d.d1.img)} style={{width: 800, height: 450, objectFit: 'cover'}} />
+        </div>
+        <Box x={1010} y={Y0 + 10} w={790} h={200} bg={T.ink} o={fade(f, A(1) + 10, 10)}><Txt s={32} c={T.daccent}>{d.d1.tag}</Txt><Txt s={64} c="#fff">{d.d1.title}</Txt></Box>
+        <Box x={1010} y={Y0 + 240} w={790} h={220} bg="#fff" border={`4px solid ${T.accent}`} o={fade(f, A(1) + 24, 10)}><Txt s={50} wrap>{d.d1.q}</Txt></Box>
+      </> : null}
+      {b === 2 ? <Box x={160} y={Y0 + 60} w={1640} h={300} bg={T.ink} o={fade(f, A(2), 10)}><Txt s={34} c={T.daccent}>{d.link[0]} · {d.link[2]}</Txt><div style={{height: 16}} /><Txt s={72} c="#fff">{d.link[1]}</Txt></Box> : null}
+      {b >= 3 ? <>
+        <Box x={160} y={Y0 + 10} w={1640} h={160} bg={T.ink} o={fade(f, A(3), 10)}><Txt s={64} c="#fff" al="center">{d.ask.q}</Txt></Box>
+        {d.ask.cells.map((c: string[], i: number) => (
+          <Box key={i} x={160 + i * 560} y={Y0 + 200} w={520} h={200} o={fade(f, A(3) + 12 + i * 8, 10)} bg="#fff" border={`4px solid ${T.ink}`}>
+            <Txt s={40} c={T.ink2} al="center">{c[0]}</Txt><Txt s={80} c={T.ink} al="center">{c[1]}</Txt>
+          </Box>
+        ))}
+        <div style={{position: 'absolute', left: 160, top: Y0 + 425, width: 1640, opacity: fade(f, A(3) + 40, 10)}}><Txt s={40} c={T.ink2} al="center">{d.ask.tail}</Txt></div>
+      </> : null}
     </>
   );
 };

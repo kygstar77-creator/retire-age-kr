@@ -299,6 +299,59 @@ V['p2y'] = cards8(c1='#17233A')
 V['p2z'] = cards8(bg='#2A7A70')
 assert MEAN3 in V['p2x'] and 'box-shadow:0 0 0 6px' not in V['p2x']
 
+# ── 21차 — 사장님 10/14 "주제를 보여주는 무료 그림 넣으면 되잖아." p2z 숫자·문구 그대로, Pexels 사진(출처 ep/P-1/thumb_photo_src.md) 위치만 바꿈.
+#    p3a 왼쪽 사진(노부부 얼굴)·오른쪽 두 칸 / p3b 오른쪽 사진 기둥 / p3c 사진 전면 배경 + 청록 덮개 / p3d p2z 칸 줄이고 아래 빈자리에 사진 띠.
+PH = {'couple': 'photo/p_couple_1642883.jpg', 'sea': 'photo/p_sea_13600760.jpg', 'seoul': 'photo/p_seoul_32028728.jpg'}
+
+
+def img(src, x, y, w, h, pos='50% 50%', extra=''):
+    return f"<img src='{src}' style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;object-fit:cover;object-position:{pos};{extra}'>"
+
+
+def twocards(x0, y0, w, h, gap, num=226, sefs=112, lab=76):
+    x1 = x0 + w + gap; ny = y0 + (h - num) / 2 + 30; ly = y0 + 30
+    return f"""<div style='position:absolute;left:{x0}px;top:{y0}px;width:{w}px;height:{h}px;background:{CARD};border-radius:26px'></div>
+<div style='position:absolute;left:{x1}px;top:{y0}px;width:{w}px;height:{h}px;background:#0D1320;border-radius:26px'></div>
+<div class='t' style='left:{x0}px;top:{ly}px;width:{w}px;text-align:center;font-size:{lab}px;color:#4A5568'>5년 당김</div>
+<div class='t' style='left:{x0}px;top:{ny:.0f}px;width:{w}px;text-align:center;font-size:{num}px;color:{INK}'>{N5}<span style='font-size:{sefs}px'>세</span></div>
+<div class='t' style='left:{x1}px;top:{ly}px;width:{w}px;text-align:center;font-size:{lab}px;color:#C9D3E6'>1년 당김</div>
+<div class='t' style='left:{x1}px;top:{ny:.0f}px;width:{w}px;text-align:center;font-size:{num}px;color:{ORG}'>{N1}<span style='font-size:{sefs}px'>세</span></div>
+"""
+
+
+TB = '#2A7A70'
+# p3a — 왼쪽 40% 사진(부부 얼굴), 오른쪽 청록에 윗줄·뜻 줄(두 줄로)·두 칸
+V['p3a'] = f"""<div style='position:absolute;inset:0;background:{TB}'></div>
+{img(PH['couple'], 0, 0, 470, 720, '58% 30%')}
+<div class='t' style='left:500px;top:18px;font-size:54px;color:#CDE7E1'>{TOP6}</div>
+<div class='t' style='left:498px;top:84px;font-size:66px;color:#FFFFFF;line-height:1.12'>제때(65세) 받은 쪽이<br>따라잡는 나이</div>
+{twocards(496, 268, 372, 370, 20, num=128, sefs=64, lab=60)}
+"""
+# p3b — p2z 위 두 줄 그대로(전체 폭), 두 칸 왼쪽으로 좁히고 오른쪽 사진 기둥(아래 재생시간 자리는 사진만)
+V['p3b'] = f"""<div style='position:absolute;inset:0;background:{TB}'></div>
+{img(PH['couple'], 900, 196, 380, 524, '62% 25%')}
+<div class='t' style='left:40px;top:20px;font-size:58px;color:#CDE7E1'>{TOP6}</div>
+<div class='t' style='left:38px;top:92px;font-size:78px;color:#FFFFFF'>{MEAN3}</div>
+{twocards(30, 216, 418, 470, 22, num=150, sefs=76, lab=68)}
+"""
+# p3c — 사진 전면 배경(바닷가 부부) + 청록 덮개 82% → 칸은 그대로 위에
+V['p3c'] = f"""{img(PH['sea'], 0, 0, 1280, 720, '50% 30%')}
+<div style='position:absolute;inset:0;background:linear-gradient(180deg, rgba(42,122,112,.85) 0%, rgba(42,122,112,.35) 40%, rgba(20,60,55,.45) 100%)'></div>
+<div class='t' style='left:40px;top:20px;font-size:58px;color:#FFFFFF;text-shadow:0 3px 0 rgba(0,0,0,.4)'>{TOP6}</div>
+<div class='t' style='left:38px;top:92px;font-size:78px;color:#FFFFFF;text-shadow:0 4px 0 rgba(0,0,0,.45)'>{MEAN3}</div>
+{twocards(60, 236, 520, 400, 120, num=210, sefs=104)}
+"""
+# p3d — p2z 그대로에서 칸 높이 줄여(484→330) 아래 빈자리를 없애고, 그 아래 띠(왼쪽 2/3)에 부부 사진. 오른쪽 아래는 청록 그대로.
+V['p3d'] = f"""<div style='position:absolute;inset:0;background:{TB}'></div>
+<div class='t' style='left:40px;top:20px;font-size:58px;color:#CDE7E1'>{TOP6}</div>
+<div class='t' style='left:38px;top:92px;font-size:78px;color:#FFFFFF'>{MEAN3}</div>
+{twocards(30, 200, 590, 340, 40, num=210, sefs=104, lab=0).replace("font-size:0px", "font-size:0px;display:none")}
+<div class='t' style='left:30px;top:206px;width:590px;text-align:center;font-size:54px;color:#4A5568'>5년 당김</div>
+<div class='t' style='left:660px;top:206px;width:590px;text-align:center;font-size:54px;color:#C9D3E6'>1년 당김</div>
+{img(PH['couple'], 30, 556, 830, 164, '50% 40%', 'border-radius:20px 20px 0 0')}
+"""
+assert all(N5 in V[k] and N1 in V[k] and '1969년생' in V[k] and '65세' in V[k] for k in ('p3a', 'p3b', 'p3c', 'p3d'))
+
 if __name__ == '__main__':
     M.VARIANTS.update(V)
     keys = sys.argv[1].split(',') if len(sys.argv) > 1 else list(V)

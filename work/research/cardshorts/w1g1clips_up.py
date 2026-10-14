@@ -81,8 +81,11 @@ def main(name, check_only=False):
         left = [h for h in hits if not (replace and h[0] in unfixed)]
         if left: print('올리지 않는다: 꼴 관문', *left, sep='\n  '); return 9
         print('꼴 관문: 고친 판 · 미반영 기록 있음 —', unfixed.strip())
+    import emptyscan   # 10/15 회의 지시 ④: 0초 화면 빈 곳도 40% 이하
+    e0 = emptyscan.frame0(os.path.join(REPO, up['mp4']))[0]
+    if e0 > emptyscan.LIMIT0: print(f'올리지 않는다: 0초 화면 빈 곳 {e0:.0%} > {emptyscan.LIMIT0:.0%} — 첫 장에 칸·띠·답 숫자를 0초부터'); return 10
     old = up.get('id') if replace else None
-    pub = datetime.datetime.fromisoformat(up['publishAt'])
+    pub =datetime.datetime.fromisoformat(up['publishAt'])
     if pub <= datetime.datetime.now(KST) + datetime.timedelta(minutes=15): print('올리지 않는다: publishAt이 15분 안이거나 지났다', up['publishAt']); return 4
     title, desc = up['title'], up['description']
     if not up.get('from_long') or not desc.splitlines()[0].rstrip().startswith('전체 계산: https://youtu.be/' + up['from_long']): print('올리지 않는다: 설명 첫 줄에 롱폼 링크 없음'); return 5

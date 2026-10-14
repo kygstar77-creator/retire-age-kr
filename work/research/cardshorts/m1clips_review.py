@@ -42,7 +42,8 @@ def main(name, ver=''):
     m = {'duration': dur, 'streams': streams, 'volume': vol, 'frames_1s': len(fs), 'still_longest_s': best, 'still_from_s': at,
          'empty_mean': round(float(np.mean([e[0] for e in em])), 3), 'empty_max': round(float(np.max([e[0] for e in em])), 3),
          'empty_low_mean': round(float(np.mean([e[1] for e in em])), 3), 'empty_low_max': round(float(np.max([e[1] for e in em])), 3),
-         'empty_each_3s': [[i * 3, round(e[0], 2), round(e[1], 2)] for i, e in enumerate(em)]}
+         'empty_frame0': [round(float(x), 3) for x in emptyscan.frame0(mp4)],   # 10/15: 0초 화면도 40% 이하(up이 막음)
+         'empty_each_3s':[[i * 3, round(e[0], 2), round(e[1], 2)] for i, e in enumerate(em)]}
     json.dump(m, open(os.path.join(d, f'measure{sfx}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(json.dumps({k: v for k, v in m.items() if k != 'empty_each_3s'}, ensure_ascii=False, indent=1))
     print('판:', sheet)

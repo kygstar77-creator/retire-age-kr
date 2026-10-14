@@ -1,0 +1,64 @@
+{
+ "kind": "youtube#video",
+ "etag": "QQsHYJ5vDh2tNK2WqA7CxryeC6c",
+ "id": "vsL7mojDW7w",
+ "snippet": {
+  "publishedAt": "2026-10-14T03:12:28Z",
+  "channelId": "UCV3ZcSho5Z1i8k_FAiKPlVg",
+  "title": "국민연금 수령나이, 1년만 당기면 따라잡히는 나이가 오히려 늦다",
+  "description": "국민연금 수령나이를 5년 당기면(60세·월 70만원) 제때(65세·월 100만원) 받은 쪽이 76.67세에 따라잡고, 1년만 당기면 그 나이가 80.67세로 오히려 늦어집니다. 5년 미루면(70세·월 136만원) 83.89세에 제때를 앞섭니다(1969년생·월 100만원 가정, 국민연금법 조기·연기 비율).\n60대에 일하면서 받으면 2026년 6월 17일 시행 개정으로 공제 뒤 월 소득 519만 3,511원을 넘을 때 감액이 시작되고, 조문대로 계산하면 선을 넘는 순간 15만원부터 깎입니다(보건복지부 표·국민연금법 제63조의2).\n\n출생연도별 표와 계산 근거: https://firemap.kr/guide/national-pension-early\n카페 전체 표: https://cafe.naver.com/firemap\n앞서 올린 퇴직 후 건강보험료 편(피부양자 소득 요건): https://youtu.be/GMc2Rd1-JYA\n\n0:00 예고편\n0:19 결론부터\n0:30 하루 차이로 한 살?\n0:59 70만원, 100만원, 136만원\n1:29 당긴 쪽은 언제 따라잡히나\n2:10 평균까지 살면 누가 앞서나\n2:59 519만원 위의 계단\n3:56 445억원은 누구 몫?\n4:19 68세, 정해진 걸까\n4:33 정리 — 연금과 건강보험료\n\n출처\n· 국민연금법 제61조②·제62조②·제63조②·제63조의2·제66조①, 부칙(법률 제8541호) 제8조·부칙(법률 제21203호) 제1조·제2조(국가법령정보센터)\n· 국민연금공단 노령연금 안내 · 2026년 적용 A값 3,193,511원\n· 보건복지부 보도자료(개선된 노령연금 감액제도 본격 시행) — 환급 약 10만 명·445억원\n· KOSIS 간이생명표 2024(65세 기대여명 남 19.5년·여 23.7년, 평균일 뿐)\n· 68세 안은 국회 토론회 발제안(법 개정 아님, 자료집 원문 미확인)\n계산 가정: 65세 월 100만원(가정) · 세금·건보료·부양가족연금 제외 · 물가 반영은 세 길에 같게 · 69년생 연금 씨는 가상 인물 · 공단 실무 해석은 확인 안 함\n\n언제 받으라는 권유가 아니라, 국민연금법 조문 비율로 한 계산입니다.\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)입니다.\n영상 일부: Pavel Danilyuk / Pexels (https://www.pexels.com/video/accountant-writing-on-her-notebook-7593893/)\n영상 일부: Sketch Benjamin / Pexels (https://www.pexels.com/video/birthday-cake-with-candles-homemade-19875346/)\n영상 일부: Thirdman / Pexels (https://www.pexels.com/video/a-person-walking-on-unpaved-pathway-5612232/)\n영상 일부: indra projects / Pexels (https://www.pexels.com/video/man-typing-on-laptop-keyboard-on-work-desk-18835800/)",
+  "thumbnails": {
+   "default": {
+    "url": "https://i9.ytimg.com/vi/vsL7mojDW7w/default.jpg?sqp=CNThv9YG&rs=AOn4CLB5SsFusOkUfa01UTpKSFQpsZxxwg",
+    "width": 120,
+    "height": 90
+   },
+   "medium": {
+    "url": "https://i9.ytimg.com/vi/vsL7mojDW7w/mqdefault.jpg?sqp=CNThv9YG&rs=AOn4CLDssN5gszXcU_7sTU1IgwqRDuJK9A",
+    "width": 320,
+    "height": 180
+   },
+   "high": {
+    "url": "https://i9.ytimg.com/vi/vsL7mojDW7w/hqdefault.jpg?sqp=CNThv9YG&rs=AOn4CLACdrcvFgy9CNWL9aag6jIJm5xqHg",
+    "width": 480,
+    "height": 360
+   },
+   "standard": {
+    "url": "https://i9.ytimg.com/vi/vsL7mojDW7w/sddefault.jpg?sqp=CNThv9YG&rs=AOn4CLBoOxcdGJA4RrL7tXA2L3WQ9aj6PQ",
+    "width": 640,
+    "height": 480
+   },
+   "maxres": {
+    "url": "https://i9.ytimg.com/vi/vsL7mojDW7w/maxresdefault.jpg?sqp=CNThv9YG&rs=AOn4CLCrcDiBdktMStN4mcMSAMvLe5x8LQ",
+    "width": 1280,
+    "height": 720
+   }
+  },
+  "channelTitle": "파이어맵",
+  "tags": [
+   "국민연금 개정",
+   "국민연금 수령나이",
+   "국민연금 조기수령",
+   "노령연금 감액",
+   "연기연금"
+  ],
+  "categoryId": "27",
+  "liveBroadcastContent": "none",
+  "defaultLanguage": "ko",
+  "localized": {
+   "title": "국민연금 수령나이, 1년만 당기면 따라잡히는 나이가 오히려 늦다",
+   "description": "국민연금 수령나이를 5년 당기면(60세·월 70만원) 제때(65세·월 100만원) 받은 쪽이 76.67세에 따라잡고, 1년만 당기면 그 나이가 80.67세로 오히려 늦어집니다. 5년 미루면(70세·월 136만원) 83.89세에 제때를 앞섭니다(1969년생·월 100만원 가정, 국민연금법 조기·연기 비율).\n60대에 일하면서 받으면 2026년 6월 17일 시행 개정으로 공제 뒤 월 소득 519만 3,511원을 넘을 때 감액이 시작되고, 조문대로 계산하면 선을 넘는 순간 15만원부터 깎입니다(보건복지부 표·국민연금법 제63조의2).\n\n출생연도별 표와 계산 근거: https://firemap.kr/guide/national-pension-early\n카페 전체 표: https://cafe.naver.com/firemap\n앞서 올린 퇴직 후 건강보험료 편(피부양자 소득 요건): https://youtu.be/GMc2Rd1-JYA\n\n0:00 예고편\n0:19 결론부터\n0:30 하루 차이로 한 살?\n0:59 70만원, 100만원, 136만원\n1:29 당긴 쪽은 언제 따라잡히나\n2:10 평균까지 살면 누가 앞서나\n2:59 519만원 위의 계단\n3:56 445억원은 누구 몫?\n4:19 68세, 정해진 걸까\n4:33 정리 — 연금과 건강보험료\n\n출처\n· 국민연금법 제61조②·제62조②·제63조②·제63조의2·제66조①, 부칙(법률 제8541호) 제8조·부칙(법률 제21203호) 제1조·제2조(국가법령정보센터)\n· 국민연금공단 노령연금 안내 · 2026년 적용 A값 3,193,511원\n· 보건복지부 보도자료(개선된 노령연금 감액제도 본격 시행) — 환급 약 10만 명·445억원\n· KOSIS 간이생명표 2024(65세 기대여명 남 19.5년·여 23.7년, 평균일 뿐)\n· 68세 안은 국회 토론회 발제안(법 개정 아님, 자료집 원문 미확인)\n계산 가정: 65세 월 100만원(가정) · 세금·건보료·부양가족연금 제외 · 물가 반영은 세 길에 같게 · 69년생 연금 씨는 가상 인물 · 공단 실무 해석은 확인 안 함\n\n언제 받으라는 권유가 아니라, 국민연금법 조문 비율로 한 계산입니다.\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)입니다.\n영상 일부: Pavel Danilyuk / Pexels (https://www.pexels.com/video/accountant-writing-on-her-notebook-7593893/)\n영상 일부: Sketch Benjamin / Pexels (https://www.pexels.com/video/birthday-cake-with-candles-homemade-19875346/)\n영상 일부: Thirdman / Pexels (https://www.pexels.com/video/a-person-walking-on-unpaved-pathway-5612232/)\n영상 일부: indra projects / Pexels (https://www.pexels.com/video/man-typing-on-laptop-keyboard-on-work-desk-18835800/)"
+  },
+  "defaultAudioLanguage": "ko"
+ },
+ "status": {
+  "uploadStatus": "processed",
+  "privacyStatus": "private",
+  "publishAt": "2026-10-16T02:30:00Z",
+  "license": "youtube",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "madeForKids": false,
+  "selfDeclaredMadeForKids": false
+ }
+}

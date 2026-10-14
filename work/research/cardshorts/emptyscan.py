@@ -25,6 +25,17 @@ def frames(mp4, step=3):
     return sorted(glob.glob(os.path.join(d, '*.png')))
 
 
+LIMIT0 = 0.40   # 10/15 회의 지시 ④: 0초 화면(목록·표지에 보이는 첫 장)도 40% 넘으면 막는다 — d1s_pension frame0 45%
+
+
+def frame0(mp4):
+    """mp4 맨 첫 장(n=0)의 (전체, 아래 절반) 빈 곳 비율. 3초 간격 재기는 0초를 540px로 줄여 재므로 첫 장을 따로 원본 크기로 잰다."""
+    import imageio_ffmpeg, tempfile, os
+    p = os.path.join(tempfile.mkdtemp(), 'f0.png')
+    subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), '-v', 'error', '-y', '-i', mp4, '-vf', r'select=eq(n\,0)', '-frames:v', '1', p], check=True)
+    return empty_ratio(Image.open(p))
+
+
 if __name__ == '__main__':
     rows = []
     for p in sys.argv[1:]:

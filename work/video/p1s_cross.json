@@ -317,9 +317,16 @@
      "cap": null,
      "audio": "audio/p-1/98333084fdb7c0ac.wav",
      "frames": 84
+    },
+    {
+     "n": 0,
+     "text": "이 나이들, 빠른 편일까요, 늦은 편일까요?",
+     "cap": null,
+     "audio": "audio/p-1/bb98df98cbf1ced0.wav",
+     "frames": 101
     }
    ],
-   "frames": 233
+   "frames": 334
   }
  ]
 }

@@ -23,8 +23,8 @@
  },
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "YTAustvbDfI",
- "uploaded_at": "2026-10-14 18:24:20",
+ "id": "b4405ZoVjAQ",
+ "uploaded_at": "2026-10-14 22:36:19",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-18T22:20:00Z",
@@ -32,11 +32,19 @@
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
  },
- "v": 2,
+ "v": 3,
  "replaced": [
   {
    "id": "bcBQX8WV9YE",
    "unscheduled_at": "2026-10-14 18:24:20",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "YTAustvbDfI",
+   "unscheduled_at": "2026-10-14 22:36:19",
    "status_after": {
     "privacyStatus": "private",
     "publishAt": null

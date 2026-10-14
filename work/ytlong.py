@@ -85,6 +85,8 @@ def gate(ep):
     # C9 설명란
     d = m['desc']
     if '출처' not in d: bad.append('C9 출처 줄 없음')
+    import disclaim   # 10/14 회의 지시: 영상 끝 면책(A23)을 뺀 대신 설명란 '권유 아님' 줄 필수
+    if not disclaim.line(d): bad.append(disclaim.NEED)
     if len(re.findall(r'cafe\.naver\.com', d)) > 1: bad.append('C9 카페 링크 2개 이상')
     if not (3 <= len(m['tags']) <= 5): bad.append('C9 태그 3~5개 아님')
     ch = re.findall(r'^(\d+):(\d\d) ', d, flags=re.M)

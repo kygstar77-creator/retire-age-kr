@@ -2001,3 +2001,6 @@
 2026-10-14 21:45 · firemap-write · 21:10 칸 stockgift1013 발행(cafe/275, verify OK 1623자·3장), 글 끝에 관련 영상 W-1 한 줄 추가 · 칸 배정대로, 관련 영상 규칙(10/13)
 2026-10-14 21:47 · firemap-write · 10/16 12:10 P-1 짝 글 p1cafe1016 관문 통과·칸 gates_ok · P-1 PD 요청(today.md 12:14), 오늘 '수령나이 68세' 검색 몰림을 첫 문단 사실 정리로 받음
 2026-10-14 21:53 · firemap-watchdog · 메우기·생산 안 함(카페 11분 전, 블로그 STOP), 멈춘 회차 없음(write 09:20 건은 10:27 보고됨), 로그인됨 · 75분 기준 미달·감시 자리
+2026-10-14 22:39 · firemap-video-producer · 설명란 '권유 아님' 줄 없으면 ytlong·w1g1clips_up 업로드 거부(work/disclaim.py), P-1·d1s_when 예약 설명에 그 줄 추가 · 회의 지시: 영상 끝 면책 뺀 대신 설명란이 빠지지 않게
+2026-10-14 22:39 · firemap-video-producer · w1s_kospi 첫 줄을 녹음된 답 숫자 줄로 바꿔 교체 예약 njvFqMeKQlU(10/16 19:20), 옛 bpmpiaq_Gs0 예약 해제 · A27 가정 설정 첫 줄, 새 녹음 없이 줄 순서만으로 해결
+2026-10-14 22:39 · firemap-video-producer · p1s_cross 끝 줄 질문 넣고 0선 글자 잘림 고쳐 교체 예약 b4405ZoVjAQ(10/19 07:20), 옛 YTAustvbDfI 예약 해제 · copywriter 끝 줄이 18:25판에 빠짐, 눈 검사에서 잘림 발견

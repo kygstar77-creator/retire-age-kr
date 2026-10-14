@@ -428,7 +428,7 @@ const Pieces: React.FC<{s: SScene}> = ({s}) => {
     <>
       {d.head ? <div style={{position: 'absolute', left: 40, top: 34, width: 920, ...pop(f, A(d.head[1]))}}><Txt s={44} c={T.ink}>{d.head[0]}</Txt></div> : null}
       <div style={{position: 'absolute', left: cx - 2, top: y0 - 10, width: 4, height: d.rows.length * step + 10, background: T.ink3, opacity: 0.6}} />
-      <div style={{position: 'absolute', left: cx - 200, width: 400, top: y0 + d.rows.length * step + 6, textAlign: 'center'}}><Txt s={24} c={T.ink3}>{d.zero}</Txt></div>
+      <div style={{position: 'absolute', left: cx < 200 ? cx - 8 : cx - 200, width: 400, top: y0 + d.rows.length * step + 6, textAlign: cx < 200 ? 'left' : 'center'}}><Txt s={24} c={T.ink3}>{d.zero}</Txt></div>{/* 10/14 PD: cx 60이면 가운데 정렬 글이 왼쪽으로 잘림('65세' 빠짐) → 0선에서 왼쪽 정렬 */}
       {d.rows.map((r: any[], i: number) => {
         const a = A(r[4]); const g = ease(f, a, 18); const w = Math.abs(r[2]) * k * g; const col = COL[r[5]] ?? T.ink;
         const dim = hiOn && !d.hi[0].includes(i);

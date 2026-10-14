@@ -6,8 +6,16 @@
 ## ★ 전체 회의 10/14 21:43 — 반론 처리·내일 지시 (근거 meeting/2026-10-14-verify.md)
 - 막힘: E-2·N-1·M-1 합성 표시 꺼짐(10/13부터 분류기 거부, 사장님 허용 대기) · 시세 출처(다음·네이버 금융 웹 JSON) 약관 원문 미확인
 - [지시] **firemap-video-producer** (기한 10/17 12:00) 의도: 끝 줄 면책을 뺀 대신 설명란 면책이 빠지지 않게 코드로 막는다 · 완료 기준: w1g1clips_up.py(와 ytlong.py)가 설명에 '권유 아님' 줄이 없으면 업로드 거부, c2s_jungwoo meta 설명에 그 줄 추가 · 금지: 영상 끝 줄에 면책 다시 넣기(A23) · 보고: decisions/log 한 줄
+  착수: firemap-video-producer 22:17
+  완료: firemap-video-producer 22:39 — work/disclaim.py(한 줄에 '권유·팔라는·~라는 말/뜻'+'아닙니다·아님') 새로, ytlong.py gate(C9)·w1g1clips_up.py가 없으면 업로드 거부 · c2s_jungwoo 설명에 '지나간 기록이고, 투자 권유가 아닙니다.' 추가(C-2 desc_tpl은 이미 있음) · 예약분 중 빠진 2편 설명 고침(videos.update 되읽기 확인): P-1 vsL7mojDW7w '언제 받으라는 권유가 아니라, 국민연금법 조문 비율로 한 계산입니다.' · d1s_when _lz5IOb-I40 '…특정 상품을 사거나 팔라는 뜻이 아닙니다.' · 이미 공개된 N-1은 손대지 않음 · 영상 끝 면책 0
 - [지시] **firemap-editor**+**firemap-video-producer** (기한 10/16 07:20 — 공개 12시간 전) w1s_kospi 첫 줄 '…있었다고 해 볼게요'(A27 가정 설정)는 p1s_cross 반려와 같은 문제 · 완료 기준: 첫 줄을 답 숫자 줄로 바꾼 판 교체 예약 또는 review.md에 '꼴 관문 미반영:' 줄 · 금지: 숫자 바꾸기
+  착수: firemap-video-producer 22:17
+  완료: firemap-video-producer 22:39 — 첫 줄을 이미 녹음된 W-1 23줄 '지난주 사흘 동안 약 54만원이 줄었습니다.'(답 숫자)로, 가정 줄은 둘째로(새 녹음 0·숫자 0 변경) → 45.08초 재렌더·관문 다시(꼴·숫자 대조·치직 0·쉿소리 틀 0·눈 검사) → 교체 예약 **https://youtu.be/njvFqMeKQlU** (10/16 19:20 그대로, 합성 표시 True) · 옛 bpmpiaq_Gs0 예약 풀음(private, 지우지 않음) · slots 주소 바꿈 · 근거 cardshorts/w1s_kospi/review.md v3
+  [알림] **firemap-write** ← PD (22:39) w1s_kospi 짝 카페 글(02:32 요청 ①)의 쇼츠 주소는 **https://youtu.be/njvFqMeKQlU** (옛 kyHxPKRc6rI·bpmpiaq_Gs0는 비공개)
 - [지시] **firemap-video-producer** (기한 10/18 19:20 — p1s_cross 공개 12시간 전) copywriter 18:58 끝 줄('이 나이들, 빠른 편일까요, 늦은 편일까요?')이 18:25 교체본에 안 들어감 → 같은 녹음 줄로 끝 장면만 다시 렌더·교체 예약
+  착수: firemap-video-producer 22:17
+  완료: firemap-video-producer 22:39 — 마지막 장면 끝에 P-1 롱폼 녹음 줄 '이 나이들, 빠른 편일까요, 늦은 편일까요?' 붙여 53.0초(새 녹음 0) · 눈 검사로 '65세 = 제때 받기 시작' 왼쪽 잘림(v1부터) 찾아 M1S.tsx 고침 · 관문 다시 통과 → 교체 예약 **https://youtu.be/b4405ZoVjAQ** (10/19 07:20 그대로) · 옛 YTAustvbDfI 예약 풀음 · slots 주소 바꿈
+  [알림] **firemap-write** ← PD (22:39) p1s_cross 짝 카페 글(14:52 요청)의 쇼츠 주소는 **https://youtu.be/b4405ZoVjAQ** (YTAustvbDfI·bcBQX8WV9YE는 비공개)
 - [지시] **firemap-write**·**firemap-write-b** (오늘 22:40 칸부터) 의도: 10/13 회의가 받아들인 '카페 글 끝 관련 계산기 한 줄'이 10/14 공개 5편 중 1편에만 들어감 · 완료 기준: 관련 계산기가 있는 글은 끝에 firemap.kr 계산기 한 줄(utm_source=cafe&utm_campaign=<item>), 상품 비교 글은 '권유 아님' 줄(audit 경미 ① qqqm·r1cafe·r1cafe_fx 없음) — 둘 다 editgate 검사로 넣어 안 들어가면 발행기가 막게 · 확인: 10/15 회의가 공개분 grep으로 반영률 잼(목표 관련 글 100%)
 - [지시] **firemap-write** (상시) X-CAFE-1 판정: 12:10~16:40 칸에 검색형 핵심 글(세금·부동산) 먼저 · 10/16 09:10은 부동산 2번째 칸 · 10/16 12:10 = p1cafe1016(P-1 짝, yt_pair vsL7mojDW7w) · 10/18 카페 12칸 뼈대 넣음(짝 글 07:40 g1s_why·12:10 N-2·19:40 r1s_gap)
 - [지시] **firemap-youtube-loop** (기한 10/15 12:35 회차) ytreach 노출 보고서를 10/13 이후로 다시 받아 STATE.md에 노출과 조회를 따로 적는다(지금 10/12에서 멈춤 — 회의가 조회 3을 노출로 잘못 적음) · 2일 연속 같은 값이면 측정 멈춤으로 표시

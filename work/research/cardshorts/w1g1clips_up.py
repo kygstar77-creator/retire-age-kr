@@ -70,9 +70,9 @@ def main(name, check_only=False):
         return 0
     replace = '--replace' in sys.argv
     if up.get('id') and not replace: print('이미 올림:', up['id']); show(yt, up['id']); return 0
-    if replace and up.get('v') != 2: print('올리지 않는다: upload.json v가 2가 아님(새 판 mp4·제목 확인)'); return 3
+    if replace and (up.get('v') or 1) < 2: print('올리지 않는다: upload.json v가 2 이상 아님(새 판 mp4·제목 확인)'); return 3
     rv = open(os.path.join(d, 'review.md'), encoding='utf-8').read() if os.path.exists(os.path.join(d, 'review.md')) else ''
-    mark = r'^판정\(v2\): 통과' if replace else r'^판정: 통과'
+    mark = rf'^판정\(v{up["v"]}\): 통과' if replace else r'^판정: 통과'   # 10/14: v3부터도 같은 길(그 판 판정 줄)
     if not re.search(mark, rv, re.M): print('올리지 않는다: review.md에 판정 줄 없음', mark); return 3
     import w1g1clips_check as fc   # 10/14 꼴 관문 ⓐ~ⓓ(today.md 벤치마크 쇼츠 2판) — 새 편은 전부 통과, --replace(이미 잡힌 칸 고친 판)는 못 고친 항목이 review.md '꼴 관문 미반영: ⓐ…' 줄에 있어야
     hits = fc.form_check(name, up.get('layout', 'c1clip'), upload=not replace)
@@ -87,6 +87,8 @@ def main(name, check_only=False):
     title, desc = up['title'], up['description']
     if not up.get('from_long') or not desc.splitlines()[0].rstrip().startswith('전체 계산: https://youtu.be/' + up['from_long']): print('올리지 않는다: 설명 첫 줄에 롱폼 링크 없음'); return 5
     if '#shorts' not in title: print('올리지 않는다: 제목에 #shorts 없음'); return 5
+    import disclaim   # 10/14 회의 지시: 끝 줄 면책(A23)을 뺀 대신 설명란 '권유 아님' 줄 필수
+    if not disclaim.line(desc): print('올리지 않는다:', disclaim.NEED); return 5
     ok, msg, hits = aitell.gate_text(re.sub(r'https?://\S+', ' ', title + '\n\n' + desc), False)
     if not ok: aitell.refuse(msg, hits); return 6
     print(msg)

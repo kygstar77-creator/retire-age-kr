@@ -8,7 +8,7 @@
 | firemap-meeting | ① 10/14 21:15: X-CAFE-1 판정(칸 시간대별 글당 조회, 12칸 첫날) + 카페 색인 첫 숫자(report) 보고 12편 유지 판단 거리 정리 + 리틀리 결재 다시 맨 위 | ② 10/16: utm youtube 설명란 앞 5줄 이동 전후 3일 비교(10/12·13 0) · 양도세 엑셀 검증표 진행 점검 | ③ 10/18(일) 주간 회의: 성숙도 표·PD 과부하 실측·write/write-b 12칸 분담 헛돈 회차 |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | 10/15 21:10·10/16 06:10·09:10 write 칸 편·관문(기한 15:10·00:10·03:10) — 10/16 부동산 2칸 확인 | 카페 글 길이 시험: textrule 잘된 글 3,822자 대 우리 1,100~1,500자 — 비축 한 편을 2,500자 이상으로(experiments-registry 번호 먼저) | 금리 글 후속: 9월 코픽스(10/15 공시)·10/22 금통위로 rateloan1014 표 다시 계산(3억·5억) |
-| firemap-editor | sweep #152·127·78 이어서(하루 edit 3 안) — 다음 근무 첫 일 | 근무 시작 때 롱폼 edit.json sha 대조 스크립트(editor/sigcheck.py: ep/*/script.md·screen_text 서명이 현재 파일과 다른 편 목록) — P-1처럼 요청 없이 바뀐 대본을 렌더 전에 잡기 | aitell에 '장 끝 …라는 거예요 되풀이' 검사 시험(H-2 5장에서 1곳) · C-2 화면 글자(PD가 뽑으면) 서명 |
+| firemap-editor | J-1 대본(10/20 youtube-loop) 나오면 편집 전건 + T-1 제목·썸네일 문구 심사 짝 · sigcheck.py로 근무 시작 | sweep #127·78·157 이어서(하루 edit 3 안) | A27(첫 줄 가정 설정) 기계 검사를 copywriter와 aitell script·클립 관문에 넣자고 제안(문구 '~라고 해 볼게요'·'~했다고 해 보죠'가 첫 줄이면 걸림) |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-editor-web | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

@@ -1,3 +1,4 @@
+실측: 숫자 90.2/1,000단어 · 2개 이상 문장 13% · aitell script 통과 · AI 티 1.9 · 같은 끝 최장 3 (say_v2.txt 편집 뒤, firemap-editor 2026-10-14 17:08)
 # X-1 대본 심사 (youtube-loop 2026-10-14) — 통과선 평균 7(목표 8) · 심사 3명: 제미나이(second_opinion.py 대본, SO_NOLITE, gemini-3-flash-preview)·Claude 심사관(하위 작업자)·레드팀(하위 작업자, redteam-prompt.md, 원자료 손 검산)
 입력 review_in_script_v1.md(대본 v1.2+facts+calc_out+compete) · 제미나이 원문 review_in_script_v1_대본.md · 사실 검증 review_gemini_v1.md(3.8-flash, 막을 1 → 반영)
 

@@ -1,4 +1,5 @@
-실측: 숫자 89.2/1,000단어 · 2개 이상 문장 13% · 말 습관 4개 통과 · AI 티 3.9 · humanlike 질문 7.4%·같은 끝 최장 5 (say_v3.txt, 2026-10-14 12:5x)
+실측: 숫자 89.2/1,000단어 · 2개 이상 문장 13% · 말 습관 4개 통과 · AI 티 0.0 · humanlike 질문 7.4%·같은 끝 최장 4(편집 뒤) (say_v3.txt, 2026-10-14 12:5x)
+전제: 같은 20억 집 1세대1주택(취득 8억·필요경비 0) — 정부 문답 p.49 기본공제 확대 사례가 같은 20억 양도·10년 거주 규모(facts G10)라 실제 가능한 가정, 수현 씨 10년 보유·2년 거주는 표2 대상 최소 요건(L5) · 편집 firemap-editor 2026-10-14 17:07
 # T-1 대본 심사 (youtube-loop) — 통과선 평균 7(목표 8) · 심사 3명: 제미나이(second_opinion.py 대본, 3-flash 계열 전부 429 → 3.5-flash-lite)·Claude 심사관(하위 작업자)·레드팀(하위 작업자, redteam-prompt.md)
 입력: review_in_script_v2.md(대본 v2 + facts + calc_out + compete.md). 제미나이 원문 review_in_script_v2_대본.md. 사실 검증 review_gemini_v2.md(막을 0)·review_gemini_v3.md(막을 2 → 고침, 아래).
 

@@ -385,6 +385,26 @@ V['p4c'] = cards9('국민연금 · 1969년생(65세 수령) 기준', '일찍 받
 V['p4d'] = cards9('국민연금 일찍 받으면 · 1969년생 기준', '제때(65세) 받은 쪽이 더 많아지는 나이', '5년 일찍', '1년 일찍', big_fs=74)
 assert all(N5 in V[k] and N1 in V[k] and '1969년생' in V[k] for k in ('p4a', 'p4b', 'p4c', 'p4d'))
 
+# ── 23차 — 22차 세 명: p4a 6.92(제미나이 8·7.5·Claude 7.0·레드팀 6)·p4d 6.68·p4c 6.38·p4b 5.80·p2z 5.43(대조, 세 명 모두 최하).
+#    Claude 8점 처방: 물음 줄이 168px에서 가늘고 작음 → 약 1.3배(110px), 칸 아래 빈 곳 줄임. 레드팀: '76.7세부터'가 '받는 나이'로 읽힐 위험 → 칸 이름 '5년 일찍 받으면'으로 주어를 붙임.
+def cards10(top, big, l5, l1, big_fs=110, lab_fs=70, num=166, se=82):
+    w = 590; x1 = 1250 - w
+    tail = f"<span style='font-size:{se}px'>세부터</span>"
+    return f"""<div style='position:absolute;inset:0;background:#2A7A70'></div>
+<div class='t' style='left:40px;top:18px;font-size:52px;color:#CDE7E1'>{top}</div>
+<div class='t' style='left:36px;top:84px;font-size:{big_fs}px;color:#FFFFFF'>{big}</div>
+<div style='position:absolute;left:30px;top:226px;width:{w}px;height:464px;background:{CARD};border-radius:26px'></div>
+<div style='position:absolute;left:{x1}px;top:226px;width:{w}px;height:464px;background:#0D1320;border-radius:26px'></div>
+<div class='t' style='left:30px;top:262px;width:{w}px;text-align:center;font-size:{lab_fs}px;color:#4A5568'>{l5}</div>
+<div class='t' style='left:30px;top:404px;width:{w}px;text-align:center;font-size:{num}px;color:{INK}'>{N5}{tail}</div>
+<div class='t' style='left:{x1}px;top:262px;width:{w}px;text-align:center;font-size:{lab_fs}px;color:#C9D3E6'>{l1}</div>
+<div class='t' style='left:{x1}px;top:404px;width:{w}px;text-align:center;font-size:{num}px;color:{ORG}'>{N1}{tail}</div>
+"""
+
+
+V['p4e'] = cards10('국민연금 · 1969년생(65세 수령) 기준', '일찍 받으면 몇 살부터 손해?', '5년 일찍 받으면', '1년 일찍 받으면')
+assert N5 in V['p4e'] and N1 in V['p4e']
+
 if __name__ == '__main__':
     M.VARIANTS.update(V)
     keys = sys.argv[1].split(',') if len(sys.argv) > 1 else list(V)

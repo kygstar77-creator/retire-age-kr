@@ -1,11 +1,11 @@
-# T-1 1세대 1주택 고가주택 양도세 — 현행(~'27) vs 정부안('28 중간·'29 본격). 원문: raw/law_55·95·103·104, dec_160, J-1/raw/mofe_0803_8.txt p.37~38
+# T-1 1세대 1주택 고가주택 양도세 — 2026=지금 법(현행) · 2027=정부안 장특 유예(현행 공제율)+기본공제 확대 vs 정부안('28 중간·'29 본격). 원문: raw/law_55·95·103·104, dec_160, J-1/raw/mofe_0803_8.txt p.37~38
 # 가정: 필요경비 0(취득세·중개수수료 빼지 않음), 2년 이상 보유(기본세율 §104①1), 조정지역 다주택 아님. 지방소득세(10%)는 따로 표시.
 import sys
 sys.stdout.reconfigure(encoding='utf-8')
 EOK = 1e8
 def rate(regime, hold, live):
     if hold < 3 or live < 2: return None  # 표2 요건 밖 — 이 편에서 안 다룸(비거주 1주택 정부안 처리 확인 필요)
-    if regime == '2027':
+    if regime in ('2026', '2027'):
         h = min(40, 4*hold) if hold >= 3 else 0  # 표2 보유 3년 12%…10년 40%
         l = 8 if live < 3 else min(40, 4*live)
         return h, l, None
@@ -26,9 +26,12 @@ def calc(sell, buy, hold, live, regime):
     h, l, cap = rate(regime, hold, live)
     ded = gain*(h+l)/100*part                       # §160 ①2
     if cap: ded = min(ded, cap)                     # 정부안 공제 한도(물건별)
-    base = max(0, tg - ded - 250e4)                 # §103 기본공제
+    basic = 250e4                                   # §103① 기본공제 연 250만원
+    if regime != '2026' and live >= 10 and sell <= 30*EOK:
+        basic = 2500e4                              # 정부안 §103 단서('27.1.1 이후 양도): 10년 이상 거주·양도가 30억 이하 1세대1주택 2,500만원 (상세본 p.68)
+    base = max(0, tg - ded - basic)
     t = tax55(base)
-    return dict(tg=tg, rate=h+l, ded=ded, base=base, tax=t, total=t*1.1)
+    return dict(tg=tg, rate=h+l, ded=ded, basic=basic, base=base, tax=t, total=t*1.1)
 CASES = [  # (이름, 양도가, 취득가, 보유, 거주, 정부 표 산출세액 '27·'28·'29 억원)
  ('정부 사례①', 32*EOK, 12*EOK, 10, 2, (2.36, 3.20, 4.05)),
  ('정부 사례②', 75*EOK, 25*EOK, 10, 10, (3.16, 9.23, 13.73)),
@@ -41,8 +44,13 @@ CASES = [  # (이름, 양도가, 취득가, 보유, 거주, 정부 표 산출세
 if __name__ == '__main__':
     for name, s, b, h, l, gov in CASES:
         print(f'== {name}: 양도 {s/EOK:g}억 취득 {b/EOK:g}억 보유 {h}년 거주 {l}년')
-        for i, rg in enumerate(('2027', '2028', '2029')):
+        for i, rg in enumerate(('2026', '2027', '2028', '2029')):
             r = calc(s, b, h, l, rg)
             chk = ''
-            if gov: chk = f" | 정부 {gov[i]:.2f}억 차 {r['tax']/EOK-gov[i]:+.3f}"
-            print(f"  {rg}: 공제율 {r['rate']}% 공제 {r['ded']/EOK:.3f}억 과표 {r['base']/EOK:.3f}억 산출 {r['tax']/1e4:,.0f}만원 (지방세 포함 {r['total']/1e4:,.0f}만원){chk}")
+            if gov and rg != '2026': chk = f" | 정부 {gov[i-1]:.2f}억 차 {r['tax']/EOK-gov[i-1]:+.3f}"
+            print(f"  {rg}: 공제율 {r['rate']}% 공제 {r['ded']/EOK:.3f}억 과표 {r['base']/EOK:.3f}억 기본공제 {r['basic']/1e4:,.0f}만 산출 {r['tax']/1e4:,.0f}만원 (지방세 포함 {r['total']/1e4:,.0f}만원){chk}")
+
+    # 문답 p.49 기본공제 확대 사례(10년 거주, 다른 양도소득·필요경비 없음): 현행(2026) vs 개정안(2027) 산출세액 '약' 만원
+    for name, sl, b, gov in (('정부 사례③ 기본공제', 20*EOK, 10*EOK, (1280, 740)), ('정부 사례④ 기본공제', 30*EOK, 15*EOK, (4750, 3900))):
+        r0, r1 = calc(sl, b, 10, 10, '2026'), calc(sl, b, 10, 10, '2027')
+        print(f"== {name}: 양도 {sl/EOK:g}억 취득 {b/EOK:g}억 10년 거주 | 2026 {r0['tax']/1e4:,.0f}만원(정부 약 {gov[0]:,}) → 2027 {r1['tax']/1e4:,.0f}만원(정부 약 {gov[1]:,})")

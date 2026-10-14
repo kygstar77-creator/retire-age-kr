@@ -44,15 +44,6 @@
     "by": "firemap-video-producer",
     "at": "2026-10-14 15:19",
     "gates_ok": "2026-10-14 15:19"
-   },
-   {
-    "item": "d1s_pension",
-    "ep": "work/research/cardshorts/d1s_pension",
-    "layout": "m1clip",
-    "status": "관문 통과(compete 6·숫자 대조 0·꼴 ⓐ~ⓓ m1clip·치직 0·쉿소리 −14.8dB·빈 곳 최대 34%·47.6초·제목 8.5·aitell 0.0/6.4) · 미업로드 — D-1 롱폼(GMc2Rd1-JYA) 공개됨, 칸만 정하면 w1g1clips_up.py · d1s_when(10/17 19:20)과 다른 날 · 근거 cardshorts/d1s_pension/review.md",
-    "by": "firemap-video-producer",
-    "at": "2026-10-14 23:25",
-    "gates_ok": "2026-10-14 23:25"
    }
   ],
   "cafe": [
@@ -1807,12 +1798,30 @@
    "note": "firemap-meeting 2026-10-14 21:33: 비축 c2s_jungwoo(c2person 틀) — C-2 롱폼(10/19 11:30) videoId 나온 뒤 업로드·예약. C-2가 10/19에 못 나가면 이 칸은 다른 롱폼 클립(c1clip 외 틀)으로 바꾼다"
   },
   {
+   "at": "2026-10-20 07:20",
+   "kind": "shorts",
+   "item": "h1s_walk",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-15 02:41",
+   "published": "예약 2026-10-20T07:20:00+09:00 https://youtu.be/JEbfJTewk-E (private+publishAt 10/19 22:20Z, 합성 표시 update True)",
+   "note": "firemap-video-producer 2026-10-15 02:41: H-1 롱폼(rVg0pQVo_wk) 고덕동 역 180m vs 640m·평당·학교·마트 클립, M1S pieces, 새 녹음 0 · yt_pair: JEbfJTewk-E · 짝 카페 글 요청(today.md) · 근거 cardshorts/h1s_walk/review.md"
+  },
+  {
    "at": "2026-10-20 11:30",
    "kind": "long",
    "item": "H-2(동네 손품 2편: 대치·잠실·반포)",
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
    "note": "firemap-meeting 2026-10-12 19:04: 순돌이 10/11 지시 동네 손품 매주 고정 1편 — series-plan 4-2 표 4~6번(은마 62,570·잠실주공5단지 29,790·반포자이 39,490). H-1 방식(tour.py) 재사용, 대본 10/19까지, 제작 PD | youtube-loop 2026-10-14 08:49: J-1과 칸 바꿈 → 10/20(심사 7.87·편집 07:10 통과로 준비 앞섬, 관문 기한 10/19 11:30·녹음 10/18 16:01 창)"
+  },
+  {
+   "at": "2026-10-20 19:20",
+   "kind": "shorts",
+   "item": "d1s_pension",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-14 23:25",
+   "published": "예약 2026-10-20T19:20:00+09:00 https://youtu.be/SW7RAxLiY6g (private+publishAt 10:20Z, 합성 표시 update True)",
+   "note": "firemap-video-producer 2026-10-15 02:41: 비축 d1s_pension(D-1 GMc2Rd1-JYA 연금 건보료 절벽) 업로드 · 같은 날 07:20 h1s_walk(H-1)과 다른 롱폼 · yt_pair: SW7RAxLiY6g · 짝 카페 글 요청(today.md)"
   },
   {
    "at": "2026-10-21 11:30",

@@ -5,6 +5,10 @@
 import React from 'react';
 import {AbsoluteFill, Audio, Img, Sequence, interpolate, spring, staticFile, useCurrentFrame, Easing} from 'remotion';
 import {T, F, CL, FONT_CSS, Flame, HandCircle} from './parts/fm';
+import {capPages} from './motion/TallyFrame';
+import {wordTimings, activeWord, pageOf} from './motion-proto/captionTiming';
+// 말 자막은 caption-spec(한 쪽 18자, 5자 이하 꼬리는 앞 쪽에) 쪽으로 나눠 말 속도에 맞춰 넘긴다 — W-1 TallyFrame과 같은 함수(10/14 PD)
+const capPage = (text: string, frames: number, f: number) => { const pages = capPages(text); const tm = wordTimings(text, frames, 0.92); return pages[pageOf(pages, Math.max(0, activeWord(tm, f)))]?.text ?? text; };
 
 type CLine = {text: string; audio: string; frames: number};
 type CScene = {kind: string; lines: CLine[]; frames: number; data: any};
@@ -24,7 +28,7 @@ const Caption: React.FC<{s: CScene; dark?: boolean}> = ({s, dark}) => {
   return (
     <div style={{position: 'absolute', bottom: 58, left: 0, right: 0, display: 'flex', justifyContent: 'center', opacity: o}}>
       <div style={{...F, fontWeight: 700, fontSize: 40, lineHeight: 1.35, color: '#fff', background: dark ? 'rgba(16,17,20,0.86)' : T.ink,
-        padding: '14px 34px', borderRadius: 16, maxWidth: 1500, textAlign: 'center', wordBreak: 'keep-all'}}>{s.lines[k].text.replace(/^"|"$/g, '')}</div>
+        padding: '14px 34px', borderRadius: 16, maxWidth: 1500, textAlign: 'center', wordBreak: 'keep-all'}}>{capPage(s.lines[k].text, s.lines[k].frames, f - st[k]).replace(/^"|"$/g, '')}</div>
     </div>
   );
 };
@@ -400,6 +404,28 @@ const Cta: React.FC<{s: CScene}> = ({s}) => {
   );
 };
 
+// ───────── 그림 끼우기(10/14 PD, U5 같은 화면 8초): 흰 보드 장면의 몇 줄 동안 장면 그림(visual/N1-person)을 화면 전체로 덮는다 ─────────
+// data.cutaways = [[줄 번호, 그림 경로, 시작 비율(0~1, 생략 0), 끝 비율(생략 1)], …] — 보드는 밑에서 그대로 진행, 새 글자 0(자막은 그 줄 글자, 출처는 보드 출처).
+const CutAway: React.FC<{src: string; text: string; lf: number; off: number; source: string; badge: string; n: number; gray?: boolean}> = ({src, text, lf, off, source, badge, n, gray}) => {
+  const f = useCurrentFrame(); const z = interpolate(f, [0, n], [1.0, 1.07], CL);
+  return (
+    <AbsoluteFill style={{background: '#000', overflow: 'hidden'}}>
+      <Img src={staticFile(src)} style={{position: 'absolute', left: (W - W * z) / 2, top: (H - H * z) / 2, width: W * z, height: H * z, filter: gray ? 'grayscale(1) brightness(0.6)' : undefined}} />
+      <div style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: 330, background: 'linear-gradient(rgba(16,17,20,0), rgba(16,17,20,0.85))'}} />
+      <div style={{position: 'absolute', left: 64, top: 56, padding: '6px 16px', borderRadius: 10, background: 'rgba(255,255,255,0.9)'}}>
+        <span style={{...F, fontWeight: 700, fontSize: 24, color: T.ink, whiteSpace: 'nowrap'}}>{badge}</span></div>
+      <div style={{...F, fontWeight: 500, fontSize: source.length > 120 ? 17 : 20, color: 'rgba(255,255,255,0.75)', position: 'absolute', left: 64, right: 110, bottom: 18, whiteSpace: 'nowrap', overflow: 'hidden'}}>{source}</div>
+      <div style={{position: 'absolute', bottom: 58, left: 0, right: 0, display: 'flex', justifyContent: 'center'}}>
+        <div style={{...F, fontWeight: 700, fontSize: 40, lineHeight: 1.35, color: '#fff', background: 'rgba(16,17,20,0.86)', padding: '14px 34px', borderRadius: 16, maxWidth: 1500, textAlign: 'center', wordBreak: 'keep-all'}}>{capPage(text, lf, f + off).replace(/^"|"$/g, '')}</div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+// 그림이 덮는 동안 밑의 보드는 그리지 않는다(겹침 검사가 가려진 보드 글자를 잡음 — 보드 애니메이션은 프레임으로 계산해 그 뒤 그대로 이어짐)
+const cutRanges = (s: CScene) => { const st = starts(s.lines); return (s.data.cutaways || []).map((c: any[]) => { const lf = s.lines[c[0]].frames; return [st[c[0]] + Math.round(lf * (c[2] ?? 0)), st[c[0]] + Math.round(lf * (c[3] ?? 1))]; }); };
+const UnderCut: React.FC<{s: CScene; C: React.FC<{s: CScene}>}> = ({s, C}) => { const f = useCurrentFrame(); return cutRanges(s).some((r: number[]) => f >= r[0] && f < r[1]) ? null : <C s={s} />; };
+
 const KIND: Record<string, React.FC<{s: CScene}>> = {chart: ChartScene, bars: BarsScene, preview: Preview, who: Who, fx: Fx, tax: Tax, fx08: Fx08, jar: Jar, sum: Sum, yh: Yh, wall: Wall, amount: Amount, race: Race, cut: Cut, cta: Cta};
 
 // ───────── 고정 칸: 바닥나는 해 ─────────
@@ -423,7 +449,9 @@ export const C2: React.FC<C2Props> = (p) => {
       {p.scenes.map((s, i) => {
         const C = s.kind === 'pic' ? null : KIND[s.kind]; const st = starts(s.lines);
         const el = <Sequence key={i} from={from} durationInFrames={s.frames}>
-          {s.kind === 'pic' ? <PicScene s={s} badge={p.badge} /> : C ? <C s={s} /> : null}
+          {s.kind === 'pic' ? <PicScene s={s} badge={p.badge} /> : C ? <UnderCut s={s} C={C} /> : null}
+          {(s.data.cutaways || []).map((c: [number, string, number?, number?, boolean?], j: number) => { const lf = s.lines[c[0]].frames; const a = st[c[0]] + Math.round(lf * (c[2] ?? 0)); const n = Math.round(lf * ((c[3] ?? 1) - (c[2] ?? 0)));
+            return <Sequence key={'c' + j} from={a} durationInFrames={n}><CutAway src={c[1]} text={s.lines[c[0]].text} lf={lf} off={a - st[c[0]]} source={s.data.source || ''} badge={p.badge} n={n} gray={!!c[4]} /></Sequence>; })}
           {s.lines.map((l, j) => <Sequence key={j} from={st[j]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
         </Sequence>;
         from += s.frames; return el;

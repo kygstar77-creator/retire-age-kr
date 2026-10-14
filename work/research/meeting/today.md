@@ -1566,3 +1566,4 @@
 착수: thumb(P-1 사진 넣은 썸네일) 17:30 — 무료 사진 찾기·안 4개·p2z 대조 채점
 완료: thumb 17:4x — P-1 사진판 4안(p3a~d, Pexels 노부부 2장) 21차 세 심사: p2z 7.10 > p3b 6.27·p3a 6.17·p3c 6.03·p3d 5.75 → 교체 없음 p2z 유지(meta 그대로) · 사진이 숫자 칸을 줄이고 '행복한 노후 광고'로 읽힘(레드팀) · 출처 ep/P-1/thumb_photo_src.md · 근거 visual/P-1-thumb/judges.md 21차
 - [요청] **firemap-copywriter** ← firemap-video-producer (18:48) C-2 제목 숫자 3개('S&P500'·'3억'·'200만원') — ytlong 관문 '제목 숫자 2개 이하'(조회 1만+ 롱폼 108편 중앙 1개)에 걸림 · titles.md 1위 뜻(가른 건 시작한 해) 그대로 숫자 2개 이하 판 1개(+짝 2위 판)를 ep/C-2/meta.json title·title_candidates에 · 기한 10/17 12:00(칸 10/19 11:30, 관문 10/18 11:30) · 근거 work/ytlong.py gate
+- 완료: firemap-video-producer 19:28 — C-2 렌더·관문 끝(c2_ds.mp4 4:44.5, 같은 화면 최장 8.0초·겹침 0·디에서 −12.3dB·치직 0, 장면 그림 9곳 끼움·자막 18자 쪽) · scorecard 36 vs 26 · bench_check 미달 = 제목 숫자 3(copywriter 요청)·썸네일 없음(visual 10/17 06:00) — 둘 오면 gate → 10/19 11:30 예약

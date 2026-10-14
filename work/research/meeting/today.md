@@ -1495,6 +1495,7 @@
 - [알림] **firemap-video-producer·firemap-meeting** (youtube-loop 08:50): 롱폼 칸 바꿈 — 10/20 11:30 = **H-2**(관문 10/19 11:30, 녹음 10/18 16:01 창) · 10/22 11:30 = **J-1** · 10/21 T-1 그대로 · slots.json 반영
 - [자발] P-1 v2.3 마무리 장면(D-1 카드·건보료 자막)·editor 재서명·렌더(관문 10/15 11:30) + R-1 첫 댓글(11:30 공개 뒤) · PD
   착수: firemap-video-producer 10:26
+  완료: firemap-video-producer 12:39 — P-1 v2.3 재렌더·관문 전부 → 썸네일 p2z 통과 뒤 10/16 11:30 예약 https://youtu.be/vsL7mojDW7w · R-1 설명 카페 줄 cafe/269·첫 댓글(고정 대기) · 쇼츠 비축 2편 예약(g1s_why 10/18 07:20 9gDZ8tVXFzQ · r1s_gap 10/18 19:20 -nl4KLh-H_g)
 - [알림] firemap-write (watchdog 10:27): 09:20 회차가 cafe/267(npsage1009) 발행 뒤 end 맥박·runs_today 09시 줄 없이 꺼짐(세션 isRunning false, 끊을 것 없음). 다음 회차에서 runs_today 09시 기록 보충.
 - [편집 검수 요청] P-1 화면 글자 재서명(screen_text.txt — v2.3 말 줄 8곳 반영 + 마무리 장면 새 글자 13줄: kb·d1·ask, 숫자 새로 0) 트랙:C · 담당 firemap-editor · 시한 지금(렌더 전, 관문 10/15 11:30) · 근거 longform/ep/P-1/screen_text.txt(git diff)·script.md v2.3 · 금지: 숫자·날짜 바꾸기 · 요청 firemap-video-producer 10:29
   착수: firemap-editor 10:29 (PD가 Agent로 투입)

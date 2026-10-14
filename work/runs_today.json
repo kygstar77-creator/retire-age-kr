@@ -1,136 +1,18 @@
 {
- "date": "2026-10-14",
+ "date": "2026-10-15",
  "runs": [
   {
    "hour": 6,
-   "ts": "06:54",
+   "ts": "06:44",
    "blog": {
     "title": null,
     "url": null
    },
    "cafe": {
-    "title": "월배당 ETF로 매달 100만원 받으려면 건보료까지 떼고 얼마가 필요할까",
-    "url": "https://cafe.naver.com/firemap/265"
+    "title": "마이너스통장 500만원 이자는 은행 다섯 곳마다 얼마나 다르고 며칠 쓰면 얼마일까",
+    "url": "https://cafe.naver.com/firemap/277"
    },
-   "note": "블로그 없음(02~07시 카페만·블로그 색인 0% 경보) · 카페 06:10 m1cafe1014(M-1 짝) cafe/265 06:43 verify OK 1866/1866자·사진 3/3, 장부 published 자동 기입 확인 · 첫 시도 sameday 거부(15:10 m1stot1013과 예시 숫자 5개) → m1stot1013 10/15 15:10로 옮김 · 새로 씀: h1cafe1015(10/15 09:10 H-1 짝, 관문 통과 — 자료 H-1 facts·calc_out·cafe_table, 새 숫자 0) · rateloan1014(10/14 15:10, 주담대 변동·고정 은행 15곳 — WebSearch 6건·ECOS·금감원 finlife·계산, 관문 진행) · 교차검증: h1 사실 4 중 반영 1·유지 3, 말투 6 중 반영 3 / rate 사실 4 중 반영 1·유지 3(ECOS 원값·자체 계산기), 말투 14 중 반영 5 · 검증 경로 crosscheck(Gemini)+레드팀 Claude 2회씩 · 개선: naverpost verify→slots.json published 자동 기입, blogimg.table 폭 인자 W"
-  },
-  {
-   "hour": 7,
-   "ts": "07:47",
-   "blog": null,
-   "cafe": {
-    "title": "계약갱신청구권 실거주 거절한 집에 새 세입자가 들어오면 배상금은 얼마일까",
-    "url": "https://cafe.naver.com/firemap/266"
-   },
-   "note": "firemap-write-b 07:40 칸 renew1011(부동산, 10/13 08:29 관문 통과분·editgate 해시 일치) 발행 · verify OK 1579/1579자·사진 3/3 · 게시판 부동산 · 관련 영상 없음(공개 롱폼 중 주제 맞는 편 없음) · 발행기 경고: 오늘 제목 끝말 '얼마' 3칸 · 확인 창 처리 Timeout(발행·verify는 정상) · 개선: 없음"
-  },
-  {
-   "hour": 10,
-   "ts": "10:46",
-   "task": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "청약통장 해지 추징 54만원, 세율 낮으면 절반 넘게 줄이는 조건",
-    "url": "https://cafe.naver.com/firemap/268"
-   },
-   "note": "10:40 칸 cheongyak1012(관문 10/13 12:37 통과분) · 발행 전 재확인 editgate 해시 일치·readcheck 0·aitell 0.0 · verify OK 1092/1092자·사진 3/3 · 게시판 자동→돈 관리 · 관련 영상 없음(청약 주제 공개 영상 없음, 억지 연결 안 함) · slot.txt를 순돌이 칸 맞바꿈(e8feab1)에 맞춤 · 개선: 교본에 'slot.txt↔장부 시각 대조' 한 줄"
-  },
-  {
-   "hour": 12,
-   "ts": "12:39",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "1억 예금과 미국 ETF 셋, 세금·환율 떼고 통장에 남은 돈",
-    "url": "https://cafe.naver.com/firemap/269"
-   },
-   "note": "카페 12:10 칸 R-1 짝 글(영상 공개 확인 뒤) verify OK 1214/1214·사진 3/3 · 블로그 없음(하루 1편·9/24 이후 무색인 방침) · 다음 칸 jeonse1015 관문 통과(레드팀 3회 틀림 0·제미나이 제목 8.5·8.5·표지 8·8) · 개선: 교본에 '~는데 제목은 editgate 거부·표지 비교 기준 윗줄' 기록"
-  },
-  {
-   "hour": 13,
-   "ts": "13:51",
-   "task": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "QQQM과 QQQ 1년 보유 결과, 보수 차이보다 더 벌어진 수익",
-    "url": "https://cafe.naver.com/firemap/270"
-   },
-   "note": "13:40 칸 qqqm1014(10/13 관문 통과분). naverpost 읽기검사가 제목 숫자 2개로 막아 제목 교체(제미나이 2회 7·7)·본문 '보유' 1곳·게시판 ETF · readcheck 0·aitell 2.6·selfcheck 사실 0·editgate 재서명 · verify OK 1251/1251자·사진 4/4 · 관련 영상: QQQ 다룬 공개 영상 없어 안 넣음 · 블로그 없음(색인 브레이크) · 개선: 없음"
-  },
-  {
-   "hour": 15,
-   "ts": "15:41",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "주담대금리 기준금리 3% 시대, 은행별 변동·고정 차이는 얼마일까",
-    "url": "https://cafe.naver.com/firemap/271"
-   },
-   "note": "카페 15:10 칸 rateloan1014 verify OK 1157/1157·사진 3/3 · 블로그 0(DAY_CAP·색인 0 경보, 이번 회차 카페만) · 새 편 pencap1015(10/15 18:10) 자료조사 WebSearch 3회 5건+법령 API 소득세법·시행령 원문 11항목 · 검증 경로 crosscheck(Gemini) 사실 3 반영 + selfcheck 사실 0 + 레드팀 2회 틀림 2 반영 · 개선: 없음(selfloop 일감표는 시간상 건너뜀)"
-  },
-  {
-   "hour": 16,
-   "ts": "16:53",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "퇴직연금 DC형으로 바꿀까, 임금피크 앞두면 계산이 달라지는 이유",
-    "url": "https://cafe.naver.com/firemap/272"
-   },
-   "note": "firemap-write-b 16:40 칸 dcpension1014(10/13 16:34 관문 통과분: 제목 7.9·표지 K4·compare 6편·readcheck 0·selfcheck 사실 0·crosscheck·레드팀 2회·editgate auto 해시 일치) 발행 · verify OK 1279/1279자·사진 3/3 · 게시판 자동 → 연금/세금/보험 · 관련 영상 없음(퇴직연금 주제 공개 영상 없어 억지 연결 안 함) · 블로그 0(카페 전용 회차) · 새 자료조사 없음(비축 칸 발행) · 개선: 없음 · 10/15 07:40·13:40·16:40·19:40·21:10·22:40 칸 TBD — 07:40 관문 기한 01:40"
-  },
-  {
-   "hour": 18,
-   "ts": "18:41",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "아파트 월세 같은 단지·같은 면적끼리 보면 작년보다 5.6% 상승",
-    "url": "https://cafe.naver.com/firemap/273"
-   },
-   "note": "18:10 칸 aptrent1013(부동산, 비축) 발행 18:40 · verify OK 1430/1430자·사진 3/3 · 장부 published 자동 · 게시판 부동산 · 관문은 10/13 18:45 통과분(교차검증·selfcheck 사실 0) · 블로그 없음(카페 전용 조직) · 관련 영상: 맞는 공개 부동산 영상 없음(H-1은 10/15 공개) · 보조 2명: 10/15 21:10 경제·주식 새 편, 10/16 06:10 부동산 새 편 관문 작업 · 개선: 일감표 1번(죽은 회차) 원인 기록"
-  },
-  {
-   "hour": 19,
-   "ts": "19:51",
-   "task": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "미국 ETF 환차손, 달러로 번 1년 수익은 원화로 몇 % 줄었을까",
-    "url": "https://cafe.naver.com/firemap/274"
-   },
-   "note": "19:40 칸 r1cafe_fx1014(쇼츠 r1s_fx k1hsFpaLDH0 짝, 관문 10/13 14:38 통과·editgate 해시 일치) · 쇼츠·본편 둘 다 oembed 200(공개) 확인 후 발행 · verify OK 1236/1236자·사진 3/3 · 게시판 ETF(자동) · 개선: 없음"
-  },
-  {
-   "hour": 21,
-   "ts": "21:45",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "주식 증여 급락일에 넘겨도 삼성전자 평가액 28% 높게 나온 계산",
-    "url": "https://cafe.naver.com/firemap/275"
-   },
-   "note": "21:10 칸 stockgift1013(10/13 관문 통과분) 발행 · verify OK 1623/1623자·사진 3/3 · 발행 전 관련 영상 줄 추가(W-1 0yWQeW38UJE, public 확인)·editgate auto 재stamp·aitell 0.0 · 블로그 없음(하루 1편 상한·색인 0/12) · 다음: p1cafe1016(10/16 12:10 P-1 짝 글) 관문 진행 · 개선: playbook에 '본문 URL은 한 줄 따로' 추가"
-  },
-  {
-   "hour": 22,
-   "ts": "22:54",
-   "blog": null,
-   "cafe": {
-    "title": "배당금이 세후 월 얼마를 넘으면 건강보험료 소득에 전부 잡힐까",
-    "url": "https://cafe.naver.com/firemap/276"
-   },
-   "note": "firemap-write-b 22:40 칸 m1snhis1013(비축, 관문 10/12 통과) · today.md 지시대로 끝에 건보료 계산기 줄(firemap.kr/health-insurance utm_campaign=m1snhis1013) 추가 → readcheck 0·selfcheck 사실 0·aitell 0.0·editgate 재서명 auto 22:46 · '권유 아님' 줄 있음 · 게시판 연금/세금/보험 · verify OK 1251/1251자·사진 3/3 · 개선: 없음(계산기 줄 editgate 강제 검사는 미구현)"
+   "note": "블로그 없음(02~07시 카페만·하루 1편 상한·색인 0% 경보) · 카페 06:10 칸 minus1015 cafe/277 verify OK 1191/1191자·사진 3/3(관련 영상 없음) · 07:40 칸 intc1015 관문 통과(SEC 8-K 보도자료·나스닥·야후 10/14 종가 2곳 일치, 출처 9, 교차검증 Gemini: 사실 4건 중 반영 3·유지 1(반올림), 말투 8건 중 반영 6, 레드팀 2회 틀림 0) · 13:40 칸 cpi1015(경제, 미국 9월 CPI) 보조가 관문 통과(FRED·ECOS, 레드팀 재계산 일치) · p1cafe1016 기본연금액 단서 한 줄·재날인 · 개선: 카페 틀 v2(끝 정리 소제목)·cover_review 평균 줄을 stamp 전에 갖추지 않아 한 번 거부됨 → review 순서에 반영(playbook)"
   }
  ]
 }

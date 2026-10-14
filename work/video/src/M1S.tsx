@@ -418,6 +418,38 @@ const Total: React.FC<{s: SScene}> = ({s}) => {
   );
 };
 
+// 조각 막대(10/14 PD, g1s_why): 0선(가운데)에서 +는 오른쪽, −는 왼쪽. 줄마다 막대 하나씩 · 글자(이름·값)는 막대 위 줄에 두어 판 밖으로 안 나감.
+// data: ghost(true면 줄 전에도 이름만 흐리게) · head [글, 줄] · zero 0선 이름 · max(%) · rows [이름, 작은 글, 값, 값 글, 줄, 색] · hi [행 번호들, 줄] · note [글, 줄]
+const Pieces: React.FC<{s: SScene}> = ({s}) => {
+  const f = useCurrentFrame(); const d = s.data; const A = (x: number | null | undefined) => atL(s, x);
+  const cx = 500, half = 440, k = half / d.max, y0 = d.head ? 150 : 60, step = d.rows.length > 3 ? 150 : 190;
+  const hiOn = d.hi && f >= A(d.hi[1]) && (d.hi[2] == null || f < A(d.hi[2]));
+  return (
+    <>
+      {d.head ? <div style={{position: 'absolute', left: 40, top: 34, width: 920, ...pop(f, A(d.head[1]))}}><Txt s={44} c={T.ink}>{d.head[0]}</Txt></div> : null}
+      <div style={{position: 'absolute', left: cx - 2, top: y0 - 10, width: 4, height: d.rows.length * step + 10, background: T.ink3, opacity: 0.6}} />
+      <div style={{position: 'absolute', left: cx - 200, width: 400, top: y0 + d.rows.length * step + 6, textAlign: 'center'}}><Txt s={24} c={T.ink3}>{d.zero}</Txt></div>
+      {d.rows.map((r: any[], i: number) => {
+        const a = A(r[4]); const g = ease(f, a, 18); const w = Math.abs(r[2]) * k * g; const col = COL[r[5]] ?? T.ink;
+        const dim = hiOn && !d.hi[0].includes(i);
+        return (
+          <div key={i} style={{position: 'absolute', left: 0, top: y0 + i * step, width: BW, height: step, opacity: (f >= a ? 1 : d.ghost ? 0.3 : 0) * (dim ? 0.3 : 1)}}>
+            <div style={{position: 'absolute', left: 40, top: 0, width: 600}}><Txt s={40} c={T.ink}>{r[0]}</Txt><Txt s={24} c={T.ink2}>{r[1]}</Txt></div>
+            <div style={{position: 'absolute', right: 40, top: -4, textAlign: 'right', opacity: ease(f, a + 10, 10)}}><Txt s={64} c={col}>{r[3]}</Txt></div>
+            <div style={{position: 'absolute', top: step - 64, left: r[2] >= 0 ? cx : cx - w, width: w, height: 44, background: col, borderRadius: 10}} />
+          </div>
+        );
+      })}
+      {(() => {   // notes = [[글, 줄], …] 지금 줄까지 나온 것 중 마지막 하나(note 하나도 됨)
+        const ns: [string, number][] = d.notes ?? (d.note ? [d.note] : []); let cur: [string, number] | null = null;
+        ns.forEach((n) => { if (f >= A(n[1])) cur = n; });
+        return cur ? <div key={cur[0]} style={{position: 'absolute', left: 40, top: BH - 150, width: 920, height: 120, background: T.ink, borderRadius: 22, display: 'flex', alignItems: 'center', justifyContent: 'center', ...pop(f, A(cur[1]))}}>
+          <Txt s={50} c="#fff">{cur[0]}</Txt></div> : null;
+      })()}
+    </>
+  );
+};
+
 const Body: React.FC<{s: SScene; p: M1SProps}> = ({s, p}) => {
   switch (s.kind) {
     case 'ask': return <Ask s={s} />;
@@ -434,6 +466,7 @@ const Body: React.FC<{s: SScene; p: M1SProps}> = ({s, p}) => {
     case 'timeline': return <Timeline s={s} />;
     case 'ask1': return <Ask1 s={s} />;
     case 'total': return <Total s={s} />;
+    case 'pieces': return <Pieces s={s} />;
     default: return null;
   }
 };

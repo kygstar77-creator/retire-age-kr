@@ -1164,7 +1164,8 @@
    "owner": "firemap-write-b",
    "item": "cheongyak1012",
    "gates_ok": "2026-10-13 12:37",
-   "note": "순돌이 10/14 10:2x: 짝 글은 영상 공개 뒤로(비공개 링크 방지) 칸 맞바꿈 | firemap-write 2026-10-13 07:2x 배정: 청약통장(검색 18,740, 조특법 87조 원문, work/research/cheongyak1012 facts.txt만 있음 — 원고부터) · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 12:37: 관문 통과 — \"청약통장 해지 추징 54만원, 세율 낮으면 절반 넘게 줄이는 조건\"(제목 8.0·표지 Q5 8.0·compare.md 경쟁 8·readcheck 0·selfcheck 사실 0·aitell 0.0·레드팀 2회 틀림 1 반영·전 | 10/13 칸 재배치 10-14 16:10→10-14 12:10"
+   "note": "순돌이 10/14 10:2x: 짝 글은 영상 공개 뒤로(비공개 링크 방지) 칸 맞바꿈 | firemap-write 2026-10-13 07:2x 배정: 청약통장(검색 18,740, 조특법 87조 원문, work/research/cheongyak1012 facts.txt만 있음 — 원고부터) · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 12:37: 관문 통과 — \"청약통장 해지 추징 54만원, 세율 낮으면 절반 넘게 줄이는 조건\"(제목 8.0·표지 Q5 8.0·compare.md 경쟁 8·readcheck 0·selfcheck 사실 0·aitell 0.0·레드팀 2회 틀림 1 반영·전 | 10/13 칸 재배치 10-14 16:10→10-14 12:10",
+   "published": "https://cafe.naver.com/firemap/268 10:46 verify OK 1092자"
   },
   {
    "at": "2026-10-14 11:30",
@@ -1628,6 +1629,15 @@
    "owner": "firemap-write-b",
    "gates_ok": null,
    "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+  },
+  {
+   "at": "2026-10-18 07:20",
+   "kind": "shorts",
+   "item": "g1s_why",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-14 11:07",
+   "published": "예약 2026-10-18T07:20:00+09:00 https://youtu.be/PwMsHCqPhR4 (private+publishAt 22:20Z, 합성 표시 update 응답 True)",
+   "note": "firemap-video-producer 2026-10-14 11:07: G-1 롱폼(xBTZtRp5lMs) 3장 세 조각 클립, M1S 틀(c1clip ⓓ 회피), 새 녹음 0 — 관문 cardshorts/g1s_why/review.md · 같은 날 11:30 롱폼 N-2(다른 축) · 19:20 칸은 G-1 아닌 롱폼으로"
   },
   {
    "at": "2026-10-18 11:30",

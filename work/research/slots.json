@@ -1256,7 +1256,8 @@
    "item": "stockgift1013",
    "owner": "firemap-write",
    "gates_ok": "2026-10-13 18:56",
-   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | write 2026-10-13 21:22: 비축 stockgift1013 배정 — 본문 반환 기한 10월 말 때문에 10/14~16 칸만"
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | write 2026-10-13 21:22: 비축 stockgift1013 배정 — 본문 반환 기한 10월 말 때문에 10/14~16 칸만",
+   "published": "https://cafe.naver.com/firemap/275 21:41 verify OK 1623자"
   },
   {
    "at": "2026-10-14 22:40",
@@ -1427,7 +1428,7 @@
    "item": "TBD",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+   "note": "firemap-meeting 2026-10-14 21:33: 10/16 부동산 2번째 칸(06:10 costchk1016 다음) — 국토부 실거래·공시가격·대출 규제 원문 | 순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
   },
   {
    "at": "2026-10-16 10:40",
@@ -1449,10 +1450,10 @@
   {
    "at": "2026-10-16 12:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "p1cafe1016",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "순돌이 10/13 짝 글: 같은 날 11:30 long 'P-1'의 카페 짝 글. 공개된 영상 링크를 본문 끝에, 영상 설명 앞 5줄에는 이 글 주소. 짝이 TBD면 PD가 정한 쇼츠를 따른다. | 순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상",
+   "note": "firemap-meeting 2026-10-14 21:33: P-1 짝 글(yt_pair: vsL7mojDW7w, 영상 11:30 공개 뒤) — 출생연도별 수령나이 표·1~5년 당김/미룸 같아지는 나이 표·519만원 계단(ep/P-1 calc_out·facts 그대로), '영수증' 표현 금지. 글 주소 나오면 PD가 설명 '카페 전체 표' 줄 교체 | 순돌이 10/13 짝 글: 같은 날 11:30 long 'P-1'의 카페 짝 글. 공개된 영상 링크를 본문 끝에, 영상 설명 앞 5줄에는 이 글 주소. 짝이 TBD면 PD가 정한 쇼츠를 따른다. | 순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상",
    "pair": "P-1"
   },
   {
@@ -1648,6 +1649,14 @@
    "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
   },
   {
+   "at": "2026-10-18 06:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대"
+  },
+  {
    "at": "2026-10-18 07:20",
    "kind": "shorts",
    "item": "g1s_why",
@@ -1655,6 +1664,30 @@
    "gates_ok": "2026-10-14 11:07",
    "published": "예약 2026-10-18T07:20:00+09:00 https://youtu.be/9gDZ8tVXFzQ (v2 넷째 막대 가림 고친 판 — 옛 PwMsHCqPhR4 예약 풀음)",
    "note": "firemap-video-producer 2026-10-14 11:07: G-1 롱폼(xBTZtRp5lMs) 3장 세 조각 클립, M1S 틀(c1clip ⓓ 회피), 새 녹음 0 — 관문 cardshorts/g1s_why/review.md · 같은 날 11:30 롱폼 N-2(다른 축) · 19:20 칸은 G-1 아닌 롱폼으로"
+  },
+  {
+   "at": "2026-10-18 07:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대 · 짝 글: 07:20 쇼츠 g1s_why(9gDZ8tVXFzQ) 질문 하나 표, 쇼츠 공개 뒤"
+  },
+  {
+   "at": "2026-10-18 09:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대 · 부동산 칸(하루 2칸 이상)"
+  },
+  {
+   "at": "2026-10-18 10:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대"
   },
   {
    "at": "2026-10-18 11:30",
@@ -1665,6 +1698,46 @@
    "note": "firemap-meeting 2026-10-13 21:32: 소득 상위%(같은 나이끼리) — 대본 8.10·카피 F3 확정. 관문 기한 10/17 11:30, 녹음 10/16 16:01 창 전. 축: 경제·통계"
   },
   {
+   "at": "2026-10-18 12:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대 · 짝 글: 11:30 롱폼 N-2 전체 표(yt_pair: N-2), 영상 공개 뒤"
+  },
+  {
+   "at": "2026-10-18 13:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대 · X-CAFE-1 판정: 12~17시 칸에 검색형 핵심 글(세금·부동산) 우선"
+  },
+  {
+   "at": "2026-10-18 15:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대 · 부동산 칸(하루 2칸 이상)"
+  },
+  {
+   "at": "2026-10-18 16:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대 · X-CAFE-1 판정: 12~17시 칸에 검색형 핵심 글(세금·부동산) 우선"
+  },
+  {
+   "at": "2026-10-18 18:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대"
+  },
+  {
    "at": "2026-10-18 19:20",
    "kind": "shorts",
    "item": "r1s_gap",
@@ -1672,6 +1745,30 @@
    "gates_ok": "2026-10-14 11:28",
    "published": "예약 2026-10-18T19:20:00+09:00 https://youtu.be/-nl4KLh-H_g (private+publishAt 10:20Z, 합성 표시 update 응답 True)",
    "note": "firemap-video-producer 2026-10-14 11:28: R-1 롱폼(G1oI47miUuo) 순위·SCHD−예금 간격 클립, M1S 틀, 새 녹음 0 — 관문 cardshorts/r1s_gap/review.md · 같은 날 07:20 g1s_why(G-1)와 다른 롱폼"
+  },
+  {
+   "at": "2026-10-18 19:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대 · 짝 글: 19:20 쇼츠 r1s_gap(-nl4KLh-H_g) 질문 하나 표"
+  },
+  {
+   "at": "2026-10-18 21:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대"
+  },
+  {
+   "at": "2026-10-18 22:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대"
   },
   {
    "at": "2026-10-19 07:20",
@@ -1689,6 +1786,14 @@
    "owner": "firemap-video-producer",
    "gates_ok": null,
    "note": "firemap-meeting 2026-10-13 21:32: 가상 인물 정우 씨 팔아 쓰기(N1 시범). 편집 통과 10/13, 그림 20장 visual 10/16, 녹음 10/17 창. 합성 표시 True. 축: 주식 인출"
+  },
+  {
+   "at": "2026-10-19 19:20",
+   "kind": "shorts",
+   "item": "c2s_jungwoo",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-14 15:19",
+   "note": "firemap-meeting 2026-10-14 21:33: 비축 c2s_jungwoo(c2person 틀) — C-2 롱폼(10/19 11:30) videoId 나온 뒤 업로드·예약. C-2가 10/19에 못 나가면 이 칸은 다른 롱폼 클립(c1clip 외 틀)으로 바꾼다"
   },
   {
    "at": "2026-10-20 11:30",

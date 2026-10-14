@@ -1,0 +1,339 @@
+{
+ "fps": 30,
+ "name": "c2s_jungwoo",
+ "layout": "c2person",
+ "question": [
+  "3억, 매달 200만원",
+  "언제 바닥났을까"
+ ],
+ "hot": "바닥",
+ "badge": "가상 인물 · 지수·환율은 실제, 통장은 계산",
+ "base": "S&P500 총수익 · 한국은행 환율 · 1월에 1년 치 매도 · 물가 미반영",
+ "scenes": [
+  {
+   "pic": "c2p/s1998.png",
+   "cx": 1079,
+   "year": "1998년 1월",
+   "num": "3억",
+   "sub": "매달 200만원씩 팔아 쓰기",
+   "zoom": [
+    1.3,
+    1.0
+   ],
+   "pan": -30,
+   "focus": 0.36,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [
+    "평생"
+   ],
+   "lines": [
+    {
+     "text": "퇴직금 3억을 미국 대형주 지수에 넣었어요.",
+     "audio": "audio/c-2/7eecc6f0e2ad572c.wav",
+     "frames": 83
+    },
+    {
+     "text": "\"매달 200만원씩만 팔아 쓰자. 이 정도면 평생 가겠지.\"",
+     "audio": "audio/c-2/e5d4ac140a694a8e.wav",
+     "frames": 122
+    }
+   ],
+   "frames": 205
+  },
+  {
+   "pic": "c2p/s1998.png",
+   "cx": 1079,
+   "year": "1998년 1월",
+   "num": "언제 바닥?",
+   "sub": "같은 돈 · 같은 규칙",
+   "zoom": [
+    1.35,
+    1.45
+   ],
+   "pan": 0,
+   "focus": 0.42,
+   "gray": false,
+   "blur": false,
+   "red": [
+    "바닥났을까요"
+   ],
+   "green": [],
+   "lines": [
+    {
+     "text": "이 통장은 언제 바닥났을까요?",
+     "audio": "audio/c-2/4f1fddc823e75afe.wav",
+     "frames": 64
+    }
+   ],
+   "frames": 64
+  },
+  {
+   "pic": "c2p/s2001.png",
+   "cx": 599,
+   "year": "2000~2002년",
+   "num": "3년 연속 하락",
+   "sub": "지수(달러 기준) · 떨어진 값에 팔기",
+   "zoom": [
+    1.04,
+    1.12
+   ],
+   "pan": 24,
+   "focus": 0.36,
+   "gray": false,
+   "blur": false,
+   "red": [
+    "떨어졌어요",
+    "더",
+    "많이"
+   ],
+   "green": [],
+   "lines": [
+    {
+     "text": "셋째 해부터 지수가 내리 떨어졌어요.",
+     "audio": "audio/c-2/8300a1e936611ee9.wav",
+     "frames": 88
+    },
+    {
+     "text": "떨어진 값에 팔면, 같은 돈을 만들려고 주식을 더 많이 내놓아야 하죠.",
+     "audio": "audio/c-2/5df5e93b00dad2b3.wav",
+     "frames": 134
+    }
+   ],
+   "frames": 222
+  },
+  {
+   "pic": "c2p/s2002.png",
+   "cx": 899,
+   "year": "2002년",
+   "num": "1억 6천만원",
+   "sub": "하락 셋째 해 말 통장",
+   "zoom": [
+    1.12,
+    1.02
+   ],
+   "pan": -20,
+   "focus": 0.36,
+   "gray": false,
+   "blur": false,
+   "red": [
+    "1억 6천만원이"
+   ],
+   "green": [],
+   "lines": [
+    {
+     "text": "\"올해도 팔아야 하나.\"",
+     "audio": "audio/c-2/547155db8741e3d8.wav",
+     "frames": 46
+    },
+    {
+     "text": "하락 셋째 해가 끝났을 때, 통장에는 1억 6천만원이 남았습니다.",
+     "audio": "audio/c-2/d423bf8cbc6b9ecd.wav",
+     "frames": 131
+    }
+   ],
+   "frames": 177
+  },
+  {
+   "pic": "c2p/s2009.png",
+   "cx": 860,
+   "year": "2007~2008년",
+   "num": "1억 밑",
+   "sub": "금융위기 직전 통장",
+   "zoom": [
+    1.0,
+    1.06
+   ],
+   "pan": -24,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [
+    "밑으로",
+    "금융위기가"
+   ],
+   "green": [],
+   "lines": [
+    {
+     "text": "금융위기 직전, 통장은 1억 밑으로 내려갔습니다.",
+     "audio": "audio/c-2/cd9ef29d7ea28351.wav",
+     "frames": 101
+    },
+    {
+     "text": "그리고 금융위기가 왔어요.",
+     "audio": "audio/c-2/48ce555d1c22f9cd.wav",
+     "frames": 74
+    }
+   ],
+   "frames": 175
+  },
+  {
+   "pic": "c2p/s2009.png",
+   "cx": 860,
+   "year": "2009년",
+   "num": "3천만원도 안 됨",
+   "sub": "연초에 꺼내고 남은 오를 돈",
+   "zoom": [
+    1.3,
+    1.4
+   ],
+   "pan": 30,
+   "focus": 0.45,
+   "gray": false,
+   "blur": false,
+   "red": [
+    "안"
+   ],
+   "green": [
+    "올랐어요"
+   ],
+   "lines": [
+    {
+     "text": "이듬해엔 지수가 다시 올랐어요.",
+     "audio": "audio/c-2/2f9b9e8eb814b1c4.wav",
+     "frames": 68
+    },
+    {
+     "text": "그런데 연초에 한 해 치를 꺼내고 나니, 오를 돈이 3천만원도 안 남아 있었습니다.",
+     "audio": "audio/c-2/fa7a633db8845416.wav",
+     "frames": 146
+    }
+   ],
+   "frames": 214
+  },
+  {
+   "pic": "c2p/s2010.png",
+   "cx": 859,
+   "year": "2010년",
+   "num": "1,150만원",
+   "sub": "그해 말 남은 돈",
+   "zoom": [
+    1.2,
+    1.3
+   ],
+   "pan": 0,
+   "focus": 0.45,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "그해 말 통장에 남은 돈은 1,150만원 남짓이었어요.",
+     "audio": "audio/c-2/a88407432fcc6e74.wav",
+     "frames": 115
+    }
+   ],
+   "frames": 115
+  },
+  {
+   "pic": "c2p/s2011.png",
+   "cx": 859,
+   "year": "2011년 1월",
+   "num": "못 꺼냈다",
+   "sub": "한 해 치를 처음으로",
+   "zoom": [
+    1.0,
+    1.07
+   ],
+   "pan": -26,
+   "focus": 0.36,
+   "gray": false,
+   "blur": false,
+   "red": [
+    "못"
+   ],
+   "green": [],
+   "lines": [
+    {
+     "text": "그리고 2011년 1월, 정우 씨는 처음으로 한 해 치를 다 꺼내지 못했어요.",
+     "audio": "audio/c-2/7d5eecaddb18f4f7.wav",
+     "frames": 167
+    }
+   ],
+   "frames": 167
+  },
+  {
+   "pic": "c2p/s2011.png",
+   "cx": 859,
+   "year": "2011년 1월",
+   "num": "68살",
+   "sub": "시작한 지 14년째",
+   "zoom": [
+    1.4,
+    1.5
+   ],
+   "pan": 0,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "시작한 지 열네 해째, 예순여덟 살 때입니다.",
+     "audio": "audio/c-2/88cc131ba5c66d12.wav",
+     "frames": 99
+    }
+   ],
+   "frames": 99
+  },
+  {
+   "pic": "c2p/s2011.png",
+   "cx": 859,
+   "year": "2003년 시작 → 2025년 말",
+   "num": "2억 넘게",
+   "sub": "다른 사람 · 5년 늦게 시작",
+   "zoom": [
+    1.08,
+    1.0
+   ],
+   "pan": 0,
+   "focus": 0.36,
+   "gray": true,
+   "blur": true,
+   "red": [],
+   "green": [
+    "2억",
+    "넘게"
+   ],
+   "lines": [
+    {
+     "text": "같은 돈, 같은 규칙으로 5년 늦게 시작한 사람은 지난해 말에도 2억 넘게 남아 있었습니다.",
+     "audio": "audio/c-2/24e914cb58f22d45.wav",
+     "frames": 163
+    }
+   ],
+   "frames": 163
+  },
+  {
+   "pic": "c2p/s1998.png",
+   "cx": 1079,
+   "year": "1998년 1월",
+   "num": "시작한 해",
+   "sub": "37번 시작 중 바닥 6번 · 2025년까지",
+   "zoom": [
+    1.0,
+    1.12
+   ],
+   "pan": 20,
+   "focus": 0.36,
+   "gray": false,
+   "blur": false,
+   "red": [
+    "시작한",
+    "해였습니다"
+   ],
+   "green": [],
+   "lines": [
+    {
+     "text": "둘을 가른 건 고른 상품이 아니었어요. 시작한 해였습니다.",
+     "audio": "audio/c-2/2bef4d2d5ff547df.wav",
+     "frames": 112
+    }
+   ],
+   "frames": 148
+  }
+ ]
+}

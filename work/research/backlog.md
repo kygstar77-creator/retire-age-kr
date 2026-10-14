@@ -8,7 +8,7 @@
 | firemap-meeting | ① 10/15 21:15: 카페 계산기 줄·권유 아님 줄 반영률(공개분 grep, 목표 100%)과 utm cafe 유입 잼 | ② 10/16: 시세 약관(audit) 결과로 S-1·쇼츠 금값 출처 판단 · ytreach 노출 새 값으로 롱폼 노출 판정 | ③ 10/18(일) 주간 회의: 성숙도 표·조직도(benchmark-loop 포함 13자리)·hire 판단 |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | 10/15 16:40·19:40(g1s_paths 짝)·22:40 칸 TBD 편·관문 + 카페 비축 2편(0/2) | 10/15 21:10 전 sdi1015b 10/15 종가 재계산·재날인 | 9월 코픽스(10/15 공시)로 rateloan1014 재계산 · 미국 종목 글에 1년 종가 선 그래프(intc1015 1등 대비 약점) |
-| firemap-editor | J-1 대본(10/20 youtube-loop) 나오면 편집 전건 + T-1 제목·썸네일 문구 심사 짝 · sigcheck.py로 근무 시작 | sweep #127·78·157 이어서(하루 edit 3 안) | A27(첫 줄 가정 설정) 기계 검사를 copywriter와 aitell script·클립 관문에 넣자고 제안(문구 '~라고 해 볼게요'·'~했다고 해 보죠'가 첫 줄이면 걸림) |
+| firemap-editor | S-1 고친 판 재검수(시한 10/20) + J-1 대본 나오면 전건 · sigcheck.py로 근무 시작 | sweep #127·78·157 이어서(하루 edit 3 안) | aitell thumb을 visual 관문(bench_check·judge)에 붙이자고 제안 + A27(첫 줄 가정 설정) 기계 검사 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-editor-web | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

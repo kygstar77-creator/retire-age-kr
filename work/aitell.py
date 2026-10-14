@@ -10,6 +10,7 @@
 #   py -3.12 work/aitell.py commaday 2026-10-04               → 그 날 카페 칸 쉼표 없는 제목 수(하루 2편 이상, 10/4 칸부터 frame이 쉼표 제목을 막는다)
 #   py -3.12 work/aitell.py script <편 폴더|voice.json|자막 .json3|대본 텍스트>  → 롱폼 대본 실측 기준 2개(10/4 speechcompare 경쟁 자막 12편 vs 우리 4편): 숫자 1,000단어당 ≤92(경쟁 최대 91.4) · 숫자 2개 이상 문장 ≤20%. 넘으면 종료코드 6
 #        + 말 습관 4개(10/13 벤치마크 루프): 정밀 숫자 낭독('39만 7천'·6자리↑)·순번 3종↑·말 목차('볼게요') 3연속·꼬리표 낭독({F}·이미지 1·S3) — 걸린 줄 번호 출력, 걸리면 종료코드 6
+#   py -3.12 work/aitell.py thumb "<썸네일 큰 글>" ["<둘째 줄>" …]  → 썸네일·쇼츠 표지 AI 티 A30·A31·A33(10/15 editor, 근거 longform/thumb-gap-1015.md ③ — 남 29장 실측). 걸리면 종료코드 5. A32(그리다 만 0초 화면)는 그림이라 눈으로 본다
 #   --skip-list (아무 자리)  → 번호·글머리 목록 줄과 법 문구·면책 줄을 끝맺음 반복(연속·'~요'·머리·꼬리)에서 뺀다.
 #                              사전(AI 말·설명조) 검사는 그대로. 기본은 꺼짐 — 기존 통과 점수가 안 바뀐다(10/1 대역 X-KR-1 요청).
 # 사장님 10/1 "사소한 것까지 모든 글을 다 검토해서 사람이 쓴 글로 바꿔야 하는데" — 순돌이 지시 [지시·긴급].
@@ -448,6 +449,18 @@ def refuse(msg, hits):
     print('  고친 뒤 다시 올리거나, 편집자가 보고 py -3.12 work/aitell.py pass <묶음> <편집자> 를 남긴다.')
 
 
+def thumb_check(lines):
+    """썸네일 글자 A30(자릿수 물음표)·A31(큰 글 소수점, 이율 % 빼고)·A33(문서 단서 꼬리) — 남 29장 중 0·1·1장."""
+    bad = []
+    for l in lines:
+        if re.search(r'\?[,.]?\?{2,}|\d\?{2,}|\?{2,}[,.]\d|[?]{1,},[?]{3}', l): bad.append(f'A30 자릿수까지 물음표로 가림: {l} — 말로(이만큼·이것)')
+        for m in re.finditer(r'[-−+]?\d+\.\d+\s*(세|%|배|년|억|만)', l):
+            if not re.search(r'(연|금리|이율)\s*$', l[:m.start()]): bad.append(f'A31 계산기 소수점 "{m.group(0)}": {l} — "77세쯤"·"3분의 1"로, 정확한 값은 설명란')
+        if re.search(r'\((잠정|추정|확정|세전|세후|기준)\)|중앙값?|평당\s*중앙|\d{4}[.\-/]\d{1,2}[.\-/]\d{1,2}\s*[~–-]|출처', l):
+            bad.append(f'A33 문서 단서 꼬리: {l} — 설명란으로')
+    return bad
+
+
 def main(a):
     global SKIP
     SKIP = '--skip-list' in a
@@ -455,6 +468,10 @@ def main(a):
     if not a: print(__doc__ or open(__file__, encoding='utf-8').read().split('import')[0]); return 0
     if a[0] == 'text':
         val, hits, n = score(' '.join(a[1:]), SKIP); print(f'AI 티 {val} ({n}자)'); [print('  ', h) for h in hits]; return 0
+    if a[0] == 'thumb':
+        bad = thumb_check(a[1:])
+        if not bad: print('썸네일 글자 A30·A31·A33 통과 (A32 그리다 만 화면은 눈으로)'); return 0
+        print('썸네일 글자 AI 티'); [print('  ', b) for b in bad]; return 5
     if a[0] == 'script':
         ok, per, multi, n, bad = script_check(script_text(a[1]))
         print(f'대본 실측 숫자 {per:.1f}/1,000단어(기준 ≤{SCRIPT_NUM_PER_1000}) · 숫자 2개 이상 문장 {multi:.0f}%(기준 ≤{SCRIPT_MULTI_NUM_PCT}%) · 문장 {n} — ' + ('통과' if ok else '실패'))

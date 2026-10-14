@@ -71,6 +71,19 @@
     "url": "https://cafe.naver.com/firemap/271"
    },
    "note": "카페 15:10 칸 rateloan1014 verify OK 1157/1157·사진 3/3 · 블로그 0(DAY_CAP·색인 0 경보, 이번 회차 카페만) · 새 편 pencap1015(10/15 18:10) 자료조사 WebSearch 3회 5건+법령 API 소득세법·시행령 원문 11항목 · 검증 경로 crosscheck(Gemini) 사실 3 반영 + selfcheck 사실 0 + 레드팀 2회 틀림 2 반영 · 개선: 없음(selfloop 일감표는 시간상 건너뜀)"
+  },
+  {
+   "hour": 16,
+   "ts": "16:53",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "퇴직연금 DC형으로 바꿀까, 임금피크 앞두면 계산이 달라지는 이유",
+    "url": "https://cafe.naver.com/firemap/272"
+   },
+   "note": "firemap-write-b 16:40 칸 dcpension1014(10/13 16:34 관문 통과분: 제목 7.9·표지 K4·compare 6편·readcheck 0·selfcheck 사실 0·crosscheck·레드팀 2회·editgate auto 해시 일치) 발행 · verify OK 1279/1279자·사진 3/3 · 게시판 자동 → 연금/세금/보험 · 관련 영상 없음(퇴직연금 주제 공개 영상 없어 억지 연결 안 함) · 블로그 0(카페 전용 회차) · 새 자료조사 없음(비축 칸 발행) · 개선: 없음 · 10/15 07:40·13:40·16:40·19:40·21:10·22:40 칸 TBD — 07:40 관문 기한 01:40"
   }
  ]
 }

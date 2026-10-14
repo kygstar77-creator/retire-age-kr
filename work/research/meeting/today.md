@@ -41,6 +41,7 @@
   판단: firemap-youtube-loop 08:50 — **J-1↔H-2 칸 바꿈**: H-2 10/20 11:30(심사 7.87·편집 통과, 관문 10/19 11:30·녹음 10/18 창) · J-1 10/22 11:30(기획안만, 대본 10/20) · T-1 10/21 그대로 → 부동산 세금 이틀 연속 없음 · slots.json 고침 · C-2 10/19 그대로
   착수: firemap-youtube-loop 12:41 — T-1 비거주 1주택 정부안 공제율 원문 확인 → 대본 v1(사실표 기계 대조·aitell·humanlike)
   완료(대본): firemap-youtube-loop 12:58 — ep/T-1/script.md v3 · 원문 확인: 1주택 2년 미만 거주는 정부안 표(상세본 p.58~59·문답 p.37)에 없음 → 말로 '숫자 안 냄' · **새로 찾은 조문** 정부안 §103 단서 기본공제 2,500만원(10년 거주·30억 이하, '27~) → calc 반영, 10년 거주 20억 1,901만→1,241만원(첫 문장 '열두 배 가까이'), 문답 p.49 사례 1,280→740 우리 1,284→744 일치 · 두 사람 가상 인물(정민·수현) · aitell script 89.2/1,000 통과(v1 208.5 실패→숫자 자막으로)·AI 티 3.9 · 심사 3명 v2 평균 7.40(제미나이 lite 7.8·Claude 7.4·레드팀 7.0) 통과, 막을 2곳(5장 '보유=거주면 그대로' 일반화·기본공제 조건 빠짐) v3 고침 · review.md 세 줄 · 실험 T1-TWOPEOPLE 10/28 · 남은 것: editor(아래)·카피 제목·녹음 10/19 창
+  착수: firemap-youtube-loop 16:44 — J-1(10/22 11:30) 정부안 종부세법 조문·9/1 수정안 사례 재대조 → compete.md·analysis.md·facts.txt → 대본 v1(기한 10/20)
 - [편집 검수 요청] T-1 대본 v3 트랙:C · 담당 firemap-editor · 시한 10/18 12:00 · 근거 longform/ep/T-1/script.md·say_v3.txt (aitell 3.9·script 통과, 심사 7.40) (youtube-loop 12:58)
 - [지시] T-1 제목·썸네일 문구 트랙:C · 담당 firemap-copywriter · 시한 10/18 12:00 · 근거 longform/ep/T-1/review.md ③('집 한 채'를 앞에, 1등 싹풀TV 대비) (youtube-loop 12:58)
 - [지시] **firemap-report** (매일 12:30) 카페 색인 하루 1회: 전날 카페 글이 네이버 카페탭·통합검색에 잡히는 비율 · 10/15까지 0이면 순돌이에게 '카페 12편 되돌릴지' 사장님 결정 거리로(빈도는 사장님만)
@@ -1527,3 +1528,4 @@
 - [배차] **firemap-video-producer** ← 운영실장 (15:10) 쇼츠 클립 비축 0/4(slots.json reserve.shorts 빔) → 관문 통과 클립 비축 채우기
   착수: firemap-video-producer 15:10 (운영실장)
   완료: firemap-video-producer 15:20 — 쇼츠 비축 0/4→1/4: c2s_jungwoo(C-2 정우 씨 c2person 틀, motion 렌더 58.3초 → '68살' 장면 빼고 55.0초 재렌더, 새 녹음 0) 관문 통과(compete 5·숫자 대조 0 — w1g1clips_check에 C-2 원문 c2.json·calc_n1_out 연결·꼴 ⓐ~ⓓ·치직 0·쉿소리 틀 0·빈 곳 최대 2%·제목 'S&P500에 퇴직금 3억, 14년 만에 바닥난 이유' 8.0·aitell 0.0/6.0) → slots reserve.shorts gates_ok · 미업로드(C-2 롱폼 videoId 뒤, 1순위 10/19 19:20 — 07:20 p1s_cross=P-1과 다른 롱폼) · C-2 화면 글자 editor 15:14 통과(숫자 0 변경) · 남은 비축 3편은 다음 회차(H-1 공개 10/15 뒤·W-1·D-1 남은 질문) · 근거 cardshorts/c2s_jungwoo/review.md- 막힘(운영실장 15:21): 쇼츠 클립 비축 1/4(c2s_jungwoo gates_ok 15:19, C-2 videoId 나온 뒤 업로드·10/19 19:20 1순위) — 남은 3편(H-1 10/15 공개 뒤·W-1·D-1)은 firemap-video-producer 18:1x 정기 몫
+완료: firemap-write-b 16:53 — 16:40 dcpension1014 cafe/272 발행 verify OK 1279/1279자·사진 3/3(게시판 연금/세금/보험) · 관련 영상 없음(퇴직연금 공개 영상 없음) · 10/15 b 몫 07:40·13:40·16:40·19:40·22:40 칸 아직 TBD — 07:40 기한 01:40

@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;left:52px;top:636px;font:500 24px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#E7E2D6'></div>
+<div class='t' style='left:40px;top:26px;font-size:84px;color:#14171C'>국민연금 <span style="color:#1F4FA8">따라잡히는 나이</span></div>
+<div style='position:absolute;left:30px;top:142px;width:590px;height:478px;background:#FFFFFF;border-radius:26px;box-shadow:0 8px 0 rgba(0,0,0,.12)'></div>
+<div style='position:absolute;left:650px;top:142px;width:600px;height:478px;background:#17233A;border-radius:26px;box-shadow:0 8px 0 rgba(0,0,0,.25)'></div>
+<div class='t' style='left:30px;top:176px;width:590px;text-align:center;font-size:84px;color:#4A5568'>5년 당기면</div>
+<div class='t' style='left:30px;top:306px;width:590px;text-align:center;font-size:220px;color:#14171C'>76.7<span style='font-size:90px'>세</span></div>
+<div class='t' style='left:650px;top:176px;width:600px;text-align:center;font-size:84px;color:#fff'>1년만 당기면</div>
+<div class='t' style='left:650px;top:306px;width:600px;text-align:center;font-size:220px;color:#8FD3FF'>??<span style='font-size:90px'>세</span></div>
+<div class='lab' style='left:40px;top:636px;font-size:36px;color:#5B6472'>1969년생 기준</div>
+
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

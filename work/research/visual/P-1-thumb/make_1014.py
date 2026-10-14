@@ -352,6 +352,39 @@ V['p3d'] = f"""<div style='position:absolute;inset:0;background:{TB}'></div>
 """
 assert all(N5 in V[k] and N1 in V[k] and '1969년생' in V[k] and '65세' in V[k] for k in ('p3a', 'p3b', 'p3c', 'p3d'))
 
+# ── 22차 — 사장님 10/14 오후 "위에 썸네일 제목 한글 이해 안 가는데." p2z 틀(청록 #2A7A70·흰 칸/짙은 칸·주황 80.7)은 그대로, 말만 바꿈.
+#    '당김'·'제때 받은 쪽이 따라잡는 나이'(우리가 지은 말) → 경쟁이 실제로 쓰는 말: '일찍 받으면'·'몇 살부터 손해'(KBS 38.2만 '오히려 손해'·검색어 '국민연금 조기수령 손해'),
+#    '손익분기점'(생존경제 21.1만), '몇 살부터'(조선일보 머니 91.2만). 근거 ep/P-1/thumb-compete-1014.md·compete.md.
+#    뜻: 5년 일찍(60세, 30% 줄어듦) 받으면 76.67세부터, 1년 일찍(64세, 6%) 받으면 80.67세부터 제때(65세) 받은 쪽 누적액이 더 많다(calc_out 2절, 1969년생).
+assert abs(M.A5 - 76.67) < 0.01 and abs(M.A1 - 80.67) < 0.01
+
+
+def cards9(top, big, l5, l1, suf='', big_fs=84, lab_fs=76, num=226, se=112, num_top=348):
+    """p2z(cards8 bg #2A7A70) 틀에 말만 바꿈. suf='부터'면 숫자 뒤에 작게 붙임(오른쪽 칸 아래 재생시간 구역 피해 숫자를 줄임)."""
+    w = 590; x1 = 1250 - w
+    tail = f"<span style='font-size:{se}px'>세{suf}</span>"
+    return f"""<div style='position:absolute;inset:0;background:#2A7A70'></div>
+<div class='t' style='left:40px;top:20px;font-size:58px;color:#CDE7E1'>{top}</div>
+<div class='t' style='left:38px;top:92px;font-size:{big_fs}px;color:#FFFFFF'>{big}</div>
+<div style='position:absolute;left:30px;top:206px;width:{w}px;height:484px;background:{CARD};border-radius:26px'></div>
+<div style='position:absolute;left:{x1}px;top:206px;width:{w}px;height:484px;background:#0D1320;border-radius:26px'></div>
+<div class='t' style='left:30px;top:240px;width:{w}px;text-align:center;font-size:{lab_fs}px;color:#4A5568'>{l5}</div>
+<div class='t' style='left:30px;top:{num_top}px;width:{w}px;text-align:center;font-size:{num}px;color:{INK}'>{N5}{tail}</div>
+<div class='t' style='left:{x1}px;top:240px;width:{w}px;text-align:center;font-size:{lab_fs}px;color:#C9D3E6'>{l1}</div>
+<div class='t' style='left:{x1}px;top:{num_top}px;width:{w}px;text-align:center;font-size:{num}px;color:{ORG}'>{N1}{tail}</div>
+"""
+
+
+# p4a — 큰 말 물음 '일찍 받으면 몇 살부터 손해?', 칸 '5년 일찍'·'1년 일찍' + '76.7세부터'
+V['p4a'] = cards9('국민연금 · 1969년생(65세 수령) 기준', '일찍 받으면 몇 살부터 손해?', '5년 일찍', '1년 일찍', suf='부터', num=176, se=88, num_top=372)
+# p4b — 큰 말 '국민연금 조기수령 손익분기점', 칸 '5년 일찍 받으면'·'1년 일찍 받으면' + 숫자만
+V['p4b'] = cards9('1969년생(65세 수령) 기준', '국민연금 조기수령 손익분기점', '5년 일찍 받으면', '1년 일찍 받으면', big_fs=88, lab_fs=68)
+# p4c — p4a 말, 칸 이름을 받는 나이로('60세에 받으면'·'64세에 받으면')
+V['p4c'] = cards9('국민연금 · 1969년생(65세 수령) 기준', '일찍 받으면 몇 살부터 손해?', '60세에 받으면', '64세에 받으면', suf='부터', lab_fs=66, num=176, se=88, num_top=372)
+# p4d — '손해' 없이: 큰 말 '제때 받은 쪽이 더 많아지는 나이', 윗줄 '국민연금 일찍 받으면'
+V['p4d'] = cards9('국민연금 일찍 받으면 · 1969년생 기준', '제때(65세) 받은 쪽이 더 많아지는 나이', '5년 일찍', '1년 일찍', big_fs=74)
+assert all(N5 in V[k] and N1 in V[k] and '1969년생' in V[k] for k in ('p4a', 'p4b', 'p4c', 'p4d'))
+
 if __name__ == '__main__':
     M.VARIANTS.update(V)
     keys = sys.argv[1].split(',') if len(sys.argv) > 1 else list(V)

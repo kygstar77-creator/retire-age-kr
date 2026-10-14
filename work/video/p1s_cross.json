@@ -45,13 +45,20 @@
    "lines": [
     {
      "n": 0,
+     "text": "국민연금 5년 당기면, 77세가 조금 안 돼서 따라잡혀요.",
+     "cap": null,
+     "audio": "audio/p-1/9eb79bb0356b5a5f.wav",
+     "frames": 122
+    },
+    {
+     "n": 0,
      "text": "연금 씨가 제때 받으면, 매달 100만원이라고 해 볼게요.",
      "cap": null,
      "audio": "audio/p-1/890d4cedf29e3687.wav",
      "frames": 116
     }
    ],
-   "frames": 116
+   "frames": 238
   },
   {
    "kind": "bars",

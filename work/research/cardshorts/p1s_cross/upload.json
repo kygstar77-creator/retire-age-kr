@@ -23,13 +23,24 @@
  },
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "bcBQX8WV9YE",
- "uploaded_at": "2026-10-14 14:52:45",
+ "id": "YTAustvbDfI",
+ "uploaded_at": "2026-10-14 18:24:20",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-18T22:20:00Z",
   "embeddable": true,
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
- }
+ },
+ "v": 2,
+ "replaced": [
+  {
+   "id": "bcBQX8WV9YE",
+   "unscheduled_at": "2026-10-14 18:24:20",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  }
+ ]
 }

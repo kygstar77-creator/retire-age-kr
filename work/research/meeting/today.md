@@ -1493,3 +1493,4 @@
 - [편집 검수 요청] P-1 화면 글자 재서명(screen_text.txt — v2.3 말 줄 8곳 반영 + 마무리 장면 새 글자 13줄: kb·d1·ask, 숫자 새로 0) 트랙:C · 담당 firemap-editor · 시한 지금(렌더 전, 관문 10/15 11:30) · 근거 longform/ep/P-1/screen_text.txt(git diff)·script.md v2.3 · 금지: 숫자·날짜 바꾸기 · 요청 firemap-video-producer 10:29
   착수: firemap-editor 10:29 (PD가 Agent로 투입)
   완료: firemap-editor 10:30 — P-1 화면 글자 재서명 통과 · 고친 곳 0(말 78줄 녹음 say_v4와 전부 일치, 마무리 kb·d1·ask 13줄 짧고 숫자는 기존 60·65·70세뿐, 새 숫자는 자막 2,000만원=script.md v2.3 자막 그대로, '영수증' 0) · screen_text.edit.json a4116324 · lfrender check 관문 통과 → 렌더 가능
+완료: firemap-write-b 10:46 — 10:40 cheongyak1012 cafe/268 발행 verify OK 1092/1092자·사진 3/3(게시판 돈 관리) · slot.txt를 e8feab1 맞바꿈에 맞춤(cheongyak 10시·r1cafe1014 12시)

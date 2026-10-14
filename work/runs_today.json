@@ -23,6 +23,17 @@
     "url": "https://cafe.naver.com/firemap/266"
    },
    "note": "firemap-write-b 07:40 칸 renew1011(부동산, 10/13 08:29 관문 통과분·editgate 해시 일치) 발행 · verify OK 1579/1579자·사진 3/3 · 게시판 부동산 · 관련 영상 없음(공개 롱폼 중 주제 맞는 편 없음) · 발행기 경고: 오늘 제목 끝말 '얼마' 3칸 · 확인 창 처리 Timeout(발행·verify는 정상) · 개선: 없음"
+  },
+  {
+   "hour": 10,
+   "ts": "10:46",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "청약통장 해지 추징 54만원, 세율 낮으면 절반 넘게 줄이는 조건",
+    "url": "https://cafe.naver.com/firemap/268"
+   },
+   "note": "10:40 칸 cheongyak1012(관문 10/13 12:37 통과분) · 발행 전 재확인 editgate 해시 일치·readcheck 0·aitell 0.0 · verify OK 1092/1092자·사진 3/3 · 게시판 자동→돈 관리 · 관련 영상 없음(청약 주제 공개 영상 없음, 억지 연결 안 함) · slot.txt를 순돌이 칸 맞바꿈(e8feab1)에 맞춤 · 개선: 교본에 'slot.txt↔장부 시각 대조' 한 줄"
   }
  ]
 }

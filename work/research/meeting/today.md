@@ -24,6 +24,7 @@
   막힘: firemap-video-producer 22:43 — ytupload 토큰은 videos.update 403(권한 범위 부족), f2_coupang force-ssl 토큰 사용은 자동 권한 분류기가 거부('자격 증명 탐색') → 우회하지 않고 멈춤. 세 편 meta synthetic도 안 바꿈(실제 상태와 맞춰 두려고). 사장님 허용 또는 채팅 세션 처리 필요 · 기한 10/14 11:30
 - [지시·긴급] **firemap-write** (기한 10/15 03:10) 의도: H-1 짝 글을 영상(10/15 11:30) 전에 · 완료 기준: h1cafe1015 = ep/H-1/cafe.md(세 동네 37곳 전체 표, '둔촌동·고덕동은 2026.09 거래까지'), slot.txt 2026-10-15 09, gates_ok · 같은 회차에 10/15 10:40 r1s_spytax 짝(질문 하나·r1cafe 표 반복 금지)·12:10 부동산 새 편 · 금지: 미달 공개, 칸 몰아내기
   완료(일부): firemap-write 06:54 — 10/15 09:10 h1cafe1015(H-1 짝 긴 글, 세 동네 37곳 표 3장, 둔촌·고덕 10월 거래 없음 명시, 영상 rVg0pQVo_wk) gates_ok(제목 7.17·표지 K4 7.83·compare.md 경쟁 8·readcheck 0·selfcheck 사실 0·aitell 2.6·crosscheck·레드팀 2회 틀림 3→0·전제 가능·editgate auto) · 10:40 r1cafe_tax1015는 write-b가 10/13 22:57 이미 통과 · 남은 것: 10/15 12:10 부동산 새 편(기한 06:10, 다음 write 회차) · 덤: 10/14 15:10 m1stot1013을 10/15 15:10으로 옮김(06:10 M-1 긴 글과 예시 숫자 5개 겹쳐 발행기 sameday 거부) → 10/14 15:10은 새 편 rateloan1014(주담대 변동·고정, 금리 축)로 채움
+  착수: firemap-write 09:21 — 09:10 npsage1009 발행·verify · 10/15 12:10 부동산 jeonse1015 관문(compare.md·장부)
 - [지시] **firemap-write** (기한 10/14 21:10) 의도: 장부 공개 기록을 코드로(X-OPS-7, 교훈 33) · 완료 기준: naverpost.py가 verify OK 직후 slots.json 그 칸(slot.txt 시각)에 published(주소·시각) 자동 기입, 10/14 첫 발행에서 확인 · 덤: 주제 맞는 firemap.kr 계산기가 있는 글은 끝에 계산기 줄 1개(오늘 8편 중 1편만 있음, 검증 참모) — 새 홍보 문구 0, 기존 줄 꼴 그대로
   착수: firemap-write 06:20 — naverpost verify OK 뒤 slots.json published 자동 기입 · 06:10 m1cafe1014 발행에서 확인
   완료: firemap-write 06:54 — naverpost.py verify_published가 OK면 ledger_published()로 slots.json 그 칸(item + slot.txt 시각, 이미 적힌 칸은 안 덮음)에 published "주소 HH:MM verify OK N자" 자동 기입 · 10/14 첫 발행 m1cafe1014 cafe/265 verify 1866/1866·사진 3/3 → "장부: 2026-10-14 06:10 칸 published 적음" 확인 · 덤(계산기 줄): m1cafe1014는 이미 있음, h1cafe1015는 맞는 계산기 없어 안 넣음, 새 편 rateloan1014에 대출 계산기 줄(기존 꼴)
@@ -754,6 +755,8 @@
   완료: firemap-watchdog 09:53 — (10/11 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음
   착수: firemap-watchdog 09:52
   완료: firemap-watchdog 09:53 — (10/13 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음
+  착수: firemap-watchdog 10:25
+  완료: firemap-watchdog 10:26 — (10/14 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음
 - [지시] **firemap-audit** (기한 11/1 07:40, 이후 매월 1일) 의도: 개정으로 계산기 숫자가 틀어지는 것 감시 · 완료 기준: 실업급여 상·하한·최저임금·퇴직금 기준을 고용노동부·법령 원문과 대조한 한 줄, 틀리면 STOP 표시 대신 today.md 막힘(코드 수정은 순돌이)
 - [지시] **firemap-write** (다음 칸 확정부터, 실험 X-CAFE-CALC-1) 의도: 사이트 개발 없이 쿠팡 칸이 있는 계산기 3종으로 가는 길을 넓힌다 · 완료 기준: 주제가 퇴직금·실업급여·연봉 계산에 **실제로 이어질 때만** 그 칸을 우선, 하루 상한 2칸·같은 계산기 연속 두 칸 금지, 본문 끝 /calc/<종>?utm_campaign=편ID · 금지: 할당 채우기용 억지 주제, 남의 카페 링크 · **시작 10/10**(카페 동시 실험 3개 상한 — X-CAFE-VOL 10/9 판정 뒤, 그 전엔 지금 규칙: 맞는 /calc 있을 때만 링크) · 중간 점검 10/17(7일 합 외부 3기기 미만이면 종료) · 판정 10/24
 
@@ -1484,3 +1487,9 @@
 - 막힘(운영실장 07:23): 10/15 카페 TBD 칸 — write 투입분 jeonse1015(12:10용) 레드팀 제목 6·표지 7, 목표 8 미달·gates_ok 없음(4d4d942, 남은 5가지 jeonse1015/review.md) · 07:40·13:40 이후 칸 손 못 댐·비축분 1/2 그대로 → write-b 07:40·write 09:10 정기가 이어받을 것
 - 막힘(운영실장 07:23): P-1 썸네일 — visual 8~9차 최고 p1m 6.77 미달(cf38a98) · copywriter에 168px 큰 말 요청(기한 10/14 17:00) → visual 10차 기한 10/15 06:00
 - [알림] **firemap-video-producer·firemap-meeting** (youtube-loop 08:50): 롱폼 칸 바꿈 — 10/20 11:30 = **H-2**(관문 10/19 11:30, 녹음 10/18 16:01 창) · 10/22 11:30 = **J-1** · 10/21 T-1 그대로 · slots.json 반영
+- [자발] P-1 v2.3 마무리 장면(D-1 카드·건보료 자막)·editor 재서명·렌더(관문 10/15 11:30) + R-1 첫 댓글(11:30 공개 뒤) · PD
+  착수: firemap-video-producer 10:26
+- [알림] firemap-write (watchdog 10:27): 09:20 회차가 cafe/267(npsage1009) 발행 뒤 end 맥박·runs_today 09시 줄 없이 꺼짐(세션 isRunning false, 끊을 것 없음). 다음 회차에서 runs_today 09시 기록 보충.
+- [편집 검수 요청] P-1 화면 글자 재서명(screen_text.txt — v2.3 말 줄 8곳 반영 + 마무리 장면 새 글자 13줄: kb·d1·ask, 숫자 새로 0) 트랙:C · 담당 firemap-editor · 시한 지금(렌더 전, 관문 10/15 11:30) · 근거 longform/ep/P-1/screen_text.txt(git diff)·script.md v2.3 · 금지: 숫자·날짜 바꾸기 · 요청 firemap-video-producer 10:29
+  착수: firemap-editor 10:29 (PD가 Agent로 투입)
+  완료: firemap-editor 10:30 — P-1 화면 글자 재서명 통과 · 고친 곳 0(말 78줄 녹음 say_v4와 전부 일치, 마무리 kb·d1·ask 13줄 짧고 숫자는 기존 60·65·70세뿐, 새 숫자는 자막 2,000만원=script.md v2.3 자막 그대로, '영수증' 0) · screen_text.edit.json a4116324 · lfrender check 관문 통과 → 렌더 가능

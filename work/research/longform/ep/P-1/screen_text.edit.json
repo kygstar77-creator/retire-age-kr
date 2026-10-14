@@ -1,1 +1,1 @@
-{"by": "firemap-editor", "at": "2026-10-13 18:54", "sha": "9b22b5bfea19ec8395f26a515f614cc45020cc34b78082e09cff8596ad7e193f", "sha_of": "screen_text.txt bytes", "note": "재서명: 바뀐 2줄은 P1.tsx 칩 꼬리표 '정확한 값'·'참고'(TallyFrame·M1S와 같은 말, 숫자 있으면 정확한 값) — 앞 3곳 수정분 유지, 그 밖 변동 없음"}
+{"by": "firemap-editor", "at": "2026-10-14 10:30", "sha": "a41163248b5505e4c699d6d105871e49820baf0eddf917927354b71125426bdd", "sha_of": "screen_text.txt bytes", "note": "v2.3 말 8줄(녹음 say_v4와 78줄 일치)·마무리 kb·d1·ask 13줄 봄, 고칠 곳 0 — 새 숫자는 자막 2,000만원(script.md v2.3 자막 그대로)뿐"}

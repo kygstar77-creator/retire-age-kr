@@ -28,6 +28,8 @@ import {H1, H1Props, h1Frames} from './H1';
 import h1 from '../h1.json';
 import {P1, P1Props, p1Frames} from './P1';
 import p1 from '../p1.json';
+import {C2, C2Props, c2Frames} from './C2';
+import c2 from '../c2.json';
 import {MotionKit} from './MotionKit';
 import {M1S, M1SProps, m1sFrames} from './M1S';
 import m1s from '../m1s.json';
@@ -52,6 +54,7 @@ export const Root: React.FC = () => {
   const wp1 = w1 as unknown as W1Props;
   const hp1 = h1 as unknown as H1Props;
   const pp1 = p1 as unknown as P1Props;
+  const cp2 = c2 as unknown as C2Props;
   return (
     <>
     <Composition
@@ -103,6 +106,9 @@ export const Root: React.FC = () => {
     <Composition id="P1" component={P1 as unknown as React.FC<Record<string, unknown>>} durationInFrames={p1Frames(pp1)} fps={pp1.fps}
       width={1920} height={1080} defaultProps={pp1 as unknown as Record<string, unknown>}
       calculateMetadata={({props: pp}) => ({durationInFrames: p1Frames(pp as unknown as P1Props)})} />
+    <Composition id="C2" component={C2 as unknown as React.FC<Record<string, unknown>>} durationInFrames={c2Frames(cp2)} fps={cp2.fps}
+      width={1920} height={1080} defaultProps={cp2 as unknown as Record<string, unknown>}
+      calculateMetadata={({props: pp}) => ({durationInFrames: c2Frames(pp as unknown as C2Props)})} />
     <Composition id="ShortIntro" component={ShortIntro as unknown as React.FC<Record<string, unknown>>} durationInFrames={introFrames(introE2 as ShortIntroProps)} fps={30}
       width={1080} height={1920} defaultProps={introE2 as unknown as Record<string, unknown>}
       calculateMetadata={({props: pp}) => ({durationInFrames: introFrames(pp as unknown as ShortIntroProps)})} />

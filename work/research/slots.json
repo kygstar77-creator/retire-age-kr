@@ -44,6 +44,15 @@
     "by": "firemap-video-producer",
     "at": "2026-10-14 15:19",
     "gates_ok": "2026-10-14 15:19"
+   },
+   {
+    "item": "d1s_pension",
+    "ep": "work/research/cardshorts/d1s_pension",
+    "layout": "m1clip",
+    "status": "관문 통과(compete 6·숫자 대조 0·꼴 ⓐ~ⓓ m1clip·치직 0·쉿소리 −14.8dB·빈 곳 최대 34%·47.6초·제목 8.5·aitell 0.0/6.4) · 미업로드 — D-1 롱폼(GMc2Rd1-JYA) 공개됨, 칸만 정하면 w1g1clips_up.py · d1s_when(10/17 19:20)과 다른 날 · 근거 cardshorts/d1s_pension/review.md",
+    "by": "firemap-video-producer",
+    "at": "2026-10-14 23:25",
+    "gates_ok": "2026-10-14 23:25"
    }
   ],
   "cafe": [

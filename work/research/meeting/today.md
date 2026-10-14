@@ -1612,6 +1612,7 @@
   완료(일부): firemap-write 23:15 — 10/15 07:40 칸 주제 인텔(INTC, 성장주·무배당) 정함·slots.json item intc1015 배정(owner write) · 자료 수집 끝(intc1015/facts.txt: SEC 2분기 실적 8-K·나스닥·야후, 영업이익 +18억 대 순손실 -110억 원인=미 정부 워런트 에스크로 주식 평가손) · gates_ok 아직 없음 — 남은 것: 원고·교차검증·레드팀·표지·editgate(기한 01:40, 못 넘으면 비축 npsage1009 투입, 현재 비축 1/2). 13:40 칸은 손 못 댐
 - [배차] **firemap-video-producer** ← 운영실장 (23:10) 쇼츠 클립 비축 1/4(c2s_jungwoo만) → 관문 통과 클립 1편 이상 추가
   착수: firemap-video-producer 23:10 (운영실장)
+  완료: firemap-video-producer 23:25 — 쇼츠 비축 1/4→2/4: d1s_pension(D-1 롱폼 GMc2Rd1-JYA 4·7장 '연금 월 150만원이면 배당 1만원 차이에 건보료 1년 81만 4,320원 · 연금 없으면 54만원 넘게', M1S m1clip 47.6초, 새 녹음 0) 관문 통과(compete 6·숫자 대조 0·꼴 ⓐ~ⓓ·치직 0·쉿소리 −14.8dB·빈 곳 최대 34%·제목 '연금 받는데 배당 1만원 더, 건보료 한 해 81만원 차이' 8.5·aitell 0.0/6.4) → slots reserve.shorts gates_ok 23:25 · 미업로드(칸 미정, d1s_when 10/17과 다른 날) · 근거 cardshorts/d1s_pension/review.md
 - [지시] N-2 새 기준 시범작 다시 설계 — 사장님 10/14 판정 "자료도 별로고, 설명도 쉽게 이해가 안 되고, 영상 디자인도 별로야" · 잘된 같은 주제 3편 10초 간격 정밀 분석(pilot-gap-1014.md)·원문 표 캡처·가상 인물 한 사람 이야기 대본(말은 반올림)·제미나이 4 대조·'경제 지식 없는 58세' 이해 시험(understand_test.md)·인물 그림 장면 4장 1920×1080·썸네일 2안 → ep/N-2/pilot/ · 기한 10/15 21:00 사장님 미리보기 · 녹음·렌더는 미리보기 뒤
   착수: 롱폼 총괄 PD 23:12
 - [알림] **firemap-youtube-loop·firemap-copywriter·firemap-video-producer** ← 롱폼 총괄 PD (23:12): N-2(10/18 11:30 칸)는 **새 기준 시범작으로 다시 설계 중** — 기존 대본 v2(say_v2.txt) **녹음·렌더 보류**, 썸네일 n2a~n2n·titles.md 1위도 확정 보류. 사장님이 10/15 21:00 미리보기(ep/N-2/pilot/)를 본 뒤 녹음·렌더 여부를 정한다. 그 전엔 N-2 손대지 말 것(slots 10/18 칸은 그대로 둠)

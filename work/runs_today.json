@@ -97,6 +97,17 @@
     "url": "https://cafe.naver.com/firemap/273"
    },
    "note": "18:10 칸 aptrent1013(부동산, 비축) 발행 18:40 · verify OK 1430/1430자·사진 3/3 · 장부 published 자동 · 게시판 부동산 · 관문은 10/13 18:45 통과분(교차검증·selfcheck 사실 0) · 블로그 없음(카페 전용 조직) · 관련 영상: 맞는 공개 부동산 영상 없음(H-1은 10/15 공개) · 보조 2명: 10/15 21:10 경제·주식 새 편, 10/16 06:10 부동산 새 편 관문 작업 · 개선: 일감표 1번(죽은 회차) 원인 기록"
+  },
+  {
+   "hour": 19,
+   "ts": "19:51",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "미국 ETF 환차손, 달러로 번 1년 수익은 원화로 몇 % 줄었을까",
+    "url": "https://cafe.naver.com/firemap/274"
+   },
+   "note": "19:40 칸 r1cafe_fx1014(쇼츠 r1s_fx k1hsFpaLDH0 짝, 관문 10/13 14:38 통과·editgate 해시 일치) · 쇼츠·본편 둘 다 oembed 200(공개) 확인 후 발행 · verify OK 1236/1236자·사진 3/3 · 게시판 ETF(자동) · 개선: 없음"
   }
  ]
 }

@@ -289,6 +289,75 @@ VARIANTS['p1p'] = p1o                                                    # 남�
 VARIANTS['p1o'] = p1o.replace("background:#14203A'", "background:#0F3A33'", 1)  # 짙은 초록(레드팀: 남색 경쟁작과 분리)
 
 
+# ── 10차(10/14 09:1x, copywriter 07:54 큰 말 '당긴 이득 끝나는 나이' + 8~9차 처방 ①③) — p1n(초록) 바탕
+#    머리 줄 SM0 → BW(74px 흰), 케이크 몸통에 월 수령액(calc 2절 5년 당김 700,000·1년 당김 940,000 → '월 70만'·'월 94만'), 화살표 → 'vs'(→ '연장' 오독).
+#    '손익분기'·'본전'·'역전' 금지(copywriter). SM1 그대로.
+BW = '당긴 이득 끝나는 나이'
+assert re.search(r'5년 당김 월 700,000원', calc) and re.search(r'1년 당김 월 940,000원', calc)
+M5, M1 = '월 70만', '월 94만'
+_arrow = "<div class='lab' style='left:462px;top:{:.0f}px;font-size:60px;color:#fff'>→</div>".format(300 + 220 * 0.33)
+_vs = "<div class='t' style='left:452px;top:{:.0f}px;font-size:60px;color:#9FB0D0'>vs</div>".format(300 + 220 * 0.30)
+_sm0 = "<div class='lab' style='left:330px;top:40px;font-size:52px;color:#fff'>" + SM0 + "</div>"
+_g = p1cake('#0F3A33', '#0B2C27'); assert _arrow in _g and _sm0 in _g
+p1q = _g.replace(_arrow, _vs).replace(_sm0, f"<div class='t' style='left:330px;top:26px;font-size:74px;color:#fff'>{BW}</div>")
+p1q = p1q.replace(f"<div class='fine'", f"<div class='t' style='left:150px;top:{483 + 18}px;width:240px;text-align:center;font-size:62px;color:#2B3A57'>{M5}</div>"
+                  f"<div class='t' style='left:535px;top:{498 + 30}px;width:400px;text-align:center;font-size:84px;color:#B3201C'>{M1}</div>\n<div class='fine'", 1)
+VARIANTS['p1q'] = p1q
+# p1r = p1q에서 머리 두 줄: 1줄 '국민연금' 작게(54px 노랑), 2줄 BW 크게(96px) — 168px에서 큰 말이 주인공. 케이크 아래로 조금 내림.
+p1r = p1q.replace("<div class='t' style='left:44px;top:26px;font-size:74px;color:#FFD23F'>국민연금</div>",
+                  "<div class='t' style='left:44px;top:18px;font-size:50px;color:#FFD23F'>국민연금</div>")
+p1r = p1r.replace(f"<div class='t' style='left:330px;top:26px;font-size:74px;color:#fff'>{BW}</div>",
+                  f"<div class='t' style='left:44px;top:72px;font-size:96px;color:#fff'>{BW}</div>")
+p1r = p1r.replace("left:150px;top:170px;font-size:64px", "left:150px;top:196px;font-size:56px").replace("left:600px;top:140px;font-size:84px", "left:660px;top:180px;font-size:54px")
+assert BW in p1r and '국민연금' in p1r
+VARIANTS['p1r'] = p1r
+
+
+# ── 11차(10/14 09:2x) — 10차 세 명: p1q 6.80(제미나이 8.1·Claude 6.5·레드팀 5.8)·p1r 6.82(7.75·6.8·5.9)·p1j 6.55. 케이크판 반려:
+#    레드팀 경쟁 유사 3('vs' 대결·나이+월액 짝(경쟁 '60세 70만')·어두운 바탕 노랑/빨강), 케이크=80세 생일, '76세 → 월 70만' 받는다 오독.
+#    처방(두 심사 공통): 케이크·vs·월액 빼고 p1j 눈금 끝점 구조로 + 큰 말 BW 머리 띠 + 짙은 바탕 + 눈금 65에 '제때' 기준 표시.
+def p1dot(bg, ink5, ink1, rul, band):
+    _r, X = ruler(60, 548, 880, col=rul, dy=48)
+    return f"""<div style='position:absolute;inset:0;background:{bg}'></div>
+<div class='t' style='left:48px;top:20px;font-size:54px;color:#FFD23F'>국민연금</div>
+<div style='position:absolute;left:30px;top:92px;width:860px;height:112px;background:{band};border-radius:14px'></div>
+<div class='t' style='left:56px;top:100px;font-size:88px;color:#fff'>{BW}</div>
+<div class='t' style='left:52px;top:262px;font-size:58px;color:{ink5}'>5년 당김</div>
+<div class='t' style='left:{X(A5) - 146:.0f}px;top:236px;font-size:100px;color:{ink5}'>{S5}</div>
+<div style='position:absolute;left:{X(A5) - 4:.0f}px;top:342px;width:8px;height:182px;background:{ink5}'></div>
+<div class='t' style='left:{X(A1) + 50:.0f}px;top:236px;font-size:60px;color:{ink1}'>1년 당김</div>
+<div id='d1' class='t' data-fit='440' style='left:{X(A1) + 50:.0f}px;top:312px;font-size:150px;color:{ink1}'>{S1}</div>
+{_r}
+<div class='lab' style='left:{X(65) - 40:.0f}px;top:470px;width:80px;text-align:center;font-size:30px;color:{rul}'>제때</div>
+<div style='position:absolute;left:{X(A5) - 30:.0f}px;top:518px;width:60px;height:60px;border-radius:50%;background:{ink5}'></div>
+<div style='position:absolute;left:{X(A1) - 38:.0f}px;top:510px;width:76px;height:76px;border-radius:50%;background:{ink1}'></div>
+<svg style='position:absolute;left:0;top:0' width='1280' height='720'><line x1='{X(A1) + 24:.0f}' y1='518' x2='{X(A1) + 70:.0f}' y2='446' stroke='{ink1}' stroke-width='9' stroke-linecap='round'/></svg>
+<div class='fine' style='color:{rul};top:640px;left:60px;font-size:32px'>제때(65세) 받은 사람 기준 · {SM1}</div>
+"""
+VARIANTS['p1s'] = p1dot('#0F3A33', '#B9C8E6', '#FF5A4E', '#A9BDB6', '#0A2823')   # 짙은 초록
+VARIANTS['p1t'] = p1dot('#14203A', '#B9C8E6', '#FF5A4E', '#A9B4C8', '#0B1428')   # 짙은 남색
+
+
+# ── 12차 — 11차 세 명: p1s 6.88(제미나이 6.75·Claude 6.8·레드팀 7.1)·p1t 6.82(남색, 경쟁 유사 3 반려)·p1j 6.30.
+#    처방: ① 머리 띠가 바탕과 같아 168px에서 사라짐 → 띠 밝게 ② 76.7 옅은 하늘색 → 흰색 ③ '5년 당김'을 76.7 바로 위로 ④ 노랑 '국민연금' → 흰(경쟁 노랑 글자 유사 빼기)
+#    ⑤ '제때'를 눈금 65 바로 위에 붙임.
+def p1dot2(band, bandink):
+    h = p1dot('#0F3A33', '#FFFFFF', '#FF5A4E', '#A9BDB6', band)
+    _r, X = ruler(60, 548, 880, col='#A9BDB6', dy=48)
+    h = h.replace("<div class='t' style='left:48px;top:20px;font-size:54px;color:#FFD23F'>국민연금</div>", "<div class='t' style='left:48px;top:14px;font-size:50px;color:#DDE7E3'>국민연금</div>")
+    h = h.replace("left:30px;top:92px;width:860px;height:112px", "left:30px;top:80px;width:840px;height:108px")
+    h = h.replace(f"<div class='t' style='left:56px;top:100px;font-size:88px;color:#fff'>{BW}</div>", f"<div class='t' style='left:54px;top:86px;font-size:86px;color:{bandink}'>{BW}</div>")
+    h = h.replace("<div class='t' style='left:52px;top:262px;font-size:58px;color:#FFFFFF'>5년 당김</div>",
+                  f"<div class='t' style='left:{X(A5) - 150:.0f}px;top:206px;width:300px;text-align:center;font-size:50px;color:#DDE7E3'>5년 당김</div>")
+    h = h.replace(f"left:{X(A5) - 146:.0f}px;top:236px;font-size:100px", f"left:{X(A5) - 160:.0f}px;top:262px;font-size:104px")
+    h = h.replace(f"left:{X(A5) - 4:.0f}px;top:342px;width:8px;height:182px", f"left:{X(A5) - 4:.0f}px;top:372px;width:8px;height:152px")
+    h = h.replace(f"left:{X(65) - 40:.0f}px;top:470px", f"left:{X(65) - 10:.0f}px;top:496px")
+    assert '5년 당김' in h and h.count(BW) == 1
+    return h
+VARIANTS['p1u'] = p1dot2('#2F8C74', '#FFFFFF')   # 밝은 초록 띠 + 흰 글자
+VARIANTS['p1v'] = p1dot2('#F2EEE6', '#0F3A33')   # 크림 띠 + 짙은 초록 글자
+
+
 if __name__ == '__main__':
     print('숫자', S5, S1)
     main(sys.argv[1].split(',') if len(sys.argv) > 1 else list(VARIANTS))

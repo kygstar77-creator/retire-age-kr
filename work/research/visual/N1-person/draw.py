@@ -125,7 +125,45 @@ s2011 = svg('<rect width="1920" height="1080" fill="#DCD6CC"/>'
     + '<rect x="560" y="790" width="620" height="160" rx="6" fill="#8E7A62"/><rect x="580" y="810" width="280" height="120" rx="4" fill="#9C876D"/><rect x="880" y="810" width="280" height="120" rx="4" fill="#9C876D"/><rect x="700" y="862" width="40" height="8" rx="4" fill="#6E5C48"/><rect x="1000" y="862" width="40" height="8" rx="4" fill="#6E5C48"/>'
     + grain())
 
-out = {'sheet_svg': sheet, 's1998': s1998, 's2001': s2001, 's2011': s2011}
+# S6 2002년 겨울 · 벽 달력 1월에 동그라미(숫자·글자 없이 칸만) · 통장 오래 봄 · 왼쪽 35% 비움
+_cal = ''.join(f'<rect x="{1180 + (i % 7) * 52}" y="{250 + (i // 7) * 46}" width="44" height="38" rx="4" fill="#F2EEE6"/>' for i in range(35))
+s2002 = svg('<rect width="1920" height="1080" fill="#D9D3C7"/>'
+    + '<rect x="0" y="860" width="1920" height="220" fill="#B9AD98"/>'
+    + '<rect x="1160" y="150" width="404" height="350" rx="10" fill="#FFFFFF"/><rect x="1160" y="150" width="404" height="80" rx="10" fill="#E07A5F"/>'
+    + '<circle cx="1260" cy="150" r="10" fill="#555"/><circle cx="1464" cy="150" r="10" fill="#555"/>' + _cal
+    + '<ellipse cx="1228" cy="269" rx="38" ry="30" fill="none" stroke="#E5484D" stroke-width="7"/>'
+    + '<rect x="1640" y="380" width="200" height="480" rx="10" fill="#A7B6C2"/><path d="M1650 420 L1830 420" stroke="#fff" stroke-width="4" opacity=".6"/>'
+    + man(900, 440, 1.6, 59, 'worried', 'open')
+    + f'<rect x="600" y="800" width="640" height="40" rx="10" fill="{C["wood"]}"/><rect x="640" y="840" width="30" height="110" fill="#8E6844"/><rect x="1170" y="840" width="30" height="110" fill="#8E6844"/>'
+    + '<ellipse cx="700" cy="792" rx="36" ry="9" fill="#E8E2D6"/><path d="M684 760 Q690 740 684 724 M704 760 Q710 740 704 724" stroke="#fff" stroke-width="4" fill="none" opacity=".7"/>'
+    + grain())
+
+# S10 2009년 · 창가에서 통장을 덮음 · 머리 셈(66세 이상) · 오른쪽 40% 비움
+s2009 = svg('<rect width="1920" height="1080" fill="#E4DCCD"/>'
+    + '<rect x="90" y="110" width="520" height="620" fill="#F4E3B8"/><rect x="90" y="110" width="520" height="620" fill="none" stroke="#9C8F7E" stroke-width="16"/>'
+    + '<path d="M350 110 L350 730 M90 420 L610 420" stroke="#9C8F7E" stroke-width="12"/>'
+    + '<circle cx="230" cy="260" r="60" fill="#F7C873" opacity=".85"/>'
+    + '<rect x="0" y="940" width="1920" height="140" fill="#BFAE93"/>'
+    + man(860, 440, 1.7, 66, 'calm', 'closed')
+    + '<path d="M860 0 L860 40" stroke="none"/>'
+    + '<rect x="560" y="800" width="640" height="40" rx="10" fill="#A27B54"/><rect x="600" y="840" width="30" height="100" fill="#7E5D3E"/><rect x="1130" y="840" width="30" height="100" fill="#7E5D3E"/>'
+    + '<rect x="620" y="760" width="90" height="40" rx="6" fill="#7E9A6E"/><rect x="636" y="730" width="58" height="34" rx="12" fill="#9BB78A"/>'
+    + grain())
+
+# S11 2010년 겨울 · 은행 창구 탁자(유리 칸막이) · 통장 마지막 장 넘김 · 왼쪽 35% 비움
+s2010 = svg('<rect width="1920" height="1080" fill="#CFD8DC"/>'
+    + '<rect x="0" y="0" width="1920" height="140" fill="#B8C4CA"/>' + ''.join(f'<rect x="{120 + i * 330}" y="40" width="220" height="40" rx="6" fill="#EAF0F2"/>' for i in range(6))
+    + '<rect x="1120" y="200" width="760" height="520" fill="#E9EFF1" opacity=".55" stroke="#9FB0B8" stroke-width="8"/>'
+    + '<rect x="1300" y="520" width="400" height="16" fill="#9FB0B8"/>'
+    + '<rect x="0" y="780" width="1920" height="300" fill="#8A9AA2"/>'
+    + man(860, 420, 1.65, 67, 'worried', 'empty')
+    + '<rect x="440" y="760" width="1440" height="48" rx="6" fill="#6E7F88"/>'
+    + '<rect x="1460" y="700" width="70" height="60" rx="6" fill="#F2EEE6"/><rect x="1470" y="690" width="50" height="14" rx="4" fill="#4C5A61"/>'
+    + grain())
+out_extra = {'s2002': s2002, 's2009': s2009, 's2010': s2010}
+
+out = {'sheet_svg': sheet, 's1998': s1998, 's2001': s2001, 's2011': s2011, **out_extra}
+if len(sys.argv) > 1: out = {k: v for k, v in out.items() if k in sys.argv[1].split(',')}
 with sync_playwright() as p:
     b = p.chromium.launch(); pg = b.new_page(viewport={'width': 1920, 'height': 1080})
     for k, v in out.items():

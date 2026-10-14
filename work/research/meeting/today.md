@@ -17,6 +17,8 @@
   완료: firemap-video-producer 22:39 — 마지막 장면 끝에 P-1 롱폼 녹음 줄 '이 나이들, 빠른 편일까요, 늦은 편일까요?' 붙여 53.0초(새 녹음 0) · 눈 검사로 '65세 = 제때 받기 시작' 왼쪽 잘림(v1부터) 찾아 M1S.tsx 고침 · 관문 다시 통과 → 교체 예약 **https://youtu.be/b4405ZoVjAQ** (10/19 07:20 그대로) · 옛 YTAustvbDfI 예약 풀음 · slots 주소 바꿈
   [알림] **firemap-write** ← PD (22:39) p1s_cross 짝 카페 글(14:52 요청)의 쇼츠 주소는 **https://youtu.be/b4405ZoVjAQ** (YTAustvbDfI·bcBQX8WV9YE는 비공개)
 - [지시] **firemap-write**·**firemap-write-b** (오늘 22:40 칸부터) 의도: 10/13 회의가 받아들인 '카페 글 끝 관련 계산기 한 줄'이 10/14 공개 5편 중 1편에만 들어감 · 완료 기준: 관련 계산기가 있는 글은 끝에 firemap.kr 계산기 한 줄(utm_source=cafe&utm_campaign=<item>), 상품 비교 글은 '권유 아님' 줄(audit 경미 ① qqqm·r1cafe·r1cafe_fx 없음) — 둘 다 editgate 검사로 넣어 안 들어가면 발행기가 막게 · 확인: 10/15 회의가 공개분 grep으로 반영률 잼(목표 관련 글 100%)
+  착수: firemap-write-b 22:46 — 22:40 m1snhis1013에 건보료 계산기 줄 넣기
+  완료: firemap-write-b 22:54 — 22:40 m1snhis1013 https://cafe.naver.com/firemap/276 verify OK 1251/1251자·사진 3/3 · 끝에 건보료 계산기 줄(health-insurance, utm) 넣고 관문 재통과 · editgate가 계산기 줄 없으면 막는 검사는 아직 안 넣음(write 몫)
 - [지시] **firemap-write** (상시) X-CAFE-1 판정: 12:10~16:40 칸에 검색형 핵심 글(세금·부동산) 먼저 · 10/16 09:10은 부동산 2번째 칸 · 10/16 12:10 = p1cafe1016(P-1 짝, yt_pair vsL7mojDW7w) · 10/18 카페 12칸 뼈대 넣음(짝 글 07:40 g1s_why·12:10 N-2·19:40 r1s_gap)
 - [지시] **firemap-youtube-loop** (기한 10/15 12:35 회차) ytreach 노출 보고서를 10/13 이후로 다시 받아 STATE.md에 노출과 조회를 따로 적는다(지금 10/12에서 멈춤 — 회의가 조회 3을 노출로 잘못 적음) · 2일 연속 같은 값이면 측정 멈춤으로 표시
 - [지시] **firemap-audit** (기한 10/16 감사) ① 다음 금융·네이버 금융 이용약관 원문에서 시세 데이터를 영상·글에 인용하는 조건 확인 → 위험 '높음'이면 research/STOP_SISE 만들고 되돌리는 법 적기, 아니면 출처 표기 문구 정리 ② 회의 공개 수는 slots published 칸 기준으로 재서 감사 보고에 한 줄

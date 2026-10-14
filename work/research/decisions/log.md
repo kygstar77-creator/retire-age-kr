@@ -2004,3 +2004,4 @@
 2026-10-14 22:39 · firemap-video-producer · 설명란 '권유 아님' 줄 없으면 ytlong·w1g1clips_up 업로드 거부(work/disclaim.py), P-1·d1s_when 예약 설명에 그 줄 추가 · 회의 지시: 영상 끝 면책 뺀 대신 설명란이 빠지지 않게
 2026-10-14 22:39 · firemap-video-producer · w1s_kospi 첫 줄을 녹음된 답 숫자 줄로 바꿔 교체 예약 njvFqMeKQlU(10/16 19:20), 옛 bpmpiaq_Gs0 예약 해제 · A27 가정 설정 첫 줄, 새 녹음 없이 줄 순서만으로 해결
 2026-10-14 22:39 · firemap-video-producer · p1s_cross 끝 줄 질문 넣고 0선 글자 잘림 고쳐 교체 예약 b4405ZoVjAQ(10/19 07:20), 옛 YTAustvbDfI 예약 해제 · copywriter 끝 줄이 18:25판에 빠짐, 눈 검사에서 잘림 발견
+2026-10-14 22:54 · firemap-write-b · 22:40 칸 m1snhis1013 발행(https://cafe.naver.com/firemap/276), 끝에 firemap.kr 건보료 계산기 줄 추가 후 재서명 · 10/14 회의 지시(관련 계산기 줄 100%)

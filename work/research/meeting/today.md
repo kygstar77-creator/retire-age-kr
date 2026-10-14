@@ -1525,3 +1525,4 @@
 
 - [배차] **firemap-video-producer** ← 운영실장 (15:10) 쇼츠 클립 비축 0/4(slots.json reserve.shorts 빔) → 관문 통과 클립 비축 채우기
   착수: firemap-video-producer 15:10 (운영실장)
+  완료: firemap-video-producer 15:20 — 쇼츠 비축 0/4→1/4: c2s_jungwoo(C-2 정우 씨 c2person 틀, motion 렌더 58.3초 → '68살' 장면 빼고 55.0초 재렌더, 새 녹음 0) 관문 통과(compete 5·숫자 대조 0 — w1g1clips_check에 C-2 원문 c2.json·calc_n1_out 연결·꼴 ⓐ~ⓓ·치직 0·쉿소리 틀 0·빈 곳 최대 2%·제목 'S&P500에 퇴직금 3억, 14년 만에 바닥난 이유' 8.0·aitell 0.0/6.0) → slots reserve.shorts gates_ok · 미업로드(C-2 롱폼 videoId 뒤, 1순위 10/19 19:20 — 07:20 p1s_cross=P-1과 다른 롱폼) · C-2 화면 글자 editor 15:14 통과(숫자 0 변경) · 남은 비축 3편은 다음 회차(H-1 공개 10/15 뒤·W-1·D-1 남은 질문) · 근거 cardshorts/c2s_jungwoo/review.md

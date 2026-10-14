@@ -257,31 +257,6 @@
   {
    "pic": "c2p/s2011.png",
    "cx": 859,
-   "year": "2011년 1월",
-   "num": "68살",
-   "sub": "시작한 지 14년째",
-   "zoom": [
-    1.4,
-    1.5
-   ],
-   "pan": 0,
-   "focus": 0.4,
-   "gray": false,
-   "blur": false,
-   "red": [],
-   "green": [],
-   "lines": [
-    {
-     "text": "시작한 지 열네 해째, 예순여덟 살 때입니다.",
-     "audio": "audio/c-2/88cc131ba5c66d12.wav",
-     "frames": 99
-    }
-   ],
-   "frames": 99
-  },
-  {
-   "pic": "c2p/s2011.png",
-   "cx": 859,
    "year": "2003년 시작 → 2025년 말",
    "num": "2억 넘게",
    "sub": "다른 사람 · 5년 늦게 시작",

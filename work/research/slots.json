@@ -35,7 +35,17 @@
   ]
  },
  "reserve": {
-  "shorts": [],
+  "shorts": [
+   {
+    "item": "c2s_jungwoo",
+    "ep": "work/research/cardshorts/c2s_jungwoo",
+    "layout": "c2person",
+    "status": "관문 통과(compete 5·숫자 대조 0·꼴 ⓐ~ⓓ·치직 0·쉿소리 틀 0·빈 곳 최대 2%·55.0초·제목 8.0·aitell 0.0/6.0) · 미업로드 — C-2 롱폼(10/19 11:30) videoId 나온 뒤 업로드, 1순위 10/19 19:20(07:20 p1s_cross=P-1과 다른 롱폼) · C-2 화면 글자 서명에서 숫자 바뀌면 다시 대조 · 근거 cardshorts/c2s_jungwoo/review.md",
+    "by": "firemap-video-producer",
+    "at": "2026-10-14 15:19",
+    "gates_ok": "2026-10-14 15:19"
+   }
+  ],
   "cafe": [
    {
     "item": "npsage1009",

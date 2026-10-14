@@ -1210,7 +1210,8 @@
    "item": "rateloan1014",
    "owner": "firemap-write",
    "gates_ok": "2026-10-14 06:56",
-   "note": "firemap-write 10-14 06:56: 새 편 관문 통과 — \"주담대금리 기준금리 3% 시대, 은행별 변동·고정 차이는 얼마일까\"(돈 관리·금리, 제목 7.33·표지 K3 7.67·compare.md 경쟁 8·readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck·레드팀 3회 틀림 4→0·전제 가능·editgate auto) | firemap-write 10-14 06:22: m1stot1013을 10/15 15:10으로 옮김(06:10 M-1 긴 글과 같은 예시) — 새 편 필요, 관문 기한 09:10, 못 넘으면 비움 | firemap-meeting 2026-10-13 21:32: 비축 짝 글 배정(yt_pair: m1s_total1y uMqmvqNM02k, 10/13 19:20 공개됨). r1cafe_fx1014는 쇼츠 r1s_fx 공개(19:20) 뒤 19:40으로 옮김(짝 글은 쇼츠 공개 뒤 규칙) | firemap-write 2026-10-13 07:2x 배정: 쇼츠 r1s_fx(k1hsFpaLDH0, 19:20 공개) 짝 짧은 글 — 질문 하나 \"달러로 산 ETF, 환율이 얼마나 깎았나\" · 쇼츠+본편 G1oI47miUuo 링크+표 1개(숫자 ep/R-1/facts.txt [10]·[add-1003 B1·B2]) · yt_pair: k1hsFpaLDH0 · 롱폼 짝 글과 겹치지 않게 · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 14:38: r1cafe_fx1014 관문 통과 — \"미국 ET | 10/13 칸 재배치 10-14 20:10→10-14 15:10"
+   "note": "firemap-write 10-14 06:56: 새 편 관문 통과 — \"주담대금리 기준금리 3% 시대, 은행별 변동·고정 차이는 얼마일까\"(돈 관리·금리, 제목 7.33·표지 K3 7.67·compare.md 경쟁 8·readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck·레드팀 3회 틀림 4→0·전제 가능·editgate auto) | firemap-write 10-14 06:22: m1stot1013을 10/15 15:10으로 옮김(06:10 M-1 긴 글과 같은 예시) — 새 편 필요, 관문 기한 09:10, 못 넘으면 비움 | firemap-meeting 2026-10-13 21:32: 비축 짝 글 배정(yt_pair: m1s_total1y uMqmvqNM02k, 10/13 19:20 공개됨). r1cafe_fx1014는 쇼츠 r1s_fx 공개(19:20) 뒤 19:40으로 옮김(짝 글은 쇼츠 공개 뒤 규칙) | firemap-write 2026-10-13 07:2x 배정: 쇼츠 r1s_fx(k1hsFpaLDH0, 19:20 공개) 짝 짧은 글 — 질문 하나 \"달러로 산 ETF, 환율이 얼마나 깎았나\" · 쇼츠+본편 G1oI47miUuo 링크+표 1개(숫자 ep/R-1/facts.txt [10]·[add-1003 B1·B2]) · yt_pair: k1hsFpaLDH0 · 롱폼 짝 글과 겹치지 않게 · 관문 기한 = 발행 6시간 전 | firemap-write 2026-10-13 14:38: r1cafe_fx1014 관문 통과 — \"미국 ET | 10/13 칸 재배치 10-14 20:10→10-14 15:10",
+   "published": "https://cafe.naver.com/firemap/271 15:23 verify OK 1157자"
   },
   {
    "at": "2026-10-14 16:40",
@@ -1351,10 +1352,10 @@
   {
    "at": "2026-10-15 18:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "pencap1015",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+   "gates_ok": "2026-10-14 15:40",
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-write 2026-10-14 15:40: pencap1015 연금저축·IRP 세액공제 연봉별 상한(세금연금, 소득세법 제61조③ 계산) 관문 통과 — 제목 8.1·표지 K4 7.33·레드팀 2회·editgate auto"
   },
   {
    "at": "2026-10-15 19:20",

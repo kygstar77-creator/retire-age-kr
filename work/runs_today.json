@@ -58,6 +58,19 @@
     "url": "https://cafe.naver.com/firemap/270"
    },
    "note": "13:40 칸 qqqm1014(10/13 관문 통과분). naverpost 읽기검사가 제목 숫자 2개로 막아 제목 교체(제미나이 2회 7·7)·본문 '보유' 1곳·게시판 ETF · readcheck 0·aitell 2.6·selfcheck 사실 0·editgate 재서명 · verify OK 1251/1251자·사진 4/4 · 관련 영상: QQQ 다룬 공개 영상 없어 안 넣음 · 블로그 없음(색인 브레이크) · 개선: 없음"
+  },
+  {
+   "hour": 15,
+   "ts": "15:41",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "주담대금리 기준금리 3% 시대, 은행별 변동·고정 차이는 얼마일까",
+    "url": "https://cafe.naver.com/firemap/271"
+   },
+   "note": "카페 15:10 칸 rateloan1014 verify OK 1157/1157·사진 3/3 · 블로그 0(DAY_CAP·색인 0 경보, 이번 회차 카페만) · 새 편 pencap1015(10/15 18:10) 자료조사 WebSearch 3회 5건+법령 API 소득세법·시행령 원문 11항목 · 검증 경로 crosscheck(Gemini) 사실 3 반영 + selfcheck 사실 0 + 레드팀 2회 틀림 2 반영 · 개선: 없음(selfloop 일감표는 시간상 건너뜀)"
   }
  ]
 }

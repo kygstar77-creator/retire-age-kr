@@ -1,0 +1,52 @@
+{
+ "date": "2026-10-14",
+ "runs": [
+  {
+   "hour": 6,
+   "ts": "06:54",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "월배당 ETF로 매달 100만원 받으려면 건보료까지 떼고 얼마가 필요할까",
+    "url": "https://cafe.naver.com/firemap/265"
+   },
+   "note": "블로그 없음(02~07시 카페만·블로그 색인 0% 경보) · 카페 06:10 m1cafe1014(M-1 짝) cafe/265 06:43 verify OK 1866/1866자·사진 3/3, 장부 published 자동 기입 확인 · 첫 시도 sameday 거부(15:10 m1stot1013과 예시 숫자 5개) → m1stot1013 10/15 15:10로 옮김 · 새로 씀: h1cafe1015(10/15 09:10 H-1 짝, 관문 통과 — 자료 H-1 facts·calc_out·cafe_table, 새 숫자 0) · rateloan1014(10/14 15:10, 주담대 변동·고정 은행 15곳 — WebSearch 6건·ECOS·금감원 finlife·계산, 관문 진행) · 교차검증: h1 사실 4 중 반영 1·유지 3, 말투 6 중 반영 3 / rate 사실 4 중 반영 1·유지 3(ECOS 원값·자체 계산기), 말투 14 중 반영 5 · 검증 경로 crosscheck(Gemini)+레드팀 Claude 2회씩 · 개선: naverpost verify→slots.json published 자동 기입, blogimg.table 폭 인자 W"
+  },
+  {
+   "hour": 7,
+   "ts": "07:47",
+   "blog": null,
+   "cafe": {
+    "title": "계약갱신청구권 실거주 거절한 집에 새 세입자가 들어오면 배상금은 얼마일까",
+    "url": "https://cafe.naver.com/firemap/266"
+   },
+   "note": "firemap-write-b 07:40 칸 renew1011(부동산, 10/13 08:29 관문 통과분·editgate 해시 일치) 발행 · verify OK 1579/1579자·사진 3/3 · 게시판 부동산 · 관련 영상 없음(공개 롱폼 중 주제 맞는 편 없음) · 발행기 경고: 오늘 제목 끝말 '얼마' 3칸 · 확인 창 처리 Timeout(발행·verify는 정상) · 개선: 없음"
+  },
+  {
+   "hour": 10,
+   "ts": "10:46",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "청약통장 해지 추징 54만원, 세율 낮으면 절반 넘게 줄이는 조건",
+    "url": "https://cafe.naver.com/firemap/268"
+   },
+   "note": "10:40 칸 cheongyak1012(관문 10/13 12:37 통과분) · 발행 전 재확인 editgate 해시 일치·readcheck 0·aitell 0.0 · verify OK 1092/1092자·사진 3/3 · 게시판 자동→돈 관리 · 관련 영상 없음(청약 주제 공개 영상 없음, 억지 연결 안 함) · slot.txt를 순돌이 칸 맞바꿈(e8feab1)에 맞춤 · 개선: 교본에 'slot.txt↔장부 시각 대조' 한 줄"
+  },
+  {
+   "hour": 12,
+   "ts": "12:39",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "1억 예금과 미국 ETF 셋, 세금·환율 떼고 통장에 남은 돈",
+    "url": "https://cafe.naver.com/firemap/269"
+   },
+   "note": "카페 12:10 칸 R-1 짝 글(영상 공개 확인 뒤) verify OK 1214/1214·사진 3/3 · 블로그 없음(하루 1편·9/24 이후 무색인 방침) · 다음 칸 jeonse1015 관문 통과(레드팀 3회 틀림 0·제미나이 제목 8.5·8.5·표지 8·8) · 개선: 교본에 '~는데 제목은 editgate 거부·표지 비교 기준 윗줄' 기록"
+  }
+ ]
+}

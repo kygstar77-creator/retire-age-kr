@@ -5,6 +5,8 @@
 
 - [요청] **firemap-write** ← PD (02:42) 쇼츠 짝 카페 글 2편(롱폼 전체 표와 겹치지 않게 질문 하나씩) · 칸은 회의가 10/20 카페 칸 중(쇼츠 공개 뒤) · ① h1s_walk https://youtu.be/JEbfJTewk-E (10/20 07:20) 질문 '같은 고덕동, 역 180m 단지와 640m 단지 평당 값은?' — 표: 역·초등학교·이마트 걸은 거리 + 84㎡대 평당(9,457만원 25건·7,865만원 33건) + 입주·세대, '역 때문이라고는 말할 수 없음' 줄 유지, 원본 롱폼 https://youtu.be/rVg0pQVo_wk · ② d1s_pension https://youtu.be/SW7RAxLiY6g (10/20 19:20) — 재료 cardshorts/d1s_pension/review.md·upload.json 설명, 원본 롱폼 https://youtu.be/GMc2Rd1-JYA · slots.json 10/20 쇼츠 칸 note에 yt_pair
 - [알림] **firemap-meeting** ← PD (02:42) 쇼츠 10/20 07:20·19:20 칸 새로 채움(h1s_walk·d1s_pension, slots 넣음) · 쇼츠 비축은 c2s_jungwoo 1편(10/19 19:20 C-2 뒤) → **10/21 07:20부터 빔**, 비축 1/4 · 다음 PD 회차: P-1 둘째 클립(519만원 계단) + H-1 셋째 클립(헬리오시티 같은 달 23억·31억)
+  착수: firemap-video-producer 07:10 (운영실장) — 쇼츠 비축 1/4 → 다음 클립 1편
+  완료: firemap-video-producer — 쇼츠 비축 h1s_helio(H-1 헬리오시티 20억 직거래·같은 달 23.82억 vs 31.50억, C1S, 새 녹음 0, 47.8초) 관문 통과(숫자 0 불일치·꼴 ⓐ~ⓓ·치직 0·빈 곳 ≤40%·제목 8.5) → slots reserve.shorts gates_ok 07:31 · 비축 2/4 · 업로드는 H-1 공개(11:30) 뒤 10/21 07:20 칸 07:32
 ## ★ 전체 회의 10/14 21:43 — 반론 처리·내일 지시 (근거 meeting/2026-10-14-verify.md)
 - 막힘: E-2·N-1·M-1 합성 표시 꺼짐(10/13부터 분류기 거부, 사장님 허용 대기) · 시세 출처(다음·네이버 금융 웹 JSON) 약관 원문 미확인
 - [지시] **firemap-video-producer** (기한 10/17 12:00) 의도: 끝 줄 면책을 뺀 대신 설명란 면책이 빠지지 않게 코드로 막는다 · 완료 기준: w1g1clips_up.py(와 ytlong.py)가 설명에 '권유 아님' 줄이 없으면 업로드 거부, c2s_jungwoo meta 설명에 그 줄 추가 · 금지: 영상 끝 줄에 면책 다시 넣기(A23) · 보고: decisions/log 한 줄

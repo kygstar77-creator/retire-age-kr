@@ -679,6 +679,22 @@ def blog_time_block():
     if datetime.datetime.now().hour < h: return '보류: 오늘 블로그 시각 전(%d시 이후)' % h
     return ''
 
+def private_video_links(pkg):
+    """본문에 걸린 유튜브 영상 중 아직 공개(public)가 아닌 것. 2026-10-14 순돌이: R-1·H-1 짝 글이
+    영상 공개(11:30) 전 칸(10:40·09:10)에 잡혀 있었다 — 그대로 나가면 '비공개 동영상' 링크가 된다."""
+    ids = set()
+    for f in os.listdir(pkg):
+        if f.endswith('.txt') and f[:1] == 'c':
+            ids |= set(re.findall(r'(?:youtu\.be/|watch\?v=)([\w-]{11})', open(os.path.join(pkg, f), encoding='utf-8').read()))
+    if not ids: return []
+    try:
+        import ytupload
+        items = ytupload.service().videos().list(part='status', id=','.join(sorted(ids))).execute().get('items', [])
+    except Exception as e:
+        print('  (영상 공개 확인 실패, 건너뜀: %s)' % str(e)[:60]); return []
+    pub = {x['id'] for x in items if x['status'].get('privacyStatus') == 'public'}
+    return sorted(ids - pub)
+
 def pending_block(kind, pkg, title, check_dup=True):
     """이 묶음을 지금 올리면 거부당할 이유. 없으면 ''.
 
@@ -705,6 +721,9 @@ def pending_block(kind, pkg, title, check_dup=True):
         return blog_time_block()
     if left is not None and left <= 0:
         return '하루 상한 도달(오늘 %d편/상한 %d편) — 내일 올린다' % (DAY_CAP[kind] - left, DAY_CAP[kind])
+    priv = private_video_links(pkg)
+    if priv:
+        return '보류: 아직 공개 안 된 영상 링크(%s) — 공개 뒤 칸으로' % ','.join(priv)
     need = 4 if kind == 'blog' else 3
     have = sum(1 for ln in open(os.path.join(pkg, 'order.txt'), encoding='utf-8')
                if ln.strip().startswith('img/'))

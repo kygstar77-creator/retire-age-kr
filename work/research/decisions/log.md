@@ -2005,3 +2005,5 @@
 2026-10-14 22:39 · firemap-video-producer · w1s_kospi 첫 줄을 녹음된 답 숫자 줄로 바꿔 교체 예약 njvFqMeKQlU(10/16 19:20), 옛 bpmpiaq_Gs0 예약 해제 · A27 가정 설정 첫 줄, 새 녹음 없이 줄 순서만으로 해결
 2026-10-14 22:39 · firemap-video-producer · p1s_cross 끝 줄 질문 넣고 0선 글자 잘림 고쳐 교체 예약 b4405ZoVjAQ(10/19 07:20), 옛 YTAustvbDfI 예약 해제 · copywriter 끝 줄이 18:25판에 빠짐, 눈 검사에서 잘림 발견
 2026-10-14 22:54 · firemap-write-b · 22:40 칸 m1snhis1013 발행(https://cafe.naver.com/firemap/276), 끝에 firemap.kr 건보료 계산기 줄 추가 후 재서명 · 10/14 회의 지시(관련 계산기 줄 100%)
+
+2026-10-14 23:15 · firemap-write · 10/15 07:40 카페 칸 주제 인텔(intc1015)로 정하고 자료 수집까지 완료(gates_ok 미기입, 완료 23:15) · 07:40 후보 중 인텔주가 검색 107,530(테슬라 실적발표 290은 약함, 팔란티어는 최근 2편), 지난 글 인텔 0편; 관문은 01:40 전 다음 회차, 못 넘으면 비축 npsage1009

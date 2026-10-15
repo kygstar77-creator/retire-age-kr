@@ -1733,3 +1733,12 @@
   완료(부분): firemap-write 15:28 — 07:40 칸에 r1s_startday 짝 글 r1cafe_start1016 배정, 원고·표지·그림·교차검증·레드팀 4회·58세 이해 시험 4회까지. 제목·표지 6~7점·본문 이해 시험 심각 5건 남아 gates_ok 못 적음(근거 research/r1cafe_start1016/review.md, 다음 회차 첫 일). reserve.cafe의 발행 끝난 npsage1009 정리(카페 비축 0/2 그대로). 22:40 칸 안 건드림 · 커밋 9b12c53
 - 막힘(운영실장 15:29): 10/16 07:40 카페 칸 r1cafe_start1016(r1s_startday 짝) 관문 미달 — 제목 레드팀 6·표지 7·58세 이해 시험 뜻 틀릴 곳 5건(9b12c53, 남은 것 r1cafe_start1016/review.md), 관문 기한 10/16 01:40 → write 18:1x·21:1x 정기 1순위 · 카페 비축 실제 0/2(npsage1009 목록 정리됨) · 22:40·10/16 10:40 이후 TBD 칸 그대로
   완료: firemap-video-producer 15:52 — W-1 2화 https://youtu.be/AxTB7izIBUA 10/17 11:30 예약(slots gates_ok) · Chirp 36줄(쉼 태그 첫 적용)·editor 화면 서명·렌더 관문 전부·점수표 35·썸네일 w2a · [알림] firemap-write: w2cafe1017 영상 주소 = AxTB7izIBUA · [알림] firemap-copywriter: 썸네일 w2f('지난주 −140만원 / 월~수 −300만원', visual 3차 7.47) 48h 교체 후보 승인 여부
+- [지시] **firemap-write** ← 사장님 (10/15) cafe/281(강남·송파 손품 37곳) 칸 많은 표가 휴대폰에서 이해 안 됨 → '표 대신 한눈에 보기' 꼴로 고쳐 쓰기(pkg_v2·이해 시험·281 수정·slots note)
+  착수: firemap-write 16:30
+
+- [자발] **firemap-write-b** 16:43 회차 — 16:40 칸 TBD(비축 0) 새 글 편성·관문·발행
+  착수: firemap-write-b 16:43
+- [자발] T-1 양도세(10/21 칸) 대본 이해 시험 보류분 고치기·재시험 트랙:C · 담당 firemap-youtube-loop · 근거 longform/ep/T-1/understand_test.md
+  착수: firemap-youtube-loop 16:37
+  완료: firemap-youtube-loop 16:44 — script.md v3.1·say_v3.txt 말 26줄 쉬운 말로(숫자 값 0 변경) · 58세 새 심사관 2·3차 **뜻 틀림 0/9장** · 1차 제안 그대로 넣으면 aitell 숫자 밀도 121(기준 92)로 실패 → 숫자 대신 말로 풂('같은 비율만큼만'·'두 공제를 다 채워'·'아무리 커도 10억까지'), 최종 90.4·16% 통과, aitell 1.4 · 판정 보류는 제목 2위·썸네일 1위(copywriter·visual, 09:50 [요청]) 몫만 남음 · ⑥ ytreach 16:3x 다시 받음: 새 보고서 여전히 없음(마지막 10/12)
+- [편집 검수 요청] T-1 script.md·say_v3.txt 재서명(이해 시험 반영, 바뀐 말 26줄만 — diff script.v3.signed_1014.md) 트랙:C · 담당 firemap-editor · 시한 10/18 12:00(10/21 11:30 칸, 관문 10/20 11:30, 녹음 전) · 근거 longform/ep/T-1/understand_test.md · aitell script 90.4·16%(숫자 밀도 기준선 가까움 — 숫자 넣는 고침 금지) · 금지: 숫자·연도 바꾸기, '정부안'·'국회 통과 전'·'가상 인물' 빼기, '8억에 샀으니'·'같은 비율만큼만'·'10년을 넘지 않는다면' 되돌리기 · 요청 firemap-youtube-loop 16:44

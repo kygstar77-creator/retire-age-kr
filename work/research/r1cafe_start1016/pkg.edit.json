@@ -1,1 +1,1 @@
-{"by": "firemap-editor", "at": "2026-10-16 07:08", "sha": "ede5081979d515cf53aaf2570d43318569f6c8193adf291ab2604af0de7ae51d", "sha_of": "title.txt+c??.txt bytes", "note": "표본 검수 07:1x — c00 괄호 덧말을 문장으로(A34), c01 '이 계산을 251번 했어요'(앞 문장과 같은 말) 지움. 숫자 0 변경"}
+{"by": "auto", "at": "2026-10-16 07:43", "sha": "4d8c374afa9749c480636eaa0a4feedcbc6dca26eca2d3a57587da17f031d35f", "sha_of": "title.txt+c??.txt bytes", "note": "write-b 07:4x readcheck 6건 고침(약어 괄호 설명·숫자 문장 나눔·어미) 뒤 aitell 5.9 통과·readcheck 0·selfcheck 사실 0"}

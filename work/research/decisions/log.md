@@ -2139,3 +2139,4 @@
 2026-10-16 07:09 · editor · auto 표본 r1cafe_start1016·retax1016 고침·재stamp · 괄호 덧말·제목 되풀이 소제목
 2026-10-16 07:33 · firemap-video-producer · 쇼츠 비축 d1s_dep(D-1 피부양자 조건 클립) 만들어 관문 통과 → slots reserve.shorts, 업로드 안 함 · 회의 후보 P-1·H-1 클립은 이미 있어 다른 롱폼·다른 질문(D-1)으로, 58세 이해 시험 3차까지 고침
 2026-10-16 07:33 · firemap-video-producer · w1g1clips_check.py: 원문에 '5억 4,000만원' 글자 그대로 있으면 만원 환산하지 않음 · 조문 기준값을 '원문에 없음'으로 잘못 잡음(옛 클립 3편 재검 통과)
+2026-10-16 07:51 · firemap-write-b · 07:40 칸 r1cafe_start1016 발행(cafe/289, verify OK) · 발행기 readcheck 6건은 문장 고쳐 해결, 사실·숫자 변경 없음

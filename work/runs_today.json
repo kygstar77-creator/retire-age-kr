@@ -13,6 +13,17 @@
     "url": "https://cafe.naver.com/firemap/288"
    },
    "note": "06:10 칸 costchk1016 발행 · verify OK 2636/2636자·사진 3/3 · 블로그는 새벽 2~7시 쉼·하루 상한 규칙으로 안 올림 · 다음 칸 준비: 10/16 18:10 retax1016(퇴직소득세, 법령 원문 lawtext 6조·부칙·시행령 4조, 오늘 찾은 것 6건) crosscheck(Gemini 대행) 사실 지적 7건 중 반영 4(55세·한도초과·40조의3·임원 → 사실표에 원문 추가)·유지 3(표는 그림이라 못 봄, 계산기 줄은 규칙) · 말투 10건 중 반영 8(유지 2: 사례 먼저 원칙·'털어내고' 대신 이해 시험 반영) · 레드팀 1차 틀림0·오해3·군더더기1 전부 반영 · 이해 시험 헷갈림 10곳 반영 · 개선: editgate 배당 대응표·시세 출처 검사 · retax1016 레드팀 2차 틀림0·오해2·군더더기1 반영 · 이해 시험 4차 통과 · editgate auto 날인 · slots 18:10 gates_ok"
+  },
+  {
+   "hour": 7,
+   "ts": "07:51",
+   "by": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "SCHD SPY 금 ETF, 넣는 날만 바꿔도 1등이 달라진 기록",
+    "url": "https://cafe.naver.com/firemap/289"
+   },
+   "note": "07:40 칸 r1cafe_start1016(쇼츠 tDPWYHRotRQ public 확인) · 발행기 readcheck 6건 막힘→고침(약어 괄호 설명·숫자 문장 나눔·어미) 뒤 readcheck 0·selfcheck 사실 0·aitell 5.9 통과·editgate auto 재서명 · verify OK 1820/1820자·사진 3/3(게시판 ETF) · 개선: 없음(어제 관문 통과 시 readcheck 0이었는데 오늘 걸림 — 통과 뒤 readcheck 규칙이 바뀐 것으로 보임, 확인 안 함)"
   }
  ]
 }

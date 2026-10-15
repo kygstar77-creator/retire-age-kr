@@ -1769,3 +1769,7 @@
   완료: firemap-editor 18:25 — C-2 화면 글자 재서명 통과(2줄 다시 녹음 뒤) · 바뀐 자막 2줄(scenes.14.lines.1·scenes.18.lines.0) 18:23 서명 script.md와 글자 같음 · data 줄 변경 0·숫자 값 0 변경 · 자막 전 줄이 script.md에 있음 · aitell 6.6 · lfrender check 편집 통과·관문 통과
   추가 요청(PD, 58세 2차 재시험) 완료: firemap-editor 18:26 — 4장 1줄 고치고 script 재서명(원본 .orig1015c) · '그걸로는 해마다 꺼내는 2,400만원을 메울 수 없었죠.'→'그 정도로는 정우 씨가 해마다 꺼내는 2,400만원을 메울 수 없었어요.'(민수 씨로 읽힘 막기, 앞줄 '6%대였죠'와 -죠 연속 끊기) · 숫자 값 0 변경 · aitell 0.9 · script 82.1/1,000·19% 통과 · 녹음 다시 say_v2 35줄 · 화면 글자 stamp(18:25)는 그대로, PD 다시 녹음·text 뒤 재요청
   완료: firemap-editor 18:27 — C-2 화면 글자 재서명 통과(35줄 다시 녹음 뒤) · 바뀐 자막 1줄(scenes.18.lines.1) 18:26 서명 script.md와 글자 같음 · data 줄 변경 0·숫자 값 0 변경 · 자막 전 줄이 script.md에 있음 · aitell 6.6 · lfrender check 편집 통과·관문 통과
+- [자발] **firemap-write-b** 19:42 회차 — 19:40 칸 g1cafe_paths1015(g1s_paths 짝) 발행
+  착수: firemap-write-b 19:42
+  완료: firemap-write-b 19:47 — 19:40 g1cafe_paths1015 https://cafe.naver.com/firemap/285 verify OK 1425/1425자·사진 3/3(게시판 돈 관리) · 쇼츠 lfUqV4YpwGM·본편 xBTZtRp5lMs public 확인 뒤 발행 · 발행기 경고: 오늘 제목 끝말 '얼마' 5칸째(다음 칸부터 다른 끝말) · [알림] firemap-video-producer: 쇼츠 g1s_paths(lfUqV4YpwGM) 설명 앞 5줄 카페 주소를 https://cafe.naver.com/firemap/285 로 · 22:40 write-b 칸 TBD 남음
+- [알림] **firemap-video-producer** ← firemap-write-b (19:47) 쇼츠 g1s_paths lfUqV4YpwGM 설명 앞 5줄 카페 주소 → https://cafe.naver.com/firemap/285

@@ -1,0 +1,376 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	
+	<meta name="title" content="국민연금공단">
+	<meta name="keywords" content="국민연금, 연금, NPS, 4대보험">
+	<meta name="description" content="국민연금 홈페이지">
+	<meta name="Author" content="국민연금">
+	<meta name="Publisher" content="국민연금">
+	<meta name="Other Agent" content="">
+	<meta name="copyright" content="우) 54870 전라북도 전주시 덕진구 기지로 180(만성동)">
+	
+	<title>국민을 든든하게 연금을 튼튼하게</title>
+	<link rel="icon" type="image/x-icon" href="/images/common/favicon.ico">
+	<link rel="icon" type="image/png" href="/images/common/favicon_16x16.png">
+	<link rel="icon" type="image/png" href="/images/common/favicon_32x32.png">
+	<link rel="apple-touch-icon" href="/images/common/apple_touch_icon.png">
+ 	
+
+
+
+
+
+
+	
+	<script src='/raonnx/cmn/TouchEnNx.js'></script>
+	<script src='/raonnx/cmn/json2.js'></script>
+	<script src='/raonnx/cmn/TouchEnNx_exproto.js'></script>
+	<script src='/raonnx/cmn/TouchEnNx_install.js'></script>
+	<script src='/raonnx/cmn/TouchEnNx_daemon.js'></script>
+	<script src='/raonnx/nxKey/js/nxkey_config.js'></script>
+	<script src='/raonnx/nxKey/js/TouchEnNxKey_Interface.js'></script>
+	<script src='/raonnx/nxKey/js/TouchEnNxKey.js'></script>
+	<script src='/raonnx/cmn/TouchEnNx_loader.js'></script>
+	<script src="/raonnx/jquery/jquery-1.6.3.js"></script>
+	<script src="/raondemo/nxKey/raon_util.js"></script>
+	
+	
+	<script src="/js/lib/jquery.min.js"></script>
+	<script src="/js/lib/jquery-ui.min.js"></script>
+	<script src="/js/lib/swiper.min.js"></script>
+	<script src="/js/lib/jquery.rwdImageMaps.min.js"></script>
+	<script src="/js/lib/jquery.ui.monthpicker.js"></script>
+	<script src="/js/lib/aes.js"></script>
+	
+	<script src="/js/zoom.js"></script>
+	<script src="/js/ui_common.js"></script>
+	<script src="/js/ui_nps.js"></script>
+	
+	<script src="/js/common/common_utils.js"></script>
+	<script src="/js/common/ui_contents.js"></script>	
+	<script src="/sbchart/sbchart.js"></script>
+	
+	<script src="/crownixrd/js/crownix-invoker.min.js"></script>
+	
+	<!-- 다큐브레일 전자점역 -->	
+	<link rel="stylesheet" type="text/css" href="/css/dcbrl/docubraille-nps.css">
+	<script src="/js/dcbrl/docubraille-nps.js"></script>
+	<script src="/js/dcbrl/docubraille-env-1.5.js"></script>
+	<script src="/js/dcbrl/docubraille-1.5.min.js"></script>
+	
+	<!--  모바일 호출 함수 -->
+	<script src="/js/moba/bridgeInje.js"></script>
+	<script src="/js/moba/bridge_utils.js"></script>
+	<script src="/js/moba/mobile_utils.js"></script>
+	<script src="/js/moba/mock_1.0.6.js"></script>	
+	<script src="/js/moba/ui_moba_common.js"></script>
+
+	
+
+
+
+
+
+
+
+
+
+ <link rel="stylesheet" type="text/css" href="/css/reset.css">
+ <link rel="stylesheet" type="text/css" href="/css/layout.css">
+ <link rel="stylesheet" type="text/css" href="/sbchart/sbchart.css">
+ <link rel="stylesheet" type="text/css" href="/css/common.css">
+ <link rel="stylesheet" type="text/css" href="/css/contents.css">
+ <link rel="stylesheet" type="text/css" href="/css/minwon.css?v=0.1">
+</head>
+<body>
+	
+
+
+
+
+
+
+
+
+<div class="winPop-wrap">
+	<header class="pop-header">
+		<div class="pop-title">
+			<h1>예상연금 간단계산</h1>
+		</div>
+		<div class="pop-close">
+			<button type="button" class="btn-close" onclick="self.close();">팝업닫기</button>
+		</div>
+	</header>
+	<section class="pop-container">
+		<div class="pop-body">
+			<form name="searchForm" id="searchForm">
+				<input type="hidden" name="crtrYr" value="2026">
+				<input type="hidden" name="minNtpsIsfe" id="minNtpsIsfe" value="38950">
+				<input type="hidden" name="maxNtpsIsfe" id="maxNtpsIsfe" value="626050">
+				<fieldset>
+					<legend>납입보험료 입력</legend>
+					<div class="cal-input-form">
+						<div class="row">
+							<label for="insu" class="lb">월 납입보험료</label>
+							<span class="input-text">
+								<input type="text" name="ntpsIsfe" id="ntpsIsfe" placeholder="월 납입보험료를 입력해주세요." onkeyup="fncAddComma(this);" value="">
+								<span>원</span>
+							</span>
+							<input type="button" value="예상연금액 조회하기" class="btn gray angular" id="btnSearch">
+						</div>
+					</div>
+				</fieldset>
+			</form>
+			<div class="pension-simple-txt">
+				<p>고객님 월 납입보험료에 해당하는 소득기준은 <span class="won"></span>원이며,</p>
+				<p>지금 적용되는 "A"값(전체 가입자 소득평균액)을 기준으로 산출된 예상연금액은 아래와 같습니다.</p>
+				<p>국민연금 콜센터(국번없이 1355)로 전화하시면<br>상세내역(11년 가입한 경우와 같은 5년 단위 이하의 지급예상액 등)을 상담받을 수 있습니다.</p>
+			</div>
+			<div class="pension-simple-result">
+				<div class="simple-item item1">
+					<h2>노령연금 <span class="sub-txt">(매월 지급예상액)</span></h2>
+					<ul>
+						<li><span class="lb">10년 가입</span><span class="data"></span></li>
+						<li><span class="lb">15년 가입</span><span class="data"></span></li>
+						<li><span class="lb">20년 가입</span><span class="data"></span></li>
+						<li><span class="lb">25년 가입</span><span class="data"></span></li>
+						<li><span class="lb">30년 가입</span><span class="data"></span></li>
+						<li><span class="lb">35년 가입</span><span class="data"></span></li>
+						<li><span class="lb">40년 가입</span><span class="data"></span></li>
+					</ul>
+				</div>
+				<div class="simple-item item2">
+					<h2>장애연금 <span class="sub-txt">(매월 지급예상액)</span></h2>
+					<ul>
+						<li><span class="lb">장애 1급</span><span class="data"></span></li>
+						<li><span class="lb">장애 2급</span><span class="data"></span></li>
+						<li><span class="lb">장애 3급</span><span class="data"></span></li>
+						<li><span class="lb">장애 4급(일시금)</span><span class="data"></span></li>
+					</ul>
+				</div>
+				<div class="simple-item item3">
+					<h2>유족연금 <span class="sub-txt">(매월 지급예상액)</span></h2>
+					<ul>
+						<li><span class="lb">10년 미만 가입</span><span class="data"></span></li>
+						<li><span class="lb">10년~20년 미만</span><span class="data"></span></li>
+						<li><span class="lb">20년 가입</span><span class="data"></span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="pension-simple-guide">
+				<p class="call-guide">국민연금 콜센터(국번없이 1355)로 전화하시면<br>상세내역(11년 가입한 경우와 같은 5년 단위 이하의 지급예상액 등)을 상담받을 수 있습니다.</p>
+				<div class="bottom-btns m-full">
+					<a href="/html/download/easy_pension/easypension_1_2026_3.xlsx" download="노령연금_예상연금월액표(2026년 7월 기준).xlsx" target="_blank" title="엑셀파일 새창열림" class="btn round white small ic-down">노령연금 예상월액표 다운로드</a>
+					<a href="/html/download/easy_pension/easypension_2_2026_3.xlsx" download="장애연금_예상연금월액표(2026년 7월 기준).xlsx" target="_blank" title="엑셀파일 새창열림" class="btn round white small ic-down">장애연금 예상월액표 다운로드</a>
+					<a href="/html/download/easy_pension/easypension_3_2026_3.xlsx" download="유족연금_예상연금월액표(2026년 7월 기준).xlsx" target="_blank" title="엑셀파일 새창열림" class="btn round white small ic-down">유족연금 예상월액표 다운로드</a>
+				</div>
+			</div>
+			<div class="pension-note">
+				<div class="tabWrap con-tab">
+					<ul class="tabNav con-tab-nav">
+						<li><a href="#tab1">노령연금 관련 유의사항</a></li>
+						<li><a href="#tab2">장애연금 관련 유의사항</a></li>
+						<li><a href="#tab3">유족연금 관련 유의사항</a></li>
+					</ul>
+					<div class="tabContents">
+						<div class="tabPage" id="tab1">
+							<div class="tabPage-title">
+								<h4>노령연금 관련 유의사항</h4>
+							</div>
+							<ul class="list-num txt-small">
+								<li>1. 연금액 산정 : (1.29(A+B)xP21/P) x (1+0.05n/12) x 지급률
+									<ul class="list-dot-mini left-indent">
+										<ul class="list-dash">
+											<li>A : 연금 수급 전 3년간의 평균소득월액의 평균액</li>
+											<li>B : 가입자 개인의 가입기간 중 기준소득월액의 평균액</li>
+											<li>P : 전체 가입월수</li>
+											<li>P21 : 2026년 이후 가입월수</li>
+											<li>n : 20년 초과 가입월수</li>
+											<li>노령연금의 지급률 : 가입기간 10년 50% (1개월마다 5/12% 증가)</li>
+										</ul>
+									</ul>
+								</li>
+								<li>2. 연금급여 수급권자에 의하여 생계를 유지하는 부양가족이 있는 경우 가족수당적 성격의 부양가족연금액이 가산됩니다.
+									<ul class="list-dot-mini left-indent">
+										<ul class="list-dash">
+											<li>배우자 : 연 306,630원 (월 25,550원)</li>
+											<li>자녀/부모 : 연 204,360원 (월 17,030원)</li>
+										</ul>
+									</ul>
+								</li>
+								<li>3. 2026년 1월 최초 가입으로 가정하여 2026년 적용 A값(3,193,511원)으로 산정하였으므로 실제와 상이할 수 있습니다.</li>
+								<li>4. 향후 실제 연금수급월액은 지급사유발생일 당시의 A값 및 재평가율을 적용하여 산정하므로 변동될 수 있습니다.</li>
+								<li>5. 연금의 월지급액(부양가족연금액 포함)은 가입자였던 최종 5년 동안의 기준소득월액의 평균액과 가입기간 동안의 기준소득월액의 평균액을 재평가한 금액 중 많은 금액을 초과할 수 없습니다.</li>
+								<li>6. 2026년 7월부터 2027년 6월까지의 기준소득월액 하한액은 410,000원, 상한액은 6,590,000원입니다.</li>
+							</ul>
+						</div>
+						<div class="tabPage" id="tab2">
+							<div class="tabPage-title">
+								<h4>장애연금 관련 유의사항</h4>
+							</div>
+							<ul class="list-num txt-small">
+								<li>1. 연금액 산정 : 1.29(A+B) x (1+0.05n/12) x 지급률
+									<ul class="list-dot-mini left-indent">
+										<ul class="list-dash">
+											<li>A : 연금 수급 전 3년간의 평균소득월액의 평균액</li>
+											<li>B : 가입자 개인의 가입기간 중 기준소득월액의 평균액</li>
+											<li>n : 20년 초과 가입월수</li>
+											<li>장애연금의 지급률 : 장애1급 100%, 2급 80%, 3급 60%, 4급 225%</li>
+										</ul>
+									</ul>
+								</li>
+								<li>2. 연금급여 수급권자에 의하여 생계를 유지하는 부양가족이 있는 경우 가족수당적 성격의 부양가족연금액이 가산됩니다.
+									<ul class="list-dot-mini left-indent">
+										<ul class="list-dash">
+											<li>배우자 : 연 306,630원 (월 25,550원)</li>
+											<li>자녀/부모 : 연 204,360원 (월 17,030원)</li>
+										</ul>
+									</ul>
+								</li>
+								<li>3. 2026년 1월 최초 가입 및 2026년 지급사유 발생으로 가정하여 2026년 적용 A값(3,193,511원)으로 산정하였으므로 실제와 상이할 수 있습니다.</li>
+								<li>4. 향후 실제 연금수급월액은 지급사유발생일 당시의 A값 및 재평가율을 적용하여 산정하므로 변동될 수 있습니다.</li>
+								<li>5. 연금의 월지급액(부양가족연금액 포함)은 가입자였던 최종 5년 동안의 기준소득월액의 평균액과 가입기간 동안의 기준소득월액의 평균액을 재평가한 금액 중 많은 금액을 초과할 수 없습니다.</li>
+								<li>6. 2026년 7월부터 2027년 6월까지의 기준소득월액 하한액은 410,000원, 상한액은 6,590,000원입니다.</li>
+							</ul>
+						</div>
+						<div class="tabPage" id="tab3">
+							<div class="tabPage-title">
+								<h4>유족연금 관련 유의사항</h4>
+							</div>
+							<ul class="list-num txt-small">
+								<li>1. 연금액 산정 : {1.8(A+B)xP2/P+1.5(A+B)xP3/P+...+1.245(A+B)xP20/P+1.29(A+B)xP21/P} x (1+0.05n/12) x 지급률
+									<ul class="list-dot-mini left-indent">
+										<ul class="list-dash">
+											<li>A : 연금 수급 전 3년간의 평균소득월액의 평균액</li>
+											<li>B : 가입자 개인의 가입기간 중 기준소득월액의 평균액</li>
+											<li>P : 전체 가입월수</li>
+											<li>P2~P21 : 연도별 가입월수 (P2 : '07년, P3 : '08년, P20 : '25년, P21 : '26년)</li>
+											<li>n : 20년 초과 가입월수</li>
+											<li>유족연금의 지급률 : 가입기간 10년미만 40%, 10년이상 20년미만 50%, 20년이상 60%</li>
+										</ul>
+									</ul>
+								</li>
+								<li>2. 연금급여 수급권자에 의하여 생계를 유지하는 부양가족이 있는 경우 가족수당적 성격의 부양가족연금액이 가산됩니다.
+									<ul class="list-dot-mini left-indent">
+										<ul class="list-dash">
+											<li>배우자 : 연 306,630원 (월 25,550원)</li>
+											<li>자녀/부모 : 연 204,360원 (월 17,030원)</li>
+										</ul>
+									</ul>
+								</li>
+								<li>3. 2026년 지급사유 발생으로 가정하여 2026년 적용 A값(3,193,511원)으로 산정하였으므로 실제와 상이할 수 있습니다.
+									<ul class="list-dot-mini left-indent">
+										<ul class="list-dash">
+											<li>10년미만 : 2026년 1월~2026년 12월 1년 가입 가정</li>
+											<li>10년이상 20년미만 : 2012년 1월~2026년 12월 15년 가입 가정</li>
+											<li>20년 이상 : 2007년 1월~2026년 12월 20년 가입 가정</li>
+										</ul>
+									</ul>
+								</li>
+								<li>4. 향후 실제 연금수급월액은 지급사유발생일 당시의 A값 및 재평가율을 적용하여 산정하므로 변동될 수 있습니다.</li>
+								<li>5. 연금의 월지급액(부양가족연금액 포함)은 가입자였던 최종 5년 동안의 기준소득월액의 평균액과 가입기간 동안의 기준소득월액의 평균액을 재평가한 금액 중 많은 금액을 초과할 수 없습니다.</li>
+								<li>6. 2026년 7월부터 2027년 6월까지의 기준소득월액 하한액은 410,000원, 상한액은 6,590,000원입니다.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+<script>
+	function fncAddComma(box) {
+		var i;
+		var inits = "";
+		var num_len = box.value.length;
+		var hoy = box.value;
+
+		if (hoy == "" || hoy == "NaN") {
+			if (hoy == "NaN") {
+				alert('숫자만 입력가능합니다.');
+				box.value = "";
+				return false;
+			}
+
+			box.value = "";
+			return false;
+		}
+
+		for (i = 0; i < num_len; i++) {
+			var sect = box.value.substring(i, i + 1);
+
+			if (sect != ",") {
+				inits += sect;
+			}
+		}
+
+		box.value = parseInt(inits);
+
+		if (box.value == "NaN") {
+			alert('숫자만 입력가능합니다.');
+			box.value = "";
+			return false;
+		}
+
+		ing = box.value.length % 3;
+		num_len = (box.value.length - ing) / 3;
+		sect = box.value.substring(0, ing);
+
+		for (i = 0; i < num_len; i++) {
+			if ((ing == 0) && (i == 0)) {
+				sect += box.value.substring(ing + (3 * i), ing + 3 + (3 * i));
+			} else {
+				sect += ",";
+				sect += box.value.substring(ing + (3 * i), ing + 3 + (3 * i));
+			}
+		}
+
+		box.value = sect;
+		return true;
+	}
+
+	// 조회
+	function fncSearch() {
+		var ntpsIsfe = Number($("#ntpsIsfe").val().replaceAll(",", ""));
+
+		if (ntpsIsfe == 0) {
+			return false;
+		} else if (ntpsIsfe > $("#maxNtpsIsfe").val()) {
+			ntpsIsfe = $("#maxNtpsIsfe").val();
+		} else if (ntpsIsfe < $("#minNtpsIsfe").val()) {
+			ntpsIsfe = $("#minNtpsIsfe").val();
+		}
+
+		$("#ntpsIsfe").val(ntpsIsfe);
+
+		var formData = new FormData($("#searchForm")[0]);
+
+		$.formAjax("/comm/quick/empty/getOHAH0011P0.do", formData, "", function(response) { // 콜백
+			$("body").html(response);
+		}, function(response) { // 에러 콜백
+			console.log("fncSearchCallBackErr", response);
+			commonUI.msgPop("alert", response.msg);
+		});
+	}
+
+	// 검색 처리 함수
+	$("#btnSearch").click(function() {
+		fncSearch();
+	});
+
+	// 검색 엔터 처리 함수
+	$("#ntpsIsfe").keydown(function(e) {
+		if (e.keyCode == 13) {
+			e.preventDefault();
+			fncSearch();
+		}
+	});
+</script>
+</body>
+</html>  

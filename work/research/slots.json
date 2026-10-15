@@ -46,15 +46,6 @@
     "gates_ok": "2026-10-14 15:19"
    },
    {
-    "item": "h1s_helio",
-    "ep": "work/research/cardshorts/h1s_helio",
-    "layout": "c1clip",
-    "status": "관문 통과(compete 6·숫자 대조 0·꼴 ⓐ~ⓓ(c1clip 5/10)·치직 0·쉿소리 −11.9dB·빈 곳 최대 40%·47.8초·제목 8.5·aitell 0.0) · 미업로드 — H-1 롱폼(rVg0pQVo_wk) 10/15 11:30 공개 뒤 업로드, 1순위 10/21 07:20(같은 날 19:20은 H-1 아닌 롱폼) · 근거 cardshorts/h1s_helio/review.md",
-    "by": "firemap-video-producer",
-    "at": "2026-10-15 07:31",
-    "gates_ok": "2026-10-15 07:31"
-   },
-   {
     "item": "p1s_step",
     "ep": "work/research/cardshorts/p1s_step",
     "layout": "c1clip",
@@ -64,16 +55,7 @@
     "gates_ok": "2026-10-15 11:05"
    }
   ],
-  "cafe": [
-   {
-    "item": "npsage1009",
-    "ep": "work/research/npsage1009/pkg",
-    "status": "관문 통과 2026-10-08 20:24(제목 레드팀 재심사·표지 A13 7.33·editgate auto). 국민연금 일주일 상한(본문 주제 기준)으로 10/9 12:10에서 뺌 — 마지막 국민연금 제목 npsimui1007(10/7 08:28) 이후 7일인 10/14 08:30부터 공개 가능. slot.txt 2026-10-14 12 가안",
-    "by": "firemap-write",
-    "at": "2026-10-08 22:36",
-    "gates_ok": "2026-10-08 20:24"
-   }
-  ],
+  "cafe": [],
   "long": [
    {
     "item": "R-1",
@@ -1441,10 +1423,10 @@
   {
    "at": "2026-10-16 07:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "r1cafe_start1016",
    "owner": "firemap-write-b",
    "gates_ok": null,
-   "note": "순돌이 10/13 짝 글: 같은 날 07:20 shorts 'TBD'의 카페 짝 글. 공개된 영상 링크를 본문 끝에, 영상 설명 앞 5줄에는 이 글 주소. 짝이 TBD면 PD가 정한 쇼츠를 따른다. | 순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상",
+   "note": "firemap-write 2026-10-15 15:3x: r1s_startday(tDPWYHRotRQ 07:20) 짝 글 r1cafe_start1016 배정·원고·표지·이미지·교차검증까지 — 제목·표지 레드팀 5~6점·58세 이해 시험 미통과라 gates_ok 아직 없음(근거 research/r1cafe_start1016/review.md). 영상 07:20 공개 뒤만 발행 | 순돌이 10/13 짝 글: 같은 날 07:20 shorts 'TBD'의 카페 짝 글. 공개된 영상 링크를 본문 끝에, 영상 설명 앞 5줄에는 이 글 주소. 짝이 TBD면 PD가 정한 쇼츠를 따른다. | 순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상",
    "pair": "TBD"
   },
   {
@@ -1846,6 +1828,16 @@
    "gates_ok": "2026-10-14 23:25",
    "published": "예약 2026-10-20T19:20:00+09:00 https://youtu.be/SW7RAxLiY6g (private+publishAt 10:20Z, 합성 표시 update True)",
    "note": "firemap-video-producer 2026-10-15 02:41: 비축 d1s_pension(D-1 GMc2Rd1-JYA 연금 건보료 절벽) 업로드 · 같은 날 07:20 h1s_walk(H-1)과 다른 롱폼 · yt_pair: SW7RAxLiY6g · 짝 카페 글 요청(today.md)"
+  },
+  {
+   "at": "2026-10-21 07:20",
+   "kind": "shorts",
+   "item": "h1s_helio",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-15 07:31",
+   "published": "예약 2026-10-21T07:20:00+09:00 https://youtu.be/XB9fAhJrxFA (private+publishAt, 합성 표시 update True)",
+   "item_pkg": "work/research/cardshorts/h1s_helio",
+   "note": "firemap-video-producer 2026-10-15 14:54: H-1 클립 비축분 예약 · yt_pair: XB9fAhJrxFA"
   },
   {
    "at": "2026-10-21 11:30",

@@ -162,6 +162,45 @@ V['n2m'] = three().replace("<div class='t' style='left:40px;top:594px;font-size:
 V['n2n'] = four(ladder=False).replace("<div class='t' style='left:180px;top:152px;font-size:58px;color:#FFFFFF'>같은 나이 일자리</div>", "")     .replace("left:176px;top:30px;font-size:112px", "left:186px;top:40px;font-size:124px")     .replace("top:248px;width:604px;height:316px", "top:200px;width:604px;height:366px")     .replace("top:272px;width:604px;text-align:center;font-size:80px", "top:226px;width:604px;text-align:center;font-size:88px")     .replace("top:378px;width:604px;text-align:center;font-size:160px", "top:350px;width:604px;text-align:center;font-size:172px")     + "<div class='t' style='left:24px;top:588px;width:1232px;text-align:center;font-size:82px;color:#FFFFFF'>같은 나이 일자리</div>"
 assert V['n2n'].count('같은 나이 일자리') == 1 and '세전 월 450만원' in V['n2n']
 
+# ── 6차(10/15 09:1x) — copywriter 18:53 '마흔둘엔 상위 42%' 승인. 5차 처방: ① 문서 아이콘 빼고 '세전 월 450만원' 왼쪽 끝부터 크게
+#    ② '상위'를 숫자의 55%로 ③ 두 칸 사이 띄움(나란히 비교) ④ 같은 450이 두 칸에 걸린다는 연결 표시. 화살표·크기 차 금지(시간 흐름 오독).
+def six(link=False, gap=72, c1='#FFD23F', c2='#2B6BE4', head='#FFD23F'):
+    w = (1232 - gap) // 2; x2 = 24 + w + gap
+    L = ''
+    if link:  # 머리 글 아래 가로 띠 하나 → 두 칸 가운데로 내려가는 짧은 기둥 2개(한 월급이 두 칸에 같이 걸림)
+        L = (f"<div style='position:absolute;left:{24+w//2-7}px;top:168px;width:{x2+w//2-24-w//2+14}px;height:14px;background:{head};border-radius:7px'></div>"
+             f"<div style='position:absolute;left:{24+w//2-7}px;top:168px;width:14px;height:52px;background:{head};border-radius:7px'></div>"
+             f"<div style='position:absolute;left:{x2+w//2-7}px;top:168px;width:14px;height:52px;background:{head};border-radius:7px'></div>")
+    top = 214 if link else 200
+    return f"""<div style='position:absolute;inset:0;background:#0B1D45'></div>
+<div class='t' style='left:0;top:22px;width:1280px;text-align:center;font-size:136px;color:{head}'>세전 월 450만원</div>{L}
+<div style='position:absolute;left:24px;top:{top}px;width:{w}px;height:{566-top}px;background:{c1};border-radius:22px'></div>
+<div style='position:absolute;left:{x2}px;top:{top}px;width:{w}px;height:{566-top}px;background:{c2};border-radius:22px'></div>
+<div class='t' style='left:24px;top:{top+22}px;width:{w}px;text-align:center;font-size:88px;color:#3A3220'>스물일곱엔</div>
+<div class='t' style='left:24px;top:{top+140}px;width:{w}px;text-align:center;font-size:172px;color:#14171C'><span style='font-size:96px'>상위 </span>{A}</div>
+<div class='t' style='left:{x2}px;top:{top+22}px;width:{w}px;text-align:center;font-size:88px;color:#FFFFFF'>마흔둘엔</div>
+<div class='t' style='left:{x2}px;top:{top+140}px;width:{w}px;text-align:center;font-size:172px;color:#FFFFFF'><span style='font-size:96px'>상위 </span>{B}</div>
+<div class='t' style='left:24px;top:588px;width:1232px;text-align:center;font-size:82px;color:#FFFFFF'>같은 나이 일자리</div>"""
+
+
+V['n2o'] = six()
+V['n2p'] = six(link=True)
+V['n2q'] = six(link=True, c2='#FFFFFF').replace("color:#FFFFFF'>마흔둘엔", "color:#1E3A8A'>마흔둘엔").replace(f"font-size:172px;color:#FFFFFF'><span style='font-size:96px'>상위 </span>{B}", f"font-size:172px;color:#1E3A8A'><span style='font-size:96px'>상위 </span>{B}")
+assert all(V[k].count('상위 ') == 2 and V[k].count('같은 나이 일자리') == 1 for k in ('n2o', 'n2p', 'n2q'))
+
+# ── 7차(10/15 09:2x) — 6차 세 명: n2o 7.35(제미나이 7.5·7 → 7.25·Claude 6.9·레드팀 7.9) 1위 · n2q 7.30 · n2p 7.25 · n2n 6.63.
+#    Claude 블라인드: n2o 맨 아래 '같은 나이 일자리'만 흐림 → 레드팀 조건(못 읽은 심사관이 나오면) 대안 1: 조건 줄을 두 칸 바로 아래(간격 10px 이하)·96px.
+#    연결 띠(n2p·n2q)는 대진표·조직도로 읽힘(레드팀) → 버림. 흰 칸(n2q)은 42%가 '좋은 쪽'으로 튐 → 버림.
+#    오른쪽 아래(x>960,y>576) 비우려고 조건 줄 가운데를 x=600으로.
+V['n2r'] = six().replace("height:366px", "height:336px").replace(
+    "<div class='t' style='left:24px;top:588px;width:1232px;text-align:center;font-size:82px;color:#FFFFFF'>같은 나이 일자리</div>",
+    "<div class='t' style='left:0;top:544px;width:1200px;text-align:center;font-size:96px;color:#FFFFFF'>같은 나이 일자리</div>")
+assert V['n2r'].count('font-size:96px;color:#FFFFFF') == 1
+
+# ── 8차 준비(10/15) — 7차 세 명: n2r 6.87(제미나이 6·6·Claude 6.7·레드팀 7.9) · n2o 대조 6.33(5·5·6.3·7.7, 6차 7.35에서 1점 내려감).
+#    레드팀: n2r 아래 줄 x=600 왼쪽 이동은 득 0(n2o도 이미 x<960) → 가운데로. n2s = n2r 가운데.
+V['n2s'] = V['n2r'].replace("left:0;top:544px;width:1200px", "left:0;top:544px;width:1280px")
+
 
 def check_zones(page):
     return page.evaluate("""()=>{const bad=[];document.querySelectorAll('body *').forEach(e=>{

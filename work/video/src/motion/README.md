@@ -79,3 +79,9 @@
 - 렌더: `cd work/video && npx remotion render src/c2p_index.ts C2P out/<편>.mp4 --props=<편>.json` (약 4분/58초).
 - 남의 돈·다른 사람 장면은 주인공 얼굴 위에 두지 않는다(blur: true + 해 카드에 '○○년 시작'). 배지는 '지수·환율은 실제, 통장은 계산'처럼 무엇이 계산인지 쓴다(레드팀 10/14).
 - 반복 템플릿 피하기: 편마다 숫자 카드 위치(왼/오)·해 카드 색·그림 칸 높이를 바꿀 것(다음 편 할 일) — 같은 그림 6장으로 한 편 이상 만들지 않는다.
+
+## 회사가 산 날들 vs 오늘 종가(BuybackDays) 쓰는 법 — 자사주·평균 매입가 비교(10/15 W-1 2화 2장)
+1. 재료 JSON: `seed·days[{d,v}]·min·max·yticks·months·close·avg·lo·hi·card[머리,큰 금액,'A = B']·closeText·avgText·loText·hiText·first·last·total·allAbove·dotName·stemName·unsold·beats`. 예: `research/longform/ep/W-1/w1016/motion_preview/buyprops.py`(DART xml에서 하루 평균단가 바로 읽음, B9·B10·B11 assert).
+2. 미리보기: `py -3.12 research/longform/ep/W-1/w1016/motion_preview/buyrender.py`(원래 크기 + 줄마다 스틸 2장 + motioncheck).
+3. 규칙: 세로축이 0부터가 아니면 막대 금지 → 점 · 줄기 = 종가보다 높은 만큼(범례로 뜻 밝힘) · 가정 차이(회사 평균값에 샀다면 −318만원)는 화면에 내지 않는다 — 시청자가 내 손실로 읽음(심사 10/15) · 카드 한 칸에 기준 하나, 둘이면 구분선과 기준 글자.
+4. U5: ① 점 날짜 순 찍힘 ② 종가 점선이 오른쪽에서 쓸며 줄기·최저·최고·검은 띠 ③ 점 흐려지고 평균선·카드. 편마다 seed로 왼쪽 여백.

@@ -1,0 +1,65 @@
+{
+ "date": "2026-10-15",
+ "runs": [
+  {
+   "hour": 6,
+   "ts": "06:44",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "마이너스통장 500만원 이자는 은행 다섯 곳마다 얼마나 다르고 며칠 쓰면 얼마일까",
+    "url": "https://cafe.naver.com/firemap/277"
+   },
+   "note": "블로그 없음(02~07시 카페만·하루 1편 상한·색인 0% 경보) · 카페 06:10 칸 minus1015 cafe/277 verify OK 1191/1191자·사진 3/3(관련 영상 없음) · 07:40 칸 intc1015 관문 통과(SEC 8-K 보도자료·나스닥·야후 10/14 종가 2곳 일치, 출처 9, 교차검증 Gemini: 사실 4건 중 반영 3·유지 1(반올림), 말투 8건 중 반영 6, 레드팀 2회 틀림 0) · 13:40 칸 cpi1015(경제, 미국 9월 CPI) 보조가 관문 통과(FRED·ECOS, 레드팀 재계산 일치) · p1cafe1016 기본연금액 단서 한 줄·재날인 · 개선: 카페 틀 v2(끝 정리 소제목)·cover_review 평균 줄을 stamp 전에 갖추지 않아 한 번 거부됨 → review 순서에 반영(playbook)"
+  },
+  {
+   "hour": 7,
+   "ts": "08:00",
+   "task": "firemap-write-b",
+   "cafe": {
+    "title": "인텔 주가 올라서 생긴 손실? 영업이익 흑자에도 순손실인 이유",
+    "url": "https://cafe.naver.com/firemap/278"
+   },
+   "note": "07:40 칸 intc1015(관문 06:33 firemap-write 통과분) 발행 · verify OK 1185/1185자·사진 3/3 · 게시판 성장주 · 관련 영상 없음(인텔 영상 없음, 억지 연결 안 함) · 발행기 '확인 창 처리 실패(계속할까요 8초 타임아웃)' 경고 났으나 URL·verify 정상 · 개선: 없음"
+  },
+  {
+   "hour": 9,
+   "ts": "09:47",
+   "task": "firemap-write",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "서울 아파트 신규 전세 보증금, 같은 단지끼리 보면 얼마나 올랐을까",
+    "url": "https://cafe.naver.com/firemap/279"
+   },
+   "note": "09:10 칸 jeonse1015 발행 verify OK 1444/1444자·사진 3/3 · 블로그는 22시 이후 칸이라 보류(발행기) · 관련 영상 없음(공개된 부동산 롱폼 없음) · 새 편 toheo1016(10/16 09:10) 자료조사 7건(서울시 보도자료 2건 원문 hwpx·언론 4·국토부 API) · 교차검증: crosscheck(Gemini) 사실 지적 5건 중 반영 4·유지 1(관련 영상 링크—발행기 공개 확인), 말투 11건 중 반영 8·유지 3('463개 단지'는 틀림) · 레드팀 3차 틀림 0 · 개선: 서울시 보도자료 첨부(hwpx)를 seoulboard getFile로 받아 본문을 뽑는 경로 확인(언론 숫자 대신 원문) — work/research/toheo1016/seoul_pr_*.txt"
+  },
+  {
+   "hour": 10,
+   "ts": "10:52",
+   "blog": null,
+   "cafe": {
+    "title": "해외주식 양도소득세가 환율 때문에 83만원 줄어든 계산",
+    "url": "https://cafe.naver.com/firemap/280"
+   },
+   "note": "firemap-write-b 10:40 칸 r1cafe_tax1015(쇼츠 ez-tLgkdZfI 짝, 공개 확인) · verify OK 1927/1927자·사진 3/3 · 발행 직전 today.md 지시(관련 계산기 줄) 누락 발견→firemap.kr/tax utm 줄 추가, aitell 4.7·readcheck 0·selfcheck 사실 0, editgate 재날인 · 개선: 없음"
+  },
+  {
+   "hour": 12,
+   "ts": "12:35",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "올림픽파크포레온·헬리오시티 평당가 거의 같은데 옆 35곳은 얼마일까",
+    "url": "https://cafe.naver.com/firemap/281"
+   },
+   "note": "verify OK 2221/2221·사진 4/4 · 블로그 없음(하루 1편 한도·색인 경보 중) · 관문은 이전 회차 통과분(교차검증·selfcheck 사실 0·understand 통과) · 264 제목 rewrite verify OK 1097 · 개선: 없음 — 확인 창 '계속할까요' 8초 타임아웃이 두 번 났지만 발행·저장은 됨"
+  }
+ ]
+}

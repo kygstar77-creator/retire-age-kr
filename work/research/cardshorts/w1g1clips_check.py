@@ -71,7 +71,7 @@ def check(name):
     bad, rows = [], []
     for s in ts:
         s2 = re.sub(r'https?://\S+', ' ', s)
-        s2 = re.sub(r'(\d+)억 ([\d,]+)만원', lambda m: f"{int(m.group(1)) * 10000 + int(m.group(2).replace(',', '')):,}만원", s2)   # 10/14 만원 반올림 꼴
+        s2 = re.sub(r'(\d+)억 ([\d,]+)만원', lambda m: m.group(0) if m.group(0) in SRC else f"{int(m.group(1)) * 10000 + int(m.group(2).replace(',', '')):,}만원", s2)   # 10/14 만원 반올림 꼴 · 10/16 d1s_dep: 원문에 '5억 4,000만원' 글자 그대로 있으면 바꾸지 않음(조문 기준값)
         for m in NUM.finditer(s2):
             tok = m.group(0)
             if re.fullmatch(r'\d', tok) and not re.search(tok + r'\s*(억|만원|%|원|배)', s2): continue

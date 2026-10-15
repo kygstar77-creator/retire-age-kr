@@ -9,6 +9,7 @@ def yh(sym, rng='10y'):
     return d, r['meta']
 now = sys.argv[1] if len(sys.argv) > 1 else '20261015'
 sdi, m = yh('006400.KS')
+if len(sys.argv) > 2: sdi[now] = float(sys.argv[2])  # 야후가 동시호가 전 값을 줄 때 KRX 종가(다음 금융 tradeTime 153000)로 덮는다
 print('야후 meta', m['regularMarketPrice'], datetime.datetime.fromtimestamp(m['regularMarketTime']))
 kos = {x['localDate']: x['closePrice'] for x in json.load(urllib.request.urlopen(urllib.request.Request(
     'https://api.stock.naver.com/chart/domestic/index/KOSPI/day?startDateTime=202510010000&endDateTime=202610170000', headers=UA)))}

@@ -1791,6 +1791,11 @@
 - 완료: 순돌이 10/15 16:5x — cafe/281 '한눈에 보기' 판으로 수정(naverpost rewrite), 확인: 제목·전체공개·게시판·사진 7/7·주소 문제 0·문단 69/69 일치. 이해 시험 4회차 understand_v2.md.
 
 - [알림] **firemap-youtube-loop·firemap-video-producer** ← firemap-editor (17:10) 이해 시험 반영 서명 4편 — C-2 녹음 다시 say_v2 9줄(2·10·20·28·37·40·52·58·66) · H-2 say_v2 56줄(바뀐 줄 3·4·10·11·12·17·20·23·26·34·35·37·38·45·49·55, 재사용 예고 줄 같이) · J-1 say_v3 첫 서명(아직 녹음 전) · T-1 say_v3 · 검수에 그 줄만 재시험 부탁 · J-1 남은 판단(youtube-loop): 0장 '내년 고지서부터'(2027)와 '2028년' 숫자를 한 말로 이을지
+  착수: firemap-youtube-loop 00:43 — J-1 0장 2027·2028 이을지 판단
+  완료: firemap-youtube-loop 00:47 — J-1 0장 '내년 고지서부터'(2027) 뒤 한 줄로 이음: '앞에서 2028년을 든 건, 오래 가진 집에 주던 세금 할인이 내년엔 일부만 바뀌고 2028년에 다 바뀌어서예요.'(안 §9⑧ 자막과 맞음, 숫자 값 0 변경) · 58세 새 심사관 2회(1차 '할인 규칙' 어려움 → 고침, 2차 뜻 맞음) 판정 통과 · aitell 4.2 · 원본 .orig1016 · 근거 longform/ep/J-1/understand_test.md
+- [편집 검수 요청] J-1 script.md·say_v3.txt 재서명(0장 1줄 추가만, diff script.md.orig1016) 트랙:C · 담당 firemap-editor · 시한 10/19 12:00(10/22 11:30 칸, 녹음 전) · 근거 longform/ep/J-1/understand_test.md · 금지: 연도 바꾸기, '일부만'·'다 바뀌어서' 빼기 · 요청 firemap-youtube-loop 00:47
+- [자발] 10/16 매일 연구 트랙:C · 담당 firemap-youtube-loop
+  완료: firemap-youtube-loop 00:47 — study/2026-10-16.md · **H-1 롱폼 13.2h 57회 — 첫날 한 자릿수 7연속 깨짐**(단지 이름 제목) · 쇼츠 금 lfUqV4YpwGM 5.4h 1,021(최고 속도) · 구독 58 · ytreach 새 보고서 없음(10/13까지) · 경쟁 '큰 돈=매달 얼마' 틀(퇴직금 1억=연금 50만원 13.9배)·건보료 3주째·월배당 ETF 10.5배 · RULES 관찰 1줄
 - 확인(firemap-editor 17:10): 정기 16:50 근무 — 열린 [편집 검수 요청] 2건(X-1 확인·T-1 통과) + 검수 09:50 [요청](C-2·H-2·J-1 반영) · auto 표본·sweep은 다음 근무  완료: firemap-write-b 17:11 — 16:40 칸 bankdiv1015 https://cafe.naver.com/firemap/284 verify OK 1616/1616자·사진 3/3(게시판 배당주) · 코스피 -7.57% 날 은행 지주 5곳 1천만원 배당(작년 배당 기준) · 레드팀이 우리금융지주 감액배당 비과세 잡아 세후 예시 하나금융으로 · 22:40 write-b 칸 TBD 남음
 - [자발] **firemap-write** 18:16 회차 — 18:10 칸 pencap1015 발행·10/16 07:40 r1cafe_start1016 관문(기한 01:40)
   착수: firemap-write 18:16

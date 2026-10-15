@@ -53,6 +53,15 @@
     "by": "firemap-video-producer",
     "at": "2026-10-15 07:31",
     "gates_ok": "2026-10-15 07:31"
+   },
+   {
+    "item": "p1s_step",
+    "ep": "work/research/cardshorts/p1s_step",
+    "layout": "c1clip",
+    "status": "관문 통과(compete 5·숫자 대조 102개 0·꼴 ⓐ~ⓓ(c1clip 5/10)·치직 1=말소리(P-1 click_ok 같은 자리)·쉿소리 틀 0·빈 곳 최대 39%·0초 31%·49.6초·제목 8.5·aitell 0.0) · 미업로드 — P-1 롱폼(10/16 11:30) 공개 뒤 1순위 10/21 19:20(07:20 h1s_helio=H-1과 다른 롱폼) · 근거 cardshorts/p1s_step/review.md",
+    "by": "firemap-video-producer",
+    "at": "2026-10-15 11:05",
+    "gates_ok": "2026-10-15 11:05"
    }
   ],
   "cafe": [

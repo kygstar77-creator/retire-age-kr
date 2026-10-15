@@ -1,0 +1,64 @@
+{
+ "kind": "youtube#video",
+ "etag": "szB37wD3CRlliHWqqMKD872nZck",
+ "id": "rVg0pQVo_wk",
+ "snippet": {
+  "publishedAt": "2026-10-13T02:53:07Z",
+  "channelId": "UCV3ZcSho5Z1i8k_FAiKPlVg",
+  "title": "올림픽파크포레온은 헬리오시티보다 비쌀까? 84㎡ 1년 실거래 전부 깔아 봤다",
+  "description": "올림픽파크포레온(2024.11 입주)과 헬리오시티(2018.12) 84㎡대 평당가는 1억 1,017만원 vs 1억 1,087만원 — 국토교통부 실거래 1년(2025.11~2026.10 계약) 전부로 보면 두 대단지는 거의 같았고, 같은 동네라도 지은 해가 다른 단지끼리는 평당 25% 넘게 갈렸습니다.\n헬리오시티 2026년 2월 23.82억(9층) 거래(중개거래·등기 마침) 옆 같은 달 3건은 30.00~31.50억, 따로 떨어진 낮은 거래 2건(헬리오시티 5월 20.00억·올림픽파크포레온 9월 23.00억)은 직거래로 신고 — 매물·호가 없이 신고된 거래와 오픈스트리트맵 걸음 거리만 썼습니다(가상 인물 계산 · 투자 권유 아님).\n\n세 동네 지도 단지 37곳 전체 표(평당가·최근/최고·전세가율·세대수·역/학교/마트 걸음 거리, 카페): https://cafe.naver.com/firemap\n\n0:00 예고편\n0:34 전세 만기, 어디로 갈까?\n1:19 한 달에 7억 차이?\n2:36 6년 새 집, 값은 같다?\n3:38 역까지 180m와 640m\n4:36 봄 두 달, 무엇이 달랐나\n5:10 전세 9억 5천, 어디까지?\n5:55 지도에 남은 것\n\n출처\n· 국토교통부 아파트 매매·전월세 실거래(공공데이터포털, 2025.11~2026.10 계약 — 둔촌동·고덕동은 2026.09 거래까지, 2026-10-11 받음, 해제·공공기관 매수 제외)\n· 국토교통부 공동주택 단지 정보(세대수·사용승인일)\n· © OpenStreetMap contributors(보행로·지하철 출입구·학교·마트, ODbL)\n· 부동산 거래신고 등에 관한 법률 제3조(계약일부터 30일 안 신고)\n계산 가정: 평당 = 거래금액 ÷ (전용면적 ÷ 3.3058) · 84㎡대 = 전용 80~85㎡ · 가운데 값 = 중앙값 · 손품 씨는 가상 인물(보증금 = 래미안힐스테이트고덕 84㎡대 신규 전세 1년 중앙값 9.5억), 더 드는 돈은 세금·중개보수·대출을 넣지 않은 단순 차액 · 가장 가까운 초등학교는 배정 학교가 아님.\n\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 어떤 집을 사거나 팔라는 말이 아닙니다.",
+  "thumbnails": {
+   "default": {
+    "url": "https://i9.ytimg.com/vi/rVg0pQVo_wk/default.jpg?sqp=CJTSwNYG&rs=AOn4CLCO7xLtQj2C1xQqgh13ENKApnOhNw",
+    "width": 120,
+    "height": 90
+   },
+   "medium": {
+    "url": "https://i9.ytimg.com/vi/rVg0pQVo_wk/mqdefault.jpg?sqp=CJTSwNYG&rs=AOn4CLAC0SvLfXz9mVKhezeB7gbMMZWFkw",
+    "width": 320,
+    "height": 180
+   },
+   "high": {
+    "url": "https://i9.ytimg.com/vi/rVg0pQVo_wk/hqdefault.jpg?sqp=CJTSwNYG&rs=AOn4CLDPsev4aDdb18srbCF7fT_fl2y8pw",
+    "width": 480,
+    "height": 360
+   },
+   "standard": {
+    "url": "https://i9.ytimg.com/vi/rVg0pQVo_wk/sddefault.jpg?sqp=CJTSwNYG&rs=AOn4CLBytPITOuKCmFP3Djqlq_eSm1rkkw",
+    "width": 640,
+    "height": 480
+   },
+   "maxres": {
+    "url": "https://i9.ytimg.com/vi/rVg0pQVo_wk/maxresdefault.jpg?sqp=CJTSwNYG&rs=AOn4CLDXBYeg9fT9f5RncnVCyc8jsQF0nw",
+    "width": 1280,
+    "height": 720
+   }
+  },
+  "channelTitle": "파이어맵",
+  "tags": [
+   "강동구 아파트",
+   "고덕그라시움",
+   "아파트 실거래가",
+   "올림픽파크포레온",
+   "헬리오시티"
+  ],
+  "categoryId": "27",
+  "liveBroadcastContent": "none",
+  "defaultLanguage": "ko",
+  "localized": {
+   "title": "올림픽파크포레온은 헬리오시티보다 비쌀까? 84㎡ 1년 실거래 전부 깔아 봤다",
+   "description": "올림픽파크포레온(2024.11 입주)과 헬리오시티(2018.12) 84㎡대 평당가는 1억 1,017만원 vs 1억 1,087만원 — 국토교통부 실거래 1년(2025.11~2026.10 계약) 전부로 보면 두 대단지는 거의 같았고, 같은 동네라도 지은 해가 다른 단지끼리는 평당 25% 넘게 갈렸습니다.\n헬리오시티 2026년 2월 23.82억(9층) 거래(중개거래·등기 마침) 옆 같은 달 3건은 30.00~31.50억, 따로 떨어진 낮은 거래 2건(헬리오시티 5월 20.00억·올림픽파크포레온 9월 23.00억)은 직거래로 신고 — 매물·호가 없이 신고된 거래와 오픈스트리트맵 걸음 거리만 썼습니다(가상 인물 계산 · 투자 권유 아님).\n\n세 동네 지도 단지 37곳 전체 표(평당가·최근/최고·전세가율·세대수·역/학교/마트 걸음 거리, 카페): https://cafe.naver.com/firemap\n\n0:00 예고편\n0:34 전세 만기, 어디로 갈까?\n1:19 한 달에 7억 차이?\n2:36 6년 새 집, 값은 같다?\n3:38 역까지 180m와 640m\n4:36 봄 두 달, 무엇이 달랐나\n5:10 전세 9억 5천, 어디까지?\n5:55 지도에 남은 것\n\n출처\n· 국토교통부 아파트 매매·전월세 실거래(공공데이터포털, 2025.11~2026.10 계약 — 둔촌동·고덕동은 2026.09 거래까지, 2026-10-11 받음, 해제·공공기관 매수 제외)\n· 국토교통부 공동주택 단지 정보(세대수·사용승인일)\n· © OpenStreetMap contributors(보행로·지하철 출입구·학교·마트, ODbL)\n· 부동산 거래신고 등에 관한 법률 제3조(계약일부터 30일 안 신고)\n계산 가정: 평당 = 거래금액 ÷ (전용면적 ÷ 3.3058) · 84㎡대 = 전용 80~85㎡ · 가운데 값 = 중앙값 · 손품 씨는 가상 인물(보증금 = 래미안힐스테이트고덕 84㎡대 신규 전세 1년 중앙값 9.5억), 더 드는 돈은 세금·중개보수·대출을 넣지 않은 단순 차액 · 가장 가까운 초등학교는 배정 학교가 아님.\n\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 어떤 집을 사거나 팔라는 말이 아닙니다."
+  },
+  "defaultAudioLanguage": "ko"
+ },
+ "status": {
+  "uploadStatus": "processed",
+  "privacyStatus": "private",
+  "publishAt": "2026-10-15T02:30:00Z",
+  "license": "youtube",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "madeForKids": false,
+  "selfDeclaredMadeForKids": false
+ }
+}

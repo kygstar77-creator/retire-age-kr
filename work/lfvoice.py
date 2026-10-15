@@ -4,6 +4,7 @@
 #   ep/tts.json에 'prompt'가 있으면 그 편은 그 지시문으로 고정(편 안에서 바꾸면 전부 다시 녹음 — 한 날·한 목소리 규칙)
 #   py -3.12 work/lfvoice.py check <ep폴더>                 # 편 전체 말 속도·음높이 일관성 검사(공개 전 필수, 규칙 3)
 #   Chirp 엔진(2026-10-11 사장님 '롱폼 목소리 = Chirp 3 HD Charon'): ep/tts.json이 {"model": "chirp3-hd", "voice": "ko-KR-Chirp3-HD-Charon"[, "speakingRate": 1.1]}이면
+#     tts.json "markup": true면 쉼 태그(cloudtts.markup, korsay 다음)를 넣어 받는다 — 10/15부터 새로 녹음하는 편 기본(이미 녹음한 편은 안 켬, 한 편 한 설정)
 #     make가 줄마다 work/cloudtts.py synth로 한 줄씩 받는다(묶음·cutat·fixcut 필요 없음, 무료 한도 장치는 cloudtts가 지킴). speakingRate는 편 전체 하나로 고정(atempo 아님).
 #   py -3.12 work/lfvoice.py retake <ep폴더> 3:1,7:0 [--takes 4]  # Chirp 편만: 튀는 줄(장:줄)만 같은 설정으로 다시 받기(옛 파일은 _raw/<키>.rej<n>.wav로 보관, --takes = 통과할 때까지 최대 N번·못 넘으면 가장 가까운 것)
 #   py -3.12 work/lfvoice.py cutat <ep폴더> <묶음번호> 6.7,19.0,...  # 자르기 실패 묶음을 받아쓰기로 확인한 문장 시작 시각으로 자른다(API 안 부름)
@@ -75,6 +76,7 @@ def sections(ep):
         if line.startswith('## '): cur = {'title': line[3:].strip(), 'lines': []}; out.append(cur)
         elif line.lstrip().startswith('- ') and cur is not None:
             t = re.sub(r'\s*\(화면.*$', '', line.strip()[2:]).strip()
+            t = re.sub(r'\{[A-Z]\}\s*', '', t).strip()   # 10/15 PD: script.md 꼬리표('{F}' = 확정값 갱신 표시)는 말이 아니다 — TTS에 보내지 않는다
             if t: cur['lines'].append(t)
     return out
 
@@ -82,7 +84,7 @@ def aud_dir(ep):
     d = os.path.join(PUB, 'audio', os.path.basename(os.path.normpath(ep)).lower()); os.makedirs(os.path.join(d, '_raw'), exist_ok=True); return d
 def wav_of(ep, cfg, say):
     r = float(cfg.get('speakingRate') or 1.0)   # Chirp 빠르기를 바꾸면 다른 파일(옛 값 소리와 섞이지 않게)
-    h = hashlib.md5((cfg['model'] + '|' + cfg['voice'] + '|' + say + (f'|rate{r:g}' if r != 1.0 else '')).encode()).hexdigest()[:16]
+    h = hashlib.md5((cfg['model'] + '|' + cfg['voice'] + '|' + say + (f'|rate{r:g}' if r != 1.0 else '') + ('|markup' if cfg.get('markup') else '')).encode()).hexdigest()[:16]
     return h, os.path.join(aud_dir(ep), h + '.wav')
 
 def read(fn):
@@ -298,11 +300,11 @@ def make(ep, maxreq, dry=False, first=0, cap=0, gate=0.0, budget=0):
 def chirp_one(ep, cfg, say, fn, tag):
     # 한 줄 → cloudtts.synth(Chirp 3 HD). 앞뒤 무음은 Chirp이 0.1~0.8초로 들쭉날쭉이라 소리 앞뒤 0.06초만 남기고 자른 뒤 pad(0.08초)를 붙인다 — 문장 사이 간격을 고르게(말 자체는 손대지 않음).
     sys.path.insert(0, HERE); import cloudtts
-    pcm = np.frombuffer(cloudtts.synth(say, cfg['voice'], tag, cfg.get('speakingRate')), dtype=np.int16).astype(np.float32)
+    pcm = np.frombuffer(cloudtts.synth(say, cfg['voice'], tag, cfg.get('speakingRate'), mark=bool(cfg.get('markup'))), dtype=np.int16).astype(np.float32)
     m, win = loud_mask(pcm, SR); idx = np.where(m)[0]
     if len(idx): pcm = pcm[max(0, idx[0] * win - int(SR * 0.06)):min(len(pcm), (idx[-1] + 1) * win + int(SR * 0.06))]
     pad = np.zeros(int(SR * 0.08), dtype=np.float32); write(fn, np.concatenate([pad, pcm, pad]))
-    json.dump({'tempo': 1.0, 'rec': time.strftime('%Y-%m-%d'), 'engine': cfg['model'], 'speakingRate': float(cfg.get('speakingRate') or 1.0)}, open(fn + '.json', 'w'))
+    json.dump({'tempo': 1.0, 'rec': time.strftime('%Y-%m-%d'), 'engine': cfg['model'], 'speakingRate': float(cfg.get('speakingRate') or 1.0), 'markup': bool(cfg.get('markup'))}, open(fn + '.json', 'w'))
 
 def make_chirp(ep, cfg, secs, dry=False):
     lines = [speak(ep, t) for s in secs for t in s['lines']]; todo = [t for t in lines if not os.path.exists(wav_of(ep, cfg, t)[1])]
@@ -316,12 +318,13 @@ def make_chirp(ep, cfg, secs, dry=False):
         if (i + 1) % 10 == 0: print(f'  {i + 1}/{len(todo)}줄')
     build(ep)
 
-def _line_bad(say, fn, fm):
+def _line_bad(say, fn, fm, tol=0.25):
     # check()와 같은 잣대(속도 4.8~8.2·음높이 편 중앙 ±25%)로 한 줄이 얼마나 벗어났나(0이면 통과)
     a, sr = read(fn); r = syl(say) / max(speech_sec(a, sr), 0.1); p = f0(a, sr)
-    return max(0, 4.8 - r) / 4.8 + max(0, r - 8.2) / 8.2 + (max(0, abs(p / fm - 1) - 0.25) if p and fm else 0), r, p
+    return max(0, 4.8 - r) / 4.8 + max(0, r - 8.2) / 8.2 + (max(0, abs(p / fm - 1) - tol) if p and fm else 0), r, p
 
-def retake(ep, ats, takes=1):
+def retake(ep, ats, takes=1, tol=0.25):
+    # tol: 음높이 허용(편 중앙 ±). 기본 0.25 = check 줄 기준. 편 앞뒤 차(±7%)를 맞추려면 --tol 0.10으로 중앙 가까운 소리를 고른다(10/15 PD, W-1 2화 −11.1%)
     # Chirp 편 튀는 줄만 같은 설정으로 다시 받기. ats = ['3:1', ...] (voice.json 장:줄 번호)
     # takes>1: 통과할 때까지 최대 takes번 받고, 끝내 못 넘으면 지금 것 포함 가장 덜 벗어난 것을 쓴다(제미나이 --gate와 같은 생각). 빠르기(speakingRate)는 편 전체 값 그대로.
     cfg, secs = lock(ep), sections(ep)
@@ -333,16 +336,16 @@ def retake(ep, ats, takes=1):
         h, fn = wav_of(ep, cfg, say); n = 1
         while os.path.exists(os.path.join(aud_dir(ep), '_raw', f'{h}.rej{n}.wav')): n += 1
         cands = []
-        if os.path.exists(fn): cands.append((_line_bad(say, fn, fm)[0], f'{h}.rej{n}.wav')); os.replace(fn, os.path.join(aud_dir(ep), '_raw', f'{h}.rej{n}.wav')); n += 1
+        if os.path.exists(fn): cands.append((_line_bad(say, fn, fm, tol)[0], f'{h}.rej{n}.wav')); os.replace(fn, os.path.join(aud_dir(ep), '_raw', f'{h}.rej{n}.wav')); n += 1
         if os.path.exists(fn + '.json'): os.remove(fn + '.json')
         for k in range(takes):
-            chirp_one(ep, cfg, say, fn, tag); bad, r, p = _line_bad(say, fn, fm)
+            chirp_one(ep, cfg, say, fn, tag); bad, r, p = _line_bad(say, fn, fm, tol)
             print(f'  다시 받음 {at} 시도 {k + 1} · {r:.2f}음절/초 · {p:.0f}Hz · {"통과" if not bad else "벗어남"} | {say[:24]}')
             if not bad: break
             cands.append((bad, f'{h}.rej{n}.wav')); os.replace(fn, os.path.join(aud_dir(ep), '_raw', f'{h}.rej{n}.wav')); n += 1
         if not os.path.exists(fn):
             best = min(cands)[1]; os.replace(os.path.join(aud_dir(ep), '_raw', best), fn)
-            json.dump({'tempo': 1.0, 'rec': time.strftime('%Y-%m-%d'), 'engine': cfg['model'], 'speakingRate': float(cfg.get('speakingRate') or 1.0)}, open(fn + '.json', 'w'))
+            json.dump({'tempo': 1.0, 'rec': time.strftime('%Y-%m-%d'), 'engine': cfg['model'], 'speakingRate': float(cfg.get('speakingRate') or 1.0), 'markup': bool(cfg.get('markup'))}, open(fn + '.json', 'w'))
             print(f'  ⚠ {at} {takes}번 모두 벗어남 — 가장 가까운 {best} 씀')
     build(ep)
 
@@ -592,5 +595,6 @@ if __name__ == '__main__':
         make(ep, mr, first=int(sys.argv[sys.argv.index('--first') + 1]) if '--first' in sys.argv else 0, cap=cap,
              gate=float(sys.argv[sys.argv.index('--gate') + 1]) if '--gate' in sys.argv else 0.0,
              budget=int(sys.argv[sys.argv.index('--budget') + 1]) if '--budget' in sys.argv else 0)
-    elif cmd == 'retake': retake(ep, sys.argv[3].split(','), int(sys.argv[sys.argv.index('--takes') + 1]) if '--takes' in sys.argv else 1)
+    elif cmd == 'retake': retake(ep, sys.argv[3].split(','), int(sys.argv[sys.argv.index('--takes') + 1]) if '--takes' in sys.argv else 1,
+                                         float(sys.argv[sys.argv.index('--tol') + 1]) if '--tol' in sys.argv else 0.25)
     elif cmd == 'check': sys.exit(0 if check(ep, sys.argv[3] if len(sys.argv) > 3 else None) else 1)

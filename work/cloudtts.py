@@ -1,5 +1,6 @@
 # 구글 클라우드 Text-to-Speech (Chirp 3 HD) — 2026-10-11 사장님 "진짜 돈 나가게 하면 안 된다".
 #   py -3.12 work/cloudtts.py say "<문장>" <출력.wav> [목소리]   # 기본 ko-KR-Chirp3-HD-Charon
+#   markup: synth(..., mark=True) → input.markup에 쉼 태그(쉼표 뒤 [pause short]·줄 안 문장 끝 [pause]) — 글자 수 장부는 원문 길이로 센다
 #   py -3.12 work/cloudtts.py usage                              # 이번 달 쓴 글자 수
 # 돈 안 나가게 하는 장치(코드로 막는다):
 #   ① Chirp 3 HD 목소리만 허용 — 가격표상 무료 사용 한도가 있는 모델은 이것뿐(매달 0~100만 자, cloud.google.com/text-to-speech/pricing 10/11 확인).
@@ -8,7 +9,7 @@
 #   ③ 열쇠는 저장소 밖 C:\Users\강영준\Documents\google_tts_sa.json (서비스 계정 firemap-tts@firemap-509507). 절대 커밋·출력하지 않는다.
 #   ④ 프로젝트 firemap-509507은 무료 체험(2027-01-10까지): "You will not be billed for any Google Cloud usage during your Free Trial."
 #      체험 뒤 '업그레이드'는 사장님만 누른다 — 업그레이드 전에는 이 도구가 멈출 뿐 청구되지 않는다.
-import sys, os, json, base64, datetime, wave, io
+import sys, os, re, json, base64, datetime, wave, io
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 KEY = r'C:\Users\강영준\Documents\google_tts_sa.json'
@@ -27,7 +28,12 @@ def session():
     return AuthorizedSession(service_account.Credentials.from_service_account_file(KEY, scopes=['https://www.googleapis.com/auth/cloud-platform']))
 
 _S = None
-def synth(text, voice='ko-KR-Chirp3-HD-Charon', tag='', rate=None):
+def markup(text):
+    # 10/12 순돌이 [지시·긴급]: Chirp 3 HD markup 쉼 태그 — 쉼표 뒤 [pause short], 줄 안 문장 끝 뒤 [pause](줄 끝 쉼은 lfvoice가 자르고 붙인다)
+    t = re.sub(r',\s*(?=\S)', ', [pause short] ', text)
+    return re.sub(r'([.?!])\s+(?=\S)', lambda m: m.group(1) + ' [pause] ', t)
+
+def synth(text, voice='ko-KR-Chirp3-HD-Charon', tag='', rate=None, mark=False):
     """문장 하나 → 24kHz mono int16 PCM bytes. 막히면 예외.
     rate = audioConfig.speakingRate(0.25~2.0, Chirp 3 HD 'pace control' — docs.cloud.google.com/text-to-speech/docs/chirp3-hd 10/11 확인). 글자 수 과금은 같다."""
     global _S
@@ -36,7 +42,7 @@ def synth(text, voice='ko-KR-Chirp3-HD-Charon', tag='', rate=None):
     used = month_used()
     if used + n > MONTH_CAP: raise SystemExit(f'막음: 이번 달 {used:,}자 + {n:,}자 > 상한 {MONTH_CAP:,}자(무료 100만 자의 절반)')
     _S = _S or session()
-    body = {'input': {'text': text}, 'voice': {'languageCode': voice[:5], 'name': voice},
+    body = {'input': {'markup': markup(text)} if mark else {'text': text}, 'voice': {'languageCode': voice[:5], 'name': voice},
             'audioConfig': {'audioEncoding': 'LINEAR16', 'sampleRateHertz': SR}}
     if rate and float(rate) != 1.0:
         if not 0.25 <= float(rate) <= 2.0: raise SystemExit(f'막음: speakingRate {rate} — 0.25~2.0만')

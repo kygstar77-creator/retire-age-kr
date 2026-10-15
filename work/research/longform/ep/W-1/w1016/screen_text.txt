@@ -1,0 +1,408 @@
+# 화면 글자 — w1016 (lfrender.py text가 만듦. 여기를 고치지 말고 대본·props·tsx를 고친 뒤 다시 뽑는다)
+# 그래프 제목·부제·출처·자막(lines.text)·막대 이름·코드에 박힌 글자. 썸네일 문구는 그림이라 안 들어간다.
+
+## props: video/w1016.json
+[scenes.0.key] open
+[scenes.0.title] 삼성전자 100주, 이번 주
+[scenes.0.sub] 종가 10/8 → 10/14(수) · 단위 원
+[scenes.0.source] 다음 금융(KRX 정규장 종가) · DART 2026.10.12 자기주식취득결과보고서
+[scenes.0.data.head] 삼성전자 100주 · 월~수
+[scenes.0.data.rows.0.0] 10/8 종가 × 100주
+[scenes.0.data.rows.0.2] in
+[scenes.0.data.rows.1.0] 10/14 종가 × 100주
+[scenes.0.data.rows.1.2] in
+[scenes.0.data.rows.2.0] 평가액
+[scenes.0.data.rows.2.1] −3,000,000
+[scenes.0.data.rows.2.2] net
+[scenes.0.data.big.0] 15조원
+[scenes.0.data.big.2] 회사가 산 자기 회사 주식 · 8/24 ~ 10/6
+[scenes.0.lines.0.text] 월요일부터 수요일까지 사흘, 삼성전자 100주는 평가액이 300만원 줄었어요.
+[scenes.0.lines.0.cap] 100주 × 종가 10/8 262,000원 = 2,620만원 → 10/14 232,000원 = 2,320만원 · −300만원 (−11.45%)
+[scenes.0.lines.1.text] 삼성전자는 이달 초까지 자기 회사 주식을 15조원어치 샀습니다.
+[scenes.0.lines.1.cap] 자기주식 취득 56,856,305주 · 총 14조 9,999억원 · 2026-08-24 ~ 10-06 (DART 2026.10.12 자기주식취득결과보고서)
+[scenes.1.key] avg
+[scenes.1.title] 회사가 산 값 vs 수요일 종가
+[scenes.1.sub] 1주당 · 원 · 평균 취득가는 수수료 제외
+[scenes.1.source] DART 2026.10.12 자기주식취득결과보고서 · 다음 금융(KRX 정규장 종가)
+[scenes.1.data.bars.0.0] 회사가 산 평균값
+[scenes.1.data.bars.0.2] 263,823원
+[scenes.1.data.bars.0.4] ink
+[scenes.1.data.bars.1.0] 10/14 종가
+[scenes.1.data.bars.1.2] 232,000원
+[scenes.1.data.bars.1.4] fall
+[scenes.1.data.bars.1.5] −12.06%
+[scenes.1.data.dark.0] 싸다는 뜻 아님 · 바닥·매수 신호 아님
+[scenes.1.lines.0.text] 수요일 종가는 회사가 산 평균값보다 12% 낮았습니다.
+[scenes.1.lines.0.cap] 1주당 평균 취득가 263,823원(수수료 제외) vs 10/14 종가 232,000원 · −12.06% · 바닥·매수 신호라는 뜻 아님
+[scenes.1.lines.1.text] 그렇다고 수요일 종가가 싸다는 뜻은 아니에요.
+[scenes.2.key] ratio
+[scenes.2.title] 같은 사흘, 줄어든 비율
+[scenes.2.sub] 10/8 → 10/14 · %
+[scenes.2.source] 한국은행 ECOS 802Y001 코스피 · 731Y001 원달러 매매기준율(일) · 야후 파이낸스 SPY 일별 종가
+[scenes.2.data.rows.0.0] 코스피
+[scenes.2.data.rows.0.2] −9.31%
+[scenes.2.data.rows.1.0] 미국 SPY(달러)
+[scenes.2.data.rows.1.2] −0.55%
+[scenes.2.data.q.0] 열 배 넘게 차이
+[scenes.2.lines.0.text] 같은 기간, 코스피에 넣은 돈과 미국 주식에 넣은 돈은 줄어든 비율이 열 배 넘게 달랐어요.
+[scenes.2.lines.0.cap] 이번 주 뉴스가 내 돈에 얼마 · 2화 · 10/8 종가 → 10/14(수) 마감
+[scenes.3.key] week
+[scenes.3.title] 이번 주는 수요일 마감까지
+[scenes.3.sub] 코스피 그날 종가
+[scenes.3.source] 한국은행 ECOS 802Y001 코스피 · 731Y001 원달러 매매기준율(일)
+[scenes.3.chapter] 1장
+[scenes.3.data.days.0.0] 월
+[scenes.3.data.days.1.0] 화
+[scenes.3.data.days.2.0] 수
+[scenes.3.data.days.3.0] 목
+[scenes.3.data.days.3.2] 계산에 없음
+[scenes.3.data.days.4.0] 금
+[scenes.3.data.days.4.2] 계산에 없음
+[scenes.3.lines.0.text] 이번 숫자는 수요일 마감 기준이라, 목요일과 금요일 장은 이 계산에 없어요.
+[scenes.4.key] kospi
+[scenes.4.title] 코스피, 월~수 사흘
+[scenes.4.sub] 10/8 6,625.93 → 10/14 6,008.81
+[scenes.4.source] 한국은행 ECOS 802Y001 코스피 · 731Y001 원달러 매매기준율(일)
+[scenes.4.chapter] 1장
+[scenes.4.data.text] −9.31%
+[scenes.4.data.label] 코스피 · 10/8 → 10/14
+[scenes.4.data.note] 6,625.93 → 6,008.81
+[scenes.4.lines.0.text] 월요일부터 수요일까지, 코스피는 9% 넘게 내렸습니다.
+[scenes.4.lines.0.cap] 코스피 10/8 6,625.93 → 10/14 6,008.81 −9.31% (한국은행 ECOS)
+[scenes.5.key] vs1
+[scenes.5.title] 지난주와 비교하면
+[scenes.5.sub] 코스피 · 사흘씩 · %
+[scenes.5.source] 한국은행 ECOS 802Y001 코스피 · 731Y001 원달러 매매기준율(일)
+[scenes.5.chapter] 1장
+[scenes.5.data.rows.0.0] 지난주 · 1화
+[scenes.5.data.rows.0.2] −5.39%
+[scenes.5.data.rows.1.0] 이번 주
+[scenes.5.data.rows.1.2] −9.31%
+[scenes.5.data.q.0] 훨씬 가팔랐다
+[scenes.5.lines.0.text] 지난주 사흘 동안 5% 남짓 내린 것과 비교해도 훨씬 가팔랐죠.
+[scenes.5.lines.0.cap] 1화 기간 10/2 → 10/8 −5.39% · 이번 주 10/8 → 10/14 −9.31%
+[scenes.6.key] hynix
+[scenes.6.title] SK하이닉스, 화요일 하루
+[scenes.6.sub] 종가 · 원
+[scenes.6.source] 다음 금융(KRX 정규장 종가)
+[scenes.6.chapter] 1장
+[scenes.6.data.bars.0.0] 10/12 월
+[scenes.6.data.bars.0.2] 1,605,000원
+[scenes.6.data.bars.0.4] ink
+[scenes.6.data.bars.1.0] 10/13 화
+[scenes.6.data.bars.1.2] 1,443,000원
+[scenes.6.data.bars.1.4] fall
+[scenes.6.data.bars.1.5] −10.09%
+[scenes.6.data.dark.0] 원달러 +0.10% · 환율은 거의 그대로
+[scenes.6.lines.0.text] 화요일 하루에만 SK하이닉스는 10% 넘게 내렸습니다.
+[scenes.6.lines.0.cap] SK하이닉스 10/12 1,605,000원 → 10/13 1,443,000원 −10.09% · 10/8 → 10/14 −15.59% (다음 금융 = KRX 정규장 종가)
+[scenes.6.lines.1.text] 환율은 거의 그대로였고요.
+[scenes.6.lines.1.cap] 원달러 매매기준율 10/8 1,339.20원 → 10/14 1,340.50원 +0.10% (한국은행 ECOS)
+[scenes.7.key] noreason
+[scenes.7.title] 왜 내렸나?
+[scenes.7.sub] 이번 주 공시·통계로는 이유가 확인되지 않는다
+[scenes.7.chapter] 1장
+[scenes.7.data.cards.0.0] 코스피 월~수
+[scenes.7.data.cards.0.1] −9.31%
+[scenes.7.data.cards.1.0] SK하이닉스 화요일
+[scenes.7.data.cards.1.1] −10.09%
+[scenes.7.data.stamp.0] 이유 · 확인 안 함
+[scenes.7.data.no.0] 여기선 금액만 센다
+[scenes.7.lines.0.text] 왜 빠졌는지는 이번 주 공시에도 통계에도 나와 있지 않아요. 그래서 여기선 금액만 셉니다.
+[scenes.8.key] buy
+[scenes.8.title] 삼성전자 100주와 15조원
+[scenes.8.sub] 회사가 산 값 vs 수요일 종가
+[scenes.8.chapter] 2장
+[scenes.8.source] DART 2026.10.12 자기주식취득결과보고서 · 다음 금융(KRX 정규장 종가)
+[scenes.8.lines.0.text] 그 15조원은, 8월 말부터 이달 초까지 거래일마다 나눠서 산 거죠.
+[scenes.8.lines.0.cap] 취득기간 2026-08-24 ~ 10-06(체결일 기준) · 29거래일 · 주요사항보고서 2026-08-21
+[scenes.8.lines.1.text] 29일 모두, 회사가 그날 산 평균값이 수요일 종가보다 높았어요.
+[scenes.8.lines.1.cap] 회사가 산 값과 비교한 것일 뿐, 매수·매도 신호 아님
+[scenes.8.lines.2.text] 100주를 팔지 않았다면, 아직 확정된 손실은 아니에요.
+[scenes.8.lines.2.cap] 취득 후 자기주식 136,727,099주 · 보통주의 2.34% (2026-10-12 현재, 같은 보고서)
+[scenes.8.data.seed] W-1-2-buy
+[scenes.8.data.yticks.0.1] 24만원
+[scenes.8.data.yticks.1.1] 26만원
+[scenes.8.data.yticks.2.1] 28만원
+[scenes.8.data.months.0.1] 8월
+[scenes.8.data.months.1.1] 9월
+[scenes.8.data.months.2.1] 10월
+[scenes.8.data.card.0] 내 삼성전자 100주 · 10/8 → 10/14
+[scenes.8.data.card.1] −300만원
+[scenes.8.data.card.2] 10/14 종가 232,000원 = 회사 평균 취득가보다 −12%
+[scenes.8.data.closeText] 10/14 종가 232,000원
+[scenes.8.data.avgText] 회사가 산 평균값 263,823원
+[scenes.8.data.loText] 9/15 249,701원
+[scenes.8.data.hiText] 9/23 283,484원
+[scenes.8.data.total] 15조원 · 29거래일
+[scenes.8.data.allAbove] 29일 모두 수요일 종가보다 높았어요
+[scenes.8.data.dotName] 회사가 그날 산 평균값
+[scenes.8.data.stemName] 수요일 종가보다 높은 만큼
+[scenes.8.data.unsold] 팔지 않았다면, 아직 확정된 손실은 아니에요
+[scenes.9.key] kbars
+[scenes.9.title] 코스피 1천만원
+[scenes.9.sub] 지수 그대로 따라간 돈 · 보수·세금·추적 오차 빼고
+[scenes.9.source] 한국은행 ECOS 802Y001 코스피 · 731Y001 원달러 매매기준율(일)
+[scenes.9.chapter] 3장
+[scenes.9.data.bars.0.4] ink
+[scenes.9.data.bars.1.4] ink
+[scenes.9.data.bars.2.4] ink
+[scenes.9.data.bars.3.4] fall
+[scenes.9.data.total.0.0] 삼성전자 100주
+[scenes.9.data.total.0.1] −300만원
+[scenes.9.data.total.1.0] 코스피 1천만원
+[scenes.9.data.total.1.1] −93만원
+[scenes.9.data.total.2.0] 미국 1만 달러
+[scenes.9.data.total.2.1] −6.1만원
+[scenes.9.data.big.0] −93만원
+[scenes.9.data.big.2] −931,371원 · −9.31%
+[scenes.9.lines.0.text] 코스피 지수에 1천만원을 넣어 뒀다면, 사흘 동안 93만원이 줄었어요.
+[scenes.9.lines.0.cap] 1,000만원 × −9.31% = −931,371원 · 지수 기준, 보수·세금·추적 오차 빼고 계산
+[scenes.10.key] twoweek
+[scenes.10.title] 1화부터 두 주 들고 있었다면
+[scenes.10.sub] 코스피 1천만원 · 줄어든 돈 · 원
+[scenes.10.source] 한국은행 ECOS 802Y001 코스피 · 731Y001 원달러 매매기준율(일)
+[scenes.10.chapter] 3장
+[scenes.10.data.bars.0.0] 지난주(1화)
+[scenes.10.data.bars.0.2] −539,440
+[scenes.10.data.bars.0.4] ink3
+[scenes.10.data.bars.1.0] 이번 주
+[scenes.10.data.bars.1.2] −931,371
+[scenes.10.data.bars.1.4] ink
+[scenes.10.data.bars.2.0] 두 주 이어서
+[scenes.10.data.bars.2.2] −1,420,570
+[scenes.10.data.bars.2.4] fall
+[scenes.10.data.bars.2.5] −14.21%
+[scenes.10.lines.0.text] 1화 때부터 두 주 내내 들고 있었다면, 줄어든 돈은 142만원입니다.
+[scenes.10.lines.0.cap] 1화 10/2 → 10/8 −539,440원 · 2화 10/8 → 10/14 −931,371원 · 두 주 이어서 10/2 7,003.74 → 10/14 6,008.81 −14.21% = −1,420,570원 · 둘째 주는 줄어든 금액에서 다시 −9.31%라 단순 합 147만원보다 작음
+[scenes.11.key] diverge
+[scenes.11.title] 한 종목과 시장 전체
+[scenes.11.sub] 10/8 → 10/14 · %
+[scenes.11.source] 다음 금융(KRX 정규장 종가) · 한국은행 ECOS 802Y001 코스피 · 731Y001 원달러 매매기준율(일)
+[scenes.11.chapter] 3장
+[scenes.11.data.rows.0.0] 삼성전자
+[scenes.11.data.rows.0.2] −11.45%
+[scenes.11.data.rows.1.0] 코스피
+[scenes.11.data.rows.1.2] −9.31%
+[scenes.11.data.rows.2.0] SK하이닉스
+[scenes.11.data.rows.2.2] −15.59%
+[scenes.11.data.q.0] 삼성전자가 시장보다 조금 더
+[scenes.11.lines.0.text] 비율로 보면, 이번 주엔 삼성전자가 시장보다 조금 더 내렸어요.
+[scenes.11.lines.0.cap] 삼성전자 −11.45% · 코스피 −9.31% · SK하이닉스 −15.59% (10/8 → 10/14)
+[scenes.12.key] cal
+[scenes.12.title] 수요일 밤, 미국 발표
+[scenes.12.sub] 한국 시각
+[scenes.12.source] 미국 노동통계국(BLS) CPI · FRED CPIAUCNS
+[scenes.12.chapter] 4장
+[scenes.12.data.cells.0.0] 월
+[scenes.12.data.cells.1.0] 화
+[scenes.12.data.cells.2.0] 수
+[scenes.12.data.cells.2.2] 미국 9월 소비자물가 한국 밤 9:30
+[scenes.12.data.cells.3.0] 목
+[scenes.12.data.cells.4.0] 금
+[scenes.12.lines.0.text] 미국 쪽은 수요일 밤에 큰 발표가 있었죠. 9월 소비자물가요.
+[scenes.12.lines.0.cap] 미국 노동통계국(BLS) 9월 CPI · 2026-10-14 08:30(미 동부) = 한국 21:30
+[scenes.13.key] cpi
+[scenes.13.title] 미국 9월 소비자물가
+[scenes.13.sub] 1년 전 같은 달 대비 · 비계절조정
+[scenes.13.source] 미국 노동통계국(BLS) CPI · FRED CPIAUCNS
+[scenes.13.chapter] 4장
+[scenes.13.data.text] +3.7%
+[scenes.13.data.label] 미국 CPI · 2026년 9월
+[scenes.13.data.note] 8월 +3.4%
+[scenes.13.lines.0.text] 1년 전 같은 달보다 3.7% 올라서, 8월보다 높아졌습니다.
+[scenes.13.lines.0.cap] CPI(도시 소비자, 비계절조정) 2025-09 324.800 → 2026-09 336.940 +3.7% · 8월 +3.4% · 전월 대비 +0.6%(계절조정) (BLS·FRED CPIAUCNS·CPIAUCSL)
+[scenes.14.key] parts
+[scenes.14.title] 부문별로는
+[scenes.14.sub] 1년 전 같은 달 대비 · %
+[scenes.14.source] BLS CUUR0000 계열(비계절조정)
+[scenes.14.chapter] 4장
+[scenes.14.data.bars.0.0] 휘발유
+[scenes.14.data.bars.0.2] +34.2%
+[scenes.14.data.bars.0.4] rise
+[scenes.14.data.bars.1.0] 에너지 전체
+[scenes.14.data.bars.1.2] +20.4%
+[scenes.14.data.bars.1.4] ink
+[scenes.14.data.bars.2.0] 주거
+[scenes.14.data.bars.2.2] +3.2%
+[scenes.14.data.bars.2.4] ink
+[scenes.14.data.bars.3.0] 식품
+[scenes.14.data.bars.3.2] +2.5%
+[scenes.14.data.bars.3.4] ink
+[scenes.14.lines.0.text] 부문별로는 휘발유가 34% 올랐습니다.
+[scenes.14.lines.0.cap] 휘발유 +34.2% · 에너지 전체 +20.4% · 주거 +3.2% · 식품 +2.5% (BLS CUUR0000 계열, 1년 전 같은 달 대비)
+[scenes.15.key] core
+[scenes.15.title] 식품·에너지 뺀 근원 물가
+[scenes.15.sub] 1년 전 같은 달 대비 · 비계절조정
+[scenes.15.source] BLS CUUR0000SA0L1E
+[scenes.15.chapter] 4장
+[scenes.15.data.text] +2.6%
+[scenes.15.data.label] 근원 CPI · 2026년 9월
+[scenes.15.data.note] 전체 +3.7%
+[scenes.15.lines.0.text] 식품과 에너지를 빼고 재는 근원 물가는, 같은 기준으로 2.6% 올랐어요.
+[scenes.15.lines.0.cap] 근원 CPI(식품·에너지 제외, 비계절조정) 2025-09 330.804 → 2026-09 339.287 +2.6% (BLS CUUR0000SA0L1E)
+[scenes.16.key] dual
+[scenes.16.title] 미국 주식 = 주가 × 환율
+[scenes.16.sub] 위 SPY 달러 종가, 아래 원달러
+[scenes.16.source] 야후 파이낸스 SPY 일별 종가 · 한국은행 ECOS 원달러 매매기준율
+[scenes.16.chapter] 4장
+[scenes.16.data.lines.0.0] SPY(달러)
+[scenes.16.data.lines.0.2.0] $773.93
+[scenes.16.data.lines.0.2.1] $769.67
+[scenes.16.data.lines.0.3] fall
+[scenes.16.data.lines.0.5] −0.55%
+[scenes.16.data.lines.1.0] 원달러
+[scenes.16.data.lines.1.2.0] 1,339.2원
+[scenes.16.data.lines.1.2.1] 1,340.5원
+[scenes.16.data.lines.1.3] ink
+[scenes.16.data.lines.1.5] +0.10%
+[scenes.16.data.dark.0] 같은 날이었다는 것까지만 확인
+[scenes.16.lines.0.text] 발표가 있던 그날, 미국 대표 지수를 따라가는 ETF는 달러로 1% 남짓 내렸어요.
+[scenes.16.lines.0.cap] SPY 종가 10/13 778.01 → 10/14 769.67 −1.07% · 10/8 773.93 → 10/14 −0.55% · 미국은 10/9 장 포함(한국 한글날 휴장) (야후 파이낸스)
+[scenes.16.lines.1.text] 물가 발표 때문이라고는 말할 수 없습니다. 같은 날이었다는 것까지만 확인되죠.
+[scenes.16.lines.2.text] 환율은 거의 그대로라, 원화로 바꿔도 비슷합니다.
+[scenes.16.lines.2.cap] 1만 달러 × 1,339.20원 = 1,339.2만원 → 10/14 1,340.50원 · 환율만으로 +1.3만원
+[scenes.17.key] bridge
+[scenes.17.title] 미국 1만 달러
+[scenes.17.sub] SPY 10/8 → 10/14 · 원화 · 만원
+[scenes.17.source] 야후 파이낸스 SPY 일별 종가 · 한국은행 ECOS 원달러 매매기준율
+[scenes.17.chapter] 4장
+[scenes.17.data.steps.0.2] 1,339.2만
+[scenes.17.data.steps.1.0] 환율 몫
+[scenes.17.data.steps.1.2] +1.3만
+[scenes.17.data.steps.2.0] 주가 몫
+[scenes.17.data.steps.2.2] −7.4만
+[scenes.17.data.steps.3.2] 1,333.1만
+[scenes.17.data.total.0.0] 삼성전자 100주
+[scenes.17.data.total.0.1] −300만원
+[scenes.17.data.total.1.0] 코스피 1천만원
+[scenes.17.data.total.1.1] −93만원
+[scenes.17.data.total.2.0] 미국 1만 달러
+[scenes.17.data.total.2.1] −6.1만원
+[scenes.17.lines.0.text] 기간 전체로 보면요.
+[scenes.17.lines.1.text] 미국 주식에 넣은 1만 달러는, 원화로 6만원 남짓 줄었습니다.
+[scenes.17.lines.1.cap] 1,339.2만원 → 1,333.1만원 · −60,786원 · 환율은 10/14 매매기준율
+[scenes.18.key] trio
+[scenes.18.title] 셋을 나란히
+[scenes.18.sub] 평가액 기준 · 팔지 않으면 확정 아님 · 수수료 빼고 계산 · 전망·투자 권유 아님
+[scenes.18.source] 다음 금융(KRX 정규장 종가) · 한국은행 ECOS 802Y001 코스피 · 731Y001 원달러 매매기준율(일) · 야후 파이낸스 SPY 일별 종가
+[scenes.18.chapter] 5장
+[scenes.18.data.cards.0.head] 삼성전자 100주
+[scenes.18.data.cards.0.rows.0.0] 평가액
+[scenes.18.data.cards.0.rows.0.1] −3,000,000
+[scenes.18.data.cards.0.rows.0.2] net
+[scenes.18.data.cards.0.pct] −11.45%
+[scenes.18.data.cards.1.head] 코스피 1천만원
+[scenes.18.data.cards.1.rows.0.0] 평가액
+[scenes.18.data.cards.1.rows.0.1] −931,371
+[scenes.18.data.cards.1.rows.0.2] net
+[scenes.18.data.cards.1.pct] −9.31%
+[scenes.18.data.cards.2.head] 미국 1만 달러
+[scenes.18.data.cards.2.rows.0.0] 원화로
+[scenes.18.data.cards.2.rows.0.1] −60,786
+[scenes.18.data.cards.2.rows.0.2] net
+[scenes.18.data.cards.2.pct] 달러 −0.55%
+[scenes.18.data.q.0] 합쳐서 −3,992,157원
+[scenes.18.lines.0.text] 세 칸을 모두 들고 있었다면, 줄어든 돈은 합쳐서 399만원입니다.
+[scenes.18.lines.0.cap] 삼성전자 100주 −300만원 / 코스피 1천만원 −93만원 / 미국 1만 달러 원화 −6.1만원 · 10/8 → 10/14 · 평가액 기준, 팔지 않으면 확정 아님, 수수료 빼고 계산
+[scenes.19.key] last
+[scenes.19.title] 미국 1만 달러 · 지난주와 이번 주
+[scenes.19.sub] 달러로 · 원화로
+[scenes.19.source] 야후 파이낸스 SPY 일별 종가 · 한국은행 ECOS 원달러 매매기준율
+[scenes.19.chapter] 5장
+[scenes.19.data.cards.0.0] 지난주 · 1화
+[scenes.19.data.cards.0.1] 달러 +1.16% · 원화 −49,138원
+[scenes.19.data.cards.1.0] 이번 주
+[scenes.19.data.cards.1.1] 달러 −0.55% · 원화 −60,786원
+[scenes.19.lines.0.text] 지난주엔 미국 주식이 달러로는 올랐는데 환율 때문에 원화로 줄었죠.
+[scenes.20.key] rates
+[scenes.20.title] 어디에 넣어 뒀느냐
+[scenes.20.sub] 10/8 → 10/14 · %
+[scenes.20.source] 다음 금융(KRX 정규장 종가) · 한국은행 ECOS 802Y001 코스피 · 731Y001 원달러 매매기준율(일) · 야후 파이낸스 SPY 일별 종가
+[scenes.20.chapter] 5장
+[scenes.20.data.rows.0.0] 삼성전자
+[scenes.20.data.rows.0.2] −11.45%
+[scenes.20.data.rows.1.0] 코스피
+[scenes.20.data.rows.1.2] −9.31%
+[scenes.20.data.rows.2.0] SPY(달러)
+[scenes.20.data.rows.2.2] −0.55%
+[scenes.20.data.rows.3.0] 원달러
+[scenes.20.data.rows.3.2] +0.10%
+[scenes.20.data.q.0] 한국 쪽이 훨씬 컸다
+[scenes.20.lines.0.text] 이번 주는 한국 쪽 낙폭이 미국보다 훨씬 컸어요.
+[scenes.20.lines.1.text] 똑같은 기간인데, 어디에 넣어 뒀느냐에 따라 이만큼 갈린 거예요.
+[scenes.20.lines.1.cap] 비율 — 삼성전자 −11.45% · 코스피 −9.31% · SPY 달러 −0.55% · 원달러 +0.10%
+[scenes.21.key] next
+[scenes.21.title] 다음에 볼 날짜
+[scenes.21.sub] 각 기관 일정표 · 공시
+[scenes.21.source] 한국은행·미국 연준 일정표 · DART 2026.10.14 SK하이닉스 IR 안내
+[scenes.21.chapter] 6장
+[scenes.21.data.cells.0.0] 월
+[scenes.21.data.cells.1.0] 화
+[scenes.21.data.cells.2.0] 수
+[scenes.21.data.cells.3.0] 목
+[scenes.21.data.cells.3.2] 한국은행 금리 결정
+[scenes.21.data.cells.4.0] 금
+[scenes.21.data.later.0.0] 10/27~28
+[scenes.21.data.later.0.1] 미국 연준 회의
+[scenes.21.data.later.1.1] SK하이닉스 3분기 실적
+[scenes.21.lines.0.text] 다음 주 목요일엔 한국은행 금리 결정이 있습니다.
+[scenes.21.lines.0.cap] 한국은행 통화정책방향 결정회의 10/22(목) (한국은행 일정표)
+[scenes.21.lines.1.text] 그다음 주엔 미국 연준 회의가 있고요.
+[scenes.21.lines.1.cap] 미국 연준 FOMC 10/27~28 (연준 일정표)
+[scenes.21.lines.2.text] SK하이닉스는 이달 28일 아침에 실적을 발표한다고, 수요일에 공시했습니다.
+[scenes.21.lines.2.cap] SK하이닉스 기업설명회(IR) 개최 안내 · 2026-10-28 09:00 · 3분기 경영실적 발표 (DART 2026.10.14)
+[scenes.22.key] pending
+[scenes.22.title] 삼성전자 3분기 배당은 아직
+[scenes.22.sub] 1화에서 본 것 · DART 공시
+[scenes.22.source] DART 공시 목록 10/1~10/14 · DART 20251030800075
+[scenes.22.chapter] 6장
+[scenes.22.data.cards.0.0] 1년 전 3분기 배당
+[scenes.22.data.cards.0.1] 이사회 결의 2025-10-30
+[scenes.22.data.cards.1.0] 올해 3분기 배당
+[scenes.22.data.cards.1.1] 10/14까지 공시 없음
+[scenes.22.data.stamp.0] 아직 공시 안 됨
+[scenes.22.lines.0.text] 1화에서 말씀드린 삼성전자 3분기 배당은, 수요일까지 공시가 없었어요.
+[scenes.22.lines.0.cap] 2026년 3분기 배당 결정 공시 10/14까지 없음 · 1년 전엔 2025-10-30 결의 (DART 20251030800075)
+[scenes.23.key] end
+[scenes.23.title] 수요일 마감 기준
+[scenes.23.sub] 종가와 공시로만 계산 · 전망·투자 권유 아님
+[scenes.23.chapter] 7장
+[scenes.23.data.text] 이번 주 뉴스가 내 돈에 얼마 · 1화
+[scenes.23.data.label] 지난 편 · 지난주 사흘
+[scenes.23.data.note] 수요일 마감 종가와 공시로만 계산 · 전망도 투자 권유도 아님
+[scenes.23.lines.0.text] 이 계산은 수요일 마감 종가와 공시를 그대로 곱한 거예요. 전망도, 투자 권유도 아니에요.
+[scenes.23.lines.1.text] 수요일 마감 기준으로, 여러분 계좌는 코스피보다 더 내렸나요, 덜 내렸나요? 댓글로 들려주세요.
+[script] w1016/script.md
+
+## 화면 코드: video/src/w1016.tsx
+[w1016.tsx] 이번 주 내 돈
+[w1016.tsx] 한 종목
+[w1016.tsx] 시장 전체
+[w1016.tsx] 해외
+[w1016.tsx] 공시 원문 · 4. 기타
+
+## 화면 코드: video/src/parts/fm.tsx
+[fm.tsx] ${e}억 ${r.toLocaleString()}만원
+[fm.tsx] ${e}억원
+[fm.tsx] ${r.toLocaleString()}만원
+[fm.tsx] 1년 뒤 남은 돈
+[fm.tsx] 원금
+[fm.tsx] 떨어진 해
+[fm.tsx] 세금·건보료
+[fm.tsx] 월 100만원 원금
+[fm.tsx] 파이어맵
+[fm.tsx] 파이어맵
+
+## 화면 코드: video/src/parts/receipt.tsx
+[receipt.tsx] 중앙 ${med.toFixed(2)}%
+
+## 화면 코드: video/src/parts/reverse.tsx
+[reverse.tsx] 만원
+[reverse.tsx] 지난 1년 분배율
+[reverse.tsx] 필요한 돈
+
+## 화면 코드: video/src/parts/gold.tsx
+
+## 화면 코드: video/src/parts/weekly.tsx
+[weekly.tsx] 아래 ${lo.toLocaleString()}${unit} 생략

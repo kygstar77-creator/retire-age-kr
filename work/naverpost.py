@@ -234,7 +234,102 @@ def click_last_paragraph(frame):
     bb = para.bounding_box()
     if bb: page.mouse.click(bb['x'] + min(20, bb['width'] / 2), bb['y'] + bb['height'] / 2)
     else: para.click(force=True)
+    # 2026-10-15 카페 281: 왼쪽 20px을 누르면 커서가 그 문단 **두세 글자 뒤**에 선다. 마지막 문단이 비어 있지 않으면
+    # 새 글이 그 사이에 끼어든다(주소 줄이 맨 끝에 남았을 때 'tps'·'://y'·'ou'가 문단마다 떨어져 나간 길).
+    # End로 문단 끝에 커서를 둔다. 빈 문단이면 아무 일도 없다.
+    page.keyboard.press('End')
     page.wait_for_timeout(250)
+
+# ---------- 주소 줄 ----------
+# 2026-10-15 사장님 "tps, y, ou 이런 건 왜 적힌 거야" — 카페 208·257·265·269·276·281.
+# 원인(재현함, 링크 카드 응답을 4초 늦추면 281과 똑같은 조각 'ht·tps·://y·ou·tu.·be·/rVg0pQVo_wk'이 나온다):
+#   주소 줄 뒤 Enter를 치면 편집기가 1~4초 뒤에야 링크 카드(유튜브 미리보기)를 붙인다. 그 사이 다음 글을 계속 치면
+#   카드가 늦게 붙으면서 주소 문단이 본문 맨 끝으로 밀려나고, 이어 쓰기(click_last_paragraph)가 그 주소 문단의
+#   두세 글자 뒤를 눌러 새 글을 끼워 넣는다. 쓸 때마다 주소가 두세 글자씩 잘려 다음 덩어리 머리에 붙는다.
+#   편집기 화면 글자 수는 그대로라 verify_body(글자 수)는 통과했다. 화면(DOM)도 멀쩡해 보이고 저장되는 문서(모델)만 깨진다.
+# 고침: 주소 줄을 친 뒤에는 카드가 다 붙을 때까지 기다리고(wait_link_card), 마지막 문단 끝을 다시 잡는다.
+#   등록 전에는 화면이 아니라 편집기가 실제로 저장할 문서(getDocumentData)를 읽어 주소를 검사한다(url_problems).
+URL_RE = re.compile(r'https?://[A-Za-z0-9\-._~:/?#\[\]@!$&\'*+,;=%]+')
+CARD_SEL = '.se-component.se-oembed, .se-component.se-oglink'
+EDITOR_JS = "(() => { const E = window.SmartEditor && SmartEditor._editors; if (!E) return null; const k = Object.keys(E)[0]; return k ? E[k] : null; })()"
+
+def _editor_busy(frame):
+    try: return bool(frame.evaluate(f"() => {{ const ed = {EDITOR_JS}; return !!(ed && ed.isDocumentProcessing && ed.isDocumentProcessing()); }}"))
+    except Exception: return False
+
+def wait_link_card(frame, before, cap_ms=20000):
+    """주소 줄 Enter 뒤: 편집기가 링크 카드를 다 붙일 때까지 기다린다. 카드가 안 생기는 주소도 있어
+    '처리 중'이 꺼진 채 2.5초가 지나면 그만 기다린다. 카드가 붙었으면 True."""
+    page = frame.page; t0 = time.time()
+    while True:
+        page.wait_for_timeout(250)
+        n = frame.locator(CARD_SEL).count(); busy = _editor_busy(frame); el = (time.time() - t0) * 1000
+        if not busy and (n > before or el >= 2500): break
+        if el >= cap_ms:
+            print(f'링크 카드 대기 {cap_ms // 1000}초 넘음(처리 중={busy}) — 계속 간다, 등록 전 검사가 막는다'); break
+    page.wait_for_timeout(600)
+    return frame.locator(CARD_SEL).count() > before
+
+MODEL_PARAS_JS = """() => { const ed = %s; if (!ed || !ed.getDocumentData) return null;
+  const d = ed.getDocumentData(); const comps = ((d && d.document) || d || {}).components || [];
+  const out = [];
+  for (const c of comps) { if (c['@ctype'] !== 'text') continue;
+    for (const p of (c.value || [])) { const nodes = p.nodes || [];
+      out.push({t: nodes.map(n => n.value || '').join(''),
+                links: nodes.filter(n => n.link && n.link.url).map(n => [n.link.url, n.value || ''])}); } }
+  return out; }""" % EDITOR_JS
+
+def model_paras(frame):
+    """편집기가 등록할 때 실제로 보낼 문서의 글 문단 [(글, [(주소, 링크 글자)…])…]. 편집기를 못 찾으면 None."""
+    try: r = frame.evaluate(MODEL_PARAS_JS)
+    except Exception as e: print('편집기 문서 읽기 실패:', repr(e)[:80]); return None
+    if r is None: return None
+    return [(x['t'], [tuple(l) for l in x['links']]) for x in r]
+
+def html_paras(content_html):
+    """올라간 글(contentHtml)의 문단을 model_paras와 같은 꼴로."""
+    import html as _h
+    zw = '​‌‍﻿'; out = []
+    for x in re.findall(r'<p class="se-text-paragraph[^>]*>(.*?)</p>', content_html or '', re.S):
+        links = [(_h.unescape(u), _h.unescape(re.sub(r'<[^>]+>', '', a)).strip(zw))
+                 for u, a in re.findall(r'<a href="([^"]+)"[^>]*>(.*?)</a>', x, re.S)]
+        out.append((_h.unescape(re.sub(r'<[^>]+>', '', x)).strip(zw), links))
+    return out
+
+def url_problems(paras, seq):
+    """주소가 깨졌나. 하나라도 걸리면 그 글은 내보내지 않는다(문제 목록을 돌려준다, 없으면 []).
+    1) 자동 링크는 링크 글자 = 주소다. 다르면 잘린 조각이다('tps' → https://youtu.be/…).
+    2) 원고의 주소가 본문에 온전히(앞뒤에 주소 글자가 더 붙지 않은 채) 원고만큼 있어야 한다.
+    3) 주소 줄과 옆 줄이 한 문단으로 붙었으면 실패(280: 'https://youtu.be/ez-tLgkdZfI그런데 이 세금은…').
+    4) 원고에 없는 문단의 머리·꼬리에 주소 줄 조각(h·ht·htt·tps·://·ou …)이 붙었으면 실패('영표는 이렇게…', '상:')."""
+    zw = '​‌‍﻿'
+    clean = lambda s: re.sub(r'[\s' + zw + r']+', '', s or '')
+    probs = []
+    src_lines = [HEAD_RE.sub('', l).strip() for k, v in seq if k == 'text' for l in (v or '').splitlines() if l.strip()]
+    src_set = {clean(l) for l in src_lines}
+    url_lines = [clean(l) for l in src_lines if URL_RE.search(l)]
+    for t, links in paras:
+        for u, a in links:
+            if a.strip(zw) != u: probs.append(f'잘린 링크 "{a[:20]}" → {u[:40]}')
+    body = [t.strip(zw + ' \t') for t, _ in paras]
+    for u in sorted({m.group(0).rstrip('.,)') for l in src_lines for m in URL_RE.finditer(l)}):
+        want = sum(l.count(u) for l in src_lines)
+        got = sum(len(re.findall(r'(?<![A-Za-z0-9/])' + re.escape(u) + r"(?![A-Za-z0-9\-_~/?#\[\]@!$&'*+=%])", t)) for t in body)
+        if got < want: probs.append(f'주소가 온전히 없음({got}/{want}) {u[:50]}')
+    joined = {clean(a) + clean(b) for a, b in zip(src_lines, src_lines[1:]) if URL_RE.search(a) or URL_RE.search(b)}
+    for t in body:
+        c = clean(t)
+        if not c or c in src_set: continue
+        if c in joined: probs.append(f'주소 줄과 옆 줄이 한 문단으로 붙음: "{t[:40]}"'); continue
+        for l in src_set:
+            if not l or l == c: continue
+            extra = c[:-len(l)] if c.endswith(l) else c[len(l):] if c.startswith(l) else None
+            if extra and len(extra) <= 15 and any(extra in ul for ul in url_lines):
+                probs.append(f'문단에 주소 조각 "{extra}" 붙음: "{t[:30]}"'); break
+        else:
+            if len(c) <= 15 and any(c in ul for ul in url_lines):
+                probs.append(f'주소 조각만 남은 문단 "{t[:20]}"')
+    return probs
 
 def body_text_len(frame):
     # 빈 편집기의 안내문 '내용을 입력하세요.'는 글자로 세지 않는다(첫 조각 검증이 -3자로 틀렸던 원인)
@@ -255,7 +350,10 @@ def type_text(frame, text):
                 page.keyboard.press('Control+B'); page.keyboard.insert_text(HEAD_RE.sub('', para))
                 page.keyboard.press('Control+B'); page.wait_for_timeout(120)
             elif para.strip(): page.keyboard.insert_text(para); page.wait_for_timeout(120)
+            cards = frame.locator(CARD_SEL).count() if URL_RE.search(para) else None
             page.keyboard.press('Enter'); page.wait_for_timeout(120)
+            if cards is not None:   # 주소 줄: 링크 카드가 다 붙은 뒤 마지막 문단 끝을 다시 잡고 잇는다(위 '주소 줄' 설명)
+                wait_link_card(frame, cards); click_last_paragraph(frame)
         got = body_text_len(frame) - before
         if got >= want * 0.9: return
         print(f'본문 입력 확인 실패({got}/{want}자) — 다시 시도' if attempt == 0 else f'본문 입력 실패({got}/{want}자)')
@@ -760,6 +858,16 @@ def verify_body(frame, seq, label):
     imgs = frame.locator('.se-component.se-image').count(); want_img = sum(1 for k, _ in seq if k == 'img')
     print(f'{label} 본문 {total}/{want}자, 사진 {imgs}/{want_img}장')
     if total < want * 0.9 or imgs < want_img: raise RuntimeError(f'{label} 본문이 덜 들어감 — 등록하지 않음')
+    # 글자 수만 보면 주소가 잘려 흩어져도 통과한다(2026-10-15 카페 281 'verify OK 2221자'). 편집기가 실제로
+    # 저장할 문서를 읽어 주소를 본다. 원고에 주소가 없으면 할 일이 없다.
+    if any(k == 'text' and URL_RE.search(v or '') for k, v in seq):
+        paras = model_paras(frame)
+        if paras is None: paras = frame.evaluate("() => [...document.querySelectorAll('.se-component.se-text .se-text-paragraph')].map(p => [p.innerText, [...p.querySelectorAll('a[href]')].map(a => [a.href, a.innerText])])"); print(f'{label} 편집기 문서를 못 읽어 화면 글로 주소 검사')
+        bad = url_problems(paras, seq)
+        if bad:
+            for b in bad[:12]: print('  주소 문제:', b)
+            raise RuntimeError(f'{label} 주소가 깨짐 {len(bad)}곳 — 등록하지 않음')
+        print(f'{label} 주소 검사 통과')
 
 def find_blog_url_by_title(title, tries=6, gap=15):
     """RSS에서 이 제목의 글을 찾아 주소를 준다. 발행 클릭 뒤 화면이 안 넘어갈 때 실제 등록 여부 확인용."""

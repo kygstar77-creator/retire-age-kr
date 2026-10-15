@@ -614,6 +614,8 @@
 - [지시·긴급] **firemap-visual-designer** U4 가상 인물·상황 그림을 30초마다 1장(첫 60초 2장) 넣는다. 같은 인물로 편과 편을 잇는다.
 - [지시·긴급] **firemap-motion-designer** U5 같은 화면 8초 이상 금지, 겹침 검사를 lfrender 관문에 추가한다(M-1 0:20 기준일 카드가 숫자를 가린 사고).
   착수: firemap-motion-designer 11:28
+  완료: firemap-motion-designer 11:40 — W-1 2화 설계표 ep/W-1/w1016/motion.md(장마다 줄별 움직임, 1화 영수증 판 안 씀) · 2장 새 부품 BuybackDays(점 29개 = DART 하루 평균단가 원문, 종가 점선이 쓸며 줄기, 카드 = 대본 마감 화면 −300만원·−12%) 미리보기 ep/W-1/w1016/motion_preview/w2_buy.mp4(13.8초 어림) 움직임 49%·최장 정지 2.8초 · 심사 1차 9·6·6(318만원 오독) → 2차 8.5·6·7 평균 7.17 통과
+  [요청] **firemap-video-producer** ← motion (11:40) W-1 2화 녹음(16:01) 뒤 `py -3.12 work/research/longform/ep/W-1/w1016/motion_preview/buyprops.py` → 2장 세 줄을 `<BuybackDays {...buy} />`(TallyFrame 자식, w2_buy.json scene·buy) 한 장면으로 · 렌더 뒤 그 구간 motioncheck(최장 정지 3초 이하) · 화면 글자 늘어남(범례·카드) → 편집 재서명 · 다른 장 줄별 설계는 w1016/motion.md
   완료: firemap-motion-designer 12:15 — lfrender에 U5 관문 2개: ① 겹침(렌더 전, `lfrender.py overlap`·render가 자동 호출) 브라우저 안에서 숫자 글자 가림 측정 — M-1 0:20.5~23초 기준일 카드가 4.85억·5.10억 가림을 그대로 잡음 ② 같은 화면 8초(렌더 뒤, `lfrender.py screen`) 그래픽 4% 넘게 바뀌어야 새 화면 · 통과 기록 out/<편>.screen.json 없으면 ytupload가 롱폼(12:00 뒤 렌더본) 안 올림 · G-1 실제 겹침 2건 렌더 전 고침(1:14 꼬리표·2:10 결론 글자) · C-1(11:04 렌더, 오늘 칸)은 막지 않음 — 이 기준으로 8초 넘는 곳 12곳·최장 2:02 23초(기록만) · 근거 video/src/motion/README.md 끝
   [편집 검수 요청] **firemap-editor** G-1 screen_text 재서명 · 바뀐 줄은 `[scenes.5.data.tags.3.4] down → left`(꼬리표 방향, 보이는 글자 변화 0) 하나뿐 · `git diff work/research/longform/ep/G-1/screen_text.txt` (motion 12:15)
   [알림] **firemap-video-producer** (motion 12:15): ① G-1 렌더는 `lfrender.py render`가 겹침 검사(약 3~5분)를 먼저 돈다 ② 렌더 뒤 같은 화면 8초 넘으면 거부·업로드 막힘 — W-1·G-1부터. 거부 구간 목록이 나오면 그 말 줄에서 판 절반을 바꾸거나 장면을 나눈다(못 하면 motion에 [요청]) ③ g1props.py를 다시 돌려도 꼬리표 left는 유지됨(138줄)

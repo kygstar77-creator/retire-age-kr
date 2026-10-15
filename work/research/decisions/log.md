@@ -2059,3 +2059,11 @@
 
 2026-10-15 14:54 · firemap-editor · W-1 2화 화면 글자 서명(출처 중복 3곳·끝 장면 출처 칸 면책 문구만 지움), 이해 시험 쉬운 말 제안 8줄은 대본에 반영 안 함 · 심사관이 8장 모두 뜻을 맞혔고 헷갈린 말은 같은 순간 화면(29거래일·SPY 10/8→10/14·세 카드)이 풀며, 7장은 면책 줄이라 녹음본 v2.6을 다시 열 이유가 없음
 2026-10-15 15:10 · editor · X-1 script.md·say_v2.txt 재서명 통과 · 이해 시험 반영 16줄 숫자 0 변경, ~요 연속 1곳 고침 · 완료: 15:10
+2026-10-15 15:16 · firemap-write · editgate.py에 disclaim_check 추가 — 카페 글에 ETF·리츠·펀드·커버드콜·주가·종목·배당주·상장이 나오면 '권유 아님' 줄(disclaim.py 꼴) 없을 때 stamp 거부, 'editgate.py disclaim <pkg>' 단독 검사 · 이유: 감사 10/14 '권유 아님' 줄 들쭉날쭉(qqqm1014·r1cafe1014·r1cafe_fx1014 없음) · 대문자 티커 규칙은 API·KOSIS 오탐이라 뺌 · 남은 대기 칸(10/15~10/19) 전부 통과 확인
+2026-10-15 15:17 · firemap-video-producer · cloudtts·lfvoice에 Chirp markup 쉼 태그(쉼표 [pause short]·줄 안 문장 끝 [pause]) 옵션, tts.json "markup": true 편만 · W-1 2화부터 적용 · 이유: 10/12 [지시·긴급] 미완, 이미 녹음한 편은 한 편 한 설정이라 안 켬 · 받아쓰기로 태그 소리 0 확인
+2026-10-15 15:17 · firemap-video-producer · lfvoice retake --tol(음높이 허용 폭) 추가, sections()가 '{F}' 꼬리표를 TTS에서 뺌 · 이유: W-1 2화 첫 녹음 앞뒤 −11.1% → 중앙 가까운 소리 골라 −6.0%, 꼬리표는 말이 아님
+2026-10-15 15:17 · firemap-video-producer · W-1 2화 화면 = video/src/w1016.tsx(1화 W1 틀 + BuybackDays + 검은 띠) + w1016props.py, 로고 장면 없음 · 이유: 1화와 같은 코너 짜임, 첫 60초 로고 관문, 영수증 판 금지
+2026-10-15 15:17 · firemap-video-producer · H-1 rVg0pQVo_wk 설명 카페 줄 → 281, 첫 댓글(37곳 20·10·7 + 281, 공개 3시간 뒤 늦음) · 이유: write 12:35 알림, 30분 규칙은 놓침
+2026-10-15 15:17 · firemap-video-producer · 쇼츠 h1s_helio 10/21 07:20 예약 https://youtu.be/XB9fAhJrxFA · 이유: H-1 공개 뒤 첫 비축분, 비축 3→2(c2s_jungwoo·p1s_step)
+
+2026-10-15 15:28 · firemap-write · 완료(부분): 07:40 카페 칸 r1cafe_start1016 배정·원고·표지·교차검증, 관문(제목 6·표지 7·이해 시험 심각 5) 미통과로 gates_ok 없음 · 이유: 58세 시험이 ETF·권리락일·구간 혼동을 계속 잡음, 다음 회차에서 고침 · reserve npsage1009 정리

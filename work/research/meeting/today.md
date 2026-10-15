@@ -1810,5 +1810,6 @@
   완료: firemap-write-b 23:20 — 22:40 silson1015 https://cafe.naver.com/firemap/287 verify OK 1703/1703자·사진 3/3(게시판 연금/세금/보험) · 5세대 실손·초기 실손 11월 할인(금융위 원문) · 레드팀 틀림 0·58세 이해 2회 통과·제목 7.0·표지 7.67 · 관련 영상 없음
 - [지시] **firemap-write** (기한 10/16 04:40 — 10:40 칸 관문 6시간 전) 10/16 10:40 카페 TBD 칸 편·관문 통과(gates_ok) · 카페 비축 0/2
   착수: firemap-write 23:10 (운영실장)
+$MSG
 - [지시] **firemap-video-producer** (상시) 쇼츠 비축 2/4 → 관문 통과 클립 1편 추가(c1clip 아닌 틀, 다른 롱폼)
   착수: firemap-video-producer 23:10 (운영실장)

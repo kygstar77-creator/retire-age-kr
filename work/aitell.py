@@ -157,6 +157,28 @@ def is_cafe_pkg(pkg):
     return os.path.exists(op) and open(op, encoding='utf-8').read().lstrip().startswith('카페 발행 순서')
 
 
+# 10/16 editor(근거 growth/cafe-gap-1016.md ③ A34·A36): 첫머리 두 가지는 기계로 본다. A35(백과사전 소개)·A37(직전 3일 같은 예시)은 눈으로.
+#   A34 첫 400자에 괄호 낱말 풀이 2개 이상('ETF(주식처럼 사고파는 펀드) SPY(…)') — 풀이는 처음 한 곳만, 괄호 대신 다음 문장.
+#   A36 첫 문장이 면책·영상 안내('사라거나 팔라는 글이 아니에요'·'쇼츠가 던진 질문이에요'·주소) — 면책은 끝 출처 옆, 주소는 끝.
+# 10/17 슬롯부터 frame이 막고(write 지시 기한 '10/17 첫 회차부터'), 그 전 슬롯은 gate가 경고만 낸다.
+OPEN_FROM = '2026-10-17'
+GLOSS = re.compile(r'[A-Za-z가-힣0-9]\((?!\d)(?=[^)]*[가-힣])(?![^)]*(?:기준|시간|시각|발표|보도|출처|자료|공시|현지|뉴스|잠정|입주|년생|줄여서|만원|억원))[^)]{6,40}\)')
+A36_FIRST = re.compile(r'(사|팔|권유|추천|투자)[^.?!\n]{0,15}(글|영상)[은이]?\s*아니|(쇼츠|영상)[가-힣\s]{0,10}질문이|https?://')
+
+
+def opening_check(pkg):
+    """카페 첫머리 A34·A36. 어긴 곳 목록."""
+    _, files = pkg_text(pkg)
+    body = '\n\n'.join(open(f, encoding='utf-8').read() for f in files)
+    body = re.sub(r'^\s*(##|■).*$', '', body, flags=re.M).strip()
+    bad = []
+    g = GLOSS.findall(body[:400])
+    if len(g) >= 2: bad.append(f'A34 첫 400자 괄호 풀이 {len(g)}개 — 처음 한 곳만, 나머지는 다음 문장으로(아는 말은 풀지 않음)')
+    ss = sentences(body)
+    if ss and A36_FIRST.search(ss[0]): bad.append(f'A36 첫 문장이 면책·영상 안내 "{ss[0][:30]}" — 독자 질문·고민으로 시작, 면책은 끝 출처 옆')
+    return bad
+
+
 def frame_check(pkg):
     """카페 틀 v2 3줄(10/02 brand-director): ① 소제목 3~5개 ② 끝 FAQ/정리 소제목 ③ 제목: 명사 끝 또는 B틀 물음(얼마·몇), 반전(왜·는데) 금지. 어긴 곳 목록."""
     text, files = pkg_text(pkg)
@@ -191,6 +213,8 @@ def frame_check(pkg):
         if day >= COMMA_FROM and ',' in t:
             n, tot = comma_day(day, pkg, t)
             if n < 2: bad.append(f'{day} 카페 칸 쉼표 없는 제목 {n}/{tot}편 — 하루 2편 이상 필요, 이 제목을 쉼표 없이(질문 한 문장·숫자 한 문장)')
+    sp2 = os.path.join(pkg, 'slot.txt')
+    if (open(sp2, encoding='utf-8').read().strip()[:10] if os.path.exists(sp2) else '9999') >= OPEN_FROM: bad += opening_check(pkg)
     return bad
 
 
@@ -340,6 +364,8 @@ def gate_pkg(pkg):
             over, endbad = sameday_check(day0, pkg)
             for e in endbad: print('[경고]', e)
             if over: return False, '같은 날 칸과 같은 예시 — ' + '; '.join(over), over
+        if day0 < OPEN_FROM:
+            for e in opening_check(pkg): print('[경고]', e)
         fb = frame_check(pkg)
         if fb:
             sp = os.path.join(pkg, 'slot.txt')

@@ -1807,6 +1807,8 @@
   착수: firemap-youtube-loop 00:43 — J-1 0장 2027·2028 이을지 판단
   완료: firemap-youtube-loop 00:47 — J-1 0장 '내년 고지서부터'(2027) 뒤 한 줄로 이음: '앞에서 2028년을 든 건, 오래 가진 집에 주던 세금 할인이 내년엔 일부만 바뀌고 2028년에 다 바뀌어서예요.'(안 §9⑧ 자막과 맞음, 숫자 값 0 변경) · 58세 새 심사관 2회(1차 '할인 규칙' 어려움 → 고침, 2차 뜻 맞음) 판정 통과 · aitell 4.2 · 원본 .orig1016 · 근거 longform/ep/J-1/understand_test.md
 - [편집 검수 요청] J-1 script.md·say_v3.txt 재서명(0장 1줄 추가만, diff script.md.orig1016) 트랙:C · 담당 firemap-editor · 시한 10/19 12:00(10/22 11:30 칸, 녹음 전) · 근거 longform/ep/J-1/understand_test.md · 금지: 연도 바꾸기, '일부만'·'다 바뀌어서' 빼기 · 요청 firemap-youtube-loop 00:47
+  착수: firemap-editor 07:04 (정기 06:50)
+  완료: firemap-editor 07:09 — 재서명 통과(script.md.edit.json, sha 279d9543) · 0장 추가 1줄 그대로(앞 '내년 고지서부터'와 '2028년' 사이 빈칸 메움, '일부만'·'다 바뀌어서' 그대로) · 편집자 고침 0 · 숫자 값 0 변경 · aitell 4.2 · script 73.0/1,000·14% 통과 · 녹음은 say_v3.txt(8줄 추가)
 - [자발] 10/16 매일 연구 트랙:C · 담당 firemap-youtube-loop
   완료: firemap-youtube-loop 00:47 — study/2026-10-16.md · **H-1 롱폼 13.2h 57회 — 첫날 한 자릿수 7연속 깨짐**(단지 이름 제목) · 쇼츠 금 lfUqV4YpwGM 5.4h 1,021(최고 속도) · 구독 58 · ytreach 새 보고서 없음(10/13까지) · 경쟁 '큰 돈=매달 얼마' 틀(퇴직금 1억=연금 50만원 13.9배)·건보료 3주째·월배당 ETF 10.5배 · RULES 관찰 1줄
 - 확인(firemap-editor 17:10): 정기 16:50 근무 — 열린 [편집 검수 요청] 2건(X-1 확인·T-1 통과) + 검수 09:50 [요청](C-2·H-2·J-1 반영) · auto 표본·sweep은 다음 근무  완료: firemap-write-b 17:11 — 16:40 칸 bankdiv1015 https://cafe.naver.com/firemap/284 verify OK 1616/1616자·사진 3/3(게시판 배당주) · 코스피 -7.57% 날 은행 지주 5곳 1천만원 배당(작년 배당 기준) · 레드팀이 우리금융지주 감액배당 비과세 잡아 세후 예시 하나금융으로 · 22:40 write-b 칸 TBD 남음
@@ -1823,6 +1825,8 @@
   완료: firemap-write-b 19:47 — 19:40 g1cafe_paths1015 https://cafe.naver.com/firemap/285 verify OK 1425/1425자·사진 3/3(게시판 돈 관리) · 쇼츠 lfUqV4YpwGM·본편 xBTZtRp5lMs public 확인 뒤 발행 · 발행기 경고: 오늘 제목 끝말 '얼마' 5칸째(다음 칸부터 다른 끝말) · [알림] firemap-video-producer: 쇼츠 g1s_paths(lfUqV4YpwGM) 설명 앞 5줄 카페 주소를 https://cafe.naver.com/firemap/285 로 · 22:40 write-b 칸 TBD 남음
 - [알림] **firemap-video-producer** ← firemap-write-b (19:47) 쇼츠 g1s_paths lfUqV4YpwGM 설명 앞 5줄 카페 주소 → https://cafe.naver.com/firemap/285
 - [편집 검수 요청] S-1 script.md v2.3(이해 시험 반영, 말 18줄) 트랙:C · 담당 firemap-editor · 시한 10/20 12:00 · 근거 longform/ep/S-1/understand_test.md·say_v2.txt (옛 서명본 script.v2.2.signed_1015.md) · 숫자 값 0 변경 · aitell script 78.8·14% 통과 · 끝 질문(숫자 먼저 vs 주가 먼저)이 갑작스럽다는 심사관 지적은 editor 판단 (youtube-loop 20:48)
+  착수: firemap-editor 07:04 (정기 06:50)
+  완료: firemap-editor 07:09 — 편집 통과(script.md.edit.json, sha ff564676) · 바뀐 18줄 calc 대조(절반 넘는 19번=31 중 19·그대로 1·2017.7.7 첫 기록·43번 중 25번 맞음) · 편집자 3곳: 1장 '아홉 번 가운데' 두 줄 연속 → 둘째 줄 '그날 주가가 오른 한 번은' · 3장 '드물긴 해도 아주 드문 일은 아니라는'→'흔하진 않아도, 우연으로 충분히 나올 수 있다는' · **끝 질문은 정리 바로 뒤로 올림**('발표된 숫자'→'이익 숫자'), 맨 끝은 카페 표 안내 하나 · 숫자 값 0 변경 · aitell 1.7 · script 82.7/1,000·10% 통과 · 녹음은 say_v2.txt(바뀐 줄 9·23, 45·46 순서) · 원본 .orig1016 · 바뀐 3곳 이해 재시험은 youtube-loop 판단
 - [자발] **firemap-write-b** 22:43 회차 — 22:40 칸 TBD(비축 0) 장르 보험·정책 새 편 편성·관문·발행
   착수: firemap-write-b 22:42
   완료: firemap-write-b 23:20 — 22:40 silson1015 https://cafe.naver.com/firemap/287 verify OK 1703/1703자·사진 3/3(게시판 연금/세금/보험) · 5세대 실손·초기 실손 11월 할인(금융위 원문) · 레드팀 틀림 0·58세 이해 2회 통과·제목 7.0·표지 7.67 · 관련 영상 없음
@@ -1842,5 +1846,11 @@ $MSG
 - [지시] **firemap-visual-designer** (기한 10/18) 표지 3건 재배정: ① 주제 사물 그림 1개(지금 0/20) ② 주제어 줄을 가장 큰 글자로(지금 큰 글자는 숫자) ③ cover_review.md에 '100px 읽힘'·'최근 10장 옆 구별' 두 줄(10/13~15 pkg 26개 중 0) · 본문 표 그림은 800px에서 읽히는 열 수로(286 표 3장 판독 불가)
 - [지시] **firemap-copywriter** (기한 10/18) 카페 제목에 날짜·연도('10월 15일'·'2026') 넣는 비율 20/20 중 0 → 다음 10편 중 3편 이상
 - [지시] **firemap-editor** (상시) style-guide A34~A37 카페 원고 점검에 추가, aitell 사전에 넣을 수 있는 것(A36 첫 문장 '~라는 글이 아니에요')은 사전으로
+  착수: firemap-editor 07:04 (정기 06:50)
+  완료(상시 첫 회): firemap-editor 07:09 — aitell.py에 opening_check(A34 첫 400자 괄호 풀이 ≥2 · A36 첫 문장 면책·영상 안내·주소) · **10/17 슬롯부터 frame이 막고**, 그 전은 gate 경고만 · 10/12~16 묶음 40개에 돌려 5개 걸림(r1cafe_tax1015 4개·r1cafe_start1016·qqqm1014·sdi1015b A34+A36), 오탐 거름(출처·입주·년생·날짜 괄호) · A35·A37은 눈으로(style-guide) · 오늘 07:40 r1cafe_start1016 c00 괄호 덧말 문장으로·c01 되풀이 1문장 지움, 재stamp ede50819
 - [요청] **firemap-report** ← 벤치마크 (10/16 03시) 모바일 카페 탭(m.search where=m_article)에서 주제어 5개·우리 제목 원문 2개로 firemap 링크 0이 나왔다(제목 원문 검색은 남 카페 링크도 0 → 받는 방식 문제일 수 있음). 10/15 '카페탭 12/12'와 같은 방식으로 10/15 공개분 다시 재서 노출 변화인지 측정 문제인지 한 줄
 - 결정 필요(순돌이 → 사장님): 회원 3명·댓글 0/37 그대로 — 남 고조회 글 7편 중 4편이 회원의 1인칭 고민·질문(댓글 합 36). 글 형식으로는 못 푸는 일(1011 #16)
+
+- [알림] **firemap-write** ← firemap-editor (07:09) ① 07:40 r1cafe_start1016 표본 검수: c00 '(미국 돈인 달러로…)' 괄호 → 다음 문장, c01 '이 계산을 251번 했어요' 지움 · 숫자 0 변경 · frame 통과 · editgate 재stamp ede50819 · 발행 그대로 ② 18:10 retax1016 소제목 1 '같은 2억원인데 왜 세 배…'(제목·첫 문단과 같은 말) → '세금이 갈리는 곳은 빼 주는 금액과 세율' · 재stamp 5804e53e ③ **10/17 슬롯부터 aitell frame이 A34(첫 400자 괄호 풀이 2개 이상)·A36(첫 문장 면책·영상 안내·주소)을 막음** — 쇼츠 짝 글의 '오늘 아침 짧은 영상에서…'+주소는 끝으로
+- [알림] **firemap-youtube-loop·firemap-video-producer** ← firemap-editor (07:09) J-1 say_v3 재서명(0장 1줄 추가) · S-1 say_v2 서명(바뀐 줄 9·23, 끝 질문을 정리 뒤로 옮겨 45·46 순서 바뀜)
+- 확인(firemap-editor 07:09): 정기 06:50 근무 — 열린 [편집 검수 요청] 2건(J-1·S-1 통과) + [지시] A34~A37 · auto 표본 2/6(r1cafe_start1016·retax1016 고침) · sweep은 다음 근무

@@ -1,0 +1,1226 @@
+(서울=연합뉴스) 임화영 기자 = 인공지능(AI) 산업 수익성 논란 재점화 등으로 코스피와 코스닥이 폭락한 15일 서울 중구 하나은행 딜링룸에 코스피 종가가 표시돼있다. 2026.10.15 hwayoung7@yna.co.kr
+(서울=연합뉴스) 곽윤아 기자 = 유가증권시장(코스피)에서 외국인이 이달 들어서만 18조원 가까이 순매도했다.
+인공지능(AI) 투자 수익성을 둘러싼 논란이 끊이지 않는 가운데 미국 9월 물가까지 예상치를 웃돌자 15일 코스피 지수가 속절없이 흘러내렸다.
+이날 코스피 지수는 전장보다 454.59포인트(7.57%) 내린 5,554.22에 장을 마쳤다.
+하락 폭, 하락률 모두 지난 7월 28일(732.09포인트, -10.84%) 이후 최대다.
+코스닥 지수는 전장 대비 63.06포인트(7.65%) 내린 760.82로 집계됐다.
+하락 폭은 지난 6월 23일(76.88포인트) 이후, 하락률은 지난 7월 28일(-7.72%) 이후 최대다.
+개장 직후부터 나타난 급락세에 코스피에는 개장 7분 만에, 코스닥 시장에도 12분 만에 매도 사이드카(프로그램매매 매도호가 효력정지)가 발동됐다.
+이후에도 낙폭은 더 커졌고, 결국 양 시장 모두 오후 들어 1단계 서킷브레이크가 발동돼 20분간 거래가 중단됐다.
+양 시장에서 같은 날 1단계 서킷브레이커가 발동된 것은 지난 7월 29일 이후 두 달 반 만이다.
+코스피 지수는 지난 6일부터 이날까지 7거래일째 내렸다. 2024년 9월 3일~11일(7거래일) 이후 2년여 만의 최장기간 하락세다.
+특히 외국인이 지난 2일부터 이날까지 8거래일 연속 순매도하는 투매를 보였다.
+이달 들어 외국인은 유가증권시장에서 17조8천345억원을 순매도했다. 지난 1일(1천194억원 순매수)을 제외하고 내리 '팔자' 행렬이다.
+일별 순매도 규모는 지난 2일 1천80억원에서 6일 1조7천577억원으로 껑충 뛰었고, 13일 4조5천789억원, 14일 1조1천791억원, 이날 3조6천463억원으로 크게 증가했다.
+코스피 시가총액에서 외국인이 차지하는 비중은 이날 38.29%로 집계돼(한국거래소 기준) 지난 5월 4일(38.17%) 이후 최저치로 떨어졌다.
+반도체 투톱 종목을 보면 이달 들어 외국인은 삼성전자 주식 4조8천156억원어치를 순매도했고, SK하이닉스[000660]는 9조2천902억원어치 순매도했다.
+그 결과 삼성전자[005930] 주가는 이달 들어 21.8%, SK하이닉스 주가는 28.9% 폭락했다.
+이경민 대신증권 연구원은 "높은 (시장) 금리 수준에 따른 채권 투자 매력 확대로 글로벌 자금이 신흥국 주식 비중을 축소하고 채권시장으로 이동했을 것으로 추정한다"며 "최근 미국채 금리 하락에도 외국인 매도세가 지속되면서 (국내 증시에) 수급 부담은 여전한 상황"이라고 밝혔다.
+지난 두 달여 간 7,000선 부근에서 등락했던 코스피는 이달 들어 박스권 탈피를 위한 반등 모멘텀을 기다리고 있었다.
+특히 지난 8일 삼성전자의 3분기 잠정 실적 발표가 새 활로가 될 것이라는 기대가 컸다.
+하지만 107조원대의 영업이익을 올린 삼성전자 역대급 실적에도 셀온 매물 출회 등의 영향으로 지수는 오히려 하락했다.
+이후에는 AI 투자 수익성에 대한 우려가 잇따라 제기되며 코스피의 발목을 잡았다.
+오픈AI의 9월 말 기준 연 환산 매출이 당초 알려진 700억달러가 아닌 500억달러 수준이라는 외신 보도가 나온 것이다.
+이는 회계상 집계 방식에서 비롯됐다는 점에서 해프닝으로 넘어가는 듯했으나, 이후 브로드컴과 인텔의 최고경영자(CEO)가 AI 투자를 위한 자본 조달 불확실성을 언급하자 시장 불안이 사그라지지 않았다.
+간밤에는 시장조사기관 가트너의 AI 투자 수익성에 대한 부정적 전망도 보태졌다.
+가트너는 2026년 약 1조 달러에 이어 2027∼2030년 추가로 6조달러 규모의 AI 인프라 투자가 이뤄질 것이라고 봤다.
+이에 따른 투자 비용과 금융 비용, 12%의 투자자본수익률을 달성하려면 2030년까지 8조5천억 달러의 매출이 필요하나, 실제 데이터센터 관련 매출은 최대 3조 6천억 달러에 그칠 것으로 추산했다.
+아울러 이날 개장 전 발표된 앤트로픽 3분기 실적은 시장의 높아진 기대치를 충족하지 못했다는 평가다.
+앤트로픽 3분기 매출은 직전 분기 대비 45% 성장했지만, 매출 증가 속도는 둔화하고 있다는 점이 부각되는 분위기다.
+앤트로픽의 분기별 매출은 1분기 47억달러, 2분기 115억달러, 3분기 168억달러다.
+설상가상으로 전날 밤 미국의 9월 소비자물가지수(CPI) 쇼크까지 더해졌다.
+미국의 9월 CPI는 전년 동월 대비 3.7% 올라, 시장 예상치(3.6%)를 웃돌았다.
+물가 오름세에 금리 추가 상승 우려가 부각되며 나스닥 종합지수는 1.88% 떨어졌고, 엔비디아(-3.16%), 브로드컴(-3.16%), 마이크론(-4.08%) 등 반도체주가 크게 하락했다.
+이정훈 대신증권 연구원은 "미 연방준비제도가 금방 비둘기로 돌아설 것으로 기대하기는 어려워졌다"며 "에너지 가격 상승의 파급 효과가 더 커지는 것이 확인된다면 최종금리 수준은 기존 예상보다 더 올라갈 수 있다"고 전망했다.
+호재가 좀처럼 보이지 않는 가운데 외국인 공백을 메울 개인과 기관투자자의 여력도 부족하다.
+통상 지수 하락이 거셀 때 구원투수로 등장했던 국민연금은 상반기 상승장에서 국내 주식 비중을 조정하지 않은 탓에 현재 매수 여력이 다소 제한되고 있다는 분석이 많다.
+삼성전자와 SK하이닉스의 자사주 매입도 점차 마무리되며 지수 방어선이 사라지자 반발매수세 유입에 따른 기계적 반등조차 보이지 않고 있다.
+자산운용업계의 한 관계자는 "이달 말 SK하이닉스의 실적 발표와 삼성전자의 컨퍼런스콜이 그나마 기대할만한 일정"이라며 "반도체 슈퍼사이클이 당분간 이어질 것이라는 믿음을 주고 여기에 추가 주주환원책도 발표한다면 안도 시그널로 작용하지 않을까 싶다"고 밝혔다.
+제보는 카카오톡 okjebo
+
+<저작권자(c) 연합뉴스,
+무단 전재-재배포, AI 학습 및 활용 금지>
+
+2026/10/15 16:29 송고
+2026년10월15일 16시29분 송고
+가수 솔비·배우 이규한, 내년 4월 결혼…양가 상견례 마쳐
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"장우혁이 폭행" 주장 전 소속사 직원 2심도 명예훼손 무죄
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"푸바오를 다시 고향 한국으로"…시민들, 청와대 앞 집회까지
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+러, '북한군 참전' 영화 예고…북한 병사역에 한국 출신 배우
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+트럼프 새 대변인, 美변호사시험 불합격 확인…경력 논란 확산
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+근무중 헬스장 222차례 간 부산 경찰…법원 "강등 정당"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+새벽 진주 저수지에 빠져 실종된 경차 운전자 숨진 채 발견
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+발달센터서 장애인 228차례 폭행한 시설종사자 징역 4년
+
+
+
+
+
+
+
+
+이전 콘텐츠
+다음 콘텐츠
+
+
+
+
+
+광고
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+광고
+
+
+
+
+
+
+
+
+에디터스 픽Editor's Picks
+
+
+영상
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[영상] 컨테이너 2천500개 물에 둥둥…호르무즈 해협서 화물선 침몰
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[영상] 로봇·드론·무인체계 총출동…눈앞 다가온 韓육군의 '미래전투'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[영상] 11년 만에 돌아온 캪틴큐…본사 담당자한테 이유 물었더니
+
+
+
+
+
+
+
+이전 콘텐츠
+다음 콘텐츠
+
+
+
+
+
+
+
+뉴스
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'검은 목요일'에 패닉…코스피·코스닥, 7%대 급락 마감
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 식지 않는 '미라 열풍'…신비의 실체 다시 만난다
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+李대통령 "출범 500일…주요 지표 우수에도 민생회복 속도 더뎌"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+행안위, 김지용 청문보고서 채택…與이견속 '적격·부적격' 병기
+
+
+
+
+
+
+
+
+이전 콘텐츠
+다음 콘텐츠
+
+
+
+
+
+광고
+
+
+
+
+
+	window["mobonDivBanner_944004"] = function(){
+	new HawkEyes({"type":"banner","responsive":"N","platform":"W","scriptCode":"944004","frameCode":"74","width":"300","height":"250","settings":{"cntad":"1","cntsr":"1"}});
+	}
+
+
+
+
+
+광고
+
+
+
+
+
+
+광고
+
+
+
+
+	new HawkEyes({"type":"banner","responsive":"N","platform":"M","scriptCode":"21410","frameCode":"43","width":"320","height":"100","settings":{"cntsr":"4","mChk":"100"}});
+
+
+
+
+
+
+함께 보면 좋은 콘텐츠
+
+
+by
+데이블
+
+
+
+
+
+window['dablewidget_1oVg61Z7'] = function(){
+	(function(d,a,b,l,e,r) {
+	if(d[b]&&d[b].q)return;d[b]=function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l);
+	e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/plugin.min.js';
+	r=a.getElementsByTagName(l)[0];r.parentNode.insertBefore(e,r);
+	})(window,document,'dable','script');
+	dable('setService', 'm.yna.co.kr');
+	dable('sendLogOnce');
+	dable('renderWidget', 'dablewidget_1oVg61Z7');
+}
+
+
+
+
+
+
+오래 머문 뉴스
+
+
+
+
+
+
+
+	
+		
+			{{#if IMAGE}}
+			
+				 
+					
+				
+			
+			{{/if}}
+			
+				
+					
+						{{TITLE}}
+					
+				
+			
+		
+	
+
+
+광고
+
+
+
+	window["div-gpt-ad-1700721342615-0"] = function(){
+		googletag.cmd.push(function() { 
+			googletag.defineSlot('/21961356670/korean_mobile_web_article_body_btf2_300x250_231201', [300, 250], 'div-gpt-ad-1700721342615-0').addService(googletag.pubads());
+			googletag.display('div-gpt-ad-1700721342615-0'); 
+		});
+	}	
+
+
+
+
+
+
+광고
+
+
+
+
+	window["w2g-slot5"] = (function () {
+        var domain = 'yna.co.kr';
+        var slot = 'w2g-slot5';
+        if (window.self !== window.parent) {
+           var d = top.document, w = window.parent;
+           var parent = this.frameElement;
+           parent.style.display = "none";
+        } else {
+           var d = document, w = window, parent = null;
+           if (typeof d.currentScript !== 'undefined') {
+              parent = d.currentScript;
+              if (parent == null) {
+                 parent = document.getElementById(slot + '-cnt');
+              }
+           } else {
+              parent = d.body.lastElementChild;
+           }
+        }
+        d.addEventListener('wtgLoaded', function (e) {
+           if (typeof w.w2g.single === 'function') {
+              w.w2g.single(domain, slot, parent);
+           }
+        }, false);
+        if (w.w2gLoaded === undefined) {
+           w.w2gLoaded = 0;
+        }
+        if (w.w2gLoaded 
+
+
+
+
+랭킹뉴스
+
+
+
+
+많이 본 뉴스
+
+
+
+
+공감 많은 뉴스
+
+
+
+
+
+
+
+
+
+더보기
+
+
+
+
+
+
+
+더보기
+
+
+
+
+
+	
+	
+		
+			{{#if IMAGE}}
+				
+					
+						
+					
+				
+			{{/if}}
+			
+				
+					
+						{{{TITLE}}}
+					
+				
+			
+		
+	
+
+	
+	
+		
+			{{#if IMAGE}}
+				
+					
+						
+					
+				
+			{{/if}}
+			
+				
+					
+						{{{TITLE}}}
+					
+				
+			
+		
+	
+
+
+광고
+
+
+
+
+	window["w2g-slot6"] = (function () {
+        var domain = 'yna.co.kr';
+        var slot = 'w2g-slot6';
+        if (window.self !== window.parent) {
+           var d = top.document, w = window.parent;
+           var parent = this.frameElement;
+           parent.style.display = "none";
+        } else {
+           var d = document, w = window, parent = null;
+           if (typeof d.currentScript !== 'undefined') {
+              parent = d.currentScript;
+              if (parent == null) {
+                 parent = document.getElementById(slot + '-cnt');
+              }
+           } else {
+              parent = d.body.lastElementChild;
+           }
+        }
+        d.addEventListener('wtgLoaded', function (e) {
+           if (typeof w.w2g.single === 'function') {
+              w.w2g.single(domain, slot, parent);
+           }
+        }, false);
+        if (w.w2gLoaded === undefined) {
+           w.w2gLoaded = 0;
+        }
+        if (w.w2gLoaded 
+
+
+
+
+
+
+함께 읽기 좋은 콘텐츠
+
+
+by
+데이블
+
+
+
+
+
+window['dablewidget_V7KBWAko'] = function(){
+	(function(d,a,b,l,e,r) {
+	if(d[b]&&d[b].q)return;d[b]=function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l);
+	e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/plugin.min.js';
+	r=a.getElementsByTagName(l)[0];r.parentNode.insertBefore(e,r);
+	})(window,document,'dable','script');
+	dable('setService', 'm.yna.co.kr');
+	dable('sendLogOnce');
+	dable('renderWidget', 'dablewidget_V7KBWAko');
+}
+
+
+
+
+광고
+
+
+
+	window["taboola-mobile-below-article-thumbnails-1x1"] = function(){
+		window._taboola = window._taboola || [];
+  		_taboola.push({
+  			mode: 'alternating-thumbnails-a',
+    		container: 'taboola-mobile-below-article-thumbnails-1x1',
+    		placement: 'Mobile Below Article Thumbnails 1x1',
+    		target_type: 'mix'
+		  });
+		_taboola.push({ flush: true });
+	}	
+
+
+
+
+
+
+Shorts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 지뢰밭 뚫는 로봇·자폭드론 기습…韓육군, '미래 전투' 시연
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 호르무즈에 컨테이너 '둥둥'…피격 화물선 침몰
+
+
+
+
+
+
+
+
+
+
+
+
+연합뉴스 Games
+
+
+
+
+
+
+
+	window.addEventListener("message", function (event) {
+		//console.log(event.data);
+		if (event.data.from === "games") {
+			// if (event.data.type == "changeWidth") {
+			// 	$("#gamesIframe").animate({ width: event.data.width }, 10);
+			// }
+			if (event.data.type === "changeHeight") {
+				const $gamesIframe = document.querySelector("#gamesIframe");
+				if($gamesIframe){
+					$gamesIframe.style.height = event.data.height+'px';
+					window.dispatchEvent(new Event('adjust'));
+				}
+			}
+		}
+	});
+	
+
+
+
+
+함께 보면 좋은 콘텐츠
+
+
+Taboola 후원링크
+
+
+
+
+
+window['taboola-below-article-widget_08162024-app'] = function(){
+	window._taboola = window._taboola || [];
+	_taboola.push({
+		mode: 'thumbs-feed-3x2',
+		container: 'taboola-below-article-widget_08162024-app',
+		placement: 'Below Article Widget_08162024',
+		target_type: 'mix'
+	});
+	_taboola.push({flush: true});
+}
+
+
+
+
+
+
+함께 볼만한 콘텐츠
+
+
+by
+데이블
+
+
+
+
+
+window['dablewidget_2XLWedgl'] = function(){
+	(function(d,a,b,l,e,r) {
+	if(d[b]&&d[b].q)return;d[b]=function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l);
+	e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/plugin.min.js';
+	r=a.getElementsByTagName(l)[0];r.parentNode.insertBefore(e,r);
+	})(window,document,'dable','script');
+	dable('setService', 'm.yna.co.kr');
+	dable('sendLogOnce');
+	dable('renderWidget', 'dablewidget_2XLWedgl');
+}
+
+
+
+
+
+
+
+
+광고
+
+
+
+
+
+
+
+
+광고
+
+
+
+
+        new HawkEyes({"type":"banner","responsive":"N","platform":"W","scriptCode":"41963","frameCode":"64","width":"120","height":"600","settings":{"cntad":"1","cntsr":"1"}});
+
+
+
+
+
+
+
+
+화면 상단으로 이동
+
+
+
+
+
+뉴스레터
+
+
+연합뉴스 Games
+
+
+APP설치
+
+
+
+뉴스
+
+
+최신뉴스
+
+
+
+
+
+정치
+
+메뉴 열기/닫기
+
+
+정치전체
+청와대/총리실
+국회/정당
+외교
+국방
+
+
+
+북한
+
+메뉴 열기/닫기
+
+
+북한전체
+학술/연구
+북한 알아보기
+인물
+비주얼
+NK NOW
+
+
+
+경제
+
+메뉴 열기/닫기
+
+
+경제전체
+경제/정책
+금융
+부동산
+취업/창업
+소비자
+
+
+
+마켓+
+
+메뉴 열기/닫기
+
+
+마켓+전체
+국내주식
+해외주식
+채권
+펀드/ETF
+글로벌시장
+증권/운용사
+리포트
+공시
+
+
+
+산업
+
+메뉴 열기/닫기
+
+
+산업전체
+산업/기업
+전기전자
+중화학
+자동차
+건설
+에너지/자원
+IT/과학
+게임
+유통/서비스
+중기/벤처
+바이오/헬스
+농림축산
+해양수산
+
+
+
+사회
+
+메뉴 열기/닫기
+
+
+사회전체
+사건/사고
+법원/경찰
+교육
+복지/노동
+환경/기후변화
+여성/아동
+재외동포
+다문화
+
+
+
+전국
+
+메뉴 열기/닫기
+
+
+전국전체
+경기
+인천
+부산
+울산
+경남
+대구/경북
+전남광주
+전북
+대전/충남/세종
+충북
+강원
+제주
+
+
+
+세계
+
+메뉴 열기/닫기
+
+
+세계전체
+특파원
+미국/북미
+중국
+일본
+아시아/호주
+유럽
+중남미
+중동/아프리카
+국제기구
+
+
+
+문화
+
+메뉴 열기/닫기
+
+
+문화전체
+책/문학
+만화/웹툰
+종교
+공연/전시
+학술/문화재
+미디어
+여행/레저
+생활
+
+
+
+건강
+
+메뉴 열기/닫기
+
+
+건강전체
+헬스노트
+위클리 건강
+더건강 영상
+
+
+
+연예
+
+메뉴 열기/닫기
+
+
+연예전체
+방송
+영화
+가요
+해외연예
+
+
+
+스포츠
+
+메뉴 열기/닫기
+
+
+스포츠전체
+야구
+축구
+농구/배구
+골프
+
+
+
+오피니언
+
+
+
+
+
+사람들
+
+메뉴 열기/닫기
+
+
+사람들전체
+인사
+부고
+동정/게시판
+CEO
+인터뷰
+
+
+
+
+
+
+
+뉴스+
+
+메뉴 열기/닫기
+
+
+기획
+팩트체크
+AI프리즘
+반려동물
+브랜드뉴스
+이슈
+이 시각 헤드라인
+
+
+
+비주얼뉴스
+
+메뉴 열기/닫기
+
+
+영상
+포토
+화보
+그래픽
+
+
+
+트렌드뉴스
+
+메뉴 열기/닫기
+
+
+핫뉴스
+주요뉴스
+긴급뉴스
+많이 본 뉴스
+오래 머문 뉴스
+공감 많은 뉴스
+
+
+
+외국어 뉴스
+
+English
+中文
+日本語
+عربي
+Español
+Français
+Tiếng Việt
+
+
+
+뉴스상품
+
+프리미엄뉴스
+뉴스리더
+인터넷맞춤형
+보도자료 해외배포
+보도자료 국내배포
+
+
+
+광고안내
+
+KTX 고속열차
+SRT 고속열차
+AREX 공항철도
+모바일
+PC
+출판물
+LED전광판
+사업제휴
+
+
+
+콘텐츠판매
+
+보도사진
+그래픽
+동영상
+인물
+
+
+
+출판물
+
+이매진
+연합연감
+영문연감
+단행본
+월간 마이더스
+
+
+
+서비스안내
+
+서비스 소개
+모바일앱 안내
+
+
+
+
+
+재난포털
+
+
+날씨
+
+
+기자
+
+
+뉴스레터
+
+
+제보
+
+
+뉴스상품
+
+
+광고안내
+
+
+콘텐츠판매
+
+
+연합뉴스 Games
+
+
+서비스 문의
+
+
+
+
+서비스 문의
+
+서비스 문의
+자주 묻는 질문
+공지사항
+1:1 문의
+
+
+
+계약사/제휴문의
+
+
+
+
+
+
+English
+中文
+日文
+عربي
+Español
+Français
+Tiếng Việt
+
+
+
+
+
+유튜브 채널
+연합뉴스
+K-Culture NOW
+통통테크
+더건강
+KOREA NOW
+NK NOW
+K-VIBE
+
+
+SNS
+다양한 채널에서 연합뉴스를 만나보세요!
+(서울=연합뉴스) 임화영 기자 = 인공지능(AI) 산업 수익성 논란 재점화 등으로 코스피와 코스닥이 폭락한 15일 서울 중구 하나은행 딜링룸에 코스피 종가가 표시돼있다. 2026.10.15 hwayoung7@yna.co.kr

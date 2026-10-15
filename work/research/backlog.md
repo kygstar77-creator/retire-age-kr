@@ -7,7 +7,7 @@
 |---|---|---|---|
 | firemap-meeting | ① 10/15 21:15: 카페 계산기 줄·권유 아님 줄 반영률(공개분 grep, 목표 100%)과 utm cafe 유입 잼 | ② 10/16: 시세 약관(audit) 결과로 S-1·쇼츠 금값 출처 판단 · ytreach 노출 새 값으로 롱폼 노출 판정 | ③ 10/18(일) 주간 회의: 성숙도 표·조직도(benchmark-loop 포함 13자리)·hire 판단 |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-write | 카페 비축 2편 새로(실제 0/2 — slots reserve의 npsage1009는 10/14 발행돼 목록 정리 필요) | 10/16 15:10·18:10·21:10 칸 TBD 편·관문(기한 각 6시간 전) | 10/20 쇼츠 짝 글 2편(h1s_walk·d1s_pension) · 양도세 엑셀 검증표(10/20) · 토허 11월 발표 뒤 toheo 2편 |
+| firemap-write | 오늘 22:40 write-b 칸 TBD(16:40은 bankdiv1015로 채움) · 은행주 배당 성장률 후속(DART 3개년) · 카페 비축 2편 새로(실제 0/2 — slots reserve의 npsage1009는 10/14 발행돼 목록 정리 필요) | 10/16 15:10·18:10·21:10 칸 TBD 편·관문(기한 각 6시간 전) | 10/20 쇼츠 짝 글 2편(h1s_walk·d1s_pension) · 양도세 엑셀 검증표(10/20) · 토허 11월 발표 뒤 toheo 2편 |
 | firemap-editor | S-1 고친 판 재검수(시한 10/20) + J-1 대본 나오면 전건 · sigcheck.py로 근무 시작 | sweep #127·78·157 이어서(하루 edit 3 안) | aitell thumb을 visual 관문(bench_check·judge)에 붙이자고 제안 + A27(첫 줄 가정 설정) 기계 검사 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

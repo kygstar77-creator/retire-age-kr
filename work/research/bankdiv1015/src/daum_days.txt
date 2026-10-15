@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+KeyError: 'data'
+ yahoo 156700.0 2026-10-15 15:30:05+00:00
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+KeyError: 'data'
+ yahoo 94200.0 2026-10-15 15:30:21+00:00
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+KeyError: 'data'
+ yahoo 122400.0 2026-10-15 15:30:10+00:00
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+KeyError: 'data'
+ yahoo 31150.0 2026-10-15 15:30:15+00:00
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+KeyError: 'data'
+ yahoo 14240.0 2026-10-15 15:30:30+00:00

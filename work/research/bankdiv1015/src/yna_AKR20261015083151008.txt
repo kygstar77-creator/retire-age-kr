@@ -1,0 +1,1213 @@
+(서울=연합뉴스) 황철환 기자 = 앤트로픽의 실적 실망감 등을 계기로 인공지능(AI) 산업 수익성 논란이 재점화하면서 15일 아시아 주요국 증시가 동반 하락했다.
+하지만 유독 한국 증시의 낙폭이 두드러진 모양새다. 삼성전자[005930]와 SK하이닉스[000660]의 시장 비중이 워낙 큰 까닭에 업황 악화 우려에 따른 충격도 그만큼 컸던 까닭이다.
+한국거래소와 금융정보서비스업체 연합인포맥스에 따르면 이날 코스피는 454.59포인트(7.57%) 급락한 5,554.22로 장을 종료했다.
+코스닥 역시 63.06포인트(7.65%) 내려앉은 760.82로 마감했다.
+간밤 미국 뉴욕증시에서 나스닥 지수와 필라델피아 반도체 지수는 1.88%와 4.30% 급락했고 대만, 일본 등 아시아 주요국 주식시장도 일제히 하락했다.
+일본 닛케이255 지수는 4.90% 내린 64,425.95, 대만 가권지수는 3.41% 내린 46,969.87로 거래를 마쳤다.
+한국시간 오후 3시 50분 현재 중국 상해종합지수와 심천 종합지수는 각각 1.91%와 2.81%씩 하락했으며, 홍콩 항셍지수 낙폭은 1.42%에 그치고 있다.
+동반 하락의 방아쇠가 된 건 시장조사기관 가트너의 경고였다.
+가트너는 2026∼2030년 AI 인프라 투자액을 약 7조 달러로 전망했지만, 데이터센터발 AI 매출은 최대 3조6천억 달러에 그칠 것이라며, 현 추세대로의 막대한 투자속도가 유지된다면 2030년까지 3조5천억 달러 이상의 자산이 손상 위험에 노출될 수 있다고 추산했다.
+특히 코어위브 등 네오클라우드 사업자는 80% 이상이 독립사업자로 남지 못할 수 있다고 주장했다. 이에 코어위브 회사채는 이달 초 대비 9% 내려 부실 영역에 진입했으며, 주가도 15.46% 급락했다.
+그간 AI 인프라 투자 출혈경쟁을 이어온 마이크로소프트(MS·-1.80%), 알파벳(-1.68%), 메타(-3.27%), 아마존(-1.74%) 등 미국 빅테크와 반도체주도 일제히 하락했다.
+SK하이닉스 미국주식에탁증서(ADR)는 전장보다 6.06% 급락한 147.55달러로 마감해 7월 나스닥 상장 당시 공모가(149달러) 아래로 내려오기도 했다.
+설상가상으로 한국시각으로 이날 오전 미국 AI 기업 앤트로픽이 시장 눈높이를 밑도는 실적을 내놓는 상황까지 벌어졌다.
+(서울=연합뉴스) 이진욱 기자 = 15일 서울 중구 하나은행 본점 딜링룸 전광판에 코스피 및 삼성전자, SK하이닉스 주가가 표시돼 있다. 이날 코스피는 전일(6008.81) 대비 335.8p(5.59%) 내린 5673.01로 개장했다. 2026.10.15 cityboy@yna.co.kr
+내달 기업공개(IPO)를 준비 중인 앤트로픽은 샌프란시스코 본사에서 열린 사전 IPO 투자자 설명회에서 3분기 매출 집계치를 168억 달러(약 22조5천억원)로 발표했다.
+올해 1분기 47억 달러, 2분기 116억 달러에 이어 증가세를 이어간 것이지만, 시장에서는 전 분기 대비 매출 증가율이 큰 폭으로 둔화했다는 점에 주목했다.
+미래에셋증권[006800] 김석환 연구원은 "코어위브 회사채 금리 급등에 더해 앤트로픽 매출 성장세 둔화가 확인되면서 AI 산업의 수익성과 투자 지속 가능성에 대한 의구심이 커진 것"이라고 설명했다.
+AI 산업의 수익성에 대한 의문은 작년 하반기부터 꾸준히 제기돼 왔던 재료이지만, 선두주자로 꼽히는 앤트로픽의 매출 성장 속도가 예상보다 느린 것으로 드러나자 시장이 이를 받아들이는 무게감이 달라진 셈이다.
+가뜩이나 이란 전쟁의 여파로 미국 국채금리가 치솟으며 빅테크의 자본조달 부담이 커진 가운데 중국 창신메모리(CXMT)의 약진과, 주요 반도체 기업의 설비 증설에 따른 공급 확대 우려 등이 시장을 억누르던 상황에서 이런 이슈까지 재점화하자 글로벌 반도체주 주가는 급락을 면치 못했다.
+이날 한국 증시 대장주인 삼성전자는 9.48% 내린 21만원으로 정규장 거래를 마무리했다. SK하이닉스도 11.06% 폭락한 126만2천원으로 마감하면서 7월 말 이후 처음으로 시가총액이 1천조원 선 아래로 내려왔다.
+삼성전자와 SK하이닉스 시가총액이 유가증권시장에서 차지하는 비중은 이날 장 마감 기준으로 46.92%에 이른다. 이 두 종목 주가만 흔들려도 시장 전체가 흔들리는 구조인 셈이다.
+다만 한국과 마찬가지로 TSMC를 위시한 반도체 업종의 비중이 큰 대만 증시의 이날 낙폭은 3.41%로 코스피 낙폭(-7.57%)의 절반에도 미치지 않는다는 점에 비춰볼 때 한국 증시의 낙폭이 유독 큰 데는 다른 문제도 있어 보인다.
+대만과 비교해 한국은 메모리 중심 실적 성장에 대한 의존도가 높다는 점이 약점으로 거론된다. 아울러 7월 급락장의 후유증으로 악재에 대한 저항력이 크게 약해진 상태란 점도 큰 영향을 미치고 있을 수 있다.
+당시 여파로 개인 투자자 상당수가 손실 구간에 있고, 연기금을 비롯한 기관도 매수 여력이 제한되면서 외국인이 매물을 쏟아낼 때마다 증시가 크게 흔들리는 상황이 반복 중이어서다.
+이날 유가증권시장에선 외국인이 3조6천341억원을 순매도하며 '팔자'를 이어갔다. 개인과 기관은 1조2천886억원과 1조6천930억원 매수 우위였으며, SK하이닉스의 자사주 매입·소각이 막바지에 접어든 가운데 기타법인은 6천424억원을 순매수했다.
+제보는 카카오톡 okjebo
+
+<저작권자(c) 연합뉴스,
+무단 전재-재배포, AI 학습 및 활용 금지>
+
+2026/10/15 16:11 송고
+2026년10월15일 16시11분 송고
+가수 솔비·배우 이규한, 내년 4월 결혼…양가 상견례 마쳐
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"장우혁이 폭행" 주장 전 소속사 직원 2심도 명예훼손 무죄
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"푸바오를 다시 고향 한국으로"…시민들, 청와대 앞 집회까지
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+러, '북한군 참전' 영화 예고…북한 병사역에 한국 출신 배우
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+트럼프 새 대변인, 美변호사시험 불합격 확인…경력 논란 확산
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+근무중 헬스장 222차례 간 부산 경찰…법원 "강등 정당"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+새벽 진주 저수지에 빠져 실종된 경차 운전자 숨진 채 발견
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+발달센터서 장애인 228차례 폭행한 시설종사자 징역 4년
+
+
+
+
+
+
+
+
+이전 콘텐츠
+다음 콘텐츠
+
+
+
+
+
+광고
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+광고
+
+
+
+
+
+
+
+
+에디터스 픽Editor's Picks
+
+
+영상
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[영상] 컨테이너 2천500개 물에 둥둥…호르무즈 해협서 화물선 침몰
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[영상] 로봇·드론·무인체계 총출동…눈앞 다가온 韓육군의 '미래전투'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[영상] 11년 만에 돌아온 캪틴큐…본사 담당자한테 이유 물었더니
+
+
+
+
+
+
+
+이전 콘텐츠
+다음 콘텐츠
+
+
+
+
+
+
+
+뉴스
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'검은 목요일'에 패닉…코스피·코스닥, 7%대 급락 마감
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 식지 않는 '미라 열풍'…신비의 실체 다시 만난다
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+李대통령 "출범 500일…주요 지표 우수에도 민생회복 속도 더뎌"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+행안위, 김지용 청문보고서 채택…與이견속 '적격·부적격' 병기
+
+
+
+
+
+
+
+
+이전 콘텐츠
+다음 콘텐츠
+
+
+
+
+
+광고
+
+
+
+
+
+	window["mobonDivBanner_944004"] = function(){
+	new HawkEyes({"type":"banner","responsive":"N","platform":"W","scriptCode":"944004","frameCode":"74","width":"300","height":"250","settings":{"cntad":"1","cntsr":"1"}});
+	}
+
+
+
+
+
+광고
+
+
+
+
+
+
+광고
+
+
+
+
+	new HawkEyes({"type":"banner","responsive":"N","platform":"M","scriptCode":"21410","frameCode":"43","width":"320","height":"100","settings":{"cntsr":"4","mChk":"100"}});
+
+
+
+
+
+
+함께 보면 좋은 콘텐츠
+
+
+by
+데이블
+
+
+
+
+
+window['dablewidget_1oVg61Z7'] = function(){
+	(function(d,a,b,l,e,r) {
+	if(d[b]&&d[b].q)return;d[b]=function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l);
+	e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/plugin.min.js';
+	r=a.getElementsByTagName(l)[0];r.parentNode.insertBefore(e,r);
+	})(window,document,'dable','script');
+	dable('setService', 'm.yna.co.kr');
+	dable('sendLogOnce');
+	dable('renderWidget', 'dablewidget_1oVg61Z7');
+}
+
+
+
+
+
+
+오래 머문 뉴스
+
+
+
+
+
+
+
+	
+		
+			{{#if IMAGE}}
+			
+				 
+					
+				
+			
+			{{/if}}
+			
+				
+					
+						{{TITLE}}
+					
+				
+			
+		
+	
+
+
+광고
+
+
+
+	window["div-gpt-ad-1700721342615-0"] = function(){
+		googletag.cmd.push(function() { 
+			googletag.defineSlot('/21961356670/korean_mobile_web_article_body_btf2_300x250_231201', [300, 250], 'div-gpt-ad-1700721342615-0').addService(googletag.pubads());
+			googletag.display('div-gpt-ad-1700721342615-0'); 
+		});
+	}	
+
+
+
+
+
+
+광고
+
+
+
+
+	window["w2g-slot5"] = (function () {
+        var domain = 'yna.co.kr';
+        var slot = 'w2g-slot5';
+        if (window.self !== window.parent) {
+           var d = top.document, w = window.parent;
+           var parent = this.frameElement;
+           parent.style.display = "none";
+        } else {
+           var d = document, w = window, parent = null;
+           if (typeof d.currentScript !== 'undefined') {
+              parent = d.currentScript;
+              if (parent == null) {
+                 parent = document.getElementById(slot + '-cnt');
+              }
+           } else {
+              parent = d.body.lastElementChild;
+           }
+        }
+        d.addEventListener('wtgLoaded', function (e) {
+           if (typeof w.w2g.single === 'function') {
+              w.w2g.single(domain, slot, parent);
+           }
+        }, false);
+        if (w.w2gLoaded === undefined) {
+           w.w2gLoaded = 0;
+        }
+        if (w.w2gLoaded 
+
+
+
+
+랭킹뉴스
+
+
+
+
+많이 본 뉴스
+
+
+
+
+공감 많은 뉴스
+
+
+
+
+
+
+
+
+
+더보기
+
+
+
+
+
+
+
+더보기
+
+
+
+
+
+	
+	
+		
+			{{#if IMAGE}}
+				
+					
+						
+					
+				
+			{{/if}}
+			
+				
+					
+						{{{TITLE}}}
+					
+				
+			
+		
+	
+
+	
+	
+		
+			{{#if IMAGE}}
+				
+					
+						
+					
+				
+			{{/if}}
+			
+				
+					
+						{{{TITLE}}}
+					
+				
+			
+		
+	
+
+
+광고
+
+
+
+
+	window["w2g-slot6"] = (function () {
+        var domain = 'yna.co.kr';
+        var slot = 'w2g-slot6';
+        if (window.self !== window.parent) {
+           var d = top.document, w = window.parent;
+           var parent = this.frameElement;
+           parent.style.display = "none";
+        } else {
+           var d = document, w = window, parent = null;
+           if (typeof d.currentScript !== 'undefined') {
+              parent = d.currentScript;
+              if (parent == null) {
+                 parent = document.getElementById(slot + '-cnt');
+              }
+           } else {
+              parent = d.body.lastElementChild;
+           }
+        }
+        d.addEventListener('wtgLoaded', function (e) {
+           if (typeof w.w2g.single === 'function') {
+              w.w2g.single(domain, slot, parent);
+           }
+        }, false);
+        if (w.w2gLoaded === undefined) {
+           w.w2gLoaded = 0;
+        }
+        if (w.w2gLoaded 
+
+
+
+
+
+
+함께 읽기 좋은 콘텐츠
+
+
+by
+데이블
+
+
+
+
+
+window['dablewidget_V7KBWAko'] = function(){
+	(function(d,a,b,l,e,r) {
+	if(d[b]&&d[b].q)return;d[b]=function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l);
+	e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/plugin.min.js';
+	r=a.getElementsByTagName(l)[0];r.parentNode.insertBefore(e,r);
+	})(window,document,'dable','script');
+	dable('setService', 'm.yna.co.kr');
+	dable('sendLogOnce');
+	dable('renderWidget', 'dablewidget_V7KBWAko');
+}
+
+
+
+
+광고
+
+
+
+	window["taboola-mobile-below-article-thumbnails-1x1"] = function(){
+		window._taboola = window._taboola || [];
+  		_taboola.push({
+  			mode: 'alternating-thumbnails-a',
+    		container: 'taboola-mobile-below-article-thumbnails-1x1',
+    		placement: 'Mobile Below Article Thumbnails 1x1',
+    		target_type: 'mix'
+		  });
+		_taboola.push({ flush: true });
+	}	
+
+
+
+
+
+
+Shorts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 지뢰밭 뚫는 로봇·자폭드론 기습…韓육군, '미래 전투' 시연
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 호르무즈에 컨테이너 '둥둥'…피격 화물선 침몰
+
+
+
+
+
+
+
+
+
+
+
+
+연합뉴스 Games
+
+
+
+
+
+
+
+	window.addEventListener("message", function (event) {
+		//console.log(event.data);
+		if (event.data.from === "games") {
+			// if (event.data.type == "changeWidth") {
+			// 	$("#gamesIframe").animate({ width: event.data.width }, 10);
+			// }
+			if (event.data.type === "changeHeight") {
+				const $gamesIframe = document.querySelector("#gamesIframe");
+				if($gamesIframe){
+					$gamesIframe.style.height = event.data.height+'px';
+					window.dispatchEvent(new Event('adjust'));
+				}
+			}
+		}
+	});
+	
+
+
+
+
+함께 보면 좋은 콘텐츠
+
+
+Taboola 후원링크
+
+
+
+
+
+window['taboola-below-article-widget_08162024-app'] = function(){
+	window._taboola = window._taboola || [];
+	_taboola.push({
+		mode: 'thumbs-feed-3x2',
+		container: 'taboola-below-article-widget_08162024-app',
+		placement: 'Below Article Widget_08162024',
+		target_type: 'mix'
+	});
+	_taboola.push({flush: true});
+}
+
+
+
+
+
+
+함께 볼만한 콘텐츠
+
+
+by
+데이블
+
+
+
+
+
+window['dablewidget_2XLWedgl'] = function(){
+	(function(d,a,b,l,e,r) {
+	if(d[b]&&d[b].q)return;d[b]=function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l);
+	e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/plugin.min.js';
+	r=a.getElementsByTagName(l)[0];r.parentNode.insertBefore(e,r);
+	})(window,document,'dable','script');
+	dable('setService', 'm.yna.co.kr');
+	dable('sendLogOnce');
+	dable('renderWidget', 'dablewidget_2XLWedgl');
+}
+
+
+
+
+
+
+
+
+광고
+
+
+
+
+
+
+
+
+광고
+
+
+
+
+        new HawkEyes({"type":"banner","responsive":"N","platform":"W","scriptCode":"41963","frameCode":"64","width":"120","height":"600","settings":{"cntad":"1","cntsr":"1"}});
+
+
+
+
+
+
+
+
+화면 상단으로 이동
+
+
+
+
+
+뉴스레터
+
+
+연합뉴스 Games
+
+
+APP설치
+
+
+
+뉴스
+
+
+최신뉴스
+
+
+
+
+
+정치
+
+메뉴 열기/닫기
+
+
+정치전체
+청와대/총리실
+국회/정당
+외교
+국방
+
+
+
+북한
+
+메뉴 열기/닫기
+
+
+북한전체
+학술/연구
+북한 알아보기
+인물
+비주얼
+NK NOW
+
+
+
+경제
+
+메뉴 열기/닫기
+
+
+경제전체
+경제/정책
+금융
+부동산
+취업/창업
+소비자
+
+
+
+마켓+
+
+메뉴 열기/닫기
+
+
+마켓+전체
+국내주식
+해외주식
+채권
+펀드/ETF
+글로벌시장
+증권/운용사
+리포트
+공시
+
+
+
+산업
+
+메뉴 열기/닫기
+
+
+산업전체
+산업/기업
+전기전자
+중화학
+자동차
+건설
+에너지/자원
+IT/과학
+게임
+유통/서비스
+중기/벤처
+바이오/헬스
+농림축산
+해양수산
+
+
+
+사회
+
+메뉴 열기/닫기
+
+
+사회전체
+사건/사고
+법원/경찰
+교육
+복지/노동
+환경/기후변화
+여성/아동
+재외동포
+다문화
+
+
+
+전국
+
+메뉴 열기/닫기
+
+
+전국전체
+경기
+인천
+부산
+울산
+경남
+대구/경북
+전남광주
+전북
+대전/충남/세종
+충북
+강원
+제주
+
+
+
+세계
+
+메뉴 열기/닫기
+
+
+세계전체
+특파원
+미국/북미
+중국
+일본
+아시아/호주
+유럽
+중남미
+중동/아프리카
+국제기구
+
+
+
+문화
+
+메뉴 열기/닫기
+
+
+문화전체
+책/문학
+만화/웹툰
+종교
+공연/전시
+학술/문화재
+미디어
+여행/레저
+생활
+
+
+
+건강
+
+메뉴 열기/닫기
+
+
+건강전체
+헬스노트
+위클리 건강
+더건강 영상
+
+
+
+연예
+
+메뉴 열기/닫기
+
+
+연예전체
+방송
+영화
+가요
+해외연예
+
+
+
+스포츠
+
+메뉴 열기/닫기
+
+
+스포츠전체
+야구
+축구
+농구/배구
+골프
+
+
+
+오피니언
+
+
+
+
+
+사람들
+
+메뉴 열기/닫기
+
+
+사람들전체
+인사
+부고
+동정/게시판
+CEO
+인터뷰
+
+
+
+
+
+
+
+뉴스+
+
+메뉴 열기/닫기
+
+
+기획
+팩트체크
+AI프리즘
+반려동물
+브랜드뉴스
+이슈
+이 시각 헤드라인
+
+
+
+비주얼뉴스
+
+메뉴 열기/닫기
+
+
+영상
+포토
+화보
+그래픽
+
+
+
+트렌드뉴스
+
+메뉴 열기/닫기
+
+
+핫뉴스
+주요뉴스
+긴급뉴스
+많이 본 뉴스
+오래 머문 뉴스
+공감 많은 뉴스
+
+
+
+외국어 뉴스
+
+English
+中文
+日本語
+عربي
+Español
+Français
+Tiếng Việt
+
+
+
+뉴스상품
+
+프리미엄뉴스
+뉴스리더
+인터넷맞춤형
+보도자료 해외배포
+보도자료 국내배포
+
+
+
+광고안내
+
+KTX 고속열차
+SRT 고속열차
+AREX 공항철도
+모바일
+PC
+출판물
+LED전광판
+사업제휴
+
+
+
+콘텐츠판매
+
+보도사진
+그래픽
+동영상
+인물
+
+
+
+출판물
+
+이매진
+연합연감
+영문연감
+단행본
+월간 마이더스
+
+
+
+서비스안내
+
+서비스 소개
+모바일앱 안내
+
+
+
+
+
+재난포털
+
+
+날씨
+
+
+기자
+
+
+뉴스레터
+
+
+제보
+
+
+뉴스상품
+
+
+광고안내
+
+
+콘텐츠판매
+
+
+연합뉴스 Games
+
+
+서비스 문의
+
+
+
+
+서비스 문의
+
+서비스 문의
+자주 묻는 질문
+공지사항
+1:1 문의
+
+
+
+계약사/제휴문의
+
+
+
+
+
+
+English
+中文
+日文
+عربي
+Español
+Français
+Tiếng Việt
+
+
+
+
+
+유튜브 채널
+연합뉴스
+K-Culture NOW
+통통테크
+더건강
+KOREA NOW
+NK NOW
+K-VIBE
+
+
+SNS
+다양한 채널에서 연합뉴스를 만나보세요!
+(서울=연합뉴스) 이진욱 기자 = 15일 서울 중구 하나은행 본점 딜링룸 전광판에 코스피 및 삼성전자, SK하이닉스 주가가 표시돼 있다. 이날 코스피는 전일(6008.81) 대비 335.8p(5.59%) 내린 5673.01로 개장했다. 2026.10.15 cityboy@yna.co.kr

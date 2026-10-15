@@ -4,6 +4,7 @@
 #   py -3.12 work/editgate.py check <pkg>                지금 원고가 .edit.json과 같은지
 #   py -3.12 work/editgate.py stamp <pkg> <by> [note]    편집 통과 표시(.edit.json)를 이 방식으로 찍는다(카페는 틀 v2·compare.md 먼저)
 #   py -3.12 work/editgate.py compare <pkg>              카페 경쟁 비교 관문만
+#   py -3.12 work/editgate.py sise <pkg>                 출처 줄이 네이버·다음 증권 단독인지만
 #   py -3.12 work/editgate.py calc <pkg>                 카페 끝 계산기 줄(제목 주제 → 계산기 대응표 CALC)만
 #   카페 stamp는 review.md/compare.md의 '전제: 가능 — <facts 근거>' 줄도 본다(10/12 레드팀 R2)
 import os, re, sys, json, hashlib, datetime
@@ -91,7 +92,7 @@ CALC = [
     (r'건강보험료|건보료|피부양자', 'health-insurance'),
     (r'해외주식 ?양도세|배당소득세|금융소득 ?종합과세', 'tax'),
     (r'국민연금.*(조기|수령 ?나이|당기|미루|연기)|조기수령|연기연금', 'pension'),
-    (r'월 ?배당|배당으로 ?(생활|월)', 'dividend'),
+    (r'월 ?배당|배당으로 ?(생활|월)|은행주|배당주|배당 ?수익률|배당률', 'dividend'),
 ]
 
 
@@ -104,6 +105,21 @@ def calc_check(pkg):
         if re.search(pat, title) and not re.search(r'firemap\.kr/' + re.escape(path) + r'\?[^\s]*utm_source=cafe', body):
             return [f"제목이 '{re.search(pat, title).group(0)}' 주제인데 끝에 계산기 줄 없음 — 예: firemap.kr/{path}?utm_source=cafe&utm_medium=post&utm_campaign=<묶음>"]
     return []
+
+
+# 10/15 회의 지시·audit/sise-terms-1015.md: 출처 줄에 네이버·다음 증권만 적힌 시세는 거부 — 원 데이터 주인(KRX·DART·운용사·SEC 등)이 함께 있어야 한다.
+SISE_PORTAL = r'네이버 ?(페이 ?)?증권|네이버 ?금융|다음 ?금융|finance\.naver|finance\.daum|m\.stock\.naver'
+SISE_OWNER = r'한국거래소|KRX|DART|전자공시|금융위원회|공공데이터|운용|SEC|EDGAR|나스닥|Nasdaq|NYSE|야후|Yahoo|한국은행|ECOS|FRED|IR'
+
+
+def sise_source_check(pkg):
+    """출처 줄(출처·자료가 들어간 줄)에 포털 증권만 있고 원 데이터 주인이 없으면 문제. 비면 통과."""
+    bad = []
+    for f in files(pkg):
+        for ln in open(f, encoding='utf-8', errors='ignore').read().splitlines():
+            if re.search(r'출처|자료[:：]|기준[:：]', ln) and re.search(SISE_PORTAL, ln) and not re.search(SISE_OWNER, ln):
+                bad.append(f"{os.path.basename(f)}: 출처가 포털 증권뿐 — '{ln.strip()[:60]}' → 한국거래소 정규장 종가(날짜) 등 원 데이터 주인으로")
+    return bad
 
 
 
@@ -150,6 +166,8 @@ if __name__ == '__main__':
         cb = compare_check(a[1]); print('통과 · compare.md' if not cb else '미달 · ' + '; '.join(cb)); sys.exit(1 if cb else 0)
     if len(a) >= 2 and a[0] == 'calc':
         cc = calc_check(os.path.abspath(a[1])); print('통과 · 계산기 줄' if not cc else '미달 · ' + '; '.join(cc)); sys.exit(1 if cc else 0)
+    if len(a) >= 2 and a[0] == 'sise':
+        sb = sise_source_check(os.path.abspath(a[1])); print('통과 · 시세 출처' if not sb else '미달 · ' + '; '.join(sb)); sys.exit(1 if sb else 0)
     if len(a) >= 2 and a[0] == 'disclaim':
         db = disclaim_check(os.path.abspath(a[1])); print('통과 · 권유 아님 줄' if not db else '미달 · ' + '; '.join(db)); sys.exit(1 if db else 0)
     if len(a) >= 3 and a[0] == 'stamp':
@@ -171,6 +189,8 @@ if __name__ == '__main__':
             if db: print('안 찍음 · ' + '; '.join(db)); sys.exit(1)
             cc = calc_check(pk)
             if cc: print('안 찍음 · ' + '; '.join(cc)); sys.exit(1)
+            sb = sise_source_check(pk)
+            if sb: print('안 찍음 · ' + '; '.join(sb)); sys.exit(1)
         print('찍음', stamp(os.path.abspath(a[1]), a[2], ' '.join(a[3:])))
         sys.exit(0)
     print(__doc__ or open(__file__, encoding='utf-8').read().split('import')[0]); sys.exit(2)

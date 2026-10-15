@@ -1,133 +1,18 @@
 {
- "date": "2026-10-15",
+ "date": "2026-10-16",
  "runs": [
   {
    "hour": 6,
-   "ts": "06:44",
+   "ts": "06:37",
    "blog": {
     "title": null,
     "url": null
    },
    "cafe": {
-    "title": "마이너스통장 500만원 이자는 은행 다섯 곳마다 얼마나 다르고 며칠 쓰면 얼마일까",
-    "url": "https://cafe.naver.com/firemap/277"
+    "title": "재개발 재건축 공사비 15% 올라도 검증 의무가 없을 수 있는 계약 시점",
+    "url": "https://cafe.naver.com/firemap/288"
    },
-   "note": "블로그 없음(02~07시 카페만·하루 1편 상한·색인 0% 경보) · 카페 06:10 칸 minus1015 cafe/277 verify OK 1191/1191자·사진 3/3(관련 영상 없음) · 07:40 칸 intc1015 관문 통과(SEC 8-K 보도자료·나스닥·야후 10/14 종가 2곳 일치, 출처 9, 교차검증 Gemini: 사실 4건 중 반영 3·유지 1(반올림), 말투 8건 중 반영 6, 레드팀 2회 틀림 0) · 13:40 칸 cpi1015(경제, 미국 9월 CPI) 보조가 관문 통과(FRED·ECOS, 레드팀 재계산 일치) · p1cafe1016 기본연금액 단서 한 줄·재날인 · 개선: 카페 틀 v2(끝 정리 소제목)·cover_review 평균 줄을 stamp 전에 갖추지 않아 한 번 거부됨 → review 순서에 반영(playbook)"
-  },
-  {
-   "hour": 7,
-   "ts": "08:00",
-   "task": "firemap-write-b",
-   "cafe": {
-    "title": "인텔 주가 올라서 생긴 손실? 영업이익 흑자에도 순손실인 이유",
-    "url": "https://cafe.naver.com/firemap/278"
-   },
-   "note": "07:40 칸 intc1015(관문 06:33 firemap-write 통과분) 발행 · verify OK 1185/1185자·사진 3/3 · 게시판 성장주 · 관련 영상 없음(인텔 영상 없음, 억지 연결 안 함) · 발행기 '확인 창 처리 실패(계속할까요 8초 타임아웃)' 경고 났으나 URL·verify 정상 · 개선: 없음"
-  },
-  {
-   "hour": 9,
-   "ts": "09:47",
-   "task": "firemap-write",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "서울 아파트 신규 전세 보증금, 같은 단지끼리 보면 얼마나 올랐을까",
-    "url": "https://cafe.naver.com/firemap/279"
-   },
-   "note": "09:10 칸 jeonse1015 발행 verify OK 1444/1444자·사진 3/3 · 블로그는 22시 이후 칸이라 보류(발행기) · 관련 영상 없음(공개된 부동산 롱폼 없음) · 새 편 toheo1016(10/16 09:10) 자료조사 7건(서울시 보도자료 2건 원문 hwpx·언론 4·국토부 API) · 교차검증: crosscheck(Gemini) 사실 지적 5건 중 반영 4·유지 1(관련 영상 링크—발행기 공개 확인), 말투 11건 중 반영 8·유지 3('463개 단지'는 틀림) · 레드팀 3차 틀림 0 · 개선: 서울시 보도자료 첨부(hwpx)를 seoulboard getFile로 받아 본문을 뽑는 경로 확인(언론 숫자 대신 원문) — work/research/toheo1016/seoul_pr_*.txt"
-  },
-  {
-   "hour": 10,
-   "ts": "10:52",
-   "blog": null,
-   "cafe": {
-    "title": "해외주식 양도소득세가 환율 때문에 83만원 줄어든 계산",
-    "url": "https://cafe.naver.com/firemap/280"
-   },
-   "note": "firemap-write-b 10:40 칸 r1cafe_tax1015(쇼츠 ez-tLgkdZfI 짝, 공개 확인) · verify OK 1927/1927자·사진 3/3 · 발행 직전 today.md 지시(관련 계산기 줄) 누락 발견→firemap.kr/tax utm 줄 추가, aitell 4.7·readcheck 0·selfcheck 사실 0, editgate 재날인 · 개선: 없음"
-  },
-  {
-   "hour": 12,
-   "ts": "12:35",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "올림픽파크포레온·헬리오시티 평당가 거의 같은데 옆 35곳은 얼마일까",
-    "url": "https://cafe.naver.com/firemap/281"
-   },
-   "note": "verify OK 2221/2221·사진 4/4 · 블로그 없음(하루 1편 한도·색인 경보 중) · 관문은 이전 회차 통과분(교차검증·selfcheck 사실 0·understand 통과) · 264 제목 rewrite verify OK 1097 · 개선: 없음 — 확인 창 '계속할까요' 8초 타임아웃이 두 번 났지만 발행·저장은 됨"
-  },
-  {
-   "hour": 13,
-   "ts": "14:02",
-   "task": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "미국 CPI 3.7%, 근원물가와 에너지 상승률의 차이",
-    "url": "https://cafe.naver.com/firemap/282"
-   },
-   "note": "13:40 칸 cpi1015(관문 06:37 통과분, understand 통과·aitell 0.0·편집 해시 일치) 발행. verify OK 1804/1804자·사진 3/3. 관련 영상: CPI 주제 공개 영상 없음 → 안 넣음. 확인 창 대기 타임아웃 1건(발행엔 영향 없음). 개선: 없음"
-  },
-  {
-   "hour": 15,
-   "ts": "15:29",
-   "task": "firemap-write",
-   "blog": null,
-   "cafe": {
-    "title": "배당 ETF 셋 중 분배금 최고 커버드콜이 1년 총수익 꼴찌인 이유",
-    "url": "https://cafe.naver.com/firemap/283"
-   },
-   "note": "15:10 칸 m1stot1013(쇼츠 m1s_total1y 짝, 영상 uMqmvqNM02k·eTjVs1vDTwg 공개 확인) 발행 15:28. verify OK 1905/1905자·사진 3/3, 장부 published 자동 기입. 게시판 자동 → 배당주. 고정 기간(2025-10-02→2026-10-02) 숫자라 시세 재조회 불필요. 블로그 없음(DAY_CAP·블로그 무색인). 확인 창 처리 타임아웃 1건(발행엔 영향 없음). 개선: editgate.py disclaim_check — 상품·종목 글에 '권유 아님' 줄 없으면 stamp 거부(감사 10/14 요청). sdi1015b: 10/14 591,000은 KRX 정규장 종가 맞음(네이버 fchart 596,000은 넥스트레이드 애프터마켓 포함 — 야후 560,000→591,000 = 연합 +5.54%와 일치). 10/15 코스피 급락으로 제목 17% 바뀜 — 재계산 · sdi1015b(21:10) 10/15 KRX 종가 540,000(다음 금융 153000 확인)으로 재계산·제목 24%·재날인(readcheck 0·selfcheck 사실 0·aitell 1.7·제목 8.2·표지 8/8). 검증 경로: selfcheck+제미나이 심사"
-  },
-  {
-   "hour": 16,
-   "ts": "17:11",
-   "by": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "은행주 배당, 코스피 급락한 날 1천만원어치면 얼마 받을까?",
-    "url": "https://cafe.naver.com/firemap/284"
-   },
-   "note": "16:40 칸 TBD·비축 0 → 새 편 bankdiv1015(배당현금흐름·형식2) · 자료 출처 6곳(야후 KRX 종가·다음·DART alotMatter/배당결정 31건·연합 3건·네이버 검색·WebSearch 2) · 교차검증(Gemini, OpenAI 키 없음) 2회: 사실 5건 중 반영 2·유지 3(그림 있음·2.7495% 반올림 맞음·연합 원문 저장), 말투 14건 중 반영 8 · 레드팀 틀림 1(우리금융 감액배당 비과세) 반영 · 58세 이해 시험 2회 통과 · sameday 숫자 겹침(cpi1015) 1차 거부 → 문장 어림으로 고쳐 재발행 · verify OK 1616/1616자·사진 3/3 · 관련 영상 없음 · 개선: 플레이북·lessons에 감액배당 확인 줄"
-  },
-  {
-   "hour": 19,
-   "ts": "19:47",
-   "task": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "골드바와 KRX 금시장, 작년 같은 날 산 금 1천만원은 얼마",
-    "url": "https://cafe.naver.com/firemap/285"
-   },
-   "note": "19:40 칸 g1s_paths 짝 글 · 관문 07:20 통과(compare·readcheck 0·selfcheck 0·aitell 1.5·understand 통과·editgate auto) · verify OK 1425/1425자·사진 3/3 · 개선: 없음(제목 끝말 '얼마' 5칸 경고는 다음 칸 편성 때 반영)"
-  },
-  {
-   "hour": 21,
-   "ts": "21:35",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "삼성SDI 주가 올해 최고가보다 24% 아래, 배당까지 쉬는 지금 실적",
-    "url": "https://cafe.naver.com/firemap/286"
-   },
-   "note": "21:10 칸 sdi1015b 발행 21:35(발행기 무작위 대기 13분) verify OK 2520/2520자·사진 3/3, 장부 자동 기입 · 관문은 15:49 회차에서 통과(10/15 KRX 종가 재계산, 교차검증·selfcheck 사실 0) · 이번 회차 새 자료조사 없음(새 원고 안 씀) · 블로그는 하루 1편 상한·무색인으로 안 올림 · 18:10 pencap1015 미발행(18:16 회차가 발행 단계에서 죽음) → 10/16 15:10 칸으로 옮김 · 개선: editgate.py에 calc_check(제목 주제→공개 계산기 대응표, stamp 거부·calc 단독 검사), p1cafe1016에 국민연금 조기수령 계산기 줄 넣고 재날인 · 발견: rateloan1014(cafe/271)가 건 /calc/loan은 main에 등록 안 된 dev 전용 경로"
-  },
-  {
-   "hour": 22,
-   "ts": "23:20",
-   "task": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "5세대 실손보험 전환 할인, 옛 실손 보험료 얼마나 줄고 보장은 뭐가 빠질까",
-    "url": "https://cafe.naver.com/firemap/287"
-   },
-   "note": "22:40 칸 TBD·비축 0 → 새 편 silson1015(세금연금·형식2, 회의 배정 장르 보험·정책) · 자료: 금융위 5/6 보도자료·Q&A PDF, 9/11 공고 제2026-617호 원문, 기사 4건, WebSearch 4회, 경쟁 6편 · 교차검증(Gemini, OpenAI 키 없음) 1차 사실 8 중 반영 7·유지 1, 2차 사실 4 중 반영 3·유지 1 · 레드팀 3차 틀림 7→1→0 · 58세 이해 시험 2회 통과 · 제목 H3 7.0·표지 S4 7.67 · readcheck 0·selfcheck 사실 0·aitell 2.5 · verify OK 1703/1703자·사진 3/3 · 관련 영상 없음(실손 공개 영상 없음) · 발행기 '확인 창' 타임아웃 경고 있었으나 URL·verify 정상 · 개선: playbook에 editgate 4조건(정리 소제목·사진 3·cover_review 평균·물음 제목 얼마/몇)을 쓰기 전 확인으로 적음"
+   "note": "06:10 칸 costchk1016 발행 · verify OK 2636/2636자·사진 3/3 · 블로그는 새벽 2~7시 쉼·하루 상한 규칙으로 안 올림 · 다음 칸 준비: 10/16 18:10 retax1016(퇴직소득세, 법령 원문 lawtext 6조·부칙·시행령 4조, 오늘 찾은 것 6건) crosscheck(Gemini 대행) 사실 지적 7건 중 반영 4(55세·한도초과·40조의3·임원 → 사실표에 원문 추가)·유지 3(표는 그림이라 못 봄, 계산기 줄은 규칙) · 말투 10건 중 반영 8(유지 2: 사례 먼저 원칙·'털어내고' 대신 이해 시험 반영) · 레드팀 1차 틀림0·오해3·군더더기1 전부 반영 · 이해 시험 헷갈림 10곳 반영 · 개선: editgate 배당 대응표·시세 출처 검사 · retax1016 레드팀 2차 틀림0·오해2·군더더기1 반영 · 이해 시험 4차 통과 · editgate auto 날인 · slots 18:10 gates_ok"
   }
  ]
 }

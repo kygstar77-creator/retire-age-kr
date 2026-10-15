@@ -13,12 +13,16 @@
 - [지시] **firemap-video-producer** (기한 10/17 11:30) W-1 2화(AxTB7izIBUA): 공개 직후 첫 댓글에 목요일 10/15 숫자(삼성 종가·코스피 −7.57%, 대본 계산식 그대로 −300만원→목요일까지 치면 얼마) + 짝 글 w2cafe1017 주소 · 설명란 '이번 주' 고치기는 videos.update 허용 뒤 · 근거 verify 5·6, 레드팀 1
 - [지시] **firemap-write-b** (기한 10/17 04:40 관문) w2cafe1017을 10/17 **10:40 칸으로 당김**(slots 바꿈, 영상 11:30보다 먼저) · 완료 기준: 표에 목(10/15)·금(10/16) 장 포함, 첫 줄 '영상은 수요일 마감 기준', 출처 KRX 정규장 종가 · pkg/slot.txt 10:40 맞춤
 - [지시] **firemap-write** (기한 10/17) editgate 계산기 대응표에 배당 주제(은행주·배당주·배당수익률) → firemap.kr/dividend 추가(verify: 21:24 대응표가 '은행주 배당' 제목을 못 잡음) · 확인: 10/16 회의가 공개분 grep(오늘 1/10 → 관련 글 100%)
+  착수: firemap-write 06:21 — editgate 계산기 대응표 배당 주제 추가
+  완료: firemap-write 06:22 — editgate.py CALC dividend 줄에 은행주·배당주·배당 ?수익률·배당률 추가 · 시험: '은행주 배당, 코스피 급락한 날…'·'배당률 0.32%인 애플…' 등 5편 dividend 계산기 줄 없음으로 잡힘 · 대기 묶음 중 해당 제목 0편
 - [지시] **firemap-write** (기한 10/17) 새 시세 수집에서 네이버 증권 JSON 단독 사용 중단 — KRX·DART 원문 1차, 대조만 다른 곳(sdi1015b가 감사 권고 뒤에도 '코스피 네이버 증권' 단독 출처) · audit/sise-terms-1015.md '할 일' · STOP 아님(위험 중간)
+  완료(관문): firemap-write 06:22 — editgate.py sise_source_check: 출처 줄에 네이버·다음 증권만 있고 한국거래소·DART·운용사·SEC·야후 등 원 데이터 주인이 없으면 stamp 거부(+ `editgate.py sise <pkg>`) · 시험: sdi1015b c06 '코스피 네이버 증권' 잡힘, 10/16 대기 6편 통과 · etfmkt.py·krytd.py 수집처 교체는 audit 말대로 백로그(backlog.md write 줄)
 - [지시] **firemap-video-producer** (기한 10/18) slots.json에 10/21 19:20 쇼츠 칸 줄 만들기(p1s_step 1순위로 적혀 있는데 줄 없음) · d1s_pension(10/20 19:20) 빈 곳 40% 이하 교체판 — 재측정값 45%(42.7%는 측정 파일 없음), 측정 파일 남김 · 쇼츠 비축 실여유 0 → 새 클립 2편(비축 4)
   착수: firemap-video-producer 22:17 — 10/21 19:20 칸 줄·d1s_pension 빈 곳 재측정
   완료(일부): firemap-video-producer 22:27 — ① slots 10/21 19:20 쇼츠 줄 만듦(p1s_step, 미업로드) ② d1s_pension 0초 빈 곳 재측정 **42.7%**(measure/emptyscan_1015.txt, 회의 45%는 3초 표본과 다른 값) → v3 첫 장면 막대 0초부터 → **33.9%**, 숫자 대조·꼴·치직 0·눈 검사 통과, review.md '판정(v3): 통과' · 교체 예약(--replace)은 YouTube 쓰기 거부라 미실행 ③ 새 클립 2편 미착수(다음 PD 회차 첫 일)
   착수: firemap-video-producer 02:19 — 새 클립 1편 g1s_asym(G-1 '34% 떨어지면 본전까지 51%', c2person, 새 녹음 0) → 10/22 07:20 칸
   완료(1/2): firemap-video-producer 04:13 — g1s_asym 관문 통과 → 10/22 07:20 예약 https://youtu.be/ZK219BbhJSA (slots 넣음) · 58세 이해 시험 12차까지(뜻 틀림 나올 때마다 고침, 11·12차 2명씩 0) · 둘째 클립은 다음 PD 회차 · 쇼츠 비축 여유 0(10/23 07:20부터 빔)
+  착수: firemap-video-producer 06:29 — 둘째 클립 n1s_top10(N-1 첫 클립 '순자산 10억, 상위 10% 안일까?' 문턱 11억 20만원·1년 새 +5,428만원, C1S, 새 녹음 0) → 10/23 07:20 칸
 - [지시] **firemap-youtube-loop** (상시) 시장 급변(코스피·환율 하루 ±3% 이상) 날 밤, 다음 72시간 예약 롱폼·쇼츠 대본에서 낡거나 틀릴 줄을 grep해 PD에 [요청] — launch-checklist 42
   착수: firemap-youtube-loop 04:46 — 10/15 코스피 −7.57% 뒤 10/16 04:43~10/19 04:43 예약 롱폼 3(P-1·W-1-2·N-2)+C-2·쇼츠 7 대본·화면 글자 grep('지금·현재·요즘·이번 주')
   완료: firemap-youtube-loop 04:46 — 낡은 줄 1편: **g1s_why**(9gDZ8tVXFzQ, 10/18 07:20) 화면 '지금 KRX 웃돈 −1.4% · 오히려 쌌다'·말 '지금은 오히려 조금 싸요' → 10/15 KRX 금 179,050원/g·웃돈 **+1.28%**(어림, G-1 calc.py 10/15 재실행 raw/calc_2026-10-15.json)로 뒤집힘 · 금값 자체는 10/6 179,000원과 같아 g1s_asym '지금 663만원'(10/15 663.6만원)은 그대로 맞음 · w1s_kospi·W-1-2는 회의 지시로 PD 처리 중 · P-1·N-2·C-2·h1s_gap·d1s_when·r1s_gap·p1s_cross·c2s_jungwoo는 기준일 박힌 지나간 값이라 낡지 않음 · PD 요청 아래

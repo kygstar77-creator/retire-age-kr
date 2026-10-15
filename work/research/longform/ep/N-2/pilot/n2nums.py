@@ -22,3 +22,26 @@ print('[F] 나이별 가운데(표7):', ' · '.join(f'{a} {v}' for a, v in MED.i
 print('[G] 일자리 수: 전수 2,094만 + 표본 37만 =', 2094 + 37, '만 개 (일러두기 2쪽)')
 r = T7['55~59세']
 print(f'[H] 55~59세 월 85만원 미만 {r[0]}% · 이들을 빼고 다시 세우면 350만원 이상 {sum(r[4:])/(100-r[0])*100:.1f}% → 100명 중 {round(sum(r[4:])/(100-r[0])*100)}등쯤')
+
+# ---- v7(10/16): 전체 직장인 100명 줄 — 표 '소득구간별 분포' 2024년 행(raw/wagejob2024.pdf 9쪽, 인쇄 3쪽, pilot/src/wagejob_p09.png)
+#      + 한 달 실수령: 파이어맵 월급 계산기 src/utils/salaryNet.js(소득세법 시행령 별표2 간이세액표 2026.2.27 개정·4대보험 2026 요율)
+#        가정: 월급×12를 연봉으로, 1인(본인만), 식대 비과세 월 20만원(계산기 기본값), 자녀 0, 원천징수 100%
+import subprocess, json, os
+ALL = [12.2, 8.4, 20.9, 20.1, 11.7, 7.8, 5.3, 5.6, 3.7, 4.3]   # 85미만 … 1,000이상, 합 100.0
+EDGE = [0, 85, 150, 250, 350, 450, 550, 650, 800, 1000]
+ALL_MEAN, ALL_MED = 375, 288                                     # 같은 쪽 '평균소득, 중위소득 현황' 2024년
+print('[I] 전체 100명 줄 — 월 X만원 이상 비율(= 앞에서 몇 등)  (합', round(sum(ALL), 1), ')')
+for i, e in enumerate(EDGE[1:], 1):
+    s = sum(ALL[i:]); print(f'  {e:>5}만원 이상: {s:5.1f}%  → 100명 중 {int(s + 0.5)}등쯤')
+print(f'[J] 전체 평균 {ALL_MEAN} · 가운데(50등) {ALL_MED} · 차 {ALL_MEAN - ALL_MED} · 월 85만원 미만 {ALL[0]}%')
+ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', '..', '..', '..'))
+JS = 'file:///' + os.path.join(ROOT, 'src', 'utils', 'salaryNet.js').replace(os.sep, '/')
+PAYS = [150, 250, 288, 350, 375, 450, 650, 1000]
+code = f"import {{salaryNet}} from '{JS}'; console.log(JSON.stringify({PAYS}.map(m => [m, salaryNet({{annual: m*10000*12}}).net])))"
+nets = json.loads(subprocess.run(['node', '--input-type=module', '-e', code], capture_output=True, text=True, encoding='utf-8').stdout)
+print('[K] 세전 월급 → 한 달 실수령(1인·식대 비과세 20만원 가정):', ' · '.join(f'{m} → {n:,}원(약 {round(n / 10000)}만원)' for m, n in nets))
+# [L] 통장 → 세전 어림(대본 1장 '통장 금액에 1할쯤 더하면 세전'): 실수령/세전 비율과 통장 200만원 예시
+PAYS2 = [150, 200, 222, 250, 288, 350, 450]
+code = f"import {{salaryNet}} from '{JS}'; console.log(JSON.stringify({PAYS2}.map(m => [m, salaryNet({{annual: m*10000*12}}).net])))"
+nets2 = json.loads(subprocess.run(['node', '--input-type=module', '-e', code], capture_output=True, text=True, encoding='utf-8').stdout)
+print('[L] 실수령/세전:', ' · '.join(f'{m} → {n / (m * 10000):.3f}' for m, n in nets2), '· 세전 222만원 → 통장', f'{dict(nets2)[222]:,}원(≈200만원)')

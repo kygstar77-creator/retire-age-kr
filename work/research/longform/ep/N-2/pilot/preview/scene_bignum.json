@@ -1,0 +1,22 @@
+{
+ "scene_1": {
+  "big": "100명",
+  "glyph_h": 324,
+  "ratio": 0.3
+ },
+ "scene_2": {
+  "big": "290만원",
+  "glyph_h": 309,
+  "ratio": 0.286
+ },
+ "scene_3": {
+  "big": "38등",
+  "glyph_h": 325,
+  "ratio": 0.301
+ },
+ "scene_4": {
+  "big": "4명",
+  "glyph_h": 313,
+  "ratio": 0.29
+ }
+}

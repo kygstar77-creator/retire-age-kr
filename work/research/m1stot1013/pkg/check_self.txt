@@ -1,5 +1,6 @@
 # 자체 검증 (제미나이 할당량 없을 때 쓰는 대체 검증)
-# 묶음: m1stot1013 · 종류: cafe · 문장 39개 · 기준 출처: cafe_style/benchmark_2026-09-23.md
+# 묶음: m1stot1013 · 종류: cafe · 문장 54개 · 기준 출처: cafe_style/benchmark_2026-09-23.md
 
-[중복] 전체 — "JEPQ" 이미 씀 ← 커버드콜 ETF 분배금은 더 받았는데, 남은 돈은 왜 SCHD보다 적었을 https://cafe.naver.com/firemap/187 (본문에 13번) — 각도가 다른지 보고, 같으면 hold.txt
-[중복] 전체 — "JEPQ" 이미 씀 ← QQQI 배당락일, 10월 분배금은 며칠까지 사야 받을까? https://cafe.naver.com/ca-fe/cafes/31789001/articles/152 (본문에 5번) — 각도가 다른지 보고, 같으면 hold.txt
+[중복] 전체 — "배당" 이미 씀 ← 커버드콜 ETF 분배금은 더 받았는데, 남은 돈은 왜 SCHD보다 적었을 https://cafe.naver.com/firemap/187 (제목·첫 조각에 있음) — 각도가 다른지 보고, 같으면 hold.txt
+[중복] 전체 — "배당" 이미 씀 ← 부부 국민연금으로 모자란 생활비, 예금으로 채우려면 얼마 있어야 할까? https://cafe.naver.com/firemap/188 (본문에 4번) — 각도가 다른지 보고, 같으면 hold.txt
+[중복] 전체 — "배당" 이미 씀 ← 퇴직 후 건강보험료는 배당·이자 1천만원 넘으면 월 얼마 더 나올까? https://cafe.naver.com/firemap/206 (제목·첫 조각에 있음) — 각도가 다른지 보고, 같으면 hold.txt

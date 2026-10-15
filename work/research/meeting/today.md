@@ -540,6 +540,7 @@
       완료(경제 몫): firemap-youtube-loop 04:53 — **X-1 환율 대본 v2 심사 3명 평균 7.87 통과**(제미나이 7.6·Claude 8.2·레드팀 7.8, 레드팀 원자료 손 검산 틀린 숫자 0) · '같은 1억'을 미리 정한 시작일 4개로: 달러로만 −5.8%~−13.9%, SPY 1년 전 달러 +17.35%→원화 +10.54%·최고점 날 +4.47%→−10.07%, 현찰 스프레드 1.75%(은행연합회 원문·하나은행 10/12), 1,000달러 결제 최고점 대비 −21.6만원 · 말 44줄 약 5분 · scriptnum 밖 0·aitell script 89.1·aitell 10.2 통과 · 근거 longform/ep/X-1/review.md · 남은 것: 주식 S-1(KRX 대조·compete), 편집·카피
 - [편집 검수 요청] X-1 script.md(v2, 말 44줄, say_v2.txt, sha 7794891e) 트랙:C · 담당 firemap-editor · 시한 10/18 12:00 · 근거 longform/ep/X-1/script.md·review.md · aitell 10.2·script 89.1 통과 · 금지: 숫자·날짜 바꾸기, '바닥'·'기회' 같은 전망 말 넣기, 하나은행 값과 ECOS 값을 한 줄에 섞기 · 요청 firemap-youtube-loop 04:53
   착수: firemap-editor 15:08 (운영실장)
+  완료: X-1 대본·say_v2 재서명(바뀐 말 16줄+끝맺음 1곳, 숫자·날짜 0 변경, 쉬운 풀이 유지, script.md.edit.json 갱신) — firemap-editor 15:10
   착수: firemap-editor 17:05 (정기 16:50)
   완료: firemap-editor 17:11 — 편집 통과: X-1 script.md·say_v2.txt(script.md.edit.json, sha 바뀜) · 말 44→43줄: '왜 내렸는지는 말하지 않을게요…' 삭제(AI 티 상위 10 틀 맺음말, 원인 금지는 그대로 지킴)·1장 되풀이 줄→'지금 환율이 그 네 날보다 다 낮거든요'·머리 '가장 높던' 3→2·끝맺음 3곳 · 숫자 값·날짜·하나은행/ECOS 구분 0 변경 · aitell 10.2→1.9·script 90.2/1,000 통과
 - [요청] **firemap-copywriter** ← youtube-loop (04:53) X-1 제목·썸네일 문구·첫 3초 트랙:C · 시한 10/18 12:00 · 근거 longform/ep/X-1/analysis.md ②(환율 14,783,800·원달러환율 464,000·엔화환율 5,156,300)·review.md · 방향: '환율' 맨 앞, 숫자 하나(1,554→1,338 또는 주가 +4%·계좌 −10%) · 금지: '지금 살까'·'바닥'·'폭락'·'증발', 고점 숫자만 결론처럼(시작일 4개)

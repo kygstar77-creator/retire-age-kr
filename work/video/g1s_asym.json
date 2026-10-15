@@ -1,0 +1,312 @@
+{
+ "fps": 30,
+ "name": "g1s_asym",
+ "layout": "c2person",
+ "question": [
+  "1월에 산 금, 지금 34% 손해",
+  "본전까지는?"
+ ],
+ "hot": "본전",
+ "badge": "배경은 참고 사진",
+ "base": "한국거래소 금 시세 · 2026-10-06 기준 · 지나간 값 · 수수료는 안 넣음",
+ "scenes": [
+  {
+   "pic": "c2p/g1a_tray.png",
+   "cx": 960,
+   "year": "1월 29일, 제일 비쌀 때 산 금",
+   "num": "663만원",
+   "sub": "1월 29일에 산 금 1천만원어치 · 10월 6일 값",
+   "zoom": [
+    1.25,
+    1.1
+   ],
+   "pan": 0,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "1월에 산 금 천만원어치, 지금은 663만원이에요.",
+     "audio": "audio/g-1/3a59110e4846676a.wav",
+     "frames": 128
+    }
+   ],
+   "frames": 128
+  },
+  {
+   "pic": "c2p/g1a_shop2.png",
+   "cx": 960,
+   "year": "고점 대비",
+   "num": "−337만원",
+   "sub": "1천만원 → 663만원 · 약 34% 줄어듦",
+   "zoom": [
+    1.05,
+    1.15
+   ],
+   "pan": 30,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [
+    "337만원이"
+   ],
+   "green": [],
+   "lines": [
+    {
+     "text": "337만원이 사라진 셈이에요.",
+     "audio": "audio/g-1/01642bfa5fe76623.wav",
+     "frames": 79
+    }
+   ],
+   "frames": 79
+  },
+  {
+   "pic": "c2p/g1a_shop.png",
+   "cx": 960,
+   "year": "다시 1천만원 되려면",
+   "num": "51% 올라야 본전",
+   "sub": "663만원에서 337만원이 더 붙어야 1천만원",
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "pan": -30,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [
+    "51%가"
+   ],
+   "lines": [
+    {
+     "text": "34% 떨어진 걸 메우는 데 51%가 필요한 거죠.",
+     "audio": "audio/g-1/g1a_A.wav",
+     "frames": 106
+    }
+   ],
+   "frames": 106
+  },
+  {
+   "pic": "c2p/g1a_tray2.png",
+   "cx": 960,
+   "year": "금 1g 값(원)",
+   "num": "27만원쯤 → 18만원쯤",
+   "sub": "금 1g 값 269,810원 → 179,000원 · 1월 29일 → 10월 6일",
+   "zoom": [
+    1.1,
+    1.2
+   ],
+   "pan": 0,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "가장 비쌌던 날엔 27만원 가까이 했고요.",
+     "audio": "audio/g-1/754fddf58bc5746c.wav",
+     "frames": 96
+    },
+    {
+     "text": "지금 금 한 그램은 18만원이 조금 안 돼요.",
+     "audio": "audio/g-1/260e184934295016.wav",
+     "frames": 80
+    },
+    {
+     "text": "꼭대기에서 3분의 1쯤 내려온 거죠.",
+     "audio": "audio/g-1/d148cefb6593818e.wav",
+     "frames": 76
+    }
+   ],
+   "frames": 252
+  },
+  {
+   "pic": "c2p/g1a_shop.png",
+   "cx": 960,
+   "year": "첫 번째 · 1년 전에 산 사람",
+   "num": "956만원",
+   "sub": "1년 전에 산 1천만원어치, 지금 값",
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "pan": -24,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "첫 번째는 1년 전에 산 경우예요.",
+     "audio": "audio/g-1/869efc31efca0cf2.wav",
+     "frames": 80
+    },
+    {
+     "text": "천만원어치가 지금 956만원이 됐어요.",
+     "audio": "audio/g-1/9c21777e765a94c9.wav",
+     "frames": 91
+    }
+   ],
+   "frames": 171
+  },
+  {
+   "pic": "c2p/g1a_tray.png",
+   "cx": 1300,
+   "year": "두 번째 · 1월 고점에 산 사람",
+   "num": "663만원",
+   "sub": "1월 고점에 산 1천만원어치, 지금 값",
+   "zoom": [
+    1.3,
+    1.4
+   ],
+   "pan": -20,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "두 번째는 고점에 산 경우, 아까 그 663만원이죠.",
+     "audio": "audio/g-1/575add9ba4bf7a41.wav",
+     "frames": 145
+    }
+   ],
+   "frames": 145
+  },
+  {
+   "pic": "c2p/g1a_shop2.png",
+   "cx": 960,
+   "year": "세 번째 · 3개월 전에 산 사람",
+   "num": "878만원",
+   "sub": "3개월 전에 산 1천만원어치, 지금 값",
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "pan": 24,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "세 번째는 3개월 전, 878만원이 남았어요.",
+     "audio": "audio/g-1/295af54addefb84a.wav",
+     "frames": 110
+    }
+   ],
+   "frames": 110
+  },
+  {
+   "pic": "c2p/g1a_tray2.png",
+   "cx": 700,
+   "year": "네 번째 · 한 달 전에 산 사람",
+   "num": "918만원",
+   "sub": "한 달 전에 산 1천만원어치, 지금 값",
+   "zoom": [
+    1.2,
+    1.3
+   ],
+   "pan": 0,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "네 번째, 한 달 전에 샀다면 918만원입니다.",
+     "audio": "audio/g-1/6c391bead0510035.wav",
+     "frames": 91
+    }
+   ],
+   "frames": 91
+  },
+  {
+   "pic": "c2p/g1a_glow.png",
+   "cx": 960,
+   "year": "네 사람 다 손해",
+   "num": "4% ~ 34% 손해",
+   "sub": "산 날만 다르고, 넷 다 1천만원 밑",
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "pan": 0,
+   "focus": 0.4,
+   "gray": true,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "넷 다 손실인데, 그 폭이 4%에서 34%까지 벌어져요.",
+     "audio": "audio/g-1/c7997a7665c61dbf.wav",
+     "frames": 142
+    }
+   ],
+   "frames": 142
+  },
+  {
+   "pic": "c2p/g1a_hand.png",
+   "cx": 960,
+   "year": "산 값까지",
+   "num": "51% 올라야 본전",
+   "sub": "1g 179,000원이 산 값 269,810원이 되려면 · 예측 아님, 산수",
+   "zoom": [
+    1.1,
+    1.0
+   ],
+   "pan": 0,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [
+    "51%"
+   ],
+   "lines": [
+    {
+     "text": "고점에 산 금이 산 값으로 돌아가려면, 지금부터 51% 올라야 해요.",
+     "audio": "audio/g-1/828a088dcdb64edc.wav",
+     "frames": 139
+    }
+   ],
+   "frames": 139
+  },
+  {
+   "pic": "c2p/g1a_shop.png",
+   "cx": 960,
+   "year": "산수 한 줄",
+   "num": "337만원 더 붙어야 본전",
+   "sub": "663만원이 1천만원 되려면 · 34%만 올라서는 모자람",
+   "zoom": [
+    1.3,
+    1.2
+   ],
+   "pan": 0,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [
+    "모자라요"
+   ],
+   "green": [],
+   "lines": [
+    {
+     "text": "떨어진 만큼만 올라서는 모자라요.",
+     "audio": "audio/g-1/g1a_B.wav",
+     "frames": 76
+    }
+   ],
+   "frames": 112
+  }
+ ]
+}

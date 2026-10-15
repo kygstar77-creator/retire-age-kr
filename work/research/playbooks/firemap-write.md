@@ -135,3 +135,5 @@
 - 10/15: 종가는 KRX 정규장(야후·다음 tradeTime 153000)으로 — 네이버 fchart는 NXT 애프터마켓 포함. 날짜 박은 종목 글은 발행일 종가로 재계산 후 제목 숫자 재심.
 
 - 2026-10-15 write-b(bankdiv1015): 국내 배당주 세후 계산 전에 DART 배당결정 본문에서 '과세대상 소득이 아닙니다'(감액배당, 자본준비금 재원)를 grep한다 — 우리금융지주 760·220원이 비과세인데 15.4% 일괄로 뗀 세후 예시를 레드팀이 잡았다. KRX 종가는 야후 .KS(regularMarketTime 15:30)·다음 prevClosingPrice로 맞추고, 네이버 basic·siseJson·다음 현재가는 16시 넘으면 넥스트레이드 값이라 쓰지 않는다.
+- 10/15 18시: editgate는 cover_review.md를 pkg/ 안에서 찾는다(상위 폴더에 두면 '평균 줄 없음'). 58세 시험에서 '세전 SPY가 세후 예금보다 많다'처럼 기준 다른 비교는 한쪽 꾸밈말('세금 떼기 전으로 보면')로는 오독 — 양쪽 괄호에 각각 기준을 단다.
+- 10/15 21시: 계산기 줄은 src/firemap-v2/toolPages.js에 등록된 공개 경로만 건다(/calc/loan은 dev 전용 — rateloan1014가 걸었다). firemap.kr은 없는 경로도 200을 주니 curl로 확인하면 안 된다. editgate stamp가 제목 주제→계산기 대응표(CALC)로 줄을 검사한다.

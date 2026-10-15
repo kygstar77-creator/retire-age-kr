@@ -679,6 +679,22 @@ def blog_time_block():
     if datetime.datetime.now().hour < h: return '보류: 오늘 블로그 시각 전(%d시 이후)' % h
     return ''
 
+UNDERSTAND_FROM = datetime.datetime(2026, 10, 15, 12, 0)
+def understand_block(pkg):
+    """10/15 사장님 "유튜브도 카페도 쉽게 설명해 주고 쉽게 이해되게 써야 할 거 아니야".
+    10/15 12:00 이후 만든 묶음은 research/<글>/understand.md('판정: 통과')가 있어야 나간다.
+    처음 보는 심사관(경제 모르는 58세 역할)이 제목·대표 이미지·본문을 한 문장으로 다시 말해 뜻이 맞았다는 기록이다."""
+    order = os.path.join(pkg, 'order.txt')
+    if not os.path.exists(order) or datetime.datetime.fromtimestamp(os.path.getmtime(order)) < UNDERSTAND_FROM:
+        return ''
+    f = os.path.join(os.path.dirname(os.path.abspath(pkg)), 'understand.md')
+    if not os.path.exists(f):
+        return '보류: understand.md 없음(이해 시험 안 함)'
+    v = re.findall(r'^\s*\**판정\**\s*[:：](.*)$', open(f, encoding='utf-8').read(), re.M)
+    if not v or '통과' not in v[-1] or re.search(r'미달|보류|미통과|틀림', v[-1]):
+        return "보류: understand.md 마지막 '판정: 통과' 없음"
+    return ''
+
 def private_video_links(pkg):
     """본문에 걸린 유튜브 영상 중 아직 공개(public)가 아닌 것. 2026-10-14 순돌이: R-1·H-1 짝 글이
     영상 공개(11:30) 전 칸(10:40·09:10)에 잡혀 있었다 — 그대로 나가면 '비공개 동영상' 링크가 된다."""
@@ -721,6 +737,8 @@ def pending_block(kind, pkg, title, check_dup=True):
         return blog_time_block()
     if left is not None and left <= 0:
         return '하루 상한 도달(오늘 %d편/상한 %d편) — 내일 올린다' % (DAY_CAP[kind] - left, DAY_CAP[kind])
+    ub = understand_block(pkg)
+    if ub: return ub
     priv = private_video_links(pkg)
     if priv:
         return '보류: 아직 공개 안 된 영상 링크(%s) — 공개 뒤 칸으로' % ','.join(priv)

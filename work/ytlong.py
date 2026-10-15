@@ -46,6 +46,17 @@ def gate(ep):
         elif not ('통과' in vd[-1] and not re.search(r'미달|보류|미통과|막힘', vd[-1])): bad.append('review.md 마지막 판정이 통과 아님: ' + vd[-1].strip()[:40])
     # 10/11 사장님 "잘된 동영상 비교해서 만들기로 했는데 왜 안 했어?" — 분석(10/11 gap 파일들)과 대조하지 않은 편은 못 올린다.
     #   ep/<편>/bench_check.md: 제목·썸네일·첫 60초·자막·대본 각각 [잘된 예 ID·근거 파일 → 우리 편 → 맞춤/안 맞춤] 표 + 맨 끝 '대조: 통과' 줄.
+    # 10/15 사장님 "유튜브도 카페도 쉽게 설명해 주고 쉽게 이해되게 써야 할 거 아니야" — 점수 관문은 '이해되는가'를 안 쟀다
+    #   (P-1 썸네일 7.23 통과 → 사장님이 읽고 이해 못 함). 처음 보는 심사관이 제목·썸네일·대본 각 장을 한 문장으로 다시 말해 뜻이 맞아야 올린다.
+    #   ep/<편>/understand_test.md: 항목마다 [보여 준 것 → 심사관 한 문장 → 맞음/틀림·헷갈린 곳 → 고친 것] + 맨 끝 '판정: 통과'.
+    ut = os.path.join(ep, 'understand_test.md')
+    if not os.path.exists(ut): bad.append('understand_test.md 없음 — 처음 보는 사람 이해 시험(제목·썸네일·대본) 없이 못 올림')
+    else:
+        utt = open(ut, encoding='utf-8').read()
+        miss_u = [k for k in ('제목', '썸네일', '대본') if k not in utt]
+        vd3 = re.findall(r'^\s*\**판정\**\s*[:：](.*)$', utt, re.M)
+        if miss_u: bad.append('understand_test.md에 빠진 항목: ' + '·'.join(miss_u))
+        if not vd3 or '통과' not in vd3[-1] or re.search(r'미달|보류|미통과|틀림', vd3[-1]): bad.append("understand_test.md 마지막 '판정: 통과' 줄 없음")
     bc = os.path.join(ep, 'bench_check.md')
     if not os.path.exists(bc): bad.append('bench_check.md 없음 — 잘된 영상 대조(제목·썸네일·첫 60초·자막·대본) 없이 못 올림')
     else:

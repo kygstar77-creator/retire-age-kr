@@ -97,6 +97,7 @@
 - [지시] **firemap-report** (매일 12:30) 카페 색인 하루 1회: 전날 카페 글이 네이버 카페탭·통합검색에 잡히는 비율 · 10/15까지 0이면 순돌이에게 '카페 12편 되돌릴지' 사장님 결정 거리로(빈도는 사장님만)
   착수: firemap-report 12:35 — (10/14 회) 10/13 카페 글 색인 비율 · revenue.md 10/14 줄
   완료: firemap-report 12:42 — (10/14 회) 10/13 카페 글 공개 7편 카페탭 7/7·통합검색 1페이지 0/8(263은 멤버공개 회원 자료) — 0 아님, 되돌릴지 결정 거리 아님 · revenue.md 10/14 줄(쿠팡·애드센스 확인 안 함: 브라우저 발행 회차 사용 중 · 10/13 외부 13기기·calc_complete 5·coupang_click 0)
+  착수: firemap-report 12:32 — (10/15 회) 10/14 카페 글 색인 비율
 - 참모 반론 처리: 받아들임 = E-2·M-1·N-1 합성 표시(검증)·'판정' 말 빼고 면책 위로(검증)·종부세 엑셀 보류→양도세(레드팀)·cadence 12칸(레드팀)·카페 계산기 줄(사용자·검증)·카페 색인 측정(레드팀) / 안 받아들임 = 12편 즉시 취소(빈도는 사장님 지시, '양으로 걸린다'는 메모 실측과 다름)·애드센스 거절 원인이 카페(대상 틀림)·8/9 '치명적 오류'(안 맞는 1칸은 이미 안 씀)·쿠팡 대가 문구·.xlsx·이메일 수집·노션 랜딩(이미 있음·기각)·세무사법 '높음'(무료 계산 도구·상담 없음, STOP 안 켬 — 조문 원문은 확인 안 함)·계산기 화면 고치기(사이트 개발 중단)
 - 실험: X-OPS-6 측정 불가로 종료(장부 published가 비어 셀 수 없음) → X-OPS-7 공개 기록 코드화(10/20 판정) · utm 설명란 앞 5줄 이동 전후는 하루치라 10/16에 다시 봄
 
@@ -824,6 +825,7 @@
   완료: firemap-report 12:42 — (10/11 회) revenue.md 10/11 줄(쿠팡 이번 달 클릭1·구매0·수익0 리포트 2026.10.11·애드센스 확인 안 함) + 10/10 사이트 외부 완결 18기기·calc_complete 3기기·coupang_view 1·click 0
   착수: firemap-report 18:35 — (10/12 회) revenue.md 10/12 줄 + 10/11 사이트 외부 완결 줄
   완료: firemap-report 18:48 — (10/12 회) 10/11 사이트 외부 완결 12기기·calc_complete 3기기·coupang_view 2·click 0 · 쿠팡·애드센스는 확인 안 함(PC 13:15 비정상 종료~18:33 부팅으로 회차 늦음, 브라우저는 발행 회차가 사용 중) · revenue.md
+  착수: firemap-report 12:32 — (10/15 회) revenue.md 10/15 줄 + 10/14 사이트 외부 완결 줄
   [알림] **firemap-write** (report 12:39): textrule.md 카페 규칙 점검 — 오늘 3편(acqtax1010·sevbasis1010·childleave1010) 형식 2·주제 세금연금 2/3은 규칙대로, 본문 길이 1,524~2,249자는 잘된 글 기준 2,846자보다 짧음(verify 글자 수)
 - [지시] **firemap-watchdog** (기한 오늘 13:45 회차부터 하루 1번) 의도: 개발이 멈춰도 운영 화면 고장은 바로 안다 · 완료 기준: / ·/calc/severance·/calc/unemployment-benefit·/calc/salary curl 200 + 제목 일치 한 줄(decisions/log.md), 실패면 today.md 막힘 칸 · 금지: 사이트 코드 고치기(막힘만 적고 순돌이 몫)
   완료: firemap-watchdog 13:22 — (10/8 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음
@@ -1699,3 +1701,6 @@
 완료: firemap-write-b 10:52 — 10:40 r1cafe_tax1015 https://cafe.naver.com/firemap/280 verify OK 1927/1927자·사진 3/3(게시판 연금/세금/보험) · 끝에 양도세 계산기 줄(firemap.kr/tax, utm r1cafe_tax1015) 넣고 관문 재통과 · [알림] firemap-video-producer: 쇼츠 r1s_spytax(ez-tLgkdZfI) 설명 앞 5줄 카페 주소를 https://cafe.naver.com/firemap/280 로
 - [자기 배정] firemap-motion-designer W-1 2화(10/17) 모션 설계표 + 2장 자사주 29일 막대 부품
   착수: firemap-motion-designer 11:28
+- [자발] **firemap-write** 12:21 회차 — 12:10 칸 h1cafe1015(H-1 짝) 발행·264 제목 지시
+  착수: firemap-write 12:21
+완료: firemap-write 12:35 — ① 12:10 h1cafe1015 https://cafe.naver.com/firemap/281 verify OK 2221/2221자·사진 4/4(게시판 부동산) · H-1 rVg0pQVo_wk public 확인 뒤 발행, 짝 글 규칙대로 c00 끝에 영상 링크 한 줄 더하고 editgate 재stamp · slots 12:10 note에 yt_pair: rVg0pQVo_wk·281 적음 → [알림] firemap-video-producer: H-1 설명 카페 줄을 https://cafe.naver.com/firemap/281 로 ② [지시] 264 제목 바꿈(기한 18:00): '이자·배당 1년 2천만원 넘으면 세금·건보료 얼마? 계산 엑셀, 카페 가입하면 무료' — 58세 이해 시험 2회(옛 제목 '종합과세' 모름·무료 안 보임 → 새 제목 뜻 맞음) finguide1013/understand.md 판정 통과 · rewrite 뒤 verify OK 1097자·사진 3/3, 본문 변경 0 ③ 검수 요청 ① jeonse1015 '용산구 5.6%'는 facts 12번에 있는 숫자(그림2에 없을 뿐) — 틀린 숫자 아니라 279 rewrite 안 함 · 카페 비축 실제 0/2(npsage1009는 10/14 발행됐는데 reserve 목록에 남아 있음) — 오늘 16:40·22:40 write-b TBD

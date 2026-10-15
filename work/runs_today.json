@@ -47,6 +47,19 @@
     "url": "https://cafe.naver.com/firemap/280"
    },
    "note": "firemap-write-b 10:40 칸 r1cafe_tax1015(쇼츠 ez-tLgkdZfI 짝, 공개 확인) · verify OK 1927/1927자·사진 3/3 · 발행 직전 today.md 지시(관련 계산기 줄) 누락 발견→firemap.kr/tax utm 줄 추가, aitell 4.7·readcheck 0·selfcheck 사실 0, editgate 재날인 · 개선: 없음"
+  },
+  {
+   "hour": 12,
+   "ts": "12:35",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "올림픽파크포레온·헬리오시티 평당가 거의 같은데 옆 35곳은 얼마일까",
+    "url": "https://cafe.naver.com/firemap/281"
+   },
+   "note": "verify OK 2221/2221·사진 4/4 · 블로그 없음(하루 1편 한도·색인 경보 중) · 관문은 이전 회차 통과분(교차검증·selfcheck 사실 0·understand 통과) · 264 제목 rewrite verify OK 1097 · 개선: 없음 — 확인 창 '계속할까요' 8초 타임아웃이 두 번 났지만 발행·저장은 됨"
   }
  ]
 }

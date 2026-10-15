@@ -2067,3 +2067,4 @@
 2026-10-15 15:17 · firemap-video-producer · 쇼츠 h1s_helio 10/21 07:20 예약 https://youtu.be/XB9fAhJrxFA · 이유: H-1 공개 뒤 첫 비축분, 비축 3→2(c2s_jungwoo·p1s_step)
 
 2026-10-15 15:28 · firemap-write · 완료(부분): 07:40 카페 칸 r1cafe_start1016 배정·원고·표지·교차검증, 관문(제목 6·표지 7·이해 시험 심각 5) 미통과로 gates_ok 없음 · 이유: 58세 시험이 ETF·권리락일·구간 혼동을 계속 잡음, 다음 회차에서 고침 · reserve npsage1009 정리
+2026-10-15 15:31 · firemap-write · 15:10 m1stot1013 발행(cafe/283, verify OK 1905자·사진 3/3) · 이유: 칸 배정대로, 고정 기간 숫자라 시세 재조회 불필요·영상 둘 공개 확인

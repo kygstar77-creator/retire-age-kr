@@ -78,6 +78,21 @@ def premise_check(pkg):
     return []
 
 
+# 10/14 감사(경미): 상품·종목 비교 카페 글의 '권유 아님' 줄이 들쭉날쭉(qqqm1014·r1cafe1014·r1cafe_fx1014 없음) — 상품·종목 이름이 있으면 필수.
+PRODUCT = re.compile(r'ETF|리츠|펀드|커버드콜|주가|종목|배당주|상장')  # 티커(대문자)는 기관 약어(API·KOSIS)와 섞여 오탐 — 티커 글은 이 말들이 같이 나온다
+
+
+def disclaim_check(pkg):
+    """상품·종목이 나오는 글이면 '권유 아님' 줄(work/disclaim.py 꼴) 필수. 문제 목록, 비면 통과."""
+    sys.path.insert(0, HERE)
+    import disclaim
+    t = '\n'.join(open(f, encoding='utf-8', errors='ignore').read() for f in files(pkg))
+    t = re.sub(r'https?://\S+', '', t)
+    m = PRODUCT.search(t)
+    if not m or disclaim.line(t): return []
+    return [f"상품·종목('{m.group(0)}')이 나오는데 '권유 아님' 줄 없음 — 예: '특정 상품을 사거나 팔라는 뜻이 아닙니다.'"]
+
+
 def refuse(pkg, why, where):
     line = f'{datetime.datetime.now():%Y-%m-%d %H:%M} · {where} 거부 · {os.path.basename(os.path.dirname(pkg.rstrip(chr(47) + chr(92))))} · {why}\n'
     os.makedirs(os.path.dirname(LOG), exist_ok=True)
@@ -108,6 +123,8 @@ if __name__ == '__main__':
         sys.exit(0 if ok else 1)
     if len(a) >= 2 and a[0] == 'compare':
         cb = compare_check(a[1]); print('통과 · compare.md' if not cb else '미달 · ' + '; '.join(cb)); sys.exit(1 if cb else 0)
+    if len(a) >= 2 and a[0] == 'disclaim':
+        db = disclaim_check(os.path.abspath(a[1])); print('통과 · 권유 아님 줄' if not db else '미달 · ' + '; '.join(db)); sys.exit(1 if db else 0)
     if len(a) >= 3 and a[0] == 'stamp':
         # 10/3 editor: auto로 찍힌 카페 묶음 3편(offimkt·schd·deadfin)이 틀 v2에 걸려 발행 당일 gate_pkg에 막힐 뻔했다 — 찍기 전에 틀부터 본다.
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -123,6 +140,8 @@ if __name__ == '__main__':
             if cb: print('안 찍음 · 경쟁 비교 없음 — ' + '; '.join(cb)); sys.exit(1)
             pb = premise_check(pk)
             if pb: print('안 찍음 · 전제 관문 — ' + '; '.join(pb)); sys.exit(1)
+            db = disclaim_check(pk)
+            if db: print('안 찍음 · ' + '; '.join(db)); sys.exit(1)
         print('찍음', stamp(os.path.abspath(a[1]), a[2], ' '.join(a[3:])))
         sys.exit(0)
     print(__doc__ or open(__file__, encoding='utf-8').read().split('import')[0]); sys.exit(2)

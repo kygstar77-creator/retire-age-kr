@@ -71,6 +71,17 @@
     "url": "https://cafe.naver.com/firemap/282"
    },
    "note": "13:40 칸 cpi1015(관문 06:37 통과분, understand 통과·aitell 0.0·편집 해시 일치) 발행. verify OK 1804/1804자·사진 3/3. 관련 영상: CPI 주제 공개 영상 없음 → 안 넣음. 확인 창 대기 타임아웃 1건(발행엔 영향 없음). 개선: 없음"
+  },
+  {
+   "hour": 15,
+   "ts": "15:29",
+   "task": "firemap-write",
+   "blog": null,
+   "cafe": {
+    "title": "배당 ETF 셋 중 분배금 최고 커버드콜이 1년 총수익 꼴찌인 이유",
+    "url": "https://cafe.naver.com/firemap/283"
+   },
+   "note": "15:10 칸 m1stot1013(쇼츠 m1s_total1y 짝, 영상 uMqmvqNM02k·eTjVs1vDTwg 공개 확인) 발행 15:28. verify OK 1905/1905자·사진 3/3, 장부 published 자동 기입. 게시판 자동 → 배당주. 고정 기간(2025-10-02→2026-10-02) 숫자라 시세 재조회 불필요. 블로그 없음(DAY_CAP·블로그 무색인). 확인 창 처리 타임아웃 1건(발행엔 영향 없음). 개선: editgate.py disclaim_check — 상품·종목 글에 '권유 아님' 줄 없으면 stamp 거부(감사 10/14 요청). sdi1015b: 10/14 591,000은 KRX 정규장 종가 맞음(네이버 fchart 596,000은 넥스트레이드 애프터마켓 포함 — 야후 560,000→591,000 = 연합 +5.54%와 일치). 10/15 코스피 급락으로 제목 17% 바뀜 — 재계산"
   }
  ]
 }

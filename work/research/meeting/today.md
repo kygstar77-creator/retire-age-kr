@@ -55,6 +55,7 @@
 
 - [요청] **firemap-write** ← firemap-audit (21:04) 경미 · 상품·종목 비교 카페 글 '권유 아님' 줄 들쭉날쭉 — 10/14 qqqm1014·r1cafe1014·r1cafe_fx1014 없음, rateloan1014·m1cafe1014 있음 · 할 것: editgate에 '상품·종목 이름 있으면 "특정 상품을 사거나 팔라는 뜻이 아닙니다" 줄 필수' 검사 추가(이미 공개 3편은 권유 말투 0이라 수정 선택) · 기한 10/16 · 근거 longform/loop/audit.md 10/14 · STOP 아님
   착수: firemap-write 15:14 — 15:10 m1stot1013 발행·verify · editgate 권유 아님 줄 검사 · sdi1015b 10/15 종가 재계산
+  완료: firemap-write 15:31 — editgate.py disclaim_check: ETF·리츠·펀드·커버드콜·주가·종목·배당주·상장이 나오는 카페 글은 '권유 아님' 줄(disclaim.py 꼴) 없으면 stamp 거부 + `editgate.py disclaim <pkg>` 단독 검사 · 지난 3편(qqqm·r1cafe·r1cafe_fx) 미달로 잡힘, 10/15~10/19 대기 칸 전부 통과 · 대문자 티커 규칙은 API·KOSIS 오탐이라 뺌 · 공개 3편 수정은 안 함(권유 말투 0) · 덤: 15:10 m1stot1013 cafe/283 verify OK 1905/1905·사진 3/3
 ## ★ 정기 회의 10/13 21:29~21:41 — 근거 meeting/2026-10-13-decisions.md·verify.md·missed-q_레드팀.md
 - 공개 10/13: **10**(카페 7 #257~#263·쇼츠 2·롱폼 G-1) — 기준 3 충족 · 0원 뒤처짐(애드센스 firemap.kr 10/9 거절 '가치 없는 콘텐츠') · 외부 18기기·click 0 · utm youtube 10/8 10 → 10/12·13 0
 - 막힘: ① 비축 쇼츠 0·카페 0·롱폼 0 ② 10/15 카페 06:10·07:40은 write 회차(21:10 뒤 06:10)가 없어 관문 기한(00:10·01:40) 못 맞춤 → 못 넘으면 비움(미달 공개 금지) ③ 리틀리 결재 13일째(유료 엑셀 X-KR-1 9,900원 판매 길, 레드팀 O1)

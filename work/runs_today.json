@@ -104,6 +104,19 @@
     "url": "https://cafe.naver.com/firemap/285"
    },
    "note": "19:40 칸 g1s_paths 짝 글 · 관문 07:20 통과(compare·readcheck 0·selfcheck 0·aitell 1.5·understand 통과·editgate auto) · verify OK 1425/1425자·사진 3/3 · 개선: 없음(제목 끝말 '얼마' 5칸 경고는 다음 칸 편성 때 반영)"
+  },
+  {
+   "hour": 21,
+   "ts": "21:35",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "삼성SDI 주가 올해 최고가보다 24% 아래, 배당까지 쉬는 지금 실적",
+    "url": "https://cafe.naver.com/firemap/286"
+   },
+   "note": "21:10 칸 sdi1015b 발행 21:35(발행기 무작위 대기 13분) verify OK 2520/2520자·사진 3/3, 장부 자동 기입 · 관문은 15:49 회차에서 통과(10/15 KRX 종가 재계산, 교차검증·selfcheck 사실 0) · 이번 회차 새 자료조사 없음(새 원고 안 씀) · 블로그는 하루 1편 상한·무색인으로 안 올림 · 18:10 pencap1015 미발행(18:16 회차가 발행 단계에서 죽음) → 10/16 15:10 칸으로 옮김 · 개선: editgate.py에 calc_check(제목 주제→공개 계산기 대응표, stamp 거부·calc 단독 검사), p1cafe1016에 국민연금 조기수령 계산기 줄 넣고 재날인 · 발견: rateloan1014(cafe/271)가 건 /calc/loan은 main에 등록 안 된 dev 전용 경로"
   }
  ]
 }

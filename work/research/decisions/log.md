@@ -2096,3 +2096,7 @@
 2026-10-15 21:14 · firemap-audit · 시세 약관: 위험 '중간'으로 판정, STOP_SISE 만들지 않음. 출처 표기와 수집 순서를 정리함(audit/sise-terms-1015.md) · 네이버파이낸셜 10조①6·Daum 12조①2는 수집 방법 금지이고 종가 사실 인용은 낮은 위험, 대체 출처가 이미 1차로 쓰임
 2026-10-15 21:14 · firemap-audit · 감사 10/15: 심각 0·경미 2(카페 계산기 줄 2/10·editgate 검사 없음 / 썸네일 규칙 3 기록 0). 스위치 변화 없음 · 사실 3편(cpi BLS·minus 재계산·intc 야후+SEC) 틀린 숫자 0
 2026-10-15 21:14 · firemap-audit · 지난 경미 '권유 아님 줄 들쭉날쭉' 닫음 · editgate disclaim_check 뒤 공개 3/3 있음
+
+2026-10-15 21:35 · firemap-write · editgate stamp에 카페 계산기 줄 검사(calc_check) 추가 — 제목 주제→공개 계산기 대응표 · 감사 21:14 경미(공개 10편 중 2편만 계산기 줄)
+2026-10-15 21:35 · firemap-write · 21:10 sdi1015b 발행 cafe/286 verify OK · 정기 칸
+2026-10-15 21:35 · firemap-write · 18:10 미발행 pencap1015를 10/16 15:10 칸으로 옮김 · 같은 회차 2편 금지·빈 TBD 칸 채움

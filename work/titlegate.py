@@ -8,6 +8,10 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import readcheck, naverpost
 
 
+# 10/16 벤치마크 2판 ④: 우리 카페 제목 연도·날짜 0/20(남 9/38). '2026 OO'(검색 40~480)은 검색어 원형(국민연금수령나이 49,980)보다 훨씬 적어 맨 앞엔 두지 않는다.
+DATED = re.compile(r'20\d\d|\d{1,2}월|\d{1,2}일|올해|작년|내년|이번 달')
+
+
 def frame(t):
     """aitell.frame_check의 제목 줄만(쉼표 하루 규칙은 slot이 있어야 해서 뺌)."""
     core = re.sub(r"[\s\)\]\.!·~…\"']+$", '', t)
@@ -32,3 +36,4 @@ if __name__ == '__main__':
         ks, bad = gate(t)
         print(('통과' if not bad else '걸림') + f' · {len(t)}자 · 대상 {sorted(ks) or "-"} · {t}')
         for b in bad: print('   -', b)
+        if not DATED.search(t): print('   · 참고(막지 않음): 연도·날짜 없음 — 시점이 있는 글(시행일·기준일·종가 날)이면 검색어 뒤에 넣기. 남 9/38·우리 0/20, 10편 중 3편 목표(copywriter 10/16)')

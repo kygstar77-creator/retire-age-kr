@@ -1620,6 +1620,7 @@
   완료: firemap-editor 07:10 — H-2 편집 통과 · 말 57→54줄(되풀이 3줄 삭제: 2장 '한참 아래'·5장 끝 순서 반대 되풀이·7장 결론 요약, 3장 두 줄 합침), 끝맺음 10곳 섞음 · 재사용 4줄 그대로 · 숫자 0 변경 · aitell 46.4→10.4·script 80.0/1,000·13% · script.md.edit.json c3fea122 · 원본 script.md.orig·say_v2.txt.orig · say_v2.txt 같은 줄 맞춤 → 녹음은 say_v2.txt · 7장은 말이 댓글 질문 1줄뿐이라 정리 표 화면은 말 없이 지나감(PD 화면 짤 때 참고)
 - [요청] **firemap-copywriter** ← youtube-loop (01:01) H-2 제목·썸네일 문구·첫 3초 트랙:C · 시한 10/17 12:00 · 근거 longform/ep/H-2/analysis.md ②(은마아파트 62,010·잠실주공5단지 31,800·반포원베일리 27,390)·review.md 세 줄 ③ · 방향: 단지 이름 맨 앞(study/2026-10-14 관찰 1 — 노출 가설), 숫자 하나(+31% 또는 전세 5억) · 금지: '재건축'(원문 확인 전)·'갭투자'·'사라'·'폭락'·대치를 '거꾸로'로 단정(견주는 단지마다 갈림)
   착수: firemap-copywriter 07:49
+  완료: firemap-copywriter 07:59 — H-2 제목 1위 **'잠실주공5단지가 30년 늦게 지은 리센츠보다 비쌌다, 은마는 견주는 단지마다 갈렸다'**(결선 제미나이 9.2·레드팀 7.6·작성자 8.0 = 8.27, 숫자 2개) · 썸네일 A '잠실주공5단지, 잠실 안에서' / 큰 '살 땐 가장 비싸고 / 전세는 가장 쌌다' / '국민평형 1년 실거래 · 전세 5억 남짓'(9.4·8.2·8.0 = 8.53, 범위를 앞줄로 — 큰 글씨만 보면 세 동네 1위로 읽힘) · 2위 '…같은 동네 새 아파트보다 평당 30% 넘게 비쌌다 — 은마는 견주는 단지마다 갈렸다'(썸네일 그대로) · 첫 3초 대본 첫 줄 그대로 · 버림: '대치 은마는 달랐다'(제미나이 9.4인데 58세·레드팀 '은마가 쌌다' 오독)·'1등·꼴찌'(대본에 없음)·'30%↑'(상승률 오독) · 58세 이해 시험 2회 뜻 틀림 0 → understand_test 판정: 통과 · aitell 0.0 · 근거 ep/H-2/copy/titles.md
 - [요청] **firemap-write** ← firemap-video-producer (02:32) 쇼츠 짝 카페 글 2편(칸 안에서) — ① w1s_kospi https://youtu.be/kyHxPKRc6rI (10/16 19:20 공개) 질문 '코스피 1천만원, 사흘 장에 얼마 빠졌나?' — 본편 https://youtu.be/0yWQeW38UJE · 표 1개(코스피 종가 10/2 7,003.74 → 10/8 6,625.93 −5.39% · 1천만원 −539,440원 · 삼성전자 100주 27,600,000→26,200,000원 −5.07%), 숫자 원문 cardshorts/w1s_kospi/upload.json 설명·ep/W-1/facts.txt · 칸 10/16 20:10 또는 22:10 ② h1s_gap https://youtu.be/9Yftl4x-vRc (10/17 07:20 공개) 질문 '전세 9억 5천, 84㎡로 옮기면 얼마 더?' — 본편 https://youtu.be/rVg0pQVo_wk · 표 1개(매매 가운데 값 − 보증금 9.50억: 고덕아남 +5.70·래미안힐스테이트고덕 +10.70·고덕그라시움 +14.60·올림픽파크포레온 +18.75·헬리오시티 +19.00억 / 전세 그라시움 +0.50·헬리오 +3.00·포레온 +4.50·고덕아남 −4.20억), 숫자 원문 video/h1.json gap1·gap2 = cardshorts/h1s_gap/upload.json 설명 · 가상 인물·'세금·중개보수·대출 넣지 않음'·'어디로 가라는 말 아님' 그대로 · H-1 롱폼 짝 긴 글과 겹치지 않게(그 글은 37곳 전체 표) · 칸 10/17 08:10 이후 · slots note yt_pair
 - [요청] **firemap-write** ← firemap-video-producer (02:42) 쇼츠 짝 카페 글 ③ d1s_when https://youtu.be/_lz5IOb-I40 (10/17 19:20 공개) 질문 '배당·이자로 오른 건보료, 몇 월 고지서부터 붙나?' — 본편 https://youtu.be/GMc2Rd1-JYA · 회원 자료 264 안내 한 줄 · 표 1개(이자·배당·사업·근로 = 전년도 소득 → 11월분~다음 해 10월분 / 연금 = 전년도 연금 → 1월~12월분 / 예: 2026년 1,001만원 → 2027년 11월분~2028년 10월분, 시행령 제41조③), 숫자 원문 ep/D-1/facts.txt [8]·[계산] · 칸 10/17 20:10 또는 22:10 · 이미 나간 d1_kunbo 짝 글(금액 비교)과 겹치지 않게 '언제'만
 
@@ -1795,6 +1796,7 @@
   완료(부분): firemap-write 15:28 — 07:40 칸에 r1s_startday 짝 글 r1cafe_start1016 배정, 원고·표지·그림·교차검증·레드팀 4회·58세 이해 시험 4회까지. 제목·표지 6~7점·본문 이해 시험 심각 5건 남아 gates_ok 못 적음(근거 research/r1cafe_start1016/review.md, 다음 회차 첫 일). reserve.cafe의 발행 끝난 npsage1009 정리(카페 비축 0/2 그대로). 22:40 칸 안 건드림 · 커밋 9b12c53
 - 막힘(운영실장 15:29): 10/16 07:40 카페 칸 r1cafe_start1016(r1s_startday 짝) 관문 미달 — 제목 레드팀 6·표지 7·58세 이해 시험 뜻 틀릴 곳 5건(9b12c53, 남은 것 r1cafe_start1016/review.md), 관문 기한 10/16 01:40 → write 18:1x·21:1x 정기 1순위 · 카페 비축 실제 0/2(npsage1009 목록 정리됨) · 22:40·10/16 10:40 이후 TBD 칸 그대로
   완료: firemap-video-producer 15:52 — W-1 2화 https://youtu.be/AxTB7izIBUA 10/17 11:30 예약(slots gates_ok) · Chirp 36줄(쉼 태그 첫 적용)·editor 화면 서명·렌더 관문 전부·점수표 35·썸네일 w2a · [알림] firemap-write: w2cafe1017 영상 주소 = AxTB7izIBUA · [알림] firemap-copywriter: 썸네일 w2f('지난주 −140만원 / 월~수 −300만원', visual 3차 7.47) 48h 교체 후보 승인 여부
+  답: firemap-copywriter 07:59 — w2f **승인 안 함**: 작은 줄 '지난주 −140만원'은 2화 낭독에 없는 숫자(2화는 '지난주 5% 남짓'·'두 주 142만원')라 영상에 없는 숫자, '−' 기호는 168px에서 사라짐(교본 10/15). 48h 교체는 이미 심사 받은 **thumb_w2c.png**(7.87·1초 3/3)로 — 노출 100회 넘고 CTR이 중앙값 아래일 때만
 - [지시] **firemap-write** ← 사장님 (10/15) cafe/281(강남·송파 손품 37곳) 칸 많은 표가 휴대폰에서 이해 안 됨 → '표 대신 한눈에 보기' 꼴로 고쳐 쓰기(pkg_v2·이해 시험·281 수정·slots note)
   착수: firemap-write 16:30
 
@@ -1851,6 +1853,7 @@ $MSG
 - [지시] **firemap-visual-designer** (기한 10/18) 표지 3건 재배정: ① 주제 사물 그림 1개(지금 0/20) ② 주제어 줄을 가장 큰 글자로(지금 큰 글자는 숫자) ③ cover_review.md에 '100px 읽힘'·'최근 10장 옆 구별' 두 줄(10/13~15 pkg 26개 중 0) · 본문 표 그림은 800px에서 읽히는 열 수로(286 표 3장 판독 불가)
 - [지시] **firemap-copywriter** (기한 10/18) 카페 제목에 날짜·연도('10월 15일'·'2026') 넣는 비율 20/20 중 0 → 다음 10편 중 3편 이상
   착수: firemap-copywriter 07:49
+  완료: firemap-copywriter 07:59 — 근거 다시 잼: 남 '2026' 제목 9/38(1011)·우리 0/20, 그러나 '2026 국민연금' 검색 40·'2026연말정산' 480 vs '국민연금수령나이' 49,980(kwvol 10/16) → 연도는 맨 앞 말고 검색어 뒤, 시점 있는 글(시행일·기준일·종가 날)에만 · work/titlegate.py가 연도·날짜 없는 후보에 '참고(막지 않음)' 줄을 띄움 · 확인: 다음 판 벤치마크에서 10편 중 3편
 - [지시] **firemap-editor** (상시) style-guide A34~A37 카페 원고 점검에 추가, aitell 사전에 넣을 수 있는 것(A36 첫 문장 '~라는 글이 아니에요')은 사전으로
   착수: firemap-editor 07:04 (정기 06:50)
   완료(상시 첫 회): firemap-editor 07:09 — aitell.py에 opening_check(A34 첫 400자 괄호 풀이 ≥2 · A36 첫 문장 면책·영상 안내·주소) · **10/17 슬롯부터 frame이 막고**, 그 전은 gate 경고만 · 10/12~16 묶음 40개에 돌려 5개 걸림(r1cafe_tax1015 4개·r1cafe_start1016·qqqm1014·sdi1015b A34+A36), 오탐 거름(출처·입주·년생·날짜 괄호) · A35·A37은 눈으로(style-guide) · 오늘 07:40 r1cafe_start1016 c00 괄호 덧말 문장으로·c01 되풀이 1문장 지움, 재stamp ede50819
@@ -1863,3 +1866,5 @@ $MSG
   착수: firemap-write-b 07:42
   완료: firemap-write-b 07:51 — 07:40 r1cafe_start1016 https://cafe.naver.com/firemap/289 verify OK 1820/1820자·사진 3/3(게시판 ETF) · readcheck 6건 고친 뒤 재서명 · [알림] firemap-video-producer: 쇼츠 r1s_startday(tDPWYHRotRQ) 설명 앞 5줄 카페 주소를 https://cafe.naver.com/firemap/289 로 · 13:40 write-b 칸 TBD(관문 기한 07:40 지남)
 - [알림] **firemap-video-producer** ← firemap-write-b (07:51) 쇼츠 r1s_startday tDPWYHRotRQ 설명 앞 5줄 카페 주소 → https://cafe.naver.com/firemap/289
+
+- [알림] **firemap-video-producer·firemap-visual-designer·firemap-youtube-loop** (copywriter 07:59): H-2 meta.json 만들 때 title·title_candidates·thumb_text는 ep/H-2/copy/titles.md 1위 짝 그대로 · 설명 첫 줄 제안도 거기 · visual: 썸네일 A 1초 시험에 '가장 비싸고 가장 싼 건 어디 안에서?'를 넣고 '서울·세 동네'로 읽히면 앞줄 '잠실 안에서'를 키울 것 · '1등·꼴찌'·'30%↑'·'재건축' 쓰지 말 것 · H-2 understand_test 판정: 통과

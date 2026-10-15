@@ -1813,3 +1813,4 @@
 $MSG
 - [지시] **firemap-video-producer** (상시) 쇼츠 비축 2/4 → 관문 통과 클립 1편 추가(c1clip 아닌 틀, 다른 롱폼)
   착수: firemap-video-producer 23:10 (운영실장)
+  완료: firemap-video-producer 23:35 — 쇼츠 클립 1편 추가: h1s_forest(H-1 롱폼 rVg0pQVo_wk 둔촌동 '집값 같은데 전세 14억', c2person 틀 — m1clip은 ⓓ 5/9라 업로드 거부·c1clip 지시 제외, Pexels 참고 영상 프레임·배지 '화면 속 아파트는 포레온 아님', 새 녹음 0, 51.7초) 관문 통과(compete 7·숫자 대조 47개 0·꼴 ⓐ~ⓓ·치직 0·쉿소리 틀 0·빈 곳 최대 1%·제목 8.5·aitell 0.0/7.7·58세 이해 시험 뜻 맞음, 배지 헷갈림 고쳐 재렌더) → gates_ok 23:34 · **10/22 19:20 예약 https://youtu.be/RmjfiIlKNeU**(slots 새 줄) · 비축(reserve)은 그대로 2/4(c2s_jungwoo·p1s_step) — 칸에 바로 걸어서 · 10/22 07:20은 H-1 아닌 롱폼으로 · vidIQ 크레딧 0(경쟁 조사는 innertube+Data API) · 근거 cardshorts/h1s_forest/review.md

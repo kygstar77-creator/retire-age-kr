@@ -1,0 +1,278 @@
+{
+ "fps": 30,
+ "name": "h1s_forest",
+ "layout": "c2person",
+ "question": [
+  "집값은 거의 같은데",
+  "전세는?"
+ ],
+ "hot": "전세",
+ "badge": "화면 속 아파트는 포레온 아님",
+ "base": "국토교통부 실거래 2025.11~2026.10 · 84㎡대 가운데 값(중간값)",
+ "scenes": [
+  {
+   "pic": "c2p/h1f_tower.png",
+   "cx": 960,
+   "year": "올림픽파크포레온",
+   "num": "14억",
+   "sub": "전세 · 헬리오시티는 12억 5천만원",
+   "zoom": [
+    1.25,
+    1.1
+   ],
+   "pan": 0,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [
+    "14억으로"
+   ],
+   "lines": [
+    {
+     "text": "이 단지 전세 가운데 값은 14억으로, 헬리오시티보다 높았어요.",
+     "audio": "audio/h-1/7cf7c1768fd30538.wav",
+     "frames": 128
+    }
+   ],
+   "frames": 128
+  },
+  {
+   "pic": "c2p/h1f_city.png",
+   "cx": 960,
+   "year": "2024.11 입주",
+   "num": "12,032세대",
+   "sub": "헬리오시티 9,510세대보다 큰 단지",
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "pan": -30,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "재작년 말에 입주한, 헬리오시티보다도 큰 단지죠.",
+     "audio": "audio/h-1/95ca3bfe6543e45e.wav",
+     "frames": 110
+    }
+   ],
+   "frames": 110
+  },
+  {
+   "pic": "c2p/h1f_city2.png",
+   "cx": 600,
+   "year": "84㎡ 한 채 값",
+   "num": "거의 같음",
+   "sub": "28.25억 vs 헬리오시티 28.50억",
+   "zoom": [
+    1.05,
+    1.15
+   ],
+   "pan": 30,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "6년 가까이 늦게 지은 단지인데, 전용면적 평당 값은 거의 똑같았어요.",
+     "audio": "audio/h-1/d422ad8a64d41641.wav",
+     "frames": 142
+    }
+   ],
+   "frames": 142
+  },
+  {
+   "pic": "c2p/h1f_gate.png",
+   "cx": 960,
+   "year": "걸어서",
+   "num": "430m",
+   "sub": "둔촌오륜역 출입구까지",
+   "zoom": [
+    1.1,
+    1.2
+   ],
+   "pan": 0,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "걸어서는 둔촌오륜역 출입구까지 430m였어요.",
+     "audio": "audio/h-1/33fa5e782a3a651f.wav",
+     "frames": 126
+    }
+   ],
+   "frames": 126
+  },
+  {
+   "pic": "c2p/h1f_city.png",
+   "cx": 1400,
+   "year": "걸어서",
+   "num": "270m",
+   "sub": "가장 가까운 초등학교 · 배정 학교 아님",
+   "zoom": [
+    1.3,
+    1.4
+   ],
+   "pan": -20,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "가장 가까운 초등학교는 역보다 더 가까웠고요.",
+     "audio": "audio/h-1/3af63113334d1201.wav",
+     "frames": 86
+    }
+   ],
+   "frames": 86
+  },
+  {
+   "pic": "c2p/h1f_city2.png",
+   "cx": 960,
+   "year": "1년 실거래",
+   "num": "거래 몰림",
+   "sub": "국토교통부 실거래 1년 · 손품 씨 = 가상 인물",
+   "zoom": [
+    1.15,
+    1.25
+   ],
+   "pan": 24,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "손품 씨는 여기서 이상한 점을 하나 더 봤어요. 거래가 한쪽에 몰려 있었거든요.",
+     "audio": "audio/h-1/0d56e9d3c852280a.wav",
+     "frames": 142
+    }
+   ],
+   "frames": 142
+  },
+  {
+   "pic": "c2p/h1f_tower2.png",
+   "cx": 960,
+   "year": "2026년 4~5월",
+   "num": "83%",
+   "sub": "한 해 113건 중 94건이 봄 두 달",
+   "zoom": [
+    1.0,
+    1.1
+   ],
+   "pan": 0,
+   "focus": 0.3,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "모든 평형을 합치면, 한 해 거래의 80% 넘게가 봄 두 달에 몰린 단지도 있었어요.",
+     "audio": "audio/h-1/5d77aeaa373c34df.wav",
+     "frames": 161
+    }
+   ],
+   "frames": 161
+  },
+  {
+   "pic": "c2p/h1f_city.png",
+   "cx": 960,
+   "year": "그 앞 다섯 달",
+   "num": "1건",
+   "sub": "이유는 실거래 자료에 없음",
+   "zoom": [
+    1.3,
+    1.2
+   ],
+   "pan": 0,
+   "focus": 0.4,
+   "gray": true,
+   "blur": false,
+   "red": [
+    "없었고요"
+   ],
+   "green": [],
+   "lines": [
+    {
+     "text": "그 앞 다섯 달은 거래가 거의 없었고요.",
+     "audio": "audio/h-1/101b28afab6683fc.wav",
+     "frames": 85
+    },
+    {
+     "text": "왜 그때 몰렸는지는 실거래 자료에 나오지 않아서, 이유는 짐작하지 않을게요.",
+     "audio": "audio/h-1/e3a37c627387a53c.wav",
+     "frames": 159
+    }
+   ],
+   "frames": 244
+  },
+  {
+   "pic": "c2p/h1f_tower2.png",
+   "cx": 700,
+   "year": "전세",
+   "num": "49.6%",
+   "sub": "집값 중 전세 비율 · 헬리오시티 43.9%",
+   "zoom": [
+    1.2,
+    1.3
+   ],
+   "pan": -24,
+   "focus": 0.4,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "손품 씨 눈에 들어온 건 전세였어요.",
+     "audio": "audio/h-1/788916274a97d187.wav",
+     "frames": 71
+    },
+    {
+     "text": "매매 값에서 전세가 차지하는 비율도, 세 동네 대표 단지 가운데 가장 높았고요.",
+     "audio": "audio/h-1/c482f8467abaefdb.wav",
+     "frames": 156
+    }
+   ],
+   "frames": 227
+  },
+  {
+   "pic": "c2p/h1f_tower.png",
+   "cx": 960,
+   "year": "전세 사는 사람이면",
+   "num": "보증금 더",
+   "sub": "전세 14억 vs 헬리오시티 12억 5천만원",
+   "zoom": [
+    1.1,
+    1.0
+   ],
+   "pan": 0,
+   "focus": 0.3,
+   "gray": false,
+   "blur": false,
+   "red": [],
+   "green": [],
+   "lines": [
+    {
+     "text": "전세로 사는 사람 입장에선, 매매 값이 같아도 보증금이 더 드는 단지라는 뜻이죠.",
+     "audio": "audio/h-1/f27d2e00a650daf4.wav",
+     "frames": 149
+    }
+   ],
+   "frames": 185
+  }
+ ]
+}

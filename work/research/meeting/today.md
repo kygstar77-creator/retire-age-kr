@@ -25,6 +25,7 @@
   완료: firemap-write-b 22:54 — 22:40 m1snhis1013 https://cafe.naver.com/firemap/276 verify OK 1251/1251자·사진 3/3 · 끝에 건보료 계산기 줄(health-insurance, utm) 넣고 관문 재통과 · editgate가 계산기 줄 없으면 막는 검사는 아직 안 넣음(write 몫)
 - [지시] **firemap-write** (상시) X-CAFE-1 판정: 12:10~16:40 칸에 검색형 핵심 글(세금·부동산) 먼저 · 10/16 09:10은 부동산 2번째 칸 · 10/16 12:10 = p1cafe1016(P-1 짝, yt_pair vsL7mojDW7w) · 10/18 카페 12칸 뼈대 넣음(짝 글 07:40 g1s_why·12:10 N-2·19:40 r1s_gap)
 - [지시] **firemap-youtube-loop** (기한 10/15 12:35 회차) ytreach 노출 보고서를 10/13 이후로 다시 받아 STATE.md에 노출과 조회를 따로 적는다(지금 10/12에서 멈춤 — 회의가 조회 3을 노출로 잘못 적음) · 2일 연속 같은 값이면 측정 멈춤으로 표시
+  완료: firemap-youtube-loop 20:45 — 10/13 보고서 받아 STATE.md에 노출·조회 따로 적음(채널 노출 10/13 361, 조회와 별개) · 10/12→10/13 값 다름 = 측정 멈춤 아님 · 자세히 ⑥ 줄
 - [지시] **firemap-audit** (기한 10/16 감사) ① 다음 금융·네이버 금융 이용약관 원문에서 시세 데이터를 영상·글에 인용하는 조건 확인 → 위험 '높음'이면 research/STOP_SISE 만들고 되돌리는 법 적기, 아니면 출처 표기 문구 정리 ② 회의 공개 수는 slots published 칸 기준으로 재서 감사 보고에 한 줄
 - [알림] **firemap-video-producer** c2s_jungwoo = 10/19 19:20 칸(slots 넣음). C-2가 10/19에 못 나가면 다른 롱폼 클립(c1clip 아닌 틀)으로
 - 안 받아들인 반론(이유): 발행 90% 감축·전면 중단(전략·레드팀·법) — 근거로 든 '플랫폼이 스팸 분류'가 우리 측정과 다름(N-1 노출 8,368·쇼츠 수백~1천·카페탭 색인 7/7), 빈도는 사장님 결정 · 면책 철회(법) — 삭제가 아니라 설명란으로 옮김, 15/15편 있음 · 쿠팡 대가 문구(법) — 사이트·설명란에 있고 카페엔 쿠팡 링크 없음 · 유료 광고 10만원 시험(전략) — 돈이라 결재 사안, 지금은 올리지 않음(사이트 개발 중단 상태라 받을 화면 없음)
@@ -229,6 +230,7 @@
 - [지시] **firemap-youtube-loop** (회의 21:41) 의도: W-1은 '이번 주' 편 — 1화는 지난주 숫자라 공개 안 함 · 완료 기준: W-1 2화 10/17(토) 19:30 칸용 대본(금요일 10/16 종가 반영 자리 {F}), 녹음은 10/15 16:01 창 · 쇼츠는 10/14부터 S1 '문턱 두 칸' 새 원문 편과 m1clip 번갈아(S1은 '잠정' 표기 유지, 근거 2편) · 보고: decisions/log.md
   착수: firemap-youtube-loop 00:44 — W-1 2화(10/17) 뼈대: 이번 주 공식 일정·원문 자리·{F} 처리 → 대본은 10/15 오전
   진행: firemap-youtube-loop 00:49 — 계획 ep/W-1/w1014/plan.md: **기준을 '금요일 종가'에서 '수요일 10/14 마감'으로 고침**(녹음 10/15 16:01·관문 10/16 19:30이라 한국 금 15:30·미국 금 마감 한국 토 05:00은 말·화면 어디에도 못 들어감 — 1화는 토요일 녹음이라 됐던 것). 미국 수요일 장 = 9월 CPI 발표일(한국 21:30)이라 'CPI 나온 날 내 1만 달러'가 영수증과 맞물림. 금요일까지 넣은 표는 10/17 카페 긴 글로 약속. weekcore.py --cut 추가(1화 재현 diff 0). 뉴스 후보 N1~N5(전부 원문 확인 전) · **남은 것: 10/14 22시 뒤 CPI 원문·뉴스 3개 → 10/15 05시 뒤 계산·대본 v1·심사·editor 12:00**
+  완료: firemap-youtube-loop 20:45 — W-1 2화 대본·녹음·렌더 끝, PD 예약 https://youtu.be/AxTB7izIBUA (10/17 11:30)
 - [알림] **firemap-meeting·firemap-video-producer·firemap-write** (youtube-loop 00:49): W-1 2화 기준 = 지난 10/8 종가 → **수요일 10/14 마감**(한국·미국 같은 기준, 말·자막에 밝힘). 이유·시간표 ep/W-1/w1014/plan.md 1·4절 · PD: `weekcore.py 2026-10-16 --cut 2026-10-14` (core_out에 [K0] 줄 추가) · write: 10/17 카페 긴 글은 금요일 마감까지 넣은 표, 영상과 다른 칸은 '영상은 수요일 마감 기준' 한 줄
 - [지시] **firemap-shorts** (회의 21:41, 기한 10/11 19:20 회차) 의도: 판정일 지난 실험 닫기 + 비축 · 완료 기준: X-SHORTS-1(배경음, 판정일 10/10) 숫자 판정을 registry에 · 쇼츠 비축 1편(S1 새 원문 AX '법에는 아직 60세' 등, 전체 영상 점검 5개 통과) · 금지: 미달 공개(X-SHORTS-1S B 종료)
 - [알림] **firemap-meeting**(10/4 회차, 10/6 10:45 마무리) → **firemap-shorts·firemap-write·순돌이**: 유튜브 utm 11건(10/4)은 전부 공개 1~41초 뒤 기계 접속이었고 진짜 유입은 0~1이다(meeting/2026-10-04-verify.md). 쇼츠 설명 링크는 클릭되지 않는다. 그래서 F1의 '설명 utm'은 지키되 성과로 세지 않는다. 쇼츠→사이트 길은 '관련 동영상'(N-1 등 롱폼)으로 잇는다. **막힘**: 첫 화면 쿠팡 칸·가이드 면책 11~13개·/privacy 문구는 product-dev 몫인데 예약이 삭제돼 배정자가 없다(순돌이 판단). → **닫음: 10/6 사장님 지시로 사이트 새 개발 중단**(첫 화면·가이드·/privacy 손대지 않음).
@@ -1670,6 +1672,8 @@
   ⑤ **firemap-copywriter** 다음 롱폼부터 썸네일 앞줄에 '누구'(사실표 말), 제목이 답을 말하면 썸네일은 조건 숫자 쌓고 물음표로 끝냄 · bench_check에 두 줄 · 기한 C-2 썸네일 확정 전
   ⑥ **firemap-youtube-loop** ytreach.py 10/13 이후 파일 생기면 W-1·G-1·R-1 노출·클릭률 experiments.md에, 노출 100 미만이면 '썸네일 판정 보류' · 기한 10/16 23:00
     중간: firemap-youtube-loop 04:54 — ytreach.py 다시 받음: 새 보고서 없음(마지막 reach/2026-10-12.csv) → 10/13 이후 파일 아직 없음, 다음 회차가 다시 받음(기한 10/16 23:00)
+  착수: firemap-youtube-loop 20:45 — ytreach 10/13 보고서 새로 받음 → W-1·G-1·R-1 노출·클릭률 experiments.md
+  완료: firemap-youtube-loop 20:45 — ytreach 10/13 보고서 받음(이틀 늦게 옴, 멈춤 아님) · 노출/조회 분리 STATE.md: 채널 노출 10/12 571·10/13 361 · W-1 1화 노출 16·조회 4 · G-1 노출 6·조회 3 · R-1 노출 집계 전(10/14 공개)·조회 67 → 셋 다 100 미만 '썸네일 판정 보류' experiments.md · 위 [지시] 27행(10/15 12:35)도 이것으로 닫음
   ⑦ **firemap-editor** 썸네일·표지 검수에 AI 티 A30~A33 적용(style-guide.md 누적)
 - [자발] W-1 2화(10/17 11:30) CPI 원문·weekcore 수요일 마감·사실표·대본 v1→심사 3명→editor·카피 트랙:C · youtube-loop · 근거 longform/ep/W-1/w1014/plan.md
   착수: firemap-youtube-loop 04:44
@@ -1773,3 +1777,4 @@
   착수: firemap-write-b 19:42
   완료: firemap-write-b 19:47 — 19:40 g1cafe_paths1015 https://cafe.naver.com/firemap/285 verify OK 1425/1425자·사진 3/3(게시판 돈 관리) · 쇼츠 lfUqV4YpwGM·본편 xBTZtRp5lMs public 확인 뒤 발행 · 발행기 경고: 오늘 제목 끝말 '얼마' 5칸째(다음 칸부터 다른 끝말) · [알림] firemap-video-producer: 쇼츠 g1s_paths(lfUqV4YpwGM) 설명 앞 5줄 카페 주소를 https://cafe.naver.com/firemap/285 로 · 22:40 write-b 칸 TBD 남음
 - [알림] **firemap-video-producer** ← firemap-write-b (19:47) 쇼츠 g1s_paths lfUqV4YpwGM 설명 앞 5줄 카페 주소 → https://cafe.naver.com/firemap/285
+- [편집 검수 요청] S-1 script.md v2.3(이해 시험 반영, 말 18줄) 트랙:C · 담당 firemap-editor · 시한 10/20 12:00 · 근거 longform/ep/S-1/understand_test.md·say_v2.txt (옛 서명본 script.v2.2.signed_1015.md) · 숫자 값 0 변경 · aitell script 78.8·14% 통과 · 끝 질문(숫자 먼저 vs 주가 먼저)이 갑작스럽다는 심사관 지적은 editor 판단 (youtube-loop 20:48)

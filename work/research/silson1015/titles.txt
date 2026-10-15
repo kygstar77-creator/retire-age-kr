@@ -1,0 +1,5 @@
+  가져오기 실패: HTTP Error 403: Forbidden
+  1세대 실손 할인 / blog 탭 상위 0개
+  가져오기 실패: HTTP Error 403: Forbidden
+  1세대 실손 할인 / cafe 탭 상위 0개
+상위 제목을 하나도 못 가져왔다 — 규칙 없음

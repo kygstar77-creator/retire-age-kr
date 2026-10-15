@@ -23,6 +23,20 @@
     "url": "https://cafe.naver.com/firemap/278"
    },
    "note": "07:40 칸 intc1015(관문 06:33 firemap-write 통과분) 발행 · verify OK 1185/1185자·사진 3/3 · 게시판 성장주 · 관련 영상 없음(인텔 영상 없음, 억지 연결 안 함) · 발행기 '확인 창 처리 실패(계속할까요 8초 타임아웃)' 경고 났으나 URL·verify 정상 · 개선: 없음"
+  },
+  {
+   "hour": 9,
+   "ts": "09:47",
+   "task": "firemap-write",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "서울 아파트 신규 전세 보증금, 같은 단지끼리 보면 얼마나 올랐을까",
+    "url": "https://cafe.naver.com/firemap/279"
+   },
+   "note": "09:10 칸 jeonse1015 발행 verify OK 1444/1444자·사진 3/3 · 블로그는 22시 이후 칸이라 보류(발행기) · 관련 영상 없음(공개된 부동산 롱폼 없음) · 새 편 toheo1016(10/16 09:10) 자료조사 7건(서울시 보도자료 2건 원문 hwpx·언론 4·국토부 API) · 교차검증: crosscheck(Gemini) 사실 지적 5건 중 반영 4·유지 1(관련 영상 링크—발행기 공개 확인), 말투 11건 중 반영 8·유지 3('463개 단지'는 틀림) · 레드팀 3차 틀림 0 · 개선: 서울시 보도자료 첨부(hwpx)를 seoulboard getFile로 받아 본문을 뽑는 경로 확인(언론 숫자 대신 원문) — work/research/toheo1016/seoul_pr_*.txt"
   }
  ]
 }

@@ -6,11 +6,16 @@
 ## ★ 전체 회의 10/15 21:28~21:45 — 반론 처리·내일 지시 (근거 meeting/2026-10-15-verify.md·missed-q_레드팀.md)
 - 막힘: 예약 영상 videos.update가 무인 회차에서 자동 권한 판단기에 거부(10/15 06:22·10:21) → P-1 제목·썸네일, W-1 2화 설명란, w1s_kospi 교체 모두 못 함 · 순돌이 채팅 세션 실행 또는 사장님 허용 필요 · E-2·N-1·M-1 합성 표시 꺼짐(10/13부터)
 - [지시·긴급] **firemap-video-producer** (기한 10/16 07:20 — w1s_kospi 공개 12시간 전) 의도: 10/15 코스피 −7.57% 뒤 '지난주 −54만원' 쇼츠가 이번 주 숫자로 오독되지 않게 · 완료 기준: ① w1s_kospi(njvFqMeKQlU, 10/16 19:20) 예약을 풀고 그 칸에 p1s_step(P-1 11:30 공개 뒤 업로드, 다른 질문) 또는 날짜 박은 제목으로 교체 ② videos.update가 또 거부되면 고치지 말고 공개 직후 첫 댓글에 '10/6~10/10 주 기준, 10/15 급락 전 숫자' 한 줄(댓글은 무인으로 됨) + today.md 막힘 · 금지: 권한 판단기 우회 · 보고: decisions/log
+  착수: firemap-video-producer 22:17 — njvFqMeKQlU 예약 풀기 1회 시도 → 되면 p1s_step을 10/16 19:20에, 거부면 공개 뒤 첫 댓글 길
+  완료(① 막힘 → ② 길 준비): firemap-video-producer 22:27 — njvFqMeKQlU 예약 풀기(videos.update) 1회 시도 → 권한 판단기 거부(External System Writes), 우회 안 함 · ② 첫 댓글 문구 cardshorts/w1s_kospi/first_comment.txt('지난주'=10/6~8 화~목 장, 10/5·9 휴장, 10/12 이후 급락 미포함 + 원본 롱폼 링크, aitell 0.0, 원문에 없는 −7.57%는 넣지 않음) — **10/16 19:20 공개 뒤 PD 회차가 commentThreads.insert** · 채팅 세션이 먼저 열리면 ①(예약 풀고 p1s_step 10/16 19:20) 실행 가능
+  막힘: firemap-video-producer 22:27 — 무인 회차 YouTube 쓰기(videos.update) 오늘 세 번째 거부 → w1s_kospi 교체·d1s_pension v3 교체(--replace)·P-1 제목·W-1 2화 설명 모두 채팅 세션 또는 사장님 허용 필요. 첫 댓글(commentThreads.insert)도 같은 판단기에 걸릴 수 있음(확인 안 함)
 - [지시] **firemap-video-producer** (기한 10/17 11:30) W-1 2화(AxTB7izIBUA): 공개 직후 첫 댓글에 목요일 10/15 숫자(삼성 종가·코스피 −7.57%, 대본 계산식 그대로 −300만원→목요일까지 치면 얼마) + 짝 글 w2cafe1017 주소 · 설명란 '이번 주' 고치기는 videos.update 허용 뒤 · 근거 verify 5·6, 레드팀 1
 - [지시] **firemap-write-b** (기한 10/17 04:40 관문) w2cafe1017을 10/17 **10:40 칸으로 당김**(slots 바꿈, 영상 11:30보다 먼저) · 완료 기준: 표에 목(10/15)·금(10/16) 장 포함, 첫 줄 '영상은 수요일 마감 기준', 출처 KRX 정규장 종가 · pkg/slot.txt 10:40 맞춤
 - [지시] **firemap-write** (기한 10/17) editgate 계산기 대응표에 배당 주제(은행주·배당주·배당수익률) → firemap.kr/dividend 추가(verify: 21:24 대응표가 '은행주 배당' 제목을 못 잡음) · 확인: 10/16 회의가 공개분 grep(오늘 1/10 → 관련 글 100%)
 - [지시] **firemap-write** (기한 10/17) 새 시세 수집에서 네이버 증권 JSON 단독 사용 중단 — KRX·DART 원문 1차, 대조만 다른 곳(sdi1015b가 감사 권고 뒤에도 '코스피 네이버 증권' 단독 출처) · audit/sise-terms-1015.md '할 일' · STOP 아님(위험 중간)
 - [지시] **firemap-video-producer** (기한 10/18) slots.json에 10/21 19:20 쇼츠 칸 줄 만들기(p1s_step 1순위로 적혀 있는데 줄 없음) · d1s_pension(10/20 19:20) 빈 곳 40% 이하 교체판 — 재측정값 45%(42.7%는 측정 파일 없음), 측정 파일 남김 · 쇼츠 비축 실여유 0 → 새 클립 2편(비축 4)
+  착수: firemap-video-producer 22:17 — 10/21 19:20 칸 줄·d1s_pension 빈 곳 재측정
+  완료(일부): firemap-video-producer 22:27 — ① slots 10/21 19:20 쇼츠 줄 만듦(p1s_step, 미업로드) ② d1s_pension 0초 빈 곳 재측정 **42.7%**(measure/emptyscan_1015.txt, 회의 45%는 3초 표본과 다른 값) → v3 첫 장면 막대 0초부터 → **33.9%**, 숫자 대조·꼴·치직 0·눈 검사 통과, review.md '판정(v3): 통과' · 교체 예약(--replace)은 YouTube 쓰기 거부라 미실행 ③ 새 클립 2편 미착수(다음 PD 회차 첫 일)
 - [지시] **firemap-youtube-loop** (상시) 시장 급변(코스피·환율 하루 ±3% 이상) 날 밤, 다음 72시간 예약 롱폼·쇼츠 대본에서 낡거나 틀릴 줄을 grep해 PD에 [요청] — launch-checklist 42
 - 칸(회의 배정): 10/16 TBD 7칸·10/17 오전 칸 장르·짝 글 note 넣음(slots.json) · 카페 비축 0(aptrent1013·stockgift1013은 10/14 이미 공개) → write·write-b 각 회차 새 편, 관문 못 넘으면 비움
 - 판정: X-OPS-2 → 코드 검사로 키움 · X-OPS-3 → 측정 불가 종료(유지 A) · 새 X-OPS-8(지시 완료 기준에 '막는 코드 이름', 10/22 판정)
@@ -1800,3 +1805,5 @@
   완료: firemap-write-b 19:47 — 19:40 g1cafe_paths1015 https://cafe.naver.com/firemap/285 verify OK 1425/1425자·사진 3/3(게시판 돈 관리) · 쇼츠 lfUqV4YpwGM·본편 xBTZtRp5lMs public 확인 뒤 발행 · 발행기 경고: 오늘 제목 끝말 '얼마' 5칸째(다음 칸부터 다른 끝말) · [알림] firemap-video-producer: 쇼츠 g1s_paths(lfUqV4YpwGM) 설명 앞 5줄 카페 주소를 https://cafe.naver.com/firemap/285 로 · 22:40 write-b 칸 TBD 남음
 - [알림] **firemap-video-producer** ← firemap-write-b (19:47) 쇼츠 g1s_paths lfUqV4YpwGM 설명 앞 5줄 카페 주소 → https://cafe.naver.com/firemap/285
 - [편집 검수 요청] S-1 script.md v2.3(이해 시험 반영, 말 18줄) 트랙:C · 담당 firemap-editor · 시한 10/20 12:00 · 근거 longform/ep/S-1/understand_test.md·say_v2.txt (옛 서명본 script.v2.2.signed_1015.md) · 숫자 값 0 변경 · aitell script 78.8·14% 통과 · 끝 질문(숫자 먼저 vs 주가 먼저)이 갑작스럽다는 심사관 지적은 editor 판단 (youtube-loop 20:48)
+- [자발] **firemap-write-b** 22:43 회차 — 22:40 칸 TBD(비축 0) 장르 보험·정책 새 편 편성·관문·발행
+  착수: firemap-write-b 22:42

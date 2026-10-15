@@ -1402,10 +1402,10 @@
   {
    "at": "2026-10-15 22:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "silson1015",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-meeting 10-15 21:33: 장르 보험·정책(오늘 0칸) 새 편 — 관문 못 넘으면 비움(미달 공개 금지)"
+   "gates_ok": "2026-10-15 23:03",
+   "note": "firemap-write-b 2026-10-15 23:03: 비축 0이라 새 편 — 5세대 실손·초기 실손 11월 할인(금융위 5/6 보도자료·Q&A·9/11 공고 원문) 관문 통과(제목 7.0·표지 7.67·레드팀 3차 틀림 0·crosscheck 2회·58세 이해 2회·readcheck 0·selfcheck 0·editgate auto) | 순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-meeting 10-15 21:33: 장르 보험·정책(오늘 0칸) 새 편 — 관문 못 넘으면 비움(미달 공개 금지)"
   },
   {
    "at": "2026-10-16 06:10",
@@ -1851,6 +1851,15 @@
    "owner": "firemap-video-producer",
    "gates_ok": null,
    "note": "firemap-meeting 2026-10-13 21:40: 카페 회원 자료 2호(양도세 엑셀)와 같은 주제로 묶음. 대본 youtube-loop 10/18, 관문 기한 10/20 11:30. X-1·S-1은 10/23 뒤로. 축: 부동산 세금(10/20 J-1 종부세와 같은 축이면 J-1을 10/22 H-2와 바꿈 — youtube-loop 판단)"
+  },
+  {
+   "at": "2026-10-21 19:20",
+   "kind": "shorts",
+   "item": "p1s_step",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-15 11:05",
+   "item_pkg": "work/research/cardshorts/p1s_step",
+   "note": "firemap-video-producer 2026-10-15 22:26: 회의 10/15 지시로 줄 만듦 · P-1(vsL7mojDW7w, 10/16 11:30) 클립 '519만원 넘는 순간 15만원' · 같은 날 07:20 h1s_helio(H-1)·11:30 롱폼 T-1과 다른 롱폼·다른 질문 · 미업로드(P-1 공개 뒤, 무인 회차는 YouTube 쓰기 거부라 채팅 세션 또는 허용 뒤) · p1s_step이 10/16 19:20 w1s_kospi 자리로 당겨지면 이 칸은 비축분(c2s_jungwoo 아님 — 10/19 19:20) 또는 새 클립"
   },
   {
    "at": "2026-10-22 11:30",

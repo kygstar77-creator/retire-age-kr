@@ -27,3 +27,11 @@
 2. 업로드: w1g1clips_up.py d1s_pension(upload.json publishAt 채운 뒤, layout m1clip).
 
 판정: 통과
+
+
+## v3 — 0초 빈 곳 40% 이하 교체판 · 2026-10-15 22:25 (회의 10/15 21:45 지시, 기한 10/18)
+- 측정: 지금 예약된 v2(SW7RAxLiY6g) 0초 프레임 빈 곳 **42.7%**(아래 절반 35.8%) > 40% — measure/emptyscan_1015.txt(emptyscan.frame0). 회의의 '45%'는 측정 파일 없음, 3초 간격 표본의 0초는 34%(첫 프레임이 아님).
+- 고친 것: 첫 장면 세 막대(900·1,000·1,001만원)를 0초부터 보이게(d1penclip.py rows 순서 -1, 옛 판 d1penclip.py.v2). 새 녹음 0·숫자 0 변경·화면 글자 0 변경.
+- 관문 다시: 0초 빈 곳 **33.9%**(아래 절반 31.9%)·전체 최대 33% — measure/emptyscan_v3_1015.txt · 숫자 대조 통과 · 꼴 관문 통과 · 치직 0(clickscan scan) · 쉿소리 디에서 뒤 −14.8dB · 47.6초 1080×1920 yuv420p · 눈 검사 eye4/sheet.png(0·8·20·33·46초): 잘림·겹침·숫자 오타 0.
+판정(v3): 통과
+- 남은 일: 교체 예약 `py -3.12 work/research/cardshorts/w1g1clips_up.py d1s_pension --replace` — 무인 회차에서 YouTube 쓰기(videos.update)가 권한 판단기에 거부돼(10/15 22:17 다시 확인) **채팅 세션이 실행해야 함**. 10/20 19:20 공개 전까지.

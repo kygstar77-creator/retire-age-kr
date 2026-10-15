@@ -2,7 +2,7 @@
  "name": "d1s_pension",
  "ep": "D-1",
  "from_long": "GMc2Rd1-JYA",
- "mp4": "work/video/out/d1s_pension_ds.mp4",
+ "mp4": "work/video/out/d1s_pension_v3_ds.mp4",
  "layout": "m1clip",
  "publishAt": "2026-10-20T19:20:00+09:00",
  "title": "연금 받는데 배당 1만원 더, 건보료 한 해 81만원 차이 #shorts",
@@ -29,5 +29,6 @@
   "embeddable": true,
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
- }
+ },
+ "v": 3
 }

@@ -1,0 +1,735 @@
+{
+ "fps": 30,
+ "scenes": [
+  {
+   "key": "s0",
+   "kind": "queue0",
+   "title": "직장인 100명, 월급 순서로 한 줄",
+   "sub": "맨 앞 1등 = 가장 많이 받는 사람",
+   "source": "국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준",
+   "board": true,
+   "data": {
+    "big": "100명",
+    "bigSub": "우리나라 직장인 전체를 100명으로 줄이면"
+   },
+   "lines": [
+    {
+     "text": "우리나라 직장인 전체를 100명으로 줄여서, 월급 순서대로 한 줄로 세워 보겠습니다.",
+     "frames": 158,
+     "audio": "audio/n-2/bd9e8accb3f02712.wav",
+     "cap": null
+    },
+    {
+     "text": "맨 앞에 서는 1등이 가장 많이 받는 사람이고, 맨 뒤가 가장 적게 받는 사람입니다.",
+     "frames": 139,
+     "audio": "audio/n-2/70eba299b7ae0347.wav",
+     "cap": null
+    },
+    {
+     "text": "내 월급이면 몇 등쯤일까요? 맨 뒤에서 출발해서, 앞으로 걸어가 보겠습니다.",
+     "frames": 146,
+     "audio": "audio/n-2/cec3def9e62ddd39.wav",
+     "cap": null
+    }
+   ],
+   "frames": 461,
+   "segs": [
+    {
+     "from": 0,
+     "frames": 158,
+     "bg": {
+      "src": "bg/n2/seg/s0_0.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/4992563.mp4",
+      "clip_start": 0.0
+     }
+    },
+    {
+     "from": 158,
+     "frames": 139,
+     "bg": {
+      "src": "bg/n2/seg/s0_1.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/853830.mp4",
+      "clip_start": 0.0
+     }
+    },
+    {
+     "from": 297,
+     "frames": 164,
+     "bg": {
+      "src": "bg/n2/seg/s0_2.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/15411757.mp4",
+      "clip_start": 0.0
+     }
+    }
+   ]
+  },
+  {
+   "key": "s1",
+   "kind": "doc",
+   "title": "이 숫자는 어디서 왔나",
+   "sub": "국가데이터처(옛 통계청) · 2024년 12월 한 달 월급",
+   "source": "국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준 · 통장 금액 = 파이어맵 월급 계산기(2026년 간이세액표·4대보험, 1인·식대 비과세 20만원 가정)",
+   "board": true,
+   "data": {
+    "img": "bg/n2/wagejob_dist.png",
+    "row": [
+     0.51,
+     0.67
+    ],
+    "tags": [
+     "세금 떼기 전(세전)",
+     "며칠만 일한 사람도 들어 있음"
+    ],
+    "conv": [
+     [
+      "통장 180만원",
+      "세전 약 200만원",
+      "통장에 1할쯤 더하기"
+     ],
+     [
+      "통장 300만원 넘으면",
+      "1할 5푼쯤 더하기",
+      "세금이 늘어서"
+     ]
+    ],
+    "convAt": 3
+   },
+   "lines": [
+    {
+     "text": "숫자는 국가데이터처, 옛 통계청이 낸 직장인 월급 통계입니다.",
+     "frames": 127,
+     "audio": "audio/n-2/ab140287430265ff.wav",
+     "cap": null
+    },
+    {
+     "text": "재작년 12월 한 달 월급이에요. 조금 지난 숫자지만, 이 통계로는 가장 새것입니다.",
+     "frames": 157,
+     "audio": "audio/n-2/467e42374d08694a.wav",
+     "cap": null
+    },
+    {
+     "text": "세금 떼기 전 금액이고, 아르바이트처럼 그달 며칠만 일한 사람도 들어 있어요. 그래서 줄 맨 뒤쪽엔 아주 적은 월급도 섞여 있습니다.",
+     "frames": 229,
+     "audio": "audio/n-2/a5d39910ed962bf6.wav",
+     "cap": null
+    },
+    {
+     "text": "세금 떼기 전 월급을 모르시면, 통장에 들어오는 돈에 1할쯤 더해 보세요.",
+     "frames": 136,
+     "audio": "audio/n-2/c700f01ee41c0399.wav",
+     "cap": null
+    },
+    {
+     "text": "통장에 180만원이 들어오면, 세전으로는 200만원쯤입니다.",
+     "frames": 128,
+     "audio": "audio/n-2/7430adb9bae8d8bf.wav",
+     "cap": "세전 200만원 → 통장 1,808,470원(실수령/세전 0.904)"
+    },
+    {
+     "text": "통장에 300만원 넘게 들어오면, 세금이 늘어서 1할 5푼쯤 더해 보세요.",
+     "frames": 135,
+     "audio": "audio/n-2/ddb080a02c4fcf75.wav",
+     "cap": "세전 350만원 = 통장 × 1.14쯤 · 세전 450만원 = 통장 × 1.18쯤 (실수령/세전 0.876·0.849)"
+    }
+   ],
+   "frames": 930,
+   "segs": [
+    {
+     "from": 0,
+     "frames": 127,
+     "bg": {
+      "src": "bg/n2/seg/s1_0.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/5923592.mp4",
+      "clip_start": 0.0
+     }
+    },
+    {
+     "from": 127,
+     "frames": 157,
+     "bg": {
+      "src": "bg/n2/seg/s1_1.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/8691678.mp4",
+      "clip_start": 0.0
+     }
+    },
+    {
+     "from": 284,
+     "frames": 114,
+     "bg": {
+      "src": "bg/n2/seg/s1_2.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/6780084.mp4",
+      "clip_start": 0.0
+     }
+    },
+    {
+     "from": 398,
+     "frames": 115,
+     "bg": {
+      "src": "bg/n2/seg/s1_3.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/3202364.mp4",
+      "clip_start": 0.0
+     }
+    },
+    {
+     "from": 513,
+     "frames": 136,
+     "bg": {
+      "src": "bg/n2/seg/s1_4.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/9823115.mp4",
+      "clip_start": 0.0
+     }
+    },
+    {
+     "from": 649,
+     "frames": 128,
+     "bg": {
+      "src": "bg/n2/4792290.jpg",
+      "kind": "image"
+     }
+    },
+    {
+     "from": 777,
+     "frames": 153,
+     "bg": {
+      "src": "bg/n2/seg/s1_6.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/5923592.mp4",
+      "clip_start": 4.23
+     }
+    }
+   ]
+  },
+  {
+   "key": "s2",
+   "kind": "queue",
+   "title": "세전 150만원",
+   "sub": "100명 중 79등쯤 · 아직 줄 뒤쪽",
+   "source": "국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준",
+   "board": true,
+   "data": {
+    "from": 100,
+    "to": 79,
+    "money": "세전 150만원"
+   },
+   "lines": [
+    {
+     "text": "먼저 세전 150만원. 79등쯤입니다.",
+     "frames": 110,
+     "audio": "audio/n-2/772c9f6f001dedba.wav",
+     "cap": "월 150만원 이상 79.4%"
+    },
+    {
+     "text": "아직은 줄 뒤쪽에 서 있는 셈이에요.",
+     "frames": 83,
+     "audio": "audio/n-2/2f5b4b079341d23f.wav",
+     "cap": null
+    }
+   ],
+   "frames": 211,
+   "segs": [
+    {
+     "from": 0,
+     "frames": 110,
+     "bg": {
+      "src": "bg/n2/seg/s2_0.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/853830.mp4",
+      "clip_start": 4.63
+     }
+    },
+    {
+     "from": 110,
+     "frames": 101,
+     "bg": {
+      "src": "bg/n2/seg/s2_1.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/6223515.mp4",
+      "clip_start": 0.0
+     }
+    }
+   ]
+  },
+  {
+   "key": "s3",
+   "kind": "queue",
+   "title": "세전 250만원",
+   "sub": "100명 중 59등쯤 · 아직 절반보다 뒤",
+   "source": "국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준",
+   "board": true,
+   "data": {
+    "from": 79,
+    "to": 59,
+    "money": "세전 250만원",
+    "between": [
+     79,
+     59
+    ],
+    "betweenAt": 1
+   },
+   "lines": [
+    {
+     "text": "다음은 세전 250만원. 59등쯤입니다.",
+     "frames": 110,
+     "audio": "audio/n-2/bacdffe57caf54a0.wav",
+     "cap": "월 250만원 이상 58.5%"
+    },
+    {
+     "text": "그 사이 월급이면, 등수도 그 사이 어딘가예요.",
+     "frames": 101,
+     "audio": "audio/n-2/310e5c839a9ca3c5.wav",
+     "cap": null
+    },
+    {
+     "text": "아직 줄 절반보다 뒤입니다.",
+     "frames": 62,
+     "audio": "audio/n-2/07b7ce025c25ae69.wav",
+     "cap": null
+    }
+   ],
+   "frames": 291,
+   "segs": [
+    {
+     "from": 0,
+     "frames": 110,
+     "bg": {
+      "src": "bg/n2/seg/s3_0.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/19103667.mp4",
+      "clip_start": 0.0
+     }
+    },
+    {
+     "from": 110,
+     "frames": 101,
+     "bg": {
+      "src": "bg/n2/seg/s3_1.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/26579264.mp4",
+      "clip_start": 0.0
+     }
+    },
+    {
+     "from": 211,
+     "frames": 80,
+     "bg": {
+      "src": "bg/n2/seg/s3_2.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/15411757.mp4",
+      "clip_start": 5.47
+     }
+    }
+   ]
+  },
+  {
+   "key": "s4",
+   "kind": "big",
+   "title": "줄 한가운데, 50등",
+   "sub": "이 사람보다 많이 받는 사람 절반 · 적게 받는 사람 절반",
+   "source": "국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준 · 통장 금액 = 파이어맵 월급 계산기(2026년 간이세액표·4대보험, 1인·식대 비과세 20만원 가정)",
+   "board": false,
+   "data": {
+    "items": [
+     {
+      "at": 0,
+      "big": "50등은?",
+      "small": "100명 줄 딱 한가운데"
+     },
+     {
+      "at": 1,
+      "big": "290만원",
+      "small": "세전 기준 · 통장 약 260만원"
+     }
+    ]
+   },
+   "lines": [
+    {
+     "text": "그럼 줄 딱 한가운데, 50등은 얼마를 받을까요?",
+     "frames": 107,
+     "audio": "audio/n-2/733b2e82e93a49b3.wav",
+     "cap": null
+    },
+    {
+     "text": "세전 290만원쯤입니다. 이 사람보다 많이 받는 사람이 절반, 적게 받는 사람이 절반이에요.",
+     "frames": 161,
+     "audio": "audio/n-2/40e6167c928ac43d.wav",
+     "cap": "가운데 288만원 · 통장 2,568,400원"
+    }
+   ],
+   "frames": 286,
+   "segs": [
+    {
+     "from": 0,
+     "frames": 107,
+     "bg": {
+      "src": "bg/n2/seg/s4_0.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/4992563.mp4",
+      "clip_start": 5.27
+     }
+    },
+    {
+     "from": 107,
+     "frames": 179,
+     "bg": {
+      "src": "bg/n2/761295.jpg",
+      "kind": "image"
+     }
+    }
+   ]
+  },
+  {
+   "key": "s5",
+   "kind": "queue",
+   "title": "세전 350만원",
+   "sub": "100명 중 38등쯤 · 줄 앞쪽 절반",
+   "source": "국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준",
+   "board": true,
+   "data": {
+    "from": 59,
+    "to": 38,
+    "money": "세전 350만원",
+    "mid": 50
+   },
+   "lines": [
+    {
+     "text": "세전 350만원. 38등쯤입니다.",
+     "frames": 92,
+     "audio": "audio/n-2/9dc5a6f0ee1e484b.wav",
+     "cap": "월 350만원 이상 38.4%"
+    },
+    {
+     "text": "이제 줄 앞쪽 절반에 들어왔어요.",
+     "frames": 71,
+     "audio": "audio/n-2/a9da4cb3c4fefaf3.wav",
+     "cap": null
+    }
+   ],
+   "frames": 181,
+   "segs": [
+    {
+     "from": 0,
+     "frames": 92,
+     "bg": {
+      "src": "bg/n2/seg/s5_0.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/8691678.mp4",
+      "clip_start": 5.23
+     }
+    },
+    {
+     "from": 92,
+     "frames": 89,
+     "bg": {
+      "src": "bg/n2/seg/s5_1.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/6780084.mp4",
+      "clip_start": 3.8
+     }
+    }
+   ]
+  },
+  {
+   "key": "s6",
+   "kind": "queue",
+   "title": "세전 450만원",
+   "sub": "100명 중 27등쯤 · 꽤 앞쪽",
+   "source": "국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준",
+   "board": true,
+   "data": {
+    "from": 38,
+    "to": 27,
+    "money": "세전 450만원",
+    "mid": 50
+   },
+   "lines": [
+    {
+     "text": "세전 450만원. 27등쯤입니다. 여기까지 오면 꽤 앞쪽이죠.",
+     "frames": 160,
+     "audio": "audio/n-2/0ce96962b8d44080.wav",
+     "cap": "월 450만원 이상 26.7%"
+    }
+   ],
+   "frames": 178,
+   "segs": [
+    {
+     "from": 0,
+     "frames": 178,
+     "bg": {
+      "src": "bg/n2/seg/s6_0.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/8691678.mp4",
+      "clip_start": 8.3
+     }
+    }
+   ]
+  },
+  {
+   "key": "s7",
+   "kind": "avg",
+   "title": "맨 앞 — 평균이 높은 까닭",
+   "sub": "평균 = 모두 더해서 사람 수로 나눈 값",
+   "source": "국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준",
+   "board": false,
+   "data": {
+    "big": "4명",
+    "bigSub": "월 1,000만원 이상 받는 사람, 100명 중",
+    "avg": 375,
+    "mid": 290,
+    "barsAt": 1,
+    "floorAt": 3,
+    "topAt": 4
+   },
+   "lines": [
+    {
+     "text": "맨 앞으로 가 볼까요. 한 달에 1,000만원 이상 받는 사람은 네 명뿐입니다.",
+     "frames": 130,
+     "audio": "audio/n-2/851f63c3ab4c57c2.wav",
+     "cap": "월 1,000만원 이상 4.3%"
+    },
+    {
+     "text": "뉴스에 나오는 평균 월급, 들어 보셨죠. 이 통계로는 세전 375만원이에요.",
+     "frames": 156,
+     "audio": "audio/n-2/63526e672fa7822f.wav",
+     "cap": "평균 375만원 · 가운데 288만원 · 차 87만원"
+    },
+    {
+     "text": "평균은 한가운데 사람 월급이 아니라, 모든 사람 월급을 더해서 사람 수로 나눈 값입니다.",
+     "frames": 161,
+     "audio": "audio/n-2/da32ceab2dbf1b16.wav",
+     "cap": null
+    },
+    {
+     "text": "적게 받는 쪽은 아무리 적어도 0원 밑으로는 못 내려가요.",
+     "frames": 141,
+     "audio": "audio/n-2/f5420c46fea11c5d.wav",
+     "cap": null
+    },
+    {
+     "text": "그런데 많이 받는 쪽엔 한가운데보다 몇 배씩 받는 사람도 있으니까, 평균이 위로 끌려 올라가요.",
+     "frames": 184,
+     "audio": "audio/n-2/1228e3143f583a97.wav",
+     "cap": null
+    },
+    {
+     "text": "그래서 줄 한가운데 사람은 평균보다 한참 아래입니다.",
+     "frames": 109,
+     "audio": "audio/n-2/8d35d64fd53e6f5d.wav",
+     "cap": null
+    }
+   ],
+   "frames": 899,
+   "segs": [
+    {
+     "from": 0,
+     "frames": 130,
+     "bg": {
+      "src": "bg/n2/seg/s7_0.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/27635322.mp4",
+      "clip_start": 0.0
+     }
+    },
+    {
+     "from": 130,
+     "frames": 156,
+     "bg": {
+      "src": "bg/n2/seg/s7_1.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/15994652.mp4",
+      "clip_start": 0.0
+     }
+    },
+    {
+     "from": 286,
+     "frames": 161,
+     "bg": {
+      "src": "bg/n2/seg/s7_2.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/8064422.mp4",
+      "clip_start": 0.0
+     }
+    },
+    {
+     "from": 447,
+     "frames": 141,
+     "bg": {
+      "src": "bg/n2/seg/s7_3.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/36282124.mp4",
+      "clip_start": 0.0
+     }
+    },
+    {
+     "from": 588,
+     "frames": 184,
+     "bg": {
+      "src": "bg/n2/seg/s7_4.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/7317314.mp4",
+      "clip_start": 0.0
+     }
+    },
+    {
+     "from": 772,
+     "frames": 127,
+     "bg": {
+      "src": "bg/n2/3142002.jpg",
+      "kind": "image"
+     }
+    }
+   ]
+  },
+  {
+   "key": "s8",
+   "kind": "summary",
+   "title": "내 자리 보는 법",
+   "sub": "평균 말고 줄 한가운데와 견주기",
+   "source": "국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준 · 통장 금액 = 파이어맵 월급 계산기(2026년 간이세액표·4대보험, 1인·식대 비과세 20만원 가정)",
+   "board": true,
+   "data": {
+    "rows": [
+     [
+      "세전 150만원",
+      "79등"
+     ],
+     [
+      "세전 250만원",
+      "59등"
+     ],
+     [
+      "세전 290만원 · 통장 약 260만원",
+      "50등 · 한가운데"
+     ],
+     [
+      "세전 350만원",
+      "38등"
+     ],
+     [
+      "세전 450만원",
+      "27등"
+     ],
+     [
+      "1,000만원 이상",
+      "100명 중 4명"
+     ]
+    ],
+    "hi": 2,
+    "note": "나이별 줄 → 댓글 맨 위",
+    "noteAt": 3
+   },
+   "lines": [
+    {
+     "text": "내 자리를 보려면, 평균 말고 줄 한가운데와 견줘 보세요.",
+     "frames": 106,
+     "audio": "audio/n-2/f84a236eb23b2edb.wav",
+     "cap": null
+    },
+    {
+     "text": "세전으로 290만원쯤이에요. 통장으로는 260만원쯤입니다.",
+     "frames": 158,
+     "audio": "audio/n-2/28dd0879efa79cca.wav",
+     "cap": null
+    },
+    {
+     "text": "이보다 많으면 줄 앞쪽 절반, 적으면 뒤쪽 절반이에요.",
+     "frames": 107,
+     "audio": "audio/n-2/7a56415f123e378e.wav",
+     "cap": null
+    },
+    {
+     "text": "나이별로 줄을 세운 숫자는, 이 영상 바로 아래 댓글 맨 위에 적어 두겠습니다. 여러분은 몇 등쯤이었나요?",
+     "frames": 205,
+     "audio": "audio/n-2/8e315e61a335ebbc.wav",
+     "cap": null
+    }
+   ],
+   "frames": 594,
+   "segs": [
+    {
+     "from": 0,
+     "frames": 106,
+     "bg": {
+      "src": "bg/n2/seg/s8_0.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/3202364.mp4",
+      "clip_start": 3.83
+     }
+    },
+    {
+     "from": 106,
+     "frames": 158,
+     "bg": {
+      "src": "bg/n2/19271539.jpg",
+      "kind": "image"
+     }
+    },
+    {
+     "from": 264,
+     "frames": 107,
+     "bg": {
+      "src": "bg/n2/seg/s8_2.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/30217948.mp4",
+      "clip_start": 0.0
+     }
+    },
+    {
+     "from": 371,
+     "frames": 102,
+     "bg": {
+      "src": "bg/n2/seg/s8_3.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/8691678.mp4",
+      "clip_start": 14.23
+     }
+    },
+    {
+     "from": 473,
+     "frames": 121,
+     "bg": {
+      "src": "bg/n2/seg/s8_4.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/3202364.mp4",
+      "clip_start": 7.36
+     }
+    }
+   ]
+  }
+ ],
+ "missing": 0
+}

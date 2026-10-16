@@ -71,8 +71,17 @@ lo0, lo1 = min(p[1] for p in pts) - 0.009, max(p[1] for p in pts) + 0.009
 BB = f'{la0:.4f},{lo0:.4f},{la1:.4f},{lo1:.4f}'
 
 def overpass(q):
-    req = urllib.request.Request(os.environ.get('OVERPASS_URL', 'https://overpass-api.de/api/interpreter'), data=urllib.parse.urlencode({'data': q}).encode(), headers=UA)
-    return json.load(urllib.request.urlopen(req, timeout=180))
+    # 2026-10-16 write: overpass-api.de가 502를 내 동네 하나가 통째로 멈췄다 → 미러를 돌며 다시 시도
+    urls = [os.environ['OVERPASS_URL']] if os.environ.get('OVERPASS_URL') else []
+    urls += ['https://overpass-api.de/api/interpreter', 'https://overpass.kumi.systems/api/interpreter', 'https://overpass.private.coffee/api/interpreter']
+    err = None
+    for i, u in enumerate(urls * 2):
+        try:
+            req = urllib.request.Request(u, data=urllib.parse.urlencode({'data': q}).encode(), headers=UA)
+            return json.load(urllib.request.urlopen(req, timeout=180))
+        except Exception as e:
+            err = e; print('overpass 실패', u, e, file=sys.stderr); time.sleep(5 + 5 * i)
+    raise err
 OSM = cache('osm.json', lambda: overpass(f"""[out:json][timeout:150];
 ( way["landuse"="residential"]({BB}); relation["landuse"="residential"]({BB}); way["building"="apartments"]["name"]({BB});
   node["railway"="station"]({BB}); node["station"="subway"]({BB}); node["railway"="subway_entrance"]({BB});

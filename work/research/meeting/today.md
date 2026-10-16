@@ -1809,6 +1809,7 @@
   착수: firemap-visual-designer 17:05 — C-2 썸네일 14차: 글자 줄 6→4·구멍 빼고 제본선·실물 통장 사진 바탕 시안(제미나이 이미지)
   완료(미달): firemap-visual-designer 17:15 — C-2 썸네일 14~16차 8판 **세 명 평균 8 넘은 판 없음** · 최고 longform/ep/C-2/thumb_c3j.png 16차 7.63(제미나이 8.5·Claude 7·레드팀 7.4: 위 띠를 남색 띠 흰 글 72px로·큰 글 한 줄·구멍 뺌·잔고 막대 유지) · 예비 thumb_c3l.png 7.43 · 1초 블라인드 매 차수 3/3 · 쌓인 쪽 두께·제본선은 168px에서 안 보임, 나무 책상 진한 판 c3h·c3k는 레드팀 경쟁 유사 3 반려 · 제미나이 이미지 3종 429라 실물 통장 사진 못 시험 · 사실 틀림 0·가려짐 0·아래 5% 비움 · meta thumb 비움(thumb_status 갱신) · 근거 visual/C-2-thumb/judges.md 14~16차
   [요청] **firemap-copywriter** ← visual-designer (17:15) C-2 썸네일 남은 막힘 2개는 문구 몫 — ① 도장 '통장 바닥남'이 168px에서 0원으로 읽힘(레드팀 14~16차 매번, 실제 1,154만원 남음): 레드팀 제안 '1년 치 못 꺼냄' 또는 '1,154만원 남음'(큰 글로, 오른쪽 '2억 7천 남음'과 짝) 중 판단 ② 정체성 1종(실제 결과 숫자)뿐 — 둘째 종류(예: 계산기 표시 짧은 꼬리표) 넣을지 · 글자 줄은 늘리지 말 것 · 기한 10/16 23:00(썸네일 기한 10/17 06:00) · 근거 visual/C-2-thumb/judges.md 16차·판정
+  착수: firemap-copywriter 18:45
 - [수리] 카페 글 유튜브 주소 조각(tps·://y·ou) — 사장님 13:4x 질문, 원인 재현·입력 고치기·verify 검사 추가·나간 글(208·257·265·269·276·281 등) 조각만 지우기 트랙:카페 · 담당 카페 발행 도구 · 근거 work/naverpost.py
   착수: 카페 발행 도구 13:51
 - [편집 검수 요청] W-1 2화 화면 글자(screen_text.txt 409줄, sha는 lfrender text) + 이해 시험 제안 8줄(16:01 녹음 전 판단 요청 09:50 — 녹음은 v2.6 서명본으로 먼저 함, 반영하면 그 줄만 Chirp 다시) 트랙:C · 담당 firemap-editor · 시한 10/16 06:00(관문 10/16 11:30, 렌더 3시간 전) · 근거 longform/ep/W-1/w1016/screen_text.txt·understand_test.md · 화면: video/src/W1016.tsx(1화 W1 틀) + w1016props.py · 요청 firemap-video-producer 14:49
@@ -1904,12 +1905,14 @@ $MSG
   착수: firemap-editor 17:04 (정기 16:50)
   완료: firemap-editor 17:10 — 편집 통과(script.md.edit.json sha 4ff84367) · 말 60줄 줄마다 봄 · 편집자 1곳: 0장 '혼자 이어 내면'→'계속 이어 내면'('혼자'가 혼자 사는 사람으로 읽혀 임의가입 대상 아닌 사람을 부름 — 요청 금지 범위) · 금지 줄 전부 그대로 · 숫자 값 0 변경 · aitell 3.9 · script 78.9/1,000·19% 통과 · 녹음 say_v3.txt 3줄 · 원본 .orig1016
 - [요청] **firemap-copywriter** ← youtube-loop (09:04) P-2 제목·썸네일 문구·첫 3초 트랙:C · 시한 10/19 12:00 · 근거 longform/ep/P-2/analysis.md ②(국민연금임의가입 7,510·파이어족 12,530·임의가입금액 1,580)·compete.md(1등 '낸 돈·더 받는 돈 숫자 둘 + 이득일까?') · 방향: '국민연금 임의가입' 맨 앞, 숫자 하나(39만원→96만원 또는 '본전 70세') · 금지: '이득'·'무조건'·'모르면 손해'·'공단이 안 알려줌', 1등 제목 틀 그대로, '혼자 사는 퇴사자'처럼 임의가입 대상이 아닌 사람을 부르는 말(법상 배우자가 가입자인 무소득자만 대상)
+  착수: firemap-copywriter 18:45
 - [요청] **firemap-meeting** ← youtube-loop (09:04) P-2 롱폼 칸 요청 — 대본 심사 통과(7.27), 편집·카피 10/20, 녹음 1창(말 60줄) · 같은 연금 축 P-1(10/16)과 이틀 붙지 않게 10/24 이후 11:30 칸 · 합성 표시: 실사 생성 장면 넣으면 True · 짝 카페 글 자료(세 길 전체 표·1~3% 본전 표·calc_out)는 칸 정해지면 write에
 - [편집 검수 요청] T-1 화면 글자(screen_text.txt 377줄, lfrender text — sha는 lfrender check가 잼) 트랙:C · 담당 firemap-editor · 시한 10/18 12:00(칸 10/21 11:30, 관문 10/20 11:30 — 렌더·점수표·업로드가 그 뒤) · 근거 longform/ep/T-1/screen_text.txt · 화면 video/src/T1.tsx + ep/T-1/t1props.py(숫자는 calc_out·자막에서 need로 기계 대조) · aitell 2.9 통과 · 판단 부탁: '산 해'는 '사다'로 읽혀 화면에선 '살았던 해'로 씀, 사례 ①② → '사례 1·2' · 녹음 63줄 끝(Charon 1.1·쉼 태그, 튀는 줄 0·앞뒤 −3.5%·받아쓰기 걸린 줄 다시 받아 0) · 요청 firemap-video-producer 10:36
   착수: firemap-editor 17:04 (정기 16:50)
   완료: firemap-editor 17:10 — 화면 글자 편집 통과(lfrender stamp 785b008c, text 다시 뽑아 바뀐 것 0) · 고침 0 · '살았던 해'·'사례①②' PD 판단 그대로 좋음 · 8장 '4%씩'은 %p 뜻, 자막 32%p가 받침 · aitell 2.9 · lfrender check 관문 통과
 - [요청] **firemap-visual-designer** ← firemap-video-producer (10:36) T-1 썸네일 — 문구는 ep/T-1/copy/titles.md 1위 짝('2년만 살았으면 / 양도세 공제 48%→16%로 줄어' · 작은 줄 '정부안 · 2029년 · 20억 집 팔 때', copywriter 18:59) · 1초 시험 3명 통과판을 ep/T-1/meta.json thumb에(없으면 경로를 today.md에) · 1초 시험에서 '양도세가 줄어'로 읽히면 2위 '거주 10년 vs 2년 / 양도세 약 12배' · 화면 재료: video/out/t1_stills_1115(두 집 그림·계단 칸) · 기한 10/19 06:00(관문 10/20 11:30)
 - [요청] **firemap-copywriter** ← firemap-video-producer (10:40) T-1 제목 숫자 6개('1주택'·'20억'·'2029년'·'1,241만원'·'1억 4,777만원') — ytlong 관문 '제목 숫자 2개 이하'에 걸림(C-2와 같은 일) · titles.md 2위('…살았던 햇수 하나로 양도세 열두 배 가까이 차이', 숫자 1개)를 1위로 올릴지, 1위 뜻 그대로 숫자 2개 이하 판을 새로 낼지 판단해 ep/T-1/meta.json title·title_candidates에 · 기한 10/19 12:00(칸 10/21 11:30, 관문 10/20 11:30) · 근거 work/ytlong.py gate
+  착수: firemap-copywriter 18:45
 - [자발] **firemap-write-b** 10:42 회차 — 10:40 칸 deposit1016 발행
   착수: firemap-write-b 10:42
   완료: firemap-write-b 10:55 — 10:40 deposit1016 https://cafe.naver.com/firemap/291 verify OK 939/939자·사진 3/3(게시판 돈 관리) · 관련 영상 없음(예금 금리 공개 영상 없음) · 남은 b 칸: 13:40·16:40·19:40·22:40 TBD
@@ -1949,6 +1952,7 @@ $MSG
 - 완료: firemap-editor 14:58 — H-2 화면 글자 재서명(PD w_ruler step 분할 2줄: 래미안대치팰리스 한티역까지 530m · 대치르엘은 1km 넘게/2021년 단지 · 대치역까지 1,010m — calc_out §5 일치) · 숫자 0 변경 · 다른 곳 손대지 않음
   완료: 쇼츠 디자인 담당 14:59 — 원인: 12시 safeframe v1이 판 전체를 0.66배로 줄여 위 0~288·아래 1248~1920 검은 빈칸·오른쪽 빔. v2(video/src/parts/safeframe.tsx·C1S·M1S·C2P): 바탕 1080×1920 전체(아래는 같은 판 흐리게), 글자만 x 48~888·y 288~1248, 질문 최대 76px·답 숫자 최대 128px·판은 실제 그려진 범위만 잘라 840 너비 채움·대결 칸 나란히·C2P 사진 화면 끝까지 · 예약 12편 전부 재렌더·교체(같은 publishAt, 옛 12편 예약 풀고 비공개·삭제 0, 합성 표시 True update 응답, videos.list 재확인) · 19:20 w1s_kospi = DRtKbSuCUiQ · 안전 영역 관문 12/12 걸림 0·0초 빈 곳 0~21%·58세 이해 시험 편마다 1~4명 한 문장 전부 맞음(g1s_why는 큰 숫자 오독 2회 → 내 금 −4.43%로 묶어 3차 통과) · slots.json·yt_pair 새 ID · 비교 research/cardshorts/safe-zone-1016b.png · 근거 safe-zone-1016.md v2 절 · 남은 약점: 판 안 작은 글씨·막대 하나 장면 휑함(판 부품 일)
 - [요청] **firemap-copywriter** ← firemap-video-producer (15:15) H-2 bench_check.md(잘된 영상 대조: 제목·썸네일·첫 60초·자막·대본 표 + 맨 끝 '대조: 통과') · 렌더본 work/video/out/h2_ds.mp4(4:38, h2.json 24장면) · 스틸 video/out/h2_lines/ · 썸네일은 visual 진행 중(ep/H-2/meta.json thumb) · 기한 10/19 06:00(칸 10/20 11:30, 관문 10/19 11:30) · H-1 bench_check 형식 그대로
+  착수: firemap-copywriter 18:45
 - [요청] **firemap-write** ← firemap-video-producer (15:15) H-2 짝 카페 글 — 재료 ep/H-2/cafe.md(순돌이 10/16 '표 대신 한눈에 보기': 동네마다 우리 렌더 스틸 한 장 + 세 줄, 28단지는 접은 표 하나) · 영상 공개(10/20 11:30) 전 같은 날 08:10·10:10 칸(대본 '카페에 올려 둘게요') · 발행 주소를 slots.json note에 'yt_pair: H-2'로 · 회의(21:15)가 10/20 카페 칸 배정
   완료(일부): firemap-video-producer 15:15 — 손품 [지시](10/16 11:4x) 중 H-2 몫: 동네별 쇼츠 재료 3편 cardshorts/h2_specs/spec.md(잠실·대치·반포, 공개 뒤 자르기) · 카페 짝 글 재료 ep/H-2/cafe.md·write 요청
 - 완료: firemap-video-producer 15:15 — H-2 렌더·관문 끝(h2_ds.mp4 4:38 · Chirp Charon 56줄 · 그림 14가지 · 같은 화면 최장 8.0초·겹침 0·쉿소리 −12.1dB·치직 0 · editor 화면 서명 14:58 · 점수표 35 vs 경쟁 중앙 25 · 설명 앞 두 줄 58세 3차 통과) · 남은 것: 썸네일(visual 투입 중)·bench_check(copywriter) → ytlong gate → 10/20 11:30 예약
@@ -1964,3 +1968,9 @@ $MSG
 - 확인(firemap-editor 17:10): 정기 16:50 근무 — 열린 [편집 검수 요청] 3건(P-2·H-3·T-1 화면) + X-1 자막 재서명 · auto 표본 2/5(kospidrop1017 고침·soxl1016 공개 뒤 고침) · 10/17 카페 묶음 frame 1/1 통과 · sweep은 soxl1016 공개 뒤 1건- [자발] **firemap-write-b** 16:42 회차 — 16:40 칸 TBD·비축 0 → 새 편 soxl1016
   착수: firemap-write-b 16:42
   완료: firemap-write-b 17:21 — 16:40 soxl1016 https://cafe.naver.com/firemap/295 verify OK 1980/1980자·사진 3/3(게시판 ETF) · 관문 17:07(제목 7.75·표지 7.67·레드팀 틀림 0·이해 4차) · 비축 카페 0편 → 19:40(쇼츠 짝)·22:40 TBD
+
+- [지시] **영상 디자인 총괄** ← 순돌이 (18:1x) 사장님 "두 번째 세 번째처럼 모든 쇼츠 롱폼에 영상 넣으면 되겠다. 문구나 꾸민 건 잘되는 채널 참고한 거 맞아? 자막 위치·크기·색·도형" — 경쟁 쇼츠10·롱폼5 실측→기준 한 장(research/visual/design-spec-1016.md)·견본 4장·모든 장면 실사 배경·틀 반영·렌더 뒤 검사·예약분 재렌더 · 시한 실측·기준 10/17 09:00, 틀 10/17 18:00
+  착수: 영상 디자인 총괄 18:16
+- [자발] **firemap-write** 18:21 회차 — 18:10 칸 retax1016 발행·10/17 09:10 부동산 TBD 칸 새 편
+  착수: firemap-write 18:21
+  완료: firemap-write 18:59 — ① 18:10 retax1016 https://cafe.naver.com/firemap/296 verify OK 1813/1813자·사진 3/3(게시판 연금/세금/보험) ② 10/17 09:10 부동산 칸 sangdo1017 관문 통과(gates_ok 18:58) '상도동 아파트 시세는 같은 단지끼리 보면 작년보다 얼마나 올랐을까?' — 국토부 실거래 동작구 원자료·tour.py, 같은 단지 11곳 작년·올해 여름 비교+14곳 순위+동작구 8개 동 · 레드팀 2회 사실 0 · 58세 이해 2차 통과 · 제목 7.07(레드팀 6 — 숫자 없는 질문형)·표지 7.67 · editgate auto ③ tour.py overpass 미러 재시도 고침 · 남은 write 칸 10/17: 12:10 돈 관리·15:10·18:10·21:10 TBD · 카페 비축 0/2 그대로

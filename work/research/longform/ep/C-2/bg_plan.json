@@ -1,0 +1,622 @@
+{
+ "name": "C-2",
+ "made": "2026-10-16 23:40",
+ "note": "scene 번호=c2props.py scenes 0~40(위에서부터). 한 배경 8초 넘으면 같은 테마 다른 클립·구간으로 바꿈(clips 풀에서). 영상은 -an h264. 실존 인물 얼굴·상표·간판 글자·워터마크 0(프레임 눈 확인).",
+ "clips": [
+  {
+   "file": "bg/c2/6326929.mp4",
+   "id": 6326929,
+   "start": 0,
+   "usable_sec": 21,
+   "what": "빨간 탁자 위 손이 지폐 뭉치를 세고 옆에 공책·동전(얼굴 없음)",
+   "author": "https://kaboompics.com/",
+   "page": "https://www.pexels.com/video/person-couting-money-6326929/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/6326928.mp4",
+   "id": 6326928,
+   "start": 0,
+   "usable_sec": 14,
+   "what": "탁자 위 동전·지폐 옆 공책(손만)",
+   "author": "https://kaboompics.com/",
+   "page": "https://www.pexels.com/video/person-counting-money-6326928/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/16846101.mp4",
+   "id": 16846101,
+   "start": 0,
+   "usable_sec": 17,
+   "what": "손으로 동전·지폐를 세는 장면(손만)",
+   "author": "Luis Chambi",
+   "page": "https://www.pexels.com/video/contando-dinero-bolivia-16846101/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/7490517.mp4",
+   "id": 7490517,
+   "start": 0,
+   "usable_sec": 9,
+   "what": "계산기를 누르는 손과 공책",
+   "author": "RDNE Stock project",
+   "page": "https://www.pexels.com/video/person-using-a-calculator-7490517/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/6963484.mp4",
+   "id": 6963484,
+   "start": 0,
+   "usable_sec": 16,
+   "what": "계산기 자판 위 손 가까이",
+   "author": "Mikhail Nilov",
+   "page": "https://www.pexels.com/video/a-person-using-a-calculator-6963484/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/7593891.mp4",
+   "id": 7593891,
+   "start": 0,
+   "usable_sec": 11,
+   "what": "책상 위 계산기·서류·공책(손만)",
+   "author": "Pavel Danilyuk",
+   "page": "https://www.pexels.com/video/close-up-video-of-a-person-using-calculator-7593891/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/8276001.mp4",
+   "id": 8276001,
+   "start": 0,
+   "usable_sec": 13,
+   "what": "위에서 본 계산기(화면 숫자 무의미)",
+   "author": "PNW Production",
+   "page": "https://www.pexels.com/video/a-person-using-a-calculator-8276001/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/27860328.mp4",
+   "id": 27860328,
+   "start": 0,
+   "usable_sec": 8,
+   "what": "서류에 글씨 쓰는 손(글자 안 읽힘)",
+   "author": "Thanh-Thang Phan",
+   "page": "https://www.pexels.com/video/close-up-of-a-person-writing-on-paper-27860328/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/5940883.mp4",
+   "id": 5940883,
+   "start": 0,
+   "usable_sec": 13,
+   "what": "가을 공원 길을 걷는 두 사람 뒷모습(멀리)",
+   "author": "Maksim Goncharenok",
+   "page": "https://www.pexels.com/video/back-view-young-woman-and-man-walking-in-park-5940883/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/6300531.mp4",
+   "id": 6300531,
+   "start": 0,
+   "usable_sec": 10,
+   "what": "공원을 팔짱 끼고 걷는 부부 뒷모습",
+   "author": "Kampus Production",
+   "page": "https://www.pexels.com/video/couple-walking-on-park-6300531/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/6300524.mp4",
+   "id": 6300524,
+   "start": 0,
+   "usable_sec": 11,
+   "what": "공원 부부 뒷모습 가까이",
+   "author": "Kampus Production",
+   "page": "https://www.pexels.com/video/couple-walking-at-the-park-6300524/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/15161525.mp4",
+   "id": 15161525,
+   "start": 0,
+   "usable_sec": 15,
+   "what": "밤 빗방울 맺힌 유리창, 흐린 불빛",
+   "author": "Phil Desforges",
+   "page": "https://www.pexels.com/video/raindrops-flowing-on-glass-15161525/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/5930874.mp4",
+   "id": 5930874,
+   "start": 0,
+   "usable_sec": 25,
+   "what": "빗방울 맺힌 유리창·흐린 하늘",
+   "author": "Brett Sayles",
+   "page": "https://www.pexels.com/video/close-up-view-of-raindrops-and-lightning-on-a-glass-window-5930874/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/4458918.mp4",
+   "id": 4458918,
+   "start": 0,
+   "usable_sec": 7,
+   "what": "비 오는 밤 창 가로등(0~7초만 — 뒤쪽 작은 간판 있음)",
+   "author": "Imeel Bagdisar",
+   "page": "https://www.pexels.com/video/rainy-nights-4458918/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/38783512.mp4",
+   "id": 38783512,
+   "start": 0,
+   "usable_sec": 21,
+   "what": "초록 봉 차트 모니터(글자 없음, 내리다 오름)",
+   "author": "Rafael Minguet Delgado",
+   "page": "https://www.pexels.com/video/dynamic-forex-trading-chart-displayed-at-night-38783512/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/8087771.mp4",
+   "id": 8087771,
+   "start": 0,
+   "usable_sec": 20,
+   "what": "어두운 방 창가에 선 남자 실루엣(얼굴 안 보임)",
+   "author": "Yaroslav Shuraev",
+   "page": "https://www.pexels.com/video/elderly-man-looking-out-the-window-8087771/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/12033695.mp4",
+   "id": 12033695,
+   "start": 0,
+   "usable_sec": 11,
+   "what": "유리병에 동전을 넣는 손",
+   "author": "Towfiqu barbhuiya",
+   "page": "https://www.pexels.com/video/pulling-coins-out-of-jar-12033695/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/34282980.mp4",
+   "id": 34282980,
+   "start": 0,
+   "usable_sec": 9,
+   "what": "유리병에 동전이 떨어짐(흰 배경)",
+   "author": "Just For Music And Film",
+   "page": "https://www.pexels.com/video/euro-coins-falling-into-glass-jar-for-savings-34282980/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/31602655.mp4",
+   "id": 31602655,
+   "start": 0,
+   "usable_sec": 8,
+   "what": "빈 유리병에 동전 몇 개(흰 배경)",
+   "author": "Just For Music And Film",
+   "page": "https://www.pexels.com/video/coins-dropping-into-clear-glass-jar-31602655/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/5562942.mp4",
+   "id": 5562942,
+   "start": 0,
+   "usable_sec": 40,
+   "what": "도시 위 해 뜨는 하늘 타임랩스",
+   "author": "Daniel Qura",
+   "page": "https://www.pexels.com/video/time-lapse-video-of-the-sky-5562942/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/36282124.mp4",
+   "id": 36282124,
+   "start": 0,
+   "usable_sec": 58,
+   "what": "낮에서 밤으로 가는 도시 전경 타임랩스",
+   "author": "Ben Kyselka",
+   "page": "https://www.pexels.com/video/brno-city-timelapse-capturing-day-to-night-36282124/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/12412380.mp4",
+   "id": 12412380,
+   "start": 0,
+   "usable_sec": 12,
+   "what": "빈 지갑을 펼친 두 손",
+   "author": "Towfiqu barbhuiya",
+   "page": "https://www.pexels.com/video/hands-with-empty-wallet-12412380/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/11099870.mp4",
+   "id": 11099870,
+   "start": 0,
+   "usable_sec": 51,
+   "what": "빈 지갑을 열어 보는 손(얼굴 없음)",
+   "author": "Towfiqu barbhuiya",
+   "page": "https://www.pexels.com/video/close-up-view-of-empty-wallet-11099870/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/16747050.mp4",
+   "id": 16747050,
+   "start": 0,
+   "usable_sec": 11,
+   "what": "소파에서 빈 지갑을 보는 사람(얼굴 안 보임)",
+   "author": "Cameron Gawn",
+   "page": "https://www.pexels.com/video/a-man-sitting-on-a-sofa-and-looking-at-his-empty-wallet-16747050/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/7606651.mp4",
+   "id": 7606651,
+   "start": 0,
+   "usable_sec": 16,
+   "what": "촛불·와인잔·지구본 조명 식탁",
+   "author": "Marina Leonova",
+   "page": "https://www.pexels.com/video/preparing-the-dining-table-foe-dinner-7606651/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/6263185.mp4",
+   "id": 6263185,
+   "start": 0,
+   "usable_sec": 42,
+   "what": "해 드는 창가 거실(사람 작게)",
+   "author": "cottonbro studio",
+   "page": "https://www.pexels.com/video/man-drinking-tea-and-watching-through-the-windows-6263185/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/6785745.mp4",
+   "id": 6785745,
+   "start": 0,
+   "usable_sec": 21,
+   "what": "카페 탁자에서 손 잡은 노부부(몸통·손만)",
+   "author": "Marcus Aurelius",
+   "page": "https://www.pexels.com/video/couple-holding-each-other-s-hands-6785745/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/6785719.mp4",
+   "id": 6785719,
+   "start": 0,
+   "usable_sec": 27,
+   "what": "카페 탁자 노부부 손 잡음(손만)",
+   "author": "Marcus Aurelius",
+   "page": "https://www.pexels.com/video/couple-holding-each-other-s-hands-6785719/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/5642998.mp4",
+   "id": 5642998,
+   "start": 0,
+   "usable_sec": 7,
+   "what": "테이블 위 커피잔과 노인 손",
+   "author": "RDNE Stock project",
+   "page": "https://www.pexels.com/video/customers-in-an-outdoor-restaurant-5642998/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/6651088.mp4",
+   "id": 6651088,
+   "start": 0,
+   "usable_sec": 8,
+   "what": "넘기는 책 페이지, 흐린 흰 옷",
+   "author": "https://kaboompics.com/",
+   "page": "https://www.pexels.com/video/person-flipping-through-book-6651088/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/6219901.mp4",
+   "id": 6219901,
+   "start": 0,
+   "usable_sec": 39,
+   "what": "흰 책 페이지를 넘기는 손",
+   "author": "Monstera Production",
+   "page": "https://www.pexels.com/video/person-browsing-a-book-6219901/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/c2/7118320.mp4",
+   "id": 7118320,
+   "start": 0,
+   "usable_sec": 15,
+   "what": "탁자 위 동전과 유리병을 든 아이 손",
+   "author": "cottonbro studio",
+   "page": "https://www.pexels.com/video/kid-putting-the-coins-to-the-glass-jar-7118320/",
+   "license": "https://www.pexels.com/license/"
+  }
+ ],
+ "scenes": {
+  "0": {
+   "file": "bg/c2/6326929.mp4",
+   "id": 6326929,
+   "start": 0,
+   "what": "빨간 탁자 위 손이 지폐 뭉치를 세고 옆에 공책·동전(얼굴 없음)"
+  },
+  "1": {
+   "file": "bg/c2/6326928.mp4",
+   "id": 6326928,
+   "start": 0,
+   "what": "탁자 위 동전·지폐 옆 공책(손만)"
+  },
+  "2": {
+   "file": "bg/c2/7490517.mp4",
+   "id": 7490517,
+   "start": 0,
+   "what": "계산기를 누르는 손과 공책"
+  },
+  "3": {
+   "file": "bg/c2/16846101.mp4",
+   "id": 16846101,
+   "start": 0,
+   "what": "손으로 동전·지폐를 세는 장면(손만)"
+  },
+  "4": {
+   "file": "bg/c2/6963484.mp4",
+   "id": 6963484,
+   "start": 0,
+   "what": "계산기 자판 위 손 가까이"
+  },
+  "5": {
+   "file": "bg/c2/27860328.mp4",
+   "id": 27860328,
+   "start": 0,
+   "what": "서류에 글씨 쓰는 손(글자 안 읽힘)"
+  },
+  "6": {
+   "file": "bg/c2/7593891.mp4",
+   "id": 7593891,
+   "start": 0,
+   "what": "책상 위 계산기·서류·공책(손만)"
+  },
+  "7": {
+   "file": "bg/c2/8276001.mp4",
+   "id": 8276001,
+   "start": 0,
+   "what": "위에서 본 계산기(화면 숫자 무의미)"
+  },
+  "8": {
+   "file": "bg/c2/5940883.mp4",
+   "id": 5940883,
+   "start": 0,
+   "what": "가을 공원 길을 걷는 두 사람 뒷모습(멀리)"
+  },
+  "9": {
+   "file": "bg/c2/7490517.mp4",
+   "id": 7490517,
+   "start": 4,
+   "what": "계산기를 누르는 손과 공책"
+  },
+  "10": {
+   "file": "bg/c2/15161525.mp4",
+   "id": 15161525,
+   "start": 0,
+   "what": "밤 빗방울 맺힌 유리창, 흐린 불빛"
+  },
+  "11": {
+   "file": "bg/c2/38783512.mp4",
+   "id": 38783512,
+   "start": 0,
+   "what": "초록 봉 차트 모니터(글자 없음, 내리다 오름)"
+  },
+  "12": {
+   "file": "bg/c2/5930874.mp4",
+   "id": 5930874,
+   "start": 0,
+   "what": "빗방울 맺힌 유리창·흐린 하늘"
+  },
+  "13": {
+   "file": "bg/c2/8087771.mp4",
+   "id": 8087771,
+   "start": 0,
+   "what": "어두운 방 창가에 선 남자 실루엣(얼굴 안 보임)"
+  },
+  "14": {
+   "file": "bg/c2/12033695.mp4",
+   "id": 12033695,
+   "start": 0,
+   "what": "유리병에 동전을 넣는 손"
+  },
+  "15": {
+   "file": "bg/c2/5562942.mp4",
+   "id": 5562942,
+   "start": 0,
+   "what": "도시 위 해 뜨는 하늘 타임랩스"
+  },
+  "16": {
+   "file": "bg/c2/31602655.mp4",
+   "id": 31602655,
+   "start": 0,
+   "what": "빈 유리병에 동전 몇 개(흰 배경)"
+  },
+  "17": {
+   "file": "bg/c2/36282124.mp4",
+   "id": 36282124,
+   "start": 0,
+   "what": "낮에서 밤으로 가는 도시 전경 타임랩스"
+  },
+  "18": {
+   "file": "bg/c2/6300531.mp4",
+   "id": 6300531,
+   "start": 0,
+   "what": "공원을 팔짱 끼고 걷는 부부 뒷모습"
+  },
+  "19": {
+   "file": "bg/c2/8087771.mp4",
+   "id": 8087771,
+   "start": 8,
+   "what": "어두운 방 창가에 선 남자 실루엣(얼굴 안 보임)"
+  },
+  "20": {
+   "file": "bg/c2/34282980.mp4",
+   "id": 34282980,
+   "start": 0,
+   "what": "유리병에 동전이 떨어짐(흰 배경)"
+  },
+  "21": {
+   "file": "bg/c2/4458918.mp4",
+   "id": 4458918,
+   "start": 0,
+   "what": "비 오는 밤 창 가로등(0~7초만 — 뒤쪽 작은 간판 있음)"
+  },
+  "22": {
+   "file": "bg/c2/38783512.mp4",
+   "id": 38783512,
+   "start": 10,
+   "what": "초록 봉 차트 모니터(글자 없음, 내리다 오름)"
+  },
+  "23": {
+   "file": "bg/c2/12412380.mp4",
+   "id": 12412380,
+   "start": 0,
+   "what": "빈 지갑을 펼친 두 손"
+  },
+  "24": {
+   "file": "bg/c2/5562942.mp4",
+   "id": 5562942,
+   "start": 15,
+   "what": "도시 위 해 뜨는 하늘 타임랩스"
+  },
+  "25": {
+   "file": "bg/c2/11099870.mp4",
+   "id": 11099870,
+   "start": 0,
+   "what": "빈 지갑을 열어 보는 손(얼굴 없음)"
+  },
+  "26": {
+   "file": "bg/c2/6300524.mp4",
+   "id": 6300524,
+   "start": 0,
+   "what": "공원 부부 뒷모습 가까이"
+  },
+  "27": {
+   "file": "bg/c2/7606651.mp4",
+   "id": 7606651,
+   "start": 0,
+   "what": "촛불·와인잔·지구본 조명 식탁"
+  },
+  "28": {
+   "file": "bg/c2/12412380.mp4",
+   "id": 12412380,
+   "start": 6,
+   "what": "빈 지갑을 펼친 두 손"
+  },
+  "29": {
+   "file": "bg/c2/16747050.mp4",
+   "id": 16747050,
+   "start": 0,
+   "what": "소파에서 빈 지갑을 보는 사람(얼굴 안 보임)"
+  },
+  "30": {
+   "file": "bg/c2/8087771.mp4",
+   "id": 8087771,
+   "start": 13,
+   "what": "어두운 방 창가에 선 남자 실루엣(얼굴 안 보임)"
+  },
+  "31": {
+   "file": "bg/c2/15161525.mp4",
+   "id": 15161525,
+   "start": 7,
+   "what": "밤 빗방울 맺힌 유리창, 흐린 불빛"
+  },
+  "32": {
+   "file": "bg/c2/6326929.mp4",
+   "id": 6326929,
+   "start": 10,
+   "what": "빨간 탁자 위 손이 지폐 뭉치를 세고 옆에 공책·동전(얼굴 없음)"
+  },
+  "33": {
+   "file": "bg/c2/36282124.mp4",
+   "id": 36282124,
+   "start": 20,
+   "what": "낮에서 밤으로 가는 도시 전경 타임랩스"
+  },
+  "34": {
+   "file": "bg/c2/6785745.mp4",
+   "id": 6785745,
+   "start": 0,
+   "what": "카페 탁자에서 손 잡은 노부부(몸통·손만)"
+  },
+  "35": {
+   "file": "bg/c2/6219901.mp4",
+   "id": 6219901,
+   "start": 0,
+   "what": "흰 책 페이지를 넘기는 손"
+  },
+  "36": {
+   "file": "bg/c2/6651088.mp4",
+   "id": 6651088,
+   "start": 0,
+   "what": "넘기는 책 페이지, 흐린 흰 옷"
+  },
+  "37": {
+   "file": "bg/c2/7118320.mp4",
+   "id": 7118320,
+   "start": 0,
+   "what": "탁자 위 동전과 유리병을 든 아이 손"
+  },
+  "38": {
+   "file": "bg/c2/6785719.mp4",
+   "id": 6785719,
+   "start": 10,
+   "what": "카페 탁자 노부부 손 잡음(손만)"
+  },
+  "39": {
+   "file": "bg/c2/7593891.mp4",
+   "id": 7593891,
+   "start": 3,
+   "what": "책상 위 계산기·서류·공책(손만)"
+  },
+  "40": {
+   "file": "bg/c2/5642998.mp4",
+   "id": 5642998,
+   "start": 0,
+   "what": "테이블 위 커피잔과 노인 손"
+  }
+ },
+ "pool_by_theme": {
+  "돈 세기·통장": [
+   6326929,
+   6326928,
+   16846101,
+   12033695,
+   34282980,
+   31602655,
+   7118320
+  ],
+  "계산": [
+   7490517,
+   6963484,
+   7593891,
+   8276001,
+   27860328
+  ],
+  "하락·불안": [
+   15161525,
+   5930874,
+   4458918,
+   38783512,
+   8087771,
+   16747050
+  ],
+  "빈 지갑·바닥": [
+   12412380,
+   11099870,
+   16747050
+  ],
+  "산책·노후": [
+   5940883,
+   6300531,
+   6300524,
+   6785745,
+   6785719,
+   5642998
+  ],
+  "도시·시간": [
+   5562942,
+   36282124
+  ],
+  "달력·넘김": [
+   6219901,
+   6651088
+  ]
+ }
+}

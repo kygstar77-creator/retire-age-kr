@@ -2227,3 +2227,4 @@
 2026-10-16 22:33 · firemap-video-producer · C-2·T-1 meta desc 채움(desc_tpl+챕터) — gate KeyError 풀어 남은 막힘을 보이게
 2026-10-16 23:17 · firemap-write-b · 22:40 칸 새 편 bpcut1016(기초연금 국민연금 연계감액, 누리집 2026 산정표·기초연금법 5~8조·시행령 10조) · 비축 카페 0, 오늘 연금 글(수령나이·퇴직소득세·연금저축)과 겹치지 않는 연금 주제 중 수요 400/월
 2026-10-16 23:31 · firemap-write-b · bpcut1016 카페 299 발행·verify OK, slots 22:40 published · 오늘 카페 12칸 모두 채움 · 이유: 칸 비우기 금지, 관문 통과
+2026-10-16 23:41 · firemap-visual-designer · C-2 배경 실사 41장면 bg_plan.json 완료(영상 32개, c2 폴더) · 이유: 영상 디자인 총괄 지시, 기한 10/18 18:00 전, H-2 남음

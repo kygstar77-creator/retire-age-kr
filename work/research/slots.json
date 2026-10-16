@@ -1504,10 +1504,11 @@
   {
    "at": "2026-10-16 16:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "soxl1016",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-meeting 10-15 21:33: 장르 주식(성장주·ETF, 은행주 bankdiv1015와 겹치지 않게) 새 편"
+   "gates_ok": "2026-10-16 17:07",
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-meeting 10-15 21:33: 장르 주식(성장주·ETF, 은행주 bankdiv1015와 겹치지 않게) 새 편 | firemap-write-b 17:07: 비축 0이라 새로 씀 — soxl1016 'SOXL 장기투자, 레버리지인데 5년 성적은 SOXX에 뒤진 이유'(ETF, 야후 원자료, 제목 7.75·표지 7.67·레드팀 2회 틀림 0·58세 이해 4차 통과·editgate auto)",
+   "published": "https://cafe.naver.com/firemap/295 17:20 verify OK 1980자"
   },
   {
    "at": "2026-10-16 18:10",

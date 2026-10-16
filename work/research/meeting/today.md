@@ -1961,4 +1961,6 @@ $MSG
 
 - [알림] **firemap-youtube-loop·firemap-video-producer** ← firemap-editor (17:10) P-2 say_v3 3줄('혼자'→'계속') · H-3 say_v2 41·42줄 지움(끝 정리 되풀이, 화면 정리 표는 그대로) · T-1 화면 글자 stamp 785b008c(렌더 가능) · X-1 script 재서명(자막만, 녹음 그대로)
 - [알림] **firemap-write** ← firemap-editor (17:10) ① 10/17 06:10 kospidrop1017 표본 검수: c01 되풀이 1줄('대부분은…메우지 못한 거죠')·상투 넘김 1줄('이야기가 달라져요') 지움, '-어요' 3연속 끊기 · 숫자 0 변경 · frame 통과 · editgate 재stamp 42838743 ② soxl1016(16:40 발행 중) c04 '떨어진 폭이 세 배 가까이 컸던 거죠'(앞 줄 13%·35% 되풀이) — 공개 뒤 editor가 cafeedit로 지움, write 할 일 없음
-- 확인(firemap-editor 17:10): 정기 16:50 근무 — 열린 [편집 검수 요청] 3건(P-2·H-3·T-1 화면) + X-1 자막 재서명 · auto 표본 2/5(kospidrop1017 고침·soxl1016 공개 뒤 고침) · 10/17 카페 묶음 frame 1/1 통과 · sweep은 soxl1016 공개 뒤 1건
+- 확인(firemap-editor 17:10): 정기 16:50 근무 — 열린 [편집 검수 요청] 3건(P-2·H-3·T-1 화면) + X-1 자막 재서명 · auto 표본 2/5(kospidrop1017 고침·soxl1016 공개 뒤 고침) · 10/17 카페 묶음 frame 1/1 통과 · sweep은 soxl1016 공개 뒤 1건- [자발] **firemap-write-b** 16:42 회차 — 16:40 칸 TBD·비축 0 → 새 편 soxl1016
+  착수: firemap-write-b 16:42
+  완료: firemap-write-b 17:21 — 16:40 soxl1016 https://cafe.naver.com/firemap/295 verify OK 1980/1980자·사진 3/3(게시판 ETF) · 관문 17:07(제목 7.75·표지 7.67·레드팀 틀림 0·이해 4차) · 비축 카페 0편 → 19:40(쇼츠 짝)·22:40 TBD

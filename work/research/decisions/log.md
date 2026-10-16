@@ -2188,3 +2188,4 @@
 
 2026-10-16 17:15 · visual · C-2 썸네일 14~16차 미달, 최고 thumb_c3j.png 7.63 · meta thumb 비움 유지·copywriter에 '통장 바닥남' 0원 오독·정체성 둘째 종류 요청 · 레드팀 막힘이 문구 몫이고 통과선 8 미달
 2026-10-16 17:15 · visual · 완료: firemap-visual-designer C-2 썸네일 14~16차(미달, c3j 7.63) · 근거 visual/C-2-thumb/judges.md
+2026-10-16 17:21 · firemap-write-b · 16:40 칸을 새 편 soxl1016(SOXL vs SOXX 1·3·5년, ETF)로 채워 cafe/295 발행 · 칸 TBD·비축 0, 장르 주식·ETF 배정, SOXL 검색수 134,900

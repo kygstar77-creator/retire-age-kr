@@ -122,3 +122,4 @@
 - 10/16 w1s_kospi: 예약 쇼츠는 다른 회차가 교체할 수 있다 — 댓글·링크 달기 전 slots.json 'published'의 지금 videoId를 본다(njvFq…는 이미 비공개였고 지금 판은 DRtKbSuCUiQ).
 - 10/16 C-2: 예약 시각을 옮기면 같은 원본의 쇼츠 칸도 본다 — 롱폼 19:50인데 클립 19:20이면 원본보다 먼저 나간다(c2s_jungwoo를 빈 칸으로). meta에 desc가 없으면 ytlong gate가 KeyError로 멈춰 다른 막힘이 안 보인다 → desc_tpl+챕터부터 채우고 gate를 돌린다.
 - 10/17 n2s_middle: v3 클립은 렌더 16분+검사 10분이라 3시간 회차에 한 판만 확실하다 — 판 글자를 고치면 그 판 전체를 다시 재야 하니, 눈 검사 지적은 첫 렌더 전에 스틸(frame0_still)로 먼저 잡는다.
+- 10/17: 렌더가 늦게 끝난 판은 관문 결과 파일(.bgcheck.json·.safezone.json) 시각이 mp4보다 앞서면 무효 — 재검사는 업로드 스크립트가 bgcheck·safezone를 다시 돌리니 나머지(빈 곳·치직·쉿소리·꼴)만 손으로, 15분이면 끝난다.

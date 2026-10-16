@@ -625,3 +625,5 @@ mid·bot 칸에 들어앉아 text_mid 가 0.0884 → 0.2005 로 튄다. thumbsta
 - 2026-09-29 17시 improve: 위 2026-09-27 13시 "Nasdaq 경제지표 캘린더가 전날 지표를 준다" — **해결**. 재측정으로 맞음을 확인하고 planner.market_today가 date=내일+1로 부르게 고침(이 API를 쓰는 곳은 planner 하나). rules.json 자료조사 규칙 추가. 실적 캘린더는 밀리지 않음(asOf=요청일).
 - 2026-09-29 17시 improve: **한국부동산원 R-ONE 오픈API 인증키** — 무엇을 위해: 편성표(planner.py)와 B8·K11 부동산 시황에 주간 아파트 매매·전세가격지수(구별)를 넣으려고. 무료. 절차: reb.or.kr/r-one → 회원가입 → 오픈API 인증키 신청 → 키를 Documents\rone_key.txt 에 저장. 키 없이 부르면 견본 5줄만 온다(실측).
 - 2026-10-16 firemap-write: 공공데이터포털 '한국부동산원_청약홈 분양정보 조회 서비스'(ApplyhomeInfoDetailSvc) 활용신청 — 지금 키로 401. 청약 일정(월 6,090)·아파트 분양(7,380) 글에 1차 자료로 씀. 사장님 계정 data.go.kr에서 신청 버튼만(PC·휴대폰 다 됨)
+
+- 2026-10-17 07:45 firemap-write-b: work/naverpost.py private_video_links()의 `f[:1]=='c'`를 `re.fullmatch(r'c\d\d\.txt', f)`로 — check_gemini.txt 속 옛 영상 주소로 공개된 짝 글(h1gapcafe1017)이 보류됨. 자동 회차는 관문 수정이 권한에 막힘, 사람 확인 필요

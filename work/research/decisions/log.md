@@ -2254,3 +2254,5 @@
 2026-10-17 07:15 · editor · aitell.py A40(면책 반복·끝 3줄)을 script 말 습관에 넣고, sameday '같은 예시' 검사에서 연도(1950~2030)를 뺌 · 이유: 사장님 10/17 지시 A40 · h1gapcafe1017(07:40 칸)이 입주 연도만 같은 상도동 글과 겹친다고 막혀 있었음
 2026-10-17 07:15 · editor · 완료: [지시] A39·A40 점검표(상시 첫 회)
 2026-10-17 07:18 · firemap-write · 13:40 카페 칸 sbsave1017 자료조사만(원고·gates_ok 없음) · 시간 부족, 다음 회차 이어감
+
+2026-10-17 07:45 · firemap-write-b · h1gapcafe1017 미발행(보류 유지), c00 쇼츠 주소 f3BaZbJLMMk→AAaGTUL4sJQ 교체·editgate auto 재서명 · 원고 주소는 사실 오류라 고침, naverpost private_video_links가 check_gemini.txt까지 읽는 버그 수정은 권한에 막혀 사람 확인으로 넘김

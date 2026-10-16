@@ -13,6 +13,17 @@
     "url": "https://cafe.naver.com/firemap/300"
    },
    "note": "06:10 칸 kospidrop1017 발행 · verify OK 1229/1229자·사진 3/3 · 블로그는 02~07시 카페만 · 다음 칸: 15:10 sbdep1017 '저축은행 예금 금리, 1억을 일 년 맡기면 은행보다 이자 얼마 더 받을까?' 관문 통과(금감원 finlife 9월 공시 저축은행 79곳·은행 18곳 원자료, 자료조사 출처 7·오늘 찾은 것 6) · 교차검증(crosscheck Gemini): 사실 4건 중 반영 3·유지 1(파이낸셜뉴스 원문 인과 확인), 말투 15건 중 반영 13 · 레드팀 2회 계산 일치·틀림 2→반영 · 58세 이해 2차 통과 · 제목 7.33·표지 8.0 · editgate auto · 개선: editgate CALC '퇴직소득세' 제목이 퇴직금 계산기로 가지 않게(회의 10/16 지시 ①), 예금·이자 계산기는 toolPages.js에 없음 기록(②)"
+  },
+  {
+   "hour": 7,
+   "ts": "07:45",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "고덕동 전세 사는 사람이 헬리오시티 집을 사려면 얼마가 더 필요할까?",
+    "url": null
+   },
+   "note": "07:40 칸 h1gapcafe1017 미발행 — naverpost pending 보류 '아직 공개 안 된 영상 링크(f3BaZbJLMMk)'. 원인: c00 쇼츠 주소가 교체 전 private 영상이었다 → 공개된 AAaGTUL4sJQ(API public 확인 07:43)로 고치고 aitell 1.6·readcheck 0·editgate auto 재서명. 그래도 보류: private_video_links()가 f[:1]=='c' 조건이라 check_gemini.txt(검증 기록 속 옛 주소)까지 훑는다. 본문 조각 c\\d\\d.txt만 보게 고치려 했으나 자동 권한 판단이 관문 수정을 막음 — 사람/편집자 확인 필요. 개선: 시도했으나 막힘"
   }
  ]
 }

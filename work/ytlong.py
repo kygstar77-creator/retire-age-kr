@@ -141,6 +141,9 @@ def gate(ep):
     if m['video'] and os.path.isfile(vp):
         a_, sr_ = clickscan.load(vp); ok_ = m.get('click_ok', [])   # 들어서 말소리로 확인한 자리(초)만 meta.json click_ok에 — 누가 어떻게 들었는지 click_ok_note에
         fb = [b for b in clickscan.bursts(a_, sr_) if not any(abs(b[0] / sr_ - x) < 0.3 for x in ok_)]
+        # 10/17 사장님 "롱폼도 갈수록 수페tv처럼 알차게 만드는 게 아니라 대충 하는 거 같애" — 실측: 우리 최근 롱폼 2:15~6:41,
+        #   수페TV 최근 30편 길이 중앙 17.1분·월급쟁이부자들 17.7분. 8분 아래 롱폼은 못 올린다.
+        if len(a_) / sr_ < 8 * 60: bad.append(f'롱폼 길이 {len(a_)/sr_/60:.1f}분 — 8분 이상(경쟁 중앙 17분). research.md 질문·예외·우리만 숫자를 대본에 더 담는다')
         if fb: bad.append('완성 영상 치직 의심 ' + ', '.join(f'{s/sr_:.1f}초' for s, _, _ in fb[:8]) + ' — 그 자리 1초를 들어 보고(제미나이 듣기 또는 사람) 말소리가 아니면 문장 wav를 고쳐 다시 렌더')
     # 목소리 한결같음 — 10/3 22시 사장님 "뒤쪽에 다른 목소리". f0 ±12%·빠르기 1.0·한 날 녹음(lfvoice check 규칙 3·4)
     if os.path.exists(os.path.join(ep, 'voice.json')):

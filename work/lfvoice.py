@@ -56,7 +56,7 @@ def lock(ep):
     return json.load(open(fn, encoding='utf-8'))
 
 MAX_LINES = 100
-CHIRP_MAX_LINES = 150   # 10/11: 100줄은 무료 제미나이 TTS 한 창 때문 — Chirp은 같은 날 한 번에 녹음되므로 150줄
+CHIRP_MAX_LINES = 260   # 10/17 롱폼 8분 이상(사장님 '대충') — Chirp 이번 달 56,270자/상한 50만자라 여유 · 이전: 10/11: 100줄은 무료 제미나이 TTS 한 창 때문 — Chirp은 같은 날 한 번에 녹음되므로 150줄
 is_chirp = lambda cfg: cfg.get('model') == 'chirp3-hd'
 
 def speak(ep, t):

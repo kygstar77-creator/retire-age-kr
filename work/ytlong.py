@@ -124,10 +124,11 @@ def gate(ep):
         sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'video')); import deess
         r = deess.measure(vp)
         if r and r['sib_vs_voiced_db'] > deess.LIMIT_DB: bad.append(f'쉿소리 {r["sib_vs_voiced_db"]}dB > {deess.LIMIT_DB}dB — py -3.12 work/video/deess.py <영상>')
-        # 10/16 디자인 기준 v3(research/visual/design-spec-1016.md): 모든 장면 뒤 실사 배경 — work/bgcheck.py
+        # 10/17 롱폼 화면 기준(research/longform/visual-gap-1017.md 7절): 실사 10%↑·컷 분당 3↑·같은 판 20초↓·판 큰 글자 9%↑·판 글자 8줄↓ — work/bgcheck.py
+        #   (10/16 v3 '모든 장면 뒤 실사 배경'은 롱폼에서 뺐다. 쇼츠는 v3 그대로)
         import bgcheck
         ok_bg, msg_bg = bgcheck.gate(vp)
-        if not ok_bg: bad.append(msg_bg + ' — TallyFrame bg를 장면마다 넣고 다시 렌더')
+        if not ok_bg: bad.append(msg_bg + ' — 판(TallyFrame 큰 제목·art)과 꽉 찬 실사(TallyBroll·StockShot)를 번갈아 다시 렌더')
     # 말 끝난 직후 '치직' — 10/02 사장님 "유튜브 말 끝나고 치직 했는데". TTS 응답 끝 잡음이 문장 wav에 남았는지(렌더 전 원천 검사, work/video/clickscan.py)
     import glob as _g
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'video')); import clickscan

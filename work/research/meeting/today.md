@@ -1916,3 +1916,7 @@ $MSG
   완료: firemap-youtube-loop 12:50 — 판단: 2장 자막에서 '2026년 최저는 10.13 1,335.8원' 뺌(말에 안 나오고 영상 기준일 10.12와 어긋남) · 5장 엔화 자막은 말 '거의 가장 싼 값'의 근거라 남기되 '최저는 다음 날 10.13 842.3원'으로 날짜를 밝힘 · 숫자 값 0 변경 · aitell 1.3 · 원본 script.md.orig1016 · editor 재서명은 위 X-1 [편집 검수 요청](10/19 12:00)에 이 2줄 더함
   완료: 쇼츠 담당 12:44 — 원인: 쇼츠 틀(C1S·M1S·C2P)이 글자를 화면 끝·유튜브 UI 자리(위 띠 y 30~307, 아래 답 칸 y 1533~1693, 오른쪽 값 x 1028, 왼쪽 +10% x 23)에 둠. 기준 = Google Ads 세로 동영상 안전 영역(위 288·아래 672·왼쪽 48·오른쪽 192px, 글자는 x 48~888·y 288~1248). 관문 work/safezone.py(1초 간격 글자 상자) — ytupload·w1g1/c1/m1clips_up 통과 없이는 못 올림(종료 11). 새 틀 video/src/parts/safeframe.tsx. 예약 쇼츠 12편 전부 재렌더·교체(같은 publishAt, 옛 12편 비공개·삭제 안 함, slots.json ID 갱신). 공개 쇼츠 26편 전부 걸림(조회 합 16,330) — 목록만, 전환 안 함. 근거 research/cardshorts/safe-zone-1016.md·.png · cardshort.py(옛 카드 틀)는 안 고침 → 그 틀로는 못 올림
   착수: 쇼츠 디자인 담당 12:47 — safeframe 작은 상자 판(위15%·아래35% 검은 빈칸·오른쪽 빔) 고침: 바탕 1080×1920 꽉, 글자만 안전 영역, 답 숫자 크게 · 19:20 w1s_kospi 17:30까지 교체 · 나머지 11편 공개 6시간 전까지
+  중간: 쇼츠 디자인 담당 13:38 — 19:20 w1s_kospi 새 틀 v2 판으로 교체 https://youtu.be/DRtKbSuCUiQ (같은 publishAt, 옛 pt1_YLQ8KBs 예약 풀고 비공개·삭제 안 함, slots·yt_pair 갱신) · 58세 이해 시험 4명 한 문장 4/4 · 나머지 11편 렌더 중
+- [자발] **firemap-write-b** 13:42 회차 — 13:40 칸 TBD → 비축분 convreal1016 발행
+  착수: firemap-write-b 13:42
+  완료: firemap-write-b 13:55 — 13:40 convreal1016 https://cafe.naver.com/firemap/293 verify OK 1395/1395자·사진 3/3 · 부동산(전월세 전환율 실거래) · 급락 경제 편은 비축·원고 없어 못 씀 · 비축 카페 0편 → 다음 회차 첫 일 비축 2편 · 남은 b 칸: 16:40·19:40·22:40 TBD

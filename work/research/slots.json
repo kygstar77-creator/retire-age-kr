@@ -64,7 +64,16 @@
     "gates_ok": "2026-10-16 07:32"
    }
   ],
-  "cafe": [],
+  "cafe": [
+   {
+    "item": "convreal1016",
+    "pkg": "work/research/convreal1016/pkg",
+    "status": "관문 통과(compare.md 경쟁 5·레드팀 3차 반영·이해 시험 4차 통과·readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck·제목 7·표지 S5 8·editgate auto) · 부동산 · 실거래 전월세 전환율 4.8% · slot.txt 없음(대타 칸에 넣을 때 적음) · 근거 convreal1016/review.md",
+    "by": "firemap-write",
+    "at": "2026-10-16 09:35",
+    "gates_ok": "2026-10-16 09:35"
+   }
+  ],
   "long": [
    {
     "item": "R-1",

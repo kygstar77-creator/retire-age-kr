@@ -1550,10 +1550,11 @@
   {
    "at": "2026-10-16 22:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "bpcut1016",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-meeting 10-15 21:33: 장르 시리즈·연금 새 편"
+   "gates_ok": "2026-10-16 23:19",
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-meeting 10-15 21:33: 장르 시리즈·연금 새 편 | firemap-write-b 23:19: 비축 0이라 새로 씀 — bpcut1016 '기초연금 국민연금 감액, 52만원 넘게 받으면 두 연금 합계는 얼마일까?'(연금, 기초연금 누리집 2026 산정표·기초연금법 5~8조·시행령 10조, 제목 7.33·표지 7.5·레드팀 2회 틀림 0·58세 이해 7차 통과·editgate auto)",
+   "published": "https://cafe.naver.com/firemap/299 23:30 verify OK 1776자"
   },
   {
    "at": "2026-10-17 06:10",
@@ -1778,7 +1779,7 @@
    "item": "r1s_gap",
    "owner": "firemap-video-producer",
    "gates_ok": "2026-10-14 11:28",
-   "published": "예약 2026-10-18T19:20:00+09:00 https://youtu.be/_eJV4g7ZvUA (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 CvKDkAXv7fE 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/CvKDkAXv7fE (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 -nl4KLh-H_g 예약 풀고 비공개 · private+publishAt 10:20Z, 합성 표시 update 응답 True)",
+   "published": "예약 2026-10-18T19:20:00+09:00 https://youtu.be/EqPnT66-76o (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 CvKDkAXv7fE 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/CvKDkAXv7fE (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 -nl4KLh-H_g 예약 풀고 비공개 · private+publishAt 10:20Z, 합성 표시 update 응답 True)",
    "note": "firemap-video-producer 2026-10-14 11:28: R-1 롱폼(G1oI47miUuo) 순위·SCHD−예금 간격 클립, M1S 틀, 새 녹음 0 — 관문 cardshorts/r1s_gap/review.md · 같은 날 07:20 g1s_why(G-1)와 다른 롱폼"
   },
   {
@@ -1795,7 +1796,7 @@
    "item": "TBD",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "yt_pair: r1s_gap(_eJV4g7ZvUA, 19:20 쇼츠) (회의 10/16) · firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대"
+   "note": "yt_pair: r1s_gap(EqPnT66-76o, 19:20 쇼츠) (회의 10/16) · firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대"
   },
   {
    "at": "2026-10-18 22:40",
@@ -1812,7 +1813,7 @@
    "owner": "firemap-video-producer",
    "gates_ok": "2026-10-14 14:52",
    "note": "2026-10-14 14:52: P-1 롱폼(vsL7mojDW7w, 10/16 11:30) 클립 YTAustvbDfI 예약 · 질문 '5년 당기면 몇 살에 따라잡히나' · 같은 날 11:30 롱폼 C-2(주식, 다른 축) · yt_pair: YTAustvbDfI",
-   "published": "예약 2026-10-19T07:20:00+09:00 https://youtu.be/vDccXdJOfo8 (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 vf1wTzxTz9c 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/vf1wTzxTz9c (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 b4405ZoVjAQ 예약 풀고 비공개 · v3 끝 줄 질문 넣은 판 10/14 22:4x, 옛 YTAustvbDfI 예약 풀음) · 이전: https://youtu.be/YTAustvbDfI"
+   "published": "예약 2026-10-19T07:20:00+09:00 https://youtu.be/eCBpXbItH8M (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 vf1wTzxTz9c 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/vf1wTzxTz9c (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 b4405ZoVjAQ 예약 풀고 비공개 · v3 끝 줄 질문 넣은 판 10/14 22:4x, 옛 YTAustvbDfI 예약 풀음) · 이전: https://youtu.be/YTAustvbDfI"
   },
   {
    "at": "2026-10-19 11:30",
@@ -1844,8 +1845,8 @@
    "item": "h1s_walk",
    "owner": "firemap-video-producer",
    "gates_ok": "2026-10-15 02:41",
-   "published": "예약 2026-10-20T07:20:00+09:00 https://youtu.be/thlIsON6S_k (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 8mxO_EiHWck 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/8mxO_EiHWck (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 JEbfJTewk-E 예약 풀고 비공개 · private+publishAt 10/19 22:20Z, 합성 표시 update True)",
-   "note": "firemap-video-producer 2026-10-15 02:41: H-1 롱폼(rVg0pQVo_wk) 고덕동 역 180m vs 640m·평당·학교·마트 클립, M1S pieces, 새 녹음 0 · yt_pair: thlIsON6S_k(10/16 오후 v2 교체, 옛 8mxO_EiHWck) · 그 전 8mxO_EiHWck(10/16 교체, 옛 JEbfJTewk-E) · 짝 카페 글 요청(today.md) · 근거 cardshorts/h1s_walk/review.md"
+   "published": "예약 2026-10-20T07:20:00+09:00 https://youtu.be/2_VqtrqAykQ (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 8mxO_EiHWck 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/8mxO_EiHWck (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 JEbfJTewk-E 예약 풀고 비공개 · private+publishAt 10/19 22:20Z, 합성 표시 update True)",
+   "note": "firemap-video-producer 2026-10-15 02:41: H-1 롱폼(rVg0pQVo_wk) 고덕동 역 180m vs 640m·평당·학교·마트 클립, M1S pieces, 새 녹음 0 · yt_pair: 2_VqtrqAykQ(10/16 오후 v2 교체, 옛 8mxO_EiHWck) · 그 전 8mxO_EiHWck(10/16 교체, 옛 JEbfJTewk-E) · 짝 카페 글 요청(today.md) · 근거 cardshorts/h1s_walk/review.md"
   },
   {
    "at": "2026-10-20 11:30",
@@ -1861,7 +1862,7 @@
    "item": "d1s_pension",
    "owner": "firemap-video-producer",
    "gates_ok": "2026-10-14 23:25",
-   "published": "예약 2026-10-20T19:20:00+09:00 https://youtu.be/GWLDnVs36ng (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 csuUBZBczxE 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/csuUBZBczxE (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 3yh729bBugI 예약 풀고 비공개 · v3 0초 빈 곳 33.9% 교체판 10/16 10:38, 옛 SW7RAxLiY6g 예약 해제·비공개 보관, 합성 표시 True)",
+   "published": "예약 2026-10-20T19:20:00+09:00 https://youtu.be/ujf3rw86c98 (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 csuUBZBczxE 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/csuUBZBczxE (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 3yh729bBugI 예약 풀고 비공개 · v3 0초 빈 곳 33.9% 교체판 10/16 10:38, 옛 SW7RAxLiY6g 예약 해제·비공개 보관, 합성 표시 True)",
    "note": "firemap-video-producer 2026-10-15 02:41: 비축 d1s_pension(D-1 GMc2Rd1-JYA 연금 건보료 절벽) 업로드 · 같은 날 07:20 h1s_walk(H-1)과 다른 롱폼 · yt_pair: SW7RAxLiY6g · 짝 카페 글 요청(today.md)"
   },
   {
@@ -1898,8 +1899,8 @@
    "owner": "firemap-video-producer",
    "gates_ok": "2026-10-16 04:13",
    "item_pkg": "work/research/cardshorts/g1s_asym",
-   "published": "예약 2026-10-22T07:20:00+09:00 https://youtu.be/JqbwtZiuT_w (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 AZgBJ5Ltdic 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/AZgBJ5Ltdic (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 ZK219BbhJSA 예약 풀고 비공개 · private+publishAt 21일 22:20Z, 합성 표시 update True)",
-   "note": "firemap-video-producer 2026-10-16 04:13: G-1 롱폼(xBTZtRp5lMs) '1월에 산 금 34% 손해, 본전까지 51%(337만원)' 클립, c2person 틀, Pexels 참고 영상, Chirp 새 줄 1(첫 줄) — 관문 cardshorts/g1s_asym/review.md(58세 이해 시험 12차) · 같은 날 19:20은 H-1 h1s_forest · yt_pair: JqbwtZiuT_w(10/16 오후 v2 교체, 옛 AZgBJ5Ltdic) · 그 전 AZgBJ5Ltdic(10/16 교체, 옛 ZK219BbhJSA)(쇼츠 짝 카페 글 10/22 20:10 또는 22:10, firemap-write)"
+   "published": "예약 2026-10-22T07:20:00+09:00 https://youtu.be/dpd6jb3DBtg (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 AZgBJ5Ltdic 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/AZgBJ5Ltdic (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 ZK219BbhJSA 예약 풀고 비공개 · private+publishAt 21일 22:20Z, 합성 표시 update True)",
+   "note": "firemap-video-producer 2026-10-16 04:13: G-1 롱폼(xBTZtRp5lMs) '1월에 산 금 34% 손해, 본전까지 51%(337만원)' 클립, c2person 틀, Pexels 참고 영상, Chirp 새 줄 1(첫 줄) — 관문 cardshorts/g1s_asym/review.md(58세 이해 시험 12차) · 같은 날 19:20은 H-1 h1s_forest · yt_pair: dpd6jb3DBtg(10/16 오후 v2 교체, 옛 AZgBJ5Ltdic) · 그 전 AZgBJ5Ltdic(10/16 교체, 옛 ZK219BbhJSA)(쇼츠 짝 카페 글 10/22 20:10 또는 22:10, firemap-write)"
   },
   {
    "at": "2026-10-22 11:30",

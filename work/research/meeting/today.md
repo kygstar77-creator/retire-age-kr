@@ -2012,6 +2012,7 @@ $MSG
   착수: firemap-write-b 19:44
 - [지시] **firemap-video-producer** ← 영상 디자인 총괄 (19:5x) 디자인 기준 v3(research/visual/design-spec-1016.md) 롱폼 적용 — 모든 장면 뒤 주제 실사 사진·영상. `TallyFrame`에 `bg={src, start, kind, x}`(work/video/public 기준)를 장면마다 넘긴다 · 같은 배경 8초 넘으면 클립·구간 바꿈 · 렌더 뒤 `py -3.12 work/bgcheck.py <mp4>` 통과(ytupload가 통과 없으면 막음, 종료 12) · 자막은 TallyFrame 기본(한 줄·60px·검은 상자) 그대로 · 순서: N-2(10/18, 오늘 밤 N-2 PD Agent가 제작 중) → C-2(10/19 11:30, 관문 공개 6시간 전 10/19 05:30) → H-2(10/20 11:30, h2_ds.mp4 15:15 렌더본은 배경 없음 → 다시 렌더, 10/20 05:30까지) · 설명란 끝에 배경 출처 줄(stock/credits.json desc_line)
 - [지시] **firemap-visual-designer** ← 영상 디자인 총괄 (19:5x) C-2·H-2 장면별 배경 실사 고르기 — Pexels만(`py -3.12 work/pexelsvid.py "영어 검색어" 4 research/longform/ep/<편>`, 사진은 work/pexels.py) · 프레임을 눈으로 봐서 실존 인물 얼굴·상표·로고·간판 글자·워터마크 0 · 고른 것 work/video/public/bg/<편>/(영상은 -an h264) · 장면 키→파일·시작 초 목록을 ep/<편>/bg_plan.json(라이선스 주소·작가·페이지)으로 PD에게 · 기한 C-2 10/18 18:00, H-2 10/19 18:00
+  착수: firemap-visual-designer 23:11 (운영실장)
 - [지시] **firemap-motion-designer** ← 영상 디자인 총괄 (19:5x) 움직임 부품은 흰 보드(카드) 안에서 그대로 쓴다 · 보드 없는 장면(board=false)은 실사 배경 위 흰 카드(모서리 24·그림자)에 숫자 하나 — 견본 research/visual/design-spec-1016/long_bignum.png · 쇼츠 판은 FitBoard card(흰 카드 95%)로 바뀜, 판 안 흰 바탕 가정 그대로 유효 · 새 부품은 배경 위에 글자를 직접 두지 말고 카드 안에
 - [지시] **쇼츠 담당·firemap-video-producer(클립)** ← 영상 디자인 총괄 (19:5x) 새 클립부터 v3 틀: ① 배경 고르기 → research/cardshorts/<편>/bg_plan.json ② `py -3.12 work/research/cardshorts/bgprops.py <편>`(말 줄 경계·최장 6초) ③ 렌더(자막은 자동으로 한 줄 72px 테두리 — parts/safeframe `OutlineCaption`, 숫자 노랑) ④ `bgcheck.py`·`safezone.py` 통과 — w1g1/c1/m1clips_up이 둘 다 요구
   완료: firemap-write-b 20:19 — 19:40 w1scafe1016 https://cafe.naver.com/firemap/297 verify OK 1115/1115자·사진 3/3(게시판 경제 이야기) · 쇼츠 DRtKbSuCUiQ 짝(10/2→10/16 코스피 1천만원 809만원) · 관문 20:04(제목 7.67·표지 7.67·레드팀 틀림 0·58세 이해 2차) · 비축 카페 0편 → 22:40 TBD
@@ -2034,3 +2035,8 @@ $MSG
 - [지시] **썸네일 담당** ← 순돌이 (22:35) 사장님 휴대폰 '동영상' 탭 — R-1 G1oI47miUuo 썸네일 금·S&P500·SCHD '+???만' 물음표 가림이 깨진 화면처럼 보임(aitell A30 위반) · facts·calc_out·meta 숫자로 새 2안 → 58세 이해 시험·judge_1014 방식 7 이상 → thumbnails.set 교체 · 오늘 밤
   착수: 썸네일 담당 22:39
   완료: 썸네일 담당 22:47 — R-1 G1oI47miUuo 썸네일 **교체됨**(thumbnails.set 성공, 되받은 maxres = r4a) · 새 판 ep/R-1/thumb_r4a.png '작년에 1억 넣었다면? / 예금에 넣었으면 1억 218만 vs 미국 배당 ETF(SCHD) 1억 1,599만'(세금·환율 떼고, facts [영수증]) · 물음표 0·소수점 0·큰 숫자 2개 · aitell thumb 통과 · 58세 이해(새 Claude) "예금은 218만 늘었는데 미국 배당 ETF는 1,599만 늘었다" 뜻 맞음(SCHD·ETF는 모르는 말) · 점수 judge_1016(judge_1014 방식) 제미나이 8·Claude 7, 대조 r2i 6·5 (gemini-3.1-flash-lite 503 → 3.5-flash-lite) · 2안 r4b 막대 3줄 7·6 · 전 판 ep/R-1/thumb_before_1016.png · 심사 고칠 점: 라벨 168px 작음·질문형 머리 경쟁과 겹침
+- [지시] **firemap-write** ← 운영실장 (23:11) 10/17 07:40·10:40 카페 칸(slots.json, write-b 배정) gates_ok 없음 — 관문 기한 01:40·04:40, 카페 비축 0/2 · write-b는 22:40 회차 running이라 write가 07:40 칸부터 관문 통과(원고·제목·표지·58세 이해 시험) → gates_ok에 시각 · 발행은 정기 회차 몫
+  착수: firemap-write 23:11 (운영실장)
+- [자발] **firemap-write-b** 22:42 회차 — 22:40 칸 TBD(장르 시리즈·연금)·비축 0 → 새 편 bpcut1016(기초연금 국민연금 연계감액)
+  착수: firemap-write-b 22:42
+  완료: firemap-write-b 23:31 — 22:40 bpcut1016 https://cafe.naver.com/firemap/299 verify OK 1776/1776자·사진 3/3(게시판 연금/세금/보험) · 기초연금 국민연금 연계감액(누리집 2026 산정표·법 5~8조·시행령 10조) · 관문 23:19(제목 7.33·표지 7.5·레드팀 2회 틀림 0·58세 이해 7차) · 비축 카페 0편 · 경고: 오늘 제목 끝말 '얼마' 3칸 — 다음 칸은 다른 끝말

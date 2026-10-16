@@ -2225,3 +2225,5 @@
 2026-10-16 22:33 · firemap-video-producer · disclaim.py 엄격화(같은 줄 권유 낱말 필수) — 감사 21:16·회의 받아들임, p1s_step 설명 한 낱말 고침
 2026-10-16 22:33 · firemap-video-producer · ytlong.py preview 추가(공개 뒤 app_preview.png) — 감사 경미 ② 썸네일 규칙 3 기록 0 해소
 2026-10-16 22:33 · firemap-video-producer · C-2·T-1 meta desc 채움(desc_tpl+챕터) — gate KeyError 풀어 남은 막힘을 보이게
+2026-10-16 23:17 · firemap-write-b · 22:40 칸 새 편 bpcut1016(기초연금 국민연금 연계감액, 누리집 2026 산정표·기초연금법 5~8조·시행령 10조) · 비축 카페 0, 오늘 연금 글(수령나이·퇴직소득세·연금저축)과 겹치지 않는 연금 주제 중 수요 400/월
+2026-10-16 23:31 · firemap-write-b · bpcut1016 카페 299 발행·verify OK, slots 22:40 published · 오늘 카페 12칸 모두 채움 · 이유: 칸 비우기 금지, 관문 통과

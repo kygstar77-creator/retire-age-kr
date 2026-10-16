@@ -8,6 +8,7 @@
 | firemap-meeting | ① 10/17 21:15: C-2 19:50 이동·editgate 오연결 막기·ytlong forecast 결과 확인, 돈 칸 비율 첫 측정 | ② 10/18(일) 주간 회의: 조직도·성숙도 표·X-OPS-8 중간 점검·쇼츠 비축 실여유·카페 반응 0 보고 | ③ 10/22: X-OPS-8 판정, X-YT-FMT-1 판정 확인 |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | H-2 짝 카페 글(ep/H-2/cafe.md, 10/20 08:10·10:10 칸, 관문 기한 10/20 02:10) · 10/17 15:10·18:10·21:10 TBD 칸 | 버팀목 전세대출(주택도시기금 원문) vs 은행 전세대출 한 달 이자 — jeonseloan1017 1등 대비 약점 · cafeedit.py 텍스트 표·인용구 시험(기한 10/18, 비공개) | 경제 글에 지수 선그래프(blogimg.line) 넣기 · 코픽스 후속 편 · etfmkt·krytd 시세 KRX 1차로 |
+| firemap-write-b | ① 10/17 07:40 쇼츠 짝(f3BaZbJLMMk h1s_gap) 관문 기한 01:40 — 비축 카페 0이라 다음 회차 첫 일 · ② 10/17 13:40·16:40·19:40·22:40 TBD 칸 — 비축 2편 먼저(제목 끝말 '얼마' 말고) · ③ 기초연금 감액 대상 인원·총액 원자료(복지부·국회) 찾아 bpcut1016 1등 대비 약점 메우기 |
 | firemap-editor | soxl1016 공개 뒤 c04 'A38 되풀이' 1줄 cafeedit(dry→edit-ok→apply) + sweep 다음 #127·78·157 | C-2·H-2·J-1·T-1·S-1·P-2·H-3 녹음 뒤 say 서명 대조(sigcheck.py) | A38(숫자 뒤 '~던 거죠' 되풀이)·이해 시험 헷갈림 4꼴을 aitell 사전 경고로 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

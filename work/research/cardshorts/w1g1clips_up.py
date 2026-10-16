@@ -97,6 +97,10 @@ def main(name, check_only=False):
     print(msg)
     if ytplaceholder.find(title + '\n' + desc): print('올리지 않는다: 자리표시자', ytplaceholder.find(title + '\n' + desc)); return 7
     mp4 = os.path.join(REPO, up['mp4'])
+    import safezone   # 10/16 사장님 '숏츠는 영상이 왜 이렇게 잘려' — 글자 상자가 유튜브 버튼·제목 밑(위 288·아래 672·왼쪽 48·오른쪽 192px)이나 화면 끝에 있으면 막는다(research/cardshorts/safe-zone-1016.md)
+    ok_sz, msg_sz = safezone.gate(mp4)
+    print(msg_sz)
+    if not ok_sz: print('올리지 않는다: 안전 영역 관문'); return 11
     from googleapiclient.http import MediaFileUpload
     body = {'snippet': {'title': title[:100], 'description': desc[:5000], 'tags': [t.strip() for t in up['tags'].split(',') if t.strip()],
                         'categoryId': '27', 'defaultLanguage': 'ko', 'defaultAudioLanguage': 'ko'},

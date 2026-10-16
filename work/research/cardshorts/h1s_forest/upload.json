@@ -2,7 +2,7 @@
  "name": "h1s_forest",
  "ep": "H-1",
  "from_long": "rVg0pQVo_wk",
- "mp4": "work/video/out/h1s_forest_ds.mp4",
+ "mp4": "work/video/out/h1s_forest_sz_ds.mp4",
  "layout": "c2person",
  "publishAt": "2026-10-22T19:20:00+09:00",
  "use_after": "2026-10-15 11:30 (H-1 롱폼 공개 뒤)",
@@ -12,13 +12,24 @@
  "same_day_pair": "10/22 07:20 미정 — H-1 아닌 롱폼으로 채울 것(10/20·10/21 07:20이 H-1)",
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "RmjfiIlKNeU",
- "uploaded_at": "2026-10-15 23:35:28",
+ "id": "5rh6IK80wD4",
+ "uploaded_at": "2026-10-16 12:40:21",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-22T10:20:00Z",
   "embeddable": true,
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
- }
+ },
+ "v": 2,
+ "replaced": [
+  {
+   "id": "RmjfiIlKNeU",
+   "unscheduled_at": "2026-10-16 12:40:21",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  }
+ ]
 }

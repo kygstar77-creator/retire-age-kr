@@ -12,6 +12,7 @@ import {TallyBars, TallyBar} from './motion/TallyBars';
 import {TallyReceipt, TallyRow} from './motion/TallyReceipt';
 import {TallyTag, TallyCallout} from './motion/TallyMark';
 import {TallyLineChart, lineXY} from './motion/TallyLineChart';
+import {TopBand, AnswerCard, BottomShade, boardBox, capTop, capSize, CAP_H, SZ, Answer} from './parts/safeframe';
 
 type SLine = {n: number; text: string; cap?: string | null; audio: string; frames: number};
 type SScene = {kind: string; label: string; source?: string | null; data: any; lines: SLine[]; frames: number};
@@ -292,27 +293,27 @@ const Caption: React.FC<{s: SScene; first: boolean}> = ({s, first}) => {
   for (let i = 0; i < cs.length; i++) { const a = st[k] + (acc / tot) * speak; if (f >= a) { j = i; from = a; } acc += cs[i].replace(/\s/g, '').length; }
   const o = first && k === 0 && j === 0 ? 1 : interpolate(f, [from, from + 3], [0, 1], CL);
   return (
-    <div style={{height: 196, boxSizing: 'border-box', background: T.ink, padding: '14px 28px', borderRadius: 24, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-      <div style={{...F, fontWeight: 700, fontSize: 76, lineHeight: 1.2, color: '#fff', textAlign: 'center', wordBreak: 'keep-all', letterSpacing: -1, opacity: 0.5 + 0.5 * o, transform: `scale(${0.96 + 0.04 * o})`}}><Hi t={cs[j]} /></div>
+    <div style={{height: CAP_H, boxSizing: 'border-box', background: T.ink, padding: '6px 20px', borderRadius: 20, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+      <div style={{...F, fontWeight: 700, fontSize: capSize(cs[j]), lineHeight: 1.2, color: '#fff', textAlign: 'center', whiteSpace: 'nowrap', letterSpacing: -1, opacity: 0.5 + 0.5 * o, transform: `scale(${0.97 + 0.03 * o})`}}><Hi t={cs[j]} /></div>
     </div>
   );
 };
-const BW2 = 1080, SC2 = BW2 / BW, BH2 = Math.round(BH * SC2);
-const Frame: React.FC<{s: SScene; from: number; total: number; first: boolean}> = ({s, from, total, first}) => {
+// 10/16 안전 영역 틀(parts/safeframe): 판은 위 띠 끝 ~ 자막 위, 안전 영역 가운데에 줄여 둔다. 글자는 전부 x 48~888 · y 288~1248.
+const Frame: React.FC<{s: SScene; from: number; total: number; first: boolean; p: C1SProps}> = ({s, from, total, first, p}) => {
   const f = useCurrentFrame(); const st = starts(s.lines);
   // 장면 안 컷: 약 2.5초(75프레임)마다 판을 4.5% 당겼다 놓는다(내용은 그대로, 자막 조각 바뀜과 함께 화면이 2~3초마다 달라지게 — today.md 12:3x '장면 약 2초마다')
   const k = Math.floor(f / 75); const pin = (k % 2) * interpolate(f - k * 75, [0, 6], [0, 1], CL) + (1 - (k % 2)) * (k ? interpolate(f - k * 75, [0, 6], [1, 0], CL) : 0);
   const drift = interpolate(f, [0, s.frames], [1, 1.025], CL) + 0.045 * pin;
   const body = s.data.full ? <Sequence from={-90} layout="none"><Body s={s} /></Sequence> : <Body s={s} />;
+  const b = boardBox(p.question, p.answer as Answer, BW, BH);
   return (
     <AbsoluteFill>
-      <div style={{position: 'absolute', left: 0, top: 322, width: BW2, height: BH2, background: '#fff', overflow: 'hidden'}}>
-        <div style={{position: 'absolute', left: 0, top: 0, width: BW, height: BH, transform: `scale(${SC2})`, transformOrigin: '0 0'}}><div style={{position: 'absolute', left: 0, top: 0, width: BW, height: BH, transform: `scale(${drift})`, transformOrigin: '50% 42%'}}>{body}</div></div>
+      <div style={{position: 'absolute', left: 0, top: b.top, width: 1080, height: b.bottom - b.top, background: '#fff'}} />
+      <div style={{position: 'absolute', left: b.left, top: b.y, width: b.w, height: b.h, overflow: 'hidden'}}>
+        <div style={{position: 'absolute', left: 0, top: 0, width: BW, height: BH, transform: `scale(${b.s})`, transformOrigin: '0 0'}}><div style={{position: 'absolute', left: 0, top: 0, width: BW, height: BH, transform: `scale(${drift})`, transformOrigin: '50% 42%'}}>{body}</div></div>
       </div>
-      <div style={{position: 'absolute', left: 30, top: 322 + BH2 + 24, width: 1020}}><Caption s={s} first={first} /></div>
-      <div style={{position: 'absolute', left: 30, top: 322 + BH2 + 230, width: 1020, height: 12, background: T.line, borderRadius: 6}}>
-        <div style={{width: `${((from + f) / total) * 100}%`, height: 12, background: T.accent, borderRadius: 6}} />
-      </div>
+      <div style={{position: 'absolute', left: SZ.x0 + 6, top: capTop(p.answer as Answer), width: SZ.x1 - SZ.x0 - 12}}><Caption s={s} first={first} /></div>
+      <BottomShade progress={(from + f) / total} />
       {s.lines.map((l, i) => <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
     </AbsoluteFill>
   );
@@ -323,31 +324,9 @@ export const C1S: React.FC<C1SProps> = (p) => {
   return (
     <AbsoluteFill style={{background: T.bg}}>
       <style>{FONT_CSS}</style>
-      <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 322, background: T.dbg}} />
-      <div style={{position: 'absolute', left: 40, top: 30, display: 'flex', alignItems: 'center', gap: 10}}>
-        <Flame size={24} /><span style={{...F, fontWeight: 700, fontSize: 26, color: T.dink3}}>파이어맵</span>
-        <span style={{...F, fontWeight: 500, fontSize: 22, color: T.dink3, marginLeft: 10}}>{p.base}</span>
-      </div>
-      <div style={{position: 'absolute', left: 0, top: 78, width: 1080, textAlign: 'center'}}>
-        {p.question.map((line, i) => {
-          const k = line.indexOf(p.hot);
-          return <div key={i} style={{...F, fontWeight: 700, fontSize: 100, lineHeight: 1.16, color: '#fff', letterSpacing: -3, whiteSpace: 'nowrap'}}>
-            {k < 0 ? line : <>{line.slice(0, k)}<span style={{color: '#FFD000'}}>{p.hot}</span>{line.slice(k + p.hot.length)}</>}</div>;
-        })}
-      </div>
-      {p.answer ? (
-        <div style={{position: 'absolute', left: 30, top: 322 + BH2 + 262, width: 1020, height: 250, boxSizing: 'border-box', background: T.soft, borderRadius: 24, padding: '18px 30px'}}>
-          <div style={{...F, fontWeight: 700, fontSize: 32, color: T.ink2, whiteSpace: 'nowrap'}}>{p.answer.label}</div>
-          <div style={{display: 'flex', alignItems: 'baseline', gap: 22, marginTop: 6, whiteSpace: 'nowrap'}}>
-            {p.answer.items.map((x, i) => <React.Fragment key={i}>
-              {i ? <span style={{...F, fontWeight: 700, fontSize: 70, color: T.ink3}}>{p.answer!.arrow ? '→' : '·'}</span> : null}
-              <span style={{...F, fontWeight: 700, fontSize: Math.min(96, Math.floor(940 / (p.answer!.items.join('').length * 0.62 + (p.answer!.items.length - 1) * 1.6))), color: i === p.answer!.items.length - 1 || !p.answer!.arrow ? T.accent : T.ink, letterSpacing: -2}}>{x}</span>
-            </React.Fragment>)}
-          </div>
-          {p.answer.note ? <div style={{...F, fontWeight: 700, fontSize: 28, color: T.ink2, marginTop: 2, whiteSpace: 'nowrap'}}>{p.answer.note}</div> : null}
-        </div>
-      ) : null}
-      {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Frame s={s} from={from} total={total} first={i === 0} /></Sequence>; from += s.frames; return el; })}
+      <TopBand question={p.question} hot={p.hot} base={p.base} />
+      {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Frame s={s} from={from} total={total} first={i === 0} p={p} /></Sequence>; from += s.frames; return el; })}
+      <AnswerCard answer={p.answer as Answer} />
     </AbsoluteFill>
   );
 };

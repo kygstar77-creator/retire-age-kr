@@ -35,3 +35,10 @@
 - 관문 다시: 0초 빈 곳 **33.9%**(아래 절반 31.9%)·전체 최대 33% — measure/emptyscan_v3_1015.txt · 숫자 대조 통과 · 꼴 관문 통과 · 치직 0(clickscan scan) · 쉿소리 디에서 뒤 −14.8dB · 47.6초 1080×1920 yuv420p · 눈 검사 eye4/sheet.png(0·8·20·33·46초): 잘림·겹침·숫자 오타 0.
 판정(v3): 통과
 - 남은 일: 교체 예약 `py -3.12 work/research/cardshorts/w1g1clips_up.py d1s_pension --replace` — 무인 회차에서 YouTube 쓰기(videos.update)가 권한 판단기에 거부돼(10/15 22:17 다시 확인) **채팅 세션이 실행해야 함**. 10/20 19:20 공개 전까지.
+
+
+## v4 — 안전 영역 틀 재렌더(10/16 쇼츠 담당, 사장님 "숏츠는 영상이 왜 이렇게 잘려")
+- 바뀐 것: 화면 틀만(video/src/parts/safeframe.tsx — 글자 전부 x 48~888 · y 288~1248, 근거 research/cardshorts/safe-zone-1016.md). props·숫자·자막 글자·소리는 v3 그대로.
+- 소리: v3 통과본 work/video/out/d1s_pension_v3_ds.mp4의 오디오 트랙을 그대로 복사(-c copy) — 쉿소리·치직 판정 v3와 같음. 길이 같음.
+- 안전 영역 관문: 통과 48프레임(1초 간격) 걸림 0 · 0초 빈 곳 19%(기준 40% 이하)
+판정(v4): 통과 (2026-10-16 12:25) — 옛 예약 3yh729bBugI는 지우지 않고 비공개(예약 해제), 같은 publishAt 2026-10-20T19:20:00+09:00로 새로 올림

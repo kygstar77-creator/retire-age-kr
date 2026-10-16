@@ -4,13 +4,16 @@
 import React from 'react';
 import {AbsoluteFill, Audio, Img, Sequence, interpolate, spring, staticFile, useCurrentFrame, Easing} from 'remotion';
 import {T, F, CL, FONT_CSS, Flame} from './parts/fm';
+import {SZ, PAD, IW, fit, BottomShade} from './parts/safeframe';
 
 type PLine = {text: string; audio: string; frames: number};
 type PScene = {pic: string; cx: number; year: string | null; num: string; sub: string; zoom: [number, number]; pan: number; focus: number; gray: boolean; blur?: boolean; red: string[]; green: string[]; lines: PLine[]; frames: number};
 export type C2PProps = {fps: number; name: string; layout: string; question: string[]; hot: string; badge: string; base: string; scenes: PScene[]};
 export const c2pFrames = (p: C2PProps) => p.scenes.reduce((a, s) => a + s.frames, 0);
 
-const W = 1080, PH = 1210;                 // 그림 칸 높이
+const W = 1080, PH = SZ.y1;               // 그림 칸 높이 — 10/16 안전 영역 아래 끝(1248)까지, 그 밑은 글자 없는 검은 바탕
+const Q_TOP = SZ.y0 + 72; const qs = (q: string[]) => Math.min(...q.map((l) => fit(l, IW, 66)));
+let Q_END = Q_TOP + 2 * 66 * 1.12;   // C2P가 그릴 때 질문 크기로 다시 잰다
 const YEL = '#FFD000', RED = '#FF6B5E', GRN = '#4ADE80';
 const starts = (lines: PLine[]) => { const o: number[] = []; let a = 0; for (const l of lines) { o.push(a); a += l.frames; } return o; };
 
@@ -60,24 +63,26 @@ const Caption: React.FC<{s: PScene}> = ({s}) => {
   const page = Math.floor(j / 3); const shown = ps.slice(page * 3, page * 3 + 3); const pageFrom = st[k] + (ps.slice(0, page * 3).reduce((a, x) => a + x.length, 0) / tot) * speak;
   const pin = interpolate(f, [pageFrom, pageFrom + 5], [0, 1], CL);
   return (
-    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, transform: `translateY(${(1 - pin) * 18}px)`, opacity: 0.3 + 0.7 * pin}}>
+    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, transform: `translateY(${(1 - pin) * 18}px)`, opacity: 0.3 + 0.7 * pin}}>
       {shown.map((p, i) => {
         const on = page * 3 + i <= j; const now = page * 3 + i === j;
-        return <div key={i} style={{...F, fontWeight: 700, fontSize: Math.min(84, Math.floor(900 / (p.length * 0.92))), lineHeight: 1.18, letterSpacing: -2, whiteSpace: 'nowrap', color: '#fff', opacity: on ? 1 : 0.32,
+        return <div key={i} style={{...F, fontWeight: 700, fontSize: fit(p, IW, 58, 30), lineHeight: 1.18, letterSpacing: -2, whiteSpace: 'nowrap', color: '#fff', opacity: on ? 1 : 0.32,
           transform: `scale(${now ? 1 + 0.03 * interpolate(f, [from, from + 4], [0, 1], CL) : 1})`, textShadow: '0 4px 0 rgba(0,0,0,0.35)'}}><Colored t={p} red={s.red} green={s.green} /></div>;
       })}
     </div>
   );
 };
 
+// 10/16 안전 영역: 숫자 카드는 자막(아래 3줄) 바로 위, 안전 영역 왼쪽 안. 글자 크기는 너비에 맞춰 줄인다.
+const CAP3_TOP = SZ.y1 - 8 - 3 * 70;      // 자막 3줄(58px·줄 높이 1.18 + 틈) 시작
 const NumCard: React.FC<{s: PScene}> = ({s}) => {
   const f = useCurrentFrame(); const sp = spring({frame: f - 3, fps: 30, config: {damping: 13, mass: 0.7}});
-  const big = s.num.length > 7 ? 92 : 118;
+  const big = fit(s.num, IW - 60, s.num.length > 7 ? 80 : 100, 40); const sub = fit(s.sub, IW - 60, 30, 18);
   return (
-    <div style={{position: 'absolute', left: 40, top: PH - 150, padding: '18px 34px 20px', background: '#fff', borderRadius: 28, boxShadow: '0 14px 40px rgba(0,0,0,0.35)',
+    <div style={{position: 'absolute', left: SZ.x0 + PAD, bottom: 1920 - CAP3_TOP + 18, maxWidth: IW, boxSizing: 'border-box', padding: '14px 26px 16px', background: '#fff', borderRadius: 24, boxShadow: '0 14px 40px rgba(0,0,0,0.35)',
       transform: `translateY(${(1 - sp) * 40}px) scale(${0.9 + 0.1 * sp})`, transformOrigin: 'left bottom', opacity: Math.min(1, sp * 1.4)}}>
-      <div style={{...F, fontWeight: 700, fontSize: big, lineHeight: 1, color: T.accent, letterSpacing: -3, whiteSpace: 'nowrap'}}>{s.num}</div>
-      <div style={{...F, fontWeight: 700, fontSize: 34, color: T.ink2, marginTop: 8, whiteSpace: 'nowrap'}}>{s.sub}</div>
+      <div style={{...F, fontWeight: 700, fontSize: big, lineHeight: 1, color: T.accent, letterSpacing: -2, whiteSpace: 'nowrap'}}>{s.num}</div>
+      <div style={{...F, fontWeight: 700, fontSize: sub, color: T.ink2, marginTop: 8, whiteSpace: 'nowrap'}}>{s.sub}</div>
     </div>
   );
 };
@@ -88,15 +93,13 @@ const Scene: React.FC<{s: PScene; from: number; total: number; p: C2PProps}> = (
   return (
     <AbsoluteFill>
       <Picture s={s} />
-      <div style={{position: 'absolute', left: 0, top: 0, width: W, height: 470, background: 'linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.5) 55%, rgba(0,0,0,0))'}} />
-      <div style={{position: 'absolute', left: 0, top: PH - 300, width: W, height: 300, background: `linear-gradient(rgba(16,17,20,0), ${T.dbg})`}} />
-      {s.year ? <div style={{position: 'absolute', left: 40, top: 330, padding: '8px 22px', background: T.accent, borderRadius: 14, opacity: yo, transform: `translateX(${(1 - yo) * -30}px)`}}>
-        <span style={{...F, fontWeight: 700, fontSize: 44, color: '#fff', whiteSpace: 'nowrap'}}>{s.year}</span></div> : null}
+      <div style={{position: 'absolute', left: 0, top: 0, width: W, height: 640, background: 'linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.6) 70%, rgba(0,0,0,0))'}} />
+      <div style={{position: 'absolute', left: 0, top: PH - 480, width: W, height: 480, background: `linear-gradient(rgba(16,17,20,0), rgba(16,17,20,0.88) 45%, ${T.dbg})`}} />
+      {s.year ? <div style={{position: 'absolute', left: SZ.x0 + PAD, top: Q_END + 14, padding: '6px 18px', background: T.accent, borderRadius: 12, opacity: yo, transform: `translateX(${(1 - yo) * -30}px)`}}>
+        <span style={{...F, fontWeight: 700, fontSize: fit(s.year, IW - 40, 36, 22), color: '#fff', whiteSpace: 'nowrap'}}>{s.year}</span></div> : null}
       <NumCard s={s} />
-      <div style={{position: 'absolute', left: 60, top: PH + 78, width: 880, height: 310, display: 'flex', alignItems: 'flex-start', justifyContent: 'center'}}><Caption s={s} /></div>
-      <div style={{position: 'absolute', left: 60, top: PH + 400, width: 880, height: 10, background: '#2a2c33', borderRadius: 5}}>
-        <div style={{width: `${((from + f) / total) * 100}%`, height: 10, background: T.accent, borderRadius: 5}} />
-      </div>
+      <div style={{position: 'absolute', left: SZ.x0 + PAD, top: CAP3_TOP, width: IW, height: SZ.y1 - CAP3_TOP, display: 'flex', alignItems: 'flex-start', justifyContent: 'center'}}><Caption s={s} /></div>
+      <BottomShade progress={(from + f) / total} />
       {s.lines.map((l, i) => <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
     </AbsoluteFill>
   );
@@ -104,24 +107,23 @@ const Scene: React.FC<{s: PScene; from: number; total: number; p: C2PProps}> = (
 
 export const C2P: React.FC<C2PProps> = (p) => {
   const total = c2pFrames(p); let from = 0;
+  Q_END = Q_TOP + p.question.length * qs(p.question) * 1.12;
   return (
     <AbsoluteFill style={{background: T.dbg}}>
       <style>{FONT_CSS}</style>
       {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Scene s={s} from={from} total={total} p={p} /></Sequence>; from += s.frames; return el; })}
-      <div style={{position: 'absolute', left: 40, top: 28, display: 'flex', alignItems: 'center', gap: 10}}>
-        <Flame size={24} /><span style={{...F, fontWeight: 700, fontSize: 26, color: '#fff', opacity: 0.85}}>파이어맵</span>
+      <div style={{position: 'absolute', left: SZ.x0 + PAD, top: SZ.y0 + 4, width: IW, display: 'flex', alignItems: 'center', justifyContent: 'space-between', whiteSpace: 'nowrap'}}>
+        <div style={{display: 'flex', alignItems: 'center', gap: 8}}><Flame size={20} /><span style={{...F, fontWeight: 700, fontSize: 22, color: '#fff', opacity: 0.85}}>파이어맵</span></div>
+        <div style={{padding: '4px 12px', borderRadius: 8, background: 'rgba(255,255,255,0.88)'}}><span style={{...F, fontWeight: 700, fontSize: fit(p.badge, IW - 200, 22, 14), color: T.ink}}>{p.badge}</span></div>
       </div>
-      <div style={{position: 'absolute', right: 40, top: 30, padding: '6px 16px', borderRadius: 10, background: 'rgba(255,255,255,0.88)'}}>
-        <span style={{...F, fontWeight: 700, fontSize: 26, color: T.ink, whiteSpace: 'nowrap'}}>{p.badge}</span>
-      </div>
-      <div style={{position: 'absolute', left: 0, top: 84, width: W, textAlign: 'center'}}>
+      <div style={{position: 'absolute', left: SZ.x0 + PAD, top: SZ.y0 + 40, width: IW, textAlign: 'center', ...F, fontWeight: 500, fontSize: fit(p.base, IW, 19, 13), color: '#fff', opacity: 0.75, whiteSpace: 'nowrap'}}>{p.base}</div>
+      <div style={{position: 'absolute', left: SZ.x0 + PAD, top: Q_TOP, width: IW, textAlign: 'center'}}>
         {p.question.map((line, i) => {
           const k = line.indexOf(p.hot);
-          return <div key={i} style={{...F, fontWeight: 700, fontSize: 92, lineHeight: 1.14, color: '#fff', letterSpacing: -3, whiteSpace: 'nowrap', textShadow: '0 4px 14px rgba(0,0,0,0.45)'}}>
+          return <div key={i} style={{...F, fontWeight: 700, fontSize: qs(p.question), lineHeight: 1.12, color: '#fff', letterSpacing: -2, whiteSpace: 'nowrap', textShadow: '0 4px 14px rgba(0,0,0,0.45)'}}>
             {k < 0 ? line : <>{line.slice(0, k)}<span style={{color: YEL}}>{p.hot}</span>{line.slice(k + p.hot.length)}</>}</div>;
         })}
       </div>
-      <div style={{position: 'absolute', left: 60, top: PH + 426, width: 880, textAlign: 'center', ...F, fontWeight: 500, fontSize: 24, color: T.dink3, whiteSpace: 'nowrap'}}>{p.base}</div>
     </AbsoluteFill>
   );
 };

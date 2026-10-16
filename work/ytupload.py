@@ -52,6 +52,11 @@ def upload(path, title, desc, privacy='private', tags='', paid=False):
     ok_sc, msg_sc = lfrender.screen_ok_for_upload(path)
     if not ok_sc: print('올리지 않는다:', msg_sc); sys.exit(8)
     print(msg_sc)
+    # 안전 영역 관문(10/16): 세로 영상은 글자 상자가 유튜브 버튼·제목 밑이나 화면 끝에 있으면 올리지 않는다(work/safezone.py · research/cardshorts/safe-zone-1016.md). 가로 영상은 재지 않음.
+    import safezone
+    ok_sz, msg_sz = safezone.gate(path)
+    print(msg_sz)
+    if not ok_sz: print('올리지 않는다: 안전 영역 관문'); sys.exit(11)
     from googleapiclient.http import MediaFileUpload
     yt = service()
     body = {'snippet': {'title': title[:100], 'description': desc[:5000], 'tags': [t.strip() for t in tags.split(',') if t.strip()][:30], 'categoryId': '22', 'defaultLanguage': 'ko', 'defaultAudioLanguage': 'ko'},

@@ -2,7 +2,7 @@
  "name": "g1s_asym",
  "ep": "G-1",
  "from_long": "xBTZtRp5lMs",
- "mp4": "work/video/out/g1s_asym_ds.mp4",
+ "mp4": "work/video/out/g1s_asym_sz_ds.mp4",
  "layout": "c2person",
  "publishAt": "2026-10-22T07:20:00+09:00",
  "use_after": "2026-10-13 11:30 (G-1 롱폼 공개 뒤)",
@@ -12,13 +12,24 @@
  "same_day_pair": "10/22 19:20 h1s_forest(H-1) — 다른 롱폼·다른 질문",
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "ZK219BbhJSA",
- "uploaded_at": "2026-10-16 04:13:02",
+ "id": "AZgBJ5Ltdic",
+ "uploaded_at": "2026-10-16 12:34:43",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-21T22:20:00Z",
   "embeddable": true,
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
- }
+ },
+ "v": 2,
+ "replaced": [
+  {
+   "id": "ZK219BbhJSA",
+   "unscheduled_at": "2026-10-16 12:34:43",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  }
+ ]
 }

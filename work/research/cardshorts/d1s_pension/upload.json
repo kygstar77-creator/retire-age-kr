@@ -2,7 +2,7 @@
  "name": "d1s_pension",
  "ep": "D-1",
  "from_long": "GMc2Rd1-JYA",
- "mp4": "work/video/out/d1s_pension_v3_ds.mp4",
+ "mp4": "work/video/out/d1s_pension_sz_ds.mp4",
  "layout": "m1clip",
  "publishAt": "2026-10-20T19:20:00+09:00",
  "title": "연금 받는데 배당 1만원 더, 건보료 한 해 81만원 차이 #shorts",
@@ -21,8 +21,8 @@
  "same_day_pair": "10/20 07:20 h1s_walk(H-1) — 다른 롱폼 · 11:30 롱폼 H-2",
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "3yh729bBugI",
- "uploaded_at": "2026-10-16 10:38:30",
+ "id": "csuUBZBczxE",
+ "uploaded_at": "2026-10-16 12:25:40",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-20T10:20:00Z",
@@ -30,11 +30,19 @@
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
  },
- "v": 3,
+ "v": 4,
  "replaced": [
   {
    "id": "SW7RAxLiY6g",
    "unscheduled_at": "2026-10-16 10:38:30",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "3yh729bBugI",
+   "unscheduled_at": "2026-10-16 12:25:40",
    "status_after": {
     "privacyStatus": "private",
     "publishAt": null

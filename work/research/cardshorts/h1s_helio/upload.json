@@ -2,7 +2,7 @@
  "name": "h1s_helio",
  "ep": "H-1",
  "from_long": "rVg0pQVo_wk",
- "mp4": "work/video/out/h1s_helio_ds.mp4",
+ "mp4": "work/video/out/h1s_helio_sz_ds.mp4",
  "layout": "c1clip",
  "publishAt": "2026-10-21T07:20:00+09:00",
  "use_after": "2026-10-15 11:30 (H-1 롱폼 공개 뒤)",
@@ -23,5 +23,28 @@
   "avg_C": 8.5,
   "len_no_hashtag": 31,
   "numbers": 2
- }
+ },
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "9JN3yIi_xNE",
+ "uploaded_at": "2026-10-16 12:28:41",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-20T22:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ },
+ "v": 2,
+ "replaced": [
+  {
+   "id": "XB9fAhJrxFA",
+   "unscheduled_at": "2026-10-16 12:28:41",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   },
+   "note": "10/16 업로드 직후 다시 읽음에서 publishAt이 남아 보였으나(읽기 지연), 몇 분 뒤 videos.list로 publishAt None 확인"
+  }
+ ]
 }

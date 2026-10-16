@@ -241,8 +241,8 @@ const DivS: React.FC<{s: SScene}> = ({s}) => {
   return (
     <>
       <div style={{position: 'absolute', left: 40, top: 24}}><Txt s={40} c={T.ink2}>{d.head}</Txt></div>
-      <DivRows x0={500} y={220} rowH={170} half={250} max={d.max} rows={d.rows} labelW={180} />
-      <TallyCallout x={40} y={620} text={d.q[0]} start={d.q[1]} w={920} size={40} />
+      <DivRows x0={d.x0 ?? 500} y={220} rowH={170} half={d.half ?? 250} max={d.max} rows={d.rows} labelW={180} />
+      {d.q ? <TallyCallout x={40} y={620} text={d.q[0]} start={d.q[1]} w={920} size={40} /> : null}{/* 10/16 n1s_top10: q 없으면 생략(줄 4개면 y 620에서 겹침) */}
     </>
   );
 };

@@ -5,7 +5,7 @@ import os, re, sys, json
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.normpath(os.path.join(HERE, '..', '..'))
-_N = ([a for a in sys.argv[1:] if not a.startswith('--')] or ['w1s_div'])[0]; _E = {'w1': 'W-1', 'g1': 'G-1', 'r1': 'R-1', 'h1': 'H-1', 'd1': 'D-1', 'p1': 'P-1', 'c2': 'C-2'}[_N[:2]]; _J = _E.replace('-', '').lower() + '.json'   # 10/12 22시 R-1 추가 · 10/14 C-2(c2.json)
+_N = ([a for a in sys.argv[1:] if not a.startswith('--')] or ['w1s_div'])[0]; _E = {'w1': 'W-1', 'g1': 'G-1', 'r1': 'R-1', 'h1': 'H-1', 'd1': 'D-1', 'p1': 'P-1', 'c2': 'C-2', 'n1': 'N-1'}[_N[:2]]; _J = _E.replace('-', '').lower() + '.json'   # 10/12 22시 R-1 추가 · 10/14 C-2(c2.json) · 10/16 N-1(n1.json)
 EP = os.path.join(WORK, 'research', 'longform', 'ep', _E)   # 10/12 PD: W-1·G-1 쇼츠용(한 번에 한 편)
 SRC = (open(os.path.join(EP, 'facts.txt'), encoding='utf-8').read() if os.path.exists(os.path.join(EP, 'facts.txt')) else '') + '\n' + (open(os.path.join(EP, 'calc_n1_out.txt'), encoding='utf-8').read() if os.path.exists(os.path.join(EP, 'calc_n1_out.txt')) else '') + '\n' + (open(os.path.join(EP, 'calc_out.txt'), encoding='utf-8').read() if os.path.exists(os.path.join(EP, 'calc_out.txt')) else '')   # 10/14: D-1은 calc_out 없음(계산은 facts [계산] 줄)
 # 편집 통과한 롱폼 화면 글자(video/c1.json — 자막·칩·그림 글자·눈금, calc_out 문구에서 뽑은 것)도 원문으로 본다
@@ -71,7 +71,7 @@ def check(name):
     bad, rows = [], []
     for s in ts:
         s2 = re.sub(r'https?://\S+', ' ', s)
-        s2 = re.sub(r'(\d+)억 ([\d,]+)만원', lambda m: f"{int(m.group(1)) * 10000 + int(m.group(2).replace(',', '')):,}만원", s2)   # 10/14 만원 반올림 꼴
+        s2 = re.sub(r'(\d+)억 ([\d,]+)만원', lambda m: m.group(0) if m.group(0) in SRC else f"{int(m.group(1)) * 10000 + int(m.group(2).replace(',', '')):,}만원", s2)   # 10/14 만원 반올림 꼴 · 10/16 d1s_dep: 원문에 '5억 4,000만원' 글자 그대로 있으면 바꾸지 않음(조문 기준값)
         for m in NUM.finditer(s2):
             tok = m.group(0)
             if re.fullmatch(r'\d', tok) and not re.search(tok + r'\s*(억|만원|%|원|배)', s2): continue

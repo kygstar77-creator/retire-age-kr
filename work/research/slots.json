@@ -53,9 +53,27 @@
     "by": "firemap-video-producer",
     "at": "2026-10-15 11:05",
     "gates_ok": "2026-10-15 11:05"
+   },
+   {
+    "item": "d1s_dep",
+    "ep": "work/research/cardshorts/d1s_dep",
+    "layout": "c1clip",
+    "status": "관문 통과(compete 6·숫자 대조 58개 0·꼴 ⓐ~ⓓ(c1clip 3/10)·치직 0·쉿소리 −14.8dB·빈 곳 최대 35%·45.7초·제목 8.5·aitell 0.0·58세 이해 시험 3차 뜻 틀림 0) · 미업로드 — D-1 롱폼(GMc2Rd1-JYA) '퇴직 후 건보료 0원, 피부양자 조건 딱 2가지', 새 녹음 0 · d1s_pension(10/20 19:20)과 이틀 이상 띄워 10/23 19:20 이후 칸 · 근거 cardshorts/d1s_dep/review.md",
+    "by": "firemap-video-producer",
+    "at": "2026-10-16 07:32",
+    "gates_ok": "2026-10-16 07:32"
    }
   ],
-  "cafe": [],
+  "cafe": [
+   {
+    "item": "convreal1016",
+    "pkg": "work/research/convreal1016/pkg",
+    "status": "관문 통과(compare.md 경쟁 5·레드팀 3차 반영·이해 시험 4차 통과·readcheck 0·selfcheck 사실 0·aitell 0.0·crosscheck·제목 7·표지 S5 8·editgate auto) · 부동산 · 실거래 전월세 전환율 4.8% · slot.txt 없음(대타 칸에 넣을 때 적음) · 근거 convreal1016/review.md",
+    "by": "firemap-write",
+    "at": "2026-10-16 09:35",
+    "gates_ok": "2026-10-16 09:35"
+   }
+  ],
   "long": [
    {
     "item": "R-1",
@@ -1433,7 +1451,8 @@
    "owner": "firemap-write-b",
    "gates_ok": "2026-10-15 18:24",
    "note": "firemap-write 18:24: r1cafe_start1016 관문 통과 — 'SCHD SPY 금 ETF, 넣는 날만 바꿔도 1등이 달라진 기록'(제목 제미나이 8·8·레드팀 7 · 표지 8·8·7 평균 7.67 · 58세 이해 시험 5차 심각 0 · 레드팀 5차 틀림 1 고침 · aitell 통과·selfcheck 사실 0·editgate auto) · 영상 tDPWYHRotRQ 07:20 공개 확인 뒤 발행 | firemap-write 2026-10-15 15:3x: r1s_startday(tDPWYHRotRQ 07:20) 짝 글 r1cafe_start1016 배정·원고·표지·이미지·교차검증까지 — 제목·표지 레드팀 5~6점·58세 이해 시험 미통과라 gates_ok 아직 없음(근거 research/r1cafe_start1016/review.md). 영상 07:20 공개 뒤만 발행 | 순돌이 10/13 짝 글: 같은 날 07:20 shorts 'TBD'의 카페 짝 글. 공개된 영상 링크를 본문 끝에, 영상 설명 앞 5줄에는 이 글 주소. 짝이 TBD면 PD가 정한 쇼츠를 따른다. | 순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상",
-   "pair": "TBD"
+   "pair": "TBD",
+   "published": "https://cafe.naver.com/firemap/289 07:51 verify OK 1820자"
   },
   {
    "at": "2026-10-16 09:10",
@@ -1872,6 +1891,16 @@
    "item_pkg": "work/research/cardshorts/g1s_asym",
    "published": "예약 2026-10-22T07:20:00+09:00 https://youtu.be/ZK219BbhJSA (private+publishAt 21일 22:20Z, 합성 표시 update True)",
    "note": "firemap-video-producer 2026-10-16 04:13: G-1 롱폼(xBTZtRp5lMs) '1월에 산 금 34% 손해, 본전까지 51%(337만원)' 클립, c2person 틀, Pexels 참고 영상, Chirp 새 줄 1(첫 줄) — 관문 cardshorts/g1s_asym/review.md(58세 이해 시험 12차) · 같은 날 19:20은 H-1 h1s_forest · yt_pair: ZK219BbhJSA(쇼츠 짝 카페 글 10/22 20:10 또는 22:10, firemap-write)"
+  },
+  {
+   "at": "2026-10-23 07:20",
+   "kind": "shorts",
+   "item": "n1s_top10",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-16 06:41",
+   "item_pkg": "work/research/cardshorts/n1s_top10",
+   "note": "firemap-video-producer 2026-10-16 06:41: N-1 롱폼(420buEFKB8k) 첫 클립 '순자산 10억, 상위 10% 안일까? 문턱은 11억' 예약 https://youtu.be/oxrbky0mW2M (C1S, 새 녹음 0, 45.9초) · 관문 cardshorts/n1s_top10/review.md · 같은 날 19:20은 다른 롱폼 · yt_pair: oxrbky0mW2M(짝 카페 글 write 요청)",
+   "published": "예약 2026-10-23T07:20:00+09:00 https://youtu.be/oxrbky0mW2M (private+publishAt 22일 22:20Z, 합성 표시 update True)"
   },
   {
    "at": "2026-10-22 11:30",

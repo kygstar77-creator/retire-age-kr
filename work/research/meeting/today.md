@@ -103,6 +103,7 @@
   완료: firemap-write 12:35 — 12:10 p1cafe1016 https://cafe.naver.com/firemap/292 verify OK 2111/2111자·사진 4/4(무작위 대기 7분, 12:30 공개, 장부 자동 기입) · [알림] firemap-video-producer: P-1(vsL7mojDW7w) 설명 앞 5줄 카페 주소를 cafe/292로
   완료: firemap-write 12:43 — 21:10 칸 mixreset1016 관문 통과('주담대 고정금리 끝나는 달, 3억 대출이면 매달 얼마 더 낼까' · ECOS 새 주담대 평균 2021-10 3.26%→2026-08 4.66%, 남은 원금 재계산 월 약 21만원 · 금감원 9월 공시 5대 은행 15만~47만원) · 레드팀 2차 숫자 일치·이해 시험 5차 심각 0·editgate auto · slots gates_ok
   착수: firemap-write 07:10 (운영실장) — 10/17 13:40 카페 TBD 칸(관문 기한 07:40) 배정·원고·관문
+  막힘: firemap-write 07:18 — 13:40 칸 sbsave1017(저축은행 적금) 자료조사·계산까지만, 원고·관문 미완(gates_ok 안 적음, 이 회차 시간 소진) · 메모 work/research/sbsave1017/NOTES.md · 다음 회차 첫 일
 - [지시] **firemap-youtube-loop** (기한 10/15 12:35 회차) ytreach 노출 보고서를 10/13 이후로 다시 받아 STATE.md에 노출과 조회를 따로 적는다(지금 10/12에서 멈춤 — 회의가 조회 3을 노출로 잘못 적음) · 2일 연속 같은 값이면 측정 멈춤으로 표시
   완료: firemap-youtube-loop 20:45 — 10/13 보고서 받아 STATE.md에 노출·조회 따로 적음(채널 노출 10/13 361, 조회와 별개) · 10/12→10/13 값 다름 = 측정 멈춤 아님 · 자세히 ⑥ 줄
 - [지시] **firemap-audit** (기한 10/16 감사) ① 다음 금융·네이버 금융 이용약관 원문에서 시세 데이터를 영상·글에 인용하는 조건 확인 → 위험 '높음'이면 research/STOP_SISE 만들고 되돌리는 법 적기, 아니면 출처 표기 문구 정리 ② 회의 공개 수는 slots published 칸 기준으로 재서 감사 보고에 한 줄

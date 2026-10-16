@@ -288,6 +288,89 @@ def g13(bg):
 
 
 V['c3e'] = g13(CREAM)
+# 14차 (10/16 17시) — 13차 Claude '작은 글자 많아 지저분'(6.4)·레드팀 '구멍=수첩, 168px에선 통장 글자 덕만' → 글자 줄 6→4
+#   구멍·줄 칸·'잔고' 글자 뺌 · 펼친 통장 = 가운데 굵은 제본선(그림자) · 남은 돈 = 통장 아래 쌓인 쪽 두께(왼쪽 얇게 2장, 오른쪽 두껍게 9장) — 막대 대신 사물
+#   c3g는 띠(제목과 같은 말) 빼고 큰 글 키움 · c3h는 나무 책상 바탕(진한 판, 강조색은 빨강·초록 그대로라 경쟁 노랑과 다름)
+def book14(x, y, w, h, cover, head, body, pages, rot):
+    edges = ''.join(f"<div style='position:absolute;left:{x + 6 + i * 2}px;top:{y + h - 6 + i * 7}px;width:{w - 12 - i * 4}px;height:7px;background:#FBFAF6;"
+                    f"border:1px solid #CFC8B8;border-radius:3px;transform:rotate({rot}deg)'></div>" for i in range(pages, 0, -1))
+    return (edges + f"<div style='position:absolute;left:{x}px;top:{y}px;width:{w}px;height:{h}px;transform:rotate({rot}deg);background:#FFFFFF;border-radius:10px;"
+            f"box-shadow:0 4px 0 rgba(0,0,0,.18);overflow:hidden;border:4px solid {cover}'>"
+            f"<div style='position:absolute;left:0;top:0;width:{w}px;height:92px;background:{cover}'></div>"
+            f"<div class='t' style='left:0;top:8px;width:{w}px;text-align:center;font-size:70px;color:#FFFFFF'>{head}</div>"
+            f"<div style='position:absolute;left:{w // 2 - 18}px;top:92px;width:36px;height:{h - 92}px;background:linear-gradient(90deg,rgba(0,0,0,0),rgba(0,0,0,.16) 45%,rgba(0,0,0,.30) 50%,rgba(0,0,0,.16) 55%,rgba(0,0,0,0))'></div>"
+            f"{body}</div>")
+
+
+ST14 = ("<div class='t' style='left:0;top:110px;width:{w}px;text-align:center;font-size:58px;color:#1B2A4A'>2011년</div>"
+        "<div class='t' style='left:0;top:174px;width:{w}px;text-align:center;font-size:88px;color:#FFFFFF'><span style='display:inline-block;background:#D7261E;border-radius:14px;padding:0 26px;transform:rotate(-5deg)'>통장 바닥남</span></div>")
+RV14 = ("<div class='t' style='left:0;top:110px;width:{w}px;text-align:center;font-size:58px;color:#1B2A4A'>2025년 말</div>"
+        "<div class='t' style='left:0;top:168px;width:{w}px;text-align:center;font-size:100px;color:#0E7A3E'>2억 7천<span style='font-size:62px;color:#14171C'> 남음</span></div>")
+
+
+def g14(bg, kick=True, top=318, ch=290, l1=L1B, l2=L2B):
+    w = 560
+    return (bg + (KICKB.format(c='#1B2A4A', a='#C8231B') if kick else '') + l1 + l2
+            + book14(40, top, w, ch, '#6B7280', '1998년 시작', ST14.format(w=w), 2, -1.5)
+            + book14(680, top - 30, w, ch, '#2B6BE4', '2003년 시작', RV14.format(w=w), 9, 1.5))
+
+
+V['c3f'] = g14(CREAM)
+L1G = "<div class='t' style='left:0;top:14px;width:1280px;text-align:center;font-size:124px;color:#1B2A4A'>같은 3억,</div>"
+L2G = "<div class='t' style='left:0;top:134px;width:1280px;text-align:center;font-size:140px;color:#1B2A4A'>시작만 <span style='color:#C8231B'>5년</span> 차이</div>"
+V['c3g'] = g14(CREAM, kick=False, top=322, l1=L1G, l2=L2G)
+WOOD = ("<div style='position:absolute;inset:0;background:linear-gradient(180deg,#6B4A2E,#4E3420)'></div>"
+        "<div style='position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.04) 0 2px,transparent 2px 9px,rgba(0,0,0,.06) 9px 11px,transparent 11px 23px)'></div>")
+V['c3h'] = g14(WOOD, kick=False, top=322, l1=L1G.replace('#1B2A4A', '#FFF6E6'),
+               l2=L2G.replace("color:#1B2A4A'>시작만", "color:#FFF6E6'>시작만").replace('#C8231B', '#FF5A4A'))
+# c3i — 14차 제미나이: 막대 있는 c3e 8.5 > 막대 뺀 c3f 7.5('잔고 게이지가 결과를 먼저 보여 줌') → c3f에 막대만 되살림('잔고' 글자 없이)
+def g14i(bg, top=306, ch=336):
+    w = 560
+    stl = ST14.format(w=w).replace('top:110px', 'top:100px').replace('top:174px', 'top:156px')
+    rvr = RV14.format(w=w).replace('top:110px', 'top:100px').replace('top:168px', 'top:150px')
+    return (bg + KICKB.format(c='#1B2A4A', a='#C8231B') + L1B + L2B
+            + book14(40, top, w, ch, '#6B7280', '1998년 시작', stl + bar10(LOW / 3, '#D7261E', y=ch - 62, x=50, w=w - 100, h=38), 2, -1.5)
+            + book14(680, top - 24, w, ch, '#2B6BE4', '2003년 시작', rvr + bar10(LEFT / 3, '#0E7A3E', y=ch - 62, x=50, w=w - 100, h=38), 7, 1.5))
+
+
+V['c3i'] = g14i(CREAM)
+# 15차 — 14차 세 명 모두 c3e 1위(제미나이 8.5·Claude 6.5): 막대가 결과를 먼저 보여 줌, 두께·제본선은 168px에서 안 보임
+#   Claude·제미나이 같은 지적: 위 띠('월 200만원씩…')가 168px에서 사라져 '무슨 3억인지' 모름 → 띠를 남색 띠 위 흰 글 72px로 키움
+#   c3e 구멍(레드팀 '수첩 신호') 뺌 · c3k는 같은 판 나무 책상(14차 c3h: 제미나이 8.2, Claude '진한 바탕 대비 유지')
+KICK15 = ("<div style='position:absolute;left:0;top:0;width:1280px;height:96px;background:{band}'></div>"
+          "<div class='t' style='left:0;top:6px;width:1280px;text-align:center;font-size:72px;color:#FFFFFF'><span style='color:{a}'>월 200만원씩</span> 꺼내 쓴 S&amp;P500 퇴직금</div>")
+L1J = "<div class='t' style='left:0;top:104px;width:1280px;text-align:center;font-size:110px;color:{c}'>같은 3억, <span style='font-size:122px'>시작만 <span style='color:{r}'>5년</span> 차이</span></div>"
+
+
+def g15(bg, band, a, c, r):
+    st = STAMP10.replace('left:96px;top:180px;font-size:70px', 'left:64px;top:162px;font-size:78px')
+    rv = "<div class='t' style='left:0;top:160px;width:560px;text-align:center;font-size:92px;color:#0E7A3E'>2억 7천<span style='font-size:60px;color:#14171C'> 남음</span></div>"
+    out = (bg + KICK15.format(band=band, a=a) + L1J.format(c=c, r=r)
+           + passbook(40, 300, 560, 360, '#6B7280', '1998년 시작 통장', '2011년', st, LOW / 3, '#D7261E', -1.5)
+           + passbook(680, 300, 560, 360, '#2B6BE4', '2003년 시작 통장', '2025년 말', rv, LEFT / 3, '#0E7A3E', 1.5))
+    return re.sub(r"<div style='position:absolute;left:14px;top:d+px;width:14px;height:14px;border-radius:7px;background:#C9CED8'></div>", '', out)
+
+
+V['c3j'] = g15(CREAM, '#1B2A4A', '#FFD0C8', '#1B2A4A', '#C8231B')
+V['c3k'] = g15(WOOD, '#1B2A4A', '#FFD0C8', '#FFF6E6', '#FF5A4A')
+# 16차 — 15차 c3j(제미나이 8.5·Claude 6·레드팀 7.4): 레드팀 '바닥남=0원 오독 → 남은 돈 1,154만원(calc 161줄) 보탬'·'P-1 좌우 대칭 짜임 겹침 3 → 대칭 깸'
+#   '잔고' 글자 2개(168px 안 읽힘) 뺌 · 왼쪽 빈 막대 안에 '남은 돈 1,154만원' · 오른쪽 통장을 더 크고 높게(왼 520·오 610)
+assert '마지막 해 남은 돈 1,154만원' in calc
+
+
+def g16(bg):
+    st = STAMP10.replace('left:96px;top:180px;font-size:70px', 'left:44px;top:162px;font-size:78px')
+    rv = "<div class='t' style='left:0;top:156px;width:610px;text-align:center;font-size:104px;color:#0E7A3E'>2억 7천<span style='font-size:64px;color:#14171C'> 남음</span></div>"
+    Lb = passbook(36, 316, 520, 344, '#6B7280', '1998년 시작 통장', '2011년', st, LOW / 3, '#D7261E', -1.5)
+    Lb = Lb.replace("color:#5B6270'>잔고</div>", "color:#5B6270'></div>")
+    i = Lb.rindex('</div></div></div>')
+    Lb = Lb[:i] + "</div></div><div class='t' style='left:150px;top:274px;font-size:34px;color:#3A4150'>남은 돈 1,154만원</div></div>"
+    Rb = passbook(626, 286, 610, 374, '#2B6BE4', '2003년 시작 통장', '2025년 말', rv, LEFT / 3, '#0E7A3E', 1.5).replace("color:#5B6270'>잔고</div>", "color:#5B6270'></div>")
+    out = bg + KICK15.format(band='#1B2A4A', a='#FFD0C8') + L1J.format(c='#1B2A4A', r='#C8231B') + Lb + Rb
+    return re.sub(r"<div style='position:absolute;left:14px;top:d+px;width:14px;height:14px;border-radius:7px;background:#C9CED8'></div>", '', out)
+
+
+V['c3l'] = g16(CREAM)
 for k in V: V[k] = V[k].replace("<span style='display:none'></span'></div>", "</div>")
 assert all('같은 3억' in v and '0원' not in v and '정우' not in v for v in V.values())
 

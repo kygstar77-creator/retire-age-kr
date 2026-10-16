@@ -67,8 +67,8 @@
  "first3s": "F1 '1년 전 1억을 예금에 넣은 사람, 지금 통장엔 1억 218만원이 있어요. 다른 셋은요?' (대본 v4 첫 줄과 바꿀지는 youtube-loop 판단)",
  "title_by": "firemap-copywriter 2026-10-03 07:53",
  "todo_pd": "10/5 06:25 PD: 대본 = 클라우드 최종(af2eeaa, script.md=script.v6.md, 말 153문장) — 03:21 PC v6 녹음 150은 재사용 0. 순서 = check/runbook_1600.md: editor 편집 통과(해시 5bdda789…) → 16:00 뒤 lfvoice make --first 1 → check(f0) → 나머지 8회 → check·readback → r1props --script script.md → 렌더 → deess·motioncheck → scorecard → gate. 24:00 넘기면 전부 다시.",
- "thumb": "thumb_r2i.png",
- "thumb_status": "r2i 확정(visual 2026-10-12 19:48) — 새 제목과 짝 1초 시험 32차 제미나이 7.8·Claude 6.5·레드팀 7.5 평균 7.27, 주제 3/3 · 근거 visual/R-1-thumb/judges.md 32차. 교체 1회 = thumb_r2h.png",
+ "thumb": "thumb_r4a.png",
+ "thumb_status": "r4a 교체 2026-10-16 22:4x 썸네일 담당 — thumbnails.set 성공(G1oI47miUuo, 되받은 maxres가 r4a와 일치). 이유: 사장님 휴대폰 '동영상' 탭에서 r2i '+???만' 물음표 가림이 깨진 화면처럼 보임(aitell A30). r4a = '세금·환율 떼고 통장에 남은 돈 / 작년에 1억 넣었다면?' + 예금에 넣었으면 1억 218만 vs 미국 배당 ETF(SCHD) 1억 1,599만 — facts [영수증] 102,182,680·115,987,335. aitell thumb 통과 · 58세 이해 시험(새 Claude) '예금은 218만 늘었는데 미국 배당 ETF는 1,599만 늘었다' 뜻 맞음 · judge_1016(judge_1014 방식, 경쟁 5 비교판) 제미나이 8(gemini-3.1-flash-lite 503 4회 → gemini-3.5-flash-lite)·Claude 7, r2i 대조 6·5 · 교체 후보 r4b(막대 3줄, 제미나이 7·Claude 6) · 전 판 thumb_before_1016.png(i.ytimg.com 받은 것)",
  "title_candidates_retired_20261003": [
   {
    "rank": 1,
@@ -126,7 +126,7 @@
  },
  "missing": 0,
  "link_note": "10/6 14:2x PD: 설명 링크 첫 화면(/) → 주제 맞는 계산기 /tax(양도·배당세, 페이지 제목 그대로 · S&P500·SCHD 양도세·분배금 세금이 이 편 핵심) + utm_campaign=VIDEOID(업로드 때 영상ID 자동 치환). v7 대본에 계산기 문장이 빠져 은퇴 계산기 줄은 대본과 안 맞음",
- "thumb_prev": "thumb_r1v.png",
+ "thumb_prev": "thumb_r2i.png",
  "title_history": [
   {
    "at": "2026-10-12",

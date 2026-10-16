@@ -778,6 +778,22 @@ def blog_time_block():
     return ''
 
 UNDERSTAND_FROM = datetime.datetime(2026, 10, 15, 12, 0)
+FRESH_FROM = datetime.datetime(2026, 10, 16, 22, 30)
+def fresh_research_block(pkg):
+    """10/16 사장님 "자료조사 계속 하면서 올리는 거지? 조사한 거 재탕만 하는 거 아니지?" — 실측: 10/13~16 카페 37편 중 9편은
+    facts.txt '[오늘 찾은 것]'에 날짜가 없었다(영상 조사를 옮긴 짝 글). 이 시각 뒤 만든 묶음은 발행 7일 안에 원문을 다시 확인한 기록이 있어야 나간다."""
+    order = os.path.join(pkg, 'order.txt')
+    if not os.path.exists(order) or datetime.datetime.fromtimestamp(os.path.getmtime(order)) < FRESH_FROM:
+        return ''
+    f = os.path.join(pkg, 'facts.txt')
+    t = open(f, encoding='utf-8').read() if os.path.exists(f) else ''
+    m = re.search(r'\[오늘 찾은 것\](.*?)(?:
+\[|\Z)', t, re.S)
+    days = [datetime.date.fromisoformat(x) for x in re.findall(r'(20\d\d-\d\d-\d\d)', m.group(1))] if m else []
+    if not days or (datetime.date.today() - max(days)).days > 7:
+        return "보류: facts.txt '[오늘 찾은 것]'에 7일 안 원문 확인 날짜 없음(재탕 방지)"
+    return ''
+
 def understand_block(pkg):
     """10/15 사장님 "유튜브도 카페도 쉽게 설명해 주고 쉽게 이해되게 써야 할 거 아니야".
     10/15 12:00 이후 만든 묶음은 research/<글>/understand.md('판정: 통과')가 있어야 나간다.
@@ -837,6 +853,8 @@ def pending_block(kind, pkg, title, check_dup=True):
         return '하루 상한 도달(오늘 %d편/상한 %d편) — 내일 올린다' % (DAY_CAP[kind] - left, DAY_CAP[kind])
     ub = understand_block(pkg)
     if ub: return ub
+    fb = fresh_research_block(pkg)
+    if fb: return fb
     priv = private_video_links(pkg)
     if priv:
         return '보류: 아직 공개 안 된 영상 링크(%s) — 공개 뒤 칸으로' % ','.join(priv)

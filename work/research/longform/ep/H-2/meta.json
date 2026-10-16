@@ -9,8 +9,8 @@
   "잠실주공5단지, 같은 동네 새 아파트보다 평당 30% 넘게 비쌌다 — 은마는 견주는 단지마다 갈렸다"
  ],
  "thumb_text": "살 땐 가장 비싸고 / 전세는 가장 쌌다",
- "thumb_text_top": "잠실주공5단지, 잠실 안에서",
- "thumb_text_small": "국민평형 1년 실거래 · 전세 5억 남짓",
+ "thumb_text_top": "잠실주공5단지, 잠실동 안에서",
+ "thumb_text_small": "국민평형 84㎡대 · 최근 1년 거래",
  "thumb": "thumb_h2t.png",
  "thumb_status": "10/16 15:25 visual 임시(1초 시험 미달) — 11차 최고 6.92(h2s)·최종 h2t 6.83(제미나이 8·7 · Claude 6 · 레드팀 7 겹침 2), 통과선 7 못 넘음(Claude 11차 내내 4~6). 주제 맞힘 3/3·58세 뜻 맞음. 열린 위험(copywriter): 1년=잠실 11개월치·잠실동 범위·작은 줄 5억 되풀이. 기록 work/research/visual/H-2-thumb/judges.md",
  "desc_first2": [
@@ -97,5 +97,7 @@
  "desc_note": "설명 앞 두 줄 58세 이해 시험 3차(understand_test.md 설명 칸) — 1·2차 헷갈림(평당·세 동네·은마 결론 없음·실제 값 없음) 고침",
  "video": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\video\\out\\h2_ds.mp4",
  "deess_note": "deess --chirp-short: 쉿소리 −12.1dB(쉿소리 틀 6개라 measure() None → 같은 식 틀 수 제한 없이 잼), 2~4kHz −23.0→−24.0dB · 문장 wav·완성본 치직 0",
- "screen": "out/h2.screen.json 2026-10-16 15:12 통과 · 같은 화면 최장 8.0초 · 겹침 0 · 화면 글자 editor 재서명 14:58"
+ "screen": "out/h2.screen.json 2026-10-16 15:12 통과 · 같은 화면 최장 8.0초 · 겹침 0 · 화면 글자 editor 재서명 14:58",
+ "thumb_text_top_prev_1016": "잠실주공5단지, 잠실 안에서",
+ "thumb_text_small_prev_1016": "국민평형 1년 실거래 · 전세 5억 남짓"
 }

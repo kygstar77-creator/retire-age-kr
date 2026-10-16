@@ -787,8 +787,7 @@ def fresh_research_block(pkg):
         return ''
     f = os.path.join(pkg, 'facts.txt')
     t = open(f, encoding='utf-8').read() if os.path.exists(f) else ''
-    m = re.search(r'\[오늘 찾은 것\](.*?)(?:
-\[|\Z)', t, re.S)
+    m = re.search(r'\[오늘 찾은 것\](.*?)(?:\n\[|\Z)', t, re.S)
     days = [datetime.date.fromisoformat(x) for x in re.findall(r'(20\d\d-\d\d-\d\d)', m.group(1))] if m else []
     if not days or (datetime.date.today() - max(days)).days > 7:
         return "보류: facts.txt '[오늘 찾은 것]'에 7일 안 원문 확인 날짜 없음(재탕 방지)"

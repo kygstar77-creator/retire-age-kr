@@ -1,0 +1,830 @@
+# 화면 글자 — H-2 (lfrender.py text가 만듦. 여기를 고치지 말고 대본·props·tsx를 고친 뒤 다시 뽑는다)
+# 그래프 제목·부제·출처·자막(lines.text)·막대 이름·코드에 박힌 글자. 썸네일 문구는 그림이라 안 들어간다.
+
+## props: video/h2.json
+[scenes.0.key] t_map
+[scenes.0.title] 같은 동네, 30년 차이
+[scenes.0.sub] 잠실동 · 1990년 전에 지은 단지는 회색, 그 뒤 단지는 주황
+[scenes.0.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음) · 국토교통부 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.0.data.focus.0] 주공5단지
+[scenes.0.data.focus.1] 리센츠
+[scenes.0.data.focus.2] 잠실엘스
+[scenes.0.data.focus.3] 트리지움
+[scenes.0.data.old.0] 주공5단지
+[scenes.0.data.old.1] 잠실 우성4차
+[scenes.0.data.old.2] 은마
+[scenes.0.data.old.3] 대치미도맨션
+[scenes.0.data.old.4] 개포1차2차우성
+[scenes.0.data.old.5] 대치선경
+[scenes.0.data.old.6] 대치우성1차
+[scenes.0.data.old.7] 쌍용대치1차
+[scenes.0.data.old.8] 대치쌍용2차
+[scenes.0.data.old.9] 래미안대치하이스턴
+[scenes.0.data.labels.0] 주공5단지
+[scenes.0.data.labels.1] 리센츠
+[scenes.0.data.labels.2] 잠실엘스
+[scenes.0.data.cards.0.0] 주공5단지 · 1978년
+[scenes.0.data.cards.0.1] 1억 7,449만원
+[scenes.0.data.cards.0.2] 84㎡대 평당 가운데 값
+[scenes.0.data.cards.1.0] 리센츠 · 2008년
+[scenes.0.data.cards.1.1] 1억 3,283만원
+[scenes.0.data.cards.1.2] 84㎡대 평당 가운데 값
+[scenes.0.data.cards.2.0] 차이
+[scenes.0.data.cards.2.1] +31.4%
+[scenes.0.data.cards.2.2] 오래된 단지가 더 비쌈
+[scenes.0.lines.0.text] 잠실 주공 5단지, 1978년에 지은 이 단지가 2008년에 지은 같은 동네 단지보다 평당 30% 넘게 비쌌어요.
+[scenes.0.lines.0.cap] 잠실 84㎡대 평당 · 주공아파트5단지(1978) 1억 7,449만원 · 리센츠(2008) 1억 3,283만원 · +31.4%
+[scenes.1.key] t_rank
+[scenes.1.title] 대치동은 견주는 단지마다
+[scenes.1.sub] 대치동 · 84㎡대 평당 가운데 값 · 평당 = 전용면적 3.3058㎡ 기준
+[scenes.1.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음) · 국토교통부 공동주택 단지 정보
+[scenes.1.data.rows.0.0] 래미안대치팰리스
+[scenes.1.data.rows.0.2] 1억 6,630만원
+[scenes.1.data.rows.0.3] 2015 · 8건
+[scenes.1.data.rows.0.4] new
+[scenes.1.data.rows.1.0] 은마
+[scenes.1.data.rows.1.2] 1억 5,231만원
+[scenes.1.data.rows.1.3] 1979 · 13건
+[scenes.1.data.rows.1.4] old
+[scenes.1.data.rows.2.0] 대치르엘
+[scenes.1.data.rows.2.2] 1억 4,273만원
+[scenes.1.data.rows.2.3] 2021 · 5건
+[scenes.1.data.rows.2.4] new
+[scenes.1.data.hot] 은마
+[scenes.1.data.steps.0.0] 은마는 둘 사이
+[scenes.1.data.steps.0.1] 래미안대치팰리스 −8.4% · 대치르엘 +6.7%
+[scenes.1.data.steps.0.2] accent
+[scenes.1.lines.0.text] 그런데 대치동에선 어느 새 단지와 견주느냐에 따라 순서가 갈렸어요.
+[scenes.2.key] t_strip
+[scenes.2.title] 같은 달, 같은 단지
+[scenes.2.sub] 래미안원베일리 84㎡대 · 2026년 5월 계약 11건 · 점 하나 = 거래 하나
+[scenes.2.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음)
+[scenes.2.data.gap] 차이 18.00억
+[scenes.2.data.steps.0.0] 53.50억 ~ 71.50억
+[scenes.2.data.steps.0.1] 같은 달 11건 · 차이 18.00억
+[scenes.2.data.steps.0.2] accent
+[scenes.2.data.steps.1.0] 11건 모두 중개거래
+[scenes.2.data.steps.1.1] 중개사를 거쳐 신고된 거래
+[scenes.2.data.steps.1.2] ink
+[scenes.2.lines.0.text] 래미안원베일리에선 같은 달에 18억이 차이 난 거래도 있었고요.
+[scenes.2.lines.0.cap] 래미안원베일리 84㎡대 · 2026년 5월 11건 · 53.50억 ~ 71.50억 · 모두 중개거래
+[scenes.3.key] t_person
+[scenes.3.title] 손품 씨의 보증금으로는
+[scenes.3.sub] 가상 인물 · 계산을 위해 만든 사람(실존 인물 아님)
+[scenes.3.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음)
+[scenes.3.data.promise.0] 보증금 9억 5천만원 안의 전세
+[scenes.3.data.promise.1] 대부분 1990년 전 단지
+[scenes.3.data.dday] 보증금 9억 5천만원
+[scenes.3.lines.0.text] 전세 값이 보통 손품 씨 보증금 안에 드는 곳은, 대부분 1990년 전에 지은 단지였습니다.
+[scenes.4.key] concl
+[scenes.4.title] 결론부터
+[scenes.4.sub] 84㎡대 1년 실거래로 본 세 동네
+[scenes.4.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음)
+[scenes.4.data.rows.0] 잠실: 1978년 단지가 평당 1위
+[scenes.4.data.rows.1] 대치: 견주는 단지마다 순서가 바뀜
+[scenes.4.data.rows.2] 반포: 위 넷은 2009년 이후 단지
+[scenes.4.data.rows.3] 전세: 세 동네 모두 오래된 쪽이 쌈
+[scenes.4.lines.0.text] 결론부터. 세 동네 모두, 견주는 단지에 따라 값 순서가 달라졌어요. 전세만은 세 동네 모두 오래된 단지가 쌌고요.
+[scenes.5.key] person
+[scenes.5.title] 다시 손품 씨
+[scenes.5.sub] 가상 인물 · 지난 편(송파·강동 세 동네) 그 사람
+[scenes.5.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음)
+[scenes.5.chapter] 1장
+[scenes.5.data.dday] 보증금 9억 5천만원
+[scenes.5.data.beats.0.0] 실제 인물이 아니라
+[scenes.5.data.beats.0.1] 계산을 위해 만든 가상 인물
+[scenes.5.data.beats.0.2] ink
+[scenes.5.data.beats.1.0] 같은 동네, 지은 해 따라 갈린 값
+[scenes.5.data.beats.1.1] 지난 편 고덕동: 오래된 단지가 37.2% 쌌음
+[scenes.5.data.beats.1.2] accent
+[scenes.5.data.beats.2.0] 이번엔 옛 단지 + 새 단지
+[scenes.5.data.beats.2.1] 한 동네에 같이 있는 곳
+[scenes.5.data.beats.2.2] ink
+[scenes.5.lines.0.text] 손품 씨는 지난 편에서 송파·강동 세 동네를 둘러본 가상 인물이에요.
+[scenes.5.lines.1.text] 그때 본 것 하나가 마음에 걸렸어요. 같은 동네라도 지은 해가 다른 단지끼리는 값이 크게 갈렸거든요.
+[scenes.5.lines.1.cap] 손품 씨(가상 인물·계산용) 보증금 9.50억 = 래미안힐스테이트고덕 84㎡대 신규 순수전세 중앙값
+[scenes.5.lines.2.text] 그래서 이번엔 오래된 단지와 새 단지가 한 동네에 같이 있는 곳을 골랐어요.
+[scenes.6.key] map2
+[scenes.6.title] 이번엔 세 동네
+[scenes.6.sub] 송파구 잠실동 · 강남구 대치동 · 서초구 반포동(지도 자료 없음) · 회색 = 1990년 전 단지
+[scenes.6.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음) · 국토교통부 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.6.chapter] 1장
+[scenes.6.data.focus.0] 리센츠
+[scenes.6.data.focus.1] 잠실엘스
+[scenes.6.data.focus.2] 주공5단지
+[scenes.6.data.focus.3] 레이크팰리스
+[scenes.6.data.focus.4] 갤러리아팰리스
+[scenes.6.data.focus.5] 잠실 우성4차
+[scenes.6.data.focus.6] 잠실 현대
+[scenes.6.data.focus.7] 은마
+[scenes.6.data.focus.8] 대치미도맨션
+[scenes.6.data.focus.9] 래미안대치팰리스
+[scenes.6.data.focus.10] 개포1차2차우성
+[scenes.6.data.focus.11] 대치현대
+[scenes.6.data.focus.12] 대치동부센트레빌
+[scenes.6.data.focus.13] 대치아이파크
+[scenes.6.data.focus.14] 대치선경
+[scenes.6.data.focus.15] 대치삼성
+[scenes.6.data.focus.16] 대치우성1차
+[scenes.6.data.focus.17] 쌍용대치1차
+[scenes.6.data.focus.18] 대치르엘
+[scenes.6.data.focus.19] 대치푸르지오써밋
+[scenes.6.data.focus.20] 대치1차현대
+[scenes.6.data.focus.21] 대치쌍용2차
+[scenes.6.data.focus.22] 대치포스코더샵
+[scenes.6.data.focus.23] 대치롯데캐슬
+[scenes.6.data.focus.24] 롯데캐슬리베
+[scenes.6.data.focus.25] 래미안대치하이스턴
+[scenes.6.data.focus.26] 대치SK VIEW
+[scenes.6.data.old.0] 주공5단지
+[scenes.6.data.old.1] 잠실 우성4차
+[scenes.6.data.old.2] 은마
+[scenes.6.data.old.3] 대치미도맨션
+[scenes.6.data.old.4] 개포1차2차우성
+[scenes.6.data.old.5] 대치선경
+[scenes.6.data.old.6] 대치우성1차
+[scenes.6.data.old.7] 쌍용대치1차
+[scenes.6.data.old.8] 대치쌍용2차
+[scenes.6.data.old.9] 래미안대치하이스턴
+[scenes.6.data.labels.0] 주공5단지
+[scenes.6.data.labels.1] 리센츠
+[scenes.6.data.labels.2] 은마
+[scenes.6.data.labels.3] 래미안대치팰리스
+[scenes.6.data.cards.0.0] 송파구
+[scenes.6.data.cards.0.1] 잠실동
+[scenes.6.data.cards.0.2] 매매 676건
+[scenes.6.data.cards.1.0] 강남구
+[scenes.6.data.cards.1.1] 대치동
+[scenes.6.data.cards.1.2] 매매 277건
+[scenes.6.data.cards.2.0] 서초구
+[scenes.6.data.cards.2.1] 반포동
+[scenes.6.data.cards.2.2] 매매 318건 · 지도 없음
+[scenes.6.lines.0.text] 송파구 잠실동, 강남구 대치동, 서초구 반포동입니다.
+[scenes.7.key] tiles
+[scenes.7.title] 무엇으로 쟀나
+[scenes.7.sub] 국토교통부 실거래 1년 · 84㎡대만 · 해제·공공기관 매수 제외
+[scenes.7.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음)
+[scenes.7.chapter] 1장
+[scenes.7.data.tiles.0.0] 잠실동
+[scenes.7.data.tiles.0.1] 676건
+[scenes.7.data.tiles.1.0] 대치동
+[scenes.7.data.tiles.1.1] 277건
+[scenes.7.data.tiles.2.0] 반포동
+[scenes.7.data.tiles.2.1] 318건
+[scenes.7.data.tilesHead] 1년 매매(모든 면적)
+[scenes.7.data.steps.1.0] 84㎡대 = 전용 80~85㎡
+[scenes.7.data.steps.1.1] 국민평형 · 잠실 320건 · 대치 75건 · 반포 99건
+[scenes.7.data.steps.1.2] accent
+[scenes.7.data.steps.2.0] 1990년 전에 지은 단지
+[scenes.7.data.steps.2.1] = 이 영상의 오래된 단지(회색)
+[scenes.7.data.steps.2.2] ink
+[scenes.7.data.steps.3.0] 평당 = 전용면적 기준
+[scenes.7.data.steps.3.1] 공급면적 기준 숫자보다 크게 나옴
+[scenes.7.data.steps.3.2] accent
+[scenes.7.lines.0.text] 자료는 이번에도 국토교통부에 신고된 실거래 최근 1년 치만 씁니다.
+[scenes.7.lines.0.cap] 2025.11~2026.10 계약(잠실동·반포동은 2026.09 거래까지) · 매매 잠실동 676건 · 대치동 277건 · 반포동 318건 · 해제·공공기관 매수 제외
+[scenes.7.lines.1.text] 집 크기는 흔히 국민평형이라 부르는 전용 84㎡대로 맞췄어요.
+[scenes.7.lines.2.text] 1990년 전에 지은 단지는 오래된 단지로 묶었고요.
+[scenes.7.lines.3.text] 평당 값은 공급면적이 아니라 전용면적으로 나눠서, 흔히 보는 숫자보다 크게 나와요.
+[scenes.7.lines.3.cap] 84㎡대 = 전용 80~85㎡ · 잠실동 320건 · 대치동 75건 · 반포동 99건 · 평당 = 전용면적 기준
+[scenes.8.key] j_map
+[scenes.8.title] 첫 동네, 송파구 잠실동
+[scenes.8.sub] 잠실동 · 1990년 전에 지은 단지는 회색, 그 뒤 단지는 주황
+[scenes.8.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음) · 국토교통부 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.8.chapter] 2장
+[scenes.8.data.focus.0] 주공5단지
+[scenes.8.data.focus.1] 리센츠
+[scenes.8.data.focus.2] 잠실엘스
+[scenes.8.data.focus.3] 트리지움
+[scenes.8.data.old.0] 주공5단지
+[scenes.8.data.old.1] 잠실 우성4차
+[scenes.8.data.old.2] 은마
+[scenes.8.data.old.3] 대치미도맨션
+[scenes.8.data.old.4] 개포1차2차우성
+[scenes.8.data.old.5] 대치선경
+[scenes.8.data.old.6] 대치우성1차
+[scenes.8.data.old.7] 쌍용대치1차
+[scenes.8.data.old.8] 대치쌍용2차
+[scenes.8.data.old.9] 래미안대치하이스턴
+[scenes.8.data.labels.0] 주공5단지
+[scenes.8.data.labels.1] 리센츠
+[scenes.8.data.labels.2] 잠실엘스
+[scenes.8.data.cards.0.0] 잠실동 84㎡대
+[scenes.8.data.cards.0.1] 1년 320건
+[scenes.8.data.cards.0.2] 2025.11~2026.09 계약
+[scenes.8.data.cards.1.0] 주공5단지
+[scenes.8.data.cards.1.1] 1978.04 입주
+[scenes.8.data.cards.1.2] 3,930세대
+[scenes.8.data.cards.2.0] 리센츠 · 잠실엘스
+[scenes.8.data.cards.2.1] 2008년 입주
+[scenes.8.data.cards.2.2] 5,563세대 · 5,678세대
+[scenes.8.lines.0.text] 잠실동부터 볼게요.
+[scenes.8.lines.1.text] 1978년에 입주한 주공아파트 5단지가 있고요.
+[scenes.8.lines.2.text] 같은 동네에 30년 뒤 들어선 리센츠와 잠실엘스가 있습니다.
+[scenes.9.key] j_rank
+[scenes.9.title] 잠실동 평당 값 순위
+[scenes.9.sub] 잠실동 · 84㎡대 평당 가운데 값 · 평당 = 전용면적 3.3058㎡ 기준
+[scenes.9.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음) · 국토교통부 공동주택 단지 정보
+[scenes.9.chapter] 2장
+[scenes.9.data.rows.0.0] 주공5단지
+[scenes.9.data.rows.0.2] 1억 7,449만원
+[scenes.9.data.rows.0.3] 1978 · 40건
+[scenes.9.data.rows.0.4] old
+[scenes.9.data.rows.1.0] 리센츠
+[scenes.9.data.rows.1.2] 1억 3,283만원
+[scenes.9.data.rows.1.3] 2008 · 90건
+[scenes.9.data.rows.1.4] new
+[scenes.9.data.rows.2.0] 잠실엘스
+[scenes.9.data.rows.2.2] 1억 2,950만원
+[scenes.9.data.rows.2.3] 2008 · 85건
+[scenes.9.data.rows.2.4] new
+[scenes.9.data.rows.3.0] 트리지움
+[scenes.9.data.rows.3.2] 1억 2,336만원
+[scenes.9.data.rows.3.3] 2007 · 67건
+[scenes.9.data.rows.3.4] new
+[scenes.9.data.hot] 주공5단지
+[scenes.9.data.steps.0.0] 1위는 1978년 단지
+[scenes.9.data.steps.0.1] 주공5단지 40건 가운데 값
+[scenes.9.data.steps.0.2] ink
+[scenes.9.data.steps.1.0] 리센츠보다 +31.4%
+[scenes.9.data.steps.1.1] 잠실엘스보다 +34.7% · 트리지움보다 +41.4%
+[scenes.9.data.steps.1.2] accent
+[scenes.9.data.steps.2.0] 한 채 값 43.45억 vs 34.15억
+[scenes.9.data.steps.2.1] 84㎡대 매매 가운데 값 · 9억쯤 차이
+[scenes.9.data.steps.2.2] ink
+[scenes.9.lines.0.text] 평당 값을 거래 가운데 값으로 보면, 5단지가 가장 높았습니다.
+[scenes.9.lines.0.cap] 84㎡대 평당 중앙 · 주공아파트5단지 17,449만원(40건) · 리센츠 13,283만원(90건) · 잠실엘스 12,950만원(85건) · 트리지움 12,336만원(67건)
+[scenes.9.lines.1.text] 잠실 주공 5단지, 1978년에 지은 이 단지가 2008년에 지은 같은 동네 단지보다 평당 30% 넘게 비쌌어요.
+[scenes.9.lines.1.cap] 5단지 vs 리센츠 +31.4% · vs 잠실엘스 +34.7% · vs 트리지움 +41.4%
+[scenes.9.lines.2.text] 한 채 값으로 보면 리센츠와 9억쯤 차이가 나요.
+[scenes.9.lines.2.cap] 84㎡대 매매 중앙 · 5단지 43.45억 · 리센츠 34.15억 · 잠실엘스 33.25억
+[scenes.10.key] j_line
+[scenes.10.title] 한 해 내내 위에 있었다
+[scenes.10.sub] 84㎡대 달별 가운데 값 · 단위 억원 · 괄호 = 그달 건수
+[scenes.10.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음)
+[scenes.10.chapter] 2장
+[scenes.10.data.series.0.0] 주공5단지
+[scenes.10.data.series.0.1] ink2
+[scenes.10.data.series.1.0] 리센츠
+[scenes.10.data.series.1.1] accent
+[scenes.10.data.cards.0.0] 주공5단지 달별 가운데 값
+[scenes.10.data.cards.0.1] 42.55억 ~ 45.75억
+[scenes.10.data.cards.0.2] 1978년 단지
+[scenes.10.data.cards.1.0] 리센츠 달별 가운데 값
+[scenes.10.data.cards.1.1] 33.20억 ~ 35.20억
+[scenes.10.data.cards.1.2] 2008년 단지
+[scenes.10.lines.0.text] 한두 건이 튄 게 아니었어요. 한 해 내내 5단지 거래가 더 비쌌죠.
+[scenes.10.lines.0.cap] 달별 중앙 · 5단지 42.55억~45.75억 · 리센츠 33.20억~35.20억
+[scenes.11.key] j_woo
+[scenes.11.title] 같은 잠실, 다른 오래된 단지
+[scenes.11.sub] 잠실동 · 84㎡대 평당 가운데 값 · 평당 = 전용면적 3.3058㎡ 기준
+[scenes.11.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음) · 국토교통부 공동주택 단지 정보
+[scenes.11.chapter] 2장
+[scenes.11.data.bars.0.0] 리센츠
+[scenes.11.data.bars.0.2] 1억 3,283만원
+[scenes.11.data.bars.0.3] 2008 · 90건
+[scenes.11.data.bars.0.4] accent
+[scenes.11.data.bars.1.0] 잠실 우성
+[scenes.11.data.bars.1.2] 1억 1,908만원
+[scenes.11.data.bars.1.3] 1981 · 10건
+[scenes.11.data.bars.1.4] ink2
+[scenes.11.data.steps.0.0] 잠실 우성 · 1981년
+[scenes.11.data.steps.0.1] 같은 동네 오래된 단지
+[scenes.11.data.steps.0.2] ink
+[scenes.11.data.steps.1.0] 리센츠보다 −10.4%
+[scenes.11.data.steps.1.1] 이번엔 오래된 쪽이 쌈
+[scenes.11.data.steps.1.2] accent
+[scenes.11.data.steps.2.0] '오래됐으면 비싸다'도
+[scenes.11.data.steps.2.1] 단지마다 달랐다
+[scenes.11.data.steps.2.2] ink
+[scenes.11.lines.0.text] 그런데 같은 잠실의 오래된 단지 우성아파트는 달랐어요.
+[scenes.11.lines.1.text] 리센츠보다 평당 10% 쌌거든요.
+[scenes.11.lines.1.cap] 우성아파트(1981) 평당 11,908만원(10건) vs 리센츠 −10.4%
+[scenes.11.lines.2.text] 그러니까 '오래됐으면 비싸다'도 단지마다 달랐습니다.
+[scenes.12.key] d_map
+[scenes.12.title] 두 번째 동네, 강남구 대치동
+[scenes.12.sub] 대치동 · 1990년 전에 지은 단지는 회색, 그 뒤 단지는 주황
+[scenes.12.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음) · 국토교통부 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.12.chapter] 3장
+[scenes.12.data.focus.0] 은마
+[scenes.12.data.focus.1] 래미안대치팰리스
+[scenes.12.data.focus.2] 대치르엘
+[scenes.12.data.old.0] 주공5단지
+[scenes.12.data.old.1] 잠실 우성4차
+[scenes.12.data.old.2] 은마
+[scenes.12.data.old.3] 대치미도맨션
+[scenes.12.data.old.4] 개포1차2차우성
+[scenes.12.data.old.5] 대치선경
+[scenes.12.data.old.6] 대치우성1차
+[scenes.12.data.old.7] 쌍용대치1차
+[scenes.12.data.old.8] 대치쌍용2차
+[scenes.12.data.old.9] 래미안대치하이스턴
+[scenes.12.data.labels.0] 은마
+[scenes.12.data.labels.1] 래미안대치팰리스
+[scenes.12.data.labels.2] 대치르엘
+[scenes.12.data.cards.0.0] 은마
+[scenes.12.data.cards.0.1] 1979.08 입주
+[scenes.12.data.cards.0.2] 4,424세대 · 주공5단지와 거의 같은 때
+[scenes.12.data.cards.1.0] 래미안대치팰리스
+[scenes.12.data.cards.1.1] 2015.09 입주
+[scenes.12.data.cards.1.2] 1,608세대
+[scenes.12.lines.0.text] 대치동은 은마로 봤습니다. 잠실 5단지와 거의 같은 때 입주한 단지예요.
+[scenes.12.lines.1.text] 옆의 래미안대치팰리스는 2015년에 지었고요.
+[scenes.12.lines.1.cap] 84㎡대 평당 중앙 · 래미안대치팰리스 16,630만원(8건) · 은마 15,231만원(13건) · 은마가 −8.4%
+[scenes.13.key] d_rank
+[scenes.13.title] 대치동, 은마는 가운데
+[scenes.13.sub] 대치동 · 84㎡대 평당 가운데 값 · 평당 = 전용면적 3.3058㎡ 기준
+[scenes.13.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음) · 국토교통부 공동주택 단지 정보
+[scenes.13.chapter] 3장
+[scenes.13.data.rows.0.0] 래미안대치팰리스
+[scenes.13.data.rows.0.2] 1억 6,630만원
+[scenes.13.data.rows.0.3] 2015 · 8건
+[scenes.13.data.rows.0.4] new
+[scenes.13.data.rows.1.0] 은마
+[scenes.13.data.rows.1.2] 1억 5,231만원
+[scenes.13.data.rows.1.3] 1979 · 13건
+[scenes.13.data.rows.1.4] old
+[scenes.13.data.rows.2.0] 대치르엘
+[scenes.13.data.rows.2.2] 1억 4,273만원
+[scenes.13.data.rows.2.3] 2021 · 5건
+[scenes.13.data.rows.2.4] new
+[scenes.13.data.hot] 은마
+[scenes.13.data.steps.0.0] 은마가 −8.4%
+[scenes.13.data.steps.0.1] 래미안대치팰리스(2015)보다 쌈
+[scenes.13.data.steps.0.2] ink
+[scenes.13.data.steps.1.0] 은마가 +6.7%
+[scenes.13.data.steps.1.1] 대치르엘(2021)보다 비쌈
+[scenes.13.data.steps.1.2] accent
+[scenes.13.data.steps.2.0] 견주는 단지마다 순서가 바뀜
+[scenes.13.data.steps.2.1] 오래됐다고 늘 싸거나 비싸지 않음
+[scenes.13.data.steps.2.2] ink
+[scenes.13.lines.0.text] 평당 값은 잠실과 달리, 오래된 은마가 래미안대치팰리스보다 8% 쌌습니다.
+[scenes.13.lines.1.text] 다만 더 새로 지은 대치르엘과 견주면, 이번엔 은마가 7% 가까이 비쌌어요.
+[scenes.13.lines.1.cap] 대치르엘(2021) 14,273만원(5건) · 은마가 +6.7%
+[scenes.13.lines.2.text] 그런데 대치동에선 어느 새 단지와 견주느냐에 따라 순서가 갈렸어요.
+[scenes.14.key] d_count
+[scenes.14.title] 대치동은 거래가 적다
+[scenes.14.sub] 84㎡대 1년 매매 건수 · 점 하나 = 거래 하나
+[scenes.14.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음)
+[scenes.14.chapter] 3장
+[scenes.14.data.groups.0.0] 은마
+[scenes.14.data.groups.0.2] old
+[scenes.14.data.groups.1.0] 래미안대치팰리스
+[scenes.14.data.groups.1.2] new
+[scenes.14.data.groups.2.0] 대치르엘
+[scenes.14.data.groups.2.2] new
+[scenes.14.data.groups.3.0] 잠실 리센츠(비교용)
+[scenes.14.data.groups.3.2] new
+[scenes.14.data.total] 대치동 84㎡대 1년 75건
+[scenes.14.data.steps.0.0] 많아야 13건
+[scenes.14.data.steps.0.1] 한두 건에 가운데 값이 흔들릴 수 있음
+[scenes.14.data.steps.0.2] accent
+[scenes.14.lines.0.text] 대치동은 단지마다 거래가 많아야 열세 건이라, 한두 건에 값이 흔들릴 수 있습니다.
+[scenes.14.lines.0.cap] 대치동 84㎡대 75건 · 은마 13건 · 래미안대치팰리스 8건 · 대치르엘 5건
+[scenes.15.key] b_rank
+[scenes.15.title] 반포동, 새 단지가 위에
+[scenes.15.sub] 반포동 · 84㎡대 평당 가운데 값 · 평당 = 전용면적 3.3058㎡ 기준
+[scenes.15.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음) · 국토교통부 공동주택 단지 정보
+[scenes.15.chapter] 4장
+[scenes.15.data.rows.0.0] 래미안원베일리
+[scenes.15.data.rows.0.2] 2억 2,951만원
+[scenes.15.data.rows.0.3] 2023 · 19건
+[scenes.15.data.rows.0.4] new
+[scenes.15.data.rows.1.0] 아크로리버파크
+[scenes.15.data.rows.1.2] 2억 1,498만원
+[scenes.15.data.rows.1.3] 2016 · 10건
+[scenes.15.data.rows.1.4] new
+[scenes.15.data.rows.2.0] 래미안퍼스티지
+[scenes.15.data.rows.2.2] 2억 143만원
+[scenes.15.data.rows.2.3] 2009 · 16건
+[scenes.15.data.rows.2.4] new
+[scenes.15.data.rows.3.0] 반포자이
+[scenes.15.data.rows.3.2] 1억 8,914만원
+[scenes.15.data.rows.3.3] 2009 · 17건
+[scenes.15.data.rows.3.4] new
+[scenes.15.data.rows.4.0] 반포미도
+[scenes.15.data.rows.4.2] 1억 5,836만원
+[scenes.15.data.rows.4.3] 1987 · 4건
+[scenes.15.data.rows.4.4] old
+[scenes.15.data.hot] 반포미도
+[scenes.15.data.steps.0.0] 위 넷은 2009년 이후 단지
+[scenes.15.data.steps.0.1] 반포자이·래미안퍼스티지 2009 · 아크로리버파크 2016
+[scenes.15.data.steps.0.2] ink
+[scenes.15.data.steps.1.0] 1위 래미안원베일리
+[scenes.15.data.steps.1.1] 2023년 입주 · 19건 가운데 값
+[scenes.15.data.steps.1.2] accent
+[scenes.15.data.steps.2.0] 평당 2억 넘는 단지 셋
+[scenes.15.data.steps.2.1] 래미안원베일리 · 아크로리버파크 · 래미안퍼스티지
+[scenes.15.data.steps.2.2] ink
+[scenes.15.data.steps.3.0] 반포미도는 1년 4건
+[scenes.15.data.steps.3.1] 거래가 적어 참고만
+[scenes.15.data.steps.3.2] ink
+[scenes.15.lines.0.text] 반포동은 새 단지들이 맨 위에 모여 있었습니다.
+[scenes.15.lines.1.text] 2023년에 입주한 래미안원베일리가 평당 값 1위였어요.
+[scenes.15.lines.2.text] 평당 2억이 넘는 단지가 여기 셋이나 있었습니다.
+[scenes.15.lines.2.cap] 84㎡대 평당 중앙 · 래미안원베일리(2023) 22,951만원(19건) · 아크로리버파크(2016) 21,498만원 · 래미안퍼스티지(2009) 20,143만원 · 반포자이(2009) 18,914만원
+[scenes.15.lines.3.text] 오래된 단지 중엔 반포미도가 있었는데, 한 해 동안 이 평형 거래가 네 건뿐이었어요.
+[scenes.15.lines.3.cap] 반포미도(1987) 4건 중앙 40.70억 · 평당 15,836만원 · 거래가 적어 참고만
+[scenes.16.key] b_strip
+[scenes.16.title] 같은 달, 같은 단지
+[scenes.16.sub] 래미안원베일리 84㎡대 · 2026년 5월 계약 11건 · 점 하나 = 거래 하나
+[scenes.16.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음)
+[scenes.16.chapter] 4장
+[scenes.16.data.gap] 차이 18.00억
+[scenes.16.data.steps.0.0] 53.50억 ~ 71.50억
+[scenes.16.data.steps.0.1] 같은 달 11건 · 차이 18.00억
+[scenes.16.data.steps.0.2] accent
+[scenes.16.data.steps.1.0] 11건 모두 중개거래
+[scenes.16.data.steps.1.1] 중개사를 거쳐 신고된 거래
+[scenes.16.data.steps.1.2] ink
+[scenes.16.lines.0.text] 래미안원베일리에선 같은 달에 18억이 차이 난 거래도 있었고요.
+[scenes.16.lines.0.cap] 2026.05 11건 · 3일 53.50억 6층 · 12일 53.50억 2층 … 25일 65.00억 14층 · 29일 71.50억 13층 · 11건 모두 중개거래
+[scenes.16.lines.1.text] 그달 열한 건 모두 중개사를 거친 거래였습니다.
+[scenes.17.key] b_floor
+[scenes.17.title] 층과 날짜는 있지만
+[scenes.17.sub] 래미안원베일리 84㎡대 · 2026년 5월 11건 · 층·계약일·값
+[scenes.17.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음)
+[scenes.17.chapter] 4장
+[scenes.17.data.deals.0.1] 53.50억
+[scenes.17.data.deals.0.2] 3일
+[scenes.17.data.deals.1.1] 53.50억
+[scenes.17.data.deals.1.2] 12일
+[scenes.17.data.deals.2.1] 55.50억
+[scenes.17.data.deals.2.2] 23일
+[scenes.17.data.deals.3.1] 56.00억
+[scenes.17.data.deals.3.2] 16일
+[scenes.17.data.deals.4.1] 57.50억
+[scenes.17.data.deals.4.2] 9일
+[scenes.17.data.deals.5.1] 59.00억
+[scenes.17.data.deals.5.2] 28일
+[scenes.17.data.deals.6.1] 59.00억
+[scenes.17.data.deals.6.2] 9일
+[scenes.17.data.deals.7.1] 60.00억
+[scenes.17.data.deals.7.2] 1일
+[scenes.17.data.deals.8.1] 60.30억
+[scenes.17.data.deals.8.2] 15일
+[scenes.17.data.deals.9.1] 65.00억
+[scenes.17.data.deals.9.2] 25일
+[scenes.17.data.deals.10.1] 71.50억
+[scenes.17.data.deals.10.2] 29일
+[scenes.17.data.steps.0.0] 왜 그 값이었는지
+[scenes.17.data.steps.0.1] 실거래 자료에는 나오지 않음
+[scenes.17.data.steps.0.2] ink
+[scenes.17.data.steps.1.0] 한 건만 보면
+[scenes.17.data.steps.1.1] 비싼 쪽인지 싼 쪽인지 알 수 없음
+[scenes.17.data.steps.1.2] accent
+[scenes.17.lines.0.text] 층과 날짜는 자료에 있지만, 왜 그 값이었는지는 나오지 않아요.
+[scenes.17.lines.1.text] 그래서 한 건만 보면, 그 값이 같은 달 거래 가운데 비싼 쪽인지 싼 쪽인지 알 수 없어요.
+[scenes.18.key] r_person
+[scenes.18.title] 전세로 옮긴다면
+[scenes.18.sub] 가상 인물 손품 씨 · 보증금 9억 5천만원 = 래미안힐스테이트고덕 84㎡대 전세 가운데 값
+[scenes.18.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음)
+[scenes.18.chapter] 5장
+[scenes.18.data.dday] 보증금 9억 5천만원
+[scenes.18.data.beats.0.0] 사는 게 아니라 전세로
+[scenes.18.data.beats.0.1] 보증금 9억 5천만원 그대로 옮긴다면
+[scenes.18.data.beats.0.2] accent
+[scenes.18.lines.0.text] 이제 손품 씨 계산이에요. 10억이 조금 안 되는 보증금으로, 사는 게 아니라 전세로 옮긴다면요?
+[scenes.19.key] r_pair
+[scenes.19.title] 사는 값과 빌려 사는 값
+[scenes.19.sub] 84㎡대 · 회색 긴 막대 = 매매 가운데 값 · 색 막대 = 신규 순수전세 가운데 값 · % = 전세가율
+[scenes.19.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음)
+[scenes.19.chapter] 5장
+[scenes.19.data.rows.0.0] 잠실
+[scenes.19.data.rows.0.1] 주공5단지
+[scenes.19.data.rows.0.3] 43.45억
+[scenes.19.data.rows.0.5] 5.20억
+[scenes.19.data.rows.0.6] 12.0%
+[scenes.19.data.rows.0.7] old
+[scenes.19.data.rows.1.0] 잠실
+[scenes.19.data.rows.1.1] 리센츠
+[scenes.19.data.rows.1.3] 34.15억
+[scenes.19.data.rows.1.5] 13.50억
+[scenes.19.data.rows.1.6] 39.5%
+[scenes.19.data.rows.1.7] new
+[scenes.19.data.rows.2.0] 잠실
+[scenes.19.data.rows.2.1] 잠실엘스
+[scenes.19.data.rows.2.3] 33.25억
+[scenes.19.data.rows.2.5] 12.50억
+[scenes.19.data.rows.2.6] 37.6%
+[scenes.19.data.rows.2.7] new
+[scenes.19.data.rows.3.0] 대치
+[scenes.19.data.rows.3.1] 은마
+[scenes.19.data.rows.3.3] 38.90억
+[scenes.19.data.rows.3.5] 8.30억
+[scenes.19.data.rows.3.6] 21.3%
+[scenes.19.data.rows.3.7] old
+[scenes.19.data.rows.4.0] 대치
+[scenes.19.data.rows.4.1] 래미안대치팰리스
+[scenes.19.data.rows.4.3] 42.75억
+[scenes.19.data.rows.4.5] 18.25억
+[scenes.19.data.rows.4.6] 42.7%
+[scenes.19.data.rows.4.7] new
+[scenes.19.data.rows.5.0] 반포
+[scenes.19.data.rows.5.1] 반포미도
+[scenes.19.data.rows.5.3] 40.70억
+[scenes.19.data.rows.5.5] 8.00억
+[scenes.19.data.rows.5.6] 19.7%
+[scenes.19.data.rows.5.7] old
+[scenes.19.data.rows.6.0] 반포
+[scenes.19.data.rows.6.1] 래미안원베일리
+[scenes.19.data.rows.6.3] 59.00억
+[scenes.19.data.rows.6.5] 21.00억
+[scenes.19.data.rows.6.6] 35.6%
+[scenes.19.data.rows.6.7] new
+[scenes.19.data.depositTxt] 손품 씨 보증금 9.50억
+[scenes.19.data.steps.1.0] 매매는 가장 비싸고, 전세는 가장 쌈
+[scenes.19.data.steps.1.1] 잠실 안 84㎡대 거래 3건 이상 8단지 중
+[scenes.19.data.steps.1.2] accent
+[scenes.19.lines.0.text] 잠실 5단지 전세는 5억 남짓이었어요.
+[scenes.19.lines.1.text] 매매는 가장 비쌌던 단지가, 전세는 가장 쌌던 거죠.
+[scenes.19.lines.2.text] 리센츠와 잠실엘스 전세는 13억 안팎이었고요.
+[scenes.19.lines.2.cap] 84㎡대 신규 순수전세 중앙 · 5단지 5.20억(88건 · 매매의 12.0%) · 리센츠 13.50억(90건 · 39.5%) · 잠실엘스 12.50억(129건 · 37.6%)
+[scenes.19.lines.3.text] 대치동 은마 전세는 8억 남짓, 래미안대치팰리스는 18억이 넘어요.
+[scenes.19.lines.4.text] 반포에서도 오래된 단지 전세가 쌌어요. 반포미도 전세가 원베일리의 절반이 안 됐거든요.
+[scenes.19.lines.4.cap] 은마 8.30억(21.3%) · 래미안대치팰리스 18.25억(42.7%) · 반포미도 8.00억(19.7%) · 래미안원베일리 21.00억(35.6%)
+[scenes.20.key] r_under
+[scenes.20.title] 보증금 9억 5천만원 안의 전세
+[scenes.20.sub] 84㎡대 신규 순수전세 가운데 값 9.50억 이하 · 세 동네 28단지 중 8곳
+[scenes.20.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음)
+[scenes.20.chapter] 5장
+[scenes.20.data.rows.0.0] 주공5단지
+[scenes.20.data.rows.0.2] 5.20억
+[scenes.20.data.rows.0.4] old
+[scenes.20.data.rows.1.0] 잠실 우성
+[scenes.20.data.rows.1.2] 5.50억
+[scenes.20.data.rows.1.4] old
+[scenes.20.data.rows.2.0] 쌍용대치
+[scenes.20.data.rows.2.2] 7.80억
+[scenes.20.data.rows.2.4] old
+[scenes.20.data.rows.3.0] 반포미도
+[scenes.20.data.rows.3.2] 8.00억
+[scenes.20.data.rows.3.4] old
+[scenes.20.data.rows.4.0] 대치우성
+[scenes.20.data.rows.4.2] 8.15억
+[scenes.20.data.rows.4.4] old
+[scenes.20.data.rows.5.0] 잠실 현대
+[scenes.20.data.rows.5.2] 8.20억
+[scenes.20.data.rows.5.4] new
+[scenes.20.data.rows.6.0] 은마
+[scenes.20.data.rows.6.2] 8.30억
+[scenes.20.data.rows.6.4] old
+[scenes.20.data.rows.7.0] 잠실포스코더샵
+[scenes.20.data.rows.7.2] 8.50억
+[scenes.20.data.rows.7.4] new
+[scenes.20.data.steps.1.0] 8곳 중 6곳이 1990년 전 단지
+[scenes.20.data.steps.1.1] 회색 막대
+[scenes.20.data.steps.1.2] ink
+[scenes.20.data.steps.1.3] old
+[scenes.20.data.steps.2.0] 나머지 둘
+[scenes.20.data.steps.2.1] 잠실 현대(1990) · 잠실포스코더샵(2004, 3건)
+[scenes.20.data.steps.2.2] accent
+[scenes.20.data.steps.2.3] new
+[scenes.20.data.steps.3.0] 왜 낮은지는
+[scenes.20.data.steps.3.1] 실거래 자료로 알 수 없음
+[scenes.20.data.steps.3.2] ink
+[scenes.20.data.steps.4.0] 어디로 가라는 말이 아니라
+[scenes.20.data.steps.4.1] 보증금 안에 드는 곳을 센 계산
+[scenes.20.data.steps.4.2] accent
+[scenes.20.lines.0.text] 손품 씨 보증금 안에 드는 전세는 여덟 단지였습니다.
+[scenes.20.lines.1.text] 전세 값이 보통 손품 씨 보증금 안에 드는 곳은, 대부분 1990년 전에 지은 단지였습니다.
+[scenes.20.lines.1.cap] 전세 중앙 9.50억 이하 8곳 중 1990년 전 건축 6곳 · 잠실 5단지 5.20억 · 잠실 우성 5.50억 · 대치 쌍용대치 7.80억 · 반포미도 8.00억 · 대치우성 8.15억 · 잠실 현대(1990) 8.20억 · 은마 8.30억 · 잠실포스코더샵(2004) 8.50억(3건)
+[scenes.20.lines.2.text] 나머지 둘은 1990년 단지와 2004년 단지였고요.
+[scenes.20.lines.3.text] 오래된 단지 전세가 왜 이렇게 낮은지는, 실거래 자료로는 알 수 없어요.
+[scenes.20.lines.4.text] 어디로 가라는 말은 아니에요.
+[scenes.21.key] w_map
+[scenes.21.title] 걸어서 잰 거리
+[scenes.21.sub] 단지 가운데 → 지하철 출입구 · 오픈스트리트맵 보행로 · 대치·잠실만
+[scenes.21.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음) · 국토교통부 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.21.chapter] 6장
+[scenes.21.data.focus.0] 은마
+[scenes.21.data.focus.1] 리센츠
+[scenes.21.data.old.0] 주공5단지
+[scenes.21.data.old.1] 잠실 우성4차
+[scenes.21.data.old.2] 은마
+[scenes.21.data.old.3] 대치미도맨션
+[scenes.21.data.old.4] 개포1차2차우성
+[scenes.21.data.old.5] 대치선경
+[scenes.21.data.old.6] 대치우성1차
+[scenes.21.data.old.7] 쌍용대치1차
+[scenes.21.data.old.8] 대치쌍용2차
+[scenes.21.data.old.9] 래미안대치하이스턴
+[scenes.21.data.routes.0.0] 은마
+[scenes.21.data.routes.0.1] station
+[scenes.21.data.routes.1.0] 리센츠
+[scenes.21.data.routes.1.1] station
+[scenes.21.data.labels.0] 은마
+[scenes.21.data.labels.1] 리센츠
+[scenes.21.data.cards.0.0] 은마 → 대치역 출입구
+[scenes.21.data.cards.0.1] 270m
+[scenes.21.data.cards.0.2] 1979년 단지
+[scenes.21.data.cards.1.0] 리센츠 → 잠실새내역 출입구
+[scenes.21.data.cards.1.1] 270m
+[scenes.21.data.cards.1.2] 2008년 단지
+[scenes.21.data.cards.2.0] 가장 가까운 두 곳
+[scenes.21.data.cards.2.1] 오래된 하나, 새 하나
+[scenes.21.lines.0.text] 걸어서 잰 거리로 봐도, 새 단지라고 역에 더 가깝지는 않았어요.
+[scenes.21.lines.1.text] 은마와 리센츠는 둘 다 역 출입구까지 270m였습니다.
+[scenes.21.lines.2.text] 가장 가까운 두 곳이 오래된 단지 하나, 새 단지 하나였던 거예요.
+[scenes.22.key] w_ruler
+[scenes.22.title] 역 출입구까지 걷는 거리
+[scenes.22.sub] 단지 가운데 → 지하철 출입구 · 오픈스트리트맵 보행로 · 회색 = 1990년 전 단지
+[scenes.22.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음) · 국토교통부 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)
+[scenes.22.chapter] 6장
+[scenes.22.data.rows.0.0] 은마
+[scenes.22.data.rows.0.2] 270m
+[scenes.22.data.rows.0.3] old
+[scenes.22.data.rows.1.0] 리센츠
+[scenes.22.data.rows.1.2] 270m
+[scenes.22.data.rows.1.3] new
+[scenes.22.data.rows.2.0] 주공5단지
+[scenes.22.data.rows.2.2] 430m
+[scenes.22.data.rows.2.3] old
+[scenes.22.data.rows.3.0] 잠실엘스
+[scenes.22.data.rows.3.2] 500m
+[scenes.22.data.rows.3.3] new
+[scenes.22.data.rows.4.0] 래미안대치팰리스
+[scenes.22.data.rows.4.2] 530m
+[scenes.22.data.rows.4.3] new
+[scenes.22.data.rows.5.0] 대치르엘
+[scenes.22.data.rows.5.2] 1,010m
+[scenes.22.data.rows.5.3] new
+[scenes.22.data.steps.0.0] 5단지 430m · 잠실엘스 500m
+[scenes.22.data.steps.0.1] 조금 더 걸음
+[scenes.22.data.steps.0.2] ink
+[scenes.22.data.steps.1.0] 대치 새 단지가 더 멂
+[scenes.22.data.steps.1.1] 래미안대치팰리스 한티역까지 530m
+[scenes.22.data.steps.1.2] ink
+[scenes.22.data.steps.1.4.0] 대치르엘은 1km 넘게
+[scenes.22.data.steps.1.4.1] 2021년 단지 · 대치역까지 1,010m
+[scenes.22.data.steps.1.4.2] accent
+[scenes.22.data.steps.2.0] 반포는 재지 않음
+[scenes.22.data.steps.2.1] 길 자료를 받지 못함
+[scenes.22.data.steps.2.2] ink
+[scenes.22.lines.0.text] 5단지와 잠실엘스는 그보다 조금 더 걸었고요.
+[scenes.22.lines.1.text] 대치동 새 단지들은 오히려 멀었어요. 래미안대치팰리스는 한티역까지 530m, 2021년에 지은 대치르엘은 대치역까지 1km가 넘었습니다.
+[scenes.22.lines.1.cap] 오픈스트리트맵 보행로 · 단지 가운데 → 지하철 출입구 · 은마 270m · 리센츠 270m · 5단지 430m · 잠실엘스 500m · 래미안대치팰리스 530m · 대치르엘 1,010m · 반포는 확인 안 함 · © OpenStreetMap contributors
+[scenes.22.lines.2.text] 반포는 이번에 길 자료를 받지 못해서, 거리를 재지 않았어요.
+[scenes.23.key] e_table
+[scenes.23.title] 세 동네, 오래된 단지와 새 단지
+[scenes.23.sub] 84㎡대 · 평당·전세는 1년 가운데 값 · 전체 표는 파이어맵 카페 · 계산·비교 자료, 사고팔라는 권유 아님
+[scenes.23.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음) · 국토교통부 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL) · cafe.naver.com/firemap
+[scenes.23.chapter] 7장
+[scenes.23.data.cols.0] 동네
+[scenes.23.data.cols.1] 단지
+[scenes.23.data.cols.2] 지은 해
+[scenes.23.data.cols.3] 평당
+[scenes.23.data.cols.4] 전세
+[scenes.23.data.cols.5] 역까지(걸어서)
+[scenes.23.data.rows.0.0] 잠실
+[scenes.23.data.rows.0.1] 주공5단지
+[scenes.23.data.rows.0.3] 1억 7,449만원
+[scenes.23.data.rows.0.4] 5.20억
+[scenes.23.data.rows.0.5] 430m
+[scenes.23.data.rows.1.0] 잠실
+[scenes.23.data.rows.1.1] 리센츠
+[scenes.23.data.rows.1.3] 1억 3,283만원
+[scenes.23.data.rows.1.4] 13.50억
+[scenes.23.data.rows.1.5] 270m
+[scenes.23.data.rows.2.0] 대치
+[scenes.23.data.rows.2.1] 은마
+[scenes.23.data.rows.2.3] 1억 5,231만원
+[scenes.23.data.rows.2.4] 8.30억
+[scenes.23.data.rows.2.5] 270m
+[scenes.23.data.rows.3.0] 대치
+[scenes.23.data.rows.3.1] 래미안대치팰리스
+[scenes.23.data.rows.3.3] 1억 6,630만원
+[scenes.23.data.rows.3.4] 18.25억
+[scenes.23.data.rows.3.5] 530m
+[scenes.23.data.rows.4.0] 반포
+[scenes.23.data.rows.4.1] 반포미도
+[scenes.23.data.rows.4.3] 1억 5,836만원
+[scenes.23.data.rows.4.4] 8.00억
+[scenes.23.data.rows.4.5] 확인 안 함
+[scenes.23.data.rows.5.0] 반포
+[scenes.23.data.rows.5.1] 래미안원베일리
+[scenes.23.data.rows.5.3] 2억 2,951만원
+[scenes.23.data.rows.5.4] 21.00억
+[scenes.23.data.rows.5.5] 확인 안 함
+[scenes.23.data.cafe] cafe.naver.com/firemap
+[scenes.23.lines.0.text] 세 동네 단지 전체 표는 파이어맵 카페에 올려 둘게요.
+[scenes.23.lines.1.text] 여러분 동네에선 오래된 단지와 새 단지 중 어느 쪽이 비싼지, 댓글로 알려 주세요. 다음 동네를 고를 때 그대로 써 볼게요.
+[maps.jamsil.name] 잠실동
+[maps.jamsil.stations.0.0] 천호
+[maps.jamsil.stations.1.0] 건대입구
+[maps.jamsil.stations.2.0] 구의
+[maps.jamsil.stations.3.0] 강변
+[maps.jamsil.stations.4.0] 잠실나루
+[maps.jamsil.stations.5.0] 오금
+[maps.jamsil.stations.6.0] 종합운동장
+[maps.jamsil.stations.7.0] 잠실새내
+[maps.jamsil.stations.8.0] 잠실
+[maps.jamsil.stations.9.0] 학여울
+[maps.jamsil.stations.10.0] 방이
+[maps.jamsil.stations.11.0] 올림픽공원
+[maps.jamsil.stations.12.0] 자양
+[maps.jamsil.stations.13.0] 송파
+[maps.jamsil.stations.14.0] 석촌
+[maps.jamsil.stations.15.0] 몽촌토성
+[maps.jamsil.stations.16.0] 강동구청
+[maps.jamsil.stations.17.0] 한성백제
+[maps.jamsil.stations.18.0] 송파나루
+[maps.jamsil.stations.19.0] 석촌고분
+[maps.jamsil.stations.20.0] 삼전
+[maps.jamsil.cx.0.name] 리센츠
+[maps.jamsil.cx.0.walk.station.name] 잠실새내역 출입구
+[maps.jamsil.cx.1.name] 잠실엘스
+[maps.jamsil.cx.1.walk.station.name] 종합운동장역 출입구
+[maps.jamsil.cx.2.name] 주공5단지
+[maps.jamsil.cx.2.walk.station.name] 잠실역 출입구
+[maps.jamsil.cx.3.name] 레이크팰리스
+[maps.jamsil.cx.3.walk.station.name] 삼전역 출입구
+[maps.jamsil.cx.4.name] 갤러리아팰리스
+[maps.jamsil.cx.4.walk.station.name] 잠실역 출입구
+[maps.jamsil.cx.5.name] 잠실 우성4차
+[maps.jamsil.cx.5.walk.station.name] 삼전역 출입구
+[maps.jamsil.cx.6.name] 잠실 현대
+[maps.jamsil.cx.6.walk.station.name] 삼전역 출입구
+[maps.daechi.name] 대치동
+[maps.daechi.stations.0.0] 선정릉
+[maps.daechi.stations.1.0] 도곡
+[maps.daechi.stations.2.0] 선릉
+[maps.daechi.stations.3.0] 삼성
+[maps.daechi.stations.4.0] 종합운동장
+[maps.daechi.stations.5.0] 대청
+[maps.daechi.stations.6.0] 학여울
+[maps.daechi.stations.7.0] 대치
+[maps.daechi.stations.8.0] 매봉
+[maps.daechi.stations.9.0] 대모산입구
+[maps.daechi.stations.10.0] 개포동
+[maps.daechi.stations.11.0] 구룡
+[maps.daechi.stations.12.0] 한티
+[maps.daechi.cx.0.name] 은마
+[maps.daechi.cx.0.walk.station.name] 대치역 출입구
+[maps.daechi.cx.1.name] 대치미도맨션
+[maps.daechi.cx.1.walk.station.name] 대치역 출입구
+[maps.daechi.cx.2.name] 래미안대치팰리스
+[maps.daechi.cx.2.walk.station.name] 한티역 출입구
+[maps.daechi.cx.3.name] 개포1차2차우성
+[maps.daechi.cx.3.walk.station.name] 도곡역 출입구
+[maps.daechi.cx.4.name] 대치현대
+[maps.daechi.cx.4.walk.station.name] 대치역 출입구
+[maps.daechi.cx.5.name] 대치동부센트레빌
+[maps.daechi.cx.5.walk.station.name] 도곡역 출입구
+[maps.daechi.cx.6.name] 대치아이파크
+[maps.daechi.cx.6.walk.station.name] 한티역 출입구
+[maps.daechi.cx.7.name] 대치선경
+[maps.daechi.cx.7.walk.station.name] 대치역 출입구
+[maps.daechi.cx.8.name] 대치삼성
+[maps.daechi.cx.8.walk.station.name] 대치역 출입구
+[maps.daechi.cx.9.name] 대치우성1차
+[maps.daechi.cx.9.walk.station.name] 대치역 출입구
+[maps.daechi.cx.10.name] 쌍용대치1차
+[maps.daechi.cx.10.walk.station.name] 대치역 출입구
+[maps.daechi.cx.11.name] 대치르엘
+[maps.daechi.cx.11.walk.station.name] 대치역 출입구
+[maps.daechi.cx.12.name] 대치푸르지오써밋
+[maps.daechi.cx.12.walk.station.name] 대치역 출입구
+[maps.daechi.cx.13.name] 대치1차현대
+[maps.daechi.cx.13.walk.station.name] 대치역 출입구
+[maps.daechi.cx.14.name] 대치쌍용2차
+[maps.daechi.cx.14.walk.station.name] 대치역 출입구
+[maps.daechi.cx.15.name] 대치포스코더샵
+[maps.daechi.cx.15.walk.station.name] 선릉역 출입구
+[maps.daechi.cx.16.name] 대치롯데캐슬
+[maps.daechi.cx.16.walk.station.name] 선릉역 출입구
+[maps.daechi.cx.17.name] 롯데캐슬리베
+[maps.daechi.cx.17.walk.station.name] 한티역 출입구
+[maps.daechi.cx.18.name] 래미안대치하이스턴
+[maps.daechi.cx.18.walk.station.name] 삼성역 출입구
+[maps.daechi.cx.19.name] 대치SK VIEW
+[maps.daechi.cx.19.walk.station.name] 대치역 출입구
+
+## 화면 코드: video/src/H2.tsx
+[H2.tsx] ■ 1990년 전에 지은 단지
+[H2.tsx] ■ 그 뒤 단지
+[H2.tsx] 평당 2억
+[H2.tsx] 중개
+[H2.tsx] 세로 = 층 · 가로 = 거래 값 · 점 = 계약 한 건(계약일 순으로 나타남)
+[H2.tsx] ■ 긴 회색 막대 = 매매 가운데 값
+[H2.tsx] ■ 색 막대 = 전세 가운데 값
+[H2.tsx] 보증금 9.50억
+[H2.tsx] 8곳
+[H2.tsx] 세 동네 84㎡대 거래 3건 이상 28단지 중
+[H2.tsx] 손품 씨
+[H2.tsx] 가상 인물 · 계산용
+[H2.tsx] 전세 칸부터 본다
+[H2.tsx] 잠실 · 대치 · 반포 84㎡대 신규 순수전세
+[H2.tsx] ${d.cafe} · 세 동네 전체 표
+
+## 화면 코드: video/src/parts/fm.tsx
+[fm.tsx] ${e}억 ${r.toLocaleString()}만원
+[fm.tsx] ${e}억원
+[fm.tsx] ${r.toLocaleString()}만원
+[fm.tsx] 1년 뒤 남은 돈
+[fm.tsx] 원금
+[fm.tsx] 떨어진 해
+[fm.tsx] 세금·건보료
+[fm.tsx] 월 100만원 원금
+[fm.tsx] 파이어맵
+[fm.tsx] 파이어맵

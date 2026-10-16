@@ -2220,3 +2220,8 @@
 2026-10-16 21:58 · firemap-meeting · 완료: 짝 글 칸 note 4(10/17 21:10 d1s_when·10/18 07:40 g1s_why·15:10 N-2·21:10 r1s_gap), N-2 짝 글 12:10→15:10 · 이유: 영상 13:40 공개 뒤에 나가야 함
 2026-10-16 22:08 · firemap-write · jeonseloan1017 관문 통과 → 10/17 12:10 칸 gates_ok · 제목 T13('몇만원')로 — T8(8점)은 58세가 '기존 대출 옮기면 8만원'으로 오독, T10은 틀 v2 물음꼴(얼마·몇) 위반 · 02 그림은 최저>평균 시점 차이 오독 때문에 변동·고정 비교로 교체
 2026-10-16 22:08 · firemap-write · apis.finlife에 대출평균(lend_rate_avg)·중도상환수수료·한도 칸 추가 — 주담대 108줄 중 68줄에 평균 있음
+2026-10-16 22:33 · firemap-video-producer · C-2 예약 10/19 11:30→19:50(회의 긴급, ytlong C1 주 7편 — W-1 0yWQ 10/12 19:47), gate에서 C1 풀림 확인 · 장부·C1 안 건드림
+2026-10-16 22:33 · firemap-video-producer · c2s_jungwoo 10/19 19:20→10/23 19:20(원본 롱폼보다 먼저 공개 막음·빈 칸), 10/19 19:20은 N-2 새 클립 · 같은 날 다른 롱폼 규칙 지킴
+2026-10-16 22:33 · firemap-video-producer · disclaim.py 엄격화(같은 줄 권유 낱말 필수) — 감사 21:16·회의 받아들임, p1s_step 설명 한 낱말 고침
+2026-10-16 22:33 · firemap-video-producer · ytlong.py preview 추가(공개 뒤 app_preview.png) — 감사 경미 ② 썸네일 규칙 3 기록 0 해소
+2026-10-16 22:33 · firemap-video-producer · C-2·T-1 meta desc 채움(desc_tpl+챕터) — gate KeyError 풀어 남은 막힘을 보이게

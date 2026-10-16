@@ -206,11 +206,29 @@ def up(ep, replace=None):
     open(UPL, 'a', encoding='utf-8').write(json.dumps(rec, ensure_ascii=False) + '\n')
     print(json.dumps({'videoId': vid, 'status': v, 'notes': notes}, ensure_ascii=False))
 
+def preview(ep, vid):
+    # 10/16 감사 경미 ②(썸네일 규칙 3): 공개 뒤 실제 걸린 썸네일을 앱 목록 크기(412px·168px)로 줄이고 길이 표시 자리(오른쪽 아래 검은 칸)를 얹어
+    #   ep/<편>/app_preview.png로 남긴다 — 감사가 대신 만든 P-1 app_preview_1016_audit.png와 같은 꼴. 큰 줄이 168px에서 읽히는지·길이 칸이 글자를 가리는지 눈으로 본다.
+    import io, urllib.request
+    from PIL import Image, ImageDraw
+    img = None
+    for q in ('maxresdefault', 'sddefault', 'hqdefault'):
+        try: img = Image.open(io.BytesIO(urllib.request.urlopen(f'https://i.ytimg.com/vi/{vid}/{q}.jpg', timeout=20).read())).convert('RGB'); break
+        except Exception: continue
+    if img is None: sys.exit('썸네일 못 받음 ' + vid)
+    W, H = 900, 420; out = Image.new('RGB', (W, H), (15, 15, 15)); x = 20
+    for w in (412, 168):
+        t = img.resize((w, round(w * img.height / img.width)), Image.LANCZOS); d = ImageDraw.Draw(t)
+        bw, bh = round(w * 0.095), round(w * 0.045); d.rectangle([w - bw - round(w * 0.012), t.height - bh - round(w * 0.012), w - round(w * 0.012), t.height - round(w * 0.012)], fill=(0, 0, 0))
+        out.paste(t, (x, 20)); x += w + 28
+    fp = os.path.join(ep, 'app_preview.png'); out.save(fp); print('저장', fp, '— Read로 열어 168px에서 큰 줄이 읽히는지·길이 칸이 글자를 가리는지 본다')
+
 if __name__ == '__main__':
     cmd, ep = sys.argv[1], os.path.abspath(sys.argv[2])
     if cmd == 'gate':
         m, bad = gate(ep); print('통과' if not bad else '막힘:\n  ' + '\n  '.join(bad))
     elif cmd == 'up': up(ep, sys.argv[sys.argv.index('--replace') + 1] if '--replace' in sys.argv else None)
+    elif cmd == 'preview': preview(ep, sys.argv[3])   # 공개 뒤: py -3.12 work/ytlong.py preview <ep폴더> <videoId>
     elif cmd == 'dup':   # 중복 검사만
         m = json.load(open(os.path.join(ep, 'meta.json'), encoding='utf-8')); b = dup_check(ep, m, sys.argv[sys.argv.index('--replace') + 1] if '--replace' in sys.argv else None)
         print('중복 없음' if not b else chr(10).join(b))

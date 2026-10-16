@@ -1576,10 +1576,10 @@
   {
    "at": "2026-10-17 07:40",
    "kind": "cafe",
-   "item": "TBD",
-   "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "순돌이 10/13 짝 글: 같은 날 07:20 shorts 'TBD'의 카페 짝 글. 공개된 영상 링크를 본문 끝에, 영상 설명 앞 5줄에는 이 글 주소. 짝이 TBD면 PD가 정한 쇼츠를 따른다. | 순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-meeting 10-15 21:33: yt_pair: f3BaZbJLMMk(10/16 오후 v2 교체, 옛 LocU8wRSXvE) · 그 전 LocU8wRSXvE(10/16 교체, 옛 H7ElddpJqzc) (h1s_gap 07:20 쇼츠 짝) — 쇼츠 질문 하나",
+   "item": "h1gapcafe1017",
+   "owner": "firemap-write",
+   "gates_ok": "2026-10-16 23:41",
+   "note": "firemap-write 2026-10-16 23:41: h1gapcafe1017 관문 통과 — '고덕동 전세 사는 사람이 헬리오시티 집을 사려면 얼마가 더 필요할까?'(쇼츠 h1s_gap f3BaZbJLMMk 짝, 부동산, 국토부 실거래 10월분 10/16 재수신으로 영상 값 갱신, 제목 7.4·표지 7.75·레드팀 틀림 0·58세 이해 2차 통과·editgate auto, 발행은 영상 공개(07:20) 뒤 yt_pair: f3BaZbJLMMk) | 순돌이 10/13 짝 글: 같은 날 07:20 shorts 'TBD'의 카페 짝 글. 공개된 영상 링크를 본문 끝에, 영상 설명 앞 5줄에는 이 글 주소. 짝이 TBD면 PD가 정한 쇼츠를 따른다. | 순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-meeting 10-15 21:33: yt_pair: f3BaZbJLMMk(10/16 오후 v2 교체, 옛 LocU8wRSXvE) · 그 전 LocU8wRSXvE(10/16 교체, 옛 H7ElddpJqzc) (h1s_gap 07:20 쇼츠 짝) — 쇼츠 질문 하나",
    "pair": "TBD"
   },
   {
@@ -1871,9 +1871,9 @@
    "item": "h1s_helio",
    "owner": "firemap-video-producer",
    "gates_ok": "2026-10-15 07:31",
-   "published": "예약 2026-10-21T07:20:00+09:00 https://youtu.be/FS9T5ZLJisU (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 9JN3yIi_xNE 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/9JN3yIi_xNE (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 XB9fAhJrxFA 예약 풀고 비공개 · private+publishAt, 합성 표시 update True)",
+   "published": "예약 2026-10-21T07:20:00+09:00 https://youtu.be/4TMl_xaxmMc (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 9JN3yIi_xNE 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/9JN3yIi_xNE (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 XB9fAhJrxFA 예약 풀고 비공개 · private+publishAt, 합성 표시 update True)",
    "item_pkg": "work/research/cardshorts/h1s_helio",
-   "note": "firemap-video-producer 2026-10-15 14:54: H-1 클립 비축분 예약 · yt_pair: FS9T5ZLJisU(10/16 오후 v2 교체, 옛 9JN3yIi_xNE) · 그 전 9JN3yIi_xNE(10/16 교체, 옛 XB9fAhJrxFA)"
+   "note": "firemap-video-producer 2026-10-15 14:54: H-1 클립 비축분 예약 · yt_pair: 4TMl_xaxmMc(10/16 오후 v2 교체, 옛 9JN3yIi_xNE) · 그 전 9JN3yIi_xNE(10/16 교체, 옛 XB9fAhJrxFA)"
   },
   {
    "at": "2026-10-21 11:30",
@@ -1917,8 +1917,8 @@
    "owner": "firemap-video-producer",
    "gates_ok": "2026-10-15 23:34",
    "item_pkg": "work/research/cardshorts/h1s_forest",
-   "published": "예약 2026-10-22T19:20:00+09:00 https://youtu.be/Vhn9si4-E_M (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 5rh6IK80wD4 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/5rh6IK80wD4 (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 RmjfiIlKNeU 예약 풀고 비공개 · private+publishAt 10:20Z, 합성 표시 update True)",
-   "note": "firemap-video-producer 2026-10-15 23:35: H-1 롱폼(rVg0pQVo_wk) 둔촌동 올림픽파크포레온 '집값 같은데 전세 14억' 클립, c2person 틀(ⓓ: m1clip 5/9·c1clip 지시 제외), Pexels 참고 영상(배지 '화면 속 아파트는 포레온 아님'), 새 녹음 0 — 관문 cardshorts/h1s_forest/review.md · 같은 날 07:20은 H-1 아닌 롱폼으로 · yt_pair: Vhn9si4-E_M(10/16 오후 v2 교체, 옛 5rh6IK80wD4) · 그 전 5rh6IK80wD4(10/16 교체, 옛 RmjfiIlKNeU)(쇼츠 짝 카페 글 20:10 또는 22:10, firemap-write)"
+   "published": "예약 2026-10-22T19:20:00+09:00 https://youtu.be/RW3BQvTypkI (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 5rh6IK80wD4 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/5rh6IK80wD4 (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 RmjfiIlKNeU 예약 풀고 비공개 · private+publishAt 10:20Z, 합성 표시 update True)",
+   "note": "firemap-video-producer 2026-10-15 23:35: H-1 롱폼(rVg0pQVo_wk) 둔촌동 올림픽파크포레온 '집값 같은데 전세 14억' 클립, c2person 틀(ⓓ: m1clip 5/9·c1clip 지시 제외), Pexels 참고 영상(배지 '화면 속 아파트는 포레온 아님'), 새 녹음 0 — 관문 cardshorts/h1s_forest/review.md · 같은 날 07:20은 H-1 아닌 롱폼으로 · yt_pair: RW3BQvTypkI(10/16 오후 v2 교체, 옛 5rh6IK80wD4) · 그 전 5rh6IK80wD4(10/16 교체, 옛 RmjfiIlKNeU)(쇼츠 짝 카페 글 20:10 또는 22:10, firemap-write)"
   },
   {
    "at": "2026-10-23 07:20",
@@ -1927,8 +1927,8 @@
    "owner": "firemap-video-producer",
    "gates_ok": "2026-10-16 06:41",
    "item_pkg": "work/research/cardshorts/n1s_top10",
-   "note": "firemap-video-producer 2026-10-16 06:41: N-1 롱폼(420buEFKB8k) 첫 클립 '순자산 10억, 상위 10% 안일까? 문턱은 11억' 예약 https://youtu.be/ANFYZlwfID4 (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 oxrbky0mW2M 예약 풀고 비공개 · C1S, 새 녹음 0, 45.9초) · 관문 cardshorts/n1s_top10/review.md · 같은 날 19:20은 다른 롱폼 · yt_pair: r-pa6czi5iQ(10/16 오후 v2 교체, 옛 ANFYZlwfID4) · 그 전 ANFYZlwfID4(10/16 교체, 옛 oxrbky0mW2M)(짝 카페 글 write 요청)",
-   "published": "예약 2026-10-23T07:20:00+09:00 https://youtu.be/r-pa6czi5iQ (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 ANFYZlwfID4 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/ANFYZlwfID4 (private+publishAt 22일 22:20Z, 합성 표시 update True)"
+   "note": "firemap-video-producer 2026-10-16 06:41: N-1 롱폼(420buEFKB8k) 첫 클립 '순자산 10억, 상위 10% 안일까? 문턱은 11억' 예약 https://youtu.be/ANFYZlwfID4 (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 oxrbky0mW2M 예약 풀고 비공개 · C1S, 새 녹음 0, 45.9초) · 관문 cardshorts/n1s_top10/review.md · 같은 날 19:20은 다른 롱폼 · yt_pair: RGsCcIFBj8o(10/16 오후 v2 교체, 옛 ANFYZlwfID4) · 그 전 ANFYZlwfID4(10/16 교체, 옛 oxrbky0mW2M)(짝 카페 글 write 요청)",
+   "published": "예약 2026-10-23T07:20:00+09:00 https://youtu.be/RGsCcIFBj8o (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 ANFYZlwfID4 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/ANFYZlwfID4 (private+publishAt 22일 22:20Z, 합성 표시 update True)"
   },
   {
    "at": "2026-10-23 11:30",

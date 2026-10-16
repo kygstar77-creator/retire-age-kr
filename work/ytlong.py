@@ -49,6 +49,8 @@ def gate(ep):
     # 10/15 사장님 "유튜브도 카페도 쉽게 설명해 주고 쉽게 이해되게 써야 할 거 아니야" — 점수 관문은 '이해되는가'를 안 쟀다
     #   (P-1 썸네일 7.23 통과 → 사장님이 읽고 이해 못 함). 처음 보는 심사관이 제목·썸네일·대본 각 장을 한 문장으로 다시 말해 뜻이 맞아야 올린다.
     #   ep/<편>/understand_test.md: 항목마다 [보여 준 것 → 심사관 한 문장 → 맞음/틀림·헷갈린 곳 → 고친 것] + 맨 끝 '판정: 통과'.
+    import research_gate
+    bad += research_gate.research_check(os.path.join(ep, 'research.md'))
     ut = os.path.join(ep, 'understand_test.md')
     if not os.path.exists(ut): bad.append('understand_test.md 없음 — 처음 보는 사람 이해 시험(제목·썸네일·대본) 없이 못 올림')
     else:

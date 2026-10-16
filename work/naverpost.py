@@ -854,6 +854,11 @@ def pending_block(kind, pkg, title, check_dup=True):
     if ub: return ub
     fb = fresh_research_block(pkg)
     if fb: return fb
+    order = os.path.join(pkg, 'order.txt')
+    if os.path.exists(order) and datetime.datetime.fromtimestamp(os.path.getmtime(order)) >= datetime.datetime(2026, 10, 17, 0, 30):
+        import research_gate
+        rb = research_gate.research_check(os.path.join(os.path.dirname(os.path.abspath(pkg)), 'research.md'))
+        if rb: return '보류: ' + rb[0]
     priv = private_video_links(pkg)
     if priv:
         return '보류: 아직 공개 안 된 영상 링크(%s) — 공개 뒤 칸으로' % ','.join(priv)

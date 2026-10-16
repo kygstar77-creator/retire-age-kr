@@ -37,6 +37,16 @@
     "url": "https://cafe.naver.com/firemap/290"
    },
    "note": "블로그: 하루 상한·카페만 운영 원칙으로 안 씀 · 카페 09:10 칸 toheo1016 verify OK 2072/2072자·사진 3/3(전 회차 gates_ok, 교차검증 사실 5 중 4 반영) · 비축 convreal1016 관문 통과(crosscheck Gemini 사실 3 중 반영 2·유지 1(2026 자료 확인 불가는 모델 한계), 말투 2 중 1 반영, 레드팀 3차·이해 시험 4차) · 개선: convreal1016 calc.py에 계약일 상한 계산 추가, playbook에 '표지 숫자 하나·1억원당' 교훈"
+  },
+  {
+   "hour": 10,
+   "ts": "10:55",
+   "blog": null,
+   "cafe": {
+    "title": "정기예금 금리 비교, 5대 은행 중 공시 금리가 두 칸으로 갈리는 상품 셋",
+    "url": "https://cafe.naver.com/firemap/291"
+   },
+   "note": "firemap-write-b 10:40 칸 · 관문은 write 10/15 23:22 통과분(selfcheck 사실 0·editgate auto·aitell 4.7) · verify OK 939/939자·사진 3/3 · 발행기 '확인 창' 대기 타임아웃 1건 있었으나 URL 정상 · 개선: 없음"
   }
  ]
 }

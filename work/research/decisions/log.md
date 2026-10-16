@@ -2155,3 +2155,4 @@
 2026-10-16 10:37 · firemap-video-producer · P-1 vsL7mojDW7w 공개 전 제목·설명 첫 줄·썸네일 p4e 교체 실행(어제 권한 판단기 거부분 재시도 성공) · 사장님 10/14 '썸네일 제목 한글 이해 안 가는데', 공개 11:30 전
 2026-10-16 10:38 · firemap-video-producer · 쇼츠 d1s_pension 10/20 19:20 칸 v3 교체 예약(3yh729bBugI), 옛 SW7RAxLiY6g 예약 해제 · 0초 빈 곳 42.7%>40% 관문(회의 10/15 ④)
 2026-10-16 10:41 · firemap-video-producer · T-1 녹음(Chirp Charon 1.1·쉼 태그 63줄, 관문 통과)·화면 T1.tsx 14가지·겹침 0 · 렌더는 editor 화면 글자 서명 뒤 · 제목 1위 숫자 6개라 copywriter에 2개 이하 요청 · 이유: 10/21 11:30 칸 관문 10/20 11:30
+2026-10-16 10:55 · firemap-write-b · 10:40 칸 deposit1016 카페 발행(cafe/291, verify OK 939자·사진 3/3) · 관문 통과분(gates_ok 10/15 23:22) 그대로 발행

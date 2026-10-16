@@ -307,7 +307,9 @@ def _key_nums(pkg):
     out = set()
     for x in re.findall(r'\d[\d,]*\.?\d*', t):
         x = x.replace(',', '').rstrip('.')
-        if len(x) >= 3 and not x.endswith('0') and x not in ('2025', '2026', '2027', '2028', '15.4', '16.5', '22.0'): out.add(x)
+        # 10/17 editor: 입주 연도(2016·2018·2024)만 같은 고덕동 글과 상도동 글이 '같은 예시'로 막혔다 — 연도는 예시 값이 아니다(docstring대로 1950~2030 전부 뺌)
+        if re.fullmatch(r'(19[5-9]\d|20[0-2]\d|2030)', x): continue
+        if len(x) >= 3 and not x.endswith('0') and x not in ('15.4', '16.5', '22.0'): out.add(x)
     return out
 
 
@@ -419,6 +421,7 @@ _UNIT = {'조': 10**12, '억': 10**8, '천만': 10**7, '백만': 10**6, '만': 1
 _COMPOUND = re.compile(r'(\d[\d,]*(?:\.\d+)?)\s*(조|억|만)\s*(\d[\d,]*)\s*(천만|백만|억|만|천)?')
 _ORD = re.compile(r'(첫|두|세|네|다섯|여섯|일곱)\s?번째|(첫|둘|셋|넷|다섯)째')
 _TOC = re.compile(r'(볼게요|보겠습니다|볼까요|알아볼게요|알아보겠습니다|살펴볼게요|살펴보겠습니다)')
+_DISC = re.compile(r'법이\s?바뀐\s?(?:건|게)\s?아니|자문이\s?아닙|투자\s?권유|권하는\s?(?:건|게)\s?아니|사라거나\s?팔라는|추천이\s?아니|책임지지\s?않|참고용')  # A40 면책 문장
 _TAG = re.compile(r'\{[^}]*\}|\[[^\]]*\]|(이미지|그림|장면|슬라이드)\s?\d|(?<![A-Za-z&])(?!A4|A3|B5|G7|G20)[A-Z]\d{1,2}(?![\d.])')  # 종이·회의 이름은 꼬리표 아님
 
 
@@ -446,6 +449,14 @@ def script_habits(lines, said=None):
         run = run + [(i, l)] if _TOC.search(l) else []
         if len(run) == 3: hits += [('말 목차', j, x) for j, x in run]
         elif len(run) > 3: hits.append(('말 목차', i, l))
+    # A40(10/17 순돌이): 같은 면책 한 편 2번 이상(P-1 '법이 바뀐 건 아니에요' 2번·H-1 3줄·W-1 2줄), 끝 3줄 면책(A21·A23 재발 G-1·R-1·W-1) → 편당 1줄·끝 3줄 밖.
+    seen = {}
+    for i, l in enumerate(lines, 1):
+        for m in _DISC.finditer(l): seen.setdefault(re.sub(r'\s', '', m.group(0)), []).append((i, l))
+    for v in seen.values():
+        if len(v) >= 2: hits += [('면책 반복', i, l) for i, l in v]
+    n = len(lines)
+    hits += [('끝 3줄 면책', i, l) for i, l in enumerate(lines, 1) if i > n - 3 and _DISC.search(l)]
     return sorted(hits, key=lambda h: h[1])
 
 
@@ -507,9 +518,9 @@ def main(a):
         for b in bad: print('  ', b)
         if not ok: print('  숫자·사실 문장은 바꾸지 않는다: 말에는 숫자 하나·반올림, 정확한 값은 화면 자막으로 옮긴다.')
         habits = script_habits(script_lines(a[1]), script_lines(a[1], 'say'))
-        print('말 습관 4개(정밀 숫자·순번 3개↑·말 목차 3연속·꼬리표 낭독) — ' + ('통과' if not habits else f'{len(habits)}건 걸림'))
+        print('말 습관(정밀 숫자·순번 3개↑·말 목차 3연속·꼬리표 낭독·A40 면책 반복/끝 3줄) — ' + ('통과' if not habits else f'{len(habits)}건 걸림'))
         for k, i, l in habits: print(f'   [{k}] {i}줄: {l[:70]}')
-        if habits: print('  정밀 숫자는 말로 반올림(정확값은 화면), 순번·목차는 질문 한 줄로, 꼬리표는 말에서 지운다.')
+        if habits: print('  정밀 숫자는 말로 반올림(정확값은 화면), 순번·목차는 질문 한 줄로, 꼬리표는 말에서 지운다, 면책은 편당 1줄·끝 3줄 밖.')
         return 0 if ok and not habits else 6
     if a[0] == 'gate':
         ok, msg, hits = gate_pkg(a[1])

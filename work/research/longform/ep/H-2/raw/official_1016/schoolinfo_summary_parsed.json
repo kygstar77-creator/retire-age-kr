@@ -1,0 +1,332 @@
+{
+ "서울대곡초등학교": {
+  "shl_idf_cd": "55a3ad11-ad6e-4738-a452-1f49b92a42dd",
+  "name": "서울대곡초등학교",
+  "addr": "서울특별시 강남구 남부순환로 3022",
+  "students_main": "1,174",
+  "teacher_per_student_and_class_size_main": [
+   "21.7",
+   "24.5"
+  ],
+  "gongsi_month": "(2차) 2026년 05월",
+  "school_year": "2026",
+  "regular_classes_1to6": 47,
+  "per_grade_classes": {
+   "1": 5,
+   "2": 6,
+   "3": 7,
+   "4": 8,
+   "5": 10,
+   "6": 11
+  },
+  "total_m_f_all(special)": null
+ },
+ "서울도곡초등학교": {
+  "shl_idf_cd": "0fc9bf5f-6be4-45b5-9457-cec4ba50bc98",
+  "name": "서울도곡초등학교",
+  "addr": "서울특별시 강남구 선릉로64길 33",
+  "students_main": "786",
+  "teacher_per_student_and_class_size_main": [
+   "18.3",
+   "20.7"
+  ],
+  "gongsi_month": "(2차) 2026년 05월",
+  "school_year": "2026",
+  "regular_classes_1to6": 36,
+  "per_grade_classes": {
+   "1": 4,
+   "2": 4,
+   "3": 5,
+   "4": 7,
+   "5": 8,
+   "6": 8
+  },
+  "total_m_f_all(special)": null
+ },
+ "서울잠신초등학교": {
+  "shl_idf_cd": "f3ec759e-0168-4ca5-8597-c531f20c8c69",
+  "name": "서울잠신초등학교",
+  "addr": "서울특별시 송파구 잠실로 32",
+  "students_main": "1,321",
+  "teacher_per_student_and_class_size_main": [
+   "20.6",
+   "25.4"
+  ],
+  "gongsi_month": "(2차) 2026년 05월",
+  "school_year": "2026",
+  "regular_classes_1to6": 52,
+  "per_grade_classes": {
+   "1": 8,
+   "2": 8,
+   "3": 8,
+   "4": 9,
+   "5": 8,
+   "6": 11
+  },
+  "total_m_f_all(special)": null
+ },
+ "서울잠일초등학교": {
+  "shl_idf_cd": "e361b891-98ac-4810-8044-b5e6fe1c22bf",
+  "name": "서울잠일초등학교",
+  "addr": "서울특별시 송파구 올림픽로 95",
+  "students_main": "1,498",
+  "teacher_per_student_and_class_size_main": [
+   "21.1",
+   "25.8"
+  ],
+  "gongsi_month": "(2차) 2026년 05월",
+  "school_year": "2026",
+  "regular_classes_1to6": 57,
+  "per_grade_classes": {
+   "1": 8,
+   "2": 7,
+   "3": 8,
+   "4": 11,
+   "5": 11,
+   "6": 12
+  },
+  "total_m_f_all(special)": null
+ },
+ "서울신천초등학교": {
+  "shl_idf_cd": "53b652ff-ce90-4397-8e5f-4bebee9779f6",
+  "name": "서울신천초등학교",
+  "addr": "서울특별시 송파구 올림픽로 215",
+  "students_main": "358",
+  "teacher_per_student_and_class_size_main": [
+   "14.3",
+   "15.6"
+  ],
+  "gongsi_month": "(2차) 2026년 05월",
+  "school_year": "2026",
+  "regular_classes_1to6": 19,
+  "per_grade_classes": {
+   "1": 2,
+   "2": 3,
+   "3": 4,
+   "4": 3,
+   "5": 3,
+   "6": 4
+  },
+  "total_m_f_all(special)": null
+ },
+ "서울원촌초등학교": {
+  "shl_idf_cd": "90303096-cfa5-40dc-83aa-739a02f21667",
+  "name": "서울원촌초등학교",
+  "addr": "서울특별시 서초구 사평대로45길 26",
+  "students_main": "1,095",
+  "teacher_per_student_and_class_size_main": [
+   "19.2",
+   "21.5"
+  ],
+  "gongsi_month": "(2차) 2026년 05월",
+  "school_year": "2026",
+  "regular_classes_1to6": 49,
+  "per_grade_classes": {
+   "1": 9,
+   "2": 7,
+   "3": 7,
+   "4": 8,
+   "5": 9,
+   "6": 9
+  },
+  "total_m_f_all(special)": null
+ },
+ "계성초등학교": {
+  "shl_idf_cd": "c2f9d7a4-71ba-46b8-8f8e-e59c7659af70",
+  "name": "계성초등학교",
+  "addr": "서울특별시 서초구 신반포로19길 23",
+  "students_main": "616",
+  "teacher_per_student_and_class_size_main": [
+   "22.8",
+   "25.7"
+  ],
+  "gongsi_month": "(2차) 2026년 05월",
+  "school_year": "2026",
+  "regular_classes_1to6": 24,
+  "per_grade_classes": {
+   "1": 4,
+   "2": 4,
+   "3": 4,
+   "4": 4,
+   "5": 4,
+   "6": 4
+  },
+  "total_m_f_all(special)": null
+ },
+ "서울반포초등학교": {
+  "shl_idf_cd": "2f9c1aee-926a-40ca-ba91-ed9658bf04c6",
+  "name": "서울반포초등학교",
+  "addr": "서울특별시 서초구 신반포로 55-4",
+  "students_main": "0",
+  "teacher_per_student_and_class_size_main": [
+   "0",
+   "0"
+  ],
+  "gongsi_month": null,
+  "school_year": null,
+  "regular_classes_1to6": 0,
+  "per_grade_classes": {
+   "1": 0,
+   "2": 0,
+   "3": 0,
+   "4": 0,
+   "5": 0,
+   "6": 0
+  },
+  "total_m_f_all(special)": null
+ },
+ "서울대치초등학교": {
+  "shl_idf_cd": "621e3b61-3cad-41ec-9fed-daaf471dcbc0",
+  "name": "서울대치초등학교",
+  "addr": "서울특별시 강남구 양재천로 363",
+  "students_main": "1,316",
+  "teacher_per_student_and_class_size_main": [
+   "21.6",
+   "27.4"
+  ],
+  "gongsi_month": "(2차) 2026년 05월",
+  "school_year": "2026",
+  "regular_classes_1to6": 48,
+  "per_grade_classes": {
+   "1": 5,
+   "2": 5,
+   "3": 6,
+   "4": 9,
+   "5": 10,
+   "6": 13
+  },
+  "total_m_f_all(special)": null
+ },
+ "서울대현초등학교": {
+  "shl_idf_cd": "4b00568b-7c12-4d10-9e4d-f0acfd269b2b",
+  "name": "서울대현초등학교",
+  "addr": "서울특별시 강남구 역삼로98길 16",
+  "students_main": "1,117",
+  "teacher_per_student_and_class_size_main": [
+   "22.3",
+   "26.6"
+  ],
+  "gongsi_month": "(2차) 2026년 05월",
+  "school_year": "2026",
+  "regular_classes_1to6": 40,
+  "per_grade_classes": {
+   "1": 4,
+   "2": 4,
+   "3": 5,
+   "4": 7,
+   "5": 9,
+   "6": 11
+  },
+  "total_m_f_all(special)": null
+ },
+ "서울잠현초등학교": {
+  "shl_idf_cd": "5ea889c1-9b2b-4773-b2c8-6f19011043b1",
+  "name": "서울잠현초등학교",
+  "addr": "서울특별시 송파구 올림픽로37길 109",
+  "students_main": "855",
+  "teacher_per_student_and_class_size_main": [
+   "19.9",
+   "25.1"
+  ],
+  "gongsi_month": "(2차) 2026년 05월",
+  "school_year": "2026",
+  "regular_classes_1to6": 33,
+  "per_grade_classes": {
+   "1": 5,
+   "2": 5,
+   "3": 5,
+   "4": 6,
+   "5": 6,
+   "6": 6
+  },
+  "total_m_f_all(special)": null
+ },
+ "서울버들초등학교": {
+  "shl_idf_cd": "2072c9da-f1f3-4458-a59c-2ee194bb9c26",
+  "name": "서울버들초등학교",
+  "addr": "서울특별시 송파구 석촌호수로 81",
+  "students_main": "842",
+  "teacher_per_student_and_class_size_main": [
+   "22.2",
+   "26.3"
+  ],
+  "gongsi_month": "(2차) 2026년 05월",
+  "school_year": "2026",
+  "regular_classes_1to6": 32,
+  "per_grade_classes": {
+   "1": 4,
+   "2": 5,
+   "3": 5,
+   "4": 5,
+   "5": 6,
+   "6": 7
+  },
+  "total_m_f_all(special)": null
+ },
+ "서울잠원초등학교": {
+  "shl_idf_cd": "b84d58d1-66f7-4b5a-b0ea-b0030255de24",
+  "name": "서울잠원초등학교",
+  "addr": "서울특별시 서초구 신반포로16길 15-25",
+  "students_main": "1,924",
+  "teacher_per_student_and_class_size_main": [
+   "24.1",
+   "26.7"
+  ],
+  "gongsi_month": "(2차) 2026년 05월",
+  "school_year": "2026",
+  "regular_classes_1to6": 72,
+  "per_grade_classes": {
+   "1": 12,
+   "2": 11,
+   "3": 11,
+   "4": 11,
+   "5": 13,
+   "6": 14
+  },
+  "total_m_f_all(special)": null
+ },
+ "서울서원초등학교": {
+  "shl_idf_cd": "a8208906-ad04-4051-9a78-b88a41427c13",
+  "name": "서울서원초등학교",
+  "addr": "서울특별시 서초구 고무래로 63",
+  "students_main": "1,614",
+  "teacher_per_student_and_class_size_main": [
+   "24.8",
+   "29.9"
+  ],
+  "gongsi_month": "(2차) 2026년 05월",
+  "school_year": "2026",
+  "regular_classes_1to6": 52,
+  "per_grade_classes": {
+   "1": 9,
+   "2": 8,
+   "3": 8,
+   "4": 8,
+   "5": 10,
+   "6": 9
+  },
+  "total_m_f_all(special)": null
+ },
+ "서울아주초등학교": {
+  "shl_idf_cd": "81110629-1976-4984-baf0-015f3cd04547",
+  "name": "서울아주초등학교",
+  "addr": "서울특별시 송파구 올림픽로4길 59",
+  "students_main": "364",
+  "teacher_per_student_and_class_size_main": [
+   "17.3",
+   "20.2"
+  ],
+  "gongsi_month": "(2차) 2026년 05월",
+  "school_year": "2026",
+  "regular_classes_1to6": 18,
+  "per_grade_classes": {
+   "1": 3,
+   "2": 3,
+   "3": 3,
+   "4": 3,
+   "5": 3,
+   "6": 3
+  },
+  "total_m_f_all(special)": null
+ }
+}

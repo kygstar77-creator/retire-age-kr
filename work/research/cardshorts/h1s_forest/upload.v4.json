@@ -1,0 +1,51 @@
+{
+ "name": "h1s_forest",
+ "ep": "H-1",
+ "from_long": "rVg0pQVo_wk",
+ "mp4": "work/video/out/h1s_forest_v3_ds.mp4",
+ "layout": "c2person",
+ "publishAt": "2026-10-22T19:20:00+09:00",
+ "use_after": "2026-10-15 11:30 (H-1 롱폼 공개 뒤)",
+ "title": "올림픽파크포레온, 집값은 헬리오시티와 같은데 전세는 14억 #shorts",
+ "description": "전체 계산: https://youtu.be/rVg0pQVo_wk\n지나간 실거래 기록이고, 어느 단지를 사라거나 전세로 들어가라는 권유가 아닙니다.\n\n올림픽파크포레온(2024.11 입주) 84㎡대 집값은 28억 2천만원쯤으로, 헬리오시티(2018.12 입주) 28억 5천만원쯤과 거의 같았어요(국토교통부 실거래 1년).\n그런데 전세는 올림픽파크포레온 14억, 헬리오시티 12억 5천만원이었어요. 집값 중 전세 비율도 49.6%로 헬리오시티 43.9%보다 높았어요.\n한 해 거래 113건 중 94건(83%)이 2026년 4~5월 두 달에 몰렸고, 그 앞 다섯 달은 1건이었어요. 왜 몰렸는지는 실거래 자료에 나오지 않아 짐작하지 않았어요.\n\n출처: 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 국토교통부 공동주택 단지 정보 · 보행로 © OpenStreetMap contributors(ODbL) · 파이어맵 계산\n화면의 아파트·역 영상은 참고용 무료 영상(Pexels)으로, 올림픽파크포레온이 아닙니다. 영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/video/aerial-view-of-modern-cityscape-in-summer-38029457/) · 영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/video/railway-station-seoul-27560146/) · 영상 일부: Stephen Leonardi / Pexels (https://www.pexels.com/video/aerial-view-of-urban-skyline-with-mountain-backdrop-30975009/)\n'손품 씨'는 계산을 위해 만든 가상 인물입니다.\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.\n\n#shorts #올림픽파크포레온 #전세",
+ "tags": "올림픽파크포레온,올림픽파크포레온 전세,둔촌동 아파트,헬리오시티,전세가율",
+ "same_day_pair": "10/22 07:20 미정 — H-1 아닌 롱폼으로 채울 것(10/20·10/21 07:20이 H-1)",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "RW3BQvTypkI",
+ "uploaded_at": "2026-10-16 23:33:28",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-22T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ },
+ "v": 4,
+ "replaced": [
+  {
+   "id": "RmjfiIlKNeU",
+   "unscheduled_at": "2026-10-16 12:40:21",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "5rh6IK80wD4",
+   "unscheduled_at": "2026-10-16 14:21:32",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "Vhn9si4-E_M",
+   "unscheduled_at": "2026-10-16 23:33:28",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  }
+ ]
+}

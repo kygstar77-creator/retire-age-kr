@@ -95,7 +95,7 @@
 [scenes.5.data.beats.0.1] 계산을 위해 만든 가상 인물
 [scenes.5.data.beats.0.2] ink
 [scenes.5.data.beats.1.0] 같은 동네, 지은 해 따라 갈린 값
-[scenes.5.data.beats.1.1] 지난 편 고덕동: 오래된 단지가 37.2% 쌌음
+[scenes.5.data.beats.1.1] 지난 편 고덕동: 1996년 단지가 2019년 단지보다 37.2% 쌌음
 [scenes.5.data.beats.1.2] accent
 [scenes.5.data.beats.2.0] 이번엔 옛 단지 + 새 단지
 [scenes.5.data.beats.2.1] 한 동네에 같이 있는 곳

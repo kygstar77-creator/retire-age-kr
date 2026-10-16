@@ -85,3 +85,9 @@
 2. 미리보기: `py -3.12 research/longform/ep/W-1/w1016/motion_preview/buyrender.py`(원래 크기 + 줄마다 스틸 2장 + motioncheck).
 3. 규칙: 세로축이 0부터가 아니면 막대 금지 → 점 · 줄기 = 종가보다 높은 만큼(범례로 뜻 밝힘) · 가정 차이(회사 평균값에 샀다면 −318만원)는 화면에 내지 않는다 — 시청자가 내 손실로 읽음(심사 10/15) · 카드 한 칸에 기준 하나, 둘이면 구분선과 기준 글자.
 4. U5: ① 점 날짜 순 찍힘 ② 종가 점선이 오른쪽에서 쓸며 줄기·최저·최고·검은 띠 ③ 점 흐려지고 평균선·카드. 편마다 seed로 왼쪽 여백.
+
+## 환율 선 + 바꾼 날 → 같은 1억 막대(FxDates) 쓰는 법 — '언제 바꿨나/샀나'에 따라 같은 돈이 달라짐(10/16 X-1 1·2장)
+1. 재료 JSON: `seed·vals(일별 원문)·min·max·yticks·months·now·nowText·nowAll·marks[{i,name,date,rate,won,pct,say}]·peak·peakTag·markAt·fill·base·baseText·allDown·barHead·legendDrop·legendGap·b1·b2`. 예: `research/longform/ep/X-1/motion_preview/fxprops.py`(ECOS 원문·calc_out assert, 이름 시점 음절 비례).
+2. 미리보기: `py -3.12 research/longform/ep/X-1/motion_preview/fxrender.py`(X1Fx = 1장 phase line + 2장 phase bars 이어 붙임, 스틸·motioncheck).
+3. 규칙: 막대는 날짜 순(말 순서로 바꾸지 않음 — 순위로 읽힘), 내려앉는 순서만 말을 따른다(fill) · 막대 높이 0부터 값 비례 · 빨강 = '줄어든 것' 한 뜻(왼쪽 내린 환율·오른쪽 줄어든 원화) · 막대 위 큰 글자는 말 속 반올림 금액, 정확한 값은 [자막] 띠.
+4. 편마다 바뀜: seed로 왼쪽 여백·막대 폭·간격. 다른 주제(금값 산 날·주가 산 날·금리 가입 날)는 vals·marks만 바꿔 쓴다.

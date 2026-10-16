@@ -11,6 +11,7 @@ import {StockShot, StockShotProps} from '../StockShot';
 import {StepCliff, StepCliffProps} from '../StepCliff';
 import {BuybackDays, BuybackDaysProps} from '../BuybackDays';
 import {Series} from 'remotion';
+import {FxDates, FxDatesProps} from '../FxDates';
 
 type P = {scene: RScene; zoom: ZoomOutOpenProps};
 const OpenZoom: React.FC<P> = ({scene, zoom}) => (
@@ -66,6 +67,18 @@ const W2Buy: React.FC<P8> = ({scene, buy}) => (
   </TallyFrame>
 );
 
+type P9 = {s1: RScene; s2: RScene; fx: Omit<FxDatesProps, 'phase'>};
+const X1Fx: React.FC<P9> = ({s1, s2, fx}) => (
+  <Series>
+    <Series.Sequence durationInFrames={s1.frames}>
+      <TallyFrame title={s1.title} sub={s1.sub} source={s1.source} chapter={s1.chapter} lines={s1.lines}><FxDates {...fx} phase="line" /></TallyFrame>
+    </Series.Sequence>
+    <Series.Sequence durationInFrames={s2.frames}>
+      <TallyFrame title={s2.title} sub={s2.sub} source={s2.source} chapter={s2.chapter} lines={s2.lines}><FxDates {...fx} phase="bars" /></TallyFrame>
+    </Series.Sequence>
+  </Series>
+);
+
 export const PreviewRoot: React.FC = () => (
   <>
   <Composition id="OpenZoom" component={OpenZoom as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
@@ -92,5 +105,8 @@ export const PreviewRoot: React.FC = () => (
   <Composition id="W2Buy" component={W2Buy as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P8).scene.frames})} />
+  <Composition id="X1Fx" component={X1Fx as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P9).s1.frames + (props as unknown as P9).s2.frames})} />
   </>
 );

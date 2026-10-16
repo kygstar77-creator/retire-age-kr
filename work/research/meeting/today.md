@@ -1773,6 +1773,7 @@
 완료: firemap-write-b 10:52 — 10:40 r1cafe_tax1015 https://cafe.naver.com/firemap/280 verify OK 1927/1927자·사진 3/3(게시판 연금/세금/보험) · 끝에 양도세 계산기 줄(firemap.kr/tax, utm r1cafe_tax1015) 넣고 관문 재통과 · [알림] firemap-video-producer: 쇼츠 r1s_spytax(ez-tLgkdZfI) 설명 앞 5줄 카페 주소를 https://cafe.naver.com/firemap/280 로
 - [자기 배정] firemap-motion-designer W-1 2화(10/17) 모션 설계표 + 2장 자사주 29일 막대 부품
   착수: firemap-motion-designer 11:28
+  완료: firemap-motion-designer 10/15 11:40 (이 줄은 위 670줄 [지시·긴급] 밑에 적힘 — 10/16 11:49 표시만)
 - [자발] **firemap-write** 12:21 회차 — 12:10 칸 h1cafe1015(H-1 짝) 발행·264 제목 지시
   착수: firemap-write 12:21
 완료: firemap-write 12:35 — ① 12:10 h1cafe1015 https://cafe.naver.com/firemap/281 verify OK 2221/2221자·사진 4/4(게시판 부동산) · H-1 rVg0pQVo_wk public 확인 뒤 발행, 짝 글 규칙대로 c00 끝에 영상 링크 한 줄 더하고 editgate 재stamp · slots 12:10 note에 yt_pair: rVg0pQVo_wk·281 적음 → [알림] firemap-video-producer: H-1 설명 카페 줄을 https://cafe.naver.com/firemap/281 로 ② [지시] 264 제목 바꿈(기한 18:00): '이자·배당 1년 2천만원 넘으면 세금·건보료 얼마? 계산 엑셀, 카페 가입하면 무료' — 58세 이해 시험 2회(옛 제목 '종합과세' 모름·무료 안 보임 → 새 제목 뜻 맞음) finguide1013/understand.md 판정 통과 · rewrite 뒤 verify OK 1097자·사진 3/3, 본문 변경 0 ③ 검수 요청 ① jeonse1015 '용산구 5.6%'는 facts 12번에 있는 숫자(그림2에 없을 뿐) — 틀린 숫자 아니라 279 rewrite 안 함 · 카페 비축 실제 0/2(npsage1009는 10/14 발행됐는데 reserve 목록에 남아 있음) — 오늘 16:40·22:40 write-b TBD
@@ -1894,3 +1895,11 @@ $MSG
 - [지시] **firemap-youtube-loop**: 손품은 매주 화·금 11:30 고정. 10/20 H-2(대치·잠실·반포), 10/23 H-3(series-plan 4-2 다음 동네). J-1은 10/24로. H-3 대본 10/20 21:00, 관문 10/22 11:30. 이후 화·금 칸을 매주 회의에서 먼저 채운다.
 - [지시] **firemap-meeting**: 배당 롱폼 주 1편 고정 검토 — 30일 유튜브 조회 상위 15편 중앙값: 배당주 21.5만·월배당 ETF 13.6만·SCHD 10.8만(성장주 0.9만). 우리 A-1(JEPQ·SCHD) 2,393회가 두 번째로 많음. 10/26 주부터 배당 1칸.
 - [지시] **firemap-video-producer**: 손품 롱폼마다 동네별 쇼츠(PD가 잘라 예약) + 카페 짝 글(표 대신 한눈에 보기).
+
+- [지시] **쇼츠 담당** ← 순돌이 (11:3x) 사장님 "숏츠는 영상이 왜 이렇게 잘려" — 유튜브 앱 UI·화면 꽉 채움에 글자가 가려짐. 원인·안전 영역 기준(safe-zone-1016.md)·렌더 뒤 관문·예약분 재렌더·공개분 목록 · 시한 오늘 18:00
+  착수: 쇼츠 담당 11:41
+- [자기 배정] firemap-motion-designer X-1 환율(10/22 칸) 모션 설계표 + 1·2장 핵심 장면 부품 — backlog 1순위(W-1 2화 렌더 확인)는 10/15 15:25 screen.json 통과·예약 끝이라 할 일 없음
+  착수: firemap-motion-designer 11:27
+  완료: firemap-motion-designer 11:49 — 설계표 ep/X-1/motion.md(장마다 움직임, 0·3·4장은 다음 회차) · 새 부품 video/src/motion/FxDates.tsx(1장 ECOS 일별 선 245점+날짜 점 4개·'결과가 제일 나쁜 날을 고른 셈' 빨간 폭 / 2장 같은 1억 막대 4개가 말 순서로 10.12 원화까지 내려앉음, 왼쪽 빨간 세로=내린 환율·오른쪽 빨간 틈=줄어든 원화) · 미리보기 ep/X-1/motion_preview/x1_fx.mp4(39.2초 어림, 움직임 33%·최장 정지 5.5초) · 숫자 calc_out·원문 assert · 심사 제미나이 9·Claude 6·레드팀 7(틀림 0) 평균 7.33 통과
+  [요청] **firemap-video-producer** ← motion (11:49) X-1 녹음 뒤 `py -3.12 work/research/longform/ep/X-1/motion_preview/fxprops.py` → X1.tsx 1장 `<FxDates {...fx} phase="line" />`·2장 `phase="bars"`(TallyFrame 자식, s1·s2 frames 그대로) · 렌더 뒤 그 구간 motioncheck·overlap · 화면 글자 늘어남 → 편집 재서명 · 절차 ep/X-1/motion.md
+  [알림] **firemap-youtube-loop·firemap-editor** (motion 11:49): X-1 2장 끝 [자막] '2026년 최저는 10.13 1,335.8원'이 그래프 끝(10.12) 다음 날 값이라 심사 2명이 '화면에 없는 날'로 지적 — 사실 틀림은 아님, 자막 유지 여부만 판단

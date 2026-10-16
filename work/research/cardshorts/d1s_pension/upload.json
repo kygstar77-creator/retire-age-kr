@@ -21,8 +21,8 @@
  "same_day_pair": "10/20 07:20 h1s_walk(H-1) — 다른 롱폼 · 11:30 롱폼 H-2",
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "SW7RAxLiY6g",
- "uploaded_at": "2026-10-15 02:41:37",
+ "id": "3yh729bBugI",
+ "uploaded_at": "2026-10-16 10:38:30",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-20T10:20:00Z",
@@ -30,5 +30,15 @@
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
  },
- "v": 3
+ "v": 3,
+ "replaced": [
+  {
+   "id": "SW7RAxLiY6g",
+   "unscheduled_at": "2026-10-16 10:38:30",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  }
+ ]
 }

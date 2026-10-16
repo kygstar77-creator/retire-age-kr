@@ -87,7 +87,9 @@ PRODUCT = re.compile(r'ETF|리츠|펀드|커버드콜|주가|종목|배당주|�
 # 대응표 = src/firemap-v2/toolPages.js에 등록된 공개 계산기만(/calc/loan은 dev 전용이라 뺌). 제목으로만 본다(본문 지나가는 말은 주제가 아님).
 CALC = [
     (r'실업급여|구직급여', 'calc/unemployment-benefit'),
-    (r'퇴직금', 'calc/severance'),
+    # 10/16 회의 지시: '퇴직소득세' 제목이 세전 퇴직금 계산기로 가면 글 질문과 다른 도구 — 퇴직소득세 계산기는 src에 없어 줄을 요구하지 않는다.
+    # 예금·이자(정기예금·적금·저축은행) 계산기도 toolPages.js에 없음(10/17 확인) → 대응표 줄 없음.
+    (r'^(?!.*퇴직소득세).*퇴직금', 'calc/severance'),
     (r'실수령|연봉 ?계산|4대 ?보험', 'calc/salary'),
     (r'건강보험료|건보료|피부양자', 'health-insurance'),
     (r'해외주식 ?양도세|배당소득세|금융소득 ?종합과세', 'tax'),

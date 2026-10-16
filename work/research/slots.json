@@ -1562,7 +1562,8 @@
    "item": "kospidrop1017",
    "owner": "firemap-write",
    "gates_ok": "2026-10-16 15:39",
-   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-meeting 10-15 21:33: 장르 경제 새 편 | firemap-write 15:39: kospidrop1017 관문 통과 — '코스피 폭락한 날 산 100만원은 일 년 뒤 얼마가 됐을까?'(경제, 한국은행 ECOS 1997~ 하루 −7% 24번 전부, 제목 7.83·표지 7.67·레드팀 2차 틀림 0·58세 이해 3차 심각 0·aitell 통과·readcheck 0·selfcheck 사실 0·editgate auto)"
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-meeting 10-15 21:33: 장르 경제 새 편 | firemap-write 15:39: kospidrop1017 관문 통과 — '코스피 폭락한 날 산 100만원은 일 년 뒤 얼마가 됐을까?'(경제, 한국은행 ECOS 1997~ 하루 −7% 24번 전부, 제목 7.83·표지 7.67·레드팀 2차 틀림 0·58세 이해 3차 심각 0·aitell 통과·readcheck 0·selfcheck 사실 0·editgate auto)",
+   "published": "https://cafe.naver.com/firemap/300 06:34 verify OK 1229자"
   },
   {
    "at": "2026-10-17 07:20",
@@ -1628,10 +1629,10 @@
   {
    "at": "2026-10-17 15:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "sbdep1017",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+   "gates_ok": "2026-10-17 06:43",
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-write 06:43: sbdep1017 관문 통과 — '저축은행 예금 금리, 1억을 일 년 맡기면 은행보다 이자 얼마 더 받을까?'(예금·금리 묶음, 성장 분석가 지시 1/3)"
   },
   {
    "at": "2026-10-17 16:40",

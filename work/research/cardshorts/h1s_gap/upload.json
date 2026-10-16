@@ -2,7 +2,7 @@
  "name": "h1s_gap",
  "ep": "H-1",
  "from_long": "rVg0pQVo_wk",
- "mp4": "work/video/out/h1s_gap_sz_ds.mp4",
+ "mp4": "work/video/out/h1s_gap_sz2_ds.mp4",
  "publishAt": "2026-10-17T07:20:00+09:00",
  "use_after": "2026-10-15 11:30 (H-1 롱폼 공개 뒤)",
  "title": "전세 9억 5천으로 헬리오시티·포레온 가려면 얼마 더? #shorts",
@@ -20,8 +20,8 @@
  "same_day_pair": "10/17 19:20 칸은 H-1 아닌 다른 롱폼 클립",
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "LocU8wRSXvE",
- "uploaded_at": "2026-10-16 12:05:24",
+ "id": "tNbfokCoMb0",
+ "uploaded_at": "2026-10-16 13:42:35",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-16T22:20:00Z",
@@ -29,7 +29,7 @@
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
  },
- "v": 3,
+ "v": 4,
  "replaced": [
   {
    "id": "9Yftl4x-vRc",
@@ -42,6 +42,14 @@
   {
    "id": "H7ElddpJqzc",
    "unscheduled_at": "2026-10-16 12:05:24",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "LocU8wRSXvE",
+   "unscheduled_at": "2026-10-16 13:42:35",
    "status_after": {
     "privacyStatus": "private",
     "publishAt": null

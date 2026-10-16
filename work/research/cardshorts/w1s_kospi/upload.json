@@ -2,7 +2,7 @@
  "name": "w1s_kospi",
  "ep": "W-1",
  "from_long": "0yWQeW38UJE",
- "mp4": "work/video/out/w1s_kospi_sz_ds.mp4",
+ "mp4": "work/video/out/w1s_kospi_sz2_ds.mp4",
  "publishAt": "2026-10-16T19:20:00+09:00",
  "use_by": "2026-10-18 (대본 '지난주' = 10/5~10/9 주, 10/19부터 쓰지 않음)",
  "title": "107조 실적 낸 주, 코스피 1천만원은 얼마 빠졌나 #shorts",
@@ -18,8 +18,8 @@
  },
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "pt1_YLQ8KBs",
- "uploaded_at": "2026-10-16 12:01:55",
+ "id": "DRtKbSuCUiQ",
+ "uploaded_at": "2026-10-16 13:38:20",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-16T10:20:00Z",
@@ -27,7 +27,7 @@
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
  },
- "v": 4,
+ "v": 5,
  "replaced": [
   {
    "id": "kyHxPKRc6rI",
@@ -48,6 +48,14 @@
   {
    "id": "njvFqMeKQlU",
    "unscheduled_at": "2026-10-16 12:01:55",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "pt1_YLQ8KBs",
+   "unscheduled_at": "2026-10-16 13:38:20",
    "status_after": {
     "privacyStatus": "private",
     "publishAt": null

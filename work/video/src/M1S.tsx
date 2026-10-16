@@ -5,7 +5,7 @@ import React from 'react';
 import {AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, Easing} from 'remotion';
 import {T, F, CL, FONT_CSS, Flame, HandCircle} from './parts/fm';
 import {TallyBars, TallyBar} from './motion/TallyBars';
-import {TopBand, AnswerCard, BottomShade, boardBox, capTop, capSize, CAP_H, SZ, Answer} from './parts/safeframe';
+import {Backdrop, Hero, SourceLine, Progress, FitBoard, layout, capTop, capSize, CAP_H, SZ, Answer} from './parts/safeframe';
 
 type SLine = {n: number; text: string; cap?: string | null; audio: string; frames: number};
 type SScene = {kind: string; label: string; source?: string | null; data: any; lines: SLine[]; frames: number};
@@ -561,20 +561,17 @@ const Caption2: React.FC<{s: SScene; first: boolean}> = ({s, first}) => {
     </div>
   );
 };
-// 10/16 안전 영역 틀(parts/safeframe) — C1S와 같다. 글자는 전부 x 48~888 · y 288~1248.
+// 10/16 안전 영역 틀 v2(parts/safeframe) — C1S와 같다. 바탕은 화면 전체, 판은 내용이 있는 곳만 잘라 꽉 채움. 글자는 전부 x 48~888 · y 288~1248.
 const Frame2: React.FC<{s: SScene; p: M1SProps; from: number; total: number; first: boolean}> = ({s, p, from, total, first}) => {
   const f = useCurrentFrame(); const st = starts(s.lines);
-  const drift = interpolate(f, [0, s.frames], [1, 1.025], CL);
+  const zoom = interpolate(f, [0, s.frames], [1, 1.025], CL);
   const body = s.data.full ? <Sequence from={-90} layout="none"><Body s={s} p={p} /></Sequence> : <Body s={s} p={p} />;
-  const b = boardBox(p.question, p.answer as Answer, BW, BH);
+  const L = layout(p.question, p.answer as Answer);
   return (
     <AbsoluteFill>
-      <div style={{position: 'absolute', left: 0, top: b.top, width: 1080, height: b.bottom - b.top, background: '#fff'}} />
-      <div style={{position: 'absolute', left: b.left, top: b.y, width: b.w, height: b.h, overflow: 'hidden'}}>
-        <div style={{position: 'absolute', left: 0, top: 0, width: BW, height: BH, transform: `scale(${b.s * drift})`, transformOrigin: '0 0'}}>{body}</div>
-      </div>
-      <div style={{position: 'absolute', left: SZ.x0 + 6, top: capTop(p.answer as Answer), width: SZ.x1 - SZ.x0 - 12}}><Caption2 s={s} first={first} /></div>
-      <BottomShade progress={(from + f) / total} />
+      <FitBoard bw={BW} bh={BH} frames={s.frames} top={L.boardTop} bottom={L.boardBottom} zoom={zoom}>{body}</FitBoard>
+      <div style={{position: 'absolute', left: SZ.x0 + 6, top: capTop(), width: SZ.x1 - SZ.x0 - 12}}><Caption2 s={s} first={first} /></div>
+      <Progress progress={(from + f) / total} />
       {s.lines.map((l, i) => <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
     </AbsoluteFill>
   );
@@ -582,11 +579,12 @@ const Frame2: React.FC<{s: SScene; p: M1SProps; from: number; total: number; fir
 const M1Sv2: React.FC<M1SProps> = (p) => {
   const total = m1sFrames(p); let from = 0;
   return (
-    <AbsoluteFill style={{background: T.bg}}>
+    <AbsoluteFill style={{background: T.dbg}}>
       <style>{FONT_CSS}</style>
-      <TopBand question={p.question} hot={p.hot} base={p.base} />
+      <Backdrop question={p.question} answer={p.answer as Answer} />
       {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Frame2 s={s} p={p} from={from} total={total} first={i === 0} /></Sequence>; from += s.frames; return el; })}
-      <AnswerCard answer={p.answer as Answer} />
+      <Hero question={p.question} hot={p.hot} answer={p.answer as Answer} />
+      <SourceLine text={p.base} />
     </AbsoluteFill>
   );
 };

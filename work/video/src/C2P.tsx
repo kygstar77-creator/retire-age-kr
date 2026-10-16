@@ -4,16 +4,16 @@
 import React from 'react';
 import {AbsoluteFill, Audio, Img, Sequence, interpolate, spring, staticFile, useCurrentFrame, Easing} from 'remotion';
 import {T, F, CL, FONT_CSS, Flame} from './parts/fm';
-import {SZ, PAD, IW, fit, BottomShade} from './parts/safeframe';
+import {SZ, PAD, IW, fit, Progress, SourceLine, SRC_H} from './parts/safeframe';
 
 type PLine = {text: string; audio: string; frames: number};
 type PScene = {pic: string; cx: number; year: string | null; num: string; sub: string; zoom: [number, number]; pan: number; focus: number; gray: boolean; blur?: boolean; red: string[]; green: string[]; lines: PLine[]; frames: number};
 export type C2PProps = {fps: number; name: string; layout: string; question: string[]; hot: string; badge: string; base: string; scenes: PScene[]};
 export const c2pFrames = (p: C2PProps) => p.scenes.reduce((a, s) => a + s.frames, 0);
 
-const W = 1080, PH = SZ.y1;               // 그림 칸 높이 — 10/16 안전 영역 아래 끝(1248)까지, 그 밑은 글자 없는 검은 바탕
-const Q_TOP = SZ.y0 + 72; const qs = (q: string[]) => Math.min(...q.map((l) => fit(l, IW, 66)));
-let Q_END = Q_TOP + 2 * 66 * 1.12;   // C2P가 그릴 때 질문 크기로 다시 잰다
+const W = 1080, PH = SZ.y1 + 120;         // 선명한 그림 칸 — 10/16 v2: 1368까지 선명, 그 밑(유튜브 제목 자리)은 같은 그림을 흐리게 깔아 화면 끝까지 채운다
+const Q_TOP = SZ.y0 + 6; const qs = (q: string[]) => Math.min(...q.map((l) => fit(l, IW, 84)));
+let Q_END = Q_TOP + 2 * 84 * 1.1;   // C2P가 그릴 때 질문 크기로 다시 잰다
 const YEL = '#FFD000', RED = '#FF6B5E', GRN = '#4ADE80';
 const starts = (lines: PLine[]) => { const o: number[] = []; let a = 0; for (const l of lines) { o.push(a); a += l.frames; } return o; };
 
@@ -28,10 +28,16 @@ const Picture: React.FC<{s: PScene}> = ({s}) => {
   let y = s.focus * 1080 * (PH / 1080) * (1 - z);   // 확대 기준점 = 얼굴 높이(focus) — 그 높이는 화면에서 제자리
   y = Math.min(0, Math.max(PH - ih, y));
   const o = interpolate(f, [0, 5], [0.35, 1], CL);
+  const bs = 1920 / 1080 * 1.05; const bw = 1920 * bs;   // 흐린 바탕: 같은 그림을 화면 전체(0~1920) 높이로 덮는다
   return (
-    <div style={{position: 'absolute', left: 0, top: 0, width: W, height: PH, overflow: 'hidden', background: '#000'}}>
-      <Img src={staticFile(s.pic)} style={{position: 'absolute', left: x, top: y, width: iw, height: ih, opacity: o, filter: s.blur ? 'grayscale(1) blur(22px) brightness(0.4)' : s.gray ? 'grayscale(1) brightness(0.55)' : undefined}} />
-    </div>
+    <>
+      <div style={{position: 'absolute', left: 0, top: 0, width: W, height: 1920, overflow: 'hidden', background: '#000'}}>
+        <Img src={staticFile(s.pic)} style={{position: 'absolute', left: Math.min(0, Math.max(W - bw, W / 2 - s.cx * bs)), top: -0.025 * 1920, width: bw, height: 1080 * bs, opacity: o, filter: `blur(28px) brightness(0.5)${s.gray || s.blur ? ' grayscale(1)' : ''}`}} />
+      </div>
+      <div style={{position: 'absolute', left: 0, top: 0, width: W, height: PH, overflow: 'hidden', WebkitMaskImage: 'linear-gradient(#000 82%, rgba(0,0,0,0))', maskImage: 'linear-gradient(#000 82%, rgba(0,0,0,0))'}}>
+        <Img src={staticFile(s.pic)} style={{position: 'absolute', left: x, top: y, width: iw, height: ih, opacity: o, filter: s.blur ? 'grayscale(1) blur(22px) brightness(0.4)' : s.gray ? 'grayscale(1) brightness(0.55)' : undefined}} />
+      </div>
+    </>
   );
 };
 
@@ -74,10 +80,11 @@ const Caption: React.FC<{s: PScene}> = ({s}) => {
 };
 
 // 10/16 안전 영역: 숫자 카드는 자막(아래 3줄) 바로 위, 안전 영역 왼쪽 안. 글자 크기는 너비에 맞춰 줄인다.
-const CAP3_TOP = SZ.y1 - 8 - 3 * 70;      // 자막 3줄(58px·줄 높이 1.18 + 틈) 시작
+const CAP3_TOP = SZ.y1 - SRC_H - 6 - 3 * 70;      // 자막 3줄(58px·줄 높이 1.18 + 틈) 시작 — 그 밑은 출처 한 줄
 const NumCard: React.FC<{s: PScene}> = ({s}) => {
   const f = useCurrentFrame(); const sp = spring({frame: f - 3, fps: 30, config: {damping: 13, mass: 0.7}});
-  const big = fit(s.num, IW - 60, s.num.length > 7 ? 80 : 100, 40); const sub = fit(s.sub, IW - 60, 30, 18);
+  // 카드 안쪽 여백(26×2)+글자 폭 어림 오차 — 10/16 g1s_asym '4% ~ 34% 손해'가 카드 끝에 닿음
+  const big = fit(s.num, IW - 110, 140, 40); const sub = fit(s.sub, IW - 60, 30, 18);
   return (
     <div style={{position: 'absolute', left: SZ.x0 + PAD, bottom: 1920 - CAP3_TOP + 18, maxWidth: IW, boxSizing: 'border-box', padding: '14px 26px 16px', background: '#fff', borderRadius: 24, boxShadow: '0 14px 40px rgba(0,0,0,0.35)',
       transform: `translateY(${(1 - sp) * 40}px) scale(${0.9 + 0.1 * sp})`, transformOrigin: 'left bottom', opacity: Math.min(1, sp * 1.4)}}>
@@ -94,12 +101,12 @@ const Scene: React.FC<{s: PScene; from: number; total: number; p: C2PProps}> = (
     <AbsoluteFill>
       <Picture s={s} />
       <div style={{position: 'absolute', left: 0, top: 0, width: W, height: 640, background: 'linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.6) 70%, rgba(0,0,0,0))'}} />
-      <div style={{position: 'absolute', left: 0, top: PH - 480, width: W, height: 480, background: `linear-gradient(rgba(16,17,20,0), rgba(16,17,20,0.88) 45%, ${T.dbg})`}} />
+      <div style={{position: 'absolute', left: 0, top: CAP3_TOP - 520, width: W, height: 1920 - (CAP3_TOP - 520), background: 'linear-gradient(rgba(16,17,20,0), rgba(16,17,20,0.82) 40%, rgba(16,17,20,0.7) 75%, rgba(16,17,20,0.45))'}} />
       {s.year ? <div style={{position: 'absolute', left: SZ.x0 + PAD, top: Q_END + 14, padding: '6px 18px', background: T.accent, borderRadius: 12, opacity: yo, transform: `translateX(${(1 - yo) * -30}px)`}}>
         <span style={{...F, fontWeight: 700, fontSize: fit(s.year, IW - 40, 36, 22), color: '#fff', whiteSpace: 'nowrap'}}>{s.year}</span></div> : null}
       <NumCard s={s} />
       <div style={{position: 'absolute', left: SZ.x0 + PAD, top: CAP3_TOP, width: IW, height: SZ.y1 - CAP3_TOP, display: 'flex', alignItems: 'flex-start', justifyContent: 'center'}}><Caption s={s} /></div>
-      <BottomShade progress={(from + f) / total} />
+      <Progress progress={(from + f) / total} />
       {s.lines.map((l, i) => <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
     </AbsoluteFill>
   );
@@ -112,11 +119,7 @@ export const C2P: React.FC<C2PProps> = (p) => {
     <AbsoluteFill style={{background: T.dbg}}>
       <style>{FONT_CSS}</style>
       {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Scene s={s} from={from} total={total} p={p} /></Sequence>; from += s.frames; return el; })}
-      <div style={{position: 'absolute', left: SZ.x0 + PAD, top: SZ.y0 + 4, width: IW, display: 'flex', alignItems: 'center', justifyContent: 'space-between', whiteSpace: 'nowrap'}}>
-        <div style={{display: 'flex', alignItems: 'center', gap: 8}}><Flame size={20} /><span style={{...F, fontWeight: 700, fontSize: 22, color: '#fff', opacity: 0.85}}>파이어맵</span></div>
-        <div style={{padding: '4px 12px', borderRadius: 8, background: 'rgba(255,255,255,0.88)'}}><span style={{...F, fontWeight: 700, fontSize: fit(p.badge, IW - 200, 22, 14), color: T.ink}}>{p.badge}</span></div>
-      </div>
-      <div style={{position: 'absolute', left: SZ.x0 + PAD, top: SZ.y0 + 40, width: IW, textAlign: 'center', ...F, fontWeight: 500, fontSize: fit(p.base, IW, 19, 13), color: '#fff', opacity: 0.75, whiteSpace: 'nowrap'}}>{p.base}</div>
+      <SourceLine text={p.base} badge={p.badge} dark />
       <div style={{position: 'absolute', left: SZ.x0 + PAD, top: Q_TOP, width: IW, textAlign: 'center'}}>
         {p.question.map((line, i) => {
           const k = line.indexOf(p.hot);

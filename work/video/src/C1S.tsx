@@ -12,7 +12,7 @@ import {TallyBars, TallyBar} from './motion/TallyBars';
 import {TallyReceipt, TallyRow} from './motion/TallyReceipt';
 import {TallyTag, TallyCallout} from './motion/TallyMark';
 import {TallyLineChart, lineXY} from './motion/TallyLineChart';
-import {TopBand, AnswerCard, BottomShade, boardBox, capTop, capSize, CAP_H, SZ, Answer} from './parts/safeframe';
+import {Backdrop, Hero, SourceLine, Progress, FitBoard, layout, capTop, capSize, CAP_H, SZ, Answer, fit} from './parts/safeframe';
 
 type SLine = {n: number; text: string; cap?: string | null; audio: string; frames: number};
 type SScene = {kind: string; label: string; source?: string | null; data: any; lines: SLine[]; frames: number};
@@ -216,20 +216,21 @@ const DuoS: React.FC<{s: SScene}> = ({s}) => {
   );
 };
 
-// 두 칸 대결(세로로 쌓음): tiles = [머리, 큰 값, 아래 글, 시작, 색]
+// 두 칸 대결: 10/16 v2 안전 영역 틀 — 판 칸이 가로로 넓어(840×약 450) 두 칸을 나란히 둔다(세로로 쌓으면 판이 0.55배로 줄고 오른쪽이 빔). tiles = [머리, 큰 값, 아래 글, 시작, 색]
 const VsS: React.FC<{s: SScene}> = ({s}) => {
-  const f = useCurrentFrame();
+  const f = useCurrentFrame(); const tiles = s.data.tiles; const n = tiles.length;
+  const G = 24, TW = (920 - G * (n - 1)) / n, TH = 440, IN = TW - 64;
   return (
     <>
-      {s.data.tiles.map(([head, big, sub, at, col]: any, i: number) => {
-        const c = COL[col] ?? T.ink; const y = 40 + i * 400;
-        if (f < at) return <div key={i} style={{position: 'absolute', left: 40, top: y, width: 920, height: 360, borderRadius: 22, border: `3px dashed ${T.line}`}} />;
+      {tiles.map(([head, big, sub, at, col]: any, i: number) => {
+        const c = COL[col] ?? T.ink; const x = 40 + i * (TW + G), y = 40;
+        if (f < at) return <div key={i} style={{position: 'absolute', left: x, top: y, width: TW, height: TH, borderRadius: 22, border: `3px dashed ${T.line}`}} />;
         const sp = spring({frame: f - at, fps: 30, config: {damping: 13}});
         return (
-          <div key={i} style={{position: 'absolute', left: 40, top: y + (1 - sp) * 30, width: 920, height: 360, background: T.bg, borderRadius: 22, opacity: sp, boxShadow: `inset 0 12px 0 ${c}`}}>
-            <div style={{position: 'absolute', left: 44, top: 46}}><Txt s={48} c={T.ink2}>{head}</Txt></div>
-            <div style={{position: 'absolute', left: 44, top: 120}}><Txt s={120} c={c}>{big}</Txt></div>
-            <div style={{position: 'absolute', left: 44, top: 280}}><Txt s={36} c={T.ink3}>{sub}</Txt></div>
+          <div key={i} style={{position: 'absolute', left: x, top: y + (1 - sp) * 30, width: TW, height: TH, background: T.bg, borderRadius: 22, opacity: sp, boxShadow: `inset 0 12px 0 ${c}`, boxSizing: 'border-box', padding: '40px 32px 28px', display: 'flex', flexDirection: 'column'}}>
+            <div style={{...F, fontWeight: 700, fontSize: Math.max(30, fit(head, IN * 2, 40)), color: T.ink2, lineHeight: 1.2, wordBreak: 'keep-all'}}>{head}</div>
+            <div style={{flex: 1, display: 'flex', alignItems: 'center'}}><Txt s={fit(big, IN, 116, 40)} c={c}>{big}</Txt></div>
+            <div style={{...F, fontWeight: 500, fontSize: Math.max(26, fit(sub, IN * 2, 32)), color: T.ink3, lineHeight: 1.25, wordBreak: 'keep-all'}}>{sub}</div>
           </div>
         );
       })}
@@ -298,22 +299,19 @@ const Caption: React.FC<{s: SScene; first: boolean}> = ({s, first}) => {
     </div>
   );
 };
-// 10/16 안전 영역 틀(parts/safeframe): 판은 위 띠 끝 ~ 자막 위, 안전 영역 가운데에 줄여 둔다. 글자는 전부 x 48~888 · y 288~1248.
+// 10/16 안전 영역 틀 v2(parts/safeframe): 바탕은 화면 전체, 판은 내용이 있는 곳만 잘라 안전 영역 너비를 꽉 채운다. 글자는 전부 x 48~888 · y 288~1248.
 const Frame: React.FC<{s: SScene; from: number; total: number; first: boolean; p: C1SProps}> = ({s, from, total, first, p}) => {
   const f = useCurrentFrame(); const st = starts(s.lines);
-  // 장면 안 컷: 약 2.5초(75프레임)마다 판을 4.5% 당겼다 놓는다(내용은 그대로, 자막 조각 바뀜과 함께 화면이 2~3초마다 달라지게 — today.md 12:3x '장면 약 2초마다')
+  // 장면 안 컷: 약 2.5초(75프레임)마다 판을 3% 당겼다 놓는다(내용은 그대로, 자막 조각 바뀜과 함께 화면이 2~3초마다 달라지게 — today.md 12:3x '장면 약 2초마다')
   const k = Math.floor(f / 75); const pin = (k % 2) * interpolate(f - k * 75, [0, 6], [0, 1], CL) + (1 - (k % 2)) * (k ? interpolate(f - k * 75, [0, 6], [1, 0], CL) : 0);
-  const drift = interpolate(f, [0, s.frames], [1, 1.025], CL) + 0.045 * pin;
+  const zoom = interpolate(f, [0, s.frames], [1, 1.015], CL) + 0.03 * pin;
   const body = s.data.full ? <Sequence from={-90} layout="none"><Body s={s} /></Sequence> : <Body s={s} />;
-  const b = boardBox(p.question, p.answer as Answer, BW, BH);
+  const L = layout(p.question, p.answer as Answer);
   return (
     <AbsoluteFill>
-      <div style={{position: 'absolute', left: 0, top: b.top, width: 1080, height: b.bottom - b.top, background: '#fff'}} />
-      <div style={{position: 'absolute', left: b.left, top: b.y, width: b.w, height: b.h, overflow: 'hidden'}}>
-        <div style={{position: 'absolute', left: 0, top: 0, width: BW, height: BH, transform: `scale(${b.s})`, transformOrigin: '0 0'}}><div style={{position: 'absolute', left: 0, top: 0, width: BW, height: BH, transform: `scale(${drift})`, transformOrigin: '50% 42%'}}>{body}</div></div>
-      </div>
-      <div style={{position: 'absolute', left: SZ.x0 + 6, top: capTop(p.answer as Answer), width: SZ.x1 - SZ.x0 - 12}}><Caption s={s} first={first} /></div>
-      <BottomShade progress={(from + f) / total} />
+      <FitBoard bw={BW} bh={BH} frames={s.frames} top={L.boardTop} bottom={L.boardBottom} zoom={zoom}>{body}</FitBoard>
+      <div style={{position: 'absolute', left: SZ.x0 + 6, top: capTop(), width: SZ.x1 - SZ.x0 - 12}}><Caption s={s} first={first} /></div>
+      <Progress progress={(from + f) / total} />
       {s.lines.map((l, i) => <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
     </AbsoluteFill>
   );
@@ -322,11 +320,12 @@ const Frame: React.FC<{s: SScene; from: number; total: number; first: boolean; p
 export const C1S: React.FC<C1SProps> = (p) => {
   const total = c1sFrames(p); let from = 0;
   return (
-    <AbsoluteFill style={{background: T.bg}}>
+    <AbsoluteFill style={{background: T.dbg}}>
       <style>{FONT_CSS}</style>
-      <TopBand question={p.question} hot={p.hot} base={p.base} />
+      <Backdrop question={p.question} answer={p.answer as Answer} />
       {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Frame s={s} from={from} total={total} first={i === 0} p={p} /></Sequence>; from += s.frames; return el; })}
-      <AnswerCard answer={p.answer as Answer} />
+      <Hero question={p.question} hot={p.hot} answer={p.answer as Answer} />
+      <SourceLine text={p.base} />
     </AbsoluteFill>
   );
 };

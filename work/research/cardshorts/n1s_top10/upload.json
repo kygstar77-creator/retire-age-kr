@@ -2,7 +2,7 @@
  "name": "n1s_top10",
  "ep": "N-1",
  "from_long": "420buEFKB8k",
- "mp4": "work/video/out/n1s_top10_sz_ds.mp4",
+ "mp4": "work/video/out/n1s_top10_sz2_ds.mp4",
  "layout": "c1clip",
  "publishAt": "2026-10-23T07:20:00+09:00",
  "title": "순자산 10억, 상위 10% 안일까? 문턱은 11억 #shorts",
@@ -26,8 +26,8 @@
  },
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "ANFYZlwfID4",
- "uploaded_at": "2026-10-16 12:43:23",
+ "id": "r-pa6czi5iQ",
+ "uploaded_at": "2026-10-16 14:31:03",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-22T22:20:00Z",
@@ -35,11 +35,19 @@
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
  },
- "v": 2,
+ "v": 3,
  "replaced": [
   {
    "id": "oxrbky0mW2M",
    "unscheduled_at": "2026-10-16 12:43:23",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "ANFYZlwfID4",
+   "unscheduled_at": "2026-10-16 14:31:03",
    "status_after": {
     "privacyStatus": "private",
     "publishAt": null

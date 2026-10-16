@@ -2,7 +2,7 @@
  "name": "h1s_walk",
  "ep": "H-1",
  "from_long": "rVg0pQVo_wk",
- "mp4": "work/video/out/h1s_walk_sz_ds.mp4",
+ "mp4": "work/video/out/h1s_walk_sz2_ds.mp4",
  "layout": "m1clip",
  "publishAt": "2026-10-20T07:20:00+09:00",
  "use_after": "2026-10-15 11:30 (H-1 롱폼 공개 뒤)",
@@ -27,8 +27,8 @@
  },
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "8mxO_EiHWck",
- "uploaded_at": "2026-10-16 12:22:39",
+ "id": "n34GT7eFhJ0",
+ "uploaded_at": "2026-10-16 14:02:18",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-19T22:20:00Z",
@@ -36,11 +36,19 @@
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
  },
- "v": 2,
+ "v": 3,
  "replaced": [
   {
    "id": "JEbfJTewk-E",
    "unscheduled_at": "2026-10-16 12:22:39",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "8mxO_EiHWck",
+   "unscheduled_at": "2026-10-16 14:02:18",
    "status_after": {
     "privacyStatus": "private",
     "publishAt": null

@@ -458,6 +458,9 @@ def script_check(text):
     bad = []
     if per > SCRIPT_NUM_PER_1000: bad.append(f'숫자 {per:.1f}/1,000단어 > {SCRIPT_NUM_PER_1000}(경쟁 최대 91·중앙 52)')
     if multi > SCRIPT_MULTI_NUM_PCT: bad.append(f'숫자 2개 이상 문장 {multi:.0f}% > {SCRIPT_MULTI_NUM_PCT}%(경쟁 최대 20%·중앙 11%)')
+    # 10/16 사장님 "이상한 단위 할 푼 리 이런 건 쓰지 말아야 할 거고" — 할·푼·리 비율 말과 억·조 뒤 소수 둘째 자리(20.00억)는 금지.
+    for m in re.finditer(r'(\d|[일이삼사오육칠팔구십한두세네])\s*할(?![인부머])|\d\s*푼|\d+\.\d{2}\s*[억조]', text):
+        bad.append(f'이상한 단위 "{m.group(0)}" — 할·푼·리 대신 %·"10명 중 1명", 억은 "20억"·"23억 8천만원"처럼')
     return not bad, per, multi, len(sents), bad
 
 

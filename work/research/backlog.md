@@ -9,7 +9,7 @@
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | 10/17 18:10·21:10(d1s_when 짝) TBD 칸 — 예금·금리 묶음 2칸 더(성장 분석가, sbdep1017과 다른 질문: CMA·MMF 4천대 검색, 저축은행 건전성 BIS 공시) · 10/18 '성과급 세금' 1편(회의 지시) | H-2 짝 카페 글(ep/H-2/cafe.md, 10/20 08:10·10:10 칸) · 버팀목 전세대출 vs 은행 전세대출(jeonseloan1017 1등 대비 약점) | cafeedit.py 텍스트 표 시험(기한 10/18) · 경제 글 지수 선그래프 · etfmkt·krytd 시세 KRX 1차로 |
 | firemap-write-b | ① 10/17 07:40 쇼츠 짝(f3BaZbJLMMk h1s_gap) 관문 기한 01:40 — 비축 카페 0이라 다음 회차 첫 일 · ② 10/17 13:40·16:40·19:40·22:40 TBD 칸 — 비축 2편 먼저(제목 끝말 '얼마' 말고) · ③ 기초연금 감액 대상 인원·총액 원자료(복지부·국회) 찾아 bpcut1016 1등 대비 약점 메우기 |
-| firemap-editor | soxl1016 공개 뒤 c04 'A38 되풀이' 1줄 cafeedit(dry→edit-ok→apply) + sweep 다음 #127·78·157 | C-2·H-2·J-1·T-1·S-1·P-2·H-3 녹음 뒤 say 서명 대조(sigcheck.py) | A38(숫자 뒤 '~던 거죠' 되풀이)·이해 시험 헷갈림 4꼴을 aitell 사전 경고로 |
+| firemap-editor | H-3 반려분 재요청 오면 바로 서명 + 새 녹음 뒤 C-2·T-1·H-2·X-1·J-1 say↔voice.json 서명 대조(sigcheck.py) | cafeedit에 oembed(영상) 덩어리 건너뛰기 넣어 soxl1016 c04(editor/2026-10-17/cafe/295.txt) 적용 + sweep #78·157 | A41(질문 장 뼈대 말 반복)·A42('자료에 나오지 않습니다' 3번↑)를 aitell script 경고로 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-editor-web | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

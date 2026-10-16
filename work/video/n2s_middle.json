@@ -1,0 +1,374 @@
+{
+ "fps": 30,
+ "name": "n2s_middle",
+ "question": [
+  "직장인 100명 한 줄,",
+  "딱 한가운데 50등 월급은?"
+ ],
+ "hot": "50등",
+ "answer": {
+  "label": "50등 월급 · 세금 떼기 전",
+  "items": [
+   "290만원쯤",
+   "평균 375만원보다 아래"
+  ],
+  "arrow": false,
+  "note": "통장으로는 260만원쯤"
+ },
+ "base": "국가데이터처 2024년 임금근로일자리 소득 · 2024년 12월 세전 월급 · 일자리 기준",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "100명 한 줄",
+   "source": "국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준",
+   "data": {
+    "full": true,
+    "tiles": [
+     [
+      "우리나라 직장인 전체를",
+      "100명",
+      "많이 받는 사람부터 한 줄로",
+      0,
+      "ink"
+     ],
+     [
+      "줄 딱 한가운데",
+      "50등",
+      "이 사람 월급은 얼마일까",
+      0,
+      "accent"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 14,
+     "text": "줄 딱 한가운데, 50등은 얼마를 받을까요?",
+     "cap": null,
+     "audio": "audio/n-2/n2m_14b.wav",
+     "frames": 94
+    },
+    {
+     "n": 0,
+     "text": "우리나라 직장인 전체를 100명으로 줄여서, 월급 순서대로 한 줄로 세워 보겠습니다.",
+     "cap": null,
+     "audio": "audio/n-2/bd9e8accb3f02712.wav",
+     "frames": 158
+    }
+   ],
+   "frames": 252
+  },
+  {
+   "kind": "vs",
+   "label": "50등 월급",
+   "source": "국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준 · 통장 금액 = 파이어맵 월급 계산기(2026년 간이세액표·4대보험, 1인·식대 비과세 20만원 가정)",
+   "data": {
+    "tiles": [
+     [
+      "50등 월급 · 세금 떼기 전",
+      "290만원쯤",
+      "통계 원문 중위 288만원",
+      0,
+      "accent"
+     ],
+     [
+      "이보다 많이 받는 사람",
+      "절반",
+      "적게 받는 사람도 절반",
+      72,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 15,
+     "text": "세전 290만원쯤입니다. 이 사람보다 많이 받는 사람이 절반, 적게 받는 사람이 절반이에요.",
+     "cap": "가운데 288만원",
+     "audio": "audio/n-2/40e6167c928ac43d.wav",
+     "frames": 161
+    }
+   ],
+   "frames": 161
+  },
+  {
+   "kind": "bars",
+   "label": "평균과 한가운데",
+   "source": "국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준",
+   "data": {
+    "head": "세전 월급 · 2024년 12월",
+    "max": 400,
+    "bars": [
+     [
+      "뉴스 속 평균",
+      375,
+      "375만원",
+      0,
+      "ink",
+      "모두 더해 ÷ 사람 수"
+     ],
+     [
+      "딱 한가운데 50등",
+      288,
+      "288만원",
+      94,
+      "accent",
+      "말로 290만원쯤"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 20,
+     "text": "뉴스에 나오는 평균 월급, 들어 보셨죠. 이 통계로는 세전 375만원이에요.",
+     "cap": "평균 375만원 · 가운데 288만원 · 차 87만원",
+     "audio": "audio/n-2/63526e672fa7822f.wav",
+     "frames": 156
+    },
+    {
+     "n": 21,
+     "text": "평균은 한가운데 사람 월급이 아니라, 모든 사람 월급을 더해서 사람 수로 나눈 값입니다.",
+     "cap": null,
+     "audio": "audio/n-2/da32ceab2dbf1b16.wav",
+     "frames": 161
+    }
+   ],
+   "frames": 317
+  },
+  {
+   "kind": "receipt",
+   "label": "평균이 위로 끌리는 까닭",
+   "source": "국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준",
+   "data": {
+    "head": "평균이 한가운데보다 높은 까닭",
+    "size": 52,
+    "rows": [
+     [
+      "가장 적게 받아도",
+      "0원 아래는 없음",
+      "dim",
+      0
+     ],
+     [
+      "많이 받는 쪽엔",
+      "한가운데의 몇 배도",
+      "in",
+      141
+     ],
+     [
+      "평균이 더 높은 만큼",
+      "87만원",
+      "net",
+      325
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 22,
+     "text": "적게 받는 쪽은 아무리 적어도 0원 밑으로는 못 내려가요.",
+     "cap": null,
+     "audio": "audio/n-2/f5420c46fea11c5d.wav",
+     "frames": 141
+    },
+    {
+     "n": 23,
+     "text": "그런데 많이 받는 쪽엔 한가운데보다 몇 배씩 받는 사람도 있으니까, 평균이 위로 끌려 올라가요.",
+     "cap": null,
+     "audio": "audio/n-2/1228e3143f583a97.wav",
+     "frames": 184
+    },
+    {
+     "n": 24,
+     "text": "그래서 줄 한가운데 사람은 평균보다 한참 아래입니다.",
+     "cap": null,
+     "audio": "audio/n-2/8d35d64fd53e6f5d.wav",
+     "frames": 109
+    }
+   ],
+   "frames": 434
+  },
+  {
+   "kind": "receipt",
+   "label": "내 자리 견주기",
+   "source": "국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준 · 통장 금액 = 파이어맵 월급 계산기(2026년 간이세액표·4대보험, 1인·식대 비과세 20만원 가정)",
+   "data": {
+    "head": "내 자리는 줄 한가운데와 견주기",
+    "size": 52,
+    "rows": [
+     [
+      "세금 떼기 전",
+      "290만원쯤",
+      "in",
+      0
+     ],
+     [
+      "통장에 들어오는 돈",
+      "260만원쯤",
+      "net",
+      177
+     ],
+     [
+      "내 월급이 더 많으면",
+      "많이 받는 쪽 절반",
+      "dim",
+      224
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 25,
+     "text": "내 자리를 보려면, 평균 말고 줄 한가운데와 견줘 보세요.",
+     "cap": null,
+     "audio": "audio/n-2/f84a236eb23b2edb.wav",
+     "frames": 106
+    },
+    {
+     "n": 26,
+     "text": "세전으로 290만원쯤이에요. 통장으로는 260만원쯤입니다.",
+     "cap": null,
+     "audio": "audio/n-2/28dd0879efa79cca.wav",
+     "frames": 158
+    }
+   ],
+   "frames": 300
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/n2/853830.mp4",
+   "from": 0,
+   "frames": 94,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n2/15411757.mp4",
+   "from": 94,
+   "frames": 158,
+   "start": 3.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n2/7317314.mp4",
+   "from": 252,
+   "frames": 161,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n2/3202364.mp4",
+   "from": 413,
+   "frames": 156,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n2/27635322.mp4",
+   "from": 569,
+   "frames": 161,
+   "start": 12.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n2/5923592.mp4",
+   "from": 730,
+   "frames": 141,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n2/8064422.mp4",
+   "from": 871,
+   "frames": 92,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n2/36282124.mp4",
+   "from": 963,
+   "frames": 92,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n2/853830.mp4",
+   "from": 1055,
+   "frames": 109,
+   "start": 3.13,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n2/15411757.mp4",
+   "from": 1164,
+   "frames": 106,
+   "start": 8.27,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n2/7317314.mp4",
+   "from": 1270,
+   "frames": 97,
+   "start": 5.37,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n2/3202364.mp4",
+   "from": 1367,
+   "frames": 97,
+   "start": 5.2,
+   "kind": "video"
+  }
+ ],
+ "bg_credits": [
+  {
+   "id": 853830,
+   "page": "https://www.pexels.com/video/people-walking-on-street-853830/",
+   "author": "Coverr",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 15411757,
+   "page": "https://www.pexels.com/video/high-angle-view-of-a-busy-intersection-in-novi-sad-serbia-15411757/",
+   "author": "Neven B",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 7317314,
+   "page": "https://www.pexels.com/video/architectural-design-of-a-modern-building-7317314/",
+   "author": "MART  PRODUCTION",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 3202364,
+   "page": "https://www.pexels.com/video/people-working-on-their-laptops-in-an-office-3202364/",
+   "author": "cottonbro studio",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 27635322,
+   "page": "https://www.pexels.com/video/the-city-skyline-at-night-with-lights-on-27635322/",
+   "author": "Argenis Matos",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 5923592,
+   "page": "https://www.pexels.com/video/person-using-calculator-while-writing-on-paper-5923592/",
+   "author": "RDNE Stock project",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 8064422,
+   "page": "https://www.pexels.com/video/time-lapse-video-of-cars-on-the-road-8064422/",
+   "author": "Antoni Shkraba",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 36282124,
+   "page": "https://www.pexels.com/video/brno-city-timelapse-capturing-day-to-night-36282124/",
+   "author": "Ben Kyselka",
+   "license": "https://www.pexels.com/license/"
+  }
+ ]
+}

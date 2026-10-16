@@ -1,0 +1,112 @@
+{
+ "name": "n2s_middle",
+ "note": "N-2 롱폼 배경(work/video/public/bg/n2, 롱폼 때 눈 검사)에서 다시 골라 세로 가운데 자른 프레임을 10/16 22시 쇼츠 클립 담당이 다시 봄 — 얼굴·상표·간판 글자·워터마크 0. 15411757은 0초가 검은 화면이라 3초부터.",
+ "clips": [
+  {
+   "file": "bg/n2/853830.mp4",
+   "id": 853830,
+   "start": 0,
+   "usable_sec": 8,
+   "what": "길을 걷는 사람들 다리(얼굴 없음)",
+   "for": "0 100명 한 줄 · 50등은?",
+   "page": "https://www.pexels.com/video/people-walking-on-street-853830/",
+   "author": "Coverr",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/n2/15411757.mp4",
+   "id": 15411757,
+   "start": 3,
+   "usable_sec": 25,
+   "what": "교차로를 위에서 내려다본 차들",
+   "for": "0·1 줄 한가운데 50등",
+   "page": "https://www.pexels.com/video/high-angle-view-of-a-busy-intersection-in-novi-sad-serbia-15411757/",
+   "author": "Neven B",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/n2/7317314.mp4",
+   "id": 7317314,
+   "start": 0,
+   "usable_sec": 18,
+   "what": "저녁 사무실 건물 유리창",
+   "for": "1 세전 290만원쯤",
+   "page": "https://www.pexels.com/video/architectural-design-of-a-modern-building-7317314/",
+   "author": "MART  PRODUCTION",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/n2/3202364.mp4",
+   "id": 3202364,
+   "start": 0,
+   "usable_sec": 15,
+   "what": "노트북 치는 손(흐림)",
+   "for": "2 평균 375만원",
+   "page": "https://www.pexels.com/video/people-working-on-their-laptops-in-an-office-3202364/",
+   "author": "cottonbro studio",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/n2/27635322.mp4",
+   "id": 27635322,
+   "start": 12,
+   "usable_sec": 13,
+   "what": "밤 고층 건물 스카이라인",
+   "for": "2 평균이란",
+   "page": "https://www.pexels.com/video/the-city-skyline-at-night-with-lights-on-27635322/",
+   "author": "Argenis Matos",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/n2/5923592.mp4",
+   "id": 5923592,
+   "start": 0,
+   "usable_sec": 10,
+   "what": "계산기 두드리며 적는 손",
+   "for": "3 평균이 위로 끌림",
+   "page": "https://www.pexels.com/video/person-using-calculator-while-writing-on-paper-5923592/",
+   "author": "RDNE Stock project",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/n2/8064422.mp4",
+   "id": 8064422,
+   "start": 0,
+   "usable_sec": 8,
+   "what": "밤 도시 도로 불빛",
+   "for": "3 몇 배씩 받는 사람",
+   "page": "https://www.pexels.com/video/time-lapse-video-of-cars-on-the-road-8064422/",
+   "author": "Antoni Shkraba",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/n2/36282124.mp4",
+   "id": 36282124,
+   "start": 0,
+   "usable_sec": 30,
+   "what": "흐린 날 도시 지붕 타임랩스",
+   "for": "4 한가운데와 견주기",
+   "page": "https://www.pexels.com/video/brno-city-timelapse-capturing-day-to-night-36282124/",
+   "author": "Ben Kyselka",
+   "license": "https://www.pexels.com/license/"
+  }
+ ],
+ "rejected": [
+  {
+   "id": 6780084,
+   "why": "흰 종이 화면이 밝아 흰 자막이 묻힘"
+  },
+  {
+   "id": 6223515,
+   "why": "끝 쪽이 거의 검은 화면"
+  },
+  {
+   "id": 26579264,
+   "why": "고속도로 위 같은 그림 반복, 주제와 멂"
+  },
+  {
+   "id": 8691678,
+   "why": "책상 위 전화기·키보드, 상표 확인 어려움"
+  }
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "name": "n2s_middle",
+ "ep": "N-2",
+ "from_long": "kXnAKjC-84Q",
+ "mp4": "work/video/out/n2s_middle_ds.mp4",
+ "layout": "c1clip",
+ "publishAt": "2026-10-19T19:20:00+09:00",
+ "title": "평균 월급 375만원, 줄 한가운데는 290만원쯤 #shorts",
+ "description": "전체 계산: https://youtu.be/kXnAKjC-84Q · 월급 순위 한가운데 50등은 세전 290만원쯤\n\n직장인 전체를 100명으로 줄여 세전 월급 순서로 한 줄 세우면, 딱 한가운데 50등은 세전 290만원쯤이에요(통계 원문 중위 288만원). 통장으로는 260만원쯤입니다.\n뉴스에 나오는 평균 월급은 세전 375만원이라 한가운데보다 87만원 높아요. 적게 받는 쪽은 0원 밑으로 못 내려가고, 많이 받는 쪽엔 몇 배씩 받는 사람이 있어 평균이 위로 끌려 올라가요.\n\n출처: 국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23 보도자료) · 2024년 12월 세전 월 보수 · 평균소득 375만원 · 중위소득 288만원\n통장 금액: 파이어맵 월급 계산기(2026년 간이세액표·4대보험 요율, 본인 1명·식대 비과세 월 20만원 가정)\n통계 단위는 사람이 아니라 일자리라, 두 곳에서 일하면 두 번 셉니다.\n통계를 읽는 자료이고, 월급을 올리거나 직장을 옮기라는 권유가 아닙니다.\n배경 영상: Coverr / Pexels (https://www.pexels.com/video/people-walking-on-street-853830/) · Neven B / Pexels (https://www.pexels.com/video/high-angle-view-of-a-busy-intersection-in-novi-sad-serbia-15411757/) · MART  PRODUCTION / Pexels (https://www.pexels.com/video/architectural-design-of-a-modern-building-7317314/) · cottonbro studio / Pexels (https://www.pexels.com/video/people-working-on-their-laptops-in-an-office-3202364/) · Argenis Matos / Pexels (https://www.pexels.com/video/the-city-skyline-at-night-with-lights-on-27635322/) · RDNE Stock project / Pexels (https://www.pexels.com/video/person-using-calculator-while-writing-on-paper-5923592/) · Antoni Shkraba / Pexels (https://www.pexels.com/video/time-lapse-video-of-cars-on-the-road-8064422/) · Ben Kyselka / Pexels (https://www.pexels.com/video/brno-city-timelapse-capturing-day-to-night-36282124/) — Pexels 라이선스 https://www.pexels.com/license/\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져왔습니다.\n\n#shorts #월급순위 #평균월급",
+ "tags": "월급 순위,평균 월급,월급 중위값,직장인 월급,내 월급 몇 등",
+ "v": 1,
+ "title_review": {
+  "gemini": {
+   "status": "gemini-3.1-flash-lite 503·flash-latest 429 — 10/16 22:4x 쓸 수 없어 titlejudge.py 결과 없음"
+  },
+  "redteam": [
+   {
+    "round": 1,
+    "judge": "새 Agent 심사관(sonnet)",
+    "scores": {
+     "평균 월급 375만원인데 한가운데 50등은 290만원?": 7,
+     "직장인 100명 줄 세우면, 50등 월급은 얼마?": 6,
+     "월급 순위 50등은 290만원, 평균 375만원보다 아래": 5,
+     "월급 순위 딱 한가운데 50등, 세전 290만원쯤": 4
+    },
+    "note": "1위 안은 숫자 3개라 2개로 줄임"
+   },
+   {
+    "round": 2,
+    "judge": "새 Agent 심사관",
+    "scores": {
+     "평균 월급 375만원, 줄 한가운데는 290만원쯤": 7,
+     "평균 월급 375만원인데 한가운데는 290만원?": 6,
+     "월급 순위 한가운데는 290만원, 평균보다 한참 아래": 5
+    }
+   },
+   {
+    "round": 3,
+    "judge": "새 Agent 심사관",
+    "scores": {
+     "평균 월급 375만원, 줄 한가운데는 290만원쯤": 7,
+     "평균 월급 375만원, 딱 중간 사람은 290만원쯤": 6,
+     "월급 순위 딱 중간 50등은 290만원쯤": 5
+    }
+   }
+  ],
+  "chosen_score": 7,
+  "len_no_hashtag": 27,
+  "numbers": 2,
+  "front_keyword": "평균 월급"
+ }
+}

@@ -122,6 +122,19 @@
     "url": "https://cafe.naver.com/firemap/297"
    },
    "note": "firemap-write-b 19:40 칸(쇼츠 w1s_kospi DRtKbSuCUiQ 짝, 공개 확인) · 비축 0이라 새로 씀 w1scafe1016 · 자료: WebSearch 5회·[오늘 찾은 것] 5건, 1차 ECOS 802Y001(10/15)·야후 ^KS11·005930.KS(10/16) · 검증 경로 crosscheck(Gemini): 사실 2 중 반영 1(엿새→닷새)·유지 1(관련 영상 0yWQeW38UJE 실재), 말투 10 중 반영 8 · 레드팀 2회 숫자 틀림 0 · 58세 이해 2차 심각 0 · 제목 7.67·표지 7.67 · editgate auto 20:04 · verify OK 1115/1115자·사진 3/3(게시판 경제 이야기) · 개선: 없음(확인 창 8초 타임아웃 경고 반복, 발행 영향 없음)"
+  },
+  {
+   "hour": 21,
+   "ts": "21:58",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "주담대 고정금리 끝나는 달, 3억 대출이면 매달 얼마 더 낼까",
+    "url": "https://cafe.naver.com/firemap/298"
+   },
+   "note": "firemap-write 21:20 회차 · 21:10 칸 mixreset1016(12:43 관문 통과분) 발행 · verify OK 1401/1401자·사진 3/3 · 게시판 부동산 · 관련 영상 없음(주담대 공개 영상 없음) · 블로그 0(하루 상한·카페만) · 다음 편 jeonseloan1017(10/17 12:10 돈 관리) 관문 통과 — 자료조사 웹 7건·1차 출처 3(금감원 finlife API·ECOS 전세대출·ECOS 기준금리) · 교차검증 crosscheck(Gemini): 사실 4 중 반영 4, 말투 13 중 반영 10·유지 3 · 레드팀 3회(틀림 5 전부 반영) · 58세 이해 4차 통과 · 제목 7.33·표지 7.67 · 개선: apis.finlife가 버리던 '전월 취급 평균금리'(lend_rate_avg)·중도상환수수료·한도 칸 살림"
   }
  ]
 }

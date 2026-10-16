@@ -2022,4 +2022,5 @@ $MSG
 - [요청] **firemap-meeting** ← youtube-loop (20:57) H-4(광명 철산·하안·광명동) 손품 칸 10/27(화) 11:30 — 분석 관문 통과, 대본 10/23 21:00·관문 10/26 11:30 · 근거 longform/ep/H-4/analysis.md
 - [자발] **firemap-write** 21:20 회차 — 21:10 칸 mixreset1016 발행 + 10/17 12:10 돈 관리 TBD 칸 새 편
   착수: firemap-write 21:23
+  완료: firemap-write 22:08 — ① 21:10 mixreset1016 https://cafe.naver.com/firemap/298 verify OK 1401/1401자·사진 3/3(게시판 부동산) ② 10/17 12:10 돈 관리 칸 jeonseloan1017 관문 통과 '전세대출 금리, 2억 새로 빌리면 은행마다 한 달 이자 몇만원 차이 날까?' — 금감원 9월 공시 은행별 전월 취급 평균금리(경쟁 5편 언급 0)·ECOS · 레드팀 3회 계산 원 단위 일치 · 58세 이해 4차 심각 0 · 제목 7.33·표지 7.67 · editgate auto ③ apis.finlife가 버리던 평균금리·중도상환수수료·한도 칸 살림 · 남은 write 칸 10/17: 15:10·18:10·21:10 TBD · 카페 비축 0/2 그대로
   중간: 영상 디자인 총괄 21:39 — 틀 반영 끝(커밋 a30f916·e4238ca: safeframe DS·OutlineCaption·BgLayer, C1S·M1S·C2P, TallyFrame bg, 관문 work/bgcheck.py — ytupload·ytlong·w1g1/c1/m1clips_up이 요구) · 예약 쇼츠 v3 교체 4/10: d1s_when→XFEU7Etfusc · r1s_gap→_eJV4g7ZvUA · h1s_walk→thlIsON6S_k · p1s_cross→vDccXdJOfo8(같은 publishAt, 옛 판 예약 해제·비공개, 삭제 0, slots ID 갱신) · 렌더 중 6편(배경 관문에 걸린 클립 시세판·시계·어두운 복도·노을 빼고 다시) · N-2 kXnAKjC-84Q 10/18 13:40(주 7편 관문으로 11:30→13:40)

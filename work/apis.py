@@ -176,7 +176,10 @@ def finlife(kind='deposit', group='020000', page=1):
                     '대출최저': o.get('lend_rate_min'), '대출최고': o.get('lend_rate_max'), '공시월': b.get('dcls_month'),
                     # 2026-09-27: 주담대는 한 상품에 줄이 여럿인데 고정/변동·상환방식·담보를 빼면 어느 줄이 무엇인지 모른다
                     '금리유형': o.get('lend_rate_type_nm') or o.get('intr_rate_type_nm'),
-                    '상환방식': o.get('rpay_type_nm'), '담보': o.get('mrtg_type_nm')})
+                    '상환방식': o.get('rpay_type_nm'), '담보': o.get('mrtg_type_nm'),
+                    # 2026-10-16 21시: 주담대·전세대출에는 '전월 취급 평균금리'(lend_rate_avg)와 중도상환수수료·한도가
+                    # 같이 오는데 버리고 있었다. 광고 최저 금리와 실제 평균이 0.7%p씩 엇갈려(농협 전세 3.70 vs 4.48) 꼭 필요하다.
+                    '대출평균': o.get('lend_rate_avg'), '중도상환수수료': b.get('erly_rpay_fee'), '한도': b.get('loan_lmt')})
         # 2026-09-27 19시: 신용대출은 금리 칸 이름이 전혀 달라(crdt_grad_*) 위 칸이 전부 None으로 나왔다.
         # 신용점수 구간(finlife 개인신용대출 화면 열 순서로 확인): 1=900점 초과, 4=801~900, 5=701~800,
         # 6=601~700, 10=501~600, 11=401~500, 12=301~400, 13=300 이하, avg=평균.

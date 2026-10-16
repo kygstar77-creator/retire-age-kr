@@ -118,7 +118,11 @@ def main(name, check_only=False):
     vid = res['id']; print('완료 https://youtu.be/' + vid)
     print('insert 응답 status:', res.get('status'))
     up['synth_insert_echo'] = res.get('status', {}).get('containsSyntheticMedia')
-    up['synth_update_echo'] = fix_synth(vid, up)
+    import time
+    for k in range(4):   # 10/17 00:2x d1s_when: 올린 직후 videos.update 403(처리 중) → 옛 예약을 못 풀고 멈춤. 기다렸다 다시
+        try: up['synth_update_echo'] = fix_synth(vid, up); break
+        except Exception as e:
+            print('videos.update 다시 시도', k + 1, str(e)[:120]); time.sleep(30)
     v = show(yt, vid)
     if v['status'].get('publishAt') is None or v['status'].get('privacyStatus') != 'private': print('새 판 예약 확인 실패 — 옛 예약을 건드리지 않는다'); return 8
     if old:

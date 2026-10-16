@@ -1,0 +1,51 @@
+{
+ "name": "g1s_asym",
+ "ep": "G-1",
+ "from_long": "xBTZtRp5lMs",
+ "mp4": "work/video/out/g1s_asym_v3_ds.mp4",
+ "layout": "c2person",
+ "publishAt": "2026-10-22T07:20:00+09:00",
+ "use_after": "2026-10-13 11:30 (G-1 롱폼 공개 뒤)",
+ "title": "1월 고점에 산 금, 본전까지 몇 % 올라야 하나 #shorts",
+ "description": "전체 계산: https://youtu.be/xBTZtRp5lMs\n지나간 값이고, 금을 사거나 팔라는 권유가 아닙니다.\n\n올해 1월 고점(2026-01-29)에 1천만원어치 산 금은 2026-10-06 한국거래소 금 시세로 663만원이에요. 337만원(약 34%)이 줄었습니다.\n다시 1천만원이 되려면 337만원이 더 붙어야 해요. 지금 663만원의 51%입니다. 그래서 34% 떨어진 금은 34%가 아니라 51% 올라야 본전이에요. 앞으로 오른다는 예측이 아니라 산수예요.\n금 1g 값은 269,810원에서 179,000원이 됐습니다. 증권사 수수료, 골드바라면 팔 때 값 차이는 계산에 넣지 않았어요(내면 손해는 더 커요).\n\n출처: 한국거래소 KRX 금시장 금 1kg 일별 종가(네이버 증권 일별 시세로 받음) · 파이어맵 계산\n화면의 금 영상은 참고용 무료 영상(Pexels)입니다. 영상 일부: Sururi Ballıdağ Director / Pexels (https://www.pexels.com/video/luxurious-gold-jewelry-showcase-display-36338911/) · 영상 일부: Sururi Ballıdağ Director / Pexels (https://www.pexels.com/video/elegant-display-of-gold-jewelry-in-store-36353836/) · 영상 일부: Lara Jameson / Pexels (https://www.pexels.com/video/jewelries-on-the-display-window-8849053/) · 영상 일부: Anastasia  Shuraeva / Pexels (https://www.pexels.com/video/close-up-of-jewelry-5705007/) · 영상 일부: Colin Jones / Pexels (https://www.pexels.com/video/abstract-golden-swirls-and-shapes-looping-animation-33903113/)\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.\n\n#shorts #금값 #금투자",
+ "tags": "금값,금값 하락,금 고점,금 투자 손실,금 본전",
+ "same_day_pair": "10/22 19:20 h1s_forest(H-1) — 다른 롱폼·다른 질문",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "dpd6jb3DBtg",
+ "uploaded_at": "2026-10-16 23:21:54",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-21T22:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ },
+ "v": 4,
+ "replaced": [
+  {
+   "id": "ZK219BbhJSA",
+   "unscheduled_at": "2026-10-16 12:34:43",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "AZgBJ5Ltdic",
+   "unscheduled_at": "2026-10-16 14:58:11",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": "2026-10-21T22:20:00Z"
+   }
+  },
+  {
+   "id": "JqbwtZiuT_w",
+   "unscheduled_at": "2026-10-16 23:21:54",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  }
+ ]
+}

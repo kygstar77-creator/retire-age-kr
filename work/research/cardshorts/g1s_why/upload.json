@@ -2,10 +2,10 @@
  "name": "g1s_why",
  "ep": "G-1",
  "from_long": "xBTZtRp5lMs",
- "mp4": "work/video/out/g1s_why_sz2_ds.mp4",
+ "mp4": "work/video/out/g1s_why_v3b_ds.mp4",
  "publishAt": "2026-10-18T07:20:00+09:00",
  "title": "국제 금값 +6.65%, KRX 금은 −4.43% 주범은 웃돈 #shorts",
- "description": "전체 계산: https://youtu.be/xBTZtRp5lMs\n\n2025년 10월 2일에 산 금을 2026년 10월 6일 기준으로 보면, 국제 금값(금 선물, 달러)은 +6.65%였는데 한국 KRX 금시장 금은 −4.43%였습니다. 1천만원어치면 약 956만원이에요.\n한국 금값은 달러 금값 × 원/달러 환율 × KRX 웃돈(KRX 금이 국제 값을 원화로 바꾼 것보다 비싸거나 싼 정도)입니다. 환율은 1,406.0원에서 1,358.5원으로 −3.38%, KRX 웃돈은 +6.3%에서 −1.4%로 바뀌어 −7.26% — 세 조각 중 가장 큰 몫이에요. (1+6.65%) × (1−3.38%) × (1−7.26%) − 1 = −4.43%.\n산 날이 다르면 조각 크기도 달라집니다(1월 고점에 산 금은 달러 금값 자체가 −21.62%). 골드바·금 ETF는 세금·수수료가 달라 숫자가 다릅니다.\n\n출처: 야후 파이낸스 금 선물(GC=F) 종가 · 한국은행 ECOS 원/달러 매매기준율 · 네이버 금융 국제시장 KRX 금시장 금 1kg 일별 종가 · 파이어맵 계산\n지나간 값, 금을 사거나 팔라는 권유가 아닙니다.\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.\n\n#shorts #금값 #금투자",
+ "description": "전체 계산: https://youtu.be/xBTZtRp5lMs\n\n2025년 10월 2일에 산 금을 2026년 10월 6일 기준으로 보면, 국제 금값(금 선물, 달러)은 +6.65%였는데 한국 KRX 금시장 금은 −4.43%였습니다. 1천만원어치면 약 956만원이에요.\n한국 금값은 달러 금값 × 원/달러 환율 × KRX 웃돈(KRX 금이 국제 값을 원화로 바꾼 것보다 비싸거나 싼 정도)입니다. 환율은 1,406.0원에서 1,358.5원으로 −3.38%, KRX 웃돈은 +6.3%에서 −1.4%로 바뀌어 −7.26% — 세 조각 중 가장 큰 몫이에요. (1+6.65%) × (1−3.38%) × (1−7.26%) − 1 = −4.43%.\n산 날이 다르면 조각 크기도 달라집니다(1월 고점에 산 금은 달러 금값 자체가 −21.62%). 골드바·금 ETF는 세금·수수료가 달라 숫자가 다릅니다.\n\n출처: 야후 파이낸스 금 선물(GC=F) 종가 · 한국은행 ECOS 원/달러 매매기준율 · 네이버 금융 국제시장 KRX 금시장 금 1kg 일별 종가 · 파이어맵 계산\n지나간 값, 금을 사거나 팔라는 권유가 아닙니다.\n배경 영상: Angela Roma / Pexels (https://www.pexels.com/video/close-up-of-gold-sycees-7361127/) · RDNE Stock project / Pexels (https://www.pexels.com/video/video-of-gold-coins-and-a-pot-7080974/) · Tim Friedrich Weber / Pexels (https://www.pexels.com/video/digital-gold-and-silver-coins-animation-33212388/) — Pexels 라이선스 https://www.pexels.com/license/\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.\n\n#shorts #금값 #금투자",
  "tags": "금값,국제 금값,KRX 금시장,금 환율,금 투자,금 웃돈",
  "layout": "m1clip",
  "same_day_pair": "10/18 11:30 롱폼 N-2(소득 상위%) — 다른 롱폼 · 19:20 칸 미정(회의가 G-1 아닌 롱폼으로)",
@@ -21,8 +21,8 @@
  },
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "BhMwfanHKhk",
- "uploaded_at": "2026-10-16 14:40:21",
+ "id": "sUa0cPLJKBg",
+ "uploaded_at": "2026-10-17 00:23:19",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-17T22:20:00Z",
@@ -30,7 +30,7 @@
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
  },
- "v": 4,
+ "v": 6,
  "replaced": [
   {
    "id": "PwMsHCqPhR4",
@@ -51,6 +51,22 @@
   {
    "id": "ccPK6NErGp4",
    "unscheduled_at": "2026-10-16 14:40:21",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "BhMwfanHKhk",
+   "unscheduled_at": "2026-10-16 22:36:07",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "UglUVL0n9cA",
+   "unscheduled_at": "2026-10-17 00:23:19",
    "status_after": {
     "privacyStatus": "private",
     "publishAt": null

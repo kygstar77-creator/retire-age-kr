@@ -1,0 +1,66 @@
+{
+ "name": "h1s_walk",
+ "ep": "H-1",
+ "from_long": "rVg0pQVo_wk",
+ "mp4": "work/video/out/h1s_walk_v3_ds.mp4",
+ "layout": "m1clip",
+ "publishAt": "2026-10-20T07:20:00+09:00",
+ "use_after": "2026-10-15 11:30 (H-1 롱폼 공개 뒤)",
+ "title": "고덕동 역까지 180m vs 640m, 평당 값 차이는? #shorts",
+ "description": "전체 계산: https://youtu.be/rVg0pQVo_wk\n걸은 거리·평당 값은 지나간 실거래 기록이고, 어느 단지를 사라는 권유가 아닙니다.\n\n강동구 고덕동 두 단지를 오픈스트리트맵 보행로로 걸어서 쟀어요. 고덕그라시움 → 상일동역 출입구 180m, 래미안힐스테이트고덕 → 고덕역 출입구 640m(3.56배).\n84㎡대 평당 값(국토교통부 실거래 1년)은 고덕그라시움 9,457만원(25건) · 래미안힐스테이트고덕 7,865만원(33건)으로 그라시움이 20.2% 높았어요. 다만 입주(2019.09 vs 2016.12)·세대 수(4,932 vs 3,658)도 달라서, 이 차이를 역 때문이라고는 말할 수 없어요.\n가장 가까운 초등학교는 고덕그라시움 390m · 래미안힐스테이트고덕 600m(배정 학교 아님), 이마트는 래미안힐스테이트고덕 960m · 고덕그라시움 1,170m로 거꾸로였어요.\n\n출처: 국토교통부 아파트 매매 실거래(2025.11~2026.10 계약, 2026-10-11 받음) · 국토교통부 공동주택 단지 정보 · 보행로 © OpenStreetMap contributors(ODbL) · 파이어맵 계산\n'손품 씨'는 계산을 위해 만든 가상 인물입니다.\n배경 영상: Burak Elçi / Pexels (https://www.pexels.com/video/walking-on-urban-sidewalk-in-casual-pants-34913017/) · ANUJ TIWARI / Pexels (https://www.pexels.com/video/empty-subway-platform-with-arriving-train-34975555/) · cottonbro studio / Pexels (https://www.pexels.com/video/footage-of-building-facade-6221103/) · Valeriia Miller / Pexels (https://www.pexels.com/video/person-wearing-an-orange-shoes-4941597/) · Ron Lach / Pexels (https://www.pexels.com/video/people-going-up-the-stairs-8322398/) · Bibi Barringer / Pexels (https://www.pexels.com/video/pov-walking-with-skateboard-on-urban-sidewalk-33489923/) — Pexels 라이선스 https://www.pexels.com/license/\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.\n\n#shorts #고덕그라시움 #고덕동",
+ "tags": "고덕그라시움,래미안힐스테이트고덕,고덕동 아파트,상일동역,역까지 거리",
+ "same_day_pair": "10/20 19:20 d1s_pension(D-1) — 다른 롱폼 · 11:30 롱폼 H-2(동네 손품 2편, 같은 시리즈)",
+ "title_review": {
+  "gemini": {
+   "model": "gemini-3.1-flash-lite",
+   "B": 8,
+   "file": "title_gemini.json"
+  },
+  "redteam": {
+   "B": 8,
+   "fixed": "고덕동 역까지 180m vs 640m, 평당 값 차이는?",
+   "note": "D안(제미나이 고친 안) '역세권·20% 차이였다'는 숫자 3개·역이 값을 만든다는 인과로 읽혀 3점"
+  },
+  "avg_B": 8.0,
+  "len_no_hashtag": 31,
+  "numbers": 2
+ },
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "thlIsON6S_k",
+ "uploaded_at": "2026-10-16 21:25:19",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-19T22:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ },
+ "v": 4,
+ "replaced": [
+  {
+   "id": "JEbfJTewk-E",
+   "unscheduled_at": "2026-10-16 12:22:39",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "8mxO_EiHWck",
+   "unscheduled_at": "2026-10-16 14:02:18",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "n34GT7eFhJ0",
+   "unscheduled_at": "2026-10-16 21:25:19",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": "2026-10-19T22:20:00Z"
+   }
+  }
+ ]
+}

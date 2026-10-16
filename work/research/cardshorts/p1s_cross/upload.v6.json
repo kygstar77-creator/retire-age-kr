@@ -1,0 +1,78 @@
+{
+ "name": "p1s_cross",
+ "ep": "P-1",
+ "from_long": "vsL7mojDW7w",
+ "mp4": "work/video/out/p1s_cross_v3_ds.mp4",
+ "publishAt": "2026-10-19T07:20:00+09:00",
+ "title": "국민연금 5년 당기면 76.67세에 따라잡힌다 #shorts",
+ "description": "전체 계산: https://youtu.be/vsL7mojDW7w\n\n1969년생(제때 65세)이 제때 받으면 매달 100만원이라고 놓고 계산했어요. 5년 당기면(60세) 70만원, 5년 미루면(70세) 136만원. 한 해 당길 때마다 6%씩 깎이고, 미룰 때마다 7.2%씩 붙거든요.\n받은 돈을 쌓아 보면 5년 당긴 쪽은 76.67세에 제때 받은 쪽에 따라잡히고, 5년 미룬 쪽은 83.89세에 제때를 넘어섭니다. 1년만 당기면 따라잡히는 나이가 80.67세로 오히려 늦어지고, 1년만 미루면 79.89세로 빨라져요.\n물가·세금·건강보험료는 넣지 않았어요. 몇 살에 받으라는 말은 아닙니다.\n\n출처: 국민연금법 제61조②·제62조②·제63조②(국가법령정보센터) · 파이어맵 계산\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD) · 숫자는 모두 위 원문에서 가져와 파이어맵이 계산\n\n#shorts #국민연금 #조기연금\n배경 영상: Kindel Media / Pexels (https://www.pexels.com/video/people-holding-hands-for-support-8164796/) · Ron Lach / Pexels (https://www.pexels.com/video/a-hourglass-7944932/) · cottonbro studio / Pexels (https://www.pexels.com/video/two-people-wearing-trench-coats-5265090/) · Ivan S / Pexels (https://www.pexels.com/video/an-hourglass-on-a-stone-slab-7703941/) — Pexels 라이선스 https://www.pexels.com/license/",
+ "tags": "국민연금,조기연금,연기연금,국민연금 조기수령,국민연금 손익분기",
+ "layout": "m1clip",
+ "same_day_pair": "10/19 11:30 롱폼 C-2(주식) · 19:20 c2s_jungwoo 예정(C-2) — 다른 롱폼·다른 질문",
+ "title_review": {
+  "gemini": {
+   "model": "gemini-3.1-flash-lite",
+   "B": 8,
+   "file": "title_gemini.json"
+  },
+  "redteam": {
+   "B": 7,
+   "note": "C(9)는 '이유'를 영상이 설명하지 않고 1년 당김은 끝 6초뿐이라 약속 어긋남 → 버림, 제미나이 고친 안 '80세까지 버티는'은 지어낸 뜻 → 버림"
+  },
+  "avg_B": 7.5
+ },
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "vDccXdJOfo8",
+ "uploaded_at": "2026-10-16 21:37:47",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-18T22:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ },
+ "v": 6,
+ "replaced": [
+  {
+   "id": "bcBQX8WV9YE",
+   "unscheduled_at": "2026-10-14 18:24:20",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "YTAustvbDfI",
+   "unscheduled_at": "2026-10-14 22:36:19",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "b4405ZoVjAQ",
+   "unscheduled_at": "2026-10-16 12:19:38",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "vf1wTzxTz9c",
+   "unscheduled_at": "2026-10-16 13:58:48",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "zWKnDklnP2I",
+   "unscheduled_at": "2026-10-16 21:37:47",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  }
+ ]
+}

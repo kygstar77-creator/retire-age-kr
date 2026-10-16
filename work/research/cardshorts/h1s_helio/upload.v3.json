@@ -1,0 +1,58 @@
+{
+ "name": "h1s_helio",
+ "ep": "H-1",
+ "from_long": "rVg0pQVo_wk",
+ "mp4": "work/video/out/h1s_helio_sz2_ds.mp4",
+ "layout": "c1clip",
+ "publishAt": "2026-10-21T07:20:00+09:00",
+ "use_after": "2026-10-15 11:30 (H-1 롱폼 공개 뒤)",
+ "title": "헬리오시티 84㎡ 20억 직거래, 같은 달 가운데 값은? #shorts",
+ "description": "전체 계산: https://youtu.be/rVg0pQVo_wk\n지나간 실거래 기록을 그대로 놓은 것이고, 어느 단지를 사거나 팔라는 권유가 아닙니다.\n\n송파구 가락동 헬리오시티 84㎡대 실거래 1년 85건 가운데 낮은 두 건을 원자료 칸 그대로 놓았습니다.\n· 2026년 5월 28일 26층 20.00억 — 직거래 신고. 같은 달 나머지 17건 가운데 값은 28.10억.\n· 2026년 2월 12일 9층 23.82억 — 중개거래, 2026.04.14 등기. 같은 달 18층 30.70억 · 28층 31.50억 · 15층 30.00억.\n층이 달랐다는 것 말고, 왜 이 값이었는지는 실거래 자료에 나오지 않습니다.\n달마다 가운데 값으로 보면 4월(28.00억 · 25건)이 가장 낮았고, 1년 가운데 값은 28.50억이에요.\n\n출처: 국토교통부 아파트 매매 실거래(2025.11~2026.10 계약, 2026-10-11 받음, 해제 제외) · 파이어맵 계산(가운데 값 = 중앙값, 84㎡대 = 전용 80~85㎡)\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.\n\n#shorts #헬리오시티 #송파아파트",
+ "tags": "헬리오시티,헬리오시티 실거래,송파 아파트,가락동 아파트,아파트 직거래",
+ "same_day_pair": "10/21 19:20 미배정 — 다른 롱폼으로 채울 것(H-1 아님)",
+ "title_review": {
+  "gemini": {
+   "model": "gemini-3.1-flash-lite",
+   "C": 9,
+   "file": "title_gemini.json"
+  },
+  "redteam": {
+   "C": 8,
+   "note": "PD 레드팀: 첫 줄 '봄에는 20억짜리'·첫 판 20.00억 vs 28.10억과 맞음(낚시 아님), 검색어 앞, 숫자 2. 제미나이 고친 안 '진짜 시세는'은 '진짜'가 과장이고 20억 vs 31억은 서로 다른 달이라 뺌. 감점: '가운데 값'이 낯선 말(영상 줄 20이 풀어 줌)"
+  },
+  "avg_C": 8.5,
+  "len_no_hashtag": 31,
+  "numbers": 2
+ },
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "FS9T5ZLJisU",
+ "uploaded_at": "2026-10-16 14:08:50",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-20T22:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ },
+ "v": 3,
+ "replaced": [
+  {
+   "id": "XB9fAhJrxFA",
+   "unscheduled_at": "2026-10-16 12:28:41",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   },
+   "note": "10/16 업로드 직후 다시 읽음에서 publishAt이 남아 보였으나(읽기 지연), 몇 분 뒤 videos.list로 publishAt None 확인"
+  },
+  {
+   "id": "9JN3yIi_xNE",
+   "unscheduled_at": "2026-10-16 14:08:50",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  }
+ ]
+}

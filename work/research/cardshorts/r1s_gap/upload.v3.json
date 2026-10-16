@@ -1,0 +1,54 @@
+{
+ "name": "r1s_gap",
+ "ep": "R-1",
+ "from_long": "G1oI47miUuo",
+ "mp4": "work/video/out/r1s_gap_sz2_ds.mp4",
+ "publishAt": "2026-10-18T19:20:00+09:00",
+ "title": "SCHD vs 예금 지난 1년, 세금 떼고도 1,380만원 차이 #shorts",
+ "description": "전체 계산: https://youtu.be/G1oI47miUuo\n\n2025년 10월 2일에 1억을 넣고 2026년 10월 2일에 판 경우입니다. 넣는 날을 하루씩 옮기면 세 ETF 순서가 이렇게 나온 날은 251일 중 25일뿐이었어요(예금과의 순위는 환율 자료가 부족해 확인 안 함).\n세금·환율을 다 뗀 뒤 SCHD 1억 1,599만원(+15.99%) · S&P500(SPY) 1억 1,023만원(+10.23%) · 금(GLD) 1억 337만원(+3.37%) · 정기예금 1억 218만원(+2.18%). 순위는 세금 떼기 전과 같았습니다.\nSCHD와 예금 차이는 세금 떼기 전 1,688만원, 뗀 뒤 1,380만원 — 세금이 307만원을 줄였어요. SCHD는 분배금 373만원에서 미국이 15%(55만 9천원)를 떼고, 판 이익에 양도세 291만원이 붙었습니다.\n정기예금 2.58%는 2025년 10월 새로 가입한 1년 정기예금 평균 금리(한국은행)이고, 환전 수수료는 증권사마다 달라 넣지 않았습니다.\n\n출처: 한국은행 ECOS(정기예금 금리·원/달러 매매기준율) · SPY·SCHD·GLD 종가·분배금(야후 파이낸스·슈왑) · 소득세법 · 한미 조세조약 제12조 · 파이어맵 계산\n지나간 1년 값이고, 어디에 넣으라는 말이 아닙니다.\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다.\n\n#shorts #SCHD #예금",
+ "tags": "SCHD,예금,SCHD 세금,미국 ETF 세금,1억 투자,정기예금",
+ "layout": "m1clip",
+ "same_day_pair": "10/18 07:20 g1s_why(G-1) — 다른 롱폼 · 11:30 롱폼 N-2",
+ "title_review": {
+  "gemini": {
+   "model": "gemini-3.1-flash-lite",
+   "B": 9,
+   "file": "title_gemini.json"
+  },
+  "redteam": {
+   "B": 7,
+   "note": "기간 없음·1억 두 번 → 이 제목은 레드팀 고친 안"
+  },
+  "avg_B": 8.0
+ },
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "AhyXbiSPOMc",
+ "uploaded_at": "2026-10-16 14:45:16",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-18T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ },
+ "v": 3,
+ "replaced": [
+  {
+   "id": "-nl4KLh-H_g",
+   "unscheduled_at": "2026-10-16 12:16:36",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "CvKDkAXv7fE",
+   "unscheduled_at": "2026-10-16 14:45:16",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": "2026-10-18T10:20:00Z"
+   }
+  }
+ ]
+}

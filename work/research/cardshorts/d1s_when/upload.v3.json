@@ -1,0 +1,49 @@
+{
+ "name": "d1s_when",
+ "ep": "D-1",
+ "from_long": "GMc2Rd1-JYA",
+ "mp4": "work/video/out/d1s_when_sz2_ds.mp4",
+ "publishAt": "2026-10-17T19:20:00+09:00",
+ "title": "배당·이자로 오른 건보료, 몇 월 고지서부터 붙을까 #shorts",
+ "description": "전체 계산: https://youtu.be/GMc2Rd1-JYA\n금융소득 2천만원 세금·1천만원 건보료 판정 엑셀(카페 회원 자료): https://cafe.naver.com/firemap/264\n\n지역가입자 건강보험료에서 1년 이자+배당이 1,000만원 이하면 합산하지 않고, 넘으면 넘은 부분만이 아니라 전액이 들어가요(국민건강보험법 시행규칙 제44조① 단서).\n이자·배당·사업·근로 소득은 전년도 소득이 11월분 고지서부터 다음 해 10월분까지, 연금소득은 전년도 연금이 1월분부터 12월분까지 반영돼요(시행령 제41조③).\n2026년에 배당·이자를 1,001만원 받았다면, 그 보험료는 2027년 11월분 고지서부터 2028년 10월분까지 붙습니다.\n\n출처: 국민건강보험법 시행령·시행규칙(국가법령정보센터) · 국민건강보험공단 지역보험료 모의계산 안내문 · 2026년 기준\n실제 보험료는 경감이나 다른 소득에 따라 달라질 수 있습니다.\n건보료가 붙는 때를 정리한 것이고, 특정 상품을 사거나 팔라는 뜻이 아닙니다.\n내레이션은 AI 음성 내레이션(Google Gemini TTS)이고, 숫자는 모두 위 원문에서 가져왔습니다.\n\n#shorts #건강보험료 #건보료",
+ "tags": "건강보험료,건보료,금융소득,지역가입자 건강보험료,퇴직 후 건강보험료",
+ "title_review": {
+  "gemini-3.1-flash-lite": "8 (C안, d1s_when/title_gemini2.json · 3.8-flash 429)",
+  "PD": 8.0,
+  "avg": 8.0,
+  "len_no_hashtag": 27,
+  "numbers": 0,
+  "PD_why": "심사 1위 B(9)는 숫자 3개(2026·2027·11)라 10/13 쇼츠 제목 규칙(숫자 1~2) 위반 → C. 질문형·검색어 앞, 답 숫자는 0초 화면 답 띠에"
+ },
+ "same_day_pair": "10/17 07:20 h1s_gap(H-1) — 다른 롱폼",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "QLZJq_EjDKc",
+ "uploaded_at": "2026-10-16 13:46:44",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-17T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ },
+ "v": 3,
+ "replaced": [
+  {
+   "id": "_lz5IOb-I40",
+   "unscheduled_at": "2026-10-16 12:09:53",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "S-IESf1_jF0",
+   "unscheduled_at": "2026-10-16 13:46:44",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  }
+ ]
+}

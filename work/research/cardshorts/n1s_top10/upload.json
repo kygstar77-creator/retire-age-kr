@@ -2,11 +2,11 @@
  "name": "n1s_top10",
  "ep": "N-1",
  "from_long": "420buEFKB8k",
- "mp4": "work/video/out/n1s_top10_sz2_ds.mp4",
+ "mp4": "work/video/out/n1s_top10_v3_ds.mp4",
  "layout": "c1clip",
  "publishAt": "2026-10-23T07:20:00+09:00",
  "title": "순자산 10억, 상위 10% 안일까? 문턱은 11억 #shorts",
- "description": "전체 계산: https://youtu.be/420buEFKB8k\n순자산 칸별 전체 표(카페): https://cafe.naver.com/firemap/208\n\n가구 순자산(집·예금·주식에서 빚을 뺀 돈)으로 줄을 세우면, 상위 10%에 들려면 11억 20만원이 있어야 해요(2025년 3월 말). 순자산 10억원은 위에서 10%와 20% 사이예요.\n1년 전에는 이 선이 10억 4,592만원이었어요. 1년 새 5,428만원(5.2%) 올랐고, 한 달로 나누면 452만원꼴이에요.\n딱 중간 집(중앙값)은 2억 4,000만원에서 2억 3,860만원으로 140만원 내려가, 거의 그대로였어요.\n위에서 30% 선은 824만원, 20% 선은 2,930만원 올랐습니다.\n\n출처: 국가데이터처·금융감독원·한국은행 2025년 가계금융복지조사 통계표 12(순자산 2025년 3월 말 기준, 1년 전 2024년 3월 말) · 파이어맵 계산\n표본 조사라 작은 차이는 오차일 수 있고, 내년에도 같은 속도로 움직인다는 뜻은 아닙니다.\n통계를 정리한 것이고, 집이나 주식을 사거나 팔라는 뜻이 아닙니다.\n내레이션은 AI 음성 내레이션(Google Gemini TTS)이고, 숫자는 모두 위 원문에서 가져왔습니다.\n\n#shorts #순자산 #상위10%",
+ "description": "전체 계산: https://youtu.be/420buEFKB8k\n순자산 칸별 전체 표(카페): https://cafe.naver.com/firemap/208\n\n가구 순자산(집·예금·주식에서 빚을 뺀 돈)으로 줄을 세우면, 상위 10%에 들려면 11억 20만원이 있어야 해요(2025년 3월 말). 순자산 10억원은 위에서 10%와 20% 사이예요.\n1년 전에는 이 선이 10억 4,592만원이었어요. 1년 새 5,428만원(5.2%) 올랐고, 한 달로 나누면 452만원꼴이에요.\n딱 중간 집(중앙값)은 2억 4,000만원에서 2억 3,860만원으로 140만원 내려가, 거의 그대로였어요.\n위에서 30% 선은 824만원, 20% 선은 2,930만원 올랐습니다.\n\n출처: 국가데이터처·금융감독원·한국은행 2025년 가계금융복지조사 통계표 12(순자산 2025년 3월 말 기준, 1년 전 2024년 3월 말) · 파이어맵 계산\n표본 조사라 작은 차이는 오차일 수 있고, 내년에도 같은 속도로 움직인다는 뜻은 아닙니다.\n통계를 정리한 것이고, 집이나 주식을 사거나 팔라는 뜻이 아닙니다.\n배경 영상: Mohammed  Mehdaoui / Pexels (https://www.pexels.com/video/aerial-view-of-seongsu-bridge-at-sunset-seoul-29918215/) · Mallesh Baithi / Pexels (https://www.pexels.com/video/urban-winter-skyline-with-modern-bridge-37391014/) · kangsu lee / Pexels (https://www.pexels.com/video/highway-of-winter-19577787/) · Mallesh Baithi / Pexels (https://www.pexels.com/video/scenic-seoullo-bridge-over-han-river-37763965/) · Mike Hongkong 2 / Pexels (https://www.pexels.com/video/people-in-city-at-night-11745565/) · MELQUIZEDEQUE ALMEIDA / Pexels (https://www.pexels.com/video/aerial-night-view-over-cityscape-39468111/) — Pexels 라이선스 https://www.pexels.com/license/\n내레이션은 AI 음성 내레이션(Google Gemini TTS)이고, 숫자는 모두 위 원문에서 가져왔습니다.\n\n#shorts #순자산 #상위10%",
  "tags": "순자산 상위 10%,순자산 10억,가구 순자산,가계금융복지조사,순자산 중앙값",
  "title_review": {
   "gemini": {
@@ -26,8 +26,8 @@
  },
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "r-pa6czi5iQ",
- "uploaded_at": "2026-10-16 14:31:03",
+ "id": "RGsCcIFBj8o",
+ "uploaded_at": "2026-10-16 23:39:09",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-22T22:20:00Z",
@@ -35,7 +35,7 @@
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
  },
- "v": 3,
+ "v": 4,
  "replaced": [
   {
    "id": "oxrbky0mW2M",
@@ -48,6 +48,14 @@
   {
    "id": "ANFYZlwfID4",
    "unscheduled_at": "2026-10-16 14:31:03",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": null
+   }
+  },
+  {
+   "id": "r-pa6czi5iQ",
+   "unscheduled_at": "2026-10-16 23:39:09",
    "status_after": {
     "privacyStatus": "private",
     "publishAt": null

@@ -1,0 +1,289 @@
+# H-2 화면 재료 — script.md(장·말 줄·[자막]) + voice.json(줄 길이·소리) + calc_out.txt·facts.txt·raw/tour_*.json → work/video/h2.json (Remotion H2가 읽는다)
+#   py -3.12 work/research/longform/ep/H-2/h2props.py
+# h1props.py와 같은 방식: 장면은 '그 장에서 이 말이 처음 나오는 줄'(ANCHOR)로 자른다. 장면 길이 = 목소리 길이(voice.json frames).
+# 숫자: 화면 글자 숫자는 calc_out.txt·facts.txt 문구 그대로(need로 기계 대조). 반포는 길 자료(Overpass)가 없어 지도·걸음 거리 없이 막대·점만.
+import json, os, re, sys, math
+sys.stdout.reconfigure(encoding='utf-8')
+EP = os.path.dirname(os.path.abspath(__file__))
+WORK = os.path.normpath(os.path.join(EP, '..', '..', '..', '..'))
+VID = os.path.join(WORK, 'video')
+sys.path.insert(0, os.path.join(WORK, 'research', 'longform', 'loop'))
+import speechcompare_script as SC
+RATE, FPS = 5.65, 30
+CALC = open(os.path.join(EP, 'calc_out.txt'), encoding='utf-8').read()
+FACTS = open(os.path.join(EP, 'facts.txt'), encoding='utf-8').read()
+H1CALC = open(os.path.join(EP, '..', 'H-1', 'calc_out.txt'), encoding='utf-8').read()
+def need(*ss):
+    for s in ss: assert s in CALC or s in FACTS, f'calc_out·facts에 없는 글: {s}'
+
+# ───────── 84㎡대 단지 표(calc_out §1 파싱) ─────────
+CX = {}
+for dong, blk in re.findall(r'### (\S+동)\n(.*?)(?=\n###|\n\n)', CALC, re.S):
+    for m in re.finditer(r'- (\S+)\(건축 (\d{4})\) (\d+)건 중앙 ([\d.]+)억 · 평당 ([\d,]+)만원 · 최저 ([\d.]+)억 최고 ([\d.]+)억 · 직거래 (\d+) · 순수전세 (\d+)건 ([\d.]+억|-)(?: · 전세가율 ([\d.]+)%)?', blk):
+        nm = m.group(1)
+        CX[nm] = dict(dong=dong, built=int(m.group(2)), n=int(m.group(3)), sale=float(m.group(4)), ppy=int(m.group(5).replace(',', '')),
+                      rent_n=int(m.group(9)), rent=None if m.group(10) == '-' else float(m.group(10)[:-1]), ratio=float(m.group(11)) if m.group(11) else None)
+assert CX['주공아파트5단지']['ppy'] == 17449 and CX['래미안원베일리']['sale'] == 59.0 and CX['은마']['rent'] == 8.3 and len(CX) == 28, len(CX)
+NM = {'주공아파트5단지': '주공5단지', '우성아파트': '잠실 우성', '현대': '잠실 현대', '쌍용대치아파트1동,2동,3동,5동,6동': '쌍용대치', '대치우성아파트1동,2동,3동,5동,6동,7동': '대치우성'}
+def nm(k): return NM.get(k, k)
+def man(v): return f'{v // 10000}억 {v % 10000:,}만원' if v >= 10000 else f'{v:,}만원'
+def eok(v): return f'{v:.2f}억'
+
+def monthly(name):
+    line = re.search(rf'- {re.escape(name)}\(\S+\): (.+)', CALC).group(1)
+    return [[ym, float(v), int(n)] for ym, v, n in re.findall(r'(\d{4}\.\d{2}) ([\d.]+)억\((\d+)\)', line)]
+MED5, MEDR = monthly('주공아파트5단지'), monthly('리센츠')
+assert min(x[1] for x in MED5) == 42.55 and max(x[1] for x in MED5) == 45.75 and min(x[1] for x in MEDR) == 33.2 and max(x[1] for x in MEDR) == 35.2
+
+MAY = [dict(d=int(a), amt=float(b), floor=int(c)) for a, b, c in re.findall(r'(\d+)일 ([\d.]+)억 (\d+)층 중개거래', CALC.split('- 래미안원베일리 2026.05 11건 차이 18.00억:', 1)[1].split('\n', 1)[0])]
+assert len(MAY) == 11 and min(x['amt'] for x in MAY) == 53.5 and max(x['amt'] for x in MAY) == 71.5
+
+need('대치동 277건', '잠실동 676건', '반포동 318건', '84㎡대 320건', '84㎡대 75건', '84㎡대 99건')
+need('+31.4%', '+34.7%', '-8.4%', '+6.7%', '-10.4%', '차이 18.00억')
+need('은마(대치동) 입주 1979.08 · 4424세대', '래미안 대치 팰리스(대치동) 입주 2015.09 · 1608세대', '대치르엘(대치동) 입주 2021.09',
+     '잠실리센츠(잠실동) 입주 2008.07 · 5563세대', '잠실엘스(잠실동) 입주 2008.09 · 5678세대', '잠실5단지(잠실동) 입주 1978.04 · 3930세대')
+need('대치역 출입구 270m', '잠실새내역 출입구 270m', '잠실역 출입구 430m', '종합운동장역 출입구 500m', '한티역 출입구 530m', '대치역 출입구 1010m', '반포동: 확인 안 함')
+assert '보증금 9.50억' in H1CALC and '-37.2%' in H1CALC
+
+# ───────── 지도(잠실·대치 한 좌표계, 미터, 원점 = 잠실리센츠) ─────────
+def tour(n): return json.load(open(os.path.join(EP, 'raw', f'tour_{n}.json'), encoding='utf-8'))
+TOUR = {'jamsil': tour('jamsil'), 'daechi': tour('daechi')}
+O = next(c for c in TOUR['jamsil']['complexes'] if c['name'] == '잠실리센츠')
+LAT0, LON0 = O['lat'], O['lon']
+def P(lon, lat): return [round((lon - LON0) * math.cos(math.radians(LAT0)) * 111320), round((LAT0 - lat) * 110540)]
+def flat(pts): return [v for q in pts for v in P(q[0], q[1])]
+RW = {'motorway': 7, 'trunk': 7, 'primary': 7, 'secondary': 5, 'tertiary': 4}
+DONG = {'jamsil': '잠실동', 'daechi': '대치동'}
+SHORT = {'잠실리센츠': '리센츠', '잠실5단지': '주공5단지', '래미안 대치 팰리스': '래미안대치팰리스', '잠실레이크팰리스': '레이크팰리스', '잠실현대': '잠실 현대', '잠실우성4차': '잠실 우성4차'}
+def walk(w): return None if not w or 'route' not in w else {'name': w['name'], 'm': w['m'], 'pts': flat(w['route']), 'end': P(w['lon'], w['lat'])}
+MAPS = {}
+for k, t in TOUR.items():
+    MAPS[k] = {'name': DONG[k],
+               'roads': [[RW.get(r['k'], 2), flat(r['pts'])] for r in t['bg']['roads']],
+               'parks': [flat(q) for q in t['bg']['parks']], 'blocks': [flat(q) for q in t['bg']['others']],
+               'stations': [[s['name'], *P(s['lon'], s['lat'])] for s in t['stations'] if not re.search(r'\d', s['name'])],
+               'cx': [{'name': SHORT.get(c['name'], c['name']), 'poly': [flat(q) for q in c['poly']], 'c': P(c['lon'], c['lat']), 'ppy': c['ppyTop'], 'built': int(c['built']),
+                       'walk': {w: walk(c['walk'].get(w)) for w in ['station']}} for c in t['complexes']]}
+CXALL = {c['name']: (k, c) for k, m in MAPS.items() for c in m['cx']}
+for n in ['리센츠', '주공5단지', '잠실엘스', '은마', '래미안대치팰리스', '대치르엘']: assert n in CXALL and CXALL[n][1]['walk']['station'], n
+MW, MH = 1060, 524
+def view(names, pad=1.35, minw=900, extra=()):
+    pts = []
+    for n in names:
+        c = CXALL[n][1]; pts += [p for q in c['poly'] for p in zip(q[0::2], q[1::2])]
+    pts += list(extra)
+    xs, ys = [p[0] for p in pts], [p[1] for p in pts]
+    w = max(minw, (max(xs) - min(xs)) * pad, (max(ys) - min(ys)) * pad * MW / MH)
+    return {'cx': (max(xs) + min(xs)) / 2, 'cy': (max(ys) + min(ys)) / 2, 'w': round(w)}
+def wpts(n): w = CXALL[n][1]['walk']['station']; return list(zip(w['pts'][0::2], w['pts'][1::2]))
+def dongview(k, pad=1.08):
+    xs = [v for c in MAPS[k]['cx'] for q in c['poly'] for v in q[0::2]]; ys = [v for c in MAPS[k]['cx'] for q in c['poly'] for v in q[1::2]]
+    return view([], pad, 1200, extra=[(min(xs), min(ys)), (max(xs), max(ys))])
+ALLV = view([], 1.10, 1200, extra=[(x, y) for k in MAPS for c in MAPS[k]['cx'] for x, y in [c['c']]])
+OLD = [c['name'] for m in MAPS.values() for c in m['cx'] if c['built'] < 1990]
+NEW = [c['name'] for m in MAPS.values() for c in m['cx'] if c['built'] >= 1990]
+
+SRC_RT = '국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약, 2026-10-12 받음)'
+SRC_MAP = SRC_RT + ' · 국토교통부 공동주택 단지 정보 · 지도·보행로 © OpenStreetMap contributors(ODbL)'
+SRC_KAPT = SRC_RT + ' · 국토교통부 공동주택 단지 정보'
+PPY = '평당 = 전용면적 3.3058㎡ 기준'
+
+def rank_rows(names, old=()):
+    return [[nm(n), CX[n]['ppy'], man(CX[n]['ppy']), f"{CX[n]['built']} · {CX[n]['n']}건", 'old' if CX[n]['built'] < 1990 else 'new'] for n in names]
+
+# ───────── 장면 규칙: (키, 종류, 장 번호, 이 말이 처음 나오는 줄부터 — None = 장 첫 줄) ─────────
+RULES = [
+    ('t_map', 'map', '0.', None), ('t_rank', 'rank', '0.', ('대치동에선',)), ('t_strip', 'strip', '0.', ('18억',)),
+    ('t_person', 'person', '0.', ('보증금 안에',)), ('concl', 'concl', '0.', ('결론부터',)),
+    ('person', 'person', '1.', None), ('map2', 'map', '1.', ('송파구 잠실동',)), ('tiles', 'tiles', '1.', ('국토교통부',)),
+    ('j_map', 'map', '2.', None), ('j_rank', 'rank', '2.', ('가운데 값으로',)), ('j_line', 'line', '2.', ('한두 건이',)), ('j_woo', 'pair', '2.', ('우성아파트는',)),
+    ('d_map', 'map', '3.', None), ('d_rank', 'rank', '3.', ('잠실과 달리',)), ('d_count', 'count', '3.', ('열세 건',)),
+    ('b_rank', 'rank', '4.', None), ('b_strip', 'strip', '4.', ('18억',)), ('b_floor', 'floors', '4.', ('층과 날짜',)),
+    ('r_person', 'person', '5.', None), ('r_pair', 'pair2', '5.', ('5단지 전세는',)), ('r_under', 'under', '5.', ('여덟 단지',)),
+    ('w_map', 'map', '6.', None), ('w_ruler', 'walk', '6.', ('조금 더 걸었',)),
+    ('e_table', 'table', '7.', None),
+]
+CH_NAME = {'0.': None, '1.': '1장', '2.': '2장', '3.': '3장', '4.': '4장', '5.': '5장', '6.': '6장', '7.': '7장'}
+END_MIN = 20 * FPS
+
+
+def spec(key, lines):
+    has = lambda w: next((i for i, t in enumerate(lines) if w in t), -1)
+    if key in ('t_map', 'j_map'):
+        T = key == 't_map'
+        return ('같은 동네, 30년 차이' if T else '첫 동네, 송파구 잠실동'), '잠실동 · 1990년 전에 지은 단지는 회색, 그 뒤 단지는 주황', SRC_MAP, {
+            'views': [dongview('jamsil'), view(['주공5단지', '리센츠', '잠실엘스'], 1.25)] if not T else [view(['주공5단지', '리센츠', '잠실엘스'], 1.3)],
+            'focus': ['주공5단지', '리센츠', '잠실엘스', '트리지움'], 'old': OLD, 'color': 'age', 'labels': ['주공5단지', '리센츠', '잠실엘스'],
+            'cards': ([['주공5단지 · 1978년', '1억 7,449만원', '84㎡대 평당 가운데 값'], ['리센츠 · 2008년', '1억 3,283만원', '84㎡대 평당 가운데 값'], ['차이', '+31.4%', '오래된 단지가 더 비쌈']] if T else
+                      [['잠실동 84㎡대', '1년 320건', '2025.11~2026.09 계약'], ['주공5단지', '1978.04 입주', '3,930세대'], ['리센츠 · 잠실엘스', '2008년 입주', '5,563세대 · 5,678세대']])}
+    if key == 'map2':
+        return '이번엔 세 동네', '송파구 잠실동 · 강남구 대치동 · 서초구 반포동(지도 자료 없음) · 회색 = 1990년 전 단지', SRC_MAP, {
+            'views': [ALLV], 'focus': [c for c in CXALL], 'old': OLD, 'color': 'age', 'dongLabels': True, 'labels': ['주공5단지', '리센츠', '은마', '래미안대치팰리스'],
+            'cards': [['송파구', '잠실동', '매매 676건'], ['강남구', '대치동', '매매 277건'], ['서초구', '반포동', '매매 318건 · 지도 없음']]}
+    if key == 'tiles':
+        return '무엇으로 쟀나', '국토교통부 실거래 1년 · 84㎡대 하나 · 해제·공공기관 매수 제외', SRC_RT, {
+            'tiles': [['잠실동', '676건'], ['대치동', '277건'], ['반포동', '318건']], 'tilesHead': '1년 매매(모든 면적)',
+            'steps': [None, ['84㎡대 = 전용 80~85㎡', '국민평형 · 잠실 320건 · 대치 75건 · 반포 99건', 'accent'], ['1990년 전에 지은 단지', '= 이 영상의 오래된 단지(회색)', 'ink'],
+                      ['평당 = 전용면적 기준', '공급면적 기준 숫자보다 크게 나옴', 'accent']]}
+    if key in ('t_rank', 'd_rank'):
+        T = key == 't_rank'
+        rows = rank_rows(['래미안대치팰리스', '은마', '대치르엘'])
+        return ('대치동은 견주는 단지마다' if T else '대치동, 은마는 가운데'), '대치동 · 84㎡대 평당 가운데 값 · ' + PPY, SRC_KAPT, {
+            'rows': rows, 'max': 18000, 'hot': '은마',
+            'steps': ([['은마는 둘 사이', '래미안대치팰리스 −8.4% · 대치르엘 +6.7%', 'accent']] if T else
+                      [['은마가 −8.4%', '래미안대치팰리스(2015)보다 쌈', 'ink', [0, 1]], ['은마가 +6.7%', '대치르엘(2021)보다 비쌈', 'accent', [1, 2]],
+                       ['견주는 단지마다 순서가 바뀜', '오래됐다고 늘 싸거나 비싸지 않음', 'ink', [0, 1, 2]]])}
+    if key == 'j_rank':
+        rows = rank_rows(['주공아파트5단지', '리센츠', '잠실엘스', '트리지움'])
+        return '잠실동 평당 값 순위', '잠실동 · 84㎡대 평당 가운데 값 · ' + PPY, SRC_KAPT, {
+            'rows': rows, 'max': 18000, 'hot': '주공5단지',
+            'steps': [['1위는 1978년 단지', '주공5단지 40건 가운데 값', 'ink', [0]], ['리센츠보다 +31.4%', '잠실엘스보다 +34.7% · 트리지움보다 +41.4%', 'accent', [0, 1]],
+                      ['한 채 값 43.45억 vs 34.15억', '84㎡대 매매 가운데 값 · 9억쯤 차이', 'ink', [0, 1]]]}
+    if key == 'b_rank':
+        rows = rank_rows(['래미안원베일리', '아크로리버파크', '래미안퍼스티지', '반포자이', '반포미도'])
+        return '반포동, 새 단지가 위에', '반포동 · 84㎡대 평당 가운데 값 · ' + PPY, SRC_KAPT, {
+            'rows': rows, 'max': 24000, 'hot': '반포미도', 'line2': 20000,
+            'steps': [['위 넷은 2009년 이후 단지', '반포자이·래미안퍼스티지 2009 · 아크로리버파크 2016', 'ink', [0, 1, 2, 3]], ['1위 래미안원베일리', '2023년 입주 · 19건 가운데 값', 'accent', [0]],
+                      ['평당 2억 넘는 단지 셋', '래미안원베일리 · 아크로리버파크 · 래미안퍼스티지', 'ink', [0, 1, 2]], ['반포미도는 1년 4건', '거래가 적어 참고만', 'ink', [4]]]}
+    if key == 't_strip' or key == 'b_strip':
+        return '같은 달, 같은 단지', '래미안원베일리 84㎡대 · 2026년 5월 계약 11건 · 점 하나 = 거래 하나', SRC_RT, {
+            'deals': [[x['d'], x['amt'], x['floor']] for x in MAY], 'lo': 50, 'hi': 75, 'gap': '차이 18.00억',
+            'steps': [['53.50억 ~ 71.50억', '같은 달 11건 · 차이 18.00억', 'accent'], ['11건 모두 중개거래', '중개사를 거쳐 신고된 거래', 'ink']]}
+    if key in ('t_person', 'person', 'r_person'):
+        assert '보증금 9.50억' in H1CALC
+        if key == 't_person':
+            return '손품 씨의 보증금으로는', '가상 인물 · 계산을 위해 만든 사람(실존 인물 아님)', SRC_RT, {'teaser': True, 'promise': ['보증금 9억 5천만원 안의 전세', '대부분 1990년 전 단지'], 'dday': '보증금 9억 5천만원'}
+        if key == 'person':
+            return '다시 손품 씨', '가상 인물 · 지난 편(송파·강동 세 동네) 그 사람', SRC_RT, {'dday': '보증금 9억 5천만원',
+                'beats': [['실제 인물이 아니라', '계산을 위해 만든 가상 인물', 'ink'], ['같은 동네, 지은 해 따라 갈린 값', '지난 편 고덕동: 오래된 단지가 37.2% 쌌음', 'accent'],
+                          ['이번엔 옛 단지 + 새 단지', '한 동네에 같이 있는 곳', 'ink']]}
+        return '전세로 옮긴다면', '가상 인물 손품 씨 · 보증금 9억 5천만원 = 지난 편 고덕동 84㎡대 전세 가운데 값', SRC_RT, {'dday': '보증금 9억 5천만원',
+            'beats': [['사는 게 아니라 전세로', '보증금 9억 5천만원 그대로 옮긴다면', 'accent']]}
+    if key == 'concl':
+        return '결론부터', '84㎡대 1년 실거래로 본 세 동네', SRC_RT, {'rows': ['잠실: 1978년 단지가 평당 1위', '대치: 견주는 단지마다 순서가 바뀜', '반포: 위 넷은 2009년 이후 단지', '전세: 세 동네 모두 오래된 쪽이 쌈']}
+    if key == 'j_line':
+        return '한 해 내내 위에 있었다', '84㎡대 달별 가운데 값 · 단위 억원 · 괄호 = 그달 건수', SRC_RT, {
+            'series': [['주공5단지', 'ink2', MED5], ['리센츠', 'accent', MEDR]], 'min': 30, 'max': 48,
+            'cards': [['주공5단지 달별 가운데 값', '42.55억 ~ 45.75억', '1978년 단지'], ['리센츠 달별 가운데 값', '33.20억 ~ 35.20억', '2008년 단지']]}
+    if key == 'j_woo':
+        return '같은 잠실, 다른 오래된 단지', '잠실동 · 84㎡대 평당 가운데 값 · ' + PPY, SRC_KAPT, {
+            'bars': [['리센츠', 13283, '1억 3,283만원', '2008 · 90건', 'accent'], ['잠실 우성', 11908, '1억 1,908만원', '1981 · 10건', 'ink2']], 'max': 18000,
+            'steps': [['잠실 우성 · 1981년', '같은 동네 오래된 단지', 'ink'], ['리센츠보다 −10.4%', '이번엔 오래된 쪽이 쌈', 'accent'], ["'오래됐으면 비싸다'도", '단지마다 달랐다', 'ink']]}
+    if key == 'd_map':
+        return '두 번째 동네, 강남구 대치동', '대치동 · 1990년 전에 지은 단지는 회색, 그 뒤 단지는 주황', SRC_MAP, {
+            'views': [dongview('daechi'), view(['은마', '래미안대치팰리스'], 1.3)], 'focus': ['은마', '래미안대치팰리스', '대치르엘'], 'old': OLD, 'color': 'age', 'labels': ['은마', '래미안대치팰리스', '대치르엘'],
+            'cards': [['은마', '1979.08 입주', '4,424세대 · 주공5단지와 거의 같은 때'], ['래미안대치팰리스', '2015.09 입주', '1,608세대']]}
+    if key == 'd_count':
+        return '대치동은 거래가 적다', '84㎡대 1년 매매 건수 · 점 하나 = 거래 하나', SRC_RT, {
+            'groups': [['은마', 13, 'old'], ['래미안대치팰리스', 8, 'new'], ['대치르엘', 5, 'new'], ['잠실 리센츠(견줌)', 90, 'new']], 'total': '대치동 84㎡대 1년 75건',
+            'steps': [['많아야 13건', '한두 건에 가운데 값이 흔들릴 수 있음', 'accent']]}
+    if key == 'b_floor':
+        return '층과 날짜는 있지만', '래미안원베일리 84㎡대 · 2026년 5월 11건 · 층·계약일·값', SRC_RT, {
+            'deals': [[x['floor'], eok(x['amt']), f"{x['d']}일"] for x in MAY], 'top': 25,
+            'steps': [['왜 그 값이었는지', '실거래 자료에는 나오지 않음', 'ink'], ['한 건만 보면', '비싼 쪽인지 싼 쪽인지 알 수 없음', 'accent']]}
+    if key == 'r_pair':
+        G = [['잠실', ['주공아파트5단지', '리센츠', '잠실엘스']], ['대치', ['은마', '래미안대치팰리스']], ['반포', ['반포미도', '래미안원베일리']]]
+        rows = []
+        for g, ns in G:
+            for n in ns:
+                c = CX[n]; w = nm(n).replace('주공5단지', '5단지')
+                li = has(w) if has(w) >= 0 else has(g)
+                rows.append([g, nm(n), c['sale'], eok(c['sale']), c['rent'], eok(c['rent']), f"{c['ratio']}%", 'old' if c['built'] < 1990 else 'new', max(0, li)])
+        return '사는 값과 빌려 사는 값', '84㎡대 · 회색 긴 막대 = 매매 가운데 값 · 색 막대 = 신규 순수전세 가운데 값 · % = 전세가율', SRC_RT, {
+            'rows': rows, 'max': 60, 'deposit': 9.5, 'depositTxt': '손품 씨 보증금 9.50억',
+            'steps': {str(has('가장 쌌던')): ['매매는 가장 비싸고, 전세는 가장 쌈', '잠실 안 84㎡대 거래 3건 이상 8단지 중', 'accent']}}
+    if key == 'r_under':
+        L8 = ['주공아파트5단지', '우성아파트', '쌍용대치아파트1동,2동,3동,5동,6동', '반포미도', '대치우성아파트1동,2동,3동,5동,6동,7동', '현대', '은마', '잠실포스코더샵']
+        rows = [[nm(n), CX[n]['rent'], eok(CX[n]['rent']), CX[n]['built'], 'old' if CX[n]['built'] < 1990 else 'new', CX[n]['rent_n']] for n in L8]
+        assert all(r[1] <= 9.5 for r in rows) and sum(1 for r in rows if r[4] == 'old') == 6
+        rest = sorted([CX[n]['rent'] for n in CX if CX[n]['rent'] and n not in L8])
+        assert rest[0] > 9.5, rest[0]
+        return '보증금 9억 5천만원 안의 전세', '84㎡대 신규 순수전세 가운데 값 9.50억 이하 · 세 동네 28단지 중 8곳', SRC_RT, {
+            'rows': rows, 'max': 10, 'deposit': 9.5,
+            'steps': [None, ['8곳 중 6곳이 1990년 전 단지', '회색 막대', 'ink', 'old'], ['나머지 둘', '잠실 현대(1990) · 잠실포스코더샵(2004, 3건)', 'accent', 'new'],
+                      ['왜 낮은지는', '실거래 자료로 알 수 없음', 'ink', None], ['어디로 가라는 말이 아니라', '보증금 안에 드는 곳을 센 계산', 'accent', None]]}
+    if key == 'w_map':
+        return '걸어서 잰 거리', '단지 가운데 → 지하철 출입구 · 오픈스트리트맵 보행로 · 대치·잠실만', SRC_MAP, {
+            'views': [view(['은마'], 1.5, 1000, wpts('은마')), view(['리센츠'], 1.5, 1000, wpts('리센츠')), view(['은마', '리센츠'], 1.15)],
+            'focus': ['은마', '리센츠'], 'old': OLD, 'color': 'age', 'routes': [['은마', 'station'], ['리센츠', 'station']], 'labels': ['은마', '리센츠'],
+            'cards': [['은마 → 대치역 출입구', '270m', '1979년 단지'], ['리센츠 → 잠실새내역 출입구', '270m', '2008년 단지'], ['가장 가까운 두 곳', '오래된 하나, 새 하나', '']]}
+    if key == 'w_ruler':
+        R = [['은마', 270, 'old'], ['리센츠', 270, 'new'], ['주공5단지', 430, 'old'], ['잠실엘스', 500, 'new'], ['래미안대치팰리스', 530, 'new'], ['대치르엘', 1010, 'new']]
+        return '역 출입구까지 걷는 거리', '단지 가운데 → 지하철 출입구 · 오픈스트리트맵 보행로 · 회색 = 1990년 전 단지', SRC_MAP, {
+            'rows': [[a, m, f'{m:,}m', o] for a, m, o in R], 'max': 1100,
+            'steps': [['5단지 430m · 잠실엘스 500m', '조금 더 걸음', 'ink', [2, 3]], ['대치 새 단지가 더 멂', '래미안대치팰리스 530m · 대치르엘 1,010m', 'accent', [4, 5]],
+                      ['반포는 재지 않음', '길 자료를 받지 못함', 'ink', []]]}
+    if key == 'e_table':
+        T = [['잠실', '주공아파트5단지'], ['잠실', '리센츠'], ['대치', '은마'], ['대치', '래미안대치팰리스'], ['반포', '반포미도'], ['반포', '래미안원베일리']]
+        WALK = {'주공아파트5단지': '430m', '리센츠': '270m', '은마': '270m', '래미안대치팰리스': '530m', '반포미도': '확인 안 함', '래미안원베일리': '확인 안 함'}
+        rows = [[g, nm(n), str(CX[n]['built']), man(CX[n]['ppy']), eok(CX[n]['rent']), WALK[n]] for g, n in T]
+        return '세 동네, 오래된 단지와 새 단지', '84㎡대 · 평당·전세는 1년 가운데 값 · 전체 표는 파이어맵 카페 · 계산·비교 자료, 사고팔라는 권유 아님', SRC_MAP + ' · cafe.naver.com/firemap', {
+            'cols': ['동네', '단지', '지은 해', '평당', '전세', '역까지(걸어서)'], 'rows': rows, 'cafe': 'cafe.naver.com/firemap', 'old': [1, 0, 1, 0, 1, 0]}
+    raise KeyError(key)
+
+
+def script_lines(path):
+    out, cur, last = {}, None, None
+    for line in open(path, encoding='utf-8').read().split('\n---', 1)[0].splitlines():
+        if line.startswith('## '):
+            t = line[3:].strip(); cur = re.sub(r'^\[', '', t).split()[0].rstrip(']'); out[cur] = []; last = None
+        elif cur is not None and line.lstrip().startswith('- '):
+            t = re.sub(r'\s*\(화면.*$', '', line.strip()[2:]).strip(); t = re.sub(r'\s*\[자막:.*?\]', '', t).strip()
+            if t: out[cur].append([t, None]); last = out[cur][-1]
+        elif cur is not None and line.strip().startswith('[자막:') and last is not None:
+            c = line.strip()[4:].rstrip(']').strip()
+            c = re.sub(r'\s*\((?:H-1 )?calc_out \d+\)', '', c)
+            last[1] = c
+    return out
+
+
+def clean(t): return re.sub(r'\s*\(재사용 \d+장\)', '', t).strip()
+
+
+def main():
+    sl = script_lines(os.path.join(EP, 'script.md'))
+    voice = {}
+    vj = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
+    for s in vj.get('sections', []):
+        for l in s['lines']:
+            if l.get('audio'): voice[clean(l['text'])] = l
+    scenes, warn = [], []
+    for ch in ['0.', '1.', '2.', '3.', '4.', '5.', '6.', '7.']:
+        lines = sl.get(ch, [])
+        found = []
+        for key, kind, c, anc in RULES:
+            if c != ch: continue
+            if anc is None: idx = 0
+            else: idx = next((i for w in anc for i, (t, _) in enumerate(lines) if w in t), None)
+            if idx is None: warn.append(f'{key}: {anc} 못 찾음 — 장면 뺌'); continue
+            if any(i == idx for i, *_ in found): warn.append(f'{key}: 시작 줄이 다른 장면과 같음 — 뺌'); continue
+            found.append((idx, key, kind))
+        found.sort()
+        if found and found[0][0] != 0: found[0] = (0,) + found[0][1:]
+        for j, (idx, key, kind) in enumerate(found):
+            part = lines[idx:(found[j + 1][0] if j + 1 < len(found) else None)]
+            out = []
+            for t, cap in part:
+                ct = clean(t); v = voice.get(ct)
+                fr = v['frames'] if v else max(12, round(SC.syl(SC.speak(ct)) / RATE * FPS))
+                out.append({'text': ct, 'cap': cap, 'frames': fr, 'audio': v['audio'] if v else None})
+            title, sub, src, data = spec(key, [x['text'] for x in out])
+            frames = sum(x['frames'] for x in out)
+            scenes.append({'key': key, 'kind': kind, 'title': title, 'sub': sub, 'source': src, 'chapter': CH_NAME[ch], 'data': data, 'lines': out, 'frames': frames})
+    scenes[-1]['frames'] = max(scenes[-1]['frames'], END_MIN)
+    missing = sum(1 for s in scenes for l in s['lines'] if not l['audio'])
+    nlines = sum(len(v) for v in sl.values())
+    res = {'fps': FPS, 'scenes': scenes, 'missing': missing, 'maps': MAPS, 'mapBox': [MW, MH]}
+    json.dump(res, open(os.path.join(VID, 'h2.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+    tot = sum(s['frames'] for s in scenes) / FPS
+    for w in warn: print('경고 ·', w)
+    print(f'장면 {len(scenes)} · 말 줄 {nlines} · 길이 {int(tot // 60)}:{tot % 60:04.1f} · 목소리 없는 줄 {missing} · 그림 종류 {len({s["kind"] for s in scenes})} {sorted({s["kind"] for s in scenes})}')
+    t = 0
+    for i, s in enumerate(scenes):
+        print(f"  {i:2} {int(t // 60)}:{t % 60:04.1f} {s['key']:10} {s['kind']:8} {s['frames'] / FPS:5.1f}초 줄{len(s['lines']):2}  {s['title']}")
+        t += s['frames'] / FPS
+    return res
+
+
+if __name__ == '__main__':
+    main()

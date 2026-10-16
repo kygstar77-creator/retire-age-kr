@@ -44,4 +44,4 @@ print('[K] 세전 월급 → 한 달 실수령(1인·식대 비과세 20만원 �
 PAYS2 = [150, 200, 222, 250, 288, 350, 450]
 code = f"import {{salaryNet}} from '{JS}'; console.log(JSON.stringify({PAYS2}.map(m => [m, salaryNet({{annual: m*10000*12}}).net])))"
 nets2 = json.loads(subprocess.run(['node', '--input-type=module', '-e', code], capture_output=True, text=True, encoding='utf-8').stdout)
-print('[L] 실수령/세전:', ' · '.join(f'{m} → {n / (m * 10000):.3f}' for m, n in nets2), '· 세전 222만원 → 통장', f'{dict(nets2)[222]:,}원(≈200만원)')
+print('[L] 실수령/세전:', ' · '.join(f'{m} → {n / (m * 10000):.3f}' for m, n in nets2), '· 세전 222만원 → 통장', f'{dict(nets2)[222]:,}원(≈200만원)', '· 세전 200만원 → 통장', f'{dict(nets2)[200]:,}원(≈180만원, v7.9 1장 예시)')

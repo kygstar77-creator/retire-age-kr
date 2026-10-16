@@ -173,7 +173,8 @@ def thumbs():
            ('290만원', 290, ORANGE, 'black', 300), ('세전 월급 · 2024년 12월', 70, YELLOW, '700', 690)],
           dark=0.85, shade_box=(0, 0, 1350, HH))
     # G: 계단 셋(세전 월급 → 등수) — 7차 이해 시험에서 E2가 '290=평균·연금'으로 읽혀 교체
-    im = photo('pexels_19271539.jpg', y_anchor=0.0, dark=0.85)
+    # 9차: 배경 노인 뒷모습(19271539) 때문에 2명 모두 '노인·연금 얘기'로 읽음 → 밤 사무실 도시(3142002)로
+    im = photo('pexels_3142002.jpg', y_anchor=0.6, dark=0.85)
     im = shade(im, (0, 0, 1300, HH), alpha=200, blur=80); d = ImageDraw.Draw(im)
     d.text((80, 60), '내 월급, 100명 중 몇 등?', font=f(120, 'black'), fill=WHITE, stroke_width=4, stroke_fill=(0, 0, 0))
     for i, (m, r) in enumerate([('세전 450만원', '27등'), ('세전 290만원', '50등'), ('세전 150만원', '79등')]):

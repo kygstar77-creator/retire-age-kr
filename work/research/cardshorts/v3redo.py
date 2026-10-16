@@ -38,8 +38,17 @@ def main(name):
     v = os.path.join(VID, 'out', f'{name}_v3.mp4'); vd = os.path.join(VID, 'out', f'{name}_v3_ds.mp4')
     props = json.load(open(os.path.join(VID, name + '.json'), encoding='utf-8'))
     if comp != 'C2P' and not props.get('bg'): print('배경 props 없음 — bgprops.py 먼저'); return 2
+    # 화면만 렌더(--muted) — 소리는 지난 판 트랙을 붙인다. 옛 wav가 public에서 빠진 편(d1s_when 10/16)도 렌더되게 말 파일 자리를 무음으로 바꾼 임시 props를 쓴다(숫자·글자·프레임 그대로).
+    tmp = f'_v3tmp_{name}.json'; tp = json.loads(json.dumps(props))
+    for s in tp['scenes']:
+        for l in s.get('lines', []):
+            if l.get('audio'): l['audio'] = 'audio/_silence.wav'
+    json.dump(tp, open(os.path.join(VID, tmp), 'w', encoding='utf-8'), ensure_ascii=False)
+    tdir = os.path.join('C:/Users/Public/rtmp', name); os.makedirs(tdir, exist_ok=True)   # 렌더 임시 폴더를 편마다 따로(10/16 h1s_forest: 같이 돌던 렌더 중 임시 폴더가 사라져 이어 붙이기 실패)
     if '--skip-render' not in sys.argv or not os.path.exists(v):
-        rc = subprocess.call(['npx', 'remotion', 'render', idx, comp, v, f'--props={name}.json', '--muted', '--pixel-format=yuv420p', '--concurrency=4', '--bundle-cache=false'], cwd=VID, shell=(os.name == 'nt'))
+        bdir = 'C:/Users/Public/rtmp/bundles/' + os.path.basename(idx).split('_')[0]   # 미리 묶은 번들(npx remotion bundle) — 같이 도는 렌더끼리 webpack 캐시 충돌(EPERM rmdir) 피함
+        src = bdir if os.path.exists(os.path.join(bdir, 'index.html')) else idx
+        rc = subprocess.call(['npx', 'remotion', 'render', src, comp, v, f'--props={tmp}', '--muted', '--pixel-format=yuv420p', '--concurrency=6', '--bundle-cache=false'], cwd=VID, shell=(os.name == 'nt'), env=dict(os.environ, TEMP=tdir, TMP=tdir))
         if rc: print('렌더 실패', rc); return rc
     if nframes(v) != nframes(old): print('길이 다름', nframes(v), nframes(old)); return 3
     subprocess.check_call([ffmpeg(), '-y', '-loglevel', 'error', '-i', v, '-i', old, '-map', '0:v:0', '-map', '1:a:0', '-c', 'copy', vd])

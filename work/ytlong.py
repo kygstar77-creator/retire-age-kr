@@ -122,6 +122,10 @@ def gate(ep):
         sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'video')); import deess
         r = deess.measure(vp)
         if r and r['sib_vs_voiced_db'] > deess.LIMIT_DB: bad.append(f'쉿소리 {r["sib_vs_voiced_db"]}dB > {deess.LIMIT_DB}dB — py -3.12 work/video/deess.py <영상>')
+        # 10/16 디자인 기준 v3(research/visual/design-spec-1016.md): 모든 장면 뒤 실사 배경 — work/bgcheck.py
+        import bgcheck
+        ok_bg, msg_bg = bgcheck.gate(vp)
+        if not ok_bg: bad.append(msg_bg + ' — TallyFrame bg를 장면마다 넣고 다시 렌더')
     # 말 끝난 직후 '치직' — 10/02 사장님 "유튜브 말 끝나고 치직 했는데". TTS 응답 끝 잡음이 문장 wav에 남았는지(렌더 전 원천 검사, work/video/clickscan.py)
     import glob as _g
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'video')); import clickscan

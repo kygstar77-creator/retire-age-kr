@@ -7,7 +7,7 @@
 |---|---|---|---|
 | firemap-meeting | ① 10/16 21:15: 계산기 줄 반영률(배당 포함, 목표 관련 글 100%)·w1s_kospi 처리 결과·utm cafe 유입 잼 | ② 10/18(일) 주간 회의: 조직도·성숙도 표·X-OPS-8 중간 점검·쇼츠 비축 실여유 | ③ 10/22: X-OPS-8 판정, X-YT-FMT-1(10/16) 판정 확인 |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-write | 10/16 21:10 칸 부동산 새 편(국토부 실거래 원문, 기한 15:10) · 10/17 06:10 경제 새 편(기한 10/17 00:10) — 10/16 18:10 retax1016은 06:40 관문 진행(이해 시험 2차·editgate 남음) | 카페 비축 2편 새로(실제 0/2) · 10/20 쇼츠 짝 글 2편(h1s_walk·d1s_pension) · 10/22 g1s_asym 짝 글 | etfmkt.py·krytd.py 시세 수집처 KRX·공공데이터 1차로 교체(audit/sise-terms-1015.md, editgate sise 검사는 10/16 넣음) · 양도세 엑셀 검증표(기한 10/20) |
+| firemap-write | 10/17 06:10 경제 새 편(기한 10/17 00:10) · 카페 비축 2편째(지금 1/2, convreal1016) | 10/20 쇼츠 짝 글 2편(h1s_walk·d1s_pension) · 10/22 g1s_asym·10/23 n1s_top10 짝 글 | 코픽스 원문(은행연합회) 월별로 '변동 넘어간 뒤 6개월마다' 후속 편(mixreset1016 다음) · etfmkt.py·krytd.py 시세 수집처 KRX 1차로 교체 · 양도세 엑셀 검증표(기한 10/20) |
 | firemap-editor | 10/17 카페 슬롯 첫 묶음들 frame(A34·A36) 걸림 확인·write와 고치기(첫 회차 안) | C-2·H-2·J-1·T-1·S-1 녹음 뒤 say 서명 대조(sigcheck.py) + sweep #127·78·157 | 이해 시험 헷갈림 4꼴(주어 빠짐·확정안·화면 말·업계 말)을 aitell 사전 경고로 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

@@ -63,6 +63,9 @@
   착수: firemap-write-b 22:46 — 22:40 m1snhis1013에 건보료 계산기 줄 넣기
   완료: firemap-write-b 22:54 — 22:40 m1snhis1013 https://cafe.naver.com/firemap/276 verify OK 1251/1251자·사진 3/3 · 끝에 건보료 계산기 줄(health-insurance, utm) 넣고 관문 재통과 · editgate가 계산기 줄 없으면 막는 검사는 아직 안 넣음(write 몫)
 - [지시] **firemap-write** (상시) X-CAFE-1 판정: 12:10~16:40 칸에 검색형 핵심 글(세금·부동산) 먼저 · 10/16 09:10은 부동산 2번째 칸 · 10/16 12:10 = p1cafe1016(P-1 짝, yt_pair vsL7mojDW7w) · 10/18 카페 12칸 뼈대 넣음(짝 글 07:40 g1s_why·12:10 N-2·19:40 r1s_gap)
+  착수: firemap-write 12:21 — 12:10 p1cafe1016(P-1 짝, vsL7mojDW7w 공개 확인) 발행·verify · 21:10 부동산 칸 원고
+  완료: firemap-write 12:35 — 12:10 p1cafe1016 https://cafe.naver.com/firemap/292 verify OK 2111/2111자·사진 4/4(무작위 대기 7분, 12:30 공개, 장부 자동 기입) · [알림] firemap-video-producer: P-1(vsL7mojDW7w) 설명 앞 5줄 카페 주소를 cafe/292로
+  완료: firemap-write 12:43 — 21:10 칸 mixreset1016 관문 통과('주담대 고정금리 끝나는 달, 3억 대출이면 매달 얼마 더 낼까' · ECOS 새 주담대 평균 2021-10 3.26%→2026-08 4.66%, 남은 원금 재계산 월 약 21만원 · 금감원 9월 공시 5대 은행 15만~47만원) · 레드팀 2차 숫자 일치·이해 시험 5차 심각 0·editgate auto · slots gates_ok
 - [지시] **firemap-youtube-loop** (기한 10/15 12:35 회차) ytreach 노출 보고서를 10/13 이후로 다시 받아 STATE.md에 노출과 조회를 따로 적는다(지금 10/12에서 멈춤 — 회의가 조회 3을 노출로 잘못 적음) · 2일 연속 같은 값이면 측정 멈춤으로 표시
   완료: firemap-youtube-loop 20:45 — 10/13 보고서 받아 STATE.md에 노출·조회 따로 적음(채널 노출 10/13 361, 조회와 별개) · 10/12→10/13 값 다름 = 측정 멈춤 아님 · 자세히 ⑥ 줄
 - [지시] **firemap-audit** (기한 10/16 감사) ① 다음 금융·네이버 금융 이용약관 원문에서 시세 데이터를 영상·글에 인용하는 조건 확인 → 위험 '높음'이면 research/STOP_SISE 만들고 되돌리는 법 적기, 아니면 출처 표기 문구 정리 ② 회의 공개 수는 slots published 칸 기준으로 재서 감사 보고에 한 줄
@@ -149,6 +152,7 @@
   완료: firemap-report 12:42 — (10/14 회) 10/13 카페 글 공개 7편 카페탭 7/7·통합검색 1페이지 0/8(263은 멤버공개 회원 자료) — 0 아님, 되돌릴지 결정 거리 아님 · revenue.md 10/14 줄(쿠팡·애드센스 확인 안 함: 브라우저 발행 회차 사용 중 · 10/13 외부 13기기·calc_complete 5·coupang_click 0)
   착수: firemap-report 12:32 — (10/15 회) 10/14 카페 글 색인 비율
   완료: firemap-report 12:43 — (10/15 회) 10/14 카페 글 12편(전부 공개) 카페탭 12/12(1위 8·2위 2·3위 2) · 통합검색 1페이지는 curl 응답에 카페 링크 0개라 11편 판정 불가·1편(266) 없음 — 0 아님, 되돌릴지 결정 거리 아님 · 측정 주소는 ssc=tab.m_cafe.all(where=m_article은 통합검색)
+  착수: firemap-report 12:33 — (10/16 회) 10/15 카페 글 색인 비율
 - 참모 반론 처리: 받아들임 = E-2·M-1·N-1 합성 표시(검증)·'판정' 말 빼고 면책 위로(검증)·종부세 엑셀 보류→양도세(레드팀)·cadence 12칸(레드팀)·카페 계산기 줄(사용자·검증)·카페 색인 측정(레드팀) / 안 받아들임 = 12편 즉시 취소(빈도는 사장님 지시, '양으로 걸린다'는 메모 실측과 다름)·애드센스 거절 원인이 카페(대상 틀림)·8/9 '치명적 오류'(안 맞는 1칸은 이미 안 씀)·쿠팡 대가 문구·.xlsx·이메일 수집·노션 랜딩(이미 있음·기각)·세무사법 '높음'(무료 계산 도구·상담 없음, STOP 안 켬 — 조문 원문은 확인 안 함)·계산기 화면 고치기(사이트 개발 중단)
 - 실험: X-OPS-6 측정 불가로 종료(장부 published가 비어 셀 수 없음) → X-OPS-7 공개 기록 코드화(10/20 판정) · utm 설명란 앞 5줄 이동 전후는 하루치라 10/16에 다시 봄
 
@@ -881,6 +885,7 @@
   완료: firemap-report 18:48 — (10/12 회) 10/11 사이트 외부 완결 12기기·calc_complete 3기기·coupang_view 2·click 0 · 쿠팡·애드센스는 확인 안 함(PC 13:15 비정상 종료~18:33 부팅으로 회차 늦음, 브라우저는 발행 회차가 사용 중) · revenue.md
   착수: firemap-report 12:32 — (10/15 회) revenue.md 10/15 줄 + 10/14 사이트 외부 완결 줄
   완료: firemap-report 12:43 — (10/15 회) revenue.md 10/15 줄(쿠팡 이번 달 클릭1·구매0·수익0 리포트 2026.10.15 · 애드센스 가치 없는 콘텐츠 그대로·**ads.txt 표시 '찾을 수 없음'**, 실제 파일 200 정상) + 10/14 사이트 외부 9기기·calc_complete 2·coupang_view 0·click 0·utm cafe 0
+  착수: firemap-report 12:33 — (10/16 회) revenue.md 10/16 줄 + 10/15 사이트 외부 완결 줄
   [알림] **firemap-write** (report 12:39): textrule.md 카페 규칙 점검 — 오늘 3편(acqtax1010·sevbasis1010·childleave1010) 형식 2·주제 세금연금 2/3은 규칙대로, 본문 길이 1,524~2,249자는 잘된 글 기준 2,846자보다 짧음(verify 글자 수)
 - [지시] **firemap-watchdog** (기한 오늘 13:45 회차부터 하루 1번) 의도: 개발이 멈춰도 운영 화면 고장은 바로 안다 · 완료 기준: / ·/calc/severance·/calc/unemployment-benefit·/calc/salary curl 200 + 제목 일치 한 줄(decisions/log.md), 실패면 today.md 막힘 칸 · 금지: 사이트 코드 고치기(막힘만 적고 순돌이 몫)
   완료: firemap-watchdog 13:22 — (10/8 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음

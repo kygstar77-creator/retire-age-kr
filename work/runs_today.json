@@ -47,6 +47,16 @@
     "url": "https://cafe.naver.com/firemap/291"
    },
    "note": "firemap-write-b 10:40 칸 · 관문은 write 10/15 23:22 통과분(selfcheck 사실 0·editgate auto·aitell 4.7) · verify OK 939/939자·사진 3/3 · 발행기 '확인 창' 대기 타임아웃 1건 있었으나 URL 정상 · 개선: 없음"
+  },
+  {
+   "hour": 12,
+   "ts": "12:43",
+   "blog": null,
+   "cafe": {
+    "title": "국민연금 수령나이 출생연도별로 당기거나 미루면 몇 살에 본전일까",
+    "url": "https://cafe.naver.com/firemap/292"
+   },
+   "note": "firemap-write 12:10 칸 p1cafe1016(P-1 짝, vsL7mojDW7w 공개 확인) · verify OK 2111/2111자·사진 4/4 · 블로그 없음(하루 1편 상한·블로그 무색인 대응, 오늘 대기 블로그는 시각 전/보류) · 21:10 칸 mixreset1016 원고 관문 통과: 자료조사 WebSearch 4회·출처 8(ECOS·finlife 1차), 교차검증 Gemini 사실 4건 중 반영 3·유지 1(2026 자료 확인 불가=모델 시점), 말투 12건 중 반영 11 · 레드팀 2회·이해 시험 5회 · 개선: 없음(발행기 '확인 창' 타임아웃 경고가 오늘 2번째지만 URL 정상이라 손대지 않음)"
   }
  ]
 }

@@ -92,3 +92,25 @@ for B in [200000, 300000, 400000]:
             parts.append(f'{k} {len(m)}건 전용 중앙 {med([ar(r) for r in m]):.0f}㎡({", ".join(f"{n} {c}" for n, c in top)})')
         else: parts.append(f'{k} 0건')
     print(f'- {eok(B)} 안팎: ' + ' / '.join(parts))
+
+print('\n## 6. 30억 안팎(27~33억) 거래의 면적 분포 · 압구정동 가장 싼 거래 5건')
+for k, rs in POOL.items():
+    m = [r for r in rs if 270000 <= num(r['dealAmount']) <= 330000]
+    c = collections.Counter(round(ar(r)) for r in m).most_common(4)
+    print(f'- {k} {len(m)}건 · 많은 면적 ' + ', '.join(f'{a}㎡ {n}건' for a, n in c))
+for r in sorted(AP, key=lambda r: num(r['dealAmount']))[:5]:
+    print(f"- 압구정동 {r['aptNm']} 전용 {num(r['excluUseAr']):.2f}㎡ · {eok(num(r['dealAmount']))} · {ym(r)}.{str(r['dealDay']).zfill(2)} · {r['floor']}층 · {r.get('dealingGbn')}")
+print('- 전용 ㎡ → 평(÷3.305785): ' + ' · '.join(f'{a}㎡ {a/PY:.1f}평' for a in [50, 64, 85, 96, 115]))
+
+print('\n## 7. 네 동네 모든 단지 — 거래 5건 이상인 면적이 둘 이상인 단지: 가장 작은 면적 vs 가장 큰 면적 평당(골라 보기 없이 전부)')
+ALLC = collections.defaultdict(lambda: collections.defaultdict(list))
+for lawd, umds in [('11680', ['압구정동']), ('11710', ['신천동']), ('11470', ['목동', '신정동'])]:
+    for r in ALL[lawd]:
+        if r['umdNm'] in umds and ok(r): ALLC[(r['umdNm'], r['aptNm'])][round(ar(r))].append(pp(r))
+up = tot = 0
+for k, c in sorted(ALLC.items()):
+    c = {a: v for a, v in c.items() if len(v) >= 5}
+    if len(c) < 2: continue
+    lo, hi = min(c), max(c); x = med(c[lo]) / med(c[hi]) * 100 - 100; tot += 1; up += x > 0
+    print(f'- {k[0]} {k[1]}: {lo}㎡ {med(c[lo]):,.0f}({len(c[lo])}건) vs {hi}㎡ {med(c[hi]):,.0f}({len(c[hi])}건) → 작은 집 {x:+.1f}%')
+print(f'- 작은 집 평당이 더 높은 단지 {up}/{tot}곳')

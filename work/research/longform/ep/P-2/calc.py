@@ -39,14 +39,18 @@ out = [f'# P-2 calc · 공단 노령연금 예상월액표(easypension_1_2026_3.
 
 # 2) 세 길 — 가상 인물: 1991년생, 2016.1~2025.12 회사 10년(기준소득월액 400만원, 오늘 돈), 2026.1 퇴사(35세), 65세(2056) 수령
 WORK = [(y, 4_000_000) for y in range(2016, 2026) for _ in range(12)]
-LOW = 1_013_000                 # 공단 표의 유일한 비정형 행(1,013,000원 → 보험료 96,230원) — 임의가입 중위수로 보임, 원문 확인 필요
-def vol(y0, y1, inc=LOW): return [(y, inc) for y in range(y0, y1 + 1) for _ in range(12)]
+LOW = 1_013_000                 # 임의(계속)가입 중위수 기준소득월액 2026.4~ 101.3만원 — 공단 안내 getOHAF0032M0(raw/nps_getOHAF0032M0_20261016.html), 공단 예상월액표 행과 같음
+LOW_2025 = 1_000_000            # '25.4~'26.3 적용 중위수 100만원(같은 공단 표) — 2026년 1~3월분
+def vol(y0, y1, inc=LOW):
+    ms = [(y, inc) for y in range(y0, y1 + 1) for _ in range(12)]
+    if y0 == 2026: ms[:3] = [(2026, LOW_2025)] * 3   # 2026.1~3은 '25.4 기준 금액
+    return ms
 def paid(ms): return sum(int(m * rate(y)) // 10 * 10 for y, m in ms)   # 공단 표 보험료 열도 10원 버림(1,013,000 → 96,230)
 paths = [('그냥 둠(10년에서 멈춤)', []),
-         ('45세까지 10년만 최저로 임의가입', vol(2026, 2035)),
+         ('45세 전까지 10년만 최저로 임의가입', vol(2026, 2035)),
          ('60세 전까지 25년 최저로 임의가입', vol(2026, 2050))]
 base_amt = pension(WORK)[0]
-out.append(f'A값 {A:,} · 회사 10년 기준소득월액 400만원 · 임의가입 기준 {LOW:,}원(확인 필요) · 오늘 돈·재평가 0')
+out.append(f'A값 {A:,} · 회사 10년 기준소득월액 400만원 · 임의가입 기준 {LOW:,}원(공단 안내 2026.4~) · 오늘 돈·재평가 0')
 out.append('| 길 | 가입 | B(평균 소득) | 65세부터 월 | 더 받는 월 | 더 낸 보험료 합 | 더 낸 돈 ÷ 더 받는 돈(년) | 본전 나이 |')
 out.append('|---|---|---|---|---|---|---|---|')
 for name, extra in paths:
@@ -59,5 +63,26 @@ out.append('최저 임의가입 월 보험료: ' + ' · '.join(f'{y} {int(LOW * 
 # 계수 차이: 같은 10년이 2026년 뒤였다면
 amt26 = pension([(2026, 4_000_000)] * 120)[0]
 out.append(f'같은 10년·400만원을 2026년부터 냈다면 월 {amt26:,}원(계수 1.290) vs 2016~2025 실제 계수 평균 {sum(coef(y) for y in range(2016, 2026)) / 10:.4f} → 월 {base_amt:,}원')
+# 3) 대본용 중간값(2026-10-16 youtube-loop 추가) — 지급률 전 금액·A값 비중·20년 넘는 가산
+for name, extra in paths:
+    ms = WORK + extra; P = len(ms); B = sum(m for _, m in ms) / P
+    c = sum(coef(y) for y, _ in ms) / P
+    full = c * (A + B) / 12
+    pay = 1.0 if P >= 240 else 0.5 + 0.05 * (P - 120) / 12
+    plus = 1 + 0.05 * max(0, P - 240) / 12
+    out.append(f'{name}: 계수 평균 {c:.4f} · (A+B) {A + B:,.0f} 중 A 비중 {A / (A + B):.1%} · 지급률 전 월 {int(full):,} · 지급률 {pay:.0%} · 20년 넘는 가산 ×{plus:.2f}')
+# 4) 낸 돈을 물가보다 r만큼 더 불렸다면(실질 이자, 오늘 돈 기준) 본전 나이
+#    보험료는 2026.1부터 다달이, 더 받는 연금은 2056.1(65세)부터 다달이 · 65세 시점 값으로 맞춤
+def breakeven(extra, add, r):
+    m = (1 + r) ** (1 / 12) - 1; T = 30 * 12
+    fv = sum((int(inc * rate(y)) // 10 * 10) * (1 + m) ** (T - i) for i, (y, inc) in enumerate(extra))
+    got = 0.0
+    for k in range(12 * 60):
+        got += add / (1 + m) ** k
+        if got >= fv: return 65 + (k + 1) / 12
+    return float('nan')
+for name, extra in paths[1:]:
+    add = pension(WORK + extra)[0] - base_amt
+    out.append(f'{name} 본전 나이(물가보다 더 불린 이자 연 0%·1%·2%·3%): ' + ' · '.join(f'{r:.0%} {breakeven(extra, add, r):.1f}세' for r in (0, .01, .02, .03)))
 txt = '\n'.join(out); print(txt)
 open(os.path.join(D, 'calc_out.txt'), 'w', encoding='utf-8').write(txt + '\n')

@@ -48,5 +48,16 @@
   "len_no_hashtag": 27,
   "numbers": 2,
   "front_keyword": "평균 월급"
+ },
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "H04T4PbkGCY",
+ "uploaded_at": "2026-10-17 02:22:13",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-19T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
  }
 }

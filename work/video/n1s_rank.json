@@ -1,0 +1,297 @@
+{
+ "fps": 30,
+ "name": "n1s_rank",
+ "question": [
+  "순자산 1억·5억,",
+  "상위 몇 %일까?"
+ ],
+ "hot": "5억",
+ "answer": {
+  "label": "가구 순자산 줄에서 내 자리",
+  "items": [
+   "5억원 = 상위 20~30%",
+   "1억원 = 하위 20~30%"
+  ],
+  "arrow": false,
+  "note": "딱 중간 가구는 2억 3,860만원"
+ },
+ "base": "2025년 가계금융복지조사 · 2025년 3월 말 가구 순자산",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "1억원·5억원은 어디쯤",
+   "source": "국가데이터처·금융감독원·한국은행 2025년 가계금융복지조사 통계표 12(순자산 2025.3.31 기준)",
+   "data": {
+    "full": true,
+    "tiles": [
+     [
+      "순자산 1억원",
+      "하위 20~30%",
+      "아래에서 20%와 30% 사이",
+      0,
+      "ink"
+     ],
+     [
+      "순자산 5억원",
+      "상위 20~30%",
+      "순자산 = 집·예금·주식 − 빚 · 2025년 3월 말",
+      0,
+      "accent"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 27,
+     "text": "순자산 1억원이면 아래에서 20%와 30% 사이예요.",
+     "cap": null,
+     "audio": "audio/n-1/n1r_27a.wav",
+     "frames": 119
+    },
+    {
+     "n": 27,
+     "text": "5억원이면 위에서 20%와 30% 사이고요.",
+     "cap": null,
+     "audio": "audio/n-1/n1r_27b.wav",
+     "frames": 102
+    },
+    {
+     "n": 24,
+     "text": "집·예금·주식을 모두 더하고 빚을 뺀 값입니다. 기준은 2025년 3월 말이에요.",
+     "cap": null,
+     "audio": "audio/n-1/n1r_24c.wav",
+     "frames": 180
+    }
+   ],
+   "frames": 401
+  },
+  {
+   "kind": "vs",
+   "label": "딱 중간 vs 평균",
+   "source": "국가데이터처·금융감독원·한국은행 2025년 가계금융복지조사 통계표 12(순자산 2025.3.31 기준)",
+   "data": {
+    "tiles": [
+     [
+      "딱 중간 가구(중앙값)",
+      "2억 3,860만원",
+      "줄 한가운데 가구",
+      0,
+      "ink"
+     ],
+     [
+      "평균 순자산",
+      "4억 7,144만원",
+      "중간의 두 배 가까이 · 평균 가구는 상위 20~30%",
+      103,
+      "accent"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 26,
+     "text": "가운데 가구, 중앙값은 2억 3,860만원입니다.",
+     "cap": null,
+     "audio": "audio/n-1/eeed5c7ddc935936.wav",
+     "frames": 103
+    },
+    {
+     "n": 29,
+     "text": "평균 순자산은 4억 7,144만원이에요. 중앙값의 두 배 가까이 됩니다.",
+     "cap": null,
+     "audio": "audio/n-1/n1r_29a.wav",
+     "frames": 170
+    },
+    {
+     "n": 29,
+     "text": "맨 위가 평균을 끌어올려요. 평균 가구는 위에서 20%와 30% 사이에 있습니다.",
+     "cap": null,
+     "audio": "audio/n-1/n1r_29b.wav",
+     "frames": 168
+    }
+   ],
+   "frames": 441
+  },
+  {
+   "kind": "receipt",
+   "label": "위 20% 가구의 몫",
+   "source": "국가데이터처·금융감독원·한국은행 2025년 가계금융복지조사 통계표 12(순자산 2025.3.31 기준)",
+   "data": {
+    "head": "전체 가구 순자산 중 상위 20% 가구 몫",
+    "size": 46,
+    "rows": [
+     [
+      "1년 전",
+      "63.08%",
+      "dim",
+      0
+     ],
+     [
+      "2025년 3월 말",
+      "64.56%",
+      "net",
+      22
+     ],
+     [
+      "1년 새",
+      "+1.48%포인트",
+      "in",
+      129
+     ]
+    ],
+    "side": [
+     "64.56%",
+     0,
+     "상위 20% 가구가 가진 몫"
+    ]
+   },
+   "lines": [
+    {
+     "n": 30,
+     "text": "위쪽 20% 가구가 전체 순자산의 64.56%를 갖고 있습니다. 1년 전보다 1.48%포인트 늘었어요.",
+     "cap": null,
+     "audio": "audio/n-1/6680cbc07d86ce00.wav",
+     "frames": 215
+    }
+   ],
+   "frames": 215
+  },
+  {
+   "kind": "vs",
+   "label": "이 줄은 나이가 섞여 있다",
+   "source": "국가데이터처·금융감독원·한국은행 2025년 가계금융복지조사 통계표 12(순자산 2025.3.31 기준)",
+   "data": {
+    "tiles": [
+     [
+      "이 순위에 섞인 가구",
+      "모든 나이",
+      "나이 구분 없이 순서대로 세움",
+      0,
+      "ink"
+     ],
+     [
+      "젊은 가구",
+      "아래쪽",
+      "젊을수록 아래쪽에 있는 게 자연스러움",
+      0,
+      "accent"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 43,
+     "text": "다만 순자산 줄은 모든 나이의 가구가 섞인 줄이라, 젊을수록 아래쪽에 있는 게 자연스럽습니다.",
+     "cap": null,
+     "audio": "audio/n-1/n1r_43e.wav",
+     "frames": 172
+    }
+   ],
+   "frames": 208
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/n1s_top10/29918215.mp4",
+   "from": 0,
+   "frames": 119,
+   "start": 13.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n1s_top10/37391014.mp4",
+   "from": 119,
+   "frames": 102,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n1s_top10/37763965.mp4",
+   "from": 221,
+   "frames": 180,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n1s_top10/11745565.mp4",
+   "from": 401,
+   "frames": 103,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n1s_top10/39468111.mp4",
+   "from": 504,
+   "frames": 170,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n1s_top10/29918215.mp4",
+   "from": 674,
+   "frames": 168,
+   "start": 16.97,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n1s_top10/37391014.mp4",
+   "from": 842,
+   "frames": 107,
+   "start": 3.4,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n1s_top10/37763965.mp4",
+   "from": 949,
+   "frames": 108,
+   "start": 6.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n1s_top10/11745565.mp4",
+   "from": 1057,
+   "frames": 104,
+   "start": 3.43,
+   "kind": "video"
+  },
+  {
+   "src": "bg/n1s_top10/39468111.mp4",
+   "from": 1161,
+   "frames": 104,
+   "start": 5.67,
+   "kind": "video"
+  }
+ ],
+ "bg_credits": [
+  {
+   "id": 29918215,
+   "page": "https://www.pexels.com/video/aerial-view-of-seongsu-bridge-at-sunset-seoul-29918215/",
+   "author": "Mohammed  Mehdaoui",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 37391014,
+   "page": "https://www.pexels.com/video/urban-winter-skyline-with-modern-bridge-37391014/",
+   "author": "Mallesh Baithi",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 37763965,
+   "page": "https://www.pexels.com/video/scenic-seoullo-bridge-over-han-river-37763965/",
+   "author": "Mallesh Baithi",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 11745565,
+   "page": "https://www.pexels.com/video/people-in-city-at-night-11745565/",
+   "author": "Mike Hongkong 2",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 39468111,
+   "page": "https://www.pexels.com/video/aerial-night-view-over-cityscape-39468111/",
+   "author": "MELQUIZEDEQUE ALMEIDA",
+   "license": "https://www.pexels.com/license/"
+  }
+ ]
+}

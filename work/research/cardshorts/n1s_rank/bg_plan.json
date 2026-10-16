@@ -1,0 +1,61 @@
+{
+ "name": "n1s_rank",
+ "_note": "n1s_top10 bg_plan 재사용(같은 N-1 순자산 주제, 10/16 배경 담당 눈 검사 얼굴·상표·워터마크 0) — 눈 덮인 공원(19577787)은 n1s_top10 이해 시험에서 덜 맞는다는 지적이라 뺌",
+ "clips": [
+  {
+   "file": "bg/n1s_top10/29918215.mp4",
+   "id": 29918215,
+   "start": 13,
+   "usable_sec": 33,
+   "what": "새벽 한강 위를 나는 드론, 다리와 강변 아파트",
+   "for": "0 순자산 1억원·5억원은 어디쯤",
+   "page": "https://www.pexels.com/video/aerial-view-of-seongsu-bridge-at-sunset-seoul-29918215/",
+   "author": "Mohammed  Mehdaoui",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/n1s_top10/37391014.mp4",
+   "id": 37391014,
+   "start": 0,
+   "usable_sec": 12.5,
+   "what": "흐린 날 한강 다리 너머 고층 건물",
+   "for": "0 집·예금·주식 − 빚, 2025년 3월 말",
+   "page": "https://www.pexels.com/video/urban-winter-skyline-with-modern-bridge-37391014/",
+   "author": "Mallesh Baithi",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/n1s_top10/37763965.mp4",
+   "id": 37763965,
+   "start": 0,
+   "usable_sec": 21.5,
+   "what": "한강과 남산 서울타워",
+   "for": "1 딱 중간 가구 2억 3,860만원",
+   "page": "https://www.pexels.com/video/scenic-seoullo-bridge-over-han-river-37763965/",
+   "author": "Mallesh Baithi",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/n1s_top10/11745565.mp4",
+   "id": 11745565,
+   "start": 0,
+   "usable_sec": 15.1,
+   "what": "밤 고층 아파트 스카이라인과 가로등",
+   "for": "1 평균 4억 7,144만원",
+   "page": "https://www.pexels.com/video/people-in-city-at-night-11745565/",
+   "author": "Mike Hongkong 2",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/n1s_top10/39468111.mp4",
+   "id": 39468111,
+   "start": 0,
+   "usable_sec": 35.3,
+   "what": "밤 도시 불빛을 넓게 내려다봄(어두움)",
+   "for": "2 상위 20% 가구 몫 64.56%",
+   "page": "https://www.pexels.com/video/aerial-night-view-over-cityscape-39468111/",
+   "author": "MELQUIZEDEQUE ALMEIDA",
+   "license": "https://www.pexels.com/license/"
+  }
+ ]
+}

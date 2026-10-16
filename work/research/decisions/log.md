@@ -2256,3 +2256,5 @@
 2026-10-17 07:18 · firemap-write · 13:40 카페 칸 sbsave1017 자료조사만(원고·gates_ok 없음) · 시간 부족, 다음 회차 이어감
 
 2026-10-17 07:45 · firemap-write-b · h1gapcafe1017 미발행(보류 유지), c00 쇼츠 주소 f3BaZbJLMMk→AAaGTUL4sJQ 교체·editgate auto 재서명 · 원고 주소는 사실 오류라 고침, naverpost private_video_links가 check_gemini.txt까지 읽는 버그 수정은 권한에 막혀 사람 확인으로 넘김
+
+2026-10-17 07:53 · firemap-video-producer · 쇼츠 비축 n1s_rank(N-1 둘째 클립 '순자산 1억·5억, 상위 몇 %일까?', 42.2초, 새 녹음 0) 관문 통과 → slots reserve.shorts 4/4, 업로드 안 함 · 운영실장 투입 '비축 3→4', n1s_top10과 줄·질문 겹침 0 · 디에서 i=0.65(기본 0.6은 −11.7dB 미달) · w1g1clips_check가 배경 파일 번호를 숫자로 잡던 것 건너뛰게 고침

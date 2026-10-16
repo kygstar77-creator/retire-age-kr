@@ -28,7 +28,7 @@ EOK = set(float(m.group(1)) for m in re.finditer(r'(\d+\.\d+)억원', SRC))
 def texts(x, out, key=''):
     if isinstance(x, dict):
         for k, v in x.items():
-            if k in ('audio', 'n', 'frames', 'fps', 'kind', 'name'): continue
+            if k in ('audio', 'n', 'frames', 'fps', 'kind', 'name', 'bg', 'bg_credits'): continue   # 10/17 PD: bg·bg_credits = 배경 영상 파일 경로·Pexels 주소(화면 글자 아님, 영상 번호가 숫자로 잡힘)
             texts(v, out, k)
     elif isinstance(x, list):
         for v in x: texts(v, out, key)

@@ -11,7 +11,7 @@ import {Flame, F, T, CL} from './fm';
 // 한 번에 9~11자(경쟁 중앙 9.1자) · 숫자는 노랑(#FFD000). 제목: 흰 굵은 글자 2줄, 핵심 낱말 노랑, 최대 92px(경쟁 글자 높이 중앙 4.6% — 안전 영역 너비 812에 맞춰 줄인다)
 // 배경: 장면마다 실사 영상·사진을 화면 전체(1080×1920)에 깐다(경쟁 9/10 실사) · 한 배경 최장 6초(경쟁 장면 길이 중앙 5.0초)
 export const DS = {
-  capCy: 1168, capH: 84, capMax: 72, capMin: 44, capTarget: 10, capLimit: 12,
+  capCy: 1168, capH: 84, capMax: 72, capMin: 44, capTarget: 10, capLimit: 14,
   titleMax: 92, hot: '#FFD000', bigMax: 128, segMax: 6,
   stroke: '#000',
 };
@@ -41,13 +41,16 @@ export const BgLayer: React.FC<{bg: BgSeg[]; W?: number; H?: number}> = ({bg, W 
 // 쇼츠용 어둡게 덮기: 위(제목·답)와 아래(유튜브 제목 자리)는 진하게, 가운데는 사진이 보이게
 export const ShortScrim: React.FC<{hdrEnd: number}> = ({hdrEnd}) => (
   <>
-    <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1920, background: 'rgba(0,0,0,0.18)'}} />
+    <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1920, background: 'rgba(0,0,0,0.12)'}} />
     <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: hdrEnd + 120, background: `linear-gradient(rgba(0,0,0,0.66), rgba(0,0,0,0.5) ${Math.round((hdrEnd / (hdrEnd + 120)) * 100)}%, rgba(0,0,0,0))`}} />
-    <div style={{position: 'absolute', left: 0, top: DS.capCy - 160, width: 1080, height: 1920 - DS.capCy + 160, background: 'linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.55) 30%, rgba(0,0,0,0.78))'}} />
+    <div style={{position: 'absolute', left: 0, top: DS.capCy - 160, width: 1080, height: 1920 - DS.capCy + 160, background: 'linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.35) 30%, rgba(0,0,0,0.5))'}} />
   </>
 );
 
-// 자막 조각: 낱말 단위, 목표 약 10자·최대 12자(공백 포함), 문장 끝에서 끊고 숫자 덩이('1억 6천만원')·한 글자 낱말 뒤는 안 가른다
+// 자막 조각(10/16 22시 사장님 "문장·뜻 단위로 끊는다"): 낱말 단위, 한 조각 최대 14자(공백 포함). 끊는 자리 점수 —
+//   문장부호(.,?!) 뒤·말 이음(~고·~서·~면·~는데·~지만·~니까·~요·~다) 뒤는 끊기 좋음, 꾸미는 말('내·이·그·한·몇·약·같은·지난' 등) 뒤와 숫자 덩이('1억 6천만원') 안·'~의' 뒤는 끊지 않음.
+const CAP_DET = new Set(['내', '이', '그', '저', '한', '두', '세', '네', '몇', '약', '총', '각', '첫', '이번', '지난', '같은', '다른', '이런', '그런', '저런', '모든', '어느', '무슨', '이 돈', '매달', '한 달', '올해', '작년', '지금']);
+const CAP_GOOD = /([.,?!]|고|서|며|면|는데|은데|인데|지만|니까|라서|해서|려면|으면|어요|에요|예요|아요|죠|다|요|게)$/;
 export const capChunks = (t: string) => {
   const out: string[] = [];
   for (const sen of t.split(/(?<=[.?!])\s+/).filter(Boolean)) {
@@ -56,7 +59,15 @@ export const capChunks = (t: string) => {
     const best: number[] = Array(n + 1).fill(Infinity); const prev: number[] = Array(n + 1).fill(0); best[0] = 0;
     for (let j = 1; j <= n; j++) for (let i = 0; i < j; i++) {
       const l = len(i, j); if (l > DS.capLimit && j - i > 1) continue;
-      const c = best[i] + (l - tg) * (l - tg) + (l < 4 ? 60 : 0) + (j < n && /\d[억만천원]*$/.test(w[j - 1]) && /^\d/.test(w[j]) ? 400 : 0) + (j < n && w[j - 1].length === 1 ? 200 : 0); if (c < best[j]) { best[j] = c; prev[j] = i; }
+      const last = w[j - 1];
+      let c = best[i] + 0.6 * (l - tg) * (l - tg) + (l < 4 ? 80 : 0);
+      if (j < n) {
+        if (/\d[억만천원%년월일분]*$/.test(last) && /^\d|^[천만억원]/.test(w[j])) c += 400;          // 숫자 덩이 안
+        if (CAP_DET.has(last) || last.length === 1) c += 300;                             // 꾸미는 말·한 글자 뒤
+        if (/의$/.test(last)) c += 150;
+        if (CAP_GOOD.test(last)) c -= 35;                                                  // 말 이음·문장부호 뒤
+      }
+      if (c < best[j]) { best[j] = c; prev[j] = i; }
     }
     const cut: string[] = []; for (let j = n; j > 0; j = prev[j]) cut.unshift(w.slice(prev[j], j).join(' '));
     out.push(...cut);
@@ -161,8 +172,9 @@ export const Progress: React.FC<{progress: number}> = ({progress}) => (
 );
 
 // ── 질문(안전 영역 맨 위, 크게) + 답(이름표 한 줄 + 큰 숫자 한 줄) ──
-export const Hero: React.FC<{question: string[]; hot: string; answer: Answer; hotColor?: string}> = ({question, hot, answer, hotColor = YEL}) => {
-  const L = layout(question, answer); const ap = L.ap;
+export const Hero: React.FC<{question: string[]; hot: string; answer: Answer; hotColor?: string; until?: number}> = ({question, hot, answer, hotColor = YEL, until}) => {
+  const fr = useCurrentFrame();   // v3(10/16 22시 '같은 숫자 되풀이 금지'): 답 숫자는 첫 장면(until 프레임 전)에만
+  const L = layout(question, until != null && fr >= until ? null : answer); const ap = L.ap;
   return (
     <>
       <div style={{position: 'absolute', left: SZ.x0 + PAD, top: Q_TOP, width: IW, textAlign: 'center'}}>
@@ -241,7 +253,7 @@ export const FitBoard: React.FC<{bw: number; bh: number; frames: number; top: nu
   useEffect(() => { if (box) continueRender(handle); }, [box, handle]);
   const b = box ?? {x0: 0, y0: 0, x1: bw, y1: bh};
   const cw = b.x1 - b.x0, ch = b.y1 - b.y0; const W = SZ.x1 - SZ.x0, H = bottom - top;
-  const s = Math.min((W * 0.95) / cw, (H * 0.95) / ch, 1.05);
+  const s = Math.min((W * 0.97) / cw, (H * 0.95) / ch, card ? 1.4 : 1.05);   // v3 card: 내용이 좁으면 1.4배까지 키운다(10/16 사장님 '작은 막대·작은 글씨')
   const ox = (b.x0 + b.x1) / 2, oy = (b.y0 + b.y1) / 2; const midY = (top + bottom) / 2;
   const hidden: React.CSSProperties = {position: 'absolute', left: 0, top: 0, width: bw, height: bh, opacity: 0, pointerEvents: 'none'};
   return (

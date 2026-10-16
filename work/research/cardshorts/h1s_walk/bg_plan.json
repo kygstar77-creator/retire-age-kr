@@ -1,0 +1,169 @@
+{
+ "name": "h1s_walk",
+ "clips": [
+  {
+   "file": "bg/h1s_walk/34913017.mp4",
+   "id": 34913017,
+   "start": 0,
+   "usable_sec": 30,
+   "what": "보도블록 위를 걷는 발(1인칭), 점자블록",
+   "for": "0 상일동역 출입구까지 걸어서 180m / 고덕역 640m",
+   "page": "https://www.pexels.com/video/walking-on-urban-sidewalk-in-casual-pants-34913017/",
+   "author": "Burak Elçi",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/h1s_walk/34975555.mp4",
+   "id": 34975555,
+   "start": 9.5,
+   "usable_sec": 9,
+   "what": "빈 지하철 승강장에 열차 정차(사람은 19초 이후 멀리 1명)",
+   "for": "0 역까지 걷는 거리가 세 배 넘게 차이",
+   "page": "https://www.pexels.com/video/empty-subway-platform-with-arriving-train-34975555/",
+   "author": "ANUJ TIWARI",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/h1s_walk/6221103.mp4",
+   "id": 6221103,
+   "start": 0,
+   "usable_sec": 17,
+   "what": "아래에서 올려다본 아파트 동들(20초에 주차 표지판이 나와 그 전까지)",
+   "for": "1 84㎡대 평당 값, 그라시움이 20% 높았어요",
+   "page": "https://www.pexels.com/video/footage-of-building-facade-6221103/",
+   "author": "cottonbro studio",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/h1s_walk/4941597.mp4",
+   "id": 4941597,
+   "start": 0,
+   "usable_sec": 16.8,
+   "what": "밝은 바닥 위 주황 운동화로 걷는 발",
+   "for": "2 입주·세대 수 - 지은 해도, 세대 수도 다르니까요",
+   "page": "https://www.pexels.com/video/person-wearing-an-orange-shoes-4941597/",
+   "author": "Valeriia Miller",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/h1s_walk/8322398.mp4",
+   "id": 8322398,
+   "start": 0,
+   "usable_sec": 15.8,
+   "what": "돌바닥 위를 지나가는 여러 사람의 발(얼굴 없음)",
+   "for": "3 아이 학교 길, 200m쯤 덜 걷죠",
+   "page": "https://www.pexels.com/video/people-going-up-the-stairs-8322398/",
+   "author": "Ron Lach",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/h1s_walk/33489923.mp4",
+   "id": 33489923,
+   "start": 0,
+   "usable_sec": 7.2,
+   "what": "열쇠를 쥔 손과 걷는 다리(1인칭, 콘크리트 바닥)",
+   "for": "3 장 보러 가는 길, 이마트까지 960m / 1km",
+   "page": "https://www.pexels.com/video/pov-walking-with-skateboard-on-urban-sidewalk-33489923/",
+   "author": "Bibi Barringer",
+   "license": "https://www.pexels.com/license/"
+  }
+ ],
+ "rejected": [
+  {
+   "id": 13685491,
+   "why": "인도(칸나다어) 지하철 'Lift' 표지판, 외국 노선"
+  },
+  {
+   "id": 37527860,
+   "why": "아파트 벽 단지명·브랜드(Park Dream, 강선)가 읽힘 - 다른 실제 단지로 오인"
+  },
+  {
+   "id": 8799885,
+   "why": "외국 마트 상품 포장·간판 글자"
+  },
+  {
+   "id": 4081583,
+   "why": "태국 마트 가격표·간판 글자"
+  },
+  {
+   "id": 31727226,
+   "why": "보행자 얼굴, 건물 간판"
+  },
+  {
+   "id": 37984173,
+   "why": "대형 광고판 상표(TAG Heuer 등)"
+  },
+  {
+   "id": 5924991,
+   "why": "'SALE' 글자가 읽힘"
+  },
+  {
+   "id": 6214216,
+   "why": "글자 주사위(영문 단어)가 화면에 보임"
+  },
+  {
+   "id": 37101039,
+   "why": "마트 계산대 사람 얼굴·간판"
+  },
+  {
+   "id": 37607822,
+   "why": "ALDI 로고"
+  },
+  {
+   "id": 18870841,
+   "why": "외국 지하철 로고가 열차에 보임"
+  },
+  {
+   "id": 32906662,
+   "why": "13초 이후 승객 얼굴·안내 전광판 글자"
+  },
+  {
+   "id": 29444222,
+   "why": "미국 거리, 외국 느낌"
+  },
+  {
+   "id": 37368966,
+   "why": "북미 주택가, 외국 느낌"
+  },
+  {
+   "id": 12788821,
+   "why": "걸어오는 세 사람 얼굴 정면"
+  },
+  {
+   "id": 8363870,
+   "why": "아이 얼굴 정면(교실)"
+  },
+  {
+   "id": 8363629,
+   "why": "아이 얼굴 정면(교실)"
+  },
+  {
+   "id": 8363865,
+   "why": "아이 얼굴 정면(교실)"
+  },
+  {
+   "id": 8616754,
+   "why": "아이 얼굴 정면(교실)"
+  }
+ ],
+ "not_reviewed": [
+  4251604,
+  4398957,
+  5886777,
+  6871949,
+  7683445,
+  7969484,
+  12153167,
+  13441306,
+  19817134,
+  28217927,
+  30342833,
+  34676841,
+  36192482,
+  37408488,
+  37500922,
+  37527851,
+  37689054,
+  38063990
+ ]
+}

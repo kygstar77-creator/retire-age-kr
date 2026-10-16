@@ -1,0 +1,82 @@
+{
+ "name": "d1s_pension",
+ "clips": [
+  {
+   "file": "bg/d1s_pension/8103766.mp4",
+   "id": 8103766,
+   "start": 0,
+   "usable_sec": 8.9,
+   "what": "검은 천 위 동전·지폐(사람 없음)",
+   "for": "0 연금 없을 때 · 1,000만원 경계",
+   "page": "https://www.pexels.com/video/coins-in-the-bag-8103766/",
+   "author": "MART  PRODUCTION",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/d1s_pension/8657621.mp4",
+   "id": 8657621,
+   "start": 0,
+   "usable_sec": 25.9,
+   "what": "약국 계산대 위 노인 손이 약병을 주고받음(손만)",
+   "for": "1 국민연금을 받는 경우, 월 150만원",
+   "page": "https://www.pexels.com/video/close-up-video-of-a-person-buying-medicine-8657621/",
+   "author": "cottonbro studio",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/d1s_pension/6964001.mp4",
+   "id": 6964001,
+   "start": 0,
+   "usable_sec": 12,
+   "what": "서류를 들고 계산기를 두드리는 손",
+   "for": "2 이걸로 계산하면 건보료 월 6만 1,000원",
+   "page": "https://www.pexels.com/video/a-person-computing-using-a-calculator-6964001/",
+   "author": "Mikhail Nilov",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/d1s_pension/7710748.mp4",
+   "id": 7710748,
+   "start": 0,
+   "usable_sec": 13.1,
+   "what": "영수증 더미 옆 분홍 계산기를 누르는 손(얼굴은 머리카락에 가림)",
+   "for": "2 1,001만원이면 12만 8,860원",
+   "page": "https://www.pexels.com/video/woman-calculating-7710748/",
+   "author": "https://kaboompics.com/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/d1s_pension/30838895.mp4",
+   "id": 30838895,
+   "start": 0,
+   "usable_sec": 12.6,
+   "what": "수액 점적통 근접, 뒤로 흐릿한 수술실(마스크·모자)",
+   "for": "3 한 달 6만 7,860원, 1년 81만 4,320원 차이",
+   "page": "https://www.pexels.com/video/intravenous-drip-in-a-sterile-operating-room-30838895/",
+   "author": "Viktors Duks",
+   "license": "https://www.pexels.com/license/"
+  }
+ ],
+ "rejected": [
+  {
+   "id": 29241126,
+   "why": "총괄 10/16: 너무 어두워 디자인 관문에서 배경 없음으로 잡힘(19~22·40~43초)"
+  }
+ ],
+ "not_reviewed": [
+  3943961,
+  6130226,
+  6998178,
+  6998654,
+  7546744,
+  7710747,
+  8103673,
+  8124299,
+  8344355,
+  8381712,
+  8657615,
+  9573582,
+  34719386,
+  34993441
+ ]
+}

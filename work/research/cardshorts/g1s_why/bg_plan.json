@@ -1,0 +1,95 @@
+{
+ "name": "g1s_why",
+ "clips": [
+  {
+   "file": "bg/g1s_why/7361127.mp4",
+   "id": 7361127,
+   "start": 0,
+   "usable_sec": 10,
+   "what": "두 손에 가득 든 금 원보(금괴 모형), 얼굴 없음",
+   "for": "0 국제 금값은 달러로 7% 가까이 올랐거든요",
+   "page": "https://www.pexels.com/video/close-up-of-gold-sycees-7361127/",
+   "author": "Angela Roma",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/g1s_why/7080974.mp4",
+   "id": 7080974,
+   "start": 0,
+   "usable_sec": 12.8,
+   "what": "나무 상자 위 검은 단지에서 쏟아진 금화",
+   "for": "0 왜 한국에서 산 금은 떨어졌을까 / 956만원",
+   "page": "https://www.pexels.com/video/video-of-gold-coins-and-a-pot-7080974/",
+   "author": "RDNE Stock project",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/g1s_why/33212388.mp4",
+   "id": 33212388,
+   "start": 0,
+   "usable_sec": 32,
+   "what": "어두운 바탕에 금·은색 달러 기호 동전이 회전(3D)",
+   "for": "1 첫 조각, 달러 금값 7% 올랐죠",
+   "page": "https://www.pexels.com/video/digital-gold-and-silver-coins-animation-33212388/",
+   "author": "Tim Friedrich Weber",
+   "license": "https://www.pexels.com/license/"
+  }
+ ],
+ "rejected": [
+  {
+   "id": 6590515,
+   "why": "6590509와 같은 촬영(10달러) 중복"
+  },
+  {
+   "id": 8369982,
+   "why": "웃는 남성 얼굴이 정면 가까이"
+  },
+  {
+   "id": 7219294,
+   "why": "칵테일 셰이커, 주제와 무관"
+  },
+  {
+   "id": 7080933,
+   "why": "성 패트릭 데이 클로버 장식, 외국 명절 느낌"
+  },
+  {
+   "id": 8480284,
+   "why": "차트 앱 화면의 버튼·글자가 보임"
+  },
+  {
+   "id": 8348727,
+   "why": "등 돌린 남성과 차트 화면, 시세판 클립으로 충분해 순위 낮음"
+  },
+  {
+   "id": 6700254,
+   "why": "총괄 10/16: 달러 지폐 도안 초상"
+  },
+  {
+   "id": 6590509,
+   "why": "총괄 10/16: 달러 지폐 도안 초상(실존 인물 얼굴 규칙)"
+  },
+  {
+   "id": 38431825,
+   "why": "총괄 10/16: 배경 시세판 숫자가 글자로 잡힘(안전 영역 관문 11·32초)"
+  },
+  {
+   "id": 7579943,
+   "why": "총괄 10/16: 시세 전광판 숫자(안전 영역 관문 13~17·33~36초)"
+  }
+ ],
+ "not_reviewed": [
+  4836678,
+  6148999,
+  6590514,
+  7080843,
+  7082893,
+  7082895,
+  7249084,
+  7254961,
+  8184066,
+  8855209,
+  27452884,
+  29587251,
+  36092430
+ ]
+}

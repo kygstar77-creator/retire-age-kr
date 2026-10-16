@@ -1,0 +1,133 @@
+{
+ "name": "n1s_top10",
+ "clips": [
+  {
+   "file": "bg/n1s_top10/29918215.mp4",
+   "id": 29918215,
+   "start": 13,
+   "usable_sec": 33,
+   "what": "새벽 한강 위를 나는 드론, 다리와 강변 아파트",
+   "for": "0 10억원은 어디쯤 / 상위 10% 문턱 11억 20만원",
+   "page": "https://www.pexels.com/video/aerial-view-of-seongsu-bridge-at-sunset-seoul-29918215/",
+   "author": "Mohammed  Mehdaoui",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/n1s_top10/37391014.mp4",
+   "id": 37391014,
+   "start": 0,
+   "usable_sec": 12.5,
+   "what": "흐린 날 한강 다리 너머 고층 건물",
+   "for": "1 가운데 가구, 중앙값 2억 3,860만원",
+   "page": "https://www.pexels.com/video/urban-winter-skyline-with-modern-bridge-37391014/",
+   "author": "Mallesh Baithi",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/n1s_top10/19577787.mp4",
+   "id": 19577787,
+   "start": 0,
+   "usable_sec": 8.5,
+   "what": "눈 덮인 한강변 철교와 아파트",
+   "for": "1 거의 그대로라고 봐도 되는 크기",
+   "page": "https://www.pexels.com/video/highway-of-winter-19577787/",
+   "author": "kangsu lee",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/n1s_top10/37763965.mp4",
+   "id": 37763965,
+   "start": 0,
+   "usable_sec": 21.5,
+   "what": "한강과 남산 서울타워",
+   "for": "2 위로 갈수록 반대, 경계선이 올랐어요",
+   "page": "https://www.pexels.com/video/scenic-seoullo-bridge-over-han-river-37763965/",
+   "author": "Mallesh Baithi",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/n1s_top10/11745565.mp4",
+   "id": 11745565,
+   "start": 0,
+   "usable_sec": 15.1,
+   "what": "밤 고층 아파트 스카이라인과 가로등",
+   "for": "2 상위 10% 문턱 1년 새 5,428만원 올라",
+   "page": "https://www.pexels.com/video/people-in-city-at-night-11745565/",
+   "author": "Mike Hongkong 2",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/n1s_top10/39468111.mp4",
+   "id": 39468111,
+   "start": 0,
+   "usable_sec": 35.3,
+   "what": "밤 도시 불빛을 넓게 내려다봄(어두움)",
+   "for": "3 한 달로 나누면 452만원꼴",
+   "page": "https://www.pexels.com/video/aerial-night-view-over-cityscape-39468111/",
+   "author": "MELQUIZEDEQUE ALMEIDA",
+   "license": "https://www.pexels.com/license/"
+  }
+ ],
+ "rejected": [
+  {
+   "id": 40049367,
+   "why": "건물마다 한글 간판이 크게 읽힘"
+  },
+  {
+   "id": 37500922,
+   "why": "아파트 벽 단지명 '강선 1002 한양'이 읽힘"
+  },
+  {
+   "id": 28883548,
+   "why": "시부야 교차로, 사람 얼굴·IKEA 등 간판"
+  },
+  {
+   "id": 35254957,
+   "why": "베트남 거리, 사람 얼굴·간판"
+  },
+  {
+   "id": 36092427,
+   "why": "외국 지폐(1000)"
+  },
+  {
+   "id": 6326861,
+   "why": "달러 세는 손, 한국 순자산 편에 외국 돈"
+  },
+  {
+   "id": 6266433,
+   "why": "달러 다발, 한국 순자산 편에 외국 돈"
+  },
+  {
+   "id": 5920608,
+   "why": "남성 얼굴 정면, 유로 지폐"
+  },
+  {
+   "id": 11335976,
+   "why": "외국 고층 건물 꼭대기 조명 글자·로고"
+  },
+  {
+   "id": 29025308,
+   "why": "미국 도시 불꽃·야구장, 외국 느낌"
+  }
+ ],
+ "not_reviewed": [
+  26690701,
+  29938300,
+  31739421,
+  34676841,
+  34993441,
+  35451155,
+  36030666,
+  36092428,
+  36092437,
+  36384862,
+  36516358,
+  36947447,
+  37527851,
+  37674124,
+  38063990,
+  38489829,
+  39569280,
+  40187584
+ ]
+}

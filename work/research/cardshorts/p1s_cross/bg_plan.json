@@ -1,0 +1,83 @@
+{
+ "name": "p1s_cross",
+ "clips": [
+  {
+   "file": "bg/p1s_cross/8164796.mp4",
+   "id": 8164796,
+   "start": 0,
+   "usable_sec": 9.5,
+   "what": "노인의 손이 아이 손을 잡음(위에서 내려다봄, 얼굴 없음)",
+   "for": "0 제때 받으면 매달 100만원",
+   "page": "https://www.pexels.com/video/people-holding-hands-for-support-8164796/",
+   "author": "Kindel Media",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/p1s_cross/7944932.mp4",
+   "id": 7944932,
+   "start": 2.9,
+   "usable_sec": 17,
+   "what": "붉은 모래 위 나무 모래시계",
+   "for": "1 5년 당기면 70만원, 한 해 6%씩 깎임",
+   "page": "https://www.pexels.com/video/a-hourglass-7944932/",
+   "author": "Ron Lach",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/p1s_cross/5265090.mp4",
+   "id": 5265090,
+   "start": 0,
+   "usable_sec": 26.2,
+   "what": "노인이 팔에 손을 얹고 있는 모습(손·옷만)",
+   "for": "3 미루는 쪽이 넘어서는 건 84세 직전",
+   "page": "https://www.pexels.com/video/two-people-wearing-trench-coats-5265090/",
+   "author": "cottonbro studio",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/p1s_cross/7703941.mp4",
+   "id": 7703941,
+   "start": 0,
+   "usable_sec": 12,
+   "what": "베이지 바탕 모래시계와 석류",
+   "for": "4 1년만 당기거나 미루면",
+   "page": "https://www.pexels.com/video/an-hourglass-on-a-stone-slab-7703941/",
+   "author": "Ivan S",
+   "license": "https://www.pexels.com/license/"
+  }
+ ],
+ "rejected": [
+  {
+   "id": 33570473,
+   "why": "공원 벤치의 히잡 쓴 여성, 외국 느낌 강함"
+  },
+  {
+   "id": 7034348,
+   "why": "총괄 10/16: 자명종 숫자판이 글자로 잡힘(안전 영역 관문 9·31초)"
+  },
+  {
+   "id": 8322053,
+   "why": "총괄 10/16: 괘종시계 숫자판(같은 이유)"
+  }
+ ],
+ "not_reviewed": [
+  3943961,
+  4661334,
+  5271483,
+  5651768,
+  5849643,
+  6129228,
+  6782216,
+  7356018,
+  8322054,
+  8795162,
+  8795650,
+  8795651,
+  8795653,
+  11267667,
+  19798266,
+  35332817,
+  36804382,
+  38296190
+ ]
+}

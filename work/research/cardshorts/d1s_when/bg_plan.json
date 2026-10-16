@@ -1,0 +1,83 @@
+{
+ "name": "d1s_when",
+ "clips": [
+  {
+   "file": "bg/d1s_when/8103673.mp4",
+   "id": 8103673,
+   "start": 0,
+   "usable_sec": 10,
+   "what": "검은 천 위 동전·지폐 (5.8초부터 손만 등장)",
+   "for": "0 금융소득 1,000만원의 경계",
+   "page": "https://www.pexels.com/video/person-picking-up-coins-8103673/",
+   "author": "MART  PRODUCTION",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/d1s_when/7317430.mp4",
+   "id": 7317430,
+   "start": 0,
+   "usable_sec": 11.5,
+   "what": "나무 책상 위 갈색 봉투를 열고 흰 종이를 꺼내는 손",
+   "for": "1 고지서에는 언제 반영되나 - 다음 달 고지서에 나오는 건 아닙니다",
+   "page": "https://www.pexels.com/video/brown-enveloped-with-lettter-inside-7317430/",
+   "author": "Angela Roma",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/d1s_when/39597264.mp4",
+   "id": 39597264,
+   "start": 11.4,
+   "usable_sec": 8.3,
+   "what": "흐린 우편물 더미 위 빈 봉투 (앞부분은 소인·손글씨 주소가 보여 11.4초부터)",
+   "for": "1 전년도 소득이 11월 고지서부터 다음 해 10월까지",
+   "page": "https://www.pexels.com/video/vintage-letters-and-stamps-close-up-39597264/",
+   "author": "Tolga deniz Aran",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/d1s_when/7316359.mp4",
+   "id": 7316359,
+   "start": 0,
+   "usable_sec": 10.4,
+   "what": "흰 카드를 갈색 봉투에 넣는 손",
+   "for": "3 고지서가 생각과 다르면",
+   "page": "https://www.pexels.com/video/a-person-inserting-a-blank-paper-on-an-envelope-7316359/",
+   "author": "Angela Roma",
+   "license": "https://www.pexels.com/license/"
+  }
+ ],
+ "rejected": [
+  {
+   "id": 8103766,
+   "why": "8103673과 같은 촬영(동전·지폐) 중복"
+  },
+  {
+   "id": 19798255,
+   "why": "탁상 달력에 '2024'가 읽힘(대본 2026년과 어긋남)"
+  },
+  {
+   "id": 13511897,
+   "why": "플래너 속 포르투갈어 'SEMANA' 등 글자가 읽힘"
+  },
+  {
+   "id": 6335709,
+   "why": "봉투에 인쇄된 이름·주소(Emily Cooper 등)가 읽힘"
+  },
+  {
+   "id": 35332817,
+   "why": "총괄 10/16: 일력 날짜 숫자가 크게 보임(원문 아닌 숫자)"
+  }
+ ],
+ "not_reviewed": [
+  3943961,
+  4551941,
+  5368423,
+  6212545,
+  6282308,
+  7250670,
+  7356018,
+  7362695,
+  7924509,
+  19798266
+ ]
+}

@@ -1,0 +1,73 @@
+{
+ "name": "h1s_gap",
+ "note": "총괄 10/16: h1s_helio(서울 아파트·한강)·h1s_walk(아파트 올려다봄) 눈 검사 통과 클립 재사용 — 주제(고덕동 전세→헬리오시티·포레온 이사 비용) 같은 동네 아파트",
+ "clips": [
+  {
+   "file": "bg/h1s_helio/35451155.mp4",
+   "id": 35451155,
+   "start": 0,
+   "usable_sec": 7.4,
+   "what": "햇빛 반짝이는 강과 다리, 건너편 아파트 스카이라인",
+   "for": "0 봄에는 20억짜리 거래도",
+   "page": "https://www.pexels.com/video/sunlit-river-view-with-city-skyline-35451155/",
+   "author": "Kateryna Hnidash",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/h1s_helio/6221104.mp4",
+   "id": 6221104,
+   "start": 0,
+   "usable_sec": 7.8,
+   "what": "흰 하늘 아래 고층 아파트 한 동 올려다봄",
+   "for": "0 중개사 없이 직접 신고한 직거래",
+   "page": "https://www.pexels.com/video/a-high-rise-building-6221104/",
+   "author": "cottonbro studio",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/h1s_helio/39942785.mp4",
+   "id": 39942785,
+   "start": 0,
+   "usable_sec": 11.4,
+   "what": "나뭇잎 사이로 올려다본 흰 고층 아파트",
+   "for": "1 같은 달 4건, 7억 넘게 차이",
+   "page": "https://www.pexels.com/video/modern-high-rise-building-against-blue-sky-39942785/",
+   "author": "Cá Bảo",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/h1s_helio/19816673.mp4",
+   "id": 19816673,
+   "start": 0,
+   "usable_sec": 8.7,
+   "what": "밤 고층 건물 창문 불빛(층이 보임)",
+   "for": "2 원자료 칸 그대로 - 층이 달랐다는 건 알 수 있지만",
+   "page": "https://www.pexels.com/video/two-skyscrapers-at-night-19816673/",
+   "author": "Sergei Garenko",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/h1s_helio/32107131.mp4",
+   "id": 32107131,
+   "start": 0,
+   "usable_sec": 13.8,
+   "what": "드론으로 본 고층 아파트 단지",
+   "for": "3 한 건이 아니라 한 달 전체를 보기로",
+   "page": "https://www.pexels.com/video/aerial-view-of-modern-residential-towers-32107131/",
+   "author": "Toàn BDS",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/h1s_walk/6221103.mp4",
+   "id": 6221103,
+   "start": 0,
+   "usable_sec": 17,
+   "what": "아래에서 올려다본 아파트 동들(20초에 주차 표지판이 나와 그 전까지)",
+   "for": "1 84㎡대 평당 값, 그라시움이 20% 높았어요",
+   "page": "https://www.pexels.com/video/footage-of-building-facade-6221103/",
+   "author": "cottonbro studio",
+   "license": "https://www.pexels.com/license/"
+  }
+ ],
+ "rejected": []
+}

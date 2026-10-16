@@ -1,7 +1,7 @@
 # 예약 쇼츠 디자인 기준 v3 재렌더(10/16 영상 디자인 총괄) — 화면만 새 틀, 소리는 지난 판(_sz2_ds.mp4) 트랙 그대로(-c copy)
 #   py -3.12 work/research/cardshorts/v3redo.py <편>   → work/video/out/<편>_v3_ds.mp4 + 관문(안전 영역·디자인·0초 빈 곳) + <편>/sheet_v3.png
 # 틀: C1S(c1s_index) · M1S(m1s_index) · C2P(c2p_index) — upload.json layout으로 고른다. 배경 props는 bgprops.py가 먼저(C2P는 그림이 이미 실사).
-import os, sys, json, subprocess, shutil
+import os, sys, json, subprocess, shutil, re
 sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.normpath(os.path.join(HERE, '..', '..')); REPO = os.path.dirname(WORK); VID = os.path.join(WORK, 'video')
@@ -11,6 +11,26 @@ COMP = {'c1clip': ('src/c1s_index.ts', 'C1S'), None: ('src/c1s_index.ts', 'C1S')
 
 def ffmpeg():
     import imageio_ffmpeg; return imageio_ffmpeg.get_ffmpeg_exe()
+
+
+EOK = re.compile(r'(\d+)\.(\d{1,2})억(원)?')
+
+
+def eok_text(t):
+    def f(m):
+        a, b = int(m.group(1)), int((m.group(2) + '0')[:2]) * 100   # 만원
+        head = f'{a}억' if a else ''
+        if not b: return head + (m.group(3) or '') if head else '0원'
+        tail = f'{b // 1000}천만원' if b % 1000 == 0 else f'{b:,}만원'
+        return (head + ' ' + tail) if head else tail
+    return EOK.sub(f, t)
+
+
+def fmt_eok(o, key=''):
+    if isinstance(o, dict): return {k: fmt_eok(v, k) for k, v in o.items()}
+    if isinstance(o, list): return [fmt_eok(v, key) for v in o]
+    if isinstance(o, str) and key not in ('audio', 'src', 'pic', 'text'): return eok_text(o)
+    return o
 
 
 def nframes(p):
@@ -40,6 +60,7 @@ def main(name):
     if comp != 'C2P' and not props.get('bg'): print('배경 props 없음 — bgprops.py 먼저'); return 2
     # 화면만 렌더(--muted) — 소리는 지난 판 트랙을 붙인다. 옛 wav가 public에서 빠진 편(d1s_when 10/16)도 렌더되게 말 파일 자리를 무음으로 바꾼 임시 props를 쓴다(숫자·글자·프레임 그대로).
     tmp = f'_v3tmp_{name}.json'; tp = json.loads(json.dumps(props))
+    tp = fmt_eok(tp)   # 10/16 22시 사장님: '20.00억·9.50억' 같은 억 소수 금지 → '20억'·'9억 5천만원'(값 같음, 화면 글자만)
     for s in tp['scenes']:
         for l in s.get('lines', []):
             if l.get('audio'): l['audio'] = 'audio/_silence.wav'
@@ -48,7 +69,7 @@ def main(name):
     if '--skip-render' not in sys.argv or not os.path.exists(v):
         bdir = 'C:/Users/Public/rtmp/bundles/' + os.path.basename(idx).split('_')[0]   # 미리 묶은 번들(npx remotion bundle) — 같이 도는 렌더끼리 webpack 캐시 충돌(EPERM rmdir) 피함
         src = bdir if os.path.exists(os.path.join(bdir, 'index.html')) else idx
-        rc = subprocess.call(['npx', 'remotion', 'render', src, comp, v, f'--props={tmp}', '--muted', '--pixel-format=yuv420p', '--concurrency=6', '--bundle-cache=false'], cwd=VID, shell=(os.name == 'nt'), env=dict(os.environ, TEMP=tdir, TMP=tdir))
+        rc = subprocess.call(['npx', 'remotion', 'render', src, comp, v, f'--props={tmp}', '--muted', '--pixel-format=yuv420p', '--concurrency=3', '--bundle-cache=false', '--timeout=180000'], cwd=VID, shell=(os.name == 'nt'), env=dict(os.environ, TEMP=tdir, TMP=tdir))
         if rc: print('렌더 실패', rc); return rc
     if nframes(v) != nframes(old): print('길이 다름', nframes(v), nframes(old)); return 3
     subprocess.check_call([ffmpeg(), '-y', '-loglevel', 'error', '-i', v, '-i', old, '-map', '0:v:0', '-map', '1:a:0', '-c', 'copy', vd])

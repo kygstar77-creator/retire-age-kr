@@ -1,0 +1,72 @@
+{
+ "name": "r1s_gap",
+ "clips": [
+  {
+   "file": "bg/r1s_gap/35544498.mp4",
+   "id": 35544498,
+   "start": 0,
+   "usable_sec": 9.2,
+   "what": "태블릿 캔들 차트를 손가락으로 짚음(9.2초 이후는 모니터 화면 작은 글자)",
+   "for": "0 SCHD는 16% 가까이, SPY는 10% 조금 넘게",
+   "page": "https://www.pexels.com/video/dynamic-cryptocurrency-trading-on-tablets-and-screens-35544498/",
+   "author": "Jakub Zerdzicki",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/r1s_gap/37676204.mp4",
+   "id": 37676204,
+   "start": 0,
+   "usable_sec": 14.5,
+   "what": "펜으로 상승 캔들 차트에 동그라미",
+   "for": "0 세금 떼기 전에도 뗀 뒤에도 SCHD가 맨 위",
+   "page": "https://www.pexels.com/video/stylus-analyzing-cryptocurrency-charts-37676204/",
+   "author": "Jakub Zerdzicki",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/r1s_gap/35606106.mp4",
+   "id": 35606106,
+   "start": 0,
+   "usable_sec": 19.4,
+   "what": "태블릿 차트를 펜으로 짚고 뒤로 모니터 차트",
+   "for": "2 순위는 그대로, 넣는 날이 바뀌면 순위도 바뀌었죠",
+   "page": "https://www.pexels.com/video/professional-trading-analysis-on-tablet-and-desktop-35606106/",
+   "author": "Jakub Zerdzicki",
+   "license": "https://www.pexels.com/license/"
+  }
+ ],
+ "rejected": [
+  {
+   "id": 8369957,
+   "why": "8369976과 같은 촬영 중복"
+  },
+  {
+   "id": 36639391,
+   "why": "터키 리라 지폐가 크게 보임, 외국 돈"
+  },
+  {
+   "id": 7010551,
+   "why": "유리병에 손글씨 'where to next?' 글자가 읽힘"
+  },
+  {
+   "id": 8369976,
+   "why": "총괄 10/16: 비트코인 기호(상표성 표시)"
+  },
+  {
+   "id": 6590509,
+   "why": "총괄 10/16: 달러 지폐 도안 초상(실존 인물 얼굴 규칙)"
+  },
+  {
+   "id": 6700250,
+   "why": "총괄 10/16: 달러 지폐 도안 초상"
+  }
+ ],
+ "not_reviewed": [
+  3943961,
+  6282309,
+  6590515,
+  34828872,
+  34839526,
+  35771140
+ ]
+}

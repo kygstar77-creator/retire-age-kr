@@ -306,7 +306,7 @@ const Frame: React.FC<{s: SScene; from: number; total: number; first: boolean; p
   const k = Math.floor(f / 75); const pin = (k % 2) * interpolate(f - k * 75, [0, 6], [0, 1], CL) + (1 - (k % 2)) * (k ? interpolate(f - k * 75, [0, 6], [1, 0], CL) : 0);
   const zoom = interpolate(f, [0, s.frames], [1, 1.015], CL) + 0.03 * pin;
   const body = s.data.full ? <Sequence from={-90} layout="none"><Body s={s} /></Sequence> : <Body s={s} />;
-  const L = layout(p.question, p.answer as Answer);
+  const L = layout(p.question, (first ? p.answer : null) as Answer);   // v3 10/16 22시: 답 숫자는 첫 장면에만 — 뒤 장면은 판이 그 자리까지 커진다
   return (
     <AbsoluteFill>
       <FitBoard bw={BW} bh={BH} frames={s.frames} top={L.boardTop} bottom={L.boardBottom} zoom={zoom} card={!!(p.bg && p.bg.length)}>{body}</FitBoard>
@@ -325,7 +325,7 @@ export const C1S: React.FC<C1SProps> = (p) => {
       <style>{FONT_CSS}</style>
       <Backdrop question={p.question} answer={p.answer as Answer} bg={p.bg} />
       {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Frame s={s} from={from} total={total} first={i === 0} p={p} /></Sequence>; from += s.frames; return el; })}
-      <Hero question={p.question} hot={p.hot} answer={p.answer as Answer} />
+      <Hero question={p.question} hot={p.hot} answer={p.answer as Answer} until={p.scenes[0]?.frames} />
       <SourceLine text={p.base} dark={!!(p.bg && p.bg.length)} />
     </AbsoluteFill>
   );

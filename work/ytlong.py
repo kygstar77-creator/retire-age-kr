@@ -37,6 +37,14 @@ def gate(ep):
     # D-1은 '평균 7.6 — 통과선 8 미달'인 채 공개 조건을 사람이 따로 챙겼다 → 판정을 코드가 읽는다.
     # 본문의 '통과'는 편집 통과·통과선 등과 섞여 못 믿는다(D-1이 '편집 통과 10/1'로 빠져나감) → 맨 앞이 '판정:'인 줄 하나만 본다.
     #   예) 판정: 통과 — 평균 7.47(통과선 7) · youtube-loop 20:51
+    # 대본 AI 티(10/17 PD): N-2가 `aitell.py script` 실패('1할'·'1할 5푼')인 채 예약까지 갔다 — ytupload는 제목·설명만, 이 관문은 대본을 안 봤다.
+    import aitell
+    try:
+        ok_s, _, _, _, bad_s = aitell.script_check(aitell.script_text(ep))
+        hab = aitell.script_habits(aitell.script_lines(ep), aitell.script_lines(ep, 'say'))
+        if not ok_s or hab: bad.append('대본 aitell script 실패 — ' + ' · '.join(bad_s[:3] + [f'말 습관 {len(hab)}건'] * bool(hab)) + f' — py -3.12 work/aitell.py script {ep}')
+    except Exception as e:
+        bad.append(f'대본 aitell script 못 돌림({e})')
     rv = os.path.join(ep, 'review.md')
     if not os.path.exists(rv): bad.append('대본 심사 review.md 없음(심사 3명 점수·판정)')
     else:

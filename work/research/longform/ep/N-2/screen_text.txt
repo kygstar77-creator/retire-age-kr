@@ -19,17 +19,17 @@
 [scenes.1.data.tags.1] 며칠만 일한 사람도 들어 있음
 [scenes.1.data.conv.0.0] 통장 180만원
 [scenes.1.data.conv.0.1] 세전 약 200만원
-[scenes.1.data.conv.0.2] 통장에 1할쯤 더하기
+[scenes.1.data.conv.0.2] 통장에 10%쯤 더하기
 [scenes.1.data.conv.1.0] 통장 300만원 넘으면
-[scenes.1.data.conv.1.1] 1할 5푼쯤 더하기
+[scenes.1.data.conv.1.1] 15%쯤 더하기
 [scenes.1.data.conv.1.2] 세금이 늘어서
 [scenes.1.lines.0.text] 숫자는 국가데이터처, 옛 통계청이 낸 직장인 월급 통계입니다.
 [scenes.1.lines.1.text] 재작년 12월 한 달 월급이에요. 조금 지난 숫자지만, 이 통계로는 가장 새것입니다.
 [scenes.1.lines.2.text] 세금 떼기 전 금액이고, 아르바이트처럼 그달 며칠만 일한 사람도 들어 있어요. 그래서 줄 맨 뒤쪽엔 아주 적은 월급도 섞여 있습니다.
-[scenes.1.lines.3.text] 세금 떼기 전 월급을 모르시면, 통장에 들어오는 돈에 1할쯤 더해 보세요.
+[scenes.1.lines.3.text] 세금 떼기 전 월급을 모르시면, 통장에 들어오는 돈에 10%쯤 더해 보세요.
 [scenes.1.lines.4.text] 통장에 180만원이 들어오면, 세전으로는 200만원쯤입니다.
 [scenes.1.lines.4.cap] 세전 200만원 → 통장 1,808,470원(실수령/세전 0.904)
-[scenes.1.lines.5.text] 통장에 300만원 넘게 들어오면, 세금이 늘어서 1할 5푼쯤 더해 보세요.
+[scenes.1.lines.5.text] 통장에 300만원 넘게 들어오면, 세금이 늘어서 15%쯤 더해 보세요.
 [scenes.1.lines.5.cap] 세전 350만원 = 통장 × 1.14쯤 · 세전 450만원 = 통장 × 1.18쯤 (실수령/세전 0.876·0.849)
 [scenes.2.key] s2
 [scenes.2.title] 세전 150만원

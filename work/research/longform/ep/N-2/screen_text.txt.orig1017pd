@@ -1,0 +1,137 @@
+# 화면 글자 — N-2 (lfrender.py text가 만듦. 여기를 고치지 말고 대본·props·tsx를 고친 뒤 다시 뽑는다)
+# 그래프 제목·부제·출처·자막(lines.text)·막대 이름·코드에 박힌 글자. 썸네일 문구는 그림이라 안 들어간다.
+
+## props: video/n2.json
+[scenes.0.key] s0
+[scenes.0.title] 직장인 100명, 월급 순서로 한 줄
+[scenes.0.sub] 맨 앞 1등 = 가장 많이 받는 사람
+[scenes.0.source] 국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준
+[scenes.0.data.big] 100명
+[scenes.0.data.bigSub] 우리나라 직장인 전체를 100명으로 줄이면
+[scenes.0.lines.0.text] 우리나라 직장인 전체를 100명으로 줄여서, 월급 순서대로 한 줄로 세워 보겠습니다.
+[scenes.0.lines.1.text] 맨 앞에 서는 1등이 가장 많이 받는 사람이고, 맨 뒤가 가장 적게 받는 사람입니다.
+[scenes.0.lines.2.text] 내 월급이면 몇 등쯤일까요? 맨 뒤에서 출발해서, 앞으로 걸어가 보겠습니다.
+[scenes.1.key] s1
+[scenes.1.title] 이 숫자는 어디서 왔나
+[scenes.1.sub] 국가데이터처(옛 통계청) · 2024년 12월 한 달 월급
+[scenes.1.source] 국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준 · 통장 금액 = 파이어맵 월급 계산기(2026년 간이세액표·4대보험, 1인·식대 비과세 20만원 가정)
+[scenes.1.data.tags.0] 세금 떼기 전(세전)
+[scenes.1.data.tags.1] 며칠만 일한 사람도 들어 있음
+[scenes.1.data.conv.0.0] 통장 180만원
+[scenes.1.data.conv.0.1] 세전 약 200만원
+[scenes.1.data.conv.0.2] 통장에 1할쯤 더하기
+[scenes.1.data.conv.1.0] 통장 300만원 넘으면
+[scenes.1.data.conv.1.1] 1할 5푼쯤 더하기
+[scenes.1.data.conv.1.2] 세금이 늘어서
+[scenes.1.lines.0.text] 숫자는 국가데이터처, 옛 통계청이 낸 직장인 월급 통계입니다.
+[scenes.1.lines.1.text] 재작년 12월 한 달 월급이에요. 조금 지난 숫자지만, 이 통계로는 가장 새것입니다.
+[scenes.1.lines.2.text] 세금 떼기 전 금액이고, 아르바이트처럼 그달 며칠만 일한 사람도 들어 있어요. 그래서 줄 맨 뒤쪽엔 아주 적은 월급도 섞여 있습니다.
+[scenes.1.lines.3.text] 세금 떼기 전 월급을 모르시면, 통장에 들어오는 돈에 1할쯤 더해 보세요.
+[scenes.1.lines.4.text] 통장에 180만원이 들어오면, 세전으로는 200만원쯤입니다.
+[scenes.1.lines.4.cap] 세전 200만원 → 통장 1,808,470원(실수령/세전 0.904)
+[scenes.1.lines.5.text] 통장에 300만원 넘게 들어오면, 세금이 늘어서 1할 5푼쯤 더해 보세요.
+[scenes.1.lines.5.cap] 세전 350만원 = 통장 × 1.14쯤 · 세전 450만원 = 통장 × 1.18쯤 (실수령/세전 0.876·0.849)
+[scenes.2.key] s2
+[scenes.2.title] 세전 150만원
+[scenes.2.sub] 100명 중 79등쯤 · 아직 줄 뒤쪽
+[scenes.2.source] 국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준
+[scenes.2.data.money] 세전 150만원
+[scenes.2.lines.0.text] 먼저 세전 150만원. 79등쯤입니다.
+[scenes.2.lines.0.cap] 월 150만원 이상 79.4%
+[scenes.2.lines.1.text] 아직은 줄 뒤쪽에 서 있는 셈이에요.
+[scenes.3.key] s3
+[scenes.3.title] 세전 250만원
+[scenes.3.sub] 100명 중 59등쯤 · 아직 절반보다 뒤
+[scenes.3.source] 국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준
+[scenes.3.data.money] 세전 250만원
+[scenes.3.lines.0.text] 다음은 세전 250만원. 59등쯤입니다.
+[scenes.3.lines.0.cap] 월 250만원 이상 58.5%
+[scenes.3.lines.1.text] 그 사이 월급이면, 등수도 그 사이 어딘가예요.
+[scenes.3.lines.2.text] 아직 줄 절반보다 뒤입니다.
+[scenes.4.key] s4
+[scenes.4.title] 줄 한가운데, 50등
+[scenes.4.sub] 이 사람보다 많이 받는 사람 절반 · 적게 받는 사람 절반
+[scenes.4.source] 국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준 · 통장 금액 = 파이어맵 월급 계산기(2026년 간이세액표·4대보험, 1인·식대 비과세 20만원 가정)
+[scenes.4.data.items.0.big] 50등은?
+[scenes.4.data.items.0.small] 100명 줄 딱 한가운데
+[scenes.4.data.items.1.big] 290만원
+[scenes.4.data.items.1.small] 세전 기준 · 통장 약 260만원
+[scenes.4.lines.0.text] 그럼 줄 딱 한가운데, 50등은 얼마를 받을까요?
+[scenes.4.lines.1.text] 세전 290만원쯤입니다. 이 사람보다 많이 받는 사람이 절반, 적게 받는 사람이 절반이에요.
+[scenes.4.lines.1.cap] 가운데 288만원 · 통장 2,568,400원
+[scenes.5.key] s5
+[scenes.5.title] 세전 350만원
+[scenes.5.sub] 100명 중 38등쯤 · 줄 앞쪽 절반
+[scenes.5.source] 국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준
+[scenes.5.data.money] 세전 350만원
+[scenes.5.lines.0.text] 세전 350만원. 38등쯤입니다.
+[scenes.5.lines.0.cap] 월 350만원 이상 38.4%
+[scenes.5.lines.1.text] 이제 줄 앞쪽 절반에 들어왔어요.
+[scenes.6.key] s6
+[scenes.6.title] 세전 450만원
+[scenes.6.sub] 100명 중 27등쯤 · 꽤 앞쪽
+[scenes.6.source] 국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준
+[scenes.6.data.money] 세전 450만원
+[scenes.6.lines.0.text] 세전 450만원. 27등쯤입니다. 여기까지 오면 꽤 앞쪽이죠.
+[scenes.6.lines.0.cap] 월 450만원 이상 26.7%
+[scenes.7.key] s7
+[scenes.7.title] 맨 앞 — 평균이 높은 까닭
+[scenes.7.sub] 평균 = 모두 더해서 사람 수로 나눈 값
+[scenes.7.source] 국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준
+[scenes.7.data.big] 4명
+[scenes.7.data.bigSub] 월 1,000만원 이상 받는 사람, 100명 중
+[scenes.7.lines.0.text] 맨 앞으로 가 볼까요. 한 달에 1,000만원 이상 받는 사람은 네 명뿐입니다.
+[scenes.7.lines.0.cap] 월 1,000만원 이상 4.3%
+[scenes.7.lines.1.text] 뉴스에 나오는 평균 월급, 들어 보셨죠. 이 통계로는 세전 375만원이에요.
+[scenes.7.lines.1.cap] 평균 375만원 · 가운데 288만원 · 차 87만원
+[scenes.7.lines.2.text] 평균은 한가운데 사람 월급이 아니라, 모든 사람 월급을 더해서 사람 수로 나눈 값입니다.
+[scenes.7.lines.3.text] 적게 받는 쪽은 아무리 적어도 0원 밑으로는 못 내려가요.
+[scenes.7.lines.4.text] 그런데 많이 받는 쪽엔 한가운데보다 몇 배씩 받는 사람도 있으니까, 평균이 위로 끌려 올라가요.
+[scenes.7.lines.5.text] 그래서 줄 한가운데 사람은 평균보다 한참 아래입니다.
+[scenes.8.key] s8
+[scenes.8.title] 내 자리 보는 법
+[scenes.8.sub] 평균 말고 줄 한가운데와 견주기
+[scenes.8.source] 국가데이터처 「2024년 임금근로일자리 소득(보수) 결과」(2026.2.23) · 2024년 12월 세전 월 보수 · 일자리 기준 · 통장 금액 = 파이어맵 월급 계산기(2026년 간이세액표·4대보험, 1인·식대 비과세 20만원 가정)
+[scenes.8.data.rows.0.0] 세전 150만원
+[scenes.8.data.rows.0.1] 79등
+[scenes.8.data.rows.1.0] 세전 250만원
+[scenes.8.data.rows.1.1] 59등
+[scenes.8.data.rows.2.0] 세전 290만원 · 통장 약 260만원
+[scenes.8.data.rows.2.1] 50등 · 한가운데
+[scenes.8.data.rows.3.0] 세전 350만원
+[scenes.8.data.rows.3.1] 38등
+[scenes.8.data.rows.4.0] 세전 450만원
+[scenes.8.data.rows.4.1] 27등
+[scenes.8.data.rows.5.0] 1,000만원 이상
+[scenes.8.data.rows.5.1] 100명 중 4명
+[scenes.8.data.note] 나이별 줄 → 댓글 맨 위
+[scenes.8.lines.0.text] 내 자리를 보려면, 평균 말고 줄 한가운데와 견줘 보세요.
+[scenes.8.lines.1.text] 세전으로 290만원쯤이에요. 통장으로는 260만원쯤입니다.
+[scenes.8.lines.2.text] 이보다 많으면 줄 앞쪽 절반, 적으면 뒤쪽 절반이에요.
+[scenes.8.lines.3.text] 나이별로 줄을 세운 숫자는, 이 영상 바로 아래 댓글 맨 위에 적어 두겠습니다. 여러분은 몇 등쯤이었나요?
+
+## 화면 코드: video/src/N2.tsx
+[N2.tsx] 1등 · 가장 많이
+[N2.tsx] 100등 · 가장 적게
+[N2.tsx] 앞으로 갈수록 월급이 많다
+[N2.tsx] 50등 · 한가운데
+[N2.tsx] 그 사이 월급 = 그 사이 등수
+[N2.tsx] ${d.to}등
+[N2.tsx] 평균
+[N2.tsx] 모두 더해서 사람 수로 나눔
+[N2.tsx] 한가운데 50등
+[N2.tsx] 100명 중 딱 가운데 사람
+[N2.tsx] 적게 받는 쪽: 0원 밑으로는 못 내려감
+[N2.tsx] 많이 받는 쪽: 한가운데의 몇 배까지
+
+## 화면 코드: video/src/parts/fm.tsx
+[fm.tsx] ${e}억 ${r.toLocaleString()}만원
+[fm.tsx] ${e}억원
+[fm.tsx] ${r.toLocaleString()}만원
+[fm.tsx] 1년 뒤 남은 돈
+[fm.tsx] 원금
+[fm.tsx] 떨어진 해
+[fm.tsx] 세금·건보료
+[fm.tsx] 월 100만원 원금
+[fm.tsx] 파이어맵
+[fm.tsx] 파이어맵

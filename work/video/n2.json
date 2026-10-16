@@ -90,11 +90,11 @@
      [
       "통장 180만원",
       "세전 약 200만원",
-      "통장에 1할쯤 더하기"
+      "통장에 10%쯤 더하기"
      ],
      [
       "통장 300만원 넘으면",
-      "1할 5푼쯤 더하기",
+      "15%쯤 더하기",
       "세금이 늘어서"
      ]
     ],
@@ -120,9 +120,9 @@
      "cap": null
     },
     {
-     "text": "세금 떼기 전 월급을 모르시면, 통장에 들어오는 돈에 1할쯤 더해 보세요.",
-     "frames": 136,
-     "audio": "audio/n-2/c700f01ee41c0399.wav",
+     "text": "세금 떼기 전 월급을 모르시면, 통장에 들어오는 돈에 10%쯤 더해 보세요.",
+     "frames": 151,
+     "audio": "audio/n-2/dd08877689e90fcf.wav",
      "cap": null
     },
     {
@@ -132,13 +132,13 @@
      "cap": "세전 200만원 → 통장 1,808,470원(실수령/세전 0.904)"
     },
     {
-     "text": "통장에 300만원 넘게 들어오면, 세금이 늘어서 1할 5푼쯤 더해 보세요.",
-     "frames": 135,
-     "audio": "audio/n-2/ddb080a02c4fcf75.wav",
+     "text": "통장에 300만원 넘게 들어오면, 세금이 늘어서 15%쯤 더해 보세요.",
+     "frames": 133,
+     "audio": "audio/n-2/c8f568dbe12bf8ee.wav",
      "cap": "세전 350만원 = 통장 × 1.14쯤 · 세전 450만원 = 통장 × 1.18쯤 (실수령/세전 0.876·0.849)"
     }
    ],
-   "frames": 930,
+   "frames": 943,
    "segs": [
     {
      "from": 0,
@@ -186,32 +186,32 @@
     },
     {
      "from": 513,
-     "frames": 136,
-     "bg": {
-      "src": "bg/n2/seg/s1_4.mp4",
-      "kind": "video",
-      "start": 0,
-      "from_clip": "bg/n2/9823115.mp4",
-      "clip_start": 0.0
-     }
-    },
-    {
-     "from": 649,
-     "frames": 128,
+     "frames": 151,
      "bg": {
       "src": "bg/n2/4792290.jpg",
       "kind": "image"
      }
     },
     {
-     "from": 777,
-     "frames": 153,
+     "from": 664,
+     "frames": 128,
      "bg": {
-      "src": "bg/n2/seg/s1_6.mp4",
+      "src": "bg/n2/seg/s1_5.mp4",
       "kind": "video",
       "start": 0,
       "from_clip": "bg/n2/5923592.mp4",
       "clip_start": 4.23
+     }
+    },
+    {
+     "from": 792,
+     "frames": 151,
+     "bg": {
+      "src": "bg/n2/seg/s1_6.mp4",
+      "kind": "video",
+      "start": 0,
+      "from_clip": "bg/n2/8691678.mp4",
+      "clip_start": 5.23
      }
     }
    ]
@@ -436,8 +436,8 @@
       "src": "bg/n2/seg/s5_0.mp4",
       "kind": "video",
       "start": 0,
-      "from_clip": "bg/n2/8691678.mp4",
-      "clip_start": 5.23
+      "from_clip": "bg/n2/6780084.mp4",
+      "clip_start": 3.8
      }
     },
     {
@@ -447,8 +447,8 @@
       "src": "bg/n2/seg/s5_1.mp4",
       "kind": "video",
       "start": 0,
-      "from_clip": "bg/n2/6780084.mp4",
-      "clip_start": 3.8
+      "from_clip": "bg/n2/3202364.mp4",
+      "clip_start": 3.83
      }
     }
    ]
@@ -484,7 +484,7 @@
       "kind": "video",
       "start": 0,
       "from_clip": "bg/n2/8691678.mp4",
-      "clip_start": 8.3
+      "clip_start": 10.26
      }
     }
    ]
@@ -684,7 +684,7 @@
       "kind": "video",
       "start": 0,
       "from_clip": "bg/n2/3202364.mp4",
-      "clip_start": 3.83
+      "clip_start": 6.8
      }
     },
     {
@@ -714,7 +714,7 @@
       "kind": "video",
       "start": 0,
       "from_clip": "bg/n2/8691678.mp4",
-      "clip_start": 14.23
+      "clip_start": 16.19
      }
     },
     {
@@ -725,7 +725,7 @@
       "kind": "video",
       "start": 0,
       "from_clip": "bg/n2/3202364.mp4",
-      "clip_start": 7.36
+      "clip_start": 10.33
      }
     }
    ]

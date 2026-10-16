@@ -29,7 +29,7 @@ def eok_text(t):
 def fmt_eok(o, key=''):
     if isinstance(o, dict): return {k: fmt_eok(v, k) for k, v in o.items()}
     if isinstance(o, list): return [fmt_eok(v, key) for v in o]
-    if isinstance(o, str) and key not in ('audio', 'src', 'pic', 'text'): return eok_text(o)
+    if isinstance(o, str) and key not in ('audio', 'src', 'pic', 'text'): return eok_text(o).replace(' (가상 인물)', '').replace('(가상 인물)', '')   # 23시 사장님 '(가상 인물) 표기 어색' — 출처 줄 '가상 인물 계산'은 남김
     return o
 
 
@@ -54,8 +54,10 @@ def main(name):
     d = os.path.join(HERE, name); up = json.load(open(os.path.join(d, 'upload.json'), encoding='utf-8'))
     idx, comp = COMP[up.get('layout')] if up.get('layout') in COMP else COMP['c1clip']
     if name in ('w1s_kospi', 'h1s_gap', 'd1s_when'): idx, comp = COMP['c1clip']
-    old = os.path.join(REPO, up['mp4'])
-    v = os.path.join(VID, 'out', f'{name}_v3.mp4'); vd = os.path.join(VID, 'out', f'{name}_v3_ds.mp4')
+    # 소리 원본은 v3 전 판(_sz2_ds) — 이미 v3로 올린 편(22시 재작업)은 결과를 _v3b_ds로(올린 파일을 덮지 않음)
+    again = up['mp4'].endswith('_v3_ds.mp4') or up['mp4'].endswith('_v3b_ds.mp4')
+    old = os.path.join(VID, 'out', f'{name}_sz2_ds.mp4') if again else os.path.join(REPO, up['mp4'])
+    v = os.path.join(VID, 'out', f'{name}_v3.mp4'); vd = os.path.join(VID, 'out', f'{name}_{"v3b" if again else "v3"}_ds.mp4')
     props = json.load(open(os.path.join(VID, name + '.json'), encoding='utf-8'))
     if comp != 'C2P' and not props.get('bg'): print('배경 props 없음 — bgprops.py 먼저'); return 2
     # 화면만 렌더(--muted) — 소리는 지난 판 트랙을 붙인다. 옛 wav가 public에서 빠진 편(d1s_when 10/16)도 렌더되게 말 파일 자리를 무음으로 바꾼 임시 props를 쓴다(숫자·글자·프레임 그대로).

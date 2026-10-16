@@ -566,7 +566,7 @@ const Frame2: React.FC<{s: SScene; p: M1SProps; from: number; total: number; fir
   const f = useCurrentFrame(); const st = starts(s.lines);
   const zoom = interpolate(f, [0, s.frames], [1, 1.025], CL);
   const body = s.data.full ? <Sequence from={-90} layout="none"><Body s={s} p={p} /></Sequence> : <Body s={s} p={p} />;
-  const L = layout(p.question, (first ? p.answer : null) as Answer);   // v3 10/16 22시: 답 숫자는 첫 장면에만 — 뒤 장면은 판이 그 자리까지 커진다
+  const L = layout(p.question, null as Answer);   // v3 10/16 23시 사장님 '위 글자 5줄': 위는 제목 2줄만, 답 줄은 빼고 판이 그 자리까지 커진다
   return (
     <AbsoluteFill>
       <FitBoard bw={BW} bh={BH} frames={s.frames} top={L.boardTop} bottom={L.boardBottom} zoom={zoom} card={!!(p.bg && p.bg.length)}>{body}</FitBoard>
@@ -584,7 +584,7 @@ const M1Sv2: React.FC<M1SProps> = (p) => {
       <style>{FONT_CSS}</style>
       <Backdrop question={p.question} answer={p.answer as Answer} bg={p.bg} />
       {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Frame2 s={s} p={p} from={from} total={total} first={i === 0} /></Sequence>; from += s.frames; return el; })}
-      <Hero question={p.question} hot={p.hot} answer={p.answer as Answer} until={p.scenes[0]?.frames} />
+      <Hero question={p.question} hot={p.hot} answer={p.answer as Answer} until={0} />
       <SourceLine text={p.base} dark={!!(p.bg && p.bg.length)} />
     </AbsoluteFill>
   );

@@ -44,17 +44,6 @@
    "page": "https://www.pexels.com/video/two-skyscrapers-at-night-19816673/",
    "author": "Sergei Garenko",
    "license": "https://www.pexels.com/license/"
-  },
-  {
-   "file": "bg/h1s_helio/32107131.mp4",
-   "id": 32107131,
-   "start": 0,
-   "usable_sec": 13.8,
-   "what": "드론으로 본 고층 아파트 단지",
-   "for": "3 한 건이 아니라 한 달 전체를 보기로",
-   "page": "https://www.pexels.com/video/aerial-view-of-modern-residential-towers-32107131/",
-   "author": "Toàn BDS",
-   "license": "https://www.pexels.com/license/"
   }
  ],
  "rejected": [
@@ -93,6 +82,10 @@
   {
    "id": 34504957,
    "why": "총괄 10/16: 어두워 배경 없음으로 잡히고 오른쪽 불빛이 글자 상자로 잡힘(17~22·40~42초)"
+  },
+  {
+   "id": 32107131,
+   "why": "총괄 10/16 23시: 드론 단지 화면 아래쪽 무늬가 글자 상자로 잡힘(안전 영역 관문 34~36초)"
   }
  ],
  "not_reviewed": [

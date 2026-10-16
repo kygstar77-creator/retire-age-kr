@@ -195,7 +195,7 @@ const BarsS: React.FC<{s: SScene}> = ({s}) => {
   return (
     <>
       <div style={{position: 'absolute', left: 40, top: 24}}><Txt s={40} c={T.ink2}>{d.head}</Txt></div>
-      <TallyBars bars={bars} x={60} y={170} w={880} h={540} max={d.max} labelSize={30} valueSize={64} tags />
+      <TallyBars bars={bars} x={60} y={170} w={880} h={540} max={d.max} labelSize={30} valueSize={Math.max(...bars.map((b) => b.valueText.length)) > 7 ? 42 : 64} tags />{/* 10/16 23시: 억 소수 대신 '30억 7천만원'처럼 길어진 값이 잘림(h1s_helio 18~22초) → 긴 값은 42px */}
     </>
   );
 };
@@ -227,10 +227,10 @@ const VsS: React.FC<{s: SScene}> = ({s}) => {
         if (f < at) return <div key={i} style={{position: 'absolute', left: x, top: y, width: TW, height: TH, borderRadius: 22, border: `3px dashed ${T.line}`}} />;
         const sp = spring({frame: f - at, fps: 30, config: {damping: 13}});
         return (
-          <div key={i} style={{position: 'absolute', left: x, top: y + (1 - sp) * 30, width: TW, height: TH, background: T.bg, borderRadius: 22, opacity: sp, boxShadow: `inset 0 12px 0 ${c}`, boxSizing: 'border-box', padding: '40px 32px 28px', display: 'flex', flexDirection: 'column'}}>
-            <div style={{...F, fontWeight: 700, fontSize: Math.max(30, fit(head, IN * 2, 40)), color: T.ink2, lineHeight: 1.2, wordBreak: 'keep-all'}}>{head}</div>
-            <div style={{flex: 1, display: 'flex', alignItems: 'center'}}><Txt s={fit(big, IN, 116, 40)} c={c}>{big}</Txt></div>
-            <div style={{...F, fontWeight: 500, fontSize: Math.max(26, fit(sub, IN * 2, 32)), color: T.ink3, lineHeight: 1.25, wordBreak: 'keep-all'}}>{sub}</div>
+          <div key={i} style={{position: 'absolute', left: x, top: y + (1 - sp) * 30, width: TW, height: TH, background: T.bg, borderRadius: 22, opacity: sp, boxShadow: `inset 0 12px 0 ${c}`, boxSizing: 'border-box', padding: '40px 24px 28px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center'}}>
+            {/* 10/16 23시 사장님 '가운데 정렬·작은 회색 설명 안 읽힘': 경쟁 쇼츠 10편 제목·자막 모두 가운데 → 칸 안도 가운데, 회색 작은 설명 줄(sub)은 뺀다 */}
+            <div style={{...F, fontWeight: 700, fontSize: Math.max(38, fit(head, IN * 2, 48)), color: T.ink2, lineHeight: 1.2, wordBreak: 'keep-all'}}>{head}</div>
+            <div style={{flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><Txt s={fit(big, IN, 120, 44)} c={c}>{big}</Txt></div>
           </div>
         );
       })}
@@ -306,7 +306,7 @@ const Frame: React.FC<{s: SScene; from: number; total: number; first: boolean; p
   const k = Math.floor(f / 75); const pin = (k % 2) * interpolate(f - k * 75, [0, 6], [0, 1], CL) + (1 - (k % 2)) * (k ? interpolate(f - k * 75, [0, 6], [1, 0], CL) : 0);
   const zoom = interpolate(f, [0, s.frames], [1, 1.015], CL) + 0.03 * pin;
   const body = s.data.full ? <Sequence from={-90} layout="none"><Body s={s} /></Sequence> : <Body s={s} />;
-  const L = layout(p.question, (first ? p.answer : null) as Answer);   // v3 10/16 22시: 답 숫자는 첫 장면에만 — 뒤 장면은 판이 그 자리까지 커진다
+  const L = layout(p.question, null as Answer);   // v3 10/16 23시 사장님 '위 글자 5줄': 위는 제목 2줄만, 답 줄은 빼고 판이 그 자리까지 커진다
   return (
     <AbsoluteFill>
       <FitBoard bw={BW} bh={BH} frames={s.frames} top={L.boardTop} bottom={L.boardBottom} zoom={zoom} card={!!(p.bg && p.bg.length)}>{body}</FitBoard>
@@ -325,7 +325,7 @@ export const C1S: React.FC<C1SProps> = (p) => {
       <style>{FONT_CSS}</style>
       <Backdrop question={p.question} answer={p.answer as Answer} bg={p.bg} />
       {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Frame s={s} from={from} total={total} first={i === 0} p={p} /></Sequence>; from += s.frames; return el; })}
-      <Hero question={p.question} hot={p.hot} answer={p.answer as Answer} until={p.scenes[0]?.frames} />
+      <Hero question={p.question} hot={p.hot} answer={p.answer as Answer} until={0} />
       <SourceLine text={p.base} dark={!!(p.bg && p.bg.length)} />
     </AbsoluteFill>
   );

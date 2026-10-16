@@ -84,12 +84,15 @@ const CAP3_TOP = DS.capCy - DS.capH / 2;      // v3 10/16: 자막은 한 줄 테
 const NumCard: React.FC<{s: PScene}> = ({s}) => {
   const f = useCurrentFrame(); const sp = spring({frame: f - 3, fps: 30, config: {damping: 13, mass: 0.7}});
   // 카드 안쪽 여백(26×2)+글자 폭 어림 오차 — 10/16 g1s_asym '4% ~ 34% 손해'가 카드 끝에 닿음
-  const big = fit(s.num, IW - 110, 140, 40); const sub = fit(s.sub, IW - 60, 30, 18);
+  const big = fit(s.num, IW - 110, 140, 40); const sub = Math.max(44, Math.min(52, fit(s.sub, (IW - 60) * 2, 52, 44)));   // 23시 사장님: 회색 작은 설명은 화면 높이 2.5%(48px) 안팎 이상 — 넘치면 두 줄
+  // 23시 사장님 '가운데 정렬': 경쟁 쇼츠 10편 제목·자막 가운데 → 숫자 카드도 안전 영역 가운데
   return (
-    <div style={{position: 'absolute', left: SZ.x0 + PAD, bottom: 1920 - CAP3_TOP + 18, maxWidth: IW, boxSizing: 'border-box', padding: '14px 26px 16px', background: '#fff', borderRadius: 24, boxShadow: '0 14px 40px rgba(0,0,0,0.35)',
-      transform: `translateY(${(1 - sp) * 40}px) scale(${0.9 + 0.1 * sp})`, transformOrigin: 'left bottom', opacity: Math.min(1, sp * 1.4)}}>
-      <div style={{...F, fontWeight: 700, fontSize: big, lineHeight: 1, color: T.accent, letterSpacing: -2, whiteSpace: 'nowrap'}}>{s.num}</div>
-      <div style={{...F, fontWeight: 700, fontSize: sub, color: T.ink2, marginTop: 8, whiteSpace: 'nowrap'}}>{s.sub}</div>
+    <div style={{position: 'absolute', left: SZ.x0 + PAD, width: IW, bottom: 1920 - CAP3_TOP + 18, display: 'flex', justifyContent: 'center'}}>
+      <div style={{maxWidth: IW, boxSizing: 'border-box', padding: '16px 30px 18px', background: '#fff', borderRadius: 24, boxShadow: '0 14px 40px rgba(0,0,0,0.35)', textAlign: 'center',
+        transform: `translateY(${(1 - sp) * 40}px) scale(${0.9 + 0.1 * sp})`, transformOrigin: 'center bottom', opacity: Math.min(1, sp * 1.4)}}>
+        <div style={{...F, fontWeight: 700, fontSize: big, lineHeight: 1, color: T.accent, letterSpacing: -2, whiteSpace: 'nowrap'}}>{s.num}</div>
+        <div style={{...F, fontWeight: 700, fontSize: sub, lineHeight: 1.2, color: T.ink2, marginTop: 10, wordBreak: 'keep-all'}}>{s.sub}</div>
+      </div>
     </div>
   );
 };

@@ -12,11 +12,11 @@ import {TallyBars, TallyBar} from './motion/TallyBars';
 import {TallyReceipt, TallyRow} from './motion/TallyReceipt';
 import {TallyTag, TallyCallout} from './motion/TallyMark';
 import {TallyLineChart, lineXY} from './motion/TallyLineChart';
-import {Backdrop, Hero, SourceLine, Progress, FitBoard, layout, capTop, capSize, CAP_H, SZ, Answer, fit} from './parts/safeframe';
+import {Backdrop, Hero, SourceLine, Progress, FitBoard, layout, capTop, capSize, CAP_H, SZ, Answer, OutlineCaption, BgSeg, fit} from './parts/safeframe';
 
 type SLine = {n: number; text: string; cap?: string | null; audio: string; frames: number};
 type SScene = {kind: string; label: string; source?: string | null; data: any; lines: SLine[]; frames: number};
-export type C1SProps = {fps: number; name: string; question: string[]; hot: string; base: string; scenes: SScene[]; answer?: {label: string; items: string[]; arrow?: boolean; note?: string} | null};
+export type C1SProps = {fps: number; name: string; question: string[]; hot: string; base: string; scenes: SScene[]; answer?: {label: string; items: string[]; arrow?: boolean; note?: string} | null; bg?: BgSeg[] | null};
 export const c1sFrames = (p: C1SProps) => p.scenes.reduce((a, s) => a + s.frames, 0);
 
 const BW = 1000, BH = 860;
@@ -309,8 +309,9 @@ const Frame: React.FC<{s: SScene; from: number; total: number; first: boolean; p
   const L = layout(p.question, p.answer as Answer);
   return (
     <AbsoluteFill>
-      <FitBoard bw={BW} bh={BH} frames={s.frames} top={L.boardTop} bottom={L.boardBottom} zoom={zoom}>{body}</FitBoard>
-      <div style={{position: 'absolute', left: SZ.x0 + 6, top: capTop(), width: SZ.x1 - SZ.x0 - 12}}><Caption s={s} first={first} /></div>
+      <FitBoard bw={BW} bh={BH} frames={s.frames} top={L.boardTop} bottom={L.boardBottom} zoom={zoom} card={!!(p.bg && p.bg.length)}>{body}</FitBoard>
+      {/* v3(10/16 디자인 기준): 한 줄 테두리 자막, 상자 없음 — parts/safeframe OutlineCaption */}
+      <OutlineCaption lines={s.lines} first={first} />
       <Progress progress={(from + f) / total} />
       {s.lines.map((l, i) => <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
     </AbsoluteFill>
@@ -322,10 +323,10 @@ export const C1S: React.FC<C1SProps> = (p) => {
   return (
     <AbsoluteFill style={{background: T.dbg}}>
       <style>{FONT_CSS}</style>
-      <Backdrop question={p.question} answer={p.answer as Answer} />
+      <Backdrop question={p.question} answer={p.answer as Answer} bg={p.bg} />
       {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Frame s={s} from={from} total={total} first={i === 0} p={p} /></Sequence>; from += s.frames; return el; })}
       <Hero question={p.question} hot={p.hot} answer={p.answer as Answer} />
-      <SourceLine text={p.base} />
+      <SourceLine text={p.base} dark={!!(p.bg && p.bg.length)} />
     </AbsoluteFill>
   );
 };

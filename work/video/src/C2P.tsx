@@ -4,7 +4,7 @@
 import React from 'react';
 import {AbsoluteFill, Audio, Img, Sequence, interpolate, spring, staticFile, useCurrentFrame, Easing} from 'remotion';
 import {T, F, CL, FONT_CSS, Flame} from './parts/fm';
-import {SZ, PAD, IW, fit, Progress, SourceLine, SRC_H} from './parts/safeframe';
+import {SZ, PAD, IW, fit, Progress, SourceLine, SRC_H, DS, OutlineCaption, outline} from './parts/safeframe';
 
 type PLine = {text: string; audio: string; frames: number};
 type PScene = {pic: string; cx: number; year: string | null; num: string; sub: string; zoom: [number, number]; pan: number; focus: number; gray: boolean; blur?: boolean; red: string[]; green: string[]; lines: PLine[]; frames: number};
@@ -12,7 +12,7 @@ export type C2PProps = {fps: number; name: string; layout: string; question: str
 export const c2pFrames = (p: C2PProps) => p.scenes.reduce((a, s) => a + s.frames, 0);
 
 const W = 1080, PH = SZ.y1 + 120;         // 선명한 그림 칸 — 10/16 v2: 1368까지 선명, 그 밑(유튜브 제목 자리)은 같은 그림을 흐리게 깔아 화면 끝까지 채운다
-const Q_TOP = SZ.y0 + 6; const qs = (q: string[]) => Math.min(...q.map((l) => fit(l, IW, 84)));
+const Q_TOP = SZ.y0 + 6; const qs = (q: string[]) => Math.min(...q.map((l) => fit(l, IW, DS.titleMax)));   // v3 10/16: 84 → 92(경쟁 제목 중앙)
 let Q_END = Q_TOP + 2 * 84 * 1.1;   // C2P가 그릴 때 질문 크기로 다시 잰다
 const YEL = '#FFD000', RED = '#FF6B5E', GRN = '#4ADE80';
 const starts = (lines: PLine[]) => { const o: number[] = []; let a = 0; for (const l of lines) { o.push(a); a += l.frames; } return o; };
@@ -80,7 +80,7 @@ const Caption: React.FC<{s: PScene}> = ({s}) => {
 };
 
 // 10/16 안전 영역: 숫자 카드는 자막(아래 3줄) 바로 위, 안전 영역 왼쪽 안. 글자 크기는 너비에 맞춰 줄인다.
-const CAP3_TOP = SZ.y1 - SRC_H - 6 - 3 * 70;      // 자막 3줄(58px·줄 높이 1.18 + 틈) 시작 — 그 밑은 출처 한 줄
+const CAP3_TOP = DS.capCy - DS.capH / 2;      // v3 10/16: 자막은 한 줄 테두리(parts/safeframe OutlineCaption, 가운데 y 1168) — 경쟁 9편 중 8편이 한 줄. 숫자 카드는 그 위
 const NumCard: React.FC<{s: PScene}> = ({s}) => {
   const f = useCurrentFrame(); const sp = spring({frame: f - 3, fps: 30, config: {damping: 13, mass: 0.7}});
   // 카드 안쪽 여백(26×2)+글자 폭 어림 오차 — 10/16 g1s_asym '4% ~ 34% 손해'가 카드 끝에 닿음
@@ -105,7 +105,7 @@ const Scene: React.FC<{s: PScene; from: number; total: number; p: C2PProps}> = (
       {s.year ? <div style={{position: 'absolute', left: SZ.x0 + PAD, top: Q_END + 14, padding: '6px 18px', background: T.accent, borderRadius: 12, opacity: yo, transform: `translateX(${(1 - yo) * -30}px)`}}>
         <span style={{...F, fontWeight: 700, fontSize: fit(s.year, IW - 40, 36, 22), color: '#fff', whiteSpace: 'nowrap'}}>{s.year}</span></div> : null}
       <NumCard s={s} />
-      <div style={{position: 'absolute', left: SZ.x0 + PAD, top: CAP3_TOP, width: IW, height: SZ.y1 - CAP3_TOP, display: 'flex', alignItems: 'flex-start', justifyContent: 'center'}}><Caption s={s} /></div>
+      <OutlineCaption lines={s.lines} />
       <Progress progress={(from + f) / total} />
       {s.lines.map((l, i) => <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
     </AbsoluteFill>
@@ -123,7 +123,7 @@ export const C2P: React.FC<C2PProps> = (p) => {
       <div style={{position: 'absolute', left: SZ.x0 + PAD, top: Q_TOP, width: IW, textAlign: 'center'}}>
         {p.question.map((line, i) => {
           const k = line.indexOf(p.hot);
-          return <div key={i} style={{...F, fontWeight: 700, fontSize: qs(p.question), lineHeight: 1.12, color: '#fff', letterSpacing: -2, whiteSpace: 'nowrap', textShadow: '0 4px 14px rgba(0,0,0,0.45)'}}>
+          return <div key={i} style={{...F, fontSize: qs(p.question), lineHeight: 1.12, color: '#fff', letterSpacing: -2, whiteSpace: 'nowrap', fontWeight: 800, textShadow: outline(5)}}>
             {k < 0 ? line : <>{line.slice(0, k)}<span style={{color: YEL}}>{p.hot}</span>{line.slice(k + p.hot.length)}</>}</div>;
         })}
       </div>

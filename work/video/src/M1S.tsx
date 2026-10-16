@@ -5,11 +5,11 @@ import React from 'react';
 import {AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, Easing} from 'remotion';
 import {T, F, CL, FONT_CSS, Flame, HandCircle} from './parts/fm';
 import {TallyBars, TallyBar} from './motion/TallyBars';
-import {Backdrop, Hero, SourceLine, Progress, FitBoard, layout, capTop, capSize, CAP_H, SZ, Answer} from './parts/safeframe';
+import {Backdrop, Hero, SourceLine, Progress, FitBoard, layout, capTop, capSize, CAP_H, SZ, Answer, OutlineCaption, BgSeg} from './parts/safeframe';
 
 type SLine = {n: number; text: string; cap?: string | null; audio: string; frames: number};
 type SScene = {kind: string; label: string; source?: string | null; data: any; lines: SLine[]; frames: number};
-export type M1SProps = {fps: number; name: string; question: string[]; hot: string; track?: [string, number, string][] | null; base: string; long: string; scenes: SScene[]; v?: number; answer?: {label: string; items: string[]; arrow?: boolean; note?: string} | null};
+export type M1SProps = {fps: number; name: string; question: string[]; hot: string; track?: [string, number, string][] | null; base: string; long: string; scenes: SScene[]; v?: number; answer?: {label: string; items: string[]; arrow?: boolean; note?: string} | null; bg?: BgSeg[] | null};
 export const m1sFrames = (p: M1SProps) => p.scenes.reduce((a, s) => a + s.frames, 0);
 
 const BW = 1000, BH = 860;
@@ -569,8 +569,9 @@ const Frame2: React.FC<{s: SScene; p: M1SProps; from: number; total: number; fir
   const L = layout(p.question, p.answer as Answer);
   return (
     <AbsoluteFill>
-      <FitBoard bw={BW} bh={BH} frames={s.frames} top={L.boardTop} bottom={L.boardBottom} zoom={zoom}>{body}</FitBoard>
-      <div style={{position: 'absolute', left: SZ.x0 + 6, top: capTop(), width: SZ.x1 - SZ.x0 - 12}}><Caption2 s={s} first={first} /></div>
+      <FitBoard bw={BW} bh={BH} frames={s.frames} top={L.boardTop} bottom={L.boardBottom} zoom={zoom} card={!!(p.bg && p.bg.length)}>{body}</FitBoard>
+      {/* v3(10/16 디자인 기준): 한 줄 테두리 자막, 상자 없음 — parts/safeframe OutlineCaption */}
+      <OutlineCaption lines={s.lines} first={first} />
       <Progress progress={(from + f) / total} />
       {s.lines.map((l, i) => <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
     </AbsoluteFill>
@@ -581,10 +582,10 @@ const M1Sv2: React.FC<M1SProps> = (p) => {
   return (
     <AbsoluteFill style={{background: T.dbg}}>
       <style>{FONT_CSS}</style>
-      <Backdrop question={p.question} answer={p.answer as Answer} />
+      <Backdrop question={p.question} answer={p.answer as Answer} bg={p.bg} />
       {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Frame2 s={s} p={p} from={from} total={total} first={i === 0} /></Sequence>; from += s.frames; return el; })}
       <Hero question={p.question} hot={p.hot} answer={p.answer as Answer} />
-      <SourceLine text={p.base} />
+      <SourceLine text={p.base} dark={!!(p.bg && p.bg.length)} />
     </AbsoluteFill>
   );
 };

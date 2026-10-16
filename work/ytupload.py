@@ -57,6 +57,11 @@ def upload(path, title, desc, privacy='private', tags='', paid=False):
     ok_sz, msg_sz = safezone.gate(path)
     print(msg_sz)
     if not ok_sz: print('올리지 않는다: 안전 영역 관문'); sys.exit(11)
+    # 디자인 기준 v3 관문(10/16): 모든 장면 뒤 실사 배경 + 쇼츠 자막 한 줄 72px 기준(work/bgcheck.py · research/visual/design-spec-1016.md)
+    import bgcheck
+    ok_bg, msg_bg = bgcheck.gate(path)
+    print(msg_bg)
+    if not ok_bg: print('올리지 않는다: 디자인 관문(배경·자막)'); sys.exit(12)
     from googleapiclient.http import MediaFileUpload
     yt = service()
     body = {'snippet': {'title': title[:100], 'description': desc[:5000], 'tags': [t.strip() for t in tags.split(',') if t.strip()][:30], 'categoryId': '22', 'defaultLanguage': 'ko', 'defaultAudioLanguage': 'ko'},

@@ -101,6 +101,10 @@ def main(name, check_only=False):
     ok_sz, msg_sz = safezone.gate(mp4)
     print(msg_sz)
     if not ok_sz: print('올리지 않는다: 안전 영역 관문'); return 11
+    import bgcheck   # 10/16 디자인 기준 v3: 모든 장면 뒤 실사 배경 + 자막 한 줄 72px 기준(research/visual/design-spec-1016.md)
+    ok_bg, msg_bg = bgcheck.gate(mp4)
+    print(msg_bg)
+    if not ok_bg: print('올리지 않는다: 디자인 관문(배경·자막)'); return 12
     from googleapiclient.http import MediaFileUpload
     body = {'snippet': {'title': title[:100], 'description': desc[:5000], 'tags': [t.strip() for t in up['tags'].split(',') if t.strip()],
                         'categoryId': '27', 'defaultLanguage': 'ko', 'defaultAudioLanguage': 'ko'},

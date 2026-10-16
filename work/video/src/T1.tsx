@@ -5,7 +5,7 @@
 // U5(같은 화면 8초 이하): 말 줄이 바뀔 때마다 판의 큰 칸이 바뀐다. 숫자 글자는 도형 위에 겹치지 않게 옆·위에 둔다(겹침 0).
 // 숫자 글자는 전부 t1.json에서 온다. 코드 안 숫자는 배치·눈금뿐.
 import React from 'react';
-import {AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, Easing} from 'remotion';
+import {AbsoluteFill, Audio, Img, Sequence, interpolate, staticFile, useCurrentFrame, Easing} from 'remotion';
 import {T, F, CL, HandCircle} from './parts/fm';
 import {TallyFrame, TallyLine, tallyStarts, tallyIdx} from './motion/TallyFrame';
 
@@ -321,7 +321,7 @@ const Verify: React.FC<{s: TScene}> = ({s}) => {
 };
 
 // ───────── 6장 공제 한도 ─────────
-const CPX = 520, CPU = 55;   // 1억 = 55px
+const CPX = 520, CPU = 48;   // 1억 = 48px (10/16 PD: 55px면 '한도 20억' 글자가 판 오른쪽 테두리에 걸림)
 const Cap: React.FC<{s: TScene}> = ({s}) => {
   const {f, at} = useBeat(s); const d = s.data; const b = beatOf(d.at, at, f);
   const rows: any[][] = [...d.caps, d.mine];
@@ -460,14 +460,40 @@ const Chip: React.FC<{lines: TLine[]}> = ({lines}) => {
   );
 };
 
+// 실사 끼우기(10/16 PD, U5 같은 화면 8초 — C2 CutAway와 같은 방식): data.cutaways = [[줄, 그림, 시작 비율, 끝 비율]] · 새 글자 0(자막은 그 줄 말, 출처는 장면 출처)
+const CutAway: React.FC<{src: string; text: string; source: string; n: number}> = ({src, text, source, n}) => {
+  const f = useCurrentFrame(); const z = interpolate(f, [0, n], [1.3, 1.36], CL); /* 오른쪽 맞춤 확대: 왼쪽 가장자리 간판(상호) 글자를 화면 밖으로 */ const o = interpolate(f, [0, 6], [0, 1], CL);
+  return (
+    <AbsoluteFill style={{background: '#000', overflow: 'hidden', opacity: o}}>
+      <Img src={staticFile(src)} style={{position: 'absolute', left: 1920 - 1920 * z, top: (1080 - 1080 * z) / 2, width: 1920 * z, height: 1080 * z, filter: 'saturate(0.85) brightness(0.9)'}} />
+      <div style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: 330, background: 'linear-gradient(rgba(16,17,20,0), rgba(16,17,20,0.85))'}} />
+      <div style={{...F, fontWeight: 500, fontSize: source.length > 120 ? 17 : 20, color: 'rgba(255,255,255,0.75)', position: 'absolute', left: 64, right: 110, bottom: 18, whiteSpace: 'nowrap', overflow: 'hidden'}}>{source}</div>
+      <div style={{position: 'absolute', bottom: 58, left: 0, right: 0, display: 'flex', justifyContent: 'center'}}>
+        <div style={{...F, fontWeight: 700, fontSize: 40, lineHeight: 1.35, color: '#fff', background: 'rgba(16,17,20,0.86)', padding: '14px 34px', borderRadius: 16, maxWidth: 1500, textAlign: 'center', wordBreak: 'keep-all'}}>{text}</div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+// 그림이 덮는 동안 밑의 판은 그리지 않는다(겹침 검사가 가려진 판 글자를 잡음 — C2 UnderCut과 같음, 판 움직임은 프레임 계산이라 뒤에 그대로 이어짐)
+const UnderCut: React.FC<{s: TScene; st: number[]; children: React.ReactNode}> = ({s, st, children}) => {
+  const f = useCurrentFrame();
+  const hide = (s.data.cutaways || []).some((c: any[]) => { const lf = s.lines[c[0]].frames; const a = st[c[0]] + Math.round(lf * (c[2] ?? 0)); const b = st[c[0]] + Math.round(lf * (c[3] ?? 1)); return f >= a && f < b; });
+  return hide ? null : <>{children}</>;
+};
+
 const SceneView: React.FC<{s: TScene; last: boolean}> = ({s, last}) => {
   const st = tallyStarts(s.lines);
   return (
     <AbsoluteFill>
-      <TallyFrame title={s.title} sub={s.sub} source={s.source} chapter={s.chapter} lines={s.lines.map((l) => ({...l, cap: null}))} board capX={last ? 760 : 960}>
-        <Body s={s} />
-        <Chip lines={s.lines} />
-      </TallyFrame>
+      <UnderCut s={s} st={st}>
+        <TallyFrame title={s.title} sub={s.sub} source={s.source} chapter={s.chapter} lines={s.lines.map((l) => ({...l, cap: null}))} board capX={last ? 760 : 960}>
+          <Body s={s} />
+          <Chip lines={s.lines} />
+        </TallyFrame>
+      </UnderCut>
+      {(s.data.cutaways || []).map((c: [number, string, number?, number?], j: number) => { const lf = s.lines[c[0]].frames; const a = st[c[0]] + Math.round(lf * (c[2] ?? 0)); const n = Math.round(lf * ((c[3] ?? 1) - (c[2] ?? 0)));
+        return <Sequence key={'c' + j} from={a} durationInFrames={n}><CutAway src={c[1]} text={s.lines[c[0]].text} source={s.source || ''} n={n} /></Sequence>; })}
       {s.lines.map((l, i) => l.audio ? <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence> : null)}
     </AbsoluteFill>
   );

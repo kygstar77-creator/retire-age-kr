@@ -1531,10 +1531,10 @@
   {
    "at": "2026-10-16 19:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "w1scafe1016",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "순돌이 10/13 짝 글: 같은 날 19:20 shorts 'TBD'의 카페 짝 글. 공개된 영상 링크를 본문 끝에, 영상 설명 앞 5줄에는 이 글 주소. 짝이 TBD면 PD가 정한 쇼츠를 따른다. | 순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-meeting 10-15 21:33: yt_pair: DRtKbSuCUiQ(10/16 오후 v2 교체, 옛 pt1_YLQ8KBs) · 그 전 pt1_YLQ8KBs(10/16 교체, 옛 njvFqMeKQlU) (w1s_kospi 19:20 쇼츠 짝, PD 02:32 요청 ①) — 쇼츠 질문 하나만, 10/15 급락 사실 한 줄 덧붙임 여부는 write 판단",
+   "gates_ok": "2026-10-16 20:04",
+   "note": "순돌이 10/13 짝 글: 같은 날 19:20 shorts 'TBD'의 카페 짝 글. 공개된 영상 링크를 본문 끝에, 영상 설명 앞 5줄에는 이 글 주소. 짝이 TBD면 PD가 정한 쇼츠를 따른다. | 순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-meeting 10-15 21:33: yt_pair: DRtKbSuCUiQ(10/16 오후 v2 교체, 옛 pt1_YLQ8KBs) · 그 전 pt1_YLQ8KBs(10/16 교체, 옛 njvFqMeKQlU) (w1s_kospi 19:20 쇼츠 짝, PD 02:32 요청 ①) — 쇼츠 질문 하나만, 10/15 급락 사실 한 줄 덧붙임 여부는 write 판단 | firemap-write-b 20:04: 비축 0이라 새로 씀 — w1scafe1016 '코스피 폭락 2주, 넣어 둔 천만원은 지금 얼마일까?'(쇼츠 DRtKbSuCUiQ 짝, ECOS·야후 종가 10/16, 제목 7.67·표지 7.67·레드팀 2차 틀림 0·58세 이해 2차 심각 0·editgate auto)",
    "pair": "TBD"
   },
   {
@@ -1869,7 +1869,7 @@
    "item": "T-1(양도세 1주택 12억 초과·장특공제)",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "firemap-video-producer 2026-10-16 10:41: 녹음 63줄 끝(Charon 1.1·쉼 태그, 관문 통과)·화면 T1.tsx 14가지·겹침 0·meta.json 초안·cafe.md · 남은 것: editor 화면 글자 서명(10/18 12:00)→렌더·점수표, 썸네일 visual(10/19 06:00), 제목 숫자 2개 이하 copywriter(10/19 12:00) | firemap-meeting 2026-10-13 21:40: 카페 회원 자료 2호(양도세 엑셀)와 같은 주제로 묶음. 대본 youtube-loop 10/18, 관문 기한 10/20 11:30. X-1·S-1은 10/23 뒤로. 축: 부동산 세금(10/20 J-1 종부세와 같은 축이면 J-1을 10/22 H-2와 바꿈 — youtube-loop 판단)"
+   "note": "firemap-video-producer 2026-10-16 10:41: 녹음 63줄 끝(Charon 1.1·쉼 태그, 관문 통과)·화면 T1.tsx 14가지·겹침 0·meta.json 초안·cafe.md · 남은 것: editor 화면 글자 서명(10/18 12:00)→렌더·점수표, 썸네일 visual(10/19 06:00), 제목 숫자 2개 이하 copywriter(10/19 12:00) | firemap-meeting 2026-10-13 21:40: 카페 회원 자료 2호(양도세 엑셀)와 같은 주제로 묶음. 대본 youtube-loop 10/18, 관문 기한 10/20 11:30. X-1·S-1은 10/23 뒤로. 축: 부동산 세금(10/20 J-1 종부세와 같은 축이면 J-1을 10/22 H-2와 바꿈 — youtube-loop 판단) | firemap-video-producer 2026-10-16 20:12: 렌더 끝 out/t1_ds.mp4(화면 관문·치직 0·scorecard 36 vs 24) · 남은 것 썸네일(visual 10/19 06:00)·bench_check → ytlong 예약"
   },
   {
    "at": "2026-10-21 19:20",
@@ -1896,7 +1896,7 @@
    "item": "X-1",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "youtube-loop 2026-10-14 17:2x: X-1 환율('같은 1억' 시작일 4개) — 대본 v2 심사 7.87(제미나이 7.6·Claude 8.2·레드팀 7.8)·편집 통과(script.md.edit.json), 카피 제목은 copywriter. 축: 경제(환율) — T-1(10/21)·J-1(10/23) 부동산 세금 사이. 관문 기한 10/21 11:30, 녹음 10/20 16:01 창"
+   "note": "youtube-loop 2026-10-14 17:2x: X-1 환율('같은 1억' 시작일 4개) — 대본 v2 심사 7.87(제미나이 7.6·Claude 8.2·레드팀 7.8)·편집 통과(script.md.edit.json), 카피 제목은 copywriter. 축: 경제(환율) — T-1(10/21)·J-1(10/23) 부동산 세금 사이. 관문 기한 10/21 11:30, 녹음 10/20 16:01 창 | firemap-video-producer 2026-10-16 20:12: 녹음 끝(Chirp 43줄)·화면 X1.tsx 16장면 3:40 → editor 화면 서명 요청(10/18 12:00) 뒤 렌더"
   },
   {
    "at": "2026-10-22 19:20",

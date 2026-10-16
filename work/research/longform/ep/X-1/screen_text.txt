@@ -1,0 +1,384 @@
+# 화면 글자 — X-1 (lfrender.py text가 만듦. 여기를 고치지 말고 대본·props·tsx를 고친 뒤 다시 뽑는다)
+# 그래프 제목·부제·출처·자막(lines.text)·막대 이름·코드에 박힌 글자. 썸네일 문구는 그림이라 안 들어간다.
+
+## props: video/x1.json
+[scenes.0.key] twoline
+[scenes.0.title] 주가는 올랐는데 원화 계좌는 빠졌다
+[scenes.0.sub] 같은 S&P500 ETF · 2026.7.2 → 10.12
+[scenes.0.source] SPY 종가(야후, 배당 미포함 가격) · 한국은행 ECOS 731Y001 원/달러 매매기준율 · 파이어맵 계산(수수료·세금 없음)
+[scenes.0.data.yt.0.1] +5%
+[scenes.0.data.yt.1.1] 0%
+[scenes.0.data.yt.2.1] −5%
+[scenes.0.data.yt.3.1] −10%
+[scenes.0.data.nameUp] S&P500 ETF(달러로)
+[scenes.0.data.nameDn] 같은 투자, 원화 계좌
+[scenes.0.data.tagUp] 4% 넘게 ↑
+[scenes.0.data.tagDn] 10% ↓
+[scenes.0.data.q] 어디서 새 나갔나?
+[scenes.0.data.leak] 새 나간 건 환율
+[scenes.0.data.from] 1,554원
+[scenes.0.data.to] 1,338원
+[scenes.0.data.rateName] 원/달러
+[scenes.0.lines.0.text] 미국 큰 회사들을 묶어 따라가는 S&P500 ETF는 7월 초부터 4% 넘게 올랐습니다.
+[scenes.0.lines.1.text] 그런데 7월 초 그날 원화를 달러로 바꿔 산 사람의 증권 계좌는 10% 빠졌어요.
+[scenes.0.lines.1.cap] SPY 2026.7.2 → 10.12 · 달러 +4.47% · 원화 −10.07% (매매기준율 환산, 배당·수수료·세금 없음)
+[scenes.0.lines.2.text] 주가가 올랐는데 계좌가 빠진다니, 어디서 새 나간 걸까요?
+[scenes.0.lines.3.text] 새 나간 건 환율이에요. 1,554원이던 달러가 1,338원이 됐거든요.
+[scenes.0.lines.3.cap] 원/달러 매매기준율 · 2026.7.2 1,554.4원(2024년 이후 최고) → 10.12 1,338.0원 (한국은행 ECOS 매매기준율 — 장중 값·다른 영상 숫자와 다를 수 있음)
+[scenes.1.key] promise
+[scenes.1.title] 같은 1억, 바꾼 날마다
+[scenes.1.sub] 바꾼 날 네 개 · 지금 값은 모두 10월 12일 기준
+[scenes.1.source] 한국은행 ECOS 731Y001 원/달러 매매기준율 일별 · 파이어맵 계산(수수료 없음)
+[scenes.1.data.cards.0.0] 작년 이맘때
+[scenes.1.data.cards.1.0] 올해 첫날
+[scenes.1.data.cards.2.0] 가장 높던 날
+[scenes.1.data.cards.3.0] 석 달 전
+[scenes.1.data.base] 1억
+[scenes.1.data.q] 지금은?
+[scenes.1.data.qNote] 지금 값은 모두 10월 12일 기준
+[scenes.1.data.otherHead] 끝에는 반대로
+[scenes.1.data.other] 덜 쓰게 된 돈
+[scenes.1.data.otherSub] 달러를 쓸 사람 쪽
+[scenes.1.lines.0.text] 그날 바꾼 1억은 지금 얼마가 됐을까요? 바꾼 날을 네 개 잡아 다 계산해 봤습니다.
+[scenes.1.lines.1.text] 끝에는 반대로, 이 환율 덕에 덜 쓰게 된 돈도 나와요.
+[scenes.2.key] why4
+[scenes.2.title] 왜 날짜가 네 개인가
+[scenes.2.sub] 환율 1년 · 바꾼 날 네 개
+[scenes.2.source] 한국은행 ECOS 731Y001 원/달러 매매기준율 일별(2025.10.13~2026.10.12) · 환산 수수료 없음
+[scenes.2.chapter] 1장
+[scenes.2.data.seed] X-1-fx
+[scenes.2.data.yticks.0.1] 1,350원
+[scenes.2.data.yticks.1.1] 1,450원
+[scenes.2.data.yticks.2.1] 1,550원
+[scenes.2.data.nowText] 10.12 · 1,338.0원
+[scenes.2.data.nowAll] 10.12 1,338.0원 < 네 날짜 환율 전부
+[scenes.2.data.marks.0.name] 작년 이맘때
+[scenes.2.data.marks.0.rate] 1,420.5원
+[scenes.2.data.marks.0.pct] −5.81%
+[scenes.2.data.marks.0.say] 600만원쯤
+[scenes.2.data.marks.1.name] 올해 첫날
+[scenes.2.data.marks.1.rate] 1,434.9원
+[scenes.2.data.marks.1.pct] −6.75%
+[scenes.2.data.marks.1.say] 700만원 가까이
+[scenes.2.data.marks.2.name] 가장 높던 날
+[scenes.2.data.marks.2.rate] 1,554.4원
+[scenes.2.data.marks.2.pct] −13.92%
+[scenes.2.data.marks.2.say] 1,400만원 가까이
+[scenes.2.data.marks.3.name] 석 달 전
+[scenes.2.data.marks.3.rate] 1,507.1원
+[scenes.2.data.marks.3.pct] −11.22%
+[scenes.2.data.marks.3.say] 1천만원 넘게
+[scenes.2.data.peakTag] 결과가 제일 나쁜 날을 고른 셈
+[scenes.2.data.baseText] 같은 1억
+[scenes.2.data.allDown] 네 날짜 모두 원화로는 줄었습니다
+[scenes.2.data.barHead] 그날 바꾼 1억 → 10.12 원화
+[scenes.2.data.legendDrop] 바꾼 날보다 내린 환율
+[scenes.2.data.legendGap] 줄어든 원화
+[scenes.2.data.phase] line
+[scenes.2.lines.0.text] 방금 그 숫자는 환율이 가장 높던 날부터 잰 거예요.
+[scenes.2.lines.1.text] 그날 하나만 쓰면, 결과가 제일 나쁜 날을 고른 셈이죠.
+[scenes.2.lines.1.cap] 1년 전 2025.10.13 · 1,420.5원 / 올해 첫날 2026.1.2 · 1,434.9원 / 최고점 2026.7.2 · 1,554.4원 / 석 달 전 2026.7.13 · 1,507.1원 → 끝 2026.10.12 · 1,338.0원
+[scenes.2.lines.2.text] 작년 이맘때, 올해 첫날, 가장 높던 날, 그리고 딱 석 달 전. 지금 값은 모두 10월 12일 기준입니다.
+[scenes.3.key] cash
+[scenes.3.title] 달러로만 바꿔 뒀다면
+[scenes.3.sub] 같은 1억, 바꾼 날마다 지금 원화로
+[scenes.3.source] 한국은행 ECOS 731Y001 원/달러 매매기준율 일별(2025.10.13~2026.10.12) · 환산 수수료 없음
+[scenes.3.chapter] 2장
+[scenes.3.data.seed] X-1-fx
+[scenes.3.data.yticks.0.1] 1,350원
+[scenes.3.data.yticks.1.1] 1,450원
+[scenes.3.data.yticks.2.1] 1,550원
+[scenes.3.data.nowText] 10.12 · 1,338.0원
+[scenes.3.data.nowAll] 10.12 1,338.0원 < 네 날짜 환율 전부
+[scenes.3.data.marks.0.name] 작년 이맘때
+[scenes.3.data.marks.0.rate] 1,420.5원
+[scenes.3.data.marks.0.pct] −5.81%
+[scenes.3.data.marks.0.say] 600만원쯤
+[scenes.3.data.marks.1.name] 올해 첫날
+[scenes.3.data.marks.1.rate] 1,434.9원
+[scenes.3.data.marks.1.pct] −6.75%
+[scenes.3.data.marks.1.say] 700만원 가까이
+[scenes.3.data.marks.2.name] 가장 높던 날
+[scenes.3.data.marks.2.rate] 1,554.4원
+[scenes.3.data.marks.2.pct] −13.92%
+[scenes.3.data.marks.2.say] 1,400만원 가까이
+[scenes.3.data.marks.3.name] 석 달 전
+[scenes.3.data.marks.3.rate] 1,507.1원
+[scenes.3.data.marks.3.pct] −11.22%
+[scenes.3.data.marks.3.say] 1천만원 넘게
+[scenes.3.data.peakTag] 결과가 제일 나쁜 날을 고른 셈
+[scenes.3.data.baseText] 같은 1억
+[scenes.3.data.allDown] 네 날짜 모두 원화로는 줄었습니다
+[scenes.3.data.barHead] 그날 바꾼 1억 → 10.12 원화
+[scenes.3.data.legendDrop] 바꾼 날보다 내린 환율
+[scenes.3.data.legendGap] 줄어든 원화
+[scenes.3.data.phase] bars
+[scenes.3.lines.0.text] 먼저 1억을 달러로 바꿔 그냥 들고만 있었다고 해 보죠.
+[scenes.3.lines.1.text] 작년 이맘때 바꿨다면, 지금 원화로 600만원쯤 줄어 있어요.
+[scenes.3.lines.1.cap] 1년 전 2025.10.13 · 70,398달러 → 94,192,186원 (−5.81%) / 올해 첫날 2026.1.2 · 69,691달러 → 93,246,916원 (−6.75%)
+[scenes.3.lines.2.text] 올해 첫날 바꿨다면 700만원 가까이 줄었고요.
+[scenes.3.lines.3.text] 석 달 전이면 줄어든 돈이 1천만원을 넘습니다.
+[scenes.3.lines.3.cap] 석 달 전 2026.7.13 · 66,353달러 → 88,779,776원 (−11.22%)
+[scenes.3.lines.4.text] 가장 높던 날 바꿨다면요? 1,400만원 가까이 빠졌습니다.
+[scenes.3.lines.4.cap] 최고점 2026.7.2 · 64,334달러 → 86,078,230원 (−13.92%)
+[scenes.3.lines.5.text] 네 날짜 모두 원화로는 줄었습니다.
+[scenes.3.lines.6.text] 지금 환율이 그 네 날보다 다 낮거든요.
+[scenes.3.lines.6.cap] 10.12 1,338.0원 < 네 날짜 환율 전부
+[scenes.4.key] wf1
+[scenes.4.title] 미국 ETF를 샀다면
+[scenes.4.sub] 작년 이맘때(2025.10.13) 1억으로 산 경우 · 지금 값 10.12
+[scenes.4.source] SPY·QQQ 종가(야후, 배당 미포함 가격) · 한국은행 ECOS 731Y001 원/달러 매매기준율 · 파이어맵 계산(수수료·세금 없음)
+[scenes.4.chapter] 3장
+[scenes.4.data.groups.0.head] S&P500 ETF
+[scenes.4.data.groups.0.rText] 달러 +17.35%
+[scenes.4.data.groups.0.kText] 원화 +10.54%
+[scenes.4.data.groups.0.gap] 6.81%p
+[scenes.4.data.groups.0.won] 110,537,735원
+[scenes.4.data.groups.1.head] 나스닥100 ETF
+[scenes.4.data.groups.1.rText] 달러 +23.92%
+[scenes.4.data.groups.1.kText] 원화 +16.73%
+[scenes.4.data.groups.1.gap] 7.19%p
+[scenes.4.data.groups.1.won] 116,727,521원
+[scenes.4.data.cols.0] 달러로 번 몫
+[scenes.4.data.cols.1] 환율이 깎은 몫
+[scenes.4.data.cols.2] 원화 결과
+[scenes.4.data.base] 1억
+[scenes.4.data.calls.0.2] 700만원 가까이 덜 남음
+[scenes.4.data.calls.1.2] 700만원 넘게 덜 남음
+[scenes.4.lines.0.text] 이번엔 같은 1억으로 그날 S&P500 ETF를 샀다고 해 볼게요.
+[scenes.4.lines.1.text] 작년 이맘때 샀다면 달러로는 17% 넘게 올랐습니다.
+[scenes.4.lines.2.text] 그런데 원화로 바꿔 보면 10%대로 내려앉아요.
+[scenes.4.lines.2.cap] SPY 2025.10.13 → 2026.10.12 · 달러 +17.35% · 환율 −5.81% · 원화 +10.54% → 110,537,735원 · 달러−원화 차 6.81%p
+[scenes.4.lines.3.text] 1억으로 치면 달러로 번 것보다 원화로는 700만원 가까이 덜 남은 거죠.
+[scenes.4.lines.4.text] 미국 기술 회사들을 묶어 따라가는 나스닥100 ETF는 어땠을까요?
+[scenes.4.lines.4.cap] QQQ 2025.10.13 → 2026.10.12 · 달러 +23.92% · 환율 −5.81% · 원화 +16.73% → 116,727,521원 · 달러−원화 차 7.19%p
+[scenes.4.lines.5.text] 작년 이맘때 샀다면 여기도 환율 때문에 700만원 넘게 덜 남았습니다.
+[scenes.5.key] wf2
+[scenes.5.title] 가장 높던 날 샀다면
+[scenes.5.sub] 같은 S&P500 ETF · 바꾼 날만 다름 · 지금 값 10.12
+[scenes.5.source] SPY 종가(야후, 배당 미포함 가격) · 한국은행 ECOS 731Y001 원/달러 매매기준율 · 파이어맵 계산(수수료·세금 없음)
+[scenes.5.chapter] 3장
+[scenes.5.data.groups.0.head] 가장 높던 날(2026.7.2)
+[scenes.5.data.groups.0.rText] 달러 +4.47%
+[scenes.5.data.groups.0.kText] 원화 −10.07%
+[scenes.5.data.groups.0.gap] 14.54%p
+[scenes.5.data.groups.0.won] 89,929,195원
+[scenes.5.data.groups.1.head] 석 달 전(2026.7.13)
+[scenes.5.data.groups.1.rText] 달러 +3.86%
+[scenes.5.data.groups.1.kText] 원화 −7.79%
+[scenes.5.data.groups.1.won] 92,208,101원
+[scenes.5.data.cols.0] 달러로 번 몫
+[scenes.5.data.cols.1] 환율이 깎은 몫
+[scenes.5.data.cols.2] 원화 결과
+[scenes.5.data.base] 1억
+[scenes.5.data.calls.0.2] 9천만원 아래로
+[scenes.5.data.calls.1.2] 석 달 전도 마이너스
+[scenes.5.data.first] 맨 처음 본 숫자
+[scenes.5.lines.0.text] 맨 처음 본 숫자가 바로 가장 높던 날 산 경우예요.
+[scenes.5.lines.1.text] 주가는 올랐는데 1억이 9천만원 아래로 내려갔습니다.
+[scenes.5.lines.1.cap] SPY 2026.7.2 → 10.12 · 달러 +4.47% · 원화 −10.07% → 89,929,195원 / 석 달 전 2026.7.13 · 달러 +3.86% · 원화 −7.79% → 92,208,101원 / 올해 첫날 SPY 원화 +6.20%·QQQ +13.46% / 최고점 QQQ 원화 −9.88% · 석 달 전 QQQ −6.94%
+[scenes.5.lines.2.text] 석 달 전에 샀어도 원화로는 마이너스였고요.
+[scenes.6.key] two
+[scenes.6.title] 주가와 환율, 두 숫자
+[scenes.6.sub] 원화로 미국 주식을 사면
+[scenes.6.source] SPY 종가(야후, 배당 미포함 가격) · 한국은행 ECOS 731Y001 원/달러 매매기준율 · 파이어맵 계산(수수료·세금 없음)
+[scenes.6.chapter] 3장
+[scenes.6.data.a.0] 주가
+[scenes.6.data.a.1] 달러로 매긴 값
+[scenes.6.data.b.0] 환율
+[scenes.6.data.b.1] 달러 → 원화
+[scenes.6.data.eq] 원화 계좌
+[scenes.6.data.tail] 두 숫자를 같이 들고 있는 것
+[scenes.6.lines.0.text] 원화로 미국 주식을 사면, 주가 하나가 아니라 주가와 환율, 두 숫자를 같이 들고 있는 겁니다.
+[scenes.6.lines.0.cap] 가격 기준 · 배당·세금·환전 수수료 없음
+[scenes.7.key] bank
+[scenes.7.title] 바꾸는 순간 드는 돈
+[scenes.7.sub] 은행이 날마다 알리는 기준 환율 = 매매기준율
+[scenes.7.source] 은행연합회 외환길잡이(환전수수료 안내)
+[scenes.7.chapter] 4장
+[scenes.7.data.mid] 매매기준율
+[scenes.7.data.buy] 현찰 살 때
+[scenes.7.data.pricier] 기준보다 비싸게
+[scenes.7.data.fee] 환전수수료
+[scenes.7.data.pref] 우대 대상
+[scenes.7.data.counter] 은행 창구
+[scenes.7.lines.0.text] 여기까지는 전부 은행이 날마다 정해 알리는 기준 환율, 매매기준율로 계산했어요.
+[scenes.7.lines.1.text] 그런데 은행에서 달러 현찰을 살 땐, 그 기준 환율보다 비싸게 냅니다.
+[scenes.7.lines.2.text] 은행연합회는 이 차이를 환전수수료라고 부르고, 우대해 주는 게 바로 이 부분이라고 적어 두었어요.
+[scenes.7.lines.2.cap] "'매매기준율'과 '현찰 살때 환율'의 차액을 환전수수료(외화현찰매매 스프레드)라고 하며, 이 부분이 우대 대상입니다." — 은행연합회 외환길잡이
+[scenes.8.key] band
+[scenes.8.title] 하나은행 고시로 보면
+[scenes.8.sub] 2026.10.12 고시 · 달러 현찰
+[scenes.8.source] 하나은행 고시 2026.10.12 · 은행연합회 외환길잡이(은행별 수수료율, 2026.8~9 기준) · 파이어맵 계산
+[scenes.8.chapter] 4장
+[scenes.8.data.midText] 매매기준율 1,336.00원
+[scenes.8.data.buyText] 현찰 살 때 1,359.38원
+[scenes.8.data.sellText] 현찰 팔 때 1,312.62원
+[scenes.8.data.pct] +23.38원 (1.75%)
+[scenes.8.data.k1.0] 천 달러, 우대 없이
+[scenes.8.data.k1.1] 2만원 넘게 더
+[scenes.8.data.k1.2] 23,380원
+[scenes.8.data.k2.0] 사서 바로 팔면
+[scenes.8.data.k2.1] 5만원 가까이 사라짐
+[scenes.8.data.k2.2] 46,760원
+[scenes.8.data.k3.0] 우대를 받으면
+[scenes.8.data.k3.1] 이 차이가 줄어듦
+[scenes.8.data.k3.2] 최대 우대 75~90%
+[scenes.8.lines.0.text] 하나은행 고시로 보면 그 차이가 1.75%입니다.
+[scenes.8.lines.0.cap] 하나은행 2026.10.12 고시 · USD 매매기준율 1,336.00원 · 현찰 살 때 1,359.38원 (+23.38원, 1.75%) · 은행 고시값은 한국은행 매매기준율과 시각·주체가 달라 조금 다름
+[scenes.8.lines.1.text] 천 달러를 우대 없이 사면 2만원 넘게 더 냅니다.
+[scenes.8.lines.2.text] 사자마자 다시 팔면요? 5만원 가까이가 그냥 사라집니다.
+[scenes.8.lines.2.cap] 1,000달러 · 현찰 살 때 1,359,380원 − 현찰 팔 때 1,312,620원 = 46,760원
+[scenes.8.lines.3.text] 우대를 받으면 이 차이는 줄어듭니다.
+[scenes.8.lines.3.cap] 주요 은행 USD 사실 때 수수료율 1.75% · 최대 우대 75~90% (은행연합회 외환길잡이, 2026.8~9 기준)
+[scenes.9.key] note
+[scenes.9.title] 이 영상 계산에 안 들어간 것
+[scenes.9.sub] 환전 비용
+[scenes.9.source] 은행연합회 외환길잡이 · 파이어맵 계산 기준(매매기준율, 수수료·세금·배당 없음)
+[scenes.9.chapter] 4장
+[scenes.9.data.c1.0] 증권사에서 바꾸는 달러도
+[scenes.9.data.c1.1] 우대율에 따라 환전 비용이 붙을 수 있음
+[scenes.9.data.c2.0] 이 영상 계산
+[scenes.9.data.c2.1] 환전 비용 0원으로 계산
+[scenes.9.data.c3] 실제로 남는 돈은 조금 더 적음
+[scenes.9.lines.0.text] 증권사에서 ETF를 사려고 바꾸는 달러도, 우대율에 따라 환전 비용이 붙을 수 있어요. 이 영상 계산엔 그런 비용이 하나도 안 들어가 있으니, 실제로 남는 돈은 이보다 조금 더 적습니다.
+[scenes.10.key] seesaw1
+[scenes.10.title] 반대편 — 덜 쓰게 된 돈
+[scenes.10.sub] 달러 값이 내리면
+[scenes.10.source] 한국은행 ECOS 731Y001 원/달러·원/100엔 매매기준율 · 파이어맵 계산(카드 수수료 없음)
+[scenes.10.chapter] 5장
+[scenes.10.data.L.0] 달러를 들고 있던 사람
+[scenes.10.data.L.1] 원화로 바꾸면 줄어듦
+[scenes.10.data.R.0] 달러를 쓸 사람
+[scenes.10.data.R.1] 원화로 덜 냄
+[scenes.10.data.tagL] 손해
+[scenes.10.data.tagR] 이득
+[scenes.10.lines.0.text] 달러 값이 내리면 손해만 볼까요? 달러를 쓸 사람한테는 거꾸로입니다.
+[scenes.11.key] cards
+[scenes.11.title] 천 달러를 쓴다면
+[scenes.11.sub] 미국 직구·여행 · 매매기준율 · 카드 수수료 없음
+[scenes.11.source] 한국은행 ECOS 731Y001 원/달러·원/100엔 매매기준율 · 파이어맵 계산(카드 수수료 없음)
+[scenes.11.chapter] 5장
+[scenes.11.data.bill] 1,000달러
+[scenes.11.data.billSub] 직구 · 여행
+[scenes.11.data.c.0.0] 7월 2일
+[scenes.11.data.c.0.1] 가장 높던 날
+[scenes.11.data.c.0.2] 155만원쯤
+[scenes.11.data.c.1.0] 10월 12일
+[scenes.11.data.c.1.1] 지금
+[scenes.11.data.c.1.2] 134만원쯤
+[scenes.11.data.diff] 20만원 넘게 덜
+[scenes.11.data.c3.0] 작년 이맘때
+[scenes.11.data.c3.1] 2025.10.13 보다
+[scenes.11.data.c3.2] 8만원쯤 덜
+[scenes.11.lines.0.text] 미국 직구나 여행에서 천 달러를 쓴다고 해 보죠.
+[scenes.11.lines.1.text] 가장 높던 날엔 155만원쯤이었는데, 지금은 134만원쯤이에요.
+[scenes.11.lines.1.cap] 1,000달러 · 2026.7.2 1,554,400원 → 10.12 1,338,000원 (−216,400원) · 매매기준율, 카드 수수료 없음
+[scenes.11.lines.2.text] 작년 이맘때보다도 8만원쯤 덜 들고요.
+[scenes.11.lines.2.cap] 2025.10.13 1,420,500원 → 10.12 1,338,000원 (−82,500원)
+[scenes.12.key] yen
+[scenes.12.title] 엔화도 같이 내려왔다
+[scenes.12.sub] 원/100엔 매매기준율 · 2024.1 → 2026.10.12
+[scenes.12.source] 한국은행 ECOS 731Y001 원/100엔 매매기준율 일별(2024.1.2~2026.10.12) · 파이어맵 계산(카드 수수료 없음)
+[scenes.12.chapter] 5장
+[scenes.12.data.yt.0.1] 850원
+[scenes.12.data.yt.1.1] 950원
+[scenes.12.data.yt.2.1] 1,000원
+[scenes.12.data.name] 원/100엔 매매기준율
+[scenes.12.data.endText] 10.12 · 845.42원
+[scenes.12.data.lowTag] 2024년 이후 거의 가장 싼 값
+[scenes.12.data.jul] 7월 초
+[scenes.12.data.k.0] 일본에서 쓸 10만엔
+[scenes.12.data.k.1] 7월 초
+[scenes.12.data.k.2] 96만원쯤
+[scenes.12.data.k.3] 지금
+[scenes.12.data.k.4] 85만원쯤
+[scenes.12.data.k.5] 11만원쯤 덜
+[scenes.12.lines.0.text] 엔화도 같이 내려왔어요. 2024년 이후로 거의 가장 싼 값입니다.
+[scenes.12.lines.0.cap] 원/100엔 매매기준율 · 2026.10.12 845.42원 · 2024년 이후 최저는 다음 날 10.13 842.3원 (한국은행 ECOS)
+[scenes.12.lines.1.text] 일본에서 쓸 10만엔이 7월 초엔 96만원쯤이었는데, 지금은 85만원쯤이에요.
+[scenes.12.lines.1.cap] 10만엔 · 2026.7.2 956,320원 → 10.12 845,420원 (−110,900원)
+[scenes.13.key] seesaw2
+[scenes.13.title] 같은 환율, 반대 결과
+[scenes.13.sub] 달러 값이 내리면
+[scenes.13.source] 한국은행 ECOS 731Y001 원/달러·원/100엔 매매기준율 · 파이어맵 계산(카드 수수료 없음)
+[scenes.13.chapter] 5장
+[scenes.13.data.L.0] 달러를 들고 있던 사람
+[scenes.13.data.L.1] 원화로 바꾸면 줄어듦
+[scenes.13.data.R.0] 달러를 쓸 사람
+[scenes.13.data.R.1] 원화로 덜 냄
+[scenes.13.data.tagL] 손해
+[scenes.13.data.tagR] 이득
+[scenes.13.lines.0.text] 환율이 내린 건 같은데, 달러를 들고 있던 사람한테선 빠지고 쓸 사람한테는 이득이 됐습니다.
+[scenes.14.key] prev
+[scenes.14.title] 지난 편과 이어서
+[scenes.14.sub] 지난 편 '1억, 1년 뒤 남은 돈'
+[scenes.14.source] 파이어맵 지난 편 '1억, 1년 뒤 남은 돈'(2026.10.14 공개)
+[scenes.14.chapter] 6장
+[scenes.14.data.head] 지난 편에서 비교한 네 곳
+[scenes.14.data.tiles.0.0] 예금
+[scenes.14.data.tiles.1.0] S&P500
+[scenes.14.data.tiles.2.0] SCHD
+[scenes.14.data.tiles.3.0] 금
+[scenes.14.data.etf] 미국 ETF
+[scenes.14.data.cut] 환율이 수익을 깎음
+[scenes.14.data.now] 이번 편
+[scenes.14.data.nowBig] 환율만 따로 자세히
+[scenes.14.lines.0.text] 지난 편 '1억, 1년 뒤 남은 돈'에서는 환율이 미국 ETF 세 개의 수익을 함께 깎았죠. 이번 편은 그 환율 이야기만 따로 자세히 본 겁니다.
+[scenes.14.lines.0.cap] 전체 표 — 고정 댓글 카페 글
+[scenes.15.key] table
+[scenes.15.title] 바꾼 날 네 개, 한 장으로
+[scenes.15.sub] 같은 1억 → 10.12 원화로 · 수수료·세금·배당 없음
+[scenes.15.source] SPY·QQQ 종가(야후, 배당 미포함) · 한국은행 ECOS 731Y001 매매기준율 · 파이어맵 계산(수수료·세금·배당 없음)
+[scenes.15.chapter] 6장
+[scenes.15.data.cols.0] 바꾼 날
+[scenes.15.data.cols.1] 그날 환율
+[scenes.15.data.cols.2] 달러로만
+[scenes.15.data.cols.3] S&P500 ETF
+[scenes.15.data.cols.4] 나스닥100 ETF
+[scenes.15.data.rows.0.0] 작년 이맘때
+[scenes.15.data.rows.0.2] 1,420.5원
+[scenes.15.data.rows.0.3] −5.81%
+[scenes.15.data.rows.0.4] +10.54%
+[scenes.15.data.rows.0.5] +16.73%
+[scenes.15.data.rows.1.0] 올해 첫날
+[scenes.15.data.rows.1.2] 1,434.9원
+[scenes.15.data.rows.1.3] −6.75%
+[scenes.15.data.rows.1.4] +6.20%
+[scenes.15.data.rows.1.5] +13.46%
+[scenes.15.data.rows.2.0] 가장 높던 날
+[scenes.15.data.rows.2.2] 1,554.4원
+[scenes.15.data.rows.2.3] −13.92%
+[scenes.15.data.rows.2.4] −10.07%
+[scenes.15.data.rows.2.5] −9.88%
+[scenes.15.data.rows.3.0] 석 달 전
+[scenes.15.data.rows.3.2] 1,507.1원
+[scenes.15.data.rows.3.3] −11.22%
+[scenes.15.data.rows.3.4] −7.79%
+[scenes.15.data.rows.3.5] −6.94%
+[scenes.15.data.endRate] 지금(10.12) 1,338.0원
+[scenes.15.data.q] 달러, 언제 바꾸셨나요?
+[scenes.15.data.ask.0] 날짜를 댓글로 남겨 주세요
+[scenes.15.data.ask.1] 같은 식으로 계산해 답글 드립니다
+[scenes.15.data.cafe.0] 전체 표
+[scenes.15.data.cafe.1] 고정 댓글 카페 글
+[scenes.15.lines.0.text] 달러, 언제 바꾸셨나요? 날짜를 댓글로 남겨 주시면 같은 식으로 계산해 답글 드리겠습니다.
+
+## 화면 코드: video/src/X1.tsx
+[X1.tsx] 정확한 값
+[X1.tsx] 원문
+
+## 화면 코드: video/src/parts/fm.tsx
+[fm.tsx] ${e}억 ${r.toLocaleString()}만원
+[fm.tsx] ${e}억원
+[fm.tsx] ${r.toLocaleString()}만원
+[fm.tsx] 1년 뒤 남은 돈
+[fm.tsx] 원금
+[fm.tsx] 떨어진 해
+[fm.tsx] 세금·건보료
+[fm.tsx] 월 100만원 원금
+[fm.tsx] 파이어맵
+[fm.tsx] 파이어맵
+
+## 화면 코드: video/src/parts/spread.tsx
+[spread.tsx] 우대 받으면 ↓

@@ -58,6 +58,8 @@ RULES = [
     ('excluded', 'excluded', '7.', None),
     ('calendar', 'calendar', '8.', None), ('ask', 'ask', '8.', ('여러분 집은',)),
 ]
+CUTS = {'duel': [[2, 'c2p/h1f_city.png', 0.45, 1]], 'price': [[1, 'c2p/h1f_tower.png', 0, 1], [4, 'c2p/h1f_city2.png', 0, 1]],
+        'five': [[2, 'c2p/h1f_tower2.png', 0.35, 1]], 'excluded': [[2, 'c2p/h1f_city.png', 0.1, 1], [4, 'c2p/h1f_tower.png', 0.25, 1]]}
 CH_NAME = {'0.': None, **{f'{i}.': f'{i}장' for i in range(1, 9)}}
 CH_TITLE = {}
 END_MIN = 20 * FPS
@@ -181,6 +183,9 @@ def main():
             if -1 in data.get('at', []): warn.append(f'{key}: 박자 못 찾음 {data["at"]}')
             frames = sum(x['frames'] for x in out)
             scenes.append({'key': key, 'kind': kind, 'title': title, 'sub': sub, 'source': src, 'chapter': CH_NAME[ch], 'data': data, 'lines': out, 'frames': frames})
+    # 10/16 18:5x PD: 첫 렌더 '같은 화면' 8초 넘는 곳 6곳 → 그 줄 동안 실사(Pexels 30975009·38029457 프레임, H-1 클립과 같은 재료)를 덮는다. 새 글자 0(자막은 그 줄 말).
+    for s in scenes:
+        if s['key'] in CUTS: s['data']['cutaways'] = CUTS[s['key']]
     scenes[-1]['frames'] = max(scenes[-1]['frames'], END_MIN)
     missing = sum(1 for s in scenes for l in s['lines'] if not l['audio'])
     nlines = sum(len(v) for v in sl.values())

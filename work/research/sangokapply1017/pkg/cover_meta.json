@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-17 21:39",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "산곡역 청약",
+ "num": "59㎡ 6~10층 7억4,500만",
+ "sub": "입주 때 쌓인 중도금 이자 약 3,100만원",
+ "label": "",
+ "src": "",
+ "icon": "building",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 168,
+ "num_px": 82,
+ "sub_px": 59,
+ "board": [
+  "nhisadj1017",
+  "h1gapcafe1017",
+  "marrygift1017",
+  "bogeum1017",
+  "sbdep1017",
+  "cma1017",
+  "jeonseloan1017",
+  "w2cafe1017",
+  "sangdo1017",
+  "kospidrop1017"
+ ]
+}

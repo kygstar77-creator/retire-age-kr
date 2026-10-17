@@ -118,6 +118,19 @@
     "url": "https://cafe.naver.com/firemap/308"
    },
    "note": "19:40 칸 TBD·비축 0 → 관문 통과(10/16 23:41)·07:40 막힘편 h1gapcafe1017 발행. verify OK 1325/1325자·사진 3/3. 관문 기록 research/h1gapcafe1017/review.md(제목 7.4·표지 7.75·레드팀 틀림 0·58세 이해 2차 통과·editgate auto). 개선: naverpost private_video_links가 c\\d+.txt만 읽게(check_*.txt 속 옛 영상 주소로 보류되던 것)"
+  },
+  {
+   "hour": 21,
+   "ts": "21:42",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "건강보험료 조정신청, 배당·이자 줄면 고지서 한 장에 몇만원 줄까?",
+    "url": "https://cafe.naver.com/firemap/309"
+   },
+   "note": "verify OK 1882/1882자·사진 3/3 · 블로그 STOP_blog로 안 올림 · 10/18 06:10 sangokapply1017 작성(출처 12·교차검증 Gemini 사실 6 중 반영 2·유지 4(공고문 원문 확인), 말투 14 중 반영 9 · 레드팀 틀림 0 오해 5 반영 · 58세 2차 통과) · 개선: aitell 제목 끝말 반복 거부(audit 요청)"
   }
  ]
 }

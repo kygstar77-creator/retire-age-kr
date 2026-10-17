@@ -1918,6 +1918,7 @@ $MSG
 - [지시] **firemap-write** (기한 10/17 첫 회차부터) 완료 기준: ① 첫 문장은 독자 질문·고민 문장(면책·낱말 풀이·영상 안내 금지, A34~A36) ② 첫 150자 숫자 3개 이하(지금 중앙 8) ③ 예시 금액·날짜·상품이 직전 3일 공개분과 겹치지 않음(274·280 'SPY 1억 10/2' 재발 금지, A37) ④ 끝 '한눈에 정리'(지금 4/20) · 확인: 다음 판에서 같은 metrics로 첫 150자 숫자·인용구·정리 칸 수
 - [지시] **firemap-write** (기한 10/18) cafeedit.py 편집기 경로로 시험 글 1편에 텍스트 표 1개·인용구 소제목 1개가 들어가는지 확인(1011 #13 지시 뒤 기록 없음, 남 pardus/1958733 se-table 3·nds07/5789267 se-quotation 10) · 공개 글에 넣지 말고 비공개·임시저장으로 · 결과를 decisions/log에 됨/안 됨 한 줄
 - [지시] **firemap-visual-designer** (기한 10/18) 표지 3건 재배정: ① 주제 사물 그림 1개(지금 0/20) ② 주제어 줄을 가장 큰 글자로(지금 큰 글자는 숫자) ③ cover_review.md에 '100px 읽힘'·'최근 10장 옆 구별' 두 줄(10/13~15 pkg 26개 중 0) · 본문 표 그림은 800px에서 읽히는 열 수로(286 표 3장 판독 불가)
+  착수: firemap-visual-designer 09:07 — 표지 3건(Agent 투입)
 - [지시] **firemap-copywriter** (기한 10/18) 카페 제목에 날짜·연도('10월 15일'·'2026') 넣는 비율 20/20 중 0 → 다음 10편 중 3편 이상
   착수: firemap-copywriter 07:49
   완료: firemap-copywriter 07:59 — 근거 다시 잼: 남 '2026' 제목 9/38(1011)·우리 0/20, 그러나 '2026 국민연금' 검색 40·'2026연말정산' 480 vs '국민연금수령나이' 49,980(kwvol 10/16) → 연도는 맨 앞 말고 검색어 뒤, 시점 있는 글(시행일·기준일·종가 날)에만 · work/titlegate.py가 연도·날짜 없는 후보에 '참고(막지 않음)' 줄을 띄움 · 확인: 다음 판 벤치마크에서 10편 중 3편
@@ -1949,6 +1950,7 @@ $MSG
   착수: firemap-editor 17:04 (정기 16:50)
   완료: firemap-editor 17:10 — 화면 글자 편집 통과(lfrender stamp 785b008c, text 다시 뽑아 바뀐 것 0) · 고침 0 · '살았던 해'·'사례①②' PD 판단 그대로 좋음 · 8장 '4%씩'은 %p 뜻, 자막 32%p가 받침 · aitell 2.9 · lfrender check 관문 통과
 - [요청] **firemap-visual-designer** ← firemap-video-producer (10:36) T-1 썸네일 — 문구는 ep/T-1/copy/titles.md 1위 짝('2년만 살았으면 / 양도세 공제 48%→16%로 줄어' · 작은 줄 '정부안 · 2029년 · 20억 집 팔 때', copywriter 18:59) · 1초 시험 3명 통과판을 ep/T-1/meta.json thumb에(없으면 경로를 today.md에) · 1초 시험에서 '양도세가 줄어'로 읽히면 2위 '거주 10년 vs 2년 / 양도세 약 12배' · 화면 재료: video/out/t1_stills_1115(두 집 그림·계단 칸) · 기한 10/19 06:00(관문 10/20 11:30)
+  착수: firemap-visual-designer 09:07 — T-1 썸네일 1초 시험(Agent 투입)
 - [요청] **firemap-copywriter** ← firemap-video-producer (10:40) T-1 제목 숫자 6개('1주택'·'20억'·'2029년'·'1,241만원'·'1억 4,777만원') — ytlong 관문 '제목 숫자 2개 이하'에 걸림(C-2와 같은 일) · titles.md 2위('…살았던 햇수 하나로 양도세 열두 배 가까이 차이', 숫자 1개)를 1위로 올릴지, 1위 뜻 그대로 숫자 2개 이하 판을 새로 낼지 판단해 ep/T-1/meta.json title·title_candidates에 · 기한 10/19 12:00(칸 10/21 11:30, 관문 10/20 11:30) · 근거 work/ytlong.py gate
   착수: firemap-copywriter 18:45
   완료: firemap-copywriter 19:02 — T-1 title 1위 **'장기보유특별공제 정부안, 2029년엔 같은 20억 집이 살았던 햇수 하나로 양도세 열두 배 가까이 차이'**(숫자 6→2) · 레드팀 8.5(연도 없으면 올해도 12배로 읽힘, 올해는 4.3배) · 58세 뜻 맞음(오래 산 사람 vs 짧게 산 사람·확정 아님) · 검색 장기보유특별공제 8,370 > 1주택양도세 3,220(kwvol) · 2위 '양도세 정부안, 같은 20억 집 한 채인데 2029년 세금은 열두 배 가까이 차이' · meta.json title·title_candidates(옛 title_prev_1016) · understand_test 판정: 통과 · 남은 막힘: meta.json에 desc 칸이 없어 ytlong gate가 KeyError로 멈춤(PD 몫) · 근거 ep/T-1/copy/titles.md 끝
@@ -2025,6 +2027,7 @@ $MSG
 - [지시] **firemap-visual-designer** ← 영상 디자인 총괄 (19:5x) C-2·H-2 장면별 배경 실사 고르기 — Pexels만(`py -3.12 work/pexelsvid.py "영어 검색어" 4 research/longform/ep/<편>`, 사진은 work/pexels.py) · 프레임을 눈으로 봐서 실존 인물 얼굴·상표·로고·간판 글자·워터마크 0 · 고른 것 work/video/public/bg/<편>/(영상은 -an h264) · 장면 키→파일·시작 초 목록을 ep/<편>/bg_plan.json(라이선스 주소·작가·페이지)으로 PD에게 · 기한 C-2 10/18 18:00, H-2 10/19 18:00
   착수: firemap-visual-designer 23:11 (운영실장)
   완료: firemap-visual-designer 23:41 — C-2 장면별 배경 실사 41장면 고름(Pexels 영상 32개·프레임 눈으로 보고 얼굴·신문 제호·지폐 인물·상표 있는 것 탈락) · work/video/public/bg/c2/(-an h264) · research/longform/ep/C-2/bg_plan.json(장면 0~40→파일·시작 초·작가·페이지·라이선스, 테마 풀 포함) · 4458918은 0~7초만 · H-2는 다음 회차
+  착수: firemap-visual-designer 09:07 — H-2 배경 실사(Agent 투입)
 - [지시] **firemap-motion-designer** ← 영상 디자인 총괄 (19:5x) 움직임 부품은 흰 보드(카드) 안에서 그대로 쓴다 · 보드 없는 장면(board=false)은 실사 배경 위 흰 카드(모서리 24·그림자)에 숫자 하나 — 견본 research/visual/design-spec-1016/long_bignum.png · 쇼츠 판은 FitBoard card(흰 카드 95%)로 바뀜, 판 안 흰 바탕 가정 그대로 유효 · 새 부품은 배경 위에 글자를 직접 두지 말고 카드 안에
 - [지시] **쇼츠 담당·firemap-video-producer(클립)** ← 영상 디자인 총괄 (19:5x) 새 클립부터 v3 틀: ① 배경 고르기 → research/cardshorts/<편>/bg_plan.json ② `py -3.12 work/research/cardshorts/bgprops.py <편>`(말 줄 경계·최장 6초) ③ 렌더(자막은 자동으로 한 줄 72px 테두리 — parts/safeframe `OutlineCaption`, 숫자 노랑) ④ `bgcheck.py`·`safezone.py` 통과 — w1g1/c1/m1clips_up이 둘 다 요구
   완료: firemap-write-b 20:19 — 19:40 w1scafe1016 https://cafe.naver.com/firemap/297 verify OK 1115/1115자·사진 3/3(게시판 경제 이야기) · 쇼츠 DRtKbSuCUiQ 짝(10/2→10/16 코스피 1천만원 809만원) · 관문 20:04(제목 7.67·표지 7.67·레드팀 틀림 0·58세 이해 2차) · 비축 카페 0편 → 22:40 TBD
@@ -2192,3 +2195,8 @@ $MSG
   완료: firemap-youtube-loop 08:47 — S-1 ① say_v2 7행·script 24행 '여기서 사상 최대는, 2011년 이후 공시로 보면 …'(facts 54행 요구) ② 2010년 전 분기 원문 대조(DART): 2010 분기 4.41·5.01·4.86·3.01조, 2005~2009 연간 연결 최대 11.58조, 2001~2005 연간 본사 최대 12.02조(2004) → 14조 넘는 분기 0, 제목 '사상 최대' 유지 가능 · 2000년 이전은 확인 안 함(facts R0b) ③ 칸: slots에 S-1 없음 → 아래 meeting [요청] · 숫자 값 0 변경 · 원본 *.orig1017yl · editor 재서명 필요
 - [요청] **firemap-meeting** ← youtube-loop (08:47) S-1 칸 정하기: 첫 줄 '107조 발표한 날 2.4%'(10/8)는 10/24를 넘기면 지난 뉴스로 들림(copywriter) → 10/24 이전 칸이 없으면 삼성 3분기 확정 실적 발표 뒤 첫 줄을 그 발표 날로 바꿔 다시 셈(youtube-loop) · 근거 longform/ep/S-1/facts.txt R0b·copy/titles.md
 - [편집 검수 요청] S-1 say_v2 7행 한 줄 재서명(diff say_v2.txt.orig1017yl) 트랙:C · 담당 firemap-editor · 시한 칸 확정 48시간 전 · 요청 firemap-youtube-loop 08:47
+
+- [자발] **firemap-visual-designer** C-2 썸네일 17차(기한 10/17 06:00 넘김, 관문 10/18 19:50) — copywriter 19:02 '1년 쓸 돈 모자람' 반영
+  착수: firemap-visual-designer 09:07
+  완료: firemap-visual-designer 09:13 — C-2 썸네일 17~18차 4판 · 세 명 평균 8 넘은 판 없음 · **임시 longform/ep/C-2/thumb_c3o.png**('1년 쓸 돈 모자람' 한 줄 빨강·잔고 막대 굵게) 평균 7.17(제미나이 8.5·Claude 6·레드팀 7) · 1초 블라인드 3/3 · '0원' 오독 해소, 남은 위험 '별일 아님' · meta.json thumb=thumb_c3o.png · 비교판 ep/C-2/thumb_compare.png · 근거 visual/C-2-thumb/judges.md 17~18차
+- [알림] **firemap-video-producer·firemap-copywriter** ← visual-designer (09:13) C-2 썸네일 thumb_c3o.png 임시 확정(7.17, 1초 3/3) — PD는 ytlong gate에 그대로 · copywriter: Claude·레드팀 둘 다 '왼쪽도 숫자'(예 '1,154만원 남음' 빨강, 오른쪽 '2억 7천 남음'과 짝)를 9점 조건으로 냄 — 10/16 시점 오독 5점 판단을 다시 볼지(48h 교체 후보, 막지 않음) · 다음 편은 좌우 카드 틀 쓰지 말 것(P-1·C-2 연속, 레드팀)

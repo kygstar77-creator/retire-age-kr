@@ -371,6 +371,36 @@ def g16(bg):
 
 
 V['c3l'] = g16(CREAM)
+
+
+# 17차(10/17 visual) — copywriter 10/16 19:02: 왼쪽 도장 '통장 바닥남'(168px 0원 오독) → '1년 쓸 돈 모자람'(레드팀 8)
+#   '별일 아님'으로 읽힐 위험 → 빈 잔고 막대를 키워 받친다. c3j 그대로에서 도장·막대만 바꿈.
+OLD_ST = "<div class='t' style='left:64px;top:162px;font-size:78px;color:#FFFFFF'><span style='display:inline-block;background:#D7261E;border-radius:14px;padding:4px 22px;transform:rotate(-5deg)'>통장 바닥남</span></div>"
+OLD_BAR_L = "<div class='t' style='left:44px;top:290px;font-size:34px;color:#5B6270'>잔고</div><div style='position:absolute;left:124px;top:288px;width:390px;height:40px;border-radius:20px;background:#E3E6EC;overflow:hidden'><div style='width:6%;height:40px;background:#D7261E;border-radius:20px'></div></div>"
+OLD_BAR_R = "<div class='t' style='left:44px;top:290px;font-size:34px;color:#5B6270'>잔고</div><div style='position:absolute;left:124px;top:288px;width:390px;height:40px;border-radius:20px;background:#E3E6EC;overflow:hidden'><div style='width:91%;height:40px;background:#0E7A3E;border-radius:20px'></div></div>"
+assert V['c3j'].count(OLD_ST) == 1 and V['c3j'].count(OLD_BAR_L) == 1 and V['c3j'].count(OLD_BAR_R) == 1
+
+
+def bar(pct, col, top=262, h=64):
+    return (f"<div style='position:absolute;left:40px;top:{top}px;width:480px;height:{h}px;border-radius:{h//2}px;background:#E3E6EC;overflow:hidden;border:3px solid #C3C8D2'>"
+            f"<div style='width:{pct}%;height:100%;background:{col};border-radius:{h//2}px'></div></div>")
+
+
+# c3m: 도장 한 줄(64px) + 굵은 빈 막대(64px)
+ST_M = "<div class='t' style='left:0;top:166px;width:560px;text-align:center;font-size:66px;color:#FFFFFF'><span style='display:inline-block;background:#D7261E;border-radius:14px;padding:6px 20px;transform:rotate(-3deg)'>1년 쓸 돈 모자람</span></div>"
+V['c3m'] = V['c3j'].replace(OLD_ST, ST_M).replace(OLD_BAR_L, bar(4, '#D7261E')).replace(OLD_BAR_R, bar(91, '#0E7A3E'))
+# c3n: 도장 없이 빨간 큰 글 '1년 쓸 돈' + '모자람'(오른쪽 '2억 7천 남음'과 같은 꼴) · 빈 막대 키움
+ST_N = ("<div class='t' style='left:0;top:160px;width:560px;text-align:center;font-size:92px;color:#C8231B'>1년 쓸 돈"
+        "<span style='font-size:60px;color:#14171C'> 모자람</span></div>")
+V['c3n'] = V['c3j'].replace(OLD_ST, ST_N).replace(OLD_BAR_L, bar(4, '#D7261E')).replace(OLD_BAR_R, bar(91, '#0E7A3E'))
+
+# 18차 — 17차 Claude: c3m 흰 글 도장이 168px에서 뭉개짐 / 레드팀: c3n '모자람'(작은 검은 글)이 168px에서 사라져 '1년 쓸 돈 남음'으로 읽힘
+#   → 상자 없이 한 줄 전부 빨간 큰 글(c3o) · 두 낱말 모두 크게, '모자람'도 빨강(c3p)
+ST_O = "<div class='t' style='left:0;top:168px;width:560px;text-align:center;font-size:72px;color:#C8231B'>1년 쓸 돈 모자람</div>"
+V['c3o'] = V['c3j'].replace(OLD_ST, ST_O).replace(OLD_BAR_L, bar(4, '#D7261E')).replace(OLD_BAR_R, bar(91, '#0E7A3E'))
+ST_P = ("<div class='t' style='left:0;top:160px;width:560px;text-align:center;font-size:84px;color:#C8231B'>1년 쓸 돈"
+        "<span style='font-size:76px'> 모자람</span></div>")
+V['c3p'] = V['c3j'].replace(OLD_ST, ST_P).replace(OLD_BAR_L, bar(4, '#D7261E')).replace(OLD_BAR_R, bar(91, '#0E7A3E'))
 for k in V: V[k] = V[k].replace("<span style='display:none'></span'></div>", "</div>")
 assert all('같은 3억' in v and '0원' not in v and '정우' not in v for v in V.values())
 

@@ -1651,10 +1651,11 @@
   {
    "at": "2026-10-17 16:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "bogeum1017",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+   "gates_ok": "2026-10-17 17:00",
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-write-b 16:46: bogeum1017 작성 중(보금자리론 금리, 부동산) | firemap-write-b 17:00: bogeum1017 관문 통과 — '보금자리론 금리 동결, 만기를 20년으로 줄이면 이자가 얼마나 줄까?'(부동산·금리, 공사 10/1 공시·보도자료 2건·finlife, 제목 7.5·표지 8.0·레드팀 2회 틀림 반영·58세 이해 2차 심각 0·editgate auto)",
+   "published": "https://cafe.naver.com/firemap/306 17:05 verify OK 1877자"
   },
   {
    "at": "2026-10-17 18:10",

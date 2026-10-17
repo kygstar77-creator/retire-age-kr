@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-17 16:58",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "보금자리론/20년 vs 30년",
+ "num": "20년이 이자 1억 덜",
+ "sub": "3억 빌리면 · 30년 금리 5.10%",
+ "label": "주택금융공사 10월",
+ "src": "한국주택금융공사 10월 금리(10/1 공시)로 계산",
+ "icon": "house",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 120,
+ "num_px": 92,
+ "sub_px": 46,
+ "board": [
+  "sbdep1017",
+  "cma1017",
+  "jeonseloan1017",
+  "w2cafe1017",
+  "sangdo1017",
+  "kospidrop1017",
+  "bpcut1016",
+  "mixreset1016",
+  "w1scafe1016",
+  "retax1016"
+ ]
+}

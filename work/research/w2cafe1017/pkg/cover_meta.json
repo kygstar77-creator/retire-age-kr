@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-17 11:09",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "삼성전자가 자사주를/산 평균값보다",
+ "num": "주가 18% 아래",
+ "sub": "회사가 산 값을 지킨다는 약속은 없다",
+ "label": "",
+ "src": "회사 평균 26만 3,823원(2026.10.12 공시) · 10월 16일 주가 21만 5,500원",
+ "icon": "scale",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 113,
+ "num_px": 90,
+ "sub_px": 59,
+ "board": [
+  "sangdo1017",
+  "kospidrop1017",
+  "bpcut1016",
+  "mixreset1016",
+  "w1scafe1016",
+  "retax1016",
+  "soxl1016",
+  "pencap1015",
+  "convreal1016",
+  "p1cafe1016"
+ ]
+}

@@ -1,4 +1,5 @@
 # 카페 대표사진(첫 사진) 1080x1080 정사각형 표지 — visual 2026-10-02 15:2x
+# ※ 10/17부터 새 카페 표지는 work/cafecover.py(주제 사물 그림 1개·주제어 줄 가장 크게·100px 판·최근 10장 비교판)로 만든다. 10/17 10:00 이후 묶음은 editgate·naverpost가 cover_meta.json과 cover_review 두 줄을 본다.
 #   py -3.12 work/research/visual/cafe-covers-1002/make_covers.py [offimkt1002 gongjae1002 nps1002]
 # 왜: 사장님 10/2 15:3x "네이버 대표사진 이렇게 긴 거 넣으면 잘리는 거 알아 몰라" — 900x402 첫 사진은 목록 정사각형 썸네일에서 숫자가 잘린다.
 #     naverpost.py 관문: 첫 사진 가로/세로 0.9~1.1·짧은 변 800px 이상.

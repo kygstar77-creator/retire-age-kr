@@ -5,6 +5,7 @@
 #   py -3.12 work/editgate.py stamp <pkg> <by> [note]    편집 통과 표시(.edit.json)를 이 방식으로 찍는다(카페는 틀 v2·compare.md 먼저)
 #   py -3.12 work/editgate.py compare <pkg>              카페 경쟁 비교 관문만
 #   py -3.12 work/editgate.py sise <pkg>                 출처 줄이 네이버·다음 증권 단독인지만
+#   py -3.12 work/editgate.py cover <pkg>                카페 표지 관문만(10/17 10:00 이후 묶음: cafecover.py·cover_review 두 줄)
 #   py -3.12 work/editgate.py calc <pkg>                 카페 끝 계산기 줄(제목 주제 → 계산기 대응표 CALC)만
 #   카페 stamp는 review.md/compare.md의 '전제: 가능 — <facts 근거>' 줄도 본다(10/12 레드팀 R2)
 import os, re, sys, json, hashlib, datetime
@@ -47,6 +48,44 @@ def check(pkg):
         newer = [os.path.basename(f) for f in files(pkg) if os.path.getmtime(f) > os.path.getmtime(p) + 1]
         return False, f'편집 통과({d.get("by", "?")} {d.get("at", "?")}) 뒤 원고가 바뀌었다' + (f' — 바뀐 파일: {", ".join(newer)}' if newer else '')
     return True, f'편집 통과 해시 일치({d.get("by", "?")} {d.get("at", "?")})'
+
+
+COVER2_FROM = datetime.datetime(2026, 10, 17, 10, 0)
+
+
+def cover_check(pkg):
+    """카페 표지 관문(visual 10/17, 벤치마크 cafe-gap-1016 ①~③). 문제 목록, 비면 통과.
+    10/17 10:00 이후 만든 묶음(order.txt 시각 — understand_block과 같은 방식)만 본다. 그 전 묶음은 그대로 나간다.
+    ① 표지는 work/cafecover.py로 만든다(cover_meta.json: 주제 사물 그림 1개·주제어 줄 > 숫자 줄)
+    ② cover_review.md에 '100px 읽힘: …'·'최근 10장 옆 구별: …' 두 줄(10/13~15 묶음 26개 중 0)."""
+    pkg = os.path.abspath(pkg.rstrip(chr(47) + chr(92)))
+    order = os.path.join(pkg, 'order.txt')
+    if not os.path.exists(order) or datetime.datetime.fromtimestamp(os.path.getmtime(order)) < COVER2_FROM:
+        return []
+    bad = []
+    mp = os.path.join(pkg, 'cover_meta.json')
+    if not os.path.exists(mp):
+        bad.append('cover_meta.json 없음 — 표지를 py -3.12 work/cafecover.py <pkg> --topic … --num … 로 만든다(주제 사물 그림·주제어 가장 크게)')
+    else:
+        try:
+            m = json.load(open(mp, encoding='utf-8'))
+            if not m.get('icon'): bad.append('표지에 주제 사물 그림 없음(cover_meta.json icon)')
+            if m.get('num_px') and not m.get('topic_px', 0) > m['num_px']: bad.append(f"표지 주제어 줄 {m.get('topic_px')}px ≤ 숫자 줄 {m['num_px']}px")
+            first = next((l.strip() for l in open(order, encoding='utf-8') if l.strip().startswith('img/')), '')
+            img = os.path.join(pkg, first) if first else ''
+            if img and os.path.exists(img) and os.path.getmtime(img) > os.path.getmtime(mp) + 5:
+                bad.append(f'첫 사진 {first}이 cafecover.py 뒤에 바뀜 — cafecover.py로 다시 만든다')
+        except Exception as e:
+            bad.append(f'cover_meta.json 못 읽음: {e}')
+    cr = os.path.join(pkg, 'cover_review.md')
+    t = open(cr, encoding='utf-8', errors='ignore').read() if os.path.exists(cr) else ''
+    for key in ('100px 읽힘', '최근 10장 옆 구별'):
+        v = re.findall(r'^\W*' + key + r'\W*[:：]\s*(.+)$', t, re.M)
+        if not v or not v[-1].strip():
+            bad.append(f"cover_review.md에 '{key}: …' 줄 없음(cover_100.png·cover_board.png를 보고 적는다)")
+        elif re.search(r'안 ?읽|구별 ?안|안 ?됨|확인 ?안|못 ?읽|미달', v[-1]):
+            bad.append(f"cover_review.md '{key}' 미달: {v[-1].strip()[:40]}")
+    return bad
 
 
 def compare_check(pkg):
@@ -170,6 +209,8 @@ if __name__ == '__main__':
         cc = calc_check(os.path.abspath(a[1])); print('통과 · 계산기 줄' if not cc else '미달 · ' + '; '.join(cc)); sys.exit(1 if cc else 0)
     if len(a) >= 2 and a[0] == 'sise':
         sb = sise_source_check(os.path.abspath(a[1])); print('통과 · 시세 출처' if not sb else '미달 · ' + '; '.join(sb)); sys.exit(1 if sb else 0)
+    if len(a) >= 2 and a[0] == 'cover':
+        vb = cover_check(os.path.abspath(a[1])); print('통과 · 표지' if not vb else '미달 · ' + '; '.join(vb)); sys.exit(1 if vb else 0)
     if len(a) >= 2 and a[0] == 'disclaim':
         db = disclaim_check(os.path.abspath(a[1])); print('통과 · 권유 아님 줄' if not db else '미달 · ' + '; '.join(db)); sys.exit(1 if db else 0)
     if len(a) >= 3 and a[0] == 'stamp':
@@ -193,6 +234,8 @@ if __name__ == '__main__':
             if cc: print('안 찍음 · ' + '; '.join(cc)); sys.exit(1)
             sb = sise_source_check(pk)
             if sb: print('안 찍음 · ' + '; '.join(sb)); sys.exit(1)
+            vb = cover_check(pk)
+            if vb: print('안 찍음 · 표지 관문 — ' + '; '.join(vb)); sys.exit(1)
         print('찍음', stamp(os.path.abspath(a[1]), a[2], ' '.join(a[3:])))
         sys.exit(0)
     print(__doc__ or open(__file__, encoding='utf-8').read().split('import')[0]); sys.exit(2)

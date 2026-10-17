@@ -854,6 +854,10 @@ def pending_block(kind, pkg, title, check_dup=True):
     if ub: return ub
     fb = fresh_research_block(pkg)
     if fb: return fb
+    if kind == 'cafe':  # 표지 관문(visual 10/17) — 10/17 10:00 이후 만든 묶음만: cafecover.py 표지 + cover_review '100px 읽힘'·'최근 10장 옆 구별'
+        import editgate
+        vb = editgate.cover_check(pkg)
+        if vb: return '보류: ' + vb[0]
     order = os.path.join(pkg, 'order.txt')
     if os.path.exists(order) and datetime.datetime.fromtimestamp(os.path.getmtime(order)) >= datetime.datetime(2026, 10, 17, 0, 30):
         import research_gate
@@ -1932,6 +1936,11 @@ def main():
                     _msg = f'대표사진 심사 {"없음" if _avg is None else _avg} — cover_review.md에 경쟁 썸네일 옆 3명 평균 7점 이상("평균: N")이 있어야 한다.'
                     if _slot >= '2026-10-03': print(_msg); sys.exit(4)
                     print('[경고] ' + _msg)
+                # ③ 10/17 10:00 이후 만든 묶음: cafecover.py 표지(주제 사물 그림·주제어 가장 크게)와 cover_review '100px 읽힘'·'최근 10장 옆 구별' 두 줄
+                import editgate as _eg
+                _vb = _eg.cover_check(pkg)
+                if _vb:
+                    print('표지 관문 — ' + '; '.join(_vb)); sys.exit(4)
             title = open(os.path.join(pkg, 'title.txt'), encoding='utf-8').read().strip()
             # 읽기 검사에서 지적이 남아 있으면 올리지 않는다.
             # 2026-09-26: check_read.txt에 지적이 다 적혀 있는데도 글이 그대로 나갔다.

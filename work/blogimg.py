@@ -39,6 +39,7 @@ def auto_widths(cols, rows, hl_col=None, cap=0.34):
             if i < len(r): w=max(w, _M.textlength(str(r[i]), font=f))
         need.append(w+28)
     tot=sum(need) or 1.0
+    auto_widths.need=list(need)        # 열마다 22px 기준 필요 폭(여백 28 포함)
     auto_widths.need_px=tot            # 줄바꿈 없이 담으려면 몇 픽셀이 필요한지
     ws=[n/tot for n in need]
     over=[i for i,w in enumerate(ws) if w>cap]
@@ -48,8 +49,35 @@ def auto_widths(cols, rows, hl_col=None, cap=0.34):
         ws=[cap if i in over else w+spare*w/rest for i,w in enumerate(ws)]
     return ws
 
+VIEW_W, MIN_VIEW_PX = 800, 14   # 본문 표시 폭, 그 폭에서 칸 글자 최소 높이(px)
+
+
+def max_cols_at(cols, rows, W=900, hl_col=None):
+    """W 폭·글자 17px 이상에서 줄바꿈 없이 담기는 앞쪽 열 수(첫 열 포함)."""
+    tw = W - 72
+    for k in range(len(cols), 1, -1):
+        auto_widths(cols[:k], [r[:k] for r in rows], hl_col if hl_col is not None and hl_col < k else None)
+        gap = 28 * k
+        if (auto_widths.need_px - gap) * (17 / 22.0) + gap <= tw: return k
+    return 2
+
+
+def split_cols(cols, rows, per=None, keep=1):
+    """열이 많은 표를 여러 장으로 나눈다. 앞 keep개 열(보통 이름 열)은 장마다 되풀이한다.
+    돌려주는 값: [(cols, rows), ...] — 장마다 table()을 따로 부른다."""
+    per = per or max(keep + 1, max_cols_at(cols, rows))
+    body = list(range(keep, len(cols))); step = max(1, per - keep); out = []
+    for s in range(0, len(body), step):
+        idx = list(range(keep)) + body[s:s + step]
+        out.append(([cols[i] for i in idx], [[r[i] for i in idx] for r in rows]))
+    return out
+
+
 def table(path, title, cols, rows, widths=None, note=None, hl_col=None, src=None, W=900):
     # W: 열이 많은 전체 표(h1cafe1015 9열 37곳)는 900이면 숫자가 세로로 쪼개져 넓혀 그린다
+    # W를 넓게 줘도(10/14~16 묶음 대부분 W=1640) 900px에 줄바꿈 없이 담기는 표면 900으로 그린다 — 800px 판에서 글자가 반으로 줄던 원인.
+    if W > 900 and not widths and len(cols) <= max_cols_at(cols, rows, hl_col=hl_col):
+        print(f'  [blogimg] 표 "{title}" {len(cols)}열은 900px에 담긴다 — W={W} 대신 900으로 그린다(800px 판 판독).'); W = 900
     pad=36; th=54; lh=30; vpad=15
     x0=pad; tw=W-pad*2
     # widths를 안 주면 내용을 재서 자동으로 정한다.
@@ -61,6 +89,16 @@ def table(path, title, cols, rows, widths=None, note=None, hl_col=None, src=None
         gap=28*len(cols)                               # 셀 여백은 글자를 줄여도 그대로다
         while fs>17 and (auto_widths.need_px-gap)*(fs/22.0)+gap > tw:
             fs-=1
+        # 글자를 줄였으면 열 폭도 줄인 글자 기준으로 다시 나눈다 — 22px 비율 그대로면 좁은 열('-24.2%')이 여백 몫을 잃고 쪼개진다(10/17).
+        need2=[(n-28)*(fs/22.0)+28 for n in auto_widths.need]
+        if sum(need2) <= tw:
+            widths=[n+(tw-sum(need2))*n/sum(need2) for n in need2]
+    # 800px 판독 검사(visual 10/17): 카페·블로그 본문은 약 800px 폭으로 보인다. 그보다 넓은 그림은 줄어 보이므로
+    # 칸 글자가 800px 판에서 14px 아래면 그리지 않는다. 286(sdi1015b) 표 01·02는 W=1640에 22px → 800px 판 10.7px로 판독 불가였다.
+    eff = fs * min(1.0, VIEW_W / W)
+    if eff < MIN_VIEW_PX:
+        raise ValueError(f'표 "{title}" — {len(cols)}열·W={W}: 800px 판에서 칸 글자 {eff:.1f}px(<{MIN_VIEW_PX}px), 안 읽힌다. '
+                         f'W는 900 이하로 두고 열을 {max_cols_at(cols, rows)}개 이하로 줄이거나 split_cols()로 표를 나눈다.')
     # widths는 비율(합 1)로 받는다. 픽셀 값(합이 1보다 훨씬 큰 경우)으로 줘도
     # 열이 화면 밖으로 밀리지 않도록 합으로 나눠 비율로 맞춘다.
     tot=float(sum(widths)) or 1.0

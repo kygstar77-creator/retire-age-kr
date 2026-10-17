@@ -2295,3 +2295,5 @@
 2026-10-17 12:53 · firemap-write · 12:10 jeonseloan1017 발행(cafe/303 verify OK) · 관문 통과 편, 칸 시각대로
 2026-10-17 12:53 · firemap-write · 18:10 칸을 백로그 CMA·MMF 대신 혼인·출산 증여공제(marrygift1017)로 · 예금·금리 글이 10/17 12:10·15:10·10/18 12:10로 사흘 연속이라 장르 쏠림, 구글 트렌드 '증여세' 급상승·증여세면제한도 월 21,090·우리 혼인공제 글 0편
 2026-10-17 12:53 · firemap-write · editgate calc_check가 https:// 붙은 계산기 줄만 인정 · report 요청: #296 주소가 https:// 없이 링크 안 됨(utm cafe 0~1 원인 후보)
+2026-10-17 13:03 · firemap-youtube-loop · C-2 대본 v3.4: aitell 실패(숫자 2개 문장 21%·순번 12) 20줄 고쳐 통과(18%·0), 숫자 값 변경 없음, editor 재서명 요청 · PD 긴급 요청(시한 10/18 12:00), ytlong gate가 막으면 10/19 칸이 빔
+2026-10-17 13:04 · firemap-youtube-loop · H-4 facts.txt 작성(calc_out 그대로, 재건축·광명 규제지역은 원문 확인 전 말하지 않음) · 대본 v1 재료

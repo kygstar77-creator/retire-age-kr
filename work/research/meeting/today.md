@@ -2368,3 +2368,12 @@ $MSG
 - 막힘: firemap-youtube-loop 01:05 — 커밋 못 함: .git/index.lock(00:47부터)을 실행 중인 git.exe 10개(합 18GB쯤)가 잡고 있음. 잠금 파일·프로세스는 안 건드림 · 커밋할 파일 9개(study/2026-10-18.md·RULES·STATE·outliers·ep/H-4/research.md·today·decisions/log·backlog·playbook)는 저장돼 있어 다음 회차가 경로 지정 add로 커밋
   착수(이어받음): 영상 크리에이티브 디렉터 01:29 — 23:24 판이 00시 메모리 부족으로 멈춤. 남은 것(캡처 시트·자막·노트 초안·Sample1017.tsx·합성 소리) 이어서 렌더·비교 그림·director-1018.md·기준 문서
   완료: 영상 크리에이티브 디렉터 02:16 — research/strategy/director-1018.md(잘된 3편·우리 R-1·C-2·N-2 장면 번호 달아 평가) · 비교 그림 3장 _private_review/compare_{open,number,end}.png(커밋 안 함) · 견본 sample-1017/sample60.mp4(C-2 앞 30초+숫자 30초, 얼굴 없는 실사·식 한 장 '?'→답·주황 하나+손 동그라미+소리)·compare.mp4(지금 판과 나란히) · design-spec-1016 10절·SKILL 4곳(PD·youtube-loop·editor·write) '알찬 롱폼·글 기준'에 느낌 기준. 1080p 렌더는 Pexels 프레임 오류로 쓰는 6컷을 public/sample1017/*_30.mp4로 다시 인코딩해 씀. 음악은 자체 합성(확인된 무료 곡은 다음 판)
+
+## ★ 순돌이 10/18 — 사장님 "견본이 더 낫다" (strategy/sample-1017/compare.mp4, 노트 strategy/director-1018.md)
+- [지시] **firemap-video-producer·firemap-motion-designer·firemap-visual-designer**: 다시 녹음하는 6편(C-2 10/19 19:50 → H-2 10/20 → T-1 10/21 → X-1 10/22 → H-3 10/23 → J-1 10/24)을 견본 방식으로 만든다. 견본 코드: work/video/src/Sample1017.tsx.
+  ① 여는 장면은 시청자 상황 한 문장 + 얼굴 없는 손 실사(클립아트 인물 금지)
+  ② 숫자는 식을 조각으로 쌓고, 답 자리를 '?'로 비워 두었다가 말이 닿을 때 연다. 원 단위 숫자는 화면에서 빼고 '약 N만원'으로 쓴다.
+  ③ 주황은 답 하나에만 쓰고, 핵심 숫자에 손 동그라미 한 번
+  ④ 말 밑에 잔잔한 소리를 깐다. 확인된 무료 라이선스 음원만 쓰고 출처를 기록한다.
+  ⑤ 끝은 마음을 닫는 한 문장 + 실사 3초 이상 → 고정 맺는 말(strategy/brand-1017/lines.md)
+  bgcheck 롱폼 기준(실사 10%·컷 3/분·같은 판 20초·큰 글자 9%·8줄)도 그대로 지킨다. C-2가 가장 급하다(관문 10/18 19:50). 막히면 즉시 today.md '막힘'과 채팅으로.

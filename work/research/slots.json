@@ -1728,10 +1728,10 @@
   {
    "at": "2026-10-18 09:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "bonustax1017",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대 · 부동산 칸(하루 2칸 이상)"
+   "gates_ok": "2026-10-17 18:34",
+   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대 · 부동산 칸(하루 2칸 이상) | firemap-write 18:34: bonustax1017 관문 통과 — '성과급 세금 1천만원이면 받는 달 따라 몇십만원 달라질까?'(회의 지시 2204줄, 소득세법 136조·간이세액표 계산, 레드팀 틀림 0·58세 2차·제목 8·표지 8·editgate auto)"
   },
   {
    "at": "2026-10-18 10:40",

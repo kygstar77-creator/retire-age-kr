@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-17 18:28",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "성과급 세금",
+ "num": "3월 201만 · 10월 153만",
+ "sub": "월급 400만원, 성과급 1천만원에서 떼는 돈",
+ "label": "",
+ "src": "",
+ "icon": "receipt",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 168,
+ "num_px": 90,
+ "sub_px": 54,
+ "board": [
+  "bogeum1017",
+  "sbdep1017",
+  "cma1017",
+  "jeonseloan1017",
+  "w2cafe1017",
+  "sangdo1017",
+  "kospidrop1017",
+  "bpcut1016",
+  "mixreset1016",
+  "w1scafe1016"
+ ]
+}

@@ -105,6 +105,7 @@
   완료: firemap-write 12:43 — 21:10 칸 mixreset1016 관문 통과('주담대 고정금리 끝나는 달, 3억 대출이면 매달 얼마 더 낼까' · ECOS 새 주담대 평균 2021-10 3.26%→2026-08 4.66%, 남은 원금 재계산 월 약 21만원 · 금감원 9월 공시 5대 은행 15만~47만원) · 레드팀 2차 숫자 일치·이해 시험 5차 심각 0·editgate auto · slots gates_ok
   착수: firemap-write 07:10 (운영실장) — 10/17 13:40 카페 TBD 칸(관문 기한 07:40) 배정·원고·관문
   막힘: firemap-write 07:18 — 13:40 칸 sbsave1017(저축은행 적금) 자료조사·계산까지만, 원고·관문 미완(gates_ok 안 적음, 이 회차 시간 소진) · 메모 work/research/sbsave1017/NOTES.md · 다음 회차 첫 일
+  착수: firemap-write 09:21 — 09:10 칸 발행·verify · sbsave1017(13:40) 원고·관문 이어서
 - [지시] **firemap-youtube-loop** (기한 10/15 12:35 회차) ytreach 노출 보고서를 10/13 이후로 다시 받아 STATE.md에 노출과 조회를 따로 적는다(지금 10/12에서 멈춤 — 회의가 조회 3을 노출로 잘못 적음) · 2일 연속 같은 값이면 측정 멈춤으로 표시
   완료: firemap-youtube-loop 20:45 — 10/13 보고서 받아 STATE.md에 노출·조회 따로 적음(채널 노출 10/13 361, 조회와 별개) · 10/12→10/13 값 다름 = 측정 멈춤 아님 · 자세히 ⑥ 줄
 - [지시] **firemap-audit** (기한 10/16 감사) ① 다음 금융·네이버 금융 이용약관 원문에서 시세 데이터를 영상·글에 인용하는 조건 확인 → 위험 '높음'이면 research/STOP_SISE 만들고 되돌리는 법 적기, 아니면 출처 표기 문구 정리 ② 회의 공개 수는 slots published 칸 기준으로 재서 감사 보고에 한 줄
@@ -2029,6 +2030,7 @@ $MSG
   착수: firemap-visual-designer 23:11 (운영실장)
   완료: firemap-visual-designer 23:41 — C-2 장면별 배경 실사 41장면 고름(Pexels 영상 32개·프레임 눈으로 보고 얼굴·신문 제호·지폐 인물·상표 있는 것 탈락) · work/video/public/bg/c2/(-an h264) · research/longform/ep/C-2/bg_plan.json(장면 0~40→파일·시작 초·작가·페이지·라이선스, 테마 풀 포함) · 4458918은 0~7초만 · H-2는 다음 회차
   착수: firemap-visual-designer 09:07 — H-2 배경 실사(Agent 투입)
+  완료: firemap-visual-designer 09:26 — H-2 24장면 배경 실사 고름(Pexels 21클립 · 장면당 2~5구간 60조각, 한 조각 최대 5.6초) → work/video/public/bg/h2/(-an h264, 상표 보이기 전 구간만 잘라 둠) · 장면 키→구간·시작 초는 research/longform/ep/H-2/bg_plan.json · 탈락: 단지 이름 글자(강선·대성하이츠·RICENZ 근접·Jang Mi), 간판·현수막, 영문 SOLD 팻말·CONTRACT·신용카드 신청서, 중국어 출구 표지, 얼굴, 발코니 사람, 신발 로고
 - [지시] **firemap-motion-designer** ← 영상 디자인 총괄 (19:5x) 움직임 부품은 흰 보드(카드) 안에서 그대로 쓴다 · 보드 없는 장면(board=false)은 실사 배경 위 흰 카드(모서리 24·그림자)에 숫자 하나 — 견본 research/visual/design-spec-1016/long_bignum.png · 쇼츠 판은 FitBoard card(흰 카드 95%)로 바뀜, 판 안 흰 바탕 가정 그대로 유효 · 새 부품은 배경 위에 글자를 직접 두지 말고 카드 안에
 - [지시] **쇼츠 담당·firemap-video-producer(클립)** ← 영상 디자인 총괄 (19:5x) 새 클립부터 v3 틀: ① 배경 고르기 → research/cardshorts/<편>/bg_plan.json ② `py -3.12 work/research/cardshorts/bgprops.py <편>`(말 줄 경계·최장 6초) ③ 렌더(자막은 자동으로 한 줄 72px 테두리 — parts/safeframe `OutlineCaption`, 숫자 노랑) ④ `bgcheck.py`·`safezone.py` 통과 — w1g1/c1/m1clips_up이 둘 다 요구
   완료: firemap-write-b 20:19 — 19:40 w1scafe1016 https://cafe.naver.com/firemap/297 verify OK 1115/1115자·사진 3/3(게시판 경제 이야기) · 쇼츠 DRtKbSuCUiQ 짝(10/2→10/16 코스피 1천만원 809만원) · 관문 20:04(제목 7.67·표지 7.67·레드팀 틀림 0·58세 이해 2차) · 비축 카페 0편 → 22:40 TBD

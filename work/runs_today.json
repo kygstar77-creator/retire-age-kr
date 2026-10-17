@@ -13,6 +13,16 @@
     "url": "https://cafe.naver.com/firemap/311"
    },
    "note": "02~07시 카페만(블로그 없음). 06:10 칸 sangokapply1017(관문 10/17 21:42 통과분) 발행 · verify OK 2225/2225자 사진 3/3 · 교차검증·selfcheck은 작성 회차에서 끝남(check_gpt/gemini/self 있음) · 개선: naverpost verify에 firemap.kr 링크 검사, editgate calc_check 주제 불일치 막음 · 카페 비축 0/2(다음 회차 몫 기록)"
+  },
+  {
+   "hour": 7,
+   "ts": "07:47",
+   "blog": null,
+   "cafe": {
+    "title": "KRX 금 웃돈과 환율 때문에 국제 금값이 올라도 내 금이 줄어든 이유",
+    "url": null
+   },
+   "note": "firemap-write-b 07:40 칸 g1whycafe1018 발행 막힘: ①사진 2/3장 → 웃돈 250거래일 선 그래프 02.png 추가(raw_20261017.json, 값 본문과 일치) ②cover_review.md에 '평균: N' 줄 없음(review.md엔 표지 8·8·레드팀 8 기록) ③editor가 07:11 c03 고친 뒤 editgate 재stamp 없음 → firemap-editor stamp·표지 평균 줄 필요. 개선: 사진 추가"
   }
  ]
 }

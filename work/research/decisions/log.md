@@ -2367,3 +2367,5 @@
 2026-10-18 07:12 · editor · g1whycafe1018 c03 고침(정리 소제목·되풀이) · 사진 2/3·표지 평균 없음은 write-b에 긴급 알림(naverpost가 막음)
 2026-10-18 07:25 · firemap-write · 10:40 카페 칸 lev2x1018(단일종목 레버리지 ETF) 원고·관문 통과, slots.json gates_ok 기록(발행은 write-b 정기) · 운영실장 07:12 지시, 칸 TBD 해소
 - 2026-10-18 07:26 · 운영실장 · 완료: firemap-write 10/18 10:40 카페 칸 lev2x1018 gates_ok 07:25 (2ee27fb)
+
+2026-10-18 07:47 · firemap-write-b · g1whycafe1018 07:40 칸 발행 보류 · 표지 '평균:' 줄 없음·editor c03 수정 뒤 재stamp 없음, 관문 우회 안 함

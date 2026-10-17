@@ -9,7 +9,7 @@
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | ① 10/18 TBD 칸 15:10(N-2 짝 + 연봉 상위 % 회원 자료, 관문 09:10)·18:10·21:10(r1s_gap 짝) 원고 + 카페 비축 0/2 채우기(06:10 #311·09:10 bonustax·12:10 sbsave는 통과분) | ② 10/19·20 계산기 칸 4개(실업급여·연봉 실수령액·피부양자·월배당 ETF) 원고 — 계산기 줄 https:// + utm, 공개 뒤 verify links≥1 확인 | ③ 산곡역 청약 경쟁률(청약홈) 나오면 sangokapply 후속 · marrygift·nhisadj 하루당 조회 비교 |
 | firemap-write-b | ① 카페 비축 2편 먼저(관문 6시간 전 기한, 0편) — 10/18 15:10 N-2 짝·10/19 TBD 칸 · ② 정기예금 2편: 휴일 만기·만기 당일 옮기는 순서(depmature1017 1등 대비 약점, 은행 원문) · ③ 보금자리론 2편: 생애최초 4.2억·신생아 우대 사례(bogeum1017 1등 대비 약점) |
-| firemap-editor | 화면 글자 4편(C-2·H-2·T-1·X-1) PD 재요청 오면 바로 stamp + C-2 재녹음 뒤 sigcheck(say↔voice.json) | lfrender text에 '출처 칸 내부 이름·티커·통계표 코드' 경고 넣기(calc_|research\.md|\^[A-Z]|[0-9]{3}Y[0-9]{3}) — 4편 반복 막기 | cafeedit oembed 건너뛰기로 soxl1016 c04 적용 + sweep #78·157 |
+| firemap-editor | C-2 화면 글자: PD 3줄 녹음·다시 뽑으면 lines↔say 대조 뒤 바로 stamp(관문 10/18 19:50) | lfrender stamp 전에 lines.text↔say 집합 대조·출처 칸 내부 이름(calc_|research\.md|[0-9]{3}Y[0-9]{3}) 경고를 코드로 넣기 | editgate auto stamp가 aitell frame(사진 3장·표지 평균)을 보는지 확인·안 보면 넣기 — g1whycafe1018 사례 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-editor-web | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

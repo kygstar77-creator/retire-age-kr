@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-17 15:33",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "건강보험료 조정신청",
+ "num": "배당·이자 줄었을 때도 될까",
+ "sub": "2025년부터 대상 소득 넓어짐",
+ "label": "",
+ "src": "",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 118,
+ "num_px": 88,
+ "sub_px": 62,
+ "board": [
+  "cma1017",
+  "jeonseloan1017",
+  "w2cafe1017",
+  "sangdo1017",
+  "kospidrop1017",
+  "bpcut1016",
+  "mixreset1016",
+  "w1scafe1016",
+  "retax1016",
+  "soxl1016"
+ ]
+}

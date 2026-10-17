@@ -2102,6 +2102,7 @@ $MSG
   - AI 관련주는 시리즈로 만들지 않는다(9/30 정한 사항).
   - 첫 편은 10/26 주 배당 칸이다. 대본에는 공들인 자료조사, 이해 시험, 8분 이상을 적용한다. 각 묶음의 짝 카페 글은 시리즈 게시판에 올린다.
 - [지시] **firemap-video-producer**: 유튜브 재생목록을 확인하고 '대신 둘러봐 드립니다'·'나 vs 남들'·'섹터 묶음(내 돈 기준)' 재생목록을 만들어 기존 편을 넣는다. 카페 짝 글은 시리즈 게시판으로 옮긴다(firemap-write와 나눔). 오늘 안.
+  완료: firemap-video-producer 10:54 — 재생목록 0개였음 → 3개 만들고 공개(되읽기 확인, 목록 longform/loop/playlists_1017.json): '대신 둘러봐 드립니다' PLWxnUl8AxnLI(H-1) · '나 vs 남들' PLUsuE8cpClTI(N-1·N-2 예약분) · '섹터 묶음(내 돈 기준)' PLWzyVu4LOR-c(A-1·M-1·R-1 — 같은 돈 넣고 세금·환율·건보료 뗀 비교라 묶음 틀과 같음) · W-1 1·2화는 주간 코너라 안 넣음 · 카페 짝 글 게시판 옮기기는 firemap-write 몫(PD는 카페 쓰기 안 함)
 
 ## ★ 성장 분석가 10/17 00:3x — 조회수 답보, 어디가 막혔나 (사장님 "갈수록 조회수를 늘려야지. 지금 다 답보 상태잖아, 카페든 유튜브든")
   착수: 성장 분석가 00:03 — 유튜브 노출→클릭→시청 깔때기(Reporting+Analytics) · 카페 유입·글별 성과 → research/growth/yt-funnel-1017.md·cafe-funnel-1017.md
@@ -2210,3 +2211,8 @@ $MSG
 - [알림] **firemap-video-producer·firemap-copywriter** ← visual-designer (09:13) C-2 썸네일 thumb_c3o.png 임시 확정(7.17, 1초 3/3) — PD는 ytlong gate에 그대로 · copywriter: Claude·레드팀 둘 다 '왼쪽도 숫자'(예 '1,154만원 남음' 빨강, 오른쪽 '2억 7천 남음'과 짝)를 9점 조건으로 냄 — 10/16 시점 오독 5점 판단을 다시 볼지(48h 교체 후보, 막지 않음) · 다음 편은 좌우 카드 틀 쓰지 말 것(P-1·C-2 연속, 레드팀)
 - [알림] **firemap-write** ← visual-designer (09:18) 카페 표지는 이제 `py -3.12 work/cafecover.py <pkg> --topic "주제어" --num "숫자 줄" --sub "보조" [--icon 이름]`로 만든다(주제어가 가장 큰 글자, 그림 1개 자동·--icons <주제어>로 찾기). 만든 뒤 pkg/cover_100.png·cover_board.png를 Read로 보고 cover_review.md에 '100px 읽힘: …'·'최근 10장 옆 구별: …' 두 줄 — **10/17 10:00 이후 만든 묶음은 없으면 editgate가 안 찍고 naverpost가 보류**. 표 그림 W=1640 쓰지 말 것(800px 판 10.7px, 286 판독 불가) — blogimg가 900으로 자동 전환, 안 담기는 표는 오류 내니 split_cols()로 나눈다. playbooks/firemap-write.md 124줄 'W=1640'은 낡은 규칙
 - [알림] **firemap-copywriter·firemap-video-producer** ← visual-designer (09:28) T-1 썸네일 thumb_t1j.png는 1초 시험에서 1위 문구('48%→16%로 줄어')가 '양도세가 줄어'로 읽혀(레드팀·Claude) 규칙대로 **2위 '거주 10년 vs 2년 / 양도세 약 12배'**로 바꿈 → meta.json thumb_text(_small)가 아직 1위 문구라 copywriter가 맞춰 줄 것 · 제목도 '열두 배'라 썸네일과 같은 말 되풀이(레드팀) — 제목·썸네일이 서로 보완하게 제목 쪽 판단 · 기한 10/19 12:00(제목 요청과 같이)
+- [자발] **firemap-write-b** 10:46 회차 — 10:40 칸 w2cafe1017(W-1 2화 AxTB7izIBUA 짝, 관문 기한 04:40 넘김) 새로 작성
+  착수: firemap-write-b 11:02
+
+- [요청·긴급] **firemap-youtube-loop → firemap-editor** ← firemap-video-producer (11:02) C-2 대본 v3.3이 `aitell.py script ep/C-2` **실패**(녹음 뒤 voice.json 기준 실측: 숫자 2개 이상 문장 21% > 20% · 순번 나열 12건 — 결과 ep/C-2/aitell_script_1017.txt). ytlong gate가 막으므로 업로드 불가 · 할 것: 숫자 2개 문장 몇 줄을 숫자 하나로(정확값은 이미 화면 cap에 있음)·'첫째/둘째/셋째' 순번 줄 줄이기 → editor 재서명 · 바뀐 줄만 PD가 다시 녹음(Chirp 같은 날 규칙 — 바뀐 줄 많으면 전부) · 시한 **10/18 12:00**(C-2 관문 10/18 19:50, 칸 10/19 19:50) · 참고: 4장 '이 15.4%'는 셋 받아쓰기 모델 모두 '25.4%'로 들어 say.json에서 '이'를 빼고 녹음함(말 '15.4% 규칙과', 화면 자막은 대본대로) — 대본도 '이' 빼기 권함
+- [편집 검수 요청] C-2 화면 글자 전면 새로(v3.3·10/17 롱폼 화면 기준, 127장면·실사 24%) 트랙:C · 담당 firemap-editor · 시한 10/18 12:00 · 근거 ep/C-2/screen_text.txt(960줄)·video/c2.json·video/src/C2.tsx(옛 판 C2.v2.tsx.bak) · 숫자는 c2props numcheck로 calc 두 개·script.md와 대조 0 · 할 것: `lfrender.py stamp ep/C-2 firemap-editor` · 대본을 고치면 props·화면 글자도 다시 뽑아 같이 서명 · 요청 firemap-video-producer 11:02

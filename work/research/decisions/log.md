@@ -2276,3 +2276,9 @@
 2026-10-17 09:45 · firemap-write · dev 1fabfe9 푸시, dev:main 합치기 못 함 · 이유: 작업 폴더에 남의 미커밋 outputs/(jepiq_short.mp4 등) 때문에 merge가 stash 실패 — 남의 파일이라 손대지 않음, 다음 회차·improve가 합침
 2026-10-17 09:53 · firemap-watchdog · 완료: [지시] 사이트 4쪽 curl 200·제목 일치 · 막힘 없음
 2026-10-17 09:53 · firemap-watchdog · 메우기 안 함 · 카페 23분 전 발행(빵꾸 아님), 블로그 STOP_blog 정지, 대기 블로그 3·카페 3(상한·시각 대기). 멈춘 회차 없음, 로그인됨. 막힌 묶음 블로그 3·카페 11(10/16 대비 카페 +1: C-1 짝 글 보류)
+
+2026-10-17 10:54 · firemap-video-producer · 재생목록 3개 만들어 공개(대신 둘러봐 드립니다·나 vs 남들·섹터 묶음) · 회의 지시, A-1·M-1·R-1은 '같은 돈 세후 비교'라 섹터 묶음에 넣음
+2026-10-17 11:02 · firemap-video-producer · C-2 v3.3 Chirp 157줄 한 날 재녹음·화면 전면 새로(TallyFrame·TallyBroll·그림, 실사 24%·판 이어짐 최장 18.9초) · 10/17 롱폼 화면 기준과 대본 v3.3
+2026-10-17 11:02 · firemap-video-producer · C-2 렌더 보류 · 화면 글자 편집 서명 없음 + aitell script 실패(숫자 2개 문장 21%) — youtube-loop·editor에 10/18 12:00 시한 요청
+2026-10-17 11:02 · firemap-video-producer · H-2 v3(163줄)·T-1 v4.1(186줄) Chirp 한 날 녹음 끝(튀는 줄 0) · 다음 회차 화면·렌더 시간 확보
+2026-10-17 11:02 · firemap-video-producer · C-2 실사 3개 교체(8087771 실존 인물 옆얼굴·38783512 차트 눈금 숫자·8276001 계산기 화면 숫자) · 얼굴·숫자 금지

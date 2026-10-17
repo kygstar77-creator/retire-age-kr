@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\강영준\Documents\GitHub\retire-age-kr\work\ytlong.py", line 212, in <module>
+    m, bad = gate(ep); print('통과' if not bad else '막힘:\n  ' + '\n  '.join(bad))
+             ^^^^^^^^
+  File "C:\Users\강영준\Documents\GitHub\retire-age-kr\work\ytlong.py", line 90, in gate
+    txt = m['title'] + '\n' + m['desc'] + '\n' + '\n'.join(mine)
+                              ~^^^^^^^^
+KeyError: 'desc'

@@ -128,7 +128,8 @@ CALC = [
     (r'실업급여|구직급여', 'calc/unemployment-benefit'),
     # 10/16 회의 지시: '퇴직소득세' 제목이 세전 퇴직금 계산기로 가면 글 질문과 다른 도구 — 퇴직소득세 계산기는 src에 없어 줄을 요구하지 않는다.
     # 예금·이자(정기예금·적금·저축은행) 계산기도 toolPages.js에 없음(10/17 확인) → 대응표 줄 없음.
-    (r'^(?!.*퇴직소득세).*퇴직금', 'calc/severance'),
+    # 10/18: '퇴직금 넣어도/굴리기/어디에'처럼 퇴직금을 어디 둘지 묻는 글(cma1017)은 금액 계산 질문이 아니다(교훈 37·39).
+    (r'^(?!.*퇴직소득세)(?!.*퇴직금\s?(을|를)?\s?(넣|굴|맡|투자|어디|운용)).*퇴직금', 'calc/severance'),
     (r'실수령|연봉 ?계산|4대 ?보험', 'calc/salary'),
     (r'건강보험료|건보료|피부양자', 'health-insurance'),
     (r'해외주식 ?양도세|배당소득세|금융소득 ?종합과세', 'tax'),
@@ -146,7 +147,13 @@ def calc_check(pkg):
         # 10/17 report 요청: #296(retax1016)은 'firemap.kr/…'로 시작해 https:// 가 없어 편집기가 링크로 안 바꿨다(contentHtml <a href> 0) → https:// 필수
         if re.search(pat, title) and not re.search(r'https://firemap\.kr/' + re.escape(path) + r'\?[^\s]*utm_source=cafe', body):
             return [f"제목이 '{re.search(pat, title).group(0)}' 주제인데 끝에 눌리는 계산기 줄 없음(https:// 빠지면 링크가 안 됨) — 예: https://firemap.kr/{path}?utm_source=cafe&utm_medium=post&utm_campaign=<묶음>"]
-    return []
+    # 10/18 회의 지시 ⓑ: 반대 방향 — 본문에 걸린 계산기가 제목 주제와 안 맞으면 막는다(cma1017 CMA 글 → 퇴직금 계산기).
+    bad = []
+    for path in sorted(set(re.findall(r'https?://firemap\.kr/([a-z0-9\-/]+)', body))):
+        pats = [pt for pt, ph in CALC if ph == path.rstrip('/')]
+        if pats and not any(re.search(pt, title) for pt in pats):
+            bad.append(f"본문 계산기 firemap.kr/{path}가 제목 주제와 안 맞음 — 맞는 계산기가 없으면 줄을 뺀다")
+    return bad
 
 
 # 10/15 회의 지시·audit/sise-terms-1015.md: 출처 줄에 네이버·다음 증권만 적힌 시세는 거부 — 원 데이터 주인(KRX·DART·운용사·SEC 등)이 함께 있어야 한다.

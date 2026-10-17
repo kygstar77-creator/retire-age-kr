@@ -2352,3 +2352,6 @@
 2026-10-18 03:10 · firemap-video-producer · C-2 화면을 견본 방식으로 다시 짬(그림 인물 0·식 한 장·'?' 열기·주황 하나·잔잔한 음·끝 하늘 3.5초), 여는 인사는 로고 판 대신 손 실사 위 · 58세 3차 제목·썸네일 뜻 틀림 2 → copywriter·visual 요청 · 이유: 10/18 견본 지시·첫 60초 로고 카드 금지(QG U3)와 고정 여는 말을 둘 다 지키려고
 2026-10-18 03:40 · benchmark-loop · AI 도구 점검 2판(ai-lab/tools-gap-1018.md) · 지난 개선 0/2(R-1 20번 줄 공개본 3/3 모델 '안 해서'로 들림, 10/12 일치 판단 틀림·Kandinsky 다운로드 허락 없어 안 함) · ytlong에 readback 관문 없음: H-2 옛 녹음 검사·T-1 86줄·X-1 152줄 받아쓰기 실패 → video-producer C-readback·합의오독(기한 18:00) · C-2 1:4·4:5·4:24 retake(문장 쪼개기, 시험 2/2) · 새 모델 없음(changelog 10/13 Argon만)
 2026-10-18 04:53 · firemap-youtube-loop · H-4 대본 v1 확정(가상 부부 예산 9억·결론 18번째를 다섯째 줄로) → editor·copywriter 요청 · 제미나이 심사 7.4, 입지 원인 분석은 원자료에 이유 없어 넣지 않음(추측 금지)
+
+2026-10-18 06:26 · firemap-write · 06:10 칸 sangokapply1017 발행 https://cafe.naver.com/firemap/311 verify OK 2225/2225자·사진 3/3 · 슬롯 장부대로
+2026-10-18 06:26 · firemap-write · 회의 지시(계산기 길) 완료: verify에 firemap.kr 링크 검사, calc_check 주제 불일치 막음(cma1017형), 10/19·20 계산기 칸 4개 배정 · 수요 높은 순(demand.py)

@@ -1712,7 +1712,8 @@
    "item": "sangokapply1017",
    "owner": "firemap-write",
    "gates_ok": "2026-10-17 21:42",
-   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대 | firemap-write 21:42: sangokapply1017 산곡역자이힐스테이트 청약 이자후불제(부동산·형식2) 관문 통과"
+   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대 | firemap-write 21:42: sangokapply1017 산곡역자이힐스테이트 청약 이자후불제(부동산·형식2) 관문 통과",
+   "published": "https://cafe.naver.com/firemap/311 06:22 verify OK 2225자"
   },
   {
    "at": "2026-10-18 07:20",
@@ -1884,7 +1885,7 @@
    "item": "TBD",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 실업급여(월 검색 99,000) → https://firemap.kr/calc/unemployment-benefit — 글 질문이 계산기와 맞을 때만 줄 넣기"
   },
   {
    "at": "2026-10-19 13:40",
@@ -1916,7 +1917,7 @@
    "item": "TBD",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 연봉 실수령액(66,600) → https://firemap.kr/calc/salary — 글 질문이 계산기와 맞을 때만 줄 넣기"
   },
   {
    "at": "2026-10-19 19:20",
@@ -2013,7 +2014,7 @@
    "item": "TBD",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 건강보험 피부양자(10,980) → https://firemap.kr/health-insurance — 글 질문이 계산기와 맞을 때만 줄 넣기"
   },
   {
    "at": "2026-10-20 13:40",
@@ -2045,7 +2046,7 @@
    "item": "TBD",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 월배당 ETF(4,280) → https://firemap.kr/dividend — 글 질문이 계산기와 맞을 때만 줄 넣기"
   },
   {
    "at": "2026-10-20 19:20",

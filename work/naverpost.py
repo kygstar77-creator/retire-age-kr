@@ -1664,9 +1664,9 @@ def rewrite_cafe(page, article_id, pkg):
 PUBLISHED_JS = """() => { const c = document.querySelector('.se-main-container');
   if (!c) { const v = document.querySelector('.article_viewer');   // 공식 API(cafeapi.py)로 올린 글은 스마트에디터 구조가 없다(2026-10-01 firemap/188)
     if (!v) return {text: 0, img: 0};
-    return {text: v.innerText.replace(/[\\s\\u200b]+/g,'').length, img: v.querySelectorAll('img').length}; }
+    return {text: v.innerText.replace(/[\\s\\u200b]+/g,'').length, img: v.querySelectorAll('img').length, links: v.querySelectorAll('a[href*="firemap.kr"]').length}; }
   const t = [...c.querySelectorAll('.se-component.se-text .se-text-paragraph')].map(e=>e.innerText).join('').replace(/[\\s\\u200b]+/g,'').length;
-  return {text: t, img: c.querySelectorAll('.se-component.se-image').length}; }"""
+  return {text: t, img: c.querySelectorAll('.se-component.se-image').length, links: c.querySelectorAll('a[href*="firemap.kr"]').length}; }"""
 
 def verify_published(page, pkg):
     """발행된 실제 페이지의 글자 수·사진 수를 묶음과 대조한다. 편집기 안이 아니라 '올라간 글'을 본다.
@@ -1693,6 +1693,14 @@ def verify_published(page, pkg):
         except Exception: pass
     ok = best['text'] >= want * 0.9 and best['img'] >= want_img
     res = {'ok': ok, 'url': url, 'text': best['text'], 'want': want, 'img': best['img'], 'want_img': want_img}
+    # 원고에 https://firemap.kr 줄이 있으면 올라간 글에서 실제 링크(<a href>)로 걸렸는지도 본다.
+    # 2026-10-17 report: #296 계산기 주소가 글자 문단뿐이라 눌러도 안 갔다(utm cafe 0~1, 체크리스트 50).
+    want_link = sum(v.count('https://firemap.kr') for k, v in seq if k == 'text')
+    if want_link:
+        res['links'], res['want_links'] = best.get('links', 0), want_link
+        if not best.get('links'):
+            res['ok'] = ok = False
+            res['why'] = 'firemap.kr 주소가 링크로 안 걸림(<a href> 0)'
     open(os.path.join(pkg, 'verify.txt'), 'w', encoding='utf-8').write(json.dumps(res, ensure_ascii=False) + '\n')
     if ok: print(ledger_published(pkg, res))
     return res

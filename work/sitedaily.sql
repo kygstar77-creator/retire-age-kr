@@ -25,4 +25,18 @@ union all
 select 'src:'||coalesce(props->>'utm_source','기록없음'), count(*), count(distinct client_id)
 from firemap_events where event='session_start' and (ts at time zone 'Asia/Seoul')::date = date '2026-10-05'
   and client_id in (select client_id from keep) group by 1
+-- 10/17 추가(회의 10/16 지시): 캠페인별·referrer별 줄과 기록률. ref는 호스트만 담긴다(예 m.cafe.naver.com).
+union all
+select 'camp:'||coalesce(props->>'utm_campaign','기록없음'), count(*), count(distinct client_id)
+from firemap_events where event='session_start' and (ts at time zone 'Asia/Seoul')::date = date '2026-10-05'
+  and client_id in (select client_id from keep) group by 1
+union all
+select 'ref:'||coalesce(nullif(props->>'ref',''),'기록없음'), count(*), count(distinct client_id)
+from firemap_events where event='session_start' and (ts at time zone 'Asia/Seoul')::date = date '2026-10-05'
+  and client_id in (select client_id from keep) group by 1
+union all
+-- n = 기록률 %(utm_source 또는 ref가 있는 세션 / 외부 세션), dev = 외부 세션 수
+select '_기록률_utm또는ref(%)', round(100.0*count(*) filter (where props ? 'utm_source' or coalesce(props->>'ref','')<>'')/greatest(count(*),1)), count(*)
+from firemap_events where event='session_start' and (ts at time zone 'Asia/Seoul')::date = date '2026-10-05'
+  and client_id in (select client_id from keep)
 order by 1;

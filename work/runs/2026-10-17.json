@@ -1,0 +1,55 @@
+{
+ "date": "2026-10-17",
+ "runs": [
+  {
+   "hour": 6,
+   "ts": "06:44",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "코스피 폭락한 날 산 100만원은 일 년 뒤 얼마가 됐을까?",
+    "url": "https://cafe.naver.com/firemap/300"
+   },
+   "note": "06:10 칸 kospidrop1017 발행 · verify OK 1229/1229자·사진 3/3 · 블로그는 02~07시 카페만 · 다음 칸: 15:10 sbdep1017 '저축은행 예금 금리, 1억을 일 년 맡기면 은행보다 이자 얼마 더 받을까?' 관문 통과(금감원 finlife 9월 공시 저축은행 79곳·은행 18곳 원자료, 자료조사 출처 7·오늘 찾은 것 6) · 교차검증(crosscheck Gemini): 사실 4건 중 반영 3·유지 1(파이낸셜뉴스 원문 인과 확인), 말투 15건 중 반영 13 · 레드팀 2회 계산 일치·틀림 2→반영 · 58세 이해 2차 통과 · 제목 7.33·표지 8.0 · editgate auto · 개선: editgate CALC '퇴직소득세' 제목이 퇴직금 계산기로 가지 않게(회의 10/16 지시 ①), 예금·이자 계산기는 toolPages.js에 없음 기록(②)"
+  },
+  {
+   "hour": 7,
+   "ts": "07:45",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "고덕동 전세 사는 사람이 헬리오시티 집을 사려면 얼마가 더 필요할까?",
+    "url": null
+   },
+   "note": "07:40 칸 h1gapcafe1017 미발행 — naverpost pending 보류 '아직 공개 안 된 영상 링크(f3BaZbJLMMk)'. 원인: c00 쇼츠 주소가 교체 전 private 영상이었다 → 공개된 AAaGTUL4sJQ(API public 확인 07:43)로 고치고 aitell 1.6·readcheck 0·editgate auto 재서명. 그래도 보류: private_video_links()가 f[:1]=='c' 조건이라 check_gemini.txt(검증 기록 속 옛 주소)까지 훑는다. 본문 조각 c\\d\\d.txt만 보게 고치려 했으나 자동 권한 판단이 관문 수정을 막음 — 사람/편집자 확인 필요. 개선: 시도했으나 막힘"
+  },
+  {
+   "hour": 9,
+   "ts": "09:33",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "상도동 아파트 시세는 같은 단지끼리 보면 작년보다 얼마나 올랐을까?",
+    "url": "https://cafe.naver.com/firemap/301"
+   },
+   "note": "09:10 칸 sangdo1017 발행 — 첫 시도 readcheck 옛 제목 지적(check_read.txt 낡음)으로 거부, readcheck 다시 돌려 0건 뒤 재발행 · verify OK 1921/1921자·사진 4/4 · 블로그 없음(DAY_CAP 블로그 하루 1편·대기 블로그 전부 보류) · 다음 일: sbsave1017(저축은행 적금) 원고 — 15:10 sbdep1017(저축은행 예금)과 같은 날 겹쳐 10/18 12:10 칸으로 · 자료조사 WebSearch 6건+finlife·법령 2건 · 교차검증 crosscheck(Gemini) 사실 4건 중 반영 2·유지 2(장기미거래 1년은 raw join_member 원문, 영상 줄은 사실 주장 아님), 말투 10건 중 반영 9(시중은행→은행 1건은 사실이라 '은행'으로) · 개선: disclaim 엄격화 뒤 대기 카페 5묶음 재검사"
+  },
+  {
+   "hour": 10,
+   "ts": "11:43",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "삼성전자 자사주 산 값보다 주가 18% 아래, 바닥 신호는 아닌 이유",
+    "url": "https://cafe.naver.com/firemap/302"
+   },
+   "note": "firemap-write-b 10:40 칸 w2cafe1017(W-1 2화 AxTB7izIBUA 짝, 영상 11:30 공개 확인 뒤 발행) · 자료조사 WebSearch 6회+원문 재수신(ECOS·야후·DART 2건) 출처 7 · 교차검증: crosscheck Gemini 2회 사실 5건 중 반영 4·유지 1(영상 링크 근거 facts 추가), 말투 12 중 반영 7·유지 5(이해 시험과 충돌) · 레드팀 틀림 0·오해 5 반영 · 58세 이해 7차 심각 0 · 제목 8·표지 평균 7.8 · verify OK 1949/1949자·사진 3/3 · 블로그 없음(write-b는 카페만) · 개선: 이해 시험이 매번 잡은 '같은 대상 두 기준' 함정을 playbook에 적음"
+  }
+ ]
+}

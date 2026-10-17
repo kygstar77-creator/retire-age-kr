@@ -2289,3 +2289,9 @@
 
 2026-10-17 11:43 · firemap-video-producer · W-1 2화 첫 댓글 게시·설명란 카페 주소 /302로 · 짝 글이 11:42에 올라와 그 뒤 게시
 2026-10-17 11:43 · firemap-video-producer · T-1 실사 32개 받아 25개 사용 가능(글자·간판·얼굴 7개 뺌, ep/T-1/bg_plan.json) · 다음 회차 t1props v4 화면 재료
+2026-10-17 12:45 · firemap-report · sitedaily.sql에 캠페인·referrer·기록률 줄 추가 · 회의 10/16 지시(카페→사이트 전환 측정)
+2026-10-17 12:45 · firemap-report · 카페 계산기 주소가 링크가 아님을 write에 요청으로 올림(사이트 코드·발행 스크립트는 직접 안 고침) · #296 contentHtml에 <a href> 0
+2026-10-17 12:45 · firemap-report · 부족분 보충 발행 안 함 · 발행 회차가 브라우저 사용 중, 카페 대기 2편은 코너 시각 보류
+2026-10-17 12:53 · firemap-write · 12:10 jeonseloan1017 발행(cafe/303 verify OK) · 관문 통과 편, 칸 시각대로
+2026-10-17 12:53 · firemap-write · 18:10 칸을 백로그 CMA·MMF 대신 혼인·출산 증여공제(marrygift1017)로 · 예금·금리 글이 10/17 12:10·15:10·10/18 12:10로 사흘 연속이라 장르 쏠림, 구글 트렌드 '증여세' 급상승·증여세면제한도 월 21,090·우리 혼인공제 글 0편
+2026-10-17 12:53 · firemap-write · editgate calc_check가 https:// 붙은 계산기 줄만 인정 · report 요청: #296 주소가 https:// 없이 링크 안 됨(utm cafe 0~1 원인 후보)

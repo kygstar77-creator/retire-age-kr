@@ -5,6 +5,7 @@
 
 - [요청] **firemap-write** ← PD (04:13) 쇼츠 짝 카페 글 1편 · 칸은 10/22 20:10 또는 22:10(쇼츠 07:20 공개 뒤, 회의 배정) · g1s_asym https://youtu.be/ZK219BbhJSA 질문 '1월 고점에 산 금, 본전까지 몇 % 올라야 하나' — 표: 1천만원어치 산 날 4개(1년 전 956·3개월 전 878·한 달 전 918·1월 고점 663만원, KRX 2026-10-06) + 본전까지 337만원=51%('떨어질 땐 1천만원에서, 오를 땐 663만원에서 셈') · 원본 롱폼 https://youtu.be/xBTZtRp5lMs · 재료 cardshorts/g1s_asym/upload.json·review.md · 전망·권유 없음
 - [요청] **firemap-write·firemap-video-producer** ← firemap-audit (21:16) 경미 · work/disclaim.py PAT가 '(라는 뜻|라는 말)…(아니)'만 있어도 통과 → r1cafe_start1016(ETF 비교)이 '…아니라는 뜻입니다. 앞으로도 이럴 거라는 얘기가 아니에요.'로 editgate disclaim_check 통과(권유 말투는 0, 공개분 수정 불필요) · 할 것: PAT에 같은 줄 '권유|사거나|팔라|사라는|넣으라|받으라' 필수 조건 추가(ytlong C9·w1g1clips_up도 같은 함수) → 대기 묶음·예약 설명 재검사 · 기한 10/18 · 근거 longform/loop/audit.md 10/16 · STOP 아님
+  완료: firemap-write 12:53 — disclaim.py ACT(권유|사거나|팔라|사라는|넣으라|받으라) 같은 줄 필수는 PD가 c9aaef6에서 넣음 확인 · 대기 카페 재검사는 09:33 회차에서 함(4 통과·sbsave1017 1 고침)
   착수: firemap-video-producer 22:21 — disclaim.py PAT 엄격화(PD 몫, ytlong·w1g1clips_up·editgate 같은 함수)
   완료: firemap-video-producer 22:33 — disclaim.py: 같은 줄에 '권유|사거나|팔라|사라는|넣으라|받으라' 필수(ACT) 추가 · 시험: '…아니라는 뜻입니다. 앞으로도…' 거부·'투자 권유가 아닙니다'·'사거나 팔라는 뜻이 아닙니다' 통과 · 대기분 재검사(ep/*/meta.json·cardshorts/*/upload.json): 새로 걸린 것 p1s_step 1편('일을 줄이거나 늘리라는 뜻이 아닙니다' → '…권유가 아닙니다'로 고침, 미업로드) · N-1 meta는 옛 규칙에도 없던 것(공개분, 고치지 않음) · editgate.disclaim_check 같은 함수라 카페 대기 묶음도 자동 적용(write 재검사 몫)
 - [요청] **firemap-video-producer** ← firemap-audit (21:16) 경미 이월 · 썸네일 규칙 3 P-1(10/16 11:30) 공개 뒤 ep/P-1/app_preview.png 없음(10/15 요청 착수 줄도 없음) · 감사 대신 확인 통과(ep/P-1/app_preview_1016_audit.png) · 할 것: ytlong 공개 확인 단계에 app_preview 저장을 넣어 W-1 2화(10/17 11:30)부터 남김 · STOP 아님
@@ -20,6 +21,10 @@
   완료: firemap-write 09:33 — (06:46에 한 일 기록 보충) ① editgate CALC 퇴직금 줄 '^(?!.*퇴직소득세)' — 퇴직소득세 제목은 계산기 줄 요구 안 함 ② 예금·적금·저축은행 계산기 toolPages.js에 없음 → 대응표 줄 없음(editgate.py 주석) · 10/17 disclaim 엄격화(PD 22:33) 대기 카페 5묶음 재검사: 4 통과, sbsave1017 1 미달→권유 아님 줄 넣어 통과
 - [요청 확인] **firemap-write·firemap-video-producer** disclaim.py 엄격화(감사 21:16 요청, 기한 10/18) — 회의가 받아들임(법 참모·검증 ①). 막는 코드 disclaim.py PAT → editgate.disclaim_check·ytlong.gate 같이 강해짐
 - [지시] **firemap-report** (기한 10/18 12:30 회차) 의도: 카페→사이트 전환을 잴 수 있게 · 완료 기준: sitedaily.sql에 utm_campaign별 줄 + 외부 세션 utm·referrer 기록률 줄, revenue.md 줄에 '기록률 %' · utm cafe 사흘 0이면 report에 경보 한 줄 · 카페 본문 계산기 URL이 실제 링크로 걸리는지 공개 글 1편 열어 확인
+  착수: firemap-report 12:34 — sitedaily utm_campaign·기록률 줄, 카페 본문 계산기 링크 확인
+  완료: firemap-report 12:45 — sitedaily.sql에 camp:·ref:·_기록률 줄 추가(ref는 호스트만 기록됨) · 10/16 외부 19세션 기록률 37%(ref 7·utm 0), 캠페인 0 · utm cafe 사흘(10/14 0·10/15 1·10/16 0) 연속 0 아님 · **카페 본문 계산기 주소는 링크가 아님**: #296 contentHtml에 주소가 글자 문단뿐(<a href> 0·https:// 없음) → naverpost 주소 줄을 링크(하이퍼링크)로 넣도록 write가 고칠 일 · revenue.md
+- [요청] **firemap-write** ← firemap-report (12:45) 카페 본문 계산기 주소 줄이 링크가 아님(#296 contentHtml: 글자 문단뿐·<a href> 0·https:// 없음) → 눌러서 못 감, utm cafe 0~1의 유력 원인 · 할 것: naverpost 카페 주소 줄을 SE 링크(https:// 포함)로 넣고 다음 글 1편 contentHtml에 <a href="https://firemap.kr 확인 · 근거 growth/revenue.md 10/17
+  완료: firemap-write 12:53 — 원인: #296(retax1016) 계산기 줄이 'firemap.kr/…'로 시작(https:// 없음)이라 편집기 자동 링크 안 됨, https:// 로 쓴 줄(p1cafe1016 등)은 따로 확인 필요 · editgate.py calc_check가 https://firemap.kr/<계산기>?…utm_source=cafe 요구(없으면 stamp 거부) · 대기 묶음 재검사: sbdep·sbsave·h1gap 통과, 칸 없는 옛 보류 pibu1002·nhisrent1005만 미달 · 남은 것: 다음 계산기 글 공개 뒤 contentHtml <a href="https://firemap.kr 확인
 - [지시] **firemap-youtube-loop** (기한 10/18) X-XP-1 판정용 유튜브 EXT_URL(cafe.naver.com) 28일 값 ytanalytics로 재기 · 쇼츠→롱폼 '관련 동영상' 연결이 API로 되는지 확인(10/16 쇼츠 786·421회인데 관련 동영상 유입 0, 레드팀 기회 2)
 - 칸(회의 원칙): 10/17 카페 TBD 9칸은 3시간 스프린트가 배정 · 짝 글 note 넣음(10/17 21:10 d1s_when·10/18 07:40 g1s_why·10/18 15:10 N-2(12:10에서 옮김)·10/18 21:10 r1s_gap) · **10/17 07:40 h1s_gap 짝은 write-b가 note 확인**(장부 반영 안 됨) · w2cafe1017(10:40) 관문 기록 없음 → write-b 04:40까지 · 카페 비축 0/2 → 각 회차 새 편
   완료: firemap-meeting 21:58 — 반론 처리·지시 6건·짝 글 칸 4(today.md·decisions/log)
@@ -108,6 +113,8 @@
   막힘: firemap-write 07:18 — 13:40 칸 sbsave1017(저축은행 적금) 자료조사·계산까지만, 원고·관문 미완(gates_ok 안 적음, 이 회차 시간 소진) · 메모 work/research/sbsave1017/NOTES.md · 다음 회차 첫 일
   착수: firemap-write 09:21 — 09:10 칸 발행·verify · sbsave1017(13:40) 원고·관문 이어서
   완료: firemap-write 09:44 — ① 09:10 sangdo1017 https://cafe.naver.com/firemap/301 verify OK 1921/1921자·사진 4/4 ② sbsave1017 관문 통과 → **10/18 12:10 칸**으로(10/17 15:10 sbdep1017 저축은행 예금과 같은 날 피함): '저축은행 적금 금리 3.75%면 손에 쥐는 이자는 얼마일까?' · 레드팀 틀림 0·오해 6 반영 · 58세 이해 4차 심각 0 · 제목 7.5·표지 8.0 · editgate auto · **10/17 13:40 칸은 여전히 TBD**(write-b 몫, 비축 카페 convreal1016은 이미 발행돼 비축 0)
+  착수: firemap-write 12:21 — 12:10 jeonseloan1017 발행·verify · 남은 write 칸 확인
+  완료: firemap-write 12:53 — ① 12:10 jeonseloan1017 https://cafe.naver.com/firemap/303 verify OK 1387/1387자·사진 3/3(무작위 대기 26분, 12:49 공개, 장부 자동 기입) ② 18:10 칸 marrygift1017 관문 통과 '결혼하는 자녀 증여세 면제한도, 부모에게 얼마까지 받아도 0원일까?' — 구글 트렌드 '증여세' 급상승·증여세면제한도 월 21,090, 상증법 제53조의2 등 조문 직접 계산(2억 약 485만원·3억 약 1,940만원·시부모→며느리 1억 약 873만원), 경쟁 5편 한도 초과 세액·이자상당액 0/5 · 레드팀 2회(틀림 2·오해 15 반영)·58세 이해 3차 심각 0·제목 7.5·표지 8·8·editgate auto · 백로그 CMA·MMF(예금 묶음 3/3)는 예금 글 사흘 연속이라 뒤로 ③ report 요청(계산기 주소 링크 아님) 처리: 원인 retax1016 줄이 https:// 없이 시작 → editgate calc_check가 https://firemap.kr/… 요구 · 다음 계산기 글 contentHtml <a href> 확인은 아직
 - [지시] **firemap-youtube-loop** (기한 10/15 12:35 회차) ytreach 노출 보고서를 10/13 이후로 다시 받아 STATE.md에 노출과 조회를 따로 적는다(지금 10/12에서 멈춤 — 회의가 조회 3을 노출로 잘못 적음) · 2일 연속 같은 값이면 측정 멈춤으로 표시
   완료: firemap-youtube-loop 20:45 — 10/13 보고서 받아 STATE.md에 노출·조회 따로 적음(채널 노출 10/13 361, 조회와 별개) · 10/12→10/13 값 다름 = 측정 멈춤 아님 · 자세히 ⑥ 줄
 - [지시] **firemap-audit** (기한 10/16 감사) ① 다음 금융·네이버 금융 이용약관 원문에서 시세 데이터를 영상·글에 인용하는 조건 확인 → 위험 '높음'이면 research/STOP_SISE 만들고 되돌리는 법 적기, 아니면 출처 표기 문구 정리 ② 회의 공개 수는 slots published 칸 기준으로 재서 감사 보고에 한 줄
@@ -200,6 +207,7 @@
   완료: firemap-report 12:43 — (10/15 회) 10/14 카페 글 12편(전부 공개) 카페탭 12/12(1위 8·2위 2·3위 2) · 통합검색 1페이지는 curl 응답에 카페 링크 0개라 11편 판정 불가·1편(266) 없음 — 0 아님, 되돌릴지 결정 거리 아님 · 측정 주소는 ssc=tab.m_cafe.all(where=m_article은 통합검색)
   착수: firemap-report 12:33 — (10/16 회) 10/15 카페 글 색인 비율
   완료: firemap-report 12:43 — (10/16 회) 10/15 카페 글 11편(#277~#287, 글 API 작성일) 카페탭 11/11(1위 10·4위 1 #287) · 통합검색은 curl로 안 읽혀 재지 않음 — 0 아님, 되돌릴지 결정 거리 아님
+  완료: firemap-report 12:45 — (10/17 회) 10/16 카페 글 12편(#288~#299) 카페탭 12/12(1위 11·2위 1 #299) — 0 아님
 - 참모 반론 처리: 받아들임 = E-2·M-1·N-1 합성 표시(검증)·'판정' 말 빼고 면책 위로(검증)·종부세 엑셀 보류→양도세(레드팀)·cadence 12칸(레드팀)·카페 계산기 줄(사용자·검증)·카페 색인 측정(레드팀) / 안 받아들임 = 12편 즉시 취소(빈도는 사장님 지시, '양으로 걸린다'는 메모 실측과 다름)·애드센스 거절 원인이 카페(대상 틀림)·8/9 '치명적 오류'(안 맞는 1칸은 이미 안 씀)·쿠팡 대가 문구·.xlsx·이메일 수집·노션 랜딩(이미 있음·기각)·세무사법 '높음'(무료 계산 도구·상담 없음, STOP 안 켬 — 조문 원문은 확인 안 함)·계산기 화면 고치기(사이트 개발 중단)
 - 실험: X-OPS-6 측정 불가로 종료(장부 published가 비어 셀 수 없음) → X-OPS-7 공개 기록 코드화(10/20 판정) · utm 설명란 앞 5줄 이동 전후는 하루치라 10/16에 다시 봄
 
@@ -934,6 +942,7 @@
   완료: firemap-report 12:43 — (10/15 회) revenue.md 10/15 줄(쿠팡 이번 달 클릭1·구매0·수익0 리포트 2026.10.15 · 애드센스 가치 없는 콘텐츠 그대로·**ads.txt 표시 '찾을 수 없음'**, 실제 파일 200 정상) + 10/14 사이트 외부 9기기·calc_complete 2·coupang_view 0·click 0·utm cafe 0
   착수: firemap-report 12:33 — (10/16 회) revenue.md 10/16 줄 + 10/15 사이트 외부 완결 줄
   완료: firemap-report 12:43 — (10/16 회) revenue.md 10/16 줄(쿠팡 이번 달 클릭1·구매0·수익0 리포트 2026.10.15 · 애드센스 확인 안 함 — u/2가 '액세스 거부(new)' 화면) + 10/15 사이트 외부 14기기·calc_complete 5·coupang_view 0·click 0·utm cafe 1
+  완료: firemap-report 12:45 — (10/17 회) revenue.md 10/17 줄(쿠팡·애드센스·애드핏 확인 안 함 — 발행 회차 브라우저 사용 중) + 10/16 사이트 외부 14기기·calc_complete 4·coupang 0·utm cafe 0·기록률 37%
   [알림] **firemap-write** (report 12:39): textrule.md 카페 규칙 점검 — 오늘 3편(acqtax1010·sevbasis1010·childleave1010) 형식 2·주제 세금연금 2/3은 규칙대로, 본문 길이 1,524~2,249자는 잘된 글 기준 2,846자보다 짧음(verify 글자 수)
 - [지시] **firemap-watchdog** (기한 오늘 13:45 회차부터 하루 1번) 의도: 개발이 멈춰도 운영 화면 고장은 바로 안다 · 완료 기준: / ·/calc/severance·/calc/unemployment-benefit·/calc/salary curl 200 + 제목 일치 한 줄(decisions/log.md), 실패면 today.md 막힘 칸 · 금지: 사이트 코드 고치기(막힘만 적고 순돌이 몫)
   완료: firemap-watchdog 13:22 — (10/8 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음

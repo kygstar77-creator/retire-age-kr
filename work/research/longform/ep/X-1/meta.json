@@ -1,0 +1,54 @@
+{
+  "ep": "X-1",
+  "series": "경제·환율",
+  "title": "환율이 내린 석 달, 미국 ETF는 올랐는데 원화 계좌는 빠졌다 — 1억을 달러로 바꾼 날 네 개로 계산",
+  "title_by": "firemap-copywriter copy/titles.md 10/15 18:58 1위(결선 8.60) · 10/15 끝날 calc_out으로 다시 확인: 7/13 시작 SPY 달러 +3.02%·원화 −8.50% — '올랐는데 빠졌다' 그대로 맞음",
+  "title_candidates": [
+    "환율이 내린 석 달, 미국 ETF는 올랐는데 원화 계좌는 빠졌다 — 1억을 달러로 바꾼 날 네 개로 계산",
+    "환율 1,554원 날 S&P500에 넣은 1억, 주가는 올랐는데 원화로는 9천만원 아래 — 바꾼 날 네 개로 계산"
+  ],
+  "thumb_text": "같은 S&P500 / +10% vs −11%",
+  "thumb_text_small": "작년 이맘때 산 1억 vs 7월 초 산 1억 · 원화 기준",
+  "thumb_text_swap": "주가는 올랐는데 / 내 1억은 −11%",
+  "thumb_text_swap_small": "2024년 이후 달러가 가장 비싸던 7월 2일에 산 경우",
+  "thumb": "thumb_x1f.png",
+  "thumb_swap": "thumb_x1c.png",
+  "thumb_status": "visual 10/17 17:35 x1f 7.20(1초 3/3·58세 뜻 맞음) · 단 copywriter 18:58 작은 줄 '원화로 따지면'→'원화 기준' 다시 그리기 대기(x1f 파일 17:24, 아직 옛 글자) · swap x1c도 '+4%' 빼고 다시 · 근거 visual/X-1-thumb/judges.md",
+  "desc_first2": [
+    "7월 2일 1억원을 달러로 바꿔 미국 S&P500 ETF(SPY)를 샀다면, 10월 15일까지 주가는 달러로 3.63% 올랐지만 원화로 따지면 10.76% 빠져 약 8,924만원이 됩니다. 같은 1억을 작년 10월 13일에 넣었다면 원화로 9.69% 올라 약 1억 969만원입니다.",
+    "차이는 산 날의 환율과 주가에서 나왔습니다. 1달러가 1,554.4원이던 날과 1,420.5원이던 날을 포함해 시작일 네 개로 계산했고(끝날 환율 1,338.6원, 매매기준율·수수료 없음). 언제 사고팔지 권하는 영상은 아니에요."
+  ],
+  "desc": null,
+  "chapters": null,
+  "tags": [
+    "환율",
+    "미국 ETF",
+    "S&P500 ETF",
+    "원달러 환율",
+    "환율 손실"
+  ],
+  "publishAt": "2026-10-22T11:30:00+09:00",
+  "privacy": "private",
+  "paid": false,
+  "synthetic": true,
+  "synthetic_note": "AI 음성 내레이션(Chirp 3 HD Charon) — 합성 표시 True(10/12 회의 기준) · 실사는 Pexels(credits.json)",
+  "coupang": null,
+  "voice": "Chirp 3 HD Charon 1.1 · 183줄 · 10/17 한 날(튀는 줄 0·앞뒤 +0.7%·IQR 0.14) · 146행 10/17 재녹음",
+  "experiment": {
+    "X-YT-THUMB-1": "A(제목 첫 명사 '환율', 썸네일 주 대상 'S&P500')"
+  },
+  "endscreen": {
+    "how": "Studio 최종 화면 — 업로드 뒤 할 일",
+    "status": "미정"
+  },
+  "todo_pd": [
+    "editor 화면 stamp(10/20 12:00) → lfrender render → bgcheck·눈 검사",
+    "썸네일 x1f '원화 기준' 다시 그린 판(visual)",
+    "desc 본문·챕터(렌더 뒤 voice.json 시각)",
+    "짝 카페 글 주소 {CAFE}",
+    "scorecard·review·understand_test 최신 확인 → ytlong gate → 10/22 11:30 예약"
+  ],
+  "made_by": "firemap-video-producer",
+  "made_at": "2026-10-17 22:22",
+  "missing": null
+}

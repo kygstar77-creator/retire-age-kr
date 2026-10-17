@@ -1,0 +1,26 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font-family:BH;white-space:nowrap;line-height:1}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap}
+.fine{position:absolute;left:52px;top:636px;font:500 24px PD;white-space:nowrap}
+</style></head><body><div style='position:absolute;inset:0;background:#F6F7F9'></div>
+<div class='lab' style='left:42px;top:14px;font-size:104px;color:#18191D;letter-spacing:-3px'>같은 S&P500</div>
+<div class='lab' style='left:700px;top:50px;font-size:52px;color:#6B7180'>원화로 따지면</div>
+<div style='position:absolute;left:657px;top:150px;width:6px;height:430px;background:#18191D'></div>
+<div class='lab' style='left:0;width:638px;text-align:right;top:160px;font-size:74px;color:#18191D;letter-spacing:-2px'>작년 이맘때 산 1억</div>
+<div style='position:absolute;left:660px;top:262px;width:233px;height:100px;background:#18191D;border-radius:0 12px 12px 0'></div>
+<div class='t' style='left:913px;top:250px;font-size:128px;color:#18191D'>+10%</div>
+<div class='lab' style='left:682px;top:378px;font-size:74px;color:#FF5A00;letter-spacing:-2px'>7월 초 산 1억</div>
+<div style='position:absolute;left:402px;top:476px;width:258px;height:100px;background:#FF5A00;border-radius:12px 0 0 12px'></div>
+<div class='t' style='left:0;width:384px;text-align:right;top:464px;font-size:128px;color:#FF5A00'>−11%</div>
+<div class='fine' style='left:46px;top:616px;font-size:26px;color:#6B7180'>SPY 가격 · 끝 2026.10.15 · 한국은행 환율</div>
+
+<script>
+function fit(id,maxW){const e=document.getElementById(id);let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e.id,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

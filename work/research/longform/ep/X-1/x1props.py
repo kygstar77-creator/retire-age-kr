@@ -24,6 +24,10 @@ for line in SCRIPT.split('\n---', 1)[0].splitlines():
     s = line.strip()
     if s.startswith('- '): last = re.sub(r'\s*\(화면.*$', '', s[2:]).strip()
     elif s.startswith('[자막:') and last: CAP[last] = (CAP[last] + ' · ' if last in CAP else '') + s[4:].rstrip(']').strip()
+# 10/17 PD: 화면 띠 낱말만 쉬운 말로(editor 17:18 [81]) — 서명된 대본 글은 그대로 두고 화면에서만
+CAPFIX = [('현찰 스프레드 1.75%', '현찰 환전수수료 1.75%'), ('ECOS 731Y001', 'ECOS'), ('SPY 2026.7.2 → 10.15 · 달러 +3.63%', '미국 S&P500 ETF(SPY) 2026.7.2 → 10.15 · 달러 +3.63%')]
+for _k in CAP:
+    for _a, _b in CAPFIX: CAP[_k] = CAP[_k].replace(_a, _b)
 assert all(any(l['text'] == k for l in ALL) for k in CAP), [k for k in CAP if not any(l['text'] == k for l in ALL)]
 USED = set()
 BG = {c['id']: c for c in json.load(open(os.path.join(EP, 'bg_plan.json'), encoding='utf-8'))['clips']}
@@ -42,12 +46,12 @@ def S(kind, first, cnt=1, **data):
     ls = take(first, cnt)
     return {'kind': kind, 'lines': ls, 'frames': sum(l['frames'] for l in ls), 'data': data}
 
-SRC_SPY = 'SPY 종가(야후, 배당 미포함 가격) · 한국은행 ECOS 731Y001 원/달러 매매기준율 · 파이어맵 계산(수수료·세금 없음)'
-SRC_FX = '한국은행 ECOS 731Y001 원/달러 매매기준율 · 파이어맵 계산(수수료 없음)'
+SRC_SPY = '미국 S&P500 ETF(SPY) 종가(야후 파이낸스, 배당 미포함 가격) · 한국은행 ECOS 원/달러 매매기준율 · 파이어맵 계산(수수료·세금 없음)'
+SRC_FX = '한국은행 ECOS 원/달러 매매기준율 · 파이어맵 계산(수수료 없음)'
 SRC_KRX = 'KRX 종가 + 분배금(세전) · 삼성자산운용 KODEX 월간 자료(2026.8.31 기준)'
 SRC_BANK = '은행연합회 외환길잡이 · 하나은행 2026.10.15 마지막 고시 · 파이어맵 계산'
 SRC_DEP = 'KB국민은행 외화예금 금리안내(조회 2026.10.16) · 예금보험공사 예금자보호제도 FAQ · 파이어맵 계산'
-SRC_USE = '한국은행 ECOS 731Y001 원/달러·원/100엔 매매기준율 · 파이어맵 계산(카드 수수료 없음)'
+SRC_USE = '한국은행 ECOS 원/달러·원/100엔 매매기준율 · 파이어맵 계산(카드 수수료 없음)'
 SRC_FSS = '금융감독원 공식 블로그 「해외 카드결제 취소시 … 환차손 보상을 한층 강화합니다」(2026.10.14)'
 def big(title, v, s, first, n=1, icon='CircleDollarSign', c='accent', src=SRC_FX, **d): return S('big', first, n, title=title, v=v, s=s, icon=icon, c=c, source=src, **d)
 def pair(title, a, b, first, n=1, icon='Scale', src=SRC_FX, **d): return S('pair', first, n, title=title, v1=a[0], s1=a[1], c1=a[2], v2=b[0], s2=b[1], c2=b[2], icon=icon, source=src, **d)
@@ -68,7 +72,7 @@ FXJ = json.load(open(os.path.join(EP, 'motion_preview', 'x1_fx.json'), encoding=
 V3 = json.load(open(os.path.join(EP, 'motion_preview', 'x1_v3.json'), encoding='utf-8'))
 MOTION = {}
 for k in ('hedge', 'even', 'below'):
-    m = V3[k]; MOTION[k] = {'title': m['title'], 'source': m['source'], 'lines': [{'text': l['text'], 'audio': l['audio'], 'frames': l['frames'], 'cap': l['cap']} for l in m['lines']],
+    m = V3[k]; MOTION[k] = {'title': m['title'], 'source': m['source'], 'lines': [{'text': l['text'], 'audio': l['audio'], 'frames': l['frames'], 'cap': l['cap'] and l['cap'].replace('ECOS 731Y001', 'ECOS')} for l in m['lines']],
                             'frames': sum(l['frames'] for l in m['lines']), 'data': m['data']}
 def mo(comp, i0, i1, first, icon):
     m = MOTION[comp]; n = i1 - i0
@@ -110,7 +114,7 @@ scenes = [
     broll(6326929, '주가는 올랐는데 계좌는', '돈은 어디로 샜을까'),
     big('새 나간 곳은 환율', '1,554원 → 1,339원', '원/달러 매매기준율 · 2026.7.2 → 10.15', '새 나간 곳은', 2, icon='ArrowLeftRight', c=B),
     broll(6963836, '요즘 지식iN과', '요즘 많이 묻는 글'),
-    S('list5', '그중 많이 나온 질문', 1, title='많이 나온 질문 다섯', icon='MessageCircleQuestion', source='네이버 지식iN · 카페 · 유튜브 댓글(research.md 질문 칸)',
+    S('list5', '그중 많이 나온 질문', 1, title='많이 나온 질문 다섯', icon='MessageCircleQuestion', source='네이버 지식iN · 카페 · 유튜브 댓글',
       items=['주가는 올랐는데 왜 원화로는 깎였나?', '국내 상장 S&P500 ETF와 (H)는?', '달러로 미리 바꿀까, 원화로 살까?', '달러 예금·달러 상품도 마이너스?', '여행·직구, 지금 바꿔 둘까?']),
     broll(7428839, '계산은 1억 원을', '한 사람, 같은 돈으로'),
     broll(8044821, '미국 주식이 없는 분도', '여행·직구에도 해당', side='right'),
@@ -145,8 +149,8 @@ scenes = [
     ask('질문 ②', '국내 상장 S&P500 ETF는 왜 내렸고, 이름 끝 (H)는 뭔가요?',
         "유튜브 댓글 '미국 현지에서는 최고가갱신 … 국내상장 미국지수는 오히려 하락' · 지식iN 2026.9.25 '(H)가 붙어 있더라고요'", '이번엔 유튜브 댓글에', 3),
     broll(7735914, '한국 증권 계좌에서', '원화로 사는 미국 ETF'),
-    pair('환노출 vs 환헤지', ['환노출형', '환율을 그대로 맞음', K], ['(H) 환헤지형', '환율 영향 최소화', B], '환율 움직임을 그대로', 2, icon='Split', src=SRC_KRX),
-    rows('같은 회사, 두 상품', [['KODEX 미국S&P500', '환노출 · 379800', K], ['KODEX 미국S&P500(H)', '환헤지 · 449180', B, 0]], '같은 회사가 만든', 1, icon='Tag', src=SRC_KRX),
+    pair('환노출 vs 환헤지', ['환노출형', '환율 변동을 그대로 받음', K], ['(H) 환헤지형', '환율 영향 최소화', B], '환율 움직임을 그대로', 2, icon='Split', src=SRC_KRX),
+    rows('같은 회사, 두 상품', [['KODEX 미국S&P500', '환노출 · 종목번호 379800', K], ['KODEX 미국S&P500(H)', '환헤지 · 종목번호 449180', B, 0]], '같은 회사가 만든', 1, icon='Tag', src=SRC_KRX),
     broll(8369980, 'ETF가 나눠 주는', '분배금까지 넣어서'),
     mo('hedge', 0, 4, '달러가 제일 비쌌던 날 1억을', 'ChartColumn'),
     broll(6326929, '댓글 질문의 답이', '댓글 질문의 답'),
@@ -160,7 +164,7 @@ scenes = [
     broll(7735915, '큰 기관은 어떻게', '큰 기관은 어떻게 할까'),
     big('국민연금 환헤지 비율', '15%', '해외투자 기본값 · 일부만 막는다', '나라 돈을 굴리는 곳도', 1, icon='Landmark', c=A, src='보건복지부 2026년 제3차 국민연금기금운용위원회(2026.4.14)'),
     broll(5651783, '조심할 것도 있습니다', '조심할 것'),
-    rows('헤지 비용과 총보수', [['헤지 비용', '들 수 있음 · 숫자 공개 없음', R], ['총보수 379800', '연 0.0062%', K, 1], ['총보수 449180', '연 0.0099%', K, 1]], '운용사는 환헤지 상품에', 2,
+    rows('헤지 비용과 총보수', [['헤지 비용', '들 수 있음 · 숫자 공개 없음', R], ['총보수 KODEX 미국S&P500', '연 0.0062%', K, 1], ['총보수 KODEX 미국S&P500(H)', '연 0.0099%', K, 1]], '운용사는 환헤지 상품에', 2,
          icon='Receipt', src='삼성자산운용 뉴스룸(2026.7.24) · 운용사 월간 자료(2026.8.31 기준)'),
     broll(6963836, '이름이 거의 같아서', '주문 전, 이름 끝 확인', side='right'),
     # ── 3. 질문 ③ ──
@@ -181,7 +185,7 @@ scenes = [
     broll(7428839, '증권사에서 바꾸는 달러도', '내 증권사 우대율 먼저', n=2),
     broll(5923592, '한 번에 바꾸지 말고', '나눠 바꾸면 어떨까', side='right'),
     S('dca', '1억을 작년 가을부터', 3, title='매달 나눠 바꾼 1년', icon='CalendarRange',
-      source='한국은행 ECOS 731Y001 · 매달 첫 거래일 2025.11.3~2026.10.1 · 파이어맵 계산(수수료 없음)', cal=CAL),
+      source='한국은행 ECOS · 매달 첫 거래일 2025.11.3~2026.10.1 · 파이어맵 계산(수수료 없음)', cal=CAL),
     broll(7735915, '달러가 제일 비쌌던 날 한 번에', '가장 나쁜 날보다는 덜'),
     broll(5466779, '1년 전에 한 번에 바꿨으면', '작년 이맘때보다는 더', side='right'),
     rows('좋은 날과 나쁜 날 사이', [['한 번에 · 작년 이맘때', '94,234,424원', K], ['매달 나눠서', '92,290,941원', A], ['한 번에 · 가장 비싸던 날', '86,116,830원', B]], '나눠 바꾸면 결과가', 1,
@@ -195,12 +199,12 @@ scenes = [
     broll(5778854, '예금보험공사 안내에는', '보호되는지는 증권사에 직접'),
     big('원화로 따지면', '마이너스 가능', '이자는 달러로 · 바꾸는 날 환율로', '원화로 따지면, 네', 2, icon='TrendingDown', c=B, src=SRC_DEP),
     broll(7829075, '은행 달러 예금으로', '은행 달러 예금이라면'),
-    rows('달러 1년 정기예금', [['KB국민은행 · 12개월', '연 3.64833%', K], ['이자소득세 15.4% 뒤', '연 3.09%', A, 1]], 'KB국민은행 고시를', 2, icon='PiggyBank', src=SRC_DEP),
+    rows('달러 1년 정기예금', [['KB국민은행 · 12~18개월 미만', '연 3.64833%', K], ['이자소득세 15.4% 뒤', '연 3.09%', A, 1]], 'KB국민은행 고시를', 2, icon='PiggyBank', src=SRC_DEP),
     broll(7735914, '지금 1억 원을 달러로', '지금 바꿔 맡긴다면'),
     big('이자가 사라지는 환율', '1,298.5원', '이보다 내려가면 환율 손실 > 이자', '1년 뒤 환율이 지금보다', 2, icon='TriangleAlert', c=R, src=SRC_DEP),
     ask('그래서', '무엇부터 볼까요?', None, '그래서 무엇부터'),
     big('예금자보호 한도', '1억원', '외화예금도 · 원화로 환산 · 원금+이자 합쳐', '은행 달러 예금이라면', 4, icon='ShieldCheck', c=B, src='예금보험공사 예금자보호제도 FAQ'),
-    broll(7735915, '그래서 1억 원어치를', '이자는 한도 밖', side='right'),
+    broll(7735915, '그래서 1억 원어치를', '원금으로 꽉 채우면 이자는 한도 밖', side='right'),
     big('보호 안 되는 것', '펀드 · ETF', '금융투자상품 · 달러 ETF도 펀드', '그리고 같은 안내에', 1, icon='ShieldOff', c=R, src='예금보험공사 예금자보호제도 FAQ'),
     broll(5923592, '세금도 물어보셨죠', '환율 차익에도 세금?'),
     rows('세금은 어떻게', [['이자', '세금 붙음', R], ['환율로 생긴 차익', '공식 해석 못 찾음', K, 1], ['금액이 크다면', '국세청 상담센터에 직접', B, 2]], '이자에 세금이 붙는 건', 3,

@@ -3,9 +3,9 @@
 
 ## props: video/h2.json
 [scenes.0.lines.0.text] 잠실 주공 5단지는 1978년에 지었습니다. 그런데 2008년에 지은 같은 동네 리센츠보다 평당 30% 넘게 비쌌어요. (재사용 2장)
-[scenes.0.lines.0.cap] 잠실 84㎡대 평당 · 주공아파트5단지(1978) 1억 7,449만원 · 리센츠(2008) 1억 3,283만원 · +31.4%
+[scenes.0.lines.0.cap] 잠실 84㎡대 평당 · 주공아파트5단지(1978) 1억 7,408만원 · 리센츠(2008) 1억 3,283만원 · +31.1%
 [scenes.0.data.title] 잠실 주공5단지 vs 리센츠
-[scenes.0.data.v] +31.4%
+[scenes.0.data.v] +31.1%
 [scenes.0.data.s] 84㎡대 평당 · 1978년 단지가 2008년 단지보다
 [scenes.0.data.icon] Building2
 [scenes.0.data.c] rise
@@ -95,16 +95,16 @@
 [scenes.13.data.side] left
 [scenes.14.lines.0.text] 같은 동네에 30년 뒤 들어선 리센츠와 잠실엘스가 있고요.
 [scenes.14.lines.1.text] 거래를 값 순서로 줄 세워 한가운데 값을 봤습니다. 평당으로는 잠실에서 5단지가 가장 높았어요.
-[scenes.14.lines.1.cap] 84㎡대 평당 가운데 값 · 주공아파트5단지 40건 · 리센츠 90건 · 잠실엘스 85건 · 트리지움 67건 · 5단지 vs 리센츠 +31.4% · vs 잠실엘스 +34.7%
+[scenes.14.lines.1.cap] 84㎡대 평당 가운데 값 · 주공아파트5단지 41건 · 리센츠 90건 · 잠실엘스 86건 · 트리지움 67건 · 5단지 vs 리센츠 +31.1% · vs 잠실엘스 +34.5%
 [scenes.14.data.title] 잠실 84㎡대 평당 가운데 값
 [scenes.14.data.bars.0.0] 주공5단지
-[scenes.14.data.bars.0.2] 1억 7,449만원
+[scenes.14.data.bars.0.2] 1억 7,408만원
 [scenes.14.data.bars.0.3] rise
 [scenes.14.data.bars.1.0] 리센츠
 [scenes.14.data.bars.1.2] 1억 3,283만원
 [scenes.14.data.bars.1.3] accent
 [scenes.14.data.bars.2.0] 잠실엘스
-[scenes.14.data.bars.2.2] 1억 2,950만원
+[scenes.14.data.bars.2.2] 1억 2,946만원
 [scenes.14.data.bars.2.3] accent
 [scenes.14.data.bars.3.0] 트리지움
 [scenes.14.data.bars.3.2] 1억 2,336만원
@@ -249,7 +249,7 @@
 [scenes.31.lines.1.text] 먼저 구청 고시로 그 단지가 몇 단계에 와 있는지 봅니다. 서울시 정비사업 정보몽땅에서 단지 이름으로 찾을 수 있어요.
 [scenes.31.data.title] 오래된 단지 값을 볼 때
 [scenes.31.data.rows.0.0] ① 재건축 단계
-[scenes.31.data.rows.0.1] 구청 고시 · 정보몽땅에서 단지 이름
+[scenes.31.data.rows.0.1] 구청 고시 · 정보몽땅에서 단지 이름으로 찾기
 [scenes.31.data.rows.1.0] ② 같은 동네 새 단지와
 [scenes.31.data.rows.1.1] 같은 84㎡끼리
 [scenes.31.data.rows.1.2] ink
@@ -271,7 +271,7 @@
 [scenes.34.lines.1.text] 그달 열한 건 모두 중개사를 거친 거래였습니다. 층과 날짜는 있지만, 그 값을 낸 사정은 신고 자료에 칸이 없죠.
 [scenes.34.data.title] 래미안원베일리 · 2026년 5월
 [scenes.34.data.v] 53억 5,000만원 ~ 71억 5,000만원
-[scenes.34.data.s] 11건 · 모두 중개거래 · 사정은 신고 자료에 칸이 없음
+[scenes.34.data.s] 11건 · 모두 중개거래 · 값이 다른 이유는 신고 자료에 없음
 [scenes.34.data.icon] Building
 [scenes.34.data.c] ink
 [scenes.34.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 84㎡대 = 전용 80~85㎡ · 파이어맵 계산
@@ -339,7 +339,7 @@
 [scenes.43.data.c] fall
 [scenes.43.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 84㎡대 = 전용 80~85㎡ · 파이어맵 계산
 [scenes.44.lines.0.text] 리센츠 전세는 13억 반쯤, 잠실엘스는 12억 반쯤이었고요.
-[scenes.44.lines.0.cap] 84㎡대 신규 순수전세 가운데 값 · 5단지 5억 2,000만원(88건 · 매매의 12.0%) · 리센츠 13억 5,000만원(90건 · 39.5%) · 잠실엘스 12억 5,000만원(129건 · 37.6%)
+[scenes.44.lines.0.cap] 84㎡대 신규 순수전세 가운데 값 · 5단지 5억 2,000만원(88건 · 매매의 12.0%) · 리센츠 13억 5,000만원(90건 · 39.5%) · 잠실엘스 12억 5,000만원(130건 · 37.6%)
 [scenes.44.lines.1.text] 대치동 은마 전세는 8억 남짓, 래미안대치팰리스는 18억이 넘습니다.
 [scenes.44.lines.1.cap] 은마 8억 3,000만원(21.3%) · 래미안대치팰리스 18억 2,500만원(42.7%) · 반포미도 8억(19.7%) · 래미안원베일리 21억(35.6%)
 [scenes.44.data.title] 84㎡대 신규 전세 가운데 값
@@ -432,7 +432,7 @@
 [scenes.54.data.s2] 2026년 7~9월
 [scenes.54.data.c2] rise
 [scenes.54.data.icon] Sun
-[scenes.54.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 84㎡대 = 전용 80~85㎡ · 파이어맵 계산
+[scenes.54.data.source] 국토교통부 아파트 전월세 실거래(2025년·2026년 7~9월 계약) · 84㎡대 = 전용 80~85㎡ · 파이어맵 계산
 [scenes.55.lines.0.text] 주공 5단지 전세도 올랐습니다. 작년 여름엔 5억 남짓이었어요.
 [scenes.55.data.license] Pexels 35738744 무료(umar muazu)
 [scenes.55.data.say] 오래된 단지 전세도
@@ -447,7 +447,7 @@
 [scenes.56.data.s2] 2026년 7~9월
 [scenes.56.data.c2] rise
 [scenes.56.data.icon] Sun
-[scenes.56.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 84㎡대 = 전용 80~85㎡ · 파이어맵 계산
+[scenes.56.data.source] 국토교통부 아파트 전월세 실거래(2025년·2026년 7~9월 계약) · 84㎡대 = 전용 80~85㎡ · 파이어맵 계산
 [scenes.57.lines.0.text] 은마는 작년 여름 8억 남짓에서, 올해 여름엔 6억대였어요. 다만 올여름 계약이 아홉 건뿐입니다.
 [scenes.57.lines.0.cap] 은마 8억 4,000만원(19건) → 6억 5,000만원(9건) · 반포자이 15억 3,500만원(10건) → 16억(7건) · 아크로리버파크 18억 7,000만원(7건) → 17억 5,000만원(7건)
 [scenes.57.data.title] 은마 · 여름 석 달 전세
@@ -458,7 +458,7 @@
 [scenes.57.data.s2] 2026년 · 9건
 [scenes.57.data.c2] fall
 [scenes.57.data.icon] Sun
-[scenes.57.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 84㎡대 = 전용 80~85㎡ · 파이어맵 계산
+[scenes.57.data.source] 국토교통부 아파트 전월세 실거래(2025년·2026년 7~9월 계약) · 84㎡대 = 전용 80~85㎡ · 파이어맵 계산
 [scenes.58.lines.0.text] 이미 사는 사람이 다시 계약할 때는 얼마였을까요? 신고 자료에는 새 계약과 다시 맺은 계약이 따로 적혀 있습니다.
 [scenes.58.data.license] Pexels 9431584 무료(mohammad hassan tabatabaei jafari)
 [scenes.58.data.say] 다시 계약하면 얼마였나
@@ -479,7 +479,7 @@
 [scenes.60.lines.0.text] 여기서 놓치면 손해 보는 게 계약갱신요구권입니다. 살던 세입자가 다시 계약할 때 쓰는 권리예요.
 [scenes.60.data.n] 함정
 [scenes.60.data.q] 계약갱신요구권
-[scenes.60.data.from] 세 동네 84㎡대 갱신 신고 466건
+[scenes.60.data.from] 세 동네 84㎡대 권리 쓴 갱신 466건
 [scenes.61.lines.0.text] 다시 맺은 원베일리 열아홉 건 중 열여덟 건이, 이 권리를 썼다고 신고됐어요.
 [scenes.61.lines.1.text] 이 권리를 썼다고 신고된 계약을 세 동네에서 모두 세어 봤습니다.
 [scenes.61.lines.2.text] 466건 가운데 보증금을 5% 넘게 올린 계약은 한 건도 없었습니다.
@@ -679,7 +679,7 @@
 [scenes.87.data.rows.0.1] 34억 1,500만원
 [scenes.87.data.rows.0.2] fall
 [scenes.87.data.rows.1.0] 잠실엘스
-[scenes.87.data.rows.1.1] 33억 2,500만원
+[scenes.87.data.rows.1.1] 33억 2,250만원
 [scenes.87.data.rows.1.2] fall
 [scenes.87.data.rows.2.0] 트리지움
 [scenes.87.data.rows.2.1] 31억 7,000만원
@@ -697,7 +697,7 @@
 [scenes.89.lines.1.text] 그래서 25억 언저리 집을 볼 땐, 은행이 그 집 값을 얼마로 보는지 먼저 물어봐야 합니다.
 [scenes.89.data.title] 25억 경계
 [scenes.89.data.v1] 4억
-[scenes.89.data.s1] 25억 이하
+[scenes.89.data.s1] 15억 넘고 25억 이하
 [scenes.89.data.c1] fall
 [scenes.89.data.v2] 2억
 [scenes.89.data.s2] 조금만 넘어도

@@ -7,10 +7,10 @@
 [scenes.0.lines.1.text] 다른 건 딱 하나, 그 집에 실제로 살았던 햇수예요.
 [scenes.0.data.title] 2029년, 같은 20억 집
 [scenes.0.data.v1] 1,241만원
-[scenes.0.data.s1] 정민 씨 · 10년 삶
+[scenes.0.data.s1] 정민 씨 · 10년 거주
 [scenes.0.data.c1] fall
 [scenes.0.data.v2] 1억 4,777만원
-[scenes.0.data.s2] 수현 씨 · 10년 보유 · 2년 삶
+[scenes.0.data.s2] 수현 씨 · 10년 보유 · 2년 거주
 [scenes.0.data.c2] rise
 [scenes.0.data.icon] House
 [scenes.0.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
@@ -235,11 +235,11 @@
 [scenes.27.data.rows.1.0] 갖고 있던 해
 [scenes.27.data.rows.1.1] 4%
 [scenes.27.data.rows.1.2] 2%
-[scenes.27.data.rows.1.3] 안 침
+[scenes.27.data.rows.1.3] 없음
 [scenes.27.data.icon] Table
 [scenes.27.data.source] 재정경제부 2026 세법개정안 상세본 p.58
 [scenes.28.lines.0.text] 이름도 바뀌어요. 집에 대해서는 '장기거주 소득공제'라고 부르게 됩니다.
-[scenes.28.lines.0.cap] 상세본 p.57 · 토지·주택 아닌 건물은 장기보유 소득공제
+[scenes.28.lines.0.cap] 상세본 p.57 · 토지와, 주택이 아닌 건물은 장기보유 소득공제
 [scenes.28.data.title] 새 이름
 [scenes.28.data.v] 장기거주 소득공제
 [scenes.28.data.s] 집(주택·조합원입주권) · 2028.1.1 이후 판 집부터
@@ -429,8 +429,8 @@
 [scenes.49.lines.1.text] 국회를 거치지 않고 정부가 고치는 시행령이라, 지난달 말에 바로 바뀌었어요.
 [scenes.49.lines.1.cap] 소득세법 시행령 §155①1 · 조정대상지역 종전주택 양도분부터 (법제처 2026-10-17 확인 · 정부 문답 p.55)
 [scenes.49.data.title] 이미 바뀐 규칙
-[scenes.49.data.v] 시행령
-[scenes.49.data.s] 2026.9.30 개정 · 2026.10.1 이후 판 집부터
+[scenes.49.data.v] 헌 집 팔 기한 3년 → 2년
+[scenes.49.data.s] 두 집 다 조정대상지역 · 2026.9.30 개정 · 2026.10.1 이후 판 집부터
 [scenes.49.data.icon] Gavel
 [scenes.49.data.c] rise
 [scenes.49.data.source] 소득세법 시행령 §155①1(법제처 2026-10-17 확인) · 정부 문답 p.55
@@ -746,7 +746,7 @@
 [scenes.87.data.chapter] 질문 ⑤
 [scenes.88.lines.0.text] 그러면 살았던 기간이 5년으로 쳐집니다.
 [scenes.88.lines.1.text] 2029년 세금은 9,700만원쯤으로 내려가요. 5천만원 넘게 줄어드는 거죠.
-[scenes.88.lines.1.cap] 정부안 · 공제율 16% → 40% · −5,037만원 · 지방세 포함 · 파이어맵 계산
+[scenes.88.lines.1.cap] 정부안 · 공제율 16% → 40% · −5,036만원 · 지방세 포함 · 파이어맵 계산
 [scenes.88.data.title] 수현 씨 2029년 세금
 [scenes.88.data.v1] 1억 4,777만원
 [scenes.88.data.s1] 거주 2년
@@ -808,7 +808,7 @@
 [scenes.95.data.chapter] 검산
 [scenes.96.lines.0.text] 정부 문답 자료에 실린 사례로 다시 해 봤습니다.
 [scenes.96.lines.1.text] 하나는 32억 집에 2년만 살았던 사례예요.
-[scenes.96.lines.1.cap] 문답 사례① 양도 32억·취득 12억·보유 10년·거주 2년 · 산출세액(지방세 빼고)
+[scenes.96.lines.1.cap] 문답 사례① 양도 32억·취득 12억·보유 10년·거주 2년 · 세금(지방세 빼고)
 [scenes.96.lines.2.text] 정부가 파는 해마다 계산해 둔 숫자와 똑같이 나왔어요.
 [scenes.96.data.title] 정부 사례 ① 32억
 [scenes.96.data.cols.0] 2027년
@@ -941,7 +941,7 @@
 [scenes.111.data.icon] ListChecks
 [scenes.111.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
 [scenes.111.data.items.0.0] 내내 산 집 · 10년↑ · 30억 이하
-[scenes.111.data.items.0.1] 오히려 유리
+[scenes.111.data.items.0.1] 세금 줄어듦(정부안)
 [scenes.111.data.items.1.0] 사 두고 다른 곳에 산 집
 [scenes.111.data.items.1.1] 햇수 차이 세기
 [scenes.111.data.items.2.0] 갈아타는 중
@@ -962,7 +962,7 @@
 [scenes.113.data.icon] ListChecks
 [scenes.113.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
 [scenes.113.data.items.0.0] 내내 산 집 · 10년↑ · 30억 이하
-[scenes.113.data.items.0.1] 오히려 유리
+[scenes.113.data.items.0.1] 세금 줄어듦(정부안)
 [scenes.113.data.items.1.0] 사 두고 다른 곳에 산 집
 [scenes.113.data.items.1.1] 햇수 차이 세기
 [scenes.113.data.items.2.0] 갈아타는 중

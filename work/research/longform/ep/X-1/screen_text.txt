@@ -5,10 +5,10 @@
 [scenes.0.lines.0.text] 미국 큰 회사들을 묶어 따라가는 S&P500 ETF는 7월 초부터 3% 넘게 올랐습니다.
 [scenes.0.lines.1.text] ETF는 여러 회사 주식을 한 바구니에 담아, 주식처럼 사고파는 상품이에요.
 [scenes.0.lines.2.text] 그런데 7월 초 그날 원화를 달러로 바꿔 이 ETF를 산 사람은, 원화로 따지면 10% 넘게 빠졌습니다.
-[scenes.0.lines.2.cap] SPY 2026.7.2 → 10.15 · 달러 +3.63% · 원화 −10.76% (한국은행 매매기준율 환산, 배당·수수료·세금 없음)
+[scenes.0.lines.2.cap] 미국 S&P500 ETF(SPY) 2026.7.2 → 10.15 · 달러 +3.63% · 원화 −10.76% (한국은행 매매기준율 환산, 배당·수수료·세금 없음)
 [scenes.0.data.title] 주가는 오르고 계좌는 빠졌다
 [scenes.0.data.icon] TrendingDown
-[scenes.0.data.source] SPY 종가(야후, 배당 미포함 가격) · 한국은행 ECOS 731Y001 원/달러 매매기준율 · 파이어맵 계산(수수료·세금 없음) · 2026.7.2 → 10.15
+[scenes.0.data.source] 미국 S&P500 ETF(SPY) 종가(야후 파이낸스, 배당 미포함 가격) · 한국은행 ECOS 원/달러 매매기준율 · 파이어맵 계산(수수료·세금 없음) · 2026.7.2 → 10.15
 [scenes.0.data.two.ticks.0.1] +5%
 [scenes.0.data.two.ticks.1.1] 0%
 [scenes.0.data.two.ticks.2.1] −5%
@@ -23,13 +23,13 @@
 [scenes.1.data.side] left
 [scenes.2.lines.0.text] 새 나간 곳은 환율이에요. 1,554원이던 달러가 1,339원이 됐거든요.
 [scenes.2.lines.1.text] 달러를 들고 있는데 달러 값이 내렸으니, 원화로 바꾸면 덜 받는 거죠.
-[scenes.2.lines.1.cap] 원/달러 매매기준율 · 2026.7.2 1,554.4원(2024년 이후 최고) → 10.15 1,338.6원 (한국은행 ECOS 731Y001 — 장중 값·은행 고시값과 다를 수 있음)
+[scenes.2.lines.1.cap] 원/달러 매매기준율 · 2026.7.2 1,554.4원(2024년 이후 최고) → 10.15 1,338.6원 (한국은행 ECOS — 장중 값·은행 고시값과 다를 수 있음)
 [scenes.2.data.title] 새 나간 곳은 환율
 [scenes.2.data.v] 1,554원 → 1,339원
 [scenes.2.data.s] 원/달러 매매기준율 · 2026.7.2 → 10.15
 [scenes.2.data.icon] ArrowLeftRight
 [scenes.2.data.c] fall
-[scenes.2.data.source] 한국은행 ECOS 731Y001 원/달러 매매기준율 · 파이어맵 계산(수수료 없음)
+[scenes.2.data.source] 한국은행 ECOS 원/달러 매매기준율 · 파이어맵 계산(수수료 없음)
 [scenes.3.lines.0.text] 요즘 지식iN과 카페, 유튜브 댓글에 이걸 묻는 글이 계속 올라옵니다.
 [scenes.3.data.license] Pexels 6963836 무료(cottonbro studio)
 [scenes.3.data.say] 요즘 많이 묻는 글
@@ -37,7 +37,7 @@
 [scenes.4.lines.0.text] 그중 많이 나온 질문 다섯 개를 골라, 한국은행과 금융감독원이 직접 낸 자료로 답해 보겠습니다.
 [scenes.4.data.title] 많이 나온 질문 다섯
 [scenes.4.data.icon] MessageCircleQuestion
-[scenes.4.data.source] 네이버 지식iN · 카페 · 유튜브 댓글(research.md 질문 칸)
+[scenes.4.data.source] 네이버 지식iN · 카페 · 유튜브 댓글
 [scenes.4.data.items.0] 주가는 올랐는데 왜 원화로는 깎였나?
 [scenes.4.data.items.1] 국내 상장 S&P500 ETF와 (H)는?
 [scenes.4.data.items.2] 달러로 미리 바꿀까, 원화로 살까?
@@ -69,7 +69,7 @@
 [scenes.9.lines.2.text] 날짜를 하나만 쓰면, 하필 제일 나쁜 날을 골랐다는 말을 듣게 되니까요.
 [scenes.9.data.title] 바꾼 날 네 개
 [scenes.9.data.icon] CalendarDays
-[scenes.9.data.source] 한국은행 ECOS 731Y001 원/달러 매매기준율 일별(2025.10.13~2026.10.15) · 환산 수수료 없음
+[scenes.9.data.source] 한국은행 ECOS 원/달러 매매기준율 일별(2025.10.13~2026.10.15) · 환산 수수료 없음
 [scenes.9.data.chapter] 질문 ①
 [scenes.10.lines.0.text] 먼저 달러로 바꿔서 그냥 들고만 있었다면요.
 [scenes.10.data.license] Pexels 34596756 무료(Jakub Zerdzicki)
@@ -82,7 +82,7 @@
 [scenes.11.lines.2.text] 네 날짜 모두 줄었어요. 지금 환율이 그 네 날보다 다 낮거든요.
 [scenes.11.data.title] 그냥 들고만 있었다면
 [scenes.11.data.icon] Wallet
-[scenes.11.data.source] 한국은행 ECOS 731Y001 원/달러 매매기준율 일별(2025.10.13~2026.10.15) · 환산 수수료 없음
+[scenes.11.data.source] 한국은행 ECOS 원/달러 매매기준율 일별(2025.10.13~2026.10.15) · 환산 수수료 없음
 [scenes.11.data.chapter] 질문 ①
 [scenes.12.lines.0.text] 이번엔 같은 날 S&P500 ETF를 샀다고 해 볼게요.
 [scenes.12.data.license] Pexels 7593891 무료(Pavel Danilyuk)
@@ -100,7 +100,7 @@
 [scenes.13.data.s2] 원화로 · 670만원쯤은 환율 몫
 [scenes.13.data.c2] accent
 [scenes.13.data.icon] TrendingUp
-[scenes.13.data.source] SPY 종가(야후, 배당 미포함 가격) · 한국은행 ECOS 731Y001 원/달러 매매기준율 · 파이어맵 계산(수수료·세금 없음)
+[scenes.13.data.source] 미국 S&P500 ETF(SPY) 종가(야후 파이낸스, 배당 미포함 가격) · 한국은행 ECOS 원/달러 매매기준율 · 파이어맵 계산(수수료·세금 없음)
 [scenes.13.data.chapter] 질문 ①
 [scenes.14.lines.0.text] 달러만 들고 있을 때보다 더 큰 건, 주가로 불어난 돈에도 환율이 같이 붙기 때문이에요.
 [scenes.14.data.license] Pexels 8369980 무료(RDNE Stock project)
@@ -125,7 +125,7 @@
 [scenes.15.data.rows.3.1] −10.76%
 [scenes.15.data.rows.3.2] fall
 [scenes.15.data.icon] ChartColumn
-[scenes.15.data.source] SPY 종가(야후, 배당 미포함 가격) · 한국은행 ECOS 731Y001 원/달러 매매기준율 · 파이어맵 계산(수수료·세금 없음)
+[scenes.15.data.source] 미국 S&P500 ETF(SPY) 종가(야후 파이낸스, 배당 미포함 가격) · 한국은행 ECOS 원/달러 매매기준율 · 파이어맵 계산(수수료·세금 없음)
 [scenes.15.data.chapter] 질문 ①
 [scenes.16.lines.0.text] 왜 이렇게 될까요?
 [scenes.16.data.n] 왜?
@@ -242,7 +242,7 @@
 [scenes.31.lines.1.cap] "환헷지 전략으로 환율 변동 영향 최소화" — 삼성자산운용 KODEX 미국S&P500(H) 월간 자료(2026.8.31 기준)
 [scenes.31.data.title] 환노출 vs 환헤지
 [scenes.31.data.v1] 환노출형
-[scenes.31.data.s1] 환율을 그대로 맞음
+[scenes.31.data.s1] 환율 변동을 그대로 받음
 [scenes.31.data.c1] ink
 [scenes.31.data.v2] (H) 환헤지형
 [scenes.31.data.s2] 환율 영향 최소화
@@ -253,10 +253,10 @@
 [scenes.32.lines.0.text] 같은 회사가 만든 두 상품, KODEX 미국S&P500과 끝에 H가 붙은 같은 이름 상품을 나란히 놓고 계산했어요.
 [scenes.32.data.title] 같은 회사, 두 상품
 [scenes.32.data.rows.0.0] KODEX 미국S&P500
-[scenes.32.data.rows.0.1] 환노출 · 379800
+[scenes.32.data.rows.0.1] 환노출 · 종목번호 379800
 [scenes.32.data.rows.0.2] ink
 [scenes.32.data.rows.1.0] KODEX 미국S&P500(H)
-[scenes.32.data.rows.1.1] 환헤지 · 449180
+[scenes.32.data.rows.1.1] 환헤지 · 종목번호 449180
 [scenes.32.data.rows.1.2] fall
 [scenes.32.data.icon] Tag
 [scenes.32.data.source] KRX 종가 + 분배금(세전) · 삼성자산운용 KODEX 월간 자료(2026.8.31 기준)
@@ -345,10 +345,10 @@
 [scenes.45.data.rows.0.0] 헤지 비용
 [scenes.45.data.rows.0.1] 들 수 있음 · 숫자 공개 없음
 [scenes.45.data.rows.0.2] rise
-[scenes.45.data.rows.1.0] 총보수 379800
+[scenes.45.data.rows.1.0] 총보수 KODEX 미국S&P500
 [scenes.45.data.rows.1.1] 연 0.0062%
 [scenes.45.data.rows.1.2] ink
-[scenes.45.data.rows.2.0] 총보수 449180
+[scenes.45.data.rows.2.0] 총보수 KODEX 미국S&P500(H)
 [scenes.45.data.rows.2.1] 연 0.0099%
 [scenes.45.data.rows.2.2] ink
 [scenes.45.data.icon] Receipt
@@ -485,7 +485,7 @@
 [scenes.61.lines.2.cap] 매달 첫 거래일 2025.11.3 ~ 2026.10.1 · 12번 × 8,333,333원 · 평균 1,450.4원 · 모은 달러 68,946 → 10.15 원화 92,290,941원(−7.71%)
 [scenes.61.data.title] 매달 나눠 바꾼 1년
 [scenes.61.data.icon] CalendarRange
-[scenes.61.data.source] 한국은행 ECOS 731Y001 · 매달 첫 거래일 2025.11.3~2026.10.1 · 파이어맵 계산(수수료 없음)
+[scenes.61.data.source] 한국은행 ECOS · 매달 첫 거래일 2025.11.3~2026.10.1 · 파이어맵 계산(수수료 없음)
 [scenes.61.data.cal.cells.0.0] 11월
 [scenes.61.data.cal.cells.1.0] 12월
 [scenes.61.data.cal.cells.2.0] 1월
@@ -525,7 +525,7 @@
 [scenes.64.data.rows.2.1] 86,116,830원
 [scenes.64.data.rows.2.2] fall
 [scenes.64.data.icon] Scale
-[scenes.64.data.source] 한국은행 ECOS 731Y001 원/달러 매매기준율 · 파이어맵 계산(수수료 없음) · 10.15 원화
+[scenes.64.data.source] 한국은행 ECOS 원/달러 매매기준율 · 파이어맵 계산(수수료 없음) · 10.15 원화
 [scenes.64.data.chapter] 질문 ③
 [scenes.65.lines.0.text] 천원, 이천원씩 매일 모으는 것도 매일 바꾸는 거라, 바꿀 때마다 그 회사 수수료가 붙습니다.
 [scenes.65.data.license] Pexels 6963836 무료(cottonbro studio)
@@ -576,7 +576,7 @@
 [scenes.71.lines.0.cap] KB국민은행 외화예금 금리안내 · 조회기준일 2026.10.16 · 거주자 USD 정기예금 12개월이상~18개월미만 연 3.64833% (같은 쪽 다른 표 12개월 3.70314%)
 [scenes.71.lines.1.text] 이자에는 세금 15.4%가 붙으니, 손에 남는 건 3%쯤이에요.
 [scenes.71.data.title] 달러 1년 정기예금
-[scenes.71.data.rows.0.0] KB국민은행 · 12개월
+[scenes.71.data.rows.0.0] KB국민은행 · 12~18개월 미만
 [scenes.71.data.rows.0.1] 연 3.64833%
 [scenes.71.data.rows.0.2] ink
 [scenes.71.data.rows.1.0] 이자소득세 15.4% 뒤
@@ -618,7 +618,7 @@
 [scenes.75.data.chapter] 질문 ④
 [scenes.76.lines.0.text] 그래서 1억 원어치를 통째로 한 은행 달러 예금에 넣으면, 붙은 이자는 보호 한도 밖이 됩니다.
 [scenes.76.data.license] Pexels 7735915 무료(Mikhail Nilov)
-[scenes.76.data.say] 이자는 한도 밖
+[scenes.76.data.say] 원금으로 꽉 채우면 이자는 한도 밖
 [scenes.76.data.side] right
 [scenes.76.data.chapter] 질문 ④
 [scenes.77.lines.0.text] 그리고 같은 안내에 펀드 같은 금융투자상품은 보호되지 않는다고 적혀 있어요. 달러 ETF도 펀드입니다.
@@ -658,7 +658,7 @@
 [scenes.80.data.chapter] 질문 ④
 [scenes.81.lines.0.text] 우대 없이 현찰로 바꾸면 수수료가 1.75%인데, 세금 떼고 남는 이자는 1년에 3%쯤이에요.
 [scenes.81.lines.1.text] 반년 넘게 맡겨야 겨우 그 수수료를 메웁니다.
-[scenes.81.lines.1.cap] 현찰 스프레드 1.75% ÷ 세후 이자 연 3.09% ≈ 0.57년
+[scenes.81.lines.1.cap] 현찰 환전수수료 1.75% ÷ 세후 이자 연 3.09% ≈ 0.57년
 [scenes.81.data.title] 수수료 메우는 데
 [scenes.81.data.v] 반년 넘게
 [scenes.81.data.s] 현찰 1.75% ÷ 세후 이자 연 3.09% ≈ 0.57년
@@ -687,7 +687,7 @@
 [scenes.84.data.s2] 10월 15일 · 지금
 [scenes.84.data.c2] fall
 [scenes.84.data.icon] ShoppingCart
-[scenes.84.data.source] 한국은행 ECOS 731Y001 원/달러·원/100엔 매매기준율 · 파이어맵 계산(카드 수수료 없음)
+[scenes.84.data.source] 한국은행 ECOS 원/달러·원/100엔 매매기준율 · 파이어맵 계산(카드 수수료 없음)
 [scenes.84.data.chapter] 질문 ⑤
 [scenes.85.lines.0.text] 일본에서 10만엔을 쓴다고 하면요.
 [scenes.85.data.license] Pexels 32111755 무료(Liuuu _61)
@@ -704,7 +704,7 @@
 [scenes.86.data.s2] 지금
 [scenes.86.data.c2] fall
 [scenes.86.data.icon] ShoppingBag
-[scenes.86.data.source] 한국은행 ECOS 731Y001 원/달러·원/100엔 매매기준율 · 파이어맵 계산(카드 수수료 없음)
+[scenes.86.data.source] 한국은행 ECOS 원/달러·원/100엔 매매기준율 · 파이어맵 계산(카드 수수료 없음)
 [scenes.86.data.chapter] 질문 ⑤
 [scenes.87.lines.0.text] 언제 바꿀지는 앞날 환율에 달려 있어서, 누구도 정답을 줄 수 없어요.
 [scenes.87.data.license] Pexels 9806390 무료(Nadezhda Moryak)
@@ -713,7 +713,7 @@
 [scenes.87.data.chapter] 질문 ⑤
 [scenes.88.lines.0.text] 대신 지나간 날과 견줘 지금 값이 어느 쪽인지는 셀 수 있습니다.
 [scenes.88.lines.1.text] 재작년 첫날부터 지금까지, 환율이 나온 날이 679일이에요.
-[scenes.88.lines.2.text] 그중 달러가 지금보다 쌌던 날은 81일, 열흘에 하루꼴입니다.
+[scenes.88.lines.2.text] 그중 달러가 지금보다 쌌던 날은 81일, 여드레에 하루꼴입니다.
 [scenes.88.data.comp] below
 [scenes.88.data.icon] CalendarSearch
 [scenes.88.data.chapter] 질문 ⑤
@@ -847,7 +847,7 @@
 [scenes.104.data.s] 은퇴 뒤 생활비처럼
 [scenes.104.data.icon] House
 [scenes.104.data.c] accent
-[scenes.104.data.source] SPY 종가(야후, 배당 미포함 가격) · 한국은행 ECOS 731Y001 원/달러 매매기준율 · 파이어맵 계산(수수료·세금 없음)
+[scenes.104.data.source] 미국 S&P500 ETF(SPY) 종가(야후 파이낸스, 배당 미포함 가격) · 한국은행 ECOS 원/달러 매매기준율 · 파이어맵 계산(수수료·세금 없음)
 [scenes.104.data.chapter] 누구라면
 [scenes.105.lines.0.text] 달러로 쓸 돈이라면 사정이 달라요.
 [scenes.105.data.license] Pexels 7308237 무료(RDNE Stock project)
@@ -864,7 +864,7 @@
 [scenes.106.data.rows.1.1] 바꿀 때만 덜 받음
 [scenes.106.data.rows.1.2] accent
 [scenes.106.data.icon] Plane
-[scenes.106.data.source] 한국은행 ECOS 731Y001 원/달러 매매기준율 · 파이어맵 계산(수수료 없음)
+[scenes.106.data.source] 한국은행 ECOS 원/달러 매매기준율 · 파이어맵 계산(수수료 없음)
 [scenes.106.data.chapter] 누구라면
 [scenes.107.lines.0.text] 미국 주식이 재산의 일부뿐인 사람은, 빠진 금액도 그만큼 작습니다.
 [scenes.107.data.license] Pexels 34596756 무료(Jakub Zerdzicki)
@@ -878,7 +878,7 @@
 [scenes.108.data.s] 줄어든 돈 · 7월 초 → 10.15
 [scenes.108.data.icon] User
 [scenes.108.data.c] fall
-[scenes.108.data.source] SPY 종가(야후, 배당 미포함 가격) · 한국은행 ECOS 731Y001 원/달러 매매기준율 · 파이어맵 계산(수수료·세금 없음)
+[scenes.108.data.source] 미국 S&P500 ETF(SPY) 종가(야후 파이낸스, 배당 미포함 가격) · 한국은행 ECOS 원/달러 매매기준율 · 파이어맵 계산(수수료·세금 없음)
 [scenes.108.data.chapter] 누구라면
 [scenes.109.lines.0.text] 재작년 초처럼 달러가 쌀 때 바꾼 사람은 아직 이익이고요.
 [scenes.109.lines.1.text] 그때 1억을 달러로 바꿔 지금까지 들고 있다면, 원화로 380만원쯤 늘어 있습니다.
@@ -888,7 +888,7 @@
 [scenes.109.data.s] 2024.1.2 · 1,289.4원에 바꾼 1억
 [scenes.109.data.icon] User
 [scenes.109.data.c] rise
-[scenes.109.data.source] 한국은행 ECOS 731Y001 원/달러 매매기준율 · 파이어맵 계산(수수료 없음)
+[scenes.109.data.source] 한국은행 ECOS 원/달러 매매기준율 · 파이어맵 계산(수수료 없음)
 [scenes.109.data.chapter] 누구라면
 [scenes.110.lines.0.text] H형을 가진 사람은 이번처럼 달러가 내릴 땐 손해를 막았지만, 달러가 오를 땐 그 이익을 못 받습니다.
 [scenes.110.data.license] Pexels 31879939 무료(David Pickup | Advertising & Marketing 🇬🇧)
@@ -948,7 +948,7 @@
 [fx.legendDrop] 바꾼 날보다 내린 환율
 [fx.legendGap] 줄어든 원화
 [motion.hedge.title] 같은 1억 막대 두 개
-[motion.hedge.source] 한국은행 ECOS 731Y001 · KRX 종가 2024.1.2·2025.10.13·2026.7.2 → 2026.10.16 + 분배금(세전·재투자 안 함) · 삼성자산운용
+[motion.hedge.source] 한국은행 ECOS · KRX 종가 2024.1.2·2025.10.13·2026.7.2 → 끝 날짜 2026.10.16 + 분배금(세전·재투자 안 함) · 삼성자산운용
 [motion.hedge.lines.0.text] 달러가 제일 비쌌던 날 1억을 넣었다면, 환노출형은 9천만원이 조금 안 됩니다.
 [motion.hedge.lines.1.text] H형은 오히려 1억을 넘었어요.
 [motion.hedge.lines.2.text] 차이가 1,400만원을 넘습니다.
@@ -994,7 +994,7 @@
 [motion.hedge.data.rates.2] 1,339원
 [motion.hedge.data.end] 내릴 때 손실도 막지만, 오를 때 이익도 같이 막는다
 [motion.even.title] 본전 환율
-[motion.even.source] calc_out 8절 · 본전 환율 = 산 날 환율 ÷ (2026.10.15 SPY ÷ 산 날 SPY) · 주가가 지금 그대로일 때만 · 한국은행 ECOS 731Y001
+[motion.even.source] 한국은행 ECOS · 파이어맵 계산 · 본전 환율 = 산 날 환율 ÷ (2026.10.15 SPY ÷ 산 날 SPY), 주가가 지금 그대로일 때만
 [motion.even.lines.0.text] 그래서 내 계좌는 어떻게 보면 될까요?
 [motion.even.lines.1.text] 본전 환율을 직접 계산해 보면 됩니다.
 [motion.even.lines.2.text] 산 날 환율을, 그 뒤 주가가 몇 배가 됐는지로 나누면 끝이에요.
@@ -1040,12 +1040,12 @@
 [motion.even.data.both] 환율의 상하방 요인이 병존
 [motion.even.data.end] 지난 석 달 방향이 그대로 이어진다고 보면 틀리기 쉽다
 [motion.below.title] 지금보다 쌌던 날
-[motion.below.source] 한국은행 ECOS 731Y001 매매기준율 일별 2024.1.2~2026.10.15(679거래일) · 같거나 낮은 날
+[motion.below.source] 한국은행 ECOS 매매기준율 일별 2024.1.2~2026.10.15(679거래일) · 같거나 낮은 날
 [motion.below.lines.0.text] 언제 바꿀지는 앞날 환율에 달려 있어서, 누구도 정답을 줄 수 없어요.
 [motion.below.lines.1.text] 대신 지나간 날과 견줘 지금 값이 어느 쪽인지는 셀 수 있습니다.
 [motion.below.lines.2.text] 재작년 첫날부터 지금까지, 환율이 나온 날이 679일이에요.
-[motion.below.lines.3.text] 그중 달러가 지금보다 쌌던 날은 81일, 열흘에 하루꼴입니다.
-[motion.below.lines.3.cap] 2024.1.2 ~ 10.15 · 679거래일 중 1,338.6원 이하 81일 = 11.9% · 2025년 이후 434거래일 중 5일 (한국은행 ECOS 731Y001)
+[motion.below.lines.3.text] 그중 달러가 지금보다 쌌던 날은 81일, 여드레에 하루꼴입니다.
+[motion.below.lines.3.cap] 2024.1.2 ~ 10.15 · 679거래일 중 1,338.6원 이하 81일 = 11.9% · 2025년 이후 434거래일 중 5일 (한국은행 ECOS)
 [motion.below.lines.4.text] 엔화는 지금보다 쌌던 날이 4일밖에 없었고요.
 [motion.below.lines.5.text] 지난 2년 가까운 날들과 견주면, 달러는 싼 쪽이고 엔화는 거의 가장 싼 값이라는 뜻이에요.
 [motion.below.lines.6.text] 쓸 날이 정해져 있다면, 앞에서 본 것처럼 나눠 바꾸면 결과가 가운데로 모입니다.

@@ -1,5 +1,5 @@
 # X-1 FxDates props — 대본 v3(10/17) 질문 1 '1억을 달러로 바꾼 날을 네 개'(선) · '작년 이맘때 바꿨다면 …'(막대) (2026-10-16 motion, 10/17 PD v3·끝날 10/15로 고침)
-# 선 = 한국은행 ECOS 731Y001 원/달러 매매기준율 일별 원문(raw/collect_20261016.json) 2025.10.13~2026.10.15 그대로.
+# 선 = 한국은행 ECOS 원/달러 매매기준율 일별 원문(raw/collect_20261016.json) 2025.10.13~2026.10.15 그대로.
 # 화면 글자 숫자는 calc_out·script(말·자막)에 있는 것만(assert). 막대 높이 = 그날 바꾼 1억의 10/15 원화 값(0부터).
 # 길이: ep/X-1/voice.json(v3 녹음) 프레임. 장면 나눔은 x1props와 같다 — 선 = '1억을 달러로 바꾼 날을'~'날짜를 하나만 쓰면'(3줄),
 #   막대 = '작년 이맘때 바꿨다면'~'네 날짜 모두 줄었어요'(3줄, 앞줄 '먼저 달러로 바꿔서'는 실사 장면).
@@ -79,7 +79,7 @@ fx = {
  'barHead': '그날 바꾼 1억 → 10.15 원화', 'legendDrop': '바꾼 날보다 내린 환율', 'legendGap': '줄어든 원화',
  'b1': B1, 'b2': B2,
 }
-src = '한국은행 ECOS 731Y001 원/달러 매매기준율 일별(2025.10.13~2026.10.15) · 환산 수수료 없음'
+src = '한국은행 ECOS 원/달러 매매기준율 일별(2025.10.13~2026.10.15) · 환산 수수료 없음'
 sc1 = {'key': 'why4', 'title': '바꾼 날 네 개', 'sub': None, 'chapter': '질문 ①', 'source': src, 'lines': L1, 'frames': end1}
 sc2 = {'key': 'cash', 'title': '달러로만 들고 있었다면', 'sub': None, 'chapter': '질문 ①', 'source': src, 'lines': L2, 'frames': S2[2] + L2[2]['frames']}
 json.dump({'s1': sc1, 's2': sc2, 'fx': fx}, open(os.path.join(H, 'x1_fx.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)

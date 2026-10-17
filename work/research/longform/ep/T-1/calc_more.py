@@ -41,7 +41,7 @@ if __name__ == '__main__':
     print('== ② 부득이한 사유(전근 등) 비거주 최장 3년을 거주로 인정 — 수현 씨형 거주 2년 → 5년(정부안, 2028~)')
     for rg in ('2028', '2029'):
         a = calc(S, B, 10, 2, rg); b = calc(S, B, 10, 5, rg)
-        print(f'  {rg}: 공제율 {a["rate"]}% {man(a["total"])} → {b["rate"]}% {man(b["total"])} (차 {man(a["total"]-b["total"])})')
+        print(f'  {rg}: 공제율 {a["rate"]}% {man(a["total"])} → {b["rate"]}% {man(b["total"])} (차 {man(round(a["total"]/1e4)*1e4-round(b["total"]/1e4)*1e4)})')
     print('== ③ 12억을 조금 넘는 13억 집(취득 8억), 지방세 포함')
     for nm, h, l in (('10년 보유·10년 거주', 10, 10), ('10년 보유·2년 거주', 10, 2)):
         print('  ' + nm + ': ' + ' · '.join(f'{rg} {man(calc(13*EOK, B, h, l, rg)["total"])}' for rg in ('2026', '2027', '2028', '2029')))

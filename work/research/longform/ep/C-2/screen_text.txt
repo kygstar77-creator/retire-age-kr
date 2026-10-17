@@ -3,7 +3,7 @@
 
 ## props: video/c2.json
 [scenes.0.lines.0.text] 외환위기가 한창이던 겨울, 쉰다섯 살 정우 씨가 통장 하나를 펼칩니다.
-[scenes.0.lines.1.text] 퇴직금 3억을 미국 큰 회사 500곳 주가를 따라가는 상품에 넣었어요.
+[scenes.0.lines.1.text] 퇴직금 3억을 미국 큰 회사들 주가를 한꺼번에 따라가는 상품에 넣었어요.
 [scenes.0.data.year] 1998년 1월
 [scenes.0.data.chip.0] 3억
 [scenes.0.data.chip.1] 퇴직금 · 미국 대형주 500곳 지수
@@ -16,7 +16,7 @@
 [scenes.2.data.s] 2003년 1월 시작 · 2025년 말 남은 돈
 [scenes.2.data.icon] User
 [scenes.2.data.c] fall
-[scenes.2.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.2.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.3.lines.0.text] 정우 씨 통장은 언제 바닥났을까요? 그리고 둘을 가른 건 뭐였을까요?
 [scenes.3.data.n] 오늘의 물음
 [scenes.3.data.q] 정우 씨 통장은 언제 바닥났을까요?
@@ -42,11 +42,11 @@
 [scenes.5.data.rows.3.1] S&P500 총수익
 [scenes.5.data.rows.3.2] ink
 [scenes.5.data.icon] CalendarDays
-[scenes.5.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.5.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.6.lines.0.text] 많이 묻는 질문 다섯 개에 차례로 답해 볼게요.
 [scenes.6.data.title] 많이 묻는 질문 다섯
 [scenes.6.data.icon] MessageCircleQuestion
-[scenes.6.data.source] 유튜브 댓글 · 네이버 지식iN · 네이버 연관검색어(research.md 질문 칸)
+[scenes.6.data.source] 유튜브 댓글 · 네이버 지식iN · 네이버 연관검색어
 [scenes.6.data.items.0] 3억에서 월 200만원, 평생 가나요?
 [scenes.6.data.items.1] 7~8%씩 꺼내도 된다던데요?
 [scenes.6.data.items.2] 매달 파나요, 1년에 한 번 파나요?
@@ -68,7 +68,7 @@
 [scenes.8.data.rows.3.0] 세금
 [scenes.8.data.rows.3.1] 지금 세법을 그때부터
 [scenes.8.data.icon] Database
-[scenes.8.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.8.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.9.lines.0.text] 먼저 정우 씨보다 딱 1년 먼저, 같은 돈과 같은 규칙으로 시작한 옛 동료 영호 씨가 있어요.
 [scenes.9.data.n] 질문 ①
 [scenes.9.data.q] 3억에서 매달 200만원, 평생 가나요?
@@ -87,7 +87,7 @@
 [scenes.11.data.s2] 원화로
 [scenes.11.data.c2] rise
 [scenes.11.data.icon] Banknote
-[scenes.11.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.11.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.12.lines.0.text] 정우 씨는 달러가 이미 한참 비싸진 다음에 들어갔어요.
 [scenes.12.data.year] 1998년
 [scenes.13.lines.0.text] 그래서 첫해 지수가 30% 가까이 올랐는데도, 원화로는 10%가 안 됐습니다.
@@ -100,8 +100,8 @@
 [scenes.13.data.s2] 원화로
 [scenes.13.data.c2] accent
 [scenes.13.data.icon] Banknote
-[scenes.13.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
-[scenes.14.lines.0.text] 그래도 처음 두 해는 꺼내 쓰고도 통장이 늘었어요. 둘째 해 말엔 3억 2천만원이었습니다.
+[scenes.13.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.14.lines.0.text] 그래도 처음 두 해는 꺼내 쓰고도 통장이 늘었어요. 두 해 뒤엔 3억 2천만원이었습니다.
 [scenes.14.data.year] 1999년
 [scenes.14.data.chip.0] 3.20억원
 [scenes.14.data.chip.1] 둘째 해 말 통장
@@ -110,7 +110,7 @@
 [scenes.15.data.license] Pexels 6300531 무료(Kampus Production)
 [scenes.15.data.say] 꺼내 쓰는데도 늘어나네
 [scenes.15.data.side] left
-[scenes.16.lines.0.text] 셋째 해부터 지수가 내리 떨어졌어요.
+[scenes.16.lines.0.text] 그다음 해부터 지수가 내리 떨어졌어요.
 [scenes.16.lines.1.text] 그동안에도 해가 바뀔 때마다 한 해 치를 팔았습니다.
 [scenes.16.data.year] 2000~2002년
 [scenes.16.data.chip.0] 3년 연속 하락
@@ -119,7 +119,7 @@
 [scenes.17.data.license] Pexels 15161525 무료(Phil Desforges)
 [scenes.17.data.say] 올해도 팔아야 하나
 [scenes.17.data.side] left
-[scenes.18.lines.0.text] 하락 셋째 해가 끝났을 때, 통장에는 1억 6천만원이 남았어요.
+[scenes.18.lines.0.text] 세 해 내리 떨어지고 나니, 통장에는 1억 6천만원이 남았어요.
 [scenes.18.lines.0.cap] 연말 잔액 2000년 2.95억 · 2001년 2.51억 · 2002년 1.60억원
 [scenes.18.data.title] 정우 씨 통장 연말 잔액
 [scenes.18.data.bars.0.0] 1998년
@@ -139,14 +139,14 @@
 [scenes.18.data.bars.4.3] rise
 [scenes.18.data.dir] v
 [scenes.18.data.icon] PiggyBank
-[scenes.18.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.18.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.19.lines.0.text] 이듬해 지수가 원화로 28% 넘게 올랐어요.
 [scenes.19.data.year] 2003년
 [scenes.19.data.chip.0] +28.4%
 [scenes.19.data.chip.1] 원화로 오른 해
 [scenes.20.lines.0.text] 그런데 정우 씨 통장은 1억 7천만원까지밖에 못 올라왔습니다.
-[scenes.20.lines.1.text] 1월에 한 해 치를 먼저 꺼내고 나니, 불어날 돈이 1억 4천만원도 안 남았거든요.
-[scenes.20.lines.1.cap] 2003년 1월 꺼낸 뒤 1.36억원 → 원화 +28.4% → 연말 1.75억원 (calc_research 9절)
+[scenes.20.lines.1.text] 해가 바뀌자마자 한 해 치를 먼저 꺼내고 나니, 불어날 돈이 1억 4천만원도 안 남았거든요.
+[scenes.20.lines.1.cap] 2003년 1월 꺼낸 뒤 1.36억원 → 원화 +28.4% → 연말 1.75억원
 [scenes.20.data.title] 2003년 정우 씨 통장
 [scenes.20.data.rows.0.0] 1월 꺼낸 뒤
 [scenes.20.data.rows.0.1] 1.36억원
@@ -158,8 +158,8 @@
 [scenes.20.data.rows.2.1] 1.75억원
 [scenes.20.data.rows.2.2] accent
 [scenes.20.data.icon] PiggyBank
-[scenes.20.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
-[scenes.21.lines.0.text] 바로 그해 1월, 다른 동네에서 민수 씨가 같은 3억으로 똑같이 시작합니다.
+[scenes.20.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.21.lines.0.text] 바로 그해 초, 다른 동네에서 민수 씨가 같은 3억으로 똑같이 시작합니다.
 [scenes.21.data.year] 2003년 1월
 [scenes.21.data.chip.0] 민수 씨
 [scenes.21.data.chip.1] 같은 3억으로 시작
@@ -180,7 +180,7 @@
 [scenes.22.data.bars.3.3] rise
 [scenes.22.data.dir] h
 [scenes.22.data.icon] ChartColumn
-[scenes.22.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.22.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.23.lines.0.text] "오르긴 오르는데, 통장은 왜 줄지."
 [scenes.23.data.license] Pexels 12412380 무료(Towfiqu barbhuiya)
 [scenes.23.data.say] 오르긴 오르는데, 통장은 왜 줄지
@@ -192,7 +192,7 @@
 [scenes.24.data.s] 2007년 말 정우 씨 통장
 [scenes.24.data.icon] PiggyBank
 [scenes.24.data.c] accent
-[scenes.24.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.24.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.25.lines.0.text] 2008년 금융위기 때, 지수는 달러로 37% 떨어졌어요.
 [scenes.25.data.year] 2008년
 [scenes.25.data.chip.0] −37.0%
@@ -209,7 +209,7 @@
 [scenes.26.data.s2] 원화로
 [scenes.26.data.c2] accent
 [scenes.26.data.icon] Banknote
-[scenes.26.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.26.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.27.lines.0.text] 그래도 그해 말 정우 씨 통장은 5천만원대였습니다. 같은 해 민수 씨 통장엔 2억 넘게 있었고요.
 [scenes.27.lines.0.cap] 2008년 말 정우 씨 0.53억원 · 민수 씨 2.19억원
 [scenes.27.data.title] 2008년 말 두 통장
@@ -220,21 +220,21 @@
 [scenes.27.data.s2] 민수 씨
 [scenes.27.data.c2] fall
 [scenes.27.data.icon] Users
-[scenes.27.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.27.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.28.lines.0.text] 다음 해들도 지수는 올랐지만, 오를 돈이 남아 있지 않았어요.
 [scenes.28.data.year] 2010년
-[scenes.29.lines.0.text] 2011년 새해 첫 달, 정우 씨는 처음으로 1년 치를 다 꺼내지 못했습니다.
+[scenes.29.lines.0.text] 2011년 새해 첫 달, 정우 씨는 처음으로 한 해 치를 다 꺼내지 못했습니다.
 [scenes.29.data.year] 2011년 1월
 [scenes.29.data.chip.0] 못 꺼냄
 [scenes.29.data.chip.1] 1,154만원 < 1년 치 2,400만원
 [scenes.30.lines.0.text] 시작한 지 열네 해째, 예순여덟 살 때예요.
-[scenes.30.lines.0.cap] 다 꺼낸 해 13번 × 2,400만원 = 3.12억원 (calc_n1_out)
+[scenes.30.lines.0.cap] 다 꺼낸 해 13번 × 2,400만원 = 3.12억원
 [scenes.30.data.title] 바닥난 해
 [scenes.30.data.v] 14년째
 [scenes.30.data.s] 2011년 1월 · 68세
 [scenes.30.data.icon] CalendarX
 [scenes.30.data.c] rise
-[scenes.30.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.30.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.31.lines.0.text] 민수 씨는 지난해 말까지 꺼내 쓰고도 2억 7천만원이 남아 있어요. 영호 씨는 16억 가까이 남았고요.
 [scenes.31.lines.0.cap] 민수 씨 2003~2025년 23번 꺼냄 · 2025년 말 2.72억원 / 영호 씨 1997년 시작 · 2025년 말 15.90억원
 [scenes.31.data.title] 세 통장, 2025년 말
@@ -248,22 +248,22 @@
 [scenes.31.data.rows.2.1] 2.72억원
 [scenes.31.data.rows.2.2] fall
 [scenes.31.data.icon] Users
-[scenes.31.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.31.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.32.lines.0.text] 왜 이렇게 갈렸을까요? 이유는 세 가지예요.
 [scenes.32.data.license] Pexels 4458918 무료(Imeel Bagdisar)
 [scenes.32.data.say] 왜 이렇게 갈렸을까
 [scenes.32.data.side] right
-[scenes.33.lines.0.text] 첫째, 떨어진 값에 팔면 같은 돈을 만들려고 주식을 더 많이 내놓아야 합니다.
+[scenes.33.lines.0.text] 먼저, 떨어진 값에 팔면 같은 돈을 만들려고 주식을 더 많이 내놓아야 합니다.
 [scenes.33.lines.1.text] 그렇게 줄어든 주식은, 나중에 지수가 다시 올라도 돌아오지 않아요.
 [scenes.33.data.title] 이유 ① 떨어진 값에 팔기
 [scenes.33.data.v] 주식을 더 많이
 [scenes.33.data.s] 같은 2,400만원을 만들려면
 [scenes.33.data.icon] TrendingDown
 [scenes.33.data.c] rise
-[scenes.33.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
-[scenes.34.lines.0.text] 둘째, 꺼내기 시작하자마자 지수가 3년 내리 떨어졌어요.
+[scenes.33.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.34.lines.0.text] 게다가 꺼내기 시작하자마자 지수가 3년 내리 떨어졌어요.
 [scenes.34.lines.1.text] 1989년부터 지난해까지, 달러로 3년 내리 떨어진 건 이때 한 번이었습니다.
-[scenes.34.lines.1.cap] S&P500 총수익 달러 2000 −9.1% · 2001 −11.9% · 2002 −22.1% (야후 ^SP500TR · NYU 스턴 자료와 0.2%p 안)
+[scenes.34.lines.1.cap] S&P500 총수익 달러 2000 −9.1% · 2001 −11.9% · 2002 −22.1% (야후 파이낸스 S&P500 총수익 지수 · NYU 스턴 자료와 0.2%p 안)
 [scenes.34.data.title] 이유 ② 3년 내리 하락(달러)
 [scenes.34.data.bars.0.0] 2000년
 [scenes.34.data.bars.0.2] −9.1%
@@ -276,8 +276,8 @@
 [scenes.34.data.bars.2.3] fall
 [scenes.34.data.dir] h
 [scenes.34.data.icon] TrendingDown
-[scenes.34.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
-[scenes.35.lines.0.text] 셋째, 원화로 생활하는 사람에겐 환율도 결과를 바꿨어요. 영호 씨 첫해처럼요.
+[scenes.34.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.35.lines.0.text] 그리고 원화로 생활하는 사람에겐 환율도 결과를 바꿨어요. 영호 씨 첫해처럼요.
 [scenes.35.data.chip.0] 이유 ③ 환율
 [scenes.35.data.chip.1] 영호 씨 첫해 원화 +123.6%
 [scenes.36.lines.0.text] 그래서 첫 질문의 답은 이래요. 매달 200만원은, 시작한 해에 따라 평생 가기도 하고 열네 해 만에 끝나기도 했습니다.
@@ -290,9 +290,9 @@
 [scenes.37.data.s] 통장이 처음 넣은 돈보다 줄었나
 [scenes.37.data.icon] Eye
 [scenes.37.data.c] accent
-[scenes.37.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
-[scenes.38.lines.0.text] 줄었다고 꼭 바닥나는 건 아니에요. 민수 씨 통장도 네 해째 1월에 3억 밑으로 내려갔지만 버텼어요.
-[scenes.38.lines.0.cap] 민수 씨 2006년 1월 2.99억원 < 처음 3억 → 2025년 말 2.72억원 (calc_n1_out)
+[scenes.37.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.38.lines.0.text] 줄었다고 꼭 바닥나는 건 아니에요. 민수 씨 통장도 시작하고 네 해째에 3억 밑으로 내려갔지만 버텼어요.
+[scenes.38.lines.0.cap] 민수 씨 2006년 1월 2.99억원 < 처음 3억 → 2025년 말 2.72억원
 [scenes.38.data.title] 민수 씨도 줄었지만
 [scenes.38.data.v1] 2.99억원
 [scenes.38.data.s1] 2006년 1월
@@ -301,7 +301,7 @@
 [scenes.38.data.s2] 2025년 말
 [scenes.38.data.c2] fall
 [scenes.38.data.icon] User
-[scenes.38.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.38.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.39.lines.0.text] 그래도 줄었다면, 그해 꺼낼 돈을 줄일지 정할 때예요. 그렇게 줄였을 때 어땠는지는 3장에서 계산해 볼게요.
 [scenes.39.data.license] Pexels 7118320 무료(cottonbro studio)
 [scenes.39.data.say] 줄일지 정할 때
@@ -315,39 +315,39 @@
 [scenes.41.data.say] 꼬박꼬박 번다고 치면
 [scenes.41.data.side] left
 [scenes.42.lines.0.text] 먼저 숫자부터 맞춰 볼게요. 3억에서 매달 200만원을 꺼낸다고 해 보죠. 그건 해마다 8%를 꺼내는 거예요.
-[scenes.42.lines.0.cap] 연 2,400만원 ÷ 3억원 = 연 8.0% (calc_research 1절)
+[scenes.42.lines.0.cap] 연 2,400만원 ÷ 3억원 = 연 8.0%
 [scenes.42.data.title] 내 인출률
 [scenes.42.data.v] 8.0%
 [scenes.42.data.s] 연 2,400만원 ÷ 3억원
 [scenes.42.data.icon] Calculator
 [scenes.42.data.c] accent
-[scenes.42.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.42.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.43.lines.0.text] 지난 37년, 해마다 1월에 한 사람씩 정우 씨와 같은 규칙으로 시작했다고 해 봤어요.
-[scenes.43.data.chip.0] 시작 해 37개
+[scenes.43.data.chip.0] 시작한 해 37개
 [scenes.43.data.chip.1] 1989~2025년, 해마다 1월
 [scenes.44.lines.0.text] 통장이 바닥난 사람은 서른일곱 명 중 여섯 명이었습니다.
-[scenes.44.lines.0.cap] 3억 · 월 200만원 · 시작 해 37개 중 바닥 6개 · 버팀 31개(84%)
+[scenes.44.lines.0.cap] 3억 · 월 200만원 · 시작한 해 37개 중 바닥 6개 · 아직 안 바닥남 31개
 [scenes.44.data.title] 37명 중
 [scenes.44.data.v1] 6명
 [scenes.44.data.s1] 바닥
 [scenes.44.data.c1] rise
 [scenes.44.data.v2] 31명
-[scenes.44.data.s2] 버팀
+[scenes.44.data.s2] 아직 안 바닥남
 [scenes.44.data.c2] fall
 [scenes.44.data.icon] Users
-[scenes.44.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.44.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.45.lines.0.text] 그 7% 영상은 미국 달러로 계산한 연구라, 원화로 1년에 한 번 파는 우리 계산과 바로 견주긴 어려워요.
 [scenes.45.data.license] Pexels 6651088 무료(kaboompics.com)
 [scenes.45.data.say] 달러 계산과는 다르다
 [scenes.45.data.side] right
 [scenes.46.lines.0.text] 그리고 아직 바닥나지 않은 서른한 명 가운데 최근에 시작한 열세 명은, 시작한 지 열네 해도 안 됐어요.
-[scenes.46.lines.0.cap] 2013~2025년 시작 13명은 2025년 말까지 13년 이하 (C-1 calc_out 3절)
+[scenes.46.lines.0.cap] 2013~2025년 시작 13명은 2025년 말까지 13년 이하
 [scenes.46.data.title] 아직 결과 모름
 [scenes.46.data.v] 13명
 [scenes.46.data.s] 2013~2025년 시작 · 13년 이하
 [scenes.46.data.icon] Hourglass
 [scenes.46.data.c] ink
-[scenes.46.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.46.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.47.lines.0.text] 정우 씨는 열네 해째, 2004년에 시작한 사람은 열여덟 해째에 바닥났어요. 이 사람들은 아직 결과를 모르는 거예요.
 [scenes.47.data.chip.0] 아직 몰라요
 [scenes.47.data.chip.1] 열네 해가 안 된 사람들
@@ -357,7 +357,7 @@
 [scenes.48.lines.2.text] 나머지 한 명은 2004년에 시작한 사람입니다.
 [scenes.48.data.title] 바닥난 6명, 시작한 해
 [scenes.48.data.icon] CalendarX
-[scenes.48.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.48.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.48.data.cells.0.0] 1998년
 [scenes.48.data.cells.0.1] 14년차
 [scenes.48.data.cells.1.0] 1999년
@@ -377,7 +377,7 @@
 [scenes.50.lines.0.text] 이번엔 꺼내는 돈만 바꿔 다시 계산했어요.
 [scenes.50.lines.1.text] 매달 100만원, 그러니까 해마다 4%면 지난해 말까지 바닥난 사람이 없었습니다.
 [scenes.50.lines.2.text] 매달 300만원이면 절반 가까이가 바닥났고요.
-[scenes.50.lines.2.cap] 3억 · 시작 해 37개 중 바닥 — 월 100만원(연 4%) 0 · 150만원(연 6%) 5 · 200만원(연 8%) 6 · 300만원(연 12%) 17
+[scenes.50.lines.2.cap] 3억 · 시작한 해 37개 중 바닥 — 월 100만원(연 4%) 0 · 150만원(연 6%) 5 · 200만원(연 8%) 6 · 300만원(연 12%) 17
 [scenes.50.data.title] 꺼내는 돈별 · 37명 중 바닥
 [scenes.50.data.bars.0.0] 월 100만원
 [scenes.50.data.bars.0.2] 0명
@@ -393,14 +393,14 @@
 [scenes.50.data.bars.3.3] rise
 [scenes.50.data.dir] h
 [scenes.50.data.icon] ChartColumn
-[scenes.50.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.50.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.51.lines.0.text] 그럼 연 8%로 굴린다는 말은 어떨까요?
 [scenes.51.data.license] Pexels 7593891 무료(Pavel Danilyuk)
 [scenes.51.data.say] 평균 수익률로 굴린다면
 [scenes.51.data.side] left
 [scenes.52.lines.0.text] 정우 씨가 시작한 해부터 지난해까지, 원화로 바꿔 본 평균 수익률은 해마다 9% 남짓이었어요.
 [scenes.52.lines.1.text] 꺼내는 8%보다 높았죠. 그런데도 바닥났습니다.
-[scenes.52.lines.1.cap] 1998~2025년 원화 연평균 9.2% (28년) · 꺼낸 비율 연 8.0% (calc_research 2절)
+[scenes.52.lines.1.cap] 1998~2025년 원화 연평균 9.2% (28년) · 꺼낸 비율 연 8.0%
 [scenes.52.data.title] 평균은 꺼낸 것보다 높았다
 [scenes.52.data.v1] 9.2%
 [scenes.52.data.s1] 1998~2025년 원화 연평균
@@ -409,8 +409,8 @@
 [scenes.52.data.s2] 꺼낸 비율
 [scenes.52.data.c2] ink
 [scenes.52.data.icon] Percent
-[scenes.52.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
-[scenes.53.lines.0.text] 정우 씨가 1년 치를 다 꺼낸 열세 해 동안만 보면, 지수는 원화로 해마다 평균 2% 남짓 올랐어요.
+[scenes.52.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.53.lines.0.text] 정우 씨가 한 해 치를 다 꺼낸 열세 해 동안만 보면, 지수는 원화로 해마다 평균 2% 남짓 올랐어요.
 [scenes.53.lines.0.cap] 1998~2010년 원화 연평균 2.1% · 달러 연평균 3.8%
 [scenes.53.data.title] 돈을 꺼낸 13년만 보면
 [scenes.53.data.v1] 2.1%
@@ -420,19 +420,19 @@
 [scenes.53.data.s2] 달러 연평균
 [scenes.53.data.c2] ink
 [scenes.53.data.icon] Percent
-[scenes.53.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.53.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.54.lines.0.text] 평균은 뒤쪽 좋은 해들이 끌어올린 거예요. 정우 씨 통장엔 그때 이미 돈이 없었고요.
 [scenes.54.data.license] Pexels 5562942 무료(Daniel Qura)
 [scenes.54.data.say] 평균은 뒤쪽이 끌어올렸다
 [scenes.54.data.side] left
 [scenes.55.lines.0.text] 만약 정우 씨가 한 푼도 안 꺼냈다면, 그 3억은 지난해 말 35억이 넘었습니다.
-[scenes.55.lines.0.cap] 1998년 1월 3억 → 2025년 말 35.65억원(꺼내지 않음, 세금 0) (calc_research 2절)
+[scenes.55.lines.0.cap] 1998년 1월 3억 → 2025년 말 35.65억원(꺼내지 않음, 세금 0)
 [scenes.55.data.title] 한 푼도 안 꺼냈다면
 [scenes.55.data.v] 35.65억원
 [scenes.55.data.s] 1998년 1월 3억 → 2025년 말
 [scenes.55.data.icon] PiggyBank
 [scenes.55.data.c] ink
-[scenes.55.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.55.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.56.lines.0.text] 그래서 볼 것은 두 가지예요. 하나는 내 인출률입니다.
 [scenes.56.data.license] Pexels 7490517 무료(RDNE Stock project)
 [scenes.56.data.say] 볼 것은 두 가지
@@ -443,14 +443,14 @@
 [scenes.57.data.s] 1년에 꺼낼 돈 ÷ 처음 넣은 돈
 [scenes.57.data.icon] Calculator
 [scenes.57.data.c] accent
-[scenes.57.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.57.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.58.lines.0.text] 계산해 본 비율 가운데, 4%일 때만 지난해 말까지 바닥난 사람이 없었어요.
 [scenes.58.data.title] 바닥난 사람 0
 [scenes.58.data.v] 4%
 [scenes.58.data.s] 계산한 비율 가운데 4%일 때만
 [scenes.58.data.icon] ShieldCheck
 [scenes.58.data.c] fall
-[scenes.58.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.58.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.59.lines.0.text] 다른 하나는 '해마다 8%씩 꼬박꼬박 번다'고 치는 계산을 그대로 믿지 않는 거예요. 그렇게 치면 정우 씨처럼 나쁜 해가 먼저 몰려온 경우는 계산에 아예 안 나옵니다.
 [scenes.59.data.license] Pexels 5930874 무료(Brett Sayles)
 [scenes.59.data.say] 나쁜 해가 먼저 오면
@@ -465,7 +465,7 @@
 [scenes.60.data.rows.1.1] 줄이는 규칙(3장)
 [scenes.60.data.rows.1.2] fall
 [scenes.60.data.icon] Users
-[scenes.60.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.60.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.61.lines.0.text] 정우 씨는 해마다 1월에 한 해 치를 몰아서 팔았어요. 실제로는 매달 파는 분이 많죠.
 [scenes.61.data.n] 질문 ③
 [scenes.61.data.q] 매달 파나요, 1년에 한 번 파나요?
@@ -474,7 +474,7 @@
 [scenes.62.data.license] Pexels 6963484 무료(Mikhail Nilov)
 [scenes.62.data.say] 매달 파는 게 낫다?
 [scenes.62.data.side] left
-[scenes.63.lines.0.text] 그래서 같은 기록에서, 매달 1일에 200만원씩 파는 걸로 다시 계산했습니다.
+[scenes.63.lines.0.text] 그래서 같은 기록에서, 매달 초에 200만원씩 파는 걸로 다시 계산했습니다.
 [scenes.63.data.license] Pexels 8276001 무료(PNW Production)
 [scenes.63.data.say] 매달 초에 팔아 보면
 [scenes.63.data.side] left
@@ -484,10 +484,10 @@
 [scenes.64.data.s] 정우 씨 바닥 · 다섯 달 늦게
 [scenes.64.data.icon] CalendarDays
 [scenes.64.data.c] accent
-[scenes.64.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.64.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.65.lines.0.text] 매달 파는 계산은 1996년부터 시작한 서른 명으로 했는데, 바닥난 사람은 1년에 한 번 팔 때와 같은 여섯 명이었습니다.
-[scenes.65.lines.0.cap] 매달 1일 200만원 매도(월말 지수·한국은행 월말 환율, 세금은 이듬해 5월) · 1996~2025년 시작 30명 중 바닥 6명 (calc_research 5절)
-[scenes.65.data.title] 바닥난 사람
+[scenes.65.lines.0.cap] 매달 1일 200만원 매도(월말 지수·한국은행 월말 환율, 세금은 이듬해 5월) · 1996~2025년 시작 30명 중 바닥 6명
+[scenes.65.data.title] 바닥난 사람 · 같은 6명
 [scenes.65.data.v1] 6명
 [scenes.65.data.s1] 매달 팔기 · 30명 중
 [scenes.65.data.c1] accent
@@ -495,7 +495,7 @@
 [scenes.65.data.s2] 1년 한 번 · 37명 중
 [scenes.65.data.c2] accent
 [scenes.65.data.icon] Users
-[scenes.65.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.65.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.66.lines.0.text] 왜 그럴까요? 매달 팔든 한꺼번에 팔든, 2000년부터 이어진 같은 하락을 똑같이 지나가기 때문이에요.
 [scenes.66.data.license] Pexels 5930874 무료(Brett Sayles)
 [scenes.66.data.say] 같은 하락을 똑같이 지나간다
@@ -506,19 +506,19 @@
 [scenes.67.data.s] 꺼내는 돈을 줄였느냐
 [scenes.67.data.icon] Scale
 [scenes.67.data.c] ink
-[scenes.67.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
-[scenes.68.lines.0.text] 정우 씨는 하락 둘째 해였던 2001년 1월에, 꺼내는 돈을 줄일까 망설였어요.
+[scenes.67.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.68.lines.0.text] 정우 씨는 떨어진 지 두 해째였던 2001년 초에, 꺼내는 돈을 줄일까 망설였어요.
 [scenes.68.data.year] 2001년 1월
 [scenes.68.data.chip.0] 줄일까?
 [scenes.68.data.chip.1] 하락 둘째 해
 [scenes.69.lines.0.text] 그때부터 계속 월 100만원으로 줄였다면, 통장은 지난해 말 6억 가까이 남습니다.
-[scenes.69.lines.0.cap] 1998년 시작 · 월 200만원 → 2001년부터 월 100만원 · 2025년 말 5.91억원 남음 (calc_n1_out)
+[scenes.69.lines.0.cap] 1998년 시작 · 월 200만원 → 2001년부터 월 100만원 · 2025년 말 5.91억원 남음
 [scenes.69.data.title] 2001년부터 월 100만원
 [scenes.69.data.v] 5.91억원
 [scenes.69.data.s] 2025년 말 남은 돈
 [scenes.69.data.icon] PiggyBank
 [scenes.69.data.c] fall
-[scenes.69.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.69.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.70.lines.0.text] 같은 결심을 두 해 늦게 했다면 3억 5천만원이에요.
 [scenes.70.data.year] 2003년 1월
 [scenes.70.data.chip.0] 3.49억원
@@ -534,7 +534,7 @@
 [scenes.71.data.rows.1.1] 2015년 바닥
 [scenes.71.data.rows.1.2] rise
 [scenes.71.data.icon] Scissors
-[scenes.71.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.71.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.72.lines.0.text] 그런데 하락이 시작된 걸 그때 알아채기는 어렵죠.
 [scenes.72.data.license] Pexels 16747050 무료(Cameron Gawn)
 [scenes.72.data.say] 그때 알아채기는 어렵다
@@ -549,14 +549,14 @@
 [scenes.73.data.rows.1.1] 월 200만원
 [scenes.73.data.rows.1.2] accent
 [scenes.73.data.icon] ListChecks
-[scenes.73.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.73.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.74.lines.0.text] 이 규칙이면, 해마다 한 명씩 시작한 서른일곱 명 중 지난해 말까지 바닥난 사람이 없었어요.
 [scenes.74.data.title] 규칙을 쓰면
 [scenes.74.data.v] 0명
 [scenes.74.data.s] 37명 중 바닥난 사람
 [scenes.74.data.icon] ShieldCheck
 [scenes.74.data.c] fall
-[scenes.74.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.74.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.75.lines.0.text] 월 100만원은 그 자체로도 바닥난 사람이 없던 수준이에요. 처음부터 100만원만 꺼낸 사람도 바닥나지 않았지만, 이 규칙은 좋은 해엔 200만원을 쓰게 해 줬어요.
 [scenes.75.data.license] Pexels 6300524 무료(Kampus Production)
 [scenes.75.data.say] 좋은 해엔 더 쓰게
@@ -564,7 +564,7 @@
 [scenes.76.lines.0.text] 정우 씨는 지난해까지 28년 중 21번을 줄여야 했습니다.
 [scenes.76.lines.1.text] 그래도 꺼내 쓴 돈을 다 합치면 4억 2천만원으로, 규칙 없을 때보다 오히려 많았습니다.
 [scenes.76.lines.2.text] 지난해 말 통장에도 5억 가까이 남고요.
-[scenes.76.lines.2.cap] 규칙 적용 · 37명 중 바닥 0 · 1998년 시작: 줄인 해 21번 · 손에 쥔 돈 4.20억원(규칙 없을 때 3.12억원) · 2025년 말 4.92억원 남음 (calc_research 8절)
+[scenes.76.lines.2.cap] 규칙 적용 · 37명 중 바닥 0 · 1998년 시작: 줄인 해 21번 · 손에 쥔 돈 4.20억원(규칙 없을 때 3.12억원) · 2025년 말 4.92억원 남음
 [scenes.76.data.title] 정우 씨 · 규칙 적용
 [scenes.76.data.rows.0.0] 줄인 해
 [scenes.76.data.rows.0.1] 21번
@@ -576,7 +576,7 @@
 [scenes.76.data.rows.2.1] 4.92억원
 [scenes.76.data.rows.2.2] fall
 [scenes.76.data.icon] User
-[scenes.76.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.76.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.77.lines.0.text] 대신 운 좋은 해에 시작한 사람은 덜 썼어요. 2003년에 시작한 민수 씨는, 꺼내 쓴 돈의 합이 8천만원 넘게 줄었습니다.
 [scenes.77.lines.0.cap] 2003년 시작 · 규칙 적용 손에 쥔 돈 4.68억원 · 규칙 없을 때 23번 × 2,400만원 = 5.52억원 · 2025년 말 11.65억원 남음
 [scenes.77.data.chip.0] 덜 썼다
@@ -596,7 +596,7 @@
 [scenes.79.data.rows.1.1] 줄인 만큼 채울 수입이 있어야
 [scenes.79.data.rows.1.2] accent
 [scenes.79.data.icon] Users
-[scenes.79.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.79.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.80.lines.0.text] 조심할 점도 있어요. 이 계산은 물가를 넣지 않았습니다.
 [scenes.80.lines.1.text] 물가 따라 꺼내는 돈을 올리면, 바닥은 이보다 빨리 와요.
 [scenes.80.data.title] 조심
@@ -604,7 +604,7 @@
 [scenes.80.data.s] 물가 따라 올리면 바닥이 더 빨리
 [scenes.80.data.icon] TriangleAlert
 [scenes.80.data.c] rise
-[scenes.80.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.80.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.81.lines.0.text] 지금까지 계산은 미국 증시에 상장된 상품을 일반 계좌에서 직접 산 경우예요.
 [scenes.81.data.n] 질문 ④
 [scenes.81.data.q] 퇴직금이면 세금은 어떻게 되나요?
@@ -651,7 +651,7 @@
 [scenes.88.data.icon] CalendarCheck
 [scenes.88.data.c] accent
 [scenes.88.data.source] 소득세법·국세기본법·국민건강보험법 시행령·시행규칙(법제처 국가법령정보센터)
-[scenes.89.lines.0.text] 이게 첫 번째 함정입니다. 낼 세금이 있는데 신고를 안 하면, 그 세금의 20%를 더 내야 해요. 이걸 무신고가산세라고 해요.
+[scenes.89.lines.0.text] 여기가 함정이에요. 낼 세금이 있는데 신고를 안 하면, 그 세금의 20%를 더 내야 해요. 이걸 무신고가산세라고 해요.
 [scenes.89.lines.0.cap] 국세기본법 제47조의2①2호 무신고가산세 100분의 20 · 늦게 낸 날수만큼 붙는 납부지연가산세(제47조의4)는 따로
 [scenes.89.data.title] 함정 ① 무신고
 [scenes.89.data.v] +20%
@@ -659,7 +659,7 @@
 [scenes.89.data.icon] TriangleAlert
 [scenes.89.data.c] rise
 [scenes.89.data.source] 소득세법·국세기본법·국민건강보험법 시행령·시행규칙(법제처 국가법령정보센터)
-[scenes.90.lines.0.text] 두 번째, 국내 증시에 상장된 S&P500 ETF는 규칙이 다릅니다. ETF는 주식처럼 사고파는 펀드예요.
+[scenes.90.lines.0.text] 그런데 국내 증시에 상장된 S&P500 ETF는 규칙이 다릅니다. ETF는 주식처럼 사고파는 펀드예요.
 [scenes.90.data.license] Pexels 6326928 무료(kaboompics.com)
 [scenes.90.data.say] 국내 상장 ETF는 다르다
 [scenes.90.data.side] right
@@ -671,10 +671,10 @@
 [scenes.91.data.icon] Landmark
 [scenes.91.data.c] accent
 [scenes.91.data.source] 소득세법·국세기본법·국민건강보험법 시행령·시행규칙(법제처 국가법령정보센터)
-[scenes.92.lines.0.text] 이게 두 번째 함정이에요. 배당소득은 건강보험료 소득에 들어갑니다.
+[scenes.92.lines.0.text] 여기에도 함정이 있어요. 배당소득은 건강보험료 소득에 들어갑니다.
 [scenes.92.data.title] 함정 ② 건보료
 [scenes.92.data.v] 배당소득
-[scenes.92.data.s] 건강보험료 소득에 들어감
+[scenes.92.data.s] 1천만원 넘으면 건강보험료 소득에 들어감
 [scenes.92.data.icon] TriangleAlert
 [scenes.92.data.c] rise
 [scenes.92.data.source] 소득세법·국세기본법·국민건강보험법 시행령·시행규칙(법제처 국가법령정보센터)
@@ -691,7 +691,7 @@
 [scenes.94.data.icon] HeartPulse
 [scenes.94.data.c] rise
 [scenes.94.data.source] 소득세법·국세기본법·국민건강보험법 시행령·시행규칙(법제처 국가법령정보센터)
-[scenes.95.lines.0.text] 이 15.4% 규칙과 건보료까지 넣어서, 서른일곱 명 계산을 다시 해 봤어요.
+[scenes.95.lines.0.text] 국내 ETF의 15.4% 규칙과 건보료까지 넣어서, 서른일곱 명 계산을 다시 해 봤어요.
 [scenes.95.data.license] Pexels 34282980 무료(Just For Music And Film)
 [scenes.95.data.say] 다시 계산해 봤다
 [scenes.95.data.side] left
@@ -701,13 +701,13 @@
 [scenes.96.data.s] 바닥난 사람 · 37명 중
 [scenes.96.data.icon] Landmark
 [scenes.96.data.c] ink
-[scenes.96.data.source] 파이어맵 계산(calc_research) · S&P500 총수익 지수 ^SP500TR · 한국은행 ECOS
+[scenes.96.data.source] 파이어맵 계산 · S&P500 총수익 지수(야후 파이낸스) · 한국은행 ECOS
 [scenes.97.lines.0.text] 왜냐하면 이익이 쌓인 뒤에 팔수록, 판 돈 가운데 이익 몫이 커지기 때문이에요.
 [scenes.97.data.license] Pexels 36282124 무료(Ben Kyselka)
 [scenes.97.data.say] 오래 버틸수록 차이가 컸다
 [scenes.97.data.side] left
 [scenes.98.lines.0.text] 영호 씨가 국내 상장 ETF로 했다면, 남은 돈이 2억 남짓 적었습니다.
-[scenes.98.lines.0.cap] 국내 상장 ETF 과세(15.4%·공제 없음·판 이익 1천만원 넘으면 건보료) · 바닥 6명 같음 · 1997년 시작 2025년 말 15.90억 → 13.86억원 · 2003년 시작 2.72억 → 2.03억원 (calc_research 6절)
+[scenes.98.lines.0.cap] 국내 상장 ETF 과세(15.4%·공제 없음·판 이익 1천만원 넘으면 건보료) · 바닥 6명 같음 · 1997년 시작 2025년 말 15.90억 → 13.86억원 · 2003년 시작 2.72억 → 2.03억원
 [scenes.98.data.title] 국내 ETF로 했다면
 [scenes.98.data.rows.0.0] 영호 씨 · 1997년 시작
 [scenes.98.data.rows.0.1] 15.90억 → 13.86억원
@@ -716,7 +716,7 @@
 [scenes.98.data.rows.1.1] 2.72억 → 2.03억원
 [scenes.98.data.rows.1.2] rise
 [scenes.98.data.icon] Landmark
-[scenes.98.data.source] 파이어맵 계산(calc_research) · S&P500 총수익 지수 ^SP500TR · 한국은행 ECOS
+[scenes.98.data.source] 파이어맵 계산 · S&P500 총수익 지수(야후 파이낸스) · 한국은행 ECOS
 [scenes.99.lines.0.text] 이익이 아주 큰 해에 세금이 더 붙는 종합과세는 이 계산에 넣지 않았어요.
 [scenes.99.data.title] 넣지 않은 것
 [scenes.99.data.v] 종합과세
@@ -724,7 +724,7 @@
 [scenes.99.data.icon] CircleSlash
 [scenes.99.data.c] ink
 [scenes.99.data.source] 소득세법·국세기본법·국민건강보험법 시행령·시행규칙(법제처 국가법령정보센터)
-[scenes.100.lines.0.text] 세 번째는 퇴직금을 IRP로 받아 연금으로 나눠 받는 경우예요. IRP는 퇴직금을 받아 두는 연금 계좌예요.
+[scenes.100.lines.0.text] 마지막은 퇴직금을 IRP로 받아 연금으로 나눠 받는 경우예요. IRP는 퇴직금을 받아 두는 연금 계좌예요.
 [scenes.100.data.license] Pexels 6326929 무료(kaboompics.com)
 [scenes.100.data.say] 연금으로 나눠 받으면
 [scenes.100.data.side] left
@@ -736,7 +736,7 @@
 [scenes.101.data.icon] Landmark
 [scenes.101.data.c] fall
 [scenes.101.data.source] 소득세법·국세기본법·국민건강보험법 시행령·시행규칙(법제처 국가법령정보센터)
-[scenes.102.lines.0.text] 세 번째 함정이 여기 있어요. 퇴직금을 한 번에 찾아 일반 계좌로 옮기면, 이 깎아 주는 몫을 놓칩니다.
+[scenes.102.lines.0.text] 그런데 퇴직금을 한 번에 찾아 일반 계좌로 옮기면, 이 깎아 주는 몫을 놓쳐요.
 [scenes.102.data.title] 함정 ③ 한 번에 찾으면
 [scenes.102.data.v] 깎아 주는 몫 놓침
 [scenes.102.data.s] 일반 계좌로 옮기면
@@ -772,7 +772,7 @@
 [scenes.106.data.side] left
 [scenes.107.lines.0.text] 먼저 아무 데도 안 넣고 금고에 뒀다면요. 해마다 2,400만원씩 열두 번 꺼내면 끝납니다.
 [scenes.107.lines.1.text] 정우 씨는 열세 번을 다 꺼냈어요. S&P500에 넣고도 금고보다 딱 한 번 더 꺼낸 셈이에요.
-[scenes.107.lines.1.cap] 수익 0%(금고) · 2010년 1월 바닥(12번) vs 정우 씨 S&P500 2011년 1월 바닥(13번) (calc_research 3절)
+[scenes.107.lines.1.cap] 수익 0%(금고) · 2010년 1월 바닥(12번) vs 정우 씨 S&P500 2011년 1월 바닥(13번)
 [scenes.107.data.title] 금고 vs S&P500
 [scenes.107.data.v1] 12번
 [scenes.107.data.s1] 금고 · 2010년 1월 바닥
@@ -781,13 +781,13 @@
 [scenes.107.data.s2] S&P500 · 2011년 1월 바닥
 [scenes.107.data.c2] accent
 [scenes.107.data.icon] Vault
-[scenes.107.data.source] 파이어맵 계산(calc_research) · S&P500 총수익 지수 ^SP500TR · 한국은행 ECOS
+[scenes.107.data.source] 파이어맵 계산 · S&P500 총수익 지수(야후 파이낸스) · 한국은행 ECOS
 [scenes.108.lines.0.text] 다음은 은행 정기예금이에요. 한국은행이 낸 해마다 1월의 실제 금리를 썼어요.
 [scenes.108.data.license] Pexels 6326929 무료(kaboompics.com)
 [scenes.108.data.say] 은행 정기예금이라면
 [scenes.108.data.side] left
 [scenes.109.lines.0.text] 같은 규칙이면, 예금 통장은 2018년 1월에 바닥났습니다.
-[scenes.109.lines.0.cap] 정기예금(1~2년 미만, 신규취급액) 1월 금리 · 이자소득세 15.4% 뺀 뒤 · 1998년 시작 → 2018년 1월 바닥(21년차) · 한국은행 ECOS 121Y002 (calc_research 4절)
+[scenes.109.lines.0.cap] 정기예금(1~2년 미만, 신규취급액) 1월 금리 · 이자소득세 15.4% 뺀 뒤 · 1998년 시작 → 2018년 1월 바닥(21년차) · 한국은행 ECOS 정기예금 금리
 [scenes.109.data.title] 1998년 시작
 [scenes.109.data.v1] 2018년
 [scenes.109.data.s1] 예금 바닥
@@ -796,7 +796,7 @@
 [scenes.109.data.s2] S&P500 바닥
 [scenes.109.data.c2] accent
 [scenes.109.data.icon] Landmark
-[scenes.109.data.source] 한국은행 ECOS 121Y002 정기예금 금리 · 파이어맵 계산(calc_research 4절)
+[scenes.109.data.source] 한국은행 ECOS 정기예금 금리 · 파이어맵 계산
 [scenes.110.lines.0.text] 2011년에 바닥난 정우 씨보다 일곱 해를 더 간 거예요.
 [scenes.110.data.chip.0] 예금이 더 갔다
 [scenes.110.data.chip.1] 정우 씨보다 일곱 해 더
@@ -823,7 +823,7 @@
 [scenes.111.data.bars.4.3] fall
 [scenes.111.data.dir] v
 [scenes.111.data.icon] Percent
-[scenes.111.data.source] 한국은행 ECOS 121Y002 정기예금(1~2년 미만, 신규취급액) 1월 금리
+[scenes.111.data.source] 한국은행 ECOS 정기예금(1~2년 미만, 신규취급액) 1월 금리
 [scenes.112.lines.0.text] 민수 씨처럼 2003년에 시작했다면 반대였습니다.
 [scenes.112.data.year] 2003년
 [scenes.112.data.chip.0] 반대였다
@@ -832,7 +832,7 @@
 [scenes.113.lines.0.text] 예금은 2019년에 바닥났어요. S&P500 쪽은 지난해 말 2억 7천만원이 남았고요.
 [scenes.113.lines.0.cap] 2003년 시작 · 정기예금 2019년 1월 바닥 / S&P500 2025년 말 2.72억원
 [scenes.113.lines.1.text] 1998년엔 예금 이자가 15%를 넘었고, 2003년엔 5%가 안 됐어요.
-[scenes.113.lines.1.cap] 1월 정기예금 금리 1998년 15.85% · 2003년 세후 4.03%(세전 5% 미만) (calc_research 4절)
+[scenes.113.lines.1.cap] 1998년 세전 15.85% · 2003년 세전 5% 미만(세후 4.03%)
 [scenes.113.data.title] 2003년 시작
 [scenes.113.data.v1] 2019년
 [scenes.113.data.s1] 예금 바닥
@@ -841,7 +841,7 @@
 [scenes.113.data.s2] S&P500 · 2025년 말
 [scenes.113.data.c2] accent
 [scenes.113.data.icon] Landmark
-[scenes.113.data.source] 한국은행 ECOS 121Y002 · 파이어맵 계산(calc_research 4절)
+[scenes.113.data.source] 한국은행 ECOS 정기예금 금리 · 파이어맵 계산
 [scenes.114.lines.0.text] 이번엔 '평생'이 얼마인지 봤습니다.
 [scenes.114.data.license] Pexels 5940883 무료(Maksim Goncharenok)
 [scenes.114.data.say] 평생은 몇 해일까
@@ -867,11 +867,11 @@
 [scenes.117.data.s] 1989~2002년 시작
 [scenes.117.data.icon] Users
 [scenes.117.data.c] ink
-[scenes.117.data.source] 파이어맵 계산(calc_research) · S&P500 총수익 지수 ^SP500TR · 한국은행 ECOS
+[scenes.117.data.source] 파이어맵 계산 · S&P500 총수익 지수(야후 파이낸스) · 한국은행 ECOS
 [scenes.118.lines.0.text] 월 200만원이면 이 열네 명 중 다섯 명이 못 버텼습니다.
 [scenes.118.lines.1.text] 월 150만원으로 줄여도 같은 다섯 명이 못 버텼어요.
 [scenes.118.lines.2.text] 월 100만원이면 열네 명 모두 버텼습니다.
-[scenes.118.lines.2.cap] 24번 꺼내기(남 60세 기대여명 23.7년) · 1989~2002년 시작 14명 · 버팀: 월 100만원 14 · 150만원 9 · 200만원 9 (calc_research 7절)
+[scenes.118.lines.2.cap] 24번 꺼내기(남 60세 기대여명 23.7년) · 1989~2002년 시작 14명 · 버팀: 월 100만원 14 · 150만원 9 · 200만원 9
 [scenes.118.data.title] 24번 버틴 사람 · 14명 중
 [scenes.118.data.bars.0.0] 월 200만원
 [scenes.118.data.bars.0.2] 9명
@@ -884,7 +884,7 @@
 [scenes.118.data.bars.2.3] fall
 [scenes.118.data.dir] h
 [scenes.118.data.icon] ShieldCheck
-[scenes.118.data.source] 파이어맵 계산(calc_research) · S&P500 총수익 지수 ^SP500TR · 한국은행 ECOS
+[scenes.118.data.source] 파이어맵 계산 · S&P500 총수익 지수(야후 파이낸스) · 한국은행 ECOS
 [scenes.119.lines.0.text] 여자는 평균 여생이 더 길어서, 같은 계산을 하면 버텨야 할 해가 다섯 해 가까이 늘어요.
 [scenes.119.lines.1.text] 정우 씨처럼 쉰다섯에 시작하면, 버텨야 할 해는 이보다 더 깁니다.
 [scenes.119.data.license] Pexels 6785745 무료(Marcus Aurelius)
@@ -896,7 +896,7 @@
 [scenes.120.data.s] 꺼낼 비율로 버틸 수 있나 셈해 보기
 [scenes.120.data.icon] Hourglass
 [scenes.120.data.c] accent
-[scenes.120.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.120.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.121.lines.0.text] 생활비를 줄일 수 없고 오래 사실 분이라면, 처음부터 꺼내는 비율이 낮은 쪽이 기록상 버텼어요.
 [scenes.121.data.title] 누구라면
 [scenes.121.data.rows.0.0] 못 줄이고 오래 살 분
@@ -906,7 +906,7 @@
 [scenes.121.data.rows.1.1] 언제·얼마로 줄일지 미리
 [scenes.121.data.rows.1.2] fall
 [scenes.121.data.icon] Users
-[scenes.121.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.121.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.122.lines.0.text] 줄일 수 있는 분이라면, 앞에서 본 '1월 통장이 3억보다 적으면 줄이는' 규칙처럼, 언제 얼마로 줄일지를 미리 정해 두는 쪽이 차이를 냈습니다.
 [scenes.122.data.license] Pexels 7606651 무료(Marina Leonova)
 [scenes.122.data.say] 언제 얼마로 줄일지 미리
@@ -917,7 +917,7 @@
 [scenes.123.data.s] 이자 세금 지금 세율 · 건보료 안 넣음
 [scenes.123.data.icon] TriangleAlert
 [scenes.123.data.c] rise
-[scenes.123.data.source] 파이어맵 계산(calc_research) · S&P500 총수익 지수 ^SP500TR · 한국은행 ECOS
+[scenes.123.data.source] 파이어맵 계산 · S&P500 총수익 지수(야후 파이낸스) · 한국은행 ECOS
 [scenes.124.lines.0.text] 정리하면, 꺼내 쓰는 사람에게는 고른 상품보다 시작한 해, 그리고 줄이는 규칙을 미리 정했느냐가 더 큰 차이를 냈어요.
 [scenes.124.lines.1.text] 시작할 해는 고를 수 없지만, 꺼내는 비율과 줄이는 규칙은 고를 수 있어요.
 [scenes.124.data.license] Pexels 6263185 무료(cottonbro studio)
@@ -932,7 +932,7 @@
 [scenes.125.data.rows.1.1] 줄일 때
 [scenes.125.data.rows.1.2] fall
 [scenes.125.data.icon] Eye
-[scenes.125.data.source] S&P500 총수익 지수 ^SP500TR 연말 · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
+[scenes.125.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
 [scenes.126.lines.0.text] 내 통장은 몇 살까지 갈까요? 설명란 첫 줄 파이어맵 계산기에 내 돈과 매달 쓸 돈을 넣으면, 바닥나는 나이가 나와요.
 [scenes.126.lines.1.text] 연 수익률 칸을 낮춰 한 번 더 넣어 보세요. 정우 씨처럼 나쁜 해가 먼저 몰려오면, 그보다 일찍 바닥날 수도 있어요.
 [scenes.126.data.n] firemap.kr

@@ -1633,10 +1633,11 @@
   {
    "at": "2026-10-17 13:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "cma1017",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+   "gates_ok": "2026-10-17 14:01",
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-write-b 14:01: cma1017 관문 통과 — 'CMA 통장에 퇴직금 넣어도 될까? 예금자보호 안 되는 이유'(돈 관리·예금 금리 묶음, 예금자보호법·시행령 원문·한국투자증권·신한투자증권 공식 화면, 제목 7.67·표지 7.83(cafecover)·레드팀 2차 틀림 0·58세 이해 2차 심각 0·aitell 통과·readcheck 0·selfcheck 사실 0·editgate auto)",
+   "published": "https://cafe.naver.com/firemap/304 14:08 verify OK 2057자"
   },
   {
    "at": "2026-10-17 15:10",

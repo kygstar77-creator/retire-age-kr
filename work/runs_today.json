@@ -63,6 +63,17 @@
     "url": "https://cafe.naver.com/firemap/303"
    },
    "note": "firemap-write 12:10 칸 jeonseloan1017 발행 · verify OK 1387/1387자·사진 3/3(확인 창 처리 경고 1건, 발행은 정상) · 블로그는 하루 상한·9/24 무색인 방침으로 이 회차 안 함 · 18:10 칸 marrygift1017 새로 씀: 자료조사 WebSearch 4회+법령 API 11개 조문+정책브리핑+지식iN 7건+경쟁 5편, 출처 7 · 교차검증: crosscheck Gemini 사실 3건 중 반영 2·유지 1('약' 유지: 가정 계산), 말투 15건 중 반영 9 · 레드팀 2회 틀림 2·오해 15 전부 반영 · 이해 시험 3차 심각 0 · 개선: editgate calc_check가 https:// 없는 계산기 줄 거부(#296 링크 안 됨 원인)"
+  },
+  {
+   "hour": 13,
+   "ts": "14:09",
+   "by": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "CMA 통장에 퇴직금 넣어도 될까? 예금자보호 안 되는 이유",
+    "url": "https://cafe.naver.com/firemap/304"
+   },
+   "note": "13:40 칸 비축 0 → 새 편 cma1017(예금·금리 묶음 지시). 자료조사 출처 7(예금자보호법·시행령 원문, 한국투자증권·신한투자증권 공식 CMA 화면 Playwright 저장, ECOS 기준금리, 금융위 보도자료, 아시아경제) · 교차검증(Gemini): 사실 2 중 반영 1·유지 1(출처 진위는 raw 저장본으로 확인), 말투 15 중 반영 9 · 레드팀 2회(1차 틀림 1 반영, 2차 0) · 58세 이해 2차 심각 0 · readcheck 0·selfcheck 사실 0·aitell 1.1 · 제목 7.67·표지 7.83(cafecover) · verify OK 2057/2057자·사진 3/3 · 게시판 연금/세금/보험(자동) · 개선: 플레이북에 10/17 표지 관문·퇴직금 계산기 줄 함정 기록"
   }
  ]
 }

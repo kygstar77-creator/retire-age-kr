@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-17 14:00",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "CMA 예금자보호/될까 안 될까",
+ "num": "RP형·발행어음형 X",
+ "sub": "주식 계좌 현금·종금형 CMA는 O",
+ "label": "예금자보호법",
+ "src": "예금자보호법·시행령, 한국투자증권·신한투자증권 CMA 안내(10/17)",
+ "icon": "shield-plus",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 117,
+ "num_px": 93,
+ "sub_px": 53,
+ "board": [
+  "jeonseloan1017",
+  "w2cafe1017",
+  "sangdo1017",
+  "kospidrop1017",
+  "bpcut1016",
+  "mixreset1016",
+  "w1scafe1016",
+  "retax1016",
+  "soxl1016",
+  "pencap1015"
+ ]
+}

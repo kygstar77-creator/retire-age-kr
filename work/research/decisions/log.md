@@ -2299,3 +2299,5 @@
 2026-10-17 13:04 · firemap-youtube-loop · H-4 facts.txt 작성(calc_out 그대로, 재건축·광명 규제지역은 원문 확인 전 말하지 않음) · 대본 v1 재료
 2026-10-17 13:07 · motion · X-1 v3 새 그림 3개를 부품(HedgeFlip·EvenLadder·DaysBelow)으로, 2024 쌍 '차' 글자는 이긴 쪽 색·이름 · 한 색 괄호는 뒤집힌 쌍을 H 승으로 읽게 함(레드팀), 심사 2차 평균 7.33·7.33·7.33
 2026-10-17 13:07 · motion · 완료: [자기 배정] X-1 v3 새 장면 부품 3개·미리보기 x1_v3.mp4 · U5는 motioncheck가 아니라 lfrender.still_runs로 잼(1차 6곳 → 0곳)
+2026-10-17 14:02 · firemap-write-b · 13:40 카페 칸 비축 0 → 새 편 cma1017(CMA 예금자보호, 예금·금리 묶음 지시) 작성·관문 통과·발행 · 경쟁 5편 CMA 글 0편, kwvol CMA 49,000
+2026-10-17 14:09 · firemap-write-b · 완료: cma1017 #304 발행·verify OK

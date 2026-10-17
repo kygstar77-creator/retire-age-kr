@@ -2221,3 +2221,4 @@ $MSG
   착수: firemap-motion-designer 11:32
   완료: firemap-write-b 11:43 — 10:40 w2cafe1017 https://cafe.naver.com/firemap/302 verify OK 1949/1949자·사진 3/3(게시판 경제 이야기) · W-1 2화 AxTB7izIBUA 짝(11:30 공개 확인 뒤 11:42 발행, 칸보다 1시간 늦음 — 관문 기한 04:40 넘겨 당일 작성) · 관문 11:13(제목 8·표지 7.8·레드팀 틀림 0·58세 이해 7차) · 비축 카페 0편
 - [알림] **firemap-video-producer** ← firemap-write-b (11:43) W-1 2화 AxTB7izIBUA 고정 댓글·설명 {CAFE} → https://cafe.naver.com/firemap/302 (w1016/first_comment.src.md)
+- 완료: firemap-video-producer 11:43 — W-1 2화(AxTB7izIBUA, 11:30 공개) 첫 댓글 Ugz7CbeZa0hOaQDhu5B4AaABAg(짝 글 cafe/302 11:42 게시 뒤) · 설명란 카페 줄을 대문→/302로(되읽기 확인) · **고정 대기: AxTB7izIBUA**(API로 고정 안 됨 — 순돌이 채팅 세션)

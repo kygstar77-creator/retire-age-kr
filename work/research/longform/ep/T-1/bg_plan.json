@@ -1,0 +1,191 @@
+{
+ "name": "T-1",
+ "made": "2026-10-17 11:42",
+ "note": "PD 10/17: 첫 3초 프레임 눈 검사. 뺀 것=excluded(글자·간판·얼굴). 렌더 전 쓸 구간 다시 확인. public/bg/t1로 복사해 쓴다.",
+ "clips": [
+  {
+   "id": 35082942,
+   "file": "stock/35082942.mp4",
+   "sec": 14,
+   "query": "apartment building exterior",
+   "desc_line": "영상 일부: Nothing Ahead / Pexels (https://www.pexels.com/video/modern-high-rise-buildings-exterior-view-35082942/)"
+  },
+  {
+   "id": 4693665,
+   "file": "stock/4693665.mp4",
+   "sec": 25,
+   "query": "apartment building exterior",
+   "desc_line": "영상 일부: Luis Quintero / Pexels (https://www.pexels.com/video/low-angle-view-of-a-multi-storey-building-with-balconies-4693665/)"
+  },
+  {
+   "id": 36820284,
+   "file": "stock/36820284.mp4",
+   "sec": 11,
+   "query": "apartment building exterior",
+   "desc_line": "영상 일부: Kartik Malviya / Pexels (https://www.pexels.com/video/modern-apartment-building-with-trees-36820284/)"
+  },
+  {
+   "id": 6221101,
+   "file": "stock/6221101.mp4",
+   "sec": 14,
+   "query": "apartment building exterior",
+   "desc_line": "영상 일부: cottonbro studio / Pexels (https://www.pexels.com/video/blue-and-white-concrete-building-6221101/)"
+  },
+  {
+   "id": 31400388,
+   "file": "stock/31400388.mp4",
+   "sec": 15,
+   "query": "house keys hand",
+   "desc_line": "영상 일부: Jakub Zerdzicki / Pexels (https://www.pexels.com/video/hand-holding-keys-over-money-and-mini-house-model-31400388/)"
+  },
+  {
+   "id": 7578842,
+   "file": "stock/7578842.mp4",
+   "sec": 11,
+   "query": "house keys hand",
+   "desc_line": "영상 일부: Kindel Media / Pexels (https://www.pexels.com/video/key-on-a-person-s-hand-7578842/)"
+  },
+  {
+   "id": 8320980,
+   "file": "stock/8320980.mp4",
+   "sec": 4,
+   "query": "house keys hand",
+   "desc_line": "영상 일부: Mark Embry / Pexels (https://www.pexels.com/video/video-of-a-person-giving-a-key-8320980/)"
+  },
+  {
+   "id": 7247815,
+   "file": "stock/7247815.mp4",
+   "sec": 7,
+   "query": "calculator tax documents",
+   "desc_line": "영상 일부: Leeloo The First / Pexels (https://www.pexels.com/video/a-woman-writing-and-reading-on-the-document-7247815/)"
+  },
+  {
+   "id": 6963487,
+   "file": "stock/6963487.mp4",
+   "sec": 10,
+   "query": "calculator tax documents",
+   "desc_line": "영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/man-using-calculator-6963487/)"
+  },
+  {
+   "id": 8471105,
+   "file": "stock/8471105.mp4",
+   "sec": 25,
+   "query": "signing contract hands",
+   "desc_line": "영상 일부: Thirdman / Pexels (https://www.pexels.com/video/close-up-video-of-a-person-signing-a-document-8471105/)"
+  },
+  {
+   "id": 8478946,
+   "file": "stock/8478946.mp4",
+   "sec": 23,
+   "query": "signing contract hands",
+   "desc_line": "영상 일부: ArtHouse Studio / Pexels (https://www.pexels.com/video/person-writing-on-paper-8478946/)"
+  },
+  {
+   "id": 8439245,
+   "file": "stock/8439245.mp4",
+   "sec": 7,
+   "query": "signing contract hands",
+   "desc_line": "영상 일부: Kampus Production / Pexels (https://www.pexels.com/video/a-person-signing-a-document-8439245/)"
+  },
+  {
+   "id": 4553292,
+   "file": "stock/4553292.mp4",
+   "sec": 16,
+   "query": "moving boxes",
+   "desc_line": "영상 일부: cottonbro studio / Pexels (https://www.pexels.com/video/a-room-with-many-boxes-stacked-on-top-of-each-other-4553292/)"
+  },
+  {
+   "id": 4553301,
+   "file": "stock/4553301.mp4",
+   "sec": 8,
+   "query": "moving boxes",
+   "desc_line": "영상 일부: cottonbro studio / Pexels (https://www.pexels.com/video/a-room-with-many-boxes-on-the-floor-4553301/)"
+  },
+  {
+   "id": 4520154,
+   "file": "stock/4520154.mp4",
+   "sec": 13,
+   "query": "moving boxes",
+   "desc_line": "영상 일부: https://kaboompics.com/ / Pexels (https://www.pexels.com/video/putting-books-inside-the-box-4520154/)"
+  },
+  {
+   "id": 34030195,
+   "file": "stock/34030195.mp4",
+   "sec": 6,
+   "query": "construction crane apartment",
+   "desc_line": "영상 일부: AMEKS Photography / Pexels (https://www.pexels.com/video/aerial-view-of-urban-construction-site-at-dusk-34030195/)"
+  },
+  {
+   "id": 20568183,
+   "file": "stock/20568183.mp4",
+   "sec": 15,
+   "query": "construction crane apartment",
+   "desc_line": "영상 일부: David Pickup |  Advertising & Marketing  🇬🇧 / Pexels (https://www.pexels.com/video/construction-site-20568183/)"
+  },
+  {
+   "id": 14058352,
+   "file": "stock/14058352.mp4",
+   "sec": 10,
+   "query": "construction crane apartment",
+   "desc_line": "영상 일부: utopia 36 / Pexels (https://www.pexels.com/video/drone-video-of-an-unfinished-multistory-building-14058352/)"
+  },
+  {
+   "id": 14059238,
+   "file": "stock/14059238.mp4",
+   "sec": 17,
+   "query": "construction crane apartment",
+   "desc_line": "영상 일부: utopia 36 / Pexels (https://www.pexels.com/video/drone-video-of-a-construction-site-in-the-city-of-kiev-ukraine-14059238/)"
+  },
+  {
+   "id": 9057574,
+   "file": "stock/9057574.mp4",
+   "sec": 13,
+   "query": "calendar pages",
+   "desc_line": "영상 일부: SHVETS production / Pexels (https://www.pexels.com/video/a-person-writing-day-off-on-a-calendar-9057574/)"
+  },
+  {
+   "id": 1793371,
+   "file": "stock/1793371.mp4",
+   "sec": 15,
+   "query": "calendar pages",
+   "desc_line": "영상 일부: Miguel Á. Padriñán / Pexels (https://www.pexels.com/video/person-saving-a-date-on-his-planner-1793371/)"
+  },
+  {
+   "id": 5546826,
+   "file": "stock/5546826.mp4",
+   "sec": 15,
+   "query": "calendar pages",
+   "desc_line": "영상 일부: Polina ⠀ / Pexels (https://www.pexels.com/video/person-browsing-the-planner-pages-5546826/)"
+  },
+  {
+   "id": 12079562,
+   "file": "stock/12079562.mp4",
+   "sec": 36,
+   "query": "city skyline seoul",
+   "desc_line": "영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/video/trains-crossing-a-railway-bridge-over-han-river-in-korea-12079562/)"
+  },
+  {
+   "id": 32986074,
+   "file": "stock/32986074.mp4",
+   "sec": 12,
+   "query": "city skyline seoul",
+   "desc_line": "영상 일부: PUWOOK Kwak / Pexels (https://www.pexels.com/video/stunning-aerial-view-of-modern-cityscape-32986074/)"
+  },
+  {
+   "id": 31251627,
+   "file": "stock/31251627.mp4",
+   "sec": 15,
+   "query": "city skyline seoul",
+   "desc_line": "영상 일부: PUWOOK Kwak / Pexels (https://www.pexels.com/video/aerial-cityscape-at-sunset-with-majestic-mountains-31251627/)"
+  }
+ ],
+ "excluded": {
+  "8482325": "영어 간판 HOME FOR SALE",
+  "6962707": "미국 세금 서류 글자",
+  "6962695": "세금 서류 글자",
+  "7841616": "CONTRACT 글자",
+  "5363071": "october 글자",
+  "7205258": "사람 얼굴",
+  "37448949": "한글 간판 비침"
+ }
+}

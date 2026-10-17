@@ -1,8 +1,8 @@
-# H-2 비교판 ep/H-2/thumb_compare.png — 우리 최종 h2t + 경쟁 상위 5(compete.md 표 1~5, mqdefault) + 우리 롱폼 조회 상위 3(H-1 compare.json과 같은 3편) + 지난 편 H-1 h1k. 위 줄 480px, 아래 줄 168px(같은 순서)
+# H-2 비교판 ep/H-2/thumb_compare.png — 우리 최종 h2y(13차) + 경쟁 상위 5(compete.md 표 1~5, mqdefault) + 우리 롱폼 조회 상위 3(H-1 compare.json과 같은 3편) + 지난 편 H-1 h1k. 위 줄 480px, 아래 줄 168px(같은 순서)
 import os
 from PIL import Image, ImageDraw, ImageFont
 H = os.path.dirname(os.path.abspath(__file__)); EP = os.path.join(H, '..', '..', 'longform', 'ep')
-items = [('우리 H-2 h2t(최종)', os.path.join(EP, 'H-2', 'thumb_h2t.png'))] + \
+items = [('우리 H-2 h2y(최종)', os.path.join(EP, 'H-2', 'thumb_h2y.png'))] + \
     [(f'경쟁 {c}', os.path.join(H, 'src', i + '.jpg')) for c, i in (('강투연 1.6만', 'bSrhZncUGD4'), ('강투연 1.3만', 'WzQebWiEi14'), ('강투연 4천', 'Us6f2rPmpr8'), ('돈불리GO 4천', 'pqVRJi2YfIA'), ('Turbo832 12만', 'ATut9O9qpoU'))] + \
     [(f'우리 조회 상위 {n}', os.path.join(H, 'src', i + '.jpg')) for n, i in (('A-1', 'SCOI0DP-l-s'), ('6월', 'scV67BQvC4Q'), ('N-1', '420buEFKB8k'))] + \
     [('우리 지난 편 H-1 h1k', os.path.join(EP, 'H-1', 'thumb_h1k.png'))]

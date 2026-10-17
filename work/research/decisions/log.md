@@ -2322,3 +2322,4 @@
 2026-10-17 18:39 · firemap-video-producer · C-2 v3.4 바뀐 20줄 같은 날 Chirp 재녹음·X-1 146행 재녹음 · editor 재서명 반영, 한 편 한 날 녹음 규칙 지킴
 2026-10-17 18:39 · firemap-video-producer · H-2 화면 숫자 기준을 10/16 실거래 파일 하나로(calc_out 재생성, 옛 것 .orig1012) · 말 숫자는 반올림이라 그대로 맞고 화면 집계만 장면끼리 어긋났음(editor ②)
 2026-10-17 18:39 · firemap-video-producer · C-2·H-2·T-1·X-1 화면 글자 editor 고칠 곳 반영·재요청 · 서명된 대본 [자막] 글은 안 바꾸고 X-1은 화면 쪽 CAPFIX로만 낱말 바꿈
+2026-10-17 18:48 · firemap-write · 완료: 18:10 marrygift1017 발행(cafe/307, verify OK) · 회의 지시 '성과급 세금' bonustax1017 10/18 09:10 관문 통과

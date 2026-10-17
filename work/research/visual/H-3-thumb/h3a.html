@@ -1,0 +1,21 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:BH;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/BlackHanSans.ttf')}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd700.ttf');font-weight:700}
+@font-face{font-family:PD;src:url('file:///C:/Users/강영준/Documents/GitHub/retire-age-kr/work/video/public/fonts/pd500.ttf');font-weight:500}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1280px;height:720px;overflow:hidden;position:relative;font-family:PD}
+.t{position:absolute;font:700 100px PD;white-space:nowrap;line-height:1;letter-spacing:-2px}
+.lab{position:absolute;font:700 30px PD;white-space:nowrap;line-height:1.1}
+</style></head><body><div style='position:absolute;inset:0;background:#F3EFE7'></div>
+<div class='t' style='left:46px;top:28px;font-size:68px;color:#16181D;letter-spacing:-1px'><span style='color:#FF5A00'>30억 안팎</span>에 팔린 집 크기</div>
+<div id='big' class='t' data-fit='1190' style='left:44px;top:118px;font-size:158px;color:#16181D;display:flex;align-items:baseline;gap:.12em'><span style='font-size:0.5em;color:#16181D'>신천</span><span style='font-size:1em;color:#16181D'>85㎡</span><span style='font-size:0.34em;color:#7C818C'>vs</span><span style='font-size:0.5em;color:#16181D'>목동신시가지</span><span style='font-size:1em;color:#FF5A00'>96㎡</span></div>
+<div style='position:absolute;left:56px;top:284px;width:384px;height:384px;background:#FF5A00;border:7px solid #16181D'></div><div style='position:absolute;left:56px;top:307px;width:361px;height:361px;background:#3A3F4A;border:7px solid #16181D'></div><div style='position:absolute;left:258px;top:307px;width:3px;height:108px;background:#FFFFFF'></div><div style='position:absolute;left:258px;top:459px;width:3px;height:43px;background:#FFFFFF'></div><div style='position:absolute;left:56px;top:502px;width:130px;height:3px;background:#FFFFFF'></div><div style='position:absolute;left:236px;top:502px;width:180px;height:3px;background:#FFFFFF'></div>
+<div class='lab' style='left:82px;top:333px;font-size:46px;color:#FFFFFF'>신천</div>
+<div class='lab' style='left:476px;top:288px;font-size:46px;color:#FF5A00'>← 목동신시가지</div>
+<div class='lab' style='left:476px;top:500px;font-size:42px;color:#16181D'>압구정동은 가장 싼 거래도 35억 넘어</div>
+
+<script>
+function fit(e,maxW){let s=parseFloat(getComputedStyle(e).fontSize);
+ while(e.getBoundingClientRect().width>maxW&&s>20){s-=2;e.style.fontSize=s+'px'}}
+document.fonts.ready.then(()=>{document.querySelectorAll('[data-fit]').forEach(e=>fit(e,+e.dataset.fit));document.body.dataset.ready=1});
+</script></body></html>

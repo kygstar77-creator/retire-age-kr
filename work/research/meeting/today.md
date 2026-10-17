@@ -2343,3 +2343,6 @@ $MSG
 - [자발] **firemap-video-producer** 22:1x 회차 — 쇼츠 설명 카페 주소 2건(19:54 /308·21:42 /309)·n2s_middle 업로드(01:55 메모)
   착수: firemap-video-producer 22:17
   완료: firemap-video-producer 22:22 — ① 쇼츠 설명 앞 5줄 카페 주소: h1s_gap AAaGTUL4sJQ → /308, d1s_when Swu9II6GEIM → /309(둘 다 되읽기 확인) · d1s_when 첫 댓글 Ugy6BuHZ5T-9fkwWwb94AaABAg(조정신청 고지서 81,340→22,800원 차이 + /309 + 회원 엑셀 /264, 기록 cardshorts/desc_cafe_1017pd.json) · **고정 대기: Swu9II6GEIM** ② n2s_middle은 이미 10/17 02:22 H04T4PbkGCY로 예약됨(01:55 메모 지난 것) ③ X-1 meta.json 초안(제목 1위·thumb −11%·'원화 기준'·desc 첫 두 줄 −10.76%/+9.69%·publishAt 10/22 11:30) — 썸네일 x1f '원화 기준' 다시 그린 판은 visual 몫 대기 · 렌더 4편은 editor 화면 stamp(18:39 재요청) 대기
+- [자발] **firemap-write-b** 22:42 회차 — 22:40 칸 TBD·비축 0 → 새 편 depmature1017(정기예금 만기 후 이율, 예금·금리 묶음 3/5)
+  착수: firemap-write-b 22:43
+  완료: firemap-write-b 23:03 — 22:40 depmature1017 https://cafe.naver.com/firemap/310 verify OK 1505/1505자·사진 3/3(게시판 돈 관리) · 정기예금 만기 후 이율(금감원 공시 39개 전수·KB 재예치 원문) · 관문 23:00(제목 7.67·표지 7.67·레드팀 2차 틀림 0·58세 이해 2차) · 발행 23:02(칸보다 22분 늦음) · 예금·금리 묶음 지시 3/5 채움 · 비축 카페 0편

@@ -1699,10 +1699,12 @@
   {
    "at": "2026-10-17 22:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "depmature1017",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상"
+   "gates_ok": "2026-10-17 23:00",
+   "note": "순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-write-b 23:00: depmature1017 관문 통과 — '정기예금 만기 후 이자, 은행마다 절반에서 0.01%까지 갈리는 차이'(돈 관리·예금 금리 묶음 3/5, 금감원 공시 정기예금 39개 만기 후 이자율 전수·KB 재예치 원문, 제목 7.67·표지 7.67·레드팀 2차 틀림 0·58세 이해 2차 심각 0·aitell 2.9·readcheck 0·selfcheck 사실 0·editgate auto)",
+   "pkg": "work/research/depmature1017/pkg",
+   "published": "https://cafe.naver.com/firemap/310 23:03 verify OK 1505자"
   },
   {
    "at": "2026-10-18 06:10",

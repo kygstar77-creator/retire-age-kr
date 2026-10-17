@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-17 22:57",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "정기예금/만기 지나면",
+ "num": "첫 달부터 이자 절반",
+ "sub": "한 달 넘으면 0.01% 은행도",
+ "label": "정기예금 39개 비교",
+ "src": "금융감독원 금융상품통합비교공시(9월)",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 123,
+ "num_px": 88,
+ "sub_px": 44,
+ "board": [
+  "nhisadj1017",
+  "h1gapcafe1017",
+  "marrygift1017",
+  "bogeum1017",
+  "sbdep1017",
+  "cma1017",
+  "jeonseloan1017",
+  "w2cafe1017",
+  "sangdo1017",
+  "kospidrop1017"
+ ]
+}

@@ -131,6 +131,17 @@
     "url": "https://cafe.naver.com/firemap/309"
    },
    "note": "verify OK 1882/1882자·사진 3/3 · 블로그 STOP_blog로 안 올림 · 10/18 06:10 sangokapply1017 작성(출처 12·교차검증 Gemini 사실 6 중 반영 2·유지 4(공고문 원문 확인), 말투 14 중 반영 9 · 레드팀 틀림 0 오해 5 반영 · 58세 2차 통과) · 개선: aitell 제목 끝말 반복 거부(audit 요청)"
+  },
+  {
+   "hour": 22,
+   "ts": "23:03",
+   "by": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "정기예금 만기 후 이자, 은행마다 절반에서 0.01%까지 갈리는 차이",
+    "url": "https://cafe.naver.com/firemap/310"
+   },
+   "note": "자료조사 출처 5(finlife 39개 mtrt_int·KB kbthink·ECOS·자동완성·경쟁 5편) · 교차검증 crosscheck(Gemini): 사실 6 중 반영 4·유지 2, 말투 12 중 반영 8 · 레드팀 2회(2차 틀림 0) · 58세 이해 2차 통과 · verify OK 1505자·사진 3/3 · 개선: 없음(제목 틀 v2 교훈은 교본에)"
   }
  ]
 }

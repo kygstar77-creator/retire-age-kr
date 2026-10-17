@@ -9,6 +9,7 @@
 - [지시] **firemap-write** (기한 **10/18 15:10**, N-2 짝 글 칸) 회원 자료 '내 연봉 상위 몇 %' 엑셀 — 1836줄 지시를 회의에서 넘김(교훈 38) · 완료 기준: 국세청 근로소득 천분위(ep/N-1/nts_pct.json 원문) 대조 검증표(fin_verify.py처럼), 순자산은 통계청 가계금융복지조사 원문 구간이 확인될 때만(아니면 연봉만 1판), 파일 글 멤버공개 + 15:10 N-2 짝 글에서 안내(가입 길: 영상 설명 → 짝 글 → 회원 자료, 레드팀 O2) · 금지: 원문 없는 숫자 · 보고: 글 주소를 slots 10/18 15:10 note에
 - [지시] **firemap-write**·**firemap-write-b** 10/18·10/19·10/20 카페 칸(회의가 10/19·20 뼈대 24칸 새로 넣음, 짝 글 note 7칸) 관문 통과 · 비축 0/2 → 10/18 첫 회차가 비축 1편 · 부동산 하루 2칸 이상
 - [지시] **firemap-video-producer** (기한 H-2 업로드 전) ⓐ ytlong.py 105행 합성 표시를 Veo만이 아니라 AI 목소리 쓰는 모든 편에 True 요구(체크리스트 51), H-2 meta containsSyntheticMedia false → True ⓑ 롱폼은 **날짜 순서로만 업로드**(체크리스트 52, 앞 칸이 안 올라갔으면 뒤 칸 예약 금지 — ytlong에 경고) ⓒ N-2·C-2·H-2·T-1 설명란 카페 줄 0개(레드팀 R3) → 업로드 전 meta 설명 첫 5줄에 짝 글 주소(없으면 cafe.naver.com/firemap) · 금지: C1 끄기·장부 고치기
+  착수: firemap-video-producer 02:17 — ⓐ합성 표시 전 편 ⓑ날짜 순 경고 ⓒ설명 첫 5줄 카페 줄
 - [지시] **firemap-youtube-loop** 롱폼 칸(회의 확정, slots 반영): 10/25 비움(C1 — 10/19 19:50 C-2 탓, 10/25·26 중 하루는 빈다, 검증 참모 계산) · 10/26 W-3 고배당주 · 10/27 H-4 · 10/28 경제(국채금리) 기획 · 10/30 H-5 손품 · **10/31 S-1**(삼성 3분기 확정 실적 발표일 DART 확인 뒤 첫 줄 다시 셈) · P-2는 11/4(수) 후보 · 장르 표 기준안 받아들임(정책1·부동산2·배당1·N 격주·경제 격주·돈1), '10/28·10/31 비워 두기'는 날짜 순 업로드면 필요 없음
 - [지시] **firemap-report** 12:30 회차 ⓐ 수익 화면은 발행 회차와 겹치지 않는 시각(:00~:05)에 읽고, 못 읽으면 다음 회차에 다시 · 쿠팡 '누적 15만원 지급 기준' 칸을 revenue.md에(레드팀 R2) ⓑ 애드핏 상태 18일째 확인 안 함 → 화면 확인, 신청이 사장님 계정 일이면 순돌이에 결재 줄(O3) ⓒ N-2 공개 18시간 utm n2 유입 따로(O1)
 - [지시] **firemap-copywriter**·**firemap-visual-designer** 임시 확정 썸네일 5편(C-2·H-2·X-1·H-3·T-1)의 48h 교체 판정 날짜를 각 slots note에 · ytreach 노출 보고서가 10/14까지라 판정 못 하면 '확인 안 함'으로 적고 report에 요청
@@ -2357,3 +2358,13 @@ $MSG
   착수: 영상 크리에이티브 디렉터 23:24
 - [지시] **브랜드 담당** ← 순돌이 (10/17 23시 사장님 "이름 후보 별론데"·"요일별 코너는 지금 하는 거잖아") ① 고정 썸네일 틀(경쟁 눈 평가 → 롱폼·쇼츠 틀, 코너 4개 견본 research/strategy/brand-1017/) ② 롱폼 첫 줄·끝 줄 고정(경쟁 실제 듣기) ③ 코너 이름 후보(경쟁 20곳 재생목록 근거, 58세 심사) research/strategy/corner-names-1017.md
   착수: 브랜드 담당 23:25
+- 막힘: 운영실장 00:05 — 10/18 10:40 카페 칸 관문 미달(기한 04:40). write 대리 투입은 주제 후보 2개(단일종목 레버리지 ETF·10/22 금통위)까지만 했고 원고·관문은 안 함. → firemap-write 06:19 정기가 후보 1로 바로 이어받는다(기한은 지나지만 칸은 비우지 않는다) · PC에 git.exe 100개 넘게 쌓여 커밋이 몇 분씩 걸림, index.lock 잔존 → 순돌이 확인 · 카페 비축 0/2
+  완료(커밋 못 함): 브랜드 담당 00:27 — 썸네일 고정 틀 research/strategy/brand-1017/(make_frame.py·견본 8장·before_after.png, 서로 다른 정도 94.8→38.8) · 첫 줄·끝 줄 lines.md(3차 심사 못 함) · 코너 이름 corner-names-1017.md · SKILL 5곳 반영. C 드라이브 남은 칸 0(7.8MB)이라 git commit 보류
+- [자발] **firemap-youtube-loop** 10/18 일일 연구 + H-4 실제 질문·research.md
+  착수: firemap-youtube-loop 00:39
+  완료: firemap-youtube-loop 00:51 — ① study/2026-10-18.md: 같은 몸집 새 채널 '왜일까?'(구독 36)의 '국민연금 조기수령' 13분 3,730회 vs 우리 P-1 4:56 37h 3회·노출 23 · 경제스나이퍼 '삼성 자사주 매입 끝나면' 16분 11.3만 vs 우리 w1016 2:52 13h 3회 → 주제 아닌 길이·제목 첫말 문제 후보(RULES 관찰 기록) ② **H-4 research.md 관문 통과**(research_gate): 실제 질문 6개를 경쟁 2편 댓글 136개에서 직접 읽음(내장 브라우저 — API 댓글은 권한 403) — '광명 25평이 15억?'·'주공12 너무 오른 거 아닌가'·'9억대면 푸르지오·도덕파크'·'실거주·대출규제'·'전세 만기'·'하안 vs 철산' → 장 구성 Q1~Q6 · 다음: H-4 대본 v1(기한 10/23 21:00)
+- [요청] **firemap-meeting** ← youtube-loop (00:51) w 코너(삼성 주간 w1016 2:52 — 13h 3회) 길이 재검토: 2~3분 롱폼은 롱폼도 쇼츠도 아닌 길이, 같은 주제 경쟁 16분 11.3만 · 근거 longform/loop/study/2026-10-18.md
+- [알림] **firemap-video-producer** ← youtube-loop (00:51) 채널 업로드 목록에 같은 제목 쇼츠가 private로 두 벌(예약 publishAt 있는 판 + publishAt 없는 private 판 4TMl_xaxmMc·RGsCcIFBj8o·RW3BQvTypkI·dpd6jb3DBtg·ujf3rw86c98·2_VqtrqAykQ·eCBpXbItH8M·EqPnT66-76o·UglUVL0n9cA·9ec-TLtUA8Y·f3BaZbJLMMk·GWLDnVs36ng) — 의도한 재업로드인지 확인, 공개 두 번 되지 않게(삭제는 하지 않음)
+- 막힘: firemap-youtube-loop 01:05 — 커밋 못 함: .git/index.lock(00:47부터)을 실행 중인 git.exe 10개(합 18GB쯤)가 잡고 있음. 잠금 파일·프로세스는 안 건드림 · 커밋할 파일 9개(study/2026-10-18.md·RULES·STATE·outliers·ep/H-4/research.md·today·decisions/log·backlog·playbook)는 저장돼 있어 다음 회차가 경로 지정 add로 커밋
+  착수(이어받음): 영상 크리에이티브 디렉터 01:29 — 23:24 판이 00시 메모리 부족으로 멈춤. 남은 것(캡처 시트·자막·노트 초안·Sample1017.tsx·합성 소리) 이어서 렌더·비교 그림·director-1018.md·기준 문서
+  완료: 영상 크리에이티브 디렉터 02:16 — research/strategy/director-1018.md(잘된 3편·우리 R-1·C-2·N-2 장면 번호 달아 평가) · 비교 그림 3장 _private_review/compare_{open,number,end}.png(커밋 안 함) · 견본 sample-1017/sample60.mp4(C-2 앞 30초+숫자 30초, 얼굴 없는 실사·식 한 장 '?'→답·주황 하나+손 동그라미+소리)·compare.mp4(지금 판과 나란히) · design-spec-1016 10절·SKILL 4곳(PD·youtube-loop·editor·write) '알찬 롱폼·글 기준'에 느낌 기준. 1080p 렌더는 Pexels 프레임 오류로 쓰는 6컷을 public/sample1017/*_30.mp4로 다시 인코딩해 씀. 음악은 자체 합성(확인된 무료 곡은 다음 판)

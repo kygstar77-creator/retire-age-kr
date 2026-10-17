@@ -160,7 +160,7 @@ def align(pcm, texts):
     # cut()이 실패하면(숫자 많은 문장은 음절 비율이 어긋남) 받아쓰기(문장마다 [초] 표시)로 대본 문장 시작 시각을 찾고,
     # 0.4초 넘는 쉼 가운데 그 시각에 가장 가까운 것들을 순서대로(DP) 고른다. 모델 시각은 1~2초 틀릴 수 있어 '긴 쉼'만 후보로 둔다.
     # 10/1 E-1: 모델에게 시각만 받아 가장 가까운 무음에 붙였더니 한 문장씩 밀린 파일이 나왔다(받아쓰기 대조로 발견) → 이 방식으로 바꿈.
-    import io, difflib
+    import io, difflib, urllib.error
     buf = io.BytesIO()
     with wave.open(buf, 'wb') as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(np.clip(pcm, -32768, 32767).astype(np.int16).tobytes())
     body = {'contents': [{'parts': [{'inlineData': {'mimeType': 'audio/wav', 'data': base64.b64encode(buf.getvalue()).decode()}},
@@ -435,7 +435,7 @@ def cutat(ep, gi, times, maxreq=9, cap=0):
 def fixcut(ep, gi, maxreq=9, dry=False, cap=0):
     # 받아쓰기 맞춤 자르기(10/1 E-1 사고 뒤 추가): 저장본을 모든 쉼(0.25초+)에서 조각내 조각마다 받아쓰고,
     # 조각을 대본 문장에 차례대로 붙여(DP, 글자 닮음 최대) 문장 파일을 만든다. 앞머리에 TTS가 읽어 버린 지시문(영어)은 버린다.
-    import io, difflib
+    import io, difflib, urllib.error
     cfg = lock(ep); g = pack(sections(ep), maxreq, cap)[gi]   # 녹음 때와 같은 --cap이어야 묶음 번호가 맞는다(10/9 C-1)
     texts = [speak(ep, t) for s in g for t in s['lines']]
     rk = hashlib.md5(('|'.join([cfg['model'], cfg['voice']] + texts)).encode()).hexdigest()[:16]
@@ -532,11 +532,43 @@ def readback_num(t, words=False):
     t = re.sub(r'(\d+)만(?!\s?\d)', lambda m: str(int(m.group(1)) * 10000), t)
     return sorted(re.findall(r'\d+(?:\.\d+)?', t))
 
-def readback(ep, only=None):
+AGREE, OFF = 0.9, 0.85   # 10/18 벤치마크 지시 '합의오독': 두 모델끼리 ≥0.9로 같게 들었는데 대본과는 <0.85 → 사람 귀에도 그렇게 들린다
+FLASH = 'gemini-3.5-flash'
+SECOND = [FLASH, 'gemini-flash-latest']   # 3.5-flash 무료 한도 하루 20요청(10/18 06:3x 429 실측, quotaValue 20) — 한 편 150줄+는 못 받는다 → 다 쓰면 flash-latest로
+_DEAD = set()                              # 이번 실행에서 하루 한도(PerDay 429)가 난 모델 — 다시 부르지 않는다
+_NUMCH = set('영일이삼사오육칠팔구십백천만억조원퍼센트하나둘셋넷다섯여섯일곱여덟아홉열스무물서른마흔쉰예순일흔여든아흔한두세네째')
+def _spots(script, heard):
+    # 대본(한글만) 기준으로 받아쓰기가 바꾼 자리 [i1,i2) 목록. 빠진 글자(delete)와 숫자 말↔숫자 표기 차이는 뺀다
+    #   (대본 '열네 해'를 '14해'로 쓰면 '열네'가 빠진 것으로 보인다 — 오독이 아니다).
+    import difflib
+    a, b = re.sub(r'[^가-힣]', '', script), re.sub(r'[^가-힣]', '', heard or '')
+    out = []
+    for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
+        if op in ('equal', 'delete'): continue
+        seg = a[i1:i2] + b[j1:j2]
+        if seg and set(seg) <= _NUMCH: continue
+        out.append((i1, i2, a[i1:i2], b[j1:j2]))
+    return out
+def consensus(script, h1, h2, win=2):
+    # 10/18 합의오독(국소): 두 모델이 대본의 같은 자리(앞뒤 2글자 안)를 둘 다 다르게 들었으면 사람 귀에도 그렇게 들린다.
+    #   문장 전체 일치율로는 '안이었거든요'→'아니었거든요'(C-2 4:5, 0.81~0.84) 같은 한 낱말 뒤집힘이 안 잡힌다.
+    if not (h1 and h2): return []
+    s1, s2 = _spots(script, h1), _spots(script, h2)
+    return [(x[2] or '·', x[3], y[3]) for x in s1 for y in s2 if x[0] - win <= y[1] and y[0] - win <= x[1]]
+
+def readback(ep, only=None, resume=False):
     # 공개 전 필수(lessons 9): 문장마다 받아써서 대본 숫자와 대조하고, 길이가 대본보다 훨씬 긴 문장(지시문을 읽은 앞머리 의심)을 찾는다.
     # 숫자가 다르게 들리면 다른 받아쓰기 모델 2개로 더 듣고, 셋 중 둘 이상이 대본과 다를 때만 '다시 만들 문장'으로 적는다.
-    import io
+    # 10/18: 줄마다 gemini-3.5-flash로 한 번 더 받아쓴다(합의오독). R-1 2:5 '안 했어도'→'안 해서'를 sim 0.78 무표시로 '일치'라 읽었던 것.
+    #   only(부분)도 voice_readback.json에 합쳐 쓴다 — ytlong gate C-readback은 전체 파일 하나만 본다. --resume: 같은 글·같은 소리로 이미 통과한 줄은 건너뜀.
+    import io, difflib, urllib.error
     v = json.load(open(os.path.join(ep, 'voice.json'), encoding='utf-8')); out, bad = [], []
+    os.makedirs(os.path.join(ep, 'check'), exist_ok=True)   # 10/14 PD: check 폴더 없는 새 편에서 다 받아쓰고 저장에서 죽던 것
+    full = os.path.join(ep, 'check', 'voice_readback.json')
+    old = {}
+    if os.path.exists(full):
+        try: old = {x['at']: x for x in json.load(open(full, encoding='utf-8'))}
+        except Exception: old = {}
     num = readback_num
     def tx(fn, mdl):
         a, sr = read(fn); buf = io.BytesIO()
@@ -551,40 +583,69 @@ def readback(ep, only=None):
                     data=json.dumps(body).encode(), headers={'Content-Type': 'application/json'}), timeout=120))
                 p0 = r['candidates'][0]['content']['parts'][0]          # 전용 모델은 text가 아니라 audioTranscription.text로 준다
                 return (p0.get('text') or p0.get('audioTranscription', {}).get('text', '')).strip()
-            except Exception: time.sleep(10)
+            except urllib.error.HTTPError as e:
+                if e.code == 429 and 'PerDay' in e.read().decode(errors='ignore'): _DEAD.add(mdl); return None
+                time.sleep((25 if e.code == 503 else 10) * (tries + 1))   # 503(과부하)은 길게 기다린다 — 10/18 flash-latest 503 연속
+            except Exception: time.sleep(10 * (tries + 1))
         return None
+    def tx2(fn):
+        for m in SECOND:
+            if m in _DEAD: continue
+            h = tx(fn, m)
+            if h is not None: return h, m
+        return None, SECOND[-1]
+    hg = lambda x: re.sub(r'[^가-힣]', '', x or '')
+    sm = lambda a, b: difflib.SequenceMatcher(None, hg(a), hg(b)).ratio()
+    def save():
+        merged = dict(old); merged.update({x['at']: x for x in out})
+        keys = [f'{si}:{li}' for si, sec in enumerate(v['sections']) for li, l in enumerate(sec['lines']) if l.get('audio')]
+        rows = [merged[k] for k in keys if k in merged]          # voice.json에 없는 옛 줄은 버린다(줄 수 대조가 맞게)
+        json.dump(rows, open(full, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    fails = 0
     for si, sec in enumerate(v['sections']):
         for li, l in enumerate(sec['lines']):
-            if only and f'{si}:{li}' not in only: continue
+            at = f'{si}:{li}'
+            if only and at not in only: continue
             if not l.get('audio'): continue
+            o = old.get(at)
+            if resume and o and o.get('text') == l['text'] and o.get('audio') == l['audio'] and set(SECOND) & set(o.get('models', [])) and not o.get('flag'): continue
             fn = os.path.join(PUB, l['audio'].replace('/', os.sep)); want = num(l['text'])
-            h1 = tx(fn, 'gemini-3.5-flash-lite'); votes = [h1]; models = ['gemini-3.5-flash-lite']
+            h1 = tx(fn, 'gemini-3.5-flash-lite'); hf, mf = tx2(fn)
+            votes = [h1, hf]; models = ['gemini-3.5-flash-lite', mf]
             miss = lambda h: [x for x in want if x not in num(h, words=True)]          # 대본 숫자가 다 들렸는가(대본의 '열두 달'이 '12달'로 들리는 건 괜찮다)
-            if h1 is not None and miss(h1):
-                # 추가 표 2개 중 하나는 받아쓰기 전용 모델(lite 계열은 같이 흔들린다 — ai-lab/bench/2026-10-01-transcribe.md). 429면 지금처럼 lite 표.
+            if any(h is not None and miss(h) for h in votes):
+                # 추가 표 중 하나는 받아쓰기 전용 모델(lite 계열은 같이 흔들린다 — ai-lab/bench/2026-10-01-transcribe.md). 429면 lite 표.
                 h2, m2 = tx(fn, 'gemini-3.5-transcribe'), 'gemini-3.5-transcribe'
                 if h2 is None: h2, m2 = tx(fn, 'gemini-flash-lite-latest'), 'gemini-flash-lite-latest'
-                votes += [h2, tx(fn, 'gemini-3.1-flash-lite')]; models += [m2, 'gemini-3.1-flash-lite']
+                votes += [h2]; models += [m2]
             wrong = sum(1 for h in votes if h is not None and miss(h))
             slow = est(l['say']) / max(l['sec'] / (l.get('tempo') or 1), 0.1) < 3.6      # 대본보다 훨씬 김 = 지시문 앞머리 의심
             # 글자 일치율(한글만, 숫자·띄어쓰기 뺌) — 숫자만 보면 앞뒤 문장이 한 칸 밀려도 못 잡는다(10/3 PD N-1 손자르기에서 발견)
-            import difflib
-            hg = lambda x: re.sub(r'[^가-힣]', '', x or '')
-            sim = max((difflib.SequenceMatcher(None, hg(l['say']), hg(h)).ratio() for h in votes if h), default=0)
+            sim = max((sm(l['say'], h) for h in votes if h), default=0)
             shift = h1 is not None and sim < 0.75
-            flag = ('숫자 ' if wrong >= 2 else '') + ('길이 ' if slow else '') + (f'밀림의심({sim:.2f}) ' if shift else '') + ('받아쓰기 실패' if h1 is None else '')
-            out.append({'at': f'{si}:{li}', 'text': l['text'], 'heard': votes, 'models': models, 'sim': round(sim, 2), 'flag': flag.strip()})
-            if flag.strip(): bad.append(f'{si}:{li} {flag.strip()} | {l["text"][:30]} | 들림 {votes[-1] and votes[-1][:40]}')
-            time.sleep(1)
-    os.makedirs(os.path.join(ep, 'check'), exist_ok=True)   # 10/14 PD: check 폴더 없는 새 편에서 다 받아쓰고 저장에서 죽던 것
-    json.dump(out, open(os.path.join(ep, 'check', 'voice_readback' + ('_part' if only else '') + '.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+            pair = sm(h1, hf) if (h1 and hf) else None
+            agree = pair is not None and pair >= AGREE and max(sm(l['say'], h1), sm(l['say'], hf)) < OFF
+            spots = consensus(l['text'], h1, hf)          # 대본 글(숫자 표기)과 맞대야 받아쓰기의 '30%'와 어긋나지 않는다
+            if spots: agree = True
+            failed = h1 is None or hf is None
+            flag = ('숫자 ' if wrong >= 2 else '') + ('길이 ' if slow else '') + (f'밀림의심({sim:.2f}) ' if shift else '')                 + (f'합의오독({pair:.2f}/{max(sm(l["say"], h1), sm(l["say"], hf)):.2f} ' + ' '.join(f'{a}→{b}/{c}' for a, b, c in spots[:3]) + ') ' if agree else '') + ('받아쓰기 실패' if failed else '')
+            out.append({'at': at, 'text': l['text'], 'say': l['say'], 'audio': l['audio'], 'heard': votes, 'models': models,
+                        'sim': round(sim, 2), 'pair': pair and round(pair, 2), 'flag': flag.strip()})
+            if flag.strip(): bad.append(f'{at} {flag.strip()} | {l["text"][:30]} | 들림 {(hf or h1 or "")[:40]}')
+            fails = fails + 1 if failed else 0
+            if len(out) % 10 == 0: save()
+            if fails >= 5: print('  받아쓰기 5줄 연속 실패(429·503 추정) — 여기서 멈춤, 다음 회차 --resume'); save(); bad.append('중단'); break
+            time.sleep(2)
+        if fails >= 5: break
+    save()
+    if only: json.dump(out, open(os.path.join(ep, 'check', 'voice_readback_part.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print(f'받아쓰기 대조 {len(out)}문장 · 걸린 문장 {len(bad)}'); [print('  ' + b) for b in bad]
     return not bad
 
 if __name__ == '__main__':
     cmd, ep = sys.argv[1], os.path.abspath(sys.argv[2]); mr = int(sys.argv[sys.argv.index('--maxreq') + 1]) if '--maxreq' in sys.argv else 9
     cap = int(sys.argv[sys.argv.index('--cap') + 1]) if '--cap' in sys.argv else 0
-    if cmd == 'readback': sys.exit(0 if readback(ep, sys.argv[3].split(',') if len(sys.argv) > 3 and not sys.argv[3].startswith('--') else None) else 1)
+    if cmd == 'readback': sys.exit(0 if readback(ep, sys.argv[3].split(',') if len(sys.argv) > 3 and not sys.argv[3].startswith('--') else None, resume='--resume' in sys.argv) else 1)
     elif cmd == 'fixcut': fixcut(ep, int(sys.argv[3]), mr, dry='--dry' in sys.argv, cap=cap)
     elif cmd == 'cutat': cutat(ep, int(sys.argv[3]), [float(x) for x in sys.argv[4].split(',')], mr, cap)
     elif cmd == 'plan': make(ep, mr, dry=True, cap=cap)

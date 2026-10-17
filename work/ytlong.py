@@ -42,6 +42,27 @@ def order_warn(pa, me):
             out.append(f'{t:%m/%d %H:%M} {it} 아직 안 올라감')
     return out
 
+def readback_check(ep):
+    """10/18 벤치마크 지시 C-readback: 받아쓰기 검사 없이 롱폼이 올라가지 않게.
+    ⓐ check/voice_readback.json이 voice.json보다 새것 ⓑ 소리 있는 줄 수·문장(글·소리 파일) 전부 일치 ⓒ 받아쓰기 실패·합의오독·숫자 0
+    + 줄마다 둘째 받아쓰기(gemini-3.5-flash, 하루 20요청 다 쓰면 gemini-flash-latest)가 있어야 함(합의오독 검사, lfvoice.readback 10/18판)."""
+    vj, rj = os.path.join(ep, 'voice.json'), os.path.join(ep, 'check', 'voice_readback.json')
+    if not os.path.exists(vj): return ['C-readback voice.json 없음']
+    if not os.path.exists(rj): return [f'C-readback 받아쓰기 검사 없음 — py -3.12 work/lfvoice.py readback {ep}']
+    bad = []
+    if os.path.getmtime(rj) < os.path.getmtime(vj): bad.append('C-readback voice_readback.json이 voice.json보다 오래됨 — 다시 readback(--resume)')
+    v = json.load(open(vj, encoding='utf-8')); rb = {x['at']: x for x in json.load(open(rj, encoding='utf-8'))}
+    lines = [(f'{si}:{li}', l) for si, sec in enumerate(v['sections']) for li, l in enumerate(sec['lines']) if l.get('audio')]
+    if len(rb) != len(lines): bad.append(f'C-readback 줄 수 다름 voice {len(lines)} · readback {len(rb)}')
+    miss = [a for a, l in lines if a not in rb or rb[a].get('text') != l['text'] or rb[a].get('audio', l['audio']) != l['audio']]
+    if miss: bad.append(f'C-readback 글·소리 안 맞는 줄 {len(miss)}: ' + ','.join(miss[:6]))
+    noflash = [a for a, l in lines if a in rb and not {'gemini-3.5-flash', 'gemini-flash-latest'} & set(rb[a].get('models', []))]
+    if noflash: bad.append(f'C-readback 3.5-flash 둘째 받아쓰기 없는 줄 {len(noflash)}(합의오독 검사 안 함) — readback --resume')
+    for k in ('받아쓰기 실패', '합의오독', '숫자'):
+        hit = [a for a, l in lines if a in rb and k in rb[a].get('flag', '')]
+        if hit: bad.append(f'C-readback {k} {len(hit)}줄: ' + ','.join(hit[:6]))
+    return bad
+
 
 def gate(ep):
     m = json.load(open(os.path.join(ep, 'meta.json'), encoding='utf-8')); bad = []
@@ -76,6 +97,7 @@ def gate(ep):
     # 10/15 사장님 "유튜브도 카페도 쉽게 설명해 주고 쉽게 이해되게 써야 할 거 아니야" — 점수 관문은 '이해되는가'를 안 쟀다
     #   (P-1 썸네일 7.23 통과 → 사장님이 읽고 이해 못 함). 처음 보는 심사관이 제목·썸네일·대본 각 장을 한 문장으로 다시 말해 뜻이 맞아야 올린다.
     #   ep/<편>/understand_test.md: 항목마다 [보여 준 것 → 심사관 한 문장 → 맞음/틀림·헷갈린 곳 → 고친 것] + 맨 끝 '판정: 통과'.
+    bad += readback_check(ep)   # 10/18 C-readback
     import research_gate
     bad += research_gate.research_check(os.path.join(ep, 'research.md'))
     ut = os.path.join(ep, 'understand_test.md')

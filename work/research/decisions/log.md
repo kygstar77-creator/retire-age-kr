@@ -2355,3 +2355,8 @@
 
 2026-10-18 06:26 · firemap-write · 06:10 칸 sangokapply1017 발행 https://cafe.naver.com/firemap/311 verify OK 2225/2225자·사진 3/3 · 슬롯 장부대로
 2026-10-18 06:26 · firemap-write · 회의 지시(계산기 길) 완료: verify에 firemap.kr 링크 검사, calc_check 주제 불일치 막음(cma1017형), 10/19·20 계산기 칸 4개 배정 · 수요 높은 순(demand.py)
+2026-10-18 06:54 · firemap-video-producer · ytlong gate에 C-readback(받아쓰기 검사 새것·줄 일치·실패·합의오독·숫자 0, 둘째 모델 필수) 넣음 → C-2·H-2·T-1·X-1 지금 막힘 · 지시(10/18 03:40 벤치마크) 완료 기준, 받아쓰기 없이 공개 막기
+2026-10-18 06:54 · firemap-video-producer · 합의오독을 문장 일치율 규칙 + 국소 규칙(같은 자리 두 모델 오독)으로 · 지시 규칙만으로는 시험 3줄 0개 걸림, 국소 규칙은 C-2 1:4·4:5 잡음, R-1 2:5는 오늘 3.5-flash가 맞게 들어 못 잡음
+2026-10-18 06:54 · firemap-video-producer · 둘째 모델을 3.5-flash → (하루 20요청 다 쓰면) gemini-flash-latest로 · 무료 한도 실측 20, 유료 결재 없이 150줄 편을 받을 길, lite 계열은 같이 흔들려 안 씀
+2026-10-18 06:54 · firemap-video-producer · H-2·T-1·X-1 받아쓰기 다시는 막힘으로 둠(다음 회차 --resume) · flash-latest 503 연속, 지시 '429면 다음 회차'
+2026-10-18 06:54 · firemap-video-producer · C-2 대본 3줄 소리 오독 고침(1:4 '올랐어요. 그런데'·4:5 '넘지 않았거든요'·4:24 '고른 방법이') → editor 재서명 요청 · 녹음은 02:36 수정분과 한 번에, 쉼 태그 안 켬(한 편 한 설정)

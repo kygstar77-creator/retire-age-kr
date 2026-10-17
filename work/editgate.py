@@ -143,8 +143,9 @@ def calc_check(pkg):
     title = open(tp, encoding='utf-8', errors='ignore').read() if os.path.exists(tp) else ''
     body = '\n'.join(open(f, encoding='utf-8', errors='ignore').read() for f in files(pkg)[1:])
     for pat, path in CALC:
-        if re.search(pat, title) and not re.search(r'firemap\.kr/' + re.escape(path) + r'\?[^\s]*utm_source=cafe', body):
-            return [f"제목이 '{re.search(pat, title).group(0)}' 주제인데 끝에 계산기 줄 없음 — 예: firemap.kr/{path}?utm_source=cafe&utm_medium=post&utm_campaign=<묶음>"]
+        # 10/17 report 요청: #296(retax1016)은 'firemap.kr/…'로 시작해 https:// 가 없어 편집기가 링크로 안 바꿨다(contentHtml <a href> 0) → https:// 필수
+        if re.search(pat, title) and not re.search(r'https://firemap\.kr/' + re.escape(path) + r'\?[^\s]*utm_source=cafe', body):
+            return [f"제목이 '{re.search(pat, title).group(0)}' 주제인데 끝에 눌리는 계산기 줄 없음(https:// 빠지면 링크가 안 됨) — 예: https://firemap.kr/{path}?utm_source=cafe&utm_medium=post&utm_campaign=<묶음>"]
     return []
 
 

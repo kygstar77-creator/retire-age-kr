@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-17 12:33",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "증여세 면제한도/결혼하면 달라진다",
+ "num": "1억 5천만원까지 0원",
+ "sub": "혼인신고 앞뒤 2년 · 부모에게 받을 때",
+ "label": "상속세 및 증여세법",
+ "src": "국가법령정보센터 제53조의2",
+ "icon": "receipt",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 115,
+ "num_px": 92,
+ "sub_px": 53,
+ "board": [
+  "w2cafe1017",
+  "sangdo1017",
+  "kospidrop1017",
+  "bpcut1016",
+  "mixreset1016",
+  "w1scafe1016",
+  "retax1016",
+  "soxl1016",
+  "pencap1015",
+  "convreal1016"
+ ]
+}

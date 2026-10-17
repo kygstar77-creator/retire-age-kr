@@ -3,7 +3,7 @@
 // 판은 글자 줄 8개 이하(제목·큰 값·작은 줄·출처·자막), 같은 판 20초 이하는 c2props가 잰다. 말 줄이 7초를 넘으면 줄 가운데에서 강조 칸이 한 번 바뀐다(lfrender '같은 화면 8초').
 // 숫자 글자는 전부 c2.json에서 온다(c2props.py가 calc·대본과 기계 대조). 옛 v2 화면은 ep/C-2/C2.v2.tsx.bak.
 import React from 'react';
-import {AbsoluteFill, Audio, Img, Sequence, interpolate, staticFile, useCurrentFrame, Easing} from 'remotion';
+import {AbsoluteFill, Audio, Img, Sequence, interpolate, staticFile, useCurrentFrame, Easing, delayRender, continueRender} from 'remotion';
 import {T, F, CL, FONT_CSS, Flame} from './parts/fm';
 import {TallyFrame, TallyCaption, TallyLine, TallyArt, SAFE} from './motion/TallyFrame';
 import {TallyBroll} from './motion/TallyBroll';
@@ -37,8 +37,8 @@ const Big: React.FC<{s: CScene}> = ({s}) => {
   const f = useCurrentFrame(); const d = s.data; const o = ease(f, 4, 16); const z = bigSize(d.v, 1600, 210);
   return (
     <TallyFrame title={d.title} art={art(d.icon, d.c ? col(d.c) : undefined)} source={d.source} chapter={d.chapter} lines={tl(s.lines)}>
-      <Pulse s={s} x={160} y={300} w={1600} h={z * 1.25} />
-      <div style={{position: 'absolute', left: 100, width: 1720, top: 300 + (210 - z) * 0.5, display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: o, transform: `scale(${0.94 + 0.06 * o})`}}>
+      <Pulse s={s} x={160} y={330} w={1600} h={z * 1.25} />
+      <div style={{position: 'absolute', left: 100, width: 1720, top: 330 + (210 - z) * 0.5, display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: o, transform: `scale(${0.94 + 0.06 * o})`}}>
         <div style={{...F, fontWeight: 800, fontSize: z, lineHeight: 1.18, color: col(d.c), letterSpacing: -4, whiteSpace: 'nowrap'}}>{d.v}</div>
         {d.s ? <div style={{...F, fontWeight: 700, fontSize: 46, color: T.ink2, marginTop: 22, whiteSpace: 'nowrap'}}>{d.s}</div> : null}
       </div>
@@ -50,13 +50,13 @@ const Pair: React.FC<{s: CScene}> = ({s}) => {
   const f = useCurrentFrame(); const d = s.data; const st = starts(s.lines);
   const at2 = d.at2 != null ? st[Math.min(d.at2, st.length - 1)] : (s.lines.length > 1 ? st[1] : Math.round(s.lines[0].frames * 0.45));
   const one = (v: string, sub: string, c: string, a: number, x: number) => { const o = ease(f, a, 14); const z = bigSize(v, 760, 170);
-    return <div style={{position: 'absolute', left: x, width: 800, top: 330, display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: o, transform: `translateY(${(1 - o) * 20}px)`}}>
+    return <div style={{position: 'absolute', left: x, width: 800, top: 350, display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: o, transform: `translateY(${(1 - o) * 20}px)`}}>
       <div style={{...F, fontWeight: 800, fontSize: z, lineHeight: 1.15, color: col(c), letterSpacing: -4, whiteSpace: 'nowrap'}}>{v}</div>
       <div style={{...F, fontWeight: 700, fontSize: 44, color: T.ink2, marginTop: 18, whiteSpace: 'nowrap'}}>{sub}</div></div>; };
   const lit = f >= at2 + 12;
   return (
     <TallyFrame title={d.title} art={art(d.icon)} source={d.source} chapter={d.chapter} lines={tl(s.lines)}>
-      {lit ? <div style={{position: 'absolute', left: 1000, top: 290, width: 760, height: 330, background: T.soft, borderRadius: 28}} /> : null}
+      {lit ? <div style={{position: 'absolute', left: 1000, top: 310, width: 760, height: 330, background: T.soft, borderRadius: 28}} /> : null}
       {one(d.v1, d.s1, d.c1, 4, 160)}
       <div style={{position: 'absolute', left: 940, top: 360, width: 40, height: 220, borderLeft: `3px solid ${T.line}`}} />
       {one(d.v2, d.s2, d.c2, at2, 960)}
@@ -71,7 +71,7 @@ const Rows: React.FC<{s: CScene}> = ({s}) => {
   const k = (() => { let j = 0; rows.forEach((_, i) => { if (f >= show(i)) j = i; }); return j; })();
   return (
     <TallyFrame title={d.title} art={art(d.icon)} source={d.source} chapter={d.chapter} lines={tl(s.lines)}>
-      <div style={{position: 'absolute', left: 200, width: 1520, top: 300 + (4 - Math.min(4, n)) * 30}}>
+      <div style={{position: 'absolute', left: 200, width: 1520, top: 340 + (4 - Math.min(4, n)) * 30}}>
         {rows.map((r, i) => { const o = ease(f, show(i), 12); const hot = d.hot !== false && i === k && n > 1;
           return <div key={i} style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: rh, padding: '0 36px', marginBottom: 10, borderRadius: 18,
             background: hot ? T.soft : '#fff', border: `2px solid ${hot ? T.soft : T.line}`, opacity: o, transform: `translateX(${(1 - o) * -30}px)`}}>
@@ -91,7 +91,7 @@ const Bars: React.FC<{s: CScene}> = ({s}) => {
   return (
     <TallyFrame title={d.title} art={art(d.icon)} source={d.source} chapter={d.chapter} lines={tl(s.lines)}>
       <Pulse s={s} x={v ? 180 : 140} y={v ? 270 : 280} w={v ? 1560 : 1640} h={v ? 560 : 540} />
-      <TallyBars bars={bars} x={v ? 300 : 420} y={v ? 330 : 310} w={v ? 1320 : 1180} h={v ? 420 : 480} max={d.max} min={0} dir={v ? 'v' : 'h'} labelSize={v ? 44 : 46} valueSize={v ? 60 : 62} />
+      <TallyBars bars={bars} x={v ? 300 : 420} y={v ? 350 : 345} w={v ? 1320 : 1180} h={v ? 400 : 450} max={d.max} min={0} dir={v ? 'v' : 'h'} labelSize={v ? 44 : 46} valueSize={v ? 60 : 62} />
     </TallyFrame>
   );
 };
@@ -101,7 +101,7 @@ const Grid: React.FC<{s: CScene}> = ({s}) => {   // 바닥난 6명: 3×2 칸
   const k = lineAt(s.lines, f);
   return (
     <TallyFrame title={d.title} art={art(d.icon)} source={d.source} chapter={d.chapter} lines={tl(s.lines)}>
-      <div style={{position: 'absolute', left: 200, top: 300, width: 1520, display: 'flex', flexWrap: 'wrap', gap: 28}}>
+      <div style={{position: 'absolute', left: 200, top: 330, width: 1520, display: 'flex', flexWrap: 'wrap', gap: 28}}>
         {cells.map(([a, b, ln], i) => { const o = ease(f, (st[ln] ?? 0) + 4 + (i % 5) * 6, 12); const lit = (d.lit as number[][])[k]?.includes(i);
           return <div key={i} style={{width: 488, height: 220, borderRadius: 22, background: lit ? T.soft : '#fff', border: `2px solid ${lit ? T.accent : T.line}`, opacity: o,
             display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
@@ -171,6 +171,15 @@ const Pic: React.FC<{s: CScene; badge: string}> = ({s, badge}) => {
 
 const KIND: Record<string, React.FC<{s: CScene}>> = {big: Big, pair: Pair, rows: Rows, bars: Bars, grid: Grid, ask: Ask, list5: List5};
 
+// 글꼴(PD)을 다 받은 뒤 그린다 — 10/17 미리보기에서 숫자가 대체 글꼴로 찍힌 프레임이 섞였다(@font-face만으로는 렌더가 기다리지 않음)
+const useFont = () => {
+  const [h] = React.useState(() => delayRender('PD 글꼴'));
+  React.useEffect(() => {
+    Promise.all([['700', 'fonts/pd700.ttf'], ['500', 'fonts/pd500.ttf']].map(([w, u]) => new FontFace('PD', `url(${staticFile(u)})`, {weight: w}).load()))
+      .then((fs) => { fs.forEach((x) => document.fonts.add(x)); continueRender(h); }).catch((e) => { console.error(e); continueRender(h); });
+  }, [h]);
+};
+
 // ───────── 고정 칸: 바닥나는 해 ─────────
 const FloorBox: React.FC<{p: C2Props}> = ({p}) => {
   const f = useCurrentFrame(); if (f < p.boxOn) return null;
@@ -184,6 +193,7 @@ const FloorBox: React.FC<{p: C2Props}> = ({p}) => {
 };
 
 export const C2: React.FC<C2Props> = (p) => {
+  useFont();
   let from = 0;
   return (
     <AbsoluteFill style={{background: T.bg}}>

@@ -2282,3 +2282,6 @@
 2026-10-17 11:02 · firemap-video-producer · C-2 렌더 보류 · 화면 글자 편집 서명 없음 + aitell script 실패(숫자 2개 문장 21%) — youtube-loop·editor에 10/18 12:00 시한 요청
 2026-10-17 11:02 · firemap-video-producer · H-2 v3(163줄)·T-1 v4.1(186줄) Chirp 한 날 녹음 끝(튀는 줄 0) · 다음 회차 화면·렌더 시간 확보
 2026-10-17 11:02 · firemap-video-producer · C-2 실사 3개 교체(8087771 실존 인물 옆얼굴·38783512 차트 눈금 숫자·8276001 계산기 화면 숫자) · 얼굴·숫자 금지
+
+2026-10-17 11:22 · firemap-video-producer · H-2 v3 화면 전면 새로(h2props·H2.tsx = C2 틀, 108장면·실사 29%) · 대본 v3 질문 넷 장·10/17 화면 기준
+2026-10-17 11:22 · firemap-video-producer · C2·H2에 글꼴 delayRender 추가 · 미리보기에서 숫자가 대체 글꼴로 찍힌 프레임 확인

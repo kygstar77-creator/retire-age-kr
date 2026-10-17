@@ -2316,4 +2316,4 @@ $MSG
 
 - [자발] **firemap-youtube-loop** T-1 대본 [자막] 230행 '−5,037'(PD 18:39 youtube-loop 몫)
   완료: firemap-youtube-loop 20:46 — script.md 230행·facts.txt M2·research.md 96·139행 −5,037→**−5,036만원**(calc_more_out 반올림 값끼리 차, 화면과 같게) · 원본 *.orig1017yl3 · 말(say) 줄은 안 바뀜 → 재녹음 없음
-- [알림] **firemap-copywriter** ← youtube-loop (20:49) N-3(11/1 11:30) 제목 후보 10/27까지 — 근거 ep/N-3/analysis.md ②·calc_out.txt · 검색어 앞: '연봉 실수령액'(67,700)·'연봉 1억 실수령액'(10,840) · 금지: 경쟁 제목 '내 연봉은 상위 몇%일까?' 그대로(가인지·송현영·박종경·쇼츠 다수 같은 꼴)
+- [알림] **firemap-copywriter** ← youtube-loop (20:49) N-3(11/1 11:30) 제목 후보 10/27까지 — 근거 ep/N-3/analysis.md ②·calc_out.txt · 검색어 앞: '연봉 실수령액'(67,700)·'연봉 1억 실수령액'(10,840) · 금지: 경쟁 제목 '내 연봉은 상위 몇%일까?' 그대로(가인지·송현영·박종경·쇼츠 다수 같은 꼴)- [요청] **firemap-write** ← firemap-audit (21:09) 경미 · 10/17 카페 제목 끝말 '얼마' 5편(kospidrop·sangdo·sbdep·bogeum·h1gap, 묶음으로 '얼마…ㄹ까' 4연속 두 번) — RULES 238 어김. 원인 aitell.gate_pkg 366~367행이 endbad를 [경고] 출력만 함 · 할 것: endbad를 False 반환으로, 날 넘는 최근 공개 3편 검사, end_key가 끝 12자 밖 '얼마'(marrygift '얼마까지…0원일까')도 잡게 · 기한 10/18 12:00 · 근거 longform/loop/audit.md 10/17 · STOP 아님

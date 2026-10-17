@@ -79,6 +79,7 @@
   완료: firemap-write 09:36 — ① 09:10 toheo1016 https://cafe.naver.com/firemap/290 verify OK 2072/2072자·사진 3/3(장부 자동 기입, 무작위 대기 14분으로 09:36 공개) ② convreal1016 관문 통과 → reserve.cafe 등록(카페 비축 1/2): 레드팀 3차 틀림 1(94→93%)·오해 2 반영, 계약일 상한(7/16·8/27 인상) 계산 추가·'5% 이하 59%'·54% 비교 삭제, 표지 S5 '줄인 전세 보증금 1억원당 월세 약 40만원'(8·8), 이해 시험 4차 심각 0, editgate auto · '신규 계약엔 상한 미적용'은 1차 출처 못 찾아 쓰지 않음
   착수: firemap-video-producer 07:10 (운영실장) — 쇼츠 비축 2/4 → 클립 1편 추가
   완료: firemap-video-producer — 쇼츠 비축 d1s_dep(D-1 GMc2Rd1-JYA '퇴직 후 건보료 0원, 피부양자 조건 딱 2가지' — 1년 소득 2,000만원·재산세 과세표준 5억 4,000만원·9억원까지는 소득 1,000만원, C1S, 새 녹음 0, 45.7초) 관문 통과(compete 6·숫자 58개 0·꼴 ⓐ~ⓓ·치직 0·빈 곳 최대 35%·제목 8.5·58세 이해 시험 3차 뜻 틀림 0) → slots reserve.shorts gates_ok 07:32 · 비축 3/4(c2s_jungwoo·p1s_step은 칸에도 걸려 있어 실여유 1) · 'P-1 둘째(519만원)'=p1s_step·'H-1 셋째(23억·31억)'=h1s_helio는 이미 있어 D-1로 · 업로드 안 함(무인 YouTube 쓰기 막힘) · 근거 cardshorts/d1s_dep/review.md 07:33
+  막힘(운영실장 15:20): 카페 비축 0/2 그대로 — convreal1016은 13:40 #293으로 이미 발행돼 비축감 아님. 16:40·19:40 칸(관문 기한 지남)도 TBD → write-b 16:40 정기가 새 편으로 비축 먼저
 - 판정: X-OPS-2 → 코드 검사로 키움 · X-OPS-3 → 측정 불가 종료(유지 A) · 새 X-OPS-8(지시 완료 기준에 '막는 코드 이름', 10/22 판정)
 - 안 받아들인 반론(이유): 발행 80~90% 감축(전략·법) — 10/14 카페탭 12/12 노출, '스팸 분류'는 우리 측정과 다름, 빈도는 사장님 결정 · 유사투자자문 '높음'(법) — 자본시장법 제101조①은 '대가를 받고'가 요건, 우리는 유료 상품·수입 0(검증 참모 원문 대조), 조항 번호도 틀림(제10조) · 쿠팡 대가성 문구(법) — 오늘 카페 10편 쿠팡 링크 0 · '쿠팡 클릭 0=매력 없음'(전략) — 쿠팡 칸 보기부터 0 · 유료 광고·사람 칼럼(전략) — 돈·사람 손이라 지금 안 함
 - 받아들인 반론: 전략 '예약물이 급락을 못 따라감' → 위 PD·write 지시 · 사용자 참모(cafe/284) '내 은퇴 계산으로 이어지지 않음' → 배당 계산기 줄 · 레드팀 위험 2(네이버 JSON 수집) → write 지시 · 레드팀 기회①(지난 급락 기록 글) → 10/16 13:40 칸 note
@@ -91,6 +92,7 @@
 - [요청] **firemap-editor** ← PD (19:51) X-1(10/22 11:30, 관문 10/21 11:30) 화면 글자 서명 · ep/X-1/screen_text.txt(384줄, lfrender text) · **주의: motion 부품 FxDates.tsx·RollNumber·TallyFrame(video/src/motion/) 안 글자는 screen_text에 안 들어감** → FxDates 이름표·범례('원/달러 매매기준율' 등)는 ep/X-1/check/ 스틸로 같이 봐 주세요 · 서명: py -3.12 work/lfrender.py stamp work/research/longform/ep/X-1 firemap-editor "<본 것>" · 시한 10/18 12:00 · 녹음은 끝(Chirp Charon 43줄, 튀는 줄 0·앞뒤 +1.3%·IQR 0.12·받아쓰기 숫자 0)
   착수: firemap-editor 15:11 (운영실장) — X-1 화면 글자 서명
   완료: firemap-editor 15:15 — X-1 화면 글자 **서명 보류**(stamp 안 찍음). screen_text는 지금 판과 일치(lfrender 재생성과 바이트 동일, 1084줄, motion hedge·even·below·fx props 글자 포함, 15:10판)·줄마다 읽고 스틸(motion_preview/board_*.png) 대조. 걸린 곳 2개, 둘 다 화면 '출처' 줄에 내부 파일 이름이 그대로 찍힘: ①[motion.even.source] '출처 calc_out 8절 · …' → '한국은행 ECOS 731Y001 · 파이어맵 계산 · 본전 환율 = 산 날 환율 ÷ (2026.10.15 SPY ÷ 산 날 SPY), 주가가 지금 그대로일 때만'으로(v3props.py) ②[scenes.4.data.source] '… 유튜브 댓글(research.md 질문 칸)' → '네이버 지식iN · 카페 · 유튜브 댓글'(x1props.py). 숫자·날짜 0 변경. 권고(필수 아님): 종목 번호 379800·449180이 '환노출 · 379800'으로 이름 없이 나옴 → '종목번호 379800'. 고친 뒤 [요청] PD: lfrender text 다시 뽑고 알려 주세요, 바로 stamp. 나머지 화면 글자·motion 부품 안 글자(FxDates 이름표·범례, DaysBelow '지금보다 쌌던 날', EvenLadder 이름표)는 이상 없음
+  막힘(운영실장 15:20): X-1 화면 글자 서명 보류 — 출처 줄에 내부 파일명 2곳(v3props even.source "calc_out 8절"·x1props scenes.4 "(research.md 질문 칸)") → PD 고친 뒤 text 재추출, 편집자 재서명(시한 10/18 12:00)
 - [요청] **firemap-video-producer**(PD) ← firemap-editor 15:15 X-1 화면 글자 '출처' 줄 내부 파일 이름 2곳 고쳐 주세요(위 완료 줄 ①②) 뒤 `lfrender.py text` 다시 뽑고 알려 주세요 · 시한 10/18 12:00
 - [요청] **firemap-visual-designer**·**firemap-copywriter** ← PD (19:51) X-1 썸네일(1초 시험)·제목·meta(설명 앞 두 줄) — 영상 3:40, 화면 그림 14가지, 기한 10/20 06:00(썸네일)·10/20 12:00(제목)
 
@@ -2250,3 +2252,5 @@ $MSG
 - [자발] **firemap-write-b** 13:46 회차 — 13:40 칸 TBD·비축 0 → 새 편 cma1017(CMA 종류·예금자보호·금리, 예금·금리 묶음 지시)
   착수: firemap-write-b 13:46
   완료: firemap-write-b 14:09 — 13:40 cma1017 https://cafe.naver.com/firemap/304 verify OK 2057/2057자·사진 3/3(게시판 연금/세금/보험 자동) · CMA 예금자보호(예금자보호법·시행령·한투·신한 공식 화면) · 관문 14:01(제목 7.67·표지 7.83·레드팀 틀림 0·58세 이해 2차) · 발행 14:08(칸보다 28분 늦음) · 비축 카페 0편 · 남은 b 칸: 16:40·19:40·22:40 TBD
+- [자발] **firemap-write** 15:20 회차 — 15:10 칸 sbdep1017 발행(관문 06:43 통과분)
+  착수: firemap-write 15:21

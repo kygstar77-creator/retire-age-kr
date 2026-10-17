@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-17 23:49",
+ "by": "work/cafecover.py",
+ "out": "00.png",
+ "topic": "KRX 금 웃돈",
+ "num": "1천만원이 956만원",
+ "sub": "국제 금값은 7% 올랐는데",
+ "label": "작년에 산 금 · 한국거래소",
+ "src": "네이버 증권 · 한국은행 · 야후 파이낸스",
+ "icon": "coins",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 168,
+ "num_px": 120,
+ "sub_px": 62,
+ "board": [
+  "depmature1017",
+  "nhisadj1017",
+  "h1gapcafe1017",
+  "marrygift1017",
+  "bogeum1017",
+  "sbdep1017",
+  "cma1017",
+  "jeonseloan1017",
+  "w2cafe1017",
+  "sangdo1017"
+ ]
+}

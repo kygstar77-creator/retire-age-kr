@@ -1743,9 +1743,9 @@
   {
    "at": "2026-10-18 10:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "lev2x1018",
    "owner": "firemap-write-b",
-   "gates_ok": null,
+   "gates_ok": "2026-10-18 07:25",
    "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대"
   },
   {

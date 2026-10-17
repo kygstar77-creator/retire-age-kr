@@ -283,6 +283,7 @@ def comma_day(day, pkg=None, title=None):
 
 SAMEDAY_FROM = '2026-10-05'   # 같은 날 칸끼리 숫자·끝말 겹침 검사(10/5 audit 07:57: nhisprop1005와 nhisrent1005가 586점 예시를 같이 씀, 7칸 중 5칸이 '월 얼마'로 끝남)
 OVERLAP_MIN = 3               # 같은 날 다른 칸과 겹치는 '둥글지 않은' 숫자(586·211.5·7.19처럼 끝이 0이 아닌 3자리 이상)가 이 수 이상이면 같은 예시
+END_BLOCK_FROM = '2026-10-18'  # 이날 칸부터 끝말 반복을 막는다(그 전 칸은 이미 관문 통과·발행분)
 END_SAME_MIN = 3              # 같은 날 같은 끝말 칸 수(그 칸 포함)가 이 수 이상이면 걸림
 
 
@@ -314,11 +315,12 @@ def _key_nums(pkg):
 
 
 def end_key(title):
-    """제목 끝말 묶음: 끝 12자 안에 '얼마'·'몇'이 있으면 그 말, 아니면 끝 두 글자(까·요·다 뺀 것)."""
+    """제목 끝말 묶음: 쉼표 뒤(없으면 끝 12자)에 '얼마'·'몇'이 있으면 그 말, 아니면 끝 두 글자(까·요·다 뺀 것)."""
     t = re.sub(r"[\s?!.…'\"]+$", '', title.strip())
-    tail = t[-12:]
+    # 10/17 audit: marrygift '…얼마까지 증여세 0원일까'는 '얼마'가 끝 12자 밖이라 '원일'로 셌다 — 쉼표 뒤 물음 덩어리 전체를 본다
+    tail = t.rsplit(',', 1)[-1] if ',' in t else t[-12:]
     for k in ('얼마', '몇'):
-        if k in tail: return k
+        if k in tail or k in t[-12:]: return k
     return t.rstrip('까요다죠')[-2:]
 
 
@@ -356,6 +358,36 @@ def sameday_check(day, pkg=None):
     return over, endbad
 
 
+RECENT_END_N = 2   # RULES 238: 최근 공개 카페 2편과 끝말이 같으면 3연속 — 막는다(날을 넘어도)
+
+
+def recent_cafe_titles(n=RECENT_END_N, exclude=None):
+    """published.txt가 카페 주소인 묶음 중 최근 n편의 (item, 제목), 최신 먼저."""
+    import glob
+    root = os.path.dirname(os.path.abspath(__file__))
+    ex = os.path.normcase(os.path.abspath(exclude)) if exclude else None
+    rows = []
+    for f in glob.glob(os.path.join(root, 'research', '*', 'pkg', 'published.txt')):
+        d = os.path.dirname(f)
+        if ex and os.path.normcase(d) == ex: continue
+        try:
+            if 'cafe.naver.com' not in open(f, encoding='utf-8').read(): continue
+            rows.append((os.path.getmtime(f), os.path.basename(os.path.dirname(d)), open(os.path.join(d, 'title.txt'), encoding='utf-8').read().strip()))
+        except OSError:
+            continue
+    rows.sort(reverse=True)
+    return [(i, t) for _, i, t in rows[:n]]
+
+
+def recent_end_check(pkg):
+    """날을 넘는 끝말 연속 검사. 걸리면 사유 한 줄, 아니면 ''."""
+    me = end_key(open(os.path.join(pkg, 'title.txt'), encoding='utf-8').read())
+    prev = recent_cafe_titles(exclude=pkg)
+    if len(prev) == RECENT_END_N and all(end_key(t) == me for _, t in prev):
+        return f"제목 끝말 '{me}'이 최근 공개 {RECENT_END_N}편({', '.join(i for i, _ in prev)})과 같아 3연속 — 다른 끝말로"
+    return ''
+
+
 def gate_pkg(pkg):
     """발행기용. (올려도 되나, 한 줄 사유, 걸린 곳)."""
     text, files = pkg_text(pkg)
@@ -364,8 +396,13 @@ def gate_pkg(pkg):
         day0 = open(sp0, encoding='utf-8').read().strip()[:10] if os.path.exists(sp0) else ''
         if day0 >= SAMEDAY_FROM:
             over, endbad = sameday_check(day0, pkg)
-            for e in endbad: print('[경고]', e)
             if over: return False, '같은 날 칸과 같은 예시 — ' + '; '.join(over), over
+            # 10/17 audit: endbad를 [경고]만 찍어 '얼마' 끝말이 하루 5칸 나갔다 — 막는다(10/18 칸부터)
+            if endbad and day0 >= END_BLOCK_FROM: return False, '같은 날 끝말 반복 — ' + '; '.join(endbad), endbad
+            for e in endbad: print('[경고]', e)
+            if day0 >= END_BLOCK_FROM:
+                rb = recent_end_check(pkg)
+                if rb: return False, rb, [rb]
         if day0 < OPEN_FROM:
             for e in opening_check(pkg): print('[경고]', e)
         fb = frame_check(pkg)

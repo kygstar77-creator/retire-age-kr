@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-17 09:34",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "저축은행 적금 이자/생각보다 적은 이유",
+ "num": "1년 이자 약 10만 3천원",
+ "sub": "월 50만원씩 · 연 3.75% · 세금 뗀 값",
+ "label": "금감원 9월 공시",
+ "src": "",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 115,
+ "num_px": 88,
+ "sub_px": 56,
+ "board": [
+  "sangdo1017",
+  "kospidrop1017",
+  "bpcut1016",
+  "mixreset1016",
+  "w1scafe1016",
+  "retax1016",
+  "soxl1016",
+  "pencap1015",
+  "convreal1016",
+  "p1cafe1016"
+ ]
+}

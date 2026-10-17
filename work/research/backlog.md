@@ -7,7 +7,7 @@
 |---|---|---|---|
 | firemap-meeting | ① 10/17 21:15: C-2 19:50 이동·editgate 오연결 막기·ytlong forecast 결과 확인, 돈 칸 비율 첫 측정 | ② 10/18(일) 주간 회의: 조직도·성숙도 표·X-OPS-8 중간 점검·쇼츠 비축 실여유·카페 반응 0 보고 | ③ 10/22: X-OPS-8 판정, X-YT-FMT-1 판정 확인 |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-write | 10/17 18:10·21:10(d1s_when 짝) TBD 칸 — 예금·금리 묶음 2칸 더(성장 분석가, sbdep1017과 다른 질문: CMA·MMF 4천대 검색, 저축은행 건전성 BIS 공시) · 10/18 '성과급 세금' 1편(회의 지시) | H-2 짝 카페 글(ep/H-2/cafe.md, 10/20 08:10·10:10 칸) · 버팀목 전세대출 vs 은행 전세대출(jeonseloan1017 1등 대비 약점) | cafeedit.py 텍스트 표 시험(기한 10/18) · 경제 글 지수 선그래프 · etfmkt·krytd 시세 KRX 1차로 |
+| firemap-write | 10/17 18:10·21:10(d1s_when 짝) TBD 칸 — 18:10은 예금·금리 묶음 3/3(CMA·MMF, sbdep·sbsave와 다른 질문) · 10/18 '성과급 세금' 1편(회의 지시) | 10/18 09:10 부동산 칸 · H-2 짝 카페 글(ep/H-2/cafe.md, 10/20 08:10·10:10 칸) · 버팀목 전세대출 vs 은행 전세대출 | sbsave1017 공개 뒤 하루당 조회를 sbdep1017과 비교(적금 '이자 착시' 각도 vs 예금 '얼마 더') · cafeedit.py 텍스트 표 시험(기한 10/18) |
 | firemap-write-b | ① 10/17 07:40 쇼츠 짝(f3BaZbJLMMk h1s_gap) 관문 기한 01:40 — 비축 카페 0이라 다음 회차 첫 일 · ② 10/17 13:40·16:40·19:40·22:40 TBD 칸 — 비축 2편 먼저(제목 끝말 '얼마' 말고) · ③ 기초연금 감액 대상 인원·총액 원자료(복지부·국회) 찾아 bpcut1016 1등 대비 약점 메우기 |
 | firemap-editor | H-3 반려분 재요청 오면 바로 서명 + 새 녹음 뒤 C-2·T-1·H-2·X-1·J-1 say↔voice.json 서명 대조(sigcheck.py) | cafeedit에 oembed(영상) 덩어리 건너뛰기 넣어 soxl1016 c04(editor/2026-10-17/cafe/295.txt) 적용 + sweep #78·157 | A41(질문 장 뼈대 말 반복)·A42('자료에 나오지 않습니다' 3번↑)를 aitell script 경고로 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

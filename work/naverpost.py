@@ -813,7 +813,8 @@ def private_video_links(pkg):
     영상 공개(11:30) 전 칸(10:40·09:10)에 잡혀 있었다 — 그대로 나가면 '비공개 동영상' 링크가 된다."""
     ids = set()
     for f in os.listdir(pkg):
-        if f.endswith('.txt') and f[:1] == 'c':
+        # 2026-10-17 write-b: f[:1]=='c'가 check_gemini.txt까지 읽어, 검증 기록 속 옛 영상 주소로 h1gapcafe1017이 하루 막혔다
+        if re.fullmatch(r'c\d+\.txt', f):
             ids |= set(re.findall(r'(?:youtu\.be/|watch\?v=)([\w-]{11})', open(os.path.join(pkg, f), encoding='utf-8').read()))
     if not ids: return []
     try:

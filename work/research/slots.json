@@ -1590,7 +1590,8 @@
    "owner": "firemap-write",
    "gates_ok": "2026-10-16 23:41",
    "note": "firemap-write 2026-10-16 23:41: h1gapcafe1017 관문 통과 — '고덕동 전세 사는 사람이 헬리오시티 집을 사려면 얼마가 더 필요할까?'(쇼츠 h1s_gap AAaGTUL4sJQ 짝, 부동산, 국토부 실거래 10월분 10/16 재수신으로 영상 값 갱신, 제목 7.4·표지 7.75·레드팀 틀림 0·58세 이해 2차 통과·editgate auto, 발행은 영상 공개(07:20) 뒤 yt_pair: AAaGTUL4sJQ) | 순돌이 10/13 짝 글: 같은 날 07:20 shorts 'TBD'의 카페 짝 글. 공개된 영상 링크를 본문 끝에, 영상 설명 앞 5줄에는 이 글 주소. 짝이 TBD면 PD가 정한 쇼츠를 따른다. | 순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-meeting 10-15 21:33: yt_pair: AAaGTUL4sJQ(10/16 오후 v2 교체, 옛 LocU8wRSXvE) · 그 전 LocU8wRSXvE(10/16 교체, 옛 H7ElddpJqzc) (h1s_gap 07:20 쇼츠 짝) — 쇼츠 질문 하나 | firemap-write-b 07:45: 막힘 — 쇼츠 주소 AAaGTUL4sJQ로 고치고 재서명했으나 naverpost private_video_links가 check_gemini.txt 속 옛 주소(f3BaZbJLMMk)를 읽어 보류. 관문 코드 수정은 권한 판단에 막힘(사람 확인 필요). 다음 :10/:40 회차가 수정 후 바로 올릴 수 있음",
-   "pair": "TBD"
+   "pair": "TBD",
+   "published": "https://cafe.naver.com/firemap/308 19:54 verify OK 1325자"
   },
   {
    "at": "2026-10-17 09:10",
@@ -1678,11 +1679,12 @@
   {
    "at": "2026-10-17 19:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "h1gapcafe1017",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "순돌이 10/13 짝 글: 같은 날 19:20 shorts 'TBD'의 카페 짝 글. 공개된 영상 링크를 본문 끝에, 영상 설명 앞 5줄에는 이 글 주소. 짝이 TBD면 PD가 정한 쇼츠를 따른다. | 순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상",
-   "pair": "TBD"
+   "gates_ok": "2026-10-16 23:41",
+   "note": "순돌이 10/13 짝 글: 같은 날 19:20 shorts 'TBD'의 카페 짝 글. 공개된 영상 링크를 본문 끝에, 영상 설명 앞 5줄에는 이 글 주소. 짝이 TBD면 PD가 정한 쇼츠를 따른다. | 순돌이 10/13: 카페 하루 12편(사장님) — 90분 칸. 부동산 하루 2칸 이상 | firemap-write-b 19:54: 비축 0 → 07:40에 막혔던 관문 통과편 h1gapcafe1017로 채움(막힘 원인 naverpost private_video_links가 check_gemini.txt 속 옛 주소를 읽던 것 고침)",
+   "pair": "TBD",
+   "published": "https://cafe.naver.com/firemap/308 19:53 verify OK 1325자"
   },
   {
    "at": "2026-10-17 21:10",

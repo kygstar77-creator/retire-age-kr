@@ -107,6 +107,17 @@
     "url": "https://cafe.naver.com/firemap/307"
    },
    "note": "18:10 칸 marrygift1017 발행 18:47(칸보다 37분 늦음 — jitter 25분) verify OK 1997/1997자·사진 3/3 · 블로그 0(하루 상한·카페 위주 운영) · 새 묶음 bonustax1017(10/18 09:10, 회의 지시 '성과급 세금') 관문 통과: 자료조사 법령 7조(소득세법 55·136·137조, 시행령 194~196조)+뉴스 2+경쟁 5 · 교차검증 crosscheck(Gemini) 사실 4건 중 반영 2·유지 2(2월=소득세법 137조, 식대는 예시), 말투 15건 중 반영 5 · selfcheck 사실 0 · 레드팀 틀림 0·오해 6 반영 · 58세 이해 2차 통과 · 제목 8·표지 8 · editgate auto · 개선: 없음(worklist 0-a selfloop 이번 회차 못 돌림)"
+  },
+  {
+   "hour": 19,
+   "ts": "19:54",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "고덕동 전세 사는 사람이 헬리오시티 집을 사려면 얼마가 더 필요할까?",
+    "url": "https://cafe.naver.com/firemap/308"
+   },
+   "note": "19:40 칸 TBD·비축 0 → 관문 통과(10/16 23:41)·07:40 막힘편 h1gapcafe1017 발행. verify OK 1325/1325자·사진 3/3. 관문 기록 research/h1gapcafe1017/review.md(제목 7.4·표지 7.75·레드팀 틀림 0·58세 이해 2차 통과·editgate auto). 개선: naverpost private_video_links가 c\\d+.txt만 읽게(check_*.txt 속 옛 영상 주소로 보류되던 것)"
   }
  ]
 }

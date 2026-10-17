@@ -1,205 +1,347 @@
-# T-1 화면 재료 — script.md(장·말 줄·[자막]) + voice.json(줄 길이·소리) + calc_out.txt·facts.txt → work/video/t1.json (Remotion T1이 읽는다)
+# T-1 v4.1 화면 재료 — script.md(편집 서명 sha 2ea710d4, 186줄) + voice.json(줄 길이·소리, 10/17 Chirp 3 HD Charon) + calc_out.txt·calc_more_out.txt → work/video/t1.json (Remotion T1이 읽는다)
 #   py -3.12 work/research/longform/ep/T-1/t1props.py
-# p1props와 같은 방식(10/16 PD): 장면은 '그 장에서 이 말이 처음 나오는 줄'(ANCHOR)로 자르고, 장면 길이 = 목소리 길이.
-# 숫자: 화면 글자 숫자는 calc_out.txt(사례 A~E·정부 사례①~④)에서 파싱하거나 script.md 자막 문구 그대로(need로 기계 대조).
-import json, os, re, sys
+# 10/17 PD(T-1 담당): 대본 v4.1(질문 다섯 개 장)·10/17 롱폼 화면 기준(bgcheck: 실사 10%↑·컷 분당 3↑·같은 판 20초↓·큰 글자 9%↑·판 8줄↓)으로 C2 틀(c2props.py)을 따라 새로 짰다.
+#   옛 v3 판(ANCHOR 방식, has('같은 비율')·'국무회의'·'올해 팔면')은 t1props.v3.py.bak · T1.v3.tsx.bak · t1.v3.json.bak.
+# 틀: 판(big·pair·rows·bars·list5·table·cells·price·cal·zones·memo·stairs·band·five — TallyFrame) ↔ 꽉 찬 실사(broll — Pexels, public/bg/t1) ↔ 질문 카드(ask, 실제 질문을 우리 글씨로).
+# 줄은 번호가 아니라 말 글자 앞부분으로 찾는다(대본이 바뀌면 assert). cap = 판 왼쪽 위 '정확한 값' 칸 — script.md [자막] 문구를 줄여 쓴다(숫자는 그대로).
+# 숫자: props 안 숫자 글자는 전부 calc 두 개 또는 script.md에 있는 글자만 — 맨 아래 numcheck(덩이)·need(금액 통째)가 기계로 막는다.
+# 다섯 사람 표(A·D·E)는 말에서 빠져 화면에서도 뺐다.
+import json, os, re, sys, shutil
 sys.stdout.reconfigure(encoding='utf-8')
 EP = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.normpath(os.path.join(EP, '..', '..', '..', '..'))
 VID = os.path.join(WORK, 'video')
-sys.path.insert(0, os.path.join(WORK, 'research', 'longform', 'loop'))
-import speechcompare_script as SC
-RATE, FPS = 5.65, 30
+FPS, TAIL = 30, 75
+CALC = open(os.path.join(EP, 'calc_out.txt'), encoding='utf-8').read() + open(os.path.join(EP, 'calc_more_out.txt'), encoding='utf-8').read()
 SCRIPT = open(os.path.join(EP, 'script.md'), encoding='utf-8').read()
-CALC = open(os.path.join(EP, 'calc_out.txt'), encoding='utf-8').read()
-FACTS = open(os.path.join(EP, 'facts.txt'), encoding='utf-8').read()
-def need(*ss):
-    for s in ss: assert s in CALC or s in FACTS or s in SCRIPT, f'calc_out·facts·대본 자막에 없는 글: {s}'
+V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
+ALL = [l for s in V['sections'] for l in s['lines']]
+assert len(ALL) == 186, len(ALL)
+USED = set()
 
-# ───────── 숫자(calc_out 파싱): 사례 → {해: (공제율, 지방세 포함 만원)} ─────────
-CASE = {}
-for blk in re.split(r'\n(?===)', CALC):
-    m = re.match(r'== (\S+)', blk)
-    if not m: continue
-    rows = re.findall(r'(\d{4}): 공제율 (\d+)% .*?\(지방세 포함 ([\d,]+)만원\)', blk)
-    if rows: CASE[m.group(1)] = {int(y): (int(r), int(t.replace(',', ''))) for y, r, t in rows}
-B, C, A, D, E = CASE['B'], CASE['C'], CASE['A'], CASE['D'], CASE['E']
-assert (C[2026][1], C[2029][1], B[2026][1], B[2027][1], B[2028][1], B[2029][1]) == (1901, 1241, 8135, 8135, 11398, 14777)
-assert (B[2027][0], B[2028][0], B[2029][0], C[2029][0]) == (48, 32, 16, 80)
+# ── 실사 풀: Pexels(credits.json) 중 10/17 미리보기(앞·⅓·⅔·끝 4장) 눈 검사로 고른 것 — 얼굴·상표·간판·번호판·숫자 화면 없음 ──
+CR = {c['id']: c for c in json.load(open(os.path.join(EP, 'stock', 'credits.json'), encoding='utf-8'))}
+POOL = [35082942, 36820284, 6221101, 31400388, 7578842, 8320980, 6963487, 8471105, 8478946, 8439245, 4553292, 4553301, 4520154,
+        34030195, 14058352, 14059238, 1793371, 12079562, 32986074, 31251627, 6186015, 6602933, 34740733, 7710495, 7710453]
+# 뺀 것(10/17 눈 검사): 4693665 발코니 사람 · 7247815 휴대폰 계산기 화면 · 9057574 달력 숫자 · 5546826 수첩 글귀 · 20568183 먼 사람·버스 글자
+#   · 4685169 초록 화면 · 6963823·6963836 자판 숫자·시계 · 6150188 임신 검사 · 8132369 얼굴 · 8814711 서류철 상표 · 7710340 서류철 상표 띠
+os.makedirs(os.path.join(VID, 'public', 'bg', 't1'), exist_ok=True)
+for cid in POOL:
+    dst = os.path.join(VID, 'public', 'bg', 't1', f'{cid}.mp4')
+    if not os.path.exists(dst): shutil.copyfile(os.path.join(EP, 'stock', f'{cid}.mp4'), dst)
 
-def man(v):   # 만원 → '1억 4,777만원' / '8,135만원'
-    e, r = divmod(v, 10000)
-    return (f'{e}억 {r:,}만원' if r else f'{e}억원') if e else f'{r:,}만원'
-for v in (1901, 1241, 8135, 11398, 14777, 6234, 13536, 3263, 3379, 6642, 414, 73, 10765, 18157, 23651, 29195):
-    need(man(v))
-assert B[2026][1] - C[2026][1] == 6234 and B[2029][1] - C[2029][1] == 13536
-assert B[2028][1] - B[2027][1] == 3263 and B[2029][1] - B[2028][1] == 3379
-assert round(B[2029][1] / C[2029][1], 1) == 11.9
-G = re.findall(r'(\d{4}): 공제율 \d+% 공제 [\d.]+억 과표 [\d.]+억 기본공제 \S+ 산출 ([\d,]+)만원 \(지방세 포함 [\d,]+만원\) \| 정부 ([\d.]+)억', CALC)
-assert len(G) == 6, G
-GOV = [[y, f'{int(s.replace(",", "")) / 10000:.2f}억', f'{g}억'] for y, s, g in G]
-for y, ours, g in GOV: assert ours == g, (y, ours, g)    # 파이어맵 = 정부(억 둘째 자리)
-need('2.36억·3.20억·4.05억', '3.16억·9.23억·13.73억', '3.84억', '250만원 → 2,500만원', '11.9배', '1,284만원 → 744만원', '약 1,280만원 → 약 740만원')
+def L(t, cap=None):
+    hit = [i for i, l in enumerate(ALL) if l['text'].startswith(t)]; assert len(hit) == 1, (t, hit)
+    i = hit[0]; assert i not in USED, ('두 번 씀', t); USED.add(i)
+    l = ALL[i]; assert l.get('audio') and os.path.exists(os.path.join(VID, 'public', l['audio'])), t
+    return {'text': l['text'], 'audio': l['audio'], 'frames': l['frames'], 'cap': cap, 'i': i}
 
-SRC_LAW = '소득세법 §89·95·103(국가법령정보센터) · 파이어맵 계산(지방세 포함·필요경비 0)'
-SRC_GOV = '재정경제부 2026 세법개정안 상세본 p.57~60 · 9.1 보도자료 · 파이어맵 계산(지방세 포함)'
-SRC_QA = '재정경제부 세법개정안 문답 자료 p.37~38·49 · 파이어맵 계산'
-SRC_CUT = '정부안 소득세법 §103 단서(상세본 p.68) · 파이어맵 계산(지방세 포함)'
-NOTE = '정부안 기준 · 국회 통과 전'
+CH = [None]
+def S(kind, lines, **data):
+    ls = [L(*t) if isinstance(t, tuple) else L(t) for t in lines]
+    if CH[0] and kind == 'broll': data.setdefault('chapter', CH[0])   # 판에는 장 칩 안 씀 — 10/17 스틸 실측 판 글자 줄 중앙 8.0(기준 8 끝), 칩이 OCR 상자 하나
+    return {'kind': kind, 'lines': ls, 'frames': sum(l['frames'] for l in ls), 'data': data}
 
-RULES = [
-    ('duel', 'duel', '0.', None),
-    ('price', 'price', '1.', None),
-    ('ladder', 'ladder', '2.', None), ('taxcard', 'taxcard', '2.', ('올해 판다면',)),
-    ('rates', 'rates', '3.', None), ('climb', 'climb', '3.', ('한 해 늦게',)),
-    ('basic', 'basic', '4.', None), ('ratio', 'ratio', '4.', ('열두 배 가까이',)),
-    ('five', 'five', '5.', None),
-    ('verify', 'verify', '6.', None), ('cap', 'cap', '6.', ('공제에 한도가',)),
-    ('excluded', 'excluded', '7.', None),
-    ('calendar', 'calendar', '8.', None), ('ask', 'ask', '8.', ('여러분 집은',)),
+SRC_LAW = '소득세법·시행령(법제처 국가법령정보센터) · 파이어맵 계산(지방세 포함·필요경비 0)'
+SRC_GOV = '재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)'
+SRC_ME = '파이어맵 계산 · 지방세 포함 · 필요경비 0 · 가상 인물'
+
+def big(title, v, s, lines, icon='CircleDollarSign', c='accent', src=SRC_ME, **d): return S('big', lines, title=title, v=v, s=s, icon=icon, c=c, source=src, **d)
+def pair(title, a, b, lines, icon='Scale', src=SRC_ME, **d): return S('pair', lines, title=title, v1=a[0], s1=a[1], c1=a[2], v2=b[0], s2=b[1], c2=b[2], icon=icon, source=src, **d)
+def rows(title, rs, lines, icon='ListChecks', src=SRC_ME, **d): return S('rows', lines, title=title, rows=rs, icon=icon, source=src, **d)
+def bars(title, bs, lines, mx, dir='h', icon='ChartColumn', src=SRC_ME, **d): return S('bars', lines, title=title, bars=bs, max=mx, dir=dir, icon=icon, source=src, **d)
+def table(title, cols, rs, lines, icon='Table', src=SRC_GOV, **d): return S('table', lines, title=title, cols=cols, rows=rs, icon=icon, source=src, **d)
+def ask(n, q, frm, lines): return S('ask', lines, n=n, q=q, **({'from': frm} if frm else {}))
+USEDBG = {}
+def broll(cid, lines, say, side='left', x=None):
+    c = CR[cid]; k = USEDBG.get(cid, 0); USEDBG[cid] = k + 1; have = (c.get('sec') or 0) - 0.5
+    sec = sum(ALL[[i for i, l in enumerate(ALL) if l['text'].startswith(t)][0]]['frames'] for t in lines) / FPS
+    frm = 0 if k == 0 else int(min(max(0, have - sec), k * 6))   # 같은 클립을 다시 쓰면 다른 구간
+    s = S('broll', lines, src=f'bg/t1/{cid}.mp4', license=f"Pexels {cid} 무료({c['author']})", from_=frm * FPS, say=say, side=side, **({'x': x} if x is not None else {}))
+    s['data']['_need'] = round(sec + frm, 1); s['data']['_have'] = have
+    return s
+
+R = 'rise'; A = 'accent'; B = 'fall'; K = 'ink'
+J, Sx = '정민 씨', '수현 씨'
+scenes = []
+def ch(name): CH[0] = name
+
+# ── 0. 예고 ──
+ch(None)
+scenes += [
+    pair('2029년, 같은 20억 집', ['1,241만원', '정민 씨 · 10년 삶', B], ['1억 4,777만원', '수현 씨 · 10년 보유 · 2년 삶', R],
+         [('같은 집을 같은 값에 판', '2029년 양도 · 20억 · 지방세 포함 · 정부안 기준·국회 통과 전'), '다른 건 딱 하나'], icon='House', src=SRC_GOV, at2=0),
+    big('세법 개정안', '국회 통과 전', '정부안 · 2026.9.3 제출 · 9.28 상정', [('정부가 지난 9월 국회에', '소득세법 일부개정법률안(정부) 의안 2221042 · 처리 전 (국회 의안정보 2026-10-17 확인)')],
+        icon='Landmark', c=K, src='국회 의안정보시스템(2026-10-17 확인)'),
+    broll(7578842, ['정민 씨와 수현 씨, 두 사람은'], '두 사람은 가상 인물'),
+    S('list5', ['오늘은 사람들이 실제로'], title='실제 질문 다섯', icon='MessageCircleQuestion', source='네이버 지식iN · 유튜브 댓글(research.md 질문 칸, 2026-10-17 받음)',
+      items=['12억 기준은 판 값? 번 돈?', '실제로 산 사람도 줄어드나?', '갈아타기, 언제까지 팔아야?', '부부 공동명의도 공제?', '전근·재건축으로 못 산 기간은?']),
+    broll(4553292, ['그중 세 번째, 집을 갈아타는'], '세 번째는 이미 바뀐 규칙'),
 ]
-CUTS = {'duel': [[2, 'c2p/h1f_city.png', 0.45, 1]], 'price': [[1, 'c2p/h1f_tower.png', 0, 1], [4, 'c2p/h1f_city2.png', 0, 1]],
-        'five': [[2, 'c2p/h1f_tower2.png', 0.35, 1]], 'excluded': [[2, 'c2p/h1f_city.png', 0.1, 1], [4, 'c2p/h1f_tower.png', 0.25, 1]]}
-CH_NAME = {'0.': None, **{f'{i}.': f'{i}장' for i in range(1, 9)}}
-CH_TITLE = {}
-END_MIN = 20 * FPS
+# ── 1. 12억 기준 ──
+ch('질문 ①')
+scenes += [
+    ask('질문 ①', '1가구1주택 양도세 12억 기준은 양도차익인가요, 매도가액인가요?', '네이버 지식iN 질문', ['첫 질문은 지식iN에']),
+    big('기준은 판 값', '판 값 12억', '실제로 사고판 값(실거래가) · 번 돈 아님',
+        [('답은 판 값입니다', '소득세법 §89①3 · 1세대1주택 비과세 = 양도 당시 실지거래가액 12억원 이하'), '세대 전체가 집 한 채', '판 값 12억원까지는'], icon='Scale', src='소득세법 §89①3(법제처 2026-10-17 확인)'),
+    broll(32986074, ['그럼 12억을 넘으면'], '번 돈 전부에 붙을까'),
+    S('price', ['판 값 가운데 12억을', '두 사람 집은 20억'], title='넘는 몫만 세금 계산', icon='Ruler', source='소득세법 시행령 §160① · 파이어맵 계산',
+      sell='판 값 20억', line='기준 12억', over='넘는 몫 8억 · 판 값의 40%', step=1),
+    broll(31400388, ['두 사람 다 8억에 샀으니'], '산 값과 판 값'),
+    S('price', ['공교롭게 기준선과', ('그 12억 가운데 40%만', '과세 양도차익 = 양도차익 × (양도가액 − 12억) ÷ 양도가액 · 12억 × 8 ÷ 20 = 4.8억')],
+      title='번 돈 12억 중 40%', icon='Ruler', source='소득세법 시행령 §160① · 파이어맵 계산(필요경비 0)',
+      sell='판 값 20억', line='기준 12억', over='넘는 몫 8억 · 40%', buy='산 값 8억', gain='번 돈 12억', taxed='세금 계산 4.8억', step=2),
+    broll(6963487, ['왜 하필 12억일까요'], '왜 하필 이 금액일까'),
+    big('법이 부르는 이름', '고가주택', '판 값 12억 넘는 집 · 금액을 정한 이유는 조문에 없음', ['법은 이런 집을', '이 규칙 덕분에'], icon='Gavel', c=K, src='소득세법 §89①3(법제처)'),
+    broll(35082942, ['13억에 판 집도'], '조금 넘는 집이라면'),
+    pair('13억 집 · 내내 산 경우', ['34만원', '2026년', A], ['0원', '2027년부터(정부안)', B],
+         ['8억에 사서 내내', ('정부안대로라면 내년부터는', '양도 13억 · 취득 8억 · 10년 보유·10년 거주 · 정부안 기본공제 2,500만원 · 지방세 포함')], icon='House', src=SRC_GOV),
+    broll(1793371, ['그런데 세금이 조금이라도'], '할 일이 하나 생긴다'),
+    S('cal', ['12억을 넘겨 팔았다면, 판 달', ('판 뒤에 미리 하는 신고라서', '소득세법 §105①1 · 양도일이 속하는 달의 말일부터 2개월 이내 예정신고'),
+              ('판 날은 보통 잔금을', '소득세법 §98 · 양도·취득 시기 = 대금을 청산한 날(원칙)'), '그러니까 3월에 잔금을'],
+      title='예정신고는 두 달 안', icon='CalendarCheck', source='소득세법 §98·§105①1(법제처)',
+      months=['3월', '4월', '5월'], pay='잔금 받은 날', end1='그달 말일', end2='신고 기한', chip='예정신고', ex='5월 말일까지', at=[0, 1, 2, 3]),
+    broll(34740733, ['조심할 것도 하나 있어요. 부부가'], '부부가 반씩 가진 집도'),
+    big('집 전체 값으로', '20억', '각자 몫 10억이어도 고가주택', [('각자 몫이 10억이어도', '시행령 §156① · 일부가 타인 소유인 경우에도 전체 실지거래가액으로 12억 초과 여부 판단')],
+        icon='Users', src='소득세법 시행령 §156①(법제처)'),
+    broll(6186015, ['댓글에서 본 헷갈림도'], '댓글에서 본 헷갈림'),
+    pair('14억과 12억', ['14억', '종부세 · 갖고 있는 동안', K], ['12억', '양도세 · 팔 때 · 정부안도 그대로', A],
+         ['그건 집을 갖고 있는 동안', ('팔 때 내는 양도세의 12억', '14억 = 종부세 1세대1주택 공시가격 기준(정부안 종부세법 §7①) · 양도세 비과세 12억(§89①3)은 바꾸는 항목 없음')],
+         icon='Split', src='정부안 종부세법 §7①(의안 2221046) · 소득세법 §89①3 · 상세본 p.58'),
+]
+# ── 2. 보유만 한 1주택? ──
+ch('질문 ②')
+scenes += [
+    ask('질문 ②', '보유만 하는 1주택만 장특 없앤다고 하는 것 아닌가요?', '유튜브 댓글(부동산 세금 영상)', ['이번 질문은 유튜브', '집을 갖고만 있고', '답부터 말하면']),
+    S('cells', ['먼저 지금 법부터', '12억을 넘는 몫에서', '지금 법은 집 한 채를', ('실제로 살았던 해마다 또', '소득세법 §95② 표2 · 보유 3년 12%~10년 40% · 거주 2년 8%~10년 40%')],
+      title='지금 법 장기보유특별공제', icon='Layers', source='소득세법 §95② 표2 · 시행령 §159의4(법제처)',
+      rows=[['갖고 있던 해', '해마다 4%', 10, A, 2], ['살았던 해', '해마다 4%', 10, B, 3]], total='최대 40% + 40%'),
+    broll(36820284, ['정민 씨는 그 집을 갖고'], '내내 그 집에 산 정민 씨'),
+    pair('지금 법 공제율', ['80%', '정민 씨 · 10년 + 10년', B], ['48%', '수현 씨 · 10년 + 2년', R],
+         ['그래서 두 공제를 다', '수현 씨도 똑같이 10년을', ('그래서 48%에 그치고요', '정민 씨 = 보유 40% + 거주 40% = 80% · 수현 씨 = 보유 40% + 거주 8% = 48%')], icon='Percent', src='소득세법 §95② 표2', at2=1),
+    pair('올해(2026년) 판다면', ['1,901만원', '정민 씨', B], ['8,135만원', '수현 씨', R], [('올해 판다면 정민 씨는', '2026년 양도 · 지방세 포함 · 정민 씨 1,901만원 · 수현 씨 8,135만원')], icon='Receipt', src=SRC_LAW),
+    broll(8471105, ['이제 정부안이에요'], '이제 정부안'),
+    table('정부안 공제율', ['2027년까지', '2028년', '2029년부터'], [['살았던 해', '4%', '6%', '8%'], ['갖고 있던 해', '4%', '2%', '안 침']],
+          ['2028년엔 살았던 해마다', '대신 갖고 있던 해는', ('정부안대로라면 2029년부터는 갖고', '상세본 p.58 · 2028년 거주 6%(최대 60%)·보유 2%(최대 20%) · 2029년~ 거주 8%(최대 80%)')],
+          lit=[1, 1, 2], src='재정경제부 2026 세법개정안 상세본 p.58'),
+    big('새 이름', '장기거주 소득공제', '집(주택·조합원입주권) · 2028.1.1 이후 판 집부터', [('이름도 바뀌어요', '상세본 p.57 · 토지·주택 아닌 건물은 장기보유 소득공제')], icon='BadgeCheck', c=K, src='재정경제부 2026 세법개정안 상세본 p.57'),
+    broll(12079562, ['왜 이렇게 바꿀까요', '집 양도세 공제를 사는'], '사는 것 중심으로'),
+    pair('2029년 공제율', ['80%', '정민 씨 · 그대로', B], ['16%', '수현 씨 · 해마다 줄어', R],
+         ['그래서 정민 씨는 그대로', ('수현 씨는 해마다 줄어서', '수현 씨 · 2027년 48% → 2028년 32%(6%×2 + 2%×10) → 2029년 16%(8%×2)')], icon='Percent', src='재정경제부 2026 세법개정안 상세본 p.58', at2=1),
+    bars('수현 씨 세금, 판 해별', [['2027년', 8135, '8,135만원', A], ['2028년', 11398, '1억 1,398만원', A], ['2029년', 14777, '1억 4,777만원', R]],
+         [('같은 집을 판 해만', '지방세 포함 · 해마다 +3,263만원·+3,379만원 · 정부안')], 16000, dir='v', icon='TrendingUp', src=SRC_GOV),
+    broll(6221101, ['집도 값도 그대로인데'], '집도 값도 그대로'),
+    big('줄어드는 사람', '살았던 해 < 갖고 있던 해', '아예 안 산 사람만이 아님', ['아예 안 산 사람만이'], icon='TriangleAlert', c=R, src='재정경제부 2026 세법개정안 상세본 p.58'),
+    broll(7578842, ['거꾸로 정민 씨는'], '정민 씨는 오히려 줄어든다'),
+    big('기본공제 열 배', '2,500만원', '지금 250만원 · 10년 이상 산 집 한 채 · 30억 이하',
+        ['10년 이상 살았던 집 한 채를', ('지금은 해마다 250만원', '정부안 소득세법 §103 단서 · 2027.1.1 이후 양도분부터 · 특수관계인 간 양도·비거주자 제외 (상세본 p.68)')],
+        icon='Coins', c=B, src='정부안 소득세법 §103 단서 · 상세본 p.68'),
+    broll(31251627, ['정부 자료가 밝힌 이유는, 오래'], '오래 산 집 한 채 주인'),
+    pair('정민 씨 세금', ['1,901만원', '2026년', K], ['1,241만원', '2027~2029년', B], [('그래서 정민 씨 세금은', '정민 씨 · 2026년 1,901만원 → 2027~2029년 1,241만원 · 지방세 포함')], icon='User', src=SRC_GOV, at2=0),
+    bars('2029년, 같은 20억 집', [[Sx, 14777, '1억 4,777만원', R], [J, 1241, '1,241만원', B, 1]],
+         ['같은 2029년에 수현 씨', ('두 사람이 열두 배 가까이', '1억 4,777만원 ÷ 1,241만원 = 11.9배 · 공제율 16% vs 80% · 기본공제 250만 vs 2,500만')], 16000, icon='Scale', src=SRC_GOV),
+    broll(35082942, ['그럼 살았던 해 한 해는'], '살았던 한 해의 값'),
+    bars('수현 씨 2029년 · 살았던 햇수별', [['거주 2년', 14777, '1억 4,777만원', R], ['거주 3년', 13088, '1억 3,088만원', A, 0], ['거주 4년', 11398, '1억 1,398만원', B, 0]],
+         [('수현 씨 집으로 계산하면', '20억·취득 8억·10년 보유 · 한 해에 약 1,690만원 · 파이어맵 계산'), '이 값은 집마다 달라요'], 16000, dir='v', icon='CalendarDays', src=SRC_GOV),
+    broll(7710453, ['그래서 내 집이라면 확인할'], '확인할 건 두 숫자'),
+    rows('내 집에서 셀 두 숫자', [['갖고 있던 햇수', '산 날 ~ 판 날(잔금일)', A], ['살았던 햇수', '등본 전입일 ~ 전출일', B, 1]],
+         [('갖고 있던 햇수는 산 날부터', '소득세법 §95④ · 보유기간 = 취득일부터 양도일까지 · §98 대금 청산일'), ('살았던 햇수는 주민등록등본', '시행령 §154⑥ · 주민등록표 등본에 따른 전입일부터 전출일까지')],
+         icon='ClipboardList', src='소득세법 §95④·§98 · 시행령 §154⑥(법제처)'),
+    broll(7710495, ['등본 한 통이면', '이 두 숫자만 있으면'], '등본 한 통이면'),
+    pair('한 해 차이마다 4%씩', ['48%', '지금 · 수현 씨', K], ['16%', '2029년 · 8년 차이', R],
+         ['조심할 것도 있어요. 둘 다', '갖고 있던 해가 살았던 해보다', ('수현 씨는 여덟 해 차이라서', '보유·거주 모두 10년 이하일 때 · 차이 = 4 × (보유 − 거주) · 수현 씨 8년 차이 = 32%p')],
+         icon='TrendingDown', src='재정경제부 2026 세법개정안 상세본 p.58 · 파이어맵 계산', at2=2),
+    broll(32986074, ['아주 비싼 집이라면'], '아주 비싼 집이라면'),
+    bars('공제 금액 한도(정부안)', [['2028년', 20, '20억', A], ['2029년부터', 10, '10억', R, 1], ['정민 씨 공제', 3.84, '3.84억', B, 3]],
+         ['공제율은 그대로여도', ('정부안대로라면 2029년부터는 아무리', '정부안 소득세법 §95⑥ 신설 · 사람별 연간·물건별 · 공동소유는 지분 비율로 나눔 (상세본 p.60)'),
+          ('정부 자료에 적힌 이유는 공제', "상세본 p.60 개정이유 '공제수준 합리화 통한 과세형평 제고'"), ('정민 씨와 수현 씨는 공제로', '정민 씨 공제액 3.84억 · 한도에 안 걸림')],
+         22, icon='ShieldCheck', src='정부안 소득세법 §95⑥ · 상세본 p.60 · 파이어맵 계산'),
+]
+# ── 3. 일시적 2주택 ──
+ch('질문 ③')
+scenes += [
+    ask('질문 ③', '조정지역 일시적 2주택 특례기간 3년 → 2년, 8.3 이전 계약은요?', '네이버 지식iN 질문', ['이번엔 집을 갈아타는']),
+    ask('질문 ③', '일시적 2주택인데 언제까지 팔아야 하나요?', '유튜브 댓글(부동산 세금 영상) · 같은 질문이 지식iN에도', ['지식iN과 유튜브 댓글에']),
+    big('이미 바뀐 규칙', '시행령', '2026.9.30 개정 · 2026.10.1 이후 판 집부터', ['이건 정부안이 아니라', ('국회를 거치지 않고', '소득세법 시행령 §155①1 · 조정대상지역 종전주택 양도분부터 (법제처 2026-10-17 확인 · 정부 문답 p.55)')],
+        icon='Gavel', c=R, src='소득세법 시행령 §155①1(법제처 2026-10-17 확인) · 정부 문답 p.55'),
+    broll(4553301, ['원래 규칙부터', '집 한 채가 있는 세대가'], '잠깐 두 채가 되면'),
+    rows('원래 규칙', [['헌 집 산 지 1년 지나서', '새 집 사기', A], ['새 집 산 날부터 3년 안에', '헌 집 팔기', B, 1]],
+         ['헌 집을 산 지 1년', ('새 집을 산 날부터 3년', '시행령 §155① · 신규주택 취득일부터 3년 이내 종전주택 양도 → 1세대1주택으로 봄')], icon='House', src='소득세법 시행령 §155①(법제처)'),
+    S('zones', ['바뀐 건 기한이에요'], title='둘 다 조정이면 2년', icon='MapPin', source='소득세법 시행령 §155①1(2026.9.30 개정)',
+      old='헌 집', new='새 집', on='조정', off='조정 아님', res='2년', mode='both'),
+    broll(31251627, ['조정대상지역은 정부가'], '국토교통부 공고로 확인'),
+    S('zones', ['둘 중 하나라도'], title='하나라도 아니면 3년', icon='MapPin', source='소득세법 시행령 §155①1(2026.9.30 개정)',
+      old='헌 집', new='새 집', on='조정', off='조정 아님', res='3년', mode='one'),
+    big('줄인 이유', '혜택 과도', '조정지역 두 채를 3년 동안 한 채처럼', ['왜 줄였을까요? 정부 문답', ('조정지역에서 두 채를', "정부 문답 p.55 '3년간 1주택 특례 적용되어 혜택 과도'")], icon='Scale', c=K, src='재정경제부 세법개정안 문답 자료 p.55'),
+    broll(8478946, ['예전 규칙을 그대로'], '예전 규칙 그대로인 사람'),
+    big('예전대로 3년', '8월 3일까지', '새 집 취득 또는 계약금 지급', ['정부가 세법 개정안을 발표한', ('그때는 예전대로 3년', '경과조치 · 2026.8.3 이전 주택 취득 또는 매매계약 체결·계약금 지급 → 종전 규정 3년 (상세본 p.73 · 문답 p.55)')],
+        icon='CalendarCheck', c=B, src='재정경제부 2026 세법개정안 상세본 p.73 · 문답 p.55'),
+    broll(6186015, ['댓글을 단 분은'], '댓글 단 분은 예전 규칙'),
+    big('서울은 전체', '25개 구', '서울 전체 조정대상지역 · 2025.10.16부터', [('서울은 지난해 10월에', '2025.10.15 대책 · 경기 12곳도 · 지금 지정 여부는 국토교통부 공고로 확인'), '서울 안에서 갈아타는'],
+        icon='Map', c=R, src='2025.10.15 대책 · 국토교통부 공고'),
+    broll(14059238, ['기한을 넘기면 얼마나'], '기한을 넘기면'),
+    big('기한 안에 팔면', '1억 1,398만원', '수현 씨 · 2028년 · 집 한 채로 계산', ['수현 씨가 조정대상지역에서', ('2028년에 팔았다면 집 한 채', '정부안 공제율 · 지방세 포함 · 파이어맵 계산')], icon='House', c=A, src=SRC_GOV),
+    broll(8471105, ['그런데 2년 기한을 넘겨'], '기한을 넘겨 팔면'),
+    rows('두 채 세금이 되면', [['12억까지 비과세', '빠짐', R], ['장기보유특별공제', '빠짐', R, 0], ['세율', '기본 세율 + 20%p', R, 1]],
+         ['12억까지 세금이 없던', ('세율도 두 채 가진', '소득세법 §104⑦1 · 조정대상지역 1세대 2주택 = 기본세율 + 20%p · §95② 중과 대상 주택은 장특 제외')], icon='TriangleAlert', src='소득세법 §104⑦1·§95②(법제처)'),
+    bars('수현 씨 20억 집', [['기한 안 · 2028년', 11398, '1억 1,398만원', B], ['한 채 · 2029년', 14777, '1억 4,777만원', A], ['기한 넘김 · 2029년', 78368, '7억 8,368만원', R]],
+         [('그러면 세금이 7억 8천', '2029년 2주택 중과 7억 8,368만원 vs 1주택 1억 4,777만원 = 5.3배 · 지방세 포함 · 파이어맵 계산')], 80000, icon='TrendingUp', src=SRC_GOV),
+    broll(7710453, ['정부 문답 자료에도 같은', '새 집을 산 지 3년 만에'], '정부 문답 자료에도'),
+    S('memo', ['그래서 갈아타는 중이라면', '헌 집을 산 날, 새 집을'], title='날짜 세 개 적어 두기', icon='NotebookPen', source='소득세법 시행령 §155①1 · 소득세법 §98(법제처)',
+      items=['헌 집 산 날', '새 집 산 날', '새 집 산 날 + 2년'], at=[0, 1, 1]),
+    broll(8320980, ['산 날도 판 날처럼'], '잔금 치른 날 기준'),
+    big('조정인지 보는 날', '새 집 산 날', '공고 전에 샀거나 계약금 냈으면 2년 아님', ['조심할 건 하나예요. 조정', ('다만 조정대상지역 공고가', '시행령 §155①1 · 신규 주택의 취득일 현재 기준 · 공고일 이전 취득·계약금 지급은 제외')],
+        icon='CalendarDays', c=A, src='소득세법 시행령 §155①1(법제처)'),
+]
+# ── 4. 부부 공동명의 ──
+ch('질문 ④')
+scenes += [
+    ask('질문 ④', '부부명의 1가구 1주택 12억 넘게 양도 시 장기보유특별공제 가능한가요?', '네이버 지식iN 질문', ['부부가 함께 가진 집 한 채를']),
+    big('받는다', '공제율 같음', '갖고 있던 햇수와 살았던 햇수로만 정해짐', ['받습니다. 공제율도', '공제율은 갖고 있던'], icon='BadgeCheck', c=B, src='소득세법 §95② 표2(법제처)'),
+    broll(34740733, ['다른 건, 세금을 사람마다', '반씩 가졌다면, 번 돈도'], '세금은 사람마다 따로'),
+    S('stairs', [('여기서 차이가 생겨요', '소득세법 §55① · 기본세율 6%~45% 8단계'), '둘로 나누면 각자', '기본공제도 사람마다'],
+      title='세율은 계단', icon='ChartNoAxesColumnIncreasing', source='소득세법 §55①(법제처)', low='6%', high='45%', one='한 사람 몫', half='반씩 나눈 몫', at=[0, 1]),
+    broll(6602933, ['정부안에선 하나가 더'], '정부안에선 하나 더'),
+    big('부부는 각자', '2,500만원씩', '10년 넘게 산 부부 공동명의 · 이유는 자료에 없음',
+        [('10년 넘게 살았던 부부', "정부 문답 p.49 ➋ '부부공동명의주택의 경우에는 각각 2,500만원 공제'"), '왜 부부만 각자'], icon='Users', c=B, src='재정경제부 세법개정안 문답 자료 p.49'),
+    broll(36820284, ['계산해 볼게요. 수현 씨 집이'], '처음부터 반반이었다면'),
+    pair('수현 씨 집 · 2029년', ['1억 4,777만원', '한 사람 명의', R], ['1억 2,258만원', '반반 공동명의 · 둘 합', B],
+         ['2029년에 팔면, 둘이 낸', '수현 씨는 10년을 살지', ('그래도 세율 계단 덕분에', '−2,519만원, 17% · 지방세 포함 · 파이어맵 계산')], icon='Users', src=SRC_GOV, at2=0),
+    pair('정민 씨 집이었다면', ['1,241만원', '한 사람 명의', K], ['482만원', '반반 공동명의 · 둘 합', B], [('정민 씨 집이었다면', '2029년 · 지방세 포함 · 파이어맵 계산')], icon='User', src=SRC_GOV, at2=0),
+    broll(8478946, ['공동명의라면, 신고도', '조심할 건 이거예요. 이 계산은'], '신고도 두 사람이 각자'),
+    big('팔기 전 명의 나누기', '다른 세금', '배우자에게 지분 넘기면 취득세 등 · 이 영상 계산 밖', ['팔기 전에 명의를 나누려고', '그 계산은 이 영상에서'], icon='TriangleAlert', c=R, src='파이어맵(이 영상에서 계산하지 않음)'),
+]
+# ── 5. 전근·재건축 ──
+ch('질문 ⑤')
+scenes += [
+    ask('질문 ⑤', '재건축 재개발 사업할 때 양도세 더 나온다는 이야기인가?', '유튜브 댓글(부동산 세금 영상)', ['살고 싶어도 못 산', '유튜브 댓글에, 재건축하면', '공사하는 동안엔']),
+    S('band', ['정부안엔 이런 경우를', '재개발이나 재건축으로'], title='공사 기간 절반 인정', icon='Construction', source='정부안 소득세법 §95⑨ · 상세본 p.89 · 문답 p.61',
+      steps=['관리처분계획 인가', '공사 기간', '새 집 입주'], half='공사 기간의 절반 = 살았던 기간', when='2028년부터', at=[0, 1]),
+    broll(14058352, ['조건이 있어요. 철거와'], '관리처분계획 인가일'),
+    big('조건', '1년 넘게 거주', '관리처분계획 인가일에 그 집에', [('그날 그 집에 1년 넘게', '정부안 시행령 §159의4⑥ · 인가일 현재 1년 이상 거주 중인 주택 · 2028.1.1 이후 양도분부터')], icon='House', c=A, src='정부안 시행령 §159의4⑥ · 상세본 p.89'),
+    broll(4553292, ['전근이나 학교 때문에', '1년 넘게 살던 집에서'], '전근이나 학교 때문에'),
+    rows('부득이한 사정', [['학교 · 전근', '최대 3년', A], ['오래 걸리는 치료', '최대 3년', A, 0], ['부모님 모시려고 합침', '최대 3년', A, 0], ['비운 기간', '살았던 기간으로', B, 1]],
+         ['부득이한 사정은 학교', ('그 뒤 비운 기간을, 최대 3년', '정부안 소득세법 §95⑦·시행령 §159의4② · 최장 3년 · 2028.1.1 이후 양도분부터 (상세본 p.84~86)')], icon='Briefcase', src='정부안 소득세법 §95⑦ · 상세본 p.84~86 · 문답 p.60~61'),
+    big('예외 이유', '못 산 사람은 예외', '사는 것 중심으로 바꾸는 만큼', ['정부 자료가 밝힌 이유는 이래요', ('사는 것 중심으로 바꾸는', "문답 p.62 '부득이한 사유로 거주가 어려운 경우 예외인정'")], icon='HeartHandshake', c=K, src='재정경제부 세법개정안 문답 자료 p.62'),
+    broll(4520154, ['수현 씨가 2년 살다'], '전근으로 떠났다면'),
+    pair('수현 씨 2029년 세금', ['1억 4,777만원', '거주 2년', R], ['9,741만원', '거주 5년으로 인정', B],
+         ['그러면 살았던 기간이 5년', ('2029년 세금은 9,700만원', '정부안 · 공제율 16% → 40% · −5,037만원 · 지방세 포함 · 파이어맵 계산')], icon='User', src=SRC_GOV, at2=0),
+    broll(7710495, ['그래서 이런 사정이'], '서류는 버리지 않기'),
+    big('어떤 서류를 낼지', '아직 없음', '사실관계를 보고 하나하나 판단', ['어떤 서류를 내야', ('정부는 사실관계를 보고', '문답 p.62 · 과세관청이 개별 사안별로 사실관계 등에 따라 거주 인정 여부 검토')], icon='FileText', c=K, src='재정경제부 세법개정안 문답 자료 p.62'),
+    big('조심', '공제율 셀 때만', '쳐 준 기간은 공제율에만 씀', ['조심할 게 있어요. 이렇게'], icon='TriangleAlert', c=R, src='재정경제부 2026 세법개정안 상세본 p.86'),
+    broll(35082942, ['조정대상지역에서 산 집은'], '비과세 거주는 따로'),
+    rows('비과세 2년 거주', [['조정대상지역에서 산 집', '보유 중 2년 실제 거주', A], ['쳐 준 기간', '여기엔 안 넣음', R, 1]],
+         ['갖고 있는 동안 2년을', ('그 2년을 채우는 데에는', "상세본 p.86 '비과세 요건인 2년 거주요건에는 미적용' · 시행령 §154①")], icon='ShieldCheck', src='소득세법 시행령 §154① · 상세본 p.86'),
+    big('아직 정부안', '2028년부터', '그 전에 팔면 적용 안 됨', ['그리고 이건 아직 정부안'], icon='Landmark', c=K, src='재정경제부 2026 세법개정안 상세본 p.84~89'),
+]
+# ── 6. 정부 숫자와 맞을까 ──
+ch('검산')
+scenes += [
+    broll(6963487, ['여기까지 숫자가 맞는지'], '숫자가 맞는지'),
+    table('정부 사례 ① 32억', ['2027년', '2028년', '2029년'], [['정부', '2.36억', '3.20억', '4.05억'], ['파이어맵', '2.36억', '3.20억', '4.05억']],
+          ['정부 문답 자료에 실린', ('하나는 32억 집에', '문답 사례① 양도 32억·취득 12억·보유 10년·거주 2년 · 산출세액(지방세 빼고)'), '정부가 파는 해마다'],
+          lit=[0, 1, 2], icon='BadgeCheck', src='재정경제부 세법개정안 문답 자료 · 파이어맵 계산'),
+    broll(34030195, ['다른 하나는 75억'], '다른 사례 하나 더'),
+    table('정부 사례 ② 75억', ['2027년', '2028년', '2029년'], [['정부', '3.16억', '9.23억', '13.73억'], ['파이어맵', '3.16억', '9.23억', '13.73억']],
+          [('공제율이 80% 그대로인데도', '문답 사례② 양도 75억·취득 25억·보유 10년·거주 10년 · 공제 한도 때문에 마지막 해 네 배 넘게')], lit=[2], icon='BadgeCheck', src='재정경제부 세법개정안 문답 자료 · 파이어맵 계산'),
+    pair('기본공제 늘어나는 사례', ['약 740만원', '정부', K], ['744만원', '파이어맵', B], ['기본공제가 늘어나는 정부', ('정부는 약 740만원', '문답 p.49 · 10년 거주 20억 양도(취득 10억) · 현행 약 1,280만원 → 개정안 · 지방세 빼고')],
+         icon='BadgeCheck', src='재정경제부 세법개정안 문답 자료 p.49 · 파이어맵 계산', at2=1),
+]
+# ── 7. 계산에 없는 사람 ──
+ch('계산 밖')
+scenes += [
+    broll(8439245, ['계산에서 뺀 사람도'], '계산에서 뺀 사람'),
+    big('2년 못 산 집 한 채', '숫자 안 냄', '지금은 연 2% 표 · 정부 자료 표에 이 경우 없음',
+        ['집 한 채인데 2년을', ('갖고 있던 해마다 2%씩만', '소득세법 §95② 표1 · 연 2%, 15년 30%'), '정부 자료 표엔 이 경우가'], icon='CircleSlash', c=K, src='소득세법 §95② 표1 · 상세본 p.58~59 · 문답 p.37'),
+    broll(4553301, ['만 65살 이상이 수도권'], '수도권에서 비수도권으로'),
+    rows('65세 이주 특례', [['만 65세 이상', '수도권 집 한 채', A], ['오래 살았어야', '이사도 정해진 기간 안', A, 0]],
+         [('오래 살았어야 하고 이사도', '정부안 조특법 §71의3 신설 · 2027년 50%(5억원 한도)·2028년 30%(3억원 한도) 감면 (상세본 p.69)')], icon='MapPin', src='정부안 조특법 §71의3(의안 2221039) · 상세본 p.69'),
+    ask('물어 온 질문', '상속지분 20프로 있는데 이것도 주택수에 잡히나요', '유튜브 댓글(부동산 세금 영상)', ['상속받은 집 지분이 조금']),
+    big('공동상속 소수 지분', '주택 수에서 뺌', '지분이 가장 큰 사람은 예외', [('여럿이 함께 상속받은 집이라면', '시행령 §155③ · 공동상속주택 외의 다른 주택을 양도할 때 · 상속지분이 가장 큰 상속인은 제외')],
+        icon='Users', c=B, src='소득세법 시행령 §155③(법제처)'),
+    big('계산에 안 넣은 것', '취득세·중개수수료', '번 돈에서 뺄 수 있음 · 실제 세금은 더 적을 수 있음', ['집 살 때 낸 취득세나', '그래서 실제 세금은'], icon='Receipt', c=K, src='소득세법 §97 · 파이어맵 계산(필요경비 0)'),
+    broll(7710453, ['고친 비용 가운데에도'], '고친 비용도'),
+    big('영수증이 없으면', '계좌 기록', '실제 지출이 금융거래로 확인되면', [('영수증을 못 받았더라도', '소득세법 §97①2 · 시행령 §163③ · 증명서류 또는 금융거래 증명서류로 확인되는 경우')], icon='Wallet', c=B, src='소득세법 §97①2 · 시행령 §163③(법제처)'),
+    big('이 영상은', '정부안 계산 비교', '국회 심사에서 바뀌면 숫자도 바뀜', ['이 영상은 정부안으로'], icon='Landmark', c=K, src='재정경제부 2026 세법개정안 · 국회 의안정보'),
+]
+# ── 8. 내 집이라면 ──
+ch('정리')
+FIVE = [['내내 산 집 · 10년↑ · 30억 이하', '오히려 유리'], ['사 두고 다른 곳에 산 집', '햇수 차이 세기'], ['갈아타는 중', '둘 다 조정? · 2년 기한'],
+        ['부부 공동명의', '계산도 신고도 각자'], ['전근·재건축으로 못 산 기간', '일부 인정(정부안)']]
+scenes += [
+    broll(36820284, ['집을 사서 내내 그 집에', '10년을 넘게 살았고 30억'], '내내 산 분이라면'),
+    S('five', ['사 두고 다른 곳에 살다', '그 차이가 클수록', '집을 갈아타는 중이라면'], title='내 집이라면', icon='ListChecks', source=SRC_GOV, items=FIVE, lit=[1, 1, 2], done=[0]),
+    broll(6602933, ['부부가 함께 가진 집이라면'], '부부가 함께 가진 집'),
+    S('five', ['전근이나 재건축으로 못 산', ('그리고 12억을 넘겨 팔았다면', '소득세법 §105①1 · 판 달의 말일부터 2개월 이내 예정신고')], title='내 집이라면', icon='ListChecks', source=SRC_GOV, items=FIVE, lit=[4, 4], done=[0, 1, 2, 3]),
+    ask('댓글로 알려 주세요', '갖고 있던 해와 살았던 해, 몇 년 차이 나나요?', '언제 팔라는 권유가 아니라 정부안(국회 통과 전)으로 한 계산 비교 · 가상 인물', ['여러분 집은 갖고 있던']),
+]
 
+for s in scenes: assert s['kind'] != 'broll' or not re.search(r'\d', s['data']['say'] or ''), ('실사 say 숫자', s['data']['say'])
+short = []
+for s in scenes:   # TallyBroll prop 이름(from) · 클립 길이 확인
+    d = s['data']
+    if 'from_' in d:
+        d['from'] = d.pop('from_')
+        if d['_need'] > d['_have'] + 0.5: short.append((d['src'], d['_need'], d['_have']))
+        d.pop('_need'); d.pop('_have')
+assert not short, ('실사 클립이 말보다 짧다', short)
+assert len(USED) == len(ALL), ('안 쓴 줄', [ALL[i]['text'][:24] for i in range(len(ALL)) if i not in USED])
+order = [l['i'] for s in scenes for l in s['lines']]; assert order == sorted(order), '줄 순서'
+scenes[-1]['frames'] += TAIL
+for s in scenes:
+    for l in s['lines']: l.pop('i')
 
-def spec(key, lines):
-    has = lambda w: next((i for i, t in enumerate(lines) if w in t), -1)
-    J, S = '정민 씨', '수현 씨'
-    if key == 'duel':
-        return '같은 집, 같은 값', '2029년에 판다면 · ' + NOTE, SRC_GOV, {
-            'price': '20억', 'who': [[J, '10년 삶', man(C[2029][1])], [S, '2년 삶', man(B[2029][1])]], 'times': '열두 배 가까이',
-            'gov': ['세법 개정안', '9.1 국무회의 의결', '국회 통과 전'], 'fake': '가상 인물 · 계산용',
-            'years': [[y, B[y][1], C[y][1]] for y in (2026, 2027, 2028, 2029)], 'gap': [man(6234), man(13536)], 'q': '왜?',
-            'at': [0, has('살았던 햇수'), has('국무회의'), has('가상 인물'), has('올해 팔면'), has('2029년엔'), has('왜')]}
-    if key == 'price':
-        return CH_TITLE['1.'], '집 한 채 · 비과세 요건 갖춘 경우', '소득세법 §89①3 · 시행령 §160① · 파이어맵 계산(필요경비 0)', {
-            'sell': '판 값 20억', 'line': '12억', 'free': '12억까지 0원', 'over': '넘는 몫 8억', 'buy': '산 값 8억', 'gain': '번 돈 12억',
-            'pct': '40%', 'taxed': '4.8억', 'taxedSay': '5억이 조금 안 됨',
-            'at': [0, has('넘으면'), has('20억짜리'), has('8억에 샀으니'), has('40%'), has('같은 비율'), has('5억이')]}
-    if key == 'ladder':
-        return CH_TITLE['2.'], '지금 법 · 장기보유특별공제', '소득세법 §95② 표2 · 시행령 §159의4', {
-            'rows': [['갖고 있던 해', '해마다 4%'], ['실제로 살았던 해', '해마다 4%']], 'J': [10, 10, '80%'], 'S': [10, 2, '48%'],
-            'at': [0, has('갖고 있던 해마다'), has('살았던 해마다'), has('내내'), has('80%'), has('2년뿐'), has('48%')]}
-    if key == 'taxcard':
-        return '올해(2026년) 판다면', '지방세 포함 · 필요경비 0', SRC_LAW, {
-            'J': [J, '80%', man(C[2026][1])], 'S': [S, '48%', man(B[2026][1])], 'cut': '정부안: 둘 중 하나를 없앰',
-            'at': [0, has('8,100만원'), has('정부안은')]}
-    if key == 'rates':
-        return CH_TITLE['3.'], '정부안 공제율 · 2028.1.1 이후 판 집부터', '재정경제부 2026 세법개정안 상세본 p.58', {
-            'cols': ['2027년까지', '2028년', '2029년부터'], 'rows': [['살았던 해', '4%', '6%', '8%'], ['갖고 있던 해', '4%', '2%', '없음']],
-            'J': [J, '80%', '80%', '80%'], 'S': [S, f'{B[2027][0]}%', f'{B[2028][0]}%', f'{B[2029][0]}%'],
-            'at': [0, has('6%로'), has('2%로'), has('아예 안'), has('80% 그대로'), has('16%만')]}
-    if key == 'climb':
-        return '수현 씨 세금, 해마다 계단', '집도 값도 그대로 · ' + NOTE, SRC_GOV, {
-            'bars': [[y, B[y][1], man(B[y][1])] for y in (2027, 2028, 2029)], 'steps': ['+' + man(3263), '+' + man(3379)], 'same': '집 그대로 · 값 그대로 · 규칙만 바뀜',
-            'at': [0, has('규칙만')]}
-    if key == 'basic':
-        return CH_TITLE['4.'], '정부안 · 2027.1.1 이후 판 집부터', SRC_CUT, {
-            'from': '250만원', 'to': '2,500만원', 'x': '열 배', 'conds': ['10년 이상 산 집', '집 한 채', '30억 이하에 팔 때'],
-            'J': [man(C[2026][1]), man(C[2027][1])],
-            'at': [0, has('하나 더'), has('열 배'), has('1,240만원')]}
-    if key == 'ratio':
-        return '2029년, 열두 배 가까이', '지방세 포함 · ' + NOTE, SRC_GOV, {
-            'bars': [[S, B[2029][1], man(B[2029][1])], [J, C[2029][1], man(C[2029][1])]], 'times': '11.9배',
-            'why': ['공제율 16% vs 80%', '기본공제 250만 vs 2,500만']}
-    if key == 'five':
-        rows = [['A', '15억 · 10년 보유 · 10년 삶', A], ['수현', '20억 · 10년 보유 · 2년 삶', B], ['정민', '20억 · 10년 보유 · 10년 삶', C],
-                ['D', '25억 · 5년 보유 · 5년 삶', D], ['E', '30억 · 15년 보유 · 5년 삶', E]]
-        return CH_TITLE['5.'], '지방세 포함 · 필요경비 0 · ' + NOTE, SRC_GOV, {
-            'cols': ['2026', '2027', '2028', '2029'], 'rows': [[n, d, [man(c[y][1]) for y in (2026, 2027, 2028, 2029)]] for n, d, c in rows],
-            'tags': ['', '5분의 1도 안 됨', '언제 팔아도 같음', '60% 넘게 늘어남', '보유 − 거주 햇수 차이'],
-            'at': [0, has('5분의 1'), has('5년씩'), has('해마다 같'), has('반대로'), has('60%'), has('몇 년 차이')]}
-    if key == 'verify':
-        return CH_TITLE['6.'], '정부 문답 자료 사례 · 산출세액(지방세 빼고)', SRC_QA, {
-            'cases': [['사례 1', '32억 · 10년 보유 · 2년 삶', GOV[:3]], ['사례 2', '75억 · 10년 보유 · 10년 삶', GOV[3:]]], 'heads': ['파는 해', '정부', '파이어맵'],
-            'jump': '마지막 해 네 배 넘게',
-            'at': [0, has('사례 두 개'), has('32억'), has('똑같이'), has('75억'), has('네 배')]}
-    if key == 'cap':
-        return '공제에 한도가 생긴다', '정부안 소득세법 §95⑥ 신설', '재정경제부 2026 세법개정안 상세본 p.60 · 파이어맵 계산', {
-            'caps': [['2028년', 20, '20억'], ['2029년부터', 10, '10억']], 'mine': ['정민 씨 공제', 3.84, '3.84억'], 'safe': '한도에 안 걸림',
-            'at': [0, has('4억이')]}
-    if key == 'excluded':
-        return CH_TITLE['7.'], '이 영상 계산 밖 · ' + NOTE, '소득세법 §95② 표1 · 정부안 조특법 §71의3(상세본 p.69)', {
-            'cards': [['2년 못 산 집 한 채', '지금은 일반 공제(연 2%)', '정부 표에 없음 → 숫자 안 냄'],
-                      ['만 65세 이상 · 비수도권 이사', '정부안 감면 특례 따로', '2027년 50% · 2028년 30%'],
-                      ['취득세 · 중개수수료', '번 돈에서 빼지 않고 계산', '실제 세금은 더 적을 수 있음']],
-            'stamp': '국회 심사에서 바뀔 수 있음',
-            'at': [0, has('2년을 못'), has('따로 없어서'), has('65살'), has('취득세'), has('적게'), has('국회 심사')]}
-    if key == 'calendar':
-        return CH_TITLE['8.'], '보유·거주 모두 10년 이하일 때', '재정경제부 2026 세법개정안 상세본 p.58 · 파이어맵 계산', {
-            'rows': [['갖고 있던 해', 10], ['살았던 해', 2]], 'per': '한 해 차이마다 −4%', 'S': ['수현 씨', '8년 차이', '−32%p', '48% → 16%'],
-            'at': [0, has('10년을 넘지'), has('16%')]}
-    if key == 'ask':
-        return '내 집이라면?', '갖고 있던 햇수 − 살았던 햇수', SRC_GOV, {
-            'q': '몇 년 차이 나나요?', 'cells': [['갖고 있던 해', '□ 년'], ['살았던 해', '□ 년']], 'tail': '댓글로 남겨 주세요',
-            'sum': [['정민 씨', '0년 차이', man(C[2029][1])], ['수현 씨', '8년 차이', man(B[2029][1])]], 'note': NOTE}
-    raise KeyError(key)
+# 화면 관문 어림: 판(실사·질문 카드 아닌 것)이 이어진 구간 최장, 실사 몫, 바뀜 장면 수
+run = mx = live = brk = 0; tot = sum(s['frames'] for s in scenes)
+for s in scenes:
+    if s['kind'] == 'broll': live += s['frames']
+    if s['kind'] in ('broll', 'ask'): run = 0; brk += 1
+    else: run += s['frames']; mx = max(mx, run)
+RUNS = []; run2 = 0; grp = []
+for s in scenes:
+    if s['kind'] in ('broll', 'ask'):
+        if run2 / FPS > 19.5: RUNS.append((round(run2 / FPS, 1), grp))
+        run2 = 0; grp = []
+    else: run2 += s['frames']; grp.append(s['data'].get('title'))
+if run2 / FPS > 19.5: RUNS.append((round(run2 / FPS, 1), grp))
+assert not RUNS, RUNS
 
+# 숫자 대조(numcheck): props 글자 속 숫자 덩이는 calc 두 개·대본에 그대로 있어야 한다
+SKIP = {'audio', 'src', 'license', 'kind', 'icon', 'c', 'c1', 'c2', 'from', 'x', 'side', 'dir', 'max', 'at', 'at2', 'lit', 'done', 'step', 'mode', 'chapter'}
+def strings(x):
+    if isinstance(x, dict):
+        for k, v in x.items():
+            if k in SKIP: continue
+            yield from strings(v)
+    elif isinstance(x, list):
+        for v in x:
+            if not isinstance(v, (int, float)): yield from strings(v)
+    elif isinstance(x, str): yield x
+SRCDOC = CALC + SCRIPT
+bad = []; nnum = 0
+for s in scenes:
+    for st in list(strings(s['data'])) + [l['cap'] for l in s['lines'] if l['cap']]:
+        for d in re.findall(r'\d[\d,.]*', st):
+            d = d.rstrip('.,'); nnum += 1
+            if d not in SRCDOC: bad.append((st[:40], d))
+assert not bad, bad
+# need(금액 통째): '1억 4,777만원'·'8,135만원' 같은 금액 글자는 calc(쉼표 뺀 만원 값) 또는 대본 글자 그대로여야 한다
+MONEY = re.compile(r'(\d+억 [\d,]+만원|[\d,]+만원)')
+CALC_N = CALC.replace(',', '')
+need_n = 0; mbad = []
+for s in scenes:
+    for st in list(strings(s['data'])) + [l['cap'] for l in s['lines'] if l['cap']]:
+        for m in MONEY.findall(st):
+            need_n += 1
+            mm = re.match(r'(\d+)억 ([\d,]+)만원', m)
+            v = str(int(mm.group(1)) * 10000 + int(mm.group(2).replace(',', ''))) if mm else m.replace(',', '').replace('만원', '')
+            if v + '만' not in CALC_N and m not in SCRIPT: mbad.append((s['data'].get('title'), m))
+assert not mbad, mbad
 
-def script_lines(path):
-    out, cur, last = {}, None, None
-    for line in open(path, encoding='utf-8').read().split('\n---', 1)[0].splitlines():
-        if line.startswith('## '):
-            t = line[3:].strip(); cur = re.sub(r'^\[', '', t).split()[0].rstrip(']'); out[cur] = []; last = None
-            mm = re.match(r'(\d+)\. (.+)$', t)
-            if mm: CH_TITLE[mm.group(1) + '.'] = mm.group(2).strip()
-        elif cur is not None and line.lstrip().startswith('- '):
-            t = re.sub(r'\s*\(화면.*$', '', line.strip()[2:]).strip(); t = re.sub(r'\s*\[자막:.*?\]', '', t).strip()
-            if t: out[cur].append([t, None]); last = out[cur][-1]
-        elif cur is not None and line.strip().startswith('[자막:') and last is not None:
-            c = line.strip()[4:].rstrip(']').strip()
-            last[1] = (last[1] + ' · ' + c) if last[1] else c
-    return out
-
-
-def main():
-    sl = script_lines(os.path.join(EP, 'script.md'))
-    voice = {}
-    for s in json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8')).get('sections', []):
-        for l in s['lines']:
-            if l.get('audio'): voice.setdefault(l['text'], l)
-    scenes, warn = [], []
-    for ch in ['0.'] + [f'{i}.' for i in range(1, 9)]:
-        lines = sl.get(ch, [])
-        assert lines, f'대본에 장 {ch} 없음'
-        found = []
-        for key, kind, c, anc in RULES:
-            if c != ch: continue
-            idx = 0 if anc is None else next((i for w in anc for i, (t, _) in enumerate(lines) if w in t), None)
-            if idx is None: warn.append(f'{key}: {anc} 못 찾음 — 장면 뺌'); continue
-            found.append((idx, key, kind))
-        found.sort()
-        for j, (idx, key, kind) in enumerate(found):
-            part = lines[idx:(found[j + 1][0] if j + 1 < len(found) else None)]
-            out = []
-            for t, cap in part:
-                v = voice.get(t)
-                fr = v['frames'] if v else max(12, round(SC.syl(SC.speak(t)) / RATE * FPS))
-                out.append({'text': t, 'cap': cap, 'frames': fr, 'audio': v['audio'] if v else None})
-            title, sub, src, data = spec(key, [x['text'] for x in out])
-            if -1 in data.get('at', []): warn.append(f'{key}: 박자 못 찾음 {data["at"]}')
-            frames = sum(x['frames'] for x in out)
-            scenes.append({'key': key, 'kind': kind, 'title': title, 'sub': sub, 'source': src, 'chapter': CH_NAME[ch], 'data': data, 'lines': out, 'frames': frames})
-    # 10/16 18:5x PD: 첫 렌더 '같은 화면' 8초 넘는 곳 6곳 → 그 줄 동안 실사(Pexels 30975009·38029457 프레임, H-1 클립과 같은 재료)를 덮는다. 새 글자 0(자막은 그 줄 말).
-    for s in scenes:
-        if s['key'] in CUTS: s['data']['cutaways'] = CUTS[s['key']]
-    scenes[-1]['frames'] = max(scenes[-1]['frames'], END_MIN)
-    missing = sum(1 for s in scenes for l in s['lines'] if not l['audio'])
-    nlines = sum(len(v) for v in sl.values())
-    res = {'fps': FPS, 'scenes': scenes, 'missing': missing}
-    json.dump(res, open(os.path.join(VID, 't1.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
-    tot = sum(s['frames'] for s in scenes) / FPS
-    for w in warn: print('경고 ·', w)
-    print(f'장면 {len(scenes)} · 말 줄 {nlines} · 길이 {int(tot // 60)}:{tot % 60:04.1f} · 목소리 없는 줄 {missing} · 그림 종류 {len({s["kind"] for s in scenes})}')
-    t = 0
-    for i, s in enumerate(scenes):
-        print(f"  {i:2} {int(t // 60)}:{t % 60:04.1f} {s['key']:9} {s['frames'] / FPS:5.1f}초 줄{len(s['lines']):2} {s['title']}")
-        t += s['frames'] / FPS
-    return res
-
-
-if __name__ == '__main__':
-    main()
+p = {'fps': FPS, 'scenes': scenes, 'badge': '가상 인물'}
+json.dump(p, open(os.path.join(VID, 't1.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+used = sorted(USEDBG)
+json.dump([{'id': c, 'used': USEDBG[c], 'desc_line': CR[c]['desc_line']} for c in used], open(os.path.join(EP, 'bg_used.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+print(f'T-1 v4.1 t1.json: {tot} 프레임 = {tot / FPS:.1f}초 · 장면 {len(scenes)} · 줄 {len(ALL)} · 종류 {len(set(s["kind"] for s in scenes))}'
+      f' · 실사 {live / tot * 100:.1f}%({live / FPS:.0f}초, 클립 {len(used)}개) · 바뀜 장면 {brk}(컷 분당 {brk * 2 / (tot / FPS / 60):.1f} 어림) · 판 이어짐 최장 {mx / FPS:.1f}초'
+      f' · numcheck {nnum}덩이 불일치 0 · need 금액 {need_n}개 불일치 0')

@@ -3,6 +3,9 @@
 # 10/17 PD: 대본 v3.3(질문 다섯 개 장, 157줄)·10/17 롱폼 화면 기준(bgcheck: 실사 10%↑·컷 분당 3↑·같은 판 20초↓·큰 글자 9%↑·판 8줄↓)으로 다시 짰다. 옛 판 c2props.v2.py.bak.
 # 틀: 판(big·pair·rows·bars·grid·list5 — TallyFrame) ↔ 꽉 찬 실사(broll — Pexels, bg_plan.json 풀) ↔ 정우 씨 그림(pic — visual/N1-person) ↔ 질문 카드(ask).
 # 줄은 번호가 아니라 말 글자 앞부분으로 찾는다(대본이 바뀌면 assert). [자막] 줄은 그 말 줄의 cap(판 왼쪽 위 '정확한 값' 칸)으로.
+# 10/18 PD 견본 방식(today.md 순돌이 10/18 지시, 견본 video/src/Sample1017.tsx): 그림 인물(pic) → 얼굴 없는 손·창가 실사(live) 또는 종이 판 · 1997·1998 첫해는 식 한 장(eq) ·
+#   큰 숫자는 말이 닿는 때(rv)까지 '?' · 'N.NN억원'은 화면에서 'N억 N,NNN만원'으로 · 처음·끝 고정 말(brand) · 끝은 마음 닫는 줄 + 하늘 실사 3초 쉼.
+#   녹음 전 새 줄(고정 여는 말·숫자 질문·맺는 말)은 DRAFT로 길이만 어림(audio 없음) — editor 서명·Chirp 녹음 뒤 다시 돌리면 실제 길이로 바뀐다.
 # 숫자: props 안 숫자 글자는 전부 calc 두 개 또는 script.md에 있는 글자만 — 맨 아래 numcheck가 기계로 막는다.
 import json, os, re, sys, shutil
 sys.stdout.reconfigure(encoding='utf-8')
@@ -18,15 +21,28 @@ ALL = [l for s in V['sections'] for l in s['lines']]
 USED = set()
 BG = {c['id']: c for c in json.load(open(os.path.join(EP, 'bg_plan.json'), encoding='utf-8'))['clips']}
 
+# 대본 순서(말 줄 '- ') — 줄 순서 검사와 녹음 전 줄(DRAFT) 찾기에 쓴다
+SAY = []
+for ln in SCRIPT.split('\n---', 1)[0].splitlines():
+    if ln.lstrip().startswith('- '):
+        t = re.sub(r'\s*\(화면.*$', '', ln.strip()[2:]).strip()
+        if t: SAY.append(t)
+DRAFT = []
 def L(t, cap=None):
-    hit = [i for i, l in enumerate(ALL) if l['text'].startswith(t)]; assert len(hit) == 1, (t, hit)
+    hit = [i for i, l in enumerate(ALL) if l['text'].startswith(t)]
+    if not hit:   # 녹음 전 새 줄: 대본에서 찾고 길이는 5.84자/초(H-2 실측) 어림, 소리 없음
+        sh = [x for x in SAY if x.startswith(t)]; assert len(sh) == 1, (t, sh)
+        DRAFT.append(sh[0])
+        return {'text': sh[0], 'audio': None, 'frames': int(len(sh[0]) / 5.84 * FPS) + 8, 'cap': cap, 'i': 10000 + SAY.index(sh[0]), 'o': SAY.index(sh[0])}
+    assert len(hit) == 1, (t, hit)
     i = hit[0]; assert i not in USED, ('두 번 씀', t); USED.add(i)
     l = ALL[i]; assert l.get('audio') and os.path.exists(os.path.join(VID, 'public', l['audio'])), t
-    return {'text': l['text'], 'audio': l['audio'], 'frames': l['frames'], 'cap': cap, 'i': i}
+    so = [k for k, x in enumerate(SAY) if x == l['text']]; assert len(so) == 1, ('대본에 없는 녹음 줄', l['text'][:30])
+    return {'text': l['text'], 'audio': l['audio'], 'frames': l['frames'], 'cap': cap, 'i': i, 'o': so[0]}
 
-def S(kind, lines, **data):
+def S(kind, lines, pause=0, **data):
     ls = [L(*t) if isinstance(t, tuple) else L(t) for t in lines]
-    return {'kind': kind, 'lines': ls, 'frames': sum(l['frames'] for l in ls), 'data': data}
+    return {'kind': kind, 'lines': ls, 'frames': sum(l['frames'] for l in ls) + pause, 'data': data}
 
 SRC = 'S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)'
 SRC_R = '파이어맵 계산 · S&P500 총수익 지수(야후 파이낸스) · 한국은행 ECOS'
@@ -40,7 +56,7 @@ def big(title, v, s, lines, icon='CircleDollarSign', c='accent', src=SRC, **d): 
 def pair(title, a, b, lines, icon='Scale', src=SRC, **d): return S('pair', lines, title=title, v1=a[0], s1=a[1], c1=a[2], v2=b[0], s2=b[1], c2=b[2], icon=icon, source=src, **d)
 def rows(title, rs, lines, icon='ListChecks', src=SRC, **d): return S('rows', lines, title=title, rows=rs, icon=icon, source=src, **d)
 def bars(title, bs, lines, mx, dir='h', icon='ChartColumn', src=SRC, **d): return S('bars', lines, title=title, bars=bs, max=mx, dir=dir, icon=icon, source=src, **d)
-def ask(n, q, frm, lines): return S('ask', lines, n=n, q=q, **({'from': frm} if frm else {}))
+def ask(n, q, frm, lines, pause=0): return S('ask', lines, pause=pause, n=n, q=q, **({'from': frm} if frm else {}))
 USEDBG = {}
 def broll(cid, lines, say, side='left', x=None):
     c = BG[cid]; k = USEDBG.get(cid, 0); USEDBG[cid] = k + 1
@@ -51,14 +67,37 @@ def broll(cid, lines, say, side='left', x=None):
     s['data']['_need'] = round(sec + frm, 1); s['data']['_have'] = c['usable_sec']
     return s
 
+def live(cid, lines, who=None, say=None, past=True, start=None, zoom=None, x=None, pause=0):
+    # 견본 Live: bg_plan 클립(얼굴 없음 눈 확인분), 옛날 이야기는 바랜 색. say는 숫자 금지
+    c = BG[cid]; k = USEDBG.get(cid, 0); USEDBG[cid] = k + 1
+    sec = sum(L_len(t) for t in lines) / FPS + pause / FPS
+    frm = start if start is not None else (0 if k == 0 else min(max(0, c['usable_sec'] - sec), k * 6))
+    assert sec + frm <= c['usable_sec'] + 0.5, ('실사 클립이 말보다 짧다', cid, round(sec + frm, 1), c['usable_sec'])
+    who_a = c['author'].rstrip('/').split('/')[-1] or 'Pexels'
+    d = dict(src=c['file'], license=f"Pexels {cid} 무료({who_a})", past=past, **({'from': int(frm * FPS)} if frm else {}))
+    if who: d['who'] = who
+    if say: d['say'] = say
+    if zoom: d['zoom'] = zoom
+    if x is not None: d['x'] = x
+    return S('live', lines, pause=pause, **d)
+def L_len(t):
+    hit = [l for l in ALL if l['text'].startswith(t)]
+    if hit: return hit[0]['frames']
+    sh = [x for x in SAY if x.startswith(t)]; return int(len(sh[0]) / 5.84 * FPS) + 8
+def brand(lines, line, sub=None, pause=0): return S('brand', lines, pause=pause, line=line, **({'sub': sub} if sub else {}))
+def eq(title, a, b1, b2, ans, lines, ctx=None, src=SRC): return S('eq', lines, title=title, a=a, b1=b1, b2=b2, ans=ans, source=src, **({'ctx': ctx} if ctx else {}))
+
 R = 'rise'; A = 'accent'; B = 'fall'; K = 'ink'
 scenes = [
     # ── 0. 여는 장면 ──
-    pic('s1998', ['외환위기가 한창이던', '퇴직금 3억을 미국'], year='1998년 1월', chip=['3억', '퇴직금 · 미국 대형주 500곳 지수'], chipAt=1, zoom=[1.0, 1.12]),
-    pic('s1998', ['"매달 200만원씩만'], quote='이 정도면 평생 가겠지', zoom=[1.2, 1.32], cx=40),
-    big('5년 늦게 시작한 민수 씨', '2.72억원', '2003년 1월 시작 · 2025년 말 남은 돈', [('같은 돈, 같은 규칙으로 5년', '2003년 1월 시작 · 같은 3억 · 월 200만원 · 2025년 말 2.72억원 남음')], icon='User', c=B),
-    ask('오늘의 물음', '정우 씨 통장은 언제 바닥났을까요?', '같은 3억 · 같은 규칙 · 시작한 해만 다름', ['정우 씨 통장은 언제']),
-    broll(7490517, ['끝에는 내 통장에서'], '해마다 볼 숫자 두 개'),
+    live(7593891, ['안녕하세요, 파이어맵입니다.'], who='2026년 10월 19일 월요일', say='오늘은 퇴직금으로 생활비를 꺼내 쓰는 이야기', past=False, pause=20),   # 첫 60초 로고 카드 금지(QG U3) — 인사도 손 실사 위에
+    live(6963484, ['퇴직금 3억을 미국 주식에 넣고'], say='몇 년을 버틸까?', past=False, pause=24),
+    live(6219901, ['외환위기가 한창이던'], who='1998년 1월 · 정우 씨 · 가상 인물', start=2),
+    live(6326929, ['퇴직금 3억을 미국 큰'], zoom=[1.1, 1.02]),
+    live(27860328, ['"매달 200만원씩만'], say='“이 정도면 평생 가겠지.”', pause=18),
+    big('5년 늦게 시작한 민수 씨', '2.72억원', '같은 3억 · 같은 규칙 · 지난해 말에도 남은 돈', [('같은 돈, 같은 규칙으로 5년', '2003년 1월 시작 · 같은 3억 · 월 200만원 · 2025년 말 2.72억원 남음')], icon='User', c=A),
+    ask('오늘의 물음', '정우 씨 통장은 언제 바닥났을까요?', '같은 3억 · 같은 규칙 · 시작한 해만 다름', ['정우 씨 통장은 언제'], pause=36),
+    live(7490517, ['끝에는 내 통장에서'], say='해마다 볼 숫자 두 개', past=False),
     rows('정우 씨의 규칙', [['넣은 돈', '3억원', A], ['매달 쓸 돈', '200만원', A, 0], ['파는 때', '해마다 1월 · 1년 치 2,400만원', A, 0], ['따라가는 지수', 'S&P500 총수익', K, 1]],
          ['사 둔 상품을 조금씩', ('이 상품이 따라가는 게', '3억원 · S&P500 총수익 지수(배당 재투자) · 해마다 1월에 1년 치 2,400만원을 팔아 씀')], icon='CalendarDays'),
     S('list5', ['많이 묻는 질문 다섯'], title='많이 묻는 질문 다섯', icon='MessageCircleQuestion', source='유튜브 댓글 · 네이버 지식iN · 네이버 연관검색어',
@@ -68,29 +107,29 @@ scenes = [
          [('미국 지수의 실제 기록과', '가상 인물 · 물가 반영 안 함 · 양도세 22%·연 250만원 공제(지금 세법을 그때부터 적용)')], icon='Database', hot=False),
     # ── 1. 평생 가나요? ──
     ask('질문 ①', '3억에서 매달 200만원, 평생 가나요?', '유튜브 댓글 · 네이버 연관검색어 「퇴직금 3억」', ['먼저 정우 씨보다 딱 1년']),
-    pic('s1997', ['영호 씨가 들어간 해에'], year='1997년 1월', chip=['영호 씨', '정우 씨보다 1년 먼저'], zoom=[1.0, 1.1], pan=-20),
-    pair('1997년, 영호 씨 첫해', ['+33.4%', '달러로', K], ['+123.6%', '원화로', R], [('달러로 사 둔 주식은', '원/달러 연말 1996년 844.2원 → 1997년 1,415.2원 (한국은행)')], icon='Banknote'),
-    pic('s1998b', ['정우 씨는 달러가 이미'], year='1998년', zoom=[1.0, 1.12], pan=20),
-    pair('1998년, 정우 씨 첫해', ['+28.6%', '달러로', K], ['+9.7%', '원화로', A], [('그래서 첫해 지수가 30%', '원/달러 연말 1997년 1,415.2원 → 1998년 1,207.8원')], icon='Banknote'),
-    pic('s1999', ['그래도 처음 두 해는'], year='1999년', chip=['3.20억원', '둘째 해 말 통장'], chipAt=0, chipPos='left', zoom=[1.0, 1.1]),
+    pair('1달러를 사는 데 드는 원화', ['844.2원', '1996년 말', K], ['1,415.2원', '1997년 말', A], ['영호 씨가 들어간 해에'], icon='Banknote', src='한국은행 ECOS 원/달러 연말 환율'),
+    eq('1997년, 영호 씨 첫해', '+33.4%', '844.2원', '1,415.2원', '+123.6%', [('달러로 사 둔 주식은', '원/달러 연말 1996년 844.2원 → 1997년 1,415.2원 (한국은행)')]),
+    live(15161525, ['정우 씨는 달러가 이미'], who='정우 씨 · 가상 인물', say='이미 비싸진 달러', pause=18),
+    eq('1998년, 정우 씨 첫해', '+28.6%', '1,415.2원', '1,207.8원', '+9.7%', [('그래서 첫해 지수가 30%', '원/달러 연말 1997년 1,415.2원 → 1998년 1,207.8원')], ctx='영호 씨 1997년: 달러로 +33.4% × 844.2원 → 1,415.2원 = 원화로 +123.6%'),
+    big('둘째 해 말 통장', '3.20억원', '꺼내 쓰고도 늘었다', ['그래도 처음 두 해는'], icon='PiggyBank', c=A),
     broll(6300531, ['"꺼내 쓰는데도'], '꺼내 쓰는데도 늘어나네'),
-    pic('s2001', ['그다음 해부터 지수', '그동안에도 해가 바뀔'], year='2000~2002년', chip=['3년 연속 하락', '그래도 해마다 1년 치를 팖'], chipAt=1, zoom=[1.0, 1.12], pan=24),
+    live(8087771, ['그다음 해부터 지수', '그동안에도 해가 바뀔'], who='2000~2002년 · 정우 씨', say='떨어지는 해에도 한 해 치를 팔았다'),
     broll(15161525, ['"올해도 팔아야'], '올해도 팔아야 하나'),
     bars('정우 씨 통장 연말 잔액', [['1998년', 3.03, '3.03억', A], ['1999년', 3.20, '3.20억', A], ['2000년', 2.95, '2.95억', A], ['2001년', 2.51, '2.51억', A], ['2002년', 1.60, '1.60억', R]],
          [('세 해 내리 떨어지고 ', '연말 잔액 2000년 2.95억 · 2001년 2.51억 · 2002년 1.60억원')], 3.6, dir='v', icon='PiggyBank'),
-    pic('s2003', ['이듬해 지수가 원화로'], year='2003년', chip=['+28.4%', '원화로 오른 해'], chipAt=0, zoom=[1.0, 1.1]),
+    live(38783512, ['이듬해 지수가 원화로'], who='2003년', say='드디어 오른 해', past=False),
     rows('2003년 정우 씨 통장', [['1월 꺼낸 뒤', '1.36억원', A], ['그해 원화', '+28.4%', R, 1], ['연말', '1.75억원', A, 1]],
          ['그런데 정우 씨 통장은 1억 7천', ('해가 바뀌자마자 한 해 ', '2003년 1월 꺼낸 뒤 1.36억원 → 원화 +28.4% → 연말 1.75억원')], icon='PiggyBank'),
-    pic('s2003m', ['바로 그해 초, 다른 '], year='2003년 1월', chip=['민수 씨', '같은 3억으로 시작'], chipC=B, chipAt=0, zoom=[1.0, 1.1], pan=-20),
+    live(16846101, ['바로 그해 초, 다른 '], who='2003년 1월 · 민수 씨 · 가상 인물', say='같은 돈, 같은 규칙'),
     bars('정우 씨 해마다 수익률(원화)', [['2004년', -3.4, '−3.4%', B], ['2005년', 1.8, '+1.8%', R], ['2006년', 6.3, '+6.3%', R], ['2007년', 6.5, '+6.5%', R]],
          ['정우 씨에겐 그 뒤 네'], 8, icon='ChartColumn'),
     broll(12412380, ['"오르긴 오르는데'], '오르긴 오르는데, 통장은 왜 줄지'),
     big('금융위기 직전', '0.87억원', '2007년 말 정우 씨 통장', [('금융위기 직전, 정우 씨', '원화 수익률 2004 −3.4% · 2005 +1.8% · 2006 +6.3% · 2007 +6.5% · 연말 잔액 2007년 0.87억원')], icon='PiggyBank'),
-    pic('s2008', ['2008년 금융위기 때'], year='2008년', chip=['−37.0%', '달러로 본 지수'], chipC=B, chipAt=0, gray=True, zoom=[1.0, 1.1]),
+    live(4458918, ['2008년 금융위기 때'], who='2008년 · 금융위기'),
     pair('2008년, 달러가 올라서', ['−37.0%', '달러로', B], ['−15.6%', '원화로', A], ['그런데 그해 달러 값이', ('그래서 원화로는 손실이', '2008년 달러 −37.0% · 원화 −15.6% · 원/달러 연말 2007년 938.2원 → 2008년 1,257.5원 (한국은행)')], icon='Banknote'),
     pair('2008년 말 두 통장', ['0.53억원', '정우 씨', A], ['2.19억원', '민수 씨', B], [('그래도 그해 말 정우 씨', '2008년 말 정우 씨 0.53억원 · 민수 씨 2.19억원')], icon='Users'),
-    pic('s2010', ['다음 해들도 지수는'], year='2010년', zoom=[1.0, 1.12], pan=20),
-    pic('s2011', ['2011년 새해 첫 달'], year='2011년 1월', chip=['못 꺼냄', '1,154만원 < 1년 치 2,400만원'], chipAt=0, zoom=[1.0, 1.1], pan=-26),
+    live(12412380, ['다음 해들도 지수는'], who='2009~2010년 · 정우 씨', say='오를 돈이 남지 않았다'),
+    live(11099870, ['2011년 새해 첫 달'], who='2011년 1월 · 정우 씨', say='처음으로 다 못 꺼낸 해', pause=20),
     big('바닥난 해', '14년째', '2011년 1월 · 68세', [('시작한 지 열네 해째', '다 꺼낸 해 13번 × 2,400만원 = 3.12억원')], icon='CalendarX', c=R),
     rows('세 통장, 2025년 말', [['영호 씨 · 1997년 시작', '15.90억원', K], ['정우 씨 · 1998년 시작', '2011년 바닥', R], ['민수 씨 · 2003년 시작', '2.72억원', B]],
          [('민수 씨는 지난해 말까지 꺼내', '민수 씨 2003~2025년 23번 꺼냄 · 2025년 말 2.72억원 / 영호 씨 1997년 시작 · 2025년 말 15.90억원')], icon='Users'),
@@ -98,7 +137,7 @@ scenes = [
     big('이유 ① 떨어진 값에 팔기', '주식을 더 많이', '같은 2,400만원을 만들려면', ['먼저, 떨어진 값에 팔면', '그렇게 줄어든 주식은'], icon='TrendingDown', c=R),
     bars('이유 ② 3년 내리 하락(달러)', [['2000년', -9.1, '−9.1%', B], ['2001년', -11.9, '−11.9%', B], ['2002년', -22.1, '−22.1%', B]],
          ['게다가 꺼내기 시작하자마자', ('1989년부터 지난해까지', 'S&P500 총수익 달러 2000 −9.1% · 2001 −11.9% · 2002 −22.1% (야후 파이낸스 S&P500 총수익 지수 · NYU 스턴 자료와 0.2%p 안)')], 25, icon='TrendingDown'),
-    pic('s1997', ['그리고 원화로 생활하는'], chip=['이유 ③ 환율', '영호 씨 첫해 원화 +123.6%'], chipAt=0, zoom=[1.15, 1.25], pan=10),
+    live(6326928, ['그리고 원화로 생활하는'], who='이유 셋 · 환율', say='원화로 사는 사람에겐 환율도'),
     broll(36282124, ['그래서 첫 질문의 답은'], '시작한 해가 갈랐다'),
     big('내 통장에서 볼 것', '처음 몇 해', '통장이 처음 넣은 돈보다 줄었나', ['내 통장에서 볼 것은 하나'], icon='Eye'),
     pair('민수 씨도 줄었지만', ['2.99억원', '2006년 1월', B], ['2.72억원', '2025년 말', B], [('줄었다고 꼭 바닥나는', '민수 씨 2006년 1월 2.99억원 < 처음 3억 → 2025년 말 2.72억원')], icon='User'),
@@ -107,11 +146,11 @@ scenes = [
     ask('질문 ②', '7%, 8%씩 꺼내도 괜찮다던데요?', '유튜브 댓글 「원래 4퍼센트로 알고있었는데 7퍼센트도 되는군요?」', ['조회 수 50만이 넘은']),
     broll(16846101, ['다른 영상은 3억이 해마다'], '꼬박꼬박 번다고 치면'),
     big('내 인출률', '8.0%', '연 2,400만원 ÷ 3억원', [('먼저 숫자부터 맞춰', '연 2,400만원 ÷ 3억원 = 연 8.0%')], icon='Calculator'),
-    pic('s_cal', ['지난 37년, 해마다 1월에'], chip=['시작한 해 37개', '1989~2025년, 해마다 1월'], chipAt=0, zoom=[1.0, 1.1]),
+    live(6651088, ['지난 37년, 해마다 1월에'], say='해마다 새해에, 한 사람씩', past=False),
     pair('37명 중', ['6명', '바닥', R], ['31명', '아직 안 바닥남', B], [('통장이 바닥난 사람은 서른일곱', '3억 · 월 200만원 · 시작한 해 37개 중 바닥 6개 · 아직 안 바닥남 31개')], icon='Users'),
     broll(6651088, ['그 7% 영상은 미국'], '달러 계산과는 다르다', side='right'),
     big('아직 결과 모름', '13명', '2013~2025년 시작 · 13년 이하', [('그리고 아직 바닥나지 않은', '2013~2025년 시작 13명은 2025년 말까지 13년 이하')], icon='Hourglass', c=K),
-    pic('s2011', ['정우 씨는 열네 해째, 2004년'], chip=['아직 몰라요', '열네 해가 안 된 사람들'], chipAt=0, zoom=[1.15, 1.25], pan=-10),
+    live(8087771, ['정우 씨는 열네 해째, 2004년'], say='아직 결과를 모르는 사람들', past=False),
     S('grid', [('그런데 그 여섯 명이', '바닥 — 1998년 시작 14년차 · 1999년 13년차 · 2000년 11년차 · 2001년 11년차 · 2002년 12년차 · 2004년 18년차'), '정우 씨를 포함한 다섯', '나머지 한 명은 2004년'],
       title='바닥난 6명, 시작한 해', icon='CalendarX', source=SRC,
       cells=[['1998년', '14년차', 0], ['1999년', '13년차', 0], ['2000년', '11년차', 0], ['2001년', '11년차', 0], ['2002년', '12년차', 0], ['2004년', '18년차', 0]],
@@ -137,9 +176,9 @@ scenes = [
     pair('바닥난 사람 · 같은 6명', ['6명', '매달 팔기 · 30명 중', A], ['6명', '1년 한 번 · 37명 중', A], [('매달 파는 계산은 1996년', '매달 1일 200만원 매도(월말 지수·한국은행 월말 환율, 세금은 이듬해 5월) · 1996~2025년 시작 30명 중 바닥 6명')], icon='Users'),
     broll(5930874, ['왜 그럴까요? 매달 팔든'], '같은 하락을 똑같이 지나간다'),
     big('갈린 건', '얼마나 · 언제', '꺼내는 돈을 줄였느냐', ['그래서 파는 횟수는'], icon='Scale', c=K),
-    pic('s2001b', ['정우 씨는 떨어진 지 두 해'], year='2001년 1월', chip=['줄일까?', '하락 둘째 해'], chipAt=0, zoom=[1.0, 1.1], pan=-20),
+    live(27860328, ['정우 씨는 떨어진 지 두 해'], who='2001년 1월 · 정우 씨', say='줄일까?'),
     big('2001년부터 월 100만원', '5.91억원', '2025년 말 남은 돈', [('그때부터 계속 월 100만원', '1998년 시작 · 월 200만원 → 2001년부터 월 100만원 · 2025년 말 5.91억원 남음')], icon='PiggyBank', c=B),
-    pic('s2003k', ['같은 결심을 두 해 늦게'], year='2003년 1월', chip=['3.49억원', '2003년부터 월 100만원'], chipC=B, chipAt=0, zoom=[1.0, 1.1]),
+    live(7593891, ['같은 결심을 두 해 늦게'], who='2003년 1월 · 정우 씨', say='두 해 늦은 결심'),
     rows('두 해 늦게 줄였다면', [['2003년부터 월 100만원', '3.49억원 남음', B], ['2003년부터 월 150만원', '2015년 바닥', R, 0]],
          [('두 해 늦게 150만원으로', '2003년부터 월 100만원 · 2025년 말 3.49억원 / 2003년부터 월 150만원 · 2015년 바닥')], icon='Scissors'),
     broll(16747050, ['그런데 하락이 시작된 걸'], '그때 알아채기는 어렵다', side='right'),
@@ -148,7 +187,7 @@ scenes = [
     broll(6300524, ['월 100만원은 그 자체로도'], '좋은 해엔 더 쓰게'),
     rows('정우 씨 · 규칙 적용', [['줄인 해', '21번', K], ['손에 쥔 돈', '4.20억원 (규칙 없이 3.12억원)', A, 1], ['2025년 말 남은 돈', '4.92억원', B, 2]],
          ['정우 씨는 지난해까지 28년', '그래도 꺼내 쓴 돈을', ('지난해 말 통장에도', '규칙 적용 · 37명 중 바닥 0 · 1998년 시작: 줄인 해 21번 · 손에 쥔 돈 4.20억원(규칙 없을 때 3.12억원) · 2025년 말 4.92억원 남음')], icon='User'),
-    pic('s2003m', [('대신 운 좋은 해에', '2003년 시작 · 규칙 적용 손에 쥔 돈 4.68억원 · 규칙 없을 때 23번 × 2,400만원 = 5.52억원 · 2025년 말 11.65억원 남음')], chip=['덜 썼다', '민수 씨 · 4.68억원 (규칙 없이 5.52억원)'], chipC=B, chipAt=0, zoom=[1.15, 1.25]),
+    live(6300531, [('대신 운 좋은 해에', '2003년 시작 · 규칙 적용 손에 쥔 돈 4.68억원 · 규칙 없을 때 23번 × 2,400만원 = 5.52억원 · 2025년 말 11.65억원 남음')], who='민수 씨 · 가상 인물', say='좋은 해엔 덜 썼다', past=False),
     broll(6785719, ['누구라면 어떻게 할까요', '월 100만원으로도 생활이'], '누구라면 어떻게 할까'),
     rows('누구라면', [['월 100만원으로 생활이 된다', '규칙을 처음부터', B], ['월 200만원이 꼭 필요하다', '줄인 만큼 채울 수입이 있어야', A]], ['월 200만원이 꼭 필요한'], icon='Users'),
     big('조심', '물가 반영 안 함', '물가 따라 올리면 바닥이 더 빨리', ['조심할 점도 있어요. 이 계산은', '물가 따라 꺼내는 돈을'], icon='TriangleAlert', c=R),
@@ -185,10 +224,10 @@ scenes = [
     pair('금고 vs S&P500', ['12번', '금고 · 2010년 1월 바닥', K], ['13번', 'S&P500 · 2011년 1월 바닥', A], ['먼저 아무 데도 안 넣고', ('정우 씨는 열세 번을 다', '수익 0%(금고) · 2010년 1월 바닥(12번) vs 정우 씨 S&P500 2011년 1월 바닥(13번)')], icon='Vault', src=SRC_R),
     broll(6326929, ['다음은 은행 정기예금이에요'], '은행 정기예금이라면'),
     pair('1998년 시작', ['2018년', '예금 바닥', B], ['2011년', 'S&P500 바닥', A], [('같은 규칙이면, 예금 통장은', '정기예금(1~2년 미만, 신규취급액) 1월 금리 · 이자소득세 15.4% 뺀 뒤 · 1998년 시작 → 2018년 1월 바닥(21년차) · 한국은행 ECOS 정기예금 금리')], icon='Landmark', src='한국은행 ECOS 정기예금 금리 · 파이어맵 계산'),
-    pic('s2011', ['2011년에 바닥난 정우 씨보다'], chip=['예금이 더 갔다', '정우 씨보다 일곱 해 더'], chipC=B, chipAt=0, zoom=[1.0, 1.1], pan=20),
+    live(12033695, ['2011년에 바닥난 정우 씨보다'], say='예금이 일곱 해 더 갔다', past=False),
     bars('1월 정기예금 금리', [['1998년', 15.85, '15.85%', R], ['1999년', 8.83, '8.83%', A], ['2000년', 8.31, '8.31%', A], ['2001년', 7.15, '7.15%', A], ['2025년', 3.06, '3.06%', B, 2]],
          ['왜 예금이 이겼을까요', ('그 뒤 세 해도 금리가', '1월 정기예금(1~2년 미만) 금리 1998년 15.85% · 1999년 8.83% · 2000년 8.31% · 2001년 7.15% · 2025년 3.06% (한국은행)'), '외환위기 때라 은행 이자가'], 20, dir='v', icon='Percent', src='한국은행 ECOS 정기예금(1~2년 미만, 신규취급액) 1월 금리'),
-    pic('s2003m', ['민수 씨처럼 2003년에'], year='2003년', chip=['반대였다', '민수 씨'], chipC=B, chipAt=0, zoom=[1.0, 1.1], pan=20),
+    live(6326929, ['민수 씨처럼 2003년에'], who='2003년 · 민수 씨', say='이번엔 반대였다', start=12),
     pair('2003년 시작', ['2019년', '예금 바닥', B], ['2.72억원', 'S&P500 · 2025년 말', A], [('예금은 2019년에 바닥났어요', '2003년 시작 · 정기예금 2019년 1월 바닥 / S&P500 2025년 말 2.72억원'), ('1998년엔 예금 이자가 15%를', '1998년 세전 15.85% · 2003년 세전 5% 미만(세후 4.03%)')], icon='Landmark', src='한국은행 ECOS 정기예금 금리 · 파이어맵 계산', at2=0),
     broll(5940883, ["이번엔 '평생'이 얼마인지"], '평생은 몇 해일까'),
     pair('60세 기대여명', ['23.7년', '남자', B], ['28.4년', '여자', R], [('나라에서 내는 생명표를', '2024년 생명표(국가데이터처 2025-12-03 발표) 60세 기대여명 남 23.7년 · 여 28.4년')], icon='HeartPulse', src='국가데이터처 2024년 생명표(2025-12-03 발표)', at2=0),
@@ -202,11 +241,14 @@ scenes = [
     broll(7606651, ['줄일 수 있는 분이라면'], '언제 얼마로 줄일지 미리'),
     big('조심', '단순 계산', '이자 세금 지금 세율 · 건보료 안 넣음', ['조심할 점이 있어요. 예금'], icon='TriangleAlert', c=R, src=SRC_R),
     # ── 6. 끝 ──
-    broll(6263185, ['정리하면, 꺼내 쓰는', '시작할 해는 고를 수'], '고를 수 있는 건 비율과 규칙'),
+    broll(6263185, ['정리하면, 꺼내 쓰는'], '고른 상품보다 시작한 해와 규칙'),
     rows('해마다 볼 숫자 둘', [['① 1년 꺼내는 돈 ÷ 처음 넣은 돈', '몇 %?', A], ['② 1월 통장 < 처음 넣은 돈?', '줄일 때', B]], ['해마다 볼 숫자는 둘'], icon='Eye', hot=False),
     ask('firemap.kr', '내 통장은 몇 살까지 갈까요?', '설명란 첫 줄 계산기 · 내 돈 · 매달 쓸 돈 넣기 → 연 수익률 낮춰 한 번 더 · 투자 권유 아님 · 가상 인물 · 과거 지수 기록 계산', ['내 통장은 몇 살까지', '연 수익률 칸을 낮춰']),
+    live(5562942, ['시작할 해는 고를 수'], say='시작할 해는 못 고르지만, 비율과 규칙은 고른다', past=False, start=20, pause=105),
+    brand(['화요일 오전 11시 반에는'], '화요일 오전 11시 반 · 아파트 실거래가'),
 ]
-for s in scenes: assert s['kind'] != 'broll' or not re.search(r'\d', s['data']['say'] or ''), ('실사 say 숫자', s['data']['say'])
+for s in scenes: assert s['kind'] not in ('broll', 'live') or not re.search(r'\d', s['data'].get('say') or ''), ('실사 say 숫자', s['data'].get('say'))
+assert not [s for s in scenes if s['kind'] == 'pic'], '그림 인물(pic)은 견본 방식에서 뺐다'
 short = []
 for s in scenes:   # TallyBroll prop 이름(from) · 클립 길이 확인
     d = s['data']
@@ -216,7 +258,7 @@ for s in scenes:   # TallyBroll prop 이름(from) · 클립 길이 확인
         d.pop('_need'); d.pop('_have')
 assert not short, ('실사 클립이 말보다 짧다', short)
 assert len(USED) == len(ALL), ('안 쓴 줄', [ALL[i]['text'][:24] for i in range(len(ALL)) if i not in USED])
-order = [l['i'] for s in scenes for l in s['lines']]; assert order == sorted(order), '줄 순서'
+order = [l['o'] for s in scenes for l in s['lines']]; assert order == sorted(order) and len(order) == len(SAY), ('줄 순서·빠진 줄', len(order), len(SAY))
 scenes[-1]['frames'] += TAIL
 
 # 바닥나는 해 칸: '정우 씨 통장은 언제' 줄부터 '?' → '2011년 새해 첫 달' 줄 시작에서 '2011년'
@@ -227,18 +269,51 @@ for s in scenes:
         if l['text'].startswith('2011년 새해 첫 달'): box_flip = t
         t += l['frames']
 for s in scenes:
-    for l in s['lines']: l.pop('i')
+    for l in s['lines']: l.pop('i'); l.pop('o')
+
+# 'N.NN억원' → 'N억 N,NNN만원'(화면 큰 값만, 자막 cap은 정확값 그대로) — 디렉터 '말로 읽히는 단위'
+CONV = set()
+def won(t):
+    def f(m):
+        a, b = int(m.group(1)), int(m.group(2)) * 100
+        o = (f'{a}억 ' if a else '') + (f'{b // 1000}천만원' if b % 1000 == 0 and b else f'{b:,}만원' if b else '원')
+        o = o.replace('억 원', '억원'); CONV.update(re.findall(r'\d[\d,]*', o)); return o
+    return re.sub(r'(\d+)\.(\d\d)억원?', f, t)
+for s in scenes:
+    d = s['data']
+    for k in ('v', 'v1', 'v2', 'line'):
+        if isinstance(d.get(k), str): d[k] = won(d[k])
+    if 'rows' in d: d['rows'] = [[won(x) if isinstance(x, str) and j < 2 else x for j, x in enumerate(r)] for r in d['rows']]
+    if 'cells' in d: pass
+
+# 답 열기(rv): 큰 값에 숫자가 있으면, 말에서 처음 숫자(아라비아·우리말 수)가 나오는 자리까지 '?'
+NUMW = re.compile(r'\d|한 |두 |세 |네 |다섯|여섯|일곱|여덟|아홉|열|스물|서른|마흔|쉰|예순|일흔|여든|아흔|절반|반')
+def first_num(lines, skip=0):
+    a = 0
+    for l in lines:
+        m = NUMW.search(l['text'])
+        if m and a >= skip: return a + int(l['frames'] * m.start() / max(1, len(l['text'])))
+        a += l['frames']
+    return None
+for s in scenes:
+    d = s['data']
+    if s['kind'] == 'big' and re.search(r'\d', d.get('v', '')):
+        r = first_num(s['lines']); d['rv'] = max(12, r) if r is not None else 12
+    elif s['kind'] == 'eq':
+        d['rv'] = max(40, int(s['lines'][-1]['frames'] * 0.55))
+    elif s['kind'] == 'pair' and len(s['lines']) == 1:
+        r = first_num(s['lines']); d['rv'] = max(int(s['lines'][0]['frames'] * 0.45), r or 0)
 
 # 화면 관문 어림: 판(실사·그림·질문 카드 아닌 것)이 이어진 구간 최장, 실사 몫, 바뀜 장면 수
 run = mx = live = brk = 0; tot = sum(s['frames'] for s in scenes)
 for s in scenes:
-    if s['kind'] == 'broll': live += s['frames']
-    if s['kind'] in ('broll', 'pic', 'ask'): run = 0; brk += 1
+    if s['kind'] in ('broll', 'live'): live += s['frames']
+    if s['kind'] in ('broll', 'pic', 'ask', 'live', 'brand'): run = 0; brk += 1
     else: run += s['frames']; mx = max(mx, run)
 RUNS = []
 run2 = 0; grp = []
 for s in scenes:
-    if s["kind"] in ("broll", "pic", "ask"):
+    if s["kind"] in ("broll", "pic", "ask", "live", "brand"):
         if run2 / FPS > 19.5: RUNS.append((round(run2 / FPS, 1), grp))
         run2 = 0; grp = []
     else: run2 += s["frames"]; grp.append(s["data"].get("title"))
@@ -246,7 +321,7 @@ if run2 / FPS > 19.5: RUNS.append((round(run2 / FPS, 1), grp))
 assert not RUNS, RUNS
 
 # 숫자 대조: props 글자 속 숫자 덩이는 calc·대본에 그대로 있어야 한다
-SKIP = {'chipPos', 'audio', 'pic', 'src', 'license', 'kind', 'icon', 'c', 'c1', 'c2', 'chipC', 'zoom', 'cells', 'lit', 'from', 'pan', 'cx', 'cy', 'at2', 'chipAt', 'max', 'x', 'side', 'hot', 'dir'}
+SKIP = {'rv', 'past', 'who', 'chipPos', 'audio', 'pic', 'src', 'license', 'kind', 'icon', 'c', 'c1', 'c2', 'chipC', 'zoom', 'cells', 'lit', 'from', 'pan', 'cx', 'cy', 'at2', 'chipAt', 'max', 'x', 'side', 'hot', 'dir'}
 def strings(x):
     if isinstance(x, dict):
         for k, v in x.items():
@@ -262,10 +337,12 @@ for s in scenes:
     for st in list(strings(s['data'])) + [l['cap'] for l in s['lines'] if l['cap']] + [c[0] + ' ' + c[1] for c in s['data'].get('cells', [])]:
         for d in re.findall(r'\d[\d,.]*', st):
             d = d.rstrip('.,')
-            if d not in SRCDOC: bad.append((st[:40], d))
+            if d not in SRCDOC and d not in CONV: bad.append((st[:40], d))
 assert not bad, bad
 
-p = {'fps': FPS, 'scenes': scenes, 'boxOn': box_on, 'boxFlip': box_flip, 'boxQ': '?', 'boxA': '2011년', 'boxLabel': '바닥나는 해', 'badge': '가상 인물'}
+box_off = sum(s['frames'] for s in scenes[:-2])   # 끝 하늘 실사·맺는 말에서는 '바닥나는 해' 칸을 내린다
+p = {'fps': FPS, 'scenes': scenes, 'boxOn': box_on, 'boxOff': box_off, 'boxFlip': box_flip, 'boxQ': '?', 'boxA': '2011년', 'boxLabel': '바닥나는 해', 'badge': '가상 인물'}
 json.dump(p, open(os.path.join(VID, 'c2.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print(f'c2.json: {tot} 프레임 = {tot / FPS:.1f}초 · 장면 {len(scenes)} · 줄 {len(ALL)} · 종류 {len(set(s["kind"] for s in scenes))}'
-      f' · 실사 {live / tot * 100:.1f}% · 바뀜 장면 {brk}(컷 분당 {brk * 2 / (tot / FPS / 60):.1f} 어림) · 판 이어짐 최장 {mx / FPS:.1f}초 · 숫자 대조 통과')
+      f' · 실사 {live / tot * 100:.1f}% · 바뀜 장면 {brk}(컷 분당 {brk * 2 / (tot / FPS / 60):.1f} 어림) · 판 이어짐 최장 {mx / FPS:.1f}초 · 숫자 대조 통과'
+      + (f' · 녹음 전 줄 {len(DRAFT)}(어림 길이, 소리 없음): ' + ' / '.join(x[:16] for x in DRAFT) if DRAFT else ''))

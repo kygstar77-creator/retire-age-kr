@@ -24,6 +24,25 @@ def body_sentences(md):
     t = open(md, encoding='utf-8').read().split('\n---', 1)[0]
     return [re.sub(r'\s*\(화면.*$', '', l.strip()[2:]).strip() for l in t.splitlines() if l.lstrip().startswith('- ')]
 
+def order_warn(pa, me):
+    """slots.json 롱폼 칸 중 지금~pa 사이에 있는데 uploads.jsonl에 없는 편(앞 칸 미업로드) — 10/17 회의 체크리스트 52"""
+    try:
+        sl = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research', 'slots.json'), encoding='utf-8'))
+    except Exception as e:
+        return [f'slots.json 못 읽음 {e}']
+    done = {u.get('ep') for u in uploads() if not u.get('replaced')}
+    now = datetime.datetime.now(KST); out = []
+    for x in (sl.get('slots', []) if isinstance(sl, dict) else sl):
+        if x.get('kind') not in ('long', 'longform', '롱폼'): continue
+        try: t = datetime.datetime.fromisoformat(x.get('due') or x.get('at') or x.get('time'))
+        except Exception: continue
+        if t.tzinfo is None: t = t.replace(tzinfo=KST)
+        it = str(x.get('item', ''))
+        if now < t < pa and it and me not in it and not any(e and e in it for e in done) and '비움' not in it:
+            out.append(f'{t:%m/%d %H:%M} {it} 아직 안 올라감')
+    return out
+
+
 def gate(ep):
     m = json.load(open(os.path.join(ep, 'meta.json'), encoding='utf-8')); bad = []
     # 경쟁 비교 관문(10/2 대역): ep/<편>/compare.md에 3줄(경쟁이 잘하는 것·우리가 따라갈 것·우리가 다르게 할 것)이 있어야 올린다. 이름은 compare.md 하나로 통일
@@ -86,6 +105,8 @@ def gate(ep):
     # 2026-10-02 사장님 지시로 '주 2편' 제한 해제 → 하루 1편만(X-YT-FREQ). 주 7편 넘으면 막는다.
     if sum(1 for p in prev if abs((pa - p).total_seconds()) < 7 * 86400) >= 7: bad.append('C1 롱폼 주 7편 넘음')
     if any(p.astimezone(KST).date() == pa.astimezone(KST).date() for p in prev): bad.append('C1 같은 날 롱폼 2편')
+    # 10/17 회의(체크리스트 52): 롱폼은 날짜 순서로만 — 앞 칸(slots 롱폼, 이 편보다 이른 미래 칸)이 아직 안 올라갔으면 경고
+    for w in order_warn(pa, me): print('[경고] 날짜 순서:', w)
     # 10/11 10:2x 사장님: 롱폼 정규 시각 매일 11:30(전 19:30). 그날 밀린 편은 관문을 다 넘는 즉시 공개 → 한국 11~21시만 허용(새벽·밤 공개는 계속 막음)
     if not (11 <= pa.astimezone(KST).hour < 21): bad.append('예약 시각이 한국 11~21시 밖')
     if pa < datetime.datetime.now(KST) + datetime.timedelta(minutes=20): bad.append('예약 시각이 너무 가깝거나 지났다')
@@ -103,12 +124,17 @@ def gate(ep):
     if re.search(r'\b[A-Z]{5,}\b', m['title']) and not re.search(r'\b(KODEX|TIGER)\b', m['title']): bad.append('C7 제목 전부 대문자 단어')
     # C8 AI 공개
     if m.get('veo') and not m.get('synthetic'): bad.append('C8 Veo 사용인데 합성 미디어 표시 없음')
+    # 10/17 회의(체크리스트 51): AI 목소리 편은 Veo가 없어도 합성 표시 True — 설명란 'AI 음성'이 있으면 곧 AI 목소리 편
+    if not m.get('synthetic') and 'AI 음성' in m.get('desc', ''): bad.append('C8 AI 목소리 편인데 합성 미디어 표시(synthetic) 없음')
     # C9 설명란
     d = m['desc']
     if '출처' not in d: bad.append('C9 출처 줄 없음')
     import disclaim   # 10/14 회의 지시: 영상 끝 면책(A23)을 뺀 대신 설명란 '권유 아님' 줄 필수
     if not disclaim.line(d): bad.append(disclaim.NEED)
     if len(re.findall(r'cafe\.naver\.com', d)) > 1: bad.append('C9 카페 링크 2개 이상')
+    # 10/17 회의(레드팀 R3): 짝 카페 글 주소는 설명 첫 5줄 안(접힘 위) — 없으면 cafe.naver.com/firemap
+    if '{CAFE}' in d: bad.append('C9 설명에 {CAFE} 그대로 — 짝 카페 글 주소로 바꿔야 함(글이 아직 없으면 cafe.naver.com/firemap)')
+    if not re.search(r'cafe\.naver\.com|\{CAFE\}', ' '.join(d.splitlines()[:5])): bad.append('C9 설명 첫 5줄에 카페 줄 없음(짝 글 주소, 없으면 cafe.naver.com/firemap)')
     if not (3 <= len(m['tags']) <= 5): bad.append('C9 태그 3~5개 아님')
     ch = re.findall(r'^(\d+):(\d\d) ', d, flags=re.M)
     secs = [int(a) * 60 + int(b) for a, b in ch]

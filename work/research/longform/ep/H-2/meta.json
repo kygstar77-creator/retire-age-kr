@@ -63,7 +63,7 @@
   "privacy": "private",
   "privacy_note": "예약 공개(private+publishAt) — 정해진 시각에 공개로 바뀜",
   "paid": false,
-  "synthetic": false,
+  "synthetic": true,
   "veo": false,
   "synthetic_note": "실사 생성 장면 없음(지도·그래프·아이콘만, Remotion)",
   "coupang": null,

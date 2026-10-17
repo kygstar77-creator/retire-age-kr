@@ -91,3 +91,10 @@
 2. 미리보기: `py -3.12 research/longform/ep/X-1/motion_preview/fxrender.py`(X1Fx = 1장 phase line + 2장 phase bars 이어 붙임, 스틸·motioncheck).
 3. 규칙: 막대는 날짜 순(말 순서로 바꾸지 않음 — 순위로 읽힘), 내려앉는 순서만 말을 따른다(fill) · 막대 높이 0부터 값 비례 · 빨강 = '줄어든 것' 한 뜻(왼쪽 내린 환율·오른쪽 줄어든 원화) · 막대 위 큰 글자는 말 속 반올림 금액, 정확한 값은 [자막] 띠.
 4. 편마다 바뀜: seed로 왼쪽 여백·막대 폭·간격. 다른 주제(금값 산 날·주가 산 날·금리 가입 날)는 vals·marks만 바꿔 쓴다.
+
+## X-1 v3 새 장면 셋(10/17) — HedgeFlip · EvenLadder · DaysBelow
+공통: TallyFrame 자식, props `{...data, beats: tallyStarts(lines)}`. 재료 = `research/longform/ep/X-1/motion_preview/v3props.py`(script·calc_out·raw assert, 장면 시작·끝 말 문구로 줄 자름) → x1_v3.json. 미리보기 `v3render.py`(X1V3 = 세 장면 이어 붙임, 줄마다 스틸 board_<k>.png, motioncheck). U5는 `lfrender.still_runs(mp4)`로 바로 잰다(motioncheck 통과 ≠ U5 통과).
+- **HedgeFlip — 같은 돈, 두 상품(환노출 vs H, 배당 재투자 vs 안 함 같은 쌍 비교)**: `pairs[{date,name,a,ap,b,bp,gap}]·order(말 순서)·base·nameA/tagA/nameB/tagB·sayA·sayB·why·ask·flip·rates[3]·fx24·fx24pk·end`. 쌍 자리는 날짜 순, 켜짐만 말 순서. 차 글자·괄호는 **이긴 쪽 색과 이긴 쪽 이름**('환노출형이 … 더') — 색이 하나면 뒤집힌 쌍도 같은 쪽이 이긴 걸로 읽힘(레드팀 10/17). 12줄 고정 시점(말 줄 → 일 대응은 v3props 주석).
+- **EvenLadder — '얼마가 돼야 본전'(본전 환율·본전 주가·손익분기 금리)**: `now·min·max·ticks·evens[{name,rate,mult,even,evenText,say}]·formula[3]·ex[3]·app[2]·gapSay·aboveTag·belowTag·warn·both·end`. 오른쪽 세로 눈금 위 본전 줄, 지금보다 위 = 빨강 틈, 아래 = 파랑 틈. 왼쪽 어두운 카드가 줄마다 자람(밝은 글자만 나타나면 U5가 같은 화면으로 셈). 보기 숫자 옆 % 는 **어느 날 기준인지** 붙인다(16%가 최고점 날로 읽힘).
+- **DaysBelow — '지나간 날 중 지금보다 쌌던 날'(환율·금값·금리 위치 세기)**: `usd·jpy(일별 원문)·years·min/max·now·nowText·name·noAns·past·total·usdCount·usdRatio·jpyCount·sumUp[2]·mid`. 오른쪽 '앞날' 빈 칸(전망 안 함을 그림으로), 지금 줄 아래 날만 주황 점. 두 선을 겹칠 땐 선 이름을 선 시작에 직접. 끝에 몰린 점(엔화 4일)은 고리로 감싼다.
+- 편마다 바뀜: seed로 여백·막대 폭. U5 요령(이번에 6곳 → 0곳): 줄마다 **어두운 면적이 판의 4% 넘게** 바뀌게 — 띠·카드·작은 선 상자를 어둡게, 같은 자리에 비슷한 칩을 이어 놓지 않기(4줄 칩 → 5줄 칩 같은 자리면 같은 화면).

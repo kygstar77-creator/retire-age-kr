@@ -12,6 +12,10 @@ import {StepCliff, StepCliffProps} from '../StepCliff';
 import {BuybackDays, BuybackDaysProps} from '../BuybackDays';
 import {Series} from 'remotion';
 import {FxDates, FxDatesProps} from '../FxDates';
+import {tallyStarts} from '../TallyFrame';
+import {HedgeFlip, HedgeFlipProps} from '../HedgeFlip';
+import {EvenLadder, EvenLadderProps} from '../EvenLadder';
+import {DaysBelow, DaysBelowProps} from '../DaysBelow';
 
 type P = {scene: RScene; zoom: ZoomOutOpenProps};
 const OpenZoom: React.FC<P> = ({scene, zoom}) => (
@@ -79,6 +83,18 @@ const X1Fx: React.FC<P9> = ({s1, s2, fx}) => (
   </Series>
 );
 
+// X-1 v3 새 장면 세 개(10/17 motion) — 질문 2 HedgeFlip · 질문 1 EvenLadder · 질문 5 DaysBelow
+type V3S<D> = RScene & {data: D};
+type P10 = {hedge: V3S<Omit<HedgeFlipProps, 'beats'>>; even: V3S<Omit<EvenLadderProps, 'beats'>>; below: V3S<Omit<DaysBelowProps, 'beats'>>};
+const v3Frame = (s: RScene, child: React.ReactNode) => <TallyFrame title={s.title} sub={s.sub} source={s.source} chapter={s.chapter} lines={s.lines}>{child}</TallyFrame>;
+const X1V3: React.FC<P10> = ({hedge, even, below}) => (
+  <Series>
+    <Series.Sequence durationInFrames={hedge.frames}>{v3Frame(hedge, <HedgeFlip {...hedge.data} beats={tallyStarts(hedge.lines)} />)}</Series.Sequence>
+    <Series.Sequence durationInFrames={even.frames}>{v3Frame(even, <EvenLadder {...even.data} beats={tallyStarts(even.lines)} />)}</Series.Sequence>
+    <Series.Sequence durationInFrames={below.frames}>{v3Frame(below, <DaysBelow {...below.data} beats={tallyStarts(below.lines)} />)}</Series.Sequence>
+  </Series>
+);
+
 export const PreviewRoot: React.FC = () => (
   <>
   <Composition id="OpenZoom" component={OpenZoom as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
@@ -108,5 +124,8 @@ export const PreviewRoot: React.FC = () => (
   <Composition id="X1Fx" component={X1Fx as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P9).s1.frames + (props as unknown as P9).s2.frames})} />
+  <Composition id="X1V3" component={X1V3 as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => { const q = props as unknown as P10; return {durationInFrames: q.hedge.frames + q.even.frames + q.below.frames}; }} />
   </>
 );

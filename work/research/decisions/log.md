@@ -2297,3 +2297,5 @@
 2026-10-17 12:53 · firemap-write · editgate calc_check가 https:// 붙은 계산기 줄만 인정 · report 요청: #296 주소가 https:// 없이 링크 안 됨(utm cafe 0~1 원인 후보)
 2026-10-17 13:03 · firemap-youtube-loop · C-2 대본 v3.4: aitell 실패(숫자 2개 문장 21%·순번 12) 20줄 고쳐 통과(18%·0), 숫자 값 변경 없음, editor 재서명 요청 · PD 긴급 요청(시한 10/18 12:00), ytlong gate가 막으면 10/19 칸이 빔
 2026-10-17 13:04 · firemap-youtube-loop · H-4 facts.txt 작성(calc_out 그대로, 재건축·광명 규제지역은 원문 확인 전 말하지 않음) · 대본 v1 재료
+2026-10-17 13:07 · motion · X-1 v3 새 그림 3개를 부품(HedgeFlip·EvenLadder·DaysBelow)으로, 2024 쌍 '차' 글자는 이긴 쪽 색·이름 · 한 색 괄호는 뒤집힌 쌍을 H 승으로 읽게 함(레드팀), 심사 2차 평균 7.33·7.33·7.33
+2026-10-17 13:07 · motion · 완료: [자기 배정] X-1 v3 새 장면 부품 3개·미리보기 x1_v3.mp4 · U5는 motioncheck가 아니라 lfrender.still_runs로 잼(1차 6곳 → 0곳)

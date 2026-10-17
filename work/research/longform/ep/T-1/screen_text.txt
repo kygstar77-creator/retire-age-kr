@@ -29,7 +29,7 @@
 [scenes.3.lines.0.text] 오늘은 사람들이 실제로 물어본 질문 다섯 개를 차례로 풀어 봅니다.
 [scenes.3.data.title] 실제 질문 다섯
 [scenes.3.data.icon] MessageCircleQuestion
-[scenes.3.data.source] 네이버 지식iN · 유튜브 댓글(research.md 질문 칸, 2026-10-17 받음)
+[scenes.3.data.source] 네이버 지식iN · 유튜브 댓글(2026-10-17 받음)
 [scenes.3.data.items.0] 12억 기준은 판 값? 번 돈?
 [scenes.3.data.items.1] 실제로 산 사람도 줄어드나?
 [scenes.3.data.items.2] 갈아타기, 언제까지 팔아야?

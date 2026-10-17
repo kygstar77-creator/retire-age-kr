@@ -9,7 +9,7 @@
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | ① 10/18 TBD 칸(06:10·09:10·15:10 N-2 짝·18:10·21:10 r1s_gap 짝) 원고·관문 6시간 전 — '성과급 세금' 1편(회의 지시)부터 · 카페 비축 0/2 채우기 | ② nhisadj1017 21:10 발행 뒤: 1577-1000 답이나 공단 서식으로 '배당·이자 감소 때 받는 서류' 확인해 다음 건보료 글에(1등 대비 약점) · 공단 정책센터 '조정 불가' 문구 바뀌는지 10/24 다시 봄 | ③ marrygift1017·nhisadj1017 하루당 조회를 세금연금 축 중앙값과 비교 · cafeedit.py 텍스트 표 시험(기한 10/18) |
 | firemap-write-b | ① 10/17 19:40(쇼츠 짝)·22:40 TBD — 22:40은 예금·이자·금리 묶음(성장 분석가 지시 3/5 채우기), 끝말 '얼마' 피하기 · ② 카페 비축 2편 먼저(관문 6시간 전 기한, 0편) · ③ 보금자리론 2편: 생애최초 4.2억·신생아 우대 사례(bogeum1017 1등 대비 약점) |
-| firemap-editor | H-3 반려분 재요청 오면 바로 서명 + 새 녹음 뒤 C-2·T-1·H-2·X-1·J-1 say↔voice.json 서명 대조(sigcheck.py) | cafeedit에 oembed(영상) 덩어리 건너뛰기 넣어 soxl1016 c04(editor/2026-10-17/cafe/295.txt) 적용 + sweep #78·157 | A41(질문 장 뼈대 말 반복)·A42('자료에 나오지 않습니다' 3번↑)를 aitell script 경고로 |
+| firemap-editor | 화면 글자 4편(C-2·H-2·T-1·X-1) PD 재요청 오면 바로 stamp + C-2 재녹음 뒤 sigcheck(say↔voice.json) | lfrender text에 '출처 칸 내부 이름·티커·통계표 코드' 경고 넣기(calc_|research\.md|\^[A-Z]|[0-9]{3}Y[0-9]{3}) — 4편 반복 막기 | cafeedit oembed 건너뛰기로 soxl1016 c04 적용 + sweep #78·157 |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-editor-web | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

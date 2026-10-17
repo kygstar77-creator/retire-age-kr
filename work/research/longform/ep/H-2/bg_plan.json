@@ -1,8 +1,18 @@
 {
  "name": "H-2",
- "made": "2026-10-17 09:25",
- "note": "장면 키=work/video/h2.json scenes key(index=순서). 10/17 기준: 한 장면 안에서도 같은 클립 8초 넘지 않게(실제 최대 6초, 열쇠 장면 5초) segments로 나눔(at=장면 안 시작 초, dur=길이, start=클립 안 시작 초). 파일은 쓸 수 있는 구간만 잘라 둠(start 0=잘린 파일 처음). 영상은 -an h264. 실존 인물 얼굴·상표·간판 글자·워터마크 0(클립마다 프레임 6장 이상 눈 확인). 반포는 길 자료처럼 실사도 특정 단지 장면 없음 — 단지 장면은 잠실·한강 일대 실사.",
+ "made": "2026-10-17 09:32",
+ "note": "장면 키=work/video/h2.json scenes key(index=순서). 10/17 기준: 한 장면 안에서도 같은 클립 8초 넘지 않게(실제 최대 6초, 열쇠 장면 5초) segments로 나눔(at=장면 안 시작 초, dur=길이, start=클립 안 시작 초). 파일은 쓸 수 있는 구간만 잘라 둠(start 0=잘린 파일 처음). 영상은 -an h264. 실존 인물 얼굴·상표·간판 글자·워터마크 0(클립마다 프레임 6장 이상 눈 확인). 반포는 길 자료처럼 실사도 특정 단지 장면 없음 — 단지 장면은 잠실·한강 일대 실사. 10/17 상표·로고 0 엄격 적용: 잠실 드론 38259256·38259259·38259254(단지 문양·이름), 열쇠 31400388·7578842(열쇠 각인 글자) 뺌.",
  "clips": [
+  {
+   "file": "bg/h2/5349092.mp4",
+   "id": 5349092,
+   "start": 0,
+   "usable_sec": 24,
+   "what": "흐린 듯 흐려진 앞쪽, 뒤로 산 아래 고층 아파트 단지 타임랩스(구름 흐름)",
+   "author": "Site Engine",
+   "page": "https://www.pexels.com/video/time-lapse-footage-of-a-city-5349092/",
+   "license": "https://www.pexels.com/license/"
+  },
   {
    "file": "bg/h2/5665059.mp4",
    "id": 5665059,
@@ -24,6 +34,16 @@
    "license": "https://www.pexels.com/license/"
   },
   {
+   "file": "bg/h2/6487935.mp4",
+   "id": 6487935,
+   "start": 0,
+   "usable_sec": 13,
+   "what": "새벽 강변 도시, 붉은 고층 아파트와 낮은 단지들 드론",
+   "author": "Roman Skrypnyk",
+   "page": "https://www.pexels.com/video/aerial-footage-of-a-city-6487935/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
    "file": "bg/h2/6787197.mp4",
    "id": 6787197,
    "start": 0,
@@ -41,16 +61,6 @@
    "what": "계산기 자판 위 손 가까이",
    "author": "Mikhail Nilov",
    "page": "https://www.pexels.com/video/a-person-using-a-calculator-6963484/",
-   "license": "https://www.pexels.com/license/"
-  },
-  {
-   "file": "bg/h2/7578842.mp4",
-   "id": 7578842,
-   "start": 0,
-   "usable_sec": 5,
-   "what": "두 손바닥 위 열쇠 하나(0~5초만 — 가까워지면 열쇠 각인)",
-   "author": "Kindel Media",
-   "page": "https://www.pexels.com/video/key-on-a-person-s-hand-7578842/",
    "license": "https://www.pexels.com/license/"
   },
   {
@@ -94,6 +104,16 @@
    "license": "https://www.pexels.com/license/"
   },
   {
+   "file": "bg/h2/29826322.mp4",
+   "id": 29826322,
+   "start": 0,
+   "usable_sec": 8,
+   "what": "흑백, 낮은 아파트 단지 위 드론",
+   "author": "Altaf Shah",
+   "page": "https://www.pexels.com/video/aerial-view-of-modern-residential-complex-29826322/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
    "file": "bg/h2/31018013.mp4",
    "id": 31018013,
    "start": 0,
@@ -114,13 +134,13 @@
    "license": "https://www.pexels.com/license/"
   },
   {
-   "file": "bg/h2/31400388.mp4",
-   "id": 31400388,
+   "file": "bg/h2/31461961.mp4",
+   "id": 31461961,
    "start": 0,
-   "usable_sec": 5,
-   "what": "집 모양 열쇠고리를 든 손(0~5초만 — 뒤에 유로 지폐)",
+   "usable_sec": 11,
+   "what": "책상 위 작은 집 모형들과 집 그림 쪽지(4초부터 — 앞부분 열쇠 각인 피함)",
    "author": "Jakub Zerdzicki",
-   "page": "https://www.pexels.com/video/hand-holding-keys-over-money-and-mini-house-model-31400388/",
+   "page": "https://www.pexels.com/video/real-estate-concept-hand-holding-house-key-31461961/",
    "license": "https://www.pexels.com/license/"
   },
   {
@@ -144,6 +164,16 @@
    "license": "https://www.pexels.com/license/"
   },
   {
+   "file": "bg/h2/34317846.mp4",
+   "id": 34317846,
+   "start": 0,
+   "usable_sec": 9,
+   "what": "흑백, 밤 아파트 단지 골목과 주차된 차 위에서",
+   "author": "Altaf Shah",
+   "page": "https://www.pexels.com/video/aerial-night-view-of-urban-cityscape-in-black-and-white-34317846/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
    "file": "bg/h2/35738744.mp4",
    "id": 35738744,
    "start": 0,
@@ -151,6 +181,16 @@
    "what": "밤 고층 아파트들 창 불빛 드론",
    "author": "umar muazu",
    "page": "https://www.pexels.com/video/modern-cityscape-at-night-with-illuminated-windows-35738744/",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/h2/36216207.mp4",
+   "id": 36216207,
+   "start": 0,
+   "usable_sec": 19,
+   "what": "안개 속 오래된 콘크리트 아파트 동 드론",
+   "author": "what doidonow",
+   "page": "https://www.pexels.com/video/misty-urban-high-rise-architecture-view-36216207/",
    "license": "https://www.pexels.com/license/"
   },
   {
@@ -182,80 +222,50 @@
    "author": "Jueon Kim 김주언",
    "page": "https://www.pexels.com/video/vibrant-night-cityscape-with-traffic-timelapse-38035115/",
    "license": "https://www.pexels.com/license/"
-  },
-  {
-   "file": "bg/h2/38259254.mp4",
-   "id": 38259254,
-   "start": 0,
-   "usable_sec": 24,
-   "what": "노을 진 한강공원과 강변 아파트 단지(사람 점 크기)",
-   "author": "vignesh srivatsav",
-   "page": "https://www.pexels.com/video/aerial-view-of-seoul-s-riverside-at-sunset-38259254/",
-   "license": "https://www.pexels.com/license/"
-  },
-  {
-   "file": "bg/h2/38259256.mp4",
-   "id": 38259256,
-   "start": 0,
-   "usable_sec": 6,
-   "what": "한강 둔치 너머 잠실 아파트 단지, 앞쪽 낮은 오래된 단지(노을, 0~6초만 — 다가가면 단지 이름 글자 보임)",
-   "author": "vignesh srivatsav",
-   "page": "https://www.pexels.com/video/aerial-view-of-seoul-cityscape-at-sunset-38259256/",
-   "license": "https://www.pexels.com/license/"
-  },
-  {
-   "file": "bg/h2/38259259.mp4",
-   "id": 38259259,
-   "start": 0,
-   "usable_sec": 12,
-   "what": "잠실 고층 단지와 종합운동장 위 드론(0~12초만 — 뒤에 단지 이름 보임)",
-   "author": "vignesh srivatsav",
-   "page": "https://www.pexels.com/video/aerial-view-of-dense-urban-landscape-at-dusk-38259259/",
-   "license": "https://www.pexels.com/license/"
   }
  ],
  "scenes": {
   "t_map": {
    "index": 0,
    "sec": 8.43,
-   "file": "bg/h2/38259256.mp4",
-   "id": 38259256,
+   "file": "bg/h2/5349092.mp4",
+   "id": 5349092,
    "start": 0,
-   "what": "한강 둔치 너머 잠실 아파트 단지, 앞쪽 낮은 오래된 단지(노을, 0~6초만 — 다가가면 단지 이름 글자 보임)",
+   "what": "흐린 듯 흐려진 앞쪽, 뒤로 산 아래 고층 아파트 단지 타임랩스(구름 흐름)",
    "segments": [
     {
      "at": 0.0,
      "dur": 4.21,
-     "file": "bg/h2/38259256.mp4",
-     "id": 38259256,
+     "file": "bg/h2/5349092.mp4",
+     "id": 5349092,
      "start": 0,
-     "what": "한강 둔치 너머 잠실 아파트 단지, 앞쪽 낮은 오래된 단지(노을, 0~6초만 — 다가가면 단지 이름 글자 보임)"
+     "what": "흐린 듯 흐려진 앞쪽, 뒤로 산 아래 고층 아파트 단지 타임랩스(구름 흐름)"
     },
     {
      "at": 4.21,
      "dur": 4.21,
-     "file": "bg/h2/38259259.mp4",
-     "id": 38259259,
+     "file": "bg/h2/36216207.mp4",
+     "id": 36216207,
      "start": 0,
-     "what": "잠실 고층 단지와 종합운동장 위 드론(0~12초만 — 뒤에 단지 이름 보임)"
+     "what": "안개 속 오래된 콘크리트 아파트 동 드론"
     }
    ]
   },
   "t_rank": {
    "index": 1,
    "sec": 4.47,
-   "file": "bg/h2/38259254.mp4",
-   "id": 38259254,
+   "file": "bg/h2/31018013.mp4",
+   "id": 31018013,
    "start": 0,
-   "what": "노을 진 한강공원과 강변 아파트 단지(사람 점 크기)",
+   "what": "흐린 하늘 아래 아파트 많은 도시 전경",
    "segments": [
     {
      "at": 0.0,
      "dur": 4.47,
-     "file": "bg/h2/38259254.mp4",
-     "id": 38259254,
+     "file": "bg/h2/31018013.mp4",
+     "id": 31018013,
      "start": 0,
-     "what": "노을 진 한강공원과 강변 아파트 단지(사람 점 크기)"
+     "what": "흐린 하늘 아래 아파트 많은 도시 전경"
     }
    ]
   },
@@ -296,10 +306,10 @@
     {
      "at": 2.88,
      "dur": 2.88,
-     "file": "bg/h2/31400388.mp4",
-     "id": 31400388,
+     "file": "bg/h2/31461961.mp4",
+     "id": 31461961,
      "start": 0,
-     "what": "집 모양 열쇠고리를 든 손(0~5초만 — 뒤에 유로 지폐)"
+     "what": "책상 위 작은 집 모형들과 집 그림 쪽지(4초부터 — 앞부분 열쇠 각인 피함)"
     }
    ]
   },
@@ -332,34 +342,34 @@
   "person": {
    "index": 5,
    "sec": 15.37,
-   "file": "bg/h2/7578842.mp4",
-   "id": 7578842,
-   "start": 0,
-   "what": "두 손바닥 위 열쇠 하나(0~5초만 — 가까워지면 열쇠 각인)",
+   "file": "bg/h2/8293504.mp4",
+   "id": 8293504,
+   "start": 2.9,
+   "what": "두 사람 손 위 집 모양 열쇠고리와 열쇠(얼굴 없음)",
    "segments": [
     {
      "at": 0.0,
-     "dur": 3.84,
-     "file": "bg/h2/7578842.mp4",
-     "id": 7578842,
-     "start": 0,
-     "what": "두 손바닥 위 열쇠 하나(0~5초만 — 가까워지면 열쇠 각인)"
-    },
-    {
-     "at": 3.84,
-     "dur": 3.84,
-     "file": "bg/h2/31018013.mp4",
-     "id": 31018013,
-     "start": 0,
-     "what": "흐린 하늘 아래 아파트 많은 도시 전경"
-    },
-    {
-     "at": 7.68,
      "dur": 3.84,
      "file": "bg/h2/8293504.mp4",
      "id": 8293504,
      "start": 2.9,
      "what": "두 사람 손 위 집 모양 열쇠고리와 열쇠(얼굴 없음)"
+    },
+    {
+     "at": 3.84,
+     "dur": 3.84,
+     "file": "bg/h2/6487935.mp4",
+     "id": 6487935,
+     "start": 0,
+     "what": "새벽 강변 도시, 붉은 고층 아파트와 낮은 단지들 드론"
+    },
+    {
+     "at": 7.68,
+     "dur": 3.84,
+     "file": "bg/h2/31461961.mp4",
+     "id": 31461961,
+     "start": 2.9,
+     "what": "책상 위 작은 집 모형들과 집 그림 쪽지(4초부터 — 앞부분 열쇠 각인 피함)"
     },
     {
      "at": 11.52,
@@ -434,44 +444,44 @@
   "j_map": {
    "index": 8,
    "sec": 9.9,
-   "file": "bg/h2/38259256.mp4",
-   "id": 38259256,
+   "file": "bg/h2/29826322.mp4",
+   "id": 29826322,
    "start": 0,
-   "what": "한강 둔치 너머 잠실 아파트 단지, 앞쪽 낮은 오래된 단지(노을, 0~6초만 — 다가가면 단지 이름 글자 보임)",
+   "what": "흑백, 낮은 아파트 단지 위 드론",
    "segments": [
     {
      "at": 0.0,
      "dur": 4.95,
-     "file": "bg/h2/38259256.mp4",
-     "id": 38259256,
+     "file": "bg/h2/29826322.mp4",
+     "id": 29826322,
      "start": 0,
-     "what": "한강 둔치 너머 잠실 아파트 단지, 앞쪽 낮은 오래된 단지(노을, 0~6초만 — 다가가면 단지 이름 글자 보임)"
+     "what": "흑백, 낮은 아파트 단지 위 드론"
     },
     {
      "at": 4.95,
      "dur": 4.95,
-     "file": "bg/h2/38259259.mp4",
-     "id": 38259259,
+     "file": "bg/h2/5349092.mp4",
+     "id": 5349092,
      "start": 4.2,
-     "what": "잠실 고층 단지와 종합운동장 위 드론(0~12초만 — 뒤에 단지 이름 보임)"
+     "what": "흐린 듯 흐려진 앞쪽, 뒤로 산 아래 고층 아파트 단지 타임랩스(구름 흐름)"
     }
    ]
   },
   "j_rank": {
    "index": 9,
    "sec": 16.67,
-   "file": "bg/h2/38259254.mp4",
-   "id": 38259254,
-   "start": 4.5,
-   "what": "노을 진 한강공원과 강변 아파트 단지(사람 점 크기)",
+   "file": "bg/h2/36216207.mp4",
+   "id": 36216207,
+   "start": 4.2,
+   "what": "안개 속 오래된 콘크리트 아파트 동 드론",
    "segments": [
     {
      "at": 0.0,
      "dur": 5.56,
-     "file": "bg/h2/38259254.mp4",
-     "id": 38259254,
-     "start": 4.5,
-     "what": "노을 진 한강공원과 강변 아파트 단지(사람 점 크기)"
+     "file": "bg/h2/36216207.mp4",
+     "id": 36216207,
+     "start": 4.2,
+     "what": "안개 속 오래된 콘크리트 아파트 동 드론"
     },
     {
      "at": 5.56,
@@ -486,7 +496,7 @@
      "dur": 5.56,
      "file": "bg/h2/31018013.mp4",
      "id": 31018013,
-     "start": 3.8,
+     "start": 4.5,
      "what": "흐린 하늘 아래 아파트 많은 도시 전경"
     }
    ]
@@ -512,70 +522,70 @@
   "j_woo": {
    "index": 11,
    "sec": 10.47,
-   "file": "bg/h2/32986074.mp4",
-   "id": 32986074,
+   "file": "bg/h2/6487935.mp4",
+   "id": 6487935,
    "start": 3.8,
-   "what": "구름 낀 한국 도시 전경 드론(아파트·빌라)",
+   "what": "새벽 강변 도시, 붉은 고층 아파트와 낮은 단지들 드론",
    "segments": [
     {
      "at": 0.0,
+     "dur": 5.24,
+     "file": "bg/h2/6487935.mp4",
+     "id": 6487935,
+     "start": 3.8,
+     "what": "새벽 강변 도시, 붉은 고층 아파트와 낮은 단지들 드론"
+    },
+    {
+     "at": 5.24,
      "dur": 5.24,
      "file": "bg/h2/32986074.mp4",
      "id": 32986074,
      "start": 3.8,
      "what": "구름 낀 한국 도시 전경 드론(아파트·빌라)"
-    },
-    {
-     "at": 5.24,
-     "dur": 5.24,
-     "file": "bg/h2/38259256.mp4",
-     "id": 38259256,
-     "start": 0,
-     "what": "한강 둔치 너머 잠실 아파트 단지, 앞쪽 낮은 오래된 단지(노을, 0~6초만 — 다가가면 단지 이름 글자 보임)"
     }
    ]
   },
   "d_map": {
    "index": 12,
    "sec": 9.03,
-   "file": "bg/h2/38259259.mp4",
-   "id": 38259259,
+   "file": "bg/h2/29826322.mp4",
+   "id": 29826322,
    "start": 0,
-   "what": "잠실 고층 단지와 종합운동장 위 드론(0~12초만 — 뒤에 단지 이름 보임)",
+   "what": "흑백, 낮은 아파트 단지 위 드론",
    "segments": [
     {
      "at": 0.0,
      "dur": 4.51,
-     "file": "bg/h2/38259259.mp4",
-     "id": 38259259,
+     "file": "bg/h2/29826322.mp4",
+     "id": 29826322,
      "start": 0,
-     "what": "잠실 고층 단지와 종합운동장 위 드론(0~12초만 — 뒤에 단지 이름 보임)"
+     "what": "흑백, 낮은 아파트 단지 위 드론"
     },
     {
      "at": 4.51,
      "dur": 4.51,
-     "file": "bg/h2/38259254.mp4",
-     "id": 38259254,
-     "start": 10.1,
-     "what": "노을 진 한강공원과 강변 아파트 단지(사람 점 크기)"
+     "file": "bg/h2/5349092.mp4",
+     "id": 5349092,
+     "start": 9.2,
+     "what": "흐린 듯 흐려진 앞쪽, 뒤로 산 아래 고층 아파트 단지 타임랩스(구름 흐름)"
     }
    ]
   },
   "d_rank": {
    "index": 13,
    "sec": 15.8,
-   "file": "bg/h2/31018013.mp4",
-   "id": 31018013,
-   "start": 9.4,
-   "what": "흐린 하늘 아래 아파트 많은 도시 전경",
+   "file": "bg/h2/36216207.mp4",
+   "id": 36216207,
+   "start": 9.8,
+   "what": "안개 속 오래된 콘크리트 아파트 동 드론",
    "segments": [
     {
      "at": 0.0,
      "dur": 5.27,
-     "file": "bg/h2/31018013.mp4",
-     "id": 31018013,
-     "start": 9.4,
-     "what": "흐린 하늘 아래 아파트 많은 도시 전경"
+     "file": "bg/h2/36216207.mp4",
+     "id": 36216207,
+     "start": 9.8,
+     "what": "안개 속 오래된 콘크리트 아파트 동 드론"
     },
     {
      "at": 5.27,
@@ -588,10 +598,10 @@
     {
      "at": 10.54,
      "dur": 5.27,
-     "file": "bg/h2/32986074.mp4",
-     "id": 32986074,
+     "file": "bg/h2/31018013.mp4",
+     "id": 31018013,
      "start": 0,
-     "what": "구름 낀 한국 도시 전경 드론(아파트·빌라)"
+     "what": "흐린 하늘 아래 아파트 많은 도시 전경"
     }
    ]
   },
@@ -632,10 +642,10 @@
     {
      "at": 5.63,
      "dur": 5.63,
-     "file": "bg/h2/38259256.mp4",
-     "id": 38259256,
+     "file": "bg/h2/6487935.mp4",
+     "id": 6487935,
      "start": 0,
-     "what": "한강 둔치 너머 잠실 아파트 단지, 앞쪽 낮은 오래된 단지(노을, 0~6초만 — 다가가면 단지 이름 글자 보임)"
+     "what": "새벽 강변 도시, 붉은 고층 아파트와 낮은 단지들 드론"
     },
     {
      "at": 11.26,
@@ -702,26 +712,26 @@
   "r_person": {
    "index": 18,
    "sec": 7.03,
-   "file": "bg/h2/31400388.mp4",
-   "id": 31400388,
-   "start": 0,
-   "what": "집 모양 열쇠고리를 든 손(0~5초만 — 뒤에 유로 지폐)",
+   "file": "bg/h2/8293504.mp4",
+   "id": 8293504,
+   "start": 6.7,
+   "what": "두 사람 손 위 집 모양 열쇠고리와 열쇠(얼굴 없음)",
    "segments": [
     {
      "at": 0.0,
      "dur": 3.52,
-     "file": "bg/h2/31400388.mp4",
-     "id": 31400388,
-     "start": 0,
-     "what": "집 모양 열쇠고리를 든 손(0~5초만 — 뒤에 유로 지폐)"
+     "file": "bg/h2/8293504.mp4",
+     "id": 8293504,
+     "start": 6.7,
+     "what": "두 사람 손 위 집 모양 열쇠고리와 열쇠(얼굴 없음)"
     },
     {
      "at": 3.52,
      "dur": 3.52,
-     "file": "bg/h2/7578842.mp4",
-     "id": 7578842,
-     "start": 0,
-     "what": "두 손바닥 위 열쇠 하나(0~5초만 — 가까워지면 열쇠 각인)"
+     "file": "bg/h2/31461961.mp4",
+     "id": 31461961,
+     "start": 6.7,
+     "what": "책상 위 작은 집 모형들과 집 그림 쪽지(4초부터 — 앞부분 열쇠 각인 피함)"
     }
    ]
   },
@@ -744,10 +754,10 @@
     {
      "at": 5.45,
      "dur": 5.45,
-     "file": "bg/h2/38259259.mp4",
-     "id": 38259259,
-     "start": 4.5,
-     "what": "잠실 고층 단지와 종합운동장 위 드론(0~12초만 — 뒤에 단지 이름 보임)"
+     "file": "bg/h2/32986074.mp4",
+     "id": 32986074,
+     "start": 0,
+     "what": "구름 낀 한국 도시 전경 드론(아파트·빌라)"
     },
     {
      "at": 10.9,
@@ -760,23 +770,39 @@
     {
      "at": 16.35,
      "dur": 5.45,
-     "file": "bg/h2/38259254.mp4",
-     "id": 38259254,
-     "start": 14.6,
-     "what": "노을 진 한강공원과 강변 아파트 단지(사람 점 크기)"
+     "file": "bg/h2/29826322.mp4",
+     "id": 29826322,
+     "start": 0,
+     "what": "흑백, 낮은 아파트 단지 위 드론"
     }
    ]
   },
   "r_under": {
    "index": 20,
    "sec": 21.67,
-   "file": "bg/h2/9431584.mp4",
-   "id": 9431584,
-   "start": 4.7,
-   "what": "밤 아파트 창마다 켜진 불(층층이)",
+   "file": "bg/h2/34317846.mp4",
+   "id": 34317846,
+   "start": 0,
+   "what": "흑백, 밤 아파트 단지 골목과 주차된 차 위에서",
    "segments": [
     {
      "at": 0.0,
+     "dur": 4.33,
+     "file": "bg/h2/34317846.mp4",
+     "id": 34317846,
+     "start": 0,
+     "what": "흑백, 밤 아파트 단지 골목과 주차된 차 위에서"
+    },
+    {
+     "at": 4.33,
+     "dur": 4.33,
+     "file": "bg/h2/8293504.mp4",
+     "id": 8293504,
+     "start": 0,
+     "what": "두 사람 손 위 집 모양 열쇠고리와 열쇠(얼굴 없음)"
+    },
+    {
+     "at": 8.66,
      "dur": 4.33,
      "file": "bg/h2/9431584.mp4",
      "id": 9431584,
@@ -784,36 +810,20 @@
      "what": "밤 아파트 창마다 켜진 불(층층이)"
     },
     {
-     "at": 4.33,
+     "at": 12.99,
      "dur": 4.33,
-     "file": "bg/h2/8293504.mp4",
-     "id": 8293504,
-     "start": 6.7,
-     "what": "두 사람 손 위 집 모양 열쇠고리와 열쇠(얼굴 없음)"
+     "file": "bg/h2/31461961.mp4",
+     "id": 31461961,
+     "start": 0,
+     "what": "책상 위 작은 집 모형들과 집 그림 쪽지(4초부터 — 앞부분 열쇠 각인 피함)"
     },
     {
-     "at": 8.66,
+     "at": 17.32,
      "dur": 4.33,
      "file": "bg/h2/35738744.mp4",
      "id": 35738744,
      "start": 4.7,
      "what": "밤 고층 아파트들 창 불빛 드론"
-    },
-    {
-     "at": 12.99,
-     "dur": 4.33,
-     "file": "bg/h2/31400388.mp4",
-     "id": 31400388,
-     "start": 0,
-     "what": "집 모양 열쇠고리를 든 손(0~5초만 — 뒤에 유로 지폐)"
-    },
-    {
-     "at": 17.32,
-     "dur": 4.33,
-     "file": "bg/h2/38035115.mp4",
-     "id": 38035115,
-     "start": 5.5,
-     "what": "밤 강변 나들목 차 불빛 타임랩스"
     }
    ]
   },
@@ -836,10 +846,10 @@
     {
      "at": 4.32,
      "dur": 4.32,
-     "file": "bg/h2/31018013.mp4",
-     "id": 31018013,
-     "start": 0,
-     "what": "흐린 하늘 아래 아파트 많은 도시 전경"
+     "file": "bg/h2/5349092.mp4",
+     "id": 5349092,
+     "start": 13.7,
+     "what": "흐린 듯 흐려진 앞쪽, 뒤로 산 아래 고층 아파트 단지 타임랩스(구름 흐름)"
     },
     {
      "at": 8.64,
@@ -870,10 +880,10 @@
     {
      "at": 4.77,
      "dur": 4.77,
-     "file": "bg/h2/32986074.mp4",
-     "id": 32986074,
-     "start": 5.3,
-     "what": "구름 낀 한국 도시 전경 드론(아파트·빌라)"
+     "file": "bg/h2/36216207.mp4",
+     "id": 36216207,
+     "start": 0,
+     "what": "안개 속 오래된 콘크리트 아파트 동 드론"
     },
     {
      "at": 9.54,
@@ -912,10 +922,10 @@
     {
      "at": 5.0,
      "dur": 5.0,
-     "file": "bg/h2/32086385.mp4",
-     "id": 32086385,
+     "file": "bg/h2/38035115.mp4",
+     "id": 38035115,
      "start": 5.5,
-     "what": "밤 아파트 위 구름 사이 달 타임랩스"
+     "what": "밤 강변 나들목 차 불빛 타임랩스"
     },
     {
      "at": 10.0,
@@ -928,21 +938,22 @@
     {
      "at": 15.0,
      "dur": 5.0,
-     "file": "bg/h2/9431584.mp4",
-     "id": 9431584,
-     "start": 0,
-     "what": "밤 아파트 창마다 켜진 불(층층이)"
+     "file": "bg/h2/32086385.mp4",
+     "id": 32086385,
+     "start": 5.5,
+     "what": "밤 아파트 위 구름 사이 달 타임랩스"
     }
    ]
   }
  },
  "pool_by_theme": {
   "단지": [
-   38259256,
-   38259259,
-   38259254,
+   5349092,
+   36216207,
    31018013,
-   32986074
+   6487935,
+   32986074,
+   29826322
   ],
   "한강·시간": [
    37522115,
@@ -954,12 +965,12 @@
    9431584,
    35738744,
    38035115,
-   32086385
+   32086385,
+   34317846
   ],
   "열쇠": [
    8293504,
-   31400388,
-   7578842
+   31461961
   ],
   "계산·서류": [
    6963484,

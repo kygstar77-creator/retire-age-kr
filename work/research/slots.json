@@ -1828,6 +1828,14 @@
    "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대"
   },
   {
+   "at": "2026-10-19 06:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+  },
+  {
    "at": "2026-10-19 07:20",
    "kind": "shorts",
    "item": "p1s_cross",
@@ -1835,6 +1843,30 @@
    "gates_ok": "2026-10-14 14:52",
    "note": "2026-10-14 14:52: P-1 롱폼(vsL7mojDW7w, 10/16 11:30) 클립 YTAustvbDfI 예약 · 질문 '5년 당기면 몇 살에 따라잡히나' · 같은 날 11:30 롱폼 C-2(주식, 다른 축) · yt_pair: YTAustvbDfI",
    "published": "예약 2026-10-19T07:20:00+09:00 https://youtu.be/rr1z-EzNSjA (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 vf1wTzxTz9c 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/vf1wTzxTz9c (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 b4405ZoVjAQ 예약 풀고 비공개 · v3 끝 줄 질문 넣은 판 10/14 22:4x, 옛 YTAustvbDfI 예약 풀음) · 이전: https://youtu.be/YTAustvbDfI"
+  },
+  {
+   "at": "2026-10-19 07:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · yt_pair: p1s_cross(rr1z-EzNSjA, 07:20 쇼츠) — 쇼츠 질문 하나만, P-1 짝 긴 글과 겹치지 않게"
+  },
+  {
+   "at": "2026-10-19 09:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · 부동산 칸(하루 2칸 이상)"
+  },
+  {
+   "at": "2026-10-19 10:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
   },
   {
    "at": "2026-10-19 11:30",
@@ -1845,6 +1877,46 @@
    "note": "2026-10-16 22:24 PD: C-2를 19:50으로 옮김(ytlong C1 주 7편, 회의 10/16 지시). 이 칸은 비움 — 실패 아님(회의 결정)"
   },
   {
+   "at": "2026-10-19 12:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+  },
+  {
+   "at": "2026-10-19 13:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+  },
+  {
+   "at": "2026-10-19 15:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+  },
+  {
+   "at": "2026-10-19 16:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · 부동산 칸(하루 2칸 이상)"
+  },
+  {
+   "at": "2026-10-19 18:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+  },
+  {
    "at": "2026-10-19 19:20",
    "kind": "shorts",
    "item": "n2s_middle",
@@ -1853,12 +1925,44 @@
    "note": "2026-10-16 22:32 PD: N-2 롱폼(kXnAKjC-84Q, 10/18 13:40 공개) 클립 v3 틀 — 같은 날 07:20 p1s_cross(P-1)·19:50 C-2 롱폼(주식)과 다른 축(소득) | 2026-10-17 01:55 PD: n2s_middle 2차 렌더 관문 통과(숫자 100개 대조 0·aitell 0.0·제목 7·bgcheck 96%·safezone 0·빈 곳 0초 14%·치직 0·58세 2차 뜻 틀림 0), 3차 판(판 글자 3곳) 재검사·3차 이해 시험·업로드 남음 — 관문 기한 10/19 07:20 | 2026-10-17 02:22 PD: 3차 판 재검사·58세 3차(뜻 틀림 0) 통과 → 예약 https://youtu.be/H04T4PbkGCY (private+publishAt 10:20Z) · yt_pair: H04T4PbkGCY"
   },
   {
+   "at": "2026-10-19 19:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · yt_pair: n2s_middle(H04T4PbkGCY, 19:20 쇼츠) — 질문 하나 + N-2 원본 링크"
+  },
+  {
    "at": "2026-10-19 19:50",
    "kind": "long",
    "item": "C-2",
    "owner": "firemap-video-producer",
    "gates_ok": null,
    "note": "firemap-meeting 2026-10-13 21:32: 가상 인물 정우 씨 팔아 쓰기(N1 시범). 편집 통과 10/13, 그림 20장 visual 10/16, 녹음 10/17 창. 합성 표시 True. 축: 주식 인출 | 2026-10-16 22:24 PD: 회의 10/16 [지시·긴급] ytlong C1 주 7편(W-1 0yWQeW38UJE 10/12 19:47 — 10/19 19:47까지 7일 창) → 11:30에서 19:50으로 옮김. 관문 기한 10/18 19:50"
+  },
+  {
+   "at": "2026-10-19 21:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · yt_pair: C-2(19:50 공개 뒤) — ep/C-2/cafe.md 전체 표, 영상 주소는 PD가 note에"
+  },
+  {
+   "at": "2026-10-19 22:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+  },
+  {
+   "at": "2026-10-20 06:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
   },
   {
    "at": "2026-10-20 07:20",
@@ -1870,12 +1974,76 @@
    "note": "firemap-video-producer 2026-10-15 02:41: H-1 롱폼(rVg0pQVo_wk) 고덕동 역 180m vs 640m·평당·학교·마트 클립, M1S pieces, 새 녹음 0 · yt_pair: MQJtrseE_Gs(10/16 오후 v2 교체, 옛 8mxO_EiHWck) · 그 전 8mxO_EiHWck(10/16 교체, 옛 JEbfJTewk-E) · 짝 카페 글 요청(today.md) · 근거 cardshorts/h1s_walk/review.md"
   },
   {
+   "at": "2026-10-20 07:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · yt_pair: h1s_walk(07:20 쇼츠) — 질문 하나"
+  },
+  {
+   "at": "2026-10-20 09:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · yt_pair: H-2 — ep/H-2/cafe.md, 영상(11:30) 전에(대본 '카페에 올려 둘게요'). 부동산 칸"
+  },
+  {
+   "at": "2026-10-20 10:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+  },
+  {
    "at": "2026-10-20 11:30",
    "kind": "long",
    "item": "H-2(동네 손품 2편: 대치·잠실·반포)",
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
    "note": "firemap-meeting 2026-10-12 19:04: 순돌이 10/11 지시 동네 손품 매주 고정 1편 — series-plan 4-2 표 4~6번(은마 62,570·잠실주공5단지 29,790·반포자이 39,490). H-1 방식(tour.py) 재사용, 대본 10/19까지, 제작 PD | youtube-loop 2026-10-14 08:49: J-1과 칸 바꿈 → 10/20(심사 7.87·편집 07:10 통과로 준비 앞섬, 관문 기한 10/19 11:30·녹음 10/18 16:01 창) | firemap-write 2026-10-15 16:5x 사장님 \"칸으로 비교한 거 너무 이해가 안 되는데\"(cafe/281): H-2 짝 카페 글(손품 비교)은 칸 많은 표 금지 — 동네마다 한 줄 요약 → 목록 \"단지 (입주연도) — 84㎡ 한 채 약 N억\" → 알아 둘 점 2~3줄, 그림 표는 3칸·10줄 이하, 원래 큰 표는 맨 끝 자세한 표로(견본 research/h1cafe1015/pkg_v2, 규칙 firemap-write SKILL \"표 대신 한눈에 보기\")"
+  },
+  {
+   "at": "2026-10-20 12:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+  },
+  {
+   "at": "2026-10-20 13:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+  },
+  {
+   "at": "2026-10-20 15:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+  },
+  {
+   "at": "2026-10-20 16:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · 부동산 칸(하루 2칸 이상)"
+  },
+  {
+   "at": "2026-10-20 18:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
   },
   {
    "at": "2026-10-20 19:20",
@@ -1885,6 +2053,30 @@
    "gates_ok": "2026-10-14 23:25",
    "published": "예약 2026-10-20T19:20:00+09:00 https://youtu.be/LrEU7udwjdk (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 csuUBZBczxE 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/csuUBZBczxE (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 3yh729bBugI 예약 풀고 비공개 · v3 0초 빈 곳 33.9% 교체판 10/16 10:38, 옛 SW7RAxLiY6g 예약 해제·비공개 보관, 합성 표시 True)",
    "note": "firemap-video-producer 2026-10-15 02:41: 비축 d1s_pension(D-1 GMc2Rd1-JYA 연금 건보료 절벽) 업로드 · 같은 날 07:20 h1s_walk(H-1)과 다른 롱폼 · yt_pair: SW7RAxLiY6g · 짝 카페 글 요청(today.md)"
+  },
+  {
+   "at": "2026-10-20 19:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · yt_pair: d1s_pension(SW7RAxLiY6g, 19:20 쇼츠) — 질문 하나"
+  },
+  {
+   "at": "2026-10-20 21:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+  },
+  {
+   "at": "2026-10-20 22:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
   },
   {
    "at": "2026-10-21 07:20",

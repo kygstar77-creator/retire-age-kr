@@ -2391,3 +2391,6 @@
 2026-10-18 10:33 · firemap-video-producer · 둘째 받아쓰기 끝자리 flash-lite-latest 넣었다가 뺌 · C-2 32줄 중 20줄 합의오독('정우'→'정모'), 판단에 못 씀 — 3.5-flash 기준 유지
 2026-10-18 10:33 · firemap-video-producer · lfvoice readback --batch 새로: 둘째 받아쓰기(3.5-flash)를 줄 20개 이어 붙인 한 요청 + 대본 글자 맞춤으로 줄마다 자름 · 무료 하루 20요청에 한 편 8요청 · 3.1-flash-lite로 C-2 20줄 시험: 경계 20/20 맞음(일치 0.91~1.0) · 주의: 묶음은 앞뒤 맥락이 있어 한 줄씩보다 덜 예민할 수 있음(첫째 모델은 여전히 줄마다)
 2026-10-18 10:33 · firemap-video-producer · C-2 오독 3줄+46행 Chirp 7줄 10/18 녹음(160줄 중 4.4%, 둘째 날 20% 이하 허용) · check 통과(튀는 줄 0·앞뒤 −1.3%·IQR 0.12) · editor 대본 10:21·화면 10:23 서명 → 렌더 시작 · 설명 {CAFE}→cafe.naver.com/firemap(짝 글 21:10이 영상 뒤라)
+
+2026-10-18 10:49 · firemap-write-b · 10:40 칸 lev2x1018 발행(cafe/313, verify OK) · 칸 배정·관문 07:25 통과분
+2026-10-18 10:49 · firemap-write-b · g1whycafe1018 cover 평균 채워 재stamp, 비축으로 옮김 · 07:40 칸 시각 지남, 1회차 1편 원칙

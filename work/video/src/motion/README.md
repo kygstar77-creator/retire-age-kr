@@ -104,3 +104,10 @@
 - **EqStack — 영수증 계산서(빼기·더하기 식)**: `baseLabel·blank·terms[{op,label,v,at}]·ansLabel·rounds[{at,name,price,ans}]·revealQ[]·note·who`. 첫 줄 값이 라운드마다 바뀌고 답은 '?' → 줄 안 revealQ 자리(말이 답 숫자에 닿는 쯤)에서 열림 + 손 동그라미, 지난 답은 회색 칩. 답 글자 크기는 가장 긴 답에 맞춰 자동. seed로 계산서 좌우·칩 쪽·밑줄(실선/점선)이 바뀜. 가정 계산이면 who에 '가상 인물', note에 뺀 것(세금 등).
 - **LoanSteps — 규칙 계단(한도 = min(비율×값, 금액 한도))**: `phase rule|edge·xMax·yMax·ltv·caps[[경계,한도,글자]]·xTicks·show[]`. rule: 40% 면 → '둘 중 작은 쪽' 면(min 모양) → 칸마다 굵은 선, 오른쪽엔 지금 칸 한도 하나만 주황. edge: 경계 확대, 점이 넘는 순간 '?' → 새 한도 + 동그라미 + '절반', 끝 줄은 'A? B?'(확정처럼 안 보이게). 다른 규칙(세율 구간·건보 기준)에도 caps만 바꿔 씀.
 - 함정(10/18): ① 경계 칸 이름은 **양쪽 끝을 다 쓴다**('25억 이하 4억' ✗ → '15억~25억 4억', 레드팀·Claude 둘 다 잡음) ② '금액 한도' 면을 계단 그대로 칠하면 15억 아래가 다 6억으로 읽힘 → min 모양으로 ③ still_runs는 회색 24단계 넘게 바뀐 칸만 셈 — 옅은 면(불투명 0.2 아래)은 안 바뀐 걸로 친다, 줄마다 면을 0.3 넘게 켜고 끈다 ④ 길이 0인 둥근 끝 선은 점으로 남는다(ruleP>0일 때만 그림).
+
+## 잔액 경로 선 그래프(BalancePath) 쓰는 법 — '시간에 따라 변하는 돈'(잔액·적립금) 사람 2~3줄 (10/19 벤치마크 지시, quality-gap-1019 ①)
+1. 재료 JSON: `seed·y0·y1·min·max·ticks[[값,글자]]·xlabels[[해,글자]]·base[값,글자]·people[{name,color,start,vals[],at,per,floor{year,text}|end}]`. 가로축 = 달력 해, 점 i = start+i 해의 값. 예: `research/longform/ep/C-2/motion_preview/balprops.py`(calc_n1_out.txt 표에서 뽑고 assert).
+2. 미리보기: `npx remotion still src/motion/preview/entry.ts C2Balance <out>.png --props=<json> --frame=900` (영상은 `render`).
+3. LineS(X1.tsx, TallyLineChart)와 나눠 쓰기: 원자료 한 줄을 통째로 닦아 그리면 LineS, 사람마다 시작 해가 다르고 해마다 점이 '찍혀야' 하면 BalancePath.
+4. 규칙: 점 = 표에 있는 값만(사이 값 지어내지 않음) · 바닥 난 줄은 floor(빨간 세로 띠 + 꼬리표), 버틴 줄은 end · 주황은 한 줄만 · 머리 꼬리표 '해 1월 · 값'이 끝을 따라감.
+5. 움직임: per 프레임(0.5~1초)마다 점 하나 → bgcheck '8초 안 요소 추가 판'(40초까지) · 판 전체 1.00→1.03 다가가기 · 편마다 seed로 점 크기·그래프 왼쪽 여백.

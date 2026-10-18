@@ -18,6 +18,7 @@ import {EvenLadder, EvenLadderProps} from '../EvenLadder';
 import {DaysBelow, DaysBelowProps} from '../DaysBelow';
 import {EqStack, EqStackProps} from '../EqStack';
 import {LoanSteps, LoanStepsProps} from '../LoanSteps';
+import {BalancePath, BalancePathProps} from '../BalancePath';
 
 type P = {scene: RScene; zoom: ZoomOutOpenProps};
 const OpenZoom: React.FC<P> = ({scene, zoom}) => (
@@ -107,6 +108,10 @@ const H2Eq: React.FC<P11> = ({rule, cash, edge}) => (
   </Series>
 );
 
+// C-2 '28년 통장 잔액' 선 그래프(10/19 벤치마크 지시) — BalancePath · 재료 ep/C-2/motion_preview/balprops.py
+type P12 = {scene: RScene; data: BalancePathProps};
+const C2Balance: React.FC<P12> = ({scene, data}) => v3Frame(scene, <BalancePath {...data} />);
+
 export const PreviewRoot: React.FC = () => (
   <>
   <Composition id="OpenZoom" component={OpenZoom as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
@@ -142,5 +147,8 @@ export const PreviewRoot: React.FC = () => (
   <Composition id="H2Eq" component={H2Eq as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => { const q = props as unknown as P11; return {durationInFrames: q.rule.frames + q.cash.frames + q.edge.frames}; }} />
+  <Composition id="C2Balance" component={C2Balance as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P12).scene.frames})} />
   </>
 );

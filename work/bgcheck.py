@@ -8,7 +8,10 @@
 #   얼굴 없는 채널 기준은 수페TV 3편 전체 길이 실측이다(visual-gap-1017 5절).
 #   ① 실사 장면(화면을 꽉 채운 실사 — 판 뒤에 깐 배경은 아님) 전체의 10% 이상     (수페 7.7~22.4%, R-1·H-1 0%, P-1 5.1%)
 #   ② 화면 전체 컷(ffmpeg scene 0.3, 320px) 분당 3회 이상                           (수페 2.9~4.4, R-1 0, H-1 1.3, P-1 4.5)
-#   ③ 같은 판(컷과 컷 사이, 실사 아닌 구간) 20초 이하
+#   ③ 같은 판(컷과 컷 사이, 실사 아닌 구간) 20초 이하 — 10/19 둘로 나눔(design-spec-1016 §10, quality-gap-1019 ②):
+#      판 안에서 8초 안에 새 요소(점·선·꼬리표·칸)가 계속 붙으면 '움직이는 판' → 40초까지(수페 2:17→2:47 핀 1→4개). 아니면 20초 그대로(TQQQI 60초 정지 판).
+#      요소 추가 = 1초 간격 두 프레임 사이 새로 생긴 잉크(바탕과 다른 점, 320×180, 보드 안만 — 자막 띠 바뀜은 빼고)가 보드의 0.15% 이상. 앞 프레임 잉크를 2점 넓혀 빼므로 천천히 다가가기(1.00→1.03)는 세지 않는다.
+#      컷 분당(②)에는 넣지 않는다 — ②는 화면 통째 바뀜을 재는 값이다.
 #   ④ 판 화면의 가장 큰 글자 줄 높이 중앙값 9% 이상                                 (수페 9.1~9.6%, 우리 5.4~6.7%)
 #   ⑤ 판 화면의 글자 줄 수 중앙값 8줄 이하                                          (수페 7~9, 우리 10~13)
 #   ④⑤는 visual-gap과 같은 법으로 잰다: 426×240으로 줄였다 852×480으로 키운 프레임에 RapidOCR 글자 찾기(읽지 않음), 가운데 높이 80% 위 상자만.
@@ -20,12 +23,13 @@
 import os, sys, json
 import numpy as np
 
-VERSION = 'shorts design-v3-1016 bg+cap v1 | long visual-gap-1017 v1'
+VERSION = 'shorts design-v3-1016 bg+cap v1 | long visual-gap-1017 v1 + add-1019'
 CAP_BAND = (1100, 1240); CAP_MIN_H = 56; CAP_FRAC = 0.70
 BG_FRAC = 0.90; BG_RUN = 3
 # 롱폼(10/17)
 LIVE_MIN = 0.10; CUT_PM = 3.0; BOARD_MAX = 20.0; BIG_MIN = 9.0; LINES_MAX = 8
 FLAT_LIVE = 0.45; SCENE = 0.3
+BOARD_MOVE_MAX = 40.0; ADD_GAP = 8.0; ADD_MIN = 0.0015   # 10/19 움직이는 판
 
 
 def _regions(img):
@@ -108,13 +112,32 @@ def cuts(mp4):
     return sorted(set(out))
 
 
+def ink(img):
+    """바탕과 다른 점(잉크) — 320×180, 가장 흔한 밝기(바탕)에서 40 넘게 벗어나거나 채도 60 넘는 점."""
+    import cv2
+    s = cv2.resize(img, (320, 180), interpolation=cv2.INTER_AREA)
+    g = cv2.cvtColor(s, cv2.COLOR_RGB2GRAY); hsv = cv2.cvtColor(s, cv2.COLOR_RGB2HSV)
+    bgv = int(np.bincount(g.ravel(), minlength=256).argmax())
+    m = (np.abs(g.astype(np.int16) - bgv) > 40) | (hsv[:, :, 1] > 60)
+    return m[39:142, 17:303]   # 보드(100~1820 × 236~852)만 — 자막 띠·제목·출처 줄이 바뀌는 건 요소 추가가 아니다
+
+
+def added(prev, cur):
+    """앞 프레임 잉크를 2점 넓힌 밖에 새로 생긴 잉크 비율(요소 추가). 다가가기·작은 흔들림은 넓힌 칸 안이라 0에 가깝다."""
+    import cv2
+    if prev is None: return 0.0
+    grown = cv2.dilate(prev.astype(np.uint8), np.ones((5, 5), np.uint8)).astype(bool)
+    return float((cur & ~grown).mean())
+
+
 def scan_long(mp4):
     import safezone
-    fr = []
+    fr = []; prev = None
     for t, img in safezone.frames(mp4, 1.0):
         fl = flatness(img); live = fl < FLAT_LIVE
         mh, n = (None, None) if live else text_lines(img)
-        fr.append({'t': round(t, 1), 'flat': round(fl, 3), 'live': live, 'maxh': mh, 'n': n})
+        cur = ink(img); ad = added(prev, cur); prev = cur
+        fr.append({'t': round(t, 1), 'flat': round(fl, 3), 'live': live, 'maxh': mh, 'n': n, 'add': round(ad, 4)})
     return {'frames': fr, 'cuts': cuts(mp4)}
 
 
@@ -125,11 +148,17 @@ def judge_long(d):
     live = round(sum(f['live'] for f in fr) / n, 3)
     cpm = round(len(cs) / (dur / 60), 2) if dur else 0
     # 같은 판: 컷과 컷 사이 구간 중 실사 프레임이 절반 미만인 구간의 길이
+    # 10/19: 판 안 요소 추가 시각을 컷처럼 세서, 추가 사이(판 시작·끝 포함) 최장 간격이 ADD_GAP 이하면 '움직이는 판' → BOARD_MOVE_MAX까지
     edges = [0.0] + [c for c in cs if 0 < c < dur] + [dur]; runs = []
     for a, b in zip(edges, edges[1:]):
         inside = [f for f in fr if a <= f['t'] < b]
-        if inside and sum(f['live'] for f in inside) < len(inside) / 2: runs.append((round(b - a, 1), round(a, 1)))
+        if inside and sum(f['live'] for f in inside) < len(inside) / 2:
+            adds = [f['t'] for f in inside[1:] if f.get('add', 0) >= ADD_MIN]
+            marks = [a] + adds + [b]; gap = max(y - x for x, y in zip(marks, marks[1:]))
+            lim = BOARD_MOVE_MAX if gap <= ADD_GAP else BOARD_MAX
+            runs.append((round(b - a, 1), round(a, 1), lim, len(adds), round(gap, 1)))
     runs.sort(reverse=True)
+    over = [r for r in runs if r[0] > r[2]]
     board = [f for f in fr if not f['live'] and f['maxh'] is not None]
     mh = float(np.median([f['maxh'] for f in board])) if board else 0.0
     ln = float(np.median([f['n'] for f in board])) if board else 0.0
@@ -137,11 +166,11 @@ def judge_long(d):
     why = []
     if live < LIVE_MIN: why.append(f'실사 장면 {live:.0%} < {LIVE_MIN:.0%}(관점·사례·비유·장 머리를 TallyBroll·StockShot 꽉 찬 실사로)')
     if cpm < CUT_PM: why.append(f'화면 전체 컷 분당 {cpm:.1f}회 < {CUT_PM:g}회(판 위 요소만 바꾸지 말고 판↔실사↔표로 화면을 통째 바꾼다)')
-    if runs and runs[0][0] > BOARD_MAX: why.append(f'같은 판 최장 {runs[0][0]:.0f}초 > {BOARD_MAX:g}초(' + ', '.join(f'{int(st // 60)}:{st % 60:02.0f}~ {g:.0f}초' for g, st in runs[:5] if g > BOARD_MAX) + ')')
+    if over: why.append(f'같은 판 기준 넘음(움직임 없는 판 {BOARD_MAX:g}초·8초 안 요소 추가 판 {BOARD_MOVE_MAX:g}초) ' + ', '.join(f'{int(r[1] // 60)}:{r[1] % 60:02.0f}~ {r[0]:.0f}초(한도 {r[2]:g}·추가 {r[3]}번·최장 간격 {r[4]:.0f}초)' for r in over[:5]))
     if board and mh < BIG_MIN: why.append(f'판 가장 큰 글자 중앙 {mh:.1f}% < {BIG_MIN:g}%(제목 100px 위 가운데·핵심 숫자 크게)')
     if board and ln > LINES_MAX: why.append(f'판 글자 줄 중앙 {ln:.0f}줄 > {LINES_MAX}줄(판 하나에 말 하나·숫자 둘까지)')
     s = {'live_frac': round(live, 3), 'cuts_pm': round(cpm, 2), 'board_max_s': runs[0][0] if runs else 0, 'big_med': round(mh, 2), 'lines_med': ln,
-         'small_t': small[:12], 'many_t': many[:12], 'board_over': [r for r in runs if r[0] > BOARD_MAX][:12], 'dur': dur}
+         'small_t': small[:12], 'many_t': many[:12], 'board_over': over[:12], 'board_runs': runs[:12], 'dur': dur}
     return not why, why, s
 
 
@@ -180,7 +209,7 @@ def gate(mp4, quiet=False):
     s = o['sum']
     if 'live_frac' in s:   # 롱폼(10/17 기준)
         msg = (f"롱폼 화면 관문 {'통과' if o['ok'] else '걸림'}: 실사 {s['live_frac']:.0%}(≥{LIVE_MIN:.0%}) · 컷 분당 {s['cuts_pm']:.1f}(≥{CUT_PM:g}) · "
-               f"같은 판 최장 {s['board_max_s']:.0f}초(≤{BOARD_MAX:g}) · 판 큰 글자 {s['big_med']:.1f}%(≥{BIG_MIN:g}) · 판 글자 줄 {s['lines_med']:.0f}(≤{LINES_MAX})" +
+               f"같은 판 최장 {s['board_max_s']:.0f}초(정지 ≤{BOARD_MAX:g}·추가 판 ≤{BOARD_MOVE_MAX:g}, 넘음 {len(s.get('board_over', []))}) · 판 큰 글자 {s['big_med']:.1f}%(≥{BIG_MIN:g}) · 판 글자 줄 {s['lines_med']:.0f}(≤{LINES_MAX})" +
                ('' if o['ok'] else ' — ' + ' · '.join(o['why'])))
         return o['ok'], msg
     msg = (f"디자인 관문 {'통과' if o['ok'] else '걸림'}: 배경 실사 {s['bg_frac']:.0%}(연속 없음 최장 {s['bg_run']}초)" +

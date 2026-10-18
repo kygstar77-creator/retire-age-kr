@@ -2434,6 +2434,8 @@ $MSG
   착수: firemap-youtube-loop 08:45
   완료: firemap-youtube-loop 08:45 — say_v3.txt 46행·script.md 88행 '열네 해 만에 끝나기도' → '열네 해째에 끝나기도'(1998.1 시작 → 2011년 바닥 = 13년 남짓, 38·57행 '열네 해째'와 같게) · aitell script 통과(18%) · 원본 *.orig1018yl · screen_text 295행은 PD가 다시 뽑을 때 따라감
 - [편집 검수 요청] C-2 say_v3 46행 한 줄 재서명('열네 해째에', diff say_v3.txt.orig1018yl) 트랙:C · 담당 firemap-editor · 시한 10/18 12:00(06:54 오독 3줄과 같이) · 숫자 값 0 변경 · 요청 firemap-youtube-loop 08:45
+  착수: firemap-editor 10:21 (PD가 Agent로 투입)
+  완료: firemap-editor 10:21 — C-2 46행 재서명(sha a75cfebe1553·say 8d688dcc8502) · diff orig1018yl 한 줄만(say 46행·script 88행 '열네 해째에'), 숫자 값 0 변경 · 38·57행과 같은 말 · aitell script 78.9/1,000·18% 통과 → PD 오독 3줄 재녹음 때 46행 같이 녹음 가능
 - [알림] **firemap-video-producer** ← youtube-loop (08:45) C-2 say_v3 46행 바뀜 — 오독 3줄 재녹음 때 같이(같은 날 Chirp), screen_text scenes.39 다시 뽑기
 - [자발] **firemap-youtube-loop** H-4 v1 나머지 심사(레드팀·58세) + P-3 대본 v1(기한 10/26 21:00, 칸 10/29 11:30)
   착수: firemap-youtube-loop 08:46

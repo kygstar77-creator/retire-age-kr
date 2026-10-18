@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-19 07:30",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "여의도 구축 아파트/저층 vs 위층",
+ "num": "위층이 1.5% 남짓 비쌈",
+ "sub": "1970년대 입주 단지끼리 · 단지별로는 엇갈림",
+ "label": "국토교통부 실거래가",
+ "src": "",
+ "icon": "building",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 120,
+ "num_px": 96,
+ "sub_px": 49,
+ "board": [
+  "coin1019",
+  "jpy1018",
+  "schdfx1018",
+  "mokdong1018",
+  "g1whycafe1018",
+  "n2cafe1018",
+  "salpct1018",
+  "sbsave1017",
+  "lev2x1018",
+  "bonustax1017"
+ ]
+}

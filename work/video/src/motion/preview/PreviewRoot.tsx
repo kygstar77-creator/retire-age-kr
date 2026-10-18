@@ -16,6 +16,8 @@ import {tallyStarts} from '../TallyFrame';
 import {HedgeFlip, HedgeFlipProps} from '../HedgeFlip';
 import {EvenLadder, EvenLadderProps} from '../EvenLadder';
 import {DaysBelow, DaysBelowProps} from '../DaysBelow';
+import {EqStack, EqStackProps} from '../EqStack';
+import {LoanSteps, LoanStepsProps} from '../LoanSteps';
 
 type P = {scene: RScene; zoom: ZoomOutOpenProps};
 const OpenZoom: React.FC<P> = ({scene, zoom}) => (
@@ -95,6 +97,16 @@ const X1V3: React.FC<P10> = ({hedge, even, below}) => (
   </Series>
 );
 
+// H-2 5장 견본 방식 장면 셋(10/18 motion) — rule LoanSteps · cash EqStack · edge LoanSteps
+type P11 = {rule: V3S<Omit<LoanStepsProps, 'beats'>>; cash: V3S<Omit<EqStackProps, 'beats'>>; edge: V3S<Omit<LoanStepsProps, 'beats'>>};
+const H2Eq: React.FC<P11> = ({rule, cash, edge}) => (
+  <Series>
+    <Series.Sequence durationInFrames={rule.frames}>{v3Frame(rule, <LoanSteps {...rule.data} beats={tallyStarts(rule.lines)} />)}</Series.Sequence>
+    <Series.Sequence durationInFrames={cash.frames}>{v3Frame(cash, <EqStack {...cash.data} beats={tallyStarts(cash.lines)} />)}</Series.Sequence>
+    <Series.Sequence durationInFrames={edge.frames}>{v3Frame(edge, <LoanSteps {...edge.data} beats={tallyStarts(edge.lines)} />)}</Series.Sequence>
+  </Series>
+);
+
 export const PreviewRoot: React.FC = () => (
   <>
   <Composition id="OpenZoom" component={OpenZoom as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
@@ -127,5 +139,8 @@ export const PreviewRoot: React.FC = () => (
   <Composition id="X1V3" component={X1V3 as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => { const q = props as unknown as P10; return {durationInFrames: q.hedge.frames + q.even.frames + q.below.frames}; }} />
+  <Composition id="H2Eq" component={H2Eq as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => { const q = props as unknown as P11; return {durationInFrames: q.rule.frames + q.cash.frames + q.edge.frames}; }} />
   </>
 );

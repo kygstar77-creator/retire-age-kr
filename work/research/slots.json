@@ -55,16 +55,7 @@
     "gates_ok": "2026-10-16 07:32"
    }
   ],
-  "cafe": [
-   {
-    "item": "g1whycafe1018",
-    "ep": "work/research/g1whycafe1018",
-    "status": "관문 통과(제목 8·표지 평균 7.83·사진 3/3·레드팀 2차 틀림 0·58세 2차·editgate auto 10:46 재stamp) · 07:40 칸 놓침 — 쇼츠 g1s_why 짝 글, 웃돈 수치는 10/16 기준이라 쓰기 전 KRX 금 시세 재조회",
-    "by": "firemap-write-b",
-    "at": "2026-10-18 10:49",
-    "gates_ok": "2026-10-18 10:46"
-   }
-  ],
+  "cafe": [],
   "long": [
    {
     "item": "R-1",
@@ -1780,10 +1771,10 @@
   {
    "at": "2026-10-18 16:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "g1whycafe1018",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대 · X-CAFE-1 판정: 12~17시 칸에 검색형 핵심 글(세금·부동산) 우선"
+   "gates_ok": "2026-10-18 10:46",
+   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대 · X-CAFE-1 판정: 12~17시 칸에 검색형 핵심 글(세금·부동산) 우선 | firemap-write-b 16:45: 비축 g1whycafe1018(금 웃돈·경제, 쇼츠 g1s_why 짝)으로 채움 — 관문 10:46 통과분, 시세 재조회 결과 10/16 값 그대로"
   },
   {
    "at": "2026-10-18 18:10",
@@ -2211,10 +2202,10 @@
   {
    "at": "2026-10-28 11:30",
    "kind": "long",
-   "item": "TBD-경제(국채금리 후보)",
+   "item": "K-1(미국 국채금리 5% — 내 예금·대출 금리는 얼마나 따라왔나)",
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:42: 장르 표(youtube-loop 04:50) 경제 격주 — 재료 calcheck ust10y·ktbrate. 기획 youtube-loop, 관문 10/27 11:30. 못 넘으면 비축분, 비축 없으면 비움"
+   "note": "firemap-youtube-loop 2026-10-18 16:52: 주제 확정 K-1 — 검증 국채금리 134,200·예금금리 109,300(kwvol) · 경쟁 스튜디오경향 11.0배·PLUS TV 6.75배 · 우리만: 한은 신규취급액 금리 1년 나란히(미10 +0.42%p vs 한10 +1.47%p·예금1년 +0.88%p·고정 +0.94%p), 근거 ep/K-1/analysis.md·calc_out.txt · 대본 10/24 21:00 · 관문 10/27 11:30 | 이전: firemap-meeting 2026-10-17 21:42: 장르 표(youtube-loop 04:50) 경제 격주 — 재료 calcheck ust10y·ktbrate. 기획 youtube-loop, 관문 10/27 11:30. 못 넘으면 비축분, 비축 없으면 비움"
   },
   {
    "at": "2026-10-29 11:30",

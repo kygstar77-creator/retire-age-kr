@@ -2538,6 +2538,10 @@ $MSG
   착수: firemap-visual-designer 17:05
   완료: firemap-visual-designer 17:15 — **T-1 meta thumb t1f2 → thumb_t1f4.png**(윗줄 '같은 20억 집 · 10년 보유 · 정부안 2029년'·큰 '약 12배') 8차 평균 7.73(제미나이 8.9·Claude 6.7·레드팀 7.6, 셋 다 t1f2 6.53보다 위)·1초 3/3·사실 11.9배 맞음 · 9차 시험판 t1f5(큰 '양도세 약 12배') 7.27은 레드팀 '양도세가 12배 오른다' 새 오독(실제 인상 1.8배)이라 안 씀 · **H-2 h2f2 그대로**(17차 6.93 > 실루엣 h2f3 6.70 — 실루엣은 오인은 풀었지만 '어둡고 하락' 감점) · 비교판 ep/T-1/thumb_compare.png 갱신 · 근거 visual/T-1-thumb/judges.md 8~9차·H-2-thumb/judges.md 17차 · 클릭률 48h는 youtube-loop 12:47 'P-1 노출 23, 표본 부족 보류'와 같아 안 함
 - [요청] **firemap-copywriter** ← visual-designer (17:15) ① T-1 큰 글(고정 틀 카드 주황 한 줄): 168px에서 라벨·윗줄이 안 읽혀 큰 글 혼자 '누가 더 내는지'를 져야 함(세 명 공통) — '약 12배'는 주어 없음, '양도세 약 12배'는 '정책 인상'으로 읽힘(레드팀), '2년 살면'은 보유 2년 오독 → 비교형 주어 있는 한 줄 후보(예 '2년 거주 쪽 약 12배') 판단 · 관문 10/20 11:30, 기한 10/19 21:00 ② H-2 큰 두 줄 '살 땐'→'매매는' 판단(09:18 요청 ③, 레드팀 17차도 8점 조건으로 냄) — 관문 10/19 11:30
+  착수: firemap-copywriter 23:12 (운영실장 — 18:48 정기는 주간 한도로 실패, 다시 투입)
+  완료: firemap-copywriter 23:14 — ② H-2 큰 두 줄 → '매매는 가장 비싸고 / 전세는 가장 쌌다'('살 땐' 거주 오독 닫음, '사려면'은 권유처럼 읽혀 버림) · ① T-1 큰 글 → **'2년 거주 쪽 약 12배'** + 라벨 '10년 거주한 사람 대비 양도세'(2위 '2년 거주 쪽 12배 더 냄') · aitell 통과 · 1초 시험·58세 시험은 visual 재시험 몫(안 잼) · 근거 ep/H-2/copy/titles.md·ep/T-1/copy/titles.md
+  막힘: firemap-copywriter 23:15 — 커밋 대기(.git/index.lock 남아 있음, 2번 재시도 실패, lock 안 지움). 파일 기록은 끝: ep/H-2/copy/titles.md·ep/T-1/copy/titles.md·today.md·decisions/log.md 다음 회차가 커밋
+- [알림] **firemap-visual-designer** ← copywriter (23:14) H-2 h2f4: 틀 ④ 질문 '매매는 가장 비싸고<br>전세는 가장 쌌다'(큰 '전세 5억 남짓' 그대로) · 윗줄 '매매는'과 겹치는 카드 라벨 '매매는 43억, 잠실동에서 가장 비싼데'는 '잠실동 안에서 매매 43억'으로 줄이길(같은 말 두 번 방지) · 관문 10/19 11:30 · T-1 t1f6: 큰 '2년 거주 쪽 약 12배'·라벨 '10년 거주한 사람 대비 양도세'(질문·윗줄 '10년 보유' 그대로) · 관문 10/20 11:30, 기한 10/19 21:00 · 둘 다 meta thumb_text는 새 판 만들 때 같이 · 168px/58세 시험은 거기서
 - [알림] **firemap-video-producer** ← visual-designer (17:15) T-1 meta thumb = thumb_t1f4.png(thumb_text_small도 그 윗줄로 맞춤) · H-2는 thumb_h2f2.png 그대로
 - [자발] **firemap-write** 18:20 회차 — 18:10 칸 mokdong1018 발행 + 다음 TBD 칸
   착수: firemap-write 18:20
@@ -2567,3 +2571,21 @@ $MSG
 - [자발] **firemap-write-b** 22:41 회차 — 22:40 칸 TBD(비축 0) → 새 편 jpy1018
   착수: firemap-write-b 22:41
   완료: firemap-write-b 23:08 — 22:40 jpy1018 https://cafe.naver.com/firemap/320 verify OK 1387/1387자·사진 3/3 '엔화 환전, 같은 100만원인데 작년보다 엔이 더 나오는 이유'(경제) — 한국은행 원/엔 일별 직접 계산: 같은 100만원 1년 새 +1만 1천 엔, 작년 사 둔 엔 원화로 -9만 6천원, 하나은행 현찰 살 때·팔 때 3.4% · 레드팀 틀림1·오해5 반영·58세 2차 통과·제목 7.5·표지 7·editgate auto · 발행 23:06(26분 늦음) · 게시판이 자유게시판으로 감(자동규칙에 엔화·환전 없음) → naverpost 규칙 고침, 320번 경제 이야기 이동은 운영실장 판단 · 카페 비축 0/2 그대로
+- [지시] **firemap-write** ← 운영실장 (23:12) 카페 비축 0/2(최소 2) — 관문 통과한 비축 1편 만들어 slots.json reserve에 gates_ok 시각
+  착수: firemap-write 23:12 (운영실장)
+  완료: firemap-write 23:47 — 카페 비축 1편 pensiontax1019 관문 통과·slots.json reserve.cafe 등록(gates_ok 2026-10-18 23:47) '연금저축 세금은 연금이 1500만원 넘으면 오히려 돌려받는 경우'(세금연금) — 소득세법 14·47조의2·55·64조의4·129·시행령 40조의2·국세청 직접 계산: 연 2000만원 69세 이하 원천징수 110만원 대 종합 정산 76만 6천원(환급 33만 4천원)·70대 11만원 환급·80세 이상 11만원 추가·약 2600만원 넘으면 뒤집힘 · 레드팀 틀림0·오해4 반영·58세 2차 통과·제목 8·표지 8.5·editgate auto · 미발행(발행은 정기 회차) · 카페 비축 1/2
+- [막힘] 운영실장 23:12 — git 프로세스 54개가 22:25부터 쌓이고 .git/index.lock 남음(22:31 PD 막힘과 같은 원인). 남의 잠금이라 안 지움, pc-health-guard(:20)가 정리 몫 · 320번 게시판 이동은 카페 화면 쓰기라 배차가 하지 않음 → write 다음 정기 회차 판단
+- [지시] **카페 운영 설계자(Agent)** ← 순돌이 (사장님 23시 "카페 가입자·댓글 쓰는 사람이 없는데 설계 잘 해서 운영하는 거야?" · 23:1x "지금 당장 해서 바로 적용, 12편 그대로") 잘 되는 카페 3곳 둘러보기 → 우리 카페 혹평 → 설계안 research/growth/cafe-community-1018.md · 오늘 적용(글 끝 질문 규칙 SKILL·공지 묶음 slots) · 관리 설정 정리 research/growth/cafe-admin-todo-1018.md
+  착수: 카페 운영 설계자 23:17
+  완료: firemap-editor 23:36 — C-2 2줄(27 '1년 치'·153 '해마다', diff orig1018pd5) 편집 통과·재서명(고침 0) · aitell script 81.6·19% 통과·AI 티 3.5 · 새 sha script 5b27943d… / say_v3 5636386e… · 화면 글자 새로 뽑으면 다시 stamp
+- [막힘] firemap-write 23:48 — 커밋 대기: .git/index.lock 때문에 pensiontax1019·slots.json·today.md·log.md 커밋 2회 실패(lock은 안 지움). 파일 기록은 남아 있음, 다음 회차가 'git add work/research/pensiontax1019 work/research/slots.json …' 커밋
+- [막힘] 운영실장 23:50 — git 프로세스 54→101개로 늘고 .git/index.lock(23:08:25) 그대로, 이 회차 커밋 3건(copywriter·write·dispatch) 전부 대기 · pc-health-guard 23:23 회차로 안 풀림 → 순돌이 채팅 세션에서 멈춘 git 정리 필요 · 파일 기록은 다 있음
+  완료: firemap-editor 23:51 — C-2 화면 글자 재stamp(sha 5eb04a0c…) · before3와 차이 scenes.23·125 두 줄=23:36 서명 대본과 같음, 그 밖 0
+  완료: 카페 운영 설계자 23:56 — ① 10곳(배당투자자모임·돈공처·서집달·고래·노후연구소·평생ETF·티끌모아태산·노후준비연구소·이읽남·신파람) 공개 API 평가 → growth/cafe-community-1018.md ② 관리 설정 목록 growth/cafe-admin-todo-1018.md(가입 질문 3·등급 2단계 자동 등업·게시판 5+링크 3·필독 공지, 순돌이 Chrome 몫) ③ firemap-write SKILL에 '댓글이 생기게 쓴다'(글 끝 질문 한 줄·자료 안내·매 회차 cafecomments.py→답글 [요청]·회원 게시판 자동 글 금지) ④ 공지 묶음 2개 관문 통과·slots 칸: cafenotice1018(10/19 13:40, 필독)·cafeqna1018(10/20 10:40) — 발행 --board 공지사항(pkg/notice.txt) ⑤ work/cafecomments.py(읽기 전용, 첫 실행 0개) ⑥ naverpost HUMAN_ONLY에 '배당·이자 인증'·'회원 자료실'
+- [막힘] 카페 운영 설계자 23:56 — 커밋 못 함(.git/index.lock 23:08부터 남음, 남의 잠금이라 안 지움). 커밋할 경로: work/research/growth/cafe-community-1018.md · work/research/growth/cafe-admin-todo-1018.md · work/research/cafenotice1018/ · work/research/cafeqna1018/ · work/cafecomments.py · work/naverpost.py · work/research/slots.json · work/research/meeting/today.md · work/research/decisions/log.md — 다음 회차가 git commit -- <경로>
+- [지시] **영상 도구 담당(Agent)** ← 순돌이 (사장님 10/19 00:1x "그래 설치해") HyperFrames(Apache-2.0)·OpenMontage(AGPL-3.0) 설치(Documents/tools, 저장소 밖) → R-1 r1s_fx 시험 쇼츠 두 판 → compare.mp4·review.md(research/strategy/tools-trial-1019/) · 업로드 0 · C-2 렌더 중이라 렌더 동시 1개
+  착수: 영상 도구 담당 00:27
+- [자발] **firemap-youtube-loop** 10/19 연구 + K-1 경쟁 쪼개기·research.md
+  착수: firemap-youtube-loop 00:45
+  완료: firemap-youtube-loop 00:53 — study/2026-10-19.md(구독 60·총조회 28,949 · 6분대 롱폼 R-1·H-1 하루 +147·+93, 2~5분 3편 3~7회 멈춤 · 퀸즈리 가상 인물 16~18분 상위 4편) · K-1 ytbreak 2편 더(VBzy·V4m) · **K-1 research.md research_gate 통과**(실제 질문 5 = 유튜브 댓글 API · 은행연합회 COFIX 원문: 1년 신규 +0.69·잔액 +0.11%p → 변동형 +0.45%p '왜' · calc2: 2021 고정 3억 5년 뒤 월 +27.8만원 · 주담대−예금 차 1.48→1.52%p) · 다음 K-1 대본 v1(10/24)
+- [알림] **firemap-meeting** ← youtube-loop (00:53) 길이 관찰 5편: 6분대 롱폼(R-1 548·H-1 341)은 매일 붙고 2~5분 롱폼(P-1 3·w1016 7·kXnAKjC-84Q 3)은 멈춤 → 롱폼 길이 하한 6분 안건 · kXnAKjC-84Q '내 월급 순위' 2:15 누가 올렸는지 uploads.jsonl에 없으면 확인

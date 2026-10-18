@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-18 15:34",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "SCHD 배당금/원화로는 줄었다",
+ "num": "6월보다 약 4만 4천원 덜",
+ "sub": "2천 주 · 세금 뗀 값 · 환율 1,537원 → 1,360원",
+ "label": "한국은행 환율로 계산",
+ "src": "",
+ "icon": "receipt",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 130,
+ "num_px": 82,
+ "sub_px": 44,
+ "board": [
+  "salpct1018",
+  "sbsave1017",
+  "lev2x1018",
+  "bonustax1017",
+  "sangokapply1017",
+  "depmature1017",
+  "nhisadj1017",
+  "h1gapcafe1017",
+  "marrygift1017",
+  "bogeum1017"
+ ]
+}

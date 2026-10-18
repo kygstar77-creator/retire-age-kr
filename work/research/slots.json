@@ -1815,10 +1815,12 @@
   {
    "at": "2026-10-18 22:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "jpy1018",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대"
+   "gates_ok": "2026-10-18 22:59",
+   "note": "firemap-meeting 2026-10-14 21:33: 카페 하루 12칸 뼈대 | firemap-write-b 22:59: 비축 0이라 새 편 jpy1018 '엔화 환전, 같은 100만원인데 작년보다 엔이 더 나오는 이유'(경제·형식2) 관문 통과 — 한국은행 원/엔 일별·FRED·하나은행 고시 직접 계산, 레드팀 틀림1·오해5 반영, 58세 2차 통과, 제목 7.5·표지 7, editgate auto",
+   "pkg": "jpy1018",
+   "published": "https://cafe.naver.com/firemap/320 23:06 verify OK 1387자"
   },
   {
    "at": "2026-10-19 06:10",

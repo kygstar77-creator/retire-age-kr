@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-18 22:59",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "엔화 환전/1년 전보다 더 받는다",
+ "num": "100만원에 1만 1천 엔 더",
+ "sub": "기준 환율 100엔 943원(작년 10월) → 853원(올해)",
+ "label": "엔화 환전",
+ "src": "",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 112,
+ "num_px": 89,
+ "sub_px": 42,
+ "board": [
+  "schdfx1018",
+  "mokdong1018",
+  "g1whycafe1018",
+  "n2cafe1018",
+  "salpct1018",
+  "sbsave1017",
+  "lev2x1018",
+  "bonustax1017",
+  "sangokapply1017",
+  "depmature1017"
+ ]
+}

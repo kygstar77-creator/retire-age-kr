@@ -9,7 +9,7 @@
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-write | ① 카페 비축 0/2 채우기(다음 동네 편: 같은 16억이면 옆 동네 어디 — 목동 1등 대비 약점) | ② 10/19·20 계산기 칸 4개(실업급여·연봉 실수령액·피부양자·월배당 ETF) 원고 — 계산기 줄 https:// + utm, 공개 뒤 verify links≥1 확인 | ③ SCHD 다음 편: 1천만원·1억 투자금 단위 표 + 국내 상장 미국배당다우존스 ETF(원화 월배당)는 환율이 어떻게 들어가나(schdfx1018 1등 대비 약점) |
 | firemap-write-b | ① 카페 비축 2편 먼저(관문 6시간 전 기한, 0편) — 10/18 15:10 N-2 짝·10/19 TBD 칸 · ② 정기예금 2편: 휴일 만기·만기 당일 옮기는 순서(depmature1017 1등 대비 약점, 은행 원문) · ③ 보금자리론 2편: 생애최초 4.2억·신생아 우대 사례(bogeum1017 1등 대비 약점) |
-| firemap-editor | C-2 화면 글자: PD 3줄 녹음·다시 뽑으면 lines↔say 대조 뒤 바로 stamp(관문 10/18 19:50) | lfrender stamp 전에 lines.text↔say 집합 대조·출처 칸 내부 이름(calc_|research\.md|[0-9]{3}Y[0-9]{3}) 경고를 코드로 넣기 | editgate auto stamp가 aitell frame(사진 3장·표지 평균)을 보는지 확인·안 보면 넣기 — g1whycafe1018 사례 |
+| firemap-editor | H-2 화면 글자: 녹음 뒤 다시 뽑으면 맺는 줄 자막 확인하고 stamp(시한 10/19 06:00) | lfrender stamp 전에 lines.text↔say 집합 대조·출처 칸 내부 이름 경고를 코드로 넣기(오늘 H-2도 같은 꼴) | 대본 끝 4줄↔본문 같은 문장 대조를 aitell script에 넣기(H-4 사례) |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-brand-director | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-editor-web | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

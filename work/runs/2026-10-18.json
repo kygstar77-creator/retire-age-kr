@@ -1,0 +1,58 @@
+{
+ "date": "2026-10-18",
+ "runs": [
+  {
+   "hour": 6,
+   "ts": "06:26",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "산곡역자이힐스테이트 청약, 이자후불제 중도금은 입주 때 이자 얼마 낼까?",
+    "url": "https://cafe.naver.com/firemap/311"
+   },
+   "note": "02~07시 카페만(블로그 없음). 06:10 칸 sangokapply1017(관문 10/17 21:42 통과분) 발행 · verify OK 2225/2225자 사진 3/3 · 교차검증·selfcheck은 작성 회차에서 끝남(check_gpt/gemini/self 있음) · 개선: naverpost verify에 firemap.kr 링크 검사, editgate calc_check 주제 불일치 막음 · 카페 비축 0/2(다음 회차 몫 기록)"
+  },
+  {
+   "hour": 7,
+   "ts": "07:47",
+   "blog": null,
+   "cafe": {
+    "title": "KRX 금 웃돈과 환율 때문에 국제 금값이 올라도 내 금이 줄어든 이유",
+    "url": null
+   },
+   "note": "firemap-write-b 07:40 칸 g1whycafe1018 발행 막힘: ①사진 2/3장 → 웃돈 250거래일 선 그래프 02.png 추가(raw_20261017.json, 값 본문과 일치) ②cover_review.md에 '평균: N' 줄 없음(review.md엔 표지 8·8·레드팀 8 기록) ③editor가 07:11 c03 고친 뒤 editgate 재stamp 없음 → firemap-editor stamp·표지 평균 줄 필요. 개선: 사진 추가"
+  },
+  {
+   "hour": 9,
+   "ts": "09:52",
+   "blog": null,
+   "cafe": {
+    "title": "성과급 세금 1천만원이면 받는 달 따라 몇십만원 달라질까?",
+    "url": "https://cafe.naver.com/firemap/312"
+   },
+   "note": "firemap-write 09:10 칸 bonustax1017 발행 · verify OK 1678/1678자·사진 3/3 · 블로그는 DAY_CAP·방침상 없음 · 다음 칸 준비: 13:40 salpct1018(회원 자료 엑셀, 멤버 공개)·15:10 n2cafe1018(N-2 짝 글) 관문 통과 — 자료조사 출처: 국세청 15082063·국가데이터처 443648 원문 10/18 재확인+전자신문 대조, 경쟁 6편 · 교차검증: n2 사실 6 중 반영 3·유지 3(영상·회원 글 근거), 말투 15 중 반영 6 / salpct 사실 8 중 반영 1·유지 7(정의·설정 근거 facts 추가), 말투 11 중 반영 5 · 레드팀 n2 2차·salpct 1차, 이해 시험 n2 3차·salpct 1차 통과 · 개선: 회원 자료 엑셀 make_xlsx.py+verify.py(Excel COM 자동 검산) 짝으로 만듦"
+  },
+  {
+   "hour": 10,
+   "ts": "10:49",
+   "blog": null,
+   "cafe": {
+    "title": "단일종목 레버리지 ETF 두 배, 올해 SK하이닉스로 계산해 보니",
+    "url": "https://cafe.naver.com/firemap/313"
+   },
+   "note": "firemap-write-b 10:40 칸 lev2x1018 (관문 07:25 firemap-write 통과분, aitell 1.5·editgate 해시 일치) · verify OK 1383/1383자·사진 3/3 · 게시판 자동=성장주 · 확인 창 처리 타임아웃 났으나 발행 성공 · g1whycafe1018 cover 평균 7.83 채워 재stamp→비축 · 개선: 없음"
+  },
+  {
+   "hour": 12,
+   "ts": "12:42",
+   "blog": null,
+   "cafe": {
+    "title": "저축은행 적금 금리 3.75%면 손에 쥐는 이자는 얼마일까?",
+    "url": "https://cafe.naver.com/firemap/314"
+   },
+   "note": "firemap-write 12:10 칸 sbsave1017(관문 10/17 09:44, editgate 해시 일치·aitell 1.2) · verify OK 1845/1845자·사진 3/3 · 게시판 자동=돈 관리 · 블로그 없음(하루 상한·카페 전용 체제) · 다음: 18:10 칸 mokdong1018 원고(국토부 실거래 오늘 재수신 675건·정보몽땅·서울시 보도자료·시행령 10/1 원문, 출처 6) · 개선: 청약홈 분양정보 API(odcloud) 401 — 데이터포털 활용신청 필요, tools-wanted에 적음"
+  }
+ ]
+}

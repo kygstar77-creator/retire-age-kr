@@ -23,6 +23,16 @@
     "url": null
    },
    "note": "firemap-write-b 07:40 칸 g1whycafe1018 발행 막힘: ①사진 2/3장 → 웃돈 250거래일 선 그래프 02.png 추가(raw_20261017.json, 값 본문과 일치) ②cover_review.md에 '평균: N' 줄 없음(review.md엔 표지 8·8·레드팀 8 기록) ③editor가 07:11 c03 고친 뒤 editgate 재stamp 없음 → firemap-editor stamp·표지 평균 줄 필요. 개선: 사진 추가"
+  },
+  {
+   "hour": 9,
+   "ts": "09:52",
+   "blog": null,
+   "cafe": {
+    "title": "성과급 세금 1천만원이면 받는 달 따라 몇십만원 달라질까?",
+    "url": "https://cafe.naver.com/firemap/312"
+   },
+   "note": "firemap-write 09:10 칸 bonustax1017 발행 · verify OK 1678/1678자·사진 3/3 · 블로그는 DAY_CAP·방침상 없음 · 다음 칸 준비: 13:40 salpct1018(회원 자료 엑셀, 멤버 공개)·15:10 n2cafe1018(N-2 짝 글) 관문 통과 — 자료조사 출처: 국세청 15082063·국가데이터처 443648 원문 10/18 재확인+전자신문 대조, 경쟁 6편 · 교차검증: n2 사실 6 중 반영 3·유지 3(영상·회원 글 근거), 말투 15 중 반영 6 / salpct 사실 8 중 반영 1·유지 7(정의·설정 근거 facts 추가), 말투 11 중 반영 5 · 레드팀 n2 2차·salpct 1차, 이해 시험 n2 3차·salpct 1차 통과 · 개선: 회원 자료 엑셀 make_xlsx.py+verify.py(Excel COM 자동 검산) 짝으로 만듦"
   }
  ]
 }

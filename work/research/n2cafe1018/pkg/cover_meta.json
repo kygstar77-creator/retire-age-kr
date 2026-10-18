@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-18 09:36",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "내 월급 순위",
+ "num": "월 450만원 = 20대 후반 상위 13%",
+ "sub": "40대 초반은 상위 42% · 같은 나이대 일자리 · 2024년 12월",
+ "label": "",
+ "src": "",
+ "icon": "briefcase",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 168,
+ "num_px": 64,
+ "sub_px": 38,
+ "board": [
+  "sangokapply1017",
+  "depmature1017",
+  "nhisadj1017",
+  "h1gapcafe1017",
+  "marrygift1017",
+  "bogeum1017",
+  "sbdep1017",
+  "cma1017",
+  "jeonseloan1017",
+  "w2cafe1017"
+ ]
+}

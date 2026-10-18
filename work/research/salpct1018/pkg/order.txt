@@ -1,0 +1,13 @@
+카페 발행 순서
+제목: title.txt
+게시판: 주제에 맞게(자동)
+visibility: members
+attach: 연봉_상위몇퍼센트_국세청2024.xlsx
+img/00.png
+c00.txt
+c01.txt
+img/01.png
+c02.txt
+img/02.png
+c03.txt
+c04.txt

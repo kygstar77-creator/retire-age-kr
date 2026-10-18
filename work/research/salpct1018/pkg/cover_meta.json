@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-18 09:46",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "연봉 상위 몇 %",
+ "num": "5,000만원 → 상위 30%쯤",
+ "sub": "총급여만 넣는 엑셀 · 국세청 2024년분",
+ "label": "",
+ "src": "",
+ "icon": "file-spreadsheet",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 154,
+ "num_px": 85,
+ "sub_px": 60,
+ "board": [
+  "bonustax1017",
+  "sangokapply1017",
+  "depmature1017",
+  "nhisadj1017",
+  "h1gapcafe1017",
+  "marrygift1017",
+  "bogeum1017",
+  "sbdep1017",
+  "cma1017",
+  "jeonseloan1017"
+ ]
+}

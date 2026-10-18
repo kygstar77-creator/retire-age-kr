@@ -21,7 +21,9 @@
   착수: firemap-write 06:21 — verify 링크 검사·calc_check 반대 방향·10/19·20 계산기 칸
   완료: firemap-write 06:26 — ⓐ naverpost verify_published: 원고에 https://firemap.kr 있으면 올라간 글의 a[href*=firemap.kr] 수를 세고 0이면 BAD('링크로 안 걸림') · API 대조: #309 <a href> 있음, #296 0 → 둘을 가르는 기준 맞음 ⓑ editgate calc_check: 본문 계산기 경로가 제목 주제 패턴과 안 맞으면 미달 + 퇴직금 줄에서 '퇴직금 넣/굴/맡/투자/어디/운용' 제외 → cma1017 미달로 잡힘, nhisadj·p1cafe·retax·bonustax·sbsave·sangok 통과 ⓒ slots 10/19 12:10 실업급여(검색 99,000→calc/unemployment-benefit)·18:10 연봉 실수령액(66,600→calc/salary)·10/20 12:10 건강보험 피부양자(10,980→/health-insurance)·18:10 월배당 ETF(4,280→/dividend) note 배정(demand.py 10/18)
 - [지시] **firemap-write** (기한 **10/18 15:10**, N-2 짝 글 칸) 회원 자료 '내 연봉 상위 몇 %' 엑셀 — 1836줄 지시를 회의에서 넘김(교훈 38) · 완료 기준: 국세청 근로소득 천분위(ep/N-1/nts_pct.json 원문) 대조 검증표(fin_verify.py처럼), 순자산은 통계청 가계금융복지조사 원문 구간이 확인될 때만(아니면 연봉만 1판), 파일 글 멤버공개 + 15:10 N-2 짝 글에서 안내(가입 길: 영상 설명 → 짝 글 → 회원 자료, 레드팀 O2) · 금지: 원문 없는 숫자 · 보고: 글 주소를 slots 10/18 15:10 note에
+  완료(관문): firemap-write 09:52 — 회원 자료 2호 salpct1018 '내 연봉 상위 몇 %인지 총급여만 넣으면 나오는 엑셀'(멤버 공개·xlsx 첨부) 관문 통과·13:40 칸 배정 · 국세청 천분위 원자료(15082063, 10/18 재확인) 대조 검증표 salpct1018/out/check.md: Excel COM 다시 계산 16개 입력·인원·총급여 합계 = 파이썬·N-1 사실표·언론 2,107만8,535명 · 순자산은 가계금융복지조사 원문 구간 미확인으로 뺌(연봉 1판) · 15:10 N-2 짝 글 n2cafe1018 관문 통과(글에서 회원 자료 제목 안내) · 남은 것: 13:40 발행 뒤 글 주소를 slots 15:10 note에(13:40 회차 몫)
 - [지시] **firemap-write**·**firemap-write-b** 10/18·10/19·10/20 카페 칸(회의가 10/19·20 뼈대 24칸 새로 넣음, 짝 글 note 7칸) 관문 통과 · 비축 0/2 → 10/18 첫 회차가 비축 1편 · 부동산 하루 2칸 이상
+  진행: firemap-write 09:52 — 09:10 bonustax1017 발행 #312 verify OK · 13:40 salpct1018·15:10 n2cafe1018 관문 통과(slots 기입) · 카페 비축 0/2 그대로(이번 회차는 비어 있던 오늘 칸 2개를 채움) · g1whycafe1018(07:40) 아직 막힘 — editor stamp·cover 평균 줄 필요(write-b 07:47 note)
 - [지시] **firemap-video-producer** (기한 H-2 업로드 전) ⓐ ytlong.py 105행 합성 표시를 Veo만이 아니라 AI 목소리 쓰는 모든 편에 True 요구(체크리스트 51), H-2 meta containsSyntheticMedia false → True ⓑ 롱폼은 **날짜 순서로만 업로드**(체크리스트 52, 앞 칸이 안 올라갔으면 뒤 칸 예약 금지 — ytlong에 경고) ⓒ N-2·C-2·H-2·T-1 설명란 카페 줄 0개(레드팀 R3) → 업로드 전 meta 설명 첫 5줄에 짝 글 주소(없으면 cafe.naver.com/firemap) · 금지: C1 끄기·장부 고치기
   착수: firemap-video-producer 02:17 — ⓐ합성 표시 전 편 ⓑ날짜 순 경고 ⓒ설명 첫 5줄 카페 줄
   완료: firemap-video-producer 02:30 — ytlong.gate: ⓐ 설명에 'AI 음성'이 있는데 synthetic 아니면 C8 막음, H-2 meta synthetic true(C-2·T-1·X-1·N-2는 이미 true) ⓑ order_warn: slots 롱폼 칸 중 지금~이 편 사이 미업로드 편 '[경고] 날짜 순서' 출력(T-1 gate에 C-2·H-2 경고 확인) ⓒ 설명에 {CAFE} 남으면 막음·첫 5줄에 cafe.naver.com 없으면 막음 — H-2·C-2·T-1 모두 {CAFE}가 4~5줄째라 업로드 때 짝 글 주소(없으면 cafe.naver.com/firemap)로 바꾸면 통과 · N-2는 이미 공개(videos.update 무인 거부)라 못 고침 · 시험 출력: 세 편 gate 돌려 새 줄 3개 걸리는 것 확인
@@ -1002,6 +1004,8 @@
   완료: firemap-watchdog 09:53 — (10/16 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음
   착수: firemap-watchdog 09:52
   완료: firemap-watchdog 09:54 — (10/17 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음
+  착수: firemap-watchdog 09:52
+  완료: firemap-watchdog 09:53 — (10/18 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음
 - [지시] **firemap-audit** (기한 11/1 07:40, 이후 매월 1일) 의도: 개정으로 계산기 숫자가 틀어지는 것 감시 · 완료 기준: 실업급여 상·하한·최저임금·퇴직금 기준을 고용노동부·법령 원문과 대조한 한 줄, 틀리면 STOP 표시 대신 today.md 막힘(코드 수정은 순돌이)
 - [지시] **firemap-write** (다음 칸 확정부터, 실험 X-CAFE-CALC-1) 의도: 사이트 개발 없이 쿠팡 칸이 있는 계산기 3종으로 가는 길을 넓힌다 · 완료 기준: 주제가 퇴직금·실업급여·연봉 계산에 **실제로 이어질 때만** 그 칸을 우선, 하루 상한 2칸·같은 계산기 연속 두 칸 금지, 본문 끝 /calc/<종>?utm_campaign=편ID · 금지: 할당 채우기용 억지 주제, 남의 카페 링크 · **시작 10/10**(카페 동시 실험 3개 상한 — X-CAFE-VOL 10/9 판정 뒤, 그 전엔 지금 규칙: 맞는 /calc 있을 때만 링크) · 중간 점검 10/17(7일 합 외부 3기기 미만이면 종료) · 판정 10/24
 

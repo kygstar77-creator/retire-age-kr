@@ -50,7 +50,11 @@ if __name__ == '__main__':
         for ym in months:
             for kind in ('trade', 'rent', 'offi_trade', 'offi_rent'):
                 p = os.path.join(OUT, f'{lawd}_{ym}_{kind}.json')
-                if os.path.exists(p) and ym < time.strftime('%Y%m'): continue   # 지난달 이전은 다시 안 받음
+                # 신고 기한(계약일부터 30일)이 지난 뒤에 받은 파일만 다시 안 받는다.
+                # 2026-10-18: 9/28에 받은 양천구 202609가 목동 8건이었는데 10/18에 다시 받으니 19건 — '지난달이면 건너뜀'이 늦은 신고를 놓쳤다.
+                ny, nm = (int(ym[:4]) + 1, 1) if ym[4:] == '12' else (int(ym[:4]), int(ym[4:]) + 1)
+                settled = time.mktime((ny, nm, 1, 0, 0, 0, 0, 0, -1)) + 31 * 86400
+                if os.path.exists(p) and os.path.getmtime(p) >= settled: continue
                 try:
                     rows = fetch(kind, lawd, ym); calls += 1
                     json.dump(rows, open(p, 'w', encoding='utf-8'), ensure_ascii=False)

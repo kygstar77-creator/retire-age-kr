@@ -43,6 +43,16 @@
     "url": "https://cafe.naver.com/firemap/313"
    },
    "note": "firemap-write-b 10:40 칸 lev2x1018 (관문 07:25 firemap-write 통과분, aitell 1.5·editgate 해시 일치) · verify OK 1383/1383자·사진 3/3 · 게시판 자동=성장주 · 확인 창 처리 타임아웃 났으나 발행 성공 · g1whycafe1018 cover 평균 7.83 채워 재stamp→비축 · 개선: 없음"
+  },
+  {
+   "hour": 12,
+   "ts": "12:42",
+   "blog": null,
+   "cafe": {
+    "title": "저축은행 적금 금리 3.75%면 손에 쥐는 이자는 얼마일까?",
+    "url": "https://cafe.naver.com/firemap/314"
+   },
+   "note": "firemap-write 12:10 칸 sbsave1017(관문 10/17 09:44, editgate 해시 일치·aitell 1.2) · verify OK 1845/1845자·사진 3/3 · 게시판 자동=돈 관리 · 블로그 없음(하루 상한·카페 전용 체제) · 다음: 18:10 칸 mokdong1018 원고(국토부 실거래 오늘 재수신 675건·정보몽땅·서울시 보도자료·시행령 10/1 원문, 출처 6) · 개선: 청약홈 분양정보 API(odcloud) 401 — 데이터포털 활용신청 필요, tools-wanted에 적음"
   }
  ]
 }

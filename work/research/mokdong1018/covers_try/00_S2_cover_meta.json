@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-18 12:36",
+ "by": "work/cafecover.py",
+ "out": "00_S2.png",
+ "topic": "목동 신시가지/전세 끼고 사도",
+ "num": "16억 넘게 든다",
+ "sub": "7단지 54㎡ · 1년 실거래 가운데 값",
+ "label": "국토부 실거래",
+ "src": "",
+ "icon": "house",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 120,
+ "num_px": 91,
+ "sub_px": 44,
+ "board": [
+  "sbsave1017",
+  "lev2x1018",
+  "bonustax1017",
+  "sangokapply1017",
+  "depmature1017",
+  "nhisadj1017",
+  "h1gapcafe1017",
+  "marrygift1017",
+  "bogeum1017",
+  "sbdep1017"
+ ]
+}

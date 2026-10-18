@@ -6,12 +6,12 @@
    "lines": [
     {
      "text": "안녕하세요, 파이어맵입니다. 오늘은 퇴직금으로 생활비를 꺼내 쓰는 이야기입니다.",
-     "audio": null,
-     "frames": 234,
+     "audio": "audio/c-2/dd4a1bf14d635dae.wav",
+     "frames": 149,
      "cap": null
     }
    ],
-   "frames": 254,
+   "frames": 169,
    "data": {
     "src": "bg/c2/7593891.mp4",
     "license": "Pexels 7593891 무료(Pavel Danilyuk)",
@@ -25,12 +25,12 @@
    "lines": [
     {
      "text": "퇴직금 3억을 미국 주식에 넣고 매달 200만원씩 꺼내 쓰면, 몇 년을 버틸까요?",
-     "audio": null,
-     "frames": 239,
+     "audio": "audio/c-2/c1bc72f297f9601b.wav",
+     "frames": 157,
      "cap": null
     }
    ],
-   "frames": 263,
+   "frames": 181,
    "data": {
     "src": "bg/c2/6963484.mp4",
     "license": "Pexels 6963484 무료(Mikhail Nilov)",
@@ -364,13 +364,13 @@
    "kind": "eq",
    "lines": [
     {
-     "text": "그래서 첫해 지수가 30% 가까이 올랐는데도, 원화로는 10%가 안 됐습니다.",
-     "audio": "audio/c-2/c5c9d8a1bd8ecd6e.wav",
-     "frames": 150,
+     "text": "그래서 첫해 지수가 30% 가까이 올랐어요. 그런데 원화로는 10%가 안 됐습니다.",
+     "audio": "audio/c-2/ef99d472b4246d4b.wav",
+     "frames": 163,
      "cap": "원/달러 연말 1997년 1,415.2원 → 1998년 1,207.8원"
     }
    ],
-   "frames": 150,
+   "frames": 163,
    "data": {
     "title": "1998년, 정우 씨 첫해",
     "a": "+28.6%",
@@ -379,7 +379,7 @@
     "ans": "+9.7%",
     "source": "S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)",
     "ctx": "영호 씨 1997년: 달러로 +33.4% × 844.2원 → 1,415.2원 = 원화로 +123.6%",
-    "rv": 82
+    "rv": 89
    }
   },
   {
@@ -960,13 +960,13 @@
    "kind": "broll",
    "lines": [
     {
-     "text": "그래서 첫 질문의 답은 이래요. 매달 200만원은, 시작한 해에 따라 평생 가기도 하고 열네 해 만에 끝나기도 했습니다.",
-     "audio": "audio/c-2/98d31c23492ae417.wav",
-     "frames": 252,
+     "text": "그래서 첫 질문의 답은 이래요. 매달 200만원은, 시작한 해에 따라 평생 가기도 하고 열네 해째에 끝나기도 했습니다.",
+     "audio": "audio/c-2/728cb0c751a9f5ea.wav",
+     "frames": 260,
      "cap": null
     }
    ],
-   "frames": 252,
+   "frames": 260,
    "data": {
     "src": "bg/c2/36282124.mp4",
     "license": "Pexels 36282124 무료(Ben Kyselka)",
@@ -2164,13 +2164,13 @@
    "kind": "big",
    "lines": [
     {
-     "text": "그래서 정우 씨는 처음 두 해 세금이 없었어요. 판 이익이 250만원 안이었거든요.",
-     "audio": "audio/c-2/fe4d3fd1a3fe1bee.wav",
-     "frames": 168,
+     "text": "그래서 정우 씨는 처음 두 해 세금이 없었어요. 판 이익이 250만원을 넘지 않았거든요.",
+     "audio": "audio/c-2/603e3e642310aac7.wav",
+     "frames": 183,
      "cap": null
     }
    ],
-   "frames": 168,
+   "frames": 183,
    "data": {
     "title": "처음 두 해 세금",
     "v": "0원",
@@ -2178,7 +2178,7 @@
     "icon": "Receipt",
     "c": "fall",
     "source": "소득세법·국세기본법·국민건강보험법 시행령·시행규칙(법제처 국가법령정보센터)",
-    "rv": 47
+    "rv": 48
    }
   },
   {
@@ -2539,9 +2539,9 @@
    "kind": "rows",
    "lines": [
     {
-     "text": "건보료를 직접 내고 이자나 배당 소득도 있는 분이라면, 고른 길이 건보료에 잡히는 길인지 먼저 확인하세요.",
-     "audio": "audio/c-2/5d888fbf75a6d495.wav",
-     "frames": 187,
+     "text": "건보료를 직접 내고 이자나 배당 소득도 있는 분이라면, 고른 방법이 건보료에 잡히는 길인지 먼저 확인하세요.",
+     "audio": "audio/c-2/1e5bd4f2055dba5e.wav",
+     "frames": 216,
      "cap": null
     },
     {
@@ -2557,7 +2557,7 @@
      "cap": null
     }
    ],
-   "frames": 529,
+   "frames": 558,
    "data": {
     "title": "누구라면",
     "rows": [
@@ -3171,20 +3171,20 @@
    "lines": [
     {
      "text": "화요일 오전 11시 반에는 아파트 실거래가 이야기입니다. 그때 뵙겠습니다.",
-     "audio": null,
-     "frames": 218,
+     "audio": "audio/c-2/268701bb1d7be39e.wav",
+     "frames": 143,
      "cap": null
     }
    ],
-   "frames": 293,
+   "frames": 218,
    "data": {
     "line": "화요일 오전 11시 반 · 아파트 실거래가"
    }
   }
  ],
- "boxOn": 1048,
- "boxOff": 25763,
- "boxFlip": 5118,
+ "boxOn": 881,
+ "boxOff": 25661,
+ "boxFlip": 4964,
  "boxQ": "?",
  "boxA": "2011년",
  "boxLabel": "바닥나는 해",

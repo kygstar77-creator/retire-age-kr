@@ -11,6 +11,8 @@ import {T, F, CL, FONT_CSS, Flame} from './parts/fm';
 import {TallyFrame, TallyCaption, TallyLine, TallyArt, SAFE, tallyStarts} from './motion/TallyFrame';
 import {TallyBroll} from './motion/TallyBroll';
 import {TallyBars} from './motion/TallyBars';
+import {TallyLineChart, lineXY} from './motion/TallyLineChart';
+import {TallyTag} from './motion/TallyMark';
 import {FxDates} from './motion/FxDates';
 import {HedgeFlip} from './motion/HedgeFlip';
 import {EvenLadder} from './motion/EvenLadder';
@@ -159,7 +161,26 @@ const Mo: React.FC<{s: CScene; m: MoScene}> = ({s, m}) => {
   );
 };
 
-const KIND: Record<string, React.FC<{s: CScene}>> = {big: Big, pair: Pair, rows: Rows, bars: Bars, ask: Ask, list5: List5, two: Two, dca: Dca, slips: Slips, eq: Eq};
+
+// 10/19 벤치마크 지시(quality-gap-1019): 시간에 따라 변하는 돈은 장마다 선 그래프 한 장 — 원자료(ECOS·KRX) 선 + 점선 기준 + 말 순서대로 켜지는 꼬리표
+const LineS: React.FC<{s: CScene}> = ({s}) => {
+  const d = s.data; const f = useCurrentFrame(); const st = starts(s.lines);
+  const at = (a: number) => a >= st.length ? st[st.length - 1] + s.lines[st.length - 1].frames / 2 : st[a] + 6;
+  const X = 300, Y = 330, W = 1300, H = 400;
+  const series = d.series.map(([name, c, pts]: [string, string, number[]]) => ({name, color: col(c), pts, width: 6}));
+  const n = d.series[0][2].length; const xy = lineXY(X, Y, W, H, d.min, d.max, n);
+  return (
+    <Frame s={s}>
+      <TallyLineChart series={series} x={X} y={Y} w={W} h={H} min={d.min} max={d.max} start={4} dur={d.dur ?? 70}
+        base={d.base ? {v: d.base[0], text: d.base[1], x: d.base[2]} : undefined}
+        ticks={d.ticks.map(([v, t]: [number, string]) => ({v, text: t}))} xlabels={d.xlabels.map(([i, t]: [number, string]) => ({i, text: t}))} />
+      {d.tags.map((t: any, i: number) => { const [tx, ty] = xy(t[0], t[1]); return <TallyTag key={i} x={tx} y={ty} text={t[2]} start={at(t[3]) + (t[6] || 0)} side={t[4]} hot={t[5]} size={30} />; })}
+      {d.big ? <div style={{...F, position: 'absolute', left: 330, top: 300, fontWeight: 800, fontSize: 104, color: col(d.big[1]), opacity: ease(f, at(d.big[2] ?? 0), 14), whiteSpace: 'nowrap', letterSpacing: -3}}>{d.big[0]}</div> : null}
+    </Frame>
+  );
+};
+
+const KIND: Record<string, React.FC<{s: CScene}>> = {line: LineS, big: Big, pair: Pair, rows: Rows, bars: Bars, ask: Ask, list5: List5, two: Two, dca: Dca, slips: Slips, eq: Eq};
 
 // 글꼴(PD)을 다 받은 뒤 그린다 — 10/17 미리보기에서 숫자가 대체 글꼴로 찍힌 프레임이 섞였다(@font-face만으로는 렌더가 기다리지 않음)
 const useFont = () => {

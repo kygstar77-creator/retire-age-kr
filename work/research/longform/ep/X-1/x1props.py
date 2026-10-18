@@ -108,6 +108,23 @@ CAL = {'cells': CELLS, 'min': 1300, 'max': 1560, 'avg': 1450.4, 'avgText': '평�
        'each': '매달 첫 거래일 · 12번 × 8,333,333원', 'res': '770만원쯤 ↓', 'cellsAt': 0, 'avgAt': 1, 'nowAt': 2, 'resAt': 2}
 
 R, A, B, K = 'rise', 'accent', 'fall', 'ink'
+# 10/19 벤치마크 지시(quality-gap-1019): 시간에 따라 변하는 돈이 나오는 장마다 선 그래프 한 장 — 원자료 raw/collect_20261016.json 그대로(값 꼬리표는 calc_out 글자만)
+RAW = json.load(open(os.path.join(EP, 'raw', 'collect_20261016.json'), encoding='utf-8'))
+def ser(key, d0, d1, scale=None):
+    pts = [(d, v) for d, v in RAW[key] if d0 <= d <= d1]
+    if scale: pts = [(d, v * scale / pts[0][1]) for d, v in pts]
+    return [d for d, _ in pts], [round(v, 1) for _, v in pts]
+def ix(ds, d): assert d in ds, d; return ds.index(d)
+def line(title, series, first, n=1, icon='ChartLine', src=SRC_FX, **d): return S('line', first, n, title=title, series=series, icon=icon, source=src, **d)
+FXD, FXV = ser('USD', '20251013', '20261015')
+assert FXV[0] == 1420.5 and FXV[-1] == 1338.6 and FXV[ix(FXD, '20260702')] == 1554.4, (FXV[0], FXV[-1])
+FXX = [[0, '2025.10.13'], [ix(FXD, '20260102'), '2026.1'], [ix(FXD, '20260401'), '4월'], [ix(FXD, '20260701'), '7월'], [len(FXD) - 1, '10.15']]
+FXT = [[1300, '1,300'], [1400, '1,400'], [1500, '1,500']]
+_d1 = sorted(set(d for d, _ in RAW['KR_379800']) & set(d for d, _ in RAW['KR_449180']))
+HD = [d for d in _d1 if '20240102' <= d <= '20261015']
+_m = {k: dict(RAW[k]) for k in ('KR_379800', 'KR_449180')}
+HN = [round(_m['KR_379800'][d] / _m['KR_379800'][HD[0]] * 10000) for d in HD]   # 만원(2024.1.2 = 1억)
+HH = [round(_m['KR_449180'][d] / _m['KR_449180'][HD[0]] * 10000) for d in HD]
 scenes = [
     # ── 0. 여는 장면 ──
     S('two', '미국 큰 회사들을', 3, title='주가는 오르고 계좌는 빠졌다', icon='TrendingDown', source=SRC_SPY + ' · 2026.7.2 → 10.15', two=TWO),
@@ -149,7 +166,11 @@ scenes = [
     ask('질문 ②', '국내 상장 S&P500 ETF는 왜 내렸고, 이름 끝 (H)는 뭔가요?',
         "유튜브 댓글 '미국 현지에서는 최고가갱신 … 국내상장 미국지수는 오히려 하락' · 지식iN 2026.9.25 '(H)가 붙어 있더라고요'", '이번엔 유튜브 댓글에', 3),
     broll(7735914, '한국 증권 계좌에서', '원화로 사는 미국 ETF'),
-    pair('환노출 vs 환헤지', ['환노출형', '환율 변동을 그대로 받음', K], ['(H) 환헤지형', '환율 영향 최소화', B], '환율 움직임을 그대로', 2, icon='Split', src=SRC_KRX),
+    line('환노출 vs 환헤지', [['환노출형', K, HN], ['(H) 환헤지형', B, HH]], '환율 움직임을 그대로', 2, icon='Split',
+         src='KRX 종가(분배금 빼고) · 2024.1.2에 1억씩 넣었다 치고 · 삼성자산운용 KODEX 월간 자료(2026.8.31 기준)',
+         min=8000, max=max(HN + HH) // 1000 * 1000 + 3000, ticks=[[10000, '1억'], [15000, '1억 5천'], [20000, '2억']],
+         xlabels=[[0, '2024.1.2'], [ix(HD, min(d for d in HD if d >= '20250102')), '2025.1'], [ix(HD, min(d for d in HD if d >= '20260102')), '2026.1'], [len(HD) - 1, '10.15']],
+         base=[10000, '처음 넣은 1억'], tags=[[ix(HD, '20260702'), HN[ix(HD, '20260702')], '환율 가장 높던 날', 0, 'up', False, 0], [len(HD) - 1, HH[-1], '환율 영향 최소화', 1, 'down', True, 0]]),
     rows('같은 회사, 두 상품', [['KODEX 미국S&P500', '환노출 · 종목번호 379800', K], ['KODEX 미국S&P500(H)', '환헤지 · 종목번호 449180', B, 0]], '같은 회사가 만든', 1, icon='Tag', src=SRC_KRX),
     broll(8369980, 'ETF가 나눠 주는', '분배금까지 넣어서'),
     mo('hedge', 0, 4, '달러가 제일 비쌌던 날 1억을', 'ChartColumn'),
@@ -188,8 +209,10 @@ scenes = [
       source='한국은행 ECOS · 매달 첫 거래일 2025.11.3~2026.10.1 · 파이어맵 계산(수수료 없음)', cal=CAL),
     broll(7735915, '달러가 제일 비쌌던 날 한 번에', '가장 나쁜 날보다는 덜'),
     broll(5466779, '1년 전에 한 번에 바꿨으면', '작년 이맘때보다는 더', side='right'),
-    rows('좋은 날과 나쁜 날 사이', [['한 번에 · 작년 이맘때', '94,234,424원', K], ['매달 나눠서', '92,290,941원', A], ['한 번에 · 가장 비싸던 날', '86,116,830원', B]], '나눠 바꾸면 결과가', 1,
-         icon='Scale', src=SRC_FX + ' · 10.15 원화', hot=False),
+    line('좋은 날과 나쁜 날 사이', [['원/달러', K, FXV]], '나눠 바꾸면 결과가', 1, icon='Scale', src=SRC_FX + ' · 10.15 원화',
+         min=1280, max=1600, ticks=FXT, xlabels=FXX, base=[1450.4, '평균 1,450.4원', 1180],
+         tags=[[0, 1420.5, '작년 이맘때 한 번에 → 94,234,424원', 0, 'down', False, 0], [ix(FXD, '20260702'), 1554.4, '가장 비싸던 날 한 번에 → 86,116,830원', 0, 'up', False, 40],
+               [round(len(FXD) * 0.36), 1450.4, '매달 나눠서 → 92,290,941원', 0, 'down', True, 80]]),
     broll(6963836, '천원, 이천원씩 매일', '매일 바꾸면 매일 붙는다'),
     rows('바꿀 때마다 수수료', [['원화 → 달러', '수수료', R], ['달러 → 원화', '한 번 더', R, 0], ['자주 사고팔 돈이 아니면', '우대율 높은 곳에서 덜 자주', B, 1]], '그 달러를 다시 원화로', 2,
          icon='Repeat', src='은행연합회 외환길잡이'),
@@ -201,7 +224,9 @@ scenes = [
     broll(7829075, '은행 달러 예금으로', '은행 달러 예금이라면'),
     rows('달러 1년 정기예금', [['KB국민은행 · 12~18개월 미만', '연 3.64833%', K], ['이자소득세 15.4% 뒤', '연 3.09%', A, 1]], 'KB국민은행 고시를', 2, icon='PiggyBank', src=SRC_DEP),
     broll(7735914, '지금 1억 원을 달러로', '지금 바꿔 맡긴다면'),
-    big('이자가 사라지는 환율', '1,298.5원', '이보다 내려가면 환율 손실 > 이자', '1년 뒤 환율이 지금보다', 2, icon='TriangleAlert', c=R, src=SRC_DEP),
+    line('이자가 사라지는 환율', [['원/달러', K, FXV]], '1년 뒤 환율이 지금보다', 2, icon='TriangleAlert', src=SRC_DEP + ' · 한국은행 ECOS 원/달러',
+         min=1240, max=1600, ticks=FXT, xlabels=FXX, base=[1298.5, '이보다 내려가면 환율 손실 > 이자'], big=['1,298.5원', R, 1],
+         tags=[[len(FXD) - 1, 1338.6, '지금 1,338.6원', 0, 'up', True, 0]]),
     ask('그래서', '무엇부터 볼까요?', None, '그래서 무엇부터'),
     big('예금자보호 한도', '1억원', '외화예금도 · 원화로 환산 · 원금+이자 합쳐', '은행 달러 예금이라면', 4, icon='ShieldCheck', c=B, src='예금보험공사 예금자보호제도 FAQ'),
     broll(7735915, '그래서 1억 원어치를', '원금으로 꽉 채우면 이자는 한도 밖', side='right'),
@@ -290,7 +315,7 @@ assert not long_t, ('제목 13자 넘음', long_t)
 
 # 숫자 대조: props 글자 속 숫자 덩이는 calc_out·대본에 그대로 있어야 한다(축 눈금·선 값·부품 원재료는 뺌 — fxprops·v3props가 따로 assert)
 SKIP = {'audio', 'src', 'license', 'kind', 'icon', 'c', 'c1', 'c2', 'from', 'side', 'hot', 'dir', 'max', 'min', 'up', 'dn', 'ticks', 'xl', 'off', 'comp',
-        'amtAt', 'midAt', 'footAt', 'cellsAt', 'avgAt', 'nowAt', 'resAt', 'avg', 'now'}
+        'amtAt', 'midAt', 'xlabels', 'series', 'footAt', 'cellsAt', 'avgAt', 'nowAt', 'resAt', 'avg', 'now'}
 def strings(x):
     if isinstance(x, dict):
         for k, v in x.items():

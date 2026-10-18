@@ -241,14 +241,20 @@
 [scenes.31.lines.1.text] 운용사 설명으로는, H형은 환헤지 전략으로 환율 변동 영향을 최소화하는 상품이에요.
 [scenes.31.lines.1.cap] "환헷지 전략으로 환율 변동 영향 최소화" — 삼성자산운용 KODEX 미국S&P500(H) 월간 자료(2026.8.31 기준)
 [scenes.31.data.title] 환노출 vs 환헤지
-[scenes.31.data.v1] 환노출형
-[scenes.31.data.s1] 환율 변동을 그대로 받음
-[scenes.31.data.c1] ink
-[scenes.31.data.v2] (H) 환헤지형
-[scenes.31.data.s2] 환율 영향 최소화
-[scenes.31.data.c2] fall
+[scenes.31.data.series.0.0] 환노출형
+[scenes.31.data.series.0.1] ink
+[scenes.31.data.series.1.0] (H) 환헤지형
+[scenes.31.data.series.1.1] fall
 [scenes.31.data.icon] Split
-[scenes.31.data.source] KRX 종가 + 분배금(세전) · 삼성자산운용 KODEX 월간 자료(2026.8.31 기준)
+[scenes.31.data.source] KRX 종가(분배금 빼고) · 2024.1.2에 1억씩 넣었다 치고 · 삼성자산운용 KODEX 월간 자료(2026.8.31 기준)
+[scenes.31.data.ticks.0.1] 1억
+[scenes.31.data.ticks.1.1] 1억 5천
+[scenes.31.data.ticks.2.1] 2억
+[scenes.31.data.base.1] 처음 넣은 1억
+[scenes.31.data.tags.0.2] 환율 가장 높던 날
+[scenes.31.data.tags.0.4] up
+[scenes.31.data.tags.1.2] 환율 영향 최소화
+[scenes.31.data.tags.1.4] down
 [scenes.31.data.chapter] 질문 ②
 [scenes.32.lines.0.text] 같은 회사가 만든 두 상품, KODEX 미국S&P500과 끝에 H가 붙은 같은 이름 상품을 나란히 놓고 계산했어요.
 [scenes.32.data.title] 같은 회사, 두 상품
@@ -515,17 +521,19 @@
 [scenes.63.data.chapter] 질문 ③
 [scenes.64.lines.0.text] 나눠 바꾸면 결과가 가장 좋은 날과 가장 나쁜 날 사이 어딘가로 모일 뿐, 환율이 내린 손해 자체를 막아 주지는 못합니다.
 [scenes.64.data.title] 좋은 날과 나쁜 날 사이
-[scenes.64.data.rows.0.0] 한 번에 · 작년 이맘때
-[scenes.64.data.rows.0.1] 94,234,424원
-[scenes.64.data.rows.0.2] ink
-[scenes.64.data.rows.1.0] 매달 나눠서
-[scenes.64.data.rows.1.1] 92,290,941원
-[scenes.64.data.rows.1.2] accent
-[scenes.64.data.rows.2.0] 한 번에 · 가장 비싸던 날
-[scenes.64.data.rows.2.1] 86,116,830원
-[scenes.64.data.rows.2.2] fall
+[scenes.64.data.series.0.0] 원/달러
+[scenes.64.data.series.0.1] ink
 [scenes.64.data.icon] Scale
 [scenes.64.data.source] 한국은행 ECOS 원/달러 매매기준율 · 파이어맵 계산(수수료 없음) · 10.15 원화
+[scenes.64.data.xlabels.2.1] 4월
+[scenes.64.data.xlabels.3.1] 7월
+[scenes.64.data.base.1] 평균 1,450.4원
+[scenes.64.data.tags.0.2] 작년 이맘때 한 번에 → 94,234,424원
+[scenes.64.data.tags.0.4] down
+[scenes.64.data.tags.1.2] 가장 비싸던 날 한 번에 → 86,116,830원
+[scenes.64.data.tags.1.4] up
+[scenes.64.data.tags.2.2] 매달 나눠서 → 92,290,941원
+[scenes.64.data.tags.2.4] down
 [scenes.64.data.chapter] 질문 ③
 [scenes.65.lines.0.text] 천원, 이천원씩 매일 모으는 것도 매일 바꾸는 거라, 바꿀 때마다 그 회사 수수료가 붙습니다.
 [scenes.65.data.license] Pexels 6963836 무료(cottonbro studio)
@@ -594,11 +602,17 @@
 [scenes.73.lines.1.text] 1,298원 아래로 내려가면 그때부터는 이자보다 환율 손실이 더 커요.
 [scenes.73.lines.1.cap] 1억 ÷ 1,338.6 = 74,705달러 → 세후 3.09%(이자소득세 15.4%) → 77,011달러 · 본전 환율 1,338.6 ÷ 1.0309 = 1,298.5원 · 환전 비용 없음
 [scenes.73.data.title] 이자가 사라지는 환율
-[scenes.73.data.v] 1,298.5원
-[scenes.73.data.s] 이보다 내려가면 환율 손실 > 이자
+[scenes.73.data.series.0.0] 원/달러
+[scenes.73.data.series.0.1] ink
 [scenes.73.data.icon] TriangleAlert
-[scenes.73.data.c] rise
-[scenes.73.data.source] KB국민은행 외화예금 금리안내(조회 2026.10.16) · 예금보험공사 예금자보호제도 FAQ · 파이어맵 계산
+[scenes.73.data.source] KB국민은행 외화예금 금리안내(조회 2026.10.16) · 예금보험공사 예금자보호제도 FAQ · 파이어맵 계산 · 한국은행 ECOS 원/달러
+[scenes.73.data.xlabels.2.1] 4월
+[scenes.73.data.xlabels.3.1] 7월
+[scenes.73.data.base.1] 이보다 내려가면 환율 손실 > 이자
+[scenes.73.data.big.0] 1,298.5원
+[scenes.73.data.big.1] rise
+[scenes.73.data.tags.0.2] 지금 1,338.6원
+[scenes.73.data.tags.0.4] up
 [scenes.73.data.chapter] 질문 ④
 [scenes.74.lines.0.text] 그래서 무엇부터 볼까요?
 [scenes.74.data.n] 그래서

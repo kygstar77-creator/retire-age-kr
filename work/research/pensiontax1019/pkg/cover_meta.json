@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-18 23:31",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "연금저축 세금/1,500만원 넘으면",
+ "num": "받는 연금 2,000만원이면 33만원 환급",
+ "sub": "다른 소득 없는 69세 이하 · 지방소득세 포함",
+ "label": "연금소득세",
+ "src": "",
+ "icon": "piggy-bank",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 128,
+ "num_px": 60,
+ "sub_px": 45,
+ "board": [
+  "jpy1018",
+  "schdfx1018",
+  "mokdong1018",
+  "g1whycafe1018",
+  "n2cafe1018",
+  "salpct1018",
+  "sbsave1017",
+  "lev2x1018",
+  "bonustax1017",
+  "sangokapply1017"
+ ]
+}

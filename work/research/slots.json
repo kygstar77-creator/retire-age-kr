@@ -55,16 +55,7 @@
     "gates_ok": "2026-10-16 07:32"
    }
   ],
-  "cafe": [
-   {
-    "item": "pensiontax1019",
-    "pkg": "pensiontax1019",
-    "status": "관문 통과 — '연금저축 세금은 연금이 1500만원 넘으면 오히려 돌려받는 경우'(세금연금·형식2): 소득세법 조문 직접 계산(연 2000만원 69세 이하 환급 33만 4천원·70대 11만원·80세 이상 11만원 추가·약 2600만원 넘으면 뒤집힘), 레드팀 틀림0·오해4 반영, 58세 2차 통과, 제목 8·표지 8.5, editgate auto · 미발행 · slot.txt는 쓰는 칸 시각으로 고칠 것",
-    "by": "firemap-write",
-    "at": "2026-10-18 23:47",
-    "gates_ok": "2026-10-18 23:47"
-   }
-  ],
+  "cafe": [],
   "long": [
    {
     "item": "R-1",
@@ -1853,10 +1844,12 @@
   {
    "at": "2026-10-19 07:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "pensiontax1019",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · yt_pair: p1s_cross(rr1z-EzNSjA, 07:20 쇼츠) — 쇼츠 질문 하나만, P-1 짝 긴 글과 겹치지 않게"
+   "gates_ok": "2026-10-18 23:47",
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · yt_pair: p1s_cross(rr1z-EzNSjA, 07:20 쇼츠) — 쇼츠 질문 하나만, P-1 짝 긴 글과 겹치지 않게 | firemap-write-b 07:4x: 짝 글(p1s_cross) 관문 기한 지나 비축 pensiontax1019로 채움(관문 통과 10/18 23:47) — p1s_cross 짝은 다음 빈 칸(10:40 후보)으로",
+   "pkg": "pensiontax1019",
+   "published": "https://cafe.naver.com/firemap/322 07:48 verify OK 1531자"
   },
   {
    "at": "2026-10-19 09:10",

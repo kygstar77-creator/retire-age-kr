@@ -11,6 +11,17 @@
     "url": "https://cafe.naver.com/firemap/321"
    },
    "note": "06:10 칸 coin1019 발행(무작위 대기 4분 46초) · verify OK 2104/2104자·사진 3/3 · 글 끝 질문 한 줄 추가 후 aitell 3.0 통과·재도장 · 블로그 0(DAY_CAP·블로그 쉼) · 다음 칸: 12:10 ubfraud1019 관문 통과 — 자료조사 출처 9(고용보험법·시행령·시행규칙 국가법령정보센터 10/19, 고용노동부 5/31 보도자료, 데일리안 5/31, 최저임금 기사, 경쟁 상위 5편, 지식iN 5) · 교차검증(crosscheck Gemini): 사실 4 중 반영 3·유지 1(계산기 입력은 toolPages.js로 확인), 말투 15 중 반영 9 · 레드팀 틀림0·오해6 반영 · 58세 2차 심각0 · 개선: 없음(관문 도구는 모두 정상 동작) · 카페 댓글 답할 것 0개"
+  },
+  {
+   "hour": 7,
+   "ts": "07:48",
+   "by": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "연금저축 세금은 연금이 1500만원 넘으면 오히려 돌려받는 경우",
+    "url": "https://cafe.naver.com/firemap/322"
+   },
+   "note": "07:40 칸 TBD(p1s_cross 짝 관문 기한 지남) → 비축 pensiontax1019(관문 10/18 23:47: 레드팀 틀림0·58세 2차·제목8·표지8.5·교차검증 check_gpt/gemini 있음). 글 끝 질문 줄 추가 후 aitell 2.1·readcheck 0·editgate auto 재서명. verify OK 1531/1531자·사진 3/3. 관련 영상: 맞는 공개 롱폼 없어 안 넣음. 카페 비축 0/2. 개선: 없음(확인 창 TimeoutError는 발행엔 영향 없음)"
   }
  ]
 }

@@ -2476,3 +2476,6 @@ $MSG
 - [자발] **firemap-youtube-loop** P-1 48h 판정
   완료: firemap-youtube-loop 12:47 — P-1(vsL7mojDW7w, 10/16 11:30, 4:56) 48h: 조회 3·좋아요 0·댓글 0 · 분석 1회 평균 89초(30.2%) · 노출 23·클릭률 0%(10/15 보고서, 10/16~ 보고서 아직 없음) → **표본 부족, 판정 보류**(노출 100 미만) · 같은 주제 '왜일까?' 13분 3,730회와 차이는 길이·제목 첫말 후보로 study/2026-10-18.md에 이미 적음 · experiments.md 기록
 - [막힘] firemap-write 12:49 — dev→main 반영 또 못 함(10/17 18:54·21:51과 같음): merge origin/main 'stash failed', dev:main non-fast-forward. dev는 푸시됨(39d3d7f). 작업 트리 outputs/deploy/fire-city 등 남의 변경 정리 필요 — 운영실장 판단
+- [자발] **firemap-write-b** 13:44 회차 — 13:40 칸 salpct1018 발행
+  착수: firemap-write-b 13:44
+  완료: firemap-write-b 13:53 — 13:40 salpct1018 https://cafe.naver.com/firemap/315 verify OK 1082/1082자·사진 3/3·첨부 1/1(돈 관리·멤버공개) · aitell 같은 날 예시 겹침(n2cafe1018 숫자 6개)으로 첫 시도 막힘 → 예시 5,000만원→1억원·상위10% 경계 2문장 삭제(15:10 짝 글이 다룸)·editgate auto 재stamp 13:48 · 15:10 n2cafe1018은 그대로(겹침 2개) · 발행 13:52(칸보다 12분 늦음)

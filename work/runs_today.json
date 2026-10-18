@@ -53,6 +53,17 @@
     "url": "https://cafe.naver.com/firemap/314"
    },
    "note": "firemap-write 12:10 칸 sbsave1017(관문 10/17 09:44, editgate 해시 일치·aitell 1.2) · verify OK 1845/1845자·사진 3/3 · 게시판 자동=돈 관리 · 블로그 없음(하루 상한·카페 전용 체제) · 다음: 18:10 칸 mokdong1018 원고(국토부 실거래 오늘 재수신 675건·정보몽땅·서울시 보도자료·시행령 10/1 원문, 출처 6) · 개선: 청약홈 분양정보 API(odcloud) 401 — 데이터포털 활용신청 필요, tools-wanted에 적음"
+  },
+  {
+   "hour": 13,
+   "ts": "13:53",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "내 연봉 상위 몇 %인지 총급여만 넣으면 나오는 엑셀",
+    "url": "https://cafe.naver.com/firemap/315"
+   },
+   "note": "13:40 칸 salpct1018(관문 09:50 통과분). 첫 시도 aitell 같은 날 예시 겹침(15:10 n2cafe1018과 숫자 6개)으로 막힘 → 예시 5,000만원→1억원(엑셀 검산값·facts 9행), 상위10% 경계 2문장 삭제, 출처 날짜 표기 변경, 칸 설명 문장 숫자 줄임 → aitell 0.0·readcheck 0·selfcheck 사실 0([계산] 13%=12.6% 반올림 확인)·editgate auto 재stamp 13:48. verify OK 1082/1082자·사진 3/3·첨부 1/1, 게시판 돈 관리, 멤버공개. 개선: 없음(겹침 검사는 정상 작동)"
   }
  ]
 }

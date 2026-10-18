@@ -9,7 +9,7 @@
 [scenes.1.lines.0.text] 퇴직금 3억을 미국 주식에 넣고 매달 200만원씩 꺼내 쓰면, 몇 년을 버틸까요?
 [scenes.1.data.license] Pexels 6963484 무료(Mikhail Nilov)
 [scenes.1.data.say] 몇 년을 버틸까?
-[scenes.2.lines.0.text] 외환위기가 한창이던 겨울, 쉰다섯 살 정우 씨가 통장 하나를 펼칩니다.
+[scenes.2.lines.0.text] 외환위기가 한창이던 겨울, 55세 정우 씨가 통장 하나를 펼칩니다.
 [scenes.2.data.license] Pexels 6219901 무료(Monstera Production)
 [scenes.2.data.who] 1998년 1월 · 정우 씨 · 가상 인물
 [scenes.3.lines.0.text] 퇴직금 3억을 미국 큰 회사들 주가를 한꺼번에 따라가는 상품에 넣었어요.
@@ -131,7 +131,7 @@
 [scenes.20.data.license] Pexels 15161525 무료(Phil Desforges)
 [scenes.20.data.say] 올해도 팔아야 하나
 [scenes.20.data.side] left
-[scenes.21.lines.0.text] 세 해 내리 떨어지고 나니, 통장에는 1억 6천만원이 남았어요.
+[scenes.21.lines.0.text] 3년 내리 떨어지자, 통장에는 1억 6천만원이 남았어요.
 [scenes.21.lines.0.cap] 연말 잔액 2000년 2.95억 · 2001년 2.51억 · 2002년 1.60억원
 [scenes.21.data.title] 정우 씨 통장 연말 잔액
 [scenes.21.data.bars.0.0] 1998년
@@ -157,7 +157,7 @@
 [scenes.22.data.who] 2003년
 [scenes.22.data.say] 드디어 오른 해
 [scenes.23.lines.0.text] 그런데 정우 씨 통장은 1억 7천만원까지밖에 못 올라왔습니다.
-[scenes.23.lines.1.text] 해가 바뀌자마자 한 해 치를 먼저 꺼내고 나니, 불어날 돈이 1억 4천만원도 안 남았거든요.
+[scenes.23.lines.1.text] 해가 바뀌자마자 1년 치를 먼저 꺼냈더니, 불어날 돈이 1억 4천만원도 안 남았거든요.
 [scenes.23.lines.1.cap] 2003년 1월 꺼낸 뒤 1.36억원 → 원화 +28.4% → 연말 1.75억원
 [scenes.23.data.title] 2003년 정우 씨 통장
 [scenes.23.data.rows.0.0] 1월 꺼낸 뒤
@@ -171,7 +171,7 @@
 [scenes.23.data.rows.2.2] accent
 [scenes.23.data.icon] PiggyBank
 [scenes.23.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
-[scenes.24.lines.0.text] 바로 그해 초, 다른 동네에서 민수 씨가 같은 3억으로 똑같이 시작합니다.
+[scenes.24.lines.0.text] 바로 2003년 초, 다른 동네에서 민수 씨가 같은 3억으로 똑같이 시작합니다.
 [scenes.24.data.license] Pexels 16846101 무료(Luis Chambi)
 [scenes.24.data.who] 2003년 1월 · 민수 씨 · 가상 인물
 [scenes.24.data.say] 같은 돈, 같은 규칙
@@ -314,7 +314,7 @@
 [scenes.41.data.c2] fall
 [scenes.41.data.icon] User
 [scenes.41.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
-[scenes.42.lines.0.text] 그래도 줄었다면, 그해 꺼낼 돈을 줄일지 정할 때예요. 그렇게 줄였을 때 어땠는지는 3장에서 계산해 볼게요.
+[scenes.42.lines.0.text] 그래도 줄었다면, 올해 꺼낼 돈을 줄일지 정할 때예요. 그렇게 줄였을 때 어땠는지는 3장에서 계산해 볼게요.
 [scenes.42.data.license] Pexels 7118320 무료(cottonbro studio)
 [scenes.42.data.say] 줄일지 정할 때
 [scenes.42.data.side] left
@@ -519,7 +519,7 @@
 [scenes.70.data.icon] Scale
 [scenes.70.data.c] ink
 [scenes.70.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
-[scenes.71.lines.0.text] 정우 씨는 떨어진 지 두 해째였던 2001년 초에, 꺼내는 돈을 줄일까 망설였어요.
+[scenes.71.lines.0.text] 정우 씨는 떨어진 지 2년째였던 2001년 초에, 꺼내는 돈을 줄일까 망설였어요.
 [scenes.71.data.license] Pexels 27860328 무료(Thanh-Thang Phan)
 [scenes.71.data.who] 2001년 1월 · 정우 씨
 [scenes.71.data.say] 줄일까?
@@ -916,7 +916,7 @@
 [scenes.124.data.rows.1.2] fall
 [scenes.124.data.icon] Users
 [scenes.124.data.source] S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)
-[scenes.125.lines.0.text] 줄일 수 있는 분이라면, 앞에서 본 '1월 통장이 3억보다 적으면 줄이는' 규칙처럼, 언제 얼마로 줄일지를 미리 정해 두는 쪽이 차이를 냈습니다.
+[scenes.125.lines.0.text] 줄일 수 있는 분이라면, 해마다 '1월 통장이 3억보다 적으면 줄인다'는, 앞서 본 규칙처럼, 언제 얼마로 줄일지를 미리 정해 두는 쪽이 차이를 냈습니다.
 [scenes.125.data.license] Pexels 7606651 무료(Marina Leonova)
 [scenes.125.data.say] 언제 얼마로 줄일지 미리
 [scenes.125.data.side] left

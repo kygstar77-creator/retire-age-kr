@@ -42,13 +42,13 @@
    "kind": "live",
    "lines": [
     {
-     "text": "외환위기가 한창이던 겨울, 쉰다섯 살 정우 씨가 통장 하나를 펼칩니다.",
-     "audio": "audio/c-2/bb18693eeb1afeca.wav",
-     "frames": 138,
+     "text": "외환위기가 한창이던 겨울, 55세 정우 씨가 통장 하나를 펼칩니다.",
+     "audio": "audio/c-2/9b13fc0efa9a900f.wav",
+     "frames": 127,
      "cap": null
     }
    ],
-   "frames": 138,
+   "frames": 127,
    "data": {
     "src": "bg/c2/6219901.mp4",
     "license": "Pexels 6219901 무료(Monstera Production)",
@@ -123,11 +123,11 @@
     {
      "text": "정우 씨 통장은 언제 바닥났을까요? 그리고 둘을 가른 건 뭐였을까요?",
      "audio": "audio/c-2/362cb15e9b68c3ab.wav",
-     "frames": 136,
+     "frames": 145,
      "cap": null
     }
    ],
-   "frames": 172,
+   "frames": 181,
    "data": {
     "n": "오늘의 물음",
     "q": "정우 씨 통장은 언제 바닥났을까요?",
@@ -347,11 +347,11 @@
     {
      "text": "정우 씨는 달러가 이미 한참 비싸진 다음에 들어갔어요.",
      "audio": "audio/c-2/0b3e7b19122c9187.wav",
-     "frames": 109,
+     "frames": 136,
      "cap": null
     }
    ],
-   "frames": 127,
+   "frames": 154,
    "data": {
     "src": "bg/c2/15161525.mp4",
     "license": "Pexels 15161525 무료(Phil Desforges)",
@@ -470,13 +470,13 @@
    "kind": "bars",
    "lines": [
     {
-     "text": "세 해 내리 떨어지고 나니, 통장에는 1억 6천만원이 남았어요.",
-     "audio": "audio/c-2/b3f641c6d8ec49af.wav",
-     "frames": 118,
+     "text": "3년 내리 떨어지자, 통장에는 1억 6천만원이 남았어요.",
+     "audio": "audio/c-2/3bf13fcbb3d09e0e.wav",
+     "frames": 116,
      "cap": "연말 잔액 2000년 2.95억 · 2001년 2.51억 · 2002년 1.60억원"
     }
    ],
-   "frames": 118,
+   "frames": 116,
    "data": {
     "title": "정우 씨 통장 연말 잔액",
     "bars": [
@@ -546,13 +546,13 @@
      "cap": null
     },
     {
-     "text": "해가 바뀌자마자 한 해 치를 먼저 꺼내고 나니, 불어날 돈이 1억 4천만원도 안 남았거든요.",
-     "audio": "audio/c-2/b0ab91a0343a57ba.wav",
-     "frames": 167,
+     "text": "해가 바뀌자마자 1년 치를 먼저 꺼냈더니, 불어날 돈이 1억 4천만원도 안 남았거든요.",
+     "audio": "audio/c-2/27979bc3f15ee223.wav",
+     "frames": 148,
      "cap": "2003년 1월 꺼낸 뒤 1.36억원 → 원화 +28.4% → 연말 1.75억원"
     }
    ],
-   "frames": 289,
+   "frames": 270,
    "data": {
     "title": "2003년 정우 씨 통장",
     "rows": [
@@ -582,13 +582,13 @@
    "kind": "live",
    "lines": [
     {
-     "text": "바로 그해 초, 다른 동네에서 민수 씨가 같은 3억으로 똑같이 시작합니다.",
-     "audio": "audio/c-2/e88667509fbb3413.wav",
-     "frames": 133,
+     "text": "바로 2003년 초, 다른 동네에서 민수 씨가 같은 3억으로 똑같이 시작합니다.",
+     "audio": "audio/c-2/3961f87588d8b7a1.wav",
+     "frames": 151,
      "cap": null
     }
    ],
-   "frames": 133,
+   "frames": 151,
    "data": {
     "src": "bg/c2/16846101.mp4",
     "license": "Pexels 16846101 무료(Luis Chambi)",
@@ -735,11 +735,11 @@
     {
      "text": "그래도 그해 말 정우 씨 통장은 5천만원대였습니다. 같은 해 민수 씨 통장엔 2억 넘게 있었고요.",
      "audio": "audio/c-2/56cdb1e0c3a1310f.wav",
-     "frames": 221,
+     "frames": 190,
      "cap": "2008년 말 정우 씨 0.53억원 · 민수 씨 2.19억원"
     }
    ],
-   "frames": 221,
+   "frames": 190,
    "data": {
     "title": "2008년 말 두 통장",
     "v1": "5,300만원",
@@ -750,7 +750,7 @@
     "c2": "fall",
     "icon": "Users",
     "source": "S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)",
-    "rv": 99
+    "rv": 85
    }
   },
   {
@@ -1023,13 +1023,13 @@
    "kind": "broll",
    "lines": [
     {
-     "text": "그래도 줄었다면, 그해 꺼낼 돈을 줄일지 정할 때예요. 그렇게 줄였을 때 어땠는지는 3장에서 계산해 볼게요.",
-     "audio": "audio/c-2/8e1cb1e161b50d6a.wav",
-     "frames": 201,
+     "text": "그래도 줄었다면, 올해 꺼낼 돈을 줄일지 정할 때예요. 그렇게 줄였을 때 어땠는지는 3장에서 계산해 볼게요.",
+     "audio": "audio/c-2/e4ae19a6aeae422f.wav",
+     "frames": 206,
      "cap": null
     }
    ],
-   "frames": 201,
+   "frames": 206,
    "data": {
     "src": "bg/c2/7118320.mp4",
     "license": "Pexels 7118320 무료(cottonbro studio)",
@@ -1100,12 +1100,12 @@
    "lines": [
     {
      "text": "지난 37년, 해마다 1월에 한 사람씩 정우 씨와 같은 규칙으로 시작했다고 해 봤어요.",
-     "audio": "audio/c-2/8eefbdf0b25d5a25.wav",
-     "frames": 146,
+     "audio": "audio/c-2/991438622593ed1f.wav",
+     "frames": 198,
      "cap": null
     }
    ],
-   "frames": 146,
+   "frames": 198,
    "data": {
     "src": "bg/c2/6651088.mp4",
     "license": "Pexels 6651088 무료(kaboompics.com)",
@@ -1552,12 +1552,12 @@
     },
     {
      "text": "국민연금이나 일하는 소득이 있어서 꺼내는 돈을 줄일 수 있는 분이라면, 3장에서 볼 '줄이는 규칙'이 더 큰 차이를 냈습니다.",
-     "audio": "audio/c-2/49ca1e85e395f866.wav",
-     "frames": 221,
+     "audio": "audio/c-2/8ec932598ca9f1be.wav",
+     "frames": 213,
      "cap": null
     }
    ],
-   "frames": 382,
+   "frames": 374,
    "data": {
     "title": "누구라면",
     "rows": [
@@ -1638,11 +1638,11 @@
     {
      "text": "정우 씨 통장이 바닥난 건 1월이 아니라 6월이었어요. 같은 2011년이고요. 다섯 달 늦어졌을 뿐이에요.",
      "audio": "audio/c-2/a7d344ee34f202b6.wav",
-     "frames": 251,
+     "frames": 235,
      "cap": null
     }
    ],
-   "frames": 251,
+   "frames": 235,
    "data": {
     "title": "매달 1일에 팔면",
     "v": "2011년 6월",
@@ -1650,7 +1650,7 @@
     "icon": "CalendarDays",
     "c": "accent",
     "source": "S&P500 총수익 지수 연말(야후 파이낸스) · 한국은행 ECOS 원/달러 연말 환율 · 파이어맵 계산(1월 초 1년 치 매도·양도세 22%·연 250만원 공제·물가 반영 안 함)",
-    "rv": 63
+    "rv": 59
    }
   },
   {
@@ -1720,18 +1720,18 @@
    "kind": "live",
    "lines": [
     {
-     "text": "정우 씨는 떨어진 지 두 해째였던 2001년 초에, 꺼내는 돈을 줄일까 망설였어요.",
-     "audio": "audio/c-2/9a2640e1c5c71a1d.wav",
-     "frames": 143,
+     "text": "정우 씨는 떨어진 지 2년째였던 2001년 초에, 꺼내는 돈을 줄일까 망설였어요.",
+     "audio": "audio/c-2/16c2a9b4e9c29f6e.wav",
+     "frames": 181,
      "cap": null
     }
    ],
-   "frames": 143,
+   "frames": 181,
    "data": {
     "src": "bg/c2/27860328.mp4",
     "license": "Pexels 27860328 무료(Thanh-Thang Phan)",
     "past": true,
-    "from": 97,
+    "from": 59,
     "who": "2001년 1월 · 정우 씨",
     "say": "줄일까?"
    }
@@ -1783,11 +1783,11 @@
     {
      "text": "두 해 늦게 150만원으로만 줄였다면 통장은 결국 바닥났습니다.",
      "audio": "audio/c-2/535903c31fd5a98e.wav",
-     "frames": 126,
+     "frames": 142,
      "cap": "2003년부터 월 100만원 · 2025년 말 3.49억원 / 2003년부터 월 150만원 · 2015년 바닥"
     }
    ],
-   "frames": 126,
+   "frames": 142,
    "data": {
     "title": "두 해 늦게 줄였다면",
     "rows": [
@@ -2126,11 +2126,11 @@
     {
      "text": "먼저 미국 상장 상품을 직접 샀다면, 판 이익에서 해마다 250만원까지는 세금을 매기지 않고, 나머지에 22%를 내요.",
      "audio": "audio/c-2/7347be798a93943a.wav",
-     "frames": 257,
+     "frames": 211,
      "cap": "해외 주식 양도소득 — 소득세법 제103조①2호 연 250만원 공제 · 제104조①12호 20% + 지방소득세 2% = 22%"
     }
    ],
-   "frames": 257,
+   "frames": 211,
    "data": {
     "title": "① 미국 상장 직접",
     "v": "22%",
@@ -2138,7 +2138,7 @@
     "icon": "Landmark",
     "c": "accent",
     "source": "소득세법·국세기본법·국민건강보험법 시행령·시행규칙(법제처 국가법령정보센터)",
-    "rv": 124
+    "rv": 102
    }
   },
   {
@@ -2413,11 +2413,11 @@
     {
      "text": "영호 씨가 국내 상장 ETF로 했다면, 남은 돈이 2억 남짓 적었습니다.",
      "audio": "audio/c-2/327355eeb8b13f56.wav",
-     "frames": 132,
+     "frames": 146,
      "cap": "국내 상장 ETF 과세(15.4%·공제 없음·판 이익 1천만원 넘으면 건보료) · 바닥 6명 같음 · 1997년 시작 2025년 말 15.90억 → 13.86억원 · 2003년 시작 2.72억 → 2.03억원"
     }
    ],
-   "frames": 132,
+   "frames": 146,
    "data": {
     "title": "국내 ETF로 했다면",
     "rows": [
@@ -2654,11 +2654,11 @@
     {
      "text": "다음은 은행 정기예금이에요. 한국은행이 낸 해마다 1월의 실제 금리를 썼어요.",
      "audio": "audio/c-2/08c7ea93d77ea827.wav",
-     "frames": 178,
+     "frames": 152,
      "cap": null
     }
    ],
-   "frames": 178,
+   "frames": 152,
    "data": {
     "src": "bg/c2/6326929.mp4",
     "license": "Pexels 6326929 무료(kaboompics.com)",
@@ -2806,11 +2806,11 @@
     {
      "text": "1998년엔 예금 이자가 15%를 넘었고, 2003년엔 5%가 안 됐어요.",
      "audio": "audio/c-2/4f61c750ae536206.wav",
-     "frames": 187,
+     "frames": 167,
      "cap": "1998년 세전 15.85% · 2003년 세전 5% 미만(세후 4.03%)"
     }
    ],
-   "frames": 383,
+   "frames": 363,
    "data": {
     "title": "2003년 시작",
     "v1": "2019년",
@@ -3040,8 +3040,8 @@
    "kind": "broll",
    "lines": [
     {
-     "text": "줄일 수 있는 분이라면, 앞에서 본 '1월 통장이 3억보다 적으면 줄이는' 규칙처럼, 언제 얼마로 줄일지를 미리 정해 두는 쪽이 차이를 냈습니다.",
-     "audio": "audio/c-2/71814c5f46c7fbe1.wav",
+     "text": "줄일 수 있는 분이라면, 해마다 '1월 통장이 3억보다 적으면 줄인다'는, 앞서 본 규칙처럼, 언제 얼마로 줄일지를 미리 정해 두는 쪽이 차이를 냈습니다.",
+     "audio": "audio/c-2/1ce691648797b0b3.wav",
      "frames": 261,
      "cap": null
     }
@@ -3061,11 +3061,11 @@
     {
      "text": "조심할 점이 있어요. 예금 계산도 단순하게 했어요. 이자 세금을 지금 세율로 통일했고, 건보료는 넣지 않았습니다.",
      "audio": "audio/c-2/d0c31e09fb2757b3.wav",
-     "frames": 224,
+     "frames": 206,
      "cap": null
     }
    ],
-   "frames": 224,
+   "frames": 206,
    "data": {
     "title": "조심",
     "v": "단순 계산",
@@ -3182,9 +3182,9 @@
    }
   }
  ],
- "boxOn": 881,
- "boxOff": 25661,
- "boxFlip": 4964,
+ "boxOn": 870,
+ "boxOff": 25643,
+ "boxFlip": 4955,
  "boxQ": "?",
  "boxA": "2011년",
  "boxLabel": "바닥나는 해",

@@ -298,6 +298,12 @@ const musicVol = (p: C2Props, f: number) => {
   return 0.07 + 0.13 * Math.min(1, d / 10);
 };
 
+// 10/19 PD: 렌더본 화면 관문(U5 같은 화면 8초 이하)에 판이 8.5~14초 걸림 — 5초 넘는 판·카드는 천천히 다가가기(1.00→1.03, 실사 live의 zoom과 같은 수법)
+const Push: React.FC<{n: number; children: React.ReactNode}> = ({n, children}) => {
+  const f = useCurrentFrame(); const z = interpolate(f, [0, n], [1, 1.03], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  return <AbsoluteFill style={{transform: `scale(${z})`, transformOrigin: '50% 38%'}}>{children}</AbsoluteFill>;
+};
+
 export const C2: React.FC<C2Props> = (p) => {
   useFont();
   let from = 0;
@@ -307,7 +313,7 @@ export const C2: React.FC<C2Props> = (p) => {
       {p.scenes.map((s, i) => {
         const st = starts(s.lines); const K = KIND[s.kind];
         const el = <Sequence key={i} from={from} durationInFrames={s.frames}>
-          {s.kind === 'pic' ? <Pic s={s} badge={p.badge} /> : s.kind === 'broll' ? <TallyBroll src={s.data.src} license={s.data.license} from={s.data.from} say={s.data.say} side={s.data.side} x={s.data.x} chapter={s.data.chapter} lines={tl(s.lines)} /> : K ? <K s={s} /> : null}
+          {s.kind === 'pic' ? <Pic s={s} badge={p.badge} /> : s.kind === 'broll' ? <TallyBroll src={s.data.src} license={s.data.license} from={s.data.from} say={s.data.say} side={s.data.side} x={s.data.x} chapter={s.data.chapter} lines={tl(s.lines)} /> : K ? (s.kind !== 'live' && s.frames > 150 ? <Push n={s.frames}><K s={s} /></Push> : <K s={s} />) : null}
           {s.lines.map((l, j) => l.audio ? <Sequence key={j} from={st[j]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence> : null)}
           {sfxOf(p.scenes, i).map((x, j) => <Sequence key={'x' + j} from={x.at} durationInFrames={45}><Audio src={staticFile(`sample1017/${x.src}.wav`)} volume={x.vol} /></Sequence>)}
         </Sequence>;

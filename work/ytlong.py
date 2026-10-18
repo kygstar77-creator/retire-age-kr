@@ -56,7 +56,7 @@ def readback_check(ep):
     if len(rb) != len(lines): bad.append(f'C-readback 줄 수 다름 voice {len(lines)} · readback {len(rb)}')
     miss = [a for a, l in lines if a not in rb or rb[a].get('text') != l['text'] or rb[a].get('audio', l['audio']) != l['audio']]
     if miss: bad.append(f'C-readback 글·소리 안 맞는 줄 {len(miss)}: ' + ','.join(miss[:6]))
-    noflash = [a for a, l in lines if a in rb and not {'gemini-3.5-flash', 'gemini-flash-latest'} & set(rb[a].get('models', []))]
+    noflash = [a for a, l in lines if a in rb and not {'gemini-3.5-flash', 'gemini-flash-latest', 'whisper-small'} & set(rb[a].get('models', []))]
     if noflash: bad.append(f'C-readback 3.5-flash 둘째 받아쓰기 없는 줄 {len(noflash)}(합의오독 검사 안 함) — readback --resume')
     for k in ('받아쓰기 실패', '합의오독', '숫자'):
         hit = [a for a, l in lines if a in rb and k in rb[a].get('flag', '')]
@@ -81,7 +81,7 @@ def gate(ep):
     import aitell
     try:
         ok_s, _, _, _, bad_s = aitell.script_check(aitell.script_text(ep))
-        hab = aitell.script_habits(aitell.script_lines(ep), aitell.script_lines(ep, 'say'))
+        hab = aitell.script_habits(aitell.script_lines(ep), aitell.script_lines(ep, 'say'), aitell.screen_titles(ep))
         if not ok_s or hab: bad.append('대본 aitell script 실패 — ' + ' · '.join(bad_s[:3] + [f'말 습관 {len(hab)}건'] * bool(hab)) + f' — py -3.12 work/aitell.py script {ep}')
     except Exception as e:
         bad.append(f'대본 aitell script 못 돌림({e})')
@@ -125,7 +125,10 @@ def gate(ep):
     me = m.get('ep', os.path.basename(os.path.normpath(ep)))   # 같은 편 교체 업로드(옛 판은 비공개로 둠)는 편 수로 세지 않는다
     prev = [datetime.datetime.fromisoformat(u['publishAt']) for u in uploads() if u.get('publishAt') and not u.get('replaced') and u.get('ep') != me]
     # 2026-10-02 사장님 지시로 '주 2편' 제한 해제 → 하루 1편만(X-YT-FREQ). 주 7편 넘으면 막는다.
-    if sum(1 for p in prev if abs((pa - p).total_seconds()) < 7 * 86400) >= 7: bad.append('C1 롱폼 주 7편 넘음')
+    # 10/19 순돌이: ±7일(앞뒤 14일)로 세던 버그 고침 — 하루 1편이면 W-1(10/12 19:47)처럼 저녁에 나간 편 하나 때문에 다음 주 11:30이 막혔다.
+    #   사장님 규칙 '하루 1편'과 같게, 이 편 날짜를 끝으로 한 달력 7일(그날 포함)에 다른 편이 7편 이상이면 막는다.
+    d0 = pa.astimezone(KST).date()
+    if sum(1 for p in prev if 0 <= (d0 - p.astimezone(KST).date()).days < 7) >= 7: bad.append('C1 롱폼 주 7편 넘음')
     if any(p.astimezone(KST).date() == pa.astimezone(KST).date() for p in prev): bad.append('C1 같은 날 롱폼 2편')
     # 10/17 회의(체크리스트 52): 롱폼은 날짜 순서로만 — 앞 칸(slots 롱폼, 이 편보다 이른 미래 칸)이 아직 안 올라갔으면 경고
     for w in order_warn(pa, me): print('[경고] 날짜 순서:', w)

@@ -462,11 +462,23 @@ _DISC = re.compile(r'법이\s?바뀐\s?(?:건|게)\s?아니|자문이\s?아닙|�
 _TAG = re.compile(r'\{[^}]*\}|\[[^\]]*\]|(이미지|그림|장면|슬라이드)\s?\d|(?<![A-Za-z&])(?!A4|A3|B5|G7|G20)[A-Z]\d{1,2}(?![\d.])')  # 종이·회의 이름은 꼬리표 아님
 
 
+_BUNIRAMYEON = re.compile(r'분이라면')
+_LIMITW = re.compile(r'기록상|이\s?기록에서는|자료에\s?없|자료에\s?나오지\s?않|확인되지\s?않')
+_PREVIEW = re.compile(r'(차례로|하나씩|순서대로)\s?(답해|살펴|알아|짚어)\s?(볼게요|보겠습니다|드릴게요)|조금\s?(뒤에|이따|있다가)\s?(볼게요|보겠습니다|말씀드릴게요)')
+
+
+def screen_titles(p):
+    """편 폴더 screen_text.txt의 판 제목([scenes.N.data.title]) 목록. 없으면 []."""
+    f = os.path.join(p, 'screen_text.txt') if os.path.isdir(p) else ''
+    if not f or not os.path.exists(f): return []
+    return [l.split('] ', 1)[1].strip() for l in open(f, encoding='utf-8') if re.match(r'\[scenes\.\d+\.data\.title\] ', l)]
+
+
 def _sig(n):
     return len(str(int(round(n))).rstrip('0'))
 
 
-def script_habits(lines, said=None):
+def script_habits(lines, said=None, screen_titles=None):
     """[(검사, 줄 번호(1부터), 줄)] — 정밀 숫자 낭독·순번 3개 이상·말 목차 3연속·꼬리표 낭독.
     said: 실제 읽는 줄(voice.json say). text의 {F} 같은 표시는 say에서 빠지면 낭독이 아니라 꼬리표 검사는 said로 한다."""
     hits = []
@@ -494,6 +506,22 @@ def script_habits(lines, said=None):
         if len(v) >= 2: hits += [('면책 반복', i, l) for i, l in v]
     n = len(lines)
     hits += [('끝 3줄 면책', i, l) for i, l in enumerate(lines, 1) if i > n - 3 and _DISC.search(l)]
+    # 벤치마크 루프 10/19(quality-gap-1019 ③): A41 '…분이라면' 장 틀 반복(C-2 9줄·H-3 5줄) → 편당 4줄까지.
+    sb = [(i, l) for i, l in enumerate(lines, 1) if _BUNIRAMYEON.search(l)]
+    if len(sb) > 4: hits += [('A41 분이라면 반복', i, l) for i, l in sb]
+    # A46 한계 낱말 되풀이('기록상' 3번 + '이 기록에서는') → 한계는 한 번 말하고 나머지는 화면 작은 줄로.
+    lim = {}
+    for i, l in enumerate(lines, 1):
+        for m in _LIMITW.finditer(l): lim.setdefault(re.sub(r'\s', '', m.group(0))[:3], []).append((i, l))
+    for v in lim.values():
+        if len(v) >= 3: hits += [('A46 한계 낱말 반복', i, l) for i, l in v]
+    # A43 예고 줄('질문 다섯 개에 차례로 답해 볼게요'·'조금 뒤에 볼게요'), A44 끝 '정리하면' 되풀이.
+    hits += [('A43 예고 줄', i, l) for i, l in enumerate(lines, 1) if _PREVIEW.search(l)]
+    hits += [('A44 끝 정리하면', i, l) for i, l in enumerate(lines, 1) if i > n - 8 and re.match(r'\s*-?\s*(정리하면|정리해 보면|요약하면)', l)]
+    # A47 같은 판 제목 3번 이상(C-2 '누구라면' 4장) — 판 제목은 그 판의 내용으로.
+    from collections import Counter
+    for t, c in Counter(screen_titles or []).items():
+        if c >= 3: hits.append(('A47 같은 판 제목', 0, f"'{t}' ×{c} (screen_text 판 제목)"))
     return sorted(hits, key=lambda h: h[1])
 
 
@@ -554,10 +582,10 @@ def main(a):
         print(f'대본 실측 숫자 {per:.1f}/1,000단어(기준 ≤{SCRIPT_NUM_PER_1000}) · 숫자 2개 이상 문장 {multi:.0f}%(기준 ≤{SCRIPT_MULTI_NUM_PCT}%) · 문장 {n} — ' + ('통과' if ok else '실패'))
         for b in bad: print('  ', b)
         if not ok: print('  숫자·사실 문장은 바꾸지 않는다: 말에는 숫자 하나·반올림, 정확한 값은 화면 자막으로 옮긴다.')
-        habits = script_habits(script_lines(a[1]), script_lines(a[1], 'say'))
-        print('말 습관(정밀 숫자·순번 3개↑·말 목차 3연속·꼬리표 낭독·A40 면책 반복/끝 3줄) — ' + ('통과' if not habits else f'{len(habits)}건 걸림'))
+        habits = script_habits(script_lines(a[1]), script_lines(a[1], 'say'), screen_titles(a[1]))
+        print('말 습관(정밀 숫자·순번 3개↑·말 목차 3연속·꼬리표 낭독·A40 면책 반복/끝 3줄·A41 분이라면 5줄↑·A43 예고·A44 끝 정리·A46 한계 낱말 3번↑·A47 같은 판 제목 3장↑) — ' + ('통과' if not habits else f'{len(habits)}건 걸림'))
         for k, i, l in habits: print(f'   [{k}] {i}줄: {l[:70]}')
-        if habits: print('  정밀 숫자는 말로 반올림(정확값은 화면), 순번·목차는 질문 한 줄로, 꼬리표는 말에서 지운다, 면책은 편당 1줄·끝 3줄 밖.')
+        if habits: print('  정밀 숫자는 말로 반올림(정확값은 화면), 순번·목차는 질문 한 줄로, 꼬리표는 말에서 지운다, 면책은 편당 1줄·끝 3줄 밖, 한계 말은 한 번만, 판 제목은 그 판 내용으로.')
         return 0 if ok and not habits else 6
     if a[0] == 'gate':
         ok, msg, hits = gate_pkg(a[1])

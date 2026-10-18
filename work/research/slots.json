@@ -46,31 +46,13 @@
     "gates_ok": "2026-10-14 15:19"
    },
    {
-    "item": "p1s_step",
-    "ep": "work/research/cardshorts/p1s_step",
-    "layout": "c1clip",
-    "status": "관문 통과(compete 5·숫자 대조 102개 0·꼴 ⓐ~ⓓ(c1clip 5/10)·치직 1=말소리(P-1 click_ok 같은 자리)·쉿소리 틀 0·빈 곳 최대 39%·0초 31%·49.6초·제목 8.5·aitell 0.0) · 미업로드 — P-1 롱폼(10/16 11:30) 공개 뒤 1순위 10/21 19:20(07:20 h1s_helio=H-1과 다른 롱폼) · 근거 cardshorts/p1s_step/review.md",
-    "by": "firemap-video-producer",
-    "at": "2026-10-15 11:05",
-    "gates_ok": "2026-10-15 11:05"
-   },
-   {
     "item": "d1s_dep",
     "ep": "work/research/cardshorts/d1s_dep",
     "layout": "c1clip",
-    "status": "관문 통과(compete 6·숫자 대조 58개 0·꼴 ⓐ~ⓓ(c1clip 3/10)·치직 0·쉿소리 −14.8dB·빈 곳 최대 35%·45.7초·제목 8.5·aitell 0.0·58세 이해 시험 3차 뜻 틀림 0) · 미업로드 — D-1 롱폼(GMc2Rd1-JYA) '퇴직 후 건보료 0원, 피부양자 조건 딱 2가지', 새 녹음 0 · d1s_pension(10/20 19:20)과 이틀 이상 띄워 10/23 19:20 이후 칸 · 근거 cardshorts/d1s_dep/review.md",
+    "status": "10/18 12:29 v3 재렌더 통과(d1s_dep_v3_ds.mp4) · 꼴 ⓓ c1clip 비율 때문에 대기 — 관문 통과(compete 6·숫자 대조 58개 0·꼴 ⓐ~ⓓ(c1clip 3/10)·치직 0·쉿소리 −14.8dB·빈 곳 최대 35%·45.7초·제목 8.5·aitell 0.0·58세 이해 시험 3차 뜻 틀림 0) · 미업로드 — D-1 롱폼(GMc2Rd1-JYA) '퇴직 후 건보료 0원, 피부양자 조건 딱 2가지', 새 녹음 0 · d1s_pension(10/20 19:20)과 이틀 이상 띄워 10/23 19:20 이후 칸 · 근거 cardshorts/d1s_dep/review.md",
     "by": "firemap-video-producer",
     "at": "2026-10-16 07:32",
     "gates_ok": "2026-10-16 07:32"
-   },
-   {
-    "item": "n1s_rank",
-    "ep": "work/research/cardshorts/n1s_rank",
-    "layout": "c1clip",
-    "status": "관문 통과(compete 7·숫자 대조 94개 0·받아쓰기 9조각 일치·꼴 ⓐ~ⓓ(c1clip 4/10)·치직 0·쉿소리 −12.4dB·빈 곳 최대 12%·안전 영역·디자인 v3 통과·42.2초·제목 8.5·aitell 0.0·58세 이해 시험 2차 4명 뜻 틀림 0) · 미업로드 — N-1 롱폼(420buEFKB8k) 둘째 클립 '순자산 1억·5억, 상위 몇 %일까?'(n1s_top10과 줄·질문 겹침 0, 연봉 줄 안 씀), 새 녹음 0 · n1s_top10(10/23 07:20)과 이틀 이상 띄워 10/25 이후 칸 · 근거 cardshorts/n1s_rank/review.md",
-    "by": "firemap-video-producer",
-    "at": "2026-10-17 07:53",
-    "gates_ok": "2026-10-17 07:53"
    }
   ],
   "cafe": [
@@ -1774,7 +1756,8 @@
    "item": "sbsave1017",
    "owner": "firemap-write",
    "gates_ok": "2026-10-17 09:44",
-   "note": "N-2 짝 글은 15:10으로 옮김(영상은 11:30 공개로 되돌아옴, 10/17 API 확인) — 이 칸은 일반 칸 (회의 10/16) | firemap-write 09:44: sbsave1017 관문 통과 — '저축은행 적금 금리 3.75%면 손에 쥐는 이자는 얼마일까?'(돈 관리·예금 금리 묶음 2/3, 금감원 9월 공시 원자료·조특법 88조의2, 제목 7.5·표지 8.0·레드팀 틀림 0·58세 이해 4차 심각 0·aitell 통과·readcheck 0·selfcheck 사실 0·editgate auto · 10/17 15:10 sbdep1017과 같은 날 피함)"
+   "note": "N-2 짝 글은 15:10으로 옮김(영상은 11:30 공개로 되돌아옴, 10/17 API 확인) — 이 칸은 일반 칸 (회의 10/16) | firemap-write 09:44: sbsave1017 관문 통과 — '저축은행 적금 금리 3.75%면 손에 쥐는 이자는 얼마일까?'(돈 관리·예금 금리 묶음 2/3, 금감원 9월 공시 원자료·조특법 88조의2, 제목 7.5·표지 8.0·레드팀 틀림 0·58세 이해 4차 심각 0·aitell 통과·readcheck 0·selfcheck 사실 0·editgate auto · 10/17 15:10 sbdep1017과 같은 날 피함)",
+   "published": "https://cafe.naver.com/firemap/314 12:26 verify OK 1845자"
   },
   {
    "at": "2026-10-18 13:40",
@@ -2117,7 +2100,8 @@
    "owner": "firemap-video-producer",
    "gates_ok": "2026-10-15 11:05",
    "item_pkg": "work/research/cardshorts/p1s_step",
-   "note": "firemap-video-producer 2026-10-15 22:26: 회의 10/15 지시로 줄 만듦 · P-1(vsL7mojDW7w, 10/16 11:30) 클립 '519만원 넘는 순간 15만원' · 같은 날 07:20 h1s_helio(H-1)·11:30 롱폼 T-1과 다른 롱폼·다른 질문 · 미업로드(P-1 공개 뒤, 무인 회차는 YouTube 쓰기 거부라 채팅 세션 또는 허용 뒤) · p1s_step이 10/16 19:20 w1s_kospi 자리로 당겨지면 이 칸은 비축분(c2s_jungwoo 아님 — 10/19 19:20) 또는 새 클립"
+   "note": "firemap-video-producer 2026-10-15 22:26: 회의 10/15 지시로 줄 만듦 · P-1(vsL7mojDW7w, 10/16 11:30) 클립 '519만원 넘는 순간 15만원' · 같은 날 07:20 h1s_helio(H-1)·11:30 롱폼 T-1과 다른 롱폼·다른 질문 · 미업로드(P-1 공개 뒤, 무인 회차는 YouTube 쓰기 거부라 채팅 세션 또는 허용 뒤) · p1s_step이 10/16 19:20 w1s_kospi 자리로 당겨지면 이 칸은 비축분(c2s_jungwoo 아님 — 10/19 19:20) 또는 새 클립 | 2026-10-18 12:20 PD: v3 틀(실사 배경) 재렌더·안전 영역 통과 → 예약 · yt_pair: fcf7k50q2LA",
+   "published": "예약 2026-10-21T19:20:00+09:00 https://youtu.be/fcf7k50q2LA (10/18 v3 틀 재렌더 — 안전 영역 관문)"
   },
   {
    "at": "2026-10-22 07:20",
@@ -2174,12 +2158,29 @@
    "note": "firemap-meeting 2026-10-14 21:33: 비축 c2s_jungwoo(c2person 틀) — C-2 롱폼(10/19 11:30) videoId 나온 뒤 업로드·예약. C-2가 10/19에 못 나가면 이 칸은 다른 롱폼 클립(c1clip 외 틀)으로 바꾼다 | 2026-10-16 22:32 PD: C-2 롱폼이 10/19 19:50으로 옮겨져(C1) 19:20 쇼츠가 원본보다 먼저 나감 → 빈 10/23 19:20 칸으로. 업로드 전 v3 배경 재렌더 필요(w1g1/c1/m1clips_up bgcheck), 같은 날 07:20 n1s_top10(N-1)과 다른 롱폼"
   },
   {
+   "at": "2026-10-24 07:20",
+   "kind": "shorts",
+   "item": "n1s_rank",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-17 07:52",
+   "note": "2026-10-18 12:21 PD: 빈 칸에 비축 n1s_rank(N-1 둘째 클립, 10/23 07:20 n1s_top10과 다른 질문) · 같은 날 11:30 J-1 · yt_pair: Q-WGWqIQTGI",
+   "published": "예약 2026-10-24T07:20:00+09:00 https://youtu.be/Q-WGWqIQTGI"
+  },
+  {
    "at": "2026-10-24 11:30",
    "kind": "long",
    "item": "J-1",
    "owner": "firemap-video-producer",
    "gates_ok": null,
    "note": "순돌이 10/16: 10/23 칸을 손품 H-3에 주고 하루 뒤로 | firemap-meeting 2026-10-13 21:32: 1주택 종부세 개편 전·후(재경부 원문, calc.py 정부 사례 8/9). 카페 회원 자료 2호와 같은 주제로 묶음. 대본 youtube-loop 10/17. 축: 정책·부동산 | 레드팀: 정부안 국회 통과 전·9/1 수정됨·올해 11월 고지는 현행 기준 → 제목·말에 \"정부안 기준, 통과 전\" 명시, 정부 확정안 사례로 다시 대조 | youtube-loop 2026-10-14 08:49: H-2와 칸 바꿈 → 10/22(T-1 양도세 10/21과 이틀 연속 부동산 세금 피함, J-1은 기획안만 있어 대본 기한 10/20·관문 10/21 11:30) | youtube-loop 2026-10-14 17:2x: 08:49 판단 바로잡음 — 10/22로 옮겨도 T-1(10/21)과 이틀 연속 부동산 세금이라 **10/23으로**, 10/22엔 X-1 환율(경제 축, 심사 7.87·편집 통과). J-1 대본 v3 심사 중(제미나이 8.4), 관문 기한 10/22 11:30·녹음 10/21 창"
+  },
+  {
+   "at": "2026-10-24 19:20",
+   "kind": "shorts",
+   "item": "TBD(c1clip 아닌 틀)",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "2026-10-18 12:21 PD: 비축 d1s_dep는 10/15 c1clip 판 — 안전 영역 관문(10/16) 전이라 v3redo 뒤 예약 | 10/18 12:29 PD: d1s_dep v3 재렌더 관문(안전 영역·디자인·눈) 통과했으나 w1g1clips_up 꼴 ⓓ(최근 10편 c1clip 6편 60%>50%)에 막힘 → 이 칸은 M1S·c2person 틀 새 클립으로. d1s_dep는 c1clip 비율 내려간 뒤(비축 유지)"
   },
   {
    "at": "2026-10-25 11:30",

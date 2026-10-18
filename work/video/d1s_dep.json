@@ -239,5 +239,110 @@
    ],
    "frames": 127
   }
+ ],
+ "bg": [
+  {
+   "src": "bg/d1s_pension/8657621.mp4",
+   "from": 0,
+   "frames": 117,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/d1s_pension/6964001.mp4",
+   "from": 117,
+   "frames": 116,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/d1s_when/7317430.mp4",
+   "from": 233,
+   "frames": 72,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/d1s_when/8103673.mp4",
+   "from": 305,
+   "frames": 179,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/d1s_pension/8657621.mp4",
+   "from": 484,
+   "frames": 76,
+   "start": 3.9,
+   "kind": "video"
+  },
+  {
+   "src": "bg/d1s_pension/6964001.mp4",
+   "from": 560,
+   "frames": 155,
+   "start": 3.87,
+   "kind": "video"
+  },
+  {
+   "src": "bg/d1s_when/7317430.mp4",
+   "from": 715,
+   "frames": 156,
+   "start": 2.4,
+   "kind": "video"
+  },
+  {
+   "src": "bg/d1s_when/8103673.mp4",
+   "from": 871,
+   "frames": 175,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/d1s_pension/8657621.mp4",
+   "from": 1046,
+   "frames": 98,
+   "start": 6.43,
+   "kind": "video"
+  },
+  {
+   "src": "bg/d1s_pension/6964001.mp4",
+   "from": 1144,
+   "frames": 99,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/d1s_when/7317430.mp4",
+   "from": 1243,
+   "frames": 127,
+   "start": 0.0,
+   "kind": "video"
+  }
+ ],
+ "bg_credits": [
+  {
+   "id": 8657621,
+   "page": "https://www.pexels.com/video/close-up-video-of-a-person-buying-medicine-8657621/",
+   "author": "cottonbro studio",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 6964001,
+   "page": "https://www.pexels.com/video/a-person-computing-using-a-calculator-6964001/",
+   "author": "Mikhail Nilov",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 7317430,
+   "page": "https://www.pexels.com/video/brown-enveloped-with-lettter-inside-7317430/",
+   "author": "Angela Roma",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 8103673,
+   "page": "https://www.pexels.com/video/person-picking-up-coins-8103673/",
+   "author": "MART  PRODUCTION",
+   "license": "https://www.pexels.com/license/"
+  }
  ]
 }

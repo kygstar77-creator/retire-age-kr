@@ -268,5 +268,131 @@
    ],
    "frames": 307
   }
+ ],
+ "bg": [
+  {
+   "src": "bg/p1s_step/8348130.mp4",
+   "from": 0,
+   "frames": 86,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/34987276.mp4",
+   "from": 86,
+   "frames": 175,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/7877150.mp4",
+   "from": 261,
+   "frames": 79,
+   "start": 5.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/8322398.mp4",
+   "from": 340,
+   "frames": 133,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/8348130.mp4",
+   "from": 473,
+   "frames": 78,
+   "start": 2.87,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/34987276.mp4",
+   "from": 551,
+   "frames": 74,
+   "start": 5.83,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/7877150.mp4",
+   "from": 625,
+   "frames": 133,
+   "start": 5.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/8322398.mp4",
+   "from": 758,
+   "frames": 119,
+   "start": 4.43,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/8348130.mp4",
+   "from": 877,
+   "frames": 66,
+   "start": 5.47,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/34987276.mp4",
+   "from": 943,
+   "frames": 98,
+   "start": 8.3,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/7877150.mp4",
+   "from": 1041,
+   "frames": 139,
+   "start": 5.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/8322398.mp4",
+   "from": 1180,
+   "frames": 100,
+   "start": 8.4,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/8348130.mp4",
+   "from": 1280,
+   "frames": 103,
+   "start": 7.67,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/34987276.mp4",
+   "from": 1383,
+   "frames": 104,
+   "start": 0.0,
+   "kind": "video"
+  }
+ ],
+ "bg_credits": [
+  {
+   "id": 8348130,
+   "page": "https://www.pexels.com/video/woman-going-up-the-stairs-8348130/",
+   "author": "ROMAN ODINTSOV",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 34987276,
+   "page": "https://www.pexels.com/video/counting-polish-zloty-at-office-desk-34987276/",
+   "author": "Jakub Zerdzicki",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 7877150,
+   "page": "https://www.pexels.com/video/woman-running-up-stairs-7877150/",
+   "author": "MART  PRODUCTION",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 8322398,
+   "page": "https://www.pexels.com/video/people-going-up-the-stairs-8322398/",
+   "author": "Ron Lach",
+   "license": "https://www.pexels.com/license/"
+  }
  ]
 }

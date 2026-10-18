@@ -1,0 +1,50 @@
+{
+ "name": "d1s_dep",
+ "_note": "2026-10-18 PD: v3 틀 재렌더용 — d1s_when·d1s_pension bg_plan에서 눈 검사 끝난 4편 재사용(얼굴·상표·워터마크 0, 같은 D-1 건보료 주제). 수술실(30838895)·영수증 계산기(7710748)는 뺌",
+ "clips": [
+  {
+   "file": "bg/d1s_pension/8657621.mp4",
+   "id": 8657621,
+   "start": 0,
+   "usable_sec": 25.9,
+   "what": "약국 계산대 위 노인 손이 약병을 주고받음(손만)",
+   "for": "0 퇴직 후 건보료 0원 · 피부양자",
+   "page": "https://www.pexels.com/video/close-up-video-of-a-person-buying-medicine-8657621/",
+   "author": "cottonbro studio",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/d1s_pension/6964001.mp4",
+   "id": 6964001,
+   "start": 0,
+   "usable_sec": 12,
+   "what": "서류를 들고 계산기를 두드리는 손",
+   "for": "1 소득 조건 1년 2,000만원",
+   "page": "https://www.pexels.com/video/a-person-computing-using-a-calculator-6964001/",
+   "author": "Mikhail Nilov",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/d1s_when/7317430.mp4",
+   "id": 7317430,
+   "start": 0,
+   "usable_sec": 11.5,
+   "what": "나무 책상 위 갈색 봉투를 열고 흰 종이를 꺼내는 손",
+   "for": "2 재산 조건 · 과세표준",
+   "page": "https://www.pexels.com/video/brown-enveloped-with-lettter-inside-7317430/",
+   "author": "Angela Roma",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/d1s_when/8103673.mp4",
+   "id": 8103673,
+   "start": 0,
+   "usable_sec": 10,
+   "what": "검은 천 위 동전·지폐 (5.8초부터 손만 등장)",
+   "for": "3 9억까지는 소득 1,000만원",
+   "page": "https://www.pexels.com/video/person-picking-up-coins-8103673/",
+   "author": "MART  PRODUCTION",
+   "license": "https://www.pexels.com/license/"
+  }
+ ]
+}

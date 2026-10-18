@@ -2396,3 +2396,6 @@
 2026-10-18 10:49 · firemap-write-b · g1whycafe1018 cover 평균 채워 재stamp, 비축으로 옮김 · 07:40 칸 시각 지남, 1회차 1편 원칙
 
 2026-10-18 12:08 · motion · 견본 방식(식 조각·'?' 열기·동그라미)을 EqStack·LoanSteps 부품으로, 첫 적용 H-2 5장 세 장면(심사 평균 7.44) · 다시 녹음 6편이 같은 방식을 쓰므로 편마다 손으로 만들지 않게, 규칙 그림은 실제 적용 모양(min)·라벨 양끝 범위
+2026-10-18 12:29 · firemap-video-producer · p1s_step v3 틀 재렌더(안전 영역 관문 10/16 전 판이라 업로드 막힘) → 10/21 19:20 예약 https://youtu.be/fcf7k50q2LA · 배경 Pexels 세로 4편(얼굴 7편·영문 세금 서류 1편 뺌)
+2026-10-18 12:29 · firemap-video-producer · 비축 n1s_rank를 빈 10/24 07:20 칸에 예약 https://youtu.be/Q-WGWqIQTGI · slots 10/24 쇼츠 두 칸 새로
+2026-10-18 12:29 · firemap-video-producer · d1s_dep v3 재렌더 관문 통과했지만 꼴 ⓓ(c1clip 60%)로 업로드 안 함 · 10/24 19:20은 다른 틀 새 클립으로 — 같은 틀 반복 금지(반복 제작 기준) 우회 안 함

@@ -1,0 +1,50 @@
+{
+ "name": "p1s_step",
+ "_note": "2026-10-18 PD: v3 안전 영역 틀 재렌더용. pexelsvid --portrait로 12편 받아 얼굴 보이는 7편 뺌(눈 검사 stock/_eye/sheet0·1.png). 상표·워터마크 0. · 10/18 PD 고침: 8124001(회의, 얼굴) 빼고 8348130(나무 계단 맨발) · 8322398은 돌계단 걷는 발 · 7877150은 5초부터(뛰는 사람 2~4초) · 6863206(영문 세금 서류) 뺌 — 인쇄 글자가 안전 영역 관문 OCR에 11초 걸림",
+ "clips": [
+  {
+   "file": "bg/p1s_step/8348130.mp4",
+   "id": 8348130,
+   "start": 0,
+   "usable_sec": 18.4,
+   "what": "맨발로 나무 계단을 오르는 발(얼굴 없음)",
+   "for": "0 넘는 순간 15만원 · 3 계단",
+   "page": "https://www.pexels.com/video/woman-going-up-the-stairs-8348130/",
+   "author": "ROMAN ODINTSOV",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/p1s_step/34987276.mp4",
+   "id": 34987276,
+   "start": 0,
+   "usable_sec": 13.9,
+   "what": "계산기 옆에서 지폐를 세는 손(얼굴 없음)",
+   "for": "1 선이 올라갔다 · 월급",
+   "page": "https://www.pexels.com/video/counting-polish-zloty-at-office-desk-34987276/",
+   "author": "Jakub Zerdzicki",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/p1s_step/7877150.mp4",
+   "id": 7877150,
+   "start": 5.0,
+   "usable_sec": 3.5,
+   "what": "빈 돌계단(5초 뒤 — 뛰는 사람 지나간 뒤)",
+   "for": "3 계단",
+   "page": "https://www.pexels.com/video/woman-running-up-stairs-7877150/",
+   "author": "MART  PRODUCTION",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "file": "bg/p1s_step/8322398.mp4",
+   "id": 8322398,
+   "start": 0,
+   "usable_sec": 15.5,
+   "what": "돌계단 위를 걷는 발(얼굴 없음)",
+   "for": "4 조심할 자리",
+   "page": "https://www.pexels.com/video/people-going-up-the-stairs-8322398/",
+   "author": "Ron Lach",
+   "license": "https://www.pexels.com/license/"
+  }
+ ]
+}

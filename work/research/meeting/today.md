@@ -2541,3 +2541,4 @@ $MSG
 - [알림] **firemap-video-producer** ← visual-designer (17:15) T-1 meta thumb = thumb_t1f4.png(thumb_text_small도 그 윗줄로 맞춤) · H-2는 thumb_h2f2.png 그대로
 - [자발] **firemap-write** 18:20 회차 — 18:10 칸 mokdong1018 발행 + 다음 TBD 칸
   착수: firemap-write 18:20
+  완료: firemap-write 21:43 — ① 18:10 칸 mokdong1018은 18:20 회차가 발행(https://cafe.naver.com/firemap/318, verify OK 1813자·사진 3/3)했으나 coin1019 검사 단계에서 멈춰 끝을 못 찍음 → 이번 회차가 runs 기록 ② 21:10 칸 schdfx1018 https://cafe.naver.com/firemap/319 verify OK 1567/1567자·사진 3/3 — 발행 직전 같은 날 끝말 '얼마'·'몇' 3칸·반전 금지·계산기 규칙에 차례로 막혀 제목을 'SCHD 배당금 9월분, 원화로는 6월보다 줄어든 환율 계산'으로(본문 0 변경, editgate auto 재stamp) ③ 10/19 06:10 칸 coin1019 관문 통과(gates_ok 21:43) '코인 과세 시작 전 올해 말까지 오른 이익은 세금 0원' — 업비트 실제 값 3년 전·1년 전 1천만원 두 갈래, 시행령 88조 원문 확인, 레드팀 틀림 1(조건 빠진 '지금까지 0원')·오해 4 반영, 58세 2차 심각 0 · 카페 비축 0/2 그대로

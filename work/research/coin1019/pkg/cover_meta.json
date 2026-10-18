@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-18 21:27",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "코인 과세 시작 전/올해 말까지 오른 이익은",
+ "num": "세금 0원",
+ "sub": "실제 산 값과 12월 31일 값 중 큰 쪽",
+ "label": "2027년 1월 시행 소득세법",
+ "src": "",
+ "icon": "bitcoin",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 98,
+ "num_px": 78,
+ "sub_px": 58,
+ "board": [
+  "mokdong1018",
+  "g1whycafe1018",
+  "n2cafe1018",
+  "salpct1018",
+  "sbsave1017",
+  "lev2x1018",
+  "bonustax1017",
+  "sangokapply1017",
+  "depmature1017",
+  "nhisadj1017"
+ ]
+}

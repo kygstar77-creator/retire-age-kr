@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-19 06:35",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "실업급여 받는 중/하루 알바 숨기면",
+ "num": "4주치 185만원 날아감",
+ "sub": "신고하면 그날만 하루 늦게 받음 · 하한액·4주 기준",
+ "label": "고용보험법 제61조",
+ "src": "",
+ "icon": "briefcase",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 124,
+ "num_px": 90,
+ "sub_px": 40,
+ "board": [
+  "coin1019",
+  "jpy1018",
+  "schdfx1018",
+  "mokdong1018",
+  "g1whycafe1018",
+  "n2cafe1018",
+  "salpct1018",
+  "sbsave1017",
+  "lev2x1018",
+  "bonustax1017"
+ ]
+}

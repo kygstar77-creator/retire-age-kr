@@ -55,7 +55,16 @@
     "gates_ok": "2026-10-16 07:32"
    }
   ],
-  "cafe": [],
+  "cafe": [
+   {
+    "item": "pensiontax1019",
+    "pkg": "pensiontax1019",
+    "status": "관문 통과 — '연금저축 세금은 연금이 1500만원 넘으면 오히려 돌려받는 경우'(세금연금·형식2): 소득세법 조문 직접 계산(연 2000만원 69세 이하 환급 33만 4천원·70대 11만원·80세 이상 11만원 추가·약 2600만원 넘으면 뒤집힘), 레드팀 틀림0·오해4 반영, 58세 2차 통과, 제목 8·표지 8.5, editgate auto · 미발행 · slot.txt는 쓰는 칸 시각으로 고칠 것",
+    "by": "firemap-write",
+    "at": "2026-10-18 23:47",
+    "gates_ok": "2026-10-18 23:47"
+   }
+  ],
   "long": [
    {
     "item": "R-1",
@@ -1825,11 +1834,12 @@
   {
    "at": "2026-10-19 06:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "coin1019",
    "owner": "firemap-write",
    "gates_ok": "2026-10-18 21:29",
    "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) | firemap-write 21:29: coin1019 '코인 과세 시작 전 올해 말까지 오른 이익은 세금 0원'(세금연금·형식2) 관문 통과 — 업비트 실제 값 3년 전·1년 전 1천만원 두 갈래, 레드팀 틀림1·오해4 반영, 58세 2차 심각0, 제목 8·8·표지 8·8, editgate auto",
-   "pkg": "coin1019"
+   "pkg": "coin1019",
+   "published": "https://cafe.naver.com/firemap/321 06:27 verify OK 2104자"
   },
   {
    "at": "2026-10-19 07:20",
@@ -1867,26 +1877,26 @@
   {
    "at": "2026-10-19 11:30",
    "kind": "long",
-   "item": "비움(C1 이동)",
+   "item": "C-2",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "2026-10-16 22:24 PD: C-2를 19:50으로 옮김(ytlong C1 주 7편, 회의 10/16 지시). 이 칸은 비움 — 실패 아님(회의 결정)"
+   "note": "순돌이 10/19 00:5x 사장님 \"11시30분 공개로 하면 되잖아\" — 19:50 → 11:30(ytlong C1 ±7일 버그 고침) | firemap-meeting 2026-10-13 21:32: 가상 인물 정우 씨 팔아 쓰기(N1 시범). 편집 통과 10/13, 그림 20장 visual 10/16, 녹음 10/17 창. 합성 표시 True. 축: 주식 인출 | 2026-10-16 22:24 PD: 회의 10/16 [지시·긴급] ytlong C1 주 7편(W-1 0yWQeW38UJE 10/12 19:47 — 10/19 19:47까지 7일 창) → 11:30에서 19:50으로 옮김. 관문 기한 10/18 19:50"
   },
   {
    "at": "2026-10-19 12:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "ubfraud1019",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 실업급여(월 검색 99,000) → https://firemap.kr/calc/unemployment-benefit — 글 질문이 계산기와 맞을 때만 줄 넣기"
+   "gates_ok": "2026-10-19 06:37",
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 실업급여(월 검색 99,000) → https://firemap.kr/calc/unemployment-benefit — 글 질문이 계산기와 맞을 때만 줄 넣기 | firemap-write 06:37: ubfraud1019 '실업급여 부정수급 하루 알바 숨기면 얼마나 돌려줘야 할까' 관문 통과(계산기 줄 https://firemap.kr/calc/unemployment-benefit · 레드팀 틀림0·58세 2차 심각0 · 제목8·표지8.5)"
   },
   {
    "at": "2026-10-19 13:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "cafenotice1018",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+   "gates_ok": "2026-10-18 23:55",
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) | 카페 운영 설계자 23:55: 필독 공지 묶음 cafenotice1018 '퇴직 뒤 건보료·연금 계산하는 카페 처음 오셨다면 할 일 하나' 관문 통과(aitell 0.0·58세 2차 통과·심사 7.3·editgate auto·pending_block 시각 외 없음) · 발행은 반드시 --board 공지사항(pkg/notice.txt 발행 전 확인 2개) · 발행 뒤 순돌이가 필독 공지로"
   },
   {
    "at": "2026-10-19 15:10",
@@ -1927,14 +1937,6 @@
    "owner": "firemap-write-b",
    "gates_ok": null,
    "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · yt_pair: n2s_middle(H04T4PbkGCY, 19:20 쇼츠) — 질문 하나 + N-2 원본 링크"
-  },
-  {
-   "at": "2026-10-19 19:50",
-   "kind": "long",
-   "item": "C-2",
-   "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-13 21:32: 가상 인물 정우 씨 팔아 쓰기(N1 시범). 편집 통과 10/13, 그림 20장 visual 10/16, 녹음 10/17 창. 합성 표시 True. 축: 주식 인출 | 2026-10-16 22:24 PD: 회의 10/16 [지시·긴급] ytlong C1 주 7편(W-1 0yWQeW38UJE 10/12 19:47 — 10/19 19:47까지 7일 창) → 11:30에서 19:50으로 옮김. 관문 기한 10/18 19:50"
   },
   {
    "at": "2026-10-19 21:10",
@@ -1988,10 +1990,10 @@
   {
    "at": "2026-10-20 10:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "cafeqna1018",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+   "gates_ok": "2026-10-18 23:55",
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) | 카페 운영 설계자 23:55: 공지 묶음 cafeqna1018 '퇴직 뒤 건보료·연금 질문방 댓글 한 줄이면 원문 찾아 답변' 관문 통과(aitell 0.0·58세 2차 통과·심사 7.2·editgate auto) · --board 공지사항 · 발행 뒤 일반 공지로"
   },
   {
    "at": "2026-10-20 11:30",

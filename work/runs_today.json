@@ -1,120 +1,16 @@
 {
- "date": "2026-10-18",
+ "date": "2026-10-19",
  "runs": [
   {
    "hour": 6,
-   "ts": "06:26",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "산곡역자이힐스테이트 청약, 이자후불제 중도금은 입주 때 이자 얼마 낼까?",
-    "url": "https://cafe.naver.com/firemap/311"
-   },
-   "note": "02~07시 카페만(블로그 없음). 06:10 칸 sangokapply1017(관문 10/17 21:42 통과분) 발행 · verify OK 2225/2225자 사진 3/3 · 교차검증·selfcheck은 작성 회차에서 끝남(check_gpt/gemini/self 있음) · 개선: naverpost verify에 firemap.kr 링크 검사, editgate calc_check 주제 불일치 막음 · 카페 비축 0/2(다음 회차 몫 기록)"
-  },
-  {
-   "hour": 7,
-   "ts": "07:47",
+   "ts": "06:37",
+   "who": "firemap-write",
    "blog": null,
    "cafe": {
-    "title": "KRX 금 웃돈과 환율 때문에 국제 금값이 올라도 내 금이 줄어든 이유",
-    "url": null
+    "title": "코인 과세 시작 전 올해 말까지 오른 이익은 세금 0원",
+    "url": "https://cafe.naver.com/firemap/321"
    },
-   "note": "firemap-write-b 07:40 칸 g1whycafe1018 발행 막힘: ①사진 2/3장 → 웃돈 250거래일 선 그래프 02.png 추가(raw_20261017.json, 값 본문과 일치) ②cover_review.md에 '평균: N' 줄 없음(review.md엔 표지 8·8·레드팀 8 기록) ③editor가 07:11 c03 고친 뒤 editgate 재stamp 없음 → firemap-editor stamp·표지 평균 줄 필요. 개선: 사진 추가"
-  },
-  {
-   "hour": 9,
-   "ts": "09:52",
-   "blog": null,
-   "cafe": {
-    "title": "성과급 세금 1천만원이면 받는 달 따라 몇십만원 달라질까?",
-    "url": "https://cafe.naver.com/firemap/312"
-   },
-   "note": "firemap-write 09:10 칸 bonustax1017 발행 · verify OK 1678/1678자·사진 3/3 · 블로그는 DAY_CAP·방침상 없음 · 다음 칸 준비: 13:40 salpct1018(회원 자료 엑셀, 멤버 공개)·15:10 n2cafe1018(N-2 짝 글) 관문 통과 — 자료조사 출처: 국세청 15082063·국가데이터처 443648 원문 10/18 재확인+전자신문 대조, 경쟁 6편 · 교차검증: n2 사실 6 중 반영 3·유지 3(영상·회원 글 근거), 말투 15 중 반영 6 / salpct 사실 8 중 반영 1·유지 7(정의·설정 근거 facts 추가), 말투 11 중 반영 5 · 레드팀 n2 2차·salpct 1차, 이해 시험 n2 3차·salpct 1차 통과 · 개선: 회원 자료 엑셀 make_xlsx.py+verify.py(Excel COM 자동 검산) 짝으로 만듦"
-  },
-  {
-   "hour": 10,
-   "ts": "10:49",
-   "blog": null,
-   "cafe": {
-    "title": "단일종목 레버리지 ETF 두 배, 올해 SK하이닉스로 계산해 보니",
-    "url": "https://cafe.naver.com/firemap/313"
-   },
-   "note": "firemap-write-b 10:40 칸 lev2x1018 (관문 07:25 firemap-write 통과분, aitell 1.5·editgate 해시 일치) · verify OK 1383/1383자·사진 3/3 · 게시판 자동=성장주 · 확인 창 처리 타임아웃 났으나 발행 성공 · g1whycafe1018 cover 평균 7.83 채워 재stamp→비축 · 개선: 없음"
-  },
-  {
-   "hour": 12,
-   "ts": "12:42",
-   "blog": null,
-   "cafe": {
-    "title": "저축은행 적금 금리 3.75%면 손에 쥐는 이자는 얼마일까?",
-    "url": "https://cafe.naver.com/firemap/314"
-   },
-   "note": "firemap-write 12:10 칸 sbsave1017(관문 10/17 09:44, editgate 해시 일치·aitell 1.2) · verify OK 1845/1845자·사진 3/3 · 게시판 자동=돈 관리 · 블로그 없음(하루 상한·카페 전용 체제) · 다음: 18:10 칸 mokdong1018 원고(국토부 실거래 오늘 재수신 675건·정보몽땅·서울시 보도자료·시행령 10/1 원문, 출처 6) · 개선: 청약홈 분양정보 API(odcloud) 401 — 데이터포털 활용신청 필요, tools-wanted에 적음"
-  },
-  {
-   "hour": 13,
-   "ts": "13:53",
-   "task": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "내 연봉 상위 몇 %인지 총급여만 넣으면 나오는 엑셀",
-    "url": "https://cafe.naver.com/firemap/315"
-   },
-   "note": "13:40 칸 salpct1018(관문 09:50 통과분). 첫 시도 aitell 같은 날 예시 겹침(15:10 n2cafe1018과 숫자 6개)으로 막힘 → 예시 5,000만원→1억원(엑셀 검산값·facts 9행), 상위10% 경계 2문장 삭제, 출처 날짜 표기 변경, 칸 설명 문장 숫자 줄임 → aitell 0.0·readcheck 0·selfcheck 사실 0([계산] 13%=12.6% 반올림 확인)·editgate auto 재stamp 13:48. verify OK 1082/1082자·사진 3/3·첨부 1/1, 게시판 돈 관리, 멤버공개. 개선: 없음(겹침 검사는 정상 작동)"
-  },
-  {
-   "hour": 15,
-   "ts": "15:41",
-   "blog": null,
-   "cafe": {
-    "title": "내 월급 순위 나이별로 보면 월 450만원은 상위 몇 %",
-    "url": "https://cafe.naver.com/firemap/316"
-   },
-   "note": "15:10 칸 n2cafe1018(N-2 짝) 발행 15:41 · verify OK 1932/1932자·사진 4/4 · 블로그 없음(10/6 조직 축소) · 21:10 칸 schdfx1018 'SCHD 배당금 9월분, 환율 때문에 원화로는 얼마 받았을까?' 관문 통과 — 자료 ECOS 원/달러 515일·Yahoo SCHD 배당 8회·AV 종가·연합 10/17 제목·경쟁 5편(출처 9) · 검증 경로 crosscheck(Gemini) 사실 5 중 반영 3·일부 1·유지 1, 말투 14 중 반영 11 · 레드팀 틀림 0·오해 4 반영 · 58세 3차 통과 · 슬롯 메모 r1s_gap 짝 대신 독립 글(R-1 짝 이미 넷) · 개선: compare.md 경쟁 주소를 https 전체로 써야 editgate가 센다(이번에 걸림, 플레이북에 적음)"
-  },
-  {
-   "hour": 16,
-   "ts": "17:01",
-   "blog": null,
-   "cafe": {
-    "title": "KRX 금 웃돈과 환율 때문에 국제 금값이 올라도 내 금이 줄어든 이유",
-    "url": "https://cafe.naver.com/firemap/317"
-   },
-   "note": "firemap-write-b 16:40 칸 · 비축 g1whycafe1018(관문 10:46 통과분: 제목 8·표지 7.83·레드팀 틀림 0·58세 2차·editgate auto) · 발행 전 calc.py 재조회 — KRX·GC=F·ECOS 10/16 값 그대로(주말) · aitell 5.5·readcheck 0 · verify OK 1598/1598자·사진 3/3 · 확인 창 대기 타임아웃 1회(발행은 됨) · 비축 카페 0/2 · 개선: 없음"
-  },
-  {
-   "hour": 18,
-   "ts": "21:43",
-   "blog": null,
-   "cafe": {
-    "title": "목동 신시가지 실거래가, 전세 끼고 사도 16억 넘게 드는 집",
-    "url": "https://cafe.naver.com/firemap/318"
-   },
-   "note": "18:20 회차가 18:10 칸 mokdong1018 발행·verify OK(1813/1813자·사진 3/3)까지 하고 coin1019 검사 단계에서 끝을 못 찍음 — 21:20 회차가 대신 기록"
-  },
-  {
-   "hour": 21,
-   "ts": "21:43",
-   "blog": null,
-   "cafe": {
-    "title": "SCHD 배당금 9월분, 원화로는 6월보다 줄어든 환율 계산",
-    "url": "https://cafe.naver.com/firemap/319"
-   },
-   "note": "21:10 칸 schdfx1018 발행 21:43(무작위 대기 18분 44초) · verify OK 1567/1567자·사진 3/3 · 발행 직전 제목 3번 막힘: 같은 날 끝말 '얼마' 3칸 → '몇' 3칸 → 틀 v2 반전 금지 → '9월 배당'이 계산기 규칙 '월 배당'에 걸림 → 명사 끝으로 바꿔 editgate auto 재stamp(본문 0 변경) · 확인 창 대기 타임아웃 1회(발행은 됨) · 10/19 06:10 칸 coin1019 관문 통과: 업비트 일봉·소득세법 37조·시행령 88조 원문(lawtext)·한경 10/18·토큰포스트 8/2·데일리안 8/28 · 교차검증 crosscheck(Gemini) 사실 5 반영 5, 말투 2 반영 2 · 레드팀 틀림 1(제목 '지금까지 0원' 조건 누락)·오해 4 전부 반영 · 58세 1차 심각 1 → 2차 심각 0 · 제목 8·8·표지 8·8 · 블로그 없음(10/6 조직 축소) · 개선: 플레이북에 '발행 전 sameday·frame 같이 돌려 끝말 미리 피하기'·'시행령은 lawtext로' 적음"
-  },
-  {
-   "hour": 22,
-   "ts": "23:08",
-   "who": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "엔화 환전, 같은 100만원인데 작년보다 엔이 더 나오는 이유",
-    "url": "https://cafe.naver.com/firemap/320"
-   },
-   "note": "22:40 칸(비축 0 → 새 편 jpy1018, 경제·형식2) · 자료조사 출처 6(ECOS 원/엔·원/달러, FRED DEXJPUS, 하나은행 고시, 연합 10/18, toprank) · 검증 경로 crosscheck(Gemini): 사실 3 중 반영 2·유지 1(연합 원문 직접 확인), 말투 15 반영 · 레드팀 틀림1·오해5 반영 · 58세 2차 통과 · verify OK 1387/1387자·사진 3/3 · 발행 23:06(칸보다 26분 늦음) · 게시판 자동규칙에 '엔화·환전' 없어 자유게시판으로 감 → 개선: naverpost BOARD_WORDS 경제 이야기에 엔화·환전·엔저·원/엔 추가(320번 이동은 운영실장 판단)"
+   "note": "06:10 칸 coin1019 발행(무작위 대기 4분 46초) · verify OK 2104/2104자·사진 3/3 · 글 끝 질문 한 줄 추가 후 aitell 3.0 통과·재도장 · 블로그 0(DAY_CAP·블로그 쉼) · 다음 칸: 12:10 ubfraud1019 관문 통과 — 자료조사 출처 9(고용보험법·시행령·시행규칙 국가법령정보센터 10/19, 고용노동부 5/31 보도자료, 데일리안 5/31, 최저임금 기사, 경쟁 상위 5편, 지식iN 5) · 교차검증(crosscheck Gemini): 사실 4 중 반영 3·유지 1(계산기 입력은 toolPages.js로 확인), 말투 15 중 반영 9 · 레드팀 틀림0·오해6 반영 · 58세 2차 심각0 · 개선: 없음(관문 도구는 모두 정상 동작) · 카페 댓글 답할 것 0개"
   }
  ]
 }

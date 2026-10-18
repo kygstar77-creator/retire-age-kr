@@ -771,7 +771,7 @@
 [scenes.90.data.c] ink
 [scenes.90.data.source] 재정경제부 세법개정안 문답 자료 p.62
 [scenes.91.lines.0.text] 조심할 게 있어요. 이렇게 쳐 주는 기간은, 공제율을 셀 때만 씁니다.
-[scenes.91.data.title] 조심
+[scenes.91.data.title] 쳐 준 기간은
 [scenes.91.data.v] 공제율 셀 때만
 [scenes.91.data.s] 쳐 준 기간은 공제율에만 씀
 [scenes.91.data.icon] TriangleAlert

@@ -10,6 +10,7 @@
 #   py -3.12 work/lfvoice.py cutat <ep폴더> <묶음번호> 6.7,19.0,...  # 자르기 실패 묶음을 받아쓰기로 확인한 문장 시작 시각으로 자른다(API 안 부름)
 #   py -3.12 work/lfvoice.py fixcut <ep폴더> <묶음번호> [--dry]  # 조각마다 받아써서 대본 문장에 맞춰 자른다(지시문 읽은 앞머리 버림) — 공개 전 받아쓰기 대조에서 어긋나면
 #   py -3.12 work/lfvoice.py readback <ep폴더> [3:6,12:0]  # 공개 전 필수: 문장마다 받아써 숫자 대조·지시문 앞머리 의심 찾기(lessons 9)
+#   py -3.12 work/lfvoice.py readback <ep폴더> --resume --batch  # 10/18 PD: 둘째 받아쓰기(3.5-flash)를 줄 20개 묶음 한 요청으로 — 무료 하루 20요청 안에 한 편
 # 규칙 1: 모델·목소리는 ep/tts.json에 처음 한 번 적고 잠근다. 429여도 다른 모델로 넘어가지 않고 멈춘다(다음 날 같은 모델로 이어서).
 # 규칙 2(10/3 22시 사장님 "목소리 속도는 일정하게"로 바뀜): 빠르기는 늘 1.0 — atempo로 늘이거나 줄이지 않는다. 장면 길이가 목소리 길이를 따라간다.
 # 규칙 4(10/3 22시 '목소리 한결같음'): 문장 f0가 편 중앙값 ±12% 밖이면 다시 녹음 · 한 편은 한 날에 녹음(문장마다 rec 날짜, 날짜 둘 이상이면 check 막힘 — 이어 붙이기 금지).
@@ -521,7 +522,7 @@ def readback_num(t, words=False):
     # (대본 '세 회사'를 3으로 바꾸면 lite가 '새 회사'로 들은 걸 숫자 틀림으로 잡는다 — 대본에 아라비아로 쓴 숫자만 대조한다).
     t = t.replace(',', '')
     if words:
-        t = re.sub(r'(?<![가-힣0-9])(?=[열스서마쉰한하두둘세셋네넷다여일아])(열|스무|스물|서른|마흔|쉰)?(하나|한|둘|두|셋|세|넷|네|다섯|여섯|일곱|여덟|아홉)?(?=\s?(?:분기|달|개|명|번|배|해|살|가지|곳|주|차례))',
+        t = re.sub(r'(?<![가-힣0-9])(?=[열스서마쉰한하두둘세셋네넷다여일아])(열|스무|스물|서른|마흔|쉰)?(하나|한|둘|두|셋|세|넷|네|다섯|여섯|일곱|여덟|아홉)?(?=\s?(?:분기|달|개|명|번|배|해|살|가지|곳|주|차례|장))',   # 장: '3장에서'를 '세 장에서'로 맞게 들은 것(C-2 1:35·2:26, 10/18 PD)
                    lambda m: str(_TENS.get(m.group(1), 0) + _ONES.get(m.group(2), 0)) if (m.group(1) or m.group(2)) else m.group(0), t)
         t = re.sub(r'(?<![가-힣0-9])([일이삼사오육칠팔구]?[십백천](?:[일이삼사오육칠팔구]?[십백천])*[일이삼사오육칠팔구]?)(?=\s?(?:만|억|조|원|배|%|퍼센트|분기|달|년|월|일|주))',
                    lambda m: str(_sino(m.group(1))), t)
@@ -535,6 +536,46 @@ def readback_num(t, words=False):
 AGREE, OFF = 0.9, 0.85   # 10/18 벤치마크 지시 '합의오독': 두 모델끼리 ≥0.9로 같게 들었는데 대본과는 <0.85 → 사람 귀에도 그렇게 들린다
 FLASH = 'gemini-3.5-flash'
 SECOND = [FLASH, 'gemini-flash-latest']   # 3.5-flash 무료 한도 하루 20요청(10/18 06:3x 429 실측, quotaValue 20) — 한 편 150줄+는 못 받는다 → 다 쓰면 flash-latest로
+#   10/18 10:4x PD: flash-lite-latest를 끝자리에 넣어 봤다가 뺌 — C-2 32줄 중 20줄 합의오독('정우'→'정모'·'세 해'→'새해'), 판단에 못 쓴다.
+#   대신 --batch: 둘째 받아쓰기를 줄 20개씩 이어 붙인 소리 한 요청으로(1.5초 쉼, 대본 글자 맞춤으로 줄마다 자름) — 한 편 8요청이면 3.5-flash 20요청 안에 든다.
+BATCH_N, BATCH_GAP = 20, 1.5
+def split_by_script(texts, heard):
+    # 묶음 받아쓰기 전체 글을 대본 줄 경계로 자른다: 한글·숫자·%만 남겨 글자 맞춤(difflib) → 대본 줄 [s,e)에 대응하는 들린 글자.
+    #   모델은 줄이 아니라 문장마다 끊으므로(10/18 시험: 한 줄 두 문장이면 번호가 밀림) 번호에 기대지 않는다.
+    import difflib
+    norm = lambda x: re.sub(r'[^가-힣0-9%]', '', x or '')
+    A = [norm(t) for t in texts]; a, b = ''.join(A), norm(heard)
+    m = [0] * (len(a) + 1)
+    for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
+        for k in range(i1, i2 + 1): m[k] = j1 + (round((k - i1) * (j2 - j1) / (i2 - i1)) if i2 > i1 else 0)
+    out, s = [], 0
+    for t in A: out.append(b[m[s]:m[s + len(t)]]); s += len(t)
+    return out
+
+def batch_second(ep, v, tx_raw, keys):
+    # keys = [(at, wav경로)] → {at: (들린 글, 모델)}. 들린 글은 띄어쓰기·문장부호 없는 꼴(합의오독·숫자 대조는 한글·숫자만 본다).
+    #   들린 글이 대본 줄 글자의 절반도 안 되는 묶음은 비운다(그 줄은 받아쓰기 실패로 남아 관문이 막는다 — 지어 맞추지 않음).
+    import io
+    out = {}; txt = {f'{si}:{li}': l['text'] for si, s in enumerate(v['sections']) for li, l in enumerate(s['lines'])}
+    for i in range(0, len(keys), BATCH_N):
+        chunk = keys[i:i + BATCH_N]; parts = []
+        for _, fn in chunk:
+            a, sr = read(fn); parts += [a, np.zeros(int(sr * BATCH_GAP), dtype=a.dtype)]
+        buf = io.BytesIO()
+        with wave.open(buf, 'wb') as w: w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes(np.concatenate(parts).astype(np.int16).tobytes())
+        prompt = ('Transcribe this Korean audio verbatim exactly as heard (do not fix grammar or guess intended words). '
+                  'Put a line break at each long silence. Write numbers exactly as spoken using digits.')
+        for m in SECOND:
+            if m in _DEAD: continue
+            heard = tx_raw(buf.getvalue(), m, prompt)
+            if heard is None: continue
+            segs = split_by_script([txt[at] for at, _ in chunk], heard)
+            tot = sum(len(re.sub(r'[^가-힣0-9%]', '', txt[at])) for at, _ in chunk)
+            if sum(map(len, segs)) < tot * 0.5: print(f'  묶음 {i // BATCH_N + 1}: 들린 글 너무 짧음({m}) — 비움'); break
+            for (at, _), h in zip(chunk, segs): out[at] = (h, m)
+            print(f'  묶음 {i // BATCH_N + 1}: {len(chunk)}줄 {m}'); break
+        time.sleep(3)
+    return out
 _DEAD = set()                              # 이번 실행에서 하루 한도(PerDay 429)가 난 모델 — 다시 부르지 않는다
 _NUMCH = set('영일이삼사오육칠팔구십백천만억조원퍼센트하나둘셋넷다섯여섯일곱여덟아홉열스무물서른마흔쉰예순일흔여든아흔한두세네째')
 def _spots(script, heard):
@@ -556,7 +597,7 @@ def consensus(script, h1, h2, win=2):
     s1, s2 = _spots(script, h1), _spots(script, h2)
     return [(x[2] or '·', x[3], y[3]) for x in s1 for y in s2 if x[0] - win <= y[1] and y[0] - win <= x[1]]
 
-def readback(ep, only=None, resume=False):
+def readback(ep, only=None, resume=False, batch=False):
     # 공개 전 필수(lessons 9): 문장마다 받아써서 대본 숫자와 대조하고, 길이가 대본보다 훨씬 긴 문장(지시문을 읽은 앞머리 의심)을 찾는다.
     # 숫자가 다르게 들리면 다른 받아쓰기 모델 2개로 더 듣고, 셋 중 둘 이상이 대본과 다를 때만 '다시 만들 문장'으로 적는다.
     # 10/18: 줄마다 gemini-3.5-flash로 한 번 더 받아쓴다(합의오독). R-1 2:5 '안 했어도'→'안 해서'를 sim 0.78 무표시로 '일치'라 읽었던 것.
@@ -588,7 +629,31 @@ def readback(ep, only=None, resume=False):
                 time.sleep((25 if e.code == 503 else 10) * (tries + 1))   # 503(과부하)은 길게 기다린다 — 10/18 flash-latest 503 연속
             except Exception: time.sleep(10 * (tries + 1))
         return None
-    def tx2(fn):
+    def tx_raw(wavbytes, mdl, prompt):
+        body = {'contents': [{'parts': [{'inlineData': {'mimeType': 'audio/wav', 'data': base64.b64encode(wavbytes).decode()}}, {'text': prompt}]}], 'generationConfig': {'temperature': 0}}
+        for tries in range(3):
+            try:
+                r = json.load(urllib.request.urlopen(urllib.request.Request(f"https://generativelanguage.googleapis.com/v1beta/models/{mdl}:generateContent?key={key()}",
+                    data=json.dumps(body).encode(), headers={'Content-Type': 'application/json'}), timeout=300))
+                return r['candidates'][0]['content']['parts'][0].get('text', '').strip()
+            except urllib.error.HTTPError as e:
+                if e.code == 429 and 'PerDay' in e.read().decode(errors='ignore'): _DEAD.add(mdl); return None
+                time.sleep((25 if e.code == 503 else 10) * (tries + 1))
+            except Exception: time.sleep(10 * (tries + 1))
+        return None
+    pre = {}
+    if batch:   # 둘째 받아쓰기를 먼저 묶음으로(이번에 다시 볼 줄만)
+        keys = []
+        for si, sec in enumerate(v['sections']):
+            for li, l in enumerate(sec['lines']):
+                at = f'{si}:{li}'; o = old.get(at)
+                if (only and at not in only) or not l.get('audio'): continue
+                if resume and o and o.get('text') == l['text'] and o.get('audio') == l['audio'] and set(SECOND) & set(o.get('models', [])) and not o.get('flag'): continue
+                keys.append((at, os.path.join(PUB, l['audio'].replace('/', os.sep))))
+        print(f'  둘째 받아쓰기 묶음: {len(keys)}줄 → {(len(keys) + BATCH_N - 1) // BATCH_N}요청')
+        pre = batch_second(ep, v, tx_raw, keys)
+    def tx2(fn, at=None):
+        if batch: return pre.get(at, (None, FLASH))
         for m in SECOND:
             if m in _DEAD: continue
             h = tx(fn, m)
@@ -610,7 +675,7 @@ def readback(ep, only=None, resume=False):
             o = old.get(at)
             if resume and o and o.get('text') == l['text'] and o.get('audio') == l['audio'] and set(SECOND) & set(o.get('models', [])) and not o.get('flag'): continue
             fn = os.path.join(PUB, l['audio'].replace('/', os.sep)); want = num(l['text'])
-            h1 = tx(fn, 'gemini-3.5-flash-lite'); hf, mf = tx2(fn)
+            h1 = tx(fn, 'gemini-3.5-flash-lite'); hf, mf = tx2(fn, at)
             votes = [h1, hf]; models = ['gemini-3.5-flash-lite', mf]
             miss = lambda h: [x for x in want if x not in num(h, words=True)]          # 대본 숫자가 다 들렸는가(대본의 '열두 달'이 '12달'로 들리는 건 괜찮다)
             if any(h is not None and miss(h) for h in votes):
@@ -630,7 +695,7 @@ def readback(ep, only=None, resume=False):
             failed = h1 is None or hf is None
             flag = ('숫자 ' if wrong >= 2 else '') + ('길이 ' if slow else '') + (f'밀림의심({sim:.2f}) ' if shift else '')                 + (f'합의오독({pair:.2f}/{max(sm(l["say"], h1), sm(l["say"], hf)):.2f} ' + ' '.join(f'{a}→{b}/{c}' for a, b, c in spots[:3]) + ') ' if agree else '') + ('받아쓰기 실패' if failed else '')
             out.append({'at': at, 'text': l['text'], 'say': l['say'], 'audio': l['audio'], 'heard': votes, 'models': models,
-                        'sim': round(sim, 2), 'pair': pair and round(pair, 2), 'flag': flag.strip()})
+                        'sim': round(sim, 2), 'pair': pair and round(pair, 2), 'flag': flag.strip(), **({'batch2': True} if batch else {})})
             if flag.strip(): bad.append(f'{at} {flag.strip()} | {l["text"][:30]} | 들림 {(hf or h1 or "")[:40]}')
             fails = fails + 1 if failed else 0
             if len(out) % 10 == 0: save()
@@ -645,7 +710,7 @@ def readback(ep, only=None, resume=False):
 if __name__ == '__main__':
     cmd, ep = sys.argv[1], os.path.abspath(sys.argv[2]); mr = int(sys.argv[sys.argv.index('--maxreq') + 1]) if '--maxreq' in sys.argv else 9
     cap = int(sys.argv[sys.argv.index('--cap') + 1]) if '--cap' in sys.argv else 0
-    if cmd == 'readback': sys.exit(0 if readback(ep, sys.argv[3].split(',') if len(sys.argv) > 3 and not sys.argv[3].startswith('--') else None, resume='--resume' in sys.argv) else 1)
+    if cmd == 'readback': sys.exit(0 if readback(ep, sys.argv[3].split(',') if len(sys.argv) > 3 and not sys.argv[3].startswith('--') else None, resume='--resume' in sys.argv, batch='--batch' in sys.argv) else 1)
     elif cmd == 'fixcut': fixcut(ep, int(sys.argv[3]), mr, dry='--dry' in sys.argv, cap=cap)
     elif cmd == 'cutat': cutat(ep, int(sys.argv[3]), [float(x) for x in sys.argv[4].split(',')], mr, cap)
     elif cmd == 'plan': make(ep, mr, dry=True, cap=cap)

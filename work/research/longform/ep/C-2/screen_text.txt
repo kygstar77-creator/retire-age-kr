@@ -102,7 +102,7 @@
 [scenes.15.data.license] Pexels 15161525 무료(Phil Desforges)
 [scenes.15.data.who] 정우 씨 · 가상 인물
 [scenes.15.data.say] 이미 비싸진 달러
-[scenes.16.lines.0.text] 그래서 첫해 지수가 30% 가까이 올랐는데도, 원화로는 10%가 안 됐습니다.
+[scenes.16.lines.0.text] 그래서 첫해 지수가 30% 가까이 올랐어요. 그런데 원화로는 10%가 안 됐습니다.
 [scenes.16.lines.0.cap] 원/달러 연말 1997년 1,415.2원 → 1998년 1,207.8원
 [scenes.16.data.title] 1998년, 정우 씨 첫해
 [scenes.16.data.a] +28.6%
@@ -292,7 +292,7 @@
 [scenes.38.data.license] Pexels 6326928 무료(kaboompics.com)
 [scenes.38.data.who] 이유 셋 · 환율
 [scenes.38.data.say] 원화로 사는 사람에겐 환율도
-[scenes.39.lines.0.text] 그래서 첫 질문의 답은 이래요. 매달 200만원은, 시작한 해에 따라 평생 가기도 하고 열네 해 만에 끝나기도 했습니다.
+[scenes.39.lines.0.text] 그래서 첫 질문의 답은 이래요. 매달 200만원은, 시작한 해에 따라 평생 가기도 하고 열네 해째에 끝나기도 했습니다.
 [scenes.39.data.license] Pexels 36282124 무료(Ben Kyselka)
 [scenes.39.data.say] 시작한 해가 갈랐다
 [scenes.39.data.side] left
@@ -643,7 +643,7 @@
 [scenes.88.data.license] Pexels 7593891 무료(Pavel Danilyuk)
 [scenes.88.data.say] 오른 몫만 이익
 [scenes.88.data.side] left
-[scenes.89.lines.0.text] 그래서 정우 씨는 처음 두 해 세금이 없었어요. 판 이익이 250만원 안이었거든요.
+[scenes.89.lines.0.text] 그래서 정우 씨는 처음 두 해 세금이 없었어요. 판 이익이 250만원을 넘지 않았거든요.
 [scenes.89.data.title] 처음 두 해 세금
 [scenes.89.data.v] 0원
 [scenes.89.data.s] 판 이익이 250만원 안
@@ -758,7 +758,7 @@
 [scenes.106.data.license] Pexels 6785745 무료(Marcus Aurelius)
 [scenes.106.data.say] 세금 낸 뒤의 돈으로 계산
 [scenes.106.data.side] left
-[scenes.107.lines.0.text] 건보료를 직접 내고 이자나 배당 소득도 있는 분이라면, 고른 길이 건보료에 잡히는 길인지 먼저 확인하세요.
+[scenes.107.lines.0.text] 건보료를 직접 내고 이자나 배당 소득도 있는 분이라면, 고른 방법이 건보료에 잡히는 길인지 먼저 확인하세요.
 [scenes.107.lines.1.text] 퇴직금을 막 받은 분이라면, 일시금으로 받을지 IRP로 연금 수령할지부터 정하는 게 순서입니다.
 [scenes.107.lines.2.text] IRP 안에서 굴린 경우는 세금 규칙이 또 달라서, 이 영상 숫자에는 넣지 않았어요.
 [scenes.107.data.title] 누구라면

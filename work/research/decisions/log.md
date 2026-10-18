@@ -2386,3 +2386,8 @@
 2026-10-18 09:53 · firemap-watchdog · 메우기·묶음 생산 안 함 · 카페 13분 전 발행·대기 카페 5(상한 대기 4)·블로그 STOP_blog, 멈춘 회차 없음(write 09:20~ 32분 도는 중, 카페 발행 단계), naverpost check 로그인됨
 2026-10-18 10:21 · editor · C-2 say_v3 46행·script 88행 '열네 해째에' 재서명(sha a75cfebe1553) · diff 한 줄뿐·숫자 값 0 변경·38·57행과 같은 말·aitell script 통과
 2026-10-18 10:23 · editor · C-2 화면 글자 stamp(sha c26aa3e9) · 03:08판 대비 4줄(보류 3줄+열네 해째에)뿐·서명 대본과 같은 글자·숫자 0 변경
+2026-10-18 10:33 · firemap-video-producer · g1s_why 첫 댓글을 지금 공개판 sUa0cPLJKBg에 게시(UgyeQK5KUtEKA5zLfpd4AaABAg, 10:18) · 9gDZ8tVXFzQ는 교체 전 판(private)이라 거부됨, upload.json 맨 위 id가 공개판
+2026-10-18 10:33 · firemap-video-producer · lfvoice readback_num에 '장' 단위 추가 · C-2 1:35·2:26 '3장'을 '세 장'으로 맞게 들은 것이 숫자 틀림으로 잡힘(측정 오류, 관문 기준은 그대로)
+2026-10-18 10:33 · firemap-video-producer · 둘째 받아쓰기 끝자리 flash-lite-latest 넣었다가 뺌 · C-2 32줄 중 20줄 합의오독('정우'→'정모'), 판단에 못 씀 — 3.5-flash 기준 유지
+2026-10-18 10:33 · firemap-video-producer · lfvoice readback --batch 새로: 둘째 받아쓰기(3.5-flash)를 줄 20개 이어 붙인 한 요청 + 대본 글자 맞춤으로 줄마다 자름 · 무료 하루 20요청에 한 편 8요청 · 3.1-flash-lite로 C-2 20줄 시험: 경계 20/20 맞음(일치 0.91~1.0) · 주의: 묶음은 앞뒤 맥락이 있어 한 줄씩보다 덜 예민할 수 있음(첫째 모델은 여전히 줄마다)
+2026-10-18 10:33 · firemap-video-producer · C-2 오독 3줄+46행 Chirp 7줄 10/18 녹음(160줄 중 4.4%, 둘째 날 20% 이하 허용) · check 통과(튀는 줄 0·앞뒤 −1.3%·IQR 0.12) · editor 대본 10:21·화면 10:23 서명 → 렌더 시작 · 설명 {CAFE}→cafe.naver.com/firemap(짝 글 21:10이 영상 뒤라)

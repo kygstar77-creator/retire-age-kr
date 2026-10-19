@@ -1916,7 +1916,8 @@
    "owner": "firemap-write",
    "gates_ok": "2026-10-19 14:13",
    "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 연봉 실수령액(66,600) → https://firemap.kr/calc/salary — 글 질문이 계산기와 맞을 때만 줄 넣기 | ymf2wait1019: 범위 규칙으로 보류 | firemap-write 14:13: kospioct1019 '올해 코스피 1997년 이후 흔들림 순위'(#300 재탕 각도 버림) 관문 통과 — 레드팀 숫자 전부 맞음·지적 반영, 58세 3차 심각0, editgate auto, 제목8·8 표지9·8",
-   "pkg": "kospioct1019"
+   "pkg": "kospioct1019",
+   "published": "https://cafe.naver.com/firemap/329 19:20 verify OK 1461자"
   },
   {
    "at": "2026-10-19 19:20",
@@ -1929,10 +1930,11 @@
   {
    "at": "2026-10-19 19:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "avgmid1019",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · yt_pair: n2s_middle(H04T4PbkGCY, 19:20 쇼츠) — 질문 하나 + N-2 원본 링크"
+   "gates_ok": "2026-10-19 20:15",
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · yt_pair: n2s_middle(H04T4PbkGCY, 19:20 쇼츠) — 질문 하나 + N-2 원본 링크 | firemap-write-b 20:15: TBD·비축0 → 새 편 avgmid1019 '평균 월급 뉴스마다 다른 이유, 중위는 288만원'(n2s_middle 짝, 돈 관리) 관문 통과 — 새 사실: 고용노동부 9/30 7월 평균 431만 6천원·4월 403만 1천원 · 레드팀 틀림2·오해6 반영 · 이해 시험 2차 6명 뜻 틀림 0 · 제목 짝 비교 1위 8.2 · editgate auto",
+   "pkg": "avgmid1019"
   },
   {
    "at": "2026-10-19 21:10",

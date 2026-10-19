@@ -5,7 +5,8 @@
 import React from 'react';
 import {AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, Easing, delayRender, continueRender} from 'remotion';
 import {T, F, CL, FONT_CSS, Flame} from './parts/fm';
-import {TallyFrame, TallyCaption, TallyLine, TallyArt, SAFE} from './motion/TallyFrame';
+import {TallyFrame, TallyCaption, TallyLine, TallyArt, SAFE, tallyStarts} from './motion/TallyFrame';
+import {EqRow} from './motion/EqRow';
 import {TallyBroll} from './motion/TallyBroll';
 import {TallyBars} from './motion/TallyBars';
 import {KTable, KCells, KPrice, KCal, KZones, KMemo, KStairs, KBand, KFive} from './parts/t1kit';
@@ -128,7 +129,17 @@ const List5: React.FC<{s: CScene}> = ({s}) => {   // 질문 다섯 줄
   );
 };
 
-const KIND: Record<string, React.FC<{s: CScene}>> = {big: Big, pair: Pair, rows: Rows, bars: Bars, ask: Ask, list5: List5,
+// 10/19 PD: 2장 계산 세 장면 = motion EqRow(ep/T-1/motion.md) — 박자 = 줄 시작(tallyStarts), data.pre = 앞 실사로 뺀 줄 길이(그만큼 박자를 앞당김)
+const Mo: React.FC<{s: CScene}> = ({s}) => {
+  const d = s.data; const L = tl(s.lines); const B = [...(d.pre ? [-d.pre] : []), ...tallyStarts(L)];
+  return (
+    <TallyFrame title={d.title} sub={d.sub} source={d.source} lines={L}>
+      <EqRow {...d.p} beats={B} />
+    </TallyFrame>
+  );
+};
+
+const KIND: Record<string, React.FC<{s: CScene}>> = {big: Big, pair: Pair, rows: Rows, bars: Bars, ask: Ask, list5: List5, mo: Mo,
   table: KTable, cells: KCells, price: KPrice, cal: KCal, zones: KZones, memo: KMemo, stairs: KStairs, band: KBand, five: KFive};
 
 // 글꼴(PD)을 다 받은 뒤 그린다 — 10/17 C-2 미리보기에서 숫자가 대체 글꼴로 찍힌 프레임이 섞였다(@font-face만으로는 렌더가 기다리지 않음)

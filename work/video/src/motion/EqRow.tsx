@@ -31,7 +31,8 @@ export const EqRow: React.FC<EqRowProps> = (p) => {
   // 지금 줄
   let ri = 0; p.rows.forEach((row, i) => { if (i > 0 && f >= at(row.parts[0].at)) ri = i; });
   const cur = p.rows[ri];
-  const toks = [...cur.parts.map((q) => ({...q, w: em(q.t)})), {t: '=', op: true, at: cur.parts[cur.parts.length - 1].at + 0.12, w: em('=')}];
+  const toks = [...cur.parts.map((q) => ({...q, w: em(q.t) * (q.op ? 1 : 1.1)})),   // 값 1.1배: '만원'·'%p' 실제 폭이 어림보다 넓어 키 칸이 '='를 덮음(10/19 T-1 렌더 겹침)
+    {t: '=', op: true, at: cur.parts[cur.parts.length - 1].at + 0.12, w: em('=')}];
   const ansW = Math.max(em(cur.ans) * 1.15, 1.6);   // 짧은 답('16%')은 어림보다 넓어 칸 끝에 붙음(10/19 심사)
   const totalEm = toks.reduce((a, q) => a + q.w + GAP, 0) + ansW + 0.3;   // 0.3 = '='와 손 동그라미 사이
   const PAD = 48; const nV = cur.parts.filter((q) => !q.op).length;   // 값 조각 = 계산기 키 칸(옆 여백 24씩)
@@ -65,7 +66,12 @@ export const EqRow: React.FC<EqRowProps> = (p) => {
             <span style={{fontSize: 30, marginRight: 22}}>{h.label}</span>{h.parts.map((q) => q.t).join(' ')} = <span style={{fontWeight: 800, color: T.ink2}}>{h.ans}</span></div>; })}
         {/* 지금 줄 이름표 */}
         <div style={{position: 'absolute', left: center ? L : L, width: W, textAlign: center ? 'center' : 'left', top: yCur - 66, opacity: rowIn * g(f, at(cur.parts[0].at) - 6), ...F, fontWeight: 700, fontSize: 36, color: T.ink2, whiteSpace: 'nowrap'}}>{cur.label}</div>
-        <div style={{opacity: rowIn}}>{items}
+        <div style={{opacity: rowIn}}>
+          {/* 답 바탕은 글자 밑에 — 위에 그리면 겹침 관문이 답 숫자를 '가려짐'으로 셈(10/19 T-1 렌더 25건) */}
+          <svg width={1920} height={1080} style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}}>
+            {open && <rect x={ax - 36} y={yCur - Z * 0.22} width={aw + 72} height={Z * 1.44} rx={22} fill={T.soft} opacity={ao} />}
+          </svg>
+          {items}
           {/* 답 칸: '?' → 주황 답 */}
           <div style={{position: 'absolute', left: ax, top: yCur, width: aw, opacity: ansShow}}>
             {!open ? <div style={{...val, color: T.ink3, textAlign: 'center'}}>?</div>
@@ -74,7 +80,6 @@ export const EqRow: React.FC<EqRowProps> = (p) => {
           </div>
           <svg width={1920} height={1080} style={{position: 'absolute', left: 0, top: 0, overflow: 'visible'}}>
             {!open && ansShow > 0.01 && <line x1={ax} x2={ax + aw * ansShow} y1={yCur + Z + 8} y2={yCur + Z + 8} stroke={T.ink3} strokeWidth={4} strokeDasharray={solid ? undefined : '12 8'} strokeLinecap="round" />}
-            {open && <rect x={ax - 36} y={yCur - Z * 0.22} width={aw + 72} height={Z * 1.44} rx={22} fill={T.soft} opacity={ao} style={{mixBlendMode: 'multiply'}} />}
             {open && <HandCircle color={p.tail && f >= at(p.tail.at) ? T.ink3 : undefined} cx={ax + aw / 2} cy={yCur + Z * 0.5} rx={aw / 2 + 36} ry={Z * 0.72} p={circ} />}
           </svg>
         </div>

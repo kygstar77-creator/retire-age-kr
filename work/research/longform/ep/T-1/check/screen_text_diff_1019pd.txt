@@ -1,0 +1,109 @@
+86c86
+< [lines.0.text] 왜 하필 12억일까요? 법 조문에는 이 금액을 정한 이유가 적혀 있지 않아요.
+---
+> [lines.0.text] 왜 하필 12억일까요? 법에는 이 금액을 정한 이유가 나와 있지 않아요.
+327,336c327,339
+< [data.title] 2029년, 같은 20억 집
+< [data.bars.0.0] 수현 씨
+< [data.bars.0.2] 1억 4,777만원
+< [data.bars.0.3] rise
+< [data.bars.1.0] 정민 씨
+< [data.bars.1.2] 1,241만원
+< [data.bars.1.3] fall
+< [data.dir] h
+< [data.icon] Scale
+< [data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
+---
+> [data.title] 같은 해, 세금은 몇 배?
+> [data.sub] 같은 20억 집 · 두 사람
+> [data.source] 재정경제부 2026 세법개정안 상세본 p.58·p.68 · 파이어맵 계산(지방세 포함)
+> [data.p.seed] T-1-ratio
+> [data.p.who] 정민 씨·수현 씨 · 가상 인물
+> [data.p.note] 같은 20억 집 · 2029년에 판다면 · 정부안 · 지방세 포함
+> [data.p.rows.0.label] 2029년 세금, 두 사람
+> [data.p.rows.0.parts.0.t] 1억 4,777만원
+> [data.p.rows.0.parts.0.sub] 수현 씨 · 공제율 16% · 기본공제 250만원
+> [data.p.rows.0.parts.1.t] ÷
+> [data.p.rows.0.parts.2.t] 1,241만원
+> [data.p.rows.0.parts.2.sub] 정민 씨 · 공제율 80% · 기본공제 2,500만원
+> [data.p.rows.0.ans] 11.9배
+345,357c348,362
+< [data.title] 수현 씨 2029년 · 살았던 햇수별
+< [data.bars.0.0] 거주 2년
+< [data.bars.0.2] 1억 4,777만원
+< [data.bars.0.3] rise
+< [data.bars.1.0] 거주 3년
+< [data.bars.1.2] 1억 3,088만원
+< [data.bars.1.3] accent
+< [data.bars.2.0] 거주 4년
+< [data.bars.2.2] 1억 1,398만원
+< [data.bars.2.3] fall
+< [data.dir] v
+< [data.icon] CalendarDays
+< [data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
+---
+> [data.title] 살았던 한 해의 값
+> [data.sub] 수현 씨 집 · 2029년
+> [data.source] 파이어맵 계산 · 정부안 공제율(상세본 p.58)
+> [data.p.seed] T-1-year-b
+> [data.p.who] 수현 씨 · 가상 인물
+> [data.p.note] 20억·취득 8억·10년 보유 · 2029년 정부안 · 지방세 포함 · 파이어맵 계산
+> [data.p.rows.0.label] 수현 씨 · 거주 2년 → 3년
+> [data.p.rows.0.parts.0.t] 1억 4,777만원
+> [data.p.rows.0.parts.0.sub] 거주 2년
+> [data.p.rows.0.parts.1.t] −
+> [data.p.rows.0.parts.2.t] 1억 3,088만원
+> [data.p.rows.0.parts.2.sub] 거주 3년
+> [data.p.rows.0.ans] 약 1,690만원
+> [data.p.rows.0.ansSub] 한 해 더 살면 줄어드는 세금
+> [data.p.tail.text] 집마다 다름 · 번 돈이 클수록 커짐
+383c388
+< [lines.1.text] 갖고 있던 해가 살았던 해보다 한 해 많을 때마다, 2029년 공제율은 지금보다 4%씩 낮아집니다.
+---
+> [lines.1.text] 갖고 있던 해가 살았던 해보다 한 해 많을 때마다, 2029년 공제율은 지금보다 4%포인트씩 낮아집니다.
+386,394c391,417
+< [data.title] 한 해 차이마다 4%씩
+< [data.v1] 48%
+< [data.s1] 지금 · 수현 씨
+< [data.c1] ink
+< [data.v2] 16%
+< [data.s2] 2029년 · 8년 차이
+< [data.c2] rise
+< [data.icon] TrendingDown
+< [data.source] 재정경제부 2026 세법개정안 상세본 p.58 · 파이어맵 계산
+---
+> [data.title] 햇수 차이 한 해마다 4%p
+> [data.sub] 갖고 있던 해 − 살았던 해
+> [data.source] 재정경제부 2026 세법개정안 상세본 p.58 · 소득세법 §95②
+> [data.p.seed] T-1-gap
+> [data.p.who] 수현 씨 · 가상 인물
+> [data.p.note] 거주 2년 이상 · 보유·거주 모두 10년 이하일 때 · 정부안
+> [data.p.rows.0.label] 수현 씨 지금 공제율 · 보유 10년·거주 2년
+> [data.p.rows.0.parts.0.t] 보유 40%
+> [data.p.rows.0.parts.0.sub] 10년 × 4%
+> [data.p.rows.0.parts.1.t] +
+> [data.p.rows.0.parts.2.t] 거주 8%
+> [data.p.rows.0.parts.2.sub] 2년 × 4%
+> [data.p.rows.0.ans] 48%
+> [data.p.rows.1.label] 낮아지는 폭
+> [data.p.rows.1.parts.0.t] 4%p
+> [data.p.rows.1.parts.0.sub] 한 해 차이마다
+> [data.p.rows.1.parts.1.t] ×
+> [data.p.rows.1.parts.2.t] 8년
+> [data.p.rows.1.parts.2.sub] 보유 10년 − 거주 2년
+> [data.p.rows.1.ans] 32%p
+> [data.p.rows.2.label] 2029년 공제율
+> [data.p.rows.2.parts.0.t] 48%
+> [data.p.rows.2.parts.0.sub] 지금
+> [data.p.rows.2.parts.1.t] −
+> [data.p.rows.2.parts.2.t] 32%p
+> [data.p.rows.2.parts.2.sub] 8년 차이
+> [data.p.rows.2.ans] 16%
+508c531
+< [lines.0.text] 서울은 지난해 10월에 25개 구 전체가 조정대상지역으로 지정됐어요.
+---
+> [lines.0.text] 서울은 작년 10월에 25개 구 전체가 조정대상지역으로 지정됐어요.
+876c899
+< [data.license] Pexels 4553301 무료(cottonbro studio)
+---
+> [data.license] Pexels 4553292 무료(cottonbro studio)

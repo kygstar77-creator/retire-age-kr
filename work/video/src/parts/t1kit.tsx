@@ -180,7 +180,7 @@ export const KStairs: React.FC<{s: KScene}> = ({s}) => {
     <Frame s={s}>
       {Array.from({length: N}).map((_, i) => { const o = kease(f, 4 + i * 4, 10); const c = i === one && a1 > 0.5 ? T.rise : i === half && a2 > 0.5 ? T.fall : '#d9dde3';
         return <div key={i} style={{position: 'absolute', left: X + i * SW, top: BOT - h(i) * o, width: SW - 10, height: h(i) * o, background: c, borderRadius: '12px 12px 0 0'}} />; })}
-      <div style={{position: 'absolute', left: X, width: SW - 10, top: BOT + 6, textAlign: 'center', ...F, fontWeight: 800, fontSize: 48, color: T.ink2}}>{d.low}</div>
+      <div style={{position: 'absolute', left: X, width: SW - 10, top: BOT - h(0) - 64, textAlign: 'center', ...F, fontWeight: 800, fontSize: 48, color: T.ink2}}>{d.low}</div>{/* 10/19 PD: 막대 아래 두면 근거 줄(cap)과 겹침 → 45%처럼 막대 위 */}
       <div style={{position: 'absolute', left: X + 7 * SW, width: SW - 10, top: BOT - h(7) - 64, textAlign: 'center', ...F, fontWeight: 800, fontSize: 48, color: T.ink2}}>{d.high}</div>
       <div style={{position: 'absolute', left: X + one * SW - 40, top: BOT - h(one) - 150, opacity: a1, display: 'flex', flexDirection: 'column', alignItems: 'center', width: SW + 70}}>
         <span style={{...F, fontWeight: 800, fontSize: 44, color: '#fff', background: T.rise, borderRadius: 12, padding: '2px 16px', whiteSpace: 'nowrap'}}>{d.one}</span>

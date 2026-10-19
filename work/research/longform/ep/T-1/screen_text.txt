@@ -83,7 +83,7 @@
 [scenes.10.data.buy] 산 값 8억
 [scenes.10.data.gain] 번 돈 12억
 [scenes.10.data.taxed] 세금 계산 4.8억
-[scenes.11.lines.0.text] 왜 하필 12억일까요? 법 조문에는 이 금액을 정한 이유가 적혀 있지 않아요.
+[scenes.11.lines.0.text] 왜 하필 12억일까요? 법에는 이 금액을 정한 이유가 나와 있지 않아요.
 [scenes.11.data.license] Pexels 6963487 무료(Mikhail Nilov)
 [scenes.11.data.say] 왜 하필 이 금액일까
 [scenes.11.data.side] left
@@ -324,16 +324,19 @@
 [scenes.38.lines.0.text] 같은 2029년에 수현 씨 세금은 1억 5천만원에 조금 못 미칩니다.
 [scenes.38.lines.1.text] 두 사람이 열두 배 가까이 벌어지는 건, 이 두 가지가 겹쳐서예요.
 [scenes.38.lines.1.cap] 1억 4,777만원 ÷ 1,241만원 = 11.9배 · 공제율 16% vs 80% · 기본공제 250만 vs 2,500만
-[scenes.38.data.title] 2029년, 같은 20억 집
-[scenes.38.data.bars.0.0] 수현 씨
-[scenes.38.data.bars.0.2] 1억 4,777만원
-[scenes.38.data.bars.0.3] rise
-[scenes.38.data.bars.1.0] 정민 씨
-[scenes.38.data.bars.1.2] 1,241만원
-[scenes.38.data.bars.1.3] fall
-[scenes.38.data.dir] h
-[scenes.38.data.icon] Scale
-[scenes.38.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
+[scenes.38.data.title] 같은 해, 세금은 몇 배?
+[scenes.38.data.sub] 같은 20억 집 · 두 사람
+[scenes.38.data.source] 재정경제부 2026 세법개정안 상세본 p.58·p.68 · 파이어맵 계산(지방세 포함)
+[scenes.38.data.p.seed] T-1-ratio
+[scenes.38.data.p.who] 정민 씨·수현 씨 · 가상 인물
+[scenes.38.data.p.note] 같은 20억 집 · 2029년에 판다면 · 정부안 · 지방세 포함
+[scenes.38.data.p.rows.0.label] 2029년 세금, 두 사람
+[scenes.38.data.p.rows.0.parts.0.t] 1억 4,777만원
+[scenes.38.data.p.rows.0.parts.0.sub] 수현 씨 · 공제율 16% · 기본공제 250만원
+[scenes.38.data.p.rows.0.parts.1.t] ÷
+[scenes.38.data.p.rows.0.parts.2.t] 1,241만원
+[scenes.38.data.p.rows.0.parts.2.sub] 정민 씨 · 공제율 80% · 기본공제 2,500만원
+[scenes.38.data.p.rows.0.ans] 11.9배
 [scenes.39.lines.0.text] 그럼 살았던 해 한 해는 돈으로 얼마일까요?
 [scenes.39.data.license] Pexels 35082942 무료(Nothing Ahead)
 [scenes.39.data.say] 살았던 한 해의 값
@@ -342,19 +345,21 @@
 [scenes.40.lines.0.text] 수현 씨 집으로 계산하면, 2029년엔 한 해를 더 살았을 때마다 세금이 1,700만원쯤 줄어듭니다.
 [scenes.40.lines.0.cap] 20억·취득 8억·10년 보유 · 한 해에 약 1,690만원 · 파이어맵 계산
 [scenes.40.lines.1.text] 이 값은 집마다 달라요. 번 돈이 클수록 한 해의 값도 커집니다.
-[scenes.40.data.title] 수현 씨 2029년 · 살았던 햇수별
-[scenes.40.data.bars.0.0] 거주 2년
-[scenes.40.data.bars.0.2] 1억 4,777만원
-[scenes.40.data.bars.0.3] rise
-[scenes.40.data.bars.1.0] 거주 3년
-[scenes.40.data.bars.1.2] 1억 3,088만원
-[scenes.40.data.bars.1.3] accent
-[scenes.40.data.bars.2.0] 거주 4년
-[scenes.40.data.bars.2.2] 1억 1,398만원
-[scenes.40.data.bars.2.3] fall
-[scenes.40.data.dir] v
-[scenes.40.data.icon] CalendarDays
-[scenes.40.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
+[scenes.40.data.title] 살았던 한 해의 값
+[scenes.40.data.sub] 수현 씨 집 · 2029년
+[scenes.40.data.source] 파이어맵 계산 · 정부안 공제율(상세본 p.58)
+[scenes.40.data.p.seed] T-1-year-b
+[scenes.40.data.p.who] 수현 씨 · 가상 인물
+[scenes.40.data.p.note] 20억·취득 8억·10년 보유 · 2029년 정부안 · 지방세 포함 · 파이어맵 계산
+[scenes.40.data.p.rows.0.label] 수현 씨 · 거주 2년 → 3년
+[scenes.40.data.p.rows.0.parts.0.t] 1억 4,777만원
+[scenes.40.data.p.rows.0.parts.0.sub] 거주 2년
+[scenes.40.data.p.rows.0.parts.1.t] −
+[scenes.40.data.p.rows.0.parts.2.t] 1억 3,088만원
+[scenes.40.data.p.rows.0.parts.2.sub] 거주 3년
+[scenes.40.data.p.rows.0.ans] 약 1,690만원
+[scenes.40.data.p.rows.0.ansSub] 한 해 더 살면 줄어드는 세금
+[scenes.40.data.p.tail.text] 집마다 다름 · 번 돈이 클수록 커짐
 [scenes.41.lines.0.text] 그래서 내 집이라면 확인할 건 두 숫자예요. 갖고 있던 햇수와 실제로 살았던 햇수.
 [scenes.41.data.license] Pexels 7710453 무료(https://kaboompics.com/)
 [scenes.41.data.say] 확인할 건 두 숫자
@@ -380,18 +385,36 @@
 [scenes.43.data.side] left
 [scenes.43.data.chapter] 질문 ②
 [scenes.44.lines.0.text] 조심할 것도 있어요. 둘 다 10년을 넘지 않는 경우라면요.
-[scenes.44.lines.1.text] 갖고 있던 해가 살았던 해보다 한 해 많을 때마다, 2029년 공제율은 지금보다 4%씩 낮아집니다.
+[scenes.44.lines.1.text] 갖고 있던 해가 살았던 해보다 한 해 많을 때마다, 2029년 공제율은 지금보다 4%포인트씩 낮아집니다.
 [scenes.44.lines.2.text] 수현 씨는 여덟 해 차이라서, 48%가 16%로 낮아졌죠.
 [scenes.44.lines.2.cap] 보유·거주 모두 10년 이하일 때 · 차이 = 4 × (보유 − 거주) · 수현 씨 8년 차이 = 32%p
-[scenes.44.data.title] 한 해 차이마다 4%씩
-[scenes.44.data.v1] 48%
-[scenes.44.data.s1] 지금 · 수현 씨
-[scenes.44.data.c1] ink
-[scenes.44.data.v2] 16%
-[scenes.44.data.s2] 2029년 · 8년 차이
-[scenes.44.data.c2] rise
-[scenes.44.data.icon] TrendingDown
-[scenes.44.data.source] 재정경제부 2026 세법개정안 상세본 p.58 · 파이어맵 계산
+[scenes.44.data.title] 햇수 차이 한 해마다 4%p
+[scenes.44.data.sub] 갖고 있던 해 − 살았던 해
+[scenes.44.data.source] 재정경제부 2026 세법개정안 상세본 p.58 · 소득세법 §95②
+[scenes.44.data.p.seed] T-1-gap
+[scenes.44.data.p.who] 수현 씨 · 가상 인물
+[scenes.44.data.p.note] 거주 2년 이상 · 보유·거주 모두 10년 이하일 때 · 정부안
+[scenes.44.data.p.rows.0.label] 수현 씨 지금 공제율 · 보유 10년·거주 2년
+[scenes.44.data.p.rows.0.parts.0.t] 보유 40%
+[scenes.44.data.p.rows.0.parts.0.sub] 10년 × 4%
+[scenes.44.data.p.rows.0.parts.1.t] +
+[scenes.44.data.p.rows.0.parts.2.t] 거주 8%
+[scenes.44.data.p.rows.0.parts.2.sub] 2년 × 4%
+[scenes.44.data.p.rows.0.ans] 48%
+[scenes.44.data.p.rows.1.label] 낮아지는 폭
+[scenes.44.data.p.rows.1.parts.0.t] 4%p
+[scenes.44.data.p.rows.1.parts.0.sub] 한 해 차이마다
+[scenes.44.data.p.rows.1.parts.1.t] ×
+[scenes.44.data.p.rows.1.parts.2.t] 8년
+[scenes.44.data.p.rows.1.parts.2.sub] 보유 10년 − 거주 2년
+[scenes.44.data.p.rows.1.ans] 32%p
+[scenes.44.data.p.rows.2.label] 2029년 공제율
+[scenes.44.data.p.rows.2.parts.0.t] 48%
+[scenes.44.data.p.rows.2.parts.0.sub] 지금
+[scenes.44.data.p.rows.2.parts.1.t] −
+[scenes.44.data.p.rows.2.parts.2.t] 32%p
+[scenes.44.data.p.rows.2.parts.2.sub] 8년 차이
+[scenes.44.data.p.rows.2.ans] 16%
 [scenes.45.lines.0.text] 아주 비싼 집이라면 하나가 더 걸려요.
 [scenes.45.data.license] Pexels 32986074 무료(PUWOOK Kwak)
 [scenes.45.data.say] 아주 비싼 집이라면
@@ -505,7 +528,7 @@
 [scenes.58.data.say] 댓글 단 분은 예전 규칙
 [scenes.58.data.side] left
 [scenes.58.data.chapter] 질문 ③
-[scenes.59.lines.0.text] 서울은 지난해 10월에 25개 구 전체가 조정대상지역으로 지정됐어요.
+[scenes.59.lines.0.text] 서울은 작년 10월에 25개 구 전체가 조정대상지역으로 지정됐어요.
 [scenes.59.lines.0.cap] 2025.10.15 대책 · 경기 12곳도 · 지금 지정 여부는 국토교통부 공고로 확인
 [scenes.59.lines.1.text] 서울 안에서 갈아타는 분이라면 짧아진 기한부터 봐야 한다는 뜻이죠.
 [scenes.59.data.title] 서울은 전체
@@ -578,7 +601,7 @@
 [scenes.66.data.items.1] 새 집 산 날
 [scenes.66.data.items.2] 새 집 산 날 + 2년
 [scenes.67.lines.0.text] 산 날도 판 날처럼, 보통 잔금을 치른 날로 봅니다.
-[scenes.67.data.license] Pexels 8320980 무료(Mark Embry)
+[scenes.67.data.license] Pexels 7710495 무료(https://kaboompics.com/)
 [scenes.67.data.say] 잔금 치른 날 기준
 [scenes.67.data.side] left
 [scenes.67.data.chapter] 질문 ③
@@ -873,7 +896,7 @@
 [scenes.101.data.c] ink
 [scenes.101.data.source] 소득세법 §95② 표1 · 상세본 p.58~59 · 문답 p.37
 [scenes.102.lines.0.text] 만 65살 이상이 수도권 집을 팔고 비수도권으로 옮기면, 정부안에 양도세를 줄여 주는 특례가 따로 있습니다.
-[scenes.102.data.license] Pexels 4553301 무료(cottonbro studio)
+[scenes.102.data.license] Pexels 4553292 무료(cottonbro studio)
 [scenes.102.data.say] 수도권에서 비수도권으로
 [scenes.102.data.side] left
 [scenes.102.data.chapter] 계산 밖

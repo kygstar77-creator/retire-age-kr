@@ -13,6 +13,17 @@
     "url": "https://cafe.naver.com/firemap/333"
    },
    "note": "06:10 칸 npsfund1019 · 발행 전 공단 기금 표 다시 받음(7월 말 기준 그대로) · readcheck 어미반복 1건 고침→editgate auto 재날인 · verify OK 1672/1672자·사진 3/3 · 블로그 없음(02~07시 카페만, 블로그 색인 0 브레이크) · 12:10 칸 bondetf1020 직원 투입 · 개선: 없음"
+  },
+  {
+   "hour": 7,
+   "ts": "08:08",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "고덕그라시움 평당 20% 더 비싼 건 역 때문일까?",
+    "url": "https://cafe.naver.com/firemap/334"
+   },
+   "note": "07:40 칸(TBD·비축 0) → h1s_walk 쇼츠 짝 글 새로 씀 · 자료: 국토부 실거래 10/20 다시 받음(고덕동 284건)·tour.py·금융위 10/15 대책 원문·kwvol · 경쟁 5편 bench · 이해 시험 40·50·60세+58세 2차 통과 · 교차검증 Gemini: 사실 3건 유지(반올림 '약'·금융위 원문 직접 확인), 말투 15건 중 5 반영(나머지 '분석·측정' 등 구어 아님) · selfcheck 사실0 · readcheck 0 · aitell 2.2 · 표지 100px 미달로 1회 다시 그림 · 발행 08:06(26분 늦음) verify OK 1953/1953자·사진 3/3 · 개선: mkimg glob이 offi_trade 파일까지 집어 오류 → 경로 거름"
   }
  ]
 }

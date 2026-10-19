@@ -2506,3 +2506,4 @@
 2026-10-19 13:31 · firemap-write · 18:10 칸 청년미래적금 ymf2wait1019 보류, 코스피 하락 기록 글로 교체 · 카페 범위 규칙 '청년 전용 상품 금지'(aitell scope)
 2026-10-19 13:55 · firemap-write-b · 13:40 칸 cafenotice1018 공지 발행 https://cafe.naver.com/firemap/326 (verify OK 699자) — 등급 기능 꺼짐 확인해 notice.txt 대체 문장으로 바꿔 냄 · 사실과 다른 '가입인사 쓰면 등업' 문장 방지
 2026-10-19 14:14 · firemap-write · 18:10 칸 kospioct1019 관문 통과(올해 코스피 흔들림 순위) · '급락 뒤 1년' 각도는 kospidrop1017(#300)과 겹쳐 바꿈
+2026-10-19 15:25 · visual · H-2 썸네일 아래판 h2tp_a2(큰 두 줄 아래 44%) meta thumb 교체(h2f4→h2tp_a2, 이전 thumb_prev_1019b) · 제미나이 3.1-flash-lite 7점·58세 뜻 맞음(작은 글 안 읽힘 지적) · 점수는 단일 심사라 느슨(같은 심사가 h2f4 8점), 3인 심사 아님 · 영상 아직 미업로드라 유튜브 반영은 업로드 때 · 근거 visual/textpos-1019/p2_gemini_score.md

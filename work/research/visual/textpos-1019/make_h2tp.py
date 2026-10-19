@@ -13,6 +13,7 @@ sys.stdout.reconfigure(encoding='utf-8')
 H = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.abspath(os.path.join(H, '..', '..', '..'))
 FONT = os.path.join(WORK, 'fonts'); PX = os.path.join(WORK, 'research', 'aptreal', 'px')
+LS = 1.10
 W, HH = 1920, 1080; X0 = 80; MAXW = 1760
 ORANGE, WHITE, INK = (255, 90, 0), (255, 255, 255), (10, 11, 14)
 TOP = '잠실주공5단지, 잠실동 안에서'
@@ -67,13 +68,13 @@ def draw_small(d, y, ws, ps):
 def draw_big(d, y, bs):
     for k, t in enumerate(BIG):
         d.text((X0, y - int(bs * 0.12)), t, font=f(bs, 'black'), fill=WHITE if k == 0 else ORANGE, stroke_width=6, stroke_fill=INK)
-        y += int(bs * 1.10)
+        y += int(bs * LS)
     return y
 
 
 def bottom(name, pid, band_alpha, top_alpha=200, **ph):
     im = photo(pid, **ph); d0 = ImageDraw.Draw(im)
-    ws, bs, ps = layout(d0); hb = len(BIG) * int(bs * 1.10)
+    ws, bs, ps = layout(d0); hb = len(BIG) * int(bs * LS)
     y = HH - 40 - hb
     im = shade(im, max(0, y - 140), HH, band_alpha)
     im = shade(im, 0, 330, top_alpha, top=True)
@@ -101,6 +102,11 @@ def save(im, name, h):
     print(out, f'큰 글 덩어리 높이 {h}px = 화면의 {h / HH:.0%}')
 
 
+LS = 1.10
 bottom('h2tp_a.png', '5336495', 150, y_anchor=0.35, zoom=1.0)       # 실루엣: 땅이 원래 어둡다 → 옅은 그늘만
 bottom('h2tp_b.png', '15928940', 235, y_anchor=0.95, x_anchor=0.6, zoom=1.4, blur=9)  # 파란 하늘 고층 단지(Pexels 15928940) + 짙은 아래 띠. 벽에 다른 단지 이름('호수마을'·동 번호)이 보여 흐리게 함(잠실주공5단지 오인 방지). 지금 h2f4 사진(11932032)은 건물이 아래 40%에 몰려 큰 글에 다 가려져 뺐다(첫 시도 실측)
 topleft('h2tp_c.png', '5336495', y_anchor=0.35, zoom=1.0)           # 대조판(왼쪽 위)
+
+# 10/19 15시대 2차: 채점 1차(a 6점: 사진 어둡다·줄간격 좁다) 반영 — 같은 사진, 아래 그늘 옅게(150→70)·줄간격 1.10→1.14, 사진을 조금 밝게
+LS = 1.14
+bottom('h2tp_a2.png', '5336495', 70, y_anchor=0.35, zoom=1.0, dark=1.12)

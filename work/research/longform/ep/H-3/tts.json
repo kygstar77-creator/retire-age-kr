@@ -1,0 +1,1 @@
+{"model": "chirp3-hd", "voice": "ko-KR-Chirp3-HD-Charon", "speakingRate": 1.1, "markup": true, "say_v": 2, "nat_gate": true, "note": "2026-10-19 목소리 담당: 롱폼 목소리(Charon 1.1)+쉼 태그+say_v 2(숫자+단위 붙임·문장 끝 짧은 쉼, research/longform/voice-naturalness-1019.md)+nat_gate(lfvoice check 붙음/끊김 5%)"}

@@ -2,11 +2,11 @@
 #   py -3.12 work/lfvoice.py plan  <ep폴더> [--maxreq 9] [--cap 270]   # 요청 묶음만 보여 준다(API 안 부름) · --cap = 요청당 음절 상한(교훈 24)
 #   py -3.12 work/lfvoice.py make  <ep폴더> [--maxreq 9] [--first 1] [--gate 0.10 --budget 10]   # --gate: 요청마다 음높이 재서 벗어나면 그 자리에서 다시 받기(budget = 이번 실행 새 요청 상한) · 없는 문장만 만든다 → 자르기 → voice.json · --first N = 새 요청 N회만 보내고 멈춤(첫 묶음 뒤 check로 높낮이 먼저 보기, lessons R-1 v6)
 #   ep/tts.json에 'prompt'가 있으면 그 편은 그 지시문으로 고정(편 안에서 바꾸면 전부 다시 녹음 — 한 날·한 목소리 규칙)
-#   py -3.12 work/lfvoice.py check <ep폴더>                 # 편 전체 말 속도·음높이 일관성 검사(공개 전 필수, 규칙 3)
+#   py -3.12 work/lfvoice.py check <ep폴더>                 # 편 전체 말 속도·음높이 일관성 검사(공개 전 필수, 규칙 3) + 10/19 붙음/끊김(nat_gate 편, 5% 넘으면 막힘)
 #   Chirp 엔진(2026-10-11 사장님 '롱폼 목소리 = Chirp 3 HD Charon'): ep/tts.json이 {"model": "chirp3-hd", "voice": "ko-KR-Chirp3-HD-Charon"[, "speakingRate": 1.1]}이면
 #     tts.json "markup": true면 쉼 태그(cloudtts.markup, korsay 다음)를 넣어 받는다 — 10/15부터 새로 녹음하는 편 기본(이미 녹음한 편은 안 켬, 한 편 한 설정)
 #     make가 줄마다 work/cloudtts.py synth로 한 줄씩 받는다(묶음·cutat·fixcut 필요 없음, 무료 한도 장치는 cloudtts가 지킴). speakingRate는 편 전체 하나로 고정(atempo 아님).
-#   py -3.12 work/lfvoice.py retake <ep폴더> 3:1,7:0 [--takes 4]  # Chirp 편만: 튀는 줄(장:줄)만 같은 설정으로 다시 받기(옛 파일은 _raw/<키>.rej<n>.wav로 보관, --takes = 통과할 때까지 최대 N번·못 넘으면 가장 가까운 것)
+#   py -3.12 work/lfvoice.py retake <ep폴더> 3:1,7:0 [--takes 4] [--nat]  # --nat(10/19): 붙음/끊김 걸린 줄을 say_v 2로·걸림 0인 소리 고름 · Chirp 편만: 튀는 줄(장:줄)만 같은 설정으로 다시 받기(옛 파일은 _raw/<키>.rej<n>.wav로 보관, --takes = 통과할 때까지 최대 N번·못 넘으면 가장 가까운 것)
 #   py -3.12 work/lfvoice.py cutat <ep폴더> <묶음번호> 6.7,19.0,...  # 자르기 실패 묶음을 받아쓰기로 확인한 문장 시작 시각으로 자른다(API 안 부름)
 #   py -3.12 work/lfvoice.py fixcut <ep폴더> <묶음번호> [--dry]  # 조각마다 받아써서 대본 문장에 맞춰 자른다(지시문 읽은 앞머리 버림) — 공개 전 받아쓰기 대조에서 어긋나면
 #   py -3.12 work/lfvoice.py readback <ep폴더> [3:6,12:0]  # 공개 전 필수: 문장마다 받아써 숫자 대조·지시문 앞머리 의심 찾기(lessons 9)
@@ -23,7 +23,9 @@ sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 PUB = os.path.join(HERE, 'video', 'public')
 SR, FPS, GAP_F, SEC_F = 24000, 30, 8, 18      # 문장 사이 8프레임(0.27초), 장 끝 18프레임 — A-1(12·24)보다 짧게
-DEFAULT = {'model': 'gemini-3.8-flash-tts', 'voice': 'Charon'}
+DEFAULT = {'model': 'gemini-3.8-flash-tts', 'voice': 'Charon'}   # 옛 제미나이 편 기록용 — 새 편은 아래 NEW_EP
+# 10/19 목소리 담당(voice-naturalness-1019): 새 편 tts.json 기본 = 롱폼 목소리(Chirp Charon 1.1, 10/11 사장님) + 쉼 태그(10/13 사장님 '3번') + say_v 2(숫자+단위 붙임·문장 끝 짧은 쉼) + nat_gate(붙음/끊김 관문)
+NEW_EP = {'model': 'chirp3-hd', 'voice': 'ko-KR-Chirp3-HD-Charon', 'speakingRate': 1.1, 'markup': True, 'say_v': 2, 'nat_gate': True}
 PROMPT = 'Read these Korean lines in order as an energetic, brisk YouTube finance narration. Keep a quick pace. Pause briefly between lines:\n'
 SAY = [('S&P500', '에스앤피 500'), ('JEPQ', '제피큐'), ('JEPI', '제피'), ('SCHD', '슈드'), ('QQQ', '큐큐큐'), ('SPY', '에스피와이'),
        ('KODEX', '코덱스'), ('ETF', '이티에프'), ('ISA', '아이에스에이'), ('HBM', '에이치비엠'), ('DRAM', '디램'), ('NAND', '낸드'),
@@ -43,6 +45,7 @@ def nkr(n):   # 정수를 한국어로 읽을 때 음절 수(만 단위, '일십
         n //= 10000; u += 1
     return c
 def est(t):   # 자르기용 음절 어림: 숫자는 읽는 길이로, %는 '퍼센트'
+    t = re.sub(r'\[pause[^\]]*\]', ' ', t)   # 쉼 태그는 말이 아니다
     t = re.sub(r'(\d[\d,]*)(?:\.(\d+))?', lambda m: '가' * (nkr(int(m.group(1).replace(',', ''))) + (1 + len(m.group(2)) if m.group(2) else 0)), t)
     return len(re.findall('[가-힣A-Za-z]', t.replace('%', '가가가')))
 
@@ -54,7 +57,7 @@ def key():
 
 def lock(ep):
     fn = os.path.join(ep, 'tts.json')
-    if not os.path.exists(fn): json.dump(DEFAULT, open(fn, 'w', encoding='utf-8'), ensure_ascii=False)
+    if not os.path.exists(fn): json.dump({**NEW_EP, 'note': time.strftime('%Y-%m-%d') + ' lfvoice 새 편 기본(NEW_EP)'}, open(fn, 'w', encoding='utf-8'), ensure_ascii=False)
     return json.load(open(fn, encoding='utf-8'))
 
 MAX_LINES = 100
@@ -62,13 +65,19 @@ CHIRP_MAX_LINES = 260   # 10/17 롱폼 8분 이상(사장님 '대충') — Chirp
 is_chirp = lambda cfg: cfg.get('model') == 'chirp3-hd'
 
 def speak(ep, t):
+    orig = t   # nat_lines는 대본 줄 글 그대로와 맞댄다(아래 SAY 바꾸기 전에 — 10/19 X-1 0:0 'S&P500' 줄이 안 맞아 v2가 안 걸렸던 것)
     extra = os.path.join(ep, 'say.json')
     pairs = (json.load(open(extra, encoding='utf-8')) if os.path.exists(extra) else []) + SAY
     for a, b in sorted(pairs, key=lambda p: -len(p[0])): t = t.replace(a, b)
     # 10/11 사장님 "17년이면 십칠 년이라고 읽어야 하는데 왜 일칠 년이라고 해?" — Chirp 3 HD는 숫자를 자리별로 읽는 일이 있어
     # Chirp 편만 마지막 단계로 숫자를 한국어 읽기로 바꾼다(work/korsay.py). 제미나이 편은 그대로. 대본·화면 글자는 안 바뀐다(녹음할 말만).
-    if is_chirp(lock(ep)):
-        sys.path.insert(0, HERE); import korsay; t = korsay.say(t)
+    cfg = lock(ep)
+    if is_chirp(cfg):
+        # 10/19 say_v 2(편 전체) 또는 nat_lines(이미 녹음한 편에서 붙음/끊김으로 다시 받는 줄만 — 나머지 줄 소리 파일 이름은 그대로): 숫자+단위 붙임 + 쉼 태그 자리(korsay.phrase)
+        sys.path.insert(0, HERE); import korsay
+        v2 = int(cfg.get('say_v', 1)) >= 2 or orig in (cfg.get('nat_lines') or [])
+        t = korsay.say(t, 2 if v2 else 1)
+        if v2 and cfg.get('markup'): t = korsay.phrase(t)
     return t
 
 def sections(ep):
@@ -302,7 +311,7 @@ def make(ep, maxreq, dry=False, first=0, cap=0, gate=0.0, budget=0):
 def chirp_one(ep, cfg, say, fn, tag):
     # 한 줄 → cloudtts.synth(Chirp 3 HD). 앞뒤 무음은 Chirp이 0.1~0.8초로 들쭉날쭉이라 소리 앞뒤 0.06초만 남기고 자른 뒤 pad(0.08초)를 붙인다 — 문장 사이 간격을 고르게(말 자체는 손대지 않음).
     sys.path.insert(0, HERE); import cloudtts
-    pcm = np.frombuffer(cloudtts.synth(say, cfg['voice'], tag, cfg.get('speakingRate'), mark=bool(cfg.get('markup'))), dtype=np.int16).astype(np.float32)
+    pcm = np.frombuffer(cloudtts.synth(say if cfg.get('markup') else cloudtts.plain(say), cfg['voice'], tag, cfg.get('speakingRate'), mark=bool(cfg.get('markup'))), dtype=np.int16).astype(np.float32)
     m, win = loud_mask(pcm, SR); idx = np.where(m)[0]
     if len(idx): pcm = pcm[max(0, idx[0] * win - int(SR * 0.06)):min(len(pcm), (idx[-1] + 1) * win + int(SR * 0.06))]
     pad = np.zeros(int(SR * 0.08), dtype=np.float32); write(fn, np.concatenate([pad, pcm, pad]))
@@ -325,7 +334,14 @@ def _line_bad(say, fn, fm, tol=0.25):
     a, sr = read(fn); r = syl(say) / max(speech_sec(a, sr), 0.1); p = f0(a, sr)
     return max(0, 4.8 - r) / 4.8 + max(0, r - 8.2) / 8.2 + (max(0, abs(p / fm - 1) - tol) if p and fm else 0), r, p
 
-def retake(ep, ats, takes=1, tol=0.25):
+def _nat_bad(ep, say, fn):
+    # 10/19: 붙음/끊김·빠르기 걸림 수(voicenat.judge) — retake --nat가 통과 판정에 더한다(Whisper 캐시는 ep/check/nat_words, check와 같은 곳)
+    sys.path.insert(0, HERE); import voicenat
+    voicenat.CACHE = os.path.join(ep, 'check', 'nat_words'); return len(voicenat.judge(say, fn)['flags'])
+
+def retake(ep, ats, takes=1, tol=0.25, nat=False):
+    # nat=True(10/19, --nat): 붙음/끊김으로 걸린 줄 — 그 줄 글을 tts.json nat_lines에 올려 say_v 2(숫자+단위 붙임·쉼 태그 자리)로 받고, 붙음/끊김이 0인 소리를 고른다.
+    #   nat_lines에 없는 줄은 소리 파일 이름(hash)이 그대로라 편의 다른 줄은 손대지 않는다.
     # tol: 음높이 허용(편 중앙 ±). 기본 0.25 = check 줄 기준. 편 앞뒤 차(±7%)를 맞추려면 --tol 0.10으로 중앙 가까운 소리를 고른다(10/15 PD, W-1 2화 −11.1%)
     # Chirp 편 튀는 줄만 같은 설정으로 다시 받기. ats = ['3:1', ...] (voice.json 장:줄 번호)
     # takes>1: 통과할 때까지 최대 takes번 받고, 끝내 못 넘으면 지금 것 포함 가장 덜 벗어난 것을 쓴다(제미나이 --gate와 같은 생각). 빠르기(speakingRate)는 편 전체 값 그대로.
@@ -333,6 +349,11 @@ def retake(ep, ats, takes=1, tol=0.25):
     vj = os.path.join(ep, 'voice.json'); fm = float(np.median([l['f0'] for s in json.load(open(vj, encoding='utf-8'))['sections'] for l in s['lines'] if l.get('f0')])) if os.path.exists(vj) else 0
     if not is_chirp(cfg): sys.exit('retake는 Chirp 편만(제미나이 편은 lfretake.py)')
     tag = 'lfvoice-retake:' + os.path.basename(os.path.normpath(ep))
+    if nat:
+        fn_cfg = os.path.join(ep, 'tts.json'); raw = json.load(open(fn_cfg, encoding='utf-8'))
+        add = [secs[int(a.split(':')[0])]['lines'][int(a.split(':')[1])] for a in ats]
+        raw['nat_lines'] = list(dict.fromkeys((raw.get('nat_lines') or []) + add))
+        json.dump(raw, open(fn_cfg, 'w', encoding='utf-8'), ensure_ascii=False, indent=1); cfg = raw
     for at in ats:
         si, li = map(int, at.split(':')); say = speak(ep, secs[si]['lines'][li])
         h, fn = wav_of(ep, cfg, say); n = 1
@@ -342,7 +363,8 @@ def retake(ep, ats, takes=1, tol=0.25):
         if os.path.exists(fn + '.json'): os.remove(fn + '.json')
         for k in range(takes):
             chirp_one(ep, cfg, say, fn, tag); bad, r, p = _line_bad(say, fn, fm, tol)
-            print(f'  다시 받음 {at} 시도 {k + 1} · {r:.2f}음절/초 · {p:.0f}Hz · {"통과" if not bad else "벗어남"} | {say[:24]}')
+            nb = _nat_bad(ep, say, fn) if nat else 0; bad += 0.5 * nb
+            print(f'  다시 받음 {at} 시도 {k + 1} · {r:.2f}음절/초 · {p:.0f}Hz' + (f' · 붙음/끊김 {nb}' if nat else '') + f' · {"통과" if not bad else "벗어남"} | {say[:24]}')
             if not bad: break
             cands.append((bad, f'{h}.rej{n}.wav')); os.replace(fn, os.path.join(aud_dir(ep), '_raw', f'{h}.rej{n}.wav')); n += 1
         if not os.path.exists(fn):
@@ -406,7 +428,26 @@ def check(ep, vj=None):
     rc = _C(l.get('rec') or '?' for s in d['sections'] for l in s['lines'] if l.get('audio')); tot = sum(rc.values()) or 1
     one_day = len(recs) == 1 or (len(recs) == 2 and min(rc.values()) / tot <= 0.20)
     ok = whole >= 5.5 and not bad and not ep_bad and not d.get('missing') and one_day and '?' not in recs
+    if not nat_check(ep, d): ok = False
     print('통과' if ok else '막힘'); return ok
+
+NAT_MAX = 0.05
+def nat_check(ep, d):
+    # 10/19 사장님 "단어를 사람이 말하는 것처럼" — 붙음(쉼표인데 안 쉼)·끊김(숫자+단위·'하는 것' 안 긴 쉼)·줄 빠르기를 Whisper 단어 시각으로 잰다(work/voicenat.py).
+    #   기준 = 사람 진행자 12편 실측(research/longform/voice-naturalness-1019.md). 걸린 줄이 전체의 5% 넘으면 막힘 → retake 장:줄.
+    #   tts.json "nat_gate": true 편만(T-1부터·새 편 기본). 그 전 편(C-2·H-2 등)은 재지 않는다 — 녹음 방식이 달라 다시 받을 계획이 없다.
+    cfg = lock(ep)
+    if not cfg.get('nat_gate'): print('붙음/끊김 검사 안 함(tts.json nat_gate 없음)'); return True
+    sys.path.insert(0, HERE); import voicenat
+    items = [(f'{si}:{li}', l.get('say') or l['text'], os.path.join(PUB, l['audio'].replace('/', os.sep)))
+             for si, s in enumerate(d['sections']) for li, l in enumerate(s['lines']) if l.get('audio')]
+    os.makedirs(os.path.join(ep, 'check'), exist_ok=True)
+    bad, n = voicenat.check_lines(items, cache=os.path.join(ep, 'check', 'nat_words'))
+    json.dump([{'at': a, 'say': y, 'flags': [list(map(str, f)) for f in fl]} for a, y, fl in bad], open(os.path.join(ep, 'check', 'voice_nat.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    share = len(bad) / max(n, 1)
+    print(f'붙음/끊김: 걸린 줄 {len(bad)}/{n} ({share:.1%}, 기준 {NAT_MAX:.0%} 이하)', *[f'{a} | ' + ' · '.join(f'{f[0]} {f[1]} {f[2]}' for f in fl) + f' | {y[:30]}' for a, y, fl in bad[:30]], sep=chr(10) + '  ')
+    if share > NAT_MAX: print('  → 다시 받기: py -3.12 work/lfvoice.py retake', ep, ','.join(a for a, _, _ in bad), '--takes 3 --nat'); return False
+    return True
 
 def cutat(ep, gi, times, maxreq=9, cap=0):
     # 받아쓰기로 확인한 문장 시작 시각으로 저장본을 자른다: 시각마다 0.3초 넘는 가장 가까운 쉼(0.8초 안)에 붙인다. API 안 부름.
@@ -761,5 +802,5 @@ if __name__ == '__main__':
              gate=float(sys.argv[sys.argv.index('--gate') + 1]) if '--gate' in sys.argv else 0.0,
              budget=int(sys.argv[sys.argv.index('--budget') + 1]) if '--budget' in sys.argv else 0)
     elif cmd == 'retake': retake(ep, sys.argv[3].split(','), int(sys.argv[sys.argv.index('--takes') + 1]) if '--takes' in sys.argv else 1,
-                                         float(sys.argv[sys.argv.index('--tol') + 1]) if '--tol' in sys.argv else 0.25)
+                                         float(sys.argv[sys.argv.index('--tol') + 1]) if '--tol' in sys.argv else 0.25, nat='--nat' in sys.argv)
     elif cmd == 'check': sys.exit(0 if check(ep, sys.argv[3] if len(sys.argv) > 3 else None) else 1)

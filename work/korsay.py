@@ -10,6 +10,8 @@
 #   ④ '2~3번'→'이 에서 세 번'(×) → '두세 번' (고유어 단위 범위: 한두·두세·서너·네다섯·대여섯·예닐곱·일고여덟·여덟아홉), 그 밖의 범위는 'A단위에서 B단위'
 #   ⑤ '1번째'→'한 번째'(×) → '첫 번째'
 #   ⑥ 대본의 출처 표시 '{F}'(W-1)를 소리 내지 않게 지움
+# 10/19 목소리 담당(research/longform/voice-naturalness-1019.md): say(t, 2) = 숫자 말+단위 붙임('삼 월'→'삼월'), phrase() = 쉼 태그 자리(줄 안 문장 끝·긴 연결 어미 뒤 [pause short]).
+#   tts.json say_v 2 편(또는 nat_lines 줄)만 쓴다 — v1은 그 전 녹음 소리 파일 이름이 그대로이게 둔다. eojeols()/kind()는 voicenat 관문과 같은 칸 나누기(kiwipiepy).
 import re, sys
 
 SINO = '영일이삼사오육칠팔구'
@@ -64,7 +66,10 @@ def _range(m):
         return NATIVE_PAIR[int(a)] + ' ' + u
     return f'{a}{u}에서 {b}{u}'
 
-def say(text):
+def say(text, v=1):
+    """v=2(10/19 voice-naturalness): 숫자 말과 바로 뒤 단위를 띄우지 않는다('삼 월'→'삼월'·'이 년을'→'이년을'·'백 명'→'백명'·'이백만 원'→'이백만원').
+    Chirp은 한 음절 숫자 뒤 띄어쓰기에서 0.3~0.45초 쉬었다(T-1 '삼 / 월에' 0.45·'삼 / 년이' 0.41·'이 / 년을' 0.41, 사람은 숫자+단위 사이 0.2초+ 6%).
+    대본에 띄어 쓴 자리('3 년')는 그대로 둔다. v=1은 10/19 전 녹음한 편과 소리 파일 이름(hash)이 같도록 그대로."""
     t = re.sub(r'\{[A-Z]\d*\}\s*', '', text)          # 출처 표시 {F} 등은 소리 내지 않는다
     # 부호
     t = re.sub(r'(?<![\d가-힣A-Za-z])[−-](?=\d)', '마이너스 ', t)
@@ -83,11 +88,14 @@ def say(text):
                 out.append(MONTH[n]); pos += 1; continue
             if after.startswith('번째') and n == 1:
                 out.append('첫 '); continue
+            # 10/18 PD(C-2 2:26 readback): '3장에서 볼'은 대본의 장(章) 번호 — '세 장'(낱장 세기)으로 읽으면 '분이라면서 장에서'로 붙어 들렸다(받아쓰기 넷 중 셋)
+            if re.match(r'장(?:에서|은|의|부터|까지|으로)', after) and n <= 20:
+                out.append(sino(n) + ' '); continue
             u = _is_native(after)
             if u and native(n):
-                out.append(native(n) + ' '); continue
+                out.append(native(n) + ('' if v >= 2 else ' ')); continue
         if after.startswith('%'):
-            out.append(sino_dec(s) + ' 퍼센트'); pos += 1; continue
+            out.append(sino_dec(s) + ('퍼센트' if v >= 2 else ' 퍼센트')); pos += 1; continue
         bm = re.match(BIG, after)
         if bm and '.' not in s:
             # '1천만원' → '천만', '3천만원' → '삼천만', '180억' → '백팔십억', '1억' → '일억'(억·조 앞 1은 읽는다)
@@ -97,12 +105,68 @@ def say(text):
         else:
             word = sino_dec(s)
         nxt = after[:1]
-        sep = '' if (not nxt or nxt in ' ,.)』」]?!·/' or after.startswith(PARTICLE)) else ' '
+        sep = '' if (not nxt or nxt in ' ,.)』」]?!·/' or after.startswith(PARTICLE) or (v >= 2 and re.match('[가-힣]', nxt))) else ' '
         out.append(word + sep)
     out.append(t[pos:])
     r = ''.join(out)
     r = r.replace('×', ' 곱하기 ').replace('÷', ' 나누기 ')
     return re.sub(r'\s{2,}', ' ', r).strip()
+
+PS = '[pause short]'
+_KIWI = []
+def eojeols(text):
+    """띄어쓰기 어절마다 {'w', 'first', 'last', 'punct', 'num'} — 형태소 분석(kiwipiepy)으로 끝 형태소 품사를 본다.
+    관형형 '-는'(따라가는 상품, ETM)과 주제 '-는'(민수 씨는, JX)을 글자로는 못 가른다(10/19 첫 판이 '따라가는 [쉼] 상품'으로 끊었다)."""
+    if not _KIWI:
+        from kiwipiepy import Kiwi; _KIWI.append(Kiwi())
+    spans = [(m.start(), m.end(), m.group(0)) for m in re.finditer(r'\S+', text)]
+    out = [{'w': w, 'first': None, 'last': None, 'form': '', 'punct': (w[-1] if w[-1] in ',.?!' else ''), 'num': False} for _, _, w in spans]
+    j = 0
+    for tk in _KIWI[0].tokenize(text):
+        while j < len(spans) - 1 and tk.start >= spans[j][1]: j += 1
+        e = out[j]
+        if tk.tag.startswith('S') and tk.tag not in ('SN', 'SL', 'SH'): continue
+        if e['first'] is None: e['first'] = tk.tag
+        e['last'] = tk.tag; e['form'] = tk.form
+        if tk.tag in ('SN', 'NR'): e['num'] = True
+    return out
+
+def kind(e1, e2):
+    """두 어절 사이 칸 — comma·sent·numunit(숫자 안·숫자+단위)·dep(꾸밈말+의존명사 '하는 것')·adnom(꾸밈말+명사)·topic(은·는·이·가·도)·obj(을·를)·conn(연결 어미)·other"""
+    if e1['punct'] == ',': return 'comma'
+    if e1['punct'] in ('.', '?', '!') and e1['punct']: return 'sent'
+    if e1['num'] and (e2['num'] or e2['first'] == 'NNB'): return 'numunit'
+    if e1['last'] == 'ETM': return 'dep' if e2['first'] == 'NNB' else 'adnom'
+    if e1['last'] in ('JX', 'JKS'): return 'topic'
+    if e1['last'] == 'JKO': return 'obj'
+    if e1['last'] == 'EC': return 'conn'
+    return 'other'
+
+def phrase(t, long_run=20, rest_min=6):
+    """10/19 사장님 "두 단어를 빠르게 붙여 말하거나 떼서 말하거나" — say(숫자 읽기 뒤) 글에 쉼 태그를 넣는다(Chirp markup 편만, tts.json say_v 2).
+    근거: research/longform/voice-naturalness-1019.md(사람 진행자 12편 대 C-2·T-1·X-1·쇼츠, 같은 잣대).
+    ① 쉼표 뒤 [pause short]는 cloudtts.markup이 넣는다(여기서 안 넣음). 쉼표 쉼: 태그 없는 C-2 0.12초+ 19%(사람 78%) → 태그 켠 T-1 97%.
+    ② 줄 안 문장 끝은 [pause] 대신 [pause short] — 태그 켠 T-1 문장 끝 쉼 중앙 0.75초, 사람 0.40초(태그 없는 C-2 0.55초).
+    ③ 쉼표 없이 long_run음절 넘게 이어지는 말의 연결 어미(-고·-서·-면·-는데·-지만·-니까·-면서) 뒤에 [pause short] — 뒤에 rest_min음절 넘게 남을 때만.
+       사람은 연결 어미 뒤 0.12초+ 20%(길게 이어진 뒤 24%), T-1 11%(5%). 주제·주어(은·는·이·가) 뒤는 넣지 않는다 — Chirp은 오히려 거기서 더 쉰다(C-2 긴 주어 뒤 42%, 사람 14%).
+    ④ 칸은 kind()(형태소 품사)로 — 꾸밈말+명사('따라가는 상품'·'하는 것')·보조 용언('꺼내 쓰는')·인용('-다고 치고') 앞은 안 끊는다."""
+    out = []
+    sents = [x for x in re.split(r'(?<=[.?!])\s+', t.strip()) if x]
+    for si, sent in enumerate(sents):
+        es = eojeols(sent); res = []; run = 0
+        syl = [len(re.findall('[가-힣]', e['w'])) for e in es]
+        for i, e in enumerate(es):
+            res.append(e['w']); run += syl[i]
+            if e['punct'] or e['w'] == PS or e['w'][-1] in '"”’\':': run = 0; continue
+            if i + 1 >= len(es): continue
+            if run < long_run or sum(syl[i + 1:]) < rest_min: continue
+            n1 = es[i + 1]
+            if n1['punct'] or n1['last'] == 'ETM': continue
+            if kind(e, n1) != 'conn': continue
+            if e['form'] in ('어', '아', '여', '게', '지') or re.search('(다|라|냐|자)고$', e['w']): continue
+            res.append(PS); run = 0
+        out.append(' '.join(res) + (' ' + PS if si < len(sents) - 1 else ''))
+    return ' '.join(out)
 
 TESTS = [
     ('배당 씨는 17년째에 바닥났어요.', '배당 씨는 십칠 년째에 바닥났어요.'),
@@ -135,12 +199,27 @@ TESTS = [
     ('5억 넘게', '오억 넘게'),
     ('2002년이었습니다', '이천이 년이었습니다'),
     ('5.31%로', '오 점 삼일 퍼센트로'),
+    ('3장에서 볼 규칙', '삼 장에서 볼 규칙'), ('사진 3장을', '사진 세 장을'),
+]
+
+# 10/19 v2(숫자+단위 붙임) — T-1·X-1·n2s에서 끊김으로 걸린 꼴
+TESTS2 = [
+    ('그러니까 3월에 잔금을 받았다면, 5월 말일까지예요.', '그러니까 삼월에 잔금을 받았다면, 오월 말일까지예요.'),
+    ('갖고 있는 동안 2년을 실제로 살아야', '갖고 있는 동안 이년을 실제로 살아야'),
+    ('100명으로 줄여서', '백명으로 줄여서'), ('1억 7천만원까지', '일억 칠천만원까지'), ('13.57%', '십삼 점 오칠퍼센트'),
+    ('3 년', '삼 년'), ('17년째에', '십칠년째에'), ('7,000을', '칠천을'), ('1번째', '첫 번째'), ('3장에서', '삼 장에서'),
+]
+PHRASE = [   # (say v2, phrase 결과)
+    ('같은 돈, 같은 규칙으로 오년 늦게 시작한 민수 씨는 지난해 말에도 이억 칠천만원이 남아 있었습니다.', '같은 돈, 같은 규칙으로 오년 늦게 시작한 민수 씨는 지난해 말에도 이억 칠천만원이 남아 있었습니다.'),
+    ('바뀐 건 기한이에요. 둘 다 있으면, 삼년이 아니라 이년입니다.', '바뀐 건 기한이에요. [pause short] 둘 다 있으면, 삼년이 아니라 이년입니다.'),
+    ('오늘은 퇴직금으로 생활비를 꺼내 쓰는 이야기입니다.', '오늘은 퇴직금으로 생활비를 꺼내 쓰는 이야기입니다.'),
 ]
 
 if __name__ == '__main__':
     sys.stdout.reconfigure(encoding='utf-8')
     if sys.argv[1:] == ['--test']:
-        bad = [(a, b, say(a)) for a, b in TESTS if say(a) != b]
+        bad = [(a, b, say(a)) for a, b in TESTS if say(a) != b] + [(a, b, say(a, 2)) for a, b in TESTS2 if say(a, 2) != b] + [(a, b, phrase(a)) for a, b in PHRASE if phrase(a) != b]
+        TESTS = TESTS + TESTS2 + PHRASE
         for a, b, g in bad: print('틀림:', a, '→', g, '| 기대', b)
         print(f'{len(TESTS) - len(bad)}/{len(TESTS)} 통과'); sys.exit(1 if bad else 0)
     for a in sys.argv[1:] or [a for a, _ in TESTS]:

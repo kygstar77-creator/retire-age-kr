@@ -11,7 +11,8 @@
 | L4 | 국세청 '공동명의 1주택자 특례' 안내 https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=40406&cntntsId=238930 | 2026-10-17 00:3x 읽음 | '해당연도 9.16.∼9.30.까지 관할세무서장에게 신청' · 다음 연도부터 '별도 신청없이 계속 적용' · 부부가 1주택만 공동 소유, 다른 세대원 무주택 | 8장 그래서·함정 |
 | L5 | 국세청 종합부동산세 납부 종합 안내 https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2356&cntntsId=7738 | 2026-10-17 00:3x 읽음 | '합산배제신고는 9.16.~9.30., 정기고지 신고는 12.1.~12.15.' · '고지서를 발부받아 납부' | 0장(올해 고지서는 지금 법)·7장 |
 | L6 | 현행 종합부동산세법 §8①(1세대 1주택 공제 12억)·§9⑤~⑧(연령·보유 세액공제, 합계 80%)·§10(세부담 상한 150%) — 국가법령정보센터 https://www.law.go.kr/법령/종합부동산세법 | 이번에 조문 화면을 다시 열지 못함(자바스크립트 화면, 확인 안 함) → 상세본 '현행' 칸(L2 p.60~64)으로 대조 | — | 1·4장 '지금 법' 값 |
-- 재경부 '비거주 30억 내년 +429만원' 추산은 SBS 2026-09-19 보도(https://www.youtube.com/watch?v=MxQmV3al5sQ)로만 확인 — 재경부 원자료는 확인 안 함(기존 V3).
+- 재경부 '비거주 30억 내년 +429만원' 추산(2차): SBS 2026-09-19 보도 https://www.youtube.com/watch?v=MxQmV3al5sQ · 파이낸셜뉴스 2026-09-13 https://www.fnnews.com/news/202609131016000055 · 세계일보 2026-09-13 https://www.segye.com/newsView/20260913504424 — 세 곳 모두 '재정경제부가 국회에 제출한 자료'(부총리 후보자 인사청문 자료)·현행 774.7만원 → 1,203.8만원·만 60세 미만·세액공제와 상한 적용 전. 재경부 원자료는 국회 제출 자료라 공개본을 못 찾음(2026-10-19 17:5x 기준 리뉴얼 담당 다시 찾음, 확인 안 함). 우리 calc 재현값 +429.1(facts V3)과 같음.
+- 2026-10-19 17:5x 기준 리뉴얼 담당이 다시 연 것: L1 의안정보(제안일자 2026-09-03·의결일자 빈칸 = 아직 처리 전) · L2·L3 재경부 보도자료 화면(제목 '2026년 세제개편안 발표'·'정부안 확정') · L4·L5 국세청 안내 화면 · L6 law.go.kr 종합부동산세법 화면(조문 글은 raw/law1019 법제처 API 2026-10-19 15:0x) · 헌법 §53 https://www.law.go.kr/법령/대한민국헌법/제53조(raw/law1019/대한민국헌법_53.txt, '15일 이내에 대통령이 공포')
 
 # 질문
 실제 질문(댓글 2026-10-17 00:0x raw/yt_comments_1017.json · 자동완성 2026-10-17 00:0x raw/naver_ac_1017.json — 수집 코드 ep/H-3/getq.py·getac.py) → 우리 답
@@ -71,21 +72,45 @@
 - 정부 사례③ 2027 1칸 불일치(위 우리만 2).
 - 일시적 2주택·상속주택 등 특례주택은 이번 편 밖(문답 p.41).
 
+# 한계
+기준 리뉴얼 10/19(registry A-01) — 확인 못 한 것·원문에 이유 없는 것·자료 기준일의 한계.
+- 자료 기준일: 법안은 2026-09-03 제출 정부안(의안 2221046), 2026-10-19 현재 소위원회 단계 — 국회에서 숫자가 바뀔 수 있고, 공개 전날(10/23) 의안정보를 다시 본다. 재산세는 2027년 뒤 공정시장가액비율이 시행령으로 매년 정해져 calc는 45%로 가정했다. 공시가격은 해마다 바뀌는데 계산은 '공시가격 그대로'로 놓았다.
+- 원문에 이유 없는 것: 사는 집과 안 사는 집을 왜 나눴는지(정부 자료엔 '세부담 적정화' 한 줄뿐) · 공제 2억이 늘었는데 비율·세율도 같이 올린 까닭의 자세한 설명.
+- 확인 못 한 것: 거주 판정 기준과 산 햇수를 언제부터 세는지(시행령 위임, 아직 없음) · 떠나 있는 동안(전근 등) 14억 공제를 주는지 · 공동명의 특례를 '그만두는' 절차(국세청 안내에 없음) · 재경부 +429만원 원자료(보도로만, 세 곳) · 국세청 '8,600명 안내'(SBS 보도, 원문 못 찾음) · 2027년 이후 재산세 비율.
+- 2차뿐인 것: 재경부 +429만원 한 줄 — 보도 세 곳(SBS·파이낸셜뉴스·세계일보)과 우리 재현 계산으로 맞춤.
+- 가정 한계: 시가 40억 → 공시 28억 안팎은 정부 예시 짝 비율로 잡은 가정 · 공동명의는 반반 지분·다른 집 없음 · 사례 인물(55세·10년 등)은 가상 · 세부담 상한 걸리는지는 사례마다 다름.
+
 # 대조
-| 원문(파일·줄) | 원값 | 대본 말 | 대본 자막 |
-|---|---|---|---|
-| calc_out 55세·10년 거주 20억 | 618.9 → 596.4(−22.5) | 오히려 조금 줄어요 | −22.5 |
-| calc_out 55세·거주 0 20억 | 618.9 → 759.8(+140.9) | 140만원쯤 | +140.9 |
-| calc_out 거주 23억·24억 | −11.2 · +9.8 | 23억과 24억 사이 | 원값 |
-| calc_out 비거주 문턱 | 14억 0 · 14.01억 54.0 | 50만원 넘게 | 54.0 |
-| calc_out 70세·15년 40억 | 1,348.0 → 2,783.3 | 두 배 넘게 | +1,435.3 |
-| calc_out 사례② 9월 정부안 | 1,780.5 → 1,505.3 · 2026 916.3 | 270만원 넘게 적게 · 590만원쯤 늘어 | 원값 |
-| calc2 공동명의 55세 20억 2028 | 각자 53.8 · 특례 114.0 | 60만원쯤 적게 | 원값 |
-| calc2 공동명의 70세 20억 2028 | 각자 53.8 · 특례 38.0 | 15만원쯤 적게 | 원값 |
-| calc2 공동명의 55세 30억 2028 | 각자 380.2 · 특례 600.8 | 220만원쯤 | 원값 |
-| calc2 Q2 15년·30년 | 둘 다 38.0 | 똑같아요 | 원값 |
-| calc2 Q3 공시 27·28억 65세+ 20년 | +24.3 · +31.3 | 30만원 안팎 | 원값 |
-| L1 likms 2026-10-17 | 의결일자 빈칸 | 아직 소위원회 단계 | 10.17 현재 처리 전 |
-| L3 공동명의 비거주 | 각 4억안 → 각 6억 | 6억씩 | 원값 |
-| L4 국세청 | 9.16~9.30 · 계속 적용 | 9월 16일부터 30일까지 · 다음 해에도 그대로 | 원값 |
-| L2 상세본 p.66 납부유예 | 65세·10년·10% · 이자 3.1% | 원값 그대로 말 | 원값 |
+| 원문(파일·줄) | 원값 | 대본 말 | 대본 자막 | 출처 |
+|---|---|---|---|---|
+| calc_out 55세·10년 거주 20억 | 618.9 → 596.4(−22.5) | 오히려 조금 줄어요 | −22.5 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| calc_out 55세·거주 0 20억 | 618.9 → 759.8(+140.9) | 140만원쯤 | +140.9 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| calc_out 거주 23억·24억 | −11.2 · +9.8 | 23억과 24억 사이 | 원값 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| calc_out 비거주 문턱 | 14억 0 · 14.01억 54.0 | 50만원 넘게 | 54.0 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| calc_out 70세·15년 40억 | 1,348.0 → 2,783.3 | 두 배 넘게 | +1,435.3 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| calc_out 사례② 9월 정부안 | 1,780.5 → 1,505.3 · 2026 916.3 | 270만원 넘게 적게 · 590만원쯤 늘어 | 원값 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| calc2 공동명의 55세 20억 2028 | 각자 53.8 · 특례 114.0 | 60만원쯤 적게 | 원값 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| calc2 공동명의 70세 20억 2028 | 각자 53.8 · 특례 38.0 | 15만원쯤 적게 | 원값 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| calc2 공동명의 55세 30억 2028 | 각자 380.2 · 특례 600.8 | 220만원쯤 | 원값 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| calc2 Q2 15년·30년 | 둘 다 38.0 | 똑같아요 | 원값 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| calc2 Q3 공시 27·28억 65세+ 20년 | +24.3 · +31.3 | 30만원 안팎 | 원값 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| L1 likms 2026-10-17 | 의결일자 빈칸 | 아직 소위원회 단계 | 10.17 현재 처리 전 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 |
+| L3 공동명의 비거주 | 각 4억안 → 각 6억 | 6억씩 | 원값 | https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000079193 |
+| L4 국세청 | 9.16~9.30 · 계속 적용 | 9월 16일부터 30일까지 · 다음 해에도 그대로 | 원값 | https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=40406&cntntsId=238930 |
+| L2 상세본 p.66 납부유예 | 65세·10년·10% · 이자 3.1% | 원값 그대로 말 | 원값 | https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| facts V3 재경부 추산(2차) | 비거주 공시 30억 2027 +429.1만원(774.7 → 1,203.8) · 70세·10년 보유 +326.6 | 430만원 정도 · 330만원 정도 | 원값 | 2차 https://www.youtube.com/watch?v=MxQmV3al5sQ · https://www.fnnews.com/news/202609131016000055 · https://www.segye.com/newsView/20260913504424 |
+| facts B3 공제 | 거주 12억 → 14억 · 비거주 12억 · 부부 거주 각 9억·비거주 각 6억 | 12억에서 14억으로 · 9억씩 · 6억으로 | 원값 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000079193 |
+| facts B2 납세의무 | 1주택 14억 초과(거주 구분 없음) | 14억까지는 안 나옵니다 | 원값 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 |
+| facts B4 공정시장가액비율 | 60% → 70% | 60% · 70% | 원값 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| facts B5 세율 | 과표 6~12억 1.0 → 1.3% | 6억을 넘는 구간부터 | 원값 | https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| facts B6 세액공제 | 연령 60세 20%·65세 30%·70세 40% · 거주 5년 20%·10년 40%·15년 50% · 합계 80% · 2028 한도 600만원 | 예순에 20% · 30% · 40% · 15년 50% · 80% · 600만원 | 5년 20%·10년 40% | https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 · https://www.law.go.kr/법령/종합부동산세법 |
+| facts B7 세부담 상한 | 150% 유지(200%안 철회) | 1.5배 | 원값 | https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000079193 |
+| facts B8 적용 시기 | 2027.1.1 이후 납세의무 성립분(기준일 2027.6.1) | 2027년 12월 고지서 · 내년 고지서부터 | 원값 | https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| facts B9 납부유예 | 총급여 7천 → 8천만원 · 65세·10년·10% · 이자 연 3.1% | 7천만원 · 8천만원 · 연 3.1% | 원값 | https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| facts B10 비거주기간 인정 | 최대 3년 · 1년 이상 요양 | 1년 넘게 · 3년까지 | 원값 | https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| facts L7 현행법 | 과세기준일 6월 1일 · 1주택 12억 · 부부 각 9억 | 6월 1일 · 12억 · 9억 | 원값 | https://www.law.go.kr/법령/종합부동산세법 |
+| facts C7 고지서 순서(calc3) | 8억 × 60% = 4.8억 · 산출 276.0 · 재산세 겹친 부분 86.4 · 공제 40% · 농특세 20% · 종부세 136.5 · 보유세 618.9 | 8억 · 5억 조금 안 · 276만원 · 86만원 · 40% · 20% · 136만원 · 619만원 | 원값 | https://www.law.go.kr/법령/종합부동산세법 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| facts C9 안 사는 20억 내년 | 618.9 → 704.4(+85.4) | 85만원 정도 | 원값 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 |
+| facts C8 공동명의 비거주 문턱(calc3) | 18억 0 · 18.02억 161.8 · 거주 0.5 | 160만원 정도 · 거의 0원 | 원값 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000079193 |
+| L5 국세청·종부세법 §16①② | 고지 납부 12.1~12.15 · 고지서 납부기간 5일 전까지 발급 | 12월 1일부터 보름 · 닷새 전 | 원값 | https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2356&cntntsId=7738 · https://www.law.go.kr/법령/종합부동산세법 |
+| raw/law1019 헌법 §53 | 15일 이내 공포 | 15일 안에 | 원값 | https://www.law.go.kr/법령/대한민국헌법/제53조 |

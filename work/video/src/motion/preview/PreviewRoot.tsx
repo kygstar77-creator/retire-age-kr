@@ -19,6 +19,7 @@ import {DaysBelow, DaysBelowProps} from '../DaysBelow';
 import {EqStack, EqStackProps} from '../EqStack';
 import {LoanSteps, LoanStepsProps} from '../LoanSteps';
 import {BalancePath, BalancePathProps} from '../BalancePath';
+import {EqRow, EqRowProps} from '../EqRow';
 
 type P = {scene: RScene; zoom: ZoomOutOpenProps};
 const OpenZoom: React.FC<P> = ({scene, zoom}) => (
@@ -112,6 +113,14 @@ const H2Eq: React.FC<P11> = ({rule, cash, edge}) => (
 type P12 = {scene: RScene; data: BalancePathProps};
 const C2Balance: React.FC<P12> = ({scene, data}) => v3Frame(scene, <BalancePath {...data} />);
 
+// T-1 2장 가로식 장면 셋(10/19 motion) — ratio·year·gap EqRow · 재료 ep/T-1/motion_preview/rowprops.py
+type P13 = {ratio: V3S<Omit<EqRowProps, 'beats'>>; year: V3S<Omit<EqRowProps, 'beats'>>; gap: V3S<Omit<EqRowProps, 'beats'>>};
+const T1Row: React.FC<P13> = ({ratio, year, gap}) => (
+  <Series>
+    {[ratio, year, gap].map((s, i) => <Series.Sequence key={i} durationInFrames={s.frames}>{v3Frame(s, <EqRow {...s.data} beats={tallyStarts(s.lines)} />)}</Series.Sequence>)}
+  </Series>
+);
+
 export const PreviewRoot: React.FC = () => (
   <>
   <Composition id="OpenZoom" component={OpenZoom as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
@@ -150,5 +159,8 @@ export const PreviewRoot: React.FC = () => (
   <Composition id="C2Balance" component={C2Balance as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
     defaultProps={{} as Record<string, unknown>}
     calculateMetadata={({props}) => ({durationInFrames: (props as unknown as P12).scene.frames})} />
+  <Composition id="T1Row" component={T1Row as unknown as React.FC<Record<string, unknown>>} durationInFrames={300} fps={30} width={1920} height={1080}
+    defaultProps={{} as Record<string, unknown>}
+    calculateMetadata={({props}) => { const q = props as unknown as P13; return {durationInFrames: q.ratio.frames + q.year.frames + q.gap.frames}; }} />
   </>
 );

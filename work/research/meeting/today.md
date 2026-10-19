@@ -24,6 +24,7 @@
 - [지시] **firemap-copywriter**·**firemap-visual-designer** (10/17 지시 미완, 기한 10/19 18:40) 임시 확정 썸네일 5편(C-2·H-2·X-1·H-3·T-1) 48h 교체 판정 날짜를 slots note에 — slots.json 검색 0건(21:34)
 - [지시] **firemap-dispatcher** 23:05 회차부터: 관문 기한 지난 칸(C-2) > 곧 기한(H-2 10/19 11:30) > 카페 비축 순으로 투입 · 10/18 19:40 카페 칸이 빈 채 지나감(TBD, 비축 0) — 다음 날 빈 칸 예보를 07:05 회차 첫 줄에
 - [지시] **firemap-report** 10/19 12:30 ⓐ utm cafe 10/19(계산기 링크 첫날) ⓑ ads.txt '찾을 수 없음' 나흘째 — 실파일 200이면 '재크롤 대기'로만 적고 같은 값 사흘 더면 '얼어붙은 지표' 표시 ⓒ 카페 노출은 카페탭 + 조회수 같이(체크리스트 56)
+  착수: firemap-report 12:36 — ⓐ utm cafe 10/19 ⓑ ads.txt ⓒ 10/18 카페탭+조회수 · revenue.md 10/19 줄
 - 판정·원칙: 실험 판정일 오늘 0건 · 운영 실험 새로: **X-CAFE-CALC**(10/19~10/25 계산기 링크 글 vs 없는 글 utm cafe, 판정 10/26 — 전략 참모 '10/31까지 0이면 실패' 받아들임) · 안 받은 반론: 발행 감축·AI 목소리 포기·직접 녹음(사장님 손 안 씀)·1:1 상담(유사투자자문 위험을 새로 만듦)·쿠팡 문구 '높음'(카페 쿠팡 링크 0, 사이트엔 문구·광고 라벨 — verify ⑥)·유사투자자문 '높음'(유료·상담 없음)·'12편=스팸 폐쇄' 단정(5일 연속 카페탭 전부 잡힘) · 받은 반론: 합성 표시 소급(법·verify)·계산기 클릭률로 실패 판정(전략)·'서버에 저장 안 됨' 문구 금지(법 제안을 verify가 뒤집음 — 로그인 동기화·랭킹 저장 있음)
 - 결정 필요(순돌이→사장님): 롱폼 10/25 칸이 장부에 '비움(C1)'(10/17 회의) — 사장님 '무조건 하루 한 개'와 부딪침. C1(7일 7편 상한)은 우리 관문 규칙이라 사장님이 C1 예외를 주시거나 그날을 비울지 정해야 함(레드팀 R1·체크리스트 53)
 ## ★ 벤치마크 루프 10/18 03:40 — AI 도구 점검 2판 (근거 ai-lab/tools-gap-1018.md)
@@ -2678,3 +2679,12 @@ $MSG
   착수: 롱폼 기획·자료조사 담당 12:10 — ep/D-ETF-1 폴더, kwvol·유튜브 30일 상위·운용사 원문·Yahoo 분배 이력
 - [자발] **firemap-write** 12:20 회차 — 12:10 칸 ubfraud1019 발행 + 18:10 TBD 칸(관문 기한 12:10 지남) 새 편
   착수: firemap-write 12:21
+- [지시] **영상미 도구 담당** ← 순돌이 (12:2x 사장님 10/19 'AI 툴로 실제 사람·풍경 만드는 건?'·'링크 속 AI 툴 활용'·'영상미 계속 업그레이드') 실사 같은 장면 도구 조사 + 견본 3장면×도구 2개↑ → research/strategy/ai-footage-1019/
+  착수: 영상미 도구 담당 12:27 — 제미나이 이미지·Canva·vidIQ·Figma·로컬 생성(RTX 3060 6GB·RAM 16GB) 확인부터, 렌더는 남 렌더 없을 때 1개씩
+- [자기 배정] firemap-motion-designer T-1(관문 10/21 11:30) 견본 방식 숫자 장면 — backlog 1순위 '2년 살면 약 12배' 식을 EqStack과 다른 가로식으로
+  착수: firemap-motion-designer 11:30
+  완료: firemap-motion-designer 12:34 — 새 부품 video/src/motion/EqRow.tsx(한 줄 가로식: 값 칸=계산기 키 · 답 '?' → 말 닿을 때 주황+손 동그라미 · 지난 식 회색 줄 · 끝 검은 카드 tail · 다가가기 1.00→1.05 · seed로 정렬·지난 줄 쪽 바뀜) · T-1 2장 세 장면 ratio(1억 4,777만원 ÷ 1,241만원 = 11.9배)·year(거주 2→3년 약 1,690만원+'집마다 다름' 카드)·gap(48% → 4%p×8년=32%p → 16%) props ep/T-1/motion_preview/rowprops.py(script [자막]·facts M4·calc_more assert, 새 숫자 0) · 미리보기 motion_preview/t1_row.mp4(39초)·board_ratio/year/gap.png · U5 최장 6.0초(1차 8.5초 1곳→0) · 심사 2차 제미나이 7·8·8 · Claude 6·7·7 · 레드팀 7·8·8(틀림 0) 평균 7.33 통과 · 근거 review_row.md·ep/T-1/motion.md
+- [요청] **firemap-video-producer** ← motion (12:34) T-1 녹음 확정 뒤 `py -3.12 work/research/longform/ep/T-1/motion_preview/rowprops.py` → t1_row.json ratio·year·gap data를 t1props 장면 kind 'mo'로(지금 bars '2029년, 같은 20억 집'·'수현 씨 2029년 · 살았던 햇수별' 자리 + '조심할 것도 있어요'~'여덟 해 차이라서' 3줄), T1.tsx `<EqRow {...s.data} beats={tallyStarts(s.lines)} />`(TallyFrame 자식) · 부품 안 글자는 screen_text 밖 → 편집 재서명 때 row_st/ 스틸 같이 · '필요경비 0 가정'(facts [C*] 말·화면에 밝힘)이 이 장면엔 없음 — 앞 사례 장면에 있는지 확인
+- [알림] **firemap-youtube-loop·firemap-editor** ← motion (12:34) T-1 2장 레드팀 오독 2: ① 대본 '2029년 공제율은 지금보다 4%씩 낮아집니다' — 화면은 4%p(48%의 4%로 읽힐 수 있음), '4%포인트씩' 판단은 대본 담당 ② 자막 '1억 5천만원에 조금 못 미칩니다'가 '…5천만원에…' 조각으로 잘려 화면 1억 4,777만원과 따로 읽힘(자막 끊기) · 근거 ep/T-1/motion_preview/review_row.md
+- [지시] **썸네일 담당** ← 순돌이 (13시 사장님 '조회수 안 나오고 있는 영상들도 썸네일 바꿔 봐') 공개 롱폼 중 조회 적은 편 썸네일만 N-2 thumb_A 꼴로 교체(영상·제목·설명 그대로, 쇼츠 제외, A-1·N-1·H-1·R-1·C-2·N-2 제외) · 효과 재기 research/growth/rethumb-1019.csv · 10/26 10:00 다시 재기 예약
+  착수: 썸네일 담당 12:35 — Data API 조회 다시 재기 → 편마다 thumb_before_1019 저장·2안·58세·judge 채점

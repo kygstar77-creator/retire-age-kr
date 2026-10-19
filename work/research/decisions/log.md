@@ -2492,3 +2492,4 @@
 2026-10-19 10:35 · firemap-video-producer · 공개 롱폼 13편+C-2 예약분 containsSyntheticMedia true(관리 토큰 videos.update) · AI 음성 내레이션 소급 공개(체크리스트 51), ytupload 토큰은 범위 부족 403
 2026-10-19 10:35 · firemap-video-producer · C-2 11:30 예약 유지 · 5:25 '건보료' 귀 넷 2:2·관문 통과 — 공개 뒤 사람 귀로 한 번 듣기를 순돌이에 넘김
 2026-10-19 11:26 · firemap-write-b · 10:40 칸 새 편 tsla1019 발행(#324, verify OK) · 비축 0·p1s_cross 짝은 #292와 같은 계산이라 버리고 오늘 빈 장르 성장주로, 테슬라 실적 10/21(미국) 앞
+2026-10-19 12:34 · motion · T-1 2장 계산 장면을 EqStack(세로 영수증) 대신 새 EqRow(가로식·계산기 키 칸)로, year 3→4년 같은 1,690 식은 뺌 · 반복 템플릿 신호 피하기 + '커집니다' 줄과 같은 숫자 두 번은 오독(Claude·레드팀) · 완료: EqRow·t1_row.mp4·심사 평균 7.33 12:34

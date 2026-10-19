@@ -333,6 +333,13 @@ def screen_ok_for_upload(mp4):
 
 def render(ep, extra=(), vid=VID):
     ok, out = gates(ep, vid)
+    try:   # 10/19 사장님 '이미지도 우리 마음대로 넣지 말고 … 이걸 단계에 넣어' — 장면 구상 관문(공개 10/23 이후 편)
+        import research_gate as _rg
+        _m = json.load(open(os.path.join(ep, 'meta.json'), encoding='utf-8'))
+        if (_m.get('publishAt') or '9') >= _rg.SHOT_FROM:
+            _sb = _rg.shot_check(ep, [c[1] for c in _m.get('chapters') or []])
+            if _sb: ok = False; out += ['거부 · 장면 구상(shot_plan.md): ' + x for x in _sb]
+    except FileNotFoundError: pass
     o_ok, o_lines = overlap_check(ep, vid); ok &= o_ok; out += o_lines
     print(*out, sep='\n')
     if not ok:

@@ -102,6 +102,8 @@ def gate(ep):
     bad += research_gate.research_check(os.path.join(ep, 'research.md'))
     if (m.get('publishAt') or '9') >= research_gate.TOC_FROM:   # 10/19 사장님 '아무거나 넣어서 이상하게 만들지 못하게' — 목차 맞대기
         bad += research_gate.toc_check(ep, [c[1] for c in m.get('chapters') or []])
+    if (m.get('publishAt') or '9') >= research_gate.SHOT_FROM:   # 10/19 사장님 — 장면은 경쟁 장면을 따라 구상하고 도구로 만든 것만
+        bad += research_gate.shot_check(ep, [c[1] for c in m.get('chapters') or []])
     # 10/19 사장님 "대본에 쓰는 단어도 AI 티를 벗어야 해" — 10/21 공개분부터 구어 아닌 말(data/not_spoken.json ban)이 남아 있으면 못 올린다.
     if (m.get('publishAt') or '') >= '2026-10-21':
         import glob, aitell

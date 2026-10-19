@@ -796,6 +796,12 @@ if __name__ == '__main__':
     elif cmd == 'plan': make(ep, mr, dry=True, cap=cap)
     elif cmd == 'make':
         n = sum(len(x['lines']) for x in sections(ep)); cap_n = CHIRP_MAX_LINES if is_chirp(lock(ep)) else MAX_LINES
+        try: _pa = json.load(open(os.path.join(ep, 'meta.json'), encoding='utf-8')).get('publishAt') or '9'
+        except Exception: _pa = '9'
+        import research_gate
+        if _pa >= research_gate.TOC_FROM and not os.path.exists(os.path.join(ep, 'voice.json')):   # 10/19 사장님: 목차 근거 없는 대본은 녹음 전에 막는다(새 편만)
+            _tb = research_gate.toc_check(ep)
+            if _tb: sys.exit('녹음 안 함 — 목차 맞대기 관문: ' + ' · '.join(_tb))
         if n > cap_n and '--over' not in sys.argv:   # 10/6 순돌이: 무료 한도 한 창(16:00 초기화)에 약 100줄 — 넘으면 이틀에 나눠 녹음돼 목소리가 달라진다(R-1 +8.3%). RULES '하루 녹음 한도 안 길이'
             sys.exit(f'말하는 줄 {n}줄 > {cap_n}줄 — 한 창에 다 녹음되지 않음. 대본을 줄인 뒤 녹음(결제 연결 전까지)')
         make(ep, mr, first=int(sys.argv[sys.argv.index('--first') + 1]) if '--first' in sys.argv else 0, cap=cap,

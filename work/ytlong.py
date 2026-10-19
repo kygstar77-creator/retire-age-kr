@@ -56,7 +56,7 @@ def readback_check(ep):
     if len(rb) != len(lines): bad.append(f'C-readback 줄 수 다름 voice {len(lines)} · readback {len(rb)}')
     miss = [a for a, l in lines if a not in rb or rb[a].get('text') != l['text'] or rb[a].get('audio', l['audio']) != l['audio']]
     if miss: bad.append(f'C-readback 글·소리 안 맞는 줄 {len(miss)}: ' + ','.join(miss[:6]))
-    noflash = [a for a, l in lines if a in rb and not {'gemini-3.5-flash', 'gemini-flash-latest', 'whisper-small'} & set(rb[a].get('models', []))]
+    noflash = [a for a, l in lines if a in rb and not {'gemini-3.5-flash', 'gemini-flash-latest', 'whisper-small', 'whisper-turbo'} & set(rb[a].get('models', []))]
     if noflash: bad.append(f'C-readback 3.5-flash 둘째 받아쓰기 없는 줄 {len(noflash)}(합의오독 검사 안 함) — readback --resume')
     for k in ('받아쓰기 실패', '합의오독', '숫자'):
         hit = [a for a, l in lines if a in rb and k in rb[a].get('flag', '')]
@@ -100,6 +100,15 @@ def gate(ep):
     bad += readback_check(ep)   # 10/18 C-readback
     import research_gate
     bad += research_gate.research_check(os.path.join(ep, 'research.md'))
+    if (m.get('publishAt') or '9') >= research_gate.TOC_FROM:   # 10/19 사장님 '아무거나 넣어서 이상하게 만들지 못하게' — 목차 맞대기
+        bad += research_gate.toc_check(ep, [c[1] for c in m.get('chapters') or []])
+    # 10/19 사장님 "대본에 쓰는 단어도 AI 티를 벗어야 해" — 10/21 공개분부터 구어 아닌 말(data/not_spoken.json ban)이 남아 있으면 못 올린다.
+    if (m.get('publishAt') or '') >= '2026-10-21':
+        import glob, aitell
+        says = sorted(glob.glob(os.path.join(ep, 'say_v*.txt')), key=os.path.getmtime)
+        if says:
+            sp, _ = aitell.spoken_check(open(says[-1], encoding='utf-8').read().splitlines())
+            if sp: bad.append(f'구어 아닌 말 {len(sp)}줄({os.path.basename(says[-1])}): ' + ', '.join(f"{w}→{t}" for w, _, _, t in sp[:5]) + ' — py -3.12 work/aitell.py script <편>')
     ut = os.path.join(ep, 'understand_test.md')
     if not os.path.exists(ut): bad.append('understand_test.md 없음 — 처음 보는 사람 이해 시험(제목·썸네일·대본) 없이 못 올림')
     else:

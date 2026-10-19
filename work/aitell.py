@@ -5,9 +5,9 @@
 #   py -3.12 work/aitell.py pass <묶음> <편집자>             → 편집 통과 표시(editor_ok.txt)를 남긴다
 #   py -3.12 work/aitell.py scan <묶음 폴더 여러 개>         → 기준 조정용 분포
 #   py -3.12 work/aitell.py sameday 2026-10-05               → 그 날 카페 칸끼리 숫자 핵심값 겹침(≥3, 같은 예시)·제목 끝말 같은 칸 ≥3 검사. 걸리면 종료코드 5. gate는 숫자 겹침만 막고 끝말은 경고(10/5부터)
-#   py -3.12 work/aitell.py frame <묶음>                     → 카페 틀 v2 3줄 점검(소제목 3~5개·끝 FAQ/정리·제목 명사 끝 또는 B틀 물음, 반전 금지). 어기면 종료코드 5
+#   py -3.12 work/aitell.py frame <묶음>                     → 카페 틀 점검(기준 리뉴얼 10/19 D갈래: 소제목 0~6 경고·'한눈에 정리' 필수·쉼표 제목 하루 절반 이하·제목 30자 경고, 물음·'왜' 제목 규칙은 뺌). 어기면 종료코드 5
 #   py -3.12 work/aitell.py aibrief <묶음>                   → AI 브리핑 인용 구조 3줄(10/5 ai-lab): 첫 문단 2~3문장 안 숫자 답·질문형 소제목 ≥2·표 1개. 어기면 종료코드 5. gate에는 안 넣음(모든 글 같은 틀 금지 — 칸 1편씩 고른 글만)
-#   py -3.12 work/aitell.py commaday 2026-10-04               → 그 날 카페 칸 쉼표 없는 제목 수(하루 2편 이상, 10/4 칸부터 frame이 쉼표 제목을 막는다)
+#   py -3.12 work/aitell.py commaday 2026-10-04               → 그 날 카페 쉼표 제목 수(D-22 10/19: 하루 칸의 절반 이하, 넘으면 frame이 쉼표 제목을 막는다)
 #   py -3.12 work/aitell.py script <편 폴더|voice.json|자막 .json3|대본 텍스트>  → 롱폼 대본 실측 기준 2개(10/4 speechcompare 경쟁 자막 12편 vs 우리 4편): 숫자 1,000단어당 ≤92(경쟁 최대 91.4) · 숫자 2개 이상 문장 ≤20%. 넘으면 종료코드 6
 #        + 말 습관 4개(10/13 벤치마크 루프): 정밀 숫자 낭독('39만 7천'·6자리↑)·순번 3종↑·말 목차('볼게요') 3연속·꼬리표 낭독({F}·이미지 1·S3) — 걸린 줄 번호 출력, 걸리면 종료코드 6
 #        + 구어 아닌 말(10/19 사장님 '사람이 구어체로 쓰지 않는 단어'): work/data/not_spoken.json ban 말이 있으면 줄·바꿀 말을 보이고 종료코드 6, over 말은 경고만
@@ -181,40 +181,50 @@ def opening_check(pkg):
     return bad
 
 
+D_FROM = '2026-10-20'   # 기준 리뉴얼 D갈래(10/19) 중 조이는 것('한눈에 정리' 필수)은 이 날 칸부터. 푸는 것(D-07·D-18·D-20·D-21·D-22)은 바로.
+SUMMARY_END = re.compile(r'한눈에|정리|요약')
+TITLE_WARN_LEN = 30     # D-23: 상위 카페 제목 3,908개 길이 중앙 20자(growth/cafe-copy-1019) — 30자 넘으면 경고만
+
+
 def frame_check(pkg):
-    """카페 틀 v2 3줄(10/02 brand-director): ① 소제목 3~5개 ② 끝 FAQ/정리 소제목 ③ 제목: 명사 끝 또는 B틀 물음(얼마·몇), 반전(왜·는데) 금지. 어긴 곳 목록."""
+    """카페 틀(기준 리뉴얼 10/19, registry D-18~D-23). 어긴 곳 목록.
+    D-18 소제목 수는 막지 않는다(0~6 허용, 7개 넘으면 경고) — 800자 넘는 상위 글 52편 중 33편이 소제목 없이 문단으로만.
+    D-19 끝 '한눈에 정리'(정리·요약) 필수, FAQ는 선택 — 사장님 10/19 "한 편만 봐도 … 전부 이해".
+    D-20·D-21 물음 제목 B틀만·'왜/는데' 금지는 뺐다(상위 3,908개: 물음 1.04배, 이유·왜 1.09배).
+    D-22 쉼표 제목은 하루 카페 칸의 절반 이하(상위 카페 쉼표 제목 10%, 조회 1.05배 — 템플릿 신호만 막음)."""
     text, files = pkg_text(pkg)
     bad = []
     sc, why = scope_check(pkg)
     if sc == '밖': bad.append(why)
     heads = [ln.strip() for ln in text.splitlines() if re.match(r'\s*(##\s|■)', ln)]
-    if not 3 <= len(heads) <= 5: bad.append(f'소제목 {len(heads)}개 — 3~5개로(##·■ 줄 기준)')
-    if not any(FRAME_END.search(h) for h in heads[-2:]): bad.append('끝 FAQ·정리 소제목이 없다 — 마지막 두 소제목 안에 FAQ/자주 묻는/정리/요약')
+    sp1 = os.path.join(pkg, 'slot.txt')
+    day1 = open(sp1, encoding='utf-8').read().strip()[:10] if os.path.exists(sp1) else '9999'
+    if len(heads) > 6: print(f'[경고] 소제목 {len(heads)}개 — 0~6개 권장(D-18, 쓰면 인용구 블록 꼴)')
+    if day1 >= D_FROM and not os.path.exists(os.path.join(pkg, 'notice.txt')):   # 공지 묶음(공지사항 게시판)은 정보글이 아니라 빼고, 옛 규칙도 안 본다
+        tail = heads[-2:] if heads else [ln for ln in text.splitlines()[len(text.splitlines()) // 2:]]
+        if not any(SUMMARY_END.search(h) for h in tail): bad.append("끝 '한눈에 정리'가 없다 — 마지막 두 소제목(소제목 없으면 글 뒤쪽)에 한눈에/정리/요약(D-19, FAQ는 선택)")
+    elif day1 < D_FROM and not any(FRAME_END.search(h) for h in heads[-2:]): bad.append('끝 FAQ·정리 소제목이 없다 — 마지막 두 소제목 안에 FAQ/자주 묻는/정리/요약')
     # 10/03 12:2x write: 10/3 카페 칸 6개 중 5개가 사진 1~2장·표지 '평균:' 줄 없이 gates_ok를 받았다.
     # naverpost는 발행 순간에야 막아(사진 3장·cover_review 평균 7) 12:10 칸이 그 자리에서 걸렸다 — 도장 찍을 때 미리 잡는다.
     op = os.path.join(pkg, 'order.txt')
     if os.path.exists(op):
         n_img = sum(1 for ln in open(op, encoding='utf-8') if ln.strip().startswith('img/'))
         if n_img < 3: bad.append(f'사진 {n_img}/3장 — naverpost가 발행을 막는다')
-    cr = os.path.join(pkg, 'cover_review.md')
-    avg = re.findall(r'평균\s*[:：]\s*([0-9.]+)', open(cr, encoding='utf-8').read()) if os.path.exists(cr) else []
-    if not avg or float(avg[-1]) < 7: bad.append('cover_review.md에 "평균: N"(3명, 7 이상) 줄이 없다 — naverpost가 발행을 막는다')
+    # D-07(뺌): 표지 심사 '평균: N' 7점 문턱은 근거 없는 자체 점수 — D-05(100px 읽힘)·D-06(최근 10장 옆 구별)·D-04(경쟁 표지 종류)로 대신(editgate.cover_check).
     tp = os.path.join(pkg, 'title.txt')
     if os.path.exists(tp):
         t = open(tp, encoding='utf-8').read().strip()
         core = re.sub(r"[\s\)\]\.!·~…\"']+$", '', t)
-        # 10/02 10:2x brand-director 바로잡음: 물음 끝 하루 조회 중앙 1.77 > 명사 끝 0.66(benchmark-2026-10-02.md 제목 틀 v2).
-        # 물음은 B틀('얼마·몇')만 허용, '왜·~는데' 반전은 금지(0.85 vs 1.26).
-        if re.search(r'왜|는데', t): bad.append(f'제목에 반전 연결(왜·~는데) — "…{t[-14:]}"')
-        elif (t.endswith('?') or re.search(r'(까|나요|가요|죠|요|니다)$', core)) and not re.search(r'얼마|몇', t):
-            bad.append(f'물음 제목은 B틀(얼마·몇)만 — "…{t[-14:]}"')
-        # 10/03 19:54 audit: RULES 179행 '하루 2편 이상 쉼표 없는 제목'이 관문에 없어 10/3 칸 11편이 전부 '키워드, 이야기' 틀.
-        # 같은 날 카페 칸 중 쉼표 없는 제목이 2편 안 되면, 쉼표 제목은 막는다(쉼표 없는 쪽은 통과).
+        # D-20·D-21(뺌, 10/19): 물음 B틀만·'왜/~는데' 금지 규칙은 우리 글 표본(10/02)에서 나왔고, 상위 카페 3,908개는 물음 1.04배·이유·왜 1.09배.
+        #   낚시(본문에 답 없는 제목)만 공식 기준으로 본다(사람 눈).
+        if len(core) > TITLE_WARN_LEN: print(f'[경고] 카페 제목 {len(core)}자 — 30자 넘음(D-23, 상위 제목 중앙 20자)')
+        # D-22(10/19): 쉼표 제목은 하루 카페 칸의 절반 이하(12칸이면 6편). 옛 규칙 '쉼표 없는 제목 하루 2편 이상'(10/03 audit)을 바꿈.
         sp = os.path.join(pkg, 'slot.txt')
         day = open(sp, encoding='utf-8').read().strip()[:10] if os.path.exists(sp) else ''
         if day >= COMMA_FROM and ',' in t:
             n, tot = comma_day(day, pkg, t)
-            if n < 2: bad.append(f'{day} 카페 칸 쉼표 없는 제목 {n}/{tot}편 — 하루 2편 이상 필요, 이 제목을 쉼표 없이(질문 한 문장·숫자 한 문장)')
+            cap = cafe_slots_per_day() // 2
+            if tot - n > cap: bad.append(f'{day} 카페 쉼표 제목 {tot - n}편 > 하루 칸 절반 {cap}편 — 이 제목을 쉼표 없이(D-22)')
     sp2 = os.path.join(pkg, 'slot.txt')
     if (open(sp2, encoding='utf-8').read().strip()[:10] if os.path.exists(sp2) else '9999') >= OPEN_FROM: bad += opening_check(pkg)
     return bad
@@ -225,6 +235,8 @@ def frame_check(pkg):
 SCOPE_OUT = re.compile(r'한능검|한국사\s*능력|토익|TOEIC|토플|오픽|시험\s*일정|대형\s*폐기물|폐기물\s*스티커|장례\s*절차|장례식\s*절차|청년\s*(전용|도약|내일|희망|미래|주택|월세)')
 SCOPE_EDGE = re.compile(r'실거래|아파트|분양|대출\s*금리|주담대|전세|(?<![가-힣])금\s*(시세|\d)|금값|주가|종목')
 SCOPE_TIE = re.compile(r'세후|노후|은퇴|퇴직|연금|월\s*\d|매달|건보|건강보험|생활비|현금|배당|분배금|이자')
+# D-29(10/19): 예금·금리·세금·건보료·연금계좌는 '안쪽'으로 명시 — 예금·파킹 금리는 전 연령 카페(정가거부·짠돌이)에서도 상위(growth/cafe-copy-1019)
+SCOPE_IN = re.compile(r'예금|적금|파킹|금리|세금|양도세|종합소득세|건보료|건강보험료|연금계좌|ISA|IRP|연금저축|DC형|DB형')
 
 
 def scope_check(pkg):
@@ -233,6 +245,7 @@ def scope_check(pkg):
     t = open(tp, encoding='utf-8').read().strip() if os.path.exists(tp) else ''
     m = SCOPE_OUT.search(t)
     if m: return '밖', f'카페 주제 밖("{m.group(0)}") — X-CN-1·R31 새 사이트 쪽으로(brand/guide.md ①-카페 주제 범위)'
+    if SCOPE_IN.search(t): return '안쪽', ''
     m = SCOPE_EDGE.search(t)
     if m and not SCOPE_TIE.search(text_head(pkg)):
         return '경계', f'경계 주제("{m.group(0)}")인데 제목·첫 문단에 세후·노후 현금흐름 말이 안 보인다 — 끝이 노후 돈 숫자로 이어지는지 확인'
@@ -267,6 +280,15 @@ def aibrief_check(pkg):
 
 
 COMMA_FROM = '2026-10-04'
+
+
+def cafe_slots_per_day():
+    """slots.json cadence.cafe 칸 수(지금 12). 못 읽으면 12."""
+    try:
+        sl = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research', 'slots.json'), encoding='utf-8'))
+        return len(sl['cadence']['cafe']) or 12
+    except Exception:
+        return 12
 
 
 def comma_day(day, pkg=None, title=None):
@@ -390,9 +412,27 @@ def recent_end_check(pkg):
     return ''
 
 
+# 기준 리뉴얼 A-26(10/19, registry): 단정·보장 표현 — 자본시장법 시행령 제102조의2제2호·금소법 시행령 제20조①4호('불확실한 사항에 대해 단정적 판단'),
+#   자본시장법 제101조의2②2호·금소법 제22조④2호가목(손실보전·이익보장 오인), 유튜브 사기 정책 answer/2801973(get rich quick). ytlong.BANNED·shortsdaily C7과 같은 9개.
+#   우리는 유사투자자문업자가 아니라 법 조항을 빌려 쓴 기준. 예금자보호(5천만원 한도) 설명 문장은 확정된 제도라 뺀다.
+ASSERT_BANNED = ['확정 수익', '손실 없', '100% 수익', '반드시 오', '절대 안 떨어', '확실한 수익', '급등 예정', '단기간에 부자', '누구나 월']
+ASSERT_EXCEPT = re.compile(r'예금자\s*보호')
+
+
+def assert_check(text):
+    """단정·보장 표현이 든 문장 [(말, 문장)]."""
+    out = []
+    for snt in sentences(text):
+        if ASSERT_EXCEPT.search(snt): continue
+        out += [(w, snt.strip()[:60]) for w in ASSERT_BANNED if w in snt]
+    return out
+
+
 def gate_pkg(pkg):
     """발행기용. (올려도 되나, 한 줄 사유, 걸린 곳)."""
     text, files = pkg_text(pkg)
+    ab = assert_check(text)
+    if ab: return False, '단정·보장 표현(자본시장법 시행령 102조의2·금소법 시행령 20조) — ' + '; '.join(f'"{w}" {x}' for w, x in ab[:3]), ab
     if is_cafe_pkg(pkg):
         sp0 = os.path.join(pkg, 'slot.txt')
         day0 = open(sp0, encoding='utf-8').read().strip()[:10] if os.path.exists(sp0) else ''
@@ -529,6 +569,23 @@ def script_habits(lines, said=None, screen_titles=None):
     return sorted(hits, key=lambda h: h[1])
 
 
+# 기준 리뉴얼 A-23(10/19): 말 한 줄 숫자 — NPR Training(Socolovsky) '오디오 대본은 문장에 숫자 하나면 보통 충분'·CDC 명확한 소통 지표 9번(꼭 필요한 숫자만).
+#   1개 기본, 2개는 비교 말이 있을 때만, 3개 이상은 실패. '3억 5천만'처럼 한 값은 하나로 센다. ytlong gate가 10/23 공개분부터 쓴다.
+_CMP = re.compile(r'보다|대신|에서\s?.*으로|vs|VS|차이')
+
+
+def script_numbers(lines):
+    """[(줄 번호, 줄)] — 숫자 3개+ 줄, 또는 비교 말 없이 숫자 2개인 줄."""
+    out = []
+    one = re.compile(r'(?:\d{4}\s*년\s*)?\d{1,2}\s*월\s*\d{1,2}\s*일|\d{4}\s*년\s*\d{1,2}\s*월'   # 날짜 하나 = 값 하나
+                     r'|\d[\d,.]*\s*(?:조|억|천만|백만|만|천|백)(?:\s*\d[\d,.]*\s*(?:천만|백만|만|천|백|억)?)+')   # '6천8백'·'3억 5천만' = 값 하나
+    for i, l in enumerate(lines, 1):
+        x = one.sub(' N ', _COMPOUND.sub(' N ', l))
+        n = len(re.findall(r'\d[\d,.]*', x)) + x.count(' N ')
+        if n >= 3 or (n == 2 and not _CMP.search(l)): out.append((i, l))
+    return out
+
+
 NS_FILE = os.path.join(HERE, 'data', 'not_spoken.json')
 
 
@@ -567,6 +624,11 @@ def script_check(text):
     # 10/16 사장님 "이상한 단위 할 푼 리 이런 건 쓰지 말아야 할 거고" — 할·푼·리 비율 말과 억·조 뒤 소수 둘째 자리(20.00억)는 금지.
     for m in re.finditer(r'(\d|[일이삼사오육칠팔구십한두세네])\s*할(?![인부머])|\d\s*푼|\d+\.\d{2}\s*[억조]', text):
         bad.append(f'이상한 단위 "{m.group(0)}" — 할·푼·리 대신 %·"10명 중 1명", 억은 "20억"·"23억 8천만원"처럼')
+    # A-26: 단정·보장 표현(법 조항 빌려 씀) — 대본도 막는다
+    for w, x in assert_check(text): bad.append(f'단정·보장 표현 "{w}" — {x}')
+    # A-20 보탬(경고): 비율을 말로 할 때는 "10명 중 1명" 꼴(CDC 위험 소통·Galesic·Gigerenzer 2009) — 막지 않음
+    pc = len(re.findall(r'\d+(?:\.\d+)?\s*%|퍼센트', text))
+    if pc >= 5: print(f'[경고] 말에 % {pc}번 — 비율은 "10명 중 1명"처럼 자연 빈도로, 비교할 땐 분모를 같게(A-20)')
     return not bad, per, multi, len(sents), bad
 
 
@@ -638,7 +700,8 @@ def main(a):
         refuse(msg, hits); return 4
     if a[0] == 'commaday':
         n, tot = comma_day(a[1])
-        print(f'{a[1]} 카페 칸 쉼표 없는 제목 {n}/{tot}편 — ' + ('통과' if n >= 2 else '걸림(하루 2편 이상)')); return 0 if n >= 2 else 5
+        cap = cafe_slots_per_day() // 2   # D-22(10/19): 쉼표 제목은 하루 칸 절반 이하
+        print(f'{a[1]} 카페 쉼표 제목 {tot - n}/{tot}편 — ' + ('통과' if tot - n <= cap else f'걸림(하루 {cap}편까지)')); return 0 if tot - n <= cap else 5
     if a[0] == 'sameday':
         over, endbad = sameday_check(a[1])
         for x in over + endbad: print('걸림:', x)

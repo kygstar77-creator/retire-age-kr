@@ -35,7 +35,34 @@ def late_min(kind):
     try: g = _n.gap_min(kind)
     except Exception: g = getattr(_n, 'GAP_MIN', {}).get(kind)
     return LATE_MIN if g is None else g + 60
-STOCK_WANT = 3         # 매체별로 이만큼은 미리 써 둬야 회차가 안 밀린다
+SLOT_LATE_MIN = 50     # E-21(기준 리뉴얼 10/19): 카페는 '지난 칸 시각 + 50분'이 지나도 그 칸 글이 없으면 지각 — 10/14~ 62편 칸 대비 지연 중앙 21분·90% 38분·최대 50분
+
+def _slots():
+    try: return json.load(open(os.path.join(HERE, 'research', 'slots.json'), encoding='utf-8'))
+    except Exception: return {}
+
+def cafe_late(m, now=None):
+    """카페 지각인가(E-21). m = 마지막 우리 글이 몇 분 전. cadence.cafe 칸 중 '칸 + 50분'이 이미 지난 가장 최근 칸 t를 잡고,
+    마지막 글이 그 앞 칸의 창(앞 칸 + 50분) 뒤에 올라갔으면 t 칸 글로 본다. 밤 22:40~06:10 빈 시간도 칸 시각으로 판단한다."""
+    import datetime as _d
+    cad = sorted((_slots().get('cadence') or {}).get('cafe') or [])
+    if m is None or not cad: return None
+    now = now or _d.datetime.now()
+    ts = []
+    for k in (1, 0):
+        day = (now - _d.timedelta(days=k)).date()
+        ts += [_d.datetime.combine(day, _d.time(int(x[:2]), int(x[3:5]))) for x in cad]
+    past = [t for t in ts if t + _d.timedelta(minutes=SLOT_LATE_MIN) <= now]
+    if len(past) < 2: return None
+    t, prev = past[-1], past[-2]
+    last = now - _d.timedelta(minutes=m)
+    return last < prev + _d.timedelta(minutes=SLOT_LATE_MIN)
+
+def stock_want(kind):
+    """E-22(10/19): 미리 써 둘 묶음 수 = slots.json reserve_min(카페 2). 옛 STOCK_WANT 3은 하루 24편 시절 숫자. 블로그는 같은 값."""
+    r = _slots().get('reserve_min') or {}
+    return int(r.get(kind, r.get('cafe', 2)))
+STOCK_WANT = stock_want('cafe')   # 옛 이름(다른 스크립트가 읽을 수 있어 남김)
 
 def load(p, d):
     try: return json.load(open(p, encoding='utf-8'))
@@ -139,7 +166,7 @@ def main():
         m = N.last_published_minutes(kind)
         rec['late'][kind] = None if m is None else round(m)
         if m is None: rec['alert'].append(f'{kind} 최근 발행 시각을 못 쟀다(RSS·API 실패)')
-        elif m > late_min(kind) and not (quiet and kind == 'blog') and kind not in capped:
+        elif (cafe_late(m) if kind == 'cafe' and cafe_late(m) is not None else m > late_min(kind)) and not (quiet and kind == 'blog') and kind not in capped:
             rec['alert'].append(f'{kind} 마지막 발행이 {m/60:.1f}시간 전 — 회차를 놓쳤다')
 
     # 2) 미리 써 둔 묶음이 몇 개인가 — 0이면 다음 회차도 놓친다
@@ -168,7 +195,7 @@ def main():
             rec['alert'].append(f'{kind} 막힌 묶음 {blocked}개 — 올릴 수 없다({why}). 재고에서 뺐다')
         if capblk:
             rec['note'].append(f'{kind} 묶음 {len(capblk)}개는 상한·시각 대기 — 때가 되면 올린다(재고로 셈)')
-        if n < STOCK_WANT and kind not in stopped: rec['alert'].append(f'{kind} 대기 묶음 {n}개 (목표 {STOCK_WANT}) — 회차가 처음부터 쓰느라 밀린다')
+        if n < stock_want(kind) and kind not in stopped: rec['alert'].append(f'{kind} 대기 묶음 {n}개 (목표 {stock_want(kind)}, slots reserve_min) — 회차가 처음부터 쓰느라 밀린다')
 
     # 2-b) 로그인이 살아 있나. 2026-09-25: 쿠키가 만료됐는데 아무도 못 알려
     # 카페가 10시간, 어제는 블로그가 2시간 멈췄다. 사장님이 물어서야 알았다.
@@ -252,7 +279,7 @@ def main():
     # 그냥 집던 탓이다.
     okpend = [x for x in pend if not x.get('block')]
     need = [k for k in kinds
-            if (rec['late'][k] or 0) > late_min(k) and any(x['kind'] == k for x in okpend)]
+            if (bool(cafe_late(rec['late'][k])) if k == 'cafe' and cafe_late(rec['late'][k]) is not None else (rec['late'][k] or 0) > late_min(k)) and any(x['kind'] == k for x in okpend)]
     if need and not check_only:
         # 잠금은 여기서 잡지 않는다. naverpost.py가 launch()에서 스스로 잡는다.
         # 감시기가 먼저 잡으면 제 자식을 막아 15분을 기다리다 실패한다(2026-09-23 18:49 실제 발생).
@@ -263,7 +290,7 @@ def main():
             m2 = None
             try: m2 = N.last_published_minutes(kind)
             except Exception: pass
-            if m2 is not None and m2 <= late_min(kind):
+            if m2 is not None and (not cafe_late(m2) if kind == 'cafe' and cafe_late(m2) is not None else m2 <= late_min(kind)):
                 rec['did'].append(f'{kind} 메우기 취소 — 다시 재니 {round(m2)}분 전에 올라가 있다(다른 회차가 먼저 채웠다)')
                 continue
             pkg = next(x['pkg'] for x in okpend if x['kind'] == kind)

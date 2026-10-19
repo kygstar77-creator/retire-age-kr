@@ -14,6 +14,16 @@ sys.path.insert(0, HERE)
 LOOP = os.path.join(HERE, 'research', 'longform', 'loop'); UPL = os.path.join(LOOP, 'uploads.jsonl')
 EPS = os.path.join(HERE, 'research', 'longform', 'ep')
 BANNED = ['사세요', '사지 마', '무조건', '추천 종목', '수익 보장', '원금 보장', '!!', '전문가인 제가', '제가 추천', '지금 당장', '파세요']
+# 기준 리뉴얼 A-26(work/research/criteria/registry.md): 단정·보장 표현 9개 더함 — 근거 자본시장법 시행령 제102조의2제2호·금소법 시행령 제20조①4호
+#   ('불확실한 사항에 대해 단정적 판단'), 자본시장법 제101조의2②2호·금소법 제22조④2호가목(손실보전·이익보장 오인), 유튜브 사기 정책(answer/2801973 get rich quick).
+#   우리 채널은 유사투자자문업자가 아니라 법 조항을 '빌려 쓴' 기준이다. 같은 목록을 aitell.ASSERT_BANNED(카페 글·대본)도 쓴다.
+BANNED += ['확정 수익', '손실 없', '100% 수익', '반드시 오', '절대 안 떨어', '확실한 수익', '급등 예정', '단기간에 부자', '누구나 월']
+# A-25: C5 중복 셈에서 빼는 줄 — 고정 첫 줄·끝 줄(youtube-loop SKILL '모든 롱폼 첫 줄과 끝 줄') + 면책 줄. 유튜브 수익화 정책 1311392가 같은 인트로·아웃트로는 허락.
+FIXED_LINE = re.compile(r'안녕하세요,?\s*파이어맵입니다|그때 뵙겠습니다|오전 11시 반에는|구독')
+# A-31(법): 쿠팡 등 대가 구간 표시 — 공정위 「추천·보증 등에 관한 표시·광고 심사지침」(예규 제499호, 2026-06-01 시행) Ⅴ.6:
+#   동영상은 제목 또는 영상 안, 일부 구간이면 그 구간 시작과 끝, 길면 반복(예 5분마다). '더보기'를 눌러야 보이는 설명란만은 부적절.
+PAID_CAPTION = '쿠팡 파트너스'   # 화면 자막에 이 말 + '수수료'가 같은 줄에 (예 "쿠팡 파트너스 수수료를 받아요")
+PAID_EVERY_S = 300
 KST = datetime.timezone(datetime.timedelta(hours=9))
 
 def uploads():
@@ -67,12 +77,13 @@ def readback_check(ep):
 def gate(ep):
     m = json.load(open(os.path.join(ep, 'meta.json'), encoding='utf-8')); bad = []
     # 경쟁 비교 관문(10/2 대역): ep/<편>/compare.md에 3줄(경쟁이 잘하는 것·우리가 따라갈 것·우리가 다르게 할 것)이 있어야 올린다. 이름은 compare.md 하나로 통일
-    cp = os.path.join(ep, 'compare.md')
-    if not os.path.exists(cp): bad.append('경쟁 비교 compare.md 없음(경쟁 5+ 실측 · 잘하는 것/따라갈 것/다르게 할 것)')
+    # A-29(합침): 경쟁 표본은 toc_compare.md(A-05, 10편+포화) 하나 — 3줄(잘하는·따라갈·다르게)은 compare.md 또는 toc_compare.md 맨 아래 칸에 있으면 된다.
+    cp = os.path.join(ep, 'compare.md'); tp_ = os.path.join(ep, 'toc_compare.md')
+    if not os.path.exists(cp) and not os.path.exists(tp_): bad.append('경쟁 비교 3줄 없음(toc_compare.md 맨 아래 또는 compare.md · 잘하는 것/따라갈 것/다르게 할 것)')
     else:
-        ct = open(cp, encoding='utf-8').read()
+        ct = ''.join(open(f, encoding='utf-8').read() for f in (cp, tp_) if os.path.exists(f))
         miss = [w for w in ('잘하는', '따라갈', '다르게') if w not in ct]
-        if miss: bad.append('compare.md 3줄 중 빠짐: ' + '·'.join(miss))
+        if miss: bad.append('경쟁 비교 3줄 중 빠짐(compare.md·toc_compare.md): ' + '·'.join(miss))
     # 대본 심사 관문(10/5 improve, commitments '경쟁 조사·review 코드 관문'): ep/<편>/review.md에 심사 기록과 통과 판정이 있어야 올린다.
     # D-1은 '평균 7.6 — 통과선 8 미달'인 채 공개 조건을 사람이 따로 챙겼다 → 판정을 코드가 읽는다.
     # 본문의 '통과'는 편집 통과·통과선 등과 섞여 못 믿는다(D-1이 '편집 통과 10/1'로 빠져나감) → 맨 앞이 '판정:'인 줄 하나만 본다.
@@ -83,6 +94,9 @@ def gate(ep):
         ok_s, _, _, _, bad_s = aitell.script_check(aitell.script_text(ep))
         hab = aitell.script_habits(aitell.script_lines(ep), aitell.script_lines(ep, 'say'), aitell.screen_titles(ep))
         if not ok_s or hab: bad.append('대본 aitell script 실패 — ' + ' · '.join(bad_s[:3] + [f'말 습관 {len(hab)}건'] * bool(hab)) + f' — py -3.12 work/aitell.py script {ep}')
+        if (m.get('publishAt') or '9') >= '2026-10-23':   # A-23(NPR Training '문장당 숫자 하나'·CDC 명확한 소통 지표 9): 말 한 줄 숫자 3개+ 실패, 2개는 비교 말 있을 때만 — 10/23 공개분부터
+            sn = aitell.script_numbers(aitell.script_lines(ep, 'say'))
+            if sn: bad.append(f'말 숫자 많은 줄 {len(sn)}개(한 줄 1개 기본, 2개는 비교할 때만, 3개+ 안 됨): ' + ' / '.join(l[:30] for _, l in sn[:3]))
     except Exception as e:
         bad.append(f'대본 aitell script 못 돌림({e})')
     rv = os.path.join(ep, 'review.md')
@@ -99,15 +113,16 @@ def gate(ep):
     #   ep/<편>/understand_test.md: 항목마다 [보여 준 것 → 심사관 한 문장 → 맞음/틀림·헷갈린 곳 → 고친 것] + 맨 끝 '판정: 통과'.
     bad += readback_check(ep)   # 10/18 C-readback
     import research_gate
-    bad += research_gate.research_check(os.path.join(ep, 'research.md'))
-    bad += research_gate.prepublish_check(os.path.join(ep, 'research.md'))   # 10/19 사장님 '한 편 한 편 올리기 전에 자료조사 새로 — 최신성' (모든 편, 지금부터)
+    new_ = (m.get('publishAt') or '9') >= research_gate.RENEW_FROM   # 기준 리뉴얼 10/19(A-01·A-02·A-04·A-10·A-12·A-14·A-23) — 10/23 공개분부터(소급 없음)
+    bad += research_gate.research_check(os.path.join(ep, 'research.md'), strict=new_)
+    bad += research_gate.prepublish_check(os.path.join(ep, 'research.md'), strict=new_)   # 10/19 사장님 '한 편 한 편 올리기 전에 자료조사 새로 — 최신성' (모든 편, 지금부터)
     if (m.get('publishAt') or '9') >= research_gate.TOC_FROM:   # 10/19 사장님 '아무거나 넣어서 이상하게 만들지 못하게' — 목차 맞대기
         bad += research_gate.toc_check(ep, [c[1] for c in m.get('chapters') or []])
     if (m.get('publishAt') or '9') >= research_gate.SHOT_FROM:   # 10/19 사장님 — 장면은 경쟁 장면을 따라 구상하고 도구로 만든 것만
         bad += research_gate.shot_check(ep, [c[1] for c in m.get('chapters') or []])
     # 10/19 사장님 "대본에 쓰는 단어도 AI 티를 벗어야 해" — 10/21 공개분부터 구어 아닌 말(data/not_spoken.json ban)이 남아 있으면 못 올린다.
     if (m.get('publishAt') or '') >= '2026-10-21':
-        import glob, aitell
+        import aitell   # 10/19 고침: 여기서 'import glob'을 하면 glob이 함수 안 변수가 돼 10/21 전 편(H-2) gate가 C5에서 죽었다
         says = sorted(glob.glob(os.path.join(ep, 'say_v*.txt')), key=os.path.getmtime)
         if says:
             sp, _ = aitell.spoken_check(open(says[-1], encoding='utf-8').read().splitlines())
@@ -120,6 +135,15 @@ def gate(ep):
         vd3 = re.findall(r'^\s*\**판정\**\s*[:：](.*)$', utt, re.M)
         if miss_u: bad.append('understand_test.md에 빠진 항목: ' + '·'.join(miss_u))
         if not vd3 or '통과' not in vd3[-1] or re.search(r'미달|보류|미통과|틀림', vd3[-1]): bad.append("understand_test.md 마지막 '판정: 통과' 줄 없음")
+        if new_:
+            # A-12: 심사관 3명 40·50·60세(우리 시청자 35~44 33.8%·45~54 28.7%·55~64 9.6%, brand/research/persona.md · Nielsen 2000 집단당 3명),
+            #   묻는 것 "한 문장으로 다시 말하면?" + "이걸 보고 나면 뭘 하겠어요?"(digital.gov 다시 말하기 시험), 차수 2번 이상(digital.gov '최소 두 번').
+            # A-14: '남은 궁금증:' 줄(사장님 10/19 "한 편만 봐도 … 전부 이해").
+            mu = [k for k in ('40세', '50세', '60세') if k not in utt]
+            if mu: bad.append('understand_test.md 심사관 나이 빠짐: ' + '·'.join(mu) + ' (40·50·60세 3명, 각자 새로 띄움)')
+            if '뭘 하겠' not in utt: bad.append("understand_test.md에 '이걸 보고 나면 뭘 하겠어요?' 답 없음")
+            if len(set(re.findall(r'(\d+)\s*차', utt))) < 2: bad.append('understand_test.md 차수 2번 미만(1차·2차 — 고친 뒤 새 심사관으로 다시)')
+            if not re.search(r'남은 궁금증\s*[:：]', utt): bad.append("understand_test.md '남은 궁금증:' 줄 없음")
     bc = os.path.join(ep, 'bench_check.md')
     if not os.path.exists(bc): bad.append('bench_check.md 없음 — 잘된 영상 대조(제목·썸네일·첫 60초·자막·대본) 없이 못 올림')
     else:
@@ -137,6 +161,8 @@ def gate(ep):
     me = m.get('ep', os.path.basename(os.path.normpath(ep)))   # 같은 편 교체 업로드(옛 판은 비공개로 둠)는 편 수로 세지 않는다
     prev = [datetime.datetime.fromisoformat(u['publishAt']) for u in uploads() if u.get('publishAt') and not u.get('replaced') and u.get('ep') != me]
     # 2026-10-02 사장님 지시로 '주 2편' 제한 해제 → 하루 1편만(X-YT-FREQ). 주 7편 넘으면 막는다.
+    # 기준 리뉴얼 A-17·E-01·E-02(10/19): A 갈래는 '같은 날 2편까지'를 냈지만 사장님 10/11 "롱폼 무조건 하루 한 개" 결정이 남아 있어 그대로 둔다(판정: 사장님 결정 유지).
+    #   7일 7편 검사는 하루 1편 검사와 겹친다(E-02, 겹침 표시만).
     # 10/19 순돌이: ±7일(앞뒤 14일)로 세던 버그 고침 — 하루 1편이면 W-1(10/12 19:47)처럼 저녁에 나간 편 하나 때문에 다음 주 11:30이 막혔다.
     #   사장님 규칙 '하루 1편'과 같게, 이 편 날짜를 끝으로 한 달력 7일(그날 포함)에 다른 편이 7편 이상이면 막는다.
     d0 = pa.astimezone(KST).date()
@@ -147,35 +173,59 @@ def gate(ep):
     # 10/11 10:2x 사장님: 롱폼 정규 시각 매일 11:30(전 19:30). 그날 밀린 편은 관문을 다 넘는 즉시 공개 → 한국 11~21시만 허용(새벽·밤 공개는 계속 막음)
     if not (11 <= pa.astimezone(KST).hour < 21): bad.append('예약 시각이 한국 11~21시 밖')
     if pa < datetime.datetime.now(KST) + datetime.timedelta(minutes=20): bad.append('예약 시각이 너무 가깝거나 지났다')
-    # C5 이전 편 대본과 같은 문장 20% 초과(첫·끝 문장 제외)
-    mine = body_sentences(os.path.join(ep, 'script.md'))[1:-1]
+    # C5 이전 편 대본과 같은 문장 20% 초과 — 20%는 자체 값(공식 숫자 없음). A-25: 첫·끝 문장 자리 대신 고정 첫 줄·끝 줄·면책 줄을 빼고 센다.
+    import aitell as _ai
+    keep = lambda x: bool(x) and not FIXED_LINE.search(x) and not _ai._DISC.search(x)
+    allmine = body_sentences(os.path.join(ep, 'script.md'))
+    mine = [x for x in allmine if keep(x)]
     others = set()
     for s in glob.glob(os.path.join(EPS, '*', 'script.md')):
-        if os.path.abspath(os.path.dirname(s)) != os.path.abspath(ep): others |= set(body_sentences(s))
+        if os.path.abspath(os.path.dirname(s)) != os.path.abspath(ep): others |= {x for x in body_sentences(s) if keep(x)}
     same = sum(1 for s in mine if s in others)
     if mine and same / len(mine) > 0.2: bad.append(f'C5 이전 편과 같은 문장 {same}/{len(mine)}')
     # C7 금지 표현(제목·설명·대본)
-    txt = m['title'] + '\n' + m['desc'] + '\n' + '\n'.join(mine)
+    txt = (m.get('title') or '') + '\n' + (m.get('desc') or '') + '\n' + '\n'.join(allmine)
     hit = [w for w in BANNED if w in txt]
     if hit: bad.append('C7 금지 표현 ' + ','.join(hit))
+    # A-26 보탬(경고): 수익률을 말하면 기간·출처를 같이(자본시장법 제101조의2②3호·금소법 제22조④2호다목 '좋은 기간만' 금지 — 빌려 씀)
+    for mm in re.finditer(r'\d+(?:\.\d+)?\s*%\s*(?:수익|올랐)', txt):
+        near = txt[max(0, mm.start() - 50):mm.end() + 50]
+        if not re.search(r'20\d\d|\d+\s*(?:년|개월|달|주)|기간|부터|까지', near): print('[경고] 수익률에 기간 없음:', near.replace('\n', ' ')[:70])
     if re.search(r'\b[A-Z]{5,}\b', m['title']) and not re.search(r'\b(KODEX|TIGER)\b', m['title']): bad.append('C7 제목 전부 대문자 단어')
     # C8 AI 공개
     if m.get('veo') and not m.get('synthetic'): bad.append('C8 Veo 사용인데 합성 미디어 표시 없음')
     # 10/17 회의(체크리스트 51): AI 목소리 편은 Veo가 없어도 합성 표시 True — 설명란 'AI 음성'이 있으면 곧 AI 목소리 편
     if not m.get('synthetic') and 'AI 음성' in m.get('desc', ''): bad.append('C8 AI 목소리 편인데 합성 미디어 표시(synthetic) 없음')
     # C9 설명란
-    d = m['desc']
+    d = m.get('desc') or ''
     if '출처' not in d: bad.append('C9 출처 줄 없음')
+    else:   # A-28 보탬(경고): 출처 줄 근처에 기준일(UK 통계 실천규약 3.0·방송심의규정 제16조 참고)
+        i_ = d.index('출처')
+        if not re.search(r'20\d\d[.\-/]\s?\d{1,2}|월분|기준', d[max(0, i_ - 200):i_ + 300]): print('[경고] C9 출처 줄 근처에 기준일(20XX.MM·○월분) 없음')
+    # A-31(법): 쿠팡 링크·파트너스 문구가 있는 편은 대가 구간 표시를 영상 안 한글 자막으로(공정위 추천·보증 심사지침 Ⅴ.6)
+    if m.get('paid') or 'coupang.com' in d or '파트너스' in d:
+        pr = m.get('paid_ranges') or []
+        stx = os.path.join(ep, 'screen_text.txt')
+        cap_n = sum(1 for l in open(stx, encoding='utf-8') if PAID_CAPTION in l and '수수료' in l) if os.path.exists(stx) else 0
+        need_n = sum(2 + max(0, int((b - a) // PAID_EVERY_S) - 1) for a, b in pr) if pr else 2
+        if not pr: bad.append('대가 구간 없음 — meta.json paid_ranges [[시작초, 끝초]] 필수(공정위 추천·보증 심사지침 Ⅴ.6: 구간 시작·끝 영상 안 표시, 설명란만은 부적절)')
+        if cap_n < need_n: bad.append(f"대가 표시 자막 {cap_n}곳 < {need_n}곳 — 쿠팡 구간 시작·끝(5분 넘으면 5분마다)에 한글 자막 '{PAID_CAPTION} 수수료를 받아요'를 넣고 screen_text.txt를 다시 뽑는다(공정위 Ⅴ.6)")
     import disclaim   # 10/14 회의 지시: 영상 끝 면책(A23)을 뺀 대신 설명란 '권유 아님' 줄 필수
     if not disclaim.line(d): bad.append(disclaim.NEED)
     if len(re.findall(r'cafe\.naver\.com', d)) > 1: bad.append('C9 카페 링크 2개 이상')
     # 10/17 회의(레드팀 R3): 짝 카페 글 주소는 설명 첫 5줄 안(접힘 위) — 없으면 cafe.naver.com/firemap
     if '{CAFE}' in d: bad.append('C9 설명에 {CAFE} 그대로 — 짝 카페 글 주소로 바꿔야 함(글이 아직 없으면 cafe.naver.com/firemap)')
     if not re.search(r'cafe\.naver\.com|\{CAFE\}', ' '.join(d.splitlines()[:5])): bad.append('C9 설명 첫 5줄에 카페 줄 없음(짝 글 주소, 없으면 cafe.naver.com/firemap)')
-    if not (3 <= len(m['tags']) <= 5): bad.append('C9 태그 3~5개 아님')
+    # A-42: 태그 3~5개는 근거 없음(answer/146402 'tags play a minimal role') → 개수 검사 뺌, API 한도만 막음(videos 문서: 태그 500자·제목 100자·설명 5,000 — 설명은 실측으로 글자 수)
+    tags = m.get('tags') or []
+    if len(','.join(tags)) + 2 * sum(' ' in t for t in tags) > 500: bad.append('C9 태그 합 500자 넘음(YouTube API 한도)')
+    if len(m.get('title') or '') > 100: bad.append('C9 제목 100자 넘음(YouTube API 한도)')
+    # 설명 한도: API 문서는 '5,000바이트'지만 10/19 실측 C-2(SGx7UD-6RNE) 설명 4,062자·5,278바이트가 잘리지 않고 그대로 저장됨 → 글자 수 5,000으로 본다(up()의 desc[:5000]과 같음)
+    if len(d) > 5000: bad.append('C9 설명 5,000자 넘음(YouTube 한도 — 넘으면 up()이 잘라 끝 줄이 사라짐)')
     ch = re.findall(r'^(\d+):(\d\d) ', d, flags=re.M)
     secs = [int(a) * 60 + int(b) for a, b in ch]
-    if len(secs) < 3 or secs[0] != 0 or any(b - a < 10 for a, b in zip(secs, secs[1:])): bad.append('C9 챕터(00:00 시작·3개 이상·10초 이상)')
+    # A-41: answer/9884579 — 00:00 시작·오름차순·3개 이상·10초 이상(오름차순은 b - a < 10이 같이 잡음)
+    if len(secs) < 3 or secs[0] != 0 or any(b - a < 10 for a, b in zip(secs, secs[1:])): bad.append('C9 챕터(00:00 시작·오름차순 3개 이상·10초 이상)')
     if 'AI 음성' not in d: bad.append('AI 음성 내레이션 명시 없음')
     for u in uploads():
         if u.get('replaced') or u.get('ep') == m.get('ep', os.path.basename(os.path.normpath(ep))): continue  # 같은 편 교체본·자기 자신은 비교 안 함
@@ -213,9 +263,9 @@ def gate(ep):
     if m['video'] and os.path.isfile(vp):
         a_, sr_ = clickscan.load(vp); ok_ = m.get('click_ok', [])   # 들어서 말소리로 확인한 자리(초)만 meta.json click_ok에 — 누가 어떻게 들었는지 click_ok_note에
         fb = [b for b in clickscan.bursts(a_, sr_) if not any(abs(b[0] / sr_ - x) < 0.3 for x in ok_)]
-        # 10/17 사장님 "롱폼도 갈수록 수페tv처럼 알차게 만드는 게 아니라 대충 하는 거 같애" — 실측: 우리 최근 롱폼 2:15~6:41,
-        #   수페TV 최근 30편 길이 중앙 17.1분·월급쟁이부자들 17.7분. 8분 아래 롱폼은 못 올린다.
-        if len(a_) / sr_ < 8 * 60: bad.append(f'롱폼 길이 {len(a_)/sr_/60:.1f}분 — 8분 이상(경쟁 중앙 17분). research.md 질문·예외·우리만 숫자를 대본에 더 담는다')
+        # 10/17 사장님 "롱폼도 갈수록 수페tv처럼 알차게 만드는 게 아니라 대충 하는 거 같애" — 8분 아래 롱폼은 못 올린다.
+        # A-15(근거 바꿈): 8분 = 유튜브 중간 광고 자격 "8 minutes or longer"(answer/6175006) + 경쟁 28편 중앙 19.4분·사분위 14~31분. 길이는 내용에 맞게(141805) — 채우려고 늘리지 않는다.
+        if len(a_) / sr_ < 8 * 60: bad.append(f'롱폼 길이 {len(a_)/sr_/60:.1f}분 — 8분 이상(중간 광고 자격, 경쟁 중앙 19분). research.md 질문·함정·누구라면을 대본에 더 담는다(억지로 채우지 않음)')
         if fb: bad.append('완성 영상 치직 의심 ' + ', '.join(f'{s/sr_:.1f}초' for s, _, _ in fb[:8]) + ' — 그 자리 1초를 들어 보고(제미나이 듣기 또는 사람) 말소리가 아니면 문장 wav를 고쳐 다시 렌더')
     # 목소리 한결같음 — 10/3 22시 사장님 "뒤쪽에 다른 목소리". f0 ±12%·빠르기 1.0·한 날 녹음(lfvoice check 규칙 3·4)
     if os.path.exists(os.path.join(ep, 'voice.json')):

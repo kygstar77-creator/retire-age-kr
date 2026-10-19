@@ -65,16 +65,30 @@ def cover_check(pkg):
     bad = []
     mp = os.path.join(pkg, 'cover_meta.json')
     if not os.path.exists(mp):
-        bad.append('cover_meta.json 없음 — 표지를 py -3.12 work/cafecover.py <pkg> --topic … --num … 로 만든다(주제 사물 그림·주제어 가장 크게)')
+        bad.append('cover_meta.json 없음 — 표지를 py -3.12 work/cafecover.py <pkg> --topic … --num … 로 만든다(주제 사물 그림·주제어 가장 크게). 경쟁 표지가 캡처·차트면 {"type": "capture"|"chart", "source": …}(D-04)')
     else:
         try:
             m = json.load(open(mp, encoding='utf-8'))
+            # D-04(기준 리뉴얼 10/19, registry): 첫 사진 종류는 경쟁 글 표지 종류를 따른다 — 상위 24장: 차트·표·지도 6·화면 캡처 5·직접 찍은 사진 4·글자 카드 3·기타 6.
+            #   캡처·차트면 cover_meta.json {"type": "capture"|"chart", "source": 원본 출처} + bench.md '따라 한 것'의 '표지' 줄에 같은 종류(캡처·화면 / 차트·표·그래프·지도)가 있어야 한다.
+            #   카드(기본, type 없음)는 지금처럼 cafecover.py(주제 사물 그림·주제어 줄 > 숫자 줄).
+            ty = m.get('type', 'card')
+            if ty in ('capture', 'chart'):
+                if not str(m.get('source', '')).strip(): bad.append(f'표지 {ty} — cover_meta.json source(원본 출처) 없음')
+                bp = os.path.join(os.path.dirname(pkg), 'bench.md')
+                bt = open(bp, encoding='utf-8', errors='ignore').read() if os.path.exists(bp) else ''
+                row = [l for l in bt.splitlines() if l.strip().startswith('|') and '표지' in l.split('|')[1]] if bt else []
+                kw = r'캡처|화면' if ty == 'capture' else r'차트|표|그래프|지도'
+                if not any(re.search(kw, l) for l in row): bad.append(f"표지 종류 {ty}인데 bench.md '표지' 줄에 경쟁 글 표지 종류({kw.replace('|', '·')})가 없다 — 경쟁 표지 종류를 따른다")
+                raise StopIteration
             if not m.get('icon'): bad.append('표지에 주제 사물 그림 없음(cover_meta.json icon)')
             if m.get('num_px') and not m.get('topic_px', 0) > m['num_px']: bad.append(f"표지 주제어 줄 {m.get('topic_px')}px ≤ 숫자 줄 {m['num_px']}px")
             first = next((l.strip() for l in open(order, encoding='utf-8') if l.strip().startswith('img/')), '')
             img = os.path.join(pkg, first) if first else ''
             if img and os.path.exists(img) and os.path.getmtime(img) > os.path.getmtime(mp) + 5:
                 bad.append(f'첫 사진 {first}이 cafecover.py 뒤에 바뀜 — cafecover.py로 다시 만든다')
+        except StopIteration:
+            pass
         except Exception as e:
             bad.append(f'cover_meta.json 못 읽음: {e}')
     cr = os.path.join(pkg, 'cover_review.md')

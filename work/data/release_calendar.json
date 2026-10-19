@@ -1,0 +1,17 @@
+{
+  "_note": "기준 리뉴얼 A-10(work/research/criteria/A-script-1019.md 3절): research.md 원문 확인 뒤 ~ 올리기 전 사이에 이 공표가 끼었고 research.md에 낱말이 나오면, '올리기 전 확인'의 '바뀐 것:'에 그 공표를 적어야 한다(research_gate.prepublish_check). 날짜는 2026-10-19 확인된 것만 넣었다. 확인 안 한 것(넣지 않음): 10월 이후 소비자물가 공표일, 11월 이후 고용동향, 지역 건보료 11월분 반영일, 세법 국회 일정.",
+  "releases": [
+    {"name": "금통위 기준금리 결정", "keywords": ["기준금리", "금통위", "금융통화위원회", "코픽스", "주담대 금리", "예금 금리", "대출 금리"],
+     "dates": ["2026-01-15", "2026-02-26", "2026-04-10", "2026-05-28", "2026-07-16", "2026-08-27", "2026-10-22", "2026-11-26"],
+     "source": "https://www.bok.or.kr/portal/singl/crncyPolicyDrcMtg/listYear.do?mtgSe=A&menuNo=200755 (2026-10-19 확인)"},
+    {"name": "소비자물가 동향", "keywords": ["소비자물가", "물가상승률", "CPI"],
+     "dates": ["2026-05-06", "2026-06-02", "2026-07-02", "2026-08-04", "2026-09-02", "2026-10-02"],
+     "source": "https://kosis.kr/serviceInfo/newsList.do (2026-10-19 확인, 11월 이후 날짜 확인 안 함)"},
+    {"name": "고용동향", "keywords": ["고용동향", "실업률", "취업자 수"],
+     "dates": ["2026-10-16"],
+     "source": "https://kosis.kr/serviceInfo/newsList.do (2026-10-19 확인)"},
+    {"name": "부동산원 주간 아파트 동향", "keywords": ["부동산원 주간", "주간 아파트", "주간 매매가격"],
+     "weekly": 3, "dates": [],
+     "source": "https://www.reb.or.kr/r-one/portal/compose/scheduleStatsPage.do (매주 목요일, 2026-10-19 확인)"}
+  ]
+}

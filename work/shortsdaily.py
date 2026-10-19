@@ -15,7 +15,17 @@ sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 OUT = os.path.join(HERE, 'research', 'cardshorts'); os.makedirs(OUT, exist_ok=True)
 LOG = os.path.join(OUT, 'log.jsonl')
-DAY_CAP, MIN_GAP_H = min(3, int(os.environ.get('SHORTS_DAY_CAP', '3'))), 2   # 10/19 사장님 '쇼츠는 하루 3편으로 늘려' — 07:20·17:20·19:20(10/19 E 갈래: 셋째 칸 17:20)   # 기본 하루 1편(10/9 X-YT-FREQ 판정: 48h 중앙 107<180·관문 미달 공개 → 되돌림, research/experiments/judge_1009.md; 10/2~10/8은 2편)   # 2026-09-30 정책 조사 뒤 3편→2편: 유튜브 "frequently sharing content that doesn't resonate ... affect your channel's overall performance", 업로드 빈도는 성장과 "not correlated" (research/longform/yt-policy-algorithm.md)
+def _cadence_gap_h(default=2):
+    """E-08(기준 리뉴얼 10/19): 쇼츠 최소 간격 = slots.json cadence.shorts 가장 짧은 칸 간격(시간, 내림). 경쟁 974편: 간격과 조회는 상관없음
+    (2시간 안 0.99·2~5시간 1.01·5~12시간 0.94·12시간+ 1.01배) — 숫자는 칸 시각에서만 나온다. 못 읽으면 2."""
+    try:
+        c = json.load(open(os.path.join(HERE, 'research', 'slots.json'), encoding='utf-8'))['cadence']['shorts']
+        m = sorted(int(x[:2]) * 60 + int(x[3:5]) for x in c)
+        g = [b - a for a, b in zip(m, m[1:])] + [m[0] + 1440 - m[-1]]
+        return max(1, min(g) // 60)
+    except Exception:
+        return default
+DAY_CAP, MIN_GAP_H = min(3, int(os.environ.get('SHORTS_DAY_CAP', '3'))), _cadence_gap_h()   # 10/19 사장님 '쇼츠는 하루 3편으로 늘려' — 07:20·17:20·19:20(10/19 E 갈래: 셋째 칸 17:20)   # 기본 하루 1편(10/9 X-YT-FREQ 판정: 48h 중앙 107<180·관문 미달 공개 → 되돌림, research/experiments/judge_1009.md; 10/2~10/8은 2편)   # 2026-09-30 정책 조사 뒤 3편→2편: 유튜브 "frequently sharing content that doesn't resonate ... affect your channel's overall performance", 업로드 빈도는 성장과 "not correlated" (research/longform/yt-policy-algorithm.md)
 CAFE = 'https://cafe.naver.com/firemap'
 
 def log_rows():
@@ -98,7 +108,9 @@ def check(spec):
     if not 3 <= len(tags) <= 5: bad.append('해시태그는 3~5개(지금 %d)' % len(tags))
     if not spec.get('source'): bad.append('출처 줄 없음')
     # ── 유튜브 정책 관문(research/longform/yt-policy-algorithm.md §5, 2026-09-30) ──
-    for w in ('추천 종목', '수익 보장', '원금 보장', '전문가인 제가', '제가 추천', '!!'):          # C7
+    # C7 + A-26(10/19): 단정·보장 9개 — 자본시장법 시행령 제102조의2제2호·금소법 시행령 제20조①4호·유튜브 사기 정책 2801973(ytlong.BANNED와 같음)
+    for w in ('추천 종목', '수익 보장', '원금 보장', '전문가인 제가', '제가 추천', '!!',
+              '확정 수익', '손실 없', '100% 수익', '반드시 오', '절대 안 떨어', '확실한 수익', '급등 예정', '단기간에 부자', '누구나 월'):          # C7
         if w in t or w in spec.get('yt_desc', '') or w in ' '.join(spec.get('points', [])): bad.append('쓰지 않는 말: ' + w)
     if re.search(r'[A-Z]{5,}', t) and not re.search(r'(SCHD|JEPQ|JEPI|QQQM|TQQQ|SPYI|QQQI|NVIDIA|KODEX|TIGER)', t): bad.append('영어 대문자 단어로 외치는 제목')
     foot = spec.get('foot', '')                                                                   # C13

@@ -779,11 +779,34 @@ def blog_time_block():
 
 UNDERSTAND_FROM = datetime.datetime(2026, 10, 15, 12, 0)
 FRESH_FROM = datetime.datetime(2026, 10, 16, 22, 30)
+PREPUB_CAFE_FROM = datetime.datetime(2026, 10, 20, 0, 0)   # 카페 올리기 전 확인(research_gate.prepublish_check) 시작 — 10/19 사장님 '최신성'
+# D-11(10/19): 금리·특판·분배금 글은 발행 당일 확인 + '바뀐 것:'에 숫자 — 특판은 하루 만에 '[마감]'(티끌 서울서초신협 4.5% [마감], 월재연 '[판매중]' 말머리)
+SAME_DAY_TOPIC = re.compile(r'금리|특판|분배금')
+
+def corner_expiry(t, title):
+    """A-46(10/19): 시황·금리·환율 코너 시효 = 칸 시각 뒤 다음 공식 기준가 시각. 국내(금리·환율·코스피)는 다음 평일 15:30(국내 종가),
+    미국 시황은 다음 미국 장 마감(뉴욕 16:00 = 한국 서머타임 05:00·아니면 06:00). 공휴일은 모름(평일만 셈). 근거: 시세는 다음 기준가까지 유효."""
+    from zoneinfo import ZoneInfo
+    kst = ZoneInfo('Asia/Seoul')
+    if re.search(r'미국|뉴욕|나스닥|S&P|다우', title):
+        ny = ZoneInfo('America/New_York')
+        x = t.replace(tzinfo=kst).astimezone(ny)
+        c = x.replace(hour=16, minute=0, second=0, microsecond=0)
+        if c <= x: c += datetime.timedelta(days=1)
+        while c.weekday() >= 5: c += datetime.timedelta(days=1)
+        return c.astimezone(kst).replace(tzinfo=None)
+    c = t.replace(hour=15, minute=30, second=0, microsecond=0)
+    if c <= t: c += datetime.timedelta(days=1)
+    while c.weekday() >= 5: c += datetime.timedelta(days=1)
+    return c
 def fresh_research_block(pkg):
     """10/16 사장님 "자료조사 계속 하면서 올리는 거지? 조사한 거 재탕만 하는 거 아니지?" — 실측: 10/13~16 카페 37편 중 9편은
     facts.txt '[오늘 찾은 것]'에 날짜가 없었다(영상 조사를 옮긴 짝 글). 이 시각 뒤 만든 묶음은 발행 7일 안에 원문을 다시 확인한 기록이 있어야 나간다."""
     order = os.path.join(pkg, 'order.txt')
     if not os.path.exists(order) or datetime.datetime.fromtimestamp(os.path.getmtime(order)) < FRESH_FROM:
+        return ''
+    # 기준 리뉴얼 D-09·A-47(10/19): 7일은 근거 없는 숫자이고, 10/20 0시부터 prepublish_check(발행 1일 안·금리 글 당일)가 같은 일을 더 엄하게 한다 → 하나로 합침.
+    if datetime.datetime.now() >= PREPUB_CAFE_FROM:
         return ''
     f = os.path.join(pkg, 'facts.txt')
     t = open(f, encoding='utf-8').read() if os.path.exists(f) else ''
@@ -842,10 +865,16 @@ def pending_block(kind, pkg, title, check_dup=True):
     # 2026-09-30 07시: 하루 상한(카페 5편)이 새벽에 차서 [미국 증시 시황](usmkt0930)이 제 시각에 못 나갔다.
     # 시각 지난 코너는 순서 2번이라 다음 날 대타로 올라간다 — 어제 장 얘기가 "오늘 시황"으로 나간다.
     # 그날 숫자가 생명인 코너(시황·오늘의·금리·환율)는 12시간 지나면 버린다.
+    # A-46(10/19): '12시간'(9/30 사고 때 정한 값) → 다음 공식 기준가 시각까지(corner_expiry). 10/20 칸부터 본문에 '(○/○ 15:30 종가)'처럼 기준가 시각.
     t = slot_of(pkg)
-    if t and re.search(r'^\[[^\]]*(시황|오늘의|금리·환율)', title) \
-            and datetime.datetime.now() > t + datetime.timedelta(hours=12):
-        return '보류: 코너 시효 지남(%s시 코너, 12시간 넘음)' % t.strftime('%m-%d %H')
+    if t and re.search(r'^\[[^\]]*(시황|오늘의|금리·환율)', title):
+        exp = corner_expiry(t, title) if t >= PREPUB_CAFE_FROM else t + datetime.timedelta(hours=12)
+        if datetime.datetime.now() > exp:
+            return '보류: 코너 시효 지남(%s시 코너, 다음 기준가 %s 지남)' % (t.strftime('%m-%d %H'), exp.strftime('%m-%d %H:%M'))
+        if t >= PREPUB_CAFE_FROM:
+            body = ''.join(open(os.path.join(pkg, f), encoding='utf-8').read() for f in os.listdir(pkg) if re.fullmatch(r'c\d+\.txt', f))
+            if not re.search(r'\d{1,2}/\d{1,2}\s*(\d{1,2}:\d\d|종가|마감|기준)', body):
+                return "보류: 시황·금리 코너 본문에 기준가 시각 없음 — '(○/○ 15:30 종가)'처럼(A-46)"
     left = day_left(kind)
     if kind == 'blog' and (left is None or left > 0) and blog_time_block():
         return blog_time_block()
@@ -861,16 +890,19 @@ def pending_block(kind, pkg, title, check_dup=True):
         if vb: return '보류: ' + vb[0]
     order = os.path.join(pkg, 'order.txt')
     if os.path.exists(order) and datetime.datetime.fromtimestamp(os.path.getmtime(order)) >= datetime.datetime(2026, 10, 17, 0, 30):
-        import research_gate
-        rb = research_gate.research_check(os.path.join(os.path.dirname(os.path.abspath(pkg)), 'research.md'))
+        import research_gate   # 기준 리뉴얼 A-01·A-02·A-04(10/19): 10/20 0시 뒤 만든 묶음부터 '한계' 칸·대조 줄마다 출처·질문 3개+주소
+        _new = datetime.datetime.fromtimestamp(os.path.getmtime(order)) >= datetime.datetime(*research_gate.CAFE_RENEW_FROM)
+        rb = research_gate.research_check(os.path.join(os.path.dirname(os.path.abspath(pkg)), 'research.md'), strict=_new)
         if rb: return '보류: ' + rb[0]
     if kind == 'cafe' and os.path.exists(order) and datetime.datetime.fromtimestamp(os.path.getmtime(order)) >= datetime.datetime(*__import__('research_gate').CAFE_BENCH_FROM):
         import research_gate   # 10/19 사장님 '카페도 똑같이' — 경쟁 글 보고 제목·표지·구성·사진 따라 한 표
         cb = research_gate.cafe_bench_check(os.path.join(os.path.dirname(os.path.abspath(pkg)), 'bench.md'))
         if cb: return '보류: ' + cb[0]
-    if kind == 'cafe' and datetime.datetime.now() >= datetime.datetime(2026, 10, 20, 0, 0):   # 10/19 사장님 '올리기 전에 자료조사 새로 — 최신성'(카페는 오늘 밤 칸이 비지 않게 10/20 0시 발행분부터)
+    if kind == 'cafe' and datetime.datetime.now() >= PREPUB_CAFE_FROM:   # 10/19 사장님 '올리기 전에 자료조사 새로 — 최신성'(카페는 오늘 밤 칸이 비지 않게 10/20 0시 발행분부터)
         import research_gate
-        pb = research_gate.prepublish_check(os.path.join(os.path.dirname(os.path.abspath(pkg)), 'research.md'))
+        _new = os.path.exists(order) and datetime.datetime.fromtimestamp(os.path.getmtime(order)) >= datetime.datetime(*research_gate.CAFE_RENEW_FROM)
+        _sd = bool(SAME_DAY_TOPIC.search(title))   # D-11 금리·특판·분배금: 당일 확인 + '바뀐 것:' 숫자
+        pb = research_gate.prepublish_check(os.path.join(os.path.dirname(os.path.abspath(pkg)), 'research.md'), days=0 if _sd else 1, strict=_new, need_num=_sd)
         if pb: return '보류: ' + pb[0]
     priv = private_video_links(pkg)
     if priv:
@@ -1950,7 +1982,7 @@ def main():
             # 대표사진 관문 — 사장님 10/2 15:3x "네이버 대표사진 이렇게 긴 거 넣으면 잘리는 거 알아 몰라", "대표사진은 이게 8점이야?"
             # 첫 사진이 목록·검색 썸네일(정사각형으로 잘림)이 된다. 오늘 #190~192는 900x402(2.2:1)라 양옆 숫자가 잘렸다.
             # ① 첫 사진은 정사각형(가로/세로 0.9~1.1)·짧은 변 800px 이상이어야 올린다(지금부터).
-            # ② 첫 사진 심사 cover_review.md(경쟁 상위 썸네일 옆 비교판, 심사 3명 평균 7점 이상 — "평균: N" 줄)가 있어야 올린다(10/3 슬롯부터, 그 전은 경고).
+            # ② (10/19 D-07로 뺌) 옛 규칙: cover_review.md '평균: N' 3명 평균 7점 이상.
             if cmd == 'cafe' and '--cover-ok' not in sys.argv:
                 from PIL import Image as _Im
                 _first = next((ln.strip() for ln in open(os.path.join(pkg, 'order.txt'), encoding='utf-8') if ln.strip().startswith('img/')), None)
@@ -1958,15 +1990,7 @@ def main():
                 if not (0.9 <= _w / _h <= 1.1 and min(_w, _h) >= 800):
                     print(f'대표사진(첫 사진 {_first}) {_w}x{_h} — 정사각형 아님·작음. 네이버 목록에서 잘린다. 1080x1080 표지를 첫 사진으로 넣고 다시 올린다.')
                     sys.exit(4)
-                _cr = os.path.join(pkg, 'cover_review.md'); _avg = None
-                if os.path.exists(_cr):
-                    _m = re.findall(r'평균\s*[:：]\s*([0-9.]+)', open(_cr, encoding='utf-8').read())
-                    _avg = float(_m[-1]) if _m else None
-                _slot = open(os.path.join(pkg, 'slot.txt'), encoding='utf-8').read()[:10] if os.path.exists(os.path.join(pkg, 'slot.txt')) else time.strftime('%Y-%m-%d')
-                if _avg is None or _avg < 7:
-                    _msg = f'대표사진 심사 {"없음" if _avg is None else _avg} — cover_review.md에 경쟁 썸네일 옆 3명 평균 7점 이상("평균: N")이 있어야 한다.'
-                    if _slot >= '2026-10-03': print(_msg); sys.exit(4)
-                    print('[경고] ' + _msg)
+                # ② D-07(10/19 뺌): '평균: N' 7점 문턱은 근거 없는 자체 점수 — 아래 ③ cover_check(100px 읽힘·최근 10장 옆 구별·경쟁 표지 종류)로 대신.
                 # ③ 10/17 10:00 이후 만든 묶음: cafecover.py 표지(주제 사물 그림·주제어 가장 크게)와 cover_review '100px 읽힘'·'최근 10장 옆 구별' 두 줄
                 import editgate as _eg
                 _vb = _eg.cover_check(pkg)

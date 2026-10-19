@@ -153,7 +153,8 @@ def gate(ep):
         if miss: bad.append('bench_check.md에 빠진 항목: ' + '·'.join(miss))
         if not vd2 or '통과' not in vd2[-1] or re.search(r'미달|보류|미통과', vd2[-1]): bad.append("bench_check.md 마지막 '대조: 통과' 줄 없음")
         tt = m.get('title', ''); tn = len(re.findall(r'\d[\d,.]*', tt))
-        if tn > 2: bad.append(f'제목 숫자 {tn}개 — 조회 1만+ 롱폼 108편 중앙 1개(10/11 실측), 2개 이하로')
+        # C-28(기준 리뉴얼 10/19): 유튜브 제목 숫자 0~3개 — 경쟁 18채널 770편 64.5%가 숫자, rel 0개 0.92·1개 1.05·2개 1.06·3개+ 1.16. 옛 '2개 이하'(108편 중앙 1개)는 상한 근거가 아니었다.
+        if tn > 3: bad.append(f'제목 숫자 {tn}개 — 0~3개(C-28, 경쟁 770편)')
     # C1 롱폼 주 2편·하루 1편(uploads.jsonl 기준, 예약 시각으로 센다)
     if not m.get('publishAt'):  # R-1처럼 칸을 skip해 publishAt이 비면 여기서 죽었다(10/5)
         return m, bad + ['예약 시각(publishAt) 없음']

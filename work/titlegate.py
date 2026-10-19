@@ -13,11 +13,11 @@ DATED = re.compile(r'20\d\d|\d{1,2}월|\d{1,2}일|올해|작년|내년|이번 �
 
 
 def frame(t):
-    """aitell.frame_check의 제목 줄만(쉼표 하루 규칙은 slot이 있어야 해서 뺌)."""
+    """aitell.frame_check의 제목 줄만(쉼표 하루 규칙은 slot이 있어야 해서 뺌).
+    기준 리뉴얼 D-20·D-21(10/19): '물음은 얼마·몇만'·'왜·~는데 금지'는 뺐다(상위 카페 제목 3,908개: 물음 1.04배·이유·왜 1.09배).
+    D-23: 30자 넘으면 참고 줄만(막지 않음, 상위 제목 중앙 20자)."""
     core = re.sub(r"[\s\)\]\.!·~…\"']+$", '', t)
-    if re.search(r'왜|는데', t): return ['반전 연결(왜·~는데) — 카페 틀 v2 금지']
-    if (t.endswith('?') or re.search(r'(까|나요|가요|죠|요|니다)$', core)) and not re.search(r'얼마|몇', t):
-        return ['물음 제목은 얼마·몇만']
+    if len(core) > 30: print(f'   · 참고(막지 않음): {len(core)}자 — 30자 넘음(D-23, 상위 카페 제목 중앙 20자)')
     return []
 
 

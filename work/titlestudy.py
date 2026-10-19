@@ -153,7 +153,8 @@ def main():
           f"측정 {res['at']} · 검색어 {len(kws)}개 · 네이버 상위 노출 제목 {len(ranked)}개 · 우리 카페 제목 {len(ours_rows)}개",
           '', f"검색어: {', '.join(kws)}", '',
           '아래 숫자는 네이버 검색 블로그·카페 탭에 **실제로 상위 노출된 제목**을 센 것이다.',
-          '제목을 새로 지을 때 이 모양을 따른다. 내 취향으로 정하지 않는다.', '']
+          '제목을 새로 지을 때 이 모양을 따른다. 내 취향으로 정하지 않는다.',
+          '**쓰는 곳: 카페·블로그 제목만**(기준 리뉴얼 C-34 10/19). 유튜브 제목은 경쟁 유튜브 770편 실측(C-27 35~65자·C-28 숫자 0~3개, criteria/C-thumb-1019.md)으로 본다.', '']
 
     md += ['## 한눈에', '', '| 항목 | 네이버 상위 | 우리 전체 | 우리 잘된 글 |', '|---|---|---|---|']
     for key, label in (('길이', '제목 길이(자)'), ('어절', '어절 수'), ('숫자 개수', '숫자 개수')):
@@ -183,6 +184,7 @@ def main():
         if j >= 0: keep = chr(10) + prev[j:].rstrip() + chr(10)
     os.makedirs(R, exist_ok=True); open(OUT_MD, 'w', encoding='utf-8').write('\n'.join(md) + '\n' + keep)
     res['ranked'] = ranked[:200]; res['ours'] = ours_rows
+    res['_scope'] = '카페·블로그 제목만(C-34 10/19) — 유튜브 제목엔 쓰지 않는다'
     json.dump(res, open(OUT_JSON, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
     print(f"\n[제목 분석 {res['at']}] 상위 노출 {len(ranked)}개 · 우리 {len(ours_rows)}개")

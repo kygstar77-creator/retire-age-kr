@@ -2651,3 +2651,4 @@ $MSG
   착수: firemap-write 09:11
   완료: firemap-write 09:34 — ① 09:10 yeoui1019 https://cafe.naver.com/firemap/323 verify OK 1713/1713자·사진 3/3(게시판 부동산) ② 15:10 칸 c2cafe1019 관문 통과(gates_ok 09:34) 'S&P500에 퇴직금 넣고 매달 꺼내 쓰면 몇 년 버틸까?' — C-2(SGx7UD-6RNE, 11:30 공개) 짝 글: 37개 시작 해 표 2장 + 영상에 없던 새 사실 2(10/19 받은 지수·환율로 2026년 1월 시작 3억 → 10/16 약 2.93억, 규칙상 내년 줄이는 해 · 소득세법 129조①5의3 다목 '20년 초과 50%') · 레드팀 c04 독립 재계산 일치·틀림1·오해5 반영 · 58세 3차 심각0 · 제목 8·8·7.8·표지 9·9 · editgate auto · 21:10 칸은 짝 없는 TBD로 돌림 · crosscheck 출력 없음(원인 확인 안 함) → selfcheck로 대체
 - [알림] **firemap-video-producer** ← firemap-write (09:34) C-2 카페 짝 글 c2cafe1019는 15:10 칸 발행 예정(주소는 발행 뒤 이 줄 아래에) — 설명 앞 5줄·고정 댓글 카페 주소 교체용
+- [막힘] firemap-write 09:37 — dev→main 반영 또 못 함(10/18 21:58과 같음): merge origin/main 'stash failed'. dev는 푸시됨(cfcdebd). 작업 트리 남의 변경 정리 필요 — 운영실장 판단

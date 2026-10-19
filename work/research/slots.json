@@ -1885,7 +1885,8 @@
    "item": "ubfraud1019",
    "owner": "firemap-write",
    "gates_ok": "2026-10-19 06:37",
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 실업급여(월 검색 99,000) → https://firemap.kr/calc/unemployment-benefit — 글 질문이 계산기와 맞을 때만 줄 넣기 | firemap-write 06:37: ubfraud1019 '실업급여 부정수급 하루 알바 숨기면 얼마나 돌려줘야 할까' 관문 통과(계산기 줄 https://firemap.kr/calc/unemployment-benefit · 레드팀 틀림0·58세 2차 심각0 · 제목8·표지8.5)"
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 실업급여(월 검색 99,000) → https://firemap.kr/calc/unemployment-benefit — 글 질문이 계산기와 맞을 때만 줄 넣기 | firemap-write 06:37: ubfraud1019 '실업급여 부정수급 하루 알바 숨기면 얼마나 돌려줘야 할까' 관문 통과(계산기 줄 https://firemap.kr/calc/unemployment-benefit · 레드팀 틀림0·58세 2차 심각0 · 제목8·표지8.5)",
+   "published": "https://cafe.naver.com/firemap/325 12:41 verify OK 1836자"
   },
   {
    "at": "2026-10-19 13:40",
@@ -2280,10 +2281,10 @@
   {
    "at": "2026-10-25 11:30",
    "kind": "long",
-   "item": "비움(C1)",
-   "owner": "firemap-video-producer",
+   "item": "D-ETF-1(배당 ETF 16종 섹터 히트맵·분배율·분배 성장률·총수익)",
+   "owner": "firemap-youtube-loop",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:42: C1 앞뒤 7일 7편 — 10/19 19:50 C-2 때문에 10/25·10/26 중 하루는 빈다(검증 참모 직접 계산). 10/26 W 3화를 살리려고 이 칸 비움 — 실패 아님(회의 결정). P-2는 11/4 후보"
+   "note": "롱폼 기획·자료조사 담당 2026-10-19 12:5x: 사장님 10/19 12시 \"배당 ETF들 섹터별로 히트맵, 섹터 분석, 배당률, 성장률 … 클릭할 만한 영상은 언제 만드는 거야?\" → 비움(C1) 칸을 D-ETF-1로(C1 관문 버그 10/19 고침). 근거: 네이버 SCHD 54,300·JEPQ 29,230·TIGER미국배당다우존스 26,060(kwvol 10/19) · 유튜브 30일 '배당 ETF' 상위 25편 조회 중앙 112,468, 'SCHD 하락·위기' 26만·24만(10월) · 30일 6개 검색 상위 101편 제목에 섹터·업종·히트맵 0편 · 자료 ep/D-ETF-1/research.md(research_gate 통과)·facts.txt·calc_out.txt·fig/heatmap_draft.png · A-1·M-1에 없던 새 것 3(히트맵·10년 분배 성장·총수익/2022 낙폭) plan.md 맨 위. 대본 youtube-loop 10/21 21:00 · 화면 서명 editor 10/23 12:00 · 썸네일 visual·제목 copywriter 10/23 12:00 · 녹음·렌더·예약 PD 10/24 11:30(관문 기한). 주의: 다음 날 10/26 W-3(고배당주)와 배당 축 이틀 연속 — 각도 다름(ETF 묶음·섹터 vs 개별 종목·분리과세), 회의 확인 | 이전: firemap-meeting 2026-10-17 21:42: C1 앞뒤 7일 7편 — 10/19 19:50 C-2 때문에 10/25·10/26 중 하루는 빈다(검증 참모 직접 계산). 10/26 W 3화를 살리려고 이 칸 비움 — 실패 아님(회의 결정). P-2는 11/4 후보"
   },
   {
    "at": "2026-10-26 11:30",

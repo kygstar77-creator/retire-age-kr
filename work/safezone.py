@@ -10,9 +10,10 @@ import numpy as np
 W0, H0 = 1080, 1920
 TOP, BOTTOM, LEFT, RIGHT = 288, 672, 48, 192          # 1080×1920 기준 가려지는 너비(px)
 SAFE = (LEFT, TOP, W0 - RIGHT, H0 - BOTTOM)            # (x0, y0, x1, y1) = (48, 288, 888, 1248)
+BTN_X, BTN_Y = 940, 940                                # 오른쪽 버튼 줄: x 940 오른쪽, y 940 아래(10/19 경쟁 쇼츠 화면 실측)
 TOL = 6                                                # 글자 찾기 상자는 글자보다 몇 px 넓게 잡힌다
 EDGE = 3                                               # 화면 끝 3px 안에 닿으면 '잘림'
-VERSION = 'g-ads-vertical-288-672-48-192 v1'
+VERSION = 'shorts-ui-288-672-48 btn940 v2'
 _eng = None
 
 
@@ -41,7 +42,10 @@ def judge(bx):
     if y0 < SAFE[1] - TOL: why.append(f'위 {TOP}px(상단바·뒤로가기) 안')
     if y1 > SAFE[3] + TOL: why.append(f'아래 {BOTTOM}px(채널 이름·제목·구독) 안')
     if x0 < SAFE[0] - TOL: why.append(f'왼쪽 {LEFT}px 안')
-    if x1 > SAFE[2] + TOL: why.append(f'오른쪽 {RIGHT}px(좋아요·댓글·공유 버튼) 안')
+    # 10/19 사장님 경쟁 쇼츠 화면(명화관cinema, 13만 좋아요): 제목은 화면 가운데에 거의 끝까지(x 약 105~975), 오른쪽 버튼 줄은 y 약 960~1690에만 있다.
+    #   → 버튼 줄 높이(y 940 아래)에 걸친 글자만 x 940까지, 그 위(제목 자리)는 왼쪽과 같은 48px 여백(x 1032)까지. 예전 '오른쪽 192px 전체'는 Ads 광고용 그림을 우리가 넓혀 쓴 것.
+    xr = BTN_X if y1 > BTN_Y else W0 - LEFT
+    if x1 > xr + TOL: why.append(f'오른쪽 x {xr} 밖(' + ('좋아요·댓글·공유 버튼 줄' if y1 > BTN_Y else '화면 오른쪽 여백') + ')')
     return why
 
 

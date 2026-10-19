@@ -86,7 +86,7 @@ export const OutlineCaption: React.FC<{lines: {text: string; frames: number}[]; 
   const t = cs[j] ?? '';
   const fs = fit(t, IW - 24, DS.capMax, DS.capMin);
   return (
-    <div style={{position: 'absolute', left: SZ.x0 + PAD, top: DS.capCy - DS.capH / 2, width: IW, height: DS.capH, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+    <div style={{position: 'absolute', left: TX0 + PAD, top: DS.capCy - DS.capH / 2, width: IW, height: DS.capH, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
       <div style={{...F, fontWeight: 800, fontSize: fs, lineHeight: 1.1, color: '#fff', whiteSpace: 'nowrap', letterSpacing: -1.5, textShadow: outline(6), opacity: 0.55 + 0.45 * o, transform: `scale(${0.96 + 0.04 * o})`}}>
         {t.split(CAP_NUM).map((x, i) => (i % 2 ? <span key={i} style={{color: DS.hot}}>{x}</span> : <React.Fragment key={i}>{x}</React.Fragment>))}
       </div>
@@ -96,8 +96,11 @@ export const OutlineCaption: React.FC<{lines: {text: string; frames: number}[]; 
 
 export const SZ = {x0: 48, y0: 288, x1: 888, y1: 1248};
 export const PAD = 14;                                   // 안전 영역 안쪽 여백
-export const CX = (SZ.x0 + SZ.x1) / 2;                   // 글자 가운데 맞춤 기준(안전 영역 가운데 468 — 오른쪽 버튼 줄을 피한다)
-export const IW = SZ.x1 - SZ.x0 - PAD * 2;               // 글자 줄 최대 너비 812
+// 10/19 사장님 '글자가 다 가운데로 안 오고 왼쪽으로 가 있네, 경쟁 채널 조사하고 만든 거야?' — 경쟁 쇼츠는 제목·자막 가운데 x 49.9~50.4%(design-spec-1016 표).
+//   예전 CX 468(안전 영역 가운데)은 우리가 정한 값이었다 → 화면 가운데 540. 오른쪽 버튼 192px를 지키려고 글자 칸을 540 기준 좌우 같게 192~888로 둔다.
+export const CX = 540;                                    // 글자 가운데 = 화면 가운데(경쟁과 같음)
+export const TX0 = 140, TX1 = 940;                         // 글자 칸 140~940(가운데 540 좌우 같음) — 경쟁 자막 x 약 130~950, 오른쪽 버튼은 x 950 넘어(safezone.py BTN_X)
+export const IW = TX1 - TX0 - PAD * 2;                   // 글자 줄 최대 너비 772
 export const YEL = '#FFD000';
 
 // 글자 너비 어림(Pretendard 굵게): 한글 0.96em · 숫자 0.6em · 영문 0.62em · 공백 0.28em · 기호 0.4em
@@ -177,7 +180,7 @@ export const Hero: React.FC<{question: string[]; hot: string; answer: Answer; ho
   const L = layout(question, until != null && fr >= until ? null : answer); const ap = L.ap;
   return (
     <>
-      <div style={{position: 'absolute', left: SZ.x0 + PAD, top: Q_TOP, width: IW, textAlign: 'center'}}>
+      <div style={{position: 'absolute', left: TX0 + PAD, top: Q_TOP, width: IW, textAlign: 'center'}}>
         {question.map((line, i) => {
           const k = hot ? line.indexOf(hot) : -1;
           return <div key={i} style={{...F, fontWeight: 800, fontSize: L.qs, lineHeight: Q_LH, color: '#fff', letterSpacing: -2, whiteSpace: 'nowrap', textShadow: outline(5)}}>
@@ -185,11 +188,11 @@ export const Hero: React.FC<{question: string[]; hot: string; answer: Answer; ho
         })}
       </div>
       {ap ? <>
-        <div style={{position: 'absolute', left: SZ.x0 + PAD, top: L.aTop, width: IW, textAlign: 'center', ...F, fontWeight: 700, fontSize: ap.ss, lineHeight: 1.3, color: '#e3e6ec', whiteSpace: 'nowrap', textShadow: outline(3)}}>{ap.small}</div>
+        <div style={{position: 'absolute', left: TX0 + PAD, top: L.aTop, width: IW, textAlign: 'center', ...F, fontWeight: 700, fontSize: ap.ss, lineHeight: 1.3, color: '#e3e6ec', whiteSpace: 'nowrap', textShadow: outline(3)}}>{ap.small}</div>
         {ap.lines.map((line, li) => {
           const items = line;
           const sep = ap.arrow ? '→' : '·';
-          return <div key={li} style={{position: 'absolute', left: SZ.x0 + PAD, top: L.bTop + li * Math.round(ap.bs * 1.06), width: IW, display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: Math.round(ap.bs * 0.14), whiteSpace: 'nowrap'}}>
+          return <div key={li} style={{position: 'absolute', left: TX0 + PAD, top: L.bTop + li * Math.round(ap.bs * 1.06), width: IW, display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: Math.round(ap.bs * 0.14), whiteSpace: 'nowrap'}}>
             {items.map((x, i) => {
               const last = ap.arrow ? (ap.lines.length > 1 ? li === ap.lines.length - 1 : i === items.length - 1) : true;
               return <React.Fragment key={i}>
@@ -207,7 +210,7 @@ export const Hero: React.FC<{question: string[]; hot: string; answer: Answer; ho
 
 // ── 출처 한 줄(안전 영역 안 아래, 작게) ──
 export const SourceLine: React.FC<{text: string; badge?: string; dark?: boolean}> = ({text, badge, dark}) => (   // 사진 위에서는 dark(밝은 글자)로 쓴다
-  <div style={{position: 'absolute', left: SZ.x0 + PAD, top: SZ.y1 - SRC_H, width: IW, height: SRC_H - 4, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, whiteSpace: 'nowrap', overflow: 'hidden'}}>
+  <div style={{position: 'absolute', left: TX0 + PAD, top: SZ.y1 - SRC_H, width: IW, height: SRC_H - 4, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, whiteSpace: 'nowrap', overflow: 'hidden'}}>
     <Flame size={18} /><span style={{...F, fontWeight: 700, fontSize: 22, color: dark ? '#f2f3f5' : T.ink2, textShadow: dark ? outline(2) : undefined}}>파이어맵</span>
     {badge ? <span style={{...F, fontWeight: 700, fontSize: 19, color: T.ink, background: 'rgba(255,255,255,0.85)', borderRadius: 6, padding: '1px 8px'}}>{badge}</span> : null}
     <span style={{...F, fontWeight: 500, fontSize: fit(text, IW - 130 - (badge ? units(badge) * 19 + 30 : 0), 22, 14), color: dark ? '#e3e6ec' : T.ink3, textShadow: dark ? outline(2) : undefined}}>{text}</span>
@@ -252,7 +255,7 @@ export const FitBoard: React.FC<{bw: number; bh: number; frames: number; top: nu
   }, []);
   useEffect(() => { if (box) continueRender(handle); }, [box, handle]);
   const b = box ?? {x0: 0, y0: 0, x1: bw, y1: bh};
-  const cw = b.x1 - b.x0, ch = b.y1 - b.y0; const W = SZ.x1 - SZ.x0, H = bottom - top;
+  const cw = b.x1 - b.x0, ch = b.y1 - b.y0; const W = TX1 - TX0, H = bottom - top;
   const s = Math.min((W * 0.97) / cw, (H * 0.95) / ch, card ? 1.4 : 1.05);   // v3 card: 내용이 좁으면 1.4배까지 키운다(10/16 사장님 '작은 막대·작은 글씨')
   const ox = (b.x0 + b.x1) / 2, oy = (b.y0 + b.y1) / 2; const midY = (top + bottom) / 2;
   const hidden: React.CSSProperties = {position: 'absolute', left: 0, top: 0, width: bw, height: bh, opacity: 0, pointerEvents: 'none'};
@@ -263,14 +266,14 @@ export const FitBoard: React.FC<{bw: number; bh: number; frames: number; top: nu
         <div ref={r2} style={hidden}><Freeze frame={Math.max(0, frames - 1)}>{children}</Freeze></div>
       </div>}
       {/* v3 card: 실사 배경 위 흰 카드(모서리 24) — 판 칸만 흰색, 둘레·아래는 사진이 보인다 */}
-      {card ? <div style={{position: 'absolute', left: SZ.x0, top, width: W, height: H, background: 'rgba(255,255,255,0.95)', borderRadius: 24, boxShadow: '0 18px 50px rgba(0,0,0,0.45)'}} /> : <>
+      {card ? <div style={{position: 'absolute', left: TX0, top, width: W, height: H, background: 'rgba(255,255,255,0.95)', borderRadius: 24, boxShadow: '0 18px 50px rgba(0,0,0,0.45)'}} /> : <>
       {/* 아래 유튜브 제목 자리(글자 금지): 같은 판을 크게·흐리게 깔아 빈 검은 칸이 아니게 — 바탕 그림(글자는 흐려 읽히지 않음) */}
       <div style={{position: 'absolute', left: 0, top: BAND_END + 10, width: 1080, height: 1920 - BAND_END - 10, overflow: 'hidden', opacity: 0.4, filter: 'blur(22px)'}}>
         <div style={{position: 'absolute', left: 540 - ox, top: 300 - oy, width: bw, height: bh, transform: `scale(${s * 1.5 * zoom})`, transformOrigin: `${ox}px ${oy}px`}}>{children}</div>
       </div>
       <div style={{position: 'absolute', left: 0, top: BAND_END + 10, width: 1080, height: 1920 - BAND_END - 10, background: `linear-gradient(rgba(16,17,20,0.35), rgba(16,17,20,0.55) 45%, rgba(16,17,20,0.9))`}} /></>}
-      <div style={{position: 'absolute', left: SZ.x0, top, width: W, height: H, overflow: 'hidden', borderRadius: card ? 24 : 0}}>
-        <div style={{position: 'absolute', left: CX - SZ.x0 - ox, top: midY - top - oy, width: bw, height: bh, transform: `scale(${s * zoom})`, transformOrigin: `${ox}px ${oy}px`}}>{children}</div>
+      <div style={{position: 'absolute', left: TX0, top, width: W, height: H, overflow: 'hidden', borderRadius: card ? 24 : 0}}>
+        <div style={{position: 'absolute', left: CX - TX0 - ox, top: midY - top - oy, width: bw, height: bh, transform: `scale(${s * zoom})`, transformOrigin: `${ox}px ${oy}px`}}>{children}</div>
       </div>
     </>
   );
@@ -331,7 +334,7 @@ export const LiveBeats: React.FC<{beats: Beat[]}> = ({beats}) => {
   const hot = show.hot && show.value !== '?'; const circ = hot ? interpolate(f, [b.at + 8, b.at + 30], [0, 1], {...CL, easing: Easing.inOut(Easing.quad)}) : 0;
   const w = units(show.value) * vz;
   return (
-    <div style={{position: 'absolute', left: SZ.x0 + PAD, width: IW, top: BEAT_TOP - vz * 0.6, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+    <div style={{position: 'absolute', left: TX0 + PAD, width: IW, top: BEAT_TOP - vz * 0.6, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
       {show.kicker ? <div style={{...F, fontWeight: 800, fontSize: kz, color: '#fff', whiteSpace: 'nowrap', textShadow: outline(5), marginBottom: 26, opacity: Math.min(1, sp * 1.5)}}>{show.kicker}</div> : null}
       <div style={{position: 'relative', ...F, fontWeight: 800, fontSize: vz, lineHeight: 1.1, letterSpacing: vz > 100 ? -4 : -2, color: hot ? ORG : '#fff', whiteSpace: 'nowrap', textShadow: outline(7),
         transform: `scale(${0.82 + 0.18 * sp})`, opacity: Math.min(1, sp * 1.6)}}>{show.value}
@@ -343,7 +346,7 @@ export const LiveBeats: React.FC<{beats: Beat[]}> = ({beats}) => {
 export const LiveBars: React.FC<{bars: {label: string; v: number; text: string; hot: boolean}[]}> = ({bars}) => {
   const f = useCurrentFrame(); const mx = Math.max(...bars.map((b) => b.v), 1); const n = bars.length; const rowH = n > 3 ? 150 : 180; const top = BEAT_TOP - (n * rowH) / 2;
   const hotI = Math.max(0, bars.findIndex((b) => b.hot));
-  return <div style={{position: 'absolute', left: SZ.x0 + PAD, width: IW, top}}>
+  return <div style={{position: 'absolute', left: TX0 + PAD, width: IW, top}}>
     {bars.map((b, i) => { const g = interpolate(f, [6 + i * 10, 26 + i * 10], [0, 1], {...CL, easing: Easing.out(Easing.cubic)}); const bw = Math.max(24, (IW - 60) * (b.v / mx)) * g; const hot = i === hotI;
       return <div key={i} style={{height: rowH, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <div style={{...F, fontWeight: 800, fontSize: 52, color: '#fff', textShadow: outline(5), whiteSpace: 'nowrap'}}>{b.label} <span style={{color: hot ? ORG : YEL}}>{b.text}</span></div>
@@ -359,7 +362,7 @@ export const LiveDim: React.FC = () => <>
 // 출처: 끝 3초에 한 번, 아주 작게(브랜드 포함 한 줄)
 export const EndSource: React.FC<{text: string; total: number}> = ({text, total}) => {
   const f = useCurrentFrame(); if (f < total - 90) return null; const o = interpolate(f, [total - 90, total - 80], [0, 1], CL);
-  return <div style={{position: 'absolute', left: SZ.x0 + PAD, top: SZ.y1 - SRC_H, width: IW, height: SRC_H - 4, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, whiteSpace: 'nowrap', overflow: 'hidden', opacity: o}}>
+  return <div style={{position: 'absolute', left: TX0 + PAD, top: SZ.y1 - SRC_H, width: IW, height: SRC_H - 4, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, whiteSpace: 'nowrap', overflow: 'hidden', opacity: o}}>
     <Flame size={16} /><span style={{...F, fontWeight: 700, fontSize: 19, color: '#f2f3f5', textShadow: outline(2)}}>파이어맵</span>
     <span style={{...F, fontWeight: 500, fontSize: fit(text, IW - 130, 19, 13), color: '#e3e6ec', textShadow: outline(2)}}>{text}</span></div>;
 };

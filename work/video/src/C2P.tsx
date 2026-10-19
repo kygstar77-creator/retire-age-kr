@@ -4,7 +4,7 @@
 import React from 'react';
 import {AbsoluteFill, Audio, Img, Sequence, interpolate, spring, staticFile, useCurrentFrame, Easing} from 'remotion';
 import {T, F, CL, FONT_CSS, Flame} from './parts/fm';
-import {SZ, PAD, IW, fit, Progress, SourceLine, SRC_H, DS, OutlineCaption, outline} from './parts/safeframe';
+import {SZ, PAD, IW, TX0, fit, Progress, SourceLine, SRC_H, DS, OutlineCaption, outline} from './parts/safeframe';
 
 type PLine = {text: string; audio: string; frames: number};
 type PScene = {pic: string; cx: number; year: string | null; num: string; sub: string; zoom: [number, number]; pan: number; focus: number; gray: boolean; blur?: boolean; red: string[]; green: string[]; lines: PLine[]; frames: number};
@@ -87,7 +87,7 @@ const NumCard: React.FC<{s: PScene}> = ({s}) => {
   const big = fit(s.num, IW - 110, 140, 40); const sub = Math.max(44, Math.min(52, fit(s.sub, (IW - 60) * 2, 52, 44)));   // 23시 사장님: 회색 작은 설명은 화면 높이 2.5%(48px) 안팎 이상 — 넘치면 두 줄
   // 23시 사장님 '가운데 정렬': 경쟁 쇼츠 10편 제목·자막 가운데 → 숫자 카드도 안전 영역 가운데
   return (
-    <div style={{position: 'absolute', left: SZ.x0 + PAD, width: IW, bottom: 1920 - CAP3_TOP + 18, display: 'flex', justifyContent: 'center'}}>
+    <div style={{position: 'absolute', left: TX0 + PAD, width: IW, bottom: 1920 - CAP3_TOP + 18, display: 'flex', justifyContent: 'center'}}>
       {/* 10/19 '클로드 티' 빼기: 흰 카드·그림자 없이 실사 위 테두리 글자(숫자 주황 하나 + 한마디 흰 글자) */}
       <div style={{maxWidth: IW, boxSizing: 'border-box', textAlign: 'center',
         transform: `translateY(${(1 - sp) * 40}px) scale(${0.9 + 0.1 * sp})`, transformOrigin: 'center bottom', opacity: Math.min(1, sp * 1.4)}}>
@@ -106,7 +106,7 @@ const Scene: React.FC<{s: PScene; from: number; total: number; p: C2PProps}> = (
       <Picture s={s} />
       <div style={{position: 'absolute', left: 0, top: 0, width: W, height: 640, background: 'linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.6) 70%, rgba(0,0,0,0))'}} />
       <div style={{position: 'absolute', left: 0, top: CAP3_TOP - 520, width: W, height: 1920 - (CAP3_TOP - 520), background: 'linear-gradient(rgba(16,17,20,0), rgba(16,17,20,0.82) 40%, rgba(16,17,20,0.7) 75%, rgba(16,17,20,0.45))'}} />
-      {s.year ? <div style={{position: 'absolute', left: SZ.x0 + PAD, width: IW, textAlign: 'center', top: Q_END + 14, opacity: yo}}>
+      {s.year ? <div style={{position: 'absolute', left: TX0 + PAD, width: IW, textAlign: 'center', top: Q_END + 14, opacity: yo}}>
         <span style={{...F, fontWeight: 800, fontSize: fit(s.year, IW - 40, 52, 30), color: '#FFD000', whiteSpace: 'nowrap', textShadow: outline(5)}}>{s.year}</span></div> : null}
       <NumCard s={s} />
       <OutlineCaption lines={s.lines} />
@@ -124,7 +124,7 @@ export const C2P: React.FC<C2PProps> = (p) => {
       <style>{FONT_CSS}</style>
       {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Scene s={s} from={from} total={total} p={p} /></Sequence>; from += s.frames; return el; })}
       <SourceLine text={p.base} badge={p.badge} dark />
-      <div style={{position: 'absolute', left: SZ.x0 + PAD, top: Q_TOP, width: IW, textAlign: 'center'}}>
+      <div style={{position: 'absolute', left: TX0 + PAD, top: Q_TOP, width: IW, textAlign: 'center'}}>
         {p.question.map((line, i) => {
           const k = line.indexOf(p.hot);
           return <div key={i} style={{...F, fontSize: qs(p.question), lineHeight: 1.12, color: '#fff', letterSpacing: -2, whiteSpace: 'nowrap', fontWeight: 800, textShadow: outline(5)}}>

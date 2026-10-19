@@ -67,7 +67,7 @@ def toc_check(ep, chapters=None):
 # ep/<편>/shot_plan.md 꼴(제목 줄 이름 그대로):
 #   # 경쟁 장면  — 표 | # | 영상 주소(&t=초) | 채널 | 무엇을 어떻게 보여 줬나 | 종류 | 확인일 | — 4편 이상에서 10장면 이상, 14일 안
 #                 종류 예: 실사 영상·AI 인물·AI 상황 장면·움직이는 그래픽·지도·자료 화면·사진
-#   # 장면 계획  — 표 | 장 | 대본 줄(요지) | 구상(무엇을 어떻게) | 따라 한 경쟁 장면 # | 도구 | 파일 |
+#   # 장면 계획  — 표 | 장 | 대본 줄(요지) | 구상(무엇을 어떻게) | 따라 한 경쟁 장면 # | 도구 | 파일 | 비교 그림 | 품질 판정(같음·나음, 심사한 사람) |
 #                 장마다 1줄 이상, 줄마다 경쟁 장면 번호(#3) 또는 주소, 도구 이름, 만든 파일 경로(ep 폴더나 work/video/public 기준)
 SHOT_FROM = '2026-10-23'
 def shot_check(ep, chapters=None, need_files=True):
@@ -103,6 +103,14 @@ def shot_check(ep, chapters=None, need_files=True):
             if need_files:
                 fs = [f.strip() for f in re.split(r'[,·]', r[5]) if f.strip()]
                 if not fs or not all(os.path.exists(os.path.join(ep, f)) or os.path.exists(os.path.join(here, 'video', 'public', f)) or os.path.exists(f) for f in fs): nofile.append(name)
+        # 10/19 사장님 "구상했는데 퀄리티도 비슷하거나 더 좋게 만들어야 해! 이상하게 만든 걸 넣지 마!" — 줄마다 | 비교 그림 | 품질 판정 | 칸:
+        #   비교 그림 = 경쟁 장면과 우리 장면을 나란히 놓은 파일, 판정 = 우리가 만든 사람이 아닌 심사(새 심사관·제미나이 등)가 '같음' 또는 '나음'. '못함'이면 다시 만든다.
+        noq = []
+        for r in pr:
+            r += [''] * (8 - len(r)); name = r[0][:20] or r[1][:20]
+            cmp_ok = any(os.path.exists(os.path.join(ep, f.strip())) for f in re.split(r'[,·]', r[6]) if f.strip())
+            if not cmp_ok or not re.search(r'같음|나음', r[7]) or re.search(r'못함|떨어', r[7]): noq.append(name)
+        if noq: bad.append(f'경쟁 장면보다 못하거나 비교 안 한 줄 {len(noq)}: ' + ' / '.join(noq[:4]) + ' — 같거나 나을 때까지 다시 만듦')
         if noref: bad.append(f'따라 한 경쟁 장면 없는 줄 {len(noref)}: ' + ' / '.join(noref[:4]) + ' — 우리 마음대로 넣은 장면')
         if notool: bad.append(f'도구 칸 빈 줄 {len(notool)}: ' + ' / '.join(notool[:4]))
         if nofile: bad.append(f'만든 파일 없는 줄 {len(nofile)}: ' + ' / '.join(nofile[:4]) + ' — 구상만 하고 안 만듦')
@@ -138,6 +146,13 @@ def cafe_bench_check(path):
         hit = [r for r in cr if r and it in r[0]]
         if not hit: bad.append(f"따라 한 것에 '{it}' 줄 없음")
         elif not any(re.search(r'https?://', '|'.join(r)) or any(x in nums for x in re.findall(r'#?(\d+)', r[1] if len(r) > 1 else '')) for r in hit): bad.append(f"'{it}' 줄에 경쟁 번호·주소 없음")
+    ph = sec('사진 비교')   # 10/19 사장님 '이상하게 만든 걸 넣지 마' — 사진·표지가 경쟁 글과 같거나 나은지
+    if ph is None: bad.append("bench.md '사진 비교' 칸 없음 — 우리 사진·표지를 경쟁 글 사진과 나란히 놓고 같거나 나은지 판정한 기록 없이 못 올림")
+    else:
+        prs = rows(ph); base = os.path.dirname(path)
+        if not prs: bad.append('사진 비교 줄 없음')
+        weak = [r[0][:20] for r in prs if len(r) < 4 or not any(os.path.exists(os.path.join(base, f.strip())) for f in re.split(r'[,·]', r[2]) if f.strip()) or not re.search(r'같음|나음', r[3]) or re.search(r'못함|떨어', r[3])]
+        if weak: bad.append(f'경쟁보다 못하거나 비교 안 한 사진 {len(weak)}: ' + ' / '.join(weak[:3]))
     return bad
 
 # 10/19 사장님 "유튜브·카페 한 편 한 편 올리기 전에 자료조사 새로 철저히 하는 것도 단계에 넣어! 모두 최신성이 있어야지!"

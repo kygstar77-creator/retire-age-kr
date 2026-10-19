@@ -868,6 +868,10 @@ def pending_block(kind, pkg, title, check_dup=True):
         import research_gate   # 10/19 사장님 '카페도 똑같이' — 경쟁 글 보고 제목·표지·구성·사진 따라 한 표
         cb = research_gate.cafe_bench_check(os.path.join(os.path.dirname(os.path.abspath(pkg)), 'bench.md'))
         if cb: return '보류: ' + cb[0]
+    if kind == 'cafe' and datetime.datetime.now() >= datetime.datetime(2026, 10, 20, 0, 0):   # 10/19 사장님 '올리기 전에 자료조사 새로 — 최신성'(카페는 오늘 밤 칸이 비지 않게 10/20 0시 발행분부터)
+        import research_gate
+        pb = research_gate.prepublish_check(os.path.join(os.path.dirname(os.path.abspath(pkg)), 'research.md'))
+        if pb: return '보류: ' + pb[0]
     priv = private_video_links(pkg)
     if priv:
         return '보류: 아직 공개 안 된 영상 링크(%s) — 공개 뒤 칸으로' % ','.join(priv)

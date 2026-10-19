@@ -51,6 +51,7 @@ def toc_check(ep, chapters=None):
         if len(lines) < 3: bad.append(f'기대하는 장 {len(lines)}개(3개 이상)')
         loose = [l.strip()[:40] for l in lines if not re.search(r'→\s*우리|뺌\s*:', l)]
         if loose: bad.append(f"기대하는 장 중 '→ 우리 N장'·'뺌: 이유' 없는 줄 {len(loose)}: " + ' / '.join(loose[:3]))
+    bad += ending_check(t)
     if ours is not None:
         rows = [l for l in ours.splitlines() if l.strip().startswith('|') and not re.match(r'\s*\|\s*[-:]', l)][1:]
         if len(rows) < 3: bad.append(f'우리 목차 {len(rows)}장(표로)')
@@ -116,7 +117,7 @@ def shot_check(ep, chapters=None, need_files=True):
 #   # 경쟁 글   — 표 | # | 주소 | 어디(카페·블로그 이름) | 반응(조회·댓글·공감, 보이는 만큼) | 확인일 | — 3편 이상, 14일 안
 #   # 따라 한 것 — 표 | 항목 | 경쟁 # | 우리 글에서 | — 항목에 제목·표지·구성·사진은 꼭(줄마다 경쟁 번호나 주소)
 CAFE_BENCH_FROM = (2026, 10, 19, 15, 0)   # 이 시각 뒤 만든 묶음(order.txt)부터
-CAFE_BENCH_ITEMS = ('제목', '표지', '구성', '사진')
+CAFE_BENCH_ITEMS = ('제목', '표지', '구성', '사진', '끝맺음')   # 끝맺음 10/19 — 맺음말·파이어맵 안내·댓글 질문도 잘되는 글 따라
 def cafe_bench_check(path):
     import os, re, datetime
     if not os.path.exists(path): return ['bench.md 없음 — 경쟁 글 3편 보고 제목·표지·구성·사진을 무엇을 따라 했는지 없이 못 올림']
@@ -137,4 +138,32 @@ def cafe_bench_check(path):
         hit = [r for r in cr if r and it in r[0]]
         if not hit: bad.append(f"따라 한 것에 '{it}' 줄 없음")
         elif not any(re.search(r'https?://', '|'.join(r)) or any(x in nums for x in re.findall(r'#?(\d+)', r[1] if len(r) > 1 else '')) for r in hit): bad.append(f"'{it}' 줄에 경쟁 번호·주소 없음")
+    return bad
+
+# 10/19 사장님 "유튜브·카페 한 편 한 편 올리기 전에 자료조사 새로 철저히 하는 것도 단계에 넣어! 모두 최신성이 있어야지!"
+# research.md에 '# 올리기 전 확인' 칸 — 올리는 날(또는 전날) 날짜, 원문 주소 3개 이상을 다시 열어 본 기록,
+#   '바뀐 것:' 줄(숫자·제도·시세가 바뀌었으면 무엇을 고쳤나, 없으면 '없음'), '새로 찾은 것:' 줄(그 사이 나온 뉴스·발표·댓글 질문 1개 이상)
+def prepublish_check(path, days=1):
+    import os, re, datetime
+    if not os.path.exists(path): return ['research.md 없음']
+    t = open(path, encoding='utf-8').read()
+    m = re.search(r'^#+\s*올리기 전 확인.*?$(.*?)(?=^#\s|\Z)', t, re.M | re.S)
+    if not m: return ["research.md '올리기 전 확인' 칸 없음 — 올리는 날 원문을 다시 열어 최신인지 확인한 기록 없이 못 올림"]
+    s = m.group(1); bad = []
+    ds = [datetime.date.fromisoformat(x) for x in re.findall(r'(20\d\d-\d\d-\d\d)', s)]
+    if not ds or (datetime.date.today() - max(ds)).days > days: bad.append(f'올리기 전 확인 날짜가 {days}일 넘음 — 오늘 다시 확인')
+    if len(set(re.findall(r'https?://[^\s)>\]|]+', s))) < 3: bad.append('올리기 전 확인 원문 주소 3개 미만')
+    if not re.search(r'바뀐 것\s*[:：]\s*\S', s): bad.append("올리기 전 확인 '바뀐 것:' 줄 없음")
+    if not re.search(r'새로 찾은 것\s*[:：]\s*\S', s): bad.append("올리기 전 확인 '새로 찾은 것:' 줄 없음")
+    return bad
+
+# 10/19 사장님 "맨 뒤에 파이어맵 넣고나 이상한 질문하거나 이런 거 추가한 것도 경쟁 채널·자료조사 해서 별로면 좋은 걸로 바꿔 끼워! 억지로 끼워 맞추지 말고! 카페 글도 똑같이!"
+# toc_compare.md '# 끝맺음' 칸 — 잘되는 영상 3편 이상이 어떻게 끝내는지(주소&t=초), 우리 끝(마지막 30초·고정 댓글 질문·파이어맵 안내)을 무엇을 따라 했나 '우리:' 줄.
+def ending_check(text):
+    import re
+    m = re.search(r'^#+\s*끝맺음.*?$(.*?)(?=^#\s|\Z)', text, re.M | re.S)
+    if not m: return ["toc_compare.md '끝맺음' 칸 없음 — 잘되는 영상 끝맺음 3편 보고 우리 끝(파이어맵 안내·질문)을 정한 기록 없이 못 올림"]
+    s = m.group(1); bad = []
+    if len(set(re.findall(r'(?:youtu\.be/|watch\?v=)([\w-]{11})', s))) < 3: bad.append('끝맺음 경쟁 영상 3편 미만')
+    if not re.search(r'우리\s*[:：]\s*\S', s): bad.append("끝맺음 '우리:' 줄 없음(무엇을 따라 했나, 뺀 것은 무엇인가)")
     return bad

@@ -100,6 +100,7 @@ def gate(ep):
     bad += readback_check(ep)   # 10/18 C-readback
     import research_gate
     bad += research_gate.research_check(os.path.join(ep, 'research.md'))
+    bad += research_gate.prepublish_check(os.path.join(ep, 'research.md'))   # 10/19 사장님 '한 편 한 편 올리기 전에 자료조사 새로 — 최신성' (모든 편, 지금부터)
     if (m.get('publishAt') or '9') >= research_gate.TOC_FROM:   # 10/19 사장님 '아무거나 넣어서 이상하게 만들지 못하게' — 목차 맞대기
         bad += research_gate.toc_check(ep, [c[1] for c in m.get('chapters') or []])
     if (m.get('publishAt') or '9') >= research_gate.SHOT_FROM:   # 10/19 사장님 — 장면은 경쟁 장면을 따라 구상하고 도구로 만든 것만

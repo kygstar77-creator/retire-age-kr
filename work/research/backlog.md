@@ -33,7 +33,7 @@
 | firemap-improve | refactorcands.py 재측정(10/12~): #126·#81 rewrite·#56 제목(edittitle 적용 뒤) 7일 조회·카페탭 비교 | 카페 제목 금액 규칙(10/9) 재측정(10/23): 규칙 뒤 금액 제목 비율·하루당 조회 vs 규칙 전, 형식(계산형) 섞임 떼고 | 예금·이자 규칙(10/22)·배당ETF 제목 %→금액 규칙(10/24) 재측정: 규칙 뒤 해당 편 하루당 조회 vs 그 외 |
 | firemap-admin | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-watchdog | 카페 검색 기준선(cafe_search_baseline.json) 매 회차 재측정 스크립트화(work/cafesearch.py) — 한 편이라도 잡히기 시작하거나 잡히던 글이 빠지면 신호 | 막힌 묶음 16개(블로그 6·카페 10, 10/19 09:52 재실측 — youthsave1010은 사진 2/3장만 채우면 산다) 폐기 목록 제안 — 제목만 고치면 살릴 카페 묶음은 editor 목록으로 | 메우기 결과를 로그 문자열이 아니라 카페 API 최신 글 번호+published.txt 시각으로 확인(10/12 '이미 올라가 있음'을 메움으로 적던 것은 고침 — 남은 건 글 번호 대조) |
-| firemap-audit | 롱폼 노출 멈춤 원인(P-1 33h 3회·W-1 2화 9.5h 2회 vs H-1 209·R-1 351) — ytreach 보고서로 노출 0인지 클릭 0인지 가르기 | aitell endbad 거부 전환 실물 확인(10/18) + perf_log 10/18 갱신 여부(이틀 비면 얼어붙은 지표) | containsSyntheticMedia Studio 실물 확인 + PD app_preview 규칙 3 다음 롱폼(N-2 10/18)에 남는지 |
+| firemap-audit | 롱폼 노출 멈춤 원인(P-1·W-1 2화·N-2 79회/33h·C-2 10회/9.5h vs H-1 209·R-1 351) — ytreach 보고서로 노출 0인지 클릭 0인지 가르기 | write 요청 확인: gates_ok 전 aitell.gate_pkg·PRODUCT 코인(10/20) + dep13y1019 빈 칸 처리 | PD app_preview 자동 호출이 H-2(10/20)에 남는지 + containsSyntheticMedia Studio 실물 확인 |
 | firemap-soondol-deputy | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-loop | 쇼츠 utm 실유입 10/7 재측정(work/sql/yt_inflow.sql) — 14일 진짜 12기기(10/5 21:5x), 도착지 /calc/* vs 첫 화면 나눠 세기 | 카페 '예금·이자·금리' 묶음 10/9 재측정 — write가 비축 칸에 넣은 편이 하루당 조회 1.31(묶음 중앙값)을 넘는지, read_snaps 24시간 값이 왜 4편만 맞는지(30분 간격 찍기가 회차 사이에 안 돎?) | 롱폼 420b 10→224 원인 — YouTube Analytics 트래픽 소스(검색·추천)로 확인, 다른 롱폼 10~54와 비교 |
 | firemap-ai-lab | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

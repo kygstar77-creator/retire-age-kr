@@ -74,4 +74,5 @@
 - 다시 연 원문: https://fund.nps.or.kr/oprtprcn/oprtotcm/getOHED0010M0.do · https://fund.nps.or.kr/oprtprcn/ivsmprcn/getOHED0016M0.do · https://www.law.go.kr/법령/국민연금법 · https://www.hankyung.com/article/2026101993047 · https://www.heraldk.com/article/2026022618334725874 · https://blog.naver.com/skmfood/224446155048
 - 기준일: 2026-10-19 조회(기금 숫자는 2026년 7월 말 잠정)
 - 바뀐 것: 없음 — 공단 표는 7월 말 기준 그대로(8월 말 갱신 전)
+- 다시 확인: 2026-10-20 06:21 공단 기금 운용 현황(getOHED0010M0) 다시 받음 — 여전히 '2026년 7월 말 기준', 바뀐 숫자 없음
 - 새로 찾은 것: 법 제3조의2 국가 지급 보장 문장(2025.4.2 개정)이 20260526판에도 그대로

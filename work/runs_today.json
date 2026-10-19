@@ -1,136 +1,18 @@
 {
- "date": "2026-10-19",
+ "date": "2026-10-20",
  "runs": [
   {
    "hour": 6,
-   "ts": "06:37",
-   "who": "firemap-write",
-   "blog": null,
-   "cafe": {
-    "title": "코인 과세 시작 전 올해 말까지 오른 이익은 세금 0원",
-    "url": "https://cafe.naver.com/firemap/321"
-   },
-   "note": "06:10 칸 coin1019 발행(무작위 대기 4분 46초) · verify OK 2104/2104자·사진 3/3 · 글 끝 질문 한 줄 추가 후 aitell 3.0 통과·재도장 · 블로그 0(DAY_CAP·블로그 쉼) · 다음 칸: 12:10 ubfraud1019 관문 통과 — 자료조사 출처 9(고용보험법·시행령·시행규칙 국가법령정보센터 10/19, 고용노동부 5/31 보도자료, 데일리안 5/31, 최저임금 기사, 경쟁 상위 5편, 지식iN 5) · 교차검증(crosscheck Gemini): 사실 4 중 반영 3·유지 1(계산기 입력은 toolPages.js로 확인), 말투 15 중 반영 9 · 레드팀 틀림0·오해6 반영 · 58세 2차 심각0 · 개선: 없음(관문 도구는 모두 정상 동작) · 카페 댓글 답할 것 0개"
-  },
-  {
-   "hour": 7,
-   "ts": "07:48",
-   "by": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "연금저축 세금은 연금이 1500만원 넘으면 오히려 돌려받는 경우",
-    "url": "https://cafe.naver.com/firemap/322"
-   },
-   "note": "07:40 칸 TBD(p1s_cross 짝 관문 기한 지남) → 비축 pensiontax1019(관문 10/18 23:47: 레드팀 틀림0·58세 2차·제목8·표지8.5·교차검증 check_gpt/gemini 있음). 글 끝 질문 줄 추가 후 aitell 2.1·readcheck 0·editgate auto 재서명. verify OK 1531/1531자·사진 3/3. 관련 영상: 맞는 공개 롱폼 없어 안 넣음. 카페 비축 0/2. 개선: 없음(확인 창 TimeoutError는 발행엔 영향 없음)"
-  },
-  {
-   "hour": 9,
-   "ts": "09:34",
-   "by": "firemap-write",
-   "blog": null,
-   "cafe": {
-    "title": "여의도 구축 아파트 층별 가격, 같은 단지 저층과 위층은 얼마나 차이 날까",
-    "url": "https://cafe.naver.com/firemap/323"
-   },
-   "note": "09:10 칸 yeoui1019 발행(게시판 부동산) verify OK 1713/1713자·사진 3/3 · 블로그 없음(블로그 대기 전부 보류·하루 상한 규칙) · 15:10 칸 c2cafe1019 관문 통과(C-2 짝 글, 미발행): 자료조사 새로 7건(야후 ^SP500TR 10/16·ECOS 731Y001 10/16 1,348.5원·ECOS 121Y002·소득세법 129조 원문 50% 구간·Morningstar 3.9%/AP 시황은 1차 확인 못 해 본문 미사용) · 교차검증: crosscheck 출력 없음(check_gpt/gemini 미생성) → selfcheck 사실 0 · 레드팀 틀림1·오해5·권유2 전부 반영 · 58세 3차 심각0 · 개선: 없음(이번 회차 셸 heredoc 실수로 9분 멈춤 — 수정 스크립트는 파일로)"
-  },
-  {
-   "hour": 10,
-   "ts": "11:26",
-   "by": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "테슬라 실적발표 다음 날, 지난 네 번 주가는 몇 % 움직였을까?",
-    "url": "https://cafe.naver.com/firemap/324"
-   },
-   "note": "10:40 칸 TBD·비축0 → 새 편 tsla1019(성장주·형식4) · 자료조사 원문 9건(SEC 8-K 4건·EDGAR 제출목록·나스닥·야후·toprank) · 교차검증 crosscheck Gemini: 사실 3 중 반영 2·유지 1(영상 링크 공개 확인), 말투 14 중 반영 13·버림 1(공시에 없는 인과) · selfcheck 사실 0 · readcheck 0 · aitell 1.5 · 레드팀 틀림1·오해7 반영 · 58세 2차 통과 · 제목 끝말 규칙으로 두 번 교체(얼마 3칸→몇) · verify OK 1525/1525자·사진 3/3 · 발행 11:25(칸보다 45분 늦음) · 개선: playbook에 제목 관문 두 개(얼마·몇만 + 같은 끝말 3칸 금지) 미리 세기 추가"
-  },
-  {
-   "hour": 12,
-   "ts": "13:31",
+   "ts": "06:42",
    "blog": {
     "title": null,
     "url": null
    },
    "cafe": {
-    "title": "실업급여 부정수급 하루 알바 숨기면 얼마나 돌려줘야 할까",
-    "url": "https://cafe.naver.com/firemap/325"
+    "title": "국민연금 수익률 38년, 기금 손실이 내 연금액을 줄일까?",
+    "url": "https://cafe.naver.com/firemap/333"
    },
-   "note": "12:10 칸 ubfraud1019 발행 12:41(jitter 17분) · verify OK 1836/1836자·사진 3/3 · 관문은 06:37 통과분(레드팀 틀림0·58세 통과) · 블로그는 DAY_CAP/방침상 없음 · 18:10 칸: 청년미래적금 2차(ymf2wait1019) 내용 관문 통과했으나 카페 범위 규칙(청년 전용 상품 금지)에 막혀 보류 → 새 편 kospioct1019(경제 시황) 작성 중 · 개선: 주제 고를 때 aitell 범위 검사를 먼저 돌려야 한다 — playbook에 적음"
-  },
-  {
-   "hour": 13,
-   "ts": "13:55",
-   "who": "firemap-write-b",
-   "blog": null,
-   "cafe": {
-    "title": "퇴직 뒤 건보료·연금 계산하는 카페 처음 오셨다면 할 일 하나",
-    "url": "https://cafe.naver.com/firemap/326"
-   },
-   "note": "13:40 칸 cafenotice1018(공지 묶음, 10/18 23:55 관문 통과) --board 공지사항 발행 · verify OK 699/699자·사진 3/3 · 발행 전 확인: SideMenuList에 회원 자료실·파이어 이야기·배당·이자 인증 있음, 그러나 CafeGateInfo useMemberLevel=false(등급 기능 꺼짐) → '가입인사 쓰면 등급이 바로 올라가고 회원 자료실에서' 사실 아님 → notice.txt 대체 문장(c02 끝줄 '[자료] 글에서'·c00 '가입한 회원에게'), #263(연금/세금/보험)·#315(돈 관리) 비로그인 0004=멤버공개 확인, img/02 note 다시 · spoken 원문→자료 2곳 · 1차 발행 readcheck 거부(계산기 URL 문장 119자) → '건보료 계산기: URL' 한 줄로 분리, readcheck 0·aitell 0.0·editgate stamp auto 다시 · cafecomments 답할 것 0 · 개선: 없음(발행기 확인 창 8초 타임아웃은 발행엔 영향 없음) · 18:10 칸 kospioct1019 관문 통과 14:13(레드팀 7·58세 통과·selfcheck 사실0·crosscheck 사실5 유지(반올림·법 원문)) · 자료조사 원문 4종+법령"
-  },
-  {
-   "hour": 15,
-   "ts": "16:45",
-   "blog": null,
-   "cafe": {
-    "title": "S&P500에 퇴직금 넣고 매달 꺼내 쓰면 몇 년 버틸까?",
-    "url": "https://cafe.naver.com/firemap/327"
-   },
-   "note": "15:10 칸 c2cafe1019 발행 #327 verify OK 1999/1999자·사진3/3(발행 전 구어 아닌 말 2줄 고침·editgate 다시 찍음) · 21:10 칸 dep13y1019 관문 통과(예금·금리): 자료조사 출처 7(금감원 공시 API·금통위 의사록·ECOS 2종·소득세법·시행령·디지털타임스)+경쟁 블로그 6·지식iN 5 · 교차검증: crosscheck 출력 없음(원인 확인 안 함) → selfcheck 사실 0 · 레드팀 틀림1·오해6·권유2 전부 반영 · 58세 2차 심각0 · 개선: 그림을 경쟁 글과 나란히 놓고 보니 표가 경쟁 막대·강조 카드보다 못해 다시 그림(bench 사진 비교) · 일감표(selfloop) 이번 회차 못 봄 · 블로그 없음(DAY_CAP)"
-  },
-  {
-   "hour": 16,
-   "ts": "18:18",
-   "blog": null,
-   "cafe": {
-    "title": "가족끼리 아파트 직거래, 싸게 팔면 증여세는 언제부터 붙을까?",
-    "url": "https://cafe.naver.com/firemap/328"
-   },
-   "note": "firemap-write-b 16:40 칸(97분 늦음) · 자료: 국토부 실거래 325파일 새로·법령 원문 8조·korea.kr 1 · 교차검증: crosscheck 사실 3건 중 반영2·유지1(10월 계약 일부러 뺌) · selfcheck 사실0 · verify OK 2333/2333자·사진3/3 · 개선: 제목 끝말 '얼마' 4칸 막힘 → playbook에 쓰기 전 끝말 세기 다시 적음"
-  },
-  {
-   "hour": 18,
-   "ts": "19:21",
-   "blog": null,
-   "cafe": {
-    "title": "코스피 올해 흔들린 정도, 1997년 이후 순위로 따져 보니",
-    "url": "https://cafe.naver.com/firemap/329"
-   },
-   "note": "firemap-write 18:20 회차 · 18:10 칸 kospioct1019 19:18 발행(write-b 18:17 뒤 60분 간격, 68분 늦음) verify OK 1461/1461자·사진 3/3(게시판 경제 이야기) · 다음 칸 10/20 06:10 npsfund1019 관문 통과: 자료 기금운용본부 운용성과·포트폴리오 원문·국민연금법 3조의2·4조·51조·한경 보도·재정추계 2차 2곳 · 교차검증: crosscheck(제미나이 사실 대조) 지적 5건 중 반영 2(아침·대체투자 예시 뺌)·유지 3(법 4조②·51조 원문으로 facts에 근거 추가) · 레드팀 틀림3·오해4·권유1 반영 · 이해 시험 40·50·60세 6차 심각 0 · selfcheck 사실 0 · 블로그 없음(카페 전용 운영) · 개선: 반등 기록 제목·표지가 예측으로 읽히는 문제를 playbook에 적음"
-  },
-  {
-   "hour": 19,
-   "ts": "20:26",
-   "blog": null,
-   "cafe": {
-    "title": "평균 월급 뉴스마다 다른 이유, 중위는 288만원",
-    "url": "https://cafe.naver.com/firemap/330"
-   },
-   "note": "firemap-write-b 19:40 칸 · 출처 원문 2(데이터처·노동부 9/30 PDF)+경쟁 5 · 교차검증: Gemini 사실 3 중 반영 2·유지 1(롱폼 링크 F12 추가), 말투 12 반영 · selfcheck 사실 0 · 레드팀 틀림2·오해6 반영 · verify OK 1629자·사진 3 · 개선: playbook에 짝 글·표지 숫자 둘·calc 줄 규칙 기록"
-  },
-  {
-   "hour": 21,
-   "ts": "21:53",
-   "blog": {
-    "title": null,
-    "url": null
-   },
-   "cafe": {
-    "title": "정기예금 금리 1년이 높은데 오래 묶으면 손해일까?",
-    "url": "https://cafe.naver.com/firemap/331"
-   },
-   "note": "21:10 칸 dep13y1019 — audit 요청으로 제목 끝말 '얼마' 3칸 걸려 제목만 바꿔 재날인(본문 0 변경) · verify OK 1728/1728자·사진 3/3 · 자료조사·교차검증은 16:45 관문 때 완료(레드팀 원 단위 일치, selfcheck 사실 0) · 블로그 없음(블로그 쉬는 날·색인 0 브레이크) · 개선: editgate.PRODUCT 가상자산 말 추가 · 10/20 09:10 H-2 짝 글은 직원에게 맡김"
-  },
-  {
-   "hour": 22,
-   "ts": "23:17",
-   "blog": null,
-   "cafe": {
-    "title": "개인투자용 국채 중도환매, 원금은 그대로인데 이자는?",
-    "url": "https://cafe.naver.com/firemap/332"
-   },
-   "note": "firemap-write-b 22:40 칸(TBD·비축0 → 새 편 govbond1019) · 출처: 재정경제부 9/30 보도자료 원문 PDF·조특법 91조의23(10/19)·직접 계산, 경쟁 블로그 5편·지식iN 3건 · 교차검증: 제미나이 사실 7건 중 반영1(연 2천만원 뺌)·유지6(보도자료 붙임에 있음), 어색 2건 반영 · selfcheck 사실0 · 레드팀 틀림4·오해7·권유2 반영 · 이해 시험 2차 3명 뜻 맞음 · 첫 발행 시도는 제목 끝말 '얼마' 3칸으로 막혀 제목 바꿈 · verify OK 1929/1929자·사진 3/3 · 개선: thumbpair 503 때 Agent 짝 비교로 대신(교본에 적음)"
+   "note": "06:10 칸 npsfund1019 · 발행 전 공단 기금 표 다시 받음(7월 말 기준 그대로) · readcheck 어미반복 1건 고침→editgate auto 재날인 · verify OK 1672/1672자·사진 3/3 · 블로그 없음(02~07시 카페만, 블로그 색인 0 브레이크) · 12:10 칸 bondetf1020 직원 투입 · 개선: 없음"
   }
  ]
 }

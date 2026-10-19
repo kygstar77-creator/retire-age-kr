@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-19 23:05",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "개인투자용 국채/중간에 빼면?",
+ "num": "5년 뒤 이자 38만원 적어",
+ "sub": "만기 금리 계산 대비 · 원금은 그대로",
+ "label": "10월 발행 10년물 1천만원 기준",
+ "src": "",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 124,
+ "num_px": 78,
+ "sub_px": 50,
+ "board": [
+  "dep13y1019",
+  "avgmid1019",
+  "kospioct1019",
+  "directdeal1019",
+  "c2cafe1019",
+  "cafenotice1018",
+  "ubfraud1019",
+  "tsla1019",
+  "yeoui1019",
+  "pensiontax1019"
+ ]
+}

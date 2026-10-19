@@ -2859,3 +2859,4 @@ $MSG
 - [지시] **firemap-video-producer** ← 운영실장 (23:10) H-2 10/20 11:30 관문 기한(10/19 11:30) 지남 — '올리기 전 확인'·관문 통과·예약 → slots gates_ok
   착수: firemap-video-producer 23:10 (운영실장)
   완료: firemap-video-producer 23:15 — ① H-2 확인만: 예약 아직 없음(uploads.jsonl 없음) — **PD 21:11 회차가 렌더 중**(lfrender render 세 토막, 1·2토막 끝 22:19·23:07, 3토막 18000-26158 23:08 시작), gate·up은 그 회차 몫이라(한 편 한 회차) 손 안 댐 · 올리기 전 확인 칸 있음(youtube-loop 16:58) · 요청 ① 설명란 재수신 한 줄은 meta.json desc에 이미 들어 있음(19:04) · gates_ok 안 적음(예약 전) ② **10/21 17:20 쇼츠 칸 = c2s_deposit**(C-2 5장 예금 vs S&P500, 5:1·5:4~5:12 51초, 새 녹음·새 숫자 0, c2s_jungwoo와 다른 질문, 판 없는 꼴) — cardshorts/c2s_deposit/spec.md·slots item · 남음 compete·렌더·관문·예약(기한 10/21 05:20)
+- [자발] **firemap-write-b** 22:42 회차 — 22:40 칸 TBD(비축 0) → 새 편 govbond1019 · 완료: https://cafe.naver.com/firemap/332 verify OK 23:17

@@ -1,0 +1,1228 @@
+연합뉴스만의 특별한 뉴스 서비스를 경험해보세요!
+송고2026-10-19 11:25
+송고 2026년10월19일 11시25분
+코스피, 이달 세계증시 중 최저 수익률 기록
+AI 수익성 우려·외국인 매도에 17% 넘게 급락
+상장종목 10개 중 7개 가까이 주가 하락
+구글 검색에서 연합뉴스 기사를
+우선적으로 보여줍니다.
+(서울=연합뉴스) 이진욱 기자 = 19일 서울 중구 하나은행 본점 딜링룸 전광판에 코스피와 원/달러 환율이 표시돼 있다. 이날 코스피는 3% 넘게 급락하며 출발했으나 장 초반 낙폭을 줄이고 있다. 2026.10.19 cityboy@yna.co.kr
+
+(서울=연합뉴스) 김유향 기자 = 인공지능(AI) 투자 수익성에 대한 우려와 외국인 매도세가 겹치면서 코스피가 이달 주요국 증시 가운데 가장 부진한 수익률을 기록했다.
+코스닥 지수도 하위권에 머문 가운데 국내 상장종목 10개 중 7개 가까이가 하락한 것으로 나타났다.
+19일 한국거래소와 금융정보서비스업체 연합인포맥스에 따르면 이달 들어 지난 16일까지 코스피는 17.11% 하락했다. 이는 주요국 주가지수 중 가장 낮은 수익률이다.
+인도네시아 IDX 종합지수(-14.59%)가 그다음으로 낙폭이 컸으며 중국 심천종합지수(-7.40%), 코스닥 지수(-7.14%)가 뒤를 이었다.
+반면 브라질 보베스파 지수는 10.24% 올라 가장 높은 수익률을 기록했다. 러시아 RTS(7.17%), 스위스 SMI(4.06%), 인도 센섹스(3.10%) 등도 상승했다.
+브라질과 러시아, 인도 등 신흥국 지수가 수익률 상위권에 오른 반면 반도체 업종의 영향력이 다소 큰 한국과 대만 가권지수(-1.73%), 일본 닛케이255 지수(-2.14%)는 약세를 나타냈다.
+코스피는 미국-이란 전쟁 발발 직후였던 지난 3월과 글로벌 반도체 조정으로 인해 급락장이 펼쳐졌던 7월을 제외한 올해 대부분 기간 월별 수익률 기준으로 주요국 중시 가운데 최상위권을 유지했다.
+예컨대 4월에는 무려 30.61% 급등하는 모습을 보이기도 했다.
+하지만 코스피와 코스닥이 각각 22.19%와 21.44% 급락한 7월 이후 탄력이 약화하면서 코스피는 8월에는 3.40%, 9월에는 0.26% 오르는 데 그쳤고, 이달 들어서는 17% 넘게 급락했다.
+이 과정에서 코스피는 '올해 누적 상승률 1위' 타이틀도 빼앗겼다. 대만 가권지수가 지난 16일 기준 62.66% 올라 선두로 올라섰으며, 34.50%로 수익률이 쪼그라든 코스피는 폴란드 WIG지수(36.66%)에조차 역전당한 상태다.
+이번 국내 증시 부진은 7월과 비슷하게 AI 산업의 성장 기대가 흔들린 영향으로 풀이된다.
+AI 클라우드 업체 코어위브의 회사채 가격 급락으로 신용위험 우려가 커지고, AI 개발사 앤트로픽의 3분기 매출 성장세가 전 분기 대비 둔화하면서 막대한 AI 투자금이 실제 수익으로 이어질 수 있을지에 대한 의구심이 확산했다.
+이에 반도체 투자와 수요에 대한 기대도 약해지면서 삼성전자와 SK하이닉스 등 국내 증시를 이끄는 대형주에 부담으로 작용했다.
+[김토일 제작] 일러스트
+
+외국인 매도세도 국내 증시의 낙폭을 키웠다.
+외국인은 지난 2일부터 8거래일 연속으로 유가증권시장에서 순매도를 이어가며 총 18조1천308억원을 팔아치웠다.
+지난 16일 순매수로 돌아선 데 이어 이날도 장 초반 '사자' 흐름을 이어갔지만, 이후 다시 '팔자'로 돌아섰다.
+하락세는 반도체 대형주에만 국한되지 않았다. 이달 들어 지난 16일까지 코스피·코스닥 상장종목 총 2천760개 가운데 1천899개(68.80%)의 주가가 내렸다. 종목 10개 중 7개 가까이가 하락한 셈이다.
+시장별로는 코스피 652개, 코스닥 1천247개 종목이 하락했다. 눈에 띄는 것은 이 기간 큰 폭 '급락'한 종목들의 규모다.
+하락률이 5% 이상인 종목은 총 1천120개(40.58%)였으며 이 가운데 10% 이상 내린 종목은 588개(21.30%), 20% 이상 급락한 종목은 127개(4.60%)로 집계됐다.
+삼성전자[005930](-19.74%)와 SK하이닉스[000660](-28.38%)의 하락폭 또한 컸다.
+낙폭이 가장 큰 종목은 코스닥 시장의 빅웨이브로보틱스[0035S0]로 이 종목은 이달 들어 61.60% 폭락했다.
+반면 주가가 오른 종목은 코스피 254개, 코스닥 473개로 총 727개(전체의 26.34%)에 그쳤다.
+이날 오전 9시 33분 기준으로 집계 기간을 넓히면 이달 들어 주가가 하락한 코스피·코스닥 종목은 총 1천923개로, 전체의 69.67%를 차지했다.
+willow@yna.co.kr
+제보는 카카오톡 okjebo
+
+<저작권자(c) 연합뉴스,
+무단 전재-재배포, AI 학습 및 활용 금지>
+
+2026/10/19 11:25 송고
+2026년10월19일 11시25분 송고
+"할머니 보석함이 제일 힙해"…옥반지 이어 비녀에 꽂힌 2030
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+제주서 70대 여성 교량 아래로 15ｍ 추락해 중상
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+서경덕 "日와세다대 명예교수, 일제 재산 반환 요구…국제 망신"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[삶] "입사동기와 카톡으로 직장상사 욕하다 그 상사한테 보냈네요"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"고깃집 천사 찾아요"…장애인손님 단체식사 결제하고 떠나
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+에콰도르서 생중계 미사 중 대형 십자가 떨어져 사제 사망
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+대구서 흉기 소지한 채 처음 본 사람 뒤따라간 40대 긴급체포
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+신세계백화점 강남점 출차 대란…"5시간째 제자리, 지옥 같아"
+
+
+
+
+
+
+
+
+이전 콘텐츠
+다음 콘텐츠
+
+
+
+
+
+광고
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+광고
+
+
+
+
+
+
+
+
+에디터스 픽Editor's Picks
+
+
+영상
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[영상] 약탈 표적 된 프랑스 명품 매장…분노한 마크롱 "대가 치를 것"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[영상] 상어 '부캉이' 지느러미서 상처 발견…"걱정할 상황 아니다"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[영상] 임신중지 약물 3년 먼저 도입한 일본…초기 이용률 1.2%뿐?
+
+
+
+
+
+
+
+이전 콘텐츠
+다음 콘텐츠
+
+
+
+
+
+
+
+뉴스
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+韓, 브런슨 '전작권·DMZ' 발언에 우려표명…美 '공감했다' 반응
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2㎝ '쿠푸' 반지·3㎝ 부적… '작지만 강한' 고대 이집트의 기억
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+교수의회 의심 섞인 시선에도…고려대 K-클럽은 계속
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+이형일 "올해 성장률 3.4∼3.6% 전망…잠재성장률 반등 임박"
+
+
+
+
+
+
+
+
+이전 콘텐츠
+다음 콘텐츠
+
+
+
+
+
+광고
+
+
+
+
+
+	window["mobonDivBanner_944004"] = function(){
+	new HawkEyes({"type":"banner","responsive":"N","platform":"W","scriptCode":"944004","frameCode":"74","width":"300","height":"250","settings":{"cntad":"1","cntsr":"1"}});
+	}
+
+
+
+
+
+광고
+
+
+
+
+
+
+광고
+
+
+
+
+	new HawkEyes({"type":"banner","responsive":"N","platform":"M","scriptCode":"21410","frameCode":"43","width":"320","height":"100","settings":{"cntsr":"4","mChk":"100"}});
+
+
+
+
+
+
+함께 보면 좋은 콘텐츠
+
+
+by
+데이블
+
+
+
+
+
+window['dablewidget_1oVg61Z7'] = function(){
+	(function(d,a,b,l,e,r) {
+	if(d[b]&&d[b].q)return;d[b]=function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l);
+	e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/plugin.min.js';
+	r=a.getElementsByTagName(l)[0];r.parentNode.insertBefore(e,r);
+	})(window,document,'dable','script');
+	dable('setService', 'm.yna.co.kr');
+	dable('sendLogOnce');
+	dable('renderWidget', 'dablewidget_1oVg61Z7');
+}
+
+
+
+
+
+
+오래 머문 뉴스
+
+
+
+
+
+
+
+	
+		
+			{{#if IMAGE}}
+			
+				 
+					
+				
+			
+			{{/if}}
+			
+				
+					
+						{{TITLE}}
+					
+				
+			
+		
+	
+
+
+광고
+
+
+
+	window["div-gpt-ad-1700721342615-0"] = function(){
+		googletag.cmd.push(function() { 
+			googletag.defineSlot('/21961356670/korean_mobile_web_article_body_btf2_300x250_231201', [300, 250], 'div-gpt-ad-1700721342615-0').addService(googletag.pubads());
+			googletag.display('div-gpt-ad-1700721342615-0'); 
+		});
+	}	
+
+
+
+
+
+
+광고
+
+
+
+
+	window["w2g-slot5"] = (function () {
+        var domain = 'yna.co.kr';
+        var slot = 'w2g-slot5';
+        if (window.self !== window.parent) {
+           var d = top.document, w = window.parent;
+           var parent = this.frameElement;
+           parent.style.display = "none";
+        } else {
+           var d = document, w = window, parent = null;
+           if (typeof d.currentScript !== 'undefined') {
+              parent = d.currentScript;
+              if (parent == null) {
+                 parent = document.getElementById(slot + '-cnt');
+              }
+           } else {
+              parent = d.body.lastElementChild;
+           }
+        }
+        d.addEventListener('wtgLoaded', function (e) {
+           if (typeof w.w2g.single === 'function') {
+              w.w2g.single(domain, slot, parent);
+           }
+        }, false);
+        if (w.w2gLoaded === undefined) {
+           w.w2gLoaded = 0;
+        }
+        if (w.w2gLoaded 
+
+
+
+
+랭킹뉴스
+
+
+
+
+많이 본 뉴스
+
+
+
+
+공감 많은 뉴스
+
+
+
+
+
+
+
+
+
+더보기
+
+
+
+
+
+
+
+더보기
+
+
+
+
+
+	
+	
+		
+			{{#if IMAGE}}
+				
+					
+						
+					
+				
+			{{/if}}
+			
+				
+					
+						{{{TITLE}}}
+					
+				
+			
+		
+	
+
+	
+	
+		
+			{{#if IMAGE}}
+				
+					
+						
+					
+				
+			{{/if}}
+			
+				
+					
+						{{{TITLE}}}
+					
+				
+			
+		
+	
+
+
+광고
+
+
+
+
+	window["w2g-slot6"] = (function () {
+        var domain = 'yna.co.kr';
+        var slot = 'w2g-slot6';
+        if (window.self !== window.parent) {
+           var d = top.document, w = window.parent;
+           var parent = this.frameElement;
+           parent.style.display = "none";
+        } else {
+           var d = document, w = window, parent = null;
+           if (typeof d.currentScript !== 'undefined') {
+              parent = d.currentScript;
+              if (parent == null) {
+                 parent = document.getElementById(slot + '-cnt');
+              }
+           } else {
+              parent = d.body.lastElementChild;
+           }
+        }
+        d.addEventListener('wtgLoaded', function (e) {
+           if (typeof w.w2g.single === 'function') {
+              w.w2g.single(domain, slot, parent);
+           }
+        }, false);
+        if (w.w2gLoaded === undefined) {
+           w.w2gLoaded = 0;
+        }
+        if (w.w2gLoaded 
+
+
+
+
+
+
+함께 읽기 좋은 콘텐츠
+
+
+by
+데이블
+
+
+
+
+
+window['dablewidget_V7KBWAko'] = function(){
+	(function(d,a,b,l,e,r) {
+	if(d[b]&&d[b].q)return;d[b]=function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l);
+	e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/plugin.min.js';
+	r=a.getElementsByTagName(l)[0];r.parentNode.insertBefore(e,r);
+	})(window,document,'dable','script');
+	dable('setService', 'm.yna.co.kr');
+	dable('sendLogOnce');
+	dable('renderWidget', 'dablewidget_V7KBWAko');
+}
+
+
+
+
+광고
+
+
+
+	window["taboola-mobile-below-article-thumbnails-1x1"] = function(){
+		window._taboola = window._taboola || [];
+  		_taboola.push({
+  			mode: 'alternating-thumbnails-a',
+    		container: 'taboola-mobile-below-article-thumbnails-1x1',
+    		placement: 'Mobile Below Article Thumbnails 1x1',
+    		target_type: 'mix'
+		  });
+		_taboola.push({ flush: true });
+	}	
+
+
+
+
+
+
+Shorts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ "수로 벽에 너무 붙어 헤엄치더니"…'부캉이' 또 상처
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 이란 "유조선 2척 기뢰 충돌"
+
+
+
+
+
+
+
+
+
+
+
+
+연합뉴스 Games
+
+
+
+
+
+
+
+	window.addEventListener("message", function (event) {
+		//console.log(event.data);
+		if (event.data.from === "games") {
+			// if (event.data.type == "changeWidth") {
+			// 	$("#gamesIframe").animate({ width: event.data.width }, 10);
+			// }
+			if (event.data.type === "changeHeight") {
+				const $gamesIframe = document.querySelector("#gamesIframe");
+				if($gamesIframe){
+					$gamesIframe.style.height = event.data.height+'px';
+					window.dispatchEvent(new Event('adjust'));
+				}
+			}
+		}
+	});
+	
+
+
+
+
+함께 보면 좋은 콘텐츠
+
+
+Taboola 후원링크
+
+
+
+
+
+window['taboola-below-article-widget_08162024-app'] = function(){
+	window._taboola = window._taboola || [];
+	_taboola.push({
+		mode: 'thumbs-feed-3x2',
+		container: 'taboola-below-article-widget_08162024-app',
+		placement: 'Below Article Widget_08162024',
+		target_type: 'mix'
+	});
+	_taboola.push({flush: true});
+}
+
+
+
+
+
+
+함께 볼만한 콘텐츠
+
+
+by
+데이블
+
+
+
+
+
+window['dablewidget_2XLWedgl'] = function(){
+	(function(d,a,b,l,e,r) {
+	if(d[b]&&d[b].q)return;d[b]=function(){(d[b].q=d[b].q||[]).push(arguments)};e=a.createElement(l);
+	e.async=1;e.charset='utf-8';e.src='//static.dable.io/dist/plugin.min.js';
+	r=a.getElementsByTagName(l)[0];r.parentNode.insertBefore(e,r);
+	})(window,document,'dable','script');
+	dable('setService', 'm.yna.co.kr');
+	dable('sendLogOnce');
+	dable('renderWidget', 'dablewidget_2XLWedgl');
+}
+
+
+
+
+
+
+
+
+광고
+
+
+
+
+
+
+
+
+광고
+
+
+
+
+        new HawkEyes({"type":"banner","responsive":"N","platform":"W","scriptCode":"41963","frameCode":"64","width":"120","height":"600","settings":{"cntad":"1","cntsr":"1"}});
+
+
+
+
+
+
+
+
+화면 상단으로 이동
+
+
+
+
+
+뉴스레터
+
+
+연합뉴스 Games
+
+
+APP설치
+
+
+
+뉴스
+
+
+최신뉴스
+
+
+
+
+
+정치
+
+메뉴 열기/닫기
+
+
+정치전체
+청와대/총리실
+국회/정당
+외교
+국방
+
+
+
+북한
+
+메뉴 열기/닫기
+
+
+북한전체
+학술/연구
+북한 알아보기
+인물
+비주얼
+NK NOW
+
+
+
+경제
+
+메뉴 열기/닫기
+
+
+경제전체
+경제/정책
+금융
+부동산
+취업/창업
+소비자
+
+
+
+마켓+
+
+메뉴 열기/닫기
+
+
+마켓+전체
+국내주식
+해외주식
+채권
+펀드/ETF
+글로벌시장
+증권/운용사
+리포트
+공시
+
+
+
+산업
+
+메뉴 열기/닫기
+
+
+산업전체
+산업/기업
+전기전자
+중화학
+자동차
+건설
+에너지/자원
+IT/과학
+게임
+유통/서비스
+중기/벤처
+바이오/헬스
+농림축산
+해양수산
+
+
+
+사회
+
+메뉴 열기/닫기
+
+
+사회전체
+사건/사고
+법원/경찰
+교육
+복지/노동
+환경/기후변화
+여성/아동
+재외동포
+다문화
+
+
+
+전국
+
+메뉴 열기/닫기
+
+
+전국전체
+경기
+인천
+부산
+울산
+경남
+대구/경북
+전남광주
+전북
+대전/충남/세종
+충북
+강원
+제주
+
+
+
+세계
+
+메뉴 열기/닫기
+
+
+세계전체
+특파원
+미국/북미
+중국
+일본
+아시아/호주
+유럽
+중남미
+중동/아프리카
+국제기구
+
+
+
+문화
+
+메뉴 열기/닫기
+
+
+문화전체
+책/문학
+만화/웹툰
+종교
+공연/전시
+학술/문화재
+미디어
+여행/레저
+생활
+
+
+
+건강
+
+메뉴 열기/닫기
+
+
+건강전체
+헬스노트
+위클리 건강
+더건강 영상
+
+
+
+연예
+
+메뉴 열기/닫기
+
+
+연예전체
+방송
+영화
+가요
+해외연예
+
+
+
+스포츠
+
+메뉴 열기/닫기
+
+
+스포츠전체
+야구
+축구
+농구/배구
+골프
+
+
+
+오피니언
+
+
+
+
+
+사람들
+
+메뉴 열기/닫기
+
+
+사람들전체
+인사
+부고
+동정/게시판
+CEO
+인터뷰
+
+
+
+
+
+
+
+뉴스+
+
+메뉴 열기/닫기
+
+
+기획
+팩트체크
+AI프리즘
+반려동물
+브랜드뉴스
+이슈
+이 시각 헤드라인
+
+
+
+비주얼뉴스
+
+메뉴 열기/닫기
+
+
+영상
+포토
+화보
+그래픽
+
+
+
+트렌드뉴스
+
+메뉴 열기/닫기
+
+
+핫뉴스
+주요뉴스
+긴급뉴스
+많이 본 뉴스
+오래 머문 뉴스
+공감 많은 뉴스
+
+
+
+외국어 뉴스
+
+English
+中文
+日本語
+عربي
+Español
+Français
+Tiếng Việt
+
+
+
+뉴스상품
+
+프리미엄뉴스
+뉴스리더
+인터넷맞춤형
+보도자료 해외배포
+보도자료 국내배포
+
+
+
+광고안내
+
+KTX 고속열차
+SRT 고속열차
+AREX 공항철도
+모바일
+PC
+출판물
+LED전광판
+사업제휴
+
+
+
+콘텐츠판매
+
+보도사진
+그래픽
+동영상
+인물
+
+
+
+출판물
+
+이매진
+연합연감
+영문연감
+단행본
+월간 마이더스
+
+
+
+서비스안내
+
+서비스 소개
+모바일앱 안내
+
+
+
+
+
+재난포털
+
+
+날씨
+
+
+기자
+
+
+뉴스레터
+
+
+제보
+
+
+뉴스상품
+
+
+광고안내
+
+
+콘텐츠판매
+
+
+연합뉴스 Games
+
+
+서비스 문의
+
+
+
+
+서비스 문의
+
+서비스 문의
+자주 묻는 질문
+공지사항
+1:1 문의
+
+
+
+계약사/제휴문의
+
+
+
+
+
+
+English
+中文
+日文
+عربي
+Español
+Français
+Tiếng Việt
+
+
+
+
+
+유튜브 채널
+연합뉴스
+K-Culture NOW
+통통테크
+더건강
+KOREA NOW
+NK NOW
+K-VIBE
+
+
+SNS
+다양한 채널에서 연합뉴스를 만나보세요!
+©2026 Yonhapnews Agency
+{{ SUB_TITLE }}
+다양한 채널에서 연합뉴스를 만나보세요!
+(서울=연합뉴스) 이진욱 기자 = 19일 서울 중구 하나은행 본점 딜링룸 전광판에 코스피와 원/달러 환율이 표시돼 있다. 이날 코스피는 3% 넘게 급락하며 출발했으나 장 초반 낙폭을 줄이고 있다. 2026.10.19 cityboy@yna.co.kr
+[김토일 제작] 일러스트

@@ -1919,8 +1919,8 @@
    "kind": "cafe",
    "item": "kospioct1019",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 연봉 실수령액(66,600) → https://firemap.kr/calc/salary — 글 질문이 계산기와 맞을 때만 줄 넣기 | ymf2wait1019: 범위 규칙으로 보류",
+   "gates_ok": "2026-10-19 14:13",
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 연봉 실수령액(66,600) → https://firemap.kr/calc/salary — 글 질문이 계산기와 맞을 때만 줄 넣기 | ymf2wait1019: 범위 규칙으로 보류 | firemap-write 14:13: kospioct1019 '올해 코스피 1997년 이후 흔들림 순위'(#300 재탕 각도 버림) 관문 통과 — 레드팀 숫자 전부 맞음·지적 반영, 58세 3차 심각0, editgate auto, 제목8·8 표지9·8",
    "pkg": "kospioct1019"
   },
   {

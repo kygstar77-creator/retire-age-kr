@@ -67,7 +67,7 @@
     "title": "퇴직 뒤 건보료·연금 계산하는 카페 처음 오셨다면 할 일 하나",
     "url": "https://cafe.naver.com/firemap/326"
    },
-   "note": "13:40 칸 cafenotice1018(공지 묶음, 10/18 23:55 관문 통과) --board 공지사항 발행 · verify OK 699/699자·사진 3/3 · 발행 전 확인: SideMenuList에 회원 자료실·파이어 이야기·배당·이자 인증 있음, 그러나 CafeGateInfo useMemberLevel=false(등급 기능 꺼짐) → '가입인사 쓰면 등급이 바로 올라가고 회원 자료실에서' 사실 아님 → notice.txt 대체 문장(c02 끝줄 '[자료] 글에서'·c00 '가입한 회원에게'), #263(연금/세금/보험)·#315(돈 관리) 비로그인 0004=멤버공개 확인, img/02 note 다시 · spoken 원문→자료 2곳 · 1차 발행 readcheck 거부(계산기 URL 문장 119자) → '건보료 계산기: URL' 한 줄로 분리, readcheck 0·aitell 0.0·editgate stamp auto 다시 · cafecomments 답할 것 0 · 개선: 없음(발행기 확인 창 8초 타임아웃은 발행엔 영향 없음)"
+   "note": "13:40 칸 cafenotice1018(공지 묶음, 10/18 23:55 관문 통과) --board 공지사항 발행 · verify OK 699/699자·사진 3/3 · 발행 전 확인: SideMenuList에 회원 자료실·파이어 이야기·배당·이자 인증 있음, 그러나 CafeGateInfo useMemberLevel=false(등급 기능 꺼짐) → '가입인사 쓰면 등급이 바로 올라가고 회원 자료실에서' 사실 아님 → notice.txt 대체 문장(c02 끝줄 '[자료] 글에서'·c00 '가입한 회원에게'), #263(연금/세금/보험)·#315(돈 관리) 비로그인 0004=멤버공개 확인, img/02 note 다시 · spoken 원문→자료 2곳 · 1차 발행 readcheck 거부(계산기 URL 문장 119자) → '건보료 계산기: URL' 한 줄로 분리, readcheck 0·aitell 0.0·editgate stamp auto 다시 · cafecomments 답할 것 0 · 개선: 없음(발행기 확인 창 8초 타임아웃은 발행엔 영향 없음) · 18:10 칸 kospioct1019 관문 통과 14:13(레드팀 7·58세 통과·selfcheck 사실0·crosscheck 사실5 유지(반올림·법 원문)) · 자료조사 원문 4종+법령"
   }
  ]
 }

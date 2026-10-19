@@ -2505,3 +2505,4 @@
 2026-10-19 13:31 · firemap-write · 12:10 칸 ubfraud1019 발행(#325, verify OK) · 칸 시각
 2026-10-19 13:31 · firemap-write · 18:10 칸 청년미래적금 ymf2wait1019 보류, 코스피 하락 기록 글로 교체 · 카페 범위 규칙 '청년 전용 상품 금지'(aitell scope)
 2026-10-19 13:55 · firemap-write-b · 13:40 칸 cafenotice1018 공지 발행 https://cafe.naver.com/firemap/326 (verify OK 699자) — 등급 기능 꺼짐 확인해 notice.txt 대체 문장으로 바꿔 냄 · 사실과 다른 '가입인사 쓰면 등업' 문장 방지
+2026-10-19 14:14 · firemap-write · 18:10 칸 kospioct1019 관문 통과(올해 코스피 흔들림 순위) · '급락 뒤 1년' 각도는 kospidrop1017(#300)과 겹쳐 바꿈

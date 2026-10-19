@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-19 14:07",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "코스피 올해 흔들림/1997년 이후 몇 위",
+ "num": "빠진 달 수 1위·고점 대비 5위",
+ "sub": "10월은 16일까지 17.1% 하락",
+ "label": "코스피 지수 직접 계산",
+ "src": "",
+ "icon": "trending-down",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 122,
+ "num_px": 81,
+ "sub_px": 60,
+ "board": [
+  "cafenotice1018",
+  "ubfraud1019",
+  "tsla1019",
+  "yeoui1019",
+  "pensiontax1019",
+  "coin1019",
+  "jpy1018",
+  "schdfx1018",
+  "mokdong1018",
+  "g1whycafe1018"
+ ]
+}

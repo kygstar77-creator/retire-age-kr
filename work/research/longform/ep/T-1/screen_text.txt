@@ -10,7 +10,7 @@
 [scenes.0.data.s1] 정민 씨 · 10년 거주
 [scenes.0.data.c1] fall
 [scenes.0.data.v2] 1억 4,777만원
-[scenes.0.data.s2] 수현 씨 · 10년 보유 · 2년 거주
+[scenes.0.data.s2] 수진 씨 · 10년 보유 · 2년 거주
 [scenes.0.data.c2] rise
 [scenes.0.data.icon] House
 [scenes.0.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
@@ -22,7 +22,7 @@
 [scenes.1.data.icon] Landmark
 [scenes.1.data.c] ink
 [scenes.1.data.source] 국회 의안정보시스템(2026-10-17 확인)
-[scenes.2.lines.0.text] 정민 씨와 수현 씨, 두 사람은 계산하려고 만든 가상 인물입니다.
+[scenes.2.lines.0.text] 정민 씨와 수진 씨, 두 사람은 계산하려고 만든 가상 인물입니다.
 [scenes.2.data.license] Pexels 7578842 무료(Kindel Media)
 [scenes.2.data.say] 두 사람은 가상 인물
 [scenes.2.data.side] left
@@ -192,26 +192,26 @@
 [scenes.23.data.side] left
 [scenes.23.data.chapter] 질문 ②
 [scenes.24.lines.0.text] 그래서 두 공제를 다 채워 80%를 받습니다.
-[scenes.24.lines.1.text] 수현 씨도 똑같이 10년을 갖고 있었지만, 거기서 산 건 2년뿐이에요.
+[scenes.24.lines.1.text] 수진 씨도 똑같이 10년을 갖고 있었지만, 거기서 산 건 2년뿐이에요.
 [scenes.24.lines.2.text] 그래서 48%에 그치고요.
-[scenes.24.lines.2.cap] 정민 씨 = 보유 40% + 거주 40% = 80% · 수현 씨 = 보유 40% + 거주 8% = 48%
+[scenes.24.lines.2.cap] 정민 씨 = 보유 40% + 거주 40% = 80% · 수진 씨 = 보유 40% + 거주 8% = 48%
 [scenes.24.data.title] 지금 법 공제율
 [scenes.24.data.v1] 80%
 [scenes.24.data.s1] 정민 씨 · 10년 + 10년
 [scenes.24.data.c1] fall
 [scenes.24.data.v2] 48%
-[scenes.24.data.s2] 수현 씨 · 10년 + 2년
+[scenes.24.data.s2] 수진 씨 · 10년 + 2년
 [scenes.24.data.c2] rise
 [scenes.24.data.icon] Percent
 [scenes.24.data.source] 소득세법 §95② 표2
-[scenes.25.lines.0.text] 올해 판다면 정민 씨는 1,900만원, 수현 씨는 8,100만원을 냅니다.
-[scenes.25.lines.0.cap] 2026년 양도 · 지방세 포함 · 정민 씨 1,901만원 · 수현 씨 8,135만원
+[scenes.25.lines.0.text] 올해 판다면 정민 씨는 1,900만원, 수진 씨는 8,100만원을 냅니다.
+[scenes.25.lines.0.cap] 2026년 양도 · 지방세 포함 · 정민 씨 1,901만원 · 수진 씨 8,135만원
 [scenes.25.data.title] 올해(2026년) 판다면
 [scenes.25.data.v1] 1,901만원
 [scenes.25.data.s1] 정민 씨
 [scenes.25.data.c1] fall
 [scenes.25.data.v2] 8,135만원
-[scenes.25.data.s2] 수현 씨
+[scenes.25.data.s2] 수진 씨
 [scenes.25.data.c2] rise
 [scenes.25.data.icon] Receipt
 [scenes.25.data.source] 소득세법·시행령(법제처 국가법령정보센터) · 파이어맵 계산(지방세 포함·필요경비 0)
@@ -253,20 +253,20 @@
 [scenes.29.data.side] left
 [scenes.29.data.chapter] 질문 ②
 [scenes.30.lines.0.text] 그래서 정민 씨는 그대로 80%예요. 살았던 해만으로 다 채우니까요.
-[scenes.30.lines.1.text] 수현 씨는 해마다 줄어서, 2029년엔 16%만 남습니다.
-[scenes.30.lines.1.cap] 수현 씨 · 2027년 48% → 2028년 32%(6%×2 + 2%×10) → 2029년 16%(8%×2)
+[scenes.30.lines.1.text] 수진 씨는 해마다 줄어서, 2029년엔 16%만 남습니다.
+[scenes.30.lines.1.cap] 수진 씨 · 2027년 48% → 2028년 32%(6%×2 + 2%×10) → 2029년 16%(8%×2)
 [scenes.30.data.title] 2029년 공제율
 [scenes.30.data.v1] 80%
 [scenes.30.data.s1] 정민 씨 · 그대로
 [scenes.30.data.c1] fall
 [scenes.30.data.v2] 16%
-[scenes.30.data.s2] 수현 씨 · 해마다 줄어
+[scenes.30.data.s2] 수진 씨 · 해마다 줄어
 [scenes.30.data.c2] rise
 [scenes.30.data.icon] Percent
 [scenes.30.data.source] 재정경제부 2026 세법개정안 상세본 p.58
-[scenes.31.lines.0.text] 같은 집을 판 해만 다르게 놓고 계산하면, 수현 씨 세금은 해마다 3천만원 넘게 차이가 나요.
+[scenes.31.lines.0.text] 같은 집을 판 해만 다르게 놓고 계산하면, 수진 씨 세금은 해마다 3천만원 넘게 차이가 나요.
 [scenes.31.lines.0.cap] 지방세 포함 · 해마다 +3,263만원·+3,379만원 · 정부안
-[scenes.31.data.title] 수현 씨 세금, 판 해별
+[scenes.31.data.title] 수진 씨 세금, 판 해별
 [scenes.31.data.bars.0.0] 2027년
 [scenes.31.data.bars.0.2] 8,135만원
 [scenes.31.data.bars.0.3] accent
@@ -321,18 +321,18 @@
 [scenes.37.data.c2] fall
 [scenes.37.data.icon] User
 [scenes.37.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
-[scenes.38.lines.0.text] 같은 2029년에 수현 씨 세금은 1억 5천만원에 조금 못 미칩니다.
+[scenes.38.lines.0.text] 같은 2029년에 수진 씨 세금은 1억 5천만원에 조금 못 미칩니다.
 [scenes.38.lines.1.text] 두 사람이 열두 배 가까이 벌어지는 건, 이 두 가지가 겹쳐서예요.
 [scenes.38.lines.1.cap] 1억 4,777만원 ÷ 1,241만원 = 11.9배 · 공제율 16% vs 80% · 기본공제 250만 vs 2,500만
 [scenes.38.data.title] 같은 해, 세금은 몇 배?
 [scenes.38.data.sub] 같은 20억 집 · 두 사람
 [scenes.38.data.source] 재정경제부 2026 세법개정안 상세본 p.58·p.68 · 파이어맵 계산(지방세 포함)
 [scenes.38.data.p.seed] T-1-ratio
-[scenes.38.data.p.who] 정민 씨·수현 씨 · 가상 인물
+[scenes.38.data.p.who] 정민 씨·수진 씨 · 가상 인물
 [scenes.38.data.p.note] 같은 20억 집 · 2029년에 판다면 · 정부안 · 지방세 포함
 [scenes.38.data.p.rows.0.label] 2029년 세금, 두 사람
 [scenes.38.data.p.rows.0.parts.0.t] 1억 4,777만원
-[scenes.38.data.p.rows.0.parts.0.sub] 수현 씨 · 공제율 16% · 기본공제 250만원
+[scenes.38.data.p.rows.0.parts.0.sub] 수진 씨 · 공제율 16% · 기본공제 250만원
 [scenes.38.data.p.rows.0.parts.1.t] ÷
 [scenes.38.data.p.rows.0.parts.2.t] 1,241만원
 [scenes.38.data.p.rows.0.parts.2.sub] 정민 씨 · 공제율 80% · 기본공제 2,500만원
@@ -342,16 +342,16 @@
 [scenes.39.data.say] 살았던 한 해의 값
 [scenes.39.data.side] left
 [scenes.39.data.chapter] 질문 ②
-[scenes.40.lines.0.text] 수현 씨 집으로 계산하면, 2029년엔 한 해를 더 살았을 때마다 세금이 1,700만원쯤 줄어듭니다.
+[scenes.40.lines.0.text] 수진 씨 집으로 계산하면, 2029년엔 한 해를 더 살았을 때마다 세금이 1,700만원쯤 줄어듭니다.
 [scenes.40.lines.0.cap] 20억·취득 8억·10년 보유 · 한 해에 약 1,690만원 · 파이어맵 계산
 [scenes.40.lines.1.text] 이 값은 집마다 달라요. 번 돈이 클수록 한 해의 값도 커집니다.
 [scenes.40.data.title] 살았던 한 해의 값
-[scenes.40.data.sub] 수현 씨 집 · 2029년
+[scenes.40.data.sub] 수진 씨 집 · 2029년
 [scenes.40.data.source] 파이어맵 계산 · 정부안 공제율(상세본 p.58)
 [scenes.40.data.p.seed] T-1-year-b
-[scenes.40.data.p.who] 수현 씨 · 가상 인물
+[scenes.40.data.p.who] 수진 씨 · 가상 인물
 [scenes.40.data.p.note] 20억·취득 8억·10년 보유 · 2029년 정부안 · 지방세 포함 · 파이어맵 계산
-[scenes.40.data.p.rows.0.label] 수현 씨 · 거주 2년 → 3년
+[scenes.40.data.p.rows.0.label] 수진 씨 · 거주 2년 → 3년
 [scenes.40.data.p.rows.0.parts.0.t] 1억 4,777만원
 [scenes.40.data.p.rows.0.parts.0.sub] 거주 2년
 [scenes.40.data.p.rows.0.parts.1.t] −
@@ -386,15 +386,15 @@
 [scenes.43.data.chapter] 질문 ②
 [scenes.44.lines.0.text] 조심할 것도 있어요. 둘 다 10년을 넘지 않는 경우라면요.
 [scenes.44.lines.1.text] 갖고 있던 해가 살았던 해보다 한 해 많을 때마다, 2029년 공제율은 지금보다 4%포인트씩 낮아집니다.
-[scenes.44.lines.2.text] 수현 씨는 여덟 해 차이라서, 48%가 16%로 낮아졌죠.
-[scenes.44.lines.2.cap] 보유·거주 모두 10년 이하일 때 · 차이 = 4 × (보유 − 거주) · 수현 씨 8년 차이 = 32%p
+[scenes.44.lines.2.text] 수진 씨는 8년 차이라서, 48%가 16%로 낮아졌죠.
+[scenes.44.lines.2.cap] 보유·거주 모두 10년 이하일 때 · 차이 = 4 × (보유 − 거주) · 수진 씨 8년 차이 = 32%p
 [scenes.44.data.title] 햇수 차이 한 해마다 4%p
 [scenes.44.data.sub] 갖고 있던 해 − 살았던 해
 [scenes.44.data.source] 재정경제부 2026 세법개정안 상세본 p.58 · 소득세법 §95②
 [scenes.44.data.p.seed] T-1-gap
-[scenes.44.data.p.who] 수현 씨 · 가상 인물
+[scenes.44.data.p.who] 수진 씨 · 가상 인물
 [scenes.44.data.p.note] 거주 2년 이상 · 보유·거주 모두 10년 이하일 때 · 정부안
-[scenes.44.data.p.rows.0.label] 수현 씨 지금 공제율 · 보유 10년·거주 2년
+[scenes.44.data.p.rows.0.label] 수진 씨 지금 공제율 · 보유 10년·거주 2년
 [scenes.44.data.p.rows.0.parts.0.t] 보유 40%
 [scenes.44.data.p.rows.0.parts.0.sub] 10년 × 4%
 [scenes.44.data.p.rows.0.parts.1.t] +
@@ -425,7 +425,7 @@
 [scenes.46.lines.1.cap] 정부안 소득세법 §95⑥ 신설 · 사람별 연간·물건별 · 공동소유는 지분 비율로 나눔 (상세본 p.60)
 [scenes.46.lines.2.text] 정부 자료에 적힌 이유는 공제 수준을 맞춰 세금을 공평하게 한다는 거예요.
 [scenes.46.lines.2.cap] 상세본 p.60 개정이유 '공제수준 합리화 통한 과세형평 제고'
-[scenes.46.lines.3.text] 정민 씨와 수현 씨는 공제로 빼 주는 돈이 4억이 안 돼서, 이 한도엔 안 걸립니다.
+[scenes.46.lines.3.text] 정민 씨와 수진 씨는 공제로 빼 주는 돈이 4억이 안 돼서, 이 한도엔 안 걸립니다.
 [scenes.46.lines.3.cap] 정민 씨 공제액 3.84억 · 한도에 안 걸림
 [scenes.46.data.title] 공제 금액 한도(정부안)
 [scenes.46.data.bars.0.0] 2028년
@@ -537,17 +537,17 @@
 [scenes.59.data.icon] Map
 [scenes.59.data.c] rise
 [scenes.59.data.source] 2025.10.15 대책 · 국토교통부 공고
-[scenes.60.lines.0.text] 기한을 넘기면 얼마나 달라질까요? 수현 씨 집으로 계산해 봤어요.
+[scenes.60.lines.0.text] 기한을 넘기면 얼마나 달라질까요? 수진 씨 집으로 계산해 봤어요.
 [scenes.60.data.license] Pexels 14059238 무료(utopia 36)
 [scenes.60.data.say] 기한을 넘기면
 [scenes.60.data.side] left
 [scenes.60.data.chapter] 질문 ③
-[scenes.61.lines.0.text] 수현 씨가 조정대상지역에서 새 집을 사고, 헌 집을 기한 안에 팔았다고 해 볼게요.
+[scenes.61.lines.0.text] 수진 씨가 조정대상지역에서 새 집을 사고, 헌 집을 기한 안에 팔았다고 해 볼게요.
 [scenes.61.lines.1.text] 2028년에 팔았다면 집 한 채로 계산합니다. 정부안 공제율로 하면 세금은 1억 1천만원을 조금 넘어요.
 [scenes.61.lines.1.cap] 정부안 공제율 · 지방세 포함 · 파이어맵 계산
 [scenes.61.data.title] 기한 안에 팔면
 [scenes.61.data.v] 1억 1,398만원
-[scenes.61.data.s] 수현 씨 · 2028년 · 집 한 채로 계산
+[scenes.61.data.s] 수진 씨 · 2028년 · 집 한 채로 계산
 [scenes.61.data.icon] House
 [scenes.61.data.c] accent
 [scenes.61.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
@@ -573,7 +573,7 @@
 [scenes.63.data.source] 소득세법 §104⑦1·§95②(법제처)
 [scenes.64.lines.0.text] 그러면 세금이 7억 8천만원쯤 나와요. 같은 해에 집 한 채로 팔았을 때의 5배가 넘습니다.
 [scenes.64.lines.0.cap] 2029년 2주택 중과 7억 8,368만원 vs 1주택 1억 4,777만원 = 5.3배 · 지방세 포함 · 파이어맵 계산
-[scenes.64.data.title] 수현 씨 20억 집
+[scenes.64.data.title] 수진 씨 20억 집
 [scenes.64.data.bars.0.0] 기한 안 · 2028년
 [scenes.64.data.bars.0.2] 1억 1,398만원
 [scenes.64.data.bars.0.3] fall
@@ -657,16 +657,16 @@
 [scenes.74.data.icon] Users
 [scenes.74.data.c] fall
 [scenes.74.data.source] 재정경제부 세법개정안 문답 자료 p.49
-[scenes.75.lines.0.text] 계산해 볼게요. 수현 씨 집이 처음부터 반반 공동명의였다면요.
+[scenes.75.lines.0.text] 계산해 볼게요. 수진 씨 집이 처음부터 반반 공동명의였다면요.
 [scenes.75.data.license] Pexels 36820284 무료(Kartik Malviya)
 [scenes.75.data.say] 처음부터 반반이었다면
 [scenes.75.data.side] left
 [scenes.75.data.chapter] 질문 ④
 [scenes.76.lines.0.text] 2029년에 팔면, 둘이 낸 세금을 합쳐 1억 2천만원을 조금 넘습니다.
-[scenes.76.lines.1.text] 수현 씨는 10년을 살지 않았으니, 늘어난 기본공제는 못 받아요.
+[scenes.76.lines.1.text] 수진 씨는 10년을 살지 않았으니, 늘어난 기본공제는 못 받아요.
 [scenes.76.lines.2.text] 그래도 세율 계단 덕분에, 한 사람 명의일 때보다 세금이 6분의 1쯤 줄어듭니다.
 [scenes.76.lines.2.cap] −2,519만원, 17% · 지방세 포함 · 파이어맵 계산
-[scenes.76.data.title] 수현 씨 집 · 2029년
+[scenes.76.data.title] 수진 씨 집 · 2029년
 [scenes.76.data.v1] 1억 4,777만원
 [scenes.76.data.s1] 한 사람 명의
 [scenes.76.data.c1] rise
@@ -762,7 +762,7 @@
 [scenes.86.data.icon] HeartHandshake
 [scenes.86.data.c] ink
 [scenes.86.data.source] 재정경제부 세법개정안 문답 자료 p.62
-[scenes.87.lines.0.text] 수현 씨가 2년 살다 전근으로 떠났고, 조건을 다 맞췄다고 해 볼게요.
+[scenes.87.lines.0.text] 수진 씨가 2년 살다 전근으로 떠났고, 조건을 다 맞췄다고 해 볼게요.
 [scenes.87.data.license] Pexels 4520154 무료(https://kaboompics.com/)
 [scenes.87.data.say] 전근으로 떠났다면
 [scenes.87.data.side] left
@@ -770,7 +770,7 @@
 [scenes.88.lines.0.text] 그러면 살았던 기간이 5년으로 쳐집니다.
 [scenes.88.lines.1.text] 2029년 세금은 9,700만원쯤으로 내려가요. 5천만원 넘게 줄어드는 거죠.
 [scenes.88.lines.1.cap] 정부안 · 공제율 16% → 40% · −5,036만원 · 지방세 포함 · 파이어맵 계산
-[scenes.88.data.title] 수현 씨 2029년 세금
+[scenes.88.data.title] 수진 씨 2029년 세금
 [scenes.88.data.v1] 1억 4,777만원
 [scenes.88.data.s1] 거주 2년
 [scenes.88.data.c1] rise
@@ -805,8 +805,8 @@
 [scenes.92.data.say] 비과세 거주는 따로
 [scenes.92.data.side] left
 [scenes.92.data.chapter] 질문 ⑤
-[scenes.93.lines.0.text] 갖고 있는 동안 2년을 실제로 살아야 하거든요.
-[scenes.93.lines.1.text] 그 2년을 채우는 데에는 이렇게 쳐 준 기간을 넣지 않습니다.
+[scenes.93.lines.0.text] 갖고 있는 동안 2년 이상을 실제로 살아야 하거든요.
+[scenes.93.lines.1.text] 그 거주 기간을 채우는 데에는 이렇게 쳐 준 기간을 넣지 않습니다.
 [scenes.93.lines.1.cap] 상세본 p.86 '비과세 요건인 2년 거주요건에는 미적용' · 시행령 §154①
 [scenes.93.data.title] 비과세 2년 거주
 [scenes.93.data.rows.0.0] 조정대상지역에서 산 집

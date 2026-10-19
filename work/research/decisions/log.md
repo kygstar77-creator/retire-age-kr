@@ -2540,3 +2540,5 @@
 2026-10-19 19:21 · firemap-write · 18:10 kospioct1019 발행 #329 verify OK
 2026-10-19 20:15 · firemap-write-b · 19:40 칸 TBD(비축 0)에 n2s_middle 짝 새 편 avgmid1019 작성·발행 시작 · 쇼츠 공개 확인(oembed 200), 짝 글에 영상에 없던 새 사실(고용노동부 9/30 7월 평균 431만 6천원) 넣음 · 계산기 줄은 제목에 '실수령' 없어 editgate calc 규칙대로 뺌
 2026-10-19 20:26 · firemap-write-b · avgmid1019 발행 #330 verify OK · 다음 칸 21:10 dep13y1019는 rate_guard로 21:24 뒤
+
+2026-10-19 20:47 · firemap-youtube-loop · T-1 가상 인물 '수현'→'수진', '2년을'→'2년 이상을'·'그 거주 기간을', '여덟 해'→'8년' · PD 받아쓰기 관문(Chirp 오독)을 녹음으로 못 넘어서, 숫자·뜻 변경 0

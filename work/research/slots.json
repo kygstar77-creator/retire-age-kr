@@ -1,12 +1,12 @@
 {
- "_rule": "사장님 10/2 15:1x: 관문 못 넘어 발행 안 하는 게 아니라 미리 8점 넘겨 계획한 시각에 발행. 칸마다 item(편)과 gates_ok(모든 관문 통과 시각)를 적는다. 관문 기한 = 발행 시각 - lead(롱폼 24시간·쇼츠 12시간·카페 6시간). 기한까지 gates_ok가 없으면 patrol 위반, 비축분(reserve)에서 통과한 편으로 바꿔 끼운다. 채우는 사람: 전체 회의(21:15)가 다음 36시간 칸 전부 배정, 3시간 스프린트가 점검, 담당이 통과 시 gates_ok 기입. | 롱폼 칸 규칙(10/5 youtube-loop): 롱폼은 하루 1편 이하 상한일 뿐 매일 칸이 아니다. 공개할 편이 없는 날은 칸에 \"skip\":true와 사유·대체 날짜를 적는다(patrol은 skip 칸을 건너뜀).",
+ "_rule": "사장님 10/2 15:1x: 관문 못 넘어 발행 안 하는 게 아니라 미리 8점 넘겨 계획한 시각에 발행. 칸마다 item(편)과 gates_ok(모든 관문 통과 시각)를 적는다. 관문 기한 = 발행 시각 - lead(롱폼 24시간·쇼츠 12시간·카페 6시간). 기한까지 gates_ok가 없으면 patrol 위반, 비축분(reserve)에서 통과한 편으로 바꿔 끼운다. 채우는 사람: 전체 회의(21:15)가 다음 36시간 칸 전부 배정, 3시간 스프린트가 점검, 담당이 통과 시 gates_ok 기입. | 롱폼 칸 규칙(10/5 youtube-loop): 롱폼은 하루 1편 이하 상한일 뿐 매일 칸이 아니다. 공개할 편이 없는 날은 칸에 \"skip\":true와 사유·대체 날짜를 적는다(patrol은 skip 칸을 건너뜀). | 기준 리뉴얼 E-14(10/19): reserve_min.shorts 1→2 — 지난 칸 32개 중 4개 빔(12.5%), 하루 3칸이면 2칸 이상 빌 확률 약 5.5%·비축 2면 0.6%(criteria/E-ops-1019.md).",
  "lead_hours": {
   "long": 24,
   "shorts": 12,
   "cafe": 6
  },
  "reserve_min": {
-  "shorts": 1,
+  "shorts": 2,
   "cafe": 2,
   "long": 1
  },
@@ -37,15 +37,6 @@
  },
  "reserve": {
   "shorts": [
-   {
-    "item": "c2s_jungwoo",
-    "ep": "work/research/cardshorts/c2s_jungwoo",
-    "layout": "c2person",
-    "status": "관문 통과(compete 5·숫자 대조 0·꼴 ⓐ~ⓓ·치직 0·쉿소리 틀 0·빈 곳 최대 2%·55.0초·제목 8.0·aitell 0.0/6.0) · 미업로드 — C-2 롱폼(10/19 11:30) videoId 나온 뒤 업로드, 1순위 10/19 19:20(07:20 p1s_cross=P-1과 다른 롱폼) · C-2 화면 글자 서명에서 숫자 바뀌면 다시 대조 · 근거 cardshorts/c2s_jungwoo/review.md",
-    "by": "firemap-video-producer",
-    "at": "2026-10-14 15:19",
-    "gates_ok": "2026-10-14 15:19"
-   },
    {
     "item": "d1s_dep",
     "ep": "work/research/cardshorts/d1s_dep",
@@ -1944,10 +1935,10 @@
   {
    "at": "2026-10-19 21:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "dep13y1019",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · yt_pair: C-2(19:50 공개 뒤) — ep/C-2/cafe.md 전체 표, 영상 주소는 PD가 note에 | firemap-write 09:31: C-2 공개가 11:30으로 당겨져 짝 글은 15:10 칸(c2cafe1019)으로 — 이 칸은 짝 없는 TBD"
+   "gates_ok": "2026-10-19 16:44",
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · yt_pair: C-2(19:50 공개 뒤) — ep/C-2/cafe.md 전체 표, 영상 주소는 PD가 note에 | firemap-write 09:31: C-2 공개가 11:30으로 당겨져 짝 글은 15:10 칸(c2cafe1019)으로 — 이 칸은 짝 없는 TBD | firemap-write 16:44: dep13y1019 '정기예금 금리 1년이 더 높은데, 오래 묶으면 얼마 손해일까?'(예금·금리 칸, 오늘 0칸이던 예금 몫) — 금감원 공시 18개 전수·1억 3년 직접 계산(같아지는 금리 2.16%)·만기 해 이자 몰림(시행령 45조) · 레드팀 반영·58세 2차 심각0·제목 7.7·표지 8.3·editgate auto"
   },
   {
    "at": "2026-10-19 22:40",
@@ -2013,6 +2004,16 @@
    "owner": "firemap-write",
    "gates_ok": null,
    "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 건강보험 피부양자(10,980) → https://firemap.kr/health-insurance — 글 질문이 계산기와 맞을 때만 줄 넣기"
+  },
+  {
+   "at": "2026-10-20 12:20",
+   "kind": "shorts",
+   "item": "c2s_jungwoo",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-19 16:21",
+   "item_pkg": "work/research/cardshorts/c2s_jungwoo",
+   "note": "2026-10-19 16:24 PD: 순돌이 14:22 쇼츠 하루 3편 12:20 칸 · C-2 롱폼(SGx7UD-6RNE, 10/19 11:30 공개) 클립 c2person v3 재렌더(안전 영역·디자인 통과, 클로드 티 ⑥⑦ 경고) · 같은 날 07:20 h1s_walk(H-1)·19:20 d1s_pension(D-1)과 다른 롱폼·질문 · yt_pair: O6ZC-6sylHk",
+   "published": "예약 2026-10-20T12:20:00+09:00 https://youtu.be/O6ZC-6sylHk"
   },
   {
    "at": "2026-10-20 13:40",
@@ -2138,6 +2139,14 @@
    "note": "firemap-meeting 2026-10-18 21:41: 카페 하루 12칸 뼈대(36시간 앞, 레드팀 R1) · 계산기 칸 후보(맞는 계산기 있는 주제, X-CAFE-CALC)"
   },
   {
+   "at": "2026-10-21 12:20",
+   "kind": "shorts",
+   "item": "TBD(c1clip 아닌 틀)",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "2026-10-19 16:25 PD: 지시 후보 d1s_dep는 못 올림 — ① 업로드 도구 꼴 관문 ⓓ(최근 10편 c1clip 6편 >50%, d1s_dep는 c1clip) 거부 ② 같은 D-1 d1s_pension(10/20 19:20)과 17시간 간격(10/16 PD 이틀 띄움 판단). 이 칸은 C-2 둘째 클립(m1clip·c2person, 다른 질문 예: 5년 늦게 시작 2억·37번 중 6번) — 관문 기한 10/21 00:20. 같은 날 07:20 h1s_helio(H-1)·11:30 T-1·19:20 p1s_step(P-1)"
+  },
+  {
    "at": "2026-10-21 13:40",
    "kind": "cafe",
    "item": "TBD",
@@ -2252,10 +2261,10 @@
   {
    "at": "2026-10-23 19:20",
    "kind": "shorts",
-   "item": "c2s_jungwoo",
+   "item": "TBD(c1clip 아닌 틀)",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-14 15:19",
-   "note": "firemap-meeting 2026-10-14 21:33: 비축 c2s_jungwoo(c2person 틀) — C-2 롱폼(10/19 11:30) videoId 나온 뒤 업로드·예약. C-2가 10/19에 못 나가면 이 칸은 다른 롱폼 클립(c1clip 외 틀)으로 바꾼다 | 2026-10-16 22:32 PD: C-2 롱폼이 10/19 19:50으로 옮겨져(C1) 19:20 쇼츠가 원본보다 먼저 나감 → 빈 10/23 19:20 칸으로. 업로드 전 v3 배경 재렌더 필요(w1g1/c1/m1clips_up bgcheck), 같은 날 07:20 n1s_top10(N-1)과 다른 롱폼"
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-14 21:33: 비축 c2s_jungwoo(c2person 틀) — C-2 롱폼(10/19 11:30) videoId 나온 뒤 업로드·예약. C-2가 10/19에 못 나가면 이 칸은 다른 롱폼 클립(c1clip 외 틀)으로 바꾼다 | 2026-10-16 22:32 PD: C-2 롱폼이 10/19 19:50으로 옮겨져(C1) 19:20 쇼츠가 원본보다 먼저 나감 → 빈 10/23 19:20 칸으로. 업로드 전 v3 배경 재렌더 필요(w1g1/c1/m1clips_up bgcheck), 같은 날 07:20 n1s_top10(N-1)과 다른 롱폼 | 2026-10-19 16:25 PD: c2s_jungwoo는 10/20 12:20 칸으로 당겨 예약(O6ZC-6sylHk) → 이 칸 비움, C-2 둘째 클립(m1clip·c2person 틀) 또는 T-1·H-2 클립으로"
   },
   {
    "at": "2026-10-24 07:20",

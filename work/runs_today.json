@@ -68,6 +68,16 @@
     "url": "https://cafe.naver.com/firemap/326"
    },
    "note": "13:40 칸 cafenotice1018(공지 묶음, 10/18 23:55 관문 통과) --board 공지사항 발행 · verify OK 699/699자·사진 3/3 · 발행 전 확인: SideMenuList에 회원 자료실·파이어 이야기·배당·이자 인증 있음, 그러나 CafeGateInfo useMemberLevel=false(등급 기능 꺼짐) → '가입인사 쓰면 등급이 바로 올라가고 회원 자료실에서' 사실 아님 → notice.txt 대체 문장(c02 끝줄 '[자료] 글에서'·c00 '가입한 회원에게'), #263(연금/세금/보험)·#315(돈 관리) 비로그인 0004=멤버공개 확인, img/02 note 다시 · spoken 원문→자료 2곳 · 1차 발행 readcheck 거부(계산기 URL 문장 119자) → '건보료 계산기: URL' 한 줄로 분리, readcheck 0·aitell 0.0·editgate stamp auto 다시 · cafecomments 답할 것 0 · 개선: 없음(발행기 확인 창 8초 타임아웃은 발행엔 영향 없음) · 18:10 칸 kospioct1019 관문 통과 14:13(레드팀 7·58세 통과·selfcheck 사실0·crosscheck 사실5 유지(반올림·법 원문)) · 자료조사 원문 4종+법령"
+  },
+  {
+   "hour": 15,
+   "ts": "16:45",
+   "blog": null,
+   "cafe": {
+    "title": "S&P500에 퇴직금 넣고 매달 꺼내 쓰면 몇 년 버틸까?",
+    "url": "https://cafe.naver.com/firemap/327"
+   },
+   "note": "15:10 칸 c2cafe1019 발행 #327 verify OK 1999/1999자·사진3/3(발행 전 구어 아닌 말 2줄 고침·editgate 다시 찍음) · 21:10 칸 dep13y1019 관문 통과(예금·금리): 자료조사 출처 7(금감원 공시 API·금통위 의사록·ECOS 2종·소득세법·시행령·디지털타임스)+경쟁 블로그 6·지식iN 5 · 교차검증: crosscheck 출력 없음(원인 확인 안 함) → selfcheck 사실 0 · 레드팀 틀림1·오해6·권유2 전부 반영 · 58세 2차 심각0 · 개선: 그림을 경쟁 글과 나란히 놓고 보니 표가 경쟁 막대·강조 카드보다 못해 다시 그림(bench 사진 비교) · 일감표(selfloop) 이번 회차 못 봄 · 블로그 없음(DAY_CAP)"
   }
  ]
 }

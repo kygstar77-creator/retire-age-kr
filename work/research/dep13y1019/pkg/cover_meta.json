@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-19 16:42",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "정기예금/1년짜리가 더 높다",
+ "num": "1년 3.6% · 3년 2.7%",
+ "sub": "1억 3년, 금리 그대로면 1년짜리가 257만원 더",
+ "label": "우리은행 · 9월 공시 최고금리",
+ "src": "",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 119,
+ "num_px": 93,
+ "sub_px": 46,
+ "board": [
+  "c2cafe1019",
+  "cafenotice1018",
+  "ubfraud1019",
+  "tsla1019",
+  "yeoui1019",
+  "pensiontax1019",
+  "coin1019",
+  "jpy1018",
+  "schdfx1018",
+  "mokdong1018"
+ ]
+}

@@ -101,6 +101,11 @@ export const PAD = 14;                                   // 안전 영역 안쪽
 export const CX = 540;                                    // 글자 가운데 = 화면 가운데(경쟁과 같음)
 export const TX0 = 140, TX1 = 940;                         // 글자 칸 140~940(가운데 540 좌우 같음) — 경쟁 자막 x 약 130~950, 오른쪽 버튼은 x 950 넘어(safezone.py BTN_X)
 export const IW = TX1 - TX0 - PAD * 2;                   // 글자 줄 최대 너비 772
+// 기준 리뉴얼 B-03(10/19, work/research/criteria/B-screen-1019.md): 위 288 금지는 Google Ads 광고용 그림을 넓혀 쓴 것 — 앱에서 덮인 건 양 끝 단추(뒤로가기·⋮).
+//   경쟁 쇼츠 25편 제목 위끝 중앙 y 145·가로 중앙 218~856 → 가운데(x 180~900) 글자는 y 150부터(safezone.py TOP_C와 같은 값). 양 끝은 288 그대로.
+//   위쪽(288 위)에 올라가는 제목·답 이름표는 이 좁은 칸(TOP_X0~TOP_X1) 안에서만 맞춘다.
+export const TOP_Y0 = 150, TOP_X0 = 180, TOP_X1 = 900;
+export const TW = TOP_X1 - TOP_X0 - PAD * 2;              // 위쪽 글자 줄 최대 너비 692
 export const YEL = '#FFD000';
 
 // 글자 너비 어림(Pretendard 굵게): 한글 0.96em · 숫자 0.6em · 영문 0.62em · 공백 0.28em · 기호 0.4em
@@ -114,8 +119,8 @@ export const fit = (t: string, w: number, max: number, min = 16) => Math.max(min
 export type Answer = {label: string; items: string[]; arrow?: boolean; note?: string; key?: number; solo?: boolean} | null | undefined;   // key: 큰 숫자로 쓸 item · solo: 이름표 줄에 다른 item을 붙이지 않음(다른 대상이 큰 숫자와 섞여 읽힐 때)
 
 // ── 배치 계산 ──
-const Q_TOP = SZ.y0 + 6, Q_LH = 1.08, Q_MAX = DS.titleMax;   // v3: 76 → 92(경쟁 제목 글자 높이 중앙 4.6%)
-export const qSize = (q: string[]) => Math.min(...q.map((l) => fit(l, IW, Q_MAX)));
+export const Q_TOP = TOP_Y0 + 6, Q_LH = 1.08, Q_MAX = DS.titleMax;   // v3: 76 → 92(경쟁 제목 글자 높이 중앙 4.6%) · B-03: 시작 y 294 → 156
+export const qSize = (q: string[]) => Math.min(...q.map((l) => fit(l, TW, Q_MAX)));
 export const SRC_H = 32;                                  // 출처 한 줄(맨 아래)
 export const CAP_H = 72;
 export const capTop = () => DS.capCy - DS.capH / 2;    // v3: 자막 가운데 y 1176(61.3%)
@@ -126,7 +131,7 @@ export const capSize = (t: string) => fit(t, IW - 40, 50, 28);
 // 10/16 58세 이해 시험: 큰 숫자 하나만 남기면(g1s_why 웃돈 −7.26%, h1s_gap 사려면…) 그 숫자를 영상 전체의 답으로 읽어 뜻이 틀림 → 기본은 item 전부.
 export const answerParts = (a: Answer) => {
   if (!a) return null;
-  const ss = fit(a.label, IW, 34, 22);
+  const ss = fit(a.label, TW, 34, 22);
   if (a.solo) {
     const m = a.items[a.key ?? 0].match(/^(.*?)\s*\(([^)]*)\)\s*$/);
     const big = m ? m[1] : a.items[a.key ?? 0]; const paren = m ? m[2] : '';
@@ -138,7 +143,7 @@ export const answerParts = (a: Answer) => {
   const one = fit(a.items.join(sep), IW, 128, 20);
   // 화살표는 무엇→무엇인지(note: '세금 떼기 전 → 뗀 뒤')가 없으면 뜻이 안 섬(r1s_gap) — 단 26px 밑으로 작아지면 이름표만(d1s_pension: 휴대폰에서 못 읽음)
   if (a.arrow && a.note) { const sm = a.label + ' · ' + a.note; if (units(sm) * 26 <= IW) a = {...a, label: sm}; }
-  const ss3 = fit(a.label, IW, 34, 22);
+  const ss3 = fit(a.label, TW, 34, 22);
   if (one >= 60 || a.items.length < 2) return {small: a.label, ss: ss3, lines: [a.items], paren: '', bs: one, arrow: !!a.arrow};
   const lines = a.items.map((x, i) => (a.arrow && i < a.items.length - 1 ? [x + ' →'] : [x]));
   const bs = Math.min(...lines.map((l) => fit(l[0], IW, 96, 40)));
@@ -180,7 +185,7 @@ export const Hero: React.FC<{question: string[]; hot: string; answer: Answer; ho
   const L = layout(question, until != null && fr >= until ? null : answer); const ap = L.ap;
   return (
     <>
-      <div style={{position: 'absolute', left: TX0 + PAD, top: Q_TOP, width: IW, textAlign: 'center'}}>
+      <div style={{position: 'absolute', left: TOP_X0 + PAD, top: Q_TOP, width: TW, textAlign: 'center'}}>
         {question.map((line, i) => {
           const k = hot ? line.indexOf(hot) : -1;
           return <div key={i} style={{...F, fontWeight: 800, fontSize: L.qs, lineHeight: Q_LH, color: '#fff', letterSpacing: -2, whiteSpace: 'nowrap', textShadow: outline(5)}}>
@@ -188,7 +193,7 @@ export const Hero: React.FC<{question: string[]; hot: string; answer: Answer; ho
         })}
       </div>
       {ap ? <>
-        <div style={{position: 'absolute', left: TX0 + PAD, top: L.aTop, width: IW, textAlign: 'center', ...F, fontWeight: 700, fontSize: ap.ss, lineHeight: 1.3, color: '#e3e6ec', whiteSpace: 'nowrap', textShadow: outline(3)}}>{ap.small}</div>
+        <div style={{position: 'absolute', left: TOP_X0 + PAD, top: L.aTop, width: TW, textAlign: 'center', ...F, fontWeight: 700, fontSize: ap.ss, lineHeight: 1.3, color: '#e3e6ec', whiteSpace: 'nowrap', textShadow: outline(3)}}>{ap.small}</div>
         {ap.lines.map((line, li) => {
           const items = line;
           const sep = ap.arrow ? '→' : '·';

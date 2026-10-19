@@ -62,6 +62,12 @@ def upload(path, title, desc, privacy='private', tags='', paid=False):
     ok_bg, msg_bg = bgcheck.gate(path)
     print(msg_bg)
     if not ok_bg: print('올리지 않는다: 디자인 관문(쇼츠 배경·자막 / 롱폼 실사·컷·판 글자)'); sys.exit(12)
+    # 음량 관문(기준 리뉴얼 B-42 10/19): 통합 −16~−18 LUFS·참 피크 −1 dBTP 이하 — 2026-10-23부터 올리는 것(소급 없음). 고치기: py -3.12 work/video/loudnorm.py <mp4> --fix
+    import datetime as _dt
+    if _dt.date.today().isoformat() >= '2026-10-23':
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'video')); import loudnorm
+        ok_ln, msg_ln = loudnorm.gate(path); print(msg_ln)
+        if not ok_ln: print('올리지 않는다: 음량 관문'); sys.exit(13)
     from googleapiclient.http import MediaFileUpload
     yt = service()
     body = {'snippet': {'title': title[:100], 'description': desc[:5000], 'tags': [t.strip() for t in tags.split(',') if t.strip()][:30], 'categoryId': '22', 'defaultLanguage': 'ko', 'defaultAudioLanguage': 'ko'},

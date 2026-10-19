@@ -23,9 +23,18 @@ sys.stdout.reconfigure(encoding='utf-8')
 HERE = os.path.dirname(os.path.abspath(__file__))
 PUB = os.path.join(HERE, 'video', 'public')
 SR, FPS, GAP_F, SEC_F = 24000, 30, 8, 18      # 문장 사이 8프레임(0.27초), 장 끝 18프레임 — A-1(12·24)보다 짧게
+# 기준 리뉴얼 B갈래(10/19, work/research/criteria/B-screen-1019.md):
+#   B-31 쉼: 우리 C-2 0.25초 넘는 쉼 분당 21.7·중앙 0.49초·전체의 18.5% vs 사람 진행자 경쟁 12편 분당 9.3·중앙 0.3초·6.0%, 경쟁 23편 중 18편이 12% 이하·15편이 중앙 0.40초 이하.
+#     → 관문: 편 쉼 중앙 ≤ 0.40초·쉼 비율(0.25초 넘는 쉼 합 ÷ 길이) ≤ 12%(잣대 = criteria/B-samples/pauses.py, voicenat.quiet_runs) — 공개 2026-10-23 이후 편만(소급 없음).
+#     → 맞추는 법(tts.json "pause_v": 2 편만 — 옛 편 타이밍은 그대로): 줄 사이 GAP_F 8 → 6, 줄 wav 앞뒤 무음을 0.05초로(옛 0.06 남김 + 0.08 덧붙임 = 0.14). 장 끝 SEC_F는 그대로(장 카드 띠링 자리).
+#   B-30 줄 빠르기 4.8~8.8 하나로(voicenat.HUMAN 사람 12편, 옛 lfvoice 8.2). B-34 녹음 날 하나(둘째 날 20%) 규칙은 뺌 — 목소리 바뀜은 B-33(앞뒤 차·IQR)이 직접 잰다.
+GAP_F2, EDGE2 = 6, 0.05
+PAUSE_MED_MAX, PAUSE_SHARE_MAX, PAUSE_FROM = 0.40, 0.12, '2026-10-23'
+RATE_LO, RATE_HI = 4.8, 8.8
+def gap_f(cfg): return GAP_F2 if (cfg or {}).get('pause_v') == 2 else GAP_F
 DEFAULT = {'model': 'gemini-3.8-flash-tts', 'voice': 'Charon'}   # 옛 제미나이 편 기록용 — 새 편은 아래 NEW_EP
 # 10/19 목소리 담당(voice-naturalness-1019): 새 편 tts.json 기본 = 롱폼 목소리(Chirp Charon 1.1, 10/11 사장님) + 쉼 태그(10/13 사장님 '3번') + say_v 2(숫자+단위 붙임·문장 끝 짧은 쉼) + nat_gate(붙음/끊김 관문)
-NEW_EP = {'model': 'chirp3-hd', 'voice': 'ko-KR-Chirp3-HD-Charon', 'speakingRate': 1.1, 'markup': True, 'say_v': 2, 'nat_gate': True}
+NEW_EP = {'model': 'chirp3-hd', 'voice': 'ko-KR-Chirp3-HD-Charon', 'speakingRate': 1.1, 'markup': True, 'say_v': 2, 'nat_gate': True, 'pause_v': 2}   # pause_v 2 = B-31(10/19)
 PROMPT = 'Read these Korean lines in order as an energetic, brisk YouTube finance narration. Keep a quick pace. Pause briefly between lines:\n'
 SAY = [('S&P500', '에스앤피 500'), ('JEPQ', '제피큐'), ('JEPI', '제피'), ('SCHD', '슈드'), ('QQQ', '큐큐큐'), ('SPY', '에스피와이'),
        ('KODEX', '코덱스'), ('ETF', '이티에프'), ('ISA', '아이에스에이'), ('HBM', '에이치비엠'), ('DRAM', '디램'), ('NAND', '낸드'),
@@ -311,10 +320,12 @@ def make(ep, maxreq, dry=False, first=0, cap=0, gate=0.0, budget=0):
 def chirp_one(ep, cfg, say, fn, tag):
     # 한 줄 → cloudtts.synth(Chirp 3 HD). 앞뒤 무음은 Chirp이 0.1~0.8초로 들쭉날쭉이라 소리 앞뒤 0.06초만 남기고 자른 뒤 pad(0.08초)를 붙인다 — 문장 사이 간격을 고르게(말 자체는 손대지 않음).
     sys.path.insert(0, HERE); import cloudtts
-    pcm = np.frombuffer(cloudtts.synth(say if cfg.get('markup') else cloudtts.plain(say), cfg['voice'], tag, cfg.get('speakingRate'), mark=bool(cfg.get('markup'))), dtype=np.int16).astype(np.float32)
+    pcm = np.frombuffer(cloudtts.synth(say if cfg.get('markup') else cloudtts.plain(say), cfg['voice'], tag, cfg.get('speakingRate'), mark=bool(cfg.get('markup')),
+                                       sent_tag=None if cfg.get('pause_v') == 2 else '[pause]'), dtype=np.int16).astype(np.float32)   # B-31: pause_v 2는 줄 안 문장 끝 태그 없음
     m, win = loud_mask(pcm, SR); idx = np.where(m)[0]
-    if len(idx): pcm = pcm[max(0, idx[0] * win - int(SR * 0.06)):min(len(pcm), (idx[-1] + 1) * win + int(SR * 0.06))]
-    pad = np.zeros(int(SR * 0.08), dtype=np.float32); write(fn, np.concatenate([pad, pcm, pad]))
+    keep, padn = (EDGE2, 0.0) if cfg.get('pause_v') == 2 else (0.06, 0.08)   # B-31: pause_v 2 편은 앞뒤 무음 0.05초만
+    if len(idx): pcm = pcm[max(0, idx[0] * win - int(SR * keep)):min(len(pcm), (idx[-1] + 1) * win + int(SR * keep))]
+    pad = np.zeros(int(SR * padn), dtype=np.float32); write(fn, np.concatenate([pad, pcm, pad]))
     json.dump({'tempo': 1.0, 'rec': time.strftime('%Y-%m-%d'), 'engine': cfg['model'], 'speakingRate': float(cfg.get('speakingRate') or 1.0), 'markup': bool(cfg.get('markup'))}, open(fn + '.json', 'w'))
 
 def make_chirp(ep, cfg, secs, dry=False):
@@ -330,9 +341,9 @@ def make_chirp(ep, cfg, secs, dry=False):
     build(ep)
 
 def _line_bad(say, fn, fm, tol=0.25):
-    # check()와 같은 잣대(속도 4.8~8.2·음높이 편 중앙 ±25%)로 한 줄이 얼마나 벗어났나(0이면 통과)
+    # check()와 같은 잣대(속도 4.8~8.8 — B-30·음높이 편 중앙 ±25%)로 한 줄이 얼마나 벗어났나(0이면 통과)
     a, sr = read(fn); r = syl(say) / max(speech_sec(a, sr), 0.1); p = f0(a, sr)
-    return max(0, 4.8 - r) / 4.8 + max(0, r - 8.2) / 8.2 + (max(0, abs(p / fm - 1) - tol) if p and fm else 0), r, p
+    return max(0, RATE_LO - r) / RATE_LO + max(0, r - RATE_HI) / RATE_HI + (max(0, abs(p / fm - 1) - tol) if p and fm else 0), r, p
 
 def _nat_bad(ep, say, fn):
     # 10/19: 붙음/끊김·빠르기 걸림 수(voicenat.judge) — retake --nat가 통과 판정에 더한다(Whisper 캐시는 ep/check/nat_words, check와 같은 곳)
@@ -386,7 +397,7 @@ def build(ep):
                 if 'rec' not in info: info['rec'] = time.strftime('%Y-%m-%d', time.localtime(os.path.getmtime(fn)))   # 녹음 날(규칙 4)
                 json.dump(info, open(meta, 'w'))
                 a, sr = read(fn); sec = len(a) / sr; sp = speech_sec(a, sr)
-                rec.update({'audio': f"audio/{os.path.basename(aud_dir(ep))}/{h}.wav", 'sec': round(sec, 2), 'frames': int(sec * FPS + 0.999) + GAP_F,
+                rec.update({'audio': f"audio/{os.path.basename(aud_dir(ep))}/{h}.wav", 'sec': round(sec, 2), 'frames': int(sec * FPS + 0.999) + gap_f(cfg),
                             'rate': round(syl(say) / max(sp, 0.1), 2), 'tempo': info['tempo'], 'rec': info['rec'], 'f0': round(f0(a, sr), 1)}); done += 1
             else: miss += 1
             out.append(rec)
@@ -398,7 +409,7 @@ def build(ep):
     print(f"문장 {done} 완료 · 남음 {miss} · 길이 {tot/60:.1f}분 · 편 전체 {res['rate_total']} 음절/초")
 
 def check(ep, vj=None):
-    # 규칙 3·4: 문장별 음높이 ±12%(10/3 22시, 전엔 ±20%)·속도 4.8 미만·8.2 초과(빠르기 고정이라 하한을 낮춤, 편 전체 5.5는 그대로)·빠르기 1.0 아님·녹음 날 둘 이상이면 막힘.
+    # 규칙 3: 문장별 음높이 ±25%·속도 4.8 미만·8.8 초과(B-30 10/19, 옛 8.2)·빠르기 1.0 아님, 편 전체 5.5(B-29). 규칙 4 녹음 날은 B-34로 뺌. 쉼 B-31(10/23 공개분~).
     d = json.load(open(vj or os.path.join(ep, 'voice.json'), encoding='utf-8')); rows = []
     for s in d['sections']:
         for l in s['lines']:
@@ -408,14 +419,14 @@ def check(ep, vj=None):
     if not rows: sys.exit('소리 없음')
     fm = float(np.median([r[3] for r in rows if r[3]])); bad = []
     for t, x, r, p, _, tp in rows:
-        why = [w for w, c in (('음높이', p and abs(p / fm - 1) > 0.25), ('느림', r < 4.8), ('빠름', r > 8.2), (f'빠르기{tp}', tp != 1.0)) if c]
+        why = [w for w, c in (('음높이', p and abs(p / fm - 1) > 0.25), ('느림', r < RATE_LO), ('빠름', r > RATE_HI), (f'빠르기{tp}', tp != 1.0)) if c]
         if why: bad.append(f'{t} | {x} | {r:.2f}음절/초 · {p:.0f}Hz | ' + '·'.join(why))
     tot = sum(s.get('frames', 0) for s in d['sections']) / d.get('fps', FPS); tsyl = sum(syl(l.get('say', l['text'])) for s in d['sections'] for l in s['lines'])
     whole = tsyl / max(tot, 0.1); rates = [r[2] for r in rows]
     print(f'문장 {len(rows)} · 음높이 중앙 {fm:.0f}Hz · 문장 속도 중앙 {np.median(rates):.2f}(최저 {min(rates):.2f}) · 편 전체 {whole:.2f}음절/초(목표 5.5 이상)')
     print('튀는 문장', len(bad), *bad[:40], sep='\n  ')
     recs = sorted({l.get('rec') or '?' for s in d['sections'] for l in s['lines'] if l.get('audio')})
-    print('녹음 날', recs, '(한 날이어야 통과 — 규칙 4)')
+    print('녹음 날', recs, '(참고 — B-34로 날짜 규칙은 뺐다, 목소리 바뀜은 아래 편 단위 앞뒤 차·IQR이 잰다)')
     seq = [r[3] for r in rows if r[3]]; ep_bad = []
     if len(seq) >= 8:  # 10/5 16:3x 순돌이: 줄마다 ±12%는 근거 없던 값 — 사장님이 좋다 한 E-1도 22% 줄이 걸렸다. 실측 기준(voice.json f0): 좋다 한 E-1·D-1 vs 지적된 E-2 → 줄 단위는 ±25%(튀는 줄만), 편 단위로 앞·뒤 절반 평균 차 ≤7%(E-1 −6.8·E-2 −11.6)·퍼짐 IQR/중앙 ≤0.16(E-1 0.16·E-2 0.17). 표본 4편 — 새 편이 쌓이면 다시 잰다.
         h = len(seq) // 2; drift = np.mean(seq[h:]) / np.mean(seq[:h]) - 1; iqr = (np.percentile(seq, 75) - np.percentile(seq, 25)) / fm
@@ -424,12 +435,38 @@ def check(ep, vj=None):
         if iqr > 0.20: ep_bad.append('iqr')   # 10/11 사장님 '롱폼 하루 한 개' — lfrender IQR_MAX와 같은 값
     # 10/10 순돌이: 날짜 하나 규칙은 '목소리가 바뀐다'를 대신 재던 값이다. 실제로 귀에 걸리는 것은 편 단위 앞뒤 차·IQR이고, 그 관문은 그대로 둔다.
     #   lfretake로 튀는 줄만 다음 창에서 다시 받은 경우(둘째 날 줄이 전체의 20% 이하)는 날짜 둘을 허용한다. 20%는 근거가 약한 값이다(C-1 다시 받기 15/80줄 모의 IQR 0.19→0.14) — 새 편이 쌓이면 다시 잰다.
-    from collections import Counter as _C
-    rc = _C(l.get('rec') or '?' for s in d['sections'] for l in s['lines'] if l.get('audio')); tot = sum(rc.values()) or 1
-    one_day = len(recs) == 1 or (len(recs) == 2 and min(rc.values()) / tot <= 0.20)
-    ok = whole >= 5.5 and not bad and not ep_bad and not d.get('missing') and one_day and '?' not in recs
+    # B-34(10/19): 위 20%는 근거 없는 값이라 뺐다 — 날짜 수로 막지 않는다('?'(녹음 날 모름)만 막음).
+    ok = whole >= 5.5 and not bad and not ep_bad and not d.get('missing') and '?' not in recs
     if not nat_check(ep, d): ok = False
+    try: _pa = json.load(open(os.path.join(ep, 'meta.json'), encoding='utf-8')).get('publishAt') or '9'
+    except Exception: _pa = '9'
+    pz = pause_stats(d)
+    if pz:
+        # 막는 곳은 ytlong gate(렌더본 소리 — 경쟁을 잰 pauses.py와 같은 잣대, 깔린 음이 쉼을 조금 메움). 여기는 목소리만 이은 값이라 더 엄하게 나온다 — 미리 보기용.
+        print(f"쉼(B-31, 목소리만 미리 보기): 0.25초 넘는 쉼 분당 {pz['per_min']}·중앙 {pz['med']}초·비율 {pz['share']:.1%} — 관문(렌더본) 중앙 ≤{PAUSE_MED_MAX}·비율 ≤{PAUSE_SHARE_MAX:.0%}, 공개 {PAUSE_FROM}~")
+        if (pz['med'] or 0) > PAUSE_MED_MAX or pz['share'] > PAUSE_SHARE_MAX:
+            print('  → 쉼이 길다: tts.json "pause_v": 2(GAP 6·앞뒤 0.05초·줄 안 문장 끝 태그 없음)로 다시 받기·build')
     print('통과' if ok else '막힘'); return ok
+
+def pause_stats(d):
+    """B-31 잣대(criteria/B-samples/pauses.py와 같음): voice.json 줄 소리를 frames대로 이어 붙인 목소리 길(장 끝 SEC_F 포함)에서
+    0.25초 넘는 쉼(voicenat.quiet_runs, 줄 최고 −25dB 아래) — 앞 180초, 앞뒤 무음 뺌. → {'n','per_min','med','share'} 또는 None"""
+    sys.path.insert(0, HERE); import voicenat
+    fps = d.get('fps', FPS); parts = []
+    for s in d['sections']:
+        for l in s['lines']:
+            if not l.get('audio') or not l.get('frames'): continue
+            a, sr = read(os.path.join(PUB, l['audio']))
+            n = int(l['frames'] / fps * sr); seg = np.zeros(max(n, len(a)), dtype=np.float32); seg[:len(a)] = a; parts.append(seg[:max(n, 1)])
+        if s['lines']: parts.append(np.zeros(int(SEC_F / fps * SR), dtype=np.float32))
+    if not parts: return None
+    a = np.concatenate(parts)[:SR * 180] / 32768.0
+    a = a[::SR // 16000] if SR % 16000 == 0 else np.interp(np.arange(0, len(a), SR / 16000), np.arange(len(a)), a)
+    db = voicenat.env_db(a); th = voicenat.thresh(db)
+    runs = [r1 - r0 for r0, r1 in voicenat.quiet_runs(db, th, minrun=0.25)]
+    runs = runs[1:-1] if len(runs) > 2 else runs
+    dur = len(a) / 16000
+    return {'n': len(runs), 'per_min': round(len(runs) / (dur / 60), 1), 'med': round(float(np.median(runs)), 2) if runs else 0.0, 'share': round(sum(runs) / dur, 3)}
 
 NAT_MAX = 0.05
 def nat_check(ep, d):
@@ -640,11 +677,27 @@ def batch_second(ep, v, tx_raw, keys):
     return out
 _DEAD = set()                              # 이번 실행에서 하루 한도(PerDay 429)가 난 모델 — 다시 부르지 않는다
 _NUMCH = set('영일이삼사오육칠팔구십백천만억조원퍼센트하나둘셋넷다섯여섯일곱여덟아홉열스무물서른마흔쉰예순일흔여든아흔한두세네째')
+def _same_sound(t):
+    # 10/19 PD: 소리가 같은데 받아쓰기 표기만 갈리는 자리를 같은 글자로 맞춘다(대본·받아쓰기 둘 다) — H-2 9줄이 3~4번 다시 받아도 매번 같은 표기(래→레·계→개·옆의→옆에)로 걸려
+    #   녹음으로는 풀 수 없던 것. ① 낱말 첫 글자 아닌 '의'→'에'(표준 발음법 제5항 다만 3·4: 조사 '의'는 [에]도 허용)
+    #   ② ㅖ→ㅔ(초성 ㄹ·ㅇ 빼고, 같은 항 다만 2) ③ ㅐ→ㅔ(두 귀가 같은 소리를 매번 다르게 적음). 다른 글자로 들린 오독(은마→음마·엘스→의)은 그대로 잡는다.
+    t = re.sub(r'(?<=[가-힣])의', '에', t)
+    def f(c):
+        o = ord(c) - 0xAC00
+        if not 0 <= o < 11172: return c
+        ini, med, fin = o // 588, (o % 588) // 28, o % 28
+        if med == 1 or (med == 7 and ini not in (5, 11)): med = 5   # ㅐ(1)·ㅖ(7, 초성 ㄹ=5·ㅇ=11 제외) → ㅔ(5)
+        return chr(0xAC00 + ini * 588 + med * 28 + fin)
+    t = ''.join(map(f, t))
+    # ④ 받침 ㄴ + 다음 글자 초성 ㅁ(띄어쓰기 없이) → 받침 ㅁ: Charon이 '은마'를 [음마]로 읽는다(양순음화 — 표준 발음은 아니지만 입말 그대로).
+    #   10/19 H-2: 시험 합성 30여 번 대부분 [음마], 두 귀 모두 '음마'로 적음 · 같은 소리를 '단지 이름이 뭐냐'고 물으면 제미나이 두 모델 모두 '은마'(check/readback_review_1019.md).
+    #   '엄마'처럼 모음까지 달리 들린 건 그대로 잡는다. ㄴ+ㅂ·ㅍ는 아직 안 넣음(근거 없음).
+    return re.sub(r'[가-힣](?=[마-밓])', lambda m: chr(ord(m.group()) + 12) if (ord(m.group()) - 0xAC00) % 28 == 4 else m.group(), t)
 def _spots(script, heard):
     # 대본(한글만) 기준으로 받아쓰기가 바꾼 자리 [i1,i2) 목록. 빠진 글자(delete)와 숫자 말↔숫자 표기 차이는 뺀다
     #   (대본 '열네 해'를 '14해'로 쓰면 '열네'가 빠진 것으로 보인다 — 오독이 아니다).
     import difflib
-    a, b = re.sub(r'[^가-힣]', '', script), re.sub(r'[^가-힣]', '', heard or '')
+    a, b = re.sub(r'[^가-힣]', '', _same_sound(script)), re.sub(r'[^가-힣]', '', _same_sound(heard or ''))
     out = []
     for op, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b, autojunk=False).get_opcodes():
         if op in ('equal', 'delete'): continue
@@ -732,7 +785,7 @@ def readback(ep, only=None, resume=False, batch=False, offline=False):
         h = tx_whisper(fn)
         if h is not None: return h, WHISPER
         return None, SECOND[-1]
-    hg = lambda x: re.sub(r'[^가-힣]', '', x or '')
+    hg = lambda x: re.sub(r'[^가-힣]', '', _same_sound(x or ''))   # 10/19 PD: 일치율도 같은 소리 표기를 맞춘 뒤(_same_sound)
     sm = lambda a, b: difflib.SequenceMatcher(None, hg(a), hg(b)).ratio()
     def save():
         merged = dict(old); merged.update({x['at']: x for x in out})

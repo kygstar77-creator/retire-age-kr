@@ -41,10 +41,14 @@ def run(src, dst, filt=None):
     a, b = measure(src), measure(dst)
     print('전', a); print('후', b)
     if b and b['sib_vs_voiced_db'] > LIMIT_DB: print(f'경고: 쉿소리가 아직 {b["sib_vs_voiced_db"]}dB (기준 {LIMIT_DB}dB 이하)'); sys.exit(1)
+    # B-42(기준 리뉴얼 10/19): 렌더 뒤 정규화 단계 — 통합 −17 LUFS·참 피크 −1.5로 맞춘다(관문 −16~−18·≤−1, work/video/loudnorm.py). 선형 이득이라 쉿소리 비율은 안 바뀐다.
+    if '--no-ln' not in sys.argv:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__))); import loudnorm
+        print('음량 맞춤', loudnorm.fix(dst))
     print(dst)
 
 if __name__ == '__main__':
     if sys.argv[1] == '--measure': print(measure(sys.argv[2])); sys.exit(0)
-    chirp = '--chirp' in sys.argv; short = '--chirp-short' in sys.argv; a = [x for x in sys.argv[1:] if x not in ('--chirp', '--chirp-short')]
+    chirp = '--chirp' in sys.argv; short = '--chirp-short' in sys.argv; a = [x for x in sys.argv[1:] if x not in ('--chirp', '--chirp-short', '--no-ln')]
     src = a[0]; dst = a[1] if len(a) > 1 else os.path.splitext(src)[0] + '_ds.mp4'
     run(src, dst, CHIRP_SHORT_FILTER if short else CHIRP_FILTER if chirp else None)

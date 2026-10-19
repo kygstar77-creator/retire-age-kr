@@ -4,7 +4,7 @@
 import React from 'react';
 import {AbsoluteFill, Audio, Img, Sequence, interpolate, spring, staticFile, useCurrentFrame, Easing} from 'remotion';
 import {T, F, CL, FONT_CSS, Flame} from './parts/fm';
-import {SZ, PAD, IW, TX0, fit, Progress, SourceLine, SRC_H, DS, OutlineCaption, outline} from './parts/safeframe';
+import {SZ, PAD, IW, TX0, TOP_Y0, TOP_X0, TW, fit, Progress, SourceLine, SRC_H, DS, OutlineCaption, outline} from './parts/safeframe';
 
 type PLine = {text: string; audio: string; frames: number};
 type PScene = {pic: string; cx: number; year: string | null; num: string; sub: string; zoom: [number, number]; pan: number; focus: number; gray: boolean; blur?: boolean; red: string[]; green: string[]; lines: PLine[]; frames: number};
@@ -12,7 +12,7 @@ export type C2PProps = {fps: number; name: string; layout: string; question: str
 export const c2pFrames = (p: C2PProps) => p.scenes.reduce((a, s) => a + s.frames, 0);
 
 const W = 1080, PH = SZ.y1 + 120;         // 선명한 그림 칸 — 10/16 v2: 1368까지 선명, 그 밑(유튜브 제목 자리)은 같은 그림을 흐리게 깔아 화면 끝까지 채운다
-const Q_TOP = SZ.y0 + 6; const qs = (q: string[]) => Math.min(...q.map((l) => fit(l, IW, DS.titleMax)));   // v3 10/16: 84 → 92(경쟁 제목 중앙)
+const Q_TOP = TOP_Y0 + 6; const qs = (q: string[]) => Math.min(...q.map((l) => fit(l, TW, DS.titleMax)));   // B-03(10/19): 가운데 x 180~900은 y 150부터   // v3 10/16: 84 → 92(경쟁 제목 중앙)
 let Q_END = Q_TOP + 2 * 84 * 1.1;   // C2P가 그릴 때 질문 크기로 다시 잰다
 const YEL = '#FFD000', RED = '#FF6B5E', GRN = '#4ADE80';
 const starts = (lines: PLine[]) => { const o: number[] = []; let a = 0; for (const l of lines) { o.push(a); a += l.frames; } return o; };
@@ -124,7 +124,7 @@ export const C2P: React.FC<C2PProps> = (p) => {
       <style>{FONT_CSS}</style>
       {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Scene s={s} from={from} total={total} p={p} /></Sequence>; from += s.frames; return el; })}
       <SourceLine text={p.base} badge={p.badge} dark />
-      <div style={{position: 'absolute', left: TX0 + PAD, top: Q_TOP, width: IW, textAlign: 'center'}}>
+      <div style={{position: 'absolute', left: TOP_X0 + PAD, top: Q_TOP, width: TW, textAlign: 'center'}}>
         {p.question.map((line, i) => {
           const k = line.indexOf(p.hot);
           return <div key={i} style={{...F, fontSize: qs(p.question), lineHeight: 1.12, color: '#fff', letterSpacing: -2, whiteSpace: 'nowrap', fontWeight: 800, textShadow: outline(5)}}>

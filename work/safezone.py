@@ -10,10 +10,14 @@ import numpy as np
 W0, H0 = 1080, 1920
 TOP, BOTTOM, LEFT, RIGHT = 288, 672, 48, 192          # 1080×1920 기준 가려지는 너비(px)
 SAFE = (LEFT, TOP, W0 - RIGHT, H0 - BOTTOM)            # (x0, y0, x1, y1) = (48, 288, 888, 1248)
+# 기준 리뉴얼 B-03(10/19, criteria/B-screen-1019.md): 위 288은 광고용 그림 — 앱에서 덮인 건 양 끝 단추(뒤로가기·⋮, 사장님 10/16 화면).
+#   경쟁 쇼츠 25편 제목 위끝 중앙 y 145·가로 중앙 218~856 → 가운데 x 180~900 안 글자는 y 150부터 허용, 양 끝은 288 그대로.
+#   (보고서의 '넣기 전 앱 화면 1장 확인'은 아직 안 함 — today.md에 사장님 확인 요청)
+TOP_C, TOP_CX0, TOP_CX1 = 150, 180, 900
 BTN_X, BTN_Y = 940, 940                                # 오른쪽 버튼 줄: x 940 오른쪽, y 940 아래(10/19 경쟁 쇼츠 화면 실측)
 TOL = 6                                                # 글자 찾기 상자는 글자보다 몇 px 넓게 잡힌다
 EDGE = 3                                               # 화면 끝 3px 안에 닿으면 '잘림'
-VERSION = 'shorts-ui-288-672-48 btn940 v2'
+VERSION = 'shorts-ui-288-672-48 btn940 top150c v3'
 _eng = None
 
 
@@ -39,7 +43,10 @@ def boxes(img):
 def judge(bx):
     x0, y0, x1, y1 = bx; why = []
     if x0 <= EDGE or y0 <= EDGE or x1 >= W0 - EDGE or y1 >= H0 - EDGE: why.append('화면 끝에서 잘림')
-    if y0 < SAFE[1] - TOL: why.append(f'위 {TOP}px(상단바·뒤로가기) 안')
+    if y0 < SAFE[1] - TOL:
+        mid = x0 >= TOP_CX0 - TOL and x1 <= TOP_CX1 + TOL
+        if not mid: why.append(f'위 {TOP}px(양 끝 뒤로가기·⋮) 안 — 288 위는 가운데 x {TOP_CX0}~{TOP_CX1}만')
+        elif y0 < TOP_C - TOL: why.append(f'위 {TOP_C}px(상단바) 안')
     if y1 > SAFE[3] + TOL: why.append(f'아래 {BOTTOM}px(채널 이름·제목·구독) 안')
     if x0 < SAFE[0] - TOL: why.append(f'왼쪽 {LEFT}px 안')
     # 10/19 사장님 경쟁 쇼츠 화면(명화관cinema, 13만 좋아요): 제목은 화면 가운데에 거의 끝까지(x 약 105~975), 오른쪽 버튼 줄은 y 약 960~1690에만 있다.

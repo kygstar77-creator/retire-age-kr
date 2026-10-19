@@ -29,25 +29,28 @@ def session():
     return AuthorizedSession(service_account.Credentials.from_service_account_file(KEY, scopes=['https://www.googleapis.com/auth/cloud-platform']))
 
 _S = None
-def markup(text):
+def markup(text, sent_tag='[pause]'):
     # 10/12 순돌이 [지시·긴급]: Chirp 3 HD markup 쉼 태그 — 쉼표 뒤 [pause short], 줄 안 문장 끝 뒤 [pause](줄 끝 쉼은 lfvoice가 자르고 붙인다)
     # 10/19 voice-naturalness: 글에 이미 쉼 태그가 있으면(korsay.phrase가 넣은 [pause short]) 그 자리엔 더 넣지 않는다 — 넣으면 쉼이 두 번 겹친다.
     # 10/19 사장님 'AI 음성이 아직도 쉼표를 제대로 못 읽는데? 쉼표를 제대로 못 읽으면 차라리 아예 빼던가' — 말할 글에서 쉼표를 뺀다(자막·화면 글은 그대로).
     t = re.sub(r'\s*[,，]\s*', ' ', text).strip()
-    return re.sub(r'([.?!])\s+(?!\[pause)(?=\S)', lambda m: m.group(1) + ' [pause] ', t)
+    # 기준 리뉴얼 B-31(10/19): 줄 안 문장 끝 [pause]가 쉼을 길게 만든다 — T-1 줄 안 문장 끝 쉼 중앙 0.85초·X-1 0.77초(사람 진행자 12편 0.40초).
+    #   시험(10/19, 같은 두 문장 한 번씩): [pause] 1.29초 · [pause short] 0.76초 · 태그 없음 0.58초 → pause_v 2 편(lfvoice)은 sent_tag=None(태그 안 넣음). 표본 1쌍 — 새 편 쉼 관문 값으로 다시 본다.
+    if not sent_tag: return t
+    return re.sub(r'([.?!])\s+(?!\[pause)(?=\S)', lambda m: m.group(1) + f' {sent_tag} ', t)
 
 TAG = re.compile(r'\s*\[pause[^\]]*\]')
 def plain(text):
     # 쉼 태그를 뺀 글(markup을 안 쓰는 요청·글자 수 비교용)
     return re.sub(r'\s{2,}', ' ', re.sub(r'\s*[,，]\s*', ' ', TAG.sub(' ', text))).strip()   # 10/19 쉼표 뺌(사장님)
 
-def synth(text, voice='ko-KR-Chirp3-HD-Charon', tag='', rate=None, mark=True):
+def synth(text, voice='ko-KR-Chirp3-HD-Charon', tag='', rate=None, mark=True, sent_tag='[pause]'):
     """문장 하나 → 24kHz mono int16 PCM bytes. 막히면 예외.
     rate = audioConfig.speakingRate(0.25~2.0, Chirp 3 HD 'pace control' — docs.cloud.google.com/text-to-speech/docs/chirp3-hd 10/11 확인). 글자 수 과금은 같다."""
     global _S
     if 'Chirp3-HD' not in voice: raise SystemExit(f'막음: {voice} — Chirp 3 HD만 허용(무료 한도 있는 모델)')
     # 10/19: 쉼 태그 기본 켬(mark=True, 사장님 10/13 '3번' 고름) — 쇼츠·CLI도 같은 기본. 글자 수는 보내는 글(태그 포함) 길이로 센다(장부를 넉넉히).
-    sent = markup(text) if mark else plain(text)
+    sent = markup(text, sent_tag) if mark else plain(text)
     n = len(sent)
     used = month_used()
     if used + n > MONTH_CAP: raise SystemExit(f'막음: 이번 달 {used:,}자 + {n:,}자 > 상한 {MONTH_CAP:,}자(무료 100만 자의 90%)')

@@ -251,6 +251,13 @@ def gate(ep):
         import bgcheck
         ok_bg, msg_bg = bgcheck.gate(vp)
         if not ok_bg: bad.append(msg_bg + ' — 판(TallyFrame 큰 제목·art)과 꽉 찬 실사(TallyBroll·StockShot)를 번갈아 다시 렌더')
+        if (m.get('publishAt') or '9') >= '2026-10-23':   # 기준 리뉴얼 B-42·B-31(10/19) — 10/23 공개분부터(소급 없음)
+            import loudnorm
+            ok_ln, msg_ln = loudnorm.gate(vp)
+            if not ok_ln: bad.append(msg_ln)
+            pz = rendered_pauses(vp)
+            if pz and ((pz['med'] or 0) > 0.40 or pz['share'] > 0.12):
+                bad.append(f"쉼(B-31) 0.25초 넘는 쉼 중앙 {pz['med']}초(≤0.40)·비율 {pz['share']:.1%}(≤12%) — 경쟁 사람 진행자 12편 0.3초·6%. tts.json pause_v 2로 다시 build(GAP 6·앞뒤 0.05초·줄 안 문장 끝 태그 없음)")
     # 말 끝난 직후 '치직' — 10/02 사장님 "유튜브 말 끝나고 치직 했는데". TTS 응답 끝 잡음이 문장 wav에 남았는지(렌더 전 원천 검사, work/video/clickscan.py)
     import glob as _g
     sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'video')); import clickscan
@@ -275,6 +282,18 @@ def gate(ep):
             okv = lfv.check(ep)
         if not okv: bad.append('목소리 한결같음 막힘 — py -3.12 work/lfvoice.py check ' + ep + ' | ' + buf.getvalue().strip().splitlines()[-1])
     return m, bad
+
+def rendered_pauses(mp4):
+    """B-31 잣대 그대로(criteria/B-samples/pauses.py): 렌더본 소리 앞 180초, 0.25초 넘는 쉼(voicenat.quiet_runs), 앞뒤 무음 뺌."""
+    import subprocess, numpy as np, imageio_ffmpeg, voicenat
+    p = subprocess.run([imageio_ffmpeg.get_ffmpeg_exe(), '-loglevel', 'error', '-i', mp4, '-t', '180', '-vn', '-ac', '1', '-ar', '16000', '-f', 's16le', '-'], capture_output=True)
+    a = np.frombuffer(p.stdout, dtype=np.int16).astype(np.float32) / 32768
+    if len(a) < 16000 * 5: return None
+    db = voicenat.env_db(a); th = voicenat.thresh(db)
+    runs = [r1 - r0 for r0, r1 in voicenat.quiet_runs(db, th, minrun=0.25)]
+    runs = runs[1:-1] if len(runs) > 2 else runs
+    dur = len(a) / 16000
+    return {'n': len(runs), 'med': round(float(np.median(runs)), 2) if runs else 0.0, 'share': round(sum(runs) / dur, 3)}
 
 def dup_check(ep, m, replace=None):
     # 교훈 31·체크리스트 41(10/12 회의): W-1 같은 판을 두 회차가 따로 올려 중복 영상(0yWQ·dPrE). 배차 메시지가 아니라 장부를 믿는다.

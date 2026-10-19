@@ -509,6 +509,7 @@ _DISC = re.compile(r'법이\s?바뀐\s?(?:건|게)\s?아니|자문이\s?아닙|�
 _TAG = re.compile(r'\{[^}]*\}|\[[^\]]*\]|(이미지|그림|장면|슬라이드)\s?\d|(?<![A-Za-z&])(?!A4|A3|B5|G7|G20)[A-Z]\d{1,2}(?![\d.])')  # 종이·회의 이름은 꼬리표 아님
 
 
+_TTSMARK = re.compile(r'\[pause(?:\s+(?:short|long))?\]')   # Chirp 3 HD 쉼 표시 — 읽히지 않는다
 _BUNIRAMYEON = re.compile(r'분이라면')
 _LIMITW = re.compile(r'기록상|이\s?기록에서는|자료에\s?없|자료에\s?나오지\s?않|확인되지\s?않')
 _PREVIEW = re.compile(r'(차례로|하나씩|순서대로)\s?(답해|살펴|알아|짚어)\s?(볼게요|보겠습니다|드릴게요)|조금\s?(뒤에|이따|있다가)\s?(볼게요|보겠습니다|말씀드릴게요)')
@@ -537,7 +538,7 @@ def script_habits(lines, said=None, screen_titles=None):
             b = float(m.group(3).replace(',', '')) * (_UNIT[m.group(4)] if m.group(4) else 1)
             if b < _UNIT[m.group(2)] and _sig(a + b) >= 3: prec = True
         if prec or any(len(x.replace(',', '')) >= 6 for x in re.findall(r'\d[\d,]{4,}', l)): hits.append(('정밀 숫자', i, l))
-        if _TAG.search(sl): hits.append(('꼬리표 낭독', i, sl))
+        if _TAG.search(_TTSMARK.sub('', sl)): hits.append(('꼬리표 낭독', i, sl))   # [pause short] 같은 Chirp 쉼 표시는 소리 안 남(10/20 editor, T-1 22건 오탐)
     ords = [(i, l, re.sub(r'\s', '', m.group(0))) for i, l in enumerate(lines, 1) for m in _ORD.finditer(l)]
     if len({o[2] for o in ords}) >= 3: hits += [('순번 나열', i, l) for i, l, _ in ords]
     run = []

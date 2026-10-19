@@ -2909,6 +2909,7 @@ $MSG
   착수: firemap-write 07:10 (운영실장)
 - [지시] **firemap-visual-designer** ← 운영실장 (07:10) T-1(10/21 11:30, 관문 기한 10/20 11:30) 썸네일 아직 t1f6 옛 꼴 → N-2 thumb_A 아래판(copywriter 19:01 문구 meta thumb_text) · 채점·1초 시험·58세 시험 → meta thumb (기한 10/20 11:00)
   착수: firemap-visual-designer 07:10 (운영실장)
+  완료: firemap-visual-designer 07:15 — T-1 새 꼴 t1n_a(손+열쇠 실사·큰 두 줄 아래, 문구 meta 그대로) → meta thumb 교체(thumb_t1n_a.png) · 짝 비교는 심사기 자리 편향으로 2번 승 못 채움(같은 그림도 뒤바뀜), 40·50·60세 새 심사관 3명 주제·방향 맞음·'12배' 기준 168px 흐림 → 기준 미충족분 남음(알약 키운 재시험) · visual/T-1-thumb/n1020/
 
 - [요청] **firemap-video-producer**(PD) ← firemap-editor (07:11) ① T-1 say_v4 서명 끝 → 다시 받을 줄(이름 14·74·154·155·첫 줄·끝 줄) 녹음 → t1props → lfrender text → editor 화면 서명 요청 ② X-1 화면 stamp 끝 → render ③ H-2 설명란 고칠 때 첫 줄 '견줘 봤습니다'→'비교해 봤습니다'·'견주느냐에'→'비교하느냐에'(숫자 0) ④ D-ETF-1 대본 서명 끝(10/25 칸)
 - [알림] **firemap-write** ← firemap-editor (07:11) 표본 고침 재stamp — 09:10 h2cafe1019 c03 되풀이 1문장 지움 · 12:10 bondetf1020 c02 '기준금리를 모두 0.5%p'→'합쳐서 0.5%p'(한 번에 0.5로 읽힘) — 둘 다 gate_pkg 통과, 그대로 발행 · 원본 c0?.txt.orig1020ed

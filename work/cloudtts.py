@@ -32,13 +32,14 @@ _S = None
 def markup(text):
     # 10/12 순돌이 [지시·긴급]: Chirp 3 HD markup 쉼 태그 — 쉼표 뒤 [pause short], 줄 안 문장 끝 뒤 [pause](줄 끝 쉼은 lfvoice가 자르고 붙인다)
     # 10/19 voice-naturalness: 글에 이미 쉼 태그가 있으면(korsay.phrase가 넣은 [pause short]) 그 자리엔 더 넣지 않는다 — 넣으면 쉼이 두 번 겹친다.
-    t = re.sub(r',\s*(?!\[pause)(?=\S)', ', [pause short] ', text)
+    # 10/19 사장님 'AI 음성이 아직도 쉼표를 제대로 못 읽는데? 쉼표를 제대로 못 읽으면 차라리 아예 빼던가' — 말할 글에서 쉼표를 뺀다(자막·화면 글은 그대로).
+    t = re.sub(r'\s*[,，]\s*', ' ', text).strip()
     return re.sub(r'([.?!])\s+(?!\[pause)(?=\S)', lambda m: m.group(1) + ' [pause] ', t)
 
 TAG = re.compile(r'\s*\[pause[^\]]*\]')
 def plain(text):
     # 쉼 태그를 뺀 글(markup을 안 쓰는 요청·글자 수 비교용)
-    return re.sub(r'\s{2,}', ' ', TAG.sub(' ', text)).strip()
+    return re.sub(r'\s{2,}', ' ', re.sub(r'\s*[,，]\s*', ' ', TAG.sub(' ', text))).strip()   # 10/19 쉼표 뺌(사장님)
 
 def synth(text, voice='ko-KR-Chirp3-HD-Charon', tag='', rate=None, mark=True):
     """문장 하나 → 24kHz mono int16 PCM bytes. 막히면 예외.

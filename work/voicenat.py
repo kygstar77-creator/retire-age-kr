@@ -184,7 +184,8 @@ def judge(say, wav, ws=None):
     a = load(wav); b = boundaries(say, ws, a); r = artic(say, a); H = HUMAN; flags = []
     for w1, w2, kd, g, ok in b:
         if g is None: continue
-        if kd == 'comma' and g < H['comma_min']: flags.append(('붙음', f'{w1} {w2}', g))
+        # 10/19 사장님 '쉼표를 제대로 못 읽으면 차라리 아예 빼던가' — 말할 글에서 쉼표를 빼므로(cloudtts) 쉼표 자리 '붙음'은 재지 않는다.
+        if kd == 'comma' and g < H['comma_min'] and os.environ.get('NAT_COMMA') == '1': flags.append(('붙음', f'{w1} {w2}', g))
         elif kd in H['split'] and g > H['split'][kd]: flags.append(('끊김', f'{w1} / {w2}', g))
     if r and SYLL(re.sub(r'\[pause[^\]]*\]', '', say)) >= 12 and not H['rate_lo'] <= r <= H['rate_hi']: flags.append(('빠르기', f'{r:.1f}음절/초', round(r, 2)))   # 12음절 아래 짧은 줄은 빠르기 잣대가 흔들려 안 본다
     return {'flags': flags, 'b': b, 'rate': round(r, 2), 'ok': b[0][4] if b else None}

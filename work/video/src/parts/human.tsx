@@ -42,10 +42,11 @@ export const CH_PRE = 12;   // 장 카드를 12프레임(0.4초) 먼저 띄우�
 // 장 카드인가: 'ask' 장면 중 n이 '질문 ①'·'② …'처럼 장 번호를 가진 것(맨 앞 '오늘의 물음'·끝 사이트 안내는 장이 아님)
 export const isChapter = (s: SfxScene) => s.kind === 'ask' && !!s.data && typeof s.data.n === 'string' && /[①-⑳]|^질문|^\d+장/.test(s.data.n);
 // 기본값(10/19): 휙 없음 · 답 열기에 펜 소리만(작게) · 장 카드에 띠링. opts.whoosh=true면 옛 방식(판↔실사 바뀔 때 휙)
-export const sfxPlan = (sc: SfxScene[], i: number, opts: {whoosh?: boolean; ding?: boolean; liveKinds?: Set<string>} = {}): Sfx[] => {
+export const sfxPlan = (sc: SfxScene[], i: number, opts: {whoosh?: boolean; ding?: boolean; pen?: boolean; liveKinds?: Set<string>} = {}): Sfx[] => {
   const s = sc[i]; const o: Sfx[] = [];
   if (opts.whoosh && opts.liveKinds && i > 0 && opts.liveKinds.has(s.kind) !== opts.liveKinds.has(sc[i - 1].kind)) o.push({at: 0, src: SFX.whoosh, vol: 0.25});
-  if (s.data && s.data.rv != null) { if (opts.ding) o.push({at: s.data.rv, src: SFX.ding, vol: 0.3}); o.push({at: s.data.rv + 10, src: SFX.pen, vol: 0.3}); }
+  // 10/19 사장님 '동그라미 칠 때 땡 하는 소리도 너무 거슬려, 조사 안 하고 넣은 건 전부 하지 마' — 답 열기·동그라미 소리 기본 끔(opts.pen=true일 때만). 근거 조사 전엔 장 띠링만.
+  if (s.data && s.data.rv != null) { if (opts.ding) o.push({at: s.data.rv, src: SFX.ding, vol: 0.3}); if (opts.pen) o.push({at: s.data.rv + 10, src: SFX.pen, vol: 0.3}); }
   return o;
 };
 export const SfxTrack: React.FC<{list: Sfx[]}> = ({list}) => <>{list.map((x, j) => <Sequence key={j} from={x.at} durationInFrames={45}><Audio src={staticFile(x.src)} volume={x.vol} /></Sequence>)}</>;

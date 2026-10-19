@@ -1208,7 +1208,8 @@ def post_blog(page, pkg, wait=False):
 # 사람 자리는 비워 둔다. 채점 항목이 '글 쓴 사람 수'와 '댓글 쓴 사람 수'인데
 # 운영자가 질문·고민 게시판을 채우면 사람이 들어올 자리가 없어진다.
 # 공지사항·가입인사도 자동 글이 갈 곳이 아니다.
-HUMAN_ONLY = ('공지사항', '가입인사', '질문·고민', '내 포트폴리오', '출석부', '파이어 이야기')
+# 10/18 카페 운영 설계자: 새 회원 게시판 '배당·이자 인증'·'회원 자료실'(cafe-admin-todo-1018.md) — 자료실은 매니저가 --board 회원 자료실로만
+HUMAN_ONLY = ('공지사항', '가입인사', '질문·고민', '내 포트폴리오', '출석부', '파이어 이야기', '배당·이자 인증', '회원 자료실')
 FALLBACK = '자유게시판'
 
 # 2026-10-13 사장님 분류(경제·정책·돈·주식 3갈래·부동산·시리즈)로 게시판을 나눴다(research/growth/cafe-menu-1013.md '실행 기록').
@@ -1879,8 +1880,21 @@ def main():
                 print(('저장 확인: ' if ok else '저장 안 됨: ') + why)
                 if not ok: sys.exit(3)
                 return
-            if cmd == 'public':                       # python work/naverpost.py public 35 36 37
+            if cmd == 'members':                      # python work/naverpost.py members 315 — 회원 자료 글을 멤버공개로 되돌린다
                 for aid in sys.argv[2:]:
+                    try:
+                        edit = open_cafe_edit(page, aid)
+                        if not set_cafe_members(edit): raise RuntimeError('멤버공개·검색공개 끄기 실패')
+                        print(aid, submit_cafe(edit))
+                    except Exception as e: print(aid, '실패:', repr(e)[:200]); shot(page, 'error_members_' + aid)
+                return
+            if cmd == 'public':                       # python work/naverpost.py public 35 36 37
+                # 2026-10-19 report: 회원 자료 2호(#315, 멤버공개 일부러)를 openArticle False라고 전체공개로 바꾼 사고.
+                # 회원 자료 글 번호는 research/cafe_members.txt에 두고 여기서 건너뛴다.
+                try: _mem = set(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research', 'cafe_members.txt'), encoding='utf-8').read().split())
+                except Exception: _mem = set()
+                for aid in sys.argv[2:]:
+                    if aid in _mem: print(aid, '건너뜀 — 회원 자료(멤버공개 일부러, research/cafe_members.txt)'); continue
                     try: print(aid, cafe_make_public(page, aid))
                     except Exception as e: print(aid, '실패:', repr(e)[:200]); shot(page, 'error_public_' + aid)
                 return

@@ -1,0 +1,49 @@
+{
+ "date": "2026-10-19",
+ "runs": [
+  {
+   "hour": 6,
+   "ts": "06:37",
+   "who": "firemap-write",
+   "blog": null,
+   "cafe": {
+    "title": "코인 과세 시작 전 올해 말까지 오른 이익은 세금 0원",
+    "url": "https://cafe.naver.com/firemap/321"
+   },
+   "note": "06:10 칸 coin1019 발행(무작위 대기 4분 46초) · verify OK 2104/2104자·사진 3/3 · 글 끝 질문 한 줄 추가 후 aitell 3.0 통과·재도장 · 블로그 0(DAY_CAP·블로그 쉼) · 다음 칸: 12:10 ubfraud1019 관문 통과 — 자료조사 출처 9(고용보험법·시행령·시행규칙 국가법령정보센터 10/19, 고용노동부 5/31 보도자료, 데일리안 5/31, 최저임금 기사, 경쟁 상위 5편, 지식iN 5) · 교차검증(crosscheck Gemini): 사실 4 중 반영 3·유지 1(계산기 입력은 toolPages.js로 확인), 말투 15 중 반영 9 · 레드팀 틀림0·오해6 반영 · 58세 2차 심각0 · 개선: 없음(관문 도구는 모두 정상 동작) · 카페 댓글 답할 것 0개"
+  },
+  {
+   "hour": 7,
+   "ts": "07:48",
+   "by": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "연금저축 세금은 연금이 1500만원 넘으면 오히려 돌려받는 경우",
+    "url": "https://cafe.naver.com/firemap/322"
+   },
+   "note": "07:40 칸 TBD(p1s_cross 짝 관문 기한 지남) → 비축 pensiontax1019(관문 10/18 23:47: 레드팀 틀림0·58세 2차·제목8·표지8.5·교차검증 check_gpt/gemini 있음). 글 끝 질문 줄 추가 후 aitell 2.1·readcheck 0·editgate auto 재서명. verify OK 1531/1531자·사진 3/3. 관련 영상: 맞는 공개 롱폼 없어 안 넣음. 카페 비축 0/2. 개선: 없음(확인 창 TimeoutError는 발행엔 영향 없음)"
+  },
+  {
+   "hour": 9,
+   "ts": "09:34",
+   "by": "firemap-write",
+   "blog": null,
+   "cafe": {
+    "title": "여의도 구축 아파트 층별 가격, 같은 단지 저층과 위층은 얼마나 차이 날까",
+    "url": "https://cafe.naver.com/firemap/323"
+   },
+   "note": "09:10 칸 yeoui1019 발행(게시판 부동산) verify OK 1713/1713자·사진 3/3 · 블로그 없음(블로그 대기 전부 보류·하루 상한 규칙) · 15:10 칸 c2cafe1019 관문 통과(C-2 짝 글, 미발행): 자료조사 새로 7건(야후 ^SP500TR 10/16·ECOS 731Y001 10/16 1,348.5원·ECOS 121Y002·소득세법 129조 원문 50% 구간·Morningstar 3.9%/AP 시황은 1차 확인 못 해 본문 미사용) · 교차검증: crosscheck 출력 없음(check_gpt/gemini 미생성) → selfcheck 사실 0 · 레드팀 틀림1·오해5·권유2 전부 반영 · 58세 3차 심각0 · 개선: 없음(이번 회차 셸 heredoc 실수로 9분 멈춤 — 수정 스크립트는 파일로)"
+  },
+  {
+   "hour": 10,
+   "ts": "11:26",
+   "by": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "테슬라 실적발표 다음 날, 지난 네 번 주가는 몇 % 움직였을까?",
+    "url": "https://cafe.naver.com/firemap/324"
+   },
+   "note": "10:40 칸 TBD·비축0 → 새 편 tsla1019(성장주·형식4) · 자료조사 원문 9건(SEC 8-K 4건·EDGAR 제출목록·나스닥·야후·toprank) · 교차검증 crosscheck Gemini: 사실 3 중 반영 2·유지 1(영상 링크 공개 확인), 말투 14 중 반영 13·버림 1(공시에 없는 인과) · selfcheck 사실 0 · readcheck 0 · aitell 1.5 · 레드팀 틀림1·오해7 반영 · 58세 2차 통과 · 제목 끝말 규칙으로 두 번 교체(얼마 3칸→몇) · verify OK 1525/1525자·사진 3/3 · 발행 11:25(칸보다 45분 늦음) · 개선: playbook에 제목 관문 두 개(얼마·몇만 + 같은 끝말 3칸 금지) 미리 세기 추가"
+  }
+ ]
+}

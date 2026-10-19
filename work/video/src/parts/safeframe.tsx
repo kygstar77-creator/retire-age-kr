@@ -104,7 +104,7 @@ export const IW = TX1 - TX0 - PAD * 2;                   // 글자 줄 최대 �
 // 기준 리뉴얼 B-03(10/19, work/research/criteria/B-screen-1019.md): 위 288 금지는 Google Ads 광고용 그림을 넓혀 쓴 것 — 앱에서 덮인 건 양 끝 단추(뒤로가기·⋮).
 //   경쟁 쇼츠 25편 제목 위끝 중앙 y 145·가로 중앙 218~856 → 가운데(x 180~900) 글자는 y 150부터(safezone.py TOP_C와 같은 값). 양 끝은 288 그대로.
 //   위쪽(288 위)에 올라가는 제목·답 이름표는 이 좁은 칸(TOP_X0~TOP_X1) 안에서만 맞춘다.
-export const TOP_Y0 = 150, TOP_X0 = 180, TOP_X1 = 900;
+export const TOP_Y0 = 230, TOP_X0 = 180, TOP_X1 = 900;   // 10/19 사장님 앱 화면: 검색·⋮ 아이콘 영상 y 약 161~217 → 150이면 겹침, 230부터
 export const TW = TOP_X1 - TOP_X0 - PAD * 2;              // 위쪽 글자 줄 최대 너비 692
 export const YEL = '#FFD000';
 

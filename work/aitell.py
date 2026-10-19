@@ -431,6 +431,9 @@ def assert_check(text):
 def gate_pkg(pkg):
     """발행기용. (올려도 되나, 한 줄 사유, 걸린 곳)."""
     text, files = pkg_text(pkg)
+    # A-31(법): 글에 쿠팡 링크가 있으면 대가 표시를 제목이나 첫 부분에(공정위 추천·보증 심사지침 Ⅴ.6 — 글은 본문과 다른 크기·색으로, 굵게)
+    if re.search(r'coupang\.com|쿠팡\s*파트너스', text) and not re.search(r'쿠팡\s*파트너스.{0,40}수수료|수수료.{0,40}쿠팡\s*파트너스', text[:300]):
+        return False, "쿠팡 링크 글 — 첫 부분(300자 안)에 '쿠팡 파트너스 … 수수료' 대가 표시를 굵게(공정위 추천·보증 심사지침 Ⅴ.6)", []
     ab = assert_check(text)
     if ab: return False, '단정·보장 표현(자본시장법 시행령 102조의2·금소법 시행령 20조) — ' + '; '.join(f'"{w}" {x}' for w, x in ab[:3]), ab
     if is_cafe_pkg(pkg):

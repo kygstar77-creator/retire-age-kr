@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-19 20:08",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "한가운데 월급 288만원",
+ "num": "평균 375만원보다 87만원 아래",
+ "sub": "평균은 많이 받는 쪽으로 끌려 올라가요",
+ "label": "2024년 12월 세전 · 일자리 2,131만개",
+ "src": "",
+ "icon": "wallet",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 100,
+ "num_px": 74,
+ "sub_px": 55,
+ "board": [
+  "kospioct1019",
+  "directdeal1019",
+  "c2cafe1019",
+  "cafenotice1018",
+  "ubfraud1019",
+  "tsla1019",
+  "yeoui1019",
+  "pensiontax1019",
+  "coin1019",
+  "jpy1018"
+ ]
+}

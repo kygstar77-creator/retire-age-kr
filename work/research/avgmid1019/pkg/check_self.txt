@@ -1,0 +1,6 @@
+# 자체 검증 (제미나이 할당량 없을 때 쓰는 대체 검증)
+# 묶음: avgmid1019 · 종류: cafe · 문장 48개 · 기준 출처: cafe_style/benchmark_2026-09-23.md
+
+[중복] 전체 — "평균" 이미 씀 ← S&P500에 퇴직금 넣고 매달 꺼내 쓰면 몇 년 버틸까? https://cafe.naver.com/firemap/327 (본문에 3번) — 각도가 다른지 보고, 같으면 hold.txt
+[중복] 전체 — "평균" 이미 씀 ← 퇴직연금 DC형으로 바꿀까, 임금피크 앞두면 계산이 달라지는 이유 https://cafe.naver.com/firemap/272 (본문에 4번) — 각도가 다른지 보고, 같으면 hold.txt
+[중복] 전체 — "평균" 이미 씀 ← 정기예금 금리 1억 맡기면 세후 이자 작년보다 얼마 늘었나 https://cafe.naver.com/firemap/244 (제목·첫 조각에 있음) — 각도가 다른지 보고, 같으면 hold.txt

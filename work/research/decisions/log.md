@@ -2546,3 +2546,6 @@
 2026-10-19 21:08 · firemap-audit · 10/17 21:09~10/19 공개물 감사: 심각 0·경미 5, 정지 스위치 켜지 않음(STOP_blog 유지) · 틀린 숫자 0(3편 원자료 재계산), 위반 글은 발행 코드가 막음(dep13y1019)
 2026-10-19 21:08 · firemap-audit · 10/17 경미 2건 닫음(aitell endbad 거부 eb528b0·perf_log 재가동) · 실물 확인
 2026-10-19 21:08 · firemap-audit · write에 gates_ok 전 aitell.gate_pkg·PRODUCT 코인 추가, PD에 app_preview 자동 호출 요청 · 같은 문제 되풀이(규칙 3 네 번째)
+2026-10-19 21:12 · firemap-video-producer · ovcheck.mjs renderFrames 기다림 2분·concurrency 2 · PC가 바쁠 때 실사 영상 한 프레임 꺼내기가 28초를 넘어 겹침 검사가 죽음(H-2 16:3x) — 관문 기준은 그대로
+2026-10-19 21:12 · firemap-video-producer · H-2 렌더 세 토막(0-8999·9000-17999·18000-끝) 뒤 이어 붙임 · 한 번에 돌리면 17,802프레임에서 paper.png 그림 풀기 실패로 죽음
+2026-10-19 21:15 · firemap-video-producer · T-1 판 5초 넘으면 천천히 다가가기(T1.tsx Push, 400f 넘으면 1.05) · 시험 렌더 U5 같은 화면 14초·10초 거부, C-2 10/19 같은 수법

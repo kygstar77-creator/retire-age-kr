@@ -1864,10 +1864,12 @@
   {
    "at": "2026-10-19 10:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "tsla1019",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+   "gates_ok": "2026-10-19 11:10",
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) | firemap-write-b 11:10: TBD·비축0 → 새 편 tsla1019 '테슬라 실적발표 다음 날, 지난 네 번 주가는 몇 % 움직였을까?'(종목·형식4, 오늘 빈 장르 성장주) 관문 통과 — SEC 8-K 발표일·야후 종가 직접 계산, 레드팀 틀림1·오해7 반영, 58세 2차 심각0, 제목 7.25·표지 8.25, editgate auto · p1s_cross 짝은 p1cafe1016(#292)과 같은 계산이라 쓰지 않음",
+   "pkg": "tsla1019",
+   "published": "https://cafe.naver.com/firemap/324 11:25 verify OK 1525자"
   },
   {
    "at": "2026-10-19 11:30",

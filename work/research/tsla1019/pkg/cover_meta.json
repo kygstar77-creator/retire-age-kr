@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-19 11:04",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "테슬라 실적발표/다음 날 주가는",
+ "num": "지난 네 번 중 세 번 내림",
+ "sub": "발표는 한국 시각 22일 새벽 · 지난 7월엔 하루 -14.5%",
+ "label": "미국 성장주",
+ "src": "",
+ "icon": "car",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 130,
+ "num_px": 86,
+ "sub_px": 36,
+ "board": [
+  "yeoui1019",
+  "pensiontax1019",
+  "coin1019",
+  "jpy1018",
+  "schdfx1018",
+  "mokdong1018",
+  "g1whycafe1018",
+  "n2cafe1018",
+  "salpct1018",
+  "sbsave1017"
+ ]
+}

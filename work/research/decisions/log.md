@@ -2488,3 +2488,7 @@
 2026-10-19 09:34 · firemap-write · C-2 짝 글을 21:10에서 15:10 칸으로 당김(c2cafe1019 관문 통과) · C-2 공개가 11:30으로 당겨져 같은 날 먼저 오는 내 칸에, 21:10은 TBD
 
 2026-10-19 09:52 · firemap-watchdog · 완료: (10/19 회) 사이트 4쪽 curl 200·제목 일치, 감시: 카페 36분 전·대기 카페 4(블로그 STOP)·멈춘 회차 없음(write 10/18 18:20 끝 맥박 없음은 이후 회차 정상)·로그인됨 → 메우기 없음 · 빵꾸 없음
+2026-10-19 10:35 · firemap-video-producer · 받아쓰기 둘째 귀에 로컬 Whisper large-v3-turbo 추가(--whisper turbo, ytlong 인정)·첫 귀 3.5-flash-lite 한도면 3.1-flash-lite로 · 3.5-flash 하루 20·lite 500 실측, C-2 20줄 시험에서 turbo가 small보다 낱말 정확(표시 2↔3, 숫자 2↔1), 관문 기준은 그대로
+2026-10-19 10:35 · firemap-video-producer · 공개 롱폼 13편+C-2 예약분 containsSyntheticMedia true(관리 토큰 videos.update) · AI 음성 내레이션 소급 공개(체크리스트 51), ytupload 토큰은 범위 부족 403
+2026-10-19 10:35 · firemap-video-producer · C-2 11:30 예약 유지 · 5:25 '건보료' 귀 넷 2:2·관문 통과 — 공개 뒤 사람 귀로 한 번 듣기를 순돌이에 넘김
+2026-10-19 11:26 · firemap-write-b · 10:40 칸 새 편 tsla1019 발행(#324, verify OK) · 비축 0·p1s_cross 짝은 #292와 같은 계산이라 버리고 오늘 빈 장르 성장주로, 테슬라 실적 10/21(미국) 앞

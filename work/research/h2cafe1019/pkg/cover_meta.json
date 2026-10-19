@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-19 21:47",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "잠실주공5단지가/리센츠보다 비쌌다",
+ "num": "전세는 8억 넘게 쌌다",
+ "sub": "84㎡대 1년 실거래 · 은마·반포미도도",
+ "label": "국토부 실거래 · 잠실·대치·반포",
+ "src": "",
+ "icon": "house",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 119,
+ "num_px": 95,
+ "sub_px": 54,
+ "board": [
+  "avgmid1019",
+  "kospioct1019",
+  "directdeal1019",
+  "c2cafe1019",
+  "cafenotice1018",
+  "ubfraud1019",
+  "tsla1019",
+  "yeoui1019",
+  "pensiontax1019",
+  "coin1019"
+ ]
+}

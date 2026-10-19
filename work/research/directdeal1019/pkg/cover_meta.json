@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-19 17:56",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "아파트 직거래/중개보다 22% 쌌다",
+ "num": "30%·3억 중 적은 쪽 넘으면 증여세",
+ "sub": "양도세·취득세는 5% 깎아도 시세로 계산",
+ "label": "서울 직거래 742건 중간값 · 가족 거래인지는 모름",
+ "src": "",
+ "icon": "building",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 118,
+ "num_px": 66,
+ "sub_px": 49,
+ "board": [
+  "c2cafe1019",
+  "cafenotice1018",
+  "ubfraud1019",
+  "tsla1019",
+  "yeoui1019",
+  "pensiontax1019",
+  "coin1019",
+  "jpy1018",
+  "schdfx1018",
+  "mokdong1018"
+ ]
+}

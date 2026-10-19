@@ -3,3 +3,5 @@
 2026-10-19 09:10 | firemap-c2-h2-readback-1019 | 끝 — readback 한도로 멈춤, 렌더 안 함(막힘 today.md)
 2026-10-19 10:17 | PD 정기 회차(firemap-video-producer 10:16) | H-2 readback --resume→렌더→gate
 2026-10-19 13:29 | PD 정기 회차(firemap-video-producer 10:16) | 끝 — 다시 받기 21줄·readback, 렌더 실패(다시 필요), 남은 14줄 판단 대기
+2026-10-19 14:18 | PD 정기 회차(firemap-video-producer 14:17) | H-2 남은 받아쓰기 14줄→렌더→gate→up(10/20 11:30)
+2026-10-20 02:58 | PD 정기 회차(firemap-video-producer 14:17) | 끝 — 예약 _fTgGr0dR0I(11:30)

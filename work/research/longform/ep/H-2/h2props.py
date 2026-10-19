@@ -2,6 +2,9 @@
 #   py -3.12 work/research/longform/ep/H-2/h2props.py
 # 10/17 PD: 대본 v3(질문 넷 장, 163줄)·10/17 롱폼 화면 기준으로 다시 짰다. 틀은 C-2와 같다(video/src/H2.tsx = C2.tsx 틀). 옛 판 h2props.v2.py.bak.
 # 줄은 말 글자 앞부분으로 찾는다(같은 문장이 두 번 — 예고 재사용 — 이면 앞에서부터 차례로). [자막] 줄은 그 말 줄의 cap으로.
+# 10/18 PD 견본 방식(today.md 순돌이 10/18 지시·C-2 c2props와 같은 틀, 화면 video/src/H2.tsx = C2.tsx 견본 판 복사본 + 'mo'):
+#   처음·끝 고정 말(live 날짜·brand) · 큰 숫자는 말이 닿는 때(rv)까지 '?' · 5장 대출 규칙·손품 씨 계산서·25억 경계 = motion 부품(mo, motion_preview/eqprops.py → h2_eq.json) ·
+#   끝은 숨 쉴 하늘 실사 3.5초 → 맺는 말 · 녹음 전 새 줄은 DRAFT(5.84자/초 어림, 소리 없음) — editor 서명·Chirp 녹음 뒤 eqprops.py → 이 파일 다시.
 # 숫자: props 안 숫자 글자는 전부 calc_out·calc2_out·facts.txt·script.md·H-1 calc_out에 있는 글자만 — 맨 아래 numcheck가 막는다.
 import json, os, re, sys
 sys.stdout.reconfigure(encoding='utf-8')
@@ -16,16 +19,51 @@ V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
 ALL = [l for s in V['sections'] for l in s['lines']]
 USED = set()
 BG = {c['id']: c for c in json.load(open(os.path.join(EP, 'bg_plan.json'), encoding='utf-8'))['clips']}
+BG.setdefault(5562942, next(c for c in json.load(open(os.path.join(EP, '..', 'C-2', 'bg_plan.json'), encoding='utf-8'))['clips'] if c['id'] == 5562942))   # 끝 하늘(C-2와 같은 클립, 얼굴 없음)
+SAY = []
+for ln in SCRIPT.split('\n---', 1)[0].splitlines():
+    if ln.lstrip().startswith('- '):
+        t = re.sub(r'\s*\((화면|재사용).*$', '', ln.strip()[2:]).strip()
+        if t: SAY.append(t)
+DRAFT = []
 
 def L(t, cap=None):
-    hit = [i for i, l in enumerate(ALL) if l['text'].startswith(t) and i not in USED]; assert hit, ('없음/두 번', t)
+    hit = [i for i, l in enumerate(ALL) if l['text'].startswith(t) and i not in USED]
+    if not hit:   # 녹음 전 새 줄(10/18 고정 말·131행): 대본에서 찾고 5.84자/초 어림, 소리 없음
+        sh = sorted(set(x for x in SAY if x.startswith(t))); assert len(sh) == 1, ('없음/두 번', t, sh)
+        DRAFT.append(sh[0]); return {'text': sh[0], 'audio': None, 'frames': int(len(sh[0]) / 5.84 * FPS) + 8, 'cap': cap, 'i': None}
     i = hit[0]; USED.add(i); l = ALL[i]
     assert l.get('audio') and os.path.exists(os.path.join(VID, 'public', l['audio'])), t
-    return {'text': l['text'], 'audio': l['audio'], 'frames': l['frames'], 'cap': cap, 'i': i}
+    return {'text': re.sub(r'\s*\(재사용 \d+장\)$', '', l['text']), 'audio': l['audio'], 'frames': l['frames'], 'cap': cap, 'i': i}   # 10/18 PD: 자막에 '(재사용 N장)' 꼬리표가 찍히던 것(소리엔 없음)
 
-def S(kind, lines, **data):
+def S(kind, lines, pause=0, **data):
     ls = [L(*t) if isinstance(t, tuple) else L(t) for t in lines]
-    return {'kind': kind, 'lines': ls, 'frames': sum(l['frames'] for l in ls), 'data': data}
+    return {'kind': kind, 'lines': ls, 'frames': sum(l['frames'] for l in ls) + pause, 'data': data}
+def L_len(t):
+    hit = [l for k, l in enumerate(ALL) if l['text'].startswith(t) and k not in USED]
+    if hit: return hit[0]['frames']
+    sh = [x for x in SAY if x.startswith(t)]; return int(len(sh[0]) / 5.84 * FPS) + 8
+def live(cid, lines, who=None, say=None, past=False, start=None, pause=0):   # 견본 Live(C2.tsx) — say 숫자 금지
+    c = BG[cid]; k = USEDBG.get(cid, 0); USEDBG[cid] = k + 1
+    sec = (sum(L_len(t) for t in lines) + pause) / FPS
+    frm = start if start is not None else (0 if k == 0 else min(max(0, c['usable_sec'] - sec), k * 5))
+    assert sec + frm <= c['usable_sec'] + 0.5, ('실사 클립이 말보다 짧다', cid, round(sec + frm, 1), c['usable_sec'])
+    d = dict(src=c['file'], license=f"Pexels {cid} 무료({(c.get('author') or 'Pexels').rstrip('/').split('/')[-1]})", past=past, **({'from': int(frm * FPS)} if frm else {}))
+    if who: d['who'] = who
+    if say: d['say'] = say
+    return S('live', lines, pause=pause, **d)
+def brand(lines, line, sub=None, pause=0): return S('brand', lines, pause=pause, line=line, **({'sub': sub} if sub else {}))
+EQ = json.load(open(os.path.join(EP, 'motion_preview', 'h2_eq.json'), encoding='utf-8'))   # motion 10/18 — 다시 녹음 뒤 eqprops.py를 먼저 돌린다
+def mo(key, part, lines, beats=None, shift=0):
+    e = EQ[key]; pd = json.loads(json.dumps(e['data']))
+    if shift:   # 앞 줄을 다른 장면으로 뺐을 때: terms·rounds의 at(줄 번호)을 당긴다
+        for t in pd.get('terms', []): t['at'] = max(0, t['at'] - shift)
+        for r in pd.get('rounds', []): r['at'] -= shift
+        assert all(r['at'] >= 0 for r in pd.get('rounds', [])), ('mo shift', key)
+    d = dict(part=part, title=e['title'], sub=e['sub'], source=e['source'], p=pd)
+    s = S('mo', lines, **d)
+    if beats: s['data']['beats'] = beats(s['lines'])
+    return s
 
 SRC = '국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 84㎡대 = 전용 80~85㎡ · 파이어맵 계산'
 SRC_GOV = '서울시 정비사업 정보몽땅 · 국토교통부·서울시·금융위원회 보도자료·공고(원문)'
@@ -46,6 +84,8 @@ def broll(cid, lines, say, side='left', start=0):
 R = 'rise'; A = 'accent'; B = 'fall'; K = 'ink'
 scenes = [
     # ── 0. 예고 ──
+    live(7593891, ['안녕하세요, 파이어맵입니다.'], who='2026년 10월 20일 화요일', say='오늘은 잠실·대치·반포 아파트 실거래가 이야기', pause=20),   # 10/18 고정 여는 말 — 날짜는 화면 글자로만
+    live(32986074, ['잠실에서 1978년에 지은'], say='옛 단지와 새 단지, 평당 어느 쪽이 더 비쌀까?', pause=24),
     big('잠실 주공5단지 vs 리센츠', '+31.1%', '84㎡대 평당 · 1978년 단지가 2008년 단지보다', [('잠실 주공 5단지는 1978년에', '잠실 84㎡대 평당 · 주공아파트5단지(1978) 1억 7,408만원 · 리센츠(2008) 1억 3,283만원 · +31.1%')], c=R),
     broll(36216207, ['전세는 거꾸로였습니다'], '전세는 거꾸로'),
     big('래미안원베일리 · 2026년 5월', '18억 차이', '같은 단지 · 같은 달 11건 · 모두 중개거래', [('반포 래미안원베일리에선 같은', '래미안원베일리 84㎡대 · 2026년 5월 11건 · 53억 5,000만원 ~ 71억 5,000만원 · 모두 중개거래')], icon='Building'),
@@ -72,7 +112,7 @@ scenes = [
     pair('잠실 우성(1981) vs 리센츠', ['1억 1,908만원', '우성 평당 · 10건', B], ['−10.4%', '리센츠보다', B], [('그런데 같은 잠실의 오래된', '우성아파트(1981) 평당 1억 1,908만원(10건) vs 리센츠 −10.4%')], icon='Building'),
     broll(31018013, ['대치동 은마는 2015년에'], '대치동에선'),
     pair('대치동 한 채 값', ['38억 9,000만원', '은마(1979)', B], ['42억 7,500만원', '래미안대치팰리스(2015)', A], [('한 채로는 은마가 약 39억', '84㎡대 평당 · 래미안대치팰리스 1억 6,630만원(8건) · 은마 1억 5,231만원(13건) · −8.4% · 대치르엘(2021) 1억 4,273만원(5건) · 은마가 +6.7%')], icon='Building'),
-    big('은마 vs 대치르엘(2021)', '+6.7%', '평당 · 이번엔 은마가 더 비쌈', ['다만 2021년에 지은 대치르엘'], icon='ArrowUpDown', c=R),
+    big('은마 vs 대치르엘(2021)', '+6.7%', '평당 · 이번엔 은마가 더 비쌈', ['다만 대치동 은마, 2021년에'], icon='ArrowUpDown', c=R),
     big('대치동 거래 수', '많아야 13건', '단지마다 · 한두 건에 값이 흔들릴 수 있음', ['대치동은 단지마다 거래가'], icon='TriangleAlert', c=K),
     broll(12079562, ['반포동은 새 단지들이'], '반포는 새 단지가 맨 위'),
     bars('반포 84㎡대 평당 가운데 값', [['원베일리(2023)', 2.2951, '2억 2,951만원', A], ['아크로리버파크', 2.1498, '2억 1,498만원', A], ['래미안퍼스티지', 2.0143, '2억 143만원', A], ['반포자이', 1.8914, '1억 8,914만원', A], ['반포미도(1987)', 1.5836, '1억 5,836만원', B]],
@@ -80,7 +120,7 @@ scenes = [
     big('세 동네를 보면', '잠실 5단지만', "'오래된 단지가 더 비싸다'가 뚜렷했던 곳", ["그러니까 '오래된 단지가"], icon='Search'),
     broll(6787197, ['그럼 왜일까요? 값이'], '값의 이유를 적은 원문은 없다', side='right'),
     rows('재건축 단계 · 정보몽땅', [['잠실 주공5단지', '사업시행계획인가 2026-07-01', A, 1], ['은마', '사업시행계획인가 2026-07-02', A, 2]],
-         ['원문에 있는 건, 두 단지가', '먼저 잠실 5단지. 올해 7월에', ('은마도 같은 달에', '서울시 정비사업 정보몽땅(2026-10-16 확인) · 잠실주공5단지 사업시행계획인가 2026-07-01(송파구 고시 제2026-90호) · 은마 사업시행계획인가 2026-07-02(강남구 고시 제2026-130호)')], icon='FileText', src=SRC_GOV),
+         ['원문에 있는 건, 두 단지가', '먼저 잠실 5단지. 올해 7월에', ('대치동 은마, 이곳도', '서울시 정비사업 정보몽땅(2026-10-16 확인) · 잠실주공5단지 사업시행계획인가 2026-07-01(송파구 고시 제2026-90호) · 은마 사업시행계획인가 2026-07-02(강남구 고시 제2026-130호)')], icon='FileText', src=SRC_GOV),
     broll(34317846, ['그런데 같은 단계인 은마는'], '단계만으로는 설명이 안 된다'),
     rows('재건축 단계 · 정보몽땅', [['반포미도1차', '조합설립인가 2025-09-30', B], ['잠실우성1·2·3차', '조합설립인가 2021-06-11', B, 1], ['우성 사업시행인가', '기록 없음', R, 1]],
          ['반포미도는 그보다 앞 단계인', ('잠실 우성은 조합까지', '반포미도1차 정비구역 지정 2024-04-25 · 조합설립인가 2025-09-30 · 잠실우성1·2·3차 조합설립인가 2021-06-11 · 사업시행인가 기록 없음 (정보몽땅)')], icon='FileText', src=SRC_GOV),
@@ -106,7 +146,7 @@ scenes = [
     broll(35738744, ['반포미도 전세는 8억'], '반포의 전세'),
     broll(5923592, ['손품 씨 돈으로 세어 보죠'], '손품 씨 돈으로 세어 보면', side='right'),
     rows('9억 5,000만원 안 신규 전세', [['주공5단지', '88/88', B], ['은마', '68/73', B, 1], ['리센츠', '1/90', R, 2], ['래미안대치팰리스 · 원베일리', '0/12 · 0/30', R, 3]],
-         ['주공 5단지는 모두 그 안', '은마는 일흔세 건 중', '리센츠는 아흔 건 중', ('래미안대치팰리스와 래미안원베일리는', '84㎡대 신규 순수전세 1년 · 9억 5,000만원 이하 건수 · 반포미도 32/39 · 잠실엘스 6/130')], icon='Wallet'),
+         ['주공 5단지는 모두 그 안', '대치동 은마, 이곳은 일흔세', '리센츠는 아흔 건 중', ('래미안대치팰리스와 래미안원베일리는', '84㎡대 신규 순수전세 1년 · 9억 5,000만원 이하 건수 · 반포미도 32/39 · 잠실엘스 6/130')], icon='Wallet'),
     broll(7593891, ['1년 가운데 값으로 계산해'], '가운데 값으로 계산하면', side='right'),
     pair('1년 가운데 값으로 계산', ['4억 3,000만원', '5단지면 남음', B], ['4억', '리센츠면 모자람', R], [('리센츠라면 거꾸로', '9억 5,000만원 − 5단지 5억 2,000만원 = 4억 3,000만원 남음 · 리센츠 13억 5,000만원 − 9억 5,000만원 = 4억 모자람')], icon='Calculator'),
     broll(36216207, ['그럼 왜 이렇게 쌀까요'], '왜 이렇게 쌀까'),
@@ -142,21 +182,20 @@ scenes = [
     broll(37522118, ['그리고 내년 말까지 허가를'], '신청은 내년 말까지'),
     # ── 5. 질문 넷 ──
     ask('질문 ④', '사려면 현금이 얼마나 있어야 하나요?', '네이버 부동산 카페 질문 2026-09-30·10-12 — 예산 33억·주담대 2억', ['마지막 질문은 돈입니다']),
-    big('규제지역 주담대', '집값의 40%', '금액 한도와 둘 중 작은 쪽까지', ['먼저 대출 규칙입니다', '여기에 금액 한도가 따로'], icon='Landmark', src=SRC_GOV),
-    broll(7593891, ['금액 한도는 집값이 15억'], '집값 따라 금액 한도'),
-    rows('주담대 금액 한도', [['15억 이하', '6억', B], ['15~25억', '4억', A, 0], ['25억 초과', '2억', R, 1]],
-         ['그 위로 25억까지는', ('25억이 넘으면 2억까지', '금융위원회 2025-10-15 대책 · 2026-08-13 「부동산 시장 안정을 위한 금융 종합대책」 · LTV 규제지역 40% · 주택가격별 주담대 15억원 이하 6억원 · 15~25억원 4억원 · 25억원 초과 2억원')], icon='Landmark', src=SRC_GOV),
+    mo('rule', 'loan', ['먼저 대출 규칙입니다', '여기에 금액 한도가 따로', '금액 한도는 집값이 15억', '그 위로 25억까지는',
+       ('25억이 넘으면 2억까지', '금융위원회 2025-10-15 대책 · 2026-08-13 「부동산 시장 안정을 위한 금융 종합대책」 · LTV 규제지역 40% · 주택가격별 주담대 15억원 이하 6억원 · 15~25억원 4억원 · 25억원 초과 2억원')]),   # 10/18 motion LoanSteps(줄마다 한도 선 한 칸)
     broll(6963484, ['왜 이렇게 했는지도 원문에'], '이유도 원문에'),
     big('원문에 적힌 이유', '고가주택 구입 수요 제한', '큰 대출로 비싼 집을 사는 수요', [('금융위원회는 큰 대출로', "금융위원회 2025-10-15 '과도한 대출을 활용한 고가주택 구입 수요를 제한' · 2026-08-13 '대출규제는 확고하게 유지'")], icon='Quote', src=SRC_GOV),
-    big('손품 씨 대출', '2억', '오늘 본 집 대부분 25억 넘음 · 보증금 9억 5,000만원 보탬', ['이제 손품 씨 돈으로 계산', '손품 씨가 전세 보증금'], icon='Wallet'),
-    broll(5349092, ['리센츠 한 채가 약 34억이면'], '더 있어야 하는 돈', side='right'),
-    rows('더 있어야 하는 돈', [['리센츠 34억 1,500만원', '22억 6,500만원', R], ['주공5단지 43억 4,500만원', '31억 9,500만원', R, 0], ['원베일리 59억', '47억 5,000만원', R, 2]],
-         ['주공 5단지라면 더 큽니다', ('래미안원베일리 약 59억이면', '매매 가운데 값 − 주담대 2억 − 보증금 9억 5,000만원 · 취득세·중개보수 빼고 계산')], icon='Calculator'),
+    broll(5349092, ['이제 손품 씨 돈으로 계산'], '손품 씨 돈으로 세어 보면', side='right'),
+    mo('cash', 'eq', ['손품 씨가 전세 보증금', '리센츠 한 채가 약 34억이면', '주공 5단지라면 더 큽니다',
+       ('래미안원베일리 약 59억이면', '매매 가운데 값 − 주담대 2억 − 보증금 9억 5,000만원 · 취득세·중개보수 빼고 계산')],
+       shift=1),   # 10/18 motion EqStack — 첫 줄(대출 2억)은 실사로 빼서 판 20초 아래(전체 5줄이면 23.5초), 답 셋은 그대로
     broll(31251627, ['카페 질문처럼 보증금까지'], '카페 질문 예산이라면'),
     rows('35억 안쪽 · 매매 가운데 값', [['리센츠', '34억 1,500만원', B], ['잠실엘스', '33억 2,250만원', B, 1], ['트리지움', '31억 7,000만원', B, 1], ['5단지·은마·대치팰리스·반포 새 단지', '35억 넘음', R, 2]],
-         ['오늘 본 큰 단지 가운데', '잠실엘스는 약 33억', ('주공 5단지와 은마', '35억 넘음 · 은마 38억 9,000만원 · 래미안대치팰리스 42억 7,500만원 · 반포 새 단지 4곳 48억 6,000만원~59억')], icon='ListChecks'),
+         ['오늘 본 큰 단지 가운데', '잠실엘스는 약 33억', ('주공 5단지와 대치동 은마', '35억 넘음 · 은마 38억 9,000만원 · 래미안대치팰리스 42억 7,500만원 · 반포 새 단지 4곳 48억 6,000만원~59억')], icon='ListChecks'),
     ask('함정', '25억 경계', '금융위원회 2025-10-15 · 2026-08-13', ['여기서 조심할 건 25억']),
-    pair('25억 경계', ['4억', '15억 넘고 25억 이하', B], ['2억', '조금만 넘어도', R], ['집값이 25억 이하면 한도가', '그래서 25억 언저리 집을'], icon='TriangleAlert', src=SRC_GOV),
+    mo('edge', 'loan', ['15억이 넘고 25억 이하면', '그래서 25억 언저리 집을'],
+       beats=lambda ls: [0, int(ls[0]['frames'] * 0.55), ls[0]['frames']]),   # 10/18 motion LoanSteps edge — 첫 줄은 질문 카드, '절반인 2억'에 점프
     broll(5665059, ['이제 누구라면 어떻게'], '누구라면'),
     rows('누구라면', [['집 없고 사서 살 사람', '허가·입주 기한·2년·대출 한도'], ['집 없이 전세로 살 사람', '신규·갱신 전세 · 이주 일정', B, 1]], ['손품 씨처럼 집이 없고', '집 없이 전세로 살 사람이라면'], icon='Users', src=SRC_GOV),
     broll(32086385, ['손품 씨와 다른 경우도 하나'], '세 주고 전세 사는 사람이라면'),
@@ -171,7 +210,7 @@ scenes = [
          ['평당 값이 가장 높았던 원베일리', '2009년에 지은 반포자이', ('오래된 반포미도는', '오픈스트리트맵 보행로(2026-10-17 받음) · 사평역·신반포역·고속터미널역')], 800, icon='Footprints', src='OpenStreetMap 보행로(© OpenStreetMap contributors) · 파이어맵 계산'),
     broll(31018013, ['학교는 교육부 학구도'], '통학구역 초등학교'),
     rows('통학구역 초등학교 학생 수', [['주공5단지 → 신천초', '358명', B], ['리센츠 → 잠신초', '1,321명', K, 1], ['잠실엘스 → 잠일초', '1,498명', K, 1], ['원베일리 → 잠원초', '1,924명', R, 2]],
-         ['주공 5단지는 신천초 구역', ('리센츠의 잠신초와', '교육부 학구도 안내서비스(단지 대표 지번 1곳) · 학교알리미 2026년 5월 공시 · 서울대곡초(은마) 1,174명 · 서울대치초(래미안대치팰리스) 1,316명 · 서울서원초(반포미도) 1,614명'), '원베일리는 잠원초 구역'], icon='School', src='교육부 학구도 안내서비스 · 학교알리미 2026년 5월 공시'),
+         ['주공 5단지는 신천초 구역', ('그리고 리센츠 단지의 잠신초와', '교육부 학구도 안내서비스(단지 대표 지번 1곳) · 학교알리미 2026년 5월 공시 · 서울대곡초(은마) 1,174명 · 서울대치초(래미안대치팰리스) 1,316명 · 서울서원초(반포미도) 1,614명'), '원베일리는 잠원초 구역'], icon='School', src='교육부 학구도 안내서비스 · 학교알리미 2026년 5월 공시'),
     broll(5349092, ['학교 크기는 좋다 나쁘다가', '학교가 왜 이렇게 크고'], '학교 크기는 미리 아는 재료'),
     rows('아이가 있다면', [['동 주소로 학구도 직접', 'schoolzone.emac.kr'], ['계성초', '사립 · 통학구역 없음', R, 1]], ['그래서 아이가 있다면', ('그리고 원베일리 근처 계성초는', '계성초등학교 사립 — 통학구역 없음 · 학구도 schoolzone.emac.kr')], icon='School', src='교육부 학구도 안내서비스'),
     # ── 7. 정리 ──
@@ -181,6 +220,8 @@ scenes = [
     broll(31251627, ['전세를 끼고 사는 건 막혀'], '예외는 집 없는 사람만'),
     big('④ 25억 넘는 집', '대출 2억', '리센츠를 사려 해도 22억 넘게 더', ['25억이 넘는 집은 대출이'], icon='Landmark', c=R),
     ask('파이어맵 카페', '세 동네 단지 전체 표는 카페에', 'cafe.naver.com/firemap · 설명란 주소 · 계산·비교 자료이며 매수·매도 권유가 아닙니다', ['세 동네 단지 전체 표는', '여러분이 이 동네를 보면서']),
+    live(5562942, ['같은 동네 이름 아래에서도'], start=20, pause=105),   # 숨 쉴 하늘(견본 끝) + 마음 닫는 줄(youtube-loop 16:53, editor 17:10 서명) — 말 뒤 3.5초 쉼
+    brand(['수요일 오전 11시 반에는'], '수요일 오전 11시 반 · 양도세'),   # 10/18 고정 맺는 말 — 10/21 T-1
 ]
 short = []
 for s in scenes:
@@ -190,24 +231,43 @@ for s in scenes:
         if d['_need'] > d['_have'] + 0.5: short.append((d['src'], d['_need'], d['_have']))
         d.pop('_need'); d.pop('_have')
 assert not short, ('실사 클립이 말보다 짧다', short)
-assert len(USED) == len(ALL), ('안 쓴 줄', [ALL[i]['text'][:24] for i in range(len(ALL)) if i not in USED])
-order = [l['i'] for s in scenes for l in s['lines']]
+UNUSED = [ALL[i]['text'][:24] for i in range(len(ALL)) if i not in USED]
+if DRAFT: print('DRAFT(녹음 전, 소리 없음):', len(DRAFT), '줄 ·', ' / '.join(x[:16] for x in DRAFT), '· 안 쓴 옛 녹음:', UNUSED)
+else: assert not UNUSED, ('안 쓴 줄', UNUSED)
+order = [l['i'] for s in scenes for l in s['lines'] if l['i'] is not None]
 assert order == sorted(order), ('줄 순서', [(ALL[a]['text'][:14], ALL[b]['text'][:14]) for a, b in zip(order, sorted(order)) if a != b][:2])
 scenes[-1]['frames'] += TAIL
 for s in scenes:
     for l in s['lines']: l.pop('i')
 
+# 답 열기(rv, 견본 방식): 큰 값에 숫자가 있으면 말에서 그 숫자(앞 숫자가 같은 것, 없으면 마지막 숫자)가 나오는 자리까지 '?'
+NUM = re.compile(r'\d[\d,.]*')
+def rv_of(lines, v):
+    lead = (NUM.search(v) or [None])[0] if NUM.search(v) else None
+    a = 0; hits = []
+    for l in lines:
+        for m in NUM.finditer(l['text']): hits.append((a + int(l['frames'] * m.start() / max(1, len(l['text']))), m.group()))
+        a += l['frames']
+    if not hits: return None
+    same = [h for h in hits if lead and h[1].split('.')[0].replace(',', '') == lead.split('.')[0].replace(',', '')]
+    return (same[0] if same else hits[-1])[0]
+for s in scenes:
+    d = s['data']
+    if s['kind'] == 'big' and re.search(r'\d', d.get('v', '')):
+        r = rv_of(s['lines'], d['v']); d['rv'] = max(12, min(r if r is not None else 12, s['frames'] - 45))
+    elif s['kind'] == 'pair' and len(s['lines']) == 1:
+        r = rv_of(s['lines'], d['v2']); d['rv'] = max(int(s['lines'][0]['frames'] * 0.45), r or 0)
 run = mx = live = brk = 0; tot = sum(s['frames'] for s in scenes); RUNS = []; grp = []
 for s in scenes:
-    if s['kind'] == 'broll': live += s['frames']
-    if s['kind'] in ('broll', 'pic', 'ask'):
+    if s['kind'] in ('broll', 'live'): live += s['frames']
+    if s['kind'] in ('broll', 'pic', 'ask', 'live', 'brand'):
         if run / FPS > 19.5: RUNS.append((round(run / FPS, 1), grp))
         run = 0; grp = []; brk += 1
     else: run += s['frames']; mx = max(mx, run); grp.append(s['data'].get('title'))
 if run / FPS > 19.5: RUNS.append((round(run / FPS, 1), grp))
 assert not RUNS, RUNS
 
-SKIP = {'audio', 'src', 'license', 'kind', 'icon', 'c', 'c1', 'c2', 'from', 'at2', 'max', 'side', 'hot', 'dir'}
+SKIP = {'rv', 'past', 'who', 'part', 'beats', 'seed', 'audio', 'src', 'license', 'kind', 'icon', 'c', 'c1', 'c2', 'from', 'at2', 'max', 'side', 'hot', 'dir'}
 def strings(x):
     if isinstance(x, dict):
         for k, v in x.items():

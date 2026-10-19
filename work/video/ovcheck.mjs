@@ -33,7 +33,8 @@ if (rangeArg) { const [a, b] = rangeArg.split('-').map(Number); frameRange = [Ma
 try {
   await renderFrames({
     composition: comp, serveUrl, inputProps: props, outputDir: tmp, imageFormat: 'jpeg', jpegQuality: 30, scale: 0.25,
-    everyNthFrame: every, frameRange, onStart: () => {}, onFrameUpdate: () => {},
+    everyNthFrame: every, frameRange, timeoutInMilliseconds: 120000, concurrency: 2,   // 10/19 PD: PC가 바쁠 때 실사 영상 한 프레임 꺼내기가 28초를 넘어 H-2 겹침 검사가 죽음 — 기다림을 2분으로
+    onStart: () => {}, onFrameUpdate: () => {},
     onBrowserLog: (l) => { if (l.text.startsWith('OVPROBE ')) logs.push(JSON.parse(l.text.slice(8))); },
   });
 } finally {

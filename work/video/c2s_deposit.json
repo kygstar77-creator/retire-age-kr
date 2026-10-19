@@ -1,0 +1,285 @@
+{
+ "fps": 30,
+ "name": "c2s_deposit",
+ "v": 2,
+ "look": "live",
+ "question": [
+  "3억, 매달 200만원",
+  "예금이면 더 오래 갔을까"
+ ],
+ "hot": "예금",
+ "answer": {
+  "label": "가상 인물 정우 씨 · 1998년 1월 시작",
+  "items": [
+   "S&P500 2011년 바닥",
+   "예금 2018년 바닥"
+  ],
+  "arrow": false,
+  "note": "2003년 시작이면 반대 — S&P500이 남음"
+ },
+ "base": "한국은행 정기예금 금리 · S&P500 총수익 · 한국은행 환율 · 물가 미반영 · 지나간 기록",
+ "long": "SGx7UD-6RNE",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "예금 통장이 바닥난 해",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "예금 통장 바닥",
+      "2018년 1월",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "S&P500은 바닥",
+      "2011년",
+      "",
+      119,
+      "ink"
+     ]
+    ],
+    "side": [
+     "일곱 해 더",
+     180,
+     "예금이 더 간 기간"
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "같은 규칙이면, 예금 통장은 2018년 1월에 바닥났습니다.",
+     "audio": "audio/c-2/99a77778025a1d0c.wav",
+     "frames": 119
+    },
+    {
+     "n": 2,
+     "text": "2011년에 바닥난 정우 씨보다 일곱 해를 더 간 거예요.",
+     "audio": "audio/c-2/215aa91569895926.wav",
+     "frames": 118
+    }
+   ],
+   "frames": 237
+  },
+  {
+   "kind": "vs",
+   "label": "왜 예금이 이겼나",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "그동안 지수는",
+      "하락",
+      "",
+      300,
+      "ink"
+     ],
+     [
+      "2025년 1월 금리",
+      "3%대",
+      "",
+      470,
+      "ink"
+     ]
+    ],
+    "side": [
+     "15% 넘음",
+     120,
+     "1998년 예금 금리"
+    ]
+   },
+   "lines": [
+    {
+     "n": 3,
+     "text": "왜 예금이 이겼을까요? 정우 씨가 시작한 1998년, 예금 금리가 15%를 넘었기 때문이에요.",
+     "audio": "audio/c-2/f678de1c48ce96af.wav",
+     "frames": 205
+    },
+    {
+     "n": 4,
+     "text": "그 뒤 세 해도 금리가 높은 편이었어요. 그동안 지수는 떨어지고 있었고요.",
+     "audio": "audio/c-2/b627f960b9f30ff4.wav",
+     "frames": 163
+    },
+    {
+     "n": 5,
+     "text": "외환위기 때라 은행 이자가 아주 높았던 거죠. 지난해 1월 금리는 3%대였어요.",
+     "audio": "audio/c-2/528d2c85a3a90d3b.wav",
+     "frames": 164
+    }
+   ],
+   "frames": 532
+  },
+  {
+   "kind": "vs",
+   "label": "2003년에 시작했다면",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "2003년 시작이면",
+      "반대",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "예금은 바닥",
+      "2019년",
+      "",
+      98,
+      "ink"
+     ]
+    ],
+    "side": [
+     "2억 7천만원",
+     214,
+     "S&P500은 남음"
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "민수 씨처럼 2003년에 시작했다면 반대였습니다.",
+     "audio": "audio/c-2/1ae30bdae41274d7.wav",
+     "frames": 98
+    },
+    {
+     "n": 7,
+     "text": "예금은 2019년에 바닥났어요. S&P500 쪽은 지난해 말 2억 7천만원이 남았고요.",
+     "audio": "audio/c-2/4021be57b6df8026.wav",
+     "frames": 196
+    }
+   ],
+   "frames": 294
+  },
+  {
+   "kind": "vs",
+   "label": "가른 건 시작한 해",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "1998년 예금 이자",
+      "15% 넘음",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "2003년 예금 이자",
+      "5% 안 됨",
+      "",
+      96,
+      "ink"
+     ]
+    ],
+    "side": [
+     "시작한 해",
+     150,
+     "둘을 가른 것"
+    ]
+   },
+   "lines": [
+    {
+     "n": 8,
+     "text": "1998년엔 예금 이자가 15%를 넘었고, 2003년엔 5%가 안 됐어요.",
+     "audio": "audio/c-2/4f61c750ae536206.wav",
+     "frames": 167
+    }
+   ],
+   "frames": 167
+  },
+  {
+   "kind": "vs",
+   "label": "계산에서 뺀 것",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "이자 세금",
+      "지금 세율로",
+      "",
+      60,
+      "ink"
+     ],
+     [
+      "건보료",
+      "안 넣음",
+      "",
+      150,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 9,
+     "text": "조심할 점이 있어요. 예금 계산도 단순하게 했어요. 이자 세금을 지금 세율로 통일했고, 건보료는 넣지 않았습니다.",
+     "audio": "audio/c-2/d0c31e09fb2757b3.wav",
+     "frames": 206
+    }
+   ],
+   "frames": 242
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/c2/31602655.mp4",
+   "from": 0,
+   "frames": 119,
+   "start": 0
+  },
+  {
+   "src": "bg/c2/34282980.mp4",
+   "from": 119,
+   "frames": 118,
+   "start": 0
+  },
+  {
+   "src": "bg/c2/12033695.mp4",
+   "from": 237,
+   "frames": 205,
+   "start": 1
+  },
+  {
+   "src": "bg/c2/6785719.mp4",
+   "from": 442,
+   "frames": 163,
+   "start": 2
+  },
+  {
+   "src": "bg/c2/7118320.mp4",
+   "from": 605,
+   "frames": 164,
+   "start": 1
+  },
+  {
+   "src": "bg/c2/6219901.mp4",
+   "from": 769,
+   "frames": 98,
+   "start": 3
+  },
+  {
+   "src": "bg/c2/12412380.mp4",
+   "from": 867,
+   "frames": 196,
+   "start": 1
+  },
+  {
+   "src": "bg/c2/6651088.mp4",
+   "from": 1063,
+   "frames": 167,
+   "start": 0
+  },
+  {
+   "src": "bg/c2/5562942.mp4",
+   "from": 1230,
+   "frames": 242,
+   "start": 4
+  }
+ ],
+ "credits": "12033695 Towfiqu barbhuiya · 12412380 Towfiqu barbhuiya · 31602655 Just For Music And Film · 34282980 Just For Music And Film · 5562942 Daniel Qura · 6219901 Monstera Production · 6651088 https://kaboompics.com/ · 6785719 Marcus Aurelius · 7118320 cottonbro studio (Pexels License)"
+}

@@ -1,0 +1,38 @@
+{
+ "name": "c2s_deposit",
+ "ep": "C-2",
+ "from_long": "SGx7UD-6RNE",
+ "mp4": "work/video/out/c2s_deposit_ds.mp4",
+ "publishAt": "2026-10-21T17:20:00+09:00",
+ "publish_plan": "2026-10-21 17:20 (쇼츠 하루 3편 셋째 칸 · 같은 날 07:20 h1s_helio=H-1·19:20 p1s_step=P-1과 다른 롱폼·다른 질문 · c2s_jungwoo(10/20 17:20, 같은 C-2)와 다른 질문)",
+ "title": "퇴직금 3억 예금 vs S&P500, 먼저 바닥난 쪽은? #shorts",
+ "description": "전체 계산: https://youtu.be/SGx7UD-6RNE\n\n가상 인물 정우 씨가 1998년 1월 퇴직금 3억으로 매달 200만원씩 꺼내 썼다고 치고 계산했어요(1월에 1년 치).\nS&P500에 넣었다면 2011년 1월, 은행 정기예금이었다면 2018년 1월에 바닥. 예금이 일곱 해 더 갔습니다.\n그해 예금 금리는 15%를 넘었고(외환위기), 그동안 지수는 떨어지고 있었거든요.\n2003년에 시작했다면 반대입니다. 예금은 2019년에 바닥났고, S&P500 쪽은 지난해 말 2억 7천만원이 남았죠.\n가른 건 상품보다 시작한 해. 물가는 계산에 넣지 않았습니다.\n지나간 기록이고, 투자 권유가 아닙니다.\n\n출처: 한국은행 정기예금 금리(해마다 1월) · S&P500 총수익 지수 · 한국은행 원/달러 환율 · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — 12033695 Towfiqu barbhuiya · 12412380 Towfiqu barbhuiya · 31602655 Just For Music And Film · 34282980 Just For Music And Film · 5562942 Daniel Qura · 6219901 Monstera Production · 6651088 https://kaboompics.com/ · 6785719 Marcus Aurelius · 7118320 cottonbro studio\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #퇴직금 #예금",
+ "tags": "퇴직금,정기예금,S&P500,은퇴자금,노후자금",
+ "layout": "m1clip",
+ "look": "live",
+ "title_review": {
+  "gemini": {
+   "model": "gemini-flash-lite-latest (3.8-flash·flash-latest 429, 3.1-flash-lite 503)",
+   "A": 8,
+   "B": 9,
+   "C": 6,
+   "file": "title_gemini.json"
+  },
+  "redteam": {
+   "B": 8,
+   "note": "B '먼저 바닥난 쪽은?'은 답이 시작한 해에 따라 갈려 영상이 두 경우를 다 보여 줌 — 낚시 아님. 제미나이 fix '잔액이 먼저 0원이 된 해는?'은 '해' 하나로 답할 수 없어 버림"
+  },
+  "avg": 8.5
+ },
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "EtUdpU9YRhs",
+ "uploaded_at": "2026-10-20 03:42:12",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-21T08:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

@@ -1,0 +1,10 @@
+저장 C:\Users\강영준\Documents\GitHub\retire-age-kr\work\research\longform\breakdown\Juq9176vPGc_transcript.txt 9548
+저장 C:\Users\강영준\Documents\GitHub\retire-age-kr\work\research\longform\breakdown\Juq9176vPGc_break.md 3682
+저장 C:\Users\강영준\Documents\GitHub\retire-age-kr\work\research\longform\breakdown\9C7_sKVcPiQ_transcript.txt 13096
+  gemini-3-flash-preview 429
+  gemini-3.8-flash 429
+  gemini-3.7-flash 503
+저장 C:\Users\강영준\Documents\GitHub\retire-age-kr\work\research\longform\breakdown\9C7_sKVcPiQ_break.md 9684
+  gemini-3-flash-preview 429
+저장 C:\Users\강영준\Documents\GitHub\retire-age-kr\work\research\longform\breakdown\uexVFvekD3s_transcript.txt 6780
+저장 C:\Users\강영준\Documents\GitHub\retire-age-kr\work\research\longform\breakdown\uexVFvekD3s_break.md 2804

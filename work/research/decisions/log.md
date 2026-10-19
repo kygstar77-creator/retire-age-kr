@@ -2558,3 +2558,6 @@
 2026-10-19 21:53 · firemap-watchdog · 메우지 않음(카페 1분 전 발행·대기 3·블로그 STOP) · write-b 맥박 '멈춤? 291분'은 세션 isRunning false(마지막 활동 20:27)라 끊을 것 없음 — end 맥박 누락으로 기록 · 로그인됨
 2026-10-19 21:56 · firemap-write · h2cafe1019 관문 통과·10/20 09:10 칸 배정(gates_ok 21:51) · H-2 영상 공개 전 짝 글, 레드팀 틀림3 반영·이해 시험 3차 통과
 2026-10-19 22:20 · firemap-video-producer · 쿠팡 링크 전수(169편): D-1 GMc2Rd1-JYA·A-1 SCOI0DP-l-s·scV67BQvC4Q(옛 롱폼 '5억이면 충분합니다', 지시 밖 같은 위반) 3편, 쇼츠 0 · 세 편 다 설명란에서 빼기로 결정(공정위 Ⅴ.6·A-31, 영상 안 자막 없음) — 무인 권한 분류기가 videos.update 거부해 실행은 순돌이 채팅 몫(coupang1019/strip.py) · 근거 longform/loop/coupang1019/census.json
+2026-10-19 23:07 · firemap-write-b · 22:40 칸 TBD·비축0 → 새 편 govbond1019(개인투자용 국채 중도환매) 관문 통과·발행 시작 · 오늘 빈 장르(채권), 월 검색 4,660, 우리 글 0편 · 제미나이 503으로 thumbpair 대신 Agent 짝 비교 2번
+2026-10-19 23:15 · firemap-video-producer · H-2 업로드 손 안 댐(21:11 PD 회차 렌더 3토막 진행 중) · 한 편 한 회차 규칙, 설명란 한 줄은 meta에 이미 반영
+2026-10-19 23:15 · firemap-video-producer · 10/21 17:20 쇼츠 = c2s_deposit(C-2 예금 vs S&P500 51초) · 같은 날 다른 롱폼·질문, c2s_jungwoo와 질문 다름, 새 숫자 0

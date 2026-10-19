@@ -1,0 +1,18 @@
+[gemini-3.5-flash-lite 2026-10-20 06:44 — OpenAI 키 없어 Gemini가 사실 대조]
+1) 
+2) 
+- 키움투자자산운용 KIWOOM 국고채10년(148070) 상품 페이지: 확인 불가
+- 미래에셋자산운용 TIGER 국채3년(114820) 상품 페이지: 확인 불가
+- 미래에셋자산운용 TIGER 단기통안채(157450) 상품 페이지: 확인 불가
+- 한국은행 ECOS 817Y002 시장금리(일별)(https://ecos.bok.or.kr): 확인 불가
+- 한국은행 ECOS 722Y001 기준금리(https://ecos.bok.or.kr): 확인 불가
+- Yahoo Finance chart API(https://query1.finance.yahoo.com/v8/finance/chart/148070.KS): 확인 불가
+- 네이버 증권 ETF 분석(https://m.stock.naver.com/api/stock/148070/etfAnalysis): 확인 불가
+- 국가법령정보센터 소득세법 제17조제1항제5호(https://www.law.go.kr/법령/소득세법/제17조): 확인 불가
+- 국가법령정보센터 소득세법 제129조(https://www.law.go.kr/법령/소득세법/제129조): 확인 불가
+- 국가법령정보센터 소득세법 시행령 제26조의2(https://www.law.go.kr/법령/소득세법시행령/제26조의2): 확인 불가
+- 한국은행 금융통화위원회 2026년 제16차 의사록(https://eiec.kdi.re.kr/policy/materialView.do?num=286868): 확인 불가
+
+AI가 쓴 것 같은 어색한 문장:
+"금리가 오르면 예금은 반갑지만, 이미 산 채권은 가격이 내려갑니다."
+"지난 1년이 딱 그랬는데, 채권 ETF마다 성적은 꽤 갈렸어요."

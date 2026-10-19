@@ -1,0 +1,5 @@
+# 자체 검증 (제미나이 할당량 없을 때 쓰는 대체 검증)
+# 묶음: bondetf1020 · 종류: cafe · 문장 50개 · 기준 출처: cafe_style/benchmark_2026-09-23.md
+
+[중복] 전체 — "채권" 이미 씀 ← CMA 통장에 퇴직금 넣어도 될까? 예금자보호 안 되는 이유 https://cafe.naver.com/firemap/304 (본문에 7번) — 각도가 다른지 보고, 같으면 hold.txt
+[중복] 전체 — "채권" 이미 씀 ← 정기예금 금리 1억 맡기면 세후 이자 작년보다 얼마 늘었나 https://cafe.naver.com/firemap/244 (제목·첫 조각에 있음) — 각도가 다른지 보고, 같으면 hold.txt

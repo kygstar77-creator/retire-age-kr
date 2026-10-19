@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-20 06:38",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "채권 ETF/만기 따라 갈린 1년",
+ "num": "10년물 -6% · 단기채 +2%",
+ "sub": "3년·10년 금리 똑같이 1.3%p 올랐는데",
+ "label": "국고채·통안채 ETF · 10월 19일 종가",
+ "src": "",
+ "icon": "arrow-down-up",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "navy",
+ "topic_px": 119,
+ "num_px": 81,
+ "sub_px": 55,
+ "board": [
+  "govbond1019",
+  "dep13y1019",
+  "avgmid1019",
+  "kospioct1019",
+  "directdeal1019",
+  "c2cafe1019",
+  "cafenotice1018",
+  "ubfraud1019",
+  "tsla1019",
+  "yeoui1019"
+ ]
+}

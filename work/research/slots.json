@@ -1961,7 +1961,8 @@
    "item": "npsfund1019",
    "owner": "firemap-write",
    "gates_ok": "2026-10-19 18:56",
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) | firemap-write 18:56: npsfund1019 '국민연금 수익률 38년, 기금 손실이 내 연금액을 줄일까?'(세금연금, 오늘 이슈 한경 182조 보도) 관문 통과"
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) | firemap-write 18:56: npsfund1019 '국민연금 수익률 38년, 기금 손실이 내 연금액을 줄일까?'(세금연금, 오늘 이슈 한경 182조 보도) 관문 통과",
+   "published": "https://cafe.naver.com/firemap/333 06:41 verify OK 1672자"
   },
   {
    "at": "2026-10-20 07:20",
@@ -2009,10 +2010,10 @@
   {
    "at": "2026-10-20 12:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "bondetf1020",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 건강보험 피부양자(10,980) → https://firemap.kr/health-insurance — 글 질문이 계산기와 맞을 때만 줄 넣기"
+   "gates_ok": "2026-10-20 06:45",
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 건강보험 피부양자(10,980) → https://firemap.kr/health-insurance — 글 질문이 계산기와 맞을 때만 줄 넣기 | firemap-write 06:45: bondetf1020 '채권 ETF 금리 오른 1년, 장기채만 크게 잃은 이유'(ETF·형식2) 관문 통과 — ECOS 817Y002·운용사 듀레이션(키움 10/19 7.694·미래에셋 10/16)·소득세법 원문 10/20 다시 확인 · 레드팀 틀림0·오해11·권유2 반영 · 이해 시험 3차(40·50·60세) 심각0 · editgate auto · 계산기 줄 없음(맞는 계산기 없음)"
   },
   {
    "at": "2026-10-20 13:40",

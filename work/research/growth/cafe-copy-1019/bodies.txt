@@ -1,0 +1,357 @@
+
+== wecando7 11728194 R 499 C 6 [제안/자유게시판] 신용카드 할부현금화 돼요?
+  chars 441 lines 22 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 0
+  SEQ text
+  HEAD 신용카드현금화 정확히 어떤 건지 아시는 분 계신가요? | ​ | 카페 글을 보다가 신용카드현금화라는 말을 처음 봤는데 정확히 어떤 방식인지 잘 모르겠네요. | ​
+  TAIL 문제시 삭제함여 | ​ | ​ | ​
+  CMT 흠 잘은 모르겠는데 신뭐더라 유명한곳이 있긴했다 들었어요 제가 해보진 않 | 저 매달 급할 때 쓰는곳 있는데 핸드폰 성지처럼 신용카드 관련 아는사람은 | 신용카드든 뭐든 현금화 하는게 잘 알아보고 해야할거예요 윗분 말씀처럼 성 | 신용카드로 할부 하는얘기인가요? 뭔소린지를모르겠는데요 | 안녕하세요
+
+== wecando7 11728121 R 1241 C 6 [우리동네 맛집] 청주 찐현지인 맛집 청주 송가네
+  chars 791 lines 34 imgTags 9 tables 0 firstImg 1 / 15 comp {'se-text': 7, 'se-image': 8} writerRep 0
+  SEQ text image text image text image text image text image text image image image text
+  HEAD 안녕하세유~ ㅋㅋ | 제가 평소 친구들에게 고기 러버로 엄청 유명한데용 | 그래서 저희 동네 맛집들은 훤히 꿰고 있는데 | 이번에 청주에서 저희 어머니 단골 청주 맛집을 방문하게 됐는데
+  TAIL 쫄깃한 음식들 아예 못드셨는데 가장 먹고 싶은게 족발이라고하셔서 | 이번에 어머니 단골집 방문하게 됐는데 | 개인적으로 어머니보다 제가 더 맛있게 먹었던것 같아요 ㅋㅋㅋ | ​
+  CMT 한동네에서 40년이면 ㅎㄷㄷ한 근본 맛집인데용? ㅋㅋ | 청주 사시나봐요 ㅎㅎ 저도 청주 출장을 자주가서 반가운 마음에 댓글달아요 | 오홍 배달어플에도 없는 족발집이라니 진짜 특이하네요 ㅋㅋ 근데 어플에 등 | ㅋㅋ 진짜 상이 뭔가 옛날집가면 있는 그런 정겨운 상이네요 저 매운거 잘 | 저도 본가가 청주라서 다음달에 내려가는데 그때 부모님에게 청주 송가네 아
+
+== wecando7 11727773 R 268 C 4 [제안/자유게시판] 사무직은 움직일 일이 넘 없는거같아요
+  chars 468 lines 26 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 2
+  SEQ text
+  HEAD 나이라도 젊을 땐 많이 안 움직여도 | 면역력 떨어진다거나 컨디션 안 좋아진다거나 | 그런게 잘 없었는데 요샌 따로 운동을 안하니까.. | 기운도 없고 그러네요
+  TAIL ------------------------ | ​ | 월급쟁이부자들은 월급쟁이들의 내집마련과 행복한 노후를 돕습니다. | 원하는 목표 꼭 이룰 수 있도록 월부가 함께 하겠습니다.
+  CMT 저도 사무직 일하다보니 움직임도 적고 활동량 줄어들더라구요 퇴근 아무리  | [W]네네 감사합니다!! 참고할게요 | 공감하고 갑니다^^ 요즘은 젖산마그네슘 들어간 마그네슘이라도 따로 챙겨먹 | [W]달라지는 게 체감되시나 보네요ㅠ 마그네슘.. 추천 감사합니다
+
+== wecando7 11727441 R 179 C 6 [우리동네 맛집] 저의 단골맛집 인천 용현동 근처 삼겹살집 공유해볼게용~
+  chars 1058 lines 54 imgTags 11 tables 0 firstImg 1 / 22 comp {'se-text': 11, 'se-image': 10, 'se-places': 1} writerRep 0
+  SEQ text image text image text image text image image text image text image text image text image text image text places text
+  HEAD 안녕하세요 ㅎㅎ | 저랑 젤 친한친구중 한명이 인하대쪽(용현동)으로 이사가서 | 저도 종종 놀러가곤 하는데요 | ​
+  TAIL ​ | 돼꺽정 주안본점 | 인천광역시 미추홀구 미추홀대로734번길 26-1 1층 | ​
+  CMT 마시써보이네용 ㅋㅋ 인천가게되면 가볼게융 저도 스모키한향 좋아해서 | 미나리 그냥 주는 고기집 귀하네여 ㅋㅋ 인천 용현동 자주가는 동네는 아니 | 가성비두 갠찮아 보이고 상차림도 깔끔하게 잘나오네요 맛집 맞는듯 ㅇㅈㅇㅈ | 먹음직스럽네요 인천 용현동 맛집 인정이용 ㅋㅋ | 맞나보이네요 저도 미나리 +삼겹살 조합 너무 좋아하는 1인이라서 ㅋㅋ 군
+
+== wecando7 11725749 R 242 C 15 [[수다] 행복한 수다방] 청담피부과 스킨부스터 관리 받고왔어요
+  chars 1551 lines 100 imgTags 3 tables 0 firstImg 0 / 6 comp {'se-image': 2, 'se-text': 3, 'se-places': 1} writerRep 3
+  SEQ image text image text places text
+  HEAD 청담피부과 스킨부스터 관리 받고왔어요! | ​ | 이번에 엄마랑 같이 청담동피부과 다녀왔어요ㅎㅎ | ​
+  TAIL ------------------------ | ​ | 월급쟁이부자들은 월급쟁이들의 내집마련과 행복한 노후를 돕습니다. | 원하는 목표 꼭 이룰 수 있도록 월부가 함께 하겠습니다.
+  CMT 어머~ 어머님이랑 같이 피부관리라니ㅠㅠ 사이가 넘 좋으시네요! 피부도 사 | [W]ㅎㅎ 엄마가 좋아하시더라구요~ 딸이랑 같이 관리받았다고 여기저기 자랑하셨 | 엄마랑 같이 피부 관리받으러 가셨다니 보기 좋네요ㅎㅎ 청담피부과 알아보면 | 헐! 조만간 저희 엄마 생신이어서 생일선물 뭐하지 했는데.,.,..!!  | [W]생신선물로 짜짠하는 것도 좋은 생각이네요!! 확실히 엄마들은 딸이 있어야
+
+== wecando7 11721396 R 1883 C 4 [제안/자유게시판] 삼성전자 주가 전망 2026 목표주가 배당금 실적 주가 하락 이유
+  chars 1810 lines 97 imgTags 6 tables 3 firstImg 3 / 13 comp {'se-text': 7, 'se-table': 3, 'se-image': 3} writerRep 0
+  SEQ text table text image text table text image text table text image text
+  HEAD 삼성전자 주가 전망 2026 목표주가 배당금 실적 주가 하락 이유 | 삼성전자 주가가 최근 다시 조정을 받으면서 | 지금이 저점인지, 목표주가는 얼마인지 관심이 커지고 있습니다. | 실적 자체는 역대급 수준이지만 주가는 실적만으로 움직이지 않는 만큼
+  TAIL 순서로 보는 것이 좋습니다. | 현재 실적은 강하지만 최근 주가가 많이 오른 만큼 단기 변동성도 커진 상태입니다. 따라서 현재 가격이 비싼지 싼지는 PER·P | ※ 본 글은 투자 권유가 아닌 정보 제공 목적이며 투자 판단과 책임은 투자자 본인에게 있습니다. | #삼성전자 #삼성전자주가 #삼성전자주가전망 #삼성전자목표주가 #삼성전자배당금 #삼성전자실적 #삼성전자하락이유 #HBM #반도체
+  CMT 저도 궁금하네요! | 목표주가가 현재가보다 높다고 무조건 상승하는 것은 아니니, 실적 전망과  | 자사주 매입 종료가 수급에 미칠 영향도 생각해 볼 만하군요. 주주환원 정 | 배당을 꾸준히 받으면서 장기적으로 볼지, 단기 조정을 기다릴지 고민되네요
+
+== jaegebal 6503543 R 13663 C 109 [자유로운글(사는 이야기] 리모델링 아파트를 권하지 않았던 이유
+  chars 5938 lines 764 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 5
+  SEQ text
+  HEAD 리모델링 아파트를 권하지 않는 이유 | - 신축도 구축도 아닌 집 - | ​ | ​
+  TAIL ​ | - 다시 지을 수 없는 집은 위가 막혀 있소 - | ​ | 천마도사
+  CMT 야르 | [W]아이고 빠르오  금메달 고맙소 야르가 뭔 말이오 ㅎ | 기분좋다 그런겁니다 도사님 | 2 아쉽ㅜㅜ | [W]코플상 항상 빠름 고맙소 은메달이오
+
+== jaegebal 6501876 R 11574 C 32 [자유로운글(사는 이야기] 2050년에 한국은 이렇게된답니다ㄷㄷㄷㄷ
+  chars 2172 lines 67 imgTags 7 tables 0 firstImg 1 / 14 comp {'se-text': 7, 'se-image': 6, 'se-oglink': 1} writerRep 3
+  SEQ text image text image text image image text image text image text oglink text
+  HEAD ​ | 1인 가구 비중은 지금과 별반 차이가 없는데 | 65세 비중은 두배 이상이네요 | 그러다보니 노년 부양비도 늘어나고
+  TAIL ​ | ​ | ​ | ​
+  CMT 지금 성인들이야 그때되면 다 같은 노년이라 그렇다치지만.. 미래세대가 참 | 미래가 어떻게 될런지 AI와 경쟁도 해야 되는 업종들도 많고 | 제일 무서운점이 내 아이생각하면 다들 걱정하는데.. 정치에서는 청년알빠없 | 좋은글이네요 미래전망 | 2050년 되면 인구 2억명 넘음 중ㄱ인들 들어와서 나라이름도 바뀔거같은
+
+== jaegebal 6500758 R 7204 C 47 [§부동산스터디(통합)§] [속보] 올림픽훼밀리타운, 마침내 정비구역 지정! 재건축의 법적 기반 마련
+  chars 1957 lines 108 imgTags 6 tables 0 firstImg 0 / 17 comp {'se-image': 3, 'se-text': 8, 'se-oglink': 2, 'se-horizontal': 3, 'se-material': 1} writerRep 0
+  SEQ image text oglink text image text horizontal text horizontal text horizontal text image text oglink material text
+  HEAD 안녕하세요, 꼼돌입니다! | 드디어 이 소식을 전하게 됐습니다! | [속보] 올림픽훼밀리, 설계사 '해안건축' 극적 확정, 연내 창립총회 직행! | 안녕하세요, 꼼돌입니다. 마침내 8월 22일(토) 제2차 주민총회에서 올림픽훼밀리의 재건축 설계사 선정이 성공적으로 잘 마무리
+  TAIL olympicfamilytown.com | 올림픽훼밀리타운 | 재건축25억~39억1988.12.21. | ​
+  CMT 너무 축하할일이네요!! | 꼼돌님 글로 다시 보니 더 벅차네요 모두 수고하셨고 앞으로도 차근차근 단 | 멋집니다! | 축하합니다~~~ | 꼼돌님 늘 발 빠르게, 정성스러운 글 올려주셔서 감사합니다! 앞으로도 더
+
+== jaegebal 6500694 R 8087 C 35 [용산구 부동산] 푸르지오를 떼던 사람들이, 이제 써밋도 부족하다고 한다
+  chars 4894 lines 194 imgTags 10 tables 1 firstImg 0 / 40 comp {'se-image': 7, 'se-text': 14, 'se-horizontal': 8, 'se-quotation': 7, 'se-table': 1, 'se-oglink': 3} writerRep 5
+  SEQ image text image text horizontal quotation image text horizontal quotation text table text horizontal quotation image image text horizontal quotation image text horizontal quotation image
+  HEAD 2018년 가을, 서울 서초구의 한 신축 아파트 꼭대기에서 '푸르지오'라는 글자가 사라졌다. | ​ | 입주자모집공고문에는 분명 '반포센트럴 푸르지오써밋'이라고 적혀 있었다. | 하지만 준공 후 옥상에는 '써밋'만 큼지막하게 남았다.
+  TAIL 대우건설의 굴욕? 반포푸르지오써밋, 푸르지오 뗀 이유는 | 대우건설의 아파트 브랜드 푸르지오가 강남권 한 아파트 단지명에서 슬그머니 사라졌습니다. 15년된 낡은 이미지 탓에 집값이 20 | www.sentv.co.kr | ​
+  CMT 써밋을 시작으로 이런 요구가 계속 나오겠네요. 르엘, 아크로, 디에이치  | [W]타 브랜드도 그렇지만 이번 한남2 일을 계기로 써밋은 더욱 더 난처해진  | 광주에도 디에이치 생기는 마당이라 하이엔드 브랜드의 예견된 숙명일듯 싶네 | [W]네 호반건설도 마음에 많이 걸렸는지 결국 이번에 네이밍이랑 로고도 일부  | [W]정작 써밋이라는 이름은 호반이 먼저 썼는데 상당히 억울할 듯 합니다.
+
+== jaegebal 6498391 R 8075 C 57 [양천구 부동산] 목동13단지 삼성 티저 보니까 자신감 있을 만하네ㄷㄷ
+  chars 235 lines 15 imgTags 16 tables 0 firstImg 1 / 18 comp {'se-text': 2, 'se-image': 16} writerRep 2
+  SEQ text image image image image image image image image image image image image image image image image text
+  HEAD 삼성 드디어 13단지 티저 영상 공개!!! | 제안한 네이밍은 래미안 모브13(RAEMIAN MO:VE 13) | ​ | 사실 10단지 12단지 다 공개했는데
+  TAIL 래미안 정도면 브랜드 자체가 경쟁력 아닌가 싶음. | ​ | 이제 목동도 래미안 있는 동네가 되네ㅎㅎ | ​
+  CMT 삼성 도배 알바 | [W]님은 어디 알바신지 삼성글만 올리면 오시네요 | 모든 건설사들 알바 도배 글들을 다 증오하는 평범한 조합원임. | ㅋㅋㅋㅋㅋㅋㅋㅋ 알바 ㅋㅋㅋㅋㅋ | 목동이 다 좋아지네요~타단지도 화이팅입니다
+
+== jaegebal 6497715 R 19079 C 27 [▶내가 투자하고 싶은 ] 지금 무주택자고 현금 1억있으면 여기가 서울아파트 투자 마지막 기회같은데요?
+  chars 1019 lines 43 imgTags 3 tables 0 firstImg 1 / 7 comp {'se-text': 4, 'se-image': 3} writerRep 4
+  SEQ text image text image text image text
+  HEAD 현재 가용자금 1억 중반있고, 당장 입주안하고 1~2년 뒤 4억 대로 입주 가능하다면 여기 살펴보세요. | ​ | 지금 노도강이 오름세인데 저는 물리적인 입지로는 금관구가 훨씬 낫다고 봅니다. | 이 중 관악구는 오를거 다올라서 먹을거 없고 다음 타자인 금천구가 꿈틀대기 시작한것 같습니다.
+  TAIL ​ | 건영남서울 - 관악우방타운 이쪽이 그나마 평지인편이라 이쪽을 추천하긴합니다. | ​ | 시흥사거리역 도보권이나 미래 재건축 생각하면 건영이 낫긴하겠네요.
+  CMT 정보 감사합니다. 한번 살펴보겠습니다 | 시흥동도 중국인 많습니다 금천롯데캐슬1,2,3차 제외하곤 금천구 전체에  | [W]통계찾아보시면 빌라촌인 시흥1동 제외하고는 시흥동이 제일적어요.  롯 | 벽산아파트가 너무 고바위임. 지상 주차장에 서 있는데도 어지러운 아파트는 | [W]난곡선도 아시는군요. 난곡선되면 벽산처럼 고지대여도 괜찮죠.  근데 
+
+== onepieceholicplus 6204595 R 558 C 10 [[깔깔] 같이 웃자! ] 아빠랑 스피드 게임 대결하는 갱이씨 ㅋ
+  chars 0 lines 0 imgTags 0 tables 0 firstImg None / 1 comp {'se-video': 1} writerRep 1
+  SEQ video
+  HEAD 
+  TAIL 
+  CMT ㅋㅋㅋㅋ 😆 | 귀여워요 | ㅋㅋㅋㅋ 진짜 빨라짐 ㅋㅋㅋ 개 열받음ㅋㅋ | [W]개 빡침 ㅎ | 저도 남편이 보내줘서 봤는데 너무 귀여웠어요 ㅋㅋㅋㅋ 이름이 양갱일거에요
+
+== onepieceholicplus 6204353 R 521 C 62 [📢 공 지 사 항 (안] 10/20(화) [KODEX 웹세미나] 아직도 그냥 미국배당다우존스 하세요?
+  chars 515 lines 30 imgTags 1 tables 0 firstImg 3 / 5 comp {'se-text': 3, 'se-horizontal': 1, 'se-image': 1} writerRep 0
+  SEQ text horizontal text image text
+  HEAD [삼성 Kodex ETF 웹세미나 안내] | ETF 투자자를 위한 | 유튜브 라이브 웹세미나가 진행됩니다. | 다양하고 푸짐한 경품🎁도 준비되어 있으니
+  TAIL 성공 투자 함께 해요! | ​ | ​ | 많은 관심 부탁드립니다!
+  CMT 제목이 아주 구미땡기네요 참여해보께요 | 꼭 들어야겠네요 | 라이브 꼭 들을게요~ | 세미나 기대됩니다. 꼭 참석하겠습니다! | 시청할께요
+
+== onepieceholicplus 6203677 R 130 C 24 [[절약] 생활비 줄이기] 이현우 음악앨범에 아빠 사연이 당첨됐어요 🤣
+  chars 300 lines 27 imgTags 1 tables 0 firstImg 1 / 2 comp {'se-text': 1, 'se-image': 1} writerRep 5
+  SEQ text image
+  HEAD 저희 아빠 너무 웃겨요 😆 | ​ | 저희 엄마 루틴이 | 매일 아침 이현우 음악앨범 들으면서 주방 일하기!!
+  TAIL ​ | 이현우님 덕분에 | 저희 집에 웃음꽃이 피었네요 🤣🌸 | ​
+  CMT 엄마 잔소리 추가 되는거 아녀라?ㅎㅎ | [W]엄마가 쿠폰 오신거 보구서 엄청 웃으셨다네요 ㅋㅋㅋㅋ | ㅎㅎ저도 가끔 라디오문자보내는데 은근 짜릿해요!!! 이숙영님 마스크팩 | [W]저는 엄마가 아침마다 틀어두니 듣기만 했지 사연보낼 생각은 한번도 못했는 | 전 출근하는 차에서 잠시 쉴때(미리도착)딱 보내거든요ㅋㅋ은근 신기방기해요
+
+== onepieceholicplus 6203531 R 79 C 22 [[습관] 21일 강제저] [도비] 카카오뱅크 적금 #10월16일 #청구할인 부수입
+  chars 102 lines 9 imgTags 3 tables 0 firstImg 0 / 4 comp {'se-image': 2, 'se-text': 2} writerRep 5
+  SEQ image text image text
+  HEAD 카카오뱅크 자유적금 361회차 | 한달적금 16회차 | ​ | 카드 청구할인 받은 금액 굴비밥으로 😋
+  TAIL 유난히 힘들었던 일주일이라 그런지 | 더욱 반가운 금요일입니다 ㅎㅎ | 맛점하시고 오후시간도 파이팅이에요! | ​
+  CMT 일주일을 여유없이 달려오셨나봐요 금요일 칼퇴하시고 주말은 리프레쉬하시며  | [W]갑작스러운 부상?에 마음의 여유가 특히 없었네요 ㅠㅠ 뷰잉님도 주말, 편 | 강저 성공 축하합니다~😊 | [W]happy찐이님 감사합니다 😁 | 반가운금요일이찾아왔어요ㅎ 오늘도파이팅!
+
+== onepieceholicplus 6202412 R 1222 C 24 [[습관] 21일 강제저] [도비] 카카오뱅크 적금 #10월15일 #모니스쿨 3교시
+  chars 134 lines 9 imgTags 2 tables 0 firstImg 0 / 2 comp {'se-image': 1, 'se-text': 1} writerRep 5
+  SEQ image text
+  HEAD 카카오뱅크 자유적금 360회차 | 한달적금 15회차 | ​ | 흐린 구름 낀 하늘과 함께하는 목요일입니다
+  TAIL 모니모에는 모니스쿨 3교시가 열렸습니다 | 잊지 말고 젤리 3개 챙기세요~~ | 3교시 정답은 삼겹살 | 먹고 싶어지네요 ㅎㅎ 😋
+  CMT 삼겹살... 먹고싶어랏 ㅎㅎ 도비님 덕분에 정답 챙겨갑니당 | [W]이번 교시는 맛있는 정답이네요 ㅎㅎ 저녁메뉴로 고민해봐야겠습니다 😋 | 강저 응원합니다 | [W]네모바지 스폰지밥님 감사합니다 | 도비님 강저 성공 축하드립니다 모니스쿨 3교시가 열렸군여ㅎㅎ 얼른 해야겠
+
+== onepieceholicplus 6199266 R 97 C 30 [[습관] 21일 강제저] [도비] 카카오뱅크 적금 #10월12일 #월요일이 돌아왔다
+  chars 91 lines 6 imgTags 2 tables 0 firstImg 0 / 2 comp {'se-image': 1, 'se-text': 1} writerRep 5
+  SEQ image text
+  HEAD 카카오뱅크 자유적금 357회차 | 한달적금 12회차 | ​ | 연휴들 떠나 보내고 다시 일상이네요 🤣
+  TAIL ​ | 연휴들 떠나 보내고 다시 일상이네요 🤣 | 아쉽지만 힘차게 월요일 시작해봅니다! | 새로운 일주일도 좋은 일만 가득 하시길 😉💚
+  CMT 돌아와버렸습니다... 화이팅😆🤣 | [W]안 올수는 없겠지만.. 너무 빨리 돌아옵니다 🤣 cherrynyam님 오 | 강저성공 축하드려용 ㅎㅎ 이번주..파이팅..!! | [W]감사합니다아 해해피피님도 함께 힘내보아용!! 😆 | 강저 응원합니다
+
+== engmstudy 3199423 R 727 C 13 [[정보방] 앱테크] 네페줍줍
+  chars 464 lines 14 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 0
+  SEQ text
+  HEAD https://campaign2.naver.com/npay/v2/click-point/?eventId=cr_2026100303 | ​ | https://campaign2.naver.com/npay/v2/click-point/?eventId=pointdraw_ben | ​
+  TAIL https://point.pay.naver.com/mission-detail?rank=6&mssCode=promotion&pr | ​ | ​ | 선플을응원해
+  CMT 감사합니다 | 감사합니다 | 감사합니다 | 감사합니다 | 감사합니다
+
+== engmstudy 3198210 R 764 C 18 [[정보방] 앱테크] 네페줍줍
+  chars 664 lines 17 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 0
+  SEQ text
+  HEAD https://campaign2.naver.com/npay/v2/click-point/?eventId=cr_pointdraw_ | ​ | https://campaign2.naver.com/npay/v2/click-point/?eventId=cr_2026101502 | ​
+  TAIL ​ | https://ofw.adison.co/u/naverpay/ads/1057680 | ​ | https://ofw.adison.co/u/naverpay/ads/730013
+  CMT 감사합니다 | 감사합니다 | 정보 감사합니다😊 | 감사합니다 | 감사합니다
+
+== engmstudy 3198141 R 1830 C 6 [[정보방] 앱테크] T데이 스텔라 떡볶이  0원에 드세요~
+  chars 149 lines 10 imgTags 1 tables 0 firstImg 1 / 2 comp {'se-text': 1, 'se-image': 1} writerRep 1
+  SEQ text image
+  HEAD 우선쿠폰 2장이 필요해요. | 떡볶이,떡볶이 or 닭발,닭발 | 2장 준비후 키오스크 매장으로 갑니다. | ​
+  TAIL 화면에 클릭하면 포장or홀 선택이 나와요~ | ​ | 막히기전에 다녀왔어요. | 저희동네는 닭발이 품절이라 떡튀순으로 받았네요.
+  CMT 정보 감사합니다 😀 | 정보 감사합니다^^ | T데이 쿠폰 사용법 읽으니 19400원짜리 시켜 먹는데 쿠폰 하나만 등록 | [W]저도 그렇게 했어요~ 다른곳 보니 본사에서 공지가 내려왔다는데....  | 네 댓글 감사합니다~ 좋은 하루 되세요~
+
+== engmstudy 3197778 R 793 C 23 [[정보방] 앱테크] 네페줍줍
+  chars 571 lines 15 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 0
+  SEQ text
+  HEAD https://campaign2.naver.com/npay/v2/click-point/?eventId=cr_car_261014 | ​ | https://campaign2.naver.com/npay/v2/click-point/?eventId=cr_pointdraw_ | ​
+  TAIL ​ | https://ofw.adison.co/u/naverpay/ads/1155883 | ​ | https://ofw.adison.co/u/naverpay/ads/730013
+  CMT 감사드립니다 ~ | 감사합니다 | 감사합니다 | 늘 감사드려요 | 감사합니다
+
+== engmstudy 3197336 R 760 C 15 [[정보방] 앱테크] 네페줍줍
+  chars 450 lines 11 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 0
+  SEQ text
+  HEAD https://campaign2.naver.com/npay/v2/click-point/?eventId=cr_2026101301 | ​ | https://campaign2.naver.com/npay/v2/click-point/?eventId=pointdraw_ben | ​
+  TAIL ​ | https://campaign2.naver.com/npay/v2/click-point/?eventId=cr_2026101202 | ​ | https://ofw.adison.co/u/naverpay/ads/730013
+  CMT 감사합니다 | 감사합니다 | 감사합니다 ♡ | 감사합니다 | 감사합니다
+
+== engmstudy 3196880 R 849 C 17 [[정보방] 앱테크] 네페줍줍
+  chars 1186 lines 31 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 0
+  SEQ text
+  HEAD https://campaign2.naver.com/npay/v2/click-point/?eventId=cr_2026101204 | ​ | https://campaign2.naver.com/npay/v2/click-point/?eventId=cr_2026100103 | ​
+  TAIL ​ | https://ofw.adison.co/u/naverpay/ads/1214094 | ​ | https://ofw.adison.co/u/naverpay/ads/730013
+  CMT 감사합니다 | 덕분에 편하게 적립하네요. 감사합니다. 월요일이라 양이 많네요. ^^ 정 | 감사합니다^^ | 감사합니다 | 감사합니다
+
+== dlxogns01 441106 R 3129 C 25 [새로운 통합게시판] 퇴직금으로 뭘 할지 남편이랑 의견이 갈리네요..
+  chars 147 lines 4 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 0
+  SEQ text
+  HEAD 퇴직금을 어떻게 쓸지 남편이랑 생각이 영 달라서 요즘 얘기만 하면 티격태격이에요 | 저는 안전하게 묵혀두자는 쪽인데 남편은 뭐라도 굴려야 한다고 하고요... | 둘 다 일리가 있어서 쉽게 결론이 안 나네요 | 부부가 이런 큰돈 쓸 때 어떻게 의견 조율하시는지 지혜 좀 나눠주세요~
+  TAIL 퇴직금을 어떻게 쓸지 남편이랑 생각이 영 달라서 요즘 얘기만 하면 티격태격이에요 | 저는 안전하게 묵혀두자는 쪽인데 남편은 뭐라도 굴려야 한다고 하고요... | 둘 다 일리가 있어서 쉽게 결론이 안 나네요 | 부부가 이런 큰돈 쓸 때 어떻게 의견 조율하시는지 지혜 좀 나눠주세요~
+  CMT 저희도 그걸로 엄청 싸웠어요ㅎㅎ 결국 반반 나눠서 각자 방식대로 했네요~ | 결론은 누가 나은가요? | 큰돈일수록 천천히 결정하세요^^ 급하게 하면 꼭 후회하더라구요~ | 반반무많이 하세요. ㅋㅋ | 반은 안전하게 반은 굴리면 되겠네요 ㅋㅋ
+
+== dlxogns01 441015 R 3811 C 57 [새로운 통합게시판] 자식이 사업한다고 돈 빌려달라는데 고민이에요
+  chars 129 lines 3 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 0
+  SEQ text
+  HEAD 아들이 사업을 해보겠다며 목돈을 좀 빌려줄 수 있는지 조심스레 물어보더라구요 | 응원해주고 싶은 마음이야 굴뚝같은데 그게 저희 노후자금이라 선뜻 내주기가 겁이 나네요ㅠ | 비슷한 일 겪으신 분들 어떻게 현명하게 푸셨는지 조언 좀 구합니다...
+  TAIL 아들이 사업을 해보겠다며 목돈을 좀 빌려줄 수 있는지 조심스레 물어보더라구요 | 응원해주고 싶은 마음이야 굴뚝같은데 그게 저희 노후자금이라 선뜻 내주기가 겁이 나네요ㅠ | 비슷한 일 겪으신 분들 어떻게 현명하게 푸셨는지 조언 좀 구합니다...
+  CMT 이건 정말 신중하셔야 해요... 노후자금은 절대 건드리면 안 된다고들 하 | 2 2 | 줄 수 있는 만큼만, 없어도 되는 돈만 주라는 말이 맞는 것 같아요 | 다 같이 망하는 길 일수도 있어요~  반만 주세요~ 안주면 섭섭해 할수  | 내 노후는 내가 챙겨야죠ㅠㅜ
+
+== dlxogns01 440695 R 3020 C 44 [• 나의은퇴계획] 40초 미혼 은행원
+  chars 251 lines 25 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 0
+  SEQ text
+  HEAD 퇴사하면 후회하겠죠?ㅎ | 휴직없이 18년재직중(육휴아니면 불가함) | ​ | 준정년퇴직제도가있어서 15년이상근무자라
+  TAIL ​ | 어떻게 버티시나요 | ​ | ​
+  CMT  그렇게 살면 명 줄어요   당장 퇴직은 힘들테니 정신과 진단서 받아서  |  기혼 여직원은 힘들때마다 임신을 하더군요..... 육아휴직 2년.... | 더 버티세요 누군 들어오고 싶어도 못들어옵니다 | 반대로 즐겁다고 생각하시고 지금직장이 나에게 복 가져다준 좋은직장이다 고 | 제 딸도 모 은행에 14년 근무중인데 작년에 과장 진급하고,.. 올해는 
+
+== dlxogns01 440456 R 2964 C 40 [새로운 통합게시판] 이제 집값 정상화되나요?
+  chars 389 lines 9 imgTags 1 tables 0 firstImg None / 3 comp {'se-text': 2, 'se-oglink': 1} writerRep 0
+  SEQ text oglink text
+  HEAD 금리가 일단 심상치않네요. 주식 시장에서 투심(투자심리)이 무척 중요한것 처럼 | 대출금액 뭐 이런거 떠나서 금리 인상은 부동산 심리에도 큰 영향을 줄것 같네요. | ​ | ​
+  TAIL "이제 집값 떨어질 것"…시장서도 고개 드는 '하락론' 근거는 | [서울=뉴시스]이연희 기자 = 서울 아파트값이 87주 연속 상승세를 이어가고 있지만, 연말이나 내년에는 고금리와 대출 규제,  | www.newsis.com | ​
+  CMT 뉴시스답네요...그러든지말든지 갈 길 가겠죠? | 2222222 외곽들까지 연일 신고가찍는데  국민둘을  소돼지로 보는지 | 네버~ 백조가 물밑에서 ...... | 1년간 일부 지역에서 폭등한부분은 바로 잡혀야 되겠죠. 장기적으로는 서서 | 글쎄요 저기 인터뷰 나온 두분도 하락론자분들이고 적어도 이번 정권내에서는
+
+== dlxogns01 440196 R 3972 C 101 [자녀 결혼시키기] 다들 결혼 예정 자녀에게 1억5천 증여하는지 궁금합니다
+  chars 229 lines 27 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 0
+  SEQ text
+  HEAD 결혼 예정 자녀 1억5천까지 법적으로 증여 | ​ | 가능합니다 | ​
+  TAIL ​ | 그때 중도금 납부로 도와 줄수 있다는 | ​ | 의견입니다
+  CMT 형편 것 줘야하지 않을까요? | 상대방은 당연히 거시기 하죠. 그쪽도 1억 5천은 큰 돈이에요.  설마  | 하, 님도 진짜 엔간하네요...  차라니 여자쪽에게도 1억 5천 받지 | 1억 5천 받지 말고 둘이 알아서 해라 해요. | 본인 형편에 맞게 하는 것이고, 하고 안하고는 그 집안 마음인 것입니다.
+
+== dlxogns01 439655 R 4051 C 76 [새로운 통합게시판] 시아버지 재혼후
+  chars 501 lines 28 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 2
+  SEQ text
+  HEAD 시어머니  돌아가시고  시아버지가 일년만에 | 와동아들인  저희한테  소개도안하시고 | 아파트  새어머니 얻어드리고  제네시스  차  새어머니 | 사주고  집이사하면서  시어머니 돌아가신지  일년만에
+  TAIL 반대도아니고  좀더  알어보고  만나보고  결혼하라고  헌걸 | 저러케  전달허다나요 | ​ | 시아버지  안봐도도ㅑ죠
+  CMT 재산 때문이라도 봐야죠 | [W]어제  돈가  자기꺼라고  아들앞에서  처음보는데  대노코이야기하더라구요 | 시아버님 본인이 불행을 자초하시네요ㅠㅜ새시어머니는 말하는 모양새만봐도 또 | [W]재산은스러타치고  저한테  피해주고  스트레스줘서  미치겠어요 | 대차게 나가셔야죠. 그여자분이 님하고 무슨 관계가 있나요. 막말로 화나서
+
+== divclub 65835 R 8496 C 104 [자유 게시판 (투자X)] 05년생 4억 파이어 세계여행중입니다!
+  chars 546 lines 21 imgTags 7 tables 0 firstImg 1 / 9 comp {'se-text': 2, 'se-image': 7} writerRep 5
+  SEQ text image image image image image image image text
+  HEAD 잼투리 보시는 분들은 현실적인 파이어 원하시는 분들이 많아서 좋은 것 같아요. | ​ | 전 2022년 2월 부터 세계여행 시작해서 벌써 5년차네요. | 작년까지는 일하면서 여행했고 올해 4억 찍어서
+  TAIL 불교 힌두교 공부하고 수행에 관심있는 사람이라 | 앞으로 계속 이렇게 살 것 같습니다 ㅎㅎ 투자금액이 불어나면 기부할 생각이고요. 인생 목표는 돈없이 자급자족 생활 하는 것이에 | 세계여행 사진들 올리고가요! | 궁금한거 물어봐주세용 ㅎㅎ
+  CMT 우와 5년 내내 해외에 체류중이신걸까요?? | [W]4년 8개월중 3년 2개월 정도 여행했고 1년 반 정도는 한국에 있었습니 | 22살에 어떻게 4억이 있쬬??????????? 전 29살까지 0원이었는 | [W]우연히 시작하게 된 일이 운좋게 잘되어서 가능했어요 | 경비 (항공권, 식비, 숙소, 등 ) 커버가 가능 한가요 ..?
+
+== divclub 65766 R 2290 C 11 [자유 게시판 (투자X)] 어익후...  간만에 보는 하락장이네요..ㄷㄷ(수정)
+  chars 93 lines 5 imgTags 2 tables 0 firstImg 0 / 3 comp {'se-image': 2, 'se-text': 1} writerRep 1
+  SEQ image image text
+  HEAD 코스피는 외부요인에 너무 크게 흔들리는게 문제네요.. | 저는 다행히 국장은 안해서 상관없는데 | 국장 가지고계신분들은 걱정이 크시겠네요... | 바닥 찍고 전고점 향해 가즈아!!!
+  TAIL 저는 다행히 국장은 안해서 상관없는데 | 국장 가지고계신분들은 걱정이 크시겠네요... | 바닥 찍고 전고점 향해 가즈아!!! | ​
+  CMT 싹정리함요ㅠ 일부매도안된게 저것때문이군용ㅠ | 서킷까지 나왔나요? | [W]어익후.. 기사를 잘못봤네요  7월 서킷이후 최대 하락인데 서킷으로봐서 | 긁는건지 걱정을 하는건지? 40중반이 참 어익후 ㅋㅋㅋ | 오후에는 반등할것 같네요
+
+== wjdrkrjqn 212332 R 7900 C 145 [정가거부 제휴 이벤트] 정가거부 x 카카오페이 내주변 50% 할인 앵콜 쿠폰
+  chars 420 lines 24 imgTags 1 tables 0 firstImg 0 / 2 comp {'se-image': 1, 'se-text': 1} writerRep 0
+  SEQ image text
+  HEAD 쿠폰은 모바일에서만 다운로드 가능합니다. PC에서 링크 클릭 시 QR코드가 표시되며, 휴대폰 카메라로 스캔하시면 다운로드 페이 | 타겟팅이 적용되지 않은 쿠폰으로, 누구나 받으실 수 있습니다. | 받으신 쿠폰은 10월 31일까지만 사용 가능하며, 환불 및 유효기간 연장은 지원되지 않습니다. | 할인은 카카오페이머니로 결제하셨을 때만 적용됩니다.
+  TAIL 쿠폰 사용기간은 10/31일 까지입니다. | ​ | 감사합니다. | ​
+  CMT 감사합니다 😍 | 감사합니다^^ | 감사합니다 대장님😍 | 잘쓸게요 | 
+
+== wjdrkrjqn 212235 R 4009 C 36 [알뜰폰 요금제 게시판] skt 에어 100GB+5mbps 체감가 11,111원 (12개월 )
+  chars 166 lines 15 imgTags 4 tables 0 firstImg 0 / 6 comp {'se-image': 3, 'se-text': 2, 'se-oglink': 1} writerRep 0
+  SEQ image image image text oglink text
+  HEAD https://www.sktair.com/plan?ch=AIR_WEB_10 | air | 통신을. 생활을. 가볍게. | www.sktair.com
+  TAIL ​ | air 요금제 프로모션 코드 JGGB90 | ​ | air 요금제 친구추천 코드 MR3YMU5E
+  CMT 이미사용중인데 역대가수준이네요 부럽 | 저도 사용중인데 번호이동만 해당되는거지요? 요금제변경도 가능할까요? | 현재 SKT 요금제 사용중인 기가입자 분들은 신규가입(번호를 새로 만듦) | 10원짜리 전화 300 문자 100 데이터 20기가 알뜰폰 쓰고 있었는데 | 정거님 초대코드 입력하면 매월 7,000포인트 더 들어오는걸까요?그럼 체
+
+== wjdrkrjqn 211427 R 4508 C 71 [오늘 이걸 구매했어요.] T day 스텔라떡볶이 알고계셨나요?
+  chars 42 lines 3 imgTags 1 tables 0 firstImg 0 / 2 comp {'se-image': 1, 'se-text': 1} writerRep 4
+  SEQ image text
+  HEAD 그냥 금액권이네요 ㅋㅋㅋ | 쿠폰2개찍으시면 실지출 0원~! | 저녁 간단히 해결하네요
+  TAIL 그냥 금액권이네요 ㅋㅋㅋ | 쿠폰2개찍으시면 실지출 0원~! | 저녁 간단히 해결하네요
+  CMT 헐 쿠폰 두개 되요??오잉감사해여 해봐야징 | [W]네 설마설마해서 찍어보니 되네용 ㅋ 역시 무조건 도전해봐야합니다 | 키오스크가 읍네요 맛나게드세요 | [W]헉 그러면 좀 눈치보이죠 ㅎㅎ 맛저하세용 | 헐!!!두개가 되다니!!!!!!도전해봅니닼ㅋㅋㅋㅋㅋㅋㅋㅋ
+
+== wjdrkrjqn 211323 R 4742 C 51 [카드 정보 게시판] 카카오뱅크 더(THE)체크카드
+  chars 113 lines 6 imgTags 3 tables 0 firstImg 0 / 4 comp {'se-image': 3, 'se-text': 1} writerRep 0
+  SEQ image image image text
+  HEAD 카뱅>혜택>랜던지원금뽑고.. | 저는3천원당첨 체크카드니깐 만들어볼까합니다. | 큰금액당첨되세요^^ | ​
+  TAIL 큰금액당첨되세요^^ | ​ | 카카오뱅크 The 체크카드 출시 이벤트 | https://kakaobank.onelink.me/0qMi/14z4qpuw
+  CMT 저도 3천원이네요 ㅠㅠ | 저도 3천원이요. 감사합니다 | 저도 3천원 | 감사합니다 | 8천원 받았어요 감사해요
+
+== wjdrkrjqn 211046 R 4775 C 24 [자유 게시판] 당근에 이런분도 계시네요
+  chars 135 lines 3 imgTags 1 tables 0 firstImg 1 / 2 comp {'se-text': 1, 'se-image': 1} writerRep 0
+  SEQ text image
+  HEAD 지난주 당근마켓 바로거래 무료배송 이벤트기간에 | 직거래보다는 바로거래하고 싶어서 바로방법이나 사용법 알려드렸는데.. 뽁뽁이로 스탠드 엄청 꼼꼼하게 포장해주시고 무려 손편지까지 | 당근에서 이상한 사람들만보다 이런분은 처음이네요!
+  TAIL 지난주 당근마켓 바로거래 무료배송 이벤트기간에 | 직거래보다는 바로거래하고 싶어서 바로방법이나 사용법 알려드렸는데.. 뽁뽁이로 스탠드 엄청 꼼꼼하게 포장해주시고 무려 손편지까지 | 당근에서 이상한 사람들만보다 이런분은 처음이네요!
+  CMT 너무 따뜻한분이시네요~~ 손편지라니^^ |  | 보면 당근 온도 높은 분들은 이유가 있더라구요 💕 | 저도 팔면서 쓰임이 있는곳에 가는거같을땐 기분좋더라구요 | 오호 나같은 사람이 또 있었네요 축하합니다
+
+== wjdrkrjqn 210612 R 30331 C 318 [정가거부 제휴 이벤트] 정가거부 x 카카오페이 내주변 50% 할인 쿠폰
+  chars 682 lines 47 imgTags 1 tables 0 firstImg 0 / 2 comp {'se-image': 1, 'se-text': 1} writerRep 0
+  SEQ image text
+  HEAD 쿠폰은 모바일에서만 다운로드 가능합니다. PC에서 링크 클릭 시 QR코드가 표시되며, 휴대폰 카메라로 스캔하시면 다운로드 페이 | 타겟팅이 적용되지 않은 쿠폰으로, 누구나 받으실 수 있습니다. | 받으신 쿠폰은 10월 31일까지만 사용 가능하며, 환불 및 유효기간 연장은 지원되지 않습니다. | 할인은 카카오페이머니로 결제하셨을 때만 적용됩니다.
+  TAIL ​ | 당연히 돈안받았습니다 | ​ | ​
+  CMT 와 정가거부 체급ㄷㄷ | 와 한솥 우지!! | 아 믿힌 월클 정가거부당 | 우와 | 와 감사합니다!!
+
+== eovhskfktmak 22604 R 189 C 8 [티키타카페 게시판] 아이고 허리야~ 관절 아파서 취미생활 접을 뻔했네요
+  chars 622 lines 31 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 3
+  SEQ text
+  HEAD 날씨가 제법 쌀쌀해졌네요~~ | 요즘 집에 있는 시간이 많아져서 뜨개질을 다시 시작했어요~ | 뜨개바구니를 거실에 뒀다~ 식탁에 펼쳤다~ 안방에까지 가져와서 반복하다 보니까 | 남편이 제발 한곳에서 하라고 정신사납다고 옷 입을때마다 실 붙어 나온다고 한소리 들었어요;;
+  TAIL ​ | ​ | ​ | 노후연구소/ 노후생활/ 노후꿀팁/ 퇴직후/ 노후준비/노후연금저축/소자본1인창업/집에서부업/국민개인연금/부동산재테크/ETF투자방
+  CMT 오! 그런 책상도 있군요. 뜨게실은 몇수정도 되나요? | [W]3~5수 정도 많이 쓰고 있어요~ | 네네 모션데스크 맞아요ㅋㅋㅋ 저도 취미생활 즐길 겸 데스커로 샀는데 조작 | [W]아ㅎㅎ 맞군요 남편한테 보여줘봐야겟어요~~ | 아내가 뜨게질에 빠져있으니 남편님이 심심하신 듯.
+
+== eovhskfktmak 22521 R 142 C 8 [티키타카페 게시판] 은퇴자. 오늘도 성공했습니다.
+  chars 446 lines 32 imgTags 3 tables 0 firstImg 1 / 5 comp {'se-text': 2, 'se-image': 3} writerRep 1
+  SEQ text image image image text
+  HEAD 저는 작은것 하나라도 잘 마치면 성공했다고 합니다. | 성공이 뭐 대단한게 없어요. | 그냥 밥 잘 먹는거도 성공 | 뭐 하나 배워도 성공.
+  TAIL ​ | ​ | ​ | 노후연구소/ 노후생활/ 노후꿀팁/ 퇴직후/ 노후준비/노후연금저축/소자본1인창업/집에서부업/국민개인연금/부동산재테크/ETF투자방
+  CMT 네이버에서 점심? 그게 머에요? | 제생각엔 네이버회사 식당에서 먹었다는거같네요..ㅎ | 저도 궁금하네요 ^^ | 저도 궁금해요 | 부러운 마인드를 지니셨어요
+
+== eovhskfktmak 22472 R 113 C 4 [👇③노후준비필수자료] 휴대전화 사진 정리하다가 노후 준비도 비슷하다는 생각이 들었어요~~
+  chars 1590 lines 85 imgTags 2 tables 0 firstImg 1 / 5 comp {'se-text': 3, 'se-image': 2} writerRep 0
+  SEQ text image text image text
+  HEAD ​ | 휴대전화로 사진을 찍다 보면 어느새 사진첩이 꽉 차 있더라고요. | 여행 가서 찍은 풍경, 맛있게 먹었던 음식, 예쁘게 핀 꽃까지... | 그때는 다 소중해서 찍었는데 나중에 보면 비슷한 사진이 몇 장씩 있기도 하죠. ㅎㅎ
+  TAIL ​ | ​ | ​ | ​
+  CMT 저도 잘 못지워요. 정리할 시간도 없구요. 그래서, 그냥 자주 블로그에  | 사진첩을 보니.... 격히 공감합니다. ^^ | 공감해요~이번에 폰을 바꾸며 사진용량이 넘 많아서 핸드폰 용량이 큰 칩을 | 공감가요~^^
+
+== eovhskfktmak 22464 R 182 C 4 [티키타카페 게시판] 이제 노후준비 합니다
+  chars 449 lines 27 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 0
+  SEQ text
+  HEAD 요즘 은퇴하고 나서 뭘 하면서 지낼지 이것저것 알아보고 있습니다. | 그냥 쉬는 것보다는 작은 일이라도 계속하면서 지내고 싶어서 온라인으로 할 수 있는 것도 배우는 중이에요. | 제대로 해보려니 작업할 공간도 필요해서 책상부터 알아보고 있네요. | ​
+  TAIL ​ | ​ | ​ | 노후연구소/ 노후생활/ 노후꿀팁/ 퇴직후/ 노후준비/노후연금저축/소자본1인창업/집에서부업/국민개인연금/부동산재테크/ETF투자방
+  CMT 저희는 딸내미 대학교 공부하느라 책상에 오래 앉아있어서 모션데스크로 쓰고 | 자세히 말씀해주셔서 감사합니다. 들어보니 한번 제대로 알아봐야겠네요. 좋 | 작은 도전 응원합니다 !! | 네 잘 시작하셨습니다 노후연에 들어오신 자체가 공부에 시작같아요 응원하겠
+
+== eovhskfktmak 22436 R 138 C 12 [티키타카페 게시판] 단풍보러 가려고요
+  chars 315 lines 20 imgTags 1 tables 0 firstImg 0 / 2 comp {'se-image': 1, 'se-text': 1} writerRep 2
+  SEQ image text
+  HEAD ​ | ​ | ​ | ​
+  TAIL ​ | ​ | ​ | 노후연구소/ 노후생활/ 노후꿀팁/ 퇴직후/ 노후준비/노후연금저축/소자본1인창업/집에서부업/국민개인연금/부동산재테크/ETF투자방
+  CMT 정보 감사합니다. 날이 추울듯 | [W]오 그렇군요. 따땃하게 입고가야겠네요 | 경복궁.창덕궁.창경궁.덕수궁 간만에 불러보네요 | [W]저도 간만에 가보려고요 | 단풍 좋네요~
+
+== eovhskfktmak 22230 R 3491 C 11 [👇③노후준비필수자료] 은퇴 후 여행을 마음껏 못하게 되는 이유
+  chars 1579 lines 127 imgTags 3 tables 0 firstImg 3 / 9 comp {'se-text': 5, 'se-quotation': 1, 'se-image': 3} writerRep 0
+  SEQ text quotation text image text image text image text
+  HEAD 다들 이런 생각 한번쯤은 하셨을 것 같아요. | ​ | ​ | 은퇴하고 국내든 해외든 돌아오는 정해진 일정없이 마음 편히 여행이나 하고 싶다..
+  TAIL ​ | ​ | ​ | 노후준비/노후연금저축/소자본1인창업/집에서부업/국민개인연금/부동산재테크/ETF투자방법/ISA계좌/연금보험/일시납연금보험/노후연
+  CMT 좋은 정보 감사합니다. | 저는 사람들 많은곳은  가급적 피합니다 특히 축제같은 곳 여행의 흥미 | 여행하기 참 쉬워졌어요. 절대 어렵지 않아요 대략  주요행선지만 정해서  | 통영숙소좀  알려주세요 | 저도 지역 곳곳 여행 좋아요. 어디든 군 단위만 정해서 그지역에 1박2일
+
+== parentsrich 54567 R 221 C 3 [주식 수다방] 월배당 커버드콜 질문 드립니다
+  chars 206 lines 10 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 1
+  SEQ text
+  HEAD 요즘 월급 외에 정기적으로 현금흐름을 만들 수 있는 방법을 찾아보고 있습니다. | ​ | 예금만 두기보다는 ETF도 알아보는 중인데 | KODEX 200타겟위클리커버드콜이 눈에 띄네요.
+  TAIL 삼전·하이닉스 비중도 높다니 어떤 특징이 있는지 궁금합니다. | ​ | 이런 ETF는 한 번에 매수하는 것보다 | 매달 일정 금액씩 모아가는 방식으로 접근하시나요?
+  CMT 코덱스200타겟위클리커버드콜 국내커버드콜 중에선 인기 젤 많은 상품이죠. | [W]아 넵 이거 적립식으로 쭉 모아가는게 좋을까요 아님 한번에 거치식으로 들 | 각자 상황에 맞게 하면 되죠. 저는 이거랑 200커버드콜액티브 2개 적립
+
+== geobuk2 2189575 R 241 C 10 [체험단 이벤트 공구] 신간도서 더 비트코인 넥스트 사이클 이벤트 당첨자는?
+  chars 871 lines 63 imgTags 3 tables 0 firstImg 0 / 6 comp {'se-image': 2, 'se-text': 3, 'se-oglink': 1} writerRep 0
+  SEQ image text image text oglink text
+  HEAD 안녕하세요. 모아입니다. | ​ | 얼마 전에 신간도서 더 비트코인 넥스트 사이클! | ​
+  TAIL ​ | 저에게 쪽지 보내주시면 다음 주식책 이벤트 진행시 참고하도록 하겠습니다. | ​ | 당첨이 안되셨다 하더라도 당첨된 분들을 위해 축하의 댓글 하나 남겨주시면 감사하겠습니다.^^
+  CMT 축하합니다 | 감사합니다~~ | 감사합니다. | 축하합니다. | 감사합니다~
+
+== geobuk2 2189537 R 54 C 9 [일상/자유 게시판] 수원음주운전변호사 선임 음주 재범 변호 과정
+  chars 6332 lines 67 imgTags 9 tables 0 firstImg 1 / 18 comp {'se-text': 7, 'se-image': 8, 'se-oembed': 2, 'se-places': 1} writerRep 0
+  SEQ text image text image text image image oembed oembed text image text image text image places image text
+  HEAD ​ | ​ | ​ | ", "originalWidth" : "400", "originalHeight" : "225", "contentMode" : 
+  TAIL ​ | 형사절차와 면허 문제는 함께 시작되는 것처럼 보여도 담당 기관과 다투는 내용이 다릅니다. 경찰조사에서는 실제 운전 사실과 측정 | ​ | ​
+  CMT 수원음주운전변호사 음주운전 사건은 적발 당시 혈중알코올농도와 운전 경위, | 수원음주운전변호사 음주 측정 결과에 동의하기 어렵거나 측정 과정에 의문이 | 수원음주운전변호사 음주운전으로 사고까지 발생했다면 형사책임뿐 아니라 피해 | 수원음주운전변호사 면허 정지나 취소가 예상되는 상황에서는 형사절차와 행정 | 수원음주운전변호사 처음 적발된 경우라도 결과가 가볍다고 단정하기는 어렵습
+
+== geobuk2 2189505 R 360 C 10 [제휴업체 법률칼럼] 인천이혼변호사 이혼 전문 상담은
+  chars 8394 lines 149 imgTags 9 tables 0 firstImg 0 / 20 comp {'se-image': 8, 'se-text': 9, 'se-oembed': 2, 'se-places': 1} writerRep 0
+  SEQ image text image text image text image text oembed oembed text image text image text image places text image text
+  HEAD ​ | ​ | ​ | ​
+  TAIL ​ | 인천가정법원의 관할과 형사사건 병행 여부를 사건별로 검토하기 | ​ | 재산분할과 양육, 판결 이후의 이행 업무까지 수임 범위를 확인하기
+  CMT 7만 언제옴?? | 인천이혼변호사 상담을 알아보고 있다면 먼저 현재 가장 큰 갈등이 무엇인지 | 인천이혼변호사를 찾을 때는 부부가 보유한 재산과 채무를 빠짐없이 확인하는 | 인천이혼변호사 상담 전에는 혼인생활 중 주요 사건을 시간순으로 정리해두는 | 인천이혼변호사 관련 상담에서 자녀 문제가 중요하다면 현재의 양육 상황을 
+
+== geobuk2 2189498 R 1420 C 12 [주식 자유 토크] 국장 신뢰가 무너지는 이유...
+  chars 0 lines 0 imgTags 3 tables 0 firstImg 0 / 3 comp {'se-image': 3} writerRep 3
+  SEQ image image image
+  HEAD 
+  TAIL 
+  CMT [W]단일레버리지 때문에 | 그냥 수급 자체가 무너졌어요  6000~8000선에서 물린 개미들과 국민 | [W]일리 있는 말씀 입니다 | 헉 그렇군요 굳이.. 이런 느낌 ㅜ 헌데 국민연금은 어떤이유가 있는건 | 국장 뻠삥 시킬려고 오만 난리를 지겼죠   저짓 거리 해놓고 관련 회의 
+
+== geobuk2 2188479 R 2078 C 7 [주식 자유 토크] 내일 삼전 20만 자리 오면
+  chars 0 lines 0 imgTags 1 tables 0 firstImg 1 / 2 comp {'se-custom': 1, 'se-image': 1} writerRep 1
+  SEQ custom image
+  HEAD 
+  TAIL 
+  CMT [W]회복이 안되면 하락세? | 한결같은...밉상 짓.오래 살겠습니다. 그려^^. | 취침..시간  유툽그만😡 | 고수 늑대님 여기서 또 뵙는.0-0 | 툭.... 자.... 관심...
+
+== geobuk2 2182709 R 74 C 142 [가입인사 양식필수] 반가운 가을에 인사드려요
+  chars 449 lines 20 imgTags 0 tables 0 firstImg None / 1 comp {'se-text': 1} writerRep 0
+  SEQ text
+  HEAD 반가운 가을에 인사드려요1. 거북이투자법을 어떻게 알고 오셨나요? | ​ | -->  네이버 검색 | ​
+  TAIL 5. 카페에 처음 오신 분들 필독하세요!! | 필독 할게요 | ​ | 거북이투자법은 저평가 우량주에 중장기투자해서 수익을 내는 주식투자법입니다. 저평가 우량주를 발굴해서 무료로 추천을 해드리고 있
+  CMT 반갑습니다. | 안녕하세요 | 어서오세요~ | 안녕하세요 | 안녕하세요

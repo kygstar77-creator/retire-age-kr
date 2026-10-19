@@ -1869,7 +1869,7 @@
    "item": "C-2",
    "owner": "firemap-video-producer",
    "gates_ok": null,
-   "note": "visual 10/19 17:3x: 48h 썸네일 판정 10/21 11:30(공개 10/19 11:30+48h) — 노출 클릭률 vs 채널 롱폼 중앙값(py -3.12 work/ytanalytics.py). 교체 1회는 이미 씀(10/19 12:0x f1d→n1b, 사장님 지시) → 판정만 적고 더 바꾸지 않음. 노출 보고서(ytreach)가 그날까지 안 나오면 '확인 안 함'+report 요청 | 순돌이 10/19 00:5x 사장님 \"11시30분 공개로 하면 되잖아\" — 19:50 → 11:30(ytlong C1 ±7일 버그 고침) | firemap-meeting 2026-10-13 21:32: 가상 인물 정우 씨 팔아 쓰기(N1 시범). 편집 통과 10/13, 그림 20장 visual 10/16, 녹음 10/17 창. 합성 표시 True. 축: 주식 인출 | 2026-10-16 22:24 PD: 회의 10/16 [지시·긴급] ytlong C1 주 7편(W-1 0yWQeW38UJE 10/12 19:47 — 10/19 19:47까지 7일 창) → 11:30에서 19:50으로 옮김. 관문 기한 10/18 19:50"
+   "note": "visual 10/19 17:3x: 48h 썸네일 판정 10/21 11:30(공개 10/19 11:30+48h) — 노출 클릭률 vs 채널 롱폼 중앙값(py -3.12 work/ytanalytics.py). 교체 1회는 이미 씀(10/19 12:0x f1d→n1b, 사장님 지시) → 판정만 적고 더 바꾸지 않음. 노출 보고서(ytreach)가 그날까지 안 나오면 '확인 안 함'+report 요청 | 순돌이 10/19 00:5x 사장님 \"11시30분 공개로 하면 되잖아\" — 19:50 → 11:30(ytlong C1 ±7일 버그 고침) | firemap-meeting 2026-10-13 21:32: 가상 인물 정우 씨 팔아 쓰기(N1 시범). 편집 통과 10/13, 그림 20장 visual 10/16, 녹음 10/17 창. 합성 표시 True. 축: 주식 인출 | 2026-10-16 22:24 PD: 회의 10/16 [지시·긴급] ytlong C1 주 7편(W-1 0yWQeW38UJE 10/12 19:47 — 10/19 19:47까지 7일 창) → 11:30에서 19:50으로 옮김. 관문 기한 10/18 19:50 | firemap-meeting 2026-10-19 21:35: 공개 확인 oEmbed 200(SGx7UD-6RNE) — published 칸 비어 있음, PD가 장부에 기입"
   },
   {
    "at": "2026-10-19 12:10",
@@ -1951,7 +1951,7 @@
    "item": "TBD",
    "owner": "firemap-write-b",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) | firemap-meeting 2026-10-19 21:35: 비축 0/2 — 이 칸은 새 편 대신 관문 통과 비축을 먼저 만들고 그중 1편을 낸다(남은 1편이 비축)"
   },
   {
    "at": "2026-10-20 06:10",
@@ -2000,7 +2000,7 @@
    "item": "H-2(동네 손품 2편: 대치·잠실·반포)",
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
-   "note": "visual 10/19 17:3x: 48h 썸네일 판정 10/22 11:30(공개 10/20 11:30+48h) — 노출 클릭률 vs 채널 롱폼 중앙값. 지금 h2tp_a2(아래판), 낮으면 교체안 h2f4(1회만, thumbnails.set 뒤 i.ytimg 되받아 확인). ytreach 늦으면 '확인 안 함'+report 요청 | firemap-meeting 2026-10-12 19:04: 순돌이 10/11 지시 동네 손품 매주 고정 1편 — series-plan 4-2 표 4~6번(은마 62,570·잠실주공5단지 29,790·반포자이 39,490). H-1 방식(tour.py) 재사용, 대본 10/19까지, 제작 PD | youtube-loop 2026-10-14 08:49: J-1과 칸 바꿈 → 10/20(심사 7.87·편집 07:10 통과로 준비 앞섬, 관문 기한 10/19 11:30·녹음 10/18 16:01 창) | firemap-write 2026-10-15 16:5x 사장님 \"칸으로 비교한 거 너무 이해가 안 되는데\"(cafe/281): H-2 짝 카페 글(손품 비교)은 칸 많은 표 금지 — 동네마다 한 줄 요약 → 목록 \"단지 (입주연도) — 84㎡ 한 채 약 N억\" → 알아 둘 점 2~3줄, 그림 표는 3칸·10줄 이하, 원래 큰 표는 맨 끝 자세한 표로(견본 research/h1cafe1015/pkg_v2, 규칙 firemap-write SKILL \"표 대신 한눈에 보기\")"
+   "note": "visual 10/19 17:3x: 48h 썸네일 판정 10/22 11:30(공개 10/20 11:30+48h) — 노출 클릭률 vs 채널 롱폼 중앙값. 지금 h2tp_a2(아래판), 낮으면 교체안 h2f4(1회만, thumbnails.set 뒤 i.ytimg 되받아 확인). ytreach 늦으면 '확인 안 함'+report 요청 | firemap-meeting 2026-10-12 19:04: 순돌이 10/11 지시 동네 손품 매주 고정 1편 — series-plan 4-2 표 4~6번(은마 62,570·잠실주공5단지 29,790·반포자이 39,490). H-1 방식(tour.py) 재사용, 대본 10/19까지, 제작 PD | youtube-loop 2026-10-14 08:49: J-1과 칸 바꿈 → 10/20(심사 7.87·편집 07:10 통과로 준비 앞섬, 관문 기한 10/19 11:30·녹음 10/18 16:01 창) | firemap-write 2026-10-15 16:5x 사장님 \"칸으로 비교한 거 너무 이해가 안 되는데\"(cafe/281): H-2 짝 카페 글(손품 비교)은 칸 많은 표 금지 — 동네마다 한 줄 요약 → 목록 \"단지 (입주연도) — 84㎡ 한 채 약 N억\" → 알아 둘 점 2~3줄, 그림 표는 3칸·10줄 이하, 원래 큰 표는 맨 끝 자세한 표로(견본 research/h1cafe1015/pkg_v2, 규칙 firemap-write SKILL \"표 대신 한눈에 보기\") | firemap-meeting 2026-10-19 21:35: 관문 기한(10/19 11:30) 넘김. 관문 다 넘기 전 공개 금지. 11:30까지 못 넘으면 같은 날 넘는 시각에 공개(하루 1편 유지, N-2 13:40 선례), 그날 못 넘으면 10/20 칸 실패로 기록하고 T-1·X-1 칸은 그대로(밀지 않음)"
   },
   {
    "at": "2026-10-20 12:10",
@@ -2009,16 +2009,6 @@
    "owner": "firemap-write",
    "gates_ok": null,
    "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 건강보험 피부양자(10,980) → https://firemap.kr/health-insurance — 글 질문이 계산기와 맞을 때만 줄 넣기"
-  },
-  {
-   "at": "2026-10-20 17:20",
-   "kind": "shorts",
-   "item": "c2s_jungwoo",
-   "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-19 16:21",
-   "item_pkg": "work/research/cardshorts/c2s_jungwoo",
-   "note": "2026-10-19 16:24 PD: 순돌이 14:22 쇼츠 하루 3편 12:20 칸 · C-2 롱폼(SGx7UD-6RNE, 10/19 11:30 공개) 클립 c2person v3 재렌더(안전 영역·디자인 통과, 클로드 티 ⑥⑦ 경고) · 같은 날 07:20 h1s_walk(H-1)·19:20 d1s_pension(D-1)과 다른 롱폼·질문 · yt_pair: O6ZC-6sylHk",
-   "published": "예약 2026-10-20T17:20:00+09:00 https://youtu.be/O6ZC-6sylHk (2026-10-19 18:18 PD: 순돌이 15:52 정정 12:20→17:20 videos.update, 합성 표시 True 되읽기)"
   },
   {
    "at": "2026-10-20 13:40",
@@ -2043,6 +2033,16 @@
    "owner": "firemap-write-b",
    "gates_ok": null,
    "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · 부동산 칸(하루 2칸 이상)"
+  },
+  {
+   "at": "2026-10-20 17:20",
+   "kind": "shorts",
+   "item": "c2s_jungwoo",
+   "owner": "firemap-video-producer",
+   "gates_ok": "2026-10-19 16:21",
+   "item_pkg": "work/research/cardshorts/c2s_jungwoo",
+   "note": "2026-10-19 16:24 PD: 순돌이 14:22 쇼츠 하루 3편 12:20 칸 · C-2 롱폼(SGx7UD-6RNE, 10/19 11:30 공개) 클립 c2person v3 재렌더(안전 영역·디자인 통과, 클로드 티 ⑥⑦ 경고) · 같은 날 07:20 h1s_walk(H-1)·19:20 d1s_pension(D-1)과 다른 롱폼·질문 · yt_pair: O6ZC-6sylHk",
+   "published": "예약 2026-10-20T17:20:00+09:00 https://youtu.be/O6ZC-6sylHk (2026-10-19 18:18 PD: 순돌이 15:52 정정 12:20→17:20 videos.update, 합성 표시 True 되읽기)"
   },
   {
    "at": "2026-10-20 18:10",
@@ -2075,7 +2075,7 @@
    "item": "TBD",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) | firemap-meeting 2026-10-19 21:35: yt_pair: c2s_jungwoo(O6ZC-6sylHk, 17:20 쇼츠) — 쇼츠가 던진 질문 하나만(C-2 짝 글 #327과 같은 표 되풀이 금지)"
   },
   {
    "at": "2026-10-20 22:40",
@@ -2144,14 +2144,6 @@
    "note": "firemap-meeting 2026-10-18 21:41: 카페 하루 12칸 뼈대(36시간 앞, 레드팀 R1) · 계산기 칸 후보(맞는 계산기 있는 주제, X-CAFE-CALC)"
   },
   {
-   "at": "2026-10-21 17:20",
-   "kind": "shorts",
-   "item": "TBD(c1clip 아닌 틀)",
-   "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "2026-10-19 16:25 PD: 지시 후보 d1s_dep는 못 올림 — ① 업로드 도구 꼴 관문 ⓓ(최근 10편 c1clip 6편 >50%, d1s_dep는 c1clip) 거부 ② 같은 D-1 d1s_pension(10/20 19:20)과 17시간 간격(10/16 PD 이틀 띄움 판단). 이 칸은 C-2 둘째 클립(m1clip·c2person, 다른 질문 예: 5년 늦게 시작 2억·37번 중 6번) — 관문 기한 10/21 00:20. 같은 날 07:20 h1s_helio(H-1)·11:30 T-1·19:20 p1s_step(P-1)"
-  },
-  {
    "at": "2026-10-21 13:40",
    "kind": "cafe",
    "item": "TBD",
@@ -2174,6 +2166,14 @@
    "owner": "firemap-write-b",
    "gates_ok": null,
    "note": "firemap-meeting 2026-10-18 21:41: 카페 하루 12칸 뼈대(36시간 앞, 레드팀 R1)"
+  },
+  {
+   "at": "2026-10-21 17:20",
+   "kind": "shorts",
+   "item": "TBD(c1clip 아닌 틀)",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "2026-10-19 16:25 PD: 지시 후보 d1s_dep는 못 올림 — ① 업로드 도구 꼴 관문 ⓓ(최근 10편 c1clip 6편 >50%, d1s_dep는 c1clip) 거부 ② 같은 D-1 d1s_pension(10/20 19:20)과 17시간 간격(10/16 PD 이틀 띄움 판단). 이 칸은 C-2 둘째 클립(m1clip·c2person, 다른 질문 예: 5년 늦게 시작 2억·37번 중 6번) — 관문 기한 10/21 00:20. 같은 날 07:20 h1s_helio(H-1)·11:30 T-1·19:20 p1s_step(P-1)"
   },
   {
    "at": "2026-10-21 18:10",
@@ -2218,6 +2218,14 @@
    "note": "firemap-meeting 2026-10-18 21:41: 카페 하루 12칸 뼈대(36시간 앞, 레드팀 R1)"
   },
   {
+   "at": "2026-10-22 06:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞)"
+  },
+  {
    "at": "2026-10-22 07:20",
    "kind": "shorts",
    "item": "g1s_asym",
@@ -2228,12 +2236,84 @@
    "note": "firemap-video-producer 2026-10-16 04:13: G-1 롱폼(xBTZtRp5lMs) '1월에 산 금 34% 손해, 본전까지 51%(337만원)' 클립, c2person 틀, Pexels 참고 영상, Chirp 새 줄 1(첫 줄) — 관문 cardshorts/g1s_asym/review.md(58세 이해 시험 12차) · 같은 날 19:20은 H-1 h1s_forest · yt_pair: R3wiLBTOC6M(10/16 오후 v2 교체, 옛 AZgBJ5Ltdic) · 그 전 AZgBJ5Ltdic(10/16 교체, 옛 ZK219BbhJSA)(쇼츠 짝 카페 글 10/22 20:10 또는 22:10, firemap-write)"
   },
   {
+   "at": "2026-10-22 07:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) · yt_pair: g1s_asym(07:20 쇼츠, R3wiLBTOC6M) — 질문 하나"
+  },
+  {
+   "at": "2026-10-22 09:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) · yt_pair: X-1 — ep/X-1/cafe.md 전체 표, 대본에 '카페에 올려 둘게요'가 있으면 이 칸(영상 11:30 전), 없으면 12:10으로"
+  },
+  {
+   "at": "2026-10-22 10:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞)"
+  },
+  {
    "at": "2026-10-22 11:30",
    "kind": "long",
    "item": "X-1",
    "owner": "firemap-video-producer",
    "gates_ok": null,
    "note": "visual 10/19 17:3x: 썸네일 x1n_b 확정(새 꼴, 제미나이 8·1초 주제 맞힘·58세 뜻 맞음, meta.json). 48h 판정 10/24 11:30(공개 10/22 11:30+48h), 낮으면 교체안 x1n_c(1회만). ytreach 늦으면 '확인 안 함'+report 요청 | youtube-loop 2026-10-14 17:2x: X-1 환율('같은 1억' 시작일 4개) — 대본 v2 심사 7.87(제미나이 7.6·Claude 8.2·레드팀 7.8)·편집 통과(script.md.edit.json), 카피 제목은 copywriter. 축: 경제(환율) — T-1(10/21)·J-1(10/23) 부동산 세금 사이. 관문 기한 10/21 11:30, 녹음 10/20 16:01 창 | firemap-video-producer 2026-10-16 20:12: 녹음 끝(Chirp 43줄)·화면 X1.tsx 16장면 3:40 → editor 화면 서명 요청(10/18 12:00) 뒤 렌더"
+  },
+  {
+   "at": "2026-10-22 12:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) · 계산기 칸(맞는 계산기 있는 주제, X-CAFE-CALC)"
+  },
+  {
+   "at": "2026-10-22 13:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) · 부동산 칸(하루 2칸 이상)"
+  },
+  {
+   "at": "2026-10-22 15:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞)"
+  },
+  {
+   "at": "2026-10-22 16:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) · 부동산 칸(하루 2칸 이상)"
+  },
+  {
+   "at": "2026-10-22 17:20",
+   "kind": "shorts",
+   "item": "TBD(c1clip 아닌 틀)",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-19 21:35: 쇼츠 셋째 칸(사장님 10/19 하루 3편) 뼈대 — 같은 날 다른 두 편과 다른 롱폼·다른 질문, 관문 기한 12시간 전"
+  },
+  {
+   "at": "2026-10-22 18:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) · 계산기 칸(맞는 계산기 있는 주제, X-CAFE-CALC)"
   },
   {
    "at": "2026-10-22 19:20",
@@ -2244,6 +2324,30 @@
    "item_pkg": "work/research/cardshorts/h1s_forest",
    "published": "예약 2026-10-22T19:20:00+09:00 https://youtu.be/lEMhSLaZ3lI (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 5rh6IK80wD4 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/5rh6IK80wD4 (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 RmjfiIlKNeU 예약 풀고 비공개 · private+publishAt 10:20Z, 합성 표시 update True)",
    "note": "firemap-video-producer 2026-10-15 23:35: H-1 롱폼(rVg0pQVo_wk) 둔촌동 올림픽파크포레온 '집값 같은데 전세 14억' 클립, c2person 틀(ⓓ: m1clip 5/9·c1clip 지시 제외), Pexels 참고 영상(배지 '화면 속 아파트는 포레온 아님'), 새 녹음 0 — 관문 cardshorts/h1s_forest/review.md · 같은 날 07:20은 H-1 아닌 롱폼으로 · yt_pair: lEMhSLaZ3lI(10/16 오후 v2 교체, 옛 5rh6IK80wD4) · 그 전 5rh6IK80wD4(10/16 교체, 옛 RmjfiIlKNeU)(쇼츠 짝 카페 글 20:10 또는 22:10, firemap-write)"
+  },
+  {
+   "at": "2026-10-22 19:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) · yt_pair: h1s_forest(19:20 쇼츠, lEMhSLaZ3lI) — 질문 하나"
+  },
+  {
+   "at": "2026-10-22 21:10",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞)"
+  },
+  {
+   "at": "2026-10-22 22:40",
+   "kind": "cafe",
+   "item": "TBD",
+   "owner": "firemap-write-b",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞)"
   },
   {
    "at": "2026-10-23 07:20",
@@ -2262,6 +2366,14 @@
    "owner": "firemap-youtube-loop",
    "gates_ok": null,
    "note": "visual 10/19 17:3x: 48h 썸네일 판정 10/25 11:30(공개 10/23 11:30+48h). meta.json 아직 없음 — 썸네일은 새 꼴로 관문 10/22 11:30 전에. ytreach 늦으면 '확인 안 함'+report 요청 | 순돌이 10/16 11:4x: 사장님 \"손품 영상 주 2편으로 올려\" — 손품 화·금 고정(10/20 H-2, 10/23 H-3, 이후 매주 화·금). 근거 H-1 공개 1일 80회(같은 주 G-1 3일 3회·W-1 4일 4회). 대본 10/20 21:00·관문 10/22 11:30. 짝 카페 글은 pkg_v2 꼴(표 대신 한눈에 보기)."
+  },
+  {
+   "at": "2026-10-23 17:20",
+   "kind": "shorts",
+   "item": "TBD(c1clip 아닌 틀)",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-19 21:35: 쇼츠 셋째 칸(사장님 10/19 하루 3편) 뼈대 — 같은 날 다른 두 편과 다른 롱폼·다른 질문, 관문 기한 12시간 전"
   },
   {
    "at": "2026-10-23 19:20",
@@ -2287,6 +2399,14 @@
    "owner": "firemap-video-producer",
    "gates_ok": null,
    "note": "순돌이 10/16: 10/23 칸을 손품 H-3에 주고 하루 뒤로 | firemap-meeting 2026-10-13 21:32: 1주택 종부세 개편 전·후(재경부 원문, calc.py 정부 사례 8/9). 카페 회원 자료 2호와 같은 주제로 묶음. 대본 youtube-loop 10/17. 축: 정책·부동산 | 레드팀: 정부안 국회 통과 전·9/1 수정됨·올해 11월 고지는 현행 기준 → 제목·말에 \"정부안 기준, 통과 전\" 명시, 정부 확정안 사례로 다시 대조 | youtube-loop 2026-10-14 08:49: H-2와 칸 바꿈 → 10/22(T-1 양도세 10/21과 이틀 연속 부동산 세금 피함, J-1은 기획안만 있어 대본 기한 10/20·관문 10/21 11:30) | youtube-loop 2026-10-14 17:2x: 08:49 판단 바로잡음 — 10/22로 옮겨도 T-1(10/21)과 이틀 연속 부동산 세금이라 **10/23으로**, 10/22엔 X-1 환율(경제 축, 심사 7.87·편집 통과). J-1 대본 v3 심사 중(제미나이 8.4), 관문 기한 10/22 11:30·녹음 10/21 창"
+  },
+  {
+   "at": "2026-10-24 17:20",
+   "kind": "shorts",
+   "item": "TBD(c1clip 아닌 틀)",
+   "owner": "firemap-video-producer",
+   "gates_ok": null,
+   "note": "firemap-meeting 2026-10-19 21:35: 쇼츠 셋째 칸(사장님 10/19 하루 3편) 뼈대 — 같은 날 다른 두 편과 다른 롱폼·다른 질문, 관문 기한 12시간 전"
   },
   {
    "at": "2026-10-24 19:20",

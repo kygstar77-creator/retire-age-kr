@@ -108,6 +108,19 @@
     "url": "https://cafe.naver.com/firemap/330"
    },
    "note": "firemap-write-b 19:40 칸 · 출처 원문 2(데이터처·노동부 9/30 PDF)+경쟁 5 · 교차검증: Gemini 사실 3 중 반영 2·유지 1(롱폼 링크 F12 추가), 말투 12 반영 · selfcheck 사실 0 · 레드팀 틀림2·오해6 반영 · verify OK 1629자·사진 3 · 개선: playbook에 짝 글·표지 숫자 둘·calc 줄 규칙 기록"
+  },
+  {
+   "hour": 21,
+   "ts": "21:53",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "정기예금 금리 1년이 높은데 오래 묶으면 손해일까?",
+    "url": "https://cafe.naver.com/firemap/331"
+   },
+   "note": "21:10 칸 dep13y1019 — audit 요청으로 제목 끝말 '얼마' 3칸 걸려 제목만 바꿔 재날인(본문 0 변경) · verify OK 1728/1728자·사진 3/3 · 자료조사·교차검증은 16:45 관문 때 완료(레드팀 원 단위 일치, selfcheck 사실 0) · 블로그 없음(블로그 쉬는 날·색인 0 브레이크) · 개선: editgate.PRODUCT 가상자산 말 추가 · 10/20 09:10 H-2 짝 글은 직원에게 맡김"
   }
  ]
 }

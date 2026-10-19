@@ -44,6 +44,30 @@
     "url": "https://cafe.naver.com/firemap/324"
    },
    "note": "10:40 칸 TBD·비축0 → 새 편 tsla1019(성장주·형식4) · 자료조사 원문 9건(SEC 8-K 4건·EDGAR 제출목록·나스닥·야후·toprank) · 교차검증 crosscheck Gemini: 사실 3 중 반영 2·유지 1(영상 링크 공개 확인), 말투 14 중 반영 13·버림 1(공시에 없는 인과) · selfcheck 사실 0 · readcheck 0 · aitell 1.5 · 레드팀 틀림1·오해7 반영 · 58세 2차 통과 · 제목 끝말 규칙으로 두 번 교체(얼마 3칸→몇) · verify OK 1525/1525자·사진 3/3 · 발행 11:25(칸보다 45분 늦음) · 개선: playbook에 제목 관문 두 개(얼마·몇만 + 같은 끝말 3칸 금지) 미리 세기 추가"
+  },
+  {
+   "hour": 12,
+   "ts": "13:31",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "실업급여 부정수급 하루 알바 숨기면 얼마나 돌려줘야 할까",
+    "url": "https://cafe.naver.com/firemap/325"
+   },
+   "note": "12:10 칸 ubfraud1019 발행 12:41(jitter 17분) · verify OK 1836/1836자·사진 3/3 · 관문은 06:37 통과분(레드팀 틀림0·58세 통과) · 블로그는 DAY_CAP/방침상 없음 · 18:10 칸: 청년미래적금 2차(ymf2wait1019) 내용 관문 통과했으나 카페 범위 규칙(청년 전용 상품 금지)에 막혀 보류 → 새 편 kospioct1019(경제 시황) 작성 중 · 개선: 주제 고를 때 aitell 범위 검사를 먼저 돌려야 한다 — playbook에 적음"
+  },
+  {
+   "hour": 13,
+   "ts": "13:55",
+   "who": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "퇴직 뒤 건보료·연금 계산하는 카페 처음 오셨다면 할 일 하나",
+    "url": "https://cafe.naver.com/firemap/326"
+   },
+   "note": "13:40 칸 cafenotice1018(공지 묶음, 10/18 23:55 관문 통과) --board 공지사항 발행 · verify OK 699/699자·사진 3/3 · 발행 전 확인: SideMenuList에 회원 자료실·파이어 이야기·배당·이자 인증 있음, 그러나 CafeGateInfo useMemberLevel=false(등급 기능 꺼짐) → '가입인사 쓰면 등급이 바로 올라가고 회원 자료실에서' 사실 아님 → notice.txt 대체 문장(c02 끝줄 '[자료] 글에서'·c00 '가입한 회원에게'), #263(연금/세금/보험)·#315(돈 관리) 비로그인 0004=멤버공개 확인, img/02 note 다시 · spoken 원문→자료 2곳 · 1차 발행 readcheck 거부(계산기 URL 문장 119자) → '건보료 계산기: URL' 한 줄로 분리, readcheck 0·aitell 0.0·editgate stamp auto 다시 · cafecomments 답할 것 0 · 개선: 없음(발행기 확인 창 8초 타임아웃은 발행엔 영향 없음)"
   }
  ]
 }

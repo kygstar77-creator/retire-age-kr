@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-18 23:49",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "처음 오셨나요/가입인사 한 줄이면",
+ "num": "궁금한 것부터 답해요",
+ "sub": "퇴직 · 연금 · 건보료 계산 카페",
+ "label": "",
+ "src": "",
+ "icon": "door-open",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 115,
+ "num_px": 92,
+ "sub_px": 56,
+ "board": [
+  "jpy1018",
+  "schdfx1018",
+  "mokdong1018",
+  "g1whycafe1018",
+  "n2cafe1018",
+  "salpct1018",
+  "sbsave1017",
+  "lev2x1018",
+  "bonustax1017",
+  "sangokapply1017"
+ ]
+}

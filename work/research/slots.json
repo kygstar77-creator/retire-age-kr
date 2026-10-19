@@ -1894,7 +1894,8 @@
    "item": "cafenotice1018",
    "owner": "firemap-write-b",
    "gates_ok": "2026-10-18 23:55",
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) | 카페 운영 설계자 23:55: 필독 공지 묶음 cafenotice1018 '퇴직 뒤 건보료·연금 계산하는 카페 처음 오셨다면 할 일 하나' 관문 통과(aitell 0.0·58세 2차 통과·심사 7.3·editgate auto·pending_block 시각 외 없음) · 발행은 반드시 --board 공지사항(pkg/notice.txt 발행 전 확인 2개) · 발행 뒤 순돌이가 필독 공지로"
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) | 카페 운영 설계자 23:55: 필독 공지 묶음 cafenotice1018 '퇴직 뒤 건보료·연금 계산하는 카페 처음 오셨다면 할 일 하나' 관문 통과(aitell 0.0·58세 2차 통과·심사 7.3·editgate auto·pending_block 시각 외 없음) · 발행은 반드시 --board 공지사항(pkg/notice.txt 발행 전 확인 2개) · 발행 뒤 순돌이가 필독 공지로",
+   "published": "https://cafe.naver.com/firemap/326 13:54 verify OK 699자"
   },
   {
    "at": "2026-10-19 15:10",
@@ -1916,10 +1917,11 @@
   {
    "at": "2026-10-19 18:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "kospioct1019",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 연봉 실수령액(66,600) → https://firemap.kr/calc/salary — 글 질문이 계산기와 맞을 때만 줄 넣기"
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 연봉 실수령액(66,600) → https://firemap.kr/calc/salary — 글 질문이 계산기와 맞을 때만 줄 넣기 | ymf2wait1019: 범위 규칙으로 보류",
+   "pkg": "kospioct1019"
   },
   {
    "at": "2026-10-19 19:20",

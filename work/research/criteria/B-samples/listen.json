@@ -1,0 +1,583 @@
+{
+"short_SURYYRniqwc": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Clear recording of a person speaking in Korean with natural intonation and slight room reverb.",
+"speakers": 1
+},
+"short_LAldgYQemts": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "very_quiet",
+"music_in_pauses": "present",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "natural human speech with emotional inflections",
+"speakers": 1
+},
+"short_dMHOpTtibdY": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "very_quiet",
+"music_in_pauses": "present",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Natural human speech with conversational tone.",
+"speakers": 1
+},
+"short_OAaODOz-dm0": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Clear vocals",
+"speakers": 1
+},
+"short_hjhTqWanKO4": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Clear human voices of multiple speakers with natural intonation.",
+"speakers": 2
+},
+"short_gOQAKvhVkX4": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "very_quiet",
+"music_in_pauses": "present",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "clear emotional tone and natural phrasing",
+"speakers": 1
+},
+"short_dNAkwe2dTzc": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Natural human speech with conversational inflections and breathing sounds.",
+"speakers": 1
+},
+"short__ktPoA-Hfoo": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "loud",
+"music_in_pauses": "present",
+"sfx": [
+{
+"t": 3.7,
+"type": "swoosh",
+"note": "transition"
+},
+{
+"t": 7.7,
+"type": "swoosh",
+"note": "transition"
+},
+{
+"t": 13.5,
+"type": "swoosh",
+"note": "transition"
+},
+{
+"t": 21.6,
+"type": "swoosh",
+"note": "transition"
+},
+{
+"t": 26.5,
+"type": "swoosh",
+"note": "transition"
+},
+{
+"t": 34.0,
+"type": "swoosh",
+"note": "transition"
+},
+{
+"t": 38.3,
+"type": "swoosh",
+"note": "transition"
+},
+{
+"t": 46.5,
+"type": "swoosh",
+"note": "transition"
+},
+{
+"t": 51.5,
+"type": "swoosh",
+"note": "transition"
+},
+{
+"t": 59.8,
+"type": "swoosh",
+"note": "transition"
+},
+{
+"t": 107.5,
+"type": "swoosh",
+"note": "transition"
+},
+{
+"t": 115.5,
+"type": "ding",
+"note": "ending chime"
+}
+],
+"voice": "human_recording",
+"voice_reason": "Professional YouTube voiceover narration.",
+"speakers": 1
+},
+"short_BKGHEtUaPzs": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "No speech present in the audio clip.",
+"speakers": 0
+},
+"short_r0lolybOlpI": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Natural human speech with conversational inflections and pacing.",
+"speakers": 1
+},
+"short_vEzd2xf1SoI": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Natural human speech with conversational inflections and room acoustics.",
+"speakers": 1
+},
+"short_IKNQSQAfVts": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "multiple speakers in studio setting",
+"speakers": 2
+},
+"short_WnpIMaJl72Q": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Clear professional broadcast voice",
+"speakers": 1
+},
+"short_cgf70PPxVDI": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Natural inflections, slight imperfections, and breath sounds indicate a human recording.",
+"speakers": 1
+},
+"short_7bs9EgGsKdM": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "very_quiet",
+"music_in_pauses": "present",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "natural male voice with casual tone",
+"speakers": 1
+},
+"short_ZwcVKtde2eI": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Natural human voice inflection and pace",
+"speakers": 1
+},
+"short_K0VBkvMiUi0": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "very_quiet",
+"music_in_pauses": "present",
+"sfx": [
+{
+"t": 8.0,
+"type": "chime",
+"note": "bell chime"
+},
+{
+"t": 20.3,
+"type": "chime",
+"note": "bell chime"
+},
+{
+"t": 34.7,
+"type": "chime",
+"note": "bell chime"
+},
+{
+"t": 47.0,
+"type": "chime",
+"note": "bell chime"
+},
+{
+"t": 60.0,
+"type": "chime",
+"note": "bell chime"
+},
+{
+"t": 75.7,
+"type": "chime",
+"note": "bell chime"
+},
+{
+"t": 91.0,
+"type": "chime",
+"note": "bell chime"
+},
+{
+"t": 105.7,
+"type": "chime",
+"note": "bell chime"
+}
+],
+"voice": "human_recording",
+"voice_reason": "Natural inflections and human breath sounds are present.",
+"speakers": 1
+},
+"short_Fj1dHmEN5vI": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "The audio has natural human speech characteristics, pacing, and emotional inflections.",
+"speakers": 1
+},
+"short_l1JxwufdG_g": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "quiet",
+"music_in_pauses": "present",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Clear human speech with natural intonation and breathing pauses.",
+"speakers": 1
+},
+"short_N5MkG8RV4Jw": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Clear natural speech with breathing and slight imperfections.",
+"speakers": 1
+},
+"short_bNuOoF0SDnk": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Clear vocals with slight room reverb",
+"speakers": 1
+},
+"short_4ybdVtAjwrc": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Natural inflections and slight room acoustics characteristic of a human podcast/interview recording.",
+"speakers": 2
+},
+"short_WYj3u-yNwbI": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "very_quiet",
+"music_in_pauses": "present",
+"sfx": [
+{
+"t": 0.0,
+"type": "whoosh",
+"note": "transition"
+}
+],
+"voice": "human_recording",
+"voice_reason": "natural human speech with expressive intonation",
+"speakers": 1
+},
+"short_zfInaE_f-K8": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [
+{
+"t": 7.3,
+"type": "other",
+"note": "boom sound effect"
+}
+],
+"voice": "human_recording",
+"voice_reason": "natural dialogue",
+"speakers": 2
+},
+"short_nCXWFko0TaA": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "very_quiet",
+"music_in_pauses": "present",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Clear recording of a male speaker with natural intonation and slight room acoustics.",
+"speakers": 1
+},
+"long_8ZObNM1xeGo": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "very_quiet",
+"music_in_pauses": "present",
+"sfx": [
+{
+"t": 0.5,
+"type": "chime",
+"note": "bell chime"
+},
+{
+"t": 41.5,
+"type": "chime",
+"note": "epic chime"
+}
+],
+"voice": "human_recording",
+"voice_reason": "clear human speech with natural intonation",
+"speakers": 1
+},
+"long_dGLEg3d6wdw": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Clear human voice with normal intonation",
+"speakers": 1
+},
+"long_ICYD3f6W-MA": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "very_quiet",
+"music_in_pauses": "present",
+"sfx": [
+{
+"t": 0.0,
+"type": "chime",
+"note": "sound effect"
+}
+],
+"voice": "human_recording",
+"voice_reason": "natural human speech with conversational pauses and intonation",
+"speakers": 2
+},
+"long_PQlGUOTbWK4": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "very_quiet",
+"music_in_pauses": "present",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "sounds natural, with varying cadence and room tone",
+"speakers": 2
+},
+"long_3mN7bBMkC0g": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "very_quiet",
+"music_in_pauses": "present",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "The voice has natural intonations, breaths, and pace consistent with a human podcast narrator.",
+"speakers": 1
+},
+"long_LFBEEft1uFc": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "quiet",
+"music_in_pauses": "present",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Clear, natural fluctuations in speech and tone indicate a human recording.",
+"speakers": 1
+},
+"long_4kZm0zP3AAU": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "quiet",
+"music_in_pauses": "present",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Clear podcast audio with multiple speakers and natural acoustic variation",
+"speakers": 2
+},
+"long_Y9wDXyYLGeQ": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "very_quiet",
+"music_in_pauses": "present",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "interview podcast with professional audio quality",
+"speakers": 2
+},
+"long_ahjw7YA4tms": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "quiet",
+"music_in_pauses": "present",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Clear human voice with normal inflections.",
+"speakers": 1
+},
+"long_-HgmZvx5G40": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "quiet",
+"music_in_pauses": "present",
+"sfx": [
+{
+"t": 1.25,
+"type": "chime",
+"note": "upbeat notification"
+}
+],
+"voice": "human_recording",
+"voice_reason": "natural human intonation and rhythm",
+"speakers": 1
+},
+"long_OURS_c2": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "very_quiet",
+"music_in_pauses": "present",
+"sfx": [
+{
+"t": 24,
+"type": "swoosh",
+"note": "transition effect"
+},
+{
+"t": 36,
+"type": "pop",
+"note": "pop effect"
+},
+{
+"t": 124,
+"type": "swoosh",
+"note": "transition effect"
+},
+{
+"t": 241,
+"type": "chime",
+"note": "chime sound"
+},
+{
+"t": 340,
+"type": "pop",
+"note": "pop effect"
+}
+],
+"voice": "human_recording",
+"voice_reason": "clear human speech with natural intonation",
+"speakers": 1
+},
+"short_OURS_d1s_dep": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Natural inflections and human breath sounds",
+"speakers": 1
+},
+"short_OURS_p1s_step": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Natural human inflections and pacing.",
+"speakers": 1
+},
+"short_OURS_n1s_rank": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Natural inflections and human acoustics",
+"speakers": 1
+},
+"long_FLa29vD6X28": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "very_quiet",
+"music_in_pauses": "present",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "The speaker's voice has natural inflections, pitch variations, and human qualities.",
+"speakers": 1
+},
+"long_9C7_sKVcPiQ": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "quiet",
+"music_in_pauses": "present",
+"sfx": [
+{
+"t": 0.0,
+"type": "swoosh",
+"note": "sound transition"
+},
+{
+"t": 1.9,
+"type": "swoosh",
+"note": "sound transition"
+},
+{
+"t": 19.4,
+"type": "swoosh",
+"note": "sound transition"
+},
+{
+"t": 20.2,
+"type": "swoosh",
+"note": "sound transition"
+},
+{
+"t": 35.3,
+"type": "swoosh",
+"note": "sound transition"
+},
+{
+"t": 156.0,
+"type": "swoosh",
+"note": "sound transition"
+}
+],
+"voice": "human_recording",
+"voice_reason": "The audio contains natural human speech with inflections and breathing sounds.",
+"speakers": 2
+},
+"long_CP89fHnTN6c": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Natural human inflections and cadence.",
+"speakers": 1
+},
+"long_mOBsKBLWrN4": {
+"model": "gemini-3.5-flash-lite",
+"music_under_speech": "none",
+"music_in_pauses": "none",
+"sfx": [],
+"voice": "human_recording",
+"voice_reason": "Natural human inflections and cadence in speech",
+"speakers": 1
+}
+}

@@ -1,0 +1,9 @@
+sheets/
+res/*.wav
+*.mp4
+*.m4a
+board*.png
+board*.jpg
+media/
+res/*.lock
+__pycache__/

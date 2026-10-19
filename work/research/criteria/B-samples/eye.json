@@ -1,0 +1,339 @@
+{
+ "_note": "눈으로 본 기록(sheets/*.jpg, 쇼츠 2초·롱폼 10초마다 한 장). live = 카메라로 찍은 실사(사람·장소·물건) 비율 어림, person = 화면에 나오는 사람 종류, ai_person = AI로 만든 사람(얼굴·몸) 보임, card = 글자·도표 판",
+ "short_SURYYRniqwc": {
+  "live": 1.0,
+  "person": "직접 촬영(마스크 쓴 진행자·집 안)",
+  "ai_person": false,
+  "card": 0,
+  "layout": "위 흰 띠 제목 3줄(빨강+검정) · 가운데 실사 칸(가로 영상) · 아래 로고",
+  "note": "장면 2초마다 바뀜(눈)"
+ },
+ "short_LAldgYQemts": {
+  "live": 1.0,
+  "person": "진행자 촬영 약 70% + 실사 b-roll(녹물·아파트·공사장) 약 30%",
+  "ai_person": false,
+  "card": 0,
+  "layout": "위 노랑·검정 띠 제목 2줄 · 화면 가운데 흰 글자 자막 한 줄 · 노랑 이름표",
+  "note": ""
+ },
+ "short_dMHOpTtibdY": {
+  "live": 1.0,
+  "person": "방송 대담 클립(한 사람 얼굴)",
+  "ai_person": false,
+  "card": 0,
+  "layout": "위 제목 2줄(흰+노랑) · 가운데 실사 칸 · 자막 초록 상자 1~2줄",
+  "note": "채널A 경제시그널"
+ },
+ "short_OAaODOz-dm0": {
+  "live": 0.0,
+  "person": "없음",
+  "ai_person": false,
+  "card": 1.0,
+  "layout": "7초 정지 카드 한 장(제목 2줄 + 목록 8줄, 작은 글자)",
+  "note": "구독 524, 조회 48만 — 글 많은 정지 카드"
+ },
+ "short_hjhTqWanKO4": {
+  "live": 1.0,
+  "person": "방송 대담 클립(두 사람)",
+  "ai_person": false,
+  "card": 0,
+  "layout": "맨 위 제목 3줄(흰·빨강·노랑, y 0~25%) · 가운데 실사 칸 · 자막 칸 안 아래 흰·노랑 글자",
+  "note": "JTBC 클립"
+ },
+ "short_dNAkwe2dTzc": {
+  "live": 1.0,
+  "person": "대담 촬영(진행자·출연자)",
+  "ai_person": false,
+  "card": 0,
+  "layout": "맨 위 노랑 제목 1줄 · 화면 가운데 아래 흰 작은 자막 한 줄 · 채널 이름표",
+  "note": ""
+ },
+ "short_gOQAKvhVkX4": {
+  "live": 0.0,
+  "person": "없음",
+  "ai_person": false,
+  "card": 1.0,
+  "layout": "6초 정지 카드(제목 2줄 + 표 9줄) + 아래 차트 그림",
+  "note": "목소리 없음(음량 −48.7 LUFS)"
+ },
+ "short__ktPoA-Hfoo": {
+  "live": 0.15,
+  "person": "AI 생성으로 보이는 사람 그림 여러 장(0:12 컴퓨터 앞 남자·0:40 식당 남자 등) + 영화 짤",
+  "ai_person": true,
+  "card": 0.7,
+  "layout": "위 회색 띠 제목 2줄 · 흰 바탕 차트 · 가운데 작은 자막",
+  "note": "휙 효과음 4~8초마다(제미나이 듣기)"
+ },
+ "short_r0lolybOlpI": {
+  "live": 0.75,
+  "person": "없음",
+  "ai_person": false,
+  "card": 0.25,
+  "layout": "항공 사진·조감도 위 지도 표시 · 장 제목은 위 큰 글자 · 자막 가운데 작게",
+  "note": "역사·터널 조감도는 렌더 그림으로 보임(AI 여부 확인 안 함)"
+ },
+ "short_OURS_n1s_rank": {
+  "live": 0.0,
+  "person": "없음",
+  "ai_person": false,
+  "card": 1.0,
+  "layout": "흐린 실사 위 흰 카드 2칸 · 제목·카드가 x 468 기준(왼쪽으로 치우침)",
+  "note": "10/17 옛 틀"
+ },
+ "long_8ZObNM1xeGo": {
+  "live": 0.29,
+  "person": "사람 삽화(아이콘)·손 실사",
+  "ai_person": false,
+  "card": 0.71,
+  "layout": "구겨진 종이 판 + 위 가운데 큰 제목 + 아래 회색 자막 띠, 30초 간격 21장 중 실사 6장(지구·태블릿·폰·패러글라이딩·음식·문서)",
+  "note": "수페TV"
+ },
+ "short_vEzd2xf1SoI": {
+  "live": 1.0,
+  "person": "라디오 대담 클립(MBC)",
+  "ai_person": false,
+  "card": 0,
+  "layout": "맨 위 제목 2줄(흰+하늘) · 실사 꽉 참 · 자막 화면 가운데 아래 흰·주황 · 강조 빨간 띠 글",
+  "note": "1분썰배달"
+ },
+ "short_zfInaE_f-K8": {
+  "live": 1.0,
+  "person": "실사처럼 보이는 할머니 두 사람(카페) — AI 생성 영상으로 보임",
+  "ai_person": true,
+  "card": 0,
+  "layout": "자막 노랑 상자 가운데 · '화면을 두번 터치' 큰 빨강 글",
+  "note": "이야기형(드라마) 쇼츠, AI 여부는 눈 판단(확인 안 함)"
+ },
+ "short_WYj3u-yNwbI": {
+  "live": 0.0,
+  "person": "만화 캐릭터(채널 마스코트)",
+  "ai_person": false,
+  "card": 1.0,
+  "layout": "위 검정 띠 제목 2줄(흰+노랑) · 달력 캡처·캐릭터 그림 · 아래 작은 자막",
+  "note": "테드TV 119만 회"
+ },
+ "short_ZwcVKtde2eI": {
+  "live": 0.1,
+  "person": "AI로 그린 만화 탐정 캐릭터가 AI 배경 속에(장면마다)",
+  "ai_person": true,
+  "card": 0.3,
+  "layout": "위 제목 2줄(흰·노랑+빨강) · 가운데 그림 칸 · 그림 안 아래 흰 자막",
+  "note": "만화형이라 사실처럼 보이는 사람은 아님"
+ },
+ "short_7bs9EgGsKdM": {
+  "live": 0.9,
+  "person": "진행자 현장 촬영",
+  "ai_person": false,
+  "card": 0.1,
+  "layout": "위 제목 2줄 · 가운데 실사 칸 · 자막 칸 안 · 아래 큰 고정 글 '이런 곳을 사야합니다'",
+  "note": "대장TV"
+ },
+ "short_l1JxwufdG_g": {
+  "live": 0.8,
+  "person": "인터뷰 촬영",
+  "ai_person": false,
+  "card": 0.2,
+  "layout": "위 노랑 띠 제목 2줄 · 실사 칸 · 자막 칸 안 큰 장식 글자",
+  "note": "싱글파이어 119만 회"
+ },
+ "short_WnpIMaJl72Q": {
+  "live": 0.75,
+  "person": "뉴스 앵커·공장 영상(JTBC)",
+  "ai_person": false,
+  "card": 0.25,
+  "layout": "위 제목 2줄(흰+초록) · 실사·막대 그래프 · 자막 칸 안",
+  "note": "블루노트"
+ },
+ "short_N5MkG8RV4Jw": {
+  "live": 1.0,
+  "person": "인터뷰 촬영(한 사람)",
+  "ai_person": false,
+  "card": 0,
+  "layout": "위 제목 2줄(주황+흰) · 실사 칸 · 칸 안 아래 작은 흰 자막",
+  "note": "투자360"
+ },
+ "short_IKNQSQAfVts": {
+  "live": 1.0,
+  "person": "팟캐스트 촬영",
+  "ai_person": false,
+  "card": 0,
+  "layout": "위 노랑 제목 2줄 · 실사 칸 · 칸 아래 흰 자막 2줄",
+  "note": "매불이"
+ },
+ "short_bNuOoF0SDnk": {
+  "live": 0.0,
+  "person": "없음",
+  "ai_person": false,
+  "card": 1.0,
+  "layout": "위 제목 2줄(흰+빨간 띠) · 막대 그래프 한 장 27초 · 아래 작은 자막",
+  "note": "연금왕 배형, 정지 그래프 한 장"
+ },
+ "short_4ybdVtAjwrc": {
+  "live": 1.0,
+  "person": "대담 촬영(두 사람)",
+  "ai_person": false,
+  "card": 0,
+  "layout": "위 제목 2줄(흰+노랑) · 실사 칸 · 칸 아래 흰 자막",
+  "note": "부읽남"
+ },
+ "long_OURS_c2": {
+  "live": 0.5,
+  "person": "손·뒷모습·노부부 손 실사(Pexels)",
+  "ai_person": false,
+  "card": 0.5,
+  "layout": "흰 보드 판 10장 + 꽉 찬 실사 10장(30초 간격 20장), 위 가운데 제목, 아래 검정 자막 상자",
+  "note": "공개본(클로드 티 고치기 전)"
+ },
+ "short_nCXWFko0TaA": {
+  "live": 0.75,
+  "person": "진행자 촬영(박곰희)",
+  "ai_person": false,
+  "card": 0.25,
+  "layout": "위 보라 띠 제목 2줄 · 진행자 머리 위에 그림·글 · 종이 결 판 25% · 자막 없음",
+  "note": ""
+ },
+ "long_CP89fHnTN6c": {
+  "live": 0.5,
+  "person": "얼굴 없이 셔츠·책장 실사(같은 장면 반복)",
+  "ai_person": false,
+  "card": 0.5,
+  "layout": "남색 판 위 흰 글 / 흰 표 판(칸·상자) ↔ 책상 실사, 아래 검정 자막 상자",
+  "note": "연금왕 배형, 쉼 많음(쉼 비율 21%)"
+ },
+ "long_dGLEg3d6wdw": {
+  "live": 0.0,
+  "person": "진행자 작은 창(오른쪽) + 만화 원숭이 캐릭터",
+  "ai_person": false,
+  "card": 1.0,
+  "layout": "벽돌 배경 위 흰 종이 판에 뉴스 캡처·차트·글 빽빽(10줄+), 진행자 얼굴 작게",
+  "note": "소수몽키, 판 글자 많음"
+ },
+ "long_mOBsKBLWrN4": {
+  "live": 0.05,
+  "person": "없음",
+  "ai_person": false,
+  "card": 0.95,
+  "layout": "흰 카드·칸·알약·표가 든 슬라이드(작은 글 많음), 아래 노랑 자막",
+  "note": "은퇴머니, 쉼 비율 19% — 목소리 TTS로 보임(확인 안 함)"
+ },
+ "long_FLa29vD6X28": {
+  "live": 0.0,
+  "person": "AI로 그린 만화 인물(중절모 쓴 50대 남자, 같은 캐릭터)",
+  "ai_person": true,
+  "card": 1.0,
+  "layout": "장면마다 새 AI 삽화(손그림 느낌), 글자는 아래 노랑 자막과 숫자 카드 가끔, 30초 간격 21장 모두 다른 그림",
+  "note": "오십의 경제지도(조회÷구독 43배). 사실처럼 보이는 사람은 아님(만화)"
+ },
+ "long_9C7_sKVcPiQ": {
+  "live": 0.7,
+  "person": "인터뷰 촬영",
+  "ai_person": false,
+  "card": 0.3,
+  "layout": "인터뷰 + 표·차트 판(노랑 머리 표), 아래 흰 자막",
+  "note": "투자360"
+ },
+ "long_ICYD3f6W-MA": {
+  "live": 1.0,
+  "person": "현장(공원) 촬영 + 스튜디오 인터뷰",
+  "ai_person": false,
+  "card": 0.0,
+  "layout": "실사 꽉 참, 자막 거의 없음·이름표",
+  "note": "월급쟁이부자들TV"
+ },
+ "long_PQlGUOTbWK4": {
+  "live": 0.95,
+  "person": "대담 촬영",
+  "ai_person": false,
+  "card": 0.05,
+  "layout": "대담 실사, 질문 글만 가끔, 자막 없음",
+  "note": "김작가TV"
+ },
+ "long_ahjw7YA4tms": {
+  "live": 0.5,
+  "person": "진행자(왼쪽 반)",
+  "ai_person": false,
+  "card": 0.5,
+  "layout": "왼쪽 문서·표 판(작은 글 많음, 빨간 펜 표시) + 오른쪽 진행자, 아래 흰 글 검정 자막",
+  "note": "리치고TV"
+ },
+ "long_-HgmZvx5G40": {
+  "live": 0.0,
+  "person": "없음",
+  "ai_person": false,
+  "card": 1.0,
+  "layout": "흰 바탕 인포그래픽(카드·칸·막대·큰 숫자) + 손그림 빨간 동그라미·체크, 장 카드 빨강, 아래 회색 자막 띠",
+  "note": "똑재TV(조회÷구독 1.5) — 판 위주·흰 카드 많음"
+ },
+ "long_3mN7bBMkC0g": {
+  "live": 0.5,
+  "person": "진행자(왼쪽 반)",
+  "ai_person": false,
+  "card": 0.5,
+  "layout": "오른쪽 흰 카드에 대화·판결문 글 + 빨간 손 밑줄, 자막 없음",
+  "note": "부읽남TV"
+ },
+ "long_LFBEEft1uFc": {
+  "live": 0.3,
+  "person": "진행자(오른쪽 아래, 라이브 방송 화면)",
+  "ai_person": false,
+  "card": 0.7,
+  "layout": "흰 슬라이드(제목·지도·국기·글) + 진행자 + 채팅창, 자막 없음",
+  "note": "슈카월드(라이브 편집본)"
+ },
+ "long_4kZm0zP3AAU": {
+  "live": 1.0,
+  "person": "대담 촬영(3~4명)",
+  "ai_person": false,
+  "card": 0,
+  "layout": "스튜디오 대담 실사, 아래 초록 글 자막",
+  "note": "머니인사이드"
+ },
+ "long_Y9wDXyYLGeQ": {
+  "live": 0.9,
+  "person": "진행자·출연자(가상 배경 앞)",
+  "ai_person": false,
+  "card": 0.1,
+  "layout": "상품 그래픽 배경 앞 출연자, 광고 띠·구독 안내 상자 상시",
+  "note": "삼프로TV(ETF 광고형 방송)"
+ },
+ "short_K0VBkvMiUi0": {
+  "live": 0.0,
+  "person": "없음",
+  "ai_person": false,
+  "card": 1.0,
+  "layout": "흰 바탕 차트 카드(위 제목 2줄 빨강+검정, 칸 이름표·알약) + 아래 자막, 2분",
+  "note": "머니레이다 AI — 차트 판만, 띠링 반복(제미나이 듣기)"
+ },
+ "short_Fj1dHmEN5vI": {
+  "live": 0.9,
+  "person": "진행자 얼굴 크게(라이브 방송 잘라냄)",
+  "ai_person": false,
+  "card": 0.1,
+  "layout": "위 제목 2줄(흰+빨강) · 얼굴 위에 흰 굵은 자막 2줄 가운데 · 아래 채팅",
+  "note": "슈카월드 쇼츠 411만 회"
+ },
+ "short_cgf70PPxVDI": {
+  "live": 0.4,
+  "person": "인터뷰 촬영(가운데 칸)",
+  "ai_person": false,
+  "card": 0.0,
+  "layout": "민트 단색 바탕 + 위 제목 2줄(노랑+흰) + 가운데 실사 칸 + 아래 단색 장식",
+  "note": "이투데이TV, 실사 칸이 화면 40%"
+ },
+ "short_OURS_d1s_dep": {
+  "live": 0.0,
+  "person": "없음",
+  "ai_person": false,
+  "card": 1.0,
+  "layout": "흐린 실사 위 흰 카드 판 · 제목·카드가 x 468 기준",
+  "note": "10/18 옛 틀"
+ },
+ "short_OURS_p1s_step": {
+  "live": 0.0,
+  "person": "없음(바탕에 흐린 실사)",
+  "ai_person": false,
+  "card": 1.0,
+  "layout": "흐린 실사 위 흰 막대 카드 · 제목 y 296부터 · x 468 기준",
+  "note": "10/18 옛 틀"
+ }
+}

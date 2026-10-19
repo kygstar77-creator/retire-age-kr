@@ -10,6 +10,8 @@
 #   py -3.12 work/aitell.py commaday 2026-10-04               → 그 날 카페 칸 쉼표 없는 제목 수(하루 2편 이상, 10/4 칸부터 frame이 쉼표 제목을 막는다)
 #   py -3.12 work/aitell.py script <편 폴더|voice.json|자막 .json3|대본 텍스트>  → 롱폼 대본 실측 기준 2개(10/4 speechcompare 경쟁 자막 12편 vs 우리 4편): 숫자 1,000단어당 ≤92(경쟁 최대 91.4) · 숫자 2개 이상 문장 ≤20%. 넘으면 종료코드 6
 #        + 말 습관 4개(10/13 벤치마크 루프): 정밀 숫자 낭독('39만 7천'·6자리↑)·순번 3종↑·말 목차('볼게요') 3연속·꼬리표 낭독({F}·이미지 1·S3) — 걸린 줄 번호 출력, 걸리면 종료코드 6
+#        + 구어 아닌 말(10/19 사장님 '사람이 구어체로 쓰지 않는 단어'): work/data/not_spoken.json ban 말이 있으면 줄·바꿀 말을 보이고 종료코드 6, over 말은 경고만
+#   py -3.12 work/aitell.py spoken <묶음|글 파일 …>          → 구어 아닌 말만(카페 원고 점검용, gate에는 없음). ban 말이 있으면 종료코드 5
 #   py -3.12 work/aitell.py thumb "<썸네일 큰 글>" ["<둘째 줄>" …]  → 썸네일·쇼츠 표지 AI 티 A30·A31·A33(10/15 editor, 근거 longform/thumb-gap-1015.md ③ — 남 29장 실측). 걸리면 종료코드 5. A32(그리다 만 0초 화면)는 그림이라 눈으로 본다
 #   --skip-list (아무 자리)  → 번호·글머리 목록 줄과 법 문구·면책 줄을 끝맺음 반복(연속·'~요'·머리·꼬리)에서 뺀다.
 #                              사전(AI 말·설명조) 검사는 그대로. 기본은 꺼짐 — 기존 통과 점수가 안 바뀐다(10/1 대역 X-KR-1 요청).
@@ -441,6 +443,8 @@ def script_text(p):
         v = json.load(open(p, encoding='utf-8'))
         # 'say'는 숫자를 한글로 풀어 읽은 줄('이백오십팔만 원')이라 숫자가 0개로 세졌다(10/13 R-1·G-1 0.0/1,000) → 숫자 그대로인 'text'
         return ' '.join(l.get('text') or l['say'] for s in v['sections'] for l in s['lines'])
+    if p.endswith('.md'):   # script.md는 말하는 줄('- ')만 — (화면:)·[자막:] 줄은 읽지 않는다(10/19)
+        return '\n'.join(re.sub(r'\s*\(재사용[^)]*\)', '', l[2:]) for l in open(p, encoding='utf-8').read().splitlines() if l.startswith('- '))
     return open(p, encoding='utf-8').read()
 
 
@@ -525,6 +529,32 @@ def script_habits(lines, said=None, screen_titles=None):
     return sorted(hits, key=lambda h: h[1])
 
 
+NS_FILE = os.path.join(HERE, 'data', 'not_spoken.json')
+
+
+def spoken_check(lines):
+    """10/19 사장님 '대본에 쓰는 단어도 AI 티를 벗어야 해. 사람이 구어체로 쓰지 않는 단어를 막 쓰잖아.'
+    work/data/not_spoken.json(근거 longform/spoken-words-1019.md: 사람 자막 134편 vs 우리 68편 + 58세 심사관 2명).
+    → (금지 걸림 [(말, 줄 번호, 줄, 바꿀 말)], 과다 경고 [메시지]). 따옴표·「」 인용과 terms(법·제도 이름, 상품명) 안은 안 센다."""
+    if not os.path.exists(NS_FILE): return [], []
+    d = json.load(open(NS_FILE, encoding='utf-8'))
+    ex = [re.compile(x) for x in d.get('except_rx', [])] + [re.compile(re.escape(t)) for t in d.get('terms', []) if t]
+    def mask(l):
+        for rx in ex: l = rx.sub(lambda m: ' ' * len(m.group(0)), l)
+        return l
+    ml = [mask(l) for l in lines]
+    hits = []
+    for w, v in d.get('ban', {}).items():
+        rx = re.compile(v['rx'])
+        hits += [(w, i, lines[i - 1], v['to']) for i, l in enumerate(ml, 1) if rx.search(l)]
+    warn, E = [], sum(len(l.split()) for l in lines)
+    for w, v in d.get('over', {}).items():
+        n = sum(len(re.findall(v['rx'], l)) for l in ml)
+        cap = max(1, -(-v['human'] * v.get('cap_x', 3) * E // 1000))
+        if n > cap: warn.append(f"'{w}' {n}번 — 이 길이면 사람 자막 기준 {int(cap)}번까지 → {v['to']}")
+    return sorted(hits, key=lambda h: h[1]), warn
+
+
 def script_check(text):
     """(통과 여부, 숫자/1000단어, 숫자 2개 이상 문장 %, 문장 수, 메시지 목록). speechcompare.py와 같은 식."""
     sents = [x.strip() for x in re.split(r'(?<=[.?!])\s+', text) if len(x.strip()) > 3]
@@ -586,7 +616,22 @@ def main(a):
         print('말 습관(정밀 숫자·순번 3개↑·말 목차 3연속·꼬리표 낭독·A40 면책 반복/끝 3줄·A41 분이라면 5줄↑·A43 예고·A44 끝 정리·A46 한계 낱말 3번↑·A47 같은 판 제목 3장↑) — ' + ('통과' if not habits else f'{len(habits)}건 걸림'))
         for k, i, l in habits: print(f'   [{k}] {i}줄: {l[:70]}')
         if habits: print('  정밀 숫자는 말로 반올림(정확값은 화면), 순번·목차는 질문 한 줄로, 꼬리표는 말에서 지운다, 면책은 편당 1줄·끝 3줄 밖, 한계 말은 한 번만, 판 제목은 그 판 내용으로.')
-        return 0 if ok and not habits else 6
+        sp, over = spoken_check(script_lines(a[1]))
+        print('구어 아닌 말(data/not_spoken.json, 10/19) — ' + ('통과' if not sp else f'{len(sp)}줄 걸림'))
+        for w, i, l, to in sp: print(f'   [{w} → {to}] {i}줄: {l[:70]}')
+        for x in over: print('   [경고·많이 씀]', x)
+        if sp: print('  사람 자막에 거의 안 나오는 말이다. 바꿀 말로 고치되 숫자·사실은 그대로. 법·제도 이름·상품명이면 not_spoken.json terms에 그 이름을 더한다.')
+        return 0 if ok and not habits and not sp else 6
+    if a[0] == 'spoken':   # 카페 묶음·아무 글: 구어 아닌 말만(10/19). 발행 관문(gate)에는 안 넣음 — 글로 쓰는 말과 말로 하는 말은 다르다
+        tot = 0
+        for p in a[1:]:
+            t = pkg_text(p)[0] if os.path.isdir(p) else script_text(p)
+            sp, over = spoken_check([x for x in t.splitlines() if x.strip()])
+            tot += len(sp)
+            print(f'{p} — 구어 아닌 말 ' + ('통과' if not sp else f'{len(sp)}줄'))
+            for w, i, l, to in sp: print(f'   [{w} → {to}] {l.strip()[:70]}')
+            for x in over: print('   [경고·많이 씀]', x)
+        return 5 if tot else 0
     if a[0] == 'gate':
         ok, msg, hits = gate_pkg(a[1])
         if ok: print(msg); return 0

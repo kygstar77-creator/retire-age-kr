@@ -1,0 +1,35 @@
+갈래 C 근거 수집(10/19, 조사 에이전트 결과 원문 요약 — C-thumb-1019.md 쓸 때 쓰는 재료. 'opened'=직접 읽음, 'snippet'=검색 요약만)
+
+[공식 유튜브]
+- 썸네일 규격: 1280x720 이상 권장, 최소 폭 640, 16:9, 2MB(모바일)/50MB(데스크톱) https://support.google.com/youtube/answer/72431 (opened)
+- 썸네일 팁: "use a font that's easy to read" · "Try not to make the design too complex" · "make sure your thumbnail image is as large as possible" · 얼굴은 시청자층에 따라 https://support.google.com/youtube/answer/12340300 (opened)
+- 제목: "keep it short and put the most important words near the beginning. Save episode numbers and branding for the end" · 대문자·이모지 줄이기 · 내용과 맞게 (같은 주소)
+- 지표: 노출이 평균 이상인 영상만 "CTR on Home and Suggested in the first 24 hours" 비교 (같은 주소)
+- 제목 최대 100자 https://support.google.com/youtube/answer/57404 — 잘리는 글자 수 공식 값 없음
+- 낚시 정책: 내용이 약속을 지키지 않는 "maliciously misleading titles, thumbnails" 금지 https://support.google.com/youtube/answer/2801973
+[테스트 및 비교]
+- 시청 시간 점유율로 승자, 결과 승자/같음/판정 불가, 최대 3개, 쇼츠 불가, "It's normal not to receive a 'Winner'", 최소 노출 값 공개 안 함, 720p 미만이 하나라도 있으면 전부 480p로 낮춤, 최대 2주 https://support.google.com/youtube/answer/13861714 · /16391400
+- 리에종: CTR이 아니라 시청 시간을 돌려줌, 모든 시험이 유의하진 않음, 공개 72시간 뒤 다시 시험 권장 https://blog.youtube/creator-and-artist-stories/renes-top-five-june-14-2024/ (2024-06-14)
+- "over-index on CTR … click-bait … tank retention" (SEJ 2025-12-22 인용)
+- 공식 결과 통계·사례는 못 찾음
+[썸네일 특징 실측]
+- Eden(2026-08-21): 50.7만 편/8,691채널, 비교는 2,960장(돌파 vs 저조) — 얼굴 84.2% vs 82.2%, 글 4~6단어 30.6% vs 26.5%, 밝기·대비·채도 차이 없음 https://eden.so/blog/what-makes-a-good-youtube-thumbnail/ (중간 강도)
+- vidIQ(2026-07): 돌파작 500장만, 얼굴 69%, 글 72%·중앙 5단어 https://vidiq.com/research/youtube-thumbnail-study/ (약함)
+- 1of10(SEJ 인용): 30만 편, 얼굴 유무 전체 비슷, 금융 분야는 얼굴이 나음 (약함, 원문 미열람)
+- Koh & Cui 2022 DSS 160: 브랜드 영상 3,745편 썸네일 특징과 시청 (초록만)
+[LLM 심사·가상 인물]
+- MT-Bench arXiv 2306.05685: 사람끼리 수준 80% 일치, 자리·장황·자기 편애 편향
+- Wang et al. arXiv 2305.17926: 순서만 바꿔도 순위 뒤집힘(80문항 중 66)
+- Panickssery arXiv 2404.13076: 자기 출력 편애
+- G-Eval arXiv 2303.16634: 사람과 스피어만 0.514
+- arXiv 2412.12509: 한 번 채점 의존 금지, 여러 번
+- Thakur arXiv 2406.12624: 큰 모델만 사람과 맞음, 점수 최대 5점 차
+- 가상 인물 부정: arXiv 2402.01908(Nature MI, 3,200명) "misportray and flatten" · Bisbee 2024 Political Analysis 변동 작고 3개월 새 결과 바뀜 / 조건부 긍정: Argyle arXiv 2209.06899(설문 의견만)
+[첫인상·읽힘]
+- NN/g 2021-07-11: 정량 지표는 40명 이상이어야 좁아짐 https://www.nngroup.com/articles/5-test-users-qual-quant/ (5초 시험 전용 지침 없음)
+- Lindgaard 2006: 50ms 인상이 긴 관찰과 비슷 (snippet)
+- WCAG 2.2 대비 4.5:1, 큰 글 3:1 https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html
+- 한글 임계 글자 크기: 고령 0.52° vs 청년 0.41° (한국인지및생물심리학회지 27(3), 2015) https://accesson.kr/cogpsych/v.27/3/367/17617?lang=en
+- 옥외광고 '7단어' 규칙: 의견뿐, 연구 근거 없음
+[제목 길이]
+- Kawata 2025(엑셀 강좌 1.2만 편): 중간 길이에서 정점 (snippet) · ytgrowth 2.9만 편: 상관 0.0046 (snippet) · 한국어 연구 없음

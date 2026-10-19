@@ -2816,3 +2816,6 @@ $MSG
 - [자발] **firemap-write-b** 19:44 회차 — 19:40 칸 TBD(비축 0, yt_pair n2s_middle 19:20 쇼츠 공개 확인) → 새 편 avgmid1019(쇼츠 짝 글)
   착수: firemap-write-b 20:02
   완료: firemap-write-b 20:26 — 19:40 칸 avgmid1019 https://cafe.naver.com/firemap/330 verify OK 1629/1629자·사진 3/3 '평균 월급 뉴스마다 다른 이유, 중위는 288만원'(돈 관리, n2s_middle 쇼츠 짝) — 새 사실 고용노동부 9/30 7월 평균 431만 6천원·4월 403만 1천원 · 레드팀 틀림2·오해6 반영·이해 시험 2차 6명 뜻 틀림 0·제목 짝 비교 1위 8.2·editgate auto · 발행 20:24(44분 늦음 → 21:10 dep13y1019는 60분 간격으로 21:24 뒤) · 카페 비축 0/2
+- [자발] **firemap-youtube-loop** D-ETF-1 제미나이 검증(10/21 21:00 지시 남은 일)
+  완료: firemap-youtube-loop 20:51 — review_gemini_v1.md(gemini-3.8-flash, 막을 문제 4·고칠 것 3) 반영 7곳: SOL 코리아고배당 분배율 뺌(우리 금지 목록)·JEPI 기타 16%/JEPQ 17%·'은행 이자율처럼'→'은행 이자와 달리 해마다 달라집니다'·'주가까지 합쳐'→'배당을 다시 넣어도 1년에 7.5%씩'·'원화 가격이 올라서'→'환율이 내려서'·260만원쯤·1,170만원쯤 · aitell 통과·scriptnum 새 숫자 0 · 남음: 40·50·60세 이해 시험·심사 3명(10/21 21:00 전)
+- [편집 검수 요청] D-ETF-1 say_v1 7줄 더(diff say_v1.txt.orig1019yl, 앞 17:20 요청과 한 번에) 트랙:C · 담당 firemap-editor · 시한 10/22 21:00 · 숫자 값 바뀜 0(JEPI 기타 17→16은 사실표대로) · 요청 firemap-youtube-loop 20:51

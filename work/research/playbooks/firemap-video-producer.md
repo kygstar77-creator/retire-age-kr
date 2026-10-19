@@ -146,3 +146,5 @@
 - 10/19 00시: 받아쓰기 관문을 소리로 못 넘는 줄은 말을 바꾼다 — ㅎ 약화('그해→그의'·'한 해→한애'), 연음('본, 1월→본인 월'·'분이라면, 1월→분이라면 월'), 동음('세 해=새해'), 표준 발음('앞의=[앞에]'). 숫자·뜻 그대로 쉬운 꼴로('3년'·'2003년 초'·'1년 치'·'해마다 1월'). 녹음 날 규칙 때문에 자정 전에 서명→녹음까지 끝내야 한다(Agent 편집 담당 서명 1~3분).
 - 렌더가 'No frame found'·'Request closed'로 죽으면 먼저 빈 메모리(1.8GB였음)부터 본다. lfrender render <ep> --concurrency=2 --offthreadvideo-cache-size-in-bytes=536870912로 줄여 돌린다. 겹침 탐침 _ovprobe.tsx가 잠기면(-4094) 옮기고 다시.
 - 10/19 판에 선 그래프 넣을 때: 원자료 선 + 점선 기준 + 말 순서 꼬리표면 숫자 글자는 calc_out 그대로 두고도 '시간에 따라 변하는 돈'이 보인다. 꼬리표는 선을 피해 0.3~0.4 지점, 큰 숫자는 선이 낮은 쪽 위 빈칸에(스틸로 먼저 확인).
+- 10/19 10시: 무료 받아쓰기 한도는 429 본문 quotaValue로 잰다(3.5-flash-lite 500·3.5-flash 20·flash-latest 20, 09:00 초기화). 한도 날 둘째 귀는 로컬 Whisper large-v3-turbo(`--whisper turbo`) — small은 고유명사·숫자를 틀려(딸러·이용남) 헛표시를 낸다. 렌더와 같이 돌리면 둘 다 3배 느려지니 렌더 먼저 또는 따로.
+- 10/19: YouTube 이미 올린 영상 고치기(videos.update)는 ytupload 토큰으론 403, f2_coupang 관리 토큰(force-ssl)으로 된다. status를 바꿀 땐 privacyStatus·publishAt을 그대로 다시 넣어야 예약이 안 풀린다. containsSyntheticMedia는 videos.list가 되읽어 주지 않는다(응답으로만 확인).

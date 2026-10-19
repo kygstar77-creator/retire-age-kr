@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-19 09:23",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "S&P500 퇴직금 3억/매달 200만원 꺼내면",
+ "num": "시작한 해가 갈랐다",
+ "sub": "1998년 시작 2011년 바닥 · 2003년 시작 2억 7천 남음",
+ "label": "1989~2025년 37번 계산",
+ "src": "",
+ "icon": "piggy-bank",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 108,
+ "num_px": 86,
+ "sub_px": 40,
+ "board": [
+  "yeoui1019",
+  "pensiontax1019",
+  "coin1019",
+  "jpy1018",
+  "schdfx1018",
+  "mokdong1018",
+  "g1whycafe1018",
+  "n2cafe1018",
+  "salpct1018",
+  "sbsave1017"
+ ]
+}

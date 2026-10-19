@@ -22,6 +22,17 @@
     "url": "https://cafe.naver.com/firemap/322"
    },
    "note": "07:40 칸 TBD(p1s_cross 짝 관문 기한 지남) → 비축 pensiontax1019(관문 10/18 23:47: 레드팀 틀림0·58세 2차·제목8·표지8.5·교차검증 check_gpt/gemini 있음). 글 끝 질문 줄 추가 후 aitell 2.1·readcheck 0·editgate auto 재서명. verify OK 1531/1531자·사진 3/3. 관련 영상: 맞는 공개 롱폼 없어 안 넣음. 카페 비축 0/2. 개선: 없음(확인 창 TimeoutError는 발행엔 영향 없음)"
+  },
+  {
+   "hour": 9,
+   "ts": "09:34",
+   "by": "firemap-write",
+   "blog": null,
+   "cafe": {
+    "title": "여의도 구축 아파트 층별 가격, 같은 단지 저층과 위층은 얼마나 차이 날까",
+    "url": "https://cafe.naver.com/firemap/323"
+   },
+   "note": "09:10 칸 yeoui1019 발행(게시판 부동산) verify OK 1713/1713자·사진 3/3 · 블로그 없음(블로그 대기 전부 보류·하루 상한 규칙) · 15:10 칸 c2cafe1019 관문 통과(C-2 짝 글, 미발행): 자료조사 새로 7건(야후 ^SP500TR 10/16·ECOS 731Y001 10/16 1,348.5원·ECOS 121Y002·소득세법 129조 원문 50% 구간·Morningstar 3.9%/AP 시황은 1차 확인 못 해 본문 미사용) · 교차검증: crosscheck 출력 없음(check_gpt/gemini 미생성) → selfcheck 사실 0 · 레드팀 틀림1·오해5·권유2 전부 반영 · 58세 3차 심각0 · 개선: 없음(이번 회차 셸 heredoc 실수로 9분 멈춤 — 수정 스크립트는 파일로)"
   }
  ]
 }

@@ -1,6 +1,8 @@
 {
  "ep": "M-1",
- "thumb": "thumb_m1i.png",
+ "thumb": "thumb_r19b.png",
+ "thumb_prev_1019": "thumb_m1i.png",
+ "thumb_status_1019": "10-19 13:3x 교체(공개 뒤, 썸네일만 — 영상·제목·설명 그대로) · 사장님 10/19 '조회수 안 나오고 있는 영상들도 썸네일 바꿔 봐' → N-2 thumb_A 꼴 r19b · 제미나이(3.1-flash-lite, judge_1014 방식) 지금 6 → 7.5 · 제미나이 1위·58세 \"원금 JEPQ 1억 3,800만원, SCHD 4억 8,500만원\" 뜻 맞음·누름 · 이전 판 i.ytimg 사본 thumb_before_1019.png · 근거 visual/rethumb-1019/ · 효과 growth/rethumb-1019.csv(10/26 다시 잼)",
  "thumb_status": "확정 m1i(13·14차 세 명 평균 7.0·7.33, 통과선 7 · 목표 8 미달) 09:19 visual-designer · 예비 thumb_m1r.png(14차 7.0) = 48h CTR 낮으면 교체 1회 · visual/M-1-thumb/judges.md 9~14차",
  "title": "배당으로 매달 100만원 받으려면 얼마 있어야 할까, 세금·건보료 떼고 거꾸로 계산 (JEPQ·SCHD·ACE)",
  "title_prev": "JEPQ 1.38억, SCHD 4.85억, ACE 5.10억 — 세금·건보료 뗀 월 100만원에 드는 원금",

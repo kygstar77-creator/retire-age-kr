@@ -1,0 +1,132 @@
+[
+ {
+  "id": "0yWQeW38UJE",
+  "key": "W-1",
+  "pick": "r19a",
+  "set_at": "2026-10-19 13:22",
+  "api_maxres": "https://i.ytimg.com/vi/0yWQeW38UJE/maxresdefault.jpg",
+  "md5_before": "835600a86056220da9e7e250dbdefabd",
+  "md5_after": "3b4e0045a8acdff1206a5a4b8a0a900f",
+  "changed": true
+ },
+ {
+  "id": "AxTB7izIBUA",
+  "key": "W-1-2",
+  "pick": "r19b",
+  "set_at": "2026-10-19 13:23",
+  "api_maxres": "https://i.ytimg.com/vi/AxTB7izIBUA/maxresdefault.jpg",
+  "md5_before": "0b47fe3ae6eddf454ea6667eff27ea5b",
+  "md5_after": "300c6ee73d4d587ee7b8d3f78b313af8",
+  "changed": true
+ },
+ {
+  "id": "xBTZtRp5lMs",
+  "key": "G-1",
+  "pick": "r19b",
+  "set_at": "2026-10-19 13:23",
+  "api_maxres": "https://i.ytimg.com/vi/xBTZtRp5lMs/maxresdefault.jpg",
+  "md5_before": "b211274b8c14d7e055f3e1eaa33f47e1",
+  "md5_after": "1ea03eff9156dca3f45c5e5e0d334dee",
+  "changed": true
+ },
+ {
+  "id": "vsL7mojDW7w",
+  "key": "P-1",
+  "pick": "r19a",
+  "set_at": "2026-10-19 13:23",
+  "api_maxres": "https://i.ytimg.com/vi/vsL7mojDW7w/maxresdefault.jpg",
+  "md5_before": "60468a404559f6e60f42e1c8209b4b61",
+  "md5_after": "d1a304201bd6c14a70fa7b8ef68b06d0",
+  "changed": true
+ },
+ {
+  "id": "eTjVs1vDTwg",
+  "key": "M-1",
+  "pick": "r19b",
+  "set_at": "2026-10-19 13:23",
+  "api_maxres": "https://i.ytimg.com/vi/eTjVs1vDTwg/maxresdefault.jpg",
+  "md5_before": "8c689f3073bc6ace69ad936ce9118174",
+  "md5_after": "95c255df184efb3466d7b6393ba4a696",
+  "changed": true
+ },
+ {
+  "id": "GMc2Rd1-JYA",
+  "key": "D-1",
+  "pick": "r19b",
+  "set_at": "2026-10-19 13:23",
+  "api_maxres": "https://i.ytimg.com/vi/GMc2Rd1-JYA/maxresdefault.jpg",
+  "md5_before": "dd4637dcadd95018016222848e007788",
+  "md5_after": "40a24609b1185508d86414a4dfd3d07c",
+  "changed": true
+ },
+ {
+  "id": "idc3JZOZukc",
+  "key": "E-1",
+  "pick": "r19a",
+  "set_at": "2026-10-19 13:23",
+  "api_maxres": "https://i.ytimg.com/vi/idc3JZOZukc/maxresdefault.jpg",
+  "md5_before": "35f7b3edd65efea19ce6fd8b87a38b3c",
+  "md5_after": "b890a87412429cc59c99b51bd2d4b014",
+  "changed": true
+ },
+ {
+  "id": "7eD6SLt_jKc",
+  "key": "E-2",
+  "pick": "r19b",
+  "set_at": "2026-10-19 13:23",
+  "api_maxres": "https://i.ytimg.com/vi/7eD6SLt_jKc/maxresdefault.jpg",
+  "md5_before": "b13ca38f185b4897c1c0c7508e417866",
+  "md5_after": "3b8dd294f709a8c928e6b3402b652865",
+  "changed": true
+ },
+ {
+  "id": "gSKsQWjTabo",
+  "key": "J-gSK",
+  "pick": "r19b",
+  "set_at": "2026-10-19 13:23",
+  "api_maxres": "https://i.ytimg.com/vi/gSKsQWjTabo/maxresdefault.jpg",
+  "md5_before": "814cf89e714c56c76a23b185eb91699b",
+  "md5_after": "b2e5b1dba01582fd4c4e55ed024a42de",
+  "changed": true
+ },
+ {
+  "id": "cxls2Ve18-k",
+  "key": "J-cxl",
+  "pick": "r19a",
+  "set_at": "2026-10-19 13:23",
+  "api_maxres": "https://i.ytimg.com/vi/cxls2Ve18-k/maxresdefault.jpg",
+  "md5_before": "d6393cc97ad8098e55403875e1fc33bd",
+  "md5_after": "e721543f1cff414ec3175be39d935306",
+  "changed": true
+ },
+ {
+  "id": "JVTYZ208hgw",
+  "key": "J-JVT",
+  "pick": "r19b",
+  "set_at": "2026-10-19 13:24",
+  "api_maxres": "https://i.ytimg.com/vi/JVTYZ208hgw/maxresdefault.jpg",
+  "md5_before": "f9d14bb0a431d5eed064c47bb9744258",
+  "md5_after": "a46be358e82688b2f6e5c863b884cded",
+  "changed": true
+ },
+ {
+  "id": "wwfFszPl06g",
+  "key": "J-wwf",
+  "pick": "r19a",
+  "set_at": "2026-10-19 13:24",
+  "api_maxres": "https://i.ytimg.com/vi/wwfFszPl06g/maxresdefault.jpg",
+  "md5_before": "a9b31effd025b0d1e37857389dbd506a",
+  "md5_after": "cadbc5e6b84cf49bef635d9d476d43c8",
+  "changed": true
+ },
+ {
+  "id": "zhTjJwy1mwQ",
+  "key": "J-zhT",
+  "pick": "r19b",
+  "set_at": "2026-10-19 13:24",
+  "api_maxres": "https://i.ytimg.com/vi/zhTjJwy1mwQ/maxresdefault.jpg",
+  "md5_before": "b6753559a195cb62cd7124a0822b8b61",
+  "md5_after": "02499c204ba701375b6e217fa7d56eb0",
+  "changed": true
+ }
+]

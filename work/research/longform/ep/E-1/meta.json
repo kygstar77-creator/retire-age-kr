@@ -1,6 +1,8 @@
 {
  "video": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\video\\out\\e1_v3_ds.mp4",
- "thumb": "thumb_e1c.png",
+ "thumb": "thumb_r19a.png",
+ "thumb_prev_1019": "thumb_e1c.png",
+ "thumb_status_1019": "10-19 13:3x 교체(공개 뒤, 썸네일만 — 영상·제목·설명 그대로) · 사장님 10/19 '조회수 안 나오고 있는 영상들도 썸네일 바꿔 봐' → N-2 thumb_A 꼴 r19a · 제미나이(3.1-flash-lite, judge_1014 방식) 지금 6 → 7.5 · 제미나이 r19b 8.5·r19a 7.5이나 58세가 r19b를 \"지금 일(최근 급등)\"으로 읽음(지나간 1년 값이 최신처럼) → \"9월 말까지 1년\" 박힌 r19a(7.5, 뜻 맞음) · 이전 판 i.ytimg 사본 thumb_before_1019.png · 근거 visual/rethumb-1019/ · 효과 growth/rethumb-1019.csv(10/26 다시 잼)",
  "title": "SK하이닉스 주가가 오른 만큼 이익도 늘었을까? 삼성전자·마이크론까지 공시로 맞춰 봤다",
  "title_prev": "삼성전자 이익 19배, 주가는 3배… SK하이닉스·마이크론은?",
  "title_1011": {"by": "카피·화면 규격 담당 2026-10-11 16:4x", "basis": "work/research/longform/title-gap-1011.md (상위 108편 대비)", "candidates": ["SK하이닉스 주가가 오른 만큼 이익도 늘었을까? 삼성전자·마이크론까지 공시로 맞춰 봤다", "반도체 주식, 주가보다 이익이 더 빨리 늘었다 — SK하이닉스·삼성전자·마이크론 1년 공시", "SK하이닉스 주주라면 볼 숫자, 1년 새 주가보다 이익이 더 늘었다"], "pick": 1, "applied": "videos.update idc3JZOZukc 2026-10-11 16:4x · videos.list 확인(설명·태그·카테고리·언어 그대로)", "note": "썸네일 주인공(SK하이닉스 +412.9%)에 제목 주인공을 맞춤(thumb-gap '주제 어긋남')."},

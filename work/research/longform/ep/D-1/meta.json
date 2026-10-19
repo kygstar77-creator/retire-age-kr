@@ -1,7 +1,9 @@
 {
  "ep": "D-1",
  "video": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\video\\out\\d1_ds.mp4",
- "thumb": "thumb_d1k.png",
+ "thumb": "thumb_r19b.png",
+ "thumb_prev_1019": "thumb_d1k.png",
+ "thumb_status_1019": "10-19 13:3x 교체(공개 뒤, 썸네일만 — 영상·제목·설명 그대로) · 사장님 10/19 '조회수 안 나오고 있는 영상들도 썸네일 바꿔 봐' → N-2 thumb_A 꼴 r19b · 제미나이(3.1-flash-lite, judge_1014 방식) 지금 5 → 7 · 제미나이 r19a 8·r19b 7이나 58세가 r19a \"3배가 뭐의 3배인지 모르겠다\"(숫자 단독 원칙) → r19b(7, 뜻 맞음·누름) · 이전 판 i.ytimg 사본 thumb_before_1019.png · 근거 visual/rethumb-1019/ · 효과 growth/rethumb-1019.csv(10/26 다시 잼)",
  "thumb_note": "최종 — 15:3x 통과선 7점(사장님), d1k 평균 7.63 통과. 48h CTR 낮으면 d1l로 교체",
  "title": "퇴직 후 배당·이자로 생활한다면 꼭 봐야 할 건보료 선, 넘으면 1년 54만원 넘게 더",
  "title_prev": "퇴직 후 건강보험료, 배당·이자 1만원 차이에 1년 54만원?",

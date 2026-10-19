@@ -1,6 +1,8 @@
 {
  "ep": "G-1",
- "thumb": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/research/longform/ep/G-1/thumb_g1f.png",
+ "thumb": "thumb_r19b.png",
+ "thumb_prev_1019": "C:/Users/강영준/Documents/GitHub/retire-age-kr/work/research/longform/ep/G-1/thumb_g1f.png",
+ "thumb_status_1019": "10-19 13:3x 교체(공개 뒤, 썸네일만 — 영상·제목·설명 그대로) · 사장님 10/19 '조회수 안 나오고 있는 영상들도 썸네일 바꿔 봐' → N-2 thumb_A 꼴 r19b · 제미나이(3.1-flash-lite, judge_1014 방식) 지금 5 → 8 · 제미나이 1위·58세 \"1월 꼭대기에 산 금 10월 6일 기준 50.7% 더 올라야 본전\" 뜻 맞음·누름 · 이전 판 i.ytimg 사본 thumb_before_1019.png · 근거 visual/rethumb-1019/ · 효과 growth/rethumb-1019.csv(10/26 다시 잼)",
  "thumb_status": "확정 g1f(visual-designer 10/7 09:16) — 3차 세 명 평균 7.40(제미나이 3.1-lite 8·8 / Claude 6.7 / 레드팀 7.5), 대조 g1e 7.15, 1초 블라인드 매 차수 주제 맞힘, 목표 8 미달 · 숫자는 make_thumbs.py가 calc_out에서 읽음 → 공개 전날 calc 재실행 뒤 `py -3.12 work/research/visual/G-1-thumb/make_thumbs.py g1f,g1s` 다시 돌릴 것(고점 날짜 바뀌면 assert가 막음) · 근거 visual/G-1-thumb/judges.md",
  "title_by": "firemap-copywriter copy/titles.md 1위 틀(C3, 3명 7.93) · 숫자는 g1meta.py가 calc.json에서 · 48h CTR이 채널 중앙값 아래면 title_swap+thumb_text_swap 짝으로 한 번 교체",
  "tags": [

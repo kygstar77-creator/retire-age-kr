@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-19 18:53",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "국민연금 기금 손실/내 연금액 줄어들까",
+ "num": "계산식에 기금 수익률 없음",
+ "sub": "38년 중 마이너스 3번 · 올해는 7월까지 +14.84%",
+ "label": "자료: 기금운용본부·국민연금법",
+ "src": "",
+ "icon": "landmark",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 126,
+ "num_px": 90,
+ "sub_px": 46,
+ "board": [
+  "directdeal1019",
+  "c2cafe1019",
+  "cafenotice1018",
+  "ubfraud1019",
+  "tsla1019",
+  "yeoui1019",
+  "pensiontax1019",
+  "coin1019",
+  "jpy1018",
+  "schdfx1018"
+ ]
+}

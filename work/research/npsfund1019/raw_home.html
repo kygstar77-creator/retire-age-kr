@@ -1,0 +1,2251 @@
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=3.0,user-scalable=yes">
+	<title>국민연금기금운용본부</title>
+	<link rel="icon" type="image/x-icon" href="/images/common/favicon.ico">
+	<link rel="icon" type="image/png" href="/images/common/favicon_16x16.png">
+	<link rel="icon" type="image/png" href="/images/common/favicon_32x32.png">
+	<link rel="apple-touch-icon" href="/images/common/apple_touch_icon.png">
+
+ 	
+
+
+
+
+
+
+	<script src="/js/lib/jquery.min.js"></script>
+	<script src="/js/lib/jquery-ui.min.js"></script>
+	<script src="/js/lib/jquery.easing.min.js"></script>
+	<script src="/js/lib/swiper.min.js"></script>
+ 
+	<script src="/js/ui_common.js"></script>
+	<script src="/js/ui_contents.js"></script>
+	<script src="/js/common_utils.js"></script>
+	
+	<!-- 다큐브레일 전자점역 -->	
+	<link rel="stylesheet" type="text/css" href="/css/dcbrl/docubraille-nps.css">
+	<script src="/js/dcbrl/docubraille-nps.js" type="text/javascript"></script>
+	<script src="/js/dcbrl/docubraille-env-1.5.js" type="text/javascript"></script>
+	<script src="/js/dcbrl/docubraille-1.5.min.js" type="text/javascript"></script>	
+
+	
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/reset.css">
+<link rel="stylesheet" type="text/css" href="/css/common.css">
+<link rel="stylesheet" type="text/css" href="/css/layout.css">
+<link rel="stylesheet" type="text/css" href="/css/contents.css">
+<link rel="stylesheet" type="text/css" href="/js/sbchart/sbchart.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<script src="/js/ui_main.js"></script>
+	
+</head>
+<body>
+	
+
+
+
+
+
+
+
+
+<!-- 팝업 -->
+<script>
+	$(function() {
+		$(".main-noticePop").each(function() {
+			fncNoticePopOpen($(this).attr("id"));
+		});
+	});
+	
+	function fncGetStringToday() {
+		var date = new Date();
+		return String(date.getFullYear()) + String(date.getMonth() + 1).padStart(2, "0") + String(date.getDate()).padStart(2, "0");
+	}
+	
+	function fncNoticePopOpen(target) {
+		// 오늘 하루 이창 열지 않기
+		if (localStorage.getItem(target) && localStorage.getItem(target) == fncGetStringToday()) {
+			$("#" + target).remove();
+		} else {
+			// 관리자화면에서 위치 관리(24.11.07)
+        	/*var cnt = $(".main-noticePop.active").length;
+            var offset = 40 + 50 * cnt;
+            $("#" + target).css({"top": offset + "px", "left": offset + "px"}).show();*/
+            $("#" + target).show();
+		}
+	}
+	
+	function fncNoticePopClose(target) {
+		// 오늘 하루 이창 열지 않기
+		if ($("#" + target).find(".chkToday").is(":checked")) {
+			localStorage.setItem(target, fncGetStringToday());
+		}
+
+		$("#" + target).remove();
+	}
+</script>
+
+
+<!-- // 팝업 -->
+	<div class="skip-nav">
+		<li><a href="#contents">본문 바로가기</a></li>
+		<!-- 2026.04. 27 접근성 수정
+		<li><a href="#gnav">주메뉴 바로가기</a></li>
+		<li><a href="#footer">푸터 바로가기</a></li> -->
+	</div>
+    <div id="wrap" class="main">
+    	<header id="header">
+		 	
+	
+
+
+
+
+
+
+
+	
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+	
+		
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+	
+		
+		
+	
+
+	
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+	
+		
+		
+	
+		
+		
+	
+
+	
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+	
+		
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+	
+
+	
+	
+		
+		
+	
+		
+		
+	
+		
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+	
+		
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+	
+
+	
+	
+		
+		
+	
+		
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+			
+			
+		
+			
+			
+		
+			
+			
+		
+	
+		
+		
+	
+
+
+
+	
+<div class="header-top">
+	<div class="header-top-inner">
+		<h1 class="header-logo" ><a href="/main.do"><span class="blind">NPS 국민연금기금운용본부 National Pension Service Investment Management</span></a></h1>
+		<div class="header-nav">
+			<nav id="gnav">
+				<ul class="gnav-dep1">
+					
+						
+						<li class="gm1">
+							<!-- a href="javascript:goMenuPage('MN24000395','/edwmintr/otln/getOHEB0014M0.do?menuId=MN24001728','기금소개','N');" >기금소개</a -->
+							<a href="javascript:;">기금소개</a>
+							
+							<div class="gnav-dep2">
+								<ul>
+									
+										
+										<li><a href="javascript:goMenuPage('MN24001728','/edwmintr/otln/getOHEB0014M0.do?menuId=MN24001728','기금소개 개요','N');" >기금소개 개요</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24001643','/edwmintr/otln/getOHEB0014M1.do','설치와 운용','N');" >설치와 운용</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000471','/edwmintr/history/getOHEB0002M0.do','연혁','N');" >연혁</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000473','/edwmintr/rulestrc/getOHEB0004M1.do?menuId=MN24001644','지배구조','N');" >지배구조</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24001647','/edwmintr/greeting/getOHEB0001M0.do','기금운용본부','N');" >기금운용본부</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000475','/edwmintr/directions/getOHEB0012M0.do','찾아오시는 길','N');" >찾아오시는 길</a></li>
+										
+									
+								</ul>
+							</div>
+							
+						</li>
+						
+					
+						
+						<li class="gm1">
+							<!-- a href="javascript:goMenuPage('MN24000396','/oprtplcy/oprtcrtr/getOHEC0011M0.do?menuId=MN24001729','운용정책','N');" >운용정책</a -->
+							<a href="javascript:;">운용정책</a>
+							
+							<div class="gnav-dep2">
+								<ul>
+									
+										
+										<li><a href="javascript:goMenuPage('MN24001729','/oprtplcy/oprtcrtr/getOHEC0011M0.do','운용정책 개요','N');" >운용정책 개요</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000478','/oprtplcy/oprtcrtr/getOHEC0001M0.do','운용기준','N');" >운용기준</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24001652','/oprtplcy/oprtcrtr/getOHEC0001M1.do','운용절차','N');" >운용절차</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000479','/oprtplcy/astaprtplcy/getOHEC0005M0.do?menuId=MN24000608','투자정책','N');" >투자정책</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000612','/oprtplcy/riskmngplcy/getOHEC0008M0.do','위험관리','N');" >위험관리</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000613','/oprtplcy/riskmngplcy/getOHEC0009M0.do','성과평가','N');" >성과평가</a></li>
+										
+									
+								</ul>
+							</div>
+							
+						</li>
+						
+					
+						
+						<li class="gm1">
+							<!-- a href="javascript:goMenuPage('MN24000397','/oprtprcn/otln/getOHED0013M0.do?menuId=MN24001730','운용현황','N');" >운용현황</a -->
+							<a href="javascript:;">운용현황</a>
+							
+							<div class="gnav-dep2">
+								<ul>
+									
+										
+										<li><a href="javascript:goMenuPage('MN24001730','/oprtprcn/otln/getOHED0013M0.do','운용현황 개요','N');" >운용현황 개요</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000482','/oprtprcn/cmtnprcn/getOHED0001M0.do','적립현황','N');" >적립현황</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24001514','/oprtprcn/ivsmprcn/getOHED0016M0.do','포트폴리오 현황','N');" >포트폴리오 현황</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000483','/oprtprcn/ivsmprcn/getOHED0002M0.do?menuId=MN24000615','자산군별 현황','N');" >자산군별 현황</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000484','/oprtprcn/oprtotcm/getOHED0010M0.do?menuId=MN24000623','운용성과','N');" >운용성과</a></li>
+										
+									
+								</ul>
+							</div>
+							
+						</li>
+						
+					
+						
+						<li class="gm1">
+							<!-- a href="javascript:goMenuPage('MN24000398','/tctrspn/tctrspnsyst/getOHEE0000M0.do?menuId=MN24001731','수탁자책임','N');" >수탁자책임</a -->
+							<a href="javascript:;">수탁자책임</a>
+							
+							<div class="gnav-dep2">
+								<ul>
+									
+										
+										<li><a href="javascript:goMenuPage('MN24001731','/tctrspn/tctrspnsyst/getOHEE0000M0.do','수탁자책임 개요','N');" >수탁자책임 개요</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000485','/tctrspn/tctrspnsyst/getOHEE0003M0.do','수탁자책임 체계','N');" >수탁자책임 체계</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000486','/tctrspn/tctrspnplcy/getOHEE0004M0.do?menuId=MN24000629','수탁자책임 정책','N');" >수탁자책임 정책</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000487','/tctrspn/tctrspnacvt/getOHEE0007M0.do?menuId=MN24000632','수탁자책임 활동','N');" >수탁자책임 활동</a></li>
+										
+									
+								</ul>
+							</div>
+							
+						</li>
+						
+					
+						
+						<li class="gm1">
+							<!-- a href="javascript:goMenuPage('MN24000399','/impa/otln/getOHEF0026M0.do?menuId=MN24001732','알림','N');" >알림</a -->
+							<a href="javascript:;">알림</a>
+							
+							<div class="gnav-dep2">
+								<ul>
+									
+										
+										<li><a href="javascript:goMenuPage('MN24001732','/impa/otln/getOHEF0026M0.do','알림 개요','N');" >알림 개요</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000489','/impa/edwmpblnt/getOHEF0001M0.do?menuId=MN24000635','기금공시','N');" >기금공시</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000490','/impa/nscvrgdatalist/getOHEF0013M0.do','보도자료','N');" >보도자료</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000491','/impa/hirepbanclist/getOHEF0015M0.do','채용공고','N');" >채용공고</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000492','/impa/dlnginstslctnpbanclist/getOHEF0017M0.do','거래기관 선정공고','N');" >거래기관 선정공고</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000493','/impa/pbtydata/getOHEF0019M0.do?menuId=MN24000638','홍보자료','N');" >홍보자료</a></li>
+										
+									
+										
+										<li><a href="javascript:goMenuPage('MN24000494','/impa/faq/getOHEF0025M0.do','자주 찾는 질문(FAQ)','N');" >자주 찾는 질문(FAQ)</a></li>
+										
+									
+								</ul>
+							</div>
+							
+						</li>
+						
+					
+				</ul>
+			</nav>
+		</div>
+		<div class="lang-select">
+			<a href="javascript:;" class="selected" title="선택됨"><strong>KOR</strong></a>
+			<a href="/eng/main.do">ENG</a>
+		</div>
+		<!-- 모바일용 메뉴 -->
+		<button class="btn-menu-mobile">
+			<span>전체 메뉴</span>
+		</button>
+	</div>
+</div>
+
+<div class="mobile-nav">
+	<div class="mobile-nav-header">
+		<h2 class="tit" tabIndex=0>전체메뉴</h2>
+		<div class="lang-select">
+			<a href="javascript:;" class="selected" title="선택됨"><strong>KOR</strong></a>
+			<a href="/eng/main.do">ENG</a>
+		</div>
+		<button class="btn-menu-close">전체 메뉴 닫기</button>
+	</div>
+	<nav id="gnav-m">
+		<ul class="gnav-dep1">
+			
+				
+				<li class="selected active">
+					<a href="javascript:goMenuPage('MN24000395','/edwmintr/otln/getOHEB0014M0.do?menuId=MN24001728','기금소개','N');" >기금소개</a>
+					
+					<ul class="gnav-dep2">
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24001728','/edwmintr/otln/getOHEB0014M0.do?menuId=MN24001728','기금소개 개요','N');" >기금소개 개요</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24001643','/edwmintr/otln/getOHEB0014M1.do','설치와 운용','N');" >설치와 운용</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000471','/edwmintr/history/getOHEB0002M0.do','연혁','N');" >연혁</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000473','/edwmintr/rulestrc/getOHEB0004M1.do?menuId=MN24001644','지배구조','N');" >지배구조</a>
+								
+								<ul class="gnav-dep3">
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24001644','/edwmintr/rulestrc/getOHEB0004M1.do','관리체계','N');" >관리체계</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24001645','/edwmintr/rulestrc/getOHEB0004M2.do','감시체계','N');" >감시체계</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24001646','/edwmintr/rulestrc/getOHEB0004M3.do','의사결정기구','N');" >의사결정기구</a>
+										</li>
+										
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24001647','/edwmintr/greeting/getOHEB0001M0.do','기금운용본부','N');" >기금운용본부</a>
+								
+								<ul class="gnav-dep3">
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000470','/edwmintr/greeting/getOHEB0001M0.do','본부장 인사말','N');" >본부장 인사말</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000601','/edwmintr/ognzprsn/getOHEB0008M0.do','조직도','N');" >조직도</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24001648','/edwmintr/ognzprsn/getOHEB0008M1.do','부서소개','N');" >부서소개</a>
+										</li>
+										
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000475','/edwmintr/directions/getOHEB0012M0.do','찾아오시는 길','N');" >찾아오시는 길</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+					</ul>
+					
+				</li>
+				
+			
+				
+				<li >
+					<a href="javascript:goMenuPage('MN24000396','/oprtplcy/oprtcrtr/getOHEC0011M0.do?menuId=MN24001729','운용정책','N');" >운용정책</a>
+					
+					<ul class="gnav-dep2">
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24001729','/oprtplcy/oprtcrtr/getOHEC0011M0.do','운용정책 개요','N');" >운용정책 개요</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000478','/oprtplcy/oprtcrtr/getOHEC0001M0.do','운용기준','N');" >운용기준</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24001652','/oprtplcy/oprtcrtr/getOHEC0001M1.do','운용절차','N');" >운용절차</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000479','/oprtplcy/astaprtplcy/getOHEC0005M0.do?menuId=MN24000608','투자정책','N');" >투자정책</a>
+								
+								<ul class="gnav-dep3">
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000608','/oprtplcy/astaprtplcy/getOHEC0005M0.do','자산배분','N');" >자산배분</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000610','/oprtplcy/astaprtplcy/getOHEC0006M0.do','위탁운용','N');" >위탁운용</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000611','/oprtplcy/astaprtplcy/getOHEC0007M0.do','외환관리','N');" >외환관리</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000614','/oprtplcy/riskmngplcy/getOHEC0010M0.do','목표초과수익률','N');" >목표초과수익률</a>
+										</li>
+										
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000612','/oprtplcy/riskmngplcy/getOHEC0008M0.do','위험관리','N');" >위험관리</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000613','/oprtplcy/riskmngplcy/getOHEC0009M0.do','성과평가','N');" >성과평가</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+					</ul>
+					
+				</li>
+				
+			
+				
+				<li >
+					<a href="javascript:goMenuPage('MN24000397','/oprtprcn/otln/getOHED0013M0.do?menuId=MN24001730','운용현황','N');" >운용현황</a>
+					
+					<ul class="gnav-dep2">
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24001730','/oprtprcn/otln/getOHED0013M0.do','운용현황 개요','N');" >운용현황 개요</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000482','/oprtprcn/cmtnprcn/getOHED0001M0.do','적립현황','N');" >적립현황</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24001514','/oprtprcn/ivsmprcn/getOHED0016M0.do','포트폴리오 현황','N');" >포트폴리오 현황</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000483','/oprtprcn/ivsmprcn/getOHED0002M0.do?menuId=MN24000615','자산군별 현황','N');" >자산군별 현황</a>
+								
+								<ul class="gnav-dep3">
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000616','/oprtprcn/ivsmprcn/getOHED0003M0.do','국내 주식','N');" >국내 주식</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000617','/oprtprcn/ivsmprcn/getOHED0004M0.do','국내 채권','N');" >국내 채권</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000618','/oprtprcn/ivsmprcn/getOHED0005M0.do','해외 주식','N');" >해외 주식</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000619','/oprtprcn/ivsmprcn/getOHED0006M0.do','해외 채권','N');" >해외 채권</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000615','/oprtprcn/ivsmprcn/getOHED0002M0.do','대체투자 개요','N');" >대체투자 개요</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000622','/oprtprcn/ivsmprcn/getOHED0009M0.do','대체투자(사모투자)','N');" >대체투자(사모투자)</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000620','/oprtprcn/ivsmprcn/getOHED0007M0.do','대체투자(부동산)','N');" >대체투자(부동산)</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000621','/oprtprcn/ivsmprcn/getOHED0008M0.do','대체투자(인프라)','N');" >대체투자(인프라)</a>
+										</li>
+										
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000484','/oprtprcn/oprtotcm/getOHED0010M0.do?menuId=MN24000623','운용성과','N');" >운용성과</a>
+								
+								<ul class="gnav-dep3">
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000623','/oprtprcn/oprtotcm/getOHED0010M0.do','성과 현황','N');" >성과 현황</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000624','/oprtprcn/oprtotcm/getOHED0011M0.do','자산군별 성과','N');" >자산군별 성과</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000625','/oprtprcn/oprtotcm/getOHED0012M0.do','수익률 산정기준','N');" >수익률 산정기준</a>
+										</li>
+										
+									
+								</ul>
+								
+							</li>
+							
+						
+					</ul>
+					
+				</li>
+				
+			
+				
+				<li >
+					<a href="javascript:goMenuPage('MN24000398','/tctrspn/tctrspnsyst/getOHEE0000M0.do?menuId=MN24001731','수탁자책임','N');" >수탁자책임</a>
+					
+					<ul class="gnav-dep2">
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24001731','/tctrspn/tctrspnsyst/getOHEE0000M0.do','수탁자책임 개요','N');" >수탁자책임 개요</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000485','/tctrspn/tctrspnsyst/getOHEE0003M0.do','수탁자책임 체계','N');" >수탁자책임 체계</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000486','/tctrspn/tctrspnplcy/getOHEE0004M0.do?menuId=MN24000629','수탁자책임 정책','N');" >수탁자책임 정책</a>
+								
+								<ul class="gnav-dep3">
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000629','/tctrspn/tctrspnplcy/getOHEE0004M0.do','수탁자책임 원칙','N');" >수탁자책임 원칙</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000630','/tctrspn/tctrspnplcy/getOHEE0005M0.do','책임투자 원칙','N');" >책임투자 원칙</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000631','/tctrspn/tctrspnplcy/getOHEE0006M0.do','수탁자책임 활동지침','N');" >수탁자책임 활동지침</a>
+										</li>
+										
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000487','/tctrspn/tctrspnacvt/getOHEE0007M0.do?menuId=MN24000632','수탁자책임 활동','N');" >수탁자책임 활동</a>
+								
+								<ul class="gnav-dep3">
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000632','/tctrspn/tctrspnacvt/getOHEE0007M0.do','책임투자','N');" >책임투자</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000633','/tctrspn/tctrspnacvt/getOHEE0008M0.do','주주권행사','N');" >주주권행사</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000627','/tctrspn/tctrspnsyst/getOHEE0002M0.do','주요 활동','N');" >주요 활동</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000634','/tctrspn/tctrspnacvt/getOHEE0009M0.do','활동 공개','N');" >활동 공개</a>
+										</li>
+										
+									
+								</ul>
+								
+							</li>
+							
+						
+					</ul>
+					
+				</li>
+				
+			
+				
+				<li >
+					<a href="javascript:goMenuPage('MN24000399','/impa/otln/getOHEF0026M0.do?menuId=MN24001732','알림','N');" >알림</a>
+					
+					<ul class="gnav-dep2">
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24001732','/impa/otln/getOHEF0026M0.do','알림 개요','N');" >알림 개요</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000489','/impa/edwmpblnt/getOHEF0001M0.do?menuId=MN24000635','기금공시','N');" >기금공시</a>
+								
+								<ul class="gnav-dep3">
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000635','/impa/edwmpblnt/getOHEF0001M0.do?menuId=MN24000635','기금공시 게시판','N');" >기금공시 게시판</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000636','/impa/edwmpblnt/getOHEF0007M0.do','주주권 행사내역','N');" >주주권 행사내역</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000637','/impa/edwmpblnt/getOHEF0011M0.do','기금운용위원회 회의결과','N');" >기금운용위원회 회의결과</a>
+										</li>
+										
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000490','/impa/nscvrgdatalist/getOHEF0013M0.do','보도자료','N');" >보도자료</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000491','/impa/hirepbanclist/getOHEF0015M0.do','채용공고','N');" >채용공고</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000492','/impa/dlnginstslctnpbanclist/getOHEF0017M0.do','거래기관 선정공고','N');" >거래기관 선정공고</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000493','/impa/pbtydata/getOHEF0019M0.do?menuId=MN24000638','홍보자료','N');" >홍보자료</a>
+								
+								<ul class="gnav-dep3">
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000638','/impa/pbtydata/getOHEF0019M0.do','카드뉴스','N');" >카드뉴스</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000639','/impa/pbtydata/getOHEF0021M0.do','발간물','N');" >발간물</a>
+										</li>
+										
+									
+										
+										<li >
+											<a href="javascript:goMenuPage('MN24000640','/impa/pbtydata/getOHEF0023M0.do','수상현황','N');" >수상현황</a>
+										</li>
+										
+									
+								</ul>
+								
+							</li>
+							
+						
+							
+							<li >
+								<a href="javascript:goMenuPage('MN24000494','/impa/faq/getOHEF0025M0.do','자주 찾는 질문(FAQ)','N');" >자주 찾는 질문(FAQ)</a>
+								
+								<ul class="gnav-dep3">
+									
+								</ul>
+								
+							</li>
+							
+						
+					</ul>
+					
+				</li>
+				
+			
+		</ul>
+	</nav>
+</div>
+<script>$("#gnav .gnav-dep2>ul, #gnav-m .gnav-dep2, #gnav-m .gnav-dep3").each(function() { if ($(this).children("li").length < 1) { $(this).remove();} });</script>
+	    </header>
+		<div class="container" id="contents" tabindex="0">
+ 			
+
+
+
+
+
+
+<!-- <script src="/js/sbchart/sbchart.js"></script>	 -->
+<script>
+	function cfn_moveDirectUrl(url) {
+		window.open(url);		
+	}
+	
+	function fnc_goBbsDetail(pstId, hmpgBbsCd){
+	 	var form = document.getElementById("searchForm");
+	 	form.pstId.value =pstId;
+	 	form.hmpgBbsCd.value =hmpgBbsCd;
+	 	
+	 	if (hmpgBbsCd == "BS20240174") {	//보도자료
+	 		form.menuId.value = "MN24000490";
+		  	form.action = "/impa/nscvrgdatadtl/getOHEF0014M0.do";
+	 	} else if (hmpgBbsCd == "BS20240173") {	//채용공고
+	 		form.menuId.value = "MN24000491";
+		  	form.action = "/impa/hirepbancdtl/getOHEF0016M0.do";
+	 	} else if (hmpgBbsCd == "BS20240066") {	//거래기관 선정공고
+	 		form.menuId.value = "MN24000492";
+		  	form.action = "/impa/dlnginstslctnpbancdtl/getOHEF0018M0.do";
+	 	} else if (hmpgBbsCd == "BS20240081") {	//카드뉴스
+	 		form.menuId.value = "MN24000638";
+		  	form.action = "/impa/pbtydata/getOHEF0020M0.do";
+	 	} else if (hmpgBbsCd == "BS20240196") {	//발간물
+	 		form.menuId.value = "MN24000639";
+		  	form.action = "/impa/pbtydata/getOHEF0022M0.do";
+	 	} else if (hmpgBbsCd == "BS20240031") {	//수상현황
+	 		form.menuId.value = "MN24000640";
+		  	form.action = "/impa/pbtydata/getOHEF0024M0.do";
+	 	} else if (hmpgBbsCd == "offi") {	//기금공시
+	 		form.menuId.value = "MN24000489";
+	 		form.tmpltdataSn.value =pstId;
+		  	form.action = "/impa/edwmpblnt/getOHEF0006M0.do";
+	 	} else if (hmpgBbsCd == "BS20240215") {	//기금공시(회의결과)
+	 		form.menuId.value = "MN24000637";
+		  	form.action = "/impa/edwmpblnt/getOHEF0012M0.do";
+	 	} else if (hmpgBbsCd == "BS20240194") {	//기금공시(회의결과)
+	 		form.menuId.value = "MN24000636";
+		  	form.action = "/impa/edwmpblnt/getOHEF0010M1.do";
+	 	}
+		form.submit();
+	}
+</script>
+
+<script>
+	// 가입자현황 도넛 차트 그리기
+	var joinStatusChart;
+	
+	function joinStatusCreateChart() {
+		// 차트 속성값들을 설정합니다.
+		var joinStatusChartConfig = {
+			global : {
+				color : {
+					theme : 'default',
+					pattern : ['#29325f', '#7787d0', '#bfc8ee', '#686e8b', '#7784b1', '#3c4d95', '#4d5c9d', '#425abe', '#bbbbcb' ]
+				},
+				size : {
+					width : 650,
+					height: 650
+				},
+				padding : {
+					top:20,
+				},
+				animation : {
+					show : true,
+					type : 'circle'
+				}
+			},
+			// [필수] 차트의 데이터
+			data : {    
+				columns : [
+					
+						
+						["금융부문", "1683.2"] 
+						
+						
+					
+						
+						
+						,["국내주식", "418.6"] 
+						
+					
+						
+						
+						,["국내채권", "282.9"] 
+						
+					
+						
+						
+						,["해외주식", "623.7"] 
+						
+					
+						
+						
+						,["해외채권", "102.4"] 
+						
+					
+						
+						
+						,["대체투자", "248.7"] 
+						
+					
+						
+						
+						,["단기자금", "5.1"] 
+						
+					
+						
+						
+						,["복지 ·기타 부문", "1.0"] 
+						
+					
+				],
+				useLabelMultiLine: true,
+				// chart type
+				type : 'pie'
+				// 데이터 없을 경우 나타나는 메시지 설정
+//					noData : '데이터가 없습니다.'
+			},
+			extend : {
+				pie : {
+					useLabelFirst: true,
+					minRadiusRatio : 80,
+					padding: 2,
+					strokeWidth: 3,
+					title : {
+						type:"text",
+						text:"유형"
+					},
+					label : {
+						show : true,
+						position : 'outer',
+						outerRange : function(value, ratio, id) {
+						  return ratio*100 < 6;
+						},
+						format : function (value, ratio, index ,data) {
+							if (parseFloat((ratio * 100).toFixed(1)) < 6) {
+								return data[0].id + " " + percentRound(ratio*100,2) + "%";
+							}
+							return data[0].id + "\n " + percentRound(ratio*100,2) + "%";
+						},
+						fontSize: 18,
+					},
+					displayType : 'percent'
+				}
+			},
+			legend:{
+				show: false
+			},
+			tooltip: {
+				format : {
+					value : function (value, ratio, id, index, value2) {
+						return numericComma(value);
+					}
+				},
+				template: 'light',
+	            contentStyle: {
+	            	nameFont : {
+	            		size : '14px'
+	            	},
+	            	valueFont : {
+	            		size : '14px'
+	            	}
+	            }
+	         },
+		};
+		// 차트 객체 생성
+		// param1 : chart가 그려질 div 영역 id
+		// param2 : chart 설정 객체
+		//joinStatusChart = new sb.chart("#chart-year01", joinStatusChartConfig);   
+		// 차트 그리기
+		//joinStatusChart.render();
+	}   // end createChart
+
+	document.addEventListener("DOMContentLoaded", function() {
+		joinStatusCreateChart();
+	});
+	
+	// 숫자타입의 value에 천단위에 콤마를 찍어서 리턴
+	function numericComma(value){
+		return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+	
+	// 퍼센트 타입의 value를 소수점 둘째자리 반올림후 0제거한후 리턴
+	function percentRound(value, digit){
+		return value.toFixed(digit).replace(/\.?0+$/,'');
+	}
+	
+</script>
+
+<form id="searchForm" name='searchForm' method='post'>
+	<input type="hidden" name="menuId" value="" />
+	<input type="hidden" name="pstId" value="" /> 
+	<input type="hidden" name="tmpltdataSn" value="" /> 
+	<input type="hidden" name="hmpgBbsCd" value="" />
+</form>			
+			
+<div class="main-visual-wrap">
+	<div class="main-visual-slider">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<picture>
+	                <source srcset="../images/main/m_bg_main_visual_top2.png" media="(max-width:768px)" />
+	                <img src="../images/main/bg_main_visual_top2.png" alt="" />
+	              </picture>
+          		<div class="main-visual-text2">
+            		<strong class="swiper-banner-title">
+						<span class="small-txt ">We Invest Today for</span> People's Better Tomorrow
+					</strong>
+           		</div>
+           		<div class="main-video"><a href="/videoPopup.do" onclick="window.open(this.href,'name1','width=800,height=474,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,directories=no,status=no');return false;" title="새창열림"><img src="/images/main/btn_video_kor.gif" alt="홍보영상 바로가기"></a></div>
+				<div class="main-visual-notice">
+				<ul class="main-visual">
+					
+					<li>
+					    <a href="#" onclick="fnc_goBbsDetail('ZZ202600000000001137', 'BS20240174')">
+							<p>
+								
+									
+										<strong class="notice-category green">보도자료</strong>
+									
+									
+									
+									
+									
+									
+									
+								
+			                    [보도자료] 국민연금 글로벌 자산운용사 DWS, 전주 사무소 개소
+                      		</p>
+							<span class="notice-date">2026/10/19</span>
+						</a>
+					</li>
+           			
+					<li>
+					    <a href="#" onclick="fnc_goBbsDetail('ZZ202600000000001122', 'BS20240174')">
+							<p>
+								
+									
+										<strong class="notice-category green">보도자료</strong>
+									
+									
+									
+									
+									
+									
+									
+								
+			                    [보도자료] 국민연금, AI로 통화정책·기업실적 분석을 10분 만에
+                      		</p>
+							<span class="notice-date">2026/10/13</span>
+						</a>
+					</li>
+           			
+					<li>
+					    <a href="#" onclick="fnc_goBbsDetail('5955', 'offi')">
+							<p>
+								
+									
+									
+									
+									
+									
+									
+										<strong class="notice-category purple-blue">기금공시</strong>
+									
+									
+								
+			                    주식 대량보유 내역(2026. 3분기)
+                      		</p>
+							<span class="notice-date">2026/10/08</span>
+						</a>
+					</li>
+           			
+					<li>
+					    <a href="#" onclick="fnc_goBbsDetail('ZZ202600000000001087', 'BS20240196')">
+							<p>
+								
+									
+									
+									
+									
+									
+										<strong class="notice-category blue">홍보자료</strong>
+									
+									
+									
+								
+			                    2025년 국민연금 기금운용보고서(영문)
+                      		</p>
+							<span class="notice-date">2026/09/30</span>
+						</a>
+					</li>
+           			
+					<li>
+					    <a href="#" onclick="fnc_goBbsDetail('ZZ202600000000001086', 'BS20240196')">
+							<p>
+								
+									
+									
+									
+									
+									
+										<strong class="notice-category blue">홍보자료</strong>
+									
+									
+									
+								
+			                    2025년 국민연금 기금운용보고서(국문)
+                      		</p>
+							<span class="notice-date">2026/09/30</span>
+						</a>
+					</li>
+           			
+					<li>
+					    <a href="#" onclick="fnc_goBbsDetail('5954', 'offi')">
+							<p>
+								
+									
+									
+									
+									
+									
+									
+										<strong class="notice-category purple-blue">기금공시</strong>
+									
+									
+								
+			                    자산군별 포트폴리오 운용 현황 및 수익률(2026.7월)
+                      		</p>
+							<span class="notice-date">2026/09/29</span>
+						</a>
+					</li>
+           			            
+		            <!--
+						<li>
+							<a href="#">
+								<p><span class="notice-category blue">회의결과</span> 2024년도 제5차 국민연금기금운용위원회 회의자료</p>
+								<span class="notice-date">2024/07/16</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p><span class="notice-category green">보도자료</span> 국민연금, 기금 관련 세무 업무협약 최초 체결</p>
+								<span class="notice-date">2024/07/15</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p><span class="notice-category purple-blue">기금공시</span> 국민연금기금운용지침(2024.5.31.)</p>
+								<span class="notice-date">2024/07/16</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p><span class="notice-category green">보도자료</span> 국민연금, 기금 관련 세무 업무협약 최초 체결</p>
+								<span class="notice-date">2024/07/15</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<p><span class="notice-category purple-blue">기금공시</span> 국민연금기금운용지침(2024.5.31.)</p>
+								<span class="notice-date">2024/07/16</span>
+							</a>
+						</li>
+						--> 
+					</ul>
+				</div>
+				<a href="#" class="swiper-button-next" title="다음 슬라이드" aria-label="다음 슬라이드"></a>
+			</div>
+			<div class="swiper-slide">
+				<a href="#" class="swiper-button-prev" title="이전 슬라이드" aria-label="이전 슬라이드"></a>
+				<picture>
+				  <source srcset="../images/main/m_bg_main_visual_top.jpg" media="(max-width:768px)" />
+				  <img src="../images/main/bg_main_visual_top_bak.png" alt="" />
+				</picture>
+				<div class="main-visual-text">
+					<div class="swiper-banner-desc">
+						<p>
+						  국민연금기금은 국민연금법 제101조에 따라 국민연금사업에
+						  필요한 재원을 원활하게 확보하고, <br> 연금급여 지급에 충당하기
+						  위한 '책임투자금'으로 설치되었습니다.
+						</p>
+						<p>
+						  적립된 기금은 기금운용 관련 최고 의사결정기구인
+						  국민연금기금운용위원회에서 정한 정책 및 운용계획 등에 따라
+						  연금재정의 장기적인 안정을 유지하기 위하여 <br> 운용수익을
+						  최대로 증대시킬 수 있도록 운용됩니다.
+						</p>
+					</div>
+					
+				</div>
+				<div class="earth-wrap">
+					<div class="earth-info type1">
+						<strong class="earth-info-title">기금적립금</strong>
+						<span class="gray-txt">(2026년 7월 말)</span>
+						<div class="earth-info-money ">
+						
+							<strong class="earth-info-number number_box"><i class="txt1">1684.2</i></strong><span>조 원</span>
+<!-- 							<strong class="earth-info-number number_box"><i class="txt1">1</i><i class="txt2">0</i><i class="txt3">4</i><i class="txt4">9</i></strong><span>조 원</span> -->
+						</div>
+					</div>
+					
+					<div class="earth-info type2">
+						<strong class="earth-info-title">운용수익금</strong>
+						<span class="gray-txt">(1988~2026년 7월 말)</span>
+						<div class="earth-info-money">
+							<strong><i class="txt2">1188.4</i></strong><span>조 원</span>
+						</div>
+					</div>
+					<div class="earth-info type3">
+						<strong class="earth-info-title">연평균 누적수익률</strong>
+						<span class="gray-txt">(1988~2025년 말)</span>
+						<div class="earth-info-money">
+							<strong><i class="txt3">8.04</i></strong><span>%</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+                
+
+<!-- 
+<div class="main-sec status">
+    <div class="fund-status-total">
+        <ul>
+            <li>
+                <a href="javascript:goMenuPage('MN24000615','/oprtprcn/ivsmprcn/getOHED0002M0.do','기금 포트폴리오','MN24000483','','')" class="item1">
+                    <div class="tit"><em>기금적립금</em><span class="date">(2023년 7월 말)</span></div>
+                    <div class="data"><em>991</em><span class="unit">조 원</span></div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:goMenuPage('MN24000623','/oprtprcn/oprtotcm/getOHED0010M0.do','누적성과','MN24000484','','')" class="item2">
+                    <div class="tit"><em>운용수익금</em><span class="date">(1998~2023년 7월 말)</span></div>
+                    <div class="data"><em>541</em><span class="unit">조 원</span></div>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:goMenuPage('MN24000624', '/oprtprcn/oprtotcm/getOHED0011M0.do', '운용수익률','MN24000397', 'MN24000484')" class="item3">
+                    <div class="tit"><em>연평균 누적수익율</em><span class="date">(1988~2023년 말)</span></div>
+                    <div class="data"><em>5.11</em><span class="unit">%</span></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="fund-status-download">
+        <div class="tit">
+            <h3>한눈에 보는 국민연금기금</h3>
+            <button type="button" class="btn-main-download" title="한눈에 보는 국민연금기금 다운로드" onclick="cfn_moveDirectUrl('https://fund.nps.or.kr/html/download/fund/NPF_202307.zip');" >다운로드</button>
+        </div>
+        <p class="sub-txt">
+            국민연금기금은 국민연금법 제101조에 따라 국민연금사업에 필요한 재원을 원활하게 확보하고, 연금급여 지급에 충당하기 위한
+            '책임투자금'으로 설치되었습니다. 적립된 기금은 기금운용 관련 최고 의사결정기구인 국민연금기금운용위원회에서 정한
+            정책 및 운용계획 등에 따라 연금재정의 장기적인 안정을 유지하기 위하여 운용수익을 최대로 증대시킬 수 있도록 운용됩니다.
+        </p>
+    </div>
+</div>
+ -->
+
+<div class="status-detail-wrap">
+	<div class="status-detail-box white">
+	
+		<div class="main-sec status1">
+			<div class="sec-header">
+				<h3 class="tit">국민연금 기금적립 현황</h3>
+				<!-- <p class="sub-txt">
+				국민연금기금은 1988년 설치된 이래 현재까지 연금보험료와
+				운용수익금 등으로 <span> 1,391.7</span>조 원을 조성하고,
+				연금급여 등으로 <span>342.9</span>조 원을 지출하여
+				<span>1048.8</span>조 원에 이르고 있습니다.
+				</p> -->
+				<p class="sub-txt">국민연금기금은 1988년 설치된 이래 현재까지 연금보험료와 운용수익금 등으로 2,151.0조 원을 조성하고, 연금급여 등으로 466.9조 원을 지출한 나머지인 1,684.2조 원에 달합니다. (2026.7월 말 기준)</p>
+				<p class="sub-txt-box">
+				<span>2026년 7월 말 기준, 단위 : 조 원</span>
+				</p>
+			</div>
+				  <div class="sec-contents">
+				      <div class="saving-status scMotion">
+				          <div class="calc-item">
+				              <div class="graph">
+				                  <div class="svg">
+				                      <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+				                          <g id="graph">
+				                              <path d="M21.6261 113C12.5268 102.812 7 89.3956 7 74.6954C7 42.8311 32.9675 17 65 17C97.0325 17 123 42.8311 123 74.6954C123 89.3956 117.473 102.812 108.374 113" stroke="#555555" stroke-opacity="0.1" stroke-width="12" stroke-linecap="round"/>
+				                              <path id="savingLine1" class="graph-line1" d="M21.6261 113C12.5268 102.812 7 89.3956 7 74.6954C7 42.8311 32.9675 17 65 17C97.0325 17 123 42.8311 123 74.6954C123 89.3956 117.473 102.812 108.374 113" stroke="url(#paint_linear1)" stroke-width="12" stroke-linecap="round" stroke-dashoffset="204" stroke-dasharray="408"/>
+				                              <!-- 기준: 204, (전체 : 102), 비율: 408(0%) ~ 204(100%) -->
+				                    </g>
+				                    <defs>
+				                        <linearGradient id="paint_linear1" x1="25.3144" y1="115.5" x2="101.062" y2="22.7105" gradientUnits="userSpaceOnUse">
+				                            <stop offset="0" stop-color="#E8E8E8"/>
+				                            <stop offset="1" stop-color="#808080"/>
+				                        </linearGradient>
+				                    </defs>
+				                </svg>
+				            </div>
+				            <div class="data"><span class="blind">총 조성금</span><em>2151.0</em><span class="unit">조 원</span></div>
+				        </div>
+				        <div class="info">
+				            <h4>조성</h4>
+				            <ul>
+				                <li><span class="label">연금보험료 등</span><span class="data">962.6</span></li>
+				                <li><span class="label">운용수익금</span><span class="data">1188.4</span></li>
+				            </ul>
+				        </div>
+				    </div>
+				    <div class="calc-item">
+				        <div class="graph">
+				            <div class="svg">
+				                <svg width="130" height="130" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+				                    <g id="graph2"><!-- 24% -->
+				                        <path d="M21.6261 113C12.5268 102.812 7 89.3956 7 74.6954C7 42.8311 32.9675 17 65 17C97.0325 17 123 42.8311 123 74.6954C123 89.3956 117.473 102.812 108.374 113" stroke="#555555" stroke-opacity="0.1" stroke-width="12" stroke-linecap="round"/>
+				                        <path id="savingLine2" class="graph-line2" d="M21.6261 113C12.5268 102.812 7 89.3956 7 74.6954C7 42.8311 32.9675 17 65 17C97.0325 17 123 42.8311 123 74.6954C123 89.3956 117.473 102.812 108.374 113" stroke="url(#paint_linear2)" stroke-width="12" stroke-linecap="round" stroke-dashoffset="0" stroke-dasharray="408"  data-per="24"/>
+				                        <!-- 기준: 204, (전체 : 102), 비율: 408(0%) ~ 204(100%) -->
+				                        <!-- 지출 비율 24% => 408 - 24*2 = 360 // stroke-dashoffset="360" -->
+				                    </g>
+				                    <defs>
+				                        <linearGradient id="paint_linear2" x1="25.3144" y1="115.5" x2="101.062" y2="22.7105" gradientUnits="userSpaceOnUse">
+				                            <stop offset="0" stop-color="#808080"/>
+				                            <stop offset="1" stop-color="#E8E8E8"/>
+				                        </linearGradient>
+				                    </defs>
+				                </svg>
+				            </div>
+				            <div class="data"><span class="blind">총 지출금</span><em>466.9</em><span class="unit">조 원</span></div>
+				        </div>
+				        <div class="info">
+				            <h4>지출</h4>
+				            <ul>
+				                <li><span class="label">연금급여</span><span class="data">452.9</span></li>
+				                <li><span class="label">관리운영비 등</span><span class="data">13.9</span></li>
+				            </ul>
+				        </div>
+				    </div>
+				</div>
+				<div class="saving-status-result scMotion">
+				    <div class="calc-item">
+				        <div class="graph">
+				            <div class="svg">
+				                <svg width="160" height="160" viewBox="0 0 130 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+				                    <g id="graph3"><!-- 76% -->
+				                        <path d="M21.6261 113C12.5268 102.812 7 89.3956 7 74.6954C7 42.8311 32.9675 17 65 17C97.0325 17 123 42.8311 123 74.6954C123 89.3956 117.473 102.812 108.374 113" stroke="#555555" stroke-opacity="0.1" stroke-width="12" stroke-linecap="round"/>
+				                        <path id="savingLine3" class="graph-line3"  d="M21.6261 113C12.5268 102.812 7 89.3956 7 74.6954C7 42.8311 32.9675 17 65 17C97.0325 17 123 42.8311 123 74.6954C123 89.3956 117.473 102.812 108.374 113" stroke="url(#paint_linear3)" stroke-width="12" stroke-linecap="round" stroke-dashoffset="0" stroke-dasharray="408" data-per="76"/>
+				                        <!-- 기준: 204, (전체 : 102), 비율: 408(0%) ~ 204(100%) -->
+				                        <!-- 기금적립금 비율 76% => 408 - 76%*2 = 256 // stroke-dashoffset="256" -->
+				                    </g>
+				                    <defs>
+				                        <linearGradient id="paint_linear3" x1="25.3144" y1="115.5" x2="101.062" y2="22.7105" gradientUnits="userSpaceOnUse">
+				                            <stop offset="0" stop-color="#6F7DBF"></stop>
+											<stop offset="1" stop-color="#333E6D"></stop>
+				                        </linearGradient>
+				                    </defs>
+				                </svg>
+				            </div>
+				            <div class="data"><span class="blind">총 기금적립금</span><em>1684.2</em><span class="unit">조 원</span></div>
+				        </div>
+				        <div class="info">
+				            <h4>기금적립금</h4>
+				            <ul>
+				                <li><span class="label">금융부문</span><span class="data">1683.2</span></li>
+				                <li><span class="label">복지ㆍ기타부문</span><span class="data">1.0</span></li>
+				            </ul>
+				        </div>
+				    </div>
+				</div>
+			</div>
+		</div><!-- //main-sec -->
+     
+		<div class="main-sec status2">
+			<div class="sec-header">
+				<h3 class="tit">적립금 추이</h3>
+				<p class="sub-txt">1988년부터 적립된 국민연금기금은 현재 1,684.2조 원에 이르는 글로벌 대형 연기금으로 성장하였습니다.</p>
+				<p class="sub-txt-box"><span>2026년 7월 말 기준 | 단위: 조 원</span></p>
+				<div class="more">
+				    <a href="/oprtprcn/cmtnprcn/getOHED0001M0.do?menuId=MN24000482" class="btn-main-more"><span class="blind">적립금 추이 </span>더보기</a>
+				</div>
+			</div>
+			<div class="sec-contents">
+				<!-- <div class="fund-process">
+				    <ul>
+				        <li>
+				            <span class="year"><span class="blind">연도:</span><span>1998</span></span>
+				        </li>
+				        <li>
+				            <span class="won"><span class="blind">적립금:</span><span>100</span></span>
+				            <span class="year"><span class="blind">연도:</span><span>2003</span></span>
+				        </li>
+				        <li>
+				            <span class="won"><span class="blind">적립금:</span><span>200</span></span>
+				            <span class="year"><span class="blind">연도:</span><span>2007</span></span>
+				        </li>
+				        <li>
+				            <span class="won"><span class="blind">적립금:</span><span>300</span></span>
+				            <span class="year"><span class="blind">연도:</span><span>2010</span></span>
+				        </li>
+				        <li>
+				            <span class="won"><span class="blind">적립금:</span><span>400</span></span>
+				            <span class="year"><span class="blind">연도:</span><span>2013</span></span>
+				        </li>
+				        <li>
+				            <span class="won"><span class="blind">적립금:</span><span>500</span></span>
+				            <span class="year"><span class="blind">연도:</span><span>2015</span></span>
+				        </li>
+				        <li>
+				            <span class="won"><span class="blind">적립금:</span><span>600</span></span>
+				            <span class="year"><span class="blind">연도:</span><span>2017</span></span>
+				        </li>
+				        <li>
+				            <span class="won"><span class="blind">적립금:</span><span>700</span></span>
+				            <span class="year"><span class="blind">연도:</span><span>2019</span></span>
+				        </li>
+				        <li>
+				            <span class="won"><span class="blind">적립금:</span><span>800</span></span>
+				            <span class="year"><span class="blind">연도:</span><span>2020</span></span>
+				        </li>
+				        <li>
+				            <span class="won"><span class="blind">적립금:</span><span>900</span></span>
+				            <span class="year"><span class="blind">연도:</span><span>2021</span></span>
+				        </li>
+				    </ul>
+				</div>-->
+				<div class="chart-wrap">
+					
+						<img src="/imageView.do?atchFileId=FL26001847&amp;atchFileSn=5" alt="국민연금기금의 적립금을 보여주는 그래프 - 1988년부터 시작해서 2003년 : 적립금 100조 원 돌파, 2010년 : 적립금 300조 원 돌파, 2015년 : 적립금 500조 원 돌파, 2019년 : 적립금 700조 원 돌파, 2023년 : 적립금 1,000조 원 
+ 돌파.  연도별 적립금 추이 그래프 - 1988년 : 0.5조 원, 1999년 : 47.2조 원, 2003년 : 116.7조 원, 2007년 : 219.5조 원, 2011년 : 348.9조 원, 2015년 : 512.3조 원, 2019년 : 736.6조 원, 2026년 7월 : 1,684.2조 원">
+						
+<!-- 				    <img src="/images/main/status2.png" alt=""> -->
+				</div>
+             <!-- 차트 대체텍스트 -->
+				<div class="blind">
+	                <h4>적립금 추이</h4>
+	                <ul>
+	                    <li>1988년 0.5조원</li>
+	                    <li>1999년 47.2조원</li>
+	                    <li>2003년 116.7조원</li>
+	                    <li>2007년 219.5조원</li>
+	                    <li>2011년 348.9조원</li>
+	                    <li>2015년 512.3조원</li>
+	                    <li>2019년 736.6조원</li>
+	                    <li>2024년12월 1212.9조원</li>
+	                </ul>
+				</div>
+			</div>
+		</div><!-- //main-sec -->
+		
+		<div class="main-sec status3">
+			<div class="sec-header">
+				<h3 class="tit">기금운용 수익률 및 수익금</h3>
+	             <p class="sub-txt">기금운용본부는 글로벌 금융시장이 불확실한 상황에서도 국민연금 재정의 장기적인 안정을 유지하기 위하여 운용수익을 높일 수 있도록 노력하고 있습니다.</p>
+	             <p class="sub-txt-box">2026년 7월 말 기준 | 단위: 조 원</p>
+	             <div class="more">
+	                 <a href="javascript:goMenuPage('MN24000623','/oprtprcn/oprtotcm/getOHED0010M0.do','성과 현황','N');" class="btn-main-more"><span class="blind">기금운용 수익률 및 수익금 </span>더보기</a>
+	             </div>
+	         </div>
+	         <div class="sec-contents">
+	             <div class="profits-data-box">
+	                 <div class="data-item">
+	                     <h4 class="label" style="white-space:pre-line">1988~2026년 현재
+누적 수익금</h4>
+	                     <p class="data"><em>1188.4</em><span class="unit">조 원</span></p>
+	                 </div>
+	                 <div class="data-item">
+	                     <h4 class="label" style="white-space:pre-line">1988~2025년 말 기준
+연평균 누적 수익률</h4>
+	                     <p class="data"><em>8.04</em><span class="unit">%</span></p>
+	                 </div>
+	             </div>
+	             <div class="chart-wrap">
+	             	
+						<img src="/imageView.do?atchFileId=FL25000083&amp;atchFileSn=20" alt="기금운용 연도별 수익금 그래프 -  2021년 : 91.2조 원, 2022년 : -79.6조 원, 2023년 : 126.7조 원, 2024년 : 159.7조 원, 2025년 : 231.6조 원, 2026년 7월 : 219.1">
+					
+<!-- 	                 <img src="/images/main/status3.png" alt="차트"> -->
+	             </div>
+	             <!-- 차트 대체텍스트 -->
+	             <div class="blind">
+	                 <h4>연도별 수익금</h4>
+	                 <ul>
+	                     <li>2020년 72.1조원</li>
+	                     <li>2021년 91.2조원</li>
+	                     <li>2022년 -79.6조원</li>
+	                     <li>2023년 126.7조원</li>
+	                     <li>2024년 159.7조원</li>
+	                     <li>2025년1월 10.4조원</li>
+	                 </ul>
+	             </div>
+	
+			</div>
+		</div><!-- //main-sec -->
+	</div>
+</div>
+
+<div class="status-detail-wrap">
+	<div class="main-sec">
+		<div class="main-portfolio">
+			<div class="pf-chart">
+				<div class="pf-chart-view">
+<!-- 					<img src="/images/graph/ko/otin_port-graph.png"> -->
+					
+						<img src="/imageView.do?atchFileId=FL25001123&amp;atchFileSn=20" alt="해외주식 37.0%, 국내주식 24.9%, 대체투자 14.8%, 해외채권 6.1%, 국내채권 16.8%, 단기자금 0.3%, 복지 기타 부문 0.1%">
+								
+				</div>
+			</div>
+			<div class="pf-detail">
+				<div class="pf-data-header">
+					<h3 class="tit">
+						기금 포트폴리오 <span class="date"> 2026년 7월 말 기준</span>
+					</h3>
+				</div>
+				<div class="pf-data pf-data-type2">
+					<table>
+						<caption>기금 포트폴리오 구성별 규모</caption>
+						<colgroup>
+							<col />
+							<col class="w33" />
+							<col class="w33" />
+						</colgroup>
+						<tbody>
+							
+                            	<tr class="dep1 ">
+									<th><i class="dot"></i>금융부문</th>
+									<td><span>1683.2</span> 조 원</td>
+									<td><span>99.9</span> %</td>
+								</tr>
+                            
+                            	<tr class="dep1 indent">
+									<th><i class="dot"></i>국내주식</th>
+									<td><span>418.6</span> 조 원</td>
+									<td><span>24.9</span> %</td>
+								</tr>
+                            
+                            	<tr class="dep1 indent">
+									<th><i class="dot"></i>국내채권</th>
+									<td><span>282.9</span> 조 원</td>
+									<td><span>16.8</span> %</td>
+								</tr>
+                            
+                            	<tr class="dep1 indent">
+									<th><i class="dot"></i>해외주식</th>
+									<td><span>623.7</span> 조 원</td>
+									<td><span>37.0</span> %</td>
+								</tr>
+                            
+                            	<tr class="dep1 indent">
+									<th><i class="dot"></i>해외채권</th>
+									<td><span>102.4</span> 조 원</td>
+									<td><span>6.1</span> %</td>
+								</tr>
+                            
+                            	<tr class="dep1 indent">
+									<th><i class="dot"></i>대체투자</th>
+									<td><span>248.7</span> 조 원</td>
+									<td><span>14.8</span> %</td>
+								</tr>
+                            
+                            	<tr class="dep1 indent">
+									<th><i class="dot"></i>단기자금</th>
+									<td><span>5.1</span> 조 원</td>
+									<td><span>0.3</span> %</td>
+								</tr>
+                            
+                            	<tr class="dep1 ">
+									<th><i class="dot"></i>복지 ·기타 부문</th>
+									<td><span>1.0</span> 조 원</td>
+									<td><span>0.1</span> %</td>
+								</tr>
+                            
+						</tbody>
+					</table>
+				</div>
+				<div class="pf-data-footer">
+					<div class="summary">
+						<div class="pf-total">
+							<em>1684.2</em><span class="unit">조 원</span>
+						</div>
+	                 	<a href="javascript:goMenuPage('MN24001514','/oprtprcn/ivsmprcn/getOHED0016M0.do','포트폴리오 현황','N');" class="btn-main-more"><span class="blind">기금 포트폴리오 </span>더보기</a>
+					</div>
+				</div>
+				<script>
+				(function () {
+					var color = [
+						"#202950",
+						"#151d65",
+						"#43245f",
+						"#3359a4",
+						"#40435a",
+						"#1f2a4d",
+						"#14150a",
+					];
+					const tr = document.querySelectorAll(".pf-data .dep1");
+	
+					tr.forEach((el, index) => {
+						if (el.querySelector(".dot")) {
+							el.querySelector(".dot").style.backgroundColor = color[index];
+						}
+					});
+				})();
+				</script>
+			</div>
+		</div>
+	</div><!-- //main-sec -->
+
+	<div class="main-sec">
+		<div class="main-invest">
+			<div class="main-invest-item">
+				<h3 class="tit">해외투자 규모 <span>(금융부문)</span></h3>
+				<span class="sub-txt-box">2026년 7월 말 기준</span>
+				<p class="sub-txt">국민연금은 기금규모가 증가함에 따라 장기 안정적인 수익기반 마련을 위해 해외투자를 지속적으로 확대하는 등 투자지역을 다양화하고 있습니다.</p>
+
+				<div class="status-chart">
+					<div class="chart">
+						<div class="circle-chart" data-per="56.6">
+							<div class="bar-left">
+								<div class="bar"></div>
+								<div class="data">
+									<span class="label">국내투자</span><em class="per">43.4%</em><span class="won">(730.3조 원)</span>
+								</div>
+							</div>
+							<div class="bar-right">
+								<div class="bar"></div>
+								<div class="data">
+									<span class="label">해외투자</span><em class="per">56.6%</em><span class="won">(951.2조 원)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="detail">
+						<h4 class="detail_title">해외투자 세부내역</h4>
+						<ul class="detail_info">
+							<li>
+								<span class="label">주식</span>
+								<em class="per">65.6%</em>
+								<span class="won">(623.7조 원)</span>
+							</li>
+							<li>
+								<span class="label">채권</span>
+								<em class="per">10.8%</em>
+								<span class="won">(102.4조 원)</span>
+							</li>
+							<li>
+								<span class="label">대체투자</span>
+								<em class="per">23.5%</em>
+								<span class="won">(223.3조 원)</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="main-invest-item">
+				<h3 class="tit">위탁운용 규모 <span>(금융부문)</span></h3>
+				<span class="sub-txt-box">2026년 7월 말 기준</span>
+				<p class="sub-txt">국민연금은 외부 운용사의 전문성을 활용하여 수익률을 제고하고 위험을 분산하기 위해 국내외 운용사를 통한 위탁운용을 실시하고 있습니다.</p>
+
+				<div class="status-chart">
+					<div class="chart">
+						<div class="circle-chart" data-per="52.0">
+							<div class="bar-left">
+								<div class="bar"></div>
+								<div class="data">
+									<span class="label">직접운용</span><em class="per">48.0%</em><span class="won">(807.6조 원)</span>
+								</div>
+							</div>
+							<div class="bar-right">
+								<div class="bar"></div>
+								<div class="data">
+									<span class="label">위탁운용</span><em class="per">52.0%</em><span class="won">(873.8조 원)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="detail">
+						<h4 class="detail_title">위탁운용 세부내역</h4>
+						<ul class="detail_info">
+							<li>
+								<span class="label">주식</span>
+								<em class="per">60.8%</em>
+								<span class="won">(531.0조 원)</span>
+							</li>
+							<li>
+								<span class="label">채권</span>
+								<em class="per">11.2%</em>
+								<span class="won">(97.5조 원)</span>
+							</li>
+							<li>
+								<span class="label">대체투자</span>
+								<em class="per">28.1%</em>
+								<span class="won">(245.3조 원)</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>				
+		</div><!-- //main-invest -->		
+	</div><!-- //main-sec -->
+</div><!-- //status-detail-wrap -->
+
+<div class="main-sec">
+	<div class="main-schedule">
+		<h3 class="tit">기금운용계획</h3>
+		<p class="sub-txt">
+			국민연금기금운용위원회는 매년 향후 5년의 기간에 대한 자산배분 목표를 설정하고, 그 이행을 위하여 시장전망과 연금 수급상황의 변화를 반영한 연간 기금운용계획을 수립합니다.
+		</p>
+		
+		<div class="main-schedule-items">
+			<div class="main-schedule-item item1">
+			<div class="sch-pf-header">
+				<h4>연간 기금운용 계획 <span class="title-sub">(2026년 목표 포트폴리오)</span></h4>
+               	<a href="javascript:goMenuPage('MN24000608','/oprtplcy/astaprtplcy/getOHEC0005M0.do','자산배분','N');" class="btn-main-more2"><span class="blind">연간 기금운용 계획 </span>더보기</a>
+			</div>
+			<div class="sch-pf-wrap">
+				<ul>
+				<li>
+					<span class="label">국내주식</span>
+					<div class="bar-wrap">
+						<div class="bar" style="width: 20.8%"></div>
+					</div>
+					<span class="per">20.8%</span>
+				</li>
+				<li>
+					<span class="label">해외주식</span>
+					<div class="bar-wrap">
+						<div class="bar" style="width: 34.7%"></div>
+					</div>
+					<span class="per">34.7%</span>
+				</li>
+				<li>
+					<span class="label">국내채권</span>
+					<div class="bar-wrap">
+						<div class="bar" style="width: 23.1%"></div>
+					</div>
+					<span class="per">23.1%</span>
+				</li>
+				<li>
+					<span class="label">해외채권</span>
+					<div class="bar-wrap">
+						<div class="bar" style="width: 7.4%"></div>
+					</div>
+					<span class="per">7.4%</span>
+				</li>
+				<li>
+					<span class="label">대체투자</span>
+					<div class="bar-wrap">
+						<div class="bar" style="width: 14.0%"></div>
+					</div>
+					<span class="per">14.0%</span>
+				</li>
+				</ul>
+			</div>
+			</div>
+			<div class="main-schedule-item item2">
+				<div class="sch-pf-header">
+					<h4>중기 자산배분 계획 <span class="title-sub">(2031년 목표 포트폴리오)</span></h4>
+               		<a href="javascript:goMenuPage('MN24000608','/oprtplcy/astaprtplcy/getOHEC0005M0.do','자산배분','N');" class="btn-main-more2"><span class="blind">중기 자산배분 계획 </span>더보기</a>
+				</div>
+				<div class="sch-pf-wrap">
+					<ul>
+						<li>
+							<span class="label">주식</span>
+							<div class="bar-wrap">
+								<div class="bar" style="width: 55%"></div>
+							</div>
+							<span class="per">55% 내외</span>
+						</li>
+						<li>
+							<span class="label">채권</span>
+							<div class="bar-wrap">
+								<div class="bar" style="width: 30%"></div>
+							</div>
+							<span class="per">30% 내외</span>
+						</li>
+						<li>
+							<span class="label">대체투자</span>
+							<div class="bar-wrap">
+								<div class="bar" style="width: 15%"></div>
+							</div>
+							<span class="per">15% 내외</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div><!-- //main-schedule -->
+</div><!-- //main-sec -->
+    	</div>
+    	<footer id="footer">
+			
+
+
+
+<div class="footer-sites">
+	<div class="footer-inner">
+		<div class="footer-related-site">
+			<!-- <button type="button" class="btn-open"  onclick="window.open('/bannerPopup.do','smallr','width=930,height=900,resizable=0,menubar=0,toolbar=0,scrollbars=no,status=0');return false;" title="관련사이트 모음 새창열림" title="목록 닫힘">관련사이트</button> -->
+			<button type="button" class="btn-open" title="목록 닫힘">관련사이트</button>
+			<div class="site-lists">
+				<ul>
+					<li><a href="http://www.mohw.go.kr" target="_blank" title="새창열림">보건복지부</a></li>
+					<li><a href="https://www.nps.or.kr/main.do" target="_blank" title="새창열림">국민연금공단</a></li>
+					<li><a href="https://www.nhis.or.kr/nhis/index.do" target="_blank" title="새창열림">국민건강보험공단</a></li>
+					<li><a href="https://kosis.kr/index/index.do" title="새창열림" target="_blank">국가통계포털</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-related-site">
+			<button type="button" class="btn-open" title="목록 닫힘">Family Site</button>
+			<div class="site-lists">
+				<ul>
+					<li><a href="https://www.nps.or.kr/main.do" target="_blank" title="새창열림">국민연금공단</a></li>
+					<li><a href="https://institute.nps.or.kr/" title="국민연금연구원(새창열림)" target="_blank">국민연금연구원</a></li>
+					<li><a href="https://edi.nps.or.kr" target="_blank" title="새창열림">국민연금 EDI</a></li>
+					<li><a href="https://www.ppsl.or.kr" title="공적연금 연계(새창열림)" target="_blank">공적연금 연계</a></li>
+					<li><a href="https://www.4insure.or.kr" title="4대보험 정보연계(새창열림)" target="_blank">4대보험 정보연계</a></li>
+					<li><a href="https://www.nps.or.kr/comm/pop/getOHAH0015P1.do" title="기초연금(새창열림)" onclick="window.open(this.href,'name1','width=865,height=900,toolbar=no,menubar=no,scrollbars=yes,resizable=no,location=no,directories=no,status=no');return false;"
+						target="_blank">기초연금</a></li>
+					<li><a href="https://www.cheongpungresort.co.kr/web/kor/asp/index/index.asp" title="청풍리조트(새창열림)" target="_blank">청풍리조트</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer-container">
+	<div class="footer-inner">
+		<div class="footer-contents">
+			<div class="footer-logo">
+				<img src="/images/common/footer_logo.png" alt="NPS국민연금">
+			</div>
+			<address class="footer-info">
+				<p class="footer-address">54870 전북특별자치도 전주시 덕진구 오공로 131(만성동, 국민연금공단) 글로벌기금관</p>
+				<p class="footer-number">
+					<b>국민연금 고객센터</b>
+					<span class="blue-txt">국번 없이 1355</span>(유료) (09:00 ~ 18:00 평일) 
+				</p>
+				<p class="footer-notice">본 홈페이지에 게시된 이메일 주소가 자동으로 수집되는 것을 허용하지 않으며, 위반시 정보통신망법에 의해 처벌될 수 있습니다.
+				</p>
+			</address>
+			<div class="footer-links">
+				<ul>
+					<li><a href="https://www.nps.or.kr/comm/footer/getOHAH0003M0.do" class="text_policy" target="_blank" title="새창열림">개인정보처리방침</a></li>
+					
+					
+					
+					<li><a href="https://www.nps.or.kr/comm/footer/getOHAH0005M0.do" title="새창열림" onclick="window.open(this.href,'name','width=1030,height=683,toolbar=no,menubar=no,scrollbars=no,resizable=no,location=no,directories=no,status=no');return false;">홈페이지 이용안내</a></li>
+				</ul>
+			</div>
+			<p class="footer-copyright">copyright ⓒ nps.or.kr. all rights reserved.</p>
+			<!-- <div class="footer-outlinks">
+				<a href="http://www.nps.or.kr/jsppage/etc/popUp_banner_2009.html" class="btn-reletedSite" onclick="window.open(this.href,'smallr','width=100,height=100,resizable=0,menubar=0,toolbar=0,scrollbars=no,status=0');return false;" title="관련사이트 모음 새창열림">관련사이트</a>
+				<details class="select family-links">
+					<summary class="selected">Family Site</summary>
+					<ul>
+						<li><a href="http://www.mohw.go.kr/react/index.jsp" target="_blank" title="새창열림">보건복지부</a></li>
+						<li><a href="http://www.nps.or.kr/jsppage/main.jsp" target="_blank" title="새창열림">국민연금공단</a></li>
+						<li><a href="http://bips.bizmeka.com/main.html" target="_blank" title="새창열림">사회보험 EDI</a></li>
+						<li><a href="http://www.nps.or.kr/jsppage/publicPension/publicPension/main.html" target="_blank" title="새창열림">공적연금 연계</a></li>
+						<li><a href="http://www.4insure.or.kr/" target="_blank" title="새창열림">4대보험 정보연계</a></li>
+						<li><a href="http://basicpension.mohw.go.kr/Nfront_main/index.jsp" target="_blank" title="새창열림">기초노령연금</a></li>
+						<li><a href="http://www.cheongpungresort.co.kr/ver2/main/php/main.php" target="_blank" title="새창열림">청풍리조트</a></li>
+					</ul>
+				</details>
+				<div class="footer-mark">
+					<a href="https://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank" title="웹접근성인증평가원(새창열림)"><img src="/images/common/mark_wa.png" alt="웹접근성 품질마크"></a>
+				</div>
+			</div> -->
+		</div>
+		<ul class="footer-links2">
+			<li><a href="javascript:goMenuPage('MN24000475', '/edwmintr/directions/getOHEB0012M0.do', '찾아오시는 길','MN24000395', 'MN24000475')">찾아오시는 길</a></li>
+			<li><a href="https://www.nps.or.kr/comm/footer/getOHAH0004M0.do" target="_blank" title="새창열림">이용약관</a></li>
+			<div class="footer-mark">
+				<a href="https://www.wa.or.kr/board/list.asp?search=total&SearchString=fund.nps.or.kr&BoardID=0006" title="새창열림" class="mark-web">웹접근성품질마크</a>
+			</div>
+		</ul>
+		
+		<!-- <div class="footer-sitemap">
+			<ul class="dep1">
+				<li>
+					<a href="javascript:goMenuPage('MN24000395','/edwmintr/otln/getOHEB0014M0.do','기금소개','N','MN24000395','','')">기금소개</a>
+					<ul class="dep2">
+						<li><a href="javascript:goMenuPage('MN24001643', '/edwmintr/otln/getOHEB0014M1.do', '설치와 운용', 'N')">설치와운용</a></li>
+						<li><a href="javascript:goMenuPage('MN24000471', '/edwmintr/history/getOHEB0002M0.do', '연혁', 'N')">연혁</a></li>
+						<li><a href="javascript:goMenuPage('MN24001644', '/edwmintr/rulestrc/getOHEB0004M1.do', '관리체계', 'N')">지배구조</a></li>
+						<li><a href="javascript:goMenuPage('MN24000470', '/edwmintr/greeting/getOHEB0001M0.do', '본부장 인사말', 'N')">기금운용본부</a></li>
+						<li><a href="javascript:goMenuPage('MN24000475', '/edwmintr/directions/getOHEB0012M0.do', '찾아오시는 길','MN24000395', 'MN24000475')">찾아오시는 길</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:goMenuPage('MN24000396','/oprtplcy/oprtcrtr/getOHEC0011M0.do','운용정책','N','MN24000396','','')">운용정책</a>
+					<ul class="dep2">
+						<li><a href="javascript:goMenuPage('MN24000478', '/oprtplcy/oprtcrtr/getOHEC0001M0.do', '운용기준', 'N')">운용기준</a></li>
+						<li><a href="javascript:goMenuPage('MN24001652', '/oprtplcy/oprtcrtr/getOHEC0001M1.do', '운용절차', 'N')">운용절차</a></li>
+						<li><a href="javascript:goMenuPage('MN24000608', '/oprtplcy/astaprtplcy/getOHEC0004M0.do', '자산배분','MN24000396', 'MN24000479')">투자정책</a></li>
+						<li><a href="javascript:goMenuPage('MN24000612', '/oprtplcy/riskmngplcy/getOHEC0008M0.do', '위험관리','MN24000396', 'MN24000480')">위험관리</a></li>
+						<li><a href="javascript:goMenuPage('MN24000613', '/oprtplcy/riskmngplcy/getOHEC0009M0.do', '성과평가', 'N')">성과평가</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:goMenuPage('MN24000397','/oprtprcn/otln/getOHED0013M0.do','운용현황','N','MN24000397','','')">운용현황</a>
+					<ul class="dep2">
+						<li><a href="javascript:goMenuPage('MN24000482', '/oprtprcn/cmtnprcn/getOHED0001M0.do', '적립현황','MN24000397', 'MN24000482')">적립현황</a></li>
+						<li><a href="javascript:goMenuPage('MN24001514', '/oprtprcn/ivsmprcn/getOHED0016M0.do', '포트폴리오 현황', 'N')">포트폴리오 현황</a></li>
+						<li><a href="javascript:goMenuPage('MN24000616', '/oprtprcn/ivsmprcn/getOHED0003M0.do', '국내 주식','MN24000397', 'MN24000483')">자산군별 현황</a></li>
+						<li><a href="javascript:goMenuPage('MN24000623', '/oprtprcn/oprtotcm/getOHED0010M0.do', '누적성과','MN24000397', 'MN24000484')">운용성과</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:goMenuPage('MN24000398','/tctrspn/tctrspnsyst/getOHEE0000M0.do','수탁자책임','N','MN24000398','','')">수탁자책임</a>
+					<ul class="dep2">
+						<li><a href="javascript:goMenuPage('MN24000626', '/tctrspn/tctrspnsyst/getOHEE0001M0.do', '수탁자책임 개요', 'N')">수탁자책임 개요</a></li>
+						<li><a href="javascript:goMenuPage('MN24000485', '/tctrspn/tctrspnsyst/getOHEE0003M0.do', '수탁자책임 체계', 'N')">수탁자책임 체계</a></li>
+						<li><a href="javascript:goMenuPage('MN24000629', '/tctrspn/tctrspnplcy/getOHEE0004M0.do', '수탁자책임 원칙','MN24000398', 'MN24000486')">수탁자책임 정책</a></li>
+						<li><a href="javascript:goMenuPage('MN24000632', '/tctrspn/tctrspnacvt/getOHEE0007M0.do', '책임투자','MN24000398', 'MN24000487')">수탁자책임 활동</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:goMenuPage('MN24000399','/impa/otln/getOHEF0026M0.do','알림','N','MN24000399','','')">알림</a>
+					<ul class="dep2">
+						<li><a href="javascript:goMenuPage('MN24000635', '/impa/edwmpblnt/getOHEF0001M0.do', '기금공시 게시판','MN24000399', 'MN24000489')">기금공시</a></li>
+						<li><a href="javascript:goMenuPage('MN24000490', '/impa/nscvrgdatalist/getOHEF0013M0.do', '보도자료','MN24000399', 'MN24000490')">보도자료</a></li>
+						<li><a href="javascript:goMenuPage('MN24000491', '/impa/hirepbanclist/getOHEF0015M0.do', '채용공고','MN24000399', 'MN24000491')">채용공고</a></li>
+						<li><a href="javascript:goMenuPage('MN24000492', '/impa/dlnginstslctnpbanclist/getOHEF0017M0.do', '거래기관 선정공고','MN24000399', 'MN24000492')">거래기관 선정공고</a></li>
+						<li><a href="javascript:goMenuPage('MN24000638', '/impa/pbtydata/getOHEF0019M0.do', '카드뉴스','MN24000399', 'MN24000493')">홍보자료</a></li>
+						<li><a href="javascript:goMenuPage('MN24000494', '/impa/faq/getOHEF0025M0.do', '자주 찾는 질문(FAQ)','MN24000399', 'MN24000494')">자주 찾는 질문<br>(FAQ)</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div> -->
+	</div>
+</div>
+	<div class="go-top">
+		<button type="button" class="btn-float">맨위로 이동</button>
+	</div>
+        </footer>
+    </div>
+</body>
+</html>  

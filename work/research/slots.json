@@ -2018,10 +2018,11 @@
   {
    "at": "2026-10-20 13:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "cardded1020",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음)"
+   "gates_ok": "2026-10-20 07:22",
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) | firemap-write 07:22: cardded1020 '신용카드 소득공제 자녀 한도, 카드값이 얼마여야 더 받을까?'(세금연금·형식2, 2026.1.1 자녀 한도 신설 — 총급여별 새 한도 닿는 카드값 직접 계산, 조특법 126조의2·시행령 121조의2⑱ 원문) 관문 통과(readcheck 0·aitell 통과·editgate auto·교차검증 Gemini). 레드팀·58세 이해 시험은 이번 30분 회차에서 못 함 → 13:40 발행 전 write-b가 확인",
+   "pkg": "cardded1020"
   },
   {
    "at": "2026-10-20 15:10",

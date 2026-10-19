@@ -88,10 +88,11 @@ const NumCard: React.FC<{s: PScene}> = ({s}) => {
   // 23시 사장님 '가운데 정렬': 경쟁 쇼츠 10편 제목·자막 가운데 → 숫자 카드도 안전 영역 가운데
   return (
     <div style={{position: 'absolute', left: SZ.x0 + PAD, width: IW, bottom: 1920 - CAP3_TOP + 18, display: 'flex', justifyContent: 'center'}}>
-      <div style={{maxWidth: IW, boxSizing: 'border-box', padding: '16px 30px 18px', background: '#fff', borderRadius: 24, boxShadow: '0 14px 40px rgba(0,0,0,0.35)', textAlign: 'center',
+      {/* 10/19 '클로드 티' 빼기: 흰 카드·그림자 없이 실사 위 테두리 글자(숫자 주황 하나 + 한마디 흰 글자) */}
+      <div style={{maxWidth: IW, boxSizing: 'border-box', textAlign: 'center',
         transform: `translateY(${(1 - sp) * 40}px) scale(${0.9 + 0.1 * sp})`, transformOrigin: 'center bottom', opacity: Math.min(1, sp * 1.4)}}>
-        <div style={{...F, fontWeight: 700, fontSize: big, lineHeight: 1, color: T.accent, letterSpacing: -2, whiteSpace: 'nowrap'}}>{s.num}</div>
-        <div style={{...F, fontWeight: 700, fontSize: sub, lineHeight: 1.2, color: T.ink2, marginTop: 10, wordBreak: 'keep-all'}}>{s.sub}</div>
+        <div style={{...F, fontWeight: 800, fontSize: big, lineHeight: 1.05, color: '#FF7A1A', letterSpacing: -2, whiteSpace: 'nowrap', textShadow: outline(7)}}>{s.num}</div>
+        <div style={{...F, fontWeight: 800, fontSize: sub, lineHeight: 1.2, color: '#fff', marginTop: 8, wordBreak: 'keep-all', textShadow: outline(5)}}>{s.sub}</div>
       </div>
     </div>
   );
@@ -105,11 +106,11 @@ const Scene: React.FC<{s: PScene; from: number; total: number; p: C2PProps}> = (
       <Picture s={s} />
       <div style={{position: 'absolute', left: 0, top: 0, width: W, height: 640, background: 'linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.6) 70%, rgba(0,0,0,0))'}} />
       <div style={{position: 'absolute', left: 0, top: CAP3_TOP - 520, width: W, height: 1920 - (CAP3_TOP - 520), background: 'linear-gradient(rgba(16,17,20,0), rgba(16,17,20,0.82) 40%, rgba(16,17,20,0.7) 75%, rgba(16,17,20,0.45))'}} />
-      {s.year ? <div style={{position: 'absolute', left: SZ.x0 + PAD, top: Q_END + 14, padding: '6px 18px', background: T.accent, borderRadius: 12, opacity: yo, transform: `translateX(${(1 - yo) * -30}px)`}}>
-        <span style={{...F, fontWeight: 700, fontSize: fit(s.year, IW - 40, 36, 22), color: '#fff', whiteSpace: 'nowrap'}}>{s.year}</span></div> : null}
+      {s.year ? <div style={{position: 'absolute', left: SZ.x0 + PAD, width: IW, textAlign: 'center', top: Q_END + 14, opacity: yo}}>
+        <span style={{...F, fontWeight: 800, fontSize: fit(s.year, IW - 40, 52, 30), color: '#FFD000', whiteSpace: 'nowrap', textShadow: outline(5)}}>{s.year}</span></div> : null}
       <NumCard s={s} />
       <OutlineCaption lines={s.lines} />
-      <Progress progress={(from + f) / total} />
+      {/* 10/19: 진행 막대 뺌(템플릿 티) */}
       {s.lines.map((l, i) => <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
     </AbsoluteFill>
   );

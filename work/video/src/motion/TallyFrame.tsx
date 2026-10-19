@@ -14,11 +14,17 @@ import React from 'react';
 import {AbsoluteFill, interpolate, useCurrentFrame, Easing, OffthreadVideo, Img, staticFile} from 'remotion';
 import * as Lucide from 'lucide-react';
 import {T, F, CL, FONT_CSS, Flame} from '../parts/fm';
+import {PaperBg} from '../parts/human';
 import {wordTimings, paginate, activeWord, pageOf, CaptionPage} from '../motion-proto/captionTiming';
 
 export const SAFE = {W: 1920, H: 1080, left: 120, textRight: 1400, brX: 1440, brY: 864, bottom: 1026};
 export const BOARD = {x: 100, y: 236, w: 1720, h: 616};
 
+// ── 10/19 '클로드 티' 빼기(work/research/visual/no-claude-look-1019.md, 사장님 '내용 영상도 클로드 티를 벗어야 해') ──
+//   · 바탕 = 구겨진 종이(PaperBg) 화면 전체. 흰 둥근 보드(테두리 2px·모서리 24)는 그리지 않는다(boardCard=true일 때만, 옛 편 호환).
+//   · 제목 옆 lucide 아이콘 + 연주황 둥근 칸은 뺀다(아이콘 세트 티). art.src(자체 그림 art/obj/*.svg)만 칸 없이 그린다.
+//   · '정확한 값' 검은 알약 꼬리표 → 출처 위 작은 글자 한 줄(상자 없음). 작은 글자 줄은 출처 포함 2줄까지.
+//   · 장 칩(주황 알약) → 글자만. 말 자막은 반투명 짙은 띠(모서리 6, 수페·지식한입 꼴).
 // ── 10/16 디자인 기준 v3: 장면 뒤 실사 사진·영상 — 10/17부터 롱폼 기본 아님(위 머리말). 쓰던 편 호환으로 남김 ──
 // bg를 주면 화면 전체에 깔고(천천히 확대), 위를 어둡게 덮어 제목·부제·브랜드를 흰 글자로, 보드는 흰 카드로 띄운다. src = work/video/public 기준 경로.
 export type TallyBg = {src: string; start?: number; kind?: 'video' | 'image'; x?: number};
@@ -42,6 +48,7 @@ const SH = '0 2px 0 rgba(0,0,0,0.6), 0 0 18px rgba(0,0,0,0.55)';
 export type TallyArt = {kind: 'icon' | 'person' | 'photo' | 'flag'; license: string; icon?: string; src?: string; color?: string; size?: number};
 export const TallyArtView: React.FC<{art: TallyArt; size?: number; dark?: boolean}> = ({art, size, dark}) => {
   const z = size ?? art.size ?? 104;
+  if (art.icon && !art.src) return null;   // 10/19: lucide 아이콘 세트는 쓰지 않는다(클로드 티)
   if (art.icon) {
     const I = (Lucide as unknown as Record<string, React.FC<{size?: number; color?: string; strokeWidth?: number}>>)[art.icon];
     if (!I) throw new Error(`TallyArt: lucide 아이콘 이름 없음 '${art.icon}'`);
@@ -78,20 +85,20 @@ const capSize = (t: string) => { const u = [...t].reduce((a, c) => a + (/[ㄱ-�
 export const TallyCaption: React.FC<{lines: TallyLine[]; capX?: number}> = ({lines, capX = 960}) => {
   const f = useCurrentFrame();
   const k = tallyIdx(lines, f);
-  const line = k >= 0 ? lines[k] : null; if (!line) return null;
+  const line = k >= 0 ? lines[k] : null; if (!line || !line.text.trim()) return null;
   const st = tallyStarts(lines)[k];
   const lo = interpolate(f, [st, st + 5], [0, 1], CL);
   const pages = capPages(line.text); const tm = wordTimings(line.text, line.frames, 0.92);
   const page = pages[pageOf(pages, Math.max(0, activeWord(tm, f - st)))]?.text ?? line.text;
   return (
     <div style={{position: 'absolute', left: capX - 700, width: 1400, bottom: 56, display: 'flex', justifyContent: 'center', opacity: lo}}>
-      <div style={{...F, fontWeight: 700, fontSize: capSize(page), lineHeight: 1.25, color: '#fff', background: T.ink, padding: '10px 32px', borderRadius: 12, whiteSpace: 'nowrap', maxWidth: 1400}}>{page}</div>
+      <div style={{...F, fontWeight: 700, fontSize: capSize(page), lineHeight: 1.25, color: '#fff', background: 'rgba(32,33,38,0.86)', padding: '10px 40px', borderRadius: 6, whiteSpace: 'nowrap', maxWidth: 1400}}>{page}</div>
     </div>
   );
 };
 
-export const TallyFrame: React.FC<{title: string; sub?: string | null; source?: string | null; chapter?: string | null; lines: TallyLine[]; children?: React.ReactNode; board?: boolean; capX?: number; bg?: TallyBg | null; art?: TallyArt | null}> =
-  ({title, sub, source, chapter, lines, children, board = true, capX = 960, bg = null, art = null}) => {
+export const TallyFrame: React.FC<{title: string; sub?: string | null; source?: string | null; chapter?: string | null; lines: TallyLine[]; children?: React.ReactNode; board?: boolean; boardCard?: boolean; capX?: number; bg?: TallyBg | null; art?: TallyArt | null}> =
+  ({title, sub, source, chapter, lines, children, board = true, boardCard = false, capX = 960, bg = null, art = null}) => {
   const f = useCurrentFrame();
   const o = interpolate(f, [0, 10], [0, 1], CL);
   const hl = interpolate(f, [6, 22], [0, 1], {...CL, easing: Easing.out(Easing.cubic)});
@@ -102,11 +109,11 @@ export const TallyFrame: React.FC<{title: string; sub?: string | null; source?: 
   return (
     <AbsoluteFill style={{background: bg ? '#000' : T.bg}}>
       <style>{FONT_CSS}</style>
-      {bg ? <TallyBgLayer bg={bg} /> : null}
+      {bg ? <TallyBgLayer bg={bg} /> : boardCard ? null : <PaperBg />}
       {/* 10/17: 브랜드·장 칩은 왼쪽 위 작게, 제목은 위 가운데 크게(최대 110px), 그림(art)은 제목 왼쪽 */}
       <div style={{position: 'absolute', left: SAFE.left, top: 18, display: 'flex', alignItems: 'center', gap: 10, opacity: o}}>
         <Flame size={20} /><span style={{...F, fontWeight: 700, fontSize: 22, color: bg ? '#fff' : T.ink2, textShadow: bg ? SH : undefined}}>파이어맵</span>
-        {chapter ? <div style={{...F, fontWeight: 700, fontSize: 22, color: '#fff', background: T.accent, borderRadius: 8, padding: '1px 10px', marginLeft: 8}}>{chapter}</div> : null}
+        {chapter ? <div style={{...F, fontWeight: 700, fontSize: 22, color: bg ? '#fff' : T.accent, marginLeft: 10, textShadow: bg ? SH : undefined}}>{chapter}</div> : null}
       </div>
       <div style={{position: 'absolute', left: 180, width: 1560, top: sub ? 50 : 70, display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: o}}>
         <div style={{display: 'flex', alignItems: 'center', gap: 24}}>
@@ -120,15 +127,9 @@ export const TallyFrame: React.FC<{title: string; sub?: string | null; source?: 
           </div>
         ) : null}
       </div>
-      {board ? <div style={{position: 'absolute', left: BOARD.x, top: BOARD.y, width: BOARD.w, height: BOARD.h, background: bg ? 'rgba(255,255,255,0.96)' : '#fff', border: bg ? 'none' : `2px solid ${T.line}`, borderRadius: 24, opacity: o, boxShadow: bg ? '0 20px 60px rgba(0,0,0,0.45)' : undefined}} /> : null}
+      {board && (boardCard || bg) ? <div style={{position: 'absolute', left: BOARD.x, top: BOARD.y, width: BOARD.w, height: BOARD.h, background: bg ? 'rgba(255,255,255,0.96)' : '#fff', border: bg ? 'none' : `2px solid ${T.line}`, borderRadius: 24, opacity: o, boxShadow: bg ? '0 20px 60px rgba(0,0,0,0.45)' : undefined}} /> : null}
       {children}
-      {cap ? (
-        <div style={{position: 'absolute', left: 130, top: 252, maxWidth: 1660, opacity: co, transform: `translateY(${(1 - co) * -8}px)`,
-          background: T.ink, borderRadius: 10, padding: '7px 16px', display: 'flex', gap: 12, alignItems: 'baseline'}}>
-          <span style={{...F, fontWeight: 700, fontSize: 20, color: T.daccent, whiteSpace: 'nowrap'}}>{/\d/.test(cap) ? '정확한 값' : '참고'}</span>
-          <span style={{...F, fontWeight: 700, fontSize: 24, color: '#fff', lineHeight: 1.3, wordBreak: 'keep-all'}}>{cap}</span>
-        </div>
-      ) : null}
+      {cap ? <div style={{position: 'absolute', left: SAFE.left, top: 830, maxWidth: SAFE.textRight - SAFE.left, opacity: co, ...F, fontWeight: 700, fontSize: 22, color: bg ? '#f2f3f5' : T.ink2, whiteSpace: 'nowrap', overflow: 'hidden', textShadow: bg ? SH : undefined}}>{cap}</div> : null}
       <TallyCaption lines={lines} capX={capX} />
       {source ? <div style={{...F, fontWeight: 500, fontSize: srcSize(source), color: bg ? '#e8eaee' : T.ink3, textShadow: bg ? SH : undefined, position: 'absolute', left: SAFE.left, top: 864, whiteSpace: 'nowrap'}}>출처 {source}</div> : null}
     </AbsoluteFill>

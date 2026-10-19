@@ -12,11 +12,14 @@ import {TallyBars, TallyBar} from './motion/TallyBars';
 import {TallyReceipt, TallyRow} from './motion/TallyReceipt';
 import {TallyTag, TallyCallout} from './motion/TallyMark';
 import {TallyLineChart, lineXY} from './motion/TallyLineChart';
-import {Backdrop, Hero, SourceLine, Progress, FitBoard, layout, capTop, capSize, CAP_H, SZ, Answer, OutlineCaption, BgSeg, fit} from './parts/safeframe';
+import {Backdrop, Hero, SourceLine, Progress, FitBoard, layout, capTop, capSize, CAP_H, SZ, Answer, OutlineCaption, BgSeg, fit, LiveSceneBody, LiveDim, EndSource} from './parts/safeframe';
+import {DuckedMusic} from './parts/human';
 
 type SLine = {n: number; text: string; cap?: string | null; audio: string; frames: number};
 type SScene = {kind: string; label: string; source?: string | null; data: any; lines: SLine[]; frames: number};
-export type C1SProps = {fps: number; name: string; question: string[]; hot: string; base: string; scenes: SScene[]; answer?: {label: string; items: string[]; arrow?: boolean; note?: string} | null; bg?: BgSeg[] | null};
+export type C1SProps = {fps: number; name: string; question: string[]; hot: string; base: string; scenes: SScene[]; answer?: {label: string; items: string[]; arrow?: boolean; note?: string} | null; bg?: BgSeg[] | null; look?: 'live' | 'board'};
+// 10/19 기본 look = 'live'(실사가 있으면): 흰 판·칸·진행 막대 없이 실사 위 큰 숫자 박자(parts/safeframe LiveSceneBody) + 끝 3초 출처 한 줄 + 말 밑 덕킹 음. 'board'는 옛 흰 판(공개본 다시 만들 때만).
+export const c1sLive = (p: C1SProps) => (p.look ? p.look === 'live' : !!(p.bg && p.bg.length));
 export const c1sFrames = (p: C1SProps) => p.scenes.reduce((a, s) => a + s.frames, 0);
 
 const BW = 1000, BH = 860;
@@ -307,6 +310,13 @@ const Frame: React.FC<{s: SScene; from: number; total: number; first: boolean; p
   const zoom = interpolate(f, [0, s.frames], [1, 1.015], CL) + 0.03 * pin;
   const body = s.data.full ? <Sequence from={-90} layout="none"><Body s={s} /></Sequence> : <Body s={s} />;
   const L = layout(p.question, null as Answer);   // v3 10/16 23시 사장님 '위 글자 5줄': 위는 제목 2줄만, 답 줄은 빼고 판이 그 자리까지 커진다
+  if (c1sLive(p)) return (
+    <AbsoluteFill>
+      <LiveSceneBody s={s} />
+      <OutlineCaption lines={s.lines} first={first} />
+      {s.lines.map((l, i) => <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
+    </AbsoluteFill>
+  );
   return (
     <AbsoluteFill>
       <FitBoard bw={BW} bh={BH} frames={s.frames} top={L.boardTop} bottom={L.boardBottom} zoom={zoom} card={!!(p.bg && p.bg.length)}>{body}</FitBoard>
@@ -324,9 +334,11 @@ export const C1S: React.FC<C1SProps> = (p) => {
     <AbsoluteFill style={{background: T.dbg}}>
       <style>{FONT_CSS}</style>
       <Backdrop question={p.question} answer={p.answer as Answer} bg={p.bg} />
+      {c1sLive(p) ? <LiveDim /> : null}
       {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Frame s={s} from={from} total={total} first={i === 0} p={p} /></Sequence>; from += s.frames; return el; })}
       <Hero question={p.question} hot={p.hot} answer={p.answer as Answer} until={0} />
-      <SourceLine text={p.base} dark={!!(p.bg && p.bg.length)} />
+      {c1sLive(p) ? <><EndSource text={p.base} total={total} /><DuckedMusic lines={(() => { const r: {at: number; audio: string; frames: number}[] = []; let a = 0; for (const s of p.scenes) { let b = a; for (const l of s.lines) { r.push({at: b, audio: l.audio, frames: l.frames}); b += l.frames; } a += s.frames; } return r; })()} low={0.06} high={0.16} /></>
+        : <SourceLine text={p.base} dark={!!(p.bg && p.bg.length)} />}
     </AbsoluteFill>
   );
 };

@@ -20,10 +20,17 @@
 #   이 기준은 '얼굴 없는 그래픽 채널의 표준'에 맞추는 바닥이다. 같은 채널 안에서 화면은 조회를 가르지 않았다(visual-gap 3절).
 #   py -3.12 work/bgcheck.py <mp4 …>          # 걸리면 종료코드 1 · 결과 <mp4>.bgcheck.json(크기·수정시각·기준 같으면 다시 안 잼)
 # 올리기 관문: ytupload.upload()·ytlong(롱폼 렌더본)·research/cardshorts/*clips_up.py가 gate(mp4)를 부른다.
-import os, sys, json
+# [클로드 티 — 10/19 사장님 '내용 영상도 클로드 티를 벗어야 해'] research/visual/no-claude-look-1019.md
+#   ⑥ UI 상자: 닫힌 네모 윤곽 + 안이 거의 한 색(최빈 밝기 ±8 안 점 65%↑)인 카드·알약·칸. 실사 속 네모(지폐·모니터)는 안이 섞여 빠진다.
+#      쇼츠: 상자 1개↑ 프레임이 30% 넘으면(경쟁 쇼츠 10편 흰 판 0) · 롱폼: 판 프레임 중 자막 띠 밖 상자 2개↑가 30% 넘으면.
+#      실측 10/19: 옛 C-2 같은 구간 판 프레임 60%가 3개↑(보드·꼬리표·자막), d1s_dep 52%가 3개↑, 새 견본 0.
+#   ⑦ 작은 글자 줄(글자 상자 높이 2.4% 미만, 쇼츠만 — 롱폼 19px 출처는 줄여 잰 화면에서 안 잡혀 못 잰다): 3줄↑ 프레임 30% 넘으면 경고만.
+#   ⑥은 2026-10-21부터 거부(그 전엔 경고만 — H-2 10/20 공개분이 새 기준을 만들 시간이 없다). ⑦은 경고만.
+import os, sys, json, datetime
 import numpy as np
 
-VERSION = 'shorts design-v3-1016 bg+cap v1 | long visual-gap-1017 v1 + add-1019'
+VERSION = 'shorts design-v3-1016 bg+cap v1 | long visual-gap-1017 v1 + add-1019 | noclaude-1019 box v1'
+NC_ENFORCE = '2026-10-21'; NC_FRAC = 0.30
 CAP_BAND = (1100, 1240); CAP_MIN_H = 56; CAP_FRAC = 0.70
 BG_FRAC = 0.90; BG_RUN = 3
 # 롱폼(10/17)
@@ -65,6 +72,45 @@ def frame_cap(img):
     return False
 
 
+def ui_boxes(img, skip_bottom=True):
+    """UI 상자(카드·알약·칸) 수 — 852px 폭으로 줄여 윤곽을 찾고, 닫힌 네모 + 안이 한 색인 것만. skip_bottom이면 아래 20%(롱폼 자막 띠)는 뺀다."""
+    import cv2
+    h0, w0 = img.shape[:2]; W = 852; H = int(round(h0 * W / w0))
+    s = cv2.resize(img, (W, H), interpolation=cv2.INTER_AREA); g = cv2.cvtColor(s, cv2.COLOR_RGB2GRAY)
+    e = cv2.dilate(cv2.Canny(g, 20, 60), np.ones((3, 3), np.uint8))
+    cs, _ = cv2.findContours(e, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+    out = []
+    for c in cs:
+        x, y, w, h = cv2.boundingRect(c); fa = w * h / (W * H)
+        if fa < 0.004 or fa > 0.7 or w < 40 or h < 16: continue
+        if skip_bottom and (y + h / 2) / H > 0.8: continue
+        if cv2.contourArea(c) / (w * h) < 0.82: continue
+        inner = g[y + 3:y + h - 3, x + 3:x + w - 3]
+        if inner.size < 50: continue
+        hist = np.bincount(inner.ravel(), minlength=256); m = int(hist.argmax())
+        if hist[max(0, m - 8):m + 9].sum() / inner.size < 0.65: continue
+        if any(abs(x - a) < 6 and abs(y - b) < 6 and abs(w - c2) < 10 and abs(h - d) < 10 for a, b, c2, d in out): continue
+        out.append((x, y, w, h))
+    return len(out)
+
+
+def small_lines(img):
+    """작은 글자 줄 수(글자 상자 높이가 화면 높이 2.4% 미만) — 자막 띠(아래 20%)·맨 위 7%(브랜드 줄) 빼고."""
+    import cv2, safezone
+    h0, w0 = img.shape[:2]
+    s = cv2.resize(img, (w0 // 2, h0 // 2), interpolation=cv2.INTER_AREA) if max(w0, h0) > 1200 else img
+    r, _ = safezone._engine()(s[:, :, ::-1].copy(), use_det=True, use_cls=False, use_rec=False)
+    H = s.shape[0]; n = 0
+    for b in (r or []):
+        b = np.array(b, dtype=float); y0, y1 = b[:, 1].min() / H, b[:, 1].max() / H
+        if 0.07 <= (y0 + y1) / 2 <= 0.8 and (y1 - y0) < 0.024: n += 1
+    return n
+
+
+def nc_enforced():
+    return datetime.date.today().isoformat() >= NC_ENFORCE
+
+
 def scan(mp4):
     import safezone
     vertical = safezone.is_vertical(mp4)
@@ -73,7 +119,7 @@ def scan(mp4):
     for t, img in safezone.frames(mp4, 1.0):
         b, parts = frame_bg(img)
         c = frame_cap(img) if vertical else None
-        fr.append({'t': round(t, 1), 'bg': b, 'parts': parts, 'cap': c})
+        fr.append({'t': round(t, 1), 'bg': b, 'parts': parts, 'cap': c, 'box': ui_boxes(img, skip_bottom=False), 'small': small_lines(img)})
     return vertical, fr
 
 
@@ -86,6 +132,14 @@ def flatness(img):
     g = cv2.GaussianBlur(g, (3, 3), 0)
     m = np.hypot(cv2.Sobel(g, cv2.CV_32F, 1, 0), cv2.Sobel(g, cv2.CV_32F, 0, 1))
     return float((m < 3).mean())
+
+
+def paper_like(img):
+    """10/19 종이 결 판(구겨진 종이 바탕)은 기울기가 있어 '평평한 점'이 45% 밑으로 갈 수 있다 → 밝고(위 80% 평균 205↑) 색이 거의 없으면(채도 90분위 45↓) 실사가 아니라 판."""
+    import cv2
+    s = cv2.resize(img, (426, 240), interpolation=cv2.INTER_AREA)[:192]
+    hsv = cv2.cvtColor(s, cv2.COLOR_RGB2HSV)
+    return bool(cv2.cvtColor(s, cv2.COLOR_RGB2GRAY).mean() > 205 and np.percentile(hsv[:, :, 1], 90) < 45)
 
 
 def text_lines(img):
@@ -134,17 +188,17 @@ def scan_long(mp4):
     import safezone
     fr = []; prev = None
     for t, img in safezone.frames(mp4, 1.0):
-        fl = flatness(img); live = fl < FLAT_LIVE
+        fl = flatness(img); pp = paper_like(img); live = fl < FLAT_LIVE and not pp
         mh, n = (None, None) if live else text_lines(img)
         cur = ink(img); ad = added(prev, cur); prev = cur
-        fr.append({'t': round(t, 1), 'flat': round(fl, 3), 'live': live, 'maxh': mh, 'n': n, 'add': round(ad, 4)})
+        fr.append({'t': round(t, 1), 'flat': round(fl, 3), 'paper': pp, 'live': live, 'maxh': mh, 'n': n, 'add': round(ad, 4), 'box': None if live else ui_boxes(img)})
     return {'frames': fr, 'cuts': cuts(mp4)}
 
 
 def judge_long(d):
     fr, cs = d['frames'], d['cuts']
     n = len(fr) or 1; dur = (fr[-1]['t'] + 1) if fr else 0
-    for f in fr: f['live'] = f['flat'] < FLAT_LIVE
+    for f in fr: f['live'] = f['flat'] < FLAT_LIVE and not f.get('paper')
     live = round(sum(f['live'] for f in fr) / n, 3)
     cpm = round(len(cs) / (dur / 60), 2) if dur else 0
     # 같은 판: 컷과 컷 사이 구간 중 실사 프레임이 절반 미만인 구간의 길이
@@ -169,8 +223,14 @@ def judge_long(d):
     if over: why.append(f'같은 판 기준 넘음(움직임 없는 판 {BOARD_MAX:g}초·8초 안 요소 추가 판 {BOARD_MOVE_MAX:g}초) ' + ', '.join(f'{int(r[1] // 60)}:{r[1] % 60:02.0f}~ {r[0]:.0f}초(한도 {r[2]:g}·추가 {r[3]}번·최장 간격 {r[4]:.0f}초)' for r in over[:5]))
     if board and mh < BIG_MIN: why.append(f'판 가장 큰 글자 중앙 {mh:.1f}% < {BIG_MIN:g}%(제목 100px 위 가운데·핵심 숫자 크게)')
     if board and ln > LINES_MAX: why.append(f'판 글자 줄 중앙 {ln:.0f}줄 > {LINES_MAX}줄(판 하나에 말 하나·숫자 둘까지)')
+    bx = [f['box'] for f in fr if not f['live'] and f.get('box') is not None]
+    box_frac = round(sum(b >= 2 for b in bx) / len(bx), 3) if bx else 0.0
+    warn = []
+    if box_frac > NC_FRAC:
+        m = f'클로드 티 ⑥ 판 프레임 {box_frac:.0%}가 UI 상자 2개↑(흰 둥근 보드·알약 꼬리표·칸 — 종이 위에 바로, no-claude-look-1019)'
+        (why if nc_enforced() else warn).append(m + ('' if nc_enforced() else f' [경고 — {NC_ENFORCE}부터 거부]'))
     s = {'live_frac': round(live, 3), 'cuts_pm': round(cpm, 2), 'board_max_s': runs[0][0] if runs else 0, 'big_med': round(mh, 2), 'lines_med': ln,
-         'small_t': small[:12], 'many_t': many[:12], 'board_over': over[:12], 'board_runs': runs[:12], 'dur': dur}
+         'small_t': small[:12], 'many_t': many[:12], 'board_over': over[:12], 'board_runs': runs[:12], 'dur': dur, 'box_frac': box_frac, 'warn': warn}
     return not why, why, s
 
 
@@ -189,7 +249,13 @@ def judge(vertical, fr):
         cap = sum(bool(f['cap']) for f in fr) / n
         if cap < CAP_FRAC: why.append(f'자막 기준(띠 y {CAP_BAND[0]}~{CAP_BAND[1]}·상자 높이 {CAP_MIN_H}px 이상) 프레임 {cap:.0%} < {CAP_FRAC:.0%}')
     bad = [f['t'] for f in fr if not f['bg']][:12]
-    return not why, why, {'bg_frac': round(bg_ok, 3), 'bg_run': best, 'cap_frac': None if cap is None else round(cap, 3), 'bg_fail_t': bad}
+    box_frac = round(sum((f.get('box') or 0) >= 1 for f in fr) / n, 3); small_frac = round(sum((f.get('small') or 0) >= 3 for f in fr) / n, 3)
+    warn = []
+    if box_frac > NC_FRAC:
+        m = f'클로드 티 ⑥ 프레임 {box_frac:.0%}에 흰 판·카드·칸(경쟁 쇼츠 10편 0 — 실사 위 큰 글자로, no-claude-look-1019)'
+        (why if nc_enforced() else warn).append(m + ('' if nc_enforced() else f' [경고 — {NC_ENFORCE}부터 거부]'))
+    if small_frac > NC_FRAC: warn.append(f'클로드 티 ⑦ 프레임 {small_frac:.0%}에 작은 글자 3줄↑(칸 이름·설명은 말로) [경고]')
+    return not why, why, {'bg_frac': round(bg_ok, 3), 'bg_run': best, 'cap_frac': None if cap is None else round(cap, 3), 'bg_fail_t': bad, 'box_frac': box_frac, 'small_frac': small_frac, 'warn': warn}
 
 
 def gate(mp4, quiet=False):
@@ -210,10 +276,11 @@ def gate(mp4, quiet=False):
     if 'live_frac' in s:   # 롱폼(10/17 기준)
         msg = (f"롱폼 화면 관문 {'통과' if o['ok'] else '걸림'}: 실사 {s['live_frac']:.0%}(≥{LIVE_MIN:.0%}) · 컷 분당 {s['cuts_pm']:.1f}(≥{CUT_PM:g}) · "
                f"같은 판 최장 {s['board_max_s']:.0f}초(정지 ≤{BOARD_MAX:g}·추가 판 ≤{BOARD_MOVE_MAX:g}, 넘음 {len(s.get('board_over', []))}) · 판 큰 글자 {s['big_med']:.1f}%(≥{BIG_MIN:g}) · 판 글자 줄 {s['lines_med']:.0f}(≤{LINES_MAX})" +
-               ('' if o['ok'] else ' — ' + ' · '.join(o['why'])))
+               ('' if o['ok'] else ' — ' + ' · '.join(o['why'])) + (' · ' + ' · '.join(s['warn']) if s.get('warn') else ''))
         return o['ok'], msg
     msg = (f"디자인 관문 {'통과' if o['ok'] else '걸림'}: 배경 실사 {s['bg_frac']:.0%}(연속 없음 최장 {s['bg_run']}초)" +
-           (f" · 자막 기준 {s['cap_frac']:.0%}" if s.get('cap_frac') is not None else '') + ('' if o['ok'] else ' — ' + ' · '.join(o['why']) + (f" · 배경 없는 초 {s['bg_fail_t']}" if s['bg_fail_t'] else '')))
+           (f" · 자막 기준 {s['cap_frac']:.0%}" if s.get('cap_frac') is not None else '') + ('' if o['ok'] else ' — ' + ' · '.join(o['why']) + (f" · 배경 없는 초 {s['bg_fail_t']}" if s['bg_fail_t'] else '')) +
+           (' · ' + ' · '.join(s['warn']) if s.get('warn') else ''))
     return o['ok'], msg
 
 

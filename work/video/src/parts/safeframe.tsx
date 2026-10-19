@@ -3,8 +3,8 @@
 // 기준(work/safezone.py와 같은 값): Google Ads 세로 동영상 안전 영역 — 위 288 · 아래 672 · 왼쪽 48 · 오른쪽 192 px. 근거 work/research/cardshorts/safe-zone-1016.md
 // 안전 영역(840×960) 배치(위→아래): 질문 2줄(최대 76px) · 답 줄(이름표 한 줄 + 큰 답 숫자 한 줄, 최대 128px) · 판(내용이 실제로 있는 곳만 잘라 남은 칸을 꽉 채움) · 자막 한 줄 · 출처 한 줄(작게).
 import React, {useLayoutEffect, useEffect, useRef, useState} from 'react';
-import {Freeze, continueRender, delayRender, Sequence, OffthreadVideo, Img, staticFile, useCurrentFrame, interpolate} from 'remotion';
-import {Flame, F, T, CL} from './fm';
+import {Freeze, continueRender, delayRender, Sequence, OffthreadVideo, Img, staticFile, useCurrentFrame, interpolate, spring, Easing} from 'remotion';
+import {Flame, F, T, CL, HandCircle} from './fm';
 
 // ── 10/16 디자인 기준 v3 (근거: work/research/visual/design-spec-1016.md — 돈 분야 30일 조회 상위 쇼츠 10편 실측 중앙값) ──
 // 자막: 한 줄 · 가운데 y 61.3%(경쟁 중앙 61.6%) · 글자 높이 3.3%(경쟁 중앙 3.28%, 우리 v2 2.29%) · 흰 글자 + 검은 테두리, 상자 없음(경쟁 8/9 상자 없음)
@@ -274,4 +274,97 @@ export const FitBoard: React.FC<{bw: number; bh: number; frames: number; top: nu
       </div>
     </>
   );
+};
+
+// ───────── 10/19 '판 없는 쇼츠'(사장님 "쇼츠도 칸 뺀다 하지 않았어? 사람들이 AI가 만든 영상으로 모르게") ─────────
+// 근거: design-spec-1016 1절 경쟁 쇼츠 10편 — 화면에 남는 큰 숫자 칸 0/10, 배경 실사 9/10, 자막 상자 없음 8/9. 흰 판(카드·칸)을 쓴 곳 0.
+// 규칙(research/visual/no-claude-look-1019.md):
+//   · 흰 판·카드·칸 없음. 숫자는 실사 위에 바로, 흰 굵은 글자 + 검은 테두리. 주황은 장면의 답 숫자 하나만(손 동그라미 한 번).
+//   · 비교는 칸 두 개 대신 앞·뒤 박자로(먼저 '작년 그날 1,406원' → 다음 '올해 같은 날 1,359.6원'). 답 숫자는 '?'로 먼저 묻고 연다.
+//   · 칸 이름·설명 줄은 화면에서 뺀다(말로 한다). 숫자 위 한마디(kicker)는 12자 안, 60px — 작은 글씨 아님. 출처는 끝 3초에 한 줄만 작게.
+//   · 그래프는 막대 몇 개만, 실사를 어둡게 깐 위에 굵게(LiveBars). 모든 글자 가운데 맞춤(CX).
+export type Beat = {at: number; kicker: string; value: string; hot: boolean};
+const shortKick = (t?: any) => { if (!t || typeof t !== 'string') return ''; let k = t.replace(/\s*\([^)]*\)\s*/g, ' ').replace(/\s+/g, ' ').trim(); if (k.length > 12) k = k.split(/[·,]/)[0].trim(); return k.length > 12 ? '' : k; };
+const hasNum = (v: any) => typeof v === 'string' && /\d/.test(v);
+export const beatsOf = (s: {kind: string; data: any; lines: {frames: number; text?: string}[]}): Beat[] => {
+  const d = s.data || {}; const off = d.full ? 90 : 0; const st: number[] = []; let a = 0; for (const l of s.lines) { st.push(a); a += l.frames; }
+  const at = (x: any, i: number) => Math.max(0, (typeof x === 'number' ? x : st[Math.min(i, st.length - 1)] ?? 0) - off);
+  let b: Beat[] = [];
+  if (Array.isArray(d.tiles)) b = d.tiles.map((t: any[], i: number) => ({at: at(t[3], i), kicker: shortKick(t[0]), value: String(t[1]), hot: false}));
+  else if (Array.isArray(d.rows) && d.rows.length && Array.isArray(d.rows[0])) b = d.rows.filter((r: any[]) => hasNum(r[1]) || hasNum(r[2])).map((r: any[], i: number) => ({at: at(r[3], i), kicker: shortKick(r[0]), value: String(hasNum(r[1]) ? r[1] : r[2]), hot: false}));
+  else if (d.a && d.b) {
+    const g = (x: any) => (Array.isArray(x) ? x : [x]); const A = g(d.a), B = g(d.b);
+    b = [{at: at(null, 0), kicker: shortKick(A[2] ?? A[1]), value: String(hasNum(A[1]) ? A[1] : A[0]), hot: false},
+      {at: at(typeof B[2] === 'number' ? B[2] : null, 1), kicker: shortKick(typeof B[2] === 'string' ? B[2] : B[1]), value: String(hasNum(B[1]) ? B[1] : B[0]), hot: false}];
+  }
+  if (Array.isArray(d.side) && d.side[0]) b.push({at: at(d.side[1], 99), kicker: shortKick(d.side[2]), value: String(d.side[0]), hot: true});
+  if (!b.length) {
+    const vals: string[] = [];
+    const walk = (x: any, dep: number) => { if (dep > 3 || vals.length >= 3) return; if (hasNum(x) && x.length <= 14) vals.push(x); else if (Array.isArray(x)) x.forEach((y) => walk(y, dep + 1)); else if (x && typeof x === 'object') Object.values(x).forEach((y) => walk(y, dep + 1)); };
+    walk(d, 0); b = vals.map((v, i) => ({at: at(null, i), kicker: '', value: v, hot: false}));
+  }
+  // 말에 맞춘다: 숫자를 말하는 줄을 찾아 그 줄 안에서 숫자가 나오는 자리(글자 비율)에 연다 — 칸 두 개를 나란히 둘 때의 시각을 그대로 쓰면 말보다 먼저 뜬다
+  const lines = (s.lines as any[]).map((l) => String(l.text || ''));
+  const key = (v: string) => (v.match(/\d[\d,]*(?:\.\d+)?/) || [''])[0].replace(/,/g, '').replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, '').replace(/\D/g, '');
+  b.forEach((x) => { const kk = key(x.value); if (kk.length < 2) return;
+    for (let i = 0; i < lines.length; i++) { const t = lines[i]; const m = [...t.matchAll(/\d[\d,]*(?:\.\d+)?/g)].find((q) => q[0].replace(/,/g, '').replace(/(\.\d*?)0+$/, '$1').replace(/\.$/, '').replace(/\D/g, '') === kk);
+      if (m && m.index != null) { x.at = Math.max(0, Math.round(st[i] + (s.lines[i].frames - 8) * (m.index / Math.max(1, t.length))) - 4); return; } } });
+  b.sort((x, y) => x.at - y.at);
+  if (b.length && !b.some((x) => x.hot)) b[b.length - 1].hot = true;   // 장면의 답 = 마지막 박자 하나만 주황
+  return b;
+};
+export const barsOf = (s: {kind: string; data: any}) => {
+  const d = s.data || {}; if (!Array.isArray(d.bars)) return null;
+  return d.bars.slice(0, 4).map((r: any[]) => ({label: shortKick(r[0]) || String(r[0]).slice(0, 10), v: Math.abs(Number(r[1]) || 0), text: String(r[2] ?? r[1]), hot: /accent/.test(String(r[3] ?? '')) || /accent/.test(String(r[4] ?? ''))}));
+};
+
+const BEAT_TOP = 680;   // 박자 숫자 가운데 높이(제목 아래 ~ 자막 위 가운데)
+const ORG = '#FF7A1A';
+export const LiveBeats: React.FC<{beats: Beat[]}> = ({beats}) => {
+  const f = useCurrentFrame(); if (!beats.length) return null;
+  let k = 0; beats.forEach((b, i) => { if (f >= b.at) k = i; }); const b = beats[k];
+  // 답(hot) 박자는 넘어오기 전 24프레임 동안 '?'로 묻는다
+  const nb = beats[k + 1]; const asking = !!nb && nb.hot && f >= nb.at - 24 && f < nb.at;
+  const show = asking ? {...nb, value: '?'} : b; const t0 = asking ? nb.at - 24 : b.at;
+  const sp = spring({frame: f - t0, fps: 30, config: {damping: 13, mass: 0.6}});
+  const vz = fit(show.value, IW - 20, show.value === '?' ? 190 : 170, 72); const kz = fit(show.kicker, IW, 60, 40);
+  const hot = show.hot && show.value !== '?'; const circ = hot ? interpolate(f, [b.at + 8, b.at + 30], [0, 1], {...CL, easing: Easing.inOut(Easing.quad)}) : 0;
+  const w = units(show.value) * vz;
+  return (
+    <div style={{position: 'absolute', left: SZ.x0 + PAD, width: IW, top: BEAT_TOP - vz * 0.6, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+      {show.kicker ? <div style={{...F, fontWeight: 800, fontSize: kz, color: '#fff', whiteSpace: 'nowrap', textShadow: outline(5), marginBottom: 26, opacity: Math.min(1, sp * 1.5)}}>{show.kicker}</div> : null}
+      <div style={{position: 'relative', ...F, fontWeight: 800, fontSize: vz, lineHeight: 1.1, letterSpacing: vz > 100 ? -4 : -2, color: hot ? ORG : '#fff', whiteSpace: 'nowrap', textShadow: outline(7),
+        transform: `scale(${0.82 + 0.18 * sp})`, opacity: Math.min(1, sp * 1.6)}}>{show.value}
+        {hot ? <svg style={{position: 'absolute', left: '50%', top: '50%', width: 1, height: 1, overflow: 'visible'}}><HandCircle cx={0} cy={vz * 0.04} rx={w / 2 + vz * 0.22} ry={vz * 0.6} p={circ} color={ORG} /></svg> : null}
+      </div>
+    </div>
+  );
+};
+export const LiveBars: React.FC<{bars: {label: string; v: number; text: string; hot: boolean}[]}> = ({bars}) => {
+  const f = useCurrentFrame(); const mx = Math.max(...bars.map((b) => b.v), 1); const n = bars.length; const rowH = n > 3 ? 150 : 180; const top = BEAT_TOP - (n * rowH) / 2;
+  const hotI = Math.max(0, bars.findIndex((b) => b.hot));
+  return <div style={{position: 'absolute', left: SZ.x0 + PAD, width: IW, top}}>
+    {bars.map((b, i) => { const g = interpolate(f, [6 + i * 10, 26 + i * 10], [0, 1], {...CL, easing: Easing.out(Easing.cubic)}); const bw = Math.max(24, (IW - 60) * (b.v / mx)) * g; const hot = i === hotI;
+      return <div key={i} style={{height: rowH, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <div style={{...F, fontWeight: 800, fontSize: 52, color: '#fff', textShadow: outline(5), whiteSpace: 'nowrap'}}>{b.label} <span style={{color: hot ? ORG : YEL}}>{b.text}</span></div>
+        <div style={{marginTop: 10, width: bw, height: 54, background: hot ? ORG : 'rgba(255,255,255,0.92)', boxShadow: '0 4px 0 rgba(0,0,0,0.35)'}} />
+      </div>; })}
+  </div>;
+};
+// 실사 위 읽힘: 화면 전체 살짝 어둡게 + 가운데 숫자 둘레만 조금 더
+export const LiveDim: React.FC = () => <>
+  <div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1920, background: 'rgba(0,0,0,0.2)'}} />
+  <div style={{position: 'absolute', left: 0, top: BEAT_TOP - 380, width: 1080, height: 760, background: 'radial-gradient(62% 50% at 43% 50%, rgba(0,0,0,0.36), rgba(0,0,0,0))'}} />
+</>;
+// 출처: 끝 3초에 한 번, 아주 작게(브랜드 포함 한 줄)
+export const EndSource: React.FC<{text: string; total: number}> = ({text, total}) => {
+  const f = useCurrentFrame(); if (f < total - 90) return null; const o = interpolate(f, [total - 90, total - 80], [0, 1], CL);
+  return <div style={{position: 'absolute', left: SZ.x0 + PAD, top: SZ.y1 - SRC_H, width: IW, height: SRC_H - 4, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, whiteSpace: 'nowrap', overflow: 'hidden', opacity: o}}>
+    <Flame size={16} /><span style={{...F, fontWeight: 700, fontSize: 19, color: '#f2f3f5', textShadow: outline(2)}}>파이어맵</span>
+    <span style={{...F, fontWeight: 500, fontSize: fit(text, IW - 130, 19, 13), color: '#e3e6ec', textShadow: outline(2)}}>{text}</span></div>;
+};
+// C1S·M1S가 같이 쓰는 판 없는 장면 몸통
+export const LiveSceneBody: React.FC<{s: {kind: string; data: any; lines: {frames: number}[]}}> = ({s}) => {
+  const bars = barsOf(s); if (bars && bars.length >= 2) return <LiveBars bars={bars} />;
+  return <LiveBeats beats={beatsOf(s)} />;
 };

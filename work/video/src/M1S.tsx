@@ -3,6 +3,8 @@
 // 화면: 위 질문(고정) · 가운데 흰 판(장면 그림) · 큰 말 자막 · 정확한 값 칩 · 출처 · 진행 막대. 아래 끝 230px은 유튜브 제목 덮개 자리.
 import React from 'react';
 import {AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame, Easing} from 'remotion';
+import {LiveSceneBody, LiveDim, EndSource} from './parts/safeframe';
+import {DuckedMusic} from './parts/human';
 import {T, F, CL, FONT_CSS, Flame, HandCircle} from './parts/fm';
 import {TallyBars, TallyBar} from './motion/TallyBars';
 import {Backdrop, Hero, SourceLine, Progress, FitBoard, layout, capTop, capSize, CAP_H, SZ, Answer, OutlineCaption, BgSeg} from './parts/safeframe';
@@ -567,6 +569,14 @@ const Frame2: React.FC<{s: SScene; p: M1SProps; from: number; total: number; fir
   const zoom = interpolate(f, [0, s.frames], [1, 1.025], CL);
   const body = s.data.full ? <Sequence from={-90} layout="none"><Body s={s} p={p} /></Sequence> : <Body s={s} p={p} />;
   const L = layout(p.question, null as Answer);   // v3 10/16 23시 사장님 '위 글자 5줄': 위는 제목 2줄만, 답 줄은 빼고 판이 그 자리까지 커진다
+  // 10/19 기본: 실사가 있으면 판 없는 쇼츠(parts/safeframe LiveSceneBody) — p.look='board'면 옛 흰 판
+  if ((p as any).look ? (p as any).look === 'live' : !!(p.bg && p.bg.length)) return (
+    <AbsoluteFill>
+      <LiveSceneBody s={s} />
+      <OutlineCaption lines={s.lines} first={first} />
+      {s.lines.map((l, i) => <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
+    </AbsoluteFill>
+  );
   return (
     <AbsoluteFill>
       <FitBoard bw={BW} bh={BH} frames={s.frames} top={L.boardTop} bottom={L.boardBottom} zoom={zoom} card={!!(p.bg && p.bg.length)}>{body}</FitBoard>
@@ -578,14 +588,16 @@ const Frame2: React.FC<{s: SScene; p: M1SProps; from: number; total: number; fir
   );
 };
 const M1Sv2: React.FC<M1SProps> = (p) => {
-  const total = m1sFrames(p); let from = 0;
+  const total = m1sFrames(p); let from = 0; const live = (p as any).look ? (p as any).look === 'live' : !!(p.bg && p.bg.length);
   return (
     <AbsoluteFill style={{background: T.dbg}}>
       <style>{FONT_CSS}</style>
       <Backdrop question={p.question} answer={p.answer as Answer} bg={p.bg} />
+      {live ? <LiveDim /> : null}
       {p.scenes.map((s, i) => { const el = <Sequence key={i} from={from} durationInFrames={s.frames}><Frame2 s={s} p={p} from={from} total={total} first={i === 0} /></Sequence>; from += s.frames; return el; })}
       <Hero question={p.question} hot={p.hot} answer={p.answer as Answer} until={0} />
-      <SourceLine text={p.base} dark={!!(p.bg && p.bg.length)} />
+      {live ? <><EndSource text={p.base} total={total} /><DuckedMusic lines={(() => { const r: {at: number; audio: string; frames: number}[] = []; let a = 0; for (const s of p.scenes) { let b = a; for (const l of s.lines) { r.push({at: b, audio: l.audio, frames: l.frames}); b += l.frames; } a += s.frames; } return r; })()} low={0.06} high={0.16} /></>
+        : <SourceLine text={p.base} dark={!!(p.bg && p.bg.length)} />}
     </AbsoluteFill>
   );
 };

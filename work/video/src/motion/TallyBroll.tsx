@@ -50,7 +50,7 @@ export const TallyBroll: React.FC<TallyBrollProps> = (p) => {
       {p.say ? <AbsoluteFill style={{background: `linear-gradient(${left ? 90 : 270}deg, rgba(10,11,14,0.55) 0%, rgba(10,11,14,0) 45%)`}} /> : null}
       <div style={{position: 'absolute', left: SAFE.left, top: 18, display: 'flex', alignItems: 'center', gap: 10}}>
         <Flame size={20} /><span style={{...F, fontWeight: 700, fontSize: 22, color: '#fff', textShadow: '0 1px 8px rgba(0,0,0,0.6)'}}>파이어맵</span>
-        {p.chapter ? <div style={{...F, fontWeight: 700, fontSize: 22, color: '#fff', background: T.accent, borderRadius: 8, padding: '1px 10px', marginLeft: 8}}>{p.chapter}</div> : null}
+        {p.chapter ? <div style={{...F, fontWeight: 700, fontSize: 22, color: '#fff', marginLeft: 10, textShadow: '0 1px 8px rgba(0,0,0,0.6)'}}>{p.chapter}</div> : null}
       </div>
       {p.say ? (
         <div style={{position: 'absolute', top: 330, [left ? 'left' : 'right']: 140, width: 1100, textAlign: left ? 'left' : 'right', opacity: gT,

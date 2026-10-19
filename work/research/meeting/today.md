@@ -41,6 +41,7 @@
   완료: firemap-write 06:37 — ① 06:10 coin1019 https://cafe.naver.com/firemap/321 verify OK 2104/2104자·사진 3/3(글 끝 질문 한 줄 넣고 재도장) ② 12:10 계산기 칸 ubfraud1019 '실업급여 부정수급 하루 알바 숨기면 얼마나 돌려줘야 할까' 관문 통과·slots item 적음 — 원고에 https://firemap.kr/calc/unemployment-benefit?utm_source=cafe 줄, editgate calc 통과 · 원문 고용보험법 44~48·61·62·116조·시행령 80조·시행규칙 92·104·105조(10/19) · 레드팀 틀림0(오해6 반영: 신고하면 잃는 게 아니라 하루 늦게 받음, 48조)·58세 2차 심각0 · 남은 것: 12:10 발행 뒤 verify 링크 검사(12시 회차), 18:10 연봉 실수령 칸은 write-b/18시 회차 · 카페 비축 1/2(pensiontax1019) 그대로
 - [지시] **firemap-write**·**firemap-write-b** 10/19·10/20 카페 24칸: 각 회차가 다음 칸 편을 정해 slots item에 적는다(TBD인데 gates_ok만 있는 칸 0, 체크리스트 55 — 10/19 06:10 item을 coin1019로) · 부동산 하루 2칸 · 짝 글 note 칸 우선 · 카페 비축 0/2 → 10/19 첫 두 회차는 비축 1편씩 · 10/20 코인 과세 간담회 뒤 coin1019 후속은 발표 24시간 안 다시 읽기(체크리스트 57, 레드팀 O2)
 - [지시] **firemap-copywriter**·**firemap-visual-designer** (10/17 지시 미완, 기한 10/19 18:40) 임시 확정 썸네일 5편(C-2·H-2·X-1·H-3·T-1) 48h 교체 판정 날짜를 slots note에 — slots.json 검색 0건(21:34)
+  완료: firemap-visual-designer 17:29 — 5편 slots note 맨 앞에 48h 썸네일 판정일: C-2 10/21 11:30(교체 1회 이미 씀 f1d→n1b, 판정만)·H-2 10/22(교체안 h2f4)·T-1 10/23(새 꼴 판 10/20 11:30 전 예정)·X-1 10/24(교체안 x1n_c)·H-3 10/25(meta 없음) · ytreach 늦으면 '확인 안 함'+report 요청을 각 칸에
 - [지시] **firemap-dispatcher** 23:05 회차부터: 관문 기한 지난 칸(C-2) > 곧 기한(H-2 10/19 11:30) > 카페 비축 순으로 투입 · 10/18 19:40 카페 칸이 빈 채 지나감(TBD, 비축 0) — 다음 날 빈 칸 예보를 07:05 회차 첫 줄에
 - [지시] **firemap-report** 10/19 12:30 ⓐ utm cafe 10/19(계산기 링크 첫날) ⓑ ads.txt '찾을 수 없음' 나흘째 — 실파일 200이면 '재크롤 대기'로만 적고 같은 값 사흘 더면 '얼어붙은 지표' 표시 ⓒ 카페 노출은 카페탭 + 조회수 같이(체크리스트 56)
   착수: firemap-report 12:36 — ⓐ utm cafe 10/19 ⓑ ads.txt ⓒ 10/18 카페탭+조회수 · revenue.md 10/19 줄
@@ -178,6 +179,7 @@
 - [요청] **firemap-video-producer**(PD) ← firemap-editor 15:15 X-1 화면 글자 '출처' 줄 내부 파일 이름 2곳 고쳐 주세요(위 완료 줄 ①②) 뒤 `lfrender.py text` 다시 뽑고 알려 주세요 · 시한 10/18 12:00
   완료: firemap-video-producer 06:35 — 10/17 18:39 회차에서 이미 고침(screen_text·x1props·v3props에 calc_out·research.md 0, 재추출 뒤 18:39 재서명 요청 줄 2326) · 남은 것은 editor 재서명
 - [요청] **firemap-visual-designer**·**firemap-copywriter** ← PD (19:51) X-1 썸네일(1초 시험)·제목·meta(설명 앞 두 줄) — 영상 3:40, 화면 그림 14가지, 기한 10/20 06:00(썸네일)·10/20 12:00(제목)
+  완료: firemap-visual-designer 17:29 — X-1 썸네일 **x1n_b 확정**(새 꼴: 손에 든 달러 실사·큰 글 아래 '작년 10월 +10% / 올 7월 −11%'·작은 줄 'S&P500에 1억, 산 날만 다르면?'·알약 '원화 기준') · 제미나이 3.1-lite 8(x1n_c 7.5·x1n_a 7·옛 x1f 5) · 1초 블라인드 주제 맞힘 · 58세 새 심사관 뜻 맞음 · meta.json thumb·thumb_alt(x1n_c)·thumb_prev(x1f), understand_test.md 썸네일 줄 · 근거 visual/X-1-thumb/judges.md 5차
 
 ## ★ 전체 회의 10/14 21:43 — 반론 처리·내일 지시 (근거 meeting/2026-10-14-verify.md)
 - 막힘: E-2·N-1·M-1 합성 표시 꺼짐(10/13부터 분류기 거부, 사장님 허용 대기) · 시세 출처(다음·네이버 금융 웹 JSON) 약관 원문 미확인

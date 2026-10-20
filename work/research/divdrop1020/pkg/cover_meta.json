@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-20 15:54",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "고배당 ETF/급락엔 덜 빠졌는데",
+ "num": "고배당 2,068만 · 지수 2,518만",
+ "sub": "1천만원 2년 반 뒤 · 지수는 KODEX 200 · 분배금 포함",
+ "label": "급락일 하루 평균은 고배당 −2% · KODEX 200 −5.8%",
+ "src": "",
+ "icon": "scale",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 124,
+ "num_px": 71,
+ "sub_px": 43,
+ "board": [
+  "irp70_1020",
+  "cardded1020",
+  "bondetf1020",
+  "bokdep1020",
+  "h2cafe1019",
+  "h1walkcafe1020",
+  "npsfund1019",
+  "govbond1019",
+  "dep13y1019",
+  "avgmid1019"
+ ]
+}

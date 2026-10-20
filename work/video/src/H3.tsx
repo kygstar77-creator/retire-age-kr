@@ -301,8 +301,8 @@ const FloorBox: React.FC<{p: H3Props}> = ({p}) => {
 const voiceLines = (p: H3Props) => { const r: {at: number; audio: string; frames: number}[] = []; let a = 0; for (const s of p.scenes) { let b = a; for (const l of s.lines) { if (l.audio) r.push({at: b, audio: l.audio, frames: l.frames}); b += l.frames; } a += s.frames; } return r; };
 
 // 10/19 PD(C2.tsx와 같은 수법): 렌더본 화면 관문(U5 같은 화면 8초 이하)에 판이 9~16.5초 16곳 걸림 — 5초 넘는 판·카드는 천천히 다가가기(1.00→1.03). 글자·숫자는 그대로
-const Push: React.FC<{n: number; children: React.ReactNode}> = ({n, children}) => {
-  const f = useCurrentFrame(); const z = interpolate(f, [0, n], [1, 1.03], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+const Push: React.FC<{n: number; to?: number; children: React.ReactNode}> = ({n, to = 1.03, children}) => {
+  const f = useCurrentFrame(); const z = interpolate(f, [0, n], [1, to], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return <AbsoluteFill style={{transform: `scale(${z})`, transformOrigin: '50% 38%'}}>{children}</AbsoluteFill>;
 };
 
@@ -315,7 +315,7 @@ export const H3: React.FC<H3Props> = (p) => {
       {p.scenes.map((s, i) => {
         const st = starts(s.lines); const K = KIND[s.kind];
         const el = <Sequence key={i} from={from} durationInFrames={s.frames}>
-          {s.kind === 'pic' ? <Pic s={s} badge={p.badge} /> : s.kind === 'broll' ? <TallyBroll src={s.data.src} license={s.data.license} from={s.data.from} say={s.data.say} side={s.data.side} x={s.data.x} chapter={s.data.chapter} lines={tl(s.lines)} /> : K ? (s.kind !== 'live' && s.frames > 150 ? <Push n={s.frames}><K s={s} /></Push> : <K s={s} />) : null}
+          {s.kind === 'pic' ? <Pic s={s} badge={p.badge} /> : s.kind === 'broll' ? <TallyBroll src={s.data.src} license={s.data.license} from={s.data.from} say={s.data.say} side={s.data.side} x={s.data.x} chapter={s.data.chapter} lines={tl(s.lines)} /> : K ? (s.kind !== 'live' && s.frames > 150 ? <Push n={s.frames} to={s.kind === 'ask' ? 1.08 : 1.03}><K s={s} /></Push> : <K s={s} />) : null}
           {s.lines.map((l, j) => l.audio ? <Sequence key={j} from={st[j]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence> : null)}
           <SfxTrack list={sfxPlan(p.scenes, i)} />
         </Sequence>;

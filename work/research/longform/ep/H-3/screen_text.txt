@@ -855,7 +855,6 @@
 [scenes.119.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
 [scenes.120.lines.0.text] 그래서 누구냐에 따라 볼 숫자가 달라요.
 [scenes.120.lines.1.text] 새로 집을 구하는 분이라면, 새로 맺은 계약 가격을 기준으로 잡으세요.
-[scenes.120.lines.2.text] 지금 사는 집에서 계약을 다시 맺는다면, 다시 맺은 계약 가격을 같이 보시면 되고요.
 [scenes.120.data.title] 누구라면
 [scenes.120.data.rows.0.0] 새로 집을 구하는 분
 [scenes.120.data.rows.0.1] 새로 맺은 계약 가격
@@ -864,182 +863,186 @@
 [scenes.120.data.rows.1.2] ink
 [scenes.120.data.icon] Users
 [scenes.120.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.121.lines.0.text] 그리고 매매와 전세의 차이가 크다는 건, 세입자를 두고 사서 나중에 들어가는 방식도 원래 큰돈이 든다는 뜻이에요.
-[scenes.121.lines.1.text] 게다가 지금은 허가구역이라, 앞에서 말한 집 없는 사람의 특례가 아니면 그 방식은 막혀 있고요.
-[scenes.121.data.license] Pexels 8482325 무료(Thirdman)
-[scenes.121.data.say] 세입자 두고 사기는 큰돈, 지금은 막힘
+[scenes.121.lines.0.text] 지금 사는 집에서 계약을 다시 맺는다면, 다시 맺은 계약 가격을 같이 보시면 되고요.
+[scenes.121.data.license] Pexels 37527858 무료(FREE VIDEO HAPPY)
+[scenes.121.data.say] 지금 집에서 다시 계약한다면
 [scenes.121.data.side] left
-[scenes.122.lines.0.text] 이 동네를 볼 때 학교 이야기도 빠지지 않죠.
-[scenes.122.data.n] 9장
-[scenes.122.data.q] 학교 배정, 숫자로 말할 수 있는 것
-[scenes.122.data.from] 서울특별시교육청 공고 제2026-157호
-[scenes.123.lines.0.text] 이번 자료로 학교마다 어떤지는 잴 수 없어서, 공식으로 정해진 배정 규칙까지만 말씀드릴게요.
-[scenes.123.data.license] Pexels 39704991 무료(Gokuldham Nar)
-[scenes.123.data.say] 학교마다는 잴 수 없었다
-[scenes.123.data.side] left
-[scenes.124.lines.0.text] 서울 고등학교는 교육지원청 단위로 학교군이 나뉘어요.
-[scenes.124.lines.1.text] 목동은 강서양천, 압구정은 강남서초, 신천동은 강동송파 학교군입니다.
-[scenes.124.data.license] 지도 자료 © OpenStreetMap 기여자 (ODbL) · 파이어맵 그림
-[scenes.125.lines.0.text] 일반고는 추첨인데, 먼저 서울 전체에서 고른 학교로 일부를 뽑고 그다음 사는 곳 학교군에서 더 뽑아요.
-[scenes.125.data.title] 일반고 추첨 순서
-[scenes.125.data.rows.0.0] 1단계
-[scenes.125.data.rows.0.1] 서울 전역에서 고른 학교
-[scenes.125.data.rows.1.0] 2단계
-[scenes.125.data.rows.1.1] 사는 곳 학교군
-[scenes.125.data.rows.1.2] accent
-[scenes.125.data.icon] School
-[scenes.125.data.source] 서울특별시교육청 공고 제2026-157호
-[scenes.126.lines.0.text] 중학교도 사는 곳 학교군에서 추첨하는 게 원칙입니다.
-[scenes.126.lines.0.cap] 서울특별시교육청 공고 제2026-157호(2026.3.31) 2027학년도 후기 일반고 · 일반학교군 11개 = 교육지원청 단위 · 1단계 서울 전역 2개교 지원·정원 20%(중부학교군 60%) 추첨 · 2단계 거주지 일반학교군 2개교·40% · 3단계 통합학교군 · 2026.9.1 변경 공고에도 비율 그대로 · 중학교 '거주지 기준 학교군별 전산 추첨'(2026.1.29) · 중학교 학교군 경계·학교별 학생 수는 확인 안 함
-[scenes.126.lines.1.text] 그래서 사는 곳이 정해 주는 건 학교군까지예요. 특정 학교에 꼭 간다는 뜻은 아닙니다.
-[scenes.126.data.license] AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님
-[scenes.126.data.badge] AI 생성
-[scenes.127.lines.0.text] 이 동네에 이미 집이 한 채 있고, 다른 집으로 갈아타려는 사람도 있죠.
-[scenes.127.data.n] 10장
-[scenes.127.data.q] 이미 한 채가 있고, 갈아탄다면
-[scenes.127.data.from] 소득세법 · 지방세법 · 국토교통부 조정대상지역 공고
-[scenes.128.lines.0.text] 먼저 알아 둘 건, 지금 서울은 스물다섯 개 구가 전부 조정대상지역이라는 거예요.
-[scenes.128.lines.1.text] 세금 규칙이 더 까다로운 지역이에요.
-[scenes.128.lines.1.cap] 국토교통부공고 제2025-1223호 조정대상지역(2025.10.16) · 2026.7.1 공고 제2026-882호에서도 서울 25개 구 유지 · 해제 공고 없음 (법제처 2026.10.19, raw/research1019.md)
-[scenes.128.data.license] AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님
-[scenes.128.data.badge] AI 생성
-[scenes.129.lines.0.text] 먼저 집을 팔 때 내는 양도세예요.
-[scenes.129.lines.1.text] 집이 한 채뿐이면, 판 가격 12억까지는 세금이 없고 넘는 부분에만 붙습니다.
-[scenes.129.data.title] 1주택 양도세
-[scenes.129.data.v] 12억까지 비과세
-[scenes.129.data.s] 넘는 부분에만 세금
-[scenes.129.data.icon] Receipt
-[scenes.129.data.c] accent
-[scenes.129.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.130.lines.0.text] 조정대상지역에서 산 집이라면, 갖고 있는 기간도 거기 살아온 기간도 2년 이상이어야 이 혜택을 받아요.
-[scenes.130.lines.0.cap] 소득세법 §89①3 1세대 1주택 비과세 양도가액 12억원 이하 · 초과분 과세(시행령 §160①) · 시행령 §154① 2년 보유 · 취득 당시 조정대상지역이면 보유 중 거주 2년 (T-1 사실표 L1·L2·L9)
-[scenes.130.data.title] 조정대상지역에서 산 집
-[scenes.130.data.v] 2년 보유 + 2년 거주
-[scenes.130.data.s] 그래야 1주택 혜택
-[scenes.130.data.icon] CalendarClock
-[scenes.130.data.c] ink
+[scenes.122.lines.0.text] 그리고 매매와 전세의 차이가 크다는 건, 세입자를 두고 사서 나중에 들어가는 방식도 원래 큰돈이 든다는 뜻이에요.
+[scenes.122.lines.1.text] 게다가 지금은 허가구역이라, 앞에서 말한 집 없는 사람의 특례가 아니면 그 방식은 막혀 있고요.
+[scenes.122.data.license] Pexels 8482325 무료(Thirdman)
+[scenes.122.data.say] 세입자 두고 사기는 큰돈, 지금은 막힘
+[scenes.122.data.side] left
+[scenes.123.lines.0.text] 이 동네를 볼 때 학교 이야기도 빠지지 않죠.
+[scenes.123.data.n] 9장
+[scenes.123.data.q] 학교 배정, 숫자로 말할 수 있는 것
+[scenes.123.data.from] 서울특별시교육청 공고 제2026-157호
+[scenes.124.lines.0.text] 이번 자료로 학교마다 어떤지는 잴 수 없어서, 공식으로 정해진 배정 규칙까지만 말씀드릴게요.
+[scenes.124.data.license] Pexels 39704991 무료(Gokuldham Nar)
+[scenes.124.data.say] 학교마다는 잴 수 없었다
+[scenes.124.data.side] left
+[scenes.125.lines.0.text] 서울 고등학교는 교육지원청 단위로 학교군이 나뉘어요.
+[scenes.125.lines.1.text] 목동은 강서양천, 압구정은 강남서초, 신천동은 강동송파 학교군입니다.
+[scenes.125.data.license] 지도 자료 © OpenStreetMap 기여자 (ODbL) · 파이어맵 그림
+[scenes.126.lines.0.text] 일반고는 추첨인데, 먼저 서울 전체에서 고른 학교로 일부를 뽑고 그다음 사는 곳 학교군에서 더 뽑아요.
+[scenes.126.data.title] 일반고 추첨 순서
+[scenes.126.data.rows.0.0] 1단계
+[scenes.126.data.rows.0.1] 서울 전역에서 고른 학교
+[scenes.126.data.rows.1.0] 2단계
+[scenes.126.data.rows.1.1] 사는 곳 학교군
+[scenes.126.data.rows.1.2] accent
+[scenes.126.data.icon] School
+[scenes.126.data.source] 서울특별시교육청 공고 제2026-157호
+[scenes.127.lines.0.text] 중학교도 사는 곳 학교군에서 추첨하는 게 원칙입니다.
+[scenes.127.lines.0.cap] 서울특별시교육청 공고 제2026-157호(2026.3.31) 2027학년도 후기 일반고 · 일반학교군 11개 = 교육지원청 단위 · 1단계 서울 전역 2개교 지원·정원 20%(중부학교군 60%) 추첨 · 2단계 거주지 일반학교군 2개교·40% · 3단계 통합학교군 · 2026.9.1 변경 공고에도 비율 그대로 · 중학교 '거주지 기준 학교군별 전산 추첨'(2026.1.29) · 중학교 학교군 경계·학교별 학생 수는 확인 안 함
+[scenes.127.lines.1.text] 그래서 사는 곳이 정해 주는 건 학교군까지예요. 특정 학교에 꼭 간다는 뜻은 아닙니다.
+[scenes.127.data.license] AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님
+[scenes.127.data.badge] AI 생성
+[scenes.128.lines.0.text] 이 동네에 이미 집이 한 채 있고, 다른 집으로 갈아타려는 사람도 있죠.
+[scenes.128.data.n] 10장
+[scenes.128.data.q] 이미 한 채가 있고, 갈아탄다면
+[scenes.128.data.from] 소득세법 · 지방세법 · 국토교통부 조정대상지역 공고
+[scenes.129.lines.0.text] 먼저 알아 둘 건, 지금 서울은 스물다섯 개 구가 전부 조정대상지역이라는 거예요.
+[scenes.129.lines.1.text] 세금 규칙이 더 까다로운 지역이에요.
+[scenes.129.lines.1.cap] 국토교통부공고 제2025-1223호 조정대상지역(2025.10.16) · 2026.7.1 공고 제2026-882호에서도 서울 25개 구 유지 · 해제 공고 없음 (법제처 2026.10.19, raw/research1019.md)
+[scenes.129.data.license] AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님
+[scenes.129.data.badge] AI 생성
+[scenes.130.lines.0.text] 먼저 집을 팔 때 내는 양도세예요.
+[scenes.130.lines.1.text] 집이 한 채뿐이면, 판 가격 12억까지는 세금이 없고 넘는 부분에만 붙습니다.
+[scenes.130.data.title] 1주택 양도세
+[scenes.130.data.v] 12억까지 비과세
+[scenes.130.data.s] 넘는 부분에만 세금
+[scenes.130.data.icon] Receipt
+[scenes.130.data.c] accent
 [scenes.130.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.131.lines.0.text] 갈아탈 땐 잠깐 두 채가 되죠. 이걸 일시적 2주택이라고 해요.
-[scenes.131.lines.1.text] 새 집을 사고 정해진 기간 안에 원래 집을 팔면, 한 채일 때처럼 봐 줍니다.
-[scenes.131.lines.2.text] 그런데 이 기간이 이번 달부터 짧아졌어요. 두 집이 다 조정대상지역이면 3년에서 2년으로 줄었습니다.
-[scenes.131.data.license] 파이어맵 자체 그림
-[scenes.132.lines.0.text] 다만 예외가 있어요. 올해 8월 3일 전에 새 집을 샀거나 계약금을 냈다면요.
-[scenes.132.lines.1.text] 그때는 줄기 전 그대로 3년이에요.
-[scenes.132.lines.1.cap] 소득세법 시행령 §155①1 종전·신규 주택 모두 조정대상지역 = 2년(개정 2026.9.30, 2026.10.1 양도분부터) · 2026.8.3 이전 취득·계약금 지급은 종전 3년(세제개편안 상세본 p.73·문답 p.55) — T-1 사실표 L10
-[scenes.132.data.title] 8월 3일 전에 샀거나 계약금 냈다면
-[scenes.132.data.v] 3년 그대로
-[scenes.132.data.s] 줄기 전 기간
-[scenes.132.data.icon] CalendarClock
-[scenes.132.data.c] ink
-[scenes.132.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.133.lines.0.text] 새 집 취득세에도 같은 2년이 붙어요. 그 안에 원래 집을 팔아야 한 채 세율로 냅니다.
-[scenes.133.data.license] Pexels 8478946 무료(ArtHouse Studio)
-[scenes.133.data.say] 취득세에도 같은 기한
-[scenes.133.data.side] left
-[scenes.134.lines.0.text] 못 팔면 그 혜택이 사라져서, 조정대상지역 두 번째 집 세율 8%가 됩니다.
-[scenes.134.lines.0.cap] 지방세법 시행령 §28의5① 일시적 2주택 기간 3년 · 종전·신규 모두 조정대상지역이면 2년(개정 2026.9.30) · 지방세법 §13의2①2 조정대상지역 1세대 2주택 = 표준세율 4% + 중과기준세율 2%×200% = 8% (법제처 2026.10.19)
-[scenes.134.data.title] 기한 넘기면 취득세
-[scenes.134.data.v] 8%
-[scenes.134.data.s] 조정대상지역 두 번째 집
-[scenes.134.data.icon] TriangleAlert
-[scenes.134.data.c] rise
-[scenes.134.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.135.lines.0.text] 양도세도 기한을 넘기면, 두 채라서 붙는 무거운 세율이 적용될 수 있어요. 기본세율에 20%포인트가 더해집니다.
-[scenes.135.lines.0.cap] 소득세법 §104⑦1 조정대상지역 1세대 2주택 기본세율+20%p · 중과 한시 배제는 2026.5.9 양도분까지 (T-1 사실표 L12)
-[scenes.135.data.title] 양도세도 기한 넘기면
-[scenes.135.data.v] +20%p
-[scenes.135.data.s] 기본세율에 더함
+[scenes.131.lines.0.text] 조정대상지역에서 산 집이라면, 갖고 있는 기간도 거기 살아온 기간도 2년 이상이어야 이 혜택을 받아요.
+[scenes.131.lines.0.cap] 소득세법 §89①3 1세대 1주택 비과세 양도가액 12억원 이하 · 초과분 과세(시행령 §160①) · 시행령 §154① 2년 보유 · 취득 당시 조정대상지역이면 보유 중 거주 2년 (T-1 사실표 L1·L2·L9)
+[scenes.131.data.title] 조정대상지역에서 산 집
+[scenes.131.data.v] 2년 보유 + 2년 거주
+[scenes.131.data.s] 그래야 1주택 혜택
+[scenes.131.data.icon] CalendarClock
+[scenes.131.data.c] ink
+[scenes.131.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.132.lines.0.text] 갈아탈 땐 잠깐 두 채가 되죠. 이걸 일시적 2주택이라고 해요.
+[scenes.132.lines.1.text] 새 집을 사고 정해진 기간 안에 원래 집을 팔면, 한 채일 때처럼 봐 줍니다.
+[scenes.132.lines.2.text] 그런데 이 기간이 이번 달부터 짧아졌어요. 두 집이 다 조정대상지역이면 3년에서 2년으로 줄었습니다.
+[scenes.132.data.license] 파이어맵 자체 그림
+[scenes.133.lines.0.text] 다만 예외가 있어요. 올해 8월 3일 전에 새 집을 샀거나 계약금을 냈다면요.
+[scenes.133.lines.1.text] 그때는 줄기 전 그대로 3년이에요.
+[scenes.133.lines.1.cap] 소득세법 시행령 §155①1 종전·신규 주택 모두 조정대상지역 = 2년(개정 2026.9.30, 2026.10.1 양도분부터) · 2026.8.3 이전 취득·계약금 지급은 종전 3년(세제개편안 상세본 p.73·문답 p.55) — T-1 사실표 L10
+[scenes.133.data.title] 8월 3일 전에 샀거나 계약금 냈다면
+[scenes.133.data.v] 3년 그대로
+[scenes.133.data.s] 줄기 전 기간
+[scenes.133.data.icon] CalendarClock
+[scenes.133.data.c] ink
+[scenes.133.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.134.lines.0.text] 새 집 취득세에도 같은 2년이 붙어요. 그 안에 원래 집을 팔아야 한 채 세율로 냅니다.
+[scenes.134.data.license] Pexels 8478946 무료(ArtHouse Studio)
+[scenes.134.data.say] 취득세에도 같은 기한
+[scenes.134.data.side] left
+[scenes.135.lines.0.text] 못 팔면 그 혜택이 사라져서, 조정대상지역 두 번째 집 세율 8%가 됩니다.
+[scenes.135.lines.0.cap] 지방세법 시행령 §28의5① 일시적 2주택 기간 3년 · 종전·신규 모두 조정대상지역이면 2년(개정 2026.9.30) · 지방세법 §13의2①2 조정대상지역 1세대 2주택 = 표준세율 4% + 중과기준세율 2%×200% = 8% (법제처 2026.10.19)
+[scenes.135.data.title] 기한 넘기면 취득세
+[scenes.135.data.v] 8%
+[scenes.135.data.s] 조정대상지역 두 번째 집
 [scenes.135.data.icon] TriangleAlert
 [scenes.135.data.c] rise
 [scenes.135.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.136.lines.0.text] 국회에 있는 정부안이 통과되면, 10년 이상 산 집은 내년부터 양도세 기본공제가 커져요.
-[scenes.136.lines.1.text] 판 가격이 30억 이하일 때 이야기예요.
-[scenes.136.lines.1.cap] 재정경제부 문답자료 p.49 기본공제 확대 사례 · 10년 거주 1세대 1주택 · 30억 양도(취득 15억) 현행 약 4,750만원 → 개정안 약 3,900만원 · 정부안 §103 단서 10년 이상 거주·양도가액 30억 이하 기본공제 2,500만원('27.1.1 양도분~) · 국회 통과 전 (T-1 사실표 G6·G10)
-[scenes.136.data.license] Pexels 30975009 무료(Stephen Leonardi)
-[scenes.136.data.say] 국회에 있는 정부안
-[scenes.136.data.side] left
-[scenes.137.lines.0.text] 다만 정부안엔 2028년부터 오래 가진 집 공제를 산 햇수 중심으로 바꾸는 내용도 있어서, 언제 파느냐에 따라 달라져요.
-[scenes.137.lines.1.text] 양도세는 저희 양도세 편에서, 집을 갖고 있는 동안 내는 종부세는 다음 편에서 따로 자세히 다룹니다.
-[scenes.137.data.title] 정부안 · 국회 통과 전
-[scenes.137.data.rows.0.0] 10년 이상 산 집
-[scenes.137.data.rows.0.1] 기본공제 커짐
-[scenes.137.data.rows.1.0] 2028년부터
-[scenes.137.data.rows.1.1] 오래 가진 집 공제 바뀜
-[scenes.137.data.rows.1.2] ink
-[scenes.137.data.icon] FileText
-[scenes.137.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.138.lines.0.text] 그리고 하나 더. 새 집도 허가구역이면 허가를 받고 2년을 직접 살아야 합니다.
-[scenes.138.data.license] Pexels 8471105 무료(Thirdman)
-[scenes.138.data.say] 새 집도 허가구역이면
-[scenes.138.data.side] left
-[scenes.139.lines.0.text] 앞에서 말한 특례는 집 없는 사람만 쓸 수 있거든요.
-[scenes.139.data.title] 새 집도 허가구역이면
-[scenes.139.data.v] 허가 + 2년 실거주
-[scenes.139.data.s] 특례는 집 없는 사람만
-[scenes.139.data.icon] KeyRound
-[scenes.139.data.c] rise
-[scenes.139.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.140.lines.0.text] 오늘 숫자를 내 단지로 직접 확인해 보고 싶다면 이렇게 해 보세요.
-[scenes.140.data.n] 11장
-[scenes.140.data.q] 직접 확인하는 법
-[scenes.140.data.from] 국토교통부 실거래가 공개시스템 · 정보몽땅 · 토지이음
-[scenes.141.lines.0.text] 가격은 국토교통부 실거래가 공개시스템에서 단지와 면적을 똑같이 맞춰 보세요.
-[scenes.141.lines.1.text] 한 건이 아니라 1년 치를 같이 보는 게 좋습니다.
-[scenes.141.lines.2.text] 거래가 적은 단지라면, 옆 단지 같은 크기와 같이 놓고 비교해 보세요.
-[scenes.141.data.license] 파이어맵 자체 그림
-[scenes.142.lines.0.text] 그리고 면적은 집 안 넓이, 전용면적으로 맞추셔야 해요.
-[scenes.142.lines.1.text] 광고에 나오는 평수는 보통 공용 부분까지 넣은 숫자라, 그대로 비교하면 다른 집이 됩니다.
-[scenes.142.data.license] Pexels 6962695 무료(Mikhail Nilov)
-[scenes.142.data.say] 면적은 전용으로 맞추기
-[scenes.142.data.side] left
-[scenes.143.lines.0.text] 해제라고 적힌 거래는 빼고 봅니다. 계약이 취소된 거래거든요.
-[scenes.143.lines.1.text] 전세는 새로 맺은 계약과 다시 맺은 계약을 나눠 보시고요.
-[scenes.143.lines.2.text] 재건축 단계는 서울시 정비사업 정보몽땅이라는 누리집에서 단지 이름으로 찾을 수 있어요.
-[scenes.143.lines.3.text] 조합설립인가를 받았는지가 거기 나옵니다.
-[scenes.143.data.title] 확인할 것
-[scenes.143.data.rows.0.0] 해제 거래는 빼기
-[scenes.143.data.rows.1.0] 전세는 신규·갱신 나눠 보기
-[scenes.143.data.rows.2.0] 재건축 단계는 정보몽땅
-[scenes.143.data.icon] ListChecks
-[scenes.143.data.source] 국토교통부 실거래가 공개시스템 · 서울시 정비사업 정보몽땅
-[scenes.144.lines.0.text] 사려는 집이 허가구역인지는 토지이음이라는 국토교통부 누리집에서 확인할 수 있습니다.
-[scenes.144.data.license] Pexels 29303349 무료(성창 남)
-[scenes.144.data.say] 허가구역인지는 토지이음에서
-[scenes.144.data.side] left
-[scenes.145.lines.0.text] 서울 아파트 전체에 걸린 허가구역은 올해 말까지예요. 그 뒤로 늘릴지는 10월 19일까지 공식 발표가 없었습니다.
-[scenes.145.data.title] 허가구역 기한
-[scenes.145.data.rows.0.0] 서울 아파트 전체
-[scenes.145.data.rows.1.0] 압구정 · 목동신시가지
-[scenes.145.data.rows.1.2] ink
-[scenes.145.data.icon] CalendarClock
-[scenes.145.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.146.lines.0.text] 압구정과 목동신시가지는 서울시가 따로 지정해서, 2027년 4월 26일까지 허가구역이고요.
-[scenes.146.data.license] Pexels 37500921 무료(FREE VIDEO HAPPY)
-[scenes.146.data.say] 압구정·목동은 서울시가 따로 지정
-[scenes.146.data.side] left
-[scenes.147.lines.0.text] 앞에서 말한 특례의 신청 기한이 2027년 말인 건 시행령에 정해진 날짜예요. 그때 그 집이 허가구역인지는 따로 보셔야 합니다.
-[scenes.147.lines.0.cap] 국토교통부공고 제2025-1219호 지정기간 ~2026.12.31 · 토지이음 www.eum.go.kr · 허가 신청은 관할 구청 · 이번 달 거래는 신고 기한 30일이라 아직 덜 들어옴
-[scenes.147.data.title] 특례 신청 기한
-[scenes.147.data.v] 2027년 말
-[scenes.147.data.s] 그때 그 집이 허가구역인지는 따로 확인
-[scenes.147.data.icon] CalendarClock
-[scenes.147.data.c] ink
-[scenes.147.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.148.lines.0.text] 그리고 이번 달 거래는 아직 덜 들어와 있다는 것도요.
-[scenes.148.lines.1.text] 신고 기한이 30일이라, 지금 보이는 숫자가 다음 달에 바뀔 수 있습니다.
-[scenes.148.lines.1.cap] 단지별 1년 거래 표(목동신시가지 1~14단지 · 압구정 현대 1~14차 · 신천 장미·파크리오) → 파이어맵 카페 cafe.naver.com/firemap(고정 댓글·설명란에 주소, 말로는 안 함) · 국토교통부 실거래·건축물대장 · 계산·비교 자료이며 매수·매도 권유가 아닙니다
-[scenes.148.data.license] Pexels 12079562 무료(FREE VIDEO HAPPY)
-[scenes.148.data.say] 이번 달 거래는 아직 덜 들어왔다
-[scenes.148.data.side] left
-[scenes.149.lines.0.text] 지난 1년 실제로 팔린 가격만 센 겁니다.
-[scenes.149.lines.1.text] 30억 안팎으로 다시 정리하면요.
-[scenes.149.lines.2.text] 신천동에선 85㎡ 정도였어요.
-[scenes.149.lines.3.text] 목동신시가지에선 96㎡쯤이었고, 압구정동에선 그 값에 팔린 집이 없었어요.
-[scenes.149.data.license] 파이어맵 자체 그림
-[scenes.150.lines.0.text] 우리 동네 단지도 이렇게 세어 보고 싶다면, 댓글에 단지 이름을 남겨 주세요.
-[scenes.150.data.license] Pexels 37522115 무료(Jueon Kim 김주언)
-[scenes.151.lines.0.text] 토요일 오전 11시 반에는 종부세 이야기입니다. 그때 뵙겠습니다.
-[scenes.151.data.line] 토요일 오전 11시 반 · 종부세
+[scenes.136.lines.0.text] 양도세도 기한을 넘기면, 두 채라서 붙는 무거운 세율이 적용될 수 있어요. 기본세율에 20%포인트가 더해집니다.
+[scenes.136.lines.0.cap] 소득세법 §104⑦1 조정대상지역 1세대 2주택 기본세율+20%p · 중과 한시 배제는 2026.5.9 양도분까지 (T-1 사실표 L12)
+[scenes.136.data.title] 양도세도 기한 넘기면
+[scenes.136.data.v] +20%p
+[scenes.136.data.s] 기본세율에 더함
+[scenes.136.data.icon] TriangleAlert
+[scenes.136.data.c] rise
+[scenes.136.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.137.lines.0.text] 국회에 있는 정부안이 통과되면, 10년 이상 산 집은 내년부터 양도세 기본공제가 커져요.
+[scenes.137.lines.1.text] 판 가격이 30억 이하일 때 이야기예요.
+[scenes.137.lines.1.cap] 재정경제부 문답자료 p.49 기본공제 확대 사례 · 10년 거주 1세대 1주택 · 30억 양도(취득 15억) 현행 약 4,750만원 → 개정안 약 3,900만원 · 정부안 §103 단서 10년 이상 거주·양도가액 30억 이하 기본공제 2,500만원('27.1.1 양도분~) · 국회 통과 전 (T-1 사실표 G6·G10)
+[scenes.137.data.license] Pexels 30975009 무료(Stephen Leonardi)
+[scenes.137.data.say] 국회에 있는 정부안
+[scenes.137.data.side] left
+[scenes.138.lines.0.text] 다만 정부안엔 2028년부터 오래 가진 집 공제를 산 햇수 중심으로 바꾸는 내용도 있어서, 언제 파느냐에 따라 달라져요.
+[scenes.138.lines.1.text] 양도세는 저희 양도세 편에서, 집을 갖고 있는 동안 내는 종부세는 다음 편에서 따로 자세히 다룹니다.
+[scenes.138.data.title] 정부안 · 국회 통과 전
+[scenes.138.data.rows.0.0] 10년 이상 산 집
+[scenes.138.data.rows.0.1] 기본공제 커짐
+[scenes.138.data.rows.1.0] 2028년부터
+[scenes.138.data.rows.1.1] 오래 가진 집 공제 바뀜
+[scenes.138.data.rows.1.2] ink
+[scenes.138.data.icon] FileText
+[scenes.138.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.139.lines.0.text] 그리고 하나 더. 새 집도 허가구역이면 허가를 받고 2년을 직접 살아야 합니다.
+[scenes.139.data.license] Pexels 8471105 무료(Thirdman)
+[scenes.139.data.say] 새 집도 허가구역이면
+[scenes.139.data.side] left
+[scenes.140.lines.0.text] 앞에서 말한 특례는 집 없는 사람만 쓸 수 있거든요.
+[scenes.140.data.title] 새 집도 허가구역이면
+[scenes.140.data.v] 허가 + 2년 실거주
+[scenes.140.data.s] 특례는 집 없는 사람만
+[scenes.140.data.icon] KeyRound
+[scenes.140.data.c] rise
+[scenes.140.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.141.lines.0.text] 오늘 숫자를 내 단지로 직접 확인해 보고 싶다면 이렇게 해 보세요.
+[scenes.141.data.n] 11장
+[scenes.141.data.q] 직접 확인하는 법
+[scenes.141.data.from] 국토교통부 실거래가 공개시스템 · 정보몽땅 · 토지이음
+[scenes.142.lines.0.text] 가격은 국토교통부 실거래가 공개시스템에서 단지와 면적을 똑같이 맞춰 보세요.
+[scenes.142.lines.1.text] 한 건이 아니라 1년 치를 같이 보는 게 좋습니다.
+[scenes.142.lines.2.text] 거래가 적은 단지라면, 옆 단지 같은 크기와 같이 놓고 비교해 보세요.
+[scenes.142.data.license] 파이어맵 자체 그림
+[scenes.143.lines.0.text] 그리고 면적은 집 안 넓이, 전용면적으로 맞추셔야 해요.
+[scenes.143.lines.1.text] 광고에 나오는 평수는 보통 공용 부분까지 넣은 숫자라, 그대로 비교하면 다른 집이 됩니다.
+[scenes.143.data.license] Pexels 6962695 무료(Mikhail Nilov)
+[scenes.143.data.say] 면적은 전용으로 맞추기
+[scenes.143.data.side] left
+[scenes.144.lines.0.text] 해제라고 적힌 거래는 빼고 봅니다. 계약이 취소된 거래거든요.
+[scenes.144.lines.1.text] 전세는 새로 맺은 계약과 다시 맺은 계약을 나눠 보시고요.
+[scenes.144.lines.2.text] 재건축 단계는 서울시 정비사업 정보몽땅이라는 누리집에서 단지 이름으로 찾을 수 있어요.
+[scenes.144.lines.3.text] 조합설립인가를 받았는지가 거기 나옵니다.
+[scenes.144.data.title] 확인할 것
+[scenes.144.data.rows.0.0] 해제 거래는 빼기
+[scenes.144.data.rows.1.0] 전세는 신규·갱신 나눠 보기
+[scenes.144.data.rows.2.0] 재건축 단계는 정보몽땅
+[scenes.144.data.icon] ListChecks
+[scenes.144.data.source] 국토교통부 실거래가 공개시스템 · 서울시 정비사업 정보몽땅
+[scenes.145.lines.0.text] 사려는 집이 허가구역인지는 토지이음이라는 국토교통부 누리집에서 확인할 수 있습니다.
+[scenes.145.data.license] Pexels 29303349 무료(성창 남)
+[scenes.145.data.say] 허가구역인지는 토지이음에서
+[scenes.145.data.side] left
+[scenes.146.lines.0.text] 서울 아파트 전체에 걸린 허가구역은 올해 말까지예요. 그 뒤로 늘릴지는 10월 19일까지 공식 발표가 없었습니다.
+[scenes.146.data.title] 허가구역 기한
+[scenes.146.data.rows.0.0] 서울 아파트 전체
+[scenes.146.data.rows.1.0] 압구정 · 목동신시가지
+[scenes.146.data.rows.1.2] ink
+[scenes.146.data.icon] CalendarClock
+[scenes.146.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.147.lines.0.text] 압구정과 목동신시가지는 서울시가 따로 지정해서, 2027년 4월 26일까지 허가구역이고요.
+[scenes.147.data.license] Pexels 37500921 무료(FREE VIDEO HAPPY)
+[scenes.147.data.say] 압구정·목동은 서울시가 따로 지정
+[scenes.147.data.side] left
+[scenes.148.lines.0.text] 앞에서 말한 특례의 신청 기한이 2027년 말인 건 시행령에 정해진 날짜예요. 그때 그 집이 허가구역인지는 따로 보셔야 합니다.
+[scenes.148.lines.0.cap] 국토교통부공고 제2025-1219호 지정기간 ~2026.12.31 · 토지이음 www.eum.go.kr · 허가 신청은 관할 구청 · 이번 달 거래는 신고 기한 30일이라 아직 덜 들어옴
+[scenes.148.data.title] 특례 신청 기한
+[scenes.148.data.v] 2027년 말
+[scenes.148.data.s] 그때 그 집이 허가구역인지는 따로 확인
+[scenes.148.data.icon] CalendarClock
+[scenes.148.data.c] ink
+[scenes.148.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.149.lines.0.text] 그리고 이번 달 거래는 아직 덜 들어와 있다는 것도요.
+[scenes.149.lines.1.text] 신고 기한이 30일이라, 지금 보이는 숫자가 다음 달에 바뀔 수 있습니다.
+[scenes.149.lines.1.cap] 단지별 1년 거래 표(목동신시가지 1~14단지 · 압구정 현대 1~14차 · 신천 장미·파크리오) → 파이어맵 카페 cafe.naver.com/firemap(고정 댓글·설명란에 주소, 말로는 안 함) · 국토교통부 실거래·건축물대장 · 계산·비교 자료이며 매수·매도 권유가 아닙니다
+[scenes.149.data.license] Pexels 12079562 무료(FREE VIDEO HAPPY)
+[scenes.149.data.say] 이번 달 거래는 아직 덜 들어왔다
+[scenes.149.data.side] left
+[scenes.150.lines.0.text] 지난 1년 실제로 팔린 가격만 센 겁니다.
+[scenes.150.lines.1.text] 30억 안팎으로 다시 정리하면요.
+[scenes.150.lines.2.text] 신천동에선 85㎡ 정도였어요.
+[scenes.150.lines.3.text] 목동신시가지에선 96㎡쯤이었고, 압구정동에선 그 값에 팔린 집이 없었어요.
+[scenes.150.data.license] 파이어맵 자체 그림
+[scenes.151.lines.0.text] 우리 동네 단지도 이렇게 세어 보고 싶다면, 댓글에 단지 이름을 남겨 주세요.
+[scenes.151.data.license] Pexels 37522115 무료(Jueon Kim 김주언)
+[scenes.152.lines.0.text] 토요일 오전 11시 반에는 종부세 이야기입니다. 그때 뵙겠습니다.
+[scenes.152.data.line] 토요일 오전 11시 반 · 종부세
 
 ## 화면 코드: video/src/H3.tsx
 [H3.tsx] 달러로

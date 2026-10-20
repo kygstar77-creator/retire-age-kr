@@ -11,6 +11,9 @@ EP = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.normpath(os.path.join(EP, '..', '..', '..', '..'))
 VID = os.path.join(WORK, 'video')
 FPS, TAIL = 30, 75
+# 10/21 PD: B-31 쉼 관문(렌더본 앞 180초, 0.25초 넘는 쉼 비율 ≤12%, 공개 10/23~)에 13.4%로 걸림 — 줄 사이 틈(GAP 6프레임 0.2초 + wav 앞뒤 무음 0.1초 = 0.3초)이
+#   줄마다 '쉼'으로 잡힘(줄 사이 7.7% · 줄 안 5.7%). 줄 사이 빈틈만 3프레임 줄여 중앙 0.30초·7.4%(경쟁 사람 진행자 0.3초·6%에 가장 가까움, 2프레임 11.5%·4프레임 5.6% · 같은 잣대로 X-1·T-1 렌더본 값과 계산값이 일치하는 것 확인, scratchpad simpause.py). 소리는 안 자름.
+GAP_TRIM = 3
 rd = lambda p: open(os.path.join(EP, p), encoding='utf-8').read()
 CALC = rd('calc_out.txt') + rd('calc2_out.txt') + rd('facts.txt')
 SCRIPT = rd('script.md')
@@ -30,7 +33,8 @@ USED = set()
 def L(n):
     assert n not in USED, ('두 번 쓴 줄', n); USED.add(n); l = ALL[n - 1]
     assert l.get('audio') and os.path.exists(os.path.join(VID, 'public', l['audio'])), ('소리 없음', n)
-    return {'text': l['text'], 'audio': l['audio'], 'frames': l['frames'], 'cap': CAP.get(n), 'i': n}
+    fr = l['frames'] - GAP_TRIM; assert fr >= int(l['sec'] * FPS + 0.999), ('소리가 잘림', n)   # 줄 사이 빈틈만 줄임, 소리는 그대로
+    return {'text': l['text'], 'audio': l['audio'], 'frames': fr, 'cap': CAP.get(n), 'i': n}
 def S(kind, ns, pause=0, **data):
     ls = [L(n) for n in ns]
     return {'kind': kind, 'lines': ls, 'frames': sum(l['frames'] for l in ls) + pause, 'data': data}
@@ -64,8 +68,8 @@ def live(cid, ns, who=None, say=None, past=False, start=0, pause=0):
 OSM = '지도 자료 © OpenStreetMap 기여자 (ODbL) · 파이어맵 그림'
 OWN = '파이어맵 자체 그림'
 AIL = 'AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님'
-def mapx(name, ns, zoom=(1.0, 1.05)): return S('pic', ns, pic=f'bg/h3/map/{name}.png', license=OSM, badge='', zoom=list(zoom), dark=True, inset=0.84, baked=True)
-def board(name, ns, zoom=(1.0, 1.05)): return S('pic', ns, pic=f'bg/h3/board/{name}.png', license=OWN, badge='', zoom=list(zoom), dark=True, inset=0.84, baked=True)
+def mapx(name, ns, zoom=(1.0, 1.08)): return S('pic', ns, pic=f'bg/h3/map/{name}.png', license=OSM, badge='', zoom=list(zoom), dark=True, inset=0.84, baked=True)
+def board(name, ns, zoom=(1.0, 1.08)): return S('pic', ns, pic=f'bg/h3/board/{name}.png', license=OWN, badge='', zoom=list(zoom), dark=True, inset=0.84, baked=True)
 def ai(name, ns, zoom=(1.0, 1.1)): return S('pic', ns, pic=f'bg/h3/ai/{name}.png', license=AIL, badge='AI 생성', zoom=list(zoom))
 def brand(ns, line, sub=None, pause=0): return S('brand', ns, pause=pause, line=line, **({'sub': sub} if sub else {}))
 
@@ -213,7 +217,8 @@ scenes = [
     board('board_jeonse', [200, 201, 202, 203]),
     broll(37527858, [204], '이유는 자료에 없다'),
     big('30%를 넘은 단지', '파크리오만', '1980년대까지 지은 단지는 모두 그 아래', [205, 206], icon='Building', c=K),
-    rows('누구라면', [['새로 집을 구하는 분', '새로 맺은 계약 가격'], ['지금 집에서 다시 계약', '다시 맺은 가격도', K, 2]], [207, 208, 209], icon='Users'),
+    rows('누구라면', [['새로 집을 구하는 분', '새로 맺은 계약 가격'], ['지금 집에서 다시 계약', '다시 맺은 가격도', K, 1]], [207, 208], icon='Users'),
+    broll(37527858, [209], '지금 집에서 다시 계약한다면'),
     broll(8482325, [210, 211], '세입자 두고 사기는 큰돈, 지금은 막힘'),
     # ── 9. 학교 ──
     ask('9장', '학교 배정, 숫자로 말할 수 있는 것', SRC_EDU, [212]),

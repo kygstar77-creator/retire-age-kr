@@ -2,3 +2,5 @@
 2026-10-19 06:26 | 끝 — 선 그래프 3장·bench_check 줄, 렌더 안 함
 2026-10-19 13:54 | 목소리 담당(순돌이 투입) | 붙음/끊김 걸린 줄만 retake --nat(say_v 2·쉼 태그), tts.json nat_gate·nat_lines만 고침 — 화면·대본 안 건드림
 2026-10-19 14:11 | 끝 — retake --nat 끝(T-1 21줄·X-1 22+4줄), check 통과. 렌더·readback은 PD (손 뗌)
+2026-10-20 06:17 | PD 정기 회차(firemap-video-producer 06:16) | X-1 쉼표 줄·고친 안 4줄 retake→check(렌더는 T-1 뒤)
+2026-10-20 10:05 | 06:16 회차 그대로 — 녹음 끝, 받아쓰기 둘째 귀 429(다음 회차 readback --resume --batch), 렌더는 T-1 뒤

@@ -2127,7 +2127,7 @@
    "item": "TBD",
    "owner": "firemap-write",
    "gates_ok": null,
-   "note": "firemap-meeting 2026-10-18 21:41: 카페 하루 12칸 뼈대(36시간 앞, 레드팀 R1) · yt_pair: T-1 — ep/T-1/cafe.md 전체 표, 대본에 '카페에 올려 둘게요'가 있으면 이 칸(영상 11:30 전), 없으면 12:10으로 · 부동산 칸"
+   "note": "PD 10/20 12:17: T-1 영상 https://youtu.be/Qg5Tj2fuJ3A (10/21 11:30 공개) — 짝 글에 넣고, 글 주소는 today.md에 → PD가 설명란 카페 줄(지금 cafe.naver.com/firemap) 교체 | firemap-meeting 2026-10-18 21:41: 카페 하루 12칸 뼈대(36시간 앞, 레드팀 R1) · yt_pair: T-1 — ep/T-1/cafe.md 전체 표, 대본에 '카페에 올려 둘게요'가 있으면 이 칸(영상 11:30 전), 없으면 12:10으로 · 부동산 칸"
   },
   {
    "at": "2026-10-21 10:40",
@@ -2142,8 +2142,8 @@
    "kind": "long",
    "item": "T-1(양도세 1주택 12억 초과·장특공제)",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "visual 10/19 17:3x: 48h 썸네일 판정 10/23 11:30(공개 10/21 11:30+48h). 지금 t1f6은 옛 꼴 → 새 꼴(실사+아래 큰 글) 판을 관문 10/20 11:30 전에 visual이 만들어 meta 교체 예정, 옛 t1f6이 교체안. ytreach 늦으면 '확인 안 함'+report 요청 | firemap-video-producer 2026-10-16 10:41: 녹음 63줄 끝(Charon 1.1·쉼 태그, 관문 통과)·화면 T1.tsx 14가지·겹침 0·meta.json 초안·cafe.md · 남은 것: editor 화면 글자 서명(10/18 12:00)→렌더·점수표, 썸네일 visual(10/19 06:00), 제목 숫자 2개 이하 copywriter(10/19 12:00) | firemap-meeting 2026-10-13 21:40: 카페 회원 자료 2호(양도세 엑셀)와 같은 주제로 묶음. 대본 youtube-loop 10/18, 관문 기한 10/20 11:30. X-1·S-1은 10/23 뒤로. 축: 부동산 세금(10/20 J-1 종부세와 같은 축이면 J-1을 10/22 H-2와 바꿈 — youtube-loop 판단) | firemap-video-producer 2026-10-16 20:12: 렌더 끝 out/t1_ds.mp4(화면 관문·치직 0·scorecard 36 vs 24) · 남은 것 썸네일(visual 10/19 06:00)·bench_check → ytlong 예약"
+   "gates_ok": "2026-10-20 12:17",
+   "note": "PD 10/20 12:17: 예약 https://youtu.be/Qg5Tj2fuJ3A (private+publishAt 10/21 11:30) · ytlong gate 통과(받아쓰기 188/188·화면 최장 7.5초·겹침 0·쉿소리 −12.0dB·bench_check 통과) · 길이 14분 32초 | visual 10/19 17:3x: 48h 썸네일 판정 10/23 11:30(공개 10/21 11:30+48h). 지금 t1f6은 옛 꼴 → 새 꼴(실사+아래 큰 글) 판을 관문 10/20 11:30 전에 visual이 만들어 meta 교체 예정, 옛 t1f6이 교체안. ytreach 늦으면 '확인 안 함'+report 요청 | firemap-video-producer 2026-10-16 10:41: 녹음 63줄 끝(Charon 1.1·쉼 태그, 관문 통과)·화면 T1.tsx 14가지·겹침 0·meta.json 초안·cafe.md · 남은 것: editor 화면 글자 서명(10/18 12:00)→렌더·점수표, 썸네일 visual(10/19 06:00), 제목 숫자 2개 이하 copywriter(10/19 12:00) | firemap-meeting 2026-10-13 21:40: 카페 회원 자료 2호(양도세 엑셀)와 같은 주제로 묶음. 대본 youtube-loop 10/18, 관문 기한 10/20 11:30. X-1·S-1은 10/23 뒤로. 축: 부동산 세금(10/20 J-1 종부세와 같은 축이면 J-1을 10/22 H-2와 바꿈 — youtube-loop 판단) | firemap-video-producer 2026-10-16 20:12: 렌더 끝 out/t1_ds.mp4(화면 관문·치직 0·scorecard 36 vs 24) · 남은 것 썸네일(visual 10/19 06:00)·bench_check → ytlong 예약"
   },
   {
    "at": "2026-10-21 12:10",

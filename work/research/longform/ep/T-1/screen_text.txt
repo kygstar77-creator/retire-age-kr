@@ -2,1002 +2,1011 @@
 # 그래프 제목·부제·출처·자막(lines.text)·막대 이름·코드에 박힌 글자. 썸네일 문구는 그림이라 안 들어간다.
 
 ## props: video/t1.json
-[scenes.0.lines.0.text] 같은 집을 같은 값에 판 두 사람인데, 2029년에 팔면 양도세가 열두 배 가까이 차이가 납니다.
-[scenes.0.lines.0.cap] 2029년 양도 · 20억 · 지방세 포함 · 정부안 기준·국회 통과 전
-[scenes.0.lines.1.text] 다른 건 딱 하나, 그 집에 실제로 살았던 햇수예요.
-[scenes.0.data.title] 2029년, 같은 20억 집
-[scenes.0.data.v1] 1,241만원
-[scenes.0.data.s1] 정민 씨 · 10년 거주
-[scenes.0.data.c1] fall
-[scenes.0.data.v2] 1억 4,777만원
-[scenes.0.data.s2] 수진 씨 · 10년 보유 · 2년 거주
-[scenes.0.data.c2] rise
-[scenes.0.data.icon] House
-[scenes.0.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
-[scenes.1.lines.0.text] 정부가 지난 9월 국회에 낸 세법 개정안대로라면 그렇습니다. 아직 국회를 통과하기 전이고요.
-[scenes.1.lines.0.cap] 소득세법 일부개정법률안(정부) 의안 2221042 · 처리 전 (국회 의안정보 2026-10-17 확인)
-[scenes.1.data.title] 세법 개정안
-[scenes.1.data.v] 국회 통과 전
-[scenes.1.data.s] 정부안 · 2026.9.3 제출 · 9.28 상정
-[scenes.1.data.icon] Landmark
-[scenes.1.data.c] ink
-[scenes.1.data.source] 국회 의안정보시스템(2026-10-17 확인)
-[scenes.2.lines.0.text] 정민 씨와 수진 씨, 두 사람은 계산하려고 만든 가상 인물입니다.
-[scenes.2.data.license] Pexels 7578842 무료(Kindel Media)
-[scenes.2.data.say] 두 사람은 가상 인물
-[scenes.2.data.side] left
-[scenes.3.lines.0.text] 오늘은 사람들이 실제로 물어본 질문 다섯 개를 차례로 풀어 봅니다.
-[scenes.3.data.title] 실제 질문 다섯
-[scenes.3.data.icon] MessageCircleQuestion
-[scenes.3.data.source] 네이버 지식iN · 유튜브 댓글(2026-10-17 받음)
-[scenes.3.data.items.0] 12억 기준은 판 값? 번 돈?
-[scenes.3.data.items.1] 실제로 산 사람도 줄어드나?
-[scenes.3.data.items.2] 갈아타기, 언제까지 팔아야?
-[scenes.3.data.items.3] 부부 공동명의도 공제?
-[scenes.3.data.items.4] 전근·재건축으로 못 산 기간은?
-[scenes.4.lines.0.text] 그중 세 번째, 집을 갈아타는 분들 규칙은 정부안이 아니라 지난달에 이미 바뀐 거예요.
-[scenes.4.data.license] Pexels 4553292 무료(cottonbro studio)
-[scenes.4.data.say] 세 번째는 이미 바뀐 규칙
-[scenes.4.data.side] left
-[scenes.5.lines.0.text] 첫 질문은 지식iN에 올라온 거예요. 12억 기준이 번 돈인지, 판 값인지요.
-[scenes.5.data.n] 질문 ①
-[scenes.5.data.q] 1가구1주택 양도세 12억 기준은 양도차익인가요, 매도가액인가요?
-[scenes.5.data.from] 네이버 지식iN 질문
-[scenes.6.lines.0.text] 답은 판 값입니다. 실제로 사고판 값, 실거래가로 따져요.
-[scenes.6.lines.0.cap] 소득세법 §89①3 · 1세대1주택 비과세 = 양도 당시 실지거래가액 12억원 이하
-[scenes.6.lines.1.text] 세대 전체가 집 한 채이고, 2년 넘게 갖고 있었던 것 같은 비과세 요건을 갖췄다면요.
-[scenes.6.lines.2.text] 판 값 12억원까지는 양도세가 없습니다.
-[scenes.6.data.title] 기준은 판 값
-[scenes.6.data.v] 판 값 12억
-[scenes.6.data.s] 실제로 사고판 값(실거래가) · 번 돈 아님
-[scenes.6.data.icon] Scale
-[scenes.6.data.c] accent
-[scenes.6.data.source] 소득세법 §89①3(법제처 2026-10-17 확인)
-[scenes.7.lines.0.text] 그럼 12억을 넘으면, 번 돈 전부에 세금이 붙을까요? 그렇지 않아요.
-[scenes.7.data.license] Pexels 32986074 무료(PUWOOK Kwak)
-[scenes.7.data.say] 번 돈 전부에 붙을까
-[scenes.7.data.side] left
-[scenes.7.data.chapter] 질문 ①
-[scenes.8.lines.0.text] 판 값 가운데 12억을 넘는 몫만큼만, 번 돈을 세금 계산에 넣습니다.
-[scenes.8.lines.1.text] 두 사람 집은 20억짜리예요. 12억을 넘는 몫은 판 값의 40%입니다.
-[scenes.8.data.title] 넘는 몫만 세금 계산
-[scenes.8.data.icon] Ruler
-[scenes.8.data.source] 소득세법 시행령 §160① · 파이어맵 계산
-[scenes.8.data.sell] 판 값 20억
-[scenes.8.data.line] 기준 12억
-[scenes.8.data.over] 넘는 몫 8억 · 판 값의 40%
-[scenes.9.lines.0.text] 두 사람 다 8억에 샀으니, 번 돈은 똑같이 12억이고요.
-[scenes.9.data.license] Pexels 31400388 무료(Jakub Zerdzicki)
-[scenes.9.data.say] 산 값과 판 값
-[scenes.9.data.side] left
-[scenes.9.data.chapter] 질문 ①
-[scenes.10.lines.0.text] 공교롭게 기준선과 같은 12억이라, 두 숫자를 섞지 않게 화면에 색을 달리했어요.
-[scenes.10.lines.1.text] 그 12억 가운데 40%만 세금 계산에 들어가요. 5억이 조금 안 되는 돈이죠.
-[scenes.10.lines.1.cap] 과세 양도차익 = 양도차익 × (양도가액 − 12억) ÷ 양도가액 · 12억 × 8 ÷ 20 = 4.8억
-[scenes.10.data.title] 번 돈 12억 중 40%
-[scenes.10.data.icon] Ruler
-[scenes.10.data.source] 소득세법 시행령 §160① · 파이어맵 계산(필요경비 0)
-[scenes.10.data.sell] 판 값 20억
-[scenes.10.data.line] 기준 12억
-[scenes.10.data.over] 넘는 몫 8억 · 40%
-[scenes.10.data.buy] 산 값 8억
-[scenes.10.data.gain] 번 돈 12억
-[scenes.10.data.taxed] 세금 계산 4.8억
-[scenes.11.lines.0.text] 왜 하필 12억일까요? 법에는 이 금액을 정한 이유가 나와 있지 않아요.
-[scenes.11.data.license] Pexels 6963487 무료(Mikhail Nilov)
-[scenes.11.data.say] 왜 하필 이 금액일까
-[scenes.11.data.side] left
-[scenes.11.data.chapter] 질문 ①
-[scenes.12.lines.0.text] 법은 이런 집을 그냥 '고가주택'이라고 부릅니다.
-[scenes.12.lines.1.text] 이 규칙 덕분에, 12억을 조금 넘는 집은 세금이 아주 작아요.
-[scenes.12.data.title] 법이 부르는 이름
-[scenes.12.data.v] 고가주택
-[scenes.12.data.s] 판 값 12억 넘는 집 · 금액을 정한 이유는 조문에 없음
-[scenes.12.data.icon] Gavel
-[scenes.12.data.c] ink
-[scenes.12.data.source] 소득세법 §89①3(법제처)
-[scenes.13.lines.0.text] 13억에 판 집도 계산해 봤어요.
-[scenes.13.data.license] Pexels 35082942 무료(Nothing Ahead)
-[scenes.13.data.say] 조금 넘는 집이라면
-[scenes.13.data.side] left
-[scenes.13.data.chapter] 질문 ①
-[scenes.14.lines.0.text] 8억에 사서 내내 살았다면, 올해 세금은 34만원쯤입니다.
-[scenes.14.lines.1.text] 정부안대로라면 내년부터는 0원이 되고요. 기본공제가 늘어나서인데, 바로 다음 질문에서 봅니다.
-[scenes.14.lines.1.cap] 양도 13억 · 취득 8억 · 10년 보유·10년 거주 · 정부안 기본공제 2,500만원 · 지방세 포함
-[scenes.14.data.title] 13억 집 · 내내 산 경우
-[scenes.14.data.v1] 34만원
-[scenes.14.data.s1] 2026년
-[scenes.14.data.c1] accent
-[scenes.14.data.v2] 0원
-[scenes.14.data.s2] 2027년부터(정부안)
-[scenes.14.data.c2] fall
-[scenes.14.data.icon] House
-[scenes.14.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
-[scenes.15.lines.0.text] 그런데 세금이 조금이라도 나오면, 할 일이 하나 생깁니다.
-[scenes.15.data.license] Pexels 1793371 무료(Miguel Á. Padriñán)
-[scenes.15.data.say] 할 일이 하나 생긴다
-[scenes.15.data.side] left
-[scenes.15.data.chapter] 질문 ①
-[scenes.16.lines.0.text] 12억을 넘겨 팔았다면, 판 달의 마지막 날부터 두 달 안에 신고를 해야 해요.
-[scenes.16.lines.1.text] 판 뒤에 미리 하는 신고라서 예정신고라고 부릅니다.
-[scenes.16.lines.1.cap] 소득세법 §105①1 · 양도일이 속하는 달의 말일부터 2개월 이내 예정신고
-[scenes.16.lines.2.text] 판 날은 보통 잔금을 받은 날로 봐요.
-[scenes.16.lines.2.cap] 소득세법 §98 · 양도·취득 시기 = 대금을 청산한 날(원칙)
-[scenes.16.lines.3.text] 그러니까 3월에 잔금을 받았다면, 5월 말일까지예요.
-[scenes.16.data.title] 예정신고는 두 달 안
-[scenes.16.data.icon] CalendarCheck
-[scenes.16.data.source] 소득세법 §98·§105①1(법제처)
-[scenes.16.data.months.0] 3월
-[scenes.16.data.months.1] 4월
-[scenes.16.data.months.2] 5월
-[scenes.16.data.pay] 잔금 받은 날
-[scenes.16.data.end1] 그달 말일
-[scenes.16.data.end2] 신고 기한
-[scenes.16.data.chip] 예정신고
-[scenes.16.data.ex] 5월 말일까지
-[scenes.17.lines.0.text] 조심할 것도 하나 있어요. 부부가 반씩 나눠 가진 집이라도, 12억은 집 전체 값으로 따집니다.
-[scenes.17.data.license] Pexels 34740733 무료(Dishant Babariya)
-[scenes.17.data.say] 부부가 반씩 가진 집도
-[scenes.17.data.side] left
-[scenes.17.data.chapter] 질문 ①
-[scenes.18.lines.0.text] 각자 몫이 10억이어도, 집 전체가 20억이면 고가주택이에요.
-[scenes.18.lines.0.cap] 시행령 §156① · 일부가 타인 소유인 경우에도 전체 실지거래가액으로 12억 초과 여부 판단
-[scenes.18.data.title] 집 전체 값으로
-[scenes.18.data.v] 20억
-[scenes.18.data.s] 각자 몫 10억이어도 고가주택
-[scenes.18.data.icon] Users
-[scenes.18.data.c] accent
-[scenes.18.data.source] 소득세법 시행령 §156①(법제처)
-[scenes.19.lines.0.text] 댓글에서 본 헷갈림도 하나 풀고 갈게요. 정부안에 14억이라는 숫자가 나오는데요.
-[scenes.19.data.license] Pexels 6186015 무료(K)
-[scenes.19.data.say] 댓글에서 본 헷갈림
-[scenes.19.data.side] left
-[scenes.19.data.chapter] 질문 ①
-[scenes.20.lines.0.text] 그건 집을 갖고 있는 동안 해마다 내는 종합부동산세, 줄여서 종부세 기준입니다.
-[scenes.20.lines.1.text] 팔 때 내는 양도세의 12억 기준은 정부안에서도 그대로예요.
-[scenes.20.lines.1.cap] 14억 = 종부세 1세대1주택 공시가격 기준(정부안 종부세법 §7①) · 양도세 비과세 12억(§89①3)은 바꾸는 항목 없음
-[scenes.20.data.title] 14억과 12억
-[scenes.20.data.v1] 14억
-[scenes.20.data.s1] 종부세 · 갖고 있는 동안
-[scenes.20.data.c1] ink
-[scenes.20.data.v2] 12억
-[scenes.20.data.s2] 양도세 · 팔 때 · 정부안도 그대로
-[scenes.20.data.c2] accent
-[scenes.20.data.icon] Split
-[scenes.20.data.source] 정부안 종부세법 §7①(의안 2221046) · 소득세법 §89①3 · 상세본 p.58
-[scenes.21.lines.0.text] 이번 질문은 유튜브 댓글에서 가져왔어요.
-[scenes.21.lines.1.text] 집을 갖고만 있고 거기 안 산 사람만 공제가 없어지는 거 아니냐는 질문이었죠.
-[scenes.21.lines.2.text] 답부터 말하면, 반만 맞습니다. 거기서 2년 산 사람도 줄어들어요.
-[scenes.21.data.n] 질문 ②
-[scenes.21.data.q] 보유만 하는 1주택만 장특 없앤다고 하는 것 아닌가요?
-[scenes.21.data.from] 유튜브 댓글(부동산 세금 영상)
-[scenes.22.lines.0.text] 먼저 지금 법부터 볼게요.
-[scenes.22.lines.1.text] 12억을 넘는 몫에서 한 번 더 깎아 주는 게 장기보유특별공제입니다.
-[scenes.22.lines.2.text] 지금 법은 집 한 채를 갖고 있던 해마다 4%씩 깎아 줘요.
-[scenes.22.lines.3.text] 실제로 살았던 해마다 또 4%씩이고요. 둘 다 10년이면 꽉 찹니다.
-[scenes.22.lines.3.cap] 소득세법 §95② 표2 · 보유 3년 12%~10년 40% · 거주 2년 8%~10년 40%
-[scenes.22.data.title] 지금 법 장기보유특별공제
-[scenes.22.data.icon] Layers
-[scenes.22.data.source] 소득세법 §95② 표2 · 시행령 §159의4(법제처)
-[scenes.22.data.rows.0.0] 갖고 있던 해
-[scenes.22.data.rows.0.1] 해마다 4%
-[scenes.22.data.rows.0.3] accent
-[scenes.22.data.rows.1.0] 살았던 해
-[scenes.22.data.rows.1.1] 해마다 4%
-[scenes.22.data.rows.1.3] fall
-[scenes.22.data.total] 최대 40% + 40%
-[scenes.23.lines.0.text] 정민 씨는 그 집을 갖고 있던 내내 거기서 살았어요.
-[scenes.23.data.license] Pexels 36820284 무료(Kartik Malviya)
-[scenes.23.data.say] 내내 그 집에 산 정민 씨
-[scenes.23.data.side] left
-[scenes.23.data.chapter] 질문 ②
-[scenes.24.lines.0.text] 그래서 두 공제를 다 채워 80%를 받습니다.
-[scenes.24.lines.1.text] 수진 씨도 똑같이 10년을 갖고 있었지만, 거기서 산 건 2년뿐이에요.
-[scenes.24.lines.2.text] 그래서 48%에 그치고요.
-[scenes.24.lines.2.cap] 정민 씨 = 보유 40% + 거주 40% = 80% · 수진 씨 = 보유 40% + 거주 8% = 48%
-[scenes.24.data.title] 지금 법 공제율
-[scenes.24.data.v1] 80%
-[scenes.24.data.s1] 정민 씨 · 10년 + 10년
-[scenes.24.data.c1] fall
-[scenes.24.data.v2] 48%
-[scenes.24.data.s2] 수진 씨 · 10년 + 2년
-[scenes.24.data.c2] rise
-[scenes.24.data.icon] Percent
-[scenes.24.data.source] 소득세법 §95② 표2
-[scenes.25.lines.0.text] 올해 판다면 정민 씨는 1,900만원, 수진 씨는 8,100만원을 냅니다.
-[scenes.25.lines.0.cap] 2026년 양도 · 지방세 포함 · 정민 씨 1,901만원 · 수진 씨 8,135만원
-[scenes.25.data.title] 올해(2026년) 판다면
-[scenes.25.data.v1] 1,901만원
-[scenes.25.data.s1] 정민 씨
+[scenes.0.lines.0.text] 안녕하세요, 파이어맵입니다. 오늘은 집 한 채 양도세 이야기입니다.
+[scenes.0.data.license] Pexels 36820284 무료(Kartik Malviya)
+[scenes.0.data.say] 오늘은 집 한 채 양도세 이야기
+[scenes.0.data.side] left
+[scenes.1.lines.0.text] 같은 집을 같은 값에 판 두 사람인데, 2029년에 팔면 양도세가 열두 배 가까이 차이가 납니다.
+[scenes.1.lines.0.cap] 2029년 양도 · 20억 · 지방세 포함 · 정부안 기준·국회 통과 전
+[scenes.1.lines.1.text] 다른 건 딱 하나, 그 집에 실제로 살았던 햇수예요.
+[scenes.1.data.title] 2029년, 같은 20억 집
+[scenes.1.data.v1] 1,241만원
+[scenes.1.data.s1] 정민 씨 · 10년 거주
+[scenes.1.data.c1] fall
+[scenes.1.data.v2] 1억 4,777만원
+[scenes.1.data.s2] 수진 씨 · 10년 보유 · 2년 거주
+[scenes.1.data.c2] rise
+[scenes.1.data.icon] House
+[scenes.1.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
+[scenes.2.lines.0.text] 정부가 지난 9월 국회에 낸 세법 개정안대로라면 그렇습니다. 아직 국회를 통과하기 전이고요.
+[scenes.2.lines.0.cap] 소득세법 일부개정법률안(정부) 의안 2221042 · 처리 전 (국회 의안정보 2026-10-17 확인)
+[scenes.2.data.title] 세법 개정안
+[scenes.2.data.v] 국회 통과 전
+[scenes.2.data.s] 정부안 · 2026.9.3 제출 · 9.28 상정
+[scenes.2.data.icon] Landmark
+[scenes.2.data.c] ink
+[scenes.2.data.source] 국회 의안정보시스템(2026-10-17 확인)
+[scenes.3.lines.0.text] 정민 씨와 수진 씨, 두 사람은 계산하려고 만든 가상 인물입니다.
+[scenes.3.data.license] Pexels 7578842 무료(Kindel Media)
+[scenes.3.data.say] 두 사람은 가상 인물
+[scenes.3.data.side] left
+[scenes.4.lines.0.text] 오늘은 사람들이 실제로 물어본 질문 다섯 개를 차례로 풀어 봅니다.
+[scenes.4.data.title] 실제 질문 다섯
+[scenes.4.data.icon] MessageCircleQuestion
+[scenes.4.data.source] 네이버 지식iN · 유튜브 댓글(2026-10-17 받음)
+[scenes.4.data.items.0] 12억 기준은 판 값? 번 돈?
+[scenes.4.data.items.1] 실제로 산 사람도 줄어드나?
+[scenes.4.data.items.2] 갈아타기, 언제까지 팔아야?
+[scenes.4.data.items.3] 부부 공동명의도 공제?
+[scenes.4.data.items.4] 전근·재건축으로 못 산 기간은?
+[scenes.5.lines.0.text] 그중 세 번째, 집을 갈아타는 분들 규칙은 정부안이 아니라 지난달에 이미 바뀐 거예요.
+[scenes.5.data.license] Pexels 4553292 무료(cottonbro studio)
+[scenes.5.data.say] 세 번째는 이미 바뀐 규칙
+[scenes.5.data.side] left
+[scenes.6.lines.0.text] 첫 질문은 지식iN에 올라온 거예요. 12억 기준이 번 돈인지, 판 값인지요.
+[scenes.6.data.n] 질문 ①
+[scenes.6.data.q] 1가구1주택 양도세 12억 기준은 양도차익인가요, 매도가액인가요?
+[scenes.6.data.from] 네이버 지식iN 질문
+[scenes.7.lines.0.text] 답은 판 값입니다. 실제로 사고판 값, 실거래가로 따져요.
+[scenes.7.lines.0.cap] 소득세법 §89①3 · 1세대1주택 비과세 = 양도 당시 실지거래가액 12억원 이하
+[scenes.7.lines.1.text] 세대 전체가 집 한 채이고, 2년 넘게 갖고 있었던 것 같은 비과세 요건을 갖췄다면요.
+[scenes.7.lines.2.text] 판 값 12억원까지는 양도세가 없습니다.
+[scenes.7.data.title] 기준은 판 값
+[scenes.7.data.v] 판 값 12억
+[scenes.7.data.s] 실제로 사고판 값(실거래가) · 번 돈 아님
+[scenes.7.data.icon] Scale
+[scenes.7.data.c] accent
+[scenes.7.data.source] 소득세법 §89①3(법제처 2026-10-17 확인)
+[scenes.8.lines.0.text] 그럼 12억을 넘으면, 번 돈 전부에 세금이 붙을까요? 그렇지 않아요.
+[scenes.8.data.license] Pexels 32986074 무료(PUWOOK Kwak)
+[scenes.8.data.say] 번 돈 전부에 붙을까
+[scenes.8.data.side] left
+[scenes.8.data.chapter] 질문 ①
+[scenes.9.lines.0.text] 판 값 가운데 12억을 넘는 부분만큼만, 번 돈을 세금 계산에 넣습니다.
+[scenes.9.lines.1.text] 두 사람 집은 20억짜리예요. 12억을 넘는 부분은 판 값의 40%입니다.
+[scenes.9.data.title] 넘는 부분만 세금 계산
+[scenes.9.data.icon] Ruler
+[scenes.9.data.source] 소득세법 시행령 §160① · 파이어맵 계산
+[scenes.9.data.sell] 판 값 20억
+[scenes.9.data.line] 기준 12억
+[scenes.9.data.over] 넘는 부분 8억 · 판 값의 40%
+[scenes.10.lines.0.text] 두 사람 다 8억에 샀으니, 번 돈은 똑같이 12억이고요.
+[scenes.10.data.license] Pexels 31400388 무료(Jakub Zerdzicki)
+[scenes.10.data.say] 산 값과 판 값
+[scenes.10.data.side] left
+[scenes.10.data.chapter] 질문 ①
+[scenes.11.lines.0.text] 공교롭게 기준선과 같은 12억이라, 두 숫자를 섞지 않게 화면에 색을 달리했어요.
+[scenes.11.lines.1.text] 그 12억 가운데 40%만 세금 계산에 들어가요. 5억이 조금 안 되는 돈이죠.
+[scenes.11.lines.1.cap] 과세 양도차익 = 양도차익 × (양도가액 − 12억) ÷ 양도가액 · 12억 × 8 ÷ 20 = 4.8억
+[scenes.11.data.title] 번 돈 12억 중 40%
+[scenes.11.data.icon] Ruler
+[scenes.11.data.source] 소득세법 시행령 §160① · 파이어맵 계산(필요경비 0)
+[scenes.11.data.sell] 판 값 20억
+[scenes.11.data.line] 기준 12억
+[scenes.11.data.over] 넘는 부분 8억 · 40%
+[scenes.11.data.buy] 산 값 8억
+[scenes.11.data.gain] 번 돈 12억
+[scenes.11.data.taxed] 세금 계산 4.8억
+[scenes.12.lines.0.text] 왜 하필 12억일까요? 법에는 이 금액을 정한 이유가 나와 있지 않아요.
+[scenes.12.data.license] Pexels 6963487 무료(Mikhail Nilov)
+[scenes.12.data.say] 왜 하필 이 금액일까
+[scenes.12.data.side] left
+[scenes.12.data.chapter] 질문 ①
+[scenes.13.lines.0.text] 법은 이런 집을 그냥 '고가주택'이라고 부릅니다.
+[scenes.13.lines.1.text] 이 규칙 덕분에, 12억을 조금 넘는 집은 세금이 아주 작아요.
+[scenes.13.data.title] 법이 부르는 이름
+[scenes.13.data.v] 고가주택
+[scenes.13.data.s] 판 값 12억 넘는 집 · 금액을 정한 이유는 조문에 없음
+[scenes.13.data.icon] Gavel
+[scenes.13.data.c] ink
+[scenes.13.data.source] 소득세법 §89①3(법제처)
+[scenes.14.lines.0.text] 13억에 판 집도 계산해 봤어요.
+[scenes.14.data.license] Pexels 35082942 무료(Nothing Ahead)
+[scenes.14.data.say] 조금 넘는 집이라면
+[scenes.14.data.side] left
+[scenes.14.data.chapter] 질문 ①
+[scenes.15.lines.0.text] 8억에 사서 내내 살았다면, 올해 세금은 34만원쯤입니다.
+[scenes.15.lines.1.text] 정부안대로라면 내년부터는 0원이 되고요. 기본공제가 늘어나서인데, 바로 다음 질문에서 봅니다.
+[scenes.15.lines.1.cap] 양도 13억 · 취득 8억 · 10년 보유·10년 거주 · 정부안 기본공제 2,500만원 · 지방세 포함
+[scenes.15.data.title] 13억 집 · 내내 산 경우
+[scenes.15.data.v1] 34만원
+[scenes.15.data.s1] 2026년
+[scenes.15.data.c1] accent
+[scenes.15.data.v2] 0원
+[scenes.15.data.s2] 2027년부터(정부안)
+[scenes.15.data.c2] fall
+[scenes.15.data.icon] House
+[scenes.15.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
+[scenes.16.lines.0.text] 그런데 세금이 조금이라도 나오면, 할 일이 하나 생깁니다.
+[scenes.16.data.license] Pexels 1793371 무료(Miguel Á. Padriñán)
+[scenes.16.data.say] 할 일이 하나 생긴다
+[scenes.16.data.side] left
+[scenes.16.data.chapter] 질문 ①
+[scenes.17.lines.0.text] 12억을 넘겨 팔았다면, 판 달의 마지막 날부터 두 달 안에 신고를 해야 해요.
+[scenes.17.lines.1.text] 판 뒤에 미리 하는 신고라서 예정신고라고 부릅니다.
+[scenes.17.lines.1.cap] 소득세법 §105①1 · 양도일이 속하는 달의 말일부터 2개월 이내 예정신고
+[scenes.17.lines.2.text] 판 날은 보통 잔금을 받은 날로 봐요.
+[scenes.17.lines.2.cap] 소득세법 §98 · 양도·취득 시기 = 대금을 청산한 날(원칙)
+[scenes.17.lines.3.text] 그러니까 3월에 잔금을 받았다면, 5월 말일까지예요.
+[scenes.17.data.title] 예정신고는 두 달 안
+[scenes.17.data.icon] CalendarCheck
+[scenes.17.data.source] 소득세법 §98·§105①1(법제처)
+[scenes.17.data.months.0] 3월
+[scenes.17.data.months.1] 4월
+[scenes.17.data.months.2] 5월
+[scenes.17.data.pay] 잔금 받은 날
+[scenes.17.data.end1] 그달 말일
+[scenes.17.data.end2] 신고 기한
+[scenes.17.data.chip] 예정신고
+[scenes.17.data.ex] 5월 말일까지
+[scenes.18.lines.0.text] 조심할 것도 하나 있어요. 부부가 반씩 나눠 가진 집이라도, 12억은 집 전체 값으로 따집니다.
+[scenes.18.data.license] Pexels 34740733 무료(Dishant Babariya)
+[scenes.18.data.say] 부부가 반씩 가진 집도
+[scenes.18.data.side] left
+[scenes.18.data.chapter] 질문 ①
+[scenes.19.lines.0.text] 각자 몫이 10억이어도, 집 전체가 20억이면 고가주택이에요.
+[scenes.19.lines.0.cap] 시행령 §156① · 일부가 타인 소유인 경우에도 전체 실지거래가액으로 12억 초과 여부 판단
+[scenes.19.data.title] 집 전체 값으로
+[scenes.19.data.v] 20억
+[scenes.19.data.s] 각자 몫 10억이어도 고가주택
+[scenes.19.data.icon] Users
+[scenes.19.data.c] accent
+[scenes.19.data.source] 소득세법 시행령 §156①(법제처)
+[scenes.20.lines.0.text] 댓글에서 본 헷갈림도 하나 풀고 갈게요. 정부안에 14억이라는 숫자가 나오는데요.
+[scenes.20.data.license] Pexels 6186015 무료(K)
+[scenes.20.data.say] 댓글에서 본 헷갈림
+[scenes.20.data.side] left
+[scenes.20.data.chapter] 질문 ①
+[scenes.21.lines.0.text] 그건 집을 갖고 있는 동안 해마다 내는 종합부동산세, 줄여서 종부세 기준입니다.
+[scenes.21.lines.1.text] 팔 때 내는 양도세의 12억 기준은 정부안에서도 그대로예요.
+[scenes.21.lines.1.cap] 14억 = 종부세 1세대1주택 공시가격 기준(정부안 종부세법 §7①) · 양도세 비과세 12억(§89①3)은 바꾸는 항목 없음
+[scenes.21.data.title] 14억과 12억
+[scenes.21.data.v1] 14억
+[scenes.21.data.s1] 종부세 · 갖고 있는 동안
+[scenes.21.data.c1] ink
+[scenes.21.data.v2] 12억
+[scenes.21.data.s2] 양도세 · 팔 때 · 정부안도 그대로
+[scenes.21.data.c2] accent
+[scenes.21.data.icon] Split
+[scenes.21.data.source] 정부안 종부세법 §7①(의안 2221046) · 소득세법 §89①3 · 상세본 p.58
+[scenes.22.lines.0.text] 이번 질문은 유튜브 댓글에서 가져왔어요.
+[scenes.22.lines.1.text] 집을 갖고만 있고 거기 안 산 사람만 공제가 없어지는 거 아니냐는 질문이었죠.
+[scenes.22.lines.2.text] 답부터 말하면, 반만 맞습니다. 거기서 2년 산 사람도 줄어들어요.
+[scenes.22.data.n] 질문 ②
+[scenes.22.data.q] 보유만 하는 1주택만 장특 없앤다고 하는 것 아닌가요?
+[scenes.22.data.from] 유튜브 댓글(부동산 세금 영상)
+[scenes.23.lines.0.text] 먼저 지금 법부터 볼게요.
+[scenes.23.lines.1.text] 12억을 넘는 부분에서 한 번 더 깎아 주는 게 장기보유특별공제입니다.
+[scenes.23.lines.2.text] 지금 법은 집 한 채를 갖고 있던 해마다 4%씩 깎아 줘요.
+[scenes.23.lines.3.text] 실제로 살았던 해마다 또 4%씩이고요. 둘 다 10년이면 꽉 찹니다.
+[scenes.23.lines.3.cap] 소득세법 §95② 표2 · 보유 3년 12%~10년 40% · 거주 2년 8%~10년 40%
+[scenes.23.data.title] 지금 법 장기보유특별공제
+[scenes.23.data.icon] Layers
+[scenes.23.data.source] 소득세법 §95② 표2 · 시행령 §159의4(법제처)
+[scenes.23.data.rows.0.0] 갖고 있던 해
+[scenes.23.data.rows.0.1] 해마다 4%
+[scenes.23.data.rows.0.3] accent
+[scenes.23.data.rows.1.0] 살았던 해
+[scenes.23.data.rows.1.1] 해마다 4%
+[scenes.23.data.rows.1.3] fall
+[scenes.23.data.total] 최대 40% + 40%
+[scenes.24.lines.0.text] 정민 씨는 그 집을 갖고 있던 내내 거기서 살았어요.
+[scenes.24.data.license] Pexels 36820284 무료(Kartik Malviya)
+[scenes.24.data.say] 내내 그 집에 산 정민 씨
+[scenes.24.data.side] left
+[scenes.24.data.chapter] 질문 ②
+[scenes.25.lines.0.text] 그래서 두 공제를 다 채워 80%를 받습니다.
+[scenes.25.lines.1.text] 수진 씨도 똑같이 10년을 갖고 있었지만, 거기서 산 건 2년뿐이에요.
+[scenes.25.lines.2.text] 그래서 48%에 그치고요.
+[scenes.25.lines.2.cap] 정민 씨 = 보유 40% + 거주 40% = 80% · 수진 씨 = 보유 40% + 거주 8% = 48%
+[scenes.25.data.title] 지금 법 공제율
+[scenes.25.data.v1] 80%
+[scenes.25.data.s1] 정민 씨 · 10년 + 10년
 [scenes.25.data.c1] fall
-[scenes.25.data.v2] 8,135만원
-[scenes.25.data.s2] 수진 씨
+[scenes.25.data.v2] 48%
+[scenes.25.data.s2] 수진 씨 · 10년 + 2년
 [scenes.25.data.c2] rise
-[scenes.25.data.icon] Receipt
-[scenes.25.data.source] 소득세법·시행령(법제처 국가법령정보센터) · 파이어맵 계산(지방세 포함·필요경비 0)
-[scenes.26.lines.0.text] 이제 정부안이에요. 내년까지는 지금 공제율 그대로입니다.
-[scenes.26.data.license] Pexels 8471105 무료(Thirdman)
-[scenes.26.data.say] 이제 정부안
-[scenes.26.data.side] left
-[scenes.26.data.chapter] 질문 ②
-[scenes.27.lines.0.text] 2028년엔 살았던 해마다 6%로 늘어납니다.
-[scenes.27.lines.1.text] 대신 갖고 있던 해는 2%로 줄고요.
-[scenes.27.lines.2.text] 정부안대로라면 2029년부터는 갖고 있던 해를 아예 안 칩니다. 살았던 해만 8%씩 쳐요.
-[scenes.27.lines.2.cap] 상세본 p.58 · 2028년 거주 6%(최대 60%)·보유 2%(최대 20%) · 2029년~ 거주 8%(최대 80%)
-[scenes.27.data.title] 정부안 공제율
-[scenes.27.data.cols.0] 2027년까지
-[scenes.27.data.cols.1] 2028년
-[scenes.27.data.cols.2] 2029년부터
-[scenes.27.data.rows.0.0] 살았던 해
-[scenes.27.data.rows.0.1] 4%
-[scenes.27.data.rows.0.2] 6%
-[scenes.27.data.rows.0.3] 8%
-[scenes.27.data.rows.1.0] 갖고 있던 해
-[scenes.27.data.rows.1.1] 4%
-[scenes.27.data.rows.1.2] 2%
-[scenes.27.data.rows.1.3] 없음
-[scenes.27.data.icon] Table
-[scenes.27.data.source] 재정경제부 2026 세법개정안 상세본 p.58
-[scenes.28.lines.0.text] 이름도 바뀌어요. 집에 대해서는 '장기거주 소득공제'라고 부르게 됩니다.
-[scenes.28.lines.0.cap] 상세본 p.57 · 토지와, 주택이 아닌 건물은 장기보유 소득공제
-[scenes.28.data.title] 새 이름
-[scenes.28.data.v] 장기거주 소득공제
-[scenes.28.data.s] 집(주택·조합원입주권) · 2028.1.1 이후 판 집부터
-[scenes.28.data.icon] BadgeCheck
-[scenes.28.data.c] ink
-[scenes.28.data.source] 재정경제부 2026 세법개정안 상세본 p.57
-[scenes.29.lines.0.text] 왜 이렇게 바꿀까요? 정부 자료에 적힌 이유는 한 줄이에요.
-[scenes.29.lines.1.text] 집 양도세 공제를 사는 것 중심으로 차례차례 바꾼다는 겁니다.
-[scenes.29.data.license] Pexels 12079562 무료(FREE VIDEO HAPPY)
-[scenes.29.data.say] 사는 것 중심으로
-[scenes.29.data.side] left
-[scenes.29.data.chapter] 질문 ②
-[scenes.30.lines.0.text] 그래서 정민 씨는 그대로 80%예요. 살았던 해만으로 다 채우니까요.
-[scenes.30.lines.1.text] 수진 씨는 해마다 줄어서, 2029년엔 16%만 남습니다.
-[scenes.30.lines.1.cap] 수진 씨 · 2027년 48% → 2028년 32%(6%×2 + 2%×10) → 2029년 16%(8%×2)
-[scenes.30.data.title] 2029년 공제율
-[scenes.30.data.v1] 80%
-[scenes.30.data.s1] 정민 씨 · 그대로
-[scenes.30.data.c1] fall
-[scenes.30.data.v2] 16%
-[scenes.30.data.s2] 수진 씨 · 해마다 줄어
-[scenes.30.data.c2] rise
-[scenes.30.data.icon] Percent
-[scenes.30.data.source] 재정경제부 2026 세법개정안 상세본 p.58
-[scenes.31.lines.0.text] 같은 집을 판 해만 다르게 놓고 계산하면, 수진 씨 세금은 해마다 3천만원 넘게 차이가 나요.
-[scenes.31.lines.0.cap] 지방세 포함 · 해마다 +3,263만원·+3,379만원 · 정부안
-[scenes.31.data.title] 수진 씨 세금, 판 해별
-[scenes.31.data.bars.0.0] 2027년
-[scenes.31.data.bars.0.2] 8,135만원
-[scenes.31.data.bars.0.3] accent
-[scenes.31.data.bars.1.0] 2028년
-[scenes.31.data.bars.1.2] 1억 1,398만원
-[scenes.31.data.bars.1.3] accent
-[scenes.31.data.bars.2.0] 2029년
-[scenes.31.data.bars.2.2] 1억 4,777만원
-[scenes.31.data.bars.2.3] rise
-[scenes.31.data.dir] v
-[scenes.31.data.icon] TrendingUp
-[scenes.31.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
-[scenes.32.lines.0.text] 집도 값도 그대로인데, 규칙만 바뀐 거죠.
-[scenes.32.data.license] Pexels 6221101 무료(cottonbro studio)
-[scenes.32.data.say] 집도 값도 그대로
-[scenes.32.data.side] left
-[scenes.32.data.chapter] 질문 ②
-[scenes.33.lines.0.text] 아예 안 산 사람만이 아니라, 살았던 기간이 갖고 있던 기간보다 짧은 사람은 다 줄어들어요.
-[scenes.33.data.title] 줄어드는 사람
-[scenes.33.data.v] 살았던 해 < 갖고 있던 해
-[scenes.33.data.s] 아예 안 산 사람만이 아님
-[scenes.33.data.icon] TriangleAlert
-[scenes.33.data.c] rise
-[scenes.33.data.source] 재정경제부 2026 세법개정안 상세본 p.58
-[scenes.34.lines.0.text] 거꾸로 정민 씨는 오히려 세금이 줄어요. 정부안에 공제가 하나 더 있거든요.
-[scenes.34.data.license] Pexels 7578842 무료(Kindel Media)
-[scenes.34.data.say] 정민 씨는 오히려 줄어든다
-[scenes.34.data.side] left
-[scenes.34.data.chapter] 질문 ②
-[scenes.35.lines.0.text] 10년 이상 살았던 집 한 채를 30억 이하에 팔면, 기본공제가 열 배로 늘어납니다.
-[scenes.35.lines.1.text] 지금은 해마다 250만원인데, 2,500만원이 되는 거죠.
-[scenes.35.lines.1.cap] 정부안 소득세법 §103 단서 · 2027.1.1 이후 양도분부터 · 특수관계인 간 양도·비거주자 제외 (상세본 p.68)
-[scenes.35.data.title] 기본공제 열 배
-[scenes.35.data.v] 2,500만원
-[scenes.35.data.s] 지금 250만원 · 10년 이상 산 집 한 채 · 30억 이하
-[scenes.35.data.icon] Coins
-[scenes.35.data.c] fall
-[scenes.35.data.source] 정부안 소득세법 §103 단서 · 상세본 p.68
-[scenes.36.lines.0.text] 정부 자료가 밝힌 이유는, 오래 살아온 집 한 채 주인의 세금 부담을 덜어 준다는 거예요.
-[scenes.36.data.license] Pexels 31251627 무료(PUWOOK Kwak)
-[scenes.36.data.say] 오래 산 집 한 채 주인
-[scenes.36.data.side] left
-[scenes.36.data.chapter] 질문 ②
-[scenes.37.lines.0.text] 그래서 정민 씨 세금은 1,900만원에서 1,240만원으로 내려가요.
-[scenes.37.lines.0.cap] 정민 씨 · 2026년 1,901만원 → 2027~2029년 1,241만원 · 지방세 포함
-[scenes.37.data.title] 정민 씨 세금
-[scenes.37.data.v1] 1,901만원
-[scenes.37.data.s1] 2026년
-[scenes.37.data.c1] ink
-[scenes.37.data.v2] 1,241만원
-[scenes.37.data.s2] 2027~2029년
-[scenes.37.data.c2] fall
-[scenes.37.data.icon] User
-[scenes.37.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
-[scenes.38.lines.0.text] 같은 2029년에 수진 씨 세금은 1억 5천만원에 조금 못 미칩니다.
-[scenes.38.lines.1.text] 두 사람이 열두 배 가까이 벌어지는 건, 이 두 가지가 겹쳐서예요.
-[scenes.38.lines.1.cap] 1억 4,777만원 ÷ 1,241만원 = 11.9배 · 공제율 16% vs 80% · 기본공제 250만 vs 2,500만
-[scenes.38.data.title] 같은 해, 세금은 몇 배?
-[scenes.38.data.sub] 같은 20억 집 · 두 사람
-[scenes.38.data.source] 재정경제부 2026 세법개정안 상세본 p.58·p.68 · 파이어맵 계산(지방세 포함)
-[scenes.38.data.p.seed] T-1-ratio
-[scenes.38.data.p.who] 정민 씨·수진 씨 · 가상 인물
-[scenes.38.data.p.note] 같은 20억 집 · 2029년에 판다면 · 정부안 · 지방세 포함
-[scenes.38.data.p.rows.0.label] 2029년 세금, 두 사람
-[scenes.38.data.p.rows.0.parts.0.t] 1억 4,777만원
-[scenes.38.data.p.rows.0.parts.0.sub] 수진 씨 · 공제율 16% · 기본공제 250만원
-[scenes.38.data.p.rows.0.parts.1.t] ÷
-[scenes.38.data.p.rows.0.parts.2.t] 1,241만원
-[scenes.38.data.p.rows.0.parts.2.sub] 정민 씨 · 공제율 80% · 기본공제 2,500만원
-[scenes.38.data.p.rows.0.ans] 11.9배
-[scenes.39.lines.0.text] 그럼 살았던 해 한 해는 돈으로 얼마일까요?
-[scenes.39.data.license] Pexels 35082942 무료(Nothing Ahead)
-[scenes.39.data.say] 살았던 한 해의 값
-[scenes.39.data.side] left
-[scenes.39.data.chapter] 질문 ②
-[scenes.40.lines.0.text] 수진 씨 집으로 계산하면, 2029년엔 한 해를 더 살았을 때마다 세금이 1,700만원쯤 줄어듭니다.
-[scenes.40.lines.0.cap] 20억·취득 8억·10년 보유 · 한 해에 약 1,690만원 · 파이어맵 계산
-[scenes.40.lines.1.text] 이 값은 집마다 달라요. 번 돈이 클수록 한 해의 값도 커집니다.
-[scenes.40.data.title] 살았던 한 해의 값
-[scenes.40.data.sub] 수진 씨 집 · 2029년
-[scenes.40.data.source] 파이어맵 계산 · 정부안 공제율(상세본 p.58)
-[scenes.40.data.p.seed] T-1-year-b
-[scenes.40.data.p.who] 수진 씨 · 가상 인물
-[scenes.40.data.p.note] 20억·취득 8억·10년 보유 · 2029년 정부안 · 지방세 포함 · 파이어맵 계산
-[scenes.40.data.p.rows.0.label] 수진 씨 · 거주 2년 → 3년
-[scenes.40.data.p.rows.0.parts.0.t] 1억 4,777만원
-[scenes.40.data.p.rows.0.parts.0.sub] 거주 2년
-[scenes.40.data.p.rows.0.parts.1.t] −
-[scenes.40.data.p.rows.0.parts.2.t] 1억 3,088만원
-[scenes.40.data.p.rows.0.parts.2.sub] 거주 3년
-[scenes.40.data.p.rows.0.ans] 약 1,690만원
-[scenes.40.data.p.rows.0.ansSub] 한 해 더 살면 줄어드는 세금
-[scenes.40.data.p.tail.text] 집마다 다름 · 번 돈이 클수록 커짐
-[scenes.41.lines.0.text] 그래서 내 집이라면 확인할 건 두 숫자예요. 갖고 있던 햇수와 실제로 살았던 햇수.
-[scenes.41.data.license] Pexels 7710453 무료(https://kaboompics.com/)
-[scenes.41.data.say] 확인할 건 두 숫자
-[scenes.41.data.side] left
-[scenes.41.data.chapter] 질문 ②
-[scenes.42.lines.0.text] 갖고 있던 햇수는 산 날부터 판 날까지입니다. 이때도 잔금을 치른 날로 세요.
-[scenes.42.lines.0.cap] 소득세법 §95④ · 보유기간 = 취득일부터 양도일까지 · §98 대금 청산일
-[scenes.42.lines.1.text] 살았던 햇수는 주민등록등본에 적힌 전입일부터 전출일까지로 셉니다.
-[scenes.42.lines.1.cap] 시행령 §154⑥ · 주민등록표 등본에 따른 전입일부터 전출일까지
-[scenes.42.data.title] 내 집에서 셀 두 숫자
-[scenes.42.data.rows.0.0] 갖고 있던 햇수
-[scenes.42.data.rows.0.1] 산 날 ~ 판 날(잔금일)
-[scenes.42.data.rows.0.2] accent
-[scenes.42.data.rows.1.0] 살았던 햇수
-[scenes.42.data.rows.1.1] 등본 전입일 ~ 전출일
-[scenes.42.data.rows.1.2] fall
-[scenes.42.data.icon] ClipboardList
-[scenes.42.data.source] 소득세법 §95④·§98 · 시행령 §154⑥(법제처)
-[scenes.43.lines.0.text] 등본 한 통이면 살았던 날짜를 다 볼 수 있어요.
-[scenes.43.lines.1.text] 이 두 숫자만 있으면, 앞에서 본 공제율 표에서 내 칸을 찾을 수 있습니다.
-[scenes.43.data.license] Pexels 7710495 무료(https://kaboompics.com/)
-[scenes.43.data.say] 등본 한 통이면
-[scenes.43.data.side] left
-[scenes.43.data.chapter] 질문 ②
-[scenes.44.lines.0.text] 조심할 것도 있어요. 둘 다 10년을 넘지 않는 경우라면요.
-[scenes.44.lines.1.text] 갖고 있던 해가 살았던 해보다 한 해 많을 때마다, 2029년 공제율은 지금보다 4%포인트씩 낮아집니다.
-[scenes.44.lines.2.text] 수진 씨는 8년 차이라서, 48%가 16%로 낮아졌죠.
-[scenes.44.lines.2.cap] 보유·거주 모두 10년 이하일 때 · 차이 = 4 × (보유 − 거주) · 수진 씨 8년 차이 = 32%p
-[scenes.44.data.title] 햇수 차이 한 해마다 4%p
-[scenes.44.data.sub] 갖고 있던 해 − 살았던 해
-[scenes.44.data.source] 재정경제부 2026 세법개정안 상세본 p.58 · 소득세법 §95②
-[scenes.44.data.p.seed] T-1-gap
-[scenes.44.data.p.who] 수진 씨 · 가상 인물
-[scenes.44.data.p.note] 거주 2년 이상 · 보유·거주 모두 10년 이하일 때 · 정부안
-[scenes.44.data.p.rows.0.label] 수진 씨 지금 공제율 · 보유 10년·거주 2년
-[scenes.44.data.p.rows.0.parts.0.t] 보유 40%
-[scenes.44.data.p.rows.0.parts.0.sub] 10년 × 4%
-[scenes.44.data.p.rows.0.parts.1.t] +
-[scenes.44.data.p.rows.0.parts.2.t] 거주 8%
-[scenes.44.data.p.rows.0.parts.2.sub] 2년 × 4%
-[scenes.44.data.p.rows.0.ans] 48%
-[scenes.44.data.p.rows.1.label] 낮아지는 폭
-[scenes.44.data.p.rows.1.parts.0.t] 4%p
-[scenes.44.data.p.rows.1.parts.0.sub] 한 해 차이마다
-[scenes.44.data.p.rows.1.parts.1.t] ×
-[scenes.44.data.p.rows.1.parts.2.t] 8년
-[scenes.44.data.p.rows.1.parts.2.sub] 보유 10년 − 거주 2년
-[scenes.44.data.p.rows.1.ans] 32%p
-[scenes.44.data.p.rows.2.label] 2029년 공제율
-[scenes.44.data.p.rows.2.parts.0.t] 48%
-[scenes.44.data.p.rows.2.parts.0.sub] 지금
-[scenes.44.data.p.rows.2.parts.1.t] −
-[scenes.44.data.p.rows.2.parts.2.t] 32%p
-[scenes.44.data.p.rows.2.parts.2.sub] 8년 차이
-[scenes.44.data.p.rows.2.ans] 16%
-[scenes.45.lines.0.text] 아주 비싼 집이라면 하나가 더 걸려요.
-[scenes.45.data.license] Pexels 32986074 무료(PUWOOK Kwak)
-[scenes.45.data.say] 아주 비싼 집이라면
-[scenes.45.data.side] left
-[scenes.45.data.chapter] 질문 ②
-[scenes.46.lines.0.text] 공제율은 그대로여도, 공제로 빼 주는 금액 자체에 한도가 생깁니다.
-[scenes.46.lines.1.text] 정부안대로라면 2029년부터는 아무리 커도 10억까지예요.
-[scenes.46.lines.1.cap] 정부안 소득세법 §95⑥ 신설 · 사람별 연간·물건별 · 공동소유는 지분 비율로 나눔 (상세본 p.60)
-[scenes.46.lines.2.text] 정부 자료에 적힌 이유는 공제 수준을 맞춰 세금을 공평하게 한다는 거예요.
-[scenes.46.lines.2.cap] 상세본 p.60 개정이유 '공제수준 합리화 통한 과세형평 제고'
-[scenes.46.lines.3.text] 정민 씨와 수진 씨는 공제로 빼 주는 돈이 4억이 안 돼서, 이 한도엔 안 걸립니다.
-[scenes.46.lines.3.cap] 정민 씨 공제액 3.84억 · 한도에 안 걸림
-[scenes.46.data.title] 공제 금액 한도(정부안)
-[scenes.46.data.bars.0.0] 2028년
-[scenes.46.data.bars.0.2] 20억
-[scenes.46.data.bars.0.3] accent
-[scenes.46.data.bars.1.0] 2029년부터
-[scenes.46.data.bars.1.2] 10억
-[scenes.46.data.bars.1.3] rise
-[scenes.46.data.bars.2.0] 정민 씨 공제
-[scenes.46.data.bars.2.2] 3.84억
-[scenes.46.data.bars.2.3] fall
-[scenes.46.data.dir] h
-[scenes.46.data.icon] ShieldCheck
-[scenes.46.data.source] 정부안 소득세법 §95⑥ · 상세본 p.60 · 파이어맵 계산
-[scenes.47.lines.0.text] 이번엔 집을 갈아타는 분들 질문이에요.
-[scenes.47.data.n] 질문 ③
-[scenes.47.data.q] 조정지역 일시적 2주택 특례기간 3년 → 2년, 8.3 이전 계약은요?
-[scenes.47.data.from] 네이버 지식iN 질문
-[scenes.48.lines.0.text] 지식iN과 유튜브 댓글에 같은 질문이 있었어요. 새 집을 먼저 샀는데, 헌 집은 언제까지 팔아야 하냐는 거죠.
+[scenes.25.data.icon] Percent
+[scenes.25.data.source] 소득세법 §95② 표2
+[scenes.26.lines.0.text] 올해 판다면 정민 씨는 1,900만원, 수진 씨는 8,100만원을 냅니다.
+[scenes.26.lines.0.cap] 2026년 양도 · 지방세 포함 · 정민 씨 1,901만원 · 수진 씨 8,135만원
+[scenes.26.data.title] 올해(2026년) 판다면
+[scenes.26.data.v1] 1,901만원
+[scenes.26.data.s1] 정민 씨
+[scenes.26.data.c1] fall
+[scenes.26.data.v2] 8,135만원
+[scenes.26.data.s2] 수진 씨
+[scenes.26.data.c2] rise
+[scenes.26.data.icon] Receipt
+[scenes.26.data.source] 소득세법·시행령(법제처 국가법령정보센터) · 파이어맵 계산(지방세 포함·필요경비 0)
+[scenes.27.lines.0.text] 이제 정부안이에요. 내년까지는 지금 공제율 그대로입니다.
+[scenes.27.data.license] Pexels 8471105 무료(Thirdman)
+[scenes.27.data.say] 이제 정부안
+[scenes.27.data.side] left
+[scenes.27.data.chapter] 질문 ②
+[scenes.28.lines.0.text] 2028년엔 살았던 해마다 6%로 늘어납니다.
+[scenes.28.lines.1.text] 대신 갖고 있던 해는 2%로 줄고요.
+[scenes.28.lines.2.text] 정부안대로라면 2029년부터는 갖고 있던 해를 아예 안 칩니다. 살았던 해만 8%씩 쳐요.
+[scenes.28.lines.2.cap] 상세본 p.58 · 2028년 거주 6%(최대 60%)·보유 2%(최대 20%) · 2029년~ 거주 8%(최대 80%)
+[scenes.28.data.title] 정부안 공제율
+[scenes.28.data.cols.0] 2027년까지
+[scenes.28.data.cols.1] 2028년
+[scenes.28.data.cols.2] 2029년부터
+[scenes.28.data.rows.0.0] 살았던 해
+[scenes.28.data.rows.0.1] 4%
+[scenes.28.data.rows.0.2] 6%
+[scenes.28.data.rows.0.3] 8%
+[scenes.28.data.rows.1.0] 갖고 있던 해
+[scenes.28.data.rows.1.1] 4%
+[scenes.28.data.rows.1.2] 2%
+[scenes.28.data.rows.1.3] 없음
+[scenes.28.data.icon] Table
+[scenes.28.data.source] 재정경제부 2026 세법개정안 상세본 p.58
+[scenes.29.lines.0.text] 이름도 바뀌어요. 집에 대해서는 '장기거주 소득공제'라고 부르게 됩니다.
+[scenes.29.lines.0.cap] 상세본 p.57 · 토지와, 주택이 아닌 건물은 장기보유 소득공제
+[scenes.29.data.title] 새 이름
+[scenes.29.data.v] 장기거주 소득공제
+[scenes.29.data.s] 집(주택·조합원입주권) · 2028.1.1 이후 판 집부터
+[scenes.29.data.icon] BadgeCheck
+[scenes.29.data.c] ink
+[scenes.29.data.source] 재정경제부 2026 세법개정안 상세본 p.57
+[scenes.30.lines.0.text] 왜 이렇게 바꿀까요? 정부 자료에 적힌 이유는 한 줄이에요.
+[scenes.30.lines.1.text] 집 양도세 공제를 사는 것 중심으로 차례차례 바꾼다는 겁니다.
+[scenes.30.data.license] Pexels 12079562 무료(FREE VIDEO HAPPY)
+[scenes.30.data.say] 사는 것 중심으로
+[scenes.30.data.side] left
+[scenes.30.data.chapter] 질문 ②
+[scenes.31.lines.0.text] 그래서 정민 씨는 그대로 80%예요. 살았던 해만으로 다 채우니까요.
+[scenes.31.lines.1.text] 수진 씨는 해마다 줄어서, 2029년엔 16%만 남습니다.
+[scenes.31.lines.1.cap] 수진 씨 · 2027년 48% → 2028년 32%(6%×2 + 2%×10) → 2029년 16%(8%×2)
+[scenes.31.data.title] 2029년 공제율
+[scenes.31.data.v1] 80%
+[scenes.31.data.s1] 정민 씨 · 그대로
+[scenes.31.data.c1] fall
+[scenes.31.data.v2] 16%
+[scenes.31.data.s2] 수진 씨 · 해마다 줄어
+[scenes.31.data.c2] rise
+[scenes.31.data.icon] Percent
+[scenes.31.data.source] 재정경제부 2026 세법개정안 상세본 p.58
+[scenes.32.lines.0.text] 같은 집을 판 해만 다르게 놓고 계산하면, 수진 씨 세금은 해마다 3천만원 넘게 차이가 나요.
+[scenes.32.lines.0.cap] 지방세 포함 · 해마다 +3,263만원·+3,379만원 · 정부안
+[scenes.32.data.title] 수진 씨 세금, 판 해별
+[scenes.32.data.bars.0.0] 2027년
+[scenes.32.data.bars.0.2] 8,135만원
+[scenes.32.data.bars.0.3] accent
+[scenes.32.data.bars.1.0] 2028년
+[scenes.32.data.bars.1.2] 1억 1,398만원
+[scenes.32.data.bars.1.3] accent
+[scenes.32.data.bars.2.0] 2029년
+[scenes.32.data.bars.2.2] 1억 4,777만원
+[scenes.32.data.bars.2.3] rise
+[scenes.32.data.dir] v
+[scenes.32.data.icon] TrendingUp
+[scenes.32.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
+[scenes.33.lines.0.text] 집도 값도 그대로인데, 규칙만 바뀐 거죠.
+[scenes.33.data.license] Pexels 6221101 무료(cottonbro studio)
+[scenes.33.data.say] 집도 값도 그대로
+[scenes.33.data.side] left
+[scenes.33.data.chapter] 질문 ②
+[scenes.34.lines.0.text] 아예 안 산 사람만이 아니라, 살았던 기간이 갖고 있던 기간보다 짧은 사람은 다 줄어들어요.
+[scenes.34.data.title] 줄어드는 사람
+[scenes.34.data.v] 살았던 해 < 갖고 있던 해
+[scenes.34.data.s] 아예 안 산 사람만이 아님
+[scenes.34.data.icon] TriangleAlert
+[scenes.34.data.c] rise
+[scenes.34.data.source] 재정경제부 2026 세법개정안 상세본 p.58
+[scenes.35.lines.0.text] 거꾸로 정민 씨는 오히려 세금이 줄어요. 정부안에 공제가 하나 더 있거든요.
+[scenes.35.data.license] Pexels 7578842 무료(Kindel Media)
+[scenes.35.data.say] 정민 씨는 오히려 줄어든다
+[scenes.35.data.side] left
+[scenes.35.data.chapter] 질문 ②
+[scenes.36.lines.0.text] 10년 이상 살았던 집 한 채를 30억 이하에 팔면, 기본공제가 열 배로 늘어납니다.
+[scenes.36.lines.1.text] 지금은 해마다 250만원인데, 2,500만원이 되는 거죠.
+[scenes.36.lines.1.cap] 정부안 소득세법 §103 단서 · 2027.1.1 이후 양도분부터 · 특수관계인 간 양도·비거주자 제외 (상세본 p.68)
+[scenes.36.data.title] 기본공제 열 배
+[scenes.36.data.v] 2,500만원
+[scenes.36.data.s] 지금 250만원 · 10년 이상 산 집 한 채 · 30억 이하
+[scenes.36.data.icon] Coins
+[scenes.36.data.c] fall
+[scenes.36.data.source] 정부안 소득세법 §103 단서 · 상세본 p.68
+[scenes.37.lines.0.text] 정부 자료가 밝힌 이유는, 오래 살아온 집 한 채 주인의 세금 부담을 덜어 준다는 거예요.
+[scenes.37.data.license] Pexels 31251627 무료(PUWOOK Kwak)
+[scenes.37.data.say] 오래 산 집 한 채 주인
+[scenes.37.data.side] left
+[scenes.37.data.chapter] 질문 ②
+[scenes.38.lines.0.text] 그래서 정민 씨 세금은 1,900만원에서 1,240만원으로 내려가요.
+[scenes.38.lines.0.cap] 정민 씨 · 2026년 1,901만원 → 2027~2029년 1,241만원 · 지방세 포함
+[scenes.38.data.title] 정민 씨 세금
+[scenes.38.data.v1] 1,901만원
+[scenes.38.data.s1] 2026년
+[scenes.38.data.c1] ink
+[scenes.38.data.v2] 1,241만원
+[scenes.38.data.s2] 2027~2029년
+[scenes.38.data.c2] fall
+[scenes.38.data.icon] User
+[scenes.38.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
+[scenes.39.lines.0.text] 같은 2029년에 수진 씨 세금은 1억 5천만원에 조금 못 미칩니다.
+[scenes.39.lines.1.text] 두 사람이 열두 배 가까이 벌어지는 건, 이 두 가지가 겹쳐서예요.
+[scenes.39.lines.1.cap] 1억 4,777만원 ÷ 1,241만원 = 11.9배 · 공제율 16% vs 80% · 기본공제 250만 vs 2,500만
+[scenes.39.data.title] 같은 해, 세금은 몇 배?
+[scenes.39.data.sub] 같은 20억 집 · 두 사람
+[scenes.39.data.source] 재정경제부 2026 세법개정안 상세본 p.58·p.68 · 파이어맵 계산(지방세 포함)
+[scenes.39.data.p.seed] T-1-ratio
+[scenes.39.data.p.who] 정민 씨·수진 씨 · 가상 인물
+[scenes.39.data.p.note] 같은 20억 집 · 2029년에 판다면 · 정부안 · 지방세 포함
+[scenes.39.data.p.rows.0.label] 2029년 세금, 두 사람
+[scenes.39.data.p.rows.0.parts.0.t] 1억 4,777만원
+[scenes.39.data.p.rows.0.parts.0.sub] 수진 씨 · 공제율 16% · 기본공제 250만원
+[scenes.39.data.p.rows.0.parts.1.t] ÷
+[scenes.39.data.p.rows.0.parts.2.t] 1,241만원
+[scenes.39.data.p.rows.0.parts.2.sub] 정민 씨 · 공제율 80% · 기본공제 2,500만원
+[scenes.39.data.p.rows.0.ans] 11.9배
+[scenes.40.lines.0.text] 그럼 살았던 해 한 해는 돈으로 얼마일까요?
+[scenes.40.data.license] Pexels 35082942 무료(Nothing Ahead)
+[scenes.40.data.say] 살았던 한 해의 값
+[scenes.40.data.side] left
+[scenes.40.data.chapter] 질문 ②
+[scenes.41.lines.0.text] 수진 씨 집으로 계산하면, 2029년엔 한 해를 더 살았을 때마다 세금이 1,700만원쯤 줄어듭니다.
+[scenes.41.lines.0.cap] 20억·취득 8억·10년 보유 · 한 해에 약 1,690만원 · 파이어맵 계산
+[scenes.41.lines.1.text] 이 값은 집마다 달라요. 번 돈이 클수록 한 해의 값도 커집니다.
+[scenes.41.data.title] 살았던 한 해의 값
+[scenes.41.data.sub] 수진 씨 집 · 2029년
+[scenes.41.data.source] 파이어맵 계산 · 정부안 공제율(상세본 p.58)
+[scenes.41.data.p.seed] T-1-year-b
+[scenes.41.data.p.who] 수진 씨 · 가상 인물
+[scenes.41.data.p.note] 20억·취득 8억·10년 보유 · 2029년 정부안 · 지방세 포함 · 파이어맵 계산
+[scenes.41.data.p.rows.0.label] 수진 씨 · 거주 2년 → 3년
+[scenes.41.data.p.rows.0.parts.0.t] 1억 4,777만원
+[scenes.41.data.p.rows.0.parts.0.sub] 거주 2년
+[scenes.41.data.p.rows.0.parts.1.t] −
+[scenes.41.data.p.rows.0.parts.2.t] 1억 3,088만원
+[scenes.41.data.p.rows.0.parts.2.sub] 거주 3년
+[scenes.41.data.p.rows.0.ans] 약 1,690만원
+[scenes.41.data.p.rows.0.ansSub] 한 해 더 살면 줄어드는 세금
+[scenes.41.data.p.tail.text] 집마다 다름 · 번 돈이 클수록 커짐
+[scenes.42.lines.0.text] 그래서 내 집이라면 확인할 건 두 숫자예요. 갖고 있던 햇수와 실제로 살았던 햇수.
+[scenes.42.data.license] Pexels 7710453 무료(https://kaboompics.com/)
+[scenes.42.data.say] 확인할 건 두 숫자
+[scenes.42.data.side] left
+[scenes.42.data.chapter] 질문 ②
+[scenes.43.lines.0.text] 갖고 있던 햇수는 산 날부터 판 날까지입니다. 이때도 잔금을 치른 날로 세요.
+[scenes.43.lines.0.cap] 소득세법 §95④ · 보유기간 = 취득일부터 양도일까지 · §98 대금 청산일
+[scenes.43.lines.1.text] 살았던 햇수는 주민등록등본에 적힌 전입일부터 전출일까지로 셉니다.
+[scenes.43.lines.1.cap] 시행령 §154⑥ · 주민등록표 등본에 따른 전입일부터 전출일까지
+[scenes.43.data.title] 내 집에서 셀 두 숫자
+[scenes.43.data.rows.0.0] 갖고 있던 햇수
+[scenes.43.data.rows.0.1] 산 날 ~ 판 날(잔금일)
+[scenes.43.data.rows.0.2] accent
+[scenes.43.data.rows.1.0] 살았던 햇수
+[scenes.43.data.rows.1.1] 등본 전입일 ~ 전출일
+[scenes.43.data.rows.1.2] fall
+[scenes.43.data.icon] ClipboardList
+[scenes.43.data.source] 소득세법 §95④·§98 · 시행령 §154⑥(법제처)
+[scenes.44.lines.0.text] 등본 한 통이면 살았던 날짜를 다 볼 수 있어요.
+[scenes.44.lines.1.text] 이 두 숫자만 있으면, 앞에서 본 공제율 표에서 내 칸을 찾을 수 있습니다.
+[scenes.44.data.license] Pexels 7710495 무료(https://kaboompics.com/)
+[scenes.44.data.say] 등본 한 통이면
+[scenes.44.data.side] left
+[scenes.44.data.chapter] 질문 ②
+[scenes.45.lines.0.text] 조심할 것도 있어요. 둘 다 10년을 넘지 않는 경우라면요.
+[scenes.45.lines.1.text] 갖고 있던 해가 살았던 해보다 한 해 많을 때마다, 2029년 공제율은 지금보다 4%포인트씩 낮아집니다.
+[scenes.45.lines.2.text] 수진 씨는 8년 차이라서, 48%가 16%로 낮아졌죠.
+[scenes.45.lines.2.cap] 보유·거주 모두 10년 이하일 때 · 차이 = 4 × (보유 − 거주) · 수진 씨 8년 차이 = 32%p
+[scenes.45.data.title] 햇수 차이 한 해마다 4%p
+[scenes.45.data.sub] 갖고 있던 해 − 살았던 해
+[scenes.45.data.source] 재정경제부 2026 세법개정안 상세본 p.58 · 소득세법 §95②
+[scenes.45.data.p.seed] T-1-gap
+[scenes.45.data.p.who] 수진 씨 · 가상 인물
+[scenes.45.data.p.note] 거주 2년 이상 · 보유·거주 모두 10년 이하일 때 · 정부안
+[scenes.45.data.p.rows.0.label] 수진 씨 지금 공제율 · 보유 10년·거주 2년
+[scenes.45.data.p.rows.0.parts.0.t] 보유 40%
+[scenes.45.data.p.rows.0.parts.0.sub] 10년 × 4%
+[scenes.45.data.p.rows.0.parts.1.t] +
+[scenes.45.data.p.rows.0.parts.2.t] 거주 8%
+[scenes.45.data.p.rows.0.parts.2.sub] 2년 × 4%
+[scenes.45.data.p.rows.0.ans] 48%
+[scenes.45.data.p.rows.1.label] 낮아지는 폭
+[scenes.45.data.p.rows.1.parts.0.t] 4%p
+[scenes.45.data.p.rows.1.parts.0.sub] 한 해 차이마다
+[scenes.45.data.p.rows.1.parts.1.t] ×
+[scenes.45.data.p.rows.1.parts.2.t] 8년
+[scenes.45.data.p.rows.1.parts.2.sub] 보유 10년 − 거주 2년
+[scenes.45.data.p.rows.1.ans] 32%p
+[scenes.45.data.p.rows.2.label] 2029년 공제율
+[scenes.45.data.p.rows.2.parts.0.t] 48%
+[scenes.45.data.p.rows.2.parts.0.sub] 지금
+[scenes.45.data.p.rows.2.parts.1.t] −
+[scenes.45.data.p.rows.2.parts.2.t] 32%p
+[scenes.45.data.p.rows.2.parts.2.sub] 8년 차이
+[scenes.45.data.p.rows.2.ans] 16%
+[scenes.46.lines.0.text] 아주 비싼 집이라면 하나가 더 걸려요.
+[scenes.46.data.license] Pexels 32986074 무료(PUWOOK Kwak)
+[scenes.46.data.say] 아주 비싼 집이라면
+[scenes.46.data.side] left
+[scenes.46.data.chapter] 질문 ②
+[scenes.47.lines.0.text] 공제율은 그대로여도, 공제로 빼 주는 금액 자체에 한도가 생깁니다.
+[scenes.47.lines.1.text] 정부안대로라면 2029년부터는 아무리 커도 10억까지예요.
+[scenes.47.lines.1.cap] 정부안 소득세법 §95⑥ 신설 · 사람별 연간·물건별 · 공동소유는 지분 비율로 나눔 (상세본 p.60)
+[scenes.47.lines.2.text] 정부 자료에 적힌 이유는 공제 수준을 맞춰 세금을 공평하게 한다는 거예요.
+[scenes.47.lines.2.cap] 상세본 p.60 개정이유 '공제수준 합리화 통한 과세형평 제고'
+[scenes.47.lines.3.text] 정민 씨와 수진 씨는 공제로 빼 주는 돈이 4억이 안 돼서, 이 한도엔 안 걸립니다.
+[scenes.47.lines.3.cap] 정민 씨 공제액 3.84억 · 한도에 안 걸림
+[scenes.47.data.title] 공제 금액 한도(정부안)
+[scenes.47.data.bars.0.0] 2028년
+[scenes.47.data.bars.0.2] 20억
+[scenes.47.data.bars.0.3] accent
+[scenes.47.data.bars.1.0] 2029년부터
+[scenes.47.data.bars.1.2] 10억
+[scenes.47.data.bars.1.3] rise
+[scenes.47.data.bars.2.0] 정민 씨 공제
+[scenes.47.data.bars.2.2] 3.84억
+[scenes.47.data.bars.2.3] fall
+[scenes.47.data.dir] h
+[scenes.47.data.icon] ShieldCheck
+[scenes.47.data.source] 정부안 소득세법 §95⑥ · 상세본 p.60 · 파이어맵 계산
+[scenes.48.lines.0.text] 이번엔 집을 갈아타는 분들 질문이에요.
 [scenes.48.data.n] 질문 ③
-[scenes.48.data.q] 일시적 2주택인데 언제까지 팔아야 하나요?
-[scenes.48.data.from] 유튜브 댓글(부동산 세금 영상) · 같은 질문이 지식iN에도
-[scenes.49.lines.0.text] 이건 정부안이 아니라, 이미 바뀐 규칙입니다.
-[scenes.49.lines.1.text] 국회를 거치지 않고 정부가 고치는 시행령이라, 지난달 말에 바로 바뀌었어요.
-[scenes.49.lines.1.cap] 소득세법 시행령 §155①1 · 조정대상지역 종전주택 양도분부터 (법제처 2026-10-17 확인 · 정부 문답 p.55)
-[scenes.49.data.title] 이미 바뀐 규칙
-[scenes.49.data.v] 헌 집 팔 기한 3년 → 2년
-[scenes.49.data.s] 두 집 다 조정대상지역 · 2026.9.30 개정 · 2026.10.1 이후 판 집부터
-[scenes.49.data.icon] Gavel
-[scenes.49.data.c] rise
-[scenes.49.data.source] 소득세법 시행령 §155①1(법제처 2026-10-17 확인) · 정부 문답 p.55
-[scenes.50.lines.0.text] 원래 규칙부터 볼게요.
-[scenes.50.lines.1.text] 집 한 채가 있는 세대가 새 집을 사서 잠깐 두 채가 되면, 헌 집을 집 한 채처럼 봐 줍니다.
-[scenes.50.data.license] Pexels 4553301 무료(cottonbro studio)
-[scenes.50.data.say] 잠깐 두 채가 되면
-[scenes.50.data.side] left
-[scenes.50.data.chapter] 질문 ③
-[scenes.51.lines.0.text] 헌 집을 산 지 1년이 지나서 새 집을 사야 하고요.
-[scenes.51.lines.1.text] 새 집을 산 날부터 3년 안에 헌 집을 팔면 됩니다.
-[scenes.51.lines.1.cap] 시행령 §155① · 신규주택 취득일부터 3년 이내 종전주택 양도 → 1세대1주택으로 봄
-[scenes.51.data.title] 원래 규칙
-[scenes.51.data.rows.0.0] 헌 집 산 지 1년 지나서
-[scenes.51.data.rows.0.1] 새 집 사기
-[scenes.51.data.rows.0.2] accent
-[scenes.51.data.rows.1.0] 새 집 산 날부터 3년 안에
-[scenes.51.data.rows.1.1] 헌 집 팔기
-[scenes.51.data.rows.1.2] fall
-[scenes.51.data.icon] House
-[scenes.51.data.source] 소득세법 시행령 §155①(법제처)
-[scenes.52.lines.0.text] 바뀐 건 기한이에요. 헌 집과 새 집이 둘 다 조정대상지역에 있으면, 3년이 아니라 2년입니다.
-[scenes.52.data.title] 둘 다 조정이면 2년
-[scenes.52.data.icon] MapPin
-[scenes.52.data.source] 소득세법 시행령 §155①1(2026.9.30 개정)
-[scenes.52.data.old] 헌 집
-[scenes.52.data.new] 새 집
-[scenes.52.data.on] 조정
-[scenes.52.data.off] 조정 아님
-[scenes.52.data.res] 2년
-[scenes.52.data.mode] both
-[scenes.53.lines.0.text] 조정대상지역은 정부가 공고로 정하는 지역이에요. 내 동네가 들어가는지는 국토교통부 공고로 확인할 수 있습니다.
-[scenes.53.data.license] Pexels 31251627 무료(PUWOOK Kwak)
-[scenes.53.data.say] 국토교통부 공고로 확인
-[scenes.53.data.side] left
-[scenes.53.data.chapter] 질문 ③
-[scenes.54.lines.0.text] 둘 중 하나라도 조정대상지역이 아니면, 지금처럼 3년이에요.
-[scenes.54.data.title] 하나라도 아니면 3년
-[scenes.54.data.icon] MapPin
-[scenes.54.data.source] 소득세법 시행령 §155①1(2026.9.30 개정)
-[scenes.54.data.old] 헌 집
-[scenes.54.data.new] 새 집
-[scenes.54.data.on] 조정
-[scenes.54.data.off] 조정 아님
-[scenes.54.data.res] 3년
-[scenes.54.data.mode] one
-[scenes.55.lines.0.text] 왜 줄였을까요? 정부 문답 자료에 이유가 적혀 있어요.
-[scenes.55.lines.1.text] 조정지역에서 두 채를 갖게 된 사람을 3년 동안 한 채처럼 봐 주는 건, 혜택이 너무 크다는 겁니다.
-[scenes.55.lines.1.cap] 정부 문답 p.55 '3년간 1주택 특례 적용되어 혜택 과도'
-[scenes.55.data.title] 줄인 이유
-[scenes.55.data.v] 혜택 과도
-[scenes.55.data.s] 조정지역 두 채를 3년 동안 한 채처럼
-[scenes.55.data.icon] Scale
-[scenes.55.data.c] ink
-[scenes.55.data.source] 재정경제부 세법개정안 문답 자료 p.55
-[scenes.56.lines.0.text] 예전 규칙을 그대로 쓰는 사람도 있어요.
-[scenes.56.data.license] Pexels 8478946 무료(ArtHouse Studio)
-[scenes.56.data.say] 예전 규칙 그대로인 사람
-[scenes.56.data.side] left
-[scenes.56.data.chapter] 질문 ③
-[scenes.57.lines.0.text] 정부가 세법 개정안을 발표한 올해 8월 3일까지, 새 집을 샀거나 계약하고 계약금을 냈다면요.
-[scenes.57.lines.1.text] 그때는 예전대로 3년입니다.
-[scenes.57.lines.1.cap] 경과조치 · 2026.8.3 이전 주택 취득 또는 매매계약 체결·계약금 지급 → 종전 규정 3년 (상세본 p.73 · 문답 p.55)
-[scenes.57.data.title] 예전대로 3년
-[scenes.57.data.v] 8월 3일까지
-[scenes.57.data.s] 새 집 취득 또는 계약금 지급
-[scenes.57.data.icon] CalendarCheck
-[scenes.57.data.c] fall
-[scenes.57.data.source] 재정경제부 2026 세법개정안 상세본 p.73 · 문답 p.55
-[scenes.58.lines.0.text] 댓글을 단 분은 작년 12월부터 두 채라고 했으니, 이 경우엔 3년이 적용돼요.
-[scenes.58.data.license] Pexels 6186015 무료(K)
-[scenes.58.data.say] 댓글 단 분은 예전 규칙
-[scenes.58.data.side] left
-[scenes.58.data.chapter] 질문 ③
-[scenes.59.lines.0.text] 서울은 작년 10월에 25개 구 전체가 조정대상지역으로 지정됐어요.
-[scenes.59.lines.0.cap] 2025.10.15 대책 · 경기 12곳도 · 지금 지정 여부는 국토교통부 공고로 확인
-[scenes.59.lines.1.text] 서울 안에서 갈아타는 분이라면 짧아진 기한부터 봐야 한다는 뜻이죠.
-[scenes.59.data.title] 서울은 전체
-[scenes.59.data.v] 25개 구
-[scenes.59.data.s] 서울 전체 조정대상지역 · 2025.10.16부터
-[scenes.59.data.icon] Map
-[scenes.59.data.c] rise
-[scenes.59.data.source] 2025.10.15 대책 · 국토교통부 공고
-[scenes.60.lines.0.text] 기한을 넘기면 얼마나 달라질까요? 수진 씨 집으로 계산해 봤어요.
-[scenes.60.data.license] Pexels 14059238 무료(utopia 36)
-[scenes.60.data.say] 기한을 넘기면
-[scenes.60.data.side] left
-[scenes.60.data.chapter] 질문 ③
-[scenes.61.lines.0.text] 수진 씨가 조정대상지역에서 새 집을 사고, 헌 집을 기한 안에 팔았다고 해 볼게요.
-[scenes.61.lines.1.text] 2028년에 팔았다면 집 한 채로 계산합니다. 정부안 공제율로 하면 세금은 1억 1천만원을 조금 넘어요.
-[scenes.61.lines.1.cap] 정부안 공제율 · 지방세 포함 · 파이어맵 계산
-[scenes.61.data.title] 기한 안에 팔면
-[scenes.61.data.v] 1억 1,398만원
-[scenes.61.data.s] 수진 씨 · 2028년 · 집 한 채로 계산
-[scenes.61.data.icon] House
-[scenes.61.data.c] accent
-[scenes.61.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
-[scenes.62.lines.0.text] 그런데 2년 기한을 넘겨, 새 집을 산 지 3년째에 팔면요. 두 채를 가진 사람의 세금이 됩니다.
-[scenes.62.data.license] Pexels 8471105 무료(Thirdman)
-[scenes.62.data.say] 기한을 넘겨 팔면
-[scenes.62.data.side] left
-[scenes.62.data.chapter] 질문 ③
-[scenes.63.lines.0.text] 12억까지 세금이 없던 혜택도, 장기보유특별공제도 빠져요.
-[scenes.63.lines.1.text] 세율도 두 채 가진 사람에게 무겁게 매기는 중과세율이에요. 기본 세율에 20%를 더 얹습니다.
-[scenes.63.lines.1.cap] 소득세법 §104⑦1 · 조정대상지역 1세대 2주택 = 기본세율 + 20%p · §95② 중과 대상 주택은 장특 제외
-[scenes.63.data.title] 두 채 세금이 되면
-[scenes.63.data.rows.0.0] 12억까지 비과세
-[scenes.63.data.rows.0.1] 빠짐
-[scenes.63.data.rows.0.2] rise
-[scenes.63.data.rows.1.0] 장기보유특별공제
-[scenes.63.data.rows.1.1] 빠짐
-[scenes.63.data.rows.1.2] rise
-[scenes.63.data.rows.2.0] 세율
-[scenes.63.data.rows.2.1] 기본 세율 + 20%p
-[scenes.63.data.rows.2.2] rise
-[scenes.63.data.icon] TriangleAlert
-[scenes.63.data.source] 소득세법 §104⑦1·§95②(법제처)
-[scenes.64.lines.0.text] 그러면 세금이 7억 8천만원쯤 나와요. 같은 해에 집 한 채로 팔았을 때의 5배가 넘습니다.
-[scenes.64.lines.0.cap] 2029년 2주택 중과 7억 8,368만원 vs 1주택 1억 4,777만원 = 5.3배 · 지방세 포함 · 파이어맵 계산
-[scenes.64.data.title] 수진 씨 20억 집
-[scenes.64.data.bars.0.0] 기한 안 · 2028년
-[scenes.64.data.bars.0.2] 1억 1,398만원
-[scenes.64.data.bars.0.3] fall
-[scenes.64.data.bars.1.0] 한 채 · 2029년
-[scenes.64.data.bars.1.2] 1억 4,777만원
-[scenes.64.data.bars.1.3] accent
-[scenes.64.data.bars.2.0] 기한 넘김 · 2029년
-[scenes.64.data.bars.2.2] 7억 8,368만원
-[scenes.64.data.bars.2.3] rise
-[scenes.64.data.dir] h
-[scenes.64.data.icon] TrendingUp
-[scenes.64.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
-[scenes.65.lines.0.text] 정부 문답 자료에도 같은 꼴의 사례가 있어요.
-[scenes.65.lines.1.text] 새 집을 산 지 3년 만에 헌 집을 팔면, 그 중과세율을 매긴다고 적혀 있습니다.
-[scenes.65.data.license] Pexels 7710453 무료(https://kaboompics.com/)
-[scenes.65.data.say] 정부 문답 자료에도
-[scenes.65.data.side] left
-[scenes.65.data.chapter] 질문 ③
-[scenes.66.lines.0.text] 그래서 갈아타는 중이라면 날짜 세 개를 적어 두세요.
-[scenes.66.lines.1.text] 헌 집을 산 날, 새 집을 산 날, 그리고 새 집을 산 날부터 2년이 되는 날이에요.
-[scenes.66.data.title] 날짜 세 개 적어 두기
-[scenes.66.data.icon] NotebookPen
-[scenes.66.data.source] 소득세법 시행령 §155①1 · 소득세법 §98(법제처)
-[scenes.66.data.items.0] 헌 집 산 날
-[scenes.66.data.items.1] 새 집 산 날
-[scenes.66.data.items.2] 새 집 산 날 + 2년
-[scenes.67.lines.0.text] 산 날도 판 날처럼, 보통 잔금을 치른 날로 봅니다.
-[scenes.67.data.license] Pexels 7710495 무료(https://kaboompics.com/)
-[scenes.67.data.say] 잔금 치른 날 기준
-[scenes.67.data.side] left
-[scenes.67.data.chapter] 질문 ③
-[scenes.68.lines.0.text] 조심할 건 하나예요. 조정대상지역인지는 새 집을 산 날을 기준으로 봅니다.
-[scenes.68.lines.1.text] 다만 조정대상지역 공고가 나기 전에 샀거나 계약금을 냈다면, 짧아진 2년 기한을 적용하지 않아요.
-[scenes.68.lines.1.cap] 시행령 §155①1 · 신규 주택의 취득일 현재 기준 · 공고일 이전 취득·계약금 지급은 제외
-[scenes.68.data.title] 조정인지 보는 날
-[scenes.68.data.v] 새 집 산 날
-[scenes.68.data.s] 공고 전에 샀거나 계약금 냈으면 2년 아님
-[scenes.68.data.icon] CalendarDays
-[scenes.68.data.c] accent
-[scenes.68.data.source] 소득세법 시행령 §155①1(법제처)
-[scenes.69.lines.0.text] 부부가 함께 가진 집 한 채를 12억 넘게 팔면, 장기보유특별공제를 받을 수 있냐는 질문이었어요.
-[scenes.69.data.n] 질문 ④
-[scenes.69.data.q] 부부명의 1가구 1주택 12억 넘게 양도 시 장기보유특별공제 가능한가요?
-[scenes.69.data.from] 네이버 지식iN 질문
-[scenes.70.lines.0.text] 받습니다. 공제율도 한 사람 명의일 때와 똑같아요.
-[scenes.70.lines.1.text] 공제율은 갖고 있던 햇수와 살았던 햇수로만 정해지니까요.
-[scenes.70.data.title] 받는다
-[scenes.70.data.v] 공제율 같음
-[scenes.70.data.s] 갖고 있던 햇수와 살았던 햇수로만 정해짐
-[scenes.70.data.icon] BadgeCheck
-[scenes.70.data.c] fall
-[scenes.70.data.source] 소득세법 §95② 표2(법제처)
-[scenes.71.lines.0.text] 다른 건, 세금을 사람마다 따로 계산한다는 점이에요.
-[scenes.71.lines.1.text] 반씩 가졌다면, 번 돈도 반씩 나눠서 계산합니다.
-[scenes.71.data.license] Pexels 34740733 무료(Dishant Babariya)
-[scenes.71.data.say] 세금은 사람마다 따로
-[scenes.71.data.side] left
-[scenes.71.data.chapter] 질문 ④
-[scenes.72.lines.0.text] 여기서 차이가 생겨요. 양도세 세율은 번 돈이 클수록 높아지는 계단이거든요.
-[scenes.72.lines.0.cap] 소득세법 §55① · 기본세율 6%~45% 8단계
-[scenes.72.lines.1.text] 둘로 나누면 각자 낮은 계단에 머물러서, 둘이 낸 세금을 합쳐도 줄어듭니다.
-[scenes.72.lines.2.text] 기본공제도 사람마다 따로 받고요.
-[scenes.72.data.title] 세율은 계단
-[scenes.72.data.icon] ChartNoAxesColumnIncreasing
-[scenes.72.data.source] 소득세법 §55①(법제처)
-[scenes.72.data.low] 6%
-[scenes.72.data.high] 45%
-[scenes.72.data.one] 한 사람 몫
-[scenes.72.data.half] 반씩 나눈 몫
-[scenes.73.lines.0.text] 정부안에선 하나가 더 있어요.
-[scenes.73.data.license] Pexels 6602933 무료(Pavel Danilyuk)
-[scenes.73.data.say] 정부안에선 하나 더
-[scenes.73.data.side] left
-[scenes.73.data.chapter] 질문 ④
-[scenes.74.lines.0.text] 10년 넘게 살았던 부부 공동명의 집이면, 늘어난 기본공제 2,500만원을 두 사람이 각자 받습니다.
-[scenes.74.lines.0.cap] 정부 문답 p.49 ➋ '부부공동명의주택의 경우에는 각각 2,500만원 공제'
-[scenes.74.lines.1.text] 왜 부부만 각자 주는지는, 정부 자료에 이유가 따로 적혀 있지 않아요.
-[scenes.74.data.title] 부부는 각자
-[scenes.74.data.v] 2,500만원씩
-[scenes.74.data.s] 10년 넘게 산 부부 공동명의 · 이유는 자료에 없음
-[scenes.74.data.icon] Users
-[scenes.74.data.c] fall
-[scenes.74.data.source] 재정경제부 세법개정안 문답 자료 p.49
-[scenes.75.lines.0.text] 계산해 볼게요. 수진 씨 집이 처음부터 반반 공동명의였다면요.
-[scenes.75.data.license] Pexels 36820284 무료(Kartik Malviya)
-[scenes.75.data.say] 처음부터 반반이었다면
-[scenes.75.data.side] left
-[scenes.75.data.chapter] 질문 ④
-[scenes.76.lines.0.text] 2029년에 팔면, 둘이 낸 세금을 합쳐 1억 2천만원을 조금 넘습니다.
-[scenes.76.lines.1.text] 수진 씨는 10년을 살지 않았으니, 늘어난 기본공제는 못 받아요.
-[scenes.76.lines.2.text] 그래도 세율 계단 덕분에, 한 사람 명의일 때보다 세금이 6분의 1쯤 줄어듭니다.
-[scenes.76.lines.2.cap] −2,519만원, 17% · 지방세 포함 · 파이어맵 계산
-[scenes.76.data.title] 수진 씨 집 · 2029년
-[scenes.76.data.v1] 1억 4,777만원
-[scenes.76.data.s1] 한 사람 명의
-[scenes.76.data.c1] rise
-[scenes.76.data.v2] 1억 2,258만원
-[scenes.76.data.s2] 반반 공동명의 · 둘 합
-[scenes.76.data.c2] fall
-[scenes.76.data.icon] Users
-[scenes.76.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
-[scenes.77.lines.0.text] 정민 씨 집이었다면, 1,240만원이 480만원으로 줄고요.
-[scenes.77.lines.0.cap] 2029년 · 지방세 포함 · 파이어맵 계산
-[scenes.77.data.title] 정민 씨 집이었다면
-[scenes.77.data.v1] 1,241만원
+[scenes.48.data.q] 조정지역 일시적 2주택 특례기간 3년 → 2년, 8.3 이전 계약은요?
+[scenes.48.data.from] 네이버 지식iN 질문
+[scenes.49.lines.0.text] 지식iN과 유튜브 댓글에 같은 질문이 있었어요. 새 집을 먼저 샀는데, 헌 집은 언제까지 팔아야 하냐는 거죠.
+[scenes.49.data.n] 질문 ③
+[scenes.49.data.q] 일시적 2주택인데 언제까지 팔아야 하나요?
+[scenes.49.data.from] 유튜브 댓글(부동산 세금 영상) · 같은 질문이 지식iN에도
+[scenes.50.lines.0.text] 이건 정부안이 아니라, 이미 바뀐 규칙입니다.
+[scenes.50.lines.1.text] 국회를 거치지 않고 정부가 고치는 시행령이라, 지난달 말에 바로 바뀌었어요.
+[scenes.50.lines.1.cap] 소득세법 시행령 §155①1 · 조정대상지역 종전주택 양도분부터 (법제처 2026-10-17 확인 · 정부 문답 p.55)
+[scenes.50.data.title] 이미 바뀐 규칙
+[scenes.50.data.v] 헌 집 팔 기한 3년 → 2년
+[scenes.50.data.s] 두 집 다 조정대상지역 · 2026.9.30 개정 · 2026.10.1 이후 판 집부터
+[scenes.50.data.icon] Gavel
+[scenes.50.data.c] rise
+[scenes.50.data.source] 소득세법 시행령 §155①1(법제처 2026-10-17 확인) · 정부 문답 p.55
+[scenes.51.lines.0.text] 원래 규칙부터 볼게요.
+[scenes.51.lines.1.text] 집 한 채가 있는 세대가 새 집을 사서 잠깐 두 채가 되면, 헌 집을 집 한 채처럼 봐 줍니다.
+[scenes.51.data.license] Pexels 4553301 무료(cottonbro studio)
+[scenes.51.data.say] 잠깐 두 채가 되면
+[scenes.51.data.side] left
+[scenes.51.data.chapter] 질문 ③
+[scenes.52.lines.0.text] 헌 집을 산 지 1년이 지나서 새 집을 사야 하고요.
+[scenes.52.lines.1.text] 새 집을 산 날부터 3년 안에 헌 집을 팔면 됩니다.
+[scenes.52.lines.1.cap] 시행령 §155① · 신규주택 취득일부터 3년 이내 종전주택 양도 → 1세대1주택으로 봄
+[scenes.52.data.title] 원래 규칙
+[scenes.52.data.rows.0.0] 헌 집 산 지 1년 지나서
+[scenes.52.data.rows.0.1] 새 집 사기
+[scenes.52.data.rows.0.2] accent
+[scenes.52.data.rows.1.0] 새 집 산 날부터 3년 안에
+[scenes.52.data.rows.1.1] 헌 집 팔기
+[scenes.52.data.rows.1.2] fall
+[scenes.52.data.icon] House
+[scenes.52.data.source] 소득세법 시행령 §155①(법제처)
+[scenes.53.lines.0.text] 바뀐 건 기한이에요. 헌 집과 새 집이 둘 다 조정대상지역에 있으면, 3년이 아니라 2년입니다.
+[scenes.53.data.title] 둘 다 조정이면 2년
+[scenes.53.data.icon] MapPin
+[scenes.53.data.source] 소득세법 시행령 §155①1(2026.9.30 개정)
+[scenes.53.data.old] 헌 집
+[scenes.53.data.new] 새 집
+[scenes.53.data.on] 조정
+[scenes.53.data.off] 조정 아님
+[scenes.53.data.res] 2년
+[scenes.53.data.mode] both
+[scenes.54.lines.0.text] 조정대상지역은 정부가 공고로 정하는 지역이에요. 내 동네가 들어가는지는 국토교통부 공고로 확인할 수 있습니다.
+[scenes.54.data.license] Pexels 31251627 무료(PUWOOK Kwak)
+[scenes.54.data.say] 국토교통부 공고로 확인
+[scenes.54.data.side] left
+[scenes.54.data.chapter] 질문 ③
+[scenes.55.lines.0.text] 둘 중 하나라도 조정대상지역이 아니면, 지금처럼 3년이에요.
+[scenes.55.data.title] 하나라도 아니면 3년
+[scenes.55.data.icon] MapPin
+[scenes.55.data.source] 소득세법 시행령 §155①1(2026.9.30 개정)
+[scenes.55.data.old] 헌 집
+[scenes.55.data.new] 새 집
+[scenes.55.data.on] 조정
+[scenes.55.data.off] 조정 아님
+[scenes.55.data.res] 3년
+[scenes.55.data.mode] one
+[scenes.56.lines.0.text] 왜 줄였을까요? 정부 문답 자료에 이유가 적혀 있어요.
+[scenes.56.lines.1.text] 조정지역에서 두 채를 갖게 된 사람을 3년 동안 한 채처럼 봐 주는 건, 혜택이 너무 크다는 겁니다.
+[scenes.56.lines.1.cap] 정부 문답 p.55 '3년간 1주택 특례 적용되어 혜택 과도'
+[scenes.56.data.title] 줄인 이유
+[scenes.56.data.v] 혜택 과도
+[scenes.56.data.s] 조정지역 두 채를 3년 동안 한 채처럼
+[scenes.56.data.icon] Scale
+[scenes.56.data.c] ink
+[scenes.56.data.source] 재정경제부 세법개정안 문답 자료 p.55
+[scenes.57.lines.0.text] 예전 규칙을 그대로 쓰는 사람도 있어요.
+[scenes.57.data.license] Pexels 8478946 무료(ArtHouse Studio)
+[scenes.57.data.say] 예전 규칙 그대로인 사람
+[scenes.57.data.side] left
+[scenes.57.data.chapter] 질문 ③
+[scenes.58.lines.0.text] 정부가 세법 개정안을 발표한 올해 8월 3일까지, 새 집을 샀거나 계약하고 계약금을 냈다면요.
+[scenes.58.lines.1.text] 그때는 예전대로 3년입니다.
+[scenes.58.lines.1.cap] 경과조치 · 2026.8.3 이전 주택 취득 또는 매매계약 체결·계약금 지급 → 종전 규정 3년 (상세본 p.73 · 문답 p.55)
+[scenes.58.data.title] 예전대로 3년
+[scenes.58.data.v] 8월 3일까지
+[scenes.58.data.s] 새 집 취득 또는 계약금 지급
+[scenes.58.data.icon] CalendarCheck
+[scenes.58.data.c] fall
+[scenes.58.data.source] 재정경제부 2026 세법개정안 상세본 p.73 · 문답 p.55
+[scenes.59.lines.0.text] 댓글을 단 분은 작년 12월부터 두 채라고 했으니, 이 경우엔 3년이 적용돼요.
+[scenes.59.data.license] Pexels 6186015 무료(K)
+[scenes.59.data.say] 댓글 단 분은 예전 규칙
+[scenes.59.data.side] left
+[scenes.59.data.chapter] 질문 ③
+[scenes.60.lines.0.text] 서울은 작년 10월에 25개 구 전체가 조정대상지역으로 지정됐어요.
+[scenes.60.lines.0.cap] 2025.10.15 대책 · 경기 12곳도 · 지금 지정 여부는 국토교통부 공고로 확인
+[scenes.60.lines.1.text] 서울 안에서 갈아타는 분이라면 짧아진 기한부터 봐야 한다는 뜻이죠.
+[scenes.60.data.title] 서울은 전체
+[scenes.60.data.v] 25개 구
+[scenes.60.data.s] 서울 전체 조정대상지역 · 2025.10.16부터
+[scenes.60.data.icon] Map
+[scenes.60.data.c] rise
+[scenes.60.data.source] 2025.10.15 대책 · 국토교통부 공고
+[scenes.61.lines.0.text] 기한을 넘기면 얼마나 달라질까요? 수진 씨 집으로 계산해 봤어요.
+[scenes.61.data.license] Pexels 14059238 무료(utopia 36)
+[scenes.61.data.say] 기한을 넘기면
+[scenes.61.data.side] left
+[scenes.61.data.chapter] 질문 ③
+[scenes.62.lines.0.text] 수진 씨가 조정대상지역에서 새 집을 사고, 헌 집을 기한 안에 팔았다고 해 볼게요.
+[scenes.62.lines.1.text] 2028년에 팔았다면 집 한 채로 계산합니다. 정부안 공제율로 하면 세금은 1억 1천만원을 조금 넘어요.
+[scenes.62.lines.1.cap] 정부안 공제율 · 지방세 포함 · 파이어맵 계산
+[scenes.62.data.title] 기한 안에 팔면
+[scenes.62.data.v] 1억 1,398만원
+[scenes.62.data.s] 수진 씨 · 2028년 · 집 한 채로 계산
+[scenes.62.data.icon] House
+[scenes.62.data.c] accent
+[scenes.62.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
+[scenes.63.lines.0.text] 그런데 2년 기한을 넘겨, 새 집을 산 지 3년째에 팔면요. 두 채를 가진 사람의 세금이 됩니다.
+[scenes.63.data.license] Pexels 8471105 무료(Thirdman)
+[scenes.63.data.say] 기한을 넘겨 팔면
+[scenes.63.data.side] left
+[scenes.63.data.chapter] 질문 ③
+[scenes.64.lines.0.text] 12억까지 세금이 없던 혜택도, 장기보유특별공제도 빠져요.
+[scenes.64.lines.1.text] 세율도 두 채 가진 사람에게 무겁게 매기는 중과세율이에요. 기본 세율에 20%를 더 얹습니다.
+[scenes.64.lines.1.cap] 소득세법 §104⑦1 · 조정대상지역 1세대 2주택 = 기본세율 + 20%p · §95② 중과 대상 주택은 장특 제외
+[scenes.64.data.title] 두 채 세금이 되면
+[scenes.64.data.rows.0.0] 12억까지 비과세
+[scenes.64.data.rows.0.1] 빠짐
+[scenes.64.data.rows.0.2] rise
+[scenes.64.data.rows.1.0] 장기보유특별공제
+[scenes.64.data.rows.1.1] 빠짐
+[scenes.64.data.rows.1.2] rise
+[scenes.64.data.rows.2.0] 세율
+[scenes.64.data.rows.2.1] 기본 세율 + 20%p
+[scenes.64.data.rows.2.2] rise
+[scenes.64.data.icon] TriangleAlert
+[scenes.64.data.source] 소득세법 §104⑦1·§95②(법제처)
+[scenes.65.lines.0.text] 그러면 세금이 7억 8천만원쯤 나와요. 같은 해에 집 한 채로 팔았을 때의 5배가 넘습니다.
+[scenes.65.lines.0.cap] 2029년 2주택 중과 7억 8,368만원 vs 1주택 1억 4,777만원 = 5.3배 · 지방세 포함 · 파이어맵 계산
+[scenes.65.data.title] 수진 씨 20억 집
+[scenes.65.data.bars.0.0] 기한 안 · 2028년
+[scenes.65.data.bars.0.2] 1억 1,398만원
+[scenes.65.data.bars.0.3] fall
+[scenes.65.data.bars.1.0] 한 채 · 2029년
+[scenes.65.data.bars.1.2] 1억 4,777만원
+[scenes.65.data.bars.1.3] accent
+[scenes.65.data.bars.2.0] 기한 넘김 · 2029년
+[scenes.65.data.bars.2.2] 7억 8,368만원
+[scenes.65.data.bars.2.3] rise
+[scenes.65.data.dir] h
+[scenes.65.data.icon] TrendingUp
+[scenes.65.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
+[scenes.66.lines.0.text] 정부 문답 자료에도 같은 꼴의 사례가 있어요.
+[scenes.66.lines.1.text] 새 집을 산 지 3년 만에 헌 집을 팔면, 그 중과세율을 매긴다고 적혀 있습니다.
+[scenes.66.data.license] Pexels 7710453 무료(https://kaboompics.com/)
+[scenes.66.data.say] 정부 문답 자료에도
+[scenes.66.data.side] left
+[scenes.66.data.chapter] 질문 ③
+[scenes.67.lines.0.text] 그래서 갈아타는 중이라면 날짜 세 개를 적어 두세요.
+[scenes.67.lines.1.text] 헌 집을 산 날, 새 집을 산 날, 그리고 새 집을 산 날부터 2년이 되는 날이에요.
+[scenes.67.data.title] 날짜 세 개 적어 두기
+[scenes.67.data.icon] NotebookPen
+[scenes.67.data.source] 소득세법 시행령 §155①1 · 소득세법 §98(법제처)
+[scenes.67.data.items.0] 헌 집 산 날
+[scenes.67.data.items.1] 새 집 산 날
+[scenes.67.data.items.2] 새 집 산 날 + 2년
+[scenes.68.lines.0.text] 산 날도 판 날처럼, 보통 잔금을 치른 날로 봅니다.
+[scenes.68.data.license] Pexels 7710495 무료(https://kaboompics.com/)
+[scenes.68.data.say] 잔금 치른 날 기준
+[scenes.68.data.side] left
+[scenes.68.data.chapter] 질문 ③
+[scenes.69.lines.0.text] 조심할 건 하나예요. 조정대상지역인지는 새 집을 산 날을 기준으로 봅니다.
+[scenes.69.lines.1.text] 다만 조정대상지역 공고가 나기 전에 샀거나 계약금을 냈다면, 짧아진 2년 기한을 적용하지 않아요.
+[scenes.69.lines.1.cap] 시행령 §155①1 · 신규 주택의 취득일 현재 기준 · 공고일 이전 취득·계약금 지급은 제외
+[scenes.69.data.title] 조정인지 보는 날
+[scenes.69.data.v] 새 집 산 날
+[scenes.69.data.s] 공고 전에 샀거나 계약금 냈으면 2년 아님
+[scenes.69.data.icon] CalendarDays
+[scenes.69.data.c] accent
+[scenes.69.data.source] 소득세법 시행령 §155①1(법제처)
+[scenes.70.lines.0.text] 부부가 함께 가진 집 한 채를 12억 넘게 팔면, 장기보유특별공제를 받을 수 있냐는 질문이었어요.
+[scenes.70.data.n] 질문 ④
+[scenes.70.data.q] 부부명의 1가구 1주택 12억 넘게 양도 시 장기보유특별공제 가능한가요?
+[scenes.70.data.from] 네이버 지식iN 질문
+[scenes.71.lines.0.text] 받습니다. 공제율도 한 사람 명의일 때와 똑같아요.
+[scenes.71.lines.1.text] 공제율은 갖고 있던 햇수와 살았던 햇수로만 정해지니까요.
+[scenes.71.data.title] 받는다
+[scenes.71.data.v] 공제율 같음
+[scenes.71.data.s] 갖고 있던 햇수와 살았던 햇수로만 정해짐
+[scenes.71.data.icon] BadgeCheck
+[scenes.71.data.c] fall
+[scenes.71.data.source] 소득세법 §95② 표2(법제처)
+[scenes.72.lines.0.text] 다른 건, 세금을 사람마다 따로 계산한다는 점이에요.
+[scenes.72.lines.1.text] 반씩 가졌다면, 번 돈도 반씩 나눠서 계산합니다.
+[scenes.72.data.license] Pexels 34740733 무료(Dishant Babariya)
+[scenes.72.data.say] 세금은 사람마다 따로
+[scenes.72.data.side] left
+[scenes.72.data.chapter] 질문 ④
+[scenes.73.lines.0.text] 여기서 차이가 생겨요. 양도세 세율은 번 돈이 클수록 높아지는 계단이거든요.
+[scenes.73.lines.0.cap] 소득세법 §55① · 기본세율 6%~45% 8단계
+[scenes.73.lines.1.text] 둘로 나누면 각자 낮은 계단에 머물러서, 둘이 낸 세금을 합쳐도 줄어듭니다.
+[scenes.73.lines.2.text] 기본공제도 사람마다 따로 받고요.
+[scenes.73.data.title] 세율은 계단
+[scenes.73.data.icon] ChartNoAxesColumnIncreasing
+[scenes.73.data.source] 소득세법 §55①(법제처)
+[scenes.73.data.low] 6%
+[scenes.73.data.high] 45%
+[scenes.73.data.one] 한 사람 몫
+[scenes.73.data.half] 반씩 나눈 몫
+[scenes.74.lines.0.text] 정부안에선 하나가 더 있어요.
+[scenes.74.data.license] Pexels 6602933 무료(Pavel Danilyuk)
+[scenes.74.data.say] 정부안에선 하나 더
+[scenes.74.data.side] left
+[scenes.74.data.chapter] 질문 ④
+[scenes.75.lines.0.text] 10년 넘게 살았던 부부 공동명의 집이면, 늘어난 기본공제 2,500만원을 두 사람이 각자 받습니다.
+[scenes.75.lines.0.cap] 정부 문답 p.49 ➋ '부부공동명의주택의 경우에는 각각 2,500만원 공제'
+[scenes.75.lines.1.text] 왜 부부만 각자 주는지는, 정부 자료에 이유가 따로 적혀 있지 않아요.
+[scenes.75.data.title] 부부는 각자
+[scenes.75.data.v] 2,500만원씩
+[scenes.75.data.s] 10년 넘게 산 부부 공동명의 · 이유는 자료에 없음
+[scenes.75.data.icon] Users
+[scenes.75.data.c] fall
+[scenes.75.data.source] 재정경제부 세법개정안 문답 자료 p.49
+[scenes.76.lines.0.text] 계산해 볼게요. 수진 씨 집이 처음부터 반반 공동명의였다면요.
+[scenes.76.data.license] Pexels 36820284 무료(Kartik Malviya)
+[scenes.76.data.say] 처음부터 반반이었다면
+[scenes.76.data.side] left
+[scenes.76.data.chapter] 질문 ④
+[scenes.77.lines.0.text] 2029년에 팔면, 둘이 낸 세금을 합쳐 1억 2천만원을 조금 넘습니다.
+[scenes.77.lines.1.text] 수진 씨는 10년을 살지 않았으니, 늘어난 기본공제는 못 받아요.
+[scenes.77.lines.2.text] 그래도 세율 계단 덕분에, 한 사람 명의일 때보다 세금이 6분의 1쯤 줄어듭니다.
+[scenes.77.lines.2.cap] −2,519만원, 17% · 지방세 포함 · 파이어맵 계산
+[scenes.77.data.title] 수진 씨 집 · 2029년
+[scenes.77.data.v1] 1억 4,777만원
 [scenes.77.data.s1] 한 사람 명의
-[scenes.77.data.c1] ink
-[scenes.77.data.v2] 482만원
+[scenes.77.data.c1] rise
+[scenes.77.data.v2] 1억 2,258만원
 [scenes.77.data.s2] 반반 공동명의 · 둘 합
 [scenes.77.data.c2] fall
-[scenes.77.data.icon] User
+[scenes.77.data.icon] Users
 [scenes.77.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
-[scenes.78.lines.0.text] 공동명의라면, 신고도 두 사람이 각자 합니다.
-[scenes.78.lines.1.text] 조심할 건 이거예요. 이 계산은 처음부터 공동명의였던 집 얘기예요.
-[scenes.78.data.license] Pexels 8478946 무료(ArtHouse Studio)
-[scenes.78.data.say] 신고도 두 사람이 각자
-[scenes.78.data.side] left
-[scenes.78.data.chapter] 질문 ④
-[scenes.79.lines.0.text] 팔기 전에 명의를 나누려고 배우자에게 지분을 넘기면, 취득세 같은 다른 세금이 따로 붙습니다.
-[scenes.79.lines.1.text] 그 계산은 이 영상에서 하지 않았어요.
-[scenes.79.data.title] 팔기 전 명의 나누기
-[scenes.79.data.v] 다른 세금
-[scenes.79.data.s] 배우자에게 지분 넘기면 취득세 등 · 이 영상 계산 밖
-[scenes.79.data.icon] TriangleAlert
-[scenes.79.data.c] rise
-[scenes.79.data.source] 파이어맵(이 영상에서 계산하지 않음)
-[scenes.80.lines.0.text] 살고 싶어도 못 산 경우는 어떨까요?
-[scenes.80.lines.1.text] 유튜브 댓글에, 재건축하면 양도세가 더 나오는 거냐는 질문이 있었어요.
-[scenes.80.lines.2.text] 공사하는 동안엔 거기서 살 수가 없으니까요.
-[scenes.80.data.n] 질문 ⑤
-[scenes.80.data.q] 재건축 재개발 사업할 때 양도세 더 나온다는 이야기인가?
-[scenes.80.data.from] 유튜브 댓글(부동산 세금 영상)
-[scenes.81.lines.0.text] 정부안엔 이런 경우를 위한 규칙이 따로 있습니다. 2028년부터예요.
-[scenes.81.lines.1.text] 재개발이나 재건축으로 새로 지은 집은, 공사 기간의 절반을 살았던 기간으로 쳐 줘요.
-[scenes.81.data.title] 공사 기간 절반 인정
-[scenes.81.data.icon] Construction
-[scenes.81.data.source] 정부안 소득세법 §95⑨ · 상세본 p.89 · 문답 p.61
-[scenes.81.data.steps.0] 관리처분계획 인가
-[scenes.81.data.steps.1] 공사 기간
-[scenes.81.data.steps.2] 새 집 입주
-[scenes.81.data.half] 공사 기간의 절반 = 살았던 기간
-[scenes.81.data.when] 2028년부터
-[scenes.82.lines.0.text] 조건이 있어요. 철거와 새 집 배정 계획을 구청에서 인가받은 날, 관리처분계획 인가일이라고 하는데요.
-[scenes.82.data.license] Pexels 14058352 무료(utopia 36)
-[scenes.82.data.say] 관리처분계획 인가일
-[scenes.82.data.side] left
-[scenes.82.data.chapter] 질문 ⑤
-[scenes.83.lines.0.text] 그날 그 집에 1년 넘게 살고 있어야 합니다.
-[scenes.83.lines.0.cap] 정부안 시행령 §159의4⑥ · 인가일 현재 1년 이상 거주 중인 주택 · 2028.1.1 이후 양도분부터
-[scenes.83.data.title] 조건
-[scenes.83.data.v] 1년 넘게 거주
-[scenes.83.data.s] 관리처분계획 인가일에 그 집에
-[scenes.83.data.icon] House
-[scenes.83.data.c] accent
-[scenes.83.data.source] 정부안 시행령 §159의4⑥ · 상세본 p.89
-[scenes.84.lines.0.text] 전근이나 학교 때문에 떠난 경우도 있어요.
-[scenes.84.lines.1.text] 1년 넘게 살던 집에서 부득이한 사정으로 다른 시나 군으로 옮겼다면요.
-[scenes.84.data.license] Pexels 4553292 무료(cottonbro studio)
-[scenes.84.data.say] 전근이나 학교 때문에
-[scenes.84.data.side] left
-[scenes.84.data.chapter] 질문 ⑤
-[scenes.85.lines.0.text] 부득이한 사정은 학교, 전근, 오래 걸리는 치료, 부모님을 모시려고 합친 경우 같은 거예요.
-[scenes.85.lines.1.text] 그 뒤 비운 기간을, 최대 3년까지 살았던 기간으로 쳐 줍니다.
-[scenes.85.lines.1.cap] 정부안 소득세법 §95⑦·시행령 §159의4② · 최장 3년 · 2028.1.1 이후 양도분부터 (상세본 p.84~86)
-[scenes.85.data.title] 부득이한 사정
-[scenes.85.data.rows.0.0] 학교 · 전근
-[scenes.85.data.rows.0.1] 최대 3년
-[scenes.85.data.rows.0.2] accent
-[scenes.85.data.rows.1.0] 오래 걸리는 치료
-[scenes.85.data.rows.1.1] 최대 3년
-[scenes.85.data.rows.1.2] accent
-[scenes.85.data.rows.2.0] 부모님 모시려고 합침
-[scenes.85.data.rows.2.1] 최대 3년
-[scenes.85.data.rows.2.2] accent
-[scenes.85.data.rows.3.0] 비운 기간
-[scenes.85.data.rows.3.1] 살았던 기간으로
-[scenes.85.data.rows.3.2] fall
-[scenes.85.data.icon] Briefcase
-[scenes.85.data.source] 정부안 소득세법 §95⑦ · 상세본 p.84~86 · 문답 p.60~61
-[scenes.86.lines.0.text] 정부 자료가 밝힌 이유는 이래요.
-[scenes.86.lines.1.text] 사는 것 중심으로 바꾸는 만큼, 어쩔 수 없이 못 산 사람은 예외로 인정한다는 겁니다.
-[scenes.86.lines.1.cap] 문답 p.62 '부득이한 사유로 거주가 어려운 경우 예외인정'
-[scenes.86.data.title] 예외 이유
-[scenes.86.data.v] 못 산 사람은 예외
-[scenes.86.data.s] 사는 것 중심으로 바꾸는 만큼
-[scenes.86.data.icon] HeartHandshake
-[scenes.86.data.c] ink
-[scenes.86.data.source] 재정경제부 세법개정안 문답 자료 p.62
-[scenes.87.lines.0.text] 수진 씨가 2년 살다 전근으로 떠났고, 조건을 다 맞췄다고 해 볼게요.
-[scenes.87.data.license] Pexels 4520154 무료(https://kaboompics.com/)
-[scenes.87.data.say] 전근으로 떠났다면
-[scenes.87.data.side] left
-[scenes.87.data.chapter] 질문 ⑤
-[scenes.88.lines.0.text] 그러면 살았던 기간이 5년으로 쳐집니다.
-[scenes.88.lines.1.text] 2029년 세금은 9,700만원쯤으로 내려가요. 5천만원 넘게 줄어드는 거죠.
-[scenes.88.lines.1.cap] 정부안 · 공제율 16% → 40% · −5,036만원 · 지방세 포함 · 파이어맵 계산
-[scenes.88.data.title] 수진 씨 2029년 세금
-[scenes.88.data.v1] 1억 4,777만원
-[scenes.88.data.s1] 거주 2년
-[scenes.88.data.c1] rise
-[scenes.88.data.v2] 9,741만원
-[scenes.88.data.s2] 거주 5년으로 인정
-[scenes.88.data.c2] fall
-[scenes.88.data.icon] User
-[scenes.88.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
-[scenes.89.lines.0.text] 그래서 이런 사정이 있었다면, 그때 사정을 알 수 있는 서류는 버리지 않는 게 좋아요.
-[scenes.89.data.license] Pexels 7710495 무료(https://kaboompics.com/)
-[scenes.89.data.say] 서류는 버리지 않기
-[scenes.89.data.side] left
-[scenes.89.data.chapter] 질문 ⑤
-[scenes.90.lines.0.text] 어떤 서류를 내야 하는지는 정부 자료에 아직 적혀 있지 않아요.
-[scenes.90.lines.1.text] 정부는 사실관계를 보고 하나하나 판단하겠다고만 밝혔습니다.
-[scenes.90.lines.1.cap] 문답 p.62 · 과세관청이 개별 사안별로 사실관계 등에 따라 거주 인정 여부 검토
-[scenes.90.data.title] 어떤 서류를 낼지
-[scenes.90.data.v] 아직 없음
-[scenes.90.data.s] 사실관계를 보고 하나하나 판단
-[scenes.90.data.icon] FileText
-[scenes.90.data.c] ink
-[scenes.90.data.source] 재정경제부 세법개정안 문답 자료 p.62
-[scenes.91.lines.0.text] 조심할 게 있어요. 이렇게 쳐 주는 기간은, 공제율을 셀 때만 씁니다.
-[scenes.91.data.title] 쳐 준 기간은
-[scenes.91.data.v] 공제율 셀 때만
-[scenes.91.data.s] 쳐 준 기간은 공제율에만 씀
-[scenes.91.data.icon] TriangleAlert
-[scenes.91.data.c] rise
-[scenes.91.data.source] 재정경제부 2026 세법개정안 상세본 p.86
-[scenes.92.lines.0.text] 조정대상지역에서 산 집은, 비과세를 받으려면 조건이 하나 더 있어요.
-[scenes.92.data.license] Pexels 35082942 무료(Nothing Ahead)
-[scenes.92.data.say] 비과세 거주는 따로
-[scenes.92.data.side] left
-[scenes.92.data.chapter] 질문 ⑤
-[scenes.93.lines.0.text] 갖고 있는 동안 2년 이상을 실제로 살아야 하거든요.
-[scenes.93.lines.1.text] 그 거주 기간을 채우는 데에는 이렇게 쳐 준 기간을 넣지 않습니다.
-[scenes.93.lines.1.cap] 상세본 p.86 '비과세 요건인 2년 거주요건에는 미적용' · 시행령 §154①
-[scenes.93.data.title] 비과세 2년 거주
-[scenes.93.data.rows.0.0] 조정대상지역에서 산 집
-[scenes.93.data.rows.0.1] 보유 중 2년 실제 거주
-[scenes.93.data.rows.0.2] accent
-[scenes.93.data.rows.1.0] 쳐 준 기간
-[scenes.93.data.rows.1.1] 여기엔 안 넣음
-[scenes.93.data.rows.1.2] rise
-[scenes.93.data.icon] ShieldCheck
-[scenes.93.data.source] 소득세법 시행령 §154① · 상세본 p.86
-[scenes.94.lines.0.text] 그리고 이건 아직 정부안이에요. 2028년이 되기 전에 팔면 적용되지 않습니다.
-[scenes.94.data.title] 아직 정부안
-[scenes.94.data.v] 2028년부터
-[scenes.94.data.s] 그 전에 팔면 적용 안 됨
-[scenes.94.data.icon] Landmark
-[scenes.94.data.c] ink
-[scenes.94.data.source] 재정경제부 2026 세법개정안 상세본 p.84~89
-[scenes.95.lines.0.text] 여기까지 숫자가 맞는지는 어떻게 알까요?
-[scenes.95.data.license] Pexels 6963487 무료(Mikhail Nilov)
-[scenes.95.data.say] 숫자가 맞는지
-[scenes.95.data.side] left
-[scenes.95.data.chapter] 검산
-[scenes.96.lines.0.text] 정부 문답 자료에 실린 사례로 다시 해 봤습니다.
-[scenes.96.lines.1.text] 하나는 32억 집에 2년만 살았던 사례예요.
-[scenes.96.lines.1.cap] 문답 사례① 양도 32억·취득 12억·보유 10년·거주 2년 · 세금(지방세 빼고)
-[scenes.96.lines.2.text] 정부가 파는 해마다 계산해 둔 숫자와 똑같이 나왔어요.
-[scenes.96.data.title] 정부 사례 ① 32억
-[scenes.96.data.cols.0] 2027년
-[scenes.96.data.cols.1] 2028년
-[scenes.96.data.cols.2] 2029년
-[scenes.96.data.rows.0.0] 정부
-[scenes.96.data.rows.0.1] 2.36억
-[scenes.96.data.rows.0.2] 3.20억
-[scenes.96.data.rows.0.3] 4.05억
-[scenes.96.data.rows.1.0] 파이어맵
-[scenes.96.data.rows.1.1] 2.36억
-[scenes.96.data.rows.1.2] 3.20억
-[scenes.96.data.rows.1.3] 4.05억
-[scenes.96.data.icon] BadgeCheck
-[scenes.96.data.source] 재정경제부 세법개정안 문답 자료 · 파이어맵 계산
-[scenes.97.lines.0.text] 다른 하나는 75억 집에 10년 살았던 사례입니다.
-[scenes.97.data.license] Pexels 34030195 무료(AMEKS Photography)
-[scenes.97.data.say] 다른 사례 하나 더
-[scenes.97.data.side] left
-[scenes.97.data.chapter] 검산
-[scenes.98.lines.0.text] 공제율이 80% 그대로인데도, 마지막 해엔 세금이 네 배 넘게 뛰어요. 앞에서 말한 공제 한도 때문이죠.
-[scenes.98.lines.0.cap] 문답 사례② 양도 75억·취득 25억·보유 10년·거주 10년 · 공제 한도 때문에 마지막 해 네 배 넘게
-[scenes.98.data.title] 정부 사례 ② 75억
-[scenes.98.data.cols.0] 2027년
-[scenes.98.data.cols.1] 2028년
-[scenes.98.data.cols.2] 2029년
-[scenes.98.data.rows.0.0] 정부
-[scenes.98.data.rows.0.1] 3.16억
-[scenes.98.data.rows.0.2] 9.23억
-[scenes.98.data.rows.0.3] 13.73억
-[scenes.98.data.rows.1.0] 파이어맵
-[scenes.98.data.rows.1.1] 3.16억
-[scenes.98.data.rows.1.2] 9.23억
-[scenes.98.data.rows.1.3] 13.73억
-[scenes.98.data.icon] BadgeCheck
-[scenes.98.data.source] 재정경제부 세법개정안 문답 자료 · 파이어맵 계산
-[scenes.99.lines.0.text] 기본공제가 늘어나는 정부 사례도 다시 해 봤어요.
-[scenes.99.lines.1.text] 정부는 약 740만원, 저희 파이어맵 계산은 744만원이에요.
-[scenes.99.lines.1.cap] 문답 p.49 · 10년 거주 20억 양도(취득 10억) · 현행 약 1,280만원 → 개정안 · 지방세 빼고
-[scenes.99.data.title] 기본공제 늘어나는 사례
-[scenes.99.data.v1] 약 740만원
-[scenes.99.data.s1] 정부
-[scenes.99.data.c1] ink
-[scenes.99.data.v2] 744만원
-[scenes.99.data.s2] 파이어맵
-[scenes.99.data.c2] fall
+[scenes.78.lines.0.text] 정민 씨 집이었다면, 1,240만원이 480만원으로 줄고요.
+[scenes.78.lines.0.cap] 2029년 · 지방세 포함 · 파이어맵 계산
+[scenes.78.data.title] 정민 씨 집이었다면
+[scenes.78.data.v1] 1,241만원
+[scenes.78.data.s1] 한 사람 명의
+[scenes.78.data.c1] ink
+[scenes.78.data.v2] 482만원
+[scenes.78.data.s2] 반반 공동명의 · 둘 합
+[scenes.78.data.c2] fall
+[scenes.78.data.icon] User
+[scenes.78.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
+[scenes.79.lines.0.text] 공동명의라면, 신고도 두 사람이 각자 합니다.
+[scenes.79.lines.1.text] 조심할 건 이거예요. 이 계산은 처음부터 공동명의였던 집 얘기예요.
+[scenes.79.data.license] Pexels 8478946 무료(ArtHouse Studio)
+[scenes.79.data.say] 신고도 두 사람이 각자
+[scenes.79.data.side] left
+[scenes.79.data.chapter] 질문 ④
+[scenes.80.lines.0.text] 팔기 전에 명의를 나누려고 배우자에게 지분을 넘기면, 취득세 같은 다른 세금이 따로 붙습니다.
+[scenes.80.lines.1.text] 그 계산은 이 영상에서 하지 않았어요.
+[scenes.80.data.title] 팔기 전 명의 나누기
+[scenes.80.data.v] 다른 세금
+[scenes.80.data.s] 배우자에게 지분 넘기면 취득세 등 · 이 영상 계산 밖
+[scenes.80.data.icon] TriangleAlert
+[scenes.80.data.c] rise
+[scenes.80.data.source] 파이어맵(이 영상에서 계산하지 않음)
+[scenes.81.lines.0.text] 살고 싶어도 못 산 경우는 어떨까요?
+[scenes.81.lines.1.text] 유튜브 댓글에, 재건축하면 양도세가 더 나오는 거냐는 질문이 있었어요.
+[scenes.81.lines.2.text] 공사하는 동안엔 거기서 살 수가 없으니까요.
+[scenes.81.data.n] 질문 ⑤
+[scenes.81.data.q] 재건축 재개발 사업할 때 양도세 더 나온다는 이야기인가?
+[scenes.81.data.from] 유튜브 댓글(부동산 세금 영상)
+[scenes.82.lines.0.text] 정부안엔 이런 경우를 위한 규칙이 따로 있습니다. 2028년부터예요.
+[scenes.82.lines.1.text] 재개발이나 재건축으로 새로 지은 집은, 공사 기간의 절반을 살았던 기간으로 쳐 줘요.
+[scenes.82.data.title] 공사 기간 절반 인정
+[scenes.82.data.icon] Construction
+[scenes.82.data.source] 정부안 소득세법 §95⑨ · 상세본 p.89 · 문답 p.61
+[scenes.82.data.steps.0] 관리처분계획 인가
+[scenes.82.data.steps.1] 공사 기간
+[scenes.82.data.steps.2] 새 집 입주
+[scenes.82.data.half] 공사 기간의 절반 = 살았던 기간
+[scenes.82.data.when] 2028년부터
+[scenes.83.lines.0.text] 조건이 있어요. 철거와 새 집 배정 계획을 구청에서 인가받은 날, 관리처분계획 인가일이라고 하는데요.
+[scenes.83.data.license] Pexels 14058352 무료(utopia 36)
+[scenes.83.data.say] 관리처분계획 인가일
+[scenes.83.data.side] left
+[scenes.83.data.chapter] 질문 ⑤
+[scenes.84.lines.0.text] 그날 그 집에 1년 넘게 살고 있어야 합니다.
+[scenes.84.lines.0.cap] 정부안 시행령 §159의4⑥ · 인가일 현재 1년 이상 거주 중인 주택 · 2028.1.1 이후 양도분부터
+[scenes.84.data.title] 조건
+[scenes.84.data.v] 1년 넘게 거주
+[scenes.84.data.s] 관리처분계획 인가일에 그 집에
+[scenes.84.data.icon] House
+[scenes.84.data.c] accent
+[scenes.84.data.source] 정부안 시행령 §159의4⑥ · 상세본 p.89
+[scenes.85.lines.0.text] 전근이나 학교 때문에 떠난 경우도 있어요.
+[scenes.85.lines.1.text] 1년 넘게 살던 집에서 부득이한 사정으로 다른 시나 군으로 옮겼다면요.
+[scenes.85.data.license] Pexels 4553292 무료(cottonbro studio)
+[scenes.85.data.say] 전근이나 학교 때문에
+[scenes.85.data.side] left
+[scenes.85.data.chapter] 질문 ⑤
+[scenes.86.lines.0.text] 부득이한 사정은 학교, 전근, 오래 걸리는 치료, 부모님을 모시려고 합친 경우 같은 거예요.
+[scenes.86.lines.1.text] 그 뒤 비운 기간을, 최대 3년까지 살았던 기간으로 쳐 줍니다.
+[scenes.86.lines.1.cap] 정부안 소득세법 §95⑦·시행령 §159의4② · 최장 3년 · 2028.1.1 이후 양도분부터 (상세본 p.84~86)
+[scenes.86.data.title] 부득이한 사정
+[scenes.86.data.rows.0.0] 학교 · 전근
+[scenes.86.data.rows.0.1] 최대 3년
+[scenes.86.data.rows.0.2] accent
+[scenes.86.data.rows.1.0] 오래 걸리는 치료
+[scenes.86.data.rows.1.1] 최대 3년
+[scenes.86.data.rows.1.2] accent
+[scenes.86.data.rows.2.0] 부모님 모시려고 합침
+[scenes.86.data.rows.2.1] 최대 3년
+[scenes.86.data.rows.2.2] accent
+[scenes.86.data.rows.3.0] 비운 기간
+[scenes.86.data.rows.3.1] 살았던 기간으로
+[scenes.86.data.rows.3.2] fall
+[scenes.86.data.icon] Briefcase
+[scenes.86.data.source] 정부안 소득세법 §95⑦ · 상세본 p.84~86 · 문답 p.60~61
+[scenes.87.lines.0.text] 정부 자료가 밝힌 이유는 이래요.
+[scenes.87.lines.1.text] 사는 것 중심으로 바꾸는 만큼, 어쩔 수 없이 못 산 사람은 예외로 인정한다는 겁니다.
+[scenes.87.lines.1.cap] 문답 p.62 '부득이한 사유로 거주가 어려운 경우 예외인정'
+[scenes.87.data.title] 예외 이유
+[scenes.87.data.v] 못 산 사람은 예외
+[scenes.87.data.s] 사는 것 중심으로 바꾸는 만큼
+[scenes.87.data.icon] HeartHandshake
+[scenes.87.data.c] ink
+[scenes.87.data.source] 재정경제부 세법개정안 문답 자료 p.62
+[scenes.88.lines.0.text] 수진 씨가 2년 살다 전근으로 떠났고, 조건을 다 맞췄다고 해 볼게요.
+[scenes.88.data.license] Pexels 4520154 무료(https://kaboompics.com/)
+[scenes.88.data.say] 전근으로 떠났다면
+[scenes.88.data.side] left
+[scenes.88.data.chapter] 질문 ⑤
+[scenes.89.lines.0.text] 그러면 살았던 기간이 5년으로 쳐집니다.
+[scenes.89.lines.1.text] 2029년 세금은 9,700만원쯤으로 내려가요. 5천만원 넘게 줄어드는 거죠.
+[scenes.89.lines.1.cap] 정부안 · 공제율 16% → 40% · −5,036만원 · 지방세 포함 · 파이어맵 계산
+[scenes.89.data.title] 수진 씨 2029년 세금
+[scenes.89.data.v1] 1억 4,777만원
+[scenes.89.data.s1] 거주 2년
+[scenes.89.data.c1] rise
+[scenes.89.data.v2] 9,741만원
+[scenes.89.data.s2] 거주 5년으로 인정
+[scenes.89.data.c2] fall
+[scenes.89.data.icon] User
+[scenes.89.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
+[scenes.90.lines.0.text] 그래서 이런 사정이 있었다면, 그때 사정을 알 수 있는 서류는 버리지 않는 게 좋아요.
+[scenes.90.data.license] Pexels 7710495 무료(https://kaboompics.com/)
+[scenes.90.data.say] 서류는 버리지 않기
+[scenes.90.data.side] left
+[scenes.90.data.chapter] 질문 ⑤
+[scenes.91.lines.0.text] 어떤 서류를 내야 하는지는 정부 자료에 아직 적혀 있지 않아요.
+[scenes.91.lines.1.text] 정부는 사실관계를 보고 하나하나 판단하겠다고만 밝혔습니다.
+[scenes.91.lines.1.cap] 문답 p.62 · 과세관청이 개별 사안별로 사실관계 등에 따라 거주 인정 여부 검토
+[scenes.91.data.title] 어떤 서류를 낼지
+[scenes.91.data.v] 아직 없음
+[scenes.91.data.s] 사실관계를 보고 하나하나 판단
+[scenes.91.data.icon] FileText
+[scenes.91.data.c] ink
+[scenes.91.data.source] 재정경제부 세법개정안 문답 자료 p.62
+[scenes.92.lines.0.text] 조심할 게 있어요. 이렇게 쳐 주는 기간은, 공제율을 셀 때만 씁니다.
+[scenes.92.data.title] 쳐 준 기간은
+[scenes.92.data.v] 공제율 셀 때만
+[scenes.92.data.s] 쳐 준 기간은 공제율에만 씀
+[scenes.92.data.icon] TriangleAlert
+[scenes.92.data.c] rise
+[scenes.92.data.source] 재정경제부 2026 세법개정안 상세본 p.86
+[scenes.93.lines.0.text] 조정대상지역에서 산 집은, 비과세를 받으려면 조건이 하나 더 있어요.
+[scenes.93.data.license] Pexels 35082942 무료(Nothing Ahead)
+[scenes.93.data.say] 비과세 거주는 따로
+[scenes.93.data.side] left
+[scenes.93.data.chapter] 질문 ⑤
+[scenes.94.lines.0.text] 갖고 있는 동안 2년 이상을 실제로 살아야 하거든요.
+[scenes.94.lines.1.text] 그 거주 기간을 채우는 데에는 이렇게 쳐 준 기간을 넣지 않습니다.
+[scenes.94.lines.1.cap] 상세본 p.86 '비과세 요건인 2년 거주요건에는 미적용' · 시행령 §154①
+[scenes.94.data.title] 비과세 2년 거주
+[scenes.94.data.rows.0.0] 조정대상지역에서 산 집
+[scenes.94.data.rows.0.1] 보유 중 2년 실제 거주
+[scenes.94.data.rows.0.2] accent
+[scenes.94.data.rows.1.0] 쳐 준 기간
+[scenes.94.data.rows.1.1] 여기엔 안 넣음
+[scenes.94.data.rows.1.2] rise
+[scenes.94.data.icon] ShieldCheck
+[scenes.94.data.source] 소득세법 시행령 §154① · 상세본 p.86
+[scenes.95.lines.0.text] 그리고 이건 아직 정부안이에요. 2028년이 되기 전에 팔면 적용되지 않습니다.
+[scenes.95.data.title] 아직 정부안
+[scenes.95.data.v] 2028년부터
+[scenes.95.data.s] 그 전에 팔면 적용 안 됨
+[scenes.95.data.icon] Landmark
+[scenes.95.data.c] ink
+[scenes.95.data.source] 재정경제부 2026 세법개정안 상세본 p.84~89
+[scenes.96.lines.0.text] 여기까지 숫자가 맞는지는 어떻게 알까요?
+[scenes.96.data.license] Pexels 6963487 무료(Mikhail Nilov)
+[scenes.96.data.say] 숫자가 맞는지
+[scenes.96.data.side] left
+[scenes.96.data.chapter] 검산
+[scenes.97.lines.0.text] 정부 문답 자료에 실린 사례로 다시 해 봤습니다.
+[scenes.97.lines.1.text] 하나는 32억 집에 2년만 살았던 사례예요.
+[scenes.97.lines.1.cap] 문답 사례① 양도 32억·취득 12억·보유 10년·거주 2년 · 세금(지방세 빼고)
+[scenes.97.lines.2.text] 정부가 파는 해마다 계산해 둔 숫자와 똑같이 나왔어요.
+[scenes.97.data.title] 정부 사례 ① 32억
+[scenes.97.data.cols.0] 2027년
+[scenes.97.data.cols.1] 2028년
+[scenes.97.data.cols.2] 2029년
+[scenes.97.data.rows.0.0] 정부
+[scenes.97.data.rows.0.1] 2.36억
+[scenes.97.data.rows.0.2] 3.20억
+[scenes.97.data.rows.0.3] 4.05억
+[scenes.97.data.rows.1.0] 파이어맵
+[scenes.97.data.rows.1.1] 2.36억
+[scenes.97.data.rows.1.2] 3.20억
+[scenes.97.data.rows.1.3] 4.05억
+[scenes.97.data.icon] BadgeCheck
+[scenes.97.data.source] 재정경제부 세법개정안 문답 자료 · 파이어맵 계산
+[scenes.98.lines.0.text] 다른 하나는 75억 집에 10년 살았던 사례입니다.
+[scenes.98.data.license] Pexels 34030195 무료(AMEKS Photography)
+[scenes.98.data.say] 다른 사례 하나 더
+[scenes.98.data.side] left
+[scenes.98.data.chapter] 검산
+[scenes.99.lines.0.text] 공제율이 80% 그대로인데도, 마지막 해엔 세금이 네 배 넘게 뛰어요. 앞에서 말한 공제 한도 때문이죠.
+[scenes.99.lines.0.cap] 문답 사례② 양도 75억·취득 25억·보유 10년·거주 10년 · 공제 한도 때문에 마지막 해 네 배 넘게
+[scenes.99.data.title] 정부 사례 ② 75억
+[scenes.99.data.cols.0] 2027년
+[scenes.99.data.cols.1] 2028년
+[scenes.99.data.cols.2] 2029년
+[scenes.99.data.rows.0.0] 정부
+[scenes.99.data.rows.0.1] 3.16억
+[scenes.99.data.rows.0.2] 9.23억
+[scenes.99.data.rows.0.3] 13.73억
+[scenes.99.data.rows.1.0] 파이어맵
+[scenes.99.data.rows.1.1] 3.16억
+[scenes.99.data.rows.1.2] 9.23억
+[scenes.99.data.rows.1.3] 13.73억
 [scenes.99.data.icon] BadgeCheck
-[scenes.99.data.source] 재정경제부 세법개정안 문답 자료 p.49 · 파이어맵 계산
-[scenes.100.lines.0.text] 계산에서 뺀 사람도 있어요.
-[scenes.100.data.license] Pexels 8439245 무료(Kampus Production)
-[scenes.100.data.say] 계산에서 뺀 사람
-[scenes.100.data.side] left
-[scenes.100.data.chapter] 계산 밖
-[scenes.101.lines.0.text] 집 한 채인데 2년을 못 산 사람은, 지금은 앞에서 본 표가 아니라 다른 표를 씁니다.
-[scenes.101.lines.1.text] 갖고 있던 해마다 2%씩만 깎아 주는 표예요.
-[scenes.101.lines.1.cap] 소득세법 §95② 표1 · 연 2%, 15년 30%
-[scenes.101.lines.2.text] 정부 자료 표엔 이 경우가 따로 없어서, 숫자를 내지 않았어요.
-[scenes.101.data.title] 2년 못 산 집 한 채
-[scenes.101.data.v] 숫자 안 냄
-[scenes.101.data.s] 지금은 연 2% 표 · 정부 자료 표에 이 경우 없음
-[scenes.101.data.icon] CircleSlash
-[scenes.101.data.c] ink
-[scenes.101.data.source] 소득세법 §95② 표1 · 상세본 p.58~59 · 문답 p.37
-[scenes.102.lines.0.text] 만 65살 이상이 수도권 집을 팔고 비수도권으로 옮기면, 정부안에 양도세를 줄여 주는 특례가 따로 있습니다.
-[scenes.102.data.license] Pexels 4553292 무료(cottonbro studio)
-[scenes.102.data.say] 수도권에서 비수도권으로
-[scenes.102.data.side] left
-[scenes.102.data.chapter] 계산 밖
-[scenes.103.lines.0.text] 오래 살았어야 하고 이사도 정해진 기간 안에 해야 하는 등, 조건이 더 붙어요.
-[scenes.103.lines.0.cap] 정부안 조특법 §71의3 신설 · 2027년 50%(5억원 한도)·2028년 30%(3억원 한도) 감면 (상세본 p.69)
-[scenes.103.data.title] 65세 이주 특례
-[scenes.103.data.rows.0.0] 만 65세 이상
-[scenes.103.data.rows.0.1] 수도권 집 한 채
-[scenes.103.data.rows.0.2] accent
-[scenes.103.data.rows.1.0] 오래 살았어야
-[scenes.103.data.rows.1.1] 이사도 정해진 기간 안
-[scenes.103.data.rows.1.2] accent
-[scenes.103.data.icon] MapPin
-[scenes.103.data.source] 정부안 조특법 §71의3(의안 2221039) · 상세본 p.69
-[scenes.104.lines.0.text] 상속받은 집 지분이 조금 있다는 분도 물어 오셨어요. 이것도 주택 수에 들어가냐고요.
-[scenes.104.data.n] 물어 온 질문
-[scenes.104.data.q] 상속지분 20프로 있는데 이것도 주택수에 잡히나요
-[scenes.104.data.from] 유튜브 댓글(부동산 세금 영상)
-[scenes.105.lines.0.text] 여럿이 함께 상속받은 집이라면, 지분이 가장 큰 사람이 아닌 이상 내 집을 팔 때 주택 수에 넣지 않습니다.
-[scenes.105.lines.0.cap] 시행령 §155③ · 공동상속주택 외의 다른 주택을 양도할 때 · 상속지분이 가장 큰 상속인은 제외
-[scenes.105.data.title] 공동상속 소수 지분
-[scenes.105.data.v] 주택 수에서 뺌
-[scenes.105.data.s] 지분이 가장 큰 사람은 예외
-[scenes.105.data.icon] Users
-[scenes.105.data.c] fall
-[scenes.105.data.source] 소득세법 시행령 §155③(법제처)
-[scenes.106.lines.0.text] 집 살 때 낸 취득세나 중개수수료는 번 돈에서 뺄 수 있는데, 이 계산엔 넣지 않았어요.
-[scenes.106.lines.1.text] 그래서 실제 세금은 이보다 적게 나올 수 있습니다.
-[scenes.106.data.title] 계산에 안 넣은 것
-[scenes.106.data.v] 취득세·중개수수료
-[scenes.106.data.s] 번 돈에서 뺄 수 있음 · 실제 세금은 더 적을 수 있음
-[scenes.106.data.icon] Receipt
-[scenes.106.data.c] ink
-[scenes.106.data.source] 소득세법 §97 · 파이어맵 계산(필요경비 0)
-[scenes.107.lines.0.text] 고친 비용 가운데에도 뺄 수 있는 게 있어요. 다만 증빙이 있어야 합니다.
-[scenes.107.data.license] Pexels 7710453 무료(https://kaboompics.com/)
-[scenes.107.data.say] 고친 비용도
-[scenes.107.data.side] left
-[scenes.107.data.chapter] 계산 밖
-[scenes.108.lines.0.text] 영수증을 못 받았더라도, 계좌로 보낸 기록이 있으면 그걸로 확인하는 길이 법에 있어요.
-[scenes.108.lines.0.cap] 소득세법 §97①2 · 시행령 §163③ · 증명서류 또는 금융거래 증명서류로 확인되는 경우
-[scenes.108.data.title] 영수증이 없으면
-[scenes.108.data.v] 계좌 기록
-[scenes.108.data.s] 실제 지출이 금융거래로 확인되면
-[scenes.108.data.icon] Wallet
-[scenes.108.data.c] fall
-[scenes.108.data.source] 소득세법 §97①2 · 시행령 §163③(법제처)
-[scenes.109.lines.0.text] 이 영상은 정부안으로 한 계산 비교예요. 국회 심사에서 바뀌면 이 숫자도 바뀝니다.
-[scenes.109.data.title] 이 영상은
-[scenes.109.data.v] 정부안 계산 비교
-[scenes.109.data.s] 국회 심사에서 바뀌면 숫자도 바뀜
-[scenes.109.data.icon] Landmark
-[scenes.109.data.c] ink
-[scenes.109.data.source] 재정경제부 2026 세법개정안 · 국회 의안정보
-[scenes.110.lines.0.text] 집을 사서 내내 그 집에 살아온 분이라면, 정부안은 오히려 유리한 쪽이에요.
-[scenes.110.lines.1.text] 10년을 넘게 살았고 30억 이하에 판다면, 기본공제도 늘어납니다.
-[scenes.110.data.license] Pexels 36820284 무료(Kartik Malviya)
-[scenes.110.data.say] 내내 산 분이라면
-[scenes.110.data.side] left
-[scenes.110.data.chapter] 정리
-[scenes.111.lines.0.text] 사 두고 다른 곳에 살다 온 분이라면, 갖고 있던 햇수와 살았던 햇수의 차이를 세어 보세요.
-[scenes.111.lines.1.text] 그 차이가 클수록 2029년 공제가 많이 줄어듭니다.
-[scenes.111.lines.2.text] 집을 갈아타는 중이라면, 두 집이 다 조정대상지역인지와 2년 기한부터 확인하세요.
-[scenes.111.data.title] 내 집이라면
-[scenes.111.data.icon] ListChecks
-[scenes.111.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
-[scenes.111.data.items.0.0] 내내 산 집 · 10년↑ · 30억 이하
-[scenes.111.data.items.0.1] 세금 줄어듦(정부안)
-[scenes.111.data.items.1.0] 사 두고 다른 곳에 산 집
-[scenes.111.data.items.1.1] 햇수 차이 세기
-[scenes.111.data.items.2.0] 갈아타는 중
-[scenes.111.data.items.2.1] 둘 다 조정? · 2년 기한
-[scenes.111.data.items.3.0] 부부 공동명의
-[scenes.111.data.items.3.1] 계산도 신고도 각자
-[scenes.111.data.items.4.0] 전근·재건축으로 못 산 기간
-[scenes.111.data.items.4.1] 일부 인정(정부안)
-[scenes.112.lines.0.text] 부부가 함께 가진 집이라면, 세금 계산도 신고도 두 사람이 각자예요.
-[scenes.112.data.license] Pexels 6602933 무료(Pavel Danilyuk)
-[scenes.112.data.say] 부부가 함께 가진 집
-[scenes.112.data.side] left
-[scenes.112.data.chapter] 정리
-[scenes.113.lines.0.text] 전근이나 재건축으로 못 산 기간이 있다면, 그 기간 일부를 살았던 기간으로 쳐 주는 규칙이 정부안에 있어요.
-[scenes.113.lines.1.text] 그리고 12억을 넘겨 팔았다면, 판 달의 마지막 날부터 두 달 안에 신고해야 합니다.
-[scenes.113.lines.1.cap] 소득세법 §105①1 · 판 달의 말일부터 2개월 이내 예정신고
-[scenes.113.data.title] 내 집이라면
-[scenes.113.data.icon] ListChecks
-[scenes.113.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
-[scenes.113.data.items.0.0] 내내 산 집 · 10년↑ · 30억 이하
-[scenes.113.data.items.0.1] 세금 줄어듦(정부안)
-[scenes.113.data.items.1.0] 사 두고 다른 곳에 산 집
-[scenes.113.data.items.1.1] 햇수 차이 세기
-[scenes.113.data.items.2.0] 갈아타는 중
-[scenes.113.data.items.2.1] 둘 다 조정? · 2년 기한
-[scenes.113.data.items.3.0] 부부 공동명의
-[scenes.113.data.items.3.1] 계산도 신고도 각자
-[scenes.113.data.items.4.0] 전근·재건축으로 못 산 기간
-[scenes.113.data.items.4.1] 일부 인정(정부안)
-[scenes.114.lines.0.text] 여러분 집은 갖고 있던 해와 살았던 해가 몇 년 차이 나는지, 댓글로 남겨 주세요.
-[scenes.114.data.n] 댓글로 알려 주세요
-[scenes.114.data.q] 갖고 있던 해와 살았던 해, 몇 년 차이 나나요?
-[scenes.114.data.from] 언제 팔라는 권유가 아니라 정부안(국회 통과 전)으로 한 계산 비교 · 가상 인물
+[scenes.99.data.source] 재정경제부 세법개정안 문답 자료 · 파이어맵 계산
+[scenes.100.lines.0.text] 기본공제가 늘어나는 정부 사례도 다시 해 봤어요.
+[scenes.100.lines.1.text] 정부는 약 740만원, 저희 파이어맵 계산은 744만원이에요.
+[scenes.100.lines.1.cap] 문답 p.49 · 10년 거주 20억 양도(취득 10억) · 현행 약 1,280만원 → 개정안 · 지방세 빼고
+[scenes.100.data.title] 기본공제 늘어나는 사례
+[scenes.100.data.v1] 약 740만원
+[scenes.100.data.s1] 정부
+[scenes.100.data.c1] ink
+[scenes.100.data.v2] 744만원
+[scenes.100.data.s2] 파이어맵
+[scenes.100.data.c2] fall
+[scenes.100.data.icon] BadgeCheck
+[scenes.100.data.source] 재정경제부 세법개정안 문답 자료 p.49 · 파이어맵 계산
+[scenes.101.lines.0.text] 계산에서 뺀 사람도 있어요.
+[scenes.101.data.license] Pexels 8439245 무료(Kampus Production)
+[scenes.101.data.say] 계산에서 뺀 사람
+[scenes.101.data.side] left
+[scenes.101.data.chapter] 계산 밖
+[scenes.102.lines.0.text] 집 한 채인데 2년을 못 산 사람은, 지금은 앞에서 본 표가 아니라 다른 표를 씁니다.
+[scenes.102.lines.1.text] 갖고 있던 해마다 2%씩만 깎아 주는 표예요.
+[scenes.102.lines.1.cap] 소득세법 §95② 표1 · 연 2%, 15년 30%
+[scenes.102.lines.2.text] 정부 자료 표엔 이 경우가 따로 없어서, 숫자를 내지 않았어요.
+[scenes.102.data.title] 2년 못 산 집 한 채
+[scenes.102.data.v] 숫자 안 냄
+[scenes.102.data.s] 지금은 연 2% 표 · 정부 자료 표에 이 경우 없음
+[scenes.102.data.icon] CircleSlash
+[scenes.102.data.c] ink
+[scenes.102.data.source] 소득세법 §95② 표1 · 상세본 p.58~59 · 문답 p.37
+[scenes.103.lines.0.text] 만 65살 이상이 수도권 집을 팔고 비수도권으로 옮기면, 정부안에 양도세를 줄여 주는 특례가 따로 있습니다.
+[scenes.103.data.license] Pexels 4553292 무료(cottonbro studio)
+[scenes.103.data.say] 수도권에서 비수도권으로
+[scenes.103.data.side] left
+[scenes.103.data.chapter] 계산 밖
+[scenes.104.lines.0.text] 오래 살았어야 하고 이사도 정해진 기간 안에 해야 하는 등, 조건이 더 붙어요.
+[scenes.104.lines.0.cap] 정부안 조특법 §71의3 신설 · 2027년 50%(5억원 한도)·2028년 30%(3억원 한도) 감면 (상세본 p.69)
+[scenes.104.data.title] 65세 이주 특례
+[scenes.104.data.rows.0.0] 만 65세 이상
+[scenes.104.data.rows.0.1] 수도권 집 한 채
+[scenes.104.data.rows.0.2] accent
+[scenes.104.data.rows.1.0] 오래 살았어야
+[scenes.104.data.rows.1.1] 이사도 정해진 기간 안
+[scenes.104.data.rows.1.2] accent
+[scenes.104.data.icon] MapPin
+[scenes.104.data.source] 정부안 조특법 §71의3(의안 2221039) · 상세본 p.69
+[scenes.105.lines.0.text] 상속받은 집 지분이 조금 있다는 분도 물어 오셨어요. 이것도 주택 수에 들어가냐고요.
+[scenes.105.data.n] 물어 온 질문
+[scenes.105.data.q] 상속지분 20프로 있는데 이것도 주택수에 잡히나요
+[scenes.105.data.from] 유튜브 댓글(부동산 세금 영상)
+[scenes.106.lines.0.text] 여럿이 함께 상속받은 집이라면, 지분이 가장 큰 사람이 아닌 이상 내 집을 팔 때 주택 수에 넣지 않습니다.
+[scenes.106.lines.0.cap] 시행령 §155③ · 공동상속주택 외의 다른 주택을 양도할 때 · 상속지분이 가장 큰 상속인은 제외
+[scenes.106.data.title] 공동상속 소수 지분
+[scenes.106.data.v] 주택 수에서 뺌
+[scenes.106.data.s] 지분이 가장 큰 사람은 예외
+[scenes.106.data.icon] Users
+[scenes.106.data.c] fall
+[scenes.106.data.source] 소득세법 시행령 §155③(법제처)
+[scenes.107.lines.0.text] 집 살 때 낸 취득세나 중개수수료는 번 돈에서 뺄 수 있는데, 이 계산엔 넣지 않았어요.
+[scenes.107.lines.1.text] 그래서 실제 세금은 이보다 적게 나올 수 있습니다.
+[scenes.107.data.title] 계산에 안 넣은 것
+[scenes.107.data.v] 취득세·중개수수료
+[scenes.107.data.s] 번 돈에서 뺄 수 있음 · 실제 세금은 더 적을 수 있음
+[scenes.107.data.icon] Receipt
+[scenes.107.data.c] ink
+[scenes.107.data.source] 소득세법 §97 · 파이어맵 계산(필요경비 0)
+[scenes.108.lines.0.text] 고친 비용 가운데에도 뺄 수 있는 게 있어요. 다만 증빙이 있어야 합니다.
+[scenes.108.data.license] Pexels 7710453 무료(https://kaboompics.com/)
+[scenes.108.data.say] 고친 비용도
+[scenes.108.data.side] left
+[scenes.108.data.chapter] 계산 밖
+[scenes.109.lines.0.text] 영수증을 못 받았더라도, 계좌로 보낸 기록이 있으면 그걸로 확인하는 길이 법에 있어요.
+[scenes.109.lines.0.cap] 소득세법 §97①2 · 시행령 §163③ · 증명서류 또는 금융거래 증명서류로 확인되는 경우
+[scenes.109.data.title] 영수증이 없으면
+[scenes.109.data.v] 계좌 기록
+[scenes.109.data.s] 실제 지출이 금융거래로 확인되면
+[scenes.109.data.icon] Wallet
+[scenes.109.data.c] fall
+[scenes.109.data.source] 소득세법 §97①2 · 시행령 §163③(법제처)
+[scenes.110.lines.0.text] 이 영상은 정부안으로 한 계산 비교예요. 국회 심사에서 바뀌면 이 숫자도 바뀝니다.
+[scenes.110.data.title] 이 영상은
+[scenes.110.data.v] 정부안 계산 비교
+[scenes.110.data.s] 국회 심사에서 바뀌면 숫자도 바뀜
+[scenes.110.data.icon] Landmark
+[scenes.110.data.c] ink
+[scenes.110.data.source] 재정경제부 2026 세법개정안 · 국회 의안정보
+[scenes.111.lines.0.text] 집을 사서 내내 그 집에 살아온 분이라면, 정부안은 오히려 유리한 쪽이에요.
+[scenes.111.lines.1.text] 10년을 넘게 살았고 30억 이하에 판다면, 기본공제도 늘어납니다.
+[scenes.111.data.license] Pexels 36820284 무료(Kartik Malviya)
+[scenes.111.data.say] 내내 산 분이라면
+[scenes.111.data.side] left
+[scenes.111.data.chapter] 정리
+[scenes.112.lines.0.text] 사 두고 다른 곳에 살다 온 분이라면, 갖고 있던 햇수와 살았던 햇수의 차이를 세어 보세요.
+[scenes.112.lines.1.text] 그 차이가 클수록 2029년 공제가 많이 줄어듭니다.
+[scenes.112.lines.2.text] 집을 갈아타는 중이라면, 두 집이 다 조정대상지역인지와 2년 기한부터 확인하세요.
+[scenes.112.data.title] 내 집이라면
+[scenes.112.data.icon] ListChecks
+[scenes.112.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
+[scenes.112.data.items.0.0] 내내 산 집 · 10년↑ · 30억 이하
+[scenes.112.data.items.0.1] 세금 줄어듦(정부안)
+[scenes.112.data.items.1.0] 사 두고 다른 곳에 산 집
+[scenes.112.data.items.1.1] 햇수 차이 세기
+[scenes.112.data.items.2.0] 갈아타는 중
+[scenes.112.data.items.2.1] 둘 다 조정? · 2년 기한
+[scenes.112.data.items.3.0] 부부 공동명의
+[scenes.112.data.items.3.1] 계산도 신고도 각자
+[scenes.112.data.items.4.0] 전근·재건축으로 못 산 기간
+[scenes.112.data.items.4.1] 일부 인정(정부안)
+[scenes.113.lines.0.text] 부부가 함께 가진 집이라면, 세금 계산도 신고도 두 사람이 각자예요.
+[scenes.113.data.license] Pexels 6602933 무료(Pavel Danilyuk)
+[scenes.113.data.say] 부부가 함께 가진 집
+[scenes.113.data.side] left
+[scenes.113.data.chapter] 정리
+[scenes.114.lines.0.text] 전근이나 재건축으로 못 산 기간이 있다면, 그 기간 일부를 살았던 기간으로 쳐 주는 규칙이 정부안에 있어요.
+[scenes.114.lines.1.text] 그리고 12억을 넘겨 팔았다면, 판 달의 마지막 날부터 두 달 안에 신고해야 합니다.
+[scenes.114.lines.1.cap] 소득세법 §105①1 · 판 달의 말일부터 2개월 이내 예정신고
+[scenes.114.data.title] 내 집이라면
+[scenes.114.data.icon] ListChecks
+[scenes.114.data.source] 재정경제부 2026 세법개정안 상세본·문답 자료 · 파이어맵 계산(지방세 포함·필요경비 0)
+[scenes.114.data.items.0.0] 내내 산 집 · 10년↑ · 30억 이하
+[scenes.114.data.items.0.1] 세금 줄어듦(정부안)
+[scenes.114.data.items.1.0] 사 두고 다른 곳에 산 집
+[scenes.114.data.items.1.1] 햇수 차이 세기
+[scenes.114.data.items.2.0] 갈아타는 중
+[scenes.114.data.items.2.1] 둘 다 조정? · 2년 기한
+[scenes.114.data.items.3.0] 부부 공동명의
+[scenes.114.data.items.3.1] 계산도 신고도 각자
+[scenes.114.data.items.4.0] 전근·재건축으로 못 산 기간
+[scenes.114.data.items.4.1] 일부 인정(정부안)
+[scenes.115.lines.0.text] 여러분 집은 갖고 있던 해와 살았던 해가 몇 년 차이 나는지, 댓글로 남겨 주세요.
+[scenes.115.data.n] 댓글로 알려 주세요
+[scenes.115.data.q] 갖고 있던 해와 살았던 해, 몇 년 차이 나나요?
+[scenes.115.data.from] 언제 팔라는 권유가 아니라 정부안(국회 통과 전)으로 한 계산 비교 · 가상 인물
+[scenes.116.lines.0.text] 목요일 오전 11시 반에는 환율 이야기입니다. 그때 뵙겠습니다.
+[scenes.116.data.license] Pexels 5562942 무료(Daniel Qura)
+[scenes.116.data.say] 다음 편은 환율 이야기
+[scenes.116.data.side] left
+[scenes.116.data.chapter] 정리
 [badge] 가상 인물
 
 ## 화면 코드: video/src/T1.tsx

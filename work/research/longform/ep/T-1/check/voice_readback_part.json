@@ -1,86 +1,19 @@
 [
  {
-  "at": "1:0",
-  "text": "첫 질문은 지식iN에 올라온 거예요. 12억 기준이 번 돈인지, 판 값인지요.",
+  "at": "1:20",
+  "text": "그러니까 3월에 잔금을 받았다면, 5월 말일까지예요.",
+  "say": "그러니까 삼월에 잔금을 받았다면, 오월 말일까지예요.",
+  "audio": "audio/t-1/81ed597525a3f5b4.wav",
   "heard": [
-   null
+   "그러니까 3월에 잔금을 받았다면 5월 말일까지예요.",
+   "그러니까 3월에 잠금을 받았다면 5월 말일까지예요."
   ],
   "models": [
-   "gemini-3.5-flash-lite"
+   "gemini-3.1-flash-lite",
+   "whisper-small"
   ],
-  "sim": 0,
-  "flag": "받아쓰기 실패"
- },
- {
-  "at": "1:7",
-  "text": "두 사람 다 8억에 샀으니, 번 돈은 똑같이 12억이고요.",
-  "heard": [
-   null
-  ],
-  "models": [
-   "gemini-3.5-flash-lite"
-  ],
-  "sim": 0,
-  "flag": "받아쓰기 실패"
- },
- {
-  "at": "1:14",
-  "text": "8억에 사서 내내 살았다면, 올해 세금은 34만원쯤입니다.",
-  "heard": [
-   null
-  ],
-  "models": [
-   "gemini-3.5-flash-lite"
-  ],
-  "sim": 0,
-  "flag": "받아쓰기 실패"
- },
- {
-  "at": "1:21",
-  "text": "조심할 것도 하나 있어요. 부부가 반씩 나눠 가진 집이라도, 12억은 집 전체 값으로 따집니다.",
-  "heard": [
-   null
-  ],
-  "models": [
-   "gemini-3.5-flash-lite"
-  ],
-  "sim": 0,
-  "flag": "받아쓰기 실패"
- },
- {
-  "at": "2:4",
-  "text": "12억을 넘는 몫에서 한 번 더 깎아 주는 게 장기보유특별공제입니다.",
-  "heard": [
-   null
-  ],
-  "models": [
-   "gemini-3.5-flash-lite"
-  ],
-  "sim": 0,
-  "flag": "받아쓰기 실패"
- },
- {
-  "at": "3:0",
-  "text": "이번엔 집을 갈아타는 분들 질문이에요.",
-  "heard": [
-   null
-  ],
-  "models": [
-   "gemini-3.5-flash-lite"
-  ],
-  "sim": 0,
-  "flag": "받아쓰기 실패"
- },
- {
-  "at": "3:23",
-  "text": "12억까지 세금이 없던 혜택도, 장기보유특별공제도 빠져요.",
-  "heard": [
-   null
-  ],
-  "models": [
-   "gemini-3.5-flash-lite"
-  ],
-  "sim": 0,
-  "flag": "받아쓰기 실패"
+  "sim": 1.0,
+  "pair": 0.95,
+  "flag": ""
  }
 ]

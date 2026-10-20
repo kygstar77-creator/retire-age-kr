@@ -173,8 +173,9 @@ export const T1: React.FC<T1Props> = (p) => {
       {p.scenes.map((s, i) => {
         const st = starts(s.lines); const K = KIND[s.kind];
         const el = <Sequence key={i} from={from} durationInFrames={s.frames}>
-          {s.kind === 'broll' ? <TallyBroll src={s.data.src} license={s.data.license} from={s.data.from} say={s.data.say} side={s.data.side} x={s.data.x} chapter={s.data.chapter} lines={tl(s.lines)} /> : K ? (s.kind !== 'mo' && s.kind !== 'ask' && s.frames > 150 ? <Push n={s.frames}><K s={s} /></Push> : <K s={s} />) : null}
-          {s.lines.map((l, j) => <Sequence key={j} from={st[j]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
+          {/* 10/20 PD: 8초 넘는 질문 카드도 천천히 다가가기 — 렌더본 화면 관문 2:31 질문 ② 12.5초 정지로 거부 */}
+          {s.kind === 'broll' ? <TallyBroll src={s.data.src} license={s.data.license} from={s.data.from} say={s.data.say} side={s.data.side} x={s.data.x} chapter={s.data.chapter} lines={tl(s.lines)} /> : K ? (s.kind !== 'mo' && (s.kind !== 'ask' || s.frames > 240) && s.frames > 150 ? <Push n={s.frames}><K s={s} /></Push> : <K s={s} />) : null}
+          {s.lines.map((l, j) => l.audio ? <Sequence key={j} from={st[j]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence> : null)}
         </Sequence>;
         from += s.frames; return el;
       })}

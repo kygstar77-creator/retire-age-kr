@@ -12,11 +12,12 @@ EP = os.path.dirname(os.path.abspath(__file__))
 WORK = os.path.normpath(os.path.join(EP, '..', '..', '..', '..'))
 VID = os.path.join(WORK, 'video')
 FPS, TAIL = 30, 75
+END_PAD = 23 * 30   # 10/20 PD: 맺는 말 뒤 숨 3초 + 최종 화면 자리 20초(answer/6388789) — youtube-loop 04:55
 CALC = open(os.path.join(EP, 'calc_out.txt'), encoding='utf-8').read() + open(os.path.join(EP, 'calc_more_out.txt'), encoding='utf-8').read()
 SCRIPT = open(os.path.join(EP, 'script.md'), encoding='utf-8').read()
 V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
 ALL = [l for s in V['sections'] for l in s['lines']]
-assert len(ALL) == 186, len(ALL)
+assert len(ALL) == 188, len(ALL)   # 10/20 PD: 고정 여는 말·맺는 말 2줄(youtube-loop 04:55, editor 07:06 서명)
 USED = set()
 
 # ── 실사 풀: Pexels(credits.json) 중 10/17 미리보기(앞·⅓·⅔·끝 4장) 눈 검사로 고른 것 — 얼굴·상표·간판·번호판·숫자 화면 없음 ──
@@ -26,6 +27,10 @@ POOL = [35082942, 36820284, 6221101, 31400388, 7578842, 8320980, 6963487, 847110
 # 뺀 것(10/17 눈 검사): 4693665 발코니 사람 · 7247815 휴대폰 계산기 화면 · 9057574 달력 숫자 · 5546826 수첩 글귀 · 20568183 먼 사람·버스 글자
 #   · 4685169 초록 화면 · 6963823·6963836 자판 숫자·시계 · 6150188 임신 검사 · 8132369 얼굴 · 8814711 서류철 상표 · 7710340 서류철 상표 띠
 os.makedirs(os.path.join(VID, 'public', 'bg', 't1'), exist_ok=True)
+# 10/20 PD: 끝 하늘 = C-2 견본 끝과 같은 클립(Pexels 5562942 Daniel Qura, 도시 위 해 뜨는 하늘 타임랩스, 쓸 수 있는 40초 — C-2 bg_plan 눈 검사)
+CR[5562942] = {'id': 5562942, 'author': 'Daniel Qura', 'sec': 40, 'page': 'https://www.pexels.com/video/time-lapse-video-of-the-sky-5562942/', 'desc_line': '영상 일부: Daniel Qura / Pexels (https://www.pexels.com/video/time-lapse-video-of-the-sky-5562942/)'}
+_sky = os.path.join(VID, 'public', 'bg', 't1', '5562942.mp4')
+if not os.path.exists(_sky): shutil.copyfile(os.path.join(VID, 'public', 'bg', 'c2', '5562942.mp4'), _sky)
 for cid in POOL:
     dst = os.path.join(VID, 'public', 'bg', 't1', f'{cid}.mp4')
     if not os.path.exists(dst): shutil.copyfile(os.path.join(EP, 'stock', f'{cid}.mp4'), dst)
@@ -75,6 +80,7 @@ def mo(r, lines, pre=0):   # pre = rowprops 줄 중 앞에서 실사로 뺀 줄 
 # ── 0. 예고 ──
 ch(None)
 scenes += [
+    broll(36820284, ['안녕하세요, 파이어맵입니다.'], '오늘은 집 한 채 양도세 이야기'),   # 10/20 고정 여는 말(브랜드 lines.md) — 날짜는 말하지 않음
     pair('2029년, 같은 20억 집', ['1,241만원', '정민 씨 · 10년 거주', B], ['1억 4,777만원', '수진 씨 · 10년 보유 · 2년 거주', R],
          [('같은 집을 같은 값에 판', '2029년 양도 · 20억 · 지방세 포함 · 정부안 기준·국회 통과 전'), '다른 건 딱 하나'], icon='House', src=SRC_GOV, at2=0),
     big('세법 개정안', '국회 통과 전', '정부안 · 2026.9.3 제출 · 9.28 상정', [('정부가 지난 9월 국회에', '소득세법 일부개정법률안(정부) 의안 2221042 · 처리 전 (국회 의안정보 2026-10-17 확인)')],
@@ -91,12 +97,12 @@ scenes += [
     big('기준은 판 값', '판 값 12억', '실제로 사고판 값(실거래가) · 번 돈 아님',
         [('답은 판 값입니다', '소득세법 §89①3 · 1세대1주택 비과세 = 양도 당시 실지거래가액 12억원 이하'), '세대 전체가 집 한 채', '판 값 12억원까지는'], icon='Scale', src='소득세법 §89①3(법제처 2026-10-17 확인)'),
     broll(32986074, ['그럼 12억을 넘으면'], '번 돈 전부에 붙을까'),
-    S('price', ['판 값 가운데 12억을', '두 사람 집은 20억'], title='넘는 몫만 세금 계산', icon='Ruler', source='소득세법 시행령 §160① · 파이어맵 계산',
-      sell='판 값 20억', line='기준 12억', over='넘는 몫 8억 · 판 값의 40%', step=1),
+    S('price', ['판 값 가운데 12억을', '두 사람 집은 20억'], title='넘는 부분만 세금 계산', icon='Ruler', source='소득세법 시행령 §160① · 파이어맵 계산',
+      sell='판 값 20억', line='기준 12억', over='넘는 부분 8억 · 판 값의 40%', step=1),
     broll(31400388, ['두 사람 다 8억에 샀으니'], '산 값과 판 값'),
     S('price', ['공교롭게 기준선과', ('그 12억 가운데 40%만', '과세 양도차익 = 양도차익 × (양도가액 − 12억) ÷ 양도가액 · 12억 × 8 ÷ 20 = 4.8억')],
       title='번 돈 12억 중 40%', icon='Ruler', source='소득세법 시행령 §160① · 파이어맵 계산(필요경비 0)',
-      sell='판 값 20억', line='기준 12억', over='넘는 몫 8억 · 40%', buy='산 값 8억', gain='번 돈 12억', taxed='세금 계산 4.8억', step=2),
+      sell='판 값 20억', line='기준 12억', over='넘는 부분 8억 · 40%', buy='산 값 8억', gain='번 돈 12억', taxed='세금 계산 4.8억', step=2),
     broll(6963487, ['왜 하필 12억일까요'], '왜 하필 이 금액일까'),
     big('법이 부르는 이름', '고가주택', '판 값 12억 넘는 집 · 금액을 정한 이유는 조문에 없음', ['법은 이런 집을', '이 규칙 덕분에'], icon='Gavel', c=K, src='소득세법 §89①3(법제처)'),
     broll(35082942, ['13억에 판 집도'], '조금 넘는 집이라면'),
@@ -119,7 +125,7 @@ scenes += [
 ch('질문 ②')
 scenes += [
     ask('질문 ②', '보유만 하는 1주택만 장특 없앤다고 하는 것 아닌가요?', '유튜브 댓글(부동산 세금 영상)', ['이번 질문은 유튜브', '집을 갖고만 있고', '답부터 말하면']),
-    S('cells', ['먼저 지금 법부터', '12억을 넘는 몫에서', '지금 법은 집 한 채를', ('실제로 살았던 해마다 또', '소득세법 §95② 표2 · 보유 3년 12%~10년 40% · 거주 2년 8%~10년 40%')],
+    S('cells', ['먼저 지금 법부터', '12억을 넘는 부분에서', '지금 법은 집 한 채를', ('실제로 살았던 해마다 또', '소득세법 §95② 표2 · 보유 3년 12%~10년 40% · 거주 2년 8%~10년 40%')],
       title='지금 법 장기보유특별공제', icon='Layers', source='소득세법 §95② 표2 · 시행령 §159의4(법제처)',
       rows=[['갖고 있던 해', '해마다 4%', 10, A, 2], ['살았던 해', '해마다 4%', 10, B, 3]], total='최대 40% + 40%'),
     broll(36820284, ['정민 씨는 그 집을 갖고'], '내내 그 집에 산 정민 씨'),
@@ -276,7 +282,10 @@ scenes += [
     broll(6602933, ['부부가 함께 가진 집이라면'], '부부가 함께 가진 집'),
     S('five', ['전근이나 재건축으로 못 산', ('그리고 12억을 넘겨 팔았다면', '소득세법 §105①1 · 판 달의 말일부터 2개월 이내 예정신고')], title='내 집이라면', icon='ListChecks', source=SRC_GOV, items=FIVE, lit=[4, 4], done=[0, 1, 2, 3]),
     ask('댓글로 알려 주세요', '갖고 있던 해와 살았던 해, 몇 년 차이 나나요?', '언제 팔라는 권유가 아니라 정부안(국회 통과 전)으로 한 계산 비교 · 가상 인물', ['여러분 집은 갖고 있던']),
+    broll(5562942, ['목요일 오전 11시 반에는'], '다음 편은 환율 이야기'),   # 10/20 고정 맺는 말 — 10/22 X-1, 뒤에 END_PAD
 ]
+scenes[-1]['frames'] += END_PAD; scenes[-1]['data']['_need'] += END_PAD / FPS
+scenes[-1]['lines'].append({'text': '', 'audio': None, 'frames': END_PAD, 'cap': None, 'i': None})   # 10/20 PD: 소리 없는 빈 줄 — 맺는 말 자막이 숨·최종 화면 23초 내내 남지 않게(T1.tsx는 audio 없는 줄을 건너뜀)
 
 for s in scenes: assert s['kind'] != 'broll' or not re.search(r'\d', s['data']['say'] or ''), ('실사 say 숫자', s['data']['say'])
 short = []
@@ -288,7 +297,7 @@ for s in scenes:   # TallyBroll prop 이름(from) · 클립 길이 확인
         d.pop('_need'); d.pop('_have')
 assert not short, ('실사 클립이 말보다 짧다', short)
 assert len(USED) == len(ALL), ('안 쓴 줄', [ALL[i]['text'][:24] for i in range(len(ALL)) if i not in USED])
-order = [l['i'] for s in scenes for l in s['lines']]; assert order == sorted(order), '줄 순서'
+order = [l['i'] for s in scenes for l in s['lines'] if l['i'] is not None]; assert order == sorted(order), '줄 순서'
 scenes[-1]['frames'] += TAIL
 for s in scenes:
     for l in s['lines']: l.pop('i')

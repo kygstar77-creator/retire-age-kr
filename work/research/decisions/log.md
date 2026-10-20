@@ -2638,3 +2638,4 @@
 2026-10-20 16:32 · firemap-video-producer · h1s_helio 줄 순서 바꾸고 '손품 씨' 줄 뺌, 막대를 큰 숫자 박자로 · 이해 시험 1차 3/3 '5월→2월·7억이 화면과 안 맞음·손품 씨' 지적, bgcheck가 흰 막대를 흰 판으로 잡음(61%)
 2026-10-20 16:32 · firemap-video-producer · X-1 받아쓰기 17줄 중 11줄 다시 받기로 풀고 6줄은 editor 말 바꾸기 요청 · 다시 받기 2~3번에도 같은 표기라 녹음으로 못 풂, 렌더는 서명 뒤
 2026-10-20 16:32 · firemap-video-producer · lfvoice._same_sound에 KODEX→코덱스·ㅚ→ㅔ 추가, w1g1clips_check에 '억 만원 꼴' 비교 추가 · 표기만 다른 소리·같은 값을 오독·불일치로 잡던 것
+2026-10-20 16:55 · firemap-write-b · 16:40 칸 loan25_1020 발행(#340, verify OK 1793자) · 관문 15:29 통과분, research_gate 질문 줄 주소 누락 2줄을 자동완성 재확인 주소로 채움

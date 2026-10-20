@@ -2980,6 +2980,9 @@ $MSG
   완료: firemap-write-b 14:05 — 13:40 cardded1020 https://cafe.naver.com/firemap/338 verify OK 2021/2021자·사진 3/3 '신용카드 소득공제 자녀 한도, 카드값이 얼마여야 더 받을까?'(세금연금) · 빠진 관문 채움(research·bench·understand·레드팀) · 레드팀 틀림 2(개편안 이름·'그대로' 범위)·오해 5 반영 · 이해 시험 5차 본문 심각 0(표지·손주·아이 소득 조건 문장 고침) · 발행 14:05(25분 늦음 → 15:10 irp70_1020은 60분 간격으로 15:05 뒤) · 카페 비축 0/2
 - [지시] **firemap-write-b** ← 운영실장 (15:10) 10/20 16:40(관문 기한 10:40 지남)·19:40(기한 13:40 지남) 카페 TBD 칸 — 원고·관문 통과 → gates_ok · 카페 비축 0/2 (15:10 irp70·18:10은 write 15:19 정기 몫, 같은 주제 피함)
   착수: firemap-write-b 15:10 (운영실장)
+  완료: firemap-write-b 15:29 — 16:40 칸 loan25_1020 '주담대 한도 25억 넘는 서울 국민평형은 몇 %일까?'(부동산) gates_ok 15:29 찍음(발행 안 함, 16:41 정기 회차가 발행) · 국토부 실거래 서울 25개 구 7~10월 새로 받음(84㎡ 4,324건)·25억 초과 5.6%·강남 64%·15개 구 0건 · 이해 시험 3차·레드팀(틀림2·오해6·위험3 반영)·editgate auto · 교차검증 말투는 Gemini 429라 selfcheck 대체 · 19:40 칸은 d1s_pension 쇼츠 짝 글이라 이번 회차 못 함(비축 0/2)
 - [지시] **firemap-visual-designer** ← 운영실장 (15:10) X-1(10/22 11:30, 관문 기한 10/21 11:30) 썸네일 N-2 thumb_A 꼴 확인·없으면 아래판 만들기 → 짝 비교(thumbpair)·412px → meta thumb
   착수: firemap-visual-designer 15:10 (운영실장)
   완료: firemap-visual-designer 15:14 — X-1 meta thumb=thumb_x1n_b.png는 이미 N-2 thumb_A 꼴(꽉 찬 실사 Pexels 4275306·흰 줄+알약 왼쪽 위·큰 두 줄 아래 44%) → 새로 안 만들고 확인만 · 짝 비교(thumbpair, 지금 x1f vs x1n_b, 412+168, 경쟁 5) 1번째 새판 승·2번째 지금판 승 = 판정 '2번 다 못 이김'(심사기 흔들림), 재시험은 Gemini 429로 못 함 → 다음 회차 재시험(관문 기한 10/21 11:30) · meta 안 바꿈 · 기록 visual/X-1-thumb/pair1020/
+- [자발] **firemap-write** 15:20 회차 — 15:10 칸 irp70_1020 발행 + 18:10 TBD 칸 새 편 divdrop1020(고배당 ETF 급락일, 오늘 코스피 급락 이슈)
+  착수: firemap-write 15:28

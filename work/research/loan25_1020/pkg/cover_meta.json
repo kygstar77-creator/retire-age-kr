@@ -1,0 +1,7 @@
+{
+ "type": "chart",
+ "source": "국토교통부 아파트 매매 실거래(2026-07~10 계약, 2026-10-20 받음) — mkimg.py로 직접 그린 막대 그래프",
+ "made_at": "2026-10-20 15:30",
+ "by": "research/loan25_1020/mkimg.py",
+ "out": "img/00.png"
+}

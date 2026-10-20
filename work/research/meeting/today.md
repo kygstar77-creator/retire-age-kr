@@ -8,6 +8,7 @@
   진행: firemap-video-producer 12:29 — 1편째 t1s_swap(T-1 3장 갈아타기, 10/22 17:20 칸) review.md에 '4~15초 줄' 칸: 3.6~10.0초 3:8 '3년이 아니라 2년'(숫자=답) · 10.0~14.0초 3:10 '하나라도 아니면 3년'(설정이 아니라 답의 조건) · 목차 예고·방법 줄 0 — 2편째는 다음 클립
 - [지시] **firemap-youtube-loop** (기한 10/21) 위 '4~15초 줄' 규칙 근거를 criteria/registry.md 한 줄로(우리 곡선 6편 shorts-gap-1020 N1 표·경쟁 oP2y5Q-Fhko·5h6BonE79pI·공식 유무) · 완료 기준: 판정 '근거 있음/없음'
   착수: firemap-youtube-loop 12:57 — 우리 곡선 6편·경쟁 2편·공식 문서 대조
+  완료: firemap-youtube-loop 12:59 — registry A-49 **근거 있음(약함) — 권장만**: 공식은 answer/1715160 '곡선이 꺼진 곳=그 부분에서 나감' 해석 원칙뿐(쇼츠 초 단위 숫자 없음) · 우리 6편 다시 잼 31%(약 15초) 목차·가정·방법 3편 0.36·0.45·0.52 vs 둘째 숫자·이유 3편 0.66·0.62·0.62(5~10초 급락은 6편 모두) · 한쪽 3편이라 표본 부족 → review.md 칸 기록은 유지, 자동 거부 관문 안 넣음, 줄 성격별 4편 쌓이면 10/26 다시 판정
 - [지시] **firemap-motion-designer** (기한 10/21) 자막 조각을 어절 묶음에서 끊기(A50 — n2s_middle 30.5초 '쪽엔 한가운데보다') · capChunks에 조사·의존명사로 시작하는 조각 금지 · 완료 기준: n2s_middle 대본 다시 쪼갠 목록에서 그런 조각 0
   착수: firemap-motion-designer 11:30 — capChunks 어절 묶음(조사·의존명사로 시작하는 조각 금지)
   완료: firemap-motion-designer 11:36 — 규칙을 video/src/parts/capchunks.ts로 뺌(safeframe capChunks가 부름, React 없이 시험 가능) · 끊는 자리 벌점 ① 띄어 쓴 조사(보다·처럼·까지·에서…)로 시작 ② 의존명사(쪽·것·게·수·때·데…)로 시작하면서 앞 낱말이 받침 ㄴ·ㄹ 꾸미는 꼴(받는·할) ③ 조각 안 쉼표 · n2s_middle 다시 쪼갠 목록 research/cardshorts/n2s_middle/capchunks_1020.txt — 그런 조각 0(전 1: '쪽엔 한가운데보다' → '받는 쪽엔 한가운데보다') · 롱폼 대본 19편 최신 say 8,167조각도 109→0, 바뀐 줄 175줄 표본 눈으로 봄('~는' 꾸미는 꼴 벌점은 시험하다 뺌 — 주제 '는'(평수는)과 못 가려 나빠짐) · 검사 도구 `py -3.12 work/capcheck.py <say.txt> [--list]`(0이면 종료 0) · 렌더·심사는 안 함(부품 아님)

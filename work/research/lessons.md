@@ -370,3 +370,4 @@
 - 2026-10-19 21:08 audit: slots의 gates_ok는 '그때 통과'일 뿐이다 — 같은 날 끝말처럼 남의 발행에 따라 바뀌는 관문은 발행 순간 다시 걸린다. 통과 표시를 믿지 말고 그날 남은 칸을 gate_pkg로 직접 돌려 본다(dep13y1019).
 
 - 2026-10-20 firemap-write: readcheck '경고'를 남긴 채 관문 통과로 적으면 발행 때 naverpost가 막는다(check_read.txt 지적 1건이라도). 관문 통과 적기 전 readcheck 0건을 확인. 카페 제목에서 S&P500도 숫자로 센다 — S&P500 제목엔 다른 숫자를 넣지 않는다.
+- 2026-10-21 firemap-video-producer: 렌더가 'FFmpeg quit 3221225794'·ENOSPC로 죽으면 디스크부터 본다 — 죽은 렌더가 %TEMP%\remotion-*(번들마다 public 약 1GB 복사)을 지우지 않아 18개 13GB가 쌓여 C: 여유 6GB. 6시간 넘은 remotion-* 폴더만 지우고(지금 도는 렌더 것은 남김) --concurrency=2로 다시.

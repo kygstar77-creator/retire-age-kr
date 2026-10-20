@@ -6,6 +6,18 @@
 - 막힘·사용량 [순돌이 몫] ← firemap-watchdog (21:53) 주간 사용량 60%(ccd get_usage, 09:53 49% → 12시간에 +11%p), 초기화 10/25 21:00(4일 23시간 남음) — 이 속도면 초기화 전 100% 넘음(90% 남은 폭 30%p ÷ 5일 = 하루 6%p까지만, 지금 약 22%p/일). 끄는 순서 제안(사장님 지시 빈도인 카페 12편·롱폼 1편은 맨 끝): ① pc-health-guard 매시→3시간마다 ② firemap-youtube-loop 4시간마다(6회)→2회 ③ benchmark-loop·motion-designer 10/25까지 쉼 ④ copywriter·visual-designer·editor 2회→1회 ⑤ dispatcher 3→2회 · 회차별 사용량은 확인 안 함(어느 직원이 많이 먹는지 모름) · 끄는 건 하지 않음(순돌이 결정)
 - 막힘·법 [순돌이 채팅 몫] ← firemap-audit (21:09) 공개 롱폼 3편 설명란 쿠팡 링크 아직 그대로(기한 10/20 09:00 넘김, 감사가 videos.list로 직접 확인) — 한 줄: `py -3.12 work/research/longform/loop/coupang1019/strip.py GMc2Rd1-JYA SCOI0DP-l-s scV67BQvC4Q` · PD는 12:17 force-ssl 토큰으로 H-2 설명란을 고쳤으니 같은 길로 PD 회차에서도 가능할 수 있음 · STOP 아님
 
+## ★ 회의 10/20 21:28~21:56 — 반론 처리·내일 원칙 (근거 meeting/2026-10-20-decisions.md·verify.md·missed.md)
+- 막힘: ① 롱폼 H-2·T-1 연속 관문 기한(24h 전) 넘김, X-1(10/22) 기한 10/21 11:30 — 녹음 뒤 대본·사실 수정이 원인(verify·missed R2) ② 비축 카페 0/2·롱폼 0/1·쇼츠 1/2 ③ 10/21~22 카페 24칸 전부 TBD, 10/23·24 17:20·19:20 쇼츠 4칸 TBD ④ 주간 사용량 15:30 53%(초기화 10/25 21:00) — 이 속도면 10/22 새벽 100%(추정, verify) ⑤ scV67BQvC4Q 공개 화면에 옛 설명(API는 쿠팡 0, 캐시로 보임 — 확인 안 함)
+- 회의 직접 처리(21:31): 공개 롱폼 3편 설명란 쿠팡 링크·고지 줄 strip.py로 뺌(10/19 법 지시, 기한 09:00 넘김) · API 되읽기 21:54 3편 쿠팡 0 · 되돌리기 coupang1019/before_<id>.txt로 videos.update · 교훈 45
+- [지시·법] **firemap-audit** (기한 10/21 09:00 — 감사 정기 회차 전이라도 처음 보는 직원이 함) scV67BQvC4Q·GMc2Rd1-JYA·SCOI0DP-l-s 비로그인 watch 페이지에 link.coupang 0인지 확인 · 남아 있으면 strip.py 그 id로 다시 돌리고 30초 뒤 API·공개 화면 두 번 확인 · 완료 기준: 3편 공개 화면 쿠팡 0 + 결과 줄
+- [지시] **firemap-video-producer + firemap-youtube-loop** (X-1 관문 10/21 11:30) 의도: 세 번째 연속 기한 넘김을 막는다 · 완료 기준: X-1 gates_ok가 10/21 11:30 전 · 금지: 녹음 뒤 새 줄 더하기(사실 오류 고침만) · 다음 편(H-3 10/23·J-1 10/24)부터 '녹음 전 대본 동결'(체크리스트 65) — 녹음 시작 전에 심사·사실 대조·브랜드 줄·편집 서명 끝, 녹음 뒤 바뀐 줄 수를 log에 · 보고: decisions/log
+- [지시] **firemap-video-producer** (기한 10/21 12:00) 칸 장부 3중 대조(체크리스트 64): slots published·upload.json id·oEmbed 공개 상태가 72시간 칸에서 같은지 — H-2 published 빈칸 기입, 10/20 16:32 교체 쇼츠 4편 published를 새 id로(옛 id d85WXpkwM0Q 403) · 완료 기준: 불일치 0 · 그다음 10/23·24 17:20·19:20 쇼츠 4칸 편 배정(d1s_dep 10/23 19:20 후보, 같은 날 다른 롱폼·질문)
+- [지시] **firemap-write·firemap-write-b** (각 첫 회차) 카페 비축 0/2 → 첫 회차 둘 다 관문 통과 편 2개 만들고 하나만 냄 · 10/21 칸 TBD 채우기 순서: 공개 영상 짝 글(T-1 11:30 롱폼·c2s_deposit 17:20·p1s_step 19:20·h1s_helio 07:20) 먼저, 부동산 2칸 이상 · 완료 기준: slots reserve.cafe 2(gates_ok)
+- [지시] **firemap-watchdog** (10/21 09:45) 주간 사용량 재기 — 85% 넘을 길이면 끄는 순서를 숫자로(직원별 %p, missed O1) today 맨 위 막힘에 · 칸 지키는 직원(PD·write·write-b)은 마지막에 끔
+- [지시] **firemap-audit** (정기 10/21) 외부 쓰기 '완료' 줄 표본 3건을 결과 파일·공개 화면과 대조(체크리스트 66) · 결과 파일 ok:false면 완료 아님
+- [지시] **firemap-benchmark-loop** (다음 롱폼 차례) 공개 20편+ 심사 점수 vs 실제 조회·시청 상관 표(missed O3) · 상관 없으면 그 관문은 '권장'으로 낮추자는 제안만(기준 바꾸기는 registry 근거 절차)
+- [결정 필요] 순돌이→사장님: ① 카드 쇼츠 시범 1편(벤치마크 03:4x, 아직 답 없음) ② 유료 광고 3만원 전환 시험(10/19) ③ dev→main 합치기(10/17부터 막힘)
+
 ## ★ 벤치마크 루프 10/20 03:4x — 쇼츠 3판 (근거 research/cardshorts/shorts-gap-1020.md) · 지난 배정 5건 반영 4·일부 1 · 1,000회 벽(10/11~16 클립 12편 중 9편 999~1,175회) · 평균 시청 중앙 60%→45%
 - [지시] **firemap-copywriter + firemap-video-producer** (기한 10/20 23:59, 다음 클립부터) 2~3번째 줄(약 4~15초)은 둘째 숫자나 답의 이유 · 목차 예고(A48 g1s_paths 10.0초 '크게 네 가지예요…' 그 구간 남은 비율 0.60→0.36)·방법/가정(A49 h1s_gap 3.7초·w1s_kospi 3.2초)은 15초 뒤로 또는 빼기 · 완료 기준: 다음 클립 2편 review.md에 '4~15초 줄' 칸(줄 성격 숫자/이유/설정/목차) · 자동 거부 관문은 registry 근거 뒤
   진행: firemap-video-producer 12:29 — 1편째 t1s_swap(T-1 3장 갈아타기, 10/22 17:20 칸) review.md에 '4~15초 줄' 칸: 3.6~10.0초 3:8 '3년이 아니라 2년'(숫자=답) · 10.0~14.0초 3:10 '하나라도 아니면 3년'(설정이 아니라 답의 조건) · 목차 예고·방법 줄 0 — 2편째는 다음 클립

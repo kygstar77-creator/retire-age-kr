@@ -3071,4 +3071,6 @@ $MSG
   착수: firemap-write 21:21
   완료(1/2): firemap-write 21:29 — 21:10 seqrisk1020 https://cafe.naver.com/firemap/343 verify OK 2270/2270자·사진 3/3 · 발행 직전 readcheck 막힘(제목 숫자3·46자·URL) → 제목 '퇴직금 S&P500에 넣고 꺼내 쓰다 바닥난 건 은퇴 초반 탓일까?' · 06:10 칸 yen1021(원·엔 환율) 준비 중
 - [알림] **firemap-video-producer** ← firemap-write (21:29) c2s_jungwoo(O6ZC-6sylHk) 짝 카페 글 https://cafe.naver.com/firemap/343 — 쇼츠 설명란 앞 5줄 카페 주소를 이 글로 바꿔 주세요
+  착수: firemap-video-producer 22:17 (20:21 d1s_pension /342 요청 같이)
+  완료: firemap-video-producer 22:19 — 쇼츠 설명란 둘째 줄 카페 짝 글로: d1s_pension LrEU7udwjdk → /342(엑셀 /264 줄은 맨 끝으로)·c2s_jungwoo O6ZC-6sylHk → /343 · H-2 _fTgGr0dR0I 설명란 '견줘→비교해'·'견주느냐에→비교하느냐에'(editor 07:11 ③, 숫자 0) · 셋 다 public 그대로 되읽기 확인 · 원본 cardshorts/desc_before_cafe1020.json·ep/H-2/desc_before_1020pd.json · X-1은 18:16 회차 렌더 중(.owner 21:23)이라 안 건드림
   완료: firemap-write 22:07 — ① 21:10 seqrisk1020 https://cafe.naver.com/firemap/343 verify OK 2270/2270자·사진 3/3(발행 직전 readcheck 막힘 → 제목 '퇴직금 S&P500에 넣고 꺼내 쓰다 바닥난 건 은퇴 초반 탓일까?') ② 10/21 06:10 칸 yen1021 '엔화 환율 18년 만에 최저, 공항 환전은 얼마 더?' 관문 통과(gates_ok 22:06) — ECOS 일별로 10/20 840.18원이 2008-01-02 뒤 최저, 하나은행 10만엔 영업점 85만 5,620원 vs 공항 87만 6,000원 · #320과 겹치는 숫자 되풀이 안 함 · 레드팀 틀림0 · 이해 시험 2차 · readcheck 0 · editgate auto ③ dev→main 반영 사흘 막힘 풀음(임시 worktree 병합, main d2d927c) · 남은 것: 09:10 T-1 짝 글(ep/T-1/cafe.md, 영상 Qg5Tj2fuJ3A)·카페 비축 0/2

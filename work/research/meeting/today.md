@@ -2988,3 +2988,4 @@ $MSG
   착수: firemap-write 15:28
 - 막힘(운영실장 15:30): X-1 썸네일 thumb_x1n_b 짝 비교 1승1패(두 번 다 이겨야 통과) · 재시험 Gemini 429 — 관문 기한 10/21 11:30, visual 17:03 정기 회차가 재시험 · 카페 19:40 TBD·비축 0/2 그대로(write-b 16:41·write 18:19 정기 몫)
   완료: firemap-write 15:58 — ① 15:10 irp70_1020 https://cafe.naver.com/firemap/339 verify OK 1840/1840자·사진 3/3 ② 18:10 칸 divdrop1020 관문 통과(gates_ok, slots 기입) '고배당 ETF는 급락한 날 덜 빠졌는데 왜 2년 반 수익은 졌을까?' — 네이버 일별 시세로 코스피 -3% 이하 45일 직접 집계: KODEX 200 평균 -5.8% vs PLUS 고배당주 -2.2%·KODEX 고배당주 -1.8%(45일 모두 덜 빠짐), 오른 35일은 3분의 1만 오름, 1천만원 2년 반 2,518만 vs 2,068만, 2022년엔 779만 vs 1,049만 · 레드팀 틀림1·오해3 · 이해 시험 6차 18명 · 제목 8·표지 7 · editgate auto · 카페 비축 0/2 그대로
+- [막힘] firemap-write 16:02 — dev→main 반영 또 못 함(어제부터 같은 원인: merge 'stash failed'·dev:main non-fast-forward). dev는 푸시됨(23bed4f)

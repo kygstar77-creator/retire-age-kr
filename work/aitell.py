@@ -439,6 +439,26 @@ def assert_check(text):
     return out
 
 
+def repeat_check(pkg):
+    """카페 묶음 본문에서 거의 같은 문장이 두 번 나온 곳(끝 '한눈에 정리' 조각은 뺌). 경고만 — 기준 근거 조사 전이라 막지 않는다.
+    10/20~21 editor 표본 6건 중 5건이 이 되풀이였다(h1helio1021 '8건을 한꺼번에…16%쯤 낮았' c00·c03, divdrop1020·h2cafe1019 등)."""
+    import difflib, glob
+    sents = []
+    for f in sorted(glob.glob(os.path.join(pkg, 'c??.txt'))):
+        t = open(f, encoding='utf-8').read()
+        if re.search(r'^##\s*(한눈에|정리|요약)', t, re.M): continue
+        for s in re.split(r'(?<=[.?!])\s+|\n+', t):
+            k = re.sub(r'[\s,.·\-]|(어요|에요|예요|습니다|니다|요|다)$', '', s.strip().lstrip('- '))
+            if len(k) >= 14 and not s.startswith(('http', '##', '|')): sents.append((os.path.basename(f), s.strip(), k))
+    out = []
+    for i, (fa, sa, ka) in enumerate(sents):
+        for fb_, sb, kb in sents[i + 1:]:
+            if re.findall(r'\d[\d.]*', sa) != re.findall(r'\d[\d.]*', sb): continue   # 숫자가 다르면 나란한 목록(3.5%·3.6%)이지 되풀이가 아니다
+            if difflib.SequenceMatcher(None, ka, kb).ratio() >= 0.8:
+                out.append(f'{fa} "{sa[:40]}" ↔ {fb_} "{sb[:40]}" — 한 번만')
+    return out
+
+
 def gate_pkg(pkg):
     """발행기용. (올려도 되나, 한 줄 사유, 걸린 곳)."""
     text, files = pkg_text(pkg)
@@ -461,6 +481,7 @@ def gate_pkg(pkg):
                 if rb: return False, rb, [rb]
         if day0 < OPEN_FROM:
             for e in opening_check(pkg): print('[경고]', e)
+        for e in repeat_check(pkg): print('[경고·되풀이]', e)
         fb = frame_check(pkg)
         if fb:
             sp = os.path.join(pkg, 'slot.txt')
@@ -531,6 +552,17 @@ def screen_titles(p):
     f = os.path.join(p, 'screen_text.txt') if os.path.isdir(p) else ''
     if not f or not os.path.exists(f): return []
     return [l.split('] ', 1)[1].strip() for l in open(f, encoding='utf-8') if re.match(r'\[scenes\.\d+\.data\.title\] ', l)]
+
+
+# A48(10/21 editor): 화면 자막에 우리 작업 메모가 샌 것(H-3 '(calc2 §2) — 말에 쓰지 않음'·'(T-1 사실표 L12)' 7곳) — 자막은 script.md [자막: …]에서 그대로 붙는다.
+_MEMO = re.compile(r'calc\d?(_out)?\s?§|사실표\s?[A-Z]?\d|말에\s?쓰지\s?않|facts\.txt|\[[A-Z]\d{1,2}\]|DRAFT|TODO')
+
+
+def screen_memos(p):
+    """편 폴더 screen_text.txt에서 작업 메모가 든 화면 글자 줄. 코드에서 뽑은 줄([*.tsx])은 뺀다."""
+    f = os.path.join(p, 'screen_text.txt') if os.path.isdir(p) else ''
+    if not f or not os.path.exists(f): return []
+    return [l.strip() for l in open(f, encoding='utf-8') if l.startswith('[scenes.') and _MEMO.search(l)]
 
 
 def _sig(n):
@@ -690,7 +722,8 @@ def main(a):
         for b in bad: print('  ', b)
         if not ok: print('  숫자·사실 문장은 바꾸지 않는다: 말에는 숫자 하나·반올림, 정확한 값은 화면 자막으로 옮긴다.')
         habits = script_habits(script_lines(a[1]), script_lines(a[1], 'say'), screen_titles(a[1]))
-        print('말 습관(정밀 숫자·순번 3개↑·말 목차 3연속·꼬리표 낭독·A40 면책 반복/끝 3줄·A41 분이라면 5줄↑·A43 예고·A44 끝 정리·A46 한계 낱말 3번↑·A47 같은 판 제목 3장↑) — ' + ('통과' if not habits else f'{len(habits)}건 걸림'))
+        habits += [('A48 화면에 작업 메모', 0, m) for m in screen_memos(a[1])]
+        print('말 습관(정밀 숫자·순번 3개↑·말 목차 3연속·꼬리표 낭독·A40 면책 반복/끝 3줄·A41 분이라면 5줄↑·A43 예고·A44 끝 정리·A46 한계 낱말 3번↑·A47 같은 판 제목 3장↑·A48 화면 작업 메모) — ' + ('통과' if not habits else f'{len(habits)}건 걸림'))
         for k, i, l in habits: print(f'   [{k}] {i}줄: {l[:70]}')
         if habits: print('  정밀 숫자는 말로 반올림(정확값은 화면), 순번·목차는 질문 한 줄로, 꼬리표는 말에서 지운다, 면책은 편당 1줄·끝 3줄 밖, 한계 말은 한 번만, 판 제목은 그 판 내용으로.')
         sp, over = spoken_check(script_lines(a[1]))

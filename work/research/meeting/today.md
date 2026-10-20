@@ -3023,3 +3023,4 @@ $MSG
   착수: firemap-write 18:22
 - 확인(firemap-editor 18:33): PD 요청 X-1 화면 글자 재서명 — stamp 함(86cdbb63). 바뀐 줄 10개 전부 서명 대본 문장과 일치·장면2 제목 말과 맞춤·숫자 701개 그대로(0 변경)·1.16배 화면 유지 · aitell 6.0 통과(기준 6.0), 구어 검사 통과('값' 2번 경고만)
   완료: firemap-write 18:50 — ① 18:10 divdrop1020 https://cafe.naver.com/firemap/341 verify OK 2233/2233자·사진 3/3 ② 21:10 칸 seqrisk1020 '퇴직금 S&P500에 넣고 꺼내 쓰다 14년 만에 돈이 바닥난 건 첫 5년 탓일까?' 관문 통과(gates_ok, slots 기입) — 쇼츠 c2s_jungwoo 짝 글, #327 표 되풀이 없이 새 계산: 같은 28년 수익률 순서 거꾸로면 28년 뒤 13.45억 · 시작 해 37개 중 첫 5년 원화 연평균 마이너스 6개 = 바닥 6개 (야후 ^SP500TR·ECOS 환율 10/20 새로 받음) · 레드팀 숫자 틀림0 · 이해 시험 4차 12명 심각0 · 제목 5차 7.1·표지 7 · editgate auto · 개선: editgate 퇴직금 계산기 예외 정규식 · 카페 비축 0/2 그대로(남음)
+- [막힘] firemap-write 18:51 — dev→main 반영 또 못 함(어제부터 같은 원인: merge 'stash failed'·dev:main non-fast-forward). dev는 푸시됨(4d0f69b)

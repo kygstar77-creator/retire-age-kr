@@ -77,16 +77,16 @@
   "say": "새 나간 곳은 환율이에요. 천오백오십사 원이던 달러가 천삼백삼십구 원이 됐거든요.",
   "audio": "audio/x-1/ca3c31e2b0816c90.wav",
   "heard": [
-   "체나 간 곳은 환율이에요? 1554원이던 달러가 1339원이 됐거든요.",
-   "지나간곳은환율이에요1554원이던달러가1339원이됐거든요"
+   "1,554원 이던 달러가 1,339원이 됐거든요.",
+   "새나간곳은환율이에요1554원이던달러가1339원이됐거든요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.95,
-  "pair": 0.95,
-  "flag": "합의오독(0.95/0.95 세→체/지)",
+  "sim": 1.0,
+  "pair": 0.71,
+  "flag": "",
   "batch2": true
  },
  {
@@ -113,16 +113,16 @@
   "say": "요즘 지식인과 카페, 유튜브 댓글에 이걸 묻는 글이 계속 올라옵니다.",
   "audio": "audio/x-1/31a1f62bf2267c61.wav",
   "heard": [
-   "요즘 지식인과 카페, 유튜브 댓글에 이걸 묻는 글이 계속 올라옵니다.",
+   "요즘 지식인과 카페 유튜브 댓글에 이걸 묻는 글이 계속 올라옵니다.",
    "요즘지식인과카페유튜브댓글에이걸묻는글이계속올라옵니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
   "pair": 1.0,
-  "flag": "합의오독(1.00/1.00 ·→인/인)",
+  "flag": "",
   "batch2": true
  },
  {
@@ -185,16 +185,16 @@
   "say": "지식인에 이런 질문이 올라왔어요.",
   "audio": "audio/x-1/7ae52bf1a44f84b6.wav",
   "heard": [
-   null,
+   "지식인에 이런 질문이 올라왔어요.",
    "지식인에이런질문이올라왔어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -367,16 +367,16 @@
   "say": "네 날짜 모두 줄었어요. 지금 환율이 그 네 날보다 다 낮거든요.",
   "audio": "audio/x-1/4af7060629480d34.wav",
   "heard": [
-   null,
-   "내날짜모두줄었어요지금환율이그내날보다다낮거든요"
+   "DINAR자 모두 줄었어요. 지금 환율이 그 DINAR보다 다 낮거든요.",
+   "네날짜모두줄었어요지금환율이그네날보다다낮거든요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.86,
+  "flag": "",
   "batch2": true
  },
  {
@@ -385,16 +385,16 @@
   "say": "이번엔 같은 날 에스앤피 오백 이티에프를 샀다고 해 볼게요.",
   "audio": "audio/x-1/ac16c21bbac80960.wav",
   "heard": [
-   null,
+   "이번엔 같은 날 S&P 500 ETF를 샀다고 해 볼게요.",
    "이번엔같은날500를샀다고해볼게요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -403,16 +403,16 @@
   "say": "작년 이맘때 샀다면 달러로는 십육 퍼센트 넘게 올랐습니다.",
   "audio": "audio/x-1/596d494c2695760b.wav",
   "heard": [
-   null,
+   "장년 이맘때 샀다면 달러로는 16% 넘게 올랐습니다.",
    "작년이맘때샀다면달러로는16%넘게올랐습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -421,16 +421,16 @@
   "say": "그런데 원화로 따지면 오른 폭이 십퍼센트가 조금 안 돼요.",
   "audio": "audio/x-1/9e55aa1b57fc4f68.wav",
   "heard": [
-   null,
+   "그런데 원화로 따지면 오른폭이 10%가 조금 안 돼요.",
    "그런데원화로따지면오른폭이10%가조금안돼요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -439,16 +439,16 @@
   "say": "육백칠십만 원쯤을 환율이 가져간 셈이죠.",
   "audio": "audio/x-1/8e7795af09e8bf06.wav",
   "heard": [
-   "670만 원쯤을 환율이 가져간 셈이죠.",
-   null
+   "670만 원 쯤을 환일이 가져간 셈이죠.",
+   "670만원쯤을환율이가져간셈이죠"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.92,
+  "flag": "",
   "batch2": true
  },
  {
@@ -458,15 +458,15 @@
   "audio": "audio/x-1/f2142f7c58f58c21.wav",
   "heard": [
    "달러만 들고 있을 때보다 더 큰 건 주가로 불어난 돈에도 환율이 같이 붙기 때문이에요.",
-   null
+   "달러만들고있을때보다더큰건주가로불어난돈에도환율이같이붙기때문이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -476,15 +476,15 @@
   "audio": "audio/x-1/4407bbbd1e20ea26.wav",
   "heard": [
    "올해 첫날 샀다면 원화로 5% 조금 넘게 남았고요.",
-   null
+   "올해첫날샀다면원화로5%조금넘게남았고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -493,18 +493,16 @@
   "say": "가장 비싸던 날 샀다면, 주가는 올랐는데도 일억이 원화로 구천만 원 아래가 됐어요.",
   "audio": "audio/x-1/7aaaf7d0d73e1e44.wav",
   "heard": [
-   "가장 비싸던 날 샀다면 주가는 올랐는데도 1억 2천만 원 아래가 됐어요.",
-   null,
-   null
+   "가장 비싸던 날 샀다면 주간 올랐는데도 1억이 원화로 9천만 원 아래가 됐어요.",
+   "가장비싸던날샀다면주가는올랐는데도1억이원화로9000만원아래가됐어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash",
-   "gemini-flash-lite-latest"
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
   ],
-  "sim": 0.93,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.98,
+  "pair": 0.93,
+  "flag": "",
   "batch2": true
  },
  {
@@ -514,15 +512,15 @@
   "audio": "audio/x-1/1c7d7868471f44fc.wav",
   "heard": [
    "왜 이렇게 될까요?",
-   null
+   "왜이렇게될까요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -532,15 +530,15 @@
   "audio": "audio/x-1/f0466eea98b7b108.wav",
   "heard": [
    "원화로 본 수익은 주가 변화와 환율 변화를 곱해서 나옵니다.",
-   null
+   "원화로본수익은주가변화와환율변화를곱해서나옵니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -550,15 +548,15 @@
   "audio": "audio/x-1/97e67b71aa9adce7.wav",
   "heard": [
    "주가가 그대로여도 환율이 10% 내리면 원화로는 10% 줄어요.",
-   null
+   "주가가그대로여도환율이10%내리면원화로는10%줄어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -568,15 +566,15 @@
   "audio": "audio/x-1/e7544c79b0896b9a.wav",
   "heard": [
    "주가까지 10% 내리면 두 번 깎여서 원화로는 19% 줄어듭니다.",
-   null
+   "주가까지10%내리면두번깎여서원화로는19%줄어듭니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -585,18 +583,16 @@
   "say": "일억이 구천만원이 되고, 그 구천만원이 또 십퍼센트 줄면 팔천백만원이니까요.",
   "audio": "audio/x-1/785bfc669b543f22.wav",
   "heard": [
-   "1억 9천만 원이 되고 그 9천만 원이 또 10% 줄면 8천 100만 원이니까요.",
-   null,
-   null
+   "1억 2,900만 원이 되고 그 9,000만 원이 또 10% 줄면 8,100만 원이니까요.",
+   "1억이9000만원이되고그9000만원이또10%줄면8100만원이니까요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash",
-   "gemini-flash-lite-latest"
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash"
   ],
   "sim": 0.95,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -605,16 +601,16 @@
   "say": "질문처럼 환율이 칠퍼센트 내렸는데 손실이 십이퍼센트라면, 주가도 같이 빠졌다는 뜻이에요.",
   "audio": "audio/x-1/076b73d7944743e8.wav",
   "heard": [
-   "질문처럼 환율이 7% 내렸는데 손실이 12%라면 주가도 같이 빠졌다는 뜻이에요.",
-   null
+   "질문처럼 환율이 7% 내렸는데 손실이 12%라면 주도 같이 빠졌다는 뜻이에요.",
+   "질문처럼환율이7%내렸는데손실이12%라면주가도같이빠졌다는뜻이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -624,15 +620,15 @@
   "audio": "audio/x-1/83142ee0696647dc.wav",
   "heard": [
    "그럼 환율은 왜 이렇게 내렸을까요? 공식 문서에 적힌 이유가 있습니다.",
-   null
+   "그럼환율은왜이렇게내렸을까요공식문서에적힌이유가있습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -641,16 +637,16 @@
   "say": "한국은행은 팔월 금리 결정문에, 나라 안으로 달러가 넉넉히 들어오고 미국 달러 값이 약해져 환율이 크게 내렸다고 적었어요.",
   "audio": "audio/x-1/71c56a1bb73cbecd.wav",
   "heard": [
-   "한국은행은 8월 금리 결정문에 나라 안으로 달러가 넉넉히 들어오고 미국 달러 값이 약해져 환율이 크게 내렸다고 적었어요.",
-   null
+   "한국은행은 8월 금리 결정문에 나라 안으로 달러가 넉넉히 들어오고 미국 달러값이 약해져 환율이 크게 내렸다고 적었어요.",
+   "한국은행은8월금리결정문에나라안으로달러가넉넉히들어오고미국달러값이약해져환율이크게내렸다고적었어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -660,15 +656,15 @@
   "audio": "audio/x-1/50cbbe53a3939344.wav",
   "heard": [
    "이번 달엔 자료에서는 수출하는 회사들이 번 달러를 많이 판 영향을 들었습니다.",
-   null
+   "이번달달러자리에서는수출하는회사들이번달러를많이판영향을받았습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.86,
+  "flag": "합의오독(0.86/0.97 넨→엔/달러 넨→엔/리)",
   "batch2": true
  },
  {
@@ -678,15 +674,15 @@
   "audio": "audio/x-1/f9a1ecb61ff02cbb.wav",
   "heard": [
    "정부도 8월 회의에서 나라가 해외에서 번 돈이 사상 최대였던 것을 이유로 꼽았고요.",
-   null
+   "정부도8월회의에서나라가해외에서번돈이사상최대였던것을이유로꼽았고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -696,15 +692,15 @@
   "audio": "audio/x-1/c95c349fbfa9295d.wav",
   "heard": [
    "달러가 많이 들어와 흔해지면 값이 내려가는 거죠.",
-   null
+   "달러가많이들어와흔해지면값이내려가는거죠"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -714,15 +710,15 @@
   "audio": "audio/x-1/8b4f760d1b80530c.wav",
   "heard": [
    "그래서 내 계좌는 어떻게 보면 될까요?",
-   null
+   "그래서내계좌는어떻게보면될까요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -732,15 +728,15 @@
   "audio": "audio/x-1/728c74aae9fd3521.wav",
   "heard": [
    "본전 환율을 직접 계산해 보면 됩니다.",
-   null
+   "본전환율을직접계산해보면됩니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -749,16 +745,16 @@
   "say": "산 날 환율을, 그 뒤 주가가 몇 배가 됐는지로 나누면 끝이에요.",
   "audio": "audio/x-1/ff3e9fc79eaf830f.wav",
   "heard": [
-   "산 날 환율을 그 뒤 주가가 몇 배가 되는지를 나누면 끝이에요.",
-   null
+   "산 날 환율을 그디 주가가 몇 배가 됐는지로 나누면 끝이에요.",
+   "산날환율을그뒤주가가몇배가됐는지로나누면끝이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -767,18 +763,18 @@
   "say": "증권사 앱에 달러 수익률이 십육 퍼센트로 나오면, 일 점 일육 배로 나누면 됩니다.",
   "audio": "audio/x-1/0e47c41a6428226e.wav",
   "heard": [
-   "증권사의 배당 달러 수익률이 16%로 나오면 1.26배로 나누면 됩니다.",
-   null,
-   null
+   "증권사 앱에 달러 수익률이 16%로 나오면 1.26배로 나누면 됩니다.",
+   "증권사앱에달러수익률이16%로나오면116배로나누면됩니다",
+   "증권사 앱에 달러 수익률이 16%로 나오면 1.16배로 나누면 됩니다."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash",
-   "gemini-flash-lite-latest"
+   "gemini-3.5-transcribe"
   ],
-  "sim": 0.94,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "숫자",
   "batch2": true
  },
  {
@@ -787,16 +783,16 @@
   "say": "가장 비싸던 날 산 경우는, 환율이 천오백 원은 돼야 본전이에요.",
   "audio": "audio/x-1/c9a2b29a47914aa4.wav",
   "heard": [
-   "가장 비싸던 날 산 경어는 환율이 1,500원은 돼야 본전이에요.",
-   null
+   "가장 비쌌던 날 산 경우는 환율이 1,500원은 돼야 본전이에요.",
+   "가장비싸던날산경우는환율이1500원은돼야본전이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.95,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -805,16 +801,16 @@
   "say": "지금 천삼백삼십구 원보다 백육십 원쯤 위입니다.",
   "audio": "audio/x-1/fc59c927789765d0.wav",
   "heard": [
-   "지금 1339원보다 160원쯤 위입니다.",
-   null
+   "지금 1,339원 보다 160원 쯤 위입니다.",
+   "지금1339원보다160원쯤위입니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -823,16 +819,16 @@
   "say": "석 달 전에 산 경우는 천사백육십삼 원이 본전이고요.",
   "audio": "audio/x-1/72036086361fe633.wav",
   "heard": [
-   "석 달 전의 상 경우는 1463원이 본전이고요.",
-   null
+   "석 달 전에 산 경우는 1463원이 본전이고요.",
+   "석달전에산경우는1463원이본전이고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.93,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -841,16 +837,16 @@
   "say": "일 년 전에 산 경우는 천이백이십 원까지 내려가도 아직 본전입니다.",
   "audio": "audio/x-1/23ec56a6a4ce2bd8.wav",
   "heard": [
-   "1년 전의 상경우는 1220원까지 내려가도 아직 본전입니다.",
-   null
+   "1년 전에 산 경우는 1,220원까지 내려가도 아직 본전입니다.",
+   "1년전에산경우는1220원까지내려가도아직본전입니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.95,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -860,15 +856,15 @@
   "audio": "audio/x-1/408a8a5e6e5f3b9d.wav",
   "heard": [
    "조심할 게 있어요.",
-   null
+   "조심할게있어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -877,16 +873,16 @@
   "say": "본전 환율은 주가가 지금 그대로일 때만 맞는 숫자예요. 주가가 움직이면 같이 움직입니다.",
   "audio": "audio/x-1/a8d815511d23474c.wav",
   "heard": [
-   "본전 환율은 주가가 지금 그대로일 때만 맞는 숫자예요. 주가가 움직이면 같이 움직입니다.",
-   null
+   "본전 환율은 주가가 지금 그대로일 때만 맞는 숫자예요. 음, 주가가 움직이면 같이 움직입니다.",
+   "본전환율은주가가지금그대로일때만맞는숫자에요음주가가움직이면같이움직입니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.99,
+  "pair": 0.95,
+  "flag": "합의오독(0.95/0.99 ·→음/에 ·→음/음)",
   "batch2": true
  },
  {
@@ -896,15 +892,15 @@
   "audio": "audio/x-1/d8bc170e321e6094.wav",
   "heard": [
    "그리고 정부 회의 자료에도 환율이 오를 요인과 내릴 요인이 함께 있다고 적혀 있어요.",
-   null
+   "그리고정부회의자료에도환율이오를요인과내릴요인이함께있다고적혀있어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -913,16 +909,16 @@
   "say": "지난 석 달 방향이 그대로 이어진다고 보고 계산하면 틀리기 쉽습니다.",
   "audio": "audio/x-1/9da306af53c32fdd.wav",
   "heard": [
-   "지난 3달 방향이 그대로 이어진다고 보고 계산하면 틀리기 쉽습니다.",
-   null
+   "지난 석 달 방향이 그대로 이어진다고 보고 계산하면 틀리기 쉽습니다.",
+   "지난석달방향이그대로이어진다고보고계산하면틀리기쉽습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.98,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -931,16 +927,16 @@
   "say": "이번엔 유튜브 댓글에 달린 질문이에요.",
   "audio": "audio/x-1/6491a956f5ce0f79.wav",
   "heard": [
-   "이번엔 유튜브 댓글에 달린 질문이에요.",
-   null
+   "이번엔 유튜브 채널에 달린 질문이에요.",
+   "이번엔유튜브댓글에달린질문이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.88,
+  "flag": "",
   "batch2": true
  },
  {
@@ -949,16 +945,18 @@
   "say": "미국에선 에스앤피 오백이 최고가를 새로 썼다는데, 한국에 상장된 에스앤피 오백 이티에프는 왜 내렸냐는 겁니다.",
   "audio": "audio/x-1/038fe2a190d2a720.wav",
   "heard": [
-   "미국에선 S&P 500이 최고가를 새로 썼다는데 한국에 상장된 S&P 500 ETF는 왜 내렸냐는 겁니다.",
-   null
+   "미국에선 에스앤피 오백이 최고가를 새로 썼다는데, 한국에 상장된 에스앤피 오백 이티에프는 왜 내렸냐는 겁니다.",
+   "미국에선500이최고가를새로썼다는데한국에상장된500는왜내리냐는겁니다",
+   "미국에선 S&P 500이 최고가를 새로 썼다는데 한국에 상장된 S&P 500 ETF는 왜 내렸냐는 겁니다."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.76,
+  "flag": "",
   "batch2": true
  },
  {
@@ -968,15 +966,15 @@
   "audio": "audio/x-1/eb77ef9604af2b9b.wav",
   "heard": [
    "지식인에는 이름 끝에 괄호 H가 붙은 건 뭐가 다르냐는 질문도 있었고요.",
-   null
+   "지식인에는이름끝에괄호가붙은건뭐가다르냐는질문도있었고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.98,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -985,16 +983,16 @@
   "say": "한국 증권 계좌에서 원화로 사는 미국 이티에프는 크게 두 종류예요.",
   "audio": "audio/x-1/65e02e70540f70d8.wav",
   "heard": [
-   "한국 증권 계좌에서 원화로 사는 미국 ETF는 크게 두 종류예요.",
-   null
+   "한국증권계좌에서 원화로 사는 미국 ETF는 크게 두 종류예요.",
+   "한국증권계좌에서원화로사는미국는크게두종류예요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1003,16 +1001,16 @@
   "say": "환율 움직임을 그대로 맞는 환노출형, 그리고 이름 끝에 에이치가 붙은 환헤지형입니다.",
   "audio": "audio/x-1/bf958252d4e0a258.wav",
   "heard": [
-   "환율 움직임을 그대로 맞는 환노출형 그리고 이름 끝에 H가 붙은 환헤지형입니다.",
-   null
+   "환율 움직임을 그대로 맞는 환노출형 그리고 이름 끝에 h가 붙은 환해지형입니다.",
+   "환율움직임을그대로맞는환노출형그리고이름끝에가붙은환헤지형입니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1021,16 +1019,16 @@
   "say": "운용사 설명으로는, 에이치형은 환헤지 전략으로 환율 변동 영향을 최소화하는 상품이에요.",
   "audio": "audio/x-1/e1dd542ddf98ead3.wav",
   "heard": [
-   "운용사 설명으로는 H형은 환헤지 전략으로 환율 변동 영향을 최소화하는 상품이에요.",
-   null
+   "운용사 설명으로는 H0는 환헤지 전략으로 환율 변동 영향을 최소화하는 상품이에요.",
+   "운용사설명으로는형은환헤지전략으로환율변동영향을최소화하는상품이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1039,16 +1037,16 @@
   "say": "같은 회사가 만든 두 상품, 코덱스 미국에스앤피 오백과 끝에 에이치가 붙은 같은 이름 상품을 같이 놓고 계산했어요.",
   "audio": "audio/x-1/44cb184efd4648f9.wav",
   "heard": [
-   "같은 회사가 만든 두 상품 코덱스 미국 S&P 500과 끝에 H가 붙은 같은 이름 상품을 같이 놓고 계산했어요.",
-   null
+   "같은 회사가 만든 두 상품, 코덱스 미국 SP 500과 끝에 H가 붙은 같은 이름 상품을 같이 놓고 계산했어요.",
+   "같은회사가만든두상품미국500과끝에가붙은같은이름상품을같이놓고계산했어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1057,16 +1055,16 @@
   "say": "이티에프가 나눠 주는 배당, 분배금까지 넣었습니다.",
   "audio": "audio/x-1/5fe3cc9c39385f3c.wav",
   "heard": [
-   "ETF가 나눠주는 배당 분배금까지 넣었습니다.",
-   null
+   "이 ETF가 나눠주는 배당 분배금까지 넣었습니다.",
+   "가나눠주는배당분배금까지넣었습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1075,16 +1073,16 @@
   "say": "달러가 제일 비쌌던 날 일억을 넣었다면, 환노출형은 구천만 원이 조금 안 됩니다.",
   "audio": "audio/x-1/f969167a035b3cdd.wav",
   "heard": [
-   "달러가 제일 비쌌던 날 1억을 넣었다면 환노출형은 9천만 원이 조금 안 됩니다.",
-   null
+   "달러가 제일 비쌌던 날 1억을 넣었다면, 환노출형은 9천만 원이 조금 안 됩니다.",
+   "달러가제일비쌌던날1억을넣었다면환노출형은9천만원이조금안됩니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1093,16 +1091,16 @@
   "say": "에이치형은 오히려 일억을 넘었어요.",
   "audio": "audio/x-1/db559573d04b3f27.wav",
   "heard": [
-   "H형은 오히려 1억을 넘었어요.",
-   null
+   "h형은 오히려 1억을 넘었어요.",
+   "형은오히려1억을넘었어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1111,16 +1109,16 @@
   "say": "차이가 천사백만 원을 넘습니다.",
   "audio": "audio/x-1/ed498cc174ed59e5.wav",
   "heard": [
-   "차이가 1400만 원을 넘습니다.",
-   null
+   "차가 1,400만 원을 넘습니다.",
+   "차이가1400만원을넘습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1129,16 +1127,16 @@
   "say": "일 년 전에 넣었어도 에이치형이 사백만 원 넘게 더 남았고요.",
   "audio": "audio/x-1/3a083af62b5807bc.wav",
   "heard": [
-   "1년 전에 넣었어도 H형이 400만 원 넘게 더 남았고요.",
-   null
+   "1년 전에 넣어도 에이형이 400만 원 넘게 더 나왔고요.",
+   "1년전에넣었어도형이400만원넘게더남았고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.81,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1148,15 +1146,15 @@
   "audio": "audio/x-1/7290b791592d8f50.wav",
   "heard": [
    "댓글 질문에 답이 이거예요.",
-   null
+   "댓글질문에답이이거예요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1165,16 +1163,16 @@
   "say": "환노출형은 미국 지수가 오른 만큼에 환율이 내린 만큼이 같이 붙어 움직여요. 지수가 올라도 환율이 더 내리면 떨어집니다.",
   "audio": "audio/x-1/2737b138956fe762.wav",
   "heard": [
-   "환노출량은 미국 지수가 오른 만큼의 환율이 내린 만큼이 같이 붙어 움직여요. 지수가 올라도 환율이 더 내리면 떨어집니다.",
-   null
+   "환율 유량은 미국 지수가 오른 만큼의 환율이 내린 만큼이 같이 붙어 움직여요. 지수가 올라 도 환율이 더 내리면 떨어집니다.",
+   "환노출형은미국지수가오른만큼의환율이내린만큼이같이붙어서움직여요지수가올라도환율이더내리면떨어집니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.98,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.94,
+  "pair": 0.87,
+  "flag": "합의오독(0.87/0.94 노출형→율유량/음)",
   "batch2": true
  },
  {
@@ -1183,16 +1181,16 @@
   "say": "그럼 에이치형이 늘 나을까요?",
   "audio": "audio/x-1/6b19286a253651e5.wav",
   "heard": [
-   "그럼 H형이 될 날일까요?",
-   null
+   "그럼 A 형이 될 날까요?",
+   "그럼형이늘나을까요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.67,
-  "pair": null,
-  "flag": "밀림의심(0.67) 받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.71,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1202,15 +1200,15 @@
   "audio": "audio/x-1/4bc347265936e1dd.wav",
   "heard": [
    "재작년 첫날 넣었다면 결과가 뒤집혀요.",
-   null
+   "재작년첫날넣었다면결과가뒤집혀요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1220,15 +1218,15 @@
   "audio": "audio/x-1/a85c917a44b21204.wav",
   "heard": [
    "그때 환율은 1289원으로 지금보다 낮았어요.",
-   null
+   "그때환율은1289원으로지금보다낮았어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1237,16 +1235,16 @@
   "say": "그 뒤 달러 값이 크게 올랐다가 이번에 내린 거라, 지금도 그때보다는 높거든요.",
   "audio": "audio/x-1/9f1e875fe13f4957.wav",
   "heard": [
-   "그때 값이 크게 올랐다가 이번에 내린 거라 지금도 그때보다는 높거든요.",
-   null
+   "금리 값이 크 게 올랐다가 이번에 내린 거라 지금도 그때보다는 높거든요.",
+   "그뒤달러값이크게올랐다가이번에내린거라지금도그때보다는높거든요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.93,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.9,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1255,16 +1253,16 @@
   "say": "이 경우엔 환노출형이 천오백만 원 넘게 더 남았습니다.",
   "audio": "audio/x-1/c1e86a3647ad08f0.wav",
   "heard": [
-   "이 경우엔 환노출형이 1,500만 원 넘게 더 남았습니다.",
-   null
+   "이 경우에는 환로 추령이 1500만 원 넘게 더 남았습니다.",
+   "이경우엔환노출형이1500만원넘게더남았습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.77,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1273,16 +1271,16 @@
   "say": "환율을 막아 두면 내릴 때 손실도 막지만, 오를 때 이익도 같이 막는 겁니다.",
   "audio": "audio/x-1/c7205b7e43162539.wav",
   "heard": [
-   "환율을 막아두면 내릴 때 손실도 막지만 오를 때 이익도 같이 막는 겁니다.",
-   null
+   "환율을 막아두면 내릴 때의 손실도 막지만, 오를 때의 이익도 같이 막는 겁니다.",
+   "환율을막아두면내릴때손실도막지만오를때이익도같이막는겁니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1292,15 +1290,15 @@
   "audio": "audio/x-1/482e410dd44c6c6a.wav",
   "heard": [
    "그래서 어떻게 고르면 될까요?",
-   null
+   "그래서어떻게골르면될까요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.92,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1309,16 +1307,16 @@
   "say": "기준은 이 돈을 결국 어떤 돈으로 쓸 거냐예요.",
   "audio": "audio/x-1/56c8cddfc50fef5f.wav",
   "heard": [
-   "기준은 이 돈을 결국 어떤 돈으로 쓸 거냐예요.",
-   null
+   "기존은 이 돈은 결국 어떤 돈으로 쓸 거냐예요.",
+   "기준은이돈을결국어떤돈으로쓸거냐예요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.89,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1328,15 +1326,15 @@
   "audio": "audio/x-1/362658f55e7e3ee1.wav",
   "heard": [
    "몇 년 안에 원화로 꺼낼 돈이라면 환율 흔들림이 그대로 내 손익이 됩니다. H형은 그 흔들림을 줄여줘요.",
-   null
+   "몇년안에원화로꺼내쓸돈이라면환율흔들림이그대로내손익이됩니다형은그흔들림을줄여줘요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1346,15 +1344,15 @@
   "audio": "audio/x-1/eb3a14df106772e7.wav",
   "heard": [
    "나중에 딸라로 쓸 돈이라면 원화로 얼마인지가 덜 중요하고요.",
-   null
+   "나중에달러로쓸돈이라면원화로얼마인지가덜중요하고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.92,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1363,16 +1361,16 @@
   "say": "큰 기관은 어떻게 할까요? 국민연금은 해외투자의 환헤지 비율을 십오 퍼센트를 기본으로 정해 두었어요.",
   "audio": "audio/x-1/451acf92a7d5075a.wav",
   "heard": [
-   "큰 기관은 어떻게 할까요? 국민연금은 해외 투자의 환헤지 비율을 15%를 기본으로 정해 두었어요.",
-   null
+   "큰 기관은 어떻게 할까요? 국민연금은 해외 투자의 환해지 비율을 15%를 기본으로 정해 두었어요.",
+   "큰기관은어떻게할까요국민연금은해외투자의환헤지비율을15%를기본으로정해두었어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1381,16 +1379,16 @@
   "say": "나라 돈을 굴리는 곳도 환율을 전부 막지 않고, 일부만 막는 쪽을 고른 겁니다.",
   "audio": "audio/x-1/821fbf2e49f32f11.wav",
   "heard": [
-   "따라 돈을 굴리는 것도 환율을 전부 막지 않고 일부만 막는 쪽을 고른 겁니다.",
-   null
+   "다라를 굴리는 것도 환율을 전부 막지 않고 일부만 막는 쪽을 고른 겁니다.",
+   "나라돈을굴리는곳도환율을전부막지않고일부만막는쪽을고른겁니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.93,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.97,
+  "pair": 0.85,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1400,15 +1398,15 @@
   "audio": "audio/x-1/3f97fa9e516d1508.wav",
   "heard": [
    "조심할 것도 있습니다.",
-   null
+   "조심할것도있습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1417,16 +1415,16 @@
   "say": "운용사는 환헤지 상품에 헤지 비용이 추가로 들어갈 수 있다고 적어 두었는데, 그 비용이 몇 퍼센트인지는 숫자로 공개하지 않았어요.",
   "audio": "audio/x-1/8f0e97e8520d443d.wav",
   "heard": [
-   "운용사는 환해지 상품의 해지 비용이 추가로 들어갈 수 있다고 적어두었는데 그 비용이 몇 퍼센트인지는 숫자로 공개하지 않았어요.",
-   null
+   "운용사는 환매지 상품의 해지 비용이 추가로 들어갈 수 있다고 적어 두었는데 그 비용이 몇 퍼센트인지는 숫자로 공개하지 않았어요.",
+   "운용사는환헤지상품에해지비용이추가로들어갈수있다고적어두었는데그비용이몇퍼센트인지는숫자로공개하지않았어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1436,15 +1434,17 @@
   "audio": "audio/x-1/5ffb8d6c6d592d89.wav",
   "heard": [
    "두 상품 총보수는 둘 다 1년에 0.01%가 안 돼서 고를 때 큰 차이는 아닙니다.",
-   null
+   "두상품총보수는둘다1년에001%가안돼서고를때큰차이는아닙니다",
+   "두 상품 총보수는 둘 다 1년에 0.01%가 안 돼서 고를 때 큰 차이는 아닙니다."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1453,16 +1453,16 @@
   "say": "이름이 거의 같아서 헷갈리기 쉬우니, 주문하기 전에 종목 이름 끝에 에이치가 있는지 꼭 보세요.",
   "audio": "audio/x-1/2fe7402129874439.wav",
   "heard": [
-   "이름이 거의 같아서 헷갈리기 쉬우니 주문하기 전에 종목 이름 끝에 H가 있는지 꼭 보세요.",
-   null
+   "이름이 거의 같아서 헷갈리기 쉬우니 주문하기 전에 종목 이름 끝에 h가 있는지 꼭 보세요.",
+   "이름이거의같아서헷갈리기쉬우니주문하기전에종목이름끝에가있는지꼭보세요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1472,15 +1472,15 @@
   "audio": "audio/x-1/6543a083a541aaee.wav",
   "heard": [
    "환전을 묻는 글도 많았어요.",
-   null
+   "환전을묻는글도많았어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1490,15 +1490,15 @@
   "audio": "audio/x-1/0059b1141369fed3.wav",
   "heard": [
    "달러를 미리 사두고 미국 주식을 살지 원화로 주문해서 자동으로 바꿀지 묻는 글이었습니다.",
-   null
+   "달러를미리사두고미국주식을살지원화로주문해서자동으로바꿀지묻는글이었습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1507,16 +1507,16 @@
   "say": "미국 주식을 천원, 이천원씩 매일 모으는데, 이게 매일 환전하는 거냐는 댓글도 있었고요.",
   "audio": "audio/x-1/5d02bef01be9d666.wav",
   "heard": [
-   "미국 주식을 1,000원, 2,000원씩 매일 모으는데 이게 매일 환전하는 거냐는 댓글도 있었고요.",
-   null
+   "미국 주식을 1000원 2000원씩 매일 모으는데 이게 매일 환전하는 거냐는 댓글도 있었고요.",
+   "미국주식을1000원2000원씩매일모으는데이게매일환전하는거냐는댓글도있었고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1525,16 +1525,16 @@
   "say": "어느 쪽이든, 원화가 달러로 바뀌는 순간 비용이 붙어요.",
   "audio": "audio/x-1/8e7d85b32b78cde5.wav",
   "heard": [
-   "어느 쪽이든 원화가 달러로 바뀌는 순간 비용이 붙어요.",
-   null
+   "어느 쪽이든 워너가 달러로 바뀌는 순간 비용이 붙어요.",
+   "어느쪽이든원화가달러로바뀌는순간비용이붙어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.91,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1543,16 +1543,16 @@
   "say": "지금까지 계산은 전부 기준 환율, 은행 말로 매매기준율로 했어요.",
   "audio": "audio/x-1/e15b94f67be7f9ba.wav",
   "heard": [
-   "지금까지 계산은 전부 기준 환율 은행 말로 매매 기준율로 했어요.",
-   null
+   "지금까지 계산은 전부 기준 환율은액 말로 매매 기준율로 했어요.",
+   "지금까지계산은전부기준환율은행말로매매기준율로했어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1562,15 +1562,15 @@
   "audio": "audio/x-1/d572286f3733d667.wav",
   "heard": [
    "그런데 은행에서 달러 현찰을 살 땐 이보다 비싸게 냅니다.",
-   null
+   "그런데은행에서달러현찰을살땐이보다비싸게냅니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1579,16 +1579,16 @@
   "say": "은행연합회는 이 차이를 환전수수료라고 부르고, 우대해 주는 게 바로 이 부분이라고 적어 두었어요.",
   "audio": "audio/x-1/7da459eb5dd7275d.wav",
   "heard": [
-   "네, 은행 앞에는 이 차이를 환전 수수료라고 부르고 우대해 주는 게 바로 이 부분이라고 적어 두었어요.",
-   null
+   "냉정하게는 이 차이를 환전 수수료라고 부르고 우대해 주는 게 바로 이 부분이라고 적어 두었어요.",
+   "은행연합회는이차이를환전수수료라고부르고우대해주는게바로이부분이라고적어두었어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.93,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.89,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1597,16 +1597,18 @@
   "say": "은행이 날마다 알리는 환율표, 고시로 보면 하나은행은 그 차이가 일 점 칠오 퍼센트예요.",
   "audio": "audio/x-1/e993d5da1aaf6eef.wav",
   "heard": [
-   "은행이 날마다 알리는 환율 표 고시로 보면 하나은행은 그 차이가 1.75%예요.",
-   null
+   "은행이 날마다 알리는 환율 표 고시로 보면, 하나은행은 그 차이가 1.75%에요.",
+   "은행이날마다알리는환율표고시로보면하나은행은그차이가175%예요",
+   "은행이 날마다 알리는 환율표 고시로 보면 하나은행은 그 차이가 1.75%예요."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1616,15 +1618,15 @@
   "audio": "audio/x-1/d21f180620c73b80.wav",
   "heard": [
    "1억을 우대 없이 현찰 달러로 바꾸면 1,300달러 가까이 덜 받습니다.",
-   null
+   "1억을우대없이현찰달러로바꾸면1300달러가까이덜받습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1633,16 +1635,16 @@
   "say": "원화로 백칠십만 원어치쯤이에요.",
   "audio": "audio/x-1/0051a02b385aa99b.wav",
   "heard": [
-   "원화로 170만 원어치 짐이에요.",
-   null
+   "원래 170만 원어치 집이에요.",
+   "원화로170만원어치쯤이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.91,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.76,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1651,16 +1653,18 @@
   "say": "천 달러를 사자마자 다시 팔면, 오만 원 가까이가 그냥 사라지고요.",
   "audio": "audio/x-1/f1193ad4f2f0b6ee.wav",
   "heard": [
-   "산타를 사자마자 다시 팔면 5만 원 가까이가 그냥 사라지고요.",
-   null
+   "산달러를 사자마자 다시 팔면 오만 원 가까이가 그냥 사라지고요.",
+   "1000달러를사자마자다시팔면5만원가까이가그냥사라지고요",
+   "산 달러를 사자마자 다시 팔면 5만 원 가까이가 그냥 사라지고요."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
-  "sim": 0.9,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.98,
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1669,16 +1673,16 @@
   "say": "은행이 알리는 값은 하나가 아니에요. 현찰로 살 때, 팔 때, 해외로 송금할 때 값이 따로 있습니다.",
   "audio": "audio/x-1/ea7c2a0b1f812197.wav",
   "heard": [
-   "은행에 알리는 값은 하나가 아니에요. 현찰로 살 때 팔 때 해외로 송금할 때 값이 따로 있습니다.",
-   null
+   "은행이 알리는 값은 하나가 아니에요. 현찰로 살 때 팔 때 해외로 송금할 때 값이 따로 있습니다.",
+   "은행이알리는값은하나가아니에요현찰로살때팔때해외로송금할때값이따로있습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1688,15 +1692,15 @@
   "audio": "audio/x-1/f2d8c1165b88626f.wav",
   "heard": [
    "그래서 덜 내려면 어떻게 할까요?",
-   null
+   "그래서덜내려면어떻게할까요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1705,16 +1709,16 @@
   "say": "해외로 돈을 보낼 때 쓰는 송금 값은 현찰 값보다 쌉니다. 같은 고시에서 차이가 일 퍼센트가 안 돼요.",
   "audio": "audio/x-1/e581fba0bf8d1588.wav",
   "heard": [
-   "해외로 돈을 보낼 때 쓰는 송금 값은 현찰 값보다 쌉니다. 같은 고시에서 차이가 1%가 안 돼요.",
-   null
+   "해외로 돈을 보낼 때 쓰는 송금값은 현찰값보다 쌉니다. 같은 곳에서 차이가 1%가 안 돼요.",
+   "해외로돈을보낼때쓰는송금값은현찰값보다쌉니다같은곳에서차이가1%가안돼요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.96,
+  "pair": 1.0,
+  "flag": "합의오독(1.00/0.96 고시→곳/곳)",
   "batch2": true
  },
  {
@@ -1724,15 +1728,15 @@
   "audio": "audio/x-1/8dd7b7a074110550.wav",
   "heard": [
    "우대율은 은행마다 달라요. 인터넷에서 은행연합회 외환길잡이를 찾으면 은행별 수수료와 우대율을 한 화면에서 볼 수 있습니다.",
-   null
+   "우대율은은행마다달라요인터넷에서은행연합회외환길잡이를찾으면은행별수수료와우대율을한화면에서볼수있습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1742,15 +1746,17 @@
   "audio": "audio/x-1/f76d6e96e9dc3686.wav",
   "heard": [
    "그 표를 보면 주요 은행의 달러 수수료율은 똑같이 1.75%였어요.",
-   null
+   "그표를보면주요은행의달러수수료율은똑같이175%였어요",
+   "그 표를 보면 주요 은행의 달러 수수료율은 똑같이 1.75%였어요."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1760,15 +1766,17 @@
   "audio": "audio/x-1/e63d62a20c5b9d7e.wav",
   "heard": [
    "차이는 우대율이에요. 1.75% 수수료에서 많게는 90%까지 깎아줍니다.",
-   null
+   "차이는우대율이에요175%수수료에서많게는90%까지깎아줍니다",
+   "차이는 우대율이에요. 1.75% 수수료에서 많게는 90%까지 깎아줍니다."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1778,15 +1786,17 @@
   "audio": "audio/x-1/f4dd06e29adb32ca.wav",
   "heard": [
    "그러면 남는 수수료는 0.2%가 채 안 돼요.",
-   null
+   "그러면남는수수료는02%가채안돼요",
+   "그러면 남는 수수료는 0.2%가 채 안 돼요."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1796,15 +1806,15 @@
   "audio": "audio/x-1/df462154bbc0f6ed.wav",
   "heard": [
    "증권사에서 바꾸는 달러도 회사마다 환전 우대 조건이 달라요.",
-   null
+   "증권사에서바꾸는달러도회사마다환전우대조건이달라요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1813,16 +1823,16 @@
   "say": "원화로 주문하든 미리 바꾸든, 내 증권사 우대율을 먼저 확인하는 게 순서입니다.",
   "audio": "audio/x-1/f47de6691da7a914.wav",
   "heard": [
-   "원화로 주문하든 미화로 바꾸든 내 증권사 우대율을 먼저 확인하는 게 순서입니다.",
-   null
+   "원활로 주문하든 미리 바꾸든 내 증권사 우대율을 먼저 확인하는 게 순서입니다.",
+   "원화로주문하든미리바꾸든내증권사우대율을먼저확인하는게순서입니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.95,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.97,
+  "pair": 0.94,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1831,16 +1841,16 @@
   "say": "한 번에 바꾸지 말고 나눠 바꾸라는 글도 많았어요. 그래서 그 경우도 계산했습니다.",
   "audio": "audio/x-1/26b5ef572ac0fc09.wav",
   "heard": [
-   "한 번에 바꾸지 말고 나눠 바꾸라는 글도 많았어요. 그래서 그 경우도 계산했습니다.",
-   null
+   "한번에 바꾸지 말고 나눠 바꾸라는 글도 많았어요. 그래서 그 경우도 계산했습니다.",
+   "한번에바꾸지말고나눠바꾸라는글도많았어요그래서그경우도계산했습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1849,16 +1859,16 @@
   "say": "일억을 작년 가을부터 일년 동안, 매달 첫 거래일마다 같은 금액씩 바꾼 경우예요.",
   "audio": "audio/x-1/cc8f3aa70459a0e6.wav",
   "heard": [
-   "1억을 작년 가을부터 1년 동안 매달 첫 거래일마다 같은 금액씩 바꾼 경우예요.",
-   null
+   "1억을 작년 가을부터 1년 동안 매달 첫 거래일마다 같은 금액씩 바꾼 경우에요.",
+   "1억을작년가을부터1년동안매달첫거래일마다같은금액씩바꾼경우예요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.97,
+  "pair": 0.93,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1867,16 +1877,16 @@
   "say": "평균 환율은 천사백오십 원쯤이었습니다.",
   "audio": "audio/x-1/975f4d60d89fed29.wav",
   "heard": [
-   "평균 환율은 1450원쯤이었습니다.",
-   null
+   "평균 환율은 1,450원쯤이었습니다.",
+   "평균환율은1450원쯤이었습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1885,16 +1895,16 @@
   "say": "지금 원화로 따지면 칠백칠십만 원쯤 줄었어요.",
   "audio": "audio/x-1/ff209af5f86e276b.wav",
   "heard": [
-   "지금 원화로 따지면 770만 원쯤 줄었어요.",
-   null
+   "지금 원화로 따지면 770만 원 쯤 줄었어요.",
+   "지금원화로따지면770만원쯤줄었어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1904,15 +1914,15 @@
   "audio": "audio/x-1/9c96b563cb77630f.wav",
   "heard": [
    "달러가 제일 비쌌던 날 한 번에 바꿨으면 1,400만 원 가까이 줄었으니 그보다는 덜 잃었어요.",
-   null
+   "달러가제일비쌌던날한번에바꾸었으면1400만원가까이줄었으니그보다는덜잃었어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1921,16 +1931,16 @@
   "say": "일 년 전에 한 번에 바꿨으면 오백팔십만 원쯤이었으니, 그보다는 더 잃었고요.",
   "audio": "audio/x-1/1231616235d1a0c0.wav",
   "heard": [
-   "1년 전에 한 번에 바꿨으면 580만 원쯤이었으니 그보다는 더 잃었고요.",
-   null
+   "1년 전에 한 번에 바꿨으면 580만 원쯤이었으니 그보다는 더 이렇고요.",
+   "1년전에한번에바꾸었으면580만원쯤이었으니그보다는더잃었고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.94,
+  "pair": 0.87,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1939,16 +1949,16 @@
   "say": "나눠 바꾸면 결과가 가장 좋은 날과 가장 나쁜 날 사이 어딘가로 모일 뿐, 환율이 내린 손해 자체를 막아 주지는 못합니다.",
   "audio": "audio/x-1/9a93b67e8aaf89d5.wav",
   "heard": [
-   "나노 바꾸면 결과가 가장 좋은 날과 가장 나쁜 날 사이 어딘가로 모일 뿐 환율이 내린 손해 자체를 막아주지는 못합니다.",
-   null
+   "나로 바꾸면 결과가 가장 좋은 날과 가장 나쁜 날 사이 어딘가로 모일 뿐 환율이 내린 손해 자체를 막아주지는 못합니다.",
+   "나눠바꾸면결과가가장좋은날과가장나쁜날사이어딘가로모일뿐환율이내린손해자체를막아주지는못합니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.98,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1957,16 +1967,16 @@
   "say": "천원, 이천원씩 매일 모으는 것도 매일 바꾸는 거라, 바꿀 때마다 그 회사 수수료가 붙습니다.",
   "audio": "audio/x-1/57971fe5475c6ba3.wav",
   "heard": [
-   "1,000원, 2,000원씩 매일 모으는 것도 매일 바꾸는 거라 바꿀 때마다 그 회사 수수료가 붙습니다.",
-   null
+   "천 원, 2천 원씩 매일 모으는 것도 매일 바꾸는 거라 바꿀 때마다 그 회사 수수료가 붙습니다.",
+   "1000원2000원씩매일모으는것도매일바꾸는거라바꿀때마다그회사수수료가붙습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.99,
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1975,16 +1985,16 @@
   "say": "그 달러를 다시 원화로 되바꿀 때도 한 번 더 붙고요.",
   "audio": "audio/x-1/5eb8394f46edbff7.wav",
   "heard": [
-   "그 달러를 다시 원화로 되바꿀 때도 한 번 더 붙고요.",
-   null
+   "그 달러를 다시 원하로 대박 꼴 때도 한 번 더 붙고요.",
+   "그달러를다시원화로대바꿀때도한번더붙고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.85,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1994,15 +2004,15 @@
   "audio": "audio/x-1/8a355097cc8083c6.wav",
   "heard": [
    "자주 사고팔 돈이 아니라면 우대율 높은 곳에서 덜 자주 바꾸는 쪽이 수수료가 덜 듭니다.",
-   null
+   "자주사고팔돈이아니라면우대율높은곳에서덜자주바꾸는쪽이수수료가덜듭니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2011,16 +2021,16 @@
   "say": "달러 알피에 넣었는데 환율이 떨어지면 마이너스가 되냐는 댓글도 있었어요.",
   "audio": "audio/x-1/b4513f89615de72b.wav",
   "heard": [
-   "달러 IP에 넣었는데 환율이 떨어지면 마이너스가 되냐는 댓글도 있었어요.",
-   null
+   "달러 ETF에 넣었는데 환율이 떨어지면 마이너스가 되냐는 댓글도 있었어요.",
+   "달러에넣어놨는데환율이떨어지면마이너스가되냐는댓글도있었어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.92,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2030,15 +2040,15 @@
   "audio": "audio/x-1/bfcac04e0e47426a.wav",
   "heard": [
    "달러 RP나 달러 발행 어음은 증권사에서 파는 달러 상품이에요.",
-   null
+   "달러나달러발행어음은증권사에서파는달러상품이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2047,16 +2057,16 @@
   "say": "예금보험공사 안내에는 이 두 상품이 따로 적혀 있지 않아서, 보호되는지는 가입한 증권사에 직접 물어보는 게 확실합니다.",
   "audio": "audio/x-1/e5f506cb180fc00b.wav",
   "heard": [
-   "예금보험공사 안내에는 이 두 상품이 따로 적혀 있지 않아서 보호되는지는 가입한 증권사에 직접 물어보는 게 확실합니다.",
-   null
+   "연금저축펀드 안에는 이 두 상품이 따로 적혀 있지 않아서 보호되는지는 가입한 증권사에 직접 물어보는 게 확실합니다.",
+   "예금보험공사안내에는이두상품이따로적혀있지않아서보호되는지는가입한증권사에직접물어보는게확실합니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.89,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2065,16 +2075,16 @@
   "say": "원화로 따지면, 네. 마이너스가 될 수 있습니다.",
   "audio": "audio/x-1/736b808a73898dfb.wav",
   "heard": [
-   "원어로 따지면 네, 마이너스가 될 수 있습니다.",
-   null
+   "완료로 따지면 네. 마이너스가 될 수 있습니다.",
+   "원화로따지면네마이너스가될수있습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.94,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.89,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2083,16 +2093,16 @@
   "say": "달러 상품은 이자가 달러로 붙고, 원화로 바꾸는 날 그날 환율이 적용되니까요.",
   "audio": "audio/x-1/980b23060615b885.wav",
   "heard": [
-   "달러 상품은 이자가 달러로 붙고 원화로 바꾸는 날 그날 환율이 적용되니까요.",
-   null
+   "딸로 상품은 이자가 딸로 붙고 원화로 바꾸는 날 그날 환율이 적용되니까요.",
+   "달러상품은이자가달러로붙고원화로바꾸는날그날환율이적용되니까요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.89,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2102,15 +2112,15 @@
   "audio": "audio/x-1/b4af2c0f5cef30bb.wav",
   "heard": [
    "은행 달러 예금으로 계산해 볼게요.",
-   null
+   "은행달러예금으로계산해볼게요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2120,15 +2130,17 @@
   "audio": "audio/x-1/898118b0719e81a2.wav",
   "heard": [
    "KB국민은행 고시를 보면 달러 1년 정기예금 금리가 연 3.6%를 조금 넘습니다.",
-   null
+   "국민은행고시를보면달러1년정기예금금리가연36%를조금넘습니다",
+   "KB국민은행 고시를 보면 달러 1년 정기예금 금리가 연 3.6%를 조금 넘습니다."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2138,15 +2150,17 @@
   "audio": "audio/x-1/ee249d036d351ca5.wav",
   "heard": [
    "이제는 세금 15.4%가 붙으니 손에 남는 건 3%쯤이에요.",
-   null
+   "이자에는세금154%가붙으니손에남는건3%쯤이에요",
+   "이제는 세금 15.4%가 붙으니 손에 남는 건 3%쯤이에요."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
-  "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.92,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2155,16 +2169,16 @@
   "say": "지금 일억 원을 달러로 바꿔 일 년 맡긴다고 해 보죠.",
   "audio": "audio/x-1/e66dada1bce44c30.wav",
   "heard": [
-   "지금 1억 원을 탈러로 바꿔 1년 맡긴다고 해 보죠.",
-   null
+   "지금 1억 원을 달러로 바꿔 1년 맡긴다고 해 보죠.",
+   "지금1억원을달러로바꿔1년맡긴다고해보죠"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.94,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.94,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2174,15 +2188,15 @@
   "audio": "audio/x-1/ea9686538a2a06e2.wav",
   "heard": [
    "1년 뒤 환율이 지금보다 3%쯤만 내려도 받은 이자가 다 사라집니다.",
-   null
+   "1년뒤환율이지금보다3%쯤만내려도받은이자가다사라집니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2192,15 +2206,15 @@
   "audio": "audio/x-1/b6187f3f670fd458.wav",
   "heard": [
    "1298원 아래로 내려가면 그때부터는 이자보다 환율 손실이 더 커요.",
-   null
+   "1298원아래로내려가면그때부터는이자보다환율손실이더커요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2210,15 +2224,15 @@
   "audio": "audio/x-1/a8e3e414936a9d29.wav",
   "heard": [
    "그래서 무엇부터 볼까요?",
-   null
+   "그래서무엇부터볼까요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2228,15 +2242,15 @@
   "audio": "audio/x-1/88e61df7daa4cd2d.wav",
   "heard": [
    "은행 달러 예금이라면 예금자 보호부터 확인하세요.",
-   null
+   "은행달러예금이라면예금자보호부터확인하세요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2246,15 +2260,15 @@
   "audio": "audio/x-1/34150e160d719750.wav",
   "heard": [
    "은행이 문을 닫아도 나라 기관이 대신 돌려주는 돈의 한도예요.",
-   null
+   "은행이문을닫아도나라기관이대신돌려주는돈의한도예요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2264,15 +2278,15 @@
   "audio": "audio/x-1/b28d137499ae410c.wav",
   "heard": [
    "예금보험공사는 외화예금도 1억 원까지 보호된다고 안내합니다.",
-   null
+   "예금보험공사는외화예금도1억원까지보호된다고안내합니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2282,15 +2296,15 @@
   "audio": "audio/x-1/e105bf639b173d94.wav",
   "heard": [
    "다만 원화로 바꿔서 계산하고 한 은행에 든 예금과 이자를 모두 합쳐 1억 원까지예요.",
-   null
+   "다만원화로바꿔서계산하고한은행에든예금과이자를모두합쳐1억원까지예요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2299,16 +2313,16 @@
   "say": "그래서 일억 원어치를 통째로 한 은행 달러 예금에 넣으면, 붙은 이자는 보호 한도 밖이 됩니다.",
   "audio": "audio/x-1/46d5aa5af43c0e1b.wav",
   "heard": [
-   "그래서 1억 원어치를 통째로 한 은행 달러 예금에 넣으면 붙은 이자는 보호 한도 받게 됩니다.",
-   null
+   "그래서 1억 원어치를 통째로 한 은행 달러 예금에 넣으면 붙은 이자는 보호 한도밖에 됩니다.",
+   "그래서1억원어치를통째로한은행달러예금에넣으면붙은이자는보호한도밖이됩니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.94,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2317,16 +2331,16 @@
   "say": "그리고 같은 안내에 펀드 같은 금융투자상품은 보호되지 않는다고 적혀 있어요. 달러 이티에프도 펀드입니다.",
   "audio": "audio/x-1/614c8249481516a2.wav",
   "heard": [
-   "그리고 같은 안내에 펀드 같은 금융 투자 상품은 보호되지 않는다고 적혀 있어요. 달러 ETF도 펀드입니다.",
-   null
+   "그리고 같은 안에 펀드 같은 금융 투자 상품은 보호되지 않는다고 적혀 있어요. 달러 ETF도 펀드입니다.",
+   "그리고같은한은행의펀드같은금융투자상품은보호되지않는다고적혀있어요달러도펀드입니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.99,
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2335,16 +2349,16 @@
   "say": "세금도 물어보셨죠. 환율로 생긴 차익에도 세금이 붙냐는 질문이었어요.",
   "audio": "audio/x-1/93c0f5275a4c31a0.wav",
   "heard": [
-   "세금도 물어보셨죠. 환율로 생긴 차액에도 세금이 붙냐는 질문이었어요.",
-   null
+   "세금도 물어보셨죠. 환율로 생긴 차익에도 세금이 붙냐는 질문이었어요.",
+   "세금도물어보셨죠환율로생긴차익에도세금이붙냐는질문이었어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2353,16 +2367,16 @@
   "say": "이자에 세금이 붙는 건 분명합니다.",
   "audio": "audio/x-1/29c62f60aec12fef.wav",
   "heard": [
-   "이자에 세금이 붙는 건 분명합니다.",
-   null
+   "이자의 세금이 붙는 건 분명합니다.",
+   "이자에세금이붙는건분명합니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2372,15 +2386,15 @@
   "audio": "audio/x-1/5177cd02403e773d.wav",
   "heard": [
    "환율로 생긴 차익을 어떻게 보는지는 이번 조사에서 국세청 공식 해석을 찾지 못했어요.",
-   null
+   "환율로생긴차익을어떻게보는지이번조사에서국세청공식해석을찾지못했어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.99,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2390,15 +2404,15 @@
   "audio": "audio/x-1/37bc0b13659f9485.wav",
   "heard": [
    "금액이 크다면 국세청 상담센터에 직접 물어보는 게 가장 확실합니다.",
-   null
+   "금액이크다면국세청상담센터에직접물어보는게가장확실합니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2407,16 +2421,16 @@
   "say": "달러로 바꾸는 순간 드는 환전 비용도 이자에서 빼고 봐야 합니다.",
   "audio": "audio/x-1/b3800f0038294f5c.wav",
   "heard": [
-   "달러로 바꾸는 순간 드는 환전 비용도 이자에서 빼고 봐야 합니다.",
-   null
+   "달러 바꾸는 순간 드는 환전 비용도 이자에서 빼고 봐야 합니다.",
+   "달러로바꾸는순간드는환전비용도이자에서빼고봐야합니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2426,15 +2440,17 @@
   "audio": "audio/x-1/03dcba092b1c5b60.wav",
   "heard": [
    "우대 없이 현찰로 바꾸면 수수료가 1.75%인데 세금 떼고 남는 이자는 1년에 3%쯤이에요.",
-   null
+   "우대없이현찰로바꾸면수수료가175%인데세금떼고남는이자는1년에3%쯤이에요",
+   "우대 없이 현찰로 바꾸면 수수료가 1.75%인데 세금 떼고 남는 이자는 1년에 3%쯤이에요."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2443,16 +2459,16 @@
   "say": "반년 넘게 맡겨야 겨우 그 수수료를 메웁니다.",
   "audio": "audio/x-1/b4d60044caf5cba6.wav",
   "heard": [
-   "반년 넘게 맡겨야 겨우 그 수수료를 메웁니다.",
-   null
+   "반년 넘게 맞겠어야 겨우 그 수수료를 매우밉니다.",
+   "반년넘게맡겨야겨우그수수료를메웁니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.79,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2461,16 +2477,16 @@
   "say": "여행 가는 분들은 다른 걸 묻습니다. 지금 환전할지, 더 기다릴지요.",
   "audio": "audio/x-1/542cf8a777b952ea.wav",
   "heard": [
-   "여행 가는 분들은 다른 걸 묻습니다. 지금 환전할지 더 기다릴지요.",
-   null
+   "여행 가는 분들은 다른 걸 묻습니다. 지금 한잔할지 더 기다릴지요.",
+   "여행가는분들은다른걸묻습니다지금환전할지더기다릴지요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.92,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2480,15 +2496,15 @@
   "audio": "audio/x-1/b797f5bdab479670.wav",
   "heard": [
    "달러 값이 내리면 달러를 쓸 사람한테는 거꾸로 이득입니다.",
-   null
+   "달러값이내리면달러를쓸사람한테는거꾸로이득입니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2497,16 +2513,16 @@
   "say": "미국 직구나 여행에서 천 달러를 쓴다면, 가장 비싸던 날엔 백오십오만 원쯤이었어요.",
   "audio": "audio/x-1/821a0f39db8fdc4d.wav",
   "heard": [
-   "미국 직구나 여행에서 1000달러를 쓴다면 가장 비싸던 날은 155만 원쯤이었어요.",
-   null
+   "미국 직구 나 여행에서 1000달러를 쓴다면 가장 비싸던 날엔 155만 원쯤이었어요.",
+   "미국직구나여행에서1000달러를쓴다면가장비싸던날엔155만원쯤이었어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.95,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.98,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2515,16 +2531,16 @@
   "say": "지금은 백삼십사만 원쯤입니다.",
   "audio": "audio/x-1/2a0b3cc1b8acad63.wav",
   "heard": [
-   "지금은 134만 원쯤입니다.",
-   null
+   "지금은 백삼십사만 원 쯤입니다.",
+   "지금은134만원쯤입니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.82,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2533,16 +2549,16 @@
   "say": "일본에서 십만엔을 쓴다고 하면요.",
   "audio": "audio/x-1/430896614d5c8055.wav",
   "heard": [
-   "일본에서 10만 엔을 쓴다고 하면요.",
-   null
+   "일본에서 10만 원을 쓴다고 하면요.",
+   "일본에서10만엔을쓴다고하면요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.92,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2551,16 +2567,16 @@
   "say": "그날엔 구십육만 원쯤이었는데, 지금은 팔십오만 원쯤이에요.",
   "audio": "audio/x-1/9065b23c7db98904.wav",
   "heard": [
-   "그날엔 96만 원쯤이었는데 지금은 85만 원쯤이에요.",
-   null
+   "그날엔 96만 원쯤이었는데지금은 85만 원쯤이에요.",
+   "그날은96만원쯤이었는데지금은85만원쯤이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2570,15 +2586,15 @@
   "audio": "audio/x-1/237b7019447c4ee8.wav",
   "heard": [
    "언제 바꿀지는 앞날 환율에 달려 있어서 누구도 정답을 줄 수 없어요.",
-   null
+   "언제바꿀지는앞날환율에달려있어서누구도정답을줄수없어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2588,15 +2604,15 @@
   "audio": "audio/x-1/96c4325f67e78b33.wav",
   "heard": [
    "대신 지나간 날과 비교해서 지금 값이 어느 쪽인지는 셀 수 있습니다.",
-   null
+   "대신지나간날과비교해서지금값이어느쪽인지는셀수있습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2606,15 +2622,15 @@
   "audio": "audio/x-1/31fa0e27257cd127.wav",
   "heard": [
    "재작년 첫날부터 지금까지 환율이 나온 날이 679일이에요.",
-   null
+   "재작년첫날부터지금까지환율이나온날이679일이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2623,16 +2639,16 @@
   "say": "그중 달러가 지금보다 쌌던 날은 팔십일 일, 여드레에 하루꼴입니다.",
   "audio": "audio/x-1/2282606c153d3241.wav",
   "heard": [
-   "그중 달러가 지금보다 쌌던 날은 81일 여드레의 하루 꼴입니다.",
-   null
+   "그중 달러가 지금보다 쌌던 날은 81일 여드레의 하루꼴입니다.",
+   "그중달러가지금보다쌌던날은81일여드레에하루꼴입니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2642,15 +2658,17 @@
   "audio": "audio/x-1/aea22e5bd023589d.wav",
   "heard": [
    "N1은 지금보다 쌌던 날이 4일밖에 없었고요.",
-   null
+   "엔화는지금보다쌌던날이사흘밖에없었고요",
+   "N1은 지금보다 쌌던 날이 4일밖에 없었고요."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
-  "sim": 0.88,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.95,
+  "pair": 0.8,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2660,15 +2678,15 @@
   "audio": "audio/x-1/0e244e311cdddfd0.wav",
   "heard": [
    "지난 2년 가까운 날들과 비교하면 달러는 싼 쪽이고 엔화는 거의 가장 싼 값이란 뜻이에요.",
-   null
+   "지난2년가까운날들과비교하면달러는싼쪽이고엔화는거의가장싼값이라는뜻이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2677,16 +2695,16 @@
   "say": "쓸 날이 정해져 있다면, 앞에서 본 것처럼 나눠 바꾸면 결과가 가운데로 모입니다.",
   "audio": "audio/x-1/77b1876c6eccbef0.wav",
   "heard": [
-   "슬라이 정해져 있다면 앞에서 본 것처럼 나눠 바꾸면 결과가 가운데로 모입니다.",
-   null
+   "쓸 날이 정해져 있다면 앞에서 본 것처럼 나눠 바꾸면 결과가 가운데로 모입니다.",
+   "쓸날이정해져있다면앞에서본것처럼나눠바꾸면결과가가운데로모입니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.94,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2696,15 +2714,15 @@
   "audio": "audio/x-1/2b3df6f2659773df.wav",
   "heard": [
    "그래서 어떻게 결제할까요?",
-   null
+   "그래서어떻게결제할까요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2713,16 +2731,16 @@
   "say": "카드로 결제하면 수수료가 두 겹 붙어요. 비자나 마스터 같은 국제브랜드 수수료, 그리고 카드사 해외서비스 수수료입니다.",
   "audio": "audio/x-1/dcdf3e6143f14d29.wav",
   "heard": [
-   "카드로 결제하면 수수료가 두 겹 붙어요. 비자나 마스터 같은 국제 브랜드 수수료, 그리고 카드사 해외 서비스 수수료입니다.",
-   null
+   "카드로 결제하면 수수료가 두 겹 붙어요. 비자나 마스터 같은 국제 브랜드 수수료 그리고 카드사 해외 서비스 수수료입니다.",
+   "카드로결제하면수수료가두겹붙어요비자나마스터같은국제브랜드수수료그리고카드사해외서비스수수료입니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2732,15 +2750,17 @@
   "audio": "audio/x-1/87252f035281af4d.wav",
   "heard": [
    "KB 국민카드 비자는 둘을 합쳐 1.35%예요.",
-   null
+   "국민카드비자는둘을합쳐135%예요",
+   "KB국민카드 비자는 둘을 합쳐 1.35%예요."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2750,15 +2770,17 @@
   "audio": "audio/x-1/66332bb700082810.wav",
   "heard": [
    "현대카드 비자는 합쳐서 1.28%고요.",
-   null
+   "현대카드비자는합쳐서128%고요",
+   "현대카드 비자는 합쳐서 1.28%고요."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2767,16 +2789,16 @@
   "say": "천 달러를 쓰면 수수료만 이만 원이 조금 안 됩니다.",
   "audio": "audio/x-1/883c87a09399ba4e.wav",
   "heard": [
-   "1000달러를 쓰면 수수료만 2만 원이 조금 안 됩니다.",
-   null
+   "첫 달을 쓰면 수수료만 2만 원이 조금 안 됩니다.",
+   "1000달러를쓰면수수료만2만원이조금안됩니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.89,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2786,15 +2808,15 @@
   "audio": "audio/x-1/b55b858fccb7e87c.wav",
   "heard": [
    "우대 없이 현찰을 사는 것보다는 적지만, 우대를 많이 받은 현찰보다는 비쌀 수 있습니다.",
-   null
+   "우대없이현찰을사는것보다는적지만우대를많이받은현찰보다는비쌀수있습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2803,16 +2825,16 @@
   "say": "현찰이 필요하다면, 은행연합회는 인터넷으로 환전을 신청하고 은행이나 공항에서 받는 방법을 맨 앞에 적어 두었어요.",
   "audio": "audio/x-1/755e33f92beb9c85.wav",
   "heard": [
-   null,
-   null
+   "현찰이 필요하다면 은행 연합회는 인터넷으로 환전을 신청하고 은행이나 공항에서 받는 방법을 맨 앞에 적어두었어요.",
+   "현찰이필요하다면은행연합회는인터넷으로환전을신청하고은행이나공항에서받는방법을맨앞에적어두었어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2822,15 +2844,15 @@
   "audio": "audio/x-1/251d4d5c02c2a8db.wav",
   "heard": [
    "그 방법으로 받는 우대율이 최대 90%라고 나와 있습니다.",
-   null
+   "그방법으로받는우대율이최대90%라고나와있습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2839,16 +2861,16 @@
   "say": "결제할 때는 현지 통화로 결제됐는지 확인하라고 금융감독원이 안내합니다.",
   "audio": "audio/x-1/b53c382d8ce8c62f.wav",
   "heard": [
-   null,
-   null
+   "결제할 때는 현지 통화로 결제되는지 확인하라고 금융감독원이 안내합니다.",
+   "결제할때는현지통화로결제됐는지확인하라고금융감독원이안내합니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2857,16 +2879,16 @@
   "say": "원화로 결제되는 해외원화결제가 싫다면, 카드사에 차단 서비스를 신청할 수 있고요.",
   "audio": "audio/x-1/cf66d2ebc56ce197.wav",
   "heard": [
-   null,
-   null
+   "원화를 결제되는 해외 원화 결제가 싫다면 카드사의 차단 서비스를 신청할 수 있고요.",
+   "원화로결제되는해외원화결제가싫다면카드사의차단서비스를신청할수있고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2875,16 +2897,16 @@
   "say": "놓치기 쉬운 함정이 하나 있어요. [pause short] 해외 결제를 취소할 때입니다.",
   "audio": "audio/x-1/72799800dce4d5c5.wav",
   "heard": [
-   null,
-   null
+   "놓치기 쉬운 함정이 하나 있어요. 해외 결제를 취소할 때입니다.",
+   "놓치기쉬운함정이하나있어요해외결제를취소할때입니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2893,16 +2915,16 @@
   "say": "결제한 날보다 취소한 날 환율이 낮으면, 같은 달러를 취소해도 원화로는 덜 돌아와요.",
   "audio": "audio/x-1/b820e1613eb4223a.wav",
   "heard": [
-   null,
-   null
+   "결제한 날보다 취소한 날 환율이 낮으면 같은 달러를 취소해도 원화로는 덜 돌아와요.",
+   "결제한날보다취소한날환율이낮으면같은달러를취소해도원화로는덜돌아와요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2911,16 +2933,16 @@
   "say": "금융감독원이 든 사례에선, 백팔십오만 원 내고 산 항공권을 취소했는데 백칠십오만 원만 돌아왔습니다.",
   "audio": "audio/x-1/fbeea6777e196e9e.wav",
   "heard": [
-   null,
-   null
+   "금융감독원이던 사례에선 185만 원 내고 산 항공권을 취소했는데 175만 원만 돌아왔습니다.",
+   "금융감독원이든사례에선185만원내고산항공권을취소했는데175만원만돌아왔습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2929,16 +2951,16 @@
   "say": "그사이 환율이 팔십원 내렸거든요.",
   "audio": "audio/x-1/0296bc3de7d28112.wav",
   "heard": [
-   "그사이 환율이 80원 내렸거든요.",
-   null
+   "그 사이 환율이 80원 내렸거든요.",
+   "그사이환율이80원내렸거든요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2947,16 +2969,16 @@
   "say": "이 차이는 표준약관에 따라 카드사가 물어 주는 게 원칙이에요.",
   "audio": "audio/x-1/c5c957404b6eb497.wav",
   "heard": [
-   "이 차이는 표준 약관에 따라 카드사가 물어주는 게 원칙이에요.",
-   null
+   "이 차에는 표준 약관에 따라 카드사가 물어주는 게 원칙이에요.",
+   "이차이는표준약관에따라카드사가물어주는게원칙이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2965,16 +2987,16 @@
   "say": "그런데 일부만 취소했거나 취소 전표에 결제 정보가 빠진 경우엔, 지금은 소비자가 직접 신청해야 받을 수 있습니다.",
   "audio": "audio/x-1/309fcf1a6caefe9a.wav",
   "heard": [
-   "그런데 일부만 취소했거나 취소 전표에 결제 정보가 빠진 경우엔 지금은 소비자가 직접 신청해야 받을 수 있습니다.",
-   null
+   "그런데 일부만 취소했거나 취소 전표의 결제 정보가 빠진 경우에는 지금은 소비자가 직접 신청해야 받을 수 있습니다.",
+   "그런데일부만취소했거나취소전표에결제정보가빠진경우엔지금은소비자가직접신청해야받을수있습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2983,16 +3005,16 @@
   "say": "카드사가 알아서 찾아 보상하는 방식은 이천이십칠년부터 시행할 계획이고요.",
   "audio": "audio/x-1/4e6c1ec42a95e382.wav",
   "heard": [
-   "카드사가 알아서 찾아 보상하는 방식은 2027년부터 시행할 계획이고요.",
-   null
+   "카드가 알아서 찾아보상하는 방식은 2027년부터 시행할 계획이고요,",
+   "카드사가알아서찾아보상하는방식은2027년부터시행할계획이고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3002,15 +3024,15 @@
   "audio": "audio/x-1/9eeb251744ca9bd1.wav",
   "heard": [
    "그때까지는 취소한 뒤 원화로 얼마가 돌아왔는지 꼭 확인하세요.",
-   null
+   "그때까지는취소한뒤원화로얼마가돌아왔는지꼭확인하세요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3020,15 +3042,15 @@
   "audio": "audio/x-1/8ea55c2dbf670205.wav",
   "heard": [
    "덜 돌아왔다면 카드사의 환차손 보상을 신청하면 됩니다.",
-   null
+   "덜돌아왔다면카드사에환차손보상을신청하면됩니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3038,15 +3060,15 @@
   "audio": "audio/x-1/003d5b00eb48b0c7.wav",
   "heard": [
    "같은 환율이어도 사람마다 봐야 할 숫자가 다릅니다.",
-   null
+   "같은환율이어도사람마다봐야할숫자가다릅니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3055,16 +3077,16 @@
   "say": "원화로 돌아올 돈이라면, 오늘 본 원화 숫자가 그대로 내 손익이에요.",
   "audio": "audio/x-1/eea8ed2630da078b.wav",
   "heard": [
-   "원화로 돌아올 돈이라면 오늘 본 원화 숫자가 그대로 내 손익이에요.",
-   null
+   "원화로 돌아올 돈이라면 오늘 본 원화 숫자가 그대로 내 손이에요.",
+   "원화로돌아올돈이라면오늘본원화숫자가그대로내손익이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3073,16 +3095,16 @@
   "say": "은퇴 뒤 생활비처럼, 곧 원화로 꺼내 쓸 돈이 여기에 들어갑니다.",
   "audio": "audio/x-1/18a772a6dbccb2b5.wav",
   "heard": [
-   "은퇴 뒤 생활비처럼 곧 원화로 꺼냈을 돈이 여기에 들어갑니다.",
-   null
+   "은퇴 디생활비처럼 곧 원하로 꺼낼 수 돈이 여기에 들어갑니다.",
+   "은퇴뒤생활비처럼곧원화로꺼내쓸돈이여기에들어갑니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.84,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3091,16 +3113,16 @@
   "say": "달러로 쓸 돈이라면 사정이 달라요.",
   "audio": "audio/x-1/e190ee2ba40147d0.wav",
   "heard": [
-   "달러로 쓸 돈이라면 사정이 달라요.",
-   null
+   "딸로 얻을 돈이라면 사정이 달라요.",
+   "달러로쓸돈이라면사정이달라요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.79,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3110,15 +3132,15 @@
   "audio": "audio/x-1/5b2fd28736427466.wav",
   "heard": [
    "자녀 학비나 해외 생활비처럼 달러로 낼 돈은 달러 금액이 그대로라 원화 숫자가 덜 중요합니다.",
-   null
+   "자녀학비나해외생활비처럼달러로낼돈은달러금액이그대로라원화숫자가덜중요합니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3127,16 +3149,16 @@
   "say": "달러로 월급이나 배당을 받는 사람도 비슷해요. 받는 달러는 같고, 원화로 바꿀 때만 덜 받는 거죠.",
   "audio": "audio/x-1/538aa1579f94d0e5.wav",
   "heard": [
-   "달러로 월급이나 배당을 받는 사람도 비슷해요. 어 받는 달러는 같고 원화로 바꿀 때만 덜 받는 거죠.",
-   null
+   "달러로 월급이나 배당을 받는 사람들 비슷해요. 받는 달러는 같고 원화로 바꿀 때만 덜 받는 거죠.",
+   "달러로월급이나배당을받는사람도비슷해요받는달러는같고원화로바꿀때만덜받는거죠"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.99,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3146,15 +3168,15 @@
   "audio": "audio/x-1/1563c72a8fcb61ef.wav",
   "heard": [
    "미국 주식이 재산의 일부뿐인 사람은 빠진 금액도 그만큼 작습니다.",
-   null
+   "미국주식이재산의일부뿐인사람은빠진금액도그만큼작습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3163,16 +3185,18 @@
   "say": "천만원만 에스앤피 오백 이티에프에 넣었다면, 달러가 제일 비쌌던 칠월 초 기준으로 줄어든 돈은 백십만원 가까이예요.",
   "audio": "audio/x-1/bcd888f61f83e665.wav",
   "heard": [
-   "1,000만 원만 S&P 500 ETF에 넣었다면 달러가 제일 비쌌던 7월 초 기준으로 줄어든 돈은 110만 원 가까이예요.",
-   null
+   "3,000만 원만 S&P 500 ETF에 넣었다면 달러가 제일 비쌌던 7월 초 기준으로 줄어든 돈은 110만 원 가까이에오.",
+   "1000만원만500에넣었다면달러가제일비쌌던7월초기준으로줄어든돈은110만원가까이예요",
+   "1,000만 원만 S&P 500 ETF에 넣었다면 달러가 제일 비쌌던 7월 초 기준으로 줄어든 돈은 110만 원 가까이에요."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
   "sim": 0.99,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.94,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3182,15 +3206,15 @@
   "audio": "audio/x-1/49a1ab0f3ecd10e0.wav",
   "heard": [
    "재작년 초처럼 달러가 쌀 때 바꾼 사람은 아직 이익이고요.",
-   null
+   "재작년초처럼달러가쌀때바꾼사람은아직이익이고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3199,16 +3223,16 @@
   "say": "그때 일억을 달러로 바꿔 지금까지 들고 있다면, 원화로 삼백팔십만 원쯤 늘어 있습니다.",
   "audio": "audio/x-1/c6105d13a0d2cd0d.wav",
   "heard": [
-   "그때 1억을 달러로 바꿔 지금까지 들고 있다면 원화로 380만 원쯤 늘어 있습니다.",
-   null
+   "그때 1억을 달러로 바꾸어 지금까지 들고 있다면 원화로 380만 원쯤 늘어 있습니다.",
+   "그때1억을달러로바꿔서지금까지들고있다면원화로380만원쯤늘어있습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.98,
+  "pair": 0.94,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3217,16 +3241,16 @@
   "say": "에이치형을 가진 사람은 이번처럼 달러가 내릴 땐 손해를 막았지만, 달러가 오를 땐 그 이익을 못 받습니다.",
   "audio": "audio/x-1/8aa6e9ee11d5c27d.wav",
   "heard": [
-   "H형을 가진 사람은 이번처럼 달러가 내릴 땐 손해를 봤지만 달러가 오를 땐 그 이익을 못 봤습니다.",
-   null
+   "H 형을 가진 사람은 이번처럼 달러가 내릴 땐 손해를 막았지만 달러가 오를 땐 그 이익을 못 받습니다.",
+   "형을가진사람은이번처럼달러가내릴땐손해를막았지만달러가오를땐그이익을못받습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.94,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3236,15 +3260,15 @@
   "audio": "audio/x-1/ad12b9c282d68a40.wav",
   "heard": [
    "곧 여행이나 직구로 달러를 쓸 사람은 7월에 바꿨을 때보다 같은 달러를 더 싸게 사는 셈이에요.",
-   null
+   "곧여행이나직구로달러를쓸사람은7월에바꿔놓았을때보다같은달러를더싸게사는셈이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3253,16 +3277,16 @@
   "say": "지난 편 '일억, 일년 뒤 남은 돈'에서는 환율이 미국 이티에프 세 개의 수익을 함께 깎았죠.",
   "audio": "audio/x-1/9c6b5598d5d39005.wav",
   "heard": [
-   "지난 편 1억 1년 뒤 남은 돈에서는 환율이 미국 ETF 3개의 수익을 함께 깎았죠.",
-   null
+   "지난편 1억 1년 뒤 남은 돈에서는 환율이 미국 ETF 세 개의 수익을 함께 갉았죠.",
+   "지난편1억1년뒤남은돈에서는환율이미국3개수익을함께깎았죠"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.98,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.96,
+  "pair": 0.93,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3272,15 +3296,15 @@
   "audio": "audio/x-1/b5563dd0fec101f5.wav",
   "heard": [
    "날짜별 전체 표와 본전 환율 계산법은 고정 댓글에 카페 글에 올려둘게요.",
-   null
+   "날짜별전체표와본전환율계산법은고정댓글의카페글에올려둘게요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3289,16 +3313,16 @@
   "say": "달러, 언제 바꾸셨나요? 날짜를 댓글로 남겨 주시면 같은 식으로 계산해 답글 드리겠습니다.",
   "audio": "audio/x-1/435302a0c6af1d64.wav",
   "heard": [
-   "달러 언제 바꾸셨나요? 날짜를 댓글로 남겨 주시면 같은 식으로 계산해 답글 드리겠습니다.",
-   null
+   "달러 언제 바꾸셨나요? 날짜를 댓글로 남겨주시면 같은 식으로 계산해 답글 드리겠습니다.",
+   "달러언제바꾸셨나요날짜를댓글로남겨주시면같은방식으로계산해답글드리겠습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.99,
+  "flag": "",
   "batch2": true
  }
 ]

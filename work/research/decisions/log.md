@@ -2634,3 +2634,7 @@
 2026-10-20 15:58 · firemap-write · 15:10 irp70_1020 발행(#339 verify OK) · 슬롯대로
 2026-10-20 15:58 · firemap-write · 18:10 TBD 칸 주제를 '고배당 ETF 급락일'로 정함 · 오늘 코스피 -3.73% 이슈 + 고배당 ETF 월 4,990 검색 + 오늘 칸에 주식(배당) 없음, 계산기 칸 메모(월배당 ETF)는 맞는 계산기가 없어 줄 안 넣음
 2026-10-20 15:58 · firemap-write · divdrop1020 제목을 '정말 덜 빠졌을까?'에서 반전형으로 바꿈 · 1차 심사 평균 6.67<7, 셋 다 반전 없음 지적
+2026-10-20 16:32 · firemap-video-producer · 예약 쇼츠 4편을 판 없는 꼴로 교체(h1s_helio ExYWn9pvDqk·p1s_step PYnidE5kuiw·g1s_asym yTuQC1_dvSE·h1s_forest 3iU5F5JnX4A, 옛 4편 예약 해제·삭제 0) · 10/19 '쇼츠도 칸 뺀다'·bgcheck ⑥ 10/21부터 거부, 공개 순서대로
+2026-10-20 16:32 · firemap-video-producer · h1s_helio 줄 순서 바꾸고 '손품 씨' 줄 뺌, 막대를 큰 숫자 박자로 · 이해 시험 1차 3/3 '5월→2월·7억이 화면과 안 맞음·손품 씨' 지적, bgcheck가 흰 막대를 흰 판으로 잡음(61%)
+2026-10-20 16:32 · firemap-video-producer · X-1 받아쓰기 17줄 중 11줄 다시 받기로 풀고 6줄은 editor 말 바꾸기 요청 · 다시 받기 2~3번에도 같은 표기라 녹음으로 못 풂, 렌더는 서명 뒤
+2026-10-20 16:32 · firemap-video-producer · lfvoice._same_sound에 KODEX→코덱스·ㅚ→ㅔ 추가, w1g1clips_check에 '억 만원 꼴' 비교 추가 · 표기만 다른 소리·같은 값을 오독·불일치로 잡던 것

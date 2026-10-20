@@ -97,8 +97,8 @@ export const TallyCaption: React.FC<{lines: TallyLine[]; capX?: number}> = ({lin
   );
 };
 
-export const TallyFrame: React.FC<{title: string; sub?: string | null; source?: string | null; chapter?: string | null; lines: TallyLine[]; children?: React.ReactNode; board?: boolean; boardCard?: boolean; capX?: number; bg?: TallyBg | null; art?: TallyArt | null}> =
-  ({title, sub, source, chapter, lines, children, board = true, boardCard = false, capX = 960, bg = null, art = null}) => {
+export const TallyFrame: React.FC<{title: string; sub?: string | null; source?: string | null; chapter?: string | null; lines: TallyLine[]; children?: React.ReactNode; board?: boolean; boardCard?: boolean; capX?: number; bg?: TallyBg | null; art?: TallyArt | null; capTop?: number}> =
+  ({title, sub, source, chapter, lines, children, board = true, boardCard = false, capX = 960, bg = null, art = null, capTop = 830}) => {   // capTop(10/20 PD X-1): 그래프 아래 날짜 글자와 [정확한 값] 띠가 겹치는 판은 띠를 제목 아래로
   const f = useCurrentFrame();
   const o = interpolate(f, [0, 10], [0, 1], CL);
   const hl = interpolate(f, [6, 22], [0, 1], {...CL, easing: Easing.out(Easing.cubic)});
@@ -129,7 +129,7 @@ export const TallyFrame: React.FC<{title: string; sub?: string | null; source?: 
       </div>
       {board && (boardCard || bg) ? <div style={{position: 'absolute', left: BOARD.x, top: BOARD.y, width: BOARD.w, height: BOARD.h, background: bg ? 'rgba(255,255,255,0.96)' : '#fff', border: bg ? 'none' : `2px solid ${T.line}`, borderRadius: 24, opacity: o, boxShadow: bg ? '0 20px 60px rgba(0,0,0,0.45)' : undefined}} /> : null}
       {children}
-      {cap ? <div style={{position: 'absolute', left: SAFE.left, top: 830, maxWidth: SAFE.textRight - SAFE.left, opacity: co, ...F, fontWeight: 700, fontSize: 22, color: bg ? '#f2f3f5' : T.ink2, whiteSpace: 'nowrap', overflow: 'hidden', textShadow: bg ? SH : undefined}}>{cap}</div> : null}
+      {cap ? <div style={{position: 'absolute', left: SAFE.left, top: capTop, maxWidth: SAFE.textRight - SAFE.left, opacity: co, ...F, fontWeight: 700, fontSize: 22, color: bg ? '#f2f3f5' : T.ink2, whiteSpace: 'nowrap', overflow: 'hidden', textShadow: bg ? SH : undefined}}>{cap}</div> : null}
       <TallyCaption lines={lines} capX={capX} />
       {source ? <div style={{...F, fontWeight: 500, fontSize: srcSize(source), color: bg ? '#e8eaee' : T.ink3, textShadow: bg ? SH : undefined, position: 'absolute', left: SAFE.left, top: 864, whiteSpace: 'nowrap'}}>출처 {source}</div> : null}
     </AbsoluteFill>

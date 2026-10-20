@@ -1,0 +1,11 @@
+# 화면 글자 내용 차이(장면 번호 빼고) — 10/20 PD 브랜드 첫·끝 줄
+## 새로 생김
+[lines.0.text] 안녕하세요, 파이어맵입니다. 오늘은 환율 이야기입니다.
+[data.license] Pexels 5466769 무료(olia danilevich)
+[data.say] 오늘은 환율 이야기
+[data.side] left
+[data.side] left
+[lines.0.text] 금요일 오전 11시 반에는 아파트 실거래가 이야기입니다. 그때 뵙겠습니다.
+[data.license] Pexels 3723453 무료(K)
+[data.say] 그때 뵙겠습니다
+## 없어짐

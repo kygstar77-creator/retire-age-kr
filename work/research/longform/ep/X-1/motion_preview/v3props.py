@@ -67,7 +67,7 @@ src2 = '한국은행 ECOS · KRX 종가 2024.1.2·2025.10.13·2026.7.2 → 끝 �
 
 # ── 2. 질문 1: 본전 환율 — 세로 환율 눈금, 지금 1,339원 점선 위아래로 날짜별 본전 줄
 L2 = cut('1.', '그래서 내 계좌는', '지난 석 달 방향이')
-assert len(L2) == 12, [l['text'] for l in L2]
+assert len(L2) == 13, [l['text'] for l in L2]
 evens = [  # 이름, 산 날 환율, 배수, 본전, 말 글자
  ('달러 가장 비싸던 날', '1,554.4', '1.0363', 1500.0, '1,500원'),
  ('석 달 전', '1,507.1', '1.0302', 1462.9, '1,463원'),
@@ -76,8 +76,9 @@ evens = [  # 이름, 산 날 환율, 배수, 본전, 말 글자
 ]
 for n, r, m, e, s in evens:
     has(f'그날 환율 {r} ÷ SPY 배수 {m} = 본전 환율 {e:,.1f}원')
-has('1,500원은 돼야 본전', '160원쯤 위', '1,463원이 본전', '1,220원까지 내려가도 아직 본전', '1.16배로 나누면', '본전 환율', '상하방 요인이 병존', '주가가 움직이면 같이 움직입니다')
-even = {'seed': 'X-1-even', 'now': 1338.6, 'nowText': '지금 1,339원', 'min': 1150, 'max': 1600,
+has('1,500원은 돼야 본전', '160원쯤 위', '1,463원이 본전', '1,220원까지 내려가도 아직 본전', '일 점 일육 배로 나누면', '본전 환율', '상하방 요인이 병존', '주가가 움직이면 같이 움직입니다')
+even = {'seed': 'X-1-even', 'skipBeats': [10], 'now': 1338.6,   # 10/20 PD: 9줄을 editor가 두 줄로 나눔(9·10) — 부품 박자는 옛 12줄 번호 그대로
+ 'nowText': '지금 1,339원', 'min': 1150, 'max': 1600,
   'ticks': [[1200, '1,200원'], [1300, '1,300원'], [1400, '1,400원'], [1500, '1,500원'], [1600, '1,600원']],
   'evens': [{'name': n, 'rate': r, 'mult': m, 'even': e, 'say': s} for n, r, m, e, s in evens],
   'show': [None, None, None, None, 0, 0, 1, 3, None, None, None, None],   # 줄마다 켜는 본전 줄(4·5 가장 비싸던 날, 6 석 달 전, 7 1년 전 → 올해 첫날 함께)
@@ -113,7 +114,7 @@ for e in even['evens']: e['evenText'] = f"{e['even']:,.1f}원"
 out = {'fps': 30,
  'hedge': scene('hedge', '같은 1억 막대 두 개', '같은 회사 두 상품 · 분배금 포함 · 2026.10.16', '2', src2, L, hedge),
  'even': scene('even', '본전 환율', '산 날 환율 ÷ 주가 배수 · 지금 1,339원과 견주기', '1', src1, L2, even),
- 'below': scene('below', '지금보다 쌌던 날', '2024.1.2 ~ 2026.10.15 · 679거래일', '5', src3, L3, below)}
+ 'below': scene('below', '같거나 더 쌌던 날', '2024.1.2 ~ 2026.10.15 · 679거래일', '5', src3, L3, below)}
 json.dump(out, open(os.path.join(H, 'x1_v3.json'), 'w', encoding='utf-8'), ensure_ascii=False)
 for k in ('hedge', 'even', 'below'):
     s = out[k]; print(k, s['frames'], 'f', round(s['frames'] / 30, 1), 's', '녹음 줄', sum(1 for l in s['lines'] if l['audio']), '/', len(s['lines']), '최장 줄', round(max(l['frames'] for l in s['lines']) / 30, 1), 's')

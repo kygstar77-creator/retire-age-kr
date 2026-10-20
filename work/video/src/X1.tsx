@@ -35,8 +35,10 @@ const beatAt = (ls: CLine[], f: number) => { const st = starts(ls); let b = 0; l
 const tl = (ls: CLine[]): TallyLine[] => ls.map(l => ({text: l.text.replace(/^"|"$/g, ''), frames: l.frames, cap: l.cap ?? null}));
 const bigSize = (t: string, room: number, max: number) => { const u = [...t].reduce((a, c) => a + (/[ㄱ-힝]/.test(c) ? 1 : /\s/.test(c) ? 0.3 : 0.6), 0); return Math.max(84, Math.min(max, Math.floor(room / Math.max(1, u)))); };
 const art = (icon?: string, color?: string): TallyArt | null => icon ? {kind: 'icon', icon, license: 'lucide ISC', color} : null;
+// 10/20 PD: 그래프 판은 아래 날짜·이름 글자가 830 줄까지 내려와 [정확한 값] 띠와 겹쳤다(lfrender overlap 93건) — 띠를 제목 아래로
+const CAPUP = ['fxline', 'fxbars', 'line', 'mo']; const CAPTOP = 232;
 const Frame: React.FC<{s: CScene; children?: React.ReactNode}> = ({s, children}) => {
-  const d = s.data; return <TallyFrame title={d.title} art={art(d.icon, d.c ? col(d.c) : undefined)} source={d.source} chapter={d.chapter} lines={tl(s.lines)}>{children}</TallyFrame>;
+  const d = s.data; return <TallyFrame title={d.title} art={art(d.icon, d.c ? col(d.c) : undefined)} source={d.source} chapter={d.chapter} lines={tl(s.lines)} capTop={CAPUP.includes(s.kind) ? CAPTOP : undefined}>{children}</TallyFrame>;
 };
 
 // 강조 칸: 박자가 홀수면 큰 값 뒤에 연주황 띠가 깔린다(화면 그래픽 영역 4% 넘게 바뀜)
@@ -152,11 +154,11 @@ const FxScene: React.FC<{s: CScene; fx: any}> = ({s, fx}) => (
 );
 // 부품 하나를 줄 단위 조각으로 — 조각 장면 안에서 off 프레임만큼 앞당겨 같은 시간표를 보여 준다(전체 줄 = 자막·[자막] 띠·박자)
 const Mo: React.FC<{s: CScene; m: MoScene}> = ({s, m}) => {
-  const full = tl(m.lines); const beats = tallyStarts(full); const c = s.data.comp;
+  const full = tl(m.lines); const b0 = tallyStarts(full); const sk: number[] = m.data.skipBeats || []; const beats = b0.filter((_: number, i: number) => !sk.includes(i)); const c = s.data.comp;   // 10/20 PD: 한 줄을 두 줄로 나눈 자리(skipBeats)는 부품 박자에서 빼 옛 박자 번호 그대로
   const child = c === 'hedge' ? <HedgeFlip {...m.data} beats={beats} /> : c === 'even' ? <EvenLadder {...m.data} beats={beats} /> : <DaysBelow {...m.data} beats={beats} />;
   return (
     <Sequence from={-s.data.off} durationInFrames={s.data.off + s.frames} layout="none">
-      <TallyFrame title={m.title} art={art(s.data.icon)} source={m.source} chapter={s.data.chapter} lines={full}>{child}</TallyFrame>
+      <TallyFrame title={m.title} art={art(s.data.icon)} source={m.source} chapter={s.data.chapter} lines={full} capTop={CAPTOP}>{child}</TallyFrame>
     </Sequence>
   );
 };

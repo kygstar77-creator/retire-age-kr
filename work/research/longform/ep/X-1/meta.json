@@ -1,66 +1,106 @@
 {
-  "ep": "X-1",
-  "series": "경제·환율",
-  "title": "환율이 내린 석 달, 미국 ETF는 올랐는데 원화 계좌는 빠졌다 — 1억을 달러로 바꾼 날 네 개로 계산",
-  "title_by": "firemap-copywriter copy/titles.md 10/15 18:58 1위(결선 8.60) · 10/15 끝날 calc_out으로 다시 확인: 7/13 시작 SPY 달러 +3.02%·원화 −8.50% — '올랐는데 빠졌다' 그대로 맞음",
-  "title_candidates": [
-    "환율이 내린 석 달, 미국 ETF는 올랐는데 원화 계좌는 빠졌다 — 1억을 달러로 바꾼 날 네 개로 계산",
-    "환율 1,554원 날 S&P500에 넣은 1억, 주가는 올랐는데 원화로는 9천만원 아래 — 바꾼 날 네 개로 계산"
+ "ep": "X-1",
+ "series": "경제·환율",
+ "title": "환율이 내린 석 달, 미국 ETF는 올랐는데 원화 계좌는 빠졌다 — 1억을 달러로 바꾼 날 네 개로 계산",
+ "title_by": "firemap-copywriter copy/titles.md 10/15 18:58 1위(결선 8.60) · 10/15 끝날 calc_out으로 다시 확인: 7/13 시작 SPY 달러 +3.02%·원화 −8.50% — '올랐는데 빠졌다' 그대로 맞음",
+ "title_candidates": [
+  "환율이 내린 석 달, 미국 ETF는 올랐는데 원화 계좌는 빠졌다 — 1억을 달러로 바꾼 날 네 개로 계산",
+  "환율 1,554원 날 S&P500에 넣은 1억, 주가는 올랐는데 원화로는 9천만원 아래 — 바꾼 날 네 개로 계산"
+ ],
+ "thumb_text": "S&P500에 1억, 산 날만 다르면? / 작년 10월 +10% · 올 7월 −11%",
+ "thumb_text_small": "원화로 본 1억, 넣은 때에 따라 · 2025년 10월 13일 vs 2026년 7월 2일에 넣은 1억",
+ "thumb_text_swap": "주가는 올랐는데 / 내 1억은 −11%",
+ "thumb_text_swap_small": "2024년 이후 달러가 가장 비싸던 7월 2일에 산 경우",
+ "thumb": "thumb_x1n_b.png",
+ "thumb_swap": "thumb_x1c.png",
+ "thumb_status": "visual 10-19 17:2x x1n_b 새 꼴(꽉 찬 실사 Pexels 영상 4275306 프레임·손만 / 작은 흰 줄 'S&P500에 1억, 산 날만 다르면?'+알약 '원화 기준' 왼쪽 위 / 큰 두 줄 '작년 10월 +10%'(흰)·'올 7월 −11%'(주황) 아래 44%) · 제미나이 3.1-flash-lite(judge_1014 방식, 경쟁 5+N-2 thumb_A 나란히) x1n_b 8·x1n_c 7.5·x1n_a 7·옛 x1f 5 · AI 디자인 티 낮음 · 1초 블라인드 우리 4장 모두 주제 맞힘 · 58세 새 심사관 뜻 맞음 · 숫자 calc_out 12행 +9.69%·16행 −10.76% · 이전 x1f는 thumb_prev, 48h 교체 후보 thumb_alt=x1n_c · 근거 visual/X-1-thumb/n1019/",
+ "desc_first2": [
+  "7월 2일 1억원을 달러로 바꿔 미국 S&P500 ETF(SPY)를 샀다면, 10월 15일까지 주가는 달러로 3.63% 올랐지만 원화로 따지면 10.76% 빠져 약 8,924만원이 됩니다. 같은 1억을 작년 10월 13일에 넣었다면 원화로 9.69% 올라 약 1억 969만원입니다.",
+  "차이는 산 날의 환율과 주가에서 나왔어요. 1달러가 1,554.4원이던 날과 1,420.5원이던 날을 포함해 시작일 네 개로 계산했습니다(끝날 환율 1,338.6원, 매매기준율 기준·수수료 없음)."
+ ],
+ "desc": "7월 2일 1억원을 달러로 바꿔 미국 S&P500 ETF(SPY)를 샀다면, 10월 15일까지 주가는 달러로 3.63% 올랐지만 원화로 따지면 10.76% 빠져 약 8,924만원이 됩니다. 같은 1억을 작년 10월 13일에 넣었다면 원화로 9.69% 올라 약 1억 969만원입니다.\n차이는 산 날의 환율과 주가에서 나왔어요. 1달러가 1,554.4원이던 날과 1,420.5원이던 날을 포함해 시작일 네 개로 계산했습니다(끝날 환율 1,338.6원, 매매기준율 기준·수수료 없음).\n\n날짜별 전체 표·본전 환율 계산법(카페): https://cafe.naver.com/firemap\n\n0:00 예고편\n0:59 주가는 올랐는데 왜 원화로는 더 깎였나\n3:51 국내 S&P500 ETF와 이름 끝 (H)\n6:11 달러로 미리 바꿀까, 바꿀 때 새는 돈\n8:37 달러 예금도 환율 내리면 마이너스?\n10:34 여행·직구, 지금 바꿔 둘까\n12:58 누구라면 — 같은 환율, 다른 숫자\n13:59 끝\n\n출처\n· 한국은행 경제통계시스템(ECOS) 원/달러·원/100엔 매매기준율 일별(2024.1.2~2026.10.15)\n· 미국 S&P500 ETF(SPY) 종가(야후 파이낸스, 배당 미포함 가격) · KRX 종가·분배금(KODEX 미국S&P500 379800·(H) 449180), 삼성자산운용 KODEX 월간 자료(2026.8.31 기준)\n· 한국은행 통화정책방향(2026.8.27)·「2026년 9월 이후 국제금융·외환시장 동향」(2026.10.16) · 재정경제부 시장상황점검회의(2026.8.21)\n· 은행연합회 외환길잡이·하나은행 환율 고시(2026.10.15·10.20) · KB국민은행 외화예금 금리안내(조회 2026.10.16·10.20) · 예금보험공사 예금자보호제도 FAQ\n· 금융감독원 「해외 카드결제 취소시 … 환차손 보상을 한층 강화합니다」(2026.10.14) · 카드사 해외이용 안내(KB국민카드·현대카드)\n영상 일부: olia danilevich / Pexels (https://www.pexels.com/video/a-person-counting-money-5466769/)\n영상 일부: https://kaboompics.com/ / Pexels (https://www.pexels.com/video/person-couting-money-6326929/)\n영상 일부: cottonbro studio / Pexels (https://www.pexels.com/video/female-typing-on-her-smartphone-6963836/)\n영상 일부: cottonbro studio / Pexels (https://www.pexels.com/video/person-writing-on-a-paper-7428839/)\n영상 일부: Vlada Karpovich / Pexels (https://www.pexels.com/video/a-woman-walking-while-holding-her-luggage-in-the-airport-8044821/)\n영상 일부: olia danilevich / Pexels (https://www.pexels.com/video/a-person-counting-money-5466779/)\n영상 일부: Jakub Zerdzicki / Pexels (https://www.pexels.com/video/managing-finances-counting-cash-from-wallet-34596756/)\n영상 일부: Pavel Danilyuk / Pexels (https://www.pexels.com/video/close-up-video-of-a-person-using-calculator-7593891/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/close-up-shot-of-a-person-stacking-bitcoins-8369980/)\n영상 일부: Toàn BDS / Pexels (https://www.pexels.com/video/aerial-view-of-container-ship-at-busy-port-terminal-29904000/)\n영상 일부: Glenn Langhorst / Pexels (https://www.pexels.com/video/container-ship-in-commercial-dock-10452020/)\n영상 일부: K / Pexels (https://www.pexels.com/video/close-up-of-hands-holding-a-smartphone-6186015/)\n영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/a-red-piggy-bank-7829075/)\n영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/person-counting-banknotes-7735914/)\n영상 일부: David Pickup |  Advertising & Marketing  🇬🇧 / Pexels (https://www.pexels.com/video/aerial-view-of-ocean-waves-crashing-on-shore-31879939/)\n영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/close-up-video-of-a-money-7735915/)\n영상 일부: Tima Miroshnichenko / Pexels (https://www.pexels.com/video/close-up-video-of-coins-5651783/)\n영상 일부: Kampus Production / Pexels (https://www.pexels.com/video/person-scanning-a-bank-card-for-payment-8830802/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/person-using-calculator-while-writing-on-paper-5923592/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/person-putting-signature-on-a-document-5778854/)\n영상 일부: Site Engine / Pexels (https://www.pexels.com/video/timelapse-of-people-walking-in-airport-terminal-10821823/)\n영상 일부: Liuuu _61 / Pexels (https://www.pexels.com/video/kiyomizu-dera-temple-in-kyoto-japan-32111755/)\n영상 일부: Nadezhda Moryak / Pexels (https://www.pexels.com/video/aerial-view-of-waves-9806390/)\n영상 일부: Liuuu _61 / Pexels (https://www.pexels.com/video/kinkaku-ji-golden-pavilion-reflecting-in-kyoto-38556529/)\n영상 일부: Gustavo Fring / Pexels (https://www.pexels.com/video/customer-in-a-flower-shop-paying-through-terminal-6685174/)\n영상 일부: K / Pexels (https://www.pexels.com/video/view-of-sunset-from-an-airplane-in-flight-3740041/)\n영상 일부: Khanh Hoang Minh 2 / Pexels (https://www.pexels.com/video/people-are-sitting-in-chairs-in-an-airport-18757432/)\n영상 일부: RDNE Stock project / Pexels (https://www.pexels.com/video/passport-on-top-of-a-laptop-7308237/)\n영상 일부: K / Pexels (https://www.pexels.com/video/footage-of-the-plane-taking-off-3723453/)\n계산 가정: 1억 원을 그날 매매기준율로 전부 바꿨다고 놓음 · 환전 수수료·세금·배당 없음(국내 ETF는 분배금 세전 포함) · 정민 씨 같은 이름 없이 '한 사람'으로 계산\n기준일: 영상 속 '지금'은 2026년 10월 15일 매매기준율 1,338.6원입니다(10/20 매매기준율 1,332.1원 — 같은 방향으로 조금 더 내림).\n\n지나간 값으로 한 계산이고, 달러를 언제 사고팔라는 권유가 아닙니다. 특정 상품을 사거나 팔라는 뜻도 아닙니다.\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)입니다.",
+ "chapters": [
+  [
+   0,
+   "예고편"
   ],
-  "thumb_text": "S&P500에 1억, 산 날만 다르면? / 작년 10월 +10% · 올 7월 −11%",
-  "thumb_text_small": "원화로 본 1억, 넣은 때에 따라 · 2025년 10월 13일 vs 2026년 7월 2일에 넣은 1억",
-  "thumb_text_swap": "주가는 올랐는데 / 내 1억은 −11%",
-  "thumb_text_swap_small": "2024년 이후 달러가 가장 비싸던 7월 2일에 산 경우",
-  "thumb": "thumb_x1n_b.png",
-  "thumb_swap": "thumb_x1c.png",
-  "thumb_status": "visual 10-19 17:2x x1n_b 새 꼴(꽉 찬 실사 Pexels 영상 4275306 프레임·손만 / 작은 흰 줄 'S&P500에 1억, 산 날만 다르면?'+알약 '원화 기준' 왼쪽 위 / 큰 두 줄 '작년 10월 +10%'(흰)·'올 7월 −11%'(주황) 아래 44%) · 제미나이 3.1-flash-lite(judge_1014 방식, 경쟁 5+N-2 thumb_A 나란히) x1n_b 8·x1n_c 7.5·x1n_a 7·옛 x1f 5 · AI 디자인 티 낮음 · 1초 블라인드 우리 4장 모두 주제 맞힘 · 58세 새 심사관 뜻 맞음 · 숫자 calc_out 12행 +9.69%·16행 −10.76% · 이전 x1f는 thumb_prev, 48h 교체 후보 thumb_alt=x1n_c · 근거 visual/X-1-thumb/n1019/",
-  "desc_first2": [
-    "7월 2일 1억원을 달러로 바꿔 미국 S&P500 ETF(SPY)를 샀다면, 10월 15일까지 주가는 달러로 3.63% 올랐지만 원화로 따지면 10.76% 빠져 약 8,924만원이 됩니다. 같은 1억을 작년 10월 13일에 넣었다면 원화로 9.69% 올라 약 1억 969만원입니다.",
-    "차이는 산 날의 환율과 주가에서 나왔습니다. 1달러가 1,554.4원이던 날과 1,420.5원이던 날을 포함해 시작일 네 개로 계산했고(끝날 환율 1,338.6원, 매매기준율·수수료 없음). 언제 사고팔지 권하는 영상은 아니에요."
+  [
+   59,
+   "주가는 올랐는데 왜 원화로는 더 깎였나"
   ],
-  "desc": null,
-  "chapters": null,
-  "tags": [
-    "환율",
-    "미국 ETF",
-    "S&P500 ETF",
-    "원달러 환율",
-    "환율 손실"
+  [
+   231,
+   "국내 S&P500 ETF와 이름 끝 (H)"
   ],
-  "publishAt": "2026-10-22T11:30:00+09:00",
-  "privacy": "private",
-  "paid": false,
-  "synthetic": true,
-  "synthetic_note": "AI 음성 내레이션(Chirp 3 HD Charon) — 합성 표시 True(10/12 회의 기준) · 실사는 Pexels(credits.json)",
-  "coupang": null,
-  "voice": "Chirp 3 HD Charon 1.1 · 183줄 · 10/17 한 날(튀는 줄 0·앞뒤 +0.7%·IQR 0.14) · 146행 10/17 재녹음",
-  "experiment": {
-    "X-YT-THUMB-1": "A(제목 첫 명사 '환율', 썸네일 주 대상 'S&P500')"
-  },
-  "endscreen": {
-    "how": "Studio 최종 화면 — 업로드 뒤 할 일",
-    "status": "미정"
-  },
-  "todo_pd": [
-    "editor 화면 stamp(10/20 12:00) → lfrender render → bgcheck·눈 검사",
-    "썸네일 x1f '원화 기준' 다시 그린 판(visual)",
-    "desc 본문·챕터(렌더 뒤 voice.json 시각)",
-    "짝 카페 글 주소 {CAFE}",
-    "scorecard·review·understand_test 최신 확인 → ytlong gate → 10/22 11:30 예약"
+  [
+   371,
+   "달러로 미리 바꿀까, 바꿀 때 새는 돈"
   ],
-  "made_by": "firemap-video-producer",
-  "made_at": "2026-10-17 22:22",
-  "missing": null,
-  "thumb_text_prev_1019": "같은 S&P500 / +10% vs −11%",
-  "thumb_text_small_prev_1019": "작년 이맘때 산 1억 vs 7월 초 산 1억 · 원화 기준",
-  "thumb_frame": {
-    "tag": "내 돈 계산",
-    "what": "S&P500 ETF(SPY) · 원화 기준 · 10월 15일까지",
-    "q": "S&P500에 1억,<br>산 날만 다르면?",
-    "label": "원화로 본 1억, 넣은 때에 따라",
-    "big": "작년 10월 +10% · 올 7월 −11%",
-    "sub": "2025년 10월 13일 vs 2026년 7월 2일에 넣은 1억"
-  },
-  "thumb_prev": "thumb_x1f.png",
-  "thumb_alt": "thumb_x1n_c.png"
+  [
+   517,
+   "달러 예금도 환율 내리면 마이너스?"
+  ],
+  [
+   634,
+   "여행·직구, 지금 바꿔 둘까"
+  ],
+  [
+   778,
+   "누구라면 — 같은 환율, 다른 숫자"
+  ],
+  [
+   839,
+   "끝"
+  ]
+ ],
+ "tags": [
+  "환율",
+  "미국 ETF",
+  "S&P500 ETF",
+  "원달러 환율",
+  "환율 손실"
+ ],
+ "publishAt": "2026-10-22T11:30:00+09:00",
+ "privacy": "private",
+ "paid": false,
+ "synthetic": true,
+ "synthetic_note": "AI 음성 내레이션(Chirp 3 HD Charon) — 합성 표시 True(10/12 회의 기준) · 실사는 Pexels(credits.json)",
+ "coupang": null,
+ "voice": "Chirp 3 HD Charon 1.1 · 186줄 · 10/17 녹음 + 10/20 editor 6줄·브랜드 첫·끝 줄 재녹음(튀는 줄 0·앞뒤 +0.6%·IQR 0.14) · 받아쓰기 186줄 걸림 0",
+ "experiment": {
+  "X-YT-THUMB-1": "A(제목 첫 명사 '환율', 썸네일 주 대상 'S&P500')"
+ },
+ "endscreen": {
+  "how": "Studio 최종 화면 — 업로드 뒤 할 일",
+  "status": "미정"
+ },
+ "todo_pd": [
+  "editor 화면 stamp(10/20 12:00) → lfrender render → bgcheck·눈 검사",
+  "썸네일 x1f '원화 기준' 다시 그린 판(visual)",
+  "desc 본문·챕터(렌더 뒤 voice.json 시각)",
+  "짝 카페 글 주소 {CAFE}",
+  "scorecard·review·understand_test 최신 확인 → ytlong gate → 10/22 11:30 예약"
+ ],
+ "made_by": "firemap-video-producer",
+ "made_at": "2026-10-17 22:22",
+ "missing": null,
+ "thumb_text_prev_1019": "같은 S&P500 / +10% vs −11%",
+ "thumb_text_small_prev_1019": "작년 이맘때 산 1억 vs 7월 초 산 1억 · 원화 기준",
+ "thumb_frame": {
+  "tag": "내 돈 계산",
+  "what": "S&P500 ETF(SPY) · 원화 기준 · 10월 15일까지",
+  "q": "S&P500에 1억,<br>산 날만 다르면?",
+  "label": "원화로 본 1억, 넣은 때에 따라",
+  "big": "작년 10월 +10% · 올 7월 −11%",
+  "sub": "2025년 10월 13일 vs 2026년 7월 2일에 넣은 1억"
+ },
+ "thumb_prev": "thumb_x1f.png",
+ "thumb_alt": "thumb_x1n_c.png",
+ "answers": {
+  "q1_바꿔끼우기": "아니오 — 같은 1억을 미리 정한 시작일 네 개(1년 전·올해 첫날·2024년 이후 최고·석 달 전)로 달러 현금·SPY·국내 ETF 환노출 vs (H)·환전 비용·여행 결제까지 한국은행 ECOS·KRX 원자료로 계산한 이 편만의 숫자다(compete.md 경쟁 5편 중 1억 단위 계산 0).",
+  "q2_연달아보기": "아니오 — 앞뒤 롱폼(10/20 H-2 아파트 실거래가·10/21 T-1 양도세·10/23 H-3 아파트 실거래가)과 주제 축이 다르다(경제·환율). 환율이 나온 가장 가까운 편은 R-1(10/14) — 그때는 한 줄, 이번엔 다섯 질문 전부.",
+  "q3_약속이행": "예 — 제목 '미국 ETF는 올랐는데 원화 계좌는 빠졌다'는 0장(SPY 달러 +3.63%·원화 −10.76%)과 1장이 답하고, 썸네일 '작년 10월 +10% · 올 7월 −11%'는 1장 시작일 네 개 막대가 답한다.",
+  "q4_조언으로들리나": "아니오 — 환율 전망·언제 사라/팔라 0, '지나간 날과 비교'만(5장 679일 중 81일), 설명란에 '권유 아님' 줄, 금융상품은 이름만 말하고 추천 없음.",
+  "q5_사람의몫": "예 — 질문 다섯 개를 실제 지식iN·카페·유튜브 댓글에서 골라, 앱 수익률로 '본전 환율'을 직접 계산하는 방법(산 날 환율 ÷ 주가 배수)과 같은 회사 두 상품(환노출·H) 1억 비교를 우리가 만들었다."
+ }
 }

@@ -15,8 +15,10 @@ FPS, TAIL = 30, 75
 CALC = open(os.path.join(EP, 'calc_out.txt'), encoding='utf-8').read()
 SCRIPT = open(os.path.join(EP, 'script.md'), encoding='utf-8').read()
 V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
+# 10/20 PD: editor 17:10 — 말 글자 '일 점 일육 배'(받아쓰기 116 오독 막기), 화면·자막은 서명된 1.16 그대로
+SHOW = lambda t: t.replace('일 점 일육 배', '1.16배')
 ALL = [dict(l, sec=si) for si, s in enumerate(V['sections']) for l in s['lines']]
-assert len(ALL) == 183 and all(l.get('audio') for l in ALL), len(ALL)
+assert len(ALL) == 186 and all(l.get('audio') for l in ALL), len(ALL)
 assert abs(V.get('speakingRate', 0) - 1.1) < 1e-9 and V['voice'] == 'ko-KR-Chirp3-HD-Charon'
 # [자막] → 바로 앞 말 줄
 CAP, last = {}, None
@@ -39,7 +41,7 @@ def take(first, n):
     for j in range(i, i + n):
         assert j not in USED, ('두 번 씀', ALL[j]['text'][:20]); USED.add(j)
         l = ALL[j]; assert os.path.exists(os.path.join(VID, 'public', l['audio'])), l['audio']
-        out.append({'text': l['text'], 'audio': l['audio'], 'frames': l['frames'], 'cap': CAP.get(l['text']), 'i': j})
+        out.append({'text': SHOW(l['text']), 'audio': l['audio'], 'frames': l['frames'], 'cap': CAP.get(l['text']), 'i': j})
     return out
 
 def S(kind, first, cnt=1, **data):
@@ -72,7 +74,7 @@ FXJ = json.load(open(os.path.join(EP, 'motion_preview', 'x1_fx.json'), encoding=
 V3 = json.load(open(os.path.join(EP, 'motion_preview', 'x1_v3.json'), encoding='utf-8'))
 MOTION = {}
 for k in ('hedge', 'even', 'below'):
-    m = V3[k]; MOTION[k] = {'title': m['title'], 'source': m['source'], 'lines': [{'text': l['text'], 'audio': l['audio'], 'frames': l['frames'], 'cap': l['cap'] and l['cap'].replace('ECOS 731Y001', 'ECOS')} for l in m['lines']],
+    m = V3[k]; MOTION[k] = {'title': m['title'], 'source': m['source'], 'lines': [{'text': SHOW(l['text']), 'audio': l['audio'], 'frames': l['frames'], 'cap': l['cap'] and l['cap'].replace('ECOS 731Y001', 'ECOS')} for l in m['lines']],
                             'frames': sum(l['frames'] for l in m['lines']), 'data': m['data']}
 def mo(comp, i0, i1, first, icon):
     m = MOTION[comp]; n = i1 - i0
@@ -127,9 +129,10 @@ HN = [round(_m['KR_379800'][d] / _m['KR_379800'][HD[0]] * 10000) for d in HD]   
 HH = [round(_m['KR_449180'][d] / _m['KR_449180'][HD[0]] * 10000) for d in HD]
 scenes = [
     # ── 0. 여는 장면 ──
+    broll(5466769, '안녕하세요, 파이어맵입니다.', '오늘은 환율 이야기'),   # 10/20 PD: 고정 여는 말(브랜드 lines.md, T-1·H-2와 같은 틀) — 날짜는 말하지 않음
     S('two', '미국 큰 회사들을', 3, title='주가는 오르고 계좌는 빠졌다', icon='TrendingDown', source=SRC_SPY + ' · 2026.7.2 → 10.15', two=TWO),
     broll(6326929, '주가는 올랐는데 계좌는', '돈은 어디로 샜을까'),
-    big('새 나간 곳은 환율', '1,554원 → 1,339원', '원/달러 매매기준율 · 2026.7.2 → 10.15', '새 나간 곳은', 2, icon='ArrowLeftRight', c=B),
+    big('돈이 빠져나간 곳은 환율', '1,554원 → 1,339원', '원/달러 매매기준율 · 2026.7.2 → 10.15', '돈이 빠져나간 곳은', 2, icon='ArrowLeftRight', c=B),
     broll(6963836, '요즘 지식iN과', '요즘 많이 묻는 글'),
     S('list5', '그중 많이 나온 질문', 1, title='많이 나온 질문 다섯', icon='MessageCircleQuestion', source='네이버 지식iN · 카페 · 유튜브 댓글',
       items=['주가는 올랐는데 왜 원화로는 깎였나?', '국내 상장 S&P500 ETF와 (H)는?', '달러로 미리 바꿀까, 원화로 살까?', '달러 예금·달러 상품도 마이너스?', '여행·직구, 지금 바꿔 둘까?']),
@@ -161,7 +164,7 @@ scenes = [
     broll(6186015, '증권사 앱에', '앱 수익률로 나누면'),
     mo('even', 4, 8, '가장 비싸던 날 산 경우는', 'Calculator'),
     broll(7829075, '조심할 게 있어요', '조심할 것'),
-    mo('even', 9, 12, '본전 환율은 주가가', 'TriangleAlert'),
+    mo('even', 9, 13, '본전 환율은 주가가', 'TriangleAlert'),
     # ── 2. 질문 ② ──
     ask('질문 ②', '국내 상장 S&P500 ETF는 왜 내렸고, 이름 끝 (H)는 뭔가요?',
         "유튜브 댓글 '미국 현지에서는 최고가갱신 … 국내상장 미국지수는 오히려 하락' · 지식iN 2026.9.25 '(H)가 붙어 있더라고요'", '이번엔 유튜브 댓글에', 3),
@@ -175,7 +178,7 @@ scenes = [
     broll(8369980, 'ETF가 나눠 주는', '분배금까지 넣어서'),
     mo('hedge', 0, 4, '달러가 제일 비쌌던 날 1억을', 'ChartColumn'),
     broll(6326929, '댓글 질문의 답이', '댓글 질문의 답'),
-    mo('hedge', 5, 6, '환노출형은 미국 지수가', 'ChartColumn'),
+    mo('hedge', 5, 6, '환율에 그대로 노출된 상품은', 'ChartColumn'),
     ask('그럼', 'H형이 늘 나을까요?', None, '그럼 H형이 늘'),
     mo('hedge', 7, 11, '재작년 첫날 넣었다면', 'ChartColumn'),
     broll(31879939, '환율을 막아 두면', '막으면 이익도 같이 막힌다'),
@@ -211,7 +214,7 @@ scenes = [
     broll(5466779, '1년 전에 한 번에 바꿨으면', '작년 이맘때보다는 더', side='right'),
     line('좋은 날과 나쁜 날 사이', [['원/달러', K, FXV]], '나눠 바꾸면 결과가', 1, icon='Scale', src=SRC_FX + ' · 10.15 원화',
          min=1280, max=1600, ticks=FXT, xlabels=FXX, base=[1450.4, '평균 1,450.4원', 1180],
-         tags=[[0, 1420.5, '작년 이맘때 한 번에 → 94,234,424원', 0, 'down', False, 0], [ix(FXD, '20260702'), 1554.4, '가장 비싸던 날 한 번에 → 86,116,830원', 0, 'up', False, 40],
+         tags=[[0, 1420.5, '작년 이맘때 한 번에 → 94,234,424원', 0, 'right', False, 0], [ix(FXD, '20260702'), 1554.4, '가장 비싸던 날 한 번에 → 86,116,830원', 0, 'up', False, 40],
                [round(len(FXD) * 0.36), 1450.4, '매달 나눠서 → 92,290,941원', 0, 'down', True, 80]]),
     broll(6963836, '천원, 이천원씩 매일', '매일 바꾸면 매일 붙는다'),
     rows('바꿀 때마다 수수료', [['원화 → 달러', '수수료', R], ['달러 → 원화', '한 번 더', R, 0], ['자주 사고팔 돈이 아니면', '우대율 높은 곳에서 덜 자주', B, 1]], '그 달러를 다시 원화로', 2,
@@ -244,8 +247,8 @@ scenes = [
     pair('10만엔을 쓴다면', ['96만원쯤', '7월 2일', K], ['85만원쯤', '지금', B], '그날엔 96만원쯤', 1, icon='ShoppingBag', src=SRC_USE),
     broll(9806390, '언제 바꿀지는 앞날', '앞날은 누구도 모른다'),
     mo('below', 1, 4, '대신 지나간 날과', 'CalendarSearch'),
-    broll(38556529, '엔화는 지금보다 쌌던', '엔화는 더 싼 쪽', side='right'),
-    mo('below', 5, 7, '지난 2년 가까운', 'CalendarSearch'),
+    broll(38556529, '엔화는 지금과 같거나', '엔화는 더 싼 쪽', side='right'),
+    mo('below', 5, 7, '그러니까 달러는 싼 쪽', 'CalendarSearch'),
     ask('그래서', '어떻게 결제할까요?', None, '그래서 어떻게 결제할까요'),
     rows('카드 해외 수수료', [['국제브랜드 + 해외서비스', '두 겹', K], ['KB국민카드 비자', '1.35%', A, 1], ['현대카드 비자', '1.28%', A, 2], ['천 달러를 쓰면', '18,071원', R, 3]], '카드로 결제하면 수수료가', 4,
          icon='CreditCard', src='KB국민카드 해외이용 종합안내 · 현대카드 · 파이어맵 계산(매매기준율 1,338.6원)'),
@@ -276,6 +279,7 @@ scenes = [
     big('지난 편과 이어서', '환율이 깎았다', "지난 편 '1억, 1년 뒤 남은 돈' · 미국 ETF 세 개", "지난 편 '1억", 1, icon='Link', c=K, src="파이어맵 지난 편 '1억, 1년 뒤 남은 돈'"),
     big('전체 표는 카페 글에', '고정 댓글', '날짜별 전체 표 · 본전 환율 계산법', '날짜별 전체 표와', 1, icon='Table', c=A, src='파이어맵 카페'),
     ask('댓글로', '달러, 언제 바꾸셨나요?', '날짜를 남겨 주시면 같은 식으로 계산해 답글 드립니다', '달러, 언제 바꾸셨나요'),
+    broll(3723453, '금요일 오전 11시 반에는', '그때 뵙겠습니다'),   # 10/20 PD: 고정 끝 말 + 숨 쉴 실사
 ]
 # 장 칩
 for s in scenes:

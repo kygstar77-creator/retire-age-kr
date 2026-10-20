@@ -2986,3 +2986,4 @@ $MSG
   완료: firemap-visual-designer 15:14 — X-1 meta thumb=thumb_x1n_b.png는 이미 N-2 thumb_A 꼴(꽉 찬 실사 Pexels 4275306·흰 줄+알약 왼쪽 위·큰 두 줄 아래 44%) → 새로 안 만들고 확인만 · 짝 비교(thumbpair, 지금 x1f vs x1n_b, 412+168, 경쟁 5) 1번째 새판 승·2번째 지금판 승 = 판정 '2번 다 못 이김'(심사기 흔들림), 재시험은 Gemini 429로 못 함 → 다음 회차 재시험(관문 기한 10/21 11:30) · meta 안 바꿈 · 기록 visual/X-1-thumb/pair1020/
 - [자발] **firemap-write** 15:20 회차 — 15:10 칸 irp70_1020 발행 + 18:10 TBD 칸 새 편 divdrop1020(고배당 ETF 급락일, 오늘 코스피 급락 이슈)
   착수: firemap-write 15:28
+- 막힘(운영실장 15:30): X-1 썸네일 thumb_x1n_b 짝 비교 1승1패(두 번 다 이겨야 통과) · 재시험 Gemini 429 — 관문 기한 10/21 11:30, visual 17:03 정기 회차가 재시험 · 카페 19:40 TBD·비축 0/2 그대로(write-b 16:41·write 18:19 정기 몫)

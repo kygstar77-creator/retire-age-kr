@@ -194,9 +194,9 @@ const useFont = () => {
 };
 
 // 10/20 PD: 렌더본 화면 관문(U5 같은 화면 8초 이하)에 판이 8.5~11초 걸림 — 5초 넘는 판은 천천히 다가가기(C2 10/19와 같은 수법, 글자·숫자 그대로)
-const Push: React.FC<{n: number; on: boolean; children: React.ReactNode}> = ({n, on, children}) => {
+const Push: React.FC<{n: number; on: boolean; to?: number; children: React.ReactNode}> = ({n, on, to = 1.04, children}) => {   // 질문 카드(어두운 판, 13~14초)는 1.08 — 1.04는 글자만 있는 판에서 U5에 걸림
   const f = useCurrentFrame(); if (!on) return <>{children}</>;
-  const z = interpolate(f, [0, n], [1, 1.04], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const z = interpolate(f, [0, n], [1, to], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
   return <AbsoluteFill style={{transform: `scale(${z})`, transformOrigin: '50% 40%'}}>{children}</AbsoluteFill>;
 };
 
@@ -210,7 +210,7 @@ export const X1: React.FC<X1Props> = (p) => {
         const st = starts(s.lines); const K = KIND[s.kind];
         const el = <Sequence key={i} from={from} durationInFrames={s.frames}>
           {s.kind === 'broll' ? <TallyBroll src={s.data.src} license={s.data.license} from={s.data.from} say={s.data.say} side={s.data.side} x={s.data.x} chapter={s.data.chapter} lines={tl(s.lines)} />
-            : <Push n={s.frames} on={s.kind !== 'ask' && s.frames > 150}>{s.kind === 'mo' ? <Mo s={s} m={p.motion[s.data.comp]} />
+            : <Push n={s.frames} on={s.frames > 150} to={s.kind === 'ask' ? 1.08 : 1.04}>{s.kind === 'mo' ? <Mo s={s} m={p.motion[s.data.comp]} />
             : s.kind === 'fxline' || s.kind === 'fxbars' ? <FxScene s={s} fx={p.fx} />
             : K ? <K s={s} /> : null}</Push>}
           {s.lines.map((l, j) => <Sequence key={j} from={st[j]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}

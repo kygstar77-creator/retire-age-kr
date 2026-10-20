@@ -2288,8 +2288,8 @@
    "kind": "long",
    "item": "X-1",
    "owner": "firemap-video-producer",
-   "gates_ok": null,
-   "note": "visual 10/19 17:3x: 썸네일 x1n_b 확정(새 꼴, 제미나이 8·1초 주제 맞힘·58세 뜻 맞음, meta.json). 48h 판정 10/24 11:30(공개 10/22 11:30+48h), 낮으면 교체안 x1n_c(1회만). ytreach 늦으면 '확인 안 함'+report 요청 | youtube-loop 2026-10-14 17:2x: X-1 환율('같은 1억' 시작일 4개) — 대본 v2 심사 7.87(제미나이 7.6·Claude 8.2·레드팀 7.8)·편집 통과(script.md.edit.json), 카피 제목은 copywriter. 축: 경제(환율) — T-1(10/21)·J-1(10/23) 부동산 세금 사이. 관문 기한 10/21 11:30, 녹음 10/20 16:01 창 | firemap-video-producer 2026-10-16 20:12: 녹음 끝(Chirp 43줄)·화면 X1.tsx 16장면 3:40 → editor 화면 서명 요청(10/18 12:00) 뒤 렌더"
+   "gates_ok": "2026-10-21 00:41",
+   "note": "PD 00:41: 예약 https://youtu.be/WcBOePkyOOQ (private+publishAt 10/22 11:30) · ytlong gate 통과(받아쓰기 186/186·화면 최장 7.5초·겹침 0·bgcheck 실사 49%·쉿소리 −12.1dB·음량 −17 LUFS·대본 심사 7.53 막는 줄 3 고침·bench_check 통과·제목 copywriter 안 B) · 길이 14분 22초 | visual 10/19 17:3x: 썸네일 x1n_b 확정(새 꼴, 제미나이 8·1초 주제 맞힘·58세 뜻 맞음, meta.json). 48h 판정 10/24 11:30(공개 10/22 11:30+48h), 낮으면 교체안 x1n_c(1회만). ytreach 늦으면 '확인 안 함'+report 요청 | youtube-loop 2026-10-14 17:2x: X-1 환율('같은 1억' 시작일 4개) — 대본 v2 심사 7.87(제미나이 7.6·Claude 8.2·레드팀 7.8)·편집 통과(script.md.edit.json), 카피 제목은 copywriter. 축: 경제(환율) — T-1(10/21)·J-1(10/23) 부동산 세금 사이. 관문 기한 10/21 11:30, 녹음 10/20 16:01 창 | firemap-video-producer 2026-10-16 20:12: 녹음 끝(Chirp 43줄)·화면 X1.tsx 16장면 3:40 → editor 화면 서명 요청(10/18 12:00) 뒤 렌더"
   },
   {
    "at": "2026-10-22 12:10",

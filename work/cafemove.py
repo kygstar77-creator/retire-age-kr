@@ -106,7 +106,7 @@ def move(max_n, apply):
                 pop.locator('#footer img[alt="확인"]').click()
                 for _ in range(20):
                     if pop.is_closed() or any('이동되었습니다' in m for m in msgs): break
-                    time.sleep(0.5)
+                    page.wait_for_timeout(500)   # time.sleep 이면 확인 창 처리가 안 돈다(2026-10-20 38번 확인 실패)
                 if not pop.is_closed(): pop.close()
                 time.sleep(1.5)
                 after = article_board(aid)

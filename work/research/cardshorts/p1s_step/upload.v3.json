@@ -1,0 +1,36 @@
+{
+ "name": "p1s_step",
+ "ep": "P-1",
+ "from_long": "vsL7mojDW7w",
+ "mp4": "work/video/out/p1s_step_v3_ds.mp4",
+ "publishAt": "2026-10-21T19:20:00+09:00",
+ "title": "국민연금 받으며 일하면, 519만원 넘는 순간 15만원 깎임 #shorts",
+ "description": "전체 계산: https://youtu.be/vsL7mojDW7w\n\n국민연금을 받으면서 일하면, 2026년 6월 17일부터는 한 달 소득이 519만원을 넘어야 연금이 깎입니다(전에는 319만원). 여기서 소득은 통장 월급이 아니라 근로소득공제를 뺀 금액이라, 월급만 있으면 한 해 총급여 7,600만원쯤부터예요.\n조문대로 계산하면 깎이는 돈은 조금씩 늘지 않고, 선을 넘는 순간 한 달 15만원부터 시작합니다. 공제 뒤 600만원이면 27만원쯤, 700만원이면 46만원쯤, 800만원이면 50만원(노령연금의 절반이 끝). 깎이는 기간은 받는 나이부터 최대 5년입니다.\n연금 월 100만원·1969년생으로 놓고 계산했어요. 일을 줄이거나 늘리라는 권유가 아닙니다.\n\n출처: 국민연금법 제63조의2(2026-06-17 시행)·시행령 제45조①(국가법령정보센터) · 보건복지부 보도자료 · 파이어맵 계산\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD) · 숫자는 모두 위 원문에서 가져와 파이어맵이 계산\n배경 영상: Pexels — ROMAN ODINTSOV · Jakub Zerdzicki · MART  PRODUCTION · Ron Lach\n\n#shorts #국민연금 #국민연금감액",
+ "tags": "국민연금,국민연금 감액,재직자 노령연금,소득 있는 업무,국민연금 519만원",
+ "layout": "c1clip",
+ "same_day_pair": "10/21 07:20 h1s_helio(H-1) · 11:30 롱폼 T-1(양도세) — 다른 롱폼·다른 질문",
+ "title_review": {
+  "gemini": {
+   "model": "gemini-3.1-flash-lite",
+   "A": 9,
+   "file": "title_gemini.json"
+  },
+  "redteam": {
+   "A2": 8,
+   "note": "A '…15만원'은 15만원이 받는 돈인지 깎이는 돈인지 끝이 열려 있음 → '깎임' 붙인 A2. 519만원이 월급으로 읽힐 수 있는 건 경쟁 제목과 같고 16~25초에 '월급 그대로 ✕'·'7,600만원쯤'으로 풂. 제미나이 고친 안 '…깎이는 이유'는 영상이 이유(조문 구조)를 설명하지 않아 약속 어긋남 → 버림"
+  },
+  "avg": 8.5
+ },
+ "mp4_prev_1018": "work/video/out/p1s_step_ds.mp4",
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "fcf7k50q2LA",
+ "uploaded_at": "2026-10-18 12:20:28",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-21T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

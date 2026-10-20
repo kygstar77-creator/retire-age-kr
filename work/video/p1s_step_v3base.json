@@ -1,0 +1,398 @@
+{
+ "fps": 30,
+ "name": "p1s_step",
+ "question": [
+  "일하면서 국민연금 받으면",
+  "얼마부터 깎이나"
+ ],
+ "hot": "얼마부터",
+ "answer": {
+  "label": "공제 뒤 한 달 소득",
+  "items": [
+   "519만원 넘으면",
+   "15만원 깎임"
+  ],
+  "arrow": true,
+  "note": "월급만 있으면 한 해 총급여 7,600만원쯤부터"
+ },
+ "base": "국민연금법 제63조의2(2026-06-17 시행) · 연금 월 100만원 가정 · 조문대로 계산",
+ "scenes": [
+  {
+   "kind": "bars",
+   "label": "넘는 순간 15만원",
+   "source": "국민연금법 제63조의2·시행령 제45조① · 보건복지부 보도자료 · 파이어맵 계산(조문대로)",
+   "data": {
+    "head": "공제 뒤 한 달 소득 · 깎이는 돈 · 연금 월 100만원",
+    "max": 18,
+    "full": true,
+    "bars": [
+     [
+      "519만원 바로 아래",
+      0,
+      "0원",
+      0,
+      "ink3"
+     ],
+     [
+      "519만원 바로 위",
+      15,
+      "15만원",
+      0,
+      "accent",
+      "넘는 순간 한 번에"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 57,
+     "text": "선을 넘는 순간, 15만원부터 깎입니다.",
+     "cap": "3구간(519만~619만원) 감액 15만~30만원 · 보건복지부 표 · 국민연금법 제63조의2 · 노령연금 월액의 절반을 넘지 않음(연금 월 30만원 미만이면 더 적음)",
+     "audio": "audio/p-1/753f5588147b9c61.wav",
+     "frames": 86
+    }
+   ],
+   "frames": 86
+  },
+  {
+   "kind": "bars",
+   "label": "선이 올라갔다",
+   "source": "국민연금법 제63조의2·시행령 제45조① · 보건복지부 보도자료 · 파이어맵 계산(조문대로)",
+   "data": {
+    "head": "깎이기 시작하는 선 · 공제 뒤 한 달 소득",
+    "max": 600,
+    "bars": [
+     [
+      "2026년 6월 전 기준",
+      319,
+      "319만원",
+      0,
+      "ink3"
+     ],
+     [
+      "2026년 6월 17일부터",
+      519,
+      "519만원",
+      214,
+      "accent",
+      "+200만원"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 50,
+     "text": "연금 씨가 65세에 받으면서 일을 계속하면, 소득이 어떤 선을 넘을 때 연금이 깎여요.",
+     "cap": null,
+     "audio": "audio/p-1/810724fe2632b8d8.wav",
+     "frames": 175
+    },
+    {
+     "n": 51,
+     "text": "그 선이 올해 6월부터 확 올라갔거든요.",
+     "cap": "감액 기준 319만 3,511원 → 519만 3,511원(+200만원) · 2026년 A값 + 200만원 · 보건복지부 보도자료",
+     "audio": "audio/p-1/4c9322d7e51c8044.wav",
+     "frames": 79
+    },
+    {
+     "n": 52,
+     "text": "이제는 한 달 소득이 519만원을 넘어야 깎이기 시작합니다.",
+     "cap": null,
+     "audio": "audio/p-1/22cdda9e6b83f2f6.wav",
+     "frames": 133
+    }
+   ],
+   "frames": 387
+  },
+  {
+   "kind": "vs",
+   "label": "월급 그대로가 아님",
+   "source": "국민연금법 제63조의2·시행령 제45조① · 보건복지부 보도자료 · 파이어맵 계산(조문대로)",
+   "data": {
+    "tiles": [
+     [
+      "깎일지 보는 소득",
+      "월급 그대로 ✕",
+      "총급여(비과세 제외) − 근로소득공제 = 근로소득금액",
+      0,
+      "ink"
+     ],
+     [
+      "월급만 있다면 · 한 해 총급여",
+      "7,600만원쯤",
+      "한 달로는 632만원쯤",
+      152,
+      "accent"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 53,
+     "text": "여기서 소득은 월급 그대로가 아닌데요.",
+     "cap": null,
+     "audio": "audio/p-1/d5c22d92fdec1c54.wav",
+     "frames": 78
+    },
+    {
+     "n": 54,
+     "text": "근로소득공제를 빼고 난 금액이에요.",
+     "cap": "국민연금법 시행령 제45조① · 근로소득금액 = 총급여 − 근로소득공제(소득세법 제47조①)",
+     "audio": "audio/p-1/429e49c60d4caf45.wav",
+     "frames": 74
+    },
+    {
+     "n": 55,
+     "text": "월급만 있다면, 비과세를 뺀 총급여로 한 해 7,600만원쯤부터예요.",
+     "cap": "총급여(비과세 제외) 7,587만원 (월 632만원) · 근로소득만 있을 때 · 파이어맵 계산",
+     "audio": "audio/p-1/5a82f3cd09d0c0e1.wav",
+     "frames": 133
+    }
+   ],
+   "frames": 285
+  },
+  {
+   "kind": "bars",
+   "label": "계단",
+   "source": "국민연금법 제63조의2·시행령 제45조① · 보건복지부 보도자료 · 파이어맵 계산(조문대로)",
+   "data": {
+    "head": "공제 뒤 한 달 소득별 깎이는 돈 · 연금 월 100만원",
+    "max": 52,
+    "bars": [
+     [
+      "519만원 아래",
+      0,
+      "0원",
+      0,
+      "ink3"
+     ],
+     [
+      "519만원 위",
+      15,
+      "15만원",
+      0,
+      "accent"
+     ],
+     [
+      "600만원",
+      27.0973,
+      "27만원",
+      0,
+      "ink"
+     ],
+     [
+      "700만원",
+      46.1298,
+      "46만원",
+      0,
+      "ink"
+     ],
+     [
+      "800만원",
+      50,
+      "50만원",
+      185,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 56,
+     "text": "그런데 조문대로 계산하면, 깎이는 돈이 조금씩 늘지 않아요.",
+     "cap": null,
+     "audio": "audio/p-1/0f6d4fc4e8266766.wav",
+     "frames": 119
+    },
+    {
+     "n": 58,
+     "text": "계단이 있는 거죠.",
+     "cap": null,
+     "audio": "audio/p-1/dc5d998899e58253.wav",
+     "frames": 66
+    },
+    {
+     "n": 59,
+     "text": "소득이 더 올라가면 깎이는 돈도 따라 커져요.",
+     "cap": "공제 뒤 월 600만원 → 270,973원 · 700만원 → 461,298원 · 연금 월 100만원 가정",
+     "audio": "audio/p-1/748584266afdcf93.wav",
+     "frames": 98
+    },
+    {
+     "n": 60,
+     "text": "다만 아무리 많이 벌어도, 깎이는 건 본인 노령연금의 절반까지예요.",
+     "cap": "공제 뒤 월 800만원 → 500,000원 (노령연금액의 2분의 1 상한)",
+     "audio": "audio/p-1/b2d720e15b0a49c4.wav",
+     "frames": 139
+    }
+   ],
+   "frames": 422
+  },
+  {
+   "kind": "vs",
+   "label": "조심할 자리",
+   "source": "국민연금법 제63조의2·시행령 제45조① · 보건복지부 보도자료 · 파이어맵 계산(조문대로)",
+   "data": {
+    "tiles": [
+     [
+      "깎이는 기간",
+      "최대 5년",
+      "65세 → 70세 · 1969년생",
+      0,
+      "ink"
+     ],
+     [
+      "선 바로 위라면",
+      "한 번에 빠짐",
+      "몇만원 더 버는 사이 · 연봉 바뀌는 해 확인",
+      100,
+      "accent"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 61,
+     "text": "깎이는 기간은, 정해진 받는 나이부터 최대 5년입니다.",
+     "cap": "지급개시연령(1969년생 65세)부터 · 국민연금공단 노령연금 안내 · 감액 기간 중 부양가족연금액은 지급 안 됨",
+     "audio": "audio/p-1/615367fd45185eaf.wav",
+     "frames": 100
+    },
+    {
+     "n": 62,
+     "text": "그래서 소득이 이 선 바로 위라면, 몇만원 더 버는 사이에 연금이 한 번에 빠지는 구간이 생겨요.",
+     "cap": "519만원 바로 아래 0원 · 바로 위 15만원 (조문대로 계산)",
+     "audio": "audio/p-1/9d8faf1e5296e386.wav",
+     "frames": 171
+    }
+   ],
+   "frames": 307
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/p1s_step/8348130.mp4",
+   "from": 0,
+   "frames": 86,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/34987276.mp4",
+   "from": 86,
+   "frames": 175,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/7877150.mp4",
+   "from": 261,
+   "frames": 79,
+   "start": 5.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/8322398.mp4",
+   "from": 340,
+   "frames": 133,
+   "start": 0.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/8348130.mp4",
+   "from": 473,
+   "frames": 78,
+   "start": 2.87,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/34987276.mp4",
+   "from": 551,
+   "frames": 74,
+   "start": 5.83,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/7877150.mp4",
+   "from": 625,
+   "frames": 133,
+   "start": 5.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/8322398.mp4",
+   "from": 758,
+   "frames": 119,
+   "start": 4.43,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/8348130.mp4",
+   "from": 877,
+   "frames": 66,
+   "start": 5.47,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/34987276.mp4",
+   "from": 943,
+   "frames": 98,
+   "start": 8.3,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/7877150.mp4",
+   "from": 1041,
+   "frames": 139,
+   "start": 5.0,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/8322398.mp4",
+   "from": 1180,
+   "frames": 100,
+   "start": 8.4,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/8348130.mp4",
+   "from": 1280,
+   "frames": 103,
+   "start": 7.67,
+   "kind": "video"
+  },
+  {
+   "src": "bg/p1s_step/34987276.mp4",
+   "from": 1383,
+   "frames": 104,
+   "start": 0.0,
+   "kind": "video"
+  }
+ ],
+ "bg_credits": [
+  {
+   "id": 8348130,
+   "page": "https://www.pexels.com/video/woman-going-up-the-stairs-8348130/",
+   "author": "ROMAN ODINTSOV",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 34987276,
+   "page": "https://www.pexels.com/video/counting-polish-zloty-at-office-desk-34987276/",
+   "author": "Jakub Zerdzicki",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 7877150,
+   "page": "https://www.pexels.com/video/woman-running-up-stairs-7877150/",
+   "author": "MART  PRODUCTION",
+   "license": "https://www.pexels.com/license/"
+  },
+  {
+   "id": 8322398,
+   "page": "https://www.pexels.com/video/people-going-up-the-stairs-8322398/",
+   "author": "Ron Lach",
+   "license": "https://www.pexels.com/license/"
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "W-1": {
+  "exit": 3,
+  "win": false,
+  "err": ""
+ },
+ "W-1-2": {
+  "exit": 0,
+  "win": true,
+  "err": ""
+ },
+ "G-1": {
+  "exit": 0,
+  "win": true,
+  "err": ""
+ },
+ "P-1": {
+  "exit": 3,
+  "win": false,
+  "err": ""
+ },
+ "M-1": {
+  "exit": 0,
+  "win": true,
+  "err": ""
+ },
+ "D-1": {
+  "exit": 3,
+  "win": false,
+  "err": ""
+ },
+ "E-1": {
+  "exit": 0,
+  "win": true,
+  "err": ""
+ },
+ "E-2": {
+  "exit": 3,
+  "win": false,
+  "err": ""
+ },
+ "J-gSK": {
+  "exit": 0,
+  "win": true,
+  "err": ""
+ },
+ "J-cxl": {
+  "exit": 3,
+  "win": false,
+  "err": ""
+ },
+ "J-JVT": {
+  "exit": 3,
+  "win": false,
+  "err": ""
+ }
+}

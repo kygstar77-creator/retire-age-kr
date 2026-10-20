@@ -379,6 +379,17 @@ def sameday_check(day, pkg=None):
     for k, v in leads.items():
         if len(v) >= END_SAME_MIN and (not me or os.path.basename(os.path.dirname(os.path.abspath(pkg))) in v):
             endbad.append(f"첫 덩어리 맺음 '{k}' {len(v)}칸({', '.join(v)}) — 같은 날 {END_SAME_MIN}칸 이상이면 다른 문장으로")
+    # 10/21 R3(registry D-34): 링크 횟수 상한은 근거 없음. 운영원칙 8항 '특정 단어/문구 반복 삽입'에 맞춰 firemap.kr 안내 문장(주소 뺀 글자)이 같은 날 통째로 반복되는 것만 본다
+    links = collections.defaultdict(set)
+    for i, d in items:
+        for f in sorted(glob.glob(os.path.join(d, 'c[0-9][0-9].txt'))):
+            for ln in open(f, encoding='utf-8').read().splitlines():
+                if 'firemap.kr' not in ln: continue
+                k = ' '.join(re.sub(r'(https?://)?firemap\.kr\S*', '', ln).split())
+                if len(k) >= 6: links[k].add(i)
+    for k, v in links.items():
+        if len(v) >= END_SAME_MIN and (not me or os.path.basename(os.path.dirname(os.path.abspath(pkg))) in v):
+            endbad.append(f"계산기 안내 문장 '{k[:30]}' {len(v)}칸({', '.join(sorted(v))}) — 같은 날 {END_SAME_MIN}칸 이상 통째 반복(운영원칙 8항), 문장을 바꾼다")
     return over, endbad
 
 

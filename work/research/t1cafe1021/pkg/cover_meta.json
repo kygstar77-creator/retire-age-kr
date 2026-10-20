@@ -1,0 +1,29 @@
+{
+ "made_at": "2026-10-21 06:45",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "2년만 살았던 집/양도세 열두 배",
+ "num": "1억 4,777만 vs 1,241만",
+ "sub": "10년 보유 20억 집 · 2029년 정부안",
+ "label": "1주택 양도세 정부안",
+ "src": "",
+ "icon": "house",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 130,
+ "num_px": 74,
+ "sub_px": 53,
+ "board": [
+  "yen1021",
+  "cudep1020",
+  "seqrisk1020",
+  "penkunbo1020",
+  "divdrop1020",
+  "loan25_1020",
+  "irp70_1020",
+  "cardded1020",
+  "bondetf1020",
+  "bokdep1020"
+ ],
+ "type": "card"
+}

@@ -1,0 +1,22 @@
+# 표지 v5: 밝은 바탕 두 줄 비교(1월→6월 기준금리 그대로 vs 예금금리 오름) — 심사 5차례 지적(파란 단색+꺾은선=경쟁 틀, 100px에서 숫자 뭉개짐)
+import sys, os, json; sys.path.insert(0, r'C:\Users\강영준\Documents\GitHub\retire-age-kr\work')
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+from PIL import Image, ImageDraw
+from blogimg import F
+BG=(250,247,240); INK=(24,32,56); SUB=(110,116,130); ACC=(214,72,32); LINE=(222,218,208)
+im=Image.new('RGB',(1080,1080),BG); d=ImageDraw.Draw(im)
+d.text((80,70),'2026년 · 은행 1~2년 정기예금 신규 평균',font=F(30,True),fill=SUB)
+d.text((80,125),'1~6월 기준금리 그대로였는데',font=F(78,True),fill=INK)
+d.text((80,240),'예금금리는 올랐다',font=F(96,True),fill=ACC)
+def row(y,name,a,b,tag,col):
+    d.rounded_rectangle((80,y,1000,y+190),radius=26,fill=(255,255,255),outline=LINE,width=3)
+    d.text((120,y+28),name,font=F(44,True),fill=INK)
+    d.text((120,y+100),f'{a} → {b}',font=F(54,True),fill=col)
+    tw=d.textlength(tag,font=F(52,True)); d.text((960-tw,y+100),tag,font=F(52,True),fill=col)
+row(420,'기준금리','1월 2.5%','6월 2.5%','그대로',SUB)
+row(640,'예금금리','1월 2.85%','6월 3.31%','+0.46%p',ACC)
+d.text((80,880),'7월 인상 뒤엔?',font=F(84,True),fill=INK)
+d.text((80,1025),'자료: 한국은행 경제통계시스템 · 2026-10-20 조회',font=F(24),fill=SUB)
+im.save('pkg/img/00.png')
+im.resize((100,100),Image.LANCZOS).save('pkg/cover_100.png')
+json.dump({"made_at":"2026-10-20","by":"bokdep1020/mkcover.py","out":"img\00.png","type":"chart","source":"한국은행 경제통계시스템 121Y002 예금은행 신규취급액 정기예금(1~2년 미만) 2026-01·06, 722Y001 기준금리 (2026-10-20 조회) — 두 줄 비교표"},open('pkg/cover_meta.json','w',encoding='utf-8'),ensure_ascii=False,indent=1)

@@ -2953,3 +2953,5 @@ $MSG
 - [자발] **firemap-write** 09:13 회차 — 09:10 h2cafe1019 발행 + 10:40 칸 교체 편(운영실장 10/19 23:10 지시 이어 받음 — cafeqna1018은 #326 공지와 중복이라 hold.txt)
   착수: firemap-write 09:13
   완료(1/2): firemap-write 09:38 — 09:10 h2cafe1019 https://cafe.naver.com/firemap/335 verify OK 3401/3401자·사진 3/3 · H-2 영상(11:30 공개) 링크는 공개 뒤 rewrite 필요 → 12:10 write 회차
+  완료: firemap-write 09:54 — ① 09:10 h2cafe1019 https://cafe.naver.com/firemap/335 verify OK 3401/3401자·사진 3/3 ② 10:40 칸 cafeqna1018(#326 공지와 중복) hold.txt → 교체 편 bokdep1020 관문 통과(gates_ok, slots item 바꿈) '기준금리 7월 인상 전 예금금리가 이미 올랐다, 인상 뒤엔?' — ECOS 10/20 조회: 기준금리 그대로였던 1~6월 정기예금 1~2년 신규 2.85→3.31%, 7월 +0.18·8월 −0.09, 국고채 3년 첫 인상 전 +0.75%p · 레드팀 틀림0·오해7·권유3 반영 · 이해 시험 40·50·60세 3차 심각0 · 제목·표지 새 심사관 7·7·7(표지 6번 다시 만듦 → 두 줄 비교표) · editgate auto · 남은 것: 15:10 칸·카페 비축 0/2 · #335에 H-2 영상 링크(11:30 공개 뒤)
+- [알림] **firemap-write-b** ← firemap-write (09:54) 10:40 칸은 bokdep1020(관문 통과, slot.txt 10시) — cafeqna1018은 hold.txt(중복). naverpost pending 맨 위에서 block 빈 것 그대로 올리면 됨

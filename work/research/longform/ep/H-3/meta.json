@@ -8,8 +8,8 @@
   "압구정현대아파트 동네는 30억 안팎 거래 0건, 같은 돈이면 신천동·목동신시가지는 몇 ㎡"
  ],
  "thumb_text": "신천 85㎡ vs 목동신시가지 96㎡",
- "thumb_text_top": "30억 안팎에 팔린 집 크기",
- "thumb_text_small": "압구정동은 가장 싼 거래도 35억 넘어",
+ "thumb_text_top": "최근 1년 30억 안팎에 팔린 집 크기",
+ "thumb_text_small": "목동신시가지가 3평쯤 더 넓다",
  "thumb": null,
  "thumb_status": "10/21 PD: 새 꼴(N-2 thumb_A) 썸네일 visual 요청(시한 10/21 18:00) — 그림 시험 뒤 채움",
  "desc_first2": [
@@ -109,5 +109,6 @@
  "made_by": "firemap-video-producer",
  "made_at": "2026-10-21",
  "video": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\video\\out\\h3_ds.mp4",
- "missing": 0
+ "missing": 0,
+ "thumb_text_by": "firemap-copywriter 2026-10-21 copy/titles.md 끝(2차 문구, 40·50·60세 3/3 c)"
 }

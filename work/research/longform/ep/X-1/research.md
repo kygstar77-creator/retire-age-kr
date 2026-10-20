@@ -130,3 +130,20 @@
 
 # 예외 (처음 지시 칸)
 → 위 '누구라면' 칸과 같음(달러로 쓸 돈·달러 수입·재산 일부·2024년 초 환전·H형 보유자).
+
+# 올리기 전 확인
+- 2026-10-20 16:46 firemap-youtube-loop · 공개 2026-10-22 11:30(관문 기한 10/21 11:30) · `collect_1016.py 379800 449180 360750` 다시 돌림 → raw/collect_20261020.json
+- 다시 연 원문(대조 칸 출처):
+  - O1 ECOS 731Y001 https://ecos.bok.or.kr/api/StatisticSearch/(키)/json/kr/1/2000/731Y001/D/20240101/20261020/0000001 — 10/15 1,338.6 그대로(수정 없음) · 10/16 1,348.5 · 10/19 1,342.4 · **10/20 1,332.1** · 원/100엔 10/20 840.18
+  - O9 https://query1.finance.yahoo.com/v8/finance/chart/SPY — 10/15 771.79 그대로 · 10/19 766.48
+  - O10 https://m.stock.naver.com/front-api/marketIndex/prices?category=exchange&reutersCode=FX_USDKRW&page=1&pageSize=10 — 10/20 하나 기준 1,327.10 · 현찰 살 때 1,350.32(+1.75%) · 송금 보낼 때 1,340.1(+0.98%) → 대본 1.75%·'1%가 안' 그대로
+  - O8 https://api.finance.naver.com/siseJson.naver?symbol=449180&requestType=1&startTime=20240101&endTime=20261020&timeframe=day — 379800 10/20 23,060 · 449180 17,200 · 360750 25,385(10/16 값 그대로)
+  - O12 https://obank.kbstar.com/quics?page=C101512 — 조회기준일 2026.10.20 거주자 USD 12~18개월 **3.68174%**(10/16 3.64833%)
+  - O13 https://www.kdic.or.kr/sp/dpstrprot/ProtSystFaq/selectScrn.do — "외화예금도 1억원까지 보호됩니다." 문장 그대로
+  - O14 https://m.blog.naver.com/fss2009/224441344183 — 185만원→175만원·80원 사례 그대로
+  - O3 https://www.bok.or.kr/portal/bbs/B0000502/view.do?nttId=11065634&menuNo=201265 — 열림, 새 동향 보도자료 없음
+  - O6 https://www.samsungfund.com/api/v1/kodex/divid-info.do?id=2ETFE4 — 마지막 분배 2026-07-31 132원 그대로(다음 기준일 10/31)
+  - O11 https://exchange.kfb.or.kr/page/on_commission.php — 열림, 표는 스크립트로 그려져 글로 못 받음 → 같은 값(1.75%)을 O10 하나은행 고시로 확인
+- 기준일: 대본 '지금' = 2026-10-15(ECOS 매매기준율, 미국 종가와 같은 날짜 짝) — 화면 자막에 '10.15'·'10월 15일 · 지금' 표시 · KB 금리 자막은 '조회기준일 2026.10.16' 표시 · 하나 스프레드 10/20 고시
+- 바뀐 것: ① 원/달러 10/20 1,332.1원 — 10/15보다 6.5원 더 내림(방향 같음). 말 '1,339원'·'160원쯤 위'·'679일 중 81일'은 모두 10/15 기준이고 자막에 날짜가 있어 다시 녹음 안 함 → 설명란 '기준일' 줄에 "10/20 매매기준율 1,332.1원"을 덧붙임(PD 요청) ② KB 달러 1년 3.64833→3.68174% — 말 '3.6%를 조금 넘'·'3%쯤'·본전 '1,298원'(새 값으로 1,298.2원) 그대로, 자막은 10/16 조회기준일 값 그대로 ③ 고용동향(10/16 공표)은 환율 대본과 무관
+- 새로 찾은 것: 10/20 코스피 급락일(카페 divdrop1020이 다룸)에도 원/달러는 내림 — 대본 주장과 어긋나지 않음 · **10/22 금통위 기준금리 결정이 공개 당일**(release_calendar) — 대본에 기준금리 숫자 없음(원래 결정대로), 결정 뒤 고정 댓글에 한 줄 더할지는 PD·copywriter 몫

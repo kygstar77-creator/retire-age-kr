@@ -1,0 +1,7 @@
+{
+ "type": "chart",
+ "source": "조세특례제한법 제89조의3·농어촌특별세법 제5조·소득세법 제129조(2026-10-20 국가법령정보센터)로 calc.py 계산 — mkimg.py로 직접 그린 막대 그래프",
+ "made_at": "2026-10-20 23:05",
+ "by": "research/cudep1020/mkimg.py",
+ "out": "img/00.png"
+}

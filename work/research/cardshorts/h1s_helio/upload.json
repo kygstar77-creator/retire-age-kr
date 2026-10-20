@@ -2,7 +2,7 @@
  "name": "h1s_helio",
  "ep": "H-1",
  "from_long": "rVg0pQVo_wk",
- "mp4": "work/video/out/h1s_helio_v3b_ds.mp4",
+ "mp4": "work/video/out/h1s_helio_live5_ds.mp4",
  "layout": "c1clip",
  "publishAt": "2026-10-21T07:20:00+09:00",
  "use_after": "2026-10-15 11:30 (H-1 롱폼 공개 뒤)",
@@ -26,8 +26,8 @@
  },
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "d85WXpkwM0Q",
- "uploaded_at": "2026-10-17 01:21:43",
+ "id": "ExYWn9pvDqk",
+ "uploaded_at": "2026-10-20 15:08:24",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-20T22:20:00Z",
@@ -35,7 +35,7 @@
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
  },
- "v": 5,
+ "v": 6,
  "replaced": [
   {
    "id": "XB9fAhJrxFA",
@@ -69,6 +69,15 @@
     "privacyStatus": "private",
     "publishAt": null
    }
+  },
+  {
+   "id": "d85WXpkwM0Q",
+   "unscheduled_at": "2026-10-20 15:08:24",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": "2026-10-20T22:20:00Z"
+   }
   }
- ]
+ ],
+ "note_v6": "10/20 15:07 PD: 판 없는 꼴(C1S look live, 클로드 티 금지 10/19) 다시 만듦 — 새 녹음 0, 줄 순서·화면 글자만(h1helio_live.py)"
 }

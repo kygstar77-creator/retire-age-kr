@@ -23,6 +23,7 @@ RAW = set(m.group(0).replace(',', '') for m in NUM.finditer(SRC))
 WON = set()
 for m in re.finditer(r'(\d[\d,]*)원', SRC): WON.add(int(m.group(1).replace(',', '')))
 EOK = set(float(m.group(1)) for m in re.finditer(r'(\d+\.\d+)억원', SRC))
+EOK2 = set(float(m.group(1)) for m in re.finditer(r'(\d+(?:\.\d+)?)억', SRC))   # 10/20 PD: 원문 '23.82억'(원 글자 없음) ↔ 화면 '23억 8,200만원'(v3redo.fmt_eok, 값 같음)
 
 
 def texts(x, out, key=''):
@@ -45,6 +46,8 @@ def ok_token(tok, ctx):
     if after.startswith('만원'):                 # 1,561만원·70.8만원 → 원문 원 단위 값의 반올림인지
         for w in WON:
             if abs(w / 10000 - v) < (0.05 if '.' in t else 0.5) * 1.0001: return f'원문 {w:,}원의 만원 반올림'
+        for e in EOK2:
+            if abs(e * 10000 - v) < 0.5: return f'원문 {e}억과 같은 값(억 만원 꼴)'
         if '정도' in ctx[:40]:
             for w in WON:
                 if abs(w / 10000 - v) / v < 0.01: return f'말 속 어림(원문 {w:,}원)'

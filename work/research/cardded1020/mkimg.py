@@ -22,7 +22,7 @@ def table(path, title, head, rows, foot, widths, hl_col=None):
     d.text((40,H-70),foot[0],font=F(18),fill=SUB); d.text((40,H-40),foot[1],font=F(17),fill=(150,156,168))
     im.save(path)
 rows=[]
-for G in (3000,5000,7000,9000):
+for G in (3000,4000,5000,6000,7000,8000,9000):
     r=[f'{G:,}만원']
     for k in (0,1,2): r.append(f'{round(calc.reach(G,"c",k)):,}만원')
     rows.append(r)

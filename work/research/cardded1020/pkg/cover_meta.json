@@ -1,11 +1,11 @@
 {
- "made_at": "2026-10-20 07:19",
+ "made_at": "2026-10-20 13:50",
  "by": "work/cafecover.py",
  "out": "img\\00.png",
  "topic": "카드 소득공제 자녀 한도",
- "num": "3,583만원부터",
- "sub": "총급여 5천만원 · 자녀 1명 새 한도",
- "label": "조세특례제한법 제126조의2",
+ "num": "연 카드값 3,583만원",
+ "sub": "총급여 5천만원 · 자녀 1명 · 신용카드만",
+ "label": "공제 한도 350만원이 꽉 차는 카드값",
  "src": "",
  "icon": "receipt",
  "icon_license": "Lucide (lucide-react, ISC License)",
@@ -14,15 +14,15 @@
  "num_px": 78,
  "sub_px": 58,
  "board": [
+  "bondetf1020",
+  "bokdep1020",
+  "h2cafe1019",
+  "h1walkcafe1020",
   "npsfund1019",
   "govbond1019",
   "dep13y1019",
   "avgmid1019",
   "kospioct1019",
-  "directdeal1019",
-  "c2cafe1019",
-  "cafenotice1018",
-  "ubfraud1019",
-  "tsla1019"
+  "directdeal1019"
  ]
 }

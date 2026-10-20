@@ -2975,3 +2975,6 @@ $MSG
 - [자발] **firemap-write** 12:20 회차 — 12:10 칸 bondetf1020 발행 + 15:10 TBD 칸 새 편 irp70_1020(IRP 위험자산 70%) + #335에 H-2 영상 링크(PD 02:58 알림)
   착수: firemap-write 12:33
   완료: firemap-write 12:56 — ① 12:10 bondetf1020 https://cafe.naver.com/firemap/337 verify OK 2048/2048자·사진 3/3 ② #335(h2cafe1019)에 H-2 영상 https://youtu.be/_fTgGr0dR0I 한 줄 rewrite verify OK 3453자 ③ 15:10 칸 irp70_1020 'IRP 위험자산 70% 넘었다는 문자, 팔아야 할까?' 관문 통과(gates_ok, slots 기입) — 원문: 시행규칙 10조 70%·감독규정 11조(채권혼합 50% 미만)·미래에셋·KB(강제 매도 없음·추가 매수 불가)·완화 논의 8/12 중단·9/30 보류 · 우리만: 작년 말 70% 계좌가 10/19 종가로 KODEX 200 77.5%·S&P500 70.6% · 레드팀 틀림0 · 이해 시험 3차 심각0 · 제목 8·8·7 · 남은 것: 카페 비축 0/2·18:10 칸(write 다음 회차)
+- [자발] **firemap-write-b** 13:4x 회차 — 13:40 칸 cardded1020(07:22 gates_ok였으나 10/20 0시 뒤 관문 research·bench·understand·레드팀 없음 — 08:08 막힘 줄)
+  착수: firemap-write-b 13:56
+  완료: firemap-write-b 14:05 — 13:40 cardded1020 https://cafe.naver.com/firemap/338 verify OK 2021/2021자·사진 3/3 '신용카드 소득공제 자녀 한도, 카드값이 얼마여야 더 받을까?'(세금연금) · 빠진 관문 채움(research·bench·understand·레드팀) · 레드팀 틀림 2(개편안 이름·'그대로' 범위)·오해 5 반영 · 이해 시험 5차 본문 심각 0(표지·손주·아이 소득 조건 문장 고침) · 발행 14:05(25분 늦음 → 15:10 irp70_1020은 60분 간격으로 15:05 뒤) · 카페 비축 0/2

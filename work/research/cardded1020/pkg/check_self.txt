@@ -1,5 +1,5 @@
 # 자체 검증 (제미나이 할당량 없을 때 쓰는 대체 검증)
-# 묶음: cardded1020 · 종류: cafe · 문장 38개 · 기준 출처: cafe_style/benchmark_2026-09-23.md
+# 묶음: cardded1020 · 종류: cafe · 문장 61개 · 기준 출처: cafe_style/benchmark_2026-09-23.md
 
 [표] 전체 — 표 대조 실패: 'list' object has no attribute 'get'
 [중복] 전체 — "신용카드" 이미 씀 ← 신용카드 소득공제, 체크카드로 바꿔도 한 푼도 안 느는 사람 https://cafe.naver.com/firemap/252 (제목·첫 조각에 있음) — 각도가 다른지 보고, 같으면 hold.txt

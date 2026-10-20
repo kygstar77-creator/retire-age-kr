@@ -90,6 +90,19 @@
     "url": "https://cafe.naver.com/firemap/340"
    },
    "note": "16:40 칸 loan25_1020(관문 15:29 통과) 발행 · research_gate 보류(질문 줄 2·4 주소 없음) → 네이버 자동완성 16:4x 다시 확인해 주소 넣고 풂 · verify OK 1793/1793자 사진 3/3 · 확인 창 대기 타임아웃은 발행에 영향 없음 · 개선: 없음"
+  },
+  {
+   "hour": 18,
+   "ts": "18:50",
+   "blog": {
+    "title": null,
+    "url": null
+   },
+   "cafe": {
+    "title": "고배당 ETF는 급락한 날 덜 빠졌는데 왜 2년 반 수익은 졌을까?",
+    "url": "https://cafe.naver.com/firemap/341"
+   },
+   "note": "18:10 칸 divdrop1020 verify OK 2233/2233자·사진 3/3 · 블로그 없음(하루 1편 상한·색인 0 브레이크) · 21:10 칸 seqrisk1020(쇼츠 c2s_jungwoo 짝 글) 관문 통과 — 원문 야후 ^SP500TR·ECOS 731Y004/731Y001 10/20 새로 받음·소득세법·Schwab 외 [오늘 찾은 것] 7건 · 교차검증 crosscheck Gemini 사실 4건 중 반영 2·유지 2(C-2 원문 확인), 말투 13건 중 반영 10 · selfcheck 사실 0 · 레드팀 틀림1·오해6·권유1 반영 · 이해 시험 4차 12명+제목 5차 3명 · editgate auto · 개선: editgate CALC 퇴직금 예외가 '퇴직금 S&P500에 넣고'처럼 사이 낱말 끼면 못 잡던 것 고침(15자 안 넣·꺼내)"
   }
  ]
 }

@@ -2065,7 +2065,8 @@
    "item": "divdrop1020",
    "owner": "firemap-write",
    "gates_ok": "2026-10-20 15:56",
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 월배당 ETF(4,280) → https://firemap.kr/dividend — 글 질문이 계산기와 맞을 때만 줄 넣기 | firemap-write 15:56: divdrop1020 '고배당 ETF는 급락한 날 덜 빠졌는데 왜 2년 반 수익은 졌을까?'(ETF·배당, 오늘 코스피 -3.73% 이슈) 관문 통과 — 코스피 -3% 이하 45일 직접 집계(네이버 일별 시세 10/20 종가)·2022년 반대 결과·분배금 Yahoo↔네이버 대조 · 레드팀 틀림1·오해3 반영 · 이해 시험 6차(18명) · 제목 8·8·8·표지 7·7·7 · editgate auto · 계산기 줄 없음(맞는 계산기 없음)"
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 월배당 ETF(4,280) → https://firemap.kr/dividend — 글 질문이 계산기와 맞을 때만 줄 넣기 | firemap-write 15:56: divdrop1020 '고배당 ETF는 급락한 날 덜 빠졌는데 왜 2년 반 수익은 졌을까?'(ETF·배당, 오늘 코스피 -3.73% 이슈) 관문 통과 — 코스피 -3% 이하 45일 직접 집계(네이버 일별 시세 10/20 종가)·2022년 반대 결과·분배금 Yahoo↔네이버 대조 · 레드팀 틀림1·오해3 반영 · 이해 시험 6차(18명) · 제목 8·8·8·표지 7·7·7 · editgate auto · 계산기 줄 없음(맞는 계산기 없음)",
+   "published": "https://cafe.naver.com/firemap/341 18:50 verify OK 2233자"
   },
   {
    "at": "2026-10-20 19:20",
@@ -2087,10 +2088,11 @@
   {
    "at": "2026-10-20 21:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "seqrisk1020",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) | firemap-meeting 2026-10-19 21:35: yt_pair: c2s_jungwoo(O6ZC-6sylHk, 17:20 쇼츠) — 쇼츠가 던진 질문 하나만(C-2 짝 글 #327과 같은 표 되풀이 금지)"
+   "gates_ok": "2026-10-20 18:47",
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) | firemap-meeting 2026-10-19 21:35: yt_pair: c2s_jungwoo(O6ZC-6sylHk, 17:20 쇼츠) — 쇼츠가 던진 질문 하나만(C-2 짝 글 #327과 같은 표 되풀이 금지) | firemap-write 18:47: seqrisk1020 '퇴직금 S&P500에 넣고 꺼내 쓰다 14년 만에 돈이 바닥난 건 첫 5년 탓일까?'(쇼츠 c2s_jungwoo 짝 글, #327 표 되풀이 없음) 관문 통과 — 야후 ^SP500TR·ECOS 환율 10/20 새로 받아 순서 거꾸로 13.45억·첫 5년 마이너스 6=바닥 6 직접 계산 · 레드팀 숫자 틀림0·틀림1·오해6 반영 · 이해 시험 4차(12명) 심각0·제목 5차 7.1·표지 7·7·7 · editgate auto · 계산기 줄 없음(맞는 계산기 없음)",
+   "pkg": "seqrisk1020"
   },
   {
    "at": "2026-10-20 22:40",

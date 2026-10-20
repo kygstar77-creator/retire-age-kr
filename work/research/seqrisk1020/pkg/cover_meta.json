@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-20 18:35",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "퇴직금 S&P500/14년 만에 바닥",
+ "num": "갈린 건 첫 5년 수익률",
+ "sub": "같은 28년 수익률도 순서만 거꾸로면 13억 남아",
+ "label": "가상 인물 · 3억에서 월 200만원 꺼내 쓴 계산",
+ "src": "",
+ "icon": "shuffle",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 122,
+ "num_px": 97,
+ "sub_px": 44,
+ "board": [
+  "loan25_1020",
+  "irp70_1020",
+  "cardded1020",
+  "bondetf1020",
+  "bokdep1020",
+  "h2cafe1019",
+  "h1walkcafe1020",
+  "npsfund1019",
+  "govbond1019",
+  "dep13y1019"
+ ]
+}

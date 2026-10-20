@@ -5,6 +5,7 @@
 import React, {useLayoutEffect, useEffect, useRef, useState} from 'react';
 import {Freeze, continueRender, delayRender, Sequence, OffthreadVideo, Img, staticFile, useCurrentFrame, interpolate, spring, Easing} from 'remotion';
 import {Flame, F, T, CL, HandCircle} from './fm';
+import {capChunksCore} from './capchunks';
 
 // ── 10/16 디자인 기준 v3 (근거: work/research/visual/design-spec-1016.md — 돈 분야 30일 조회 상위 쇼츠 10편 실측 중앙값) ──
 // 자막: 한 줄 · 가운데 y 61.3%(경쟁 중앙 61.6%) · 글자 높이 3.3%(경쟁 중앙 3.28%, 우리 v2 2.29%) · 흰 글자 + 검은 테두리, 상자 없음(경쟁 8/9 상자 없음)
@@ -47,33 +48,8 @@ export const ShortScrim: React.FC<{hdrEnd: number}> = ({hdrEnd}) => (
   </>
 );
 
-// 자막 조각(10/16 22시 사장님 "문장·뜻 단위로 끊는다"): 낱말 단위, 한 조각 최대 14자(공백 포함). 끊는 자리 점수 —
-//   문장부호(.,?!) 뒤·말 이음(~고·~서·~면·~는데·~지만·~니까·~요·~다) 뒤는 끊기 좋음, 꾸미는 말('내·이·그·한·몇·약·같은·지난' 등) 뒤와 숫자 덩이('1억 6천만원') 안·'~의' 뒤는 끊지 않음.
-const CAP_DET = new Set(['내', '이', '그', '저', '한', '두', '세', '네', '몇', '약', '총', '각', '첫', '이번', '지난', '같은', '다른', '이런', '그런', '저런', '모든', '어느', '무슨', '이 돈', '매달', '한 달', '올해', '작년', '지금']);
-const CAP_GOOD = /([.,?!]|고|서|며|면|는데|은데|인데|지만|니까|라서|해서|려면|으면|어요|에요|예요|아요|죠|다|요|게)$/;
-export const capChunks = (t: string) => {
-  const out: string[] = [];
-  for (const sen of t.split(/(?<=[.?!])\s+/).filter(Boolean)) {
-    const w = sen.split(/\s+/).filter(Boolean); const n = w.length; const L = sen.length; const k = Math.max(1, Math.round(L / DS.capTarget)); const tg = L / k;
-    const len = (i: number, j: number) => w.slice(i, j).join(' ').length;
-    const best: number[] = Array(n + 1).fill(Infinity); const prev: number[] = Array(n + 1).fill(0); best[0] = 0;
-    for (let j = 1; j <= n; j++) for (let i = 0; i < j; i++) {
-      const l = len(i, j); if (l > DS.capLimit && j - i > 1) continue;
-      const last = w[j - 1];
-      let c = best[i] + 0.6 * (l - tg) * (l - tg) + (l < 4 ? 80 : 0);
-      if (j < n) {
-        if (/\d[억만천원%년월일분]*$/.test(last) && /^\d|^[천만억원]/.test(w[j])) c += 400;          // 숫자 덩이 안
-        if (CAP_DET.has(last) || last.length === 1) c += 300;                             // 꾸미는 말·한 글자 뒤
-        if (/의$/.test(last)) c += 150;
-        if (CAP_GOOD.test(last)) c -= 35;                                                  // 말 이음·문장부호 뒤
-      }
-      if (c < best[j]) { best[j] = c; prev[j] = i; }
-    }
-    const cut: string[] = []; for (let j = n; j > 0; j = prev[j]) cut.unshift(w.slice(prev[j], j).join(' '));
-    out.push(...cut);
-  }
-  return out.map((c) => c.replace(/[.,]$/, ''));
-};
+// 자막 조각 — 규칙·근거는 ./capchunks.ts(10/20 A50 조사·의존명사로 시작 금지 더함, React 없이 node로 시험)
+export const capChunks = (t: string) => capChunksCore(t, DS.capTarget, DS.capLimit);
 const CAP_NUM = /(\d[\d,.]*\s?(?:천만원|만원|억|원|%|배|번|달러|년째|년|월|세|살|m|km)?)/;
 // 한 줄 테두리 자막(상자 없음). lines = 장면 말 줄들(frames), 장면 안 프레임으로 지금 조각을 고른다.
 export const OutlineCaption: React.FC<{lines: {text: string; frames: number}[]; first?: boolean}> = ({lines, first}) => {

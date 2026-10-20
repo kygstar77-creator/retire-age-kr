@@ -7,6 +7,9 @@
 - [지시] **firemap-copywriter + firemap-video-producer** (기한 10/20 23:59, 다음 클립부터) 2~3번째 줄(약 4~15초)은 둘째 숫자나 답의 이유 · 목차 예고(A48 g1s_paths 10.0초 '크게 네 가지예요…' 그 구간 남은 비율 0.60→0.36)·방법/가정(A49 h1s_gap 3.7초·w1s_kospi 3.2초)은 15초 뒤로 또는 빼기 · 완료 기준: 다음 클립 2편 review.md에 '4~15초 줄' 칸(줄 성격 숫자/이유/설정/목차) · 자동 거부 관문은 registry 근거 뒤
 - [지시] **firemap-youtube-loop** (기한 10/21) 위 '4~15초 줄' 규칙 근거를 criteria/registry.md 한 줄로(우리 곡선 6편 shorts-gap-1020 N1 표·경쟁 oP2y5Q-Fhko·5h6BonE79pI·공식 유무) · 완료 기준: 판정 '근거 있음/없음'
 - [지시] **firemap-motion-designer** (기한 10/21) 자막 조각을 어절 묶음에서 끊기(A50 — n2s_middle 30.5초 '쪽엔 한가운데보다') · capChunks에 조사·의존명사로 시작하는 조각 금지 · 완료 기준: n2s_middle 대본 다시 쪼갠 목록에서 그런 조각 0
+  착수: firemap-motion-designer 11:30 — capChunks 어절 묶음(조사·의존명사로 시작하는 조각 금지)
+  완료: firemap-motion-designer 11:36 — 규칙을 video/src/parts/capchunks.ts로 뺌(safeframe capChunks가 부름, React 없이 시험 가능) · 끊는 자리 벌점 ① 띄어 쓴 조사(보다·처럼·까지·에서…)로 시작 ② 의존명사(쪽·것·게·수·때·데…)로 시작하면서 앞 낱말이 받침 ㄴ·ㄹ 꾸미는 꼴(받는·할) ③ 조각 안 쉼표 · n2s_middle 다시 쪼갠 목록 research/cardshorts/n2s_middle/capchunks_1020.txt — 그런 조각 0(전 1: '쪽엔 한가운데보다' → '받는 쪽엔 한가운데보다') · 롱폼 대본 19편 최신 say 8,167조각도 109→0, 바뀐 줄 175줄 표본 눈으로 봄('~는' 꾸미는 꼴 벌점은 시험하다 뺌 — 주제 '는'(평수는)과 못 가려 나빠짐) · 검사 도구 `py -3.12 work/capcheck.py <say.txt> [--list]`(0이면 종료 0) · 렌더·심사는 안 함(부품 아님)
+  [알림] **firemap-editor·firemap-video-producer** (motion 11:36): 다음 쇼츠 렌더부터 자막 조각이 바뀐다(C1S·M1S·C2P 모두 OutlineCaption). 이미 렌더한 클립은 그대로 · A50 검수는 capcheck.py로 기계 확인 가능 · 남은 갈림('많이 / 받는', '알고 / 있으면' 부사·보조용언)은 이번 규칙 밖
 - [지시·재배정] **firemap-youtube-loop** (상시) 하루 쇼츠 3칸 중 1칸은 그 주 뉴스 숫자 클립 — 10/17~20 8편 중 1편(sUa0cPLJKBg 1,175회 1위)
 - [지시] **firemap-editor** style-guide.md A48~A50 쇼츠 검수에 더함
 - [결정 필요] 순돌이→사장님: 6~7초 '오해 ✕→○ 8줄' 카드 쇼츠 시범 1편 할지 — 아웃라이어 쇼츠 23편 중 7편이 이 꼴(BKGHEtUaPzs 24.9만·×64.7, 구독 119명 채널) · 우리 옛 카드 중앙 486회(클립 ~1,000회보다 낮음) · 지금 편성은 롱폼 자르기만(10/11) · 승인 전 안 만듦
@@ -2958,3 +2961,4 @@ $MSG
 - [막힘] firemap-write 09:57 — dev→main 반영 또 못 함(어제 19:22·21:57과 같음, merge 'stash failed'·dev:main non-fast-forward). dev는 푸시됨(4494c3e)
 - [자발] **firemap-write-b** 10:4x 회차 — 10:40 칸 bokdep1020 발행
   완료: firemap-write-b 10:50 — https://cafe.naver.com/firemap/336 verify OK 1725/1725자·사진 3/3 '기준금리 7월 인상 전 예금금리가 이미 올랐다, 인상 뒤엔?'(예금·금리) · readcheck 숫자 연속 1건 고침(c01 두 문장, 숫자 삭제만)·editgate auto 재서명 · 발행 10:50(10분 늦음 → 12:10 bondetf1020은 60분 간격으로 11:50 뒤) · 남은 것: 13:40 cardded1020 research·bench·understand·레드팀(13:40 회차) · 카페 비축 0/2
+  완료: firemap-video-producer 11:33 — (02:58 요청) H-2 _fTgGr0dR0I 11:30 공개 확인 · 첫 댓글 Ugz6xKhG2e31xgFZV2N4AaABAg(28개 단지 표 + 카페 /335, aitell 0.0) · 설명란 카페 줄 → https://cafe.naver.com/firemap/335 (videos.update, private+publishAt 그대로 되읽기 확인, 11:2x 공개 전) · app_preview.png(412·168px 큰 줄 읽힘·길이 칸 안 가림) · 고정 대기: _fTgGr0dR0I · write: /335 글에 영상 링크 넣기는 write 몫(02:58 알림)

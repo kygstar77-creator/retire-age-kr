@@ -1,0 +1,63 @@
+
+
+
+
+
+
+
+	
+	
+	
+		<div id="tabMenuContentDiv">
+		 <div class="tbldiv tbldiv--new">
+				<form id="inqFrm" name="inqFrm" action="#//HanaBank">
+				<table class="tblForm tblForm--new" summary="일자선택으로 이루어진 기한부환가료율(일괄선취) 조회 테이블입니다.">
+					<caption>기한부환가료율(일괄선취) 조회</caption>
+					<colgroup>
+					<col width="7%">
+					<col width="*">
+					</colgroup>
+					<tbody>
+						<tr>
+						<th scope="row">조회일</th>
+						<td>
+						<div class="calendar">
+								<input type="text" id="tmpBascDt" name="tmpBascDt" maxlength="10" data-nice-class="cal" title="일자 입력" value="2026-10-20" /> 
+								<a href="#//HanaBank" onclick="opb.util.calendar.openCalendar_fnc('tmpBascDt',this,'Y-m-d');"><img src="https://image.kebhana.com/cont/common/img/common/bg_calendar.gif" alt="조회일 선택 달력" /></a>
+							</div>	
+								<span class="txtTypeExp calTxt">연월일 8자리로 ‘-’ 없이 입력해야 합니다. 예) 20160101</span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				</form>
+		</div>
+	</div>
+	<p class="mt15">
+	<em>※ </em>선택하신 조회일이 휴일인 경우 전 영업일자로 조회됩니다.
+	</p>
+	<div class="btn_ex01">
+	<span>
+		<a href="#//HanaBank" onclick="pbk.foreign.rate.inquire.excms.bach.search(document.forms['inqFrm']);">조회</a>	
+	</span>
+	</div>
+	
+	
+	<div id="searchContentDiv">
+		<script type="text/javascript">
+			//<![CDATA[
+			$j(document).ready(function() {
+				pbk.foreign.rate.inquire.excms.bach.search(document.forms['inqFrm']);
+			});
+			//]]>
+		</script>
+	</div>
+	<div class="contNotice">
+	<h5 class="notiTitle">유의사항</h5>
+	<ul class="orderListDot">
+		<li>환가료란 외환거래에 따르는 추심소요기간동안 은행이 외화자금을 부담함에 따른 이자조로 받는 수수료입니다.</li>
+		<li>환가료율은 고시되는 기준금리에 가산금리가 붙어서 책정됩니다.</li>
+		<li>일수 계산기준일은 360일입니다. (단, KRW, GBP, AUD, NZD, HKD, SGD, RUB, ZAR, PLN, BRL JPY의 경우 365일)
+	</ul>
+</div>
+	

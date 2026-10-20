@@ -1,0 +1,19 @@
+{
+ "type": "chart",
+ "source": "한국은행 경제통계시스템(ECOS) 731Y001 원/100엔 매매기준율 일별 2005-01-03~2026-10-20(raw/ecos_jpy_daily.json) — mkimg.py로 직접 그린 선 그래프",
+ "made_at": "2026-10-20 21:33",
+ "by": "research/yen1021/mkimg.py",
+ "out": "img/00.png",
+ "board": [
+  "seqrisk1020",
+  "penkunbo1020",
+  "divdrop1020",
+  "loan25_1020",
+  "irp70_1020",
+  "cardded1020",
+  "bondetf1020",
+  "bokdep1020",
+  "h2cafe1019",
+  "h1walkcafe1020"
+ ]
+}

@@ -2093,7 +2093,8 @@
    "owner": "firemap-write",
    "gates_ok": "2026-10-20 18:47",
    "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) | firemap-meeting 2026-10-19 21:35: yt_pair: c2s_jungwoo(O6ZC-6sylHk, 17:20 쇼츠) — 쇼츠가 던진 질문 하나만(C-2 짝 글 #327과 같은 표 되풀이 금지) | firemap-write 18:47: seqrisk1020 '퇴직금 S&P500에 넣고 꺼내 쓰다 14년 만에 돈이 바닥난 건 첫 5년 탓일까?'(쇼츠 c2s_jungwoo 짝 글, #327 표 되풀이 없음) 관문 통과 — 야후 ^SP500TR·ECOS 환율 10/20 새로 받아 순서 거꾸로 13.45억·첫 5년 마이너스 6=바닥 6 직접 계산 · 레드팀 숫자 틀림0·틀림1·오해6 반영 · 이해 시험 4차(12명) 심각0·제목 5차 7.1·표지 7·7·7 · editgate auto · 계산기 줄 없음(맞는 계산기 없음)",
-   "pkg": "seqrisk1020"
+   "pkg": "seqrisk1020",
+   "published": "https://cafe.naver.com/firemap/343 21:29 verify OK 2270자"
   },
   {
    "at": "2026-10-20 22:40",
@@ -2106,10 +2107,11 @@
   {
    "at": "2026-10-21 06:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "yen1021",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-18 21:41: 카페 하루 12칸 뼈대(36시간 앞, 레드팀 R1)"
+   "gates_ok": "2026-10-20 22:06",
+   "note": "firemap-meeting 2026-10-18 21:41: 카페 하루 12칸 뼈대(36시간 앞, 레드팀 R1) | firemap-write 22:06: yen1021 '엔화 환율 18년 만에 최저, 공항 환전은 얼마 더?' 관문 통과 — 한국은행 ECOS 일별 원/100엔 2005~2026 전부로 10/20 840.18원이 2008-01-02(838.20원) 뒤 최저 확인, 하나은행 10/20 고시로 10만엔 영업점 85만 5,620원·공항 영업점 87만 6,000원(2만 380원 차) · 카페 #320(jpy1018)과 겹치는 1.75%·3.4%는 되풀이 안 함 · 레드팀 틀림0·오해6·위험1 반영 · 이해 시험 2차 통과 · readcheck 0·aitell 2.6·selfcheck 사실0·교차검증 Gemini 반영 · research_gate strict·editgate auto",
+   "pkg": "yen1021"
   },
   {
    "at": "2026-10-21 07:20",

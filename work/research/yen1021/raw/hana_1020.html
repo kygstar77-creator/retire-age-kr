@@ -1,0 +1,1545 @@
+
+
+
+
+
+
+
+<script>
+	var regYmdt = "20261020";
+	$j("#tmpInqStrDt").val(regYmdt.substring(0,4)+"-"+regYmdt.substring(4,6)+"-"+regYmdt.substring(6,8));
+</script>
+
+	 
+	<div class="btnRight_tbl mt50">
+		<a href="#//HanaBank" class="btnTxt txt" onclick="pbk.foreign.rate.pbld.prs.doExcelDown('Y');" title="현재환율 TXT 다운로드"><span>다운로드</span></a>
+		<a href="#//HanaBank" class="btnTxt excel" onclick="pbk.foreign.rate.pbld.prs.doExcelDown('N');" title="현재환율 엑셀 다운로드"><span>다운로드</span></a>
+		<a href="#//HanaBank" class="btn_print" onclick="printPopup.open();" title="새창으로 열림"><span>인쇄하기</span></a>
+	</div>
+
+<div class="printdiv">
+	
+	<div style="display:none">	
+		<h4>현재환율</h4>
+	</div>
+	
+	<p class="txtRateBox">
+	<span class="fl">
+	<em>기준일</em> : <strong>2026년10월20일</strong>
+	<em>고시일시</em> : <strong>
+		
+			
+				
+					2026년10월20일
+				
+				
+				</strong> <strong>21시00분00초 </strong><strong>(580회차)</strong></span>
+			
+			
+		
+		
+	
+	<span class="fr"><em>조회시각</em> : <strong>2026년10월20일 21시28분05초</strong></span>
+	</p>
+	
+	<table class="tblBasic leftNone" summary="통화코드/통화명,매매기준율,현찰,사실때,환율,spread,파실때,환율,spread,송금,보낼때,받을때,미화환산율,변동환율 항목이 포함된 테이블">
+	<caption>기간별 기준가격 고시회차에 대한 내용</caption> 
+	<colgroup>
+		<col style="width:*" />
+		<col style="width:8%" />
+		<col style="width:7%" />
+		<col style="width:8%" />
+		<col style="width:7%" />
+		<col style="width:8%" />
+		<col style="width:7%" />
+		<col style="width:8%" />
+		<col style="width:8%" />
+		<col style="width:8%" />
+		<col style="width:8%" />
+<!-- 		<col style="width:8%" /> -->
+	</colgroup>
+	<thead>
+		<tr>
+			<th class="leftNone" scope="col" rowspan="3">통화</th>
+			<th class="leftLine" scope="col" colspan="4">현찰</th>
+			<th class="leftLine" scope="col" colspan="2">송금</th>
+		
+			<th class="leftLine" scope="col" rowspan="3">외화<br />수표<br />파실때</th>
+			<th class="leftLine" scope="col" rowspan="3">매매<br />기준율</th>
+			<th class="leftLine" scope="col" rowspan="3">환가<br />료율</th>
+			<th class="leftLine" scope="col" rowspan="3">미화<br />환산율</th>
+		</tr>
+		<tr>
+			<th class="leftLine" scope="col" colspan="2">사실 때</th>
+			<th class="leftLine" scope="col" colspan="2">파실 때</th>
+			<th class="leftLine" scope="col" rowspan="2">보낼 때</th>
+			<th class="leftLine" scope="col" rowspan="2">받을 때</th>
+		</tr>
+		<tr>
+			<th class="leftLine" scope="col">환율</th>
+			<th class="leftLine" scope="col">Spread</th>
+			<th class="leftLine" scope="col">환율</th>
+			<th class="leftLine" scope="col">Spread</th>
+		</tr>
+		</thead>
+		<tbody>
+				
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="미국 USD 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('USD','20261020');" >
+							<u>
+							
+							미국 USD
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">1,351.03</td>
+					<td class="txtAr">1.75</td>
+					<td class="txtAr">1,304.57</td>
+					<td class="txtAr">1.75</td>
+					<td class="txtAr">1,340.80</td>
+					<td class="txtAr">1,314.80</td>
+					
+					<td class="txtAr">1,312.67</td>
+					<td class="txtAr">1,327.80</td>
+					<td class="txtAr">5.77980</td>
+					<td class="txtAr">1.0000</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="일본 JPY (100) 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('JPY','20261020');" >
+							<u>
+							
+							일본 JPY (100)
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">855.62</td>
+					<td class="txtAr">1.75</td>
+					<td class="txtAr">826.20</td>
+					<td class="txtAr">1.75</td>
+					<td class="txtAr">849.15</td>
+					<td class="txtAr">832.67</td>
+					
+					<td class="txtAr">831.98</td>
+					<td class="txtAr">840.91</td>
+					<td class="txtAr">3.37127</td>
+					<td class="txtAr">0.6333</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="유로 EUR 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('EUR','20261020');" >
+							<u>
+							
+							유로 EUR
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">1,519.91</td>
+					<td class="txtAr">1.99</td>
+					<td class="txtAr">1,460.61</td>
+					<td class="txtAr">1.99</td>
+					<td class="txtAr">1,505.16</td>
+					<td class="txtAr">1,475.36</td>
+					
+					<td class="txtAr">1,473.54</td>
+					<td class="txtAr">1,490.26</td>
+					<td class="txtAr">4.40700</td>
+					<td class="txtAr">1.1224</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="중국 CNY 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('CNY','20261020');" >
+							<u>
+							
+							중국 CNY
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">208.82</td>
+					<td class="txtAr">5.00</td>
+					<td class="txtAr">188.94</td>
+					<td class="txtAr">5.00</td>
+					<td class="txtAr">200.86</td>
+					<td class="txtAr">196.90</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">198.88</td>
+					<td class="txtAr">3.53182</td>
+					<td class="txtAr">0.1498</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="홍콩 HKD 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('HKD','20261020');" >
+							<u>
+							
+							홍콩 HKD
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">172.51</td>
+					<td class="txtAr">1.97</td>
+					<td class="txtAr">165.85</td>
+					<td class="txtAr">1.97</td>
+					<td class="txtAr">170.87</td>
+					<td class="txtAr">167.49</td>
+					
+					<td class="txtAr">167.29</td>
+					<td class="txtAr">169.18</td>
+					<td class="txtAr">4.87633</td>
+					<td class="txtAr">0.1274</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="태국 THB 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('THB','20261020');" >
+							<u>
+							
+							태국 THB
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">41.46</td>
+					<td class="txtAr">5.00</td>
+					<td class="txtAr">37.13</td>
+					<td class="txtAr">6.00</td>
+					<td class="txtAr">39.88</td>
+					<td class="txtAr">39.10</td>
+					
+					<td class="txtAr">39.08</td>
+					<td class="txtAr">39.49</td>
+					<td class="txtAr">3.02500</td>
+					<td class="txtAr">0.0297</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="대만 TWD 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('TWD','20261020');" >
+							<u>
+							
+							대만 TWD
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">45.98</td>
+					<td class="txtAr">13.10</td>
+					<td class="txtAr">36.60</td>
+					<td class="txtAr">10.00</td>
+					<td class="txtAr">41.10</td>
+					<td class="txtAr">40.22</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">40.66</td>
+					<td class="txtAr">3.59300</td>
+					<td class="txtAr">0.0306</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="필리핀 PHP 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('PHP','20261020');" >
+							<u>
+							
+							필리핀 PHP
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">23.16</td>
+					<td class="txtAr">10.00</td>
+					<td class="txtAr">19.34</td>
+					<td class="txtAr">8.20</td>
+					<td class="txtAr">21.27</td>
+					<td class="txtAr">20.85</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">21.06</td>
+					<td class="txtAr">7.12800</td>
+					<td class="txtAr">0.0159</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="싱가포르 SGD 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('SGD','20261020');" >
+							<u>
+							
+							싱가포르 SGD
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">1,059.84</td>
+					<td class="txtAr">1.99</td>
+					<td class="txtAr">1,018.50</td>
+					<td class="txtAr">1.99</td>
+					<td class="txtAr">1,049.56</td>
+					<td class="txtAr">1,028.78</td>
+					
+					<td class="txtAr">1,027.84</td>
+					<td class="txtAr">1,039.17</td>
+					<td class="txtAr">3.67000</td>
+					<td class="txtAr">0.7826</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="호주 AUD 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('AUD','20261020');" >
+							<u>
+							
+							호주 AUD
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">946.82</td>
+					<td class="txtAr">1.97</td>
+					<td class="txtAr">910.24</td>
+					<td class="txtAr">1.97</td>
+					<td class="txtAr">937.81</td>
+					<td class="txtAr">919.25</td>
+					
+					<td class="txtAr">917.58</td>
+					<td class="txtAr">928.53</td>
+					<td class="txtAr">6.58066</td>
+					<td class="txtAr">0.6993</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="베트남 VND (100) 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('VND','20261020');" >
+							<u>
+							
+							베트남 VND (100)
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">5.74</td>
+					<td class="txtAr">11.80</td>
+					<td class="txtAr">4.54</td>
+					<td class="txtAr">11.80</td>
+					<td class="txtAr">5.19</td>
+					<td class="txtAr">5.09</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">5.14</td>
+					<td class="txtAr">7.69500</td>
+					<td class="txtAr">0.0039</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="영국 GBP 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('GBP','20261020');" >
+							<u>
+							
+							영국 GBP
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">1,810.11</td>
+					<td class="txtAr">1.97</td>
+					<td class="txtAr">1,740.17</td>
+					<td class="txtAr">1.97</td>
+					<td class="txtAr">1,792.89</td>
+					<td class="txtAr">1,757.39</td>
+					
+					<td class="txtAr">1,754.49</td>
+					<td class="txtAr">1,775.14</td>
+					<td class="txtAr">5.96666</td>
+					<td class="txtAr">1.3369</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="캐나다 CAD 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('CAD','20261020');" >
+							<u>
+							
+							캐나다 CAD
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">964.11</td>
+					<td class="txtAr">1.97</td>
+					<td class="txtAr">926.87</td>
+					<td class="txtAr">1.97</td>
+					<td class="txtAr">954.94</td>
+					<td class="txtAr">936.04</td>
+					
+					<td class="txtAr">934.92</td>
+					<td class="txtAr">945.49</td>
+					<td class="txtAr">4.29566</td>
+					<td class="txtAr">0.7121</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="말레이시아 MYR 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('MYR','20261020');" >
+							<u>
+							
+							말레이시아 MYR
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">349.28</td>
+					<td class="txtAr">7.40</td>
+					<td class="txtAr">301.16</td>
+					<td class="txtAr">7.40</td>
+					<td class="txtAr">328.47</td>
+					<td class="txtAr">321.97</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">325.22</td>
+					<td class="txtAr">4.99966</td>
+					<td class="txtAr">0.2449</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="러시아 RUB 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('RUB','20261020');" >
+							<u>
+							
+							러시아 RUB
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">17.60</td>
+					<td class="txtAr">9.50</td>
+					<td class="txtAr">13.27</td>
+					<td class="txtAr">17.50</td>
+					<td class="txtAr">16.64</td>
+					<td class="txtAr">15.52</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">16.08</td>
+					<td class="txtAr">2.97500</td>
+					<td class="txtAr">0.0121</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="남아공화국 ZAR 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('ZAR','20261020');" >
+							<u>
+							
+							남아공화국 ZAR
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">87.23</td>
+					<td class="txtAr">8.00</td>
+					<td class="txtAr">74.31</td>
+					<td class="txtAr">8.00</td>
+					<td class="txtAr">81.73</td>
+					<td class="txtAr">79.81</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">80.77</td>
+					<td class="txtAr">8.74333</td>
+					<td class="txtAr">0.0608</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="노르웨이 NOK 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('NOK','20261020');" >
+							<u>
+							
+							노르웨이 NOK
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">143.04</td>
+					<td class="txtAr">140.22</td>
+					
+					<td class="txtAr">139.97</td>
+					<td class="txtAr">141.63</td>
+					<td class="txtAr">6.62133</td>
+					<td class="txtAr">0.1067</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="뉴질랜드 NZD 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('NZD','20261020');" >
+							<u>
+							
+							뉴질랜드 NZD
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">769.79</td>
+					<td class="txtAr">1.97</td>
+					<td class="txtAr">740.05</td>
+					<td class="txtAr">1.97</td>
+					<td class="txtAr">762.46</td>
+					<td class="txtAr">747.38</td>
+					
+					<td class="txtAr">746.34</td>
+					<td class="txtAr">754.92</td>
+					<td class="txtAr">5.05400</td>
+					<td class="txtAr">0.5685</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="덴마크 DKK 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('DKK','20261020');" >
+							<u>
+							
+							덴마크 DKK
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">201.37</td>
+					<td class="txtAr">197.39</td>
+					
+					<td class="txtAr">197.16</td>
+					<td class="txtAr">199.38</td>
+					<td class="txtAr">4.24066</td>
+					<td class="txtAr">0.1502</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="멕시코 MXN 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('MXN','20261020');" >
+							<u>
+							
+							멕시코 MXN
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">79.37</td>
+					<td class="txtAr">10.50</td>
+					<td class="txtAr">64.29</td>
+					<td class="txtAr">10.50</td>
+					<td class="txtAr">72.54</td>
+					<td class="txtAr">71.12</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">71.83</td>
+					<td class="txtAr">8.82900</td>
+					<td class="txtAr">0.0541</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="몽골 MNT 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('MNT','20261020');" >
+							<u>
+							
+							몽골 MNT
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.37</td>
+					<td class="txtAr">0.37</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.37</td>
+					<td class="txtAr">13.47500</td>
+					<td class="txtAr">0.0003</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="바레인 BHD 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('BHD','20261020');" >
+							<u>
+							
+							바레인 BHD
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">3,744.93</td>
+					<td class="txtAr">6.40</td>
+					<td class="txtAr">3,238.11</td>
+					<td class="txtAr">8.00</td>
+					<td class="txtAr">3,554.87</td>
+					<td class="txtAr">3,484.49</td>
+					
+					<td class="txtAr">3,477.38</td>
+					<td class="txtAr">3,519.68</td>
+					<td class="txtAr">7.27866</td>
+					<td class="txtAr">2.6508</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="방글라데시 BDT 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('BDT','20261020');" >
+							<u>
+							
+							방글라데시 BDT
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">10.86</td>
+					<td class="txtAr">10.62</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">10.74</td>
+					<td class="txtAr">11.97500</td>
+					<td class="txtAr">0.0081</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="브라질 BRL 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('BRL','20261020');" >
+							<u>
+							
+							브라질 BRL
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">291.67</td>
+					<td class="txtAr">10.20</td>
+					<td class="txtAr">238.22</td>
+					<td class="txtAr">10.00</td>
+					<td class="txtAr">267.85</td>
+					<td class="txtAr">261.51</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">264.68</td>
+					<td class="txtAr">13.69800</td>
+					<td class="txtAr">0.1993</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="브루나이 BND 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('BND','20261020');" >
+							<u>
+							
+							브루나이 BND
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">1,080.73</td>
+					<td class="txtAr">4.00</td>
+					<td class="txtAr">976.82</td>
+					<td class="txtAr">6.00</td>
+					<td class="txtAr">1,051.64</td>
+					<td class="txtAr">1,026.70</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">1,039.17</td>
+					<td class="txtAr">3.77500</td>
+					<td class="txtAr">0.7826</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="사우디아라비아 SAR 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('SAR','20261020');" >
+							<u>
+							
+							사우디아라비아 SAR
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">376.29</td>
+					<td class="txtAr">6.30</td>
+					<td class="txtAr">329.57</td>
+					<td class="txtAr">6.90</td>
+					<td class="txtAr">357.52</td>
+					<td class="txtAr">350.46</td>
+					
+					<td class="txtAr">349.79</td>
+					<td class="txtAr">353.99</td>
+					<td class="txtAr">6.89800</td>
+					<td class="txtAr">0.2666</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="스리랑카 LKR 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('LKR','20261020');" >
+							<u>
+							
+							스리랑카 LKR
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">4.04</td>
+					<td class="txtAr">3.96</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">4.00</td>
+					<td class="txtAr">12.33500</td>
+					<td class="txtAr">0.0030</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="스웨덴 SEK 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('SEK','20261020');" >
+							<u>
+							
+							스웨덴 SEK
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">135.37</td>
+					<td class="txtAr">132.69</td>
+					
+					<td class="txtAr">132.55</td>
+					<td class="txtAr">134.03</td>
+					<td class="txtAr">3.89433</td>
+					<td class="txtAr">0.1009</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="스위스 CHF 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('CHF','20261020');" >
+							<u>
+							
+							스위스 CHF
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">1,645.94</td>
+					<td class="txtAr">1.97</td>
+					<td class="txtAr">1,582.36</td>
+					<td class="txtAr">1.97</td>
+					<td class="txtAr">1,630.29</td>
+					<td class="txtAr">1,598.01</td>
+					
+					<td class="txtAr">1,597.08</td>
+					<td class="txtAr">1,614.15</td>
+					<td class="txtAr">2.07766</td>
+					<td class="txtAr">1.2157</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="아랍에미리트공화국 AED 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('AED','20261020');" >
+							<u>
+							
+							아랍에미리트공화국 AED
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">381.39</td>
+					<td class="txtAr">5.50</td>
+					<td class="txtAr">336.57</td>
+					<td class="txtAr">6.90</td>
+					<td class="txtAr">365.12</td>
+					<td class="txtAr">357.90</td>
+					
+					<td class="txtAr">357.40</td>
+					<td class="txtAr">361.51</td>
+					<td class="txtAr">5.07500</td>
+					<td class="txtAr">0.2723</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="알제리 DZD 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('DZD','20261020');" >
+							<u>
+							
+							알제리 DZD
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">9.98</td>
+					<td class="txtAr">9.76</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">9.87</td>
+					<td class="txtAr">6.47500</td>
+					<td class="txtAr">0.0074</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="오만 OMR 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('OMR','20261020');" >
+							<u>
+							
+							오만 OMR
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">3,690.15</td>
+					<td class="txtAr">7.00</td>
+					<td class="txtAr">3,207.33</td>
+					<td class="txtAr">7.00</td>
+					<td class="txtAr">3,490.12</td>
+					<td class="txtAr">3,407.36</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">3,448.74</td>
+					<td class="txtAr">4.20500</td>
+					<td class="txtAr">2.5973</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="요르단 JOD 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('JOD','20261020');" >
+							<u>
+							
+							요르단 JOD
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">2,039.45</td>
+					<td class="txtAr">8.90</td>
+					<td class="txtAr">1,722.96</td>
+					<td class="txtAr">8.00</td>
+					<td class="txtAr">1,895.25</td>
+					<td class="txtAr">1,850.31</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">1,872.78</td>
+					<td class="txtAr">8.08300</td>
+					<td class="txtAr">1.4104</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="이스라엘 ILS 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('ILS','20261020');" >
+							<u>
+							
+							이스라엘 ILS
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">470.49</td>
+					<td class="txtAr">10.00</td>
+					<td class="txtAr">393.51</td>
+					<td class="txtAr">8.00</td>
+					<td class="txtAr">432.85</td>
+					<td class="txtAr">422.59</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">427.72</td>
+					<td class="txtAr">5.32133</td>
+					<td class="txtAr">0.3221</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="이집트 EGP 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('EGP','20261020');" >
+							<u>
+							
+							이집트 EGP
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">24.65</td>
+					<td class="txtAr">24.07</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">24.36</td>
+					<td class="txtAr">6.47500</td>
+					<td class="txtAr">0.0183</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="인도 INR 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('INR','20261020');" >
+							<u>
+							
+							인도 INR
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">14.15</td>
+					<td class="txtAr">13.83</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">13.99</td>
+					<td class="txtAr">7.96100</td>
+					<td class="txtAr">0.0105</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="인도네시아 IDR (100) 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('IDR','20261020');" >
+							<u>
+							
+							인도네시아 IDR (100)
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">8.14</td>
+					<td class="txtAr">10.00</td>
+					<td class="txtAr">6.66</td>
+					<td class="txtAr">10.00</td>
+					<td class="txtAr">7.47</td>
+					<td class="txtAr">7.33</td>
+					
+					<td class="txtAr">7.32</td>
+					<td class="txtAr">7.40</td>
+					<td class="txtAr">8.63166</td>
+					<td class="txtAr">0.0056</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="체코 CZK 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('CZK','20261020');" >
+							<u>
+							
+							체코 CZK
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">66.48</td>
+					<td class="txtAr">8.50</td>
+					<td class="txtAr">55.77</td>
+					<td class="txtAr">9.00</td>
+					<td class="txtAr">61.95</td>
+					<td class="txtAr">60.61</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">61.28</td>
+					<td class="txtAr">5.67666</td>
+					<td class="txtAr">0.0462</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="칠레 CLP 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('CLP','20261020');" >
+							<u>
+							
+							칠레 CLP
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">1.48</td>
+					<td class="txtAr">10.00</td>
+					<td class="txtAr">1.22</td>
+					<td class="txtAr">10.00</td>
+					<td class="txtAr">1.36</td>
+					<td class="txtAr">1.34</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">1.35</td>
+					<td class="txtAr">5.84100</td>
+					<td class="txtAr">0.0010</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="카자흐스탄 KZT 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('KZT','20261020');" >
+							<u>
+							
+							카자흐스탄 KZT
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">2.98</td>
+					<td class="txtAr">2.92</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">2.95</td>
+					<td class="txtAr">19.97500</td>
+					<td class="txtAr">0.0022</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="카타르 QAR 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('QAR','20261020');" >
+							<u>
+							
+							카타르 QAR
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">368.65</td>
+					<td class="txtAr">359.91</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">364.28</td>
+					<td class="txtAr">3.35500</td>
+					<td class="txtAr">0.2743</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="케냐 KES 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('KES','20261020');" >
+							<u>
+							
+							케냐 KES
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">10.34</td>
+					<td class="txtAr">10.10</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">10.22</td>
+					<td class="txtAr">11.22500</td>
+					<td class="txtAr">0.0077</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="콜롬비아 COP 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('COP','20261020');" >
+							<u>
+							
+							콜롬비아 COP
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.42</td>
+					<td class="txtAr">0.42</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.42</td>
+					<td class="txtAr">2.97500</td>
+					<td class="txtAr">0.0003</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="쿠웨이트 KWD 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('KWD','20261020');" >
+							<u>
+							
+							쿠웨이트 KWD
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">4,564.57</td>
+					<td class="txtAr">6.50</td>
+					<td class="txtAr">3,943.12</td>
+					<td class="txtAr">8.00</td>
+					<td class="txtAr">4,328.84</td>
+					<td class="txtAr">4,243.14</td>
+					
+					<td class="txtAr">4,237.09</td>
+					<td class="txtAr">4,285.99</td>
+					<td class="txtAr">5.08400</td>
+					<td class="txtAr">3.2279</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="탄자니아 TZS 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('TZS','20261020');" >
+							<u>
+							
+							탄자니아 TZS
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.50</td>
+					<td class="txtAr">0.50</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.50</td>
+					<td class="txtAr">10.08733</td>
+					<td class="txtAr">0.0004</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="튀르키예 TRY 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('TRY','20261020');" >
+							<u>
+							
+							튀르키예 TRY
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">27.07</td>
+					<td class="txtAr">26.49</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">26.78</td>
+					<td class="txtAr">39.37500</td>
+					<td class="txtAr">0.0202</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="파키스탄 PKR 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('PKR','20261020');" >
+							<u>
+							
+							파키스탄 PKR
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">4.85</td>
+					<td class="txtAr">4.75</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">4.80</td>
+					<td class="txtAr">17.86833</td>
+					<td class="txtAr">0.0036</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="폴란드 PLN 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('PLN','20261020');" >
+							<u>
+							
+							폴란드 PLN
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">367.83</td>
+					<td class="txtAr">8.00</td>
+					<td class="txtAr">313.35</td>
+					<td class="txtAr">8.00</td>
+					<td class="txtAr">344.33</td>
+					<td class="txtAr">336.85</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">340.59</td>
+					<td class="txtAr">6.01366</td>
+					<td class="txtAr">0.2565</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="헝가리 HUF 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('HUF','20261020');" >
+							<u>
+							
+							헝가리 HUF
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">4.47</td>
+					<td class="txtAr">9.30</td>
+					<td class="txtAr">3.77</td>
+					<td class="txtAr">8.00</td>
+					<td class="txtAr">4.13</td>
+					<td class="txtAr">4.05</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">4.09</td>
+					<td class="txtAr">7.48233</td>
+					<td class="txtAr">0.0031</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="네팔 NPR 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('NPR','20261020');" >
+							<u>
+							
+							네팔 NPR
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">8.84</td>
+					<td class="txtAr">8.64</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">8.74</td>
+					<td class="txtAr">2.97500</td>
+					<td class="txtAr">0.0066</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="마카오 MOP 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('MOP','20261020');" >
+							<u>
+							
+							마카오 MOP
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">166.14</td>
+					<td class="txtAr">162.20</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">164.17</td>
+					<td class="txtAr">4.87633</td>
+					<td class="txtAr">0.1236</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="캄보디아 KHR 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('KHR','20261020');" >
+							<u>
+							
+							캄보디아 KHR
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.33</td>
+					<td class="txtAr">0.33</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.33</td>
+					<td class="txtAr">2.97500</td>
+					<td class="txtAr">0.0002</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="피지 FJD 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('FJD','20261020');" >
+							<u>
+							
+							피지 FJD
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">595.13</td>
+					<td class="txtAr">581.03</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">588.08</td>
+					<td class="txtAr">1.97500</td>
+					<td class="txtAr">0.4429</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="리비아 LYD 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('LYD','20261020');" >
+							<u>
+							
+							리비아 LYD
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">209.48</td>
+					<td class="txtAr">204.52</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">207.00</td>
+					<td class="txtAr">2.97500</td>
+					<td class="txtAr">0.1559</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="루마니아 RON 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('RON','20261020');" >
+							<u>
+							
+							루마니아 RON
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">282.57</td>
+					<td class="txtAr">276.43</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">279.50</td>
+					<td class="txtAr">7.89800</td>
+					<td class="txtAr">0.2105</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="미얀마 MMK 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('MMK','20261020');" >
+							<u>
+							
+							미얀마 MMK
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.63</td>
+					<td class="txtAr">0.63</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.63</td>
+					<td class="txtAr">1.97500</td>
+					<td class="txtAr">0.0005</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="에티오피아 ETB 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('ETB','20261020');" >
+							<u>
+							
+							에티오피아 ETB
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">8.22</td>
+					<td class="txtAr">8.04</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">8.13</td>
+					<td class="txtAr">2.97500</td>
+					<td class="txtAr">0.0061</td>
+					
+				</tr>
+				
+				<tr>
+					<td class="tc">
+						<a href="#//HanaBank" title="우즈베키스탄 UZS 일일변동내역 보기" onclick="pbk.foreign.rate.pbld.prs.goFluctuation('UZS','20261020');" >
+							<u>
+							
+							우즈베키스탄 UZS
+							
+							
+							</u>
+						</a>
+					</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.11</td>
+					<td class="txtAr">0.11</td>
+					
+					<td class="txtAr">0.00</td>
+					<td class="txtAr">0.11</td>
+					<td class="txtAr">17.47500</td>
+					<td class="txtAr">0.0001</td>
+					
+				</tr>
+				
+				
+				
+		</tbody>
+	</table>
+</div>
+	
+	
+	

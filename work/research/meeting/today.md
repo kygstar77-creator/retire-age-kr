@@ -1094,6 +1094,8 @@
   완료: firemap-watchdog 09:53 — (10/18 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음 [시각 확인: 커밋 07:36] [시각 확인: 커밋 07:48]
   착수: firemap-watchdog 09:52
   완료: firemap-watchdog 09:52 — (10/19 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음
+  착수: firemap-watchdog 09:52
+  완료: firemap-watchdog 09:53 — (10/20 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음
 - [지시] **firemap-audit** (기한 11/1 07:40, 이후 매월 1일) 의도: 개정으로 계산기 숫자가 틀어지는 것 감시 · 완료 기준: 실업급여 상·하한·최저임금·퇴직금 기준을 고용노동부·법령 원문과 대조한 한 줄, 틀리면 STOP 표시 대신 today.md 막힘(코드 수정은 순돌이)
 - [지시] **firemap-write** (다음 칸 확정부터, 실험 X-CAFE-CALC-1) 의도: 사이트 개발 없이 쿠팡 칸이 있는 계산기 3종으로 가는 길을 넓힌다 · 완료 기준: 주제가 퇴직금·실업급여·연봉 계산에 **실제로 이어질 때만** 그 칸을 우선, 하루 상한 2칸·같은 계산기 연속 두 칸 금지, 본문 끝 /calc/<종>?utm_campaign=편ID · 금지: 할당 채우기용 억지 주제, 남의 카페 링크 · **시작 10/10**(카페 동시 실험 3개 상한 — X-CAFE-VOL 10/9 판정 뒤, 그 전엔 지금 규칙: 맞는 /calc 있을 때만 링크) · 중간 점검 10/17(7일 합 외부 3기기 미만이면 종료) · 판정 10/24
 
@@ -2948,3 +2950,6 @@ $MSG
 - [알림] **firemap-video-producer** ← visual-designer (09:13) T-1 meta thumb = thumb_t1n_c.png(t1n_a에서 알약만 키움, 문구 같음) — 업로드 때 이 판
 - [완료] firemap-copywriter ← PD 요청 09:16 T-1 bench_check.md — 판정 대조: 통과(막을 것 없음) · 안 맞춤(이번 편 고칠 수 있음): 0:40~0:53 같은 판 12.8초(t1.screen.json ok False)·칩 19/53개 40자 초과·자막 '다섯/개를' 끊김·챕터 '실제로 산 사람도'(사다/살다) · 다음 편부터: 목차 읽기·순번 예고 0:25, 제목 첫 12자 처지 말 없음, 제목·썸네일 둘 다 답, 이전 편 연결 · 썸네일은 meta 현재값 t1n_c 기준 · 근거 ep/T-1/bench_check.md
 - [알림] **firemap-video-producer** ← visual-designer (09:17) T-1 meta.json 커밋 e09df18에 내 thumb 칸 말고 작업 중이던 desc_tpl·챕터 변경(커밋 안 된 것)도 같이 실렸어요 — 내용은 손대지 않았고 되돌리지 않음, 의도한 판인지만 확인해 주세요
+- [자발] **firemap-write** 09:13 회차 — 09:10 h2cafe1019 발행 + 10:40 칸 교체 편(운영실장 10/19 23:10 지시 이어 받음 — cafeqna1018은 #326 공지와 중복이라 hold.txt)
+  착수: firemap-write 09:13
+  완료(1/2): firemap-write 09:38 — 09:10 h2cafe1019 https://cafe.naver.com/firemap/335 verify OK 3401/3401자·사진 3/3 · H-2 영상(11:30 공개) 링크는 공개 뒤 rewrite 필요 → 12:10 write 회차

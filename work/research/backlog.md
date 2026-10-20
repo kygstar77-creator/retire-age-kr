@@ -7,7 +7,7 @@
 |---|---|---|---|
 | firemap-meeting | ① 10/20 21:15: D-1·A-1 쿠팡 링크 빼기·전수 결과와 H-2 공개 여부(칸 실패 기록) 확인, #325 utm cafe 완결값 | ② 10/22 X-OPS-7(공개 기록 코드)·X-OPS-8 판정, 10/23 카페 12칸 뼈대 | ③ 10/25 X-YT-READBACK2·10/26 X-CAFE-CALC 판정 준비, 10/26(월) 회원 수 |
 | firemap-behavior | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-write | ① 카페 비축 0/2 → 관문 통과 2편(예금·연금계좌 등 매일 칸 주제, 같은 날 끝말 겹침은 gates_ok 전에 aitell.gate_pkg로) · 10/20 12:10 피부양자 계산기 칸·15:10 칸 | ② 10/20 09:10 h2cafe1019 발행 뒤 H-2 영상(11:30) 공개되면 영상 링크 rewrite · 18:10 월배당 ETF 계산기 칸 | ③ 기금운용본부 8월 말 갱신 뒤 npsfund1019 숫자 재확인 · 코스피 10월 월말 확정 뒤(11/1) kospioct1019 재확인 |
+| firemap-write | ① 카페 비축 0/2 → 15:10 칸(관문 기한 지남)·18:10 월배당 ETF 계산기 칸 관문 통과 편 · 연금계좌(ISA·IRP) 매일 칸 | ② 11:30 H-2 공개 뒤 #335(h2cafe1019)에 영상 링크 rewrite · 9월 가중평균금리(10월 말) 나오면 bokdep1020 후속(8/27 인상 뒤 예금 금리) | ③ 기금운용본부 8월 말 갱신 뒤 npsfund1019 숫자 재확인 · 코스피 10월 확정 뒤(11/1) kospioct1019 재확인 |
 | firemap-write-b | ① 카페 비축 2편 먼저(0편 — 16:40 부동산·19:40 n2s_middle 짝·22:40 칸 관문 기한 6시간 전) · ② 미국 빅테크 실적 주간 묶음(tsla1019 1등 대비 약점: 같은 주 메타·넷플릭스 일정+지난 발표 뒤 반응, SEC 8-K 접수 시각으로 확인) · ③ 엔화 카드 결제 환율 대 현찰 환율(jpy1018 1등 대비 약점, 카드사·은행 원문) |
 | firemap-editor | T-1 다시 녹음 뒤 screen_text(수진) 화면 서명 바로(T-1 관문 10/20 11:30) | sweep.md 이어서: 조회 많은 공개 카페 글부터 A41·A43·A46·구어 아닌 말 꼴 고치기 | ytlong gate에 '브랜드 첫·끝 줄 있음' 검사 넣기 제안(FIXED_LINE 정규식 — PD 판단 요청) |
 | firemap-brand-researcher | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
@@ -32,7 +32,7 @@
 | firemap-youtube-loop | W-3 제미나이 검증·40·50·60세 이해 시험·심사 3명 → review.md(10/23 21:00, 대본 ep/W-3/script.md v1.1) | X-1 '올리기 전 확인'+끝맺음 6편(10/21 오전) · D-ETF-1 제목·썸네일 이해 시험(visual 뒤) | K-1(10/28 국채금리) 분석 관문·toc_compare 10편+포화·대본 v1 |
 | firemap-improve | refactorcands.py 재측정(10/12~): #126·#81 rewrite·#56 제목(edittitle 적용 뒤) 7일 조회·카페탭 비교 | 카페 제목 금액 규칙(10/9) 재측정(10/23): 규칙 뒤 금액 제목 비율·하루당 조회 vs 규칙 전, 형식(계산형) 섞임 떼고 | 예금·이자 규칙(10/22)·배당ETF 제목 %→금액 규칙(10/24) 재측정: 규칙 뒤 해당 편 하루당 조회 vs 그 외 |
 | firemap-admin | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-watchdog | R2(10/20 09:45부터): 주간 사용량 % 회차마다 decisions/log 한 줄 — get_usage로 재는 길 먼저 시험 | beat list가 end 맥박 누락과 진짜 멈춤을 가르게: list_sessions isRunning 대조를 watchdog.py 출력에 넣을지 검토(write-b 10/19 오경보) | 막힌 묶음 17개(블로그 6·카페 11) 폐기 목록 제안 — 제목만 고치면 살릴 카페 묶음은 editor 목록으로 |
+| firemap-watchdog | R2 계속: 회차마다 get_usage 주간 % 한 줄(10/20 09:5x 첫 회 49%·작동 확인) — 하루 증가폭이 7%p 넘으면 today.md 알림 | beat list가 end 맥박 누락과 진짜 멈춤을 가르게: list_sessions isRunning 대조를 watchdog.py 출력에 넣을지 검토(write-b 10/19 오경보) | 막힌 묶음 15개(블로그 3·카페 12, 10/20 실측) 폐기 목록 제안 — 제목만 고치면 살릴 카페 묶음은 editor 목록으로 |
 | firemap-audit | 롱폼 노출 멈춤 원인(P-1·W-1 2화·N-2 79회/33h·C-2 10회/9.5h vs H-1 209·R-1 351) — ytreach 보고서로 노출 0인지 클릭 0인지 가르기 | write 요청 확인: gates_ok 전 aitell.gate_pkg·PRODUCT 코인(10/20) + dep13y1019 빈 칸 처리 | PD app_preview 자동 호출이 H-2(10/20)에 남는지 + containsSyntheticMedia Studio 실물 확인 |
 | firemap-soondol-deputy | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-loop | 쇼츠 utm 실유입 10/7 재측정(work/sql/yt_inflow.sql) — 14일 진짜 12기기(10/5 21:5x), 도착지 /calc/* vs 첫 화면 나눠 세기 | 카페 '예금·이자·금리' 묶음 10/9 재측정 — write가 비축 칸에 넣은 편이 하루당 조회 1.31(묶음 중앙값)을 넘는지, read_snaps 24시간 값이 왜 4편만 맞는지(30분 간격 찍기가 회차 사이에 안 돎?) | 롱폼 420b 10→224 원인 — YouTube Analytics 트래픽 소스(검색·추천)로 확인, 다른 롱폼 10~54와 비교 |

@@ -77,16 +77,16 @@
   "say": "새 나간 곳은 환율이에요. 천오백오십사 원이던 달러가 천삼백삼십구 원이 됐거든요.",
   "audio": "audio/x-1/ca3c31e2b0816c90.wav",
   "heard": [
-   "세나간 곳은 환율이에요. 1554원이던 달러가 1339원이 됐거든요.",
-   null
+   "체나 간 곳은 환율이에요? 1554원이던 달러가 1339원이 됐거든요.",
+   "지나간곳은환율이에요1554원이던달러가1339원이됐거든요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.95,
+  "pair": 0.95,
+  "flag": "합의오독(0.95/0.95 세→체/지)",
   "batch2": true
  },
  {
@@ -114,15 +114,15 @@
   "audio": "audio/x-1/31a1f62bf2267c61.wav",
   "heard": [
    "요즘 지식인과 카페, 유튜브 댓글에 이걸 묻는 글이 계속 올라옵니다.",
-   null
+   "요즘지식인과카페유튜브댓글에이걸묻는글이계속올라옵니다"
   ],
   "models": [
    "gemini-3.1-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "합의오독(1.00/1.00 ·→인/인)",
   "batch2": true
  },
  {
@@ -185,8 +185,8 @@
   "say": "지식인에 이런 질문이 올라왔어요.",
   "audio": "audio/x-1/7ae52bf1a44f84b6.wav",
   "heard": [
-   "지식인에 이런 질문이 올라왔어요.",
-   null
+   null,
+   "지식인에이런질문이올라왔어요"
   ],
   "models": [
    "gemini-3.1-flash-lite",
@@ -367,8 +367,8 @@
   "say": "네 날짜 모두 줄었어요. 지금 환율이 그 네 날보다 다 낮거든요.",
   "audio": "audio/x-1/4af7060629480d34.wav",
   "heard": [
-   "네 날짜 모두 줄었어요. 지금 환율이 그 네 날보다 다 낮거든요.",
-   null
+   null,
+   "내날짜모두줄었어요지금환율이그내날보다다낮거든요"
   ],
   "models": [
    "gemini-3.1-flash-lite",
@@ -385,8 +385,8 @@
   "say": "이번엔 같은 날 에스앤피 오백 이티에프를 샀다고 해 볼게요.",
   "audio": "audio/x-1/ac16c21bbac80960.wav",
   "heard": [
-   "이번엔 같은 날 S&P 500 ETF를 샀다고 해 볼게요.",
-   null
+   null,
+   "이번엔같은날500를샀다고해볼게요"
   ],
   "models": [
    "gemini-3.1-flash-lite",
@@ -403,8 +403,8 @@
   "say": "작년 이맘때 샀다면 달러로는 십육 퍼센트 넘게 올랐습니다.",
   "audio": "audio/x-1/596d494c2695760b.wav",
   "heard": [
-   "작년 이맘때 샀다면 달러로는 16% 넘게 올랐습니다.",
-   null
+   null,
+   "작년이맘때샀다면달러로는16%넘게올랐습니다"
   ],
   "models": [
    "gemini-3.1-flash-lite",
@@ -421,14 +421,14 @@
   "say": "그런데 원화로 따지면 오른 폭이 십퍼센트가 조금 안 돼요.",
   "audio": "audio/x-1/9e55aa1b57fc4f68.wav",
   "heard": [
-   "그런데 원어로 따지면 오른 폭이 10%가 조금 안 돼요.",
-   null
+   null,
+   "그런데원화로따지면오른폭이10%가조금안돼요"
   ],
   "models": [
    "gemini-3.1-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.95,
+  "sim": 1.0,
   "pair": null,
   "flag": "받아쓰기 실패",
   "batch2": true

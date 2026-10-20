@@ -1,0 +1,335 @@
+{
+ "fps": 30,
+ "name": "t1s_swap",
+ "v": 2,
+ "look": "live",
+ "question": [
+  "집 갈아타는 중이라면",
+  "헌 집 파는 기한은?"
+ ],
+ "hot": "기한",
+ "answer": {
+  "label": "헌 집·새 집 둘 다 조정대상지역",
+  "items": [
+   "원래 3년",
+   "지금 2년"
+  ],
+  "arrow": false,
+  "note": "넘기면 세금 5배 넘게 (20억 집 예)"
+ },
+ "base": "소득세법 시행령 §155① (2026.10.1 양도분부터) · 재정경제부 2026.8.3 문답 · 가상 인물 20억 집 계산",
+ "long": "Qg5Tj2fuJ3A",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "헌 집 파는 기한",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "예전 규칙",
+      "3년",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "지금, 둘 다 조정대상지역",
+      "2년",
+      "",
+      170,
+      "ink"
+     ]
+    ],
+    "side": [
+     "1년 짧아짐",
+     250,
+     "헌 집 파는 기한"
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "새 집을 산 날부터 3년 안에 헌 집을 팔면 됩니다.",
+     "audio": "audio/t-1/96986032b50f06ef.wav",
+     "frames": 109
+    },
+    {
+     "n": 2,
+     "text": "바뀐 건 기한이에요. 헌 집과 새 집이 둘 다 조정대상지역에 있으면, 3년이 아니라 2년입니다.",
+     "audio": "audio/t-1/7146a45536e58fad.wav",
+     "frames": 192
+    }
+   ],
+   "frames": 301
+  },
+  {
+   "kind": "vs",
+   "label": "하나만 조정대상지역이면",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "하나라도 아니면",
+      "3년 그대로",
+      "",
+      0,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 3,
+     "text": "둘 중 하나라도 조정대상지역이 아니면, 지금처럼 3년이에요.",
+     "audio": "audio/t-1/9eace98ce62bac05.wav",
+     "frames": 120
+    }
+   ],
+   "frames": 120
+  },
+  {
+   "kind": "vs",
+   "label": "왜 줄였나",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "두 채인데 한 채 취급",
+      "3년",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "정부가 든 이유",
+      "혜택이 너무 큼",
+      "",
+      95,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "조정지역에서 두 채를 갖게 된 사람을 3년 동안 한 채처럼 봐 주는 건, 혜택이 너무 크다는 겁니다.",
+     "audio": "audio/t-1/840993635d5d5de1.wav",
+     "frames": 172
+    }
+   ],
+   "frames": 172
+  },
+  {
+   "kind": "vs",
+   "label": "서울은",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "서울",
+      "25개 구 전체",
+      "",
+      0,
+      "ink"
+     ]
+    ],
+    "side": [
+     "조정대상지역",
+     70,
+     "작년 10월 지정"
+    ]
+   },
+   "lines": [
+    {
+     "n": 5,
+     "text": "서울은 작년 10월에 25개 구 전체가 조정대상지역으로 지정됐어요.",
+     "audio": "audio/t-1/13ff9e2bfb6b562a.wav",
+     "frames": 141
+    }
+   ],
+   "frames": 141
+  },
+  {
+   "kind": "vs",
+   "label": "기한을 넘기면",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "산 지 2년 넘어 팔면",
+      "두 채 세금",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "8억에 산 20억 집",
+      "7억 8천만원쯤",
+      "",
+      205,
+      "ink"
+     ]
+    ],
+    "side": [
+     "5배 넘게",
+     300,
+     "한 채일 때보다"
+    ]
+   },
+   "lines": [
+    {
+     "n": 6,
+     "text": "그런데 2년 기한을 넘겨, 새 집을 산 지 3년째에 팔면요. 두 채를 가진 사람의 세금이 됩니다.",
+     "audio": "audio/t-1/c1de35cf48ec4026.wav",
+     "frames": 190
+    },
+    {
+     "n": 7,
+     "text": "그러면 세금이 7억 8천만원쯤 나와요. 같은 해에 집 한 채로 팔았을 때의 5배가 넘습니다.",
+     "audio": "audio/t-1/69a1756867c764fe.wav",
+     "frames": 182
+    }
+   ],
+   "frames": 372
+  },
+  {
+   "kind": "vs",
+   "label": "예전 규칙 그대로인 사람",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "새 집을 8월 3일까지",
+      "샀거나 계약금",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "그러면",
+      "예전대로 3년",
+      "",
+      190,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 8,
+     "text": "정부가 세법 개정안을 발표한 올해 8월 3일까지, 새 집을 샀거나 계약하고 계약금을 냈다면요.",
+     "audio": "audio/t-1/7fd6035cea700b64.wav",
+     "frames": 188
+    },
+    {
+     "n": 9,
+     "text": "그때는 예전대로 3년입니다.",
+     "audio": "audio/t-1/13f64892d906c203.wav",
+     "frames": 74
+    }
+   ],
+   "frames": 262
+  },
+  {
+   "kind": "vs",
+   "label": "적어 둘 날짜 세 개",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "날짜 하나",
+      "헌 집 산 날",
+      "",
+      100,
+      "ink"
+     ],
+     [
+      "날짜 둘",
+      "새 집 산 날",
+      "",
+      150,
+      "ink"
+     ]
+    ],
+    "side": [
+     "2년 되는 날",
+     215,
+     "새 집 산 날부터"
+    ]
+   },
+   "lines": [
+    {
+     "n": 10,
+     "text": "헌 집을 산 날, 새 집을 산 날, 그리고 새 집을 산 날부터 2년이 되는 날이에요.",
+     "audio": "audio/t-1/233c575caff11690.wav",
+     "frames": 149
+    }
+   ],
+   "frames": 185
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/t1/8478946.mp4",
+   "from": 0,
+   "frames": 109,
+   "start": 2
+  },
+  {
+   "src": "bg/t1/1793371.mp4",
+   "from": 109,
+   "frames": 192,
+   "start": 1
+  },
+  {
+   "src": "bg/t1/6221101.mp4",
+   "from": 301,
+   "frames": 120,
+   "start": 1
+  },
+  {
+   "src": "bg/t1/35082942.mp4",
+   "from": 421,
+   "frames": 172,
+   "start": 0
+  },
+  {
+   "src": "bg/t1/31251627.mp4",
+   "from": 593,
+   "frames": 141,
+   "start": 1
+  },
+  {
+   "src": "bg/t1/4553292.mp4",
+   "from": 734,
+   "frames": 190,
+   "start": 2
+  },
+  {
+   "src": "bg/t1/4553301.mp4",
+   "from": 924,
+   "frames": 182,
+   "start": 0
+  },
+  {
+   "src": "bg/t1/8471105.mp4",
+   "from": 1106,
+   "frames": 188,
+   "start": 3
+  },
+  {
+   "src": "bg/t1/31400388.mp4",
+   "from": 1294,
+   "frames": 74,
+   "start": 2
+  },
+  {
+   "src": "bg/t1/7710453.mp4",
+   "from": 1368,
+   "frames": 185,
+   "start": 2
+  }
+ ],
+ "credits": "1793371 Miguel Á. Padriñán · 31251627 PUWOOK Kwak · 31400388 Jakub Zerdzicki · 35082942 Nothing Ahead · 4553292 cottonbro studio · 4553301 cottonbro studio · 6221101 cottonbro studio · 7710453 https://kaboompics.com/ · 8471105 Thirdman · 8478946 ArtHouse Studio (Pexels License)"
+}

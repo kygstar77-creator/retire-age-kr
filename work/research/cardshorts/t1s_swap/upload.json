@@ -1,0 +1,38 @@
+{
+ "name": "t1s_swap",
+ "ep": "T-1",
+ "from_long": "Qg5Tj2fuJ3A",
+ "mp4": "work/video/out/t1s_swap_ds.mp4",
+ "publishAt": "2026-10-22T17:20:00+09:00",
+ "publish_plan": "2026-10-22 17:20 (쇼츠 하루 3편 둘째 칸 · 같은 날 07:20 g1s_asym=G-1·19:20 h1s_forest=H-1·11:30 롱폼 X-1과 다른 롱폼·다른 질문 · T-1 롱폼 첫 클립)",
+ "title": "집 갈아타는 중이라면 헌 집 기한 2년, 넘기면 5배 #shorts",
+ "description": "전체 계산: https://youtu.be/Qg5Tj2fuJ3A\n\n집 한 채가 있는 세대가 새 집을 사서 잠깐 두 채가 되면, 새 집을 산 날부터 3년 안에 헌 집을 팔면 집 한 채처럼 봐 줬어요.\n2026년 10월 1일 양도분부터는 헌 집과 새 집이 둘 다 조정대상지역이면 이 기한이 2년입니다. 하나라도 아니면 3년 그대로예요.\n올해 8월 3일까지 새 집을 샀거나 계약금을 냈다면 예전대로 3년입니다.\n헌 집은 산 지 1년이 지나서 새 집을 사야 하고, 산 날·판 날은 보통 잔금을 치른 날로 봐요.\n기한을 넘기면 두 채를 가진 사람의 세금(중과세율)이 됩니다. 가상 인물이 8억에 산 20억 집으로 계산하면 7억 8천만원쯤, 집 한 채일 때의 5배가 넘어요. 집값·보유 기간마다 달라집니다.\n조정대상지역: 서울 25개 구 전체·경기 12곳(2025년 10월 16일 지정), 화성 동탄구·용인 기흥구·구리시(2026년 7월 1일 추가). 내 동네는 국토교통부 공고로 확인하세요.\n세금 계산 비교이고, 매매 권유가 아닙니다.\n\n출처: 소득세법 시행령 제155조 제1항 · 재정경제부 2026.8.3 세법개정안 상세본·문답 · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — 1793371 Miguel Á. Padriñán · 31251627 PUWOOK Kwak · 31400388 Jakub Zerdzicki · 35082942 Nothing Ahead · 4553292 cottonbro studio · 6221101 cottonbro studio · 6963487 Mikhail Nilov · 7710453 https://kaboompics.com/ · 8471105 Thirdman · 8478946 ArtHouse Studio\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #일시적2주택 #양도세",
+ "tags": "일시적2주택,양도세,조정대상지역,갈아타기,비과세",
+ "layout": "m1clip",
+ "look": "live",
+ "title_review": {
+  "gemini": {
+   "model": "gemini-3.1-flash-lite (3.8-flash 429)",
+   "A": 9,
+   "B": 7,
+   "C": 8,
+   "file": "title_gemini.json"
+  },
+  "redteam": {
+   "C": 8,
+   "note": "A(9점)는 '2주택·2년·20억·5배' 숫자 4개라 쇼츠 제목 숫자 1~2 규칙 밖 → C. 제미나이 fix '세금 5배 폭탄'은 과장 말이라 버림. '5배'는 20억 집 예(5.3배)라 설명란·0초 화면에 '20억 집 예' 표시"
+  },
+  "avg": 8.0
+ },
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "df5dTTi5VCI",
+ "uploaded_at": "2026-10-20 12:57:55",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-22T08:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

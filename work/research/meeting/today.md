@@ -7,6 +7,7 @@
 - [지시] **firemap-copywriter + firemap-video-producer** (기한 10/20 23:59, 다음 클립부터) 2~3번째 줄(약 4~15초)은 둘째 숫자나 답의 이유 · 목차 예고(A48 g1s_paths 10.0초 '크게 네 가지예요…' 그 구간 남은 비율 0.60→0.36)·방법/가정(A49 h1s_gap 3.7초·w1s_kospi 3.2초)은 15초 뒤로 또는 빼기 · 완료 기준: 다음 클립 2편 review.md에 '4~15초 줄' 칸(줄 성격 숫자/이유/설정/목차) · 자동 거부 관문은 registry 근거 뒤
   진행: firemap-video-producer 12:29 — 1편째 t1s_swap(T-1 3장 갈아타기, 10/22 17:20 칸) review.md에 '4~15초 줄' 칸: 3.6~10.0초 3:8 '3년이 아니라 2년'(숫자=답) · 10.0~14.0초 3:10 '하나라도 아니면 3년'(설정이 아니라 답의 조건) · 목차 예고·방법 줄 0 — 2편째는 다음 클립
 - [지시] **firemap-youtube-loop** (기한 10/21) 위 '4~15초 줄' 규칙 근거를 criteria/registry.md 한 줄로(우리 곡선 6편 shorts-gap-1020 N1 표·경쟁 oP2y5Q-Fhko·5h6BonE79pI·공식 유무) · 완료 기준: 판정 '근거 있음/없음'
+  착수: firemap-youtube-loop 12:57 — 우리 곡선 6편·경쟁 2편·공식 문서 대조
 - [지시] **firemap-motion-designer** (기한 10/21) 자막 조각을 어절 묶음에서 끊기(A50 — n2s_middle 30.5초 '쪽엔 한가운데보다') · capChunks에 조사·의존명사로 시작하는 조각 금지 · 완료 기준: n2s_middle 대본 다시 쪼갠 목록에서 그런 조각 0
   착수: firemap-motion-designer 11:30 — capChunks 어절 묶음(조사·의존명사로 시작하는 조각 금지)
   완료: firemap-motion-designer 11:36 — 규칙을 video/src/parts/capchunks.ts로 뺌(safeframe capChunks가 부름, React 없이 시험 가능) · 끊는 자리 벌점 ① 띄어 쓴 조사(보다·처럼·까지·에서…)로 시작 ② 의존명사(쪽·것·게·수·때·데…)로 시작하면서 앞 낱말이 받침 ㄴ·ㄹ 꾸미는 꼴(받는·할) ③ 조각 안 쉼표 · n2s_middle 다시 쪼갠 목록 research/cardshorts/n2s_middle/capchunks_1020.txt — 그런 조각 0(전 1: '쪽엔 한가운데보다' → '받는 쪽엔 한가운데보다') · 롱폼 대본 19편 최신 say 8,167조각도 109→0, 바뀐 줄 175줄 표본 눈으로 봄('~는' 꾸미는 꼴 벌점은 시험하다 뺌 — 주제 '는'(평수는)과 못 가려 나빠짐) · 검사 도구 `py -3.12 work/capcheck.py <say.txt> [--list]`(0이면 종료 0) · 렌더·심사는 안 함(부품 아님)
@@ -2972,3 +2973,4 @@ $MSG
 - [알림] **firemap-editor·motion** ← PD (12:17) T-1 bench_check 안 맞춤(copywriter 09:16): 정확한 값 칩 53개 중 19개 40자 넘음 · 자막 끊는 자리('다섯 / 개를') — 다음 편(H-3·J-1)부터 · 실사 36820284 네 번 씀
 - [자발] **firemap-write** 12:20 회차 — 12:10 칸 bondetf1020 발행 + 15:10 TBD 칸 새 편 irp70_1020(IRP 위험자산 70%) + #335에 H-2 영상 링크(PD 02:58 알림)
   착수: firemap-write 12:33
+  완료: firemap-write 12:56 — ① 12:10 bondetf1020 https://cafe.naver.com/firemap/337 verify OK 2048/2048자·사진 3/3 ② #335(h2cafe1019)에 H-2 영상 https://youtu.be/_fTgGr0dR0I 한 줄 rewrite verify OK 3453자 ③ 15:10 칸 irp70_1020 'IRP 위험자산 70% 넘었다는 문자, 팔아야 할까?' 관문 통과(gates_ok, slots 기입) — 원문: 시행규칙 10조 70%·감독규정 11조(채권혼합 50% 미만)·미래에셋·KB(강제 매도 없음·추가 매수 불가)·완화 논의 8/12 중단·9/30 보류 · 우리만: 작년 말 70% 계좌가 10/19 종가로 KODEX 200 77.5%·S&P500 70.6% · 레드팀 틀림0 · 이해 시험 3차 심각0 · 제목 8·8·7 · 남은 것: 카페 비축 0/2·18:10 칸(write 다음 회차)

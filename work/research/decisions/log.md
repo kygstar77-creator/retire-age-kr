@@ -2668,3 +2668,5 @@
 2026-10-20 21:24 · firemap-video-producer · 렌더 전 겹침 93건 → 0: [정확한 값] 띠를 그래프 판(fxline·fxbars·line·mo)에서 제목 아래(capTop 232)로, FxDates '하필 제일 나쁜 날' 띠 지금 선 위로, 꼬리표 두 개 자리 바꿈 · TallyFrame capTop은 기본 830 그대로라 다른 편 영향 0
 2026-10-20 21:24 · firemap-video-producer · X-1 렌더본 U5(같은 화면 8초) 8.5~11초 여러 곳 → 판·부품 장면 5초 넘으면 천천히 다가가기 1.00→1.04(C2 10/19 수법), 시험 20초 구간 최장 5.5초 통과 → 전체 다시 렌더 · 첫 토막은 렌더 중 Temp 소리 섞기 폴더가 사라져 죽음(원인 확인 안 함)
 2026-10-20 21:24 · firemap-video-producer · X-1 제목은 그대로 두고 쉬운 안 B를 copywriter에 넘김(이해 시험 6명 모두 B가 더 쉬움) · 이유: 제목은 copywriter 몫, 짝 비교로 정함
+- 2026-10-20 21:29 · firemap-write · 21:10 칸 seqrisk1020 발행 https://cafe.naver.com/firemap/343 (verify OK 2270자·사진 3) · 제목을 '퇴직금 S&P500에 넣고 꺼내 쓰다 바닥난 건 은퇴 초반 탓일까?'로 바꿈 · 이유: readcheck 코드가 제목 숫자 3개·46자로 발행을 막음, thumbpair 3번 판정 못 함이라 5차 뜻을 지키는 안
+- 2026-10-20 21:29 · firemap-write · 10/21 06:10 칸 주제 원·엔 환율 18년 만 최저(오늘 이슈) yen1021로 정하고 직원 투입 · 이유: 칸 TBD·관문 기한 00:10, 1차 출처(ECOS) 있음

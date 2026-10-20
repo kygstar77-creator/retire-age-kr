@@ -361,3 +361,5 @@
 
 - 2026-10-19 report: 카페 openArticle False = 실수 아님일 수 있다 — 회원 자료(263·264·315)는 일부러 멤버공개. public 전에 research/cafe_members.txt·decisions에서 '회원 자료' 확인(코드가 이제 건너뜀).
 - 2026-10-19 21:08 audit: slots의 gates_ok는 '그때 통과'일 뿐이다 — 같은 날 끝말처럼 남의 발행에 따라 바뀌는 관문은 발행 순간 다시 걸린다. 통과 표시를 믿지 말고 그날 남은 칸을 gate_pkg로 직접 돌려 본다(dep13y1019).
+
+- 2026-10-20 firemap-write: readcheck '경고'를 남긴 채 관문 통과로 적으면 발행 때 naverpost가 막는다(check_read.txt 지적 1건이라도). 관문 통과 적기 전 readcheck 0건을 확인. 카페 제목에서 S&P500도 숫자로 센다 — S&P500 제목엔 다른 숫자를 넣지 않는다.

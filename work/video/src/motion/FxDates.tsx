@@ -103,7 +103,7 @@ export const FxDates: React.FC<FxDatesProps> = (p) => {
       {peakGap > 0.05 && <div style={{position: 'absolute', left: X(pk.i) + 30, top: yn - 104,   /* 10/20 PD: 가운데 높이면 '석 달 전' 이름표(1,507.1원)를 덮음(overlap) — 지금 선 바로 위로 */ opacity: peakGap, background: T.ink, borderRadius: 12, padding: '12px 24px', ...F, fontSize: 32, fontWeight: 700, color: T.dink, whiteSpace: 'nowrap'}}>{p.peakTag}</div>}
       {/* 2장: 막대 머리·이름·값 */}
       {bars && <div style={{...F, position: 'absolute', left: BX(0) - 24, top: 350, fontSize: 28, fontWeight: 700, color: T.ink2, whiteSpace: 'nowrap',
-        opacity: barIn * (f >= allAt - 3 && f < lowAt + 8 ? g(f, lowAt, 8) : 1)}}>{p.barHead}</div>}{/* X-1 PD 10/16: '네 날짜 모두' 띠가 덮는 동안 막대 머리를 숨김(overlap 1:07) */}
+        opacity: barIn * (f >= allAt - 3 && f < lowAt + 16 ? g(f, lowAt + 8, 8) : 1)}}>{p.barHead}</div>}{/* X-1 PD 10/16: '네 날짜 모두' 띠가 덮는 동안 막대 머리를 숨김(overlap 1:07) */}
       {bars && <div style={{...F, position: 'absolute', left: BX(0) - 150, width: 120, textAlign: 'right', top: by(p.base) - 18, fontSize: 28, fontWeight: 700, color: T.ink, opacity: g(f, B2[0] + 20), whiteSpace: 'nowrap'}}>{p.baseText}</div>}
       {bars && p.marks.map((mk, k) => <div key={k} style={{position: 'absolute', left: BX(k) - 40, width: bw + 80, textAlign: 'center', top: BY0 + 10, opacity: barIn}}>
         <div style={{...F, fontSize: 26, fontWeight: 700, color: hot(k) ? T.ink : T.ink2, whiteSpace: 'nowrap'}}>{mk.name}</div>

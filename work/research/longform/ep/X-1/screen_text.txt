@@ -538,7 +538,7 @@
 [scenes.65.data.tags.1.2] 가장 비싸던 날 한 번에 → 86,116,830원
 [scenes.65.data.tags.1.4] up
 [scenes.65.data.tags.2.2] 매달 나눠서 → 92,290,941원
-[scenes.65.data.tags.2.4] down
+[scenes.65.data.tags.2.4] up
 [scenes.65.data.chapter] 질문 ③
 [scenes.66.lines.0.text] 천원, 이천원씩 매일 모으는 것도 매일 바꾸는 거라, 바꿀 때마다 그 회사 수수료가 붙습니다.
 [scenes.66.data.license] Pexels 6963836 무료(cottonbro studio)

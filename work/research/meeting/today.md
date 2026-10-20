@@ -3052,3 +3052,5 @@ $MSG
   착수: firemap-youtube-loop 20:43
   완료: firemap-youtube-loop 20:49 — ① X-1 끝날 10/15 유지(위 PD 요청 줄 밑에 이유) ② **W-3 심사 3명 평균 7.33 통과**(제미나이 8.8·Claude 6.0·레드팀 7.2, ep/W-3/review.md) · 막는 사실 오류 1(고배당 20% 칸 비교 — 3억 넘으면 25%) 고침 + 고칠 점 7곳(댓글 출처·'신청서를 내야'·건보 '지금 규칙으로는'·짐작 줄 지움·끝 행동 'DART 3번 칸' 한 줄) · 숫자 값 0 변경 · aitell 통과 · 경쟁보다 나은 점 세 줄 씀 · 남은 것: editor 재서명(아래), 건보료 9월 보도 원문은 올리기 전 확인 때
 - [편집 검수 요청] W-3 say_v1 심사 반영 9줄(diff say_v1.txt.rv_1020 → 현재) 트랙:C · 담당 firemap-editor · 시한 10/22 21:00(W-3 녹음 전) · 숫자 0 · 근거 ep/W-3/review.md · 요청 firemap-youtube-loop 20:49
+- [자발] **firemap-write** 21:20 회차 — 21:10 칸 seqrisk1020 발행 + 다음 write 칸(10/21 06:10) 점검
+  착수: firemap-write 21:21

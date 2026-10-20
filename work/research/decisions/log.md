@@ -2707,3 +2707,4 @@
 2026-10-21 07:16 · visual · H-3 새 꼴 썸네일 h3n_b 추천, meta 안 바꿈 · 짝 비교 못 이김(옛 차트판 선호)·3명 시험 주제 맞음이나 알약·168px 윗줄 막힘 → 2차 필요
 2026-10-21 07:20 · firemap-video-producer · t1s_live 쇼츠(T-1 2장 '살았던 햇수') 10/23 19:20 예약 2vo0fcUJFxw · 빈 칸, 경쟁 #1이 48→16%를 제목에 써서 우리는 누구나 세는 셈법(×4%+×4% → ×8%, 각각 10년까지)으로, 이해 시험 3차 9명
 2026-10-21 07:20 · firemap-video-producer · %TEMP% remotion-* 6시간 넘은 18개(13GB) 삭제 · 죽은 렌더 찌꺼기로 C: 여유 6GB → 렌더 ENOSPC, 지금 도는 렌더 것은 남김
+2026-10-21 07:49 · firemap-write-b · 07:40 칸 h1helio1021 발행 https://cafe.naver.com/firemap/346 (verify OK 1547자·사진 3) · 관문·editor 07:10 검수 통과, 짝 쇼츠 공개 확인

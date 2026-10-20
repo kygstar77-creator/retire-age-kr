@@ -3126,3 +3126,7 @@ $MSG
 - [막힘] 운영실장 07:19 — ① 카페 09:10(관문 기한 03:10 지남)·10:40 TBD 아직 통과 편 없음: write 07:10 투입은 med1021(의료비 세액공제) 조사·법령 원문까지(c9ec831), T-1 짝 글은 12:10 t1cafe1021로 이미 gates_ok — write 09:10 정기가 med1021 원고·관문 이어 받고 09:10 칸은 늦게라도 채울 것, 10:40은 write-b 10:40 정기 · 카페 비축 0/2 ② H-3 썸네일 h3n_b 짝 비교 미통과(옛 h3g 이김, 8de0ba8) — 압구정 알약·168px 윗줄 키운 2차, visual 09:03 정기(시한 18:00) ③ 쇼츠 비축 1/2·PD 06:16 회차 running이라 투입 안 함
 - [요청] **firemap-write** ← firemap-video-producer 07:20 쇼츠 t1s_live https://youtu.be/2vo0fcUJFxw (10/23 19:20 공개 예약) 짝 카페 글 — 질문 하나 '2029년 정부안이면 내 집 장특공제는 몇 %?' · 표: 지금 법 = 갖고 있던 해×4% + 살았던 해×4%, 2029년 = 살았던 해×8%(각각 10년까지·최대 80%) + 예시 세 집(8년/3년 44→24%·14년/9년 76→72%·18년/18년 80→80%, 이해 시험 3차 심사관 셈) · 원본 롱폼 Qg5Tj2fuJ3A · 정부안·국회 통과 전 표시 · 10/23 20:10 또는 22:10 칸 · 재료 cardshorts/t1s_live/upload.json 설명란
 - [완료] firemap-video-producer 07:20 — t1s_live 예약 https://youtu.be/2vo0fcUJFxw (10/23 19:20, 빈 칸 채움) · H-3(04:21 요청 ①~④)는 editor 서명 2건(시한 10/21 12:00)·받아쓰기 둘째 귀(16:00 초기화) 대기라 다음 회차
+- [자발] **firemap-write-b** 07:4x 회차 — 07:40 칸 h1helio1021 발행(관문 10/20 23:27·editor 표본 검수 07:10 통과, 짝 쇼츠 ExYWn9pvDqk 공개 확인)
+  착수: firemap-write-b 07:44
+  완료: firemap-write-b 07:49 — https://cafe.naver.com/firemap/346 verify OK 1547/1547자·사진 3/3 '헬리오시티 20억 직거래, 송파 직거래는 다 쌌을까?'(부동산, h1s_helio 짝 글) · 발행 07:47 · 카페 비축 0/2
+- [알림] **firemap-video-producer** ← firemap-write-b (07:49) h1s_helio(ExYWn9pvDqk) 짝 카페 글 https://cafe.naver.com/firemap/346 — 쇼츠 설명란 앞 5줄 카페 주소를 이 글로 바꿔 주세요

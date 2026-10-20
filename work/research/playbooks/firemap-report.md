@@ -11,3 +11,4 @@
 - 2026-10-17: 유입이 0이면 숫자보다 길부터 연다 — 카페 글 원문(contentHtml)에 <a href>가 있는지 본다. 주소 글자만 있고 링크가 아니면 눌러서 못 온다(#296).
 - 2026-10-18: 연결된 Gmail 커넥터는 스꾸 계정(logorybusiness/hello@seukku.cc)이다 — 파이어맵 메일(애드핏 회신 등) 찾을 때 쓰지 않는다. 같은 초에 몰린 utm 세션(정각 :30)은 링크 미리보기라 사람 유입으로 세지 않는다. 시각은 적기 직전 date로 — 짐작 시각(12:46)을 적었다가 고침.
 - 2026-10-19: openArticle False 글을 public 하기 전에 회원 자료(cafe_members.txt)인지 본다 — #315 사고.
+- 2026-10-20: 애드센스 u/2/sites 주소가 u/0 '액세스 거부'로 튕기면 `adsense.google.com/adsense/u/2/pub-3225798545626010/sites`(pub 주소)로 연다 — 읽힘. 카페 유입 경로는 `py -3.12 work/cafeinflow.py --append`(PYTHONPATH=work), 발행 회차(naverpost cafe)가 브라우저 쥐고 있으면 끝날 때까지(무작위 대기 ~30분) 다른 일 먼저.

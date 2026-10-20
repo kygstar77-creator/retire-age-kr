@@ -39,5 +39,5 @@
 | firemap-ai-lab | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 
 | firemap-bizdev | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
-| firemap-report | ① 10/20 12:30 utm cafe 10/19 완결값(#325 계산기 링크 첫날)과 18:10 연봉 실수령 칸 <a href> 확인 ② 쿠팡·애드센스·애드핏 화면 다시 읽기(10/19 못 읽음, ads.txt 같은 값 10/21까지면 얼어붙은 지표) ③ X-CAFE-CALC 링크 글 vs 없는 글 utm cafe 날짜별 표를 revenue.md에 쌓기(판정 10/26) |
+| firemap-report | ① 10/21 12:30 애드센스 값이 10/16~21 같으면 revenue.md·보고에 '얼어붙은 지표' 표시 + 재심사 길(사이트 개발 중단이라 결정 필요 줄) ② X-CAFE-CALC 링크 글 vs 없는 글 utm cafe 날짜별 표 매일 쌓기(판정 10/26) — 10/19 #325 0 · 18:10 연봉 실수령 칸 <a href> 확인 ③ cafeinflow.py를 report 회차 정규 단계로(매일 --append) + 홈판 상위 글 주제 묶음 같이 찍기 |
 | firemap-finishline-check | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

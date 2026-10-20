@@ -2,7 +2,7 @@
  "name": "g1s_asym",
  "ep": "G-1",
  "from_long": "xBTZtRp5lMs",
- "mp4": "work/video/out/g1s_asym_v3b_ds.mp4",
+ "mp4": "work/video/out/g1s_asym_live_ds.mp4",
  "layout": "c2person",
  "publishAt": "2026-10-22T07:20:00+09:00",
  "use_after": "2026-10-13 11:30 (G-1 롱폼 공개 뒤)",
@@ -12,8 +12,8 @@
  "same_day_pair": "10/22 19:20 h1s_forest(H-1) — 다른 롱폼·다른 질문",
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "R3wiLBTOC6M",
- "uploaded_at": "2026-10-17 01:23:07",
+ "id": "yTuQC1_dvSE",
+ "uploaded_at": "2026-10-20 15:56:52",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-21T22:20:00Z",
@@ -21,7 +21,7 @@
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
  },
- "v": 5,
+ "v": 6,
  "replaced": [
   {
    "id": "ZK219BbhJSA",
@@ -54,6 +54,15 @@
     "privacyStatus": "private",
     "publishAt": "2026-10-21T22:20:00Z"
    }
+  },
+  {
+   "id": "R3wiLBTOC6M",
+   "unscheduled_at": "2026-10-20 15:56:52",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": "2026-10-21T22:20:00Z"
+   }
   }
- ]
+ ],
+ "note_v6": "10/20 15:56 PD: 10/19 C2P 코드(흰 카드·진행 막대 뺌)로 다시 렌더 — props·말·숫자 그대로"
 }

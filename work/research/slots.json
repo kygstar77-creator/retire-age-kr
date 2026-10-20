@@ -2061,10 +2061,10 @@
   {
    "at": "2026-10-20 18:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "divdrop1020",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 월배당 ETF(4,280) → https://firemap.kr/dividend — 글 질문이 계산기와 맞을 때만 줄 넣기"
+   "gates_ok": "2026-10-20 15:56",
+   "note": "firemap-meeting 2026-10-17 21:44: 카페 하루 12칸 뼈대(레드팀: 10/19·20 칸 없음) · firemap-write 10/18 06:2x 계산기 칸(회의 지시 ⓒ, demand.py 10/18): 월배당 ETF(4,280) → https://firemap.kr/dividend — 글 질문이 계산기와 맞을 때만 줄 넣기 | firemap-write 15:56: divdrop1020 '고배당 ETF는 급락한 날 덜 빠졌는데 왜 2년 반 수익은 졌을까?'(ETF·배당, 오늘 코스피 -3.73% 이슈) 관문 통과 — 코스피 -3% 이하 45일 직접 집계(네이버 일별 시세 10/20 종가)·2022년 반대 결과·분배금 Yahoo↔네이버 대조 · 레드팀 틀림1·오해3 반영 · 이해 시험 6차(18명) · 제목 8·8·8·표지 7·7·7 · editgate auto · 계산기 줄 없음(맞는 계산기 없음)"
   },
   {
    "at": "2026-10-20 19:20",
@@ -2246,10 +2246,10 @@
    "kind": "shorts",
    "item": "g1s_asym",
    "owner": "firemap-video-producer",
-   "gates_ok": "2026-10-16 04:13",
+   "gates_ok": "2026-10-20 15:57",
    "item_pkg": "work/research/cardshorts/g1s_asym",
    "published": "예약 2026-10-22T07:20:00+09:00 https://youtu.be/R3wiLBTOC6M (10/16 오후 쇼츠 디자인 담당 안전 영역 틀 v2 재렌더 교체 — 옛 AZgBJ5Ltdic 예약 풀고 비공개, 삭제 안 함) · 이전: https://youtu.be/AZgBJ5Ltdic (10/16 쇼츠 담당 안전 영역 틀 재렌더 교체 — 옛 ZK219BbhJSA 예약 풀고 비공개 · private+publishAt 21일 22:20Z, 합성 표시 update True)",
-   "note": "firemap-video-producer 2026-10-16 04:13: G-1 롱폼(xBTZtRp5lMs) '1월에 산 금 34% 손해, 본전까지 51%(337만원)' 클립, c2person 틀, Pexels 참고 영상, Chirp 새 줄 1(첫 줄) — 관문 cardshorts/g1s_asym/review.md(58세 이해 시험 12차) · 같은 날 19:20은 H-1 h1s_forest · yt_pair: R3wiLBTOC6M(10/16 오후 v2 교체, 옛 AZgBJ5Ltdic) · 그 전 AZgBJ5Ltdic(10/16 교체, 옛 ZK219BbhJSA)(쇼츠 짝 카페 글 10/22 20:10 또는 22:10, firemap-write)"
+   "note": "2026-10-20 15:57 PD: v6 판 없는 C2P(10/19 코드) 다시 렌더 교체 — https://youtu.be/yTuQC1_dvSE (private+publishAt 10/22 07:20), 옛 R3wiLBTOC6M 예약 해제 확인(비공개, 삭제 0) · props·말·숫자 그대로 · 흰 판 ⑥·⑦ 경고 0 · 남은 확인: 공개 전날 금값(기준 10/6) · yt_pair: yTuQC1_dvSE | firemap-video-producer 2026-10-16 04:13: G-1 롱폼(xBTZtRp5lMs) '1월에 산 금 34% 손해, 본전까지 51%(337만원)' 클립, c2person 틀, Pexels 참고 영상, Chirp 새 줄 1(첫 줄) — 관문 cardshorts/g1s_asym/review.md(58세 이해 시험 12차) · 같은 날 19:20은 H-1 h1s_forest · yt_pair: R3wiLBTOC6M(10/16 오후 v2 교체, 옛 AZgBJ5Ltdic) · 그 전 AZgBJ5Ltdic(10/16 교체, 옛 ZK219BbhJSA)(쇼츠 짝 카페 글 10/22 20:10 또는 22:10, firemap-write)"
   },
   {
    "at": "2026-10-22 07:40",

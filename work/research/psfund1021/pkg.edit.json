@@ -1,0 +1,7 @@
+{
+ "by": "firemap-editor",
+ "at": "2026-10-21 11:03",
+ "sha": "02ff125a5b5ad94fae4dea5e0d1dc4ac11de7e10cef6f0d1c5c5d1c696ef17bb",
+ "sha_of": "title.txt+c??.txt bytes",
+ "note": "고침 5곳: c05 첫 줄이 c00 숫자 문장과 같은 문장이라 바꿈 · c03 조문 번호 본문에서 뺌(출처에 있음)·'연금을 받기 시작하기 전의'→'받기 전인'·165만원 문장 주어 보강 · c01 '펀드 가격' 중복 제거 · c05 '현행'→'기준'. 숫자·사실·중립 문구 그대로. 검사: readcheck 지적 0, spoken 통과, frame 통과, gate_pkg True(AI 티 1.4/12), selfcheck 사실 지적 0(말투 2건은 출처 줄이라 유지)"
+}

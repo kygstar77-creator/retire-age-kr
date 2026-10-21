@@ -1,0 +1,10 @@
+{
+ "model": "chirp3-hd",
+ "voice": "ko-KR-Chirp3-HD-Charon",
+ "speakingRate": 1.1,
+ "markup": true,
+ "say_v": 2,
+ "nat_gate": true,
+ "pause_v": 2,
+ "note": "2026-10-21 PD: 새 편 기본(H-3 tts.json과 같은 설정 — Charon 1.1·쉼 태그·say_v 2·nat_gate·pause_v 2)"
+}

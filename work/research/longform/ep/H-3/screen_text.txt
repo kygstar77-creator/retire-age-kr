@@ -10,984 +10,996 @@
 [scenes.1.data.license] 지도 자료 © OpenStreetMap 기여자 (ODbL) · 파이어맵 그림
 [scenes.2.lines.0.text] 송파구 신천동에선 85㎡ 정도, 흔히 국민평형이라 부르는 가장 흔한 크기였어요.
 [scenes.2.lines.1.text] 양천구 목동신시가지에선 주소가 목동인 단지들만 볼게요.
-[scenes.2.lines.2.text] 거기선 그보다 11㎡ 정도 넓은 집이었고요.
 [scenes.2.data.license] 파이어맵 자체 그림
-[scenes.3.lines.0.text] 강남구 압구정동에선 그 가격에 팔린 집이 한 건도 없었습니다.
-[scenes.3.lines.0.cap] 30억 안팎(27~33억) 거래 · 신천동 175건 전용 중앙 85㎡ · 목동신시가지 1~7단지(법정동 목동) 67건 96㎡ · 압구정동 0건 · 96−85 = 11㎡(전용 약 3.3평)
-[scenes.3.lines.1.text] 가장 싼 거래도 35억이 넘었거든요.
-[scenes.3.data.title] 강남구 압구정동 · 30억 안팎
-[scenes.3.data.v] 0건
-[scenes.3.data.s] 가장 싼 거래도 35억 넘음
-[scenes.3.data.icon] Ban
-[scenes.3.data.c] rise
-[scenes.3.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.4.lines.0.text] 댓글에서 많이 물은 압구정 65평 집값이 맞는지도 숫자로 볼게요.
-[scenes.4.lines.1.text] 지금 사면 재건축 조합원이 못 되는 경우와, 세입자 있는 집을 살 수 있는 특례도 정리했어요.
-[scenes.4.data.title] 오늘 같이 볼 것
-[scenes.4.data.icon] MessageCircleQuestion
-[scenes.4.data.source] 유튜브 댓글 · 네이버 검색어 자동완성
-[scenes.4.data.items.0] 65평 130억이라고요?
-[scenes.4.data.items.1] 목동 12단지 20억 맞나요?
-[scenes.4.data.items.2] 재건축 조합원이 못 되는 경우
-[scenes.4.data.items.3] 세입자 있는 집을 살 수 있는 특례
-[scenes.5.lines.0.text] 처음 보시는 분을 위해 세 동네부터 짧게 소개할게요.
-[scenes.5.data.n] 기초
-[scenes.5.data.q] 세 동네, 처음 보시는 분을 위해
-[scenes.5.data.from] 강남구 압구정동 · 송파구 신천동 · 양천구 목동
-[scenes.6.lines.0.text] 압구정동은 강남구, 한강 바로 남쪽 동네예요.
-[scenes.6.lines.1.text] 현대아파트와 한양아파트가 모여 있는데, 실거래 자료에 적힌 지은 해로 보면 1970년대 중반부터 지어진 단지들이에요.
-[scenes.6.data.license] Pexels 38029457 무료(FREE VIDEO HAPPY)
-[scenes.6.data.say] 압구정, 한강 바로 남쪽
-[scenes.6.data.side] left
-[scenes.7.lines.0.text] 신천동은 송파구, 잠실 바로 옆이에요.
-[scenes.7.lines.1.text] 이 동네 거래는 대부분 파크리오와 장미아파트에서 나왔어요.
-[scenes.7.lines.2.text] 파크리오는 비교적 새 단지고, 장미는 1979년에 지은 오래된 단지예요.
-[scenes.7.data.license] Pexels 37500921 무료(FREE VIDEO HAPPY)
-[scenes.7.data.say] 신천동, 잠실 바로 옆
+[scenes.3.lines.0.text] 거기선 그보다 11㎡ 정도 넓은 집이었고요.
+[scenes.3.data.license] Pexels 29303349 무료(성창 남)
+[scenes.3.data.say] 목동신시가지는 조금 더 넓게
+[scenes.3.data.side] left
+[scenes.4.lines.0.text] 강남구 압구정동에선 그 가격에 팔린 집이 한 건도 없었습니다.
+[scenes.4.lines.0.cap] 30억 안팎(27~33억) 거래 · 신천동 175건 전용 중앙 85㎡ · 목동신시가지 1~7단지(법정동 목동) 67건 96㎡ · 압구정동 0건 · 96−85 = 11㎡(전용 약 3.3평)
+[scenes.4.lines.1.text] 가장 싼 거래도 35억이 넘었거든요.
+[scenes.4.data.title] 강남구 압구정동 · 30억 안팎
+[scenes.4.data.v] 0건
+[scenes.4.data.s] 가장 싼 거래도 35억 넘음
+[scenes.4.data.icon] Ban
+[scenes.4.data.c] rise
+[scenes.4.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.5.lines.0.text] 댓글에서 많이 물은 압구정 65평 집값이 맞는지도 숫자로 볼게요.
+[scenes.5.lines.1.text] 지금 사면 재건축 조합원이 못 되는 경우와, 세입자 있는 집을 살 수 있는 특례도 정리했어요.
+[scenes.5.data.title] 오늘 같이 볼 것
+[scenes.5.data.icon] MessageCircleQuestion
+[scenes.5.data.source] 유튜브 댓글 · 네이버 검색어 자동완성
+[scenes.5.data.items.0] 65평 130억이라고요?
+[scenes.5.data.items.1] 목동 12단지 20억 맞나요?
+[scenes.5.data.items.2] 재건축 조합원이 못 되는 경우
+[scenes.5.data.items.3] 세입자 있는 집을 살 수 있는 특례
+[scenes.6.lines.0.text] 처음 보시는 분을 위해 세 동네부터 짧게 소개할게요.
+[scenes.6.data.n] 기초
+[scenes.6.data.q] 세 동네, 처음 보시는 분을 위해
+[scenes.6.data.from] 강남구 압구정동 · 송파구 신천동 · 양천구 목동
+[scenes.7.lines.0.text] 압구정동은 강남구, 한강 바로 남쪽 동네예요.
+[scenes.7.lines.1.text] 현대아파트와 한양아파트가 모여 있는데, 실거래 자료에 적힌 지은 해로 보면 1970년대 중반부터 지어진 단지들이에요.
+[scenes.7.data.license] Pexels 38029457 무료(FREE VIDEO HAPPY)
+[scenes.7.data.say] 압구정, 한강 바로 남쪽
 [scenes.7.data.side] left
-[scenes.8.lines.0.text] 목동은 양천구예요. 목동신시가지라는 큰 단지가 열네 개 단지로 나뉘어 있습니다.
-[scenes.8.lines.1.text] 모두 1980년대 중후반에 지었고요.
-[scenes.8.lines.1.cap] 국토교통부 실거래 buildYear · 압구정 현대·신현대·한양·미성 1976~1987 · 신천 장미1·2 1979 · 장미3 1984 · 파크리오 2008 · 신천동 1년 매매 311건 중 파크리오 164·장미 73 · 목동신시가지 1단지 1985 · 2~7단지 1986 · 8~10·13·14단지 1987 · 11·12단지 1988 · 세대 26,635(건축물대장)
-[scenes.8.data.license] AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님
-[scenes.8.data.badge] AI 생성
-[scenes.9.lines.0.text] 세 동네 모두 지금은 토지거래허가구역이라, 집을 사려면 구청 허가부터 받아야 해요.
-[scenes.9.data.license] 지도 자료 © OpenStreetMap 기여자 (ODbL) · 파이어맵 그림
-[scenes.10.lines.0.text] 그래서 오늘 숫자는 세 가지 사람을 위한 거예요. 이 동네에서 집을 사려는 사람, 세 들어 살려는 사람, 이미 집이 있는 사람이요.
-[scenes.10.data.title] 오늘 숫자는 이런 분께
-[scenes.10.data.rows.0.0] 이 동네 집을 사려는 사람
-[scenes.10.data.rows.1.0] 세 들어 살려는 사람
-[scenes.10.data.rows.2.0] 이미 집이 있는 사람
-[scenes.10.data.icon] Users
-[scenes.10.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.11.lines.0.text] 넓이는 전부 집 안 넓이, 전용면적 ㎡로 말씀드릴게요.
-[scenes.11.lines.1.text] 감이 안 오시면, ㎡를 3.3으로 나누면 평이 됩니다.
-[scenes.11.lines.2.text] 국민평형은 집 안 넓이로 26평 정도예요.
-[scenes.11.data.license] 파이어맵 자체 그림
-[scenes.12.lines.0.text] 광고에 나오는 평수는 복도 같은 공용 부분까지 넣어서 이보다 커요. 그래서 오늘은 ㎡로만 비교합니다.
-[scenes.12.lines.0.cap] 1평 = 3.3058㎡ · 전용 85㎡ = 25.7평 · 전용 96㎡ = 29.0평 · 광고 평형(공급면적)은 공용 부분 포함 — 전용과 섞지 않음
-[scenes.12.data.title] 광고에 나오는 평수
-[scenes.12.data.v] 공용 부분 포함
-[scenes.12.data.s] 오늘은 집 안 넓이(전용 ㎡)로만 비교
-[scenes.12.data.icon] Ruler
-[scenes.12.data.c] ink
-[scenes.12.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.13.lines.0.text] 이번에도 직접 다니는 대신 신고 자료로, 국토교통부에 신고된 최근 1년 치 거래만 셌습니다.
-[scenes.13.lines.0.cap] 매매 압구정동 157건 · 신천동 311건 · 목동 675건 · 신정동 925건 · 2026년 10월 거래는 신고 기한이 30일이라 덜 들어옴
-[scenes.13.data.n] 1장
-[scenes.13.data.q] 어떻게 셌나, 그리고 이 1년의 조건
-[scenes.13.data.from] 국토교통부 아파트 매매 실거래 · 2025.11~2026.10 계약 · 해제·공공기관 매수 제외
-[scenes.14.lines.0.text] 가격이 딱 30억인 거래만 센 건 아니에요.
-[scenes.14.data.license] Pexels 8471105 무료(Thirdman)
-[scenes.14.data.say] 딱 그 값만 센 게 아니다
-[scenes.14.data.side] left
-[scenes.15.lines.0.text] 위아래로 3억씩 늘려서 셌어요.
-[scenes.15.lines.0.cap] 30억 안팎 = 27억~33억 거래
-[scenes.15.data.title] 30억 안팎
-[scenes.15.data.v] 27억 ~ 33억
-[scenes.15.data.s] 위아래로 3억씩 넓혀 셈
-[scenes.15.data.icon] Calculator
-[scenes.15.data.c] ink
-[scenes.15.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.16.lines.0.text] 평당 가격은 전용면적, 그러니까 집 안에서 실제로 쓰는 넓이로 나눴습니다.
-[scenes.16.lines.0.cap] 국토교통부공고 제2025-1219호(2025.10.15) · 지정기간 2025.10.20~2026.12.31 · 서울 25개 구 아파트·연립·다세대 · 압구정 아파트지구·목동 택지개발 14개 단지는 서울시가 2021.4.27부터 따로 지정(2026.4.1 재지정, ~2027.4.26)
-[scenes.16.data.title] 평당 가격
-[scenes.16.data.v] 전용면적으로 나눔
-[scenes.16.data.s] 집 안에서 실제로 쓰는 넓이
-[scenes.16.data.icon] Ruler
-[scenes.16.data.c] ink
-[scenes.16.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.17.lines.0.text] 허가구역이라, 원칙적으로 2년은 그 집에 직접 살아야 해요.
-[scenes.17.lines.0.cap] 국토교통부 토지거래허가구역 업무처리기준(2025.4.21) p.1 '주택을 취득하는 경우 2년간 이용의무(실거주)' · 부동산 거래신고법 시행령 §14② 1호 자기 거주 목적 허가 = 취득일부터 2년 · 절차·예외는 6장
-[scenes.17.data.license] Pexels 8482325 무료(Thirdman)
-[scenes.17.data.say] 허가 먼저, 그리고 직접 살기
-[scenes.17.data.side] left
-[scenes.18.lines.0.text] 그러니까 오늘 보는 거래는 대부분 직접 들어가 살 사람이 산 가격이라고 보시면 됩니다.
-[scenes.18.lines.1.text] 이 조건이 가격에 얼마나 영향을 줬는지는 자료에 나오지 않아요.
-[scenes.18.data.title] 오늘 보는 거래
-[scenes.18.data.v] 대부분 직접 살 사람
-[scenes.18.data.s] 허가구역 · 2년 실거주 · 가격 영향은 자료에 없음
-[scenes.18.data.icon] Home
+[scenes.8.lines.0.text] 신천동은 송파구, 잠실 바로 옆이에요.
+[scenes.8.lines.1.text] 이 동네 거래는 대부분 파크리오와 장미아파트에서 나왔어요.
+[scenes.8.lines.2.text] 파크리오는 비교적 새 단지고, 장미는 1979년에 지은 오래된 단지예요.
+[scenes.8.data.license] Pexels 37500921 무료(FREE VIDEO HAPPY)
+[scenes.8.data.say] 신천동, 잠실 바로 옆
+[scenes.8.data.side] left
+[scenes.9.lines.0.text] 목동은 양천구예요. 목동신시가지라는 큰 단지가 열네 개 단지로 나뉘어 있습니다.
+[scenes.9.lines.1.text] 모두 1980년대 중후반에 지었고요.
+[scenes.9.lines.1.cap] 국토교통부 실거래 buildYear · 압구정 현대·신현대·한양·미성 1976~1987 · 신천 장미1·2 1979 · 장미3 1984 · 파크리오 2008 · 신천동 1년 매매 311건 중 파크리오 164·장미 73 · 목동신시가지 1단지 1985 · 2~7단지 1986 · 8~10·13·14단지 1987 · 11·12단지 1988 · 세대 26,635(건축물대장)
+[scenes.9.data.license] AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님
+[scenes.9.data.badge] AI 생성
+[scenes.10.lines.0.text] 세 동네 모두 지금은 토지거래허가구역이라, 집을 사려면 구청 허가부터 받아야 해요.
+[scenes.10.data.license] 지도 자료 © OpenStreetMap 기여자 (ODbL) · 파이어맵 그림
+[scenes.11.lines.0.text] 그래서 오늘 숫자는 세 가지 사람을 위한 거예요. 이 동네에서 집을 사려는 사람, 세 들어 살려는 사람, 이미 집이 있는 사람이요.
+[scenes.11.data.title] 오늘 숫자는 이런 분께
+[scenes.11.data.rows.0.0] 이 동네 집을 사려는 사람
+[scenes.11.data.rows.1.0] 세 들어 살려는 사람
+[scenes.11.data.rows.2.0] 이미 집이 있는 사람
+[scenes.11.data.icon] Users
+[scenes.11.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.12.lines.0.text] 넓이는 전부 집 안 넓이, 전용면적 ㎡로 말씀드릴게요.
+[scenes.12.data.license] Pexels 6962695 무료(Mikhail Nilov)
+[scenes.12.data.say] 넓이는 집 안 넓이로
+[scenes.12.data.side] left
+[scenes.13.lines.0.text] 감이 안 오시면, ㎡를 3.3으로 나누면 평이 됩니다.
+[scenes.13.lines.1.text] 국민평형은 집 안 넓이로 26평 정도예요.
+[scenes.13.data.license] 파이어맵 자체 그림
+[scenes.14.lines.0.text] 광고에 나오는 평수는 복도 같은 공용 부분까지 넣어서 이보다 커요. 그래서 오늘은 ㎡로만 비교합니다.
+[scenes.14.lines.0.cap] 1평 = 3.3058㎡ · 전용 85㎡ = 25.7평 · 전용 96㎡ = 29.0평 · 광고 평형(공급면적)은 공용 부분 포함 — 전용과 섞지 않음
+[scenes.14.data.title] 광고에 나오는 평수
+[scenes.14.data.v] 공용 부분 포함
+[scenes.14.data.s] 오늘은 집 안 넓이(전용 ㎡)로만 비교
+[scenes.14.data.icon] Ruler
+[scenes.14.data.c] ink
+[scenes.14.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.15.lines.0.text] 이번에도 직접 다니는 대신 신고 자료로, 국토교통부에 신고된 최근 1년 치 거래만 셌습니다.
+[scenes.15.lines.0.cap] 매매 압구정동 157건 · 신천동 311건 · 목동 675건 · 신정동 925건 · 2026년 10월 거래는 신고 기한이 30일이라 덜 들어옴
+[scenes.15.data.n] 1장
+[scenes.15.data.q] 어떻게 셌나, 그리고 이 1년의 조건
+[scenes.15.data.from] 국토교통부 아파트 매매 실거래 · 2025.11~2026.10 계약 · 해제·공공기관 매수 제외
+[scenes.16.lines.0.text] 가격이 딱 30억인 거래만 센 건 아니에요.
+[scenes.16.data.license] Pexels 8471105 무료(Thirdman)
+[scenes.16.data.say] 딱 그 값만 센 게 아니다
+[scenes.16.data.side] left
+[scenes.17.lines.0.text] 위아래로 3억씩 늘려서 셌어요.
+[scenes.17.lines.0.cap] 30억 안팎 = 27억~33억 거래
+[scenes.17.data.title] 30억 안팎
+[scenes.17.data.v] 27억 ~ 33억
+[scenes.17.data.s] 위아래로 3억씩 넓혀 셈
+[scenes.17.data.icon] Calculator
+[scenes.17.data.c] ink
+[scenes.17.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.18.lines.0.text] 평당 가격은 전용면적, 그러니까 집 안에서 실제로 쓰는 넓이로 나눴습니다.
+[scenes.18.lines.0.cap] 국토교통부공고 제2025-1219호(2025.10.15) · 지정기간 2025.10.20~2026.12.31 · 서울 25개 구 아파트·연립·다세대 · 압구정 아파트지구·목동 택지개발 14개 단지는 서울시가 2021.4.27부터 따로 지정(2026.4.1 재지정, ~2027.4.26)
+[scenes.18.data.title] 평당 가격
+[scenes.18.data.v] 전용면적으로 나눔
+[scenes.18.data.s] 집 안에서 실제로 쓰는 넓이
+[scenes.18.data.icon] Ruler
 [scenes.18.data.c] ink
-[scenes.18.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.19.lines.0.text] 사려는 분이 알아 둘 규칙은, 세 동네 숫자부터 보고 나서 말씀드릴게요.
-[scenes.19.data.license] Pexels 30975009 무료(Stephen Leonardi)
-[scenes.19.data.say] 먼저 세 동네 숫자부터
+[scenes.18.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.19.lines.0.text] 허가구역이라, 원칙적으로 2년은 그 집에 직접 살아야 해요.
+[scenes.19.lines.0.cap] 국토교통부 토지거래허가구역 업무처리기준(2025.4.21) p.1 '주택을 취득하는 경우 2년간 이용의무(실거주)' · 부동산 거래신고법 시행령 §14② 1호 자기 거주 목적 허가 = 취득일부터 2년 · 절차·예외는 6장
+[scenes.19.data.license] Pexels 8482325 무료(Thirdman)
+[scenes.19.data.say] 허가 먼저, 그리고 직접 살기
 [scenes.19.data.side] left
-[scenes.20.lines.0.text] 신천동에선 그 가격대 거래가 175번 있었습니다.
-[scenes.20.data.n] 2장
-[scenes.20.data.q] 신천동, 30억이면 85㎡쯤
-[scenes.20.data.from] 국토교통부 실거래 · 30억 안팎 = 27억~33억
-[scenes.21.lines.0.text] 열에 여섯은 파크리오였고요.
-[scenes.21.lines.0.cap] 파크리오 110건 · 장미2 27건 · 많이 팔린 크기 85㎡ 95건 · 82㎡ 32건 · 71㎡ 21건
-[scenes.21.data.license] 지도 자료 © OpenStreetMap 기여자 (ODbL) · 파이어맵 그림
-[scenes.22.lines.0.text] 가장 많이 팔린 크기가 바로 그 국민평형이었죠.
-[scenes.22.data.license] Pexels 38029457 무료(FREE VIDEO HAPPY)
-[scenes.22.data.say] 가장 많이 팔린 크기, 국민평형
-[scenes.22.data.side] left
-[scenes.23.lines.0.text] 같은 동네엔 장미아파트도 있어요.
-[scenes.23.lines.1.text] 비슷한 크기로 맞추면, 장미가 파크리오보다 평당 12% 이상 비쌌습니다.
-[scenes.23.lines.1.cap] 82~84㎡대 평당 중앙 · 장미1·2 12,810만원(34건) · 파크리오 11,384만원(95건) · +12.5%
-[scenes.23.data.title] 82~84㎡대 평당 · 같은 신천동
-[scenes.23.data.v1] 12,810만원
-[scenes.23.data.s1] 장미1·2 · 34건
-[scenes.23.data.c1] rise
-[scenes.23.data.v2] 11,384만원
-[scenes.23.data.s2] 파크리오 · 95건
-[scenes.23.data.c2] accent
-[scenes.23.data.icon] Scale
-[scenes.23.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.24.lines.0.text] 한 채로 치면 3억 가까이 차이였어요.
-[scenes.24.lines.0.cap] 매매 중앙 · 장미1·2 82㎡ 31.95억 · 파크리오 84㎡대 29.20억
-[scenes.24.data.title] 한 채 값 차이
-[scenes.24.data.v] 약 3억
-[scenes.24.data.s] 장미1·2 82㎡ 31.95억 · 파크리오 84㎡대 29.20억
-[scenes.24.data.icon] Scale
-[scenes.24.data.c] rise
-[scenes.24.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.25.lines.0.text] 그럼 1년 사이 가격은 많이 움직였을까요?
-[scenes.25.data.license] Pexels 29303349 무료(성창 남)
-[scenes.25.data.say] 한 해 사이 많이 움직였을까
-[scenes.25.data.side] left
-[scenes.26.lines.0.text] 파크리오 국민평형을 앞 여섯 달과 뒤 여섯 달로 나눠 보면, 중간 가격은 거의 그대로였습니다.
-[scenes.26.lines.1.text] 중간 가격은 거래를 가격 순서로 줄 세웠을 때 한가운데 오는 가격이에요.
-[scenes.26.lines.1.cap] 파크리오 84~85㎡ 매매 중앙 · 2025.11~2026.04 58건 29.25억 → 2026.05~10 37건 29.00억(−0.9%)
-[scenes.26.data.title] 파크리오 84~85㎡ 중간 가격
-[scenes.26.data.v1] 29.25억
-[scenes.26.data.s1] 2025.11~2026.04 · 58건
-[scenes.26.data.c1] ink
-[scenes.26.data.v2] 29.00억
-[scenes.26.data.s2] 2026.05~10 · 37건
-[scenes.26.data.c2] accent
+[scenes.20.lines.0.text] 그러니까 오늘 보는 거래는 대부분 직접 들어가 살 사람이 산 가격이라고 보시면 됩니다.
+[scenes.20.lines.1.text] 이 조건이 가격에 얼마나 영향을 줬는지는 자료에 나오지 않아요.
+[scenes.20.data.title] 오늘 보는 거래
+[scenes.20.data.v] 대부분 직접 살 사람
+[scenes.20.data.s] 허가구역 · 2년 실거주 · 가격 영향은 자료에 없음
+[scenes.20.data.icon] Home
+[scenes.20.data.c] ink
+[scenes.20.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.21.lines.0.text] 사려는 분이 알아 둘 규칙은, 세 동네 숫자부터 보고 나서 말씀드릴게요.
+[scenes.21.data.license] Pexels 30975009 무료(Stephen Leonardi)
+[scenes.21.data.say] 먼저 세 동네 숫자부터
+[scenes.21.data.side] left
+[scenes.22.lines.0.text] 신천동에선 그 가격대 거래가 175번 있었습니다.
+[scenes.22.data.n] 2장
+[scenes.22.data.q] 신천동, 30억이면 85㎡쯤
+[scenes.22.data.from] 국토교통부 실거래 · 30억 안팎 = 27억~33억
+[scenes.23.lines.0.text] 열에 여섯은 파크리오였고요.
+[scenes.23.lines.0.cap] 파크리오 110건 · 장미2 27건 · 많이 팔린 크기 85㎡ 95건 · 82㎡ 32건 · 71㎡ 21건
+[scenes.23.data.license] 지도 자료 © OpenStreetMap 기여자 (ODbL) · 파이어맵 그림
+[scenes.24.lines.0.text] 가장 많이 팔린 크기가 바로 그 국민평형이었죠.
+[scenes.24.data.license] Pexels 38029457 무료(FREE VIDEO HAPPY)
+[scenes.24.data.say] 가장 많이 팔린 크기, 국민평형
+[scenes.24.data.side] left
+[scenes.25.lines.0.text] 같은 동네엔 장미아파트도 있어요.
+[scenes.25.lines.1.text] 비슷한 크기로 맞추면, 장미가 파크리오보다 평당 12% 이상 비쌌습니다.
+[scenes.25.lines.1.cap] 82~84㎡대 평당 중앙 · 장미1·2 12,810만원(34건) · 파크리오 11,384만원(95건) · +12.5%
+[scenes.25.data.title] 82~84㎡대 평당 · 같은 신천동
+[scenes.25.data.v1] 12,810만원
+[scenes.25.data.s1] 장미1·2 · 34건
+[scenes.25.data.c1] rise
+[scenes.25.data.v2] 11,384만원
+[scenes.25.data.s2] 파크리오 · 95건
+[scenes.25.data.c2] accent
+[scenes.25.data.icon] Scale
+[scenes.25.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.26.lines.0.text] 한 채로 치면 3억 가까이 차이였어요.
+[scenes.26.lines.0.cap] 매매 중앙 · 장미1·2 82㎡ 31.95억 · 파크리오 84㎡대 29.20억
+[scenes.26.data.title] 한 채 값 차이
+[scenes.26.data.v] 약 3억
+[scenes.26.data.s] 장미1·2 82㎡ 31.95억 · 파크리오 84㎡대 29.20억
 [scenes.26.data.icon] Scale
+[scenes.26.data.c] rise
 [scenes.26.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.27.lines.0.text] 검색창에 '파크리오 16평'을 치는 분도 많았어요.
-[scenes.27.data.license] Pexels 16392935 무료(Bảo Nghĩa)
-[scenes.27.data.say] 검색창에 자주 나온 평수 질문
+[scenes.27.lines.0.text] 그럼 1년 사이 가격은 많이 움직였을까요?
+[scenes.27.data.license] Pexels 29303349 무료(성창 남)
+[scenes.27.data.say] 한 해 사이 많이 움직였을까
 [scenes.27.data.side] left
-[scenes.28.lines.0.text] 16평 같은 말은 보통 복도나 계단 같은 공용 부분까지 넣은 넓이예요.
-[scenes.28.lines.1.text] 실거래 자료엔 집 안 넓이만 적혀 있어서, 파크리오에서 가장 작은 집으로 볼게요.
-[scenes.28.data.title] 평수 말과 실거래 넓이
-[scenes.28.data.rows.0.0] 16평 같은 말
-[scenes.28.data.rows.0.1] 공용 부분까지 넣은 넓이
-[scenes.28.data.rows.1.0] 실거래 자료
-[scenes.28.data.rows.1.1] 집 안 넓이만
-[scenes.28.data.rows.1.2] ink
-[scenes.28.data.icon] Ruler
+[scenes.28.lines.0.text] 파크리오 국민평형을 앞 여섯 달과 뒤 여섯 달로 나눠 보면, 중간 가격은 거의 그대로였습니다.
+[scenes.28.lines.1.text] 중간 가격은 거래를 가격 순서로 줄 세웠을 때 한가운데 오는 가격이에요.
+[scenes.28.lines.1.cap] 파크리오 84~85㎡ 매매 중앙 · 2025.11~2026.04 58건 29.25억 → 2026.05~10 37건 29.00억(−0.9%)
+[scenes.28.data.title] 파크리오 84~85㎡ 중간 가격
+[scenes.28.data.v1] 29.25억
+[scenes.28.data.s1] 2025.11~2026.04 · 58건
+[scenes.28.data.c1] ink
+[scenes.28.data.v2] 29.00억
+[scenes.28.data.s2] 2026.05~10 · 37건
+[scenes.28.data.c2] accent
+[scenes.28.data.icon] Scale
 [scenes.28.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.29.lines.0.text] 집 안 넓이가 35㎡인 집이에요.
-[scenes.29.lines.1.text] 이 크기가 스무 번 팔렸습니다.
-[scenes.29.data.title] 파크리오 가장 작은 집
-[scenes.29.data.v] 35㎡
-[scenes.29.data.s] 전용 · 1년 20번 팔림
-[scenes.29.data.icon] Ruler
-[scenes.29.data.c] ink
-[scenes.29.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.30.lines.0.text] 중간 가격은 14억이었고요.
-[scenes.30.lines.0.cap] 파크리오 전용 35㎡대 20건 · 매매 중앙 14.00억(최저 10.00억 · 최고 15.50억)
-[scenes.30.data.title] 파크리오 35㎡대 중간 가격
-[scenes.30.data.v] 14억
-[scenes.30.data.s] 최저 10.00억 · 최고 15.50억
-[scenes.30.data.icon] Home
-[scenes.30.data.c] accent
+[scenes.29.lines.0.text] 검색창에 '파크리오 16평'을 치는 분도 많았어요.
+[scenes.29.data.license] Pexels 16392935 무료(Bảo Nghĩa)
+[scenes.29.data.say] 검색창에 자주 나온 평수 질문
+[scenes.29.data.side] left
+[scenes.30.lines.0.text] 16평 같은 말은 보통 복도나 계단 같은 공용 부분까지 넣은 넓이예요.
+[scenes.30.lines.1.text] 실거래 자료엔 집 안 넓이만 적혀 있어서, 파크리오에서 가장 작은 집으로 볼게요.
+[scenes.30.data.title] 평수 말과 실거래 넓이
+[scenes.30.data.rows.0.0] 16평 같은 말
+[scenes.30.data.rows.0.1] 공용 부분까지 넣은 넓이
+[scenes.30.data.rows.1.0] 실거래 자료
+[scenes.30.data.rows.1.1] 집 안 넓이만
+[scenes.30.data.rows.1.2] ink
+[scenes.30.data.icon] Ruler
 [scenes.30.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.31.lines.0.text] 파크리오는 집이 모두 6천8백 세대가 넘는 큰 단지예요.
-[scenes.31.data.license] Pexels 29303349 무료(성창 남)
-[scenes.31.data.say] 아주 큰 단지
-[scenes.31.data.side] left
-[scenes.32.lines.0.text] 그중에 팔린 건 164채였습니다.
-[scenes.32.lines.1.text] 백 집에 두 집 조금 넘게 팔린 거죠.
-[scenes.32.lines.1.cap] 건축물대장 총괄표제부 세대수 6,864(2026.10.17 조회) · 1년 매매 164건 · 2.4%
-[scenes.32.data.title] 1년에 팔린 집
-[scenes.32.data.v] 164채
-[scenes.32.data.s] 6,864세대 중 · 2.4%
-[scenes.32.data.icon] Building
+[scenes.31.lines.0.text] 집 안 넓이가 35㎡인 집이에요.
+[scenes.31.lines.1.text] 이 크기가 스무 번 팔렸습니다.
+[scenes.31.data.title] 파크리오 가장 작은 집
+[scenes.31.data.v] 35㎡
+[scenes.31.data.s] 전용 · 1년 20번 팔림
+[scenes.31.data.icon] Ruler
+[scenes.31.data.c] ink
+[scenes.31.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.32.lines.0.text] 중간 가격은 14억이었고요.
+[scenes.32.lines.0.cap] 파크리오 전용 35㎡대 20건 · 매매 중앙 14.00억(최저 10.00억 · 최고 15.50억)
+[scenes.32.data.title] 파크리오 35㎡대 중간 가격
+[scenes.32.data.v] 14억
+[scenes.32.data.s] 최저 10.00억 · 최고 15.50억
+[scenes.32.data.icon] Home
 [scenes.32.data.c] accent
-[scenes.32.data.source] 국토교통부 실거래 · 건축물대장 총괄표제부 세대수(2026.10.17 조회) · 파이어맵 계산
-[scenes.33.lines.0.text] 목동신시가지 아파트는 단지마다 번호가 붙어 있어요.
-[scenes.33.data.n] 3장
-[scenes.33.data.q] 목동, 번호는 이어지는데 주소가 갈린다
-[scenes.33.data.from] 국토교통부 실거래 법정동
-[scenes.34.lines.0.text] 그런데 신고된 주소를 보면, 7단지까지만 목동이고 그 뒤 번호는 신정동이었습니다.
-[scenes.34.lines.0.cap] 국토교통부 실거래 법정동 · 1~7단지 목동 · 8~14단지 신정동
-[scenes.34.lines.1.text] 그래서 동 이름으로만 찾으면 뒤 번호 단지들은 빠져요.
-[scenes.34.data.license] 지도 자료 © OpenStreetMap 기여자 (ODbL) · 파이어맵 그림
-[scenes.35.lines.0.text] 목동 쪽에선 그 가격대 거래가 67번이었습니다.
-[scenes.35.lines.1.text] 팔린 집들의 중간 크기가 96㎡ 정도, 신천동보다 11㎡ 정도 넓었고요.
-[scenes.35.lines.1.cap] 목동 쪽 67건 전용 중앙 96㎡ · 3단지 22건 · 7단지 19건
-[scenes.35.lines.2.text] 신정동 쪽에선 같은 가격대 거래가 16번뿐이었습니다.
-[scenes.35.lines.3.text] 그 대신 집은 더 넓었죠.
-[scenes.35.lines.3.cap] 신정동 쪽 16건 전용 중앙 115㎡ · 9단지 7건 · 10단지 3건
-[scenes.35.data.title] 30억 안팎 거래
-[scenes.35.data.v1] 67건
-[scenes.35.data.s1] 목동 쪽 · 전용 중앙 96㎡
-[scenes.35.data.c1] accent
-[scenes.35.data.v2] 16건
-[scenes.35.data.s2] 신정동 쪽 · 전용 중앙 115㎡
-[scenes.35.data.c2] ink
-[scenes.35.data.icon] Scale
-[scenes.35.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.36.lines.0.text] 크기를 똑같이 맞추면 어떨까요?
-[scenes.36.data.license] Pexels 37527858 무료(FREE VIDEO HAPPY)
-[scenes.36.data.say] 크기를 똑같이 맞추면
-[scenes.36.data.side] left
-[scenes.37.lines.0.text] 작은 평수끼리 비교하면, 목동 쪽이 신정동 쪽보다 평당 20% 비쌌습니다.
-[scenes.37.lines.0.cap] 60~70㎡대 평당 중앙 · 목동 쪽(1~7단지) 11,957만원(89건) · 신정동 쪽(8~14단지) 9,931만원(18건) · +20.4%
-[scenes.37.data.title] 60~70㎡대 평당
-[scenes.37.data.v1] 11,957만원
-[scenes.37.data.s1] 목동 쪽 1~7단지
-[scenes.37.data.c1] rise
-[scenes.37.data.v2] 9,931만원
-[scenes.37.data.s2] 신정동 쪽 8~14단지
+[scenes.32.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.33.lines.0.text] 파크리오는 집이 모두 6천8백 세대가 넘는 큰 단지예요.
+[scenes.33.data.license] Pexels 29303349 무료(성창 남)
+[scenes.33.data.say] 아주 큰 단지
+[scenes.33.data.side] left
+[scenes.34.lines.0.text] 그중에 팔린 건 164채였습니다.
+[scenes.34.lines.1.text] 백 집에 두 집 조금 넘게 팔린 거죠.
+[scenes.34.lines.1.cap] 건축물대장 총괄표제부 세대수 6,864(2026.10.17 조회) · 1년 매매 164건 · 2.4%
+[scenes.34.data.title] 1년에 팔린 집
+[scenes.34.data.v] 164채
+[scenes.34.data.s] 6,864세대 중 · 2.4%
+[scenes.34.data.icon] Building
+[scenes.34.data.c] accent
+[scenes.34.data.source] 국토교통부 실거래 · 건축물대장 총괄표제부 세대수(2026.10.17 조회) · 파이어맵 계산
+[scenes.35.lines.0.text] 목동신시가지 아파트는 단지마다 번호가 붙어 있어요.
+[scenes.35.data.n] 3장
+[scenes.35.data.q] 목동, 번호는 이어지는데 주소가 갈린다
+[scenes.35.data.from] 국토교통부 실거래 법정동
+[scenes.36.lines.0.text] 그런데 신고된 주소를 보면, 7단지까지만 목동이고 그 뒤 번호는 신정동이었습니다.
+[scenes.36.lines.0.cap] 국토교통부 실거래 법정동 · 1~7단지 목동 · 8~14단지 신정동
+[scenes.36.lines.1.text] 그래서 동 이름으로만 찾으면 뒤 번호 단지들은 빠져요.
+[scenes.36.data.license] 지도 자료 © OpenStreetMap 기여자 (ODbL) · 파이어맵 그림
+[scenes.37.lines.0.text] 목동 쪽에선 그 가격대 거래가 67번이었습니다.
+[scenes.37.lines.1.text] 팔린 집들의 중간 크기가 96㎡ 정도, 신천동보다 11㎡ 정도 넓었고요.
+[scenes.37.lines.1.cap] 목동 쪽 67건 전용 중앙 96㎡ · 3단지 22건 · 7단지 19건
+[scenes.37.lines.2.text] 신정동 쪽에선 같은 가격대 거래가 16번뿐이었습니다.
+[scenes.37.lines.3.text] 그 대신 집은 더 넓었죠.
+[scenes.37.lines.3.cap] 신정동 쪽 16건 전용 중앙 115㎡ · 9단지 7건 · 10단지 3건
+[scenes.37.data.title] 30억 안팎 거래
+[scenes.37.data.v1] 67건
+[scenes.37.data.s1] 목동 쪽 · 전용 중앙 96㎡
+[scenes.37.data.c1] accent
+[scenes.37.data.v2] 16건
+[scenes.37.data.s2] 신정동 쪽 · 전용 중앙 115㎡
 [scenes.37.data.c2] ink
 [scenes.37.data.icon] Scale
 [scenes.37.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.38.lines.0.text] 한 채로 치면 4억 정도 차이죠.
-[scenes.38.lines.0.cap] 60~70㎡대 매매 중앙 · 23.70억 vs 19.90억
-[scenes.38.data.title] 한 채로 치면
-[scenes.38.data.v] 약 4억
-[scenes.38.data.s] 60~70㎡대 매매 중앙 23.70억 vs 19.90억
-[scenes.38.data.icon] Scale
-[scenes.38.data.c] rise
-[scenes.38.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.39.lines.0.text] 같은 작은 평수에선 7단지와 11단지 차이가 가장 컸어요.
-[scenes.39.lines.1.text] 평당 30% 정도 났습니다.
-[scenes.39.lines.1.cap] 7단지 12,757만원 vs 11단지 9,881만원 · +29.1%
-[scenes.39.data.title] 같은 작은 평수 · 평당
-[scenes.39.data.v1] 12,757만원
-[scenes.39.data.s1] 7단지
+[scenes.38.lines.0.text] 크기를 똑같이 맞추면 어떨까요?
+[scenes.38.data.license] Pexels 37527858 무료(FREE VIDEO HAPPY)
+[scenes.38.data.say] 크기를 똑같이 맞추면
+[scenes.38.data.side] left
+[scenes.39.lines.0.text] 작은 평수끼리 비교하면, 목동 쪽이 신정동 쪽보다 평당 20% 비쌌습니다.
+[scenes.39.lines.0.cap] 60~70㎡대 평당 중앙 · 목동 쪽(1~7단지) 11,957만원(89건) · 신정동 쪽(8~14단지) 9,931만원(18건) · +20.4%
+[scenes.39.data.title] 60~70㎡대 평당
+[scenes.39.data.v1] 11,957만원
+[scenes.39.data.s1] 목동 쪽 1~7단지
 [scenes.39.data.c1] rise
-[scenes.39.data.v2] 9,881만원
-[scenes.39.data.s2] 11단지
+[scenes.39.data.v2] 9,931만원
+[scenes.39.data.s2] 신정동 쪽 8~14단지
 [scenes.39.data.c2] ink
 [scenes.39.data.icon] Scale
 [scenes.39.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.40.lines.0.text] 왜 이만큼 차이가 나는지는 실거래 자료에 나오지 않습니다.
-[scenes.40.data.license] Pexels 37527858 무료(FREE VIDEO HAPPY)
-[scenes.40.data.say] 이유는 자료에 없다
-[scenes.40.data.side] left
-[scenes.41.lines.0.text] 이런 댓글이 있었어요. 목동 12단지 가격이 맞느냐고요.
-[scenes.41.lines.1.text] 지금 20억 정도 한다는데 정말 그러냐는 거죠.
-[scenes.41.data.n] 댓글
-[scenes.41.data.q] 목동 12단지가 지금 20억 정도 하는데, 맞나요?
-[scenes.41.data.from] 유튜브 댓글
-[scenes.42.lines.0.text] 이 단지는 주소로는 신정동이지만, 다들 목동이라고 부르죠.
-[scenes.42.lines.1.text] 신고된 거래로 보면 맞습니다.
-[scenes.42.data.license] Pexels 30975009 무료(Stephen Leonardi)
-[scenes.42.data.say] 주소는 신정동, 부르는 이름은 목동
+[scenes.40.lines.0.text] 한 채로 치면 4억 정도 차이죠.
+[scenes.40.lines.0.cap] 60~70㎡대 매매 중앙 · 23.70억 vs 19.90억
+[scenes.40.data.title] 한 채로 치면
+[scenes.40.data.v] 약 4억
+[scenes.40.data.s] 60~70㎡대 매매 중앙 23.70억 vs 19.90억
+[scenes.40.data.icon] Scale
+[scenes.40.data.c] rise
+[scenes.40.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.41.lines.0.text] 같은 작은 평수에선 7단지와 11단지 차이가 가장 컸어요.
+[scenes.41.lines.1.text] 평당 30% 정도 났습니다.
+[scenes.41.lines.1.cap] 7단지 12,757만원 vs 11단지 9,881만원 · +29.1%
+[scenes.41.data.title] 같은 작은 평수 · 평당
+[scenes.41.data.v1] 12,757만원
+[scenes.41.data.s1] 7단지
+[scenes.41.data.c1] rise
+[scenes.41.data.v2] 9,881만원
+[scenes.41.data.s2] 11단지
+[scenes.41.data.c2] ink
+[scenes.41.data.icon] Scale
+[scenes.41.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.42.lines.0.text] 왜 이만큼 차이가 나는지는 실거래 자료에 나오지 않습니다.
+[scenes.42.data.license] Pexels 37527858 무료(FREE VIDEO HAPPY)
+[scenes.42.data.say] 이유는 자료에 없다
 [scenes.42.data.side] left
-[scenes.43.lines.0.text] 여기서 가장 많이 팔린 크기는 72㎡였어요.
-[scenes.43.lines.1.text] 이 크기의 중간 가격이 20억을 조금 넘었습니다.
-[scenes.43.lines.2.text] 가장 작은 집은 17억 정도였고요.
-[scenes.43.lines.2.cap] 목동신시가지12(신정동) 1년 28건 · 72㎡ 14건 중앙 20.40억 · 53㎡ 6건 17.20억 · 57㎡ 6건 18.00억
-[scenes.43.data.title] 목동신시가지12 · 면적별 중간 가격
-[scenes.43.data.bars.0.0] 72㎡
-[scenes.43.data.bars.0.2] 20.40억
-[scenes.43.data.bars.0.3] accent
-[scenes.43.data.bars.1.0] 57㎡
-[scenes.43.data.bars.1.2] 18.00억
-[scenes.43.data.bars.1.3] ink
-[scenes.43.data.bars.2.0] 53㎡
-[scenes.43.data.bars.2.2] 17.20억
-[scenes.43.data.bars.2.3] ink
-[scenes.43.data.dir] h
-[scenes.43.data.icon] ChartColumn
-[scenes.43.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.44.lines.0.text] 20억을 들고 있다면 어디서 몇 ㎡였는지 묻는 분도 있었어요.
-[scenes.44.lines.1.text] 어디가 낫다고는 말씀드리지 않을게요. 대신 숫자로 보면 이렇습니다.
-[scenes.44.data.n] 댓글
-[scenes.44.data.q] 총투자금 20억이라면, 어디서 몇 ㎡?
-[scenes.44.data.from] 유튜브 댓글
-[scenes.45.lines.0.text] 20억 안팎으로, 목동신시가지만이 아니라 목동이라는 동네 전체를 다 보면요.
-[scenes.45.lines.1.text] 85㎡ 정도였어요.
-[scenes.45.lines.2.text] 신정동에선 71㎡ 정도였고요.
-[scenes.45.lines.2.cap] 18~22억 거래 · 목동(법정동 전체) 105건 전용 중앙 85㎡(목동청구한신 32·목동신시가지4 25·7 13) · 신정동 164건 71㎡(래미안목동아델리체 29·신시가지11 25·8 24) · 압구정동 0건 · 신천동 6건
-[scenes.45.data.title] 20억 안팎 · 전용 중앙
-[scenes.45.data.v1] 85㎡
-[scenes.45.data.s1] 목동 전체 · 105건
-[scenes.45.data.c1] accent
-[scenes.45.data.v2] 71㎡
-[scenes.45.data.s2] 신정동 · 164건
-[scenes.45.data.c2] ink
-[scenes.45.data.icon] Scale
+[scenes.43.lines.0.text] 이런 댓글이 있었어요. 목동 12단지 가격이 맞느냐고요.
+[scenes.43.lines.1.text] 지금 20억 정도 한다는데 정말 그러냐는 거죠.
+[scenes.43.data.n] 댓글
+[scenes.43.data.q] 목동 12단지가 지금 20억 정도 하는데, 맞나요?
+[scenes.43.data.from] 유튜브 댓글
+[scenes.44.lines.0.text] 이 단지는 주소로는 신정동이지만, 다들 목동이라고 부르죠.
+[scenes.44.lines.1.text] 신고된 거래로 보면 맞습니다.
+[scenes.44.data.license] Pexels 30975009 무료(Stephen Leonardi)
+[scenes.44.data.say] 주소는 신정동, 부르는 이름은 목동
+[scenes.44.data.side] left
+[scenes.45.lines.0.text] 여기서 가장 많이 팔린 크기는 72㎡였어요.
+[scenes.45.lines.1.text] 이 크기의 중간 가격이 20억을 조금 넘었습니다.
+[scenes.45.lines.2.text] 가장 작은 집은 17억 정도였고요.
+[scenes.45.lines.2.cap] 목동신시가지12(신정동) 1년 28건 · 72㎡ 14건 중앙 20.40억 · 53㎡ 6건 17.20억 · 57㎡ 6건 18.00억
+[scenes.45.data.title] 목동신시가지12 · 면적별 중간 가격
+[scenes.45.data.bars.0.0] 72㎡
+[scenes.45.data.bars.0.2] 20.40억
+[scenes.45.data.bars.0.3] accent
+[scenes.45.data.bars.1.0] 57㎡
+[scenes.45.data.bars.1.2] 18.00억
+[scenes.45.data.bars.1.3] ink
+[scenes.45.data.bars.2.0] 53㎡
+[scenes.45.data.bars.2.2] 17.20억
+[scenes.45.data.bars.2.3] ink
+[scenes.45.data.dir] h
+[scenes.45.data.icon] ChartColumn
 [scenes.45.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.46.lines.0.text] 목동신시가지 열네 단지는 모두 합치면 2만 6천 세대가 넘어요.
-[scenes.46.data.license] Pexels 29303349 무료(성창 남)
-[scenes.46.data.say] 열네 단지, 큰 동네
-[scenes.46.data.side] left
-[scenes.47.lines.0.text] 그런데 팔린 집은 429채였습니다.
-[scenes.47.lines.1.text] 백 집에 두 집이 안 되는 거죠.
-[scenes.47.lines.1.cap] 건축물대장 총괄표제부 세대수 합 26,635(2026.10.17 조회) · 1년 매매 429건 · 1.6%
-[scenes.47.data.title] 목동신시가지 14단지 · 1년
-[scenes.47.data.v] 429채
-[scenes.47.data.s] 26,635세대 중 · 1.6%
-[scenes.47.data.icon] Building
-[scenes.47.data.c] accent
-[scenes.47.data.source] 국토교통부 실거래 · 건축물대장 총괄표제부 세대수(2026.10.17 조회) · 파이어맵 계산
-[scenes.48.lines.0.text] 앞 번호 단지들은 백 집에 두 집, 뒤 번호 단지들은 한 집 조금 넘었어요.
-[scenes.48.lines.0.cap] 1~7단지 12,258세대 250건(2.0%) · 8~14단지 14,377세대 179건(1.2%) · 가장 적은 곳 6단지·10단지 0.6% · 가장 많은 곳 7단지 3.1%
-[scenes.48.data.title] 1년에 팔린 비율
-[scenes.48.data.v1] 2.0%
-[scenes.48.data.s1] 1~7단지 · 250건
-[scenes.48.data.c1] accent
-[scenes.48.data.v2] 1.2%
-[scenes.48.data.s2] 8~14단지 · 179건
-[scenes.48.data.c2] ink
-[scenes.48.data.icon] Scale
-[scenes.48.data.source] 국토교통부 실거래 · 건축물대장 총괄표제부 세대수(2026.10.17 조회) · 파이어맵 계산
-[scenes.49.lines.0.text] 거래가 이렇게 적으면, 1년 거래 몇 건으로 그 단지 가격을 말하기는 조심스러워요.
-[scenes.49.lines.1.text] 특히 1년에 열 번도 안 팔린 단지라면, 거래 한 건이 중간 가격을 크게 흔들 수 있거든요.
-[scenes.49.lines.1.cap] 목동신시가지6 1년 매매 8건 · 세대 1,368(건축물대장)
-[scenes.49.data.license] AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님
-[scenes.49.data.badge] AI 생성
-[scenes.50.lines.0.text] 검색창엔 '목동 7단지 매매 가격'도 자주 올라와요.
-[scenes.50.data.license] Pexels 37500921 무료(FREE VIDEO HAPPY)
-[scenes.50.data.say] 검색창에 자주 나온 그 단지 가격
-[scenes.50.data.side] left
-[scenes.51.lines.0.text] 7단지 작은 평수는 앞 여섯 달과 뒤 여섯 달 중간 가격이 거의 같았습니다.
-[scenes.51.lines.1.text] 둘 다 25억대였어요.
-[scenes.51.lines.1.cap] 목동신시가지7 66~68㎡ · 2025.11~2026.04 10건 25.45억 → 2026.05~10 10건 25.70억(+1.0%)
-[scenes.51.data.title] 7단지 66~68㎡ 중간 가격
-[scenes.51.data.v1] 25.45억
-[scenes.51.data.s1] 2025.11~2026.04 · 10건
-[scenes.51.data.c1] ink
-[scenes.51.data.v2] 25.70억
-[scenes.51.data.s2] 2026.05~10 · 10건
-[scenes.51.data.c2] accent
-[scenes.51.data.icon] Scale
-[scenes.51.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.52.lines.0.text] 압구정동은 그 가격대 거래가 아예 없었어요.
-[scenes.52.data.n] 4장
-[scenes.52.data.q] 압구정동, 30억 거래가 없었다
-[scenes.52.data.from] 국토교통부 실거래 · 30억 안팎 = 27억~33억
-[scenes.53.lines.0.text] 앞에서 말한 35억이 조금 넘은 가장 싼 거래도, 중개사 없이 사는 사람과 파는 사람이 직접 거래한 한 건이었어요.
-[scenes.53.data.license] 지도 자료 © OpenStreetMap 기여자 (ODbL) · 파이어맵 그림
-[scenes.54.lines.0.text] 그런 거래가 한 건뿐이라, 이 가격 하나로 압구정 시세를 말하긴 어렵습니다.
-[scenes.54.lines.0.cap] 한양1차(영동한양) 63.87㎡ 35.70억 2026.03.09 직거래 · 49.98㎡ 38.90억 2026.06.05 중개거래
-[scenes.54.data.title] 가장 싼 거래 1건
-[scenes.54.data.v] 35.70억
-[scenes.54.data.s] 한양1차 63.87㎡ · 2026.03 · 직거래
-[scenes.54.data.icon] Home
-[scenes.54.data.c] ink
-[scenes.54.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.55.lines.0.text] 그럼 돈을 40억으로 올려 볼까요?
-[scenes.55.data.license] Pexels 12079562 무료(FREE VIDEO HAPPY)
-[scenes.55.data.say] 돈을 더 올려 보면
-[scenes.55.data.side] left
-[scenes.56.lines.0.text] 압구정동에서 그 돈에 팔린 집들은, 중간 크기가 50㎡ 정도였습니다.
-[scenes.56.lines.1.text] 국민평형의 절반을 조금 넘는 크기죠.
-[scenes.56.lines.2.text] 같은 돈이면 신천동이나 목동 쪽에선 그 두 배가 넘는 집이 팔렸고요.
-[scenes.56.lines.2.cap] 40억 안팎(36~44억) · 압구정동 8건 전용 중앙 50㎡ · 신천동 20건 121㎡ · 목동 쪽 9건 145㎡ · 신정동 쪽 0건
-[scenes.56.data.title] 40억 안팎 · 전용 중앙
-[scenes.56.data.rows.0.0] 압구정동
-[scenes.56.data.rows.0.1] 50㎡
-[scenes.56.data.rows.0.2] accent
-[scenes.56.data.rows.1.0] 신천동
-[scenes.56.data.rows.1.1] 121㎡
-[scenes.56.data.rows.1.2] ink
-[scenes.56.data.rows.2.0] 목동 쪽
-[scenes.56.data.rows.2.1] 145㎡
-[scenes.56.data.rows.2.2] ink
-[scenes.56.data.icon] Ruler
+[scenes.46.lines.0.text] 20억을 들고 있다면 어디서 몇 ㎡였는지 묻는 분도 있었어요.
+[scenes.46.lines.1.text] 어디가 낫다고는 말씀드리지 않을게요. 대신 숫자로 보면 이렇습니다.
+[scenes.46.data.n] 댓글
+[scenes.46.data.q] 총투자금 20억이라면, 어디서 몇 ㎡?
+[scenes.46.data.from] 유튜브 댓글
+[scenes.47.lines.0.text] 20억 안팎으로, 목동신시가지만이 아니라 목동이라는 동네 전체를 다 보면요.
+[scenes.47.lines.1.text] 85㎡ 정도였어요.
+[scenes.47.lines.2.text] 신정동에선 71㎡ 정도였고요.
+[scenes.47.lines.2.cap] 18~22억 거래 · 목동(법정동 전체) 105건 전용 중앙 85㎡(목동청구한신 32·목동신시가지4 25·7 13) · 신정동 164건 71㎡(래미안목동아델리체 29·신시가지11 25·8 24) · 압구정동 0건 · 신천동 6건
+[scenes.47.data.title] 20억 안팎 · 전용 중앙
+[scenes.47.data.v1] 85㎡
+[scenes.47.data.s1] 목동 전체 · 105건
+[scenes.47.data.c1] accent
+[scenes.47.data.v2] 71㎡
+[scenes.47.data.s2] 신정동 · 164건
+[scenes.47.data.c2] ink
+[scenes.47.data.icon] Scale
+[scenes.47.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.48.lines.0.text] 목동신시가지 열네 단지는 모두 합치면 2만 6천 세대가 넘어요.
+[scenes.48.data.license] Pexels 29303349 무료(성창 남)
+[scenes.48.data.say] 열네 단지, 큰 동네
+[scenes.48.data.side] left
+[scenes.49.lines.0.text] 그런데 팔린 집은 429채였습니다.
+[scenes.49.lines.1.text] 백 집에 두 집이 안 되는 거죠.
+[scenes.49.lines.1.cap] 건축물대장 총괄표제부 세대수 합 26,635(2026.10.17 조회) · 1년 매매 429건 · 1.6%
+[scenes.49.data.title] 목동신시가지 14단지 · 1년
+[scenes.49.data.v] 429채
+[scenes.49.data.s] 26,635세대 중 · 1.6%
+[scenes.49.data.icon] Building
+[scenes.49.data.c] accent
+[scenes.49.data.source] 국토교통부 실거래 · 건축물대장 총괄표제부 세대수(2026.10.17 조회) · 파이어맵 계산
+[scenes.50.lines.0.text] 앞 번호 단지들은 백 집에 두 집, 뒤 번호 단지들은 한 집 조금 넘었어요.
+[scenes.50.lines.0.cap] 1~7단지 12,258세대 250건(2.0%) · 8~14단지 14,377세대 179건(1.2%) · 가장 적은 곳 6단지·10단지 0.6% · 가장 많은 곳 7단지 3.1%
+[scenes.50.data.title] 1년에 팔린 비율
+[scenes.50.data.v1] 2.0%
+[scenes.50.data.s1] 1~7단지 · 250건
+[scenes.50.data.c1] accent
+[scenes.50.data.v2] 1.2%
+[scenes.50.data.s2] 8~14단지 · 179건
+[scenes.50.data.c2] ink
+[scenes.50.data.icon] Scale
+[scenes.50.data.source] 국토교통부 실거래 · 건축물대장 총괄표제부 세대수(2026.10.17 조회) · 파이어맵 계산
+[scenes.51.lines.0.text] 거래가 이렇게 적으면, 1년 거래 몇 건으로 그 단지 가격을 말하기는 조심스러워요.
+[scenes.51.lines.1.text] 특히 1년에 열 번도 안 팔린 단지라면, 거래 한 건이 중간 가격을 크게 흔들 수 있거든요.
+[scenes.51.lines.1.cap] 목동신시가지6 1년 매매 8건 · 세대 1,368(건축물대장)
+[scenes.51.data.license] AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님
+[scenes.51.data.badge] AI 생성
+[scenes.52.lines.0.text] 검색창엔 '목동 7단지 매매 가격'도 자주 올라와요.
+[scenes.52.data.license] Pexels 37500921 무료(FREE VIDEO HAPPY)
+[scenes.52.data.say] 검색창에 자주 나온 그 단지 가격
+[scenes.52.data.side] left
+[scenes.53.lines.0.text] 7단지 작은 평수는 앞 여섯 달과 뒤 여섯 달 중간 가격이 거의 같았습니다.
+[scenes.53.lines.1.text] 둘 다 25억대였어요.
+[scenes.53.lines.1.cap] 목동신시가지7 66~68㎡ · 2025.11~2026.04 10건 25.45억 → 2026.05~10 10건 25.70억(+1.0%)
+[scenes.53.data.title] 7단지 66~68㎡ 중간 가격
+[scenes.53.data.v1] 25.45억
+[scenes.53.data.s1] 2025.11~2026.04 · 10건
+[scenes.53.data.c1] ink
+[scenes.53.data.v2] 25.70억
+[scenes.53.data.s2] 2026.05~10 · 10건
+[scenes.53.data.c2] accent
+[scenes.53.data.icon] Scale
+[scenes.53.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.54.lines.0.text] 압구정동은 그 가격대 거래가 아예 없었어요.
+[scenes.54.data.n] 4장
+[scenes.54.data.q] 압구정동, 30억 거래가 없었다
+[scenes.54.data.from] 국토교통부 실거래 · 30억 안팎 = 27억~33억
+[scenes.55.lines.0.text] 앞에서 말한 35억이 조금 넘은 가장 싼 거래도, 중개사 없이 사는 사람과 파는 사람이 직접 거래한 한 건이었어요.
+[scenes.55.data.license] 지도 자료 © OpenStreetMap 기여자 (ODbL) · 파이어맵 그림
+[scenes.56.lines.0.text] 그런 거래가 한 건뿐이라, 이 가격 하나로 압구정 시세를 말하긴 어렵습니다.
+[scenes.56.lines.0.cap] 한양1차(영동한양) 63.87㎡ 35.70억 2026.03.09 직거래 · 49.98㎡ 38.90억 2026.06.05 중개거래
+[scenes.56.data.title] 가장 싼 거래 1건
+[scenes.56.data.v] 35.70억
+[scenes.56.data.s] 한양1차 63.87㎡ · 2026.03 · 직거래
+[scenes.56.data.icon] Home
+[scenes.56.data.c] ink
 [scenes.56.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.57.lines.0.text] 압구정 현대아파트 65평 집 안을 보여 준 영상이 있었어요.
-[scenes.57.lines.1.text] 그 집이 130억이냐는 댓글이 많았죠.
-[scenes.57.data.n] 댓글
-[scenes.57.data.q] 65평 130억이라고요?
-[scenes.57.data.from] 유튜브 댓글 · 압구정 현대 집 안을 보여 준 영상
-[scenes.58.lines.0.text] 먼저 짚을 게 있습니다. 65평은 보통 공용 부분까지 넣은 넓이예요.
-[scenes.58.lines.1.text] 실거래 자료에 적힌 집 안 넓이로는 200㎡에 조금 못 미치는 집이죠.
-[scenes.58.data.title] 65평 = 공용 부분까지
-[scenes.58.data.v] 200㎡에 조금 못 미침
-[scenes.58.data.s] 실거래 자료의 집 안 넓이(전용)
+[scenes.57.lines.0.text] 그럼 돈을 40억으로 올려 볼까요?
+[scenes.57.data.license] Pexels 12079562 무료(FREE VIDEO HAPPY)
+[scenes.57.data.say] 돈을 더 올려 보면
+[scenes.57.data.side] left
+[scenes.58.lines.0.text] 압구정동에서 그 돈에 팔린 집들은, 중간 크기가 50㎡ 정도였습니다.
+[scenes.58.lines.1.text] 국민평형의 절반을 조금 넘는 크기죠.
+[scenes.58.lines.2.text] 같은 돈이면 신천동이나 목동 쪽에선 그 두 배가 넘는 집이 팔렸고요.
+[scenes.58.lines.2.cap] 40억 안팎(36~44억) · 압구정동 8건 전용 중앙 50㎡ · 신천동 20건 121㎡ · 목동 쪽 9건 145㎡ · 신정동 쪽 0건
+[scenes.58.data.title] 40억 안팎 · 전용 중앙
+[scenes.58.data.rows.0.0] 압구정동
+[scenes.58.data.rows.0.1] 50㎡
+[scenes.58.data.rows.0.2] accent
+[scenes.58.data.rows.1.0] 신천동
+[scenes.58.data.rows.1.1] 121㎡
+[scenes.58.data.rows.1.2] ink
+[scenes.58.data.rows.2.0] 목동 쪽
+[scenes.58.data.rows.2.1] 145㎡
+[scenes.58.data.rows.2.2] ink
 [scenes.58.data.icon] Ruler
-[scenes.58.data.c] ink
 [scenes.58.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.59.lines.0.text] 이 크기는 지난 1년 동안 네 번 신고됐습니다.
-[scenes.59.lines.1.text] 가장 싼 게 90억대였고요.
-[scenes.59.lines.2.text] 가장 비싼 건 110억이었어요.
-[scenes.59.data.title] 현대1·2차 전용 197~198㎡ · 1년 4건
-[scenes.59.data.bars.0.0] 가장 싼 거래
-[scenes.59.data.bars.0.2] 92.00억
-[scenes.59.data.bars.0.3] ink
-[scenes.59.data.bars.1.0] 둘째
-[scenes.59.data.bars.1.2] 97.00억
-[scenes.59.data.bars.1.3] ink
-[scenes.59.data.bars.2.0] 셋째
-[scenes.59.data.bars.2.2] 102.00억
-[scenes.59.data.bars.2.3] ink
-[scenes.59.data.bars.3.0] 가장 비싼 거래
-[scenes.59.data.bars.3.2] 110.00억
-[scenes.59.data.bars.3.3] accent
-[scenes.59.data.dir] h
-[scenes.59.data.icon] ChartColumn
-[scenes.59.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.60.lines.0.text] 그러니까 이 한 해 동안엔 130억에 신고된 거래가 없었습니다.
-[scenes.60.lines.0.cap] 현대1·2차 전용 197~198㎡ 4건 · 92.00억 · 97.00억 · 102.00억 · 110.00억 · 영상 속 집의 실제 거래값은 확인 안 함
-[scenes.60.data.title] 130억에 신고된 거래
-[scenes.60.data.v] 0건
-[scenes.60.data.s] 1년 실거래 기준
-[scenes.60.data.icon] Ban
-[scenes.60.data.c] rise
+[scenes.59.lines.0.text] 압구정 현대아파트 65평 집 안을 보여 준 영상이 있었어요.
+[scenes.59.lines.1.text] 그 집이 130억이냐는 댓글이 많았죠.
+[scenes.59.data.n] 댓글
+[scenes.59.data.q] 65평 130억이라고요?
+[scenes.59.data.from] 유튜브 댓글 · 압구정 현대 집 안을 보여 준 영상
+[scenes.60.lines.0.text] 먼저 짚을 게 있습니다. 65평은 보통 공용 부분까지 넣은 넓이예요.
+[scenes.60.lines.1.text] 실거래 자료에 적힌 집 안 넓이로는 200㎡에 조금 못 미치는 집이죠.
+[scenes.60.data.title] 65평 = 공용 부분까지
+[scenes.60.data.v] 200㎡에 조금 못 미침
+[scenes.60.data.s] 실거래 자료의 집 안 넓이(전용)
+[scenes.60.data.icon] Ruler
+[scenes.60.data.c] ink
 [scenes.60.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.61.lines.0.text] 뉴스에선 이런 집을 몇억 낮춰 내놨다는 이야기도 자주 나오죠.
-[scenes.61.data.license] Pexels 31251626 무료(PUWOOK Kwak)
-[scenes.61.data.say] 뉴스 속 낮춘 값
-[scenes.61.data.side] left
-[scenes.62.lines.0.text] 그건 집주인이 부른 값, 호가예요. 실거래 자료엔 실제로 계약하고 신고한 값만 들어갑니다.
-[scenes.62.lines.1.text] 그래서 오늘 숫자엔 호가가 하나도 없어요.
-[scenes.62.lines.1.cap] 호가·매물·급매 기사 숫자는 쓰지 않음 · 국토교통부 실거래 = 계약 뒤 30일 안 신고된 값
-[scenes.62.data.title] 같은 집, 두 가지 값
-[scenes.62.data.v1] 호가
-[scenes.62.data.s1] 집주인이 부른 값 · 오늘 안 씀
-[scenes.62.data.c1] ink
-[scenes.62.data.v2] 실거래
-[scenes.62.data.s2] 계약 뒤 신고된 값
-[scenes.62.data.c2] accent
-[scenes.62.data.icon] Scale
+[scenes.61.lines.0.text] 이 크기는 지난 1년 동안 네 번 신고됐습니다.
+[scenes.61.lines.1.text] 가장 싼 게 90억대였고요.
+[scenes.61.lines.2.text] 가장 비싼 건 110억이었어요.
+[scenes.61.data.title] 현대1·2차 전용 197~198㎡ · 1년 4건
+[scenes.61.data.bars.0.0] 가장 싼 거래
+[scenes.61.data.bars.0.2] 92.00억
+[scenes.61.data.bars.0.3] ink
+[scenes.61.data.bars.1.0] 둘째
+[scenes.61.data.bars.1.2] 97.00억
+[scenes.61.data.bars.1.3] ink
+[scenes.61.data.bars.2.0] 셋째
+[scenes.61.data.bars.2.2] 102.00억
+[scenes.61.data.bars.2.3] ink
+[scenes.61.data.bars.3.0] 가장 비싼 거래
+[scenes.61.data.bars.3.2] 110.00억
+[scenes.61.data.bars.3.3] accent
+[scenes.61.data.dir] h
+[scenes.61.data.icon] ChartColumn
+[scenes.61.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.62.lines.0.text] 그러니까 이 한 해 동안엔 130억에 신고된 거래가 없었습니다.
+[scenes.62.lines.0.cap] 현대1·2차 전용 197~198㎡ 4건 · 92.00억 · 97.00억 · 102.00억 · 110.00억 · 영상 속 집의 실제 거래값은 확인 안 함
+[scenes.62.data.title] 130억에 신고된 거래
+[scenes.62.data.v] 0건
+[scenes.62.data.s] 1년 실거래 기준
+[scenes.62.data.icon] Ban
+[scenes.62.data.c] rise
 [scenes.62.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.63.lines.0.text] 다른 단지 다른 크기까지 다 봐도, 압구정동에서 가장 비싸게 팔린 집은 128억이었고요.
-[scenes.63.data.title] 압구정 1년 최고가
-[scenes.63.data.v] 128억
-[scenes.63.data.s] 신현대11차 전용 183.41㎡ · 2025.12
-[scenes.63.data.icon] Building
-[scenes.63.data.c] ink
-[scenes.63.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.64.lines.0.text] 1년 사이 오르내림은 압구정에선 말씀드리지 않을게요. 같은 단지 같은 크기 거래가 반년에 서너 건뿐이라, 몇 건으로 방향을 말하기 어렵거든요.
-[scenes.64.lines.0.cap] 압구정 같은 면적 앞 6개월·뒤 6개월 표본 각 3~4건(적어서 값 비교는 안 함) · 1년 최고가 · 신현대11차 전용 183.41㎡ 128.00억 2025.12
-[scenes.64.data.license] Pexels 12079562 무료(FREE VIDEO HAPPY)
-[scenes.64.data.say] 몇 건으로는 방향을 말하기 어렵다
-[scenes.64.data.side] left
-[scenes.65.lines.0.text] 압구정엔 다른 동네와 크게 다른 숫자가 하나 더 있습니다.
-[scenes.65.lines.1.text] 계약했다가 나중에 취소 신고된 거래가, 열세 건 중에 한 건꼴이었습니다.
-[scenes.65.lines.2.text] 다른 두 동네는 서른다섯 건에 한 건꼴이었고요.
-[scenes.65.lines.3.text] 압구정에서 취소가 훨씬 잦았던 거죠.
-[scenes.65.lines.3.cap] 해제 신고 비율 · 압구정동 13/170건 7.6% · 신천동 9/320건 2.8% · 목동 19/694건 2.7% · 신정동 28/953건 2.9%
-[scenes.65.data.title] 해제 신고 비율
-[scenes.65.data.bars.0.0] 압구정동
-[scenes.65.data.bars.0.2] 7.6%
-[scenes.65.data.bars.0.3] rise
-[scenes.65.data.bars.1.0] 신천동
-[scenes.65.data.bars.1.2] 2.8%
-[scenes.65.data.bars.1.3] ink
-[scenes.65.data.bars.2.0] 목동
-[scenes.65.data.bars.2.2] 2.7%
-[scenes.65.data.bars.2.3] ink
-[scenes.65.data.bars.3.0] 신정동
-[scenes.65.data.bars.3.2] 2.9%
-[scenes.65.data.bars.3.3] ink
-[scenes.65.data.dir] h
-[scenes.65.data.icon] ChartColumn
+[scenes.63.lines.0.text] 뉴스에선 이런 집을 몇억 낮춰 내놨다는 이야기도 자주 나오죠.
+[scenes.63.data.license] Pexels 31251626 무료(PUWOOK Kwak)
+[scenes.63.data.say] 뉴스 속 낮춘 값
+[scenes.63.data.side] left
+[scenes.64.lines.0.text] 그건 집주인이 부른 값, 호가예요. 실거래 자료엔 실제로 계약하고 신고한 값만 들어갑니다.
+[scenes.64.lines.1.text] 그래서 오늘 숫자엔 호가가 하나도 없어요.
+[scenes.64.lines.1.cap] 호가·매물·급매 기사 숫자는 쓰지 않음 · 국토교통부 실거래 = 계약 뒤 30일 안 신고된 값
+[scenes.64.data.title] 같은 집, 두 가지 값
+[scenes.64.data.v1] 호가
+[scenes.64.data.s1] 집주인이 부른 값 · 오늘 안 씀
+[scenes.64.data.c1] ink
+[scenes.64.data.v2] 실거래
+[scenes.64.data.s2] 계약 뒤 신고된 값
+[scenes.64.data.c2] accent
+[scenes.64.data.icon] Scale
+[scenes.64.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.65.lines.0.text] 다른 단지 다른 크기까지 다 봐도, 압구정동에서 가장 비싸게 팔린 집은 128억이었고요.
+[scenes.65.data.title] 압구정 1년 최고가
+[scenes.65.data.v] 128억
+[scenes.65.data.s] 신현대11차 전용 183.41㎡ · 2025.12
+[scenes.65.data.icon] Building
+[scenes.65.data.c] ink
 [scenes.65.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.66.lines.0.text] 그래서 뉴스에 나온 최고 기록 거래 한 건은, 실거래가 공개시스템에서 나중에 해제, 그러니까 취소 표시가 붙었는지 한 번 더 보셔야 해요.
-[scenes.66.data.license] Pexels 30975009 무료(Stephen Leonardi)
-[scenes.66.data.say] 최고 기록 거래는 해제 표시까지
+[scenes.66.lines.0.text] 1년 사이 오르내림은 압구정에선 말씀드리지 않을게요. 같은 단지 같은 크기 거래가 반년에 서너 건뿐이라, 몇 건으로 방향을 말하기 어렵거든요.
+[scenes.66.lines.0.cap] 압구정 같은 면적 앞 6개월·뒤 6개월 표본 각 3~4건(적어서 값 비교는 안 함) · 1년 최고가 · 신현대11차 전용 183.41㎡ 128.00억 2025.12
+[scenes.66.data.license] Pexels 12079562 무료(FREE VIDEO HAPPY)
+[scenes.66.data.say] 몇 건으로는 방향을 말하기 어렵다
 [scenes.66.data.side] left
-[scenes.67.lines.0.text] 세대수가 확인된 압구정 현대 단지들도 1년 동안 백 집에 두 집 조금 넘게 팔렸습니다.
-[scenes.67.lines.0.cap] 거래 8건 이상 지번만 · 현대·신현대 세대 3,788(건축물대장) · 1년 매매 91건 · 2.4%
-[scenes.67.data.title] 현대·신현대 3,788세대
-[scenes.67.data.v] 91채
-[scenes.67.data.s] 1년 매매 · 2.4%
-[scenes.67.data.icon] Building
-[scenes.67.data.c] accent
-[scenes.67.data.source] 국토교통부 실거래 · 건축물대장 총괄표제부 세대수(2026.10.17 조회) · 파이어맵 계산
-[scenes.68.lines.0.text] 여기서 하나 조심할 게 있어요. 같은 단지 안에서도 작은 집이 평당 더 비쌌거든요.
-[scenes.68.data.n] 5장
-[scenes.68.data.q] 평당 값만 보면 생기는 착시
-[scenes.68.data.from] 같은 단지 안 작은 집 vs 큰 집
-[scenes.69.lines.0.text] 파크리오에선 가장 작은 집이 가장 큰 집보다 평당 60% 이상 비쌌습니다.
-[scenes.69.lines.0.cap] 파크리오 35㎡ 13,133만원(20건) vs 145㎡ 8,158만원(10건) · +61.0%
-[scenes.69.data.license] 파이어맵 자체 그림
-[scenes.70.lines.0.text] 목동 3단지에서도 40% 차이였고요.
-[scenes.70.lines.0.cap] 목동신시가지3 65㎡ 11,955만원(29건) vs 122㎡ 8,484만원(6건) · +40.9%
-[scenes.70.data.title] 목동신시가지3 평당
-[scenes.70.data.v1] 11,955만원
-[scenes.70.data.s1] 65㎡ · 29건
-[scenes.70.data.c1] rise
-[scenes.70.data.v2] 8,484만원
-[scenes.70.data.s2] 122㎡ · 6건
-[scenes.70.data.c2] ink
-[scenes.70.data.icon] Scale
-[scenes.70.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.71.lines.0.text] 신천동과 목동·신정동에서 크기별 거래가 넉넉한 단지를 전부 봤더니, 열에 아홉 정도 이랬습니다.
-[scenes.71.lines.1.text] 거꾸로인 곳은 두 곳뿐이었고요.
-[scenes.71.lines.1.cap] 신천·목동·신정동에서 거래 5건 이상 면적이 둘 이상인 단지 26곳 · 가장 작은 면적이 평당 더 높음 24곳 · 거꾸로 2곳(학마을1단지(신정동) −5.2% · 한신잠실코아 −1.7%) · 압구정동은 기준을 넘는 단지가 신현대12차 1곳뿐이고 거꾸로(−9.1%)
-[scenes.71.data.title] 크기별 거래 넉넉한 단지 26곳
-[scenes.71.data.v] 24곳
-[scenes.71.data.s] 가장 작은 집이 평당 더 비쌈 · 거꾸로 2곳
-[scenes.71.data.icon] ListChecks
-[scenes.71.data.c] accent
-[scenes.71.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.72.lines.0.text] 평당 가격은 집값을 넓이로 나눈 건데, 집이 작아져도 가격은 넓이만큼 줄지 않거든요.
-[scenes.72.lines.1.text] 그래서 평당 가격으로 동네를 줄 세우면, 작은 집이 많이 팔린 곳이 더 비싸 보일 수 있어요.
-[scenes.72.data.license] Pexels 16392935 무료(Bảo Nghĩa)
-[scenes.72.data.say] 집이 작아져도 값은 넓이만큼 안 준다
-[scenes.72.data.side] left
-[scenes.73.lines.0.text] 이번에 평당 대신 같은 돈으로 몇 ㎡였는지를 먼저 본 것도 그 때문이에요.
-[scenes.73.data.title] 그래서 먼저 본 것
-[scenes.73.data.v] 같은 돈이면 몇 ㎡
-[scenes.73.data.s] 평당 줄 세우기 대신
-[scenes.73.data.icon] Search
-[scenes.73.data.c] ink
+[scenes.67.lines.0.text] 압구정엔 다른 동네와 크게 다른 숫자가 하나 더 있습니다.
+[scenes.67.lines.1.text] 계약했다가 나중에 취소 신고된 거래가, 열세 건 중에 한 건꼴이었습니다.
+[scenes.67.lines.2.text] 다른 두 동네는 서른다섯 건에 한 건꼴이었고요.
+[scenes.67.lines.3.text] 압구정에서 취소가 훨씬 잦았던 거죠.
+[scenes.67.lines.3.cap] 해제 신고 비율 · 압구정동 13/170건 7.6% · 신천동 9/320건 2.8% · 목동 19/694건 2.7% · 신정동 28/953건 2.9%
+[scenes.67.data.title] 해제 신고 비율
+[scenes.67.data.bars.0.0] 압구정동
+[scenes.67.data.bars.0.2] 7.6%
+[scenes.67.data.bars.0.3] rise
+[scenes.67.data.bars.1.0] 신천동
+[scenes.67.data.bars.1.2] 2.8%
+[scenes.67.data.bars.1.3] ink
+[scenes.67.data.bars.2.0] 목동
+[scenes.67.data.bars.2.2] 2.7%
+[scenes.67.data.bars.2.3] ink
+[scenes.67.data.bars.3.0] 신정동
+[scenes.67.data.bars.3.2] 2.9%
+[scenes.67.data.bars.3.3] ink
+[scenes.67.data.dir] h
+[scenes.67.data.icon] ChartColumn
+[scenes.67.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.68.lines.0.text] 그래서 뉴스에 나온 최고 기록 거래 한 건은, 실거래가 공개시스템에서 나중에 해제, 그러니까 취소 표시가 붙었는지 한 번 더 보셔야 해요.
+[scenes.68.data.license] Pexels 30975009 무료(Stephen Leonardi)
+[scenes.68.data.say] 최고 기록 거래는 해제 표시까지
+[scenes.68.data.side] left
+[scenes.69.lines.0.text] 세대수가 확인된 압구정 현대 단지들도 1년 동안 백 집에 두 집 조금 넘게 팔렸습니다.
+[scenes.69.lines.0.cap] 거래 8건 이상 지번만 · 현대·신현대 세대 3,788(건축물대장) · 1년 매매 91건 · 2.4%
+[scenes.69.data.title] 현대·신현대 3,788세대
+[scenes.69.data.v] 91채
+[scenes.69.data.s] 1년 매매 · 2.4%
+[scenes.69.data.icon] Building
+[scenes.69.data.c] accent
+[scenes.69.data.source] 국토교통부 실거래 · 건축물대장 총괄표제부 세대수(2026.10.17 조회) · 파이어맵 계산
+[scenes.70.lines.0.text] 여기서 하나 조심할 게 있어요. 같은 단지 안에서도 작은 집이 평당 더 비쌌거든요.
+[scenes.70.data.n] 5장
+[scenes.70.data.q] 평당 값만 보면 생기는 착시
+[scenes.70.data.from] 같은 단지 안 작은 집 vs 큰 집
+[scenes.71.lines.0.text] 파크리오에선 가장 작은 집이 가장 큰 집보다 평당 60% 이상 비쌌습니다.
+[scenes.71.lines.0.cap] 파크리오 35㎡ 13,133만원(20건) vs 145㎡ 8,158만원(10건) · +61.0%
+[scenes.71.data.license] 파이어맵 자체 그림
+[scenes.72.lines.0.text] 목동 3단지에서도 40% 차이였고요.
+[scenes.72.lines.0.cap] 목동신시가지3 65㎡ 11,955만원(29건) vs 122㎡ 8,484만원(6건) · +40.9%
+[scenes.72.data.title] 목동신시가지3 평당
+[scenes.72.data.v1] 11,955만원
+[scenes.72.data.s1] 65㎡ · 29건
+[scenes.72.data.c1] rise
+[scenes.72.data.v2] 8,484만원
+[scenes.72.data.s2] 122㎡ · 6건
+[scenes.72.data.c2] ink
+[scenes.72.data.icon] Scale
+[scenes.72.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.73.lines.0.text] 신천동과 목동·신정동에서 크기별 거래가 넉넉한 단지를 전부 봤더니, 열에 아홉 정도 이랬습니다.
+[scenes.73.lines.1.text] 거꾸로인 곳은 두 곳뿐이었고요.
+[scenes.73.lines.1.cap] 신천·목동·신정동에서 거래 5건 이상 면적이 둘 이상인 단지 26곳 · 가장 작은 면적이 평당 더 높음 24곳 · 거꾸로 2곳(학마을1단지(신정동) −5.2% · 한신잠실코아 −1.7%) · 압구정동은 기준을 넘는 단지가 신현대12차 1곳뿐이고 거꾸로(−9.1%)
+[scenes.73.data.title] 크기별 거래 넉넉한 단지 26곳
+[scenes.73.data.v] 24곳
+[scenes.73.data.s] 가장 작은 집이 평당 더 비쌈 · 거꾸로 2곳
+[scenes.73.data.icon] ListChecks
+[scenes.73.data.c] accent
 [scenes.73.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.74.lines.0.text] 이제 이 동네에서 집을 사려는 분이 계약 전에 알아 둘 규칙이에요.
-[scenes.74.lines.0.cap] 부동산 거래신고 등에 관한 법률 §11① 당사자 공동 신청 · ③ 계약내용·토지이용계획·취득자금 조달계획 제출(시장·군수·구청장) · ④ 민원 처리기간 안에 허가·불허가 · ⑤ 기간 안에 통지 없으면 허가로 봄 · ⑥ 허가 없는 계약은 효력 없음 (법제처 2026.10.19)
-[scenes.74.data.n] 6장
-[scenes.74.data.q] 허가구역에서 산다면, 2년 실거주와 예외
-[scenes.74.data.from] 부동산 거래신고 등에 관한 법률 · 시행령 §14의2
-[scenes.75.lines.0.text] 2년을 직접 살아야 하니까, 세입자를 들이고 나중에 들어가는 방식은 원칙적으로 안 돼요.
-[scenes.75.lines.1.text] 이미 이 동네에 집이 있으면, 팔 때도 사는 사람이 허가를 받아야 한다는 점이 같이 붙고요.
-[scenes.75.lines.2.text] 세 들어 사실 거라면 따로 허가가 필요 없습니다. 전세 이야기는 뒤에서 따로 할게요.
-[scenes.75.lines.2.cap] 허가 대상 = 토지거래계약(매매) · 임대차 계약은 허가 대상 아님 · 세입자 있는 집 특례는 시행령 §14의2(바로 아래)
-[scenes.75.data.license] AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님
-[scenes.75.data.badge] AI 생성
-[scenes.76.lines.0.text] 그럼 세입자가 살고 있는 집은 아예 못 살까요?
-[scenes.76.data.n] 궁금증
-[scenes.76.data.q] 세입자가 사는 집은 아예 못 살까요?
-[scenes.76.data.from] 시행령 §14의2② · 2026.10.1 시행
-[scenes.77.lines.0.text] 이번 달 1일부터 시행된 시행령에, 집이 없는 사람을 위한 특례가 들어 있어요.
-[scenes.77.lines.1.text] 조건은 셋이에요. 먼저 올해 5월 12일부터 쭉 집이 없는 세대여야 합니다.
-[scenes.77.lines.2.text] 사려는 집에는 10월 1일 당시 세입자가 살고 있어야 하고요.
-[scenes.77.lines.3.text] 그리고 2027년 말까지 허가를 신청해야 해요.
-[scenes.77.data.license] 파이어맵 자체 그림
-[scenes.78.lines.0.text] 허가를 받고 넉 달 안에 집을 넘겨받으면, 2년 직접 사는 기간을 세입자 계약이 처음 끝나는 날부터 셉니다.
-[scenes.78.lines.0.cap] 부동산 거래신고 등에 관한 법률 시행령 §14의2② (공포 2026.9.30 · 시행 2026.10.1) · 2026.5.12 당시부터 허가 신청일까지 무주택세대 구성원 · 2026.10.1 당시 임대 중이거나 전세권 설정 · 2027.12.31 이전 허가 신청 · 허가일부터 4개월 안 취득 → 이용 의무 2년을 임대 계약 최초 종료일부터 (법제처 2026.10.18 확인) · §14의2② 단서 '최초 종료일이 허가를 받은 날부터 4개월 이내인 경우에는 제14조제2항제1호를 적용' · 허가신청일 전 기존 임차인과 2년 이내 갱신 계약이 2027.12.31 전에 시작되면 갱신 계약 종료일 기준
-[scenes.78.data.title] 특례로 넉 달 안 취득하면
-[scenes.78.data.v] 세입자 계약 끝난 날부터
-[scenes.78.data.s] 2년 직접 거주를 그때부터 셈
-[scenes.78.data.icon] CalendarClock
-[scenes.78.data.c] ink
-[scenes.78.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.79.lines.0.text] 왜 이런 예외가 생겼을까요?
-[scenes.79.lines.1.text] 시행령을 고친 이유에는, 세입자가 사는 집도 사고팔 수 있게 하고 세입자도 보호하려는 뜻이 적혀 있어요.
-[scenes.79.data.license] Pexels 8471105 무료(Thirdman)
-[scenes.79.data.say] 세입자 있는 집도 사고팔 수 있게
-[scenes.79.data.side] left
-[scenes.80.lines.0.text] 이 밖에도 해외로 이주하거나 군에 복무하는 것처럼, 법에 정한 사유가 있으면 2년을 못 채워도 예외로 봅니다.
-[scenes.80.lines.0.cap] 시행령 §14① 이용 의무 예외 사유 · 5호 해외이주 · 6호 병역 복무 · 7호 재해 · 8호 공익사업 등 책임 없는 사유 · 11호 시·군·구 도시계획위원회가 인정한 불가피한 사유
-[scenes.80.data.title] 2년 못 채워도 예외
-[scenes.80.data.rows.0.0] 해외 이주
-[scenes.80.data.rows.1.0] 병역 복무
-[scenes.80.data.rows.2.0] 재해 · 공익사업 등
-[scenes.80.data.icon] ListChecks
+[scenes.74.lines.0.text] 평당 가격은 집값을 넓이로 나눈 건데, 집이 작아져도 가격은 넓이만큼 줄지 않거든요.
+[scenes.74.lines.1.text] 그래서 평당 가격으로 동네를 줄 세우면, 작은 집이 많이 팔린 곳이 더 비싸 보일 수 있어요.
+[scenes.74.data.license] Pexels 16392935 무료(Bảo Nghĩa)
+[scenes.74.data.say] 집이 작아져도 값은 넓이만큼 안 준다
+[scenes.74.data.side] left
+[scenes.75.lines.0.text] 이번에 평당 대신 같은 돈으로 몇 ㎡였는지를 먼저 본 것도 그 때문이에요.
+[scenes.75.data.title] 그래서 먼저 본 것
+[scenes.75.data.v] 같은 돈이면 몇 ㎡
+[scenes.75.data.s] 평당 줄 세우기 대신
+[scenes.75.data.icon] Search
+[scenes.75.data.c] ink
+[scenes.75.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.76.lines.0.text] 이제 이 동네에서 집을 사려는 분이 계약 전에 알아 둘 규칙이에요.
+[scenes.76.lines.0.cap] 부동산 거래신고 등에 관한 법률 §11① 당사자 공동 신청 · ③ 계약내용·토지이용계획·취득자금 조달계획 제출(시장·군수·구청장) · ④ 민원 처리기간 안에 허가·불허가 · ⑤ 기간 안에 통지 없으면 허가로 봄 · ⑥ 허가 없는 계약은 효력 없음 (법제처 2026.10.19)
+[scenes.76.data.n] 6장
+[scenes.76.data.q] 허가구역에서 산다면, 2년 실거주와 예외
+[scenes.76.data.from] 부동산 거래신고 등에 관한 법률 · 시행령 §14의2
+[scenes.77.lines.0.text] 2년을 직접 살아야 하니까, 세입자를 들이고 나중에 들어가는 방식은 원칙적으로 안 돼요.
+[scenes.77.lines.1.text] 이미 이 동네에 집이 있으면, 팔 때도 사는 사람이 허가를 받아야 한다는 점이 같이 붙고요.
+[scenes.77.lines.2.text] 세 들어 사실 거라면 따로 허가가 필요 없습니다. 전세 이야기는 뒤에서 따로 할게요.
+[scenes.77.lines.2.cap] 허가 대상 = 토지거래계약(매매) · 임대차 계약은 허가 대상 아님 · 세입자 있는 집 특례는 시행령 §14의2(바로 아래)
+[scenes.77.data.license] AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님
+[scenes.77.data.badge] AI 생성
+[scenes.78.lines.0.text] 그럼 세입자가 살고 있는 집은 아예 못 살까요?
+[scenes.78.data.n] 궁금증
+[scenes.78.data.q] 세입자가 사는 집은 아예 못 살까요?
+[scenes.78.data.from] 시행령 §14의2② · 2026.10.1 시행
+[scenes.79.lines.0.text] 이번 달 1일부터 시행된 시행령에, 집이 없는 사람을 위한 특례가 들어 있어요.
+[scenes.79.lines.1.text] 조건은 셋이에요. 먼저 올해 5월 12일부터 쭉 집이 없는 세대여야 합니다.
+[scenes.79.lines.2.text] 사려는 집에는 10월 1일 당시 세입자가 살고 있어야 하고요.
+[scenes.79.lines.3.text] 그리고 2027년 말까지 허가를 신청해야 해요.
+[scenes.79.data.license] 파이어맵 자체 그림
+[scenes.80.lines.0.text] 허가를 받고 넉 달 안에 집을 넘겨받으면, 2년 직접 사는 기간을 세입자 계약이 처음 끝나는 날부터 셉니다.
+[scenes.80.lines.0.cap] 부동산 거래신고 등에 관한 법률 시행령 §14의2② (공포 2026.9.30 · 시행 2026.10.1) · 2026.5.12 당시부터 허가 신청일까지 무주택세대 구성원 · 2026.10.1 당시 임대 중이거나 전세권 설정 · 2027.12.31 이전 허가 신청 · 허가일부터 4개월 안 취득 → 이용 의무 2년을 임대 계약 최초 종료일부터 (법제처 2026.10.18 확인) · §14의2② 단서 '최초 종료일이 허가를 받은 날부터 4개월 이내인 경우에는 제14조제2항제1호를 적용' · 허가신청일 전 기존 임차인과 2년 이내 갱신 계약이 2027.12.31 전에 시작되면 갱신 계약 종료일 기준
+[scenes.80.data.title] 특례로 넉 달 안 취득하면
+[scenes.80.data.v] 세입자 계약 끝난 날부터
+[scenes.80.data.s] 2년 직접 거주를 그때부터 셈
+[scenes.80.data.icon] CalendarClock
+[scenes.80.data.c] ink
 [scenes.80.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.81.lines.0.text] 세입자가 있는 집을 이렇게 산다면, 매매값에서 전세 보증금을 뺀 돈은 먼저 있어야 합니다.
-[scenes.81.lines.1.text] 파크리오 국민평형이면 18억 정도예요.
-[scenes.81.lines.2.text] 압구정 한양아파트 작은 집이면 35억 정도가 필요하고요.
-[scenes.81.lines.2.cap] 매매 중앙 − 신규 전세 중앙 · 파크리오 84~85.5㎡ 29.20억 − 11.00억 = 18.20억 · 목동신시가지7 66~68㎡ 25.60억 − 7.00억 = 18.60억 · 한양1차 49~51㎡ 40.67억 − 5.50억 = 35.17억
-[scenes.81.data.title] 세입자 있는 집 · 먼저 있어야 할 돈
-[scenes.81.data.rows.0.0] 파크리오 국민평형
-[scenes.81.data.rows.0.1] 18.20억
-[scenes.81.data.rows.0.2] accent
-[scenes.81.data.rows.1.0] 한양1차 작은 집
-[scenes.81.data.rows.1.1] 35.17억
-[scenes.81.data.rows.1.2] rise
-[scenes.81.data.icon] Wallet
-[scenes.81.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.82.lines.0.text] 세입자가 계약을 한 번 갱신했다면, 그 갱신 계약이 끝나는 날부터 셉니다. 그래서 계약 전에 처음 끝나는 날과 갱신했는지부터 확인하세요.
-[scenes.82.data.license] Pexels 8482325 무료(Thirdman)
-[scenes.82.data.say] 세입자 계약 끝나는 날부터 확인
-[scenes.82.data.side] left
-[scenes.83.lines.0.text] 돈 이야기도 하나 짚을게요. 집을 사려고 받는 대출은 작년 10월 대책 기준으로 집값에 따라 한도가 정해져 있어요.
-[scenes.83.lines.1.text] 시세가 25억을 넘는 집은 대출이 가장 적게 나와요.
-[scenes.83.lines.2.text] 최대 2억까지 빌릴 수 있어요.
-[scenes.83.lines.3.text] 그보다 싼 집은 4억까지고요.
-[scenes.83.data.license] 파이어맵 자체 그림
-[scenes.84.lines.0.text] 15억이 안 넘는 집은 한도가 가장 넉넉해요.
-[scenes.84.lines.1.text] 6억까지 빌릴 수 있습니다. 시세는 은행이 한국부동산원이나 KB 시세로 봅니다.
-[scenes.84.data.title] 15억이 안 넘는 집
-[scenes.84.data.v] 6억까지
-[scenes.84.data.s] 시세는 은행이 한국부동산원·KB 시세로
-[scenes.84.data.icon] Landmark
-[scenes.84.data.c] ink
-[scenes.84.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.85.lines.0.text] 이 기준이 지금도 같은지는 대출받을 은행에서 꼭 확인하세요.
-[scenes.85.lines.1.text] 그래서 이 동네 30억대 집은 대부분 자기 돈으로 사야 하는 구조예요.
-[scenes.85.data.license] Pexels 6962707 무료(Mikhail Nilov)
-[scenes.85.data.say] 지금 기준은 은행에서 확인
-[scenes.85.data.side] left
-[scenes.86.lines.0.text] 취득세도 따로 있어요. 산 뒤에 이 집 한 채만 갖게 되는 분이 9억 넘는 집을 사면요.
-[scenes.86.lines.1.text] 집값의 3%를 냅니다.
-[scenes.86.data.title] 1주택 · 9억 넘는 집 취득세
-[scenes.86.data.v] 3%
-[scenes.86.data.s] 지방세법 §11①8다
-[scenes.86.data.icon] Receipt
+[scenes.81.lines.0.text] 왜 이런 예외가 생겼을까요?
+[scenes.81.lines.1.text] 시행령을 고친 이유에는, 세입자가 사는 집도 사고팔 수 있게 하고 세입자도 보호하려는 뜻이 적혀 있어요.
+[scenes.81.data.license] Pexels 8471105 무료(Thirdman)
+[scenes.81.data.say] 세입자 있는 집도 사고팔 수 있게
+[scenes.81.data.side] left
+[scenes.82.lines.0.text] 이 밖에도 해외로 이주하거나 군에 복무하는 것처럼, 법에 정한 사유가 있으면 2년을 못 채워도 예외로 봅니다.
+[scenes.82.lines.0.cap] 시행령 §14① 이용 의무 예외 사유 · 5호 해외이주 · 6호 병역 복무 · 7호 재해 · 8호 공익사업 등 책임 없는 사유 · 11호 시·군·구 도시계획위원회가 인정한 불가피한 사유
+[scenes.82.data.title] 2년 못 채워도 예외
+[scenes.82.data.rows.0.0] 해외 이주
+[scenes.82.data.rows.1.0] 병역 복무
+[scenes.82.data.rows.2.0] 재해 · 공익사업 등
+[scenes.82.data.icon] ListChecks
+[scenes.82.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.83.lines.0.text] 세입자가 있는 집을 이렇게 산다면, 매매값에서 전세 보증금을 뺀 돈은 먼저 있어야 합니다.
+[scenes.83.lines.1.text] 파크리오 국민평형이면 18억 정도예요.
+[scenes.83.lines.2.text] 압구정 한양아파트 작은 집이면 35억 정도가 필요하고요.
+[scenes.83.lines.2.cap] 매매 중앙 − 신규 전세 중앙 · 파크리오 84~85.5㎡ 29.20억 − 11.00억 = 18.20억 · 목동신시가지7 66~68㎡ 25.60억 − 7.00억 = 18.60억 · 한양1차 49~51㎡ 40.67억 − 5.50억 = 35.17억
+[scenes.83.data.title] 세입자 있는 집 · 먼저 있어야 할 돈
+[scenes.83.data.rows.0.0] 파크리오 국민평형
+[scenes.83.data.rows.0.1] 18.20억
+[scenes.83.data.rows.0.2] accent
+[scenes.83.data.rows.1.0] 한양1차 작은 집
+[scenes.83.data.rows.1.1] 35.17억
+[scenes.83.data.rows.1.2] rise
+[scenes.83.data.icon] Wallet
+[scenes.83.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.84.lines.0.text] 세입자가 계약을 한 번 갱신했다면, 그 갱신 계약이 끝나는 날부터 셉니다. 그래서 계약 전에 처음 끝나는 날과 갱신했는지부터 확인하세요.
+[scenes.84.data.license] Pexels 8482325 무료(Thirdman)
+[scenes.84.data.say] 세입자 계약 끝나는 날부터 확인
+[scenes.84.data.side] left
+[scenes.85.lines.0.text] 돈 이야기도 하나 짚을게요. 집을 사려고 받는 대출은 작년 10월 대책 기준으로 집값에 따라 한도가 정해져 있어요.
+[scenes.85.lines.1.text] 시세가 25억을 넘는 집은 대출이 가장 적게 나와요.
+[scenes.85.lines.2.text] 최대 2억까지 빌릴 수 있어요.
+[scenes.85.lines.3.text] 그보다 싼 집은 4억까지고요.
+[scenes.85.data.license] 파이어맵 자체 그림
+[scenes.86.lines.0.text] 15억이 안 넘는 집은 한도가 가장 넉넉해요.
+[scenes.86.lines.1.text] 6억까지 빌릴 수 있습니다. 시세는 은행이 한국부동산원이나 KB 시세로 봅니다.
+[scenes.86.data.title] 15억이 안 넘는 집
+[scenes.86.data.v] 6억까지
+[scenes.86.data.s] 시세는 은행이 한국부동산원·KB 시세로
+[scenes.86.data.icon] Landmark
 [scenes.86.data.c] ink
 [scenes.86.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.87.lines.0.text] 그러니까 30억 집이라면요.
-[scenes.87.lines.1.text] 취득세만 9천만원 정도고, 여기에 붙는 지방세가 조금 더 있습니다.
-[scenes.87.lines.1.cap] 지방세법 §11①8다 유상거래 주택 취득당시가액 9억 초과 1천분의 30 · 30억 × 3% = 9,000만원 · 지방교육세·농어촌특별세 등 부가세는 별도(이번에 계산 안 함) · 조정대상지역 2주택은 8%(10장) · 금융위원회 「대출수요 관리 강화 방안」 FAQ(2025.10.15) · 수도권·규제지역 주택구입 목적 주담대 한도 · 시가 15억 이하 6억 · 15억 초과~25억 이하 4억 · 25억 초과 2억 · 규제지역 LTV 40% · 2026.10 현재 같은지는 확인 안 함
-[scenes.87.data.title] 30억 집이라면
-[scenes.87.data.v] 9,000만원
-[scenes.87.data.s] 취득세만 · 지방교육세 등은 별도
-[scenes.87.data.icon] Receipt
-[scenes.87.data.c] accent
-[scenes.87.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.88.lines.0.text] 이 세 동네의 오래된 단지들은 지금 재건축을 추진하고 있어요.
-[scenes.88.data.n] 7장
-[scenes.88.data.q] 재건축 단계와 조합원 자격
-[scenes.88.data.from] 도시 및 주거환경정비법 §39 · 서울시 정비사업 정보몽땅
-[scenes.89.lines.0.text] 그래서 사기 전에 알아 두셔야 할 규칙이 하나 있어요.
-[scenes.89.data.license] AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님
-[scenes.89.data.badge] AI 생성
-[scenes.90.lines.0.text] 서울은 지금 스물다섯 개 구가 전부 투기과열지구예요.
-[scenes.90.data.title] 투기과열지구
-[scenes.90.data.v] 서울 25개 구 전부
-[scenes.90.data.s] 국토교통부공고 제2025-1225호
-[scenes.90.data.icon] MapPinned
-[scenes.90.data.c] ink
-[scenes.90.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.91.lines.0.text] 투기과열지구에서는 재건축 조합설립인가가 난 뒤에 집을 산 사람은 조합원이 될 수 없어요.
-[scenes.91.lines.1.text] 조합원이 못 되면 새 집을 받는 길이 막히고, 사업을 하는 쪽이 돈으로 손실보상을 해 줘야 합니다.
-[scenes.91.lines.1.cap] 도시 및 주거환경정비법 §39② 투기과열지구 재건축 조합설립인가 후 양수한 자는 조합원이 될 수 없음(상속·이혼 제외) · §39③ 손실보상 · 투기과열지구 국토교통부공고 제2025-1225호(2025.10.16~해제 시까지) · 2026.7.1 공고 제2026-883호에서도 서울 25개 구 유지 (법제처 2026.10.19)
-[scenes.91.data.title] 조합설립인가 뒤 산 사람
-[scenes.91.data.v] 조합원 못 됨
-[scenes.91.data.s] 새 집 대신 돈으로 손실보상
-[scenes.91.data.icon] Ban
-[scenes.91.data.c] rise
-[scenes.91.data.source] 서울시 정비사업 정보몽땅 · 도시 및 주거환경정비법(법제처)
-[scenes.92.lines.0.text] 목동처럼 신탁회사가 사업을 맡는 단지는, 사업시행자로 지정된 날이 같은 기준이에요.
-[scenes.92.data.license] Pexels 8478946 무료(ArtHouse Studio)
-[scenes.92.data.say] 신탁 방식은 지정된 날이 기준
-[scenes.92.data.side] left
-[scenes.93.lines.0.text] 왜 지금 이게 중요할까요? 강남구와 송파구는 그 전부터 투기과열지구였고, 양천구는 작년 10월에 새로 들어갔거든요.
-[scenes.93.lines.1.text] 이미 조합설립인가가 나 있던 목동 6단지도, 그날부터 이 규칙을 적용받았습니다.
-[scenes.93.lines.1.cap] 목동신시가지6 조합설립인가 2025.5.22(정보몽땅 추진경과) · 국토교통부 2025.10.15 보도자료 · 강남·서초·송파·용산 지정 유지 · 그 외 서울 21개 구 신규 지정 · FAQ '지정공고일 당시 조합설립 인가된 재건축 구역도 그날부터 조합원 지위양도 불가' · §39①3호 괄호: 신탁업자 사업시행자 지정 = 조합설립인가로 봄
-[scenes.93.data.title] 투기과열지구 지정
-[scenes.93.data.rows.0.0] 강남구 · 송파구
-[scenes.93.data.rows.0.1] 그 전부터
-[scenes.93.data.rows.1.0] 양천구
-[scenes.93.data.rows.1.1] 2025년 10월 새로
-[scenes.93.data.rows.1.2] rise
-[scenes.93.data.icon] MapPinned
-[scenes.93.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.94.lines.0.text] 지금 단계를 보면, 압구정은 구역 네 곳이 이미 조합설립인가를 받았어요.
-[scenes.94.lines.1.text] 1구역은 그 전 단계인 추진위원회고요.
-[scenes.94.lines.2.text] 신천동 장미아파트는 2020년에 조합설립인가를 받았습니다.
-[scenes.94.data.license] 파이어맵 자체 그림
-[scenes.95.lines.0.text] 목동신시가지는 열네 단지 중 열두 곳이 조합설립인가나 사업시행자 지정까지 왔어요.
-[scenes.95.lines.1.text] 3단지는 아직 추진위원회 단계예요.
-[scenes.95.data.title] 목동신시가지 14단지
-[scenes.95.data.rows.0.0] 조합설립 · 사업시행자 지정
-[scenes.95.data.rows.0.1] 12곳
-[scenes.95.data.rows.1.0] 3단지
-[scenes.95.data.rows.1.1] 추진위원회
-[scenes.95.data.rows.1.2] ink
-[scenes.95.data.rows.2.0] 2단지
-[scenes.95.data.rows.2.1] 지정 날짜 확인 안 함
-[scenes.95.data.rows.2.2] rise
-[scenes.95.data.icon] ListChecks
-[scenes.95.data.source] 서울시 정비사업 정보몽땅 · 도시 및 주거환경정비법(법제처)
-[scenes.96.lines.0.text] 파크리오는 서울시에 정비사업으로 올라가 있지 않습니다.
-[scenes.96.lines.0.cap] 서울시 정비사업 정보몽땅 추진경과(2026.10.19 확인) · 압구정 2구역 2021.4.12 · 3구역 2021.4.19 · 4구역 2021.2.10 · 5구역 2021.2.22 조합설립인가 · 1구역 추진위원회 승인 · 6구역 확인 안 함 · 장미1·2·3차 2020.3.24 · 목동 조합설립인가 4·6·7·8·12단지 · 신탁 사업시행자 지정 1·5·9·10·11·13·14단지 · 3단지 추진위 · 2단지 지정일 확인 안 함 · 10/5 이후 새 인가·지정 없음
-[scenes.96.data.title] 파크리오
-[scenes.96.data.v] 정비사업 아님
-[scenes.96.data.s] 서울시 정비사업 정보몽땅에 없음
-[scenes.96.data.icon] Building
-[scenes.96.data.c] ink
-[scenes.96.data.source] 서울시 정비사업 정보몽땅 · 도시 및 주거환경정비법(법제처)
-[scenes.97.lines.0.text] 그러니까 이 단지들 대부분은, 지금 사면 원칙적으로 조합원이 될 수 없어요.
-[scenes.97.lines.1.text] 이때 받는 손실보상 금액은 사업이 진행된 뒤 협의로 정해져서, 지금 얼마라고 말할 수 없어요.
-[scenes.97.data.license] Pexels 37527858 무료(FREE VIDEO HAPPY)
-[scenes.97.data.say] 지금 사면 원칙적으로 조합원이 안 된다
-[scenes.97.data.side] left
-[scenes.98.lines.0.text] 재건축이 언제 끝날지, 조합원이 돈을 얼마나 더 낼지도 이 영상에선 다루지 않습니다. 정해진 자료가 없거든요.
-[scenes.98.lines.0.cap] §73① 관리처분계획 인가·고시 다음 날부터 90일 안에 손실보상 협의 · ② 협의 안 되면 수용재결 신청 또는 매도청구소송 · 사업 기간·분담금은 다루지 않음
-[scenes.98.data.title] 사업 기간 · 분담금
-[scenes.98.data.v] 다루지 않음
-[scenes.98.data.s] 정해진 자료가 없음
-[scenes.98.data.icon] CircleSlash
-[scenes.98.data.c] ink
+[scenes.87.lines.0.text] 이 기준이 지금도 같은지는 대출받을 은행에서 꼭 확인하세요.
+[scenes.87.lines.1.text] 그래서 이 동네 30억대 집은 대부분 자기 돈으로 사야 하는 구조예요.
+[scenes.87.data.license] Pexels 6962707 무료(Mikhail Nilov)
+[scenes.87.data.say] 지금 기준은 은행에서 확인
+[scenes.87.data.side] left
+[scenes.88.lines.0.text] 취득세도 따로 있어요. 산 뒤에 이 집 한 채만 갖게 되는 분이 9억 넘는 집을 사면요.
+[scenes.88.lines.1.text] 집값의 3%를 냅니다.
+[scenes.88.data.title] 1주택 · 9억 넘는 집 취득세
+[scenes.88.data.v] 3%
+[scenes.88.data.s] 지방세법 §11①8다
+[scenes.88.data.icon] Receipt
+[scenes.88.data.c] ink
+[scenes.88.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.89.lines.0.text] 그러니까 30억 집이라면요.
+[scenes.89.lines.1.text] 취득세만 9천만원 정도고, 여기에 붙는 지방세가 조금 더 있습니다.
+[scenes.89.lines.1.cap] 지방세법 §11①8다 유상거래 주택 취득당시가액 9억 초과 1천분의 30 · 30억 × 3% = 9,000만원 · 지방교육세·농어촌특별세 등 부가세는 별도(이번에 계산 안 함) · 조정대상지역 2주택은 8%(10장) · 금융위원회 「대출수요 관리 강화 방안」 FAQ(2025.10.15) · 수도권·규제지역 주택구입 목적 주담대 한도 · 시가 15억 이하 6억 · 15억 초과~25억 이하 4억 · 25억 초과 2억 · 규제지역 LTV 40% · 2026.10 현재 같은지는 확인 안 함
+[scenes.89.data.title] 30억 집이라면
+[scenes.89.data.v] 9,000만원
+[scenes.89.data.s] 취득세만 · 지방교육세 등은 별도
+[scenes.89.data.icon] Receipt
+[scenes.89.data.c] accent
+[scenes.89.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.90.lines.0.text] 이 세 동네의 오래된 단지들은 지금 재건축을 추진하고 있어요.
+[scenes.90.data.n] 7장
+[scenes.90.data.q] 재건축 단계와 조합원 자격
+[scenes.90.data.from] 도시 및 주거환경정비법 §39 · 서울시 정비사업 정보몽땅
+[scenes.91.lines.0.text] 그래서 사기 전에 알아 두셔야 할 규칙이 하나 있어요.
+[scenes.91.data.license] AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님
+[scenes.91.data.badge] AI 생성
+[scenes.92.lines.0.text] 서울은 지금 스물다섯 개 구가 전부 투기과열지구예요.
+[scenes.92.data.title] 투기과열지구
+[scenes.92.data.v] 서울 25개 구 전부
+[scenes.92.data.s] 국토교통부공고 제2025-1225호
+[scenes.92.data.icon] MapPinned
+[scenes.92.data.c] ink
+[scenes.92.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.93.lines.0.text] 투기과열지구에서는 재건축 조합설립인가가 난 뒤에 집을 산 사람은 조합원이 될 수 없어요.
+[scenes.93.lines.1.text] 조합원이 못 되면 새 집을 받는 길이 막히고, 사업을 하는 쪽이 돈으로 손실보상을 해 줘야 합니다.
+[scenes.93.lines.1.cap] 도시 및 주거환경정비법 §39② 투기과열지구 재건축 조합설립인가 후 양수한 자는 조합원이 될 수 없음(상속·이혼 제외) · §39③ 손실보상 · 투기과열지구 국토교통부공고 제2025-1225호(2025.10.16~해제 시까지) · 2026.7.1 공고 제2026-883호에서도 서울 25개 구 유지 (법제처 2026.10.19)
+[scenes.93.data.title] 조합설립인가 뒤 산 사람
+[scenes.93.data.v] 조합원 못 됨
+[scenes.93.data.s] 새 집 대신 돈으로 손실보상
+[scenes.93.data.icon] Ban
+[scenes.93.data.c] rise
+[scenes.93.data.source] 서울시 정비사업 정보몽땅 · 도시 및 주거환경정비법(법제처)
+[scenes.94.lines.0.text] 목동처럼 신탁회사가 사업을 맡는 단지는, 사업시행자로 지정된 날이 같은 기준이에요.
+[scenes.94.data.license] Pexels 8478946 무료(ArtHouse Studio)
+[scenes.94.data.say] 신탁 방식은 지정된 날이 기준
+[scenes.94.data.side] left
+[scenes.95.lines.0.text] 왜 지금 이게 중요할까요? 강남구와 송파구는 그 전부터 투기과열지구였고, 양천구는 작년 10월에 새로 들어갔거든요.
+[scenes.95.data.title] 투기과열지구 지정
+[scenes.95.data.rows.0.0] 강남구 · 송파구
+[scenes.95.data.rows.0.1] 그 전부터
+[scenes.95.data.rows.1.0] 양천구
+[scenes.95.data.rows.1.1] 2025년 10월 새로
+[scenes.95.data.rows.1.2] rise
+[scenes.95.data.icon] MapPinned
+[scenes.95.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.96.lines.0.text] 이미 조합설립인가가 나 있던 목동 6단지도, 그날부터 이 규칙을 적용받았습니다.
+[scenes.96.lines.0.cap] 목동신시가지6 조합설립인가 2025.5.22(정보몽땅 추진경과) · 국토교통부 2025.10.15 보도자료 · 강남·서초·송파·용산 지정 유지 · 그 외 서울 21개 구 신규 지정 · FAQ '지정공고일 당시 조합설립 인가된 재건축 구역도 그날부터 조합원 지위양도 불가' · §39①3호 괄호: 신탁업자 사업시행자 지정 = 조합설립인가로 봄
+[scenes.96.data.license] Pexels 8482325 무료(Thirdman)
+[scenes.96.data.say] 이미 조합이 있던 단지도 그날부터
+[scenes.96.data.side] left
+[scenes.97.lines.0.text] 지금 단계를 보면, 압구정은 구역 네 곳이 이미 조합설립인가를 받았어요.
+[scenes.97.lines.1.text] 1구역은 그 전 단계인 추진위원회고요.
+[scenes.97.lines.2.text] 신천동 장미아파트는 2020년에 조합설립인가를 받았습니다.
+[scenes.97.data.license] 파이어맵 자체 그림
+[scenes.98.lines.0.text] 목동신시가지는 열네 단지 중 열두 곳이 조합설립인가나 사업시행자 지정까지 왔어요.
+[scenes.98.lines.1.text] 3단지는 아직 추진위원회 단계예요.
+[scenes.98.data.title] 목동신시가지 14단지
+[scenes.98.data.rows.0.0] 조합설립 · 사업시행자 지정
+[scenes.98.data.rows.0.1] 12곳
+[scenes.98.data.rows.1.0] 3단지
+[scenes.98.data.rows.1.1] 추진위원회
+[scenes.98.data.rows.1.2] ink
+[scenes.98.data.rows.2.0] 2단지
+[scenes.98.data.rows.2.1] 지정 날짜 확인 안 함
+[scenes.98.data.rows.2.2] rise
+[scenes.98.data.icon] ListChecks
 [scenes.98.data.source] 서울시 정비사업 정보몽땅 · 도시 및 주거환경정비법(법제처)
-[scenes.99.lines.0.text] 다만 예외가 있습니다.
-[scenes.99.lines.1.text] 파는 사람이 집 한 채만 가진 세대이고, 그 집을 10년 이상 가졌다면요.
-[scenes.99.lines.2.text] 거기에 그 집에서 5년 이상 살기까지 했다면, 사는 사람이 조합원이 될 수 있어요.
-[scenes.99.data.title] 사는 사람이 조합원 되는 예외
-[scenes.99.data.rows.0.0] 파는 사람 1주택 · 10년 보유
-[scenes.99.data.rows.1.0] 그 집에 5년 거주까지
-[scenes.99.data.icon] ListChecks
-[scenes.99.data.source] 서울시 정비사업 정보몽땅 · 도시 및 주거환경정비법(법제처)
-[scenes.100.lines.0.text] 파는 사람 세대가 근무나 취학, 결혼, 1년 이상 치료 때문에 서울 밖 다른 시나 군으로 모두 옮겨 가는 경우도 예외고요.
-[scenes.100.lines.1.text] 파는 사람 세대가 모두 상속받은 다른 집으로 옮기거나, 세대 전체가 해외로 이주하는 경우도 그렇습니다.
-[scenes.100.lines.1.cap] §39② 단서 1호 근무·생업·1년 이상 치료·취학·결혼으로 세대원 모두 다른 시·군 이전 · 2호 상속받은 주택으로 세대원 모두 이전 · 3호 해외 이주·2년 이상 체류 · 4호 1세대 1주택 소유 10년·거주 5년(시행령 §37①) · 7호 시행령 §37③ 조합설립인가 뒤 3년 넘게 사업시행인가 신청이 없는 경우 등
-[scenes.100.data.license] Pexels 30975009 무료(Stephen Leonardi)
-[scenes.100.data.say] 이사·해외 이주 같은 예외
+[scenes.99.lines.0.text] 파크리오는 서울시에 정비사업으로 올라가 있지 않습니다.
+[scenes.99.lines.0.cap] 서울시 정비사업 정보몽땅 추진경과(2026.10.19 확인) · 압구정 2구역 2021.4.12 · 3구역 2021.4.19 · 4구역 2021.2.10 · 5구역 2021.2.22 조합설립인가 · 1구역 추진위원회 승인 · 6구역 확인 안 함 · 장미1·2·3차 2020.3.24 · 목동 조합설립인가 4·6·7·8·12단지 · 신탁 사업시행자 지정 1·5·9·10·11·13·14단지 · 3단지 추진위 · 2단지 지정일 확인 안 함 · 10/5 이후 새 인가·지정 없음
+[scenes.99.data.license] Pexels 37500921 무료(FREE VIDEO HAPPY)
+[scenes.99.data.say] 파크리오는 정비사업 목록에 없다
+[scenes.99.data.side] left
+[scenes.100.lines.0.text] 그러니까 이 단지들 대부분은, 지금 사면 원칙적으로 조합원이 될 수 없어요.
+[scenes.100.lines.1.text] 이때 받는 손실보상 금액은 사업이 진행된 뒤 협의로 정해져서, 지금 얼마라고 말할 수 없어요.
+[scenes.100.data.license] Pexels 37527858 무료(FREE VIDEO HAPPY)
+[scenes.100.data.say] 지금 사면 원칙적으로 조합원이 안 된다
 [scenes.100.data.side] left
-[scenes.101.lines.0.text] 그래서 재건축 단지를 산다면, 계약 전에 두 가지를 확인하세요.
-[scenes.101.lines.1.text] 그 단지가 조합설립인가를 받았는지, 받았다면 파는 사람이 예외에 들어가는지요.
-[scenes.101.data.title] 계약 전 확인 둘
-[scenes.101.data.rows.0.0] 조합설립인가를 받았나
-[scenes.101.data.rows.1.0] 파는 사람이 예외에 드나
-[scenes.101.data.icon] ListChecks
+[scenes.101.lines.0.text] 재건축이 언제 끝날지, 조합원이 돈을 얼마나 더 낼지도 이 영상에선 다루지 않습니다. 정해진 자료가 없거든요.
+[scenes.101.lines.0.cap] §73① 관리처분계획 인가·고시 다음 날부터 90일 안에 손실보상 협의 · ② 협의 안 되면 수용재결 신청 또는 매도청구소송 · 사업 기간·분담금은 다루지 않음
+[scenes.101.data.title] 사업 기간 · 분담금
+[scenes.101.data.v] 다루지 않음
+[scenes.101.data.s] 정해진 자료가 없음
+[scenes.101.data.icon] CircleSlash
+[scenes.101.data.c] ink
 [scenes.101.data.source] 서울시 정비사업 정보몽땅 · 도시 및 주거환경정비법(법제처)
-[scenes.102.lines.0.text] 파는 사람이 그 집에서 살았던 기간은 주민등록표로 따집니다. 조합에도 조합원 자격이 이어지는지 미리 물어보세요.
-[scenes.102.lines.1.text] 실거래 신고엔 이 자격이 따로 적히지 않아서, 같은 단지 같은 크기라도 조건이 다른 거래가 섞여 있을 수 있어요.
-[scenes.102.data.license] Pexels 8471105 무료(Thirdman)
-[scenes.102.data.say] 거주 기간은 주민등록표로
-[scenes.102.data.side] left
-[scenes.103.lines.0.text] 이번엔 집을 사지 않고 세 들어 살 분들 이야기예요.
-[scenes.103.data.n] 8장
-[scenes.103.data.q] 세 들어 살 사람이라면
-[scenes.103.data.from] 국토교통부 아파트 전월세 실거래
-[scenes.104.lines.0.text] 검색창에 '파크리오 전세'를 치는 분이 많았거든요.
-[scenes.104.data.license] Pexels 4553292 무료(cottonbro studio)
-[scenes.104.data.say] 자주 찾는 전세 시세
-[scenes.104.data.side] left
-[scenes.105.lines.0.text] 파크리오 국민평형은 새로 맺은 전세가 11억 정도였습니다.
-[scenes.105.lines.1.text] 살던 사람이 다시 맺은 계약은 5천만원 정도 낮았고요.
-[scenes.105.lines.1.cap] 파크리오 84~85㎡ 월세 없는 전세 · 신규 158건 중앙 11.00억 · 갱신 157건 중앙 10.50억 · 매매 95건 29.20억 · 신규 전세 ÷ 매매 38%
-[scenes.105.data.title] 파크리오 84~85㎡ 전세 중간값
-[scenes.105.data.v1] 11.00억
-[scenes.105.data.s1] 새로 맺은 전세 · 158건
-[scenes.105.data.c1] accent
-[scenes.105.data.v2] 10.50억
-[scenes.105.data.s2] 다시 맺은 전세 · 157건
-[scenes.105.data.c2] ink
-[scenes.105.data.icon] Home
-[scenes.105.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.106.lines.0.text] 그러니 전세 시세를 볼 땐 새로 맺은 계약만 따로 보셔야 해요.
-[scenes.106.lines.1.text] 두 가지가 섞이면 실제로 집을 얻을 때보다 싸 보이거든요.
-[scenes.106.data.title] 전세 시세 볼 땐
-[scenes.106.data.v] 새로 맺은 계약만
-[scenes.106.data.s] 섞으면 실제보다 싸 보임
-[scenes.106.data.icon] Search
-[scenes.106.data.c] ink
-[scenes.106.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.107.lines.0.text] 목동에선 7단지 작은 평수를 봤어요.
-[scenes.107.data.license] Pexels 37500921 무료(FREE VIDEO HAPPY)
-[scenes.107.data.say] 목동 쪽 작은 평수
+[scenes.102.lines.0.text] 다만 예외가 있습니다.
+[scenes.102.lines.1.text] 파는 사람이 집 한 채만 가진 세대이고, 그 집을 10년 이상 가졌다면요.
+[scenes.102.lines.2.text] 거기에 그 집에서 5년 이상 살기까지 했다면, 사는 사람이 조합원이 될 수 있어요.
+[scenes.102.data.title] 사는 사람이 조합원 되는 예외
+[scenes.102.data.rows.0.0] 파는 사람 1주택 · 10년 보유
+[scenes.102.data.rows.1.0] 그 집에 5년 거주까지
+[scenes.102.data.icon] ListChecks
+[scenes.102.data.source] 서울시 정비사업 정보몽땅 · 도시 및 주거환경정비법(법제처)
+[scenes.103.lines.0.text] 파는 사람 세대가 근무나 취학, 결혼, 1년 이상 치료 때문에 서울 밖 다른 시나 군으로 모두 옮겨 가는 경우도 예외고요.
+[scenes.103.lines.1.text] 파는 사람 세대가 모두 상속받은 다른 집으로 옮기거나, 세대 전체가 해외로 이주하는 경우도 그렇습니다.
+[scenes.103.lines.1.cap] §39② 단서 1호 근무·생업·1년 이상 치료·취학·결혼으로 세대원 모두 다른 시·군 이전 · 2호 상속받은 주택으로 세대원 모두 이전 · 3호 해외 이주·2년 이상 체류 · 4호 1세대 1주택 소유 10년·거주 5년(시행령 §37①) · 7호 시행령 §37③ 조합설립인가 뒤 3년 넘게 사업시행인가 신청이 없는 경우 등
+[scenes.103.data.license] Pexels 30975009 무료(Stephen Leonardi)
+[scenes.103.data.say] 이사·해외 이주 같은 예외
+[scenes.103.data.side] left
+[scenes.104.lines.0.text] 그래서 재건축 단지를 산다면, 계약 전에 두 가지를 확인하세요.
+[scenes.104.lines.1.text] 그 단지가 조합설립인가를 받았는지, 받았다면 파는 사람이 예외에 들어가는지요.
+[scenes.104.data.title] 계약 전 확인 둘
+[scenes.104.data.rows.0.0] 조합설립인가를 받았나
+[scenes.104.data.rows.1.0] 파는 사람이 예외에 드나
+[scenes.104.data.icon] ListChecks
+[scenes.104.data.source] 서울시 정비사업 정보몽땅 · 도시 및 주거환경정비법(법제처)
+[scenes.105.lines.0.text] 파는 사람이 그 집에서 살았던 기간은 주민등록표로 따집니다. 조합에도 조합원 자격이 이어지는지 미리 물어보세요.
+[scenes.105.lines.1.text] 실거래 신고엔 이 자격이 따로 적히지 않아서, 같은 단지 같은 크기라도 조건이 다른 거래가 섞여 있을 수 있어요.
+[scenes.105.data.license] Pexels 8471105 무료(Thirdman)
+[scenes.105.data.say] 거주 기간은 주민등록표로
+[scenes.105.data.side] left
+[scenes.106.lines.0.text] 이번엔 집을 사지 않고 세 들어 살 분들 이야기예요.
+[scenes.106.data.n] 8장
+[scenes.106.data.q] 세 들어 살 사람이라면
+[scenes.106.data.from] 국토교통부 아파트 전월세 실거래
+[scenes.107.lines.0.text] 검색창에 '파크리오 전세'를 치는 분이 많았거든요.
+[scenes.107.data.license] Pexels 4553292 무료(cottonbro studio)
+[scenes.107.data.say] 자주 찾는 전세 시세
 [scenes.107.data.side] left
-[scenes.108.lines.0.text] 새 전세가 7억 정도였어요.
-[scenes.108.lines.1.text] 매매가 25억 정도였으니, 차이가 꽤 크죠.
-[scenes.108.lines.1.cap] 목동신시가지7 66~68㎡ · 신규 전세 44건 중앙 7.00억 · 갱신 53건 6.51억 · 매매 20건 25.60억 · 27%
-[scenes.108.data.title] 목동신시가지7 66~68㎡
-[scenes.108.data.v1] 7.00억
-[scenes.108.data.s1] 새로 맺은 전세
+[scenes.108.lines.0.text] 파크리오 국민평형은 새로 맺은 전세가 11억 정도였습니다.
+[scenes.108.lines.1.text] 살던 사람이 다시 맺은 계약은 5천만원 정도 낮았고요.
+[scenes.108.lines.1.cap] 파크리오 84~85㎡ 월세 없는 전세 · 신규 158건 중앙 11.00억 · 갱신 157건 중앙 10.50억 · 매매 95건 29.20억 · 신규 전세 ÷ 매매 38%
+[scenes.108.data.title] 파크리오 84~85㎡ 전세 중간값
+[scenes.108.data.v1] 11.00억
+[scenes.108.data.s1] 새로 맺은 전세 · 158건
 [scenes.108.data.c1] accent
-[scenes.108.data.v2] 25.60억
-[scenes.108.data.s2] 매매
+[scenes.108.data.v2] 10.50억
+[scenes.108.data.s2] 다시 맺은 전세 · 157건
 [scenes.108.data.c2] ink
 [scenes.108.data.icon] Home
 [scenes.108.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.109.lines.0.text] 압구정 한양아파트에서 가장 작은 집은 새 전세가 5억 반 정도였습니다.
-[scenes.109.lines.1.text] 매매는 40억이 넘었으니, 차이가 훨씬 더 크고요.
-[scenes.109.lines.1.cap] 한양1차(영동한양) 49~51㎡ · 신규 전세 11건 중앙 5.50억 · 갱신 10건 5.20억 · 매매 6건 40.67억 · 14%
-[scenes.109.data.title] 한양1차 49~51㎡
-[scenes.109.data.v1] 5.50억
-[scenes.109.data.s1] 새로 맺은 전세
-[scenes.109.data.c1] accent
-[scenes.109.data.v2] 40.67억
-[scenes.109.data.s2] 매매
-[scenes.109.data.c2] ink
-[scenes.109.data.icon] Home
+[scenes.109.lines.0.text] 그러니 전세 시세를 볼 땐 새로 맺은 계약만 따로 보셔야 해요.
+[scenes.109.lines.1.text] 두 가지가 섞이면 실제로 집을 얻을 때보다 싸 보이거든요.
+[scenes.109.data.title] 전세 시세 볼 땐
+[scenes.109.data.v] 새로 맺은 계약만
+[scenes.109.data.s] 섞으면 실제보다 싸 보임
+[scenes.109.data.icon] Search
+[scenes.109.data.c] ink
 [scenes.109.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.110.lines.0.text] 매매값과 전세값의 차이가 동네마다 이만큼 달랐다는 거죠.
-[scenes.110.lines.1.text] 매매값 중에 전세 보증금이 차지하는 비율을 전세가율이라고 해요.
-[scenes.110.data.license] Pexels 4553292 무료(cottonbro studio)
-[scenes.110.data.say] 매매값 중 전세 보증금 비율
+[scenes.110.lines.0.text] 목동에선 7단지 작은 평수를 봤어요.
+[scenes.110.data.license] Pexels 37500921 무료(FREE VIDEO HAPPY)
+[scenes.110.data.say] 목동 쪽 작은 평수
 [scenes.110.data.side] left
-[scenes.111.lines.0.text] 파크리오가 38%로 가장 높았어요.
-[scenes.111.lines.1.text] 압구정 한양은 14%로 가장 낮았고요.
-[scenes.111.lines.2.text] 목동 7단지는 그 중간쯤이었고요.
-[scenes.111.lines.3.text] 같은 신천동 안에서도 장미아파트는 23%로, 파크리오보다 한참 낮았습니다.
-[scenes.111.lines.3.cap] 신규 전세 중앙 ÷ 매매 중앙 · 파크리오 84㎡ 38% · 목동신시가지3 65㎡ 28% · 7단지 66㎡ 27% · 11단지 66㎡ 25% · 장미2 82㎡ 23% · 한양1차 50㎡ 14% · 신현대12차 110㎡ 14%
-[scenes.111.data.license] 파이어맵 자체 그림
-[scenes.112.lines.0.text] 왜 이렇게 차이가 날까요? 실거래 자료엔 이유가 적혀 있지 않아요.
-[scenes.112.data.license] Pexels 37527858 무료(FREE VIDEO HAPPY)
-[scenes.112.data.say] 이유는 자료에 없다
-[scenes.112.data.side] left
-[scenes.113.lines.0.text] 다만 숫자로 보이는 건 하나 있어요. 새 단지인 파크리오만 30%를 넘었어요.
-[scenes.113.lines.1.text] 1980년대까지 지은 단지들은 모두 그 아래였고요.
-[scenes.113.data.title] 30%를 넘은 단지
-[scenes.113.data.v] 파크리오만
-[scenes.113.data.s] 1980년대까지 지은 단지는 모두 그 아래
-[scenes.113.data.icon] Building
-[scenes.113.data.c] ink
-[scenes.113.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.114.lines.0.text] 그래서 누구냐에 따라 볼 숫자가 달라요.
-[scenes.114.lines.1.text] 새로 집을 구하는 분이라면, 새로 맺은 계약 가격을 기준으로 잡으세요.
-[scenes.114.data.title] 누구라면
-[scenes.114.data.rows.0.0] 새로 집을 구하는 분
-[scenes.114.data.rows.0.1] 새로 맺은 계약 가격
-[scenes.114.data.rows.1.0] 지금 집에서 다시 계약
-[scenes.114.data.rows.1.1] 다시 맺은 가격도
-[scenes.114.data.rows.1.2] ink
-[scenes.114.data.icon] Users
-[scenes.114.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
-[scenes.115.lines.0.text] 지금 사는 집에서 계약을 다시 맺는다면, 다시 맺은 계약 가격을 같이 보시면 되고요.
+[scenes.111.lines.0.text] 새 전세가 7억 정도였어요.
+[scenes.111.lines.1.text] 매매가 25억 정도였으니, 차이가 꽤 크죠.
+[scenes.111.lines.1.cap] 목동신시가지7 66~68㎡ · 신규 전세 44건 중앙 7.00억 · 갱신 53건 6.51억 · 매매 20건 25.60억 · 27%
+[scenes.111.data.title] 목동신시가지7 66~68㎡
+[scenes.111.data.v1] 7.00억
+[scenes.111.data.s1] 새로 맺은 전세
+[scenes.111.data.c1] accent
+[scenes.111.data.v2] 25.60억
+[scenes.111.data.s2] 매매
+[scenes.111.data.c2] ink
+[scenes.111.data.icon] Home
+[scenes.111.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.112.lines.0.text] 압구정 한양아파트에서 가장 작은 집은 새 전세가 5억 반 정도였습니다.
+[scenes.112.lines.1.text] 매매는 40억이 넘었으니, 차이가 훨씬 더 크고요.
+[scenes.112.lines.1.cap] 한양1차(영동한양) 49~51㎡ · 신규 전세 11건 중앙 5.50억 · 갱신 10건 5.20억 · 매매 6건 40.67억 · 14%
+[scenes.112.data.title] 한양1차 49~51㎡
+[scenes.112.data.v1] 5.50억
+[scenes.112.data.s1] 새로 맺은 전세
+[scenes.112.data.c1] accent
+[scenes.112.data.v2] 40.67억
+[scenes.112.data.s2] 매매
+[scenes.112.data.c2] ink
+[scenes.112.data.icon] Home
+[scenes.112.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.113.lines.0.text] 매매값과 전세값의 차이가 동네마다 이만큼 달랐다는 거죠.
+[scenes.113.lines.1.text] 매매값 중에 전세 보증금이 차지하는 비율을 전세가율이라고 해요.
+[scenes.113.data.license] Pexels 4553292 무료(cottonbro studio)
+[scenes.113.data.say] 매매값 중 전세 보증금 비율
+[scenes.113.data.side] left
+[scenes.114.lines.0.text] 파크리오가 38%로 가장 높았어요.
+[scenes.114.lines.1.text] 압구정 한양은 14%로 가장 낮았고요.
+[scenes.114.lines.2.text] 목동 7단지는 그 중간쯤이었고요.
+[scenes.114.lines.3.text] 같은 신천동 안에서도 장미아파트는 23%로, 파크리오보다 한참 낮았습니다.
+[scenes.114.lines.3.cap] 신규 전세 중앙 ÷ 매매 중앙 · 파크리오 84㎡ 38% · 목동신시가지3 65㎡ 28% · 7단지 66㎡ 27% · 11단지 66㎡ 25% · 장미2 82㎡ 23% · 한양1차 50㎡ 14% · 신현대12차 110㎡ 14%
+[scenes.114.data.license] 파이어맵 자체 그림
+[scenes.115.lines.0.text] 왜 이렇게 차이가 날까요? 실거래 자료엔 이유가 적혀 있지 않아요.
 [scenes.115.data.license] Pexels 37527858 무료(FREE VIDEO HAPPY)
-[scenes.115.data.say] 지금 집에서 다시 계약한다면
+[scenes.115.data.say] 이유는 자료에 없다
 [scenes.115.data.side] left
-[scenes.116.lines.0.text] 그리고 매매와 전세의 차이가 크다는 건, 세입자를 두고 사서 나중에 들어가는 방식도 원래 큰돈이 든다는 뜻이에요.
-[scenes.116.lines.1.text] 게다가 지금은 허가구역이라, 앞에서 말한 집 없는 사람의 특례가 아니면 그 방식은 막혀 있고요.
-[scenes.116.data.license] Pexels 8482325 무료(Thirdman)
-[scenes.116.data.say] 세입자 두고 사기는 큰돈, 지금은 막힘
-[scenes.116.data.side] left
-[scenes.117.lines.0.text] 이 동네를 볼 때 학교 이야기도 빠지지 않죠.
-[scenes.117.data.n] 9장
-[scenes.117.data.q] 학교 배정, 숫자로 말할 수 있는 것
-[scenes.117.data.from] 서울특별시교육청 공고 제2026-157호
-[scenes.118.lines.0.text] 이번 자료로 학교마다 어떤지는 잴 수 없어서, 공식으로 정해진 배정 규칙까지만 말씀드릴게요.
-[scenes.118.data.license] Pexels 39704991 무료(Gokuldham Nar)
-[scenes.118.data.say] 학교마다는 잴 수 없었다
+[scenes.116.lines.0.text] 다만 숫자로 보이는 건 하나 있어요. 새 단지인 파크리오만 30%를 넘었어요.
+[scenes.116.lines.1.text] 1980년대까지 지은 단지들은 모두 그 아래였고요.
+[scenes.116.data.title] 30%를 넘은 단지
+[scenes.116.data.v] 파크리오만
+[scenes.116.data.s] 1980년대까지 지은 단지는 모두 그 아래
+[scenes.116.data.icon] Building
+[scenes.116.data.c] ink
+[scenes.116.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.117.lines.0.text] 그래서 누구냐에 따라 볼 숫자가 달라요.
+[scenes.117.lines.1.text] 새로 집을 구하는 분이라면, 새로 맺은 계약 가격을 기준으로 잡으세요.
+[scenes.117.data.title] 누구라면
+[scenes.117.data.rows.0.0] 새로 집을 구하는 분
+[scenes.117.data.rows.0.1] 새로 맺은 계약 가격
+[scenes.117.data.rows.1.0] 지금 집에서 다시 계약
+[scenes.117.data.rows.1.1] 다시 맺은 가격도
+[scenes.117.data.rows.1.2] ink
+[scenes.117.data.icon] Users
+[scenes.117.data.source] 국토교통부 아파트 매매·전월세 실거래(2025.11~2026.10 계약) · 파이어맵 계산
+[scenes.118.lines.0.text] 지금 사는 집에서 계약을 다시 맺는다면, 다시 맺은 계약 가격을 같이 보시면 되고요.
+[scenes.118.data.license] Pexels 37527858 무료(FREE VIDEO HAPPY)
+[scenes.118.data.say] 지금 집에서 다시 계약한다면
 [scenes.118.data.side] left
-[scenes.119.lines.0.text] 서울 고등학교는 교육지원청 단위로 학교군이 나뉘어요.
-[scenes.119.lines.1.text] 목동은 강서양천, 압구정은 강남서초, 신천동은 강동송파 학교군입니다.
-[scenes.119.data.license] 지도 자료 © OpenStreetMap 기여자 (ODbL) · 파이어맵 그림
-[scenes.120.lines.0.text] 일반고는 추첨인데, 먼저 서울 전체에서 고른 학교로 일부를 뽑고 그다음 사는 곳 학교군에서 더 뽑아요.
-[scenes.120.data.title] 일반고 추첨 순서
-[scenes.120.data.rows.0.0] 1단계
-[scenes.120.data.rows.0.1] 서울 전역에서 고른 학교
-[scenes.120.data.rows.1.0] 2단계
-[scenes.120.data.rows.1.1] 사는 곳 학교군
-[scenes.120.data.rows.1.2] accent
-[scenes.120.data.icon] School
-[scenes.120.data.source] 서울특별시교육청 공고 제2026-157호
-[scenes.121.lines.0.text] 중학교도 사는 곳 학교군에서 추첨하는 게 원칙입니다.
-[scenes.121.lines.0.cap] 서울특별시교육청 공고 제2026-157호(2026.3.31) 2027학년도 후기 일반고 · 일반학교군 11개 = 교육지원청 단위 · 1단계 서울 전역 2개교 지원·정원 20%(중부학교군 60%) 추첨 · 2단계 거주지 일반학교군 2개교·40% · 3단계 통합학교군 · 2026.9.1 변경 공고에도 비율 그대로 · 중학교 '거주지 기준 학교군별 전산 추첨'(2026.1.29) · 중학교 학교군 경계·학교별 학생 수는 확인 안 함
-[scenes.121.lines.1.text] 그래서 사는 곳이 정해 주는 건 학교군까지예요. 특정 학교에 꼭 간다는 뜻은 아닙니다.
-[scenes.121.data.license] AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님
-[scenes.121.data.badge] AI 생성
-[scenes.122.lines.0.text] 이 동네에 이미 집이 한 채 있고, 다른 집으로 갈아타려는 사람도 있죠.
-[scenes.122.data.n] 10장
-[scenes.122.data.q] 이미 한 채가 있고, 갈아탄다면
-[scenes.122.data.from] 소득세법 · 지방세법 · 국토교통부 조정대상지역 공고
-[scenes.123.lines.0.text] 먼저 알아 둘 건, 지금 서울은 스물다섯 개 구가 전부 조정대상지역이라는 거예요.
-[scenes.123.lines.1.text] 세금 규칙이 더 까다로운 지역이에요.
-[scenes.123.lines.1.cap] 국토교통부공고 제2025-1223호 조정대상지역(2025.10.16) · 2026.7.1 공고 제2026-882호에서도 서울 25개 구 유지 · 해제 공고 없음 (법제처 2026.10.19 확인)
-[scenes.123.data.license] AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님
-[scenes.123.data.badge] AI 생성
-[scenes.124.lines.0.text] 먼저 집을 팔 때 내는 양도세예요.
-[scenes.124.lines.1.text] 집이 한 채뿐이면, 판 가격 12억까지는 세금이 없고 넘는 부분에만 붙습니다.
-[scenes.124.data.title] 1주택 양도세
-[scenes.124.data.v] 12억까지 비과세
-[scenes.124.data.s] 넘는 부분에만 세금
-[scenes.124.data.icon] Receipt
-[scenes.124.data.c] accent
-[scenes.124.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.125.lines.0.text] 조정대상지역에서 산 집이라면, 갖고 있는 기간도 거기 살아온 기간도 2년 이상이어야 이 혜택을 받아요.
-[scenes.125.lines.0.cap] 소득세법 §89①3 1세대 1주택 비과세 양도가액 12억원 이하 · 초과분 과세(시행령 §160①) · 시행령 §154① 2년 보유 · 취득 당시 조정대상지역이면 보유 중 거주 2년
-[scenes.125.data.title] 조정대상지역에서 산 집
-[scenes.125.data.v] 2년 보유 + 2년 거주
-[scenes.125.data.s] 그래야 1주택 혜택
-[scenes.125.data.icon] CalendarClock
-[scenes.125.data.c] ink
-[scenes.125.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.126.lines.0.text] 갈아탈 땐 잠깐 두 채가 되죠. 이걸 일시적 2주택이라고 해요.
-[scenes.126.lines.1.text] 새 집을 사고 정해진 기간 안에 원래 집을 팔면, 한 채일 때처럼 봐 줍니다.
-[scenes.126.lines.2.text] 그런데 이 기간이 이번 달부터 짧아졌어요. 두 집이 다 조정대상지역이면 3년에서 2년으로 줄었습니다.
-[scenes.126.data.license] 파이어맵 자체 그림
-[scenes.127.lines.0.text] 다만 예외가 있어요. 올해 8월 3일까지 새 집을 샀거나 계약금을 냈다면요.
-[scenes.127.lines.1.text] 그때는 줄기 전 그대로 3년이에요.
-[scenes.127.lines.1.cap] 소득세법 시행령 §155①1 종전·신규 주택 모두 조정대상지역 = 2년(개정 2026.9.30, 2026.10.1 양도분부터) · 2026.8.3 이전 취득·계약금 지급은 종전 3년(세제개편안 상세본 p.73·문답 p.55)
-[scenes.127.data.title] 8월 3일 전에 샀거나 계약금 냈다면
-[scenes.127.data.v] 3년 그대로
-[scenes.127.data.s] 줄기 전 기간
-[scenes.127.data.icon] CalendarClock
-[scenes.127.data.c] ink
+[scenes.119.lines.0.text] 그리고 매매와 전세의 차이가 크다는 건, 세입자를 두고 사서 나중에 들어가는 방식도 원래 큰돈이 든다는 뜻이에요.
+[scenes.119.lines.1.text] 게다가 지금은 허가구역이라, 앞에서 말한 집 없는 사람의 특례가 아니면 그 방식은 막혀 있고요.
+[scenes.119.data.license] Pexels 8482325 무료(Thirdman)
+[scenes.119.data.say] 세입자 두고 사기는 큰돈, 지금은 막힘
+[scenes.119.data.side] left
+[scenes.120.lines.0.text] 이 동네를 볼 때 학교 이야기도 빠지지 않죠.
+[scenes.120.data.n] 9장
+[scenes.120.data.q] 학교 배정, 숫자로 말할 수 있는 것
+[scenes.120.data.from] 서울특별시교육청 공고 제2026-157호
+[scenes.121.lines.0.text] 이번 자료로 학교마다 어떤지는 잴 수 없어서, 공식으로 정해진 배정 규칙까지만 말씀드릴게요.
+[scenes.121.data.license] Pexels 39704991 무료(Gokuldham Nar)
+[scenes.121.data.say] 학교마다는 잴 수 없었다
+[scenes.121.data.side] left
+[scenes.122.lines.0.text] 서울 고등학교는 교육지원청 단위로 학교군이 나뉘어요.
+[scenes.122.lines.1.text] 목동은 강서양천, 압구정은 강남서초, 신천동은 강동송파 학교군입니다.
+[scenes.122.data.license] 지도 자료 © OpenStreetMap 기여자 (ODbL) · 파이어맵 그림
+[scenes.123.lines.0.text] 일반고는 추첨인데, 먼저 서울 전체에서 고른 학교로 일부를 뽑고 그다음 사는 곳 학교군에서 더 뽑아요.
+[scenes.123.data.title] 일반고 추첨 순서
+[scenes.123.data.rows.0.0] 1단계
+[scenes.123.data.rows.0.1] 서울 전역에서 고른 학교
+[scenes.123.data.rows.1.0] 2단계
+[scenes.123.data.rows.1.1] 사는 곳 학교군
+[scenes.123.data.rows.1.2] accent
+[scenes.123.data.icon] School
+[scenes.123.data.source] 서울특별시교육청 공고 제2026-157호
+[scenes.124.lines.0.text] 중학교도 사는 곳 학교군에서 추첨하는 게 원칙입니다.
+[scenes.124.lines.0.cap] 서울특별시교육청 공고 제2026-157호(2026.3.31) 2027학년도 후기 일반고 · 일반학교군 11개 = 교육지원청 단위 · 1단계 서울 전역 2개교 지원·정원 20%(중부학교군 60%) 추첨 · 2단계 거주지 일반학교군 2개교·40% · 3단계 통합학교군 · 2026.9.1 변경 공고에도 비율 그대로 · 중학교 '거주지 기준 학교군별 전산 추첨'(2026.1.29) · 중학교 학교군 경계·학교별 학생 수는 확인 안 함
+[scenes.124.lines.1.text] 그래서 사는 곳이 정해 주는 건 학교군까지예요. 특정 학교에 꼭 간다는 뜻은 아닙니다.
+[scenes.124.data.license] AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님
+[scenes.124.data.badge] AI 생성
+[scenes.125.lines.0.text] 이 동네에 이미 집이 한 채 있고, 다른 집으로 갈아타려는 사람도 있죠.
+[scenes.125.data.n] 10장
+[scenes.125.data.q] 이미 한 채가 있고, 갈아탄다면
+[scenes.125.data.from] 소득세법 · 지방세법 · 국토교통부 조정대상지역 공고
+[scenes.126.lines.0.text] 먼저 알아 둘 건, 지금 서울은 스물다섯 개 구가 전부 조정대상지역이라는 거예요.
+[scenes.126.lines.1.text] 세금 규칙이 더 까다로운 지역이에요.
+[scenes.126.lines.1.cap] 국토교통부공고 제2025-1223호 조정대상지역(2025.10.16) · 2026.7.1 공고 제2026-882호에서도 서울 25개 구 유지 · 해제 공고 없음 (법제처 2026.10.19 확인)
+[scenes.126.data.license] AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님
+[scenes.126.data.badge] AI 생성
+[scenes.127.lines.0.text] 먼저 집을 팔 때 내는 양도세예요.
+[scenes.127.lines.1.text] 집이 한 채뿐이면, 판 가격 12억까지는 세금이 없고 넘는 부분에만 붙습니다.
+[scenes.127.data.title] 1주택 양도세
+[scenes.127.data.v] 12억까지 비과세
+[scenes.127.data.s] 넘는 부분에만 세금
+[scenes.127.data.icon] Receipt
+[scenes.127.data.c] accent
 [scenes.127.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.128.lines.0.text] 새 집 취득세에도 같은 2년이 붙어요. 그 안에 원래 집을 팔아야 한 채 세율로 냅니다.
-[scenes.128.data.license] Pexels 8478946 무료(ArtHouse Studio)
-[scenes.128.data.say] 취득세에도 같은 기한
-[scenes.128.data.side] left
-[scenes.129.lines.0.text] 못 팔면 그 혜택이 사라져서, 조정대상지역 두 번째 집 세율 8%가 됩니다.
-[scenes.129.lines.0.cap] 지방세법 시행령 §28의5① 일시적 2주택 기간 3년 · 종전·신규 모두 조정대상지역이면 2년(개정 2026.9.30) · 지방세법 §13의2①2 조정대상지역 1세대 2주택 = 표준세율 4% + 중과기준세율 2%×200% = 8% (법제처 2026.10.19)
-[scenes.129.data.title] 기한 넘기면 취득세
-[scenes.129.data.v] 8%
-[scenes.129.data.s] 조정대상지역 두 번째 집
-[scenes.129.data.icon] TriangleAlert
-[scenes.129.data.c] rise
-[scenes.129.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.130.lines.0.text] 양도세도 기한을 넘기면, 두 채라서 붙는 무거운 세율이 적용될 수 있어요. 기본세율에 20%포인트가 더해집니다.
-[scenes.130.lines.0.cap] 소득세법 §104⑦1 조정대상지역 1세대 2주택 기본세율+20%p · 중과 한시 배제는 2026.5.9 양도분까지
-[scenes.130.data.title] 양도세도 기한 넘기면
-[scenes.130.data.v] +20%p
-[scenes.130.data.s] 기본세율에 더함
-[scenes.130.data.icon] TriangleAlert
-[scenes.130.data.c] rise
-[scenes.130.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.131.lines.0.text] 국회에 있는 정부안이 통과되면, 10년 이상 산 집은 내년부터 양도세 기본공제가 커져요.
-[scenes.131.lines.1.text] 판 가격이 30억 이하일 때 이야기예요.
-[scenes.131.lines.1.cap] 재정경제부 문답자료 p.49 기본공제 확대 사례 · 10년 거주 1세대 1주택 · 30억 양도(취득 15억) 현행 약 4,750만원 → 개정안 약 3,900만원 · 정부안 §103 단서 10년 이상 거주·양도가액 30억 이하 기본공제 2,500만원('27.1.1 양도분~) · 국회 통과 전
-[scenes.131.data.license] Pexels 30975009 무료(Stephen Leonardi)
-[scenes.131.data.say] 국회에 있는 정부안
-[scenes.131.data.side] left
-[scenes.132.lines.0.text] 다만 정부안엔 2028년부터 오래 가진 집 공제를 산 햇수 중심으로 바꾸는 내용도 있어서, 언제 파느냐에 따라 달라져요.
-[scenes.132.lines.1.text] 양도세는 저희 양도세 편에서, 집을 갖고 있는 동안 내는 종부세는 다음 편에서 따로 자세히 다룹니다.
-[scenes.132.data.title] 정부안 · 국회 통과 전
-[scenes.132.data.rows.0.0] 10년 이상 산 집
-[scenes.132.data.rows.0.1] 기본공제 커짐
-[scenes.132.data.rows.1.0] 2028년부터
-[scenes.132.data.rows.1.1] 오래 가진 집 공제 바뀜
-[scenes.132.data.rows.1.2] ink
-[scenes.132.data.icon] FileText
-[scenes.132.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.133.lines.0.text] 그리고 하나 더. 새 집도 허가구역이면 허가를 받고 2년을 직접 살아야 합니다.
-[scenes.133.data.license] Pexels 8471105 무료(Thirdman)
-[scenes.133.data.say] 새 집도 허가구역이면
-[scenes.133.data.side] left
-[scenes.134.lines.0.text] 앞에서 말한 특례는 집 없는 사람만 쓸 수 있거든요.
-[scenes.134.data.title] 새 집도 허가구역이면
-[scenes.134.data.v] 허가 + 2년 실거주
-[scenes.134.data.s] 특례는 집 없는 사람만
-[scenes.134.data.icon] KeyRound
+[scenes.128.lines.0.text] 조정대상지역에서 산 집이라면, 갖고 있는 기간도 거기 살아온 기간도 2년 이상이어야 이 혜택을 받아요.
+[scenes.128.lines.0.cap] 소득세법 §89①3 1세대 1주택 비과세 양도가액 12억원 이하 · 초과분 과세(시행령 §160①) · 시행령 §154① 2년 보유 · 취득 당시 조정대상지역이면 보유 중 거주 2년
+[scenes.128.data.title] 조정대상지역에서 산 집
+[scenes.128.data.v] 2년 보유 + 2년 거주
+[scenes.128.data.s] 그래야 1주택 혜택
+[scenes.128.data.icon] CalendarClock
+[scenes.128.data.c] ink
+[scenes.128.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.129.lines.0.text] 갈아탈 땐 잠깐 두 채가 되죠. 이걸 일시적 2주택이라고 해요.
+[scenes.129.data.license] Pexels 8471105 무료(Thirdman)
+[scenes.129.data.say] 갈아타는 동안 잠깐 두 채
+[scenes.129.data.side] left
+[scenes.130.lines.0.text] 새 집을 사고 정해진 기간 안에 원래 집을 팔면, 한 채일 때처럼 봐 줍니다.
+[scenes.130.lines.1.text] 그런데 이 기간이 이번 달부터 짧아졌어요. 두 집이 다 조정대상지역이면 3년에서 2년으로 줄었습니다.
+[scenes.130.data.license] 파이어맵 자체 그림
+[scenes.131.lines.0.text] 다만 예외가 있어요. 올해 8월 3일까지 새 집을 샀거나 계약금을 냈다면요.
+[scenes.131.lines.1.text] 그때는 줄기 전 그대로 3년이에요.
+[scenes.131.lines.1.cap] 소득세법 시행령 §155①1 종전·신규 주택 모두 조정대상지역 = 2년(개정 2026.9.30, 2026.10.1 양도분부터) · 2026.8.3 이전 취득·계약금 지급은 종전 3년(세제개편안 상세본 p.73·문답 p.55)
+[scenes.131.data.title] 8월 3일 전에 샀거나 계약금 냈다면
+[scenes.131.data.v] 3년 그대로
+[scenes.131.data.s] 줄기 전 기간
+[scenes.131.data.icon] CalendarClock
+[scenes.131.data.c] ink
+[scenes.131.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.132.lines.0.text] 새 집 취득세에도 같은 2년이 붙어요. 그 안에 원래 집을 팔아야 한 채 세율로 냅니다.
+[scenes.132.data.license] Pexels 8478946 무료(ArtHouse Studio)
+[scenes.132.data.say] 취득세에도 같은 기한
+[scenes.132.data.side] left
+[scenes.133.lines.0.text] 못 팔면 그 혜택이 사라져서, 조정대상지역 두 번째 집 세율 8%가 됩니다.
+[scenes.133.lines.0.cap] 지방세법 시행령 §28의5① 일시적 2주택 기간 3년 · 종전·신규 모두 조정대상지역이면 2년(개정 2026.9.30) · 지방세법 §13의2①2 조정대상지역 1세대 2주택 = 표준세율 4% + 중과기준세율 2%×200% = 8% (법제처 2026.10.19)
+[scenes.133.data.title] 기한 넘기면 취득세
+[scenes.133.data.v] 8%
+[scenes.133.data.s] 조정대상지역 두 번째 집
+[scenes.133.data.icon] TriangleAlert
+[scenes.133.data.c] rise
+[scenes.133.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.134.lines.0.text] 양도세도 기한을 넘기면, 두 채라서 붙는 무거운 세율이 적용될 수 있어요. 기본세율에 20%포인트가 더해집니다.
+[scenes.134.lines.0.cap] 소득세법 §104⑦1 조정대상지역 1세대 2주택 기본세율+20%p · 중과 한시 배제는 2026.5.9 양도분까지
+[scenes.134.data.title] 양도세도 기한 넘기면
+[scenes.134.data.v] +20%p
+[scenes.134.data.s] 기본세율에 더함
+[scenes.134.data.icon] TriangleAlert
 [scenes.134.data.c] rise
 [scenes.134.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.135.lines.0.text] 오늘 숫자를 내 단지로 직접 확인해 보고 싶다면 이렇게 해 보세요.
-[scenes.135.data.n] 11장
-[scenes.135.data.q] 직접 확인하는 법
-[scenes.135.data.from] 국토교통부 실거래가 공개시스템 · 정보몽땅 · 토지이음
-[scenes.136.lines.0.text] 가격은 국토교통부 실거래가 공개시스템에서 단지와 면적을 똑같이 맞춰 보세요.
-[scenes.136.lines.1.text] 한 건이 아니라 1년 치를 같이 보는 게 좋습니다.
-[scenes.136.lines.2.text] 거래가 적은 단지라면, 옆 단지 같은 크기와 같이 놓고 비교해 보세요.
-[scenes.136.data.license] 파이어맵 자체 그림
-[scenes.137.lines.0.text] 해제라고 적힌 거래는 빼고 봅니다. 계약이 취소된 거래거든요.
-[scenes.137.lines.1.text] 전세는 새로 맺은 계약과 다시 맺은 계약을 나눠 보시고요.
-[scenes.137.lines.2.text] 재건축 단계는 서울시 정비사업 정보몽땅이라는 누리집에서 단지 이름으로 찾을 수 있어요.
-[scenes.137.lines.3.text] 조합설립인가를 받았는지가 거기 나옵니다.
-[scenes.137.data.title] 확인할 것
-[scenes.137.data.rows.0.0] 해제 거래는 빼기
-[scenes.137.data.rows.1.0] 전세는 신규·갱신 나눠 보기
-[scenes.137.data.rows.2.0] 재건축 단계는 정보몽땅
-[scenes.137.data.icon] ListChecks
-[scenes.137.data.source] 국토교통부 실거래가 공개시스템 · 서울시 정비사업 정보몽땅
-[scenes.138.lines.0.text] 사려는 집이 허가구역인지는 토지이음이라는 국토교통부 누리집에서 확인할 수 있습니다.
-[scenes.138.data.license] Pexels 29303349 무료(성창 남)
-[scenes.138.data.say] 허가구역인지는 토지이음에서
-[scenes.138.data.side] left
-[scenes.139.lines.0.text] 서울 아파트 전체에 걸린 허가구역은 올해 말까지예요. 그 뒤로 늘릴지는 10월 19일까지 공식 발표가 없었습니다.
-[scenes.139.data.title] 허가구역 기한
-[scenes.139.data.rows.0.0] 서울 아파트 전체
-[scenes.139.data.rows.1.0] 압구정 · 목동신시가지
-[scenes.139.data.rows.1.2] ink
-[scenes.139.data.icon] CalendarClock
-[scenes.139.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.140.lines.0.text] 압구정과 목동신시가지는 서울시가 따로 지정해서, 2027년 4월 26일까지 허가구역이고요.
-[scenes.140.data.license] Pexels 37500921 무료(FREE VIDEO HAPPY)
-[scenes.140.data.say] 압구정·목동은 서울시가 따로 지정
-[scenes.140.data.side] left
-[scenes.141.lines.0.text] 앞에서 말한 특례의 신청 기한이 2027년 말인 건 시행령에 정해진 날짜예요. 그때 그 집이 허가구역인지는 따로 보셔야 합니다.
-[scenes.141.lines.0.cap] 국토교통부공고 제2025-1219호 지정기간 ~2026.12.31 · 토지이음 www.eum.go.kr · 허가 신청은 관할 구청 · 이번 달 거래는 신고 기한 30일이라 아직 덜 들어옴
-[scenes.141.data.title] 특례 신청 기한
-[scenes.141.data.v] 2027년 말
-[scenes.141.data.s] 그때 그 집이 허가구역인지는 따로 확인
-[scenes.141.data.icon] CalendarClock
-[scenes.141.data.c] ink
-[scenes.141.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
-[scenes.142.lines.0.text] 그리고 이번 달 거래는 아직 덜 들어와 있다는 것도요.
-[scenes.142.lines.1.text] 신고 기한이 30일이라, 지금 보이는 숫자가 다음 달에 바뀔 수 있습니다.
-[scenes.142.lines.1.cap] 단지별 1년 거래 표(목동신시가지 1~14단지 · 압구정 현대 1~14차 · 신천 장미·파크리오) → 파이어맵 카페 cafe.naver.com/firemap · 국토교통부 실거래·건축물대장 · 계산·비교 자료이며 매수·매도 권유가 아닙니다
-[scenes.142.data.license] Pexels 12079562 무료(FREE VIDEO HAPPY)
-[scenes.142.data.say] 이번 달 거래는 아직 덜 들어왔다
-[scenes.142.data.side] left
-[scenes.143.lines.0.text] 지난 1년 실제로 팔린 가격만 센 겁니다.
-[scenes.143.lines.1.text] 30억 안팎으로 다시 정리하면요.
-[scenes.143.lines.2.text] 신천동에선 85㎡ 정도였어요.
-[scenes.143.lines.3.text] 목동신시가지에선 96㎡쯤이었고, 압구정동에선 그 값에 팔린 집이 없었어요.
-[scenes.143.data.license] 파이어맵 자체 그림
-[scenes.144.lines.0.text] 우리 동네 단지도 이렇게 세어 보고 싶다면, 댓글에 단지 이름을 남겨 주세요.
-[scenes.144.data.license] Pexels 37522115 무료(Jueon Kim 김주언)
-[scenes.145.lines.0.text] 토요일 오전 11시 반에는 종부세 이야기입니다. 그때 뵙겠습니다.
-[scenes.145.data.line] 토요일 오전 11시 반 · 종부세
+[scenes.135.lines.0.text] 국회에 있는 정부안이 통과되면, 10년 이상 산 집은 내년부터 양도세 기본공제가 커져요.
+[scenes.135.lines.1.text] 판 가격이 30억 이하일 때 이야기예요.
+[scenes.135.lines.1.cap] 재정경제부 문답자료 p.49 기본공제 확대 사례 · 10년 거주 1세대 1주택 · 30억 양도(취득 15억) 현행 약 4,750만원 → 개정안 약 3,900만원 · 정부안 §103 단서 10년 이상 거주·양도가액 30억 이하 기본공제 2,500만원('27.1.1 양도분~) · 국회 통과 전
+[scenes.135.data.license] Pexels 30975009 무료(Stephen Leonardi)
+[scenes.135.data.say] 국회에 있는 정부안
+[scenes.135.data.side] left
+[scenes.136.lines.0.text] 다만 정부안엔 2028년부터 오래 가진 집 공제를 산 햇수 중심으로 바꾸는 내용도 있어서, 언제 파느냐에 따라 달라져요.
+[scenes.136.lines.1.text] 양도세는 저희 양도세 편에서, 집을 갖고 있는 동안 내는 종부세는 다음 편에서 따로 자세히 다룹니다.
+[scenes.136.data.title] 정부안 · 국회 통과 전
+[scenes.136.data.rows.0.0] 10년 이상 산 집
+[scenes.136.data.rows.0.1] 기본공제 커짐
+[scenes.136.data.rows.1.0] 2028년부터
+[scenes.136.data.rows.1.1] 오래 가진 집 공제 바뀜
+[scenes.136.data.rows.1.2] ink
+[scenes.136.data.icon] FileText
+[scenes.136.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.137.lines.0.text] 그리고 하나 더. 새 집도 허가구역이면 허가를 받고 2년을 직접 살아야 합니다.
+[scenes.137.data.license] Pexels 8471105 무료(Thirdman)
+[scenes.137.data.say] 새 집도 허가구역이면
+[scenes.137.data.side] left
+[scenes.138.lines.0.text] 앞에서 말한 특례는 집 없는 사람만 쓸 수 있거든요.
+[scenes.138.data.title] 새 집도 허가구역이면
+[scenes.138.data.v] 허가 + 2년 실거주
+[scenes.138.data.s] 특례는 집 없는 사람만
+[scenes.138.data.icon] KeyRound
+[scenes.138.data.c] rise
+[scenes.138.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.139.lines.0.text] 오늘 숫자를 내 단지로 직접 확인해 보고 싶다면 이렇게 해 보세요.
+[scenes.139.data.n] 11장
+[scenes.139.data.q] 직접 확인하는 법
+[scenes.139.data.from] 국토교통부 실거래가 공개시스템 · 정보몽땅 · 토지이음
+[scenes.140.lines.0.text] 가격은 국토교통부 실거래가 공개시스템에서 단지와 면적을 똑같이 맞춰 보세요.
+[scenes.140.lines.1.text] 한 건이 아니라 1년 치를 같이 보는 게 좋습니다.
+[scenes.140.data.license] 파이어맵 자체 그림
+[scenes.141.lines.0.text] 거래가 적은 단지라면, 옆 단지 같은 크기와 같이 놓고 비교해 보세요.
+[scenes.141.data.license] Pexels 6962695 무료(Mikhail Nilov)
+[scenes.141.data.say] 옆 단지 같은 크기와 나란히
+[scenes.141.data.side] left
+[scenes.142.lines.0.text] 해제라고 적힌 거래는 빼고 봅니다. 계약이 취소된 거래거든요.
+[scenes.142.lines.1.text] 전세는 새로 맺은 계약과 다시 맺은 계약을 나눠 보시고요.
+[scenes.142.lines.2.text] 재건축 단계는 서울시 정비사업 정보몽땅이라는 누리집에서 단지 이름으로 찾을 수 있어요.
+[scenes.142.lines.3.text] 조합설립인가를 받았는지가 거기 나옵니다.
+[scenes.142.data.title] 확인할 것
+[scenes.142.data.rows.0.0] 해제 거래는 빼기
+[scenes.142.data.rows.1.0] 전세는 신규·갱신 나눠 보기
+[scenes.142.data.rows.2.0] 재건축 단계는 정보몽땅
+[scenes.142.data.icon] ListChecks
+[scenes.142.data.source] 국토교통부 실거래가 공개시스템 · 서울시 정비사업 정보몽땅
+[scenes.143.lines.0.text] 사려는 집이 허가구역인지는 토지이음이라는 국토교통부 누리집에서 확인할 수 있습니다.
+[scenes.143.data.license] Pexels 29303349 무료(성창 남)
+[scenes.143.data.say] 허가구역인지는 토지이음에서
+[scenes.143.data.side] left
+[scenes.144.lines.0.text] 서울 아파트 전체에 걸린 허가구역은 올해 말까지예요. 그 뒤로 늘릴지는 10월 19일까지 공식 발표가 없었습니다.
+[scenes.144.data.title] 허가구역 기한
+[scenes.144.data.rows.0.0] 서울 아파트 전체
+[scenes.144.data.rows.1.0] 압구정 · 목동신시가지
+[scenes.144.data.rows.1.2] ink
+[scenes.144.data.icon] CalendarClock
+[scenes.144.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.145.lines.0.text] 압구정과 목동신시가지는 서울시가 따로 지정해서, 2027년 4월 26일까지 허가구역이고요.
+[scenes.145.data.license] Pexels 37500921 무료(FREE VIDEO HAPPY)
+[scenes.145.data.say] 압구정·목동은 서울시가 따로 지정
+[scenes.145.data.side] left
+[scenes.146.lines.0.text] 앞에서 말한 특례의 신청 기한이 2027년 말인 건 시행령에 정해진 날짜예요. 그때 그 집이 허가구역인지는 따로 보셔야 합니다.
+[scenes.146.lines.0.cap] 국토교통부공고 제2025-1219호 지정기간 ~2026.12.31 · 토지이음 www.eum.go.kr · 허가 신청은 관할 구청 · 이번 달 거래는 신고 기한 30일이라 아직 덜 들어옴
+[scenes.146.data.title] 특례 신청 기한
+[scenes.146.data.v] 2027년 말
+[scenes.146.data.s] 그때 그 집이 허가구역인지는 따로 확인
+[scenes.146.data.icon] CalendarClock
+[scenes.146.data.c] ink
+[scenes.146.data.source] 법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)
+[scenes.147.lines.0.text] 그리고 이번 달 거래는 아직 덜 들어와 있다는 것도요.
+[scenes.147.lines.1.text] 신고 기한이 30일이라, 지금 보이는 숫자가 다음 달에 바뀔 수 있습니다.
+[scenes.147.lines.1.cap] 단지별 1년 거래 표(목동신시가지 1~14단지 · 압구정 현대 1~14차 · 신천 장미·파크리오) → 파이어맵 카페 cafe.naver.com/firemap · 국토교통부 실거래·건축물대장 · 계산·비교 자료이며 매수·매도 권유가 아닙니다
+[scenes.147.data.license] Pexels 12079562 무료(FREE VIDEO HAPPY)
+[scenes.147.data.say] 이번 달 거래는 아직 덜 들어왔다
+[scenes.147.data.side] left
+[scenes.148.lines.0.text] 지난 1년 실제로 팔린 가격만 센 겁니다.
+[scenes.148.lines.1.text] 30억 안팎으로 다시 정리하면요.
+[scenes.148.lines.2.text] 신천동에선 85㎡ 정도였어요.
+[scenes.148.lines.3.text] 목동신시가지에선 96㎡쯤이었고, 압구정동에선 그 값에 팔린 집이 없었어요.
+[scenes.148.data.license] 파이어맵 자체 그림
+[scenes.149.lines.0.text] 우리 동네 단지도 이렇게 세어 보고 싶다면, 댓글에 단지 이름을 남겨 주세요.
+[scenes.149.data.license] Pexels 37522115 무료(Jueon Kim 김주언)
+[scenes.150.lines.0.text] 토요일 오전 11시 반에는 종부세 이야기입니다. 그때 뵙겠습니다.
+[scenes.150.data.line] 토요일 오전 11시 반 · 종부세
 
 ## 화면 코드: video/src/H3.tsx
 [H3.tsx] 달러로

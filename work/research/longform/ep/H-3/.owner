@@ -16,3 +16,5 @@
 2026-10-21 17:50 | firemap-video-producer 정기 14:17 회차 | 끝 — 화면·대본 재서명·렌더 시작했으나 심사 v4.6 미달(6.53)+사실 1줄로 16:08 렌더 멈춤, youtube-loop 대본 고치는 중(say_v5) (손 뗌)
 2026-10-21 18:17 | firemap-video-producer 정기 18:17 회차 | H-3 say_v5 반영(16줄 오디오 지움·18+2줄 다시 받기)→check→h3props→화면 서명 요청→렌더
 2026-10-21 19:55 | firemap-video-producer 정기 18:17 회차 | v5 녹음·받아쓰기 통과·화면 서명 → 렌더 네 토막(render_parts_v5.sh) 시작
+2026-10-21 22:19 | firemap-video-producer 정기 22:17 회차 | H-3 마지막 토막 렌더 이어받음(18000-26999, 22:45쯤)→이어 붙이기·관문·예약
+2026-10-21 23:01 | firemap-video-producer 정기 22:17 회차 | 끝 — 18:17 회차 세션이 살아서 같은 bgcheck 고침 중(22:55 시험 렌더) 확인, 내 h3props 고침(원본 .pre1021bg)·screen_text·편집 요청은 그 세션에 메시지로 넘김 (손 뗌)

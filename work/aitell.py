@@ -12,7 +12,7 @@
 #        + 말 습관 4개(10/13 벤치마크 루프): 정밀 숫자 낭독('39만 7천'·6자리↑)·순번 3종↑·말 목차('볼게요') 3연속·꼬리표 낭독({F}·이미지 1·S3) — 걸린 줄 번호 출력, 걸리면 종료코드 6
 #        + 구어 아닌 말(10/19 사장님 '사람이 구어체로 쓰지 않는 단어'): work/data/not_spoken.json ban 말이 있으면 줄·바꿀 말을 보이고 종료코드 6, over 말은 경고만
 #   py -3.12 work/aitell.py spoken <묶음|글 파일 …>          → 구어 아닌 말만(카페 원고 점검용, gate에는 없음). ban 말이 있으면 종료코드 5
-#   py -3.12 work/aitell.py thumb "<썸네일 큰 글>" ["<둘째 줄>" …]  → 썸네일·쇼츠 표지 AI 티 A30·A31·A33(10/15 editor, 근거 longform/thumb-gap-1015.md ③ — 남 29장 실측). 걸리면 종료코드 5. A32(그리다 만 0초 화면)는 그림이라 눈으로 본다
+#   py -3.12 work/aitell.py thumb "<썸네일 큰 글>" ["<둘째 줄>" …]  → 썸네일·쇼츠 표지 AI 티 A30·A31·A33·A52(10/15·10/21 editor, 근거 longform/thumb-gap-1015.md ③ — 남 29장 실측). 걸리면 종료코드 5. A32(그리다 만 0초 화면)는 그림이라 눈으로 본다
 #   --skip-list (아무 자리)  → 번호·글머리 목록 줄과 법 문구·면책 줄을 끝맺음 반복(연속·'~요'·머리·꼬리)에서 뺀다.
 #                              사전(AI 말·설명조) 검사는 그대로. 기본은 꺼짐 — 기존 통과 점수가 안 바뀐다(10/1 대역 X-KR-1 요청).
 # 사장님 10/1 "사소한 것까지 모든 글을 다 검토해서 사람이 쓴 글로 바꿔야 하는데" — 순돌이 지시 [지시·긴급].
@@ -676,6 +676,9 @@ def script_check(text):
     # A-20 보탬(경고): 비율을 말로 할 때는 "10명 중 1명" 꼴(CDC 위험 소통·Galesic·Gigerenzer 2009) — 막지 않음
     pc = len(re.findall(r'\d+(?:\.\d+)?\s*%|퍼센트', text))
     if pc >= 5: print(f'[경고] 말에 % {pc}번 — 비율은 "10명 중 1명"처럼 자연 빈도로, 비교할 땐 분모를 같게(A-20)')
+    # S-소리(10/21 editor, PD 10/20 찬성 — 경고만): '그 안이면·안이었·안이에요'는 받아쓰기에서 '아니면·아니었'으로 들림(H-2 3:7·5:14, J-1 198)
+    for m in re.finditer(r'[^.!?\n]{0,20}\s안이(?:면|었|에요|예요|라면)[^.!?\n]{0,10}', text):
+        print(f'[경고·소리] "{m.group(0).strip()}" — "아니…"로 들려 뜻이 뒤집힘, "그렇다면"·"그 값 안에 들었"처럼')
     return not bad, per, multi, len(sents), bad
 
 
@@ -702,6 +705,8 @@ def thumb_check(lines):
             if not re.search(r'(연|금리|이율)\s*$', l[:m.start()]): bad.append(f'A31 계산기 소수점 "{m.group(0)}": {l} — "77세쯤"·"3분의 1"로, 정확한 값은 설명란')
         if re.search(r'\((잠정|추정|확정|세전|세후|기준)\)|중앙값?|평당\s*중앙|\d{4}[.\-/]\d{1,2}[.\-/]\d{1,2}\s*[~–-]|출처', l):
             bad.append(f'A33 문서 단서 꼬리: {l} — 설명란으로')
+        if re.search(r'(\d{4}\s*[년.]\s*)?\d{1,2}\s*월(\s*\d{1,2}\s*일)?\s*기준|\d{1,2}[./]\d{1,2}\s*기준', l):
+            bad.append(f'A52 날짜 기준 꼬리(알약 속 "(10월 6일 기준)"): {l} — 기준일은 설명란으로')
     return bad
 
 
@@ -714,7 +719,7 @@ def main(a):
         val, hits, n = score(' '.join(a[1:]), SKIP); print(f'AI 티 {val} ({n}자)'); [print('  ', h) for h in hits]; return 0
     if a[0] == 'thumb':
         bad = thumb_check(a[1:])
-        if not bad: print('썸네일 글자 A30·A31·A33 통과 (A32 그리다 만 화면은 눈으로)'); return 0
+        if not bad: print('썸네일 글자 A30·A31·A33·A52 통과 (A32 그리다 만 화면은 눈으로)'); return 0
         print('썸네일 글자 AI 티'); [print('  ', b) for b in bad]; return 5
     if a[0] == 'script':
         ok, per, multi, n, bad = script_check(script_text(a[1]))

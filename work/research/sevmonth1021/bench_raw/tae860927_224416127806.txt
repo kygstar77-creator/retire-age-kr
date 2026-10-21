@@ -1,0 +1,485 @@
+퇴사 시기만 바꿔도 퇴직금이 달라진다? 평균임금 계산법 총정리 : 네이버 블로그
+imgs=8 comment=0 sympathy=?
+se-main-container">
+퇴사를 앞두고 있다면 퇴직금 계산 기준부터 확인하는 것이 좋습니다. 
+법정 퇴직금은 원칙적으로 계속근로기간 1년에 대해 30일분 이상의 평균임금을 기준으로 계산하며, 
+최근 3개월 임금과 정확한 재직기간이 핵심입니다.
+현재 월급에 근속연수를 단순히 곱하기보다 
+급여명세서와 회사의 퇴직금 산정 내역을 함께 확인해야 합니다. 
+특히 퇴직 전 3개월 급여가 평소와 달랐다면 계산 결과도 달라질 수 있습니다.
+퇴직금 계산 공식부터 확인하기
+법정 퇴직금은 1일 평균임금에 30일을 곱한 뒤 계속근로기간을 반영하는 방식으로 계산합니다. 
+기본 구조는 1일 평균임금 × 30일 × 총 계속근로기간 ÷ 365입니다.
+​
+평균임금은 원칙적으로 산정 사유가 발생한 날 이전 3개월 동안 지급된 
+임금 총액을 그 기간의 총일수로 나누어 계산합니다. 
+실제 계산에서는 임금의 범위와 제외 기간 등을 함께 살펴봐야 합니다.
+💡 핵심 포인트
+퇴직금 계산의 출발점은 현재 월급이 아니라 퇴직 전 3개월 임금과 계속근로기간입니다.
+최근 3개월 급여명세서를 먼저 보는 이유
+퇴직금 계산을 준비할 때는 최근 3개월 급여명세서를 먼저 확인하는 것이 좋습니다. 
+기본급뿐 아니라 근로의 대가로 지급된 각종 수당과 상여금 등이 
+평균임금에 어떻게 반영되는지 살펴봐야 합니다.
+​
+연장근로수당이나 야간근로수당처럼 실제 근로에 따라 지급되는 임금은 계산에 영향을 줄 수 있습니다. 
+반면 모든 지급 항목이 자동으로 평균임금에 포함되는 것은 아니므로 급여 항목의 성격을 구분해야 합니다.
+​
+상여금과 성과급 역시 지급 조건과 성격에 따라 판단이 달라질 수 있습니다. 
+고용노동부의 공식 퇴직금 계산기를 이용하더라도 
+관련 지급 내역을 빠뜨리지 않고 확인하는 것이 중요합니다.
+퇴직일과 계속근로기간 정확히 확인하기
+퇴직금 대상 여부를 판단할 때는 계속근로기간을 정확하게 확인해야 합니다. 
+일반적으로 계속근로기간이 1년 이상이고 4주를 평균해 1주간 소정근로시간이 15시간 이상인 
+근로자가 퇴직급여 적용 대상이 됩니다.
+​
+계산기에 퇴직일을 입력할 때도 주의가 필요합니다. 
+마지막으로 근무한 날과 퇴직일의 개념이 다를 수 있으므로 
+사용하는 공식 계산기의 입력 안내를 확인해 정확한 날짜를 넣어야 합니다.
+​
+수습기간처럼 정식 채용 전부터 실제 근로를 시작한 기간은 계속근로기간에 포함될 수 있습니다. 
+입사일을 근로계약서와 실제 근무 시작일을 기준으로 다시 확인해보는 것도 필요합니다.
+평균임금과 통상임금도 함께 확인하기
+퇴직금은 평균임금을 기준으로 산정하지만, 평균임금이 통상임금보다 적은 경우에는 
+법에서 정한 기준에 따라 통상임금을 평균임금으로 보게 됩니다. 
+퇴직 직전 휴직 등으로 임금 수준이 평소보다 낮아진 경우라면 이 부분을 확인할 필요가 있습니다.
+​
+평균임금 산정에는 법령상 제외되는 기간과 임금이 있을 수 있습니다. 
+따라서 단순히 최근 3개월 급여를 더하고 나누는 것만으로 
+모든 상황을 정확하게 반영할 수 있는 것은 아닙니다.
+퇴사 전에 챙겨야 할 퇴직금 자료
+✓ 입사일과 마지막 근무일 확인
+✓ 퇴직 전 3개월 급여명세서 확인
+✓ 최근 상여금과 수당 지급 내역 확인
+✓ 미사용 연차와 연차수당 내역 확인
+✓ 휴직이나 근로시간 변동 기간 확인
+✓ 회사에서 제공한 퇴직금 산정 내역 확인
+✓ 퇴직연금 가입 여부와 DB형 또는 DC형 여부 확인
+​
+퇴직연금 제도를 운영하는 회사라면 내가 DB형인지 DC형인지 먼저 확인해야 합니다. 
+특히 DC형은 회사가 부담금을 계좌에 납입하고 적립금의 운용 결과가 최종 급여에 영향을 줄 수 있어 
+일반적인 퇴직금 계산식만으로 예상해서는 안 됩니다.
+계산기 금액과 회사 지급액이 다르다면
+퇴직금 계산기 결과와 회사가 안내한 금액이 다르다면 
+먼저 입력한 입사일과 퇴직일, 최근 3개월 임금, 상여금과 수당 내역을 다시 확인하세요. 
+휴직이나 산정에서 제외되는 기간이 있었다면 계산 방식도 달라질 수 있습니다.
+​
+차이가 계속된다면 회사에 퇴직금 산정 근거와 임금 항목별 반영 내역을 요청해 비교하는 것이 좋습니다. 
+법적 판단이 필요한 경우에는 고용노동부 등 공식 상담 창구를 통해 확인할 수 있습니다.
+퇴직금 계산 자주 묻는 질문
+Q. 퇴직금은 월급에 근속연수를 곱하면 되나요?
+A. 정확히는 아닙니다. 계속근로기간과 퇴직 전 평균임금을 기준으로 법정 산식에 따라 계산합니다.
+​
+Q. 아르바이트도 퇴직금을 받을 수 있나요?
+A. 고용 형태와 관계없이 법에서 정한 계속근로기간과 소정근로시간 요건을 충족하면 
+퇴직급여 대상이 될 수 있습니다.
+​
+Q. 퇴직금 계산에는 세전 급여를 사용하나요?
+A. 퇴직금 산정에서 임금은 세전 기준으로 확인합니다. 
+실제 지급받는 금액은 퇴직소득 관련 세금 등에 따라 달라질 수 있습니다.
+​
+Q. 퇴직 전 무엇을 가장 먼저 확인해야 하나요?
+A. 입사일과 퇴직일, 최근 3개월 급여명세서를 먼저 확인하고 
+상여금, 수당, 연차수당, 휴직기간 및 퇴직연금 유형을 함께 살펴보는 것이 좋습니다.
+​
+퇴직금은 퇴사 후 회사가 알려주는 금액만 확인하기보다 퇴사 전에 산정 기준을 이해하고 직접 검증해보는 것이 좋습니다. 최근 3개월 급여가 평소와 달랐다면 급여명세서와 계산 근거를 꼼꼼히 대조해보세요.
+​
+​
+#퇴직금계산
+#퇴직금계산방법
+#퇴직금계산기
+#퇴사준비
+#평균임금
+#퇴직금기준
+#퇴직연금
+#급여명세서
+jindo.m.patch("1.12.0").add({
+    "useTimingFunction" : function() {
+        var htOsInfo = jindo.m.getOsInfo();
+        if (htOsInfo.ios && parseInt(htOsInfo.version, 10) >= 6) {
+            return -1;
+        }
+    }
+});
+$Event.prototype.getEventElement = function(sTargetTagName, sTargetClassName, nMaxDepth) {
+	var el = this.element;
+	var wel = $Element(this.element);
+	var sTagName = 'a|button';
+	var sClassName = null;
+	var nDepth = typeof nMaxDepth == 'undefined' ? 5 : nMaxDepth;
+	if (typeof el.tagName == "undefined") return wel;
+	if (typeof sTargetTagName != "undefined") sTagName = sTargetTagName;
+	if (typeof sTargetClassName != "undefined") sClassName = sTargetClassName;
+	var oTagNameRegex = new RegExp("^(" + sTagName + ")$", "i");
+	if (oTagNameRegex.test(el.tagName) && (sClassName == null || wel.hasClass(sClassName))) {
+		return wel;
+	} else {
+		var welParents = wel.parent(function(v) {
+			if (v.$value().nodeType != 1) {
+				return false;
+			}
+			if (sTargetClassName) {
+				return oTagNameRegex.test(v.$value().tagName) && v.hasClass(sClassName);
+			}
+			return oTagNameRegex.test(v.$value().tagName);
+		}, nDepth);
+		return welParents != null && welParents.length > 0 ? welParents[0] : wel;
+	}
+}
+var doc = document.documentElement;
+doc.setAttribute('data-useragent',navigator.userAgent);
+var blogOwner = false;
+var rightClickOpenYn = false;
+var rightClickCalloutToggle = true;
+var isJeagleDebug = false;
+    function ImageLazyLoader(selectors) {
+        this.selectors = selectors;
+        var info = $Element("_post_property");
+        this.editorVersion = info.attr("editorversion");
+    }
+    ImageLazyLoader.prototype.loadImages = function () {
+        if (this.editorVersion != "3" && this.editorVersion != "4") {
+            return;
+        }
+        var containers = jindo.$$(this.selectors);
+        $A(containers).forEach($Fn(function (element) {
+            this.loadImagesForEachContainer($Element(element));
+        }, this).bind())
+    }
+    var imageLazyLoadVisible;
+    ImageLazyLoader.prototype.loadImagesForEachContainer = function (postContentArea) {
+        $A(postContentArea.queryAll("img")).forEach($Fn(function (img) {
+            img.addClass("_lazy-loading-target-image");
+        }, this).bind())
+        $A(postContentArea.queryAll("video._gifmp4")).forEach($Fn(function (img) {
+            img.addClass("_lazy-loading-target-image");
+        }, this).bind())
+        imageLazyLoadVisible = new jindo.m.Visible(document, {
+            sClassName : "_lazy-loading-target-image",
+            nExpandSize : 1000
+        });
+        jindo.$Fn(function() {
+            imageLazyLoadVisible.check(30);
+        }).attach(window, 'scroll').attach(window, 'resize').attach(window, 'touchend').attach(window, 'touchmove').attach(window, 'touchstart');
+        imageLazyLoadVisible.attach({
+            'visible' : function(oCustomEvent) {
+                var welTarget = $Element(oCustomEvent.elTarget);
+                // mp4 gif가 로드되지 않았을경우 gif로 로드 시킨다
+                var mp4LoadFallback = function() {
+                    var gifUrl = welTarget.attr("data-gif-url");
+                    if (!gifUrl || welTarget.attr("poster") === gifUrl) {
+                        return;
+                    }
+                    welTarget.attr("poster", gifUrl);
+                }
+                // gifmp4인 경우 재생처리
+                if (welTarget.hasClass("_gifmp4") && welTarget._element.tagName === "VIDEO") {
+                    welTarget._element.play()
+                        .then(function() {
+                            // Android 최대 16개 동시 재생되고, 그 외엔 error 객체에 초기화 에러 처리됨
+                            // 에러코드 설명 https://udn.realityripple.com/docs/Web/API/MediaError
+                            if (!!welTarget._element.error && welTarget._element.error.code === 3) {
+                                mp4LoadFallback();
+                            }
+                        })
+                        .catch(mp4LoadFallback);
+                    return;
+                }
+                if(!welTarget.attr("data-lazy-src")){
+                    return;
+                }
+                welTarget.attr("src", welTarget.attr("data-lazy-src"));
+                welTarget.attr("data-lazy-src", '');
+            },
+            'invisible' : function(oCustomEvent) {
+                var welTarget = $Element(oCustomEvent.elTarget);
+                // 화면에서 벗어나면 정지 처리
+                if (welTarget.hasClass("_gifmp4") && welTarget._element.tagName === "VIDEO") {
+                    welTarget._element.pause();
+                    return;
+                }
+            }
+        });
+        imageLazyLoadVisible.check();
+    }
+    $Fn(function() {
+        var imageLazyLoader = new ImageLazyLoader(".se-main-container,.__se_component_area");
+        imageLazyLoader.loadImages();
+    }).attach(window, "DOMContentLoaded");
+window.feCdnPublicPath='https://feblog.pstatic.net/module/real/';
+// document.domain = 'naver.com';
+// BLG-12120: FE(InfluencerLayer) 킬스위치 브리지 — newRecommendationBlockView.isInfluencerSdkOn으로 전달
+var isInfluencerSdkOn = true;
+var nilOptions = {
+    devMode: "true"=="false"
+};
+var gUrlMap = {
+    'PostView' : '/PostView.naver',
+    'CommentList' : '/CommentList.naver', // AngularJS
+    'ScrapToBlog' : '/ScrapToBlog.naver',
+    'ScrapToCafe' : '/ScrapToCafe.naver',
+    'PostUpdateSetInfoForm' : '/PostUpdateSetInfoForm.naver',
+    'Login' : '/Login.naver',
+    'Logout' : '/Logout.naver',
+    'PostDelete' : '/PostDelete.naver',
+    'FirstWriterRecommendBuddyCheckAsync' : '/rego/FirstWriterRecommendBuddyCheckAsync.naver',
+    'PhotoViewer' : 'm.photoviewer.naver.com',
+    'PhotoOriginal' : 'https://blogfiles.pstatic.net',
+    'PhotoThumbnail' : 'https://mblogthumb-phinf.pstatic.net',
+    'CheckIn' : '/CheckIn.naver',
+    'OtherCheckIn' : '/OtherCheckIn.naver'
+};
+var gLoginUrl = 'https://nid.naver.com/nidlogin.login?svctype=262144';
+var gMobileUrl = 'https://m.blog.naver.com';
+var gBlogCommandUrl = 'https://command.blog.naver.com';
+var blogCommandReadApiOn = 'true' === 'true';
+var naverId = "tae860927";
+var blogId = "tae860927";
+var bLoginUser = false;
+var userNaverId = "";
+var blogNicknameOrBlogId = "오늘의배달부";
+var gMCA = JSON.parse('{"mobileInAppType":"NOTINAPP","mobileBrowser":{"type":"SAFARI","version":16.0,"android":false,"opera":false,"safari":true,"isAndroid":false,"androidGingerbread":false,"isDolfin":false,"isOpera":false,"dolfin":false},"inAppYn":false,"inAppVersion":"2.0.0","isAndroidApp":false,"isIOSApp":false,"iOS7":false,"supportReportInAndroid":false,"notInAppSafariOrAndroidBrowser":true,"androidNewStyleAppVersion":false,"supportBuddyAppPushAndBuddyInvitation":false,"stampEnabledInBuddyListAppVersion":false,"marketPostUpdatableAppVersion":false,"notDASupportCustomSchemeInAndroid":false,"isBlogInApp":false,"isNaverInApp":false,"blogAppInstallUrl":"https://itunes.apple.com/app/id328813873?mt=8","supportToolButton":false,"supportHappybeanWrite":false,"supportPostAlbumApp":false,"supportDaliyWrite":false,"supportVideoViewer":false,"stampEnabledAppVersion":false,"lazyLoadableBrowser":true,"iOSMenuNavigationV2":false,"iOSMenuNavigationV1":false,"supportNaverExtension":true,"naverServiceAppInstallUrl":"/services.html"}');
+var gsPostTitle = "퇴사 시기만 바꿔도 퇴직금이 달라진다? 평균임금 계산법 총정리 : 네이버 블로그";
+var gnCategoryNo = 10;
+var gsLocationOrigin = "https://m.blog.naver.com";
+var sStartLogNo = '224416127806';
+var sNavType = '';
+var sDirectorySeq = '';
+var sBuddyGroupId = '';
+var gLogNo = '224416127806';
+var isScrapPost = false;
+var readOnlyStatus = false;
+var readOnlyStatusAll = false;
+var readOnlyLinkErrorMsgMobile = '블로그 점검 중으로 기존 글 삭제 댓글 답글 공감 이웃추가 구독하기 새글OFF 그룹이동 기능이 제한됩니다.';
+var gBrowserType = "SAFARI";
+var inAppVersion = "2.0.0";
+var isInApp = false;
+var noSendToStat = false;
+var isSupportVideoViewer = false;
+var userId = "";
+var scrapedInfo = {
+		bMemo : false,
+		logNo : 0,
+		nOpenType : 2
+	};
+var gdid = "90000003_0000000000000034403E5B3E";
+var postTitle = '\uD1F4\uC0AC \uC2DC\uAE30\uB9CC \uBC14\uAFD4\uB3C4 \uD1F4\uC9C1\uAE08\uC774 \uB2EC\uB77C\uC9C4\uB2E4? \uD3C9\uADE0\uC784\uAE08 \uACC4\uC0B0\uBC95 \uCD1D\uC815\uB9AC';
+var lcsUrl = "https://m.blog.naver.com/PostView.naver?blogId=tae860927&logNo=224416127806";
+var lcsUrlBase = "https://m.blog.naver.com/PostView.naver?blogId=tae860927&logNo=224416127806";
+var buddyController = null;
+var gnMaxNoticePostCount = 5;
+var isWritedByApp = false;
+var isWritedByMobileWeb = false;
+var isNilAnalystLeaveEvent = "true";
+var angularConfig = {"isDev":false,"staticResourceUrl":"https://ssl.pstatic.net/t.static.blog","lcsUrl":"lcs.naver.com","revision":"6ba7929","jeagleEyeDebug":false,"deployPhase":"release","countryCode":"NONE","isInApp":false,"isAndroidApp":false,"isIOSApp":false,"inAppScheme":"naverblog://blogapp","inAppVersion":"2.0.0","isSupportMarketNotification":false};
+var ngReadOnlyStatus = {"isReadOnly":false,"startTime":null,"endTime":null,"reason":null,"usageTip":null,"maintenanceType":null};
+var urlMap = {"commonStat":"https://blog.stat.naver.com","likeit":"https://blog.like.naver.com","ugcmarketthumb":"https://ugcmk-phinf.pstatic.net","section":"https://section.blog.naver.com","dthumb":"https://dthumb-phinf.pstatic.net/?src=","gfmarket_mobile":"http://m.gfmarket.naver.com","blog":"https://blog.naver.com","naver_openmain":"https://openmain.pstatic.net","guestbook":"https://guestbook.blog.naver.com","gfmarket_thumb":"https://storep-phinf.pstatic.net","beyond_analytics":"https://scv-blog.io.naver.com/jackpotlog/v1/logs","sellerBlog":"https://seller.blog.naver.com","module_moment":"https://api-moment.blog.naver.com","likeitcdn":"https://static-like.pstatic.net","nmobile":"https://m.blog.naver.com","module_guestbook":"https://api-guestbook.blog.naver.com","naverCommentApiProxyUrl":"https://apis.naver.com/commentBox/blogid","pay":"https://new-m.pay.naver.com","naverCommentApiUrl":"https://apis.naver.com/commentBox/cbox9","spi":"https://ssl.pstatic.net/spi","blogprofilethumb":"https://blogpfthumb-phinf.pstatic.net","mobileNaver":"http://m.naver.com","mobilemovieplayer":"https://sstatic-rmcnmv.pstatic.net","https_nmobile":"https://m.blog.naver.com","naverCommentStaticUrl":"https://ssl.pstatic.net/static.cbox"};
+var zookeeper = {"value":{"feed.thumbnail.display.percent":"on","anigif.display.percent":"on"},"onoff":{"guestbook.module.dummy.type":"on","mobile.home.video.view":"on"},"option":{"istestid":"false"}};
+var gsCategoryName = "\uC0DD\uD65C \uAFC0\uD301 \uBC30\uB2EC";
+var gsBlogOwnerYn = blogOwner ? "Y" : "N";
+var gsTagName = "퇴직금계산,퇴직금계산방법,퇴직금계산기,퇴사준비,평균임금,퇴직금기준,퇴직연금,급여명세서";
+var gsSessionId = "";
+var editorViewerUrl = "https://editor-static.pstatic.net/v/basic/1.78.1/se.viewer.js?v=1.78.1-20260807143758";
+var thumbnailPercent = "100";
+var searchVid = "";
+var videoAutoPlay = true;
+var gSeVersion = 4;
+var postAdvertiseEnableYN = true;
+var openType = 2;
+var sellerNo = '0';
+var temporaryStopSeller = 'false' === 'true';
+var leaveRequestSeller = 'false' === 'true';
+var tradeInterruptionSeller = 'false' === 'true';
+var feEnv = 'real';
+var feMobileUrl= "https://fe-m.blog.naver.com";
+var firstThumbnailUrlPath = '';
+var productCount = '0';
+var nilNtmLibUrl = "https://ssl.pstatic.net/t.static.blog/nmobile/versioning//common/js/nilForNtm-89afd2f_https.js";
+var gbIsNotOpenBlogUser = "false" === "true";
+var itemFactoryDomainDisabled = 'true' === 'true';
+var isBuyWithMyOwnMoneyPost = 'false' === 'true';
+var isBuyWithMyOwnMoneyEnableApp = 'true' === 'true';
+var isEndReadCompleteBAMetricON = 'true' === 'true';
+var gladAdvertiseUrl = 'https://api.tv.naver.com'
+var isSe2VideoAdvertiseRemoveOn = 'true' === 'true';
+var blogNo = '47261420';
+var beyondAnalyticsUrl = 'https://scv-blog.io.naver.com/jackpotlog/v1/logs';
+var baUserKey = '__UNKNOWN__';
+var userIdNo = "";
+var fromRecommendationType = '';
+var newRecommendationBlockView = JSON.parse('{\"env\":\"real\",\"logNo\":224416127806,\"title\":\"\uD1F4\uC0AC \uC2DC\uAE30\uB9CC \uBC14\uAFD4\uB3C4 \uD1F4\uC9C1\uAE08\uC774 \uB2EC\uB77C\uC9C4\uB2E4? \uD3C9\uADE0\uC784\uAE08 \uACC4\uC0B0\uBC95 \uCD1D\uC815\uB9AC\",\"blogNo\":47261420,\"blogId\":\"tae860927\",\"categoryNo\":10,\"isForeignLocation\":false,\"feedStartBannerEnabled\":false,\"directorySeq\":0,\"logCode\":0,\"writingMaterialType\":0,\"blocks\":[{\"type\":\"POPULAR_POST\",\"enabled\":true,\"searchKeyword\":\"\",\"contentLineage\":{\"contentType\":\"\",\"contentSource\":\"\",\"contentTag\":\"\",\"recommendBlockCode\":\"\",\"initialTrackingCode\":\"others\"}},{\"type\":\"FIRST_TAG_POST\",\"enabled\":true,\"searchKeyword\":\"\uD1F4\uC9C1\uAE08\uACC4\uC0B0\",\"contentLineage\":{\"contentType\":\"blog_post\",\"contentSource\":\"blog-rcmd\",\"contentTag\":\"\",\"recommendBlockCode\":\"blog_fd_tag\",\"initialTrackingCode\":\"others\"}},{\"type\":\"AIRS_MIXED\",\"enabled\":true,\"searchKeyword\":\"\",\"contentLineage\":{\"contentType\":\"\",\"contentSource\":\"\",\"contentTag\":\"\",\"recommendBlockCode\":\"\",\"initialTrackingCode\":\"others\"}},{\"type\":\"SECOND_TAG_POST\",\"enabled\":true,\"searchKeyword\":\"\uD1F4\uC9C1\uAE08\uACC4\uC0B0\uBC29\uBC95\",\"contentLineage\":{\"contentType\":\"blog_post\",\"contentSource\":\"blog-rcmd\",\"contentTag\":\"\",\"recommendBlockCode\":\"blog_fd_tag\",\"initialTrackingCode\":\"others\"}},{\"type\":\"THIRD_TAG_POST\",\"enabled\":true,\"searchKeyword\":\"\uD3C9\uADE0\uC784\uAE08\",\"contentLineage\":{\"contentType\":\"blog_post\",\"contentSource\":\"blog-rcmd\",\"contentTag\":\"\",\"recommendBlockCode\":\"blog_fd_tag\",\"initialTrackingCode\":\"others\"}},{\"type\":\"AIRS_ONE_COL_1\",\"enabled\":true,\"searchKeyword\":\"\",\"contentLineage\":{\"contentType\":\"\",\"contentSource\":\"\",\"contentTag\":\"\",\"recommendBlockCode\":\"\",\"initialTrackingCode\":\"others\"}},{\"type\":\"AIRS_ONE_COL_2\",\"enabled\":true,\"searchKeyword\":\"\",\"contentLineage\":{\"contentType\":\"\",\"contentSource\":\"\",\"contentTag\":\"\",\"recommendBlockCode\":\"\",\"initialTrackingCode\":\"others\"}},{\"type\":\"AIRS_ONE_COL_3\",\"enabled\":true,\"searchKeyword\":\"\",\"contentLineage\":{\"contentType\":\"\",\"contentSource\":\"\",\"contentTag\":\"\",\"recommendBlockCode\":\"\",\"initialTrackingCode\":\"others\"}}],\"categoryBlockEnabled\":true,\"recommendationCategory\":\"ETC\",\"nudgeCategory\":\"EXTERNAL\",\"userInfo\":{\"loginUserId\":\"\",\"domainIdOrUserId\":\"\",\"relationType\":4,\"ownerRelationType\":4,\"nickname\":null,\"profileThumbnailUrl\":null,\"notOpenBlogUser\":false},\"baLogData\":{\"trackingCode\":\"\",\"userKey\":\"__UNKNOWN__\",\"categoryRelatedContentLineage\":{\"contentType\":\"blog_post\",\"contentSource\":\"blog-rcmd\",\"contentTag\":\"\",\"recommendBlockCode\":\"blog_fd_cate\",\"initialTrackingCode\":\"others\"}},\"initialTrackingCode\":\"others\",\"gdid\":\"90000003_0000000000000034403E5B3E\",\"sessionId\":null,\"tagNames\":\"\uD1F4\uC9C1\uAE08\uACC4\uC0B0,\uD1F4\uC9C1\uAE08\uACC4\uC0B0\uBC29\uBC95,\uD1F4\uC9C1\uAE08\uACC4\uC0B0\uAE30,\uD1F4\uC0AC\uC900\uBE44,\uD3C9\uADE0\uC784\uAE08,\uD1F4\uC9C1\uAE08\uAE30\uC900,\uD1F4\uC9C1\uC5F0\uAE08,\uAE09\uC5EC\uBA85\uC138\uC11C\",\"smartEditorType\":4,\"scrapYn\":false,\"searchKeyword\":\"\",\"advertise\":{\"adPostYn\":true,\"adContentYn\":true,\"adContentLocation\":0},\"saInfo\":null,\"inactiveAdPostBottomAdvertiseEnabled\":false,\"lineBannerList\":[{\"id\":101648,\"type\":\"l2\",\"imageUrl\":\"https:\/\/blogfiles.pstatic.net\/MjAyNjA5MjhfMTQy\/MDAxNzkwNTg0NzA4Mzc2.8Hu3dKcpVDDdMhmfi7dozHz3ecRIHUC4EsybNBDz1ZQg.P8mbT6Gf_6TmNEH6pojBT0pJBanQvL5ylvTUANU8UXog.PNG\/MW%ED%95%98%EB%8B%A8_7_.png\/MW%ED%95%98%EB%8B%A8_7_.png\",\"linkUrl\":\"https:\/\/m.blog.naver.com\/MarketPlace.naver?homeCategoryId=promotion\",\"subText\":\"blog market\",\"mainText\":\"\uC774 \uACC4\uC808 \uD5A5\uAE0B\uD568\uC5D0\\\\n\uD3F4\uC778\uB7FD #\uBC84\uC12F\",\"bgColor\":\"#D77622\",\"textColor\":\"#FFFFFF\",\"isEvent\":false},{\"id\":101659,\"type\":\"l3\",\"imageUrl\":\"https:\/\/blogfiles.pstatic.net\/MjAyNjEwMDJfMTIx\/MDAxNzkwOTI2NTMxNjc3.wMzhgEQJ5CpY4IuPr8JMPZxf7CuPqsIVryYEnO5wA7cg.APh5i2s91nSnC6vQ6nLu0oNF1MA1mGOmHr6PpyszRrcg.PNG\/%EA%B0%80%EC%9D%84%EB%94%94%EC%A0%80%ED%8A%B8_%EB%B8%94%EB%A1%9C%EA%B7%B8_MO_%EB%AA%A8%EB%B0%94%EC%9D%BC%EB%9D%A0%EB%B0%B0%EB%84%88_232x200.png\/%EA%B0%80%EC%9D%84%EB%94%94%EC%A0%80%ED%8A%B8_%EB%B8%94%EB%A1%9C%EA%B7%B8+MO_%EB%AA%A8%EB%B0%94%EC%9D%BC%EB%9D%A0%EB%B0%B0%EB%84%88_232x200.png\",\"linkUrl\":\"https:\/\/naver.me\/FqItgNSv\",\"subText\":\"\uB124\uC774\uBC84 AI\uD0ED\",\"mainText\":\"\uAC00\uC744 \uD551\uACC4\uB85C\\\\n\uC6B0\uB9AC \uB2EC\uB2EC\uD55C\uAC70 \uBA39\uC790\",\"bgColor\":\"#FFF6CF\",\"textColor\":\"#894300\",\"isEvent\":false}],\"profileInfo\":{\"profileImageUrl\":\"https:\/\/blogpfthumb-phinf.pstatic.net\/MjAyNjA5MDJfMjQ4\/MDAxNzg4Mjc1MTgzNjc5.DMvHUmnMdm9GzHlfbV1RP3sXF9n4kIq-V4D4qI6CDggg.SWhs7-UZ1jy-ibIMIg09DGc3P81vtR13v-dovsKz8Gog.PNG\/%EC%98%A4%EB%8A%98%EC%9D%98_%EB%B0%B0%EB%8B%AC%EB%B6%80_%EC%8D%B8%EB%84%A4%EC%9D%BC.png\/%25EC%2598%25A4%25EB%258A%2598%25EC%259D%2598%2B%25EB%25B0%25B0%25EB%258B%25AC%25EB%25B6%2580%2B%25EC%258D%25B8%25EB%2584%25A4%25EC%259D%25BC.png\",\"nickName\":\"\uC624\uB298\uC758\uBC30\uB2EC\uBD80\",\"originalNickName\":\"\uC624\uB298\uC758\uBC30\uB2EC\uBD80\",\"directoryName\":\"\",\"subscriberCount\":4,\"introduction\":\"\uC624\uB298\uB3C4 \uB193\uCE58\uAE30 \uC26C\uC6B4 \uC815\uBD80\uC9C0\uC6D0\uAE08\u00B7\uC0DD\uD65C\uC815\uBCF4\uB97C \uBB38 \uC55E\uAE4C\uC9C0 \uBC30\uB2EC\uD574\uB4DC\uB9BD\uB2C8\uB2E4 \\n\uB9E4\uC77C \uC0C8\uB85C\uC6B4 \uD61C\uD0DD \uC18C\uC2DD, \uC5EC\uAE30\uC11C \uAC00\uC7A5 \uBA3C\uC800 \uBC1B\uC544\uBCF4\uC138\uC694.\",\"yearOfBlogBadgeDisplay\":false,\"suggestionBlogBadgeDisplay\":false,\"powerBlogBadgeDisplay\":false,\"officialBlogBadgeDisplay\":false,\"talkTalkUrl\":\"\",\"externalChannelViewList\":[],\"lastYearOfBlog\":0,\"isNaverMateBlog\":false,\"blackUser\":false,\"postFadeOut\":true,\"blackedByUser\":false},\"endPageRecommendRenderMargin\":0,\"readOnlyStatus\":false,\"lazyTest\":false,\"searchABTestInfo\":{\"abTestNo\":289,\"experimentNo\":572,\"variation\":\"B\",\"finished\":true},\"etcABTestInfo\":null,\"hotPostABTestInfo\":null,\"feedContainerId\":\"blog_fe_feed\",\"isTagHidden\":false,\"airsTag\":\"\uD1F4\uC9C1\uAE08\uACC4\uC0B0\",\"postTopic\":\"BUSINESS\",\"modal\":null,\"isReactionEnable\":false,\"isCommentEnable\":true,\"commentCount\":0,\"commentNoPosition\":null,\"thumbnailUrl\":\"https:\/\/blogthumb.pstatic.net\/MjAyNjA5MThfMTMx\/MDAxNzg5NzEzMjQxODMx.06zym-vL0nbR2-f7pwyIQBy8EKVUUlBdx2vWA6SvtsMg.GSxwm9pNHVYPIt4ec8iAJCQl3fmW2TN4rWZ945WoMoIg.JPEG\/%C5%F0%BB%E7-%C0%FC-%C5%F0%C1%F7%B1%DD-%C1%A4%C8%AE%C8%F7-%B0%E8%BB%EA%C7%CF%B4%C2-%B9%FD%2C-%C6%F2%B1%D5%C0%D3%B1%DD%B0%FA-%C3%D6%B1%D9-3%B0%B3%BF%F9-%B1%DE%BF%A9-%C8%AE%C0%CE%C7%CF%B1%E2-1.jpg\",\"blogName\":\"\uC624\uB298\uC758\uBC30\uB2EC\uBD80\",\"scrap\":{\"isScrapEnable\":false,\"isOutSideAllow\":true,\"scrapType\":2,\"shareCount\":0,\"isMemolog\":false,\"allOpenPost\":true,\"isClosedPost\":false},\"isShoppingApp\":false,\"hideBottomBar\":false,\"influencerLevel\":0,\"adBucket\":null,\"isChangeLineBannerPosition\":true,\"postTopicInfo\":{\"topicId1Depth\":\"ECONOMY\",\"topicId2Depth\":\"FINANCE\",\"topic2DepthName\":\"\uAE08\uC735\"},\"postTopics\":{\"short_ai_directory_name\":\"\uBE44\uC988\uB2C8\uC2A4\u00B7\uACBD\uC81C\",\"directory_name\":\"\",\"full_ai_directory_name\":\"\uACBD\uC81C>\uAE08\uC735\"},\"nlog2PageId\":\"ee60dec9-65ea-4698-b58b-3892c654a825\",\"inApp\":false,\"fromSearchAddView\":false,\"marketPost\":false}');
+var newRecommendationSentryView = JSON.parse('{"env":"real","platform":"postView","sampleRate":0.1}');
+var endPageRecommendRenderMargin = 0;
+var isLikeCommentCountPlatformApiOn = 'false' === 'true';
+var scrappedPostLogNoOrLogNo = 224416127806;
+var scrappedPostDomainIdOrBlogIdOrBlogId = 'tae860927';
+var isPhotoViewerW966On = 'true' === 'true';
+var se3Fadeout = 'true' === 'true';
+var isEnableMaterialFeedLink = 'true' === 'true';
+var feConvertToggles = {"post.market.link":true,"post.social.plugin":true,"post.image.video.handler":true,"post.buddy.add.layer":true,"post.video.like":true,"post.se.one.init":true,"post.se2.thumbnail.scroll":true,"post.image.viewer":true,"post.ad.remove":false,"post.buy.with.my.own.money":true,"post.banner":false,"post.map":true,"post.inapp.app.scheme":false,"post.unused.files":false,"post.open.graph.video":true,"common.legacy.remove":false,"post.buddy.recommend.popup":false,"post.notice.setting":false,"post.blog.team.buddy.recommend":true,"common.stat.send":true,"common.layer.popup":true,"blog.pip.remove":false,"post.read.complete.log":true,"post.view.controller":false,"hamburger.menu":true,"category.list":true,"blog.block.release":false,"post.influencer.layer":true,"post.more.menu":true,"post.header.buddy.add":true,"post.dark.mode.theme.attr":false};
+// BLG-13081: 더보기(⋯) 메뉴 항목 노출·상태. flag ON 이면 FE(MoreMenu)가 이 값으로 레이어를
+// 구성한다. 조건식은 PostViewAsyncTpl.jsp 레거시 c:if 를 그대로 옮긴 것이고, 메뉴 마크업 자체는
+// 계속 레거시가 렌더한다 (flag 는 트리거만 FE 로 넘긴다).
+// 이 파일에 두는 이유: 레거시 메뉴 마크업은 SE 버전·인앱 여부로 템플릿 4종(jsp 2 · ftl 2)이
+// 갈리지만 PostView.jsp 는 항상 실행되므로 한 곳에서 전 구간을 커버한다.
+// editable 의 supportSE3·superUser 절: SE3+ 템플릿(TitleContentsPostViewHtmlForMobile.ftl:73)은
+// post.isWrittenBy(blogUser) 로 노출을 판정해 superuser(운영자)면 무조건 true 다 (Post.java:610-619).
+// SE2 이하 JSP 경로에는 이 분기가 없으므로 supportSE3 로 게이트해 템플릿별 parity 그대로 내린다
+// (advertiseVisible 의 supportSE3 게이트와 같은 원칙).
+var moreMenuPayload = {
+	editable: false,
+	noticeEnabled: false,
+	noticePost: false,
+	postBlocked: false,
+	blockType: '0',
+	advertiseVisible: false,
+	postAdvertiseEnabled: true,
+	temporaryStopSeller: false,
+	leaveRequestSeller: false,
+	tradeInterruptionSeller: false,
+	deletable: false,
+	reportable: true,
+	reportUrl: "https:\/\/srp2.naver.com\/report?svc=BLG&exit=close&ctype=AA01&cwriterenc=l203cbYWItRw8kXnyay2C9Y3iLvfMf8cFILMgkdGGjY%3D&ctitle=%ED%87%B4%EC%82%AC%20%EC%8B%9C%EA%B8%B0%EB%A7%8C%20%EB%B0%94%EA%BF%94%EB%8F%84%20%ED%87%B4%EC%A7%81%EA%B8%88%EC%9D%B4%20%EB%8B%AC%EB%9D%BC%EC%A7%84%EB%8B%A4%3F%20%ED%8F%89%EA%B7%A0%EC%9E%84%EA%B8%88%20%EA%B3%84%EC%82%B0%EB%B2%95%20%EC%B4%9D%EC%A0%95%EB%A6%AC&cwriter=tae8*****&dark=disable&memtype=Y&env=mobile&cnickname=tae8*****&vsvc=BLG&cid=tae860927%40%4047261420%40%40mylog%40%40224416127806&returl=",
+	shareUrl: "https:\/\/m.blog.naver.com\/tae860927\/224416127806",
+	shareCanonicalUrl: "https:\/\/m.blog.naver.com\/tae860927\/224416127806",
+	shareLogUrl: "https:\/\/proxy.blog.naver.com\/spi\/v1\/api\/shareLog",
+	shareTitle: "\uD1F4\uC0AC \uC2DC\uAE30\uB9CC \uBC14\uAFD4\uB3C4 \uD1F4\uC9C1\uAE08\uC774 \uB2EC\uB77C\uC9C4\uB2E4? \uD3C9\uADE0\uC784\uAE08 \uACC4\uC0B0\uBC95 \uCD1D\uC815\uB9AC"
+};
+var blogNewsProxyUrl = "https://m.blog.naver.com/api/news/article";
+var isShoppingApp = 'false' === 'true';
+$Element(window).attach("load", function (event) {
+       setTimeout(
+        function() {
+            postViewController = new PostViewController(blogId, sStartLogNo, sNavType, "false", ""
+                , "false", "10", "", 0, isNilAnalystLeaveEvent
+				, editorViewerUrl
+                , false, '{}', '[]',
+                hasProduct, temporaryStopSeller, leaveRequestSeller, "naver", tradeInterruptionSeller, nilNtmLibUrl,
+                gladAdvertiseUrl, scrappedPostLogNoOrLogNo, scrappedPostDomainIdOrBlogIdOrBlogId, isPhotoViewerW966On, isShoppingApp);
+            postViewController.start();
+            try {
+                lazyVersioningLoader.loadJs("https://ssl.pstatic.net/adimg3.search/adpost/js/ad.js");
+            } catch (e) {
+                console.log(e);
+            }
+        }, 0);
+        new BlogAppAdController().start();
+        buddyController = new BuddyController("tae860927");
+        buddyController.start();
+        lazyVersioningLoader.lazyJsLoader({
+            _ngbundle : function() {
+                angular.bootstrap($$.getSingle('._ngApp'), ['bgPostViewApp'], {
+                    strictDi: true
+                });
+            }
+        });
+});
+function lazyViewLoadForCallback(){
+    postViewController.lazyViewLoad();
+}
+function _goToCheckInByPlaceId(placeId) {
+    postViewController._goToCheckInByPlaceId(placeId);
+}
+function _goToCheckInByBlogId(checkInDomainIdOrBlogId) {
+    postViewController._goToCheckInByBlogId(checkInDomainIdOrBlogId);
+}
+function _goToCheckInForeignPage(lon, lat) {
+    postViewController._goToCheckInForeignPage(lon, lat);
+}
+var safariBrowser = "SAFARI";
+var safariIpadBrowser = "SAFARI_IPAD";
+var androidBrowser = "ANDROID";
+var androidGalTabBrowser = "ANDROID_GALTAB";
+var androidHoneyCombBrowser = "ANDROID_HONEYCOMB";
+var dolfinBrowser = "DOLFIN";
+var operaBrowser = "OPERA";
+var gBrowserType = "SAFARI";
+var gBrowserVersion = "16.0";
+var isSafariBrowser = (gBrowserType == safariBrowser || gBrowserType == safariIpadBrowser);
+var isIos4xSafariBrowser = isSafariBrowser && (navigator.userAgent.match(/OS 4_3/i)) ? true : false;
+var isIos5xSafariBrowser = isSafariBrowser && (navigator.userAgent.match(/OS 5/i)) ? true : false;
+var isAndroidBrowser = (gBrowserType == androidBrowser) || (gBrowserType == androidGalTabBrowser) || (gBrowserType == androidHoneyCombBrowser);
+var isAndroid4xBrowser = isAndroidBrowser && (navigator.userAgent.match(/Android 4./i)) ? true : false;
+var isAndroid5xBrowser = isAndroidBrowser && (navigator.userAgent.match(/Android 5./i)) ? true : false;
+var isBelowAndroid5xBrowser = isAndroid4xBrowser || isAndroid5xBrowser;
+var isAndroidGingerbread = false;
+var isDefaultTextSupportingBrowserType = false;
+var gIsNotInAppSafariOrAndroidBrowser = true;
+var isSBrowser = (navigator.userAgent.match(/SamsungBrowser/i)) ? true : false;
+var gDeployPhase = ""; 
+var ReloadFile=(function(){var d=2500;var b={};var h={};var c=5;function k(o){var n=o.split(/\/+/g);var p=n[n.length-1].split("?")[0].split(".")[0];return p}function a(){var n=document.getElementsByTagName("script");for(var p=0;p
+-1||q.toLowerCase().indexOf("blog.naver.net")>-1)){var o=k(q);var r=o+"_js";n[p].id=r;f(r,c);l(r,q)}}}function g(){var n=document.getElementsByTagName("link");for(var p=0;p
+-1||r.toLowerCase().indexOf("blog.naver.net")>-1)){var o=k(r);var s=o+"_css";n[p].id=s;f(s,c);e(s,r)}}}function l(q,o){i(q);if((typeof window.defineNHNJS=="undefined"||typeof window.defineNHNJS[q]=="undefined")&&b[q].retry++
+1){h[o]=setTimeout(n,d)}}function f(o,n){b[o]={retry:0,maxRetry:n||1}}function i(n){if(typeof h[n]!="undefined"){clearTimeout(h[n]);h[n]=null}}function e(o,n){document.addEventListener("DOMContentLoaded",function(){j(o,n)},false)}function j(u,q){i(u);if(b[u].retry++
+    var currentToken;
+    function callbackFromFESignUp(event) {
+        var data = event.data;
+        if(event.origin != window.location.origin){
+            return;
+        }
+        if(data.token != currentToken){
+            return;
+        }
+        data.refresh && location.reload();
+    }
+    window.addEventListener('message', callbackFromFESignUp, false);
+        document.addEventListener("DOMContentLoaded", function() {
+            document.addEventListener("click", function(e) {
+                var materialLink = e.target.closest("a[data-linktype='material']");
+                if (materialLink) {
+                    e.preventDefault();
+                    var linkData = materialLink.getAttribute("data-linkdata");
+                    if (linkData) {
+                        try {
+                            var parsedData = JSON.parse(linkData);
+                            if (typeof materialResolver === "function") {
+                                materialResolver(parsedData);
+                            }
+                        } catch (err) {
+                        }
+                    }
+                }
+            });
+        });
+    var baParams = {};
+    // [BA] 공통
+    baParams.baUrl = "https://scv-blog.io.naver.com/jackpotlog/v1/logs";
+    baParams.baSceneId = 'post_end';
+    baParams.baUserKey = '__UNKNOWN__';
+    // [BA] post_end
+    baParams.blogNo = '47261420';
+    // [BA] post_end
+    baParams.logNo = '224416127806';
+    // [BA] p_add_date
+    baParams.postWriteDate = '1789947000000';
+    // [BA] blog_end
+    baParams.ownerRelationType = '4';
+    // [BA] post_end
+    baParams.userRelationType = '4';
+    // [BA] post_end
+    baParams.isInApp = false;
+    baParams.initialTrackingCode = "others";
+    baParams.postendTemplateType = "feed_card_others_type";
+    baParams.attachmentSetCount = {"korea_map":0,"foreign_map":0,"writing_material_info":0,"buy_with_my_own_money_shopping":0,"buy_with_my_own_money_visit_order":0,"buy_with_my_own_money_visit_reservation":0,"buy_with_my_own_money_visit_receipt":0,"buy_with_my_own_money_visit_payment":0,"image":8,"book_count":0,"movie_count":0,"tv_count":0,"music_count":0,"shopping_count":0,"show_count":0,"news_count":0,"sports_count":0,"stock_count":0,"realestate_count":0,"shopping_connect":0};
+    baParams.postTopics = {"short_ai_directory_name":"비즈니스·경제","directory_name":"","full_ai_directory_name":"경제>금융"};
+    var nlog2Params = {};
+    // NLOG 2.0 page_id — makeFeedBlockView 가 요청당 1회 발급해 FE 초기값(newRecommendationBlockView)
+    // 으로 내려준 페이지뷰 식별자. 이 값을 PV 에 실어 NTM SDK 자동 발급을 대체하면 FE 가 같은 값으로
+    // 남기는 로그와 NTM 로그가 같은 페이지뷰로 묶인다.
+    // 이 전역이 없는 화면(게시글 엔드 외)은 세팅하지 않으므로 기존대로 SDK 가 자동 발급한다.
+    if (typeof newRecommendationBlockView !== 'undefined'
+            && newRecommendationBlockView && newRecommendationBlockView.nlog2PageId) {
+        nlog2Params.page_id = newRecommendationBlockView.nlog2PageId;
+    }
+    nlog2Params.page_code = '2000003513';
+    nlog2Params.page_code_alias = 'content_detail';
+    nlog2Params.blogNo = 47261420;
+    nlog2Params.logNo = 224416127806;
+    nlog2Params.postWriteDate = '1789947000000';
+    nlog2Params.ownerRelationType = 4;
+    nlog2Params.userRelationType = 4;
+    nlog2Params.isInApp = false;
+    nlog2Params.initialTrackingCode = "others";
+    nlog2Params.postendTemplateType = "feed_card_others_type";
+    nlog2Params.attachmentSetCount = '{"korea_map":0,"foreign_map":0,"writing_material_info":0,"buy_with_my_own_money_shopping":0,"buy_with_my_own_money_visit_order":0,"buy_with_my_own_money_visit_reservation":0,"buy_with_my_own_money_visit_receipt":0,"buy_with_my_own_money_visit_payment":0,"image":8,"book_count":0,"movie_count":0,"tv_count":0,"music_count":0,"shopping_count":0,"show_count":0,"news_count":0,"sports_count":0,"stock_count":0,"realestate_count":0,"shopping_connect":0}';
+    nlog2Params.postTopics = '{"short_ai_directory_name":"비즈니스·경제","directory_name":"","full_ai_directory_name":"경제>금융"}';
+    NmobilePageViewSender.init(baParams, nlog2Params);

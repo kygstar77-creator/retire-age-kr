@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-21 12:56",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "연장수당 받고 10년 넘게/한 달 더 다니면",
+ "num": "퇴직금 77만원 줄어요",
+ "sub": "4월 말 대신 5월 말 퇴사 · 그 달 월급은 따로 받아요",
+ "label": "기본급만 받으면 해당 없음",
+ "src": "",
+ "icon": "calendar",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 96,
+ "num_px": 76,
+ "sub_px": 45,
+ "board": [
+  "t1cafe1021",
+  "psfund1021",
+  "med1021",
+  "h1helio1021",
+  "yen1021",
+  "cudep1020",
+  "seqrisk1020",
+  "penkunbo1020",
+  "divdrop1020",
+  "loan25_1020"
+ ]
+}

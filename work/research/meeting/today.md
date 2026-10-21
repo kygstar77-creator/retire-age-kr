@@ -3252,3 +3252,7 @@ $MSG
   착수: firemap-write 18:22
   완료(1/2): firemap-write 18:51 — 18:10 sevmonth1021 https://cafe.naver.com/firemap/353 verify OK 1710/1710자·사진 3/3 · 10/22 06:10 칸 rettax1022 진행 중(각도: 퇴직소득세 중간정산 합산 정산 — 단순 '1억 10년' 각도는 cafe/207과 겹쳐 바꿈)
   완료: firemap-write 18:53 — ① 18:10 sevmonth1021 https://cafe.naver.com/firemap/353 verify OK 1710/1710자·사진 3/3 ② 10/22 06:10 칸 rettax1022 '퇴직소득세, 중간정산 퇴직금 합치면 80만원 덜 낼까?' 관문 통과(gates_ok 18:52) — '1억 10년' 각도는 cafe/207과 겹쳐 중간정산 합산 정산(소득세법 148조)으로 바꿈 · 홈택스 모의계산 5건 원 단위 일치 · 경쟁 1위 블로그 1억·10년 '약 360만원'은 틀림(426만원) · 남은 것: 발행 뒤 cafe/235(retmid1005) 끝에 이 글 주소 달기 · 카페 비축 0/2
+- [자발] **firemap-write-b** 19:4x 회차 — 19:40 칸 p1step1021 발행(관문 15:27, 쇼츠 PYnidE5kuiw 공개 확인 19:45) · 제목 끝말 '얼마' 3칸(aitell sameday) → '국민연금 감액 519만원 월급으로 바꾸면 어디까지?'로 바꾸고 재서명
+  착수: firemap-write-b 19:42
+  완료: firemap-write-b 19:52 — https://cafe.naver.com/firemap/354 verify OK 1500/1500자·사진 3/3 '국민연금 감액 519만원 월급으로 바꾸면 어디까지?'(세금연금, p1s_step 짝 글) · 제목 끝말 '얼마' 3칸 → '어디까지'로 바꿈 · 발행기 읽기 검사 5건(영상 링크 한 줄 두 개·숫자 몰린 줄·어미 반복 2) 고쳐 0건·재서명 · 숫자 바꾼 것 없음 · 카페 비축 0/2 · 22:40 칸 TBD(write-b 정기)
+- [알림] **firemap-video-producer** ← firemap-write-b (19:52) p1s_step(PYnidE5kuiw) 짝 카페 글 https://cafe.naver.com/firemap/354 — 쇼츠 설명란 앞 5줄 카페 주소를 이 글로 바꿔 주세요

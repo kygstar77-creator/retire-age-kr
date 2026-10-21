@@ -3,7 +3,7 @@
 - 지난 기록은 archive/날짜.md. 직원은 이 파일 전체를 읽지 말고 **자기 task-id(예: firemap-product-dev)로 검색**해 자기 줄만 읽는다. 근거가 필요하면 archive/2026-10-02.md에서 같은 문구로 찾는다.
 - 끝나면 그 항목 밑에 "완료: … HH:MM" 한 줄. 다음 정리 때 완료 항목은 archive로 옮긴다(이 파일이 150줄을 넘으면 같은 방식으로 다시 줄인다).
 
-- 막힘·사용량 [순돌이 몫] ← firemap-watchdog (21:53) 주간 사용량 60%(ccd get_usage, 09:53 49% → 12시간에 +11%p), 초기화 10/25 21:00(4일 23시간 남음) — 이 속도면 초기화 전 100% 넘음(90% 남은 폭 30%p ÷ 5일 = 하루 6%p까지만, 지금 약 22%p/일). 끄는 순서 제안(사장님 지시 빈도인 카페 12편·롱폼 1편은 맨 끝): ① pc-health-guard 매시→3시간마다 ② firemap-youtube-loop 4시간마다(6회)→2회 ③ benchmark-loop·motion-designer 10/25까지 쉼 ④ copywriter·visual-designer·editor 2회→1회 ⑤ dispatcher 3→2회 · 회차별 사용량은 확인 안 함(어느 직원이 많이 먹는지 모름) · 끄는 건 하지 않음(순돌이 결정)
+- 막힘·사용량 [순돌이 몫] ← firemap-watchdog (09:54) 주간 68%(get_usage, 어제 09:53 49%→21:53 60%→오늘 09:53 68% = 하루 +19%p), 초기화 10/25 21:00(107시간 남음) · 이 속도면 **85% 10/22 07시경, 100% 10/23 02시경** · 85% 안에 들려면 하루 3.8%p, 100% 안이면 7.2%p까지만 · 직원별 하루 %p(10/20 09:52~10/21 09:52 회차 세션 시간 비율 × 19%p — 세션 시간은 대리값, 렌더 대기도 섞임·사장님/순돌이 대화 세션은 확인 안 함): PD 10.8(903분) · write 3.2(270분) · write-b 1.5(126분) · youtube-loop 0.9 · dispatcher 0.6 · meeting 0.35 · visual 0.26 · report 0.25 · editor 0.24 · copywriter 0.22 · pc-health-guard 0.16 · motion 0.16 · audit 0.12 · benchmark 0.08 · watchdog 0.07 · 끄는 순서(작은 것부터, 칸 지키는 PD·write·write-b 마지막): ① benchmark·motion 10/25까지 쉼(-0.24) ② pc-health-guard 매시→3시간(-0.11) ③ editor·copywriter·visual 2→1회(-0.36) ④ dispatcher 3→1회(-0.4) ⑤ youtube-loop 6→2회(-0.6) — ①~⑤ 합쳐 -1.7, 나머지 전부 꺼도 -3.5뿐이라 **PD를 손대지 않으면 100%를 못 막음** ⑥ PD: 회차 세션이 2~6시간(09:16 회 386분) — 렌더·녹음 기다리는 동안 세션을 열어 두는지 확인 후 회차당 상한(예: 60분), 반으로 줄면 -5.4 · 카페 12편(write+write-b 4.7)은 맨 끝 · 끄는 건 하지 않음(순돌이 결정)
 - 막힘·법 [순돌이 채팅 몫] ← firemap-audit (21:09) 공개 롱폼 3편 설명란 쿠팡 링크 아직 그대로(기한 10/20 09:00 넘김, 감사가 videos.list로 직접 확인) — 한 줄: `py -3.12 work/research/longform/loop/coupang1019/strip.py GMc2Rd1-JYA SCOI0DP-l-s scV67BQvC4Q` · PD는 12:17 force-ssl 토큰으로 H-2 설명란을 고쳤으니 같은 길로 PD 회차에서도 가능할 수 있음 · STOP 아님
 
 ## ★ 회의 10/20 21:28~21:56 — 반론 처리·내일 원칙 (근거 meeting/2026-10-20-decisions.md·verify.md·missed.md)
@@ -20,6 +20,8 @@
 - [지시] **firemap-video-producer** (기한 10/21 12:00) 칸 장부 3중 대조(체크리스트 64): slots published·upload.json id·oEmbed 공개 상태가 72시간 칸에서 같은지 — H-2 published 빈칸 기입, 10/20 16:32 교체 쇼츠 4편 published를 새 id로(옛 id d85WXpkwM0Q 403) · 완료 기준: 불일치 0 · 그다음 10/23·24 17:20·19:20 쇼츠 4칸 편 배정(d1s_dep 10/23 19:20 후보, 같은 날 다른 롱폼·질문)
 - [지시] **firemap-write·firemap-write-b** (각 첫 회차) 카페 비축 0/2 → 첫 회차 둘 다 관문 통과 편 2개 만들고 하나만 냄 · 10/21 칸 TBD 채우기 순서: 공개 영상 짝 글(T-1 11:30 롱폼·c2s_deposit 17:20·p1s_step 19:20·h1s_helio 07:20) 먼저, 부동산 2칸 이상 · 완료 기준: slots reserve.cafe 2(gates_ok)
 - [지시] **firemap-watchdog** (10/21 09:45) 주간 사용량 재기 — 85% 넘을 길이면 끄는 순서를 숫자로(직원별 %p, missed O1) today 맨 위 막힘에 · 칸 지키는 직원(PD·write·write-b)은 마지막에 끔
+  착수: firemap-watchdog 09:52 — 주간 사용량·직원별 %p
+  완료: firemap-watchdog 09:54 — 주간 68%·하루 +19%p, 직원별 %p와 끄는 순서 맨 위 막힘에 고침(PD 10.8%p가 57%, 나머지 다 꺼도 100% 못 막음)
 - [지시] **firemap-audit** (정기 10/21) 외부 쓰기 '완료' 줄 표본 3건을 결과 파일·공개 화면과 대조(체크리스트 66) · 결과 파일 ok:false면 완료 아님
 - [지시] **firemap-benchmark-loop** (다음 롱폼 차례) 공개 20편+ 심사 점수 vs 실제 조회·시청 상관 표(missed O3) · 상관 없으면 그 관문은 '권장'으로 낮추자는 제안만(기준 바꾸기는 registry 근거 절차)
 - [결정 필요] 순돌이→사장님: ① 카드 쇼츠 시범 1편(벤치마크 03:4x, 아직 답 없음) ② 유료 광고 3만원 전환 시험(10/19) ③ dev→main 합치기(10/17부터 막힘)
@@ -1145,6 +1147,8 @@
   완료: firemap-watchdog 09:52 — (10/19 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음
   착수: firemap-watchdog 09:52
   완료: firemap-watchdog 09:53 — (10/20 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음
+  착수: firemap-watchdog 09:52
+  완료: firemap-watchdog 09:54 — (10/21 회) 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary). 막힘 없음
 - [지시] **firemap-audit** (기한 11/1 07:40, 이후 매월 1일) 의도: 개정으로 계산기 숫자가 틀어지는 것 감시 · 완료 기준: 실업급여 상·하한·최저임금·퇴직금 기준을 고용노동부·법령 원문과 대조한 한 줄, 틀리면 STOP 표시 대신 today.md 막힘(코드 수정은 순돌이)
 - [지시] **firemap-write** (다음 칸 확정부터, 실험 X-CAFE-CALC-1) 의도: 사이트 개발 없이 쿠팡 칸이 있는 계산기 3종으로 가는 길을 넓힌다 · 완료 기준: 주제가 퇴직금·실업급여·연봉 계산에 **실제로 이어질 때만** 그 칸을 우선, 하루 상한 2칸·같은 계산기 연속 두 칸 금지, 본문 끝 /calc/<종>?utm_campaign=편ID · 금지: 할당 채우기용 억지 주제, 남의 카페 링크 · **시작 10/10**(카페 동시 실험 3개 상한 — X-CAFE-VOL 10/9 판정 뒤, 그 전엔 지금 규칙: 맞는 /calc 있을 때만 링크) · 중간 점검 10/17(7일 합 외부 3기기 미만이면 종료) · 판정 10/24
 

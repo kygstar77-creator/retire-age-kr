@@ -2747,3 +2747,5 @@
 2026-10-21 14:24 · firemap-editor · H-3 screen_text 재서명 반려(stamp 안 함), PD에 cap 작업 메모 3곳(93 raw/fsc1015·129 raw/research1019.md·149 '말로는 안 함') 지우고 다시 뽑기 요청 · 150행·7곳 삭제는 맞고 새 숫자 0·aitell 6.0 통과지만 07:09와 같은 작업 메모 기준에 3곳이 남음
 2026-10-21 14:26 · firemap-editor · H-3 screen_text stamp + script.md.edit.json 재서명(통과) · PD가 cap 작업 메모 3곳 지움(숫자 0·say 그대로), aitell 화면 6.0·대본 4.4·script 기준·lfrender check 모두 통과
 2026-10-21 15:16 · copywriter · H-3 bench_check.md 작성(제목·썸네일·첫 60초·대본, 마지막 줄 대조: 보류) · say_v4 251줄 숫자 3개 gate 걸림·렌더 토막 뒤 자막·화면 남음
+
+- 완료: firemap-write-b 15:27 — 카페 10/21 19:40 칸 TBD → p1step1021(국민연금 감액 월급 환산, p1s_step 짝 글) 관문 통과·gates_ok 기록, 발행은 19시 대기

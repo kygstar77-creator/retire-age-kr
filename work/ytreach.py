@@ -2,7 +2,7 @@
 #   py -3.12 work/ytreach.py            # 새 보고서만 받아 research/longform/loop/reach/<날짜>.csv, 최근 3일 영상별 노출·클릭률 출력
 #   py -3.12 work/ytreach.py <videoId>  # 그 영상의 날짜별 노출·클릭률(받아 둔 csv 전부)
 # 누적 조회만 보면 '노출 창이 닫힌 것'을 못 본다(A-1: 10/3 2,633 → 10/4 62). 토큰은 ytanalytics.py 것(읽기 전용).
-import sys, os, io, csv, glob, collections
+import sys, os, io, csv, glob, collections, datetime
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import ytanalytics as A
 from googleapiclient.discovery import build
@@ -16,10 +16,16 @@ def fetch():
     for j in s.jobs().list().execute().get('jobs', []):
         if j['reportTypeId'] != 'channel_reach_basic_a1':
             continue
+        # 같은 날짜 보고서가 나중에 다시 생성(백필)되면 최신 것만 받는다 — 10/22 확인: 10/14·10/15는 2번씩 있음
+        latest = {}
         for r in s.jobs().reports().list(jobId=j['id']).execute().get('reports', []):
             d = r['startTime'][:10]
+            if d not in latest or r['createTime'] > latest[d]['createTime']:
+                latest[d] = r
+        for d, r in sorted(latest.items()):
             p = os.path.join(OUT, f'{d}.csv')
-            if os.path.exists(p):
+            ct = datetime.datetime.fromisoformat(r['createTime'].replace('Z', '+00:00')).timestamp()
+            if os.path.exists(p) and os.path.getmtime(p) >= ct:
                 continue
             req = s.media().download_media(resourceName='')
             req.uri = r['downloadUrl']

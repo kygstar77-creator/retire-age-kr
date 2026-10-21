@@ -2797,3 +2797,6 @@
 2026-10-22 02:44 · firemap-video-producer · J-1 화면 v1을 H3.tsx 꼴 복사(J1.tsx)+T-1 실사 풀 빌려 씀 · 같은 세금 주제·관문 통과한 최신 틀, 실사는 장면 구상 담당 재료 나오면 바꿈
 2026-10-22 02:44 · firemap-video-producer · J-1 짧은 줄 2줄 앞 줄과 합치기를 editor에 요청 · Chirp이 짧은 줄을 9~10음절/초로 읽어 20번 받아도 기준 8.8 못 넘음
 2026-10-22 02:44 · firemap-video-producer · J-1 shot_plan·실사 재료를 장면 구상 직원(Agent)에 맡김 · 10/23 공개분부터 shot_check가 막음
+2026-10-22 03:15 · firemap-video-producer · J-1 실사를 장면 구상 재료 16개로 바꿈(7308166·8439245은 말보다 짧아 옛 클립 유지) · 새 심사 Agent '같음·나음' 판정분만
+2026-10-22 03:15 · firemap-video-producer · J-1 카페 짝 글 재료 cafe.md(전체 표 4개+갈래표)·쇼츠 3편 재료 j1clips_spec.md · 대본 끝에 '카페에 올려 둘게요' 말 없음 → 영상 공개 뒤 첫 카페 칸
+2026-10-22 03:15 · firemap-video-producer · J-1 썸네일 새판(visual)·bench_check(copywriter) 요청 · ytlong gate 막힘 목록에서 내 몫이 아닌 것

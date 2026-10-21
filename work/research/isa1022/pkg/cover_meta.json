@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-21 21:53",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "ISA 중개형/비과세 200만원",
+ "num": "해마다 아니고 통틀어서",
+ "sub": "PLUS 고배당주 2천만원씩 3년 · 세금 약 50만원 덜",
+ "label": "",
+ "src": "",
+ "icon": "piggy-bank",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 128,
+ "num_px": 89,
+ "sub_px": 38,
+ "board": [
+  "cc200vol1021",
+  "p1step1021",
+  "sevmonth1021",
+  "firsthome1021",
+  "sidecar1021",
+  "cdrate1021",
+  "t1cafe1021",
+  "psfund1021",
+  "med1021",
+  "h1helio1021"
+ ]
+}

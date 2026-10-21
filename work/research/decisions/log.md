@@ -2777,3 +2777,8 @@
 2026-10-21 21:07 · firemap-audit · 완료: today 10/21 지시 ① 쿠팡 3편 공개 화면·API 0 확인(strip 재실행 안 함) ② 외부 쓰기 완료 줄 표본 3건 — 2건 일치, 1건(쿠팡 strip) 실물은 맞으나 strip_result.json ok:false 불일치 · 근거 longform/loop/audit.md
 2026-10-21 21:07 · firemap-audit · 정기 감사 10/21: 카페 #343~#354 12편·유튜브 공개 4편(T-1·쇼츠 3) · 심각 0·경미 3(strip_result 불일치·T-1 app_preview 없음·롱폼 노출 멈춤 악화 T-1 1회/9.5h) · 스위치 변경 없음(STOP_blog 유지)
 2026-10-21 21:27 · firemap-write · 21:10 칸 cc200vol1021 발행(cafe/355, verify OK) · 관문 15:55 통과·당일 원문 재확인 있음
+
+2026-10-21 21:39 · firemap-meeting · 사용량 경보 처리: 운영실장 Agent 추가 투입을 관문 기한 24시간 안 칸·법 지시로만 제한(10/25 21:00까지), 카페 감축 여부는 결정 필요로 올림 · get_usage 78%·100% 10/22 23시~10/23 03시(verify), 빈도는 사장님 지시라 회의가 못 바꿈
+2026-10-21 21:39 · firemap-meeting · 참모 반론 안 받음: 대량 발행 원인 90%·전면 중단·쿠팡 고지 추가·유사투자자문 높음·모바일 로그인 · verify 대조(10/14~16 12칸 때 홈판 400~633·CoupangPick.jsx 고지 있음·권유 문장 0)
+2026-10-21 21:39 · firemap-meeting · 10/22 카페 10칸 장르·짝 글, 10/23 카페 12칸 뼈대 slots.json · 짝 글 먼저(X-1·t1s_swap·h1s_forest·g1s_asym), 부동산 하루 2칸 이상
+2026-10-21 21:39 · firemap-meeting · 완료: 정기 회의 10/21 — 반론 처리·지시 7건·로드맵 줄·교훈 46~48(today.md·decisions/log)

@@ -75,7 +75,7 @@ def live(cid, ns, who=None, say=None, past=False, start=0, pause=0):
 OSM = '지도 자료 © OpenStreetMap 기여자 (ODbL) · 파이어맵 그림'
 OWN = '파이어맵 자체 그림'
 AIL = 'AI 생성 그림(RealVisXL V5.0, 이 PC) · 특정 단지 아님'
-def mapx(name, ns, zoom=(1.0, 1.08)): return S('pic', ns, pic=f'bg/h3/map/{name}.png', license=OSM, badge='', zoom=list(zoom), dark=True, inset=0.84, baked=True)
+def mapx(name, ns, zoom=(1.0, 1.03)): return S('pic', ns, pic=f'bg/h3/map/{name}.png', license=OSM, badge='', zoom=list(zoom), dark=True, inset=0.84, baked=True)
 def board(name, ns, zoom=(1.0, 1.08)): return S('pic', ns, pic=f'bg/h3/board/{name}.png', license=OWN, badge='', zoom=list(zoom), dark=True, inset=0.84, baked=True)
 def ai(name, ns, zoom=(1.0, 1.1)): return S('pic', ns, pic=f'bg/h3/ai/{name}.png', license=AIL, badge='AI 생성', zoom=list(zoom))
 def brand(ns, line, sub=None, pause=0): return S('brand', ns, pause=pause, line=line, **({'sub': sub} if sub else {}))

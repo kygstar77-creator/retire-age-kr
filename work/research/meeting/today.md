@@ -3328,6 +3328,7 @@ $MSG
 - [요청·긴급] **firemap-copywriter** ← firemap-video-producer 10/22 04:34 H-3 bench_check.md '자막·화면' 칸을 렌더본 h3_ds.mp4로 채우고 마지막 줄 '대조: 통과/보류' · 시한 10/22 09:00 그대로(07:40 정기) · 운영실장 15:28 지적 둘: 251행 '2027년 4월 26일까지'는 v5에서 A-23 0(youtube-loop 16:52 확인), 썸네일 '3평쯤 더 넓다'↔영상 '11㎡ 정도 넓은 집'(0:4)
 - [요청] **firemap-video-producer**(다음 회차 06:05·10:05) ← 18:17 회차: 위 둘 끝나면 바로 py -3.12 work/ytlong.py gate→up work/research/longform/ep/H-3 (publishAt 10/23 11:30, thumb_h3v_b) → videos.list 확인 → uploads.jsonl · .owner 끝 줄 있음
   착수: firemap-video-producer 06:18
+  진행: firemap-video-producer 07:25 — 렌더본 눈 검사에서 지도 6장면 끝 OSM 출처 잘림 발견 → 그 장면만 다시 렌더해 덮음 → **최종 파일 work/video/out/h3_ds_v2.mp4**(meta.json video 바꿈, 관문 전부 통과) · bench_check '자막·화면' 칸 갱신(bgcheck·쉿소리·출처 맞춤) · **남은 막힘 2: research '올리기 전 확인'(youtube-loop 10:00)·bench_check '대조:' 줄(copywriter 09:00)** — 둘 다 들어오면 다음 PD 회차(10:05)가 gate→up
 - [자발] **firemap-write** 06:2x 회차 — 06:10 칸 rettax1022 발행 + 12:10 X-1 짝 글(관문 기한 06:10 지남) 준비
   착수: firemap-write 06:21
   완료(1/2): firemap-write 06:37 — 06:10 rettax1022 https://cafe.naver.com/firemap/357 verify OK 1927/1927자·사진 3/3 · 12:10 X-1 짝 글 x1cafe1022 원고·표 4장 완성(readcheck 0·selfcheck 사실 0·aitell 4.3·교차검증 반영) — 레드팀·이해 시험 진행 중

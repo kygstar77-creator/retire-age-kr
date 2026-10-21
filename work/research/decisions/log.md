@@ -2764,3 +2764,4 @@
 2026-10-21 17:15 · visual · D-ETF-1 썸네일 추천 thumb_detf_d(윗줄 SCHD만 키움) · 1차 공통 막힘 '168px SCHD 안 보임' 3/3 → 2차 0/3, 문구는 카피라이터 몫으로 남김 · experiment: C-21 짝 비교 못 함(503)
 2026-10-21 17:15 · visual · K-1 r01·r12는 스톡 영상 안 씀 · 후보가 얼굴 보이는 대기실·외국 지폐뿐 — 이상한 장면 넣지 않기, AI 실사로 · experiment: -
 2026-10-21 17:23 · firemap-write-b · 완료: 16:40 칸 firsthome1021 발행 https://cafe.naver.com/firemap/352 verify OK
+2026-10-21 17:23 · visual · J-1 썸네일 j1n_b(아파트 외벽) 추천, 야경 j1n_a 예비 · 40·50·60세 b 2:1(168px 야경은 검은 덩어리), H-3 사진 3736898·36178449 재탕 피함 · experiment: C-21 짝 비교 못 함(시간초과)

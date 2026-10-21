@@ -49,7 +49,7 @@
 | 0. 예고 | 2021년 고정금리 대출, 고정 끝남 | 현관 신발장 위 열쇠와 서류 봉투 | #9 | AI 실사 RealVisXL V5.0(이 PC) | bg/k1/ai/keys_envelope.png | shotcmp/r04.jpg | 만들 차례 |
 | 0. 예고 | +74만원 · +28만원 | 이름 두 칸 옆 '?' → 말 닿을 때 열림, 손 동그라미 | #1 · #16 | Remotion TallyFrame | bg/k1/board/k1_answer2.png | shotcmp/r05.jpg | 만들 차례 |
 | 0. 예고 | 질문 다섯 줄 | 질문 다섯 줄이 번호와 함께 하나씩 | #21 · #13 | Remotion TallyFrame(표) | bg/k1/board/k1_q5.png | shotcmp/r06.jpg | 만들 차례 |
-| 1. 미국 국채금리 5%, 무슨 숫자인가 | 국채금리는 나라가 빌릴 때 내는 이자 | 신문 경제면 넘기는 손(제목 흐리게) | #19 | Pexels 스톡 영상 | bg/k1/stock/newspaper_hand.mp4 | shotcmp/r07.jpg | 만들 차례 |
+| 1. 미국 국채금리 5%, 무슨 숫자인가 | 국채금리는 나라가 빌릴 때 내는 이자 | 신문 경제면 넘기는 손(제목 흐리게) | #19 | Pexels 스톡 영상 | bg/k1/stock/newspaper_hand.mp4 | shotcmp/r07.jpg | 파일 있음(Pexels 5905282, visual 10/21) · 비교 그림·판정 남음 |
 | 1. 미국 국채금리 5%, 무슨 숫자인가 | 1만 달러 빌려주면 한 해 500달러 | 증서 모양 종이에 '1만 달러 × 5% = 500달러', 이자 칸 돋보기 | #18 · #17 | Remotion TallyFrame | bg/k1/board/k1_bond_note.png | shotcmp/r08.jpg | 만들 차례 |
 | 1. 미국 국채금리 5%, 무슨 숫자인가 | 9월 중순 5% · 19일 · 최고 5.31% | 2023~2026 미 10년 선, 5% 점선, 넘는 자리 줌인+손 동그라미 | #20 | Remotion 선 그래프(FRED DGS10) | bg/k1/board/k1_dgs10.png | shotcmp/r09.jpg | 만들 차례 |
 | 1. 미국 국채금리 5%, 무슨 숫자인가 | 2007년 6월 5.1% · 주담대 6% 넘음 | 2007 칸만 바랜 색 타임라인 | #8 | Remotion TallyFrame(바랜 색) | bg/k1/board/k1_2007.png | shotcmp/r10.jpg | 만들 차례 |
@@ -61,14 +61,14 @@
 | 2. 내 예금 이자는 얼마나 따라왔나 | 5년 전 1.2% · 98만원 | 동전 더미 셋 '5년 전·1년 전·지금', 지난 것은 바랜 색 | #8 · #7 | Remotion TallyFrame(바랜 색) | bg/k1/board/k1_coins3.png | shotcmp/r16.jpg | 만들 차례 |
 | 2. 내 예금 이자는 얼마나 따라왔나 | 코픽스 8월 → 9월 다시 오름 | 코픽스 막대 8월·9월, 9월 한 칸 더 높게 | #3 | Remotion TallyFrame | bg/k1/board/k1_cofix89.png | shotcmp/r17.jpg | 만들 차례 |
 | 2. 내 예금 이자는 얼마나 따라왔나 | 대출−예금 차이 1.5%p 그대로 | 두 선 사이 간격에 색, 간격 숫자 '?' → 열림 | #4 | Remotion 선 그래프(ECOS 121Y006·121Y002) | bg/k1/board/k1_gap.png | shotcmp/r18.jpg | 만들 차례 |
-| 3. 내 대출 이자는 — 고정형과 변동형 | 고정형·변동형 둘로 나뉨 | 거실 탁자 위 대출 서류 넘기는 손(글자 흐리게) | #5 | Pexels 스톡 영상 | bg/k1/stock/loan_papers.mp4 | shotcmp/r19.jpg | 만들 차례 |
+| 3. 내 대출 이자는 — 고정형과 변동형 | 고정형·변동형 둘로 나뉨 | 거실 탁자 위 대출 서류 넘기는 손(글자 흐리게) | #5 | Pexels 스톡 영상 | bg/k1/stock/loan_papers.mp4 | shotcmp/r19.jpg | 파일 있음(Pexels 7821634, visual 10/21) · 비교 그림·판정 남음 |
 | 3. 내 대출 이자는 — 고정형과 변동형 | 고정 +0.94 · 변동 +0.45 | 막대 둘 1년 오른 폭 '?' → 열림 | #2 | Remotion TallyFrame | bg/k1/board/k1_fix_var.png | shotcmp/r20.jpg | 만들 차례 |
 | 3. 내 대출 이자는 — 고정형과 변동형 | 4월부터 순서 바뀜 | 두 선이 2026.04에서 엇갈리는 자리 손 동그라미 | #20 · #13 | Remotion 선 그래프(ECOS 121Y006) | bg/k1/board/k1_cross.png | shotcmp/r21.jpg | 만들 차례 |
 | 3. 내 대출 이자는 — 고정형과 변동형 | 3억·30년 142만 → 159만 | 표 3줄, 마지막 칸 주황 | #1 · #2 | Remotion TallyFrame(표) | bg/k1/board/k1_3eok_table.png | shotcmp/r22.jpg | 만들 차례 |
-| 3. 내 대출 이자는 — 고정형과 변동형 | 변동형은 왜 덜 올랐을까(장 안 쉼) | 빗방울 맺힌 창가 빗물 | #6 | Pexels 스톡 영상 | bg/k1/stock/rain_window.mp4 | shotcmp/r23.jpg | 만들 차례 |
+| 3. 내 대출 이자는 — 고정형과 변동형 | 변동형은 왜 덜 올랐을까(장 안 쉼) | 빗방울 맺힌 창가 빗물 | #6 | Pexels 스톡 영상 | bg/k1/stock/rain_window.mp4 | shotcmp/r23.jpg | 파일 있음(Pexels 4786522, visual 10/21) · 비교 그림·판정 남음 |
 | 3. 내 대출 이자는 — 고정형과 변동형 | 코픽스 + 은행이 붙이는 금리 · 세 갈래 | 공식 박스 '내 금리 = 코픽스 + 가산' → 코픽스가 세 갈래(신규·잔액·신잔액)로 갈림 | #11 · #14 · #12 | Remotion TallyFrame(도식) | bg/k1/board/k1_cofix3.png | shotcmp/r24.jpg | 만들 차례 |
 | 3. 내 대출 이자는 — 고정형과 변동형 | 조심 두 가지 | 함정 카드 앞·뒷면(뒤집기) | #15 · #13 | Remotion TallyFrame | bg/k1/board/k1_trap.png | shotcmp/r25.jpg | 만들 차례 |
-| 4. 미국 때문일까 | 흔한 말 하나를 숫자로 | 흐린 날 창가 식은 커피잔 | #6 | Pexels 스톡 영상 | bg/k1/stock/coffee_cloudy.mp4 | shotcmp/r26.jpg | 만들 차례 |
+| 4. 미국 때문일까 | 흔한 말 하나를 숫자로 | 흐린 날 창가 식은 커피잔 | #6 | Pexels 스톡 영상 | bg/k1/stock/coffee_cloudy.mp4 | shotcmp/r26.jpg | 파일 있음(Pexels 6343938, visual 10/21) · 비교 그림·판정 남음 |
 | 4. 미국 때문일까 | 미국 +0.4 vs 한국 +1.5 | 막대 둘 '?' → 열림, 한국 막대 주황 | #2 · #21 | Remotion TallyFrame | bg/k1/board/k1_us_kr_1y.png | shotcmp/r27.jpg | 만들 차례 |
 | 4. 미국 때문일까 | 9월까지 넣으면 +0.87 vs +1.61 | 같은 막대에 9월 칸이 덧붙어 자람 | #20 | Remotion TallyFrame | bg/k1/board/k1_us_kr_sep.png | shotcmp/r28.jpg | 만들 차례 |
 | 4. 미국 때문일까 | 같은 쪽으로 움직인 달 열에 일곱 vs 다섯 | 163칸 달력 점(같은 쪽 칸만 칠함) 두 장 나란히 | #12 | Remotion TallyFrame(점 칸, calc4_out) | bg/k1/board/k1_samedir.png | shotcmp/r29.jpg | 만들 차례 |
@@ -77,8 +77,8 @@
 | 5. 고정 끝나는 사람은 얼마나 오르나 | 고정금리 대출 이야기 | 벽걸이 달력 넘기는 손, 한 칸 빨간 동그라미 | #9 | AI 실사 RealVisXL V5.0(이 PC) | bg/k1/ai/calendar_hand.png | shotcmp/r32.jpg | 만들 차례 |
 | 5. 고정 끝나는 사람은 얼마나 오르나 | 126만 → 154만, +28만 | 단계 흐름도 '2021 고정 2.98% → 5년 → 남은 원금 × 4.88% × 25년 = ?' | #1 · #16 | Remotion TallyFrame(흐름도) | bg/k1/board/k1_reset_flow.png | shotcmp/r33.jpg | 만들 차례 |
 | 5. 고정 끝나는 사람은 얼마나 오르나 | 변동형으로 다시 정하면 +22만 | 같은 흐름도 끝 칸이 두 갈래(고정 +28 · 변동 +22) | #1 | Remotion TallyFrame | bg/k1/board/k1_reset_two.png | shotcmp/r34.jpg | 만들 차례 |
-| 6. 그래서 볼 날짜 | 정리 세 줄 | 노트에 세 줄 적는 손 | #9 · #17 | Pexels 스톡 영상 | bg/k1/stock/notebook_hand.mp4 | shotcmp/r35.jpg | 만들 차례 |
+| 6. 그래서 볼 날짜 | 정리 세 줄 | 노트에 세 줄 적는 손 | #9 · #17 | Pexels 스톡 영상 | bg/k1/stock/notebook_hand.mp4 | shotcmp/r35.jpg | 파일 있음(Pexels 6326847, visual 10/21) · 비교 그림·판정 남음 |
 | 6. 그래서 볼 날짜 | 날짜 한 줄 찾기(변동·고정·예금) | 체크박스 세 줄 표, 다음 코픽스 발표 11/16 | #13 | Remotion TallyFrame(표) | bg/k1/board/k1_check3.png | shotcmp/r36.jpg | 만들 차례 |
-| 6. 그래서 볼 날짜 | 끝 — 숨 쉴 3초 | 해 질 녘 창가 빈 의자·식탁 위 통장(글자 없음) | #19 | Pexels 스톡 영상 | bg/k1/stock/dusk_table.mp4 | shotcmp/r37.jpg | 만들 차례 |
+| 6. 그래서 볼 날짜 | 끝 — 숨 쉴 3초 | 해 질 녘 창가 빈 의자·식탁 위 통장(글자 없음) | #19 | Pexels 스톡 영상 | bg/k1/stock/dusk_table.mp4 | shotcmp/r37.jpg | 파일 있음(Pexels 6780621, visual 10/21) · 비교 그림·판정 남음 |
 
 빠진 것: 경쟁이 많이 쓴 '뉴스 헤드라인 캡처'(#3·#10 류)는 남의 자료라 쓰지 않는다 — 대신 우리 원자료 그래프(#20 줌인 연출)로. 캐릭터 일러스트(#6·#7)는 브랜드 규칙(캐릭터 없음, C-18)이라 손·물건 실사로 바꿨다.

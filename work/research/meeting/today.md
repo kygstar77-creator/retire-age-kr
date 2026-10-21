@@ -10,6 +10,8 @@
 - 막힘: ① 롱폼 H-2·T-1 연속 관문 기한(24h 전) 넘김, X-1(10/22) 기한 10/21 11:30 — 녹음 뒤 대본·사실 수정이 원인(verify·missed R2) ② 비축 카페 0/2·롱폼 0/1·쇼츠 1/2 ③ 10/21~22 카페 24칸 전부 TBD, 10/23·24 17:20·19:20 쇼츠 4칸 TBD ④ 주간 사용량 15:30 53%(초기화 10/25 21:00) — 이 속도면 10/22 새벽 100%(추정, verify) ⑤ scV67BQvC4Q 공개 화면에 옛 설명(API는 쿠팡 0, 캐시로 보임 — 확인 안 함)
 - 회의 직접 처리(21:31): 공개 롱폼 3편 설명란 쿠팡 링크·고지 줄 strip.py로 뺌(10/19 법 지시, 기한 09:00 넘김) · API 되읽기 21:54 3편 쿠팡 0 · 되돌리기 coupang1019/before_<id>.txt로 videos.update · 교훈 45
 - [지시·법] **firemap-audit** (기한 10/21 09:00 — 감사 정기 회차 전이라도 처음 보는 직원이 함) scV67BQvC4Q·GMc2Rd1-JYA·SCOI0DP-l-s 비로그인 watch 페이지에 link.coupang 0인지 확인 · 남아 있으면 strip.py 그 id로 다시 돌리고 30초 뒤 API·공개 화면 두 번 확인 · 완료 기준: 3편 공개 화면 쿠팡 0 + 결과 줄
+  착수: firemap-audit 21:00 — 3편 비로그인 watch 페이지 link.coupang 확인
+  완료: firemap-audit 21:07 — 3편 비로그인 watch 페이지(shortDescription 431·1,348·1,722자) 쿠팡·coupang 0 + API videos.list 3편 0(공개·유료 표시 True 그대로) · strip.py 다시 돌릴 필요 없음 · 단 strip_result.json은 3편 다 ok:false(21:31 직후 되읽기, 그 뒤 갱신 안 됨) — 실물은 0
 - [지시] **firemap-video-producer + firemap-youtube-loop** (X-1 관문 10/21 11:30) 의도: 세 번째 연속 기한 넘김을 막는다 · 완료 기준: X-1 gates_ok가 10/21 11:30 전 · 금지: 녹음 뒤 새 줄 더하기(사실 오류 고침만) · 다음 편(H-3 10/23·J-1 10/24)부터 '녹음 전 대본 동결'(체크리스트 65) — 녹음 시작 전에 심사·사실 대조·브랜드 줄·편집 서명 끝, 녹음 뒤 바뀐 줄 수를 log에 · 보고: decisions/log
   완료: firemap-youtube-loop 04:44 — X-1 slots gates_ok 2026-10-21 00:41(PD 예약 WcBOePkyOOQ, 10/22 11:30) 기한 11:30 전 확인 · 녹음 뒤 바뀐 줄은 PD 00:41 기록 기준 사실 고침 3줄(21:24)뿐
 - [자발] **firemap-youtube-loop** 04:44 회차 — K-1(10/28) 대본 v1(backlog 1순위, 기한 10/24 21:00)
@@ -31,6 +33,8 @@
   착수: firemap-watchdog 09:52 — 주간 사용량·직원별 %p
   완료: firemap-watchdog 09:54 — 주간 68%·하루 +19%p, 직원별 %p와 끄는 순서 맨 위 막힘에 고침(PD 10.8%p가 57%, 나머지 다 꺼도 100% 못 막음)
 - [지시] **firemap-audit** (정기 10/21) 외부 쓰기 '완료' 줄 표본 3건을 결과 파일·공개 화면과 대조(체크리스트 66) · 결과 파일 ok:false면 완료 아님
+  착수: firemap-audit 21:00 — 외부 쓰기 완료 줄 표본 3건 결과 파일·공개 화면 대조
+  완료: firemap-audit 21:07 — 표본 3건: ① write-b #354 p1step1021 verify ok:true = 카페 API 실물(19:51, 본문 1,951자·사진 3, 첫 문단 같음) ✓ ② PD T-1 설명란 /349 = videos.list 설명 cafe/349 ✓ ③ 회의 쿠팡 strip 완료 = 공개 화면·API 0 ✓이나 결과 파일 strip_result.json ok:false 3/3 → 체크리스트 66 기준 "결과 파일과 완료 줄 불일치" 1건(실물 맞음, 경미) · 근거 longform/loop/audit.md 10/21
 - [지시] **firemap-benchmark-loop** (다음 롱폼 차례) 공개 20편+ 심사 점수 vs 실제 조회·시청 상관 표(missed O3) · 상관 없으면 그 관문은 '권장'으로 낮추자는 제안만(기준 바꾸기는 registry 근거 절차)
 - [결정 필요] 순돌이→사장님: ① 카드 쇼츠 시범 1편(벤치마크 03:4x, 아직 답 없음) ② 유료 광고 3만원 전환 시험(10/19) ③ dev→main 합치기(10/17부터 막힘)
 

@@ -2774,3 +2774,5 @@
 2026-10-21 19:52 · firemap-write-b · 19:40 칸 p1step1021 발행(cafe/354, verify OK) · 제목 끝말 '얼마'가 오늘 3칸이라 aitell sameday 막힘 → '어디까지'로, readcheck 5건 고쳐 재서명
 2026-10-21 19:54 · firemap-editor · H-3 화면 글자 v5 편집 통과·재서명(lfrender stamp) · 바뀐 말 전부 서명한 script v5와 일치, 상속 예외 §39②2호 뜻 맞음, 새 숫자 0, aitell 6.0 통과
 2026-10-21 20:50 · firemap-youtube-loop · D-ETF-1 A-23 말 숫자 26줄 고침(값 0 변경)·aitell S&P500 이름 오셈 고침·review 판정 줄·research 한계 칸 — 재심사 3명은 안 부름 · 이유: 숫자·주장 안 바뀌고 문장만 나눠 점수 근거(사실·약속·다음 행동) 그대로, 사용량 85% 임박(watchdog 09:54) · 편집 재서명 요청
+2026-10-21 21:07 · firemap-audit · 완료: today 10/21 지시 ① 쿠팡 3편 공개 화면·API 0 확인(strip 재실행 안 함) ② 외부 쓰기 완료 줄 표본 3건 — 2건 일치, 1건(쿠팡 strip) 실물은 맞으나 strip_result.json ok:false 불일치 · 근거 longform/loop/audit.md
+2026-10-21 21:07 · firemap-audit · 정기 감사 10/21: 카페 #343~#354 12편·유튜브 공개 4편(T-1·쇼츠 3) · 심각 0·경미 3(strip_result 불일치·T-1 app_preview 없음·롱폼 노출 멈춤 악화 T-1 1회/9.5h) · 스위치 변경 없음(STOP_blog 유지)

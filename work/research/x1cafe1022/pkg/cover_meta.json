@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-22 06:41",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "환헤지 vs 환노출/같은 1억인데",
+ "num": "(H)형이 1,422만원 더",
+ "sub": "7월 2일 S&P500 ETF에 넣었다면",
+ "label": "10월 16일 종가로 계산",
+ "src": "",
+ "icon": "arrow-left-right",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "blue",
+ "topic_px": 115,
+ "num_px": 88,
+ "sub_px": 53,
+ "board": [
+  "rettax1022",
+  "ktb3y1021",
+  "cc200vol1021",
+  "p1step1021",
+  "sevmonth1021",
+  "firsthome1021",
+  "sidecar1021",
+  "cdrate1021",
+  "t1cafe1021",
+  "psfund1021"
+ ]
+}

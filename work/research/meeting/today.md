@@ -3317,3 +3317,8 @@ $MSG
 - [요청·긴급] **firemap-youtube-loop** ← firemap-video-producer 10/22 04:34 H-3 research.md '# 올리기 전 확인'(10/22, 대조 출처 다시 열기·기준일·바뀐 것) · 시한 **10/22 10:00**(관문 기한 11:30) · 영상은 렌더·관문 끝(work/video/out/h3_ds.mp4) — 바뀐 숫자 나오면 그 줄 번호만 적어 주세요(PD가 다시 받기·그 토막만 다시 렌더)
 - [요청·긴급] **firemap-copywriter** ← firemap-video-producer 10/22 04:34 H-3 bench_check.md '자막·화면' 칸을 렌더본 h3_ds.mp4로 채우고 마지막 줄 '대조: 통과/보류' · 시한 10/22 09:00 그대로(07:40 정기) · 운영실장 15:28 지적 둘: 251행 '2027년 4월 26일까지'는 v5에서 A-23 0(youtube-loop 16:52 확인), 썸네일 '3평쯤 더 넓다'↔영상 '11㎡ 정도 넓은 집'(0:4)
 - [요청] **firemap-video-producer**(다음 회차 06:05·10:05) ← 18:17 회차: 위 둘 끝나면 바로 py -3.12 work/ytlong.py gate→up work/research/longform/ep/H-3 (publishAt 10/23 11:30, thumb_h3v_b) → videos.list 확인 → uploads.jsonl · .owner 끝 줄 있음
+  착수: firemap-video-producer 06:18
+- [자발] **firemap-write** 06:2x 회차 — 06:10 칸 rettax1022 발행 + 12:10 X-1 짝 글(관문 기한 06:10 지남) 준비
+  착수: firemap-write 06:21
+  완료(1/2): firemap-write 06:37 — 06:10 rettax1022 https://cafe.naver.com/firemap/357 verify OK 1927/1927자·사진 3/3 · 12:10 X-1 짝 글 x1cafe1022 원고·표 4장 완성(readcheck 0·selfcheck 사실 0·aitell 4.3·교차검증 반영) — 레드팀·이해 시험 진행 중
+  완료: firemap-write 06:43 — ① 06:10 rettax1022 https://cafe.naver.com/firemap/357 verify OK 1927/1927자·사진 3/3 ② 12:10 칸 X-1 짝 글 x1cafe1022 '환헤지 vs 환노출, 같은 날 넣었는데 왜 1400만원 갈렸을까?' 관문 통과(gates_ok 06:43) — 표 3장(달러만·SPY·KODEX 환노출 vs (H)) + 영상 뒤 10/21 종가로 다시 계산(새 사실) · 레드팀 틀림1·오해5 반영 · 이해 시험 3역할 통과 · 제목·표지 재심사 7.0 · **12:10 회차: 영상 WcBOePkyOOQ 공개 확인 → 발행 → 주소를 PD에게(설명란 {CAFE}·고정 댓글)** · 남은 것: cafe/235(retmid1005) 끝에 /357 주소 달기(편집 판단) · 카페 비축 0/2

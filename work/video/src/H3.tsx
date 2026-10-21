@@ -239,7 +239,8 @@ const Pic: React.FC<{s: CScene; badge: string}> = ({s, badge}) => {
   const st = starts(s.lines); const ca = d.chipAt != null ? st[Math.min(d.chipAt, st.length - 1)] : 10; const co = ease(f, ca, 14);
   const q = d.quote ? ease(f, 6, 12) : 0;
   return (
-    <AbsoluteFill style={{background: d.inset ? T.bg : '#000', overflow: 'hidden'}}>
+    // 10/21 22시 PD: 지도·종이 판(inset·dark)은 바깥을 어둡게 — 종이 바탕 판↔종이 그림이 컷으로 안 잡혀 bgcheck '같은 판' 35초(한도 20)로 걸림. 글자·숫자는 그대로
+    <AbsoluteFill style={{background: d.inset ? (d.dark ? '#16181c' : T.bg) : '#000', overflow: 'hidden'}}>
       <style>{FONT_CSS}</style>
       {d.inset ? /* 10/21 PD: 지도·종이 판(출처가 그림 안에 있음)은 줄여 위에 — 자막이 그림 아래 글자를 가리지 않게 */
         <div style={{position: 'absolute', left: (1920 - 1920 * d.inset) / 2, top: 6, width: 1920 * d.inset, height: 1080 * d.inset, overflow: 'hidden'}}>

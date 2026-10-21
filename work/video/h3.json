@@ -58,9 +58,15 @@
      "audio": "audio/h-3/ea49257dd70bd3d5.wav",
      "frames": 113,
      "cap": null
+    },
+    {
+     "text": "거기선 그보다 11㎡ 정도 넓은 집이었고요.",
+     "audio": "audio/h-3/7d337c020b9ba80b.wav",
+     "frames": 92,
+     "cap": null
     }
    ],
-   "frames": 279,
+   "frames": 371,
    "data": {
     "pic": "bg/h3/board/board_rooms.png",
     "license": "파이어맵 자체 그림",
@@ -72,24 +78,6 @@
     "dark": true,
     "inset": 0.84,
     "baked": true
-   }
-  },
-  {
-   "kind": "broll",
-   "lines": [
-    {
-     "text": "거기선 그보다 11㎡ 정도 넓은 집이었고요.",
-     "audio": "audio/h-3/7d337c020b9ba80b.wav",
-     "frames": 92,
-     "cap": null
-    }
-   ],
-   "frames": 92,
-   "data": {
-    "src": "bg/h3/stock/29303349.mp4",
-    "license": "Pexels 29303349 무료(성창 남)",
-    "say": "목동신시가지는 조금 더 넓게",
-    "side": "left"
    }
   },
   {
@@ -299,26 +287,14 @@
    }
   },
   {
-   "kind": "broll",
+   "kind": "pic",
    "lines": [
     {
      "text": "넓이는 전부 집 안 넓이, 전용면적 ㎡로 말씀드릴게요.",
      "audio": "audio/h-3/4f1d9d78f50303d9.wav",
      "frames": 114,
      "cap": null
-    }
-   ],
-   "frames": 114,
-   "data": {
-    "src": "bg/h3/s2/stock/6962695.mp4",
-    "license": "Pexels 6962695 무료(Mikhail Nilov)",
-    "say": "넓이는 집 안 넓이로",
-    "side": "left"
-   }
-  },
-  {
-   "kind": "pic",
-   "lines": [
+    },
     {
      "text": "감이 안 오시면, ㎡를 3.3으로 나누면 평이 됩니다.",
      "audio": "audio/h-3/6c01920173ef0d5d.wav",
@@ -332,7 +308,7 @@
      "cap": null
     }
    ],
-   "frames": 188,
+   "frames": 302,
    "data": {
     "pic": "bg/h3/board/board_pyeong_unit.png",
     "license": "파이어맵 자체 그림",
@@ -629,8 +605,7 @@
     "src": "bg/h3/stock/29303349.mp4",
     "license": "Pexels 29303349 무료(성창 남)",
     "say": "한 해 사이 많이 움직였을까",
-    "side": "left",
-    "from": 150
+    "side": "left"
    }
   },
   {
@@ -779,7 +754,7 @@
     "license": "Pexels 29303349 무료(성창 남)",
     "say": "아주 큰 단지",
     "side": "left",
-    "from": 300
+    "from": 150
    }
   },
   {
@@ -1185,7 +1160,7 @@
     "license": "Pexels 29303349 무료(성창 남)",
     "say": "열네 단지, 큰 동네",
     "side": "left",
-    "from": 450
+    "from": 300
    }
   },
   {
@@ -2406,9 +2381,15 @@
      "audio": "audio/h-3/92ea47c63da15b1e.wav",
      "frames": 215,
      "cap": null
+    },
+    {
+     "text": "이미 조합설립인가가 나 있던 목동 6단지도, 그날부터 이 규칙을 적용받았습니다.",
+     "audio": "audio/h-3/bcaaf17583aea449.wav",
+     "frames": 142,
+     "cap": "목동신시가지6 조합설립인가 2025.5.22(정보몽땅 추진경과) · 국토교통부 2025.10.15 보도자료 · 강남·서초·송파·용산 지정 유지 · 그 외 서울 21개 구 신규 지정 · FAQ '지정공고일 당시 조합설립 인가된 재건축 구역도 그날부터 조합원 지위양도 불가' · §39①3호 괄호: 신탁업자 사업시행자 지정 = 조합설립인가로 봄"
     }
    ],
-   "frames": 215,
+   "frames": 357,
    "data": {
     "title": "투기과열지구 지정",
     "rows": [
@@ -2425,25 +2406,6 @@
     ],
     "icon": "MapPinned",
     "source": "법제처 국가법령정보센터 · 국토교통부·금융위원회 공고·보도자료(원문)"
-   }
-  },
-  {
-   "kind": "broll",
-   "lines": [
-    {
-     "text": "이미 조합설립인가가 나 있던 목동 6단지도, 그날부터 이 규칙을 적용받았습니다.",
-     "audio": "audio/h-3/bcaaf17583aea449.wav",
-     "frames": 142,
-     "cap": "목동신시가지6 조합설립인가 2025.5.22(정보몽땅 추진경과) · 국토교통부 2025.10.15 보도자료 · 강남·서초·송파·용산 지정 유지 · 그 외 서울 21개 구 신규 지정 · FAQ '지정공고일 당시 조합설립 인가된 재건축 구역도 그날부터 조합원 지위양도 불가' · §39①3호 괄호: 신탁업자 사업시행자 지정 = 조합설립인가로 봄"
-    }
-   ],
-   "frames": 142,
-   "data": {
-    "src": "bg/h3/s2/stock/8482325.mp4",
-    "license": "Pexels 8482325 무료(Thirdman)",
-    "say": "이미 조합이 있던 단지도 그날부터",
-    "side": "left",
-    "from": 450
    }
   },
   {
@@ -2524,7 +2486,7 @@
    }
   },
   {
-   "kind": "broll",
+   "kind": "big",
    "lines": [
     {
      "text": "파크리오는 서울시에 정비사업으로 올라가 있지 않습니다.",
@@ -2535,11 +2497,12 @@
    ],
    "frames": 91,
    "data": {
-    "src": "bg/h3/stock/37500921.mp4",
-    "license": "Pexels 37500921 무료(FREE VIDEO HAPPY)",
-    "say": "파크리오는 정비사업 목록에 없다",
-    "side": "left",
-    "from": 300
+    "title": "파크리오",
+    "v": "정비사업 아님",
+    "s": "서울시 정비사업 정보몽땅에 없음",
+    "icon": "Building",
+    "c": "ink",
+    "source": "서울시 정비사업 정보몽땅 · 도시 및 주거환경정비법(법제처)"
    }
   },
   {
@@ -2817,7 +2780,7 @@
     "license": "Pexels 37500921 무료(FREE VIDEO HAPPY)",
     "say": "목동 쪽 작은 평수",
     "side": "left",
-    "from": 450
+    "from": 300
    }
   },
   {
@@ -3283,27 +3246,14 @@
    }
   },
   {
-   "kind": "broll",
+   "kind": "pic",
    "lines": [
     {
      "text": "갈아탈 땐 잠깐 두 채가 되죠. 이걸 일시적 2주택이라고 해요.",
      "audio": "audio/h-3/59912f9710606db8.wav",
      "frames": 112,
      "cap": null
-    }
-   ],
-   "frames": 112,
-   "data": {
-    "src": "bg/h3/s2/stock/8471105.mp4",
-    "license": "Pexels 8471105 무료(Thirdman)",
-    "say": "갈아타는 동안 잠깐 두 채",
-    "side": "left",
-    "from": 450
-   }
-  },
-  {
-   "kind": "pic",
-   "lines": [
+    },
     {
      "text": "새 집을 사고 정해진 기간 안에 원래 집을 팔면, 한 채일 때처럼 봐 줍니다.",
      "audio": "audio/h-3/e97ce23ce3eb9872.wav",
@@ -3317,7 +3267,7 @@
      "cap": null
     }
    ],
-   "frames": 303,
+   "frames": 415,
    "data": {
     "pic": "bg/h3/board/board_swap.png",
     "license": "파이어맵 자체 그림",
@@ -3495,7 +3445,7 @@
     "license": "Pexels 8471105 무료(Thirdman)",
     "say": "새 집도 허가구역이면",
     "side": "left",
-    "from": 579
+    "from": 450
    }
   },
   {
@@ -3550,9 +3500,15 @@
      "audio": "audio/h-3/d1f694a000fef584.wav",
      "frames": 80,
      "cap": null
+    },
+    {
+     "text": "거래가 적은 단지라면, 옆 단지 같은 크기와 같이 놓고 비교해 보세요.",
+     "audio": "audio/h-3/f79eac80550e53c5.wav",
+     "frames": 127,
+     "cap": null
     }
    ],
-   "frames": 236,
+   "frames": 363,
    "data": {
     "pic": "bg/h3/board/board_check.png",
     "license": "파이어맵 자체 그림",
@@ -3564,25 +3520,6 @@
     "dark": true,
     "inset": 0.84,
     "baked": true
-   }
-  },
-  {
-   "kind": "broll",
-   "lines": [
-    {
-     "text": "거래가 적은 단지라면, 옆 단지 같은 크기와 같이 놓고 비교해 보세요.",
-     "audio": "audio/h-3/f79eac80550e53c5.wav",
-     "frames": 127,
-     "cap": null
-    }
-   ],
-   "frames": 127,
-   "data": {
-    "src": "bg/h3/s2/stock/6962695.mp4",
-    "license": "Pexels 6962695 무료(Mikhail Nilov)",
-    "say": "옆 단지 같은 크기와 나란히",
-    "side": "left",
-    "from": 150
    }
   },
   {
@@ -3653,7 +3590,7 @@
     "license": "Pexels 29303349 무료(성창 남)",
     "say": "허가구역인지는 토지이음에서",
     "side": "left",
-    "from": 600
+    "from": 450
    }
   },
   {

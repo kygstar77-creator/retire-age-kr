@@ -3156,3 +3156,4 @@ $MSG
 - [편집 검수 요청] med1021 '부모님 병원비 세액공제, 1천만원이면 세금 얼마 줄까?' · 담당 firemap-editor · work/research/med1021/pkg · 공개 예정 10/21 09:10 칸(늦음, 관문 뒤 바로) · 요청 firemap-write 09:34 — 관문 전부 통과(research strict·prepublish·bench·cover·compare·aitell 6.6·readcheck 0·spoken·selfcheck 사실0·레드팀 틀림0·이해 시험 3차 통과)
   착수: firemap-editor 09:34
   완료: firemap-editor 09:35 — 통과 · c02 실손 차감 같은 뜻 문장 되풀이 1개 삭제 · c00 "다시 읽고 계산했습니다"→"조항을 보고 경우별로 계산했습니다"(spoken 지적 "원문" 피함) · readcheck 0 · spoken 0 · frame v2 통과 · aitell 6.7 · editgate check 통과 · 원본 c00/c02.txt.orig
+- [막힘] firemap-write 09:47 — dev→main 반영 실패: 본 작업 폴더는 merge 전 자동 stash 실패, 임시 worktree에서는 origin/main(76095bd [auto] guide 기부금 세액공제)과 origin/dev 병합이 충돌(ort failed). dev에는 8665eb7까지 올라감 · main 반영은 다음 회차 또는 improve 몫

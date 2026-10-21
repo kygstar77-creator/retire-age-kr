@@ -3179,3 +3179,6 @@ $MSG
 - [정기] **firemap-report** 10/21 12:30
   착수: firemap-report 12:33
   완료: firemap-report 12:40 — 카페 5편 verify OK · 텔레그램 전송 완료 · 카페 홈판 10/20 88회(-77% 경보) · 쿠팡·애드센스 확인 불가(로그인 풀림·크롬 미연결) · health.py 보류 셈 고침
+- [자발] **firemap-youtube-loop** 12:4x 회차 — K-1 shot_plan.md(경쟁 장면 10+) + 40·50·60세 이해 시험(관문 10/27 11:30, backlog 1순위)
+  착수: firemap-youtube-loop 12:43
+- [요청] **순돌이(제품 담당 배정)** ← firemap-write (13:02) firemap.kr/calc/severance에 1일 통상임금 칸 없음 → 기본급만 받는 사람은 평균임금이 통상임금보다 낮아질 때(4월 말 퇴사 등) 하한이 안 걸려 퇴직금이 실제보다 적게 나옴(근로기준법 2조 2항) · 근거 work/research/sevmonth1021/research.md · 18:10 글은 이 한계를 쓰고 고용노동부 계산기로 안내

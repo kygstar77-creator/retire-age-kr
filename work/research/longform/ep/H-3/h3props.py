@@ -51,6 +51,7 @@ BG = {}
 for sub in ['stock', 's2/stock', 's3/stock']:
     for c in json.load(open(os.path.join(VID, 'public', 'bg', 'h3', sub, 'credits.json'), encoding='utf-8')):
         BG.setdefault(c['id'], {'file': f"bg/h3/{sub}/{c['file']}", 'usable_sec': c['sec'] - 0.5, 'author': c['author'], 'desc_line': c['desc_line']})
+BG[37522115]['file'] = 'bg/h3/stock/37522115_cfr.mp4'   # 10/22 02시 PD: 원본은 렌더 때 'No frame found'(5.4초쯤, still은 됨) 두 번 — 같은 영상을 30fps·키프레임 1초로 다시 담은 것(라이선스 그대로)
 BAN = {38259254, 38259256, 38259259, 31400388, 7578842, 37246286}
 USEDBG = {}
 def lic(cid): return f"Pexels {cid} 무료({BG[cid]['author']})"

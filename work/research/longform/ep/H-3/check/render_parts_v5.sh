@@ -8,6 +8,7 @@ for rg in ${PARTS:-27000-$END 0-8999 9000-17999 18000-26999}; do
   if [ -f $OUT/h3_part_$rg.mp4 ]; then echo "skip $rg"; continue; fi
   PYTHONIOENCODING=utf-8 py -3.12 -u $R/work/lfrender.py render $EP --concurrency=2 --timeout=120000 --offthreadvideo-cache-size-in-bytes=536870912 --frames=$rg > $EP/check/render_part_$rg.log 2>&1
   if [ ! -f $OUT/h3.mp4 ] || [ $(stat -c %Y $OUT/h3.mp4) -lt $(stat -c %Y $EP/check/render_part_$rg.log) ] && ! grep -q "Rendered" $EP/check/render_part_$rg.log; then echo "FAIL $rg"; exit 1; fi
+  [ -f $OUT/h3.mp4 ] || { echo "FAIL $rg (h3.mp4 없음)"; exit 1; }
   mv -f $OUT/h3.mp4 $OUT/h3_part_$rg.mp4
   echo "part $rg $(date +%H:%M)"
 done

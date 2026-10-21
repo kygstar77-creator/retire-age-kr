@@ -2278,10 +2278,11 @@
   {
    "at": "2026-10-22 07:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "g1asymcafe1022",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) · yt_pair: g1s_asym(07:20 쇼츠, R3wiLBTOC6M) — 질문 하나 | firemap-meeting 2026-10-21 21:4x: 장르 주식·쇼츠 짝 — yt_pair: g1s_asym(07:20) 질문 하나만"
+   "gates_ok": "2026-10-22 07:56",
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) · yt_pair: g1s_asym(07:20 쇼츠, R3wiLBTOC6M) — 질문 하나 | firemap-meeting 2026-10-21 21:4x: 장르 주식·쇼츠 짝 — yt_pair: g1s_asym(07:20) 질문 하나만 | firemap-write-b 2026-10-22 07:56: g1asymcafe1022 '금값 1월 고점에 샀다면 본전까지 몇 % 남았나'(g1s_asym yTuQC1_dvSE 짝, 07:20 공개 확인) 관문 통과 — KRX 종가 10/21로 다시 계산(650만원·54%, 쇼츠 51%), 레드팀 틀림0·고쳐서4, 이해 시험 2차, editgate auto",
+   "published": "https://cafe.naver.com/firemap/358 08:02 verify OK 1208자"
   },
   {
    "at": "2026-10-22 09:10",

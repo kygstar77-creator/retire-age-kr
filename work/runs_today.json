@@ -13,6 +13,16 @@
     "url": "https://cafe.naver.com/firemap/357"
    },
    "note": "firemap-write 06:2x · 06:10 칸 rettax1022 발행 06:36(jitter 13분) · verify OK 1927/1927자·사진 3/3 · 관문은 10/21 18:52 통과분(교차검증·selfcheck 사실0·레드팀·이해 2차) · 블로그 없음(새벽 2~7시 카페만·블로그 한도) · 다음: 12:10 X-1 짝 글 x1cafe1022 준비 중"
+  },
+  {
+   "hour": 7,
+   "ts": "08:03",
+   "blog": null,
+   "cafe": {
+    "title": "금값 1월 고점에 샀다면 본전까지 몇 % 남았나",
+    "url": "https://cafe.naver.com/firemap/358"
+   },
+   "note": "write-b 07:40 칸 · g1s_asym 짝 · 출처: KRX 종가 420일(네이버 증권), 조특법 126조의7·부가세법 30조(lawtext 10/22), KB 고시 페이지, 경쟁 6편+카페 9곳 주간 인기 · 교차검증: Gemini 사실 6건 중 반영1·유지5(근거 facts 추가), 말투 8건 중 반영7 · 레드팀 고쳐서4 반영 · 이해 2차 · verify OK 1208/1208·사진 3/3 · 개선: playbook에 m_blog curl 대체 경로 기록"
   }
  ]
 }

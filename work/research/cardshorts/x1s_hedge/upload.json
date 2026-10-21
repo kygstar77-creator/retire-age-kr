@@ -1,0 +1,51 @@
+{
+ "name": "x1s_hedge",
+ "ep": "X-1",
+ "from_long": "WcBOePkyOOQ",
+ "mp4": "work/video/out/x1s_hedge_ds.mp4",
+ "publishAt": "2026-10-23T17:20:00+09:00",
+ "publish_plan": "2026-10-23 17:20 (쇼츠 하루 3편 둘째 칸 · 같은 날 07:20 n1s_top10=N-1·19:20 t1s_live=T-1·11:30 롱폼 H-3과 다른 롱폼·다른 질문 · X-1 롱폼 첫 클립, 롱폼 공개 10/22 11:30 뒤)",
+ "title": "S&P500 환헤지, 1억 넣은 날 따라 1,400만원 갈렸다 #shorts",
+ "description": "전체 계산: https://youtu.be/WcBOePkyOOQ\n\n같은 회사가 만든 국내 상장 S&P500 ETF 두 개, 환율을 그대로 맞는 환노출형(KODEX 미국S&P500)과 이름 끝에 H가 붙은 환헤지형(KODEX 미국S&P500(H))에 같은 날 1억원을 넣었다고 놓고 계산했어요. 2026년 10월 16일 종가에 그동안 받은 분배금(세전)을 더했습니다.\n달러가 제일 비쌌던 2026년 7월 2일에 넣었다면 환노출형은 8,958만원, H형은 1억 381만원 — 차이가 1,400만원을 넘습니다.\n2024년 1월 2일(환율 1,289원)에 넣었다면 결과가 뒤집혀요. 환노출형 1억 7,568만원, H형 1억 6,035만원으로 환노출형이 1,500만원 넘게 더 남았습니다.\n환율을 막아 두면 내릴 때 손실도 막지만, 오를 때 이익도 같이 막습니다. 고르는 기준은 이 돈을 몇 년 안에 원화로 꺼내 쓸지, 나중에 달러로 쓸지예요.\n지나간 값이고, 특정 상품을 사거나 팔라는 뜻이 아닙니다.\n\n출처: KRX 종가·운용사 분배금 공시(2026-10-16) · 한국은행 경제통계시스템 원/달러 매매기준율 · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — 29904000 Toàn BDS · 34596756 Jakub Zerdzicki · 5466769 olia danilevich · 5466779 olia danilevich · 5923592 RDNE Stock project · 6186015 K · 6326929 https://kaboompics.com/ · 6963836 cottonbro studio · 7308237 RDNE Stock project · 7829075 Mikhail Nilov · 8369980 RDNE Stock project · 9806390 Nadezhda Moryak\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #환헤지 #SP500ETF",
+ "tags": "환헤지,환노출,S&P500 ETF,KODEX 미국S&P500,환율",
+ "layout": "m1clip",
+ "look": "live",
+ "title_review": {
+  "gemini": {
+   "model": "gemini-3.8-flash",
+   "round1": {
+    "A_1400뒤집힌날": 9.2,
+    "B_넣은날뒤집혀": 6.8,
+    "C_늘나을까": 8.0
+   },
+   "round2_flash_lite": {
+    "A_넣은날이기고졌다": 6,
+    "B_이긴날과진날": 8,
+    "C_늘나을까": 7
+   },
+   "round3": {
+    "A": 8.5,
+    "B": 7.0,
+    "C": 9.5
+   },
+   "file": "title_gemini.json",
+   "fix": "S&P500 환헤지 H형, 1억 넣은 날 따라 1,400만원 갈렸다"
+  },
+  "redteam": {
+   "final": 9,
+   "note": "1차 '1,400만원 이기고 뒤집힌 날'은 같은 투자가 나중에 진 것처럼 읽힘 → '1,400만원 이긴 날과 진 날'은 이해 시험에서 진 날 1,500만원과 엇갈림(2명)·하루 사고판 얘기로 읽힘(60세) → '1억 넣은 날 따라 이기고 졌다'는 숫자 빠져 약함(제미나이 6·8.5) → 3회째 C '1억 넣은 날 따라 1,400만원 갈렸다' 9.5, 37자라 ' H형' 빼고 34자(H는 0초 화면 위 글에). 숫자 2(1억·1,400만원), S&P500은 이름."
+  },
+  "avg": 9.25
+ },
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "zRI8uFIvUbk",
+ "uploaded_at": "2026-10-21 17:47:59",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-23T08:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

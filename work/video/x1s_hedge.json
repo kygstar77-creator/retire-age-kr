@@ -1,0 +1,342 @@
+{
+ "fps": 30,
+ "name": "x1s_hedge",
+ "v": 2,
+ "look": "live",
+ "question": [
+  "같은 회사 S&P500 ETF 두 개",
+  "이름 끝 H 하나로 왜 갈리나?"
+ ],
+ "hot": "H",
+ "answer": {
+  "label": "달러 제일 비쌌던 날 1억",
+  "items": [
+   "환노출형 8,958만원",
+   "H형 1억 381만원"
+  ],
+  "arrow": false,
+  "note": "차이 1,400만원 넘게"
+ },
+ "base": "KRX 종가·분배금(2026-10-16) · 한국은행 환율 · 파이어맵 계산",
+ "long": "WcBOePkyOOQ",
+ "scenes": [
+  {
+   "kind": "vs",
+   "label": "1억이 갈렸다",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "7월 2일 1억, 차이",
+      "1,422만원",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "10월 16일 환노출형",
+      "8,958만원",
+      "",
+      136,
+      "ink"
+     ],
+     [
+      "10월 16일 H형",
+      "1억 381만원",
+      "",
+      210,
+      "ink"
+     ]
+    ],
+    "side": [
+     "2026년 7월 2일 1,554원",
+     66,
+     "달러 제일 비쌌던 날"
+    ]
+   },
+   "lines": [
+    {
+     "n": 1,
+     "text": "차이가 1,400만원을 넘습니다.",
+     "audio": "audio/x-1/ed498cc174ed59e5.wav",
+     "frames": 66
+    },
+    {
+     "n": 2,
+     "text": "달러가 제일 비쌌던 날 1억을 넣었다면, 환노출형은 9천만원이 조금 안 됩니다.",
+     "audio": "audio/x-1/f969167a035b3cdd.wav",
+     "frames": 144
+    },
+    {
+     "n": 3,
+     "text": "H형은 오히려 1억을 넘었어요.",
+     "audio": "audio/x-1/db559573d04b3f27.wav",
+     "frames": 77
+    }
+   ],
+   "frames": 287
+  },
+  {
+   "kind": "vs",
+   "label": "이름 끝 H",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "같은 회사 두 상품",
+      "환노출형 · H형",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "환노출형",
+      "환율 그대로",
+      "",
+      45,
+      "ink"
+     ],
+     [
+      "이름 끝 H",
+      "환율을 막은 환헤지형",
+      "",
+      95,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 4,
+     "text": "환율 움직임을 그대로 맞는 환노출형, 그리고 이름 끝에 H가 붙은 환헤지형입니다.",
+     "audio": "audio/x-1/bf958252d4e0a258.wav",
+     "frames": 158
+    }
+   ],
+   "frames": 158
+  },
+  {
+   "kind": "vs",
+   "label": "뒤집힌 날",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "2024년 1월 2일",
+      "환율 1,289원",
+      "",
+      67,
+      "ink"
+     ],
+     [
+      "10월 15일 환율",
+      "1,338.6원",
+      "",
+      272,
+      "ink"
+     ]
+    ],
+    "side": [
+     "1,500만원 넘게 더",
+     405,
+     "이번엔 환노출형이"
+    ]
+   },
+   "lines": [
+    {
+     "n": 5,
+     "text": "그럼 H형이 늘 나을까요?",
+     "audio": "audio/x-1/6b19286a253651e5.wav",
+     "frames": 67
+    },
+    {
+     "n": 6,
+     "text": "재작년 첫날 넣었다면 결과가 뒤집혀요.",
+     "audio": "audio/x-1/4bc347265936e1dd.wav",
+     "frames": 94
+    },
+    {
+     "n": 7,
+     "text": "그때 환율은 1,289원으로 지금보다 낮았어요.",
+     "audio": "audio/x-1/a85c917a44b21204.wav",
+     "frames": 111
+    },
+    {
+     "n": 8,
+     "text": "그 뒤 달러 값이 크게 올랐다가 이번에 내린 거라, 지금도 그때보다는 높거든요.",
+     "audio": "audio/x-1/9f1e875fe13f4957.wav",
+     "frames": 138
+    },
+    {
+     "n": 9,
+     "text": "이 경우엔 환노출형이 1,500만원 넘게 더 남았습니다.",
+     "audio": "audio/x-1/c1e86a3647ad08f0.wav",
+     "frames": 112
+    }
+   ],
+   "frames": 522
+  },
+  {
+   "kind": "vs",
+   "label": "막으면",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "달러값(환율) 내릴 때",
+      "환율 손실도 막고",
+      "",
+      0,
+      "ink"
+     ],
+     [
+      "달러값(환율) 오를 때",
+      "환율 이익도 막는다",
+      "",
+      80,
+      "ink"
+     ]
+    ]
+   },
+   "lines": [
+    {
+     "n": 10,
+     "text": "환율을 막아 두면 내릴 때 손실도 막지만, 오를 때 이익도 같이 막는 겁니다.",
+     "audio": "audio/x-1/c7205b7e43162539.wav",
+     "frames": 178
+    }
+   ],
+   "frames": 178
+  },
+  {
+   "kind": "vs",
+   "label": "고르는 기준",
+   "source": null,
+   "data": {
+    "tiles": [
+     [
+      "원화로 꺼내 쓸 돈",
+      "흔들림 줄이는 H형",
+      "",
+      88,
+      "ink"
+     ],
+     [
+      "나중에 달러로 쓸 돈",
+      "원화 값 덜 중요",
+      "",
+      288,
+      "ink"
+     ]
+    ],
+    "side": [
+     "어떤 돈으로 쓸 거냐",
+     0,
+     "기준은"
+    ]
+   },
+   "lines": [
+    {
+     "n": 11,
+     "text": "기준은 이 돈을 결국 어떤 돈으로 쓸 거냐예요.",
+     "audio": "audio/x-1/56c8cddfc50fef5f.wav",
+     "frames": 88
+    },
+    {
+     "n": 12,
+     "text": "몇 년 안에 원화로 꺼내 쓸 돈이라면, 환율 흔들림이 그대로 내 손익이 됩니다. H형은 그 흔들림을 줄여 줘요.",
+     "audio": "audio/x-1/362658f55e7e3ee1.wav",
+     "frames": 200
+    },
+    {
+     "n": 13,
+     "text": "나중에 달러로 쓸 돈이라면, 원화로 얼마인지가 덜 중요하고요.",
+     "audio": "audio/x-1/eb3a14df106772e7.wav",
+     "frames": 110
+    }
+   ],
+   "frames": 434
+  }
+ ],
+ "bg": [
+  {
+   "src": "bg/x1/5466769.mp4",
+   "from": 0,
+   "frames": 66,
+   "start": 0
+  },
+  {
+   "src": "bg/x1/6326929.mp4",
+   "from": 66,
+   "frames": 144,
+   "start": 1
+  },
+  {
+   "src": "bg/x1/5466779.mp4",
+   "from": 210,
+   "frames": 77,
+   "start": 1
+  },
+  {
+   "src": "bg/x1/6963836.mp4",
+   "from": 287,
+   "frames": 158,
+   "start": 2
+  },
+  {
+   "src": "bg/x1/7829075.mp4",
+   "from": 445,
+   "frames": 67,
+   "start": 1
+  },
+  {
+   "src": "bg/x1/6186015.mp4",
+   "from": 512,
+   "frames": 94,
+   "start": 2
+  },
+  {
+   "src": "bg/x1/8369980.mp4",
+   "from": 606,
+   "frames": 111,
+   "start": 2
+  },
+  {
+   "src": "bg/x1/29904000.mp4",
+   "from": 717,
+   "frames": 138,
+   "start": 3
+  },
+  {
+   "src": "bg/x1/34596756.mp4",
+   "from": 855,
+   "frames": 112,
+   "start": 3
+  },
+  {
+   "src": "bg/x1/9806390.mp4",
+   "from": 967,
+   "frames": 178,
+   "start": 4
+  },
+  {
+   "src": "bg/x1/5923592.mp4",
+   "from": 1145,
+   "frames": 88,
+   "start": 1
+  },
+  {
+   "src": "bg/x1/34596756.mp4",
+   "from": 1233,
+   "frames": 200,
+   "start": 12
+  },
+  {
+   "src": "bg/x1/7308237.mp4",
+   "from": 1433,
+   "frames": 146,
+   "start": 2
+  }
+ ],
+ "credits": "29904000 Toàn BDS · 34596756 Jakub Zerdzicki · 5466769 olia danilevich · 5466779 olia danilevich · 5923592 RDNE Stock project · 6186015 K · 6326929 https://kaboompics.com/ · 6963836 cottonbro studio · 7308237 RDNE Stock project · 7829075 Mikhail Nilov · 8369980 RDNE Stock project · 9806390 Nadezhda Moryak (Pexels License)"
+}

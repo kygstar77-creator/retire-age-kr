@@ -572,7 +572,7 @@ const Frame2: React.FC<{s: SScene; p: M1SProps; from: number; total: number; fir
   // 10/19 기본: 실사가 있으면 판 없는 쇼츠(parts/safeframe LiveSceneBody) — p.look='board'면 옛 흰 판
   if ((p as any).look ? (p as any).look === 'live' : !!(p.bg && p.bg.length)) return (
     <AbsoluteFill>
-      <LiveSceneBody s={s} />
+      <LiveSceneBody s={s} first={first} />
       <OutlineCaption lines={s.lines} first={first} />
       {s.lines.map((l, i) => <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
     </AbsoluteFill>

@@ -375,6 +375,12 @@ def main():
     # 5) 지난 규칙 판정 — 규칙을 적은 뒤에 올린 글의 성적이 그 전보다 나은가
     fp = rule_fp(cafe_found, cafe_cat, blog_found, blog_cat)
     cut, cut_why = pick_cut(logs, now, cp, bp)
+    if cut is None and cp:
+        # 2026-10-21: 블로그가 하루 1편 상한·쉬는 날로 새 글이 거의 없어 '둘 다 4편' 조건을
+        # 못 채우자 카페 판정까지 계속 보류됐다(일감표 1위). 블로그만 모자라면 카페 기준으로 판정하고
+        # 블로그 칸은 judge_side가 '보류(뒤 n·앞 m편)'로 적는다.
+        cut, why = pick_cut(logs, now, cp)
+        if cut is not None: cut_why = why + '(블로그는 새 글 부족 — 카페 기준)'
     if cut is None:
         verdict = '규칙 판정 보류 — ' + cut_why
     else:

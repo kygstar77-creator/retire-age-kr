@@ -8,16 +8,16 @@
   "압구정현대아파트 동네는 30억 안팎 거래 0건, 같은 돈이면 신천동·목동신시가지는 몇 ㎡"
  ],
  "thumb_text": "신천 85㎡ vs 목동신시가지 96㎡",
- "thumb_text_top": "30억 안팎에 팔린 집 크기",
- "thumb_text_small": "압구정동은 가장 싼 거래도 35억 넘어",
- "thumb": null,
- "thumb_status": "10/21 PD: 새 꼴(N-2 thumb_A) 썸네일 visual 요청(시한 10/21 18:00) — 그림 시험 뒤 채움",
+ "thumb_text_top": "최근 1년 30억 안팎에 팔린 집 크기",
+ "thumb_text_small": "목동신시가지가 3평쯤 더 넓다",
+ "thumb": "thumb_h3v_b.png",
+ "thumb_status": "10/21 09:09 visual: 새 꼴 최종 h3v_b(copywriter 1위 문구 c, 윗줄·알약 키움) · 짝 비교 vs h3c_c 2승 · aitell thumb 통과 · 40·50·60세 2차 뜻 3/3 · 근거 visual/H-3-thumb/n1021/final/judges.md",
  "desc_first2": [
   "국토교통부 실거래 최근 1년(2025.11~2026.10 계약) 가운데 27억~33억에 팔린 아파트를 동네마다 세어 봤습니다. 송파 신천동은 175건(집 안 넓이 중앙 85㎡), 목동신시가지 1~7단지는 67건(96㎡), 강남 압구정동은 0건이었습니다.",
   "압구정동은 가장 싼 거래도 35억 7천만원(직거래 1건)이었고, 40억 안팎으로 올려도 집 안 넓이 중앙 50㎡였습니다(국토교통부 실거래 · 사거나 팔라는 뜻 아님)."
  ],
  "desc_tpl": "국토교통부 실거래 최근 1년(2025.11~2026.10 계약) 가운데 27억~33억에 팔린 아파트를 동네마다 세어 봤습니다. 송파 신천동은 175건(집 안 넓이 중앙 85㎡), 목동신시가지 1~7단지는 67건(96㎡), 강남 압구정동은 0건이었습니다.\n압구정동은 가장 싼 거래도 35억 7천만원(직거래 1건)이었고, 40억 안팎으로 올려도 집 안 넓이 중앙 50㎡였습니다(국토교통부 실거래 · 사거나 팔라는 뜻 아님).\n\n세 동네 단지별 1년 거래 표(목동신시가지 1~14단지·압구정 현대·신천 장미·파크리오, 카페): {CAFE}\n지난 편 · 잠실·대치·반포 84㎡ 1년 실거래: https://youtu.be/_fTgGr0dR0I\n\n{CHAPTERS}\n\n출처\n· 국토교통부 아파트 매매·전월세 실거래(공공데이터포털, 2025.11~2026.10 계약, 2026-10-16 받음, 해제·공공기관 매수 제외 — 2026년 10월 거래는 신고 기한 30일이라 덜 들어옴)\n· 건축물대장 총괄표제부 세대수(2026-10-17 조회)\n· 국토교통부공고 제2025-1219호(토지거래허가구역)·제2025-1223호(조정대상지역)·제2025-1225호(투기과열지구) · 국토교통부 토지거래허가구역 업무처리기준(2025-04-21) · 금융위원회 「대출수요 관리 강화 방안」 FAQ(2025-10-15)\n· 부동산 거래신고 등에 관한 법률 §11·시행령 §14·§14의2 · 도시 및 주거환경정비법 §39·§73·시행령 §37 · 소득세법 §89·§104·시행령 §154·§155 · 지방세법 §11·§13의2·시행령 §28의5(법제처, 2026-10-18~19 확인)\n· 서울시 정비사업 정보몽땅 추진경과(2026-10-19 확인) · 서울특별시교육청 공고 제2026-157호\n· 지도 자료 © OpenStreetMap 기여자(ODbL)\n계산 가정: 30억 안팎 = 27억~33억 거래 · 넓이 = 전용면적(집 안 넓이, 1평 = 3.3058㎡) · 중간 가격·중간 크기 = 중앙값 · 평당 = 거래금액 ÷ (전용면적 ÷ 3.3058) · 전세 = 월세 없는 전세(신규·갱신 따로) · 전세가율 = 신규 전세 중앙 ÷ 매매 중앙 · 목동 = 법정동 목동(신시가지 1~7단지), 8~14단지는 신정동.\n\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 일부 장면은 AI로 만든 그림(RealVisXL V5.0, 특정 단지 아님)입니다. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 계산·비교 자료이며 어떤 집을 사거나 팔라는 권유가 아닙니다.\n영상 일부: cottonbro studio / Pexels (https://www.pexels.com/video/a-room-with-many-boxes-stacked-on-top-of-each-other-4553292/)\n영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/a-person-typing-on-calculator-6962695/)\n영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/a-person-computing-using-calculator-6962707/)\n영상 일부: Thirdman / Pexels (https://www.pexels.com/video/close-up-video-of-a-person-signing-a-document-8471105/)\n영상 일부: ArtHouse Studio / Pexels (https://www.pexels.com/video/person-writing-on-paper-8478946/)\n영상 일부: Thirdman / Pexels (https://www.pexels.com/video/person-giving-the-keys-to-the-new-home-owner-8482325/)\n영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/video/trains-crossing-a-railway-bridge-over-han-river-in-korea-12079562/)\n영상 일부: Bảo Nghĩa / Pexels (https://www.pexels.com/video/a-view-of-tall-buildings-in-a-city-16392935/)\n영상 일부: 성창 남 / Pexels (https://www.pexels.com/video/aerial-view-of-urban-cityscape-on-clear-day-29303349/)\n영상 일부: Stephen Leonardi / Pexels (https://www.pexels.com/ko-kr/video/30975009/)\n영상 일부: PUWOOK Kwak / Pexels (https://www.pexels.com/video/aerial-night-view-of-bustling-city-street-31251626/)\n영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/video/aerial-view-of-seoul-residential-area-in-daylight-37500921/)\n영상 일부: Jueon Kim 김주언 / Pexels (https://www.pexels.com/video/dramatic-sunset-over-city-bridge-timelapse-37522115/)\n영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/video/bustling-city-intersection-with-skyscrapers-37527858/)\n영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/ko-kr/video/38029457/)\n영상 일부: Gokuldham Nar / Pexels (https://www.pexels.com/video/students-walking-to-school-campus-in-uniform-39704991/)",
- "desc": "국토교통부 실거래 최근 1년(2025.11~2026.10 계약) 가운데 27억~33억에 팔린 아파트를 동네마다 세어 봤습니다. 송파 신천동은 175건(집 안 넓이 중앙 85㎡), 목동신시가지 1~7단지는 67건(96㎡), 강남 압구정동은 0건이었습니다.\n압구정동은 가장 싼 거래도 35억 7천만원(직거래 1건)이었고, 40억 안팎으로 올려도 집 안 넓이 중앙 50㎡였습니다(국토교통부 실거래 · 사거나 팔라는 뜻 아님).\n\n세 동네 단지별 1년 거래 표(목동신시가지 1~14단지·압구정 현대·신천 장미·파크리오, 카페): https://cafe.naver.com/firemap\n지난 편 · 잠실·대치·반포 84㎡ 1년 실거래: https://youtu.be/_fTgGr0dR0I\n\n0:00 결론부터\n0:36 세 동네, 처음 보시는 분을 위해\n1:38 어떻게 셌나, 그리고 이 1년의 조건\n2:22 신천동, 30억이면 85㎡쯤\n3:17 목동, 번호는 이어지는데 주소가 갈린다\n5:09 압구정동, 30억 거래가 없었다\n6:50 평당 값만 보면 생기는 착시\n7:25 허가구역에서 산다면, 2년 실거주와 예외\n10:05 재건축 단계와 조합원 자격\n12:05 세 들어 살 사람이라면\n13:34 학교 배정, 숫자로 말할 수 있는 것\n14:06 이미 한 채가 있고, 갈아탄다면\n15:38 직접 확인하는 법\n16:51 정리\n\n출처\n· 국토교통부 아파트 매매·전월세 실거래(공공데이터포털, 2025.11~2026.10 계약, 2026-10-16 받음, 해제·공공기관 매수 제외 — 2026년 10월 거래는 신고 기한 30일이라 덜 들어옴)\n· 건축물대장 총괄표제부 세대수(2026-10-17 조회)\n· 국토교통부공고 제2025-1219호(토지거래허가구역)·제2025-1223호(조정대상지역)·제2025-1225호(투기과열지구) · 국토교통부 토지거래허가구역 업무처리기준(2025-04-21) · 금융위원회 「대출수요 관리 강화 방안」 FAQ(2025-10-15)\n· 부동산 거래신고 등에 관한 법률 §11·시행령 §14·§14의2 · 도시 및 주거환경정비법 §39·§73·시행령 §37 · 소득세법 §89·§104·시행령 §154·§155 · 지방세법 §11·§13의2·시행령 §28의5(법제처, 2026-10-18~19 확인)\n· 서울시 정비사업 정보몽땅 추진경과(2026-10-19 확인) · 서울특별시교육청 공고 제2026-157호\n· 지도 자료 © OpenStreetMap 기여자(ODbL)\n계산 가정: 30억 안팎 = 27억~33억 거래 · 넓이 = 전용면적(집 안 넓이, 1평 = 3.3058㎡) · 중간 가격·중간 크기 = 중앙값 · 평당 = 거래금액 ÷ (전용면적 ÷ 3.3058) · 전세 = 월세 없는 전세(신규·갱신 따로) · 전세가율 = 신규 전세 중앙 ÷ 매매 중앙 · 목동 = 법정동 목동(신시가지 1~7단지), 8~14단지는 신정동.\n\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 일부 장면은 AI로 만든 그림(RealVisXL V5.0, 특정 단지 아님)입니다. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 계산·비교 자료이며 어떤 집을 사거나 팔라는 권유가 아닙니다.\n영상 일부: cottonbro studio / Pexels (https://www.pexels.com/video/a-room-with-many-boxes-stacked-on-top-of-each-other-4553292/)\n영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/a-person-typing-on-calculator-6962695/)\n영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/a-person-computing-using-calculator-6962707/)\n영상 일부: Thirdman / Pexels (https://www.pexels.com/video/close-up-video-of-a-person-signing-a-document-8471105/)\n영상 일부: ArtHouse Studio / Pexels (https://www.pexels.com/video/person-writing-on-paper-8478946/)\n영상 일부: Thirdman / Pexels (https://www.pexels.com/video/person-giving-the-keys-to-the-new-home-owner-8482325/)\n영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/video/trains-crossing-a-railway-bridge-over-han-river-in-korea-12079562/)\n영상 일부: Bảo Nghĩa / Pexels (https://www.pexels.com/video/a-view-of-tall-buildings-in-a-city-16392935/)\n영상 일부: 성창 남 / Pexels (https://www.pexels.com/video/aerial-view-of-urban-cityscape-on-clear-day-29303349/)\n영상 일부: Stephen Leonardi / Pexels (https://www.pexels.com/ko-kr/video/30975009/)\n영상 일부: PUWOOK Kwak / Pexels (https://www.pexels.com/video/aerial-night-view-of-bustling-city-street-31251626/)\n영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/video/aerial-view-of-seoul-residential-area-in-daylight-37500921/)\n영상 일부: Jueon Kim 김주언 / Pexels (https://www.pexels.com/video/dramatic-sunset-over-city-bridge-timelapse-37522115/)\n영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/video/bustling-city-intersection-with-skyscrapers-37527858/)\n영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/ko-kr/video/38029457/)\n영상 일부: Gokuldham Nar / Pexels (https://www.pexels.com/video/students-walking-to-school-campus-in-uniform-39704991/)",
+ "desc": "국토교통부 실거래 최근 1년(2025.11~2026.10 계약) 가운데 27억~33억에 팔린 아파트를 동네마다 세어 봤습니다. 송파 신천동은 175건(집 안 넓이 중앙 85㎡), 목동신시가지 1~7단지는 67건(96㎡), 강남 압구정동은 0건이었습니다.\n압구정동은 가장 싼 거래도 35억 7천만원(직거래 1건)이었고, 40억 안팎으로 올려도 집 안 넓이 중앙 50㎡였습니다(국토교통부 실거래 · 사거나 팔라는 뜻 아님).\n\n세 동네 단지별 1년 거래 표(목동신시가지 1~14단지·압구정 현대·신천 장미·파크리오, 카페): https://cafe.naver.com/firemap\n지난 편 · 잠실·대치·반포 84㎡ 1년 실거래: https://youtu.be/_fTgGr0dR0I\n\n0:00 결론부터\n0:36 세 동네, 처음 보시는 분을 위해\n1:38 어떻게 셌나, 그리고 이 1년의 조건\n2:22 신천동, 30억이면 85㎡쯤\n3:17 목동, 번호는 이어지는데 주소가 갈린다\n5:09 압구정동, 30억 거래가 없었다\n6:50 평당 값만 보면 생기는 착시\n7:25 허가구역에서 산다면, 2년 실거주와 예외\n10:05 재건축 단계와 조합원 자격\n12:06 세 들어 살 사람이라면\n13:35 학교 배정, 숫자로 말할 수 있는 것\n14:07 이미 한 채가 있고, 갈아탄다면\n15:39 직접 확인하는 법\n16:52 정리\n\n출처\n· 국토교통부 아파트 매매·전월세 실거래(공공데이터포털, 2025.11~2026.10 계약, 2026-10-16 받음, 해제·공공기관 매수 제외 — 2026년 10월 거래는 신고 기한 30일이라 덜 들어옴)\n· 건축물대장 총괄표제부 세대수(2026-10-17 조회)\n· 국토교통부공고 제2025-1219호(토지거래허가구역)·제2025-1223호(조정대상지역)·제2025-1225호(투기과열지구) · 국토교통부 토지거래허가구역 업무처리기준(2025-04-21) · 금융위원회 「대출수요 관리 강화 방안」 FAQ(2025-10-15)\n· 부동산 거래신고 등에 관한 법률 §11·시행령 §14·§14의2 · 도시 및 주거환경정비법 §39·§73·시행령 §37 · 소득세법 §89·§104·시행령 §154·§155 · 지방세법 §11·§13의2·시행령 §28의5(법제처, 2026-10-18~19 확인)\n· 서울시 정비사업 정보몽땅 추진경과(2026-10-19 확인) · 서울특별시교육청 공고 제2026-157호\n· 지도 자료 © OpenStreetMap 기여자(ODbL)\n계산 가정: 30억 안팎 = 27억~33억 거래 · 넓이 = 전용면적(집 안 넓이, 1평 = 3.3058㎡) · 중간 가격·중간 크기 = 중앙값 · 평당 = 거래금액 ÷ (전용면적 ÷ 3.3058) · 전세 = 월세 없는 전세(신규·갱신 따로) · 전세가율 = 신규 전세 중앙 ÷ 매매 중앙 · 목동 = 법정동 목동(신시가지 1~7단지), 8~14단지는 신정동.\n\n내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 일부 장면은 AI로 만든 그림(RealVisXL V5.0, 특정 단지 아님)입니다. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 계산·비교 자료이며 어떤 집을 사거나 팔라는 권유가 아닙니다.\n영상 일부: cottonbro studio / Pexels (https://www.pexels.com/video/a-room-with-many-boxes-stacked-on-top-of-each-other-4553292/)\n영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/a-person-typing-on-calculator-6962695/)\n영상 일부: Mikhail Nilov / Pexels (https://www.pexels.com/video/a-person-computing-using-calculator-6962707/)\n영상 일부: Thirdman / Pexels (https://www.pexels.com/video/close-up-video-of-a-person-signing-a-document-8471105/)\n영상 일부: ArtHouse Studio / Pexels (https://www.pexels.com/video/person-writing-on-paper-8478946/)\n영상 일부: Thirdman / Pexels (https://www.pexels.com/video/person-giving-the-keys-to-the-new-home-owner-8482325/)\n영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/video/trains-crossing-a-railway-bridge-over-han-river-in-korea-12079562/)\n영상 일부: Bảo Nghĩa / Pexels (https://www.pexels.com/video/a-view-of-tall-buildings-in-a-city-16392935/)\n영상 일부: 성창 남 / Pexels (https://www.pexels.com/video/aerial-view-of-urban-cityscape-on-clear-day-29303349/)\n영상 일부: Stephen Leonardi / Pexels (https://www.pexels.com/ko-kr/video/30975009/)\n영상 일부: PUWOOK Kwak / Pexels (https://www.pexels.com/video/aerial-night-view-of-bustling-city-street-31251626/)\n영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/video/aerial-view-of-seoul-residential-area-in-daylight-37500921/)\n영상 일부: Jueon Kim 김주언 / Pexels (https://www.pexels.com/video/dramatic-sunset-over-city-bridge-timelapse-37522115/)\n영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/video/bustling-city-intersection-with-skyscrapers-37527858/)\n영상 일부: FREE VIDEO HAPPY / Pexels (https://www.pexels.com/ko-kr/video/38029457/)\n영상 일부: Gokuldham Nar / Pexels (https://www.pexels.com/video/students-walking-to-school-campus-in-uniform-39704991/)",
  "chapters": [
   [
    0,
@@ -52,23 +52,23 @@
    "허가구역에서 산다면, 2년 실거주와 예외"
   ],
   [
-   605,
+   606,
    "재건축 단계와 조합원 자격"
   ],
   [
-   726,
+   727,
    "세 들어 살 사람이라면"
   ],
   [
-   814,
+   815,
    "학교 배정, 숫자로 말할 수 있는 것"
   ],
   [
-   847,
+   848,
    "이미 한 채가 있고, 갈아탄다면"
   ],
   [
-   939,
+   940,
    "직접 확인하는 법"
   ],
   [
@@ -109,5 +109,7 @@
  "made_by": "firemap-video-producer",
  "made_at": "2026-10-21",
  "video": "C:\\Users\\강영준\\Documents\\GitHub\\retire-age-kr\\work\\video\\out\\h3_ds.mp4",
- "missing": 0
+ "missing": 0,
+ "thumb_text_by": "firemap-copywriter 2026-10-21 copy/titles.md 끝(2차 문구, 40·50·60세 3/3 c)",
+ "thumb_alt": "thumb_h3v_a.png"
 }

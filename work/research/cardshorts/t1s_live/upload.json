@@ -1,0 +1,39 @@
+{
+ "name": "t1s_live",
+ "ep": "T-1",
+ "from_long": "Qg5Tj2fuJ3A",
+ "mp4": "work/video/out/t1s_live_ds.mp4",
+ "publishAt": "2026-10-23T19:20:00+09:00",
+ "publish_plan": "2026-10-23 19:20 (쇼츠 하루 3편 셋째 칸 · 같은 날 07:20 n1s_top10=N-1·17:20 x1s_hedge=X-1·11:30 롱폼 H-3과 다른 롱폼·다른 질문 · T-1 롱폼 둘째 클립, 첫 클립 t1s_swap 10/22 17:20과 다른 질문)",
+ "title": "장특공제 정부안 2029년부터 살았던 해만, 내 집은 몇 %? #shorts",
+ "description": "전체 계산: https://youtu.be/Qg5Tj2fuJ3A\n\n집 한 채를 12억원 넘게 팔 때 양도세에서 깎아 주는 장기보유특별공제는, 지금 법에선 갖고 있던 해마다 4%, 실제로 살았던 해마다 4%씩입니다. 둘 다 10년이면 80%예요. 비과세 요건을 갖춘 집 한 채는 판 값이 12억원 이하면 양도세가 없어서, 이 공제는 12억원 넘게 판 집 얘기입니다.\n정부가 2026년 9월 국회에 낸 세법 개정안(아직 국회 통과 전)대로라면 2028년엔 살았던 해 6%·갖고 있던 해 2%, 2029년부터는 갖고 있던 해를 안 치고 살았던 해만 8%씩 칩니다.\n가상 인물 수진 씨(10년 갖고 2년 삶)는 지금 48%, 2029년엔 16%예요. 같은 집을 판 해만 다르게 계산하면 세금이 해마다 3천만원 넘게 차이 납니다.\n내 집 셈법: 지금 법 = 갖고 있던 해 × 4% + 살았던 해 × 4%, 2029년 정부안 = 살았던 해 × 8%. 햇수는 각각 10년까지(최대 80%)예요.\n갖고 있던 햇수는 산 날부터 판 날까지, 날짜는 보통 잔금을 치른 날로 셉니다.\n세금 계산 비교이고, 매매 권유가 아닙니다. 국회 심의에서 바뀔 수 있어요.\n\n출처: 재정경제부 2026년 세법개정안(국회 제출) · 소득세법 제95조 제2항 · 파이어맵 계산\n배경 영상: Pexels(Pexels License) — 1793371 Miguel Á. Padriñán · 31400388 Jakub Zerdzicki · 32986074 PUWOOK Kwak · 35082942 Nothing Ahead · 6221101 cottonbro studio · 7710453 https://kaboompics.com/ · 7710495 https://kaboompics.com/ · 8471105 Thirdman · 8478946 ArtHouse Studio\n내레이션: AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)\n\n#shorts #장기보유특별공제 #양도세",
+ "tags": "장기보유특별공제,장특공제,양도세,장기거주소득공제,세법개정안",
+ "layout": "m1clip",
+ "look": "live",
+ "title_review": {
+  "gemini": {
+   "model": "gemini-3.8-flash",
+   "A": 8,
+   "B": 9,
+   "C": 7,
+   "file": "title_gemini.json",
+   "fix": "양도세 장특공제 2029년부터 살았던 해만, 내 집은 몇 %?"
+  },
+  "redteam": {
+   "B2": 8,
+   "note": "B '장특공제 2029년부터 살았던 해만'은 확정처럼 읽힘 → '정부안'을 넣은 B2로(31자·숫자 1). 제미나이 fix '양도세 장특공제…'도 정부안이 빠져 버림. 경쟁 #1이 '48%가 16%로'를 제목에 써서 우리는 '내 집은 몇 %?'(셈법) 쪽"
+  },
+  "avg": 8.5
+ },
+ "synth_insert_echo": true,
+ "synth_update_echo": true,
+ "id": "2vo0fcUJFxw",
+ "uploaded_at": "2026-10-21 07:20:12",
+ "status": {
+  "privacyStatus": "private",
+  "publishAt": "2026-10-23T10:20:00Z",
+  "embeddable": true,
+  "publicStatsViewable": true,
+  "selfDeclaredMadeForKids": false
+ }
+}

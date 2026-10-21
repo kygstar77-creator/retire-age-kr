@@ -1,0 +1,8 @@
+{
+ "type": "chart",
+ "source": "지방세법 제11조①8호 세율 · 지방세특례제한법 제36조의3 감면 한도로 집값 6구간 직접 계산(calc.py) — mkimg.py로 그린 쌓은 막대",
+ "made_at": "2026-10-21",
+ "by": "research/firsthome1021/mkimg.py",
+ "out": "img/00.png",
+ "board": ["cc200vol1021","p1step1021","cdrate1021","sevmonth1021","sidecar1021","psfund1021","med1021","t1cafe1021","h1helio1021","yen1021"]
+}

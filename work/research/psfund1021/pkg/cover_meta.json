@@ -1,0 +1,19 @@
+{
+ "type": "chart",
+ "source": "금융위원회·금융감독원 '2025년 연금저축 투자 백서'(2026.6.19) 별첨 p.9 수익률 표 — mkimg.py로 직접 그린 막대 그래프",
+ "made_at": "2026-10-21",
+ "by": "research/psfund1021/mkimg.py",
+ "out": "img/00.png",
+ "board": [
+  "med1021",
+  "h1helio1021",
+  "yen1021",
+  "cudep1020",
+  "seqrisk1020",
+  "penkunbo1020",
+  "divdrop1020",
+  "loan25_1020",
+  "irp70_1020",
+  "cardded1020"
+ ]
+}

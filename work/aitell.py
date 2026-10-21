@@ -12,7 +12,7 @@
 #        + 말 습관 4개(10/13 벤치마크 루프): 정밀 숫자 낭독('39만 7천'·6자리↑)·순번 3종↑·말 목차('볼게요') 3연속·꼬리표 낭독({F}·이미지 1·S3) — 걸린 줄 번호 출력, 걸리면 종료코드 6
 #        + 구어 아닌 말(10/19 사장님 '사람이 구어체로 쓰지 않는 단어'): work/data/not_spoken.json ban 말이 있으면 줄·바꿀 말을 보이고 종료코드 6, over 말은 경고만
 #   py -3.12 work/aitell.py spoken <묶음|글 파일 …>          → 구어 아닌 말만(카페 원고 점검용, gate에는 없음). ban 말이 있으면 종료코드 5
-#   py -3.12 work/aitell.py thumb "<썸네일 큰 글>" ["<둘째 줄>" …]  → 썸네일·쇼츠 표지 AI 티 A30·A31·A33(10/15 editor, 근거 longform/thumb-gap-1015.md ③ — 남 29장 실측). 걸리면 종료코드 5. A32(그리다 만 0초 화면)는 그림이라 눈으로 본다
+#   py -3.12 work/aitell.py thumb "<썸네일 큰 글>" ["<둘째 줄>" …]  → 썸네일·쇼츠 표지 AI 티 A30·A31·A33·A52(10/15·10/21 editor, 근거 longform/thumb-gap-1015.md ③ — 남 29장 실측). 걸리면 종료코드 5. A32(그리다 만 0초 화면)는 그림이라 눈으로 본다
 #   --skip-list (아무 자리)  → 번호·글머리 목록 줄과 법 문구·면책 줄을 끝맺음 반복(연속·'~요'·머리·꼬리)에서 뺀다.
 #                              사전(AI 말·설명조) 검사는 그대로. 기본은 꺼짐 — 기존 통과 점수가 안 바뀐다(10/1 대역 X-KR-1 요청).
 # 사장님 10/1 "사소한 것까지 모든 글을 다 검토해서 사람이 쓴 글로 바꿔야 하는데" — 순돌이 지시 [지시·긴급].
@@ -439,6 +439,26 @@ def assert_check(text):
     return out
 
 
+def repeat_check(pkg):
+    """카페 묶음 본문에서 거의 같은 문장이 두 번 나온 곳(끝 '한눈에 정리' 조각은 뺌). 경고만 — 기준 근거 조사 전이라 막지 않는다.
+    10/20~21 editor 표본 6건 중 5건이 이 되풀이였다(h1helio1021 '8건을 한꺼번에…16%쯤 낮았' c00·c03, divdrop1020·h2cafe1019 등)."""
+    import difflib, glob
+    sents = []
+    for f in sorted(glob.glob(os.path.join(pkg, 'c??.txt'))):
+        t = open(f, encoding='utf-8').read()
+        if re.search(r'^##\s*(한눈에|정리|요약)', t, re.M): continue
+        for s in re.split(r'(?<=[.?!])\s+|\n+', t):
+            k = re.sub(r'[\s,.·\-]|(어요|에요|예요|습니다|니다|요|다)$', '', s.strip().lstrip('- '))
+            if len(k) >= 14 and not s.startswith(('http', '##', '|')): sents.append((os.path.basename(f), s.strip(), k))
+    out = []
+    for i, (fa, sa, ka) in enumerate(sents):
+        for fb_, sb, kb in sents[i + 1:]:
+            if re.findall(r'\d[\d.]*', sa) != re.findall(r'\d[\d.]*', sb): continue   # 숫자가 다르면 나란한 목록(3.5%·3.6%)이지 되풀이가 아니다
+            if difflib.SequenceMatcher(None, ka, kb).ratio() >= 0.8:
+                out.append(f'{fa} "{sa[:40]}" ↔ {fb_} "{sb[:40]}" — 한 번만')
+    return out
+
+
 def gate_pkg(pkg):
     """발행기용. (올려도 되나, 한 줄 사유, 걸린 곳)."""
     text, files = pkg_text(pkg)
@@ -461,6 +481,7 @@ def gate_pkg(pkg):
                 if rb: return False, rb, [rb]
         if day0 < OPEN_FROM:
             for e in opening_check(pkg): print('[경고]', e)
+        for e in repeat_check(pkg): print('[경고·되풀이]', e)
         fb = frame_check(pkg)
         if fb:
             sp = os.path.join(pkg, 'slot.txt')
@@ -531,6 +552,17 @@ def screen_titles(p):
     f = os.path.join(p, 'screen_text.txt') if os.path.isdir(p) else ''
     if not f or not os.path.exists(f): return []
     return [l.split('] ', 1)[1].strip() for l in open(f, encoding='utf-8') if re.match(r'\[scenes\.\d+\.data\.title\] ', l)]
+
+
+# A48(10/21 editor): 화면 자막에 우리 작업 메모가 샌 것(H-3 '(calc2 §2) — 말에 쓰지 않음'·'(T-1 사실표 L12)' 7곳) — 자막은 script.md [자막: …]에서 그대로 붙는다.
+_MEMO = re.compile(r'calc\d?(_out)?\s?§|사실표\s?[A-Z]?\d|말에\s?쓰지\s?않|facts\.txt|\[[A-Z]\d{1,2}\]|DRAFT|TODO')
+
+
+def screen_memos(p):
+    """편 폴더 screen_text.txt에서 작업 메모가 든 화면 글자 줄. 코드에서 뽑은 줄([*.tsx])은 뺀다."""
+    f = os.path.join(p, 'screen_text.txt') if os.path.isdir(p) else ''
+    if not f or not os.path.exists(f): return []
+    return [l.strip() for l in open(f, encoding='utf-8') if l.startswith('[scenes.') and _MEMO.search(l)]
 
 
 def _sig(n):
@@ -644,6 +676,9 @@ def script_check(text):
     # A-20 보탬(경고): 비율을 말로 할 때는 "10명 중 1명" 꼴(CDC 위험 소통·Galesic·Gigerenzer 2009) — 막지 않음
     pc = len(re.findall(r'\d+(?:\.\d+)?\s*%|퍼센트', text))
     if pc >= 5: print(f'[경고] 말에 % {pc}번 — 비율은 "10명 중 1명"처럼 자연 빈도로, 비교할 땐 분모를 같게(A-20)')
+    # S-소리(10/21 editor, PD 10/20 찬성 — 경고만): '그 안이면·안이었·안이에요'는 받아쓰기에서 '아니면·아니었'으로 들림(H-2 3:7·5:14, J-1 198)
+    for m in re.finditer(r'[^.!?\n]{0,20}\s안이(?:면|었|에요|예요|라면)[^.!?\n]{0,10}', text):
+        print(f'[경고·소리] "{m.group(0).strip()}" — "아니…"로 들려 뜻이 뒤집힘, "그렇다면"·"그 값 안에 들었"처럼')
     return not bad, per, multi, len(sents), bad
 
 
@@ -670,6 +705,8 @@ def thumb_check(lines):
             if not re.search(r'(연|금리|이율)\s*$', l[:m.start()]): bad.append(f'A31 계산기 소수점 "{m.group(0)}": {l} — "77세쯤"·"3분의 1"로, 정확한 값은 설명란')
         if re.search(r'\((잠정|추정|확정|세전|세후|기준)\)|중앙값?|평당\s*중앙|\d{4}[.\-/]\d{1,2}[.\-/]\d{1,2}\s*[~–-]|출처', l):
             bad.append(f'A33 문서 단서 꼬리: {l} — 설명란으로')
+        if re.search(r'(\d{4}\s*[년.]\s*)?\d{1,2}\s*월(\s*\d{1,2}\s*일)?\s*기준|\d{1,2}[./]\d{1,2}\s*기준', l):
+            bad.append(f'A52 날짜 기준 꼬리(알약 속 "(10월 6일 기준)"): {l} — 기준일은 설명란으로')
     return bad
 
 
@@ -682,7 +719,7 @@ def main(a):
         val, hits, n = score(' '.join(a[1:]), SKIP); print(f'AI 티 {val} ({n}자)'); [print('  ', h) for h in hits]; return 0
     if a[0] == 'thumb':
         bad = thumb_check(a[1:])
-        if not bad: print('썸네일 글자 A30·A31·A33 통과 (A32 그리다 만 화면은 눈으로)'); return 0
+        if not bad: print('썸네일 글자 A30·A31·A33·A52 통과 (A32 그리다 만 화면은 눈으로)'); return 0
         print('썸네일 글자 AI 티'); [print('  ', b) for b in bad]; return 5
     if a[0] == 'script':
         ok, per, multi, n, bad = script_check(script_text(a[1]))
@@ -690,7 +727,8 @@ def main(a):
         for b in bad: print('  ', b)
         if not ok: print('  숫자·사실 문장은 바꾸지 않는다: 말에는 숫자 하나·반올림, 정확한 값은 화면 자막으로 옮긴다.')
         habits = script_habits(script_lines(a[1]), script_lines(a[1], 'say'), screen_titles(a[1]))
-        print('말 습관(정밀 숫자·순번 3개↑·말 목차 3연속·꼬리표 낭독·A40 면책 반복/끝 3줄·A41 분이라면 5줄↑·A43 예고·A44 끝 정리·A46 한계 낱말 3번↑·A47 같은 판 제목 3장↑) — ' + ('통과' if not habits else f'{len(habits)}건 걸림'))
+        habits += [('A48 화면에 작업 메모', 0, m) for m in screen_memos(a[1])]
+        print('말 습관(정밀 숫자·순번 3개↑·말 목차 3연속·꼬리표 낭독·A40 면책 반복/끝 3줄·A41 분이라면 5줄↑·A43 예고·A44 끝 정리·A46 한계 낱말 3번↑·A47 같은 판 제목 3장↑·A48 화면 작업 메모) — ' + ('통과' if not habits else f'{len(habits)}건 걸림'))
         for k, i, l in habits: print(f'   [{k}] {i}줄: {l[:70]}')
         if habits: print('  정밀 숫자는 말로 반올림(정확값은 화면), 순번·목차는 질문 한 줄로, 꼬리표는 말에서 지운다, 면책은 편당 1줄·끝 3줄 밖, 한계 말은 한 번만, 판 제목은 그 판 내용으로.')
         sp, over = spoken_check(script_lines(a[1]))

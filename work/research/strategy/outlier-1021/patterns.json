@@ -1,0 +1,161 @@
+{
+ "total": 920,
+ "patterns": [
+  {
+   "pattern": "한장표쇼츠(≤12초)",
+   "videos": 308,
+   "channels": 53,
+   "new_ch": 36,
+   "med_x": 40.2,
+   "med_views": 28460,
+   "short_share": 1.0,
+   "x50": 131,
+   "long_n": 0,
+   "long_med_views": null
+  },
+  {
+   "pattern": "순위·TOP N",
+   "videos": 89,
+   "channels": 35,
+   "new_ch": 26,
+   "med_x": 35.2,
+   "med_views": 25464,
+   "short_share": 0.85,
+   "x50": 32,
+   "long_n": 13,
+   "long_med_views": 18642
+  },
+  {
+   "pattern": "N가지·N선 목록",
+   "videos": 136,
+   "channels": 57,
+   "new_ch": 37,
+   "med_x": 31.0,
+   "med_views": 27963,
+   "short_share": 0.63,
+   "x50": 47,
+   "long_n": 50,
+   "long_med_views": 28054
+  },
+  {
+   "pattern": "~한 (진짜) 이유",
+   "videos": 115,
+   "channels": 55,
+   "new_ch": 41,
+   "med_x": 29.3,
+   "med_views": 38073,
+   "short_share": 0.42,
+   "x50": 39,
+   "long_n": 67,
+   "long_med_views": 19386
+  },
+  {
+   "pattern": "나이·인물 사연(N세 ○○한 남자…)",
+   "videos": 36,
+   "channels": 13,
+   "new_ch": 8,
+   "med_x": 21.0,
+   "med_views": 34684,
+   "short_share": 0.03,
+   "x50": 12,
+   "long_n": 35,
+   "long_med_views": 34954
+  },
+  {
+   "pattern": "A vs B 비교",
+   "videos": 29,
+   "channels": 20,
+   "new_ch": 12,
+   "med_x": 54.6,
+   "med_views": 31834,
+   "short_share": 0.59,
+   "x50": 16,
+   "long_n": 12,
+   "long_med_views": 32908
+  },
+  {
+   "pattern": "계산·얼마 받나(질문)",
+   "videos": 72,
+   "channels": 45,
+   "new_ch": 33,
+   "med_x": 45.2,
+   "med_views": 22200,
+   "short_share": 0.71,
+   "x50": 31,
+   "long_n": 21,
+   "long_med_views": 11610
+  },
+  {
+   "pattern": "모르면 손해·놓치는",
+   "videos": 40,
+   "channels": 19,
+   "new_ch": 14,
+   "med_x": 40.8,
+   "med_views": 68425,
+   "short_share": 0.85,
+   "x50": 19,
+   "long_n": 6,
+   "long_med_views": 8716
+  },
+  {
+   "pattern": "총정리·완전정리·한눈에",
+   "videos": 59,
+   "channels": 25,
+   "new_ch": 15,
+   "med_x": 34.2,
+   "med_views": 41980,
+   "short_share": 0.88,
+   "x50": 19,
+   "long_n": 7,
+   "long_med_views": 37489
+  },
+  {
+   "pattern": "연예인·재벌·인물 돈",
+   "videos": 47,
+   "channels": 31,
+   "new_ch": 21,
+   "med_x": 40.8,
+   "med_views": 26270,
+   "short_share": 0.81,
+   "x50": 22,
+   "long_n": 9,
+   "long_med_views": 18996
+  },
+  {
+   "pattern": "지역·단지(입지·아파트 역사)",
+   "videos": 32,
+   "channels": 6,
+   "new_ch": 4,
+   "med_x": 28.1,
+   "med_views": 5732,
+   "short_share": 0.91,
+   "x50": 4,
+   "long_n": 3,
+   "long_med_views": 9702
+  },
+  {
+   "pattern": "속보·발표·바뀐다(제도 뉴스)",
+   "videos": 74,
+   "channels": 43,
+   "new_ch": 29,
+   "med_x": 37.8,
+   "med_views": 28196,
+   "short_share": 0.61,
+   "x50": 31,
+   "long_n": 29,
+   "long_med_views": 17436
+  },
+  {
+   "pattern": "실패·몰락·위기(사건)",
+   "videos": 46,
+   "channels": 35,
+   "new_ch": 24,
+   "med_x": 26.2,
+   "med_views": 26287,
+   "short_share": 0.37,
+   "x50": 17,
+   "long_n": 29,
+   "long_med_views": 11986
+  }
+ ]
+}

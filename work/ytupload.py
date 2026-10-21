@@ -57,6 +57,10 @@ def upload(path, title, desc, privacy='private', tags='', paid=False):
     ok_sz, msg_sz = safezone.gate(path)
     print(msg_sz)
     if not ok_sz: print('올리지 않는다: 안전 영역 관문'); sys.exit(11)
+    # 0초 글자 관문(10/21 A51, research/longform/thumb-gap-1021.md ③): 세로 영상 0초 장에 페이드·떠오르기 중인 글자 금지 — 10/23부터 거부, 그 전엔 경고
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'research', 'cardshorts')); import emptyscan
+    ok_f0, msg_f0 = emptyscan.gate_fade0(path); print(msg_f0)
+    if not ok_f0: print('올리지 않는다: 0초 글자 관문'); sys.exit(14)
     # 디자인 관문(work/bgcheck.py): 쇼츠 = v3(10/16) 실사 배경 + 자막 한 줄 72px 기준 · 롱폼 = 10/17 기준(실사 10%↑·컷 분당 3↑·같은 판 20초↓·판 큰 글자 9%↑·판 8줄↓, visual-gap-1017)
     import bgcheck
     ok_bg, msg_bg = bgcheck.gate(path)

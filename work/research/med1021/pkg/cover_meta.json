@@ -1,0 +1,19 @@
+{
+ "type": "chart",
+ "source": "소득세법 제59조의4 제2항 · 파이어맵 calc.py(총급여 5,000만원, 부모님 병원비 1,000만원 65세 이상/미만) — mkimg.py로 직접 그린 막대 그래프",
+ "made_at": "2026-10-21 09:40",
+ "by": "research/med1021/mkimg.py",
+ "out": "img/00.png",
+ "board": [
+  "h1helio1021",
+  "yen1021",
+  "cudep1020",
+  "seqrisk1020",
+  "penkunbo1020",
+  "divdrop1020",
+  "loan25_1020",
+  "irp70_1020",
+  "cardded1020",
+  "bondetf1020"
+ ]
+}

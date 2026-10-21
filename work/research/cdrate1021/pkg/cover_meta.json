@@ -1,0 +1,19 @@
+{
+ "type": "chart",
+ "source": "한국은행 경제통계시스템(ECOS) 817Y002 시장금리(일별) CD(91일)·KOFR 2025.10.20~2026.10.19 — mkimg.py로 직접 그린 선 그래프",
+ "made_at": "2026-10-21",
+ "by": "research/cdrate1021/mkimg.py",
+ "out": "img/00.png",
+ "board": [
+  "t1cafe1021",
+  "psfund1021",
+  "med1021",
+  "h1helio1021",
+  "yen1021",
+  "cudep1020",
+  "seqrisk1020",
+  "penkunbo1020",
+  "divdrop1020",
+  "loan25_1020"
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-21 12:48",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "사이드카 걸려도/보통 주문은 그대로",
+ "num": "올해 코스피 52번째",
+ "sub": "거래소 공시 기준 · 10월 21일 오전 10시 51분",
+ "label": "오늘 코스피 매수 사이드카",
+ "src": "",
+ "icon": "trending-up",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 119,
+ "num_px": 95,
+ "sub_px": 48,
+ "board": [
+  "t1cafe1021",
+  "psfund1021",
+  "med1021",
+  "h1helio1021",
+  "yen1021",
+  "cudep1020",
+  "seqrisk1020",
+  "penkunbo1020",
+  "divdrop1020",
+  "loan25_1020"
+ ]
+}

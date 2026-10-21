@@ -18,7 +18,7 @@ const YEL = '#FFD000', RED = '#FF6B5E', GRN = '#4ADE80';
 const starts = (lines: PLine[]) => { const o: number[] = []; let a = 0; for (const l of lines) { o.push(a); a += l.frames; } return o; };
 
 // 그림: 인물 가운데(cx)를 화면 가운데에 두고, 장면 동안 확대·옆 흐름(켄 번스). 장면 첫 8프레임은 4% 큰 데서 들어온다(컷이 보이게).
-const Picture: React.FC<{s: PScene}> = ({s}) => {
+const Picture: React.FC<{s: PScene; first?: boolean}> = ({s, first}) => {
   const f = useCurrentFrame();
   const t = interpolate(f, [0, s.frames], [0, 1], {...CL, easing: Easing.inOut(Easing.sin)});
   const punch = interpolate(f, [0, 8], [1.04, 1], {...CL, easing: Easing.out(Easing.cubic)});
@@ -27,7 +27,7 @@ const Picture: React.FC<{s: PScene}> = ({s}) => {
   let x = W / 2 - s.cx * sc + s.pan * t; x = Math.min(0, Math.max(W - iw, x));
   let y = s.focus * 1080 * (PH / 1080) * (1 - z);   // 확대 기준점 = 얼굴 높이(focus) — 그 높이는 화면에서 제자리
   y = Math.min(0, Math.max(PH - ih, y));
-  const o = interpolate(f, [0, 5], [0.35, 1], CL);
+  const o = first ? 1 : interpolate(f, [0, 5], [0.35, 1], CL);   // A51(10/21): 영상 0초 장면은 처음부터 다 보이게 — 표지 첫 장 반투명 금지
   const bs = 1920 / 1080 * 1.05; const bw = 1920 * bs;   // 흐린 바탕: 같은 그림을 화면 전체(0~1920) 높이로 덮는다
   return (
     <>
@@ -81,8 +81,8 @@ const Caption: React.FC<{s: PScene}> = ({s}) => {
 
 // 10/16 안전 영역: 숫자 카드는 자막(아래 3줄) 바로 위, 안전 영역 왼쪽 안. 글자 크기는 너비에 맞춰 줄인다.
 const CAP3_TOP = DS.capCy - DS.capH / 2;      // v3 10/16: 자막은 한 줄 테두리(parts/safeframe OutlineCaption, 가운데 y 1168) — 경쟁 9편 중 8편이 한 줄. 숫자 카드는 그 위
-const NumCard: React.FC<{s: PScene}> = ({s}) => {
-  const f = useCurrentFrame(); const sp = spring({frame: f - 3, fps: 30, config: {damping: 13, mass: 0.7}});
+const NumCard: React.FC<{s: PScene; first?: boolean}> = ({s, first}) => {
+  const f = useCurrentFrame(); const sp = first ? 1 : spring({frame: f - 3, fps: 30, config: {damping: 13, mass: 0.7}});   // A51: 0초 장면은 이미 들어온 꼴
   // 카드 안쪽 여백(26×2)+글자 폭 어림 오차 — 10/16 g1s_asym '4% ~ 34% 손해'가 카드 끝에 닿음
   const big = fit(s.num, IW - 110, 140, 40); const sub = Math.max(44, Math.min(52, fit(s.sub, (IW - 60) * 2, 52, 44)));   // 23시 사장님: 회색 작은 설명은 화면 높이 2.5%(48px) 안팎 이상 — 넘치면 두 줄
   // 23시 사장님 '가운데 정렬': 경쟁 쇼츠 10편 제목·자막 가운데 → 숫자 카드도 안전 영역 가운데
@@ -99,17 +99,18 @@ const NumCard: React.FC<{s: PScene}> = ({s}) => {
 };
 
 const Scene: React.FC<{s: PScene; from: number; total: number; p: C2PProps}> = ({s, from, total, p}) => {
+  const first = from === 0;
   const f = useCurrentFrame(); const st = starts(s.lines);
-  const yo = interpolate(f, [2, 10], [0, 1], CL);
+  const yo = first ? 1 : interpolate(f, [2, 10], [0, 1], CL);
   return (
     <AbsoluteFill>
-      <Picture s={s} />
+      <Picture s={s} first={first} />
       <div style={{position: 'absolute', left: 0, top: 0, width: W, height: 640, background: 'linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.6) 70%, rgba(0,0,0,0))'}} />
       <div style={{position: 'absolute', left: 0, top: CAP3_TOP - 520, width: W, height: 1920 - (CAP3_TOP - 520), background: 'linear-gradient(rgba(16,17,20,0), rgba(16,17,20,0.82) 40%, rgba(16,17,20,0.7) 75%, rgba(16,17,20,0.45))'}} />
       {s.year ? <div style={{position: 'absolute', left: TX0 + PAD, width: IW, textAlign: 'center', top: Q_END + 14, opacity: yo}}>
         <span style={{...F, fontWeight: 800, fontSize: fit(s.year, IW - 40, 52, 30), color: '#FFD000', whiteSpace: 'nowrap', textShadow: outline(5)}}>{s.year}</span></div> : null}
-      <NumCard s={s} />
-      <OutlineCaption lines={s.lines} />
+      <NumCard s={s} first={first} />
+      <OutlineCaption lines={s.lines} first={first} />
       {/* 10/19: 진행 막대 뺌(템플릿 티) */}
       {s.lines.map((l, i) => <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
     </AbsoluteFill>

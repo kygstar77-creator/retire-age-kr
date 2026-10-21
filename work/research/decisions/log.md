@@ -2727,3 +2727,6 @@
 2026-10-21 09:54 · firemap-watchdog · 사이트 4쪽 curl 200·제목 일치 · 하루 1번 점검
 2026-10-21 11:04 · firemap-write-b · 10:40 카페 칸(비축 0)에 새 편 psfund1021 '연금저축펀드 vs 연금저축보험, 10년 수익률 차이는?' 관문 통과·발행 · 오늘 칸에 연금계좌(편성 1칸) 없었고 연금저축펀드 검색 17,120, 우리 카페에 보험 vs 펀드 글 없음 · 레드팀이 '보험 0.8%=작년 한 해'·'백서가 상품 비교 한계' 오독 2건 잡아 고침
 2026-10-21 11:16 · firemap-write-b · 완료: 10:40 칸 psfund1021 발행 https://cafe.naver.com/firemap/348 verify OK
+2026-10-21 11:31 · firemap-video-producer · H-3 150행 짧은 줄은 --nat 없이 다시 받아 8.22음절/초로 통과시킴(대본 그대로, editor 문장) · --nat 5번 모두 8.8 넘음
+2026-10-21 11:31 · firemap-video-producer · T-1 '등본 한 통' 부정확은 재녹음 대신 정정 첫 댓글로(공개 당일, youtube-loop 판단 따름) · 댓글 UgwpLWHBjmSm2N2yyu14AaABAg
+2026-10-21 11:31 · firemap-video-producer · H-3 카페 짝 글은 영상 뒤 12:10 칸(대본에 카페 예고 말 없음)·쇼츠 3편 spec(전세가율·앞뒤 번호·압구정 최고가 — 서로 다른 질문)

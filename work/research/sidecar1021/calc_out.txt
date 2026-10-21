@@ -1,0 +1,20 @@
+기간 2000-01-04 ~ 2026-10-20 거래일 6597 6일 넘는 빈 곳 [(datetime.date(2000, 12, 26), datetime.date(2001, 1, 2)), (datetime.date(2017, 9, 29), datetime.date(2017, 10, 10)), (datetime.date(2023, 9, 27), datetime.date(2023, 10, 4)), (datetime.date(2025, 1, 24), datetime.date(2025, 1, 31)), (datetime.date(2025, 10, 2), datetime.date(2025, 10, 10))]
++4% 이상 합 83  -4% 이하 합 99
+2000 상승 16 하락 22
+2001 상승 11 하락 6
+2002 상승 5 하락 6
+2003 상승 6 하락 2
+2004 상승 2 하락 3
+2007 상승 2 하락 3
+2008 상승 10 하락 13
+2009 상승 2 하락 4
+2011 상승 2 하락 5
+2018 상승 0 하락 1
+2020 상승 4 하락 5
+2023 상승 1 하락 0
+2024 상승 0 하락 1
+2025 상승 1 하락 1
+2026 상승 21 하락 27
+2026 상승일 [(datetime.date(2026, 2, 3), 6.84), (datetime.date(2026, 2, 9), 4.1), (datetime.date(2026, 3, 5), 9.63), (datetime.date(2026, 3, 10), 5.35), (datetime.date(2026, 3, 18), 5.04), (datetime.date(2026, 4, 1), 8.44), (datetime.date(2026, 4, 8), 6.87), (datetime.date(2026, 5, 4), 5.12), (datetime.date(2026, 5, 6), 6.45), (datetime.date(2026, 5, 11), 4.32), (datetime.date(2026, 5, 21), 8.42), (datetime.date(2026, 6, 9), 8.18), (datetime.date(2026, 6, 12), 4.63), (datetime.date(2026, 6, 15), 5.2), (datetime.date(2026, 6, 25), 5.42), (datetime.date(2026, 7, 3), 5.76), (datetime.date(2026, 7, 15), 6.24), (datetime.date(2026, 7, 23), 4.4), (datetime.date(2026, 7, 31), 17.91), (datetime.date(2026, 8, 20), 5.89), (datetime.date(2026, 9, 7), 4.61)]
+2026 하락일 [(datetime.date(2026, 2, 2), -5.26), (datetime.date(2026, 3, 3), -7.24), (datetime.date(2026, 3, 4), -12.06), (datetime.date(2026, 3, 9), -5.96), (datetime.date(2026, 3, 23), -6.49), (datetime.date(2026, 3, 31), -4.26), (datetime.date(2026, 4, 2), -4.47), (datetime.date(2026, 5, 15), -6.12), (datetime.date(2026, 6, 5), -5.54), (datetime.date(2026, 6, 8), -8.29), (datetime.date(2026, 6, 10), -4.52), (datetime.date(2026, 6, 23), -9.99), (datetime.date(2026, 6, 26), -5.81), (datetime.date(2026, 7, 2), -7.89), (datetime.date(2026, 7, 7), -4.91), (datetime.date(2026, 7, 8), -5.35), (datetime.date(2026, 7, 13), -8.95), (datetime.date(2026, 7, 16), -6.37), (datetime.date(2026, 7, 20), -4.46), (datetime.date(2026, 7, 24), -5.72), (datetime.date(2026, 7, 28), -10.84), (datetime.date(2026, 7, 29), -5.98), (datetime.date(2026, 8, 3), -5.12), (datetime.date(2026, 8, 6), -4.58), (datetime.date(2026, 8, 19), -5.8), (datetime.date(2026, 10, 13), -5.46), (datetime.date(2026, 10, 15), -7.57)]
+2026 거래일 194

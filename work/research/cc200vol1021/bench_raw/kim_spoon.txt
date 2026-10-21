@@ -1,0 +1,77 @@
+제목: 월배당 커버드콜의 치명적 단점 3가지 (ft. KODEX 200타겟위클리커버드콜) : 네이버 블로그
+주소: https://blog.naver.com/kim_spoon/224447395112
+발행: 2026-10-20 09:17 KST
+댓글: 11
+이미지 수: 11
+---
+class="se-main-container">
+[이미지: https://mblogthumb-phinf.pstatic.net/MjAyNjEwMjBfMTU1/MDAxNzkyNDUyODA1Nzcz.-IfYIyZVmZisMfh5zuikGvrTQYrLu6QBAH0bKaCKjJkg.-lkjl1uqmA-Sw8Ki3PTx_-4WKzZaSx12_YI9bh-mvPMg.JPEG/%EC%BB%A4%EB%B2%84%EB%93%9C%EC%BD%9C%EB%8B%A8%EC%A0%90.jpg?type=w80_blur]
+안녕하세요. 연금 투자용 ETF를 분석하는 김스푼입니다.
+월배당 커버드콜로 은퇴 계획을 세우는 사람들이 많이 보이는 요즘입니다.
+저 역시 커버드콜을 일부 섞어서 은퇴하는 것을 목표로 하고 있는데요. 그래서 커버드콜에도 직접 조금씩 투자하면서, 내 은퇴를 맡겨도 되는 상품이 맞는지 꼼꼼히 살펴보고 있습니다.
+오늘은 커버드콜에 투자하고 있거나 투자 계획이 있는 사람이라면 반드시 알아야 하는 타겟 커버드콜의 맹점에 대해 살펴보겠습니다.
+결론부터 먼저 말씀드리면, 타겟 커버드콜은 하락장에서 분배금이 줄고, 원금이 깎일 수 있으며, 반등장에서는 회복이 더딜 수 있습니다. 하나씩 살펴볼게요.
+ 타겟 커버드콜 한입 떠먹기
+[이미지: https://mblogthumb-phinf.pstatic.net/MjAyNjEwMjBfOTMg/MDAxNzkyNDUyMTQ2OTUz.VGgSfjhZsu1NmvpQkFaRdyGzbskLwPmpWaCFU2SZYkIg.64LNfF_ee4glcsUKA2leiJkoywoIndxnq0HLeLhJ_qcg.PNG/image.png?type=w80_blur]
+오늘 살펴볼 커버드콜은 현재 우리나라에서 가장 인기가 많은 '타겟' 커버드콜입니다.
+타겟 커버드콜은 목표 분배율을 정해두고, 시장 상황에 따라 콜옵션 매도 비중을 조절하는 커버드콜인데요.
+기존 1세대 커버드콜은 콜옵션을 100% 매도해서 주가 상승을 거의 따라가지 못했습니다. 이 단점을 보완한 상품이 바로 2세대 커버드콜인 타겟 커버드콜입니다.
+목표 분배율을 채울 만큼만 콜옵션을 매도하고, 시장 상황에 따라 매도 비중을 유동적으로 조절합니다. 덕분에 주가 상승분을 높은 비율로 따라갈 수 있어서, 국내 투자자에게도 인기가 많죠.
+국내 상장된 타겟 커버드콜에는 대표적으로 KODEX 200타겟위클리커버드콜과, TIGER 미국나스닥100타겟데일리커버드콜이 있습니다.
+ 주가가 빠지면 분배금도 줄어든다
+[이미지: https://mblogthumb-phinf.pstatic.net/MjAyNjEwMjBfODIg/MDAxNzkyNDUyMTY2OTYx.dOeRHbo85xNqVw9MPV3q58J6iQaA5TjovUEHA1umaJIg.LedjNsrcs7sedrarvcbhY05nni3zYmZJLMbBmWqJyAog.PNG/image.png?type=w80_blur]
+타겟 커버드콜은 주가가 빠지면 분배금도 줄어듭니다. 목표 분배'율'에 따라 분배금을 지급하기 때문이죠.
+예를 들어, 연 15%(월 1.25%)의 분배율을 지급하는 ETF가 있다고 해볼게요.
+주가 10,000원: 월 분배금 125원
+주가 8,000원: 월 분배금 100원(-20%)
+주가 7,000원: 월 분배금 87원(-30%)
+분배율은 매달 동일하게 1.25%지만, 분배금은 주가가 빠진 만큼 그대로 줄어들었습니다. 분배금은 현재 주가에 분배율을 곱한 값이니, 어찌 보면 당연한 결과라고 할 수 있죠.
+실제로 KODEX 200타겟위클리커버드콜은 6월 1일부터 10월 1일까지 주가가 약 25%가 빠졌는데, 같은 기간 분배금 역시 약 20% 줄었습니다.
+[이미지: https://mblogthumb-phinf.pstatic.net/MjAyNjEwMjBfMjc1/MDAxNzkyNDUyMTk2NTA0.7d_XcxdKhGMaMq61EyR8WXReVDqCyIJAzrqsqg0c-f0g.xwWDFpcyGIAFaL4CR1X5SX4RPqVljUUDve3mW7SO0REg.PNG/image.png?type=w80_blur]
+커버드콜만 믿고 은퇴 계획을 세우면 안 되는 이유입니다. 커버드콜은 기초지수의 주가가 하락하면 똑같이 빠지고, 분배금도 함께 줄어듭니다.
+ 내 원금도 줄어들 수 있다
+ 하락장에서 분배금이 줄어드는 것 만큼 큰 문제가 또 있습니다. 하락장에서 받은 분배금이 사실은 내 원금을 깎아 지급한 것일 수 있다는 점입니다.
+커버드콜의 분배금 재원은 크게 세 가지입니다.
+[이미지: https://mblogthumb-phinf.pstatic.net/MjAyNjEwMjBfMjQw/MDAxNzkyNDUyMzIzNzA4.NCrqAaIH86iwZSGB9X3D5uj8EyyCkCiSgGNiz7AesRwg.MEiATkYBkrxbppBZL6yB-2V1-gJeeI40sr1OxRoYZagg.PNG/image.png?type=w80_blur]
+편입 기업의 배당금
+콜옵션을 팔고 받은 옵션 프리미엄
+보유 주식 매도
+이 중 대부분은 옵션 프리미엄입니다. KODEX 200타겟위클리커버드콜만 봐도 분배금의 약 90%는 옵션 프리미엄으로 구성됩니다.
+그런데 옵션 프리미엄은 시장 변동성에 따라 달라집니다. 급락장에는 변동성이 커서 프리미엄이 높을 수 있지만, 급락 이후 시장이 잠잠해지면 옵션 프리미엄만으로는 목표 분배율을 채우기에 부족할 수 있죠.
+이때 운용사는 일부 자산을 팔아 분배금을 마련할 수 있고, 그 결과 투자 원금이 줄어들 수 있습니다. 이것이 바로 'ROC(원금반환)' 문제입니다.
+이 내용은 KODEX 200타겟위클리커버드콜 투자설명서에도 위험 요소로 명시되어 있습니다.
+ 분배금 지급 재원이 부족할 경우 일부 자산 매각을 통해 분배금을 마련할 수 있으며, 분배금 지급으로 인해 투자원금이 감소될 수 있습니다.
+ KODEX 200타겟위클리커버드콜 투자설명서
+[이미지: https://mblogthumb-phinf.pstatic.net/MjAyNjEwMjBfOTcg/MDAxNzkyNDUyMzg0NDg0.81zV2jkVClV4MbMH4zDjO6wB4uKOLAQyodhjFbB3yNIg.EH0VmDvOndPHkufs35lUxMI9nc24MYSEBzVXxK5wlE4g.PNG/image.png?type=w80_blur]
+이 경우 분배금을 받고는 있지만, 사실은 내가 가진 주식 일부를 팔아 현금으로 돌려받은 셈인 거죠.
+ 하락 후 반등에 취약하다
+[이미지: https://mblogthumb-phinf.pstatic.net/MjAyNjEwMjBfMTY2/MDAxNzkyNDUyMzk5MDc3.o0Fvx18ETH4bDqLNs710ud0lbmSLDeuwJgcoKP8fotog.y12zcszxv-MDPlauASeUYACjT2mIKVjlrHQZ72HX5SEg.PNG/image.png?type=w80_blur]
+커버드콜은 주가 상승을 일부 포기하는 대신 프리미엄(분배금)을 받는 상품입니다. 그래서 깊은 하락 이후 반등장에서 취약합니다.
+하락장에서는 본주와 비슷하게 빠지는데, 반등장에서는 콜옵션을 판 만큼 상승분이 제한됩니다. 상승의 일부를 분배금과 맞바꿨기 때문이죠.
+타겟 커버드콜은 아니지만, 대표적인 예시가 미국의 JEPI입니다.
+[이미지: https://mblogthumb-phinf.pstatic.net/MjAyNjEwMjBfNjcg/MDAxNzkyNDUyNTMxMzEz.GL1bhnt6nXBJho_M21n1p_DImSlO67KdCsicLFHRN6Ag.GFLXwXl03t6wjUTCbOLJL6VanBTdGkjIkZ3TXnCuCOsg.PNG/image.png?type=w80_blur]
+JEPI의 주가는 2021년 12월 말 약 63달러였는데, 2022년 깊은 하락장을 겪은 이후 약 4년이 지난 현재까지도 약 57달러로 고점을 회복하지 못했습니다.
+결국 타겟 커버드콜은 하락장에서 분배금도 줄고, 반등장에서 주가 상승도 따라가지 못하는 일이 동시에 생길 수 있습니다.
+ 정리해보면
+[이미지: https://mblogthumb-phinf.pstatic.net/MjAyNjEwMjBfMTQx/MDAxNzkyNDUyNTk4OTkz.l6If8J8rLAeFGleWopd93697JXeo4Ipg3QK7HH2VqmEg.Q-QF-kNMCbgfobckI9MGRG6M4Xa6o5kUOnFZCkv1-wcg.PNG/image.png?type=w80_blur]
+하락장: 분배금이 주가 하락만큼 줄어든다.
+하락 이후: 프리미엄이 줄어들면 목표 분배율을 맞추기 위해 일부 자산을 매도하여 지급할 수 있다.
+반등장: 콜옵션 매도로 인해 주가 상승이 제한되어 회복이 더디다.
+ 김스푼의 생각
+ 최근 몇년 사이에 커버드콜의 인기가 크게 증가했습니다.
+자본시장연구원에 따르면 국내 커버드콜 ETF 시장은 22년 말 1223억원에서 올해 5월 기준 24.5조원으로 급증했습니다.
+하지만 우려스러운건, 요즘 인기를 끄는 커버드콜 대부분은 2022년 하락장을 겪지 못했다는 점인데요.
+국내 상장 커버드콜 순자산 1, 2위인 KODEX 200타겟위클리, TIGER 나스닥100타겟데일리 모두 2024년에 상장됐습니다. 즉, 아직 제대로된 하락장을 겪지 못했죠.
+저 역시 커버드콜에 투자하고 있지만, 커버드콜 투자자라면 하락장이 올 경우 생기는 문제점에 대해서는 미리 인지할 필요가 있겠습니다.
+특히 은퇴자 혹은 은퇴를 앞둔 분이라면 커버드콜로만 포트폴리오를 구성하기 보다는, 현금과 배당주를 섞는 등의 보완 장치를 마련하면 좋을 것 같습니다.
+※ 제 블로그의 모든 글은 투자 시의 참고용 정보일 뿐, 특정 금융상품의 매수나 매도를 권유하지 않습니다. 투자에 대한 판단과 책임은 투자자 본인에게 있습니다.
+ 함께 읽으면 좋은 글
+[이미지: https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyNjA2MTlfOTAg%2FMDAxNzgxNzk3OTkyNDc5.dK2xKYMGTPivBK2hV2yfJBQhVTtspVouBnR5Keil28og.SPxHYmsuwHLGGN3jknuA3OEp62cqQ_y4kPqM842pb4Ig.JPEG%2Fjepq.jpg%3Ftype%3Dw2%22&type=ff500_300]
+ JEPQ 대신 담을 만한 국내 상장 커버드콜 ETF 3종 비교
+ 안녕하세요. 연금 투자용 ETF를 분석하는 김스푼입니다. JEPQ는 JEPI와 함께 미국에서 가장 인...
+ blog.naver.com
+[이미지: https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyNjA3MTBfMTQ3%2FMDAxNzgzNjk1MjMzMDYx.UduSKZ4N7hycgLd4WcRsBgMGXj8_5dp2uY6eUZl7Okog.6NmLiELUpBxA430qBkmbN4NOGpZ_7GD8U2DxB5uEVf0g.JPEG%2Fqld_jepq.jpg%3Ftype%3Dw2%22&type=ff500_300]
+ QLD + JEPQ 투자 전략 분석, 월배당 100만원 가능할까?
+ 안녕하세요. ETF로 연금 투자하는 김스푼입니다. 현재 적립식으로 투자 중인 ISA 계좌의 납입 한도를...
+ blog.naver.com
+ <div class="

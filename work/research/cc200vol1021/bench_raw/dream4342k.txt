@@ -1,0 +1,51 @@
+제목: KODEX 200타겟위클리커버드콜 주가 분배금 배당락일 수익률 총 정리 : 네이버 블로그
+주소: https://blog.naver.com/dream4342k/224447630654
+발행: 2026-10-20 12:54 KST
+댓글: 2
+이미지 수: 9
+---
+class="se-main-container">
+[이미지: https://mblogthumb-phinf.pstatic.net/MjAyNjEwMjBfMjI3/MDAxNzkyNDY1NzIzODI3.zekOnuIej62fDfpk-RG70H7SsOpg7fJ8qhFmg3_TzjUg.WxBSKc3DMx0Ql76TooCRGzsYx6CrVqQC41AHkzE9v30g.PNG/KODEX_200%ED%83%80%EA%B2%9F%EC%9C%84%ED%81%B4%EB%A6%AC_%EC%BB%A4%EB%B2%84%EB%93%9C%EC%BD%9C-1.png?type=w80_blur]
+ 월배당 ETF를 살펴보다가 KODEX 200타겟위클리커버드콜의 10월 분배금이 확정됐다는 소식을 확인했다.
+분배금은 적지 않은데 최근 주가는 크게 흔들렸다. 지금 매수해도 이번 분배금을 받을 수 있는지, 높은 분배금만 보고 접근해도 되는지 정리해봤다.
+KODEX 200타겟위클리커버드콜 ETF 소개
+[이미지: https://mblogthumb-phinf.pstatic.net/MjAyNjEwMjBfNDgg/MDAxNzkyNDY4MjIxNzM0.PfQmlGfgbdWmqv7U1sMD-gLgqdZvzfYZ9p17zVSOnnIg.fhFyVwOC0lgpomuWUhDDuMBQsdiNwSf1KBobKJms_jMg.PNG/KODEX_200_%EC%9C%84%ED%81%B4%EB%A6%AC_%EC%BB%A4%EB%B2%84%EB%93%9C%EC%BD%9C_ETF_%EC%95%88%EB%82%B4-1.png?type=w80_blur]
+ KODEX 200타겟위클리커버드콜의 종목코드는 498400이다. 코스피200 종목에 투자하면서 코스피200 위클리 콜옵션을 매도해 연간 15% 수준의 옵션 프리미엄 창출을 목표로 하는 지수를 추종한다. 
+목표라는 표현이 중요하다. 연 15% 수익이나 분배금을 보장한다는 뜻은 아니다.
+10월 분배금과 지급일
+[이미지: https://mblogthumb-phinf.pstatic.net/MjAyNjEwMjBfMjE3/MDAxNzkyNDY4MjI4NDg3._hPO9dH0uqA8M_yQy7neRVts4_O6tKzmm8f_7nENBFIg.4pCWrV01CM-VGbA5qDuAcRvsp7JdFMSlml_3DOQCozIg.PNG/10%EC%9B%94_%EB%B6%84%EB%B0%B0%EA%B8%88%EA%B3%BC_%EC%A7%80%EA%B8%89%EC%9D%BC-2.png?type=w80_blur]
+ 삼성자산운용이 확정한 10월 분배금은 1좌당 281원이다. 운용사가 10월 12일 종가를 기준으로 계산한 분배율은 1.47%다. 분배락일은 10월 14일, 지급기준일은 10월 15일이며 실제 지급 예정일은 10월 19일이다.
+이번 분배금을 받으려면 분배락 전 거래일인 10월 13일까지 매수했어야 한다. 10월 16일 이후 매수한 투자자는 10월 분배금 지급 대상이 아니다. 
+100주를 보유했다면 세전 분배금은 2만8,100원이다. 일반적인 배당소득세 15.4%를 단순 적용하면 세후 약 2만3,773원이다. 
+KODEX 200타겟위클리커버드콜 ETF 주가와 수익률 확인
+[이미지: https://mblogthumb-phinf.pstatic.net/MjAyNjEwMjBfMTkg/MDAxNzkyNDY4MjQ4MTY4.F3KYmaOOPGj7WlkX8OpGb9vk4VJknRXebx0NC6fqu60g.i75NK51m7-xDgVEonOxDQR1l0-e4B0vVr85ypNcnwbQg.PNG/KODEX_200_%EC%A3%BC%EA%B0%80%EC%99%80_%EC%88%98%EC%9D%B5%EB%A5%A0_%EC%9D%B8%ED%8F%AC%EA%B7%B8%EB%9E%98%ED%94%BD-3.png?type=w80_blur]
+ 10월 16일 종가는 1만6,340원으로 전 거래일보다 1.65% 상승했다. 하지만 최근 1개월 가격 수익률은 -17.50%, 최근 1년 가격 수익률은 +31.12%였다.
+해당 수익률은 분배금 재투자를 반영하지 않은 시장가격 기준이다. 최근 한 달 수익률만 보면 분배금보다 가격 변동의 영향이 훨씬 컸다.
+분배금이 들어와도 ETF 가격이 그보다 크게 하락하면 전체 수익은 마이너스가 될 수 있다.
+KODEX 200타겟위클리커버드콜 ETF 구성종목과 보수
+[이미지: https://mblogthumb-phinf.pstatic.net/MjAyNjEwMjBfMjM5/MDAxNzkyNDY4MjgxMjA0.uAn4oiI1EMRzzGWZGFu_9Xcz9KyxO92xrjK_PdPdYU4g.0b8vy9W_wRMo7YUA77qWTTWwJ9TpqEVr_CP-hVtl6KEg.PNG/KODEX_200_%EA%B5%AC%EC%84%B1%EC%A2%85%EB%AA%A9%EA%B3%BC_%EB%B3%B4%EC%88%98-4.png?type=w80_blur]
+ 10월 13일 운용사 공개 기준 주요 편입 비중은 삼성전자 29.47%, SK하이닉스 22.97%, KODEX 200 14.13%였다.
+이어 SK스퀘어 2.30%, 삼성전기 2.13%, KB금융 1.25%, 현대차 1.10% 순이다. 반도체 대형주의 등락이 ETF 가격에 미치는 영향이 상당한 구성이다.
+표면 총보수는 연 0.390%다. 기타비용을 포함한 합성총보수는 연 0.4228%이며, 직전 회계연도 기준 증권거래비용 0.1015%가 별도로 발생했다.
+전망과 확인할 점
+[이미지: https://mblogthumb-phinf.pstatic.net/MjAyNjEwMjBfMTQ4/MDAxNzkyNDY4Mjk2MjA0.Y063ry5AmCkI9XBEMVTCn8NfOaGGQcjpf0RJpdFqQH4g.x-kz8lBF6WqBO8HKWVjZD0K62LmGb4B0McyOnVukFhIg.PNG/KODEX_200_%EC%BB%A4%EB%B2%84%EB%93%9C%EC%BD%9C_%EC%A0%84%EB%A7%9D%EA%B3%BC_%EC%9C%A0%EC%9D%98%EC%A0%90-5.png?type=w80_blur]
+ 커버드콜 전략은 주가가 횡보하거나 완만하게 오를 때 옵션 프리미엄을 확보하는 데 유리할 수 있다.
+반대로 코스피200이 빠르게 상승하면 매도한 콜옵션 때문에 상승 수익 일부가 제한될 수 있다. 시장이 급락할 때는 옵션 프리미엄이 손실을 줄여줄 수 있지만 하락 자체를 막아주지는 않는다.
+운용사가 분류한 위험등급도 1등급인 ‘매우 높은 위험’이다. 월분배라는 이유만으로 예금처럼 생각해서는 안 된다.
+ 함께 보면 좋은 글
+[이미지: https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyNjEwMDhfMjAy%2FMDAxNzkxNDI3OTIyMzA1.v8B19Sw_EmDWytqxlVdNcZWbxZ1T_HRta86LU5wfKGIg.lbD8a9Yf5aU6rR784sH7V3n-KQcEWIXDtlPbuSddUSkg.JPEG%2FKakaoTalk_20261008_114919700_02.jpg%3Ftype%3Dw2%22&type=ff500_300]
+ 부모 결혼자금 증여 없이 내집마련 성공한 부부
+ 요즘 집값이 많이 올랐다. 부모님 도움 없이 결혼하고 싶지만, 부모님 도움 없이 결혼하기 어려운 시기다. ...
+ blog.naver.com
+[이미지: https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyNjA5MjNfOCAg%2FMDAxNzkwMTMxODkxOTY0.1nkv_qOTk1hZJ9WsxD9NfiQq5fSQpirMxM4DspvDEegg.aWkpKvPBLqZ43sgR5zqmGASemt8Ung3V0YoJOHdYZPsg.JPEG%2F%25B9%25E6%25BE%25EE_%25C1%25A4%25BB%25E7%25B0%25A2%25C7%25FC.jpg%3Ftype%3Dw2%22&type=ff500_300]
+ 12억 지원받아도 맞벌이 해야 할까요?
+ 결혼할 때 부모님이 12억원을 지원해준다면 회사를 계속 다닐까. 나라면 이 정도 돈이면 당연히 그만둘 것 ...
+ blog.naver.com
+[이미지: https://dthumb-phinf.pstatic.net/?src=%22https%3A%2F%2Fblogthumb.pstatic.net%2FMjAyNjEwMTNfMjY1%2FMDAxNzkxODUyNDQ1ODk2.-7VbYFLjkVpiJZsaCqMcqxGCg8z0yMa8Ht1aUaLRFZgg._0ldo-12af42Cudh9lBsuionbKT-jJVCZlHD6RaapGgg.JPEG%2FKakaoTalk_20261013_092307943.jpg%3Ftype%3Dw2%22&type=ff500_300]
+ 30대 부부가 돈 6억 모은 방법
+ 온라인에 보면 30대에 순자산 10억을 모은 사람이 많이 보인다. 주식으로 성공한 걸까? 아니면 부동산이 오...
+ blog.naver.com
+출처 삼성자산운용 2026년 10월 월중배당 공지, KODEX 상품정보
+※ 이 글은 공개된 자료를 바탕으로 작성한 정보 공유 목적의 글이며, 특정 종목의 매수나 매도를 권유하지 않습니다. 투자 판단과 책임은 투자자 본인에게 있습니다.
+#KODEX200타겟위클리커버드콜 #커버드콜ETF #월배당ETF #ETF분배금 #KODEX200
+ <div class="

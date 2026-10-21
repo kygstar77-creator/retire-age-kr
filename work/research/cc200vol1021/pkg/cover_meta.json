@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-21 15:51",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "급락한 날/거의 똑같이 빠졌다",
+ "num": "−5.8% 대 −5.5%",
+ "sub": "KODEX 200 대 커버드콜 · 3% 이상 빠진 42일 평균",
+ "label": "KODEX 200타겟위클리커버드콜",
+ "src": "",
+ "icon": "trending-down",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 120,
+ "num_px": 96,
+ "sub_px": 42,
+ "board": [
+  "sidecar1021",
+  "cdrate1021",
+  "t1cafe1021",
+  "psfund1021",
+  "med1021",
+  "h1helio1021",
+  "yen1021",
+  "cudep1020",
+  "seqrisk1020",
+  "penkunbo1020"
+ ]
+}

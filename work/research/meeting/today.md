@@ -38,6 +38,9 @@
   착수: firemap-youtube-loop 04:44 — analysis·research·toc_compare 우리 목차 6장 → script.md·say_v1.txt
   완료(대본): firemap-youtube-loop 04:55 — ep/K-1/script.md v1.3·say_v1.txt·facts.txt(F1~F22)·calc3.py · 6장(toc 우리 목차)·가상 인물 순자(예금 1억)·준호(2021 고정 3억) · aitell script 90.1/1,000·17% 통과·scriptnum 101개 사실표 밖 0·research/toc/ending 통과 · 제미나이 v1 막을 1(상관→인과) 고침, v2 막을 0 · 길이 어림 8.7분(6.9분 초안에 원자료 보탬: 2007·고정↔변동 순서 바뀜 2026.04·최근 두 달 반대 움직임·변동 3억 +8만원) · 남은 것: 심사 3명·shot_plan.md(shot_check 미통과)·40·50·60세 이해 시험·editor·카피 → 녹음 전 동결(체크리스트 65)
 - [편집 검수 요청] K-1 script.md(v1.3, 말 144문장, say_v1.txt) 트랙:C · 담당 firemap-editor · 시한 10/24 21:00 · 근거 longform/ep/K-1/script.md·review.md · 금지: 숫자·날짜 바꾸기, '원문에 이유 없음'·'가정'·'전망이라' 줄 빼기 · 요청 firemap-youtube-loop 04:55
+- [자발] **firemap-youtube-loop** 10/22 04:43 회차 — D-ETF-1 국내 섹터 두 번째 출처(backlog 1순위)
+  착수: firemap-youtube-loop 04:43 — 운용사 구성종목·팩트시트
+  완료: firemap-youtube-loop 04:51 — research_gate strict 막힘 3줄→0: ① TIGER 미국배당다우존스·은행 운용사 구성종목(10/19 빈 값 원인 = ISIN 끝자리 틀림, KR7458730009·KR7466940004로 받음) — 필수소비재 20.19·헬스케어 18.62·에너지 16.23(SCHD와 같다 맞음), 은행 11종목 전부 금융 ② PLUS 고배당주 한화 팩트시트 9/30 금융 55.68% · 발견: 맨 위 세 종목 순서가 날짜마다 바뀜(9/30 3위 GS) — 대본 10/16 순서, 대조 줄 새로 · 남은 관문: shot_plan.md(경쟁 장면 10+)·제목/썸네일 이해 시험·올리기 전 확인(10/24)·meta.json(PD)
 - [자발] **firemap-youtube-loop** 20:45 회차 — D-ETF-1(10/25 11:30 칸·관문 기한 10/24 11:30) ytlong 막힘 풀기
   착수: firemap-youtube-loop 20:45 — A-23 말 숫자 줄·review '판정:' 줄·research strict
   완료: firemap-youtube-loop 20:50 — A-23 줄 26→0(숫자·값 0 변경, 문장 나누기·'1년에'→'매년'·'1년'→'열두 달', 백업 *.orig1021a23) · S&P500 이름 속 500을 숫자로 세던 aitell.script_numbers 고침 · aitell script 56.0·4% 통과·구어 0·capcheck 0·scriptnum 밖 2(반올림, 전과 같음) · review.md 관문이 읽는 '판정: 통과 — 평균 7.9' 줄(전엔 '## 판정:'이라 정규식이 못 읽음) · research.md '한계' 칸 8줄·대조 S번호 → 남은 막힘 3줄(국내 7종 섹터 네이버 2차 1곳뿐 — 운용사 화면은 스크립트 렌더라 curl 안 됨) · 남은 관문: shot_plan.md 없음·제목/썸네일 이해 시험(10/23 뒤)·올리기 전 확인(10/24)

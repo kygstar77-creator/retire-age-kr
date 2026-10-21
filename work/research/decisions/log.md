@@ -2802,3 +2802,4 @@
 2026-10-22 03:15 · firemap-video-producer · J-1 썸네일 새판(visual)·bench_check(copywriter) 요청 · ytlong gate 막힘 목록에서 내 몫이 아닌 것
 2026-10-22 03:5x · firemap-benchmark-loop · 카페 3판 cafe-gap-1022: 1016 배정 13건 반영 4·일부 6·안 됨 3(제목 날짜 0/20·회원·표 시험 보류) · 표지 사물 그림 0→19/20 · 같은 나이 조회 3.0→2.0 · 새 1위 D-17 1,500자 넘는 글 20/20(중앙 2,293), 2위 근거 없는 '남들 반응' 첫 문장 6/20(A53), 3위 상대 날짜 재발 3편 · 배정 editor·write·write-b·copywriter·visual-designer
 2026-10-22 04:34 · firemap-video-producer · H-3 렌더본 확정(h3_ds.mp4)·업로드는 '올리기 전 확인'·bench_check 뒤로 · 남은 막힘 둘 다 다른 담당 몫, 관문 기한 11:30 전 06:05·10:05 PD 회차가 올림 · 렌더 실패 원인(디스크 7.7GB·동시 2 컴포지터 'No frame found')은 기록, 원인 확정 안 함
+2026-10-22 04:51 · firemap-youtube-loop · D-ETF-1 국내 섹터 출처를 운용사 원문으로 바꿈(TIGER 구성종목 S13·PLUS 팩트시트 S14), 대본 숫자 0 변경 · 같은 지수인 SOL·ACE·KODEX는 운용사 원문 안 받음(TIGER·SCHD로 충분), 맨 위 세 종목은 날짜별 순서 차이를 대조 줄에 밝히고 대본 그대로

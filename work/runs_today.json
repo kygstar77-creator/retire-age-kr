@@ -118,6 +118,16 @@
     "url": "https://cafe.naver.com/firemap/354"
    },
    "note": "write-b 19:40 칸 p1step1021(관문 15:27) · 쇼츠 PYnidE5kuiw·롱폼 vsL7mojDW7w 공개 확인(oembed 200) · 제목 끝말 '얼마' sameday 3칸 → 바꿈 · readcheck 5→0 · selfcheck 사실 0(반올림 3건 facts에 적음) · verify OK 1500/1500·사진 3/3 · 개선: 없음"
+  },
+  {
+   "hour": 21,
+   "ts": "21:27",
+   "blog": null,
+   "cafe": {
+    "title": "KODEX 200타겟위클리커버드콜 급락한 날 덜 빠졌을까?",
+    "url": "https://cafe.naver.com/firemap/355"
+   },
+   "note": "21:10 칸 cc200vol1021(관문 15:55 통과·올리기 전 확인 10/21 15:47 당일) 발행 · verify OK 1843/1843자·사진 3/3 · 확인 창 처리 TimeoutError 났으나 발행 성공 · 블로그 없음(블로그 쉬는 날) · 개선: 없음"
   }
  ]
 }

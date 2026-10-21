@@ -2,17 +2,18 @@
 칸: 2026-10-25(일) 11:30 · 사장님 10/19 12시 지시 · 숫자는 전부 facts.txt 줄 번호 → calc_out.txt. 그림 초안 fig/heatmap_draft.png·fig/map_draft.png
 
 ## 원문
-- 슈왑 SCHD 상품 페이지(Total Net Assets 10/16, 섹터 표 6/30, 전체 보유 CSV 10/15 'Export All Holdings'), 2026-10-19 받음 https://www.schwabassetmanagement.com/products/schd → raw/SCHD_page_20261019.txt · raw/schwab_SCHD_holdings_20261019.CSV
-- 아이셰어즈 DGRO·HDV·ITOT·EWY 보유 CSV(2026-10-15), 2026-10-19 받음 https://www.ishares.com/us/products/239563/ishares-core-high-dividend-etf/latest-holdings.csv (DGRO 264623·ITOT 239724 같은 꼴) · HDV 분배 주기 Monthly·Net Assets $15,634,176,775(2026-10-16)
-- 뱅가드 VYM·VIG 보유 종목(2026-09-30), 2026-10-19 받음 https://investor.vanguard.com/irr/funds/profile/VYM-AdditionalFundData
-- 스테이트스트리트 SPYD 일별 보유(2026-10-15), 2026-10-19 받음 https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spyd.xlsx
-- JP모건 JEPI·JEPQ 섹터 표·순자산(2026-10-16), 2026-10-19 받음 https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-equity-premium-income-etf-etf-shares-46641q332 (product-data 응답의 sectorExposure·aum)
-- 앰플리파이 DIVO 섹터 표(2026-09-30)·Net Assets, 2026-10-19 받음 https://amplifyetfs.com/divo/
-- 네이버 증권 ETF 분석(국내 7종 섹터·순자산·분배, 10/16 기준), 2026-10-19 받음 https://m.stock.naver.com/api/stock/161510/etfAnalysis — 운용사 원문 아님(미래에셋 구성종목 응답 빈 값) → 대조 확인 안 함 표시
-- 야후 파이낸스 chart API 일별 12년+분배 이력(분할 반영), 2026-10-19 받음 https://query1.finance.yahoo.com/v8/finance/chart/SCHD?range=12y&interval=1d&events=div
-- 한국은행 ECOS 731Y001 원/달러 매매기준율 일별 2014~2026-10-19, 2026-10-19 받음 https://ecos.bok.or.kr
-- 소득세법 제129조⑤⑥·제57조의2(2026-04-21 공포판), 2026-10-19 조회 https://www.law.go.kr/법령/소득세법/제129조 — 국내 상장 해외 ETF 원천징수에서 펀드가 낸 외국 세금을 뺌
-- 미국 원천 15%·건보 8.1348%·지역 1,000만원 선: R-1 facts [15](2026-10-03)·D-1 facts·M-1 [H1](2026-10-05 재대조)
+- S1 슈왑 SCHD 상품 페이지(Total Net Assets 10/16, 섹터 표 6/30, 전체 보유 CSV 10/15 'Export All Holdings'), 2026-10-19 받음 https://www.schwabassetmanagement.com/products/schd → raw/SCHD_page_20261019.txt · raw/schwab_SCHD_holdings_20261019.CSV
+- S2 아이셰어즈 DGRO·HDV·ITOT·EWY 보유 CSV(2026-10-15), 2026-10-19 받음 https://www.ishares.com/us/products/239563/ishares-core-high-dividend-etf/latest-holdings.csv (DGRO 264623·ITOT 239724 같은 꼴) · HDV 분배 주기 Monthly·Net Assets $15,634,176,775(2026-10-16)
+- S3 뱅가드 VYM·VIG 보유 종목(2026-09-30), 2026-10-19 받음 https://investor.vanguard.com/irr/funds/profile/VYM-AdditionalFundData
+- S4 스테이트스트리트 SPYD 일별 보유(2026-10-15), 2026-10-19 받음 https://www.ssga.com/us/en/intermediary/library-content/products/fund-data/etfs/us/holdings-daily-us-en-spyd.xlsx
+- S5 JP모건 JEPI·JEPQ 섹터 표·순자산(2026-10-16), 2026-10-19 받음 https://am.jpmorgan.com/us/en/asset-management/adv/products/jpmorgan-equity-premium-income-etf-etf-shares-46641q332 (product-data 응답의 sectorExposure·aum)
+- S6 앰플리파이 DIVO 섹터 표(2026-09-30)·Net Assets, 2026-10-19 받음 https://amplifyetfs.com/divo/
+- S7 네이버 증권 ETF 분석(국내 7종 섹터·순자산·분배, 10/16 기준), 2026-10-19 받음 https://m.stock.naver.com/api/stock/161510/etfAnalysis — 운용사 원문 아님(미래에셋 구성종목 응답 빈 값) → 대조 확인 안 함 표시
+- S8 야후 파이낸스 chart API 일별 12년+분배 이력(분할 반영), 2026-10-19 받음 https://query1.finance.yahoo.com/v8/finance/chart/SCHD?range=12y&interval=1d&events=div
+- S9 한국은행 ECOS 731Y001 원/달러 매매기준율 일별 2014~2026-10-19, 2026-10-19 받음 https://ecos.bok.or.kr
+- S10 소득세법 제129조⑤⑥·제57조의2(2026-04-21 공포판), 2026-10-19 조회 https://www.law.go.kr/법령/소득세법/제129조 — 국내 상장 해외 ETF 원천징수에서 펀드가 낸 외국 세금을 뺌
+- S11 미국 원천 15%·건보 8.1348%·지역 1,000만원 선: R-1 facts [15](2026-10-03)·D-1 facts·M-1 [H1](2026-10-05 재대조)
+- S12 국민건강보험법 시행규칙 제44조①·별표1의2(지역 금융소득 1,000만원 선·피부양자 소득 요건), ep/D-1 facts [6]·[12] 기준 https://www.law.go.kr/법령/국민건강보험법시행규칙
 
 ## 질문
 (수요 숫자는 facts [D1]~[D4]. 질문 하나 = 장 하나)
@@ -51,24 +52,35 @@
 - 국내 상장 해외 ETF 세금: 2026 공포판은 원천징수에서 펀드가 낸 외국 세금을 뺀다(제129조⑤⑥) → 분배금 전액 15.4%는 위쪽 경계. 정확한 금액은 분배 공시로만 — 대본 전 TIGER 분배 1회 공시 확인 필요(youtube-loop)
 - 같은 이름 다른 상품: 미국배당다우존스 4종 + '타겟커버드콜'·'(H)'·10/20 상장 '액티브'는 다른 상품 [N1]
 
+## 한계
+(2026-10-21 youtube-loop — 기준 리뉴얼 A-01)
+- SCHD 최근 1년 분배 성장이 2%로 꺾인 이유: 원문(슈왑·S&P 지수 방법론)에서 확인 안 함 → 대본은 '이번에 찾은 자료로는 알 수 없었다'로만 말함
+- 국내 고배당 ETF에 금융주가 많은 이유: 기초지수 설명(네이버 etfSummary)에 '배당수익률 상위'만 있고 왜 금융이 배당을 많이 주는지는 원문에 없음
+- 국내 7종 섹터 비중(미국배당다우존스 4종·PLUS·TIGER 은행)은 네이버 증권(2차, S7) 값 — 미래에셋 구성종목 응답이 빈 값이라 운용사 원문 대조 확인 안 함
+- SCHD 섹터 55%는 10/15 보유 종목 합산 기준 — 슈왑 공식 섹터 표(6/30)는 에너지 14.07%로 달라 합이 다름, 대본·자막에 '10월 보유 기준'으로 밝힘
+- 국내 상장 해외 ETF 실제 원천징수액: 분배 때 과세표준 공시 확인 안 함 → 15.4%는 위쪽 경계로만 씀
+- 피부양자 소득 요건에서 금융소득 1,000만원 이하를 빼는지: 원문 확인 안 함 → 대본에서 '모든 소득' 단정 안 함
+- 기준일 한계: 분배율·총수익은 10/16 종가, 환율은 10/16 ECOS — 공개일(10/24)엔 달라짐, '올리기 전 확인' 때 다시 셈
+- 1억 통장 계산은 지난 12개월 분배가 그대로 이어진다는 가정(분배는 정해진 돈이 아님 — 대본 1장에 밝힘)
+
 ## 대조
 | 항목 | 원문·계산 | 대본에 쓸 값 |
 |---|---|---|
-| SCHD 12개월 분배 | 슈왑 표 1.0541달러 · 야후 1.055 | 1.05달러 |
-| SCHD 분배율 | 1.055 ÷ 34.35 = 3.07% | 3.1% |
-| SCHD 분배 성장 10년/1년 | 10.84% / 2.03% (슈왑 1.0339→1.0541 +1.95%) | 연 10.8% / 2% |
-| SCHD 섹터 상위 3 | 필수소비재 20.15·헬스케어 18.98·에너지 15.95(10/15 보유 합산) · 슈왑 공식 6/30 20.38·20.72·14.07 | 55% (10월 보유 기준이라고 밝힘) |
-| 국내 미국배당다우존스 섹터 | 네이버 필수소비재 20.1~20.2 · 헬스케어 19.0~19.1 | SCHD와 같다 |
-| JEPQ 정보기술 | JP모건 47.7%(표 합 99.3) | 48% |
-| JEPI·JEPQ 기타 | 15.6% · 17.4% | 16%·17% |
-| PLUS 고배당주 금융 | 네이버 54.85% | 55% |
-| TIGER 은행고배당 금융 | 네이버 99.7% | 거의 100% |
-| JEPQ 분배율·1억 통장 | 11.71% · 900만 915원(건보 95만 2,585원) | 11.7% · 약 900만원 |
-| JEPI 분배 5년 성장 | 0.23%/년 | 거의 그대로 |
-| DIVO 분배율 | 6.31% / 튀는 1회 빼면 4.32% | 4.3%(빼고) |
-| 2022 낙폭 | SCHD -16.8 · SPY -24.5 · JEPI -13.7 | 17% · 25% · 14% |
-| 5년 총수익(달러) | SCHD 9.85 · SPY 12.85 · JEPI 7.5 | 9.8% · 12.8% · 7.5% |
-| 환율 | 1,424.4 → 1,348.5(ECOS 2025-10-16 → 2026-10-16) | 1,424원 → 1,349원 |
+| SCHD 12개월 분배 | 슈왑 표 1.0541달러 · 야후 1.055 S1·S8 | 1.05달러 |
+| SCHD 분배율 | 1.055 ÷ 34.35 = 3.07% S8 | 3.1% |
+| SCHD 분배 성장 10년/1년 | 10.84% / 2.03% (슈왑 1.0339→1.0541 +1.95%) S8·S1 | 연 10.8% / 2% |
+| SCHD 섹터 상위 3 | 필수소비재 20.15·헬스케어 18.98·에너지 15.95(10/15 보유 합산) · 슈왑 공식 6/30 20.38·20.72·14.07 S1 | 55% (10월 보유 기준이라고 밝힘) |
+| 국내 미국배당다우존스 섹터 | 네이버 필수소비재 20.1~20.2 · 헬스케어 19.0~19.1 2차 S7 — 운용사 원문 대조 확인 안 함(한계 칸) | SCHD와 같다 |
+| JEPQ 정보기술 | JP모건 47.7%(표 합 99.3) S5 | 48% |
+| JEPI·JEPQ 기타 | 15.6% · 17.4% S5 | 16%·17% |
+| PLUS 고배당주 금융 | 네이버 54.85% 2차 S7 — 운용사 원문 대조 확인 안 함(한계 칸) | 55% |
+| TIGER 은행고배당 금융 | 네이버 99.7% 2차 S7 — 운용사 원문 대조 확인 안 함(한계 칸) | 거의 100% |
+| JEPQ 분배율·1억 통장 | 11.71% · 900만 915원(건보 95만 2,585원) S8·S12 | 11.7% · 약 900만원 |
+| JEPI 분배 5년 성장 | 0.23%/년 S8 | 거의 그대로 |
+| DIVO 분배율 | 6.31% / 튀는 1회 빼면 4.32% S8·S6 | 4.3%(빼고) |
+| 2022 낙폭 | SCHD -16.8 · SPY -24.5 · JEPI -13.7 S8 | 17% · 25% · 14% |
+| 5년 총수익(달러) | SCHD 9.85 · SPY 12.85 · JEPI 7.5 S8 | 9.8% · 12.8% · 7.5% |
+| 환율 | 1,424.4 → 1,348.5(ECOS 2025-10-16 → 2026-10-16) S9 | 1,424원 → 1,349원 |
 | 건보 지역 금융소득 선 | 이자+배당(세전) 1,000만원 넘으면 전액 합산 — 국민건강보험법 시행규칙 제44조① 단서 https://www.law.go.kr/법령/국민건강보험법시행규칙 (1차, ep/D-1 facts [6]) | 예금 이자까지 합쳐 1,000만원 (10/20 이해 시험 반영) |
 | 건보 직장 보수 외 소득 | (연간 보수 외 소득 − 2,000만원) × 1/12 — 국민건강보험법 제71조① + 시행령 제41조④ https://www.law.go.kr/법령/국민건강보험법 (1차, facts [T7] 10/20 원문 확인) | 월급 말고 다른 소득 2,000만원을 넘으면 넘는 만큼 |
 | 건보 피부양자 소득 | 소득 합계 연 2,000만원 이하(사업·금융·연금·근로 합) — 국민건강보험법 시행규칙 별표1의2·건보공단 '피부양자 소득요건' https://www.law.go.kr/법령/국민건강보험법시행규칙 (1차, ep/D-1 facts [12] 10/1 읽음 — 올리기 전 확인 때 다시 열 것) | 소득 다 합쳐 2,000만원 넘으면 빠짐 |

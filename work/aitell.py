@@ -627,7 +627,7 @@ def script_numbers(lines):
     one = re.compile(r'(?:\d{4}\s*년\s*)?\d{1,2}\s*월\s*\d{1,2}\s*일|\d{4}\s*년\s*\d{1,2}\s*월'   # 날짜 하나 = 값 하나
                      r'|\d[\d,.]*\s*(?:조|억|천만|백만|만|천|백)(?:\s*\d[\d,.]*\s*(?:천만|백만|만|천|백|억)?)+')   # '6천8백'·'3억 5천만' = 값 하나
     for i, l in enumerate(lines, 1):
-        x = one.sub(' N ', _COMPOUND.sub(' N ', l))
+        x = one.sub(' N ', _COMPOUND.sub(' N ', re.sub(r'S&P\s?500|NASDAQ\s?100|나스닥\s?100', 'IDX', l)))   # 10/21 지수 이름 속 숫자는 값이 아님(S&P500 = 이름)
         n = len(re.findall(r'\d[\d,.]*', x)) + x.count(' N ')
         if n >= 3 or (n == 2 and not _CMP.search(l)): out.append((i, l))
     return out

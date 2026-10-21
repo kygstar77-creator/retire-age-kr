@@ -2249,10 +2249,12 @@
   {
    "at": "2026-10-21 22:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "ktb3y1021",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-18 21:41: 카페 하루 12칸 뼈대(36시간 앞, 레드팀 R1)"
+   "gates_ok": "2026-10-21 23:12",
+   "note": "firemap-meeting 2026-10-18 21:41: 카페 하루 12칸 뼈대(36시간 앞, 레드팀 R1) | firemap-write-b 23:12: ktb3y1021 '국고채 3년 금리가 기준금리보다 크게 높은 건 흔할까?'(예금·금리 칸·형식4, 금통위 10/22 전날) 관문 통과 — ECOS 일별 4,609일: 차이 0.82%p 이상 100일 중 23일꼴, 0.8%p 넘은 다섯 시기(반례 2008년 말·2009년 초), 올해 인상일 −0.02·−0.06%p · 레드팀 표현 틀림3('2008년 빼면 모두 인상기' 틀림)·오해3 반영 · 이해 시험 2차 통과 · readcheck 0·aitell 3.4·selfcheck 사실0·교차검증 Gemini 반영 · research_gate strict·editor 23:11 stamp",
+   "pkg": "ktb3y1021",
+   "published": "https://cafe.naver.com/firemap/356 23:14 verify OK 1298자"
   },
   {
    "at": "2026-10-22 06:10",

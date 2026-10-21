@@ -128,6 +128,17 @@
     "url": "https://cafe.naver.com/firemap/355"
    },
    "note": "21:10 칸 cc200vol1021(관문 15:55 통과·올리기 전 확인 10/21 15:47 당일) 발행 · verify OK 1843/1843자·사진 3/3 · 확인 창 처리 TimeoutError 났으나 발행 성공 · 블로그 없음(블로그 쉬는 날) · 개선: 없음"
+  },
+  {
+   "hour": 22,
+   "ts": "23:14",
+   "task": "firemap-write-b",
+   "blog": null,
+   "cafe": {
+    "title": "국고채 3년 금리가 기준금리보다 크게 높은 건 흔할까?",
+    "url": "https://cafe.naver.com/firemap/356"
+   },
+   "note": "22:40 칸(TBD·비축 0) 새 편 ktb3y1021 · 자료조사 1차 ECOS 일별 2종+금통위 일정+KDI, 2차 연합 2곳, 경쟁 블로그 8·카페 주간 9곳·지식iN 4 · 레드팀 표현 틀림3('2008년 빼면 모두 인상기' 틀림)·오해3 반영 · 교차검증(Gemini) 사실 지적 2 반영 2 · selfcheck 사실0 · 이해 시험 2차 통과 · editor 23:11 stamp(표지 셋째 줄 뺌) · verify OK 1298/1298자 사진 3/3 · 개선: 없음"
   }
  ]
 }

@@ -190,6 +190,7 @@
 | B-42 | 통합 음량 | 없음 | (새로) 올리기 관문 | ②+① | 경쟁 쇼츠 25편 중앙 −17.9(−20.5~−16.1), 롱폼 14편 −17.0(−18.0~−16.2) · EBU·애플 참 피크 −1 | 새로 넣음 → 적용 244fee9 | 통합 −16~−18 LUFS, 참 피크 −1 dBTP↓ ⇒ 적용값: work/video/loudnorm.py(재기·--fix 두 번 재는 loudnorm −17·TP −1.5) · deess.py 끝에 자동 정규화(--no-ln로 끔) · 관문 ytlong(공개 10/23~)·ytupload(10/23부터 올리는 것) |
 | B-43 | 말 밑 음악 유무 | 롱폼 덕킹 음·쇼츠 없음 | human.tsx · 쇼츠 틀 | ②(약함) | 제미나이 듣기: 음악 있음 쇼츠 9/25·롱폼 11/14 | 유지 | 그대로(쇼츠 빈 소리는 B-31로) |
 | B-44 | AI 표시 켬 | 켬 | ytlong.py·cardshorts/*clips_up.py containsSyntheticMedia | ① | 유튜브 answer/14328491 — 표시는 노출·수익에 영향 없음 | 유지 | 켬 |
+| B-45 | 쇼츠 0초 글자 다 보임 | 없음(빈 곳 40%만, 반투명 글자 통과) | emptyscan.fade0·gate_fade0 → ytupload 세로 | ②+사내 실측 | 벤치마크 10/21 thumb-gap-1021 ③·editor A51(g1s_asym·h1s_forest 0초 답 글 흐림) · 실측 2026-10-21: 옛 렌더 6편 32~58%(g1s_asym 32·47, h1s_forest 38·46, t1s_live 58, p1s_step 49) vs 고친 틀 4편 0% — 문턱 10%는 두 무리 사이 · 경쟁 0초 반투명 비율은 안 잼 | 새로 넣음(motion 11:40) | 0.2초 뒤 흰 글자(235↑) 중 0초에 7×7 둘레 흰 점(215↑) 없는 비율 ≤10% · 10/23부터 거부, 그 전 경고 · 틀 C2P·C1S·M1S live 0초 장면 페이드 뺌 |
 
 ## 적용 기록 (A·D·E, 2026-10-19 순돌이 지시 — 코드 1f9701d, SKILL 7곳·RULES.md)
 - 새 값은 소급하지 않는다: 롱폼 publishAt 2026-10-23 이상(research_gate.RENEW_FROM = TOC_FROM), 카페 order.txt 2026-10-20 0시 뒤(CAFE_RENEW_FROM), 카페 틀 조이는 것 10/20 칸부터(aitell.D_FROM). 푸는 것(D-07·D-18·D-20·D-21·D-22·A-03·A-06·A-42)은 바로.

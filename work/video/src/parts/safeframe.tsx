@@ -29,7 +29,7 @@ export type BgSeg = {src: string; from: number; frames: number; start?: number; 
 const BgOne: React.FC<{g: BgSeg; W: number; H: number}> = ({g, W, H}) => {
   const f = useCurrentFrame();
   const z = interpolate(f, [0, g.frames], [1.04, 1.12], CL);
-  const o = interpolate(f, [0, 6], [0.4, 1], CL);
+  const o = g.from <= 0 ? 1 : interpolate(f, [0, 6], [0.4, 1], CL);   // A51(10/21): 영상 0초 바탕은 처음부터 다 밝게
   const st: React.CSSProperties = {position: 'absolute', left: 0, top: 0, width: W, height: H, objectFit: 'cover', objectPosition: `${g.x ?? 50}% 50%`, transform: `scale(${z})`, opacity: o};
   const vid = g.kind === 'video' || /\.mp4$/i.test(g.src);
   return vid ? <OffthreadVideo src={staticFile(g.src)} muted startFrom={Math.round((g.start ?? 0) * 30)} style={st} /> : <Img src={staticFile(g.src)} style={st} />;
@@ -304,13 +304,13 @@ export const barsOf = (s: {kind: string; data: any}) => {
 
 const BEAT_TOP = 680;   // 박자 숫자 가운데 높이(제목 아래 ~ 자막 위 가운데)
 const ORG = '#FF7A1A';
-export const LiveBeats: React.FC<{beats: Beat[]}> = ({beats}) => {
+export const LiveBeats: React.FC<{beats: Beat[]; first?: boolean}> = ({beats, first}) => {
   const f = useCurrentFrame(); if (!beats.length) return null;
   let k = 0; beats.forEach((b, i) => { if (f >= b.at) k = i; }); const b = beats[k];
   // 답(hot) 박자는 넘어오기 전 24프레임 동안 '?'로 묻는다
   const nb = beats[k + 1]; const asking = !!nb && nb.hot && f >= nb.at - 24 && f < nb.at;
   const show = asking ? {...nb, value: '?'} : b; const t0 = asking ? nb.at - 24 : b.at;
-  const sp = spring({frame: f - t0, fps: 30, config: {damping: 13, mass: 0.6}});
+  const sp = first && k === 0 && !asking && b.at <= 0 ? 1 : spring({frame: f - t0, fps: 30, config: {damping: 13, mass: 0.6}});   // A51: 영상 0초 첫 박자는 이미 찍힌 꼴
   const vz = fit(show.value, IW - 20, show.value === '?' ? 190 : 170, 72); const kz = fit(show.kicker, IW, 60, 40);
   const hot = show.hot && show.value !== '?'; const circ = hot ? interpolate(f, [b.at + 8, b.at + 30], [0, 1], {...CL, easing: Easing.inOut(Easing.quad)}) : 0;
   const w = units(show.value) * vz;
@@ -324,11 +324,11 @@ export const LiveBeats: React.FC<{beats: Beat[]}> = ({beats}) => {
     </div>
   );
 };
-export const LiveBars: React.FC<{bars: {label: string; v: number; text: string; hot: boolean}[]}> = ({bars}) => {
+export const LiveBars: React.FC<{bars: {label: string; v: number; text: string; hot: boolean}[]; first?: boolean}> = ({bars, first}) => {
   const f = useCurrentFrame(); const mx = Math.max(...bars.map((b) => b.v), 1); const n = bars.length; const rowH = n > 3 ? 150 : 180; const top = BEAT_TOP - (n * rowH) / 2;
   const hotI = Math.max(0, bars.findIndex((b) => b.hot));
   return <div style={{position: 'absolute', left: TX0 + PAD, width: IW, top}}>
-    {bars.map((b, i) => { const g = interpolate(f, [6 + i * 10, 26 + i * 10], [0, 1], {...CL, easing: Easing.out(Easing.cubic)}); const bw = Math.max(24, (IW - 60) * (b.v / mx)) * g; const hot = i === hotI;
+    {bars.map((b, i) => { const g = first ? 1 : interpolate(f, [6 + i * 10, 26 + i * 10], [0, 1], {...CL, easing: Easing.out(Easing.cubic)}); const bw = Math.max(24, (IW - 60) * (b.v / mx)) * g; const hot = i === hotI;
       return <div key={i} style={{height: rowH, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <div style={{...F, fontWeight: 800, fontSize: 52, color: '#fff', textShadow: outline(5), whiteSpace: 'nowrap'}}>{b.label} <span style={{color: hot ? ORG : YEL}}>{b.text}</span></div>
         <div style={{marginTop: 10, width: bw, height: 54, background: hot ? ORG : 'rgba(255,255,255,0.92)', boxShadow: '0 4px 0 rgba(0,0,0,0.35)'}} />
@@ -348,7 +348,7 @@ export const EndSource: React.FC<{text: string; total: number}> = ({text, total}
     <span style={{...F, fontWeight: 500, fontSize: fit(text, IW - 130, 19, 13), color: '#e3e6ec', textShadow: outline(2)}}>{text}</span></div>;
 };
 // C1S·M1S가 같이 쓰는 판 없는 장면 몸통
-export const LiveSceneBody: React.FC<{s: {kind: string; data: any; lines: {frames: number}[]}}> = ({s}) => {
-  const bars = barsOf(s); if (bars && bars.length >= 2) return <LiveBars bars={bars} />;
-  return <LiveBeats beats={beatsOf(s)} />;
+export const LiveSceneBody: React.FC<{s: {kind: string; data: any; lines: {frames: number}[]}; first?: boolean}> = ({s, first}) => {
+  const bars = barsOf(s); if (bars && bars.length >= 2) return <LiveBars bars={bars} first={first} />;
+  return <LiveBeats beats={beatsOf(s)} first={first} />;
 };

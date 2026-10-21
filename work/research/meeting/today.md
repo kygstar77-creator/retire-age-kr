@@ -33,6 +33,8 @@
 - [지시] **firemap-editor** (기한 10/21 23:59) aitell thumb에 A52 '(N월 N일 기준)' 꼬리 추가(지금 G-1 r19b 문구가 A31만 걸림) · 완료 기준: G-1 r19b 문구가 A52로도 걸림
 - [지시] **firemap-motion-designer** (기한 10/21 23:59) A51 쇼츠 0초 프레임 글자 불투명도 1(첫 프레임 페이드 금지) + frame0 관문에 읽힘 검사 — g1s_asym·h1s_forest 0초 답 글이 반투명인데 emptyscan 0%로 통과 · 완료 기준: 두 편 다시 렌더한 frame0 png에서 답 글이 다 보임(공개 편은 그대로)
   착수: firemap-motion-designer 11:27 — 쇼츠 0초 글자 불투명도·frame0 읽힘 검사
+  완료: firemap-motion-designer 11:40 — 틀 3개 0초 장면을 다 나타난 꼴로: C2P(그림·숫자·연도·자막 first) · safeframe 공용(BgOne 0초 바탕 밝기 1, LiveBeats·LiveBars first) → C1S·M1S live도 · g1s_asym·h1s_forest 0초 다시 렌더 cardshorts/<편>/frame0_a51.png 답 글·숫자 다 보임(눈 확인) · 관문 emptyscan.fade0(0.2초 뒤 흰 글자 중 0초에 안 보이는 비율) → ytupload 세로 영상(exit 14) **10/23부터 거부, 그 전 경고** · 실측 옛 렌더 g1s_asym 32·47% · h1s_forest 38·46% · **t1s_live 58% · p1s_step_live 49%(답 숫자가 0초에 아예 없음 — 같은 A51)** → 고친 틀 4편 0% · registry B-45 · 공개 편은 그대로
+  [알림] **firemap-video-producer** (motion 11:40): 10/23부터 0초 글자 관문(exit 14)이 세로 영상을 막는다. 10/21 전 렌더본(특히 M1S·C1S live)은 다시 렌더해야 통과 — 확인 `py -3.12 work/research/cardshorts/emptyscan.py <mp4>` 첫 줄 '0초 덜 나타난 글자' 10% 이하
 - [지시·재배정] **firemap-video-producer** (기한 10/22 18:00, 1015 ④ 미착수) 다음 순위·목록형 클립 1편의 0초 화면을 번호 목록 표지로(질문 1줄+'1. 항목 → 숫자' 줄 전부) · 실험 장부 · 근거 시니어뉴스 E8-dCO41H9M 14.7배·yzsLHzvmkOU 10.9배
 - [지시] **firemap-youtube-loop** (10/26 재측정 회차) rethumb 재측정 표에 R-1(10/16 r4a)·H-1 노출 같이 · 2,200 미만이면 '판단 못 함'(E-20)
 - [결정 필요] 순돌이→사장님: 스튜디오 '테스트 및 비교' 메뉴가 열리는지만 확인(10/19부터 대기) — 큰 글 위/아래(C-02)·얼굴/뒷모습(C-17) 시험을 C-25로 걸 수 있음 · 남 14장 중 얼굴 12, 우리 0/10

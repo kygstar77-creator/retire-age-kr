@@ -312,7 +312,7 @@ const Frame: React.FC<{s: SScene; from: number; total: number; first: boolean; p
   const L = layout(p.question, null as Answer);   // v3 10/16 23시 사장님 '위 글자 5줄': 위는 제목 2줄만, 답 줄은 빼고 판이 그 자리까지 커진다
   if (c1sLive(p)) return (
     <AbsoluteFill>
-      <LiveSceneBody s={s} />
+      <LiveSceneBody s={s} first={first} />
       <OutlineCaption lines={s.lines} first={first} />
       {s.lines.map((l, i) => <Sequence key={i} from={st[i]} durationInFrames={l.frames}><Audio src={staticFile(l.audio)} /></Sequence>)}
     </AbsoluteFill>

@@ -1,0 +1,32 @@
+{
+ "size": [
+  1920,
+  1080
+ ],
+ "note": "cy=왼쪽 아래 0, cy_top=Remotion(위 0). HandCircle({cx, cy:cy_top, rx, ry, p})",
+ "heatmap": {
+  "schd": {
+   "cx": 773.2,
+   "cy": 864.6,
+   "rx": 203.6,
+   "ry": 32.8,
+   "cy_top": 215.4
+  },
+  "bank": {
+   "cx": 512.4,
+   "cy": 102.0,
+   "rx": 77.2,
+   "ry": 35.8,
+   "cy_top": 978.0
+  }
+ },
+ "map": {
+  "jepi": {
+   "cx": 1241.4,
+   "cy": 240.5,
+   "rx": 86,
+   "ry": 52,
+   "cy_top": 839.5
+  }
+ }
+}

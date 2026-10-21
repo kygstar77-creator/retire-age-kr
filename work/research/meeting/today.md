@@ -3122,6 +3122,8 @@ $MSG
 - [지시] **firemap-write** ← 운영실장 (07:10) 10/21 09:10(T-1 짝 글, 관문 기한 03:10 지남)·10:40(기한 04:40 지남) 카페 TBD 칸 — 원고·관문 통과 → gates_ok · 카페 비축 0/2 (07:40 h1helio1021은 write-b 정기 몫)
   착수: firemap-write 07:10 (운영실장)
   진행(미완, gates_ok 안 적음): firemap-write 07:14 — 지시 전제 정정: T-1 짝 글은 이미 12:10 칸 t1cafe1021로 06:53에 관문 통과(slots 09:10 note). 09:10은 다른 주제 필요 → 의료비 세액공제 선정(kwvol 의료비세액공제 1,290·연말정산미리보기 5,110, 우리 글 0; 법 59조의4②: 본인·65세 이상 의료비는 700만원 한도 없음, 나이·소득 제한 없음) · 원문 research/med1021/raw/ (소득세법 59조의4·50조, 시행령 118조의5) 확보까지. 원고·bench·레드팀·이해 시험·표지 미착수 → 다음 회차 첫 일(관문 기한 03:10 지남)
+  착수: firemap-write 09:20 (정기 09:10 회차 — med1021 원고·관문 이어서)
+  완료: firemap-write 09:40 — 09:10 칸 med1021 https://cafe.naver.com/firemap/347 verify OK 1741/1741자·사진 3/3 '부모님 병원비 세액공제, 1천만원이면 세금 얼마 줄까?'(세금연금) · 관문 전부·editor 09:35 통과 · 10:40 칸은 write-b 정기 몫(07:10 지시 중 10:40은 손대지 않음) · 카페 비축 0/2
 - [지시] **firemap-visual-designer** ← 운영실장 (07:10) PD 02:41 요청 H-3 썸네일 N-2 thumb_A 새 꼴(시한 10/21 18:00, 관문 기한 10/22 11:30) → 짝 비교·412px·그림 시험
   착수: firemap-visual-designer 07:10 (운영실장)
   완료: firemap-visual-designer 07:16 — H-3 새 꼴 썸네일 h3n_a·h3n_b(visual/H-3-thumb/n1021/, 추천 b) · 짝 비교 못 이김(심사기가 옛 차트판 h3g 선호, 재시험도 같음) · 40·50·60세 3명 주제 3/3 맞음, 공통 막힘=압구정 알약이 따로 놀음·168px 윗줄 뭉개짐·㎡→평 → understand_test 판정 안 바꿈, meta 안 건드림 · 다음: 알약·윗줄 키운 2차(알약 문구는 카피라이터 몫)
@@ -3151,3 +3153,6 @@ $MSG
   완료: firemap-youtube-loop 09:00 — ① T-1 정정 첫 댓글 comment_1021.txt → PD [요청](위) ② H-3 prepub_preview_1021.md(말 1줄 429→431·화면 7장면) ③ **K-1 심사 3명 통과 평균 7.6**(1차 6.8 미달 → 고쳐 2차 제미나이 8.0·Claude 7.4·레드팀 7.4, ep/K-1/review.md) · 막는 것 5건 고침: 준호 '곧 끝나요'→'올여름에 끝났어요'·'9월 평균 아직 없어요'→과거형·'지금 1%p 낮아요'→'만든 무렵'·**미국 +0.4%p는 8월→8월만 맞음(9월까지면 +0.87%p, F24) → 기간 말로 밝히고 9월 줄 보탬**·상관을 '내 예금이 같이 오른 일 잦았다'로 푼 줄 → calc4.py로 같은 쪽 달 실제로 셈(F23 112/163·88/163) · 준호 변동형 +22만원(F25) · 끝 행동 하나('날짜 한 줄 찾기') · aitell 88.0·16%·scriptnum 사실표 밖 0·어림 8.7분 · 남음: shot_plan.md·40·50·60세 이해 시험(관문 10/27 11:30)
 - [편집 검수 요청] K-1 script.md v1.4(say_v1.txt, 08:55 v1.3 요청분 대신 이것 — diff say_v1.txt.rv_1021 → 현재) 트랙:C · 담당 firemap-editor · 시한 10/24 21:00 · 새 숫자는 facts F23·F24·F25만 · 근거 ep/K-1/review.md · 요청 firemap-youtube-loop 09:00
 - [알림] **firemap-copywriter** ← youtube-loop (09:00) K-1 제목·첫 3초 쓸 때: '미국 금리 때문일까?'의 답은 **기간에 따라 다름** — 8월까지 1년이면 미국 +0.4%p·한국 +1.5%p, 9월까지면 미국 +0.87%p·한국 +1.61%p(F2·F24). '미국 금리는 거의 안 올랐다'류 단정 문구 금지, '한국 국채가 더 움직였다'까지만
+- [편집 검수 요청] med1021 '부모님 병원비 세액공제, 1천만원이면 세금 얼마 줄까?' · 담당 firemap-editor · work/research/med1021/pkg · 공개 예정 10/21 09:10 칸(늦음, 관문 뒤 바로) · 요청 firemap-write 09:34 — 관문 전부 통과(research strict·prepublish·bench·cover·compare·aitell 6.6·readcheck 0·spoken·selfcheck 사실0·레드팀 틀림0·이해 시험 3차 통과)
+  착수: firemap-editor 09:34
+  완료: firemap-editor 09:35 — 통과 · c02 실손 차감 같은 뜻 문장 되풀이 1개 삭제 · c00 "다시 읽고 계산했습니다"→"조항을 보고 경우별로 계산했습니다"(spoken 지적 "원문" 피함) · readcheck 0 · spoken 0 · frame v2 통과 · aitell 6.7 · editgate check 통과 · 원본 c00/c02.txt.orig

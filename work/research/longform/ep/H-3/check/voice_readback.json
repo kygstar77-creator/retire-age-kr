@@ -5,16 +5,16 @@
   "say": "안녕하세요, 파이어맵입니다. [pause short] 오늘은 압구정·신천·목동 아파트 실거래가 이야기입니다.",
   "audio": "audio/h-3/e48751103e80b949.wav",
   "heard": [
-   "안녕하세요 파염웹입니다. 오늘은 압구정 신천목동아파트 실거래가 이야기입니다.",
-   null
+   "안녕하세요? 파이엄 앱입니다. 오늘은 압구정 신현대목동 아파트 실거래가 이야기입니다.",
+   "안녕하세요파이아맵입니다오늘은압구정신천목동아파트실거래가이야기입니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.9,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.94,
+  "pair": 0.9,
+  "flag": "합의오독(0.90/0.94 어멥→엄엡/아 천→현데/첨)",
   "batch2": true
  },
  {
@@ -24,15 +24,15 @@
   "audio": "audio/h-3/81f25b5ad100a2a8.wav",
   "heard": [
    "30억 정도 되는 돈으로 실제로 산 집 동네마다 크기가 얼마나 달랐을까요?",
-   null
+   "30억정도되는돈으로실제로산집동네마다크기가얼마나달랐을까요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -41,16 +41,16 @@
   "say": "송파구 신천동에선 팔십오 ㎡ 정도, 흔히 국민평형이라 부르는 가장 흔한 크기였어요.",
   "audio": "audio/h-3/374ffba4ea642ca7.wav",
   "heard": [
-   "송파구 신천동에선 85m 정도, 흔히 국민 평형이라 부르는 가장 흔한 크기였어요.",
-   null
+   "송파구 신천동에선 85m²정도 흔히 국민평형이라 부르는 가장 흔한 크기였어요.",
+   "송파구신천동에선85정도흔히국민평형이라부르는가장흔한크기였어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -60,15 +60,15 @@
   "audio": "audio/h-3/ea49257dd70bd3d5.wav",
   "heard": [
    "양천구 목동신시가지에선 주소가 목동인 단지들만 볼게요.",
-   null
+   "양천구목동신시가지에선주소가목동인단지들만볼게요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -77,8 +77,8 @@
   "say": "거기선 그보다 십일 ㎡ 정도 넓은 집이었고요.",
   "audio": "audio/h-3/7c025c83ac10de13.wav",
   "heard": [
-   "거기선 그보다 10일m 정도 넓은 집이었고요.",
-   null,
+   "거기에선 그보다 10일m 정도 넓은 집이었고요.",
+   "거기선그보다11정도넓은집이었고요",
    "거긴 그보다 10m 정도 넓은 집이었고요."
   ],
   "models": [
@@ -86,9 +86,9 @@
    "gemini-3.5-flash",
    "gemini-3.5-transcribe"
   ],
-  "sim": 0.97,
-  "pair": null,
-  "flag": "숫자 받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.94,
+  "flag": "숫자",
   "batch2": true
  },
  {
@@ -98,15 +98,15 @@
   "audio": "audio/h-3/c12c3d554a5d47dc.wav",
   "heard": [
    "강남구 압구정동에선 그 가격에 팔린 집이 한 건도 없었습니다.",
-   null
+   "강남구압구정동에선그가격에팔린집이한건도없었습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -116,15 +116,15 @@
   "audio": "audio/h-3/914d3e356628916f.wav",
   "heard": [
    "가장 싼 거래도 35억이 넘었거든요.",
-   null
+   "가장싼거래도35억이넘었거든요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -134,15 +134,15 @@
   "audio": "audio/h-3/7033f75c330661b6.wav",
   "heard": [
    "오늘은 댓글과 검색창에서 실제로 나온 질문들에도 숫자로 답해 볼게요.",
-   null
+   "오늘은댓글과검색창에서실제로나온질문에도숫자로답해볼게요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -151,16 +151,16 @@
   "say": "일년 동안 백 집 중에 몇 집이 팔렸는지도 처음으로 세어 봤습니다.",
   "audio": "audio/h-3/28a0e8dc7327a4ba.wav",
   "heard": [
-   "1년 동안 백집 중에 몇 집이 팔렸는지도 처음으로 세어 봤습니다.",
-   null
+   "1년 동안 100집 중에 몇 집이 팔렸는지도 처음으로 세어 봤습니다.",
+   "1년동안100집중에몇집이팔렸는지도처음으로세어봤습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.98,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -169,16 +169,16 @@
   "say": "처음 보시는 분을 위해 세 동네부터 짧게 소개할게요.",
   "audio": "audio/h-3/d0b0147e43246ba3.wav",
   "heard": [
-   "처음 보시는 분을 위해 세 동네부터 짧게 소개할게요.",
-   null
+   "처음 보시는 분을 위해 새 동네부터 짧게 소개할게요.",
+   "처음보시는분을위해세동네부터짧게소개할게요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -188,15 +188,15 @@
   "audio": "audio/h-3/bb6045166f42670c.wav",
   "heard": [
    "압구정동은 강남구 한강 바로 남쪽 동네예요.",
-   null
+   "압구정동은강남구한강바로남쪽동네예요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -205,16 +205,16 @@
   "say": "현대아파트와 한양아파트가 모여 있는데, 실거래 자료에 적힌 지은 해로 보면 천구백칠십년대 중반부터 지어진 단지들이에요.",
   "audio": "audio/h-3/a1dbea33cf013081.wav",
   "heard": [
-   "천대 아파트와 한양 아파트가 모여 있는데 실거래 자료에 적힌 지번으로 보면 1970년대 중반부터 지어진 단지들이에요.",
-   null
+   "천대 아파트와 한양 아파트가 모여 있는데 실거래 자료에 적힌 지연해로 보면 1970년대 중반부터 지어진 단지들이에요.",
+   "현대아파트와한양아파트가모여있는데실거래자료에적힌지은해를보면1970년대중반부터지어진단지들이에요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.93,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.98,
+  "pair": 0.93,
+  "flag": "합의오독(0.93/0.98 은→연/를)",
   "batch2": true
  },
  {
@@ -224,15 +224,15 @@
   "audio": "audio/h-3/bb2669a82acc6b3a.wav",
   "heard": [
    "신천동은 송파구 잠실 바로 옆이에요.",
-   null
+   "신천동은송파구잠실바로옆이에요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -242,15 +242,15 @@
   "audio": "audio/h-3/8dddc5a5273649f6.wav",
   "heard": [
    "이 동네 거래는 대부분 타크리오와 장미 아파트에서 나왔어요.",
-   null
+   "이동네거래는대부분파크리오와장미아파트에서나왔어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -259,16 +259,16 @@
   "say": "파크리오는 비교적 새 단지고, 장미는 천구백칠십구년에 지은 오래된 단지예요.",
   "audio": "audio/h-3/c260fca2b6b4e37b.wav",
   "heard": [
-   "파크리오 아파트는 비교적 새 단지고 장미는 1979년에 지은 오래된 단지예요.",
-   null
+   "파크리오 는 비교적 새 단지 고 잠실 은 1979 년 에 지은 오래된 단지 에요 .",
+   "파크리오는비교적새단지고장미는1979년에지은오래된단지예요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.95,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.85,
+  "flag": "",
   "batch2": true
  },
  {
@@ -277,16 +277,16 @@
   "say": "목동은 양천구예요. [pause short] 목동신시가지라는 큰 단지가 열네 개 단지로 나뉘어 있습니다.",
   "audio": "audio/h-3/737e1f46fbb7792d.wav",
   "heard": [
-   "목동은 양천구예요. 목동 신시가지라는 큰 단지가 14개 단지로 나뉘어져 있습니다.",
-   null
+   "목동은 양천구예요. 목동신시가지라는 큰 단지가 14개 단지로 나뉘어져 있습니다.",
+   "목동은양천구예요목동신시가지라는큰단지가14개단지로나뉘어있습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.95,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.97,
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -296,15 +296,15 @@
   "audio": "audio/h-3/16c3e7118dc95ac2.wav",
   "heard": [
    "모두 1980년대 후반에 지었고요.",
-   null
+   "모두1980년대후반에지었고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -313,16 +313,16 @@
   "say": "세 동네 모두 지금은 토지거래허가구역이라, 집을 사려면 구청 허가부터 받아야 해요.",
   "audio": "audio/h-3/3c1f9ce8e1f5b1d0.wav",
   "heard": [
-   "새동네 모두 지금은 토지거래 허가구역이라 집을 사려면 구청허가부터 받아야 해요.",
-   null
+   "새동네 모두 지금은 토지거래 허가구역이라 집을 사려면 구청 허가부터 받아야 해요.",
+   "세동네모두지금은토지거래허가구역이라집을살사람은구청허가부터받아야해요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.93,
+  "flag": "",
   "batch2": true
  },
  {
@@ -331,16 +331,16 @@
   "say": "그래서 오늘 숫자는 세 가지 사람을 위한 거예요. [pause short] 이 동네에서 집을 사려는 사람, 세 들어 살려는 사람, 이미 집이 있는 사람이요.",
   "audio": "audio/h-3/837e16d360851fa1.wav",
   "heard": [
-   "그래서 오늘 숫자는 세 가지 사람을 위한 거예요. 이 동네에서 집을 사려는 사람, 새 들어 살려는 사람, 이미 집이 있는 사람이요.",
-   null
+   "그래서 오늘 숫자는 세 가지 사람을 위한 거예요. 이 동네에서 집을 사려는 사람, 새에 들어살려는 사람, 이미 집이 있는 사람이요.",
+   "그래서오늘숫자는세가지사람을위한거예요이동네에서집을사려는사람세들어살려는사람이미집이있는사람이요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.99,
+  "flag": "",
   "batch2": true
  },
  {
@@ -350,15 +350,15 @@
   "audio": "audio/h-3/9225276507847ee9.wav",
   "heard": [
    "넓이는 전부 집 안 넓이 전용 면적 M으로 말씀드릴게요.",
-   null
+   "넓이는전부집안넓이전용면적로말씀드릴게요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.98,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -367,16 +367,18 @@
   "say": "감이 안 오시면, ㎡를 삼 점 삼으로 나누면 평이 됩니다.",
   "audio": "audio/h-3/14cb11280120bf48.wav",
   "heard": [
-   "감이 안 오시면 앱를 3.3으로 나누면 편이 됩니다.",
-   null
+   "감이 안 오시면 M을 3.3으로 나누면 평이 됩니다.",
+   "감이안오시면을33으로나누면평이됩니다",
+   "감이 안 오시면 m를 3.3으로 나누면 평이 됩니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
-  "sim": 0.91,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "합의오독(1.00/0.94 를→을/을)",
   "batch2": true
  },
  {
@@ -385,16 +387,18 @@
   "say": "국민평형은 집 안 넓이로 이십육평 정도예요.",
   "audio": "audio/h-3/e6044a463adaf59c.wav",
   "heard": [
-   "국민평형은 집 안 넓이로 26평 정도예요.",
-   null
+   "국민 평형은 집 안 넓이로 이십 육 평 정도예요.",
+   "국민평형은집안넓이로26평정도예요",
+   "국민평형은 집 안 넓이로 26평 정도예요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.91,
+  "flag": "",
   "batch2": true
  },
  {
@@ -403,16 +407,16 @@
   "say": "광고에 나오는 평수는 복도 같은 공용 부분까지 넣어서 이보다 커요. [pause short] 그래서 오늘은 ㎡로만 비교합니다.",
   "audio": "audio/h-3/5461d4806f540f37.wav",
   "heard": [
-   "광고에 나오는 평수는 복도 같은 공용 부분까지 넣어서 이보다 커요. 그래서 오늘은 엠비로만 비교합니다.",
-   null
+   "광고에 나오는 평수는 복도 같은 공용 부분까지 넣어서 이보다 커요. 그래서 오늘은 MB로만 비교합니다.",
+   "광고에나오는평수는복도같은공용부분까지넣어서이보다커요그래서오늘은2로만비교합니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.98,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -421,16 +425,16 @@
   "say": "이번에도 직접 다니는 대신 신고 자료로, 국토교통부에 신고된 최근 일년 치 거래만 셌습니다.",
   "audio": "audio/h-3/c9aa2a62c3e8b476.wav",
   "heard": [
-   "이번에는 직접 다니는 대신 신고 자료로 국토교통부에 신고된 최근 1년 치 거래만 섄습니다.",
-   null
+   "이번에는 직접 다니는 대신 신고 자료로 국토교통부에 신고된 최근 1년 치 거래만 셌습니다.",
+   "이번에도직접다니는대신신고자료로국토교통부에신고된최근1년치거래만셌습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.94,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -440,15 +444,15 @@
   "audio": "audio/h-3/8f5028fd99460b77.wav",
   "heard": [
    "가격이 딱 30억인 거래만 센 건 아니에요.",
-   null
+   "가격이딱30억인거래만셌건아니에요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.93,
+  "flag": "",
   "batch2": true
  },
  {
@@ -458,15 +462,15 @@
   "audio": "audio/h-3/4c36f41f6fb11c2e.wav",
   "heard": [
    "위아래로 3억씩 늘려서 썼어요.",
-   null
+   "위아래로3억씩늘려서셌어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.92,
+  "flag": "",
   "batch2": true
  },
  {
@@ -475,16 +479,16 @@
   "say": "평당 가격은 전용면적, 그러니까 집 안에서 실제로 쓰는 넓이로 나눴습니다.",
   "audio": "audio/h-3/fbbb7848889f85e0.wav",
   "heard": [
-   "평당 가격은 전용면적 그러니까 집안에서 실제로 쓰는 넓이로 나눴습니다.",
-   null
+   "평당 가격은 전용 면적, 그러니까 집안에서 실제로 쓰는 넓이로 나눴습니다.",
+   "평당가격은전용면적그러니까집안에서실제로쓰는넓이로나누었습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -493,16 +497,16 @@
   "say": "이 일년 동안 세 동네 아파트는 모두 토지거래허가구역 안에 있었습니다.",
   "audio": "audio/h-3/c29a889b47aee4f5.wav",
   "heard": [
-   "이 1년 동안 새 동네 아파트는 모두 토지 거래 허가 구역 안에 있었습니다.",
-   null
+   "이 1년 동안 새동네 아파트는 모두 토지 거래 허가 구역 안에 있었습니다.",
+   "이1년동안세동네아파트는모두토지거래허가구역안에있었습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -512,15 +516,15 @@
   "audio": "audio/h-3/488206f2089a590d.wav",
   "heard": [
    "작년 10월 20일부터 서울 25개 구 아파트가 전부 허가구역으로 묶였거든요.",
-   null
+   "작년10월20일부터서울25개구아파트가전부허가구역으로묶였거든요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.93,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -530,15 +534,15 @@
   "audio": "audio/h-3/0ef460c9a292faa5.wav",
   "heard": [
    "허가 구역에서 집을 사려면 계약 전에 구청 허가를 받아야 해요.",
-   null
+   "허가구역에서집을사려면계약전에구청허가를받아야해요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -547,18 +551,16 @@
   "say": "그리고 원칙적으로 이년은 그 집에 직접 살아야 합니다.",
   "audio": "audio/h-3/0301524850b17df2.wav",
   "heard": [
-   "그리고 원칙적으로 입양은 그 집에 직접 살아야 합니다.",
-   null,
-   "그리고 원칙적으로 2년은 그 집에 직접 살아야 합니다."
+   "그리고 원칙적으로 2년은 그 집에 직접 살아야 합니다.",
+   "그리고원칙적으로2년은그집에직접살아야합니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash",
-   "gemini-3.5-transcribe"
+   "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -568,15 +570,15 @@
   "audio": "audio/h-3/664bf5a49f70b510.wav",
   "heard": [
    "그러니까 오늘 보는 거래는 대부분 직접 들어가 살 사람이 산 가격이라고 보시면 됩니다.",
-   null
+   "그러니까오늘보는거래는대부분직접들어가살사람이산가격이라고보시면됩니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -586,15 +588,15 @@
   "audio": "audio/h-3/cdb51db01d161004.wav",
   "heard": [
    "이 조건이 가격에 얼마나 영향을 줬는지는 자료에 나오지 않아요.",
-   null
+   "이조건이가격에얼마나영향을줬는지는자료에나오지않아요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -603,16 +605,16 @@
   "say": "사려는 분이 알아 둘 규칙은, 세 동네 숫자부터 보고 나서 말씀드릴게요.",
   "audio": "audio/h-3/ab8ce35435138993.wav",
   "heard": [
-   "사려는 분이 알아 둘 규칙은 세 동네 숫자부터 보고 나서 말씀드릴게요.",
-   null
+   "사랑하는 분이 알아. 둘 규칙은 세 동네 숫자부터 보고 나서 말씀드릴게요.",
+   "사려는분이알아둘규칙은세동네숫자부터보고나서말씀드릴게요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -622,15 +624,15 @@
   "audio": "audio/h-3/6f410af11325c6c0.wav",
   "heard": [
    "신천동에서는 그 가격대 거래가 175번 있었습니다.",
-   null
+   "신천동에선그가격대거래가175번있었습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.92,
+  "flag": "",
   "batch2": true
  },
  {
@@ -639,16 +641,16 @@
   "say": "열에 여섯은 파크리오였고요.",
   "audio": "audio/h-3/23c996ee4cc54d32.wav",
   "heard": [
-   "이어이어서는 파크리오였고요.",
-   null
+   "이어지는 파크리어였고요.",
+   "열에여섯은파크리오였고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.56,
-  "pair": null,
-  "flag": "밀림의심(0.56) 받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.52,
+  "flag": "",
   "batch2": true
  },
  {
@@ -658,15 +660,15 @@
   "audio": "audio/h-3/fb47e8b3e8fc877f.wav",
   "heard": [
    "가장 많이 팔린 크기가 바로 그 국민 평형이었죠.",
-   null
+   "가장많이팔린크기가바로그국민평형이었죠"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -676,15 +678,15 @@
   "audio": "audio/h-3/b45d8b394d0a13ae.wav",
   "heard": [
    "같은 동네엔 장미 아파트도 있어요.",
-   null
+   "같은동네엔장미아파트도있어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -693,16 +695,16 @@
   "say": "비슷한 크기로 맞추면, 장미가 파크리오보다 평당 십이퍼센트 이상 비쌌습니다.",
   "audio": "audio/h-3/e1b6ff57a68131e3.wav",
   "heard": [
-   "비슷한 크기로 맞추면 잠실 아파크리어보다 평당 12% 이상 비쌌습니다.",
-   null
+   "비슷한 크기로 맞추면 장미가 파크리오보다 평당 12% 이상 비쌌습니다.",
+   "비슷한크기로맞추면장미가파크리오보다평당12%이상비쌌습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.85,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -711,16 +713,16 @@
   "say": "한 채로 치면 삼억 정도 차이였어요.",
   "audio": "audio/h-3/b77771f3b79dc702.wav",
   "heard": [
-   "한 채로 지면 3억 정도 차이었어요.",
-   null
+   "한 채로 치면 3억 정도 차이었어요.",
+   "한채로치면3억정도차이었어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.85,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.92,
+  "pair": 1.0,
+  "flag": "합의오독(1.00/0.92 였→었/었)",
   "batch2": true
  },
  {
@@ -730,15 +732,15 @@
   "audio": "audio/h-3/5517d3adfca246c9.wav",
   "heard": [
    "그럼 1년 사이 가격은 많이 움직였을까요?",
-   null
+   "그럼1년사이에가격은많이움직였을까요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.91,
+  "flag": "",
   "batch2": true
  },
  {
@@ -747,16 +749,16 @@
   "say": "파크리오 국민평형을 앞 여섯 달과 뒤 여섯 달로 나눠 보면, 중간 가격은 거의 그대로였습니다.",
   "audio": "audio/h-3/256db4d31d6c7da9.wav",
   "heard": [
-   "아파트 실거래 국민 평형을 앞 6개월과 뒤 6개월로 나눠 보면 중간 가격은 거의 그대로였습니다.",
-   null
+   "아파트와 국민 평형을 앞 6개월과 뒤 6개월로 나눠보면 중앙 가격은 거의 그대로였습니다.",
+   "파크리오국민평형을앞6개월과뒤6개월로나눠보면중앙가격은거의그대로였습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.76,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.83,
+  "pair": 0.91,
+  "flag": "합의오독(0.91/0.83 여섯달→게월/게월 여섯달→게월/게월 여섯달→게월/게월)",
   "batch2": true
  },
  {
@@ -765,16 +767,16 @@
   "say": "중간 가격은 거래를 가격 순서로 줄 세웠을 때 한가운데 오는 가격이에요.",
   "audio": "audio/h-3/9421595d20215995.wav",
   "heard": [
-   "중간가격은 거래를 가격순으로 줄 세웠을 때 한가운데 오는 가격이에요.",
-   null
+   "중간 가격은 거래를 가격 순서로 줄 세웠을 때 한가운데 오는 가격이에요.",
+   "중앙가격은거래를가격순서로줄세웠을때한가운데오는가격이에요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -783,16 +785,16 @@
   "say": "검색창에 '파크리오 십육평'을 치는 분도 많았어요.",
   "audio": "audio/h-3/c7dd3342e1362149.wav",
   "heard": [
-   "검색창에 팥크리오 16평을 치는 분도 많았어요.",
-   null
+   "검색창에 팥크로 16평을 치는 분도 많았어요.",
+   "검색창에파크리오16평을치는분도많았어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.94,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.86,
+  "flag": "",
   "batch2": true
  },
  {
@@ -802,15 +804,15 @@
   "audio": "audio/h-3/0fe7d9aac59f4b08.wav",
   "heard": [
    "16평 같은 말은 보통 복도나 계단 같은 공용 부분까지 넣은 넓이에요.",
-   null
+   "16평같은말은보통복도나계단같은공용부분까지넣은넓이에요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.96,
+  "flag": "합의오독(0.96/0.96 예→에/에)",
   "batch2": true
  },
  {
@@ -819,16 +821,16 @@
   "say": "실거래 자료엔 집 안 넓이만 적혀 있어서, 파크리오에서 가장 작은 집으로 볼게요.",
   "audio": "audio/h-3/6fffbf11d75be237.wav",
   "heard": [
-   "서울거래 자루엔 집 안 넓이만 적혀 있어서 파크리오에서 가장 작은 집으로 볼게요.",
-   null
+   "설거지 자료엔 집 안 넓이만 적혀 있어서 파크리오에서 가장 작은 집으로 볼게요.",
+   "실거래자료엔집안넓이만적혀있어서파크리오에서가장작은집으로볼게요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.94,
+  "flag": "",
   "batch2": true
  },
  {
@@ -837,16 +839,16 @@
   "say": "집 안 넓이가 삼십오 ㎡인 집이에요.",
   "audio": "audio/h-3/fd595747c572a303.wav",
   "heard": [
-   "지반 넓이가 35m 집이에요.",
-   null
+   "집안 넓이가 35m인 집이에요.",
+   "집안넓이가35인집이에요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.74,
-  "pair": null,
-  "flag": "밀림의심(0.74) 받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -855,16 +857,16 @@
   "say": "이 크기가 스무 번 팔렸습니다.",
   "audio": "audio/h-3/effb8bcf87b1d6a1.wav",
   "heard": [
-   "이 크기가 20번 팔렸습니다.",
-   null
+   "이 크기가 스무 번 팔렸습니다.",
+   "이크기가20번팔렸습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.91,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.91,
+  "flag": "",
   "batch2": true
  },
  {
@@ -874,15 +876,15 @@
   "audio": "audio/h-3/0f298a1203567246.wav",
   "heard": [
    "중간 가격은 14억이었고요.",
-   null
+   "중앙가격은14억이었고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.9,
+  "flag": "",
   "batch2": true
  },
  {
@@ -891,16 +893,16 @@
   "say": "파크리오는 집이 모두 육천 팔백 세대가 넘는 큰 단지예요.",
   "audio": "audio/h-3/08216bce8b3a3f44.wav",
   "heard": [
-   "파크리오니 집이 모두 6800세대가 넘는 큰 단지요.",
-   null
+   "파크리오 은 집이 모두 6800 세대가 넘는 큰 단지에요.",
+   "파크리오는집이모두6800세대가넘는큰단지예요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.87,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.95,
+  "pair": 0.89,
+  "flag": "",
   "batch2": true
  },
  {
@@ -910,15 +912,15 @@
   "audio": "audio/h-3/d20a53cad3efa313.wav",
   "heard": [
    "그중에 팔린 건 164채였습니다.",
-   null
+   "그중에팔린건164채였습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -927,16 +929,16 @@
   "say": "백 집에 두 집 조금 넘게 팔린 거죠.",
   "audio": "audio/h-3/9f619e8a0bc38f4e.wav",
   "heard": [
-   "백집에 두 집 조금 넘게 팔린 거죠.",
-   null
+   "백 집에 두 집 조금 넘게 팔린 거죠.",
+   "100집에두집조금넘게팔린거죠"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -945,16 +947,16 @@
   "say": "목동신시가지 아파트는 단지마다 번호가 붙어 있어요.",
   "audio": "audio/h-3/9fde2b27ba6d9f0e.wav",
   "heard": [
-   "목동신시가지 아파트는 단지마다 번호가 붙어 있어요.",
-   null
+   "목동 신시가지 아파트는 단지마다 번호가 붙어 있어요.",
+   "목동신시가지아파트는단지마다번호가붙어있어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -963,16 +965,16 @@
   "say": "그런데 신고된 주소를 보면, 칠단지까지만 목동이고 그 뒤 번호는 신정동이었습니다.",
   "audio": "audio/h-3/778b15ea6a8f0cbc.wav",
   "heard": [
-   "그런데 신고된 주소를 보면 7단지만 목동이고 그디 번호는 신정동이었습니다.",
-   null
+   "그런데 신고된 주소를 보면 7단지만 목동이고, 그디 번호는 신정동이었습니다.",
+   "그런데신고된주소를보면7단지만목동이고뒤번호는신정동이었습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.94,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.92,
+  "flag": "",
   "batch2": true
  },
  {
@@ -982,15 +984,15 @@
   "audio": "audio/h-3/09228c32c57e3573.wav",
   "heard": [
    "그래서 동이름으로만 찾으면 뒤번호 단지들은 빠져요.",
-   null
+   "그래서동이름으로만찾으면뒤번호단지들은빠져요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1000,15 +1002,17 @@
   "audio": "audio/h-3/8ba01638af5feb88.wav",
   "heard": [
    "목동 쪽에서는 그 가격대 거래가 67번이었습니다.",
-   null
+   "목동쪽에선그가격대거래가57번이었습니다",
+   "목동쪽에선 그 가격대 거래가 예순일곱 번이었습니다."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
-  "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.92,
+  "flag": "숫자",
   "batch2": true
  },
  {
@@ -1017,16 +1021,16 @@
   "say": "팔린 집들의 중간 크기가 구십육 ㎡ 정도, 신천동보다 십일 ㎡ 정도 넓었고요.",
   "audio": "audio/h-3/f4ff0260db914a40.wav",
   "heard": [
-   "팔린 집들의 중간 크기가 96m 정도 신천동보다 11m 정도 넓었고요.",
-   null
+   "팔현 집들의 중간 크기가 96m 정도 신천동보다 11m 정도 넓었고요.",
+   "팔린집들의중간크기가96정도신정동보다11정도넓었고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.96,
+  "pair": 0.91,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1035,18 +1039,16 @@
   "say": "신정동 쪽에선 같은 돈 거래가 열여섯번뿐이었습니다.",
   "audio": "audio/h-3/d6c6f6a1a8cf1c6f.wav",
   "heard": [
-   "신장동쪽에서 같은 동거래가 열려서 번뿐이었습니다.",
-   null,
-   "신당동 쪽에선 같은 동 거래가 16번 뿐이었습니다."
+   "신장동에선 같은 건거래가 16번뿐이었습니다.",
+   "신정동쪽에선같은동거래가16번뿐이었습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash",
-   "gemini-3.5-transcribe"
+   "gemini-3.5-flash"
   ],
-  "sim": 0.89,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.95,
+  "pair": 0.86,
+  "flag": "합의오독(0.86/0.95 돈→건/동)",
   "batch2": true
  },
  {
@@ -1055,16 +1057,16 @@
   "say": "그 대신 집은 더 넓었죠.",
   "audio": "audio/h-3/015623aafe104ec1.wav",
   "heard": [
-   "그대신 집은 더 넓었죠.",
-   null
+   "그 대신 집은 더 넓었죠.",
+   "그대신집은더넓었죠"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1074,15 +1076,15 @@
   "audio": "audio/h-3/f03ee06c09228b05.wav",
   "heard": [
    "크기를 똑같이 맞추면 어떨까요?",
-   null
+   "크기를똑같이맞추면어떨까요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1091,16 +1093,16 @@
   "say": "육십 ㎡대 작은 평수끼리 비교하면, 목동 쪽이 신정동 쪽보다 평당 이십퍼센트 비쌌습니다.",
   "audio": "audio/h-3/a17bd76183141db2.wav",
   "heard": [
-   "60m대 작은 평수끼리 비교하면 목동쪽이 신정동쪽보다 평당 20% 비쌌습니다.",
-   null
+   "60M대 작은 평수끼리 비교하면 목동쪽이 신정동쪽보다 평당 20% 비쌌습니다.",
+   "60작은평수끼리비교하면목동쪽이신정동쪽보다평당20%비쌌습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1109,16 +1111,16 @@
   "say": "한 채로 치면 사억 정도 차이죠.",
   "audio": "audio/h-3/f078ee7f3efe9f37.wav",
   "heard": [
-   "한채로 치면 4억 정도 차이죠.",
-   null
+   "한 채로 치면 4억 정도 차이죠.",
+   "한채로치면4억정도차이죠"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1128,15 +1130,15 @@
   "audio": "audio/h-3/b65e54f7d6360cbc.wav",
   "heard": [
    "같은 작은 평수에선 7단지와 11단지 차이가 가장 컸어요.",
-   null
+   "같은작은평수에선7단지와11단지차이가가장컸어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1145,16 +1147,16 @@
   "say": "평당 삼십퍼센트 정도 났습니다.",
   "audio": "audio/h-3/6392f9a027bcd66e.wav",
   "heard": [
-   "평당 30% 정도 났습니다.",
-   null
+   "평당 30% 정도 낮습니다.",
+   "평당30%정도였습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.88,
+  "pair": 0.88,
+  "flag": "합의오독(0.88/0.88 났→낮/였)",
   "batch2": true
  },
  {
@@ -1164,15 +1166,15 @@
   "audio": "audio/h-3/31f6c8a33f48c128.wav",
   "heard": [
    "왜 이만큼 차이가 나는지는 실거래 자리에 나오지 않습니다.",
-   null
+   "왜이만큼차이가나는지는실거래자료에나오지않습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1181,18 +1183,16 @@
   "say": "이런 댓글이 있었어요. [pause short] 목동 십이단지 가격이 맞느냐고요.",
   "audio": "audio/h-3/c642bb612166d38d.wav",
   "heard": [
-   "이런 댓글이 있었어요. 목동 시비단지 가격이 맞느냐고요.",
-   null,
-   "이런 댓글이 있었어요. 목동 10단지 가격이 맞느냐고요."
+   "이런 댓글 있었어요. 목동 12단지 가격이 맞느냐고요.",
+   "이런댓글있었어요목동12단지가격이맞느냐고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash",
-   "gemini-3.5-transcribe"
+   "gemini-3.5-flash"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "숫자 받아쓰기 실패",
+  "sim": 0.98,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1202,15 +1202,15 @@
   "audio": "audio/h-3/b96982f576395533.wav",
   "heard": [
    "지금 20억 정도 한다는데 정말 그러냐는 거죠.",
-   null
+   "지금20억정도한다는데정말그러냐는거죠"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1219,16 +1219,16 @@
   "say": "이 단지는 주소로는 신정동이지만, 다들 목동이라고 부르죠.",
   "audio": "audio/h-3/47811a44ee739493.wav",
   "heard": [
-   "이 단지는 주소로는 신정동이지만 다들 목동이라고 부르죠.",
-   null
+   "2단지는 주소로는 신정동이지만 다들 목동이라고 부르죠.",
+   "이단지는주소로는신정동이지만다들목동이라고부르죠"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1238,15 +1238,15 @@
   "audio": "audio/h-3/53a605b0d1cf1aa9.wav",
   "heard": [
    "신고된 거래로 보면 맞습니다.",
-   null
+   "신고된거래로보면맞습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.92,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1255,16 +1255,16 @@
   "say": "여기서 가장 많이 팔린 크기는 칠십이 ㎡였어요.",
   "audio": "audio/h-3/19237255b736ba16.wav",
   "heard": [
-   "여기서 가장 많이 팔린 크기는 72에 몇 어요?",
-   null
+   "여기서 가장 많이 팔린 크기는 72예요.",
+   "여기서가장많이팔린크기는72였어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.9,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.9,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1273,16 +1273,16 @@
   "say": "이 크기의 중간 가격이 이십억을 조금 넘었습니다.",
   "audio": "audio/h-3/99d28bea75f1f82e.wav",
   "heard": [
-   "이 극의 중간 가격이 20억을 조금 넘었습니다.",
-   null
+   "이 크기의 중간 가격이 20억을 조금 넘었습니다.",
+   "이크기의중간가격이20억을조금넘었습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.91,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1291,16 +1291,16 @@
   "say": "그보다 작은 집은 십칠억 정도였고요.",
   "audio": "audio/h-3/4f43664a21bb3ba1.wav",
   "heard": [
-   "규모가 작은 집은 17억 정도였고요.",
-   null
+   "급매물 같은 집은 17억 정도였고요.",
+   "그보다작은집은17억정도였고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.77,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.69,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1310,15 +1310,15 @@
   "audio": "audio/h-3/e4b5c3d04abe717d.wav",
   "heard": [
    "20억을 들고 있다면 어디서 몇 에면인지 묻는 분도 있었어요.",
-   null
+   "20억을들고있다면어디서몇였는지묻는분도있었어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.89,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.89,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1327,16 +1327,16 @@
   "say": "어디가 낫다고는 말씀드리지 않을게요. [pause short] 대신 숫자로 보면 이렇습니다.",
   "audio": "audio/h-3/ac20fd97166d3bc6.wav",
   "heard": [
-   "어디가 낫다고는 말씀드리지 않을게요. 대신 숫자로 보면 이렇습니다.",
-   null
+   "어디가 낮다고는 말씀드리지 않을게요. 대신 숫자로 보면 이렇습니다.",
+   "어디가낫다고는말씀드리지않을게요대신숫자로보면이렇습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.96,
+  "pair": 0.93,
+  "flag": "합의오독(0.93/0.96 낫→낮/늠)",
   "batch2": true
  },
  {
@@ -1346,15 +1346,15 @@
   "audio": "audio/h-3/e4c6833d3781af9a.wav",
   "heard": [
    "20억 안팎으로 목동 신시가지만이 아니라 목동이라는 동네 전체를 다 보면요",
-   null
+   "20억안팎으로목동신시가지만이아니라목동이라는동네전체를다보면요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1363,16 +1363,16 @@
   "say": "팔십오 ㎡ 정도였어요.",
   "audio": "audio/h-3/f97f3b9e81d798ac.wav",
   "heard": [
-   "85M 정도였어요.",
-   null
+   "85m 정도였어요.",
+   "85정도였어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1381,16 +1381,16 @@
   "say": "신정동에선 칠십일 ㎡ 정도였고요.",
   "audio": "audio/h-3/7cf545efcc5c1ebf.wav",
   "heard": [
-   "신정동에선 71m 정도였고요,",
-   null
+   "신 정동에선 71m 정도였고요.",
+   "신정동에선71정도였고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1399,16 +1399,16 @@
   "say": "목동신시가지 열네 단지는 모두 합치면 이만 육천 세대가 넘어요.",
   "audio": "audio/h-3/a0b9a7d19f142ee2.wav",
   "heard": [
-   "목동, 신시가지 14단지는 모두 합치면 2만 6,000 세대가 넘어요.",
-   null
+   "목동, 신시가지 14단지는 모두 합치면 2만 6천 세대가 넘어요.",
+   "목동신시가지14개단지는모두합치면2만6천세대가넘어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.93,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.96,
+  "pair": 0.93,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1418,15 +1418,15 @@
   "audio": "audio/h-3/691a4169dc2650c6.wav",
   "heard": [
    "그런데 팔린 집은 429채였습니다.",
-   null
+   "그런데팔린집은429채였습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1435,16 +1435,16 @@
   "say": "백 집에 두 집이 안 되는 거죠.",
   "audio": "audio/h-3/9dac53672d5bb9e3.wav",
   "heard": [
-   "백집의 두 집이 안 되는 거죠.",
-   null
+   "백 집에 두 집이 안 되는 거죠.",
+   "100집에두집이안되는거죠"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1453,16 +1453,16 @@
   "say": "앞 번호 단지들은 백 집에 두 집, 뒤 번호 단지들은 한 집 조금 넘었어요.",
   "audio": "audio/h-3/a66286173961cc55.wav",
   "heard": [
-   "앞 번호 단지들은 100집에 두 집 뒤, 번호 단지들은 한 집 조금 넘었어요.",
-   null
+   "앞 번호 단지들은 백 집에 두 집 뒤, 번호 단지들은 한 집 조금 넘었어요.",
+   "압구정단지들은100집에2집뒤번호단지들은1집조금넘었어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.98,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.82,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1472,15 +1472,15 @@
   "audio": "audio/h-3/c63dc3b030941fb5.wav",
   "heard": [
    "거래가 이렇게 적으면 1년 거래 몇 건으로 그 단지 가격을 말하기는 조심스러워요.",
-   null
+   "거래가이렇게적으면1년거래몇건으로그단지가격을말하기는조심스러워요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1490,15 +1490,15 @@
   "audio": "audio/h-3/2afb481a1b8c69a0.wav",
   "heard": [
    "특히 1년에 열 번도 안 팔린 단지라면 거래 한 건이 중간 가격을 크게 흔들 수 있거든요.",
-   null
+   "특히1년에10번도안팔린단지라면거래1건이중간가격을크게흔들수있거든요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1507,18 +1507,16 @@
   "say": "검색창엔 '목동 칠단지 매매 가격'도 자주 올라와요.",
   "audio": "audio/h-3/a938acbda74b2f6a.wav",
   "heard": [
-   "컴세창현 목동 칠단지 매매 가격도 자주 올라와요.",
-   null,
-   "검색창에 목동 7단지 매매 가격도 자주 올라와요."
+   "성수동 럭동 7단지 매매 가격도 자주 올라와요.",
+   "검색창에목동7단지매매가격도자주올라와요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash",
-   "gemini-3.5-transcribe"
+   "gemini-3.5-flash"
   ],
   "sim": 0.95,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.76,
+  "flag": "합의오독(0.76/0.95 검섹창엔목→성수동럭/에)",
   "batch2": true
  },
  {
@@ -1528,15 +1526,15 @@
   "audio": "audio/h-3/63eeebddcd5d13c3.wav",
   "heard": [
    "7단지 작은 평수는 앞 6달과 뒤 6달 중간 가격이 거의 같았습니다.",
-   null
+   "7단지작은평수는앞6달과뒤6달중간가격이거의같았습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1546,15 +1544,15 @@
   "audio": "audio/h-3/651a5367401fdc65.wav",
   "heard": [
    "둘 다 25억 되었어요.",
-   null
+   "둘다25억대였어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.86,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.86,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1563,16 +1561,16 @@
   "say": "압구정동은 그 가격대 거래가 아예 없었어요.",
   "audio": "audio/h-3/8085d791b3ed918f.wav",
   "heard": [
-   "구정동은 그 가격대 거래가 아예 없었어요.",
-   null
+   "목동동은 그 가격대 거래가 아예 없었어요.",
+   "압구정동은그가격대거래가아예없었어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.86,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1581,16 +1579,16 @@
   "say": "앞에서 말한 삼십오억이 조금 넘은 가장 싼 거래도, 중개사 없이 사는 사람과 파는 사람이 직접 거래한 한 건이었어요.",
   "audio": "audio/h-3/035ce5cbb438e63b.wav",
   "heard": [
-   "앞서 말한 35억이 조금 넘은 가장 싼 거래도 중개사 없이 사는 사람과 파는 사람이 직접 거래하는 한 건이었어요.",
-   null
+   "앞서 말한 35억이 조금 넘은 가장 싼 거래도 중개서 없이 사는 사람과 파는 사람이 직접 거래한 한 건이었어요.",
+   "앞에서말한35억이조금넘은가장싼거래도중개사없이사는사람과파는사람이직접거래한1건이었어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.95,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.99,
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1600,15 +1598,15 @@
   "audio": "audio/h-3/6e681fde48146670.wav",
   "heard": [
    "그런 거래가 한 건뿐이라 이 가격 하나로 압구정 시세를 말하기는 어렵습니다.",
-   null
+   "그런거래가1건뿐이라이가격하나로압구정시세를말하기는어렵습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.95,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "합의오독(0.98/0.95 긴→기는/기는)",
   "batch2": true
  },
  {
@@ -1618,15 +1616,15 @@
   "audio": "audio/h-3/647990e499d9f26b.wav",
   "heard": [
    "그럼 돈을 40억으로 올려 볼까요?",
-   null
+   "그럼돈을40억으로올려볼까요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1635,16 +1633,16 @@
   "say": "압구정동에서 그 돈에 팔린 집들은, 중간 크기가 오십 ㎡ 정도였습니다.",
   "audio": "audio/h-3/5e9f67c40c3b0de6.wav",
   "heard": [
-   "압구정동에서 그 돈에 팔린 집들은 중간 크기가 50억 정도였습니다.",
-   null
+   "압구정동에서 그 돈에 팔린 집들은 중간 크기가 50m 정도였습니다.",
+   "압구정동에서그돈에팔린집들은중간크기가50정도였습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.98,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1653,16 +1651,16 @@
   "say": "국민평형의 절반을 조금 넘는 크기죠.",
   "audio": "audio/h-3/7ce3689f733efc85.wav",
   "heard": [
-   "국민 평형의 절반을 조금 넘는 크기죠.",
-   null
+   "국민평형의 절반을 조금 넘는 크기죠.",
+   "국민평형의절반을조금넘는크기죠"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1672,15 +1670,15 @@
   "audio": "audio/h-3/59107d60d08dce9d.wav",
   "heard": [
    "같은 돈이면 신천동이나 목동쪽에서는 그 두 배나 넘는 집이 팔렸고요.",
-   null
+   "같은돈이면신천동이나목동쪽에선그2배가넘는집이팔렸고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.91,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.98,
+  "pair": 0.89,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1690,15 +1688,15 @@
   "audio": "audio/h-3/22a2fbf805fc428f.wav",
   "heard": [
    "압구정 현대 아파트 65평 집안을 보여준 영상이 있었어요.",
-   null
+   "압구정현대아파트65평집안을보여준영상이있었어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1708,15 +1706,15 @@
   "audio": "audio/h-3/6c2b9d2330b23a3e.wav",
   "heard": [
    "그 집이 130억이라는 댓글이 많았죠.",
-   null
+   "그집이130억이냐는댓글이많았죠"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.92,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1725,16 +1723,16 @@
   "say": "먼저 짚을 게 있습니다. [pause short] 육십오평은 보통 공용 부분까지 넣은 넓이예요.",
   "audio": "audio/h-3/6c6c60be667091f5.wav",
   "heard": [
-   "먼저 짚고 넘어가겠습니다. 65평은 보통 공용부분까지 넣은 넓이에요.",
-   null
+   "먼저 짚을 케이스입니다. 65평은 보통 공용 부분까지 넣은 넓이에요.",
+   "먼저짚을게있습니다65평은보통공용부분까지넣은넓이에요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.81,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.96,
+  "pair": 0.86,
+  "flag": "합의오독(0.86/0.96 예→에/에)",
   "batch2": true
  },
  {
@@ -1743,16 +1741,16 @@
   "say": "실거래 자료에 적힌 집 안 넓이로는 이백 ㎡에 조금 못 미치는 집이죠.",
   "audio": "audio/h-3/8b819b98bf3fcbc4.wav",
   "heard": [
-   "등기부등전에 적힌 집 안 넓이로는 200m에 조금 못 미치는 집이죠.",
-   null
+   "시세거래제로 적힌 집 안 넓이로는 200m에 조금 못 미치는 집이죠.",
+   "실거래자료에적힌집안넓이는200에조금못미치는집이죠"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.79,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.98,
+  "pair": 0.81,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1762,15 +1760,15 @@
   "audio": "audio/h-3/bd5b0a60686fa93b.wav",
   "heard": [
    "이 크기는 지난 1년 동안 네 번 신고됐습니다.",
-   null
+   "이크기는지난1년동안4번신고됐습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1779,16 +1777,16 @@
   "say": "가장 싼 게 구십억대였고요.",
   "audio": "audio/h-3/b5c32fc76f820df8.wav",
   "heard": [
-   "가장 싼 게 90억대였고요.",
-   null
+   "가장 싼 게 90억 대였고요.",
+   "가장싼게90억대였고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1798,15 +1796,15 @@
   "audio": "audio/h-3/bfc20841426ba332.wav",
   "heard": [
    "가장 비싼 건 110억이었어요.",
-   null
+   "가장비싼건110억이었어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1816,15 +1814,15 @@
   "audio": "audio/h-3/1ac6268ce33a9b72.wav",
   "heard": [
    "그러니까 130억에 신고된 거래는 없었습니다.",
-   null
+   "그러니까130억의신고된거래는없었습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1833,16 +1831,16 @@
   "say": "뉴스에선 이런 집을 몇억 낮춰 내놨다는 이야기도 자주 나오죠.",
   "audio": "audio/h-3/c77b023bc97ed814.wav",
   "heard": [
-   "요새는 이런 집을 몇 억 낮춰 내놨다는 이야기도 자주 나오죠.",
-   null
+   "요즘엔 이런 집을 몇 억 낮춰 내놨다는 이야기도 자주 나오죠.",
+   "뉴스에선이런집을몇억낮춰내놨다는이야기도자주나오죠"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.86,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.86,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1852,15 +1850,15 @@
   "audio": "audio/h-3/a523d1330a10bd06.wav",
   "heard": [
    "그건 집주인이 부른 값 혹가예요. 실거래 자료엔 실제로 계약하고 신고한 값만 들어갑니다.",
-   null
+   "그건집주인이부른값호가예요실거래자료엔실제로계약하고신고한값만들어갑니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1870,15 +1868,15 @@
   "audio": "audio/h-3/6d475d8eef3f0101.wav",
   "heard": [
    "그래서 오늘 숫자인 호가가 하나도 없어요.",
-   null
+   "그래서오늘숫자엔호가가하나도없어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.94,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.94,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1888,15 +1886,15 @@
   "audio": "audio/h-3/0475b8d926c44afe.wav",
   "heard": [
    "다른 단지 다른 크기까지 다 봐도 압구정동에서 가장 비싸게 팔린 집은 128억이었고요.",
-   null
+   "다른단지다른크기까지다봐도압구정동에서가장비싸게팔린집은128억이었고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1905,16 +1903,16 @@
   "say": "일년 사이 오르내림은 압구정에선 말씀드리지 않을게요. [pause short] 같은 단지 같은 크기 거래가 반년에 서너 건뿐이라, 몇 건으로 방향을 말하기 어렵거든요.",
   "audio": "audio/h-3/de1f683f2ef53a25.wav",
   "heard": [
-   "1년 사이 오르내림은 앞구정에서 말씀드리지 않을게요. 같은 난지 같은 크기 거래가 반년에 선어권 뿐이라 몇 건으로 방향을 말하기 어렵거든요.",
-   null
+   "1년 사이 오르내림은 앞구정에서 말씀드리지 않을게요. 같은 난지 같은 크기 거래가 반년에 선어 건 뿐이라 몇 건으로 방향을 말하기 어렵거든요.",
+   "1년사이오르내림은압구정에서말씀드리지않을게요같은단지같은크기거래가반년에서너건뿐이라몇건으로방향을말하기어렵거든요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.89,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.98,
+  "pair": 0.93,
+  "flag": "합의오독(0.93/0.98 선→서/서)",
   "batch2": true
  },
  {
@@ -1923,16 +1921,16 @@
   "say": "압구정엔 다른 동네와 크게 다른 숫자가 하나 더 있습니다.",
   "audio": "audio/h-3/2a5e4a66f3d7b87d.wav",
   "heard": [
-   "앞구정엔 다른 동네와 크게 다른 숫자가 하나 더 있습니다.",
-   null
+   "압구정엔 다른 동네와 크게 다른 숫자가 하나 더 있습니다.",
+   "압구정엔다른동네와크게다른숫자가하나더있습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1942,15 +1940,15 @@
   "audio": "audio/h-3/e681fe6f82edd3ae.wav",
   "heard": [
    "계약했다가 나중에 취소신고된 거래가 13건 중에 한 건 꼴이었습니다.",
-   null
+   "계약했다가나중에취소신고된거래가13건중에1건꼴이었습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1959,16 +1957,16 @@
   "say": "다른 두 동네는 서른다섯 건에 한 건꼴이었고요.",
   "audio": "audio/h-3/0d3a7359ebf556a8.wav",
   "heard": [
-   "다른 두 동네는 35건의 한 건꼴이었고요,",
-   null
+   "다른 두 동네는 35건의 한 건 꼴이었고요,",
+   "다른두동네는35건에1건꼴이었고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.88,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1977,16 +1975,16 @@
   "say": "압구정에서 취소가 훨씬 잦았던 거죠.",
   "audio": "audio/h-3/e03242d893bfb602.wav",
   "heard": [
-   "압구장에서 취소가 훨씬 잦았던 거죠.",
-   null
+   "앞구정에서 취소가 훨씬 잦았던 거죠.",
+   "압구정에선취소가훨씬잦았던거죠"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.93,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.87,
+  "flag": "",
   "batch2": true
  },
  {
@@ -1995,16 +1993,16 @@
   "say": "그래서 뉴스에 나온 최고 기록 거래 한 건은, 실거래가 공개시스템에서 나중에 해제, 그러니까 취소 표시가 붙었는지 한 번 더 보셔야 해요.",
   "audio": "audio/h-3/cd56f51916ca9c21.wav",
   "heard": [
-   "그래서 뉴스에 나온 최고 기록 거래 한 건은 실거래가 공개 시스템에서 나중에 해제, 그러니까 취소 표시가 붙었는지 한 번 더 보셔야 해요.",
-   null
+   "그래서 뉴스의 나온 최고 기록 거래 한 건은 실거래가 공개시스템에서 나중에 해제, 그러니까 취소표시가 붙었는지 한 번 더 보셔야 해요.",
+   "그래서뉴스에나온최고기록거래1건은실거래가공개시스템에서나중에해제그러니까취소표시가붙었는지한번더보셔야해요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.99,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2013,16 +2011,16 @@
   "say": "압구정 현대아파트들도 일년 동안 백 집에 두 집 조금 넘게 팔렸습니다.",
   "audio": "audio/h-3/87c7f0dd4e5d1b39.wav",
   "heard": [
-   "압구정 현대 아파트들도 1년 동안 100 집에 두집 조금 넘게 팔렸습니다.",
-   null
+   "압구정 현대아파트들도 1년 동안 100 집에 두 집 조금 넘게 팔렸습니다.",
+   "압구정현대아파트들도1년동안100집에2집조금넘게팔렸습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.98,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2032,15 +2030,15 @@
   "audio": "audio/h-3/dcd6176066d66fbb.wav",
   "heard": [
    "여기서 하나 조심할 게 있어요. 같은 단지 안에서도 작은 집이 평당 더 비쌌거든요.",
-   null
+   "여기서하나조심할게있어요같은단지안에서도작은집이평당더비쌌거든요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2049,16 +2047,16 @@
   "say": "파크리오에선 가장 작은 집이 가장 큰 집보다 평당 육십퍼센트 이상 비쌌습니다.",
   "audio": "audio/h-3/cf7d96082c3bb709.wav",
   "heard": [
-   "파크리오에선 가장 작은 집이 가장 큰 집보다 평당 60% 이상 비쌌습니다.",
-   null
+   "타크리에선 가장 작은 집이 가장 큰 집보다 평당 60% 이상 비쌌습니다.",
+   "파크리오에선가장작은집이가장큰집보다평당60%이상비쌌습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.94,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2068,15 +2066,15 @@
   "audio": "audio/h-3/10ccb5667b10a4c0.wav",
   "heard": [
    "목동 3단지에서도 40% 차이였고요.",
-   null
+   "목동3단지에서도40%차이였고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2086,15 +2084,15 @@
   "audio": "audio/h-3/887a4888a818d308.wav",
   "heard": [
    "신천동과 목동신정동에서 크기별 거래가 넉넉한 단지를 전부 봤더니 열에 아홉 정도 이랬습니다.",
-   null
+   "신천동과목동신정동에서크기별거래가넉넉한단지를전부봤더니10에9정도이랬습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2103,16 +2101,16 @@
   "say": "거꾸로인 곳은 두 곳뿐이었고요.",
   "audio": "audio/h-3/139f77a7edd047e8.wav",
   "heard": [
-   "거꾸로 행 것은 두 곳뿐이었고요.",
-   null
+   "거꾸로 인 것은 두 곳 뿐이었고요.",
+   "거꾸로인곳은두곳뿐이었고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.85,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.92,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2121,16 +2119,16 @@
   "say": "평당 가격은 집값을 넓이로 나눈 건데, 집이 작아져도 가격은 넓이만큼 줄지 않거든요.",
   "audio": "audio/h-3/2058e05529f97845.wav",
   "heard": [
-   "평당가격은 집값을 넓이로 나눈 건데 집이 작아져도 가격은 넓이만큼 줄지 않거든요.",
-   null
+   "평당 가격은 즉값을 넓이로 나눈 건데 집이 작아져도 가격은 넓이만큼 주지 않거든요.",
+   "평당가격은집값을넓이로나눈건데집이작아져도가격은넓이만큼줄지않거든요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.94,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2140,15 +2138,15 @@
   "audio": "audio/h-3/6e3deb24a3f50d18.wav",
   "heard": [
    "그래서 평당 가격으로 동네를 줄 세우면 작은 집이 많이 팔린 곳이 더 비싸 보일 수 있어요.",
-   null
+   "그래서평당가격으로동네를줄세우면작은집이많이팔린곳이더비싸보일수있어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2157,16 +2155,16 @@
   "say": "이번에 평당 대신 같은 돈으로 몇 ㎡였는지를 먼저 본 것도 그 때문이에요.",
   "audio": "audio/h-3/1c05c4287554a481.wav",
   "heard": [
-   "이번에 평당 대신 같은 돈으로 몇 엠 넣는지를 먼저 본 것도 그 때문이에요.",
-   null
+   "이번에 평당 대신 같은 돈으로 몇 엠 넣었는지를 먼저 본 것도 그 때문이에요.",
+   "이번에평당대신같은돈으로몇얻는지를먼저본것도그때문이에요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.95,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.96,
+  "pair": 0.93,
+  "flag": "합의오독(0.93/0.96 였→엠넣었/얻)",
   "batch2": true
  },
  {
@@ -2176,15 +2174,15 @@
   "audio": "audio/h-3/c445192aa62481ad.wav",
   "heard": [
    "이제 이동네에서 집을 사려는 분이 계약 전에 알아둘 규칙이에요.",
-   null
+   "이제이동네에서집을사려는분이계약전에알아둘규칙이에요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2194,15 +2192,15 @@
   "audio": "audio/h-3/0418f50280060fd0.wav",
   "heard": [
    "허가는 사는 사람과 파는 사람이 같이 신청하고 신청서엔 그 집을 어떻게 쓸지와 돈을 어떻게 마련할지를 적습니다.",
-   null
+   "허가는사는사람과파는사람이같이신청하고신청서엔그집을어떻게쓸지와돈을어떻게마련할지를적습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2212,15 +2210,15 @@
   "audio": "audio/h-3/9c117991a9ce5dc2.wav",
   "heard": [
    "구청은 정해진 처리 기간 안에 허가나 불허가를 알려 줘야 하고 그 기간에 연락이 없으면 허가한 것으로 봐요.",
-   null
+   "구청은정해진처리기간안에허가나불허가를알려줘야하고그기간에연락이없으면허가한것으로봐요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2229,16 +2227,16 @@
   "say": "허가 없이 맺은 계약은 효력이 없어요.",
   "audio": "audio/h-3/c5876ac9f82f2c8b.wav",
   "heard": [
-   "법 없이 맺진 계약은 효력이 없어요.",
-   null
+   "허락 없이 맺은 계약은 효력이 없어요.",
+   "허가없이맺은계약은효력이없어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.83,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.93,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2248,7 +2246,7 @@
   "audio": "audio/h-3/1e57e384aa6fd777.wav",
   "heard": [
    "인연을 직접 사랑하니까 세입자를 드리고 나중에 들어가는 방식은 원칙적으로 안 돼요.",
-   null,
+   "2년을직접살아야하니까세입자를들이고나중에들어가는방식은원칙적으로안돼요",
    "이년을 직접 살아야 하니까 세입자를 들이고 나중에 들어가는 방식은 원칙적으로 안 돼요."
   ],
   "models": [
@@ -2257,8 +2255,8 @@
    "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "숫자 받아쓰기 실패",
+  "pair": 0.83,
+  "flag": "숫자",
   "batch2": true
  },
  {
@@ -2267,16 +2265,16 @@
   "say": "이미 이 동네에 집이 있으면, 팔 때도 사는 사람이 허가를 받아야 한다는 점이 같이 붙고요.",
   "audio": "audio/h-3/56290c89b0f33cd6.wav",
   "heard": [
-   "이미 이 동네에 집이 있으면 8대도 사는 사람이 허가를 받아야 한다는 점이 같이 붙고요.",
-   null
+   "이미 이 동네에 집이 있으면 팔 때도 사는 사람이 허가를 받아야 한다는 점이 같이 붙고요.",
+   "이미이동네에집이있으면팔때도사는사람이허가를받아야한다는점이같이붙고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2286,15 +2284,15 @@
   "audio": "audio/h-3/5e3be4094ab41716.wav",
   "heard": [
    "세 들어 살 뿐이라면 따로 허가가 필요 없습니다. 전세 이야기는 뒤에서 따로 할게요.",
-   null
+   "세들어살뿐이라면따로허가가필요없습니다전세이야기는뒤에서따로할게요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "합의오독(1.00/0.97 분→뿐/뿐)",
   "batch2": true
  },
  {
@@ -2304,15 +2302,15 @@
   "audio": "audio/h-3/33881452e6ef8e5b.wav",
   "heard": [
    "그럼 세입자가 살고 있는 집은 아예 못 살까요?",
-   null
+   "그럼세입자가살고있는집은아예못살까요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2322,15 +2320,15 @@
   "audio": "audio/h-3/4a725d57af4c8198.wav",
   "heard": [
    "이번 달 1일부터 시행된 시행령에 집이 없는 사람을 위한 특례가 들어 있어요.",
-   null
+   "이번달1일부터시행된시행령에집이없는사람을위한특례가들어있어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2340,7 +2338,7 @@
   "audio": "audio/h-3/e281df60481e10ce.wav",
   "heard": [
    "조건은 세 시예요. 먼저 올해 5월 10일부터 쭉 집이 없는 세대여야 합니다.",
-   null,
+   "조건은셋이에요먼저올해5월13일부터쭉집이없는세대여야합니다",
    "조건은 셋이에요. 먼저 올해 5월 10일부터 쭉 집이 없는 세대여야 합니다."
   ],
   "models": [
@@ -2349,8 +2347,8 @@
    "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "숫자 받아쓰기 실패",
+  "pair": 0.89,
+  "flag": "숫자",
   "batch2": true
  },
  {
@@ -2359,16 +2357,16 @@
   "say": "사려는 집에는 시월 일일 당시 세입자가 살고 있어야 하고요.",
   "audio": "audio/h-3/2dd7fb341b297382.wav",
   "heard": [
-   "사령은 집에는 10월 1일 당시 세입자가 살고 있어야 하고요.",
-   null
+   "사령은집에는10월1일당시세입자가살고있어야하고요",
+   "사려는집에는10월1일당시세입자가살고있어야하고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.91,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.91,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2378,15 +2376,15 @@
   "audio": "audio/h-3/11f8dd5f1e315104.wav",
   "heard": [
    "그리고 2027년까지 허가를 신청해야 해요.",
-   null
+   "그리고2027년말까지허가를신청해야해요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.9,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2396,15 +2394,15 @@
   "audio": "audio/h-3/5167b1418cc5cb4b.wav",
   "heard": [
    "허가를 받고 넉 달 안에 집을 넘겨받으면 2년 직접 사는 기간을 세입자 계약이 처음 끝나는 날부터 셉니다.",
-   null
+   "허가를받고넉달안에집을넘겨받으면2년직접사는기간을세입자계약이처음끝나는날부터셉니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2414,15 +2412,15 @@
   "audio": "audio/h-3/008ad4264a09702c.wav",
   "heard": [
    "조심할 게 둘 있어요.",
-   null
+   "조심할게둘있어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2432,15 +2430,15 @@
   "audio": "audio/h-3/1226b91435024e38.wav",
   "heard": [
    "하나는 세입자 계약이 너무 일찍 끝나는 집이에요.",
-   null
+   "하나는세입자계약이너무일찍끝나는집이에요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2449,16 +2447,16 @@
   "say": "허가받은 날부터 넉 달이 안 돼 계약이 끝나면, 이 특례는 못 쓰고 원래대로 사는 날부터 이년이에요.",
   "audio": "audio/h-3/de76486c6de631db.wav",
   "heard": [
-   "휴가 받은 날부터 넉달이 안 돼 계약이 끝나면 이 특례는 못 쓰고 원래대로 사는 날부터 2년이에요.",
-   null
+   "휴가 받은 날부터 넉 달이 안 돼 계약이 끝나면 이 특례는 못 쓰고 원래대로 사는 날부터 2년이에요.",
+   "허가받은날부터넉달이안돼계약이끝나면이특례는못쓰고원래대로사는날부터2년이에요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2467,16 +2465,16 @@
   "say": "예를 들어 허가받고 석 달 뒤에 세입자 계약이 끝나는 집이라면, 특례가 아니라 원래 규칙이 붙는 거죠.",
   "audio": "audio/h-3/280a8e9179894a73.wav",
   "heard": [
-   "예를 들어 허가 받고 3달 뒤에 세입자 구하기가 끝나는 집이라면 특례가 아니라 원래 규칙이 붙는 거죠.",
-   null
+   "예를 들어 허가 받고 3달 뒤에 세입자 기하게 끝나는 집이라면 특례가 아니라 원래 규칙이 붙는 거죠.",
+   "예를들어허가받고석달뒤에세입자계약이끝나는집이라면특례가아니라원래규칙이붙는거죠"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.9,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.94,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2485,16 +2483,16 @@
   "say": "그리고 이미 집이 있는 사람은 이 특례에 해당하지 않습니다.",
   "audio": "audio/h-3/bd3ec7cbfcbf36b7.wav",
   "heard": [
-   "그리고 이미 집이 있는 사람은 이 특례 해당하지 않습니다.",
-   null
+   "그리고 이미 집이 있는 사람은 이 특례에 해당하지 않습니다.",
+   "그리고이미집이있는사람은이특례에해당하지않습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.98,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2504,15 +2502,15 @@
   "audio": "audio/h-3/42167e01e5889b4c.wav",
   "heard": [
    "세입자가 이미 계약을 한번 갱신했다면 처음 계약 말고 그 갱신한 계약이 끝나는 날부터 셉니다.",
-   null
+   "세입자가이미계약을한번갱신했다면처음계약말고그갱신한계약이끝나는날부터셉니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2521,16 +2519,16 @@
   "say": "단, 그 갱신 계약이 이천이십칠년 말 전에 시작된 경우예요.",
   "audio": "audio/h-3/c9e0f4e96f9ae94f.wav",
   "heard": [
-   "단 그 갱신 계약이 2027년 말 전에 시작된 경우예요.",
-   null
+   "만 그 갱신 계약이 2027년 말 전에 시작된 경우에요.",
+   "단그갱신계약이2027년말전에시작된경우예요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.94,
+  "pair": 0.83,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2540,15 +2538,15 @@
   "audio": "audio/h-3/465e11eca4954458.wav",
   "heard": [
    "왜 이런 특내가 생겼을까요?",
-   null
+   "왜이런특혜가생겼을까요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.91,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.91,
+  "flag": "합의오독(0.91/0.91 례→네/헤)",
   "batch2": true
  },
  {
@@ -2557,16 +2555,16 @@
   "say": "시행령을 고친 이유에는, 세입자가 사는 집도 사고팔 수 있게 하고 세입자도 보호하려는 뜻이 적혀 있어요.",
   "audio": "audio/h-3/3795ae93d3cf5466.wav",
   "heard": [
-   "세입자를 고친 이후에는 세입자가 사는 집도 사고팔 수 있게 하고 세입자도 보호하려는 뜻이 적혀 있어요.",
-   null
+   "세입 영어를 고친 이후에는 세입자가 사는 집도 사고팔 수 있게 하고 세입자도 보호하려는 뜻이 적혀 있어요.",
+   "시행령을고친이유에는세입자가사는집도사고팔수있게하고세입자도보호하려는뜻이적혀있어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.88,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.87,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2575,8 +2573,8 @@
   "say": "이 밖에도 해외로 이주하거나 군에 복무하는 것처럼, 법에 정한 사유가 있으면 이년을 못 채워도 예외로 봅니다.",
   "audio": "audio/h-3/af5c5361bdf9d2a1.wav",
   "heard": [
-   "이밖에도 해외로 이주하거나 국내 복무하는 것처럼 법에 정한 사유가 있으면 이년을 못 채워도 예외로 봅니다.",
-   null,
+   "이 밖에도 해외로 이주하거나 국내 복무하는 것처럼 법에 정한 사유가 있으면 이년을 못 채워도 예외로 봅니다.",
+   "이밖에도해외로이주하거나군에복무하는것처럼법에정한사유가있으면2년을못채워도예외로봅니다",
    "이밖에도 해외로 이주하거나 군에 복무하는 것처럼 법에 정한 사유가 있으면 2년을 못 채워도 예외로 봅니다."
   ],
   "models": [
@@ -2585,8 +2583,8 @@
    "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.94,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2596,15 +2594,15 @@
   "audio": "audio/h-3/5481cb94de9f972b.wav",
   "heard": [
    "그래서 세입자가 있는 집을 산다면 매매값에서 전세 보증금을 뺀 돈은 먼저 있어야 합니다.",
-   null
+   "그래서세입자가있는집을산다면매매값에서전세보증금을뺀돈은먼저있어야합니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.94,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2613,16 +2611,16 @@
   "say": "파크리오 국민평형이면 십팔억 정도예요.",
   "audio": "audio/h-3/73375e4fd0ac850a.wav",
   "heard": [
-   "파크리오 국민평형이면 18억 정도예요.",
-   null
+   "파크로 국민 평형이면 18억 정도예요.",
+   "파크리오국민평형이면18억정도예요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.9,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2632,15 +2630,15 @@
   "audio": "audio/h-3/f13e5aee26ef8238.wav",
   "heard": [
    "압구정 한양아파트 작은 집이면 35억 정도가 필요하고요.",
-   null
+   "압구정한양아파트작은집이면35억정도가필요하고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2649,16 +2647,16 @@
   "say": "그래서 계약 전에는 세입자 계약이 언제 처음 끝나는지, 갱신을 했는지부터 확인하세요.",
   "audio": "audio/h-3/2d2eabd6d7f9a81a.wav",
   "heard": [
-   "그래서 계약 전에는 새 임차 계약이 언제 처음 끝나는지 갱신을 했는지부터 확인하세요.",
-   null
+   "그래서 계약 전에는 세입자 계약이 언제 처음 끝나는지 갱신을 했는지부터 확인하세요.",
+   "그래서계약전에는세입자계약이언제처음끝나는지갱신을했는지부터확인하세요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.94,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2667,16 +2665,16 @@
   "say": "돈 이야기도 하나 짚을게요. [pause short] 집을 사려고 받는 대출은 작년 시월 대책 기준으로 집값에 따라 한도가 정해져 있어요.",
   "audio": "audio/h-3/13f6c492283740a1.wav",
   "heard": [
-   "또 이야기도 하나 더 해 볼게요. 집을 사려고 받는 대출은 지난해 10월 대책 기준으로 집값에 따라 한도가 정해져 있어요.",
-   null
+   "또 이약기도 하나짚을게요. 집을 사려고 받는 대출은 작년 10월 대책 기준으로 집값에 따라 한도가 정해져 있어요.",
+   "돈이야기도하나짚을게요집을사려고받는대출은작년10월대책기준으로집값에따라한도가정해져있어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.87,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2686,35 +2684,33 @@
   "audio": "audio/h-3/81a3fba5f14ca433.wav",
   "heard": [
    "시세가 25억을 넘는 집은 대출이 가장 적게 나와요.",
-   null
+   "시세가25억을넘는집은대출이가장적게나와요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
   "at": "7:29",
-  "text": "2억까지예요.",
-  "say": "이억까지예요.",
-  "audio": "audio/h-3/9fba1982fdfd7be7.wav",
+  "text": "최대 2억까지 빌릴 수 있어요.",
+  "say": "최대 이억까지 빌릴 수 있어요.",
+  "audio": "audio/h-3/bc5e53eea798e0eb.wav",
   "heard": [
-   "여기까지요.",
-   null,
-   "여기까지예요."
+   "최대 2억까지 빌릴 수 있어요.",
+   "최대2억까지빌릴수있어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash",
-   "gemini-3.5-transcribe"
+   "gemini-3.5-flash"
   ],
-  "sim": 0.73,
-  "pair": null,
-  "flag": "숫자 밀림의심(0.73) 받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2724,15 +2720,15 @@
   "audio": "audio/h-3/82a5612ea24b1f30.wav",
   "heard": [
    "그보다 싼 집은 4억 가지고요.",
-   null
+   "그보다싼집은4억까지고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.91,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.91,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2742,15 +2738,15 @@
   "audio": "audio/h-3/6e3cb106a760e5c3.wav",
   "heard": [
    "15억이 안 넘는 집은 한도가 가장 넉넉해요.",
-   null
+   "15억이안넘는집은한도가가장넉넉해요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2760,15 +2756,15 @@
   "audio": "audio/h-3/7211e5955d388e06.wav",
   "heard": [
    "6억까지 빌릴 수 있습니다. 시세는 은행의 한국부동산원이나 KB 시세로 봅니다.",
-   null
+   "6억까지빌릴수있습니다시세는은행이한국부동산원이나시세로봅니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2778,15 +2774,15 @@
   "audio": "audio/h-3/e3a72614cc4eeffd.wav",
   "heard": [
    "이 기준이 지금도 같은지는 대출 받을 은행에서 꼭 확인하세요.",
-   null
+   "이기준이지금도같은지는대출받을은행에서꼭확인하세요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2796,15 +2792,15 @@
   "audio": "audio/h-3/311dd0b4f86a6192.wav",
   "heard": [
    "그래서 이동네 30억대 집은 대부분 자기 돈으로 사야 하는 구조예요.",
-   null
+   "그래서이동네30억대집은대부분자기돈으로사야하는구조예요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2813,16 +2809,18 @@
   "say": "취득세도 따로 있어요. [pause short] 집이 한 채뿐인 사람이 구억 넘는 집을 사면요.",
   "audio": "audio/h-3/7947866c53cb268a.wav",
   "heard": [
-   "취득세도 따로 있어요. 집에 한채 뿐인 사람이 9억 넘는 집을 사면요?",
-   null
+   "집을 샀다고 해서요. 집에 한 채 뿐인 사람이 구억 넘는 집을 사면요.",
+   "취득세도따로있어요집이한채뿐인사람이9억넘는집을사면요",
+   "취득세도 따로 있어요? 집에 한 채 뿐인 사람이 9억 넘는 집을 사면요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash",
+   "gemini-3.5-transcribe"
   ],
-  "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.65,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2832,15 +2830,15 @@
   "audio": "audio/h-3/8e5b441df74809bd.wav",
   "heard": [
    "집값의 3%를 내니다.",
-   null
+   "집값의3%를냅니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.86,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.86,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2850,15 +2848,15 @@
   "audio": "audio/h-3/765f5df944d44f89.wav",
   "heard": [
    "그러니까 30억 집이라면요.",
-   null
+   "그러니까30억집이라면요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2867,16 +2865,16 @@
   "say": "취득세만 구천만원 정도고, 여기에 붙는 지방세가 조금 더 있습니다.",
   "audio": "audio/h-3/248bc8ec262c21cd.wav",
   "heard": [
-   "취득세만 9천만 원 정도고, 여기에 붙는 지방세가 조금 더 있습니다.",
-   null
+   "취득세만 9천만 원 정도고 여기에 붙는 지방세가 조금 더 있습니다.",
+   "취득세만9천만원정도고여기에붙는지방세가조금더있습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2885,16 +2883,16 @@
   "say": "이 세 동네의 오래된 단지들은 지금 재건축을 추진하고 있어요.",
   "audio": "audio/h-3/232d9e224f927004.wav",
   "heard": [
-   "이 세 동네에 오래된 단지들은 지금 재건축을 추진하고 있어요.",
-   null
+   "이 세 동네의 오래된 단지들은 지금 재건축을 추진하고 있어요.",
+   "이세동네의오래된단지들은지금재건축을추진하고있어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2903,16 +2901,16 @@
   "say": "그래서 사기 전에 알아 두셔야 할 규칙이 하나 있어요.",
   "audio": "audio/h-3/512a36fd876ad486.wav",
   "heard": [
-   "그래서 사기 전에 알아두셔야 할 규칙이 하나 있어요.",
-   null
+   "그래서 사귀기 전에 알아두셔야 할 규칙이 하나 있어요.",
+   "그래서사기전에알아두셔야할규칙이하나있어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2921,16 +2919,16 @@
   "say": "서울은 지금 스물다섯 개 구가 전부 투기과열지구예요.",
   "audio": "audio/h-3/b29df51d63e61c2a.wav",
   "heard": [
-   "서울은 지금 25개 구가 전부 투기과열지구예요.",
-   null
+   "서울은 지금 25개 구가 전부 투기 과열 지구예요.",
+   "서울은지금25개구가전부투기과열지구예요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.9,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2939,16 +2937,16 @@
   "say": "투기과열지구에서는 재건축 조합설립인가가 난 뒤에 집을 산 사람은 조합원이 될 수 없어요.",
   "audio": "audio/h-3/37f8008ebb961fab.wav",
   "heard": [
-   "투기과열지구에서는 재건축 조합설립인가가 난 뒤에 집을 산 사람은 조합원이 될 수 없어요.",
-   null
+   "투기 과열 지구에서는 재건축 조합 설립인가가 난 뒤에 집을 산 사람은 조합원이 될 수 없어요.",
+   "투기과열지구에서는재건축조합설립인가가난뒤에집을산사람은조합원이될수없어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2957,16 +2955,16 @@
   "say": "조합원이 못 되면 새 집을 받는 길이 막히고, 사업을 하는 쪽이 돈으로 손실보상을 해 줘야 합니다.",
   "audio": "audio/h-3/15df13230ee64ec6.wav",
   "heard": [
-   "조합원이 못 되면 새집을 받는 길이 막히고 사업을 하는 쪽이 돈으로 손실 보상을 해 줘야 합니다.",
-   null
+   "조합원이 못 되면 새 집을 받는 길이 막히고 사업을 하는 쪽이 돈으로 손실 보상을 해 줘야 합니다.",
+   "조합원이못되면새집을받는길이막히고사업을하는쪽이돈으로손실보상을해줘야합니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2975,16 +2973,16 @@
   "say": "목동처럼 신탁회사가 사업을 맡는 단지는, 사업시행자로 지정된 날이 같은 기준이에요.",
   "audio": "audio/h-3/4e3dadc0661cad6c.wav",
   "heard": [
-   "목동처럼 신탁회사가 사업을 맡는 단지는 사업시행자로 지정된 날이 같은 기준이에요.",
-   null
+   "목동처럼 신탁회사가 사업을 맡는 단지는 사업 시행자로 지정된 날이 같은 기준이에요.",
+   "목동처럼신탁회사가사업을맡는단지는사업시행자로지정된날이같은기준이에요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -2993,16 +2991,16 @@
   "say": "왜 지금 이게 중요할까요? [pause short] 강남구와 송파구는 그 전부터 투기과열지구였고, 양천구는 작년 시월에 새로 들어갔거든요.",
   "audio": "audio/h-3/92ea47c63da15b1e.wav",
   "heard": [
-   "왜 지금 이게 중요할까요? 강남구와 송파구는 그 전부터 투기 과열 지구였고, 양천구는 작년 10월에 새로 들어갔거든요.",
-   null
+   "왜 지금 이게 중요할까요? 강남구와 송파구는 그 전부터 투기 과열 지고였고, 양천구는 작년 10월에 새로 들어갔거든요.",
+   "왜지금이게중요할까요강남구와송파구는그전부터투기과열지구였고양천구는작년10월에새로들어갔거든요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3011,16 +3009,16 @@
   "say": "이미 조합설립인가가 나 있던 목동 육단지도, 그날부터 이 규칙을 적용받았습니다.",
   "audio": "audio/h-3/bcaaf17583aea449.wav",
   "heard": [
-   "이미 조합 설립인가가 났던 목동 6단지도 그날부터 이 규칙을 적용받았습니다.",
-   null
+   "이미 조합 설립 인가가 나 있던 목동 6단지도 그날부터 이 규칙을 적용받았습니다.",
+   "이미조합설립인가가나있던목동6단지도그날부터이규칙을적용받았습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.95,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3029,16 +3027,16 @@
   "say": "지금 단계를 보면, 압구정은 구역 네 곳이 이미 조합설립인가를 받았어요.",
   "audio": "audio/h-3/9f170173075b27ce.wav",
   "heard": [
-   "지금 단계를 보면 압구정은 구역 네 곳이 이미 조합 설립인가를 받았어요.",
-   null
+   "지금 단계를 보면 압구정은 구역 네 곳이 이미 조합설립인가를 받았어요.",
+   "지금단계를보면압구정은구역4곳이이미조합설립인가를받았어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3047,16 +3045,16 @@
   "say": "일구역은 그 전 단계인 추진위원회고요.",
   "audio": "audio/h-3/fe60ba2814389825.wav",
   "heard": [
-   "1구역은 그 전 단계인 추진위원하고요.",
-   null
+   "1구역은 그 전 단계인 추진위원회고요.",
+   "1구역은그전단계인추진위원회고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.93,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3066,15 +3064,15 @@
   "audio": "audio/h-3/d8a747c5fe97979d.wav",
   "heard": [
    "신천동 장미 아파트는 2020년에 조합 설립 인가를 받았습니다.",
-   null
+   "신천동장미아파트는2020년에조합설립인가를받았습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3083,16 +3081,16 @@
   "say": "목동신시가지는 열네 단지 중 열두 곳이 조합설립인가나 사업시행자 지정까지 왔어요.",
   "audio": "audio/h-3/4309b166e1075ae8.wav",
   "heard": [
-   "목동신시가지에는 14단지 중 12곳이 조합설립인가나 사업시행자 지정까지 왔어요.",
-   null
+   "목동 신시가지에는 14단지 중 12곳이 조합설립 인가나 사업시행자 지정까지 왔어요.",
+   "목동신시가지는14개단지중12곳이조합설립인가나사업시행자지정까지왔어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.93,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.97,
+  "flag": "합의오독(0.97/0.93 ·→에/게)",
   "batch2": true
  },
  {
@@ -3101,18 +3099,16 @@
   "say": "삼단지는 아직 추진위원회 단계예요.",
   "audio": "audio/h-3/31fd27e9426bdd0a.wav",
   "heard": [
-   "삼단지는 아직 추진 위원회 단계예요.",
-   null,
-   "3단지는 아직 추진위원의 단계예요."
+   "3단지는 아직 추진위원의 단계예요.",
+   "3단지는아직추진위원회단계예요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash",
-   "gemini-flash-lite-latest"
+   "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.93,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3122,17 +3118,17 @@
   "audio": "audio/h-3/5d8d6e3e748f0b92.wav",
   "heard": [
    "일단은 지정 날짜를 확인하지 못했어요.",
-   null,
-   "이단지는 지정 날짜를 확인하지 못해요."
+   "2단지는지정날짜를확인하지못했어요",
+   "이 단지는 지정 날짜를 확인하지 못했어요."
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash",
-   "gemini-flash-lite-latest"
+   "gemini-3.5-transcribe"
   ],
-  "sim": 0.91,
-  "pair": null,
-  "flag": "숫자 받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.88,
+  "flag": "숫자",
   "batch2": true
  },
  {
@@ -3141,16 +3137,16 @@
   "say": "파크리오는 서울시에 정비사업으로 올라가 있지 않습니다.",
   "audio": "audio/h-3/8cf50af822e480e8.wav",
   "heard": [
-   "파크리언은 서울시의 정비사업으로 올라가 있지 않습니다.",
-   null
+   "파크리안은 서울시의 정비사업으로 올라가 있지 않습니다.",
+   "파크리오는서울시의정비사업으로올라가있지않습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.92,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3160,15 +3156,15 @@
   "audio": "audio/h-3/5e22e0121c6f2c5a.wav",
   "heard": [
    "그 이 단지들 대부분은 지금 사면 원칙적으로 조합원이 될 수 없어요.",
-   null
+   "그러니까이단지들대부분은지금사면원칙적으로조합원이될수없어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.95,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3178,15 +3174,15 @@
   "audio": "audio/h-3/85abec0ca0dd5eeb.wav",
   "heard": [
    "이때 받는 손실 보상 금액은 사업이 진행된 뒤 협의로 정해져서 지금 얼마라고 말할 수 없어요.",
-   null
+   "이때받는손실보상금액은사업이진행된뒤협의로정해져서지금얼마라고말할수없어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3196,15 +3192,15 @@
   "audio": "audio/h-3/1bd24ab7ed15eb68.wav",
   "heard": [
    "재건축이 언제 끝날지 조합원이 돈을 얼마나 더 낼지도 이 영상에선 다루지 않습니다. 정해진 자료가 없거든요.",
-   null
+   "재건축이언제끝날지조합원이돈을얼마나더낼지도이영상에선다루지않습니다정해진자료가없거든요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3214,15 +3210,15 @@
   "audio": "audio/h-3/ca8ee3ae9a03a08c.wav",
   "heard": [
    "다만 예외가 있습니다.",
-   null
+   "다만예외가있습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3231,16 +3227,16 @@
   "say": "파는 사람이 집 한 채만 가진 세대이고, 그 집을 십년 이상 가졌다면요.",
   "audio": "audio/h-3/e019017d3433769a.wav",
   "heard": [
-   "파는 사람이 집 한 채만 가진 세대이고 그 집을 10년 이상 가졌다면요.",
-   null
+   "사는 사람이 집 한 채만 가진 세대이고 그 집을 10년 이상 가졌다면요.",
+   "파는사람이집1채만가진세대이고그집을10년이상가졌다면요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.98,
+  "pair": 0.94,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3249,18 +3245,16 @@
   "say": "거기에 그 집에서 오년 이상 살기까지 했다면, 사는 사람이 조합원이 될 수 있어요.",
   "audio": "audio/h-3/84d8ee48147b545e.wav",
   "heard": [
-   "거기에 그 집에서 오 년 이상 살기까지 했다면 사는 사람이 조합원이 될 수 있어요.",
-   null,
-   "거기에 그 집에서 5년 이상 살기까지 했다면 사는 사람이 조합원이 될 수 있어요."
+   "거기에 그 집에서 5년 이상 살기까지 했다면 사는 사람이 조합원이 될 수 있어요.",
+   "거기에그집에서5년이상살기까지했다면사는사람이조합원이될수있어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
-   "gemini-3.5-flash",
-   "gemini-flash-lite-latest"
+   "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3269,16 +3263,16 @@
   "say": "파는 사람 세대가 전근이나 치료, 결혼 때문에 모두 다른 시·군으로 옮기는 경우도 예외고요.",
   "audio": "audio/h-3/9d59f0d1f58eea19.wav",
   "heard": [
-   "하는 사람 세대가 전근이나 치료 결혼 때문에 모두 다른 식군으로 옮기는 경우도 예외고요.",
-   null
+   "사는 사람 세대가 전근이나 치료 결혼 때문에 모두 다른 식군으로 옮기는 경우도 예외고요.",
+   "파는사람세대가전근이나치료때문에모두다른식구로옮기는경우도예외고요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.94,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.9,
+  "flag": "합의오독(0.90/0.94 시→식/식구)",
   "batch2": true
  },
  {
@@ -3288,15 +3282,15 @@
   "audio": "audio/h-3/d10d575ebc01240b.wav",
   "heard": [
    "상속받은 집이거나 세대 전체가 해외로 이주하는 경우도 그렇습니다.",
-   null
+   "상속받은집이거나세대전체가해외로이주하는경우도그랬습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3306,15 +3300,15 @@
   "audio": "audio/h-3/a5f1abf06e75cbbb.wav",
   "heard": [
    "그래서 재건축 단지를 산다면 계약전에 두 가지를 확인하세요.",
-   null
+   "그래서재건축단지를산다면계약전에두가지를확인하세요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3324,15 +3318,15 @@
   "audio": "audio/h-3/012942b07398b55f.wav",
   "heard": [
    "그 단지가 조합 설립 인가를 받았는지 받았다면 파는 사람이 예외에 들어가는지요?",
-   null
+   "그단지가조합설립인가를받았는지받았다면파는사람이예외에들어가는지요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3342,15 +3336,15 @@
   "audio": "audio/h-3/69a23d6656385efb.wav",
   "heard": [
    "파는 사람이 그 집에서 살았던 기간은 주민등록표로 따집니다. 조합에도 조합원 자격이 이어지는지 미리 물어보세요.",
-   null
+   "파는사람이그집에서살았던기간은주민등록표로따집니다조합에도조합원자격이이어지는지미리물어보세요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3359,16 +3353,16 @@
   "say": "실거래 신고엔 이 자격이 따로 적히지 않아서, 같은 단지 같은 크기라도 조건이 다른 거래가 섞여 있을 수 있어요.",
   "audio": "audio/h-3/67d705af2ee8da97.wav",
   "heard": [
-   "세거래 신청할 때 이 자격이 따로 적히지 않아서 같은 단지 같은 크기라도 조건이 다른 거래가 섞여 있을 수 있어요.",
-   null
+   "세버레이 신문은 이 자격이 따로 적히지 않아서 같은 단지 같은 크기라도 조건이 다른 거래가 섞여 있을 수 있어요.",
+   "실거래신고엔이자격이따로적히지않아서같은단지같은크기라도조건이다른거래가섞여있을수있어요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.88,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3378,15 +3372,15 @@
   "audio": "audio/h-3/509afc21ec5472f2.wav",
   "heard": [
    "이번엔 집을 사지 않고 새에 들어살 뿐들 이야기예요.",
-   null
+   "이번엔집을사지않고세들어살분들이야기에요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.93,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.95,
+  "pair": 0.88,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3396,15 +3390,15 @@
   "audio": "audio/h-3/cf7b88cdc2e1292c.wav",
   "heard": [
    "검색창에 파크리오 전세를 치는 분이 많았거든요.",
-   null
+   "검색창에파크리오전세를치는분이많았거든요"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3413,16 +3407,16 @@
   "say": "파크리오 국민평형은 새로 맺은 전세가 십일억 정도였습니다.",
   "audio": "audio/h-3/5d847ac8af08918b.wav",
   "heard": [
-   "파크리오 국민평형은 새로 맺진 전세가 11억 정도였습니다.",
-   null
+   "파크리오 국민평형은 새로 맺은 전세가 11억 정도였습니다.",
+   "파크리오국민평형은새로맺은전세가11억정도였습니다"
   ],
   "models": [
    "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3431,16 +3425,16 @@
   "say": "살던 사람이 다시 맺은 계약은 오천만원 정도 낮았고요.",
   "audio": "audio/h-3/bb0daad61b9fcbe3.wav",
   "heard": [
-   "살던 사람이 다시 맺은 계약은 5천만 원 정도 낮았고요.",
-   null
+   "살던 사람이 다시 맺은 계약은 오천만 원 정도 낮았고요.",
+   "살던사람이다시맺은계약은5천만원정도낮았고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3450,15 +3444,15 @@
   "audio": "audio/h-3/450c9864d292180b.wav",
   "heard": [
    "그러니 전세 시세를 볼 땐 새로 맺은 계약만 따로 보셔야 해요.",
-   null
+   "그러니전세시세를볼땐새로맺은계약만따로보셔야해요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3467,16 +3461,16 @@
   "say": "두 가지가 섞이면 실제로 집을 얻을 때보다 싸 보이거든요.",
   "audio": "audio/h-3/f98b7d46cf6f6346.wav",
   "heard": [
-   "두 가지가 섞이면 실제로 집을 얻을 때보다 싸 보이거든요.",
-   null
+   "두 가지가 섞이면 실제로 집을 얻을 때보다 싸 보이고요.",
+   "두가지가섞이면실제로집을얻을때보다싸보이거든요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.93,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3485,16 +3479,16 @@
   "say": "목동에선 칠단지 작은 평수를 봤어요.",
   "audio": "audio/h-3/6570da06d87bfc43.wav",
   "heard": [
-   "목동에선 7단지 작은 평수를 봤어요.",
-   null
+   "목동에서 7단지 작은 평수를 봤어요.",
+   "목동에선7단지작은평수를봤어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.93,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3503,16 +3497,16 @@
   "say": "새 전세가 칠억 정도였어요.",
   "audio": "audio/h-3/125279d5f5ec805f.wav",
   "heard": [
-   "세 전세가 7억 정도였어요.",
-   null
+   "세전세가 7억 정도였어요.",
+   "새전세가7억정도였어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3521,16 +3515,16 @@
   "say": "매매가 이십오억 정도였으니, 차이가 꽤 크죠.",
   "audio": "audio/h-3/e96df53dd976237f.wav",
   "heard": [
-   "매매가 25억 정도였으니 차이가 꽤 크죠.",
-   null
+   "매매가 25억 정도였으니 자기가 꽤 크죠.",
+   "매매가25억정도였으니차이가꽤크죠"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.87,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3539,16 +3533,16 @@
   "say": "압구정 한양아파트에서 가장 작은 집은 새 전세가 오억 반 정도였습니다.",
   "audio": "audio/h-3/e1217312067e0518.wav",
   "heard": [
-   "압구정 한양 아파트에서 가장 작은 집은 세 전세가 5억 반 정도였습니다.",
-   null
+   "압구정 한양 아파트에서 가장 작은 집은 새 전세가 5억 반 정도였습니다.",
+   "압구정현대아파트에서가장작은집은새전세가5억반정도였습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.93,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3558,15 +3552,15 @@
   "audio": "audio/h-3/f480c83f24b08899.wav",
   "heard": [
    "매매는 40억이 넘었으니 차이가 훨씬 더 크고요.",
-   null
+   "매매는40억이넘었으니차이가훨씬더크고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3575,16 +3569,16 @@
   "say": "매매값과 전세값의 차이가 동네마다 이만큼 달랐다는 거죠.",
   "audio": "audio/h-3/c902e4f9ced1488f.wav",
   "heard": [
-   "매매가와 전세값의 차이가 동네마다 이만큼 달랐다는 거죠.",
-   null
+   "매매값과 전세값의 차이가 동네마다 이만큼 달랐다는 거죠?",
+   "매매값과전셋값의차이가동네마다이만큼달랐다는거죠"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3594,15 +3588,15 @@
   "audio": "audio/h-3/ba085b77eed5bf1b.wav",
   "heard": [
    "매매가 중에 전세 보증금이 차지하는 비율을 전세가율이라고 해요.",
-   null
+   "매매값중에전세보증금이차지하는비율을전세가율이라고해요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3612,15 +3606,15 @@
   "audio": "audio/h-3/fa24f35cd18a8f89.wav",
   "heard": [
    "파크리오가 38%로 가장 높았어요.",
-   null
+   "파크리오가38%로가장높았어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3629,16 +3623,16 @@
   "say": "압구정 한양은 십사퍼센트로 가장 낮았고요.",
   "audio": "audio/h-3/35c5a12c0ee5b821.wav",
   "heard": [
-   "압구정 한양은 14%로 가장 낮았고요.",
-   null
+   "압구정·한양은 14%로 가장 낮았고요.",
+   "압구정한양은14%로가장낮았고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3648,15 +3642,15 @@
   "audio": "audio/h-3/f21938a1dd1d2cae.wav",
   "heard": [
    "목동 7단지랑 그 중간쯤이었고요.",
-   null
+   "목동7단지는그중간쯤이었고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.92,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3665,16 +3659,16 @@
   "say": "같은 신천동 안에서도 장미아파트는 이십삼퍼센트로, 파크리오보다 한참 낮았습니다.",
   "audio": "audio/h-3/daf8b73b9e8358a3.wav",
   "heard": [
-   "같은 신천동 안에서도 장미 아파트는 23%로 파크리오보다 한참 낮았습니다.",
-   null
+   "같은 신천동 안에서도 장미아파트는 23%로 팍리오보다 한참 낮았습니다.",
+   "같은신천동안에서도장미아파트는23%로파크리오보다한참낮았습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3683,16 +3677,16 @@
   "say": "왜 이렇게 차이가 날까요? [pause short] 실거래 자료엔 이유가 적혀 있지 않아요.",
   "audio": "audio/h-3/beab8b36db4bb8f1.wav",
   "heard": [
-   "왜 이렇게 차이가 날까요? 실거래 자료엔 이유가 적혀 있지 않아요.",
-   null
+   "왜 이렇게 차이가 나요? 실거래 자료엔 이유가 적혀 있지 않아요.",
+   "왜이렇게차이가날까요실거래자료엔이유가적혀있지않아요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.94,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3702,15 +3696,15 @@
   "audio": "audio/h-3/df65f7440b9d16ec.wav",
   "heard": [
    "다만 숫자로 보이는 건 하나 있어요. 새 단지인 타크리오만 30%를 넘었어요.",
-   null
+   "다만숫자로보이는건하나있어요새단지인파크리오만30%를넘었어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3720,15 +3714,15 @@
   "audio": "audio/h-3/63de07e1d160d138.wav",
   "heard": [
    "1980년대까지 지은 단지들은 모두 그 아래였고요.",
-   null
+   "1980년대까지지은단지들은모두그아래였고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.94,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3738,15 +3732,15 @@
   "audio": "audio/h-3/a1ead026ce614c38.wav",
   "heard": [
    "그래서 누구냐에 따라 볼 숫자가 달라요.",
-   null
+   "그래서누구냐에따라볼숫자가달라요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3756,15 +3750,15 @@
   "audio": "audio/h-3/dc5953bbec5c084b.wav",
   "heard": [
    "새로 집을 구하는 분이라면 새로 맺은 계약 가격을 기준으로 잡으세요.",
-   null
+   "새로집을구하는분이라면새로맺은계약가격을기준으로잡으세요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3773,16 +3767,16 @@
   "say": "지금 사는 집에서 계약을 다시 맺는다면, 다시 맺은 계약 가격을 같이 보시면 되고요.",
   "audio": "audio/h-3/0ff636a77d5eec58.wav",
   "heard": [
-   "지금 사는 집에서 계약을 다시 맺는다면 다시 맺은 계약 가격을 같이 보시면 되고요.",
-   null
+   "지금 사는 집에서 계약을 다시 맺는다면, 다시 맺은 계약 가격을 같이 보시면 되고요.",
+   "지금사는집에서계약을다시맺는다면다시맺은계약가격을같이보시면되고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3792,15 +3786,15 @@
   "audio": "audio/h-3/ba3eab8026680969.wav",
   "heard": [
    "그리고 매매와 전세의 차이가 크다는 건 세입자를 두고 사서 나중에 들어가는 방식도 원래 큰 돈이 든다는 뜻이에요.",
-   null
+   "그리고매매와전세의차이가크다는건세입자를두고사서나중에들어가는방식도원래큰돈이든다는뜻이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3810,15 +3804,15 @@
   "audio": "audio/h-3/68a1eb1c475a7cd7.wav",
   "heard": [
    "게다가 지금은 허가 구역이라 앞에서 말한 집 없는 사람의 특례가 아니면 그 방식은 막혀 있고요.",
-   null
+   "게다가지금은허가구역이라앞에서말한집없는사람의특례가아니면그방식은막혀있고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3828,15 +3822,15 @@
   "audio": "audio/h-3/a7b354a27790ead9.wav",
   "heard": [
    "이 동네를 볼 때 학교 이야기도 빠지지 않죠.",
-   null
+   "이동네를볼때학교이야기도빠지지않죠"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3846,15 +3840,15 @@
   "audio": "audio/h-3/fd18bafa0fac0333.wav",
   "heard": [
    "이번 자료로 학교마다 어떤지는 잴 수 없어서 공식으로 정해진 배정 규칙까지만 말씀드릴게요.",
-   null
+   "이번자료로학교마다어떤지는잴수없어서공식으로정해진배정규칙까지만말씀드릴게요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3863,16 +3857,16 @@
   "say": "서울 고등학교는 교육지원청 단위로 학교군이 나뉘어요.",
   "audio": "audio/h-3/65ae77361809a05e.wav",
   "heard": [
-   "서울 고등학교는 교육지원청 단위로 학교군이 나뉘어요.",
-   null
+   "서울고등학교는 교육지원청 단위로 학교군이 나뉘어요.",
+   "서울고등학교는교육지원청단위로학교군이나뉘어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3881,16 +3875,16 @@
   "say": "목동은 강서양천, 압구정은 강남서초, 신천동은 강동송파 학교군입니다.",
   "audio": "audio/h-3/a5caee6290856a5c.wav",
   "heard": [
-   "목동은 강서, 양천, 압구정은 강남, 서초, 신천동은 강동, 송파 학군입니다.",
-   null
+   "복정동은 강서양천, 압구정은 강남서초, 신천동은 강동송파 학교군입니다.",
+   "목동은강서양천압구정은강남서초신천동은강동송파학교군입니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.98,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3899,16 +3893,16 @@
   "say": "일반고는 추첨인데, 먼저 서울 전체에서 고른 학교로 일부를 뽑고 그다음 사는 곳 학교군에서 더 뽑아요.",
   "audio": "audio/h-3/879d26d5b1ae0cf8.wav",
   "heard": [
-   "일반고는 추첨인데 먼저 서울 전체에서 고른 학교로 일부를 뽑고 그다음 사는 곳 학교군에서 더 뽑아요.",
-   null
+   "일반고의 추첨인데 먼저 서울 전체에서 고른 학교로 일부를 뽑고 그다음 사는 곳 학교군에서 더 뽑아요.",
+   "일반고는추첨인데먼저서울전체에서고른학교로일부를뽑고그다음사는곳학교군에서더뽑아요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3917,16 +3911,16 @@
   "say": "중학교도 사는 곳 학교군에서 추첨하는 게 원칙입니다.",
   "audio": "audio/h-3/2dda81174a5db49c.wav",
   "heard": [
-   "중학교도 사는 곳 학교군에서 추첨하는 게 원칙입니다.",
-   null
+   "중학교도 사는 것 학교군에서 추첨하는 게 원칙입니다.",
+   "중학교도사는곳학교군에서추첨하는게원칙입니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.95,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3935,16 +3929,16 @@
   "say": "그래서 사는 곳이 정해 주는 건 학교군까지예요. [pause short] 특정 학교에 꼭 간다는 뜻은 아닙니다.",
   "audio": "audio/h-3/0eb43245085ef633.wav",
   "heard": [
-   "그래서 사는 곳이 정해주는 건 학교군까지예요. 특정 학교에 꼭 간다는 뜻은 아닙니다.",
-   null
+   "그래서 사는 곳이 정해 주는 건 학구분까지예요. 특정 학교에 꼭 간다는 뜻은 아닙니다.",
+   "그래서사는곳이정해주는건학교군까지예요특정학교에꼭간다는뜻은아닙니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.94,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3953,16 +3947,16 @@
   "say": "이 동네에 이미 집이 한 채 있고, 다른 집으로 갈아타려는 사람도 있죠.",
   "audio": "audio/h-3/681c1e9db5d4ac83.wav",
   "heard": [
-   "이 동네 이미 집이 한 채 있고 다른 집으로 갈아타려는 사람도 있죠.",
-   null
+   "이 동네에 이미 집이 한 채 있고 다른 집으로 갈아타려는 사람도 있죠.",
+   "이동네에이미집이한채있고다른집으로갈아타려는사람도있죠"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
-  "sim": 0.98,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3972,15 +3966,15 @@
   "audio": "audio/h-3/53771ee9a8ea77f0.wav",
   "heard": [
    "먼저 알아둘 건 지금 서울은 25개 구가 전부 조정대상지역이라는 거예요.",
-   null
+   "먼저알아둘건지금서울은25개구가전부조정대상지역이라는거예요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
+   "gemini-3.5-flash-lite",
    "gemini-3.5-flash"
   ],
   "sim": 0.93,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -3990,15 +3984,15 @@
   "audio": "audio/h-3/6a99737eb477fa02.wav",
   "heard": [
    "세금 규칙이 더 까다로운 지역이에요.",
-   null
+   "세금규칙이더까다로운지역이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4008,15 +4002,15 @@
   "audio": "audio/h-3/a3b1e5d763fe4c60.wav",
   "heard": [
    "먼저 집을 팔 때 내는 양도세예요.",
-   null
+   "먼저집을팔때내는양도세예요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4025,16 +4019,16 @@
   "say": "집이 한 채뿐이면, 판 가격 십이억까지는 세금이 없고 넘는 부분에만 붙습니다.",
   "audio": "audio/h-3/0a531a2240a16972.wav",
   "heard": [
-   "집이 한 채뿐이면 판 가격 12억까지는 세금이 없고 넘는 부분에만 붙습니다.",
-   null
+   "집이 한 채 뿐이면 판 가격 12억까지는 세금이 없고 넘는 부분에만 붙습니다.",
+   "집이한채뿐이면판가격12억까지는세금이없고넘는부분에만붙습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4043,16 +4037,16 @@
   "say": "조정대상지역에서 산 집이라면, 갖고 있는 기간도 거기 살아온 기간도 이년 이상이어야 [pause short] 이 혜택을 받아요.",
   "audio": "audio/h-3/504d83b73928f95c.wav",
   "heard": [
-   "조정 대상 지역에서 산 집이라면 갖고 있는 기간도 거기 살아온 기간도 2년 이상이어야 이 혜택을 받아요.",
-   null
+   "조정대상지역에서 산 집이라면 갖고 있는 기간도 거기 살아온 기간도 2년 이상이어야 이 혜택을 받아요.",
+   "조정대상지역에서산집이라면갖고있는기간도거기살아온기간도2년이상이어야이혜택을받아요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4061,16 +4055,18 @@
   "say": "갈아탈 땐 잠깐 두 채가 되죠. [pause short] 이걸 일시적 이주택이라고 해요.",
   "audio": "audio/h-3/59912f9710606db8.wav",
   "heard": [
-   "갈아탈 땐 잠깐 2주택이 되죠. 이걸 일시적 2주택이라고 해요.",
-   null
+   "가라탈땐 잠깐 두체가 되죠 이걸 일시적 이주택이라고 해요",
+   "갈아탈땐잠깐두채가되죠이걸일시적2주택이라고해요",
+   "갈아탈 땐 잠깐 두 채가 되죠? 이걸 일시적 2주택이라고 해요."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest",
+   "gemini-3.5-transcribe"
   ],
-  "sim": 0.87,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.89,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4079,16 +4075,16 @@
   "say": "새 집을 사고 정해진 기간 안에 원래 집을 팔면, 한 채일 때처럼 봐 줍니다.",
   "audio": "audio/h-3/e97ce23ce3eb9872.wav",
   "heard": [
-   "새 집을 사고 정해진 기간 안에 원래 집을 팔면 한 채일 때처럼 봐줍니다.",
-   null
+   "새집을 사고 정해진 기간 안에 원래 집을 팔면 1가구 1주택처럼 봐줍니다.",
+   "새집을사고정해진기간안에원래집을팔면한채일때처럼봐줍니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.86,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4098,15 +4094,15 @@
   "audio": "audio/h-3/914dfdfa53a64630.wav",
   "heard": [
    "그런데 이 기간이 이번 달부터 짧아졌어요. 두 집이 다 조정 대상 지역이면 3년에서 2년으로 줄었습니다.",
-   null
+   "그런데이기간이이번달부터짧아졌어요두집이다조정대상지역이면3년에서2년으로줄었습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4115,16 +4111,16 @@
   "say": "다만 예외가 있어요. [pause short] 올해 팔월 삼일 전에 새 집을 샀거나 계약금을 냈다면요.",
   "audio": "audio/h-3/6bb4ac431435fdee.wav",
   "heard": [
-   "다만 예외가 있어요. 올해 8월 3일 전에 새 집을 샀거나 계약금을 냈다면요.",
-   null
+   "다만 예외가 있어요. 올해 8월 3일 전에 새집을 샀거나 계약금을 냈다면요.",
+   "다만예외가있어요올해8월3일전에새집을샀거나계약금을냈다면요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4133,16 +4129,16 @@
   "say": "그때는 줄기 전 그대로 삼년이에요.",
   "audio": "audio/h-3/aad6d96c0a04746b.wav",
   "heard": [
-   "그때는 줄기 전 그대로 3년이에요.",
-   null
+   "그때는 줄기전 그대로 3년이에요.",
+   "그때는줄기전그대로3년이에요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4151,16 +4147,18 @@
   "say": "새 집 취득세에도 같은 이년이 붙어요. [pause short] 그 안에 원래 집을 팔아야 한 채 세율로 냅니다.",
   "audio": "audio/h-3/cbf8cbe2777438de.wav",
   "heard": [
-   "새 집 취득세에도 같은 2년이 붙어요. 그 안에 원래 집을 팔아야 한 채 세율로 냅니다.",
-   null
+   "새집 취득세에도 같은 인연이 붙어요. 그 안에 원래 집을 팔아야 한 채 세울로 냅니다.",
+   "새집취득세에도같은2년이붙어요그안에원래집을팔아야한채세율로냅니다",
+   "새집 취득세에도 같은 인연이 붙어요. 그 안에 원래 집을 팔아야 한 채 세율로 냅니다."
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest",
+   "gemini-3.5-transcribe"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.92,
+  "flag": "숫자",
   "batch2": true
  },
  {
@@ -4169,16 +4167,16 @@
   "say": "못 팔면 그 혜택이 사라져서, 조정대상지역 두 번째 집 세율 팔퍼센트가 됩니다.",
   "audio": "audio/h-3/9c0a2250c3ffdf2b.wav",
   "heard": [
-   "못 팔면 그 혜택이 사라져서 조정 대상 지역 두 번째 집 세율 8%가 됩니다.",
-   null
+   "못 팔면 그 혜택이 사라져서 조정대상지역 두 번째 집 세율 8%가 됩니다.",
+   "못팔면그혜택이사라져서조정대상지역두번째집세율8%가됩니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4187,16 +4185,16 @@
   "say": "양도세도 기한을 넘기면, 두 채라서 붙는 무거운 세율이 적용될 수 있어요. [pause short] 기본세율에 이십퍼센트포인트가 더해집니다.",
   "audio": "audio/h-3/6065370bd24e8543.wav",
   "heard": [
-   "양도세도 기한을 넘기면 두 채라서 붙는 무거운 세율이 적용될 수 있어요. 기본 세율에 20% 포인트가 더해집니다.",
-   null
+   "양도세도 기한을 넘기면 두 체라서 붙는 무거운 세율이 적용될 수 있어요. 기본 세율에 20% 포인트가 더해집니다.",
+   "양도세도기한을넘기면두채라서붙는무거운세율이적용될수있어요기본세율에20%포인트가더해집니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4205,16 +4203,16 @@
   "say": "국회에 있는 정부안이 통과되면, 십년 이상 산 집은 내년부터 양도세 기본공제가 커져요.",
   "audio": "audio/h-3/9f52e2d566fa035e.wav",
   "heard": [
-   "국회에 있는 정관이 통과되면 10년 이상 산 집은 내년부터 양도세 기본 공제가 커져요.",
-   null
+   "국회에 있는 정보안이 통과되면 10년 이상 산 집은 내년부터 양도세의 기본 공제가 커져요.",
+   "국회에있는정부안이통과되면10년이상산집은내년부터양도세의기본공제가커져요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
-  "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.99,
+  "pair": 0.97,
+  "flag": "합의오독(0.97/0.99 ·→에/에)",
   "batch2": true
  },
  {
@@ -4223,16 +4221,16 @@
   "say": "판 가격이 삼십억 이하일 때 이야기예요.",
   "audio": "audio/h-3/0c12f9b2975f325a.wav",
   "heard": [
-   "판 가격이 30억 이하일 때 이야기예요.",
-   null
+   "판가격이 30억 이하일 때 이야기예요.",
+   "판가격이30억이하일때이야기예요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4241,16 +4239,16 @@
   "say": "다만 정부안엔 이천이십팔년부터 오래 가진 집 공제를 산 햇수 중심으로 바꾸는 내용도 있어서, 언제 파느냐에 따라 달라져요.",
   "audio": "audio/h-3/f04d16f566b41866.wav",
   "heard": [
-   "다만 정부안은 2028년부터 오래 가진 집 공제를 산 횟수 중심으로 바꾸는 내용도 있어서 언제 파느냐에 따라 달라져요.",
-   null
+   "다만 정부안은 2028년부터 오래 가진 집공제를 산 횟수 중심으로 바꾸는 내용도 있어서 언제 파느냐에 따라 달라져요.",
+   "다만정부안엔2028년부터오래가진집공제를산햇수중심으로바꾸는내용도있어서언제파느냐에따라달라져요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
-  "sim": 0.98,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4259,16 +4257,16 @@
   "say": "양도세는 저희 양도세 편에서, 집을 갖고 있는 동안 내는 종부세는 다음 편에서 따로 자세히 다룹니다.",
   "audio": "audio/h-3/6ebfad3640d39cde.wav",
   "heard": [
-   "양도세는 저희 양도세 편에서 집을 갖고 있는 동안 내는 종합부동산세는 다음 편에서 따로 자세히 다룹니다.",
-   null
+   "양도세는 저희 양도세 편에서 집을 갖고 있는 동안 내는 종부세는 다음 편에서 따로 자세히 다룹니다.",
+   "양도세는저희양도세편에서집을갖고있는동안내는종부세는다음편에서따로자세히다룹니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
-  "sim": 0.96,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4277,16 +4275,16 @@
   "say": "그리고 하나 더. [pause short] 새 집도 허가구역이면 허가를 받고 이년을 직접 살아야 합니다.",
   "audio": "audio/h-3/f75b0d016fdc3c76.wav",
   "heard": [
-   "그리고 하나 더. 새 집도 허가 구역이면 허가를 받고 2년을 직접 살아야 합니다.",
-   null
+   "그리고 하나 더 새 집도 허가 구역이면 허가를 받고 2년을 직접 살아야 합니다.",
+   "그리고하나더새집도허가구역이면허가를받고2년을직접살아야합니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4296,15 +4294,15 @@
   "audio": "audio/h-3/fac8a4e1b6989421.wav",
   "heard": [
    "앞에서 말한 특례는 집 없는 사람만 쓸 수 있거든요.",
-   null
+   "앞에서말한특례는집없는사람만쓸수있거든요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4313,16 +4311,16 @@
   "say": "오늘 숫자를 내 단지로 직접 확인해 보고 싶다면 이렇게 해 보세요.",
   "audio": "audio/h-3/ce80fba06e4faf9a.wav",
   "heard": [
-   "오늘 숫자를 내 단지로 직접 확인해 보고 싶다면 이렇게 해 보세요.",
-   null
+   "오늘 숫자를 네 단지로 직접 확인해 보고 싶다면 이렇게 해 보세요.",
+   "오늘숫자를내단지로직접확인해보고싶다면이렇게보세요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4332,15 +4330,15 @@
   "audio": "audio/h-3/438a5f5fae58159f.wav",
   "heard": [
    "가격은 국토교통부 실거래가 공개 시스템에서 단지와 면적을 똑같이 맞춰 보세요.",
-   null
+   "가격은국토교통부실거래가공개시스템에서단지와면적을똑같이맞춰보세요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4349,16 +4347,16 @@
   "say": "한 건이 아니라 일년 치를 같이 보는 게 좋습니다.",
   "audio": "audio/h-3/d1f694a000fef584.wav",
   "heard": [
-   "한 건이 아니라 1년 치를 같이 보는 게 좋습니다.",
-   null
+   "한 건이 아니라 1년 7을 같이 보는 게 좋습니다.",
+   "한건이아니라1년치를같이보는게좋습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.91,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4367,16 +4365,16 @@
   "say": "거래가 적은 단지라면, 옆 단지 같은 크기와 같이 놓고 비교해 보세요.",
   "audio": "audio/h-3/f79eac80550e53c5.wav",
   "heard": [
-   "거래가 적은 단지라면 옆 단지 같은 크기와 같이 놓고 비교해 보세요.",
-   null
+   "거래가 적은 단지라면 옆단지 같은 크기와 같이 놓고 비교해 보세요.",
+   "거래가적은단지라면옆단지같은크기와같이놓고비교해보세요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4386,15 +4384,15 @@
   "audio": "audio/h-3/15a40765b17a445a.wav",
   "heard": [
    "그리고 면적은 집 안 넓이 전용 면적으로 맞추셔야 해요.",
-   null
+   "그리고면적은집안넓이전용면적으로맞추셔야해요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4404,15 +4402,15 @@
   "audio": "audio/h-3/ba92a37610d4c3cb.wav",
   "heard": [
    "광고에 나오는 평수는 보통 공용 부분까지 넣은 숫자라 그대로 비교하면 다른 집이 됩니다.",
-   null
+   "광고에나오는평수는보통공용부분까지넣은숫자라그대로비교하면다른집이됩니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4422,15 +4420,15 @@
   "audio": "audio/h-3/858f227e96e8cdd5.wav",
   "heard": [
    "해제라고 적힌 거래는 빼고 봅니다. 계약이 취소된 거래거든요.",
-   null
+   "해제라고적힌거래는빼고봅니다계약이취소된거래거든요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4439,16 +4437,16 @@
   "say": "전세는 새로 맺은 계약과 다시 맺은 계약을 나눠 보시고요.",
   "audio": "audio/h-3/bcafb7f89ea8f733.wav",
   "heard": [
-   "선생님은 새로 맺은 계약과 다시 맺은 계약을 나눠 보시고요.",
-   null
+   "전제는 새로 맺은 계약과 다시 맺은 계약을 나눠 보시고요.",
+   "전세는새로맺은계약과다시맺은계약을나눠보시고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
-  "sim": 0.85,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4458,15 +4456,15 @@
   "audio": "audio/h-3/fa051f68191f39cf.wav",
   "heard": [
    "재건축 단계는 서울시 정비사업 정보몽땅이라는 누리집에서 단지 이름으로 찾을 수 있어요.",
-   null
+   "재건축단계는서울시정비사업정보몽땅이라는누리집에서단지이름으로찾을수있어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4475,16 +4473,16 @@
   "say": "조합설립인가를 받았는지가 거기 나옵니다.",
   "audio": "audio/h-3/13268f5bdb76358c.wav",
   "heard": [
-   "조합 설립 인가를 받았는지가 거기 나옵니다.",
-   null
+   "조합설립인가를 받았는지가 거기 나옵니다.",
+   "조합설립인가를받았는지가거기나옵니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4494,15 +4492,15 @@
   "audio": "audio/h-3/15e116f92bd41802.wav",
   "heard": [
    "사려는 집이 허가 구역인지는 토지 이음이라는 국토교통부 누리집에서 확인할 수 있습니다.",
-   null
+   "사려는집이허가구역인지는토지이음이라는국토교통부누리집에서확인할수있습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4511,16 +4509,16 @@
   "say": "서울 아파트 전체에 걸린 허가구역은 올해 말까지예요. [pause short] 그 뒤로 늘릴지는 시월 십구일까지 공식 발표가 없었습니다.",
   "audio": "audio/h-3/f11b84e34bd5e6a5.wav",
   "heard": [
-   "서울 아파트 전체에 걸린 허가 구역은 올해 말까지예요. 그 뒤로 늘릴지는 10월 19일까지 공식 발표가 없었습니다.",
-   null
+   "서울 아파트 전체에 걸린 허가 구역은 올해 말까지에요. 그 뒤로 늘릴지는 10월 19일까지 공식 발표가 없었습니다.",
+   "서울아파트전체에걸린허가구역은올해말까지예요그뒤로늘릴지는10월19일까지공식발표가없었습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4529,16 +4527,16 @@
   "say": "압구정과 목동신시가지는 서울시가 따로 지정해서, 이천이십칠년 사월 이십육일까지 허가구역이고요.",
   "audio": "audio/h-3/4849f67f0feb0a36.wav",
   "heard": [
-   "앞구정, 옥동, 신시가지는 서울시가 따로 지정해서 2027년 4월 26일까지 허가 구역이고요.",
-   null
+   "압구정, 목동, 신시가지에는 서울시가 따로 지정해서 2027년 4월 26일까지 허가 구역이고요.",
+   "압구정과목동신시가지는서울시가따로지정해서2027년4월26일까지허가구역이고요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
-  "sim": 0.92,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4547,16 +4545,16 @@
   "say": "앞에서 말한 특례의 신청 기한이 이천이십칠년 말인 건 시행령에 정해진 날짜예요. [pause short] 그때 그 집이 허가구역인지는 따로 보셔야 합니다.",
   "audio": "audio/h-3/e36017bab0e8314d.wav",
   "heard": [
-   "앞에서 말한 특례의 신청 기한이 2027년 말인 건 시행령에 정해진 날짜예요. 그때 그 집이 허가 구역인지는 따로 보셔야 합니다.",
-   null
+   "앞에서 말한 특례 신청 기한이 2027년 말인 건 시행령에 정해진 날짜예요. 그때 그 집이 허가 구역인지는 따로 보셔야 합니다.",
+   "앞에서말한특례신청기한이2027년말인건시행령에정해진날짜예요그때그집이허가구역인지는따로보셔야합니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
-  "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 0.99,
+  "pair": 0.98,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4565,16 +4563,16 @@
   "say": "그리고 이번 달 거래는 아직 덜 들어와 있다는 것도요.",
   "audio": "audio/h-3/50148a575f905f03.wav",
   "heard": [
-   "그리고 이번 달 거래는 아직 덜 들어와 있다는 것도요.",
-   null
+   "그리고 이번 달 거래는 아직 덜 들어와 있다는 것도요",
+   "그리고이번달거래는아직덜들어와있다는것도요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4583,18 +4581,16 @@
   "say": "신고 기한이 삼십일이라, 지금 보이는 숫자가 다음 달에 바뀔 수 있습니다.",
   "audio": "audio/h-3/e9563425630f2a04.wav",
   "heard": [
-   "신고 기한이 31일이라 지금 보이는 숫자가 다음 달에 바뀔 수 있습니다.",
-   null,
-   "신고 기한이 31일이라 지금 보이는 숫자가 다음 달에 바뀔 수 있습니다."
+   "신곡 기한이 30일이라 지금 보이는 숫자가 다음 달에 바뀔 수 있습니다.",
+   "신고기한이30일이라지금보이는숫자가다음달에바뀔수있습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash",
-   "gemini-flash-lite-latest"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "숫자 받아쓰기 실패",
+  "pair": 0.96,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4604,15 +4600,15 @@
   "audio": "audio/h-3/08dbc66228c34693.wav",
   "heard": [
    "지난 1년 실제로 팔린 가격만 센 겁니다.",
-   null
+   "지난1년실제로팔린가격만쓴겁니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.93,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4621,16 +4617,16 @@
   "say": "삼십억 안팎으로 다시 정리하면요.",
   "audio": "audio/h-3/aa5922644c7d4b1a.wav",
   "heard": [
-   "30억 안타그로 다시 정리하면요.",
-   null
+   "30억 안타로 다시 정리하면요",
+   "30억안팎으로다시정리하면요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
-  "sim": 0.83,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.87,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4639,16 +4635,16 @@
   "say": "신천동에선 팔십오 ㎡ 정도였어요.",
   "audio": "audio/h-3/eab150bfd052e936.wav",
   "heard": [
-   "신천동에선 85M 정도였어요.",
-   null
+   "신창동에선 85m 정도였어요.",
+   "신천동에선85정도였어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 0.9,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4657,16 +4653,16 @@
   "say": "목동신시가지에선 구십육 ㎡쯤이었고, 압구정동에선 그 값에 팔린 집이 없었어요.",
   "audio": "audio/h-3/51c78d4b1c76f8fe.wav",
   "heard": [
-   "목동 신시가지에선 96m쯤이었고, 압구정동에선 그 값에 팔린 집이 없었어요.",
-   null
+   "목동 신시가지에선 96m쯤이었고 압구정동에선 그 값에 팔린 집이 없었어요.",
+   "목동신시가지에선96쯤이었고압구정동에선그값에팔린집이없었어요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4676,15 +4672,15 @@
   "audio": "audio/h-3/c8f76751fa82d534.wav",
   "heard": [
    "우리 동네 단지도 이렇게 세워보고 싶다면 댓글에 단지 이름을 남겨주세요.",
-   null
+   "우리동네단지도이렇게세어보고싶다면댓글에단지이름을남겨주세요"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
-  "sim": 0.97,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "sim": 1.0,
+  "pair": 0.97,
+  "flag": "",
   "batch2": true
  },
  {
@@ -4694,15 +4690,15 @@
   "audio": "audio/h-3/bdc094a401ddac99.wav",
   "heard": [
    "토요일 오전 11시 반에는 종부세 이야기입니다. 그때 뵙겠습니다.",
-   null
+   "토요일오전11시반에는종부세이야기입니다그때뵙겠습니다"
   ],
   "models": [
-   "gemini-3.1-flash-lite",
-   "gemini-3.5-flash"
+   "gemini-3.5-flash-lite",
+   "gemini-flash-latest"
   ],
   "sim": 1.0,
-  "pair": null,
-  "flag": "받아쓰기 실패",
+  "pair": 1.0,
+  "flag": "",
   "batch2": true
  }
 ]

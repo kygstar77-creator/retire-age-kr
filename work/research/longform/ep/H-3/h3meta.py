@@ -58,7 +58,7 @@ m.update({
     'publishAt': '2026-10-23T11:30:00+09:00', 'privacy': 'private', 'privacy_note': '예약 공개(private+publishAt) — 정해진 시각에 공개로 바뀜',
     'paid': False, 'coupang': None, 'synthetic': True, 'veo': False,
     'synthetic_note': 'AI 생성 그림 5장(RealVisXL V5.0 — 오래된 단지 2·열쇠·등교 뒷모습·창가 실루엣, 얼굴·상표 없음) + AI 음성 → containsSyntheticMedia True',
-    'voice': 'Chirp 3 HD Charon 1.1 · 260줄 · 2026-10-21 한 날 녹음(say_v4, editor 10/19 17:08 서명)',
+    'voice': 'Chirp 3 HD Charon 1.1 · 244줄 · 2026-10-21 한 날 녹음(say_v5, editor 10/21 17:07 서명 · ㎡는 제곱미터로 읽음)',
     'answers': {
         'q1_바꿔끼우기': "아니오 — H-1·H-2와 같은 손품 실거래 틀이지만 질문이 '같은 30억이면 몇 ㎡'로 다르다. 압구정 0건·신천 85㎡·목동신시가지 1~7단지 96㎡, 목동 번호가 7단지에서 주소가 갈린다는 것, 1년에 백 집 중 두 집도 안 팔렸다는 건수는 이 세 동네 자료에서만 나온 숫자다.",
         'q2_연달아보기': '아니오 — 앞 두 편(T-1 양도세·X-1 환율)과 축이 다르고(부동산), 손품은 화·금 칸이라 H-2(10/20)와 사흘 간격, 다음 편 J-1(종부세)과 축이 다르다.',

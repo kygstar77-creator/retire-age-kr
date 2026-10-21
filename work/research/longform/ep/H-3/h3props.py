@@ -17,10 +17,14 @@ GAP_TRIM = 3
 rd = lambda p: open(os.path.join(EP, p), encoding='utf-8').read()
 CALC = rd('calc_out.txt') + rd('calc2_out.txt') + rd('facts.txt')
 SCRIPT = rd('script.md')
-SAYV = [l.rstrip('\n') for l in open(os.path.join(EP, 'say_v4.txt'), encoding='utf-8') if l.strip()]
+SAYV = [l.rstrip('\n') for l in open(os.path.join(EP, 'say_v5.txt'), encoding='utf-8') if l.strip()]
+# 10/21 18시 PD: 대본 v5(244줄) — 장면 표는 say_v4 줄 번호 그대로 두고 check/v4_to_v5.json으로 v5 줄로 옮긴다.
+#   말에서 뺀 16줄(v4 28~30·122~124·134~140·173·243·244)은 None → 그 줄만 장면에서 빠지고, 줄이 다 빠진 장면은 버린다.
+M45 = {int(k): v for k, v in json.load(open(os.path.join(EP, 'check', 'v4_to_v5.json'), encoding='utf-8')).items()}
+M45.update({31: 28, 141: 128})   # 4줄→1줄·8줄→1줄로 줄인 자리: v5 28 = v4 31(고쳐 씀), v5 128 = v4 141('특례'→'예외')
 V = json.load(open(os.path.join(EP, 'voice.json'), encoding='utf-8'))
 ALL = [l for s in V['sections'] for l in s['lines']]
-assert len(ALL) == len(SAYV) == 260, (len(ALL), len(SAYV))
+assert len(ALL) == len(SAYV) == 244, (len(ALL), len(SAYV))
 # 자막: script.md 말 줄('- ') 다음에 오는 [자막: …] 줄들 → 그 말 줄의 cap
 CAP = {}; k = 0
 for ln in SCRIPT.split('\n## [0.', 1)[1].splitlines():
@@ -28,17 +32,19 @@ for ln in SCRIPT.split('\n## [0.', 1)[1].splitlines():
     if t.startswith('- '): k += 1
     elif t.startswith('[자막:') and k:
         CAP[k] = (CAP[k] + ' · ' if k in CAP else '') + t[len('[자막:'):].rstrip(']').strip()
-assert k == 260, ('script 말 줄 수', k)
+assert k == 244, ('script 말 줄 수', k)
 USED = set()
-def L(n):
+def L(n4):
+    n = M45.get(n4)
+    if n is None: return None
     assert n not in USED, ('두 번 쓴 줄', n); USED.add(n); l = ALL[n - 1]
     assert l.get('audio') and os.path.exists(os.path.join(VID, 'public', l['audio'])), ('소리 없음', n)
     fr = l['frames'] - GAP_TRIM; assert fr >= int(l['sec'] * FPS + 0.999), ('소리가 잘림', n)   # 줄 사이 빈틈만 줄임, 소리는 그대로
     return {'text': l['text'], 'audio': l['audio'], 'frames': fr, 'cap': CAP.get(n), 'i': n}
 def S(kind, ns, pause=0, **data):
-    ls = [L(n) for n in ns]
+    ls = [x for x in (L(n) for n in ns) if x]
     return {'kind': kind, 'lines': ls, 'frames': sum(l['frames'] for l in ls) + pause, 'data': data}
-def L_len(ns): return sum(ALL[n - 1]['frames'] for n in ns)
+def L_len(ns): return sum(ALL[M45[n] - 1]['frames'] for n in ns if M45.get(n))
 
 # 실사 영상(Pexels) — credits.json 셋에서
 BG = {}
@@ -91,8 +97,8 @@ scenes = [
     mapx('map_seoul3', [2]),
     board('board_rooms', [3, 4, 5]),
     big('강남구 압구정동 · 30억 안팎', '0건', '가장 싼 거래도 35억 넘음', [6, 7], icon='Ban', c=R),
-    S('list5', [8, 9], title='댓글과 검색창에 나온 질문', icon='MessageCircleQuestion', source='유튜브 댓글 · 네이버 검색어 자동완성',
-      items=['목동 12단지 20억 맞나요?', '65평 130억이라고요?', '파크리오 전세는?', '1년에 백 집 중 몇 집 팔렸나?']),
+    S('list5', [8, 9], title='오늘 같이 볼 것', icon='MessageCircleQuestion', source='유튜브 댓글 · 네이버 검색어 자동완성',
+      items=['65평 130억이라고요?', '목동 12단지 20억 맞나요?', '재건축 조합원이 못 되는 경우', '세입자 있는 집을 살 수 있는 특례']),
     # ── 기초 ──
     ask('기초', '세 동네, 처음 보시는 분을 위해', '강남구 압구정동 · 송파구 신천동 · 양천구 목동', [10]),
     broll(38029457, [11, 12], '압구정, 한강 바로 남쪽'),
@@ -202,7 +208,7 @@ scenes = [
     broll(37527858, [175, 176], '지금 사면 원칙적으로 조합원이 안 된다'),
     big('사업 기간 · 분담금', '다루지 않음', '정해진 자료가 없음', [177], icon='CircleSlash', c=K, src=SRC_GOV),
     rows('사는 사람이 조합원 되는 예외', [['파는 사람 1주택 · 10년 보유'], ['그 집에 5년 거주까지', None, None, 2]], [178, 179, 180], icon='ListChecks', src=SRC_GOV),
-    broll(30975009, [181, 182], '이사·상속·해외 이주도 예외'),
+    broll(30975009, [181, 182], '이사·해외 이주 같은 예외'),
     rows('계약 전 확인 둘', [['조합설립인가를 받았나'], ['파는 사람이 예외에 드나', None, None, 1]], [183, 184], icon='ListChecks', src=SRC_GOV),
     broll(8471105, [185, 186], '거주 기간은 주민등록표로'),
     # ── 8. 전세 ──
@@ -255,7 +261,8 @@ scenes = [
     live(37522115, [259], start=8, pause=105),   # 숨 쉴 실사 3.5초
     brand([260], '토요일 오전 11시 반 · 종부세'),   # 고정 맺는 말 — 10/24 J-1
 ]
-missing = [n for n in range(1, 261) if n not in USED]
+scenes = [s for s in scenes if s['lines']]   # 줄이 다 빠진 장면(말에서 뺀 구간) 버림
+missing = [n for n in range(1, 245) if n not in USED]
 assert not missing, ('안 쓴 줄', missing)
 order = [l['i'] for s in scenes for l in s['lines']]
 assert order == sorted(order), ('줄 순서', [(a, b) for a, b in zip(order, sorted(order)) if a != b][:3])

@@ -45,8 +45,8 @@
 |---|---|---|---|---|---|---|---|
 | 0. 예고 | 안녕하세요, 파이어맵 · 미국 국채금리 5% | 은행 창구 앞 의자, 번호표 쥔 손(얼굴 없음) | #3 · #10 | Pexels 스톡 영상 | bg/k1/stock/bank_ticket.mp4 | shotcmp/r01.jpg | 만들 차례 |
 | 0. 예고 | 내 예금·대출 이자는 얼마나? | 통장 두 줄 '예금 이자 ?' '대출 이자 ?' | #10 | Remotion TallyFrame | bg/k1/board/k1_two_q.png | shotcmp/r02.jpg | 만들 차례 |
-| 0. 예고 | 순자 씨 1억 예금 만기 | 식탁 위 휴대폰 '예금 만기 안내' 문자·찻잔(글자는 우리가 얹음) | #9 | AI 실사 RealVisXL V5.0(이 PC) | bg/k1/ai/phone_tea.png | shotcmp/r03.jpg | 만들 차례 |
-| 0. 예고 | 준호 씨 고정금리 끝남 | 현관 신발장 위 열쇠와 서류 봉투 | #9 | AI 실사 RealVisXL V5.0(이 PC) | bg/k1/ai/keys_envelope.png | shotcmp/r04.jpg | 만들 차례 |
+| 0. 예고 | 예금 1억 다음 달 만기 | 식탁 위 휴대폰 '예금 만기 안내' 문자·찻잔(글자는 우리가 얹음) | #9 | AI 실사 RealVisXL V5.0(이 PC) | bg/k1/ai/phone_tea.png | shotcmp/r03.jpg | 만들 차례 |
+| 0. 예고 | 2021년 고정금리 대출, 고정 끝남 | 현관 신발장 위 열쇠와 서류 봉투 | #9 | AI 실사 RealVisXL V5.0(이 PC) | bg/k1/ai/keys_envelope.png | shotcmp/r04.jpg | 만들 차례 |
 | 0. 예고 | +74만원 · +28만원 | 이름 두 칸 옆 '?' → 말 닿을 때 열림, 손 동그라미 | #1 · #16 | Remotion TallyFrame | bg/k1/board/k1_answer2.png | shotcmp/r05.jpg | 만들 차례 |
 | 0. 예고 | 질문 다섯 줄 | 질문 다섯 줄이 번호와 함께 하나씩 | #21 · #13 | Remotion TallyFrame(표) | bg/k1/board/k1_q5.png | shotcmp/r06.jpg | 만들 차례 |
 | 1. 미국 국채금리 5%, 무슨 숫자인가 | 국채금리는 나라가 빌릴 때 내는 이자 | 신문 경제면 넘기는 손(제목 흐리게) | #19 | Pexels 스톡 영상 | bg/k1/stock/newspaper_hand.mp4 | shotcmp/r07.jpg | 만들 차례 |
@@ -74,7 +74,7 @@
 | 4. 미국 때문일까 | 같은 쪽으로 움직인 달 열에 일곱 vs 다섯 | 163칸 달력 점(같은 쪽 칸만 칠함) 두 장 나란히 | #12 | Remotion TallyFrame(점 칸, calc4_out) | bg/k1/board/k1_samedir.png | shotcmp/r29.jpg | 만들 차례 |
 | 4. 미국 때문일까 | 기준금리 2.50 → 2.75 → 3.00 | 계단 두 칸, 날짜 작게 | #1 | Remotion TallyFrame | bg/k1/board/k1_base_steps.png | shotcmp/r30.jpg | 만들 차례 |
 | 4. 미국 때문일까 | 2023년 가을 4.2% → 3.6% | 2023 타임라인 바랜 색 | #8 | Remotion TallyFrame(바랜 색) | bg/k1/board/k1_2023.png | shotcmp/r31.jpg | 만들 차례 |
-| 5. 고정 끝나는 사람은 얼마나 오르나 | 준호 씨 이야기 | 벽걸이 달력 넘기는 손, 한 칸 빨간 동그라미 | #9 | AI 실사 RealVisXL V5.0(이 PC) | bg/k1/ai/calendar_hand.png | shotcmp/r32.jpg | 만들 차례 |
+| 5. 고정 끝나는 사람은 얼마나 오르나 | 고정금리 대출 이야기 | 벽걸이 달력 넘기는 손, 한 칸 빨간 동그라미 | #9 | AI 실사 RealVisXL V5.0(이 PC) | bg/k1/ai/calendar_hand.png | shotcmp/r32.jpg | 만들 차례 |
 | 5. 고정 끝나는 사람은 얼마나 오르나 | 126만 → 154만, +28만 | 단계 흐름도 '2021 고정 2.98% → 5년 → 남은 원금 × 4.88% × 25년 = ?' | #1 · #16 | Remotion TallyFrame(흐름도) | bg/k1/board/k1_reset_flow.png | shotcmp/r33.jpg | 만들 차례 |
 | 5. 고정 끝나는 사람은 얼마나 오르나 | 변동형으로 다시 정하면 +22만 | 같은 흐름도 끝 칸이 두 갈래(고정 +28 · 변동 +22) | #1 | Remotion TallyFrame | bg/k1/board/k1_reset_two.png | shotcmp/r34.jpg | 만들 차례 |
 | 6. 그래서 볼 날짜 | 정리 세 줄 | 노트에 세 줄 적는 손 | #9 · #17 | Pexels 스톡 영상 | bg/k1/stock/notebook_hand.mp4 | shotcmp/r35.jpg | 만들 차례 |

@@ -381,7 +381,8 @@ def main():
     tl = load(os.path.join(HERE, 'textloop_log.json'), []) or []
     streak = 0
     for r in reversed(tl):
-        if '보류' in (r.get('verdict') or ''): streak += 1
+        # 2026-10-21: 카페로 판정이 나도 블로그 칸에 '보류'가 남아 계속 보류로 셌다. 판정 전체가 보류일 때만 센다.
+        if (r.get('verdict') or '').startswith('규칙 판정 보류'): streak += 1
         else: break
     # 적을수록 좋은 항목이다. 계기판의 gap 식은 '목표보다 모자란 것'만 재므로
     # 목표 6에 값 48이면 점수가 0으로 찍혔다(2026-09-24 확인). 목표 0에 초과분만 넣는다.

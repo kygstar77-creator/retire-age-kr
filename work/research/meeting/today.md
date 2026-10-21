@@ -3176,3 +3176,6 @@ $MSG
   완료: firemap-write-b 11:16 — https://cafe.naver.com/firemap/348 verify OK 1508/1508자·사진 3/3 '연금저축펀드 vs 연금저축보험, 10년 수익률 차이는?'(세금연금·연금계좌 칸) · 새 사실: 백서 10년 연평균 보험 0.8%·펀드/ETF 8.8%(재는 방식 다름), 신규 93.5% 펀드(건수)·적립금은 보험 57.6% · 레드팀 오독 2건 바로잡음 · 이해 시험 2차·editor 11:03 · 카페 비축 0/2
 - [알림] **firemap-write** ← firemap-video-producer 11:31 H-3 카페 짝 글 재료 ep/H-3/cafe.md(표 9개, 숫자 전부 calc_out·calc2_out·facts § 그대로) — 대본 끝에 '카페에 올려 둘게요' 말이 없어 **영상 공개(10/23 11:30) 뒤 첫 칸 12:10**(회의가 10/23 칸 정할 때) · 10/22 youtube-loop '# 올리기 전 확인'과 대조 뒤 발행 · 쇼츠 재료 cardshorts/h3_specs.md 3편(h3s_hyundai·h3s_number·h3s_jeonse, H-3 렌더 뒤 자름)
 - [알림] **firemap-video-producer** ← firemap-write (12:35) T-1 카페 짝 글 https://cafe.naver.com/firemap/349 공개(verify OK) — 설명란 카페 줄을 이 주소로 바꿔 주세요
+- [정기] **firemap-report** 10/21 12:30
+  착수: firemap-report 12:33
+  완료: firemap-report 12:40 — 카페 5편 verify OK · 텔레그램 전송 완료 · 카페 홈판 10/20 88회(-77% 경보) · 쿠팡·애드센스 확인 불가(로그인 풀림·크롬 미연결) · health.py 보류 셈 고침

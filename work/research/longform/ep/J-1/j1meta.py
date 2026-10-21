@@ -39,7 +39,7 @@ TPL = '\n'.join(FIRST2) + '''
 · 재정경제부 국회 제출 자료 추산 보도(SBS 2026.9.19)
 계산 가정: 55세·그 집 보유 10년(따로 적은 곳 빼고) · 공시가격 그대로 · 보유세 = 재산세(도시지역분·지방교육세 포함)+종부세(농어촌특별세 포함) · 재산세 공정시장가액비율 45% 가정 · 거주·비거주 판정 기준은 시행령에 넘겨져 확인 안 함. 이 계산기는 재정경제부 문답자료 적용사례 9칸 중 8칸을 ±0.2만원으로 재현했습니다(8월 첫 안 기준).
 
-내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)입니다. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 계산·비교 자료이며 집을 사거나 팔거나 이사하라는 권유, 세무 상담이 아닙니다.
+내레이션은 AI 음성 내레이션(Google Cloud Text-to-Speech Chirp 3 HD)이고, 일부 장면은 AI로 만든 그림(RealVisXL V5.0 — 우편함·거실·민원 창구·물컵·찻잔, 얼굴·글자 없음)입니다. 숫자는 모두 위 원문에서 가져와 파이어맵이 계산했습니다. 계산·비교 자료이며 집을 사거나 팔거나 이사하라는 권유, 세무 상담이 아닙니다.
 ''' + '\n'.join(credits)
 cafe = old.get('cafe_url') or 'https://cafe.naver.com/firemap'
 m = dict(old)
@@ -56,7 +56,7 @@ m.update({
     'tags': ['종부세', '종합부동산세 개편안', '1주택 종부세', '공동명의 종부세', '보유세'],
     'publishAt': '2026-10-24T11:30:00+09:00', 'privacy': 'private', 'privacy_note': '예약 공개(private+publishAt) — 정해진 시각에 공개로 바뀜',
     'paid': False, 'coupang': None, 'synthetic': True, 'veo': False,
-    'synthetic_note': 'AI 음성 내레이션 → containsSyntheticMedia True (장면 구상 담당 AI 실사 장면이 들어가면 그 설명도 여기에)',
+    'synthetic_note': 'AI 생성 그림 5장(RealVisXL V5.0 — 우편함·거실·창구·물컵·찻잔, 얼굴·상표·글자 없음, 화면에 "AI 생성 그림" 표시) + AI 음성 → containsSyntheticMedia True',
     'voice': 'Chirp 3 HD Charon 1.1 · 214줄 · 2026-10-21 녹음(say_v5, editor 10/21 17:09 서명) · 10/22 다시 받기 3줄(say.json 쉼표)',
     'answers': {
         'q1_바꿔끼우기': "아니오 — T-1(양도세 장특공)과 같은 정부 세법 개편이지만 세금·질문이 다르다(보유세·'그 집에 사나'·공동명의 특례). 공시가격별 산다/안 산다 갈림길(23억대·24억), 안 사는 집 14억 기준선의 54만원 계단, 공동명의 18억 계단 161.8만원은 우리 계산기로만 나온 숫자다.",

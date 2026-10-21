@@ -24,7 +24,7 @@
 [scenes.2.data.c2] rise
 [scenes.2.data.source] 파이어맵 계산 · 55세·보유 10년·공시가격 그대로 가정 · 정부안(국회 통과 전)
 [scenes.3.lines.0.text] 여기서 보유세는 집을 가진 사람이 매년 내는 재산세와 종부세를 합친 거예요.
-[scenes.3.data.license] Pexels 36820284 무료(Kartik Malviya)
+[scenes.3.data.license] Pexels 18029861 무료(Ashwin Alok)
 [scenes.3.data.say] 재산세와 종부세를 합친 것
 [scenes.3.data.side] left
 [scenes.4.lines.0.text] 고지서의 공시가격, 그리고 그 집에 지금 사는지. 이 두 가지만 알면 내 경우가 어디에 들어가는지 찾을 수 있어요.
@@ -73,7 +73,7 @@
 [scenes.10.data.rows.1.1] 나라에 · 정해진 금액 넘을 때
 [scenes.10.data.source] 종합부동산세법(법제처 2026.10.19)
 [scenes.11.lines.0.text] 가진 집의 공시가격을 다 더해서, 정해진 금액을 넘는 사람만 냅니다.
-[scenes.11.data.license] Pexels 32986074 무료(PUWOOK Kwak)
+[scenes.11.data.license] Pexels 30975009 무료(Stephen Leonardi)
 [scenes.11.data.say] 가진 집 공시가격을 다 더해서
 [scenes.11.data.side] left
 [scenes.12.lines.0.text] 공시가격은 나라가 매년 집마다 정해서 알려 주는 가격이에요. 시세와 같지는 않아요.
@@ -88,7 +88,7 @@
 [scenes.12.data.c2] accent
 [scenes.12.data.source] 재정경제부 문답자료 적용사례
 [scenes.13.lines.0.text] 내 집 공시가격은 부동산공시가격 알리미라는 국토교통부 누리집에서 찾아볼 수 있어요.
-[scenes.13.data.license] Pexels 6186015 무료(K)
+[scenes.13.data.license] Pexels 38029457 무료(FREE VIDEO HAPPY)
 [scenes.13.data.say] 부동산공시가격 알리미에서 찾기
 [scenes.13.data.side] left
 [scenes.14.lines.0.text] 기준이 되는 날은 6월 1일이에요. 그날 집을 가진 사람이 그해 세금을 냅니다.
@@ -109,9 +109,8 @@
 [scenes.15.data.c2] accent
 [scenes.15.data.source] 종합부동산세법(법제처 2026.10.19)
 [scenes.16.lines.0.text] 그리고 재산세는 이번 법안 대상이 아니에요. 그래서 오늘 계산에서 재산세는 지금 방식 그대로 뒀어요.
-[scenes.16.data.license] Pexels 35082942 무료(Nothing Ahead)
-[scenes.16.data.say] 재산세는 지금 방식 그대로
-[scenes.16.data.side] left
+[scenes.16.data.license] AI 생성 그림(RealVisXL openrail++)
+[scenes.16.data.badge] AI 생성 그림
 [scenes.17.lines.0.text] 그 집에 사는 한 채라면 빼 주는 금액, 이걸 공제라고 하는데요. 공제가 12억에서 14억으로 늘어납니다.
 [scenes.17.data.n] 1장
 [scenes.17.data.q] 빼 주는 금액은 늘었는데
@@ -133,7 +132,7 @@
 [scenes.19.data.c] ink
 [scenes.19.data.source] 재정경제부 2026 세제개편안 상세본 · 의안 2221046 · 파이어맵 계산
 [scenes.20.lines.0.text] 그런데 바뀌는 칸이 하나 더 있습니다.
-[scenes.20.data.license] Pexels 6963487 무료(Mikhail Nilov)
+[scenes.20.data.license] Pexels 5923592 무료(RDNE Stock project)
 [scenes.20.data.say] 바뀌는 칸이 하나 더
 [scenes.20.data.side] left
 [scenes.21.lines.0.text] 빼고 남은 금액 중에 세금이 붙는 부분의 비율이 올라갑니다. 이걸 공정시장가액비율이라고 해요.
@@ -155,9 +154,8 @@
 [scenes.22.data.rows.1.1] 1.3% → 2.0%
 [scenes.22.data.source] 재정경제부 2026 세제개편안 상세본 · 의안 2221046 · 파이어맵 계산
 [scenes.23.lines.0.text] 20억 집에 사는 사람이라면 세금이 붙는 금액이 조금 줄긴 합니다.
-[scenes.23.data.license] Pexels 36820284 무료(Kartik Malviya)
-[scenes.23.data.say] 사는 사람이라면 조금 준다
-[scenes.23.data.side] left
+[scenes.23.data.license] AI 생성 그림(RealVisXL openrail++)
+[scenes.23.data.badge] AI 생성 그림
 [scenes.24.lines.0.text] 보유세 중에 종부세만 놓고 보면 20만원 정도 덜 내죠.
 [scenes.24.lines.0.cap] 과세표준 4.8억 → 4.2억 · 136.5만원 → 114.0만원(농특세 포함)
 [scenes.24.data.title] 20억 집 · 산다 · 종부세
@@ -169,7 +167,7 @@
 [scenes.24.data.c2] fall
 [scenes.24.data.source] 파이어맵 계산 · 55세·보유 10년·공시가격 그대로 가정 · 정부안(국회 통과 전)
 [scenes.25.lines.0.text] 공제가 2억이나 늘었는데, 생각보다 덜 줄었죠?
-[scenes.25.data.license] Pexels 6963487 무료(Mikhail Nilov)
+[scenes.25.data.license] Pexels 7710745 무료(https://kaboompics.com/)
 [scenes.25.data.say] 생각보다 덜 줄었다
 [scenes.25.data.side] left
 [scenes.26.lines.0.text] 비율과 세율이 같이 오르면서 공제 효과를 일부 깎아 먹으니까요.
@@ -198,7 +196,7 @@
 [scenes.29.data.rows.1.1] 55세
 [scenes.29.data.source] 파이어맵 계산 예시
 [scenes.30.lines.0.text] 그 집을 사서 10년째 살고 있고요.
-[scenes.30.data.license] Pexels 36820284 무료(Kartik Malviya)
+[scenes.30.data.license] Pexels 8293019 무료(RDNE Stock project)
 [scenes.30.data.say] 그 집에 십 년째
 [scenes.30.data.side] left
 [scenes.31.lines.0.text] 먼저 공제 12억을 뺍니다.
@@ -217,7 +215,7 @@
 [scenes.32.data.c] accent
 [scenes.32.data.source] 종합부동산세법(법제처 2026.10.19)
 [scenes.33.lines.0.text] 이 금액에 세율표를 대면 276만원이 나와요.
-[scenes.33.data.license] Pexels 6963487 무료(Mikhail Nilov)
+[scenes.33.data.license] Pexels 7247869 무료(Leeloo The First)
 [scenes.33.data.say] 세율표를 대면
 [scenes.33.data.side] left
 [scenes.34.lines.0.text] 그런데 이 부분엔 재산세가 이미 붙어 있어서, 겹친 금액을 뺍니다. 86만원 정도예요.
@@ -329,7 +327,7 @@
 [scenes.47.data.c2] rise
 [scenes.47.data.source] 파이어맵 계산 · 55세·보유 10년·공시가격 그대로 가정 · 정부안(국회 통과 전)
 [scenes.48.lines.0.text] 공시가격이 25억이면요.
-[scenes.48.data.license] Pexels 35082942 무료(Nothing Ahead)
+[scenes.48.data.license] Pexels 4553292 무료(cottonbro studio)
 [scenes.48.data.say] 공시가격이 더 높다면
 [scenes.48.data.side] left
 [scenes.49.lines.0.text] 살고 있는 집도 30만원 정도 늘어납니다.
@@ -446,7 +444,7 @@
 [scenes.62.data.c] fall
 [scenes.62.data.source] 재정경제부 2026 세제개편안 상세본 · 의안 2221046 · 파이어맵 계산
 [scenes.63.lines.0.text] 14억 선을 조금이라도 넘으면 이야기가 달라지죠.
-[scenes.63.data.license] Pexels 32986074 무료(PUWOOK Kwak)
+[scenes.63.data.license] Pexels 8322392 무료(Ron Lach)
 [scenes.63.data.say] 선을 조금만 넘어도
 [scenes.63.data.side] left
 [scenes.64.lines.0.text] 공제는 12억이라, 그 위로 넘친 부분 전부에 한꺼번에 세금이 붙거든요.
@@ -505,7 +503,7 @@
 [scenes.71.data.c] rise
 [scenes.71.data.source] 재정경제부 2026 세제개편안 상세본 · 의안 2221046 · 파이어맵 계산
 [scenes.72.lines.0.text] 공동명의 부부는 두 가지 중에 고를 수 있어요.
-[scenes.72.data.license] Pexels 34740733 무료(Dishant Babariya)
+[scenes.72.data.license] Pexels 8794903 무료(Anastasia Shuraeva)
 [scenes.72.data.say] 두 가지 중에 고른다
 [scenes.72.data.side] left
 [scenes.73.lines.0.text] 각자 따로 내거나, 한 사람이 집 한 채를 가진 것처럼 계산해 달라고 신청하는 거죠.
@@ -603,9 +601,8 @@
 [scenes.84.data.c] accent
 [scenes.84.data.source] 국세청 공동명의 1주택자 특례 안내(2026.10.19)
 [scenes.85.lines.0.text] 신청하면 고지서도 두 사람이 정한 한 사람 이름으로 나와요.
-[scenes.85.data.license] Pexels 8471105 무료(Thirdman)
-[scenes.85.data.say] 정한 한 사람 이름으로
-[scenes.85.data.side] left
+[scenes.85.data.license] AI 생성 그림(RealVisXL openrail++)
+[scenes.85.data.badge] AI 생성 그림
 [scenes.86.lines.0.text] 한 번 신청하면 다음 해부터는 따로 신청하지 않아도 계속 그렇게 계산돼요.
 [scenes.86.data.title] 한 번 신청하면
 [scenes.86.data.rows.0.0] 다음 해부터
@@ -653,9 +650,8 @@
 [scenes.91.data.dir] h
 [scenes.91.data.source] 파이어맵 계산 · 55세·보유 10년·공시가격 그대로 가정 · 정부안(국회 통과 전)
 [scenes.92.lines.0.text] 왜 이렇게 될까요?
-[scenes.92.data.license] Pexels 31251627 무료(PUWOOK Kwak)
-[scenes.92.data.say] 왜 이렇게 될까
-[scenes.92.data.side] left
+[scenes.92.data.license] AI 생성 그림(RealVisXL openrail++)
+[scenes.92.data.badge] AI 생성 그림
 [scenes.93.lines.0.text] 지금 법에서 할인을 적게 받던 사람일수록, 공제가 늘어난 효과가 깎이지 않고 남습니다.
 [scenes.93.lines.1.text] 나이와 햇수 할인을 이미 꽉 채운 사람은 공제가 늘어도 더 깎일 세금이 별로 안 남고요.
 [scenes.93.data.title] 늘어난 공제 효과
@@ -678,7 +674,7 @@
 [scenes.94.data.c2] accent
 [scenes.94.data.source] 재정경제부 2026 세제개편안 상세본 · 의안 2221046 · 파이어맵 계산
 [scenes.95.lines.0.text] 이 한도에 걸리는 건 비싼 집을 오래 가진 사람, 특히 나이 할인까지 받는 고령층입니다.
-[scenes.95.data.license] Pexels 32986074 무료(PUWOOK Kwak)
+[scenes.95.data.license] Pexels 8970842 무료(SHVETS production)
 [scenes.95.data.say] 비싼 집을 오래 가진 고령층
 [scenes.95.data.side] left
 [scenes.96.lines.0.text] 공시 40억에 오래 산 일흔 살이라면 보유세가 두 배 이상 뛰고요.
@@ -724,9 +720,8 @@
 [scenes.99.data.c2] ink
 [scenes.99.data.source] 파이어맵 계산 · 55세·보유 10년·공시가격 그대로 가정 · 정부안(국회 통과 전)
 [scenes.100.lines.0.text] 그 댓글처럼 오래 산 일흔 살이 공시 20억 집에 산다면, 보유세는 올해보다 조금 줄고요.
-[scenes.100.data.license] Pexels 31251627 무료(PUWOOK Kwak)
-[scenes.100.data.say] 오래 산 일흔 살이라면
-[scenes.100.data.side] left
+[scenes.100.data.license] AI 생성 그림(RealVisXL openrail++)
+[scenes.100.data.badge] AI 생성 그림
 [scenes.101.lines.0.text] 9억에서 40억으로 오른 집에 산다는 분도 계셨습니다.
 [scenes.101.lines.1.text] 20년째 직접 살고 있다고요.
 [scenes.101.data.n] 댓글
@@ -767,7 +762,7 @@
 [scenes.106.data.n] 7장
 [scenes.106.data.q] 집을 떠나야 하는 사람, 당장 낼 돈이 없는 사람
 [scenes.107.lines.0.text] 정부가 낸 세법 개정 설명 자료에는 이런 경우를 위한 예외가 적혀 있습니다.
-[scenes.107.data.license] Pexels 4553292 무료(cottonbro studio)
+[scenes.107.data.license] Pexels 6036730 무료(Gustavo Fring)
 [scenes.107.data.say] 어쩔 수 없이 떠나는 경우의 예외
 [scenes.107.data.side] left
 [scenes.108.lines.0.text] 살던 집을 두고 전근이나 고등학교·대학교 진학, 1년 넘게 치료받아야 하는 병 때문에 다른 시·군에 가 있게 되면, 떠나 있는 동안도 산 것으로 쳐 줍니다.
@@ -791,7 +786,7 @@
 [scenes.110.data.c] ink
 [scenes.110.data.source] 재정경제부 2026 세제개편안 상세본 · 의안 2221046 · 파이어맵 계산
 [scenes.111.lines.0.text] 세금이 늘었는데 당장 낼 돈이 없다면 납부유예라는 길이 있습니다.
-[scenes.111.data.license] Pexels 6186015 무료(K)
+[scenes.111.data.license] Pexels 11099870 무료(Towfiqu barbhuiya)
 [scenes.111.data.say] 당장 낼 돈이 없다면
 [scenes.111.data.side] left
 [scenes.112.lines.0.text] 집을 팔 때까지처럼, 정해진 때까지 내는 걸 미뤄 두는 제도예요.
@@ -845,7 +840,7 @@
 [scenes.118.data.c2] rise
 [scenes.118.data.source] 파이어맵 계산 · 55세·보유 10년·공시가격 그대로 가정 · 정부안(국회 통과 전)
 [scenes.119.lines.0.text] 같은 30억이라도 나이와 갖고 있던 햇수에 따라 꽤 달라진다는 뜻이죠.
-[scenes.119.data.license] Pexels 6963487 무료(Mikhail Nilov)
+[scenes.119.data.license] Pexels 12079562 무료(FREE VIDEO HAPPY)
 [scenes.119.data.say] 나이와 햇수에 따라 갈린다
 [scenes.119.data.side] left
 [scenes.120.lines.0.text] 하나 짚고 갈게요. 9월 보도자료 제목엔 '정부안 확정'이라고 적혀 있습니다.
@@ -863,7 +858,7 @@
 [scenes.121.data.n] 9장
 [scenes.121.data.q] 나는 내야 하나, 순서대로
 [scenes.122.lines.0.text] 먼저 기준일에 가진 집이 몇 채인지예요.
-[scenes.122.data.license] Pexels 4553301 무료(cottonbro studio)
+[scenes.122.data.license] Pexels 9902446 무료(Ron Lach)
 [scenes.122.data.say] 기준일에 가진 집이 몇 채인지
 [scenes.122.data.side] left
 [scenes.123.lines.0.text] 이사하느라 잠깐 두 채가 된 일시적 2주택이거나, 상속받은 집이나 지방의 싼 집이 하나 더 있다면 따로 신청해야 합니다.
@@ -996,7 +991,7 @@
 [scenes.140.data.c2] accent
 [scenes.140.data.source] 종합부동산세법(법제처 2026.10.19)
 [scenes.141.lines.0.text] 올해 12월 고지서는 국회 결과와 상관없이 지금 법으로 나옵니다.
-[scenes.141.data.license] Pexels 1793371 무료(Miguel Á. Padriñán)
+[scenes.141.data.license] Pexels 35757634 무료(Giorgi Gumburashvili)
 [scenes.141.data.say] 올해 고지서는 지금 법으로
 [scenes.141.data.side] left
 [scenes.142.lines.0.text] 법안이 통과되면 바뀐 법 문구로 다시 계산해 올릴게요.

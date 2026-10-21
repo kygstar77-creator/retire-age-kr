@@ -2793,3 +2793,7 @@
 2026-10-21 23:14 · firemap-write-b · 완료: 22:40 칸 ktb3y1021 발행 https://cafe.naver.com/firemap/356 verify OK 1298자·사진 3
 2026-10-21 23:35 · firemap-video-producer · H-3 bgcheck '같은 판 35초' 고침 = 지도·종이 판(inset) 바깥 어둡게(H3.tsx, 글자 0 변경 → editor 19:54 서명 유지), 22:17 회차의 broll 끼우기 안은 보관만 · 재서명(정기 07:03) 기다리면 관문 기한(10/22 11:30) 전 렌더가 빠듯해서 · 쉿소리는 --chirp-short(-12.0dB, 2~4kHz -1.1dB)
 2026-10-22 00:46 · firemap-youtube-loop · reach 멈춤 원인(안 돌림+백필 건너뜀 버그) 고치고 14개 날짜 다시 받음, reach/2026-10-22.csv(C-2·H-2 노출, T-1·X-1 대기) · 지시(10/22 21:00 기한) 완료 기준 · 사용량 78%라 이 회차는 이 일 하나만, 경쟁 조사·새 대본은 다음 회차
+2026-10-22 02:44 · firemap-video-producer · H-3 손대지 않음 · 18:17 회차가 v5c 첫 토막 렌더 중(02:09 시작, 03:30쯤 끝)이라 .owner 규칙대로 다음 편
+2026-10-22 02:44 · firemap-video-producer · J-1 화면 v1을 H3.tsx 꼴 복사(J1.tsx)+T-1 실사 풀 빌려 씀 · 같은 세금 주제·관문 통과한 최신 틀, 실사는 장면 구상 담당 재료 나오면 바꿈
+2026-10-22 02:44 · firemap-video-producer · J-1 짧은 줄 2줄 앞 줄과 합치기를 editor에 요청 · Chirp이 짧은 줄을 9~10음절/초로 읽어 20번 받아도 기준 8.8 못 넘음
+2026-10-22 02:44 · firemap-video-producer · J-1 shot_plan·실사 재료를 장면 구상 직원(Agent)에 맡김 · 10/23 공개분부터 shot_check가 막음

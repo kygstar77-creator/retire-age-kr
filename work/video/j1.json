@@ -77,8 +77,8 @@
    ],
    "frames": 126,
    "data": {
-    "src": "bg/t1/36820284.mp4",
-    "license": "Pexels 36820284 무료(Kartik Malviya)",
+    "src": "bg/j1/stock/18029861.mp4",
+    "license": "Pexels 18029861 무료(Ashwin Alok)",
     "say": "재산세와 종부세를 합친 것",
     "side": "left",
     "from": 0
@@ -264,8 +264,8 @@
    ],
    "frames": 144,
    "data": {
-    "src": "bg/t1/32986074.mp4",
-    "license": "Pexels 32986074 무료(PUWOOK Kwak)",
+    "src": "bg/j1/stock/30975009.mp4",
+    "license": "Pexels 30975009 무료(Stephen Leonardi)",
     "say": "가진 집 공시가격을 다 더해서",
     "side": "left",
     "from": 0
@@ -312,8 +312,8 @@
    ],
    "frames": 171,
    "data": {
-    "src": "bg/t1/6186015.mp4",
-    "license": "Pexels 6186015 무료(K)",
+    "src": "bg/j1/stock/38029457.mp4",
+    "license": "Pexels 38029457 무료(FREE VIDEO HAPPY)",
     "say": "부동산공시가격 알리미에서 찾기",
     "side": "left",
     "from": 0
@@ -368,7 +368,7 @@
    }
   },
   {
-   "kind": "broll",
+   "kind": "pic",
    "lines": [
     {
      "text": "그리고 재산세는 이번 법안 대상이 아니에요. 그래서 오늘 계산에서 재산세는 지금 방식 그대로 뒀어요.",
@@ -379,11 +379,13 @@
    ],
    "frames": 172,
    "data": {
-    "src": "bg/t1/35082942.mp4",
-    "license": "Pexels 35082942 무료(Nothing Ahead)",
-    "say": "재산세는 지금 방식 그대로",
-    "side": "left",
-    "from": 0
+    "pic": "bg/j1/ai/mailbox.png",
+    "license": "AI 생성 그림(RealVisXL openrail++)",
+    "badge": "AI 생성 그림",
+    "zoom": [
+     1.0,
+     1.08
+    ]
    }
   },
   {
@@ -462,8 +464,8 @@
    ],
    "frames": 69,
    "data": {
-    "src": "bg/t1/6963487.mp4",
-    "license": "Pexels 6963487 무료(Mikhail Nilov)",
+    "src": "bg/j1/stock/5923592.mp4",
+    "license": "Pexels 5923592 무료(RDNE Stock project)",
     "say": "바뀌는 칸이 하나 더",
     "side": "left",
     "from": 0
@@ -527,7 +529,7 @@
    }
   },
   {
-   "kind": "broll",
+   "kind": "pic",
    "lines": [
     {
      "text": "20억 집에 사는 사람이라면 세금이 붙는 금액이 조금 줄긴 합니다.",
@@ -538,11 +540,13 @@
    ],
    "frames": 117,
    "data": {
-    "src": "bg/t1/36820284.mp4",
-    "license": "Pexels 36820284 무료(Kartik Malviya)",
-    "say": "사는 사람이라면 조금 준다",
-    "side": "left",
-    "from": 180
+    "pic": "bg/j1/ai/livedin.png",
+    "license": "AI 생성 그림(RealVisXL openrail++)",
+    "badge": "AI 생성 그림",
+    "zoom": [
+     1.0,
+     1.08
+    ]
    }
   },
   {
@@ -581,11 +585,11 @@
    ],
    "frames": 97,
    "data": {
-    "src": "bg/t1/6963487.mp4",
-    "license": "Pexels 6963487 무료(Mikhail Nilov)",
+    "src": "bg/j1/stock/7710745.mp4",
+    "license": "Pexels 7710745 무료(https://kaboompics.com/)",
     "say": "생각보다 덜 줄었다",
     "side": "left",
-    "from": 180
+    "from": 0
    }
   },
   {
@@ -689,11 +693,11 @@
    ],
    "frames": 59,
    "data": {
-    "src": "bg/t1/36820284.mp4",
-    "license": "Pexels 36820284 무료(Kartik Malviya)",
+    "src": "bg/j1/stock/8293019.mp4",
+    "license": "Pexels 8293019 무료(RDNE Stock project)",
     "say": "그 집에 십 년째",
     "side": "left",
-    "from": 240
+    "from": 0
    }
   },
   {
@@ -760,11 +764,11 @@
    ],
    "frames": 96,
    "data": {
-    "src": "bg/t1/6963487.mp4",
-    "license": "Pexels 6963487 무료(Mikhail Nilov)",
+    "src": "bg/j1/stock/7247869.mp4",
+    "license": "Pexels 7247869 무료(Leeloo The First)",
     "say": "세율표를 대면",
     "side": "left",
-    "from": 180
+    "from": 0
    }
   },
   {
@@ -1036,7 +1040,7 @@
     "license": "Pexels 36820284 무료(Kartik Malviya)",
     "say": "계속 그 집에 살았다면",
     "side": "left",
-    "from": 180
+    "from": 0
    }
   },
   {
@@ -1157,11 +1161,11 @@
    ],
    "frames": 69,
    "data": {
-    "src": "bg/t1/35082942.mp4",
-    "license": "Pexels 35082942 무료(Nothing Ahead)",
+    "src": "bg/j1/stock/4553292.mp4",
+    "license": "Pexels 4553292 무료(cottonbro studio)",
     "say": "공시가격이 더 높다면",
     "side": "left",
-    "from": 180
+    "from": 0
    }
   },
   {
@@ -1293,7 +1297,7 @@
     "license": "Pexels 36820284 무료(Kartik Malviya)",
     "say": "사는 집은 어디서부터 늘까",
     "side": "left",
-    "from": 240
+    "from": 180
    }
   },
   {
@@ -1545,11 +1549,11 @@
    ],
    "frames": 92,
    "data": {
-    "src": "bg/t1/32986074.mp4",
-    "license": "Pexels 32986074 무료(PUWOOK Kwak)",
+    "src": "bg/j1/stock/8322392.mp4",
+    "license": "Pexels 8322392 무료(Ron Lach)",
     "say": "선을 조금만 넘어도",
     "side": "left",
-    "from": 180
+    "from": 0
    }
   },
   {
@@ -1769,8 +1773,8 @@
    ],
    "frames": 102,
    "data": {
-    "src": "bg/t1/34740733.mp4",
-    "license": "Pexels 34740733 무료(Dishant Babariya)",
+    "src": "bg/j1/stock/8794903.mp4",
+    "license": "Pexels 8794903 무료(Anastasia  Shuraeva)",
     "say": "두 가지 중에 고른다",
     "side": "left",
     "from": 0
@@ -1934,7 +1938,7 @@
     "license": "Pexels 34740733 무료(Dishant Babariya)",
     "say": "일흔, 오래 산 부부라면",
     "side": "left",
-    "from": 180
+    "from": 0
    }
   },
   {
@@ -2030,7 +2034,7 @@
     "license": "Pexels 35082942 무료(Nothing Ahead)",
     "say": "기준을 조금만 넘어도",
     "side": "left",
-    "from": 270
+    "from": 0
    }
   },
   {
@@ -2093,7 +2097,7 @@
    }
   },
   {
-   "kind": "broll",
+   "kind": "pic",
    "lines": [
     {
      "text": "신청하면 고지서도 두 사람이 정한 한 사람 이름으로 나와요.",
@@ -2104,11 +2108,13 @@
    ],
    "frames": 102,
    "data": {
-    "src": "bg/t1/8471105.mp4",
-    "license": "Pexels 8471105 무료(Thirdman)",
-    "say": "정한 한 사람 이름으로",
-    "side": "left",
-    "from": 0
+    "pic": "bg/j1/ai/counter.png",
+    "license": "AI 생성 그림(RealVisXL openrail++)",
+    "badge": "AI 생성 그림",
+    "zoom": [
+     1.0,
+     1.08
+    ]
    }
   },
   {
@@ -2265,7 +2271,7 @@
    }
   },
   {
-   "kind": "broll",
+   "kind": "pic",
    "lines": [
     {
      "text": "왜 이렇게 될까요?",
@@ -2276,11 +2282,13 @@
    ],
    "frames": 39,
    "data": {
-    "src": "bg/t1/31251627.mp4",
-    "license": "Pexels 31251627 무료(PUWOOK Kwak)",
-    "say": "왜 이렇게 될까",
-    "side": "left",
-    "from": 0
+    "pic": "bg/j1/ai/water.png",
+    "license": "AI 생성 그림(RealVisXL openrail++)",
+    "badge": "AI 생성 그림",
+    "zoom": [
+     1.0,
+     1.08
+    ]
    }
   },
   {
@@ -2353,11 +2361,11 @@
    ],
    "frames": 142,
    "data": {
-    "src": "bg/t1/32986074.mp4",
-    "license": "Pexels 32986074 무료(PUWOOK Kwak)",
+    "src": "bg/j1/stock/8970842.mp4",
+    "license": "Pexels 8970842 무료(SHVETS production)",
     "say": "비싼 집을 오래 가진 고령층",
     "side": "left",
-    "from": 180
+    "from": 0
    }
   },
   {
@@ -2490,7 +2498,7 @@
    }
   },
   {
-   "kind": "broll",
+   "kind": "pic",
    "lines": [
     {
      "text": "그 댓글처럼 오래 산 일흔 살이 공시 20억 집에 산다면, 보유세는 올해보다 조금 줄고요.",
@@ -2501,11 +2509,13 @@
    ],
    "frames": 144,
    "data": {
-    "src": "bg/t1/31251627.mp4",
-    "license": "Pexels 31251627 무료(PUWOOK Kwak)",
-    "say": "오래 산 일흔 살이라면",
-    "side": "left",
-    "from": 180
+    "pic": "bg/j1/ai/tea.png",
+    "license": "AI 생성 그림(RealVisXL openrail++)",
+    "badge": "AI 생성 그림",
+    "zoom": [
+     1.0,
+     1.08
+    ]
    }
   },
   {
@@ -2655,8 +2665,8 @@
    ],
    "frames": 133,
    "data": {
-    "src": "bg/t1/4553292.mp4",
-    "license": "Pexels 4553292 무료(cottonbro studio)",
+    "src": "bg/j1/stock/6036730.mp4",
+    "license": "Pexels 6036730 무료(Gustavo Fring)",
     "say": "어쩔 수 없이 떠나는 경우의 예외",
     "side": "left",
     "from": 0
@@ -2754,11 +2764,11 @@
    ],
    "frames": 120,
    "data": {
-    "src": "bg/t1/6186015.mp4",
-    "license": "Pexels 6186015 무료(K)",
+    "src": "bg/j1/stock/11099870.mp4",
+    "license": "Pexels 11099870 무료(Towfiqu barbhuiya)",
     "say": "당장 낼 돈이 없다면",
     "side": "left",
-    "from": 180
+    "from": 0
    }
   },
   {
@@ -2831,7 +2841,7 @@
     "license": "Pexels 31251627 무료(PUWOOK Kwak)",
     "say": "오래 산 고령층도 신청",
     "side": "left",
-    "from": 300
+    "from": 0
    }
   },
   {
@@ -2935,11 +2945,11 @@
    ],
    "frames": 132,
    "data": {
-    "src": "bg/t1/6963487.mp4",
-    "license": "Pexels 6963487 무료(Mikhail Nilov)",
+    "src": "bg/j1/stock/12079562.mp4",
+    "license": "Pexels 12079562 무료(FREE VIDEO HAPPY)",
     "say": "나이와 햇수에 따라 갈린다",
     "side": "left",
-    "from": 150
+    "from": 0
    }
   },
   {
@@ -2999,11 +3009,11 @@
    ],
    "frames": 85,
    "data": {
-    "src": "bg/t1/4553301.mp4",
-    "license": "Pexels 4553301 무료(cottonbro studio)",
+    "src": "bg/j1/stock/9902446.mp4",
+    "license": "Pexels 9902446 무료(Ron Lach)",
     "say": "기준일에 가진 집이 몇 채인지",
     "side": "left",
-    "from": 120
+    "from": 0
    }
   },
   {
@@ -3232,7 +3242,7 @@
     "license": "Pexels 34740733 무료(Dishant Babariya)",
     "say": "부부가 반씩 가진 집은",
     "side": "left",
-    "from": 270
+    "from": 180
    }
   },
   {
@@ -3270,7 +3280,7 @@
     "license": "Pexels 31251627 무료(PUWOOK Kwak)",
     "say": "그다음은 나이와 햇수",
     "side": "left",
-    "from": 240
+    "from": 180
    }
   },
   {
@@ -3505,11 +3515,11 @@
    ],
    "frames": 128,
    "data": {
-    "src": "bg/t1/1793371.mp4",
-    "license": "Pexels 1793371 무료(Miguel Á. Padriñán)",
+    "src": "bg/j1/stock/35757634.mp4",
+    "license": "Pexels 35757634 무료(Giorgi Gumburashvili)",
     "say": "올해 고지서는 지금 법으로",
     "side": "left",
-    "from": 300
+    "from": 0
    }
   },
   {

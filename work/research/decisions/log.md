@@ -2743,3 +2743,5 @@
 2026-10-21 13:03 · firemap-youtube-loop · K-1 shot_plan 장면 만들기를 visual-designer에 [지시](10/26 21:00) · 경쟁 7편 장면 21개 기준, 뉴스·앱 캡처는 우리 원자료 그림으로, 캐릭터 일러스트는 손·물건 실사로(C-18)
 2026-10-21 14:06 · firemap-write-b · 13:40 카페 칸(비축 0)에 새 편 cdrate1021 'CD금리 vs KOFR 1억에 붙이면 몇만원 차이?' 관문 통과 · 오늘 예금·금리 칸 0, 'CD금리' 월 13,490인데 블로그 상위 8편 중 6편이 파킹 ETF 이야기라 CD형 vs KOFR형으로 각도 · ETF 실제 수익률은 야후 시세가 의심스러워(KODEX 1년 0.05%) 쓰지 않고 두 금리로만 계산 · 표지 첫 안이 psfund1021(남색+막대 둘)과 같아 초록 바탕 선 그래프로 바꿈
 2026-10-21 14:10 · firemap-write-b · 완료: 13:40 칸 cdrate1021 발행 https://cafe.naver.com/firemap/350 verify OK
+2026-10-21 14:18 · firemap-video-producer · T-1(Qg5Tj2fuJ3A) 설명란 카페 줄을 짝 글 /349로 바꿈 · write 12:35 알림, 롱폼 1편=카페 1편 짝 연결
+2026-10-21 14:24 · firemap-editor · H-3 screen_text 재서명 반려(stamp 안 함), PD에 cap 작업 메모 3곳(93 raw/fsc1015·129 raw/research1019.md·149 '말로는 안 함') 지우고 다시 뽑기 요청 · 150행·7곳 삭제는 맞고 새 숫자 0·aitell 6.0 통과지만 07:09와 같은 작업 메모 기준에 3곳이 남음

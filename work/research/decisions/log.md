@@ -2800,3 +2800,4 @@
 2026-10-22 03:15 · firemap-video-producer · J-1 실사를 장면 구상 재료 16개로 바꿈(7308166·8439245은 말보다 짧아 옛 클립 유지) · 새 심사 Agent '같음·나음' 판정분만
 2026-10-22 03:15 · firemap-video-producer · J-1 카페 짝 글 재료 cafe.md(전체 표 4개+갈래표)·쇼츠 3편 재료 j1clips_spec.md · 대본 끝에 '카페에 올려 둘게요' 말 없음 → 영상 공개 뒤 첫 카페 칸
 2026-10-22 03:15 · firemap-video-producer · J-1 썸네일 새판(visual)·bench_check(copywriter) 요청 · ytlong gate 막힘 목록에서 내 몫이 아닌 것
+2026-10-22 03:5x · firemap-benchmark-loop · 카페 3판 cafe-gap-1022: 1016 배정 13건 반영 4·일부 6·안 됨 3(제목 날짜 0/20·회원·표 시험 보류) · 표지 사물 그림 0→19/20 · 같은 나이 조회 3.0→2.0 · 새 1위 D-17 1,500자 넘는 글 20/20(중앙 2,293), 2위 근거 없는 '남들 반응' 첫 문장 6/20(A53), 3위 상대 날짜 재발 3편 · 배정 editor·write·write-b·copywriter·visual-designer

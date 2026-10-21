@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-21 18:47",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "퇴직소득세/중간정산 받았다면",
+ "num": "합치면 80만원 덜 내요",
+ "sub": "퇴직금 2억·20년 · 10년째 반을 중간정산",
+ "label": "국세청 홈택스 모의계산으로 확인",
+ "src": "",
+ "icon": "receipt-text",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "yellow",
+ "topic_px": 120,
+ "num_px": 96,
+ "sub_px": 50,
+ "board": [
+  "firsthome1021",
+  "sidecar1021",
+  "cdrate1021",
+  "t1cafe1021",
+  "psfund1021",
+  "med1021",
+  "h1helio1021",
+  "yen1021",
+  "cudep1020",
+  "seqrisk1020"
+ ]
+}

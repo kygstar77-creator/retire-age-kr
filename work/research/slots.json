@@ -2214,7 +2214,8 @@
    "item": "sevmonth1021",
    "owner": "firemap-write",
    "gates_ok": "2026-10-21 13:01",
-   "note": "firemap-meeting 2026-10-18 21:41: 카페 하루 12칸 뼈대(36시간 앞, 레드팀 R1) · 계산기 칸 후보(맞는 계산기 있는 주제, X-CAFE-CALC) | firemap-write 13:01: sevmonth1021 '퇴직금 4월 퇴사 대신 한 달 더 다니면 줄어들까?' 관문 통과 — 계산기 칸(calc/severance, 퇴직금계산기 월 252,000) · 근로기준법 제2조·시행령 제6조·근퇴법 8·20조 10/21 DRF, 계산기 식+통상임금 비교로 2027년 달마다 계산: 연장수당 받는(기본급 250+수당 50) 10년 4개월은 5월 말 퇴사 시 퇴직금 약 77만원 감소·고정급만이면 통상임금 하한으로 4월 효과 없음(+29만원) · 레드팀 3회(1차 통상임금 하한 누락 잡음→다시 계산) · 이해 시험 3차+제목 확인 · readcheck 0·aitell 2.5·selfcheck 사실0·교차검증 Gemini 반영 · research_gate strict·editgate auto"
+   "note": "firemap-meeting 2026-10-18 21:41: 카페 하루 12칸 뼈대(36시간 앞, 레드팀 R1) · 계산기 칸 후보(맞는 계산기 있는 주제, X-CAFE-CALC) | firemap-write 13:01: sevmonth1021 '퇴직금 4월 퇴사 대신 한 달 더 다니면 줄어들까?' 관문 통과 — 계산기 칸(calc/severance, 퇴직금계산기 월 252,000) · 근로기준법 제2조·시행령 제6조·근퇴법 8·20조 10/21 DRF, 계산기 식+통상임금 비교로 2027년 달마다 계산: 연장수당 받는(기본급 250+수당 50) 10년 4개월은 5월 말 퇴사 시 퇴직금 약 77만원 감소·고정급만이면 통상임금 하한으로 4월 효과 없음(+29만원) · 레드팀 3회(1차 통상임금 하한 누락 잡음→다시 계산) · 이해 시험 3차+제목 확인 · readcheck 0·aitell 2.5·selfcheck 사실0·교차검증 Gemini 반영 · research_gate strict·editgate auto",
+   "published": "https://cafe.naver.com/firemap/353 18:51 verify OK 1710자"
   },
   {
    "at": "2026-10-21 19:20",
@@ -2254,10 +2255,10 @@
   {
    "at": "2026-10-22 06:10",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "rettax1022",
    "owner": "firemap-write",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞)"
+   "gates_ok": "2026-10-21 18:52",
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) | firemap-write 18:53: rettax1022 '퇴직소득세, 중간정산 퇴직금 합치면 80만원 덜 낼까?'(세금연금) 관문 통과 18:52 — 소득세법 148조·시행령 203조 합산 정산, 홈택스 모의계산 5건 원 단위 일치, 레드팀 틀림0·오해5 반영, 이해 시험 2차, readcheck 0·aitell 4.4·selfcheck 사실0, editgate stamp"
   },
   {
    "at": "2026-10-22 07:20",

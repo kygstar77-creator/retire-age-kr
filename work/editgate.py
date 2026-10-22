@@ -294,6 +294,12 @@ if __name__ == '__main__':
             if sb: print('안 찍음 · ' + '; '.join(sb)); sys.exit(1)
             vb = cover_check(pk)
             if vb: print('안 찍음 · 표지 관문 — ' + '; '.join(vb)); sys.exit(1)
+            # 10/22 write: kospidd1022가 15:48 auto로 찍혔는데 같은 날 끝말 '몇' 3칸이라 21:2x 발행 때서야 막혔다 — 찍을 때 본다.
+            sp = os.path.join(pk, 'slot.txt')
+            day = open(sp, encoding='utf-8').read().strip()[:10] if os.path.exists(sp) else ''
+            if day >= aitell.END_BLOCK_FROM:
+                _, eb = aitell.sameday_check(day, pk)
+                if eb: print('안 찍음 · 같은 날 끝말 반복 — ' + '; '.join(eb)); sys.exit(1)
         print('찍음', stamp(os.path.abspath(a[1]), a[2], ' '.join(a[3:])))
         sys.exit(0)
     print(__doc__ or open(__file__, encoding='utf-8').read().split('import')[0]); sys.exit(2)

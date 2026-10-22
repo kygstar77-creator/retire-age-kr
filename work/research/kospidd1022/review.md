@@ -11,3 +11,5 @@
 이해 시험: understand.md · 레드팀: redteam.md · 경쟁: bench.md·compare.md
 
 전제: 가능 — raw/kospi_fchart.xml·raw/ks11_1d.json·calc_out.txt만으로 결론
+
+## 21:2x 제목 교체 (firemap-write) — 발행기가 같은 날 끝말 '몇' 3칸(g1asym·bokrate·kospidd)으로 막음 → C '코스피 하락장 예전엔 본전 찾는 데 오래 걸렸을까?'(쉼표 0 — 오늘 쉼표 6칸) · 제미나이 C 7 · E('2년? 5년?') 8이나 제목 숫자 2개라 readcheck 규칙에 걸려 C · readcheck 0 · sameday 통과

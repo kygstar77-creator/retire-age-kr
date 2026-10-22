@@ -114,3 +114,18 @@
 | facts C8 공동명의 비거주 문턱(calc3) | 18억 0 · 18.02억 161.8 · 거주 0.5 | 160만원 정도 · 거의 0원 | 원값 | https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 · https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000079193 |
 | L5 국세청·종부세법 §16①② | 고지 납부 12.1~12.15 · 고지서 납부기간 5일 전까지 발급 | 12월 1일부터 보름 · 닷새 전 | 원값 | https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2356&cntntsId=7738 · https://www.law.go.kr/법령/종합부동산세법 |
 | raw/law1019 헌법 §53 | 15일 이내 공포 | 15일 안에 | 원값 | https://www.law.go.kr/법령/대한민국헌법/제53조 |
+
+# 올리기 전 확인
+2026-10-23 00:46 firemap-youtube-loop — 공개 칸 2026-10-24(토) 11:30, 대조 칸 출처 10곳 전부 다시 받음(curl, 응답 200)
+- https://likms.assembly.go.kr/bill/bi/billDetailPage.do?billId=ARC_O2S6R0Z9Z0P3V1Z0A5J3R1Y8B6L3L6 — [2221046] 소관위 재정경제기획위원회 · 제안일자 2026-09-03 · **의결일자·의결결과 빈칸 = 10/23 지금도 처리 전**(화면 자막 '10.19 현재 처리 전'은 그대로 맞음)
+- https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000078809 — 제목 '2026년 세제개편안 발표' 그대로(첨부 상세본·문답 raw/mofe_0803_* 값은 공표 자료라 안 바뀜)
+- https://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&menuNo=4010100&searchNttId1=MOSF_000000000079193 — 제목 '2026년 세제개편안 정부안 확정' 그대로
+- https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=40406&cntntsId=238930 — '해당연도 9.16.∼9.30.까지 관할세무서장에게 신청' · '다음 연도부터는 … 별도 신청없이 계속 적용됨' · 다른 세대원 무주택 — 그대로
+- https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=2356&cntntsId=7738 — '합산배제신고는 9.16. ~ 9.30., 정기고지 신고는 12.1. ~ 12.15.' · '고지서를 발부받아 납부' — 그대로
+- https://www.fnnews.com/news/202609131016000055 — 현행 774만7000원 → 1203만8000원, 429만1000원 많다 — 그대로
+- https://www.segye.com/newsView/20260913504424 — 774만7000원 → 1203만8000원, 429만1000원 — 그대로
+- https://www.youtube.com/watch?v=MxQmV3al5sQ — 영상 열림(SBS 9/19 보도, 삭제 안 됨)
+- https://www.law.go.kr/법령/종합부동산세법 · https://www.law.go.kr/법령/대한민국헌법/제53조 — 화면은 자바스크립트 껍데기만 받힘(본문 확인 안 함). 조문 값은 raw/law1019(10/19 법제처 API) 그대로 씀 — 개정안이 의결 전이라 현행 종부세법이 바뀔 길이 없음(의안 2221046 의결일자 빈칸)
+기준일: 정부안 = 2026-09-01 국무회의 확정·2026-09-03 국회 제출(의안 2221046) · 현행법 = 종합부동산세법(2026-10-19 조문) · 국회 처리 상태 = 2026-10-23 의안정보 화면 · 재경부 추산 = 2026-09-13 보도(국회 제출 자료) · 계산(calc·calc2·calc3) = 공시가격 그대로 가정, 기준일 영향 없음
+바뀐 것: 없음 — 숫자·법 조건·국회 상태 모두 그대로, 다시 녹음·렌더할 줄 0. 설명란 출처의 의안정보·국세청 '2026-10-19 확인'만 '2026-10-23 확인'으로 고침(meta.json desc·desc_tpl, 화면 아님). 조사 뒤 공표 중 이 편에 걸리는 것 없음(10/22 금통위는 종부세·납부유예 이자와 무관 — 납부유예 이자 3.1%는 세제개편안 상세본 값)
+새로 찾은 것: 10/17~10/23 '종부세 1주택 거주 비거주 조세소위' 웹 검색 — 10월 조세소위 처리·수정 보도 못 찾음(검색에 나온 건 8/3 첫 안 기사뿐: 이투데이 https://www.etoday.co.kr/news/view/2610286 · 헤럴드 https://biz.heraldcorp.com/article/10829442 — 첫 안의 비거주 9억·상한 200%는 9/1 정부안에서 철회, 대본은 이미 9/1 안 기준). 새 댓글 질문 없음(공개 전)

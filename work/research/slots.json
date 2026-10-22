@@ -2340,10 +2340,11 @@
   {
    "at": "2026-10-22 16:40",
    "kind": "cafe",
-   "item": "TBD",
+   "item": "etfdistday1022",
    "owner": "firemap-write-b",
-   "gates_ok": null,
-   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) · 부동산 칸(하루 2칸 이상) | firemap-meeting 2026-10-21 21:4x: 장르 주식(ETF·배당) "
+   "gates_ok": "2026-10-22 17:06",
+   "note": "firemap-meeting 2026-10-19 21:35: 카페 하루 12칸 뼈대(36시간 앞) · 부동산 칸(하루 2칸 이상) | firemap-meeting 2026-10-21 21:4x: 장르 주식(ETF·배당)  | firemap-write-b 17:06: etfdistday1022 '월배당 ETF 분배금만 받고 팔면 이득일까?'(주식·ETF 배당) 관문 통과 17:06 — 운용사 규약(TIGER 말일·KODEX 15일)·T+2·소득세법 원천징수, KRX 원 시세로 ETF 4개 분배락 2년 96번 직접 계산(이득 50·손해 46·평균 −3.5원/주, 경쟁 0편), 레드팀 숫자0·표현·오해·위험 반영, 이해 시험 2차 6명 통과, readcheck 0·aitell 3.5·selfcheck 사실0, editgate auto",
+   "published": "https://cafe.naver.com/firemap/364 17:19 verify OK 1876자"
   },
   {
    "at": "2026-10-22 17:20",

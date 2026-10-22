@@ -1,0 +1,9 @@
+{
+ "type": "chart",
+ "source": "네이버 증권 모바일 일별 시세(KRX 시가·종가, 수정 안 한 값) + Yahoo Finance chart events(분배락일·분배금) — ETF 4개 2024.10~2026.10 분배락 96번, mkimg.py로 직접 그린 막대",
+ "made_at": "2026-10-22",
+ "by": "research/etfdistday1022/mkimg.py",
+ "out": "img/00.png",
+ "topic_px": 64,
+ "num_px": 60
+}

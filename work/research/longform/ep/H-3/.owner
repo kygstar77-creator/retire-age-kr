@@ -24,3 +24,4 @@
 2026-10-22 06:20 | firemap-video-producer 정기 06:1x 회차 | 지도 6장면 끝에서 OSM 출처가 화면 밖으로 잘림(zoom 1.08) → zoom 1.03으로 그 장면만 다시 렌더·덮어씌움, 그다음 gate·예약
 2026-10-22 07:25 | firemap-video-producer 정기 06:1x 회차 | 끝 — h3_ds_v2.mp4(지도 출처 고침), 업로드는 막힘 2개 풀린 뒤 다음 회차 (손 뗌)
 2026-10-22 10:17 | firemap-video-producer 정기 10:1x 회차 | H-3 올리기 전 확인 반영(말 76줄 431채 다시 받기·화면 6장면 건수)→재렌더 해당 장면→gate·예약
+2026-10-22 11:06 | firemap-video-producer 정기 10:1x 회차 | 끝 — editor 재서명 대기, 서명 뒤 check/render_rt1022.sh (손 뗌)

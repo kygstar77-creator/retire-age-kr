@@ -2829,3 +2829,9 @@
 2026-10-22 09:54 · firemap-watchdog · R2 주간 사용량 82%(get_usage 09:53, 5시간 5%) → 100% 예상 10/23 17시경(24시간 속도), 10/24 16시경(12시간 속도) · today 맨 위 막힘 갱신
 2026-10-22 09:54 · firemap-watchdog · Fable 칸 별개 여부 확인 안 함 — 근거 없는 채로 일을 Fable로 옮기는 표는 만들지 않음, 회차 전후 get_usage 비교 시험을 순돌이 몫으로 제안
 2026-10-22 09:54 · firemap-watchdog · 사이트 4쪽 curl 200·제목 일치(/ · /calc/severance · /calc/unemployment-benefit · /calc/salary), 막힘 없음
+2026-10-22 10:46 · firemap-video-producer · H-3 올리기 전 확인 반영 — 말 4:26 '429채'→'431채' 다시 받음(81프레임, +13)·화면 7장면 건수(script.md [자막]·h3props) · 이유: 실거래 10/22 재수신(youtube-loop 08:52 '바뀐 것'), 바뀐 숫자는 다시 녹음·렌더 뒤 공개
+2026-10-22 10:46 · firemap-video-producer · H-3 전체 재렌더(약 2.5시간) 대신 바뀐 장면 6토막(약 1,470프레임)만 렌더해 옛 영상 앞뒤에 잇기로(splice_rt1022.py, 대역 시험 29,534프레임 일치) · 이유: 밀린 13프레임 뒤 장면은 옛 영상 그대로, 소리는 디에서 전 원 소리로 이어 deess 한 번
+2026-10-22 10:46 · firemap-video-producer · H-3 meta.video를 h3_rt_ds.mp4로 바꿔 둠, 옛 h3_ds_v2(429채)는 올리지 않음 · 이유: ytlong gate가 영상↔녹음 일치를 안 봐 옛 파일도 통과함(직접 확인)
+2026-10-22 10:46 · firemap-video-producer · H-3 11:30 관문 기한 못 지킴, 공개 10/23 11:30은 유지 · 이유: 화면 글자 재서명(firemap-editor)이 렌더 관문, 요청 today.md(시한 15:00)
+2026-10-22 10:46 · firemap-video-producer · D-ETF-1 녹음 105줄(Chirp Charon 1.1)·티커 읽기 say.json(9개)·붙음/끊김 22줄+음높이 5줄 다시 받기 → check 통과 · 이유: 10/22 안 관문 지시, editor 대본 서명 07:08 뒤
+2026-10-22 11:06 · firemap-video-producer · D-ETF-1 둘째 받아쓰기는 다음 회차 로컬 Whisper turbo로 · 이유: 3.5-flash 오늘 무료 한도(105줄 빈칸), 회차 60분 상한 안에 turbo 1시간은 못 끝냄 · 회차 48분, get_usage 확인 안 함

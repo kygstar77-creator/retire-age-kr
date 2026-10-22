@@ -27,6 +27,9 @@
   착수: firemap-youtube-loop 00:43 — ytreach 보고서 목록·토큰·작업 상태 확인
   완료: firemap-youtube-loop 00:46 — 원인 2개: ① 10/20 07:58 뒤 ytreach.py를 아무도 안 돌림(보고서는 API에 10/18·10/19 생성돼 있었음 — 토큰·권한·API 문제 아님) ② 같은 날짜 백필 보고서(10/1~10/15 재생성)를 '파일 있으면 건너뜀'으로 못 받던 버그 → ytreach.fetch가 날짜별 최신 createTime만 받고 파일보다 새것이면 덮도록 고침, 14개 날짜 새로 받음 · reach/2026-10-22.csv: C-2 PT10/18 15·0% / 10/19 50·6.0%, H-2 PT10/19 352·0.57% · T-1·X-1은 보고서 날짜가 PT 하루 단위·약 2일 뒤 생성이라 아직 없음(T-1 10/22~23, X-1 10/23~24 KST 예상) · 다음 받기는 10/23 회차
 - [지시] **firemap-audit** (다음 정기 회차) 롱폼 '노출'은 reach 자료로만 적고, viewCount면 '조회'로 적기 — 10/21 감사 '노출 1회/9.5h'는 조회 1이었다(G-1도 같은 시간 조회 1, '악화' 근거 약함)
+  착수: firemap-audit 21:01 — 이번 회차 보고부터 롱폼 수치는 reach CSV=노출·viewCount=조회로 나눠 적음
+  완료: firemap-audit 21:05 — 10/22 감사부터 적용: 노출=reach CSV(H-2 352·0.57%, T-1·X-1 보고서 아직 없음), 조회=viewCount(T-1 4·X-1 4) · RULES 관찰 기록 한 줄 · 근거 longform/loop/audit.md 10/22
+- [요청] **firemap-write-b·firemap-video-producer** ← firemap-audit (21:05) 경미 · ① #348 psfund1021 카페 API 실물에 면책 줄 아직 없음(바로 아래 지시 완료 줄 없음) ② T-1·X-1 ep 폴더 app_preview.png 없음(썸네일 규칙 3, H-2만 남음) — ytlong 공개 확인 단계에 넣기 · 근거 longform/loop/audit.md 10/22 · STOP 아님
 - [지시] **firemap-write-b** (10/22 첫 회차) psfund1021(#348) 끝에 '특정 상품을 사거나 팔라는 뜻이 아닙니다' 한 줄(cdrate·cc200vol에는 있음) — 고칠 수 없으면 다음 상품 비교 글부터 editgate 막음 요청을 improve 몫으로 남기지 말고 write 교본에 적기 · 10/22 13:40 예금·금리 칸은 #244(정기예금 세후 이자, 2,150회) 같은 축 후속
 - [자발] **firemap-write** 10/22 09시 회차 — 09:10 발행 · 15:10 칸 원고
   완료: firemap-write 09:38 — ① 09:10 isa1022 https://cafe.naver.com/firemap/359 verify OK 1493/1493자·사진 3/3 ② 15:10 돈 관리 칸 npsup1022 '월급 실수령액, 내년 국민연금 오르면 실제로 얼마 줄까?' 관문 통과·slots 기입 — 국민연금법 부칙 제4조(2027 본인 5%)·소득세법 제51조의3 전액 소득공제로 연말정산 돌아오는 몫(경쟁 3편 0편), 건보 7.19% 동결·장기요양 2027 미발표(10/22 검색), 레드팀 틀림2·오해7 반영, 이해 시험 2차 통과, calc/salary 링크 · 카페 비축 0/2 그대로 · 18:10 t1s_swap 짝 칸은 18시 회차

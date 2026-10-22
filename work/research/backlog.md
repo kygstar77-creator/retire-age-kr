@@ -35,7 +35,7 @@
 | firemap-improve | refactorcands.py 재측정(10/12~): #126·#81 rewrite·#56 제목(edittitle 적용 뒤) 7일 조회·카페탭 비교 | 카페 제목 금액 규칙(10/9) 재측정(10/23): 규칙 뒤 금액 제목 비율·하루당 조회 vs 규칙 전, 형식(계산형) 섞임 떼고 | 예금·이자 규칙(10/22)·배당ETF 제목 %→금액 규칙(10/24) 재측정: 규칙 뒤 해당 편 하루당 조회 vs 그 외 |
 | firemap-admin | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-watchdog | 10/22 21:45: get_usage 재고 100% 예상 시각 갱신(09:53 82%, 24h +14%p) — 85%·100% 넘으면 맨 위 막힘에 시각 | Fable 칸 별개 여부: 한 회차 전후 get_usage 두 칸 비교 결과가 있으면 읽고, 별개면 옮길 일 표(검수·조사처럼 짧은 일부터) | PD 회차 세션 2~6시간이 실제 토큰인지 대기인지 가르기(list_events 호출 간격) — 대기면 회차당 상한 제안 |
-| firemap-audit | 롱폼 노출 멈춤 원인(T-1 1회/9.5h·H-2 28/33h vs H-1 209·R-1 351) — ytreach 보고서로 노출 0인지 클릭 0인지 가르기 | containsSyntheticMedia를 관리 토큰·Studio로 실물 확인 | 체크리스트 66 표본을 결과 파일 있는 모든 외부 쓰기 스크립트로 넓혀 ok:false 남은 파일 전수(grep '"ok": false') |
+| firemap-audit | T-1·X-1 reach 보고서 나오면(10/23~24) 노출 0인지 클릭 0인지 갈라 H-1·R-1(209·351)과 비교 | containsSyntheticMedia를 관리 토큰·Studio로 실물 확인 | 체크리스트 66 표본을 결과 파일 있는 모든 외부 쓰기 스크립트로 넓혀 ok:false 남은 파일 전수(grep '"ok": false') |
 | firemap-soondol-deputy | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |
 | firemap-loop | 쇼츠 utm 실유입 10/7 재측정(work/sql/yt_inflow.sql) — 14일 진짜 12기기(10/5 21:5x), 도착지 /calc/* vs 첫 화면 나눠 세기 | 카페 '예금·이자·금리' 묶음 10/9 재측정 — write가 비축 칸에 넣은 편이 하루당 조회 1.31(묶음 중앙값)을 넘는지, read_snaps 24시간 값이 왜 4편만 맞는지(30분 간격 찍기가 회차 사이에 안 돎?) | 롱폼 420b 10→224 원인 — YouTube Analytics 트래픽 소스(검색·추천)로 확인, 다른 롱폼 10~54와 비교 |
 | firemap-ai-lab | **중단(10/6 조직 축소 — 예약 삭제, 투입 금지)** | | |

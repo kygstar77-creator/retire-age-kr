@@ -1,0 +1,59 @@
+{
+ "comments": {
+  "6mwoQqj77J8": "<HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=6mwoQqj77J8&order=relevance&maxResults=60&textFormat=plainText&alt=json returned \"Request h",
+  "tOn0Q-wrjlk": "<HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=tOn0Q-wrjlk&order=relevance&maxResults=60&textFormat=plainText&alt=json returned \"Request h",
+  "ZQjOiB4F_b0": "<HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=ZQjOiB4F_b0&order=relevance&maxResults=60&textFormat=plainText&alt=json returned \"Request h",
+  "QmHIrynkyiA": "<HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=QmHIrynkyiA&order=relevance&maxResults=60&textFormat=plainText&alt=json returned \"Request h",
+  "XdmVjZLmJgo": "<HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=XdmVjZLmJgo&order=relevance&maxResults=60&textFormat=plainText&alt=json returned \"Request h",
+  "xTS1QbDH1vs": "<HttpError 403 when requesting https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=xTS1QbDH1vs&order=relevance&maxResults=60&textFormat=plainText&alt=json returned \"Request h"
+ },
+ "ac": {
+  "송도 아파트": [
+   "송도 아파트",
+   "송도 아파트 매매",
+   "인천 송도 아파트",
+   "송도 아파트 시세",
+   "송도 아파트 전세",
+   "송도 아파트 월세",
+   "인천 송도 아파트 매매",
+   "송도 아파트 침수",
+   "부산 송도 아파트",
+   "인천 송도 아파트 월세"
+  ],
+  "송도 집값": [
+   "송도 집값",
+   "인천 송도 집값",
+   "송도 집값 하락",
+   "송도 집값 순위",
+   "송도 집값 시세",
+   "송도 집값 상승",
+   "송도 집값 전망",
+   "송도 집값 평균",
+   "송도 집값 폭락",
+   "송도 집값 추세"
+  ],
+  "송도 전세": [
+   "인천 송도 전세",
+   "송도 전세",
+   "송도 전세 아파트",
+   "송도 전세 오피스텔",
+   "송도 전세 3억",
+   "송도 전세 매물",
+   "송도 전세 2억",
+   "송도 전세 4억",
+   "송도전세로살기"
+  ],
+  "송도더샵센트럴시티": [
+   "송도더샵센트럴시티",
+   "송도 더샵 센트럴시티 오피스텔",
+   "송도 더샵 센트럴시티 아파트",
+   "송도 더샵 센트럴시티 커뮤니티",
+   "송도 더샵 센트럴시티 25평",
+   "송도더샵센트럴시티 평면도",
+   "송도더샵센트럴시티 경매",
+   "송도 더샵 센트럴시티 관리사무소",
+   "송도더샵센트럴시티 인테리어",
+   "송도 더샵 센트럴시티 매매"
+  ]
+ }
+}

@@ -2,7 +2,7 @@
  "name": "t1s_live",
  "ep": "T-1",
  "from_long": "Qg5Tj2fuJ3A",
- "mp4": "work/video/out/t1s_live_ds.mp4",
+ "mp4": "work/video/out/b45/t1s_live_b45_ds.mp4",
  "publishAt": "2026-10-23T19:20:00+09:00",
  "publish_plan": "2026-10-23 19:20 (쇼츠 하루 3편 셋째 칸 · 같은 날 07:20 n1s_top10=N-1·17:20 x1s_hedge=X-1·11:30 롱폼 H-3과 다른 롱폼·다른 질문 · T-1 롱폼 둘째 클립, 첫 클립 t1s_swap 10/22 17:20과 다른 질문)",
  "title": "장특공제 정부안 2029년부터 살았던 해만, 내 집은 몇 %? #shorts",
@@ -27,13 +27,24 @@
  },
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "2vo0fcUJFxw",
- "uploaded_at": "2026-10-21 07:20:12",
+ "id": "42G9q2kCNc4",
+ "uploaded_at": "2026-10-22 14:33:41",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-23T10:20:00Z",
   "embeddable": true,
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
- }
+ },
+ "replaced": [
+  {
+   "id": "2vo0fcUJFxw",
+   "unscheduled_at": "2026-10-22 14:33:41",
+   "why": "B-45 0초 글자(motion 10/22 12:02)",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": "2026-10-23T10:20:00Z"
+   }
+  }
+ ]
 }

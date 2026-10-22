@@ -10,3 +10,5 @@
 2026-10-21 23:04 | firemap-video-producer 정기 22:17 회차 | 끝 — 녹음 214줄·다시 받기 45줄(붙음끊김 2.3% 통과·튀는 줄 3 남음) · 마지막 3줄(3:6·5:1·8:3) --takes 8 백그라운드 → 결과 check4_1021pd.log (손 뗌)
 2026-10-22 02:18 | firemap-video-producer 정기 02:1x 회차 | J-1 튀는 줄 3 고치기→화면(shot_plan·props·J1.tsx)
 2026-10-22 03:15 | firemap-video-producer 정기 02:1x 회차 | 끝 — 화면 v1·shot_plan 반영·커밋 2c941b8·2134538, 렌더는 서명·두 줄 다시 받기 뒤 (손 뗌)
+2026-10-22 14:36 | firemap-video-producer 정기 14:1x 회차 | editor 화면 서명 투입(직원), 렌더는 H-3 끝난 뒤
+2026-10-22 16:05 | firemap-video-producer 정기 14:1x 회차 | 렌더 네 토막 띄움(check/render_parts.sh, 로그 check/render_parts_run.log) — 끝나기 전 다른 회차는 렌더 건드리지 말 것

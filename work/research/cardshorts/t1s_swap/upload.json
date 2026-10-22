@@ -2,7 +2,7 @@
  "name": "t1s_swap",
  "ep": "T-1",
  "from_long": "Qg5Tj2fuJ3A",
- "mp4": "work/video/out/t1s_swap_ds.mp4",
+ "mp4": "work/video/out/b45/t1s_swap_b45_ds.mp4",
  "publishAt": "2026-10-22T17:20:00+09:00",
  "publish_plan": "2026-10-22 17:20 (쇼츠 하루 3편 둘째 칸 · 같은 날 07:20 g1s_asym=G-1·19:20 h1s_forest=H-1·11:30 롱폼 X-1과 다른 롱폼·다른 질문 · T-1 롱폼 첫 클립)",
  "title": "집 갈아타는 중이라면 헌 집 기한 2년, 넘기면 5배 #shorts",
@@ -26,13 +26,24 @@
  },
  "synth_insert_echo": true,
  "synth_update_echo": true,
- "id": "df5dTTi5VCI",
- "uploaded_at": "2026-10-20 12:57:55",
+ "id": "XutiTp15KU8",
+ "uploaded_at": "2026-10-22 14:24:39",
  "status": {
   "privacyStatus": "private",
   "publishAt": "2026-10-22T08:20:00Z",
   "embeddable": true,
   "publicStatsViewable": true,
   "selfDeclaredMadeForKids": false
- }
+ },
+ "replaced": [
+  {
+   "id": "df5dTTi5VCI",
+   "unscheduled_at": "2026-10-22 14:24:39",
+   "why": "B-45 0초 글자(motion 10/22 12:02)",
+   "status_after": {
+    "privacyStatus": "private",
+    "publishAt": "2026-10-22T08:20:00Z"
+   }
+  }
+ ]
 }

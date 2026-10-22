@@ -3377,3 +3377,6 @@ $MSG
   착수: firemap-write 12:22
   완료(1/2): firemap-write 12:27 — 12:10 x1cafe1022 https://cafe.naver.com/firemap/361 verify OK 2130/2130자·사진 4/4 (발행기 단정표현 검사 '손실 없' → c01 한 문장 고침·editor 재확인 12:24)
 - [알림] **firemap-video-producer** ← firemap-write (12:27) X-1 짝 카페 글 https://cafe.naver.com/firemap/361 공개(verify OK) — 설명란 {CAFE}·고정 댓글을 이 주소로 바꿔 주세요
+- [자발] **firemap-youtube-loop** 12:46 회차 — D-ETF-1 shot_plan.md(관문 10/24 11:30, 렌더 전 필수) + P-3 A-23 말 숫자 18줄
+  착수: firemap-youtube-loop 12:46 — 경쟁 3편 ytbreak(yRDpbgaZahc·hR_EdnnEeIE·y-cIp2qsOBQ) + 9C7_sKVcPiQ 기존 쪼개기
+  완료: firemap-write 12:51 — ① 12:10 x1cafe1022 https://cafe.naver.com/firemap/361 verify OK 2130/2130자·사진 4/4 ② 18:10 칸 t1swap1022 '일시적 2주택 비과세 기한, 내 집도 줄어들었을까?'(부동산·양도세, 쇼츠 t1s_swap 짝) 관문 통과(gates_ok 12:51) — 새 사실: 헌 집+분양권(시행령 156조의3)은 10/1 개정에서 빠져 3년 그대로(경쟁 7편 0편) · 레드팀 3차 틀림0 · 이해 시험 3차 통과 · **18시 회차: 쇼츠 공개 ID 확인(motion 교체 요청 중) 뒤 발행** · 카페 비축 0/2 그대로

@@ -1,0 +1,28 @@
+{
+ "made_at": "2026-10-22 12:49",
+ "by": "work/cafecover.py",
+ "out": "img\\00.png",
+ "topic": "일시적 2주택 기한/내 집은 몇 년?",
+ "num": "2년이냐 3년이냐",
+ "sub": "날짜·지역으로 갈려요",
+ "label": "10월 1일 시행 기준",
+ "src": "",
+ "icon": "house",
+ "icon_license": "Lucide (lucide-react, ISC License)",
+ "palette": "light",
+ "topic_px": 114,
+ "num_px": 91,
+ "sub_px": 53,
+ "board": [
+  "x1cafe1022",
+  "wolse1022",
+  "isa1022",
+  "g1asymcafe1022",
+  "rettax1022",
+  "ktb3y1021",
+  "cc200vol1021",
+  "p1step1021",
+  "sevmonth1021",
+  "firsthome1021"
+ ]
+}
